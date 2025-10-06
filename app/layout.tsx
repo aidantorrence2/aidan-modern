@@ -1,12 +1,9 @@
 import type { Metadata } from 'next'
-import { Suspense } from 'react'
 import Script from 'next/script'
 import './globals.css'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import Lightbox from '@/components/Lightbox'
-import MetaPixelEvents from '@/components/MetaPixelEvents'
-import MetaPixelLoader from '@/components/MetaPixelLoader'
 
 const META_PIXEL_ID = process.env.NEXT_PUBLIC_META_PIXEL_ID
 
@@ -29,10 +26,20 @@ export default function RootLayout({ children }: { children: React.ReactNode }){
               id="meta-pixel"
               strategy="afterInteractive"
               dangerouslySetInnerHTML={{
-                __html: `!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init', '${META_PIXEL_ID}');fbq('track', 'PageView');console.info('[Meta Pixel] base PageView fired');`
+                __html: `
+                  !function(f,b,e,v,n,t,s)
+                  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+                  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+                  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+                  n.queue=[];t=b.createElement(e);t.async=!0;
+                  t.src=v;s=b.getElementsByTagName(e)[0];
+                  s.parentNode.insertBefore(t,s)}(window, document,'script',
+                  'https://connect.facebook.net/en_US/fbevents.js');
+                  fbq('init', '${META_PIXEL_ID}');
+                  fbq('track', 'PageView');
+                `
               }}
             />
-            <MetaPixelLoader />
             <noscript>
               <img
                 height="1"
@@ -50,9 +57,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }){
         </main>
         <Lightbox />
         <Footer />
-        <Suspense fallback={null}>
-          <MetaPixelEvents />
-        </Suspense>
       </body>
     </html>
   )

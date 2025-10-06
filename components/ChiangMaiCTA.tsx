@@ -10,6 +10,14 @@ export default function ChiangMaiCTA(){
   function handleClick(event: React.MouseEvent<HTMLButtonElement>){
     event.preventDefault()
     if (isSubmitting) return
+    
+    if (typeof window !== 'undefined' && (window as any).fbq) {
+      (window as any).fbq('track', 'Lead', {
+        content_name: 'Chiang Mai Free Photo Shoot',
+        content_category: 'WhatsApp Lead'
+      })
+    }
+    
     const message = "Hi Aidan, I'm ready for the complimentary Chiang Mai photo shoot (Oct 6–11)."
     const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`
     setIsSubmitting(true)

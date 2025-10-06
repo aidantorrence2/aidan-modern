@@ -1,10 +1,19 @@
-import Link from 'next/link'
+'use client'
 
 const WHATSAPP_NUMBER = '491758966210'
 const WHATSAPP_MESSAGE = "Hi Aidan, I'm ready for the complimentary Chiang Mai photo shoot (Oct 6–11)."
 const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`
 
 export default function ChiangMaiStickyCTA(){
+  function handleClick(event: React.MouseEvent<HTMLAnchorElement>){
+    if (typeof window !== 'undefined' && (window as any).fbq) {
+      (window as any).fbq('track', 'Lead', {
+        content_name: 'Chiang Mai Free Photo Shoot',
+        content_category: 'WhatsApp Lead - Sticky'
+      })
+    }
+  }
+
   return (
     <div className="fixed inset-x-0 bottom-0 z-40 bg-white/95 backdrop-blur shadow-[0_-12px_30px_rgba(0,0,0,0.12)]">
       <div className="container flex flex-col gap-3 py-3 sm:flex-row sm:items-center sm:justify-between">
@@ -15,6 +24,7 @@ export default function ChiangMaiStickyCTA(){
           href={WHATSAPP_URL}
           target="_blank"
           rel="noreferrer"
+          onClick={handleClick}
           className="btn flex items-center justify-center gap-2 px-5 py-2 text-sm font-semibold text-white sm:px-6"
           style={{ backgroundColor: '#25D366' }}
           data-cta="chiang-mai-sticky-whatsapp"
