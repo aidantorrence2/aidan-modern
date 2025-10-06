@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root{color-scheme:light}
+html,body{height:100%}
+body{@apply bg-paper text-ink antialiased font-body}
+a{@apply text-ink}
+.container{ @apply max-w-7xl mx-auto px-4 sm:px-6 }
+
+/* Editorial feel */
+h1,h2,h3,h4{@apply font-display tracking-tight}
+h1{@apply leading-[1.05]}
+
+/* Buttons */
+.btn{ @apply inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-semibold transition-all }
+.btn-primary{ @apply bg-accent text-white hover:brightness-95 shadow-sm }
+.btn-ghost{ @apply border border-neutral-200/80 hover:bg-neutral-50 }
+
+/* Header polish */
+header .brand{ @apply font-display tracking-tight text-[15px] sm:text-[16px] text-ink }
