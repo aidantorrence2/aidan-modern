@@ -27,6 +27,11 @@ const SESSION_OPTIONS: SessionOption[] = [
     value: 'full',
     label: 'Full Session',
     bullets: ['2 hours', '20–30 selects', '$249']
+  },
+  {
+    value: 'collab',
+    label: 'Collaboration',
+    bullets: ['TBD']
   }
 ]
 
@@ -57,16 +62,12 @@ export default function BookForm(){
   const [selectedDate, setSelectedDate] = useState<string>('')
   const [selectedTime, setSelectedTime] = useState<string>('')
   const [selectedSession, setSelectedSession] = useState<string>('')
+  const [contactMethod, setContactMethod] = useState<'whatsapp' | 'instagram' | ''>('')
 
   function clearStatus(){
     if(state) setState(null)
   }
 
-  useEffect(()=>{
-    if(selectedTime && isWeekday(selectedDate) && selectedTime === '10:00'){
-      setSelectedTime('')
-    }
-  }, [selectedDate, selectedTime])
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>){
     e.preventDefault()
@@ -78,10 +79,12 @@ export default function BookForm(){
       setSelectedDate('')
       setSelectedTime('')
       setSelectedSession('')
+      setContactMethod('')
       return
     }
     setState(null)
-    if(!data.name || !data.whatsapp || !data.date || !data.time || !data.session){
+    const contactField = data.whatsapp || data.instagram
+    if(!data.name || !contactField || !data.date || !data.time || !data.session){
       setState({ ok: false, error: 'Please complete every required selection.' })
       return
     }
@@ -108,6 +111,7 @@ export default function BookForm(){
       setSelectedDate('')
       setSelectedTime('')
       setSelectedSession('')
+      setContactMethod('')
     }catch(err:any){
       setState({ ok: false, error: err.message })
     }
@@ -125,20 +129,54 @@ export default function BookForm(){
       )}
 
       <form onSubmit={onSubmit} className="mt-4 grid gap-6 sm:mt-6">
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          <div>
-            <label className="block text-sm font-medium text-neutral-700">Name</label>
-            <input required name="name" onChange={clearStatus} className="mt-1 w-full rounded-xl border border-neutral-300 bg-white px-4 py-2.5 text-sm outline-none transition focus:border-accent focus:ring-2 focus:ring-accent/30" placeholder="Aidan" />
+        <fieldset>
+          <legend className="text-sm font-medium text-neutral-700">Preferred contact method</legend>
+          <p className="mt-1 text-xs text-neutral-500">Choose how you'd like me to reach you.</p>
+          <div className="mt-4 flex gap-3">
+            <button
+              type="button"
+              onClick={() => setContactMethod('instagram')}
+              className={`flex items-center gap-2 rounded-full border-2 px-4 py-2 text-sm font-semibold transition-all ${contactMethod === 'instagram' ? 'border-accent bg-accent/10 text-accent' : 'border-neutral-300 bg-white text-neutral-700 hover:border-neutral-400'}`}
+            >
+              Instagram
+            </button>
+            <button
+              type="button"
+              onClick={() => setContactMethod('whatsapp')}
+              className={`flex items-center gap-2 rounded-full border-2 px-4 py-2 text-sm font-semibold transition-all ${contactMethod === 'whatsapp' ? 'border-accent bg-accent/10 text-accent' : 'border-neutral-300 bg-white text-neutral-700 hover:border-neutral-400'}`}
+            >
+              WhatsApp
+            </button>
           </div>
-          <div>
-            <label className="block text-sm font-medium text-neutral-700">WhatsApp</label>
-            <input required name="whatsapp" onChange={clearStatus} className="mt-1 w-full rounded-xl border border-neutral-300 bg-white px-4 py-2.5 text-sm outline-none transition focus:border-accent focus:ring-2 focus:ring-accent/30" placeholder="e.g. +49 175 8966210" />
+        </fieldset>
+
+        {contactMethod && (
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            <div>
+              <label className="block text-sm font-medium text-neutral-700">Name</label>
+              <input required name="name" onChange={clearStatus} className="mt-1 w-full rounded-xl border border-neutral-300 bg-white px-4 py-2.5 text-sm outline-none transition focus:border-accent focus:ring-2 focus:ring-accent/30" placeholder="Aidan" />
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-neutral-700">
+                {contactMethod === 'whatsapp' ? 'WhatsApp' : 'Instagram Handle'}
+              </label>
+              <input 
+                required 
+                name={contactMethod === 'whatsapp' ? 'whatsapp' : 'instagram'} 
+                onChange={clearStatus} 
+                className="mt-1 w-full rounded-xl border border-neutral-300 bg-white px-4 py-2.5 text-sm outline-none transition focus:border-accent focus:ring-2 focus:ring-accent/30" 
+                placeholder={contactMethod === 'whatsapp' ? 'e.g. +49 175 8966210' : '@yourhandle'} 
+              />
+              {contactMethod === 'instagram' && (
+                <p className="mt-1 text-xs text-amber-600">You must follow @madebyaidan to receive messages</p>
+              )}
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-neutral-700">Location</label>
+              <input name="location" onChange={clearStatus} className="mt-1 w-full rounded-xl border border-neutral-300 bg-white px-4 py-2.5 text-sm outline-none transition focus:border-accent focus:ring-2 focus:ring-accent/30" placeholder="City where you'd like to shoot" />
+            </div>
           </div>
-          <div>
-            <label className="block text-sm font-medium text-neutral-700">Location</label>
-            <input name="location" onChange={clearStatus} className="mt-1 w-full rounded-xl border border-neutral-300 bg-white px-4 py-2.5 text-sm outline-none transition focus:border-accent focus:ring-2 focus:ring-accent/30" placeholder="City where you’d like to shoot" />
-          </div>
-        </div>
+        )}
 
         <fieldset>
           <legend className="text-sm font-medium text-neutral-700">Photo shoot date</legend>
@@ -159,7 +197,7 @@ export default function BookForm(){
                   }}
                   required
                 />
-                <span className="flex h-full flex-col items-center justify-center rounded-full border border-neutral-200 bg-white px-3 py-3 text-sm font-medium text-neutral-700 transition-all peer-checked:border-accent peer-checked:bg-accent/10 peer-checked:text-accent peer-focus-visible:outline-none peer-focus-visible:ring-2 peer-focus-visible:ring-accent/40">
+                <span className="flex h-full flex-col items-center justify-center rounded-full border-2 border-neutral-300 bg-white px-3 py-3 text-sm font-semibold text-neutral-800 transition-all peer-checked:border-accent peer-checked:bg-accent/10 peer-checked:text-accent peer-focus-visible:outline-none peer-focus-visible:ring-2 peer-focus-visible:ring-accent/40 hover:border-neutral-400">
                   <span>{option.label}</span>
                   <span className="text-xs font-normal text-neutral-500">{option.secondary}</span>
                 </span>
@@ -173,10 +211,9 @@ export default function BookForm(){
           <p className="mt-1 text-xs text-neutral-500">Choose an available time.</p>
           <div className="mt-4 flex flex-wrap gap-3">
             {TIME_OPTIONS.map(option => {
-              const disabled = option.value === '10:00' && isWeekday(selectedDate)
               const isActive = selectedTime === option.value
               return (
-                <label key={option.value} className={disabled ? 'opacity-40' : ''}>
+                <label key={option.value}>
                   <input
                     type="radio"
                     name="time"
@@ -188,10 +225,9 @@ export default function BookForm(){
                       setSelectedTime(option.value)
                     }}
                     required
-                    disabled={disabled}
                   />
-                  <span className={`flex items-center justify-center rounded-full border px-4 py-2 text-sm font-medium transition-all peer-focus-visible:outline-none peer-focus-visible:ring-2 peer-focus-visible:ring-accent/40 ${isActive ? 'border-accent bg-accent/10 text-accent' : 'border-dashed border-neutral-300 bg-white text-neutral-500'}`}
-                  >{option.label}{disabled ? ' (unavailable)' : ''}</span>
+                  <span className={`flex items-center justify-center rounded-full border-2 px-4 py-2 text-sm font-semibold transition-all peer-focus-visible:outline-none peer-focus-visible:ring-2 peer-focus-visible:ring-accent/40 ${isActive ? 'border-accent bg-accent/10 text-accent' : 'border-neutral-300 bg-white text-neutral-700 hover:border-neutral-400'}`}
+                  >{option.label}</span>
                 </label>
               )
             })}
@@ -200,8 +236,8 @@ export default function BookForm(){
 
         <fieldset>
           <legend className="text-sm font-medium text-neutral-700">Session type</legend>
-          <p className="mt-1 text-xs text-neutral-500">Choose the format that fits how much time you’d like.</p>
-          <div className="mt-4 grid gap-3 sm:grid-cols-2">
+          <p className="mt-1 text-xs text-neutral-500">Choose what works for you.</p>
+          <div className="mt-4 grid gap-3 sm:grid-cols-3">
             {SESSION_OPTIONS.map(option => {
               const isActive = selectedSession === option.value
               return (
@@ -218,13 +254,15 @@ export default function BookForm(){
                     }}
                     required
                   />
-                  <span className={`flex h-full flex-col rounded-2xl border px-4 py-4 transition-all peer-focus-visible:outline-none peer-focus-visible:ring-2 peer-focus-visible:ring-accent/40 ${isActive ? 'border-accent bg-accent/10 text-accent' : 'border-dashed border-neutral-300 bg-white text-neutral-600'}`}>
+                  <span className={`flex h-full flex-col rounded-2xl border-2 px-4 py-4 transition-all peer-focus-visible:outline-none peer-focus-visible:ring-2 peer-focus-visible:ring-accent/40 ${isActive ? 'border-accent bg-accent/10 text-accent' : 'border-neutral-300 bg-white text-neutral-700 hover:border-neutral-400'}`}>
                     <div className="flex items-baseline justify-between gap-4">
                       <span className="text-sm font-semibold">{option.label}</span>
-                      <span className="font-display text-lg text-[#4d5138] sm:text-xl">{option.bullets.at(-1)}</span>
+                      {option.value !== 'collab' && (
+                        <span className="font-display text-lg text-[#4d5138] sm:text-xl">{option.bullets.at(-1)}</span>
+                      )}
                     </div>
                     <ul className="mt-2 space-y-1 text-xs text-neutral-600">
-                      {option.bullets.slice(0, option.bullets.length - 1).map(item => (
+                      {option.bullets.slice(0, option.value === 'collab' ? option.bullets.length : option.bullets.length - 1).map(item => (
                         <li key={item}>{item}</li>
                       ))}
                     </ul>
@@ -235,16 +273,11 @@ export default function BookForm(){
           </div>
         </fieldset>
 
-        <div>
-          <label className="block text-sm font-medium text-neutral-700">Anything I should know?</label>
-          <textarea name="notes" rows={4} onChange={clearStatus} className="mt-1 w-full rounded-xl border border-neutral-300 bg-white px-4 py-2.5 text-sm outline-none transition focus:border-accent focus:ring-2 focus:ring-accent/30" placeholder="First shoot nerves, location ideas, wardrobe thoughts…" />
-        </div>
-
         {/* Honeypot */}
         <input type="text" name="company" className="hidden" tabIndex={-1} autoComplete="off" />
 
         <div>
-          <button className="btn btn-primary px-6" data-cta="book-form-submit">Send request</button>
+          <button className="btn btn-primary px-6" data-cta="book-form-submit">Request Photo Shoot</button>
         </div>
       </form>
     </div>
