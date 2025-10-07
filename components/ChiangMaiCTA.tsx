@@ -18,7 +18,7 @@ export default function ChiangMaiCTA(){
       })
     }
     
-    const message = "Hi Aidan, I'm ready for the complimentary Chiang Mai photo shoot (Oct 6–11)."
+    const message = "Hey! Interested in the free Chiang Mai shoot"
     const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`
     setIsSubmitting(true)
     window.open(whatsappUrl, '_blank')

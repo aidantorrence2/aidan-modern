@@ -1,7 +1,7 @@
 'use client'
 
 const WHATSAPP_NUMBER = '491758966210'
-const WHATSAPP_MESSAGE = "Hi Aidan, I'm ready for the complimentary Chiang Mai photo shoot (Oct 6–11)."
+const WHATSAPP_MESSAGE = "Hey! Interested in the free Chiang Mai shoot"
 const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`
 
 export default function ChiangMaiStickyCTA(){
