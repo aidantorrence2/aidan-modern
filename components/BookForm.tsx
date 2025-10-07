@@ -83,9 +83,25 @@ export default function BookForm(){
       return
     }
     setState(null)
+    if(!contactMethod){
+      setState({ ok: false, error: 'Please select a contact method.' })
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+      return
+    }
+    if(!data.name){
+      setState({ ok: false, error: 'Please enter your name.' })
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+      return
+    }
     const contactField = data.whatsapp || data.instagram
-    if(!data.name || !contactField || !data.date || !data.time || !data.session){
-      setState({ ok: false, error: 'Please complete every required selection.' })
+    if(!contactField){
+      setState({ ok: false, error: `Please enter your ${contactMethod === 'whatsapp' ? 'WhatsApp number' : 'Instagram handle'}.` })
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+      return
+    }
+    if(!data.date || !data.time || !data.session){
+      setState({ ok: false, error: 'Please complete all selections.' })
+      window.scrollTo({ top: 0, behavior: 'smooth' })
       return
     }
     try{
@@ -125,7 +141,7 @@ export default function BookForm(){
         <div className="mt-4 rounded-xl border border-green-200 bg-green-50 p-3 text-sm text-green-800">Thanks — got it. I’ll WhatsApp you ASAP.</div>
       )}
       {state && !state.ok && (
-        <div className="mt-4 rounded-xl border border-red-200 bg-red-50 p-3 text-sm text-red-800">{state.error ?? 'Something went wrong. Please reach out on WhatsApp.'}</div>
+        <div className="mt-4 rounded-xl border-2 border-red-400 bg-red-50 p-4 text-base font-semibold text-red-800 shadow-lg">{state.error ?? 'Something went wrong. Please reach out on WhatsApp.'}</div>
       )}
 
       <form onSubmit={onSubmit} className="mt-4 grid gap-6 sm:mt-6">
