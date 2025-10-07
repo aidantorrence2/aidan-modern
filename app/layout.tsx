@@ -12,7 +12,23 @@ export const metadata: Metadata = {
   description: 'High-touch film photo shoots with art direction, styling support, and 1–2 week delivery from Aidan Torrence Photography.',
   openGraph: {
     title: 'Aidan Torrence — Photographer',
-    type: 'website'
+    description: 'Film photographer • Editorial sessions • Bangkok & worldwide',
+    type: 'website',
+    url: 'https://aidantorrence.com',
+    images: [
+      {
+        url: '/og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Aidan Torrence Photography'
+      }
+    ]
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Aidan Torrence — Photographer',
+    description: 'Film photographer • Editorial sessions • Bangkok & worldwide',
+    images: ['/og-image.jpg']
   }
 }
 
