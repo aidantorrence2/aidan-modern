@@ -34,15 +34,15 @@ const collageImages = [
 const quickHits = ['CHIANG MAI', 'OCT 6–11', 'LIMITED SLOTS']
 
 const howItWorksSteps = [
-  'Message me on WhatsApp saying you want a Chiang Mai session.',
+  'Message me saying you want a Chiang Mai session.',
   'We\'ll coordinate on the details.',
-  'We meet up, shoot for 1–2 hours, and you get your gallery in 1–2 weeks.'
+  'We meet up, shoot for 1–2 hours, and you get your photos in 1–2 weeks.'
 ]
 
 export const metadata = {
   title: 'Free Chiang Mai Photo Shoot — Aidan Torrence Photography',
   description:
-    'Complimentary 1–2 hour analog photo shoot in Chiang Mai, Oct 6–11 only. Limited slots, 35mm film imagery, WhatsApp-first booking.'
+    'Complimentary 1–2 hour analog photo shoot in Chiang Mai, Oct 6–11 only. Limited slots, 35mm film imagery. Book via Instagram or WhatsApp.'
 }
 
 export default function ChiangMaiFreePage(){
@@ -125,7 +125,7 @@ export default function ChiangMaiFreePage(){
           <div className="rounded-3xl border border-neutral-200 bg-white/80 p-8 shadow-sm">
             <h2 className="text-2xl font-semibold text-neutral-900 sm:text-3xl">Book your free session</h2>
             <p className="mt-3 text-sm text-neutral-600 sm:text-base">
-              Limited availability during my time in Chiang Mai. Contact me via WhatsApp to secure your session quickly.
+              Limited availability during my time in Chiang Mai. Message me to secure your session quickly.
             </p>
             <ChiangMaiCTA />
             <p className="mt-6 text-xs text-neutral-500">

@@ -142,7 +142,7 @@ export const shoots: Shoot[] = [
     location: 'Saigon, Vietnam',
     story: 'Film portraits with Ly Gia Han — relaxed, honest, and cinematic. Shot entirely on 35mm film.',
     cover: '000004',
-    gallery: ['000004', '000043', '000055', '000056', '000057', '000063', '13', '6']
+    gallery: ['000004', '000043', '000055', '000056', '000057', '13', '6']
   },
   {
     slug: 'maria',
