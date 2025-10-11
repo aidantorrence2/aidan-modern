@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import ChiangMaiCTA from '@/components/ChiangMaiCTA'
-import ChiangMaiStickyCTA from '@/components/ChiangMaiStickyCTA'
+import BangkokStickyCTA from '@/components/BangkokStickyCTA'
 
 const collageImages = [
   { id: '000048780009', alt: 'Street portrait with neon wash at night', style: { top: '0%', left: '0%', width: '19%', transform: 'rotate(-2deg)' } },
@@ -29,9 +29,7 @@ const collageImages = [
 
 
 
-
-
-const quickHits = ['CHIANG MAI', 'OCT 6–11', 'LIMITED SLOTS']
+const quickHits = ['BANGKOK', 'OCT 12', 'LIMITED SLOTS']
 
 const howItWorksSteps = [
   'Message me letting me know you are interested.',
@@ -40,12 +38,12 @@ const howItWorksSteps = [
 ]
 
 export const metadata = {
-  title: 'Free Chiang Mai Photo Shoot — Aidan Torrence Photography',
+  title: 'Free Bangkok Photo Shoot — Aidan Torrence Photography',
   description:
-    'Complimentary 1–2 hour analog photo shoot in Chiang Mai, Oct 6–11 only. Limited slots, 35mm film imagery. Book via Instagram or WhatsApp.'
+    'Complimentary 1–2 hour analog photo shoot in Bangkok, Oct 12 only. Limited slots, 35mm film imagery. Book via Instagram or WhatsApp.'
 }
 
-export default function ChiangMaiFreePage(){
+export default function BangkokPage(){
   return (
     <>
       <section className="bg-amber-50/60 pb-12 pt-4 sm:pb-16 sm:pt-10">
@@ -53,7 +51,7 @@ export default function ChiangMaiFreePage(){
           <div className="grid items-center gap-6 lg:grid-cols-[1.05fr_0.95fr] lg:gap-8">
             <div className="order-1 flex flex-col items-center gap-8 lg:order-2 lg:items-end">
               <div className="self-start lg:self-end">
-                <p className="font-display text-3xl font-semibold uppercase tracking-[0.02em] text-neutral-900 sm:text-5xl">Chiang Mai</p>
+                <p className="font-display text-3xl font-semibold uppercase tracking-[0.02em] text-neutral-900 sm:text-5xl">Bangkok</p>
                 <p className="font-display text-3xl font-semibold uppercase tracking-[0.02em] text-neutral-900 sm:text-5xl">Free Photo Shoot</p>
               </div>
               <div
@@ -75,7 +73,7 @@ export default function ChiangMaiFreePage(){
                   </div>
                 ))}
               </div>
-              <Link href="/#work" className="rounded-lg border-2 border-neutral-900 bg-neutral-900 px-6 py-2 text-sm font-semibold text-white transition hover:bg-neutral-800 self-start lg:self-end" data-cta="chiang-mai-portfolio">
+              <Link href="/#work" className="rounded-lg border-2 border-neutral-900 bg-neutral-900 px-6 py-2 text-sm font-semibold text-white transition hover:bg-neutral-800 self-start lg:self-end" data-cta="bangkok-portfolio">
                 View Portfolio
               </Link>
             </div>
@@ -109,7 +107,7 @@ export default function ChiangMaiFreePage(){
             <div className="rounded-3xl border border-neutral-200 bg-white/75 p-8 shadow-sm">
               <h2 className="text-2xl font-semibold text-neutral-900 sm:text-3xl">What's the catch?</h2>
               <p className="mt-3 text-sm text-neutral-600 sm:text-base">
-                There's no catch! I just have the unique opportunity to take portraits while I'm in Chiang Mai this week, so I might as well make the most of it 🙂
+                There's no catch! I just have the unique opportunity to take portraits while I'm in Bangkok, so I might as well make the most of it 🙂
               </p>
             </div>
 
@@ -117,19 +115,19 @@ export default function ChiangMaiFreePage(){
               <h3 className="text-lg font-semibold text-neutral-900">See the full portfolio</h3>
               <p className="mt-2 text-sm text-neutral-600">Browse complete sessions from Bangkok, Saigon, and beyond.</p>
               <div className="mt-4 flex flex-wrap gap-3">
-                <Link href="/#work" className="btn btn-primary px-6" data-cta="chiang-mai-portfolio">View Portfolio</Link>
+                <Link href="/#work" className="btn btn-primary px-6" data-cta="bangkok-portfolio">View Portfolio</Link>
               </div>
             </div>
           </div>
 
           <div className="rounded-3xl border border-neutral-200 bg-white/80 p-8 shadow-sm">
-            <h2 className="text-2xl font-semibold text-neutral-900 sm:text-3xl">Book your free session</h2>
+            <h2 className="text-2xl font-semibold text-neutral-900 sm:text-3xl">Book your session</h2>
             <p className="mt-3 text-sm text-neutral-600 sm:text-base">
-              Limited availability during my time in Chiang Mai. Message me to secure your session quickly.
+              Limited availability during my time in Bangkok. Message me to secure your session quickly.
             </p>
             <ChiangMaiCTA />
             <p className="mt-6 text-xs text-neutral-500">
-              Prefer email? Send a note to <a href="mailto:hello@aidantorrence.com" className="underline">hello@aidantorrence.com</a> with “Chiang Mai Session” in the subject.
+              Prefer email? Send a note to <a href="mailto:hello@aidantorrence.com" className="underline">hello@aidantorrence.com</a> with "Bangkok Session" in the subject.
             </p>
           </div>
           </div>
@@ -143,7 +141,7 @@ export default function ChiangMaiFreePage(){
         </div>
       </section>
 
-      <ChiangMaiStickyCTA />
+      <BangkokStickyCTA />
     </>
   )
 }
