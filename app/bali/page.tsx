@@ -29,7 +29,7 @@ const collageImages = [
 
 
 
-const quickHits = ['CANGGU, BALI', 'OCT 13–20', 'LIMITED SLOTS']
+const quickHits = ['BALI', 'OCT 13–20', 'LIMITED SLOTS']
 
 const howItWorksSteps = [
   'Message me letting me know you are interested.',
@@ -40,7 +40,7 @@ const howItWorksSteps = [
 export const metadata = {
   title: 'Free Bali Photo Shoot — Aidan Torrence Photography',
   description:
-    'Complimentary 1–2 hour analog photo shoot in Canggu, Bali, Oct 13–20. Limited slots, 35mm film imagery. Book via Instagram or WhatsApp.'
+    'Complimentary 1–2 hour analog photo shoot in Bali, Oct 13–20. Limited slots, 35mm film imagery. Book via Instagram or WhatsApp.'
 }
 
 export default function BaliPage(){
@@ -51,7 +51,7 @@ export default function BaliPage(){
           <div className="grid items-center gap-6 lg:grid-cols-[1.05fr_0.95fr] lg:gap-8">
             <div className="order-1 flex flex-col items-center gap-8 lg:order-2 lg:items-end">
               <div className="self-start lg:self-end">
-                <p className="font-display text-3xl font-semibold uppercase tracking-[0.02em] text-neutral-900 sm:text-5xl">Canggu, Bali</p>
+                <p className="font-display text-3xl font-semibold uppercase tracking-[0.02em] text-neutral-900 sm:text-5xl">Bali</p>
                 <p className="font-display text-3xl font-semibold uppercase tracking-[0.02em] text-neutral-900 sm:text-5xl">Free Photo Shoot</p>
               </div>
               <div
@@ -107,7 +107,7 @@ export default function BaliPage(){
             <div className="rounded-3xl border border-neutral-200 bg-white/75 p-8 shadow-sm">
               <h2 className="text-2xl font-semibold text-neutral-900 sm:text-3xl">What's the catch?</h2>
               <p className="mt-3 text-sm text-neutral-600 sm:text-base">
-                There's no catch! I just have the unique opportunity to take portraits while I'm in Canggu, so I might as well make the most of it 🙂
+                There's no catch! I just have the unique opportunity to take portraits while I'm in Bali, so I might as well make the most of it 🙂
               </p>
             </div>
 
@@ -123,7 +123,7 @@ export default function BaliPage(){
           <div className="rounded-3xl border border-neutral-200 bg-white/80 p-8 shadow-sm">
             <h2 className="text-2xl font-semibold text-neutral-900 sm:text-3xl">Book your session</h2>
             <p className="mt-3 text-sm text-neutral-600 sm:text-base">
-              Limited availability during my time in Canggu. Message me to secure your session quickly.
+              Limited availability during my time in Bali. Message me to secure your session quickly.
             </p>
             <ChiangMaiCTA />
             <p className="mt-6 text-xs text-neutral-500">

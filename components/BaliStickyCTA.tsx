@@ -4,7 +4,7 @@ import { useState } from 'react'
 
 const WHATSAPP_NUMBER = '491758966210'
 const INSTAGRAM_HANDLE = 'madebyaidan'
-const WHATSAPP_MESSAGE = "Hey! Interested in the Canggu shoot"
+const WHATSAPP_MESSAGE = "Hey! Interested in the Bali shoot"
 
 export default function BaliStickyCTA(){
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -51,7 +51,7 @@ export default function BaliStickyCTA(){
     <div className="fixed inset-x-0 bottom-0 z-40 bg-white/95 backdrop-blur shadow-[0_-12px_30px_rgba(0,0,0,0.12)]">
       <div className="container flex flex-col gap-3 py-3 sm:flex-row sm:items-center sm:justify-between">
         <p className="text-[0.65rem] font-semibold uppercase tracking-[0.32em] text-neutral-600">
-          Canggu, Bali · Oct 13–20 · Limited slots
+          Bali · Oct 13–20 · Limited slots
         </p>
         <div className="flex gap-2">
           <a
