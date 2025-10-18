@@ -1,5 +1,4 @@
 import Gallery from '@/components/Gallery'
-import ContactPrompt from '@/components/ContactPrompt'
 import StickyCTA from '@/components/StickyCTA'
 
 export default function Page(){
@@ -9,7 +8,6 @@ export default function Page(){
         <h2 className="mt-6 text-sm font-medium uppercase tracking-[0.25em] text-neutral-600 sm:mt-10 sm:text-base">Selected works</h2>
       </section>
       <Gallery />
-      <ContactPrompt />
       <StickyCTA />
     </>
   )
