@@ -105,7 +105,7 @@ export const shoots: Shoot[] = [
     firstName: 'Kiritokia',
     location: 'Rotorua, New Zealand',
     story: 'Film portraits with Kiritokia — relaxed, honest, and cinematic. Shot entirely on 35mm film.',
-    cover: 'aidantorre000565-000026',
+    cover: 'aidantorre000577-000012',
     gallery: ['aidantorre000565-000026', 'aidantorre000565-000027', 'aidantorre000565-000028', 'aidantorre000577-000012', 'aidantorre000577-000014', 'aidantorre000577-000016', 'aidantorre000577-000019', 'aidantorre000579-000007', 'aidantorre000579-000008', 'aidantorre000579-000017', 'aidantorre000579-000018', 'aidantorre000579-000023', 'aidantorre000579-000024', 'aidantorre000579-000028', 'aidantorre000579-000029', 'aidantorre000579-000032', 'aidantorre000579-000033', 'aidantorre000579-000034', 'aidantorre000579-000035', 'aidantorre000579-000038', 'aidantorre000579-000039', 'aidantorre000579-000041']
   },
   {
