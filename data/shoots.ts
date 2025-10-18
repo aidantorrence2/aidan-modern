@@ -114,7 +114,7 @@ export const shoots: Shoot[] = [
     firstName: 'Kristin',
     location: 'Da Nang, Vietnam',
     story: 'Film portraits with Kristin — relaxed, honest, and cinematic. Shot entirely on 35mm film.',
-    cover: '000038-10',
+    cover: '000044-9',
     gallery: ['000038-10', '000039-9', '000040-10', '000040-9', '000041-10', '000043-9', '000044-10', '000044-9', '000046-9', '000047-10', '000056-10', '000060-10', '000063', '000064', '000065', '000066', '000067-9', '000070-8', '000070', '000073']
   },
   {
