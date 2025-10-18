@@ -159,7 +159,7 @@ export const shoots: Shoot[] = [
     firstName: 'Mary',
     location: 'Warsaw, Poland',
     story: 'Film portraits with Mary — relaxed, honest, and cinematic. Shot entirely on 35mm film.',
-    cover: '000012-3',
+    cover: '000016-3',
     gallery: ['000012-3', '000016-3', '000019-3', '000038-3', '000039-3', 'bc-0829-aidantorrence0488-015', 'bc-0829-aidantorrence0488-016', 'bc-0829-aidantorrence0488-019']
   },
   {
