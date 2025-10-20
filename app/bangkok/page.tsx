@@ -127,7 +127,7 @@ export default function BangkokPage(){
             </p>
             <ChiangMaiCTA />
             <p className="mt-6 text-xs text-neutral-500">
-              Prefer email? Send a note to <a href="mailto:hello@aidantorrence.com" className="underline">hello@aidantorrence.com</a> with "Bangkok Session" in the subject.
+              Prefer email? Send a note to <a href="mailto:aidan@aidantorrence.com" className="underline">aidan@aidantorrence.com</a> with "Bangkok Session" in the subject.
             </p>
           </div>
           </div>

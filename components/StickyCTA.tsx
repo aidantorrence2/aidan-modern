@@ -1,7 +1,7 @@
 export default function StickyCTA(){
   return (
     <div className="fixed inset-x-0 bottom-0 z-40 bg-white/95 backdrop-blur shadow-[0_-8px_30px_rgba(0,0,0,0.08)]">
-      <div className="container flex items-center justify-center gap-3 py-3">
+      <div className="container flex items-center justify-end gap-3 py-3">
         <a
           href="https://wa.me/491758966210"
           className="btn bg-green-600 hover:bg-green-700 text-white px-5 py-2.5 text-sm font-semibold flex items-center gap-2"
@@ -13,7 +13,7 @@ export default function StickyCTA(){
           WhatsApp
         </a>
         <a
-          href="mailto:aidantorrence2@gmail.com"
+          href="mailto:aidan@aidantorrence.com"
           className="btn btn-primary px-5 py-2.5 text-sm font-semibold"
           data-cta="sticky-email"
         >
