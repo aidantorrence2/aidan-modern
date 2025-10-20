@@ -4,7 +4,7 @@ import { useState } from 'react'
 
 const WHATSAPP_NUMBER = '491758966210'
 const INSTAGRAM_HANDLE = 'madebyaidan'
-const WHATSAPP_MESSAGE = "Hey! Interested in the free Chiang Mai shoot"
+const WHATSAPP_MESSAGE = "Hi I am interested!"
 
 export default function ChiangMaiStickyCTA(){
   const [isSubmitting, setIsSubmitting] = useState(false)
