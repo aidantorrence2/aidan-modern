@@ -3,7 +3,7 @@ export default function StickyCTA(){
     <div className="fixed inset-x-0 bottom-0 z-40 bg-white/95 backdrop-blur shadow-[0_-8px_30px_rgba(0,0,0,0.08)]">
       <div className="container flex items-center justify-end gap-3 py-3">
         <a
-          href="https://wa.me/491758966210"
+          href="https://wa.me/491758966210?text=Hi%20I%20am%20interested!"
           className="btn bg-green-600 hover:bg-green-700 text-white px-5 py-2.5 text-sm font-semibold flex items-center gap-2"
           data-cta="sticky-whatsapp"
         >
