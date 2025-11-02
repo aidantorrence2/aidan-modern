@@ -69,22 +69,19 @@ export default function BaliAssistantPage(){
             </p>
             <div className="flex flex-wrap gap-3">
               <a
-                href="mailto:aidan@aidantorrence.com?subject=Bali assistant inquiry&body=Hi Aidan — here’s my intro, hourly expectations (50k–100k IDR), and when I can start:"
-                className="btn btn-primary px-6"
-                data-cta="bali-assistant-hero-email"
-              >
-                Apply via Email
-              </a>
-              <a
                 href="https://wa.me/491758966210?text=Hi%20Aidan%20—%20I%27m%20interested%20in%20the%2050k-100k%20IDR/hr%20assistant%20role.%20Here%27s%20my%20intro:%20"
-                className="btn btn-ghost"
+                className="btn flex items-center gap-2 px-6 text-sm font-semibold text-white sm:text-base"
+                style={{ backgroundColor: '#25D366' }}
                 target="_blank"
                 rel="noreferrer"
                 data-cta="bali-assistant-hero-whatsapp"
               >
-                WhatsApp Intro
+                <span>WhatsApp Me 💬</span>
               </a>
             </div>
+            <p className="text-xs font-semibold uppercase tracking-[0.28em] text-neutral-500">
+              Brands & creators — tap the green button. WhatsApp only.
+            </p>
           </div>
 
           <div className="grid gap-3 sm:grid-cols-3">
@@ -173,24 +170,18 @@ export default function BaliAssistantPage(){
           </div>
           <div className="flex flex-wrap gap-3">
             <a
-              href="mailto:aidan@aidantorrence.com?subject=Bali assistant inquiry&body=Hi Aidan — here’s my intro, hourly expectations (50k–100k IDR), and when I can start:"
-              className="btn btn-primary px-6"
-              data-cta="bali-assistant-apply-email"
-            >
-              Email Your Intro
-            </a>
-            <a
-              href="https://ig.me/m/madebyaidan"
-              className="btn btn-ghost"
+              href="https://wa.me/491758966210?text=Hi%20Aidan%20—%20here%27s%20my%20intro%20for%20the%20Bali%20assistant%20role:%20"
+              className="btn flex items-center gap-2 px-6 text-sm font-semibold text-white sm:text-base"
+              style={{ backgroundColor: '#25D366' }}
               target="_blank"
               rel="noreferrer"
-              data-cta="bali-assistant-apply-instagram"
+              data-cta="bali-assistant-apply-whatsapp"
             >
-              DM on Instagram
+              <span>WhatsApp Me 💬</span>
             </a>
           </div>
           <p className="text-xs text-white/60">
-            Tell me which neighborhoods you can cover on foot or scooter, and how soon you can start knocking on doors.
+            Tell me which neighborhoods you can cover on foot or scooter, how soon you can start knocking on doors, and include any BTS samples you can share.
           </p>
         </div>
       </section>
