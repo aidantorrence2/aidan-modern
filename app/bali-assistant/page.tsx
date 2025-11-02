@@ -2,7 +2,7 @@ import BaliAssistantStickyCTA from '@/components/BaliAssistantStickyCTA'
 
 const heroHighlights = [
   { label: 'Pay', value: '50k–100k IDR per hour (experience-based)' },
-  { label: 'Schedule', value: '4–6 hour shifts · 5 days/week target' },
+  { label: 'Contract', value: 'Short-term contract · Details TBD' },
   { label: 'Where', value: 'Canggu + Seminyak + Ubud runs (in person)' }
 ]
 
