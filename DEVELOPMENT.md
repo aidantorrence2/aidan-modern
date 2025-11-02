@@ -1,41 +1,43 @@
 # Development Guide
 
 ## Prerequisites
-- Node.js 20.x (project tested with 20.11)
+- Node.js 20.x (project verified with 20.11)
 - npm 10+
-- Python 3.x (for the image processing helper)
+- Python 3.x for the optional image tooling (`npm run images`)
 
-## Initial Setup
-1. Install dependencies: `npm install`
-2. (Optional) Generate optimized image assets: `npm run images`
-   - Source folder defaults to `/Users/aidantorrence/Documents/selected`
-   - Output manifests and thumbnails land in `public/images/{large,thumbs}`
-
-## Running the App
-- Start the dev server: `npm run dev`
-  - Server runs on http://localhost:5173
-  - To background the server from this CLI: `npm run dev >/tmp/aidan-modern-dev.log 2>&1 & echo $!`
-- Production build: `npm run build`
-- Serve the production build locally: `npm run start`
+## Setup & Common Commands
+- Install deps: `npm install`
+- Start dev server (http://localhost:5173):
+  - Foreground: `npm run dev`
+  - Background from this CLI: `npm run dev >/tmp/aidan-modern-dev.log 2>&1 & echo $!`
+- Build for production: `npm run build`
+- Serve built site: `npm run start`
+- Optimise images from the default source folder: `npm run images`
 
 ## Testing & Quality
-- Lint the project: `npm run lint`
-  - Current codebase includes pre-existing `react/no-unescaped-entities` warnings on legacy location pages. Address or temporarily disable if they block your workflow.
-- No other automated tests are configured.
+- Lint: `npm run lint`
+  - Known issue: legacy travel promo pages still trigger `react/no-unescaped-entities` until their copy is entity-escaped.
+- No other automated tests are configured; manual review is recommended after major UI edits.
 
-## Architecture Notes
-- Next.js 14 app-router project (`app/` directory) with TypeScript and TailwindCSS.
-- Global layout and shared UI live in `app/layout.tsx`, `app/globals.css`, and `components/`.
-- Gallery images are generated via `create-og-image.py` and `tools/process_images.py`.
-- Sticky call-to-action components surface in location-specific landing pages for conversion tracking.
+## Architecture Overview
+- Next.js 14 App Router (`app/` directory) with TypeScript and TailwindCSS.
+- Global layout + scripts: `app/layout.tsx`, typography/utilities: `app/globals.css`.
+- Shared UI lives in `components/` (header, footer, gallery, lightbox, sticky CTAs).
+- Campaign/landing experiences are co-located in `app/<route>/page.tsx`.
+- Meta Pixel support is gated by `NEXT_PUBLIC_META_PIXEL_ID` environment variable.
 
-## Key Paths
-- `app/page.tsx` – homepage hero + gallery pipeline.
-- `app/bali-assistant/page.tsx` – creative assistant landing page (added in this iteration).
-- `components/` – reusable UI (hero, CTAs, gallery, lightbox, etc.).
-- `data/` – structured content used across pages.
+## Key Routes (Nov 2025)
+- `/` – portfolio home and gallery.
+- `/bali-assistant` – hourly on-ground assistant role (50k–100k IDR/hr) focused on in-person outreach and BTS capture.
+- `/collaborators` – brand/model collaboration overview (ensure nav link stays in sync).
+- `/about`, `/book`, `/shoots/[slug]` – supporting storytelling + booking flows.
 
-## Common Issues & Gotchas
-- Running `npm run lint` currently surfaces `react/no-unescaped-entities` on legacy travel promos; sanitize copy with HTML entities before shipping.
-- `npm run images` expects the source folder above; override the path when running against different photo sets.
-- Meta Pixel tracking depends on `NEXT_PUBLIC_META_PIXEL_ID`; unset by default in local development.
+## Daily Ops Checklist for Campaign Pages
+- Confirm CTA phone/email destinations when duplicating sticky bars.
+- If a new page is created, add it to navigation via `components/Header.tsx` when appropriate.
+- Map any new Tailwind utility usage to files included in `tailwind.config.ts#content`.
+
+## Common Issues & Fixes
+- **Lint failures**: escape `'`/`"` in JSX strings (`&apos;`, `&quot;`) before shipping.
+- **Slow image loads**: rerun `npm run images` to generate thumbnails/manifest and ensure new photos land under `public/images`.
+- **Dev server port conflicts**: override with `npm run dev -- -p 3000` or stop existing process (e.g., `kill <pid>` from `/tmp/aidan-modern-dev.log`).
