@@ -25,6 +25,10 @@ export default function Gallery(){
             const imageSizes = isLandscape
               ? '(max-width: 768px) 100vw, (max-width: 1200px) 66vw, 50vw'
               : '(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
+            const mobileAspectClass = isLandscape ? 'aspect-[4/3]' : 'aspect-[3/4]'
+            const desktopAspectClass = isLandscape ? 'sm:aspect-auto sm:h-auto' : 'sm:aspect-[4/5]'
+            const wrapperClass = `relative overflow-hidden ${mobileAspectClass} ${desktopAspectClass}`
+            const imageHeightClass = isLandscape ? 'h-full sm:h-auto' : 'h-full'
             const galleryImages = shoot.gallery
             const previewTiles = galleryImages.slice(0,4)
             const overflowCount = galleryImages.length - previewTiles.length
@@ -32,12 +36,12 @@ export default function Gallery(){
 
             return (
               <Link key={shoot.slug} href={`/shoots/${shoot.slug}`} className={cardClass}>
-                <div className="relative aspect-[3/4] sm:aspect-[4/5] overflow-hidden">
+                <div className={wrapperClass}>
                   <img
                     loading="lazy"
                     alt={`${shoot.title} photo by Aidan Torrence`}
                     src={`/images/thumbs/${shoot.cover}.jpg`}
-                    className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.04]"
+                    className={`${imageHeightClass} w-full object-cover transition-transform duration-300 group-hover:scale-[1.04]`}
                     srcSet={`/images/thumbs/${shoot.cover}.jpg 600w, /images/large/${shoot.cover}.jpg 1600w`}
                     sizes={imageSizes}
                     onLoad={(event) => {
