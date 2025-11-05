@@ -10,6 +10,32 @@ export type Shoot = {
 
 export const shoots: Shoot[] = [
   {
+    slug: 'merasa-jewelry',
+    title: 'Merasa Jewelry',
+    firstName: 'Merasa',
+    location: 'Bali, Indonesia',
+    story: 'Campaign lookbook for Merasa Jewelry — luminous portraits pairing precious metals with Bali light, shot on 35mm film.',
+    cover: 'merasa-jewelry-01',
+    gallery: [
+      'merasa-jewelry-01',
+      'merasa-jewelry-02',
+      'merasa-jewelry-03',
+      'merasa-jewelry-04',
+      'merasa-jewelry-05',
+      'merasa-jewelry-06',
+      'merasa-jewelry-07',
+      'merasa-jewelry-08',
+      'merasa-jewelry-09',
+      'merasa-jewelry-10',
+      'merasa-jewelry-11',
+      'merasa-jewelry-12',
+      'merasa-jewelry-13',
+      'merasa-jewelry-14',
+      'merasa-jewelry-15',
+      'merasa-jewelry-16'
+    ]
+  },
+  {
     slug: 'althea',
     title: 'Althea on Film',
     firstName: 'Althea',
