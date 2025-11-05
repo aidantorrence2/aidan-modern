@@ -31,7 +31,7 @@ export default function ShootPage({ params }: Props){
                     loading="lazy"
                     alt={`${shoot.title} photo by Aidan Torrence`}
                     src={`/images/large/${image}.jpg`}
-                    className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
+                    className="w-full h-auto object-cover transition-transform duration-300 group-hover:scale-[1.01]"
                   />
                 </a>
               ))}
