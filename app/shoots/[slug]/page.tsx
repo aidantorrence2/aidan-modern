@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation'
-import Link from 'next/link'
 import { shoots } from '@/data/shoots'
 import StickyCTA from '@/components/StickyCTA'
+import ShootGallery from '@/components/ShootGallery'
 
 type Props = { params: { slug: string } }
 
@@ -24,18 +24,7 @@ export default function ShootPage({ params }: Props){
             <p className="text-[0.65rem] font-semibold uppercase tracking-[0.32em] text-neutral-500 sm:text-xs">{shoot.location}</p>
           </div>
           <section className="mt-4 sm:mt-6" data-lightbox>
-            <div className="grid gap-4 sm:grid-cols-2">
-              {shoot.gallery.map(image => (
-                <a key={image} href={`/images/large/${image}.jpg`} className="group overflow-hidden border border-neutral-200 bg-white/60">
-                  <img
-                    loading="lazy"
-                    alt={`${shoot.title} photo by Aidan Torrence`}
-                    src={`/images/large/${image}.jpg`}
-                    className="w-full h-auto transition-transform duration-300 group-hover:scale-[1.01]"
-                  />
-                </a>
-              ))}
-            </div>
+            <ShootGallery title={shoot.title} gallery={shoot.gallery} />
           </section>
         </section>
       </main>
