@@ -28,8 +28,6 @@
 
 ## Key Routes (Nov 2025)
 - `/` – portfolio home and gallery.
-- `/bali-assistant` – hourly on-ground assistant role (50k–100k IDR/hr) focused on in-person outreach and BTS capture.
-- `/collaborators` – brand/model collaboration overview (ensure nav link stays in sync).
 - `/about`, `/book`, `/shoots/[slug]` – supporting storytelling + booking flows.
 
 ## Daily Ops Checklist for Campaign Pages
