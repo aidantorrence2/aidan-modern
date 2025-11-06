@@ -12,7 +12,7 @@ export const shoots: Shoot[] = [
   {
     slug: 'merasa-jewelry',
     title: 'Merasa Jewelry',
-    firstName: 'Merasa',
+    firstName: 'Merasa Jewelry',
     location: 'Bali, Indonesia',
     story: 'Campaign lookbook for Merasa Jewelry — luminous portraits pairing precious metals with Bali light, shot on 35mm film.',
     cover: 'merasa-jewelry-01',
