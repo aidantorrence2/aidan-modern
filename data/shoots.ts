@@ -108,15 +108,6 @@ export const shoots: Shoot[] = [
     gallery: ['aidanto-r2-009-3', 'aidanto-r2-011-4', 'aidanto-r2-013-5', 'aidanto-r2-015-6', 'aidanto-r2-019-8', 'aidanto-r2-023-10', 'aidanto-r2-035-16', 'aidanto-r2-037-17', 'aidanto-r2-039-18', 'aidanto-r2-043-20-1', 'aidanto-r4-019-8', 'aidanto-r4-021-9', 'aidanto-r4-027-12', 'aidanto-r4-043-20', 'aidanto-r4-045-21', 'aidanto-r4-047-22', 'aidanto-r4-051-24', 'aidanto-r4-053-25', 'aidanto-r4-059-28', 'aidanto-r4-061-29', 'aidanto-r4-063-30', 'aidanto-r4-065-31', 'aidanto-r4-069-33', 'aidanto-r4-071-34', 'aidanto-r4-077-37']
   },
   {
-    slug: 'kawtar',
-    title: 'Kawtar on Film',
-    firstName: 'Kawtar',
-    location: 'Barcelona, Spain',
-    story: 'Film portraits with Kawtar — relaxed, honest, and cinematic. Shot entirely on 35mm film.',
-    cover: '000001-11',
-    gallery: ['000001-11', '000010-13', '000013-13', '000015-3', '000022-3', '000023-3']
-  },
-  {
     slug: 'kiki',
     title: 'Kiki on Film',
     firstName: 'Kiki',
