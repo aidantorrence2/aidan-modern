@@ -221,7 +221,7 @@ export const shoots: Shoot[] = [
     firstName: 'Sumika',
     location: 'Tokyo, Japan',
     story: 'Film portraits with Sumika — relaxed, honest, and cinematic. Shot entirely on 35mm film.',
-    cover: '000049700023',
+    cover: '000049740018',
     gallery: ['000049690025', '000049690034', '000049690037', '000049700023', '000049740006', '000049740008', '000049740012', '000049740015', '000049740018', '000049740020', '000049740021', '000049740022', '000049740023', '000049740024', '000049740025', '000049740026']
   },
   {
