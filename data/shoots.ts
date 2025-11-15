@@ -36,24 +36,6 @@ export const shoots: Shoot[] = [
     ]
   },
   {
-    slug: 'althea',
-    title: 'Althea on Film',
-    firstName: 'Althea',
-    location: 'Bali, Indonesia',
-    story: 'Film portraits with Althea — relaxed, honest, and cinematic. Shot entirely on 35mm film.',
-    cover: '000020-2',
-    gallery: ['000020-2', '000021-2', '000022-2', '000023-2', '000024-2', '000025-2', '000026']
-  },
-  {
-    slug: 'pharima',
-    title: 'Pharima on Film',
-    firstName: 'Pharima',
-    location: 'Bangkok, Thailand',
-    story: 'Film portraits with Pharima — relaxed, honest, and cinematic. Shot entirely on 35mm film.',
-    cover: '000046-4',
-    gallery: ['000041-4', '000046-4', '000048-5', '000050-4']
-  },
-  {
     slug: 'daniela',
     title: 'Daniela on Film',
     firstName: 'Daniela',
@@ -259,5 +241,23 @@ export const shoots: Shoot[] = [
     story: 'Film portraits with Yana — relaxed, honest, and cinematic. Shot entirely on 35mm film.',
     cover: '000019-7',
     gallery: ['000019-7', '000020-7', '000025-7', '000033-7', '000039-7']
+  },
+  {
+    slug: 'althea',
+    title: 'Althea on Film',
+    firstName: 'Althea',
+    location: 'Bali, Indonesia',
+    story: 'Film portraits with Althea — relaxed, honest, and cinematic. Shot entirely on 35mm film.',
+    cover: '000020-2',
+    gallery: ['000020-2', '000021-2', '000022-2', '000023-2', '000024-2', '000025-2', '000026']
+  },
+  {
+    slug: 'pharima',
+    title: 'Pharima on Film',
+    firstName: 'Pharima',
+    location: 'Bangkok, Thailand',
+    story: 'Film portraits with Pharima — relaxed, honest, and cinematic. Shot entirely on 35mm film.',
+    cover: '000046-4',
+    gallery: ['000041-4', '000046-4', '000048-5', '000050-4']
   },
 ]
