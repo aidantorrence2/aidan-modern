@@ -144,6 +144,15 @@ export const shoots: Shoot[] = [
     gallery: ['000008-11', '000024-7', '000026-7', '000028-6', '000030-6', '000031-6', '000035-6', '000039-6', '000042-3']
   },
   {
+    slug: 'mary',
+    title: 'Mary on Film',
+    firstName: 'Mary',
+    location: 'Warsaw, Poland',
+    story: 'Film portraits with Mary — relaxed, honest, and cinematic. Shot entirely on 35mm film.',
+    cover: 'bc-0829-aidantorrence0488-015',
+    gallery: ['000012-3', '000016-3', '000019-3', '000038-3', '000039-3', 'bc-0829-aidantorrence0488-015', 'bc-0829-aidantorrence0488-016', 'bc-0829-aidantorrence0488-019']
+  },
+  {
     slug: 'minka',
     title: 'Minka on Film',
     firstName: 'Minka',
