@@ -144,15 +144,6 @@ export const shoots: Shoot[] = [
     gallery: ['000038-10', '000039-9', '000040-10', '000040-9', '000041-10', '000043-9', '000044-10', '000044-9', '000046-9', '000047-10', '000056-10', '000060-10', '000063', '000064', '000065', '000066', '000067-9', '000070-8', '000070', '000073']
   },
   {
-    slug: 'leo-rose',
-    title: 'Leo Rose on Film',
-    firstName: 'Leo Rose',
-    location: 'Okinawa, Japan',
-    story: 'Film portraits with Leo Rose — relaxed, honest, and cinematic. Shot entirely on 35mm film.',
-    cover: '0531358-0012',
-    gallery: ['0531358-0012', '0531358-0026', '0531358-0029', '0604804-0043', '0604804-0045', '0604804-0050', '0604804-0053', '0604804-0055', '0604804-0078']
-  },
-  {
     slug: 'linda',
     title: 'Linda on Film',
     firstName: 'Linda',
