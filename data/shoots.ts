@@ -15,7 +15,7 @@ export const shoots: Shoot[] = [
     firstName: 'Merasa Jewelry',
     location: 'Bali, Indonesia',
     story: 'Campaign lookbook for Merasa Jewelry — luminous portraits pairing precious metals with Bali light, shot on 35mm film.',
-    cover: 'merasa-jewelry-03',
+    cover: 'merasa-jewelry-11',
     gallery: [
       'merasa-jewelry-01',
       'merasa-jewelry-02',
