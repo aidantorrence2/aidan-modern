@@ -4,18 +4,55 @@ import { useState } from 'react'
 
 const INSTAGRAM_HANDLE = 'madebyaidan'
 const WHATSAPP_NUMBER = '491758966210'
-const WHATSAPP_MESSAGE = 'Hi Aidan - I came from the Manila photo sessions page and want to check availability.'
+const WHATSAPP_MESSAGE_BASE = 'Hi Aidan - I came from the Manila photo sessions page and want to check availability.'
+
+const GOAL_OPTIONS = [
+  { id: 'profile', label: 'Profile Upgrade', message: 'I want stronger profile photos.' },
+  { id: 'creator', label: 'Creator Content', message: 'I need creator-style content I can post right away.' },
+  { id: 'brand', label: 'Personal Brand', message: 'I need polished personal brand photos.' }
+] as const
+
+const TIMELINE_OPTIONS = [
+  { id: 'week', label: 'This Week', message: 'I can shoot this week.' },
+  { id: 'month', label: 'This Month', message: 'I can shoot this month.' },
+  { id: 'later', label: 'Planning Ahead', message: 'I am planning ahead and checking options.' }
+] as const
+
+type GoalOption = (typeof GOAL_OPTIONS)[number]
+type TimelineOption = (typeof TIMELINE_OPTIONS)[number]
 
 export default function ManilaCTA(){
   const [isSubmitting, setIsSubmitting] = useState(false)
+  const [selectedGoal, setSelectedGoal] = useState<GoalOption['id']>('profile')
+  const [selectedTimeline, setSelectedTimeline] = useState<TimelineOption['id']>('month')
+  const [copiedMessage, setCopiedMessage] = useState(false)
 
-  function trackLead(contentCategory: string){
+  function trackLead(contentCategory: string, goal: string, timeline: string){
     if (typeof window !== 'undefined' && (window as any).fbq) {
       ;(window as any).fbq('track', 'Lead', {
         content_name: 'Manila Photo Sessions',
-        content_category: contentCategory
+        content_category: contentCategory,
+        goal,
+        timeline
       })
     }
+  }
+
+  function trackQualifier(type: 'goal' | 'timeline', value: string){
+    if (typeof window !== 'undefined' && (window as any).fbq) {
+      ;(window as any).fbq('trackCustom', 'ManilaQualifierSelected', {
+        qualifier_type: type,
+        qualifier_value: value
+      })
+    }
+  }
+
+  function getLeadContext(){
+    const goal = GOAL_OPTIONS.find(option => option.id === selectedGoal) || GOAL_OPTIONS[0]
+    const timeline = TIMELINE_OPTIONS.find(option => option.id === selectedTimeline) || TIMELINE_OPTIONS[1]
+    const message = `${WHATSAPP_MESSAGE_BASE}\n\n${goal.message}\n${timeline.message}\nPreferred location in Manila: `
+
+    return { goal, timeline, message }
   }
 
   function openExternal(url: string){
@@ -30,7 +67,15 @@ export default function ManilaCTA(){
     event.preventDefault()
     if (isSubmitting) return
 
-    trackLead('Instagram Lead')
+    const { goal, timeline, message } = getLeadContext()
+    trackLead('Instagram Lead', goal.id, timeline.id)
+    if (typeof navigator !== 'undefined' && navigator.clipboard?.writeText) {
+      navigator.clipboard.writeText(message).then(() => {
+        setCopiedMessage(true)
+      }).catch(() => {
+        setCopiedMessage(false)
+      })
+    }
     openExternal(`https://ig.me/m/${INSTAGRAM_HANDLE}`)
   }
 
@@ -38,13 +83,64 @@ export default function ManilaCTA(){
     event.preventDefault()
     if (isSubmitting) return
 
-    trackLead('WhatsApp Lead')
-    const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`
+    const { goal, timeline, message } = getLeadContext()
+    trackLead('WhatsApp Lead', goal.id, timeline.id)
+    const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`
     openExternal(whatsappUrl)
   }
 
   return (
     <div className="mt-6 space-y-3">
+      <div className="space-y-3 rounded-xl border border-neutral-200 bg-white p-4">
+        <div>
+          <p className="text-[0.7rem] font-semibold uppercase tracking-[0.2em] text-neutral-500">What are you booking for?</p>
+          <div className="mt-2 flex flex-wrap gap-2">
+            {GOAL_OPTIONS.map(option => (
+              <button
+                key={option.id}
+                type="button"
+                onClick={() => {
+                  setSelectedGoal(option.id)
+                  trackQualifier('goal', option.id)
+                }}
+                className={`rounded-full border px-3 py-1.5 text-xs font-semibold transition ${
+                  selectedGoal === option.id
+                    ? 'border-neutral-900 bg-neutral-900 text-white'
+                    : 'border-neutral-300 bg-white text-neutral-700 hover:border-neutral-500'
+                }`}
+                data-cta={`manila-goal-${option.id}`}
+              >
+                {option.label}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <div>
+          <p className="text-[0.7rem] font-semibold uppercase tracking-[0.2em] text-neutral-500">When do you want to shoot?</p>
+          <div className="mt-2 flex flex-wrap gap-2">
+            {TIMELINE_OPTIONS.map(option => (
+              <button
+                key={option.id}
+                type="button"
+                onClick={() => {
+                  setSelectedTimeline(option.id)
+                  trackQualifier('timeline', option.id)
+                }}
+                className={`rounded-full border px-3 py-1.5 text-xs font-semibold transition ${
+                  selectedTimeline === option.id
+                    ? 'border-neutral-900 bg-neutral-900 text-white'
+                    : 'border-neutral-300 bg-white text-neutral-700 hover:border-neutral-500'
+                }`}
+                data-cta={`manila-timeline-${option.id}`}
+              >
+                {option.label}
+              </button>
+            ))}
+          </div>
+        </div>
+      </div>
+
       <button
         onClick={handleInstagram}
         className="btn w-full gap-2 rounded-xl bg-neutral-900 px-5 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-neutral-800 sm:text-base"
@@ -56,6 +152,12 @@ export default function ManilaCTA(){
         </svg>
         <span>{isSubmitting ? 'Opening...' : 'Check Manila Availability on Instagram'}</span>
       </button>
+
+      <p className="text-xs text-neutral-600">
+        {copiedMessage
+          ? 'A ready message was copied. Paste it in Instagram DM so I can send matching slots faster.'
+          : 'Tap once to open Instagram DM. I can usually send slot options within a few hours.'}
+      </p>
 
       <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs text-neutral-600">
         <button
@@ -74,7 +176,7 @@ export default function ManilaCTA(){
           Email instead
         </a>
         <span className="rounded-full border border-neutral-300/80 bg-white px-2.5 py-1 font-medium text-neutral-500">
-          Avg reply: under 1 hour
+          Fast response on active days
         </span>
       </div>
     </div>

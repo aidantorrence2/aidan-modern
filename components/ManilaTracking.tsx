@@ -4,7 +4,8 @@ import { useEffect, useRef } from 'react'
 
 export default function ManilaTracking(){
   const trackedViewRef = useRef(false)
-  const trackedScrollRef = useRef(false)
+  const trackedScrollDepthsRef = useRef<Set<number>>(new Set())
+  const trackedExitRef = useRef(false)
 
   useEffect(() => {
     let attempts = 0
@@ -30,29 +31,49 @@ export default function ManilaTracking(){
     }, 300)
 
     const handleScroll = () => {
-      if (trackedScrollRef.current) return
-
       const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight
       if (scrollableHeight <= 0) return
 
       const scrollRatio = window.scrollY / scrollableHeight
-      if (scrollRatio >= 0.5) {
-        if ((window as any).fbq) {
-          ;(window as any).fbq('trackCustom', 'LandingScroll50', {
-            content_name: 'Manila Photo Sessions Landing'
-          })
+      const checkpoints = [25, 50, 75]
+
+      checkpoints.forEach(depth => {
+        const threshold = depth / 100
+        if (scrollRatio >= threshold && !trackedScrollDepthsRef.current.has(depth)) {
+          if ((window as any).fbq) {
+            ;(window as any).fbq('trackCustom', 'LandingScrollDepth', {
+              content_name: 'Manila Photo Sessions Landing',
+              depth_percent: depth
+            })
+          }
+          trackedScrollDepthsRef.current.add(depth)
         }
-        trackedScrollRef.current = true
+      })
+
+      if (trackedScrollDepthsRef.current.size === checkpoints.length) {
         window.removeEventListener('scroll', handleScroll)
       }
     }
 
+    const handleVisibility = () => {
+      if (trackedExitRef.current) return
+      if (document.visibilityState !== 'hidden') return
+      if ((window as any).fbq) {
+        ;(window as any).fbq('trackCustom', 'LandingEngaged', {
+          content_name: 'Manila Photo Sessions Landing'
+        })
+        trackedExitRef.current = true
+      }
+    }
+
     window.addEventListener('scroll', handleScroll, { passive: true })
+    window.addEventListener('visibilitychange', handleVisibility)
     handleScroll()
 
     return () => {
       window.clearInterval(timer)
       window.removeEventListener('scroll', handleScroll)
+      window.removeEventListener('visibilitychange', handleVisibility)
     }
   }, [])
 
