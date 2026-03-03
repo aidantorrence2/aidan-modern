@@ -29,6 +29,10 @@ const process = [
 
 const faqs = [
   {
+    q: 'How much is it?',
+    a: 'PHP 7,990 for outdoor sessions, PHP 11,990 for studio sessions.'
+  },
+  {
     q: 'Do I need modeling experience?',
     a: 'No. I direct you throughout the session so you do not need to know how to pose.'
   },
@@ -71,6 +75,8 @@ export default function ManilaPage(){
 
             <div className="flex flex-wrap gap-2 text-[0.66rem] font-semibold uppercase tracking-[0.2em] text-neutral-600">
               <span className="rounded-full border border-neutral-300 bg-white px-3 py-1">Limited monthly slots</span>
+              <span className="rounded-full border border-neutral-300 bg-white px-3 py-1">PHP 7,990 Outdoor</span>
+              <span className="rounded-full border border-neutral-300 bg-white px-3 py-1">PHP 11,990 Studio</span>
               <span className="rounded-full border border-neutral-300 bg-white px-3 py-1">Guided posing</span>
               <span className="rounded-full border border-neutral-300 bg-white px-3 py-1">7-day delivery</span>
             </div>
@@ -80,6 +86,7 @@ export default function ManilaPage(){
               <p className="mt-2 text-sm text-neutral-700">
                 Start with one message and I will send available times.
               </p>
+              <p className="mt-2 text-sm font-semibold text-neutral-900">Pricing: PHP 7,990 for outdoor / PHP 11,990 for studio</p>
               <ManilaCTA />
             </div>
 
@@ -163,6 +170,7 @@ export default function ManilaPage(){
             <p className="mt-3 max-w-2xl text-sm text-neutral-700 sm:text-base">
               Message me and I will reply with available schedule options.
             </p>
+            <p className="mt-2 text-sm font-semibold text-neutral-900">PHP 7,990 for outdoor / PHP 11,990 for studio</p>
             <div className="max-w-2xl">
               <ManilaCTA />
             </div>
