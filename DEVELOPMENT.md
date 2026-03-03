@@ -51,3 +51,16 @@
   - `tools/render_manila_video_ads.sh`
 - Gotcha:
   - If overlays/captions fail with `No such filter: drawtext`, the shell is using plain `ffmpeg` without libfreetype/libass support.
+
+## Video Ad Rendering V2 (Rebuild)
+- Rendering script: `tools/render_manila_video_ads_v2.sh`
+- Output folder: `marketing/manila-video-ads-v2/videos`
+- Inputs:
+  - Moving source clips from `/Users/aidantorrence/Downloads/reel-VEED*.mp4`
+  - Subtitle templates in `marketing/manila-video-ads-v2/subtitles`
+- V2 pipeline characteristics:
+  - 8-segment fast-cut assembly per ad (18s total)
+  - Voiceover generation via macOS `say` + dynamic ducking
+  - Burned-in hooks, CTA strip, and subtitles
+- Regenerate:
+  - `tools/render_manila_video_ads_v2.sh`
