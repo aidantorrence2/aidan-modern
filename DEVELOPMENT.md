@@ -40,3 +40,14 @@
 - **Lint failures**: escape `'`/`"` in JSX strings (`&apos;`, `&quot;`) before shipping.
 - **Slow image loads**: rerun `npm run images` to generate thumbnails/manifest and ensure new photos land under `public/images`.
 - **Dev server port conflicts**: override with `npm run dev -- -p 3000` or stop existing process (e.g., `kill <pid>` from `/tmp/aidan-modern-dev.log`).
+
+## Video Ad Rendering (Manila Campaign)
+- Rendering script: `tools/render_manila_video_ads.sh`
+- Output folder: `marketing/manila-video-ads/videos`
+- Requires `ffmpeg-full` (not plain `ffmpeg`) for `drawtext` and `subtitles` filters.
+  - Install: `brew install ffmpeg-full`
+  - Binary used by script when available: `/opt/homebrew/opt/ffmpeg-full/bin/ffmpeg`
+- Re-render command:
+  - `tools/render_manila_video_ads.sh`
+- Gotcha:
+  - If overlays/captions fail with `No such filter: drawtext`, the shell is using plain `ffmpeg` without libfreetype/libass support.
