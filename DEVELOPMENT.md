@@ -29,7 +29,7 @@
 ## Key Routes (Nov 2025)
 - `/` – portfolio home and gallery.
 - `/about`, `/book`, `/shoots/[slug]` – supporting storytelling + booking flows.
-- `/manila` – Instagram ads landing page for Manila sessions, with IG-first CTA flow and Meta Pixel landing interactions (`ViewContent`, `LandingScroll50`, lead clicks).
+- `/manila` – Instagram ads landing page for Manila sessions with a qualifier-first CTA flow (goal + timeline chips, DM helper copy) and Meta Pixel interactions (`ViewContent`, `LandingScrollDepth`, qualifier clicks, lead clicks).
 
 ## Daily Ops Checklist for Campaign Pages
 - Confirm CTA phone/email destinations when duplicating sticky bars.
