@@ -113,11 +113,11 @@ export default function ManilaPage(){
             </Link>
           </div>
 
-          <div className="order-1 overflow-hidden rounded-3xl border border-neutral-200 bg-neutral-100 shadow-[0_20px_45px_-30px_rgba(0,0,0,0.45)] lg:order-2">
+          <div className="order-1 overflow-hidden rounded-3xl border border-neutral-200 bg-neutral-100 shadow-[0_20px_45px_-30px_rgba(0,0,0,0.45)] lg:order-2 lg:self-start">
             <img
               src={`/images/thumbs/${heroImage}.jpg`}
               alt="Manila editorial portrait"
-              className="h-[52vh] min-h-[320px] w-full object-cover sm:h-[560px] lg:h-full"
+              className="h-[34vh] min-h-[220px] max-h-[320px] w-full object-cover sm:h-[400px] sm:max-h-[400px] lg:h-[520px] lg:max-h-[520px]"
               loading="lazy"
             />
           </div>
