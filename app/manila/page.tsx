@@ -3,7 +3,7 @@ import ManilaCTA from '@/components/ManilaCTA'
 import ManilaStickyCTA from '@/components/ManilaStickyCTA'
 import ManilaTracking from '@/components/ManilaTracking'
 
-const heroImage = '000049660027'
+const heroImage = '000048780013'
 
 const galleryImages = [
   '000048780009',
