@@ -14,6 +14,21 @@ const galleryImages = [
   'aidanto-r2-023-10'
 ]
 
+const goodFor = [
+  {
+    title: 'First-time shoots',
+    body: 'Never done a photoshoot before? Perfect. I guide everything so it feels easy and natural.'
+  },
+  {
+    title: 'Life moments',
+    body: 'Great for birthdays, confidence boosts, profile refreshes, or just doing something fun for yourself.'
+  },
+  {
+    title: 'Couples or friends',
+    body: 'You can come solo or bring someone with you and still get strong individual portraits.'
+  }
+]
+
 const deliverables = [
   '60 to 90 minute directed session in Manila',
   '20+ edited photos ready for IG, dating, and personal brand use',
@@ -22,9 +37,9 @@ const deliverables = [
 ]
 
 const process = [
-  'Message me on Instagram',
-  'Choose time and location',
-  'Shoot and receive your edited gallery'
+  'Send a quick Instagram message',
+  'Pick your date and vibe',
+  'Show up and have fun while we shoot'
 ]
 
 const faqs = [
@@ -35,6 +50,10 @@ const faqs = [
   {
     q: 'Do I need modeling experience?',
     a: 'No. I direct you throughout the session so you do not need to know how to pose.'
+  },
+  {
+    q: 'Can I bring a friend?',
+    a: 'Yes. You can bring a friend for support, and we can also take a few photos together.'
   },
   {
     q: 'Where do you shoot in Manila?',
@@ -66,10 +85,10 @@ export default function ManilaPage(){
 
             <div className="space-y-3">
               <h1 className="font-display text-4xl font-semibold leading-[1.02] text-neutral-900 sm:text-6xl">
-                Get photos that make people stop scrolling.
+                Fun Manila photo sessions for regular people.
               </h1>
               <p className="max-w-xl text-base text-neutral-700 sm:text-lg">
-                Clean, editorial portraits with full direction so you look confident and natural on camera.
+                You do not need modeling experience. I guide you the whole time so you look natural, confident, and actually like yourself.
               </p>
             </div>
 
@@ -77,14 +96,14 @@ export default function ManilaPage(){
               <span className="rounded-full border border-neutral-300 bg-white px-3 py-1">Limited monthly slots</span>
               <span className="rounded-full border border-neutral-300 bg-white px-3 py-1">PHP 7,990 Outdoor</span>
               <span className="rounded-full border border-neutral-300 bg-white px-3 py-1">PHP 11,990 Studio</span>
+              <span className="rounded-full border border-neutral-300 bg-white px-3 py-1">No modeling needed</span>
               <span className="rounded-full border border-neutral-300 bg-white px-3 py-1">Guided posing</span>
-              <span className="rounded-full border border-neutral-300 bg-white px-3 py-1">7-day delivery</span>
             </div>
 
             <div className="rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm">
               <h2 className="text-lg font-semibold text-neutral-900">Book your Manila session</h2>
               <p className="mt-2 text-sm text-neutral-700">
-                Start with one message and I will send available times.
+                Start with one message and I will send available times plus location ideas.
               </p>
               <p className="mt-2 text-sm font-semibold text-neutral-900">Pricing: PHP 7,990 for outdoor / PHP 11,990 for studio</p>
               <ManilaCTA />
@@ -112,7 +131,7 @@ export default function ManilaPage(){
 
       <section className="bg-white py-12 sm:py-14">
         <div className="container space-y-7">
-          <h2 className="font-display text-3xl font-semibold text-neutral-900 sm:text-4xl">Recent Portrait Work</h2>
+          <h2 className="font-display text-3xl font-semibold text-neutral-900 sm:text-4xl">Photos from Real Sessions</h2>
           <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {galleryImages.map(id => (
               <div key={id} className="overflow-hidden rounded-2xl border border-neutral-200 bg-neutral-100">
@@ -130,6 +149,15 @@ export default function ManilaPage(){
 
       <section className="bg-paper py-12 pb-36 sm:py-16 sm:pb-40">
         <div className="container space-y-8">
+          <div className="grid gap-4 lg:grid-cols-3">
+            {goodFor.map(item => (
+              <article key={item.title} className="rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm">
+                <h3 className="text-lg font-semibold text-neutral-900">{item.title}</h3>
+                <p className="mt-2 text-sm text-neutral-700">{item.body}</p>
+              </article>
+            ))}
+          </div>
+
           <div className="grid gap-6 lg:grid-cols-[1fr_1fr]">
             <article className="rounded-3xl border border-neutral-200 bg-white p-7 shadow-sm">
               <h2 className="text-2xl font-semibold text-neutral-900 sm:text-3xl">What you get</h2>
@@ -147,7 +175,7 @@ export default function ManilaPage(){
                   <li key={step}>{`${index + 1}. ${step}`}</li>
                 ))}
               </ol>
-              <p className="mt-4 text-xs text-neutral-500">Simple flow, no long forms.</p>
+              <p className="mt-4 text-xs text-neutral-500">Simple flow, no long forms, no pressure.</p>
             </article>
           </div>
 
@@ -165,10 +193,10 @@ export default function ManilaPage(){
 
           <article className="rounded-3xl border border-accent/35 bg-accent/10 p-8">
             <h2 className="font-display text-3xl font-semibold text-neutral-900 sm:text-4xl">
-              Ready to lock a Manila slot?
+              Ready for a session that actually feels fun?
             </h2>
             <p className="mt-3 max-w-2xl text-sm text-neutral-700 sm:text-base">
-              Message me and I will reply with available schedule options.
+              Send a quick message and I will reply with available schedule options.
             </p>
             <p className="mt-2 text-sm font-semibold text-neutral-900">PHP 7,990 for outdoor / PHP 11,990 for studio</p>
             <div className="max-w-2xl">

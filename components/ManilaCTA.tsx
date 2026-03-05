@@ -4,7 +4,7 @@ import { useState } from 'react'
 
 const INSTAGRAM_HANDLE = 'madebyaidan'
 const WHATSAPP_NUMBER = '491758966210'
-const WHATSAPP_MESSAGE = 'Hi Aidan - I came from your Manila page and want to book a photo session.'
+const WHATSAPP_MESSAGE = 'Hi Aidan - I came from your Manila page and want to book a fun photo session.'
 
 export default function ManilaCTA(){
   const [isOpening, setIsOpening] = useState(false)
@@ -48,7 +48,7 @@ export default function ManilaCTA(){
         data-cta="manila-instagram-primary"
         disabled={isOpening}
       >
-        {isOpening ? 'Opening...' : 'Book on Instagram DM'}
+        {isOpening ? 'Opening...' : 'Send a quick Instagram message'}
       </button>
 
       <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs text-neutral-600">
