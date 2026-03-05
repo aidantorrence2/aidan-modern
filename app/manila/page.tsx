@@ -37,8 +37,8 @@ const deliverables = [
 ]
 
 const process = [
-  'Send a quick Instagram message',
-  'Pick your date and vibe',
+  'Tap the booking button',
+  'Choose your preferred date and time',
   'Show up and have fun while we shoot'
 ]
 
@@ -61,7 +61,7 @@ const faqs = [
   },
   {
     q: 'How fast can we book?',
-    a: 'If a slot is open, we can usually confirm within the same day.'
+    a: 'You can book instantly through the calendar link if a slot is open.'
   }
 ]
 
@@ -103,7 +103,7 @@ export default function ManilaPage(){
             <div className="rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm">
               <h2 className="text-lg font-semibold text-neutral-900">Book your Manila session</h2>
               <p className="mt-2 text-sm text-neutral-700">
-                Start with one message and I will send available times plus location ideas.
+                Pick your slot directly through the booking link.
               </p>
               <p className="mt-2 text-sm font-semibold text-neutral-900">Pricing: PHP 2,990 for outdoor / PHP 5,990 for studio</p>
               <ManilaCTA />
@@ -196,7 +196,7 @@ export default function ManilaPage(){
               Ready for a session that actually feels fun?
             </h2>
             <p className="mt-3 max-w-2xl text-sm text-neutral-700 sm:text-base">
-              Send a quick message and I will reply with available schedule options.
+              Pick your slot now and we will lock it in right away.
             </p>
             <p className="mt-2 text-sm font-semibold text-neutral-900">PHP 2,990 for outdoor / PHP 5,990 for studio</p>
             <div className="max-w-2xl">
