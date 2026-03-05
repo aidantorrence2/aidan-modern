@@ -37,9 +37,9 @@ const deliverables = [
 ]
 
 const process = [
-  'Tap the booking button',
-  'Choose your preferred date and time',
-  'Show up and have fun while we shoot'
+  'Sign up to learn more and pick a time',
+  'Jump on a quick intro call to plan your shoot',
+  'Choose your package, then show up and have fun'
 ]
 
 const faqs = [
@@ -60,8 +60,8 @@ const faqs = [
     a: 'BGC, Makati, Intramuros, and nearby spots depending on the look you want.'
   },
   {
-    q: 'How fast can we book?',
-    a: 'You can book instantly through the calendar link if a slot is open.'
+    q: 'What happens on the intro call?',
+    a: 'It is a quick call to understand your vibe, answer questions, and recommend the best package/location before you book.'
   }
 ]
 
@@ -78,32 +78,27 @@ export default function ManilaPage(){
 
       <section className="bg-paper pb-14 pt-6 sm:pb-16 sm:pt-10">
         <div className="container grid items-center gap-8 lg:grid-cols-[1.05fr_0.95fr]">
-          <div className="space-y-6">
+          <div className="order-2 space-y-6 lg:order-1">
             <p className="inline-flex rounded-full border border-neutral-300 bg-white px-3 py-1 text-[0.68rem] font-semibold uppercase tracking-[0.2em] text-neutral-700">
               Manila Sessions
             </p>
 
             <div className="space-y-3">
               <h1 className="font-display text-4xl font-semibold leading-[1.02] text-neutral-900 sm:text-6xl">
-                Fun Manila photo sessions for regular people.
+                Get photos you&apos;ll actually want to post.
               </h1>
               <p className="max-w-xl text-base text-neutral-700 sm:text-lg">
-                You do not need modeling experience. I guide you the whole time so you look natural, confident, and actually like yourself.
+                No modeling experience needed. I guide you the whole time so your shoot feels fun, easy, and natural.
+              </p>
+              <p className="max-w-xl text-sm font-semibold text-neutral-800 sm:text-base">
+                Outdoor: PHP 2,990 | Studio: PHP 5,990
               </p>
             </div>
 
-            <div className="flex flex-wrap gap-2 text-[0.66rem] font-semibold uppercase tracking-[0.2em] text-neutral-600">
-              <span className="rounded-full border border-neutral-300 bg-white px-3 py-1">Limited monthly slots</span>
-              <span className="rounded-full border border-neutral-300 bg-white px-3 py-1">PHP 2,990 Outdoor</span>
-              <span className="rounded-full border border-neutral-300 bg-white px-3 py-1">PHP 5,990 Studio</span>
-              <span className="rounded-full border border-neutral-300 bg-white px-3 py-1">No modeling needed</span>
-              <span className="rounded-full border border-neutral-300 bg-white px-3 py-1">Guided posing</span>
-            </div>
-
             <div className="rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm">
-              <h2 className="text-lg font-semibold text-neutral-900">Book your Manila session</h2>
+              <h2 className="text-lg font-semibold text-neutral-900">Sign up to learn more</h2>
               <p className="mt-2 text-sm text-neutral-700">
-                Pick your slot directly through the booking link.
+                Pick a time for a quick intro call. We&apos;ll answer questions and help you choose your best session option.
               </p>
               <p className="mt-2 text-sm font-semibold text-neutral-900">Pricing: PHP 2,990 for outdoor / PHP 5,990 for studio</p>
               <ManilaCTA />
@@ -118,11 +113,11 @@ export default function ManilaPage(){
             </Link>
           </div>
 
-          <div className="overflow-hidden rounded-3xl border border-neutral-200 bg-neutral-100 shadow-[0_20px_45px_-30px_rgba(0,0,0,0.45)]">
+          <div className="order-1 overflow-hidden rounded-3xl border border-neutral-200 bg-neutral-100 shadow-[0_20px_45px_-30px_rgba(0,0,0,0.45)] lg:order-2">
             <img
               src={`/images/thumbs/${heroImage}.jpg`}
               alt="Manila editorial portrait"
-              className="h-full w-full object-cover"
+              className="h-[52vh] min-h-[320px] w-full object-cover sm:h-[560px] lg:h-full"
               loading="lazy"
             />
           </div>
@@ -193,10 +188,10 @@ export default function ManilaPage(){
 
           <article className="rounded-3xl border border-accent/35 bg-accent/10 p-8">
             <h2 className="font-display text-3xl font-semibold text-neutral-900 sm:text-4xl">
-              Ready for a session that actually feels fun?
+              Ready to see if this is the right fit?
             </h2>
             <p className="mt-3 max-w-2xl text-sm text-neutral-700 sm:text-base">
-              Pick your slot now and we will lock it in right away.
+              Sign up to learn more and choose a quick intro call slot. We&apos;ll keep it simple.
             </p>
             <p className="mt-2 text-sm font-semibold text-neutral-900">PHP 2,990 for outdoor / PHP 5,990 for studio</p>
             <div className="max-w-2xl">
