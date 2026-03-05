@@ -7,7 +7,7 @@ export default function ManilaCTA(){
     if (typeof window !== 'undefined' && (window as any).fbq) {
       ;(window as any).fbq('track', 'Lead', {
         content_name: 'Manila Photo Sessions',
-        content_category: 'Calendar Booking',
+        content_category: 'Intro Call Signup',
         source
       })
     }
@@ -21,13 +21,13 @@ export default function ManilaCTA(){
         rel="noreferrer"
         onClick={() => trackBookingClick('primary-cta')}
         className="btn w-full rounded-xl bg-neutral-900 px-5 py-3 text-center text-sm font-semibold text-white transition hover:bg-neutral-800 sm:text-base"
-        data-cta="manila-booking-primary"
+        data-cta="manila-learn-more-primary"
       >
-        Book your time slot now
+        Sign up to learn more
       </a>
 
       <p className="text-xs text-neutral-600">
-        Takes less than a minute. Pick your preferred date and time directly.
+        Takes less than a minute. Choose a time for a quick intro call.
       </p>
     </div>
   )
