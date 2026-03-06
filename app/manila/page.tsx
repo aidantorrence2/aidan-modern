@@ -3,15 +3,13 @@ import ManilaCTA from '@/components/ManilaCTA'
 import ManilaStickyCTA from '@/components/ManilaStickyCTA'
 import ManilaTracking from '@/components/ManilaTracking'
 
-const heroImage = '000048780013'
+const heroImage = 'manila-hero-dsc-0898'
 
 const galleryImages = [
-  '000048780009',
-  '000023580035',
-  '000032-8',
-  'aidantorre000579-000029',
-  '000024-7',
-  'aidanto-r2-023-10'
+  'manila-gallery-dsc-0075',
+  'manila-gallery-dsc-0130',
+  'manila-gallery-dsc-0911',
+  'manila-gallery-dsc-0190'
 ]
 
 const goodFor = [

@@ -40,6 +40,7 @@
 - **Lint failures**: escape `'`/`"` in JSX strings (`&apos;`, `&quot;`) before shipping.
 - **Slow image loads**: rerun `npm run images` to generate thumbnails/manifest and ensure new photos land under `public/images`.
 - **Dev server port conflicts**: override with `npm run dev -- -p 3000` or stop existing process (e.g., `kill <pid>` from `/tmp/aidan-modern-dev.log`).
+- **One-off landing page image swaps**: `tools/process_images.py` rewrites `public/images/manifest.json` from its source directory. For ad-hoc replacements on a single route, add resized files directly under `public/images/large` and `public/images/thumbs` with stable slugs instead of rerunning the full manifest pipeline.
 
 ## Video Ad Rendering (Manila Campaign)
 - Rendering script: `tools/render_manila_video_ads.sh`
