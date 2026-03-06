@@ -128,7 +128,7 @@ export default function ManilaPage(){
                 <img
                   src={`/images/thumbs/${id}.jpg`}
                   alt="Portrait sample"
-                  className="h-[260px] w-full object-cover"
+                  className="w-full"
                   loading="lazy"
                 />
               </div>
