@@ -113,7 +113,7 @@ export default function ManilaPage(){
             </Link>
           </div>
 
-          <div className="order-1 overflow-hidden rounded-3xl border border-neutral-200 bg-neutral-100 shadow-[0_20px_45px_-30px_rgba(0,0,0,0.45)] lg:order-2 lg:self-start">
+          <div className="order-1 overflow-hidden border border-neutral-200 bg-neutral-100 shadow-[0_20px_45px_-30px_rgba(0,0,0,0.45)] lg:order-2 lg:self-start">
             <img
               src={`/images/thumbs/${heroImage}.jpg`}
               alt="Manila editorial portrait"
@@ -129,7 +129,7 @@ export default function ManilaPage(){
           <h2 className="font-display text-3xl font-semibold text-neutral-900 sm:text-4xl">Photos from Real Sessions</h2>
           <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {galleryImages.map(id => (
-              <div key={id} className="overflow-hidden rounded-2xl border border-neutral-200 bg-neutral-100">
+              <div key={id} className="overflow-hidden border border-neutral-200 bg-neutral-100">
                 <img
                   src={`/images/thumbs/${id}.jpg`}
                   alt="Portrait sample"
