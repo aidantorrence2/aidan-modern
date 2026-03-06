@@ -88,9 +88,6 @@ export default function ManilaPage(){
               <p className="max-w-xl text-base text-neutral-700 sm:text-lg">
                 No modeling experience needed. I guide you the whole time so your shoot feels fun, easy, and natural.
               </p>
-              <p className="max-w-xl text-sm font-semibold text-neutral-800 sm:text-base">
-                Outdoor: PHP 2,990 | Studio: PHP 5,990
-              </p>
             </div>
 
             <div className="rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm">
