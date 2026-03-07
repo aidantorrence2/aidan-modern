@@ -56,7 +56,7 @@ function grain(opacity = 0.08) {
 
 function imagePanel(image, top = 760, height = 820) {
   return `
-    <div style="position:absolute;left:56px;right:56px;top:${top}px;height:${height}px;border-radius:28px;background:rgba(255,255,255,0.08);border:1.5px solid rgba(255,255,255,0.16);padding:18px;display:flex;align-items:center;justify-content:center;overflow:hidden;box-shadow:0 18px 32px rgba(0,0,0,0.24);">
+    <div style="position:absolute;left:56px;right:56px;top:${top}px;height:${height}px;display:flex;align-items:center;justify-content:center;overflow:hidden;">
       <img src="${image}" style="width:100%;height:100%;object-fit:contain;object-position:center;display:block;"/>
     </div>
   `
@@ -66,7 +66,7 @@ function proofGrid(images) {
   return `
     <div style="position:absolute;left:56px;right:56px;top:600px;display:grid;grid-template-columns:1fr 1fr;gap:14px;">
       ${images.map(image => `
-        <div style="height:340px;border-radius:22px;background:rgba(255,255,255,0.1);border:1.5px solid rgba(255,255,255,0.16);padding:12px;display:flex;align-items:center;justify-content:center;overflow:hidden;">
+        <div style="height:340px;display:flex;align-items:center;justify-content:center;overflow:hidden;">
           <img src="${image}" style="width:100%;height:100%;object-fit:contain;object-position:center;display:block;"/>
         </div>
       `).join('')}
