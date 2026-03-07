@@ -131,9 +131,8 @@ function valueList(items, theme) {
 
 function ctaRail(text, theme) {
   return `
-    <div style="position:absolute;left:120px;right:120px;bottom:250px;display:flex;align-items:center;justify-content:space-between;padding:20px 0;border-top:1.5px solid ${theme.ruleStrong};border-bottom:1.5px solid ${theme.ruleStrong};">
-      <span style="font-family:${SANS};font-size:33px;font-weight:600;line-height:1.2;color:${theme.text};">${text}</span>
-      <span style="font-family:${NARROW};font-size:36px;font-weight:700;letter-spacing:0.05em;color:${theme.text};">-></span>
+    <div style="position:absolute;left:110px;right:110px;bottom:240px;padding:28px 26px;border-radius:24px;background:linear-gradient(180deg, rgba(255,255,255,0.18), rgba(255,255,255,0.08));border:1.5px solid ${theme.ruleStrong};backdrop-filter:blur(9px);box-shadow:0 22px 40px rgba(0,0,0,0.28), inset 0 1px 0 rgba(255,255,255,0.2);text-align:center;">
+      <span style="font-family:${SANS};font-size:37px;font-weight:700;line-height:1.2;color:${theme.text};letter-spacing:0.01em;text-shadow:${theme.bodyShadow};">${text}</span>
     </div>
   `
 }
@@ -172,7 +171,7 @@ const funnels = [
     proof: [photos.arcade, photos.closeup, photos.redwall, photos.stone],
     copy: {
       hookTitle: 'Manila<br/>Free Photo Shoot',
-      hookBody: 'I am doing a fun free round for a limited time. Message me now before these last slots are gone.',
+      hookBody: 'I am offering free shoots for a limited time. Message me now before these last slots are gone.',
       proofTitle: 'A quick peek at recent shoots.',
       proofBody: 'So you can see the vibe and quality we can create together.',
       howTitle: "If you want in, here's the flow.",
@@ -227,7 +226,7 @@ const funnels = [
     proof: [photos.closeup, photos.stone, photos.arcade, photos.redwall],
     copy: {
       hookTitle: 'Manila<br/>Free Photo Shoot',
-      hookBody: 'I only have a few left in this limited-time round. If you want one, message me now.',
+      hookBody: 'I only have a few spots left for this limited-time offer. If you want one, message me now.',
       proofTitle: 'Some recent frames I shot.',
       proofBody: 'This is the style and energy I can create for you too.',
       howTitle: 'How it works (super simple).',
