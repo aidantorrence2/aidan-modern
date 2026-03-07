@@ -131,8 +131,9 @@ function valueList(items, theme) {
 
 function ctaRail(text, theme) {
   return `
-    <div style="position:absolute;left:110px;right:110px;bottom:240px;padding:28px 26px;border-radius:24px;background:linear-gradient(180deg, rgba(255,255,255,0.18), rgba(255,255,255,0.08));border:1.5px solid ${theme.ruleStrong};backdrop-filter:blur(9px);box-shadow:0 22px 40px rgba(0,0,0,0.28), inset 0 1px 0 rgba(255,255,255,0.2);text-align:center;">
-      <span style="font-family:${SANS};font-size:37px;font-weight:700;line-height:1.2;color:${theme.text};letter-spacing:0.01em;text-shadow:${theme.bodyShadow};">${text}</span>
+    <div style="position:absolute;left:130px;right:130px;bottom:230px;text-align:center;">
+      <div style="height:1.5px;background:${theme.ruleStrong};opacity:0.92;margin-bottom:20px;"></div>
+      <p style="font-family:${SANS};font-size:31px;font-weight:600;line-height:1.34;color:${theme.textSoft};margin:0;text-shadow:${theme.bodyShadow};">${text}</p>
     </div>
   `
 }
