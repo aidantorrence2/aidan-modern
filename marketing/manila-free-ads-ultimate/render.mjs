@@ -16,7 +16,10 @@ const photos = {
   stone: readImage('manila-gallery-dsc-0075.jpg'),
   closeup: readImage('manila-gallery-dsc-0130.jpg'),
   redwall: readImage('manila-gallery-dsc-0190.jpg'),
-  arcade: readImage('manila-gallery-dsc-0911.jpg')
+  arcade: readImage('manila-gallery-dsc-0911.jpg'),
+  nightClose: readImage('manila-gallery-night-003.jpg'),
+  alleyBlueEyes: readImage('manila-gallery-graffiti-001.jpg'),
+  marketJumpsuit: readImage('manila-gallery-market-001.jpg')
 }
 
 function readImage(file) {
@@ -162,13 +165,13 @@ const funnels = [
       lightMeta: '#9f6a52',
       lightRule: 'rgba(83,54,39,0.2)'
     },
-    hero: photos.arcade,
+    hero: photos.nightClose,
     processPhoto: photos.closeup,
     getPhoto: photos.redwall,
     cta: photos.redwall,
     proof: [photos.arcade, photos.closeup, photos.redwall, photos.stone],
     copy: {
-      hookTitle: 'Hey, free Manila photo shoot spots are open.',
+      hookTitle: 'Manila<br/>Free Photo Shoot',
       hookBody: 'I am doing a fun free round for a limited time. Message me now before these last slots are gone.',
       proofTitle: 'A quick peek at recent shoots.',
       proofBody: 'So you can see the vibe and quality we can create together.',
@@ -217,13 +220,13 @@ const funnels = [
       lightMeta: '#8f705f',
       lightRule: 'rgba(79,58,45,0.2)'
     },
-    hero: photos.closeup,
+    hero: photos.alleyBlueEyes,
     processPhoto: photos.arcade,
     getPhoto: photos.stone,
     cta: photos.hero,
     proof: [photos.closeup, photos.stone, photos.arcade, photos.redwall],
     copy: {
-      hookTitle: 'Hey, free photo shoot spots in Manila are almost gone.',
+      hookTitle: 'Manila<br/>Free Photo Shoot',
       hookBody: 'I only have a few left in this limited-time round. If you want one, message me now.',
       proofTitle: 'Some recent frames I shot.',
       proofBody: 'This is the style and energy I can create for you too.',
@@ -272,13 +275,13 @@ const funnels = [
       lightMeta: '#976652',
       lightRule: 'rgba(88,57,43,0.2)'
     },
-    hero: photos.redwall,
+    hero: photos.marketJumpsuit,
     processPhoto: photos.stone,
     getPhoto: photos.closeup,
     cta: photos.closeup,
     proof: [photos.redwall, photos.arcade, photos.hero, photos.stone],
     copy: {
-      hookTitle: 'Last call for this free Manila shoot round.',
+      hookTitle: 'Manila<br/>Free Photo Shoot',
       hookBody: 'I still have a few slots, but not for long. Message me now if you want to grab one.',
       proofTitle: 'A few shots from recent sessions.',
       proofBody: 'So you can see what the final look actually feels like.',
