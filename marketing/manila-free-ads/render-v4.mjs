@@ -91,7 +91,7 @@ function hookSlide(name, heroImg, subtext) {
       <div style="width:1080px;height:1920px;position:relative;overflow:hidden;background:#000;">
         <img src="${heroImg}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(1.1) contrast(1.05);"/>
         <div style="position:absolute;inset:0;background:linear-gradient(180deg, rgba(0,0,0,0.3) 0%, transparent 20%, transparent 45%, rgba(0,0,0,0.92) 100%);"></div>
-        <div style="position:absolute;bottom:280px;left:64px;right:64px;">
+        <div style="position:absolute;bottom:440px;left:64px;right:64px;">
           <h1 style="font-family:${SERIF};font-size:148px;font-weight:700;font-style:italic;color:white;line-height:0.88;margin:0;${S}">Manila</h1>
           <h2 style="font-family:${SERIF};font-size:108px;font-weight:700;font-style:italic;color:white;line-height:0.92;margin:12px 0 0;${S}">Free photo<br/>shoot</h2>
           <p style="font-family:${SANS};font-size:30px;color:rgba(255,255,255,0.6);margin:32px 0 0 4px;${S}">${subtext}</p>
@@ -123,7 +123,7 @@ function proofSlide(name, headline, images, variant = 'dark') {
   }).join('\n        ')
 
   const inner = `
-        <div style="position:absolute;bottom:200px;left:64px;right:64px;text-align:center;">
+        <div style="position:absolute;bottom:400px;left:64px;right:64px;text-align:center;">
           <h2 style="font-family:${SERIF};font-size:72px;font-weight:700;font-style:italic;color:${color};line-height:0.98;margin:0;${isDark ? S : ''}">${headline}</h2>
           <p style="font-family:${SANS};font-size:28px;color:${subColor};margin:16px 0 0;">No experience needed. I direct everything.</p>
         </div>
@@ -145,11 +145,11 @@ function howSlide(name, headline, steps, bgPhoto) {
   `).join('')
 
   const content = `
-      <div style="position:absolute;left:90px;right:90px;top:220px;text-align:center;">
+      <div style="position:absolute;left:90px;right:90px;top:300px;text-align:center;">
         <h2 style="font-family:${SERIF};font-size:96px;font-weight:700;line-height:0.95;color:white;margin:0;${S}">${headline}</h2>
       </div>
-      <div style="position:absolute;left:120px;right:120px;top:560px;">${stepsHtml}</div>
-      <div style="position:absolute;left:120px;right:120px;bottom:250px;text-align:center;">
+      <div style="position:absolute;left:120px;right:120px;top:640px;">${stepsHtml}</div>
+      <div style="position:absolute;left:120px;right:120px;bottom:420px;text-align:center;">
         <p style="font-family:${SANS};font-size:28px;color:rgba(255,255,255,0.3);">100% free</p>
       </div>
   `
@@ -165,10 +165,10 @@ function howSlideWarm(name, headline, steps, bgPhoto) {
   `).join('')
 
   const content = `
-      <div style="position:absolute;left:90px;right:90px;top:220px;text-align:center;">
+      <div style="position:absolute;left:90px;right:90px;top:300px;text-align:center;">
         <h2 style="font-family:${SERIF};font-size:96px;font-weight:700;line-height:0.95;color:#35231a;margin:0;">${headline}</h2>
       </div>
-      <div style="position:absolute;left:110px;right:110px;top:550px;">${stepsHtml}</div>
+      <div style="position:absolute;left:110px;right:110px;top:630px;">${stepsHtml}</div>
   `
   return { name, html: warmShell(bgPhoto, content) }
 }
@@ -182,11 +182,11 @@ function whatSlide(name, headline, items, bgPhoto) {
   `).join('')
 
   const content = `
-      <div style="position:absolute;left:90px;right:90px;top:220px;text-align:center;">
+      <div style="position:absolute;left:90px;right:90px;top:300px;text-align:center;">
         <h2 style="font-family:${SERIF};font-size:96px;font-weight:700;line-height:0.95;color:#35231a;margin:0;">${headline}</h2>
         <p style="font-family:${SANS};font-size:30px;line-height:1.34;color:#5d4334;margin:18px auto 0;max-width:760px;">Simple process, great photos, no complicated steps.</p>
       </div>
-      <div style="position:absolute;left:110px;right:110px;top:550px;">${itemsHtml}</div>
+      <div style="position:absolute;left:110px;right:110px;top:630px;">${itemsHtml}</div>
   `
   return { name, html: warmShell(bgPhoto, content) }
 }
@@ -200,21 +200,21 @@ function whatSlideDark(name, headline, items, bgPhoto) {
   `).join('')
 
   const content = `
-      <div style="position:absolute;left:90px;right:90px;top:220px;text-align:center;">
+      <div style="position:absolute;left:90px;right:90px;top:300px;text-align:center;">
         <h2 style="font-family:${SERIF};font-size:96px;font-weight:700;line-height:0.95;color:white;margin:0;${S}">${headline}</h2>
       </div>
-      <div style="position:absolute;left:120px;right:120px;top:560px;">${itemsHtml}</div>
+      <div style="position:absolute;left:120px;right:120px;top:640px;">${itemsHtml}</div>
   `
   return { name, html: darkShell(bgPhoto, 0.3, content) }
 }
 
 function ctaSlide(name, heroImg, headline, subtext) {
   const content = `
-      <div style="position:absolute;left:90px;right:90px;top:220px;text-align:center;">
+      <div style="position:absolute;left:90px;right:90px;top:340px;text-align:center;">
         <h2 style="font-family:${SERIF};font-size:104px;font-weight:700;line-height:0.95;color:white;margin:0;${S}">${headline}</h2>
         <p style="font-family:${SANS};font-size:33px;line-height:1.34;color:rgba(245,247,255,0.85);margin:22px auto 0;max-width:760px;${S}">${subtext}</p>
       </div>
-      <div style="position:absolute;left:120px;right:120px;bottom:250px;display:flex;align-items:center;justify-content:center;padding:20px 0;border-top:1.5px solid rgba(217,228,255,0.35);border-bottom:1.5px solid rgba(217,228,255,0.35);">
+      <div style="position:absolute;left:120px;right:120px;bottom:440px;display:flex;align-items:center;justify-content:center;padding:20px 0;border-top:1.5px solid rgba(217,228,255,0.35);border-bottom:1.5px solid rgba(217,228,255,0.35);">
         <span style="font-family:${SANS};font-size:33px;font-weight:600;line-height:1.2;color:white;">Message me now</span>
       </div>
   `
