@@ -68,7 +68,7 @@ function proofStack(images) {
 
 function stepLines(steps, theme, top = 560) {
   return `
-    <div style="position:absolute;left:60px;right:60px;top:${top}px;">
+    <div style="position:absolute;left:120px;right:120px;top:${top}px;">
       ${steps.map((step, i) => `
         <div style="padding:20px 0;border-bottom:1px solid ${theme.rule};display:flex;gap:16px;align-items:flex-start;">
           <span style="font-family:${DISPLAY};font-size:46px;line-height:1;color:${theme.text};width:36px;flex-shrink:0;">${i + 1}</span>
@@ -81,7 +81,7 @@ function stepLines(steps, theme, top = 560) {
 
 function bulletList(items, theme, top = 540) {
   return `
-    <div style="position:absolute;left:60px;right:60px;top:${top}px;">
+    <div style="position:absolute;left:120px;right:120px;top:${top}px;">
       ${items.map((item, i) => `
         <div style="display:flex;gap:14px;align-items:flex-start;padding:14px 0;border-bottom:1px solid ${theme.rule};">
           <span style="font-family:${NARROW};font-size:21px;line-height:1.2;letter-spacing:0.08em;text-transform:uppercase;color:${theme.meta};width:34px;flex-shrink:0;">0${i + 1}</span>
@@ -94,19 +94,19 @@ function bulletList(items, theme, top = 540) {
 
 function ctaStrip(text, theme) {
   return `
-    <div style="position:absolute;left:60px;right:60px;bottom:188px;padding:20px 0;border-top:1px solid ${theme.ruleStrong};border-bottom:1px solid ${theme.ruleStrong};display:flex;justify-content:space-between;align-items:center;">
-      <span style="font-family:${NARROW};font-size:23px;font-weight:700;letter-spacing:0.13em;text-transform:uppercase;color:${theme.text};">${text}</span>
+    <div style="position:absolute;left:120px;right:120px;bottom:300px;padding:18px 0;border-top:1px solid ${theme.ruleStrong};border-bottom:1px solid ${theme.ruleStrong};display:flex;justify-content:space-between;align-items:center;">
+      <span style="font-family:${SANS};font-size:30px;font-weight:600;letter-spacing:0.01em;color:${theme.text};">${text}</span>
       <span style="font-family:${NARROW};font-size:32px;font-weight:700;color:${theme.text};">-></span>
     </div>
   `
 }
 
-function titleStyle(theme, size = 106) {
-  return `font-family:${DISPLAY};font-size:${size}px;line-height:0.94;color:${theme.text};margin:0;text-shadow:${theme.shadow};max-width:840px;`
+function titleStyle(theme, size = 92) {
+  return `font-family:${DISPLAY};font-size:${size}px;line-height:0.95;color:${theme.text};margin:0 auto;text-shadow:${theme.shadow};max-width:780px;text-align:center;`
 }
 
 function bodyStyle(theme) {
-  return `font-family:${SANS};font-size:34px;line-height:1.32;color:${theme.textSoft};margin:0;text-shadow:${theme.bodyShadow};max-width:810px;`
+  return `font-family:${SANS};font-size:32px;line-height:1.34;color:${theme.textSoft};margin:0 auto;text-shadow:${theme.bodyShadow};max-width:760px;text-align:center;`
 }
 
 const funnels = [
@@ -131,26 +131,26 @@ const funnels = [
     cta: photos.redwall,
     proof: [photos.arcade, photos.closeup, photos.redwall, photos.stone],
     copy: {
-      hookTitle: 'Free Manila shoot slots are open.',
-      hookBody: 'This is the last-chance free batch. If you want in, do not wait.',
-      proofTitle: 'Proof.',
-      proofBody: 'Real outputs from real Manila sessions. Limited slots are almost gone.',
+      hookTitle: "Hey, I'm opening a few free photo shoot spots in Manila.",
+      hookBody: 'If you have been meaning to do this, message me. I only have a small number of spots this round.',
+      proofTitle: 'Photos from recent shoots.',
+      proofBody: "Just sharing these so you can see my style and what we can create together.",
       howTitle: 'How it works.',
       steps: [
-        'Message me if you are interested or if you have questions.',
-        'I send details and currently open limited-time slots.',
-        'If you want one, we lock your shoot through message.'
+        'Message me if you are interested or even if you just have questions.',
+        'I reply with details and the free spots that are still open.',
+        'If it feels like a fit, we confirm your shoot by message.'
       ],
       getTitle: 'What you get.',
       getItems: [
-        'Guided shoot direction so it feels easy',
-        'Edited photos ready to post',
-        'Support with style, vibe, and location',
-        'Fast turnaround and clean communication'
+        'A shoot where I guide you the whole time',
+        'Edited photos you can post and use right away',
+        'Help with look, vibe, and location if you want it',
+        'Fast, easy communication directly with me'
       ],
-      ctaTitle: 'Final call for free Manila slots.',
-      ctaBody: 'If interested or if you have questions, message me now to move forward.',
-      ctaButton: 'Message to reserve slot'
+      ctaTitle: 'If you want one of these free spots, message me now.',
+      ctaBody: "It's me on the other side. Happy to answer anything before we book.",
+      ctaButton: 'Message me to grab a spot'
     }
   },
   {
@@ -174,26 +174,26 @@ const funnels = [
     cta: photos.hero,
     proof: [photos.closeup, photos.stone, photos.arcade, photos.redwall],
     copy: {
-      hookTitle: 'Free shoot. Fresh photos. Limited slots.',
-      hookBody: 'This batch is almost full. If you want better photos, now is the window.',
-      proofTitle: 'Proof.',
-      proofBody: 'These are real photos from Manila sessions. Last-chance slots are live now.',
+      hookTitle: "I'm doing a free Manila shoot round and spots are almost gone.",
+      hookBody: 'If you want fresh photos soon, send me a message now while I still have space.',
+      proofTitle: 'More shots from recent sessions.',
+      proofBody: 'So you can get a real feel for the look and quality.',
       howTitle: 'How it works.',
       steps: [
-        'Message me if you are interested or if you need details.',
-        'I share open limited-time slots and answer questions.',
-        'If it is a fit, we confirm your slot right in message.'
+        'You message me with interest or questions.',
+        'I send details and what free spots are still available.',
+        'If you are in, we lock it in right there.'
       ],
       getTitle: 'What you get.',
       getItems: [
-        'A fun session with clear direction',
+        'A relaxed shoot with direction from me',
         'Edited photos you can use immediately',
-        'Guidance on look, mood, and location',
-        'Simple process from first message to final files'
+        'Help with styling and location planning',
+        'A simple process from first message to final files'
       ],
-      ctaTitle: 'Last chance to lock a free shoot spot.',
-      ctaBody: 'If interested or if you have questions, message me now and I will send next steps.',
-      ctaButton: 'Message to claim spot'
+      ctaTitle: 'Last few free spots are still open right now.',
+      ctaBody: 'If you want one, message me and I will walk you through the next step.',
+      ctaButton: 'Message me for a free spot'
     }
   },
   {
@@ -217,26 +217,26 @@ const funnels = [
     cta: photos.closeup,
     proof: [photos.redwall, photos.arcade, photos.hero, photos.stone],
     copy: {
-      hookTitle: 'Quick heads up: free Manila shoot slots.',
-      hookBody: 'This is a limited-time last-chance offer. Once filled, it closes.',
-      proofTitle: 'Proof.',
-      proofBody: 'Real sessions, real photos, real outcomes. Very few free slots left.',
+      hookTitle: 'Quick note: I still have a few free Manila shoot spots.',
+      hookBody: 'This round is nearly full, so I wanted to post this before I close it.',
+      proofTitle: 'A few more examples.',
+      proofBody: 'These are from recent sessions and show the direction I can give you.',
       howTitle: 'How it works.',
       steps: [
-        'Message me if you are interested or if you have questions.',
-        'I send details and the remaining limited-time slot options.',
-        'If you want one, we confirm everything by message.'
+        'Message me if you are interested or have questions.',
+        'I send you details and the remaining open spots.',
+        'If you want to move forward, we confirm your slot by message.'
       ],
       getTitle: 'What you get.',
       getItems: [
-        'Direction during the full shoot',
+        'Direction all throughout the shoot',
         'Edited photos ready for socials',
-        'Help with styling and creative direction',
-        'Fast, direct, message-based process'
+        'Support on styling and creative direction',
+        'Direct communication with me from start to finish'
       ],
-      ctaTitle: 'Limited time. Limited slots. Last call.',
-      ctaBody: 'If interested or if you have questions, message me right now to move forward.',
-      ctaButton: 'Message now'
+      ctaTitle: 'If you want in, message me before these spots close.',
+      ctaBody: 'I only have a few left and I handle replies personally.',
+      ctaButton: 'Message me now'
     }
   }
 ]
@@ -263,7 +263,7 @@ function buildSlides(funnel) {
           <h1 style="${titleStyle(t)}">${c.hookTitle}</h1>
           <p style="${bodyStyle(t)}margin-top:18px;">${c.hookBody}</p>
         </div>
-        ${heroPhoto(funnel.hero, 1140, 760, 860)}
+        ${heroPhoto(funnel.hero, 1160, 720, 780)}
       `)
     },
     {
@@ -312,7 +312,7 @@ function buildSlides(funnel) {
           <h2 style="${titleStyle(t, 98)}">${c.ctaTitle}</h2>
           <p style="${bodyStyle(t)}margin-top:16px;">${c.ctaBody}</p>
         </div>
-        ${heroPhoto(funnel.cta, 1140, 760, 780)}
+        ${heroPhoto(funnel.cta, 1160, 720, 700)}
         ${ctaStrip(c.ctaButton, t)}
       `)
     }
