@@ -66,3 +66,16 @@
   - Burned-in hooks, CTA strip, and subtitles
 - Regenerate:
   - `tools/render_manila_video_ads_v2.sh`
+
+## Manila Free Story / Reels Ad Rendering (Ultimate)
+- Source folder: `marketing/manila-free-ads-ultimate`
+- Render command:
+  - `node marketing/manila-free-ads-ultimate/render.mjs`
+- Output folders:
+  - `marketing/manila-free-ads-ultimate/story-01_photos-that-match-you`
+  - `marketing/manila-free-ads-ultimate/story-02_free-does-not-mean-basic`
+  - `marketing/manila-free-ads-ultimate/story-03_this-is-your-sign`
+- Notes:
+  - The script uses Playwright to render static 1080x1920 PNG story/reels frames from inline HTML.
+  - Copy is aligned to the `/manila-free` landing-page promise: free collab shoots, quick intro call, guided posing, 10+ edits, and 7-day delivery.
+  - The three concept folders are intended for different ad angles: broad aspiration, premium-value skepticism killer, and urgency/retargeting.
