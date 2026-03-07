@@ -54,10 +54,10 @@ const slides = [
 
         <div style="position:absolute;top:0;left:0;right:0;bottom:0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:0 70px;text-align:center;">
           <h1 style="font-family:${D};font-size:110px;font-weight:700;color:white;line-height:1.02;margin:0;${TS}">
-            Free photo shoot in Manila.
+            Manila free photo shoot.
           </h1>
           <p style="font-family:${B};font-size:36px;color:rgba(255,255,255,0.95);margin:48px 0 0;line-height:1.4;${TS_SUB}">
-            No experience needed. I guide everything.
+            No experience needed.
           </p>
         </div>
 
