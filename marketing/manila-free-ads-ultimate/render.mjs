@@ -120,7 +120,30 @@ const funnels = [
     },
     hero: photos.arcade,
     cta: photos.redwall,
-    proof: [photos.arcade, photos.closeup, photos.redwall, photos.stone]
+    proof: [photos.arcade, photos.closeup, photos.redwall, photos.stone],
+    copy: {
+      hookTitle: 'Free Manila shoot spots are open.',
+      hookBody: 'Last-chance batch. If you have been thinking about it, now is the time.',
+      proofTitle: 'Real results.',
+      proofBody: 'Actual photos from Manila sessions. Limited slots are almost gone.',
+      howTitle: 'How it works.',
+      steps: [
+        'Message me if you are interested or if you have questions.',
+        'I send details and current open limited-time slots.',
+        'If you want in, we confirm your shoot directly by message.'
+      ],
+      whatTitle: 'What you get.',
+      whatItems: [
+        'A guided shoot with clear direction',
+        'Edited photos ready to post',
+        'Help with vibe, looks, and location',
+        'Fast turnaround and easy communication',
+        'A real free-shot opportunity before slots close'
+      ],
+      ctaTitle: 'Final call for free Manila slots.',
+      ctaBody: 'If interested or if you have questions, message me now to move forward.',
+      ctaButton: 'Message to reserve slot'
+    }
   },
   {
     folder: 'funnel-02_last-chance-fresh',
@@ -138,7 +161,30 @@ const funnels = [
     },
     hero: photos.closeup,
     cta: photos.hero,
-    proof: [photos.closeup, photos.stone, photos.arcade, photos.redwall]
+    proof: [photos.closeup, photos.stone, photos.arcade, photos.redwall],
+    copy: {
+      hookTitle: 'Free shoot. Fresh photos. Limited slots.',
+      hookBody: 'Best time to upgrade your profile photos is right now while this batch is open.',
+      proofTitle: 'Session proof.',
+      proofBody: 'These are real outputs from past shoots. Last-chance free slots are active now.',
+      howTitle: 'How it works.',
+      steps: [
+        'Message me if you are interested or if you want details.',
+        'I share open limited-time slots and answer your questions.',
+        'If it feels right, we lock your shoot by message.'
+      ],
+      whatTitle: 'What you get.',
+      whatItems: [
+        'Directed shoot flow from start to finish',
+        'Edited photos you can use immediately',
+        'Guidance on style, location, and vibe',
+        'Simple process with fast replies',
+        'A chance to claim a free slot before this batch closes'
+      ],
+      ctaTitle: 'Last chance to lock a free shoot spot.',
+      ctaBody: 'If interested or if you have questions, message me now and I will send the next step.',
+      ctaButton: 'Message to claim spot'
+    }
   },
   {
     folder: 'funnel-03_last-chance-bold',
@@ -156,26 +202,50 @@ const funnels = [
     },
     hero: photos.redwall,
     cta: photos.closeup,
-    proof: [photos.redwall, photos.arcade, photos.hero, photos.stone]
+    proof: [photos.redwall, photos.arcade, photos.hero, photos.stone],
+    copy: {
+      hookTitle: 'Quick heads up: free Manila shoot slots.',
+      hookBody: 'This is a limited-time last-chance offer. Once filled, it is closed.',
+      proofTitle: 'Proof you can trust.',
+      proofBody: 'Real photos, real sessions, real results. Very few free slots left.',
+      howTitle: 'How it works.',
+      steps: [
+        'Message me if you are interested or if you have questions.',
+        'I send details and the remaining limited-time slot options.',
+        'If you want one, we confirm everything by message.'
+      ],
+      whatTitle: 'What you get.',
+      whatItems: [
+        'A fun shoot with direction so it feels easy',
+        'Edited final photos ready for socials',
+        'Support on look and creative direction',
+        'Fast and clear message-based process',
+        'A last-chance free slot while this batch is live'
+      ],
+      ctaTitle: 'Limited time. Limited slots. Last call.',
+      ctaBody: 'If interested or if you have questions, message me right now to move forward.',
+      ctaButton: 'Message now'
+    }
   }
 ]
 
 function buildSlides(funnel) {
   const theme = funnel.theme
+  const c = funnel.copy
 
   return [
     {
       name: '01_hey_free_photo_shoot',
       html: shell(theme, `
         <div style="position:absolute;top:200px;left:56px;right:56px;display:flex;justify-content:space-between;align-items:center;">
-          ${chip('Last chance', theme)}
+          ${chip('Hey free photo shoot', theme)}
           ${chip('Limited time', theme, true)}
         </div>
         <div style="position:absolute;left:56px;right:56px;top:430px;">
-          <h1 style="${darkTitle()}">Hey free photo shoot.</h1>
-          <p style="${darkBody()}margin-top:18px;">Limited free slots in Manila right now. If you want in, move fast.</p>
+          <h1 style="${darkTitle()}">${c.hookTitle}</h1>
+          <p style="${darkBody()}margin-top:18px;">${c.hookBody}</p>
         </div>
-        ${imagePanel(funnel.hero, 760, 820)}
+        ${imagePanel(funnel.hero, 860, 700)}
         ${footer('Proof', theme)}
       `, true)
     },
@@ -187,8 +257,8 @@ function buildSlides(funnel) {
           ${chip('Few slots left', theme, true)}
         </div>
         <div style="position:absolute;left:56px;right:56px;top:390px;">
-          <h2 style="${darkTitle()}font-size:92px;">Proof.</h2>
-          <p style="${darkBody()}margin-top:16px;">Real photos from real sessions. Limited-time free slots are closing soon.</p>
+          <h2 style="${darkTitle()}font-size:92px;">${c.proofTitle}</h2>
+          <p style="${darkBody()}margin-top:16px;">${c.proofBody}</p>
         </div>
         ${proofGrid(funnel.proof)}
         ${footer('How it works', theme)}
@@ -202,16 +272,12 @@ function buildSlides(funnel) {
           ${chip('Last chance slots', theme, true)}
         </div>
         <div style="position:absolute;left:56px;right:56px;top:390px;">
-          <h2 style="${darkTitle()}font-size:92px;">How it works.</h2>
+          <h2 style="${darkTitle()}font-size:92px;">${c.howTitle}</h2>
         </div>
         <div style="position:absolute;left:56px;right:56px;top:590px;display:grid;gap:14px;">
-          ${[
-            ['1', 'Message me if you are interested or if you have questions.'],
-            ['2', 'I reply with details and any open limited-time slots.'],
-            ['3', 'If it feels right, we confirm your shoot by message.']
-          ].map(([num, text]) => `
+          ${c.steps.map((text, index) => `
             <div style="display:flex;gap:16px;align-items:flex-start;padding:18px 20px;border-radius:20px;background:rgba(255,255,255,0.12);border:1.5px solid rgba(255,255,255,0.16);">
-              <div style="width:42px;height:42px;border-radius:99px;background:rgba(255,255,255,0.82);display:flex;align-items:center;justify-content:center;color:#1b1512;font-family:${NARROW};font-size:23px;font-weight:700;flex-shrink:0;">${num}</div>
+              <div style="width:42px;height:42px;border-radius:99px;background:rgba(255,255,255,0.82);display:flex;align-items:center;justify-content:center;color:#1b1512;font-family:${NARROW};font-size:23px;font-weight:700;flex-shrink:0;">${index + 1}</div>
               <p style="${darkBody()}font-size:30px;margin:0;">${text}</p>
             </div>
           `).join('')}
@@ -241,16 +307,10 @@ function buildSlides(funnel) {
             ${chip('Limited-time offer', { ...theme, text: '#2b1f1a', textSoft: '#5a4438', border: 'rgba(43,31,26,0.22)', borderSoft: 'rgba(43,31,26,0.14)', panel: 'rgba(255,255,255,0.78)', panelSoft: 'rgba(255,255,255,0.56)' }, true)}
           </div>
           <div style="position:absolute;left:56px;right:56px;top:390px;">
-            <h2 style="${lightTitle()}">What you get.</h2>
+            <h2 style="${lightTitle()}">${c.whatTitle}</h2>
           </div>
           <div style="position:absolute;left:56px;right:56px;top:560px;display:grid;gap:13px;">
-            ${[
-              'Guided photoshoot with clear direction',
-              'Edited photos ready to post',
-              'Help with looks, vibe, and location',
-              'Fast delivery and simple communication',
-              'A real chance before limited slots close'
-            ].map(item => `
+            ${c.whatItems.map(item => `
               <div style="padding:18px 20px;border-radius:18px;background:rgba(255,255,255,0.86);border:1.4px solid rgba(43,31,26,0.12);display:flex;align-items:center;gap:13px;">
                 <div style="width:14px;height:14px;border-radius:99px;background:#ff8a60;flex-shrink:0;"></div>
                 <p style="${lightBody()}font-size:29px;">${item}</p>
@@ -270,12 +330,12 @@ function buildSlides(funnel) {
           ${chip('Last chance', theme, true)}
         </div>
         <div style="position:absolute;left:56px;right:56px;top:430px;">
-          <h2 style="${darkTitle()}">Last chance. Limited time. Limited slots.</h2>
-          <p style="${darkBody()}margin-top:18px;">If interested or if you have questions, message me now to move forward.</p>
+          <h2 style="${darkTitle()}">${c.ctaTitle}</h2>
+          <p style="${darkBody()}margin-top:18px;">${c.ctaBody}</p>
         </div>
         ${imagePanel(funnel.cta, 860, 620)}
         <div style="position:absolute;left:56px;right:56px;bottom:282px;padding:23px 26px;border-radius:24px;background:rgba(255,255,255,0.12);border:1.5px solid rgba(255,255,255,0.16);backdrop-filter:blur(8px);display:flex;justify-content:space-between;align-items:center;">
-          <span style="font-family:${NARROW};font-size:24px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:white;">Message to claim slot</span>
+          <span style="font-family:${NARROW};font-size:24px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:white;">${c.ctaButton}</span>
           <span style="font-family:${NARROW};font-size:32px;font-weight:700;color:#ffffff;">-></span>
         </div>
       `, true)
