@@ -72,22 +72,31 @@ function hookSlide(name, heroImg, subtext) {
 function proofSlide(name, headline, images, bg = DARK) {
   const isDark = bg === DARK
   const color = isDark ? 'white' : '#0c1014'
-  const cellBg = isDark ? 'rgba(255,255,255,0.06)' : 'rgba(0,0,0,0.04)'
-  const imgHtml = images.map(src =>
-    `<div style="background:${cellBg};border-radius:14px;overflow:hidden;display:flex;align-items:center;justify-content:center;padding:6px;">
-              <img src="${src}" style="width:100%;height:100%;object-fit:contain;display:block;"/>
-            </div>`
-  ).join('\n            ')
+  const subColor = isDark ? 'rgba(255,255,255,0.55)' : 'rgba(12,16,20,0.45)'
+  // Scattered mosaic layout — 8 images with slight rotations and drop shadows
+  const slots = [
+    { left: 40,  top: 260,  w: 310, h: 400, rot: -2.5 },
+    { left: 380, top: 230,  w: 310, h: 400, rot: 1.8 },
+    { left: 720, top: 280,  w: 310, h: 400, rot: -1.2 },
+    { left: 80,  top: 680,  w: 290, h: 380, rot: 1.6 },
+    { left: 420, top: 650,  w: 290, h: 380, rot: -2.0 },
+    { left: 730, top: 700,  w: 290, h: 380, rot: 2.4 },
+    { left: 160, top: 1080, w: 340, h: 440, rot: -1.4 },
+    { left: 560, top: 1060, w: 340, h: 440, rot: 1.9 }
+  ]
+  const imgHtml = images.map((src, i) => {
+    const s = slots[i]
+    return `<img src="${src}" style="position:absolute;left:${s.left}px;top:${s.top}px;width:${s.w}px;height:${s.h}px;object-fit:contain;object-position:center;display:block;transform:rotate(${s.rot}deg);filter:drop-shadow(0 20px 36px rgba(0,0,0,0.4));"/>`
+  }).join('\n        ')
   return {
     name,
     html: `
       <div style="width:1080px;height:1920px;position:relative;overflow:hidden;background:${bg};">
-        <div style="padding:100px 48px 60px;">
-          <h2 style="font-family:${SERIF};font-size:72px;font-weight:700;font-style:italic;color:${color};line-height:0.98;margin:0 0 32px;">${headline}</h2>
-          <div style="display:grid;grid-template-columns:1fr 1fr;grid-template-rows:repeat(4, 370px);gap:14px;">
-            ${imgHtml}
-          </div>
+        <div style="position:absolute;bottom:200px;left:64px;right:64px;text-align:center;">
+          <h2 style="font-family:${SERIF};font-size:72px;font-weight:700;font-style:italic;color:${color};line-height:0.98;margin:0;">${headline}</h2>
+          <p style="font-family:${SANS};font-size:28px;color:${subColor};margin:16px 0 0;">No experience needed. I direct everything.</p>
         </div>
+        ${imgHtml}
       </div>
     `
   }
