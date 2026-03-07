@@ -1,4 +1,4 @@
-# Manila Free Ads Ultimate (Reset)
+# Manila Free Ads Ultimate
 
 Render command:
 
@@ -6,28 +6,29 @@ Render command:
 node marketing/manila-free-ads-ultimate/render.mjs
 ```
 
-This reset package is fully rebuilt for conversion-first ad delivery.
-It reuses only the original Manila photo assets and introduces all-new copy, layouts, and funnel structures.
+This package uses only the original Manila photo assets and a playful conversion-first creative style.
+Tone is lighter and simpler while still pushing a clear limited-time offer.
 
 Output funnels:
 
-- `funnel-01_profile-conversion`
-  - Hook: profile photos decide outcomes before text.
-  - Focus: pain -> offer -> package -> frictionless action.
-  - Use case: cold traffic and broad audience targeting.
+- `funnel-01_fun-free-shoot`
+  - Hook: free shoot energy and fun opportunity framing.
+  - Focus: fast value explanation -> limited-time batch -> easy claim flow.
+  - Use case: broad cold traffic.
 
-- `funnel-02_signal-upgrade`
-  - Hook: user is not bad on camera, current media is underperforming.
-  - Focus: diagnosis -> free upgrade offer -> risk reversal -> qualification.
-  - Use case: users who clicked before but did not convert.
+- `funnel-02_social-glow-up`
+  - Hook: quick profile glow-up with zero cost.
+  - Focus: simple vibe shift story -> low-friction process -> strong CTA.
+  - Use case: warm audiences that need a friendlier push.
 
-- `funnel-03_last-call`
-  - Hook: final open batch urgency.
-  - Focus: offer stack -> coaching reassurance -> eligibility filter -> immediate CTA.
-  - Use case: retargeting and final push audiences.
+- `funnel-03_last-chance-vibes`
+  - Hook: last-chance urgency with upbeat messaging.
+  - Focus: recap value -> who should apply -> final close.
+  - Use case: retargeting and final conversion pushes.
 
 Notes:
 
 - Every run clears prior `story-*` and `funnel-*` output folders before rendering.
 - All exports are 1080x1920 PNG story/reels frames.
-- Copy is intentionally direct-response oriented for high conversion intent.
+- Copy is short, high-conversion, and intentionally upbeat.
+- Every funnel explicitly reinforces limited-time availability.
