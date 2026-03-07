@@ -32,6 +32,8 @@ const imgPark = img('manila-gallery-park-001.jpg')
 const imgStatue = img('manila-gallery-statue-001.jpg')
 const imgStreet = img('manila-gallery-street-001.jpg')
 const imgNight1 = img('manila-gallery-night-001.jpg')
+const imgIvy1 = img('manila-gallery-ivy-001.jpg')
+const imgGarden1 = img('manila-gallery-garden-001.jpg')
 
 // The 8 proof images (same across all versions)
 const proof8 = [img0190, imgCanal1, img0911, imgMarket, imgPark, imgStatue, imgStreet, imgUrban3]
@@ -243,7 +245,7 @@ const versionC = [
   hookSlide('C_01_hook', imgMarket, 'Limited spots available.'),
   proofSlide('C_02_proof', 'My work', proof8),
   howSlide('C_03_how', 'Dead simple.', steps, imgGarden2),
-  whatSlide('C_04_what', 'What you<br/>walk away with.', deliverables, img0911),
+  whatSlide('C_04_what', 'What you<br/>walk away with.', deliverables, imgGarden1),
   ctaSlide('C_05_cta', imgNight3, "Don't miss out.", 'Message me to lock in your free session.')
 ]
 
@@ -260,22 +262,22 @@ const versionE = [
   proofSlide('E_02_proof', 'Photos I take', proof8),
   howSlideWarm('E_03_how', 'Three steps<br/>to great photos.', steps, imgIvy2),
   whatSlideDark('E_04_what', 'Portfolio-ready<br/>photos. Free.', deliverables, imgRocks),
-  ctaSlide('E_05_cta', imgGarden2, 'Ready?', 'DM me on Instagram or WhatsApp. Free photo shoot in Manila.')
+  ctaSlide('E_05_cta', imgStatue, 'Ready?', 'DM me on Instagram or WhatsApp. Free photo shoot in Manila.')
 ]
 
 const versionF = [
   hookSlide('F_01_hook', imgNight1, 'I direct everything. You just show up.'),
   proofSlide('F_02_proof', 'My recent work', proof8),
-  howSlide('F_03_how', 'Three steps.', steps, img0130),
-  whatSlide('F_04_what', 'What you get.', deliverables, imgTropical),
-  ctaSlide('F_05_cta', imgGarden2, "Let's shoot.", 'DM me on Instagram or WhatsApp to book your free session.')
+  howSlide('F_03_how', 'Three steps.', steps, imgIvy1),
+  whatSlide('F_04_what', 'What you get.', deliverables, imgNight3),
+  ctaSlide('F_05_cta', imgCanal1, "Let's shoot.", 'DM me on Instagram or WhatsApp to book your free session.')
 ]
 
 const versionG = [
   hookSlide('G_01_hook', imgPark, 'No experience needed. I direct everything.'),
   proofSlide('G_02_proof', 'My recent work', proof8),
   howSlide('G_03_how', 'Super simple.', steps, imgRocks),
-  whatSlide('G_04_what', 'Everything<br/>included.', deliverables, img0911),
+  whatSlide('G_04_what', 'Everything<br/>included.', deliverables, img0190),
   ctaSlide('G_05_cta', imgIvy2, 'Your turn.', 'DM me to book your free photo shoot in Manila.')
 ]
 
