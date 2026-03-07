@@ -42,15 +42,6 @@ function grain(opacity = 0.08) {
   `
 }
 
-function topMeta(section, theme) {
-  return `
-    <div style="position:absolute;top:130px;left:60px;right:60px;display:flex;justify-content:space-between;align-items:center;">
-      <span style="font-family:${NARROW};font-size:19px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:${theme.meta};">${section}</span>
-      <span style="font-family:${NARROW};font-size:18px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:${theme.metaSoft};">Last chance • Limited time • Limited slots</span>
-    </div>
-  `
-}
-
 function heroPhoto(image, top = 1110, width = 760, height = 860) {
   return `
     <img src="${image}" style="position:absolute;left:50%;top:${top}px;transform:translate(-50%,-50%);width:${width}px;height:${height}px;object-fit:contain;object-position:center;display:block;filter:drop-shadow(0 26px 40px rgba(0,0,0,0.36));"/>
@@ -75,9 +66,9 @@ function proofStack(images) {
     .join('')
 }
 
-function stepLines(steps, theme) {
+function stepLines(steps, theme, top = 560) {
   return `
-    <div style="position:absolute;left:60px;right:60px;top:560px;">
+    <div style="position:absolute;left:60px;right:60px;top:${top}px;">
       ${steps.map((step, i) => `
         <div style="padding:20px 0;border-bottom:1px solid ${theme.rule};display:flex;gap:16px;align-items:flex-start;">
           <span style="font-family:${DISPLAY};font-size:46px;line-height:1;color:${theme.text};width:36px;flex-shrink:0;">${i + 1}</span>
@@ -88,9 +79,9 @@ function stepLines(steps, theme) {
   `
 }
 
-function bulletList(items, theme) {
+function bulletList(items, theme, top = 540) {
   return `
-    <div style="position:absolute;left:60px;right:60px;top:540px;">
+    <div style="position:absolute;left:60px;right:60px;top:${top}px;">
       ${items.map((item, i) => `
         <div style="display:flex;gap:14px;align-items:flex-start;padding:14px 0;border-bottom:1px solid ${theme.rule};">
           <span style="font-family:${NARROW};font-size:21px;line-height:1.2;letter-spacing:0.08em;text-transform:uppercase;color:${theme.meta};width:34px;flex-shrink:0;">0${i + 1}</span>
@@ -250,11 +241,10 @@ const funnels = [
   }
 ]
 
-function slideShell(theme, section, content) {
+function slideShell(theme, content) {
   return `
     <div style="width:1080px;height:1920px;position:relative;overflow:hidden;background:${theme.bgC};">
       ${deckBackground(theme)}
-      ${topMeta(section, theme)}
       ${content}
       ${grain(0.09)}
     </div>
@@ -268,34 +258,31 @@ function buildSlides(funnel) {
   return [
     {
       name: '01_hey_free_photo_shoot',
-      html: slideShell(t, 'Hey free photo shoot', `
-        <div style="position:absolute;left:60px;right:60px;top:330px;">
+      html: slideShell(t, `
+        <div style="position:absolute;left:60px;right:60px;top:220px;">
           <h1 style="${titleStyle(t)}">${c.hookTitle}</h1>
           <p style="${bodyStyle(t)}margin-top:18px;">${c.hookBody}</p>
         </div>
-        ${heroPhoto(funnel.hero, 1120, 760, 860)}
-        <div style="position:absolute;left:0;right:0;bottom:130px;text-align:center;font-family:${NARROW};font-size:20px;letter-spacing:0.14em;text-transform:uppercase;color:${t.metaSoft};">Proof</div>
+        ${heroPhoto(funnel.hero, 1140, 760, 860)}
       `)
     },
     {
       name: '02_proof',
-      html: slideShell(t, 'Proof', `
-        <div style="position:absolute;left:60px;right:60px;top:300px;">
+      html: slideShell(t, `
+        <div style="position:absolute;left:60px;right:60px;top:220px;">
           <h2 style="${titleStyle(t, 96)}">${c.proofTitle}</h2>
           <p style="${bodyStyle(t)}margin-top:14px;">${c.proofBody}</p>
         </div>
         ${proofStack(funnel.proof)}
-        <div style="position:absolute;left:0;right:0;bottom:130px;text-align:center;font-family:${NARROW};font-size:20px;letter-spacing:0.14em;text-transform:uppercase;color:${t.metaSoft};">How it works</div>
       `)
     },
     {
       name: '03_how_it_works',
-      html: slideShell(t, 'How it works', `
-        <div style="position:absolute;left:60px;right:60px;top:300px;">
+      html: slideShell(t, `
+        <div style="position:absolute;left:60px;right:60px;top:220px;">
           <h2 style="${titleStyle(t, 96)}">${c.howTitle}</h2>
         </div>
-        ${stepLines(c.steps, t)}
-        <div style="position:absolute;left:0;right:0;bottom:130px;text-align:center;font-family:${NARROW};font-size:20px;letter-spacing:0.14em;text-transform:uppercase;color:${t.metaSoft};">What you get</div>
+        ${stepLines(c.steps, t, 500)}
       `)
     },
     {
@@ -306,31 +293,26 @@ function buildSlides(funnel) {
           <div style="position:absolute;inset:0;background:
             radial-gradient(circle at 84% 14%, rgba(255,164,124,0.26), transparent 20%),
             radial-gradient(circle at 18% 86%, rgba(255,223,180,0.24), transparent 22%);"></div>
-          <div style="position:absolute;top:130px;left:60px;right:60px;display:flex;justify-content:space-between;align-items:center;">
-            <span style="font-family:${NARROW};font-size:19px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:rgba(72,42,29,0.8);">What you get</span>
-            <span style="font-family:${NARROW};font-size:18px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:rgba(108,72,55,0.56);">Last chance • Limited time • Limited slots</span>
-          </div>
-          <div style="position:absolute;left:60px;right:60px;top:300px;">
+          <div style="position:absolute;left:60px;right:60px;top:220px;">
             <h2 style="font-family:${DISPLAY};font-size:94px;line-height:0.95;color:#362419;margin:0;">${c.getTitle}</h2>
           </div>
           ${bulletList(c.getItems, {
             textSoft: '#5f4538',
             meta: '#9f6a50',
             rule: 'rgba(90,58,42,0.18)'
-          })}
-          <div style="position:absolute;left:0;right:0;bottom:130px;text-align:center;font-family:${NARROW};font-size:20px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(94,64,49,0.56);">CTA</div>
+          }, 460)}
           ${grain(0.05)}
         </div>
       `
     },
     {
       name: '05_cta',
-      html: slideShell(t, 'CTA', `
-        <div style="position:absolute;left:60px;right:60px;top:300px;">
+      html: slideShell(t, `
+        <div style="position:absolute;left:60px;right:60px;top:220px;">
           <h2 style="${titleStyle(t, 98)}">${c.ctaTitle}</h2>
           <p style="${bodyStyle(t)}margin-top:16px;">${c.ctaBody}</p>
         </div>
-        ${heroPhoto(funnel.cta, 1110, 760, 780)}
+        ${heroPhoto(funnel.cta, 1140, 760, 780)}
         ${ctaStrip(c.ctaButton, t)}
       `)
     }
