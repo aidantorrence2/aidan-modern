@@ -72,10 +72,11 @@
 - Render command:
   - `node marketing/manila-free-ads-ultimate/render.mjs`
 - Output folders:
-  - `marketing/manila-free-ads-ultimate/story-01_photos-that-match-you`
-  - `marketing/manila-free-ads-ultimate/story-02_free-does-not-mean-basic`
-  - `marketing/manila-free-ads-ultimate/story-03_this-is-your-sign`
+  - `marketing/manila-free-ads-ultimate/funnel-01_profile-conversion`
+  - `marketing/manila-free-ads-ultimate/funnel-02_signal-upgrade`
+  - `marketing/manila-free-ads-ultimate/funnel-03_last-call`
 - Notes:
   - The script uses Playwright to render static 1080x1920 PNG story/reels frames from inline HTML.
-  - Copy is aligned to the `/manila-free` landing-page promise: free collab shoots, quick intro call, guided posing, 10+ edits, and 7-day delivery.
-  - The three concept folders are intended for different ad angles: broad aspiration, premium-value skepticism killer, and urgency/retargeting.
+  - Script behavior: each run deletes prior `story-*` and `funnel-*` output folders before rendering fresh frames.
+  - Creative strategy is direct-response first with three distinct funnels: cold conversion, profile-signal upgrade, and final retargeting urgency.
+  - The package intentionally reuses only the Manila photo assets while replacing all prior ad copy/layouts.

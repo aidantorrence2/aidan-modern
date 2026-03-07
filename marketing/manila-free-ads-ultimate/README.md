@@ -1,35 +1,33 @@
-# Manila Free Ads Ultimate
+# Manila Free Ads Ultimate (Reset)
 
-Render all story/reels concepts with:
+Render command:
 
 ```bash
 node marketing/manila-free-ads-ultimate/render.mjs
 ```
 
-This package generates three higher-pressure ad concepts in separate folders:
+This reset package is fully rebuilt for conversion-first ad delivery.
+It reuses only the original Manila photo assets and introduces all-new copy, layouts, and funnel structures.
 
-- `story-01_photos-that-match-you`
-  - Broad aspirational angle.
-  - Story: "your photos do not match your energy yet" -> free collab solution -> easy next step.
-  - Best use: cold traffic.
+Output funnels:
 
-- `story-02_free-does-not-mean-basic`
-  - Skepticism-killer angle.
-  - Story: "free does not mean low value" -> premium process -> first-timer safe -> clear CTA.
-  - Best use: people who need stronger value framing.
+- `funnel-01_profile-conversion`
+  - Hook: profile photos decide outcomes before text.
+  - Focus: pain -> offer -> package -> frictionless action.
+  - Use case: cold traffic and broad audience targeting.
 
-- `story-03_this-is-your-sign`
-  - Urgency / direct-response angle.
-  - Story: "stop waiting" -> limited collab round -> concrete deliverables -> action now.
-  - Best use: warm traffic or retargeting.
+- `funnel-02_signal-upgrade`
+  - Hook: user is not bad on camera, current media is underperforming.
+  - Focus: diagnosis -> free upgrade offer -> risk reversal -> qualification.
+  - Use case: users who clicked before but did not convert.
 
-Suggested 15-18s voiceover directions if these get turned into actual Reels:
+- `funnel-03_last-call`
+  - Hook: final open batch urgency.
+  - Focus: offer stack -> coaching reassurance -> eligibility filter -> immediate CTA.
+  - Use case: retargeting and final push audiences.
 
-- `story-01_photos-that-match-you`
-  - "If your photos still do not match your energy, fix that now. I am opening free collab shoots in Manila. You do not need to know how to pose. I guide everything. Tap Learn More and grab a spot."
+Notes:
 
-- `story-02_free-does-not-mean-basic`
-  - "Free does not mean basic. This is a real directed portrait session in Manila with outfit guidance, pose coaching, and edited selects. No model experience needed. Tap Learn More before this collab round fills."
-
-- `story-03_this-is-your-sign`
-  - "If you have been waiting for a sign to finally book a shoot, this is it. I am opening a limited batch of free Manila collab sessions. Quick intro call, premium images, no hidden catch. Tap Learn More now."
+- Every run clears prior `story-*` and `funnel-*` output folders before rendering.
+- All exports are 1080x1920 PNG story/reels frames.
+- Copy is intentionally direct-response oriented for high conversion intent.
