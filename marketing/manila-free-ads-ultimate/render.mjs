@@ -12,133 +12,150 @@ const SANS = "'Avenir Next', 'Helvetica Neue', Arial, sans-serif"
 const NARROW = "'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif"
 
 const photos = {
-  hero: img('manila-hero-dsc-0898.jpg'),
-  stone: img('manila-gallery-dsc-0075.jpg'),
-  closeup: img('manila-gallery-dsc-0130.jpg'),
-  redwall: img('manila-gallery-dsc-0190.jpg'),
-  arcade: img('manila-gallery-dsc-0911.jpg')
+  hero: readImage('manila-hero-dsc-0898.jpg'),
+  stone: readImage('manila-gallery-dsc-0075.jpg'),
+  closeup: readImage('manila-gallery-dsc-0130.jpg'),
+  redwall: readImage('manila-gallery-dsc-0190.jpg'),
+  arcade: readImage('manila-gallery-dsc-0911.jpg')
 }
 
-function img(file) {
+function readImage(file) {
   const data = fs.readFileSync(path.join(IMG_DIR, file))
   return `data:image/jpeg;base64,${data.toString('base64')}`
 }
 
-function chip(text, theme, muted = false) {
-  const color = muted ? theme.textSoft : theme.text
-  const border = muted ? theme.borderSoft : theme.border
-  const bg = muted ? theme.panelSoft : theme.panel
+function deckBackground(theme) {
   return `
-    <span style="display:inline-flex;align-items:center;gap:9px;padding:10px 16px;border-radius:999px;background:${bg};border:1.4px solid ${border};backdrop-filter:blur(8px);">
-      <span style="width:6px;height:6px;border-radius:99px;background:${color};display:block;"></span>
-      <span style="font-family:${NARROW};font-size:19px;font-weight:700;letter-spacing:0.13em;text-transform:uppercase;color:${color};">${text}</span>
-    </span>
-  `
-}
-
-function footer(text, theme, dark = false) {
-  return `
-    <div style="position:absolute;left:0;right:0;bottom:152px;text-align:center;">
-      <span style="font-family:${NARROW};font-size:21px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:${dark ? 'rgba(12,12,12,0.46)' : 'rgba(255,255,255,0.72)'};">${text}</span>
-    </div>
+    <div style="position:absolute;inset:0;background:linear-gradient(160deg, ${theme.bgA} 0%, ${theme.bgB} 54%, ${theme.bgC} 100%);"></div>
+    <div style="position:absolute;inset:0;background:
+      radial-gradient(circle at 82% 14%, ${theme.glowA}, transparent 20%),
+      radial-gradient(circle at 16% 84%, ${theme.glowB}, transparent 20%);"></div>
   `
 }
 
 function grain(opacity = 0.08) {
   return `
-    <div style="position:absolute;inset:0;pointer-events:none;opacity:${opacity};mix-blend-mode:soft-light;background-image:
-      radial-gradient(circle at 12% 18%, rgba(255,255,255,0.45), transparent 16%),
-      radial-gradient(circle at 82% 12%, rgba(255,255,255,0.24), transparent 14%),
-      radial-gradient(circle at 44% 80%, rgba(255,255,255,0.2), transparent 18%),
-      repeating-linear-gradient(0deg, rgba(255,255,255,0.06) 0 1px, transparent 1px 4px);"></div>
+    <div style="position:absolute;inset:0;opacity:${opacity};pointer-events:none;mix-blend-mode:soft-light;background-image:
+      radial-gradient(circle at 14% 18%, rgba(255,255,255,0.35), transparent 16%),
+      radial-gradient(circle at 84% 12%, rgba(255,255,255,0.2), transparent 14%),
+      repeating-linear-gradient(0deg, rgba(255,255,255,0.05) 0 1px, transparent 1px 4px);"></div>
   `
 }
 
-function imagePanel(image, top = 760, height = 820) {
+function topMeta(section, theme) {
   return `
-    <div style="position:absolute;left:56px;right:56px;top:${top}px;height:${height}px;display:flex;align-items:center;justify-content:center;overflow:hidden;">
-      <img src="${image}" style="width:100%;height:100%;object-fit:contain;object-position:center;display:block;"/>
+    <div style="position:absolute;top:130px;left:60px;right:60px;display:flex;justify-content:space-between;align-items:center;">
+      <span style="font-family:${NARROW};font-size:19px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:${theme.meta};">${section}</span>
+      <span style="font-family:${NARROW};font-size:18px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:${theme.metaSoft};">Last chance • Limited time • Limited slots</span>
     </div>
   `
 }
 
-function proofGrid(images) {
+function heroPhoto(image, top = 1110, width = 760, height = 860) {
   return `
-    <div style="position:absolute;left:56px;right:56px;top:600px;display:grid;grid-template-columns:1fr 1fr;gap:14px;">
-      ${images.map(image => `
-        <div style="height:340px;display:flex;align-items:center;justify-content:center;overflow:hidden;">
-          <img src="${image}" style="width:100%;height:100%;object-fit:contain;object-position:center;display:block;"/>
+    <img src="${image}" style="position:absolute;left:50%;top:${top}px;transform:translate(-50%,-50%);width:${width}px;height:${height}px;object-fit:contain;object-position:center;display:block;filter:drop-shadow(0 26px 40px rgba(0,0,0,0.36));"/>
+  `
+}
+
+function proofStack(images) {
+  const slots = [
+    { left: 96, top: 620, w: 360, h: 360, rot: -2.5 },
+    { left: 624, top: 600, w: 360, h: 360, rot: 2.2 },
+    { left: 80, top: 1010, w: 380, h: 360, rot: 1.8 },
+    { left: 620, top: 1010, w: 380, h: 360, rot: -1.5 }
+  ]
+
+  return images
+    .map((image, index) => {
+      const slot = slots[index]
+      return `
+        <img src="${image}" style="position:absolute;left:${slot.left}px;top:${slot.top}px;width:${slot.w}px;height:${slot.h}px;object-fit:contain;object-position:center;display:block;transform:rotate(${slot.rot}deg);filter:drop-shadow(0 20px 28px rgba(0,0,0,0.32));"/>
+      `
+    })
+    .join('')
+}
+
+function stepLines(steps, theme) {
+  return `
+    <div style="position:absolute;left:60px;right:60px;top:560px;">
+      ${steps.map((step, i) => `
+        <div style="padding:20px 0;border-bottom:1px solid ${theme.rule};display:flex;gap:16px;align-items:flex-start;">
+          <span style="font-family:${DISPLAY};font-size:46px;line-height:1;color:${theme.text};width:36px;flex-shrink:0;">${i + 1}</span>
+          <p style="font-family:${SANS};font-size:34px;line-height:1.3;color:${theme.textSoft};margin:0;">${step}</p>
         </div>
       `).join('')}
     </div>
   `
 }
 
-function shell(theme, content, dark = true) {
+function bulletList(items, theme) {
   return `
-    <div style="width:1080px;height:1920px;position:relative;overflow:hidden;background:${theme.bgBottom};">
-      <div style="position:absolute;inset:0;background:linear-gradient(180deg, ${theme.bgTop} 0%, ${theme.bgBottom} 100%);"></div>
-      <div style="position:absolute;inset:0;background:
-        radial-gradient(circle at 84% 16%, ${theme.accentA}, transparent 18%),
-        radial-gradient(circle at 12% 86%, ${theme.accentB}, transparent 18%);"></div>
-      ${content}
-      ${grain(dark ? 0.1 : 0.07)}
+    <div style="position:absolute;left:60px;right:60px;top:540px;">
+      ${items.map((item, i) => `
+        <div style="display:flex;gap:14px;align-items:flex-start;padding:14px 0;border-bottom:1px solid ${theme.rule};">
+          <span style="font-family:${NARROW};font-size:21px;line-height:1.2;letter-spacing:0.08em;text-transform:uppercase;color:${theme.meta};width:34px;flex-shrink:0;">0${i + 1}</span>
+          <p style="font-family:${SANS};font-size:34px;line-height:1.32;color:${theme.textSoft};margin:0;">${item}</p>
+        </div>
+      `).join('')}
     </div>
   `
 }
 
-function darkTitle(text) {
-  return `font-family:${DISPLAY};font-size:104px;line-height:0.94;color:white;margin:0;text-shadow:0 3px 14px rgba(0,0,0,0.55),0 1px 3px rgba(0,0,0,0.75);max-width:830px;`
+function ctaStrip(text, theme) {
+  return `
+    <div style="position:absolute;left:60px;right:60px;bottom:188px;padding:20px 0;border-top:1px solid ${theme.ruleStrong};border-bottom:1px solid ${theme.ruleStrong};display:flex;justify-content:space-between;align-items:center;">
+      <span style="font-family:${NARROW};font-size:23px;font-weight:700;letter-spacing:0.13em;text-transform:uppercase;color:${theme.text};">${text}</span>
+      <span style="font-family:${NARROW};font-size:32px;font-weight:700;color:${theme.text};">-></span>
+    </div>
+  `
 }
 
-function darkBody() {
-  return `font-family:${SANS};font-size:33px;line-height:1.33;color:rgba(255,255,255,0.9);margin:0;max-width:770px;text-shadow:0 2px 10px rgba(0,0,0,0.56);`
+function titleStyle(theme, size = 106) {
+  return `font-family:${DISPLAY};font-size:${size}px;line-height:0.94;color:${theme.text};margin:0;text-shadow:${theme.shadow};max-width:840px;`
 }
 
-function lightTitle() {
-  return `font-family:${DISPLAY};font-size:86px;line-height:0.96;color:#2b1f1a;margin:0;max-width:830px;`
-}
-
-function lightBody() {
-  return `font-family:${SANS};font-size:31px;line-height:1.33;color:#5a4438;margin:0;`
+function bodyStyle(theme) {
+  return `font-family:${SANS};font-size:34px;line-height:1.32;color:${theme.textSoft};margin:0;text-shadow:${theme.bodyShadow};max-width:810px;`
 }
 
 const funnels = [
   {
     folder: 'funnel-01_last-chance-electric',
     theme: {
-      bgTop: '#0a1538',
-      bgBottom: '#08112b',
-      accentA: 'rgba(97,172,255,0.25)',
-      accentB: 'rgba(255,202,107,0.22)',
-      text: '#ffffff',
-      textSoft: 'rgba(255,255,255,0.82)',
-      border: 'rgba(255,255,255,0.3)',
-      borderSoft: 'rgba(255,255,255,0.2)',
-      panel: 'rgba(255,255,255,0.12)',
-      panelSoft: 'rgba(255,255,255,0.08)'
+      bgA: '#091743',
+      bgB: '#071231',
+      bgC: '#050d24',
+      glowA: 'rgba(89,163,255,0.24)',
+      glowB: 'rgba(255,203,110,0.18)',
+      text: '#f8f9ff',
+      textSoft: 'rgba(238,242,255,0.88)',
+      meta: 'rgba(226,233,255,0.86)',
+      metaSoft: 'rgba(200,212,255,0.66)',
+      rule: 'rgba(214,225,255,0.22)',
+      ruleStrong: 'rgba(214,225,255,0.34)',
+      shadow: '0 3px 14px rgba(0,0,0,0.55),0 1px 3px rgba(0,0,0,0.75)',
+      bodyShadow: '0 2px 10px rgba(0,0,0,0.56)'
     },
     hero: photos.arcade,
     cta: photos.redwall,
     proof: [photos.arcade, photos.closeup, photos.redwall, photos.stone],
     copy: {
-      hookTitle: 'Free Manila shoot spots are open.',
-      hookBody: 'Last-chance batch. If you have been thinking about it, now is the time.',
-      proofTitle: 'Real results.',
-      proofBody: 'Actual photos from Manila sessions. Limited slots are almost gone.',
+      hookTitle: 'Free Manila shoot slots are open.',
+      hookBody: 'This is the last-chance free batch. If you want in, do not wait.',
+      proofTitle: 'Proof.',
+      proofBody: 'Real outputs from real Manila sessions. Limited slots are almost gone.',
       howTitle: 'How it works.',
       steps: [
         'Message me if you are interested or if you have questions.',
-        'I send details and current open limited-time slots.',
-        'If you want in, we confirm your shoot directly by message.'
+        'I send details and currently open limited-time slots.',
+        'If you want one, we lock your shoot through message.'
       ],
-      whatTitle: 'What you get.',
-      whatItems: [
-        'A guided shoot with clear direction',
+      getTitle: 'What you get.',
+      getItems: [
+        'Guided shoot direction so it feels easy',
         'Edited photos ready to post',
-        'Help with vibe, looks, and location',
-        'Fast turnaround and easy communication',
-        'A real free-shot opportunity before slots close'
+        'Support with style, vibe, and location',
+        'Fast turnaround and clean communication'
       ],
       ctaTitle: 'Final call for free Manila slots.',
       ctaBody: 'If interested or if you have questions, message me now to move forward.',
@@ -148,79 +165,83 @@ const funnels = [
   {
     folder: 'funnel-02_last-chance-fresh',
     theme: {
-      bgTop: '#0a2b1c',
-      bgBottom: '#072014',
-      accentA: 'rgba(110,255,195,0.24)',
-      accentB: 'rgba(255,255,255,0.16)',
-      text: '#ffffff',
-      textSoft: 'rgba(255,255,255,0.82)',
-      border: 'rgba(255,255,255,0.3)',
-      borderSoft: 'rgba(255,255,255,0.2)',
-      panel: 'rgba(255,255,255,0.12)',
-      panelSoft: 'rgba(255,255,255,0.08)'
+      bgA: '#062c1d',
+      bgB: '#052218',
+      bgC: '#041710',
+      glowA: 'rgba(92,255,192,0.2)',
+      glowB: 'rgba(255,255,255,0.12)',
+      text: '#f2fff9',
+      textSoft: 'rgba(229,255,244,0.86)',
+      meta: 'rgba(201,255,231,0.84)',
+      metaSoft: 'rgba(173,240,209,0.64)',
+      rule: 'rgba(188,255,225,0.22)',
+      ruleStrong: 'rgba(188,255,225,0.34)',
+      shadow: '0 3px 14px rgba(0,0,0,0.55),0 1px 3px rgba(0,0,0,0.72)',
+      bodyShadow: '0 2px 10px rgba(0,0,0,0.52)'
     },
     hero: photos.closeup,
     cta: photos.hero,
     proof: [photos.closeup, photos.stone, photos.arcade, photos.redwall],
     copy: {
       hookTitle: 'Free shoot. Fresh photos. Limited slots.',
-      hookBody: 'Best time to upgrade your profile photos is right now while this batch is open.',
-      proofTitle: 'Session proof.',
-      proofBody: 'These are real outputs from past shoots. Last-chance free slots are active now.',
+      hookBody: 'This batch is almost full. If you want better photos, now is the window.',
+      proofTitle: 'Proof.',
+      proofBody: 'These are real photos from Manila sessions. Last-chance slots are live now.',
       howTitle: 'How it works.',
       steps: [
-        'Message me if you are interested or if you want details.',
-        'I share open limited-time slots and answer your questions.',
-        'If it feels right, we lock your shoot by message.'
+        'Message me if you are interested or if you need details.',
+        'I share open limited-time slots and answer questions.',
+        'If it is a fit, we confirm your slot right in message.'
       ],
-      whatTitle: 'What you get.',
-      whatItems: [
-        'Directed shoot flow from start to finish',
+      getTitle: 'What you get.',
+      getItems: [
+        'A fun session with clear direction',
         'Edited photos you can use immediately',
-        'Guidance on style, location, and vibe',
-        'Simple process with fast replies',
-        'A chance to claim a free slot before this batch closes'
+        'Guidance on look, mood, and location',
+        'Simple process from first message to final files'
       ],
       ctaTitle: 'Last chance to lock a free shoot spot.',
-      ctaBody: 'If interested or if you have questions, message me now and I will send the next step.',
+      ctaBody: 'If interested or if you have questions, message me now and I will send next steps.',
       ctaButton: 'Message to claim spot'
     }
   },
   {
     folder: 'funnel-03_last-chance-bold',
     theme: {
-      bgTop: '#38140d',
-      bgBottom: '#261009',
-      accentA: 'rgba(255,136,108,0.26)',
-      accentB: 'rgba(255,220,165,0.22)',
-      text: '#ffffff',
-      textSoft: 'rgba(255,255,255,0.82)',
-      border: 'rgba(255,255,255,0.3)',
-      borderSoft: 'rgba(255,255,255,0.2)',
-      panel: 'rgba(255,255,255,0.12)',
-      panelSoft: 'rgba(255,255,255,0.08)'
+      bgA: '#3a140e',
+      bgB: '#2b100c',
+      bgC: '#1c0a08',
+      glowA: 'rgba(255,137,109,0.22)',
+      glowB: 'rgba(255,221,170,0.18)',
+      text: '#fff8f6',
+      textSoft: 'rgba(255,236,230,0.86)',
+      meta: 'rgba(255,215,201,0.86)',
+      metaSoft: 'rgba(255,196,175,0.66)',
+      rule: 'rgba(255,220,206,0.22)',
+      ruleStrong: 'rgba(255,220,206,0.34)',
+      shadow: '0 3px 14px rgba(0,0,0,0.55),0 1px 3px rgba(0,0,0,0.72)',
+      bodyShadow: '0 2px 10px rgba(0,0,0,0.52)'
     },
     hero: photos.redwall,
     cta: photos.closeup,
     proof: [photos.redwall, photos.arcade, photos.hero, photos.stone],
     copy: {
       hookTitle: 'Quick heads up: free Manila shoot slots.',
-      hookBody: 'This is a limited-time last-chance offer. Once filled, it is closed.',
-      proofTitle: 'Proof you can trust.',
-      proofBody: 'Real photos, real sessions, real results. Very few free slots left.',
+      hookBody: 'This is a limited-time last-chance offer. Once filled, it closes.',
+      proofTitle: 'Proof.',
+      proofBody: 'Real sessions, real photos, real outcomes. Very few free slots left.',
       howTitle: 'How it works.',
       steps: [
         'Message me if you are interested or if you have questions.',
         'I send details and the remaining limited-time slot options.',
         'If you want one, we confirm everything by message.'
       ],
-      whatTitle: 'What you get.',
-      whatItems: [
-        'A fun shoot with direction so it feels easy',
-        'Edited final photos ready for socials',
-        'Support on look and creative direction',
-        'Fast and clear message-based process',
-        'A last-chance free slot while this batch is live'
+      getTitle: 'What you get.',
+      getItems: [
+        'Direction during the full shoot',
+        'Edited photos ready for socials',
+        'Help with styling and creative direction',
+        'Fast, direct, message-based process'
       ],
       ctaTitle: 'Limited time. Limited slots. Last call.',
       ctaBody: 'If interested or if you have questions, message me right now to move forward.',
@@ -229,121 +250,94 @@ const funnels = [
   }
 ]
 
+function slideShell(theme, section, content) {
+  return `
+    <div style="width:1080px;height:1920px;position:relative;overflow:hidden;background:${theme.bgC};">
+      ${deckBackground(theme)}
+      ${topMeta(section, theme)}
+      ${content}
+      ${grain(0.09)}
+    </div>
+  `
+}
+
 function buildSlides(funnel) {
-  const theme = funnel.theme
+  const t = funnel.theme
   const c = funnel.copy
 
   return [
     {
       name: '01_hey_free_photo_shoot',
-      html: shell(theme, `
-        <div style="position:absolute;top:200px;left:56px;right:56px;display:flex;justify-content:space-between;align-items:center;">
-          ${chip('Hey free photo shoot', theme)}
-          ${chip('Limited time', theme, true)}
+      html: slideShell(t, 'Hey free photo shoot', `
+        <div style="position:absolute;left:60px;right:60px;top:330px;">
+          <h1 style="${titleStyle(t)}">${c.hookTitle}</h1>
+          <p style="${bodyStyle(t)}margin-top:18px;">${c.hookBody}</p>
         </div>
-        <div style="position:absolute;left:56px;right:56px;top:430px;">
-          <h1 style="${darkTitle()}">${c.hookTitle}</h1>
-          <p style="${darkBody()}margin-top:18px;">${c.hookBody}</p>
-        </div>
-        ${imagePanel(funnel.hero, 860, 700)}
-        ${footer('Proof', theme)}
-      `, true)
+        ${heroPhoto(funnel.hero, 1120, 760, 860)}
+        <div style="position:absolute;left:0;right:0;bottom:130px;text-align:center;font-family:${NARROW};font-size:20px;letter-spacing:0.14em;text-transform:uppercase;color:${t.metaSoft};">Proof</div>
+      `)
     },
     {
       name: '02_proof',
-      html: shell(theme, `
-        <div style="position:absolute;top:200px;left:56px;right:56px;display:flex;justify-content:space-between;align-items:center;">
-          ${chip('Proof', theme)}
-          ${chip('Few slots left', theme, true)}
+      html: slideShell(t, 'Proof', `
+        <div style="position:absolute;left:60px;right:60px;top:300px;">
+          <h2 style="${titleStyle(t, 96)}">${c.proofTitle}</h2>
+          <p style="${bodyStyle(t)}margin-top:14px;">${c.proofBody}</p>
         </div>
-        <div style="position:absolute;left:56px;right:56px;top:390px;">
-          <h2 style="${darkTitle()}font-size:92px;">${c.proofTitle}</h2>
-          <p style="${darkBody()}margin-top:16px;">${c.proofBody}</p>
-        </div>
-        ${proofGrid(funnel.proof)}
-        ${footer('How it works', theme)}
-      `, true)
+        ${proofStack(funnel.proof)}
+        <div style="position:absolute;left:0;right:0;bottom:130px;text-align:center;font-family:${NARROW};font-size:20px;letter-spacing:0.14em;text-transform:uppercase;color:${t.metaSoft};">How it works</div>
+      `)
     },
     {
       name: '03_how_it_works',
-      html: shell(theme, `
-        <div style="position:absolute;top:200px;left:56px;right:56px;display:flex;justify-content:space-between;align-items:center;">
-          ${chip('How it works', theme)}
-          ${chip('Last chance slots', theme, true)}
+      html: slideShell(t, 'How it works', `
+        <div style="position:absolute;left:60px;right:60px;top:300px;">
+          <h2 style="${titleStyle(t, 96)}">${c.howTitle}</h2>
         </div>
-        <div style="position:absolute;left:56px;right:56px;top:390px;">
-          <h2 style="${darkTitle()}font-size:92px;">${c.howTitle}</h2>
-        </div>
-        <div style="position:absolute;left:56px;right:56px;top:590px;display:grid;gap:14px;">
-          ${c.steps.map((text, index) => `
-            <div style="display:flex;gap:16px;align-items:flex-start;padding:18px 20px;border-radius:20px;background:rgba(255,255,255,0.12);border:1.5px solid rgba(255,255,255,0.16);">
-              <div style="width:42px;height:42px;border-radius:99px;background:rgba(255,255,255,0.82);display:flex;align-items:center;justify-content:center;color:#1b1512;font-family:${NARROW};font-size:23px;font-weight:700;flex-shrink:0;">${index + 1}</div>
-              <p style="${darkBody()}font-size:30px;margin:0;">${text}</p>
-            </div>
-          `).join('')}
-        </div>
-        ${footer('What you get', theme)}
-      `, true)
+        ${stepLines(c.steps, t)}
+        <div style="position:absolute;left:0;right:0;bottom:130px;text-align:center;font-family:${NARROW};font-size:20px;letter-spacing:0.14em;text-transform:uppercase;color:${t.metaSoft};">What you get</div>
+      `)
     },
     {
       name: '04_what_you_get',
-      html: shell(
-        {
-          ...theme,
-          bgTop: '#fdf7ef',
-          bgBottom: '#f4e8db',
-          accentA: 'rgba(255,173,132,0.26)',
-          accentB: 'rgba(255,222,174,0.2)',
-          text: '#2b1f1a',
-          textSoft: '#5a4438',
-          border: 'rgba(43,31,26,0.22)',
-          borderSoft: 'rgba(43,31,26,0.14)',
-          panel: 'rgba(255,255,255,0.78)',
-          panelSoft: 'rgba(255,255,255,0.56)'
-        },
-        `
-          <div style="position:absolute;top:200px;left:56px;right:56px;display:flex;justify-content:space-between;align-items:center;">
-            ${chip('What you get', { ...theme, text: '#2b1f1a', textSoft: '#5a4438', border: 'rgba(43,31,26,0.22)', borderSoft: 'rgba(43,31,26,0.14)', panel: 'rgba(255,255,255,0.78)', panelSoft: 'rgba(255,255,255,0.56)' })}
-            ${chip('Limited-time offer', { ...theme, text: '#2b1f1a', textSoft: '#5a4438', border: 'rgba(43,31,26,0.22)', borderSoft: 'rgba(43,31,26,0.14)', panel: 'rgba(255,255,255,0.78)', panelSoft: 'rgba(255,255,255,0.56)' }, true)}
+      html: `
+        <div style="width:1080px;height:1920px;position:relative;overflow:hidden;background:#f7efe6;">
+          <div style="position:absolute;inset:0;background:linear-gradient(165deg, #fff9f1 0%, #f5e8d9 58%, #efd9c7 100%);"></div>
+          <div style="position:absolute;inset:0;background:
+            radial-gradient(circle at 84% 14%, rgba(255,164,124,0.26), transparent 20%),
+            radial-gradient(circle at 18% 86%, rgba(255,223,180,0.24), transparent 22%);"></div>
+          <div style="position:absolute;top:130px;left:60px;right:60px;display:flex;justify-content:space-between;align-items:center;">
+            <span style="font-family:${NARROW};font-size:19px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:rgba(72,42,29,0.8);">What you get</span>
+            <span style="font-family:${NARROW};font-size:18px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:rgba(108,72,55,0.56);">Last chance • Limited time • Limited slots</span>
           </div>
-          <div style="position:absolute;left:56px;right:56px;top:390px;">
-            <h2 style="${lightTitle()}">${c.whatTitle}</h2>
+          <div style="position:absolute;left:60px;right:60px;top:300px;">
+            <h2 style="font-family:${DISPLAY};font-size:94px;line-height:0.95;color:#362419;margin:0;">${c.getTitle}</h2>
           </div>
-          <div style="position:absolute;left:56px;right:56px;top:560px;display:grid;gap:13px;">
-            ${c.whatItems.map(item => `
-              <div style="padding:18px 20px;border-radius:18px;background:rgba(255,255,255,0.86);border:1.4px solid rgba(43,31,26,0.12);display:flex;align-items:center;gap:13px;">
-                <div style="width:14px;height:14px;border-radius:99px;background:#ff8a60;flex-shrink:0;"></div>
-                <p style="${lightBody()}font-size:29px;">${item}</p>
-              </div>
-            `).join('')}
-          </div>
-          ${footer('CTA', theme, true)}
-        `,
-        false
-      )
+          ${bulletList(c.getItems, {
+            textSoft: '#5f4538',
+            meta: '#9f6a50',
+            rule: 'rgba(90,58,42,0.18)'
+          })}
+          <div style="position:absolute;left:0;right:0;bottom:130px;text-align:center;font-family:${NARROW};font-size:20px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(94,64,49,0.56);">CTA</div>
+          ${grain(0.05)}
+        </div>
+      `
     },
     {
       name: '05_cta',
-      html: shell(theme, `
-        <div style="position:absolute;top:200px;left:56px;right:56px;display:flex;justify-content:space-between;align-items:center;">
-          ${chip('CTA', theme)}
-          ${chip('Last chance', theme, true)}
+      html: slideShell(t, 'CTA', `
+        <div style="position:absolute;left:60px;right:60px;top:300px;">
+          <h2 style="${titleStyle(t, 98)}">${c.ctaTitle}</h2>
+          <p style="${bodyStyle(t)}margin-top:16px;">${c.ctaBody}</p>
         </div>
-        <div style="position:absolute;left:56px;right:56px;top:430px;">
-          <h2 style="${darkTitle()}">${c.ctaTitle}</h2>
-          <p style="${darkBody()}margin-top:18px;">${c.ctaBody}</p>
-        </div>
-        ${imagePanel(funnel.cta, 860, 620)}
-        <div style="position:absolute;left:56px;right:56px;bottom:282px;padding:23px 26px;border-radius:24px;background:rgba(255,255,255,0.12);border:1.5px solid rgba(255,255,255,0.16);backdrop-filter:blur(8px);display:flex;justify-content:space-between;align-items:center;">
-          <span style="font-family:${NARROW};font-size:24px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:white;">${c.ctaButton}</span>
-          <span style="font-family:${NARROW};font-size:32px;font-weight:700;color:#ffffff;">-></span>
-        </div>
-      `, true)
+        ${heroPhoto(funnel.cta, 1110, 760, 780)}
+        ${ctaStrip(c.ctaButton, t)}
+      `)
     }
   ]
 }
 
-function cleanOldOutputs() {
+function cleanOutputFolders() {
   const entries = fs.readdirSync(OUT, { withFileTypes: true })
   for (const entry of entries) {
     if (!entry.isDirectory()) continue
@@ -354,7 +348,7 @@ function cleanOldOutputs() {
 }
 
 async function render() {
-  cleanOldOutputs()
+  cleanOutputFolders()
 
   const browser = await chromium.launch()
   const context = await browser.newContext({
@@ -366,8 +360,8 @@ async function render() {
 
   for (const funnel of funnels) {
     const slides = buildSlides(funnel)
-    const folder = path.join(OUT, funnel.folder)
-    fs.mkdirSync(folder, { recursive: true })
+    const outFolder = path.join(OUT, funnel.folder)
+    fs.mkdirSync(outFolder, { recursive: true })
 
     for (const slide of slides) {
       total += 1
@@ -375,13 +369,13 @@ async function render() {
       await page.setContent(
         `<!doctype html><html><head><style>
           * { box-sizing: border-box; }
-          html, body { margin: 0; width: 1080px; height: 1920px; overflow: hidden; background: #000; }
+          html, body { margin: 0; width: 1080px; height: 1920px; background: #000; overflow: hidden; }
           body { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
         </style></head><body>${slide.html}</body></html>`,
         { waitUntil: 'load' }
       )
       await page.waitForTimeout(250)
-      const file = path.join(folder, `${slide.name}.png`)
+      const file = path.join(outFolder, `${slide.name}.png`)
       await page.screenshot({ path: file, type: 'png' })
       await page.close()
       console.log(`Rendered ${funnel.folder}/${slide.name}.png`)
