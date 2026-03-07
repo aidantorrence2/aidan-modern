@@ -106,3 +106,21 @@
     - Explicit bottom CTA
   - Script generates voiceovers using macOS `say` and mixes them over source audio.
   - Prefers `/opt/homebrew/opt/ffmpeg-full/bin/ffmpeg`; falls back to `ffmpeg` if present.
+
+## Manila Free V5 Video Ads (New Creative Set)
+- Motion clip inputs:
+  - `/Users/aidantorrence/Downloads/Copy of Copy of Copy of Copy of Copy of best ph (1080 x 1080 px) (Mobile Video).mp4`
+  - `/Users/aidantorrence/Downloads/Copy of Copy of IMG_1430-VEED (1).mp4`
+  - `/Users/aidantorrence/Downloads/Copy of Copy of IMG_1430-VEED (2).mp4`
+  - `/Users/aidantorrence/Downloads/Copy of Copy of IMG_1430-VEED (3).mp4`
+  - `/Users/aidantorrence/Downloads/Copy of Copy of IMG_1430-VEED (4).mp4`
+  - `/Users/aidantorrence/Downloads/Copy of Copy of Copy of Copy of Copy of Copy of best ph (1080 x 1080 px).mp4`
+- Rendering script: `tools/render_manila_free_video_ads_v5.sh`
+- Output folder: `marketing/manila-free-ads/v5/videos`
+- Re-render command:
+  - `tools/render_manila_free_video_ads_v5.sh`
+- Notes:
+  - Generates 5 vertical MP4 ads (`manila_free_new_01.mp4` ... `manila_free_new_05.mp4`) at 1080x1920, 30fps, 18s.
+  - Uses square-source framing with blurred background + centered foreground composite.
+  - Handles mixed source clips where some inputs have no audio tracks.
+  - Final videos currently use synthesized voiceover only (no source-bed audio mix).
