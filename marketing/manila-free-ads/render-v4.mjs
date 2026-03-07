@@ -181,7 +181,6 @@ function whatSlide(name, headline, items, bgPhoto) {
   const content = `
           <h2 style="font-family:${SERIF};font-size:62px;font-weight:700;color:#0a0a0a;margin:0 0 32px;line-height:1.1;">${headline}</h2>
           <div style="display:flex;flex-direction:column;gap:18px;">${itemsHtml}</div>
-          <p style="font-family:${SANS};margin:32px 0 0;font-size:32px;font-weight:700;color:#15803d;">100% free - no cost, no catch</p>
   `
   return splitSlide(name, bgPhoto, content)
 }
@@ -202,7 +201,6 @@ function ctaSlide(name, heroImg, headline, subtext) {
           <p style="font-family:${SANS};font-size:34px;color:rgba(255,255,255,0.8);line-height:1.4;margin:24px 0 0;${S}">${subtext}</p>
         </div>
         <div style="position:absolute;bottom:440px;left:80px;right:80px;text-align:center;">
-          <p style="font-family:${SANS};font-size:34px;font-weight:700;color:#86efac;margin:0;${S}">100% free</p>
         </div>
         ${filmGrain(0.1)}
       </div>
