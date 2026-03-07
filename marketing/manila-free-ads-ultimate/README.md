@@ -11,24 +11,21 @@ Tone is lighter and simpler while still pushing a clear limited-time offer.
 
 Output funnels:
 
-- `funnel-01_fun-free-shoot`
-  - Hook: free shoot energy and fun opportunity framing.
-  - Focus: fast value explanation -> limited-time batch -> easy claim flow.
-  - Use case: broad cold traffic.
+- `funnel-01_last-chance-electric`
+- `funnel-02_last-chance-fresh`
+- `funnel-03_last-chance-bold`
 
-- `funnel-02_social-glow-up`
-  - Hook: quick profile glow-up with zero cost.
-  - Focus: simple vibe shift story -> low-friction process -> strong CTA.
-  - Use case: warm audiences that need a friendlier push.
-
-- `funnel-03_last-chance-vibes`
-  - Hook: last-chance urgency with upbeat messaging.
-  - Focus: recap value -> who should apply -> final close.
-  - Use case: retargeting and final conversion pushes.
+Each funnel now uses the same five-slide sequence:
+1. `hey free photo shoot`
+2. `proof`
+3. `how it works`
+4. `what you get`
+5. `cta`
 
 Notes:
 
 - Every run clears prior `story-*` and `funnel-*` output folders before rendering.
 - All exports are 1080x1920 PNG story/reels frames.
-- Copy is short, high-conversion, and intentionally upbeat.
-- Every funnel explicitly reinforces limited-time availability.
+- Copy is short, high-conversion, and intentionally upbeat with "last chance / limited time / limited slots" language on every funnel.
+- Process language is message-first: if interested or if someone has questions, they message to move forward.
+- Photo rendering uses `object-fit: contain` to avoid cropping the source images.
