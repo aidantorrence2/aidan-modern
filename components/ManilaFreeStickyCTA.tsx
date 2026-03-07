@@ -16,7 +16,7 @@ export default function ManilaFreeStickyCTA(){
     <div className="fixed inset-x-0 bottom-0 z-40 bg-white/95 backdrop-blur shadow-[0_-12px_30px_rgba(0,0,0,0.12)]">
       <div className="container flex flex-col gap-3 py-3 sm:flex-row sm:items-center sm:justify-between">
         <p className="text-[0.65rem] font-semibold uppercase tracking-[0.32em] text-neutral-600">
-          Free collab sessions - sign up for a spot
+          Free collab sessions - learn more on a quick intro call
         </p>
         <a
           href={BOOKING_URL}
@@ -26,7 +26,7 @@ export default function ManilaFreeStickyCTA(){
           className="btn inline-flex items-center justify-center rounded-xl bg-neutral-900 px-4 py-2 text-xs font-semibold text-white transition hover:bg-neutral-800 sm:text-sm"
           data-cta="manila-free-sticky-signup"
         >
-          Sign up
+          Learn more
         </a>
       </div>
     </div>
