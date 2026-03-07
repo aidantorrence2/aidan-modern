@@ -195,12 +195,10 @@ function ctaSlide(name, heroImg, headline, subtext) {
     html: `
       <div style="width:1080px;height:1920px;position:relative;overflow:hidden;background:#000;">
         <img src="${heroImg}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(1.1) brightness(0.85);"/>
-        <div style="position:absolute;inset:0;background:linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.1) 35%, rgba(0,0,0,0.1) 50%, rgba(0,0,0,0.85) 100%);"></div>
-        <div style="position:absolute;top:300px;left:80px;right:80px;text-align:center;">
-          <h2 style="font-family:${SERIF};font-size:92px;font-weight:700;color:white;line-height:1.05;margin:0;${S}">${headline}</h2>
-          <p style="font-family:${SANS};font-size:34px;color:rgba(255,255,255,0.8);line-height:1.4;margin:24px 0 0;${S}">${subtext}</p>
-        </div>
-        <div style="position:absolute;bottom:440px;left:80px;right:80px;text-align:center;">
+        <div style="position:absolute;inset:0;background:linear-gradient(180deg, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.2) 30%, rgba(0,0,0,0.2) 55%, rgba(0,0,0,0.9) 100%);"></div>
+        <div style="position:absolute;bottom:480px;left:64px;right:64px;">
+          <h2 style="font-family:${SERIF};font-size:120px;font-weight:700;font-style:italic;color:white;line-height:0.95;margin:0;${S}">${headline}</h2>
+          <p style="font-family:${SANS};font-size:36px;color:rgba(255,255,255,0.75);line-height:1.4;margin:28px 0 0 4px;${S}">${subtext}</p>
         </div>
         ${filmGrain(0.1)}
       </div>
