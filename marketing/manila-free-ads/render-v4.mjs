@@ -75,7 +75,7 @@ function warmShell(bgPhoto, content) {
       <div style="position:absolute;inset:0;background:
         radial-gradient(circle at 82% 14%, rgba(255,170,130,0.2), transparent 22%),
         radial-gradient(circle at 14% 88%, rgba(255,224,184,0.18), transparent 22%);"></div>
-      ${bgPhoto ? `<img src="${bgPhoto}" style="position:absolute;right:-90px;bottom:-120px;width:760px;height:1040px;object-fit:contain;object-position:center;opacity:0.3;display:block;filter:saturate(1.02) contrast(1.02);"/>` : ''}
+      ${bgPhoto ? `<img src="${bgPhoto}" style="position:absolute;right:-90px;bottom:-120px;width:760px;height:1040px;object-fit:contain;object-position:center;opacity:1;display:block;filter:saturate(1.05) contrast(1.03);"/>` : ''}
       ${content}
       ${filmGrain(0.06)}
     </div>
