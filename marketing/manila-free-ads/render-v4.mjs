@@ -72,16 +72,19 @@ function hookSlide(name, heroImg, subtext) {
 function proofSlide(name, headline, images, bg = DARK) {
   const isDark = bg === DARK
   const color = isDark ? 'white' : '#0c1014'
+  const cellBg = isDark ? 'rgba(255,255,255,0.06)' : 'rgba(0,0,0,0.04)'
   const imgHtml = images.map(src =>
-    `<img src="${src}" style="width:100%;height:350px;object-fit:contain;border-radius:8px;display:block;"/>`
-  ).join('\n          ')
+    `<div style="background:${cellBg};border-radius:14px;overflow:hidden;display:flex;align-items:center;justify-content:center;padding:6px;">
+              <img src="${src}" style="width:100%;height:100%;object-fit:contain;display:block;"/>
+            </div>`
+  ).join('\n            ')
   return {
     name,
     html: `
       <div style="width:1080px;height:1920px;position:relative;overflow:hidden;background:${bg};">
-        <div style="padding:120px 60px 80px;">
-          <h2 style="font-family:${SERIF};font-size:72px;font-weight:700;font-style:italic;color:${color};line-height:0.98;margin:0 0 28px;">${headline}</h2>
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+        <div style="padding:100px 48px 60px;">
+          <h2 style="font-family:${SERIF};font-size:72px;font-weight:700;font-style:italic;color:${color};line-height:0.98;margin:0 0 32px;">${headline}</h2>
+          <div style="display:grid;grid-template-columns:1fr 1fr;grid-template-rows:repeat(4, 370px);gap:14px;">
             ${imgHtml}
           </div>
         </div>
