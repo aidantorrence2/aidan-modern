@@ -136,89 +136,78 @@ function proofSlide(name, headline, images, variant = 'dark') {
   return { name, html: warmShell(null, inner) }
 }
 
+// Split layout: photo top half, warm beige bottom half with text (v1 style)
+function splitSlide(name, photo, content) {
+  return {
+    name,
+    html: `
+      <div style="width:1080px;height:1920px;position:relative;overflow:hidden;background:#f7f6f2;">
+        <img src="${photo}" style="width:100%;height:50%;object-fit:cover;object-position:center;display:block;"/>
+        <div style="position:absolute;top:0;left:0;right:0;height:50%;background:linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, transparent 30%, transparent 75%, rgba(247,246,242,1) 100%);"></div>
+        <div style="position:absolute;bottom:420px;left:80px;right:80px;">
+          ${content}
+        </div>
+      </div>
+    `
+  }
+}
+
 function howSlide(name, headline, steps, bgPhoto) {
   const stepsHtml = steps.map((step, i) => `
-        <div style="display:flex;gap:18px;align-items:flex-start;padding:24px 0;border-bottom:1px solid rgba(217,228,255,0.2);">
-          <span style="font-family:${SERIF};font-size:50px;line-height:1;color:white;width:38px;flex-shrink:0;">${i + 1}</span>
-          <p style="font-family:${SANS};font-size:35px;line-height:1.32;color:rgba(245,247,255,0.9);margin:0;">${step}</p>
-        </div>
-  `).join('')
-
+          <div style="display:flex;align-items:flex-start;gap:20px;">
+            <span style="font-family:${SANS};display:flex;align-items:center;justify-content:center;width:52px;height:52px;border-radius:50%;background:#0a0a0a;color:white;font-size:26px;font-weight:700;flex-shrink:0;">${i + 1}</span>
+            <span style="font-family:${SANS};font-size:34px;color:#404040;line-height:1.35;padding-top:4px;">${step}</span>
+          </div>
+  `).join('\n')
   const content = `
-      <div style="position:absolute;left:90px;right:90px;top:300px;text-align:center;">
-        <h2 style="font-family:${SERIF};font-size:96px;font-weight:700;line-height:0.95;color:white;margin:0;${S}">${headline}</h2>
-      </div>
-      <div style="position:absolute;left:120px;right:120px;top:640px;">${stepsHtml}</div>
-      <div style="position:absolute;left:120px;right:120px;bottom:420px;text-align:center;">
-        <p style="font-family:${SANS};font-size:28px;color:rgba(255,255,255,0.3);">100% free</p>
-      </div>
+          <h2 style="font-family:${SERIF};font-size:62px;font-weight:700;color:#0a0a0a;margin:0 0 36px;line-height:1.1;">${headline}</h2>
+          <div style="display:flex;flex-direction:column;gap:28px;">${stepsHtml}</div>
+          <p style="font-family:${SANS};margin:36px 0 0;font-size:34px;font-weight:600;color:#0a0a0a;line-height:1.3;">No experience needed.<br/>I guide you the whole time.</p>
   `
-  return { name, html: darkShell(bgPhoto, 0.35, content) }
+  return splitSlide(name, bgPhoto, content)
 }
 
 function howSlideWarm(name, headline, steps, bgPhoto) {
-  const stepsHtml = steps.map((step, i) => `
-        <div style="display:flex;gap:18px;align-items:flex-start;padding:20px 0;border-bottom:1px solid rgba(83,54,39,0.15);">
-          <span style="font-family:'Futura','Avenir Next Condensed',sans-serif;font-size:23px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#9f6a52;width:42px;flex-shrink:0;">0${i + 1}</span>
-          <p style="font-family:${SANS};font-size:34px;line-height:1.34;color:#5d4334;margin:0;">${step}</p>
-        </div>
-  `).join('')
-
-  const content = `
-      <div style="position:absolute;left:90px;right:90px;top:300px;text-align:center;">
-        <h2 style="font-family:${SERIF};font-size:96px;font-weight:700;line-height:0.95;color:#35231a;margin:0;">${headline}</h2>
-      </div>
-      <div style="position:absolute;left:110px;right:110px;top:630px;">${stepsHtml}</div>
-  `
-  return { name, html: warmShell(bgPhoto, content) }
+  return howSlide(name, headline, steps, bgPhoto)
 }
 
 function whatSlide(name, headline, items, bgPhoto) {
-  const itemsHtml = items.map((item, i) => `
-        <div style="display:flex;gap:18px;align-items:flex-start;padding:18px 0;border-bottom:1px solid rgba(83,54,39,0.15);">
-          <span style="font-family:'Futura','Avenir Next Condensed',sans-serif;font-size:23px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#9f6a52;width:42px;flex-shrink:0;">0${i + 1}</span>
-          <p style="font-family:${SANS};font-size:34px;line-height:1.34;color:#5d4334;margin:0;">${item}</p>
-        </div>
-  `).join('')
-
+  const itemsHtml = items.map(item => `
+          <div style="display:flex;align-items:flex-start;gap:14px;">
+            <span style="font-family:${SANS};font-size:34px;color:#0a0a0a;flex-shrink:0;">-</span>
+            <span style="font-family:${SANS};font-size:34px;color:#404040;line-height:1.35;">${item}</span>
+          </div>
+  `).join('\n')
   const content = `
-      <div style="position:absolute;left:90px;right:90px;top:300px;text-align:center;">
-        <h2 style="font-family:${SERIF};font-size:96px;font-weight:700;line-height:0.95;color:#35231a;margin:0;">${headline}</h2>
-        <p style="font-family:${SANS};font-size:30px;line-height:1.34;color:#5d4334;margin:18px auto 0;max-width:760px;">Simple process, great photos, no complicated steps.</p>
-      </div>
-      <div style="position:absolute;left:110px;right:110px;top:630px;">${itemsHtml}</div>
+          <h2 style="font-family:${SERIF};font-size:62px;font-weight:700;color:#0a0a0a;margin:0 0 32px;line-height:1.1;">${headline}</h2>
+          <div style="display:flex;flex-direction:column;gap:18px;">${itemsHtml}</div>
+          <p style="font-family:${SANS};margin:32px 0 0;font-size:32px;font-weight:700;color:#15803d;">100% free - no cost, no catch</p>
   `
-  return { name, html: warmShell(bgPhoto, content) }
+  return splitSlide(name, bgPhoto, content)
 }
 
 function whatSlideDark(name, headline, items, bgPhoto) {
-  const itemsHtml = items.map((item, i) => `
-        <div style="display:flex;gap:18px;align-items:flex-start;padding:24px 0;border-bottom:1px solid rgba(217,228,255,0.2);">
-          <span style="font-family:${SERIF};font-size:50px;line-height:1;color:white;width:38px;flex-shrink:0;">${i + 1}</span>
-          <p style="font-family:${SANS};font-size:35px;line-height:1.32;color:rgba(245,247,255,0.9);margin:0;">${item}</p>
-        </div>
-  `).join('')
-
-  const content = `
-      <div style="position:absolute;left:90px;right:90px;top:300px;text-align:center;">
-        <h2 style="font-family:${SERIF};font-size:96px;font-weight:700;line-height:0.95;color:white;margin:0;${S}">${headline}</h2>
-      </div>
-      <div style="position:absolute;left:120px;right:120px;top:640px;">${itemsHtml}</div>
-  `
-  return { name, html: darkShell(bgPhoto, 0.3, content) }
+  return whatSlide(name, headline, items, bgPhoto)
 }
 
 function ctaSlide(name, heroImg, headline, subtext) {
-  const content = `
-      <div style="position:absolute;left:90px;right:90px;top:340px;text-align:center;">
-        <h2 style="font-family:${SERIF};font-size:104px;font-weight:700;line-height:0.95;color:white;margin:0;${S}">${headline}</h2>
-        <p style="font-family:${SANS};font-size:33px;line-height:1.34;color:rgba(245,247,255,0.85);margin:22px auto 0;max-width:760px;${S}">${subtext}</p>
+  return {
+    name,
+    html: `
+      <div style="width:1080px;height:1920px;position:relative;overflow:hidden;background:#000;">
+        <img src="${heroImg}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(1.1) brightness(0.85);"/>
+        <div style="position:absolute;inset:0;background:linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.1) 35%, rgba(0,0,0,0.1) 50%, rgba(0,0,0,0.85) 100%);"></div>
+        <div style="position:absolute;top:300px;left:80px;right:80px;text-align:center;">
+          <h2 style="font-family:${SERIF};font-size:92px;font-weight:700;color:white;line-height:1.05;margin:0;${S}">${headline}</h2>
+          <p style="font-family:${SANS};font-size:34px;color:rgba(255,255,255,0.8);line-height:1.4;margin:24px 0 0;${S}">${subtext}</p>
+        </div>
+        <div style="position:absolute;bottom:440px;left:80px;right:80px;text-align:center;">
+          <p style="font-family:${SANS};font-size:34px;font-weight:700;color:#86efac;margin:0;${S}">100% free</p>
+        </div>
+        ${filmGrain(0.1)}
       </div>
-      <div style="position:absolute;left:120px;right:120px;bottom:440px;display:flex;align-items:center;justify-content:center;padding:20px 0;border-top:1.5px solid rgba(217,228,255,0.35);border-bottom:1.5px solid rgba(217,228,255,0.35);">
-        <span style="font-family:${SANS};font-size:33px;font-weight:600;line-height:1.2;color:white;">Message me now</span>
-      </div>
-  `
-  return { name, html: darkShell(heroImg, 0.6, content) }
+    `
+  }
 }
 
 // ── Content ──
