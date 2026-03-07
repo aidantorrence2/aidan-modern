@@ -54,7 +54,7 @@ const slides = [
 
         <div style="position:absolute;top:0;left:0;right:0;bottom:0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:0 70px;text-align:center;">
           <h1 style="font-family:${D};font-size:110px;font-weight:700;color:white;line-height:1.02;margin:0;${TS}">
-            Manila free photo shoot.
+            Manila Free Photo Shoot
           </h1>
           <p style="font-family:${B};font-size:36px;color:rgba(255,255,255,0.95);margin:48px 0 0;line-height:1.4;${TS_SUB}">
             No experience needed.
@@ -71,20 +71,13 @@ const slides = [
     name: '02_proof',
     html: `
       <div style="width:1080px;height:1920px;position:relative;overflow:hidden;background:${INK};">
-        <div style="position:absolute;top:0;left:0;right:0;bottom:0;display:flex;flex-direction:column;align-items:center;padding:200px 40px 290px;">
+        <div style="position:absolute;top:0;left:0;right:0;bottom:0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:0 36px;">
 
-          <div style="margin-bottom:32px;">
-            ${badge('Real Sessions')}
-          </div>
-          <h2 style="font-family:${D};font-size:56px;font-weight:700;color:white;margin:0 0 40px;text-align:center;line-height:1.1;">
-            This is what you walk away with.
-          </h2>
-
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;width:100%;flex:1;min-height:0;">
-            <img src="${img0075}" style="width:100%;height:100%;object-fit:cover;border-radius:8px;display:block;"/>
-            <img src="${img0130}" style="width:100%;height:100%;object-fit:cover;border-radius:8px;display:block;"/>
-            <img src="${img0911}" style="width:100%;height:100%;object-fit:cover;border-radius:8px;display:block;"/>
-            <img src="${img0190}" style="width:100%;height:100%;object-fit:cover;border-radius:8px;display:block;"/>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;width:100%;">
+            <img src="${img0075}" style="width:100%;height:520px;object-fit:cover;border-radius:8px;display:block;"/>
+            <img src="${img0130}" style="width:100%;height:520px;object-fit:cover;border-radius:8px;display:block;"/>
+            <img src="${img0911}" style="width:100%;height:520px;object-fit:cover;border-radius:8px;display:block;"/>
+            <img src="${img0190}" style="width:100%;height:520px;object-fit:cover;border-radius:8px;display:block;"/>
           </div>
 
         </div>
