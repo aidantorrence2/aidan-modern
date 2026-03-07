@@ -98,6 +98,11 @@
   - `tools/render_manila_free_video_ads.sh`
 - Notes:
   - Generates 5 vertical MP4 ads (`manila_free_A.mp4` ... `manila_free_E.mp4`) from stitched moving footage.
-  - Uses 30fps H.264 + AAC output at 1080x1920, each 15s.
-  - Adds top hook text, burned subtitles, and bottom CTA overlay per ad.
+  - Uses 30fps H.264 + AAC output at 1080x1920, each 18s.
+  - Render strategy is direct-response:
+    - Hook (top text)
+    - Offer/value line
+    - Burned subtitle captions
+    - Explicit bottom CTA
+  - Script generates voiceovers using macOS `say` and mixes them over source audio.
   - Prefers `/opt/homebrew/opt/ffmpeg-full/bin/ffmpeg`; falls back to `ffmpeg` if present.
