@@ -49,17 +49,17 @@ const slides = [
     name: '01_hook',
     html: `
       <div style="width:1080px;height:1920px;position:relative;overflow:hidden;">
-        <img src="${img0911}" style="width:100%;height:100%;object-fit:cover;display:block;"/>
-        <div style="position:absolute;inset:0;background:linear-gradient(180deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.25) 40%, rgba(0,0,0,0.2) 60%, rgba(0,0,0,0.7) 100%);"></div>
+        <img src="${img0911}" style="width:100%;height:100%;object-fit:cover;display:block;filter:saturate(1.15) contrast(1.05);"/>
+        <div style="position:absolute;inset:0;background:linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.0) 30%, rgba(0,0,0,0.0) 50%, rgba(0,0,0,0.5) 75%, rgba(0,0,0,0.8) 100%);"></div>
 
-        <div style="position:absolute;top:0;left:0;right:0;bottom:0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:0 70px;text-align:center;">
-          <h1 style="font-family:${D};font-size:120px;font-weight:700;color:white;line-height:1.0;margin:0;${TS}">
+        <div style="position:absolute;bottom:310px;left:0;right:0;padding:0 70px;text-align:center;">
+          <h1 style="font-family:${D};font-size:140px;font-weight:700;color:white;line-height:0.95;margin:0;text-shadow:0 3px 6px rgba(0,0,0,0.9), 0 8px 30px rgba(0,0,0,0.6), 0 0 80px rgba(0,0,0,0.3);">
             Manila
           </h1>
-          <h2 style="font-family:${D};font-size:88px;font-weight:700;color:rgba(255,255,255,0.9);line-height:1.05;margin:16px 0 0;${TS}">
+          <h2 style="font-family:${B};font-size:56px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:white;line-height:1.1;margin:28px 0 0;text-shadow:0 3px 6px rgba(0,0,0,0.9), 0 8px 30px rgba(0,0,0,0.6);">
             Free Photo Shoot
-          </h1>
-          <p style="font-family:${B};font-size:36px;color:rgba(255,255,255,0.95);margin:48px 0 0;line-height:1.4;${TS_SUB}">
+          </h2>
+          <p style="font-family:${B};font-size:32px;color:rgba(255,255,255,0.8);margin:32px 0 0;line-height:1.4;text-shadow:0 2px 4px rgba(0,0,0,0.8), 0 4px 16px rgba(0,0,0,0.5);">
             No experience needed.
           </p>
         </div>
@@ -81,10 +81,18 @@ const slides = [
           </h2>
 
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;width:100%;">
-            <img src="${img0075}" style="width:100%;height:490px;object-fit:cover;border-radius:8px;display:block;"/>
-            <img src="${img0130}" style="width:100%;height:490px;object-fit:cover;border-radius:8px;display:block;"/>
-            <img src="${img0911}" style="width:100%;height:490px;object-fit:cover;border-radius:8px;display:block;"/>
-            <img src="${img0190}" style="width:100%;height:490px;object-fit:cover;border-radius:8px;display:block;"/>
+            <div style="height:490px;border-radius:8px;overflow:hidden;background:#1a1a1a;display:flex;align-items:center;justify-content:center;">
+              <img src="${img0075}" style="max-width:100%;max-height:100%;object-fit:contain;display:block;"/>
+            </div>
+            <div style="height:490px;border-radius:8px;overflow:hidden;background:#1a1a1a;display:flex;align-items:center;justify-content:center;">
+              <img src="${img0130}" style="max-width:100%;max-height:100%;object-fit:contain;display:block;"/>
+            </div>
+            <div style="height:490px;border-radius:8px;overflow:hidden;background:#1a1a1a;display:flex;align-items:center;justify-content:center;">
+              <img src="${img0911}" style="max-width:100%;max-height:100%;object-fit:contain;display:block;"/>
+            </div>
+            <div style="height:490px;border-radius:8px;overflow:hidden;background:#1a1a1a;display:flex;align-items:center;justify-content:center;">
+              <img src="${img0190}" style="max-width:100%;max-height:100%;object-fit:contain;display:block;"/>
+            </div>
           </div>
 
         </div>
@@ -202,8 +210,8 @@ const slides = [
                 <span style="font-family:${B};color:${INK};font-size:24px;font-weight:800;">1</span>
               </div>
               <div style="padding-top:4px;">
-                <span style="font-family:${B};font-size:36px;font-weight:600;color:white;line-height:1.3;">Sign up and pick a time</span>
-                <p style="font-family:${B};font-size:28px;color:rgba(255,255,255,0.65);margin:6px 0 0;line-height:1.3;">Quick intro call — less than a minute to book</p>
+                <span style="font-family:${B};font-size:36px;font-weight:600;color:white;line-height:1.3;">Message me on Instagram or WhatsApp</span>
+                <p style="font-family:${B};font-size:28px;color:rgba(255,255,255,0.65);margin:6px 0 0;line-height:1.3;">Just say you're interested</p>
               </div>
             </div>
             <div style="background:rgba(0,0,0,0.35);border-radius:20px;padding:28px 32px;display:flex;align-items:flex-start;gap:24px;backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,0.08);">
@@ -226,7 +234,6 @@ const slides = [
             </div>
           </div>
 
-          <p style="font-family:${B};font-size:28px;color:rgba(255,255,255,0.55);margin:40px 0 0;${TS_SUB}">Simple flow. No long forms. No pressure.</p>
         </div>
 
         ${swipeHint()}
