@@ -23,7 +23,7 @@ export default function ManilaFreeCTA(){
         className="btn w-full rounded-xl bg-neutral-900 px-5 py-3 text-center text-sm font-semibold text-white transition hover:bg-neutral-800 sm:text-base"
         data-cta="manila-free-signup-primary"
       >
-        Sign up for a free session
+        Sign up to learn more
       </a>
 
       <p className="text-xs text-neutral-600">

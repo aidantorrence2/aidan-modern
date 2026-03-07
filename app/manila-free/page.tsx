@@ -95,7 +95,7 @@ export default function ManilaFreePage(){
             </div>
 
             <div className="rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm">
-              <h2 className="text-lg font-semibold text-neutral-900">Sign up for a free session</h2>
+              <h2 className="text-lg font-semibold text-neutral-900">Sign up to learn more</h2>
               <p className="mt-2 text-sm text-neutral-700">
                 Pick a time for a quick intro call. We&apos;ll chat to see if it&apos;s a good fit and plan your shoot.
               </p>
@@ -190,7 +190,7 @@ export default function ManilaFreePage(){
               Want free photos? Let&apos;s make it happen.
             </h2>
             <p className="mt-3 max-w-2xl text-sm text-neutral-700 sm:text-base">
-              Sign up below and pick a time for a quick intro call. Spots are limited.
+              Pick a time for a quick intro call. Spots are limited.
             </p>
             <p className="mt-2 text-sm font-semibold text-green-700">100% free - no cost, no catch</p>
             <div className="max-w-2xl">
