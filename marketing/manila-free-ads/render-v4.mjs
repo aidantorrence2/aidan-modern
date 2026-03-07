@@ -266,25 +266,25 @@ const versionE = [
 const versionF = [
   hookSlide('F_01_hook', imgNight1, 'I direct everything. You just show up.'),
   proofSlide('F_02_proof', 'My recent work', proof8),
-  howSlide('F_03_how', 'Three steps.', steps, imgNight1),
-  whatSlide('F_04_what', 'What you get.', deliverables, imgNight1),
-  ctaSlide('F_05_cta', imgNight1, "Let's shoot.", 'DM me on Instagram or WhatsApp to book your free session.')
+  howSlide('F_03_how', 'Three steps.', steps, img0130),
+  whatSlide('F_04_what', 'What you get.', deliverables, imgTropical),
+  ctaSlide('F_05_cta', imgGarden2, "Let's shoot.", 'DM me on Instagram or WhatsApp to book your free session.')
 ]
 
 const versionG = [
   hookSlide('G_01_hook', imgPark, 'No experience needed. I direct everything.'),
   proofSlide('G_02_proof', 'My recent work', proof8),
-  howSlide('G_03_how', 'Super simple.', steps, imgPark),
-  whatSlide('G_04_what', 'Everything<br/>included.', deliverables, imgPark),
-  ctaSlide('G_05_cta', imgPark, 'Your turn.', 'DM me to book your free photo shoot in Manila.')
+  howSlide('G_03_how', 'Super simple.', steps, imgRocks),
+  whatSlide('G_04_what', 'Everything<br/>included.', deliverables, img0911),
+  ctaSlide('G_05_cta', imgIvy2, 'Your turn.', 'DM me to book your free photo shoot in Manila.')
 ]
 
 const versionH = [
   hookSlide('H_01_hook', imgStatue, 'Want photos like these? No experience needed.'),
   proofSlide('H_02_proof', 'My recent work', proof8),
-  howSlide('H_03_how', 'Dead simple.', steps, imgStatue),
-  whatSlide('H_04_what', 'What you<br/>walk away with.', deliverables, imgStatue),
-  ctaSlide('H_05_cta', imgStatue, "Don't miss out.", 'Message me to lock in your free session.')
+  howSlide('H_03_how', 'Dead simple.', steps, imgFloor),
+  whatSlide('H_04_what', 'What you<br/>walk away with.', deliverables, imgCanal2),
+  ctaSlide('H_05_cta', imgNight3, "Don't miss out.", 'Message me to lock in your free session.')
 ]
 
 const allSlides = [...versionA, ...versionB, ...versionC, ...versionD, ...versionE, ...versionF, ...versionG, ...versionH]
