@@ -72,11 +72,12 @@
 - Render command:
   - `node marketing/manila-free-ads-ultimate/render.mjs`
 - Output folders:
-  - `marketing/manila-free-ads-ultimate/funnel-01_profile-conversion`
-  - `marketing/manila-free-ads-ultimate/funnel-02_signal-upgrade`
-  - `marketing/manila-free-ads-ultimate/funnel-03_last-call`
+  - `marketing/manila-free-ads-ultimate/funnel-01_fun-free-shoot`
+  - `marketing/manila-free-ads-ultimate/funnel-02_social-glow-up`
+  - `marketing/manila-free-ads-ultimate/funnel-03_last-chance-vibes`
 - Notes:
   - The script uses Playwright to render static 1080x1920 PNG story/reels frames from inline HTML.
   - Script behavior: each run deletes prior `story-*` and `funnel-*` output folders before rendering fresh frames.
-  - Creative strategy is direct-response first with three distinct funnels: cold conversion, profile-signal upgrade, and final retargeting urgency.
+  - Creative strategy keeps direct-response structure but with simpler, more playful copy.
+  - Every funnel includes explicit limited-time messaging so urgency is always clear.
   - The package intentionally reuses only the Manila photo assets while replacing all prior ad copy/layouts.
