@@ -83,3 +83,15 @@
   - Creative strategy keeps direct-response structure with simple upbeat copy and clear urgency (last chance, limited time, limited slots).
   - Photo layers use `object-fit: contain` so source images are not cropped.
   - The package intentionally reuses only the Manila photo assets while replacing all prior ad copy/layouts.
+
+## Manila Free V4 Video Ads (Instagram MP4)
+- Source slides: `marketing/manila-free-ads/v4/{A,B,C,D,E}/*.png`
+- Rendering script: `tools/render_manila_free_video_ads.sh`
+- Output folder: `marketing/manila-free-ads/v4/videos`
+- Re-render command:
+  - `tools/render_manila_free_video_ads.sh`
+- Notes:
+  - Generates 5 vertical MP4 ads (`manila_free_A.mp4` ... `manila_free_E.mp4`) from v4 slide funnels.
+  - Uses 30fps H.264 + AAC output at 1080x1920, each ~13.4s.
+  - Adds crossfades between slides plus a fixed CTA strip: `FREE MANILA PHOTO SHOOT - MESSAGE TO APPLY`.
+  - Prefers `/opt/homebrew/opt/ffmpeg-full/bin/ffmpeg`; falls back to `ffmpeg` if present.
