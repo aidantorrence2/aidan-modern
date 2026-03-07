@@ -84,8 +84,7 @@ build_base() {
     filter_parts+=("[$i:v]fps=30,scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,boxblur=luma_radius=24:luma_power=1:chroma_radius=12:chroma_power=1[bg$i]")
     filter_parts+=("[$i:v]fps=30,scale=1080:1920:force_original_aspect_ratio=decrease[fg$i]")
     filter_parts+=("[bg$i][fg$i]overlay=(W-w)/2:(H-h)/2,eq=contrast=1.08:saturation=1.16:brightness=0.01,unsharp=5:5:0.36,setsar=1,format=yuv420p[v$i]")
-    filter_parts+=("[$i:a]atrim=0:$dur,asetpts=PTS-STARTPTS,volume=0.52[a$i]")
-    concat_inputs+="[v$i][a$i]"
+    concat_inputs+="[v$i]"
     ((i+=1))
   done
 
@@ -94,17 +93,14 @@ build_base() {
 
   "$FFMPEG_BIN" -y \
     "${input_args[@]}" \
-    -filter_complex "$joined;${concat_inputs}concat=n=$i:v=1:a=1[vout][aout]" \
+    -filter_complex "$joined;${concat_inputs}concat=n=$i:v=1:a=0[vout]" \
     -map "[vout]" \
-    -map "[aout]" \
     -t "$AD_LENGTH" \
     -r 30 \
     -c:v libx264 \
     -preset faster \
     -crf 18 \
     -pix_fmt yuv420p \
-    -c:a aac \
-    -b:a 160k \
     "$out_file"
 }
 
@@ -128,9 +124,7 @@ finalize_ad() {
       drawtext=fontfile='${FONT_FILE}':text='${offer_text}':fontcolor=white:fontsize=35:x=(w-text_w)/2:y=1688:shadowcolor=black@0.9:shadowx=2:shadowy=2,
       drawtext=fontfile='${FONT_FILE}':text='${cta_text}':fontcolor=white:fontsize=32:x=(w-text_w)/2:y=1798:shadowcolor=black@0.95:shadowx=2:shadowy=2,
       subtitles=filename='${subtitle_file}'[vout];
-      [0:a]volume=0.26,acompressor=threshold=-22dB:ratio=2.4:attack=20:release=220[bed];
-      [1:a]volume=2.0,highpass=f=120,lowpass=f=7600,acompressor=threshold=-17dB:ratio=3.2:attack=10:release=130[vo];
-      [bed][vo]amix=inputs=2:duration=first:dropout_transition=2,loudnorm=I=-14:TP=-1.5:LRA=8[aout]
+      [1:a]volume=2.0,highpass=f=120,lowpass=f=7600,acompressor=threshold=-17dB:ratio=3.2:attack=10:release=130,loudnorm=I=-14:TP=-1.5:LRA=8[aout]
     " \
     -map "[vout]" \
     -map "[aout]" \
