@@ -99,7 +99,7 @@ export default function ManilaFreePage(){
               <p className="mt-2 text-sm text-neutral-700">
                 Pick a time for a quick intro call. We&apos;ll chat to see if it&apos;s a good fit and plan your shoot.
               </p>
-              <p className="mt-2 text-sm font-semibold text-green-700">100% free - no cost, no catch</p>
+              <p className="mt-2 text-sm font-semibold text-green-700">100% free</p>
               <ManilaFreeCTA />
             </div>
 
@@ -192,7 +192,7 @@ export default function ManilaFreePage(){
             <p className="mt-3 max-w-2xl text-sm text-neutral-700 sm:text-base">
               Pick a time for a quick intro call. Spots are limited.
             </p>
-            <p className="mt-2 text-sm font-semibold text-green-700">100% free - no cost, no catch</p>
+            <p className="mt-2 text-sm font-semibold text-green-700">100% free</p>
             <div className="max-w-2xl">
               <ManilaFreeCTA />
             </div>

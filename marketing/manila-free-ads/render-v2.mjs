@@ -53,14 +53,11 @@ const slides = [
         <div style="position:absolute;inset:0;background:linear-gradient(180deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.25) 40%, rgba(0,0,0,0.2) 60%, rgba(0,0,0,0.7) 100%);"></div>
 
         <div style="position:absolute;top:0;left:0;right:0;bottom:0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:0 70px;text-align:center;">
-          <div style="margin-bottom:40px;">
-            ${badge('Manila')}
-          </div>
           <h1 style="font-family:${D};font-size:110px;font-weight:700;color:white;line-height:1.02;margin:0;${TS}">
-            Get amazing photos for free.
+            Free photo shoot in Manila.
           </h1>
           <p style="font-family:${B};font-size:36px;color:rgba(255,255,255,0.95);margin:48px 0 0;line-height:1.4;${TS_SUB}">
-            No cost. No catch. No experience needed.
+            No experience needed. I guide everything.
           </p>
         </div>
 
@@ -175,7 +172,7 @@ const slides = [
           </div>
 
           <div style="width:100%;margin-top:50px;padding:24px 32px;background:rgba(21,128,61,0.08);border-radius:16px;border:1.5px solid rgba(21,128,61,0.15);">
-            <p style="font-family:${B};font-size:34px;font-weight:700;color:#15803d;margin:0;text-align:center;">100% free — no cost, no catch</p>
+            <p style="font-family:${B};font-size:34px;font-weight:700;color:#15803d;margin:0;text-align:center;">100% free</p>
           </div>
         </div>
 
@@ -261,7 +258,7 @@ const slides = [
           </p>
 
           <div style="margin-top:36px;padding:20px 44px;background:rgba(21,128,61,0.25);border-radius:999px;border:2px solid rgba(134,239,172,0.5);backdrop-filter:blur(8px);">
-            <p style="font-family:${B};font-size:32px;font-weight:700;color:#86efac;margin:0;${TS_SUB}">100% free — no cost, no catch</p>
+            <p style="font-family:${B};font-size:32px;font-weight:700;color:#86efac;margin:0;${TS_SUB}">100% free</p>
           </div>
 
           <p style="font-family:${B};font-size:28px;color:rgba(255,255,255,0.6);margin:32px 0 0;${TS_SUB}">
