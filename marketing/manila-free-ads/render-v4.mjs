@@ -108,14 +108,14 @@ function proofSlide(name, headline, images, variant = 'dark') {
   const color = isDark ? 'white' : '#0c1014'
   const subColor = isDark ? 'rgba(255,255,255,0.55)' : 'rgba(12,16,20,0.45)'
   const slots = [
-    { left: 40,  top: 260,  w: 310, h: 400, rot: -2.5 },
-    { left: 380, top: 230,  w: 310, h: 400, rot: 1.8 },
-    { left: 720, top: 280,  w: 310, h: 400, rot: -1.2 },
-    { left: 80,  top: 680,  w: 290, h: 380, rot: 1.6 },
-    { left: 420, top: 650,  w: 290, h: 380, rot: -2.0 },
-    { left: 730, top: 700,  w: 290, h: 380, rot: 2.4 },
-    { left: 160, top: 1080, w: 340, h: 440, rot: -1.4 },
-    { left: 560, top: 1060, w: 340, h: 440, rot: 1.9 }
+    { left: 40,  top: 380,  w: 290, h: 370, rot: -2.5 },
+    { left: 380, top: 350,  w: 290, h: 370, rot: 1.8 },
+    { left: 720, top: 400,  w: 290, h: 370, rot: -1.2 },
+    { left: 80,  top: 770,  w: 280, h: 350, rot: 1.6 },
+    { left: 420, top: 740,  w: 280, h: 350, rot: -2.0 },
+    { left: 730, top: 780,  w: 280, h: 350, rot: 2.4 },
+    { left: 160, top: 1130, w: 310, h: 390, rot: -1.4 },
+    { left: 560, top: 1110, w: 310, h: 390, rot: 1.9 }
   ]
   const imgHtml = images.map((src, i) => {
     const s = slots[i]
@@ -123,7 +123,7 @@ function proofSlide(name, headline, images, variant = 'dark') {
   }).join('\n        ')
 
   const inner = `
-        <div style="position:absolute;bottom:400px;left:64px;right:64px;text-align:center;">
+        <div style="position:absolute;top:220px;left:64px;right:64px;text-align:center;z-index:2;">
           <h2 style="font-family:${SERIF};font-size:72px;font-weight:700;font-style:italic;color:${color};line-height:0.98;margin:0;${isDark ? S : ''}">${headline}</h2>
           <p style="font-family:${SANS};font-size:28px;color:${subColor};margin:16px 0 0;">No experience needed. I direct everything.</p>
         </div>
