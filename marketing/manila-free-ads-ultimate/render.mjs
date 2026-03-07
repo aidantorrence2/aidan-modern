@@ -116,11 +116,11 @@ function proofMosaic(images) {
 
 function stepsPanel(steps, theme, top = 640) {
   return `
-    <div style="position:absolute;left:82px;right:82px;top:${top}px;padding:22px 24px 18px;border-radius:30px;background:linear-gradient(180deg, rgba(12,12,12,0.54), rgba(12,12,12,0.34));border:1.5px solid ${theme.ruleStrong};backdrop-filter:blur(12px);box-shadow:0 22px 42px rgba(0,0,0,0.26);">
+    <div style="position:absolute;left:72px;right:72px;top:${top}px;padding:22px 24px 18px;border-radius:30px;background:linear-gradient(180deg, rgba(7,7,7,0.76), rgba(7,7,7,0.56));border:1.5px solid ${theme.ruleStrong};backdrop-filter:blur(12px);box-shadow:0 22px 42px rgba(0,0,0,0.36);">
       ${steps.map((step, index) => `
         <div style="display:flex;gap:16px;align-items:flex-start;padding:16px 4px ${index === steps.length - 1 ? 6 : 18}px;border-bottom:${index === steps.length - 1 ? 'none' : `1px solid ${theme.rule}`};">
-          <span style="font-family:${DISPLAY};font-size:44px;line-height:1;color:${theme.text};width:32px;flex-shrink:0;">${index + 1}</span>
-          <p style="font-family:${SANS};font-size:33px;line-height:1.32;color:${theme.textSoft};margin:0;">${step}</p>
+          <span style="font-family:${DISPLAY};font-size:44px;line-height:1;color:${theme.text};width:32px;flex-shrink:0;text-shadow:${theme.titleShadow};">${index + 1}</span>
+          <p style="font-family:${SANS};font-size:33px;line-height:1.32;color:${theme.text};margin:0;text-shadow:${theme.bodyShadow};">${step}</p>
         </div>
       `).join('')}
     </div>
@@ -377,15 +377,15 @@ function buildSlides(funnel) {
       html: darkShell(t, {
         photo: funnel.processPhoto,
         photoOpacity: 0.9,
-        overlayTop: 0.38,
-        overlayMid: 0.05,
-        overlayBottom: 0.44,
+        overlayTop: 0.58,
+        overlayMid: 0.02,
+        overlayBottom: 0.5,
         content: `
-          <div style="position:absolute;left:90px;right:90px;top:210px;text-align:center;">
-            <h2 style="font-family:${DISPLAY};font-size:96px;font-weight:700;line-height:0.95;color:${t.text};margin:0 auto;max-width:820px;text-shadow:${t.titleShadow};">${c.howTitle}</h2>
-            <p style="font-family:${SANS};font-size:31px;line-height:1.34;color:${t.textSoft};margin:16px auto 0;max-width:760px;text-shadow:${t.bodyShadow};">Simple and direct. Message me, then we lock your slot.</p>
+          <div style="position:absolute;left:0;right:0;top:130px;padding:34px 86px 26px;background:linear-gradient(180deg, rgba(7,7,7,0.62), rgba(7,7,7,0.18));text-align:center;">
+            <h2 style="font-family:${DISPLAY};font-size:100px;font-weight:700;line-height:0.95;color:${t.text};margin:0 auto;max-width:820px;text-shadow:0 6px 24px rgba(0,0,0,0.72), 0 2px 8px rgba(0,0,0,0.82);">${c.howTitle}</h2>
+            <p style="font-family:${SANS};font-size:33px;line-height:1.32;color:${t.text};margin:14px auto 0;max-width:800px;text-shadow:0 3px 14px rgba(0,0,0,0.76);">Simple and direct. Message me, then we lock your slot.</p>
           </div>
-          ${stepsPanel(c.steps, t, 720)}
+          ${stepsPanel(c.steps, t, 1170)}
         `
       })
     },
