@@ -39,12 +39,12 @@ const slides = [
 
         <!-- Title block anchored bottom -->
         <div style="position:absolute;bottom:320px;left:64px;right:64px;">
-          <p style="font-family:${SANS};font-size:28px;font-weight:500;letter-spacing:0.3em;text-transform:uppercase;color:rgba(255,255,255,0.7);margin:0 0 20px 4px;${S}">
+          <h1 style="font-family:${SERIF};font-size:160px;font-weight:700;color:white;line-height:0.9;margin:0;${S}">
             Manila
-          </p>
-          <h1 style="font-family:${SERIF};font-size:128px;font-weight:700;color:white;line-height:0.92;margin:0;${S}">
-            Free<br/>Photo<br/>Shoot
           </h1>
+          <p style="font-family:${SANS};font-size:42px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.85);margin:28px 0 0 6px;${S}">
+            Free Photo Shoot
+          </p>
         </div>
       </div>
     `
