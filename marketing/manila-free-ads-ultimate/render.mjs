@@ -7,9 +7,9 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const OUT = __dirname
 const IMG_DIR = '/Users/aidantorrence/Documents/aidan-modern/public/images/large'
 
-const DISPLAY = "'Didot', 'Bodoni MT', 'Times New Roman', serif"
+const DISPLAY = "Baskerville, 'Iowan Old Style', Georgia, serif"
 const SANS = "'Avenir Next', 'Helvetica Neue', Arial, sans-serif"
-const NARROW = "'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif"
+const NARROW = "Futura, 'Avenir Next Condensed', 'Arial Narrow', sans-serif"
 
 const photos = {
   hero: readImage('manila-hero-dsc-0898.jpg'),
@@ -24,232 +24,284 @@ function readImage(file) {
   return `data:image/jpeg;base64,${data.toString('base64')}`
 }
 
-function deckBackground(theme) {
+function filmGrain(opacity = 0.1) {
   return `
-    <div style="position:absolute;inset:0;background:linear-gradient(160deg, ${theme.bgA} 0%, ${theme.bgB} 54%, ${theme.bgC} 100%);"></div>
-    <div style="position:absolute;inset:0;background:
-      radial-gradient(circle at 82% 14%, ${theme.glowA}, transparent 20%),
-      radial-gradient(circle at 16% 84%, ${theme.glowB}, transparent 20%);"></div>
+    <div style="position:absolute;inset:0;pointer-events:none;opacity:${opacity};mix-blend-mode:soft-light;background-image:
+      radial-gradient(circle at 14% 18%, rgba(255,255,255,0.5), transparent 17%),
+      radial-gradient(circle at 84% 12%, rgba(255,255,255,0.28), transparent 15%),
+      radial-gradient(circle at 50% 80%, rgba(255,255,255,0.22), transparent 22%),
+      repeating-linear-gradient(0deg, rgba(255,255,255,0.08) 0 1px, transparent 1px 4px),
+      repeating-linear-gradient(90deg, rgba(255,255,255,0.06) 0 1px, transparent 1px 5px);"></div>
   `
 }
 
-function grain(opacity = 0.08) {
+function darkShell(theme, { photo = null, photoOpacity = 1, content }) {
   return `
-    <div style="position:absolute;inset:0;opacity:${opacity};pointer-events:none;mix-blend-mode:soft-light;background-image:
-      radial-gradient(circle at 14% 18%, rgba(255,255,255,0.35), transparent 16%),
-      radial-gradient(circle at 84% 12%, rgba(255,255,255,0.2), transparent 14%),
-      repeating-linear-gradient(0deg, rgba(255,255,255,0.05) 0 1px, transparent 1px 4px);"></div>
+    <div style="width:1080px;height:1920px;position:relative;overflow:hidden;background:${theme.bgBottom};">
+      <div style="position:absolute;inset:0;background:linear-gradient(180deg, ${theme.bgTop} 0%, ${theme.bgMid} 50%, ${theme.bgBottom} 100%);"></div>
+      ${photo ? `<img src="${photo}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:center;display:block;opacity:${photoOpacity};filter:saturate(1.07) contrast(1.04);"/>` : ''}
+      <div style="position:absolute;inset:0;background:linear-gradient(180deg, rgba(8,8,8,0.74) 0%, rgba(8,8,8,0.26) 48%, rgba(8,8,8,0.84) 100%);"></div>
+      <div style="position:absolute;inset:0;background:
+        radial-gradient(circle at 17% 15%, ${theme.glowA}, transparent 24%),
+        radial-gradient(circle at 84% 84%, ${theme.glowB}, transparent 22%),
+        linear-gradient(135deg, ${theme.sheenA}, transparent 26%);"></div>
+      ${content}
+      ${filmGrain(0.12)}
+    </div>
   `
 }
 
-function heroPhoto(image, top = 1110, width = 760, height = 860) {
+function lightShell(theme, { photo = null, content }) {
   return `
-    <img src="${image}" style="position:absolute;left:50%;top:${top}px;transform:translate(-50%,-50%);width:${width}px;height:${height}px;object-fit:contain;object-position:center;display:block;filter:drop-shadow(0 26px 40px rgba(0,0,0,0.36));"/>
+    <div style="width:1080px;height:1920px;position:relative;overflow:hidden;background:${theme.lightBase};">
+      <div style="position:absolute;inset:0;background:linear-gradient(170deg, ${theme.lightTop} 0%, ${theme.lightMid} 58%, ${theme.lightBottom} 100%);"></div>
+      <div style="position:absolute;inset:0;background:
+        radial-gradient(circle at 82% 14%, ${theme.lightGlowA}, transparent 22%),
+        radial-gradient(circle at 14% 88%, ${theme.lightGlowB}, transparent 22%);"></div>
+      ${photo ? `<img src="${photo}" style="position:absolute;right:-90px;bottom:-120px;width:760px;height:1040px;object-fit:contain;object-position:center;opacity:0.34;display:block;filter:saturate(1.02) contrast(1.02);"/>` : ''}
+      ${content}
+      ${filmGrain(0.07)}
+    </div>
   `
 }
 
-function proofStack(images) {
+function introBlock({
+  title,
+  body,
+  theme,
+  top = 220,
+  titleSize = 112,
+  bodySize = 36,
+  maxWidth = 860
+}) {
+  return `
+    <div style="position:absolute;left:90px;right:90px;top:${top}px;text-align:center;">
+      <h1 style="font-family:${DISPLAY};font-size:${titleSize}px;font-weight:700;line-height:0.95;color:${theme.text};margin:0 auto;text-shadow:${theme.titleShadow};max-width:${maxWidth}px;">
+        ${title}
+      </h1>
+      ${body ? `<p style="font-family:${SANS};font-size:${bodySize}px;line-height:1.34;color:${theme.textSoft};margin:22px auto 0;max-width:760px;text-shadow:${theme.bodyShadow};">${body}</p>` : ''}
+    </div>
+  `
+}
+
+function proofMosaic(images) {
   const slots = [
-    { left: 96, top: 620, w: 360, h: 360, rot: -2.5 },
-    { left: 624, top: 600, w: 360, h: 360, rot: 2.2 },
-    { left: 80, top: 1010, w: 380, h: 360, rot: 1.8 },
-    { left: 620, top: 1010, w: 380, h: 360, rot: -1.5 }
+    { left: 70, top: 620, width: 460, height: 620, rotate: -2.2 },
+    { left: 550, top: 620, width: 460, height: 620, rotate: 2.1 },
+    { left: 150, top: 1250, width: 320, height: 410, rotate: 1.4 },
+    { left: 610, top: 1250, width: 320, height: 410, rotate: -1.8 }
   ]
 
-  return images
-    .map((image, index) => {
-      const slot = slots[index]
-      return `
-        <img src="${image}" style="position:absolute;left:${slot.left}px;top:${slot.top}px;width:${slot.w}px;height:${slot.h}px;object-fit:contain;object-position:center;display:block;transform:rotate(${slot.rot}deg);filter:drop-shadow(0 20px 28px rgba(0,0,0,0.32));"/>
-      `
-    })
-    .join('')
+  return images.map((image, index) => {
+    const slot = slots[index]
+    return `
+      <img src="${image}" style="position:absolute;left:${slot.left}px;top:${slot.top}px;width:${slot.width}px;height:${slot.height}px;object-fit:contain;object-position:center;display:block;transform:rotate(${slot.rotate}deg);filter:drop-shadow(0 26px 42px rgba(0,0,0,0.34));"/>
+    `
+  }).join('')
 }
 
-function stepLines(steps, theme, top = 560) {
+function stepsList(steps, theme) {
   return `
-    <div style="position:absolute;left:120px;right:120px;top:${top}px;">
-      ${steps.map((step, i) => `
-        <div style="padding:20px 0;border-bottom:1px solid ${theme.rule};display:flex;gap:16px;align-items:flex-start;">
-          <span style="font-family:${DISPLAY};font-size:46px;line-height:1;color:${theme.text};width:36px;flex-shrink:0;">${i + 1}</span>
-          <p style="font-family:${SANS};font-size:34px;line-height:1.3;color:${theme.textSoft};margin:0;">${step}</p>
+    <div style="position:absolute;left:120px;right:120px;top:560px;">
+      ${steps.map((step, index) => `
+        <div style="display:flex;gap:18px;align-items:flex-start;padding:24px 0;border-bottom:1px solid ${theme.rule};">
+          <span style="font-family:${DISPLAY};font-size:50px;line-height:1;color:${theme.text};width:38px;flex-shrink:0;">${index + 1}</span>
+          <p style="font-family:${SANS};font-size:35px;line-height:1.32;color:${theme.textSoft};margin:0;">${step}</p>
         </div>
       `).join('')}
     </div>
   `
 }
 
-function bulletList(items, theme, top = 540) {
+function valueList(items, theme) {
   return `
-    <div style="position:absolute;left:120px;right:120px;top:${top}px;">
-      ${items.map((item, i) => `
-        <div style="display:flex;gap:14px;align-items:flex-start;padding:14px 0;border-bottom:1px solid ${theme.rule};">
-          <span style="font-family:${NARROW};font-size:21px;line-height:1.2;letter-spacing:0.08em;text-transform:uppercase;color:${theme.meta};width:34px;flex-shrink:0;">0${i + 1}</span>
-          <p style="font-family:${SANS};font-size:34px;line-height:1.32;color:${theme.textSoft};margin:0;">${item}</p>
+    <div style="position:absolute;left:110px;right:110px;top:550px;">
+      ${items.map((item, index) => `
+        <div style="display:flex;gap:18px;align-items:flex-start;padding:18px 0;border-bottom:1px solid ${theme.lightRule};">
+          <span style="font-family:${NARROW};font-size:23px;font-weight:700;line-height:1.2;letter-spacing:0.1em;text-transform:uppercase;color:${theme.lightMeta};width:42px;flex-shrink:0;">0${index + 1}</span>
+          <p style="font-family:${SANS};font-size:34px;line-height:1.34;color:${theme.lightTextSoft};margin:0;">${item}</p>
         </div>
       `).join('')}
     </div>
   `
 }
 
-function ctaStrip(text, theme) {
+function ctaRail(text, theme) {
   return `
-    <div style="position:absolute;left:120px;right:120px;bottom:300px;padding:18px 0;border-top:1px solid ${theme.ruleStrong};border-bottom:1px solid ${theme.ruleStrong};display:flex;justify-content:space-between;align-items:center;">
-      <span style="font-family:${SANS};font-size:30px;font-weight:600;letter-spacing:0.01em;color:${theme.text};">${text}</span>
-      <span style="font-family:${NARROW};font-size:32px;font-weight:700;color:${theme.text};">-></span>
+    <div style="position:absolute;left:120px;right:120px;bottom:250px;display:flex;align-items:center;justify-content:space-between;padding:20px 0;border-top:1.5px solid ${theme.ruleStrong};border-bottom:1.5px solid ${theme.ruleStrong};">
+      <span style="font-family:${SANS};font-size:33px;font-weight:600;line-height:1.2;color:${theme.text};">${text}</span>
+      <span style="font-family:${NARROW};font-size:36px;font-weight:700;letter-spacing:0.05em;color:${theme.text};">-></span>
     </div>
   `
-}
-
-function titleStyle(theme, size = 92) {
-  return `font-family:${DISPLAY};font-size:${size}px;line-height:0.95;color:${theme.text};margin:0 auto;text-shadow:${theme.shadow};max-width:780px;text-align:center;`
-}
-
-function bodyStyle(theme) {
-  return `font-family:${SANS};font-size:32px;line-height:1.34;color:${theme.textSoft};margin:0 auto;text-shadow:${theme.bodyShadow};max-width:760px;text-align:center;`
 }
 
 const funnels = [
   {
     folder: 'funnel-01_last-chance-electric',
     theme: {
-      bgA: '#091743',
-      bgB: '#071231',
-      bgC: '#050d24',
-      glowA: 'rgba(89,163,255,0.24)',
-      glowB: 'rgba(255,203,110,0.18)',
-      text: '#f8f9ff',
-      textSoft: 'rgba(238,242,255,0.88)',
-      meta: 'rgba(226,233,255,0.86)',
-      metaSoft: 'rgba(200,212,255,0.66)',
-      rule: 'rgba(214,225,255,0.22)',
-      ruleStrong: 'rgba(214,225,255,0.34)',
-      shadow: '0 3px 14px rgba(0,0,0,0.55),0 1px 3px rgba(0,0,0,0.75)',
-      bodyShadow: '0 2px 10px rgba(0,0,0,0.56)'
+      bgTop: '#0a1a4a',
+      bgMid: '#071434',
+      bgBottom: '#040d25',
+      glowA: 'rgba(90,166,255,0.26)',
+      glowB: 'rgba(255,190,120,0.18)',
+      sheenA: 'rgba(162,194,255,0.14)',
+      text: '#ffffff',
+      textSoft: 'rgba(245,247,255,0.9)',
+      rule: 'rgba(217,228,255,0.25)',
+      ruleStrong: 'rgba(217,228,255,0.4)',
+      titleShadow: '0 4px 20px rgba(0,0,0,0.56), 0 2px 8px rgba(0,0,0,0.72)',
+      bodyShadow: '0 2px 10px rgba(0,0,0,0.58)',
+      lightBase: '#f6ede4',
+      lightTop: '#fff8f0',
+      lightMid: '#f3e5d7',
+      lightBottom: '#eecfb9',
+      lightGlowA: 'rgba(255,170,130,0.28)',
+      lightGlowB: 'rgba(255,224,184,0.24)',
+      lightText: '#35231a',
+      lightTextSoft: '#5d4334',
+      lightMeta: '#9f6a52',
+      lightRule: 'rgba(83,54,39,0.2)'
     },
     hero: photos.arcade,
+    processPhoto: photos.closeup,
+    getPhoto: photos.redwall,
     cta: photos.redwall,
     proof: [photos.arcade, photos.closeup, photos.redwall, photos.stone],
     copy: {
-      hookTitle: "Hey, I'm opening a few free photo shoot spots in Manila.",
-      hookBody: 'If you have been meaning to do this, message me. I only have a small number of spots this round.',
-      proofTitle: 'Photos from recent shoots.',
-      proofBody: "Just sharing these so you can see my style and what we can create together.",
-      howTitle: 'How it works.',
+      hookTitle: 'Hey, free Manila photo shoot spots are open.',
+      hookBody: 'I am doing a fun free round for a limited time. Message me now before these last slots are gone.',
+      proofTitle: 'A quick peek at recent shoots.',
+      proofBody: 'So you can see the vibe and quality we can create together.',
+      howTitle: "If you want in, here's the flow.",
       steps: [
-        'Message me if you are interested or even if you just have questions.',
-        'I reply with details and the free spots that are still open.',
-        'If it feels like a fit, we confirm your shoot by message.'
+        'Message me and say you want a free shoot spot (or ask anything).',
+        'I reply with the remaining dates and all the details.',
+        'You choose what works and we lock it in by message.'
       ],
-      getTitle: 'What you get.',
+      getTitle: 'What you get from the free shoot.',
       getItems: [
-        'A shoot where I guide you the whole time',
-        'Edited photos you can post and use right away',
-        'Help with look, vibe, and location if you want it',
-        'Fast, easy communication directly with me'
+        'A fun guided shoot where I direct you throughout',
+        'Edited photos ready to post right away',
+        'Help with vibe, outfits, and location ideas',
+        'Direct communication with me from start to finish'
       ],
-      ctaTitle: 'If you want one of these free spots, message me now.',
-      ctaBody: "It's me on the other side. Happy to answer anything before we book.",
-      ctaButton: 'Message me to grab a spot'
+      getBody: 'Simple process, great photos, no complicated steps.',
+      ctaTitle: 'Last chance. Only a few free spots left.',
+      ctaBody: 'Message me now if you want one, or message me with questions. I reply personally.',
+      ctaButton: 'Message me now'
     }
   },
   {
     folder: 'funnel-02_last-chance-fresh',
     theme: {
-      bgA: '#062c1d',
-      bgB: '#052218',
-      bgC: '#041710',
-      glowA: 'rgba(92,255,192,0.2)',
+      bgTop: '#0a3021',
+      bgMid: '#07261b',
+      bgBottom: '#041911',
+      glowA: 'rgba(112,255,203,0.22)',
       glowB: 'rgba(255,255,255,0.12)',
-      text: '#f2fff9',
-      textSoft: 'rgba(229,255,244,0.86)',
-      meta: 'rgba(201,255,231,0.84)',
-      metaSoft: 'rgba(173,240,209,0.64)',
-      rule: 'rgba(188,255,225,0.22)',
-      ruleStrong: 'rgba(188,255,225,0.34)',
-      shadow: '0 3px 14px rgba(0,0,0,0.55),0 1px 3px rgba(0,0,0,0.72)',
-      bodyShadow: '0 2px 10px rgba(0,0,0,0.52)'
+      sheenA: 'rgba(167,255,224,0.14)',
+      text: '#f6fff9',
+      textSoft: 'rgba(232,255,244,0.9)',
+      rule: 'rgba(189,255,226,0.25)',
+      ruleStrong: 'rgba(189,255,226,0.4)',
+      titleShadow: '0 4px 20px rgba(0,0,0,0.56), 0 2px 8px rgba(0,0,0,0.72)',
+      bodyShadow: '0 2px 10px rgba(0,0,0,0.56)',
+      lightBase: '#f4efe5',
+      lightTop: '#fffaf1',
+      lightMid: '#efe4d3',
+      lightBottom: '#e4d3be',
+      lightGlowA: 'rgba(139,219,183,0.24)',
+      lightGlowB: 'rgba(255,219,168,0.24)',
+      lightText: '#30241b',
+      lightTextSoft: '#59463a',
+      lightMeta: '#8f705f',
+      lightRule: 'rgba(79,58,45,0.2)'
     },
     hero: photos.closeup,
+    processPhoto: photos.arcade,
+    getPhoto: photos.stone,
     cta: photos.hero,
     proof: [photos.closeup, photos.stone, photos.arcade, photos.redwall],
     copy: {
-      hookTitle: "I'm doing a free Manila shoot round and spots are almost gone.",
-      hookBody: 'If you want fresh photos soon, send me a message now while I still have space.',
-      proofTitle: 'More shots from recent sessions.',
-      proofBody: 'So you can get a real feel for the look and quality.',
-      howTitle: 'How it works.',
+      hookTitle: 'Hey, free photo shoot spots in Manila are almost gone.',
+      hookBody: 'I only have a few left in this limited-time round. If you want one, message me now.',
+      proofTitle: 'Some recent frames I shot.',
+      proofBody: 'This is the style and energy I can create for you too.',
+      howTitle: 'How it works (super simple).',
       steps: [
         'You message me with interest or questions.',
-        'I send details and what free spots are still available.',
-        'If you are in, we lock it in right there.'
+        'I send open slot options and how we prep.',
+        'If it feels right, we confirm your free slot in chat.'
       ],
-      getTitle: 'What you get.',
+      getTitle: "What's included for you.",
       getItems: [
-        'A relaxed shoot with direction from me',
-        'Edited photos you can use immediately',
-        'Help with styling and location planning',
-        'A simple process from first message to final files'
+        'A relaxed, directed shoot so you never feel lost',
+        'Edited photos ready for your socials',
+        'Creative input on outfits and location',
+        'Fast message-based process directly with me'
       ],
-      ctaTitle: 'Last few free spots are still open right now.',
-      ctaBody: 'If you want one, message me and I will walk you through the next step.',
-      ctaButton: 'Message me for a free spot'
+      getBody: 'It should feel easy and exciting, not stressful.',
+      ctaTitle: 'Limited time. Last few spots.',
+      ctaBody: 'If you want to lock one in, message me now before this batch closes.',
+      ctaButton: 'Message me to grab a spot'
     }
   },
   {
     folder: 'funnel-03_last-chance-bold',
     theme: {
-      bgA: '#3a140e',
-      bgB: '#2b100c',
-      bgC: '#1c0a08',
-      glowA: 'rgba(255,137,109,0.22)',
-      glowB: 'rgba(255,221,170,0.18)',
-      text: '#fff8f6',
-      textSoft: 'rgba(255,236,230,0.86)',
-      meta: 'rgba(255,215,201,0.86)',
-      metaSoft: 'rgba(255,196,175,0.66)',
-      rule: 'rgba(255,220,206,0.22)',
-      ruleStrong: 'rgba(255,220,206,0.34)',
-      shadow: '0 3px 14px rgba(0,0,0,0.55),0 1px 3px rgba(0,0,0,0.72)',
-      bodyShadow: '0 2px 10px rgba(0,0,0,0.52)'
+      bgTop: '#3a1611',
+      bgMid: '#2b100c',
+      bgBottom: '#1a0907',
+      glowA: 'rgba(255,144,114,0.24)',
+      glowB: 'rgba(255,216,162,0.2)',
+      sheenA: 'rgba(255,181,150,0.14)',
+      text: '#fff8f5',
+      textSoft: 'rgba(255,238,230,0.9)',
+      rule: 'rgba(255,218,202,0.26)',
+      ruleStrong: 'rgba(255,218,202,0.42)',
+      titleShadow: '0 4px 20px rgba(0,0,0,0.56), 0 2px 8px rgba(0,0,0,0.74)',
+      bodyShadow: '0 2px 10px rgba(0,0,0,0.56)',
+      lightBase: '#f5eee6',
+      lightTop: '#fff8f1',
+      lightMid: '#f2e2d1',
+      lightBottom: '#e8cfbb',
+      lightGlowA: 'rgba(255,168,132,0.24)',
+      lightGlowB: 'rgba(255,219,177,0.24)',
+      lightText: '#321f18',
+      lightTextSoft: '#5b4438',
+      lightMeta: '#976652',
+      lightRule: 'rgba(88,57,43,0.2)'
     },
     hero: photos.redwall,
+    processPhoto: photos.stone,
+    getPhoto: photos.closeup,
     cta: photos.closeup,
     proof: [photos.redwall, photos.arcade, photos.hero, photos.stone],
     copy: {
-      hookTitle: 'Quick note: I still have a few free Manila shoot spots.',
-      hookBody: 'This round is nearly full, so I wanted to post this before I close it.',
-      proofTitle: 'A few more examples.',
-      proofBody: 'These are from recent sessions and show the direction I can give you.',
-      howTitle: 'How it works.',
+      hookTitle: 'Last call for this free Manila shoot round.',
+      hookBody: 'I still have a few slots, but not for long. Message me now if you want to grab one.',
+      proofTitle: 'A few shots from recent sessions.',
+      proofBody: 'So you can see what the final look actually feels like.',
+      howTitle: 'Want in? Here is the quick flow.',
       steps: [
-        'Message me if you are interested or have questions.',
-        'I send you details and the remaining open spots.',
-        'If you want to move forward, we confirm your slot by message.'
+        'Message me if you are interested or just curious.',
+        'I send details plus the last open slots.',
+        'You claim a spot by message and we move forward.'
       ],
-      getTitle: 'What you get.',
+      getTitle: 'What you get when you book.',
       getItems: [
-        'Direction all throughout the shoot',
-        'Edited photos ready for socials',
-        'Support on styling and creative direction',
-        'Direct communication with me from start to finish'
+        'A guided shoot with clear direction from me',
+        'Edited images you can use immediately',
+        'Support with styling and creative vibe',
+        'Friendly direct chat with me the whole way'
       ],
-      ctaTitle: 'If you want in, message me before these spots close.',
-      ctaBody: 'I only have a few left and I handle replies personally.',
+      getBody: 'Fun, personal, and built to give you strong photos fast.',
+      ctaTitle: 'Final chance. Limited slots left.',
+      ctaBody: 'If you want one, message me now. I handle every reply myself.',
       ctaButton: 'Message me now'
     }
   }
 ]
-
-function slideShell(theme, content) {
-  return `
-    <div style="width:1080px;height:1920px;position:relative;overflow:hidden;background:${theme.bgC};">
-      ${deckBackground(theme)}
-      ${content}
-      ${grain(0.09)}
-    </div>
-  `
-}
 
 function buildSlides(funnel) {
   const t = funnel.theme
@@ -258,63 +310,85 @@ function buildSlides(funnel) {
   return [
     {
       name: '01_hey_free_photo_shoot',
-      html: slideShell(t, `
-        <div style="position:absolute;left:60px;right:60px;top:220px;">
-          <h1 style="${titleStyle(t)}">${c.hookTitle}</h1>
-          <p style="${bodyStyle(t)}margin-top:18px;">${c.hookBody}</p>
-        </div>
-        ${heroPhoto(funnel.hero, 1160, 720, 780)}
-      `)
+      html: darkShell(t, {
+        photo: funnel.hero,
+        content: `
+          ${introBlock({
+            title: c.hookTitle,
+            body: c.hookBody,
+            theme: t,
+            top: 220,
+            titleSize: 108,
+            bodySize: 36
+          })}
+          <div style="position:absolute;left:140px;right:140px;bottom:220px;height:2px;background:${t.ruleStrong};"></div>
+        `
+      })
     },
     {
       name: '02_proof',
-      html: slideShell(t, `
-        <div style="position:absolute;left:60px;right:60px;top:220px;">
-          <h2 style="${titleStyle(t, 96)}">${c.proofTitle}</h2>
-          <p style="${bodyStyle(t)}margin-top:14px;">${c.proofBody}</p>
-        </div>
-        ${proofStack(funnel.proof)}
-      `)
+      html: darkShell(t, {
+        photo: funnel.processPhoto,
+        photoOpacity: 0.26,
+        content: `
+          ${introBlock({
+            title: c.proofTitle,
+            body: c.proofBody,
+            theme: t,
+            top: 220,
+            titleSize: 96,
+            bodySize: 34
+          })}
+          ${proofMosaic(funnel.proof)}
+        `
+      })
     },
     {
       name: '03_how_it_works',
-      html: slideShell(t, `
-        <div style="position:absolute;left:60px;right:60px;top:220px;">
-          <h2 style="${titleStyle(t, 96)}">${c.howTitle}</h2>
-        </div>
-        ${stepLines(c.steps, t, 500)}
-      `)
+      html: darkShell(t, {
+        photo: funnel.processPhoto,
+        photoOpacity: 0.42,
+        content: `
+          ${introBlock({
+            title: c.howTitle,
+            body: '',
+            theme: t,
+            top: 220,
+            titleSize: 96
+          })}
+          ${stepsList(c.steps, t)}
+        `
+      })
     },
     {
       name: '04_what_you_get',
-      html: `
-        <div style="width:1080px;height:1920px;position:relative;overflow:hidden;background:#f7efe6;">
-          <div style="position:absolute;inset:0;background:linear-gradient(165deg, #fff9f1 0%, #f5e8d9 58%, #efd9c7 100%);"></div>
-          <div style="position:absolute;inset:0;background:
-            radial-gradient(circle at 84% 14%, rgba(255,164,124,0.26), transparent 20%),
-            radial-gradient(circle at 18% 86%, rgba(255,223,180,0.24), transparent 22%);"></div>
-          <div style="position:absolute;left:60px;right:60px;top:220px;">
-            <h2 style="font-family:${DISPLAY};font-size:94px;line-height:0.95;color:#362419;margin:0;">${c.getTitle}</h2>
+      html: lightShell(t, {
+        photo: funnel.getPhoto,
+        content: `
+          <div style="position:absolute;left:90px;right:90px;top:220px;text-align:center;">
+            <h2 style="font-family:${DISPLAY};font-size:96px;font-weight:700;line-height:0.95;color:${t.lightText};margin:0 auto;max-width:860px;">${c.getTitle}</h2>
+            <p style="font-family:${SANS};font-size:33px;line-height:1.34;color:${t.lightTextSoft};margin:18px auto 0;max-width:760px;">${c.getBody}</p>
           </div>
-          ${bulletList(c.getItems, {
-            textSoft: '#5f4538',
-            meta: '#9f6a50',
-            rule: 'rgba(90,58,42,0.18)'
-          }, 460)}
-          ${grain(0.05)}
-        </div>
-      `
+          ${valueList(c.getItems, t)}
+        `
+      })
     },
     {
       name: '05_cta',
-      html: slideShell(t, `
-        <div style="position:absolute;left:60px;right:60px;top:220px;">
-          <h2 style="${titleStyle(t, 98)}">${c.ctaTitle}</h2>
-          <p style="${bodyStyle(t)}margin-top:16px;">${c.ctaBody}</p>
-        </div>
-        ${heroPhoto(funnel.cta, 1160, 720, 700)}
-        ${ctaStrip(c.ctaButton, t)}
-      `)
+      html: darkShell(t, {
+        photo: funnel.cta,
+        content: `
+          ${introBlock({
+            title: c.ctaTitle,
+            body: c.ctaBody,
+            theme: t,
+            top: 220,
+            titleSize: 104,
+            bodySize: 35
+          })}
+          ${ctaRail(c.ctaButton, t)}
+        `
+      })
     }
   ]
 }
@@ -356,7 +430,7 @@ async function render() {
         </style></head><body>${slide.html}</body></html>`,
         { waitUntil: 'load' }
       )
-      await page.waitForTimeout(250)
+      await page.waitForTimeout(300)
       const file = path.join(outFolder, `${slide.name}.png`)
       await page.screenshot({ path: file, type: 'png' })
       await page.close()
