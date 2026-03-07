@@ -35,7 +35,7 @@ const deliverables = [
 ]
 
 const process = [
-  'Apply below and pick a time for a quick intro call',
+  'Sign up below and pick a time for a quick intro call',
   'We chat to make sure it is a good fit for both of us',
   'Show up, have fun, and get great photos at no cost'
 ]
@@ -70,7 +70,7 @@ const faqs = [
 export const metadata = {
   title: 'Free Photo Shoot in Manila - Aidan Torrence Photography',
   description:
-    'Apply for a free collaborative portrait session in Manila. No cost, no catch - just great photos with guided direction and 7-day delivery.'
+    'Sign up for a free collaborative portrait session in Manila. No cost, no catch - just great photos with guided direction and 7-day delivery.'
 }
 
 export default function ManilaFreePage(){
@@ -95,7 +95,7 @@ export default function ManilaFreePage(){
             </div>
 
             <div className="rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm">
-              <h2 className="text-lg font-semibold text-neutral-900">Apply for a free session</h2>
+              <h2 className="text-lg font-semibold text-neutral-900">Sign up for a free session</h2>
               <p className="mt-2 text-sm text-neutral-700">
                 Pick a time for a quick intro call. We&apos;ll chat to see if it&apos;s a good fit and plan your shoot.
               </p>
@@ -190,7 +190,7 @@ export default function ManilaFreePage(){
               Want free photos? Let&apos;s make it happen.
             </h2>
             <p className="mt-3 max-w-2xl text-sm text-neutral-700 sm:text-base">
-              Apply below and pick a time for a quick intro call. Spots are limited.
+              Sign up below and pick a time for a quick intro call. Spots are limited.
             </p>
             <p className="mt-2 text-sm font-semibold text-green-700">100% free - no cost, no catch</p>
             <div className="max-w-2xl">
