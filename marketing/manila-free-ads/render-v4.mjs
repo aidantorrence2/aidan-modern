@@ -89,12 +89,12 @@ function warmShell(bgPhoto, content) {
 
 // ── Slide templates ──
 
-function hookSlide(name, heroImg, subtext) {
+function hookSlide(name, heroImg, subtext, imgPos = 'center') {
   return {
     name,
     html: `
       <div style="width:1080px;height:1920px;position:relative;overflow:hidden;background:#000;">
-        <img src="${heroImg}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(1.1) contrast(1.05);"/>
+        <img src="${heroImg}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:${imgPos};filter:saturate(1.1) contrast(1.05);"/>
         <div style="position:absolute;inset:0;background:linear-gradient(180deg, rgba(0,0,0,0.3) 0%, transparent 20%, transparent 45%, rgba(0,0,0,0.92) 100%);"></div>
         <div style="position:absolute;bottom:440px;left:64px;right:64px;">
           <h1 style="font-family:${SERIF};font-size:148px;font-weight:700;font-style:italic;color:white;line-height:0.88;margin:0;${S}">Manila</h1>
@@ -268,7 +268,7 @@ const versionE = [
 ]
 
 const versionF = [
-  hookSlide('F_01_hook', imgNight1, 'I direct everything. You just show up.'),
+  hookSlide('F_01_hook', imgTropical, 'I direct everything. You just show up.'),
   proofSlide('F_02_proof', 'My recent work', proof8),
   howSlide('F_03_how', 'Three steps.', steps, imgIvy1),
   whatSlide('F_04_what', 'What you get.', deliverables, imgNight3),
