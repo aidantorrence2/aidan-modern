@@ -268,7 +268,7 @@ const versionE = [
 ]
 
 const versionF = [
-  hookSlide('F_01_hook', imgTropical, 'I direct everything. You just show up.'),
+  hookSlide('F_01_hook', imgNight1, 'I direct everything. You just show up.'),
   proofSlide('F_02_proof', 'My recent work', proof8),
   howSlide('F_03_how', 'Three steps.', steps, imgIvy1),
   whatSlide('F_04_what', 'What you get.', deliverables, imgNight3),
