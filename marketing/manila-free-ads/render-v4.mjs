@@ -34,6 +34,8 @@ const imgStreet = img('manila-gallery-street-001.jpg')
 const imgNight1 = img('manila-gallery-night-001.jpg')
 const imgIvy1 = img('manila-gallery-ivy-001.jpg')
 const imgGarden1 = img('manila-gallery-garden-001.jpg')
+const imgCloseup = img('manila-gallery-closeup-001.jpg')
+const imgShadow = img('manila-gallery-shadow-001.jpg')
 
 // The 8 proof images (same across all versions)
 const proof8 = [img0190, imgCanal1, img0911, imgMarket, imgPark, imgStatue, imgStreet, imgUrban3]
@@ -228,9 +230,9 @@ const steps = [
 const versionA = [
   hookSlide('A_01_hook', img0911, 'No experience needed. I direct everything.'),
   proofSlide('A_02_proof', 'My recent work', proof8),
-  howSlide('A_03_how', 'Three steps.', steps, img0130),
+  howSlide('A_03_how', 'Three steps.', steps, imgCloseup),
   whatSlide('A_04_what', 'Everything<br/>included.', deliverables, img0190),
-  ctaSlide('A_05_cta', imgTropical, "Let's shoot.", 'DM me on Instagram or WhatsApp to book your free session.')
+  ctaSlide('A_05_cta', imgShadow, "Let's shoot.", 'DM me on Instagram or WhatsApp to book your free session.')
 ]
 
 const versionB = [
