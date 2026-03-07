@@ -38,18 +38,29 @@ function filmGrain(opacity = 0.1) {
   `
 }
 
-function darkShell(theme, { photo = null, photoOpacity = 1, content }) {
+function darkShell(
+  theme,
+  {
+    photo = null,
+    photoOpacity = 1,
+    overlayTop = 0.74,
+    overlayMid = 0.26,
+    overlayBottom = 0.84,
+    grainOpacity = 0.12,
+    content
+  }
+) {
   return `
     <div style="width:1080px;height:1920px;position:relative;overflow:hidden;background:${theme.bgBottom};">
       <div style="position:absolute;inset:0;background:linear-gradient(180deg, ${theme.bgTop} 0%, ${theme.bgMid} 50%, ${theme.bgBottom} 100%);"></div>
       ${photo ? `<img src="${photo}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:center;display:block;opacity:${photoOpacity};filter:saturate(1.07) contrast(1.04);"/>` : ''}
-      <div style="position:absolute;inset:0;background:linear-gradient(180deg, rgba(8,8,8,0.74) 0%, rgba(8,8,8,0.26) 48%, rgba(8,8,8,0.84) 100%);"></div>
+      <div style="position:absolute;inset:0;background:linear-gradient(180deg, rgba(8,8,8,${overlayTop}) 0%, rgba(8,8,8,${overlayMid}) 48%, rgba(8,8,8,${overlayBottom}) 100%);"></div>
       <div style="position:absolute;inset:0;background:
         radial-gradient(circle at 17% 15%, ${theme.glowA}, transparent 24%),
         radial-gradient(circle at 84% 84%, ${theme.glowB}, transparent 22%),
         linear-gradient(135deg, ${theme.sheenA}, transparent 26%);"></div>
       ${content}
-      ${filmGrain(0.12)}
+      ${filmGrain(grainOpacity)}
     </div>
   `
 }
@@ -315,14 +326,18 @@ function buildSlides(funnel) {
       name: '01_hey_free_photo_shoot',
       html: darkShell(t, {
         photo: funnel.hero,
+        overlayTop: 0.48,
+        overlayMid: 0.12,
+        overlayBottom: 0.58,
+        grainOpacity: 0.08,
         content: `
           ${introBlock({
             title: c.hookTitle,
             body: c.hookBody,
             theme: t,
-            top: 220,
-            titleSize: 108,
-            bodySize: 36
+            top: 180,
+            titleSize: 94,
+            bodySize: 33
           })}
           <div style="position:absolute;left:140px;right:140px;bottom:220px;height:2px;background:${t.ruleStrong};"></div>
         `
