@@ -30,6 +30,7 @@
 - `/` – portfolio home and gallery.
 - `/about`, `/book`, `/shoots/[slug]` – supporting storytelling + booking flows.
 - `/manila` – Instagram ads landing page for Manila sessions with Cal.com "learn more" + quick intro call CTA flow and Meta Pixel interactions (`ViewContent`, `LandingScrollDepth`, lead clicks).
+- `/manila-free` – Free collab/TFP version of the Manila landing page. Same structure but no pricing, emphasizes free sessions. Separate Cal.com link (`manila-free-photo-shoot`) and distinct Pixel tracking names.
 
 ## Daily Ops Checklist for Campaign Pages
 - Confirm CTA phone/email destinations when duplicating sticky bars.
