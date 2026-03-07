@@ -114,28 +114,39 @@ function proofMosaic(images) {
   }).join('')
 }
 
-function stepsList(steps, theme) {
+function stepsCards(steps, theme) {
   return `
-    <div style="position:absolute;left:120px;right:120px;top:560px;">
+    <div style="position:absolute;left:90px;right:90px;top:560px;display:grid;gap:16px;">
       ${steps.map((step, index) => `
-        <div style="display:flex;gap:18px;align-items:flex-start;padding:24px 0;border-bottom:1px solid ${theme.rule};">
-          <span style="font-family:${DISPLAY};font-size:50px;line-height:1;color:${theme.text};width:38px;flex-shrink:0;">${index + 1}</span>
-          <p style="font-family:${SANS};font-size:35px;line-height:1.32;color:${theme.textSoft};margin:0;">${step}</p>
+        <div style="display:flex;gap:16px;align-items:flex-start;padding:22px 24px;border-radius:24px;background:rgba(255,255,255,0.11);border:1.5px solid ${theme.ruleStrong};backdrop-filter:blur(10px);box-shadow:0 16px 30px rgba(0,0,0,0.2);">
+          <span style="font-family:${DISPLAY};font-size:46px;line-height:1;color:${theme.text};width:34px;flex-shrink:0;">${index + 1}</span>
+          <p style="font-family:${SANS};font-size:33px;line-height:1.32;color:${theme.textSoft};margin:0;">${step}</p>
         </div>
       `).join('')}
     </div>
   `
 }
 
-function valueList(items, theme) {
+function valueSplit(items, theme, image, top = 600) {
   return `
-    <div style="position:absolute;left:110px;right:110px;top:550px;">
-      ${items.map((item, index) => `
-        <div style="display:flex;gap:18px;align-items:flex-start;padding:18px 0;border-bottom:1px solid ${theme.lightRule};">
-          <span style="font-family:${NARROW};font-size:23px;font-weight:700;line-height:1.2;letter-spacing:0.1em;text-transform:uppercase;color:${theme.lightMeta};width:42px;flex-shrink:0;">0${index + 1}</span>
-          <p style="font-family:${SANS};font-size:34px;line-height:1.34;color:${theme.lightTextSoft};margin:0;">${item}</p>
+    <div style="position:absolute;left:70px;right:70px;top:${top}px;display:grid;grid-template-columns:1.06fr 0.94fr;gap:24px;align-items:start;">
+      <div style="display:grid;gap:14px;">
+        ${items.map((item, index) => `
+          <div style="display:flex;gap:14px;align-items:flex-start;padding:20px 22px;border-radius:22px;background:white;border:1.5px solid rgba(55,37,26,0.1);box-shadow:0 14px 28px rgba(40,26,18,0.08);">
+            <span style="width:14px;height:14px;border-radius:999px;background:${theme.lightMeta};display:block;margin-top:14px;flex-shrink:0;"></span>
+            <p style="font-family:${SANS};font-size:31px;line-height:1.32;color:${theme.lightTextSoft};margin:0;">${item}</p>
+          </div>
+        `).join('')}
+      </div>
+      <div style="border-radius:28px;overflow:hidden;background:#1b130f;color:white;box-shadow:0 20px 40px rgba(20,13,10,0.2);">
+        <img src="${image}" style="width:100%;height:430px;object-fit:contain;object-position:center;display:block;background:rgba(0,0,0,0.08);"/>
+        <div style="padding:24px 24px 28px;">
+          <p style="font-family:${NARROW};font-size:22px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,220,190,0.78);margin:0 0 12px;">Real upgrade</p>
+          <p style="font-family:${SANS};font-size:29px;line-height:1.34;color:rgba(255,242,232,0.88);margin:0;">
+            Personal direction, polished edits, and photos you can actually use right away.
+          </p>
         </div>
-      `).join('')}
+      </div>
     </div>
   `
 }
@@ -365,31 +376,37 @@ function buildSlides(funnel) {
       name: '03_how_it_works',
       html: darkShell(t, {
         photo: funnel.processPhoto,
-        photoOpacity: 0.42,
+        photoOpacity: 0.78,
+        overlayTop: 0.48,
+        overlayMid: 0.1,
+        overlayBottom: 0.56,
         content: `
-          ${introBlock({
-            title: c.howTitle,
-            body: '',
-            theme: t,
-            top: 220,
-            titleSize: 96
-          })}
-          ${stepsList(c.steps, t)}
+          <div style="position:absolute;left:90px;right:90px;top:220px;text-align:left;">
+            <h2 style="font-family:${DISPLAY};font-size:102px;font-weight:700;line-height:0.95;color:${t.text};margin:0;max-width:760px;text-shadow:${t.titleShadow};">${c.howTitle}</h2>
+            <div style="margin-top:20px;max-width:760px;padding:20px 24px;border-radius:22px;background:rgba(255,255,255,0.11);border:1.5px solid ${t.ruleStrong};backdrop-filter:blur(10px);">
+              <p style="font-family:${SANS};font-size:31px;line-height:1.34;color:${t.textSoft};margin:0;">Message me and I will walk you through everything directly.</p>
+            </div>
+          </div>
+          ${stepsCards(c.steps, t)}
         `
       })
     },
     {
       name: '04_what_you_get',
-      html: lightShell(t, {
-        photo: funnel.getPhoto,
-        content: `
-          <div style="position:absolute;left:90px;right:90px;top:220px;text-align:center;">
-            <h2 style="font-family:${DISPLAY};font-size:96px;font-weight:700;line-height:0.95;color:${t.lightText};margin:0 auto;max-width:860px;">${c.getTitle}</h2>
-            <p style="font-family:${SANS};font-size:33px;line-height:1.34;color:${t.lightTextSoft};margin:18px auto 0;max-width:760px;">${c.getBody}</p>
+      html: `
+        <div style="width:1080px;height:1920px;position:relative;overflow:hidden;background:${t.lightBase};">
+          <div style="position:absolute;inset:0;background:linear-gradient(170deg, ${t.lightTop} 0%, ${t.lightMid} 58%, ${t.lightBottom} 100%);"></div>
+          <div style="position:absolute;inset:0;background:
+            radial-gradient(circle at 84% 14%, ${t.lightGlowA}, transparent 20%),
+            radial-gradient(circle at 16% 86%, ${t.lightGlowB}, transparent 22%);"></div>
+          <div style="position:absolute;left:82px;right:82px;top:210px;text-align:left;">
+            <h2 style="font-family:${DISPLAY};font-size:84px;font-weight:700;line-height:0.95;color:${t.lightText};margin:0;max-width:820px;">${c.getTitle}</h2>
+            <p style="font-family:${SANS};font-size:29px;line-height:1.34;color:${t.lightTextSoft};margin:14px 0 0;max-width:760px;">${c.getBody}</p>
           </div>
-          ${valueList(c.getItems, t)}
-        `
-      })
+          ${valueSplit(c.getItems, t, funnel.getPhoto, 600)}
+          ${filmGrain(0.07)}
+        </div>
+      `
     },
     {
       name: '05_cta',
