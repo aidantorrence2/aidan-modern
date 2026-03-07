@@ -53,8 +53,11 @@ const slides = [
         <div style="position:absolute;inset:0;background:linear-gradient(180deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.25) 40%, rgba(0,0,0,0.2) 60%, rgba(0,0,0,0.7) 100%);"></div>
 
         <div style="position:absolute;top:0;left:0;right:0;bottom:0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:0 70px;text-align:center;">
-          <h1 style="font-family:${D};font-size:110px;font-weight:700;color:white;line-height:1.02;margin:0;${TS}">
-            Manila Free Photo Shoot
+          <h1 style="font-family:${D};font-size:120px;font-weight:700;color:white;line-height:1.0;margin:0;${TS}">
+            Manila
+          </h1>
+          <h2 style="font-family:${D};font-size:88px;font-weight:700;color:rgba(255,255,255,0.9);line-height:1.05;margin:16px 0 0;${TS}">
+            Free Photo Shoot
           </h1>
           <p style="font-family:${B};font-size:36px;color:rgba(255,255,255,0.95);margin:48px 0 0;line-height:1.4;${TS_SUB}">
             No experience needed.
@@ -73,11 +76,15 @@ const slides = [
       <div style="width:1080px;height:1920px;position:relative;overflow:hidden;background:${INK};">
         <div style="position:absolute;top:0;left:0;right:0;bottom:0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:0 36px;">
 
+          <h2 style="font-family:${D};font-size:52px;font-weight:700;color:white;margin:0 0 36px;text-align:center;line-height:1.1;">
+            From recent sessions
+          </h2>
+
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;width:100%;">
-            <img src="${img0075}" style="width:100%;height:520px;object-fit:cover;border-radius:8px;display:block;"/>
-            <img src="${img0130}" style="width:100%;height:520px;object-fit:cover;border-radius:8px;display:block;"/>
-            <img src="${img0911}" style="width:100%;height:520px;object-fit:cover;border-radius:8px;display:block;"/>
-            <img src="${img0190}" style="width:100%;height:520px;object-fit:cover;border-radius:8px;display:block;"/>
+            <img src="${img0075}" style="width:100%;height:490px;object-fit:cover;border-radius:8px;display:block;"/>
+            <img src="${img0130}" style="width:100%;height:490px;object-fit:cover;border-radius:8px;display:block;"/>
+            <img src="${img0911}" style="width:100%;height:490px;object-fit:cover;border-radius:8px;display:block;"/>
+            <img src="${img0190}" style="width:100%;height:490px;object-fit:cover;border-radius:8px;display:block;"/>
           </div>
 
         </div>
