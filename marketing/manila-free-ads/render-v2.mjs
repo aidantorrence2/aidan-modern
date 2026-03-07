@@ -141,7 +141,7 @@ const slides = [
                 <span style="font-family:${B};color:white;font-size:22px;font-weight:700;">1</span>
               </div>
               <div>
-                <span style="font-family:${B};font-size:38px;font-weight:600;color:${INK};line-height:1.3;">30–60 min directed session</span>
+                <span style="font-family:${B};font-size:38px;font-weight:600;color:${INK};line-height:1.3;">Directed photo session</span>
                 <p style="font-family:${B};font-size:30px;color:${MUTED};margin:6px 0 0;line-height:1.3;">In Manila — BGC, Makati, or Intramuros</p>
               </div>
             </div>
@@ -151,7 +151,7 @@ const slides = [
               </div>
               <div>
                 <span style="font-family:${B};font-size:38px;font-weight:600;color:${INK};line-height:1.3;">10+ edited photos</span>
-                <p style="font-family:${B};font-size:30px;color:${MUTED};margin:6px 0 0;line-height:1.3;">Ready for IG, dating, and personal brand use</p>
+                <p style="font-family:${B};font-size:30px;color:${MUTED};margin:6px 0 0;line-height:1.3;">For your portfolio</p>
               </div>
             </div>
             <div style="display:flex;align-items:flex-start;gap:24px;">

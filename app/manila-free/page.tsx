@@ -28,8 +28,8 @@ const goodFor = [
 ]
 
 const deliverables = [
-  '30 to 60 minute directed session in Manila',
-  '10+ edited photos ready for IG, dating, and personal brand use',
+  'Directed photo session in Manila',
+  '10+ edited photos for your portfolio',
   'Location and outfit guidance before we shoot',
   'Final gallery in 7 days'
 ]
