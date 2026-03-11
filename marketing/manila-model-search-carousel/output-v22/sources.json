@@ -1,0 +1,50 @@
+{
+  "createdAt": "2026-03-11T11:59:57.658Z",
+  "strategy": "v22 — story-format narrative ad: \"She never modeled before\" mini-story across 4 slides",
+  "safeBottomPixels": 410,
+  "images": {
+    "all_considered": [
+      "manila-gallery-canal-001.jpg",
+      "manila-gallery-canal-002.jpg",
+      "manila-gallery-closeup-001.jpg",
+      "manila-gallery-dsc-0075.jpg",
+      "manila-gallery-dsc-0130.jpg",
+      "manila-gallery-dsc-0190.jpg",
+      "manila-gallery-dsc-0911.jpg",
+      "manila-gallery-floor-001.jpg",
+      "manila-gallery-garden-001.jpg",
+      "manila-gallery-garden-002.jpg",
+      "manila-gallery-graffiti-001.jpg",
+      "manila-gallery-ivy-001.jpg",
+      "manila-gallery-ivy-002.jpg",
+      "manila-gallery-market-001.jpg",
+      "manila-gallery-night-001-original.jpg",
+      "manila-gallery-night-001.jpg",
+      "manila-gallery-night-002.jpg",
+      "manila-gallery-night-003.jpg",
+      "manila-gallery-park-001.jpg",
+      "manila-gallery-rocks-001.jpg",
+      "manila-gallery-shadow-001.jpg",
+      "manila-gallery-statue-001.jpg",
+      "manila-gallery-street-001.jpg",
+      "manila-gallery-tropical-001.jpg",
+      "manila-gallery-urban-001.jpg",
+      "manila-gallery-urban-002.jpg",
+      "manila-gallery-urban-003.jpg",
+      "manila-gallery-white-001.jpg",
+      "manila-hero-dsc-0898.jpg"
+    ],
+    "selected": {
+      "story_opener": "manila-gallery-garden-002.jpg",
+      "shoot_a": "manila-gallery-canal-002.jpg",
+      "shoot_b": "manila-gallery-graffiti-001.jpg",
+      "shoot_c": "manila-gallery-dsc-0911.jpg",
+      "shoot_d": "manila-gallery-ivy-001.jpg",
+      "shoot_e": "manila-gallery-night-003.jpg",
+      "shoot_f": "manila-gallery-urban-001.jpg",
+      "result_a": "manila-gallery-canal-001.jpg",
+      "result_b": "manila-gallery-tropical-001.jpg",
+      "cta_hero": "manila-gallery-floor-001.jpg"
+    }
+  }
+}
