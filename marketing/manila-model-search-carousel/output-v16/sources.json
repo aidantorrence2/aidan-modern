@@ -1,5 +1,5 @@
 {
-  "createdAt": "2026-03-11T08:32:25.573Z",
+  "createdAt": "2026-03-11T08:37:50.716Z",
   "strategy": "v16 — full-bleed DR creative, manually selected manila* files",
   "safeBottomPixels": 410,
   "images": {
@@ -31,7 +31,13 @@
       "gridB": "manila-gallery-dsc-0911.jpg",
       "gridC": "manila-gallery-garden-002.jpg",
       "gridD": "manila-gallery-night-003.jpg",
-      "gridE": "manila-gallery-dsc-0075.jpg",
+      "gridE": "manila-gallery-dsc-0130.jpg",
+      "gridF": "manila-gallery-canal-002.jpg",
+      "gridG": "manila-gallery-graffiti-001.jpg",
+      "gridH": "manila-gallery-urban-001.jpg",
+      "gridI": "manila-gallery-shadow-001.jpg",
+      "gridJ": "manila-gallery-ivy-001.jpg",
+      "gridK": "manila-gallery-dsc-0075.jpg",
       "process": "manila-gallery-dsc-0190.jpg",
       "cta": "manila-gallery-floor-001.jpg"
     }
