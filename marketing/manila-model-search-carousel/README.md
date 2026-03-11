@@ -99,3 +99,24 @@ Additional V5 notes:
 
 - Removes the FAQ page entirely.
 - Uses the five-page order: hook, photo proof, what you get, how it works, sign up.
+
+V6 render (clear Manila labeling, improved proof page):
+
+```bash
+node marketing/manila-model-search-carousel/render-v6.mjs
+```
+
+V6 outputs:
+
+- `output-v6/01_models_in_manila_story.png`
+- `output-v6/02_portfolio_images_story.png`
+- `output-v6/03_what_you_get_story.png`
+- `output-v6/04_how_the_shoot_works_story.png`
+- `output-v6/05_sign_up_story.png`
+- `output-v6/sources.json`
+
+Additional V6 notes:
+
+- Every slide includes a clear visible `MANILA` label without pill styling.
+- Page 2 is reframed as portfolio proof rather than "photo proof".
+- Page 2 keeps the first two proof images and swaps the rest for stronger Manila images.
