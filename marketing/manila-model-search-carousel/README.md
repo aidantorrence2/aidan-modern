@@ -517,6 +517,34 @@ Additional V23 notes:
 - All content above SAFE_BOTTOM (410px).
 - Uses 9 manila-gallery images (street-001, closeup-001, dsc-0911, graffiti-001, urban-001, shadow-001, dsc-0130, tropical-001, statue-001).
 
+V24 render (DM screenshot / text conversation social proof format):
+
+```bash
+node marketing/manila-model-search-carousel/render-v24.mjs
+```
+
+V24 outputs:
+
+- `output-v24/01_dm_hook_story.png`
+- `output-v24/02_dm_conversation_story.mp4` (animated video)
+- `output-v24/03_dm_results_story.png`
+- `output-v24/04_dm_cta_story.png`
+- `output-v24/sources.json`
+
+Additional V24 notes:
+
+- FUNDAMENTALLY NEW AD CONCEPT: "DM screenshot / text conversation" social proof format. Slides are designed to look like real iOS message screenshots, not traditional ads.
+- iOS-style message bubble UI: blue sent bubbles (#007AFF), gray received bubbles (#E9E9EB), rounded corners, proper spacing. Feels like a real screenshot.
+- MANILA in very large bold orange (#FF6B35) on every slide (80-86px font size).
+- Dark background (#000) throughout, mimicking iOS dark mode Messages app.
+- 4 slides: HOOK (IG story feel) > DM CONVERSATION (animated MP4) > RESULTS (photos sent in chat) > CTA.
+- Slide 1: Fake IG story with full-bleed hero photo, "manila.portraits" username bar, "MANILA" huge centered, "looking for models in Manila" in glassmorphism text card, fake reply bar at bottom.
+- Slide 2: Animated MP4 -- fake DM conversation where messages appear one by one (7 messages, staggered 0.5-7.2s). "How does it work?" "You just sign up and I guide the whole shoot" "Wait really? No experience needed?" "Zero. I direct everything" etc. Messages slide up with translateY animation. ~9.5 seconds, 30fps, H.264/MP4.
+- Slide 3: "The results" -- 2x2 photo grid sent as a message with "Delivered" label, blue caption bubble "Here are your photos from Saturday!", gray reply bubbles "WAIT THESE ARE INSANE" / "I literally can't pick a favorite", "Read 2:34 PM" receipt.
+- Slide 4: "This could be your conversation." -- Dark overlay on hero, mini chat preview in glassmorphism card, orange "LIMITED SPOTS THIS MONTH" urgency badge.
+- All content above SAFE_BOTTOM (410px).
+- Uses 6 manila-gallery images (canal-001, closeup-001, garden-002, urban-001, night-003, floor-001).
+
 V25 render (countdown/urgency FOMO format):
 
 ```bash
@@ -571,3 +599,32 @@ Additional V26 notes:
 - Slide 4: "You qualify. Sign up below." -- Full-bleed hero with dark overlay. Teal "YOU'RE PRE-APPROVED" badge with checkmark makes viewer feel already accepted.
 - All content above SAFE_BOTTOM (410px).
 - Uses 8 manila-gallery images (canal-001, closeup-001, dsc-0911, garden-002, graffiti-001, urban-001, ivy-001, floor-001).
+
+V27 render (side-by-side transformation before/after concept):
+
+```bash
+node marketing/manila-model-search-carousel/render-v27.mjs
+```
+
+V27 outputs:
+
+- `output-v27/01_hook_story.png`
+- `output-v27/02_transformation_story.mp4` (animated video)
+- `output-v27/03_difference_story.png`
+- `output-v27/04_cta_story.png`
+- `output-v27/sources.json`
+
+Additional V27 notes:
+
+- COMPLETELY NEW AD CONCEPT: Side-by-side transformation "before/after" format. Shows the gap between "you now" and "you after the shoot."
+- Bold split-screen aesthetic with contrasting color temperatures: left side (before) is cool/desaturated, right side (after) is warm/vibrant editorial.
+- "MANILA" is VERY LARGE (80px) in vibrant orange (#FF6B2B) on every slide for maximum CPC impact.
+- 4 slides: HOOK > TRANSFORMATION (animated MP4) > DIFFERENCE > CTA.
+- Slide 1: "What if you had photos like this?" -- Full-bleed stunning portfolio shot with thin vertical divider teaser down center. Before/After labels at bottom.
+- Slide 2: Animated MP4 -- 3 pairs of before/after images animate in sequence. Left side slides in from left (desaturated/casual), right side slides in from right (polished editorial). Pairs staggered 1.4s apart. Vertical orange divider grows from top. ~5.5 seconds, 30fps, H.264.
+- Slide 3: "The difference? One afternoon." -- 3 steps with numbered orange circles and connector lines overlaid on a full-bleed photo with dark overlay.
+- Slide 4: "Your turn." -- Full-bleed best photo with sign up CTA and orange-tinted urgency badge with dot indicator.
+- Uses Playwright recordVideo + ffmpeg for animated MP4 (same technique as v17).
+- All text above SAFE_BOTTOM (410px). Images have less than 10% crop.
+- Dark background (#0a0a0a) throughout for cinematic feel.
+- Uses 9 manila-gallery images (street-001, garden-002, closeup-001, rocks-001, graffiti-001, ivy-001, urban-001, tropical-001, statue-001).
