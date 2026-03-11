@@ -90,41 +90,93 @@ function slideOne(images) {
   `
 }
 
-// Slide 2: PROOF — asymmetric mosaic, magazine feel
+// Justified gallery layout — zero crop, images sized to their native aspect ratio
+function justifiedLayout(imageList, containerWidth, availableHeight, gap, targetRowHeight) {
+  const rows = []
+  let currentRow = []
+
+  for (const img of imageList) {
+    currentRow.push(img)
+    const totalAspect = currentRow.reduce((s, i) => s + i.aspect, 0)
+    const totalGaps = (currentRow.length - 1) * gap
+    const rowHeight = (containerWidth - totalGaps) / totalAspect
+
+    if (rowHeight <= targetRowHeight && currentRow.length >= 2) {
+      rows.push({ images: [...currentRow], height: rowHeight })
+      currentRow = []
+    }
+  }
+
+  if (currentRow.length > 0) {
+    const totalAspect = currentRow.reduce((s, i) => s + i.aspect, 0)
+    const totalGaps = (currentRow.length - 1) * gap
+    const rowHeight = Math.min(targetRowHeight * 1.2, (containerWidth - totalGaps) / totalAspect)
+    rows.push({ images: [...currentRow], height: rowHeight })
+  }
+
+  // Scale all rows to fit available height exactly
+  const totalNatural = rows.reduce((s, r) => s + r.height, 0) + (rows.length - 1) * gap
+  const scale = availableHeight / totalNatural
+  for (const row of rows) {
+    row.height = Math.round(row.height * scale)
+  }
+
+  return rows
+}
+
+// Slide 2: PROOF — justified photo mosaic, zero crop
 function slideTwo(images) {
+  const HEADER_END = 230
+  const BOTTOM_LIMIT = HEIGHT - SAFE_BOTTOM - 20
+  const PAD = 28
+  const GAP = 10
+  const CONTAINER_W = WIDTH - PAD * 2
+  const AVAILABLE_H = BOTTOM_LIMIT - HEADER_END
+  const TARGET_ROW_H = 320
+
+  // image list with w/h aspect ratios (width / height)
+  const mosaicImages = [
+    { src: images.gridA,  aspect: 1059 / 1600 },  // closeup-001
+    { src: images.gridB,  aspect: 957 / 1510 },   // dsc-0911
+    { src: images.gridC,  aspect: 1600 / 1061 },  // garden-002
+    { src: images.gridD,  aspect: 1080 / 1080 },  // night-003
+    { src: images.gridE,  aspect: 968 / 1508 },   // dsc-0130
+    { src: images.gridF,  aspect: 1600 / 1072 },  // canal-002 (landscape)
+    { src: images.gridG,  aspect: 1228 / 1818 },  // graffiti-001
+    { src: images.gridH,  aspect: 1228 / 1818 },  // urban-001
+    { src: images.gridI,  aspect: 1067 / 1600 },  // shadow-001
+    { src: images.gridJ,  aspect: 1600 / 1061 },  // ivy-001
+    { src: images.gridK,  aspect: 976 / 1551 },   // dsc-0075
+  ]
+
+  const rows = justifiedLayout(mosaicImages, CONTAINER_W, AVAILABLE_H, GAP, TARGET_ROW_H)
+
+  let html = ''
+  let y = HEADER_END
+  for (const row of rows) {
+    let x = PAD
+    for (let i = 0; i < row.images.length; i++) {
+      const img = row.images[i]
+      const w = Math.round(row.height * img.aspect)
+      html += `<div style="position:absolute;left:${x}px;top:${y}px;width:${w}px;height:${row.height}px;border-radius:16px;overflow:hidden;">
+        <img src="${img.src}" style="width:100%;height:100%;display:block;object-fit:cover;object-position:center;"/>
+      </div>`
+      x += w + GAP
+    }
+    y += row.height + GAP
+  }
+
   return `
     <div style="width:${WIDTH}px;height:${HEIGHT}px;position:relative;overflow:hidden;background:#0a0a0a;">
-      <!-- header -->
       <div style="position:absolute;left:54px;top:62px;right:54px;">
         <p style="font-family:${NARROW};font-size:64px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#e8b880;margin:0 0 10px;">Manila</p>
         <h2 style="font-family:${BOLD};font-size:62px;font-weight:800;line-height:0.94;color:#fff;margin:0;letter-spacing:-0.02em;">This is my work.</h2>
       </div>
-
-      <!-- large hero image left -->
-      <div style="position:absolute;left:28px;top:248px;width:580px;height:740px;border-radius:22px;overflow:hidden;">
-        <img src="${images.gridA}" style="width:100%;height:100%;display:block;object-fit:cover;object-position:center;"/>
-      </div>
-
-      <!-- two stacked right -->
-      <div style="position:absolute;left:622px;top:248px;width:430px;height:358px;border-radius:22px;overflow:hidden;">
-        <img src="${images.gridB}" style="width:100%;height:100%;display:block;object-fit:cover;object-position:center;"/>
-      </div>
-      <div style="position:absolute;left:622px;top:620px;width:430px;height:368px;border-radius:22px;overflow:hidden;">
-        <img src="${images.gridC}" style="width:100%;height:100%;display:block;object-fit:cover;object-position:center;"/>
-      </div>
-
-      <!-- wide bottom image -->
-      <div style="position:absolute;left:28px;top:1002px;right:28px;height:460px;border-radius:22px;overflow:hidden;">
-        <img src="${images.gridE}" style="width:100%;height:100%;display:block;object-fit:cover;object-position:top;"/>
-      </div>
-
-      <!-- bottom text -->
-      <div style="position:absolute;left:54px;bottom:${SAFE_BOTTOM + 36}px;right:54px;display:flex;align-items:center;justify-content:space-between;">
-        <p style="font-family:${BODY};font-size:30px;font-weight:600;color:rgba(255,255,255,0.8);margin:0;">You could look like this.</p>
-        <div style="display:flex;align-items:center;gap:14px;">
-          <span style="font-family:${BODY};font-size:24px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:rgba(255,255,255,0.5);">Swipe</span>
-          <span style="display:inline-block;width:40px;height:2px;background:rgba(255,255,255,0.4);"></span>
-        </div>
+      ${html}
+      <!-- swipe -->
+      <div style="position:absolute;left:54px;bottom:${SAFE_BOTTOM + 36}px;display:flex;align-items:center;gap:14px;">
+        <span style="font-family:${BODY};font-size:24px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:rgba(255,255,255,0.5);">Swipe</span>
+        <span style="display:inline-block;width:40px;height:2px;background:rgba(255,255,255,0.4);"></span>
       </div>
     </div>
   `
@@ -187,9 +239,9 @@ function slideThree(images) {
 function slideFour(images) {
   return `
     <div style="width:${WIDTH}px;height:${HEIGHT}px;position:relative;overflow:hidden;background:#000;">
-      <img src="${images.cta}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top 20%;"/>
+      <img src="${images.cta}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 60%;"/>
       <!-- heavy top gradient -->
-      <div style="position:absolute;left:0;right:0;top:0;height:900px;background:linear-gradient(180deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.6) 55%, rgba(0,0,0,0) 100%);"></div>
+      <div style="position:absolute;left:0;right:0;top:0;height:740px;background:linear-gradient(180deg, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.65) 55%, rgba(0,0,0,0) 100%);"></div>
       <!-- bottom gradient -->
       <div style="position:absolute;left:0;right:0;bottom:0;height:${SAFE_BOTTOM + 100}px;background:linear-gradient(0deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 100%);"></div>
 
@@ -217,7 +269,13 @@ async function render() {
     gridB: 'manila-gallery-dsc-0911.jpg',
     gridC: 'manila-gallery-garden-002.jpg',
     gridD: 'manila-gallery-night-003.jpg',
-    gridE: 'manila-gallery-dsc-0075.jpg',
+    gridE: 'manila-gallery-dsc-0130.jpg',
+    gridF: 'manila-gallery-canal-002.jpg',
+    gridG: 'manila-gallery-graffiti-001.jpg',
+    gridH: 'manila-gallery-urban-001.jpg',
+    gridI: 'manila-gallery-shadow-001.jpg',
+    gridJ: 'manila-gallery-ivy-001.jpg',
+    gridK: 'manila-gallery-dsc-0075.jpg',
     process: 'manila-gallery-dsc-0190.jpg',
     cta: 'manila-gallery-floor-001.jpg'
   }
