@@ -140,3 +140,23 @@ Additional V7 notes:
 
 - Keeps the V6 five-slide flow but redesigns the layouts for stronger hierarchy and cleaner contrast.
 - Maintains visible `MANILA` labeling on every slide without using pill UI.
+
+V8 render (text-first pages 1 and 5):
+
+```bash
+node marketing/manila-model-search-carousel/render-v8.mjs
+```
+
+V8 outputs:
+
+- `output-v8/01_models_in_manila_story.png`
+- `output-v8/02_portfolio_images_story.png`
+- `output-v8/03_what_you_get_story.png`
+- `output-v8/04_how_the_shoot_works_story.png`
+- `output-v8/05_sign_up_story.png`
+- `output-v8/sources.json`
+
+Additional V8 notes:
+
+- Pages 1 and 5 use a text-above / image-below structure.
+- Page 5 uses much shorter CTA copy than V7.
