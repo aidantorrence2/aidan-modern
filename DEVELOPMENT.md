@@ -225,3 +225,15 @@
   - Exports a five-slide 1080x1920 PNG set for story/reels use.
   - Pages 1 and 5 place the copy in the upper half with the image below to simplify composition.
   - Page 5 uses shorter CTA copy than V7.
+
+## Manila Model Search Carousel V9 (Larger Manila Label)
+- Source folder: `marketing/manila-model-search-carousel`
+- Render command:
+  - `node marketing/manila-model-search-carousel/render-v9.mjs`
+- Output folder:
+  - `marketing/manila-model-search-carousel/output-v9`
+- Notes:
+  - Exports a five-slide 1080x1920 PNG set for story/reels use.
+  - Enlarges the `MANILA` label across all slides.
+  - Removes small kicker labels and uses simpler top-level copy.
+  - Uses taller portrait image framing on pages 1 and 5.

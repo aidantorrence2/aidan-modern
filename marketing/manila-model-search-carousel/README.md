@@ -160,3 +160,24 @@ Additional V8 notes:
 
 - Pages 1 and 5 use a text-above / image-below structure.
 - Page 5 uses much shorter CTA copy than V7.
+
+V9 render (bigger Manila label, cleaner copy):
+
+```bash
+node marketing/manila-model-search-carousel/render-v9.mjs
+```
+
+V9 outputs:
+
+- `output-v9/01_models_in_manila_story.png`
+- `output-v9/02_portfolio_images_story.png`
+- `output-v9/03_what_you_get_story.png`
+- `output-v9/04_how_the_shoot_works_story.png`
+- `output-v9/05_sign_up_story.png`
+- `output-v9/sources.json`
+
+Additional V9 notes:
+
+- Uses a larger `MANILA` treatment on every slide.
+- Removes the small kicker/subheader labels.
+- Makes the page 1 and page 5 images taller portrait frames.
