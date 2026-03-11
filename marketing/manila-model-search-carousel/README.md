@@ -629,6 +629,34 @@ Additional V27 notes:
 - Dark background (#0a0a0a) throughout for cinematic feel.
 - Uses 9 manila-gallery images (street-001, garden-002, closeup-001, rocks-001, graffiti-001, ivy-001, urban-001, tropical-001, statue-001).
 
+V29 render (Magazine Cover / Editorial Spread concept):
+
+```bash
+node marketing/manila-model-search-carousel/render-v29.mjs
+```
+
+V29 outputs:
+
+- `output-v29/01_magazine_cover.png`
+- `output-v29/02_editorial_spread.mp4` (animated video)
+- `output-v29/03_the_process.png`
+- `output-v29/04_back_cover_cta.png`
+- `output-v29/sources.json`
+
+Additional V29 notes:
+
+- COMPLETELY NEW AD CONCEPT: "Magazine Cover / Editorial Spread" -- designed to look like pages from a high fashion magazine.
+- Elegant serif typography (Georgia/Baskerville) with thin rules, classic magazine grid, and warm cream backgrounds (#FAF7F2).
+- "MANILA" is VERY LARGE (80-120px) and prominent on every slide as the magazine masthead in dark near-black (#1A1A1A) or white.
+- Gold accent color (#C8A96E) for cover lines, step numbers, rules, and urgency badge.
+- 4 slides: MAGAZINE COVER > EDITORIAL SPREAD (animated MP4) > THE PROCESS > BACK COVER CTA.
+- Slide 1: Magazine cover -- "MANILA" as 120px masthead centered at top, full-bleed cover model photo, "Issue No. 01" / "Manila, PH" header, cover lines ("Models Wanted", "No Experience Required", "Editorial Shoots", "Free Portfolio Photos") in italic serif, gold accent rules, "2025 Edition" bottom-right.
+- Slide 2: Animated MP4 -- "The Editorial Spread" -- 5 photos appear as if being laid out on a spread, each rotating slightly into place with staggered animation (500ms apart). Captions fade in below each image. Cream background. ~6 seconds, 30fps, H.264/MP4.
+- Slide 3: "The Process" -- styled as a magazine article with large gold drop-cap numbers (1/2/3), serif body copy, thin horizontal rules between steps, italic pull quote ("No agency. No portfolio. Just you and one afternoon."), small accent image bottom-right, "Continued" footer.
+- Slide 4: "Back cover" CTA -- full-bleed dark photo with heavy overlay, large white MANILA masthead (100px), italic serif "Sign Up Below", gold urgency badge with dot indicator "LIMITED SPOTS THIS MONTH", thin rules top and bottom.
+- All content above SAFE_BOTTOM (410px). Images have less than 10% crop.
+- Uses 9 manila-gallery images (canal-001, closeup-001, garden-002, graffiti-001, street-001, night-003, ivy-001, dsc-0190, urban-001).
+
 V32 render (Swiss/International Typographic Style, ultra minimal grid):
 
 ```bash
@@ -659,3 +687,33 @@ Additional V32 notes:
 - Minimal decoration -- just type, photos, grid lines, and red accents.
 - All content above SAFE_BOTTOM (410px). Images have less than 10% crop.
 - Uses 12 manila-gallery images (canal-001, closeup-001, dsc-0911, garden-002, night-003, dsc-0130, graffiti-001, urban-001, shadow-001, ivy-001, dsc-0190, floor-001).
+
+V30 render (Pinterest Moodboard aesthetic, animated pin-drop):
+
+```bash
+node marketing/manila-model-search-carousel/render-v30.mjs
+```
+
+V30 outputs:
+
+- `output-v30/01_moodboard_hook.png`
+- `output-v30/02_moodboard_build.mp4` (animated video)
+- `output-v30/03_moodboard_process.png`
+- `output-v30/04_moodboard_cta.png`
+- `output-v30/sources.json`
+
+Additional V30 notes:
+
+- COMPLETELY NEW AD CONCEPT: "Pinterest Moodboard" -- looks like a creative director's curated mood board / Pinterest board.
+- Warm cream/cork textured background with masking tape strips, push pins, color swatches, and handwritten note cards.
+- Mixed media feel: white-bordered photo cards pinned at slight angles, handwritten-font text notes, color palette swatches, decorative tape.
+- "MANILA" is VERY LARGE (80-82px) in terracotta (#C4562A) on every slide with subtle text shadow.
+- Handwritten font (Marker Felt/Comic Sans fallback) for note cards, sans-serif (Avenir Next) for headlines and step titles.
+- 4 slides: MOODBOARD HOOK > ANIMATED BUILD (MP4) > PROCESS > CTA.
+- Slide 1: "MANILA" huge top-left, large hero photo pinned with tape, "models wanted" handwritten note card, two small accent photos with push pins, color swatches cluster, "editorial portraits / no experience needed" note.
+- Slide 2: Animated MP4 -- 8 photos "pin" onto the moodboard one by one with a bounce-drop animation (translateY + scale), staggered 450ms apart. Each has tape and white border. A "this is my work." handwritten note appears last. ~6.5 seconds, 30fps, H.264.
+- Slide 3: "how it works" handwritten note, 3 step cards pinned at alternating angles with numbered steps (01/02/03), two accent photos pinned on the right side with push pins, color swatches at bottom.
+- Slide 4: Large hero photo pinned prominently center, "Sign up below." card with CTA copy and terracotta "LIMITED SPOTS THIS MONTH" badge, small accent photo and swatches at bottom.
+- Cork/linen texture background via CSS gradients (no external textures needed).
+- All content above SAFE_BOTTOM (410px). Images have less than 10% crop thanks to white-bordered photo card containers.
+- Uses 15 manila-gallery images (canal-001, closeup-001, garden-002, dsc-0911, night-003, garden-001, graffiti-001, urban-001, ivy-001, shadow-001, tropical-001, dsc-0190, canal-002, statue-001, dsc-0130).
