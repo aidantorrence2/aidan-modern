@@ -318,3 +318,57 @@ Additional V16 notes:
 - Slide 4: "Sign up below." + urgency badge "Limited spots this month."
 - Swipe indicators on slides 1-3.
 - All text above SAFE_BOTTOM (410px).
+
+V17 render (animated proof slide MP4):
+
+```bash
+node marketing/manila-model-search-carousel/render-v17.mjs
+```
+
+V17 outputs:
+
+- `output-v17/01_hook_story.png`
+- `output-v17/02_proof_story.mp4` (animated video)
+- `output-v17/03_how_easy_story.png`
+- `output-v17/04_sign_up_story.png`
+- `output-v17/sources.json`
+
+Additional V17 notes:
+
+- Identical to V16 except slide 2 (proof/mosaic) is an animated MP4 video instead of a static PNG.
+- Uses Playwright's `recordVideo` API to capture the page animation, then converts to H.264 MP4 via ffmpeg.
+- 10 mosaic images fade in with a slight scale-up (0.85 to 1.0), staggered 300ms apart, creating a "gallery loading" reveal effect.
+- Header text ("MANILA" in gold #e8b880 + "This is my work.") fades in at the start.
+- After all images are revealed, holds for ~1 second before the video ends.
+- Video is 1080x1920, ~5 seconds, 30fps, H.264/MP4.
+- Dark background (#0a0a0a) visible throughout. All text above safe bottom (410px from bottom).
+- Static slides 1, 3, and 4 are unchanged PNGs.
+
+V18 render (high-contrast bold white-bg design, 4 slides):
+
+```bash
+node marketing/manila-model-search-carousel/render-v18.mjs
+```
+
+V18 outputs:
+
+- `output-v18/01_hook_story.png`
+- `output-v18/02_proof_story.png`
+- `output-v18/03_process_story.png`
+- `output-v18/04_cta_story.png`
+- `output-v18/sources.json`
+
+Additional V18 notes:
+
+- Completely new design — looks nothing like v16. Optimized for CPC and form completion.
+- High-contrast bold aesthetic: white backgrounds, black text, thick black image borders, red-orange MANILA accent color (#D4380D).
+- Feels like a Nike ad — clean, punchy, scroll-stopping on IG because it breaks the pattern of dark filtered content.
+- 4 slides: HOOK > PROOF > PROCESS > CTA.
+- Slide 1: "Models wanted." with thick-bordered hero image below text, clean white space.
+- Slide 2: 3x3 photo grid (9 diverse images) with thick borders on white. "This is my work."
+- Slide 3: Numbered steps (01/02/03) with horizontal rules, monospace step numbers in accent color, small accent image bottom-right.
+- Slide 4: Large bordered image top half, "Sign up below." with black urgency pill "LIMITED SPOTS THIS MONTH."
+- No swipe indicators.
+- MANILA prominent in red-orange on every slide.
+- All content above SAFE_BOTTOM (410px).
+- Images have less than 10% crop thanks to bordered containers with object-fit:cover.
