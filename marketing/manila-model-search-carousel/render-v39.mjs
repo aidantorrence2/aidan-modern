@@ -295,43 +295,48 @@ function slideTwoAnimated(images, imageSizes) {
   </html>`
 }
 
-// ── Slide 3: PROCESS — 3 film frames with steps, portrait-friendly ──
+// ── Slide 3: PROCESS — 3 step cards beside portrait film frames ──
 function slideThree(images, imageSizes) {
   const steps = [
     { num: '01', title: 'Sign up below', desc: 'Takes 60 seconds. I message you back.' },
-    { num: '02', title: 'We pick a date', desc: 'Location, vibe, and look — planned together.' },
-    { num: '03', title: 'Show up. I direct.', desc: 'No experience needed. You just show up.' },
+    { num: '02', title: 'We plan it', desc: 'Location, vibe, and look — planned together.' },
+    { num: '03', title: 'Show up', desc: 'I direct the whole shoot. No experience needed.' },
   ]
 
   const BORDER = 8
-  const FRAME_INNER_W = WIDTH - 200
-  const FRAME_W = FRAME_INNER_W + BORDER * 2
-  const FRAME_X = (WIDTH - FRAME_W) / 2
+  // Side-by-side: portrait photo on left, step text on right
+  const FRAME_W = 380
+  const FRAME_INNER_W = FRAME_W - BORDER * 2
+  const IMG_H = 320
+  const REBATE_H = 28
+  const FRAME_H = IMG_H + BORDER * 2 + REBATE_H
+  const FRAME_X = 80
+  const TEXT_X = FRAME_X + FRAME_W + 28
+  const TEXT_W = WIDTH - TEXT_X - 60
   const START_Y = 340
-  const FRAME_GAP = 18
-  const REBATE_H = 70 // room for step text in the rebate
-  const IMG_H = 220 // fixed image height per frame
+  const FRAME_GAP = 24
 
   let framesHtml = ''
   let currentY = START_Y
   for (let i = 0; i < 3; i++) {
-    const fh = IMG_H + BORDER * 2 + REBATE_H
-
-    framesHtml += `<div style="position:absolute;left:${FRAME_X}px;top:${currentY}px;width:${FRAME_W}px;height:${fh}px;background:${FILM_BORDER};border:2px solid #3a3228;">
+    // Film frame on left
+    framesHtml += `<div style="position:absolute;left:${FRAME_X}px;top:${currentY}px;width:${FRAME_W}px;height:${FRAME_H}px;background:${FILM_BORDER};border:2px solid #3a3228;">
       <div style="position:absolute;left:${BORDER}px;top:${BORDER}px;width:${FRAME_INNER_W}px;height:${IMG_H}px;overflow:hidden;background:#0a0806;">
-        <img src="${images.process[i]}" style="width:100%;height:100%;display:block;object-fit:cover;object-position:center 25%;filter:saturate(1.2) contrast(1.08) sepia(0.06);"/>
+        <img src="${images.process[i]}" style="width:100%;height:100%;display:block;object-fit:cover;object-position:center 20%;filter:saturate(1.2) contrast(1.08) sepia(0.06);"/>
       </div>
-      <div style="position:absolute;left:${BORDER + 6}px;top:${IMG_H + BORDER + 6}px;right:${BORDER + 6}px;">
-        <div style="display:flex;align-items:baseline;gap:10px;margin-bottom:3px;">
-          <span style="font-family:${MONO};font-size:18px;font-weight:700;color:${FILM_AMBER};letter-spacing:0.08em;">STEP ${steps[i].num}</span>
-          <span style="font-family:${BOLD};font-size:26px;font-weight:700;color:${FILM_CREAM};letter-spacing:-0.01em;">${steps[i].title}</span>
-        </div>
-        <p style="font-family:${BODY};font-size:18px;color:rgba(255,248,231,0.5);margin:0;line-height:1.3;">${steps[i].desc}</p>
-      </div>
-      <div style="position:absolute;right:${BORDER + 6}px;top:${IMG_H + BORDER + 6}px;font-family:${MONO};font-size:11px;color:${FILM_ORANGE};opacity:0.4;letter-spacing:0.08em;">${20 + i * 5}/36</div>
+      <div style="position:absolute;left:${BORDER + 4}px;bottom:4px;font-family:${MONO};font-size:11px;color:${FILM_ORANGE};opacity:0.5;letter-spacing:0.08em;">${20 + i * 5}/36</div>
+      <div style="position:absolute;right:${BORDER + 4}px;bottom:4px;font-family:${MONO};font-size:11px;color:${FILM_ORANGE};opacity:0.4;letter-spacing:0.06em;">PORTRA 400</div>
     </div>`
 
-    currentY += fh + FRAME_GAP
+    // Step text on right, vertically centered with the frame
+    const textTop = currentY + Math.round((FRAME_H - 120) / 2)
+    framesHtml += `<div style="position:absolute;left:${TEXT_X}px;top:${textTop}px;width:${TEXT_W}px;">
+      <p style="font-family:${MONO};font-size:16px;font-weight:700;color:${FILM_AMBER};letter-spacing:0.12em;margin:0 0 8px;">STEP ${steps[i].num}</p>
+      <p style="font-family:${BOLD};font-size:30px;font-weight:700;color:${FILM_CREAM};margin:0 0 8px;line-height:1.05;">${steps[i].title}</p>
+      <p style="font-family:${BODY};font-size:19px;color:rgba(255,248,231,0.5);margin:0;line-height:1.35;">${steps[i].desc}</p>
+    </div>`
+
+    currentY += FRAME_H + FRAME_GAP
   }
 
   return `
@@ -420,8 +425,8 @@ async function render() {
   const selection = {
     hero: 'manila-gallery-canal-001.jpg',
     strip: stripFiles,
-    processA: 'manila-gallery-ivy-001.jpg',
-    processB: 'manila-gallery-tropical-001.jpg',
+    processA: 'manila-gallery-dsc-0911.jpg',
+    processB: 'manila-gallery-graffiti-001.jpg',
     processC: 'manila-gallery-dsc-0190.jpg',
     cta: 'manila-gallery-park-001.jpg',
   }
