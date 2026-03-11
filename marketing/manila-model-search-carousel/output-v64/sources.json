@@ -1,0 +1,15 @@
+{
+  "createdAt": "2026-03-11T15:45:19.712Z",
+  "strategy": "v64 — Animated before/after transformation video with funny before content",
+  "safeBottomPixels": 410,
+  "images": {
+    "hero": "manila-gallery-street-001.jpg",
+    "beforeA": "manila-gallery-garden-002.jpg",
+    "afterA": "manila-gallery-closeup-001.jpg",
+    "beforeB": "manila-gallery-rocks-001.jpg",
+    "afterB": "manila-gallery-graffiti-001.jpg",
+    "beforeC": "manila-gallery-ivy-001.jpg",
+    "afterC": "manila-gallery-urban-001.jpg",
+    "cta": "manila-gallery-statue-001.jpg"
+  }
+}
