@@ -372,3 +372,29 @@ Additional V18 notes:
 - MANILA prominent in red-orange on every slide.
 - All content above SAFE_BOTTOM (410px).
 - Images have less than 10% crop thanks to bordered containers with object-fit:cover.
+
+V19 render (v18 white-bg design with animated proof slide MP4):
+
+```bash
+node marketing/manila-model-search-carousel/render-v19.mjs
+```
+
+V19 outputs:
+
+- `output-v19/01_hook_story.png`
+- `output-v19/02_proof_story.mp4` (animated video)
+- `output-v19/03_process_story.png`
+- `output-v19/04_cta_story.png`
+- `output-v19/sources.json`
+
+Additional V19 notes:
+
+- Identical to V18 except slide 2 (proof grid) is an animated MP4 video instead of a static PNG.
+- Uses Playwright's `recordVideo` API to capture the page animation, then converts WebM to H.264 MP4 via ffmpeg.
+- 9 grid images (3x3) fade in with a slight scale-up (0.85 to 1.0), staggered 300ms apart, creating a "gallery loading" reveal effect.
+- Header text ("MANILA" in red-orange #D4380D + "This is my work.") fades in at the start.
+- After all images are revealed, holds for ~1.5 seconds before the video ends.
+- Video is 1080x1920, ~5.8 seconds, 30fps, H.264/MP4.
+- White background (#FFFFFF) with thick black borders on each grid cell, matching v18's bold aesthetic.
+- All text above SAFE_BOTTOM (410px from bottom).
+- Static slides 1, 3, and 4 are unchanged PNGs from v18's design.
