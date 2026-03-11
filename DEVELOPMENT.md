@@ -270,3 +270,13 @@
 - Notes:
   - Same layout as V11.
   - Shared page header text is updated from `MANILA` to `MANILA MODEL SEARCH`.
+
+## Manila Model Search Carousel V13 (Borderless Hero + CTA Images)
+- Source folder: `marketing/manila-model-search-carousel`
+- Render command:
+  - `node marketing/manila-model-search-carousel/render-v13.mjs`
+- Output folder:
+  - `marketing/manila-model-search-carousel/output-v13`
+- Notes:
+  - Same layout as V12.
+  - Page 1 and page 5 remove the white framed image treatment in favor of larger borderless image blocks.

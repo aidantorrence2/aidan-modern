@@ -226,3 +226,23 @@ V12 outputs:
 - `output-v12/04_how_the_shoot_works_story.png`
 - `output-v12/05_sign_up_story.png`
 - `output-v12/sources.json`
+
+V13 render (borderless page 1 and 5 images):
+
+```bash
+node marketing/manila-model-search-carousel/render-v13.mjs
+```
+
+V13 outputs:
+
+- `output-v13/01_models_in_manila_story.png`
+- `output-v13/02_portfolio_images_story.png`
+- `output-v13/03_what_you_get_story.png`
+- `output-v13/04_how_the_shoot_works_story.png`
+- `output-v13/05_sign_up_story.png`
+- `output-v13/sources.json`
+
+Additional V13 notes:
+
+- Keeps the V12 layouts and header copy.
+- Removes the white framed image treatment from pages 1 and 5 and replaces it with clean borderless image blocks.
