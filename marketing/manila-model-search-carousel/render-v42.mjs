@@ -287,40 +287,13 @@ function buildAnimatedDM(images) {
           animation: chatScroll ${TOTAL_DURATION}s ease-in-out 0s forwards;
         }
 
-        @keyframes manilaFlash {
+        @keyframes fadeToBlack {
           0% { opacity: 0; }
-          8% { opacity: 1; }
           100% { opacity: 1; }
         }
-        .manila-flash {
+        .fade-to-black {
           opacity: 0;
-          animation: manilaFlash 0.6s ease-out ${T.manila}s forwards;
-        }
-
-        @keyframes heroZoom {
-          0% { transform: scale(1.05); }
-          100% { transform: scale(1.15); }
-        }
-
-        @keyframes manilaTextIn {
-          0% { opacity: 0; transform: scale(0.85) translateY(20px); }
-          60% { opacity: 1; transform: scale(1.03) translateY(-2px); }
-          100% { opacity: 1; transform: scale(1) translateY(0); }
-        }
-
-        @keyframes subtextIn {
-          0% { opacity: 0; transform: translateY(16px); }
-          100% { opacity: 1; transform: translateY(0); }
-        }
-
-        @keyframes btnPulse {
-          0%, 100% { transform: scale(1); box-shadow: 0 4px 30px rgba(232,68,58,0.4); }
-          50% { transform: scale(1.03); box-shadow: 0 6px 40px rgba(232,68,58,0.6); }
-        }
-
-        @keyframes shimmer {
-          0% { background-position: -200% center; }
-          100% { background-position: 200% center; }
+          animation: fadeToBlack 0.5s ease-out ${T.manila}s forwards;
         }
       </style>
     </head>
@@ -364,45 +337,66 @@ function buildAnimatedDM(images) {
         <!-- Bottom gradient fade -->
         <div style="position:absolute;left:0;right:0;bottom:${SAFE_BOTTOM}px;height:80px;background:linear-gradient(0deg, ${IG_BLACK}, transparent);z-index:15;pointer-events:none;"></div>
 
-        <!-- MANILA CTA overlay — hero photo + gradient + bold text -->
-        <div class="manila-flash" style="position:absolute;inset:0;z-index:30;overflow:hidden;">
-          <!-- Hero background photo with slow zoom -->
-          <div style="position:absolute;inset:0;animation:heroZoom 8s ease-out ${T.manila}s forwards;">
-            <img src="${images.photo3}" style="width:130%;height:130%;object-fit:cover;object-position:center 15%;margin:-15% 0 0 -15%;filter:brightness(0.45) saturate(1.3);"/>
-          </div>
-
-          <!-- Gradient overlays for depth -->
-          <div style="position:absolute;inset:0;background:linear-gradient(180deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.15) 35%, rgba(0,0,0,0.1) 50%, rgba(0,0,0,0.6) 75%, rgba(0,0,0,0.92) 100%);"></div>
-          <div style="position:absolute;inset:0;background:radial-gradient(ellipse at center 40%, transparent 30%, rgba(0,0,0,0.5) 100%);"></div>
-
-          <!-- Content -->
-          <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:0 60px;">
-            <!-- Thin red line accent -->
-            <div style="width:60px;height:3px;background:${MANILA_COLOR};margin-bottom:28px;opacity:0;animation:subtextIn 0.4s ease-out ${T.manila + 0.2}s forwards;"></div>
-
-            <!-- MANILA -->
-            <p style="font-family:${SF};font-size:172px;font-weight:900;letter-spacing:0.12em;color:#fff;margin:0;text-transform:uppercase;text-shadow:0 4px 60px rgba(0,0,0,0.8), 0 0 120px rgba(232,68,58,0.3);opacity:0;animation:manilaTextIn 0.7s cubic-bezier(0.16,1,0.3,1) ${T.manila + 0.15}s forwards;">MANILA</p>
-
-            <!-- Model Search -->
-            <p style="font-family:${SF};font-size:44px;font-weight:300;color:rgba(255,255,255,0.95);margin:8px 0 0;letter-spacing:0.25em;text-transform:uppercase;opacity:0;animation:subtextIn 0.5s ease-out ${T.manila + 0.5}s forwards;">MODEL SEARCH</p>
-
-            <!-- Divider line -->
-            <div style="width:120px;height:1px;background:rgba(255,255,255,0.3);margin:32px 0;opacity:0;animation:subtextIn 0.4s ease-out ${T.manila + 0.65}s forwards;"></div>
-
-            <!-- Sign up CTA button -->
-            <div style="opacity:0;animation:subtextIn 0.5s ease-out ${T.manila + 0.8}s forwards;">
-              <div style="background:${MANILA_COLOR};border-radius:40px;padding:18px 64px;animation:btnPulse 2.5s ease-in-out ${T.manila + 1.3}s infinite;">
-                <p style="font-family:${SF};font-size:28px;font-weight:700;color:#fff;margin:0;letter-spacing:0.08em;text-transform:uppercase;background:linear-gradient(90deg, #fff 0%, rgba(255,255,255,0.7) 50%, #fff 100%);background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;animation:shimmer 3s linear ${T.manila + 1.3}s infinite;">SIGN UP NOW</p>
-              </div>
-            </div>
-
-            <!-- Limited spots urgency -->
-            <p style="font-family:${SF};font-size:22px;font-weight:500;color:rgba(255,255,255,0.55);margin:24px 0 0;letter-spacing:0.06em;opacity:0;animation:subtextIn 0.5s ease-out ${T.manila + 1.0}s forwards;">Limited spots · 60 second form</p>
-          </div>
-        </div>
+        <!-- Fade to black (CTA is composited as a separate high-quality screenshot) -->
+        <div class="fade-to-black" style="position:absolute;inset:0;background:${IG_BLACK};z-index:30;pointer-events:none;"></div>
       </div>
     </body>
   </html>`
+}
+
+function buildCTA(images) {
+  // High-quality static CTA — photo collage with bold typography
+  // Rendered as a screenshot for pixel-perfect quality
+  function cropImg(src, w, h, pos = 'center 20%') {
+    return `<div style="width:${w}px;height:${h}px;overflow:hidden;border-radius:16px;box-shadow:0 8px 40px rgba(0,0,0,0.5);">
+      <img src="${src}" style="width:130%;height:130%;object-fit:cover;object-position:${pos};display:block;margin:-15% 0 0 -15%;"/>
+    </div>`
+  }
+
+  return `<!DOCTYPE html><html><head>
+    <style>* { box-sizing:border-box;margin:0;padding:0; } html,body { background:#000; -webkit-font-smoothing:antialiased; }</style>
+  </head><body>
+    <div style="width:${WIDTH}px;height:${HEIGHT}px;position:relative;overflow:hidden;background:#000;">
+
+      <!-- Photo grid — 3 photos staggered -->
+      <div style="position:absolute;top:120px;left:50px;transform:rotate(-3deg);">
+        ${cropImg(images.photo1, 460, 620, 'center 20%')}
+      </div>
+      <div style="position:absolute;top:180px;right:50px;transform:rotate(2.5deg);">
+        ${cropImg(images.photo5, 420, 560, 'center 25%')}
+      </div>
+      <div style="position:absolute;top:620px;left:280px;transform:rotate(-1deg);z-index:5;">
+        ${cropImg(images.photo2, 500, 380, 'center 30%')}
+      </div>
+
+      <!-- Dark gradient overlay to make text pop -->
+      <div style="position:absolute;inset:0;background:linear-gradient(180deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.1) 20%, rgba(0,0,0,0.0) 35%, rgba(0,0,0,0.55) 55%, rgba(0,0,0,0.95) 72%, #000 85%);"></div>
+
+      <!-- Text content — positioned in lower portion above SAFE_BOTTOM -->
+      <div style="position:absolute;left:0;right:0;bottom:${SAFE_BOTTOM + 40}px;padding:0 70px;text-align:center;">
+
+        <!-- Thin red accent line -->
+        <div style="width:50px;height:3px;background:${MANILA_COLOR};margin:0 auto 30px;"></div>
+
+        <!-- MANILA — huge, white, heavy -->
+        <p style="font-family:${SF};font-size:180px;font-weight:900;letter-spacing:0.14em;color:#fff;margin:0;text-transform:uppercase;text-shadow:0 4px 80px rgba(232,68,58,0.4), 0 2px 20px rgba(0,0,0,0.8);">MANILA</p>
+
+        <!-- MODEL SEARCH — light weight, wide tracking -->
+        <p style="font-family:${SF};font-size:38px;font-weight:300;color:rgba(255,255,255,0.9);margin:4px 0 0;letter-spacing:0.3em;text-transform:uppercase;">MODEL SEARCH</p>
+
+        <!-- Divider -->
+        <div style="width:100px;height:1px;background:rgba(255,255,255,0.25);margin:36px auto;"></div>
+
+        <!-- CTA button -->
+        <div style="display:inline-block;background:${MANILA_COLOR};border-radius:40px;padding:20px 70px;box-shadow:0 6px 30px rgba(232,68,58,0.45);">
+          <p style="font-family:${SF};font-size:26px;font-weight:700;color:#fff;margin:0;letter-spacing:0.1em;text-transform:uppercase;">SIGN UP NOW</p>
+        </div>
+
+        <!-- Subtext -->
+        <p style="font-family:${SF};font-size:22px;font-weight:400;color:rgba(255,255,255,0.45);margin:22px 0 0;letter-spacing:0.04em;">60-second form · No experience needed</p>
+      </div>
+    </div>
+  </body></html>`
 }
 
 async function render() {
@@ -424,11 +418,13 @@ async function render() {
     Object.entries(selection).map(([key, file]) => [key, readImage(file)])
   )
 
-  console.log('Recording animated DM conversation as MP4...')
-
-  const TOTAL_DURATION_MS = 28000
-
+  const { execSync } = await import('child_process')
   const browser = await chromium.launch()
+
+  // --- Step 1: Record the DM conversation video ---
+  console.log('Recording animated DM conversation...')
+  const TOTAL_DURATION_MS = 24000 // shortened — video fades to black, CTA is separate
+
   const videoCtx = await browser.newContext({
     viewport: { width: WIDTH, height: HEIGHT },
     deviceScaleFactor: 1,
@@ -439,37 +435,63 @@ async function render() {
   })
 
   const videoPage = await videoCtx.newPage()
-  const html = buildAnimatedDM(images)
-  await videoPage.setContent(html, { waitUntil: 'load' })
+  await videoPage.setContent(buildAnimatedDM(images), { waitUntil: 'load' })
   await videoPage.waitForTimeout(500)
   await videoPage.waitForTimeout(TOTAL_DURATION_MS)
-
   await videoPage.close()
   await videoCtx.close()
 
+  // --- Step 2: Render CTA as a high-quality screenshot ---
+  console.log('Rendering CTA screenshot...')
+  const ctaCtx = await browser.newContext({
+    viewport: { width: WIDTH, height: HEIGHT },
+    deviceScaleFactor: 1,
+  })
+  const ctaPage = await ctaCtx.newPage()
+  await ctaPage.setContent(buildCTA(images), { waitUntil: 'load' })
+  await ctaPage.waitForTimeout(300)
+  const ctaPath = path.join(OUT_DIR, 'cta_frame.png')
+  await ctaPage.screenshot({ path: ctaPath })
+  await ctaPage.close()
+  await ctaCtx.close()
+  await browser.close()
+
+  // --- Step 3: Convert webm to mp4, then concat with CTA still frame ---
   const videoFiles = fs.readdirSync(OUT_DIR).filter(f => f.endsWith('.webm'))
   if (videoFiles.length === 0) {
     console.error('No video file was generated!')
-  } else {
-    const srcVideo = path.join(OUT_DIR, videoFiles[0])
-    const dstVideo = path.join(OUT_DIR, '01_dm_full_story.mp4')
-
-    const { execSync } = await import('child_process')
-    try {
-      execSync(`ffmpeg -y -i "${srcVideo}" -c:v libx264 -pix_fmt yuv420p -r 30 -an "${dstVideo}"`, {
-        stdio: 'pipe'
-      })
-      fs.unlinkSync(srcVideo)
-      console.log('Rendered 01_dm_full_story.mp4')
-    } catch (err) {
-      console.warn('ffmpeg not available, keeping as webm...')
-      fs.renameSync(srcVideo, dstVideo)
-      console.log('Rendered 01_dm_full_story.mp4 (webm container)')
-    }
+    return
   }
 
-  await browser.close()
-  console.log(`Done: 1 animated MP4 written to ${OUT_DIR}`)
+  const srcVideo = path.join(OUT_DIR, videoFiles[0])
+  const chatMp4 = path.join(OUT_DIR, 'chat_part.mp4')
+  const ctaMp4 = path.join(OUT_DIR, 'cta_part.mp4')
+  const finalMp4 = path.join(OUT_DIR, '01_dm_full_story.mp4')
+  const concatFile = path.join(OUT_DIR, 'concat.txt')
+
+  try {
+    // Convert chat webm to mp4
+    execSync(`ffmpeg -y -i "${srcVideo}" -c:v libx264 -pix_fmt yuv420p -r 30 -an "${chatMp4}"`, { stdio: 'pipe' })
+
+    // Create 5-second CTA video from static image
+    execSync(`ffmpeg -y -loop 1 -i "${ctaPath}" -c:v libx264 -t 5 -pix_fmt yuv420p -r 30 -vf "scale=${WIDTH}:${HEIGHT}" -an "${ctaMp4}"`, { stdio: 'pipe' })
+
+    // Concat chat + CTA
+    fs.writeFileSync(concatFile, `file '${chatMp4}'\nfile '${ctaMp4}'\n`)
+    execSync(`ffmpeg -y -f concat -safe 0 -i "${concatFile}" -c copy "${finalMp4}"`, { stdio: 'pipe' })
+
+    // Cleanup temp files
+    fs.unlinkSync(srcVideo)
+    fs.unlinkSync(chatMp4)
+    fs.unlinkSync(ctaMp4)
+    fs.unlinkSync(concatFile)
+    console.log('Rendered 01_dm_full_story.mp4 (chat + CTA)')
+  } catch (err) {
+    console.error('ffmpeg error:', err.message)
+    fs.renameSync(srcVideo, finalMp4)
+  }
+
+  console.log(`Done: output written to ${OUT_DIR}`)
 }
 
 render().catch(error => {
