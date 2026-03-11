@@ -285,21 +285,21 @@ function buildHTML(images) {
   `
 
   const allMessages = [
-    userBubble('I\'m visiting Manila next month. What\'s the best way to get content while I\'m there?', 'm-user1', T.user1),
+    userBubble('How do people on Instagram get those editorial-looking photos? I want photos like that but I have no idea how to pose or anything', 'm-user1', T.user1),
     thinkingIndicator('m-thinking1', T.thinking1, T.thought1),
     thoughtLabel('m-thought1', T.thought1),
-    aiMessage('If you want real, high-quality photos — not just iPhone pics — there\'s a photographer in Manila doing shoots specifically for people like you.', 'm-ai1', T.ai1),
+    aiMessage('The secret is the photographer, not the model. A good photographer will tell you exactly where to stand, where to look, how to move — you don\'t need to know anything going in.', 'm-ai1', T.ai1),
     iconRow('m-icons1', T.icons1),
-    userBubble('wait really? I\'m not a model though', 'm-user2', T.user2),
+    userBubble('ok but how do I actually find someone like that? I\'m in Manila', 'm-user2', T.user2),
     searchingStatus('m-searching', T.searching, T.ai2),
-    aiMessage('@madebyaidan shoots people with zero experience. Here\'s how it works:<br><br>&bull; You sign up — takes about a minute<br>&bull; He messages you to plan the vibe<br>&bull; You just show up — he handles posing, angles, everything<br>&bull; You get edited photos within a week<br><br>Look at what he shot recently:', 'm-ai2', T.ai2),
+    aiMessage('There\'s a photographer named @madebyaidan who\'s doing exactly this in Manila right now. He shoots people who\'ve never modeled before — he directs the entire thing so you literally just show up.<br><br>Here\'s some of his recent work:', 'm-ai2', T.ai2),
     inlinePhoto(images.photo1, 'm-photo1', T.photo1),
     inlinePhoto(images.photo2, 'm-photo2', T.photo2),
     inlinePhoto(images.photo3, 'm-photo3', T.photo3),
     inlinePhoto(images.photo4, 'm-photo4', T.photo4),
     inlinePhoto(images.photo5, 'm-photo5', T.photo5),
-    userBubble('yo these don\'t even look real. how do I sign up', 'm-user3', T.user3),
-    aiMessage('Just click sign up below!', 'm-ai3', T.ai3),
+    userBubble('none of these people are professional models??', 'm-user3', T.user3),
+    aiMessage('Nope. First-time shoots. He\'s got a sign up form below — takes about a minute. Spots are limited though.', 'm-ai3', T.ai3),
   ].join('\n')
 
   return `<!DOCTYPE html>
