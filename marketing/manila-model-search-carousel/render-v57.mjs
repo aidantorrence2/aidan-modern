@@ -17,8 +17,8 @@ const SF = "-apple-system, 'Helvetica Neue', Arial, sans-serif"
 const MANILA_COLOR = '#E8443A'
 const HANDLE = 'madebyaidan'
 
-const TOTAL_DURATION = 24
-const TOTAL_DURATION_MS = 26000
+const TOTAL_DURATION = 22
+const TOTAL_DURATION_MS = 24000
 
 function resetOutputDir() {
   fs.rmSync(OUT_DIR, { recursive: true, force: true })
@@ -43,79 +43,33 @@ function writeSources(payload) {
 }
 
 function buildAnimated(images) {
-  // Timeline (seconds)
+  // Timeline (seconds) — Instagram Profile Loading concept
   const T = {
-    cardAppear: 0.3,
-    shimmer: 0.5,
-    // Story text 1: "you sign up"
-    story1In: 0.3,
-    story1Out: 2.6,
-    mainPhotoDrop: 3.0,
-    // Story text 2: "we shoot in Manila"
-    story2In: 3.0,
-    story2Out: 4.6,
-    grid1: 5.0,
-    grid2: 5.5,
-    grid3: 6.0,
-    grid4: 6.5,
-    // Story text 3: "no experience needed"
-    story3In: 5.0,
-    story3Out: 7.2,
-    bioType: 7.5,
-    // Story text 4: "I direct everything"
-    story4In: 7.5,
-    story4Out: 9.5,
-    statsIn: 9.8,
-    // Story text 5: "photos delivered in a week"
-    story5In: 9.8,
-    story5Out: 11.8,
-    verified: 12.0,
-    // Story text 6: "this could be your portfolio"
-    story6In: 12.0,
-    story6Out: 14.0,
-    toast: 14.5,
-    // CTA fade in after toast
-    ctaIn: 16.5,
-    // Hold final state until TOTAL_DURATION
+    // 0-0.5s: Full skeleton visible
+    topBarReveal: 0.5,         // 0.5-1.5s
+    profilePicPop: 1.5,       // 1.5-2.5s
+    usernameReveal: 2.5,      // 2.5-3.5s
+    nameReveal: 2.8,
+    bioLine1: 3.5,            // 3.5-5s bio lines staggered
+    bioLine2: 4.0,
+    bioLine3: 4.5,
+    statsIn: 5.0,             // 5-6s stats
+    buttonsIn: 6.0,           // 6-7s buttons
+    // 7-13s: photo grid fills
+    gridStart: 7.0,
+    gridInterval: 0.8,
+    // 13-14s: toast notification
+    toastIn: 13.0,
+    // 14-16s: bio updates to CTA
+    bioToCta: 14.5,
+    // 16-22s: hold
   }
 
-  // Helper: story text with fade-in and fade-out using CSS keyframes
-  // Each story text gets unique keyframes so timings don't collide
-  function storyKeyframes(id, inTime, outTime) {
-    const dur = TOTAL_DURATION
-    const inPct = ((inTime / dur) * 100).toFixed(2)
-    const inDonePct = (((inTime + 0.4) / dur) * 100).toFixed(2)
-    const outStartPct = ((outTime / dur) * 100).toFixed(2)
-    const outDonePct = (((outTime + 0.4) / dur) * 100).toFixed(2)
-    return `
-      @keyframes story${id} {
-        0% { opacity: 0; transform: translateY(16px); }
-        ${inPct}% { opacity: 0; transform: translateY(16px); }
-        ${inDonePct}% { opacity: 1; transform: translateY(0); }
-        ${outStartPct}% { opacity: 1; transform: translateY(0); }
-        ${outDonePct}% { opacity: 0; transform: translateY(-10px); }
-        100% { opacity: 0; transform: translateY(-10px); }
-      }
-    `
+  // Grid photo delays
+  const gridDelays = []
+  for (let i = 0; i < 6; i++) {
+    gridDelays.push(T.gridStart + i * T.gridInterval)
   }
-
-  // CTA fade-in keyframes
-  const ctaInPct = ((T.ctaIn / TOTAL_DURATION) * 100).toFixed(2)
-  const ctaDonePct = (((T.ctaIn + 0.6) / TOTAL_DURATION) * 100).toFixed(2)
-
-  const storyTexts = [
-    { id: 1, text: 'you sign up', inTime: T.story1In, outTime: T.story1Out },
-    { id: 2, text: 'we shoot in Manila', inTime: T.story2In, outTime: T.story2Out },
-    { id: 3, text: 'no experience needed', inTime: T.story3In, outTime: T.story3Out },
-    { id: 4, text: 'I direct everything', inTime: T.story4In, outTime: T.story4Out },
-    { id: 5, text: 'photos delivered in a week', inTime: T.story5In, outTime: T.story5Out },
-    { id: 6, text: 'this could be your portfolio', inTime: T.story6In, outTime: T.story6Out },
-  ]
-
-  const CARD_TOP = 140
-  const CARD_LEFT = 60
-  const CARD_RIGHT = 60
-  const CARD_BOTTOM = SAFE_BOTTOM + 50
 
   return `<!DOCTYPE html>
 <html>
@@ -123,11 +77,6 @@ function buildAnimated(images) {
     <style>
       * { box-sizing: border-box; margin: 0; padding: 0; }
       html, body { margin: 0; padding: 0; background: #000; -webkit-font-smoothing: antialiased; }
-
-      @keyframes cardSlideUp {
-        0% { opacity: 0; transform: translateY(60px); }
-        100% { opacity: 1; transform: translateY(0); }
-      }
 
       @keyframes shimmer {
         0% { background-position: -400px 0; }
@@ -139,6 +88,16 @@ function buildAnimated(images) {
         100% { opacity: 0; }
       }
 
+      @keyframes fadeIn {
+        0% { opacity: 0; }
+        100% { opacity: 1; }
+      }
+
+      @keyframes fadeSlideUp {
+        0% { opacity: 0; transform: translateY(14px); }
+        100% { opacity: 1; transform: translateY(0); }
+      }
+
       @keyframes photoPop {
         0% { opacity: 0; transform: scale(0.3); }
         60% { opacity: 1; transform: scale(1.08); }
@@ -146,26 +105,12 @@ function buildAnimated(images) {
         100% { opacity: 1; transform: scale(1); }
       }
 
-      @keyframes typeIn {
-        0% { width: 0; }
-        100% { width: 100%; }
-      }
-
-      @keyframes fadeSlideUp {
-        0% { opacity: 0; transform: translateY(20px); }
-        100% { opacity: 1; transform: translateY(0); }
-      }
-
-      @keyframes badgeGlow {
-        0% { opacity: 0; transform: scale(0.5); }
-        50% { opacity: 1; transform: scale(1.15); }
-        70% { transform: scale(0.95); }
+      @keyframes profilePicPop {
+        0% { opacity: 0; transform: scale(0); }
+        50% { opacity: 1; transform: scale(1.12); }
+        70% { transform: scale(0.94); }
+        85% { transform: scale(1.04); }
         100% { opacity: 1; transform: scale(1); }
-      }
-
-      @keyframes glowPulse {
-        0%, 100% { box-shadow: 0 0 10px rgba(76,175,80,0.3); }
-        50% { box-shadow: 0 0 25px rgba(76,175,80,0.7), 0 0 50px rgba(76,175,80,0.3); }
       }
 
       @keyframes toastSlide {
@@ -175,153 +120,496 @@ function buildAnimated(images) {
         100% { opacity: 1; transform: translateY(0); }
       }
 
-      @keyframes ctaFadeIn {
-        0% { opacity: 0; transform: translateY(20px); }
-        ${ctaInPct}% { opacity: 0; transform: translateY(20px); }
-        ${ctaDonePct}% { opacity: 1; transform: translateY(0); }
+      @keyframes buttonReveal {
+        0% { opacity: 0; transform: scale(0.85); }
+        60% { opacity: 1; transform: scale(1.03); }
+        100% { opacity: 1; transform: scale(1); }
+      }
+
+      @keyframes countUp {
+        0% { opacity: 0; transform: translateY(10px); }
         100% { opacity: 1; transform: translateY(0); }
       }
 
-      ${storyTexts.map(s => storyKeyframes(s.id, s.inTime, s.outTime)).join('\n')}
+      @keyframes bioSwap {
+        0% { opacity: 1; transform: translateY(0); }
+        40% { opacity: 0; transform: translateY(-12px); }
+        60% { opacity: 0; transform: translateY(12px); }
+        100% { opacity: 1; transform: translateY(0); }
+      }
 
       .shimmer-bar {
-        background: linear-gradient(90deg, #333 0%, #444 40%, #555 50%, #444 60%, #333 100%);
+        background: linear-gradient(90deg, #222 0%, #333 40%, #444 50%, #333 60%, #222 100%);
         background-size: 800px 100%;
         animation: shimmer 1.5s infinite linear;
+        border-radius: 12px;
+      }
+
+      .shimmer-circle {
+        background: linear-gradient(90deg, #222 0%, #333 40%, #444 50%, #333 60%, #222 100%);
+        background-size: 800px 100%;
+        animation: shimmer 1.5s infinite linear;
+        border-radius: 50%;
+      }
+
+      .page {
+        width: ${WIDTH}px;
+        height: ${HEIGHT}px;
+        position: relative;
+        overflow: hidden;
+        background: #000;
+        font-family: ${SF};
+      }
+
+      /* IG top bar */
+      .top-bar {
+        position: absolute;
+        top: 0; left: 0; right: 0;
+        height: 90px;
+        padding: 30px 24px 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        z-index: 10;
+      }
+
+      .top-bar-text-skel {
+        width: 200px; height: 32px;
+      }
+
+      .top-bar-icons-skel {
+        display: flex; gap: 16px;
+      }
+
+      .top-bar-icon-skel {
+        width: 32px; height: 32px;
         border-radius: 8px;
       }
 
-      .shimmer-hide {
-        animation: shimmerFadeOut 0.3s ease-out forwards;
-      }
-
-      .photo-crop {
-        overflow: hidden;
-      }
-      .photo-crop img {
-        width: 130%;
-        height: 130%;
-        object-fit: cover;
-        object-position: center 20%;
-        display: block;
-        margin: -15% 0 0 -15%;
-      }
-
-      .story-text {
-        position: absolute;
-        left: 0; right: 0;
-        bottom: ${SAFE_BOTTOM + 10}px;
-        text-align: center;
-        z-index: 15;
-        pointer-events: none;
-        opacity: 0;
-      }
-      .story-text p {
-        font-family: ${SF};
-        font-size: 52px;
+      .top-bar-text {
+        font-size: 36px;
         font-weight: 700;
         color: #fff;
-        text-shadow: 0 2px 20px rgba(0,0,0,0.8), 0 0 60px rgba(0,0,0,0.5);
-        letter-spacing: 0.01em;
-        line-height: 1.2;
-        padding: 0 60px;
+        letter-spacing: -0.02em;
+        opacity: 0;
+      }
+
+      .top-bar-icons {
+        display: flex; gap: 20px;
+        opacity: 0;
+      }
+
+      /* Profile section */
+      .profile-section {
+        position: absolute;
+        top: 100px;
+        left: 0; right: 0;
+        padding: 20px 32px;
+      }
+
+      .profile-header {
+        display: flex;
+        align-items: center;
+        gap: 28px;
+        margin-bottom: 18px;
+      }
+
+      .profile-pic-wrap {
+        width: 160px; height: 160px;
+        border-radius: 50%;
+        position: relative;
+        flex-shrink: 0;
+      }
+
+      .profile-pic-skel {
+        position: absolute; inset: 0;
+      }
+
+      .profile-pic-img {
+        position: absolute; inset: 0;
+        border-radius: 50%;
+        overflow: hidden;
+        opacity: 0;
+        transform: scale(0);
+      }
+
+      .profile-pic-img img {
+        width: 100%; height: 100%;
+        object-fit: cover;
+        object-position: center 20%;
+      }
+
+      .profile-info {
+        flex: 1;
+      }
+
+      /* Stats row */
+      .stats-row {
+        display: flex;
+        justify-content: space-around;
+        padding: 20px 0;
+        margin: 0 32px;
+        border-top: 1px solid #222;
+        border-bottom: 1px solid #222;
+      }
+
+      .stat-item {
+        text-align: center;
+        position: relative;
+      }
+
+      .stat-number {
+        font-size: 40px;
+        font-weight: 700;
+        color: #fff;
+        opacity: 0;
+      }
+
+      .stat-label {
+        font-size: 24px;
+        color: rgba(255,255,255,0.5);
+        margin-top: 2px;
+        opacity: 0;
+      }
+
+      .stat-skel {
+        position: absolute;
+        top: 2px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      /* Bio */
+      .bio-section {
+        padding: 16px 32px 0;
+      }
+
+      .bio-line {
+        position: relative;
+        height: 42px;
+        margin-bottom: 6px;
+      }
+
+      .bio-text {
+        font-size: 32px;
+        color: #fff;
+        font-weight: 400;
+        line-height: 1.3;
+        opacity: 0;
+        position: absolute;
+        top: 4px; left: 0;
+      }
+
+      .bio-skel {
+        position: absolute;
+        top: 6px; left: 0;
+        height: 28px;
+      }
+
+      /* Action buttons */
+      .action-buttons {
+        display: flex;
+        gap: 12px;
+        padding: 20px 32px 0;
+      }
+
+      .btn-primary {
+        flex: 1.6;
+        height: 62px;
+        border-radius: 14px;
+        background: #34C759;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transform: scale(0.85);
+      }
+
+      .btn-primary span {
+        font-size: 30px;
+        font-weight: 700;
+        color: #fff;
+        letter-spacing: 0.02em;
+      }
+
+      .btn-secondary {
+        flex: 1;
+        height: 62px;
+        border-radius: 14px;
+        background: #333;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transform: scale(0.85);
+      }
+
+      .btn-secondary span {
+        font-size: 30px;
+        font-weight: 600;
+        color: #fff;
+      }
+
+      .btn-skel {
+        height: 62px;
+        border-radius: 14px;
+        position: absolute;
+        top: 0; left: 0; right: 0;
+      }
+
+      /* Photo grid */
+      .photo-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 4px;
+        padding: 20px 32px 0;
+      }
+
+      .grid-cell {
+        aspect-ratio: 1;
+        position: relative;
+        overflow: hidden;
+        border-radius: 6px;
+      }
+
+      .grid-skel {
+        position: absolute; inset: 0;
+        border-radius: 6px;
+      }
+
+      .grid-img {
+        position: absolute; inset: 0;
+        opacity: 0;
+        transform: scale(0.3);
+      }
+
+      .grid-img img {
+        width: 100%; height: 100%;
+        object-fit: cover;
+        object-position: center 20%;
+        border-radius: 6px;
+      }
+
+      /* Toast */
+      .toast {
+        position: absolute;
+        left: 40px; right: 40px;
+        top: 40px;
+        z-index: 20;
+        opacity: 0;
+        transform: translateY(-100px);
+      }
+
+      .toast-inner {
+        background: rgba(30,30,30,0.95);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border-radius: 18px;
+        padding: 22px 28px;
+        border: 1px solid rgba(255,255,255,0.12);
+      }
+
+      .toast-text {
+        font-size: 30px;
+        font-weight: 600;
+        color: rgba(255,255,255,0.95);
+        line-height: 1.3;
+      }
+
+      /* CTA overlay on bio */
+      .cta-bio {
+        position: absolute;
+        opacity: 0;
+      }
+
+      .cta-bio .cta-line1 {
+        font-size: 36px;
+        font-weight: 800;
+        color: ${MANILA_COLOR};
+        margin-bottom: 6px;
+      }
+
+      .cta-bio .cta-line2 {
+        font-size: 30px;
+        font-weight: 500;
+        color: rgba(255,255,255,0.7);
       }
     </style>
   </head>
   <body>
-    <div style="width:${WIDTH}px;height:${HEIGHT}px;position:relative;overflow:hidden;background:#111;">
+    <div class="page">
 
-      <!-- Status text at top -->
-      <div style="position:absolute;left:0;right:0;top:60px;text-align:center;z-index:10;opacity:0;animation:fadeSlideUp 0.6s ease-out ${T.cardAppear}s forwards;">
-        <p style="font-family:${SF};font-size:24px;font-weight:500;color:rgba(255,255,255,0.4);letter-spacing:0.12em;text-transform:uppercase;">Building your portfolio</p>
-      </div>
-
-      <!-- Profile Card -->
-      <div style="position:absolute;left:${CARD_LEFT}px;right:${CARD_RIGHT}px;top:${CARD_TOP}px;bottom:${CARD_BOTTOM}px;background:#1a1a1a;border-radius:20px;border:1px solid #333;overflow:hidden;opacity:0;animation:cardSlideUp 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) ${T.cardAppear}s forwards;">
-
-        <!-- Profile header area -->
-        <div style="padding:28px 28px 0;">
-
-          <!-- Name skeleton / text -->
-          <div style="position:relative;height:38px;margin-bottom:8px;">
-            <div class="shimmer-bar" style="width:240px;height:30px;position:absolute;top:4px;left:0;animation:shimmer 1.5s infinite linear, shimmerFadeOut 0.3s ease-out ${T.mainPhotoDrop}s forwards;"></div>
-            <p style="font-family:${SF};font-size:30px;font-weight:700;color:#fff;letter-spacing:0.02em;position:absolute;top:0;left:0;opacity:0;animation:fadeSlideUp 0.5s ease-out ${T.mainPhotoDrop + 0.2}s forwards;">Your Name Here</p>
-          </div>
-
-          <!-- Location skeleton -->
-          <div style="position:relative;height:22px;margin-bottom:20px;">
-            <div class="shimmer-bar" style="width:140px;height:16px;position:absolute;top:3px;left:0;animation:shimmer 1.5s infinite linear, shimmerFadeOut 0.3s ease-out ${T.mainPhotoDrop}s forwards;"></div>
-            <p style="font-family:${SF};font-size:17px;font-weight:400;color:rgba(255,255,255,0.4);position:absolute;top:0;left:0;opacity:0;animation:fadeSlideUp 0.5s ease-out ${T.mainPhotoDrop + 0.3}s forwards;">Manila, Philippines</p>
-          </div>
-
-          <!-- Main photo slot -->
-          <div style="width:100%;aspect-ratio:4/5;border-radius:14px;overflow:hidden;position:relative;margin-bottom:16px;">
-            <div class="shimmer-bar" style="position:absolute;inset:0;border-radius:14px;animation:shimmer 1.5s infinite linear, shimmerFadeOut 0.3s ease-out ${T.mainPhotoDrop}s forwards;"></div>
-            <div class="photo-crop" style="position:absolute;inset:0;border-radius:14px;opacity:0;transform:scale(0.3);animation:photoPop 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) ${T.mainPhotoDrop}s forwards;">
-              <img src="${images.main}" style="object-position:center 15%;"/>
-            </div>
-          </div>
-
-          <!-- 2x2 Grid -->
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px;">
-            ${[images.grid1, images.grid2, images.grid3, images.grid4].map((img, i) => {
-              const delay = T.grid1 + i * 0.5
-              return `<div style="aspect-ratio:1;border-radius:10px;overflow:hidden;position:relative;">
-                <div class="shimmer-bar" style="position:absolute;inset:0;border-radius:10px;animation:shimmer 1.5s infinite linear, shimmerFadeOut 0.3s ease-out ${delay}s forwards;"></div>
-                <div class="photo-crop" style="position:absolute;inset:0;border-radius:10px;opacity:0;transform:scale(0.3);animation:photoPop 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) ${delay}s forwards;">
-                  <img src="${img}" style="object-position:center 20%;"/>
-                </div>
-              </div>`
-            }).join('\n')}
-          </div>
-
-          <!-- Bio text (types in) -->
-          <div style="margin-bottom:14px;height:26px;position:relative;">
-            <div style="overflow:hidden;white-space:nowrap;opacity:0;animation:fadeSlideUp 0.1s ease-out ${T.bioType}s forwards;">
-              <p style="font-family:${SF};font-size:20px;font-weight:400;color:rgba(255,255,255,0.7);overflow:hidden;white-space:nowrap;width:0;animation:typeIn 1.8s steps(35) ${T.bioType + 0.1}s forwards;border-right:2px solid rgba(255,255,255,0.5);">Shot by @${HANDLE} in Manila</p>
-            </div>
-          </div>
-
-          <!-- Stats -->
-          <div style="display:flex;gap:14px;align-items:center;margin-bottom:14px;opacity:0;animation:fadeSlideUp 0.6s ease-out ${T.statsIn}s forwards;">
-            <span style="font-family:${SF};font-size:17px;font-weight:600;color:rgba(255,255,255,0.85);">5 photos</span>
-            <span style="font-family:${SF};font-size:17px;color:rgba(255,255,255,0.3);">·</span>
-            <span style="font-family:${SF};font-size:17px;font-weight:600;color:rgba(255,255,255,0.85);">1 session</span>
-            <span style="font-family:${SF};font-size:17px;color:rgba(255,255,255,0.3);">·</span>
-            <span style="font-family:${SF};font-size:17px;font-weight:600;color:rgba(255,255,255,0.85);">0 exp needed</span>
-          </div>
-
-          <!-- Verified Badge -->
-          <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(76,175,80,0.12);border:1px solid rgba(76,175,80,0.3);border-radius:24px;padding:8px 20px;opacity:0;transform:scale(0.5);animation:badgeGlow 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) ${T.verified}s forwards, glowPulse 2s ease-in-out ${T.verified + 0.6}s infinite;">
-            <span style="font-family:${SF};font-size:18px;font-weight:700;color:#4CAF50;letter-spacing:0.08em;">VERIFIED ✓</span>
-          </div>
-
+      <!-- ===== TOP BAR ===== -->
+      <div class="top-bar">
+        <!-- Skeleton -->
+        <div class="shimmer-bar top-bar-text-skel" style="animation: shimmer 1.5s infinite linear, shimmerFadeOut 0.3s ease-out ${T.topBarReveal}s forwards;"></div>
+        <div class="top-bar-icons-skel">
+          <div class="shimmer-bar top-bar-icon-skel" style="animation: shimmer 1.5s infinite linear, shimmerFadeOut 0.3s ease-out ${T.topBarReveal}s forwards;"></div>
+          <div class="shimmer-bar top-bar-icon-skel" style="animation: shimmer 1.5s infinite linear, shimmerFadeOut 0.3s ease-out ${T.topBarReveal + 0.1}s forwards;"></div>
+          <div class="shimmer-bar top-bar-icon-skel" style="animation: shimmer 1.5s infinite linear, shimmerFadeOut 0.3s ease-out ${T.topBarReveal + 0.2}s forwards;"></div>
+        </div>
+        <!-- Revealed content -->
+        <div class="top-bar-text" style="position:absolute;left:24px;top:30px;animation: fadeSlideUp 0.5s ease-out ${T.topBarReveal + 0.15}s forwards;">Instagram</div>
+        <div class="top-bar-icons" style="position:absolute;right:24px;top:32px;animation: fadeIn 0.5s ease-out ${T.topBarReveal + 0.2}s forwards;">
+          <!-- Simple SVG icons: heart, messenger, add -->
+          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
         </div>
       </div>
 
-      <!-- Story narrative text overlays -->
-      ${storyTexts.map(s => `
-      <div class="story-text" style="animation:story${s.id} ${TOTAL_DURATION}s linear forwards;">
-        <p>${s.text}</p>
-      </div>
-      `).join('')}
+      <!-- ===== PROFILE SECTION ===== -->
+      <div class="profile-section">
+        <div class="profile-header">
+          <!-- Profile pic -->
+          <div class="profile-pic-wrap">
+            <div class="shimmer-circle profile-pic-skel" style="width:160px;height:160px;animation: shimmer 1.5s infinite linear, shimmerFadeOut 0.3s ease-out ${T.profilePicPop}s forwards;"></div>
+            <div class="profile-pic-img" style="animation: profilePicPop 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) ${T.profilePicPop}s forwards;">
+              <img src="${images.profilePic}" alt="profile" />
+            </div>
+          </div>
 
-      <!-- Toast notification -->
-      <div style="position:absolute;left:40px;right:40px;top:70px;z-index:20;opacity:0;transform:translateY(-100px);animation:toastSlide 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) ${T.toast}s forwards;">
-        <div style="background:rgba(30,30,30,0.95);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-radius:16px;padding:18px 24px;border:1px solid rgba(255,255,255,0.1);display:flex;align-items:center;gap:12px;">
-          <span style="font-size:28px;">🔥</span>
-          <p style="font-family:${SF};font-size:20px;font-weight:600;color:rgba(255,255,255,0.9);margin:0;">47 people viewed your portfolio today</p>
+          <!-- Username + Name next to pic -->
+          <div class="profile-info">
+            <!-- Username skeleton + text -->
+            <div style="position:relative;height:52px;margin-bottom:4px;">
+              <div class="shimmer-bar" style="width:280px;height:36px;position:absolute;top:8px;left:0;animation: shimmer 1.5s infinite linear, shimmerFadeOut 0.3s ease-out ${T.usernameReveal}s forwards;"></div>
+              <div style="font-size:48px;font-weight:700;color:#fff;position:absolute;top:0;left:0;opacity:0;animation: fadeSlideUp 0.5s ease-out ${T.usernameReveal + 0.15}s forwards;">@${HANDLE}</div>
+            </div>
+            <!-- Name skeleton + text -->
+            <div style="position:relative;height:44px;">
+              <div class="shimmer-bar" style="width:220px;height:28px;position:absolute;top:8px;left:0;animation: shimmer 1.5s infinite linear, shimmerFadeOut 0.3s ease-out ${T.nameReveal}s forwards;"></div>
+              <div style="font-size:38px;font-weight:400;color:rgba(255,255,255,0.7);position:absolute;top:0;left:0;opacity:0;animation: fadeSlideUp 0.5s ease-out ${T.nameReveal + 0.15}s forwards;">Aidan Torrence</div>
+            </div>
+          </div>
         </div>
       </div>
 
-      <!-- Natural CTA ending (fades in after toast) -->
-      <div style="position:absolute;left:0;right:0;bottom:${SAFE_BOTTOM + 10}px;text-align:center;z-index:25;opacity:0;animation:ctaFadeIn ${TOTAL_DURATION}s linear forwards;">
-        <p style="font-family:${SF};font-size:54px;font-weight:800;color:${MANILA_COLOR};margin:0 0 16px;letter-spacing:0.02em;text-shadow:0 2px 30px rgba(232,68,58,0.4);">sign up below</p>
-        <p style="font-family:${SF};font-size:26px;font-weight:500;color:rgba(255,255,255,0.7);margin:0 0 8px;letter-spacing:0.04em;">60-second form</p>
-        <p style="font-family:${SF};font-size:22px;font-weight:400;color:rgba(255,255,255,0.45);margin:0;letter-spacing:0.03em;">limited spots this month</p>
+      <!-- ===== BIO SECTION ===== -->
+      <div class="bio-section" style="position:absolute;top:372px;left:0;right:0;">
+        <!-- Bio line 1 -->
+        <div class="bio-line">
+          <div class="shimmer-bar bio-skel" style="width:420px;animation: shimmer 1.5s infinite linear, shimmerFadeOut 0.3s ease-out ${T.bioLine1}s forwards;"></div>
+          <div class="bio-text" id="bio1" style="animation: fadeSlideUp 0.5s ease-out ${T.bioLine1 + 0.15}s forwards;">Photographer in Manila</div>
+        </div>
+        <!-- Bio line 2 -->
+        <div class="bio-line">
+          <div class="shimmer-bar bio-skel" style="width:480px;animation: shimmer 1.5s infinite linear, shimmerFadeOut 0.3s ease-out ${T.bioLine2}s forwards;"></div>
+          <div class="bio-text" id="bio2" style="animation: fadeSlideUp 0.5s ease-out ${T.bioLine2 + 0.15}s forwards;">Free photo shoot collabs</div>
+        </div>
+        <!-- Bio line 3 -->
+        <div class="bio-line">
+          <div class="shimmer-bar bio-skel" style="width:370px;animation: shimmer 1.5s infinite linear, shimmerFadeOut 0.3s ease-out ${T.bioLine3}s forwards;"></div>
+          <div class="bio-text" id="bio3" style="animation: fadeSlideUp 0.5s ease-out ${T.bioLine3 + 0.15}s forwards;">No experience needed</div>
+        </div>
+
+        <!-- CTA text that replaces bio -->
+        <div class="cta-bio" id="ctaBio" style="position:absolute;top:0;left:32px;right:32px;">
+          <div class="cta-line1">PHOTO SHOOT</div>
+          <div class="cta-line2" style="margin-top:4px;">sign up below</div>
+          <div style="font-size:28px;font-weight:400;color:rgba(255,255,255,0.5);margin-top:6px;">it takes just a minute</div>
+        </div>
+      </div>
+
+      <!-- ===== STATS ROW ===== -->
+      <div class="stats-row" style="position:absolute;top:520px;left:0;right:0;margin:0 32px;">
+        <!-- Posts -->
+        <div class="stat-item" style="width:180px;">
+          <div class="shimmer-bar stat-skel" style="width:80px;height:34px;animation: shimmer 1.5s infinite linear, shimmerFadeOut 0.3s ease-out ${T.statsIn}s forwards;"></div>
+          <div class="stat-number" style="animation: countUp 0.5s ease-out ${T.statsIn + 0.15}s forwards;">127</div>
+          <div class="stat-label" style="animation: fadeIn 0.4s ease-out ${T.statsIn + 0.3}s forwards;">posts</div>
+        </div>
+        <!-- Followers -->
+        <div class="stat-item" style="width:180px;">
+          <div class="shimmer-bar stat-skel" style="width:80px;height:34px;animation: shimmer 1.5s infinite linear, shimmerFadeOut 0.3s ease-out ${T.statsIn + 0.2}s forwards;"></div>
+          <div class="stat-number" style="animation: countUp 0.5s ease-out ${T.statsIn + 0.3}s forwards;">2.4K</div>
+          <div class="stat-label" style="animation: fadeIn 0.4s ease-out ${T.statsIn + 0.45}s forwards;">followers</div>
+        </div>
+        <!-- Following -->
+        <div class="stat-item" style="width:180px;">
+          <div class="shimmer-bar stat-skel" style="width:80px;height:34px;animation: shimmer 1.5s infinite linear, shimmerFadeOut 0.3s ease-out ${T.statsIn + 0.4}s forwards;"></div>
+          <div class="stat-number" style="animation: countUp 0.5s ease-out ${T.statsIn + 0.5}s forwards;">843</div>
+          <div class="stat-label" style="animation: fadeIn 0.4s ease-out ${T.statsIn + 0.6}s forwards;">following</div>
+        </div>
+      </div>
+
+      <!-- ===== ACTION BUTTONS ===== -->
+      <div class="action-buttons" style="position:absolute;top:640px;left:0;right:0;">
+        <div style="position:relative;flex:1.6;">
+          <div class="shimmer-bar btn-skel" style="animation: shimmer 1.5s infinite linear, shimmerFadeOut 0.3s ease-out ${T.buttonsIn}s forwards;"></div>
+          <div class="btn-primary" style="animation: buttonReveal 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) ${T.buttonsIn + 0.1}s forwards;">
+            <span>Sign Up</span>
+          </div>
+        </div>
+        <div style="position:relative;flex:1;">
+          <div class="shimmer-bar btn-skel" style="animation: shimmer 1.5s infinite linear, shimmerFadeOut 0.3s ease-out ${T.buttonsIn + 0.15}s forwards;"></div>
+          <div class="btn-secondary" style="animation: buttonReveal 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) ${T.buttonsIn + 0.25}s forwards;">
+            <span>Message</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== PHOTO GRID ===== -->
+      <!-- Grid separator line -->
+      <div style="position:absolute;top:732px;left:32px;right:32px;height:1px;background:#222;"></div>
+      <!-- Grid tab icons -->
+      <div style="position:absolute;top:740px;left:32px;right:32px;display:flex;justify-content:center;gap:120px;padding:10px 0;">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="white" opacity="0.8"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="white" opacity="0.3"><path d="M17 2H7a5 5 0 0 0-5 5v10a5 5 0 0 0 5 5h10a5 5 0 0 0 5-5V7a5 5 0 0 0-5-5zm-5 14a4 4 0 1 1 0-8 4 4 0 0 1 0 8z"/></svg>
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="white" opacity="0.3"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2M12 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"/></svg>
+      </div>
+
+      <div class="photo-grid" style="position:absolute;top:790px;left:0;right:0;padding:0 4px;">
+        ${images.grid.map((img, i) => {
+          const delay = gridDelays[i]
+          return `<div class="grid-cell">
+            <div class="shimmer-bar grid-skel" style="animation: shimmer 1.5s infinite linear, shimmerFadeOut 0.3s ease-out ${delay}s forwards;"></div>
+            <div class="grid-img" style="animation: photoPop 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) ${delay}s forwards;">
+              <img src="${img}" />
+            </div>
+          </div>`
+        }).join('\n        ')}
+      </div>
+
+      <!-- ===== TOAST NOTIFICATION ===== -->
+      <div class="toast" style="animation: toastSlide 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) ${T.toastIn}s forwards;">
+        <div class="toast-inner" style="display:flex;align-items:center;gap:14px;">
+          <div style="width:48px;height:48px;border-radius:50%;background:${MANILA_COLOR};display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="white"><path d="M15 17h5l-1.405-1.405A2.032 2.032 0 0 1 18 14.158V11a6.002 6.002 0 0 0-4-5.659V5a2 2 0 1 0-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 1 1-6 0v-1m6 0H9"/></svg>
+          </div>
+          <div class="toast-text">Free photo shoot collabs — sign up below</div>
+        </div>
       </div>
 
     </div>
+
+    <script>
+      // Bio → CTA swap at ${T.bioToCta}s
+      setTimeout(() => {
+        // Fade out original bio lines
+        const bio1 = document.getElementById('bio1')
+        const bio2 = document.getElementById('bio2')
+        const bio3 = document.getElementById('bio3')
+        const ctaBio = document.getElementById('ctaBio');
+
+        [bio1, bio2, bio3].forEach((el, i) => {
+          el.style.transition = 'opacity 0.4s ease-out, transform 0.4s ease-out'
+          el.style.opacity = '0'
+          el.style.transform = 'translateY(-10px)'
+        })
+
+        // Also hide the skeleton bar containers
+        const bioLines = document.querySelectorAll('.bio-line .shimmer-bar')
+        bioLines.forEach(el => { el.style.display = 'none' })
+
+        // Show CTA bio after fade out
+        setTimeout(() => {
+          ctaBio.style.transition = 'opacity 0.5s ease-out, transform 0.5s ease-out'
+          ctaBio.style.opacity = '1'
+          ctaBio.style.transform = 'translateY(0)'
+        }, 450)
+      }, ${T.bioToCta * 1000})
+    </script>
   </body>
 </html>`
 }
@@ -329,30 +617,38 @@ function buildAnimated(images) {
 async function render() {
   resetOutputDir()
 
+  const photoFiles = [
+    'manila-gallery-garden-001.jpg',
+    'manila-gallery-dsc-0075.jpg',
+    'manila-gallery-dsc-0190.jpg',
+    'manila-gallery-night-001.jpg',
+    'manila-gallery-canal-001.jpg',
+    'manila-gallery-ivy-001.jpg',
+    'manila-gallery-graffiti-001.jpg',
+    'manila-gallery-urban-001.jpg',
+  ]
+
   const selection = {
-    main: 'manila-gallery-garden-001.jpg',
-    grid1: 'manila-gallery-purple-001.jpg',
-    grid2: 'manila-gallery-graffiti-001.jpg',
-    grid3: 'manila-gallery-canal-001.jpg',
-    grid4: 'manila-gallery-night-001.jpg',
+    profilePic: photoFiles[0],         // garden for profile pic
+    grid: photoFiles.slice(1, 7),      // 6 grid photos (no purple)
   }
 
   writeSources({
     createdAt: new Date().toISOString(),
-    strategy: 'v57 — Dating app profile build animated ad with story narrative + natural CTA ending',
+    strategy: 'v57 rebuild — Instagram profile skeleton loading concept',
     safeBottomPixels: SAFE_BOTTOM,
     images: selection
   })
 
-  const images = Object.fromEntries(
-    Object.entries(selection).map(([key, file]) => [key, readImage(file)])
-  )
+  const images = {
+    profilePic: readImage(selection.profilePic),
+    grid: selection.grid.map(f => readImage(f)),
+  }
 
   const { execSync } = await import('child_process')
   const browser = await chromium.launch()
 
-  // --- Record the animation (includes story text + natural CTA ending) ---
-  console.log('Recording profile build animation...')
+  console.log('Recording Instagram profile loading animation...')
 
   const videoCtx = await browser.newContext({
     viewport: { width: WIDTH, height: HEIGHT },
@@ -364,6 +660,13 @@ async function render() {
   })
 
   const videoPage = await videoCtx.newPage()
+
+  // Set black background before content to prevent white flash
+  await videoPage.evaluate(() => {
+    document.documentElement.style.background = '#000'
+    document.body.style.background = '#000'
+  })
+
   await videoPage.setContent(buildAnimated(images), { waitUntil: 'load' })
   await videoPage.waitForTimeout(500)
   await videoPage.waitForTimeout(TOTAL_DURATION_MS)
@@ -371,14 +674,14 @@ async function render() {
   await videoCtx.close()
   await browser.close()
 
-  // --- Convert webm to mp4 directly (no concat) ---
-  const videoFiles = fs.readdirSync(OUT_DIR).filter(f => f.endsWith('.webm'))
-  if (videoFiles.length === 0) {
+  // Convert webm → mp4
+  const videoFiles2 = fs.readdirSync(OUT_DIR).filter(f => f.endsWith('.webm'))
+  if (videoFiles2.length === 0) {
     console.error('No video file was generated!')
     return
   }
 
-  const srcVideo = path.join(OUT_DIR, videoFiles[0])
+  const srcVideo = path.join(OUT_DIR, videoFiles2[0])
   const finalMp4 = path.join(OUT_DIR, '01_profile_build.mp4')
 
   try {
