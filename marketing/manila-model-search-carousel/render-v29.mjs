@@ -77,42 +77,45 @@ function slideOne(images) {
       <!-- Cover model photo — full bleed behind everything -->
       <img src="${images.cover}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;"/>
 
+      <!-- Subtle dark vignette overlay across entire image -->
+      <div style="position:absolute;inset:0;background:radial-gradient(ellipse at center, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.35) 100%);"></div>
+
       <!-- Dark gradient from top for masthead readability -->
-      <div style="position:absolute;left:0;right:0;top:0;height:500px;background:linear-gradient(180deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0) 100%);"></div>
+      <div style="position:absolute;left:0;right:0;top:0;height:750px;background:linear-gradient(180deg, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.55) 40%, rgba(0,0,0,0) 100%);"></div>
       <!-- Dark gradient from bottom for cover lines -->
-      <div style="position:absolute;left:0;right:0;bottom:0;height:${SAFE_BOTTOM + 300}px;background:linear-gradient(0deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 40%, rgba(0,0,0,0) 100%);"></div>
+      <div style="position:absolute;left:0;right:0;bottom:0;height:${SAFE_BOTTOM + 450}px;background:linear-gradient(0deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.45) 40%, rgba(0,0,0,0) 100%);"></div>
 
       <!-- Thin top rule -->
-      <div style="position:absolute;left:60px;right:60px;top:58px;height:1px;background:rgba(255,255,255,0.4);"></div>
+      <div style="position:absolute;left:60px;right:60px;top:58px;height:1px;background:rgba(255,255,255,0.5);"></div>
 
       <!-- Issue info above masthead -->
       <div style="position:absolute;left:60px;right:60px;top:66px;display:flex;justify-content:space-between;align-items:center;">
-        <span style="font-family:${SANS};font-size:16px;font-weight:400;letter-spacing:0.25em;text-transform:uppercase;color:rgba(255,255,255,0.7);">Issue No. 01</span>
-        <span style="font-family:${SANS};font-size:16px;font-weight:400;letter-spacing:0.25em;text-transform:uppercase;color:rgba(255,255,255,0.7);">Manila, PH</span>
+        <span style="font-family:${SANS};font-size:19px;font-weight:500;letter-spacing:0.25em;text-transform:uppercase;color:rgba(255,255,255,0.85);text-shadow:0 1px 6px rgba(0,0,0,0.7), 0 2px 12px rgba(0,0,0,0.4);">Issue No. 01</span>
+        <span style="font-family:${SANS};font-size:19px;font-weight:500;letter-spacing:0.25em;text-transform:uppercase;color:rgba(255,255,255,0.85);text-shadow:0 1px 6px rgba(0,0,0,0.7), 0 2px 12px rgba(0,0,0,0.4);">Manila, PH</span>
       </div>
 
       <!-- MANILA masthead — VERY LARGE -->
       <div style="position:absolute;left:0;right:0;top:100px;text-align:center;">
-        <h1 style="font-family:${SERIF};font-size:120px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#fff;margin:0;text-shadow:0 2px 20px rgba(0,0,0,0.4);">MANILA</h1>
+        <h1 style="font-family:${SERIF};font-size:120px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#fff;margin:0;text-shadow:0 2px 8px rgba(0,0,0,0.8), 0 4px 24px rgba(0,0,0,0.5), 0 0 60px rgba(0,0,0,0.3);">MANILA</h1>
       </div>
 
       <!-- Thin rule below masthead -->
-      <div style="position:absolute;left:60px;right:60px;top:240px;height:1px;background:rgba(255,255,255,0.35);"></div>
+      <div style="position:absolute;left:60px;right:60px;top:240px;height:1px;background:rgba(255,255,255,0.45);"></div>
 
       <!-- Cover lines — left side -->
       <div style="position:absolute;left:60px;bottom:${SAFE_BOTTOM + 40}px;">
-        <p style="font-family:${SANS};font-size:18px;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:${GOLD};margin:0 0 14px;">The Model Search Issue</p>
-        <p style="font-family:${SERIF};font-size:54px;font-weight:700;font-style:italic;line-height:1.05;color:#fff;margin:0 0 20px;">Models<br/>Wanted</p>
+        <p style="font-family:${SANS};font-size:18px;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:${GOLD};margin:0 0 14px;text-shadow:0 1px 6px rgba(0,0,0,0.7), 0 2px 12px rgba(0,0,0,0.4);">The Model Search Issue</p>
+        <p style="font-family:${SERIF};font-size:54px;font-weight:700;font-style:italic;line-height:1.05;color:#fff;margin:0 0 20px;text-shadow:0 2px 8px rgba(0,0,0,0.7), 0 4px 20px rgba(0,0,0,0.4);">Models<br/>Wanted</p>
         <div style="width:60px;height:2px;background:${GOLD};margin:0 0 20px;"></div>
-        <p style="font-family:${SERIF};font-size:24px;font-weight:400;font-style:italic;color:rgba(255,255,255,0.85);margin:0 0 10px;">No Experience Required</p>
-        <p style="font-family:${SERIF};font-size:24px;font-weight:400;font-style:italic;color:rgba(255,255,255,0.85);margin:0 0 10px;">Editorial Shoots</p>
-        <p style="font-family:${SERIF};font-size:24px;font-weight:400;font-style:italic;color:rgba(255,255,255,0.85);margin:0;">Free Portfolio Photos</p>
+        <p style="font-family:${SERIF};font-size:24px;font-weight:400;font-style:italic;color:rgba(255,255,255,0.9);margin:0 0 10px;text-shadow:0 1px 6px rgba(0,0,0,0.7), 0 2px 12px rgba(0,0,0,0.4);">No Experience Required</p>
+        <p style="font-family:${SERIF};font-size:24px;font-weight:400;font-style:italic;color:rgba(255,255,255,0.9);margin:0 0 10px;text-shadow:0 1px 6px rgba(0,0,0,0.7), 0 2px 12px rgba(0,0,0,0.4);">Editorial Shoots</p>
+        <p style="font-family:${SERIF};font-size:24px;font-weight:400;font-style:italic;color:rgba(255,255,255,0.9);margin:0;text-shadow:0 1px 6px rgba(0,0,0,0.7), 0 2px 12px rgba(0,0,0,0.4);">Free Portfolio Photos</p>
       </div>
 
       <!-- Barcode-style element bottom right -->
       <div style="position:absolute;right:60px;bottom:${SAFE_BOTTOM + 40}px;text-align:right;">
-        <p style="font-family:${SANS};font-size:14px;font-weight:400;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin:0 0 4px;">aidantorrence.com</p>
-        <p style="font-family:${SANS};font-size:14px;font-weight:400;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin:0;">2025 Edition</p>
+        <p style="font-family:${SANS};font-size:14px;font-weight:400;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.6);margin:0 0 4px;text-shadow:0 1px 4px rgba(0,0,0,0.6);">aidantorrence.com</p>
+        <p style="font-family:${SANS};font-size:14px;font-weight:400;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.6);margin:0;text-shadow:0 1px 4px rgba(0,0,0,0.6);">2025 Edition</p>
       </div>
     </div>
   `
