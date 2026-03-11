@@ -24,8 +24,8 @@ const MANILA_COLOR = '#E8443A'
 const STAR_GOLD = '#F4B400'
 
 const HANDLE = 'madebyaidan'
-const TOTAL_DURATION = 20
-const TOTAL_DURATION_MS = 22000
+const TOTAL_DURATION = 22
+const TOTAL_DURATION_MS = 24000
 
 function resetOutputDir() {
   fs.rmSync(OUT_DIR, { recursive: true, force: true })
@@ -84,7 +84,7 @@ function buildMapAnimation(images) {
     pin5photo: 10.7,
     cardExpand: 12.0,
     gridIn: 12.8,
-    fadeOut: 15.5,
+    ctaIn: 14.5,
   }
 
   // Generate street grid SVG pattern
@@ -242,7 +242,15 @@ function buildMapAnimation(images) {
         0% { max-height: 420px; }
         100% { max-height: 900px; }
       }
-      @keyframes fadeToBlack {
+      @keyframes narrativeIn {
+        0% { opacity: 0; transform: translateY(12px); }
+        100% { opacity: 1; transform: translateY(0); }
+      }
+      @keyframes narrativeOut {
+        0% { opacity: 1; }
+        100% { opacity: 0; }
+      }
+      @keyframes ctaDarken {
         0% { opacity: 0; }
         100% { opacity: 1; }
       }
@@ -382,69 +390,42 @@ function buildMapAnimation(images) {
       <!-- Secondary pins with photo popups -->
       ${pinsHTML}
 
-      <!-- Fade to black at end (CTA is composited separately) -->
-      <div style="position:absolute;inset:0;background:#000;z-index:40;pointer-events:none;opacity:0;animation:fadeToBlack 0.6s ease-out ${T.fadeOut}s forwards;"></div>
+      <!-- Narrative text: "looking for models in Manila" — appears when main pin drops -->
+      <div style="position:absolute;left:0;right:0;top:380px;z-index:18;text-align:center;pointer-events:none;opacity:0;animation:narrativeIn 0.5s ease-out ${T.mainPinDrop + 0.2}s forwards, narrativeOut 0.4s ease-in ${T.infoCardIn - 0.1}s forwards;">
+        <p style="font-family:${SF};font-size:60px;font-weight:800;color:#fff;text-shadow:0 3px 20px rgba(0,0,0,0.7),0 1px 4px rgba(0,0,0,0.9);margin:0;line-height:1.15;">looking for<br>models in Manila</p>
+      </div>
+
+      <!-- Narrative text: "no experience needed" — appears when secondary pins start -->
+      <div style="position:absolute;left:0;right:0;top:320px;z-index:18;text-align:center;pointer-events:none;opacity:0;animation:narrativeIn 0.5s ease-out ${T.pin2 + 0.3}s forwards, narrativeOut 0.4s ease-in ${T.pin3 + 0.2}s forwards;">
+        <p style="font-family:${SF};font-size:58px;font-weight:800;color:#fff;text-shadow:0 3px 20px rgba(0,0,0,0.7),0 1px 4px rgba(0,0,0,0.9);margin:0;">no experience needed</p>
+      </div>
+
+      <!-- Narrative text: "I direct everything" — appears after -->
+      <div style="position:absolute;left:0;right:0;top:320px;z-index:18;text-align:center;pointer-events:none;opacity:0;animation:narrativeIn 0.5s ease-out ${T.pin3 + 0.8}s forwards, narrativeOut 0.4s ease-in ${T.pin5 + 0.3}s forwards;">
+        <p style="font-family:${SF};font-size:58px;font-weight:800;color:#fff;text-shadow:0 3px 20px rgba(0,0,0,0.7),0 1px 4px rgba(0,0,0,0.9);margin:0;">I direct everything</p>
+      </div>
+
+      <!-- Narrative text: "these are the photos" — appears when card expands with grid -->
+      <div style="position:absolute;left:0;right:0;top:420px;z-index:22;text-align:center;pointer-events:none;opacity:0;animation:narrativeIn 0.5s ease-out ${T.cardExpand + 0.3}s forwards, narrativeOut 0.4s ease-in ${T.ctaIn - 0.2}s forwards;">
+        <p style="font-family:${SF};font-size:56px;font-weight:800;color:#fff;text-shadow:0 3px 20px rgba(0,0,0,0.7),0 1px 4px rgba(0,0,0,0.9);margin:0;">these are the photos</p>
+      </div>
+
+      <!-- Natural CTA: darken overlay + sign up below text -->
+      <div style="position:absolute;inset:0;z-index:35;pointer-events:none;opacity:0;animation:ctaDarken 0.8s ease-out ${T.ctaIn}s forwards;">
+        <div style="position:absolute;inset:0;background:linear-gradient(180deg, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.55) 40%, rgba(0,0,0,0.75) 70%, rgba(0,0,0,0.85) 100%);"></div>
+        <div style="position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);text-align:center;padding:0 60px;">
+          <p style="font-family:${SF};font-size:72px;font-weight:900;color:${MANILA_COLOR};margin:0;text-shadow:0 4px 30px rgba(232,68,58,0.4),0 2px 8px rgba(0,0,0,0.6);line-height:1.15;">sign up below</p>
+          <div style="width:60px;height:3px;background:${MANILA_COLOR};margin:28px auto;opacity:0.7;"></div>
+          <p style="font-family:${SF};font-size:30px;font-weight:500;color:rgba(255,255,255,0.9);margin:0 0 10px;letter-spacing:0.02em;">60-second form</p>
+          <p style="font-family:${SF};font-size:26px;font-weight:400;color:rgba(255,255,255,0.6);margin:0;letter-spacing:0.02em;">limited spots this month</p>
+        </div>
+      </div>
 
     </div>
   </body>
 </html>`
 }
 
-function buildCTA(images) {
-  function cropImg(src, name, w, h, pos = 'center 20%') {
-    const style = isPurple(name)
-      ? `width:130%;height:130%;object-fit:cover;object-position:${pos};display:block;margin:-15% 0 0 -15%;`
-      : `width:100%;height:100%;object-fit:cover;object-position:${pos};display:block;`
-    return `<div style="width:${w}px;height:${h}px;overflow:hidden;border-radius:16px;box-shadow:0 8px 40px rgba(0,0,0,0.5);">
-      <img src="${src}" style="${style}"/>
-    </div>`
-  }
-
-  return `<!DOCTYPE html><html><head>
-    <style>* { box-sizing:border-box;margin:0;padding:0; } html,body { background:#000; -webkit-font-smoothing:antialiased; }</style>
-  </head><body>
-    <div style="width:${WIDTH}px;height:${HEIGHT}px;position:relative;overflow:hidden;background:#000;">
-
-      <!-- Photo grid — 3 photos staggered -->
-      <div style="position:absolute;top:120px;left:50px;transform:rotate(-3deg);">
-        ${cropImg(images.cta1, images._cta1Name, 460, 620, 'center 20%')}
-      </div>
-      <div style="position:absolute;top:180px;right:50px;transform:rotate(2.5deg);">
-        ${cropImg(images.cta2, images._cta2Name, 420, 560, 'center 25%')}
-      </div>
-      <div style="position:absolute;top:620px;left:280px;transform:rotate(-1deg);z-index:5;">
-        ${cropImg(images.cta3, images._cta3Name, 500, 380, 'center 30%')}
-      </div>
-
-      <!-- Dark gradient overlay -->
-      <div style="position:absolute;inset:0;background:linear-gradient(180deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.1) 20%, rgba(0,0,0,0.0) 35%, rgba(0,0,0,0.55) 55%, rgba(0,0,0,0.95) 72%, #000 85%);"></div>
-
-      <!-- Text — above SAFE_BOTTOM -->
-      <div style="position:absolute;left:0;right:0;bottom:${SAFE_BOTTOM + 40}px;padding:0 70px;text-align:center;">
-
-        <!-- Red accent line -->
-        <div style="width:50px;height:3px;background:${MANILA_COLOR};margin:0 auto 30px;"></div>
-
-        <!-- MANILA -->
-        <p style="font-family:${SF};font-size:180px;font-weight:900;letter-spacing:0.14em;color:#fff;margin:0;text-transform:uppercase;text-shadow:0 4px 80px rgba(232,68,58,0.4), 0 2px 20px rgba(0,0,0,0.8);">MANILA</p>
-
-        <!-- MODEL SEARCH -->
-        <p style="font-family:${SF};font-size:38px;font-weight:300;color:rgba(255,255,255,0.9);margin:4px 0 0;letter-spacing:0.3em;text-transform:uppercase;">MODEL SEARCH</p>
-
-        <!-- Divider -->
-        <div style="width:100px;height:1px;background:rgba(255,255,255,0.25);margin:36px auto;"></div>
-
-        <!-- CTA button -->
-        <div style="display:inline-block;background:${MANILA_COLOR};border-radius:40px;padding:20px 70px;box-shadow:0 6px 30px rgba(232,68,58,0.45);">
-          <p style="font-family:${SF};font-size:26px;font-weight:700;color:#fff;margin:0;letter-spacing:0.1em;text-transform:uppercase;">SIGN UP NOW</p>
-        </div>
-
-        <!-- Subtext -->
-        <p style="font-family:${SF};font-size:22px;font-weight:400;color:rgba(255,255,255,0.45);margin:22px 0 0;letter-spacing:0.04em;">60-second form &middot; No experience needed</p>
-      </div>
-    </div>
-  </body></html>`
-}
 
 async function render() {
   resetOutputDir()
@@ -469,10 +450,6 @@ async function render() {
     pin3photo: 'manila-gallery-graffiti-001.jpg',
     pin4photo: 'manila-gallery-purple-003.jpg',
     pin5photo: 'manila-gallery-garden-002.jpg',
-    // CTA
-    cta1: 'manila-gallery-purple-001.jpg',
-    cta2: 'manila-gallery-dsc-0075.jpg',
-    cta3: 'manila-gallery-purple-004.jpg',
   }
 
   writeSources({
@@ -511,22 +488,9 @@ async function render() {
   await videoPage.close()
   await videoCtx.close()
 
-  // --- Step 2: Render CTA as a high-quality screenshot ---
-  console.log('Rendering CTA screenshot...')
-  const ctaCtx = await browser.newContext({
-    viewport: { width: WIDTH, height: HEIGHT },
-    deviceScaleFactor: 1,
-  })
-  const ctaPage = await ctaCtx.newPage()
-  await ctaPage.setContent(buildCTA(images), { waitUntil: 'load' })
-  await ctaPage.waitForTimeout(300)
-  const ctaPath = path.join(OUT_DIR, 'cta_frame.png')
-  await ctaPage.screenshot({ path: ctaPath })
-  await ctaPage.close()
-  await ctaCtx.close()
   await browser.close()
 
-  // --- Step 3: Convert webm to mp4, then concat with CTA still frame ---
+  // --- Step 2: Convert webm to mp4 ---
   const videoFiles = fs.readdirSync(OUT_DIR).filter(f => f.endsWith('.webm'))
   if (videoFiles.length === 0) {
     console.error('No video file was generated!')
@@ -534,28 +498,12 @@ async function render() {
   }
 
   const srcVideo = path.join(OUT_DIR, videoFiles[0])
-  const mapMp4 = path.join(OUT_DIR, 'map_part.mp4')
-  const ctaMp4 = path.join(OUT_DIR, 'cta_part.mp4')
   const finalMp4 = path.join(OUT_DIR, '01_google_maps_manila.mp4')
-  const concatFile = path.join(OUT_DIR, 'concat.txt')
 
   try {
-    // Convert map webm to mp4
-    execSync(`ffmpeg -y -i "${srcVideo}" -c:v libx264 -pix_fmt yuv420p -r 30 -an "${mapMp4}"`, { stdio: 'pipe' })
-
-    // Create 5-second CTA video from static image
-    execSync(`ffmpeg -y -loop 1 -i "${ctaPath}" -c:v libx264 -t 5 -pix_fmt yuv420p -r 30 -vf "scale=${WIDTH}:${HEIGHT}" -an "${ctaMp4}"`, { stdio: 'pipe' })
-
-    // Concat map + CTA
-    fs.writeFileSync(concatFile, `file '${mapMp4}'\nfile '${ctaMp4}'\n`)
-    execSync(`ffmpeg -y -f concat -safe 0 -i "${concatFile}" -c copy "${finalMp4}"`, { stdio: 'pipe' })
-
-    // Cleanup temp files
+    execSync(`ffmpeg -y -i "${srcVideo}" -c:v libx264 -pix_fmt yuv420p -r 30 -an "${finalMp4}"`, { stdio: 'pipe' })
     fs.unlinkSync(srcVideo)
-    fs.unlinkSync(mapMp4)
-    fs.unlinkSync(ctaMp4)
-    fs.unlinkSync(concatFile)
-    console.log('Rendered 01_google_maps_manila.mp4 (map animation + CTA)')
+    console.log('Rendered 01_google_maps_manila.mp4')
   } catch (err) {
     console.error('ffmpeg error:', err.message)
     fs.renameSync(srcVideo, finalMp4)
