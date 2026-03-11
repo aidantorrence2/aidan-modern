@@ -176,3 +176,19 @@
   - Continues to keep text above the lower CTA-safe area, while allowing imagery to extend farther to the bottom of the frame.
   - Uses the same top `manila*` image selection strategy as V3 and records it in `output-v4/sources.json`.
   - Slide 3 uses simpler process copy and avoids disclosing any selective review language.
+
+## Manila Model Search Carousel V5 (Photo Proof Flow)
+- Source folder: `marketing/manila-model-search-carousel`
+- Render command:
+  - `node marketing/manila-model-search-carousel/render-v5.mjs`
+- Output folder:
+  - `marketing/manila-model-search-carousel/output-v5`
+- Notes:
+  - Exports a five-slide 1080x1920 PNG set for story/reels use.
+  - Flow order is:
+    - `models in Manila`
+    - `photo proof`
+    - `what you get`
+    - `how the shoot works`
+    - `sign up`
+  - No FAQ card/page is included in V5.
