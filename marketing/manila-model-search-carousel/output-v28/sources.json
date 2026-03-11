@@ -1,0 +1,43 @@
+{
+  "createdAt": "2026-03-11T12:15:08.183Z",
+  "strategy": "v28 — Scattered Polaroids nostalgic instant film aesthetic, animated MP4 slide 2",
+  "safeBottomPixels": 410,
+  "images": {
+    "all_considered": [
+      "manila-gallery-canal-001.jpg",
+      "manila-gallery-canal-002.jpg",
+      "manila-gallery-closeup-001.jpg",
+      "manila-gallery-dsc-0075.jpg",
+      "manila-gallery-dsc-0130.jpg",
+      "manila-gallery-dsc-0190.jpg",
+      "manila-gallery-dsc-0911.jpg",
+      "manila-gallery-floor-001.jpg",
+      "manila-gallery-garden-001.jpg",
+      "manila-gallery-garden-002.jpg",
+      "manila-gallery-graffiti-001.jpg",
+      "manila-gallery-ivy-001.jpg",
+      "manila-gallery-ivy-002.jpg",
+      "manila-gallery-market-001.jpg",
+      "manila-gallery-night-001-original.jpg",
+      "manila-gallery-night-001.jpg",
+      "manila-gallery-night-002.jpg",
+      "manila-gallery-night-003.jpg",
+      "manila-gallery-park-001.jpg",
+      "manila-gallery-rocks-001.jpg"
+    ],
+    "selected": {
+      "hero": "manila-gallery-canal-001.jpg",
+      "scatterA": "manila-gallery-closeup-001.jpg",
+      "scatterB": "manila-gallery-dsc-0911.jpg",
+      "scatterC": "manila-gallery-garden-002.jpg",
+      "scatterD": "manila-gallery-graffiti-001.jpg",
+      "scatterE": "manila-gallery-ivy-001.jpg",
+      "scatterF": "manila-gallery-night-003.jpg",
+      "scatterG": "manila-gallery-urban-001.jpg",
+      "step1": "manila-gallery-shadow-001.jpg",
+      "step2": "manila-gallery-dsc-0130.jpg",
+      "step3": "manila-gallery-dsc-0190.jpg",
+      "cta": "manila-gallery-statue-001.jpg"
+    }
+  }
+}
