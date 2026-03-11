@@ -108,8 +108,8 @@ function squigglyUnderline(x, y, width, color = PINK, delay = 0) {
 }
 
 function buildAnimatedZine(images) {
-  // Total duration ~22s (video content), CTA follows immediately
-  const TOTAL_DURATION = 22
+  // Total duration ~25s — CTA is integrated into the scroll
+  const TOTAL_DURATION = 25
 
   // Notebook line pattern
   const notebookLines = Array.from({length: 50}, (_, i) => {
@@ -271,6 +271,49 @@ function buildAnimatedZine(images) {
     <div style="opacity:0;transform:scale(0);animation:stickerPop 0.4s cubic-bezier(0.34,1.56,0.64,1) ${freeDelay}s forwards;position:absolute;left:750px;top:1900px;">
       ${starBurst(0, 0, 160, RED, 'FREE!', '#fff', 28)}
     </div>
+
+    <!-- CTA section — integrated into scroll, appears naturally after process -->
+    <!-- Large taped photo -->
+    <div style="position:absolute;left:140px;top:2200px;z-index:25;opacity:0;animation:slideRotateIn 0.5s ease ${freeDelay + 1.0}s forwards;">
+      <div style="width:804px;padding:14px 14px 40px;background:#fff;transform:rotate(-2deg);box-shadow:2px 4px 16px rgba(0,0,0,0.15);">
+        <img src="${images.cta}" style="width:776px;height:480px;object-fit:cover;display:block;"/>
+      </div>
+    </div>
+    ${tapeStrip(200, 2190, 110, 30, 8, 'rgba(255,225,53,0.55)')}
+    ${tapeStrip(720, 2200, 100, 28, -5, 'rgba(255,45,135,0.35)')}
+
+    <!-- PHOTO SHOOT in big mixed type -->
+    <div style="position:absolute;left:80px;top:2760px;z-index:25;opacity:0;animation:slideRotateIn 0.5s ease ${freeDelay + 1.8}s forwards;">
+      <span style="font-family:'Helvetica Neue',sans-serif;font-size:100px;font-weight:900;color:${PINK};letter-spacing:4px;">PHOTO</span>
+    </div>
+    <div style="position:absolute;left:120px;top:2860px;z-index:25;opacity:0;animation:slideRotateIn 0.5s ease ${freeDelay + 2.2}s forwards;">
+      <span style="font-family:Georgia,serif;font-size:95px;font-weight:900;font-style:italic;color:${BLACK};letter-spacing:2px;">SHOOT</span>
+    </div>
+
+    <!-- Sign up copy -->
+    <div style="position:absolute;left:80px;top:2990px;z-index:25;opacity:0;animation:fadeIn 0.4s ease ${freeDelay + 2.6}s forwards;">
+      <span style="font-family:'Courier New',monospace;font-size:34px;color:${BLACK};background:${YELLOW};padding:6px 16px;">sign up below. 60-second form.</span>
+    </div>
+    <div style="position:absolute;left:80px;top:3060px;z-index:25;opacity:0;animation:fadeIn 0.4s ease ${freeDelay + 3.0}s forwards;">
+      <span style="font-family:Georgia,serif;font-size:32px;font-style:italic;color:${BLACK};">I'll message you back within a day.</span>
+    </div>
+
+    <!-- Urgency starburst -->
+    <div style="opacity:0;transform:scale(0);animation:stickerPop 0.4s cubic-bezier(0.34,1.56,0.64,1) ${freeDelay + 3.2}s forwards;position:absolute;left:700px;top:2950px;">
+      ${starBurst(0, 0, 180, RED, 'LIMITED<br>SPOTS', '#fff', 20)}
+    </div>
+
+    <!-- @handle -->
+    <div style="position:absolute;left:80px;top:3140px;z-index:25;opacity:0;animation:fadeIn 0.4s ease ${freeDelay + 3.4}s forwards;">
+      <span style="font-family:'Courier New',monospace;font-size:30px;color:${BLACK};">@${HANDLE}</span>
+    </div>
+
+    <!-- Arrow pointing down -->
+    <div style="position:absolute;left:300px;top:3200px;z-index:25;opacity:0;animation:fadeIn 0.4s ease ${freeDelay + 3.6}s forwards;">
+      <svg viewBox="0 0 60 80" width="60" height="80">
+        <path d="M30,0 L30,60 M15,45 L30,65 L45,45" stroke="${BLACK}" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
   `
 
   // Scroll keyframes: scroll the content container up to reveal process steps
@@ -283,8 +326,11 @@ function buildAnimatedZine(images) {
     ${p(13)}% { transform: translateY(-700px); }
     ${p(15)}% { transform: translateY(-900px); }
     ${p(17)}% { transform: translateY(-1000px); }
-    ${p(21)}% { transform: translateY(-1000px); }
-    100% { transform: translateY(-1000px); }
+    ${p(18)}% { transform: translateY(-1200px); }
+    ${p(19.5)}% { transform: translateY(-1500px); }
+    ${p(21)}% { transform: translateY(-1800px); }
+    ${p(24)}% { transform: translateY(-1800px); }
+    100% { transform: translateY(-1800px); }
   `
 
   return `<!DOCTYPE html>
@@ -477,7 +523,7 @@ async function render() {
 
   // --- Step 1: Record the animated zine video ---
   console.log('Recording animated zine collage video...')
-  const TOTAL_DURATION_MS = 18000
+  const TOTAL_DURATION_MS = 25000
 
   const videoCtx = await browser.newContext({
     viewport: { width: WIDTH, height: HEIGHT },
@@ -495,22 +541,9 @@ async function render() {
   await videoPage.close()
   await videoCtx.close()
 
-  // --- Step 2: Render CTA as a high-quality screenshot ---
-  console.log('Rendering CTA screenshot...')
-  const ctaCtx = await browser.newContext({
-    viewport: { width: WIDTH, height: HEIGHT },
-    deviceScaleFactor: 1,
-  })
-  const ctaPage = await ctaCtx.newPage()
-  await ctaPage.setContent(buildCTA(images), { waitUntil: 'load' })
-  await ctaPage.waitForTimeout(300)
-  const ctaPath = path.join(OUT_DIR, 'cta_frame.png')
-  await ctaPage.screenshot({ path: ctaPath })
-  await ctaPage.close()
-  await ctaCtx.close()
   await browser.close()
 
-  // --- Step 3: Convert webm to mp4, then concat with CTA still frame ---
+  // --- Step 2: Convert webm to mp4 (CTA is integrated into the animation) ---
   const videoFiles = fs.readdirSync(OUT_DIR).filter(f => f.endsWith('.webm'))
   if (videoFiles.length === 0) {
     console.error('No video file was generated!')
@@ -518,28 +551,11 @@ async function render() {
   }
 
   const srcVideo = path.join(OUT_DIR, videoFiles[0])
-  const chatMp4 = path.join(OUT_DIR, 'zine_part.mp4')
-  const ctaMp4 = path.join(OUT_DIR, 'cta_part.mp4')
   const finalMp4 = path.join(OUT_DIR, '01_manila_zine_video.mp4')
-  const concatFile = path.join(OUT_DIR, 'concat.txt')
-
   try {
-    // Convert zine webm to mp4
-    execSync(`ffmpeg -y -i "${srcVideo}" -c:v libx264 -pix_fmt yuv420p -r 30 -an "${chatMp4}"`, { stdio: 'pipe' })
-
-    // Create 5-second CTA video from static image
-    execSync(`ffmpeg -y -loop 1 -i "${ctaPath}" -c:v libx264 -t 5 -pix_fmt yuv420p -r 30 -vf "scale=${WIDTH}:${HEIGHT}" -an "${ctaMp4}"`, { stdio: 'pipe' })
-
-    // Concat zine + CTA
-    fs.writeFileSync(concatFile, `file '${chatMp4}'\nfile '${ctaMp4}'\n`)
-    execSync(`ffmpeg -y -f concat -safe 0 -i "${concatFile}" -c copy "${finalMp4}"`, { stdio: 'pipe' })
-
-    // Cleanup temp files
+    execSync(`ffmpeg -y -i "${srcVideo}" -c:v libx264 -pix_fmt yuv420p -r 30 -an "${finalMp4}"`, { stdio: 'pipe' })
     fs.unlinkSync(srcVideo)
-    fs.unlinkSync(chatMp4)
-    fs.unlinkSync(ctaMp4)
-    fs.unlinkSync(concatFile)
-    console.log('Rendered 01_manila_zine_video.mp4 (zine + CTA)')
+    console.log('Rendered 01_manila_zine_video.mp4')
   } catch (err) {
     console.error('ffmpeg error:', err.message)
     if (fs.existsSync(srcVideo)) {
