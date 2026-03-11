@@ -629,6 +629,35 @@ Additional V27 notes:
 - Dark background (#0a0a0a) throughout for cinematic feel.
 - Uses 9 manila-gallery images (street-001, garden-002, closeup-001, rocks-001, graffiti-001, ivy-001, urban-001, tropical-001, statue-001).
 
+V28 render (scattered polaroids nostalgic instant film aesthetic):
+
+```bash
+node marketing/manila-model-search-carousel/render-v28.mjs
+```
+
+V28 outputs:
+
+- `output-v28/01_polaroid_hook.png`
+- `output-v28/02_polaroid_scatter.mp4` (animated video)
+- `output-v28/03_polaroid_process.png`
+- `output-v28/04_polaroid_cta.png`
+- `output-v28/sources.json`
+
+Additional V28 notes:
+
+- COMPLETELY NEW AD CONCEPT: "Scattered Polaroids" -- nostalgic instant film aesthetic with photos styled as polaroid prints on a textured kraft paper surface.
+- Warm vintage feel: kraft/cardboard surface background (#D2C4A8), warm white polaroid borders (#FAF8F4), burnt sienna MANILA accent (#C2502A), dark brown ink text (#2A2420).
+- Handwritten-style captions under polaroids using Marker Felt / cursive fonts. Tape strip decorations for realism.
+- "MANILA" is VERY LARGE (82-96px) in burnt sienna on every slide for maximum CPC impact.
+- 4 slides: HOOK > SCATTER (animated MP4) > PROCESS > CTA.
+- Slide 1: "MANILA Model Search" with one large tilted polaroid, "models wanted" handwritten caption, tape strip decoration, "no experience needed * sign up below" at bottom.
+- Slide 2: Animated MP4 -- 7 polaroids drop/scatter onto the surface one by one with rotation and bounce. Staggered 0.55s apart with drop-in animation (translateY + scale). Header fades in first. ~6.5 seconds, 30fps, H.264/MP4. Kraft paper background with subtle texture.
+- Slide 3: "How it works" -- 3 polaroids alternating left/right with numbered step labels (01 sign up, 02 we plan, 03 show up). Tape strips on each polaroid. Handwritten step descriptions.
+- Slide 4: Large polaroid of best photo with "this could be you" caption, tape strip, "Sign up below." headline, burnt sienna "LIMITED SPOTS THIS MONTH" pill badge.
+- Uses Playwright recordVideo + ffmpeg for animated MP4 (same technique as v17).
+- All text above SAFE_BOTTOM (410px). Images have less than 10% crop thanks to polaroid border containers.
+- Uses 12 manila-gallery images (canal-001, closeup-001, dsc-0911, garden-002, graffiti-001, ivy-001, night-003, urban-001, shadow-001, dsc-0130, dsc-0190, statue-001).
+
 V29 render (Magazine Cover / Editorial Spread concept):
 
 ```bash
@@ -773,3 +802,118 @@ Additional V36 notes:
 - Slide 4: "Sign up below." large centered headline, "LIMITED SPOTS THIS MONTH" urgency pill, rounded hero image frame with ring shadow.
 - All content above SAFE_BOTTOM (410px). Images have less than 10% crop thanks to rounded containers with object-fit:cover.
 - Uses 8 manila-gallery images (canal-001, closeup-001, garden-002, graffiti-001, urban-001, ivy-001, dsc-0190, floor-001).
+
+V34 render (Instagram Notification / UI concept, platform-native design):
+
+```bash
+node marketing/manila-model-search-carousel/render-v34.mjs
+```
+
+V34 outputs:
+
+- `output-v34/01_ig_notification_story.png`
+- `output-v34/02_ig_profile_grid_story.mp4` (animated video)
+- `output-v34/03_ig_highlights_story.png`
+- `output-v34/04_ig_book_now_story.png`
+- `output-v34/sources.json`
+
+Additional V34 notes:
+
+- COMPLETELY NEW AD CONCEPT: "Instagram Notification / UI" -- designed to look like Instagram's own interface elements. Platform-native design that blends into the IG experience.
+- White background (#FFFFFF) with IG system fonts (-apple-system, Helvetica Neue), IG blue (#0095F6) accents, IG border/gray colors. Feels like part of the app, not an ad.
+- "MANILA" is VERY LARGE (82px) and prominent in distinctive red-coral (#E8443A) accent on every slide -- stands out against the clean white IG UI.
+- 4 slides: IG NOTIFICATION HOOK > ANIMATED PROFILE GRID (MP4) > IG HIGHLIGHTS PROCESS > BOOK NOW CTA.
+- Slide 1: Fake IG notification banner "manila.portraits wants to shoot with you" with IG gradient icon, profile pic, "now" timestamp. Below: content card with "Models wanted in Manila", Follow/Message buttons, hero image preview. Clean white card UI with subtle shadows.
+- Slide 2: Animated MP4 -- fake IG profile page with profile pic, stats (247 posts, 1.2K followers, 186 following), bio, Following/Message buttons, Grid/Reels/Tagged tabs. 3x3 photo grid loads in with staggered scale-up animation (250ms apart). ~5 seconds, 30fps, H.264.
+- Slide 3: "How it works" -- IG story highlights style with 4 circular icons (gradient ring borders like real IG highlights) for Sign Up / Plan It / Show Up / Get Pics. Detailed step cards below with numbered red circles. Accent photo at bottom.
+- Slide 4: "Book now" screen -- photographer profile card with avatar, "manila.portraits", 5-star rating (24 reviews), location/genre/availability info rows with emoji icons. Recent work 3-photo strip. "Sign up below" CTA with blue Book Now button and red-coral "Limited spots this month" urgency badge.
+- All content above SAFE_BOTTOM (410px). Images have less than 10% crop.
+- Uses 15 manila-gallery images (canal-001, closeup-001, garden-002, dsc-0911, night-003, canal-002, graffiti-001, urban-001, ivy-001, shadow-001, tropical-001, dsc-0190, statue-001, street-001, floor-001).
+
+V37 render (review cards / testimonial social proof concept):
+
+```bash
+node marketing/manila-model-search-carousel/render-v37.mjs
+```
+
+V37 outputs:
+
+- `output-v37/01_review_hook.png`
+- `output-v37/02_review_cards.mp4` (animated video)
+- `output-v37/03_what_you_get.png`
+- `output-v37/04_cta_signup.png`
+- `output-v37/sources.json`
+
+Additional V37 notes:
+
+- COMPLETELY NEW AD CONCEPT: "Review Cards / Testimonial" social proof format. Designed like a review/rating interface (Google reviews / Airbnb style).
+- Clean white cards on warm cream background (#FAF6F0). Trustworthy, social-proof heavy design.
+- MANILA is VERY LARGE (80px) in warm orange (#E8913A) on every slide.
+- 4 slides: HOOK (star rating + hero) > REVIEW CARDS (animated MP4) > WHAT YOU GET (product listing) > CTA (join + sign up).
+- Slide 1: "MANILA" huge at top, 4.9 star rating with "from 50+ models", large hero photo in rounded card, "Models love this shoot." tagline below.
+- Slide 2: Animated MP4 -- 4 review cards slide in from the right one by one (1.0s stagger, cubic-bezier ease). Each card has a circular avatar photo, reviewer name, star rating, time ago, and a testimonial quote ("I was so nervous but he directed everything", "Best photos I've ever had", "Signed up Monday, had photos by Friday"). Header fades in first. ~7 seconds, 30fps, H.264/MP4.
+- Slide 3: "What you get" styled as a product listing -- hero image at top, white card below with 6 checkmark bullet features (25+ edited photos, full direction, zero experience needed, unique Manila locations, photos ready in 5 days, 60-second sign-up). Aggregate star rating at bottom.
+- Slide 4: "Join 50+ models. Sign up below." -- Hero image in rounded card, aggregate 4.9 star rating, orange "LIMITED SPOTS THIS MONTH" urgency badge, body copy.
+- All content above SAFE_BOTTOM (410px). Images have less than 10% crop with rounded corners and soft shadows.
+- Uses 7 manila-gallery images (canal-001, closeup-001, garden-002, ivy-001, urban-001, graffiti-001, statue-001).
+
+V35 render (Cut & Paste Collage / Zine DIY punk aesthetic):
+
+```bash
+node marketing/manila-model-search-carousel/render-v35.mjs
+```
+
+V35 outputs:
+
+- `output-v35/01_hook_story.png`
+- `output-v35/02_collage_story.mp4` (animated video)
+- `output-v35/03_process_story.png`
+- `output-v35/04_cta_story.png`
+- `output-v35/sources.json`
+
+Additional V35 notes:
+
+- COMPLETELY NEW AD CONCEPT: "Cut & Paste Collage / Zine" -- DIY punk aesthetic with ransom-note style mixed typography.
+- Warm cream notebook-lined background (#FFF8E7) with bright chaotic accents: hot pink (#FF2D87), yellow (#FFE135), cyan (#00E5FF), red (#FF3B30).
+- "MANILA" is VERY LARGE (90-140px) in mixed-case collage letters on every slide -- each letter uses a different font family (sans, serif, mono), different size, different color, and slight rotation. Ransom-note aesthetic.
+- Photos styled as Polaroid-like prints with white borders, taped at random angles with translucent washi tape strips (yellow and pink).
+- Doodle elements throughout: hand-drawn circles, arrows, squiggly underlines (SVG), star burst stickers, scattered asterisks.
+- 4 slides: HOOK > COLLAGE (animated MP4) > PROCESS > CTA.
+- Slide 1: "MANILA" in huge collage letters top-left, two overlapping photos taped at angles, "models wanted!!" in italic serif with scribble underline, "no experience needed." highlighted in yellow, "OPEN CALL" pill badge, "FREE" star burst sticker.
+- Slide 2: Animated MP4 -- 5 photos slam onto the page at random angles with cubic-bezier bounce (scale 1.3 to 0.95 to 1.0), staggered 550ms apart. Washi tape strips appear 250ms after each photo. "MANILA" header slams in first. "this is my work !!" caption fades in. ~5.5 seconds, 30fps, H.264.
+- Slide 3: "how it works:" in italic serif, 3 steps in mixed typewriter/handwritten/bold styles with large colored step numbers (pink 1, cyan 2, red 3). Doodle arrows, circles, and star burst "FREE!" sticker. Small taped photo bottom-right. "that's it!!" in big pink type with squiggly underline.
+- Slide 4: "SIGN UP!!" in huge messy mixed type (sans "SIGN" + italic serif "UP" + mono "!!"), two overlapping taped photos, yellow-highlighted monospace subtext, "LIMITED SPOTS!!" red star burst sticker, down arrow pointing to CTA zone.
+- Anti-corporate, energetic, chaotic feel that stands out on IG by being the opposite of polished.
+- All content above SAFE_BOTTOM (410px). Images have less than 10% crop thanks to white-bordered photo containers with object-fit:cover.
+- Uses 10 manila-gallery images (canal-001, closeup-001, garden-002, graffiti-001, urban-001, night-003, ivy-001, dsc-0190, floor-001, shadow-001).
+
+V33 render (35mm Film Strip analog photography aesthetic):
+
+```bash
+node marketing/manila-model-search-carousel/render-v33.mjs
+```
+
+V33 outputs:
+
+- `output-v33/01_hook_story.png`
+- `output-v33/02_filmstrip_story.mp4` (animated video)
+- `output-v33/03_process_story.png`
+- `output-v33/04_cta_story.png`
+- `output-v33/sources.json`
+
+Additional V33 notes:
+
+- COMPLETELY NEW AD CONCEPT: "35mm Film Strip" analog photography aesthetic. Photos presented inside film strip frames with sprocket holes on sides.
+- Kodak/Fuji-inspired warm color palette: dark warm brown background (#1a1410), Kodak gold/yellow (#F5C518) for MANILA, warm orange (#E8913A) for film metadata, cream (#FFF8E7) for body text.
+- Film-like grain texture overlay on every slide via SVG feTurbulence noise pattern.
+- "MANILA" is VERY LARGE (100-120px) and prominent in bold Kodak gold on every slide with a warm glow text-shadow.
+- 4 slides: HOOK > FILM STRIP (animated MP4) > PROCESS > CTA.
+- Slide 1: "35MM EDITORIAL" kicker + huge "MANILA" (120px) + "Models wanted." on dark film background. Single hero photo in a bordered film frame with "FRAME 01/36" and "KODAK 400" metadata. Sprocket holes line both sides. Film code text at bottom ("MANILA-001 DX 135-36 ISO 400").
+- Slide 2: Animated MP4 -- vertical film strip with 8 photos in film frames scrolls upward through a masked viewport. Strip pauses briefly (0.6s) at each frame before advancing. Sprocket holes scroll with the strip. Header fades in first. ~7 seconds, 30fps, H.264/MP4. Top and bottom fade masks create a window effect.
+- Slide 3: "3 easy steps." -- 3 film frames stacked vertically, each containing a photo with step text (title + description) rendered in the film border area below the image. Monospace "STEP 01/02/03" labels in Kodak gold. Frame numbers on each (20/36, 25/36, 30/36).
+- Slide 4: "Sign up below." -- Large film frame with hero image, "36/36 LAST FRAME" and "END OF ROLL" metadata in the border area. Warm gold urgency badge "LIMITED SPOTS THIS MONTH" with dot indicator.
+- All images have warm film-like color treatment: saturate(1.15) contrast(1.05) sepia(0.08).
+- Sprocket holes (dark squares with rounded corners) line both sides of every slide.
+- Film strip border elements (#2a2218 with #3a3228 outlines) on all frames.
+- All content above SAFE_BOTTOM (410px). Images have less than 10% crop.
+- Uses 13 manila-gallery images (canal-001, closeup-001, dsc-0911, garden-002, night-003, dsc-0130, graffiti-001, urban-001, shadow-001, ivy-001, canal-002, tropical-001, floor-001).
