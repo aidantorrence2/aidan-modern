@@ -266,3 +266,28 @@ Additional V14 notes:
 
 - Keeps the V13 layouts and copy.
 - Page 1 and page 5 use larger `cover` image treatments to remove the remaining bordered look and push the photos closer to full-bleed.
+
+V15 render (cropping fix + CPC copy):
+
+```bash
+node marketing/manila-model-search-carousel/render-v15.mjs
+```
+
+V15 outputs:
+
+- `output-v15/01_models_in_manila_story.png`
+- `output-v15/02_portfolio_images_story.png`
+- `output-v15/03_what_you_get_story.png`
+- `output-v15/04_how_the_shoot_works_story.png`
+- `output-v15/05_sign_up_story.png`
+- `output-v15/sources.json`
+
+Additional V15 notes:
+
+- Fixes cropping on pages 1 and 5: image containers are now 1310px tall (up from ~1016/1040) with `object-position: top 15%` so faces are not cut off.
+- Top label moved down slightly (56px from top vs 42px) for breathing room from IG status bar.
+- Page 1 headline changed to "Models wanted in Manila." with shorter subhead ending in "Sign up below."
+- Page 5 CTA changed to "Sign up — it takes 60 seconds." with "I'll message you back within a day."
+- darkBox padding and font sizes tightened to give images more real estate.
+- Page 2 proof images slightly wider (316px vs 308px).
+- Page 3 chips have more vertical spacing (144px gaps vs 136px).
