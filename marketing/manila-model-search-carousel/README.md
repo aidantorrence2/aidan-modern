@@ -457,3 +457,32 @@ Additional V21 notes:
 - MANILA prominent in terracotta on every slide.
 - All content above SAFE_BOTTOM (410px).
 - Uses 13 manila-gallery images (canal, closeup, dsc, garden, night, graffiti, urban, shadow, ivy, dsc-0190, floor).
+
+V22 render (story-format narrative ad, fundamentally new concept):
+
+```bash
+node marketing/manila-model-search-carousel/render-v22.mjs
+```
+
+V22 outputs:
+
+- `output-v22/01_story_hook.png`
+- `output-v22/02_shoot_day.mp4` (animated video)
+- `output-v22/03_results.png`
+- `output-v22/04_cta.png`
+- `output-v22/sources.json`
+
+Additional V22 notes:
+
+- FUNDAMENTALLY DIFFERENT AD CONCEPT: Instead of the standard "hook headline > proof photos > how it works > sign up CTA" ad structure used in v1-v21, v22 tells a mini-story across 4 slides. The viewer follows a narrative arc about a real person, creating emotional investment before the CTA.
+- Story-format narrative: "She'd never modeled before. She signed up on Tuesday. By Saturday she had these photos."
+- Warm editorial magazine aesthetic: cream background (#FAF6F1), elegant serif headlines (Georgia), gold accent color (#C4974A), monospace MANILA tag, soft shadows.
+- 4 slides: STORY HOOK > SHOOT DAY (animated) > RESULTS > CTA.
+- Slide 1: "She'd never modeled before." -- Serif headline on cream with single candid photo below. Feels like the opening of a magazine article, not an ad.
+- Slide 2: Animated MP4 -- "The shoot day." -- 6 photos from different locations/vibes fade in with translateY + scale animation staggered across ~3.5 seconds, showing what the shoot experience looks like. Cream background, editorial layout.
+- Slide 3: "The results." -- Two large side-by-side portrait photos filling the frame. "No experience. No agency. Just her." caption below.
+- Slide 4: "This could be you." -- Dark overlay on full-bleed hero, serif headline, gold urgency badge "3 SPOTS LEFT THIS MONTH" with dot indicator.
+- MANILA appears in gold monospace text top-left of every slide.
+- All content above SAFE_BOTTOM (410px).
+- Video is 1080x1920, ~5.5 seconds, 30fps, H.264/MP4.
+- Uses 10 manila-gallery images (garden-002, canal-002, graffiti-001, dsc-0911, ivy-001, night-003, urban-001, canal-001, tropical-001, floor-001).
