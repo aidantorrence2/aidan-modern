@@ -76,7 +76,7 @@ function slideOne(images) {
 
       <!-- headline -->
       <div style="position:absolute;left:54px;top:72px;right:54px;">
-        <p style="font-family:${NARROW};font-size:28px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.7);margin:0 0 20px;">Manila</p>
+        <p style="font-family:${NARROW};font-size:64px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.85);margin:0 0 14px;">Manila</p>
         <h1 style="font-family:${BOLD};font-size:108px;font-weight:800;line-height:0.92;color:#fff;margin:0 0 28px;letter-spacing:-0.02em;">Models<br/>wanted.</h1>
         <p style="font-family:${BODY};font-size:34px;font-weight:500;line-height:1.34;color:rgba(255,255,255,0.92);margin:0;">Editorial portrait shoots.<br/>No experience needed.</p>
       </div>
@@ -96,7 +96,7 @@ function slideTwo(images) {
     <div style="width:${WIDTH}px;height:${HEIGHT}px;position:relative;overflow:hidden;background:#0a0a0a;">
       <!-- subtle top text -->
       <div style="position:absolute;left:54px;top:62px;right:54px;">
-        <p style="font-family:${NARROW};font-size:28px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin:0 0 16px;">Manila</p>
+        <p style="font-family:${NARROW};font-size:64px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.85);margin:0 0 10px;">Manila</p>
         <h2 style="font-family:${BOLD};font-size:62px;font-weight:800;line-height:0.94;color:#fff;margin:0;letter-spacing:-0.02em;">This is my work.</h2>
       </div>
 
@@ -137,7 +137,7 @@ function slideThree(images) {
       <div style="position:absolute;inset:0;background:linear-gradient(180deg, rgba(0,0,0,0.78) 0%, rgba(0,0,0,0.5) 40%, rgba(0,0,0,0.3) 60%, rgba(0,0,0,0.65) 100%);"></div>
 
       <div style="position:absolute;left:54px;top:62px;right:54px;">
-        <p style="font-family:${NARROW};font-size:28px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin:0 0 16px;">Manila</p>
+        <p style="font-family:${NARROW};font-size:64px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.85);margin:0 0 10px;">Manila</p>
         <h2 style="font-family:${BOLD};font-size:72px;font-weight:800;line-height:0.94;color:#fff;margin:0;letter-spacing:-0.02em;">3 steps.<br/>That's it.</h2>
       </div>
 
@@ -192,7 +192,7 @@ function slideFour(images) {
       <div style="position:absolute;left:0;right:0;bottom:0;height:${SAFE_BOTTOM + 100}px;background:linear-gradient(0deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 100%);"></div>
 
       <div style="position:absolute;left:54px;top:72px;right:54px;">
-        <p style="font-family:${NARROW};font-size:28px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin:0 0 20px;">Manila</p>
+        <p style="font-family:${NARROW};font-size:64px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.85);margin:0 0 14px;">Manila</p>
         <h2 style="font-family:${BOLD};font-size:96px;font-weight:800;line-height:0.92;color:#fff;margin:0 0 30px;letter-spacing:-0.02em;">Sign up<br/>below.</h2>
         <p style="font-family:${BODY};font-size:34px;font-weight:500;line-height:1.38;color:rgba(255,255,255,0.9);margin:0 0 40px;">60-second form. I'll message<br/>you back within a day.</p>
       </div>
