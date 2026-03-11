@@ -42,11 +42,11 @@ function writeSources(payload) {
 // Album art photos that cycle through — mix of purple (cropped) and non-purple
 const ALBUM_PHOTOS = [
   { file: 'manila-gallery-garden-001.jpg', purple: false },
-  { file: 'manila-gallery-purple-001.jpg', purple: true },
   { file: 'manila-gallery-graffiti-001.jpg', purple: false },
-  { file: 'manila-gallery-purple-003.jpg', purple: true },
   { file: 'manila-gallery-ivy-001.jpg', purple: false },
-  { file: 'manila-gallery-purple-005.jpg', purple: true },
+  { file: 'manila-gallery-canal-001.jpg', purple: false },
+  { file: 'manila-gallery-dsc-0190.jpg', purple: false },
+  { file: 'manila-gallery-dsc-0075.jpg', purple: false },
 ]
 
 const LYRICS = [
@@ -54,10 +54,10 @@ const LYRICS = [
   'no experience needed',
   'I direct everything',
   'show up and be yourself',
-  '60 second signup',
+  'it takes just a minute',
   'edited photos in a week',
   'sign up below',
-  '60-second form',
+  'it takes just a minute',
   'limited spots this month',
 ]
 
@@ -103,11 +103,11 @@ function buildNowPlayingAnimation(images) {
     const dimColor = isHighlight ? 'rgba(232,68,58,0.5)' : 'rgba(255,255,255,0.35)'
     return `<p class="lyric lyric-${idx}" style="
       font-family:${SF};
-      font-size:64px;
+      font-size:48px;
       font-weight:600;
       color:${dimColor};
       margin:0;
-      padding:8px 0;
+      padding:4px 0;
       line-height:1.4;
       opacity:0;
       transition:color 0.4s ease, opacity 0.4s ease;
@@ -254,17 +254,17 @@ function buildNowPlayingAnimation(images) {
           <!-- Song title -->
           <p style="
             font-family:${SF};
-            font-size:36px;
+            font-size:52px;
             font-weight:700;
             color:#fff;
             margin:0;
             letter-spacing:0.02em;
-          ">Manila Model Search</p>
+          ">Manila Photo Shoot</p>
 
           <!-- Artist -->
           <p style="
             font-family:${SF};
-            font-size:24px;
+            font-size:34px;
             font-weight:400;
             color:#999;
             margin:6px 0 0;
@@ -277,10 +277,10 @@ function buildNowPlayingAnimation(images) {
             align-items:center;
             gap:14px;
           ">
-            <span style="font-family:${SF};font-size:14px;color:#999;min-width:36px;text-align:right;">0:00</span>
+            <span style="font-family:${SF};font-size:22px;color:#999;min-width:36px;text-align:right;">0:00</span>
             <div style="
               flex:1;
-              height:4px;
+              height:6px;
               background:rgba(255,255,255,0.15);
               border-radius:2px;
               overflow:hidden;
@@ -295,7 +295,7 @@ function buildNowPlayingAnimation(images) {
                 animation:progressFill ${totalPlaybackSec}s linear forwards;
               "></div>
             </div>
-            <span style="font-family:${SF};font-size:14px;color:#999;min-width:36px;">3:27</span>
+            <span style="font-family:${SF};font-size:22px;color:#999;min-width:36px;">3:27</span>
           </div>
 
           <!-- Playback controls -->
@@ -307,12 +307,12 @@ function buildNowPlayingAnimation(images) {
             margin:20px 0 0;
           ">
             <!-- Previous -->
-            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" style="opacity:0.8;">
+            <svg width="52" height="52" viewBox="0 0 24 24" fill="none" style="opacity:0.8;">
               <path d="M6 6h2v12H6V6zm3.5 6l8.5 6V6l-8.5 6z" fill="white"/>
             </svg>
             <!-- Play button -->
             <div style="
-              width:72px;height:72px;
+              width:100px;height:100px;
               background:rgba(255,255,255,0.12);
               border-radius:50%;
               display:flex;
@@ -320,12 +320,12 @@ function buildNowPlayingAnimation(images) {
               justify-content:center;
               animation:playPulse 2s ease-in-out infinite;
             ">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+              <svg width="46" height="46" viewBox="0 0 24 24" fill="none">
                 <path d="M8 5v14l11-7L8 5z" fill="white"/>
               </svg>
             </div>
             <!-- Next -->
-            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" style="opacity:0.8;">
+            <svg width="52" height="52" viewBox="0 0 24 24" fill="none" style="opacity:0.8;">
               <path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z" fill="white"/>
             </svg>
           </div>
@@ -349,7 +349,7 @@ function buildNowPlayingAnimation(images) {
           "></div>
           <p style="
             font-family:${SF};
-            font-size:14px;
+            font-size:20px;
             font-weight:600;
             color:rgba(255,255,255,0.4);
             letter-spacing:0.15em;
@@ -399,9 +399,9 @@ async function render() {
   })
 
   const videoPage = await videoCtx.newPage()
+  await videoPage.evaluate(() => { document.body.style.background = '#000'; })
   const animationHTML = buildNowPlayingAnimation({ albumPhotos: albumPhotoData })
   await videoPage.setContent(animationHTML, { waitUntil: 'load' })
-  await videoPage.waitForTimeout(500)
   await videoPage.waitForTimeout(TOTAL_DURATION_MS)
   await videoPage.close()
   await videoCtx.close()
