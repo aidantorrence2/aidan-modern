@@ -6,7 +6,7 @@ import fs from 'fs'
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const REPO_ROOT = path.resolve(__dirname, '../..')
 const IMAGE_DIR = path.join(REPO_ROOT, 'public/images/large')
-const OUT_DIR = path.join(__dirname, 'output-v42')
+const OUT_DIR = path.join(__dirname, 'output-v42b')
 
 const WIDTH = 1080
 const HEIGHT = 1920
@@ -53,27 +53,27 @@ function readImage(name) {
 function writeSources(selected) {
   const payload = {
     createdAt: new Date().toISOString(),
-    strategy: 'v42 — Animated IG DM video with large readable text + clean MANILA',
+    strategy: 'v42b — Animated IG DM video, even bigger text, no input bar, new purple dress photos',
     safeBottomPixels: SAFE_BOTTOM,
     images: selected
   }
   fs.writeFileSync(path.join(OUT_DIR, 'sources.json'), JSON.stringify(payload, null, 2))
 }
 
-// Sizing constants — everything scaled up for readability
-const MSG_FONT = 28
-const MSG_PAD = '16px 22px'
+// Sizing constants — EVEN BIGGER for max readability
+const MSG_FONT = 34
+const MSG_PAD = '18px 26px'
 const MSG_LINE = 1.35
-const MSG_RADIUS = '24px'
-const AVATAR = 44
-const AVATAR_GAP = 12
-const PHOTO_W = 400
-const PHOTO_H = 530
-const PHOTO_RADIUS = 22
-const DOT_SIZE = 11
-const REACT_FONT = 26
-const BIG_EMOJI = 64
-const MSG_MARGIN = '6px'
+const MSG_RADIUS = '26px'
+const AVATAR = 50
+const AVATAR_GAP = 14
+const PHOTO_W = 440
+const PHOTO_H = 580
+const PHOTO_RADIUS = 24
+const DOT_SIZE = 13
+const REACT_FONT = 30
+const BIG_EMOJI = 72
+const MSG_MARGIN = '8px'
 
 function buildAnimatedDM(images) {
   const T = {
@@ -183,7 +183,7 @@ function buildAnimatedDM(images) {
   }
 
   const allMessages = [
-    recv('hey! I\'m doing a model search in Manila', 'm1', T.msg1),
+    recv('hey i\'m looking for models in Manila', 'm1', T.msg1),
     recvNoAv('want to shoot?', 'm2', T.msg2),
     typing('t1', T.typing1, T.msg3),
     sent('omg yes!! but I\'ve never modeled before', 'm3', T.msg3),
@@ -219,30 +219,26 @@ function buildAnimatedDM(images) {
     bigEmoji('🙌', 'm18', T.msg18),
   ].join('\n')
 
-  // Content height calc with bigger elements:
-  // Messages ~62px each, photos ~580px each (530+margin+spacer), reacts ~48px
-  // Act1 (m1-m4): ~236px | Act2 (m5-m11+r1): ~504px | total pre-photo: ~740px
-  // Photos (p1-p3): 3×580 = 1740px | Post-photo (r2,m13-m18,r3): ~400px
-  // Total content: ~2880px + 520px padding = ~3400px
-  // Visible area: 1920-130-410-70 = 1310px → max scroll ≈ 2100px
-  //
-  // Scroll rule: keep newest message near bottom of viewport
-  // content_bottom - viewport = needed scroll
+  // Content height with 34px font, 50px avatars, 440x580 photos:
+  // Messages ~76px each, photos ~640px each (580+margin+spacer), reacts ~56px
+  // Pre-photo: ~900px | Photos: 3×640 = 1920px | Post-photo: ~500px
+  // Total: ~3320px + 520px padding = ~3840px
+  // Visible area (no input bar): 1920-130-410 = 1380px → max scroll ≈ 2460px
   const TOTAL_DURATION = 20
   const p = (t) => ((t / TOTAL_DURATION) * 100).toFixed(1)
 
   const scrollKeyframes = `
     0% { transform: translateY(0); }
-    ${p(9.0)}% { transform: translateY(0); }
-    ${p(9.6)}% { transform: translateY(-50px); }
-    ${p(10.0)}% { transform: translateY(-600px); }
-    ${p(10.4)}% { transform: translateY(-1180px); }
-    ${p(11.0)}% { transform: translateY(-1250px); }
-    ${p(12.0)}% { transform: translateY(-1400px); }
-    ${p(13.5)}% { transform: translateY(-1550px); }
-    ${p(15.0)}% { transform: translateY(-1750px); }
-    ${p(T.manila)}% { transform: translateY(-1750px); }
-    100% { transform: translateY(-1750px); }
+    ${p(8.5)}% { transform: translateY(0); }
+    ${p(9.6)}% { transform: translateY(-100px); }
+    ${p(10.0)}% { transform: translateY(-700px); }
+    ${p(10.4)}% { transform: translateY(-1350px); }
+    ${p(11.0)}% { transform: translateY(-1450px); }
+    ${p(12.0)}% { transform: translateY(-1600px); }
+    ${p(13.5)}% { transform: translateY(-1800px); }
+    ${p(15.0)}% { transform: translateY(-2000px); }
+    ${p(T.manila)}% { transform: translateY(-2000px); }
+    100% { transform: translateY(-2000px); }
   `
 
   return `<!DOCTYPE html>
@@ -342,26 +338,15 @@ function buildAnimatedDM(images) {
         <!-- Top gradient fade -->
         <div style="position:absolute;left:0;right:0;top:118px;height:60px;background:linear-gradient(180deg, ${IG_BLACK}, transparent);z-index:15;pointer-events:none;"></div>
 
-        <!-- Scrollable chat area -->
-        <div style="position:absolute;left:0;right:0;top:130px;bottom:${SAFE_BOTTOM + 70}px;overflow:hidden;">
+        <!-- Scrollable chat area (no input bar, extends to safe bottom) -->
+        <div style="position:absolute;left:0;right:0;top:130px;bottom:${SAFE_BOTTOM}px;overflow:hidden;">
           <div class="chat-scroll" style="padding:20px 20px 500px;">
             ${allMessages}
           </div>
         </div>
 
         <!-- Bottom gradient fade -->
-        <div style="position:absolute;left:0;right:0;bottom:${SAFE_BOTTOM + 70}px;height:80px;background:linear-gradient(0deg, ${IG_BLACK}, transparent);z-index:15;pointer-events:none;"></div>
-
-        <!-- DM input bar -->
-        <div style="position:absolute;left:0;right:0;bottom:${SAFE_BOTTOM}px;height:70px;padding:12px 20px;display:flex;align-items:center;gap:12px;z-index:20;background:${IG_BLACK};border-top:1px solid ${IG_DARK_BORDER};">
-          <div style="width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,#405DE6,#5B51D8,#833AB4);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="white" stroke-width="2.5" stroke-linecap="round"/></svg>
-          </div>
-          <div style="flex:1;padding:12px 20px;border:1.5px solid ${IG_DARK_BORDER};border-radius:24px;">
-            <span style="font-family:${SF};font-size:20px;color:${IG_GRAY};">Message...</span>
-          </div>
-          <svg width="30" height="30" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#fff" stroke-width="1.5"/><path d="M8 14s1.5 2 4 2 4-2 4-2" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/><circle cx="9" cy="10" r="1" fill="#fff"/><circle cx="15" cy="10" r="1" fill="#fff"/></svg>
-        </div>
+        <div style="position:absolute;left:0;right:0;bottom:${SAFE_BOTTOM}px;height:80px;background:linear-gradient(0deg, ${IG_BLACK}, transparent);z-index:15;pointer-events:none;"></div>
 
         <!-- MANILA flash overlay -->
         <div class="manila-flash" style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;background:${IG_BLACK};z-index:30;pointer-events:none;">
@@ -380,9 +365,9 @@ async function render() {
   const all = getTopManilaImages()
   const selection = {
     profilePic: 'manila-gallery-closeup-001.jpg',
-    photo1: 'manila-gallery-dsc-0075.jpg',
-    photo2: 'manila-gallery-graffiti-001.jpg',
-    photo3: 'manila-gallery-floor-001.jpg',
+    photo1: 'manila-gallery-purple-001.jpg',
+    photo2: 'manila-gallery-purple-002.jpg',
+    photo3: 'manila-gallery-purple-003.jpg',
   }
 
   writeSources({ all_considered: all, selected: selection })
