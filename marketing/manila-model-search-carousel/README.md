@@ -39,3 +39,23 @@ Notes:
 - V2 exports are 1080x1920 story/reels PNGs.
 - V2 keeps all important text above the bottom CTA-safe area and does not render a fake sign-up button into the image.
 - V2 uses the top image files from `public/images/large` by sorted filename order and records them in `output-v2/sources.json`.
+
+V3 render (Manila-only, no text on faces):
+
+```bash
+node marketing/manila-model-search-carousel/render-v3.mjs
+```
+
+V3 outputs:
+
+- `output-v3/01_models_in_manila_story.png`
+- `output-v3/02_what_you_get_story.png`
+- `output-v3/03_how_the_shoot_works_story.png`
+- `output-v3/04_faq_story.png`
+- `output-v3/05_sign_up_story.png`
+- `output-v3/sources.json`
+
+Additional V3 notes:
+
+- Uses the top `manila*` prefixed files from `public/images/large` by sorted filename order.
+- Layout keeps copy off the photos by using split panels and separate framed images instead of text overlays on faces.
