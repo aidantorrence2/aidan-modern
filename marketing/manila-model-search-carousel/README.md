@@ -196,3 +196,18 @@ V10 outputs:
 - `output-v10/04_how_the_shoot_works_story.png`
 - `output-v10/05_sign_up_story.png`
 - `output-v10/sources.json`
+
+V11 render (larger images + better sales copy):
+
+```bash
+node marketing/manila-model-search-carousel/render-v11.mjs
+```
+
+V11 outputs:
+
+- `output-v11/01_models_in_manila_story.png`
+- `output-v11/02_portfolio_images_story.png`
+- `output-v11/03_what_you_get_story.png`
+- `output-v11/04_how_the_shoot_works_story.png`
+- `output-v11/05_sign_up_story.png`
+- `output-v11/sources.json`

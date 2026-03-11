@@ -249,3 +249,14 @@
   - Enlarges the page 1 and page 5 images further.
   - Rebuilds page 2 and page 3 layouts for a cleaner, higher-quality presentation.
   - Makes the page 4 image column wider than in V9.
+
+## Manila Model Search Carousel V11 (Copy + Image Scale Pass)
+- Source folder: `marketing/manila-model-search-carousel`
+- Render command:
+  - `node marketing/manila-model-search-carousel/render-v11.mjs`
+- Output folder:
+  - `marketing/manila-model-search-carousel/output-v11`
+- Notes:
+  - Exports a five-slide 1080x1920 PNG set for story/reels use.
+  - Increases the visual weight of pages 1 and 5 by scaling the images up further.
+  - Rewrites page 2 and page 5 copy to sound more natural and sales-oriented.
