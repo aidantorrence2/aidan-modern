@@ -275,8 +275,8 @@ function buildAnimatedZine(images) {
     <!-- CTA section — integrated into scroll, appears naturally after process -->
     <!-- Large taped photo -->
     <div style="position:absolute;left:140px;top:2200px;z-index:25;opacity:0;animation:slideRotateIn 0.5s ease ${freeDelay + 1.0}s forwards;">
-      <div style="width:804px;padding:14px 14px 40px;background:#fff;transform:rotate(-2deg);box-shadow:2px 4px 16px rgba(0,0,0,0.15);">
-        <img src="${images.cta}" style="width:776px;height:480px;object-fit:cover;display:block;"/>
+      <div style="width:504px;padding:14px 14px 40px;background:#fff;transform:rotate(-2deg);box-shadow:2px 4px 16px rgba(0,0,0,0.15);">
+        <img src="${images.cta}" style="width:476px;height:640px;object-fit:cover;display:block;"/>
       </div>
     </div>
     ${tapeStrip(200, 2190, 110, 30, 8, 'rgba(255,225,53,0.55)')}
