@@ -717,3 +717,59 @@ Additional V30 notes:
 - Cork/linen texture background via CSS gradients (no external textures needed).
 - All content above SAFE_BOTTOM (410px). Images have less than 10% crop thanks to white-bordered photo card containers.
 - Uses 15 manila-gallery images (canal-001, closeup-001, garden-002, dsc-0911, night-003, garden-001, graffiti-001, urban-001, ivy-001, shadow-001, tropical-001, dsc-0190, canal-002, statue-001, dsc-0130).
+
+V31 render (neon / club poster nightlife energy concept):
+
+```bash
+node marketing/manila-model-search-carousel/render-v31.mjs
+```
+
+V31 outputs:
+
+- `output-v31/01_neon_hook_story.png`
+- `output-v31/02_neon_proof_story.mp4` (animated video)
+- `output-v31/03_neon_process_story.png`
+- `output-v31/04_neon_cta_story.png`
+- `output-v31/sources.json`
+
+Additional V31 notes:
+
+- COMPLETELY NEW AD CONCEPT: "Neon / Club Poster" nightlife energy aesthetic. Tokyo nightlife poster / club event flyer meets fashion.
+- Electric neon aesthetic with glowing text effects on dark backgrounds (#0A0610).
+- Three neon accent colors: pink (#FF2D7B), cyan (#00F0FF), purple (#B44DFF).
+- "MANILA" is VERY LARGE (80-86px) in neon pink with multi-layer text-shadow glow on every slide, styled as a neon sign.
+- 4 slides: HOOK > PROOF (animated MP4) > PROCESS > CTA.
+- Slide 1: "MANILA" as glowing neon sign + "MODELS WANTED" in bold condensed uppercase + full-bleed hero with magenta/cyan color-tinted overlay. Cyan neon accent line.
+- Slide 2: Animated MP4 -- 3x3 grid of 9 images with neon cyan borders and box-shadow glow. Tiles fade in with scale-up animation, staggered 350ms apart. MANILA neon sign flickers. Cyan accent line grows in. ~5.5 seconds, 30fps, H.264/MP4.
+- Slide 3: "3 steps." with neon numbered circles (pink/cyan/purple for steps 1/2/3). Thin neon gradient divider lines between steps. Faint background image with ambient neon glow spots. Dark overlay for readability.
+- Slide 4: "Sign up below." with full-bleed hero, neon tint gradient overlay, neon pink bordered urgency badge "LIMITED SPOTS THIS MONTH", ambient neon glow effect.
+- All content above SAFE_BOTTOM (410px).
+- Less than 10% image crop -- images use object-fit:cover in appropriately sized containers.
+- Uses 12 manila-gallery images (canal-001, closeup-001, dsc-0911, garden-002, night-003, dsc-0130, canal-002, graffiti-001, urban-001, shadow-001, dsc-0190, floor-001).
+
+V36 render (Gradient App UI concept):
+
+```bash
+node marketing/manila-model-search-carousel/render-v36.mjs
+```
+
+V36 outputs:
+
+- `output-v36/01_hook_story.png`
+- `output-v36/02_proof_story.mp4` (animated video)
+- `output-v36/03_process_story.png`
+- `output-v36/04_cta_story.png`
+- `output-v36/sources.json`
+
+Additional V36 notes:
+
+- COMPLETELY NEW AD CONCEPT: "Gradient App UI" -- modern tech/dating app aesthetic. Looks like a social app ad (Hinge, Bumble energy).
+- Bold vibrant gradient backgrounds (purple -> pink -> orange) on every slide. Rounded UI cards, pill buttons, glassmorphism elements, clean sans-serif typography.
+- MANILA is VERY LARGE (80-82px) in bold white on every slide, centered with wide letter-spacing and text-shadow for max prominence against the gradient.
+- 4 slides: HOOK > PROOF (animated MP4) > PROCESS > CTA.
+- Slide 1: "Models Wanted" pill button, hero image in a rounded phone-mockup frame with subtle ring border and drop shadow, "Editorial portrait shoots. No experience needed." subtitle, "Swipe to see more" pill at bottom.
+- Slide 2: Animated MP4 -- 5 photo cards slide up from off-screen one by one with slight rotation (fan/stack effect), staggered 500ms apart. Cubic-bezier easing for bouncy feel. ~5 seconds, 30fps, H.264.
+- Slide 3: "How it works" pill, 3 numbered glassmorphism step cards with circular number badges, small circular accent image at bottom.
+- Slide 4: "Sign up below." large centered headline, "LIMITED SPOTS THIS MONTH" urgency pill, rounded hero image frame with ring shadow.
+- All content above SAFE_BOTTOM (410px). Images have less than 10% crop thanks to rounded containers with object-fit:cover.
+- Uses 8 manila-gallery images (canal-001, closeup-001, garden-002, graffiti-001, urban-001, ivy-001, dsc-0190, floor-001).
