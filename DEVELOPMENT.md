@@ -203,3 +203,14 @@
   - Exports a five-slide 1080x1920 PNG set for story/reels use.
   - Every slide includes a large visible `MANILA` label without using pill UI.
   - Page 2 is positioned as portfolio proof and uses stronger Manila photos while keeping the first two proof images from the prior layout.
+
+## Manila Model Search Carousel V7 (Improved Direct-Response UI)
+- Source folder: `marketing/manila-model-search-carousel`
+- Render command:
+  - `node marketing/manila-model-search-carousel/render-v7.mjs`
+- Output folder:
+  - `marketing/manila-model-search-carousel/output-v7`
+- Notes:
+  - Exports a five-slide 1080x1920 PNG set for story/reels use.
+  - Keeps `MANILA` clearly visible on every slide.
+  - Uses a more aggressive visual hierarchy and cleaner proof/CTA layouts than V6 while preserving the same message flow.

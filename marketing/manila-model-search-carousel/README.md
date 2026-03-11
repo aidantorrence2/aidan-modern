@@ -120,3 +120,23 @@ Additional V6 notes:
 - Every slide includes a clear visible `MANILA` label without pill styling.
 - Page 2 is reframed as portfolio proof rather than "photo proof".
 - Page 2 keeps the first two proof images and swaps the rest for stronger Manila images.
+
+V7 render (stronger direct-response UI):
+
+```bash
+node marketing/manila-model-search-carousel/render-v7.mjs
+```
+
+V7 outputs:
+
+- `output-v7/01_models_in_manila_story.png`
+- `output-v7/02_portfolio_images_story.png`
+- `output-v7/03_what_you_get_story.png`
+- `output-v7/04_how_the_shoot_works_story.png`
+- `output-v7/05_sign_up_story.png`
+- `output-v7/sources.json`
+
+Additional V7 notes:
+
+- Keeps the V6 five-slide flow but redesigns the layouts for stronger hierarchy and cleaner contrast.
+- Maintains visible `MANILA` labeling on every slide without using pill UI.
