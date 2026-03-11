@@ -162,7 +162,7 @@ function buildAnimatedDM(images) {
     return `<div id="${id}" class="msg" style="display:flex;align-items:flex-end;gap:${AVATAR_GAP}px;margin-bottom:${MSG_MARGIN};opacity:0;transform:scale(0.85);animation:photoIn 0.4s cubic-bezier(0.34,1.56,0.64,1) ${t}s forwards;">
       <div style="width:${AVATAR}px;height:${AVATAR}px;flex-shrink:0;"></div>
       <div style="width:${PHOTO_W}px;height:${PHOTO_H}px;border-radius:${PHOTO_RADIUS}px;overflow:hidden;">
-        <img src="${src}" style="width:112%;height:112%;display:block;object-fit:cover;object-position:center 20%;margin:-6% 0 0 -6%;"/>
+        <img src="${src}" style="width:130%;height:130%;display:block;object-fit:cover;object-position:center 20%;margin:-15% 0 0 -15%;"/>
       </div>
     </div>`
   }
