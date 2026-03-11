@@ -153,3 +153,14 @@
   - Important text is intentionally kept above the lower CTA-safe area so platform overlays do not cover copy.
   - The sign-up button is not baked into the creative; slide 5 tells viewers to use the platform CTA.
   - Source photos come from the top image files in `public/images/large` by sorted filename order and are recorded in `output-v2/sources.json`.
+
+## Manila Model Search Carousel V3 (Manila-Only, No Face Overlays)
+- Source folder: `marketing/manila-model-search-carousel`
+- Render command:
+  - `node marketing/manila-model-search-carousel/render-v3.mjs`
+- Output folder:
+  - `marketing/manila-model-search-carousel/output-v3`
+- Notes:
+  - Exports a five-slide 1080x1920 PNG set for story/reels use.
+  - Uses the top `manila*` prefixed images from `public/images/large` by sorted filename order and records them in `output-v3/sources.json`.
+  - Layout avoids placing text over subjects' faces by using solid copy panels and separate framed photos.
