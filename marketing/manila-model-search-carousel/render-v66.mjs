@@ -108,8 +108,8 @@ function squigglyUnderline(x, y, width, color = PINK, delay = 0) {
 }
 
 function buildAnimatedZine(images) {
-  // Total duration ~22s (video content) + fade to black
-  const TOTAL_DURATION = 22
+  // Total duration ~12s (video content) + fade to black — tight, no dead time
+  const TOTAL_DURATION = 12
 
   // Notebook line pattern
   const notebookLines = Array.from({length: 50}, (_, i) => {
@@ -122,12 +122,12 @@ function buildAnimatedZine(images) {
 
   // MANILA letters configuration
   const manilaLetters = [
-    { char: 'M', font: "'Helvetica Neue',sans-serif", size: 130, color: PINK, bg: 'transparent', rotation: -5, delay: 0.3 },
-    { char: 'A', font: "Georgia,serif", size: 110, color: BLACK, bg: 'transparent', rotation: 3, delay: 0.6, italic: true },
-    { char: 'N', font: "'Courier New',monospace", size: 120, color: CYAN, bg: BLACK, rotation: -2, delay: 0.9 },
-    { char: 'I', font: "'Helvetica Neue',sans-serif", size: 140, color: YELLOW, bg: 'transparent', rotation: 4, delay: 1.2, stroke: true },
-    { char: 'L', font: "Georgia,serif", size: 115, color: RED, bg: 'transparent', rotation: -3, delay: 1.5 },
-    { char: 'A', font: "'Courier New',monospace", size: 125, color: PINK, bg: YELLOW, rotation: 2, delay: 1.8 },
+    { char: 'M', font: "'Helvetica Neue',sans-serif", size: 130, color: PINK, bg: 'transparent', rotation: -5, delay: 0.2 },
+    { char: 'A', font: "Georgia,serif", size: 110, color: BLACK, bg: 'transparent', rotation: 3, delay: 0.35, italic: true },
+    { char: 'N', font: "'Courier New',monospace", size: 120, color: CYAN, bg: BLACK, rotation: -2, delay: 0.5 },
+    { char: 'I', font: "'Helvetica Neue',sans-serif", size: 140, color: YELLOW, bg: 'transparent', rotation: 4, delay: 0.65, stroke: true },
+    { char: 'L', font: "Georgia,serif", size: 115, color: RED, bg: 'transparent', rotation: -3, delay: 0.8 },
+    { char: 'A', font: "'Courier New',monospace", size: 125, color: PINK, bg: YELLOW, rotation: 2, delay: 0.95 },
   ]
 
   let manilaX = 80
@@ -144,7 +144,7 @@ function buildAnimatedZine(images) {
   }).join('\n')
 
   // "models wanted!!" text
-  const modelsWantedDelay = 2.4
+  const modelsWantedDelay = 1.3
   const modelsWantedHTML = `
     <div style="position:absolute;left:110px;top:300px;z-index:15;opacity:0;animation:scrawlIn 0.6s ease ${modelsWantedDelay}s forwards;">
       <span style="font-family:Georgia,serif;font-size:52px;font-style:italic;color:${BLACK};font-weight:400;">models wanted!!</span>
@@ -153,7 +153,7 @@ function buildAnimatedZine(images) {
   `
 
   // "OPEN CALL" pill sticker
-  const openCallDelay = 3.2
+  const openCallDelay = 1.8
   const openCallHTML = `
     <div style="position:absolute;left:680px;top:180px;z-index:30;transform:rotate(12deg);">
       <div style="background:${RED};border-radius:30px;padding:12px 28px;opacity:0;transform:scale(0);animation:slamIn 0.4s cubic-bezier(0.34,1.56,0.64,1) ${openCallDelay}s forwards;">
@@ -164,12 +164,12 @@ function buildAnimatedZine(images) {
 
   // Photo collage build (4-12s)
   const photos = [
-    { key: 'hero', x: 60,  y: 440, w: 280, h: 350, rot: -4, delay: 4.2 },
-    { key: 'heroB', x: 400, y: 480, w: 260, h: 330, rot: 5, delay: 5.2 },
-    { key: 'gridA', x: 180, y: 780, w: 300, h: 380, rot: -3, delay: 6.2 },
-    { key: 'gridB', x: 550, y: 700, w: 240, h: 300, rot: 6, delay: 7.2 },
-    { key: 'gridC', x: 80,  y: 950, w: 270, h: 340, rot: 2, delay: 8.2 },
-    { key: 'gridD', x: 420, y: 1020, w: 280, h: 350, rot: -5, delay: 9.2 },
+    { key: 'hero', x: 60,  y: 440, w: 280, h: 350, rot: -4, delay: 2.2 },
+    { key: 'heroB', x: 400, y: 480, w: 260, h: 330, rot: 5, delay: 2.7 },
+    { key: 'gridA', x: 180, y: 780, w: 300, h: 380, rot: -3, delay: 3.2 },
+    { key: 'gridB', x: 550, y: 700, w: 240, h: 300, rot: 6, delay: 3.7 },
+    { key: 'gridC', x: 80,  y: 950, w: 270, h: 340, rot: 2, delay: 4.2 },
+    { key: 'gridD', x: 420, y: 1020, w: 280, h: 350, rot: -5, delay: 4.7 },
   ]
 
   const photosHTML = photos.map((p, i) =>
@@ -187,32 +187,32 @@ function buildAnimatedZine(images) {
 
   // Doodles between photos
   const doodlesHTML = `
-    <div style="opacity:0;animation:fadeIn 0.3s ease 5.8s forwards;">
+    <div style="opacity:0;animation:fadeIn 0.3s ease 2.9s forwards;">
       ${doodleCircle(350, 520, 70, PINK)}
     </div>
-    <div style="opacity:0;animation:fadeIn 0.3s ease 7.0s forwards;">
+    <div style="opacity:0;animation:fadeIn 0.3s ease 3.5s forwards;">
       ${doodleArrow(730, 850, -25, BLACK)}
     </div>
-    <div style="opacity:0;animation:fadeIn 0.3s ease 8.5s forwards;">
+    <div style="opacity:0;animation:fadeIn 0.3s ease 4.0s forwards;">
       ${doodleCircle(700, 600, 55, CYAN)}
     </div>
-    <div style="opacity:0;animation:fadeIn 0.3s ease 9.5s forwards;">
+    <div style="opacity:0;animation:fadeIn 0.3s ease 4.5s forwards;">
       ${doodleArrow(50, 1100, 15, RED)}
     </div>
   `
 
   // Star burst stickers
   const stickersHTML = `
-    <div style="opacity:0;animation:fadeIn 0.3s ease 6.5s forwards;">
+    <div style="opacity:0;animation:fadeIn 0.3s ease 3.0s forwards;">
       ${starBurst(780, 450, 120, YELLOW, '!!', BLACK, 32)}
     </div>
-    <div style="opacity:0;animation:fadeIn 0.3s ease 9.0s forwards;">
+    <div style="opacity:0;animation:fadeIn 0.3s ease 4.3s forwards;">
       ${starBurst(30, 850, 100, PINK, '✦', '#fff', 28)}
     </div>
   `
 
   // Caption text
-  const captionDelay = 10.0
+  const captionDelay = 5.2
   const captionHTML = `
     <div style="position:absolute;left:480px;top:1360px;z-index:25;opacity:0;transform:rotate(-3deg);animation:fadeIn 0.4s ease ${captionDelay}s forwards;">
       <span style="font-family:'Courier New',monospace;font-size:36px;font-weight:700;color:${BLACK};background:${YELLOW};padding:4px 12px;">this is my work !!</span>
@@ -221,11 +221,11 @@ function buildAnimatedZine(images) {
 
   // Process reveal (12-17s) - scrolls up via keyframes
   // Steps appear in mixed typography
-  const step1Delay = 12.5
-  const step2Delay = 13.5
-  const step3Delay = 14.5
-  const thatsItDelay = 15.5
-  const freeDelay = 16.2
+  const step1Delay = 6.0
+  const step2Delay = 6.8
+  const step3Delay = 7.6
+  const thatsItDelay = 8.4
+  const freeDelay = 9.0
 
   const processHTML = `
     <!-- Step 1 -->
@@ -277,17 +277,17 @@ function buildAnimatedZine(images) {
   const p = (t) => ((t / TOTAL_DURATION) * 100).toFixed(1)
   const scrollKeyframes = `
     0% { transform: translateY(0); }
-    ${p(4)}% { transform: translateY(0); }
-    ${p(10)}% { transform: translateY(-350px); }
-    ${p(12)}% { transform: translateY(-500px); }
-    ${p(13)}% { transform: translateY(-700px); }
-    ${p(15)}% { transform: translateY(-900px); }
-    ${p(17)}% { transform: translateY(-1000px); }
-    ${p(21)}% { transform: translateY(-1000px); }
+    ${p(2)}% { transform: translateY(0); }
+    ${p(4)}% { transform: translateY(-350px); }
+    ${p(5.5)}% { transform: translateY(-500px); }
+    ${p(6.5)}% { transform: translateY(-700px); }
+    ${p(8)}% { transform: translateY(-900px); }
+    ${p(9.5)}% { transform: translateY(-1000px); }
+    ${p(11)}% { transform: translateY(-1000px); }
     100% { transform: translateY(-1000px); }
   `
 
-  const fadeToBlackTime = 21.0
+  const fadeToBlackTime = 10.5
 
   return `<!DOCTYPE html>
 <html>
@@ -484,7 +484,7 @@ async function render() {
 
   // --- Step 1: Record the animated zine video ---
   console.log('Recording animated zine collage video...')
-  const TOTAL_DURATION_MS = 22000
+  const TOTAL_DURATION_MS = 12000
 
   const videoCtx = await browser.newContext({
     viewport: { width: WIDTH, height: HEIGHT },
