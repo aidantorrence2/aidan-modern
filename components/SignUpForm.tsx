@@ -147,7 +147,7 @@ export default function SignUpForm() {
           name="city"
           value={city}
           onChange={e => { setCity(e.target.value); clearStatus() }}
-          className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-white/30 outline-none transition focus:border-accent focus:ring-2 focus:ring-accent/30"
+          className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-white/30 outline-none transition focus:border-emerald-400 focus:ring-2 focus:ring-emerald-400/30"
           placeholder="e.g. Manila, BGC, Makati"
         />
       </div>
@@ -166,7 +166,7 @@ export default function SignUpForm() {
               onClick={() => { setContactMethod(method); setContact(''); clearStatus() }}
               className={`rounded-full border px-5 py-2 text-sm font-semibold transition-all ${
                 contactMethod === method
-                  ? 'border-accent bg-accent/20 text-accent'
+                  ? 'border-emerald-400 bg-emerald-400/20 text-emerald-400'
                   : 'border-white/15 bg-white/5 text-white/60 hover:border-white/30 hover:text-white/80'
               }`}
             >
@@ -180,7 +180,7 @@ export default function SignUpForm() {
           name={contactMethod === 'whatsapp' ? 'whatsapp' : 'instagram'}
           value={contact}
           onChange={e => { setContact(e.target.value); clearStatus() }}
-          className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-white/30 outline-none transition focus:border-accent focus:ring-2 focus:ring-accent/30"
+          className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-white/30 outline-none transition focus:border-emerald-400 focus:ring-2 focus:ring-emerald-400/30"
           placeholder={contactMethod === 'whatsapp' ? '+63 917 123 4567' : '@yourhandle'}
         />
         {contactMethod === 'instagram' && (
@@ -215,7 +215,7 @@ export default function SignUpForm() {
           <button
             type="button"
             onClick={() => fileRef.current?.click()}
-            className="mt-1 flex h-28 w-full items-center justify-center rounded-xl border border-dashed border-white/15 bg-white/5 text-sm text-white/40 transition hover:border-accent/50 hover:text-accent"
+            className="mt-1 flex h-28 w-full items-center justify-center rounded-xl border border-dashed border-white/15 bg-white/5 text-sm text-white/40 transition hover:border-emerald-400/50 hover:text-emerald-400"
           >
             Tap to upload a photo
           </button>
@@ -237,7 +237,7 @@ export default function SignUpForm() {
         <div className="flex items-center gap-3">
           <div className="flex h-1.5 flex-1 overflow-hidden rounded-full bg-white/10">
             <div
-              className="h-full rounded-full bg-accent transition-all duration-500"
+              className="h-full rounded-full bg-emerald-400 transition-all duration-500"
               style={{ width: `${((cityDone ? 1 : 0) + (contactDone ? 1 : 0) + (photoDone ? 1 : 0)) / 3 * 100}%` }}
             />
           </div>
@@ -248,7 +248,7 @@ export default function SignUpForm() {
         <button
           type="submit"
           disabled={submitting}
-          className="w-full rounded-full bg-accent py-3.5 text-sm font-bold text-white shadow-lg shadow-accent/20 transition hover:brightness-110 disabled:opacity-50"
+          className="w-full rounded-full bg-emerald-500 py-3.5 text-sm font-bold text-white shadow-lg shadow-emerald-500/25 transition hover:bg-emerald-400 disabled:opacity-50"
           data-cta="sign-up-submit"
         >
           {submitting ? 'Submitting...' : 'Sign Up'}
