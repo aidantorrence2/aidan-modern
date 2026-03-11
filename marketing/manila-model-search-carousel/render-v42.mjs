@@ -366,7 +366,7 @@ function buildCTA(images) {
         ${cropImg(images.photo5, 420, 560, 'center 25%')}
       </div>
       <div style="position:absolute;top:620px;left:280px;transform:rotate(-1deg);z-index:5;">
-        ${cropImg(images.photo2, 500, 380, 'center 30%')}
+        ${cropImg(images.photo6, 500, 380, 'center 30%')}
       </div>
 
       <!-- Dark gradient overlay to make text pop -->
@@ -381,19 +381,8 @@ function buildCTA(images) {
         <!-- MANILA — huge, white, heavy -->
         <p style="font-family:${SF};font-size:180px;font-weight:900;letter-spacing:0.14em;color:#fff;margin:0;text-transform:uppercase;text-shadow:0 4px 80px rgba(232,68,58,0.4), 0 2px 20px rgba(0,0,0,0.8);">MANILA</p>
 
-        <!-- MODEL SEARCH — light weight, wide tracking -->
-        <p style="font-family:${SF};font-size:38px;font-weight:300;color:rgba(255,255,255,0.9);margin:4px 0 0;letter-spacing:0.3em;text-transform:uppercase;">MODEL SEARCH</p>
-
-        <!-- Divider -->
-        <div style="width:100px;height:1px;background:rgba(255,255,255,0.25);margin:36px auto;"></div>
-
-        <!-- CTA button -->
-        <div style="display:inline-block;background:${MANILA_COLOR};border-radius:40px;padding:20px 70px;box-shadow:0 6px 30px rgba(232,68,58,0.45);">
-          <p style="font-family:${SF};font-size:26px;font-weight:700;color:#fff;margin:0;letter-spacing:0.1em;text-transform:uppercase;">SIGN UP NOW</p>
-        </div>
-
-        <!-- Subtext -->
-        <p style="font-family:${SF};font-size:22px;font-weight:400;color:rgba(255,255,255,0.45);margin:22px 0 0;letter-spacing:0.04em;">60-second form · No experience needed</p>
+        <!-- PHOTO SHOOT — light weight, wide tracking -->
+        <p style="font-family:${SF};font-size:38px;font-weight:300;color:rgba(255,255,255,0.9);margin:4px 0 0;letter-spacing:0.3em;text-transform:uppercase;">PHOTO SHOOT</p>
       </div>
     </div>
   </body></html>`
@@ -410,6 +399,7 @@ async function render() {
     photo3: 'manila-gallery-purple-003.jpg',
     photo4: 'manila-gallery-purple-004.jpg',
     photo5: 'manila-gallery-purple-005.jpg',
+    photo6: 'manila-gallery-purple-006.jpg',
   }
 
   writeSources({ all_considered: all, selected: selection })
