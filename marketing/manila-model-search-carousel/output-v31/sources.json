@@ -1,0 +1,43 @@
+{
+  "createdAt": "2026-03-11T12:15:12.331Z",
+  "strategy": "v31 -- Neon / Club Poster nightlife energy concept with animated proof slide MP4",
+  "safeBottomPixels": 410,
+  "images": {
+    "all_considered": [
+      "manila-gallery-canal-001.jpg",
+      "manila-gallery-canal-002.jpg",
+      "manila-gallery-closeup-001.jpg",
+      "manila-gallery-dsc-0075.jpg",
+      "manila-gallery-dsc-0130.jpg",
+      "manila-gallery-dsc-0190.jpg",
+      "manila-gallery-dsc-0911.jpg",
+      "manila-gallery-floor-001.jpg",
+      "manila-gallery-garden-001.jpg",
+      "manila-gallery-garden-002.jpg",
+      "manila-gallery-graffiti-001.jpg",
+      "manila-gallery-ivy-001.jpg",
+      "manila-gallery-ivy-002.jpg",
+      "manila-gallery-market-001.jpg",
+      "manila-gallery-night-001-original.jpg",
+      "manila-gallery-night-001.jpg",
+      "manila-gallery-night-002.jpg",
+      "manila-gallery-night-003.jpg",
+      "manila-gallery-park-001.jpg",
+      "manila-gallery-rocks-001.jpg"
+    ],
+    "selected": {
+      "hero": "manila-gallery-canal-001.jpg",
+      "gridA": "manila-gallery-closeup-001.jpg",
+      "gridB": "manila-gallery-dsc-0911.jpg",
+      "gridC": "manila-gallery-garden-002.jpg",
+      "gridD": "manila-gallery-night-003.jpg",
+      "gridE": "manila-gallery-dsc-0130.jpg",
+      "gridF": "manila-gallery-canal-002.jpg",
+      "gridG": "manila-gallery-graffiti-001.jpg",
+      "gridH": "manila-gallery-urban-001.jpg",
+      "gridI": "manila-gallery-shadow-001.jpg",
+      "process": "manila-gallery-dsc-0190.jpg",
+      "cta": "manila-gallery-floor-001.jpg"
+    }
+  }
+}
