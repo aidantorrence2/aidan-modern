@@ -301,14 +301,7 @@ function buildAnimatedDM(images) {
           animation: chatScroll ${TOTAL_DURATION}s ease-in-out 0s forwards;
         }
 
-        @keyframes fadeToBlack {
-          0% { opacity: 0; }
-          100% { opacity: 1; }
-        }
-        .fade-to-black {
-          opacity: 0;
-          animation: fadeToBlack 0.3s ease-out ${T.manila}s forwards;
-        }
+        /* conversation ends naturally, no fade */
       </style>
     </head>
     <body>
@@ -358,8 +351,7 @@ function buildAnimatedDM(images) {
             <!-- Bottom gradient fade -->
             <div style="position:absolute;left:0;right:0;bottom:${SAFE_BOTTOM}px;height:80px;background:linear-gradient(0deg, ${IG_BLACK}, transparent);z-index:15;pointer-events:none;"></div>
 
-            <!-- Fade to black (CTA is composited as a separate high-quality screenshot) -->
-            <div class="fade-to-black" style="position:absolute;inset:0;background:${IG_BLACK};z-index:30;pointer-events:none;"></div>
+            <!-- No fade — conversation ends naturally -->
           </div>
         </div>
 
@@ -460,7 +452,7 @@ async function render() {
 
   // --- Step 1: Record the DM conversation video ---
   console.log('Recording animated DM conversation...')
-  const TOTAL_DURATION_MS = 22500 // video fades to black at 21.5s, cut shortly after
+  const TOTAL_DURATION_MS = 24000 // hold on final messages for a few seconds
 
   const videoCtx = await browser.newContext({
     viewport: { width: WIDTH, height: HEIGHT },
@@ -478,22 +470,9 @@ async function render() {
   await videoPage.close()
   await videoCtx.close()
 
-  // --- Step 2: Render CTA as a high-quality screenshot ---
-  console.log('Rendering CTA screenshot...')
-  const ctaCtx = await browser.newContext({
-    viewport: { width: WIDTH, height: HEIGHT },
-    deviceScaleFactor: 1,
-  })
-  const ctaPage = await ctaCtx.newPage()
-  await ctaPage.setContent(buildCTA(images), { waitUntil: 'load' })
-  await ctaPage.waitForTimeout(300)
-  const ctaPath = path.join(OUT_DIR, 'cta_frame.png')
-  await ctaPage.screenshot({ path: ctaPath })
-  await ctaPage.close()
-  await ctaCtx.close()
   await browser.close()
 
-  // --- Step 3: Convert webm to mp4, then concat with CTA still frame ---
+  // --- Step 2: Convert webm to mp4 (conversation ends naturally, no separate CTA) ---
   const videoFiles = fs.readdirSync(OUT_DIR).filter(f => f.endsWith('.webm'))
   if (videoFiles.length === 0) {
     console.error('No video file was generated!')
@@ -501,28 +480,12 @@ async function render() {
   }
 
   const srcVideo = path.join(OUT_DIR, videoFiles[0])
-  const chatMp4 = path.join(OUT_DIR, 'chat_part.mp4')
-  const ctaMp4 = path.join(OUT_DIR, 'cta_part.mp4')
   const finalMp4 = path.join(OUT_DIR, '01_dm_full_story.mp4')
-  const concatFile = path.join(OUT_DIR, 'concat.txt')
 
   try {
-    // Convert chat webm to mp4
-    execSync(`ffmpeg -y -i "${srcVideo}" -c:v libx264 -pix_fmt yuv420p -r 30 -an "${chatMp4}"`, { stdio: 'pipe' })
-
-    // Create 5-second CTA video from static image
-    execSync(`ffmpeg -y -loop 1 -i "${ctaPath}" -c:v libx264 -t 5 -pix_fmt yuv420p -r 30 -vf "scale=${WIDTH}:${HEIGHT}" -an "${ctaMp4}"`, { stdio: 'pipe' })
-
-    // Concat chat + CTA
-    fs.writeFileSync(concatFile, `file '${chatMp4}'\nfile '${ctaMp4}'\n`)
-    execSync(`ffmpeg -y -f concat -safe 0 -i "${concatFile}" -c copy "${finalMp4}"`, { stdio: 'pipe' })
-
-    // Cleanup temp files
+    execSync(`ffmpeg -y -i "${srcVideo}" -c:v libx264 -pix_fmt yuv420p -r 30 -an "${finalMp4}"`, { stdio: 'pipe' })
     fs.unlinkSync(srcVideo)
-    fs.unlinkSync(chatMp4)
-    fs.unlinkSync(ctaMp4)
-    fs.unlinkSync(concatFile)
-    console.log('Rendered 01_dm_full_story.mp4 (chat + CTA)')
+    console.log('Rendered 01_dm_full_story.mp4')
   } catch (err) {
     console.error('ffmpeg error:', err.message)
     fs.renameSync(srcVideo, finalMp4)
