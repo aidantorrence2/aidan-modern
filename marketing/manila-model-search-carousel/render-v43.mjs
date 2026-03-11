@@ -295,7 +295,6 @@ function buildHTML(images) {
     inlinePhoto(images.photo3, 'm-photo3', T.photo3),
     userBubble('ok these are incredible. signing up now', 'm-user3', T.user3),
     aiMessage('Just click sign up below!', 'm-ai3', T.ai3),
-    ctaCard('m-cta', T.ctaCard),
   ].join('\n')
 
   return `<!DOCTYPE html>
