@@ -1,0 +1,42 @@
+{
+  "createdAt": "2026-03-11T07:45:52.998Z",
+  "strategy": "manually selected from sorted manila* files in public/images/large",
+  "safeBottomPixels": 410,
+  "images": {
+    "all_considered": [
+      "manila-gallery-canal-001.jpg",
+      "manila-gallery-canal-002.jpg",
+      "manila-gallery-closeup-001.jpg",
+      "manila-gallery-dsc-0075.jpg",
+      "manila-gallery-dsc-0130.jpg",
+      "manila-gallery-dsc-0190.jpg",
+      "manila-gallery-dsc-0911.jpg",
+      "manila-gallery-floor-001.jpg",
+      "manila-gallery-garden-001.jpg",
+      "manila-gallery-garden-002.jpg",
+      "manila-gallery-graffiti-001.jpg",
+      "manila-gallery-ivy-001.jpg",
+      "manila-gallery-ivy-002.jpg",
+      "manila-gallery-market-001.jpg",
+      "manila-gallery-night-001-original.jpg",
+      "manila-gallery-night-001.jpg",
+      "manila-gallery-night-002.jpg",
+      "manila-gallery-night-003.jpg",
+      "manila-gallery-park-001.jpg",
+      "manila-gallery-rocks-001.jpg"
+    ],
+    "selected": {
+      "hero": "manila-gallery-canal-001.jpg",
+      "banner": "manila-gallery-canal-002.jpg",
+      "keepOne": "manila-gallery-dsc-0190.jpg",
+      "keepTwo": "manila-gallery-dsc-0911.jpg",
+      "proofA": "manila-gallery-market-001.jpg",
+      "proofB": "manila-gallery-garden-002.jpg",
+      "proofC": "manila-gallery-night-003.jpg",
+      "closeup": "manila-gallery-closeup-001.jpg",
+      "softPortrait": "manila-gallery-dsc-0075.jpg",
+      "processPhoto": "manila-gallery-dsc-0911.jpg",
+      "ctaMain": "manila-gallery-floor-001.jpg"
+    }
+  }
+}
