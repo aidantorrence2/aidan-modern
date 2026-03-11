@@ -79,3 +79,23 @@ Additional V4 notes:
 
 - Keeps text out of the lower CTA-safe zone but lets photos run farther toward the bottom.
 - Updates slide 3 to use a different Manila image and simpler, easier process language without selection wording.
+
+V5 render (photo proof sequence):
+
+```bash
+node marketing/manila-model-search-carousel/render-v5.mjs
+```
+
+V5 outputs:
+
+- `output-v5/01_models_in_manila_story.png`
+- `output-v5/02_photo_proof_story.png`
+- `output-v5/03_what_you_get_story.png`
+- `output-v5/04_how_the_shoot_works_story.png`
+- `output-v5/05_sign_up_story.png`
+- `output-v5/sources.json`
+
+Additional V5 notes:
+
+- Removes the FAQ page entirely.
+- Uses the five-page order: hook, photo proof, what you get, how it works, sign up.
