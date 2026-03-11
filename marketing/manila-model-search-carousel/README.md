@@ -181,3 +181,18 @@ Additional V9 notes:
 - Uses a larger `MANILA` treatment on every slide.
 - Removes the small kicker/subheader labels.
 - Makes the page 1 and page 5 images taller portrait frames.
+
+V10 render (larger hero/cta images, rebuilt proof/value pages):
+
+```bash
+node marketing/manila-model-search-carousel/render-v10.mjs
+```
+
+V10 outputs:
+
+- `output-v10/01_models_in_manila_story.png`
+- `output-v10/02_portfolio_images_story.png`
+- `output-v10/03_what_you_get_story.png`
+- `output-v10/04_how_the_shoot_works_story.png`
+- `output-v10/05_sign_up_story.png`
+- `output-v10/sources.json`

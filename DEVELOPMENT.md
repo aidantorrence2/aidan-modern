@@ -237,3 +237,15 @@
   - Enlarges the `MANILA` label across all slides.
   - Removes small kicker labels and uses simpler top-level copy.
   - Uses taller portrait image framing on pages 1 and 5.
+
+## Manila Model Search Carousel V10 (Refined Layout Pass)
+- Source folder: `marketing/manila-model-search-carousel`
+- Render command:
+  - `node marketing/manila-model-search-carousel/render-v10.mjs`
+- Output folder:
+  - `marketing/manila-model-search-carousel/output-v10`
+- Notes:
+  - Exports a five-slide 1080x1920 PNG set for story/reels use.
+  - Enlarges the page 1 and page 5 images further.
+  - Rebuilds page 2 and page 3 layouts for a cleaner, higher-quality presentation.
+  - Makes the page 4 image column wider than in V9.
