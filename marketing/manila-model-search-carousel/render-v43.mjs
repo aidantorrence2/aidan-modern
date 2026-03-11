@@ -17,8 +17,8 @@ const SF = "-apple-system, 'Helvetica Neue', Arial, sans-serif"
 const BG = '#212121'
 const MANILA_COLOR = '#E8443A'
 
-const TOTAL_DURATION = 22
-const TOTAL_DURATION_MS = 24000
+const TOTAL_DURATION = 28
+const TOTAL_DURATION_MS = 30000
 
 function resetOutputDir() {
   fs.rmSync(OUT_DIR, { recursive: true, force: true })
@@ -51,19 +51,20 @@ const AI_LEFT_MARGIN = 60
 
 // Timing (seconds)
 const T = {
-  user1:    0.5,
-  thought1: 2.0,
-  ai1:      2.5,
-  icons1:   3.5,
-  user2:    5.0,
-  searching: 6.0,
-  ai2:      7.0,
-  photo1:   9.0,
-  photo2:   9.6,
-  photo3:   10.2,
-  user3:    12.0,
-  ai3:      13.5,
-  ctaCard:  14.5,
+  user1:     0.5,
+  thinking1: 2.0,   // "Thinking" with animated dots
+  thought1:  3.8,   // "Thought for a few seconds"
+  ai1:       4.2,
+  icons1:    5.5,
+  user2:     7.0,
+  searching: 8.0,
+  ai2:       9.5,
+  photo1:    12.0,
+  photo2:    14.0,  // 2s apart — slower!
+  photo3:    16.0,
+  user3:     18.5,
+  ai3:       20.0,
+  ctaCard:   21.0,
 }
 
 function userBubble(text, id, t) {
@@ -88,6 +89,22 @@ function userBubble(text, id, t) {
   </div>`
 }
 
+function thinkingIndicator(id, showAt, hideAt) {
+  const dur = hideAt - showAt
+  return `<div id="${id}" class="msg" style="
+    margin-bottom:6px;
+    margin-left:${AI_LEFT_MARGIN}px;
+    opacity:0;
+    animation:searchingShow ${dur}s ease-out ${showAt}s forwards;
+  ">
+    <span class="thinking-dots" style="font-family:${SF};font-size:${THOUGHT_FONT}px;color:#9b9b9b;">
+      <span style="display:inline-block;width:14px;height:14px;border-radius:50%;background:#9b9b9b;margin-right:4px;animation:dotPulse 1s infinite 0s;"></span>
+      <span style="display:inline-block;width:14px;height:14px;border-radius:50%;background:#9b9b9b;margin-right:4px;animation:dotPulse 1s infinite 0.2s;"></span>
+      <span style="display:inline-block;width:14px;height:14px;border-radius:50%;background:#9b9b9b;animation:dotPulse 1s infinite 0.4s;"></span>
+    </span>
+  </div>`
+}
+
 function thoughtLabel(id, t) {
   return `<div id="${id}" class="msg" style="
     margin-bottom:6px;
@@ -95,7 +112,7 @@ function thoughtLabel(id, t) {
     opacity:0;
     animation:msgIn 0.3s ease-out ${t}s forwards;
   ">
-    <span style="font-family:${SF};font-size:${THOUGHT_FONT}px;color:#9b9b9b;">Thought for a couple of seconds</span>
+    <span style="font-family:${SF};font-size:${THOUGHT_FONT}px;color:#9b9b9b;">Thought for a few seconds</span>
   </div>`
 }
 
@@ -200,7 +217,7 @@ function ctaCard(id, t) {
         color:#aaa;
         margin:0 0 24px;
         line-height:1.4;
-      ">60-second form. I'll message you<br>back within a day.</p>
+      ">It takes just a minute.<br>I'll message you back within a day.</p>
       <div style="
         display:inline-block;
         background:${MANILA_COLOR};
@@ -251,32 +268,33 @@ function buildHTML(images) {
   // After ai3 (13.5s): 3714px -> need ~2284px
   // After CTA card (14.5s): 4254px -> need ~2824px
 
+  // Slower scroll — each photo gets time to breathe
   const scrollKeyframes = `
     0% { transform: translateY(0); }
-    ${p(8.5)}% { transform: translateY(0); }
-    ${p(9.3)}% { transform: translateY(-200px); }
-    ${p(9.8)}% { transform: translateY(-900px); }
-    ${p(10.5)}% { transform: translateY(-1700px); }
-    ${p(11.2)}% { transform: translateY(-2200px); }
-    ${p(12.5)}% { transform: translateY(-2300px); }
-    ${p(14.0)}% { transform: translateY(-2500px); }
-    ${p(15.5)}% { transform: translateY(-3100px); }
+    ${p(11)}% { transform: translateY(0); }
+    ${p(12.5)}% { transform: translateY(-400px); }
+    ${p(14)}% { transform: translateY(-1100px); }
+    ${p(16)}% { transform: translateY(-1800px); }
+    ${p(17.5)}% { transform: translateY(-2500px); }
+    ${p(19)}% { transform: translateY(-2700px); }
+    ${p(21.5)}% { transform: translateY(-3100px); }
     100% { transform: translateY(-3100px); }
   `
 
   const allMessages = [
-    userBubble('I want professional photos taken in Manila but I\'ve never modeled. What should I do?', 'm-user1', T.user1),
+    userBubble('I want to get professional photos taken in Manila. I have zero modeling experience — is that even possible?', 'm-user1', T.user1),
+    thinkingIndicator('m-thinking1', T.thinking1, T.thought1),
     thoughtLabel('m-thought1', T.thought1),
-    aiMessage('Here\'s what I\'d recommend:<br><br>1. Find a photographer who directs<br>2. Look for open model calls<br>3. Don\'t worry about experience', 'm-ai1', T.ai1),
+    aiMessage('Absolutely. Most people who do photo shoots have never modeled before — you don\'t need experience if you have a photographer who directs you through it.', 'm-ai1', T.ai1),
     iconRow('m-icons1', T.icons1),
-    userBubble('know anyone doing this right now?', 'm-user2', T.user2),
+    userBubble('is there anyone in Manila doing this right now?', 'm-user2', T.user2),
     searchingStatus('m-searching', T.searching, T.ai2),
-    aiMessage('@madebyaidan is running a Manila Model Search<br><br>&bull; Sign up (60 second form)<br>&bull; He plans date + vibe with you<br>&bull; Show up — he directs everything<br>&bull; Edited photos in a week<br><br>Here are recent shots:', 'm-ai2', T.ai2),
+    aiMessage('@madebyaidan is running a photo shoot in Manila right now:<br><br>&bull; Sign up — it takes just a minute<br>&bull; He\'ll message you to plan the shoot<br>&bull; Show up — he directs everything<br>&bull; Edited photos delivered in a week<br><br>Here are some recent shots:', 'm-ai2', T.ai2),
     inlinePhoto(images.photo1, 'm-photo1', T.photo1),
     inlinePhoto(images.photo2, 'm-photo2', T.photo2),
     inlinePhoto(images.photo3, 'm-photo3', T.photo3),
-    userBubble('signing up right now', 'm-user3', T.user3),
-    aiMessage('Here\'s the link — it takes 60 seconds.', 'm-ai3', T.ai3),
+    userBubble('ok these are incredible. signing up now', 'm-user3', T.user3),
+    aiMessage('Just click sign up below!', 'm-ai3', T.ai3),
     ctaCard('m-cta', T.ctaCard),
   ].join('\n')
 
@@ -314,6 +332,10 @@ function buildHTML(images) {
         40%      { content: 'Thinking.'; }
         60%      { content: 'Thinking..'; }
         80%,100% { content: 'Thinking...'; }
+      }
+      @keyframes dotPulse {
+        0%, 60%, 100% { opacity: 0.3; transform: scale(1); }
+        30% { opacity: 1; transform: scale(1.3); }
       }
       @keyframes chatScroll {
         ${scrollKeyframes}
