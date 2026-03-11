@@ -12,27 +12,38 @@ const SF = "-apple-system, 'Helvetica Neue', Arial, sans-serif"
 const MANILA_COLOR = '#E8443A'
 const SPOTIFY_GREEN = '#1ED760'
 
-// 10 lyrics x 2.7s = 27s + 0.5s initial pause = 27.5s, hold last lyric 3s extra
-const INITIAL_PAUSE = 0.5
-const LYRIC_DURATION = 2.7  // seconds per lyric
-const LYRICS_COUNT = 10
-const LAST_HOLD = 3.0  // extra hold on final lyric
-const TOTAL_ANIM_S = INITIAL_PAUSE + LYRICS_COUNT * LYRIC_DURATION + LAST_HOLD // ~30.5s
-const TOTAL_DURATION_MS = Math.ceil(TOTAL_ANIM_S * 1000)
-
-const LYRICS = [
-  { text: 'she DM\'d me out of nowhere', photo: 'manila-gallery-purple-001.jpg', purple: true },
-  { text: 'said she wanted to shoot in Manila', photo: 'manila-gallery-purple-003.jpg', purple: true },
-  { text: 'she\'d never modeled before', photo: 'manila-gallery-purple-005.jpg', purple: true },
-  { text: 'I said just show up', photo: 'manila-gallery-garden-001.jpg', purple: false },
-  { text: 'I\'ll direct everything', photo: 'manila-gallery-purple-006.jpg', purple: true },
-  { text: 'these are the photos', photo: 'manila-gallery-purple-002.jpg', purple: true },
-  { text: 'from a single afternoon', photo: 'manila-gallery-purple-004.jpg', purple: true },
-  { text: 'sign up below', photo: 'manila-gallery-purple-001.jpg', purple: true, cta: true },
-  { text: '60-second form', photo: 'manila-gallery-purple-003.jpg', purple: true, cta: true },
-  { text: 'limited spots this month', photo: 'manila-gallery-purple-005.jpg', purple: true, cta: true },
+/* ── Clean photos only (no purple film borders) ── */
+const PHOTOS = [
+  'manila-gallery-garden-001.jpg',
+  'manila-gallery-dsc-0075.jpg',
+  'manila-gallery-dsc-0190.jpg',
+  'manila-gallery-night-001.jpg',
+  'manila-gallery-canal-001.jpg',
+  'manila-gallery-ivy-001.jpg',
+  'manila-gallery-graffiti-001.jpg',
+  'manila-gallery-urban-001.jpg',
 ]
 
+/* ── Lyrics with individual timing ── */
+const LYRICS = [
+  { text: 'she messaged me on Instagram',   dur: 2.5 },
+  { text: 'said she wanted photos in Manila', dur: 2.5 },
+  { text: "she'd never done a shoot before", dur: 2.5 },
+  { text: "I said don't worry",              dur: 2.0 },
+  { text: 'just show up \u2014 I direct everything', dur: 2.5 },
+  { text: 'we shot for two hours in BGC',    dur: 2.5 },
+  { text: 'and this is what we got',         dur: 4.0 }, // hold + fast photo cycle
+  { text: 'sign up below',                  dur: 2.5, cta: true },
+  { text: 'it takes just a minute',          dur: 3.0, cta: true, last: true },
+]
+
+// Compute cumulative start times
+let _t = 0
+const LYRIC_TIMES = LYRICS.map(l => { const s = _t; _t += l.dur; return s })
+const TOTAL_DURATION = _t // ~24s
+const TOTAL_DURATION_MS = Math.ceil(TOTAL_DURATION * 1000) + 2000 // 2s buffer for recording
+
+/* ── Helpers ── */
 function resetOutputDir() {
   fs.rmSync(OUT_DIR, { recursive: true, force: true })
   fs.mkdirSync(OUT_DIR, { recursive: true })
@@ -47,247 +58,392 @@ function writeSources(payload) {
   fs.writeFileSync(path.join(OUT_DIR, 'sources.json'), JSON.stringify(payload, null, 2))
 }
 
-function buildVisualLyrics(imageDataMap) {
-  // Total animation length for CSS percentage calculations
-  const ANIM_TOTAL = TOTAL_ANIM_S
-  const pct = (s) => ((s / ANIM_TOTAL) * 100).toFixed(2)
+/* ── Build the full HTML page ── */
+function buildHTML(imageDataMap) {
+  const pct = (s) => ((s / TOTAL_DURATION) * 100).toFixed(3)
 
-  // Build photo layer keyframes — each photo fades in during its lyric slot
-  // Photo crossfade: 0.6s transition
-  const CROSSFADE = 0.6
-  let photoKeyframes = ''
-  let photoHTML = ''
+  // ── Background photo crossfade keyframes ──
+  // Normal: crossfade every ~3s. During "and this is what we got" (lyric 6), cycle every 1s.
+  // We pre-assign photos to time slots.
+  const NORMAL_INTERVAL = 3.0
+  const FAST_INTERVAL = 1.0
+  const lyric6Start = LYRIC_TIMES[6]
+  const lyric6End = lyric6Start + LYRICS[6].dur
 
-  LYRICS.forEach((lyric, i) => {
-    const start = INITIAL_PAUSE + i * LYRIC_DURATION
-    const end = start + LYRIC_DURATION
-    const imgSrc = imageDataMap[lyric.photo]
-    const isPurple = lyric.purple
+  // Build photo schedule: [{start, end, photo}]
+  const photoSchedule = []
+  let t = 0
+  let photoIdx = 0
+  while (t < TOTAL_DURATION) {
+    const isFastZone = t >= lyric6Start && t < lyric6End
+    const interval = isFastZone ? FAST_INTERVAL : NORMAL_INTERVAL
+    const end = Math.min(t + interval, TOTAL_DURATION)
+    photoSchedule.push({ start: t, end, photo: PHOTOS[photoIdx % PHOTOS.length] })
+    photoIdx++
+    t = end
+  }
 
-    // Image styling for purple film border crops
-    const imgStyle = isPurple
-      ? 'width:130%;height:130%;object-fit:cover;object-position:center center;margin:-15% 0 0 -15%;'
-      : 'width:100%;height:100%;object-fit:cover;object-position:center 20%;'
+  // Each photo layer gets opacity keyframes
+  const FADE = 0.5
+  let bgHTML = ''
+  let bgCSS = ''
+  photoSchedule.forEach((slot, i) => {
+    const src = imageDataMap[slot.photo]
+    bgHTML += `<div class="bg bg-${i}" style="background-image:url('${src}')"></div>\n`
 
-    photoHTML += `
-      <div class="photo-layer photo-${i}" style="position:absolute;inset:0;opacity:0;">
-        <img src="${imgSrc}" style="
-          position:absolute;inset:0;display:block;
-          ${imgStyle}
-          filter:brightness(0.4) saturate(1.2);
-        "/>
-      </div>
+    // Build keyframe: opacity 0 -> 1 at start, 1 -> 0 at end
+    const fadeInStart = Math.max(0, slot.start - FADE)
+    const fadeOutEnd = Math.min(TOTAL_DURATION, slot.end + FADE)
+    const isLast = i === photoSchedule.length - 1
+
+    bgCSS += `
+      @keyframes bg${i} {
+        0%, ${pct(fadeInStart)}% { opacity: 0; }
+        ${pct(slot.start)}% { opacity: 1; }
+        ${pct(slot.end)}% { opacity: 1; }
+        ${isLast ? `100% { opacity: 1; }` : `${pct(fadeOutEnd)}% { opacity: 0; } 100% { opacity: 0; }`}
+      }
+      .bg-${i} { animation: bg${i} ${TOTAL_DURATION}s linear forwards; }
     `
-
-    // First photo starts visible
-    if (i === 0) {
-      photoKeyframes += `
-        @keyframes photo${i} {
-          0% { opacity:1; transform:scale(1); }
-          ${pct(start)}% { opacity:1; transform:scale(1); }
-          ${pct(end - CROSSFADE)}% { opacity:1; transform:scale(1.08); }
-          ${pct(end)}% { opacity:0; transform:scale(1.08); }
-          100% { opacity:0; transform:scale(1.08); }
-        }
-      `
-    } else if (i === LYRICS.length - 1) {
-      // Last photo stays until the end
-      photoKeyframes += `
-        @keyframes photo${i} {
-          0%, ${pct(start - CROSSFADE)}% { opacity:0; transform:scale(1); }
-          ${pct(start)}% { opacity:1; transform:scale(1); }
-          100% { opacity:1; transform:scale(1.08); }
-        }
-      `
-    } else {
-      photoKeyframes += `
-        @keyframes photo${i} {
-          0%, ${pct(start - CROSSFADE)}% { opacity:0; transform:scale(1); }
-          ${pct(start)}% { opacity:1; transform:scale(1); }
-          ${pct(end - CROSSFADE)}% { opacity:1; transform:scale(1.08); }
-          ${pct(end)}% { opacity:0; transform:scale(1.08); }
-          100% { opacity:0; transform:scale(1.08); }
-        }
-      `
-    }
   })
 
-  // Build lyric text keyframes — fade in, stay, fade out
-  const LYRIC_FADE_IN = 0.4
-  const LYRIC_FADE_OUT = 0.3
-  let lyricKeyframes = ''
-  let lyricHTML = ''
+  // ── Lyrics area ──
+  // We show a vertical stack of lyric lines. Each line appears at its start time,
+  // the active line is bright/large, previous lines dim, and the whole block scrolls up.
+  // We use CSS keyframes for each line's state transitions.
+  const LYRICS_TOP = 200 // top of lyrics area
+  const LYRICS_BOTTOM = HEIGHT - SAFE_BOTTOM // bottom of lyrics area
+  const LINE_HEIGHT_ACTIVE = 90 // px spacing for active line
+  const LINE_HEIGHT_INACTIVE = 75
+  const ACTIVE_Y = 500 // vertical position of the active line (from top of lyrics area)
+
+  // Each lyric line: starts invisible, becomes active (bright, large) at its time,
+  // then dims and slides up as subsequent lyrics appear.
+  let lyricsHTML = ''
+  let lyricsCSS = ''
 
   LYRICS.forEach((lyric, i) => {
-    const start = INITIAL_PAUSE + i * LYRIC_DURATION
-    const end = start + LYRIC_DURATION
-    const isLast = i === LYRICS.length - 1
+    const startT = LYRIC_TIMES[i]
     const isCta = lyric.cta
+    const isLast = lyric.last
+    const color = (isCta && lyric.text === 'sign up below') ? MANILA_COLOR : '#fff'
 
-    // CTA lyrics get slightly different styling
-    const fontSize = isCta ? '64px' : '72px'
-    const fontWeight = isCta ? '700' : '800'
-    const color = isCta && i === 7 ? MANILA_COLOR : '#fff' // "sign up below" in red
+    lyricsHTML += `<div class="lyric lyric-${i}" style="color:${color}">${lyric.text}</div>\n`
 
-    lyricHTML += `
-      <div class="lyric-text lyric-${i}" style="
-        position:absolute;
-        left:60px;right:60px;
-        top:50%;transform:translateY(-50%) translateY(10px);
-        font-family:${SF};
-        font-size:${fontSize};
-        font-weight:${fontWeight};
-        color:${color};
-        line-height:1.15;
-        text-align:center;
-        opacity:0;
-        text-shadow:0 4px 30px rgba(0,0,0,0.8), 0 0 60px rgba(0,0,0,0.5);
-      ">${lyric.text}</div>
-    `
+    // Build keyframe for this lyric:
+    // Before its time: opacity 0, translateY at waiting position (below active)
+    // At its time: opacity 1, large font, at ACTIVE_Y
+    // After next lyric starts: dim, smaller, slide up
+    // Each subsequent lyric pushes this one up by LINE_HEIGHT_INACTIVE
 
-    if (isLast) {
-      // Last lyric stays visible until end
-      lyricKeyframes += `
-        @keyframes lyric${i} {
-          0%, ${pct(start)}% {
-            opacity:0; transform:translateY(-50%) translateY(10px);
-          }
-          ${pct(start + LYRIC_FADE_IN)}% {
-            opacity:1; transform:translateY(-50%) translateY(0);
-          }
-          100% {
-            opacity:1; transform:translateY(-50%) translateY(0);
-          }
+    let kf = ''
+    const fadeIn = 0.3
+
+    // Phase 1: invisible until just before activation
+    kf += `0%, ${pct(Math.max(0, startT - fadeIn))}% {
+      opacity: 0;
+      font-size: 56px;
+      font-weight: 600;
+      transform: translateY(${ACTIVE_Y + 30}px);
+      color: ${color};
+    }\n`
+
+    // Phase 2: active — bright and large
+    kf += `${pct(startT + fadeIn)}% {
+      opacity: 1;
+      font-size: 68px;
+      font-weight: 800;
+      transform: translateY(${ACTIVE_Y}px);
+      color: ${color};
+      text-shadow: 0 0 40px rgba(255,255,255,0.3), 0 4px 20px rgba(0,0,0,0.8);
+    }\n`
+
+    if (!isLast) {
+      // Phase 3: when next lyric activates, this one dims and moves up
+      const nextStart = LYRIC_TIMES[i + 1]
+      const dimStart = nextStart - fadeIn
+      const dimEnd = nextStart + fadeIn
+
+      kf += `${pct(dimStart)}% {
+        opacity: 1;
+        font-size: 68px;
+        font-weight: 800;
+        transform: translateY(${ACTIVE_Y}px);
+      }\n`
+
+      // Calculate how far up to slide: each subsequent lyric pushes this up
+      let yOffset = ACTIVE_Y
+      for (let j = i + 1; j < LYRICS.length; j++) {
+        const jStart = LYRIC_TIMES[j]
+        const jFade = jStart + fadeIn
+        yOffset -= LINE_HEIGHT_INACTIVE
+
+        // If this lyric would go off-screen (above lyrics top), fade it out
+        if (yOffset < -50) {
+          kf += `${pct(jFade)}% {
+            opacity: 0;
+            font-size: 56px;
+            font-weight: 600;
+            transform: translateY(${yOffset + LINE_HEIGHT_INACTIVE}px);
+          }\n`
+          break
         }
-      `
-    } else {
-      lyricKeyframes += `
-        @keyframes lyric${i} {
-          0%, ${pct(start)}% {
-            opacity:0; transform:translateY(-50%) translateY(10px);
-          }
-          ${pct(start + LYRIC_FADE_IN)}% {
-            opacity:1; transform:translateY(-50%) translateY(0);
-          }
-          ${pct(end - LYRIC_FADE_OUT)}% {
-            opacity:1; transform:translateY(-50%) translateY(0);
-          }
-          ${pct(end)}% {
-            opacity:0; transform:translateY(-50%) translateY(-10px);
-          }
-          100% {
-            opacity:0; transform:translateY(-50%) translateY(-10px);
-          }
-        }
-      `
+
+        const opacity = Math.max(0.15, 0.25 - (j - i - 1) * 0.05)
+        kf += `${pct(jFade)}% {
+          opacity: ${opacity.toFixed(2)};
+          font-size: 56px;
+          font-weight: 600;
+          transform: translateY(${yOffset}px);
+        }\n`
+      }
     }
+
+    // End state
+    if (isLast) {
+      kf += `100% {
+        opacity: 1;
+        font-size: 68px;
+        font-weight: 800;
+        transform: translateY(${ACTIVE_Y}px);
+        color: ${color};
+        text-shadow: 0 0 40px rgba(255,255,255,0.3), 0 4px 20px rgba(0,0,0,0.8);
+      }\n`
+    } else {
+      // Keep wherever we ended up
+      const finalY = ACTIVE_Y - (LYRICS.length - 1 - i) * LINE_HEIGHT_INACTIVE
+      kf += `100% {
+        opacity: ${finalY < -50 ? 0 : 0.15};
+        font-size: 56px;
+        font-weight: 600;
+        transform: translateY(${Math.max(finalY, -100)}px);
+      }\n`
+    }
+
+    lyricsCSS += `
+      @keyframes lyric${i} { ${kf} }
+      .lyric-${i} { animation: lyric${i} ${TOTAL_DURATION}s linear forwards; }
+    `
   })
 
-  // Progress bar: song is 3:27 = 207s, we show ~24s of progress starting at 0:24
-  const songTotalS = 207
+  // ── Progress bar timing ──
+  const songTotalS = 207 // 3:27 song
   const songStartS = 24
   const progressStartPct = (songStartS / songTotalS * 100).toFixed(1)
-  const progressEndPct = ((songStartS + TOTAL_ANIM_S) / songTotalS * 100).toFixed(1)
-
-  // Timestamp animation — we'll just use static start/end
+  const progressEndPct = ((songStartS + TOTAL_DURATION) / songTotalS * 100).toFixed(1)
   const formatTime = (s) => `${Math.floor(s / 60)}:${String(Math.floor(s % 60)).padStart(2, '0')}`
   const timeStart = formatTime(songStartS)
   const timeEnd = formatTime(songTotalS)
 
-  // First album art for the corner thumbnail
-  const cornerArtSrc = imageDataMap[LYRICS[0].photo]
+  // Album art thumbnail (first clean photo)
+  const albumArtSrc = imageDataMap[PHOTOS[0]]
 
   return `<!DOCTYPE html>
 <html>
 <head>
-  <style>
-    * { box-sizing:border-box;margin:0;padding:0; }
-    html, body {
-      margin:0;padding:0;background:#000;
-      -webkit-font-smoothing:antialiased;
-    }
+<style>
+  * { box-sizing:border-box; margin:0; padding:0; }
+  html, body {
+    margin:0; padding:0; background:#000;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
 
-    /* Photo layer animations */
-    ${photoKeyframes}
+  #root {
+    width: ${WIDTH}px;
+    height: ${HEIGHT}px;
+    position: relative;
+    overflow: hidden;
+    background: #000;
+  }
 
-    ${LYRICS.map((_, i) => `
-      .photo-${i} {
-        animation: photo${i} ${ANIM_TOTAL}s linear forwards;
-      }
-    `).join('')}
+  /* ── Background photos ── */
+  .bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center 20%;
+    opacity: 0;
+    filter: brightness(0.35) saturate(1.1);
+    transform: scale(1.05);
+  }
 
-    /* Lyric text animations */
-    ${lyricKeyframes}
+  ${bgCSS}
 
-    ${LYRICS.map((_, i) => `
-      .lyric-${i} {
-        animation: lyric${i} ${ANIM_TOTAL}s linear forwards;
-      }
-    `).join('')}
+  /* ── Lyrics container ── */
+  .lyrics-container {
+    position: absolute;
+    left: 50px;
+    right: 50px;
+    top: ${LYRICS_TOP}px;
+    bottom: ${SAFE_BOTTOM + 160}px;
+    z-index: 10;
+    overflow: hidden;
+  }
 
-    /* Progress bar fill */
-    @keyframes progressFill {
-      0% { width: ${progressStartPct}%; }
-      100% { width: ${progressEndPct}%; }
-    }
+  .lyric {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    font-family: ${SF};
+    font-size: 56px;
+    font-weight: 600;
+    color: #fff;
+    line-height: 1.15;
+    text-align: left;
+    opacity: 0;
+    text-shadow: 0 4px 20px rgba(0,0,0,0.8);
+    will-change: transform, opacity, font-size;
+  }
 
-    /* Timestamp update */
-    @keyframes timestampTick {
-      0% { content: "${timeStart}"; }
-      100% { content: "${formatTime(songStartS + TOTAL_ANIM_S)}"; }
-    }
-  </style>
+  ${lyricsCSS}
+
+  /* ── Now Playing bar ── */
+  .now-playing {
+    position: absolute;
+    left: 36px;
+    right: 36px;
+    bottom: ${SAFE_BOTTOM + 20}px;
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .album-art {
+    width: 80px;
+    height: 80px;
+    border-radius: 8px;
+    overflow: hidden;
+    flex-shrink: 0;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+  }
+
+  .album-art img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .song-info {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .song-title {
+    font-family: ${SF};
+    font-size: 32px;
+    font-weight: 700;
+    color: #fff;
+    margin: 0;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.6);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .song-artist {
+    font-family: ${SF};
+    font-size: 24px;
+    font-weight: 400;
+    color: rgba(255,255,255,0.7);
+    margin: 4px 0 0;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+  }
+
+  /* ── Progress bar ── */
+  .progress-container {
+    position: absolute;
+    left: 36px;
+    right: 36px;
+    bottom: ${SAFE_BOTTOM + 110}px;
+    z-index: 20;
+  }
+
+  .progress-track {
+    width: 100%;
+    height: 4px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 2px;
+    position: relative;
+  }
+
+  .progress-fill {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    background: ${SPOTIFY_GREEN};
+    border-radius: 2px;
+    width: ${progressStartPct}%;
+    animation: progressFill ${TOTAL_DURATION}s linear forwards;
+  }
+
+  .progress-dot {
+    position: absolute;
+    top: 50%;
+    right: -5px;
+    transform: translateY(-50%);
+    width: 10px;
+    height: 10px;
+    background: #fff;
+    border-radius: 50%;
+  }
+
+  @keyframes progressFill {
+    0% { width: ${progressStartPct}%; }
+    100% { width: ${progressEndPct}%; }
+  }
+
+  .timestamps {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 8px;
+  }
+
+  .timestamp {
+    font-family: ${SF};
+    font-size: 22px;
+    font-weight: 400;
+    color: rgba(255,255,255,0.5);
+    text-shadow: 0 1px 4px rgba(0,0,0,0.5);
+  }
+</style>
 </head>
 <body>
-  <div id="root" style="
-    width:${WIDTH}px;height:${HEIGHT}px;position:relative;overflow:hidden;background:#000;
-  ">
+  <div id="root">
 
-    <!-- ===== FULL-SCREEN PHOTO BACKGROUNDS ===== -->
-    ${photoHTML}
+    <!-- Background photos -->
+    ${bgHTML}
 
-    <!-- ===== LYRICS OVERLAY (centered vertically) ===== -->
-    <div style="position:absolute;inset:0;z-index:10;pointer-events:none;">
-      ${lyricHTML}
+    <!-- Lyrics area -->
+    <div class="lyrics-container">
+      ${lyricsHTML}
     </div>
 
-    <!-- ===== SPOTIFY TOP BAR (minimal) ===== -->
-    <div style="
-      position:absolute;top:0;left:0;right:0;z-index:20;
-      padding:54px 24px 0;
-      display:flex;align-items:center;gap:12px;
-    ">
-      <!-- Small album art thumbnail -->
-      <div style="
-        width:52px;height:52px;border-radius:4px;overflow:hidden;flex-shrink:0;
-      ">
-        <img src="${cornerArtSrc}" style="
-          width:130%;height:130%;object-fit:cover;object-position:center center;
-          display:block;margin:-15% 0 0 -15%;
-        "/>
+    <!-- Progress bar -->
+    <div class="progress-container">
+      <div class="progress-track">
+        <div class="progress-fill">
+          <div class="progress-dot"></div>
+        </div>
       </div>
-      <div>
-        <p style="font-family:${SF};font-size:16px;font-weight:700;color:#fff;margin:0;text-shadow:0 1px 8px rgba(0,0,0,0.6);">Manila Photo Shoot</p>
-        <p style="font-family:${SF};font-size:14px;font-weight:400;color:rgba(255,255,255,0.7);margin:2px 0 0;text-shadow:0 1px 8px rgba(0,0,0,0.6);">madebyaidan</p>
+      <div class="timestamps">
+        <span class="timestamp" id="timeElapsed">${timeStart}</span>
+        <span class="timestamp">${timeEnd}</span>
       </div>
     </div>
 
-    <!-- ===== GREEN PROGRESS BAR (above SAFE_BOTTOM) ===== -->
-    <div style="
-      position:absolute;left:48px;right:48px;bottom:${SAFE_BOTTOM + 40}px;z-index:20;
-    ">
-      <div style="position:relative;width:100%;height:3px;background:rgba(255,255,255,0.2);border-radius:2px;">
-        <div style="
-          position:absolute;left:0;top:0;height:100%;
-          background:${SPOTIFY_GREEN};border-radius:2px;
-          width:${progressStartPct}%;
-          animation:progressFill ${TOTAL_ANIM_S}s linear forwards;
-        "></div>
+    <!-- Now Playing bar -->
+    <div class="now-playing">
+      <div class="album-art">
+        <img src="${albumArtSrc}" alt="Album art" />
       </div>
-      <!-- Timestamps -->
-      <div style="display:flex;justify-content:space-between;margin-top:6px;">
-        <p id="timeElapsed" style="font-family:${SF};font-size:11px;font-weight:400;color:rgba(255,255,255,0.5);margin:0;text-shadow:0 1px 4px rgba(0,0,0,0.5);">${timeStart}</p>
-        <p style="font-family:${SF};font-size:11px;font-weight:400;color:rgba(255,255,255,0.5);margin:0;text-shadow:0 1px 4px rgba(0,0,0,0.5);">${timeEnd}</p>
+      <div class="song-info">
+        <p class="song-title">Manila Photo Shoot</p>
+        <p class="song-artist">madebyaidan</p>
       </div>
     </div>
 
@@ -310,40 +466,34 @@ function buildVisualLyrics(imageDataMap) {
 </html>`
 }
 
+/* ── Main render function ── */
 async function render() {
   resetOutputDir()
 
-  // Collect unique photos needed
-  const uniquePhotos = new Set()
-  LYRICS.forEach(l => uniquePhotos.add(l.photo))
-
+  // Load all photos as base64 data URIs
   const imageDataMap = {}
-  for (const photoFile of uniquePhotos) {
-    imageDataMap[photoFile] = readImage(photoFile)
+  for (const photo of PHOTOS) {
+    imageDataMap[photo] = readImage(photo)
   }
 
   writeSources({
     createdAt: new Date().toISOString(),
-    strategy: 'v60 — Full-screen photo backgrounds with HUGE story-driven lyrics, Spotify overlay, natural CTA ending',
+    strategy: 'v60 rebuild — Spotify full-screen lyrics with scrolling active line, clean photos only',
     safeBottomPixels: SAFE_BOTTOM,
     lyrics: LYRICS.map(l => l.text),
-    images: {
-      lyricPhotos: LYRICS.map(l => l.photo),
-    },
+    photos: PHOTOS,
     timing: {
-      lyricDuration: LYRIC_DURATION,
-      totalLyrics: LYRICS_COUNT,
-      lastHold: LAST_HOLD,
-      totalRecording: TOTAL_ANIM_S,
+      lyrics: LYRICS.map((l, i) => ({ text: l.text, start: LYRIC_TIMES[i], dur: l.dur })),
+      totalDuration: TOTAL_DURATION,
     },
   })
 
   const { execSync } = await import('child_process')
   const browser = await chromium.launch()
 
-  // --- Record the visual lyrics video (CTA integrated as final lyrics) ---
-  console.log('Recording visual lyrics animation...')
-  console.log(`  ${LYRICS_COUNT} lyrics x ${LYRIC_DURATION}s + ${LAST_HOLD}s hold = ${TOTAL_ANIM_S.toFixed(1)}s total`)
+  console.log('Recording Spotify full-screen lyrics animation...')
+  console.log(`  ${LYRICS.length} lyrics, total duration: ${TOTAL_DURATION}s`)
+  console.log(`  Recording for ${TOTAL_DURATION_MS}ms`)
 
   const videoCtx = await browser.newContext({
     viewport: { width: WIDTH, height: HEIGHT },
@@ -355,15 +505,24 @@ async function render() {
   })
 
   const videoPage = await videoCtx.newPage()
-  const animationHTML = buildVisualLyrics(imageDataMap)
-  await videoPage.setContent(animationHTML, { waitUntil: 'load' })
-  await videoPage.waitForTimeout(500)
+
+  // Set background to black BEFORE loading content to prevent white flash
+  await videoPage.evaluate(() => {
+    document.documentElement.style.background = '#000'
+    document.body.style.background = '#000'
+  })
+
+  const html = buildHTML(imageDataMap)
+  await videoPage.setContent(html, { waitUntil: 'load' })
+
+  // No initial wait — go straight into recording
   await videoPage.waitForTimeout(TOTAL_DURATION_MS)
+
   await videoPage.close()
   await videoCtx.close()
   await browser.close()
 
-  // --- Convert webm to mp4 (single file, no concat) ---
+  // Convert webm to mp4
   const videoFiles = fs.readdirSync(OUT_DIR).filter(f => f.endsWith('.webm'))
   if (videoFiles.length === 0) {
     console.error('No video file was generated!')
