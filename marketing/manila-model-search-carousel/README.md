@@ -628,3 +628,34 @@ Additional V27 notes:
 - All text above SAFE_BOTTOM (410px). Images have less than 10% crop.
 - Dark background (#0a0a0a) throughout for cinematic feel.
 - Uses 9 manila-gallery images (street-001, garden-002, closeup-001, rocks-001, graffiti-001, ivy-001, urban-001, tropical-001, statue-001).
+
+V32 render (Swiss/International Typographic Style, ultra minimal grid):
+
+```bash
+node marketing/manila-model-search-carousel/render-v32.mjs
+```
+
+V32 outputs:
+
+- `output-v32/01_hook_story.png`
+- `output-v32/02_grid_story.mp4` (animated video)
+- `output-v32/03_process_story.png`
+- `output-v32/04_cta_story.png`
+- `output-v32/sources.json`
+
+Additional V32 notes:
+
+- COMPLETELY NEW AD CONCEPT: Swiss/International Typographic Style inspired by Josef Muller-Brockmann poster design.
+- Ultra minimal grid system with lots of white space. Typography IS the design.
+- White background (#FFFFFF), black text (#1A1A1A), Swiss red (#E42320) accent for MANILA.
+- Helvetica Neue sans-serif for all type, monospace (SF Mono) for small labels.
+- "MANILA" is VERY LARGE and prominent on every slide: 180px on slide 1, 80px on slides 2-4, all in bold red.
+- Thin vertical grid lines and horizontal rules throughout for strict Swiss grid structure.
+- 4 slides: HOOK > GRID (animated MP4) > PROCESS > CTA.
+- Slide 1: Massive "MANILA" taking up the top third, thin red rule, "models wanted." in light weight below, single large photo filling lower portion. Monospace date/location tag at bottom.
+- Slide 2: Animated MP4 -- 3x3 grid of 9 photos snap into place one by one with precise mechanical translateY animation (280ms stagger, 150ms duration). White background with grid lines. ~4.5 seconds, 30fps, H.264.
+- Slide 3: Numbered steps (01/02/03) with strict left alignment, thin horizontal rules separating each step, red monospace step numbers, accent photo bottom-right. Vertical grid line at step-number column edge.
+- Slide 4: "Sign up below." in huge 96px type, red accent bar running full height on left edge, photo below, red horizontal rule near bottom with "LIMITED SPOTS THIS MONTH" monospace tag.
+- Minimal decoration -- just type, photos, grid lines, and red accents.
+- All content above SAFE_BOTTOM (410px). Images have less than 10% crop.
+- Uses 12 manila-gallery images (canal-001, closeup-001, dsc-0911, garden-002, night-003, dsc-0130, graffiti-001, urban-001, shadow-001, ivy-001, dsc-0190, floor-001).
