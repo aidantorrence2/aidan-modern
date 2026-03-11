@@ -398,3 +398,32 @@ Additional V19 notes:
 - White background (#FFFFFF) with thick black borders on each grid cell, matching v18's bold aesthetic.
 - All text above SAFE_BOTTOM (410px from bottom).
 - Static slides 1, 3, and 4 are unchanged PNGs from v18's design.
+
+V20 render (warm editorial magazine aesthetic, animated proof slide MP4):
+
+```bash
+node marketing/manila-model-search-carousel/render-v20.mjs
+```
+
+V20 outputs:
+
+- `output-v20/01_hook_story.png`
+- `output-v20/02_proof_story.mp4` (animated video)
+- `output-v20/03_process_story.png`
+- `output-v20/04_cta_story.png`
+- `output-v20/sources.json`
+
+Additional V20 notes:
+
+- Completely new third distinct design -- looks nothing like v16 (dark/moody) or v18 (white/bold Nike).
+- Warm editorial magazine aesthetic: cream/sand backgrounds (#F5F0E8), elegant serif headlines (Georgia, italic), soft drop shadows, Vogue/fashion lookbook feel.
+- MANILA in burnt sienna (#C2652A) with wide letter-spacing and thin accent rule on every slide.
+- 4 slides: HOOK > PROOF (animated MP4) > PROCESS > CTA.
+- Slide 1: Italic serif "Models wanted." with rounded hero image on cream, soft shadow.
+- Slide 2: Animated MP4 -- 10 images in 3-row masonry grid on cream, fade+scale+translateY reveal staggered 300ms apart, ~5.5 seconds, 30fps H.264.
+- Slide 3: Numbered step cards on warm sand (#EDE6D8) panels with italic serif numbers in accent color, taupe hairline rules, small accent image bottom-right.
+- Slide 4: Large rounded hero image top half, italic serif "Sign up below." with warm rounded urgency pill in burnt sienna.
+- No swipe indicators.
+- All content above SAFE_BOTTOM (410px).
+- Images have minimal crop with rounded corners and soft shadows instead of hard borders.
+- Uses 13 manila-gallery images (statue, closeup, canal, dsc, garden, ivy, graffiti, urban, shadow, tropical, dsc-0190, park).
