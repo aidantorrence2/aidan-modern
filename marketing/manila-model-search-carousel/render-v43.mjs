@@ -17,8 +17,8 @@ const SF = "-apple-system, 'Helvetica Neue', Arial, sans-serif"
 const BG = '#212121'
 const MANILA_COLOR = '#E8443A'
 
-const TOTAL_DURATION = 28
-const TOTAL_DURATION_MS = 30000
+const TOTAL_DURATION = 34
+const TOTAL_DURATION_MS = 36000
 
 function resetOutputDir() {
   fs.rmSync(OUT_DIR, { recursive: true, force: true })
@@ -60,11 +60,13 @@ const T = {
   searching: 8.0,
   ai2:       9.5,
   photo1:    12.0,
-  photo2:    14.0,  // 2s apart — slower!
+  photo2:    14.0,
   photo3:    16.0,
-  user3:     18.5,
-  ai3:       20.0,
-  ctaCard:   21.0,
+  photo4:    18.0,
+  photo5:    20.0,
+  user3:     22.5,
+  ai3:       24.0,
+  ctaCard:   25.0,
 }
 
 function userBubble(text, id, t) {
@@ -268,17 +270,18 @@ function buildHTML(images) {
   // After ai3 (13.5s): 3714px -> need ~2284px
   // After CTA card (14.5s): 4254px -> need ~2824px
 
-  // Slower scroll — each photo gets time to breathe
+  // Slower scroll — each photo gets time to breathe (5 photos now)
   const scrollKeyframes = `
     0% { transform: translateY(0); }
     ${p(11)}% { transform: translateY(0); }
     ${p(12.5)}% { transform: translateY(-400px); }
-    ${p(14)}% { transform: translateY(-1100px); }
-    ${p(16)}% { transform: translateY(-1800px); }
-    ${p(17.5)}% { transform: translateY(-2500px); }
-    ${p(19)}% { transform: translateY(-2700px); }
-    ${p(21.5)}% { transform: translateY(-3100px); }
-    100% { transform: translateY(-3100px); }
+    ${p(14.5)}% { transform: translateY(-1100px); }
+    ${p(16.5)}% { transform: translateY(-1800px); }
+    ${p(18.5)}% { transform: translateY(-2500px); }
+    ${p(20.5)}% { transform: translateY(-3200px); }
+    ${p(23)}% { transform: translateY(-3600px); }
+    ${p(25)}% { transform: translateY(-4400px); }
+    100% { transform: translateY(-4400px); }
   `
 
   const allMessages = [
@@ -293,6 +296,8 @@ function buildHTML(images) {
     inlinePhoto(images.photo1, 'm-photo1', T.photo1),
     inlinePhoto(images.photo2, 'm-photo2', T.photo2),
     inlinePhoto(images.photo3, 'm-photo3', T.photo3),
+    inlinePhoto(images.photo4, 'm-photo4', T.photo4),
+    inlinePhoto(images.photo5, 'm-photo5', T.photo5),
     userBubble('ok these are incredible. signing up now', 'm-user3', T.user3),
     aiMessage('Just click sign up below!', 'm-ai3', T.ai3),
   ].join('\n')
@@ -386,9 +391,11 @@ async function render() {
   resetOutputDir()
 
   const selection = {
-    photo1: 'manila-gallery-dsc-0075.jpg',
-    photo2: 'manila-gallery-graffiti-001.jpg',
-    photo3: 'manila-gallery-floor-001.jpg',
+    photo1: 'manila-gallery-purple-001.jpg',
+    photo2: 'manila-gallery-garden-001.jpg',
+    photo3: 'manila-gallery-purple-003.jpg',
+    photo4: 'manila-gallery-ivy-001.jpg',
+    photo5: 'manila-gallery-purple-005.jpg',
   }
 
   const images = Object.fromEntries(
