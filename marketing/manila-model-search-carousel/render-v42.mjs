@@ -289,28 +289,38 @@ function buildAnimatedDM(images) {
 
         @keyframes manilaFlash {
           0% { opacity: 0; }
-          15% { opacity: 1; }
+          8% { opacity: 1; }
           100% { opacity: 1; }
         }
         .manila-flash {
           opacity: 0;
-          animation: manilaFlash 0.5s ease-out ${T.manila}s forwards;
+          animation: manilaFlash 0.6s ease-out ${T.manila}s forwards;
+        }
+
+        @keyframes heroZoom {
+          0% { transform: scale(1.05); }
+          100% { transform: scale(1.15); }
         }
 
         @keyframes manilaTextIn {
-          0% { opacity: 0; transform: scale(0.92); letter-spacing: 0.15em; }
-          60% { opacity: 1; transform: scale(1.02); }
-          100% { opacity: 1; transform: scale(1); letter-spacing: 0.08em; }
-        }
-
-        @keyframes glowPulse {
-          0%, 100% { text-shadow: 0 0 30px rgba(232,68,58,0.3), 0 0 60px rgba(232,68,58,0.15); }
-          50% { text-shadow: 0 0 50px rgba(232,68,58,0.5), 0 0 100px rgba(232,68,58,0.25); }
+          0% { opacity: 0; transform: scale(0.85) translateY(20px); }
+          60% { opacity: 1; transform: scale(1.03) translateY(-2px); }
+          100% { opacity: 1; transform: scale(1) translateY(0); }
         }
 
         @keyframes subtextIn {
-          0% { opacity: 0; transform: translateY(10px); }
+          0% { opacity: 0; transform: translateY(16px); }
           100% { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes btnPulse {
+          0%, 100% { transform: scale(1); box-shadow: 0 4px 30px rgba(232,68,58,0.4); }
+          50% { transform: scale(1.03); box-shadow: 0 6px 40px rgba(232,68,58,0.6); }
+        }
+
+        @keyframes shimmer {
+          0% { background-position: -200% center; }
+          100% { background-position: 200% center; }
         }
       </style>
     </head>
@@ -354,11 +364,41 @@ function buildAnimatedDM(images) {
         <!-- Bottom gradient fade -->
         <div style="position:absolute;left:0;right:0;bottom:${SAFE_BOTTOM}px;height:80px;background:linear-gradient(0deg, ${IG_BLACK}, transparent);z-index:15;pointer-events:none;"></div>
 
-        <!-- MANILA flash overlay -->
-        <div class="manila-flash" style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;background:${IG_BLACK};z-index:30;pointer-events:none;">
-          <p style="font-family:${SF};font-size:160px;font-weight:900;letter-spacing:0.08em;color:${MANILA_COLOR};margin:0;text-transform:uppercase;opacity:0;animation:manilaTextIn 0.7s cubic-bezier(0.16,1,0.3,1) ${T.manila + 0.1}s forwards, glowPulse 3s ease-in-out ${T.manila + 0.8}s infinite;">MANILA</p>
-          <p style="font-family:${SF};font-size:40px;font-weight:600;color:#fff;margin:20px 0 0;letter-spacing:0.04em;opacity:0;animation:subtextIn 0.5s ease-out ${T.manila + 0.5}s forwards;">Model Search</p>
-          <p style="font-family:${SF};font-size:26px;color:${IG_GRAY};margin:14px 0 0;opacity:0;animation:subtextIn 0.5s ease-out ${T.manila + 0.7}s forwards;">Sign up below</p>
+        <!-- MANILA CTA overlay — hero photo + gradient + bold text -->
+        <div class="manila-flash" style="position:absolute;inset:0;z-index:30;overflow:hidden;">
+          <!-- Hero background photo with slow zoom -->
+          <div style="position:absolute;inset:0;animation:heroZoom 8s ease-out ${T.manila}s forwards;">
+            <img src="${images.photo3}" style="width:130%;height:130%;object-fit:cover;object-position:center 15%;margin:-15% 0 0 -15%;filter:brightness(0.45) saturate(1.3);"/>
+          </div>
+
+          <!-- Gradient overlays for depth -->
+          <div style="position:absolute;inset:0;background:linear-gradient(180deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.15) 35%, rgba(0,0,0,0.1) 50%, rgba(0,0,0,0.6) 75%, rgba(0,0,0,0.92) 100%);"></div>
+          <div style="position:absolute;inset:0;background:radial-gradient(ellipse at center 40%, transparent 30%, rgba(0,0,0,0.5) 100%);"></div>
+
+          <!-- Content -->
+          <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:0 60px;">
+            <!-- Thin red line accent -->
+            <div style="width:60px;height:3px;background:${MANILA_COLOR};margin-bottom:28px;opacity:0;animation:subtextIn 0.4s ease-out ${T.manila + 0.2}s forwards;"></div>
+
+            <!-- MANILA -->
+            <p style="font-family:${SF};font-size:172px;font-weight:900;letter-spacing:0.12em;color:#fff;margin:0;text-transform:uppercase;text-shadow:0 4px 60px rgba(0,0,0,0.8), 0 0 120px rgba(232,68,58,0.3);opacity:0;animation:manilaTextIn 0.7s cubic-bezier(0.16,1,0.3,1) ${T.manila + 0.15}s forwards;">MANILA</p>
+
+            <!-- Model Search -->
+            <p style="font-family:${SF};font-size:44px;font-weight:300;color:rgba(255,255,255,0.95);margin:8px 0 0;letter-spacing:0.25em;text-transform:uppercase;opacity:0;animation:subtextIn 0.5s ease-out ${T.manila + 0.5}s forwards;">MODEL SEARCH</p>
+
+            <!-- Divider line -->
+            <div style="width:120px;height:1px;background:rgba(255,255,255,0.3);margin:32px 0;opacity:0;animation:subtextIn 0.4s ease-out ${T.manila + 0.65}s forwards;"></div>
+
+            <!-- Sign up CTA button -->
+            <div style="opacity:0;animation:subtextIn 0.5s ease-out ${T.manila + 0.8}s forwards;">
+              <div style="background:${MANILA_COLOR};border-radius:40px;padding:18px 64px;animation:btnPulse 2.5s ease-in-out ${T.manila + 1.3}s infinite;">
+                <p style="font-family:${SF};font-size:28px;font-weight:700;color:#fff;margin:0;letter-spacing:0.08em;text-transform:uppercase;background:linear-gradient(90deg, #fff 0%, rgba(255,255,255,0.7) 50%, #fff 100%);background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;animation:shimmer 3s linear ${T.manila + 1.3}s infinite;">SIGN UP NOW</p>
+              </div>
+            </div>
+
+            <!-- Limited spots urgency -->
+            <p style="font-family:${SF};font-size:22px;font-weight:500;color:rgba(255,255,255,0.55);margin:24px 0 0;letter-spacing:0.06em;opacity:0;animation:subtextIn 0.5s ease-out ${T.manila + 1.0}s forwards;">Limited spots · 60 second form</p>
+          </div>
         </div>
       </div>
     </body>
