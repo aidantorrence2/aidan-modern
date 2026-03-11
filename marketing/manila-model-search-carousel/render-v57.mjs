@@ -17,8 +17,8 @@ const SF = "-apple-system, 'Helvetica Neue', Arial, sans-serif"
 const MANILA_COLOR = '#E8443A'
 const HANDLE = 'madebyaidan'
 
-const TOTAL_DURATION = 17
-const TOTAL_DURATION_MS = 19000
+const TOTAL_DURATION = 24
+const TOTAL_DURATION_MS = 26000
 
 function resetOutputDir() {
   fs.rmSync(OUT_DIR, { recursive: true, force: true })
@@ -42,24 +42,80 @@ function writeSources(payload) {
   fs.writeFileSync(path.join(OUT_DIR, 'sources.json'), JSON.stringify(payload, null, 2))
 }
 
-const p = (t) => ((t / TOTAL_DURATION) * 100).toFixed(1)
-
 function buildAnimated(images) {
-  // Timeline
+  // Timeline (seconds)
   const T = {
     cardAppear: 0.3,
     shimmer: 0.5,
+    // Story text 1: "you sign up"
+    story1In: 0.3,
+    story1Out: 2.6,
     mainPhotoDrop: 3.0,
+    // Story text 2: "we shoot in Manila"
+    story2In: 3.0,
+    story2Out: 4.6,
     grid1: 5.0,
-    grid2: 5.8,
-    grid3: 6.6,
-    grid4: 7.4,
-    bioType: 8.0,
-    statsIn: 10.0,
+    grid2: 5.5,
+    grid3: 6.0,
+    grid4: 6.5,
+    // Story text 3: "no experience needed"
+    story3In: 5.0,
+    story3Out: 7.2,
+    bioType: 7.5,
+    // Story text 4: "I direct everything"
+    story4In: 7.5,
+    story4Out: 9.5,
+    statsIn: 9.8,
+    // Story text 5: "photos delivered in a week"
+    story5In: 9.8,
+    story5Out: 11.8,
     verified: 12.0,
-    toast: 14.0,
-    fadeOut: 15.5,
+    // Story text 6: "this could be your portfolio"
+    story6In: 12.0,
+    story6Out: 14.0,
+    toast: 14.5,
+    // CTA fade in after toast
+    ctaIn: 16.5,
+    // Hold final state until TOTAL_DURATION
   }
+
+  // Helper: story text with fade-in and fade-out using CSS keyframes
+  // Each story text gets unique keyframes so timings don't collide
+  function storyKeyframes(id, inTime, outTime) {
+    const dur = TOTAL_DURATION
+    const inPct = ((inTime / dur) * 100).toFixed(2)
+    const inDonePct = (((inTime + 0.4) / dur) * 100).toFixed(2)
+    const outStartPct = ((outTime / dur) * 100).toFixed(2)
+    const outDonePct = (((outTime + 0.4) / dur) * 100).toFixed(2)
+    return `
+      @keyframes story${id} {
+        0% { opacity: 0; transform: translateY(16px); }
+        ${inPct}% { opacity: 0; transform: translateY(16px); }
+        ${inDonePct}% { opacity: 1; transform: translateY(0); }
+        ${outStartPct}% { opacity: 1; transform: translateY(0); }
+        ${outDonePct}% { opacity: 0; transform: translateY(-10px); }
+        100% { opacity: 0; transform: translateY(-10px); }
+      }
+    `
+  }
+
+  // CTA fade-in keyframes
+  const ctaInPct = ((T.ctaIn / TOTAL_DURATION) * 100).toFixed(2)
+  const ctaDonePct = (((T.ctaIn + 0.6) / TOTAL_DURATION) * 100).toFixed(2)
+
+  const storyTexts = [
+    { id: 1, text: 'you sign up', inTime: T.story1In, outTime: T.story1Out },
+    { id: 2, text: 'we shoot in Manila', inTime: T.story2In, outTime: T.story2Out },
+    { id: 3, text: 'no experience needed', inTime: T.story3In, outTime: T.story3Out },
+    { id: 4, text: 'I direct everything', inTime: T.story4In, outTime: T.story4Out },
+    { id: 5, text: 'photos delivered in a week', inTime: T.story5In, outTime: T.story5Out },
+    { id: 6, text: 'this could be your portfolio', inTime: T.story6In, outTime: T.story6Out },
+  ]
+
+  const CARD_TOP = 140
+  const CARD_LEFT = 60
+  const CARD_RIGHT = 60
+  const CARD_BOTTOM = SAFE_BOTTOM + 50
 
   return `<!DOCTYPE html>
 <html>
@@ -119,18 +175,14 @@ function buildAnimated(images) {
         100% { opacity: 1; transform: translateY(0); }
       }
 
-      @keyframes fadeToBlack {
-        0% { opacity: 0; }
-        100% { opacity: 1; }
+      @keyframes ctaFadeIn {
+        0% { opacity: 0; transform: translateY(20px); }
+        ${ctaInPct}% { opacity: 0; transform: translateY(20px); }
+        ${ctaDonePct}% { opacity: 1; transform: translateY(0); }
+        100% { opacity: 1; transform: translateY(0); }
       }
 
-      @keyframes buildingDots {
-        0% { content: ''; }
-        25% { content: '.'; }
-        50% { content: '..'; }
-        75% { content: '...'; }
-        100% { content: ''; }
-      }
+      ${storyTexts.map(s => storyKeyframes(s.id, s.inTime, s.outTime)).join('\n')}
 
       .shimmer-bar {
         background: linear-gradient(90deg, #333 0%, #444 40%, #555 50%, #444 60%, #333 100%);
@@ -154,53 +206,69 @@ function buildAnimated(images) {
         display: block;
         margin: -15% 0 0 -15%;
       }
+
+      .story-text {
+        position: absolute;
+        left: 0; right: 0;
+        bottom: ${SAFE_BOTTOM + 10}px;
+        text-align: center;
+        z-index: 15;
+        pointer-events: none;
+        opacity: 0;
+      }
+      .story-text p {
+        font-family: ${SF};
+        font-size: 52px;
+        font-weight: 700;
+        color: #fff;
+        text-shadow: 0 2px 20px rgba(0,0,0,0.8), 0 0 60px rgba(0,0,0,0.5);
+        letter-spacing: 0.01em;
+        line-height: 1.2;
+        padding: 0 60px;
+      }
     </style>
   </head>
   <body>
     <div style="width:${WIDTH}px;height:${HEIGHT}px;position:relative;overflow:hidden;background:#111;">
 
       <!-- Status text at top -->
-      <div style="position:absolute;left:0;right:0;top:80px;text-align:center;z-index:10;opacity:0;animation:fadeSlideUp 0.6s ease-out ${T.cardAppear}s forwards;">
-        <p style="font-family:${SF};font-size:28px;font-weight:400;color:rgba(255,255,255,0.5);letter-spacing:0.06em;">Building your portfolio...</p>
+      <div style="position:absolute;left:0;right:0;top:60px;text-align:center;z-index:10;opacity:0;animation:fadeSlideUp 0.6s ease-out ${T.cardAppear}s forwards;">
+        <p style="font-family:${SF};font-size:24px;font-weight:500;color:rgba(255,255,255,0.4);letter-spacing:0.12em;text-transform:uppercase;">Building your portfolio</p>
       </div>
 
       <!-- Profile Card -->
-      <div style="position:absolute;left:50px;right:50px;top:160px;bottom:${SAFE_BOTTOM + 30}px;background:#1a1a1a;border-radius:20px;border:1px solid #333;overflow:hidden;opacity:0;animation:cardSlideUp 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) ${T.cardAppear}s forwards;">
+      <div style="position:absolute;left:${CARD_LEFT}px;right:${CARD_RIGHT}px;top:${CARD_TOP}px;bottom:${CARD_BOTTOM}px;background:#1a1a1a;border-radius:20px;border:1px solid #333;overflow:hidden;opacity:0;animation:cardSlideUp 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) ${T.cardAppear}s forwards;">
 
         <!-- Profile header area -->
-        <div style="padding:36px 36px 0;">
+        <div style="padding:28px 28px 0;">
 
           <!-- Name skeleton / text -->
-          <div style="position:relative;height:44px;margin-bottom:12px;">
-            <!-- Skeleton bar (fades out when photo drops) -->
-            <div class="shimmer-bar" style="width:280px;height:36px;position:absolute;top:4px;left:0;animation:shimmer 1.5s infinite linear, shimmerFadeOut 0.3s ease-out ${T.mainPhotoDrop}s forwards;"></div>
-            <!-- Name text (appears when photo drops) -->
-            <p style="font-family:${SF};font-size:36px;font-weight:700;color:#fff;letter-spacing:0.02em;position:absolute;top:0;left:0;opacity:0;animation:fadeSlideUp 0.5s ease-out ${T.mainPhotoDrop + 0.2}s forwards;">Your Name Here</p>
+          <div style="position:relative;height:38px;margin-bottom:8px;">
+            <div class="shimmer-bar" style="width:240px;height:30px;position:absolute;top:4px;left:0;animation:shimmer 1.5s infinite linear, shimmerFadeOut 0.3s ease-out ${T.mainPhotoDrop}s forwards;"></div>
+            <p style="font-family:${SF};font-size:30px;font-weight:700;color:#fff;letter-spacing:0.02em;position:absolute;top:0;left:0;opacity:0;animation:fadeSlideUp 0.5s ease-out ${T.mainPhotoDrop + 0.2}s forwards;">Your Name Here</p>
           </div>
 
           <!-- Location skeleton -->
-          <div style="position:relative;height:24px;margin-bottom:28px;">
-            <div class="shimmer-bar" style="width:160px;height:18px;position:absolute;top:3px;left:0;animation:shimmer 1.5s infinite linear, shimmerFadeOut 0.3s ease-out ${T.mainPhotoDrop}s forwards;"></div>
-            <p style="font-family:${SF};font-size:20px;font-weight:400;color:rgba(255,255,255,0.4);position:absolute;top:0;left:0;opacity:0;animation:fadeSlideUp 0.5s ease-out ${T.mainPhotoDrop + 0.3}s forwards;">Manila, Philippines</p>
+          <div style="position:relative;height:22px;margin-bottom:20px;">
+            <div class="shimmer-bar" style="width:140px;height:16px;position:absolute;top:3px;left:0;animation:shimmer 1.5s infinite linear, shimmerFadeOut 0.3s ease-out ${T.mainPhotoDrop}s forwards;"></div>
+            <p style="font-family:${SF};font-size:17px;font-weight:400;color:rgba(255,255,255,0.4);position:absolute;top:0;left:0;opacity:0;animation:fadeSlideUp 0.5s ease-out ${T.mainPhotoDrop + 0.3}s forwards;">Manila, Philippines</p>
           </div>
 
           <!-- Main photo slot -->
-          <div style="width:100%;aspect-ratio:4/5;border-radius:16px;overflow:hidden;position:relative;margin-bottom:24px;">
-            <!-- Skeleton placeholder -->
-            <div class="shimmer-bar" style="position:absolute;inset:0;border-radius:16px;animation:shimmer 1.5s infinite linear, shimmerFadeOut 0.3s ease-out ${T.mainPhotoDrop}s forwards;"></div>
-            <!-- Actual photo -->
-            <div class="photo-crop" style="position:absolute;inset:0;border-radius:16px;opacity:0;transform:scale(0.3);animation:photoPop 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) ${T.mainPhotoDrop}s forwards;">
+          <div style="width:100%;aspect-ratio:4/5;border-radius:14px;overflow:hidden;position:relative;margin-bottom:16px;">
+            <div class="shimmer-bar" style="position:absolute;inset:0;border-radius:14px;animation:shimmer 1.5s infinite linear, shimmerFadeOut 0.3s ease-out ${T.mainPhotoDrop}s forwards;"></div>
+            <div class="photo-crop" style="position:absolute;inset:0;border-radius:14px;opacity:0;transform:scale(0.3);animation:photoPop 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) ${T.mainPhotoDrop}s forwards;">
               <img src="${images.main}" style="object-position:center 15%;"/>
             </div>
           </div>
 
           <!-- 2x2 Grid -->
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:28px;">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px;">
             ${[images.grid1, images.grid2, images.grid3, images.grid4].map((img, i) => {
-              const delay = T.grid1 + i * 0.8
-              return `<div style="aspect-ratio:1;border-radius:12px;overflow:hidden;position:relative;">
-                <div class="shimmer-bar" style="position:absolute;inset:0;border-radius:12px;animation:shimmer 1.5s infinite linear, shimmerFadeOut 0.3s ease-out ${delay}s forwards;"></div>
-                <div class="photo-crop" style="position:absolute;inset:0;border-radius:12px;opacity:0;transform:scale(0.3);animation:photoPop 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) ${delay}s forwards;">
+              const delay = T.grid1 + i * 0.5
+              return `<div style="aspect-ratio:1;border-radius:10px;overflow:hidden;position:relative;">
+                <div class="shimmer-bar" style="position:absolute;inset:0;border-radius:10px;animation:shimmer 1.5s infinite linear, shimmerFadeOut 0.3s ease-out ${delay}s forwards;"></div>
+                <div class="photo-crop" style="position:absolute;inset:0;border-radius:10px;opacity:0;transform:scale(0.3);animation:photoPop 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) ${delay}s forwards;">
                   <img src="${img}" style="object-position:center 20%;"/>
                 </div>
               </div>`
@@ -208,96 +276,54 @@ function buildAnimated(images) {
           </div>
 
           <!-- Bio text (types in) -->
-          <div style="margin-bottom:20px;height:32px;position:relative;">
+          <div style="margin-bottom:14px;height:26px;position:relative;">
             <div style="overflow:hidden;white-space:nowrap;opacity:0;animation:fadeSlideUp 0.1s ease-out ${T.bioType}s forwards;">
-              <p style="font-family:${SF};font-size:24px;font-weight:400;color:rgba(255,255,255,0.7);overflow:hidden;white-space:nowrap;width:0;animation:typeIn 1.8s steps(35) ${T.bioType + 0.1}s forwards;border-right:2px solid rgba(255,255,255,0.5);">Shot by @${HANDLE} in Manila</p>
+              <p style="font-family:${SF};font-size:20px;font-weight:400;color:rgba(255,255,255,0.7);overflow:hidden;white-space:nowrap;width:0;animation:typeIn 1.8s steps(35) ${T.bioType + 0.1}s forwards;border-right:2px solid rgba(255,255,255,0.5);">Shot by @${HANDLE} in Manila</p>
             </div>
           </div>
 
           <!-- Stats -->
-          <div style="display:flex;gap:20px;align-items:center;margin-bottom:24px;opacity:0;animation:fadeSlideUp 0.6s ease-out ${T.statsIn}s forwards;">
-            <span style="font-family:${SF};font-size:20px;font-weight:600;color:rgba(255,255,255,0.85);">5 photos</span>
-            <span style="font-family:${SF};font-size:20px;color:rgba(255,255,255,0.3);">·</span>
-            <span style="font-family:${SF};font-size:20px;font-weight:600;color:rgba(255,255,255,0.85);">1 session</span>
-            <span style="font-family:${SF};font-size:20px;color:rgba(255,255,255,0.3);">·</span>
-            <span style="font-family:${SF};font-size:20px;font-weight:600;color:rgba(255,255,255,0.85);">0 exp needed</span>
+          <div style="display:flex;gap:14px;align-items:center;margin-bottom:14px;opacity:0;animation:fadeSlideUp 0.6s ease-out ${T.statsIn}s forwards;">
+            <span style="font-family:${SF};font-size:17px;font-weight:600;color:rgba(255,255,255,0.85);">5 photos</span>
+            <span style="font-family:${SF};font-size:17px;color:rgba(255,255,255,0.3);">·</span>
+            <span style="font-family:${SF};font-size:17px;font-weight:600;color:rgba(255,255,255,0.85);">1 session</span>
+            <span style="font-family:${SF};font-size:17px;color:rgba(255,255,255,0.3);">·</span>
+            <span style="font-family:${SF};font-size:17px;font-weight:600;color:rgba(255,255,255,0.85);">0 exp needed</span>
           </div>
 
           <!-- Verified Badge -->
-          <div style="display:inline-flex;align-items:center;gap:10px;background:rgba(76,175,80,0.12);border:1px solid rgba(76,175,80,0.3);border-radius:30px;padding:10px 24px;opacity:0;transform:scale(0.5);animation:badgeGlow 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) ${T.verified}s forwards, glowPulse 2s ease-in-out ${T.verified + 0.6}s infinite;">
-            <span style="font-family:${SF};font-size:22px;font-weight:700;color:#4CAF50;letter-spacing:0.08em;">VERIFIED ✓</span>
+          <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(76,175,80,0.12);border:1px solid rgba(76,175,80,0.3);border-radius:24px;padding:8px 20px;opacity:0;transform:scale(0.5);animation:badgeGlow 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) ${T.verified}s forwards, glowPulse 2s ease-in-out ${T.verified + 0.6}s infinite;">
+            <span style="font-family:${SF};font-size:18px;font-weight:700;color:#4CAF50;letter-spacing:0.08em;">VERIFIED ✓</span>
           </div>
 
         </div>
       </div>
 
+      <!-- Story narrative text overlays -->
+      ${storyTexts.map(s => `
+      <div class="story-text" style="animation:story${s.id} ${TOTAL_DURATION}s linear forwards;">
+        <p>${s.text}</p>
+      </div>
+      `).join('')}
+
       <!-- Toast notification -->
-      <div style="position:absolute;left:40px;right:40px;top:90px;z-index:20;opacity:0;transform:translateY(-100px);animation:toastSlide 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) ${T.toast}s forwards;">
-        <div style="background:rgba(30,30,30,0.95);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-radius:16px;padding:20px 28px;border:1px solid rgba(255,255,255,0.1);display:flex;align-items:center;gap:14px;">
-          <span style="font-size:32px;">🔥</span>
-          <p style="font-family:${SF};font-size:22px;font-weight:600;color:rgba(255,255,255,0.9);margin:0;">47 people viewed your portfolio today</p>
+      <div style="position:absolute;left:40px;right:40px;top:70px;z-index:20;opacity:0;transform:translateY(-100px);animation:toastSlide 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) ${T.toast}s forwards;">
+        <div style="background:rgba(30,30,30,0.95);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-radius:16px;padding:18px 24px;border:1px solid rgba(255,255,255,0.1);display:flex;align-items:center;gap:12px;">
+          <span style="font-size:28px;">🔥</span>
+          <p style="font-family:${SF};font-size:20px;font-weight:600;color:rgba(255,255,255,0.9);margin:0;">47 people viewed your portfolio today</p>
         </div>
       </div>
 
-      <!-- Fade to black overlay -->
-      <div style="position:absolute;inset:0;background:#000;z-index:30;pointer-events:none;opacity:0;animation:fadeToBlack 0.8s ease-out ${T.fadeOut}s forwards;"></div>
+      <!-- Natural CTA ending (fades in after toast) -->
+      <div style="position:absolute;left:0;right:0;bottom:${SAFE_BOTTOM + 10}px;text-align:center;z-index:25;opacity:0;animation:ctaFadeIn ${TOTAL_DURATION}s linear forwards;">
+        <p style="font-family:${SF};font-size:54px;font-weight:800;color:${MANILA_COLOR};margin:0 0 16px;letter-spacing:0.02em;text-shadow:0 2px 30px rgba(232,68,58,0.4);">sign up below</p>
+        <p style="font-family:${SF};font-size:26px;font-weight:500;color:rgba(255,255,255,0.7);margin:0 0 8px;letter-spacing:0.04em;">60-second form</p>
+        <p style="font-family:${SF};font-size:22px;font-weight:400;color:rgba(255,255,255,0.45);margin:0;letter-spacing:0.03em;">limited spots this month</p>
+      </div>
 
     </div>
   </body>
 </html>`
-}
-
-function buildCTA(images) {
-  function cropImg(src, w, h, pos = 'center 20%') {
-    return `<div style="width:${w}px;height:${h}px;overflow:hidden;border-radius:16px;box-shadow:0 8px 40px rgba(0,0,0,0.5);">
-      <img src="${src}" style="width:130%;height:130%;object-fit:cover;object-position:${pos};display:block;margin:-15% 0 0 -15%;"/>
-    </div>`
-  }
-
-  return `<!DOCTYPE html><html><head>
-    <style>* { box-sizing:border-box;margin:0;padding:0; } html,body { background:#000; -webkit-font-smoothing:antialiased; }</style>
-  </head><body>
-    <div style="width:${WIDTH}px;height:${HEIGHT}px;position:relative;overflow:hidden;background:#000;">
-
-      <!-- Photo grid — 3 photos staggered -->
-      <div style="position:absolute;top:120px;left:50px;transform:rotate(-3deg);">
-        ${cropImg(images.ctaPhoto1, 460, 620, 'center 20%')}
-      </div>
-      <div style="position:absolute;top:180px;right:50px;transform:rotate(2.5deg);">
-        ${cropImg(images.ctaPhoto2, 420, 560, 'center 25%')}
-      </div>
-      <div style="position:absolute;top:620px;left:280px;transform:rotate(-1deg);z-index:5;">
-        ${cropImg(images.ctaPhoto3, 500, 380, 'center 30%')}
-      </div>
-
-      <!-- Dark gradient overlay -->
-      <div style="position:absolute;inset:0;background:linear-gradient(180deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.1) 20%, rgba(0,0,0,0.0) 35%, rgba(0,0,0,0.55) 55%, rgba(0,0,0,0.95) 72%, #000 85%);"></div>
-
-      <!-- Text content above SAFE_BOTTOM -->
-      <div style="position:absolute;left:0;right:0;bottom:${SAFE_BOTTOM + 40}px;padding:0 70px;text-align:center;">
-
-        <!-- Thin red accent line -->
-        <div style="width:50px;height:3px;background:${MANILA_COLOR};margin:0 auto 30px;"></div>
-
-        <!-- MANILA — 180px -->
-        <p style="font-family:${SF};font-size:180px;font-weight:900;letter-spacing:0.14em;color:#fff;margin:0;text-transform:uppercase;text-shadow:0 4px 80px rgba(232,68,58,0.4), 0 2px 20px rgba(0,0,0,0.8);">MANILA</p>
-
-        <!-- MODEL SEARCH -->
-        <p style="font-family:${SF};font-size:38px;font-weight:300;color:rgba(255,255,255,0.9);margin:4px 0 0;letter-spacing:0.3em;text-transform:uppercase;">MODEL SEARCH</p>
-
-        <!-- Divider -->
-        <div style="width:100px;height:1px;background:rgba(255,255,255,0.25);margin:36px auto;"></div>
-
-        <!-- CTA button -->
-        <div style="display:inline-block;background:${MANILA_COLOR};border-radius:40px;padding:20px 70px;box-shadow:0 6px 30px rgba(232,68,58,0.45);">
-          <p style="font-family:${SF};font-size:26px;font-weight:700;color:#fff;margin:0;letter-spacing:0.1em;text-transform:uppercase;">SIGN UP NOW</p>
-        </div>
-
-        <!-- Subtext -->
-        <p style="font-family:${SF};font-size:22px;font-weight:400;color:rgba(255,255,255,0.45);margin:22px 0 0;letter-spacing:0.04em;">60-second form · @${HANDLE}</p>
-      </div>
-    </div>
-  </body></html>`
 }
 
 async function render() {
@@ -309,14 +335,11 @@ async function render() {
     grid2: 'manila-gallery-graffiti-001.jpg',
     grid3: 'manila-gallery-canal-001.jpg',
     grid4: 'manila-gallery-night-001.jpg',
-    ctaPhoto1: 'manila-gallery-purple-002.jpg',
-    ctaPhoto2: 'manila-gallery-purple-003.jpg',
-    ctaPhoto3: 'manila-gallery-garden-002.jpg',
   }
 
   writeSources({
     createdAt: new Date().toISOString(),
-    strategy: 'v57 — Dating app profile build animated ad',
+    strategy: 'v57 — Dating app profile build animated ad with story narrative + natural CTA ending',
     safeBottomPixels: SAFE_BOTTOM,
     images: selection
   })
@@ -328,7 +351,7 @@ async function render() {
   const { execSync } = await import('child_process')
   const browser = await chromium.launch()
 
-  // --- Step 1: Record the profile build animation ---
+  // --- Record the animation (includes story text + natural CTA ending) ---
   console.log('Recording profile build animation...')
 
   const videoCtx = await browser.newContext({
@@ -346,23 +369,9 @@ async function render() {
   await videoPage.waitForTimeout(TOTAL_DURATION_MS)
   await videoPage.close()
   await videoCtx.close()
-
-  // --- Step 2: Render CTA as a high-quality screenshot ---
-  console.log('Rendering CTA screenshot...')
-  const ctaCtx = await browser.newContext({
-    viewport: { width: WIDTH, height: HEIGHT },
-    deviceScaleFactor: 1,
-  })
-  const ctaPage = await ctaCtx.newPage()
-  await ctaPage.setContent(buildCTA(images), { waitUntil: 'load' })
-  await ctaPage.waitForTimeout(300)
-  const ctaPath = path.join(OUT_DIR, 'cta_frame.png')
-  await ctaPage.screenshot({ path: ctaPath })
-  await ctaPage.close()
-  await ctaCtx.close()
   await browser.close()
 
-  // --- Step 3: Convert webm to mp4, then concat with CTA still frame ---
+  // --- Convert webm to mp4 directly (no concat) ---
   const videoFiles = fs.readdirSync(OUT_DIR).filter(f => f.endsWith('.webm'))
   if (videoFiles.length === 0) {
     console.error('No video file was generated!')
@@ -370,27 +379,11 @@ async function render() {
   }
 
   const srcVideo = path.join(OUT_DIR, videoFiles[0])
-  const animMp4 = path.join(OUT_DIR, 'profile_part.mp4')
-  const ctaMp4 = path.join(OUT_DIR, 'cta_part.mp4')
   const finalMp4 = path.join(OUT_DIR, '01_profile_build.mp4')
-  const concatFile = path.join(OUT_DIR, 'concat.txt')
 
   try {
-    // Convert animation webm to mp4
-    execSync(`ffmpeg -y -i "${srcVideo}" -c:v libx264 -pix_fmt yuv420p -r 30 -an "${animMp4}"`, { stdio: 'pipe' })
-
-    // Create 5-second CTA video from static image
-    execSync(`ffmpeg -y -loop 1 -i "${ctaPath}" -c:v libx264 -t 5 -pix_fmt yuv420p -r 30 -vf "scale=${WIDTH}:${HEIGHT}" -an "${ctaMp4}"`, { stdio: 'pipe' })
-
-    // Concat animation + CTA
-    fs.writeFileSync(concatFile, `file '${animMp4}'\nfile '${ctaMp4}'\n`)
-    execSync(`ffmpeg -y -f concat -safe 0 -i "${concatFile}" -c copy "${finalMp4}"`, { stdio: 'pipe' })
-
-    // Cleanup temp files
+    execSync(`ffmpeg -y -i "${srcVideo}" -c:v libx264 -pix_fmt yuv420p -r 30 -an "${finalMp4}"`, { stdio: 'pipe' })
     fs.unlinkSync(srcVideo)
-    fs.unlinkSync(animMp4)
-    fs.unlinkSync(ctaMp4)
-    fs.unlinkSync(concatFile)
     console.log('Rendered 01_profile_build.mp4')
   } catch (err) {
     console.error('ffmpeg error:', err.message)
