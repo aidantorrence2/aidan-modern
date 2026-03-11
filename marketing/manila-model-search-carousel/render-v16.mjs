@@ -140,7 +140,6 @@ function slideTwo(images) {
     { src: images.gridH,  aspect: 1228 / 1818 },  // urban-001
     { src: images.gridI,  aspect: 1067 / 1600 },  // shadow-001
     { src: images.gridJ,  aspect: 1600 / 1061 },  // ivy-001
-    { src: images.gridK,  aspect: 976 / 1551 },   // dsc-0075
   ]
 
   const rows = fitJustifiedLayout(mosaicImages, CONTAINER_W, AVAILABLE_H, GAP)
@@ -252,7 +251,6 @@ async function render() {
     gridH: 'manila-gallery-urban-001.jpg',
     gridI: 'manila-gallery-shadow-001.jpg',
     gridJ: 'manila-gallery-ivy-001.jpg',
-    gridK: 'manila-gallery-dsc-0075.jpg',
     process: 'manila-gallery-dsc-0190.jpg',
     cta: 'manila-gallery-floor-001.jpg'
   }
