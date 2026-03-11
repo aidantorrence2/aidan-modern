@@ -293,7 +293,7 @@ function buildAnimatedDM(images) {
         }
         .fade-to-black {
           opacity: 0;
-          animation: fadeToBlack 0.5s ease-out ${T.manila}s forwards;
+          animation: fadeToBlack 0.3s ease-out ${T.manila}s forwards;
         }
       </style>
     </head>
@@ -413,7 +413,7 @@ async function render() {
 
   // --- Step 1: Record the DM conversation video ---
   console.log('Recording animated DM conversation...')
-  const TOTAL_DURATION_MS = 24000 // shortened — video fades to black, CTA is separate
+  const TOTAL_DURATION_MS = 22500 // video fades to black at 21.5s, cut shortly after
 
   const videoCtx = await browser.newContext({
     viewport: { width: WIDTH, height: HEIGHT },
