@@ -59,3 +59,23 @@ Additional V3 notes:
 
 - Uses the top `manila*` prefixed files from `public/images/large` by sorted filename order.
 - Layout keeps copy off the photos by using split panels and separate framed images instead of text overlays on faces.
+
+V4 render (full-height imagery, simpler process copy):
+
+```bash
+node marketing/manila-model-search-carousel/render-v4.mjs
+```
+
+V4 outputs:
+
+- `output-v4/01_models_in_manila_story.png`
+- `output-v4/02_what_you_get_story.png`
+- `output-v4/03_how_the_shoot_works_story.png`
+- `output-v4/04_faq_story.png`
+- `output-v4/05_sign_up_story.png`
+- `output-v4/sources.json`
+
+Additional V4 notes:
+
+- Keeps text out of the lower CTA-safe zone but lets photos run farther toward the bottom.
+- Updates slide 3 to use a different Manila image and simpler, easier process language without selection wording.

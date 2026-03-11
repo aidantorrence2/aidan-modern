@@ -164,3 +164,15 @@
   - Exports a five-slide 1080x1920 PNG set for story/reels use.
   - Uses the top `manila*` prefixed images from `public/images/large` by sorted filename order and records them in `output-v3/sources.json`.
   - Layout avoids placing text over subjects' faces by using solid copy panels and separate framed photos.
+
+## Manila Model Search Carousel V4 (Full-Height Imagery)
+- Source folder: `marketing/manila-model-search-carousel`
+- Render command:
+  - `node marketing/manila-model-search-carousel/render-v4.mjs`
+- Output folder:
+  - `marketing/manila-model-search-carousel/output-v4`
+- Notes:
+  - Exports a five-slide 1080x1920 PNG set for story/reels use.
+  - Continues to keep text above the lower CTA-safe area, while allowing imagery to extend farther to the bottom of the frame.
+  - Uses the same top `manila*` image selection strategy as V3 and records it in `output-v4/sources.json`.
+  - Slide 3 uses simpler process copy and avoids disclosing any selective review language.

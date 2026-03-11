@@ -1,0 +1,15 @@
+{
+  "createdAt": "2026-03-11T07:10:51.222Z",
+  "strategy": "first sorted manila* image files from public/images/large",
+  "safeBottomPixels": 410,
+  "images": [
+    "manila-gallery-canal-001.jpg",
+    "manila-gallery-canal-002.jpg",
+    "manila-gallery-closeup-001.jpg",
+    "manila-gallery-dsc-0075.jpg",
+    "manila-gallery-dsc-0130.jpg",
+    "manila-gallery-dsc-0190.jpg",
+    "manila-gallery-dsc-0911.jpg",
+    "manila-gallery-floor-001.jpg"
+  ]
+}
