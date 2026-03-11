@@ -486,3 +486,61 @@ Additional V22 notes:
 - All content above SAFE_BOTTOM (410px).
 - Video is 1080x1920, ~5.5 seconds, 30fps, H.264/MP4.
 - Uses 10 manila-gallery images (garden-002, canal-002, graffiti-001, dsc-0911, ivy-001, night-003, urban-001, canal-001, tropical-001, floor-001).
+
+V23 render (casting call format, monospace/typewriter aesthetic):
+
+```bash
+node marketing/manila-model-search-carousel/render-v23.mjs
+```
+
+V23 outputs:
+
+- `output-v23/01_casting_hook.png`
+- `output-v23/02_proof_exhibit.mp4` (animated video)
+- `output-v23/03_process_callsheet.png`
+- `output-v23/04_cta_final_notice.png`
+- `output-v23/sources.json`
+
+Additional V23 notes:
+
+- FUNDAMENTALLY NEW AD CONCEPT: "Casting Call" format designed like an official casting notice/call sheet from the film industry.
+- Monospace/typewriter fonts (Courier New) for the "official document" feel, combined with bold sans-serif (Helvetica Neue) for headlines.
+- Black and white aesthetic with one deep red accent color (#C62828) used for MANILA and stamp elements.
+- Warm off-white "paper" background (#F5F3EF) with faint horizontal rules for document texture.
+- MANILA in large bold red on every slide (80px+ font size).
+- 4 slides: CASTING HOOK > PROOF EXHIBIT (animated MP4) > PROCESS CALL SHEET > CTA FINAL NOTICE.
+- Slide 1: "CASTING: MANILA" header with "SEEKING: Models for editorial portrait shoots." Strikethrough text crossing out "Agency representation", "Prior experience", "Professional portfolio". Rotated "OPEN CALL" stamp in red. Hero image below with black border and desaturated filter.
+- Slide 2: Animated MP4 -- "EXHIBIT A: PREVIOUS WORK" header. 2x3 grid of 6 images fade in with translateY stagger (400ms apart). "VERIFIED" stamp slams in at the end. ~5.5 seconds, 30fps, H.264/MP4.
+- Slide 3: "SECTION II: CALL SHEET" -- numbered steps (01/02/03) with monospace descriptions. "NO EXPERIENCE NEEDED" rotated stamp. Small process image at bottom.
+- Slide 4: "FINAL NOTICE" -- "Sign up below." with monospace body copy. Red "LIMITED SPOTS THIS MONTH" badge. Hero image with black border.
+- All images have grayscale + contrast filters and black borders for a documentary/archival look.
+- All content above SAFE_BOTTOM (410px).
+- Uses 9 manila-gallery images (street-001, closeup-001, dsc-0911, graffiti-001, urban-001, shadow-001, dsc-0130, tropical-001, statue-001).
+
+V25 render (countdown/urgency FOMO format):
+
+```bash
+node marketing/manila-model-search-carousel/render-v25.mjs
+```
+
+V25 outputs:
+
+- `output-v25/01_fomo_hook.png`
+- `output-v25/02_proof_rapid.mp4` (animated video)
+- `output-v25/03_what_you_miss.png`
+- `output-v25/04_cta_urgency.png`
+- `output-v25/sources.json`
+
+Additional V25 notes:
+
+- Completely new ad concept: countdown/urgency-first FOMO format. Leads with scarcity and exclusivity.
+- Dark background (#0C0A0A) with bright red-orange accents (#FF4D2A). Event poster / concert flyer energy.
+- MANILA is VERY LARGE (80-82px) and prominent in red-orange on every slide with glow text-shadow.
+- 4 slides: FOMO HOOK > PROOF (animated MP4) > WHAT YOU'LL MISS > CTA WITH URGENCY.
+- Slide 1: "3 spots left." with visual countdown boxes (5 numbered squares with strike-throughs showing spots taken), hero image right side, "3 SPOTS REMAINING THIS MONTH" label.
+- Slide 2: Animated MP4 -- 12 images in 3x4 film-strip grid, rapid 200ms stagger (faster than v17's 300ms) for high energy. Red-orange borders on tiles. ~4.5 seconds, 30fps H.264.
+- Slide 3: "Don't miss out." -- Loss-aversion framing with 4 benefit cards (guided direction, 25+ edited photos, zero experience, unique locations) on dark bg with faint background image. Checkmark icons in accent color.
+- Slide 4: "Sign up below." with countdown number boxes (03 spots left), "Don't wait -- sign up now" urgency pill, full-bleed hero with heavy dark gradient.
+- "3 spots" scarcity element repeated on slides 1, 3, and 4 for FOMO reinforcement.
+- All text above SAFE_BOTTOM (410px).
+- Uses 15 manila-gallery images (statue, closeup, dsc-0911, garden, night, dsc-0130, canal, graffiti, urban, shadow, ivy, tropical, canal-001, dsc-0190, night-001).
