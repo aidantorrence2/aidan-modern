@@ -211,3 +211,18 @@ V11 outputs:
 - `output-v11/04_how_the_shoot_works_story.png`
 - `output-v11/05_sign_up_story.png`
 - `output-v11/sources.json`
+
+V12 render (header copy update):
+
+```bash
+node marketing/manila-model-search-carousel/render-v12.mjs
+```
+
+V12 outputs:
+
+- `output-v12/01_models_in_manila_story.png`
+- `output-v12/02_portfolio_images_story.png`
+- `output-v12/03_what_you_get_story.png`
+- `output-v12/04_how_the_shoot_works_story.png`
+- `output-v12/05_sign_up_story.png`
+- `output-v12/sources.json`

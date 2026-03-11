@@ -260,3 +260,13 @@
   - Exports a five-slide 1080x1920 PNG set for story/reels use.
   - Increases the visual weight of pages 1 and 5 by scaling the images up further.
   - Rewrites page 2 and page 5 copy to sound more natural and sales-oriented.
+
+## Manila Model Search Carousel V12 (Header Text Update)
+- Source folder: `marketing/manila-model-search-carousel`
+- Render command:
+  - `node marketing/manila-model-search-carousel/render-v12.mjs`
+- Output folder:
+  - `marketing/manila-model-search-carousel/output-v12`
+- Notes:
+  - Same layout as V11.
+  - Shared page header text is updated from `MANILA` to `MANILA MODEL SEARCH`.
