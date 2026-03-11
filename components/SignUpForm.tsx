@@ -5,11 +5,17 @@ type State = { ok: boolean; error?: string }
 
 export default function SignUpForm() {
   const [state, setState] = useState<State | null>(null)
+  const [city, setCity] = useState('')
   const [contactMethod, setContactMethod] = useState<'whatsapp' | 'instagram'>('whatsapp')
+  const [contact, setContact] = useState('')
   const [photoPreview, setPhotoPreview] = useState<string | null>(null)
   const [photoData, setPhotoData] = useState<string | null>(null)
   const [submitting, setSubmitting] = useState(false)
   const fileRef = useRef<HTMLInputElement>(null)
+
+  const cityDone = city.trim().length > 0
+  const contactDone = contact.trim().length > 0
+  const photoDone = !!photoPreview
 
   function clearStatus() {
     if (state) setState(null)
@@ -43,18 +49,16 @@ export default function SignUpForm() {
     const form = e.currentTarget
     const data = Object.fromEntries(new FormData(form).entries()) as Record<string, string>
 
-    // Honeypot
     if (data.company) {
       setState({ ok: true })
       return
     }
 
-    if (!data.city?.trim()) {
+    if (!city.trim()) {
       setState({ ok: false, error: 'Please enter your city.' })
       return
     }
-    const contactValue = contactMethod === 'whatsapp' ? data.whatsapp : data.instagram
-    if (!contactValue?.trim()) {
+    if (!contact.trim()) {
       setState({ ok: false, error: `Please enter your ${contactMethod === 'whatsapp' ? 'WhatsApp number' : 'Instagram handle'}.` })
       return
     }
@@ -66,9 +70,9 @@ export default function SignUpForm() {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          city: data.city.trim(),
+          city: city.trim(),
           contactMethod,
-          contact: contactValue.trim(),
+          contact: contact.trim(),
           photo: photoData || null
         })
       })
@@ -83,6 +87,8 @@ export default function SignUpForm() {
       }
 
       form.reset()
+      setCity('')
+      setContact('')
       setContactMethod('whatsapp')
       setPhotoPreview(null)
       setPhotoData(null)
@@ -93,84 +99,113 @@ export default function SignUpForm() {
     }
   }
 
-  return (
-    <form onSubmit={onSubmit} className="mt-6 space-y-6">
-      {state?.ok && (
-        <div className="rounded-2xl border border-green-200 bg-green-50 px-5 py-4 text-sm font-medium text-green-800">
-          You&apos;re in! I&apos;ll reach out soon to plan everything.
+  function Check() {
+    return (
+      <svg className="h-4 w-4 text-emerald-400" viewBox="0 0 20 20" fill="currentColor">
+        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+      </svg>
+    )
+  }
+
+  function StepNumber({ n }: { n: number }) {
+    return (
+      <span className="flex h-5 w-5 items-center justify-center rounded-full bg-white/10 text-[11px] font-bold text-white/50">
+        {n}
+      </span>
+    )
+  }
+
+  if (state?.ok) {
+    return (
+      <div className="mt-6 rounded-2xl border border-emerald-500/30 bg-emerald-500/10 px-6 py-8 text-center">
+        <div className="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-emerald-500/20">
+          <svg className="h-6 w-6 text-emerald-400" viewBox="0 0 20 20" fill="currentColor">
+            <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+          </svg>
         </div>
-      )}
+        <p className="text-lg font-semibold text-white">You&apos;re in!</p>
+        <p className="mt-1 text-sm text-white/60">I&apos;ll reach out soon to plan everything.</p>
+      </div>
+    )
+  }
+
+  return (
+    <form onSubmit={onSubmit} className="mt-6 space-y-5">
       {state && !state.ok && (
-        <div className="rounded-2xl border-2 border-red-300 bg-red-50 px-5 py-4 text-sm font-semibold text-red-800">
+        <div className="rounded-xl border border-red-500/30 bg-red-500/10 px-4 py-3 text-sm font-medium text-red-300">
           {state.error}
         </div>
       )}
 
-      {/* City */}
-      <div>
-        <label className="block text-sm font-medium text-neutral-700">City</label>
+      {/* Step 1: City */}
+      <div className="space-y-1.5">
+        <label className="flex items-center gap-2 text-sm font-medium text-white/80">
+          {cityDone ? <Check /> : <StepNumber n={1} />}
+          City
+        </label>
         <input
           name="city"
-          onChange={clearStatus}
-          className="mt-1.5 w-full rounded-xl border border-neutral-300 bg-white px-4 py-3 text-sm outline-none transition focus:border-accent focus:ring-2 focus:ring-accent/30"
+          value={city}
+          onChange={e => { setCity(e.target.value); clearStatus() }}
+          className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-white/30 outline-none transition focus:border-accent focus:ring-2 focus:ring-accent/30"
           placeholder="e.g. Manila, BGC, Makati"
         />
       </div>
 
-      {/* Contact method */}
-      <fieldset>
-        <legend className="text-sm font-medium text-neutral-700">How should I contact you?</legend>
-        <div className="mt-2 flex gap-3">
+      {/* Step 2: Contact method */}
+      <fieldset className="space-y-2">
+        <legend className="flex items-center gap-2 text-sm font-medium text-white/80">
+          {contactDone ? <Check /> : <StepNumber n={2} />}
+          How should I contact you?
+        </legend>
+        <div className="flex gap-2">
           {(['whatsapp', 'instagram'] as const).map(method => (
             <button
               key={method}
               type="button"
-              onClick={() => { setContactMethod(method); clearStatus() }}
-              className={`rounded-full border-2 px-5 py-2.5 text-sm font-semibold transition-all ${
+              onClick={() => { setContactMethod(method); setContact(''); clearStatus() }}
+              className={`rounded-full border px-5 py-2 text-sm font-semibold transition-all ${
                 contactMethod === method
-                  ? 'border-accent bg-accent/10 text-accent'
-                  : 'border-neutral-300 bg-white text-neutral-700 hover:border-neutral-400'
+                  ? 'border-accent bg-accent/20 text-accent'
+                  : 'border-white/15 bg-white/5 text-white/60 hover:border-white/30 hover:text-white/80'
               }`}
             >
               {method === 'whatsapp' ? 'WhatsApp' : 'Instagram'}
             </button>
           ))}
         </div>
-      </fieldset>
-
-      {/* Contact field */}
-      <div>
-        <label className="block text-sm font-medium text-neutral-700">
-          {contactMethod === 'whatsapp' ? 'WhatsApp number' : 'Instagram handle'}
-        </label>
         <input
           required
           key={contactMethod}
           name={contactMethod === 'whatsapp' ? 'whatsapp' : 'instagram'}
-          onChange={clearStatus}
-          className="mt-1.5 w-full rounded-xl border border-neutral-300 bg-white px-4 py-3 text-sm outline-none transition focus:border-accent focus:ring-2 focus:ring-accent/30"
+          value={contact}
+          onChange={e => { setContact(e.target.value); clearStatus() }}
+          className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-white/30 outline-none transition focus:border-accent focus:ring-2 focus:ring-accent/30"
           placeholder={contactMethod === 'whatsapp' ? '+63 917 123 4567' : '@yourhandle'}
         />
         {contactMethod === 'instagram' && (
-          <p className="mt-1.5 text-xs text-amber-600">Make sure you follow @madebyaidan so I can message you</p>
+          <p className="text-xs text-amber-400/80">Follow @madebyaidan so I can message you</p>
         )}
-      </div>
+      </fieldset>
 
-      {/* Photo upload */}
-      <div>
-        <label className="block text-sm font-medium text-neutral-700">What you look like</label>
-        <p className="mt-0.5 text-xs text-neutral-500">A basic selfie or headshot is fine</p>
+      {/* Step 3: Photo */}
+      <div className="space-y-1.5">
+        <label className="flex items-center gap-2 text-sm font-medium text-white/80">
+          {photoDone ? <Check /> : <StepNumber n={3} />}
+          What you look like
+        </label>
+        <p className="text-xs text-white/40">A basic selfie or headshot is fine</p>
         {photoPreview ? (
-          <div className="mt-2 inline-block relative">
+          <div className="relative mt-1 inline-block">
             <img
               src={photoPreview}
               alt="Preview"
-              className="h-32 w-32 rounded-2xl border border-neutral-200 object-cover"
+              className="h-28 w-28 rounded-xl border border-white/10 object-cover"
             />
             <button
               type="button"
               onClick={removePhoto}
-              className="absolute -right-2 -top-2 flex h-6 w-6 items-center justify-center rounded-full bg-neutral-800 text-xs text-white shadow transition hover:bg-red-600"
+              className="absolute -right-2 -top-2 flex h-6 w-6 items-center justify-center rounded-full bg-white/20 text-xs text-white backdrop-blur transition hover:bg-red-500"
               aria-label="Remove photo"
             >
               &times;
@@ -180,7 +215,7 @@ export default function SignUpForm() {
           <button
             type="button"
             onClick={() => fileRef.current?.click()}
-            className="mt-2 flex h-32 w-full items-center justify-center rounded-2xl border-2 border-dashed border-neutral-300 bg-white text-sm text-neutral-500 transition hover:border-accent hover:text-accent"
+            className="mt-1 flex h-28 w-full items-center justify-center rounded-xl border border-dashed border-white/15 bg-white/5 text-sm text-white/40 transition hover:border-accent/50 hover:text-accent"
           >
             Tap to upload a photo
           </button>
@@ -197,14 +232,28 @@ export default function SignUpForm() {
       {/* Honeypot */}
       <input type="text" name="company" className="hidden" tabIndex={-1} autoComplete="off" />
 
-      <button
-        type="submit"
-        disabled={submitting}
-        className="btn btn-primary w-full py-3.5 text-base disabled:opacity-60"
-        data-cta="sign-up-submit"
-      >
-        {submitting ? 'Submitting...' : 'Sign Up'}
-      </button>
+      {/* Progress + Submit */}
+      <div className="space-y-3 pt-1">
+        <div className="flex items-center gap-3">
+          <div className="flex h-1.5 flex-1 overflow-hidden rounded-full bg-white/10">
+            <div
+              className="h-full rounded-full bg-accent transition-all duration-500"
+              style={{ width: `${((cityDone ? 1 : 0) + (contactDone ? 1 : 0) + (photoDone ? 1 : 0)) / 3 * 100}%` }}
+            />
+          </div>
+          <span className="text-xs font-medium text-white/40">
+            {(cityDone ? 1 : 0) + (contactDone ? 1 : 0) + (photoDone ? 1 : 0)}/3
+          </span>
+        </div>
+        <button
+          type="submit"
+          disabled={submitting}
+          className="w-full rounded-full bg-accent py-3.5 text-sm font-bold text-white shadow-lg shadow-accent/20 transition hover:brightness-110 disabled:opacity-50"
+          data-cta="sign-up-submit"
+        >
+          {submitting ? 'Submitting...' : 'Sign Up'}
+        </button>
+      </div>
     </form>
   )
 }
