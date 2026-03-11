@@ -391,11 +391,11 @@ async function render() {
   resetOutputDir()
 
   const selection = {
-    photo1: 'manila-gallery-purple-001.jpg',
-    photo2: 'manila-gallery-purple-002.jpg',
-    photo3: 'manila-gallery-purple-003.jpg',
-    photo4: 'manila-gallery-purple-004.jpg',
-    photo5: 'manila-gallery-purple-005.jpg',
+    photo1: 'manila-gallery-garden-001.jpg',
+    photo2: 'manila-gallery-graffiti-001.jpg',
+    photo3: 'manila-gallery-ivy-001.jpg',
+    photo4: 'manila-gallery-canal-001.jpg',
+    photo5: 'manila-gallery-dsc-0075.jpg',
   }
 
   const images = Object.fromEntries(
