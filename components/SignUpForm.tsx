@@ -5,7 +5,7 @@ type State = { ok: boolean; error?: string }
 
 export default function SignUpForm() {
   const [state, setState] = useState<State | null>(null)
-  const [contactMethod, setContactMethod] = useState<'whatsapp' | 'instagram' | ''>('')
+  const [contactMethod, setContactMethod] = useState<'whatsapp' | 'instagram'>('whatsapp')
   const [photoPreview, setPhotoPreview] = useState<string | null>(null)
   const [photoData, setPhotoData] = useState<string | null>(null)
   const [submitting, setSubmitting] = useState(false)
@@ -53,10 +53,6 @@ export default function SignUpForm() {
       setState({ ok: false, error: 'Please enter your city.' })
       return
     }
-    if (!contactMethod) {
-      setState({ ok: false, error: 'Please select a contact method.' })
-      return
-    }
     const contactValue = contactMethod === 'whatsapp' ? data.whatsapp : data.instagram
     if (!contactValue?.trim()) {
       setState({ ok: false, error: `Please enter your ${contactMethod === 'whatsapp' ? 'WhatsApp number' : 'Instagram handle'}.` })
@@ -87,7 +83,7 @@ export default function SignUpForm() {
       }
 
       form.reset()
-      setContactMethod('')
+      setContactMethod('whatsapp')
       setPhotoPreview(null)
       setPhotoData(null)
     } catch {
@@ -142,24 +138,23 @@ export default function SignUpForm() {
         </div>
       </fieldset>
 
-      {/* Conditional contact field */}
-      {contactMethod && (
-        <div>
-          <label className="block text-sm font-medium text-neutral-700">
-            {contactMethod === 'whatsapp' ? 'WhatsApp number' : 'Instagram handle'}
-          </label>
-          <input
-            required
-            name={contactMethod === 'whatsapp' ? 'whatsapp' : 'instagram'}
-            onChange={clearStatus}
-            className="mt-1.5 w-full rounded-xl border border-neutral-300 bg-white px-4 py-3 text-sm outline-none transition focus:border-accent focus:ring-2 focus:ring-accent/30"
-            placeholder={contactMethod === 'whatsapp' ? '+63 917 123 4567' : '@yourhandle'}
-          />
-          {contactMethod === 'instagram' && (
-            <p className="mt-1.5 text-xs text-amber-600">Make sure you follow @madebyaidan so I can message you</p>
-          )}
-        </div>
-      )}
+      {/* Contact field */}
+      <div>
+        <label className="block text-sm font-medium text-neutral-700">
+          {contactMethod === 'whatsapp' ? 'WhatsApp number' : 'Instagram handle'}
+        </label>
+        <input
+          required
+          key={contactMethod}
+          name={contactMethod === 'whatsapp' ? 'whatsapp' : 'instagram'}
+          onChange={clearStatus}
+          className="mt-1.5 w-full rounded-xl border border-neutral-300 bg-white px-4 py-3 text-sm outline-none transition focus:border-accent focus:ring-2 focus:ring-accent/30"
+          placeholder={contactMethod === 'whatsapp' ? '+63 917 123 4567' : '@yourhandle'}
+        />
+        {contactMethod === 'instagram' && (
+          <p className="mt-1.5 text-xs text-amber-600">Make sure you follow @madebyaidan so I can message you</p>
+        )}
+      </div>
 
       {/* Photo upload */}
       <div>
