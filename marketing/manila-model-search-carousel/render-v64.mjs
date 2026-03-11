@@ -12,9 +12,14 @@ const WIDTH = 1080
 const HEIGHT = 1920
 const SAFE_BOTTOM = 410
 
-const SF = "-apple-system, 'Helvetica Neue', Arial, sans-serif"
+const BOLD = "'Avenir Next', 'Helvetica Neue', Arial, sans-serif"
+const BODY = "'Avenir Next', 'Helvetica Neue', Arial, sans-serif"
+const NARROW = "Futura, 'Arial Narrow', sans-serif"
+
+// Colors
 const MANILA_COLOR = '#FF6B2B'
-const ACCENT = '#FFB380'
+const ACCENT_WARM = '#FFB380'
+const DIVIDER_COLOR = '#FF6B2B'
 const HANDLE = 'madebyaidan'
 
 const selection = {
@@ -49,7 +54,7 @@ function readImage(name) {
 function writeSources() {
   const payload = {
     createdAt: new Date().toISOString(),
-    strategy: 'v64 — Animated before/after transformation video with funny before content',
+    strategy: 'v64 — single continuous video: hero + v27 side-by-side before/after + steps + CTA',
     safeBottomPixels: SAFE_BOTTOM,
     images: selection,
   }
@@ -58,40 +63,78 @@ function writeSources() {
 
 /*
   TIMELINE (seconds):
-  0.0–4.0   Hero intro: full-screen photo with Ken Burns zoom, "MANILA" + "What if you had photos like this?"
-  4.0–4.5   Flash transition to BEFORE section
-  4.5–7.5   Before A: "Your IG feed rn:" — desaturated, grainy
-  7.5–10.5  Before B: "POV: your friend takes your photo" — desaturated
-  10.5–13.0 Before C: "LinkedIn headshot energy" — desaturated
-  13.0–13.5 Dramatic white flash transition
-  13.5–15.5 After A: vibrant reveal
-  15.5–17.5 After B: vibrant reveal
-  17.5–19.5 After C: vibrant reveal
-  19.5–21.5 "The difference? One afternoon." text moment
-  21.5–23.0 Fade to black
-  (CTA composited as 5s still at end via ffmpeg)
+  0.0 – 3.0   Opening: Full-screen hero with Ken Burns zoom, "MANILA" + "What if you had photos like this?"
+  3.0 – 12.0  Side-by-side section (v27 layout):
+               - Divider grows from top (3.0s)
+               - Labels fade in (3.3s–3.6s)
+               - Pair 1 slides in at 3.5s
+               - Pair 2 slides in at 4.9s
+               - Pair 3 slides in at 6.3s
+               - Hold until 12.0s
+  12.0 – 15.0 "The difference? One afternoon." + 3 steps
+  15.0 – 20.0 CTA: "Sign up below" + hero photo underneath
 */
 
-const TOTAL_DURATION = 23
+const TOTAL_DURATION = 20
 
 function buildVideoHTML(images) {
+  // ─── Side-by-side pair geometry (from v27) ───
+  const PAIR_HEIGHT = 380
+  const GAP = 16
+  const PAD = 28
+  const HALF_W = (WIDTH - PAD * 2 - GAP) / 2
+  const TOP_START = 260
+  const DIVIDER_X = PAD + HALF_W + GAP / 2
+
+  const pairs = [
+    { before: images.beforeA, after: images.afterA, funnyText: 'portrait mode' },
+    { before: images.beforeB, after: images.afterB, funnyText: "ur friend's photography" },
+    { before: images.beforeC, after: images.afterC, funnyText: 'LinkedIn energy' },
+  ]
+
+  // Side-by-side pairs HTML
+  let pairsHtml = ''
+  for (let i = 0; i < pairs.length; i++) {
+    const y = TOP_START + i * (PAIR_HEIGHT + GAP)
+    const baseDelay = 3.5 + i * 1.4
+
+    // Before side (left) — desaturated with funny text overlay
+    pairsHtml += `
+      <div class="pair-before pair-${i}" style="position:absolute;left:${PAD}px;top:${y}px;width:${HALF_W}px;height:${PAIR_HEIGHT}px;border-radius:12px;overflow:hidden;opacity:0;transform:translateX(-30px);animation:slideInLeft 0.7s ease-out ${baseDelay}s forwards;">
+        <img src="${pairs[i].before}" style="width:100%;height:100%;display:block;object-fit:cover;object-position:center;filter:grayscale(50%) contrast(0.75) brightness(0.85);"/>
+        <div style="position:absolute;inset:0;background:rgba(100,120,140,0.15);"></div>
+        <div style="position:absolute;bottom:12px;left:8px;right:8px;text-align:center;">
+          <span style="font-family:${BODY};font-size:22px;font-weight:600;color:rgba(255,255,255,0.9);background:rgba(0,0,0,0.55);padding:6px 14px;border-radius:8px;text-shadow:0 1px 4px rgba(0,0,0,0.6);">${pairs[i].funnyText}</span>
+        </div>
+      </div>
+    `
+
+    // After side (right) — full vibrant color
+    pairsHtml += `
+      <div class="pair-after pair-${i}" style="position:absolute;left:${DIVIDER_X + GAP / 2}px;top:${y}px;width:${HALF_W}px;height:${PAIR_HEIGHT}px;border-radius:12px;overflow:hidden;opacity:0;transform:translateX(30px);animation:slideInRight 0.7s ease-out ${baseDelay + 0.4}s forwards;">
+        <img src="${pairs[i].after}" style="width:100%;height:100%;display:block;object-fit:cover;object-position:center;"/>
+        <div style="position:absolute;inset:0;background:linear-gradient(135deg, rgba(255,150,80,0.08) 0%, rgba(255,107,43,0.05) 100%);"></div>
+      </div>
+    `
+  }
+
   return `<!DOCTYPE html>
 <html>
 <head>
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  html, body { margin: 0; padding: 0; background: #000; overflow: hidden;
+  html, body { margin: 0; padding: 0; background: #0a0a0a; overflow: hidden;
     -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
 
   /* ===== Ken Burns hero ===== */
   @keyframes kenBurns {
     0%   { transform: scale(1.0); }
-    100% { transform: scale(1.15); }
+    100% { transform: scale(1.12); }
   }
 
   @keyframes heroTextIn {
-    0%   { opacity: 0; transform: translateY(30px); }
-    15%  { opacity: 1; transform: translateY(0); }
+    0%   { opacity: 0; transform: translateY(24px); }
+    20%  { opacity: 1; transform: translateY(0); }
     85%  { opacity: 1; }
     100% { opacity: 0; }
   }
@@ -101,395 +144,193 @@ function buildVideoHTML(images) {
     100% { opacity: 0; }
   }
 
-  /* ===== Flash ===== */
-  @keyframes flashBefore {
+  /* ===== Side-by-side animations (from v27) ===== */
+  @keyframes slideInLeft {
+    0%   { opacity: 0; transform: translateX(-30px); }
+    100% { opacity: 1; transform: translateX(0); }
+  }
+  @keyframes slideInRight {
+    0%   { opacity: 0; transform: translateX(30px); }
+    100% { opacity: 1; transform: translateX(0); }
+  }
+  @keyframes headerFade {
+    0%   { opacity: 0; transform: translateY(-16px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes dividerGrow {
+    0%   { transform: scaleY(0); }
+    100% { transform: scaleY(1); }
+  }
+  @keyframes labelFade {
     0%   { opacity: 0; }
-    50%  { opacity: 1; }
+    100% { opacity: 1; }
+  }
+
+  /* ===== Side-by-side section fade out ===== */
+  @keyframes sectionFadeOut {
+    0%   { opacity: 1; }
     100% { opacity: 0; }
   }
 
-  @keyframes flashAfter {
+  /* ===== Steps/difference section ===== */
+  @keyframes diffFadeIn {
+    0%   { opacity: 0; transform: translateY(30px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes diffFadeOut {
+    0%   { opacity: 1; }
+    100% { opacity: 0; }
+  }
+
+  /* ===== CTA section ===== */
+  @keyframes ctaFadeIn {
     0%   { opacity: 0; }
-    50%  { opacity: 1; }
-    100% { opacity: 0; }
-  }
-
-  /* ===== Before slides ===== */
-  @keyframes beforeAIn {
-    0%   { opacity: 0; }
-    8%   { opacity: 1; }
-    92%  { opacity: 1; }
-    100% { opacity: 0; }
-  }
-  @keyframes beforeBIn {
-    0%   { opacity: 0; }
-    8%   { opacity: 1; }
-    92%  { opacity: 1; }
-    100% { opacity: 0; }
-  }
-  @keyframes beforeCIn {
-    0%   { opacity: 0; }
-    8%   { opacity: 1; }
-    92%  { opacity: 1; }
-    100% { opacity: 0; }
-  }
-
-  /* ===== Before text bounce ===== */
-  @keyframes textBounce {
-    0%   { opacity: 0; transform: scale(0.7) rotate(-3deg); }
-    50%  { opacity: 1; transform: scale(1.08) rotate(1deg); }
-    70%  { transform: scale(0.97) rotate(-0.5deg); }
-    100% { opacity: 1; transform: scale(1) rotate(0deg); }
-  }
-
-  /* ===== After slides ===== */
-  @keyframes afterSlideIn {
-    0%   { opacity: 0; transform: scale(1.1); }
-    20%  { opacity: 1; transform: scale(1.0); }
-    90%  { opacity: 1; }
-    100% { opacity: 0; }
-  }
-
-  /* ===== Difference text ===== */
-  @keyframes diffTextIn {
-    0%   { opacity: 0; transform: translateY(40px); }
-    25%  { opacity: 1; transform: translateY(0); }
-    85%  { opacity: 1; }
-    100% { opacity: 0; }
-  }
-
-  /* ===== Grain overlay for before slides ===== */
-  @keyframes grain {
-    0%, 100% { transform: translate(0, 0); }
-    10% { transform: translate(-5%, -10%); }
-    20% { transform: translate(-15%, 5%); }
-    30% { transform: translate(7%, -25%); }
-    40% { transform: translate(-5%, 25%); }
-    50% { transform: translate(-15%, 10%); }
-    60% { transform: translate(15%, 0%); }
-    70% { transform: translate(0%, 15%); }
-    80% { transform: translate(3%, 35%); }
-    90% { transform: translate(-10%, 10%); }
-  }
-
-  /* ===== Before label style ===== */
-  .before-label {
-    position: absolute;
-    top: 80px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-family: ${SF};
-    font-size: 48px;
-    font-weight: 800;
-    color: #FFD600;
-    text-transform: uppercase;
-    letter-spacing: 0.2em;
-    text-shadow: 0 4px 20px rgba(0,0,0,0.8);
-    z-index: 10;
-  }
-
-  /* ===== After label style ===== */
-  .after-label {
-    position: absolute;
-    top: 80px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-family: ${SF};
-    font-size: 48px;
-    font-weight: 800;
-    color: ${MANILA_COLOR};
-    text-transform: uppercase;
-    letter-spacing: 0.2em;
-    text-shadow: 0 4px 20px rgba(0,0,0,0.8);
-    z-index: 10;
-  }
-
-  .funny-text {
-    position: absolute;
-    left: 0; right: 0;
-    text-align: center;
-    z-index: 10;
-    padding: 0 60px;
-  }
-
-  .funny-text p {
-    font-family: ${SF};
-    color: #fff;
-    text-shadow: 0 4px 30px rgba(0,0,0,0.9), 0 2px 8px rgba(0,0,0,0.7);
-    margin: 0;
+    100% { opacity: 1; }
   }
 </style>
 </head>
 <body>
-<div style="width:${WIDTH}px;height:${HEIGHT}px;position:relative;overflow:hidden;background:#000;">
+<div style="width:${WIDTH}px;height:${HEIGHT}px;position:relative;overflow:hidden;background:#0a0a0a;">
 
-  <!-- ============ HERO SECTION (0s – 4s) ============ -->
-  <div style="position:absolute;inset:0;z-index:5;
-    opacity:1;animation:heroOut 0.5s ease-out 3.8s forwards;">
+  <!-- ============ OPENING HERO (0s – 3s) ============ -->
+  <div id="hero-section" style="position:absolute;inset:0;z-index:10;
+    opacity:1;animation:heroOut 0.5s ease-out 2.7s forwards;">
 
     <!-- Ken Burns photo -->
-    <div style="position:absolute;inset:0;animation:kenBurns 4s ease-out forwards;">
-      <img src="${images.hero}" style="width:100%;height:100%;object-fit:cover;object-position:center 30%;display:block;"/>
+    <div style="position:absolute;inset:0;animation:kenBurns 3s ease-out forwards;">
+      <img src="${images.hero}" style="width:100%;height:100%;object-fit:cover;object-position:center 20%;display:block;"/>
     </div>
 
-    <!-- Dark gradient for text readability -->
-    <div style="position:absolute;inset:0;background:linear-gradient(180deg,
-      rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.1) 30%, rgba(0,0,0,0.0) 50%,
-      rgba(0,0,0,0.3) 70%, rgba(0,0,0,0.85) 90%);"></div>
+    <!-- Top gradient for text legibility -->
+    <div style="position:absolute;left:0;right:0;top:0;height:900px;background:linear-gradient(180deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.55) 55%, rgba(0,0,0,0) 100%);"></div>
 
-    <!-- MANILA text -->
-    <div style="position:absolute;top:140px;left:0;right:0;text-align:center;z-index:10;
-      animation:heroTextIn 3.8s ease-out 0.3s both;">
-      <p style="font-family:${SF};font-size:140px;font-weight:900;letter-spacing:0.12em;
-        color:${MANILA_COLOR};margin:0;text-transform:uppercase;
-        text-shadow:0 6px 60px rgba(255,107,43,0.5), 0 2px 20px rgba(0,0,0,0.8);">MANILA</p>
-    </div>
+    <!-- Bottom safe zone gradient -->
+    <div style="position:absolute;left:0;right:0;bottom:0;height:${SAFE_BOTTOM + 120}px;background:linear-gradient(0deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 100%);"></div>
 
-    <!-- "What if you had photos like this?" -->
-    <div style="position:absolute;bottom:${SAFE_BOTTOM + 100}px;left:0;right:0;text-align:center;padding:0 80px;z-index:10;
-      animation:heroTextIn 3.5s ease-out 0.6s both;">
-      <p style="font-family:${SF};font-size:56px;font-weight:700;color:#fff;line-height:1.25;
-        text-shadow:0 4px 40px rgba(0,0,0,0.8);">What if you had<br/>photos like this?</p>
+    <!-- Text content -->
+    <div style="position:absolute;left:54px;top:72px;right:54px;animation:heroTextIn 2.7s ease-out 0.2s both;">
+      <p style="font-family:${NARROW};font-size:140px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:${MANILA_COLOR};margin:0 0 20px;text-shadow:0 6px 60px rgba(255,107,43,0.5), 0 2px 20px rgba(0,0,0,0.8);">MANILA</p>
+      <h1 style="font-family:${BOLD};font-size:72px;font-weight:800;line-height:1.0;color:#fff;margin:0 0 24px;letter-spacing:-0.02em;text-shadow:0 2px 16px rgba(0,0,0,0.4);">What if you<br/>had photos<br/>like this?</h1>
+      <p style="font-family:${BODY};font-size:32px;font-weight:500;line-height:1.35;color:rgba(255,255,255,0.88);margin:0;text-shadow:0 1px 8px rgba(0,0,0,0.4);">One afternoon. No experience needed.</p>
     </div>
   </div>
 
-  <!-- ============ FLASH TRANSITION 1 (3.8s – 4.3s) ============ -->
-  <div style="position:absolute;inset:0;z-index:12;background:#fff;pointer-events:none;
-    opacity:0;animation:flashBefore 0.5s ease-out 3.8s forwards;"></div>
+  <!-- ============ SIDE-BY-SIDE SECTION (3s – 12s) ============ -->
+  <div id="sidebyside-section" style="position:absolute;inset:0;z-index:5;
+    opacity:0;animation:labelFade 0.4s ease-out 2.8s forwards, sectionFadeOut 0.5s ease-out 11.5s forwards;">
 
-  <!-- ============ BEFORE A (4.5s – 7.5s) ============ -->
-  <div style="position:absolute;inset:0;z-index:4;
-    opacity:0;animation:beforeAIn 3s ease-out 4.5s forwards;">
+    <div style="width:${WIDTH}px;height:${HEIGHT}px;position:relative;overflow:hidden;background:#0a0a0a;">
 
-    <!-- Desaturated grainy photo -->
-    <div style="position:absolute;inset:0;">
-      <img src="${images.beforeA}" style="width:100%;height:100%;object-fit:cover;object-position:center 25%;display:block;
-        filter:grayscale(70%) contrast(0.7) brightness(0.85) saturate(0.4);"/>
-    </div>
+      <!-- Header -->
+      <div style="position:absolute;left:54px;top:62px;right:54px;opacity:0;animation:headerFade 0.5s ease-out 3.0s forwards;">
+        <p style="font-family:${NARROW};font-size:80px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:${MANILA_COLOR};margin:0 0 10px;">MANILA</p>
+        <h2 style="font-family:${BOLD};font-size:48px;font-weight:800;line-height:1.0;color:#fff;margin:0;letter-spacing:-0.01em;">The transformation.</h2>
+      </div>
 
-    <!-- Film grain overlay -->
-    <div style="position:absolute;inset:-50%;width:200%;height:200%;
-      background-image:url('data:image/svg+xml,${encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" stitchTiles="stitch"/></filter><rect width="200" height="200" filter="url(#n)" opacity="0.35"/></svg>`)}');
-      opacity:0.4;animation:grain 0.5s steps(4) infinite;mix-blend-mode:overlay;pointer-events:none;"></div>
+      <!-- Vertical divider (animated grow from top) -->
+      <div style="position:absolute;left:${DIVIDER_X}px;top:${TOP_START - 30}px;width:3px;height:${3 * PAIR_HEIGHT + 2 * GAP + 60}px;background:linear-gradient(180deg, ${MANILA_COLOR}, rgba(255,107,43,0.2));border-radius:2px;transform:scaleY(0);transform-origin:top;animation:dividerGrow 0.8s ease-out 3.2s forwards;"></div>
 
-    <!-- VHS-style scanlines -->
-    <div style="position:absolute;inset:0;
-      background:repeating-linear-gradient(0deg, transparent, transparent 3px, rgba(0,0,0,0.08) 3px, rgba(0,0,0,0.08) 4px);
-      pointer-events:none;"></div>
+      <!-- Before/After labels -->
+      <div style="position:absolute;left:${PAD}px;top:${TOP_START - 36}px;width:${HALF_W}px;text-align:center;opacity:0;animation:labelFade 0.4s ease-out 3.3s forwards;">
+        <p style="font-family:${NARROW};font-size:20px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin:0;">You now</p>
+      </div>
+      <div style="position:absolute;left:${DIVIDER_X + GAP / 2}px;top:${TOP_START - 36}px;width:${HALF_W}px;text-align:center;opacity:0;animation:labelFade 0.4s ease-out 3.5s forwards;">
+        <p style="font-family:${NARROW};font-size:20px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:${ACCENT_WARM};margin:0;">After the shoot</p>
+      </div>
 
-    <!-- Gradient overlay -->
-    <div style="position:absolute;inset:0;background:linear-gradient(180deg,
-      rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.15) 35%, rgba(0,0,0,0.15) 65%, rgba(0,0,0,0.7) 100%);"></div>
-
-    <!-- BEFORE label -->
-    <div class="before-label">BEFORE</div>
-
-    <!-- Funny text -->
-    <div class="funny-text" style="bottom:${SAFE_BOTTOM + 80}px;">
-      <p style="font-size:52px;font-weight:800;line-height:1.2;
-        animation:textBounce 0.6s cubic-bezier(0.34,1.56,0.64,1) 5.0s both;">
-        Your IG feed rn: 📸💀</p>
-      <p style="font-size:40px;font-weight:500;margin-top:16px;opacity:0.85;
-        animation:textBounce 0.5s cubic-bezier(0.34,1.56,0.64,1) 5.3s both;">
-        "just use portrait mode"</p>
+      ${pairsHtml}
     </div>
   </div>
 
-  <!-- ============ BEFORE B (7.5s – 10.5s) ============ -->
-  <div style="position:absolute;inset:0;z-index:4;
-    opacity:0;animation:beforeBIn 3s ease-out 7.5s forwards;">
+  <!-- ============ "The difference? One afternoon." + STEPS (12s – 15s) ============ -->
+  <div id="diff-section" style="position:absolute;inset:0;z-index:6;background:#0a0a0a;
+    opacity:0;animation:diffFadeIn 0.6s ease-out 12.0s forwards, diffFadeOut 0.5s ease-out 14.5s forwards;">
 
-    <!-- Desaturated grainy photo -->
-    <div style="position:absolute;inset:0;">
-      <img src="${images.beforeB}" style="width:100%;height:100%;object-fit:cover;object-position:center 30%;display:block;
-        filter:grayscale(60%) contrast(0.75) brightness(0.8) saturate(0.45);"/>
-    </div>
+    <div style="width:${WIDTH}px;height:${HEIGHT}px;position:relative;overflow:hidden;background:#0a0a0a;">
 
-    <!-- Film grain -->
-    <div style="position:absolute;inset:-50%;width:200%;height:200%;
-      background-image:url('data:image/svg+xml,${encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="4" stitchTiles="stitch"/></filter><rect width="200" height="200" filter="url(#n)" opacity="0.35"/></svg>`)}');
-      opacity:0.4;animation:grain 0.5s steps(4) infinite;mix-blend-mode:overlay;pointer-events:none;"></div>
+      <!-- MANILA + headline -->
+      <div style="position:absolute;left:54px;top:72px;right:54px;">
+        <p style="font-family:${NARROW};font-size:80px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:${MANILA_COLOR};margin:0 0 16px;">MANILA</p>
+        <h2 style="font-family:${BOLD};font-size:68px;font-weight:800;line-height:1.0;color:#fff;margin:0 0 8px;letter-spacing:-0.02em;">The difference?</h2>
+        <p style="font-family:${BOLD};font-size:52px;font-weight:700;color:${ACCENT_WARM};margin:0;">One afternoon.</p>
+      </div>
 
-    <!-- Scanlines -->
-    <div style="position:absolute;inset:0;
-      background:repeating-linear-gradient(0deg, transparent, transparent 3px, rgba(0,0,0,0.08) 3px, rgba(0,0,0,0.08) 4px);
-      pointer-events:none;"></div>
+      <!-- 3 steps -->
+      <div style="position:absolute;left:54px;top:440px;right:54px;display:flex;flex-direction:column;gap:24px;">
+        <div style="display:flex;align-items:flex-start;gap:24px;">
+          <div style="min-width:64px;height:64px;border-radius:50%;background:${MANILA_COLOR};display:flex;align-items:center;justify-content:center;">
+            <span style="font-family:${BOLD};font-size:30px;font-weight:800;color:#fff;">1</span>
+          </div>
+          <div style="padding-top:6px;">
+            <p style="font-family:${BOLD};font-size:40px;font-weight:700;color:#fff;margin:0 0 6px;line-height:1.1;">Sign up below</p>
+            <p style="font-family:${BODY};font-size:28px;color:rgba(255,255,255,0.7);margin:0;line-height:1.3;">60-second form. I message you back.</p>
+          </div>
+        </div>
 
-    <!-- Gradient overlay -->
-    <div style="position:absolute;inset:0;background:linear-gradient(180deg,
-      rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.15) 35%, rgba(0,0,0,0.15) 65%, rgba(0,0,0,0.7) 100%);"></div>
+        <div style="width:3px;height:32px;background:rgba(255,107,43,0.3);margin-left:31px;border-radius:2px;"></div>
 
-    <div class="before-label">BEFORE</div>
+        <div style="display:flex;align-items:flex-start;gap:24px;">
+          <div style="min-width:64px;height:64px;border-radius:50%;background:${MANILA_COLOR};display:flex;align-items:center;justify-content:center;">
+            <span style="font-family:${BOLD};font-size:30px;font-weight:800;color:#fff;">2</span>
+          </div>
+          <div style="padding-top:6px;">
+            <p style="font-family:${BOLD};font-size:40px;font-weight:700;color:#fff;margin:0 0 6px;line-height:1.1;">We pick a date</p>
+            <p style="font-family:${BODY};font-size:28px;color:rgba(255,255,255,0.7);margin:0;line-height:1.3;">Location, vibe, and look -- planned together.</p>
+          </div>
+        </div>
 
-    <!-- Funny text -->
-    <div class="funny-text" style="bottom:${SAFE_BOTTOM + 80}px;">
-      <p style="font-size:48px;font-weight:800;line-height:1.2;
-        animation:textBounce 0.6s cubic-bezier(0.34,1.56,0.64,1) 8.0s both;">
-        POV: your friend<br/>takes your photo 🫠</p>
-      <p style="font-size:40px;font-weight:500;margin-top:16px;opacity:0.85;
-        animation:textBounce 0.5s cubic-bezier(0.34,1.56,0.64,1) 8.3s both;">
-        "wait let me get your whole body"</p>
-    </div>
-  </div>
+        <div style="width:3px;height:32px;background:rgba(255,107,43,0.3);margin-left:31px;border-radius:2px;"></div>
 
-  <!-- ============ BEFORE C (10.5s – 13.0s) ============ -->
-  <div style="position:absolute;inset:0;z-index:4;
-    opacity:0;animation:beforeCIn 2.5s ease-out 10.5s forwards;">
-
-    <!-- Desaturated grainy photo -->
-    <div style="position:absolute;inset:0;">
-      <img src="${images.beforeC}" style="width:100%;height:100%;object-fit:cover;object-position:center 25%;display:block;
-        filter:grayscale(65%) contrast(0.72) brightness(0.82) saturate(0.4);"/>
-    </div>
-
-    <!-- Film grain -->
-    <div style="position:absolute;inset:-50%;width:200%;height:200%;
-      background-image:url('data:image/svg+xml,${encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" stitchTiles="stitch"/></filter><rect width="200" height="200" filter="url(#n)" opacity="0.35"/></svg>`)}');
-      opacity:0.4;animation:grain 0.5s steps(4) infinite;mix-blend-mode:overlay;pointer-events:none;"></div>
-
-    <!-- Scanlines -->
-    <div style="position:absolute;inset:0;
-      background:repeating-linear-gradient(0deg, transparent, transparent 3px, rgba(0,0,0,0.08) 3px, rgba(0,0,0,0.08) 4px);
-      pointer-events:none;"></div>
-
-    <!-- Gradient overlay -->
-    <div style="position:absolute;inset:0;background:linear-gradient(180deg,
-      rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.15) 35%, rgba(0,0,0,0.15) 65%, rgba(0,0,0,0.7) 100%);"></div>
-
-    <div class="before-label">BEFORE</div>
-
-    <!-- Funny text -->
-    <div class="funny-text" style="bottom:${SAFE_BOTTOM + 80}px;">
-      <p style="font-size:48px;font-weight:800;line-height:1.2;
-        animation:textBounce 0.6s cubic-bezier(0.34,1.56,0.64,1) 11.0s both;">
-        LinkedIn headshot<br/>energy 🪪😐</p>
-      <p style="font-size:40px;font-weight:500;margin-top:16px;opacity:0.85;
-        animation:textBounce 0.5s cubic-bezier(0.34,1.56,0.64,1) 11.3s both;">
-        "can you crop out the bathroom?"</p>
+        <div style="display:flex;align-items:flex-start;gap:24px;">
+          <div style="min-width:64px;height:64px;border-radius:50%;background:${MANILA_COLOR};display:flex;align-items:center;justify-content:center;">
+            <span style="font-family:${BOLD};font-size:30px;font-weight:800;color:#fff;">3</span>
+          </div>
+          <div style="padding-top:6px;">
+            <p style="font-family:${BOLD};font-size:40px;font-weight:700;color:#fff;margin:0 0 6px;line-height:1.1;">Show up. I guide you.</p>
+            <p style="font-family:${BODY};font-size:28px;color:rgba(255,255,255,0.7);margin:0;line-height:1.3;">No posing experience needed.</p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
-  <!-- ============ FLASH TRANSITION 2 (12.8s – 13.5s) ============ -->
-  <div style="position:absolute;inset:0;z-index:12;background:#fff;pointer-events:none;
-    opacity:0;animation:flashAfter 0.7s ease-out 12.8s forwards;"></div>
+  <!-- ============ CTA SECTION (15s – 20s) ============ -->
+  <div id="cta-section" style="position:absolute;inset:0;z-index:7;
+    opacity:0;animation:ctaFadeIn 0.6s ease-out 15.0s forwards;">
 
-  <!-- ============ AFTER A (13.5s – 15.5s) ============ -->
-  <div style="position:absolute;inset:0;z-index:3;
-    opacity:0;animation:afterSlideIn 2s ease-out 13.5s forwards;">
+    <div style="width:${WIDTH}px;height:${HEIGHT}px;position:relative;overflow:hidden;background:#000;">
+      <!-- Full-bleed hero photo underneath -->
+      <img src="${images.cta}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%;"/>
 
-    <img src="${images.afterA}" style="width:100%;height:100%;object-fit:cover;object-position:center 25%;display:block;"/>
+      <!-- Top gradient -->
+      <div style="position:absolute;left:0;right:0;top:0;height:900px;background:linear-gradient(180deg, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.6) 50%, rgba(0,0,0,0) 100%);"></div>
 
-    <!-- Gradient overlay -->
-    <div style="position:absolute;inset:0;background:linear-gradient(180deg,
-      rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.0) 30%, rgba(0,0,0,0.0) 65%, rgba(0,0,0,0.6) 100%);"></div>
+      <!-- Bottom gradient -->
+      <div style="position:absolute;left:0;right:0;bottom:0;height:${SAFE_BOTTOM + 120}px;background:linear-gradient(0deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0) 100%);"></div>
 
-    <div class="after-label">AFTER</div>
+      <!-- Text content -->
+      <div style="position:absolute;left:54px;top:72px;right:54px;">
+        <p style="font-family:${NARROW};font-size:140px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:${MANILA_COLOR};margin:0 0 20px;text-shadow:0 6px 60px rgba(255,107,43,0.5), 0 2px 20px rgba(0,0,0,0.8);">MANILA</p>
+        <h2 style="font-family:${BOLD};font-size:80px;font-weight:800;line-height:0.95;color:#fff;margin:0 0 28px;letter-spacing:-0.02em;text-shadow:0 2px 16px rgba(0,0,0,0.4);">Your turn.</h2>
+        <p style="font-family:${BODY};font-size:40px;font-weight:500;line-height:1.35;color:rgba(255,255,255,0.92);margin:0 0 40px;text-shadow:0 1px 8px rgba(0,0,0,0.4);">Sign up below.<br/>60-second form. I'll message<br/>you back within a day.</p>
+      </div>
 
-    <div class="funny-text" style="bottom:${SAFE_BOTTOM + 80}px;">
-      <p style="font-size:52px;font-weight:800;color:${ACCENT};
-        text-shadow:0 4px 30px rgba(0,0,0,0.9);">Editorial. Effortless.</p>
+      <!-- Urgency badge -->
+      <div style="position:absolute;left:54px;top:620px;display:inline-flex;align-items:center;gap:10px;padding:16px 28px;border-radius:16px;background:rgba(255,107,43,0.2);backdrop-filter:blur(16px);border:1px solid rgba(255,107,43,0.4);">
+        <div style="width:10px;height:10px;border-radius:50%;background:${MANILA_COLOR};"></div>
+        <span style="font-family:${BOLD};font-size:28px;font-weight:700;color:#fff;letter-spacing:0.02em;">Limited spots this month</span>
+      </div>
+
+      <!-- Handle -->
+      <div style="position:absolute;left:54px;bottom:${SAFE_BOTTOM + 30}px;">
+        <p style="font-family:${BODY};font-size:24px;font-weight:500;color:rgba(255,255,255,0.5);margin:0;">@${HANDLE}</p>
+      </div>
     </div>
   </div>
-
-  <!-- ============ AFTER B (15.5s – 17.5s) ============ -->
-  <div style="position:absolute;inset:0;z-index:3;
-    opacity:0;animation:afterSlideIn 2s ease-out 15.5s forwards;">
-
-    <img src="${images.afterB}" style="width:100%;height:100%;object-fit:cover;object-position:center 30%;display:block;"/>
-
-    <div style="position:absolute;inset:0;background:linear-gradient(180deg,
-      rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.0) 30%, rgba(0,0,0,0.0) 65%, rgba(0,0,0,0.6) 100%);"></div>
-
-    <div class="after-label">AFTER</div>
-
-    <div class="funny-text" style="bottom:${SAFE_BOTTOM + 80}px;">
-      <p style="font-size:52px;font-weight:800;color:${ACCENT};
-        text-shadow:0 4px 30px rgba(0,0,0,0.9);">Magazine-ready.</p>
-    </div>
-  </div>
-
-  <!-- ============ AFTER C (17.5s – 19.5s) ============ -->
-  <div style="position:absolute;inset:0;z-index:3;
-    opacity:0;animation:afterSlideIn 2s ease-out 17.5s forwards;">
-
-    <img src="${images.afterC}" style="width:100%;height:100%;object-fit:cover;object-position:center 25%;display:block;"/>
-
-    <div style="position:absolute;inset:0;background:linear-gradient(180deg,
-      rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.0) 30%, rgba(0,0,0,0.0) 65%, rgba(0,0,0,0.6) 100%);"></div>
-
-    <div class="after-label">AFTER</div>
-
-    <div class="funny-text" style="bottom:${SAFE_BOTTOM + 80}px;">
-      <p style="font-size:52px;font-weight:800;color:${ACCENT};
-        text-shadow:0 4px 30px rgba(0,0,0,0.9);">That main character energy.</p>
-    </div>
-  </div>
-
-  <!-- ============ "The difference? One afternoon." (19.5s – 21.5s) ============ -->
-  <div style="position:absolute;inset:0;z-index:6;background:#000;
-    opacity:0;animation:diffTextIn 2.5s ease-out 19.5s forwards;">
-    <div style="position:absolute;top:0;left:0;right:0;bottom:${SAFE_BOTTOM}px;
-      display:flex;flex-direction:column;align-items:center;justify-content:center;padding:0 80px;">
-      <div style="width:60px;height:4px;background:${MANILA_COLOR};margin-bottom:40px;border-radius:2px;"></div>
-      <p style="font-family:${SF};font-size:64px;font-weight:800;color:#fff;text-align:center;line-height:1.3;margin:0;">
-        The difference?</p>
-      <p style="font-family:${SF};font-size:64px;font-weight:800;color:${MANILA_COLOR};text-align:center;line-height:1.3;margin:12px 0 0;">
-        One afternoon.</p>
-    </div>
-  </div>
-
-  <!-- ============ FADE TO BLACK (21.5s onward) ============ -->
-  <div style="position:absolute;inset:0;z-index:20;background:#000;pointer-events:none;
-    opacity:0;animation:heroOut 0.8s ease-out 22.0s reverse forwards;
-    animation-name:fadeToBlackFinal;"></div>
 
 </div>
-
-<style>
-  @keyframes fadeToBlackFinal {
-    0%   { opacity: 0; }
-    100% { opacity: 1; }
-  }
-  .fade-final {
-    animation: fadeToBlackFinal 0.8s ease-out 22.0s forwards;
-  }
-</style>
-
 </body>
 </html>`
-}
-
-function buildCTA(images) {
-  return `<!DOCTYPE html><html><head>
-  <style>* { box-sizing:border-box;margin:0;padding:0; } html,body { background:#000; -webkit-font-smoothing:antialiased; }</style>
-</head><body>
-  <div style="width:${WIDTH}px;height:${HEIGHT}px;position:relative;overflow:hidden;background:#000;">
-
-    <!-- Background photo -->
-    <div style="position:absolute;inset:0;">
-      <img src="${images.cta}" style="width:100%;height:100%;object-fit:cover;object-position:center 25%;display:block;"/>
-    </div>
-
-    <!-- Heavy dark gradient for text -->
-    <div style="position:absolute;inset:0;background:linear-gradient(180deg,
-      rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.1) 25%, rgba(0,0,0,0.0) 40%,
-      rgba(0,0,0,0.55) 58%, rgba(0,0,0,0.95) 75%, #000 88%);"></div>
-
-    <!-- Text content above SAFE_BOTTOM -->
-    <div style="position:absolute;left:0;right:0;bottom:${SAFE_BOTTOM + 40}px;padding:0 70px;text-align:center;">
-
-      <!-- Accent line -->
-      <div style="width:50px;height:3px;background:${MANILA_COLOR};margin:0 auto 30px;border-radius:2px;"></div>
-
-      <!-- MANILA -->
-      <p style="font-family:${SF};font-size:180px;font-weight:900;letter-spacing:0.14em;color:#fff;margin:0;text-transform:uppercase;
-        text-shadow:0 4px 80px rgba(255,107,43,0.4), 0 2px 20px rgba(0,0,0,0.8);">MANILA</p>
-
-      <!-- PHOTO SHOOT -->
-      <p style="font-family:${SF};font-size:38px;font-weight:300;color:rgba(255,255,255,0.9);margin:4px 0 0;letter-spacing:0.3em;text-transform:uppercase;">PHOTO SHOOT</p>
-    </div>
-  </div>
-</body></html>`
 }
 
 async function render() {
@@ -503,9 +344,9 @@ async function render() {
   const { execSync } = await import('child_process')
   const browser = await chromium.launch()
 
-  // --- Step 1: Record the animated video ---
-  console.log('Recording animated before/after video...')
-  const TOTAL_DURATION_MS = (TOTAL_DURATION + 0.5) * 1000
+  // --- Record the single continuous animated video ---
+  console.log('Recording single continuous video (hero + side-by-side + steps + CTA)...')
+  const TOTAL_DURATION_MS = (TOTAL_DURATION + 1) * 1000
 
   const videoCtx = await browser.newContext({
     viewport: { width: WIDTH, height: HEIGHT },
@@ -518,68 +359,34 @@ async function render() {
 
   const videoPage = await videoCtx.newPage()
   await videoPage.setContent(buildVideoHTML(images), { waitUntil: 'load' })
-  await videoPage.waitForTimeout(500) // let initial paint settle
+  await videoPage.waitForTimeout(500) // let images load
   await videoPage.waitForTimeout(TOTAL_DURATION_MS)
   await videoPage.close()
   await videoCtx.close()
 
-  // --- Step 2: Render CTA screenshot ---
-  console.log('Rendering CTA screenshot...')
-  const ctaCtx = await browser.newContext({
-    viewport: { width: WIDTH, height: HEIGHT },
-    deviceScaleFactor: 1,
-  })
-  const ctaPage = await ctaCtx.newPage()
-  await ctaPage.setContent(buildCTA(images), { waitUntil: 'load' })
-  await ctaPage.waitForTimeout(300)
-  const ctaPath = path.join(OUT_DIR, 'cta_frame.png')
-  await ctaPage.screenshot({ path: ctaPath })
-  await ctaPage.close()
-  await ctaCtx.close()
-  await browser.close()
-
-  // --- Step 3: Convert webm→mp4, concat with CTA still ---
+  // --- Convert WebM to MP4 ---
   const videoFiles = fs.readdirSync(OUT_DIR).filter(f => f.endsWith('.webm'))
   if (videoFiles.length === 0) {
     console.error('No video file was generated!')
-    return
-  }
+  } else {
+    const srcVideo = path.join(OUT_DIR, videoFiles[0])
+    const dstVideo = path.join(OUT_DIR, '01_before_after.mp4')
 
-  const srcVideo = path.join(OUT_DIR, videoFiles[0])
-  const chatMp4 = path.join(OUT_DIR, 'main_part.mp4')
-  const ctaMp4 = path.join(OUT_DIR, 'cta_part.mp4')
-  const finalMp4 = path.join(OUT_DIR, '01_before_after.mp4')
-  const concatFile = path.join(OUT_DIR, 'concat.txt')
-
-  try {
-    // Convert main webm to mp4
-    console.log('Converting webm to mp4...')
-    execSync(`ffmpeg -y -i "${srcVideo}" -c:v libx264 -pix_fmt yuv420p -r 30 -an "${chatMp4}"`, { stdio: 'pipe' })
-
-    // Create 5-second CTA video from static image
-    console.log('Creating CTA video segment...')
-    execSync(`ffmpeg -y -loop 1 -i "${ctaPath}" -c:v libx264 -t 5 -pix_fmt yuv420p -r 30 -vf "scale=${WIDTH}:${HEIGHT}" -an "${ctaMp4}"`, { stdio: 'pipe' })
-
-    // Concat main + CTA
-    console.log('Concatenating final video...')
-    fs.writeFileSync(concatFile, `file '${chatMp4}'\nfile '${ctaMp4}'\n`)
-    execSync(`ffmpeg -y -f concat -safe 0 -i "${concatFile}" -c copy "${finalMp4}"`, { stdio: 'pipe' })
-
-    // Cleanup temp files
-    fs.unlinkSync(srcVideo)
-    fs.unlinkSync(chatMp4)
-    fs.unlinkSync(ctaMp4)
-    fs.unlinkSync(concatFile)
-    console.log(`Rendered: ${finalMp4}`)
-  } catch (err) {
-    console.error('ffmpeg error:', err.message)
-    // Fallback: keep as webm renamed
-    if (fs.existsSync(srcVideo)) {
-      fs.renameSync(srcVideo, finalMp4)
+    try {
+      execSync(`ffmpeg -y -i "${srcVideo}" -c:v libx264 -pix_fmt yuv420p -r 30 -an "${dstVideo}"`, {
+        stdio: 'pipe',
+      })
+      fs.unlinkSync(srcVideo)
+      console.log('Rendered 01_before_after.mp4')
+    } catch (err) {
+      console.warn('ffmpeg not available, keeping as webm and renaming to mp4...')
+      fs.renameSync(srcVideo, dstVideo)
+      console.log('Rendered 01_before_after.mp4 (webm container)')
     }
   }
 
-  console.log(`Done: output written to ${OUT_DIR}`)
+  await browser.close()
+  console.log(`Done: single continuous video written to ${OUT_DIR}`)
 }
 
 render().catch(error => {
