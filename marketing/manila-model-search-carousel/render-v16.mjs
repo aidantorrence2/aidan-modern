@@ -154,10 +154,20 @@ function slideTwo(images) {
   let html = ''
   let y = HEADER_END
   for (const row of rows) {
+    // Recompute widths from scaled height, then force last image to fill remaining space
+    const totalGaps = (row.images.length - 1) * GAP
+    const rawWidths = row.images.map(img => row.height * img.aspect)
+    const rawTotal = rawWidths.reduce((s, w) => s + w, 0)
+    const scaleFactor = (CONTAINER_W - totalGaps) / rawTotal
+    const widths = rawWidths.map(w => Math.round(w * scaleFactor))
+    // Fix rounding: adjust last image width
+    const usedWidth = widths.reduce((s, w) => s + w, 0) + totalGaps
+    widths[widths.length - 1] += (CONTAINER_W - usedWidth)
+
     let x = PAD
     for (let i = 0; i < row.images.length; i++) {
       const img = row.images[i]
-      const w = Math.round(row.height * img.aspect)
+      const w = widths[i]
       html += `<div style="position:absolute;left:${x}px;top:${y}px;width:${w}px;height:${row.height}px;border-radius:16px;overflow:hidden;">
         <img src="${img.src}" style="width:100%;height:100%;display:block;object-fit:cover;object-position:center;"/>
       </div>`
@@ -186,9 +196,9 @@ function slideTwo(images) {
 function slideThree(images) {
   return `
     <div style="width:${WIDTH}px;height:${HEIGHT}px;position:relative;overflow:hidden;background:#000;">
-      <img src="${images.process}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;"/>
-      <!-- dark overlay -->
-      <div style="position:absolute;inset:0;background:linear-gradient(180deg, rgba(0,0,0,0.78) 0%, rgba(0,0,0,0.5) 40%, rgba(0,0,0,0.3) 60%, rgba(0,0,0,0.65) 100%);"></div>
+      <img src="${images.process}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center bottom;"/>
+      <!-- dark overlay — image is atmospheric texture, cards are the focus -->
+      <div style="position:absolute;inset:0;background:linear-gradient(180deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.7) 35%, rgba(0,0,0,0.45) 70%, rgba(0,0,0,0.65) 100%);"></div>
 
       <div style="position:absolute;left:54px;top:62px;right:54px;">
         <p style="font-family:${NARROW};font-size:64px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#e8b880;margin:0 0 10px;">Manila</p>
