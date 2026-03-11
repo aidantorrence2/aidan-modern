@@ -76,7 +76,7 @@ function slideOne(images) {
 
       <!-- headline -->
       <div style="position:absolute;left:54px;top:72px;right:54px;">
-        <p style="font-family:${NARROW};font-size:64px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.85);margin:0 0 14px;">Manila</p>
+        <p style="font-family:${NARROW};font-size:64px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#e8b880;margin:0 0 14px;">Manila</p>
         <h1 style="font-family:${BOLD};font-size:108px;font-weight:800;line-height:0.92;color:#fff;margin:0 0 28px;letter-spacing:-0.02em;">Models<br/>wanted.</h1>
         <p style="font-family:${BODY};font-size:34px;font-weight:500;line-height:1.34;color:rgba(255,255,255,0.92);margin:0;">Editorial portrait shoots.<br/>No experience needed.</p>
       </div>
@@ -90,35 +90,37 @@ function slideOne(images) {
   `
 }
 
-// Slide 2: PROOF — photo grid, let the work sell itself
+// Slide 2: PROOF — asymmetric mosaic, magazine feel
 function slideTwo(images) {
   return `
     <div style="width:${WIDTH}px;height:${HEIGHT}px;position:relative;overflow:hidden;background:#0a0a0a;">
-      <!-- subtle top text -->
+      <!-- header -->
       <div style="position:absolute;left:54px;top:62px;right:54px;">
-        <p style="font-family:${NARROW};font-size:64px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.85);margin:0 0 10px;">Manila</p>
+        <p style="font-family:${NARROW};font-size:64px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#e8b880;margin:0 0 10px;">Manila</p>
         <h2 style="font-family:${BOLD};font-size:62px;font-weight:800;line-height:0.94;color:#fff;margin:0;letter-spacing:-0.02em;">This is my work.</h2>
       </div>
 
-      <!-- 2x3 photo grid -->
-      <div style="position:absolute;left:28px;top:240px;right:28px;display:grid;grid-template-columns:1fr 1fr;gap:14px;">
-        <div style="border-radius:20px;overflow:hidden;height:430px;">
-          <img src="${images.gridA}" style="width:100%;height:100%;display:block;object-fit:cover;object-position:center;"/>
-        </div>
-        <div style="border-radius:20px;overflow:hidden;height:430px;">
-          <img src="${images.gridB}" style="width:100%;height:100%;display:block;object-fit:cover;object-position:center;"/>
-        </div>
-        <div style="border-radius:20px;overflow:hidden;height:430px;">
-          <img src="${images.gridC}" style="width:100%;height:100%;display:block;object-fit:cover;object-position:center;"/>
-        </div>
-        <div style="border-radius:20px;overflow:hidden;height:430px;">
-          <img src="${images.gridD}" style="width:100%;height:100%;display:block;object-fit:cover;object-position:center;"/>
-        </div>
+      <!-- large hero image left -->
+      <div style="position:absolute;left:28px;top:248px;width:580px;height:740px;border-radius:22px;overflow:hidden;">
+        <img src="${images.gridA}" style="width:100%;height:100%;display:block;object-fit:cover;object-position:center;"/>
+      </div>
+
+      <!-- two stacked right -->
+      <div style="position:absolute;left:622px;top:248px;width:430px;height:358px;border-radius:22px;overflow:hidden;">
+        <img src="${images.gridB}" style="width:100%;height:100%;display:block;object-fit:cover;object-position:center;"/>
+      </div>
+      <div style="position:absolute;left:622px;top:620px;width:430px;height:368px;border-radius:22px;overflow:hidden;">
+        <img src="${images.gridC}" style="width:100%;height:100%;display:block;object-fit:cover;object-position:center;"/>
+      </div>
+
+      <!-- wide bottom image -->
+      <div style="position:absolute;left:28px;top:1002px;right:28px;height:460px;border-radius:22px;overflow:hidden;">
+        <img src="${images.gridE}" style="width:100%;height:100%;display:block;object-fit:cover;object-position:top;"/>
       </div>
 
       <!-- bottom text -->
       <div style="position:absolute;left:54px;bottom:${SAFE_BOTTOM + 36}px;right:54px;display:flex;align-items:center;justify-content:space-between;">
-        <p style="font-family:${BODY};font-size:28px;font-weight:600;color:rgba(255,255,255,0.7);margin:0;">You could look like this.</p>
+        <p style="font-family:${BODY};font-size:30px;font-weight:600;color:rgba(255,255,255,0.8);margin:0;">You could look like this.</p>
         <div style="display:flex;align-items:center;gap:14px;">
           <span style="font-family:${BODY};font-size:24px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:rgba(255,255,255,0.5);">Swipe</span>
           <span style="display:inline-block;width:40px;height:2px;background:rgba(255,255,255,0.4);"></span>
@@ -137,7 +139,7 @@ function slideThree(images) {
       <div style="position:absolute;inset:0;background:linear-gradient(180deg, rgba(0,0,0,0.78) 0%, rgba(0,0,0,0.5) 40%, rgba(0,0,0,0.3) 60%, rgba(0,0,0,0.65) 100%);"></div>
 
       <div style="position:absolute;left:54px;top:62px;right:54px;">
-        <p style="font-family:${NARROW};font-size:64px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.85);margin:0 0 10px;">Manila</p>
+        <p style="font-family:${NARROW};font-size:64px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#e8b880;margin:0 0 10px;">Manila</p>
         <h2 style="font-family:${BOLD};font-size:72px;font-weight:800;line-height:0.94;color:#fff;margin:0;letter-spacing:-0.02em;">3 steps.<br/>That's it.</h2>
       </div>
 
@@ -192,7 +194,7 @@ function slideFour(images) {
       <div style="position:absolute;left:0;right:0;bottom:0;height:${SAFE_BOTTOM + 100}px;background:linear-gradient(0deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 100%);"></div>
 
       <div style="position:absolute;left:54px;top:72px;right:54px;">
-        <p style="font-family:${NARROW};font-size:64px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.85);margin:0 0 14px;">Manila</p>
+        <p style="font-family:${NARROW};font-size:64px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#e8b880;margin:0 0 14px;">Manila</p>
         <h2 style="font-family:${BOLD};font-size:96px;font-weight:800;line-height:0.92;color:#fff;margin:0 0 30px;letter-spacing:-0.02em;">Sign up<br/>below.</h2>
         <p style="font-family:${BODY};font-size:34px;font-weight:500;line-height:1.38;color:rgba(255,255,255,0.9);margin:0 0 40px;">60-second form. I'll message<br/>you back within a day.</p>
       </div>
@@ -215,6 +217,7 @@ async function render() {
     gridB: 'manila-gallery-dsc-0911.jpg',
     gridC: 'manila-gallery-garden-002.jpg',
     gridD: 'manila-gallery-night-003.jpg',
+    gridE: 'manila-gallery-dsc-0075.jpg',
     process: 'manila-gallery-dsc-0190.jpg',
     cta: 'manila-gallery-floor-001.jpg'
   }
