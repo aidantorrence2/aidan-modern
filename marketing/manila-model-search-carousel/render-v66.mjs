@@ -292,10 +292,7 @@ function buildAnimatedZine(images) {
 
     <!-- Sign up copy -->
     <div style="position:absolute;left:80px;top:2990px;z-index:25;opacity:0;animation:fadeIn 0.4s ease ${freeDelay + 2.6}s forwards;">
-      <span style="font-family:'Courier New',monospace;font-size:34px;color:${BLACK};background:${YELLOW};padding:6px 16px;">sign up below. 60-second form.</span>
-    </div>
-    <div style="position:absolute;left:80px;top:3060px;z-index:25;opacity:0;animation:fadeIn 0.4s ease ${freeDelay + 3.0}s forwards;">
-      <span style="font-family:Georgia,serif;font-size:32px;font-style:italic;color:${BLACK};">I'll message you back within a day.</span>
+      <span style="font-family:'Courier New',monospace;font-size:34px;color:${BLACK};background:${YELLOW};padding:6px 16px;">sign up below. it takes just a minute.</span>
     </div>
 
     <!-- Urgency starburst -->
