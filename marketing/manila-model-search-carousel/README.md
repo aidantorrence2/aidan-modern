@@ -427,3 +427,33 @@ Additional V20 notes:
 - All content above SAFE_BOTTOM (410px).
 - Images have minimal crop with rounded corners and soft shadows instead of hard borders.
 - Uses 13 manila-gallery images (statue, closeup, canal, dsc, garden, ivy, graffiti, urban, shadow, tropical, dsc-0190, park).
+
+V21 render (warm editorial, ALL 4 slides animated MP4):
+
+```bash
+node marketing/manila-model-search-carousel/render-v21.mjs
+```
+
+V21 outputs:
+
+- `output-v21/01_hook_story.mp4` (animated video, ~5s)
+- `output-v21/02_proof_story.mp4` (animated video, ~5.4s)
+- `output-v21/03_process_story.mp4` (animated video, ~4.7s)
+- `output-v21/04_cta_story.mp4` (animated video, ~5.2s)
+- `output-v21/sources.json`
+
+Additional V21 notes:
+
+- ALL 4 slides are animated MP4 videos (no static PNGs). First version with full video carousel.
+- Warm editorial magazine aesthetic distinct from v16 (dark), v18 (white/bold), and v20 (cream/serif italic).
+- Warm cream background (#F0EBE3), terracotta/burnt sienna MANILA accent (#C4562A), serif headlines (Georgia), sans-serif body (Avenir Next).
+- 4 slides: HOOK > PROOF > PROCESS > CTA.
+- Slide 1 (HOOK): MANILA label fades up, then "Models wanted." headline animates line by line, terracotta accent line grows, subtext fades in, then hero image reveals with clip-path wipe from top.
+- Slide 2 (PROOF): Header fades in, then 10 gallery images stagger in with translateY + scale, 300ms apart.
+- Slide 3 (PROCESS): Header and accent line animate in, then 3 step cards slide in from the left sequentially (500ms apart), small accent image fades in last.
+- Slide 4 (CTA): Text fades in line by line, accent line grows, urgency badge appears then pulses continuously, hero image fades in last.
+- All videos: 1080x1920, 30fps, H.264/MP4, 4-6 seconds each.
+- No swipe indicators.
+- MANILA prominent in terracotta on every slide.
+- All content above SAFE_BOTTOM (410px).
+- Uses 13 manila-gallery images (canal, closeup, dsc, garden, night, graffiti, urban, shadow, ivy, dsc-0190, floor).
