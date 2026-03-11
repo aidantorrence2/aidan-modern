@@ -1,5 +1,5 @@
 {
-  "createdAt": "2026-03-11T08:29:31.388Z",
+  "createdAt": "2026-03-11T08:32:25.573Z",
   "strategy": "v16 — full-bleed DR creative, manually selected manila* files",
   "safeBottomPixels": 410,
   "images": {
@@ -31,6 +31,7 @@
       "gridB": "manila-gallery-dsc-0911.jpg",
       "gridC": "manila-gallery-garden-002.jpg",
       "gridD": "manila-gallery-night-003.jpg",
+      "gridE": "manila-gallery-dsc-0075.jpg",
       "process": "manila-gallery-dsc-0190.jpg",
       "cta": "manila-gallery-floor-001.jpg"
     }
