@@ -214,3 +214,14 @@
   - Exports a five-slide 1080x1920 PNG set for story/reels use.
   - Keeps `MANILA` clearly visible on every slide.
   - Uses a more aggressive visual hierarchy and cleaner proof/CTA layouts than V6 while preserving the same message flow.
+
+## Manila Model Search Carousel V8 (Text-First Hook + CTA)
+- Source folder: `marketing/manila-model-search-carousel`
+- Render command:
+  - `node marketing/manila-model-search-carousel/render-v8.mjs`
+- Output folder:
+  - `marketing/manila-model-search-carousel/output-v8`
+- Notes:
+  - Exports a five-slide 1080x1920 PNG set for story/reels use.
+  - Pages 1 and 5 place the copy in the upper half with the image below to simplify composition.
+  - Page 5 uses shorter CTA copy than V7.
