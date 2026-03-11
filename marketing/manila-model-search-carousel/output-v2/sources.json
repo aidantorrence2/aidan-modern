@@ -1,0 +1,14 @@
+{
+  "createdAt": "2026-03-11T04:04:43.206Z",
+  "strategy": "first sorted image files from public/images/large",
+  "safeBottomPixels": 430,
+  "images": [
+    "000001-11.jpg",
+    "000001.jpg",
+    "000002.jpg",
+    "000003.jpg",
+    "000004.jpg",
+    "000007-13.jpg",
+    "000007-2.jpg"
+  ]
+}

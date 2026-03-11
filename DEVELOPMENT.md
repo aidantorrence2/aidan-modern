@@ -141,3 +141,15 @@
   - Slide 2 proof images are scraped from the live homepage at `https://aidantorrence.com` and recorded in `output/proof-sources.json`.
   - If the homepage scrape fails, the renderer falls back to local portfolio files in `public/images/large`.
   - As of March 11, 2026, `https://aidantorrence.com/manila-free` returns `404`, so the carousel proof references the live homepage portfolio instead of that route.
+
+## Manila Model Search Carousel V2 (Stories / Reels Safe)
+- Source folder: `marketing/manila-model-search-carousel`
+- Render command:
+  - `node marketing/manila-model-search-carousel/render-v2.mjs`
+- Output folder:
+  - `marketing/manila-model-search-carousel/output-v2`
+- Notes:
+  - Exports a five-slide 1080x1920 PNG set for story/reels ad placement.
+  - Important text is intentionally kept above the lower CTA-safe area so platform overlays do not cover copy.
+  - The sign-up button is not baked into the creative; slide 5 tells viewers to use the platform CTA.
+  - Source photos come from the top image files in `public/images/large` by sorted filename order and are recorded in `output-v2/sources.json`.
