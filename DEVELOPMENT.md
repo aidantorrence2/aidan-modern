@@ -280,3 +280,13 @@
 - Notes:
   - Same layout as V12.
   - Page 1 and page 5 remove the white framed image treatment in favor of larger borderless image blocks.
+
+## Manila Model Search Carousel V14 (Larger Page 1 + 5 Images)
+- Source folder: `marketing/manila-model-search-carousel`
+- Render command:
+  - `node marketing/manila-model-search-carousel/render-v14.mjs`
+- Output folder:
+  - `marketing/manila-model-search-carousel/output-v14`
+- Notes:
+  - Same layout as V13.
+  - Page 1 and page 5 increase image size further and switch to `cover` framing so the photos read as larger, cleaner image blocks with no bordered look.

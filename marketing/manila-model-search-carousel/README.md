@@ -246,3 +246,23 @@ Additional V13 notes:
 
 - Keeps the V12 layouts and header copy.
 - Removes the white framed image treatment from pages 1 and 5 and replaces it with clean borderless image blocks.
+
+V14 render (larger full-bleed page 1 and 5 images):
+
+```bash
+node marketing/manila-model-search-carousel/render-v14.mjs
+```
+
+V14 outputs:
+
+- `output-v14/01_models_in_manila_story.png`
+- `output-v14/02_portfolio_images_story.png`
+- `output-v14/03_what_you_get_story.png`
+- `output-v14/04_how_the_shoot_works_story.png`
+- `output-v14/05_sign_up_story.png`
+- `output-v14/sources.json`
+
+Additional V14 notes:
+
+- Keeps the V13 layouts and copy.
+- Page 1 and page 5 use larger `cover` image treatments to remove the remaining bordered look and push the photos closer to full-bleed.
