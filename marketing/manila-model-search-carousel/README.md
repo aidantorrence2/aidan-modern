@@ -544,3 +544,30 @@ Additional V25 notes:
 - "3 spots" scarcity element repeated on slides 1, 3, and 4 for FOMO reinforcement.
 - All text above SAFE_BOTTOM (410px).
 - Uses 15 manila-gallery images (statue, closeup, dsc-0911, garden, night, dsc-0130, canal, graffiti, urban, shadow, ivy, tropical, canal-001, dsc-0190, night-001).
+
+V26 render (quiz/qualifier interactive-feel format):
+
+```bash
+node marketing/manila-model-search-carousel/render-v26.mjs
+```
+
+V26 outputs:
+
+- `output-v26/01_quiz_hook.png`
+- `output-v26/02_checklist_quiz.mp4` (animated video)
+- `output-v26/03_proof_qualify.png`
+- `output-v26/04_cta_qualify.png`
+- `output-v26/sources.json`
+
+Additional V26 notes:
+
+- Completely new ad concept: "Quiz/Qualifier" interactive-feel format. Makes the viewer feel personally selected/pre-approved.
+- Clean, modern, slightly playful design. Bright teal-green accent (#00C9A7) for MANILA and checkmarks. White/light backgrounds on quiz slides contrast with dark photo-heavy slides 1 and 4.
+- MANILA is VERY LARGE (80px) and prominent in teal-green on every slide.
+- 4 slides: QUIZ HOOK > ANIMATED CHECKLIST (MP4) > PROOF (qualified models) > CTA (pre-approved).
+- Slide 1: "Are you our next model?" -- Full-bleed hero photo with dark gradient overlay. Personal question hook that stops the scroll. Large faded question mark accent.
+- Slide 2: Animated MP4 -- "Do you qualify?" -- 4 checklist items animate in sequentially (slide-in from left, 0.9s stagger): "Based in Manila", "Want portfolio photos", "No experience? Perfect.", "Available this month". Each item gets a checkmark that pops in 400ms after the text. Teal checkbox glow effect. Light background. ~6 seconds, 30fps, H.264/MP4.
+- Slide 3: "If you checked all 4 -- we want to shoot you." -- 3x2 grid of 6 proof photos (past models who "qualified") on light background. "They all qualified too:" caption.
+- Slide 4: "You qualify. Sign up below." -- Full-bleed hero with dark overlay. Teal "YOU'RE PRE-APPROVED" badge with checkmark makes viewer feel already accepted.
+- All content above SAFE_BOTTOM (410px).
+- Uses 8 manila-gallery images (canal-001, closeup-001, dsc-0911, garden-002, graffiti-001, urban-001, ivy-001, floor-001).
