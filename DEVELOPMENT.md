@@ -124,3 +124,20 @@
   - Uses square-source framing with blurred background + centered foreground composite.
   - Handles mixed source clips where some inputs have no audio tracks.
   - Final videos currently use synthesized voiceover only (no source-bed audio mix).
+
+## Manila Model Search Carousel (Static Instagram Ad)
+- Source folder: `marketing/manila-model-search-carousel`
+- Render command:
+  - `node marketing/manila-model-search-carousel/render.mjs`
+- Output folder:
+  - `marketing/manila-model-search-carousel/output`
+- Notes:
+  - Exports a five-slide 1080x1350 PNG carousel:
+    - `01_models_in_manila`
+    - `02_what_you_get`
+    - `03_how_the_shoot_works`
+    - `04_faq`
+    - `05_sign_up`
+  - Slide 2 proof images are scraped from the live homepage at `https://aidantorrence.com` and recorded in `output/proof-sources.json`.
+  - If the homepage scrape fails, the renderer falls back to local portfolio files in `public/images/large`.
+  - As of March 11, 2026, `https://aidantorrence.com/manila-free` returns `404`, so the carousel proof references the live homepage portfolio instead of that route.
