@@ -1,0 +1,40 @@
+{
+  "createdAt": "2026-03-11T12:15:21.790Z",
+  "strategy": "v29 — Magazine Cover / Editorial Spread concept, serif typography, animated editorial layout",
+  "safeBottomPixels": 410,
+  "images": {
+    "all_considered": [
+      "manila-gallery-canal-001.jpg",
+      "manila-gallery-canal-002.jpg",
+      "manila-gallery-closeup-001.jpg",
+      "manila-gallery-dsc-0075.jpg",
+      "manila-gallery-dsc-0130.jpg",
+      "manila-gallery-dsc-0190.jpg",
+      "manila-gallery-dsc-0911.jpg",
+      "manila-gallery-floor-001.jpg",
+      "manila-gallery-garden-001.jpg",
+      "manila-gallery-garden-002.jpg",
+      "manila-gallery-graffiti-001.jpg",
+      "manila-gallery-ivy-001.jpg",
+      "manila-gallery-ivy-002.jpg",
+      "manila-gallery-market-001.jpg",
+      "manila-gallery-night-001-original.jpg",
+      "manila-gallery-night-001.jpg",
+      "manila-gallery-night-002.jpg",
+      "manila-gallery-night-003.jpg",
+      "manila-gallery-park-001.jpg",
+      "manila-gallery-rocks-001.jpg"
+    ],
+    "selected": {
+      "cover": "manila-gallery-canal-001.jpg",
+      "editA": "manila-gallery-closeup-001.jpg",
+      "editB": "manila-gallery-garden-002.jpg",
+      "editC": "manila-gallery-graffiti-001.jpg",
+      "editD": "manila-gallery-street-001.jpg",
+      "editE": "manila-gallery-night-003.jpg",
+      "editF": "manila-gallery-ivy-001.jpg",
+      "process": "manila-gallery-dsc-0190.jpg",
+      "backCover": "manila-gallery-urban-001.jpg"
+    }
+  }
+}
