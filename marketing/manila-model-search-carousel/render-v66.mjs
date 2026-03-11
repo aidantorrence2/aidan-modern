@@ -287,8 +287,6 @@ function buildAnimatedZine(images) {
     100% { transform: translateY(-1000px); }
   `
 
-  const fadeToBlackTime = 10.5
-
   return `<!DOCTYPE html>
 <html>
 <head>
@@ -328,10 +326,6 @@ function buildAnimatedZine(images) {
       ${scrollKeyframes}
     }
 
-    @keyframes fadeToBlack {
-      0% { opacity: 0; }
-      100% { opacity: 1; }
-    }
   </style>
 </head>
 <body>
@@ -375,8 +369,7 @@ function buildAnimatedZine(images) {
 
     </div>
 
-    <!-- Fade to black overlay -->
-    <div style="position:absolute;inset:0;background:#000;z-index:50;opacity:0;animation:fadeToBlack 0.3s ease ${fadeToBlackTime}s forwards;pointer-events:none;"></div>
+    <!-- No fade — CTA follows immediately via ffmpeg concat -->
   </div>
 </body>
 </html>`
@@ -484,7 +477,7 @@ async function render() {
 
   // --- Step 1: Record the animated zine video ---
   console.log('Recording animated zine collage video...')
-  const TOTAL_DURATION_MS = 12000
+  const TOTAL_DURATION_MS = 10500
 
   const videoCtx = await browser.newContext({
     viewport: { width: WIDTH, height: HEIGHT },
