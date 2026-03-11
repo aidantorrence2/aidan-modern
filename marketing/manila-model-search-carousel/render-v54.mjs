@@ -68,8 +68,7 @@ function buildViewfinder(images, imageNames) {
   //  Photo 3: 5.0-7.0, flash 7.0-7.15, shrink 7.15-7.5
   //  Photo 4: 7.5-9.5, flash 9.5-9.65, shrink 9.65-10.0
   //  Photo 5: 10.0-12.0, flash 12.0-12.15, shrink 12.15-12.5
-  //  Fan-out: 12.5-14.5
-  //  Fade to black: 14.5-16.0
+  //  CTA phase: 12.5+ viewfinder UI fades, CTA text over last photo
 
   const photos = [images.photo1, images.photo2, images.photo3, images.photo4, images.photo5]
   const photoNames = [imageNames.photo1, imageNames.photo2, imageNames.photo3, imageNames.photo4, imageNames.photo5]
@@ -142,10 +141,8 @@ function buildViewfinder(images, imageNames) {
   }
   counterKf += '100% { content: "05/05"; }'
 
-  // Fan out: after 12.5s, viewfinder fades, photos fan out larger
-  const fanStart = 12.5
-  const fanEnd = 14.5
-  const fadeStart = 14.5
+  // CTA phase: after 12.5s, viewfinder UI fades, CTA text appears over last photo
+  const ctaStart = 12.5
 
   // Scanlines via repeating gradient
   const scanlines = `background: repeating-linear-gradient(
@@ -185,32 +182,6 @@ function buildViewfinder(images, imageNames) {
     `
   }
 
-  // Fan-out photos: appear after all 5 captured
-  const fanPositions = [
-    { x: 80, y: 250, rot: -8, w: 400, h: 540 },
-    { x: 580, y: 200, rot: 5, w: 380, h: 520 },
-    { x: 200, y: 550, rot: -3, w: 420, h: 560 },
-    { x: 50, y: 750, rot: 4, w: 360, h: 480 },
-    { x: 500, y: 680, rot: -6, w: 400, h: 530 },
-  ]
-
-  let fanPhotos = ''
-  for (let i = 0; i < 5; i++) {
-    const fp = fanPositions[i]
-    const imgSt = isPurple(photoNames[i])
-      ? `width:130%;height:130%;object-fit:cover;object-position:center;display:block;margin:-15% 0 0 -15%;`
-      : `width:100%;height:100%;object-fit:cover;object-position:center;display:block;`
-    const delay = fanStart + i * 0.15
-    fanPhotos += `
-      <div style="position:absolute;left:${fp.x}px;top:${fp.y}px;width:${fp.w}px;height:${fp.h}px;
-        transform:rotate(${fp.rot}deg) scale(0.5);border-radius:12px;overflow:hidden;
-        box-shadow:0 8px 40px rgba(0,0,0,0.6);opacity:0;
-        animation:fanIn 0.6s cubic-bezier(0.16,1,0.3,1) ${delay}s forwards;">
-        <img src="${photos[i]}" style="${imgSt}"/>
-      </div>
-    `
-  }
-
   return `<!DOCTYPE html><html><head>
 <style>
   * { box-sizing:border-box;margin:0;padding:0; }
@@ -224,52 +195,47 @@ function buildViewfinder(images, imageNames) {
     ${flashKf}
   }
 
-  @keyframes fanIn {
-    0% { opacity:0; transform:rotate(var(--rot, 0deg)) scale(0.5); }
-    100% { opacity:1; transform:rotate(var(--rot, 0deg)) scale(1); }
-  }
-
-  @keyframes viewfinderOut {
+  @keyframes viewfinderUiFade {
     0% { opacity:1; }
-    ${p(fanStart)}% { opacity:1; }
-    ${p(fanStart + 0.5)}% { opacity:0; }
+    ${p(ctaStart)}% { opacity:1; }
+    ${p(ctaStart + 0.6)}% { opacity:0; }
     100% { opacity:0; }
   }
 
-  @keyframes fanContainerIn {
-    0% { opacity:0; }
-    ${p(fanStart)}% { opacity:0; }
-    ${p(fanStart + 0.3)}% { opacity:1; }
-    100% { opacity:1; }
-  }
-
-  @keyframes ctaGradientIn {
-    0% { opacity:0; }
-    ${p(13.5)}% { opacity:0; }
-    ${p(14.5)}% { opacity:1; }
-    100% { opacity:1; }
-  }
-
   @keyframes ctaTextIn {
-    0% { opacity:0; transform:translateY(20px); }
+    0% { opacity:0; transform:translateY(12px); }
     100% { opacity:1; transform:translateY(0); }
+  }
+
+  @keyframes ctaDimOverlay {
+    0% { opacity:0; }
+    ${p(ctaStart)}% { opacity:0; }
+    ${p(ctaStart + 0.8)}% { opacity:1; }
+    100% { opacity:1; }
   }
 
   @keyframes settingsIn {
     0% { opacity:0; }
     5% { opacity:0.7; }
-    ${p(fanStart)}% { opacity:0.7; }
-    ${p(fanStart + 0.3)}% { opacity:0; }
+    ${p(ctaStart)}% { opacity:0.7; }
+    ${p(ctaStart + 0.3)}% { opacity:0; }
     100% { opacity:0; }
+  }
+
+  @keyframes lastPhotoHold {
+    0% { opacity:0; }
+    ${p(10)}% { opacity:0; }
+    ${p(10.2)}% { opacity:1; }
+    100% { opacity:1; }
   }
 </style>
 </head><body>
 <div style="width:${WIDTH}px;height:${HEIGHT}px;position:relative;overflow:hidden;background:#000;">
 
   <!-- ============ VIEWFINDER LAYER ============ -->
-  <div style="position:absolute;inset:0;animation:viewfinderOut ${TOTAL_DURATION}s linear forwards;">
+  <div style="position:absolute;inset:0;">
 
-    <!-- Photo layers -->
+    <!-- Photo layers (cycle through during capture phase) -->
     ${photos.map((src, i) => {
       const imgSt = isPurple(photoNames[i])
         ? `width:130%;height:130%;object-fit:cover;object-position:center 20%;display:block;margin:-15% 0 0 -15%;`
@@ -280,91 +246,95 @@ function buildViewfinder(images, imageNames) {
       </div>`
     }).join('')}
 
-    <!-- Film grain overlay -->
-    <div style="position:absolute;inset:0;${grainOverlay}pointer-events:none;z-index:5;"></div>
-
-    <!-- Scanlines -->
-    <div style="position:absolute;inset:0;${scanlines}pointer-events:none;z-index:6;"></div>
-
-    <!-- Dark vignette edges -->
-    <div style="position:absolute;inset:0;background:radial-gradient(ellipse at center, transparent 50%, rgba(0,0,0,0.5) 100%);pointer-events:none;z-index:7;"></div>
-
-    <!-- Corner brackets — top left -->
-    <div style="position:absolute;top:120px;left:80px;width:80px;height:80px;border-top:3px solid rgba(255,255,255,0.8);border-left:3px solid rgba(255,255,255,0.8);z-index:10;"></div>
-    <!-- Corner brackets — top right -->
-    <div style="position:absolute;top:120px;right:80px;width:80px;height:80px;border-top:3px solid rgba(255,255,255,0.8);border-right:3px solid rgba(255,255,255,0.8);z-index:10;"></div>
-    <!-- Corner brackets — bottom left -->
-    <div style="position:absolute;bottom:${SAFE_BOTTOM + 180}px;left:80px;width:80px;height:80px;border-bottom:3px solid rgba(255,255,255,0.8);border-left:3px solid rgba(255,255,255,0.8);z-index:10;"></div>
-    <!-- Corner brackets — bottom right -->
-    <div style="position:absolute;bottom:${SAFE_BOTTOM + 180}px;right:80px;width:80px;height:80px;border-bottom:3px solid rgba(255,255,255,0.8);border-right:3px solid rgba(255,255,255,0.8);z-index:10;"></div>
-
-    <!-- Center crosshair -->
-    <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:10;">
-      <div style="width:40px;height:2px;background:rgba(255,255,255,0.5);position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);"></div>
-      <div style="width:2px;height:40px;background:rgba(255,255,255,0.5);position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);"></div>
-      <div style="width:60px;height:60px;border:1.5px solid rgba(255,255,255,0.35);border-radius:50%;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);"></div>
+    <!-- Last photo stays visible as CTA background -->
+    <div style="position:absolute;inset:0;opacity:0;animation:lastPhotoHold ${TOTAL_DURATION}s linear forwards;z-index:2;">
+      <img src="${photos[4]}" style="${isPurple(photoNames[4])
+        ? `width:130%;height:130%;object-fit:cover;object-position:center 20%;display:block;margin:-15% 0 0 -15%;`
+        : `width:100%;height:100%;object-fit:cover;object-position:center 20%;display:block;`}"/>
     </div>
 
-    <!-- REC indicator — top left -->
-    <div style="position:absolute;top:140px;left:100px;display:flex;align-items:center;gap:10px;z-index:10;">
-      <div style="width:14px;height:14px;border-radius:50%;background:#FF0000;animation:recBlink 1s step-end infinite;"></div>
-      <span style="font-family:${MONO};font-size:22px;font-weight:700;color:#FF0000;letter-spacing:0.05em;">REC</span>
-    </div>
+    <!-- Film grain overlay (always active) -->
+    <div style="position:absolute;inset:0;${grainOverlay}pointer-events:none;z-index:30;"></div>
 
-    <!-- MANILA + PHOTO SHOOT + frame counter — top right -->
-    <div style="position:absolute;top:130px;right:80px;text-align:right;z-index:10;">
-      <p style="font-family:${SF};font-size:56px;font-weight:900;color:#fff;letter-spacing:0.18em;margin:0;
-        text-shadow:0 2px 20px rgba(0,0,0,0.5), 0 1px 4px rgba(0,0,0,0.3);">MANILA</p>
-      <p style="font-family:${SF};font-size:22px;font-weight:300;color:rgba(255,255,255,0.7);letter-spacing:0.3em;margin:6px 0 0;text-transform:uppercase;">PHOTO SHOOT</p>
-      <p id="frameCounter" style="font-family:${MONO};font-size:18px;color:rgba(255,255,255,0.45);margin:12px 0 0;letter-spacing:0.15em;">01/05</p>
-    </div>
+    <!-- Scanlines (always active) -->
+    <div style="position:absolute;inset:0;${scanlines}pointer-events:none;z-index:31;"></div>
 
-    <!-- Camera settings — bottom of viewfinder area -->
-    <div style="position:absolute;bottom:${SAFE_BOTTOM + 200}px;left:0;right:0;text-align:center;z-index:10;
-      animation:settingsIn ${TOTAL_DURATION}s linear forwards;opacity:0;">
-      <span style="font-family:${MONO};font-size:20px;color:rgba(255,255,255,0.6);letter-spacing:0.08em;">f/1.8 &nbsp; 1/200 &nbsp; ISO 400</span>
-    </div>
+    <!-- Dark vignette edges (always active) -->
+    <div style="position:absolute;inset:0;background:radial-gradient(ellipse at center, transparent 50%, rgba(0,0,0,0.5) 100%);pointer-events:none;z-index:32;"></div>
 
-    <!-- Date stamp — bottom right, orange monospace -->
-    <div style="position:absolute;bottom:${SAFE_BOTTOM + 160}px;right:100px;z-index:10;
-      animation:settingsIn ${TOTAL_DURATION}s linear forwards;opacity:0;">
-      <span style="font-family:${MONO};font-size:22px;color:#FF8C00;letter-spacing:0.05em;">2026.03.11</span>
-    </div>
+    <!-- ============ VIEWFINDER UI (fades out for CTA) ============ -->
+    <div style="position:absolute;inset:0;animation:viewfinderUiFade ${TOTAL_DURATION}s linear forwards;z-index:10;">
 
-    <!-- Film strip at bottom -->
-    ${stripThumbs}
+      <!-- Corner brackets — top left -->
+      <div style="position:absolute;top:120px;left:80px;width:80px;height:80px;border-top:3px solid rgba(255,255,255,0.8);border-left:3px solid rgba(255,255,255,0.8);"></div>
+      <!-- Corner brackets — top right -->
+      <div style="position:absolute;top:120px;right:80px;width:80px;height:80px;border-top:3px solid rgba(255,255,255,0.8);border-right:3px solid rgba(255,255,255,0.8);"></div>
+      <!-- Corner brackets — bottom left -->
+      <div style="position:absolute;bottom:${SAFE_BOTTOM + 180}px;left:80px;width:80px;height:80px;border-bottom:3px solid rgba(255,255,255,0.8);border-left:3px solid rgba(255,255,255,0.8);"></div>
+      <!-- Corner brackets — bottom right -->
+      <div style="position:absolute;bottom:${SAFE_BOTTOM + 180}px;right:80px;width:80px;height:80px;border-bottom:3px solid rgba(255,255,255,0.8);border-right:3px solid rgba(255,255,255,0.8);"></div>
+
+      <!-- Center crosshair -->
+      <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);">
+        <div style="width:40px;height:2px;background:rgba(255,255,255,0.5);position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);"></div>
+        <div style="width:2px;height:40px;background:rgba(255,255,255,0.5);position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);"></div>
+        <div style="width:60px;height:60px;border:1.5px solid rgba(255,255,255,0.35);border-radius:50%;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);"></div>
+      </div>
+
+      <!-- REC indicator — top left -->
+      <div style="position:absolute;top:140px;left:100px;display:flex;align-items:center;gap:10px;">
+        <div style="width:14px;height:14px;border-radius:50%;background:#FF0000;animation:recBlink 1s step-end infinite;"></div>
+        <span style="font-family:${MONO};font-size:22px;font-weight:700;color:#FF0000;letter-spacing:0.05em;">REC</span>
+      </div>
+
+      <!-- MANILA + PHOTO SHOOT + frame counter — top right -->
+      <div style="position:absolute;top:130px;right:80px;text-align:right;">
+        <p style="font-family:${SF};font-size:56px;font-weight:900;color:#fff;letter-spacing:0.18em;margin:0;
+          text-shadow:0 2px 20px rgba(0,0,0,0.5), 0 1px 4px rgba(0,0,0,0.3);">MANILA</p>
+        <p style="font-family:${SF};font-size:22px;font-weight:300;color:rgba(255,255,255,0.7);letter-spacing:0.3em;margin:6px 0 0;text-transform:uppercase;">PHOTO SHOOT</p>
+        <p id="frameCounter" style="font-family:${MONO};font-size:18px;color:rgba(255,255,255,0.45);margin:12px 0 0;letter-spacing:0.15em;">01/05</p>
+      </div>
+
+      <!-- Camera settings — bottom of viewfinder area -->
+      <div style="position:absolute;bottom:${SAFE_BOTTOM + 200}px;left:0;right:0;text-align:center;
+        animation:settingsIn ${TOTAL_DURATION}s linear forwards;opacity:0;">
+        <span style="font-family:${MONO};font-size:20px;color:rgba(255,255,255,0.6);letter-spacing:0.08em;">f/1.8 &nbsp; 1/200 &nbsp; ISO 400</span>
+      </div>
+
+      <!-- Date stamp — bottom right, orange monospace -->
+      <div style="position:absolute;bottom:${SAFE_BOTTOM + 160}px;right:100px;
+        animation:settingsIn ${TOTAL_DURATION}s linear forwards;opacity:0;">
+        <span style="font-family:${MONO};font-size:22px;color:#FF8C00;letter-spacing:0.05em;">2026.03.11</span>
+      </div>
+
+      <!-- Film strip at bottom -->
+      ${stripThumbs}
+
+    </div>
 
   </div>
 
   <!-- ============ FLASH OVERLAY ============ -->
-  <div style="position:absolute;inset:0;background:#fff;z-index:20;pointer-events:none;
+  <div style="position:absolute;inset:0;background:#fff;z-index:40;pointer-events:none;
     opacity:0;animation:flash ${TOTAL_DURATION}s linear forwards;"></div>
 
-  <!-- ============ FAN-OUT LAYER ============ -->
-  <div style="position:absolute;inset:0;z-index:15;
-    opacity:0;animation:fanContainerIn ${TOTAL_DURATION}s linear forwards;">
-    ${fanPhotos}
-  </div>
-
-  <!-- ============ CTA OVERLAY ON FAN PHOTOS ============ -->
-  <div style="position:absolute;inset:0;z-index:25;pointer-events:none;
-    opacity:0;animation:ctaGradientIn ${TOTAL_DURATION}s linear forwards;
-    background:linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.3) 25%, rgba(0,0,0,0.2) 40%, rgba(0,0,0,0.6) 60%, rgba(0,0,0,0.9) 78%, #000 92%);">
-    <div style="position:absolute;left:0;right:0;bottom:${SAFE_BOTTOM + 40}px;padding:0 60px;text-align:center;">
-      <p style="font-family:${SF};font-size:130px;font-weight:900;letter-spacing:0.14em;color:#fff;margin:0;
-        text-shadow:0 4px 60px rgba(0,0,0,0.7), 0 2px 20px rgba(0,0,0,0.5);
-        opacity:0;animation:ctaTextIn 0.8s ease-out 14s forwards;">MANILA</p>
-      <p style="font-family:${SF};font-size:30px;font-weight:300;color:rgba(255,255,255,0.85);letter-spacing:0.3em;margin:8px 0 0;
-        opacity:0;animation:ctaTextIn 0.8s ease-out 14.3s forwards;">PHOTO SHOOT</p>
-      <div style="width:60px;height:2px;background:rgba(255,255,255,0.3);margin:36px auto;
-        opacity:0;animation:ctaTextIn 0.6s ease-out 14.5s forwards;"></div>
-      <p style="font-family:${SF};font-size:60px;font-weight:700;color:#fff;margin:0;
-        text-shadow:0 2px 30px rgba(0,0,0,0.6);
-        opacity:0;animation:ctaTextIn 0.8s ease-out 14.7s forwards;">Sign up below.</p>
-      <p style="font-family:${SF};font-size:28px;font-weight:400;color:rgba(255,255,255,0.6);margin:20px 0 0;letter-spacing:0.04em;
-        opacity:0;animation:ctaTextIn 0.7s ease-out 15s forwards;">60-second form.</p>
-      <p style="font-family:${SF};font-size:24px;font-weight:500;color:rgba(255,255,255,0.45);margin:14px 0 0;letter-spacing:0.06em;
-        opacity:0;animation:ctaTextIn 0.7s ease-out 15.3s forwards;">Limited spots this month</p>
+  <!-- ============ CTA TEXT (viewfinder-style, over last photo) ============ -->
+  <div style="position:absolute;inset:0;z-index:35;pointer-events:none;
+    opacity:0;animation:ctaDimOverlay ${TOTAL_DURATION}s linear forwards;
+    background:linear-gradient(180deg, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.15) 35%, rgba(0,0,0,0.15) 55%, rgba(0,0,0,0.55) 80%, rgba(0,0,0,0.7) 100%);">
+    <div style="position:absolute;left:0;right:0;top:260px;padding:0 80px;text-align:center;">
+      <p style="font-family:${MONO};font-size:100px;font-weight:700;letter-spacing:0.18em;color:#fff;margin:0;
+        text-shadow:0 2px 30px rgba(0,0,0,0.5);
+        opacity:0;animation:ctaTextIn 0.7s ease-out ${ctaStart + 0.4}s forwards;">MANILA</p>
+      <p style="font-family:${MONO};font-size:30px;font-weight:400;color:rgba(255,255,255,0.8);letter-spacing:0.35em;margin:14px 0 0;
+        opacity:0;animation:ctaTextIn 0.7s ease-out ${ctaStart + 0.7}s forwards;">PHOTO SHOOT</p>
+    </div>
+    <div style="position:absolute;left:0;right:0;bottom:${SAFE_BOTTOM + 80}px;padding:0 80px;text-align:center;">
+      <p style="font-family:${MONO};font-size:42px;font-weight:400;color:#fff;margin:0;letter-spacing:0.06em;
+        text-shadow:0 1px 16px rgba(0,0,0,0.5);
+        opacity:0;animation:ctaTextIn 0.7s ease-out ${ctaStart + 1.1}s forwards;">sign up below</p>
+      <p style="font-family:${MONO};font-size:22px;font-weight:400;color:rgba(255,255,255,0.5);margin:18px 0 0;letter-spacing:0.08em;
+        opacity:0;animation:ctaTextIn 0.6s ease-out ${ctaStart + 1.5}s forwards;">it takes just a minute</p>
     </div>
   </div>
 
@@ -398,8 +368,8 @@ async function render() {
   const imageNames = {
     photo1: 'manila-gallery-purple-001.jpg',
     photo2: 'manila-gallery-purple-002.jpg',
-    photo3: 'manila-gallery-garden-001.jpg',
-    photo4: 'manila-gallery-graffiti-001.jpg',
+    photo3: 'manila-gallery-canal-001.jpg',
+    photo4: 'manila-gallery-ivy-001.jpg',
     photo5: 'manila-gallery-purple-003.jpg',
   }
 
@@ -430,8 +400,8 @@ async function render() {
   })
 
   const videoPage = await videoCtx.newPage()
+  await videoPage.evaluate(() => { document.body.style.background = '#000'; })
   await videoPage.setContent(buildViewfinder(images, imageNames), { waitUntil: 'load' })
-  await videoPage.waitForTimeout(500)
   await videoPage.waitForTimeout(ANIM_DURATION_MS)
   await videoPage.close()
   await videoCtx.close()
