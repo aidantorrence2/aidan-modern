@@ -230,8 +230,7 @@ function buildAnimatedDM(images) {
     sent('ok how do I sign up', 'm14', T.msg14),
 
     typing('t6', T.typing6, T.msg15),
-    recv('sign up below! 60 second form', 'm15', T.msg15),
-    recvNoAv('I\'ll message you back to plan everything', 'm16', T.msg16),
+    recv('sign up below! it takes just a minute', 'm15', T.msg15),
     react('\u{1F525}', 'r3', T.react3),
     typing('t7', T.typing7, T.msg17),
     sent('doing it right now', 'm17', T.msg17),
