@@ -17,8 +17,8 @@ const SF = "-apple-system, 'Helvetica Neue', Arial, sans-serif"
 const BG = '#212121'
 const MANILA_COLOR = '#E8443A'
 
-const TOTAL_DURATION = 18
-const TOTAL_DURATION_MS = 20000
+const TOTAL_DURATION = 22
+const TOTAL_DURATION_MS = 24000
 
 function resetOutputDir() {
   fs.rmSync(OUT_DIR, { recursive: true, force: true })
@@ -38,14 +38,14 @@ function readImage(name) {
   return `data:${imageMime(name)};base64,${buf.toString('base64')}`
 }
 
-// Sizing constants matching spec
-const MSG_FONT = 26
-const AI_FONT = 26
-const THOUGHT_FONT = 20
-const HEADER_FONT = 22
-const ICON_FONT = 16
-const PHOTO_W = 400
-const PHOTO_H = 530
+// Sizing constants — BIGGER for mobile readability
+const MSG_FONT = 40
+const AI_FONT = 40
+const THOUGHT_FONT = 28
+const HEADER_FONT = 32
+const ICON_FONT = 22
+const PHOTO_W = 600
+const PHOTO_H = 750
 const PHOTO_RADIUS = 16
 const AI_LEFT_MARGIN = 60
 
@@ -62,7 +62,8 @@ const T = {
   photo2:   9.6,
   photo3:   10.2,
   user3:    12.0,
-  manila:   13.5,
+  ai3:      13.5,
+  ctaCard:  14.5,
 }
 
 function userBubble(text, id, t) {
@@ -80,7 +81,7 @@ function userBubble(text, id, t) {
       background:#2f2f2f;
       border:1px solid #424242;
       border-radius:20px;
-      padding:14px 20px;
+      padding:18px 24px;
     ">
       <p style="font-family:${SF};font-size:${MSG_FONT}px;color:#fff;margin:0;line-height:1.4;">${escaped}</p>
     </div>
@@ -148,44 +149,119 @@ function inlinePhoto(src, id, t) {
   </div>`
 }
 
+function ctaCard(id, t) {
+  return `<div id="${id}" class="msg" style="
+    margin-left:${AI_LEFT_MARGIN}px;
+    margin-right:24px;
+    margin-bottom:20px;
+    opacity:0;
+    transform:translateY(20px);
+    animation:msgIn 0.5s ease-out ${t}s forwards;
+  ">
+    <div style="
+      background:#1a1a1a;
+      border:2px solid #333;
+      border-radius:24px;
+      padding:40px 36px;
+      text-align:center;
+    ">
+      <p style="
+        font-family:${SF};
+        font-size:110px;
+        font-weight:900;
+        letter-spacing:0.06em;
+        color:${MANILA_COLOR};
+        margin:0;
+        text-transform:uppercase;
+        line-height:1;
+      ">MANILA</p>
+      <p style="
+        font-family:${SF};
+        font-size:54px;
+        font-weight:700;
+        color:#fff;
+        margin:6px 0 0;
+        letter-spacing:0.12em;
+        text-transform:uppercase;
+        line-height:1.1;
+      ">PHOTO SHOOT</p>
+      <div style="width:80px;height:3px;background:${MANILA_COLOR};margin:28px auto;border-radius:2px;"></div>
+      <p style="
+        font-family:${SF};
+        font-size:50px;
+        font-weight:700;
+        color:#fff;
+        margin:0 0 16px;
+        line-height:1.2;
+      ">Sign up below.</p>
+      <p style="
+        font-family:${SF};
+        font-size:30px;
+        color:#aaa;
+        margin:0 0 24px;
+        line-height:1.4;
+      ">60-second form. I'll message you<br>back within a day.</p>
+      <div style="
+        display:inline-block;
+        background:${MANILA_COLOR};
+        border-radius:12px;
+        padding:14px 32px;
+      ">
+        <span style="
+          font-family:${SF};
+          font-size:26px;
+          font-weight:700;
+          color:#fff;
+          letter-spacing:0.04em;
+          text-transform:uppercase;
+        ">Limited spots this month</span>
+      </div>
+    </div>
+  </div>`
+}
+
 function buildHTML(images) {
   const p = (t) => ((t / TOTAL_DURATION) * 100).toFixed(2)
 
-  // Scroll calculation:
-  // Chat area top: 80px, bottom: SAFE_BOTTOM (410px) => visible height = 1920-80-410 = 1430px
+  // Scroll calculation with BIGGER sizes:
+  // Chat area visible height = 1920-80-410 = 1430px
   // Content layout estimate (all items, cumulative):
-  //   user1 bubble: ~70px + 12px margin = 82px
-  //   thought label: ~30px + 6px = 36px
-  //   ai1 (4 lines, ~34px/line = 136px) + 6px = 142px
-  //   icon row: ~28px + 18px = 46px
-  //   user2 bubble: ~70px + 12px = 82px
-  //   searching: ~30px + 10px = 40px
-  //   ai2 (7 lines ~238px) + 6px = 244px
-  //   "Here are recent shots:" label: included in ai2
-  //   photo1: 530+10 = 540px
-  //   photo2: 530+10 = 540px
-  //   photo3: 530+10 = 540px
-  //   user3 bubble: ~70px + 12px = 82px
-  // Total: ~2394px + 300px padding bottom = ~2694px
-  // Max scroll = 2694 - 1430 = ~1264px
-  // We scroll progressively as content appears:
-  // At T.photo1 (9.0): content up to ai2 ~ 672px, visible=1430, no scroll needed
-  // At T.photo1 complete (9.0): scroll ~0
-  // At T.photo2 (9.6): photo1 now showing, content bottom ~1212px, scroll to show bottom = max(0, 1212-1430) = 0
-  // At T.photo3 (10.2): content bottom ~1752px, need scroll ~322px
-  // After T.photo3: content bottom ~2292px, need scroll ~862px
-  // At T.user3 (12.0): content bottom ~2374px, need scroll ~944px
-  // After MANILA: keep scrolled
+  //   user1 bubble (40px font, ~3 lines wrapping): ~180px + 12px = 192px
+  //   thought label: ~40px + 6px = 46px
+  //   ai1 (40px font, ~5 lines): ~290px + 6px = 296px
+  //   icon row: ~36px + 18px = 54px
+  //   user2 bubble: ~80px + 12px = 92px
+  //   searching: ~40px + 10px = 50px
+  //   ai2 (40px font, ~9 lines): ~520px + 6px = 526px
+  //   photo1: 750+10 = 760px
+  //   photo2: 750+10 = 760px
+  //   photo3: 750+10 = 760px
+  //   user3 bubble: ~80px + 12px = 92px
+  //   ai3 message: ~80px + 6px = 86px
+  //   CTA card: ~520px + 20px = 540px
+  // Total: ~4254px + 600px padding bottom = ~4854px
+  // Max scroll = 4854 - 1430 = ~3424px
+  //
+  // Progressive scroll:
+  // Before photos (up to ai2): 192+46+296+54+92+50+526 = 1256px -> no scroll yet (fits in 1430)
+  // After photo1 (9.0s): 1256+760 = 2016px -> need scroll 2016-1430 = 586px -> scroll ~200px (partial, photo coming in)
+  // After photo2 (9.6s): 2776px -> need ~1346px
+  // After photo3 (10.2s): 3536px -> need ~2106px
+  // After user3 (12.0s): 3628px -> need ~2198px
+  // After ai3 (13.5s): 3714px -> need ~2284px
+  // After CTA card (14.5s): 4254px -> need ~2824px
 
   const scrollKeyframes = `
     0% { transform: translateY(0); }
     ${p(8.5)}% { transform: translateY(0); }
-    ${p(9.6)}% { transform: translateY(-80px); }
-    ${p(10.2)}% { transform: translateY(-620px); }
-    ${p(11.0)}% { transform: translateY(-1160px); }
-    ${p(12.0)}% { transform: translateY(-1260px); }
-    ${p(T.manila)}% { transform: translateY(-1260px); }
-    100% { transform: translateY(-1260px); }
+    ${p(9.3)}% { transform: translateY(-200px); }
+    ${p(9.8)}% { transform: translateY(-900px); }
+    ${p(10.5)}% { transform: translateY(-1700px); }
+    ${p(11.2)}% { transform: translateY(-2200px); }
+    ${p(12.5)}% { transform: translateY(-2300px); }
+    ${p(14.0)}% { transform: translateY(-2500px); }
+    ${p(15.5)}% { transform: translateY(-3100px); }
+    100% { transform: translateY(-3100px); }
   `
 
   const allMessages = [
@@ -200,6 +276,8 @@ function buildHTML(images) {
     inlinePhoto(images.photo2, 'm-photo2', T.photo2),
     inlinePhoto(images.photo3, 'm-photo3', T.photo3),
     userBubble('signing up right now', 'm-user3', T.user3),
+    aiMessage('Here\'s the link — it takes 60 seconds.', 'm-ai3', T.ai3),
+    ctaCard('m-cta', T.ctaCard),
   ].join('\n')
 
   return `<!DOCTYPE html>
@@ -243,28 +321,6 @@ function buildHTML(images) {
       .chat-scroll {
         animation: chatScroll ${TOTAL_DURATION}s ease-in-out 0s forwards;
       }
-      @keyframes manilaFlash {
-        0%   { opacity: 0; }
-        15%  { opacity: 1; }
-        100% { opacity: 1; }
-      }
-      .manila-flash {
-        opacity: 0;
-        animation: manilaFlash 0.5s ease-out ${T.manila}s forwards;
-      }
-      @keyframes manilaTextIn {
-        0%   { opacity: 0; transform: scale(0.92); letter-spacing: 0.15em; }
-        60%  { opacity: 1; transform: scale(1.02); }
-        100% { opacity: 1; transform: scale(1); letter-spacing: 0.08em; }
-      }
-      @keyframes glowPulse {
-        0%, 100% { text-shadow: 0 0 30px rgba(232,68,58,0.3), 0 0 60px rgba(232,68,58,0.15); }
-        50%       { text-shadow: 0 0 50px rgba(232,68,58,0.5), 0 0 100px rgba(232,68,58,0.25); }
-      }
-      @keyframes subtextIn {
-        0%   { opacity: 0; transform: translateY(10px); }
-        100% { opacity: 1; transform: translateY(0); }
-      }
     </style>
   </head>
   <body>
@@ -283,7 +339,7 @@ function buildHTML(images) {
         z-index:20;
       ">
         <span style="font-family:${SF};font-size:${HEADER_FONT}px;font-weight:500;color:#fff;letter-spacing:0.01em;">
-          ChatGPT 5.4 Thinking <span style="color:#aaa;font-size:18px;">&rsaquo;</span>
+          ChatGPT 5.4 Thinking <span style="color:#aaa;font-size:24px;">&rsaquo;</span>
         </span>
       </div>
 
@@ -299,46 +355,6 @@ function buildHTML(images) {
 
       <!-- Bottom gradient fade -->
       <div style="position:absolute;left:0;right:0;bottom:${SAFE_BOTTOM}px;height:60px;background:linear-gradient(0deg,${BG},transparent);z-index:15;pointer-events:none;"></div>
-
-      <!-- MANILA flash overlay -->
-      <div class="manila-flash" style="
-        position:absolute;inset:0;
-        display:flex;flex-direction:column;
-        align-items:center;justify-content:center;
-        background:${BG};
-        z-index:30;
-        pointer-events:none;
-      ">
-        <p style="
-          font-family:${SF};
-          font-size:160px;
-          font-weight:900;
-          letter-spacing:0.08em;
-          color:${MANILA_COLOR};
-          margin:0;
-          text-transform:uppercase;
-          opacity:0;
-          animation:manilaTextIn 0.7s cubic-bezier(0.16,1,0.3,1) ${T.manila + 0.1}s forwards, glowPulse 3s ease-in-out ${T.manila + 0.8}s infinite;
-        ">MANILA</p>
-        <p style="
-          font-family:${SF};
-          font-size:40px;
-          font-weight:600;
-          color:#fff;
-          margin:20px 0 0;
-          letter-spacing:0.04em;
-          opacity:0;
-          animation:subtextIn 0.5s ease-out ${T.manila + 0.5}s forwards;
-        ">Model Search</p>
-        <p style="
-          font-family:${SF};
-          font-size:26px;
-          color:#9b9b9b;
-          margin:14px 0 0;
-          opacity:0;
-          animation:subtextIn 0.5s ease-out ${T.manila + 0.7}s forwards;
-        ">Sign up below</p>
-      </div>
 
     </div>
   </body>
