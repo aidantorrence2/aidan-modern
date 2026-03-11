@@ -52,20 +52,20 @@ const AI_LEFT_MARGIN = 60
 // Timing (seconds)
 const T = {
   user1:     0.5,
-  thinking1: 2.0,   // "Thinking" with animated dots
-  thought1:  3.8,   // "Thought for a few seconds"
+  thinking1: 2.0,
+  thought1:  3.8,
   ai1:       4.2,
   icons1:    5.5,
-  user2:     7.0,
-  searching: 8.0,
-  ai2:       9.5,
-  photo1:    12.0,
-  photo2:    14.0,
-  photo3:    16.0,
-  photo4:    18.0,
-  photo5:    20.0,
-  user3:     22.5,
-  ai3:       24.0,
+  photo1:    6.5,
+  photo2:    8.5,
+  photo3:    10.5,
+  photo4:    12.5,
+  photo5:    14.5,
+  user2:     17.0,
+  searching: 18.0,
+  ai2:       19.5,
+  user3:     22.0,
+  ai3:       23.5,
   ctaCard:   25.0,
 }
 
@@ -270,36 +270,37 @@ function buildHTML(images) {
   // After ai3 (13.5s): 3714px -> need ~2284px
   // After CTA card (14.5s): 4254px -> need ~2824px
 
-  // Slower scroll — each photo gets time to breathe (5 photos now)
+  // Photos come right after ai1 — scroll to keep them visible
   const scrollKeyframes = `
     0% { transform: translateY(0); }
-    ${p(11)}% { transform: translateY(0); }
-    ${p(12.5)}% { transform: translateY(-400px); }
-    ${p(14.5)}% { transform: translateY(-1100px); }
-    ${p(16.5)}% { transform: translateY(-1800px); }
-    ${p(18.5)}% { transform: translateY(-2500px); }
-    ${p(20.5)}% { transform: translateY(-3200px); }
-    ${p(23)}% { transform: translateY(-3600px); }
-    ${p(25)}% { transform: translateY(-4400px); }
-    100% { transform: translateY(-4400px); }
+    ${p(5.5)}% { transform: translateY(0); }
+    ${p(7)}% { transform: translateY(-300px); }
+    ${p(9)}% { transform: translateY(-1000px); }
+    ${p(11)}% { transform: translateY(-1700px); }
+    ${p(13)}% { transform: translateY(-2400px); }
+    ${p(15)}% { transform: translateY(-3100px); }
+    ${p(17.5)}% { transform: translateY(-3500px); }
+    ${p(20)}% { transform: translateY(-3800px); }
+    ${p(24)}% { transform: translateY(-4200px); }
+    100% { transform: translateY(-4200px); }
   `
 
   const allMessages = [
-    userBubble('How do people on Instagram get those editorial-looking photos? I want photos like that but I have no idea how to pose or anything', 'm-user1', T.user1),
+    userBubble('i\'m bored, what should I do this week?', 'm-user1', T.user1),
     thinkingIndicator('m-thinking1', T.thinking1, T.thought1),
     thoughtLabel('m-thought1', T.thought1),
-    aiMessage('The secret is the photographer, not the model. A good photographer will tell you exactly where to stand, where to look, how to move — you don\'t need to know anything going in.', 'm-ai1', T.ai1),
+    aiMessage('There\'s a photographer in Manila named @madebyaidan doing free photo shoot collabs right now. No experience needed — he directs the whole thing. You literally just show up.<br><br>Look at what he\'s been shooting:', 'm-ai1', T.ai1),
     iconRow('m-icons1', T.icons1),
-    userBubble('ok but how do I actually find someone like that? I\'m in Manila', 'm-user2', T.user2),
-    searchingStatus('m-searching', T.searching, T.ai2),
-    aiMessage('There\'s a photographer named @madebyaidan who\'s doing exactly this in Manila right now. He shoots people who\'ve never modeled before — he directs the entire thing so you literally just show up.<br><br>Here\'s some of his recent work:', 'm-ai2', T.ai2),
     inlinePhoto(images.photo1, 'm-photo1', T.photo1),
     inlinePhoto(images.photo2, 'm-photo2', T.photo2),
     inlinePhoto(images.photo3, 'm-photo3', T.photo3),
     inlinePhoto(images.photo4, 'm-photo4', T.photo4),
     inlinePhoto(images.photo5, 'm-photo5', T.photo5),
-    userBubble('none of these people are professional models??', 'm-user3', T.user3),
-    aiMessage('Nope. First-time shoots. He\'s got a sign up form below — takes about a minute. Spots are limited though.', 'm-ai3', T.ai3),
+    userBubble('wait, how does it work?', 'm-user2', T.user2),
+    searchingStatus('m-searching', T.searching, T.ai2),
+    aiMessage('You sign up, he messages you to plan the date and vibe, you show up, he directs everything — posing, angles, all of it. Then you get your edited photos back within a week.', 'm-ai2', T.ai2),
+    userBubble('oh cool, how do I sign up?', 'm-user3', T.user3),
+    aiMessage('Ahh that\'s the easy part. All you have to do is click below!!', 'm-ai3', T.ai3),
   ].join('\n')
 
   return `<!DOCTYPE html>
