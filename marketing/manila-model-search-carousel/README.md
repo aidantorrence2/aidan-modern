@@ -291,3 +291,30 @@ Additional V15 notes:
 - darkBox padding and font sizes tightened to give images more real estate.
 - Page 2 proof images slightly wider (316px vs 308px).
 - Page 3 chips have more vertical spacing (144px gaps vs 136px).
+
+V16 render (full-bleed DR creative, 4 slides):
+
+```bash
+node marketing/manila-model-search-carousel/render-v16.mjs
+```
+
+V16 outputs:
+
+- `output-v16/01_hook_story.png`
+- `output-v16/02_proof_story.png`
+- `output-v16/03_how_easy_story.png`
+- `output-v16/04_sign_up_story.png`
+- `output-v16/sources.json`
+
+Additional V16 notes:
+
+- Completely new design optimized for CPC and form completion.
+- 4 slides instead of 5 to reduce carousel drop-off: HOOK > PROOF > EASY > CTA.
+- Full-bleed photos on every slide with dark gradient overlays — native IG story feel.
+- Sans-serif headlines (Avenir Next / Futura) instead of serif for modern impact.
+- Slide 1: "Models wanted." pattern-interrupt hook with full-bleed hero.
+- Slide 2: 2x2 photo grid on dark background. "This is my work." + "You could look like this."
+- Slide 3: Glassmorphism step cards over full-bleed image. "3 steps. That's it."
+- Slide 4: "Sign up below." + urgency badge "Limited spots this month."
+- Swipe indicators on slides 1-3.
+- All text above SAFE_BOTTOM (410px).
