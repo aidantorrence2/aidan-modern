@@ -1,0 +1,33 @@
+{
+  "scrapedAt": "2026-03-11T03:48:26.376Z",
+  "sourcePage": "https://aidantorrence.com",
+  "mode": "scraped-homepage",
+  "attempted": [
+    "merasa-jewelry-11.jpg",
+    "000008-7.jpg",
+    "000048750031.jpg",
+    "000029.jpg"
+  ],
+  "images": [
+    {
+      "filename": "merasa-jewelry-11.jpg",
+      "sourceUrl": "https://aidantorrence.com/images/large/merasa-jewelry-11.jpg",
+      "source": "local-cache"
+    },
+    {
+      "filename": "000008-7.jpg",
+      "sourceUrl": "https://aidantorrence.com/images/large/000008-7.jpg",
+      "source": "local-cache"
+    },
+    {
+      "filename": "000048750031.jpg",
+      "sourceUrl": "https://aidantorrence.com/images/large/000048750031.jpg",
+      "source": "local-cache"
+    },
+    {
+      "filename": "000029.jpg",
+      "sourceUrl": "https://aidantorrence.com/images/large/000029.jpg",
+      "source": "local-cache"
+    }
+  ]
+}
