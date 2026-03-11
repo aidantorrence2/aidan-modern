@@ -53,7 +53,7 @@ function readImage(name) {
 function writeSources(selected) {
   const payload = {
     createdAt: new Date().toISOString(),
-    strategy: 'v42c — v42b with bigger bubbles + MANILA header modeled after v39 film aesthetic',
+    strategy: 'v42c — v42b with bigger bubbles, IG DM header restored',
     safeBottomPixels: SAFE_BOTTOM,
     images: selected
   }
@@ -300,17 +300,35 @@ function buildAnimatedDM(images) {
     <body>
       <div style="width:${WIDTH}px;height:${HEIGHT}px;position:relative;overflow:hidden;background:${IG_BLACK};">
 
-        <!-- MANILA header — v39 film aesthetic -->
-        <div style="position:absolute;left:0;right:0;top:0;height:140px;z-index:20;background:${IG_BLACK};display:flex;flex-direction:column;align-items:center;justify-content:center;padding-top:20px;">
-          <h1 style="font-family:'Avenir Next',${SF};font-size:100px;font-weight:900;letter-spacing:0.06em;text-transform:uppercase;color:#F5C518;margin:0;line-height:0.85;text-shadow:0 0 50px rgba(245,197,24,0.25);">MANILA</h1>
-          <p style="font-family:${SF};font-size:26px;font-weight:600;color:#FFF8E7;margin:10px 0 0;letter-spacing:0.02em;">Photo shoot</p>
+        <!-- Status bar -->
+        <div style="position:absolute;left:0;right:0;top:0;height:54px;padding:14px 32px 0;display:flex;align-items:center;justify-content:space-between;z-index:20;">
+          <span style="font-family:${SF};font-size:20px;font-weight:600;color:#fff;">9:41</span>
+          <div style="display:flex;align-items:center;gap:6px;">
+            <svg width="20" height="14" viewBox="0 0 18 12"><rect x="0" y="3" width="3" height="9" rx="1" fill="#fff"/><rect x="5" y="2" width="3" height="10" rx="1" fill="#fff"/><rect x="10" y="0" width="3" height="12" rx="1" fill="#fff"/><rect x="15" y="0" width="3" height="12" rx="1" fill="#fff" opacity="0.3"/></svg>
+            <svg width="30" height="15" viewBox="0 0 27 13"><rect x="0" y="0" width="23" height="13" rx="3.5" stroke="#fff" stroke-width="1" fill="none"/><rect x="2" y="2" width="18" height="9" rx="2" fill="#fff"/></svg>
+          </div>
+        </div>
+
+        <!-- DM header -->
+        <div style="position:absolute;left:0;right:0;top:54px;height:64px;padding:0 20px;display:flex;align-items:center;gap:14px;z-index:20;background:${IG_BLACK};border-bottom:1px solid ${IG_DARK_BORDER};">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M15 18l-6-6 6-6" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <div style="width:40px;height:40px;border-radius:50%;overflow:hidden;flex-shrink:0;">
+            <img src="${images.profilePic}" style="width:100%;height:100%;object-fit:cover;"/>
+          </div>
+          <div style="flex:1;">
+            <p style="font-family:${SF};font-size:20px;font-weight:600;color:#fff;margin:0;">${HANDLE}</p>
+          </div>
+          <div style="display:flex;align-items:center;gap:6px;">
+            <div style="width:10px;height:10px;border-radius:50%;background:#44D62C;"></div>
+            <span style="font-family:${SF};font-size:15px;color:#44D62C;">Active now</span>
+          </div>
         </div>
 
         <!-- Top gradient fade -->
-        <div style="position:absolute;left:0;right:0;top:140px;height:60px;background:linear-gradient(180deg, ${IG_BLACK}, transparent);z-index:15;pointer-events:none;"></div>
+        <div style="position:absolute;left:0;right:0;top:118px;height:60px;background:linear-gradient(180deg, ${IG_BLACK}, transparent);z-index:15;pointer-events:none;"></div>
 
         <!-- Scrollable chat area -->
-        <div style="position:absolute;left:0;right:0;top:150px;bottom:${SAFE_BOTTOM}px;overflow:hidden;">
+        <div style="position:absolute;left:0;right:0;top:130px;bottom:${SAFE_BOTTOM}px;overflow:hidden;">
           <div class="chat-scroll" style="padding:20px 20px 500px;">
             ${allMessages}
           </div>
@@ -355,16 +373,26 @@ function buildCTA(images) {
       <div style="position:absolute;inset:0;background:linear-gradient(180deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.1) 20%, rgba(0,0,0,0.0) 35%, rgba(0,0,0,0.55) 55%, rgba(0,0,0,0.95) 72%, #000 85%);"></div>
 
       <!-- Text content — positioned in lower portion above SAFE_BOTTOM -->
-      <div style="position:absolute;left:0;right:0;bottom:${SAFE_BOTTOM + 40}px;padding:0 70px;text-align:center;">
-
-        <!-- Thin red accent line -->
-        <div style="width:50px;height:3px;background:${MANILA_COLOR};margin:0 auto 30px;"></div>
+      <div style="position:absolute;left:0;right:0;bottom:${SAFE_BOTTOM + 40}px;padding:0 60px;text-align:center;">
 
         <!-- MANILA — huge, white, heavy -->
-        <p style="font-family:${SF};font-size:180px;font-weight:900;letter-spacing:0.14em;color:#fff;margin:0;text-transform:uppercase;text-shadow:0 4px 80px rgba(232,68,58,0.4), 0 2px 20px rgba(0,0,0,0.8);">MANILA</p>
+        <p style="font-family:${SF};font-size:160px;font-weight:900;letter-spacing:0.14em;color:#fff;margin:0;text-transform:uppercase;text-shadow:0 4px 80px rgba(232,68,58,0.4), 0 2px 20px rgba(0,0,0,0.8);">MANILA</p>
 
         <!-- PHOTO SHOOT — light weight, wide tracking -->
-        <p style="font-family:${SF};font-size:38px;font-weight:300;color:rgba(255,255,255,0.9);margin:4px 0 0;letter-spacing:0.3em;text-transform:uppercase;">PHOTO SHOOT</p>
+        <p style="font-family:${SF};font-size:36px;font-weight:300;color:rgba(255,255,255,0.9);margin:4px 0 0;letter-spacing:0.3em;text-transform:uppercase;">PHOTO SHOOT</p>
+
+        <!-- Thin accent line -->
+        <div style="width:60px;height:3px;background:${MANILA_COLOR};margin:28px auto 28px;"></div>
+
+        <!-- CTA copy -->
+        <h2 style="font-family:${SF};font-size:72px;font-weight:800;line-height:0.95;color:#fff;margin:0 0 20px;letter-spacing:-0.02em;">Sign up below.</h2>
+        <p style="font-family:${SF};font-size:30px;font-weight:400;line-height:1.4;color:rgba(255,255,255,0.8);margin:0 0 32px;">60-second form. I'll message<br/>you back within a day.</p>
+
+        <!-- Urgency badge -->
+        <div style="display:inline-flex;align-items:center;gap:10px;padding:14px 28px;border-radius:14px;background:rgba(232,68,58,0.15);border:1px solid rgba(232,68,58,0.4);">
+          <div style="width:10px;height:10px;border-radius:50%;background:${MANILA_COLOR};"></div>
+          <span style="font-family:${SF};font-size:24px;font-weight:600;color:#fff;letter-spacing:0.02em;">Limited spots this month</span>
+        </div>
       </div>
     </div>
   </body></html>`
