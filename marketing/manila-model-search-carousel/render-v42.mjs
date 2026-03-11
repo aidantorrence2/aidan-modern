@@ -97,21 +97,23 @@ function buildAnimatedDM(images) {
     typing4: 8.6,
     msg12: 9.2,
     photo1: 9.6,
-    photo2: 10.0,
-    photo3: 10.4,
-    react2: 10.9,
-    typing5: 11.2,
-    msg13: 11.7,
-    msg14: 12.1,
+    photo2: 11.1,
+    photo3: 12.6,
+    photo4: 14.1,
+    photo5: 15.6,
+    react2: 16.2,
+    typing5: 16.5,
+    msg13: 17.0,
+    msg14: 17.4,
 
-    typing6: 12.6,
-    msg15: 13.1,
-    msg16: 13.6,
-    react3: 14.0,
-    typing7: 14.3,
-    msg17: 14.8,
-    msg18: 15.3,
-    manila: 16.0,
+    typing6: 17.9,
+    msg15: 18.4,
+    msg16: 18.9,
+    react3: 19.3,
+    typing7: 19.6,
+    msg17: 20.1,
+    msg18: 20.6,
+    manila: 21.5,
   }
 
   function recv(text, id, t) {
@@ -160,7 +162,7 @@ function buildAnimatedDM(images) {
     return `<div id="${id}" class="msg" style="display:flex;align-items:flex-end;gap:${AVATAR_GAP}px;margin-bottom:${MSG_MARGIN};opacity:0;transform:scale(0.85);animation:photoIn 0.4s cubic-bezier(0.34,1.56,0.64,1) ${t}s forwards;">
       <div style="width:${AVATAR}px;height:${AVATAR}px;flex-shrink:0;"></div>
       <div style="width:${PHOTO_W}px;height:${PHOTO_H}px;border-radius:${PHOTO_RADIUS}px;overflow:hidden;">
-        <img src="${src}" style="width:100%;height:100%;display:block;object-fit:cover;object-position:center 20%;"/>
+        <img src="${src}" style="width:112%;height:112%;display:block;object-fit:cover;object-position:center 20%;margin:-6% 0 0 -6%;"/>
       </div>
     </div>`
   }
@@ -205,6 +207,8 @@ function buildAnimatedDM(images) {
     photo(images.photo1, 'p1', T.photo1),
     photo(images.photo2, 'p2', T.photo2),
     photo(images.photo3, 'p3', T.photo3),
+    photo(images.photo4, 'p4', T.photo4),
+    photo(images.photo5, 'p5', T.photo5),
     react('😍', 'r2', T.react2),
     typing('t5', T.typing5, T.msg13),
     sent('THESE ARE INSANE', 'm13', T.msg13),
@@ -221,24 +225,26 @@ function buildAnimatedDM(images) {
 
   // Content height with 34px font, 50px avatars, 440x580 photos:
   // Messages ~76px each, photos ~640px each (580+margin+spacer), reacts ~56px
-  // Pre-photo: ~900px | Photos: 3×640 = 1920px | Post-photo: ~500px
-  // Total: ~3320px + 520px padding = ~3840px
-  // Visible area (no input bar): 1920-130-410 = 1380px → max scroll ≈ 2460px
-  const TOTAL_DURATION = 20
+  // Pre-photo: ~900px | Photos: 5×640 = 3200px | Post-photo: ~500px
+  // Total: ~4600px + 500px padding = ~5100px
+  // Visible area (no input bar): 1920-130-410 = 1380px → max scroll ≈ 3720px
+  const TOTAL_DURATION = 25
   const p = (t) => ((t / TOTAL_DURATION) * 100).toFixed(1)
 
   const scrollKeyframes = `
     0% { transform: translateY(0); }
     ${p(8.5)}% { transform: translateY(0); }
     ${p(9.6)}% { transform: translateY(-100px); }
-    ${p(10.0)}% { transform: translateY(-700px); }
-    ${p(10.4)}% { transform: translateY(-1350px); }
-    ${p(11.0)}% { transform: translateY(-1450px); }
-    ${p(12.0)}% { transform: translateY(-1600px); }
-    ${p(13.5)}% { transform: translateY(-1800px); }
-    ${p(15.0)}% { transform: translateY(-2000px); }
-    ${p(T.manila)}% { transform: translateY(-2000px); }
-    100% { transform: translateY(-2000px); }
+    ${p(11.1)}% { transform: translateY(-740px); }
+    ${p(12.6)}% { transform: translateY(-1380px); }
+    ${p(14.1)}% { transform: translateY(-2020px); }
+    ${p(15.6)}% { transform: translateY(-2660px); }
+    ${p(16.5)}% { transform: translateY(-2800px); }
+    ${p(17.5)}% { transform: translateY(-2950px); }
+    ${p(19.0)}% { transform: translateY(-3100px); }
+    ${p(20.5)}% { transform: translateY(-3300px); }
+    ${p(T.manila)}% { transform: translateY(-3300px); }
+    100% { transform: translateY(-3300px); }
   `
 
   return `<!DOCTYPE html>
@@ -368,6 +374,8 @@ async function render() {
     photo1: 'manila-gallery-purple-001.jpg',
     photo2: 'manila-gallery-purple-002.jpg',
     photo3: 'manila-gallery-purple-003.jpg',
+    photo4: 'manila-gallery-purple-004.jpg',
+    photo5: 'manila-gallery-purple-005.jpg',
   }
 
   writeSources({ all_considered: all, selected: selection })
@@ -378,7 +386,7 @@ async function render() {
 
   console.log('Recording animated DM conversation as MP4...')
 
-  const TOTAL_DURATION_MS = 22000
+  const TOTAL_DURATION_MS = 28000
 
   const browser = await chromium.launch()
   const videoCtx = await browser.newContext({
