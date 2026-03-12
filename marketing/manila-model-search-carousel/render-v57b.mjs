@@ -25,7 +25,7 @@ const PHOTOS = [
   'manila-gallery-night-001.jpg',
   'manila-gallery-canal-001.jpg',
   'manila-gallery-ivy-001.jpg',
-  'manila-gallery-graffiti-001.jpg',
+  'manila-gallery-street-001.jpg',
   'manila-gallery-urban-001.jpg',
 ]
 
