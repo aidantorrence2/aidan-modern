@@ -237,13 +237,13 @@ async function render() {
   const selection = {
     // Slide 1: Approachable/candid opener photo
     story_opener: 'manila-gallery-garden-002.jpg',
-    // Slide 2: Shoot day photos — variety of locations/vibes
-    shoot_a: 'manila-gallery-canal-002.jpg',
-    shoot_b: 'manila-gallery-graffiti-001.jpg',
-    shoot_c: 'manila-gallery-dsc-0911.jpg',
-    shoot_d: 'manila-gallery-ivy-001.jpg',
-    shoot_e: 'manila-gallery-night-003.jpg',
-    shoot_f: 'manila-gallery-urban-001.jpg',
+    // Slide 2: Shoot day photos — more portrait-oriented
+    shoot_a: 'manila-gallery-dsc-0190.jpg',
+    shoot_b: 'manila-gallery-dsc-0075.jpg',
+    shoot_c: 'manila-gallery-ivy-001.jpg',
+    shoot_d: 'manila-gallery-canal-001.jpg',
+    shoot_e: 'manila-gallery-night-001.jpg',
+    shoot_f: 'manila-gallery-dsc-0911.jpg',
     // Slide 3: Best "final result" portfolio shots (tall portraits)
     result_a: 'manila-gallery-canal-001.jpg',
     result_b: 'manila-gallery-tropical-001.jpg',
