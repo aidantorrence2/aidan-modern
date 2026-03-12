@@ -374,7 +374,7 @@ function buildHTML(images) {
 
       <!-- Scrollable chat area -->
       <div style="position:absolute;left:0;right:0;top:80px;bottom:${SAFE_BOTTOM}px;overflow:hidden;">
-        <div class="chat-scroll" style="padding:24px 60px 600px;">
+        <div class="chat-scroll" style="padding:200px 60px 600px;">
           ${allMessages}
         </div>
       </div>
