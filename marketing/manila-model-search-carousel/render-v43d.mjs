@@ -51,7 +51,7 @@ const AI_LEFT_MARGIN = 60
 
 // Timing (seconds)
 const T = {
-  user1:     0.5,
+  user1:     0.15,
   thinking1: 2.0,
   thought1:  3.8,
   ai1:       4.2,
@@ -207,19 +207,19 @@ function ctaCard(id, t) {
       <div style="width:80px;height:3px;background:${MANILA_COLOR};margin:28px auto;border-radius:2px;"></div>
       <p style="
         font-family:${SF};
-        font-size:50px;
-        font-weight:700;
+        font-size:54px;
+        font-weight:800;
         color:#fff;
         margin:0 0 16px;
         line-height:1.2;
-      ">Sign up below.</p>
+      ">Just message me!!</p>
       <p style="
         font-family:${SF};
         font-size:30px;
         color:#aaa;
         margin:0 0 24px;
         line-height:1.4;
-      ">It takes just a minute.<br>I'll message you back within a day.</p>
+      ">@madebyaidan on Instagram</p>
       <div style="
         display:inline-block;
         background:${MANILA_COLOR};
@@ -233,7 +233,7 @@ function ctaCard(id, t) {
           color:#fff;
           letter-spacing:0.04em;
           text-transform:uppercase;
-        ">Limited spots this month</span>
+        ">Limited spots this week</span>
       </div>
     </div>
   </div>`
@@ -299,7 +299,7 @@ function buildHTML(images) {
     searchingStatus('m-searching', T.searching, T.ai2),
     aiMessage('You sign up, he messages you to plan the date and vibe, you show up, he directs everything — posing, angles, all of it. Then you get your edited photos back within a week.', 'm-ai2', T.ai2),
     userBubble('oh cool, how do I sign up?', 'm-user3', T.user3),
-    aiMessage('Ahh that\'s the easy part. All you have to do is click below!!', 'm-ai3', T.ai3),
+    aiMessage('Ahh that\'s the easy part. Just message @madebyaidan on Instagram and he\'ll set everything up.', 'm-ai3', T.ai3),
   ].join('\n')
 
   return `<!DOCTYPE html>
