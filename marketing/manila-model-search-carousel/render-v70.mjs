@@ -383,7 +383,7 @@ function buildHTML(imageDataMap) {
   }
 
   .story-slide {
-    width: 100%;
+    width: 25%;
     height: 100%;
     position: relative;
     flex-shrink: 0;
