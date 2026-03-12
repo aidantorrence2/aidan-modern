@@ -298,7 +298,7 @@ function slideTwoAnimated(images, imageSizes) {
 // ── Slide 3: PROCESS — 3 step cards beside portrait film frames ──
 function slideThree(images, imageSizes) {
   const steps = [
-    { num: '01', title: 'Sign up below', desc: 'Takes 60 seconds. I message you back.' },
+    { num: '01', title: 'DM me', desc: 'Message @madebyaidan on Instagram.' },
     { num: '02', title: 'We plan it', desc: 'Location, vibe, and look — planned together.' },
     { num: '03', title: 'Show up', desc: 'I direct the whole shoot. No experience needed.' },
   ]
@@ -374,8 +374,8 @@ function slideFour(images) {
 
       <div style="position:absolute;left:0;right:0;top:60px;text-align:center;">
         <h1 style="font-family:${BOLD};font-size:120px;font-weight:900;letter-spacing:0.06em;text-transform:uppercase;color:${FILM_AMBER};margin:0;line-height:0.85;text-shadow:0 0 60px rgba(245,197,24,0.25), 0 0 120px rgba(245,197,24,0.08);">MANILA</h1>
-        <p style="font-family:${BOLD};font-size:58px;font-weight:800;color:${FILM_CREAM};margin:22px 0 0;letter-spacing:-0.02em;">Sign up below.</p>
-        <p style="font-family:${BODY};font-size:24px;color:rgba(255,248,231,0.5);margin:14px 0 0;">60-second form. I'll message you back.</p>
+        <p style="font-family:${BOLD};font-size:52px;font-weight:800;color:${FILM_CREAM};margin:22px 0 0;letter-spacing:-0.02em;">DM me if interested!!</p>
+        <p style="font-family:${BODY};font-size:24px;color:rgba(255,248,231,0.5);margin:14px 0 0;">@madebyaidan on Instagram</p>
       </div>
 
       <!-- Hero frame — uncropped -->
@@ -415,7 +415,7 @@ async function render() {
     'manila-gallery-dsc-0911.jpg',      // portrait 0.63
     'manila-gallery-garden-002.jpg',    // landscape 1.50
     'manila-gallery-night-003.jpg',     // square 1.0
-    'manila-gallery-graffiti-001.jpg',  // portrait 0.67
+    'manila-gallery-street-001.jpg',  // portrait 0.67
     'manila-gallery-dsc-0130.jpg',      // portrait 0.64
     'manila-gallery-urban-001.jpg',     // portrait 0.67
     'manila-gallery-shadow-001.jpg',    // portrait 0.66
@@ -426,7 +426,7 @@ async function render() {
     hero: 'manila-gallery-canal-001.jpg',
     strip: stripFiles,
     processA: 'manila-gallery-dsc-0911.jpg',
-    processB: 'manila-gallery-graffiti-001.jpg',
+    processB: 'manila-gallery-street-001.jpg',
     processC: 'manila-gallery-dsc-0190.jpg',
     cta: 'manila-gallery-park-001.jpg',
   }
