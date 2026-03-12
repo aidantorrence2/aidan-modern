@@ -106,7 +106,6 @@ function buildHTML(imageDataMap) {
     { src: imageDataMap[PHOTOS[3]], x: 50,  y: 960, w: 320, h: 420 },
     { src: imageDataMap[PHOTOS[4]], x: 390, y: 960, w: 320, h: 420 },
     { src: imageDataMap[PHOTOS[5]], x: 730, y: 960, w: 300, h: 420 },
-    { src: imageDataMap[PHOTOS[7]], x: 200, y: 1400, w: 680, h: 80  },
   ]
 
   const editPhotosHTML = editPhotos.map((ph, i) => {
