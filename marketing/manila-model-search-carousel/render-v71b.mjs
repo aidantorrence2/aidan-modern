@@ -682,7 +682,7 @@ function buildHTML(imageDataMap) {
 
           <!-- Back-and-forth conversation -->
           <div class="msg-row sent" id="tRecv1" style="opacity:0;">
-            <div class="bubble sent"><p>his name is @madebyaidan on IG 📸</p></div>
+            <div class="bubble sent"><p>@madebyaidan 📸</p></div>
           </div>
 
           <div class="msg-row recv" id="tSent1" style="opacity:0;">
@@ -729,12 +729,6 @@ function buildHTML(imageDataMap) {
             <div class="bubble recv"><p>doing it rn 🏃‍♀️</p></div>
           </div>
 
-          <!-- Handle -->
-          <div class="msg-row recv" id="threadHandle" style="opacity:0;">
-            <div style="padding:8px 0 0 4px;">
-              <p style="font-size:34px;color:rgba(255,255,255,0.5);margin:0;">@madebyaidan on Instagram</p>
-            </div>
-          </div>
 
         </div>
       </div>
@@ -821,7 +815,6 @@ function buildHTML(imageDataMap) {
       { id: 'tRecv7',      t: ${T.recv7 * 1000} },
       { id: 'tRecv8',      t: ${T.recv8 * 1000} },
       { id: 'tSent6',      t: ${T.sent6 * 1000} },
-      { id: 'threadHandle',t: ${T.ctaHandle * 1000} },
     ]
 
     const threadScrollEl = document.getElementById('threadScroll')
