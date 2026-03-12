@@ -289,10 +289,12 @@ function buildViewfinder(images, imageNames) {
 
       <!-- MANILA + PHOTO SHOOT + frame counter — top right -->
       <div style="position:absolute;top:130px;right:80px;text-align:right;">
-        <p style="font-family:${SF};font-size:80px;font-weight:900;color:#fff;letter-spacing:0.18em;margin:0;
-          text-shadow:0 2px 24px rgba(0,0,0,0.7), 0 1px 6px rgba(0,0,0,0.5), 0 0 40px rgba(0,0,0,0.3);">MANILA</p>
-        <p style="font-family:${SF};font-size:34px;font-weight:300;color:rgba(255,255,255,0.7);letter-spacing:0.3em;margin:6px 0 0;text-transform:uppercase;
-          text-shadow:0 1px 12px rgba(0,0,0,0.6), 0 1px 4px rgba(0,0,0,0.4);">FREE PHOTO SHOOT</p>
+        <p style="font-family:${SF};font-size:90px;font-weight:900;color:#fff;letter-spacing:0.18em;margin:0;
+          text-shadow:0 3px 30px rgba(0,0,0,0.9), 0 1px 8px rgba(0,0,0,0.8), 0 0 60px rgba(0,0,0,0.5);
+          -webkit-text-stroke: 1px rgba(255,255,255,0.3);">MANILA</p>
+        <p style="font-family:${SF};font-size:38px;font-weight:700;color:#fff;letter-spacing:0.25em;margin:8px 0 0;text-transform:uppercase;
+          text-shadow:0 2px 16px rgba(0,0,0,0.9), 0 1px 6px rgba(0,0,0,0.7), 0 0 40px rgba(0,0,0,0.4);
+          background:rgba(0,0,0,0.45);padding:6px 16px;border-radius:4px;display:inline-block;">FREE PHOTO SHOOT</p>
         <p id="frameCounter" style="font-family:${MONO};font-size:18px;color:rgba(255,255,255,0.45);margin:12px 0 0;letter-spacing:0.15em;">01/05</p>
       </div>
 
