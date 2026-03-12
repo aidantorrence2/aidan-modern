@@ -31,10 +31,10 @@ const LYRICS = [
   { text: "she'd never done a shoot before", dur: 2.5 },
   { text: "I said don't worry",              dur: 2.0 },
   { text: 'just show up \u2014 I direct everything', dur: 2.5 },
-  { text: 'we shot for two hours in BGC',    dur: 2.5 },
+  { text: "BGC, Makati? we'll make it happen", dur: 2.5 },
   { text: 'and this is what we got',         dur: 4.0 }, // hold + fast photo cycle
-  { text: 'sign up below',                  dur: 2.5, cta: true },
-  { text: 'it takes just a minute',          dur: 3.0, cta: true, last: true },
+  { text: 'interested?',                    dur: 2.5, cta: true },
+  { text: 'message me to get started',       dur: 3.0, cta: true, last: true },
 ]
 
 // Compute cumulative start times
@@ -126,7 +126,7 @@ function buildHTML(imageDataMap) {
     const startT = LYRIC_TIMES[i]
     const isCta = lyric.cta
     const isLast = lyric.last
-    const color = (isCta && lyric.text === 'sign up below') ? MANILA_COLOR : '#fff'
+    const color = isCta ? MANILA_COLOR : '#fff'
 
     lyricsHTML += `<div class="lyric lyric-${i}" style="color:${color}">${lyric.text}</div>\n`
 
@@ -308,13 +308,13 @@ function buildHTML(imageDataMap) {
     z-index: 20;
     display: flex;
     align-items: center;
-    gap: 16px;
+    gap: 20px;
   }
 
   .album-art {
-    width: 80px;
-    height: 80px;
-    border-radius: 8px;
+    width: 120px;
+    height: 120px;
+    border-radius: 12px;
     overflow: hidden;
     flex-shrink: 0;
     box-shadow: 0 4px 20px rgba(0,0,0,0.5);
@@ -334,7 +334,7 @@ function buildHTML(imageDataMap) {
 
   .song-title {
     font-family: ${SF};
-    font-size: 32px;
+    font-size: 42px;
     font-weight: 700;
     color: #fff;
     margin: 0;
@@ -346,10 +346,10 @@ function buildHTML(imageDataMap) {
 
   .song-artist {
     font-family: ${SF};
-    font-size: 24px;
+    font-size: 32px;
     font-weight: 400;
     color: rgba(255,255,255,0.7);
-    margin: 4px 0 0;
+    margin: 6px 0 0;
     text-shadow: 0 2px 8px rgba(0,0,0,0.5);
   }
 
@@ -358,13 +358,13 @@ function buildHTML(imageDataMap) {
     position: absolute;
     left: 36px;
     right: 36px;
-    bottom: ${SAFE_BOTTOM + 110}px;
+    bottom: ${SAFE_BOTTOM + 160}px;
     z-index: 20;
   }
 
   .progress-track {
     width: 100%;
-    height: 4px;
+    height: 6px;
     background: rgba(255,255,255,0.2);
     border-radius: 2px;
     position: relative;
@@ -384,10 +384,10 @@ function buildHTML(imageDataMap) {
   .progress-dot {
     position: absolute;
     top: 50%;
-    right: -5px;
+    right: -7px;
     transform: translateY(-50%);
-    width: 10px;
-    height: 10px;
+    width: 14px;
+    height: 14px;
     background: #fff;
     border-radius: 50%;
   }
@@ -405,7 +405,7 @@ function buildHTML(imageDataMap) {
 
   .timestamp {
     font-family: ${SF};
-    font-size: 22px;
+    font-size: 28px;
     font-weight: 400;
     color: rgba(255,255,255,0.5);
     text-shadow: 0 1px 4px rgba(0,0,0,0.5);
