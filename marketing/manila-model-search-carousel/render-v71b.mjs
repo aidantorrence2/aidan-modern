@@ -611,7 +611,7 @@ function buildHTML(imageDataMap) {
       </div>
       <!-- Story text overlay -->
       <div style="position:absolute;z-index:3;left:0;right:0;top:50%;transform:translateY(-50%);text-align:center;padding:0 40px;">
-        <p style="font-family:${SF};font-size:48px;font-weight:700;color:#fff;text-shadow:0 2px 12px rgba(0,0,0,0.7);margin:0;line-height:1.3;">manila photo shoot w/ @madebyaidan</p>
+        <p style="font-family:'Georgia','Times New Roman',cursive,serif;font-style:italic;font-size:52px;font-weight:400;color:#fff;text-shadow:0 2px 12px rgba(0,0,0,0.7);margin:0;line-height:1.4;">manila photo shoot w/ @madebyaidan</p>
       </div>
       <div class="story-reply-bar">
         <div class="story-reply-input">Send message</div>
