@@ -302,12 +302,16 @@ function buildHTML(images) {
     aiMessage('Ahh that\'s the easy part. Just message @madebyaidan on Instagram and he\'ll set everything up.', 'm-ai3', T.ai3),
   ].join('\n')
 
+  const HEADER_H = 200
+  const PHONE_LEFT = 30
+  const PHONE_RIGHT = 30
+
   return `<!DOCTYPE html>
 <html>
   <head>
     <style>
       * { box-sizing: border-box; margin: 0; padding: 0; }
-      html, body { margin: 0; padding: 0; background: ${BG}; -webkit-font-smoothing: antialiased; }
+      html, body { margin: 0; padding: 0; background: #000; -webkit-font-smoothing: antialiased; }
 
       @keyframes msgIn {
         0%   { opacity: 0; transform: translateY(16px); }
@@ -347,40 +351,113 @@ function buildHTML(images) {
       .chat-scroll {
         animation: chatScroll ${TOTAL_DURATION}s ease-in-out 0s forwards;
       }
+
+      /* Editorial header */
+      .editorial-header {
+        position: absolute;
+        top: 0; left: 0; right: 0;
+        height: ${HEADER_H}px;
+        z-index: 30;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: #000;
+      }
+      .editorial-rule {
+        width: 80%;
+        height: 1px;
+        background: rgba(255,255,255,0.3);
+        margin-bottom: 20px;
+      }
+      .editorial-title {
+        font-family: Georgia, 'Times New Roman', serif;
+        font-size: 72px;
+        font-weight: 700;
+        font-style: italic;
+        letter-spacing: 6px;
+        text-transform: uppercase;
+        color: #fff;
+        text-align: center;
+        margin: 0;
+      }
+      .editorial-subtitle {
+        font-family: ${SF};
+        font-size: 22px;
+        font-weight: 500;
+        letter-spacing: 8px;
+        text-transform: uppercase;
+        color: rgba(255,255,255,0.5);
+        margin-top: 10px;
+      }
+      .editorial-rule-bottom {
+        width: 80%;
+        height: 1px;
+        background: rgba(255,255,255,0.3);
+        margin-top: 20px;
+      }
+
+      /* Phone frame */
+      .phone-frame {
+        position: absolute;
+        top: ${HEADER_H}px;
+        left: ${PHONE_LEFT}px;
+        right: ${PHONE_RIGHT}px;
+        bottom: 0;
+        border-radius: 24px 24px 0 0;
+        overflow: hidden;
+        z-index: 5;
+        border: 2px solid rgba(255,255,255,0.1);
+        border-bottom: none;
+        background: ${BG};
+      }
     </style>
   </head>
   <body>
-    <div style="width:${WIDTH}px;height:${HEIGHT}px;position:relative;overflow:hidden;background:${BG};">
+    <div style="width:${WIDTH}px;height:${HEIGHT}px;position:relative;overflow:hidden;background:#000;">
 
-      <!-- ChatGPT header bar -->
-      <div style="
-        position:absolute;
-        left:0;right:0;top:0;
-        height:80px;
-        padding:0 28px;
-        display:flex;
-        align-items:center;
-        background:${BG};
-        border-bottom:1px solid #2e2e2e;
-        z-index:20;
-      ">
-        <span style="font-family:${SF};font-size:${HEADER_FONT}px;font-weight:500;color:#fff;letter-spacing:0.01em;">
-          Thinking <span style="color:#aaa;font-size:24px;">&rsaquo;</span>
-        </span>
+      <!-- Editorial header: MANILA FREE PHOTO SHOOT -->
+      <div class="editorial-header">
+        <div class="editorial-rule"></div>
+        <h1 class="editorial-title"><span style="color:${MANILA_COLOR};">Manila</span> Free</h1>
+        <p class="editorial-subtitle">Photo Shoot</p>
+        <div class="editorial-rule-bottom"></div>
       </div>
 
-      <!-- Top gradient fade -->
-      <div style="position:absolute;left:0;right:0;top:80px;height:40px;background:linear-gradient(180deg,${BG},transparent);z-index:15;pointer-events:none;"></div>
+      <!-- Phone frame containing ChatGPT UI -->
+      <div class="phone-frame">
 
-      <!-- Scrollable chat area -->
-      <div style="position:absolute;left:0;right:0;top:80px;bottom:${SAFE_BOTTOM}px;overflow:hidden;">
-        <div class="chat-scroll" style="padding:200px 60px 600px;">
-          ${allMessages}
+        <!-- ChatGPT header bar -->
+        <div style="
+          position:absolute;
+          left:0;right:0;top:0;
+          height:80px;
+          padding:0 28px;
+          display:flex;
+          align-items:center;
+          background:${BG};
+          border-bottom:1px solid #2e2e2e;
+          z-index:20;
+        ">
+          <span style="font-family:${SF};font-size:${HEADER_FONT}px;font-weight:500;color:#fff;letter-spacing:0.01em;">
+            Thinking <span style="color:#aaa;font-size:24px;">&rsaquo;</span>
+          </span>
         </div>
-      </div>
 
-      <!-- Bottom gradient fade -->
-      <div style="position:absolute;left:0;right:0;bottom:${SAFE_BOTTOM}px;height:60px;background:linear-gradient(0deg,${BG},transparent);z-index:15;pointer-events:none;"></div>
+        <!-- Top gradient fade -->
+        <div style="position:absolute;left:0;right:0;top:80px;height:40px;background:linear-gradient(180deg,${BG},transparent);z-index:15;pointer-events:none;"></div>
+
+        <!-- Scrollable chat area -->
+        <div style="position:absolute;left:0;right:0;top:80px;bottom:${SAFE_BOTTOM}px;overflow:hidden;">
+          <div class="chat-scroll" style="padding:200px 60px 600px;">
+            ${allMessages}
+          </div>
+        </div>
+
+        <!-- Bottom gradient fade -->
+        <div style="position:absolute;left:0;right:0;bottom:${SAFE_BOTTOM}px;height:60px;background:linear-gradient(0deg,${BG},transparent);z-index:15;pointer-events:none;"></div>
+
+      </div>
 
     </div>
   </body>

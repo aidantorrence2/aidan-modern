@@ -171,8 +171,68 @@ function buildHTML(imageDataMap) {
     height: ${HEIGHT}px;
     position: relative;
     overflow: hidden;
-    background: ${IG_BG};
+    background: #000;
     font-family: ${SF};
+  }
+
+  /* Editorial header */
+  .editorial-header {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 200px;
+    z-index: 50;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #000;
+  }
+  .editorial-rule {
+    width: 80%;
+    height: 1px;
+    background: rgba(255,255,255,0.3);
+    margin-bottom: 20px;
+  }
+  .editorial-title {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 72px;
+    font-weight: 700;
+    font-style: italic;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    color: #fff;
+    text-align: center;
+    margin: 0;
+  }
+  .editorial-subtitle {
+    font-family: ${SF};
+    font-size: 22px;
+    font-weight: 500;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+    margin-top: 10px;
+  }
+  .editorial-rule-bottom {
+    width: 80%;
+    height: 1px;
+    background: rgba(255,255,255,0.3);
+    margin-top: 20px;
+  }
+
+  /* Phone frame */
+  .phone-frame {
+    position: absolute;
+    top: 200px;
+    left: 30px;
+    right: 30px;
+    bottom: 0;
+    border-radius: 24px 24px 0 0;
+    overflow: hidden;
+    z-index: 5;
+    border: 2px solid rgba(255,255,255,0.1);
+    border-bottom: none;
+    background: ${IG_BG};
   }
 
   /* ===== PHASE 1: IG STORY ===== */
@@ -589,6 +649,17 @@ function buildHTML(imageDataMap) {
 <body>
   <div class="page">
 
+    <!-- Editorial header: MANILA FREE PHOTO SHOOT -->
+    <div class="editorial-header">
+      <div class="editorial-rule"></div>
+      <h1 class="editorial-title"><span style="color:${MANILA_COLOR};">Manila</span> Free</h1>
+      <p class="editorial-subtitle">Photo Shoot</p>
+      <div class="editorial-rule-bottom"></div>
+    </div>
+
+    <!-- Phone frame -->
+    <div class="phone-frame">
+
     <!-- ===== PHASE 1: IG STORY VIEW ===== -->
     <div class="story-view" id="storyView">
       <div class="story-image">
@@ -737,6 +808,8 @@ function buildHTML(imageDataMap) {
         </div>
       </div>
     </div>
+
+    </div><!-- /phone-frame -->
 
   </div>
 
