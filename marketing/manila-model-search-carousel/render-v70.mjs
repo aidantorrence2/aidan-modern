@@ -255,15 +255,42 @@ function buildHTML(imageDataMap) {
   }
 
   .story-username {
-    font-size: 28px;
+    font-size: 32px;
     font-weight: 600;
     color: #fff;
   }
 
   .story-time {
-    font-size: 24px;
+    font-size: 26px;
     color: rgba(255,255,255,0.6);
     margin-left: 4px;
+  }
+
+  /* Persistent header */
+  .manila-header {
+    position: absolute;
+    top: 140px;
+    left: 0; right: 0;
+    z-index: 25;
+    text-align: center;
+    padding: 16px 20px;
+  }
+
+  .manila-header-text {
+    font-size: 46px;
+    font-weight: 800;
+    color: #fff;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    text-shadow: 0 2px 16px rgba(0,0,0,0.6);
+    background: linear-gradient(135deg, rgba(232,68,58,0.5) 0%, rgba(232,68,58,0.25) 100%);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 50px;
+    padding: 14px 40px;
+    display: inline-block;
+    box-shadow: 0 4px 20px rgba(232,68,58,0.3), inset 0 1px 0 rgba(255,255,255,0.15);
   }
 
   /* Views counter at bottom-left */
@@ -279,13 +306,13 @@ function buildHTML(imageDataMap) {
   }
 
   .eye-icon {
-    width: 32px;
-    height: 32px;
+    width: 40px;
+    height: 40px;
   }
 
   .view-count {
-    font-size: 34px;
-    font-weight: 600;
+    font-size: 44px;
+    font-weight: 700;
     color: #fff;
     letter-spacing: 0.5px;
     min-width: 60px;
@@ -304,7 +331,7 @@ function buildHTML(imageDataMap) {
   }
 
   .reaction p {
-    font-size: 32px;
+    font-size: 40px;
     color: #fff;
     white-space: nowrap;
     margin: 0;
@@ -342,7 +369,7 @@ function buildHTML(imageDataMap) {
   }
 
   .cta-question {
-    font-size: 64px;
+    font-size: 76px;
     font-weight: 800;
     color: #fff;
     text-align: center;
@@ -359,7 +386,7 @@ function buildHTML(imageDataMap) {
   }
 
   .cta-action p {
-    font-size: 44px;
+    font-size: 52px;
     font-weight: 700;
     color: #fff;
     margin: 0;
@@ -372,7 +399,7 @@ function buildHTML(imageDataMap) {
   }
 
   .cta-handle p {
-    font-size: 36px;
+    font-size: 42px;
     color: rgba(255,255,255,0.7);
     margin: 0;
     text-align: center;
@@ -381,7 +408,7 @@ function buildHTML(imageDataMap) {
   /* Heart bursts for viral feel */
   .heart-burst {
     position: absolute;
-    font-size: 48px;
+    font-size: 60px;
     z-index: 18;
     opacity: 0;
     pointer-events: none;
@@ -435,6 +462,11 @@ function buildHTML(imageDataMap) {
         </div>
       </div>
 
+    </div>
+
+    <!-- Persistent manila header -->
+    <div class="manila-header" id="manilaHeader">
+      <span class="manila-header-text">Manila Free Photo Shoot</span>
     </div>
 
     <!-- IG Story progress bars (persistent overlay) -->
