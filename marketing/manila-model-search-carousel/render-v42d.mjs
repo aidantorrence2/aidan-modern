@@ -265,7 +265,51 @@ function buildAnimatedDM(images) {
     <head>
       <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        html, body { margin: 0; padding: 0; background: ${FRAME_BG}; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+        html, body { margin: 0; padding: 0; background: #000; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+
+        .editorial-header {
+          position: absolute;
+          top: 0; left: 0; right: 0;
+          height: 200px;
+          z-index: 60;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          background: #000;
+        }
+        .editorial-rule {
+          width: 80%;
+          height: 1px;
+          background: rgba(255,255,255,0.3);
+          margin-bottom: 20px;
+        }
+        .editorial-title {
+          font-family: Georgia, 'Times New Roman', serif;
+          font-size: 72px;
+          font-weight: 700;
+          font-style: italic;
+          letter-spacing: 6px;
+          text-transform: uppercase;
+          color: #fff;
+          text-align: center;
+          margin: 0;
+        }
+        .editorial-subtitle {
+          font-family: ${SF};
+          font-size: 22px;
+          font-weight: 500;
+          letter-spacing: 8px;
+          text-transform: uppercase;
+          color: rgba(255,255,255,0.5);
+          margin-top: 10px;
+        }
+        .editorial-rule-bottom {
+          width: 80%;
+          height: 1px;
+          background: rgba(255,255,255,0.3);
+          margin-top: 20px;
+        }
 
         @keyframes msgIn {
           0% { opacity: 0; transform: translateY(18px); }
@@ -304,14 +348,22 @@ function buildAnimatedDM(images) {
       </style>
     </head>
     <body>
-      <!-- Outer wrapper: full 1080x1920 with dark bezel background -->
-      <div style="width:${WIDTH}px;height:${HEIGHT}px;position:relative;overflow:hidden;background:${FRAME_BG};">
+      <!-- Outer wrapper: full 1080x1920 with dark background -->
+      <div style="width:${WIDTH}px;height:${HEIGHT}px;position:relative;overflow:hidden;background:#000;">
 
-        <!-- iPhone frame: rounded screen area with border -->
-        <div style="position:absolute;left:${FRAME_PAD_X}px;top:${FRAME_PAD_TOP}px;width:${screenW + FRAME_BORDER * 2}px;height:${screenH + FRAME_BORDER * 2}px;border-radius:${FRAME_RADIUS}px;border:${FRAME_BORDER}px solid ${FRAME_BORDER_COLOR};overflow:hidden;background:${IG_BLACK};">
+        <!-- Editorial header: MANILA FREE PHOTO SHOOT -->
+        <div class="editorial-header">
+          <div class="editorial-rule"></div>
+          <h1 class="editorial-title"><span style="color:${MANILA_COLOR};">Manila</span> Free</h1>
+          <p class="editorial-subtitle">Photo Shoot</p>
+          <div class="editorial-rule-bottom"></div>
+        </div>
+
+        <!-- iPhone frame: rounded screen area with border, shifted down for header -->
+        <div style="position:absolute;left:${FRAME_PAD_X}px;top:200px;right:${FRAME_PAD_X}px;bottom:0;border-radius:${FRAME_RADIUS}px ${FRAME_RADIUS}px 0 0;border:${FRAME_BORDER}px solid ${FRAME_BORDER_COLOR};border-bottom:none;overflow:hidden;background:${IG_BLACK};">
 
           <!-- DM content inside the screen -->
-          <div style="width:${screenW}px;height:${screenH}px;position:relative;overflow:hidden;background:${IG_BLACK};">
+          <div style="position:absolute;inset:0;overflow:hidden;background:${IG_BLACK};">
 
             <!-- Status bar -->
             <div style="position:absolute;left:0;right:0;top:0;height:54px;padding:14px 32px 0;display:flex;align-items:center;justify-content:space-between;z-index:20;">
@@ -355,10 +407,7 @@ function buildAnimatedDM(images) {
         </div>
 
         <!-- Dynamic Island notch overlay (on top of the frame) -->
-        <div style="position:absolute;top:${FRAME_PAD_TOP + FRAME_BORDER + NOTCH_TOP}px;left:50%;transform:translateX(-50%);width:${NOTCH_W}px;height:${NOTCH_H}px;background:#000;border-radius:${NOTCH_H / 2}px;z-index:50;"></div>
-
-        <!-- Home indicator bar overlay -->
-        <div style="position:absolute;bottom:${FRAME_PAD_BOTTOM + FRAME_BORDER + HOME_BAR_BOTTOM}px;left:50%;transform:translateX(-50%);width:${HOME_BAR_W}px;height:${HOME_BAR_H}px;background:rgba(255,255,255,0.3);border-radius:${HOME_BAR_H / 2}px;z-index:50;"></div>
+        <div style="position:absolute;top:${200 + FRAME_BORDER + NOTCH_TOP}px;left:50%;transform:translateX(-50%);width:${NOTCH_W}px;height:${NOTCH_H}px;background:#000;border-radius:${NOTCH_H / 2}px;z-index:50;"></div>
       </div>
     </body>
   </html>`
