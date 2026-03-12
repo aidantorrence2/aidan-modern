@@ -10,7 +10,7 @@ const OUT_DIR = path.join(__dirname, 'output-v66')
 
 const WIDTH = 1080
 const HEIGHT = 1920
-const SAFE_BOTTOM = 620
+const SAFE_BOTTOM = 410
 
 const HANDLE = 'madebyaidan'
 
@@ -155,9 +155,9 @@ function buildAnimatedZine(images) {
   // "OPEN CALL" pill sticker
   const openCallDelay = 3.2
   const openCallHTML = `
-    <div style="position:absolute;left:540px;top:180px;z-index:30;transform:rotate(12deg);">
-      <div style="background:${RED};border-radius:30px;padding:12px 24px;opacity:0;transform:scale(0);animation:slamIn 0.4s cubic-bezier(0.34,1.56,0.64,1) ${openCallDelay}s forwards;">
-        <span style="font-family:'Helvetica Neue',sans-serif;font-size:26px;font-weight:900;color:#fff;text-transform:uppercase;letter-spacing:2px;">OPEN CALL</span>
+    <div style="position:absolute;left:680px;top:180px;z-index:30;transform:rotate(12deg);">
+      <div style="background:${RED};border-radius:30px;padding:12px 28px;opacity:0;transform:scale(0);animation:slamIn 0.4s cubic-bezier(0.34,1.56,0.64,1) ${openCallDelay}s forwards;">
+        <span style="font-family:'Helvetica Neue',sans-serif;font-size:28px;font-weight:900;color:#fff;text-transform:uppercase;letter-spacing:2px;">OPEN CALL</span>
       </div>
     </div>
   `
@@ -167,7 +167,7 @@ function buildAnimatedZine(images) {
     { key: 'hero', x: 60,  y: 440, w: 280, h: 350, rot: -4, delay: 4.2 },
     { key: 'heroB', x: 400, y: 480, w: 260, h: 330, rot: 5, delay: 5.2 },
     { key: 'gridA', x: 180, y: 780, w: 300, h: 380, rot: -3, delay: 6.2 },
-    { key: 'gridB', x: 500, y: 700, w: 240, h: 300, rot: 6, delay: 7.2 },
+    { key: 'gridB', x: 550, y: 700, w: 240, h: 300, rot: 6, delay: 7.2 },
     { key: 'gridC', x: 80,  y: 950, w: 270, h: 340, rot: 2, delay: 8.2 },
     { key: 'gridD', x: 420, y: 1020, w: 280, h: 350, rot: -5, delay: 9.2 },
   ]
@@ -204,7 +204,7 @@ function buildAnimatedZine(images) {
   // Star burst stickers
   const stickersHTML = `
     <div style="opacity:0;animation:fadeIn 0.3s ease 6.5s forwards;">
-      ${starBurst(680, 450, 120, YELLOW, '!!', BLACK, 32)}
+      ${starBurst(780, 450, 120, YELLOW, '!!', BLACK, 32)}
     </div>
     <div style="opacity:0;animation:fadeIn 0.3s ease 9.0s forwards;">
       ${starBurst(30, 850, 100, PINK, '✦', '#fff', 28)}
@@ -214,8 +214,8 @@ function buildAnimatedZine(images) {
   // Caption text
   const captionDelay = 10.0
   const captionHTML = `
-    <div style="position:absolute;left:350px;top:1360px;z-index:25;opacity:0;transform:rotate(-3deg);animation:fadeIn 0.4s ease ${captionDelay}s forwards;max-width:440px;">
-      <span style="font-family:'Courier New',monospace;font-size:32px;font-weight:700;color:${BLACK};background:${YELLOW};padding:4px 12px;">this is my work !!</span>
+    <div style="position:absolute;left:480px;top:1360px;z-index:25;opacity:0;transform:rotate(-3deg);animation:fadeIn 0.4s ease ${captionDelay}s forwards;">
+      <span style="font-family:'Courier New',monospace;font-size:36px;font-weight:700;color:${BLACK};background:${YELLOW};padding:4px 12px;">this is my work !!</span>
     </div>
   `
 
@@ -262,14 +262,14 @@ function buildAnimatedZine(images) {
     </div>
 
     <!-- that's it!! -->
-    <div style="position:absolute;left:120px;top:1940px;z-index:25;opacity:0;animation:slideRotateIn 0.5s ease ${thatsItDelay}s forwards;">
-      <span style="font-family:'Helvetica Neue',sans-serif;font-size:78px;font-weight:900;color:${PINK};">that's it!!</span>
+    <div style="position:absolute;left:160px;top:1940px;z-index:25;opacity:0;animation:slideRotateIn 0.5s ease ${thatsItDelay}s forwards;">
+      <span style="font-family:'Helvetica Neue',sans-serif;font-size:90px;font-weight:900;color:${PINK};">that's it!!</span>
     </div>
-    ${squigglyUnderline(120, 2030, 480, PINK, thatsItDelay + 0.3)}
+    ${squigglyUnderline(160, 2040, 520, PINK, thatsItDelay + 0.3)}
 
     <!-- FREE! starburst -->
-    <div style="opacity:0;transform:scale(0);animation:stickerPop 0.4s cubic-bezier(0.34,1.56,0.64,1) ${freeDelay}s forwards;position:absolute;left:640px;top:1900px;">
-      ${starBurst(0, 0, 150, RED, 'FREE!', '#fff', 26)}
+    <div style="opacity:0;transform:scale(0);animation:stickerPop 0.4s cubic-bezier(0.34,1.56,0.64,1) ${freeDelay}s forwards;position:absolute;left:750px;top:1900px;">
+      ${starBurst(0, 0, 160, RED, 'FREE!', '#fff', 28)}
     </div>
 
     <!-- CTA section — integrated into scroll, appears naturally after process -->
@@ -280,7 +280,7 @@ function buildAnimatedZine(images) {
       </div>
     </div>
     ${tapeStrip(200, 2190, 110, 30, 8, 'rgba(255,225,53,0.55)')}
-    ${tapeStrip(620, 2200, 100, 28, -5, 'rgba(255,45,135,0.35)')}
+    ${tapeStrip(720, 2200, 100, 28, -5, 'rgba(255,45,135,0.35)')}
 
     <!-- FREE PHOTO SHOOT in big mixed type -->
     <div style="position:absolute;left:80px;top:2720px;z-index:25;opacity:0;animation:slideRotateIn 0.5s ease ${freeDelay + 1.8}s forwards;">
@@ -294,13 +294,13 @@ function buildAnimatedZine(images) {
     </div>
 
     <!-- DM me copy -->
-    <div style="position:absolute;left:80px;top:3040px;z-index:25;opacity:0;animation:fadeIn 0.4s ease ${freeDelay + 2.7}s forwards;max-width:720px;">
-      <span style="font-family:'Courier New',monospace;font-size:34px;color:${BLACK};background:${YELLOW};padding:6px 14px;">dm me if you're interested!!</span>
+    <div style="position:absolute;left:80px;top:3040px;z-index:25;opacity:0;animation:fadeIn 0.4s ease ${freeDelay + 2.7}s forwards;">
+      <span style="font-family:'Courier New',monospace;font-size:38px;color:${BLACK};background:${YELLOW};padding:6px 16px;">dm me if you're interested!!</span>
     </div>
 
     <!-- Urgency starburst -->
-    <div style="opacity:0;transform:scale(0);animation:stickerPop 0.4s cubic-bezier(0.34,1.56,0.64,1) ${freeDelay + 3.2}s forwards;position:absolute;left:620px;top:3000px;">
-      ${starBurst(0, 0, 170, RED, 'LIMITED<br>SPOTS', '#fff', 18)}
+    <div style="opacity:0;transform:scale(0);animation:stickerPop 0.4s cubic-bezier(0.34,1.56,0.64,1) ${freeDelay + 3.2}s forwards;position:absolute;left:700px;top:3000px;">
+      ${starBurst(0, 0, 180, RED, 'LIMITED<br>SPOTS', '#fff', 20)}
     </div>
 
     <!-- @handle -->
@@ -452,15 +452,15 @@ function buildCTA(images) {
 
   // Large taped photo
   const photoHTML = `
-    <div style="position:absolute;left:100px;top:340px;width:604px;padding:14px 14px 40px;background:#fff;transform:rotate(-2deg);box-shadow:2px 4px 16px rgba(0,0,0,0.15);z-index:10;">
-      <img src="${images.cta}" style="width:576px;height:480px;object-fit:cover;display:block;"/>
+    <div style="position:absolute;left:140px;top:340px;width:804px;padding:14px 14px 40px;background:#fff;transform:rotate(-2deg);box-shadow:2px 4px 16px rgba(0,0,0,0.15);z-index:10;">
+      <img src="${images.cta}" style="width:776px;height:580px;object-fit:cover;display:block;"/>
     </div>
   `
 
   // Tape strips on photo
   const photoTapeHTML = `
-    ${tapeStrip(160, 330, 110, 30, 8, 'rgba(255,225,53,0.55)')}
-    ${tapeStrip(600, 340, 100, 28, -5, 'rgba(255,45,135,0.35)')}
+    ${tapeStrip(200, 330, 110, 30, 8, 'rgba(255,225,53,0.55)')}
+    ${tapeStrip(720, 340, 100, 28, -5, 'rgba(255,45,135,0.35)')}
   `
 
   // "PHOTO SHOOT" in big mixed type
@@ -475,12 +475,12 @@ function buildCTA(images) {
 
   // Doodles
   const ctaDoodlesHTML = `
-    ${doodleCircle(700, 1000, 80, CYAN)}
+    ${doodleCircle(750, 1000, 80, CYAN)}
     ${doodleArrow(680, 1120, -20, BLACK)}
   `
 
   // Star burst
-  const ctaStarHTML = starBurst(680, 300, 120, RED, '!!', '#fff', 30)
+  const ctaStarHTML = starBurst(800, 300, 130, RED, '!!', '#fff', 30)
 
   // IG handle
   const handleHTML = `
