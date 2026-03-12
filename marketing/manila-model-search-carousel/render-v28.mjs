@@ -357,7 +357,7 @@ async function render() {
     scatterA: 'manila-gallery-closeup-001.jpg',    // 1059x1600
     scatterB: 'manila-gallery-dsc-0911.jpg',       // 957x1510
     scatterC: 'manila-gallery-garden-002.jpg',     // 1600x1061
-    scatterD: 'manila-gallery-graffiti-001.jpg',   // 1228x1818
+    scatterD: 'manila-gallery-market-001.jpg',   // replacing missing graffiti
     scatterE: 'manila-gallery-ivy-001.jpg',        // 1600x1061
     scatterF: 'manila-gallery-night-003.jpg',      // 1080x1080
     scatterG: 'manila-gallery-urban-001.jpg',      // 1228x1818

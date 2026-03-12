@@ -468,7 +468,7 @@ async function render() {
     hero: 'manila-gallery-canal-001.jpg',
     heroB: 'manila-gallery-closeup-001.jpg',
     gridA: 'manila-gallery-garden-002.jpg',
-    gridB: 'manila-gallery-graffiti-001.jpg',
+    gridB: 'manila-gallery-market-001.jpg',
     gridC: 'manila-gallery-urban-001.jpg',
     gridD: 'manila-gallery-night-003.jpg',
     gridE: 'manila-gallery-ivy-001.jpg',
