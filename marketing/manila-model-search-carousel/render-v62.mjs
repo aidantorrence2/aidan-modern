@@ -33,17 +33,17 @@ const BOX_PHOTOS = [
 const STRIP_PHOTOS = [
   { file: 'manila-gallery-closeup-001.jpg', purple: false },
   { file: 'manila-gallery-garden-001.jpg', purple: false },
-  { file: 'manila-gallery-graffiti-001.jpg', purple: false },
+  { file: 'manila-gallery-street-001.jpg', purple: false },
 ]
 
 // Center hero (purple — needs crop)
-const HERO_PHOTO = { file: 'manila-gallery-purple-003.jpg', purple: true }
+const HERO_PHOTO = { file: 'manila-gallery-purple-003-cropped.jpg', purple: true }
 
 // CTA photos (purple — need crop)
 const CTA_PHOTOS = [
-  { file: 'manila-gallery-purple-001.jpg', purple: true },
-  { file: 'manila-gallery-purple-005.jpg', purple: true },
-  { file: 'manila-gallery-purple-006.jpg', purple: true },
+  { file: 'manila-gallery-purple-001-cropped.jpg', purple: true },
+  { file: 'manila-gallery-purple-005-cropped.jpg', purple: true },
+  { file: 'manila-gallery-purple-006-cropped.jpg', purple: true },
 ]
 
 function resetOutputDir() {
@@ -335,9 +335,9 @@ function buildAnimation(images) {
   </div>
 
   <!-- ======== TOASTS ======== -->
-  <div class="toast" id="toast1" style="animation:toastSlide 2s ease 3.5s forwards;">Sarah just signed up &#x1F525;</div>
-  <div class="toast" id="toast2" style="animation:toastSlide 2s ease 6.0s forwards;">Michelle just signed up &#x2728;</div>
-  <div class="toast" id="toast3" style="animation:toastSlide 2s ease 8.5s forwards;">Anna just signed up &#x1F4F8;</div>
+  <div class="toast" id="toast1" style="animation:toastSlide 2s ease 3.5s forwards;">Sarah just messaged &#x1F525;</div>
+  <div class="toast" id="toast2" style="animation:toastSlide 2s ease 6.0s forwards;">Michelle just messaged &#x2728;</div>
+  <div class="toast" id="toast3" style="animation:toastSlide 2s ease 8.5s forwards;">Anna just messaged &#x1F4F8;</div>
 
   <!-- ======== PHOTO STRIP (appears Phase 2) ======== -->
   <div class="photo-strip" id="photoStrip" style="top:560px;">
@@ -419,8 +419,9 @@ function buildAnimation(images) {
     opacity:0;
     background:rgba(12,10,10,0.85);
   ">
-    <p id="signUpBig" style="font-family:${BOLD};font-size:80px;font-weight:800;color:#fff;margin:0 0 20px;text-align:center;text-shadow:0 4px 40px rgba(0,0,0,0.5);">Sign up below</p>
-    <p style="font-family:${MONO};font-size:28px;font-weight:600;color:${MANILA_COLOR};margin:0 0 50px;letter-spacing:0.1em;">60-second form</p>
+    <p id="signUpBig" style="font-family:${BOLD};font-size:72px;font-weight:800;color:#fff;margin:0 0 20px;text-align:center;text-shadow:0 4px 40px rgba(0,0,0,0.5);">dm me if interested!!</p>
+    <p style="font-family:${MONO};font-size:28px;font-weight:600;color:${MANILA_COLOR};margin:0 0 10px;letter-spacing:0.1em;">@madebyaidan</p>
+    <p style="font-family:${MONO};font-size:22px;font-weight:500;color:rgba(255,255,255,0.5);margin:0 0 50px;letter-spacing:0.06em;">on Instagram</p>
 
     <!-- 2 remaining boxes pulsing -->
     <div style="display:flex;gap:20px;">
