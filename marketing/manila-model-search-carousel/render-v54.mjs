@@ -197,9 +197,7 @@ function buildViewfinder(images, imageNames) {
 
   @keyframes viewfinderUiFade {
     0% { opacity:1; }
-    ${p(ctaStart)}% { opacity:1; }
-    ${p(ctaStart + 0.6)}% { opacity:0; }
-    100% { opacity:0; }
+    100% { opacity:1; }
   }
 
   @keyframes ctaTextIn {
@@ -292,9 +290,10 @@ function buildViewfinder(images, imageNames) {
         <p style="font-family:${SF};font-size:90px;font-weight:900;color:#fff;letter-spacing:0.18em;margin:0;
           text-shadow:0 3px 30px rgba(0,0,0,0.9), 0 1px 8px rgba(0,0,0,0.8), 0 0 60px rgba(0,0,0,0.5);
           -webkit-text-stroke: 1px rgba(255,255,255,0.3);">MANILA</p>
-        <p style="font-family:${SF};font-size:38px;font-weight:700;color:#fff;letter-spacing:0.25em;margin:8px 0 0;text-transform:uppercase;
-          text-shadow:0 2px 16px rgba(0,0,0,0.9), 0 1px 6px rgba(0,0,0,0.7), 0 0 40px rgba(0,0,0,0.4);
-          background:rgba(0,0,0,0.45);padding:6px 16px;border-radius:4px;display:inline-block;">FREE PHOTO SHOOT</p>
+        <p style="font-family:${SF};font-size:52px;font-weight:800;color:#fff;letter-spacing:0.2em;margin:12px 0 0;text-transform:uppercase;
+          text-shadow:0 3px 20px rgba(0,0,0,0.95), 0 1px 8px rgba(0,0,0,0.9), 0 0 50px rgba(0,0,0,0.6);
+          background:rgba(0,0,0,0.6);padding:12px 24px;border-radius:6px;display:inline-block;
+          border:1px solid rgba(255,255,255,0.15);">FREE PHOTO SHOOT</p>
         <p id="frameCounter" style="font-family:${MONO};font-size:18px;color:rgba(255,255,255,0.45);margin:12px 0 0;letter-spacing:0.15em;">01/05</p>
       </div>
 
@@ -321,23 +320,18 @@ function buildViewfinder(images, imageNames) {
   <div style="position:absolute;inset:0;background:#fff;z-index:40;pointer-events:none;
     opacity:0;animation:flash ${TOTAL_DURATION}s linear forwards;"></div>
 
-  <!-- ============ CTA TEXT (viewfinder-style, over last photo) ============ -->
+  <!-- ============ END TEXT (viewfinder-style, stays in the same aesthetic) ============ -->
   <div style="position:absolute;inset:0;z-index:35;pointer-events:none;
     opacity:0;animation:ctaDimOverlay ${TOTAL_DURATION}s linear forwards;
-    background:linear-gradient(180deg, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.15) 35%, rgba(0,0,0,0.15) 55%, rgba(0,0,0,0.55) 80%, rgba(0,0,0,0.7) 100%);">
-    <div style="position:absolute;left:0;right:0;top:260px;padding:0 80px;text-align:center;">
-      <p style="font-family:${MONO};font-size:100px;font-weight:700;letter-spacing:0.18em;color:#fff;margin:0;
-        text-shadow:0 2px 30px rgba(0,0,0,0.5);
-        opacity:0;animation:ctaTextIn 0.7s ease-out ${ctaStart + 0.4}s forwards;">MANILA</p>
-      <p style="font-family:${MONO};font-size:40px;font-weight:400;color:rgba(255,255,255,0.8);letter-spacing:0.35em;margin:14px 0 0;
-        opacity:0;animation:ctaTextIn 0.7s ease-out ${ctaStart + 0.7}s forwards;">PHOTO SHOOT</p>
-    </div>
-    <div style="position:absolute;left:0;right:0;bottom:${SAFE_BOTTOM + 80}px;padding:0 80px;text-align:center;">
-      <p style="font-family:${MONO};font-size:46px;font-weight:400;color:#fff;margin:0;letter-spacing:0.06em;
-        text-shadow:0 1px 16px rgba(0,0,0,0.5);
-        opacity:0;animation:ctaTextIn 0.7s ease-out ${ctaStart + 1.1}s forwards;">message me to get started</p>
-      <p style="font-family:${MONO};font-size:28px;font-weight:400;color:rgba(255,255,255,0.5);margin:18px 0 0;letter-spacing:0.08em;
-        opacity:0;animation:ctaTextIn 0.6s ease-out ${ctaStart + 1.5}s forwards;">@madebyaidan on Instagram</p>
+    background:linear-gradient(180deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.05) 30%, rgba(0,0,0,0.05) 60%, rgba(0,0,0,0.4) 100%);">
+    <!-- Bottom text — viewfinder style monospace, subtle -->
+    <div style="position:absolute;left:0;right:0;bottom:${SAFE_BOTTOM + 120}px;padding:0 80px;text-align:center;">
+      <p style="font-family:${MONO};font-size:30px;font-weight:400;color:rgba(255,255,255,0.7);margin:0;letter-spacing:0.12em;
+        text-shadow:0 1px 12px rgba(0,0,0,0.6);
+        opacity:0;animation:ctaTextIn 0.7s ease-out ${ctaStart + 0.4}s forwards;">DM me on Instagram</p>
+      <p style="font-family:${MONO};font-size:42px;font-weight:700;color:#fff;margin:16px 0 0;letter-spacing:0.06em;
+        text-shadow:0 2px 16px rgba(0,0,0,0.5);
+        opacity:0;animation:ctaTextIn 0.7s ease-out ${ctaStart + 0.8}s forwards;">@madebyaidan</p>
     </div>
   </div>
 
@@ -373,7 +367,7 @@ async function render() {
     photo2: 'manila-gallery-purple-002-cropped.jpg',
     photo3: 'manila-gallery-canal-001.jpg',
     photo4: 'manila-gallery-ivy-001.jpg',
-    photo5: 'manila-gallery-purple-003-cropped.jpg',
+    photo5: 'manila-gallery-dsc-0190.jpg',
   }
 
   writeSources({
