@@ -65,7 +65,7 @@ const POLAROIDS = [
   },
   {
     file: 'manila-gallery-night-001.jpg',
-    caption: '@madebyaidan',
+    caption: 'dm me if interested!!',
     x: 280, y: 1020, rot: 7,
   },
 ]
@@ -248,38 +248,7 @@ function buildPolaroidAnimation(images) {
 
       ${polaroidElements}
 
-      <!-- CTA text — fades in after all polaroids are done -->
-      <div style="
-        position:absolute;
-        left:0;
-        right:0;
-        bottom:${SAFE_BOTTOM + 40}px;
-        text-align:center;
-        z-index:60;
-        opacity:0;
-        animation:ctaFadeIn 1s ease-out ${ctaFadeAt}s forwards;
-      ">
-        <p style="
-          font-family:Georgia, 'Times New Roman', serif;
-          font-style:italic;
-          font-size:38px;
-          font-weight:bold;
-          color:#fff;
-          margin:0 0 12px;
-          line-height:1.3;
-          text-shadow:0 3px 16px rgba(0,0,0,0.7);
-        ">DM me if interested!!</p>
-        <p style="
-          font-family:Georgia, 'Times New Roman', serif;
-          font-style:italic;
-          font-size:28px;
-          font-weight:normal;
-          color:rgba(255,255,255,0.8);
-          margin:0;
-          line-height:1.3;
-          text-shadow:0 2px 12px rgba(0,0,0,0.6);
-        ">@madebyaidan on Instagram</p>
-      </div>
+      <!-- CTA is the 5th polaroid card -->
 
     </div>
   </body>
