@@ -153,7 +153,7 @@ function slideOne(images) {
       <!-- small accent text -->
       <p style="position:absolute;left:120px;right:120px;bottom:${SAFE_BOTTOM + 30}px;text-align:center;z-index:200;
         font-family:${HAND};font-size:30px;color:${INK_COLOR};margin:0;opacity:0.7;">
-        no experience needed  *  sign up below</p>
+        no experience needed  *  dm if interested</p>
     </div>
   `
 }
@@ -266,8 +266,8 @@ function slideThree(images) {
       })}
       <div style="position:absolute;left:400px;top:310px;width:580px;z-index:20;">
         <p style="font-family:${NARROW};font-size:50px;font-weight:700;color:${MANILA_COLOR};margin:0 0 6px;">01</p>
-        <p style="font-family:${HAND};font-size:36px;color:${INK_COLOR};margin:0 0 4px;line-height:1.15;">sign up below</p>
-        <p style="font-family:${BOLD};font-size:22px;font-weight:500;color:rgba(42,36,32,0.6);margin:0;">takes 60 seconds</p>
+        <p style="font-family:${HAND};font-size:36px;color:${INK_COLOR};margin:0 0 4px;line-height:1.15;">DM me on instagram</p>
+        <p style="font-family:${BOLD};font-size:22px;font-weight:500;color:rgba(42,36,32,0.6);margin:0;">@madebyaidan</p>
       </div>
       ${tapeStrip(140, 268, 80, 22, -8)}
 
@@ -336,9 +336,9 @@ function slideFour(images) {
 
       <!-- CTA text -->
       <div style="position:absolute;left:0;right:0;bottom:${SAFE_BOTTOM + 16}px;text-align:center;z-index:200;">
-        <p style="font-family:${BOLD};font-size:52px;font-weight:800;color:${INK_COLOR};margin:0 0 12px;">Sign up below.</p>
+        <p style="font-family:${BOLD};font-size:52px;font-weight:800;color:${INK_COLOR};margin:0 0 12px;">dm if interested!!</p>
         <div style="display:inline-block;padding:12px 36px;border-radius:40px;background:${MANILA_COLOR};margin:0 auto;">
-          <span style="font-family:${BOLD};font-size:24px;font-weight:700;color:#fff;letter-spacing:0.06em;text-transform:uppercase;">limited spots this month</span>
+          <span style="font-family:${BOLD};font-size:24px;font-weight:700;color:#fff;letter-spacing:0.06em;text-transform:uppercase;">@madebyaidan on instagram</span>
         </div>
       </div>
     </div>
