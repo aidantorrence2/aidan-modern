@@ -100,13 +100,25 @@ function buildHTML(imageDataMap) {
       position:absolute;
       left:${pb.cx - pb.r}px;top:${pb.cy - pb.r}px;
       width:${pb.r * 2}px;height:${pb.r * 2}px;
-      border-radius:50%;overflow:hidden;opacity:0;
-      box-shadow: 0 8px 32px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.2), 0 0 0 1px rgba(255,255,255,0.08);
+      border-radius:50%;overflow:hidden;
+      box-shadow:
+        0 8px 40px rgba(0,0,0,0.5),
+        inset 0 -4px 16px rgba(0,0,0,0.3),
+        inset 0 4px 16px rgba(255,255,255,0.15),
+        0 0 0 2px rgba(255,255,255,0.06);
       z-index:3;
     ">
-      <img src="${imageDataMap[pb.src]}" style="width:100%;height:100%;object-fit:cover;" />
-      <div style="position:absolute;inset:0;border-radius:50%;background:linear-gradient(135deg, rgba(255,255,255,0.2) 0%, transparent 50%, rgba(0,0,0,0.1) 100%);pointer-events:none;"></div>
-      <div style="position:absolute;inset:3px;border-radius:50%;border:1px solid rgba(255,255,255,0.08);pointer-events:none;"></div>
+      <img src="${imageDataMap[pb.src]}" style="width:100%;height:100%;object-fit:cover;opacity:0.7;" />
+      <!-- Glass refraction overlay — gradient highlight like a soap bubble -->
+      <div style="position:absolute;inset:0;border-radius:50%;background:
+        radial-gradient(ellipse at 30% 20%, rgba(255,255,255,0.35) 0%, transparent 45%),
+        radial-gradient(ellipse at 70% 80%, rgba(0,0,0,0.2) 0%, transparent 50%),
+        linear-gradient(160deg, rgba(255,255,255,0.12) 0%, transparent 40%, rgba(0,0,0,0.15) 100%);
+        pointer-events:none;"></div>
+      <!-- Inner edge highlight ring -->
+      <div style="position:absolute;inset:4px;border-radius:50%;border:1.5px solid rgba(255,255,255,0.15);pointer-events:none;"></div>
+      <!-- Specular spot -->
+      <div style="position:absolute;top:12%;left:22%;width:25%;height:18%;border-radius:50%;background:radial-gradient(ellipse, rgba(255,255,255,0.4) 0%, transparent 70%);pointer-events:none;transform:rotate(-20deg);"></div>
     </div>
   `).join('')
 
@@ -340,12 +352,9 @@ function buildHTML(imageDataMap) {
       baseScale: 1,
     }))
 
-    // Fade bubbles in (no popping, just appear and float)
-    bubbleState.forEach((b, i) => {
-      setTimeout(() => {
-        b.el.style.transition = 'opacity 0.8s ease-out'
-        b.el.style.opacity = '1'
-      }, 200 + i * 150)
+    // Bubbles visible immediately (no black space at start)
+    bubbleState.forEach((b) => {
+      b.el.style.opacity = '1'
     })
 
     // Physics loop
@@ -396,10 +405,8 @@ function buildHTML(imageDataMap) {
       requestAnimationFrame(physicsTick)
     }
 
-    // Start physics after initial pop-in
-    setTimeout(() => {
-      physicsTick()
-    }, 500)
+    // Start physics immediately
+    physicsTick()
 
     // ======= Phase transitions =======
     function showPhase(id) {
@@ -443,8 +450,8 @@ function buildHTML(imageDataMap) {
       })
     }
 
-    // PHASE 1: Free photo shoot in Manila (0-6s)
-    setTimeout(() => showPhase('phase1'), 500)
+    // PHASE 1: Free photo shoot in Manila (0-6s) — show immediately
+    showPhase('phase1')
 
     // PHASE 2: Photo proof (6-14s)
     setTimeout(() => hidePhase('phase1'), 5500)
