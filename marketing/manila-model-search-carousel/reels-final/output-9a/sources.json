@@ -1,0 +1,17 @@
+{
+  "createdAt": "2026-03-12T23:34:41.202Z",
+  "strategy": "v66 — Animated zine/collage video, cut & paste punk aesthetic",
+  "safeBottomPixels": 430,
+  "images": {
+    "hero": "manila-gallery-canal-001.jpg",
+    "heroB": "manila-gallery-closeup-001.jpg",
+    "gridA": "manila-gallery-garden-002.jpg",
+    "gridB": "manila-gallery-street-001.jpg",
+    "gridC": "manila-gallery-urban-001.jpg",
+    "gridD": "manila-gallery-night-003.jpg",
+    "gridE": "manila-gallery-ivy-001.jpg",
+    "process": "manila-gallery-dsc-0190.jpg",
+    "cta": "manila-gallery-floor-001.jpg",
+    "ctaB": "manila-gallery-shadow-001.jpg"
+  }
+}
