@@ -545,7 +545,7 @@ function buildHTML(imageDataMap) {
           <!-- CTA -->
           <div class="msg-row recv" id="recv10" style="opacity:0;">
             <div class="bubble recv cta-bubble">
-              <p>dm me if interested!!</p>
+              <p>just dm me!</p>
             </div>
           </div>
 
