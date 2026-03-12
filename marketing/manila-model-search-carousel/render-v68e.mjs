@@ -442,12 +442,6 @@ function buildHTML(imageDataMap) {
 
           <div class="msg-row recv" id="recv2" style="opacity:0;">
             <div class="bubble recv">
-              <p>looks like they all came through at once</p>
-            </div>
-          </div>
-
-          <div class="msg-row recv" id="recv3" style="opacity:0;">
-            <div class="bubble recv">
               <p>yes it's still available!!</p>
             </div>
           </div>
@@ -616,8 +610,7 @@ function buildHTML(imageDataMap) {
     // Phase 2: madebyaidan starts typing and responding
     showTyping('typing1', ${T.typing1 * 1000}, ${T.recv1 * 1000})
     showMsg('recv1', ${T.recv1 * 1000})
-    showMsg('recv2', ${T.recv2 * 1000})
-    showMsg('recv3', ${T.recv3 * 1000})
+    showMsg('recv2', ${T.recv3 * 1000})
     showMsg('recv4', ${T.recv4 * 1000})
     showMsg('recv5', ${T.recv5 * 1000})
 
