@@ -32,7 +32,7 @@ const LYRICS = [
   { text: "I said don't worry",              dur: 2.0 },
   { text: 'just show up \u2014 I direct everything', dur: 2.5 },
   { text: "BGC, Makati? we'll make it happen", dur: 2.5 },
-  { text: 'and this is what we got',         dur: 4.0 }, // hold + fast photo cycle
+  { text: 'from stranger to supermodel',      dur: 4.0 }, // hold + fast photo cycle
   { text: 'interested?',                    dur: 2.5, cta: true },
   { text: 'message me to get started',       dur: 3.0, cta: true, last: true },
 ]

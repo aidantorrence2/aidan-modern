@@ -232,7 +232,7 @@ function buildHTML(imageDataMap) {
         <div style="position:absolute;left:60px;right:60px;top:250px;height:1px;background:rgba(255,255,255,0.45);transform-origin:center;transform:scaleX(0);opacity:0;animation:ruleGrow 0.8s ease-out ${T.masthead + 0.3}s forwards, fadeIn 0.3s ease-out ${T.masthead + 0.3}s forwards;"></div>
 
         <!-- Cover lines -->
-        <div style="position:absolute;left:60px;bottom:${SAFE_BOTTOM + 40}px;">
+        <div style="position:absolute;left:60px;bottom:${SAFE_BOTTOM + 80}px;">
           <p style="font-family:${SANS};font-size:20px;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:${GOLD};margin:0 0 14px;text-shadow:0 1px 6px rgba(0,0,0,0.7);opacity:0;animation:fadeSlideUp 0.5s ease-out ${T.coverLines}s forwards;">The Model Search Issue</p>
           <p style="font-family:${SERIF};font-size:60px;font-weight:700;font-style:italic;line-height:1.05;color:#fff;margin:0 0 20px;text-shadow:0 2px 8px rgba(0,0,0,0.7);opacity:0;animation:fadeSlideUp 0.6s ease-out ${T.coverLines + 0.2}s forwards;">Models<br/>Wanted</p>
           <div style="height:2px;background:${GOLD};animation:goldRuleGrow 0.6s ease-out ${T.goldRule}s both;margin:0 0 20px;"></div>
