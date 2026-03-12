@@ -345,12 +345,6 @@ function buildHTML(imageDataMap) {
           <p style="font-family:${SERIF};font-size:30px;font-weight:400;font-style:italic;color:rgba(255,255,255,0.7);margin:0 0 48px;line-height:1.4;opacity:0;animation:fadeSlideUp 0.5s ease-out ${T.ctaHandle}s forwards;">@madebyaidan on Instagram</p>
         </div>
 
-        <!-- Badge -->
-        <div style="position:absolute;left:50%;transform:translateX(-50%);top:700px;display:inline-flex;align-items:center;gap:10px;padding:16px 36px;border:1px solid ${GOLD};background:rgba(200,169,110,0.1);backdrop-filter:blur(10px);opacity:0;animation:fadeSlideUp 0.5s ease-out ${T.ctaBadge}s forwards;">
-          <span style="width:8px;height:8px;border-radius:50%;background:${GOLD};animation:ctaPulse 2s ease-in-out infinite;"></span>
-          <span style="font-family:${SANS};font-size:18px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:${GOLD};">Limited Spots This Week</span>
-        </div>
-
         <!-- Bottom info -->
         <div style="position:absolute;left:60px;right:60px;bottom:${SAFE_BOTTOM + 20}px;display:flex;justify-content:space-between;align-items:center;opacity:0;animation:fadeIn 0.5s ease-out ${T.ctaBadge + 0.5}s forwards;">
           <span style="font-family:${SANS};font-size:16px;font-weight:400;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.35);">@madebyaidan</span>
