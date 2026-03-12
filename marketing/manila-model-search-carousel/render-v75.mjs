@@ -16,7 +16,7 @@ const SF = "-apple-system, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif
 const MANILA_COLOR = '#E8443A'
 const IG_BG = '#0a0a0a'
 
-const TOTAL_DURATION_MS = 26000
+const TOTAL_DURATION_MS = 16000
 
 const PHOTOS = [
   'manila-gallery-purple-001-cropped.jpg',
@@ -60,15 +60,15 @@ function buildHTML(imageDataMap) {
     { id: 'b-photo5', type: 'photo', src: PHOTOS[4], x: 540, y: 960, size: 360, delay: 2.4 },
     { id: 'b-photo6', type: 'photo', src: PHOTOS[5], x: 180, y: 1100, size: 340, delay: 2.8 },
 
-    // Phase 3: Glass info pills pop in (3.5-6s)
-    { id: 'b-free', type: 'glass-pill', text: 'FREE SHOOT', x: 540, y: 1250, w: 440, h: 110, delay: 3.5, fontSize: 44, accent: true },
-    { id: 'b-loc', type: 'glass-pill', text: '📍 BGC · Makati · Manila', x: 540, y: 1380, w: 680, h: 100, delay: 4.0, fontSize: 38 },
-    { id: 'b-pro', type: 'glass-pill', text: 'Professional Photographer', x: 350, y: 1490, w: 560, h: 96, delay: 4.5, fontSize: 34 },
-    { id: 'b-dir', type: 'glass-pill', text: 'Fully Directed · No Experience Needed', x: 620, y: 1590, w: 700, h: 96, delay: 5.0, fontSize: 32 },
+    // Phase 3: Info + CTA glass pills (3.5-7s)
+    { id: 'b-free', type: 'glass-pill', text: 'FREE PHOTO SHOOT', x: 540, y: 1200, w: 520, h: 110, delay: 3.5, fontSize: 42, accent: true },
+    { id: 'b-loc', type: 'glass-pill', text: '📍 BGC · Makati · Manila', x: 540, y: 1330, w: 680, h: 100, delay: 4.0, fontSize: 38 },
+    { id: 'b-handle', type: 'glass-pill', text: '@madebyaidan', x: 540, y: 1460, w: 480, h: 110, delay: 5.0, fontSize: 44, accent: true },
+    { id: 'b-dm', type: 'glass-pill', text: 'DM on Instagram', x: 540, y: 1580, w: 480, h: 96, delay: 5.8, fontSize: 34 },
 
-    // Phase 4: More photos fill gaps (5.5-7s)
-    { id: 'b-photo7', type: 'photo', src: EXTRA_PHOTOS[0], x: 880, y: 1020, size: 320, delay: 5.5 },
-    { id: 'b-photo8', type: 'photo', src: EXTRA_PHOTOS[1], x: 540, y: 160, size: 300, delay: 6.0 },
+    // Extra photos fill gaps (5.5-7s)
+    { id: 'b-photo7', type: 'photo', src: EXTRA_PHOTOS[0], x: 880, y: 1020, size: 320, delay: 4.5 },
+    { id: 'b-photo8', type: 'photo', src: EXTRA_PHOTOS[1], x: 540, y: 160, size: 300, delay: 5.2 },
   ]
 
   function glassBubbleHTML(b) {
@@ -265,156 +265,6 @@ function buildHTML(imageDataMap) {
     will-change: transform, opacity;
   }
 
-  /* ===== CTA PHASE ===== */
-  .cta-phase {
-    position: absolute;
-    inset: 0;
-    z-index: 50;
-    opacity: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding-bottom: ${SAFE_BOTTOM}px;
-  }
-
-  .cta-bg {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(180deg, rgba(10,10,10,0.95) 0%, rgba(10,10,10,0.98) 100%);
-    backdrop-filter: blur(60px);
-    -webkit-backdrop-filter: blur(60px);
-  }
-
-  .cta-content {
-    position: relative;
-    z-index: 2;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .cta-manila-big {
-    font-size: 140px;
-    font-weight: 900;
-    letter-spacing: 20px;
-    text-align: center;
-    opacity: 0;
-    margin-bottom: 0;
-    background: linear-gradient(135deg, #fff 0%, rgba(255,255,255,0.7) 50%, #fff 100%);
-    background-size: 200% 100%;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    filter: drop-shadow(0 4px 20px rgba(232,68,58,0.4));
-  }
-
-  .cta-philippines {
-    font-size: 32px;
-    font-weight: 500;
-    color: rgba(255,255,255,0.4);
-    letter-spacing: 24px;
-    text-align: center;
-    text-transform: uppercase;
-    opacity: 0;
-    margin-bottom: 50px;
-  }
-
-  .cta-photo-strip {
-    display: flex;
-    gap: 12px;
-    margin-bottom: 50px;
-    opacity: 0;
-  }
-
-  .cta-photo-strip-item {
-    width: 130px;
-    height: 170px;
-    border-radius: 20px;
-    overflow: hidden;
-    position: relative;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.1);
-    border: 1px solid rgba(255,255,255,0.1);
-  }
-
-  .cta-photo-strip-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  .cta-photo-strip-item::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(135deg, rgba(255,255,255,0.15) 0%, transparent 50%);
-    border-radius: 20px;
-    pointer-events: none;
-  }
-
-  .cta-glass-card {
-    background: linear-gradient(135deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.03) 100%);
-    backdrop-filter: blur(30px);
-    -webkit-backdrop-filter: blur(30px);
-    border: 1px solid rgba(255,255,255,0.12);
-    border-radius: 30px;
-    padding: 36px 56px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 16px;
-    opacity: 0;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.15);
-    position: relative;
-    overflow: hidden;
-  }
-
-  .cta-glass-card::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 15%; right: 15%; height: 40%;
-    background: linear-gradient(180deg, rgba(255,255,255,0.08) 0%, transparent 100%);
-    border-radius: 30px 30px 0 0;
-    pointer-events: none;
-  }
-
-  .cta-handle {
-    font-size: 48px;
-    font-weight: 800;
-    color: #fff;
-    text-align: center;
-  }
-
-  .cta-subtext {
-    font-size: 30px;
-    color: rgba(255,255,255,0.6);
-    text-align: center;
-  }
-
-  .cta-button {
-    margin-top: 30px;
-    background: linear-gradient(135deg, ${MANILA_COLOR} 0%, #c93a32 100%);
-    color: #fff;
-    font-size: 34px;
-    font-weight: 700;
-    padding: 22px 56px;
-    border-radius: 50px;
-    opacity: 0;
-    letter-spacing: 0.5px;
-    border: 1px solid rgba(255,255,255,0.15);
-    box-shadow: 0 4px 20px rgba(232,68,58,0.3), inset 0 1px 0 rgba(255,255,255,0.2);
-    position: relative;
-    overflow: hidden;
-  }
-
-  /* Shimmer effect on button */
-  .cta-button::after {
-    content: '';
-    position: absolute;
-    top: -50%; bottom: -50%;
-    width: 40px;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-    animation: shimmerSlide 3s 15s ease-in-out infinite;
-  }
 </style>
 </head>
 <body>
@@ -441,36 +291,6 @@ function buildHTML(imageDataMap) {
       ${bubbleHTML}
     </div>
 
-    <!-- CTA phase -->
-    <div class="cta-phase" id="ctaPhase">
-      <div class="cta-bg"></div>
-
-      <!-- Ambient blobs in CTA too -->
-      <div class="ambient-blob" style="
-        width:500px;height:500px;left:50%;top:20%;transform:translate(-50%,-50%);
-        background:radial-gradient(circle, rgba(232,68,58,0.2) 0%, transparent 70%);
-        opacity:0.5;filter:blur(100px);z-index:1;
-      "></div>
-
-      <div class="cta-content">
-        <div class="cta-manila-big" id="ctaManila">MANILA</div>
-        <div class="cta-philippines" id="ctaPhilippines">PHILIPPINES</div>
-
-        <div class="cta-photo-strip" id="ctaStrip">
-          ${PHOTOS.slice(0, 4).map(p => `
-          <div class="cta-photo-strip-item">
-            <img src="${imageDataMap[p]}" />
-          </div>`).join('')}
-        </div>
-
-        <div class="cta-glass-card" id="ctaCard">
-          <div class="cta-handle">@madebyaidan</div>
-          <div class="cta-subtext">free photo shoots in Manila</div>
-        </div>
-
-        <div class="cta-button" id="ctaBtn">DM on Instagram</div>
-      </div>
-    </div>
 
   </div>
 
@@ -523,45 +343,6 @@ function buildHTML(imageDataMap) {
       }, delay + 800)
     })
 
-    // ======= Phase 5: Bubbles shrink, CTA appears (10s) =======
-    setTimeout(() => {
-      allBubbles.forEach((bubble, i) => {
-        setTimeout(() => {
-          bubble.style.animation = 'bubbleShrinkOut 0.5s cubic-bezier(0.55, 0, 1, 0.45) forwards'
-        }, i * 50)
-      })
-    }, 10000)
-
-    // CTA
-    setTimeout(() => {
-      document.getElementById('ctaPhase').style.transition = 'opacity 0.8s ease-out'
-      document.getElementById('ctaPhase').style.opacity = '1'
-    }, 11000)
-
-    setTimeout(() => {
-      document.getElementById('ctaManila').style.animation = 'scaleIn 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards'
-    }, 11300)
-
-    setTimeout(() => {
-      document.getElementById('ctaPhilippines').style.animation = 'fadeIn 0.6s ease-out forwards'
-    }, 11800)
-
-    setTimeout(() => {
-      document.getElementById('ctaStrip').style.animation = 'scaleIn 0.6s ease-out forwards'
-    }, 12300)
-
-    setTimeout(() => {
-      document.getElementById('ctaCard').style.animation = 'slideUp 0.6s ease-out forwards'
-    }, 12900)
-
-    setTimeout(() => {
-      const btn = document.getElementById('ctaBtn')
-      btn.style.animation = 'scaleIn 0.5s ease-out forwards'
-      setTimeout(() => {
-        btn.style.opacity = '1'
-        btn.style.animation = 'pulseGlow 2s ease-in-out infinite'
-      }, 600)
-    }, 13500)
 
   </script>
 </body>
