@@ -24,27 +24,23 @@ const TOTAL_DURATION_MS = 19000
 
 // Box fill photos (tiny thumbnails inside countdown boxes)
 const BOX_PHOTOS = [
-  { file: 'manila-gallery-canal-001.jpg', purple: false },
-  { file: 'manila-gallery-night-003.jpg', purple: false },
-  { file: 'manila-gallery-ivy-001.jpg', purple: false },
+  { file: 'manila-gallery-dsc-0911.jpg', purple: false },
+  { file: 'manila-gallery-garden-002.jpg', purple: false },
+  { file: 'manila-gallery-rocks-001.jpg', purple: false },
 ]
 
-// Photo strip thumbnails
+// Photo strip thumbnails (more photos for wider strip)
 const STRIP_PHOTOS = [
-  { file: 'manila-gallery-closeup-001.jpg', purple: false },
-  { file: 'manila-gallery-garden-001.jpg', purple: false },
-  { file: 'manila-gallery-street-001.jpg', purple: false },
+  { file: 'manila-gallery-urban-002.jpg', purple: false },
+  { file: 'manila-gallery-park-001.jpg', purple: false },
+  { file: 'manila-gallery-market-001.jpg', purple: false },
+  { file: 'manila-gallery-shadow-001.jpg', purple: false },
+  { file: 'manila-gallery-tropical-001.jpg', purple: false },
+  { file: 'manila-gallery-night-002.jpg', purple: false },
 ]
 
-// Center hero (purple — needs crop)
-const HERO_PHOTO = { file: 'manila-gallery-purple-003-cropped.jpg', purple: true }
-
-// CTA photos (purple — need crop)
-const CTA_PHOTOS = [
-  { file: 'manila-gallery-purple-001-cropped.jpg', purple: true },
-  { file: 'manila-gallery-purple-005-cropped.jpg', purple: true },
-  { file: 'manila-gallery-purple-006-cropped.jpg', purple: true },
-]
+// Center hero
+const HERO_PHOTO = { file: 'manila-gallery-dsc-0075.jpg', purple: false }
 
 function resetOutputDir() {
   fs.rmSync(OUT_DIR, { recursive: true, force: true })
@@ -341,19 +337,15 @@ function buildAnimation(images) {
 
   <!-- ======== PHOTO STRIP (appears Phase 2) ======== -->
   <div class="photo-strip" id="photoStrip" style="top:560px;">
-    <div style="display:flex;gap:12px;animation:stripScroll 8s linear infinite;">
+    <div style="display:flex;gap:12px;animation:stripScroll 12s linear infinite;">
+      ${STRIP_PHOTOS.map((sp, i) => `
       <div class="strip-thumb">
-        <img src="${images.strip0}" style="${imgStyle(STRIP_PHOTOS[0].purple, 'center')}"/>
-      </div>
+        <img src="${images['strip' + i]}" style="${imgStyle(sp.purple, 'center')}"/>
+      </div>`).join('')}
+      ${STRIP_PHOTOS.slice(0, 3).map((sp, i) => `
       <div class="strip-thumb">
-        <img src="${images.strip1}" style="${imgStyle(STRIP_PHOTOS[1].purple, 'center')}"/>
-      </div>
-      <div class="strip-thumb">
-        <img src="${images.strip2}" style="${imgStyle(STRIP_PHOTOS[2].purple, 'center')}"/>
-      </div>
-      <div class="strip-thumb">
-        <img src="${images.strip0}" style="${imgStyle(STRIP_PHOTOS[0].purple, 'center')}"/>
-      </div>
+        <img src="${images['strip' + i]}" style="${imgStyle(sp.purple, 'center')}"/>
+      </div>`).join('')}
     </div>
   </div>
 
@@ -409,20 +401,23 @@ function buildAnimation(images) {
     <span style="font-family:${MONO};font-size:22px;font-weight:600;color:${MANILA_COLOR};letter-spacing:0.06em;">2 SPOTS LEFT</span>
   </div>
 
-  <!-- ======== PHASE 4: Final push (14-17s) ======== -->
-  <div id="signUpSection" style="
+  <!-- ======== PHASE 4: CTA integrated (14-17s) ======== -->
+  <div id="ctaSection" style="
     position:absolute;
-    left:0; right:0; top:0; bottom:0;
+    left:0; right:0; top:0; height:${HEIGHT - SAFE_BOTTOM}px;
     display:flex; flex-direction:column;
     align-items:center; justify-content:center;
+    gap:24px;
     z-index:20;
     opacity:0;
-    background:rgba(12,10,10,0.85);
   ">
-    <p id="signUpBig" style="font-family:${BOLD};font-size:72px;font-weight:800;color:#fff;margin:0 0 20px;text-align:center;text-shadow:0 4px 40px rgba(0,0,0,0.5);">dm me if interested!!</p>
-    <p style="font-family:${MONO};font-size:28px;font-weight:600;color:${MANILA_COLOR};margin:0 0 10px;letter-spacing:0.1em;">@madebyaidan</p>
-    <p style="font-family:${MONO};font-size:22px;font-weight:500;color:rgba(255,255,255,0.5);margin:0 0 50px;letter-spacing:0.06em;">on Instagram</p>
-
+    <p style="font-family:${NARROW};font-size:80px;font-weight:900;letter-spacing:0.18em;color:${MANILA_COLOR};margin:0;text-shadow:0 0 40px rgba(255,77,42,0.3);">MANILA</p>
+    <p style="font-family:${BOLD};font-size:42px;font-weight:300;color:rgba(255,255,255,0.9);margin:0;letter-spacing:0.25em;">PHOTO SHOOT</p>
+    <div style="height:20px;"></div>
+    <p style="font-family:${BOLD};font-size:52px;font-weight:800;color:#fff;margin:0;text-shadow:0 4px 30px rgba(0,0,0,0.5);">dm me if interested!!</p>
+    <p style="font-family:${MONO};font-size:34px;font-weight:600;color:${MANILA_COLOR};margin:0;letter-spacing:0.1em;">@madebyaidan</p>
+    <p style="font-family:${MONO};font-size:24px;font-weight:500;color:rgba(255,255,255,0.5);margin:0;letter-spacing:0.06em;">on Instagram</p>
+    <div style="height:10px;"></div>
     <!-- 2 remaining boxes pulsing -->
     <div style="display:flex;gap:20px;">
       <div style="width:100px;height:100px;border-radius:16px;background:rgba(255,255,255,0.04);border:2px solid ${MANILA_COLOR};display:flex;align-items:center;justify-content:center;animation:pulseGlow 1.5s ease-in-out infinite;">
@@ -432,20 +427,11 @@ function buildAnimation(images) {
         <span style="font-family:${MONO};font-size:36px;font-weight:700;color:#fff;">05</span>
       </div>
     </div>
-
-    <!-- Counter still pulsing -->
-    <div style="margin-top:40px;display:flex;align-items:center;gap:10px;">
+    <div style="display:flex;align-items:center;gap:10px;">
       <div style="width:10px;height:10px;border-radius:50%;background:${MANILA_COLOR};animation:dotPulse 0.8s ease-in-out infinite;"></div>
       <span style="font-family:${MONO};font-size:24px;font-weight:700;color:${MANILA_COLOR};letter-spacing:0.08em;animation:countPulse 1.5s ease-in-out infinite;">2 SPOTS LEFT</span>
     </div>
   </div>
-
-  <!-- ======== FADE TO BLACK ======== -->
-  <div id="fadeOverlay" style="
-    position:absolute; inset:0; z-index:50;
-    background:#000; pointer-events:none;
-    opacity:0;
-  "></div>
 
 </div>
 
@@ -459,8 +445,7 @@ function buildAnimation(images) {
   const dontMissText = document.getElementById('dontMissText');
   const noExpText = document.getElementById('noExpText');
   const timerElement = document.getElementById('timerElement');
-  const signUpSection = document.getElementById('signUpSection');
-  const fadeOverlay = document.getElementById('fadeOverlay');
+  const ctaSection = document.getElementById('ctaSection');
 
   const counter5 = document.getElementById('counter5');
   const counter4 = document.getElementById('counter4');
@@ -608,66 +593,15 @@ function buildAnimation(images) {
     timerElement.style.opacity = '0';
   }, 13800);
 
-  // Show sign up section
+  // Show CTA section
   setTimeout(() => {
-    signUpSection.style.transition = 'opacity 0.6s ease';
-    signUpSection.style.opacity = '1';
+    ctaSection.style.transition = 'opacity 0.6s ease';
+    ctaSection.style.opacity = '1';
   }, 14300);
-
-  // ======== PHASE 5: Fade to black (17-17.3s) ========
-  setTimeout(() => {
-    fadeOverlay.style.transition = 'opacity 300ms ease-out';
-    fadeOverlay.style.opacity = '1';
-  }, 17000);
 
 </script>
 </body>
 </html>`;
-}
-
-function buildCTA(images) {
-  function cropImg(src, w, h, purple, pos = 'center 20%') {
-    const style = purple
-      ? `width:130%;height:130%;object-fit:cover;object-position:center center;display:block;margin:-15% 0 0 -15%;`
-      : `width:100%;height:100%;object-fit:cover;object-position:${pos};display:block;`
-    return `<div style="width:${w}px;height:${h}px;overflow:hidden;border-radius:16px;box-shadow:0 8px 40px rgba(0,0,0,0.5);">
-      <img src="${src}" style="${style}"/>
-    </div>`
-  }
-
-  return `<!DOCTYPE html><html><head>
-    <style>* { box-sizing:border-box;margin:0;padding:0; } html,body { background:#000; -webkit-font-smoothing:antialiased; }</style>
-  </head><body>
-    <div style="width:${WIDTH}px;height:${HEIGHT}px;position:relative;overflow:hidden;background:#000;">
-
-      <!-- Photo grid — 3 photos staggered -->
-      <div style="position:absolute;top:120px;left:50px;transform:rotate(-3deg);">
-        ${cropImg(images.cta0, 460, 620, CTA_PHOTOS[0].purple, 'center 20%')}
-      </div>
-      <div style="position:absolute;top:180px;right:50px;transform:rotate(2.5deg);">
-        ${cropImg(images.cta1, 420, 560, CTA_PHOTOS[1].purple, 'center 25%')}
-      </div>
-      <div style="position:absolute;top:620px;left:280px;transform:rotate(-1deg);z-index:5;">
-        ${cropImg(images.cta2, 500, 380, CTA_PHOTOS[2].purple, 'center 30%')}
-      </div>
-
-      <!-- Dark gradient overlay -->
-      <div style="position:absolute;inset:0;background:linear-gradient(180deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.1) 20%, rgba(0,0,0,0.0) 35%, rgba(0,0,0,0.55) 55%, rgba(0,0,0,0.95) 72%, #000 85%);"></div>
-
-      <!-- Text content above SAFE_BOTTOM -->
-      <div style="position:absolute;left:0;right:0;bottom:${SAFE_BOTTOM + 40}px;padding:0 70px;text-align:center;">
-
-        <!-- Thin accent line -->
-        <div style="width:50px;height:3px;background:${MANILA_COLOR};margin:0 auto 30px;"></div>
-
-        <!-- MANILA — 180px white bold -->
-        <p style="font-family:${BOLD};font-size:180px;font-weight:900;letter-spacing:0.14em;color:#fff;margin:0;text-transform:uppercase;text-shadow:0 4px 80px rgba(255,77,42,0.4), 0 2px 20px rgba(0,0,0,0.8);">MANILA</p>
-
-        <!-- PHOTO SHOOT — light weight wide tracking -->
-        <p style="font-family:${BOLD};font-size:38px;font-weight:300;color:rgba(255,255,255,0.9);margin:4px 0 0;letter-spacing:0.3em;text-transform:uppercase;">PHOTO SHOOT</p>
-      </div>
-    </div>
-  </body></html>`
 }
 
 async function render() {
@@ -677,12 +611,11 @@ async function render() {
     boxPhotos: BOX_PHOTOS.map(p => p.file),
     stripPhotos: STRIP_PHOTOS.map(p => p.file),
     heroPhoto: HERO_PHOTO.file,
-    ctaPhotos: CTA_PHOTOS.map(p => p.file),
   }
 
   writeSources({
     createdAt: new Date().toISOString(),
-    strategy: 'v62 — animated FOMO countdown with spots filling up in real-time, toast notifications, urgency peak',
+    strategy: 'v62 — animated FOMO countdown with spots filling up, integrated CTA',
     safeBottomPixels: SAFE_BOTTOM,
     images: selection,
   })
@@ -692,19 +625,15 @@ async function render() {
     box0: readImage(BOX_PHOTOS[0].file),
     box1: readImage(BOX_PHOTOS[1].file),
     box2: readImage(BOX_PHOTOS[2].file),
-    strip0: readImage(STRIP_PHOTOS[0].file),
-    strip1: readImage(STRIP_PHOTOS[1].file),
-    strip2: readImage(STRIP_PHOTOS[2].file),
     hero: readImage(HERO_PHOTO.file),
-    cta0: readImage(CTA_PHOTOS[0].file),
-    cta1: readImage(CTA_PHOTOS[1].file),
-    cta2: readImage(CTA_PHOTOS[2].file),
   }
+  STRIP_PHOTOS.forEach((sp, i) => {
+    images['strip' + i] = readImage(sp.file)
+  })
 
   const { execSync } = await import('child_process')
   const browser = await chromium.launch()
 
-  // --- Step 1: Record the FOMO animation video ---
   console.log('Recording FOMO countdown animation...')
 
   const videoCtx = await browser.newContext({
@@ -724,22 +653,9 @@ async function render() {
   await videoPage.close()
   await videoCtx.close()
 
-  // --- Step 2: Render CTA as a high-quality screenshot ---
-  console.log('Rendering CTA screenshot...')
-  const ctaCtx = await browser.newContext({
-    viewport: { width: WIDTH, height: HEIGHT },
-    deviceScaleFactor: 1,
-  })
-  const ctaPage = await ctaCtx.newPage()
-  await ctaPage.setContent(buildCTA(images), { waitUntil: 'load' })
-  await ctaPage.waitForTimeout(300)
-  const ctaPath = path.join(OUT_DIR, 'cta_frame.png')
-  await ctaPage.screenshot({ path: ctaPath })
-  await ctaPage.close()
-  await ctaCtx.close()
   await browser.close()
 
-  // --- Step 3: Convert webm to mp4, then concat with CTA still frame ---
+  // --- Step 2: Convert webm to mp4 ---
   const videoFiles = fs.readdirSync(OUT_DIR).filter(f => f.endsWith('.webm'))
   if (videoFiles.length === 0) {
     console.error('No video file was generated!')
@@ -747,28 +663,12 @@ async function render() {
   }
 
   const srcVideo = path.join(OUT_DIR, videoFiles[0])
-  const animMp4 = path.join(OUT_DIR, 'animation_part.mp4')
-  const ctaMp4 = path.join(OUT_DIR, 'cta_part.mp4')
   const finalMp4 = path.join(OUT_DIR, '01_fomo_countdown.mp4')
-  const concatFile = path.join(OUT_DIR, 'concat.txt')
 
   try {
-    // Convert animation webm to mp4
-    execSync(`ffmpeg -y -i "${srcVideo}" -c:v libx264 -pix_fmt yuv420p -r 30 -an "${animMp4}"`, { stdio: 'pipe' })
-
-    // Create 5-second CTA video from static image
-    execSync(`ffmpeg -y -loop 1 -i "${ctaPath}" -c:v libx264 -t 5 -pix_fmt yuv420p -r 30 -vf "scale=${WIDTH}:${HEIGHT}" -an "${ctaMp4}"`, { stdio: 'pipe' })
-
-    // Concat animation + CTA
-    fs.writeFileSync(concatFile, `file '${animMp4}'\nfile '${ctaMp4}'\n`)
-    execSync(`ffmpeg -y -f concat -safe 0 -i "${concatFile}" -c copy "${finalMp4}"`, { stdio: 'pipe' })
-
-    // Cleanup temp files
+    execSync(`ffmpeg -y -i "${srcVideo}" -c:v libx264 -pix_fmt yuv420p -r 30 -an "${finalMp4}"`, { stdio: 'pipe' })
     fs.unlinkSync(srcVideo)
-    fs.unlinkSync(animMp4)
-    fs.unlinkSync(ctaMp4)
-    fs.unlinkSync(concatFile)
-    console.log('Rendered 01_fomo_countdown.mp4 (animation + CTA)')
+    console.log('Rendered 01_fomo_countdown.mp4')
   } catch (err) {
     console.error('ffmpeg error:', err.message)
     fs.renameSync(srcVideo, finalMp4)
