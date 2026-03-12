@@ -289,9 +289,10 @@ function buildViewfinder(images, imageNames) {
 
       <!-- MANILA + PHOTO SHOOT + frame counter — top right -->
       <div style="position:absolute;top:130px;right:80px;text-align:right;">
-        <p style="font-family:${SF};font-size:56px;font-weight:900;color:#fff;letter-spacing:0.18em;margin:0;
-          text-shadow:0 2px 20px rgba(0,0,0,0.5), 0 1px 4px rgba(0,0,0,0.3);">MANILA</p>
-        <p style="font-family:${SF};font-size:22px;font-weight:300;color:rgba(255,255,255,0.7);letter-spacing:0.3em;margin:6px 0 0;text-transform:uppercase;">PHOTO SHOOT</p>
+        <p style="font-family:${SF};font-size:80px;font-weight:900;color:#fff;letter-spacing:0.18em;margin:0;
+          text-shadow:0 2px 24px rgba(0,0,0,0.7), 0 1px 6px rgba(0,0,0,0.5), 0 0 40px rgba(0,0,0,0.3);">MANILA</p>
+        <p style="font-family:${SF};font-size:34px;font-weight:300;color:rgba(255,255,255,0.7);letter-spacing:0.3em;margin:6px 0 0;text-transform:uppercase;
+          text-shadow:0 1px 12px rgba(0,0,0,0.6), 0 1px 4px rgba(0,0,0,0.4);">FREE PHOTO SHOOT</p>
         <p id="frameCounter" style="font-family:${MONO};font-size:18px;color:rgba(255,255,255,0.45);margin:12px 0 0;letter-spacing:0.15em;">01/05</p>
       </div>
 
@@ -326,15 +327,15 @@ function buildViewfinder(images, imageNames) {
       <p style="font-family:${MONO};font-size:100px;font-weight:700;letter-spacing:0.18em;color:#fff;margin:0;
         text-shadow:0 2px 30px rgba(0,0,0,0.5);
         opacity:0;animation:ctaTextIn 0.7s ease-out ${ctaStart + 0.4}s forwards;">MANILA</p>
-      <p style="font-family:${MONO};font-size:30px;font-weight:400;color:rgba(255,255,255,0.8);letter-spacing:0.35em;margin:14px 0 0;
+      <p style="font-family:${MONO};font-size:40px;font-weight:400;color:rgba(255,255,255,0.8);letter-spacing:0.35em;margin:14px 0 0;
         opacity:0;animation:ctaTextIn 0.7s ease-out ${ctaStart + 0.7}s forwards;">PHOTO SHOOT</p>
     </div>
     <div style="position:absolute;left:0;right:0;bottom:${SAFE_BOTTOM + 80}px;padding:0 80px;text-align:center;">
-      <p style="font-family:${MONO};font-size:42px;font-weight:400;color:#fff;margin:0;letter-spacing:0.06em;
+      <p style="font-family:${MONO};font-size:46px;font-weight:400;color:#fff;margin:0;letter-spacing:0.06em;
         text-shadow:0 1px 16px rgba(0,0,0,0.5);
-        opacity:0;animation:ctaTextIn 0.7s ease-out ${ctaStart + 1.1}s forwards;">sign up below</p>
-      <p style="font-family:${MONO};font-size:22px;font-weight:400;color:rgba(255,255,255,0.5);margin:18px 0 0;letter-spacing:0.08em;
-        opacity:0;animation:ctaTextIn 0.6s ease-out ${ctaStart + 1.5}s forwards;">it takes just a minute</p>
+        opacity:0;animation:ctaTextIn 0.7s ease-out ${ctaStart + 1.1}s forwards;">message me to get started</p>
+      <p style="font-family:${MONO};font-size:28px;font-weight:400;color:rgba(255,255,255,0.5);margin:18px 0 0;letter-spacing:0.08em;
+        opacity:0;animation:ctaTextIn 0.6s ease-out ${ctaStart + 1.5}s forwards;">@madebyaidan on Instagram</p>
     </div>
   </div>
 
@@ -366,11 +367,11 @@ async function render() {
   resetOutputDir()
 
   const imageNames = {
-    photo1: 'manila-gallery-purple-001.jpg',
-    photo2: 'manila-gallery-purple-002.jpg',
+    photo1: 'manila-gallery-purple-001-cropped.jpg',
+    photo2: 'manila-gallery-purple-002-cropped.jpg',
     photo3: 'manila-gallery-canal-001.jpg',
     photo4: 'manila-gallery-ivy-001.jpg',
-    photo5: 'manila-gallery-purple-003.jpg',
+    photo5: 'manila-gallery-purple-003-cropped.jpg',
   }
 
   writeSources({
