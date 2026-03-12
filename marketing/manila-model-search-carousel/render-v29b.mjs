@@ -233,7 +233,7 @@ function buildHTML(imageDataMap) {
         <!-- Cover lines -->
         <div style="position:absolute;left:60px;bottom:${SAFE_BOTTOM + 80}px;">
           <p style="font-family:${SANS};font-size:20px;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:${GOLD};margin:0 0 14px;text-shadow:0 1px 6px rgba(0,0,0,0.7);opacity:0;animation:fadeSlideUp 0.5s ease-out ${T.coverLines}s forwards;">The Model Search Issue</p>
-          <p style="font-family:${SERIF};font-size:60px;font-weight:700;font-style:italic;line-height:1.05;color:#fff;margin:0 0 20px;text-shadow:0 2px 8px rgba(0,0,0,0.7);opacity:0;animation:fadeSlideUp 0.6s ease-out ${T.coverLines + 0.2}s forwards;">Models<br/>Wanted</p>
+          <p style="font-family:${SERIF};font-size:88px;font-weight:700;font-style:italic;line-height:1.05;color:#fff;margin:0 0 20px;text-shadow:0 2px 8px rgba(0,0,0,0.7);opacity:0;animation:fadeSlideUp 0.6s ease-out ${T.coverLines + 0.2}s forwards;">Models<br/>Wanted</p>
           <div style="height:2px;background:${GOLD};animation:goldRuleGrow 0.6s ease-out ${T.goldRule}s both;margin:0 0 20px;"></div>
           <p style="font-family:${SERIF};font-size:26px;font-weight:400;font-style:italic;color:rgba(255,255,255,0.9);margin:0 0 10px;text-shadow:0 1px 6px rgba(0,0,0,0.7);opacity:0;animation:fadeSlideUp 0.5s ease-out ${T.goldRule + 0.3}s forwards;">No Experience Required</p>
           <p style="font-family:${SERIF};font-size:26px;font-weight:400;font-style:italic;color:rgba(255,255,255,0.9);margin:0 0 10px;text-shadow:0 1px 6px rgba(0,0,0,0.7);opacity:0;animation:fadeSlideUp 0.5s ease-out ${T.goldRule + 0.5}s forwards;">Free Portfolio Photos</p>
