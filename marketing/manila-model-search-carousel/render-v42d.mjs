@@ -432,12 +432,12 @@ async function render() {
   const all = getTopManilaImages()
   const selection = {
     profilePic: 'manila-gallery-closeup-001.jpg',
-    photo1: 'manila-gallery-purple-001.jpg',
-    photo2: 'manila-gallery-purple-002.jpg',
-    photo3: 'manila-gallery-purple-003.jpg',
-    photo4: 'manila-gallery-purple-004.jpg',
-    photo5: 'manila-gallery-purple-005.jpg',
-    photo6: 'manila-gallery-purple-006.jpg',
+    photo1: 'manila-gallery-purple-001-cropped.jpg',
+    photo2: 'manila-gallery-purple-002-cropped.jpg',
+    photo3: 'manila-gallery-purple-003-cropped.jpg',
+    photo4: 'manila-gallery-purple-004-cropped.jpg',
+    photo5: 'manila-gallery-purple-005-cropped.jpg',
+    photo6: 'manila-gallery-purple-006-cropped.jpg',
   }
 
   writeSources({ all_considered: all, selected: selection })
