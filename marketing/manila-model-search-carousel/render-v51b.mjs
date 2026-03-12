@@ -20,11 +20,18 @@ const TOTAL_DURATION_MS = 32000
 
 const PHOTOS = [
   'manila-gallery-garden-001.jpg',   // wallpaper
-  'manila-gallery-dsc-0190.jpg',     // photo preview 1
-  'manila-gallery-night-001.jpg',    // photo preview 2
-  'manila-gallery-urban-001.jpg',    // photo preview 3
+  'manila-gallery-dsc-0190.jpg',     // photo preview 1 (single photo notif)
+  'manila-gallery-night-001.jpg',    // unused
+  'manila-gallery-urban-001.jpg',    // unused
   'manila-gallery-dsc-0075.jpg',     // profile pic
-  'manila-gallery-canal-001.jpg',    // photo preview 4
+  'manila-gallery-canal-001.jpg',    // unused
+]
+
+// Different photos for the 3-photo notification
+const MULTI_PHOTOS = [
+  'manila-gallery-ivy-001.jpg',
+  'manila-gallery-park-001.jpg',
+  'manila-gallery-garden-002.jpg',
 ]
 
 function resetOutputDir() {
@@ -79,7 +86,7 @@ function buildHTML(imageDataMap) {
     if (isPhotos && photoCount) {
       thumbHTML = `<div style="display:flex;gap:6px;flex-shrink:0;">
         ${Array.from({length: Math.min(photoCount, 3)}, (_, i) => {
-          const photos = [imageDataMap[PHOTOS[1]], imageDataMap[PHOTOS[2]], imageDataMap[PHOTOS[5]]]
+          const photos = [imageDataMap[MULTI_PHOTOS[0]], imageDataMap[MULTI_PHOTOS[1]], imageDataMap[MULTI_PHOTOS[2]]]
           return `<div style="width:70px;height:70px;border-radius:12px;overflow:hidden;">
             <img src="${photos[i]}" style="width:100%;height:100%;object-fit:cover;object-position:center 20%;display:block;"/>
           </div>`
@@ -314,7 +321,7 @@ function buildHTML(imageDataMap) {
     const overlay = document.getElementById('photoOverlay')
     const photoSrcs = {
       single: '${imageDataMap[PHOTOS[1]]}',
-      multi: ['${imageDataMap[PHOTOS[1]]}', '${imageDataMap[PHOTOS[2]]}', '${imageDataMap[PHOTOS[5]]}'],
+      multi: ['${imageDataMap[MULTI_PHOTOS[0]]}', '${imageDataMap[MULTI_PHOTOS[1]]}', '${imageDataMap[MULTI_PHOTOS[2]]}'],
     }
 
     function expandPhotos(srcs) {
@@ -370,7 +377,7 @@ async function render() {
   resetOutputDir()
 
   const imageDataMap = {}
-  for (const photo of PHOTOS) {
+  for (const photo of [...PHOTOS, ...MULTI_PHOTOS]) {
     imageDataMap[photo] = readImage(photo)
   }
 
