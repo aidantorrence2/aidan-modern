@@ -17,7 +17,7 @@ const MANILA_COLOR = '#E8443A'
 const IG_BG = '#000'
 const IG_HEADER_BG = '#000'
 
-const TOTAL_DURATION_MS = 40000
+const TOTAL_DURATION_MS = 34000
 
 const PHOTOS = [
   'manila-gallery-dsc-0190.jpg',
@@ -59,40 +59,36 @@ function writeSources(payload) {
 function buildHTML(imageDataMap) {
   // Timeline
   const T = {
-    // Phase 1: IG Story view with photo (0-3s)
+    // Phase 1: IG Story view with photo (0-2s)
     storyStart: 0,
     storyProgressStart: 0.2,
-    storyEnd: 3.0,
+    storyEnd: 2.0,
 
-    // Phase 2: Transition to DM inbox (3-4.5s)
-    transitionStart: 3.0,
-    inboxReveal: 3.5,
+    // Phase 2: Transition to DM inbox (2-3s)
+    transitionStart: 2.0,
+    inboxReveal: 2.5,
 
-    // Phase 3: DM replies flooding in (4.5-14s)
-    firstReply: 4.5,
-    replyInterval: 1.0,  // seconds between each reply
+    // Phase 3: DM replies flooding in FAST (3-8s)
+    firstReply: 3.0,
+    replyInterval: 0.6,  // fast boom boom
 
-    // Phase 4: Open thread → back-and-forth conversation (14-38s)
-    openThread: 14.5,
-    threadRef: 15.0,
-    // Conversation
-    recv1: 15.8,     // "hey thanks!! those are mine 📸"
-    sent1: 17.0,     // "wait really?? how much did it cost"
-    recv2: 18.2,     // "it was free lol"
-    sent2: 19.4,     // "FREE?? what's the catch"
-    recv3: 20.6,     // "no catch — he just needs portfolio content"
-    recv4: 21.8,     // "you show up, he directs everything"
-    sent3: 23.0,     // "wait so I don't need modeling experience?"
-    recv5: 24.2,     // "nope!! he literally tells you exactly what to do"
-    recv6: 25.4,     // "poses, angles, expressions — everything"
-    sent4: 26.6,     // "ok that's actually perfect"
-    sent5: 27.4,     // "how do I book"
-    recv7: 28.6,     // "just dm @madebyaidan on Instagram"
-    recv8: 29.8,     // "he'll set everything up"
-    sent6: 31.0,     // "doing it rn 🏃‍♀️"
-    ctaMsg: 32.5,    // CTA bubble
-    ctaHandle: 33.8, // handle
-    // Hold until 38s
+    // Phase 4: Open thread → back-and-forth conversation (8-32s)
+    openThread: 8.5,
+    threadRef: 9.0,
+    recv1: 9.8,      // "hey thanks!! those are mine 📸"
+    sent1: 11.0,     // "wait really?? how much did it cost"
+    recv2: 12.2,     // "it was free lol"
+    recv3: 13.4,     // "you show up, he directs everything"
+    sent3: 14.6,     // "wait so I don't need modeling experience?"
+    recv5: 15.8,     // "nope!! he literally tells you exactly what to do"
+    recv6: 17.0,     // "poses, angles, expressions — everything"
+    sent4: 18.2,     // "ok that's actually perfect"
+    sent5: 19.0,     // "how do I book"
+    recv7: 20.2,     // "just dm @madebyaidan on Instagram"
+    recv8: 21.4,     // "he'll set everything up"
+    sent6: 22.6,     // "doing it rn 🏃‍♀️"
+    ctaHandle: 24.0, // @madebyaidan on Instagram
+    // Hold until 32s
   }
 
   // Build DM reply items with staggered timing
@@ -350,28 +346,33 @@ function buildHTML(imageDataMap) {
     padding: 0;
   }
 
-  /* DM row in inbox */
+  /* DM row in inbox — neumorphic card style */
   .dm-row {
     display: flex;
     align-items: center;
-    padding: 16px 24px;
-    gap: 16px;
+    padding: 22px 28px;
+    gap: 20px;
     opacity: 0;
-    border-bottom: 1px solid #1a1a1a;
+    margin: 10px 20px;
+    background: #1a1a1a;
+    border-radius: 20px;
+    border: 1px solid #2a2a2a;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.05);
   }
 
   .dm-avatar {
-    width: 72px;
-    height: 72px;
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
     flex-shrink: 0;
     display: flex;
     align-items: center;
     justify-content: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
   }
 
   .dm-avatar-initial {
-    font-size: 30px;
+    font-size: 34px;
     font-weight: 700;
     color: #fff;
   }
@@ -382,15 +383,15 @@ function buildHTML(imageDataMap) {
   }
 
   .dm-name {
-    font-size: 28px;
+    font-size: 32px;
     font-weight: 700;
     color: #fff;
-    margin-bottom: 4px;
+    margin-bottom: 6px;
   }
 
   .dm-preview {
-    font-size: 26px;
-    color: #8e8e8e;
+    font-size: 28px;
+    color: #aaa;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -692,15 +693,7 @@ function buildHTML(imageDataMap) {
             <div class="bubble sent"><p>it was free lol</p></div>
           </div>
 
-          <div class="msg-row recv" id="tSent2" style="opacity:0;">
-            <div class="bubble recv"><p>FREE?? what's the catch</p></div>
-          </div>
-
           <div class="msg-row sent" id="tRecv3" style="opacity:0;">
-            <div class="bubble sent"><p>no catch — he just needs portfolio content</p></div>
-          </div>
-
-          <div class="msg-row sent" id="tRecv4" style="opacity:0;">
             <div class="bubble sent"><p>you show up, he directs everything</p></div>
           </div>
 
@@ -736,17 +729,10 @@ function buildHTML(imageDataMap) {
             <div class="bubble recv"><p>doing it rn 🏃‍♀️</p></div>
           </div>
 
-          <!-- CTA message -->
-          <div class="msg-row recv" id="threadCta" style="opacity:0;">
-            <div class="bubble cta-bubble">
-              <p>dm me if interested!!</p>
-            </div>
-          </div>
-
           <!-- Handle -->
           <div class="msg-row recv" id="threadHandle" style="opacity:0;">
             <div style="padding:8px 0 0 4px;">
-              <p style="font-size:30px;color:rgba(255,255,255,0.5);margin:0;">@madebyaidan on Instagram</p>
+              <p style="font-size:34px;color:rgba(255,255,255,0.5);margin:0;">@madebyaidan on Instagram</p>
             </div>
           </div>
 
@@ -826,9 +812,7 @@ function buildHTML(imageDataMap) {
       { id: 'tRecv1',      t: ${T.recv1 * 1000} },
       { id: 'tSent1',      t: ${T.sent1 * 1000} },
       { id: 'tRecv2',      t: ${T.recv2 * 1000} },
-      { id: 'tSent2',      t: ${T.sent2 * 1000} },
       { id: 'tRecv3',      t: ${T.recv3 * 1000} },
-      { id: 'tRecv4',      t: ${T.recv4 * 1000} },
       { id: 'tSent3',      t: ${T.sent3 * 1000} },
       { id: 'tRecv5',      t: ${T.recv5 * 1000} },
       { id: 'tRecv6',      t: ${T.recv6 * 1000} },
@@ -837,7 +821,6 @@ function buildHTML(imageDataMap) {
       { id: 'tRecv7',      t: ${T.recv7 * 1000} },
       { id: 'tRecv8',      t: ${T.recv8 * 1000} },
       { id: 'tSent6',      t: ${T.sent6 * 1000} },
-      { id: 'threadCta',   t: ${T.ctaMsg * 1000} },
       { id: 'threadHandle',t: ${T.ctaHandle * 1000} },
     ]
 
@@ -861,13 +844,6 @@ function buildHTML(imageDataMap) {
       }, t)
     })
 
-    // Pulse the CTA bubble
-    setTimeout(() => {
-      const cta = document.querySelector('.cta-bubble')
-      if (cta) {
-        cta.style.animation = 'pulseGlow 2s ease-in-out infinite'
-      }
-    }, ${(T.ctaMsg + 0.8) * 1000})
   </script>
 </body>
 </html>`
