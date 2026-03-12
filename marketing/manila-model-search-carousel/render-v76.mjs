@@ -392,7 +392,7 @@ function buildHTML(imageDataMap) {
 
     <!-- Tagline -->
     <div class="real real-tagline" id="r-tagline">
-      <p class="main-tag">Professional photos. <span class="accent">No cost.</span></p>
+      <p class="main-tag">Professional photos. <span class="accent">Totally free.</span></p>
       <p class="sub-tag">No experience needed.</p>
     </div>
 
