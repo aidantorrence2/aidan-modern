@@ -266,31 +266,67 @@ function buildHTML(imageDataMap) {
     margin-left: 4px;
   }
 
-  /* Persistent header */
-  .manila-header {
+  /* Editorial header ABOVE the phone */
+  .editorial-header {
     position: absolute;
-    top: 140px;
-    left: 0; right: 0;
-    z-index: 25;
-    text-align: center;
-    padding: 16px 20px;
+    top: 0; left: 0; right: 0;
+    height: 200px;
+    z-index: 30;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #000;
   }
 
-  .manila-header-text {
-    font-size: 46px;
-    font-weight: 800;
-    color: #fff;
-    letter-spacing: 3px;
+  .editorial-rule {
+    width: 80%;
+    height: 1px;
+    background: rgba(255,255,255,0.3);
+    margin-bottom: 20px;
+  }
+
+  .editorial-title {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 72px;
+    font-weight: 700;
+    font-style: italic;
+    letter-spacing: 6px;
     text-transform: uppercase;
-    text-shadow: 0 2px 16px rgba(0,0,0,0.6);
-    background: linear-gradient(135deg, rgba(232,68,58,0.5) 0%, rgba(232,68,58,0.25) 100%);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(255,255,255,0.15);
-    border-radius: 50px;
-    padding: 14px 40px;
-    display: inline-block;
-    box-shadow: 0 4px 20px rgba(232,68,58,0.3), inset 0 1px 0 rgba(255,255,255,0.15);
+    color: #fff;
+    text-align: center;
+    margin: 0;
+  }
+
+  .editorial-subtitle {
+    font-family: ${SF};
+    font-size: 22px;
+    font-weight: 500;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+    margin-top: 10px;
+  }
+
+  .editorial-rule-bottom {
+    width: 80%;
+    height: 1px;
+    background: rgba(255,255,255,0.3);
+    margin-top: 20px;
+  }
+
+  /* Phone frame container */
+  .phone-frame {
+    position: absolute;
+    top: 200px;
+    left: 30px;
+    right: 30px;
+    bottom: 0;
+    border-radius: 24px 24px 0 0;
+    overflow: hidden;
+    z-index: 5;
+    border: 2px solid rgba(255,255,255,0.1);
+    border-bottom: none;
   }
 
   /* Views counter at bottom-left */
@@ -343,12 +379,12 @@ function buildHTML(imageDataMap) {
     inset: 0;
     z-index: 5;
     display: flex;
-    width: ${WIDTH * 4}px;
+    width: 400%;
   }
 
   .story-slide {
-    width: ${WIDTH}px;
-    height: ${HEIGHT}px;
+    width: 100%;
+    height: 100%;
     position: relative;
     flex-shrink: 0;
   }
@@ -418,6 +454,17 @@ function buildHTML(imageDataMap) {
 <body>
   <div class="page">
 
+    <!-- Editorial header outside phone -->
+    <div class="editorial-header">
+      <div class="editorial-rule"></div>
+      <p class="editorial-title">MANILA</p>
+      <span class="editorial-subtitle">Free Photo Shoot</span>
+      <div class="editorial-rule-bottom"></div>
+    </div>
+
+    <!-- Phone frame with story UI inside -->
+    <div class="phone-frame">
+
     <!-- Stories track — slides horizontally -->
     <div class="stories-track" id="storiesTrack">
 
@@ -462,11 +509,6 @@ function buildHTML(imageDataMap) {
         </div>
       </div>
 
-    </div>
-
-    <!-- Persistent manila header -->
-    <div class="manila-header" id="manilaHeader">
-      <span class="manila-header-text">Manila Free Photo Shoot</span>
     </div>
 
     <!-- IG Story progress bars (persistent overlay) -->
@@ -516,6 +558,8 @@ function buildHTML(imageDataMap) {
     <div class="heart-burst" id="heart2" style="right:60px;top:600px;">\u{1F525}</div>
     <div class="heart-burst" id="heart3" style="right:200px;top:420px;">\u2764\uFE0F</div>
     <div class="heart-burst" id="heart4" style="right:100px;top:550px;">\u{1F60D}</div>
+
+    </div><!-- close phone-frame -->
 
   </div>
 
@@ -666,7 +710,7 @@ function buildHTML(imageDataMap) {
     // Swipe 1: story 1 -> story 2
     setTimeout(() => {
       track.style.transition = 'transform 0.45s cubic-bezier(0.25, 0.1, 0.25, 1)';
-      track.style.transform = 'translateX(-${WIDTH}px)';
+      track.style.transform = 'translateX(-25%)';
       currentSlide = 1;
       // Progress bar 2
       prog2.style.animation = 'progressFill ${T.swipe2 - T.story2Start}s linear 0s forwards';
@@ -674,7 +718,7 @@ function buildHTML(imageDataMap) {
 
     // Swipe 2: story 2 -> story 3
     setTimeout(() => {
-      track.style.transform = 'translateX(-${WIDTH * 2}px)';
+      track.style.transform = 'translateX(-50%)';
       currentSlide = 2;
       // Progress bar 3
       prog3.style.animation = 'progressFill ${T.swipe3 - T.story3Start}s linear 0s forwards';
@@ -682,7 +726,7 @@ function buildHTML(imageDataMap) {
 
     // Swipe 3: story 3 -> CTA
     setTimeout(() => {
-      track.style.transform = 'translateX(-${WIDTH * 3}px)';
+      track.style.transform = 'translateX(-75%)';
       currentSlide = 3;
       // Hide views counter on CTA slide
       setTimeout(() => {
