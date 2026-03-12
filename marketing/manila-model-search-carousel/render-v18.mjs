@@ -255,7 +255,7 @@ async function render() {
     gridB: 'manila-gallery-garden-001.jpg',        // landscape
     gridC: 'manila-gallery-dsc-0075.jpg',          // portrait
     gridD: 'manila-gallery-night-001.jpg',         // square
-    gridE: 'manila-gallery-graffiti-001.jpg',      // portrait
+    gridE: 'manila-gallery-market-001.jpg',      // portrait
     gridF: 'manila-gallery-rocks-001.jpg',         // landscape
     gridG: 'manila-gallery-urban-002.jpg',         // portrait
     gridH: 'manila-gallery-shadow-001.jpg',        // portrait

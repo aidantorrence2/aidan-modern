@@ -247,7 +247,7 @@ async function render() {
     gridD: 'manila-gallery-night-003.jpg',
     gridE: 'manila-gallery-dsc-0130.jpg',
     gridF: 'manila-gallery-canal-002.jpg',
-    gridG: 'manila-gallery-graffiti-001.jpg',
+    gridG: 'manila-gallery-market-001.jpg',
     gridH: 'manila-gallery-urban-001.jpg',
     gridI: 'manila-gallery-shadow-001.jpg',
     gridJ: 'manila-gallery-ivy-001.jpg',
