@@ -177,7 +177,7 @@ function buildHTML(imageDataMap) {
 <head>
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  html, body { margin: 0; padding: 0; background: ${BG}; -webkit-font-smoothing: antialiased; }
+  html, body { margin: 0; padding: 0; background: #000; -webkit-font-smoothing: antialiased; }
 
   @keyframes msgIn {
     0% { opacity: 0; transform: translateY(18px); }
@@ -200,58 +200,71 @@ function buildHTML(imageDataMap) {
 </style>
 </head>
 <body>
-  <div style="width:${WIDTH}px;height:${HEIGHT}px;position:relative;overflow:hidden;background:${BG};">
+  <div style="width:${WIDTH}px;height:${HEIGHT}px;position:relative;overflow:hidden;background:#000;">
 
-    <!-- Status bar -->
-    <div style="position:absolute;left:0;right:0;top:0;height:54px;padding:14px 36px 0;display:flex;align-items:center;justify-content:space-between;z-index:20;">
-      <span style="font-family:${SF};font-size:20px;font-weight:600;color:#fff;">9:41</span>
-      <div style="display:flex;align-items:center;gap:7px;">
-        <svg width="20" height="14" viewBox="0 0 18 12"><rect x="0" y="3" width="3" height="9" rx="1" fill="#fff"/><rect x="5" y="2" width="3" height="10" rx="1" fill="#fff"/><rect x="10" y="0" width="3" height="12" rx="1" fill="#fff"/><rect x="15" y="0" width="3" height="12" rx="1" fill="#fff" opacity="0.3"/></svg>
-        <svg width="30" height="15" viewBox="0 0 27 13"><rect x="0" y="0" width="23" height="13" rx="3.5" stroke="#fff" stroke-width="1" fill="none"/><rect x="2" y="2" width="18" height="9" rx="2" fill="#fff"/></svg>
-      </div>
+    <!-- Editorial header -->
+    <div style="position:absolute;top:0;left:0;right:0;height:200px;z-index:50;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#000;">
+      <div style="width:80%;height:1px;background:rgba(255,255,255,0.3);margin-bottom:20px;"></div>
+      <p style="font-family:Georgia,'Times New Roman',serif;font-size:72px;font-weight:700;font-style:italic;letter-spacing:6px;text-transform:uppercase;color:#fff;text-align:center;margin:0;">MANILA</p>
+      <span style="font-family:${SF};font-size:22px;font-weight:500;letter-spacing:8px;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-top:10px;">Free Photo Shoot</span>
+      <div style="width:80%;height:1px;background:rgba(255,255,255,0.3);margin-top:20px;"></div>
     </div>
 
-    <!-- iMessage header -->
-    <div style="position:absolute;left:0;right:0;top:54px;height:100px;display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:20;background:${BG};border-bottom:1px solid #2C2C2E;">
-      <div style="position:absolute;left:20px;top:50%;transform:translateY(-50%);">
-        <svg width="30" height="30" viewBox="0 0 24 24" fill="none"><path d="M15 18l-6-6 6-6" stroke="${IMSG_BLUE}" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </div>
-      <div style="position:absolute;right:20px;top:50%;transform:translateY(-50%);display:flex;">
-        ${[['M',COLOR_MIA],['L',COLOR_LUNA],['A',COLOR_AVA]].map(([l,c],i) =>
-          `<div style="width:36px;height:36px;border-radius:50%;background:${c};border:2px solid ${BG};display:flex;align-items:center;justify-content:center;margin-left:${i===0?0:-10}px;z-index:${10-i};">
-            <span style="font-family:${SF};font-size:14px;font-weight:700;color:#fff;">${l}</span>
-          </div>`
-        ).join('')}
-      </div>
-      <p style="font-family:${SF};font-size:22px;font-weight:700;color:#fff;margin:0;">manila girlies 🌴</p>
-      <p style="font-family:${SF};font-size:17px;color:${IMSG_GRAY};margin:4px 0 0;">4 people</p>
-    </div>
+    <!-- Phone frame -->
+    <div style="position:absolute;top:200px;left:30px;right:30px;bottom:0;border-radius:24px 24px 0 0;overflow:hidden;z-index:5;border:2px solid rgba(255,255,255,0.1);border-bottom:none;">
 
-    <!-- Top fade -->
-    <div style="position:absolute;left:0;right:0;top:154px;height:50px;background:linear-gradient(180deg,${BG},transparent);z-index:15;pointer-events:none;"></div>
+      <!-- Status bar -->
+      <div style="position:absolute;left:0;right:0;top:0;height:54px;padding:14px 36px 0;display:flex;align-items:center;justify-content:space-between;z-index:20;">
+        <span style="font-family:${SF};font-size:20px;font-weight:600;color:#fff;">9:41</span>
+        <div style="display:flex;align-items:center;gap:7px;">
+          <svg width="20" height="14" viewBox="0 0 18 12"><rect x="0" y="3" width="3" height="9" rx="1" fill="#fff"/><rect x="5" y="2" width="3" height="10" rx="1" fill="#fff"/><rect x="10" y="0" width="3" height="12" rx="1" fill="#fff"/><rect x="15" y="0" width="3" height="12" rx="1" fill="#fff" opacity="0.3"/></svg>
+          <svg width="30" height="15" viewBox="0 0 27 13"><rect x="0" y="0" width="23" height="13" rx="3.5" stroke="#fff" stroke-width="1" fill="none"/><rect x="2" y="2" width="18" height="9" rx="2" fill="#fff"/></svg>
+        </div>
+      </div>
 
-    <!-- Chat -->
-    <div style="position:absolute;left:0;right:0;top:162px;bottom:${SAFE_BOTTOM + 80}px;overflow:hidden;">
-      <div class="chat-scroll" style="padding:20px 20px 600px;">
-        ${allMessages}
+      <!-- iMessage header -->
+      <div style="position:absolute;left:0;right:0;top:54px;height:100px;display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:20;background:${BG};border-bottom:1px solid #2C2C2E;">
+        <div style="position:absolute;left:20px;top:50%;transform:translateY(-50%);">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none"><path d="M15 18l-6-6 6-6" stroke="${IMSG_BLUE}" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div style="position:absolute;right:20px;top:50%;transform:translateY(-50%);display:flex;">
+          ${[['M',COLOR_MIA],['L',COLOR_LUNA],['A',COLOR_AVA]].map(([l,c],i) =>
+            `<div style="width:36px;height:36px;border-radius:50%;background:${c};border:2px solid ${BG};display:flex;align-items:center;justify-content:center;margin-left:${i===0?0:-10}px;z-index:${10-i};">
+              <span style="font-family:${SF};font-size:14px;font-weight:700;color:#fff;">${l}</span>
+            </div>`
+          ).join('')}
+        </div>
+        <p style="font-family:${SF};font-size:22px;font-weight:700;color:#fff;margin:0;">manila girlies 🌴</p>
+        <p style="font-family:${SF};font-size:17px;color:${IMSG_GRAY};margin:4px 0 0;">4 people</p>
       </div>
-    </div>
 
-    <!-- Bottom fade -->
-    <div style="position:absolute;left:0;right:0;bottom:${SAFE_BOTTOM + 80}px;height:70px;background:linear-gradient(0deg,${BG},transparent);z-index:15;pointer-events:none;"></div>
+      <!-- Top fade -->
+      <div style="position:absolute;left:0;right:0;top:154px;height:50px;background:linear-gradient(180deg,${BG},transparent);z-index:15;pointer-events:none;"></div>
 
-    <!-- Input bar -->
-    <div style="position:absolute;left:0;right:0;bottom:${SAFE_BOTTOM}px;height:80px;padding:14px 18px;display:flex;align-items:center;gap:12px;z-index:20;background:${BG};border-top:1px solid #2C2C2E;">
-      <div style="width:44px;height:44px;border-radius:50%;border:2px solid #3A3A3C;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-        <svg width="22" height="18" viewBox="0 0 24 20" fill="none"><rect x="1" y="5" width="22" height="14" rx="3" stroke="${IMSG_GRAY}" stroke-width="1.8"/><circle cx="12" cy="12" r="4" stroke="${IMSG_GRAY}" stroke-width="1.8"/><path d="M8 5l2-3h4l2 3" stroke="${IMSG_GRAY}" stroke-width="1.8" stroke-linecap="round"/></svg>
+      <!-- Chat -->
+      <div style="position:absolute;left:0;right:0;top:162px;bottom:80px;overflow:hidden;">
+        <div class="chat-scroll" style="padding:20px 20px 600px;">
+          ${allMessages}
+        </div>
       </div>
-      <div style="flex:1;padding:12px 20px;border:1.5px solid #3A3A3C;border-radius:22px;background:#1C1C1E;">
-        <span style="font-family:${SF};font-size:20px;color:#636366;">iMessage</span>
+
+      <!-- Bottom fade -->
+      <div style="position:absolute;left:0;right:0;bottom:80px;height:70px;background:linear-gradient(0deg,${BG},transparent);z-index:15;pointer-events:none;"></div>
+
+      <!-- Input bar -->
+      <div style="position:absolute;left:0;right:0;bottom:0;height:80px;padding:14px 18px;display:flex;align-items:center;gap:12px;z-index:20;background:${BG};border-top:1px solid #2C2C2E;">
+        <div style="width:44px;height:44px;border-radius:50%;border:2px solid #3A3A3C;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+          <svg width="22" height="18" viewBox="0 0 24 20" fill="none"><rect x="1" y="5" width="22" height="14" rx="3" stroke="${IMSG_GRAY}" stroke-width="1.8"/><circle cx="12" cy="12" r="4" stroke="${IMSG_GRAY}" stroke-width="1.8"/><path d="M8 5l2-3h4l2 3" stroke="${IMSG_GRAY}" stroke-width="1.8" stroke-linecap="round"/></svg>
+        </div>
+        <div style="flex:1;padding:12px 20px;border:1.5px solid #3A3A3C;border-radius:22px;background:#1C1C1E;">
+          <span style="font-family:${SF};font-size:20px;color:#636366;">iMessage</span>
+        </div>
+        <div style="width:44px;height:44px;border-radius:50%;background:${IMSG_BLUE};display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 19V5M5 12l7-7 7 7" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
       </div>
-      <div style="width:44px;height:44px;border-radius:50%;background:${IMSG_BLUE};display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 19V5M5 12l7-7 7 7" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </div>
-    </div>
+
+    </div><!-- close phone-frame -->
 
   </div>
 </body>
