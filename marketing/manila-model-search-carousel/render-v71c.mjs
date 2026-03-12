@@ -10,7 +10,7 @@ const OUT_DIR = path.join(__dirname, 'output-v71c')
 
 const WIDTH = 1080
 const HEIGHT = 1920
-const SAFE_BOTTOM = 410
+const SAFE_BOTTOM = 620
 
 const SF = "-apple-system, 'Helvetica Neue', Arial, sans-serif"
 const MANILA_COLOR = '#E8443A'
@@ -182,7 +182,7 @@ function buildHTML(imageDataMap) {
   /* Editorial header */
   .editorial-header {
     position: absolute;
-    top: 0; left: 0; right: 0;
+    top: 0; left: 30px; right: 270px;
     height: 200px;
     z-index: 50;
     display: flex;
@@ -229,8 +229,8 @@ function buildHTML(imageDataMap) {
     position: absolute;
     top: 200px;
     left: 30px;
-    right: 30px;
-    bottom: 0;
+    right: 270px;
+    bottom: ${SAFE_BOTTOM}px;
     border-radius: 24px 24px 0 0;
     overflow: hidden;
     z-index: 5;
@@ -634,7 +634,7 @@ function buildHTML(imageDataMap) {
   .notif-count-overlay {
     position: absolute;
     top: 56px;
-    right: 24px;
+    right: 280px;
     z-index: 40;
     opacity: 0;
   }
