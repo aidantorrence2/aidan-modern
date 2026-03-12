@@ -58,43 +58,46 @@ function buildHTML(imageDataMap) {
 
   // Timeline
   const T = {
-    // Phase 1: Single message sends... then fails
-    firstMsg: 0.5,       // "hey i want to shoot" appears
-    failShake: 2.0,      // error dot + shake
-    failText: 2.4,       // "Failed to send"
+    // Phase 1: 3 attempts that all fail
+    fail1Send: 0.5,
+    fail1Err: 1.5,
+    fail2Send: 2.5,
+    fail2Err: 3.5,
+    fail3Send: 4.5,
+    fail3Err: 5.5,
 
     // Phase 2: Boom — all 8 messages pop in at once
-    floodStart: 4.0,     // failed msg disappears, all 8 flood in
+    floodStart: 7.0,     // failed msgs disappear, all 8 flood in
     floodInterval: 0.08, // super rapid stagger
 
     // Phase 3: madebyaidan responds
-    typing1: 5.5,
-    recv1: 6.5,        // "oh hey haha 😅"
-    recv2: 7.8,        // "yes it's still available!!"
-    recv4: 9.0,        // "I'm doing free photo shoots in Manila"
-    recv5: 10.5,       // "no catch — I just need portfolio content"
+    typing1: 8.5,
+    recv1: 9.5,        // "oh hey haha 😅"
+    recv2: 10.8,       // "yes it's still available!!"
+    recv4: 12.0,       // "I'm doing free photo shoots in Manila"
+    recv5: 13.5,       // "no catch — I just need portfolio content"
 
     // Phase 4: Show work
-    typing2: 11.5,
-    recv6: 12.5,       // "here's what I shot last week:"
-    photo1: 13.5,
-    photo2: 15.0,
-    photo3: 16.5,
+    typing2: 14.5,
+    recv6: 15.5,       // "here's what I shot last week:"
+    photo1: 16.5,
+    photo2: 18.0,
+    photo3: 19.5,
 
     // Phase 5: How it works
-    typing3: 18.0,
-    recv7: 19.0,       // "you literally just show up"
-    recv8: 20.2,       // "I direct everything — poses, angles, all of it"
-    recv9: 21.5,       // "then you get your edited photos within a week"
+    typing3: 21.0,
+    recv7: 22.0,       // "you literally just show up"
+    recv8: 23.2,       // "I direct everything — poses, angles, all of it"
+    recv9: 24.5,       // "then you get your edited photos within a week"
 
     // Phase 6: User responds + CTA
-    sent1: 23.0,       // "ok that's actually perfect"
-    sent2: 24.0,       // "how do I book??"
-    typing4: 25.0,
-    recv10: 26.0,      // "just dm me!"
-    ctaHandle: 27.5,   // @madebyaidan on Instagram
-    sent3: 29.5,       // "doing it rn 🏃‍♀️"
-    // Hold until 34s
+    sent1: 26.0,       // "ok that's actually perfect"
+    sent2: 27.0,       // "how do I book??"
+    typing4: 28.0,
+    recv10: 29.0,      // "just dm me!"
+    ctaHandle: 30.5,   // @madebyaidan on Instagram
+    sent3: 32.5,       // "doing it rn 🏃‍♀️"
+    // Hold until 36s
   }
 
   const p = (t) => ((t / TOTAL_DURATION) * 100).toFixed(2)
@@ -102,18 +105,18 @@ function buildHTML(imageDataMap) {
   // Scroll keyframes — need to scroll down as conversation grows
   const scrollKeyframes = `
     0% { transform: translateY(0); }
-    ${p(4)}% { transform: translateY(0); }
-    ${p(6)}% { transform: translateY(-200px); }
-    ${p(9)}% { transform: translateY(-500px); }
-    ${p(12)}% { transform: translateY(-800px); }
-    ${p(14)}% { transform: translateY(-1200px); }
-    ${p(16)}% { transform: translateY(-1800px); }
-    ${p(18)}% { transform: translateY(-2400px); }
-    ${p(20)}% { transform: translateY(-2700px); }
-    ${p(22)}% { transform: translateY(-3000px); }
-    ${p(25)}% { transform: translateY(-3300px); }
-    ${p(28)}% { transform: translateY(-3600px); }
-    ${p(30)}% { transform: translateY(-3800px); }
+    ${p(7)}% { transform: translateY(0); }
+    ${p(9)}% { transform: translateY(-200px); }
+    ${p(12)}% { transform: translateY(-500px); }
+    ${p(15)}% { transform: translateY(-800px); }
+    ${p(17)}% { transform: translateY(-1200px); }
+    ${p(19)}% { transform: translateY(-1800px); }
+    ${p(21)}% { transform: translateY(-2400px); }
+    ${p(23)}% { transform: translateY(-2700px); }
+    ${p(25)}% { transform: translateY(-3000px); }
+    ${p(28)}% { transform: translateY(-3300px); }
+    ${p(31)}% { transform: translateY(-3600px); }
+    ${p(33)}% { transform: translateY(-3800px); }
     100% { transform: translateY(-3800px); }
   `
 
@@ -459,20 +462,36 @@ function buildHTML(imageDataMap) {
       <div class="chat-area">
         <div class="chat-scroll" style="padding:40px 0 600px;">
 
-          <!-- First message that fails -->
-          <div class="msg-row sent" id="failedMsg" style="opacity:0;">
+          <!-- 3 messages that fail one by one -->
+          <div class="msg-row sent" id="fail1" style="opacity:0;">
             <div style="display:flex;align-items:center;">
-              <div class="bubble sent" id="failedBubble">
-                <p>${heyMessages[0]}</p>
+              <div class="bubble sent" id="fail1Bubble">
+                <p>hey i want to shoot</p>
               </div>
-              <div class="error-dot" id="errorDot">
-                <span>!</span>
-              </div>
+              <div class="error-dot" id="err1"><span>!</span></div>
             </div>
           </div>
-          <div class="error-text" id="failedText">
-            Failed to send
+          <div class="error-text" id="errText1">Failed to send</div>
+
+          <div class="msg-row sent" id="fail2" style="opacity:0;">
+            <div style="display:flex;align-items:center;">
+              <div class="bubble sent" id="fail2Bubble">
+                <p>hey i want to shoot</p>
+              </div>
+              <div class="error-dot" id="err2"><span>!</span></div>
+            </div>
           </div>
+          <div class="error-text" id="errText2">Failed to send</div>
+
+          <div class="msg-row sent" id="fail3" style="opacity:0;">
+            <div style="display:flex;align-items:center;">
+              <div class="bubble sent" id="fail3Bubble">
+                <p>hey i want to shoot</p>
+              </div>
+              <div class="error-dot" id="err3"><span>!</span></div>
+            </div>
+          </div>
+          <div class="error-text" id="errText3">Failed to send</div>
 
           <!-- All 8 "hey" messages that flood in after the fail -->
           ${heyMessages.map((msg, i) => `
@@ -665,26 +684,28 @@ function buildHTML(imageDataMap) {
       }, hideDelay)
     }
 
-    // Phase 1: First message appears... then fails
-    showMsg('failedMsg', ${T.firstMsg * 1000})
+    // Phase 1: 3 failed attempts
+    function animateFail(msgId, bubbleId, errId, textId, sendTime, errTime) {
+      showMsg(msgId, sendTime)
+      setTimeout(() => {
+        const dot = document.getElementById(errId)
+        if (dot) dot.style.animation = 'errorDotPop 0.4s ease-out forwards'
+        const bubble = document.getElementById(bubbleId)
+        if (bubble) bubble.style.animation = 'failShake 0.5s ease-out'
+      }, errTime)
+      showMsg(textId, errTime + 400)
+    }
 
-    // Error dot pops in + shake
+    animateFail('fail1', 'fail1Bubble', 'err1', 'errText1', ${T.fail1Send * 1000}, ${T.fail1Err * 1000})
+    animateFail('fail2', 'fail2Bubble', 'err2', 'errText2', ${T.fail2Send * 1000}, ${T.fail2Err * 1000})
+    animateFail('fail3', 'fail3Bubble', 'err3', 'errText3', ${T.fail3Send * 1000}, ${T.fail3Err * 1000})
+
+    // Phase 2: Boom — hide all failed msgs, all 8 messages pop in at once
     setTimeout(() => {
-      const dot = document.getElementById('errorDot')
-      if (dot) dot.style.animation = 'errorDotPop 0.4s ease-out forwards'
-      const bubble = document.getElementById('failedBubble')
-      if (bubble) bubble.style.animation = 'failShake 0.5s ease-out'
-    }, ${T.failShake * 1000})
-
-    // "Failed to send" text
-    showMsg('failedText', ${T.failText * 1000})
-
-    // Phase 2: Boom — hide failed msg, all 8 messages pop in at once
-    setTimeout(() => {
-      const failed = document.getElementById('failedMsg')
-      const failText = document.getElementById('failedText')
-      if (failed) { failed.style.display = 'none' }
-      if (failText) { failText.style.display = 'none' }
+      ['fail1','errText1','fail2','errText2','fail3','errText3'].forEach(id => {
+        const el = document.getElementById(id)
+        if (el) el.style.display = 'none'
+      })
     }, ${(T.floodStart - 0.05) * 1000})
 
     ${heyMessages.map((_, i) => `showMsg('hey${i}', ${(T.floodStart + i * T.floodInterval) * 1000});`).join('\n    ')}
