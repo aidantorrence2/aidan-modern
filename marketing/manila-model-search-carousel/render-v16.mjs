@@ -198,8 +198,8 @@ function slideThree(images) {
       <div style="position:absolute;left:54px;top:360px;width:540px;display:flex;flex-direction:column;gap:20px;">
         <div style="padding:28px 32px;border-radius:22px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.1);">
           <p style="font-family:${NARROW};font-size:22px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:#e8b880;margin:0 0 10px;">Step 1</p>
-          <p style="font-family:${BOLD};font-size:36px;font-weight:700;color:#fff;margin:0 0 8px;line-height:1.1;">Sign up below</p>
-          <p style="font-family:${BODY};font-size:25px;color:rgba(255,255,255,0.7);margin:0;line-height:1.3;">Takes 60 seconds. I message you back.</p>
+          <p style="font-family:${BOLD};font-size:36px;font-weight:700;color:#fff;margin:0 0 8px;line-height:1.1;">DM me on Instagram</p>
+          <p style="font-family:${BODY};font-size:25px;color:rgba(255,255,255,0.7);margin:0;line-height:1.3;">@madebyaidan</p>
         </div>
         <div style="padding:28px 32px;border-radius:22px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.1);">
           <p style="font-family:${NARROW};font-size:22px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:#e8b880;margin:0 0 10px;">Step 2</p>
@@ -225,11 +225,11 @@ function slideFour(images) {
       <div style="position:absolute;left:0;right:0;bottom:0;height:${SAFE_BOTTOM + 100}px;background:linear-gradient(0deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 100%);"></div>
       <div style="position:absolute;left:54px;top:72px;right:54px;">
         <p style="font-family:${NARROW};font-size:64px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#e8b880;margin:0 0 14px;">Manila</p>
-        <h2 style="font-family:${BOLD};font-size:96px;font-weight:800;line-height:0.92;color:#fff;margin:0 0 30px;letter-spacing:-0.02em;">Sign up<br/>below.</h2>
-        <p style="font-family:${BODY};font-size:34px;font-weight:500;line-height:1.38;color:rgba(255,255,255,0.9);margin:0 0 40px;">60-second form. I'll message<br/>you back within a day.</p>
+        <h2 style="font-family:${BOLD};font-size:96px;font-weight:800;line-height:0.92;color:#fff;margin:0 0 30px;letter-spacing:-0.02em;">DM me if<br/>interested.</h2>
+        <p style="font-family:${BODY};font-size:34px;font-weight:500;line-height:1.38;color:rgba(255,255,255,0.9);margin:0 0 40px;">@madebyaidan on Instagram</p>
       </div>
       <div style="position:absolute;left:54px;top:520px;display:inline-flex;align-items:center;padding:16px 28px;border-radius:16px;background:rgba(255,255,255,0.14);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.2);">
-        <span style="font-family:${BOLD};font-size:26px;font-weight:700;color:#fff;letter-spacing:0.02em;">Limited spots this month</span>
+        <span style="font-family:${BOLD};font-size:26px;font-weight:700;color:#fff;letter-spacing:0.02em;">No experience needed</span>
       </div>
     </div>
   `
