@@ -208,7 +208,7 @@ function buildAnimatedDM(images) {
 
     typing('t2', T.typing2, T.msg5),
     recv('totally fine! here\'s how it works:', 'm5', T.msg5),
-    recvNoAv('1. sign up (60 sec form)', 'm6', T.msg6),
+    recvNoAv('1. message me on IG', 'm6', T.msg6),
     recvNoAv('2. we plan the date + vibe together', 'm7', T.msg7),
     recvNoAv('3. show up, I direct everything', 'm8', T.msg8),
     recvNoAv('4. get your edited photos in a week', 'm9', T.msg9),
@@ -227,13 +227,13 @@ function buildAnimatedDM(images) {
     react('\u{1F60D}', 'r2', T.react2),
     typing('t5', T.typing5, T.msg13),
     sent('THESE ARE INSANE', 'm13', T.msg13),
-    sent('ok how do I sign up', 'm14', T.msg14),
+    sent('ok I\'m messaging you rn', 'm14', T.msg14),
 
     typing('t6', T.typing6, T.msg15),
-    recv('sign up below! it takes just a minute', 'm15', T.msg15),
+    recv('just dm me @madebyaidan on Instagram!', 'm15', T.msg15),
     react('\u{1F525}', 'r3', T.react3),
     typing('t7', T.typing7, T.msg17),
-    sent('doing it right now', 'm17', T.msg17),
+    sent('messaging you right now', 'm17', T.msg17),
     bigEmoji('\u{1F64C}', 'm18', T.msg18),
   ].join('\n')
 
@@ -463,8 +463,11 @@ async function render() {
   })
 
   const videoPage = await videoCtx.newPage()
+  await videoPage.evaluate(() => {
+    document.documentElement.style.background = '#1C1C1E'
+    document.body.style.background = '#1C1C1E'
+  })
   await videoPage.setContent(buildAnimatedDM(images), { waitUntil: 'load' })
-  await videoPage.waitForTimeout(500)
   await videoPage.waitForTimeout(TOTAL_DURATION_MS)
   await videoPage.close()
   await videoCtx.close()
