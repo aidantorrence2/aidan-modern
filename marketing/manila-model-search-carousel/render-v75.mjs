@@ -19,19 +19,43 @@ const IG_BG = '#0a0a0a'
 
 const TOTAL_DURATION_MS = 24000
 
-const PHOTOS = [
+// Phase 1 photos
+const PHOTOS_P1 = [
   'manila-gallery-purple-001-cropped.jpg',
   'manila-gallery-purple-002-cropped.jpg',
   'manila-gallery-purple-003-cropped.jpg',
   'manila-gallery-purple-004-cropped.jpg',
   'manila-gallery-purple-005-cropped.jpg',
   'manila-gallery-purple-006-cropped.jpg',
-]
-
-const EXTRA_PHOTOS = [
   'manila-gallery-dsc-0190.jpg',
   'manila-gallery-dsc-0075.jpg',
 ]
+
+// Phase 2 photos (different set)
+const PHOTOS_P2 = [
+  'manila-gallery-canal-001.jpg',
+  'manila-gallery-garden-001.jpg',
+  'manila-gallery-urban-001.jpg',
+  'manila-gallery-night-001.jpg',
+  'manila-gallery-ivy-001.jpg',
+  'manila-gallery-dsc-0911.jpg',
+  'manila-gallery-garden-002.jpg',
+  'manila-gallery-park-001.jpg',
+]
+
+// Phase 3 photos (different set)
+const PHOTOS_P3 = [
+  'manila-gallery-canal-002.jpg',
+  'manila-gallery-night-002.jpg',
+  'manila-gallery-market-001.jpg',
+  'manila-gallery-tropical-001.jpg',
+  'manila-gallery-rocks-001.jpg',
+  'manila-gallery-shadow-001.jpg',
+  'manila-gallery-urban-002.jpg',
+  'manila-gallery-ivy-002.jpg',
+]
+
+const ALL_PHOTOS = [...new Set([...PHOTOS_P1, ...PHOTOS_P2, ...PHOTOS_P3])]
 
 function resetOutputDir() {
   fs.rmSync(OUT_DIR, { recursive: true, force: true })
@@ -61,14 +85,14 @@ function buildHTML(imageDataMap) {
 
   // 8 photo bubbles that float continuously
   const photoBubbles = [
-    { id: 'pb0', src: PHOTOS[0], cx: 180, cy: 300,  r: 200, vx: 0.4, vy: 0.3 },
-    { id: 'pb1', src: PHOTOS[1], cx: 860, cy: 220,  r: 180, vx: -0.3, vy: 0.4 },
-    { id: 'pb2', src: PHOTOS[2], cx: 300, cy: 700,  r: 190, vx: 0.35, vy: -0.25 },
-    { id: 'pb3', src: PHOTOS[3], cx: 780, cy: 620,  r: 210, vx: -0.4, vy: 0.3 },
-    { id: 'pb4', src: PHOTOS[4], cx: 500, cy: 1000, r: 170, vx: 0.3, vy: -0.35 },
-    { id: 'pb5', src: PHOTOS[5], cx: 200, cy: 1150, r: 160, vx: 0.45, vy: 0.2 },
-    { id: 'pb6', src: EXTRA_PHOTOS[0], cx: 820, cy: 950, r: 150, vx: -0.35, vy: -0.3 },
-    { id: 'pb7', src: EXTRA_PHOTOS[1], cx: 540, cy: 450, r: 140, vx: 0.25, vy: 0.4 },
+    { id: 'pb0', src: PHOTOS_P1[0], cx: 180, cy: 300,  r: 200, vx: 0.4, vy: 0.3 },
+    { id: 'pb1', src: PHOTOS_P1[1], cx: 860, cy: 220,  r: 180, vx: -0.3, vy: 0.4 },
+    { id: 'pb2', src: PHOTOS_P1[2], cx: 300, cy: 700,  r: 190, vx: 0.35, vy: -0.25 },
+    { id: 'pb3', src: PHOTOS_P1[3], cx: 780, cy: 620,  r: 210, vx: -0.4, vy: 0.3 },
+    { id: 'pb4', src: PHOTOS_P1[4], cx: 500, cy: 1000, r: 170, vx: 0.3, vy: -0.35 },
+    { id: 'pb5', src: PHOTOS_P1[5], cx: 200, cy: 1150, r: 160, vx: 0.45, vy: 0.2 },
+    { id: 'pb6', src: PHOTOS_P1[6], cx: 820, cy: 950, r: 150, vx: -0.35, vy: -0.3 },
+    { id: 'pb7', src: PHOTOS_P1[7], cx: 540, cy: 450, r: 140, vx: 0.25, vy: 0.4 },
   ]
 
   const photoBubblesHTML = photoBubbles.map(pb => `
@@ -90,8 +114,8 @@ function buildHTML(imageDataMap) {
   function glassPill(id, text, opts = {}) {
     const { accent, fontSize = 36, w = 'auto', extraStyle = '' } = opts
     const bg = accent
-      ? 'linear-gradient(135deg, rgba(232,68,58,0.45) 0%, rgba(232,68,58,0.2) 100%)'
-      : 'linear-gradient(135deg, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0.04) 100%)'
+      ? 'linear-gradient(135deg, rgba(232,68,58,0.55) 0%, rgba(232,68,58,0.3) 100%)'
+      : 'linear-gradient(135deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.4) 100%)'
     const border = accent ? 'rgba(232,68,58,0.5)' : 'rgba(255,255,255,0.15)'
     const shadow = accent
       ? '0 4px 24px rgba(232,68,58,0.3), inset 0 1px 0 rgba(255,255,255,0.2)'
@@ -221,9 +245,7 @@ function buildHTML(imageDataMap) {
 
     <!-- PHASE 2: Photo proof (bubbles grow bigger) -->
     <div class="phase-layer" id="phase2" style="justify-content:flex-start;padding-top:80px;">
-      ${glassPill('p2-title', 'here are some of my photos', { fontSize: 40 })}
-      <div style="height:20px;"></div>
-      ${glassPill('p2-sub', 'no filters · no edits · straight from camera', { fontSize: 28 })}
+      ${glassPill('p2-title', 'here are some of my photos', { fontSize: 44 })}
     </div>
 
     <!-- PHASE 3: How it works -->
@@ -284,27 +306,21 @@ function buildHTML(imageDataMap) {
     animateBlob('amb3', 45, -35)
 
     // ======= Photo data for swapping between phases =======
-    const allPhotoSrcs = {
-      ${[...PHOTOS, ...EXTRA_PHOTOS].map((p, i) => `'photo${i}': '${imageDataMap[p]}'`).join(',\n      ')}
-    }
-
-    // Photo sets for each phase (indices into allPhotoSrcs keys)
-    const photoSets = [
-      ['photo0','photo1','photo2','photo3','photo4','photo5','photo6','photo7'], // Phase 1
-      ['photo4','photo5','photo6','photo7','photo0','photo1','photo2','photo3'], // Phase 2 — rotated
-      ['photo2','photo7','photo0','photo5','photo6','photo3','photo4','photo1'], // Phase 3 — shuffled
+    const phase2Srcs = [
+      ${PHOTOS_P2.map(p => `'${imageDataMap[p]}'`).join(',\n      ')}
+    ]
+    const phase3Srcs = [
+      ${PHOTOS_P3.map(p => `'${imageDataMap[p]}'`).join(',\n      ')}
     ]
 
-    function swapPhotos(setIndex) {
-      const set = photoSets[setIndex]
+    function swapPhotos(srcs) {
       bubbleState.forEach((b, i) => {
         const img = b.el.querySelector('img')
-        if (img && set[i]) {
-          // Crossfade: briefly reduce opacity, swap, fade back
+        if (img && srcs[i]) {
           b.el.style.transition = 'opacity 0.4s ease-out'
           b.el.style.opacity = '0.3'
           setTimeout(() => {
-            img.src = allPhotoSrcs[set[i]]
+            img.src = srcs[i]
             b.el.style.opacity = '1'
           }, 400)
         }
@@ -324,13 +340,12 @@ function buildHTML(imageDataMap) {
       baseScale: 1,
     }))
 
-    // Pop bubbles in staggered
+    // Fade bubbles in (no popping, just appear and float)
     bubbleState.forEach((b, i) => {
       setTimeout(() => {
+        b.el.style.transition = 'opacity 0.8s ease-out'
         b.el.style.opacity = '1'
-        b.el.style.transition = 'none'
-        b.el.style.animation = 'bubblePop 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards'
-      }, 300 + i * 250)
+      }, 200 + i * 150)
     })
 
     // Physics loop
@@ -434,7 +449,7 @@ function buildHTML(imageDataMap) {
     // PHASE 2: Photo proof (6-14s)
     setTimeout(() => hidePhase('phase1'), 5500)
     setTimeout(() => {
-      swapPhotos(1)
+      swapPhotos(phase2Srcs)
       growBubbles()
       showPhase('phase2')
     }, 6500)
@@ -442,7 +457,7 @@ function buildHTML(imageDataMap) {
     // PHASE 3: How it works (14-18s)
     setTimeout(() => hidePhase('phase2'), 13000)
     setTimeout(() => {
-      swapPhotos(2)
+      swapPhotos(phase3Srcs)
       shrinkBubbles()
       showPhase('phase3')
     }, 14000)
@@ -468,9 +483,8 @@ function buildHTML(imageDataMap) {
 async function render() {
   resetOutputDir()
 
-  const allPhotos = [...PHOTOS, ...EXTRA_PHOTOS]
   const imageDataMap = {}
-  for (const photo of allPhotos) {
+  for (const photo of ALL_PHOTOS) {
     imageDataMap[photo] = readImage(photo)
   }
 
@@ -478,7 +492,7 @@ async function render() {
     createdAt: new Date().toISOString(),
     strategy: 'v75 — glass floating bubbles with narrative: Manila free shoot → proof → how it works → DM CTA',
     safeBottomPixels: SAFE_BOTTOM,
-    photos: allPhotos,
+    photos: ALL_PHOTOS,
   })
 
   const { execSync } = await import('child_process')
