@@ -58,39 +58,42 @@ function buildHTML(imageDataMap) {
 
   // Timeline
   const T = {
-    // Phase 1: Messages flooding in all at once (0-2s)
-    // All 7 "hey" messages appear rapid-fire as if they just got delivered
-    floodStart: 0.3,
-    floodInterval: 0.15,  // rapid stagger, all within ~1s
+    // Phase 1: Single message sends... then fails
+    firstMsg: 0.5,       // "hey i want to shoot" appears
+    failShake: 2.0,      // error dot + shake
+    failText: 2.4,       // "Failed to send"
 
-    // Phase 2: madebyaidan responds (3s+)
-    typing1: 2.5,
-    recv1: 3.5,        // "oh hey haha 😅"
-    recv2: 4.5,        // "looks like they all came through at once"
-    recv3: 5.8,        // "yes it's still available!!"
-    recv4: 7.0,        // "I'm doing free photo shoots in Manila"
-    recv5: 8.5,        // "no catch — I just need portfolio content"
+    // Phase 2: Boom — all 8 messages pop in at once
+    floodStart: 4.0,     // failed msg disappears, all 8 flood in
+    floodInterval: 0.08, // super rapid stagger
 
-    // Phase 3: Show work
-    typing2: 9.5,
-    recv6: 10.5,       // "here's what I shot last week:"
-    photo1: 11.5,
-    photo2: 13.0,
-    photo3: 14.5,
+    // Phase 3: madebyaidan responds
+    typing1: 5.5,
+    recv1: 6.5,        // "oh hey haha 😅"
+    recv2: 7.8,        // "yes it's still available!!"
+    recv4: 9.0,        // "I'm doing free photo shoots in Manila"
+    recv5: 10.5,       // "no catch — I just need portfolio content"
 
-    // Phase 4: How it works
-    typing3: 16.0,
-    recv7: 17.0,       // "you literally just show up"
-    recv8: 18.2,       // "I direct everything — poses, angles, all of it"
-    recv9: 19.5,       // "then you get your edited photos within a week"
+    // Phase 4: Show work
+    typing2: 11.5,
+    recv6: 12.5,       // "here's what I shot last week:"
+    photo1: 13.5,
+    photo2: 15.0,
+    photo3: 16.5,
 
-    // Phase 5: User responds + CTA
-    sent1: 21.0,       // "ok that's actually perfect"
-    sent2: 22.0,       // "how do I book??"
-    typing4: 23.0,
-    recv10: 24.0,      // "just dm me!!"
-    ctaHandle: 25.5,   // @madebyaidan on Instagram
-    sent3: 27.5,       // "doing it rn 🏃‍♀️"
+    // Phase 5: How it works
+    typing3: 18.0,
+    recv7: 19.0,       // "you literally just show up"
+    recv8: 20.2,       // "I direct everything — poses, angles, all of it"
+    recv9: 21.5,       // "then you get your edited photos within a week"
+
+    // Phase 6: User responds + CTA
+    sent1: 23.0,       // "ok that's actually perfect"
+    sent2: 24.0,       // "how do I book??"
+    typing4: 25.0,
+    recv10: 26.0,      // "just dm me!"
+    ctaHandle: 27.5,   // @madebyaidan on Instagram
+    sent3: 29.5,       // "doing it rn 🏃‍♀️"
     // Hold until 34s
   }
 
@@ -99,18 +102,18 @@ function buildHTML(imageDataMap) {
   // Scroll keyframes — need to scroll down as conversation grows
   const scrollKeyframes = `
     0% { transform: translateY(0); }
-    ${p(2)}% { transform: translateY(0); }
-    ${p(4)}% { transform: translateY(-200px); }
-    ${p(7)}% { transform: translateY(-500px); }
-    ${p(10)}% { transform: translateY(-800px); }
-    ${p(12)}% { transform: translateY(-1200px); }
-    ${p(14)}% { transform: translateY(-1800px); }
-    ${p(16)}% { transform: translateY(-2400px); }
-    ${p(18)}% { transform: translateY(-2700px); }
-    ${p(20)}% { transform: translateY(-3000px); }
-    ${p(23)}% { transform: translateY(-3300px); }
-    ${p(26)}% { transform: translateY(-3600px); }
-    ${p(28)}% { transform: translateY(-3800px); }
+    ${p(4)}% { transform: translateY(0); }
+    ${p(6)}% { transform: translateY(-200px); }
+    ${p(9)}% { transform: translateY(-500px); }
+    ${p(12)}% { transform: translateY(-800px); }
+    ${p(14)}% { transform: translateY(-1200px); }
+    ${p(16)}% { transform: translateY(-1800px); }
+    ${p(18)}% { transform: translateY(-2400px); }
+    ${p(20)}% { transform: translateY(-2700px); }
+    ${p(22)}% { transform: translateY(-3000px); }
+    ${p(25)}% { transform: translateY(-3300px); }
+    ${p(28)}% { transform: translateY(-3600px); }
+    ${p(30)}% { transform: translateY(-3800px); }
     100% { transform: translateY(-3800px); }
   `
 
@@ -129,6 +132,52 @@ function buildHTML(imageDataMap) {
   @keyframes photoIn {
     0% { opacity: 0; transform: scale(0.85); }
     100% { opacity: 1; transform: scale(1); }
+  }
+
+  @keyframes failShake {
+    0% { transform: translateX(0); }
+    15% { transform: translateX(-8px); }
+    30% { transform: translateX(8px); }
+    45% { transform: translateX(-6px); }
+    60% { transform: translateX(6px); }
+    75% { transform: translateX(-3px); }
+    90% { transform: translateX(3px); }
+    100% { transform: translateX(0); }
+  }
+
+  @keyframes errorDotPop {
+    0% { opacity: 0; transform: scale(0); }
+    60% { opacity: 1; transform: scale(1.3); }
+    100% { opacity: 1; transform: scale(1); }
+  }
+
+  .error-dot {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #ff3b30;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10px;
+    align-self: center;
+    opacity: 0;
+    flex-shrink: 0;
+  }
+
+  .error-dot span {
+    font-size: 20px;
+    font-weight: 800;
+    color: #fff;
+  }
+
+  .error-text {
+    font-size: 22px;
+    color: #ff3b30;
+    text-align: right;
+    padding-right: 20px;
+    margin-bottom: 12px;
+    opacity: 0;
   }
 
   @keyframes typingDot {
@@ -410,7 +459,22 @@ function buildHTML(imageDataMap) {
       <div class="chat-area">
         <div class="chat-scroll" style="padding:40px 0 600px;">
 
-          <!-- 7 "hey" messages that all flood in rapid-fire -->
+          <!-- First message that fails -->
+          <div class="msg-row sent" id="failedMsg" style="opacity:0;">
+            <div style="display:flex;align-items:center;">
+              <div class="bubble sent" id="failedBubble">
+                <p>${heyMessages[0]}</p>
+              </div>
+              <div class="error-dot" id="errorDot">
+                <span>!</span>
+              </div>
+            </div>
+          </div>
+          <div class="error-text" id="failedText">
+            Failed to send
+          </div>
+
+          <!-- All 8 "hey" messages that flood in after the fail -->
           ${heyMessages.map((msg, i) => `
           <div class="msg-row sent" id="hey${i}" style="opacity:0;">
             <div class="bubble sent">
@@ -601,16 +665,37 @@ function buildHTML(imageDataMap) {
       }, hideDelay)
     }
 
-    // Phase 1: All 7 "hey" messages flood in rapid-fire
+    // Phase 1: First message appears... then fails
+    showMsg('failedMsg', ${T.firstMsg * 1000})
+
+    // Error dot pops in + shake
+    setTimeout(() => {
+      const dot = document.getElementById('errorDot')
+      if (dot) dot.style.animation = 'errorDotPop 0.4s ease-out forwards'
+      const bubble = document.getElementById('failedBubble')
+      if (bubble) bubble.style.animation = 'failShake 0.5s ease-out'
+    }, ${T.failShake * 1000})
+
+    // "Failed to send" text
+    showMsg('failedText', ${T.failText * 1000})
+
+    // Phase 2: Boom — hide failed msg, all 8 messages pop in at once
+    setTimeout(() => {
+      const failed = document.getElementById('failedMsg')
+      const failText = document.getElementById('failedText')
+      if (failed) { failed.style.display = 'none' }
+      if (failText) { failText.style.display = 'none' }
+    }, ${(T.floodStart - 0.05) * 1000})
+
     ${heyMessages.map((_, i) => `showMsg('hey${i}', ${(T.floodStart + i * T.floodInterval) * 1000});`).join('\n    ')}
 
     // Delivered status
     showMsg('deliveredStatus', ${(T.floodStart + 8 * T.floodInterval + 0.3) * 1000})
 
-    // Phase 2: madebyaidan starts typing and responding
+    // Phase 3: madebyaidan starts typing and responding
     showTyping('typing1', ${T.typing1 * 1000}, ${T.recv1 * 1000})
     showMsg('recv1', ${T.recv1 * 1000})
-    showMsg('recv2', ${T.recv3 * 1000})
+    showMsg('recv2', ${T.recv2 * 1000})
     showMsg('recv4', ${T.recv4 * 1000})
     showMsg('recv5', ${T.recv5 * 1000})
 
