@@ -161,7 +161,7 @@ function slideTwo(images) {
 function slideThree(images) {
   const PAD = 64
   const steps = [
-    { num: '01', title: 'Sign up below', desc: 'Takes 60 seconds. I message you back.' },
+    { num: '01', title: 'DM me on Instagram', desc: '@madebyaidan' },
     { num: '02', title: 'We plan together', desc: 'Pick a date, location, and vibe.' },
     { num: '03', title: 'Show up', desc: 'I guide every pose. No experience needed.' },
   ]
@@ -228,17 +228,17 @@ function slideFour(images) {
 
       <!-- CTA headline -->
       <div style="position:absolute;left:${PAD}px;right:${PAD}px;top:${IMG_BOTTOM + 115}px;">
-        <h2 style="font-family:${HEAD};font-size:96px;font-weight:900;color:${TEXT};line-height:0.9;letter-spacing:-0.04em;">Sign up<br/>below.</h2>
+        <h2 style="font-family:${HEAD};font-size:96px;font-weight:900;color:${TEXT};line-height:0.9;letter-spacing:-0.04em;">DM me if<br/>interested.</h2>
       </div>
 
       <!-- CTA sub -->
       <div style="position:absolute;left:${PAD}px;right:${PAD}px;top:${IMG_BOTTOM + 310}px;">
-        <p style="font-family:${HEAD};font-size:32px;font-weight:400;color:${MUTED};line-height:1.35;">60-second form. I'll message you back within a day.</p>
+        <p style="font-family:${HEAD};font-size:32px;font-weight:400;color:${MUTED};line-height:1.35;">@madebyaidan on Instagram</p>
       </div>
 
       <!-- Urgency pill -->
       <div style="position:absolute;left:${PAD}px;top:${IMG_BOTTOM + 395}px;display:inline-flex;align-items:center;padding:14px 28px;border:3px solid ${BORDER};background:${TEXT};">
-        <span style="font-family:${HEAD};font-size:26px;font-weight:900;color:${BG};letter-spacing:0.06em;text-transform:uppercase;">Limited spots this month</span>
+        <span style="font-family:${HEAD};font-size:26px;font-weight:900;color:${BG};letter-spacing:0.06em;text-transform:uppercase;">No experience needed</span>
       </div>
     </div>
   `
