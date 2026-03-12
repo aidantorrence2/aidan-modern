@@ -45,10 +45,11 @@ function writeSources(payload) {
 
 function buildHTML(imageDataMap) {
   // 7 "hey" messages that the user sent during network issues
+  // First 3 match the 3 failed attempts
   const heyMessages = [
     'hey i want to shoot',
     'hey is the shoot available?',
-    'hey is the shoot still free?',
+    'hey is it still free??',
     'hello??',
     'hey can I book a shoot',
     'is anyone there',
@@ -462,7 +463,7 @@ function buildHTML(imageDataMap) {
       <div class="chat-area">
         <div class="chat-scroll" style="padding:40px 0 600px;">
 
-          <!-- 3 messages that fail one by one -->
+          <!-- 3 messages that fail one by one (match first 3 of flood) -->
           <div class="msg-row sent" id="fail1" style="opacity:0;">
             <div style="display:flex;align-items:center;">
               <div class="bubble sent" id="fail1Bubble">
@@ -476,7 +477,7 @@ function buildHTML(imageDataMap) {
           <div class="msg-row sent" id="fail2" style="opacity:0;">
             <div style="display:flex;align-items:center;">
               <div class="bubble sent" id="fail2Bubble">
-                <p>hey i want to shoot</p>
+                <p>hey is the shoot available?</p>
               </div>
               <div class="error-dot" id="err2"><span>!</span></div>
             </div>
@@ -486,7 +487,7 @@ function buildHTML(imageDataMap) {
           <div class="msg-row sent" id="fail3" style="opacity:0;">
             <div style="display:flex;align-items:center;">
               <div class="bubble sent" id="fail3Bubble">
-                <p>hey i want to shoot</p>
+                <p>hey is it still free??</p>
               </div>
               <div class="error-dot" id="err3"><span>!</span></div>
             </div>
