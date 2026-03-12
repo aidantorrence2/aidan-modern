@@ -753,7 +753,7 @@ function buildHTML(imageDataMap) {
             <div style="max-width:72%;">
               <div class="story-ref">
                 <div class="story-ref-thumb">
-                  <img src="${imageDataMap[PHOTOS[0]]}" />
+                  <img src="${imageDataMap['manila-gallery-purple-001-cropped.jpg']}" />
                 </div>
                 <span class="story-ref-label">Replied to your story</span>
               </div>
