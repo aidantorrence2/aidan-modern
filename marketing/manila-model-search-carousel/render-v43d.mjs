@@ -374,7 +374,7 @@ function buildHTML(images) {
 
       <!-- Scrollable chat area -->
       <div style="position:absolute;left:0;right:0;top:80px;bottom:${SAFE_BOTTOM}px;overflow:hidden;">
-        <div class="chat-scroll" style="padding:24px 24px 600px;">
+        <div class="chat-scroll" style="padding:24px 60px 600px;">
           ${allMessages}
         </div>
       </div>
@@ -420,8 +420,9 @@ async function render() {
   })
 
   const videoPage = await videoCtx.newPage()
+  await videoPage.setContent(`<html><head><style>*{background:${BG}}</style></head><body></body></html>`, { waitUntil: 'load' })
+  await videoPage.waitForTimeout(100)
   const html = buildHTML(images)
-  await videoPage.evaluate((bg) => { document.documentElement.style.background = bg; document.body.style.background = bg; }, BG)
   await videoPage.setContent(html, { waitUntil: 'load' })
   await videoPage.waitForTimeout(TOTAL_DURATION_MS)
 
