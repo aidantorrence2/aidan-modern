@@ -28,6 +28,10 @@ const PHOTOS = [
   'manila-gallery-canal-001.jpg',
   'manila-gallery-ivy-001.jpg',
   'manila-gallery-garden-002.jpg',
+  'manila-gallery-purple-001-cropped.jpg',
+  'manila-gallery-purple-002-cropped.jpg',
+  'manila-gallery-purple-003-cropped.jpg',
+  'manila-gallery-purple-004-cropped.jpg',
 ]
 
 // DM reply messages that flood in
@@ -662,12 +666,12 @@ function buildHTML(imageDataMap) {
 
     <!-- ===== PHASE 1: IG STORY VIEW with 2x2 grid ===== -->
     <div class="story-view" id="storyView">
-      <!-- 2x2 photo grid background -->
-      <div style="position:absolute;inset:0;z-index:1;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:4px;padding:0;background:#000;">
-        <div style="overflow:hidden;"><img src="${imageDataMap[PHOTOS[0]]}" style="width:100%;height:100%;object-fit:cover;object-position:center 20%;display:block;" /></div>
-        <div style="overflow:hidden;"><img src="${imageDataMap[PHOTOS[1]]}" style="width:100%;height:100%;object-fit:cover;object-position:center 20%;display:block;" /></div>
-        <div style="overflow:hidden;"><img src="${imageDataMap[PHOTOS[2]]}" style="width:100%;height:100%;object-fit:cover;object-position:center 20%;display:block;" /></div>
-        <div style="overflow:hidden;"><img src="${imageDataMap[PHOTOS[3]]}" style="width:100%;height:100%;object-fit:cover;object-position:center 20%;display:block;" /></div>
+      <!-- 2x2 photo grid background — purple cropped series (same shoot) -->
+      <div style="position:absolute;inset:0;z-index:1;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:0;padding:0;background:#000;">
+        <div style="overflow:hidden;"><img src="${imageDataMap['manila-gallery-purple-001-cropped.jpg']}" style="width:100%;height:100%;object-fit:cover;object-position:center 20%;display:block;" /></div>
+        <div style="overflow:hidden;"><img src="${imageDataMap['manila-gallery-purple-002-cropped.jpg']}" style="width:100%;height:100%;object-fit:cover;object-position:center 20%;display:block;" /></div>
+        <div style="overflow:hidden;"><img src="${imageDataMap['manila-gallery-purple-003-cropped.jpg']}" style="width:100%;height:100%;object-fit:cover;object-position:center 20%;display:block;" /></div>
+        <div style="overflow:hidden;"><img src="${imageDataMap['manila-gallery-purple-004-cropped.jpg']}" style="width:100%;height:100%;object-fit:cover;object-position:center 20%;display:block;" /></div>
       </div>
       <div class="story-overlay"></div>
       <div class="story-header">
@@ -684,9 +688,9 @@ function buildHTML(imageDataMap) {
           <span class="story-time">2m</span>
         </div>
       </div>
-      <!-- Story text overlay -->
+      <!-- Story text overlay — centered on top of grid -->
       <div style="position:absolute;z-index:3;left:0;right:0;top:50%;transform:translateY(-50%);text-align:center;padding:0 40px;">
-        <p style="font-family:'Georgia','Times New Roman',cursive,serif;font-style:italic;font-size:52px;font-weight:400;color:#fff;text-shadow:0 2px 12px rgba(0,0,0,0.7);margin:0;line-height:1.4;">manila photo shoot w/ @madebyaidan</p>
+        <p style="font-family:'Georgia','Times New Roman',cursive,serif;font-style:italic;font-size:52px;font-weight:400;color:#fff;text-shadow:0 2px 12px rgba(0,0,0,0.7), 0 0 40px rgba(0,0,0,0.5);margin:0;line-height:1.4;">shooting w/ @madebyaidan</p>
       </div>
       <div class="story-reply-bar">
         <div class="story-reply-input">Send message</div>
