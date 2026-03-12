@@ -11,12 +11,13 @@ const OUT_DIR = path.join(__dirname, 'output-v75')
 const WIDTH = 1080
 const HEIGHT = 1920
 const SAFE_BOTTOM = 410
+const USABLE_H = HEIGHT - SAFE_BOTTOM
 
 const SF = "-apple-system, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif"
 const MANILA_COLOR = '#E8443A'
 const IG_BG = '#0a0a0a'
 
-const TOTAL_DURATION_MS = 16000
+const TOTAL_DURATION_MS = 24000
 
 const PHOTOS = [
   'manila-gallery-purple-001-cropped.jpg',
@@ -47,132 +48,71 @@ function writeSources(payload) {
 }
 
 function buildHTML(imageDataMap) {
-  // Glass bubble configs
-  const bubbles = [
-    // Phase 1: MANILA hero glass pill (0.3s)
-    { id: 'b-manila', type: 'glass-text', text: 'MANILA', x: 540, y: 440, w: 900, h: 240, delay: 0.3, fontSize: 140, fontWeight: 900, letterSpacing: 28, radius: 120 },
+  /*
+   * NARRATIVE FLOW:
+   * Phase 1 (0-6s):   "FREE PHOTO SHOOT IN MANILA" — big glass title + location pills float in
+   * Phase 2 (6-14s):  Photo proof — glass photo bubbles continuously float around
+   * Phase 3 (14-18s): How it works — glass pills explain the process
+   * Phase 4 (18-24s): CTA — DM @madebyaidan
+   *
+   * Photo bubbles float the ENTIRE time as background texture.
+   * Text/pill content fades in/out per phase.
+   */
 
-    // Phase 2: Photo bubbles pop in with glass borders (0.8-3s)
-    { id: 'b-photo1', type: 'photo', src: PHOTOS[0], x: 220, y: 230, size: 420, delay: 0.8 },
-    { id: 'b-photo2', type: 'photo', src: PHOTOS[1], x: 850, y: 180, size: 380, delay: 1.2 },
-    { id: 'b-photo3', type: 'photo', src: PHOTOS[2], x: 250, y: 740, size: 400, delay: 1.6 },
-    { id: 'b-photo4', type: 'photo', src: PHOTOS[3], x: 820, y: 660, size: 420, delay: 2.0 },
-    { id: 'b-photo5', type: 'photo', src: PHOTOS[4], x: 540, y: 960, size: 360, delay: 2.4 },
-    { id: 'b-photo6', type: 'photo', src: PHOTOS[5], x: 180, y: 1100, size: 340, delay: 2.8 },
-
-    // Phase 3: Info + CTA glass pills (3.5-7s)
-    { id: 'b-free', type: 'glass-pill', text: 'FREE PHOTO SHOOT', x: 540, y: 1200, w: 520, h: 110, delay: 3.5, fontSize: 42, accent: true },
-    { id: 'b-loc', type: 'glass-pill', text: '📍 BGC · Makati · Manila', x: 540, y: 1330, w: 680, h: 100, delay: 4.0, fontSize: 38 },
-    { id: 'b-handle', type: 'glass-pill', text: '@madebyaidan', x: 540, y: 1460, w: 480, h: 110, delay: 5.0, fontSize: 44, accent: true },
-    { id: 'b-dm', type: 'glass-pill', text: 'DM on Instagram', x: 540, y: 1580, w: 480, h: 96, delay: 5.8, fontSize: 34 },
-
-    // Extra photos fill gaps (5.5-7s)
-    { id: 'b-photo7', type: 'photo', src: EXTRA_PHOTOS[0], x: 880, y: 1020, size: 320, delay: 4.5 },
-    { id: 'b-photo8', type: 'photo', src: EXTRA_PHOTOS[1], x: 540, y: 160, size: 300, delay: 5.2 },
+  // 8 photo bubbles that float continuously
+  const photoBubbles = [
+    { id: 'pb0', src: PHOTOS[0], cx: 180, cy: 300,  r: 200, vx: 0.4, vy: 0.3 },
+    { id: 'pb1', src: PHOTOS[1], cx: 860, cy: 220,  r: 180, vx: -0.3, vy: 0.4 },
+    { id: 'pb2', src: PHOTOS[2], cx: 300, cy: 700,  r: 190, vx: 0.35, vy: -0.25 },
+    { id: 'pb3', src: PHOTOS[3], cx: 780, cy: 620,  r: 210, vx: -0.4, vy: 0.3 },
+    { id: 'pb4', src: PHOTOS[4], cx: 500, cy: 1000, r: 170, vx: 0.3, vy: -0.35 },
+    { id: 'pb5', src: PHOTOS[5], cx: 200, cy: 1150, r: 160, vx: 0.45, vy: 0.2 },
+    { id: 'pb6', src: EXTRA_PHOTOS[0], cx: 820, cy: 950, r: 150, vx: -0.35, vy: -0.3 },
+    { id: 'pb7', src: EXTRA_PHOTOS[1], cx: 540, cy: 450, r: 140, vx: 0.25, vy: 0.4 },
   ]
 
-  function glassBubbleHTML(b) {
-    if (b.type === 'photo') {
-      const left = b.x - b.size / 2
-      const top = b.y - b.size / 2
-      return `<div class="bubble-pop" id="${b.id}" data-delay="${b.delay}" style="
-        position:absolute;left:${left}px;top:${top}px;width:${b.size}px;height:${b.size}px;
-        border-radius:50%;overflow:hidden;opacity:0;z-index:5;
-        box-shadow:
-          0 8px 32px rgba(0,0,0,0.4),
-          inset 0 1px 0 rgba(255,255,255,0.2),
-          0 0 0 1px rgba(255,255,255,0.08);
-      ">
-        <img src="${imageDataMap[b.src]}" style="width:100%;height:100%;object-fit:cover;" />
-        <!-- Glass highlight overlay -->
-        <div style="
-          position:absolute;inset:0;border-radius:50%;
-          background: linear-gradient(135deg, rgba(255,255,255,0.25) 0%, transparent 50%, rgba(0,0,0,0.1) 100%);
-          pointer-events:none;
-        "></div>
-        <!-- Inner rim light -->
-        <div style="
-          position:absolute;inset:3px;border-radius:50%;
-          border:1px solid rgba(255,255,255,0.1);
-          pointer-events:none;
-        "></div>
-      </div>`
-    }
+  const photoBubblesHTML = photoBubbles.map(pb => `
+    <div class="photo-bubble" id="${pb.id}" style="
+      position:absolute;
+      left:${pb.cx - pb.r}px;top:${pb.cy - pb.r}px;
+      width:${pb.r * 2}px;height:${pb.r * 2}px;
+      border-radius:50%;overflow:hidden;opacity:0;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.2), 0 0 0 1px rgba(255,255,255,0.08);
+      z-index:3;
+    ">
+      <img src="${imageDataMap[pb.src]}" style="width:100%;height:100%;object-fit:cover;" />
+      <div style="position:absolute;inset:0;border-radius:50%;background:linear-gradient(135deg, rgba(255,255,255,0.2) 0%, transparent 50%, rgba(0,0,0,0.1) 100%);pointer-events:none;"></div>
+      <div style="position:absolute;inset:3px;border-radius:50%;border:1px solid rgba(255,255,255,0.08);pointer-events:none;"></div>
+    </div>
+  `).join('')
 
-    if (b.type === 'glass-text') {
-      const left = b.x - b.w / 2
-      const top = b.y - b.h / 2
-      return `<div class="bubble-pop" id="${b.id}" data-delay="${b.delay}" style="
-        position:absolute;left:${left}px;top:${top}px;width:${b.w}px;height:${b.h}px;
-        border-radius:${b.radius || 40}px;opacity:0;z-index:10;
-        background: linear-gradient(135deg, rgba(232,68,58,0.35) 0%, rgba(232,68,58,0.15) 100%);
-        backdrop-filter: blur(40px) saturate(180%);
-        -webkit-backdrop-filter: blur(40px) saturate(180%);
-        border: 1px solid rgba(255,255,255,0.18);
-        box-shadow:
-          0 8px 32px rgba(232,68,58,0.3),
-          inset 0 1px 0 rgba(255,255,255,0.25),
-          inset 0 -1px 0 rgba(0,0,0,0.1);
-        display:flex;align-items:center;justify-content:center;
-      ">
-        <span style="
-          font-family:${SF};font-size:${b.fontSize}px;font-weight:${b.fontWeight || 800};
-          color:#fff;letter-spacing:${b.letterSpacing || 4}px;
-          text-shadow: 0 2px 8px rgba(0,0,0,0.3);
-        ">${b.text}</span>
-        <!-- Glass specular highlight -->
-        <div style="
-          position:absolute;top:0;left:10%;right:10%;height:50%;
-          border-radius:${b.radius || 40}px ${b.radius || 40}px 0 0;
-          background: linear-gradient(180deg, rgba(255,255,255,0.15) 0%, transparent 100%);
-          pointer-events:none;
-        "></div>
-      </div>`
-    }
+  // Glass pill helper
+  function glassPill(id, text, opts = {}) {
+    const { accent, fontSize = 36, w = 'auto', extraStyle = '' } = opts
+    const bg = accent
+      ? 'linear-gradient(135deg, rgba(232,68,58,0.45) 0%, rgba(232,68,58,0.2) 100%)'
+      : 'linear-gradient(135deg, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0.04) 100%)'
+    const border = accent ? 'rgba(232,68,58,0.5)' : 'rgba(255,255,255,0.15)'
+    const shadow = accent
+      ? '0 4px 24px rgba(232,68,58,0.3), inset 0 1px 0 rgba(255,255,255,0.2)'
+      : '0 4px 20px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.12)'
+    const fw = accent ? 800 : 600
+    const widthStyle = w === 'auto' ? 'padding:18px 44px;' : `width:${w}px;`
 
-    if (b.type === 'glass-pill') {
-      const left = b.x - b.w / 2
-      const top = b.y - b.h / 2
-      const bgColor = b.accent
-        ? 'linear-gradient(135deg, rgba(232,68,58,0.4) 0%, rgba(232,68,58,0.2) 100%)'
-        : 'linear-gradient(135deg, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0.05) 100%)'
-      const borderColor = b.accent
-        ? 'rgba(232,68,58,0.4)'
-        : 'rgba(255,255,255,0.15)'
-      const shadowColor = b.accent
-        ? '0 4px 20px rgba(232,68,58,0.25)'
-        : '0 4px 20px rgba(0,0,0,0.3)'
-
-      return `<div class="bubble-pop" id="${b.id}" data-delay="${b.delay}" style="
-        position:absolute;left:${left}px;top:${top}px;width:${b.w}px;height:${b.h}px;
-        border-radius:${b.h / 2}px;opacity:0;z-index:8;
-        background: ${bgColor};
-        backdrop-filter: blur(30px) saturate(160%);
-        -webkit-backdrop-filter: blur(30px) saturate(160%);
-        border: 1px solid ${borderColor};
-        box-shadow: ${shadowColor}, inset 0 1px 0 rgba(255,255,255,0.15);
-        display:flex;align-items:center;justify-content:center;
-      ">
-        <span style="
-          font-family:${SF};font-size:${b.fontSize}px;font-weight:${b.accent ? 800 : 600};
-          color:rgba(255,255,255,${b.accent ? '1' : '0.9'});
-          letter-spacing:${b.accent ? 3 : 1}px;
-          text-shadow: 0 1px 4px rgba(0,0,0,0.2);
-        ">${b.text}</span>
-        <!-- Top highlight -->
-        <div style="
-          position:absolute;top:0;left:15%;right:15%;height:45%;
-          border-radius:${b.h / 2}px ${b.h / 2}px 0 0;
-          background: linear-gradient(180deg, rgba(255,255,255,0.1) 0%, transparent 100%);
-          pointer-events:none;
-        "></div>
-      </div>`
-    }
-
-    return ''
+    return `<div class="phase-el" id="${id}" style="
+      display:inline-flex;align-items:center;justify-content:center;
+      ${widthStyle}height:auto;padding-top:18px;padding-bottom:18px;
+      border-radius:60px;opacity:0;
+      background:${bg};
+      backdrop-filter:blur(30px) saturate(160%);
+      -webkit-backdrop-filter:blur(30px) saturate(160%);
+      border:1px solid ${border};
+      box-shadow:${shadow};
+      ${extraStyle}
+    ">
+      <span style="font-family:${SF};font-size:${fontSize}px;font-weight:${fw};color:#fff;letter-spacing:${accent ? 2 : 0.5}px;text-shadow:0 1px 4px rgba(0,0,0,0.3);white-space:nowrap;">${text}</span>
+    </div>`
   }
-
-  const bubbleHTML = bubbles.map(glassBubbleHTML).join('\n')
 
   return `<!DOCTYPE html>
 <html>
@@ -182,27 +122,18 @@ function buildHTML(imageDataMap) {
   html, body { margin: 0; padding: 0; background: ${IG_BG}; -webkit-font-smoothing: antialiased; }
 
   @keyframes bubblePop {
-    0% { opacity: 0; transform: scale(0) rotate(-5deg); }
-    40% { opacity: 1; transform: scale(1.12) rotate(1deg); }
-    60% { transform: scale(0.95) rotate(-0.5deg); }
-    80% { transform: scale(1.03) rotate(0deg); }
-    100% { opacity: 1; transform: scale(1) rotate(0deg); }
+    0% { opacity: 0; transform: scale(0); }
+    50% { opacity: 1; transform: scale(1.1); }
+    70% { transform: scale(0.95); }
+    100% { opacity: 1; transform: scale(1); }
   }
 
-  @keyframes bubbleFloat {
-    0%, 100% { transform: translateY(0) rotate(0deg); }
-    33% { transform: translateY(-8px) rotate(0.5deg); }
-    66% { transform: translateY(4px) rotate(-0.3deg); }
-  }
+  @keyframes fadeIn { 0% { opacity:0; } 100% { opacity:1; } }
+  @keyframes fadeOut { 0% { opacity:1; } 100% { opacity:0; } }
 
-  @keyframes bubbleShrinkOut {
-    0% { opacity: 1; transform: scale(1); }
-    100% { opacity: 0; transform: scale(0) rotate(10deg); }
-  }
-
-  @keyframes fadeIn {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
+  @keyframes scaleIn {
+    0% { opacity: 0; transform: scale(0.7); }
+    100% { opacity: 1; transform: scale(1); }
   }
 
   @keyframes slideUp {
@@ -210,24 +141,9 @@ function buildHTML(imageDataMap) {
     100% { opacity: 1; transform: translateY(0); }
   }
 
-  @keyframes scaleIn {
-    0% { opacity: 0; transform: scale(0.85); }
-    100% { opacity: 1; transform: scale(1); }
-  }
-
   @keyframes pulseGlow {
     0%, 100% { box-shadow: 0 0 0 0 rgba(232,68,58,0.5), 0 4px 20px rgba(232,68,58,0.3), inset 0 1px 0 rgba(255,255,255,0.2); }
     50% { box-shadow: 0 0 0 16px rgba(232,68,58,0), 0 4px 20px rgba(232,68,58,0.3), inset 0 1px 0 rgba(255,255,255,0.2); }
-  }
-
-  @keyframes glowPulse {
-    0%, 100% { opacity: 0.3; }
-    50% { opacity: 0.6; }
-  }
-
-  @keyframes shimmerSlide {
-    0% { transform: translateX(-100%) rotate(25deg); }
-    100% { transform: translateX(200%) rotate(25deg); }
   }
 
   .page {
@@ -239,110 +155,280 @@ function buildHTML(imageDataMap) {
     font-family: ${SF};
   }
 
-  /* Ambient color blobs behind everything */
   .ambient-layer {
-    position: absolute;
-    inset: 0;
-    z-index: 1;
-    overflow: hidden;
+    position: absolute; inset: 0; z-index: 1; overflow: hidden;
   }
 
   .ambient-blob {
-    position: absolute;
-    border-radius: 50%;
-    filter: blur(120px);
-    opacity: 0;
+    position: absolute; border-radius: 50%; filter: blur(120px); will-change: transform;
+  }
+
+  .photo-bubble {
     will-change: transform;
+    transition: opacity 0.8s ease-out;
   }
 
-  .bubble-layer {
+  /* Phase content layers */
+  .phase-layer {
     position: absolute;
-    inset: 0;
-    z-index: 5;
+    left: 0; right: 0; top: 0;
+    height: ${USABLE_H}px;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.6s ease-out;
   }
 
-  .bubble-pop {
-    will-change: transform, opacity;
+  .phase-el {
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
   }
-
 </style>
 </head>
 <body>
   <div class="page">
 
-    <!-- Ambient color blobs -->
+    <!-- Ambient blobs -->
     <div class="ambient-layer">
-      <div class="ambient-blob" id="amb1" style="
-        width:600px;height:600px;left:-100px;top:100px;
-        background:radial-gradient(circle, rgba(232,68,58,0.25) 0%, transparent 70%);
-      "></div>
-      <div class="ambient-blob" id="amb2" style="
-        width:500px;height:500px;right:-80px;top:500px;
-        background:radial-gradient(circle, rgba(232,68,58,0.15) 0%, transparent 70%);
-      "></div>
-      <div class="ambient-blob" id="amb3" style="
-        width:700px;height:700px;left:200px;top:900px;
-        background:radial-gradient(circle, rgba(180,60,50,0.12) 0%, transparent 70%);
-      "></div>
+      <div class="ambient-blob" id="amb1" style="width:600px;height:600px;left:-100px;top:100px;background:radial-gradient(circle, rgba(232,68,58,0.25) 0%, transparent 70%);opacity:0.8;"></div>
+      <div class="ambient-blob" id="amb2" style="width:500px;height:500px;right:-80px;top:500px;background:radial-gradient(circle, rgba(232,68,58,0.15) 0%, transparent 70%);opacity:0.6;"></div>
+      <div class="ambient-blob" id="amb3" style="width:700px;height:700px;left:200px;top:800px;background:radial-gradient(circle, rgba(180,60,50,0.12) 0%, transparent 70%);opacity:0.5;"></div>
     </div>
 
-    <!-- Bubble layer -->
-    <div class="bubble-layer" id="bubbleLayer">
-      ${bubbleHTML}
+    <!-- Floating photo bubbles (always present) -->
+    ${photoBubblesHTML}
+
+    <!-- PHASE 1: Free photo shoot in Manila -->
+    <div class="phase-layer" id="phase1">
+      <div class="phase-el" id="p1-title" style="
+        padding:24px 60px;border-radius:120px;
+        background:linear-gradient(135deg, rgba(232,68,58,0.4) 0%, rgba(232,68,58,0.15) 100%);
+        backdrop-filter:blur(40px) saturate(180%);-webkit-backdrop-filter:blur(40px) saturate(180%);
+        border:1px solid rgba(255,255,255,0.18);
+        box-shadow:0 8px 32px rgba(232,68,58,0.3), inset 0 1px 0 rgba(255,255,255,0.25);
+        opacity:0;
+      ">
+        <span style="font-size:100px;font-weight:900;color:#fff;letter-spacing:16px;text-shadow:0 2px 12px rgba(0,0,0,0.3);">MANILA</span>
+      </div>
+
+      ${glassPill('p1-free', 'FREE PHOTO SHOOT', { accent: true, fontSize: 48 })}
+      ${glassPill('p1-loc', '📍 BGC · Makati · Philippines', { fontSize: 36 })}
     </div>
 
+    <!-- PHASE 2: Photo proof (bubbles grow bigger, "look at these results" text) -->
+    <div class="phase-layer" id="phase2" style="justify-content:flex-start;padding-top:80px;">
+      ${glassPill('p2-title', 'real photos from the shoot', { fontSize: 40 })}
+      <div style="height:20px;"></div>
+      ${glassPill('p2-sub', 'no filters · no edits · straight from camera', { fontSize: 28 })}
+    </div>
+
+    <!-- PHASE 3: How it works -->
+    <div class="phase-layer" id="phase3" style="gap:24px;">
+      <div class="phase-el" id="p3-title" style="
+        padding:20px 56px;border-radius:80px;
+        background:linear-gradient(135deg, rgba(232,68,58,0.4) 0%, rgba(232,68,58,0.15) 100%);
+        backdrop-filter:blur(40px) saturate(180%);-webkit-backdrop-filter:blur(40px) saturate(180%);
+        border:1px solid rgba(255,255,255,0.18);
+        box-shadow:0 8px 32px rgba(232,68,58,0.3), inset 0 1px 0 rgba(255,255,255,0.25);
+        opacity:0;
+      ">
+        <span style="font-size:52px;font-weight:800;color:#fff;letter-spacing:3px;">how it works</span>
+      </div>
+      ${glassPill('p3-step1', '1. DM me on Instagram', { fontSize: 38 })}
+      ${glassPill('p3-step2', '2. show up to the shoot', { fontSize: 38 })}
+      ${glassPill('p3-step3', '3. I direct everything — poses, angles, all of it', { fontSize: 32 })}
+      ${glassPill('p3-step4', '4. get your photos ✨', { fontSize: 38 })}
+      <div style="height:10px;"></div>
+      ${glassPill('p3-exp', 'no modeling experience needed', { accent: true, fontSize: 34 })}
+    </div>
+
+    <!-- PHASE 4: CTA -->
+    <div class="phase-layer" id="phase4" style="gap:28px;">
+      <div class="phase-el" id="p4-handle" style="
+        padding:24px 56px;border-radius:100px;
+        background:linear-gradient(135deg, rgba(232,68,58,0.45) 0%, rgba(232,68,58,0.2) 100%);
+        backdrop-filter:blur(40px) saturate(180%);-webkit-backdrop-filter:blur(40px) saturate(180%);
+        border:1px solid rgba(232,68,58,0.5);
+        box-shadow:0 8px 32px rgba(232,68,58,0.35), inset 0 1px 0 rgba(255,255,255,0.25);
+        opacity:0;
+      ">
+        <span style="font-size:64px;font-weight:900;color:#fff;letter-spacing:2px;">@madebyaidan</span>
+      </div>
+      ${glassPill('p4-sub', 'on Instagram', { fontSize: 36 })}
+      <div style="height:10px;"></div>
+      ${glassPill('p4-dm', 'DM me to book your free shoot', { accent: true, fontSize: 38 })}
+      ${glassPill('p4-manila', '📍 Manila, Philippines', { fontSize: 34 })}
+    </div>
 
   </div>
 
   <script>
-    // ======= Ambient blobs fade in =======
-    setTimeout(() => {
-      document.getElementById('amb1').style.transition = 'opacity 2s ease-out'
-      document.getElementById('amb1').style.opacity = '1'
-    }, 100)
-    setTimeout(() => {
-      document.getElementById('amb2').style.transition = 'opacity 2s ease-out'
-      document.getElementById('amb2').style.opacity = '0.8'
-    }, 500)
-    setTimeout(() => {
-      document.getElementById('amb3').style.transition = 'opacity 2s ease-out'
-      document.getElementById('amb3').style.opacity = '0.6'
-    }, 800)
-
-    // Animate ambient blobs slowly
-    function animateBlob(id, dx, dy, dur) {
+    // ======= Ambient blob drift =======
+    function animateBlob(id, dx, dy) {
       const el = document.getElementById(id)
       if (!el) return
-      let t = 0
+      let t = Math.random() * 100
       const animate = () => {
-        t += 0.005
+        t += 0.003
         el.style.transform = 'translate(' + (Math.sin(t) * dx) + 'px,' + (Math.cos(t * 0.7) * dy) + 'px)'
         requestAnimationFrame(animate)
       }
       animate()
     }
-    animateBlob('amb1', 40, 30, 8)
-    animateBlob('amb2', -30, 40, 10)
-    animateBlob('amb3', 35, -25, 12)
+    animateBlob('amb1', 50, 40)
+    animateBlob('amb2', -40, 50)
+    animateBlob('amb3', 45, -35)
 
-    // ======= Bubbles popping in =======
-    const allBubbles = document.querySelectorAll('.bubble-pop')
+    // ======= Photo bubble physics — continuous float =======
+    const bubbleData = ${JSON.stringify(photoBubbles.map(pb => ({
+      id: pb.id, cx: pb.cx, cy: pb.cy, r: pb.r, vx: pb.vx, vy: pb.vy
+    })))}
 
-    allBubbles.forEach(bubble => {
-      const delay = parseFloat(bubble.dataset.delay) * 1000
+    const bubbleState = bubbleData.map(b => ({
+      el: document.getElementById(b.id),
+      x: b.cx, y: b.cy, r: b.r,
+      vx: b.vx * (0.8 + Math.random() * 0.4),
+      vy: b.vy * (0.8 + Math.random() * 0.4),
+      baseScale: 1,
+    }))
 
+    // Pop bubbles in staggered
+    bubbleState.forEach((b, i) => {
       setTimeout(() => {
-        bubble.style.animation = 'bubblePop 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) forwards'
-      }, delay)
-
-      // Gentle float after pop
-      setTimeout(() => {
-        const floatDur = 4 + Math.random() * 3
-        bubble.style.animation = 'bubbleFloat ' + floatDur + 's ease-in-out infinite'
-        bubble.style.opacity = '1'
-      }, delay + 800)
+        b.el.style.opacity = '1'
+        b.el.style.transition = 'none'
+        b.el.style.animation = 'bubblePop 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards'
+      }, 300 + i * 250)
     })
 
+    // Physics loop
+    const PADDING = 20
+    const MAX_Y = ${USABLE_H}
+
+    function physicsTick() {
+      bubbleState.forEach(b => {
+        b.x += b.vx
+        b.y += b.vy
+
+        // Bounce off edges
+        if (b.x - b.r < PADDING) { b.x = b.r + PADDING; b.vx *= -1 }
+        if (b.x + b.r > ${WIDTH} - PADDING) { b.x = ${WIDTH} - b.r - PADDING; b.vx *= -1 }
+        if (b.y - b.r < PADDING) { b.y = b.r + PADDING; b.vy *= -1 }
+        if (b.y + b.r > MAX_Y - PADDING) { b.y = MAX_Y - b.r - PADDING; b.vy *= -1 }
+
+        // Simple bubble-bubble collision
+        bubbleState.forEach(other => {
+          if (other === b) return
+          const dx = other.x - b.x
+          const dy = other.y - b.y
+          const dist = Math.sqrt(dx * dx + dy * dy)
+          const minDist = b.r + other.r + 10
+          if (dist < minDist && dist > 0) {
+            const nx = dx / dist
+            const ny = dy / dist
+            const overlap = (minDist - dist) / 2
+            b.x -= nx * overlap
+            b.y -= ny * overlap
+            other.x += nx * overlap
+            other.y += ny * overlap
+            // Swap velocities along collision normal
+            const dvx = b.vx - other.vx
+            const dvy = b.vy - other.vy
+            const dot = dvx * nx + dvy * ny
+            b.vx -= dot * nx * 0.5
+            b.vy -= dot * ny * 0.5
+            other.vx += dot * nx * 0.5
+            other.vy += dot * ny * 0.5
+          }
+        })
+
+        b.el.style.left = (b.x - b.r) + 'px'
+        b.el.style.top = (b.y - b.r) + 'px'
+      })
+
+      requestAnimationFrame(physicsTick)
+    }
+
+    // Start physics after initial pop-in
+    setTimeout(() => {
+      physicsTick()
+    }, 500)
+
+    // ======= Phase transitions =======
+    function showPhase(id) {
+      document.getElementById(id).style.opacity = '1'
+      // Animate children in staggered
+      const els = document.getElementById(id).querySelectorAll('.phase-el')
+      els.forEach((el, i) => {
+        setTimeout(() => {
+          el.style.animation = 'scaleIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards'
+        }, i * 200)
+      })
+    }
+
+    function hidePhase(id) {
+      const phase = document.getElementById(id)
+      const els = phase.querySelectorAll('.phase-el')
+      els.forEach((el, i) => {
+        setTimeout(() => {
+          el.style.animation = 'fadeOut 0.4s ease-out forwards'
+        }, i * 80)
+      })
+      setTimeout(() => { phase.style.opacity = '0' }, els.length * 80 + 400)
+    }
+
+    // Phase 2: make photo bubbles bigger
+    function growBubbles() {
+      bubbleState.forEach(b => {
+        b.r = b.r * 1.25
+        b.el.style.width = (b.r * 2) + 'px'
+        b.el.style.height = (b.r * 2) + 'px'
+        b.el.style.transition = 'width 0.8s ease-out, height 0.8s ease-out'
+      })
+    }
+
+    function shrinkBubbles() {
+      bubbleState.forEach(b => {
+        b.r = b.r / 1.25
+        b.el.style.width = (b.r * 2) + 'px'
+        b.el.style.height = (b.r * 2) + 'px'
+        b.el.style.transition = 'width 0.8s ease-out, height 0.8s ease-out'
+      })
+    }
+
+    // PHASE 1: Free photo shoot in Manila (0-6s)
+    setTimeout(() => showPhase('phase1'), 500)
+
+    // PHASE 2: Photo proof (6-14s)
+    setTimeout(() => hidePhase('phase1'), 5500)
+    setTimeout(() => {
+      growBubbles()
+      showPhase('phase2')
+    }, 6500)
+
+    // PHASE 3: How it works (14-18s)
+    setTimeout(() => hidePhase('phase2'), 13000)
+    setTimeout(() => {
+      shrinkBubbles()
+      showPhase('phase3')
+    }, 14000)
+
+    // PHASE 4: CTA (18-24s)
+    setTimeout(() => hidePhase('phase3'), 17500)
+    setTimeout(() => showPhase('phase4'), 18500)
+
+    // Pulse the DM button at the end
+    setTimeout(() => {
+      const dm = document.getElementById('p4-dm')
+      if (dm) {
+        dm.style.animation = 'pulseGlow 1.5s ease-in-out infinite'
+        dm.style.opacity = '1'
+      }
+    }, 20000)
 
   </script>
 </body>
@@ -360,7 +446,7 @@ async function render() {
 
   writeSources({
     createdAt: new Date().toISOString(),
-    strategy: 'v75 — glass/liquid bubble popping, heavy Manila emphasis, iOS glass aesthetic',
+    strategy: 'v75 — glass floating bubbles with narrative: Manila free shoot → proof → how it works → DM CTA',
     safeBottomPixels: SAFE_BOTTOM,
     photos: allPhotos,
   })
@@ -368,7 +454,7 @@ async function render() {
   const { execSync } = await import('child_process')
   const browser = await chromium.launch()
 
-  console.log('Recording glass bubble pop Manila animation...')
+  console.log('Recording glass floating bubbles Manila animation...')
 
   const videoCtx = await browser.newContext({
     viewport: { width: WIDTH, height: HEIGHT },
