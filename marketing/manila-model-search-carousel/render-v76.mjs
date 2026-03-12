@@ -26,6 +26,8 @@ const PHOTOS = [
   'manila-gallery-urban-001.jpg',
   'manila-gallery-garden-001.jpg',
   'manila-gallery-night-001.jpg',
+  'manila-gallery-rocks-001.jpg',
+  'manila-gallery-shadow-001.jpg',
 ]
 
 function resetOutputDir() {
@@ -44,15 +46,12 @@ function writeSources(payload) {
 
 function buildHTML(imageDataMap) {
   /*
-   * SKELETON LOADING CONCEPT:
+   * SKELETON LOADING CONCEPT — Premium Editorial Style
    *
-   * Phase 1 (0-3s):   Full skeleton UI — shimmer placeholders for header, hero image,
-   *                    text lines, card row, and button
-   * Phase 2 (3-7s):   Header + hero resolve — title and photo fade in over skeletons
-   * Phase 3 (7-13s):  Step cards resolve one by one — DM, show up, get photos
-   * Phase 4 (13-20s): CTA resolves — @madebyaidan button loads in
-   *
-   * Dark background (#0a0a0a) with premium shimmer animation on skeleton blocks.
+   * Phase 1 (0-3s):   Full skeleton UI — warm-toned shimmer with editorial layout
+   * Phase 2 (3-7s):   Hero image + MANILA title resolve with cinematic reveal
+   * Phase 3 (7-13s):  Step cards resolve with photo thumbnails, staggered entrance
+   * Phase 4 (13-20s): CTA resolves — "dm me if interested!!" with pulse
    */
 
   return `<!DOCTYPE html>
@@ -60,21 +59,26 @@ function buildHTML(imageDataMap) {
 <head>
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  html, body { margin: 0; padding: 0; background: ${IG_BG}; -webkit-font-smoothing: antialiased; }
+  html, body { margin: 0; padding: 0; background: #080808; -webkit-font-smoothing: antialiased; }
 
   @keyframes shimmer {
-    0% { background-position: -1000px 0; }
-    100% { background-position: 1000px 0; }
+    0% { background-position: -1200px 0; }
+    100% { background-position: 1200px 0; }
   }
 
-  @keyframes fadeIn {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
+  @keyframes revealUp {
+    0% { opacity: 0; transform: translateY(30px); }
+    100% { opacity: 1; transform: translateY(0); }
   }
 
-  @keyframes fadeOut {
-    0% { opacity: 1; }
-    100% { opacity: 0; }
+  @keyframes scaleReveal {
+    0% { opacity: 0; transform: scale(0.92); }
+    100% { opacity: 1; transform: scale(1); }
+  }
+
+  @keyframes pulseGlow {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(232,68,58,0.5), 0 6px 32px rgba(232,68,58,0.3); }
+    50% { box-shadow: 0 0 0 16px rgba(232,68,58,0), 0 6px 32px rgba(232,68,58,0.3); }
   }
 
   .page {
@@ -82,445 +86,442 @@ function buildHTML(imageDataMap) {
     height: ${HEIGHT}px;
     position: relative;
     overflow: hidden;
-    background: ${IG_BG};
+    background:
+      radial-gradient(ellipse at 50% 0%, rgba(232,68,58,0.06) 0%, transparent 60%),
+      linear-gradient(180deg, #0c0a09 0%, #080808 40%, #0a0908 100%);
     font-family: ${SF};
   }
 
-  .content-area {
+  /* ── Skeleton base ── */
+  .skel {
+    background: linear-gradient(90deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.08) 50%, rgba(255,255,255,0.04) 100%);
+    background-size: 1200px 100%;
+    animation: shimmer 1.8s infinite linear;
+    transition: opacity 0.6s ease-out;
+  }
+
+  /* ── Skeleton layout ── */
+  .skel-title {
     position: absolute;
-    left: 0; right: 0; top: 0;
-    height: ${USABLE_H}px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 60px 48px 40px;
+    top: 68px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 520px;
+    height: 44px;
+    border-radius: 8px;
   }
 
-  .skeleton {
-    background: linear-gradient(90deg, #1a1a1a 0%, #2a2a2a 50%, #1a1a1a 100%);
-    background-size: 1000px 100%;
-    animation: shimmer 2s infinite linear;
-    border-radius: 12px;
-  }
-
-  .skeleton-pill {
-    background: linear-gradient(90deg, #1a1a1a 0%, #2a2a2a 50%, #1a1a1a 100%);
-    background-size: 1000px 100%;
-    animation: shimmer 2s infinite linear;
-    border-radius: 60px;
-  }
-
-  /* Skeleton elements */
-  .skel-header {
-    width: 700px;
-    height: 56px;
-    margin-bottom: 40px;
+  .skel-subtitle {
+    position: absolute;
+    top: 128px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 360px;
+    height: 28px;
+    border-radius: 6px;
   }
 
   .skel-hero {
-    width: 900px;
-    height: 520px;
-    border-radius: 20px;
-    margin-bottom: 36px;
+    position: absolute;
+    top: 200px;
+    left: 60px;
+    right: 60px;
+    height: 560px;
+    border-radius: 24px;
   }
 
-  .skel-text-1 {
-    width: 800px;
-    height: 28px;
-    margin-bottom: 16px;
+  .skel-tagline {
+    position: absolute;
+    top: 800px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 700px;
+    height: 32px;
+    border-radius: 6px;
   }
 
-  .skel-text-2 {
-    width: 650px;
-    height: 28px;
-    margin-bottom: 16px;
-  }
-
-  .skel-text-3 {
-    width: 500px;
-    height: 28px;
-    margin-bottom: 44px;
-  }
-
-  .skel-cards-row {
-    display: flex;
-    gap: 24px;
-    margin-bottom: 44px;
+  .skel-tagline-2 {
+    position: absolute;
+    top: 848px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 480px;
+    height: 32px;
+    border-radius: 6px;
   }
 
   .skel-card {
-    width: 280px;
-    height: 300px;
-    border-radius: 16px;
+    position: absolute;
+    width: 290px;
+    height: 340px;
+    border-radius: 20px;
   }
 
-  .skel-button {
-    width: 680px;
-    height: 72px;
+  .skel-card-1 { left: 60px; top: 920px; }
+  .skel-card-2 { left: 395px; top: 920px; }
+  .skel-card-3 { left: 730px; top: 920px; }
+
+  .skel-cta {
+    position: absolute;
+    top: 1310px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 720px;
+    height: 80px;
+    border-radius: 50px;
   }
 
-  /* Real content layers — positioned on top of skeletons */
-  .real-content {
+  .skel-cta-sub {
+    position: absolute;
+    top: 1410px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 400px;
+    height: 24px;
+    border-radius: 4px;
+  }
+
+  /* ── Real content ── */
+  .real {
     position: absolute;
     opacity: 0;
-    transition: opacity 0.5s ease-out;
+    transition: none;
   }
 
-  .real-content.visible {
-    opacity: 1;
-  }
-
-  /* Header real */
-  .real-header {
-    top: 60px;
-    left: 48px; right: 48px;
-    display: flex;
-    justify-content: center;
-  }
-
-  .real-header h1 {
-    font-size: 40px;
-    font-weight: 800;
-    color: #fff;
-    letter-spacing: 6px;
-    text-transform: uppercase;
+  /* Title section */
+  .real-title {
+    top: 52px;
+    left: 0; right: 0;
     text-align: center;
   }
 
-  .real-header h1 span {
+  .real-title .brand {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-style: italic;
+    font-size: 72px;
+    font-weight: bold;
     color: ${MANILA_COLOR};
+    letter-spacing: 0.08em;
+    line-height: 1;
+    text-shadow: 0 4px 24px rgba(232,68,58,0.3);
   }
 
-  /* Hero real */
+  .real-title .sub {
+    font-family: ${SF};
+    font-size: 24px;
+    font-weight: 500;
+    color: rgba(255,255,255,0.5);
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    margin-top: 12px;
+  }
+
+  /* Hero image */
   .real-hero {
-    top: 156px;
-    left: calc(50% - 450px);
-    width: 900px;
-    height: 520px;
-    border-radius: 20px;
+    top: 200px;
+    left: 60px;
+    right: 60px;
+    height: 560px;
+    border-radius: 24px;
     overflow: hidden;
+    box-shadow: 0 16px 60px rgba(0,0,0,0.6);
   }
 
   .real-hero img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center 20%;
+    display: block;
   }
 
-  /* Text real */
-  .real-text {
-    top: 712px;
-    left: 48px; right: 48px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-  }
-
-  .real-text p {
-    font-size: 30px;
-    font-weight: 500;
-    color: rgba(255,255,255,0.9);
+  /* Tagline */
+  .real-tagline {
+    top: 790px;
+    left: 60px; right: 60px;
     text-align: center;
+  }
+
+  .real-tagline .main-tag {
+    font-size: 38px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.3;
+    letter-spacing: -0.01em;
+  }
+
+  .real-tagline .accent {
+    color: ${MANILA_COLOR};
+  }
+
+  .real-tagline .sub-tag {
+    font-size: 26px;
+    font-weight: 400;
+    color: rgba(255,255,255,0.5);
+    margin-top: 8px;
     line-height: 1.4;
   }
 
-  .real-text p.highlight {
-    color: ${MANILA_COLOR};
-    font-weight: 700;
-  }
-
-  /* Step cards real */
-  .real-cards {
-    top: 832px;
-    left: 48px; right: 48px;
-    display: flex;
-    justify-content: center;
-    gap: 24px;
-  }
-
+  /* Step cards — editorial with photo thumbnails */
   .step-card {
-    width: 280px;
-    height: 300px;
-    border-radius: 16px;
-    background: rgba(255,255,255,0.06);
-    border: 1px solid rgba(255,255,255,0.1);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 16px;
-    padding: 24px;
+    position: absolute;
+    width: 290px;
+    height: 340px;
+    border-radius: 20px;
+    overflow: hidden;
     opacity: 0;
-    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
-    transform: translateY(20px);
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.08);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
   }
 
-  .step-card.visible {
-    opacity: 1;
-    transform: translateY(0);
+  .step-card .card-photo {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    object-position: center 20%;
+    display: block;
   }
 
-  .step-card .icon {
-    font-size: 56px;
-    line-height: 1;
+  .step-card .card-body {
+    padding: 20px 22px;
   }
 
-  .step-card .step-num {
-    font-size: 16px;
+  .step-card .card-num {
+    font-size: 13px;
     font-weight: 700;
     color: ${MANILA_COLOR};
-    letter-spacing: 3px;
+    letter-spacing: 0.2em;
     text-transform: uppercase;
+    margin-bottom: 8px;
   }
 
-  .step-card .step-text {
+  .step-card .card-text {
     font-size: 24px;
     font-weight: 600;
     color: #fff;
-    text-align: center;
-    line-height: 1.3;
+    line-height: 1.25;
   }
 
-  /* CTA real */
+  .card-1 { left: 60px; top: 920px; }
+  .card-2 { left: 395px; top: 920px; }
+  .card-3 { left: 730px; top: 920px; }
+
+  /* CTA */
   .real-cta {
-    top: 1176px;
-    left: 48px; right: 48px;
+    top: 1300px;
+    left: 60px; right: 60px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 16px;
+    gap: 18px;
   }
 
-  .cta-button {
-    width: 680px;
-    height: 72px;
-    border-radius: 60px;
+  .cta-btn {
+    width: 720px;
+    height: 80px;
+    border-radius: 50px;
     background: ${MANILA_COLOR};
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 4px 24px rgba(232,68,58,0.4);
     opacity: 0;
-    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
-    transform: scale(0.95);
+    box-shadow: 0 6px 32px rgba(232,68,58,0.3);
   }
 
-  .cta-button.visible {
-    opacity: 1;
-    transform: scale(1);
-  }
-
-  .cta-button span {
-    font-size: 32px;
+  .cta-btn span {
+    font-size: 34px;
     font-weight: 800;
     color: #fff;
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
   }
 
-  .cta-sub {
-    font-size: 26px;
+  .cta-handle {
+    font-size: 24px;
     font-weight: 500;
-    color: rgba(255,255,255,0.7);
-    text-align: center;
+    color: rgba(255,255,255,0.45);
+    letter-spacing: 0.02em;
     opacity: 0;
-    transition: opacity 0.5s ease-out;
   }
 
-  .cta-sub.visible {
-    opacity: 1;
-  }
-
-  @keyframes pulseGlow {
-    0%, 100% { box-shadow: 0 0 0 0 rgba(232,68,58,0.6), 0 4px 24px rgba(232,68,58,0.4); }
-    50% { box-shadow: 0 0 0 14px rgba(232,68,58,0), 0 4px 24px rgba(232,68,58,0.4); }
+  /* Decorative accent line */
+  .accent-line {
+    position: absolute;
+    top: 188px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: ${MANILA_COLOR};
+    border-radius: 2px;
+    opacity: 0;
   }
 </style>
 </head>
 <body>
   <div class="page">
-    <div class="content-area">
 
-      <!-- Skeleton: Header -->
-      <div class="skeleton skeleton-pill skel-header" id="skel-header"></div>
+    <!-- ── Skeleton Layer ── -->
+    <div class="skel skel-title" id="sk-title"></div>
+    <div class="skel skel-subtitle" id="sk-subtitle"></div>
+    <div class="skel skel-hero" id="sk-hero"></div>
+    <div class="skel skel-tagline" id="sk-tag1"></div>
+    <div class="skel skel-tagline-2" id="sk-tag2"></div>
+    <div class="skel skel-card skel-card-1" id="sk-c1"></div>
+    <div class="skel skel-card skel-card-2" id="sk-c2"></div>
+    <div class="skel skel-card skel-card-3" id="sk-c3"></div>
+    <div class="skel skel-cta" id="sk-cta"></div>
+    <div class="skel skel-cta-sub" id="sk-cta-sub"></div>
 
-      <!-- Skeleton: Hero image -->
-      <div class="skeleton skel-hero" id="skel-hero"></div>
+    <!-- ── Real Content Layer ── -->
 
-      <!-- Skeleton: Text lines -->
-      <div class="skeleton skel-text-1" id="skel-text-1"></div>
-      <div class="skeleton skel-text-2" id="skel-text-2"></div>
-      <div class="skeleton skel-text-3" id="skel-text-3"></div>
-
-      <!-- Skeleton: 3 cards -->
-      <div class="skel-cards-row">
-        <div class="skeleton skel-card" id="skel-card-1"></div>
-        <div class="skeleton skel-card" id="skel-card-2"></div>
-        <div class="skeleton skel-card" id="skel-card-3"></div>
-      </div>
-
-      <!-- Skeleton: Button -->
-      <div class="skeleton skeleton-pill skel-button" id="skel-button"></div>
-
+    <!-- Title -->
+    <div class="real real-title" id="r-title">
+      <div class="brand">MANILA</div>
+      <div class="sub">free photo shoot</div>
     </div>
 
-    <!-- Real content: Header -->
-    <div class="real-content real-header" id="real-header">
-      <h1><span>MANILA</span> FREE PHOTO SHOOT</h1>
+    <!-- Accent line -->
+    <div class="accent-line" id="r-accent"></div>
+
+    <!-- Hero image -->
+    <div class="real real-hero" id="r-hero">
+      <img src="${imageDataMap[PHOTOS[0]]}" id="hero-img" />
     </div>
 
-    <!-- Real content: Hero image -->
-    <div class="real-content real-hero" id="real-hero">
-      <img src="${imageDataMap[PHOTOS[0]]}" />
+    <!-- Tagline -->
+    <div class="real real-tagline" id="r-tagline">
+      <p class="main-tag">Professional photos. <span class="accent">No cost.</span></p>
+      <p class="sub-tag">No experience needed.</p>
     </div>
 
-    <!-- Real content: Text lines -->
-    <div class="real-content real-text" id="real-text">
-      <p>Professional photos.</p>
-      <p class="highlight">No cost. No experience needed.</p>
-    </div>
-
-    <!-- Real content: Step cards -->
-    <div class="real-content real-cards" id="real-cards">
-      <div class="step-card" id="card-1">
-        <div class="icon">\u{1F4AC}</div>
-        <div class="step-num">STEP 1</div>
-        <div class="step-text">DM me on Instagram</div>
-      </div>
-      <div class="step-card" id="card-2">
-        <div class="icon">\u{1F4F7}</div>
-        <div class="step-num">STEP 2</div>
-        <div class="step-text">Show up to the shoot</div>
-      </div>
-      <div class="step-card" id="card-3">
-        <div class="icon">\u{2728}</div>
-        <div class="step-num">STEP 3</div>
-        <div class="step-text">Get your photos</div>
+    <!-- Step cards with photo thumbnails -->
+    <div class="step-card card-1" id="c1">
+      <img class="card-photo" src="${imageDataMap[PHOTOS[1]]}" />
+      <div class="card-body">
+        <div class="card-num">Step 1</div>
+        <div class="card-text">DM me on Instagram</div>
       </div>
     </div>
 
-    <!-- Real content: CTA -->
-    <div class="real-content real-cta" id="real-cta">
-      <div class="cta-button" id="cta-btn">
-        <span>@madebyaidan</span>
+    <div class="step-card card-2" id="c2">
+      <img class="card-photo" src="${imageDataMap[PHOTOS[2]]}" />
+      <div class="card-body">
+        <div class="card-num">Step 2</div>
+        <div class="card-text">Show up to the shoot</div>
       </div>
-      <div class="cta-sub" id="cta-sub">DM me to book your free shoot</div>
+    </div>
+
+    <div class="step-card card-3" id="c3">
+      <img class="card-photo" src="${imageDataMap[PHOTOS[3]]}" />
+      <div class="card-body">
+        <div class="card-num">Step 3</div>
+        <div class="card-text">Get your photos</div>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="real real-cta" id="r-cta">
+      <div class="cta-btn" id="cta-btn">
+        <span>dm me if interested!!</span>
+      </div>
+      <div class="cta-handle" id="cta-handle">@madebyaidan on Instagram</div>
     </div>
 
   </div>
 
   <script>
-    // ======= Helper: fade out a skeleton element =======
-    function fadeSkeleton(id, delay) {
+    function fade(id, delay, dir) {
       setTimeout(() => {
         const el = document.getElementById(id)
         if (!el) return
-        el.style.transition = 'opacity 0.5s ease-out'
-        el.style.opacity = '0'
+        el.style.transition = 'opacity 0.6s ease-out'
+        el.style.opacity = dir === 'in' ? '1' : '0'
       }, delay)
     }
 
-    // ======= Helper: show real content =======
-    function showReal(id, delay) {
+    function reveal(id, delay, anim) {
       setTimeout(() => {
         const el = document.getElementById(id)
         if (!el) return
-        el.classList.add('visible')
+        el.style.animation = anim + ' 0.7s cubic-bezier(0.16,1,0.3,1) forwards'
       }, delay)
     }
 
-    function showCard(id, delay) {
-      setTimeout(() => {
-        const el = document.getElementById(id)
-        if (!el) return
-        el.classList.add('visible')
-      }, delay)
-    }
+    // ── Phase 2 (3s): Title + Hero ──
+    fade('sk-title', 3000, 'out')
+    fade('sk-subtitle', 3200, 'out')
+    reveal('r-title', 3200, 'revealUp')
+    reveal('r-accent', 3600, 'revealUp')
 
-    // ======= PHASE 2 (3-7s): Header + Hero + Text resolve =======
+    fade('sk-hero', 4000, 'out')
+    reveal('r-hero', 4200, 'scaleReveal')
 
-    // Fade out header skeleton, show real header
-    fadeSkeleton('skel-header', 3000)
-    showReal('real-header', 3200)
+    // ── Phase 2b (5.5s): Tagline ──
+    fade('sk-tag1', 5500, 'out')
+    fade('sk-tag2', 5700, 'out')
+    reveal('r-tagline', 5800, 'revealUp')
 
-    // Fade out hero skeleton, show real hero image
-    fadeSkeleton('skel-hero', 3800)
-    showReal('real-hero', 4000)
+    // ── Phase 3 (7-12s): Step cards ──
+    fade('sk-c1', 7500, 'out')
+    reveal('c1', 7700, 'revealUp')
 
-    // Fade out text skeletons, show real text
-    fadeSkeleton('skel-text-1', 5000)
-    fadeSkeleton('skel-text-2', 5200)
-    fadeSkeleton('skel-text-3', 5400)
-    showReal('real-text', 5500)
+    fade('sk-c2', 9200, 'out')
+    reveal('c2', 9400, 'revealUp')
 
-    // ======= PHASE 3 (7-13s): Step cards resolve one by one =======
+    fade('sk-c3', 10900, 'out')
+    reveal('c3', 11100, 'revealUp')
 
-    // Show the cards container
-    showReal('real-cards', 7000)
+    // ── Phase 4 (13s): CTA ──
+    fade('sk-cta', 13000, 'out')
+    fade('sk-cta-sub', 13200, 'out')
+    fade('r-cta', 13400, 'in')
 
-    // Fade skeleton cards and reveal real cards one by one
-    fadeSkeleton('skel-card-1', 7500)
-    showCard('card-1', 7700)
-
-    fadeSkeleton('skel-card-2', 9500)
-    showCard('card-2', 9700)
-
-    fadeSkeleton('skel-card-3', 11500)
-    showCard('card-3', 11700)
-
-    // ======= PHASE 4 (13-20s): CTA resolves =======
-
-    fadeSkeleton('skel-button', 13500)
-    showReal('real-cta', 13800)
-
-    // Show the CTA button
-    setTimeout(() => {
-      const btn = document.getElementById('cta-btn')
-      if (btn) btn.classList.add('visible')
-    }, 14000)
-
-    // Show the CTA sub text
-    setTimeout(() => {
-      const sub = document.getElementById('cta-sub')
-      if (sub) sub.classList.add('visible')
-    }, 14800)
-
-    // Pulse the CTA button after everything is loaded
     setTimeout(() => {
       const btn = document.getElementById('cta-btn')
       if (btn) {
-        btn.style.animation = 'pulseGlow 1.5s ease-in-out infinite'
+        btn.style.transition = 'opacity 0.6s ease-out, transform 0.6s cubic-bezier(0.16,1,0.3,1)'
+        btn.style.opacity = '1'
+        btn.style.transform = 'scale(1)'
       }
+    }, 13600)
+
+    setTimeout(() => {
+      const h = document.getElementById('cta-handle')
+      if (h) {
+        h.style.transition = 'opacity 0.5s ease-out'
+        h.style.opacity = '1'
+      }
+    }, 14400)
+
+    // Pulse CTA
+    setTimeout(() => {
+      const btn = document.getElementById('cta-btn')
+      if (btn) btn.style.animation = 'pulseGlow 1.5s ease-in-out infinite'
     }, 16000)
 
-    // ======= Bonus: swap hero image mid-way for visual interest =======
-    const heroImages = [
+    // ── Hero image cycling ──
+    const heroSrcs = [
       '${imageDataMap[PHOTOS[0]]}',
-      '${imageDataMap[PHOTOS[1]]}',
-      '${imageDataMap[PHOTOS[2]]}',
-      '${imageDataMap[PHOTOS[3]]}',
       '${imageDataMap[PHOTOS[4]]}',
       '${imageDataMap[PHOTOS[5]]}',
+      '${imageDataMap[PHOTOS[6]]}',
+      '${imageDataMap[PHOTOS[7]]}',
     ]
-
-    let currentHeroIdx = 0
+    let hIdx = 0
     function cycleHero() {
-      const heroEl = document.querySelector('.real-hero img')
-      if (!heroEl) return
-      heroEl.style.transition = 'opacity 0.4s ease-out'
-      heroEl.style.opacity = '0'
+      const img = document.getElementById('hero-img')
+      if (!img) return
+      img.style.transition = 'opacity 0.5s ease-out'
+      img.style.opacity = '0'
       setTimeout(() => {
-        currentHeroIdx = (currentHeroIdx + 1) % heroImages.length
-        heroEl.src = heroImages[currentHeroIdx]
-        heroEl.style.opacity = '1'
-      }, 400)
+        hIdx = (hIdx + 1) % heroSrcs.length
+        img.src = heroSrcs[hIdx]
+        img.style.opacity = '1'
+      }, 500)
     }
-
-    // Cycle hero images every 3s after the hero loads
-    setTimeout(() => {
-      setInterval(cycleHero, 3000)
-    }, 7000)
-
+    setTimeout(() => setInterval(cycleHero, 3000), 7000)
   </script>
 </body>
 </html>`
