@@ -10,7 +10,7 @@ const OUT_DIR = path.join(__dirname, 'output-v31')
 
 const WIDTH = 1080
 const HEIGHT = 1920
-const SAFE_BOTTOM = 620
+const SAFE_BOTTOM = 410
 
 // Fonts
 const BOLD = "'Helvetica Neue', 'Avenir Next', Arial, sans-serif"
@@ -97,7 +97,7 @@ function slideOne(images) {
       <div style="position:absolute;left:0;right:0;bottom:0;height:${SAFE_BOTTOM + 120}px;background:linear-gradient(0deg, rgba(10,6,16,0.7) 0%, rgba(10,6,16,0) 100%);"></div>
 
       <!-- MANILA neon sign -->
-      <div style="position:absolute;left:30px;top:80px;width:780px;">
+      <div style="position:absolute;left:54px;top:80px;right:54px;">
         <p style="font-family:${BOLD};font-size:86px;font-weight:900;letter-spacing:0.22em;text-transform:uppercase;color:${NEON_PINK};margin:0 0 20px;text-shadow:${neonGlow(NEON_PINK, 1.2)};">MANILA</p>
         <!-- Thin neon line -->
         <div style="width:200px;height:2px;background:${NEON_CYAN};box-shadow:${neonGlow(NEON_CYAN, 0.6)};margin:0 0 30px;"></div>
@@ -202,7 +202,7 @@ function slideTwoAnimated(images) {
     </head>
     <body>
       <div style="width:${WIDTH}px;height:${HEIGHT}px;position:relative;overflow:hidden;background:${DARK_BG};">
-        <div class="header" style="position:absolute;left:30px;top:65px;width:780px;">
+        <div class="header" style="position:absolute;left:54px;top:65px;right:54px;">
           <p class="neon-manila" style="font-family:${BOLD};font-size:80px;font-weight:900;letter-spacing:0.22em;text-transform:uppercase;color:${NEON_PINK};margin:0 0 8px;text-shadow:${neonGlow(NEON_PINK, 1)};">MANILA</p>
           <div class="neon-line" style="height:2px;background:${NEON_CYAN};box-shadow:${neonGlow(NEON_CYAN, 0.5)};margin:0 0 14px;"></div>
           <h2 style="font-family:${BOLD};font-size:52px;font-weight:800;line-height:0.96;color:#fff;margin:0;letter-spacing:-0.01em;text-shadow:0 0 15px rgba(255,255,255,0.25);">This is my work.</h2>
@@ -251,7 +251,7 @@ function slideThree(images) {
       <div style="position:absolute;bottom:600px;left:-100px;width:350px;height:350px;background:radial-gradient(circle, ${NEON_CYAN}12, transparent 70%);"></div>
 
       <!-- Header -->
-      <div style="position:absolute;left:30px;top:80px;width:780px;">
+      <div style="position:absolute;left:54px;top:80px;right:54px;">
         <p style="font-family:${BOLD};font-size:80px;font-weight:900;letter-spacing:0.22em;text-transform:uppercase;color:${NEON_PINK};margin:0 0 12px;text-shadow:${neonGlow(NEON_PINK, 1)};">MANILA</p>
         <div style="width:160px;height:2px;background:${NEON_CYAN};box-shadow:${neonGlow(NEON_CYAN, 0.5)};margin:0 0 22px;"></div>
         <h2 style="font-family:${BOLD};font-size:68px;font-weight:800;line-height:0.95;color:#fff;margin:0 0 8px;letter-spacing:-0.01em;text-shadow:0 0 15px rgba(255,255,255,0.2);">3 steps.</h2>
@@ -259,7 +259,7 @@ function slideThree(images) {
       </div>
 
       <!-- Steps -->
-      <div style="position:absolute;left:30px;width:780px;top:420px;">
+      <div style="position:absolute;left:54px;right:54px;top:420px;">
         ${stepsHtml}
       </div>
     </div>
@@ -283,7 +283,7 @@ function slideFour(images) {
       <div style="position:absolute;top:350px;left:50%;transform:translateX(-50%);width:600px;height:300px;background:radial-gradient(ellipse, ${NEON_PINK}18, transparent 70%);"></div>
 
       <!-- Content -->
-      <div style="position:absolute;left:30px;top:80px;width:780px;">
+      <div style="position:absolute;left:54px;top:80px;right:54px;">
         <p style="font-family:${BOLD};font-size:80px;font-weight:900;letter-spacing:0.22em;text-transform:uppercase;color:${NEON_PINK};margin:0 0 12px;text-shadow:${neonGlow(NEON_PINK, 1)};">MANILA</p>
         <div style="width:160px;height:2px;background:${NEON_CYAN};box-shadow:${neonGlow(NEON_CYAN, 0.5)};margin:0 0 28px;"></div>
         <h2 style="font-family:${BOLD};font-size:88px;font-weight:800;line-height:0.94;color:#fff;margin:0 0 26px;letter-spacing:-0.02em;text-shadow:0 0 25px rgba(255,255,255,0.3);">Sign up<br/>below.</h2>
@@ -291,7 +291,7 @@ function slideFour(images) {
       </div>
 
       <!-- Neon urgency badge -->
-      <div style="position:absolute;left:30px;top:560px;display:inline-flex;align-items:center;padding:16px 30px;border-radius:8px;border:2px solid ${NEON_PINK};box-shadow:${neonBoxGlow(NEON_PINK, 0.5)};background:rgba(255,45,123,0.08);">
+      <div style="position:absolute;left:54px;top:560px;display:inline-flex;align-items:center;padding:16px 30px;border-radius:8px;border:2px solid ${NEON_PINK};box-shadow:${neonBoxGlow(NEON_PINK, 0.5)};background:rgba(255,45,123,0.08);">
         <span style="font-family:${CONDENSED};font-size:24px;font-weight:700;color:${NEON_PINK};letter-spacing:0.12em;text-transform:uppercase;text-shadow:${neonGlow(NEON_PINK, 0.4)};">Limited spots this month</span>
       </div>
     </div>
@@ -310,7 +310,7 @@ async function render() {
     gridD: 'manila-gallery-night-003.jpg',
     gridE: 'manila-gallery-dsc-0130.jpg',
     gridF: 'manila-gallery-canal-002.jpg',
-    gridG: 'manila-gallery-street-001.jpg',
+    gridG: 'manila-gallery-graffiti-001.jpg',
     gridH: 'manila-gallery-urban-001.jpg',
     gridI: 'manila-gallery-shadow-001.jpg',
     process: 'manila-gallery-dsc-0190.jpg',

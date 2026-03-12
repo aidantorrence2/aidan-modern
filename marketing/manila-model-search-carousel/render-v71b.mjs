@@ -10,7 +10,7 @@ const OUT_DIR = path.join(__dirname, 'output-v71b')
 
 const WIDTH = 1080
 const HEIGHT = 1920
-const SAFE_BOTTOM = 620
+const SAFE_BOTTOM = 410
 
 const SF = "-apple-system, 'Helvetica Neue', Arial, sans-serif"
 const MANILA_COLOR = '#E8443A'
@@ -225,8 +225,8 @@ function buildHTML(imageDataMap) {
     position: absolute;
     top: 200px;
     left: 30px;
-    right: 270px;
-    bottom: ${SAFE_BOTTOM}px;
+    right: 30px;
+    bottom: 0;
     border-radius: 24px 24px 0 0;
     overflow: hidden;
     z-index: 5;

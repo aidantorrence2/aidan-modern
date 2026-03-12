@@ -10,7 +10,7 @@ const OUT_DIR = path.join(__dirname, 'output-v70')
 
 const WIDTH = 1080
 const HEIGHT = 1920
-const SAFE_BOTTOM = 620
+const SAFE_BOTTOM = 410
 
 const SF = "-apple-system, 'Helvetica Neue', Arial, sans-serif"
 const MANILA_COLOR = '#E8443A'
@@ -53,14 +53,14 @@ function buildHTML(imageDataMap) {
 
   // Reactions that pop in during the view explosion
   const reactions = [
-    { text: 'omg \u{1F60D}', delay: 5.5, x: 520, y: 420 },
-    { text: 'who shot these??', delay: 7.0, x: 80, y: 520 },
-    { text: 'you look insane', delay: 8.2, x: 400, y: 340 },
-    { text: 'photographer??', delay: 9.5, x: 140, y: 600 },
-    { text: 'need this', delay: 10.5, x: 500, y: 560 },
-    { text: '\u{1F525}\u{1F525}\u{1F525}', delay: 11.2, x: 300, y: 380 },
-    { text: 'wait what', delay: 12.0, x: 100, y: 450 },
-    { text: 'HOW', delay: 12.8, x: 560, y: 480 },
+    { text: 'omg \u{1F60D}', delay: 5.5, x: 680, y: 420 },
+    { text: 'who shot these??', delay: 7.0, x: 120, y: 520 },
+    { text: 'you look insane', delay: 8.2, x: 580, y: 340 },
+    { text: 'photographer??', delay: 9.5, x: 200, y: 600 },
+    { text: 'need this', delay: 10.5, x: 650, y: 560 },
+    { text: '\u{1F525}\u{1F525}\u{1F525}', delay: 11.2, x: 400, y: 380 },
+    { text: 'wait what', delay: 12.0, x: 150, y: 450 },
+    { text: 'HOW', delay: 12.8, x: 720, y: 480 },
   ]
 
   // Timeline
@@ -268,7 +268,7 @@ function buildHTML(imageDataMap) {
   /* Editorial header ABOVE the phone */
   .editorial-header {
     position: absolute;
-    top: 0; left: 30px; right: 270px;
+    top: 0; left: 0; right: 0;
     height: 200px;
     z-index: 30;
     display: flex;
@@ -319,8 +319,8 @@ function buildHTML(imageDataMap) {
     position: absolute;
     top: 200px;
     left: 30px;
-    right: 270px;
-    bottom: ${SAFE_BOTTOM}px;
+    right: 30px;
+    bottom: 0;
     border-radius: 24px 24px 0 0;
     overflow: hidden;
     z-index: 5;
@@ -543,11 +543,11 @@ function buildHTML(imageDataMap) {
     `).join('')}
 
     <!-- Heart bursts -->
-    <div class="heart-burst" id="heart0" style="right:60px;top:350px;">\u2764\uFE0F</div>
-    <div class="heart-burst" id="heart1" style="right:100px;top:500px;">\u{1F9E1}</div>
-    <div class="heart-burst" id="heart2" style="right:40px;top:600px;">\u{1F525}</div>
-    <div class="heart-burst" id="heart3" style="right:160px;top:420px;">\u2764\uFE0F</div>
-    <div class="heart-burst" id="heart4" style="right:80px;top:550px;">\u{1F60D}</div>
+    <div class="heart-burst" id="heart0" style="right:80px;top:350px;">\u2764\uFE0F</div>
+    <div class="heart-burst" id="heart1" style="right:140px;top:500px;">\u{1F9E1}</div>
+    <div class="heart-burst" id="heart2" style="right:60px;top:600px;">\u{1F525}</div>
+    <div class="heart-burst" id="heart3" style="right:200px;top:420px;">\u2764\uFE0F</div>
+    <div class="heart-burst" id="heart4" style="right:100px;top:550px;">\u{1F60D}</div>
 
     </div><!-- close phone-frame -->
 

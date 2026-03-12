@@ -10,7 +10,7 @@ const OUT_DIR = path.join(__dirname, 'output-v30')
 
 const WIDTH = 1080
 const HEIGHT = 1920
-const SAFE_BOTTOM = 620
+const SAFE_BOTTOM = 410
 
 // Fonts
 const SERIF = "Georgia, 'Times New Roman', serif"
@@ -168,7 +168,7 @@ function slideOne(images) {
       ${colorSwatch(210, 1120, '#6B4E37', 55, 55)}
 
       <!-- Small text note -->
-      ${noteCard('editorial portraits<br/>no experience needed', 340, 1160, 380, 110, -1, '#FFF8E8', HAND, 26)}
+      ${noteCard('editorial portraits<br/>no experience needed', 340, 1240, 380, 110, -1, '#FFF8E8', HAND, 26)}
 
       <!-- Decorative tape strips -->
       ${tapeStrip(750, 1220, 15, 90, 24)}
@@ -217,7 +217,7 @@ function slideTwoAnimated(images) {
   // Note card that appears after photos
   const noteDelay = 0.4 + items.length * 0.45 + 0.3
   tilesHtml += `
-    <div class="pin-tile" style="position:absolute;left:540px;top:970px;width:240px;height:120px;
+    <div class="pin-tile" style="position:absolute;left:780px;top:970px;width:240px;height:120px;
       opacity:0;z-index:20;
       animation:pinDrop 0.5s ease-out ${noteDelay}s forwards;transform:translateY(30px);">
       <div style="position:absolute;left:80px;top:-10px;width:80px;height:26px;
@@ -333,7 +333,7 @@ function slideFour(images) {
 
       <!-- Sign up card pinned below hero -->
       ${tapeStrip(340, 870, -1)}
-      <div style="position:absolute;left:140px;top:880px;width:660px;height:320px;
+      <div style="position:absolute;left:140px;top:880px;width:800px;height:320px;
         background:#FFFEF5;padding:36px 44px;border-radius:4px;
         box-shadow:${SHADOW};z-index:5;transform:rotate(-0.5deg);">
         <p style="font-family:${SANS};font-size:58px;font-weight:800;color:${WARM_BROWN};margin:0 0 16px;line-height:1.05;">Sign up below.</p>
@@ -365,7 +365,7 @@ async function render() {
     gridA: 'manila-gallery-dsc-0911.jpg',
     gridB: 'manila-gallery-night-003.jpg',
     gridC: 'manila-gallery-garden-001.jpg',
-    gridD: 'manila-gallery-street-001.jpg',
+    gridD: 'manila-gallery-graffiti-001.jpg',
     gridE: 'manila-gallery-urban-001.jpg',
     gridF: 'manila-gallery-ivy-001.jpg',
     gridG: 'manila-gallery-shadow-001.jpg',

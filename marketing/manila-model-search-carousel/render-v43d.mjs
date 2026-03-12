@@ -10,7 +10,7 @@ const OUT_DIR = path.join(__dirname, 'output-v43d')
 
 const WIDTH = 1080
 const HEIGHT = 1920
-const SAFE_BOTTOM = 620
+const SAFE_BOTTOM = 410
 
 const SF = "-apple-system, 'Helvetica Neue', Arial, sans-serif"
 
@@ -304,7 +304,7 @@ function buildHTML(images) {
 
   const HEADER_H = 200
   const PHONE_LEFT = 30
-  const PHONE_RIGHT = 270
+  const PHONE_RIGHT = 30
 
   return `<!DOCTYPE html>
 <html>
@@ -403,7 +403,7 @@ function buildHTML(images) {
         top: ${HEADER_H}px;
         left: ${PHONE_LEFT}px;
         right: ${PHONE_RIGHT}px;
-        bottom: ${SAFE_BOTTOM}px;
+        bottom: 0;
         border-radius: 24px 24px 0 0;
         overflow: hidden;
         z-index: 5;

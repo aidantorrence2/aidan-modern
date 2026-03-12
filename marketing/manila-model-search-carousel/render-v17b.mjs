@@ -10,7 +10,7 @@ const OUT_DIR = path.join(__dirname, 'output-v17b')
 
 const WIDTH = 1080
 const HEIGHT = 1920
-const SAFE_BOTTOM = 620
+const SAFE_BOTTOM = 410
 const MANILA_COLOR = '#E8443A'
 
 const BOLD = "'Avenir Next', 'Helvetica Neue', Arial, sans-serif"
@@ -92,7 +92,7 @@ function sceneHookHtml(images) {
       <img src="${images.hero}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 20%;opacity:0;animation:imgFade 1s ease-out 0.2s forwards;"/>
       <div style="position:absolute;left:0;right:0;top:0;height:900px;background:linear-gradient(180deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.55) 55%, rgba(0,0,0,0) 100%);"></div>
       <div style="position:absolute;left:0;right:0;bottom:0;height:${SAFE_BOTTOM + 120}px;background:linear-gradient(0deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0) 100%);"></div>
-      <div style="position:absolute;left:54px;top:80px;width:756px;opacity:0;animation:slideDown 0.7s ease-out 0.3s forwards;">
+      <div style="position:absolute;left:54px;top:80px;right:54px;opacity:0;animation:slideDown 0.7s ease-out 0.3s forwards;">
         <p style="font-family:${NARROW};font-size:72px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:${MANILA_COLOR};margin:0 0 18px;">Manila</p>
         <h1 style="font-family:${BOLD};font-size:120px;font-weight:800;line-height:0.90;color:#fff;margin:0 0 32px;letter-spacing:-0.02em;">Models<br/>wanted.</h1>
         <p style="font-family:${BODY};font-size:42px;font-weight:500;line-height:1.32;color:rgba(255,255,255,0.92);margin:0;">Editorial portrait shoots.<br/>No experience needed.</p>
@@ -150,7 +150,7 @@ function sceneProofHtml(images) {
 
   return `
     <div id="scene-proof" style="position:absolute;inset:0;width:${WIDTH}px;height:${HEIGHT}px;overflow:hidden;background:#0a0a0a;">
-      <div style="position:absolute;left:54px;top:68px;width:756px;opacity:0;animation:slideDown 0.5s ease-out 0s forwards;">
+      <div style="position:absolute;left:54px;top:68px;right:54px;opacity:0;animation:slideDown 0.5s ease-out 0s forwards;">
         <p style="font-family:${NARROW};font-size:72px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:${MANILA_COLOR};margin:0 0 12px;">Manila</p>
         <h2 style="font-family:${BOLD};font-size:72px;font-weight:800;line-height:0.94;color:#fff;margin:0;letter-spacing:-0.02em;">This is my work.</h2>
       </div>
@@ -203,7 +203,7 @@ function sceneCtaHtml(images) {
       <img src="${images.cta}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 60%;"/>
       <div style="position:absolute;left:0;right:0;top:0;height:820px;background:linear-gradient(180deg, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.65) 55%, rgba(0,0,0,0) 100%);"></div>
       <div style="position:absolute;left:0;right:0;bottom:0;height:${SAFE_BOTTOM + 120}px;background:linear-gradient(0deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0) 100%);"></div>
-      <div style="position:absolute;left:54px;top:80px;width:756px;">
+      <div style="position:absolute;left:54px;top:80px;right:54px;">
         <p style="font-family:${NARROW};font-size:72px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:${MANILA_COLOR};margin:0 0 18px;">Manila</p>
         <h2 style="font-family:${BOLD};font-size:100px;font-weight:800;line-height:0.92;color:#fff;margin:0 0 36px;letter-spacing:-0.02em;">dm me if<br/>interested!!</h2>
         <p style="font-family:${BODY};font-size:42px;font-weight:600;line-height:1.38;color:rgba(255,255,255,0.95);margin:0 0 50px;">@madebyaidan on Instagram</p>

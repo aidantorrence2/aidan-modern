@@ -10,7 +10,7 @@ const OUT_DIR = path.join(__dirname, 'output-v20b')
 
 const WIDTH = 1080
 const HEIGHT = 1920
-const SAFE_BOTTOM = 620
+const SAFE_BOTTOM = 410
 
 const MANILA_COLOR = '#E8443A'
 const BG_DARK = '#0A0A0A'
@@ -61,7 +61,6 @@ function writeSources(selected) {
 
 function buildAnimatedHtml(images) {
   const PAD = 56
-  const RIGHT_PAD = WIDTH - 810   // 270px — keeps all content within safe right edge (810px)
   const USABLE_BOTTOM = HEIGHT - SAFE_BOTTOM
 
   // --- PROOF GRID LAYOUT ---
@@ -73,10 +72,10 @@ function buildAnimatedHtml(images) {
 
   const GRID_TOP = 340
   const GRID_GAP = 12
-  const COL_W = Math.floor((810 - PAD - GRID_GAP * 2) / 3)   // fit within safe right (810px)
-  const ROW_H_1 = 340
-  const ROW_H_2 = 300
-  const ROW_H_3 = 296
+  const COL_W = Math.floor((WIDTH - PAD * 2 - GRID_GAP * 2) / 3)
+  const ROW_H_1 = 420
+  const ROW_H_2 = 380
+  const ROW_H_3 = 380
 
   const gridLayout = []
   for (let r = 0; r < 3; r++) {
@@ -121,7 +120,7 @@ function buildAnimatedHtml(images) {
     const delay = 7.5 + i * 0.4
     stepsHtml += `
       <div class="step-card" style="
-        position:absolute; left:${PAD}px; right:${RIGHT_PAD}px; top:${y}px;
+        position:absolute; left:${PAD}px; right:${PAD}px; top:${y}px;
         opacity:0; transform:translateY(40px);
         animation: slideUp 0.5s ease-out ${delay}s forwards;
       ">
@@ -273,22 +272,22 @@ function buildAnimatedHtml(images) {
       <!-- Accent line -->
       <div class="hook-line" style="position:absolute;left:${PAD}px;top:170px;height:3px;background:${MANILA_COLOR};overflow:hidden;"></div>
       <!-- Headline -->
-      <div class="hook-headline" style="position:absolute;left:${PAD}px;right:${RIGHT_PAD}px;top:200px;">
+      <div class="hook-headline" style="position:absolute;left:${PAD}px;right:${PAD}px;top:200px;">
         <h1 style="font-family:${SERIF};font-size:120px;font-weight:normal;font-style:italic;line-height:0.92;color:${TEXT_WHITE};letter-spacing:-0.02em;">Models<br/>wanted.</h1>
       </div>
       <!-- Subhead -->
-      <div class="hook-sub" style="position:absolute;left:${PAD}px;right:${RIGHT_PAD}px;top:460px;">
+      <div class="hook-sub" style="position:absolute;left:${PAD}px;right:${PAD}px;top:460px;">
         <p style="font-family:${SANS};font-size:38px;font-weight:400;color:${TEXT_DIM};line-height:1.35;">Editorial portrait sessions.<br/>No experience needed.</p>
       </div>
       <!-- Hero image -->
-      <div class="hook-image" style="position:absolute;left:${PAD - 8}px;right:${RIGHT_PAD}px;top:600px;bottom:${SAFE_BOTTOM + 20}px;border-radius:18px;overflow:hidden;box-shadow:0 16px 50px rgba(0,0,0,0.5);">
+      <div class="hook-image" style="position:absolute;left:${PAD - 8}px;right:${PAD - 8}px;top:600px;bottom:${SAFE_BOTTOM + 20}px;border-radius:18px;overflow:hidden;box-shadow:0 16px 50px rgba(0,0,0,0.5);">
         <img src="${images.hero}" style="width:100%;height:100%;display:block;object-fit:cover;object-position:center 15%;" />
       </div>
     </div>
 
     <!-- ====== PROOF SECTION ====== -->
     <div class="proof-section">
-      <div class="proof-header" style="position:absolute;left:${PAD}px;top:100px;right:${RIGHT_PAD}px;">
+      <div class="proof-header" style="position:absolute;left:${PAD}px;top:100px;right:${PAD}px;">
         <span style="font-family:${SANS};font-size:52px;font-weight:700;letter-spacing:0.3em;color:${MANILA_COLOR};text-transform:uppercase;">MANILA</span>
         <div style="width:80px;height:3px;background:${MANILA_COLOR};margin-top:16px;margin-bottom:22px;"></div>
         <h2 style="font-family:${SERIF};font-size:72px;font-weight:normal;font-style:italic;color:${TEXT_WHITE};line-height:1.0;">This is my work.</h2>
@@ -298,7 +297,7 @@ function buildAnimatedHtml(images) {
 
     <!-- ====== PROCESS SECTION ====== -->
     <div class="process-section">
-      <div class="process-header" style="position:absolute;left:${PAD}px;top:120px;right:${RIGHT_PAD}px;">
+      <div class="process-header" style="position:absolute;left:${PAD}px;top:120px;right:${PAD}px;">
         <span style="font-family:${SANS};font-size:52px;font-weight:700;letter-spacing:0.3em;color:${MANILA_COLOR};text-transform:uppercase;">MANILA</span>
         <div style="width:80px;height:3px;background:${MANILA_COLOR};margin-top:16px;margin-bottom:22px;"></div>
         <h2 style="font-family:${SERIF};font-size:80px;font-weight:normal;font-style:italic;color:${TEXT_WHITE};line-height:0.95;">How it works.</h2>
@@ -307,7 +306,7 @@ function buildAnimatedHtml(images) {
 
       <!-- Small accent image -->
       <div style="
-        position:absolute; right:${RIGHT_PAD}px; bottom:${SAFE_BOTTOM + 30}px;
+        position:absolute; right:${PAD}px; bottom:${SAFE_BOTTOM + 30}px;
         width:280px; height:200px; border-radius:14px; overflow:hidden;
         box-shadow:0 8px 30px rgba(0,0,0,0.4);
         opacity:0; animation: fadeIn 0.5s ease-out 8.5s forwards;
@@ -319,7 +318,7 @@ function buildAnimatedHtml(images) {
     <!-- ====== CTA SECTION ====== -->
     <div class="cta-section">
       <!-- Large image top -->
-      <div class="cta-image" style="position:absolute;left:${PAD - 8}px;right:${RIGHT_PAD}px;top:80px;height:780px;border-radius:18px;overflow:hidden;box-shadow:0 16px 50px rgba(0,0,0,0.5);">
+      <div class="cta-image" style="position:absolute;left:${PAD - 8}px;right:${PAD - 8}px;top:80px;height:780px;border-radius:18px;overflow:hidden;box-shadow:0 16px 50px rgba(0,0,0,0.5);">
         <img src="${images.cta}" style="width:100%;height:100%;display:block;object-fit:cover;object-position:center 20%;" />
       </div>
 
@@ -331,19 +330,19 @@ function buildAnimatedHtml(images) {
       <div class="cta-line" style="position:absolute;left:${PAD}px;top:968px;height:3px;background:${MANILA_COLOR};overflow:hidden;"></div>
 
       <!-- DM Headline -->
-      <div class="cta-headline" style="position:absolute;left:${PAD}px;right:${RIGHT_PAD}px;top:996px;">
+      <div class="cta-headline" style="position:absolute;left:${PAD}px;right:${PAD}px;top:996px;">
         <h2 style="font-family:${SERIF};font-size:88px;font-weight:normal;font-style:italic;color:${TEXT_WHITE};line-height:0.95;letter-spacing:-0.02em;">dm me if<br/>interested!!</h2>
       </div>
 
       <!-- @madebyaidan handle -->
-      <div class="cta-handle" style="position:absolute;left:${PAD}px;right:${RIGHT_PAD}px;top:1170px;">
+      <div class="cta-handle" style="position:absolute;left:${PAD}px;right:${PAD}px;top:1216px;">
         <p style="font-family:${SANS};font-size:38px;font-weight:500;color:${TEXT_DIM};line-height:1.4;">
           <span style="color:${MANILA_COLOR};font-weight:700;">@madebyaidan</span> on Instagram
         </p>
       </div>
 
       <!-- Glowing pill -->
-      <div class="cta-pill" style="position:absolute;left:${PAD}px;top:1230px;">
+      <div class="cta-pill" style="position:absolute;left:${PAD}px;top:1300px;">
         <div class="cta-pill-glow" style="display:inline-flex;align-items:center;padding:18px 36px;border-radius:50px;background:${MANILA_COLOR};">
           <span style="font-family:${SANS};font-size:30px;font-weight:700;color:#FFFFFF;letter-spacing:0.06em;text-transform:uppercase;">Limited spots — DM now</span>
         </div>
