@@ -75,13 +75,12 @@ function buildHTML(imageDataMap) {
     swipe1: 13.5,
     story2Start: 14.0,
 
-    // Swipe to story 3
+    // Swipe to story 3 (with CTA overlay)
     swipe2: 17.5,
     story3Start: 18.0,
 
-    // Final CTA slide
-    swipe3: 21.0,
-    ctaStart: 21.5,
+    // CTA overlay appears on story 3
+    ctaStart: 21.0,
   }
 
   return `<!DOCTYPE html>
@@ -379,11 +378,11 @@ function buildHTML(imageDataMap) {
     inset: 0;
     z-index: 5;
     display: flex;
-    width: 400%;
+    width: 300%;
   }
 
   .story-slide {
-    width: 25%;
+    width: 33.3333%;
     height: 100%;
     position: relative;
     flex-shrink: 0;
@@ -490,14 +489,8 @@ function buildHTML(imageDataMap) {
           <img src="${imageDataMap[PHOTOS[2]]}" alt="story 3" />
         </div>
         <div class="story-overlay"></div>
-      </div>
-
-      <!-- ===== STORY 4: CTA ===== -->
-      <div class="story-slide" id="story4">
-        <div class="story-bg">
-          <img src="${imageDataMap[PHOTOS[3]]}" alt="story 4" style="filter:brightness(0.35) blur(3px);" />
-        </div>
-        <div class="story-overlay" style="background:rgba(0,0,0,0.55);"></div>
+        <!-- CTA overlay fades in on story 3 -->
+        <div class="story-overlay" id="ctaDarken" style="background:rgba(0,0,0,0);transition:background 0.8s ease;"></div>
         <div class="cta-content">
           <div class="cta-question" id="ctaQuestion">want photos<br>like these?</div>
           <div class="cta-action" id="ctaAction">
@@ -521,9 +514,6 @@ function buildHTML(imageDataMap) {
       </div>
       <div class="progress-segment">
         <div class="progress-fill" id="prog3"></div>
-      </div>
-      <div class="progress-segment">
-        <div class="progress-fill" id="prog4"></div>
       </div>
     </div>
 
@@ -575,7 +565,6 @@ function buildHTML(imageDataMap) {
     const prog1 = document.getElementById('prog1');
     const prog2 = document.getElementById('prog2');
     const prog3 = document.getElementById('prog3');
-    const prog4 = document.getElementById('prog4');
 
     // Story 1 progress: 0 -> 13.5s
     prog1.style.animation = 'progressFill ${T.swipe1}s linear ${T.story1Start}s forwards';
@@ -710,7 +699,7 @@ function buildHTML(imageDataMap) {
     // Swipe 1: story 1 -> story 2
     setTimeout(() => {
       track.style.transition = 'transform 0.45s cubic-bezier(0.25, 0.1, 0.25, 1)';
-      track.style.transform = 'translateX(-25%)';
+      track.style.transform = 'translateX(-33.3333%)';
       currentSlide = 1;
       // Progress bar 2
       prog2.style.animation = 'progressFill ${T.swipe2 - T.story2Start}s linear 0s forwards';
@@ -718,24 +707,20 @@ function buildHTML(imageDataMap) {
 
     // Swipe 2: story 2 -> story 3
     setTimeout(() => {
-      track.style.transform = 'translateX(-50%)';
+      track.style.transform = 'translateX(-66.6666%)';
       currentSlide = 2;
-      // Progress bar 3
-      prog3.style.animation = 'progressFill ${T.swipe3 - T.story3Start}s linear 0s forwards';
+      // Progress bar 3 runs until end
+      prog3.style.animation = 'progressFill ${(TOTAL_DURATION_MS / 1000) - T.story3Start}s linear 0s forwards';
     }, ${T.swipe2 * 1000});
 
-    // Swipe 3: story 3 -> CTA
+    // Darken story 3 when CTA appears
     setTimeout(() => {
-      track.style.transform = 'translateX(-75%)';
-      currentSlide = 3;
-      // Hide views counter on CTA slide
-      setTimeout(() => {
-        viewCounter.style.transition = 'opacity 0.3s';
-        viewCounter.style.opacity = '0';
-      }, 500);
-      // Progress bar 4
-      prog4.style.animation = 'progressFill 4.5s linear 0s forwards';
-    }, ${T.swipe3 * 1000});
+      const darken = document.getElementById('ctaDarken');
+      if (darken) darken.style.background = 'rgba(0,0,0,0.55)';
+      // Hide views counter
+      viewCounter.style.transition = 'opacity 0.3s';
+      viewCounter.style.opacity = '0';
+    }, ${T.ctaStart * 1000});
 
     // === CTA elements animate in ===
     setTimeout(() => {
