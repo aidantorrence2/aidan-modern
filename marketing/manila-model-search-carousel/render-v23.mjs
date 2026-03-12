@@ -329,15 +329,15 @@ async function render() {
 
   const all = getTopManilaImages()
   const selection = {
-    hero: 'manila-gallery-street-001.jpg',
-    gridA: 'manila-gallery-closeup-001.jpg',
-    gridB: 'manila-gallery-dsc-0911.jpg',
-    gridC: 'manila-gallery-graffiti-001.jpg',
-    gridD: 'manila-gallery-urban-001.jpg',
-    gridE: 'manila-gallery-shadow-001.jpg',
+    hero: 'manila-gallery-dsc-0190.jpg',
+    gridA: 'manila-gallery-dsc-0075.jpg',
+    gridB: 'manila-gallery-ivy-001.jpg',
+    gridC: 'manila-gallery-canal-001.jpg',
+    gridD: 'manila-gallery-night-001.jpg',
+    gridE: 'manila-gallery-garden-001.jpg',
     gridF: 'manila-gallery-dsc-0130.jpg',
-    process: 'manila-gallery-tropical-001.jpg',
-    cta: 'manila-gallery-statue-001.jpg'
+    process: 'manila-gallery-ivy-002.jpg',
+    cta: 'manila-gallery-dsc-0911.jpg'
   }
 
   writeSources({ all_considered: all, selected: selection })
