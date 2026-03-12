@@ -219,9 +219,9 @@ function buildHTML(imageDataMap) {
       ${glassPill('p1-loc', '📍 BGC · Makati · Philippines', { fontSize: 36 })}
     </div>
 
-    <!-- PHASE 2: Photo proof (bubbles grow bigger, "look at these results" text) -->
+    <!-- PHASE 2: Photo proof (bubbles grow bigger) -->
     <div class="phase-layer" id="phase2" style="justify-content:flex-start;padding-top:80px;">
-      ${glassPill('p2-title', 'real photos from the shoot', { fontSize: 40 })}
+      ${glassPill('p2-title', 'here are some of my photos', { fontSize: 40 })}
       <div style="height:20px;"></div>
       ${glassPill('p2-sub', 'no filters · no edits · straight from camera', { fontSize: 28 })}
     </div>
@@ -282,6 +282,34 @@ function buildHTML(imageDataMap) {
     animateBlob('amb1', 50, 40)
     animateBlob('amb2', -40, 50)
     animateBlob('amb3', 45, -35)
+
+    // ======= Photo data for swapping between phases =======
+    const allPhotoSrcs = {
+      ${[...PHOTOS, ...EXTRA_PHOTOS].map((p, i) => `'photo${i}': '${imageDataMap[p]}'`).join(',\n      ')}
+    }
+
+    // Photo sets for each phase (indices into allPhotoSrcs keys)
+    const photoSets = [
+      ['photo0','photo1','photo2','photo3','photo4','photo5','photo6','photo7'], // Phase 1
+      ['photo4','photo5','photo6','photo7','photo0','photo1','photo2','photo3'], // Phase 2 — rotated
+      ['photo2','photo7','photo0','photo5','photo6','photo3','photo4','photo1'], // Phase 3 — shuffled
+    ]
+
+    function swapPhotos(setIndex) {
+      const set = photoSets[setIndex]
+      bubbleState.forEach((b, i) => {
+        const img = b.el.querySelector('img')
+        if (img && set[i]) {
+          // Crossfade: briefly reduce opacity, swap, fade back
+          b.el.style.transition = 'opacity 0.4s ease-out'
+          b.el.style.opacity = '0.3'
+          setTimeout(() => {
+            img.src = allPhotoSrcs[set[i]]
+            b.el.style.opacity = '1'
+          }, 400)
+        }
+      })
+    }
 
     // ======= Photo bubble physics — continuous float =======
     const bubbleData = ${JSON.stringify(photoBubbles.map(pb => ({
@@ -406,6 +434,7 @@ function buildHTML(imageDataMap) {
     // PHASE 2: Photo proof (6-14s)
     setTimeout(() => hidePhase('phase1'), 5500)
     setTimeout(() => {
+      swapPhotos(1)
       growBubbles()
       showPhase('phase2')
     }, 6500)
@@ -413,6 +442,7 @@ function buildHTML(imageDataMap) {
     // PHASE 3: How it works (14-18s)
     setTimeout(() => hidePhase('phase2'), 13000)
     setTimeout(() => {
+      swapPhotos(2)
       shrinkBubbles()
       showPhase('phase3')
     }, 14000)
