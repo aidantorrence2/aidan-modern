@@ -50,25 +50,25 @@ function buildHTML(imageDataMap) {
   // Glass bubble configs
   const bubbles = [
     // Phase 1: MANILA hero glass pill (0.3s)
-    { id: 'b-manila', type: 'glass-text', text: 'MANILA', x: 540, y: 440, w: 820, h: 200, delay: 0.3, fontSize: 120, fontWeight: 900, letterSpacing: 24, radius: 100 },
+    { id: 'b-manila', type: 'glass-text', text: 'MANILA', x: 540, y: 440, w: 900, h: 240, delay: 0.3, fontSize: 140, fontWeight: 900, letterSpacing: 28, radius: 120 },
 
     // Phase 2: Photo bubbles pop in with glass borders (0.8-3s)
-    { id: 'b-photo1', type: 'photo', src: PHOTOS[0], x: 200, y: 250, size: 320, delay: 0.8 },
-    { id: 'b-photo2', type: 'photo', src: PHOTOS[1], x: 830, y: 200, size: 280, delay: 1.2 },
-    { id: 'b-photo3', type: 'photo', src: PHOTOS[2], x: 270, y: 720, size: 300, delay: 1.6 },
-    { id: 'b-photo4', type: 'photo', src: PHOTOS[3], x: 800, y: 650, size: 320, delay: 2.0 },
-    { id: 'b-photo5', type: 'photo', src: PHOTOS[4], x: 540, y: 920, size: 260, delay: 2.4 },
-    { id: 'b-photo6', type: 'photo', src: PHOTOS[5], x: 180, y: 1050, size: 240, delay: 2.8 },
+    { id: 'b-photo1', type: 'photo', src: PHOTOS[0], x: 220, y: 230, size: 420, delay: 0.8 },
+    { id: 'b-photo2', type: 'photo', src: PHOTOS[1], x: 850, y: 180, size: 380, delay: 1.2 },
+    { id: 'b-photo3', type: 'photo', src: PHOTOS[2], x: 250, y: 740, size: 400, delay: 1.6 },
+    { id: 'b-photo4', type: 'photo', src: PHOTOS[3], x: 820, y: 660, size: 420, delay: 2.0 },
+    { id: 'b-photo5', type: 'photo', src: PHOTOS[4], x: 540, y: 960, size: 360, delay: 2.4 },
+    { id: 'b-photo6', type: 'photo', src: PHOTOS[5], x: 180, y: 1100, size: 340, delay: 2.8 },
 
     // Phase 3: Glass info pills pop in (3.5-6s)
-    { id: 'b-free', type: 'glass-pill', text: 'FREE SHOOT', x: 540, y: 1180, w: 380, h: 90, delay: 3.5, fontSize: 38, accent: true },
-    { id: 'b-loc', type: 'glass-pill', text: '📍 BGC · Makati · Manila', x: 540, y: 1300, w: 600, h: 80, delay: 4.0, fontSize: 32 },
-    { id: 'b-pro', type: 'glass-pill', text: 'Professional Photographer', x: 350, y: 1410, w: 500, h: 80, delay: 4.5, fontSize: 30 },
-    { id: 'b-dir', type: 'glass-pill', text: 'Fully Directed · No Experience Needed', x: 600, y: 1500, w: 620, h: 80, delay: 5.0, fontSize: 28 },
+    { id: 'b-free', type: 'glass-pill', text: 'FREE SHOOT', x: 540, y: 1250, w: 440, h: 110, delay: 3.5, fontSize: 44, accent: true },
+    { id: 'b-loc', type: 'glass-pill', text: '📍 BGC · Makati · Manila', x: 540, y: 1380, w: 680, h: 100, delay: 4.0, fontSize: 38 },
+    { id: 'b-pro', type: 'glass-pill', text: 'Professional Photographer', x: 350, y: 1490, w: 560, h: 96, delay: 4.5, fontSize: 34 },
+    { id: 'b-dir', type: 'glass-pill', text: 'Fully Directed · No Experience Needed', x: 620, y: 1590, w: 700, h: 96, delay: 5.0, fontSize: 32 },
 
     // Phase 4: More photos fill gaps (5.5-7s)
-    { id: 'b-photo7', type: 'photo', src: EXTRA_PHOTOS[0], x: 880, y: 980, size: 220, delay: 5.5 },
-    { id: 'b-photo8', type: 'photo', src: EXTRA_PHOTOS[1], x: 540, y: 180, size: 200, delay: 6.0 },
+    { id: 'b-photo7', type: 'photo', src: EXTRA_PHOTOS[0], x: 880, y: 1020, size: 320, delay: 5.5 },
+    { id: 'b-photo8', type: 'photo', src: EXTRA_PHOTOS[1], x: 540, y: 160, size: 300, delay: 6.0 },
   ]
 
   function glassBubbleHTML(b) {
