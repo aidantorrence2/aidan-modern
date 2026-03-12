@@ -318,8 +318,8 @@ function slideThree(images) {
         <div style="display:flex;align-items:flex-start;gap:16px;">
           <span style="font-family:${SANS};font-size:80px;font-weight:900;color:${PINK};line-height:0.9;">1</span>
           <div>
-            <span style="font-family:${MONO};font-size:36px;font-weight:700;color:${BLACK};background:${YELLOW};padding:2px 10px;display:inline-block;">sign up below</span>
-            <p style="font-family:${SERIF};font-size:28px;color:${BLACK};margin:8px 0 0;font-style:italic;opacity:0.7;">takes 60 seconds. seriously.</p>
+            <span style="font-family:${MONO};font-size:36px;font-weight:700;color:${BLACK};background:${YELLOW};padding:2px 10px;display:inline-block;">DM me on instagram</span>
+            <p style="font-family:${SERIF};font-size:28px;color:${BLACK};margin:8px 0 0;font-style:italic;opacity:0.7;">@madebyaidan</p>
           </div>
         </div>
       </div>
@@ -417,11 +417,11 @@ function slideFour(images) {
       </div>
       ${tapeStrip(760, 540, 100, 24, -15, TAPE_YELLOW)}
 
-      <!-- "SIGN UP!!" in huge messy mixed type -->
+      <!-- "DM ME!!" in huge messy mixed type -->
       <div style="position:absolute;left:40px;top:1000px;z-index:20;">
         <div style="display:flex;align-items:baseline;flex-wrap:wrap;">
-          <span style="font-family:${SANS};font-size:100px;font-weight:900;color:${BLACK};transform:rotate(-2deg);display:inline-block;">SIGN</span>
-          <span style="font-family:${SERIF};font-size:110px;font-weight:900;color:${PINK};font-style:italic;transform:rotate(3deg);display:inline-block;margin-left:16px;">UP</span>
+          <span style="font-family:${SANS};font-size:100px;font-weight:900;color:${BLACK};transform:rotate(-2deg);display:inline-block;">DM</span>
+          <span style="font-family:${SERIF};font-size:110px;font-weight:900;color:${PINK};font-style:italic;transform:rotate(3deg);display:inline-block;margin-left:16px;">ME</span>
           <span style="font-family:${MONO};font-size:90px;font-weight:700;color:${RED};transform:rotate(-4deg);display:inline-block;margin-left:8px;">!!</span>
         </div>
       </div>
@@ -435,11 +435,11 @@ function slideFour(images) {
 
       <!-- Subtext -->
       <div style="position:absolute;left:50px;top:1160px;z-index:20;">
-        <span style="font-family:${MONO};font-size:30px;color:${BLACK};background:${YELLOW};padding:4px 14px;display:inline-block;transform:rotate(1deg);">60-second form. I message you back.</span>
+        <span style="font-family:${MONO};font-size:30px;color:${BLACK};background:${YELLOW};padding:4px 14px;display:inline-block;transform:rotate(1deg);">@madebyaidan on Instagram</span>
       </div>
 
       <div style="position:absolute;left:50px;top:1230px;z-index:20;">
-        <span style="font-family:${SERIF};font-size:30px;color:${BLACK};font-style:italic;display:inline-block;transform:rotate(-0.5deg);">no experience needed. just sign up.</span>
+        <span style="font-family:${SERIF};font-size:30px;color:${BLACK};font-style:italic;display:inline-block;transform:rotate(-0.5deg);">dm if interested. no experience needed.</span>
       </div>
 
       <!-- Urgency sticker -->
