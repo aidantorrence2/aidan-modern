@@ -26,7 +26,7 @@ const selection = {
   hero: 'manila-gallery-canal-001.jpg',
   heroB: 'manila-gallery-closeup-001.jpg',
   gridA: 'manila-gallery-garden-002.jpg',
-  gridB: 'manila-gallery-graffiti-001.jpg',
+  gridB: 'manila-gallery-street-001.jpg',
   gridC: 'manila-gallery-urban-001.jpg',
   gridD: 'manila-gallery-night-003.jpg',
   gridE: 'manila-gallery-ivy-001.jpg',
@@ -122,18 +122,18 @@ function buildAnimatedZine(images) {
 
   // MANILA letters configuration
   const manilaLetters = [
-    { char: 'M', font: "'Helvetica Neue',sans-serif", size: 130, color: PINK, bg: 'transparent', rotation: -5, delay: 0.3 },
-    { char: 'A', font: "Georgia,serif", size: 110, color: BLACK, bg: 'transparent', rotation: 3, delay: 0.6, italic: true },
-    { char: 'N', font: "'Courier New',monospace", size: 120, color: CYAN, bg: BLACK, rotation: -2, delay: 0.9 },
-    { char: 'I', font: "'Helvetica Neue',sans-serif", size: 140, color: YELLOW, bg: 'transparent', rotation: 4, delay: 1.2, stroke: true },
-    { char: 'L', font: "Georgia,serif", size: 115, color: RED, bg: 'transparent', rotation: -3, delay: 1.5 },
-    { char: 'A', font: "'Courier New',monospace", size: 125, color: PINK, bg: YELLOW, rotation: 2, delay: 1.8 },
+    { char: 'M', font: "'Helvetica Neue',sans-serif", size: 130, color: PINK, bg: 'transparent', rotation: -5, delay: 0.3, advance: 0.78 },
+    { char: 'A', font: "Georgia,serif", size: 110, color: BLACK, bg: 'transparent', rotation: 3, delay: 0.6, italic: true, advance: 0.75 },
+    { char: 'N', font: "'Courier New',monospace", size: 120, color: CYAN, bg: BLACK, rotation: -2, delay: 0.9, advance: 0.72 },
+    { char: 'I', font: "'Helvetica Neue',sans-serif", size: 140, color: YELLOW, bg: 'transparent', rotation: 4, delay: 1.2, stroke: true, advance: 0.35 },
+    { char: 'L', font: "Georgia,serif", size: 115, color: RED, bg: 'transparent', rotation: -3, delay: 1.5, advance: 0.55 },
+    { char: 'A', font: "'Courier New',monospace", size: 125, color: PINK, bg: YELLOW, rotation: 2, delay: 1.8, advance: 0.75 },
   ]
 
   let manilaX = 80
   const manilaHTML = manilaLetters.map((l, i) => {
     const x = manilaX
-    manilaX += l.size * 0.8 + 10
+    manilaX += l.size * (l.advance || 0.8) + 8
     const bgStyle = l.bg !== 'transparent' ? `background:${l.bg};padding:4px 8px;` : ''
     const strokeStyle = l.stroke ? `-webkit-text-stroke:3px ${BLACK};color:${l.color};` : `color:${l.color};`
     const italicStyle = l.italic ? 'font-style:italic;' : ''
@@ -232,7 +232,7 @@ function buildAnimatedZine(images) {
     <div style="position:absolute;left:80px;top:1500px;z-index:25;opacity:0;animation:slideRotateIn 0.5s ease ${step1Delay}s forwards;">
       <span style="font-family:'Helvetica Neue',sans-serif;font-size:120px;font-weight:900;color:${PINK};line-height:1;">1</span>
       <div style="display:inline-block;margin-left:20px;vertical-align:middle;">
-        <span style="font-family:'Courier New',monospace;font-size:42px;font-weight:700;color:${BLACK};background:${YELLOW};padding:6px 16px;">sign up below</span>
+        <span style="font-family:'Courier New',monospace;font-size:42px;font-weight:700;color:${BLACK};background:${YELLOW};padding:6px 16px;">DM me on IG</span>
       </div>
     </div>
     <div style="opacity:0;animation:fadeIn 0.3s ease ${step1Delay + 0.3}s forwards;">
@@ -282,27 +282,30 @@ function buildAnimatedZine(images) {
     ${tapeStrip(200, 2190, 110, 30, 8, 'rgba(255,225,53,0.55)')}
     ${tapeStrip(720, 2200, 100, 28, -5, 'rgba(255,45,135,0.35)')}
 
-    <!-- PHOTO SHOOT in big mixed type -->
-    <div style="position:absolute;left:80px;top:2760px;z-index:25;opacity:0;animation:slideRotateIn 0.5s ease ${freeDelay + 1.8}s forwards;">
+    <!-- FREE PHOTO SHOOT in big mixed type -->
+    <div style="position:absolute;left:80px;top:2720px;z-index:25;opacity:0;animation:slideRotateIn 0.5s ease ${freeDelay + 1.8}s forwards;">
+      <span style="font-family:'Courier New',monospace;font-size:70px;font-weight:900;color:${CYAN};letter-spacing:6px;background:${BLACK};padding:4px 16px;">FREE</span>
+    </div>
+    <div style="position:absolute;left:80px;top:2810px;z-index:25;opacity:0;animation:slideRotateIn 0.5s ease ${freeDelay + 2.0}s forwards;">
       <span style="font-family:'Helvetica Neue',sans-serif;font-size:100px;font-weight:900;color:${PINK};letter-spacing:4px;">PHOTO</span>
     </div>
-    <div style="position:absolute;left:120px;top:2860px;z-index:25;opacity:0;animation:slideRotateIn 0.5s ease ${freeDelay + 2.2}s forwards;">
+    <div style="position:absolute;left:120px;top:2910px;z-index:25;opacity:0;animation:slideRotateIn 0.5s ease ${freeDelay + 2.3}s forwards;">
       <span style="font-family:Georgia,serif;font-size:95px;font-weight:900;font-style:italic;color:${BLACK};letter-spacing:2px;">SHOOT</span>
     </div>
 
-    <!-- Sign up copy -->
-    <div style="position:absolute;left:80px;top:2990px;z-index:25;opacity:0;animation:fadeIn 0.4s ease ${freeDelay + 2.6}s forwards;">
-      <span style="font-family:'Courier New',monospace;font-size:34px;color:${BLACK};background:${YELLOW};padding:6px 16px;">sign up below. it takes just a minute.</span>
+    <!-- DM me copy -->
+    <div style="position:absolute;left:80px;top:3040px;z-index:25;opacity:0;animation:fadeIn 0.4s ease ${freeDelay + 2.7}s forwards;">
+      <span style="font-family:'Courier New',monospace;font-size:38px;color:${BLACK};background:${YELLOW};padding:6px 16px;">dm me if you're interested!!</span>
     </div>
 
     <!-- Urgency starburst -->
-    <div style="opacity:0;transform:scale(0);animation:stickerPop 0.4s cubic-bezier(0.34,1.56,0.64,1) ${freeDelay + 3.2}s forwards;position:absolute;left:700px;top:2950px;">
+    <div style="opacity:0;transform:scale(0);animation:stickerPop 0.4s cubic-bezier(0.34,1.56,0.64,1) ${freeDelay + 3.2}s forwards;position:absolute;left:700px;top:3000px;">
       ${starBurst(0, 0, 180, RED, 'LIMITED<br>SPOTS', '#fff', 20)}
     </div>
 
     <!-- @handle -->
-    <div style="position:absolute;left:80px;top:3140px;z-index:25;opacity:0;animation:fadeIn 0.4s ease ${freeDelay + 3.4}s forwards;">
-      <span style="font-family:'Courier New',monospace;font-size:30px;color:${BLACK};">@${HANDLE}</span>
+    <div style="position:absolute;left:80px;top:3200px;z-index:25;opacity:0;animation:fadeIn 0.4s ease ${freeDelay + 3.4}s forwards;">
+      <span style="font-family:'Courier New',monospace;font-size:36px;color:${BLACK};">@${HANDLE}</span>
     </div>
 
     <!-- Arrow pointing down -->
