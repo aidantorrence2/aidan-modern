@@ -39,7 +39,7 @@ const DM_REPLIES = [
   { name: 'ria.diaz',    color: '#9B56E0', text: 'how do I sign up' },
   { name: 'andy.torres', color: '#E07856', text: 'your story is insane rn' },
   { name: 'bea.cruz',    color: '#56E0D8', text: "photographer's @ plsss" },
-  { name: 'nicole.mnl',  color: '#E05668', text: 'booking mine NOW' },
+  { name: 'nicole.mnl',  color: '#E05668', text: 'can I get his @??' },
 ]
 
 function resetOutputDir() {
@@ -682,11 +682,11 @@ function buildHTML(imageDataMap) {
 
           <!-- Back-and-forth conversation -->
           <div class="msg-row sent" id="tRecv1" style="opacity:0;">
-            <div class="bubble sent"><p>hey thanks!! those are mine 📸</p></div>
+            <div class="bubble sent"><p>his name is @madebyaidan on IG 📸</p></div>
           </div>
 
           <div class="msg-row recv" id="tSent1" style="opacity:0;">
-            <div class="bubble recv"><p>wait really?? how much did it cost</p></div>
+            <div class="bubble recv"><p>wait how much did it cost</p></div>
           </div>
 
           <div class="msg-row sent" id="tRecv2" style="opacity:0;">
