@@ -35,6 +35,8 @@ async function main() {
       });
       document.querySelectorAll('.pop').forEach(el => el.classList.remove('pop'));
       document.querySelectorAll('.dim').forEach(el => el.classList.remove('dim'));
+      const dd = document.getElementById('dotDot');
+      if (dd) { dd.style.opacity = '0'; dd.style.transform = 'scale(0)'; }
 
       // Reset positions
       const sw = document.getElementById('scooterWrap');
