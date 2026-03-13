@@ -82,8 +82,10 @@ function buildHTML(imageDataMap) {
       <div id="content" style="font-family:${MONO};"></div>
     </div>
 
-    <!-- Photo data for JS injection -->
-    <script id="photo-data" type="application/json">${JSON.stringify(PROOF_PHOTOS.map(p => imageDataMap[p]))}</script>
+    <!-- Pre-rendered photo grid (hidden, will be moved into terminal flow by JS) -->
+    <div id="photo-grid-source" style="display:none;">
+      ${PROOF_PHOTOS.map((p, i) => `<div id="photo-${i}" style="border-radius:8px;overflow:hidden;aspect-ratio:3/4;border:2px solid #333;opacity:0;"><img src="${imageDataMap[p]}" style="width:100%;height:100%;object-fit:cover;display:block;"/></div>`).join('\n      ')}
+    </div>
 
   </div>
 
@@ -189,30 +191,29 @@ function buildHTML(imageDataMap) {
     addProgressBar(6400, 800)
     addLine('<span style="color:#22c55e;">✓ 8 images loaded</span>', 7400)
 
-    // Inject photo grid inline into terminal content
+    // Move pre-rendered photo grid into terminal content flow
     setTimeout(() => {
-      const photos = JSON.parse(document.getElementById('photo-data').textContent)
+      const source = document.getElementById('photo-grid-source')
       const grid = document.createElement('div')
       grid.id = 'photo-grid'
       grid.style.cssText = 'display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:10px 0;'
-      photos.forEach((src, i) => {
-        const cell = document.createElement('div')
-        cell.id = 'photo-' + i
-        cell.style.cssText = 'border-radius:8px;overflow:hidden;aspect-ratio:3/4;border:2px solid #333;opacity:0;'
-        cell.innerHTML = '<img src="' + src + '" style="width:100%;height:100%;object-fit:cover;display:block;"/>'
-        grid.appendChild(cell)
-      })
+      // Move each photo cell from hidden source into the grid
+      while (source.firstChild) {
+        grid.appendChild(source.firstChild)
+      }
       content.appendChild(grid)
       scrollToBottom()
 
       // Animate each photo in with stagger
-      photos.forEach((_, i) => {
-        setTimeout(() => {
-          const el = document.getElementById('photo-' + i)
-          if (el) el.style.animation = 'photoIn 0.4s ease-out forwards'
-          scrollToBottom()
-        }, 100 + i * 200)
-      })
+      for (let i = 0; i < 8; i++) {
+        (function(idx) {
+          setTimeout(() => {
+            const el = document.getElementById('photo-' + idx)
+            if (el) el.style.animation = 'photoIn 0.4s ease-out forwards'
+            scrollToBottom()
+          }, 100 + idx * 200)
+        })(i)
+      }
     }, 7600)
 
     addLine('<span style="color:#555;">  all shoots by @madebyaidan</span>', 9200)
