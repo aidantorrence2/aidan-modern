@@ -575,6 +575,74 @@ const CSS = `
     z-index: 100;
     transition: width 0.4s ease;
   }
+
+  /* ========== MOBILE: stack vertically ========== */
+  @media (max-width: 768px) {
+    .v10-nav { padding: 16px 20px; }
+    .v10-nav-links { gap: 20px; }
+    .v10-scroll-indicator { display: none; }
+    .v10-counter { right: 20px; bottom: 20px; }
+
+    .v10-slide {
+      flex-direction: column;
+    }
+
+    .v10-slide-left {
+      width: 100%;
+      height: 55%;
+    }
+
+    .v10-slide-left::after {
+      display: none;
+    }
+
+    .v10-slide-right {
+      width: 100%;
+      height: 45%;
+      padding: 24px 28px 40px;
+      justify-content: flex-start;
+    }
+
+    .v10-slide-right::before {
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent 10%, rgba(255,255,255,0.06) 50%, transparent 90%);
+    }
+
+    .v10-frame-num {
+      font-size: 72px;
+      top: auto;
+      bottom: 8px;
+      right: 20px;
+    }
+
+    .v10-subject-name {
+      font-size: 28px;
+      margin-bottom: 8px;
+    }
+
+    .v10-subject-city {
+      font-size: 11px;
+      margin-bottom: 16px;
+    }
+
+    .v10-separator { margin-bottom: 16px; }
+
+    .v10-slide-desc { font-size: 12px; }
+
+    .v10-monogram {
+      bottom: 20px;
+      left: 28px;
+    }
+
+    .v10-cta {
+      padding: 40px 24px;
+    }
+
+    .v10-hero-title {
+      font-size: clamp(32px, 10vw, 48px);
+    }
+  }
 `;
 
 export default function V10SplitScreenStoryteller() {
