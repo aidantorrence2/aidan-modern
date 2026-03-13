@@ -357,55 +357,52 @@ export default function JourneyTimeline() {
           margin-left: 7px;
         }
 
-        /* Footer CTA */
+        /* Footer contact form */
         .jt-footer {
           position: relative;
           display: flex;
           flex-direction: column;
           align-items: center;
-          justify-content: center;
-          height: ${FOOTER_HEIGHT}px;
+          padding: 60px 24px 80px;
           z-index: 5;
         }
-        .jt-footer h2 {
-          font-family: 'Helvetica Neue', sans-serif;
-          font-size: 28px;
-          font-weight: 200;
-          letter-spacing: 8px;
+        .jt-footer input,
+        .jt-footer textarea {
+          width: 100%;
+          max-width: 400px;
+          padding: 14px 16px;
+          background: rgba(255,255,255,0.06);
+          border: 1px solid rgba(255,255,255,0.12);
+          border-radius: 8px;
           color: #fff;
-          text-transform: uppercase;
-          margin: 0 0 12px 0;
-          text-align: center;
+          font-size: 16px;
+          font-family: inherit;
+          outline: none;
+          margin-bottom: 12px;
+          transition: border-color 0.2s;
         }
-        .jt-footer p {
-          font-family: 'Helvetica Neue', sans-serif;
-          font-size: 14px;
-          font-weight: 300;
-          letter-spacing: 3px;
-          color: rgba(255,255,255,0.4);
-          margin: 0 0 40px 0;
-          text-align: center;
+        .jt-footer input:focus,
+        .jt-footer textarea:focus {
+          border-color: rgba(255,255,255,0.35);
         }
-        .jt-cta-btn {
-          display: inline-block;
-          padding: 16px 48px;
-          border: 1px solid rgba(200,170,130,0.4);
-          color: rgba(200,170,130,0.9);
-          font-family: 'Helvetica Neue', sans-serif;
-          font-size: 13px;
-          font-weight: 400;
-          letter-spacing: 4px;
-          text-transform: uppercase;
-          text-decoration: none;
+        .jt-footer textarea {
+          min-height: 100px;
+          resize: vertical;
+        }
+        .jt-submit {
+          width: 100%;
+          max-width: 400px;
+          padding: 16px;
+          background: #fff;
+          color: #0c0c0c;
+          border: none;
+          border-radius: 8px;
+          font-size: 16px;
+          font-weight: 600;
           cursor: pointer;
-          background: transparent;
-          transition: all 0.4s ease;
+          transition: opacity 0.2s;
         }
-        .jt-cta-btn:hover {
-          background: rgba(200,170,130,0.1);
-          border-color: rgba(200,170,130,0.7);
-          box-shadow: 0 0 30px rgba(200,170,130,0.15);
-        }
+        .jt-submit:hover { opacity: 0.85; }
         .jt-footer-end-dot {
           width: 8px;
           height: 8px;
@@ -574,12 +571,37 @@ export default function JourneyTimeline() {
           );
         })}
 
-        {/* Footer CTA */}
-        <div className="jt-footer">
+        {/* Contact form */}
+        <div className="jt-footer" id="inquiry">
           <div className="jt-footer-end-dot" />
-          <h2>Your Story Next</h2>
-          <p>Let&rsquo;s create something timeless together</p>
-          <a className="jt-cta-btn" href="/book">Book a Shoot</a>
+          <h3 style={{
+            color: '#fff', fontSize: '22px', fontWeight: 300,
+            letterSpacing: '0.06em', marginBottom: '24px',
+            fontFamily: 'Georgia, serif',
+          }}>
+            Get in Touch
+          </h3>
+          <form
+            onSubmit={(e) => {
+              e.preventDefault();
+              window.location.href = 'mailto:aidan@aidantorrence.com';
+            }}
+            style={{ width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center' }}
+          >
+            <input type="text" placeholder="Name" required />
+            <input type="email" placeholder="Email" required />
+            <input type="text" placeholder="Instagram" />
+            <textarea placeholder="Tell me about your project..." />
+            <button type="submit" className="jt-submit">Send Inquiry</button>
+          </form>
+          <div style={{ marginTop: '36px', textAlign: 'center' }}>
+            <p style={{ color: 'rgba(255,255,255,0.4)', fontSize: '13px', margin: '4px 0', fontFamily: 'system-ui, sans-serif' }}>
+              aidan@aidantorrence.com
+            </p>
+            <p style={{ color: 'rgba(255,255,255,0.4)', fontSize: '13px', margin: '4px 0', fontFamily: 'system-ui, sans-serif' }}>
+              WhatsApp: +49 175 8966210 · @madebyaidan
+            </p>
+          </div>
         </div>
       </div>
 
