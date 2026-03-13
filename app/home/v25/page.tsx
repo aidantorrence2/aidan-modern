@@ -60,10 +60,47 @@ export default function JourneyTimeline() {
     setVisibleNodes(newVisible);
   }, []);
 
+  const [autoScrollEnabled, setAutoScrollEnabled] = useState(true);
+  const autoScrollingRef = useRef(true);
+  const pausedByUserRef = useRef(false);
+  const userScrollTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const rafRef = useRef<number>(0);
+
   useEffect(() => {
+    const pauseForUser = () => {
+      if (autoScrollingRef.current) {
+        pausedByUserRef.current = true;
+        if (userScrollTimeoutRef.current) clearTimeout(userScrollTimeoutRef.current);
+        userScrollTimeoutRef.current = setTimeout(() => {
+          pausedByUserRef.current = false;
+        }, 5000);
+      }
+    };
+
+    const autoScroll = () => {
+      if (autoScrollingRef.current && !pausedByUserRef.current) {
+        const maxScroll = document.body.scrollHeight - window.innerHeight;
+        const el = document.documentElement;
+        if (el.scrollTop < maxScroll) {
+          el.scrollTop += 1;
+        }
+      }
+      rafRef.current = requestAnimationFrame(autoScroll);
+    };
+
     window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener('wheel', pauseForUser, { passive: true });
+    window.addEventListener('touchstart', pauseForUser, { passive: true });
     handleScroll();
-    return () => window.removeEventListener('scroll', handleScroll);
+    rafRef.current = requestAnimationFrame(autoScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('wheel', pauseForUser);
+      window.removeEventListener('touchstart', pauseForUser);
+      cancelAnimationFrame(rafRef.current);
+      if (userScrollTimeoutRef.current) clearTimeout(userScrollTimeoutRef.current);
+    };
   }, [handleScroll]);
 
   useEffect(() => {
@@ -211,32 +248,18 @@ export default function JourneyTimeline() {
           z-index: 5;
         }
 
-        /* Left side photo */
-        .jt-photo-left {
+        /* Centered photo */
+        .jt-photo-left, .jt-photo-right {
           position: absolute;
-          right: calc(50% + 60px);
+          left: 50%;
+          transform: translateX(-50%) translateY(30px);
           width: 380px;
           opacity: 0;
-          transform: translateX(-80px);
           transition: opacity 0.8s ease, transform 0.8s ease;
         }
-        .jt-photo-left.visible {
+        .jt-photo-left.visible, .jt-photo-right.visible {
           opacity: 1;
-          transform: translateX(0);
-        }
-
-        /* Right side photo */
-        .jt-photo-right {
-          position: absolute;
-          left: calc(50% + 60px);
-          width: 380px;
-          opacity: 0;
-          transform: translateX(80px);
-          transition: opacity 0.8s ease, transform 0.8s ease;
-        }
-        .jt-photo-right.visible {
-          opacity: 1;
-          transform: translateX(0);
+          transform: translateX(-50%) translateY(0);
         }
 
         /* Photo image wrapper */
@@ -266,8 +289,8 @@ export default function JourneyTimeline() {
           letter-spacing: 2px;
           color: rgba(255,255,255,0.5);
         }
-        .jt-photo-left .jt-photo-caption { text-align: right; }
-        .jt-photo-right .jt-photo-caption { text-align: left; }
+        .jt-photo-left .jt-photo-caption,
+        .jt-photo-right .jt-photo-caption { text-align: center; }
 
         /* Timeline node (center) */
         .jt-node {
@@ -451,16 +474,10 @@ export default function JourneyTimeline() {
 
         @media (max-width: 900px) {
           .jt-photo-left, .jt-photo-right {
-            width: 260px;
-          }
-          .jt-photo-left {
-            right: calc(50% + 40px);
-          }
-          .jt-photo-right {
-            left: calc(50% + 40px);
+            width: 280px;
           }
           .jt-connector-left, .jt-connector-right {
-            width: 40px;
+            display: none;
           }
           .jt-header h1 {
             font-size: 28px;
@@ -470,16 +487,10 @@ export default function JourneyTimeline() {
 
         @media (max-width: 640px) {
           .jt-photo-left, .jt-photo-right {
-            width: 160px;
-          }
-          .jt-photo-left {
-            right: calc(50% + 25px);
-          }
-          .jt-photo-right {
-            left: calc(50% + 25px);
+            width: min(260px, 65vw);
           }
           .jt-connector-left, .jt-connector-right {
-            width: 25px;
+            display: none;
           }
           .jt-header h1 {
             font-size: 20px;
