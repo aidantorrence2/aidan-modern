@@ -12,7 +12,7 @@ const images = [
   { src: 'manila-gallery-ivy-001.jpg', name: 'Ellie', city: 'Tokyo' },
   { src: 'manila-gallery-urban-001.jpg', name: 'Yana', city: 'Warsaw' },
   { src: 'manila-gallery-dsc-0130.jpg', name: 'Jill', city: 'Bali' },
-  { src: 'manila-gallery-shadow-001.jpg', name: 'Ella', city: 'Bali' },
+  { src: 'manila-gallery-shadow-001.jpg', name: 'Josephine', city: 'Bali' },
   { src: 'manila-gallery-tropical-001.jpg', name: 'Karima', city: 'Bali' },
   { src: 'manila-gallery-statue-001.jpg', name: 'Linda', city: 'Vienna' },
   { src: 'manila-gallery-night-002.jpg', name: 'Dorahan', city: 'HCMC' },
