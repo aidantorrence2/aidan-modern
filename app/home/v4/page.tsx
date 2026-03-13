@@ -279,9 +279,6 @@ export default function Page() {
   const photoPauseTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const lastVisibleIdxRef = useRef(-1);
   const rafRef = useRef<number>(0);
-  const isUserScrollingRef = useRef(false);
-  const lastScrollYRef = useRef(0);
-  const programmaticScrollRef = useRef(false);
 
   const toggleAutoScroll = useCallback(() => {
     setAutoScrollEnabled(prev => {
@@ -331,45 +328,30 @@ export default function Page() {
       if (el) observer.observe(el);
     });
 
-    // Scroll handler for cue hiding, end detection, and user scroll detection
+    // Scroll handler for cue hiding and end detection only
     const handleScroll = () => {
       if (window.scrollY > window.innerHeight * 0.5) {
         setShowCue(false);
       }
       const nearBottom = window.innerHeight + window.scrollY >= document.body.scrollHeight - 200;
       setAtEnd(nearBottom);
+    };
 
-      // Detect user-initiated scroll (not programmatic)
-      if (!programmaticScrollRef.current) {
-        // User scrolled manually - pause auto-scroll temporarily
-        if (autoScrollingRef.current) {
-          pausedByUserRef.current = true;
-          isPausedAtPhotoRef.current = false;
-          if (userScrollTimeoutRef.current) clearTimeout(userScrollTimeoutRef.current);
-          userScrollTimeoutRef.current = setTimeout(() => {
-            pausedByUserRef.current = false;
-          }, 5000);
-        }
+    // Detect user interaction via events that ONLY fire on real user input
+    const pauseForUser = () => {
+      if (autoScrollingRef.current) {
+        pausedByUserRef.current = true;
+        isPausedAtPhotoRef.current = false;
+        if (userScrollTimeoutRef.current) clearTimeout(userScrollTimeoutRef.current);
+        userScrollTimeoutRef.current = setTimeout(() => {
+          pausedByUserRef.current = false;
+        }, 5000);
       }
-      programmaticScrollRef.current = false;
-    };
-
-    // Use wheel/touch events to detect user-initiated scrolling
-    const handleWheel = () => {
-      isUserScrollingRef.current = true;
-    };
-    const handleTouchStart = () => {
-      isUserScrollingRef.current = true;
-    };
-    const handleTouchEnd = () => {
-      // Small delay to let the momentum scroll events fire
-      setTimeout(() => { isUserScrollingRef.current = false; }, 100);
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
-    window.addEventListener('wheel', handleWheel, { passive: true });
-    window.addEventListener('touchstart', handleTouchStart, { passive: true });
-    window.addEventListener('touchend', handleTouchEnd, { passive: true });
+    window.addEventListener('wheel', pauseForUser, { passive: true });
+    window.addEventListener('touchstart', pauseForUser, { passive: true });
 
     // Auto-scroll animation loop
     const autoScroll = () => {
@@ -380,8 +362,7 @@ export default function Page() {
       ) {
         const maxScroll = document.body.scrollHeight - window.innerHeight;
         if (window.scrollY < maxScroll) {
-          programmaticScrollRef.current = true;
-          window.scrollBy(0, 1);
+            window.scrollBy(0, 1);
         }
       }
       rafRef.current = requestAnimationFrame(autoScroll);
@@ -392,9 +373,8 @@ export default function Page() {
     return () => {
       observer.disconnect();
       window.removeEventListener('scroll', handleScroll);
-      window.removeEventListener('wheel', handleWheel);
-      window.removeEventListener('touchstart', handleTouchStart);
-      window.removeEventListener('touchend', handleTouchEnd);
+      window.removeEventListener('wheel', pauseForUser);
+      window.removeEventListener('touchstart', pauseForUser);
       cancelAnimationFrame(rafRef.current);
       if (userScrollTimeoutRef.current) clearTimeout(userScrollTimeoutRef.current);
       if (photoPauseTimeoutRef.current) clearTimeout(photoPauseTimeoutRef.current);
