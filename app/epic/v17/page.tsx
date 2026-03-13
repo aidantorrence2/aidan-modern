@@ -3,31 +3,31 @@
 import React, { useEffect, useRef, useState } from 'react';
 
 const images = [
-  'manila-gallery-dsc-0075.jpg',
-  'manila-gallery-night-001.jpg',
-  'manila-gallery-garden-001.jpg',
-  'manila-gallery-street-001.jpg',
-  'manila-gallery-closeup-001.jpg',
-  'manila-gallery-canal-001.jpg',
-  'manila-gallery-ivy-001.jpg',
-  'manila-gallery-urban-001.jpg',
-  'manila-gallery-dsc-0130.jpg',
-  'manila-gallery-shadow-001.jpg',
-  'manila-gallery-tropical-001.jpg',
-  'manila-gallery-statue-001.jpg',
-  'manila-gallery-night-002.jpg',
-  'manila-gallery-market-001.jpg',
-  'manila-gallery-park-001.jpg',
-  'manila-gallery-floor-001.jpg',
-  'manila-gallery-garden-002.jpg',
-  'manila-gallery-urban-002.jpg',
-  'manila-gallery-dsc-0190.jpg',
-  'manila-gallery-ivy-002.jpg',
-  'manila-gallery-canal-002.jpg',
-  'manila-gallery-night-003.jpg',
-  'manila-gallery-urban-003.jpg',
-  'manila-gallery-white-001.jpg',
-  'manila-gallery-dsc-0911.jpg',
+  { src: 'manila-gallery-dsc-0075.jpg', name: 'Rina', city: 'Makati' },
+  { src: 'manila-gallery-night-001.jpg', name: 'Jess', city: 'BGC' },
+  { src: 'manila-gallery-garden-001.jpg', name: 'Suki', city: 'Manila' },
+  { src: 'manila-gallery-street-001.jpg', name: 'Clara', city: 'Poblacion' },
+  { src: 'manila-gallery-closeup-001.jpg', name: 'Althea', city: 'Manila' },
+  { src: 'manila-gallery-canal-001.jpg', name: 'Ana', city: 'Escolta' },
+  { src: 'manila-gallery-ivy-001.jpg', name: 'Mei', city: 'Intramuros' },
+  { src: 'manila-gallery-urban-001.jpg', name: 'Ivy', city: 'Makati' },
+  { src: 'manila-gallery-dsc-0130.jpg', name: 'Lara', city: 'BGC' },
+  { src: 'manila-gallery-shadow-001.jpg', name: 'Lena', city: 'Manila' },
+  { src: 'manila-gallery-tropical-001.jpg', name: 'Kira', city: 'Intramuros' },
+  { src: 'manila-gallery-statue-001.jpg', name: 'Dani', city: 'Manila' },
+  { src: 'manila-gallery-night-002.jpg', name: 'Aya', city: 'Poblacion' },
+  { src: 'manila-gallery-market-001.jpg', name: 'Tala', city: 'Escolta' },
+  { src: 'manila-gallery-park-001.jpg', name: 'Nina', city: 'BGC' },
+  { src: 'manila-gallery-floor-001.jpg', name: 'Mia', city: 'Makati' },
+  { src: 'manila-gallery-garden-002.jpg', name: 'Rosa', city: 'Manila' },
+  { src: 'manila-gallery-urban-002.jpg', name: 'Jade', city: 'Poblacion' },
+  { src: 'manila-gallery-dsc-0190.jpg', name: 'Bea', city: 'Intramuros' },
+  { src: 'manila-gallery-ivy-002.jpg', name: 'Sol', city: 'Manila' },
+  { src: 'manila-gallery-canal-002.jpg', name: 'Pia', city: 'Escolta' },
+  { src: 'manila-gallery-night-003.jpg', name: 'Elle', city: 'BGC' },
+  { src: 'manila-gallery-urban-003.jpg', name: 'Kai', city: 'Makati' },
+  { src: 'manila-gallery-white-001.jpg', name: 'Yuki', city: 'Manila' },
+  { src: 'manila-gallery-dsc-0911.jpg', name: 'Isa', city: 'Poblacion' },
 ];
 
 const TOTAL = images.length;
@@ -40,6 +40,32 @@ const CSS = `
     padding: 0 !important;
     overflow-x: hidden !important;
   }
+
+  .v17-fixed-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 16px 20px;
+    pointer-events: none;
+  }
+
+  .v17-fixed-nav a {
+    pointer-events: auto;
+    color: rgba(255,255,255,0.6);
+    text-decoration: none;
+    font-family: system-ui, -apple-system, sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+
+  .v17-fixed-nav a:hover { color: #fff; }
 
   .v17-counter {
     position: fixed;
@@ -96,6 +122,7 @@ const CSS = `
   .v17-photo-section {
     min-height: 100vh;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     padding: 60px 16px;
@@ -105,7 +132,7 @@ const CSS = `
   .v17-photo-section img {
     width: 100%;
     max-width: 600px;
-    max-height: 85vh;
+    max-height: 80vh;
     object-fit: contain;
     display: block;
     border-radius: 2px;
@@ -117,6 +144,36 @@ const CSS = `
   .v17-photo-section img.v17-visible {
     opacity: 1;
     transform: translateY(0);
+  }
+
+  .v17-caption {
+    text-align: center;
+    margin-top: 12px;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.5s ease 0.3s, transform 0.5s ease 0.3s;
+  }
+
+  .v17-caption.v17-caption-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .v17-caption-name {
+    color: rgba(255,255,255,0.75);
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 16px;
+    margin: 0;
+    line-height: 1.3;
+  }
+
+  .v17-caption-city {
+    color: rgba(255,255,255,0.3);
+    font-family: system-ui, -apple-system, sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin: 3px 0 0;
   }
 
   .v17-hero {
@@ -133,7 +190,7 @@ const CSS = `
   .v17-hero img {
     width: 100%;
     max-width: 600px;
-    max-height: 70vh;
+    max-height: 65vh;
     object-fit: cover;
     border-radius: 2px;
   }
@@ -219,14 +276,17 @@ export default function V17Page() {
   const [current, setCurrent] = useState(1);
   const [showCue, setShowCue] = useState(true);
   const [bump, setBump] = useState(false);
-  const imgRefs = useRef<(HTMLImageElement | null)[]>([]);
+  const sectionRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add('v17-visible');
+            const img = entry.target.querySelector('img');
+            const caption = entry.target.querySelector('.v17-caption');
+            if (img) img.classList.add('v17-visible');
+            if (caption) caption.classList.add('v17-caption-visible');
             const idx = Number((entry.target as HTMLElement).dataset.idx);
             if (!isNaN(idx)) {
               setCurrent(idx + 1);
@@ -239,7 +299,7 @@ export default function V17Page() {
       { threshold: 0.4 }
     );
 
-    imgRefs.current.forEach((el) => {
+    sectionRefs.current.forEach((el) => {
       if (el) observer.observe(el);
     });
 
@@ -265,6 +325,28 @@ export default function V17Page() {
       {/* Progress bar */}
       <div className="v17-progress" style={{ width: `${progress}%` }} />
 
+      {/* Fixed nav */}
+      <div className="v17-fixed-nav">
+        <a href="#inquiry">Inquire</a>
+        <div style={{ textAlign: 'right', pointerEvents: 'none' }}>
+          <p style={{
+            color: 'rgba(255,255,255,0.7)',
+            fontSize: '13px',
+            letterSpacing: '0.12em',
+            margin: 0,
+            fontFamily: 'Georgia, serif',
+          }}>Aidan Torrence</p>
+          <p style={{
+            color: 'rgba(255,255,255,0.35)',
+            fontSize: '10px',
+            letterSpacing: '0.25em',
+            textTransform: 'uppercase',
+            margin: '2px 0 0',
+            fontFamily: 'system-ui, sans-serif',
+          }}>Film Photographer</p>
+        </div>
+      </div>
+
       {/* Counter */}
       <div className={`v17-counter${bump ? ' v17-bump' : ''}`}>
         {current} / {TOTAL}
@@ -273,15 +355,13 @@ export default function V17Page() {
       {/* Scroll cue */}
       {showCue && (
         <div className="v17-scroll-cue">
-          <span
-            style={{
-              color: 'rgba(255,255,255,0.7)',
-              fontSize: '12px',
-              letterSpacing: '0.2em',
-              textTransform: 'uppercase',
-              fontFamily: 'system-ui, sans-serif',
-            }}
-          >
+          <span style={{
+            color: 'rgba(255,255,255,0.7)',
+            fontSize: '12px',
+            letterSpacing: '0.2em',
+            textTransform: 'uppercase',
+            fontFamily: 'system-ui, sans-serif',
+          }}>
             scroll
           </span>
           <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="rgba(255,255,255,0.7)" strokeWidth="2" strokeLinecap="round">
@@ -291,51 +371,39 @@ export default function V17Page() {
       )}
 
       {/* Hero */}
-      <div className="v17-hero">
-        <h1
-          style={{
-            color: '#fff',
-            fontSize: '36px',
-            fontWeight: 300,
-            letterSpacing: '0.12em',
-            textTransform: 'uppercase',
-            margin: '0 0 4px',
-            fontFamily: 'system-ui, -apple-system, sans-serif',
-          }}
-        >
-          Aidan Torrence
-        </h1>
-        <p
-          style={{
-            color: 'rgba(255,255,255,0.5)',
-            fontSize: '13px',
-            letterSpacing: '0.25em',
-            textTransform: 'uppercase',
-            marginBottom: '28px',
-            fontFamily: 'system-ui, sans-serif',
-          }}
-        >
-          {TOTAL} Photos &middot; Film &middot; Fashion &middot; Editorial
-        </p>
+      <div
+        className="v17-hero"
+        data-idx="0"
+        ref={(el) => { sectionRefs.current[0] = el; }}
+      >
         <img
-          ref={(el) => { imgRefs.current[0] = el; }}
-          data-idx="0"
-          src={`/images/large/${images[0]}`}
-          alt="Portfolio photo 1"
+          src={`/images/large/${images[0].src}`}
+          alt={`${images[0].name} in ${images[0].city}`}
           className="v17-visible"
         />
+        <div className="v17-caption v17-caption-visible" style={{ marginTop: 12 }}>
+          <p className="v17-caption-name">{images[0].name}</p>
+          <p className="v17-caption-city">{images[0].city}</p>
+        </div>
       </div>
 
       {/* Photo sections */}
       {images.slice(1).map((img, i) => (
-        <div className="v17-photo-section" key={img}>
+        <div
+          className="v17-photo-section"
+          key={img.src}
+          data-idx={i + 1}
+          ref={(el) => { sectionRefs.current[i + 1] = el; }}
+        >
           <img
-            ref={(el) => { imgRefs.current[i + 1] = el; }}
-            data-idx={i + 1}
-            src={`/images/large/${img}`}
-            alt={`Portfolio photo ${i + 2}`}
+            src={`/images/large/${img.src}`}
+            alt={`${img.name} in ${img.city}`}
             loading="lazy"
           />
+          <div className="v17-caption">
+            <p className="v17-caption-name">{img.name}</p>
+            <p className="v17-caption-city">{img.city}</p>
+          </div>
         </div>
       ))}
 
@@ -346,41 +414,28 @@ export default function V17Page() {
             <path d="M5 12l5 5L20 7" />
           </svg>
         </div>
-        <h2
-          style={{
-            color: '#fff',
-            fontSize: '24px',
-            fontWeight: 300,
-            letterSpacing: '0.06em',
-            margin: '0 0 8px',
-            fontFamily: 'system-ui, sans-serif',
-          }}
-        >
+        <h2 style={{
+          color: '#fff', fontSize: '24px', fontWeight: 300,
+          letterSpacing: '0.06em', margin: '0 0 8px',
+          fontFamily: 'Georgia, serif',
+        }}>
           You&apos;ve seen everything
         </h2>
-        <p
-          style={{
-            color: 'rgba(255,255,255,0.4)',
-            fontSize: '14px',
-            fontFamily: 'system-ui, sans-serif',
-          }}
-        >
+        <p style={{
+          color: 'rgba(255,255,255,0.4)', fontSize: '14px',
+          fontFamily: 'system-ui, sans-serif',
+        }}>
           Like what you see? Let&apos;s create something together.
         </p>
       </div>
 
       {/* CTA */}
-      <div className="v17-cta-section">
-        <h3
-          style={{
-            color: '#fff',
-            fontSize: '22px',
-            fontWeight: 300,
-            letterSpacing: '0.06em',
-            marginBottom: '24px',
-            fontFamily: 'system-ui, sans-serif',
-          }}
-        >
+      <div className="v17-cta-section" id="inquiry">
+        <h3 style={{
+          color: '#fff', fontSize: '22px', fontWeight: 300,
+          letterSpacing: '0.06em', marginBottom: '24px',
+          fontFamily: 'Georgia, serif',
+        }}>
           Get in Touch
         </h3>
         <form
@@ -392,20 +447,19 @@ export default function V17Page() {
         >
           <input type="text" placeholder="Name" required />
           <input type="email" placeholder="Email" required />
+          <input type="text" placeholder="Instagram" />
           <textarea placeholder="Tell me about your project..." />
-          <button type="submit" className="v17-submit">
-            Send Inquiry
-          </button>
+          <button type="submit" className="v17-submit">Send Inquiry</button>
         </form>
         <div style={{ marginTop: '36px', textAlign: 'center' }}>
           <p style={{ color: 'rgba(255,255,255,0.4)', fontSize: '13px', margin: '4px 0', fontFamily: 'system-ui, sans-serif' }}>
-            aidan@aidantorrence.com &middot; WhatsApp: +49 175 8966210
+            aidan@aidantorrence.com
           </p>
           <p style={{ color: 'rgba(255,255,255,0.4)', fontSize: '13px', margin: '4px 0', fontFamily: 'system-ui, sans-serif' }}>
-            @aidantorrence &middot; Based between Bangkok &amp; Europe
+            WhatsApp: +49 175 8966210 · @aidantorrence
           </p>
           <p style={{ color: 'rgba(255,255,255,0.25)', fontSize: '11px', marginTop: '16px', fontFamily: 'system-ui, sans-serif' }}>
-            Featured in Vogue Italia &middot; Hypebeast &middot; WWD
+            Featured in Vogue Italia · Hypebeast · WWD
           </p>
         </div>
       </div>
