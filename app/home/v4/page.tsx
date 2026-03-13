@@ -290,7 +290,6 @@ export default function Page() {
   const isPausedAtPhotoRef = useRef(false);
   const photoPauseTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const lastVisibleIdxRef = useRef(-1);
-  const rafRef = useRef<number>(0);
 
   const toggleAutoScroll = useCallback(() => {
     setAutoScrollEnabled(prev => {
@@ -368,30 +367,37 @@ export default function Page() {
     container.addEventListener('wheel', pauseForUser, { passive: true });
     container.addEventListener('touchstart', pauseForUser, { passive: true });
 
-    // Auto-scroll loop — scrolls the container element directly
-    // No fixed/sticky elements inside the scroll container, so no Chrome warnings
-    const autoScroll = () => {
-      if (
-        autoScrollingRef.current &&
-        !pausedByUserRef.current &&
-        !isPausedAtPhotoRef.current
-      ) {
-        const maxScroll = container.scrollHeight - container.clientHeight;
-        if (container.scrollTop < maxScroll) {
-          container.scrollTop += 1;
-        }
+    // Auto-advance: scroll directly to next photo section every few seconds
+    const autoAdvanceRef = { current: null as ReturnType<typeof setTimeout> | null };
+    const currentAutoIdx = { current: 0 };
+
+    const scrollToNextPhoto = () => {
+      if (!autoScrollingRef.current || pausedByUserRef.current) {
+        autoAdvanceRef.current = setTimeout(scrollToNextPhoto, 1000);
+        return;
       }
-      rafRef.current = requestAnimationFrame(autoScroll);
+      currentAutoIdx.current++;
+      const nextSection = sectionRefs.current[currentAutoIdx.current];
+      if (nextSection) {
+        nextSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        // Wait for scroll + viewing time before advancing
+        autoAdvanceRef.current = setTimeout(scrollToNextPhoto, 3000);
+      }
     };
 
-    rafRef.current = requestAnimationFrame(autoScroll);
+    // Start auto-advance after initial delay
+    autoAdvanceRef.current = setTimeout(scrollToNextPhoto, 2500);
+
+    const cleanupAutoAdvance = () => {
+      if (autoAdvanceRef.current) clearTimeout(autoAdvanceRef.current);
+    };
 
     return () => {
       observer.disconnect();
       container.removeEventListener('scroll', handleScroll);
       container.removeEventListener('wheel', pauseForUser);
       container.removeEventListener('touchstart', pauseForUser);
-      cancelAnimationFrame(rafRef.current);
+      cleanupAutoAdvance();
       if (userScrollTimeoutRef.current) clearTimeout(userScrollTimeoutRef.current);
       if (photoPauseTimeoutRef.current) clearTimeout(photoPauseTimeoutRef.current);
     };
