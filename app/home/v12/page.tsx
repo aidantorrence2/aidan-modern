@@ -278,7 +278,7 @@ export default function DarkroomReveal() {
             marginBottom: '8px',
             textAlign: 'center',
           }} className="heroGlow">
-            Darkroom
+            Aidan Torrence
           </h1>
           <p style={{
             fontFamily: 'system-ui, -apple-system, sans-serif',
@@ -289,7 +289,7 @@ export default function DarkroomReveal() {
             fontWeight: 300,
             marginBottom: '0',
           }}>
-            Scroll to develop
+            Film Photographer
           </p>
         </section>
 
