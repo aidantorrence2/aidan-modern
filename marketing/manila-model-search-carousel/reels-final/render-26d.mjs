@@ -79,12 +79,12 @@ function buildHTML(imageDataMap) {
 
     <!-- Single scrolling terminal -->
     <div id="terminal" style="position:absolute;top:${SAFE_TOP + 60}px;left:${SAFE_LEFT}px;right:${WIDTH - SAFE_RIGHT}px;bottom:${SAFE_BOTTOM + 20}px;overflow:hidden;z-index:10;">
-      <div id="content" style="font-family:${MONO};"></div>
-    </div>
-
-    <!-- Pre-rendered photo grid (hidden, will be moved into terminal flow by JS) -->
-    <div id="photo-grid-source" style="display:none;">
-      ${PROOF_PHOTOS.map((p, i) => `<div id="photo-${i}" style="border-radius:8px;overflow:hidden;aspect-ratio:3/4;border:2px solid #333;opacity:0;"><img src="${imageDataMap[p]}" style="width:100%;height:100%;object-fit:cover;display:block;"/></div>`).join('\n      ')}
+      <div id="content" style="font-family:${MONO};">
+        <!-- Photo grid lives here in the flow, starts hidden -->
+        <div id="photo-grid" style="display:none;grid-template-columns:1fr 1fr;gap:10px;padding:10px 0;">
+          ${PROOF_PHOTOS.map((p, i) => `<div id="photo-${i}" style="border-radius:8px;overflow:hidden;border:2px solid #333;opacity:0;"><img src="${imageDataMap[p]}" style="width:100%;height:auto;display:block;"/></div>`).join('\n          ')}
+        </div>
+      </div>
     </div>
 
   </div>
@@ -191,17 +191,12 @@ function buildHTML(imageDataMap) {
     addProgressBar(6400, 800)
     addLine('<span style="color:#22c55e;">✓ 8 images loaded</span>', 7400)
 
-    // Move pre-rendered photo grid into terminal content flow
+    // Reveal the photo grid (it's already in the content flow, just hidden)
     setTimeout(() => {
-      const source = document.getElementById('photo-grid-source')
-      const grid = document.createElement('div')
-      grid.id = 'photo-grid'
-      grid.style.cssText = 'display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:10px 0;'
-      // Move each photo cell from hidden source into the grid
-      while (source.firstChild) {
-        grid.appendChild(source.firstChild)
-      }
+      const grid = document.getElementById('photo-grid')
+      // Move grid to end of content (after all the typed lines)
       content.appendChild(grid)
+      grid.style.display = 'grid'
       scrollToBottom()
 
       // Animate each photo in with stagger
