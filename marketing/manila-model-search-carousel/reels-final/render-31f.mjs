@@ -212,7 +212,7 @@ function buildHTML(imageDataMap) {
   var stepHTML = ''
 
   steps.forEach(function(step, i) {
-    var landY = 350 + i * 160
+    var landY = 320 + i * 200
 
     stepCSS += '\n' +
       '@keyframes stepFall' + i + ' {\n' +
@@ -240,7 +240,7 @@ function buildHTML(imageDataMap) {
       '  left: 0;\n' +
       '  right: 0;\n' +
       '  top: ' + landY + 'px;\n' +
-      '  height: 120px;\n' +
+      '  height: 100px;\n' +
       '  z-index: 4;\n' +
       '  pointer-events: none;\n' +
       '  animation: stepFlash' + i + ' 0.7s ease-out ' + step.delay + 's forwards;\n' +
@@ -252,7 +252,7 @@ function buildHTML(imageDataMap) {
     for (var ci = 0; ci < chars.length; ci++) {
       var ch = chars[ci]
       var chDisplay = ch === ' ' ? '&nbsp;' : ch
-      charBlocks += '<div style="width:60px;height:70px;' + bevelStyle(step.color) + 'display:flex;align-items:center;justify-content:center;font-family:' + MONO + ';font-size:36px;font-weight:900;color:#fff;text-shadow:2px 2px 0 rgba(0,0,0,0.6);">' + chDisplay + '</div>'
+      charBlocks += '<div style="width:80px;height:90px;' + bevelStyle(step.color) + 'display:flex;align-items:center;justify-content:center;font-family:' + MONO + ';font-size:48px;font-weight:900;color:#fff;text-shadow:3px 3px 0 rgba(0,0,0,0.7);">' + chDisplay + '</div>'
     }
 
     stepHTML += '\n' +
@@ -578,7 +578,7 @@ photoHTML + '\n' +
 '    <!-- ========== SCENE 3: STEPS AS FALLING PIECES (16-21s) ========== -->\n' +
 '    <div id="scene3" style="position:absolute;left:' + GRID_LEFT + 'px;top:' + GRID_TOP + 'px;width:' + GRID_W + 'px;height:' + GRID_H + 'px;z-index:10;">\n' +
 '      <div style="position:absolute;top:120px;left:0;right:0;text-align:center;">\n' +
-'        <div style="font-size:20px;color:rgba(255,255,255,0.3);letter-spacing:6px;opacity:0;animation:fadeIn 0.4s ease-out 16.3s forwards;">HOW IT WORKS</div>\n' +
+'        <div style="font-size:42px;font-weight:900;color:rgba(255,255,255,0.5);letter-spacing:8px;opacity:0;animation:fadeIn 0.4s ease-out 16.3s forwards;text-shadow:0 0 15px rgba(0,240,240,0.4);">HOW IT WORKS</div>\n' +
 '      </div>\n' +
 stepHTML + '\n' +
 '    </div>\n' +
