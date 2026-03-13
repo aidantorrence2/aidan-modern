@@ -224,48 +224,6 @@ export default function VerticalWaveGallery() {
         }
       `}} />
 
-      {/* Fixed nav */}
-      <nav style={{
-        position: 'fixed',
-        top: 0,
-        left: 0,
-        right: 0,
-        zIndex: 1000,
-        display: 'flex',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        padding: '20px 24px',
-        background: 'linear-gradient(to bottom, rgba(12,12,12,0.95) 0%, rgba(12,12,12,0.7) 60%, transparent 100%)',
-      }}>
-        <div style={{
-          fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif",
-          fontSize: 11,
-          letterSpacing: 4,
-          color: 'rgba(255,255,255,0.7)',
-          textTransform: 'uppercase',
-        }}>
-          Aidan Torrence
-        </div>
-        <div style={{ display: 'flex', gap: 24 }}>
-          {['Portfolio', 'About', 'Contact'].map((item) => (
-            <a key={item} href="#" style={{
-              fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif",
-              fontSize: 10,
-              letterSpacing: 3,
-              color: 'rgba(255,255,255,0.4)',
-              textDecoration: 'none',
-              textTransform: 'uppercase',
-              transition: 'color 0.3s',
-            }}
-            onMouseEnter={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.8)')}
-            onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.4)')}
-            >
-              {item}
-            </a>
-          ))}
-        </div>
-      </nav>
-
       {/* Hero title section */}
       <div style={{
         height: HERO_HEIGHT,
@@ -299,7 +257,7 @@ export default function VerticalWaveGallery() {
           textTransform: 'uppercase',
           marginTop: 20,
         }}>
-          Photographer &mdash; Worldwide
+          Film Photographer
         </p>
         <div style={{
           width: 60,
