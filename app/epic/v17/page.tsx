@@ -363,6 +363,20 @@ export default function V17Page() {
         </div>
       </div>
 
+      {/* Section title */}
+      <h2 style={{
+        color: 'rgba(255,255,255,0.5)',
+        fontSize: '11px',
+        letterSpacing: '0.3em',
+        textTransform: 'uppercase',
+        fontFamily: 'system-ui, -apple-system, sans-serif',
+        textAlign: 'center',
+        margin: '40px 0 10px',
+        fontWeight: 400,
+      }}>
+        Selected Works
+      </h2>
+
       {/* Photo sections */}
       {images.slice(1).map((img, i) => (
         <div
