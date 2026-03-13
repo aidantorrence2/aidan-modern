@@ -583,7 +583,7 @@ export default function MagneticMosaicPage() {
   const mosaicSectionRef = useRef<HTMLDivElement>(null);
   const quoteRef = useRef<HTMLDivElement>(null);
   const quoteLineRef = useRef<HTMLDivElement>(null);
-  const revealRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const revealRefs = useRef<(HTMLElement | null)[]>([]);
 
   /* Track mouse position */
   const handleMouseMove = useCallback((e: MouseEvent) => {
