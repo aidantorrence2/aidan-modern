@@ -241,25 +241,49 @@ export default function VerticalWaveGallery() {
           transform: translateY(0);
         }
 
-        .cta-btn {
-          display: inline-block;
-          padding: 18px 48px;
-          border: 1px solid rgba(255,200,120,0.6);
+        .v31-cta-section {
+          padding: 60px 24px 80px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+        .v31-cta-section input,
+        .v31-cta-section textarea {
+          width: 100%;
+          max-width: 400px;
+          padding: 14px 16px;
+          background: rgba(255,255,255,0.06);
+          border: 1px solid rgba(255,255,255,0.12);
+          border-radius: 8px;
           color: #fff;
-          font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-          font-size: 14px;
-          letter-spacing: 4px;
-          text-transform: uppercase;
-          text-decoration: none;
-          transition: all 0.4s ease;
-          background: transparent;
+          font-size: 16px;
+          font-family: inherit;
+          outline: none;
+          margin-bottom: 12px;
+          transition: border-color 0.2s;
+        }
+        .v31-cta-section input:focus,
+        .v31-cta-section textarea:focus {
+          border-color: rgba(255,255,255,0.35);
+        }
+        .v31-cta-section textarea {
+          min-height: 100px;
+          resize: vertical;
+        }
+        .v31-submit {
+          width: 100%;
+          max-width: 400px;
+          padding: 16px;
+          background: #fff;
+          color: #0c0c0c;
+          border: none;
+          border-radius: 8px;
+          font-size: 16px;
+          font-weight: 600;
           cursor: pointer;
+          transition: opacity 0.2s;
         }
-        .cta-btn:hover {
-          background: rgba(255,200,120,0.15);
-          border-color: rgba(255,200,120,1);
-          box-shadow: 0 0 30px rgba(255,200,120,0.2);
-        }
+        .v31-submit:hover { opacity: 0.85; }
 
         .v31-progress-track {
           position: fixed;
@@ -510,39 +534,36 @@ export default function VerticalWaveGallery() {
         })}
       </div>
 
-      {/* CTA section at the bottom */}
-      <div style={{
-        height: CTA_HEIGHT,
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        alignItems: 'center',
-        textAlign: 'center',
-        padding: '0 24px',
-      }}>
-        <p style={{
-          fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif",
-          fontSize: 'clamp(22px, 5vw, 28px)',
-          fontWeight: 200,
-          color: '#fff',
-          letterSpacing: 6,
-          textTransform: 'uppercase',
-          margin: '0 0 12px 0',
+      {/* Contact form */}
+      <div className="v31-cta-section" id="inquiry">
+        <h3 style={{
+          color: '#fff', fontSize: '22px', fontWeight: 300,
+          letterSpacing: '0.06em', marginBottom: '24px',
+          fontFamily: 'Georgia, serif',
         }}>
-          Let&apos;s Create Together
-        </p>
-        <p style={{
-          fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif",
-          fontSize: 13,
-          color: 'rgba(255,255,255,0.35)',
-          letterSpacing: 2,
-          margin: '0 0 36px 0',
-        }}>
-          Available for shoots worldwide
-        </p>
-        <a href="/book" className="cta-btn">
-          Book a Session
-        </a>
+          Get in Touch
+        </h3>
+        <form
+          onSubmit={(e) => {
+            e.preventDefault();
+            window.location.href = 'mailto:aidan@aidantorrence.com';
+          }}
+          style={{ width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center' }}
+        >
+          <input type="text" placeholder="Name" required />
+          <input type="email" placeholder="Email" required />
+          <input type="text" placeholder="Instagram" />
+          <textarea placeholder="Tell me about your project..." />
+          <button type="submit" className="v31-submit">Send Inquiry</button>
+        </form>
+        <div style={{ marginTop: '36px', textAlign: 'center' }}>
+          <p style={{ color: 'rgba(255,255,255,0.4)', fontSize: '13px', margin: '4px 0', fontFamily: 'system-ui, sans-serif' }}>
+            aidan@aidantorrence.com
+          </p>
+          <p style={{ color: 'rgba(255,255,255,0.4)', fontSize: '13px', margin: '4px 0', fontFamily: 'system-ui, sans-serif' }}>
+            WhatsApp: +49 175 8966210 · @madebyaidan
+          </p>
+        </div>
       </div>
 
       {/* Vertical progress indicator (right side) */}
