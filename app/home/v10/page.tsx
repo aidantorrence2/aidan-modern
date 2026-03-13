@@ -15,7 +15,7 @@ const images = [
   { src: 'manila-gallery-shadow-001.jpg', name: 'Josephine', city: 'Bali' },
   { src: 'manila-gallery-tropical-001.jpg', name: 'Karima', city: 'Bali' },
   { src: 'manila-gallery-statue-001.jpg', name: 'Linda', city: 'Vienna' },
-  { src: 'manila-gallery-night-002.jpg', name: 'Dorahan', city: 'HCMC' },
+  { src: 'manila-gallery-night-002.jpg', name: 'Dorahan', city: 'Ho Chi Minh City' },
   { src: 'manila-gallery-market-001.jpg', name: 'Pharima', city: 'Bangkok' },
   { src: 'manila-gallery-park-001.jpg', name: 'Tess', city: 'Glasgow' },
   { src: 'manila-gallery-floor-001.jpg', name: 'Francisca', city: 'Cascais' },
@@ -24,10 +24,10 @@ const images = [
   { src: 'manila-gallery-dsc-0190.jpg', name: 'Dia', city: 'Bali' },
   { src: 'manila-gallery-ivy-002.jpg', name: 'Daniela', city: 'Rome' },
   { src: 'manila-gallery-canal-002.jpg', name: 'Greta', city: 'Venice' },
-  { src: 'manila-gallery-night-003.jpg', name: 'Dorahan', city: 'HCMC' },
+  { src: 'manila-gallery-night-003.jpg', name: 'Dorahan', city: 'Ho Chi Minh City' },
   { src: 'manila-gallery-urban-003.jpg', name: 'Yana', city: 'Warsaw' },
   { src: 'manila-gallery-white-001.jpg', name: 'Silvia', city: 'Milan' },
-  { src: 'manila-gallery-dsc-0911.jpg', name: 'Zarissa', city: 'KL' },
+  { src: 'manila-gallery-dsc-0911.jpg', name: 'Zarissa', city: 'Kuala Lumpur' },
 ];
 
 const totalSlides = images.length + 2; // hero + images + CTA
