@@ -64,10 +64,11 @@ export default function V20Page() {
     goToSlide((currentSlide - 1 + TOTAL_SLIDES) % TOTAL_SLIDES);
   }, [currentSlide, goToSlide]);
 
-  // Auto-advance timer
+  // Auto-advance timer — title slide is 250ms, rest are normal
   useEffect(() => {
     if (isPaused || currentSlide === TOTAL_SLIDES - 1) return; // pause on CTA
-    timerRef.current = setTimeout(advance, AUTO_ADVANCE_MS);
+    const delay = currentSlide === 0 ? 250 : AUTO_ADVANCE_MS;
+    timerRef.current = setTimeout(advance, delay);
     return () => {
       if (timerRef.current) clearTimeout(timerRef.current);
     };
@@ -446,27 +447,8 @@ export default function V20Page() {
         <div className="v20-photo-wrap">
           {isTitle && (
             <div className="v20-title" key="title">
-              <div style={{
-                width: 'min(240px, 55vw)',
-                marginBottom: '24px',
-                border: '1px solid rgba(255, 240, 200, 0.12)',
-                padding: '6px',
-                background: 'rgba(255, 240, 200, 0.03)',
-              }}>
-                <img
-                  src={`/images/large/${images[0].src}`}
-                  alt={images[0].name}
-                  style={{
-                    width: '100%',
-                    height: 'auto',
-                    display: 'block',
-                    filter: 'sepia(0.3) brightness(0.85)',
-                  }}
-                  draggable={false}
-                />
-              </div>
               <h1>Aidan Torrence</h1>
-              <p>Photography</p>
+              <p>Film Photographer</p>
             </div>
           )}
 
@@ -517,6 +499,40 @@ export default function V20Page() {
             </div>
           )}
         </div>
+
+        {/* Persistent header on photo/CTA slides */}
+        {!isTitle && (
+          <div style={{
+            position: 'absolute',
+            top: 24,
+            left: 0,
+            right: 0,
+            textAlign: 'center',
+            zIndex: 10,
+            pointerEvents: 'none',
+          }}>
+            <div style={{
+              fontFamily: "'Courier New', monospace",
+              fontSize: 'clamp(12px, 2vw, 16px)',
+              fontWeight: 300,
+              letterSpacing: '6px',
+              color: 'rgba(255, 240, 200, 0.5)',
+              textTransform: 'uppercase',
+            }}>
+              Aidan Torrence
+            </div>
+            <div style={{
+              fontFamily: "'Courier New', monospace",
+              fontSize: '9px',
+              letterSpacing: '4px',
+              color: 'rgba(255, 240, 200, 0.25)',
+              textTransform: 'uppercase',
+              marginTop: '4px',
+            }}>
+              Film Photographer
+            </div>
+          </div>
+        )}
 
         {/* Photo caption */}
         {photo && (
