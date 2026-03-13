@@ -195,12 +195,14 @@
   .route-text {
     position: absolute;
     bottom: 25%;
-    font-size: 90px;
+    font-size: 72px;
     font-weight: 900;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.06em;
     text-shadow: 0 4px 40px rgba(0,0,0,0.4);
     transform: scale(0);
     opacity: 0;
+    text-align: center;
+    padding: 0 40px;
   }
   .route-text.pop { transform: scale(1); opacity: 1; }
 
@@ -331,7 +333,7 @@
       <div class="star"></div>
     </div>
     <div class="time-text" id="timeText">5:00 AM</div>
-    <div class="loc-text" id="locText">UNGASAN, BALI</div>
+    <div class="loc-text" id="locText">BALI</div>
     <div class="road">
       <div class="road-line"></div><div class="road-line"></div>
       <div class="road-line"></div><div class="road-line"></div>
@@ -391,7 +393,7 @@
         <path d="M 340 72 Q 355 68, 360 73 Q 358 78, 348 78" fill="#3a5a9a"/>
       </svg>
     </div>
-    <div class="route-text" id="routeText">BALI → KL</div>
+    <div class="route-text" id="routeText">BALI → KUALA LUMPUR</div>
   </div>
 
   <!-- SCENE 6: Train -->
@@ -477,8 +479,8 @@
   <!-- SCENE 8: WE GOT THE SHOTS -->
   <div class="scene" id="scene8">
     <div class="mega-flash" id="megaFlash"></div>
-    <div class="final-text" id="finalText">We got the shots.</div>
-    <div class="final-sub" id="finalSub">@madebyaidan</div>
+    <div class="final-text" id="finalText" style="font-size:72px">Did we get the shots?</div>
+    <div class="dot-dot" id="dotDot" style="font-size:80px;font-weight:800;opacity:0;transform:scale(0);margin-top:30px;letter-spacing:0.3em;">. . .</div>
   </div>
 
 <script>
@@ -546,7 +548,7 @@
     [9.3, () => { document.getElementById('s7sub').classList.add('pop'); }],
     [10.5, () => { document.getElementById('scene7').classList.remove('active'); }],
 
-    // === BEAT 8: FLASH + "We got the shots." (10.5 – 12.5s) ===
+    // === BEAT 8: FLASH + suspense (10.5 – 13s) ===
     [10.5, () => {
       document.getElementById('scene8').classList.add('active');
       document.getElementById('megaFlash').classList.add('pop');
@@ -558,8 +560,10 @@
     [11.0, () => {
       document.getElementById('finalText').classList.add('pop');
     }],
-    [11.3, () => {
-      document.getElementById('finalSub').classList.add('pop');
+    [11.8, () => {
+      const d = document.getElementById('dotDot');
+      d.style.opacity = '1';
+      d.style.transform = 'scale(1)';
     }],
     [13.0, () => { document.getElementById('scene8').classList.remove('active'); }],
   ];
