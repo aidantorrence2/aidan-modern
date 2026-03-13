@@ -26,24 +26,6 @@ var PROOF_PHOTOS = [
   'manila-gallery-dsc-0911.jpg',
 ];
 
-var PHOTO_CLIP_PHOTOS = [
-  path.join(IMG_DIR, 'manila-gallery-dsc-0190.jpg'),
-  path.join(IMG_DIR, 'manila-gallery-night-001.jpg'),
-  path.join(IMG_DIR, 'manila-gallery-garden-001.jpg'),
-  path.join(IMG_DIR, 'manila-gallery-urban-001.jpg'),
-  path.join(IMG_DIR, 'manila-gallery-canal-001.jpg'),
-];
-
-var PHOTO_CLIP_DURATIONS = [1.0, 0.8, 0.8, 1.0, 1.2];
-
-function hasImageMagick() {
-  try {
-    execSync('which magick', { stdio: 'pipe' });
-    return true;
-  } catch (e) {
-    return false;
-  }
-}
 
 function buildHTML(imageDataMap) {
   var photoImgTags = '';
@@ -332,130 +314,19 @@ async function main() {
   // Clean up frames
   rmSync(FRAMES_DIR, { recursive: true, force: true });
 
-  // === PHASE 2: Photo clips (film-scan style) ===
-  console.log('=== Phase 2: Photo clips ===');
-
-  var useMagick = hasImageMagick();
-  console.log('ImageMagick available: ' + useMagick);
-
-  for (var i = 0; i < PHOTO_CLIP_PHOTOS.length; i++) {
-    var clipPhotoPath = PHOTO_CLIP_PHOTOS[i];
-    if (!existsSync(clipPhotoPath)) {
-      console.warn('WARNING: Photo not found: ' + clipPhotoPath + ', skipping');
-      continue;
-    }
-
-    var clipMp4 = path.join(OUT_DIR, 'tmp_photo_' + i + '.mp4');
-    var dur = PHOTO_CLIP_DURATIONS[i];
-
-    if (useMagick) {
-      var imgW = W - 120;
-      var imgH = H - 240;
-      var rebateSide = 60;
-      var rebateTop = 120;
-
-      var cropPng = path.join(OUT_DIR, 'tmp_crop_' + i + '.png');
-      var framedPng = path.join(OUT_DIR, 'tmp_framed_' + i + '.png');
-
-      execSync(
-        'magick "' + clipPhotoPath + '" -resize ' + imgW + 'x' + imgH + '^ -gravity center -extent ' + imgW + 'x' + imgH + ' "' + cropPng + '"',
-        { stdio: 'pipe' }
-      );
-
-      var cmd = 'magick -size ' + W + 'x' + H + ' xc:"#1a1208" ';
-      cmd += '"' + cropPng + '" -geometry +' + rebateSide + '+' + rebateTop + ' -composite ';
-      cmd += '-fill none -stroke "rgba(255,200,100,0.12)" -strokewidth 1 ';
-      cmd += '-draw "rectangle ' + (rebateSide - 1) + ',' + (rebateTop - 1) + ' ' + (rebateSide + imgW) + ',' + (rebateTop + imgH) + '" ';
-      cmd += '-fill "#0a0800" -stroke none ';
-      for (var x = 50; x < W - 30; x += 76) {
-        cmd += '-draw "roundrectangle ' + x + ',20 ' + (x + 28) + ',38 4,4" ';
-        var botY = H - 38;
-        cmd += '-draw "roundrectangle ' + x + ',' + botY + ' ' + (x + 28) + ',' + (botY + 18) + ' 4,4" ';
-      }
-      cmd += '"' + framedPng + '"';
-      execSync(cmd, { stdio: 'pipe' });
-
-      execSync(
-        'ffmpeg -y -loop 1 -i "' + framedPng + '" -t ' + dur + ' -c:v libx264 -preset slow -crf 18 -pix_fmt yuv420p -r ' + FPS + ' "' + clipMp4 + '"',
-        { stdio: 'pipe' }
-      );
-    } else {
-      execSync(
-        'ffmpeg -y -loop 1 -i "' + clipPhotoPath + '" -t ' + dur + ' -vf "scale=' + W + ':' + H + ':force_original_aspect_ratio=decrease,pad=' + W + ':' + H + ':(ow-iw)/2:(oh-ih)/2:color=0a0a0a" -c:v libx264 -preset slow -crf 18 -pix_fmt yuv420p -r ' + FPS + ' "' + clipMp4 + '"',
-        { stdio: 'pipe' }
-      );
-    }
-    console.log('  Photo clip ' + i + ' done');
-  }
-
-  // === PHASE 3: Ending card ===
-  console.log('=== Phase 3: Ending card ===');
-
-  var endPng = path.join(OUT_DIR, 'tmp_end.png');
-  var endMp4 = path.join(OUT_DIR, 'tmp_end.mp4');
-
-  if (useMagick) {
-    execSync(
-      'magick -size ' + W + 'x' + H + ' xc:black -gravity Center -pointsize 72 -fill white -font "/System/Library/Fonts/Supplemental/Arial Bold.ttf" -annotate +0-40 "@madebyaidan" -pointsize 38 -fill "rgba(255,255,255,0.5)" -annotate +0+60 "DM me on Instagram" "' + endPng + '"',
-      { stdio: 'pipe' }
-    );
-  } else {
-    execSync(
-      'ffmpeg -y -f lavfi -i "color=c=black:s=' + W + 'x' + H + ':d=1" -frames:v 1 "' + endPng + '"',
-      { stdio: 'pipe' }
-    );
-  }
-
-  if (!existsSync(endMp4)) {
-    if (useMagick) {
-      execSync(
-        'ffmpeg -y -loop 1 -i "' + endPng + '" -t 2.5 -c:v libx264 -preset slow -crf 18 -pix_fmt yuv420p -r ' + FPS + ' "' + endMp4 + '"',
-        { stdio: 'pipe' }
-      );
-    } else {
-      execSync(
-        'ffmpeg -y -f lavfi -i "color=c=black:s=' + W + 'x' + H + ':d=2.5:r=' + FPS + '" ' +
-        '-vf "drawtext=text=@madebyaidan:fontsize=72:fontcolor=white:x=(w-text_w)/2:y=(h-text_h)/2-40,' +
-        'drawtext=text=DM me on Instagram:fontsize=38:fontcolor=gray:x=(w-text_w)/2:y=(h-text_h)/2+60" ' +
-        '-c:v libx264 -preset slow -crf 18 -pix_fmt yuv420p "' + endMp4 + '"',
-        { stdio: 'pipe' }
-      );
-    }
-  }
-
-  // === Concatenation ===
-  console.log('=== Concatenating final video ===');
-
-  var concatLines = ["file 'tmp_anim.mp4'"];
-  for (var ci = 0; ci < PHOTO_CLIP_PHOTOS.length; ci++) {
-    var clipPath = path.join(OUT_DIR, 'tmp_photo_' + ci + '.mp4');
-    if (existsSync(clipPath)) {
-      concatLines.push("file 'tmp_photo_" + ci + ".mp4'");
-    }
-  }
-  concatLines.push("file 'tmp_end.mp4'");
-
-  var concatTxt = path.join(OUT_DIR, 'tmp_concat.txt');
-  writeFileSync(concatTxt, concatLines.join('\n'));
-
+  // Rename animation as final output (no photo clip concat — photos already in animation)
   var finalMp4 = path.join(OUT_DIR, 'manila-animated-story-v35b.mp4');
-  execSync(
-    'ffmpeg -y -f concat -safe 0 -i "' + concatTxt + '" -c copy "' + finalMp4 + '"',
-    { stdio: 'inherit' }
-  );
+  execSync('mv "' + animMp4 + '" "' + finalMp4 + '"');
 
-  // Cleanup temp files
-  execSync('rm -f "' + OUT_DIR + '/tmp_anim.mp4" "' + OUT_DIR + '"/tmp_photo_*.mp4 "' + OUT_DIR + '"/tmp_crop_*.png "' + OUT_DIR + '"/tmp_framed_*.png "' + OUT_DIR + '/tmp_end.png" "' + OUT_DIR + '/tmp_end.mp4" "' + OUT_DIR + '/tmp_concat.txt"');
-
-  // Copy to videos directory
-  var videosDir = path.join(__dirname, 'videos');
-  if (!existsSync(videosDir)) mkdirSync(videosDir, { recursive: true });
+  // Copy to reels directory
+  var reelsDir = path.join(__dirname, 'reels');
+  if (!existsSync(reelsDir)) mkdirSync(reelsDir, { recursive: true });
 
   var finalStat = statSync(finalMp4);
   console.log('Final video: ' + (finalStat.size / (1024 * 1024)).toFixed(1) + ' MB');
 
-  execSync('cp "' + finalMp4 + '" "' + path.join(videosDir, 'manila-animated-story-v35b.mp4') + '"');
-  console.log('Copied to videos/manila-animated-story-v35b.mp4');
+  execSync('cp "' + finalMp4 + '" "' + path.join(reelsDir, 'manila-animated-story-v35b.mp4') + '"');
+  console.log('Copied to reels/manila-animated-story-v35b.mp4');
 
   console.log('=== Done! Output: ' + OUT_DIR + ' ===');
   execSync('ls -lh "' + finalMp4 + '"', { stdio: 'inherit' });
