@@ -85,7 +85,7 @@ const CSS = `
   /* Title */
   .v5-title {
     position: fixed;
-    top: 56px;
+    top: 72px;
     left: 0;
     right: 0;
     text-align: center;
