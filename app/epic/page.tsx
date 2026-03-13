@@ -190,9 +190,26 @@ function Reveal({ children, delay = 0 }: { children: React.ReactNode; delay?: nu
 
 export default function EpicPage() {
   const [submitted, setSubmitted] = useState(false)
+  const [sending, setSending] = useState(false)
 
-  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
+    if (sending) return
+    setSending(true)
+    const form = e.currentTarget
+    const data = {
+      name: (form.elements.namedItem('name') as HTMLInputElement).value,
+      email: (form.elements.namedItem('email') as HTMLInputElement).value,
+      instagram: (form.elements.namedItem('instagram') as HTMLInputElement).value,
+      message: (form.elements.namedItem('message') as HTMLTextAreaElement).value,
+    }
+    try {
+      await fetch('/api/inquiry', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      })
+    } catch {}
     setSubmitted(true)
   }
 
@@ -346,7 +363,9 @@ export default function EpicPage() {
                 <input type="text" name="instagram" placeholder="Instagram" className="epic-input" />
                 <textarea name="message" placeholder="What are you looking for?" className="epic-textarea" />
                 <div style={{ marginTop: 8 }}>
-                  <button type="submit" className="cta-btn">Send</button>
+                  <button type="submit" className="cta-btn" disabled={sending}>
+                    {sending ? 'Sending...' : 'Send'}
+                  </button>
                 </div>
               </form>
             </Reveal>
