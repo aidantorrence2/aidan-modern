@@ -16,24 +16,27 @@ var FPS = 30;
 var SAFE_TOP = 213;
 var SAFE_BOTTOM = 430;
 
-// Film negative photos (pre-processed: cropped, inverted, color-corrected)
-var PROOF_PHOTOS = [
-  '/tmp/reel-36-photos/DSC_0898_processed.jpg',
-  '/tmp/reel-36-photos/DSC_0897_processed.jpg',
-  '/tmp/reel-36-photos/DSC_0894_processed.jpg',
-  '/tmp/reel-36-photos/DSC_0893_processed.jpg',
-  '/tmp/reel-36-photos/DSC_0891_processed.jpg',
-  '/tmp/reel-36-photos/DSC_0886_processed.jpg',
-  '/tmp/reel-36-photos/DSC_0885_processed.jpg',
-  '/tmp/reel-36-photos/DSC_0892_processed.jpg',
-  '/tmp/reel-36-photos/DSC_0889_processed.jpg',
-  '/tmp/reel-36-photos/DSC_0890_processed.jpg',
+// Film scan source folder
+var FILM_SCANS_DIR = '/Volumes/PortableSSD/Exports/film scans';
+
+// Film scan filenames (will be processed inline: crop + auto-level)
+var PHOTO_NAMES = [
+  'DSC_0898.jpg',
+  'DSC_0897.jpg',
+  'DSC_0894.jpg',
+  'DSC_0893.jpg',
+  'DSC_0891.jpg',
+  'DSC_0886.jpg',
+  'DSC_0885.jpg',
+  'DSC_0892.jpg',
+  'DSC_0889.jpg',
+  'DSC_0890.jpg',
 ];
 
 /*
-  Structure (24s total):
-  PART 1 (0-8s):  BTS clip with text overlays — built with ffmpeg
-  PART 2 (8-24s): Animated reveal of final photos + CTA — built with Playwright frame capture
+  Structure (~34s total):
+  PART 1 (0-18s):  Full BTS clip with text overlays — built with ffmpeg
+  PART 2 (18-34s): Animated reveal of final photos + CTA — built with Playwright frame capture
 */
 
 function resetOutputDir() {
@@ -74,12 +77,12 @@ function buildBTSClip() {
     // Slight darken for readability
     '[comp]curves=m=0/0 0.5/0.42 1/0.88[dark]',
     // Overlay text PNG
-    '[dark][1:v]overlay=0:0:enable=between(t\\,0.5\\,7.5)[out]',
+    '[dark][1:v]overlay=0:0:enable=between(t\\,0.5\\,17)[out]',
   ].join(';');
 
   var cmd = 'ffmpeg -y -i "' + BTS_CLIP + '" -i "' + overlayPng + '" ' +
     '-filter_complex "' + filterComplex + '" ' +
-    '-map "[out]" -map 0:a -t 8 -c:v libx264 -preset slow -crf 18 -pix_fmt yuv420p -r ' + FPS + ' -c:a aac -b:a 128k "' + btsMp4 + '"';
+    '-map "[out]" -map 0:a -c:v libx264 -preset slow -crf 18 -pix_fmt yuv420p -r ' + FPS + ' -c:a aac -b:a 128k "' + btsMp4 + '"';
 
   execSync(cmd, { stdio: 'inherit' });
   console.log('BTS clip done: ' + btsMp4);
@@ -87,7 +90,7 @@ function buildBTSClip() {
 }
 
 /* ===== PART 2: Animated photo reveal + CTA ===== */
-function buildRevealHTML(imageDataMap) {
+function buildRevealHTML(imageDataMap, PROOF_PHOTOS) {
   var html = '<!DOCTYPE html>\n';
   html += '<html>\n<head>\n<meta charset="utf-8">\n<style>\n';
   html += '  * { margin: 0; padding: 0; box-sizing: border-box; }\n';
@@ -212,13 +215,13 @@ function buildRevealHTML(imageDataMap) {
   return html;
 }
 
-async function buildRevealVideo(imageDataMap) {
+async function buildRevealVideo(imageDataMap, PROOF_PHOTOS) {
   console.log('=== Part 2: Photo reveal + CTA ===');
 
   var framesDir = path.join(OUT_DIR, 'tmp-frames');
   mkdirSync(framesDir, { recursive: true });
 
-  var html = buildRevealHTML(imageDataMap);
+  var html = buildRevealHTML(imageDataMap, PROOF_PHOTOS);
   var htmlPath = path.join(OUT_DIR, 'reveal.html');
   writeFileSync(htmlPath, html);
 
@@ -298,14 +301,28 @@ async function main() {
   console.log('=== Manila BTS Reveal Reel v36a ===');
   resetOutputDir();
 
-  // Load photos (full paths — pre-processed film negatives)
+  // Process film negatives from source (crop + negate + auto-level)
+  console.log('Processing photos from film scans...');
+  var tmpPhotosDir = path.join(OUT_DIR, 'tmp-photos');
+  mkdirSync(tmpPhotosDir, { recursive: true });
+
+  var PROOF_PHOTOS = [];
+  for (var name of PHOTO_NAMES) {
+    var src = path.join(FILM_SCANS_DIR, name);
+    if (!existsSync(src)) {
+      console.error('Photo not found: ' + src);
+      process.exit(1);
+    }
+    var outFile = path.join(tmpPhotosDir, name.replace('.jpg', '_processed.jpg'));
+    execSync('magick "' + src + '" -crop 94%x97%+3%+1.5% +repage -auto-level -quality 95 "' + outFile + '"');
+    PROOF_PHOTOS.push(outFile);
+    console.log('  Processed: ' + name);
+  }
+
+  // Load processed photos as base64
   console.log('Loading photos...');
   var imageDataMap = {};
   for (var p of PROOF_PHOTOS) {
-    if (!existsSync(p)) {
-      console.error('Photo not found: ' + p);
-      process.exit(1);
-    }
     var buf = readFileSync(p);
     imageDataMap[p] = 'data:image/jpeg;base64,' + buf.toString('base64');
     console.log('  ' + path.basename(p) + ' (' + (buf.length / 1024).toFixed(0) + ' KB)');
