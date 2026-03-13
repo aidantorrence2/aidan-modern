@@ -280,14 +280,48 @@ export default function DarkroomReveal() {
             <div className="drip-line" style={{ width: '100%', background: 'rgba(180, 40, 40, 0.1)' }} />
           </div>
 
+          {/* Hero photo card */}
+          <div style={{
+            position: 'relative',
+            width: 'min(280px, 70vw)',
+            marginBottom: '24px',
+          }}>
+            <div style={{
+              border: '1px solid rgba(140, 30, 30, 0.3)',
+              padding: '8px',
+              background: 'rgba(40, 5, 5, 0.4)',
+            }}>
+              <img
+                src={`/images/large/${images[0].src}`}
+                alt={images[0].name}
+                style={{
+                  width: '100%',
+                  height: 'auto',
+                  display: 'block',
+                  filter: 'brightness(0.7) saturate(0.8)',
+                }}
+              />
+            </div>
+            <div style={{
+              textAlign: 'center',
+              marginTop: '8px',
+              fontFamily: 'ui-monospace, monospace',
+              fontSize: '10px',
+              color: '#553333',
+              letterSpacing: '1px',
+            }}>
+              01A
+            </div>
+          </div>
+
           <h1 style={{
             fontFamily: 'system-ui, -apple-system, sans-serif',
-            fontSize: 'clamp(32px, 6vw, 72px)',
+            fontSize: 'clamp(28px, 5vw, 56px)',
             fontWeight: 300,
             color: '#cc8888',
             letterSpacing: '6px',
             textTransform: 'uppercase',
-            marginBottom: '16px',
+            marginBottom: '12px',
             textAlign: 'center',
           }} className="heroGlow">
             Darkroom
