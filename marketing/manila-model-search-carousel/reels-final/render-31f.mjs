@@ -205,29 +205,26 @@ function buildHTML(imageDataMap) {
       '  <div style="position:absolute;bottom:40px;left:0;right:0;text-align:center;font-family:' + MONO + ';font-size:22px;color:' + TETRIS_COLORS[i % TETRIS_COLORS.length] + ';letter-spacing:3px;text-shadow:0 0 10px ' + TETRIS_COLORS[i % TETRIS_COLORS.length] + '60;">LINE CLEAR ' + (i + 1) + ' / 8</div>\n' +
       '</div>\n'
 
-    // Block row that appears at bottom after photo lands — stacks upward
-    var rowBottom = i * blockRowH
-    var rowColor = TETRIS_COLORS[i % TETRIS_COLORS.length]
-    var blocksInRow = GRID_COLS
-    var rowBlocksHTML = ''
-    for (var b = 0; b < blocksInRow; b++) {
-      var bColor = TETRIS_COLORS[(i + b) % TETRIS_COLORS.length]
-      rowBlocksHTML += '<div style="width:' + blockRowH + 'px;height:' + blockRowH + 'px;' + bevelStyle(bColor) + 'flex-shrink:0;"></div>'
-    }
+    // Photo block that appears at bottom after photo lands — stacks upward
+    var blockSize = Math.floor(GRID_W / PROOF_PHOTOS.length)
+    var blockLeft = i * blockSize
+    var bColor = TETRIS_COLORS[i % TETRIS_COLORS.length]
 
     blockRowCSS += '\n' +
-      '.block-row-' + i + ' {\n' +
+      '.photo-block-' + i + ' {\n' +
       '  position: absolute;\n' +
-      '  bottom: ' + rowBottom + 'px;\n' +
-      '  left: 0;\n' +
-      '  display: flex;\n' +
-      '  gap: 0;\n' +
+      '  bottom: 0;\n' +
+      '  left: ' + blockLeft + 'px;\n' +
+      '  width: ' + blockSize + 'px;\n' +
+      '  height: ' + blockSize + 'px;\n' +
       '  opacity: 0;\n' +
       '  z-index: ' + (20 + i) + ';\n' +
+      '  ' + bevelStyle(bColor) + '\n' +
+      '  overflow: hidden;\n' +
       '  animation: fadeIn 0.15s ease-out ' + blockDelay + 's forwards;\n' +
       '}\n'
 
-    blockRowHTML += '<div class="block-row-' + i + '">' + rowBlocksHTML + '</div>\n'
+    blockRowHTML += '<div class="photo-block-' + i + '"><img src="' + imageDataMap[photo] + '" style="width:100%;height:100%;object-fit:cover;object-position:center 20%;display:block;opacity:0.85;" /></div>\n'
   })
 
   /* ===== Scene 3: Steps as falling pieces ===== */
