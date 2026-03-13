@@ -30,9 +30,9 @@ const images = [
   { src: 'manila-gallery-dsc-0911.jpg', name: 'Zarissa', city: 'Kuala Lumpur' },
 ];
 
-const PHOTO_SPACING = 620;
-const PHOTO_WIDTH = 380;
-const PHOTO_HEIGHT = 507;
+const PHOTO_SPACING = 520;
+const PHOTO_WIDTH = 280;
+const PHOTO_HEIGHT = 373;
 const AMPLITUDE = 100;
 const FREQUENCY = 0.008;
 const HERO_HEIGHT = 600;
