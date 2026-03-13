@@ -166,12 +166,17 @@ function buildHTML(imageDataMap) {
   var PHOTO_W = 750
   var PHOTO_H = 900
 
+  var blockRowH = CELL - 2
+  var blockRowCSS = ''
+  var blockRowHTML = ''
+
   PROOF_PHOTOS.forEach(function(photo, i) {
     var showStart = 4.2 + i * 1.5
     var fallDur = 0.6
+    var landTime = showStart + fallDur
+    var blockDelay = landTime + 0.1
 
     // Each photo falls in, stays visible, gets covered by next one
-    // Last photo fades out at end of scene 2
     photoCSS += '\n' +
       '@keyframes photoFall_' + i + ' {\n' +
       '  0% { transform: translateY(-120%); }\n' +
@@ -199,13 +204,37 @@ function buildHTML(imageDataMap) {
       '  </div>\n' +
       '  <div style="position:absolute;bottom:40px;left:0;right:0;text-align:center;font-family:' + MONO + ';font-size:22px;color:' + TETRIS_COLORS[i % TETRIS_COLORS.length] + ';letter-spacing:3px;text-shadow:0 0 10px ' + TETRIS_COLORS[i % TETRIS_COLORS.length] + '60;">LINE CLEAR ' + (i + 1) + ' / 8</div>\n' +
       '</div>\n'
+
+    // Block row that appears at bottom after photo lands — stacks upward
+    var rowBottom = i * blockRowH
+    var rowColor = TETRIS_COLORS[i % TETRIS_COLORS.length]
+    var blocksInRow = GRID_COLS
+    var rowBlocksHTML = ''
+    for (var b = 0; b < blocksInRow; b++) {
+      var bColor = TETRIS_COLORS[(i + b) % TETRIS_COLORS.length]
+      rowBlocksHTML += '<div style="width:' + blockRowH + 'px;height:' + blockRowH + 'px;' + bevelStyle(bColor) + 'flex-shrink:0;"></div>'
+    }
+
+    blockRowCSS += '\n' +
+      '.block-row-' + i + ' {\n' +
+      '  position: absolute;\n' +
+      '  bottom: ' + rowBottom + 'px;\n' +
+      '  left: 0;\n' +
+      '  display: flex;\n' +
+      '  gap: 0;\n' +
+      '  opacity: 0;\n' +
+      '  z-index: ' + (20 + i) + ';\n' +
+      '  animation: fadeIn 0.15s ease-out ' + blockDelay + 's forwards;\n' +
+      '}\n'
+
+    blockRowHTML += '<div class="block-row-' + i + '">' + rowBlocksHTML + '</div>\n'
   })
 
   /* ===== Scene 3: Steps as falling pieces ===== */
   var steps = [
-    { text: '1. DM ME', color: TC.I, delay: 16.5 },
-    { text: '2. PICK A DATE', color: TC.O, delay: 17.8 },
-    { text: '3. SHOW UP', color: TC.S, delay: 19.1 },
+    { text: '1.DM ME', color: TC.I, delay: 16.5 },
+    { text: '2.PICK DATE', color: TC.O, delay: 17.8 },
+    { text: '3.SHOW UP', color: TC.S, delay: 19.1 },
   ]
 
   var stepCSS = ''
@@ -350,35 +379,6 @@ function buildHTML(imageDataMap) {
       '    titleWordFall_' + wi + ' 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) ' + tw.delay + 's forwards;\n' +
       '}\n'
 
-    // Separator line between words (appears after the word above lands)
-    if (wi > 0) {
-      var lineY = landY - Math.floor((titleGap + lineH) / 2)
-      var lineDelay = tw.delay - 0.15
-      var lineColor = TETRIS_COLORS[(wi + 4) % TETRIS_COLORS.length]
-      titleWordCSS += '\n' +
-        '@keyframes titleLineFall_' + wi + ' {\n' +
-        '  0% { transform: translate(-50%, -800px); }\n' +
-        '  100% { transform: translate(-50%, 0px); }\n' +
-        '}\n' +
-        '.title-line-' + wi + ' {\n' +
-        '  position: absolute;\n' +
-        '  left: 50%;\n' +
-        '  top: ' + lineY + 'px;\n' +
-        '  transform: translate(-50%, -800px);\n' +
-        '  width: 500px;\n' +
-        '  height: ' + lineH + 'px;\n' +
-        '  background: ' + lineColor + ';\n' +
-        '  box-shadow: 0 0 12px ' + lineColor + '80, inset 0 1px 0 rgba(255,255,255,0.3), inset 0 -1px 0 rgba(0,0,0,0.3);\n' +
-        '  opacity: 0;\n' +
-        '  z-index: 11;\n' +
-        '  animation:\n' +
-        '    fadeIn 0.01s linear ' + lineDelay + 's forwards,\n' +
-        '    titleLineFall_' + wi + ' 0.35s ease-in ' + lineDelay + 's forwards;\n' +
-        '}\n'
-
-      titleWordHTML += '<div class="title-line-' + wi + '"></div>\n'
-    }
-
     // Calculate block width based on character count
     var charW = 65
     var padX = 30
@@ -503,6 +503,9 @@ pieceCSS + '\n' +
 '  /* === PHOTO ANIMATIONS (Scene 2) === */\n' +
 photoCSS + '\n' +
 '\n' +
+'  /* === BLOCK ROWS (build up after each photo) === */\n' +
+blockRowCSS + '\n' +
+'\n' +
 '  /* === STEP ANIMATIONS (Scene 3) === */\n' +
 stepCSS + '\n' +
 '\n' +
@@ -573,6 +576,8 @@ pieceHTML + '\n' +
 '      <div style="position:absolute;top:50px;left:0;right:0;bottom:0;display:flex;align-items:center;justify-content:center;">\n' +
 photoHTML + '\n' +
 '      </div>\n' +
+'      <!-- Block rows building up at bottom -->\n' +
+blockRowHTML + '\n' +
 '    </div>\n' +
 '\n' +
 '    <!-- ========== SCENE 3: STEPS AS FALLING PIECES (16-21s) ========== -->\n' +
@@ -678,6 +683,12 @@ async function render() {
     console.warn('ffmpeg not available, keeping as webm...')
     fs.renameSync(srcVideo, dstVideo)
   }
+
+  // Copy to reels/
+  var reelsDir = path.join(__dirname, 'reels')
+  if (!fs.existsSync(reelsDir)) fs.mkdirSync(reelsDir, { recursive: true })
+  child_process.execSync('cp "' + dstVideo + '" "' + path.join(reelsDir, 'manila-tetris-v31f.mp4') + '"')
+  console.log('Copied to reels/manila-tetris-v31f.mp4')
 
   console.log('Done: output written to ' + OUT_DIR)
 }
