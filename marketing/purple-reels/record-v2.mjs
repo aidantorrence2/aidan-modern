@@ -47,48 +47,62 @@ async function main() {
 
       // Reset positions
       const sg = document.getElementById('scooterGroup');
-      if (sg) sg.style.left = '-250px';
+      if (sg) sg.style.left = '-300px';
       const pg = document.getElementById('planeGroup');
-      if (pg) { pg.style.left = '-350px'; pg.style.top = '45%'; }
+      if (pg) { pg.style.left = '-400px'; pg.style.top = '42%'; }
       const tg = document.getElementById('trainGroup');
       if (tg) tg.style.left = '1200px';
+      const ct = document.getElementById('contrail');
+      if (ct) { ct.classList.remove('show'); ct.style.width = '0'; }
+      // Reset photo fragments
+      document.querySelectorAll('.photo-frag').forEach(f => f.classList.remove('scatter'));
+      // Reset misfire X
+      const mx = document.getElementById('misfireX');
+      if (mx) { mx.style.opacity = '0'; mx.style.transform = 'scale(0)'; }
 
       // Apply all timeline events up to current time
       window.__applyUpTo(time);
 
       // Now interpolate moving elements that use CSS transitions
-      // Scooter: triggered at t=9.8, moves from -250 to 1200 over 3.5s ease-in-out
+      // Scooter: triggered at t=9.8, moves from -300 to 1200 over 3.5s ease-in-out
       const scooterStart = 9.8;
       const scooterDur = 3.5;
       if (time >= scooterStart && time < scooterStart + scooterDur) {
         const progress = (time - scooterStart) / scooterDur;
         // ease-in-out approximation: 3p^2 - 2p^3
         const eased = progress * progress * (3 - 2 * progress);
-        const pos = -250 + (1200 - (-250)) * eased;
+        const pos = -300 + (1200 - (-300)) * eased;
         sg.style.left = pos + 'px';
       }
 
-      // Plane: triggered at t=13.8, moves left -350→1200 and top 45%→30% over 3s
+      // Plane: triggered at t=13.8, moves left -400→1200 and top 42%→28% over 3s
       const planeStart = 13.8;
       const planeDur = 3.0;
       if (time >= planeStart && time < planeStart + planeDur) {
         const progress = (time - planeStart) / planeDur;
         const eased = progress * progress * (3 - 2 * progress);
-        const posX = -350 + (1200 - (-350)) * eased;
-        // top: 45% → 30%  (% of viewport height = 1920)
-        const posYpct = 45 + (30 - 45) * eased;
+        const posX = -400 + (1200 - (-400)) * eased;
+        // top: 42% → 28%
+        const posYpct = 42 + (28 - 42) * eased;
         pg.style.left = posX + 'px';
         pg.style.top = posYpct + '%';
       }
 
-      // Train: triggered at t=17.8, moves from 1200 to 290 over 2s ease-out
+      // Contrail: triggered at t=13.8, grows width 0→600 over 3s
+      if (ct && time >= planeStart && time < planeStart + planeDur) {
+        const progress = (time - planeStart) / planeDur;
+        const eased = progress * progress * (3 - 2 * progress);
+        ct.style.width = (600 * eased) + 'px';
+      }
+
+      // Train: triggered at t=17.8, moves from 1200 to 240 over 2s ease-out
       const trainStart = 17.8;
       const trainDur = 2.0;
       if (time >= trainStart && time < trainStart + trainDur) {
         const progress = (time - trainStart) / trainDur;
         // ease-out: 1 - (1-p)^2
         const eased = 1 - (1 - progress) * (1 - progress);
-        const pos = 1200 + (290 - 1200) * eased;
+        const pos = 1200 + (240 - 1200) * eased;
         tg.style.left = pos + 'px';
       }
 
