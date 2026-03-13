@@ -259,39 +259,8 @@ export default function DarkroomReveal() {
         position: 'relative',
         zIndex: 2,
       }}>
-        {/* Header — text then first image flows right below, all above the fold */}
-        <section style={{
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          position: 'relative',
-          paddingTop: '100px',
-          paddingBottom: '40px',
-        }}>
-          <h1 style={{
-            fontFamily: 'system-ui, -apple-system, sans-serif',
-            fontSize: 'clamp(28px, 5vw, 56px)',
-            fontWeight: 300,
-            color: '#cc8888',
-            letterSpacing: '6px',
-            textTransform: 'uppercase',
-            marginBottom: '8px',
-            textAlign: 'center',
-          }} className="heroGlow">
-            Aidan Torrence
-          </h1>
-          <p style={{
-            fontFamily: 'system-ui, -apple-system, sans-serif',
-            fontSize: '14px',
-            color: '#884444',
-            letterSpacing: '4px',
-            textTransform: 'uppercase',
-            fontWeight: 300,
-            marginBottom: '0',
-          }}>
-            Film Photographer
-          </p>
-        </section>
+        {/* Spacer so first gallery image starts below fixed nav */}
+        <div style={{ height: '80px' }} />
 
         {/* Gallery */}
         <section style={{
