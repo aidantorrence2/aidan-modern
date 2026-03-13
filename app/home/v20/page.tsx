@@ -446,6 +446,25 @@ export default function V20Page() {
         <div className="v20-photo-wrap">
           {isTitle && (
             <div className="v20-title" key="title">
+              <div style={{
+                width: 'min(240px, 55vw)',
+                marginBottom: '24px',
+                border: '1px solid rgba(255, 240, 200, 0.12)',
+                padding: '6px',
+                background: 'rgba(255, 240, 200, 0.03)',
+              }}>
+                <img
+                  src={`/images/large/${images[0].src}`}
+                  alt={images[0].name}
+                  style={{
+                    width: '100%',
+                    height: 'auto',
+                    display: 'block',
+                    filter: 'sepia(0.3) brightness(0.85)',
+                  }}
+                  draggable={false}
+                />
+              </div>
               <h1>Aidan Torrence</h1>
               <p>Photography</p>
             </div>
