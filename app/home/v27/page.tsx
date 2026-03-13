@@ -30,101 +30,205 @@ const images = [
   { src: 'manila-gallery-dsc-0911.jpg', name: 'Zarissa', city: 'KL' },
 ];
 
+// Easing function for smoother transitions
+function easeInOutCubic(t: number): number {
+  return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+}
+
+function lerp(a: number, b: number, t: number): number {
+  return a + (b - a) * t;
+}
+
 export default function GridToFullscreenPage() {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const gridRef = useRef<HTMLDivElement>(null);
-  const [scrollProgress, setScrollProgress] = useState(0);
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [mounted, setMounted] = useState(false);
+  const scrollDataRef = useRef({
+    progress: 0,
+    phase1: 0,
+    phase2: 0,
+    phase3: 0,
+    currentIndex: 0,
+    scrollY: 0,
+  });
   const rafRef = useRef<number>(0);
+  const gridContainerRef = useRef<HTMLDivElement>(null);
+  const itemsRef = useRef<(HTMLDivElement | null)[]>([]);
+  const titleRef = useRef<HTMLDivElement>(null);
+  const counterRef = useRef<HTMLDivElement>(null);
+  const captionsRef = useRef<(HTMLDivElement | null)[]>([]);
 
-  // Scroll phases:
-  // Phase 1 (0-0.15): gaps expand 4px -> 40px
-  // Phase 2 (0.15-0.30): columns 5 -> 3 -> 1
-  // Phase 3 (0.30+): individual full-viewport sections
-  const PHASE1_END = 0.15;
-  const PHASE2_END = 0.30;
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
-  const handleScroll = useCallback(() => {
-    if (rafRef.current) cancelAnimationFrame(rafRef.current);
-    rafRef.current = requestAnimationFrame(() => {
-      const scrollY = window.scrollY;
-      const vh = window.innerHeight;
-      // Total scroll height for the transition phases (first 60vh of scrolling)
-      const transitionScrollHeight = vh * 0.6;
-      const rawProgress = Math.min(scrollY / transitionScrollHeight, 1);
-      setScrollProgress(rawProgress);
+  const updateLayout = useCallback(() => {
+    const vh = window.innerHeight;
+    const vw = window.innerWidth;
+    const scrollY = window.scrollY;
 
-      // Calculate current photo index when in single-photo mode
-      if (rawProgress >= 1) {
-        const singlePhotoStart = transitionScrollHeight;
-        const scrollIntoSingles = scrollY - singlePhotoStart;
-        const idx = Math.floor(scrollIntoSingles / vh);
-        setCurrentIndex(Math.max(0, Math.min(idx, images.length - 1)));
+    // Transition scroll zone
+    const transitionHeight = vh * 1.5;
+    const rawProgress = Math.min(scrollY / transitionHeight, 1);
+    const progress = rawProgress;
+
+    // Phase breakpoints
+    const PHASE1_END = 0.33; // gap expansion
+    const PHASE2_END = 0.66; // column reduction
+    // Phase 3: 0.66 -> 1.0: scale up to fullscreen
+
+    const phase1 = Math.min(progress / PHASE1_END, 1);
+    const phase2 = progress <= PHASE1_END ? 0 : Math.min((progress - PHASE1_END) / (PHASE2_END - PHASE1_END), 1);
+    const phase3 = progress <= PHASE2_END ? 0 : Math.min((progress - PHASE2_END) / (1 - PHASE2_END), 1);
+
+    const ep1 = easeInOutCubic(phase1);
+    const ep2 = easeInOutCubic(phase2);
+    const ep3 = easeInOutCubic(phase3);
+
+    // Current photo index (in single-photo scrolling mode)
+    let currentIndex = 0;
+    if (progress >= 1) {
+      const singleStart = transitionHeight;
+      const scrollInSingles = scrollY - singleStart;
+      currentIndex = Math.floor(scrollInSingles / vh);
+      currentIndex = Math.max(0, Math.min(currentIndex, images.length - 1));
+    }
+
+    scrollDataRef.current = { progress, phase1: ep1, phase2: ep2, phase3: ep3, currentIndex, scrollY };
+
+    // Update title overlay
+    if (titleRef.current) {
+      const titleOp = Math.max(0, 1 - ep1 * 2);
+      titleRef.current.style.opacity = String(titleOp);
+      titleRef.current.style.display = titleOp < 0.01 ? 'none' : 'flex';
+    }
+
+    // Update counter
+    if (counterRef.current) {
+      const counterOp = progress >= 1 ? 1 : ep3;
+      counterRef.current.style.opacity = String(counterOp);
+      counterRef.current.textContent = `${String(currentIndex + 1).padStart(2, '0')} / ${images.length}`;
+    }
+
+    // Grid container
+    const container = gridContainerRef.current;
+    if (!container) return;
+
+    if (progress < 1) {
+      // --- GRID MODE (transitioning) ---
+      container.style.position = 'sticky';
+      container.style.top = '0';
+      container.style.height = '100vh';
+
+      // Calculate grid properties
+      const gap = lerp(4, 40, ep1);
+
+      // Column count: smooth 5 -> 3 (phase2 first half) -> 1 (phase2 second half)
+      let columns: number;
+      if (ep2 <= 0) {
+        columns = 5;
+      } else if (ep2 <= 0.5) {
+        columns = lerp(5, 3, ep2 * 2);
+      } else {
+        columns = lerp(3, 1, (ep2 - 0.5) * 2);
       }
-    });
+
+      // Padding around the grid
+      const padding = lerp(24, 40, ep1);
+
+      // Available width
+      const availableWidth = vw - padding * 2;
+      const colCount = Math.max(1, Math.round(columns));
+      const itemWidth = (availableWidth - gap * (colCount - 1)) / colCount;
+      const itemHeight = itemWidth * (4 / 3);
+
+      // Phase 3 scale-up effect
+      const scale = lerp(1, 1.8, ep3);
+      const gridOpacity = lerp(1, 0, Math.max(0, (ep3 - 0.7) / 0.3));
+
+      // Position items in a CSS-grid-like layout
+      const rows = Math.ceil(images.length / colCount);
+      const totalGridHeight = rows * itemHeight + (rows - 1) * gap;
+      const totalGridWidth = colCount * itemWidth + (colCount - 1) * gap;
+
+      // Center the grid vertically
+      const offsetY = (vh - totalGridHeight * scale) / 2;
+      const offsetX = (vw - totalGridWidth * scale) / 2;
+
+      for (let i = 0; i < images.length; i++) {
+        const el = itemsRef.current[i];
+        if (!el) continue;
+
+        const col = i % colCount;
+        const row = Math.floor(i / colCount);
+
+        const x = offsetX + (col * (itemWidth + gap)) * scale;
+        const y = offsetY + (row * (itemHeight + gap)) * scale;
+        const w = itemWidth * scale;
+        const h = itemHeight * scale;
+
+        el.style.position = 'absolute';
+        el.style.left = `${x}px`;
+        el.style.top = `${y}px`;
+        el.style.width = `${w}px`;
+        el.style.height = `${h}px`;
+        el.style.opacity = String(gridOpacity);
+        el.style.borderRadius = `${lerp(2, 4, ep2)}px`;
+
+        // Caption
+        const caption = captionsRef.current[i];
+        if (caption) {
+          caption.style.opacity = String(ep3);
+        }
+      }
+    } else {
+      // --- SINGLE PHOTO MODE ---
+      container.style.position = 'relative';
+      container.style.top = 'auto';
+      container.style.height = 'auto';
+
+      for (let i = 0; i < images.length; i++) {
+        const el = itemsRef.current[i];
+        if (!el) continue;
+
+        el.style.position = 'relative';
+        el.style.left = '0';
+        el.style.top = '0';
+        el.style.width = '100vw';
+        el.style.height = '100vh';
+        el.style.opacity = '1';
+        el.style.borderRadius = '0';
+
+        const caption = captionsRef.current[i];
+        if (caption) {
+          caption.style.opacity = '1';
+        }
+      }
+    }
   }, []);
 
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    handleScroll();
+    if (!mounted) return;
+
+    const onScroll = () => {
+      if (rafRef.current) cancelAnimationFrame(rafRef.current);
+      rafRef.current = requestAnimationFrame(updateLayout);
+    };
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll, { passive: true });
+    updateLayout();
+
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('scroll', onScroll);
+      window.removeEventListener('resize', onScroll);
       if (rafRef.current) cancelAnimationFrame(rafRef.current);
     };
-  }, [handleScroll]);
+  }, [mounted, updateLayout]);
 
-  // Derive values from scroll progress
-  const normalizedPhase1 = Math.min(scrollProgress / PHASE1_END, 1);
-  const normalizedPhase2 = scrollProgress <= PHASE1_END ? 0 : Math.min((scrollProgress - PHASE1_END) / (PHASE2_END - PHASE1_END), 1);
-  const normalizedPhase3 = scrollProgress <= PHASE2_END ? 0 : Math.min((scrollProgress - PHASE2_END) / (1 - PHASE2_END), 1);
+  if (!mounted) return null;
 
-  // Phase 1: gap expansion
-  const gap = 4 + normalizedPhase1 * 36; // 4px -> 40px
-
-  // Phase 2: column reduction 5 -> 1
-  // Use fractional columns for smooth transition
-  const columns = 5 - normalizedPhase2 * 4; // 5 -> 1
-
-  // Phase 3: transition to full viewport
-  const photoScale = 1 + normalizedPhase3 * 0.5;
-  const captionOpacity = normalizedPhase3;
-
-  // Title overlay fades during phase 1
-  const titleOpacity = 1 - normalizedPhase1;
-
-  // In single-photo mode (scrollProgress >= 1)
-  const isFullscreen = scrollProgress >= 1;
-
-  // Counter visibility
-  const counterOpacity = normalizedPhase3;
-
-  // Calculate total page height:
-  // transition zone (60vh) + each photo gets 100vh + CTA section
-  const totalHeight = window.innerHeight * 0.6 + images.length * window.innerHeight + window.innerHeight;
-
-  // Build grid template columns string
-  const getGridColumns = () => {
-    if (columns >= 4.5) return 'repeat(5, 1fr)';
-    if (columns >= 3.5) return 'repeat(4, 1fr)';
-    if (columns >= 2.5) return 'repeat(3, 1fr)';
-    if (columns >= 1.5) return 'repeat(2, 1fr)';
-    return '1fr';
-  };
-
-  // Smooth fractional column widths using actual fractions
-  const getGridColumnsSmooth = () => {
-    const cols = Math.max(1, columns);
-    const wholeCols = Math.ceil(cols);
-    // Use minmax to allow smooth sizing
-    return `repeat(${wholeCols}, 1fr)`;
-  };
-
-  // For smooth column transition, use item width percentage
-  const getItemMaxWidth = () => {
-    if (columns >= 5) return '100%';
-    const pct = 100 / Math.max(1, Math.round(columns));
-    return `${pct}%`;
-  };
+  // Total page height: transition zone + each photo 100vh + CTA
+  const vh = typeof window !== 'undefined' ? window.innerHeight : 900;
+  const totalHeight = vh * 1.5 + images.length * vh + vh;
 
   return (
     <>
@@ -132,6 +236,7 @@ export default function GridToFullscreenPage() {
         body > header, body > footer, .fixed.inset-x-0.bottom-0 { display: none !important; }
         html { scroll-behavior: auto; }
         body { background: #0c0c0c; margin: 0; overflow-x: hidden; }
+        * { box-sizing: border-box; }
 
         .v27-nav {
           position: fixed;
@@ -144,6 +249,7 @@ export default function GridToFullscreenPage() {
           align-items: center;
           padding: 24px 40px;
           mix-blend-mode: difference;
+          pointer-events: auto;
         }
         .v27-nav a {
           color: #fff;
@@ -152,44 +258,9 @@ export default function GridToFullscreenPage() {
           font-size: 13px;
           letter-spacing: 0.08em;
           text-transform: uppercase;
+          pointer-events: auto;
         }
-
-        .v27-spacer {
-          position: relative;
-          width: 100%;
-        }
-
-        .v27-grid-container {
-          position: sticky;
-          top: 0;
-          width: 100%;
-          height: 100vh;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          overflow: hidden;
-        }
-
-        .v27-grid {
-          display: grid;
-          width: calc(100% - 48px);
-          max-width: 1600px;
-          transition: none;
-        }
-
-        .v27-grid-item {
-          position: relative;
-          overflow: hidden;
-          border-radius: 2px;
-          aspect-ratio: 3/4;
-          transition: none;
-        }
-        .v27-grid-item img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          display: block;
-        }
+        .v27-nav a:hover { opacity: 0.6; }
 
         .v27-title-overlay {
           position: fixed;
@@ -205,13 +276,14 @@ export default function GridToFullscreenPage() {
         }
         .v27-title-text {
           font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-          font-size: clamp(32px, 6vw, 80px);
-          font-weight: 300;
-          letter-spacing: 0.35em;
+          font-size: clamp(28px, 5.5vw, 76px);
+          font-weight: 200;
+          letter-spacing: 0.4em;
           text-transform: uppercase;
           color: #fff;
-          text-shadow: 0 2px 40px rgba(0,0,0,0.7);
+          text-shadow: 0 2px 60px rgba(0,0,0,0.8);
           white-space: nowrap;
+          text-indent: 0.4em;
         }
 
         .v27-counter {
@@ -222,8 +294,35 @@ export default function GridToFullscreenPage() {
           font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
           font-size: 14px;
           letter-spacing: 0.12em;
-          color: rgba(255,255,255,0.6);
+          color: rgba(255,255,255,0.5);
           font-variant-numeric: tabular-nums;
+          opacity: 0;
+        }
+
+        .v27-scroll-spacer {
+          position: relative;
+          width: 100%;
+          pointer-events: none;
+        }
+
+        .v27-grid-container {
+          position: sticky;
+          top: 0;
+          width: 100%;
+          height: 100vh;
+          overflow: hidden;
+        }
+
+        .v27-item {
+          position: absolute;
+          overflow: hidden;
+          will-change: left, top, width, height, opacity;
+        }
+        .v27-item img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          display: block;
         }
 
         .v27-caption {
@@ -231,69 +330,26 @@ export default function GridToFullscreenPage() {
           bottom: 0;
           left: 0;
           right: 0;
-          padding: 24px;
-          background: linear-gradient(transparent, rgba(0,0,0,0.6));
+          padding: 32px 40px;
+          background: linear-gradient(transparent, rgba(0,0,0,0.55));
           pointer-events: none;
+          opacity: 0;
         }
         .v27-caption-name {
           font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-          font-size: 18px;
-          font-weight: 400;
-          letter-spacing: 0.08em;
+          font-size: 22px;
+          font-weight: 300;
+          letter-spacing: 0.1em;
           color: #fff;
           text-transform: uppercase;
-          margin-bottom: 4px;
+          margin-bottom: 5px;
         }
         .v27-caption-city {
           font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
           font-size: 12px;
-          letter-spacing: 0.15em;
-          color: rgba(255,255,255,0.5);
-          text-transform: uppercase;
-        }
-
-        /* Full-viewport single photo mode */
-        .v27-singles-container {
-          position: relative;
-          width: 100%;
-        }
-        .v27-single-photo {
-          position: sticky;
-          top: 0;
-          width: 100%;
-          height: 100vh;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          overflow: hidden;
-        }
-        .v27-single-photo img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          display: block;
-        }
-        .v27-single-caption {
-          position: absolute;
-          bottom: 80px;
-          left: 40px;
-          z-index: 10;
-        }
-        .v27-single-name {
-          font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-          font-size: 28px;
-          font-weight: 300;
-          letter-spacing: 0.12em;
-          text-transform: uppercase;
-          color: #fff;
-          margin-bottom: 6px;
-        }
-        .v27-single-city {
-          font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-          font-size: 13px;
           letter-spacing: 0.2em;
+          color: rgba(255,255,255,0.45);
           text-transform: uppercase;
-          color: rgba(255,255,255,0.5);
         }
 
         .v27-cta {
@@ -304,33 +360,42 @@ export default function GridToFullscreenPage() {
           flex-direction: column;
           align-items: center;
           justify-content: center;
-          gap: 24px;
+          gap: 28px;
         }
-        .v27-cta-title {
+        .v27-cta-heading {
           font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-          font-size: clamp(24px, 4vw, 52px);
+          font-size: clamp(22px, 4vw, 52px);
           font-weight: 200;
-          letter-spacing: 0.25em;
+          letter-spacing: 0.3em;
           text-transform: uppercase;
           color: #fff;
+          text-indent: 0.3em;
+        }
+        .v27-cta-sub {
+          font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+          font-size: 14px;
+          letter-spacing: 0.1em;
+          color: rgba(255,255,255,0.4);
+          margin-bottom: 8px;
         }
         .v27-cta-btn {
           display: inline-block;
-          padding: 16px 48px;
-          border: 1px solid rgba(255,255,255,0.3);
+          padding: 16px 52px;
+          border: 1px solid rgba(255,255,255,0.25);
           color: #fff;
           text-decoration: none;
           font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
           font-size: 13px;
-          letter-spacing: 0.15em;
+          letter-spacing: 0.18em;
           text-transform: uppercase;
-          transition: all 0.3s ease;
+          transition: all 0.35s ease;
           background: transparent;
           cursor: pointer;
         }
         .v27-cta-btn:hover {
           background: #fff;
           color: #0c0c0c;
+          border-color: #fff;
         }
       `}} />
 
@@ -340,108 +405,79 @@ export default function GridToFullscreenPage() {
         <a href="#">Contact</a>
       </nav>
 
-      {/* Title overlay - fades as grid expands */}
-      <div
-        className="v27-title-overlay"
-        style={{
-          opacity: titleOpacity,
-          display: titleOpacity < 0.01 ? 'none' : 'flex',
-        }}
-      >
+      {/* Title overlay */}
+      <div ref={titleRef} className="v27-title-overlay">
         <div className="v27-title-text">Aidan Torrence</div>
       </div>
 
-      {/* Counter in single-photo mode */}
-      <div
-        className="v27-counter"
-        style={{
-          opacity: isFullscreen ? 1 : counterOpacity,
-          display: counterOpacity < 0.01 && !isFullscreen ? 'none' : 'block',
-        }}
-      >
-        {String(currentIndex + 1).padStart(2, '0')} / {images.length}
+      {/* Counter */}
+      <div ref={counterRef} className="v27-counter">
+        01 / {images.length}
       </div>
 
-      {/* Transition zone: sticky grid that morphs */}
-      {!isFullscreen && (
-        <div
-          className="v27-spacer"
-          style={{ height: `${window.innerHeight * 0.6}px` }}
-        >
-          <div className="v27-grid-container">
-            <div
-              ref={gridRef}
-              className="v27-grid"
-              style={{
-                gridTemplateColumns: columns >= 4.5
-                  ? 'repeat(5, 1fr)'
-                  : columns >= 3.5
-                    ? 'repeat(4, 1fr)'
-                    : columns >= 2.5
-                      ? 'repeat(3, 1fr)'
-                      : columns >= 1.5
-                        ? 'repeat(2, 1fr)'
-                        : '1fr',
-                gap: `${gap}px`,
-                transform: normalizedPhase3 > 0 ? `scale(${photoScale})` : 'none',
-                transformOrigin: 'center center',
-              }}
-            >
-              {images.map((img, i) => (
-                <div
-                  key={i}
-                  className="v27-grid-item"
-                  style={{
-                    opacity: normalizedPhase3 > 0.5
-                      ? Math.max(0, 1 - (normalizedPhase3 - 0.5) * 2)
-                      : 1,
-                  }}
-                >
-                  <img
-                    src={`/images/large/${img.src}`}
-                    alt={`${img.name} - ${img.city}`}
-                    loading={i < 10 ? 'eager' : 'lazy'}
-                  />
-                  <div className="v27-caption" style={{ opacity: captionOpacity }}>
-                    <div className="v27-caption-name">{img.name}</div>
-                    <div className="v27-caption-city">{img.city}</div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      )}
-
-      {/* Full-viewport single photos */}
-      {isFullscreen && (
-        <div className="v27-singles-container">
-          {/* Spacer to account for transition scroll distance */}
-          <div style={{ height: `${window.innerHeight * 0.6}px` }} />
+      {/* Scroll spacer - creates the scrollable height for the transition */}
+      <div className="v27-scroll-spacer" style={{ height: `${vh * 1.5}px` }}>
+        <div ref={gridContainerRef} className="v27-grid-container">
           {images.map((img, i) => (
-            <div key={i} style={{ height: '100vh', position: 'relative' }}>
-              <div className="v27-single-photo">
-                <img
-                  src={`/images/large/${img.src}`}
-                  alt={`${img.name} - ${img.city}`}
-                  loading={i < 3 ? 'eager' : 'lazy'}
-                />
-                <div className="v27-single-caption">
-                  <div className="v27-single-name">{img.name}</div>
-                  <div className="v27-single-city">{img.city}</div>
-                </div>
+            <div
+              key={i}
+              ref={(el) => { itemsRef.current[i] = el; }}
+              className="v27-item"
+            >
+              <img
+                src={`/images/large/${img.src}`}
+                alt={`${img.name} - ${img.city}`}
+                loading={i < 10 ? 'eager' : 'lazy'}
+              />
+              <div
+                ref={(el) => { captionsRef.current[i] = el; }}
+                className="v27-caption"
+              >
+                <div className="v27-caption-name">{img.name}</div>
+                <div className="v27-caption-city">{img.city}</div>
               </div>
             </div>
           ))}
-          {/* CTA */}
-          <div className="v27-cta">
-            <div className="v27-cta-title">Let&apos;s Create Together</div>
-            <a href="mailto:hello@aidantorrence.com" className="v27-cta-btn">
-              Get in Touch
-            </a>
+        </div>
+      </div>
+
+      {/* Single-photo scroll sections (rendered below the transition zone) */}
+      {images.map((img, i) => (
+        <div
+          key={`single-${i}`}
+          style={{
+            position: 'relative',
+            width: '100%',
+            height: '100vh',
+            overflow: 'hidden',
+          }}
+        >
+          <img
+            src={`/images/large/${img.src}`}
+            alt={`${img.name} - ${img.city}`}
+            loading="lazy"
+            style={{
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover',
+              display: 'block',
+            }}
+          />
+          <div className="v27-caption" style={{ opacity: 1 }}>
+            <div className="v27-caption-name">{img.name}</div>
+            <div className="v27-caption-city">{img.city}</div>
           </div>
         </div>
-      )}
+      ))}
+
+      {/* CTA */}
+      <div className="v27-cta">
+        <div className="v27-cta-sub">25 portraits across 12 cities</div>
+        <div className="v27-cta-heading">Let&apos;s Create Together</div>
+        <a href="mailto:hello@aidantorrence.com" className="v27-cta-btn">
+          Get in Touch
+        </a>
+      </div>
     </>
   );
 }
