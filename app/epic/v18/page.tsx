@@ -3,18 +3,18 @@
 import React, { useEffect, useRef } from 'react';
 
 const images = [
-  { src: 'manila-gallery-closeup-001.jpg', cropOrigin: '50% 30%' },
-  { src: 'manila-gallery-dsc-0075.jpg', cropOrigin: '50% 40%' },
-  { src: 'manila-gallery-ivy-001.jpg', cropOrigin: '40% 20%' },
-  { src: 'manila-gallery-night-001.jpg', cropOrigin: '50% 50%' },
-  { src: 'manila-gallery-street-001.jpg', cropOrigin: '60% 30%' },
-  { src: 'manila-gallery-garden-001.jpg', cropOrigin: '50% 40%' },
-  { src: 'manila-gallery-canal-001.jpg', cropOrigin: '50% 50%' },
-  { src: 'manila-gallery-urban-001.jpg', cropOrigin: '50% 30%' },
-  { src: 'manila-gallery-shadow-001.jpg', cropOrigin: '50% 50%' },
-  { src: 'manila-gallery-tropical-001.jpg', cropOrigin: '40% 40%' },
-  { src: 'manila-gallery-statue-001.jpg', cropOrigin: '50% 20%' },
-  { src: 'manila-gallery-dsc-0911.jpg', cropOrigin: '50% 40%' },
+  { src: 'manila-gallery-closeup-001.jpg', cropOrigin: '50% 30%', name: 'Althea', city: 'Manila' },
+  { src: 'manila-gallery-dsc-0075.jpg', cropOrigin: '50% 40%', name: 'Rina', city: 'Makati' },
+  { src: 'manila-gallery-ivy-001.jpg', cropOrigin: '40% 20%', name: 'Mei', city: 'Intramuros' },
+  { src: 'manila-gallery-night-001.jpg', cropOrigin: '50% 50%', name: 'Jess', city: 'BGC' },
+  { src: 'manila-gallery-street-001.jpg', cropOrigin: '60% 30%', name: 'Clara', city: 'Poblacion' },
+  { src: 'manila-gallery-garden-001.jpg', cropOrigin: '50% 40%', name: 'Suki', city: 'Manila' },
+  { src: 'manila-gallery-canal-001.jpg', cropOrigin: '50% 50%', name: 'Ana', city: 'Escolta' },
+  { src: 'manila-gallery-urban-001.jpg', cropOrigin: '50% 30%', name: 'Ivy', city: 'Makati' },
+  { src: 'manila-gallery-shadow-001.jpg', cropOrigin: '50% 50%', name: 'Lena', city: 'BGC' },
+  { src: 'manila-gallery-tropical-001.jpg', cropOrigin: '40% 40%', name: 'Kira', city: 'Intramuros' },
+  { src: 'manila-gallery-statue-001.jpg', cropOrigin: '50% 20%', name: 'Dani', city: 'Manila' },
+  { src: 'manila-gallery-dsc-0911.jpg', cropOrigin: '50% 40%', name: 'Sol', city: 'Poblacion' },
 ];
 
 const CSS = `
@@ -27,7 +27,7 @@ const CSS = `
   }
 
   .v18-section {
-    height: 250vh;
+    height: 160vh;
     position: relative;
   }
 
@@ -90,10 +90,62 @@ const CSS = `
     background: radial-gradient(ellipse at center, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.6) 100%);
   }
 
+  .v18-fixed-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 50;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 16px 20px;
+    pointer-events: none;
+  }
+
+  .v18-fixed-nav a {
+    pointer-events: auto;
+    color: rgba(255,255,255,0.6);
+    text-decoration: none;
+    font-family: system-ui, -apple-system, sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+
+  .v18-fixed-nav a:hover { color: #fff; }
+
+  .v18-caption {
+    position: absolute;
+    bottom: 24px;
+    left: 20px;
+    z-index: 10;
+    pointer-events: none;
+  }
+
+  .v18-caption-name {
+    color: rgba(255,255,255,0.85);
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 18px;
+    font-weight: 400;
+    margin: 0;
+    line-height: 1.2;
+  }
+
+  .v18-caption-city {
+    color: rgba(255,255,255,0.4);
+    font-family: system-ui, -apple-system, sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin: 4px 0 0;
+  }
+
   .v18-section-counter {
     position: absolute;
     top: 20px;
-    left: 20px;
+    right: 20px;
     z-index: 10;
     color: rgba(255,255,255,0.3);
     font-family: 'SF Mono', 'Fira Code', monospace;
@@ -178,7 +230,6 @@ export default function V18Page() {
         const scrolledInSection = -rect.top;
         const progress = Math.max(0, Math.min(1, scrolledInSection / (sectionH - window.innerHeight)));
 
-        // Scale from 2.8 (tight crop) down to 1.0 (full reveal)
         const scale = 2.8 - progress * 1.8;
         wrapper.style.transform = `scale(${scale})`;
       });
@@ -193,13 +244,35 @@ export default function V18Page() {
     <>
       <style dangerouslySetInnerHTML={{ __html: CSS }} />
 
+      {/* Fixed nav */}
+      <div className="v18-fixed-nav">
+        <a href="#inquiry">Inquire</a>
+        <div style={{ textAlign: 'right' }}>
+          <p style={{
+            color: 'rgba(255,255,255,0.7)',
+            fontSize: '13px',
+            letterSpacing: '0.12em',
+            margin: 0,
+            fontFamily: 'Georgia, serif',
+          }}>Aidan Torrence</p>
+          <p style={{
+            color: 'rgba(255,255,255,0.35)',
+            fontSize: '10px',
+            letterSpacing: '0.25em',
+            textTransform: 'uppercase',
+            margin: '2px 0 0',
+            fontFamily: 'system-ui, sans-serif',
+          }}>Film Photographer</p>
+        </div>
+      </div>
+
       {/* Hero intro section */}
       <div className="v18-section" ref={(el) => { sectionsRef.current[0] = el; }}>
         <div className="v18-sticky">
           <div className="v18-img-wrapper">
             <img
               src={`/images/large/${images[0].src}`}
-              alt="Portfolio detail"
+              alt={`${images[0].name} in ${images[0].city}`}
               style={{ objectPosition: images[0].cropOrigin }}
             />
           </div>
@@ -208,30 +281,33 @@ export default function V18Page() {
             <h1
               style={{
                 color: '#fff',
-                fontSize: '10vw',
-                fontWeight: 200,
-                letterSpacing: '0.15em',
-                textTransform: 'uppercase',
+                fontSize: 'clamp(40px, 10vw, 100px)',
+                fontWeight: 300,
+                letterSpacing: '0.08em',
                 margin: 0,
                 lineHeight: 1.1,
                 textAlign: 'center',
-                fontFamily: 'system-ui, -apple-system, sans-serif',
+                fontFamily: 'Georgia, serif',
               }}
             >
               Aidan<br />Torrence
             </h1>
             <p
               style={{
-                color: 'rgba(255,255,255,0.6)',
-                fontSize: '12px',
-                letterSpacing: '0.35em',
+                color: 'rgba(255,255,255,0.5)',
+                fontSize: '11px',
+                letterSpacing: '0.3em',
                 textTransform: 'uppercase',
                 marginTop: '12px',
                 fontFamily: 'system-ui, sans-serif',
               }}
             >
-              Scroll to unravel
+              Film Photographer
             </p>
+          </div>
+          <div className="v18-caption">
+            <p className="v18-caption-name">{images[0].name}</p>
+            <p className="v18-caption-city">{images[0].city}</p>
           </div>
           <div className="v18-hint">
             <svg width="20" height="28" viewBox="0 0 20 28" fill="none" stroke="rgba(255,255,255,0.7)" strokeWidth="1.5" strokeLinecap="round">
@@ -254,7 +330,7 @@ export default function V18Page() {
             <div className="v18-img-wrapper">
               <img
                 src={`/images/large/${img.src}`}
-                alt={`Portfolio photo ${i + 2}`}
+                alt={`${img.name} in ${img.city}`}
                 loading="lazy"
                 style={{ objectPosition: img.cropOrigin }}
               />
@@ -263,20 +339,24 @@ export default function V18Page() {
             <div className="v18-section-counter">
               {String(i + 2).padStart(2, '0')} / {images.length}
             </div>
+            <div className="v18-caption">
+              <p className="v18-caption-name">{img.name}</p>
+              <p className="v18-caption-city">{img.city}</p>
+            </div>
           </div>
         </div>
       ))}
 
       {/* CTA Section */}
-      <div className="v18-cta-section">
+      <div className="v18-cta-section" id="inquiry">
         <h2
           style={{
             color: '#fff',
             fontSize: '28px',
-            fontWeight: 200,
+            fontWeight: 300,
             letterSpacing: '0.08em',
             marginBottom: '6px',
-            fontFamily: 'system-ui, -apple-system, sans-serif',
+            fontFamily: 'Georgia, serif',
           }}
         >
           Inquiries
@@ -285,13 +365,11 @@ export default function V18Page() {
           style={{
             color: 'rgba(255,255,255,0.4)',
             fontSize: '13px',
-            letterSpacing: '0.2em',
-            textTransform: 'uppercase',
             marginBottom: '32px',
             fontFamily: 'system-ui, sans-serif',
           }}
         >
-          Film &middot; Fashion &middot; Editorial
+          I&apos;ll get back to you within a few hours.
         </p>
         <form
           onSubmit={(e) => {
@@ -302,6 +380,7 @@ export default function V18Page() {
         >
           <input type="text" placeholder="Name" required />
           <input type="email" placeholder="Email" required />
+          <input type="text" placeholder="Instagram" />
           <textarea placeholder="Tell me about your project..." />
           <button type="submit" className="v18-submit">
             Send Inquiry
@@ -312,13 +391,10 @@ export default function V18Page() {
             aidan@aidantorrence.com
           </p>
           <p style={{ color: 'rgba(255,255,255,0.35)', fontSize: '13px', margin: '4px 0', fontFamily: 'system-ui, sans-serif' }}>
-            WhatsApp: +49 175 8966210 &middot; @aidantorrence
-          </p>
-          <p style={{ color: 'rgba(255,255,255,0.35)', fontSize: '13px', margin: '4px 0', fontFamily: 'system-ui, sans-serif' }}>
-            Based between Bangkok &amp; Europe &middot; Booking worldwide
+            WhatsApp: +49 175 8966210
           </p>
           <p style={{ color: 'rgba(255,255,255,0.2)', fontSize: '11px', marginTop: '20px', fontFamily: 'system-ui, sans-serif' }}>
-            Featured in Vogue Italia &middot; Hypebeast &middot; WWD
+            Featured in Vogue Italia · Hypebeast · WWD
           </p>
         </div>
       </div>
