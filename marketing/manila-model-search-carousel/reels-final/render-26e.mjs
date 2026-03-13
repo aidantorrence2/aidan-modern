@@ -200,39 +200,38 @@ function buildHTML(imageDataMap) {
       overlay.style.opacity = '1'
     }, 7600)
 
-    // Cycle through 8 photos, ~250ms each
+    // Cycle through 8 photos, ~800ms each
     for (let i = 0; i < 8; i++) {
-      setTimeout(() => showSlide(i), 7700 + i * 250)
+      setTimeout(() => showSlide(i), 7700 + i * 800)
     }
 
-    // Hide overlay
+    // Hide overlay after last photo lingers
     setTimeout(() => {
       overlay.style.transition = 'opacity 0.3s ease'
       overlay.style.opacity = '0'
-    }, 10000)
+    }, 14200)
 
-    addLine('<span style="color:#555;">  all shoots by @madebyaidan</span>', 10200)
+    addLine('<span style="color:#555;">  all shoots by @madebyaidan</span>', 14400)
 
     // How it works
-    addLine('', 10800)
-    typeLine(P, './manila --how-it-works', '#fff', 11000, 40, '${MANILA_COLOR}')
-    addLine('<span style="color:#22c55e;">Initializing booking sequence...</span>', 12000)
-    addLine('<br><span style="color:#facc15;font-weight:700;">[1/3] DM me on Instagram</span>', 12400)
-    addLine('<span style="color:#fff;">      Just say hey — I\\'ll reply back</span>', 12600)
-    addLine('<span style="color:#555;">      ✓ confirmed</span>', 12900)
-    addProgressBar(13000, 400)
-    addLine('<br><span style="color:#facc15;font-weight:700;">[2/3] We pick a date</span>', 13500)
-    addLine('<span style="color:#fff;">      Location + vibe planned together</span>', 13700)
-    addLine('<span style="color:#555;">      ✓ confirmed</span>', 14000)
-    addLine('<br><span style="color:#facc15;font-weight:700;">[3/3] Show up. I guide you.</span>', 14400)
-    addLine('<span style="color:#fff;">      No posing experience needed</span>', 14600)
-    addLine('<span style="color:#555;">      ✓ confirmed</span>', 14900)
-    addLine('<br><span style="color:#22c55e;font-weight:700;">✓ All steps complete. Ready to book.</span>', 15300)
+    addLine('', 14800)
+    typeLine(P, './manila --how-it-works', '#fff', 15000, 40, '${MANILA_COLOR}')
+    addLine('<span style="color:#22c55e;">Initializing booking sequence...</span>', 15800)
+    addLine('<br><span style="color:#facc15;font-weight:700;">[1/3] DM me on Instagram</span>', 16100)
+    addLine('<span style="color:#fff;">      Just say hey — I\\'ll reply back</span>', 16300)
+    addLine('<span style="color:#555;">      ✓ confirmed</span>', 16500)
+    addLine('<br><span style="color:#facc15;font-weight:700;">[2/3] We pick a date</span>', 16800)
+    addLine('<span style="color:#fff;">      Location + vibe planned together</span>', 17000)
+    addLine('<span style="color:#555;">      ✓ confirmed</span>', 17200)
+    addLine('<br><span style="color:#facc15;font-weight:700;">[3/3] Show up. I guide you.</span>', 17500)
+    addLine('<span style="color:#fff;">      No posing experience needed</span>', 17700)
+    addLine('<span style="color:#555;">      ✓ confirmed</span>', 17900)
+    addLine('<br><span style="color:#22c55e;font-weight:700;">✓ All steps complete. Ready to book.</span>', 18200)
 
     // CTA
-    addLine('', 16000)
-    typeLine(P, './manila --book-now', '#fff', 16200, 45, '${MANILA_COLOR}')
-    addLine('<span style="color:#22c55e;">→ Opening Instagram...</span>', 17100)
+    addLine('', 18600)
+    typeLine(P, './manila --book-now', '#fff', 18800, 45, '${MANILA_COLOR}')
+    addLine('<span style="color:#22c55e;">→ Opening Instagram...</span>', 19500)
 
     setTimeout(() => {
       const box = document.createElement('div')
@@ -241,10 +240,10 @@ function buildHTML(imageDataMap) {
       content.appendChild(box)
       scrollToBottom()
       requestAnimationFrame(() => { box.style.opacity = '1' })
-    }, 17600)
+    }, 20000)
 
-    addLine('<span style="color:#555;">───────────────────────────────────</span>', 18600)
-    addLine('<span style="color:#facc15;font-weight:700;">⚡ limited spots this month</span>', 18900)
+    addLine('<span style="color:#555;">───────────────────────────────────</span>', 21000)
+    addLine('<span style="color:#facc15;font-weight:700;">⚡ limited spots this month</span>', 21300)
 
     setTimeout(() => {
       const div = document.createElement('div')
@@ -252,7 +251,7 @@ function buildHTML(imageDataMap) {
       div.innerHTML = '$ <span style="display:inline-block;width:11px;height:26px;background:#22c55e;animation:blink 0.7s step-end infinite;vertical-align:text-bottom;"></span>'
       content.appendChild(div)
       scrollToBottom()
-    }, 19400)
+    }, 21800)
   </script>
 </body>
 </html>`

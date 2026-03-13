@@ -189,33 +189,33 @@ function buildHTML(imageDataMap) {
       overlay.style.opacity = '1'
     }, 5600)
 
-    // Cycle through 8 photos
+    // Cycle through 8 photos, ~800ms each
     for (let i = 0; i < 8; i++) {
-      setTimeout(() => showSlide(i), 5700 + i * 250)
+      setTimeout(() => showSlide(i), 5700 + i * 800)
     }
 
-    // Hide overlay
+    // Hide overlay after last photo lingers
     setTimeout(() => {
       overlay.style.transition = 'opacity 0.3s ease'
       overlay.style.opacity = '0'
-    }, 8000)
+    }, 12200)
 
-    addLine('<span style="color:#22c55e;">✓ 8 samples loaded</span>', 8200)
-    addLine('<span style="color:#555;">  all shoots by @madebyaidan</span>', 8400)
+    addLine('<span style="color:#22c55e;">✓ 8 samples loaded</span>', 12400)
+    addLine('<span style="color:#555;">  all shoots by @madebyaidan</span>', 12600)
 
     // Steps
-    addLine('', 9000)
-    addLine('<span style="color:${CLAUDE_ORANGE};">⟳ How to book — 3 steps:</span>', 9200)
-    addLine('<br><span style="color:${CLAUDE_AMBER};font-weight:700;">[1/3] DM me on Instagram</span>', 9700)
-    addLine('<span style="color:#e5e7eb;">      Just say hey — I\\'ll reply back</span>', 9900)
-    addLine('<span style="color:#22c55e;">      ✓ confirmed</span>', 10200)
-    addLine('<br><span style="color:${CLAUDE_AMBER};font-weight:700;">[2/3] We pick a date</span>', 10600)
-    addLine('<span style="color:#e5e7eb;">      Location + vibe planned together</span>', 10800)
-    addLine('<span style="color:#22c55e;">      ✓ confirmed</span>', 11100)
-    addLine('<br><span style="color:${CLAUDE_AMBER};font-weight:700;">[3/3] Show up. I guide you.</span>', 11500)
-    addLine('<span style="color:#e5e7eb;">      No posing experience needed</span>', 11700)
-    addLine('<span style="color:#22c55e;">      ✓ confirmed</span>', 12000)
-    addLine('<br><span style="color:#22c55e;font-weight:700;">✓ All steps complete. Ready to book.</span>', 12500)
+    addLine('', 13000)
+    addLine('<span style="color:${CLAUDE_ORANGE};">⟳ How to book — 3 steps:</span>', 13200)
+    addLine('<br><span style="color:${CLAUDE_AMBER};font-weight:700;">[1/3] DM me on Instagram</span>', 13600)
+    addLine('<span style="color:#e5e7eb;">      Just say hey — I\\'ll reply back</span>', 13800)
+    addLine('<span style="color:#22c55e;">      ✓ confirmed</span>', 14000)
+    addLine('<br><span style="color:${CLAUDE_AMBER};font-weight:700;">[2/3] We pick a date</span>', 14300)
+    addLine('<span style="color:#e5e7eb;">      Location + vibe planned together</span>', 14500)
+    addLine('<span style="color:#22c55e;">      ✓ confirmed</span>', 14700)
+    addLine('<br><span style="color:${CLAUDE_AMBER};font-weight:700;">[3/3] Show up. I guide you.</span>', 15000)
+    addLine('<span style="color:#e5e7eb;">      No posing experience needed</span>', 15200)
+    addLine('<span style="color:#22c55e;">      ✓ confirmed</span>', 15400)
+    addLine('<br><span style="color:#22c55e;font-weight:700;">✓ All steps complete. Ready to book.</span>', 15800)
 
     // CTA box
     setTimeout(() => {
@@ -225,10 +225,10 @@ function buildHTML(imageDataMap) {
       content.appendChild(box)
       scrollToBottom()
       requestAnimationFrame(() => { box.style.opacity = '1' })
-    }, 13300)
+    }, 16300)
 
-    addLine('<span style="color:#555;">─────────────────────────────────</span>', 14300)
-    addLine('<span style="color:${CLAUDE_AMBER};font-weight:700;">⚡ limited spots this month</span>', 14600)
+    addLine('<span style="color:#555;">─────────────────────────────────</span>', 17300)
+    addLine('<span style="color:${CLAUDE_AMBER};font-weight:700;">⚡ limited spots this month</span>', 17600)
 
     // Final cursor
     setTimeout(() => {
@@ -237,7 +237,7 @@ function buildHTML(imageDataMap) {
       div.innerHTML = '> <span style="display:inline-block;width:11px;height:24px;background:${CLAUDE_ORANGE};animation:blink 0.7s step-end infinite;vertical-align:text-bottom;"></span>'
       content.appendChild(div)
       scrollToBottom()
-    }, 15100)
+    }, 18100)
   </script>
 </body>
 </html>`
