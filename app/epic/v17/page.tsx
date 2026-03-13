@@ -346,29 +346,37 @@ export default function V17Page() {
         </div>
       )}
 
-      {/* Hero title */}
-      <div className="v17-hero">
-        <h1 style={{
-          color: '#fff',
-          fontSize: 'clamp(36px, 9vw, 72px)',
-          fontWeight: 300,
-          letterSpacing: '0.06em',
-          margin: 0,
-          lineHeight: 1.1,
-          textAlign: 'center',
-          fontFamily: 'Georgia, serif',
+      {/* Hero */}
+      <div
+        className="v17-hero"
+        data-idx="0"
+        ref={(el) => { sectionRefs.current[0] = el; }}
+      >
+        <img
+          src={`/images/large/${images[0].src}`}
+          alt={`${images[0].name} — ${images[0].city}`}
+          className="v17-visible"
+        />
+        <p style={{
+          color: 'rgba(255,255,255,0.45)',
+          fontSize: '11px',
+          letterSpacing: '0.3em',
+          textTransform: 'uppercase',
+          fontFamily: 'system-ui, -apple-system, sans-serif',
+          margin: '16px 0 0',
+          fontWeight: 400,
         }}>
           Selected Works
-        </h1>
+        </p>
       </div>
 
       {/* Photo sections */}
-      {images.map((img, i) => (
+      {images.slice(1).map((img, i) => (
         <div
           className="v17-photo-section"
           key={img.src}
-          data-idx={i}
-          ref={(el) => { sectionRefs.current[i] = el; }}
+          data-idx={i + 1}
+          ref={(el) => { sectionRefs.current[i + 1] = el; }}
         >
           <img
             src={`/images/large/${img.src}`}
