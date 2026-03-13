@@ -8,7 +8,7 @@ const FRAMES_DIR = `${OUT_DIR}/tmp-frames`;
 const W = 1080;
 const H = 1920;
 const FPS = 30;
-const DURATION = 17.5;
+const DURATION = 19.5;
 const TOTAL_FRAMES = Math.ceil(DURATION * FPS);
 
 async function main() {
@@ -51,6 +51,11 @@ async function main() {
       if (pw2) { pw2.style.left = '-400px'; pw2.style.top = '40%'; }
       const rf = document.getElementById('redFlash');
       if (rf) rf.classList.remove('pop');
+      // Reset shoot flashes
+      ['shootFlash1','shootFlash2'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.style.opacity = '0';
+      });
 
       window.__applyUpTo(time);
 
@@ -70,13 +75,13 @@ async function main() {
         const e = 1 - (1 - p) * (1 - p);
         tw.style.left = (1200 + (240 - 1200) * e) + 'px';
       }
-      if (tw2 && time >= 10.6 && time < 12.1) {
-        const p = (time - 10.6) / 1.5;
+      if (tw2 && time >= 12.4 && time < 13.9) {
+        const p = (time - 12.4) / 1.5;
         const e = p * p;
         tw2.style.left = (240 + (-700 - 240) * e) + 'px';
       }
-      if (pw2 && time >= 11.9 && time < 13.9) {
-        const p = (time - 11.9) / 2.0;
+      if (pw2 && time >= 13.7 && time < 15.7) {
+        const p = (time - 13.7) / 2.0;
         const e = p * p * (3 - 2 * p);
         pw2.style.left = (-400 + 1600 * e) + 'px';
         pw2.style.top = (40 + (30 - 40) * e) + '%';
@@ -109,15 +114,14 @@ async function main() {
   console.log('=== Creating film scan photo frames ===');
 
   const photos = [
-    `${IMG_DIR}/manila-gallery-purple-002-cropped.jpg`,
     `${IMG_DIR}/manila-gallery-purple-005-cropped.jpg`,
     `${IMG_DIR}/manila-gallery-purple-003-cropped.jpg`,
     `${IMG_DIR}/manila-gallery-purple-004-cropped.jpg`,
     `${IMG_DIR}/manila-gallery-purple-001-cropped.jpg`,
-    `${IMG_DIR}/manila-gallery-purple-006-cropped.jpg`,
+    `${IMG_DIR}/manila-gallery-purple-002-cropped.jpg`,
   ];
 
-  const durations = [1.2, 1.0, 1.0, 0.8, 1.2, 1.8];
+  const durations = [1.0, 1.0, 0.8, 1.2, 1.8];
 
   // Film rebate dimensions — image fills the center, thin rebate borders
   const rebateTop = 120;    // rebate area above image
@@ -133,20 +137,11 @@ async function main() {
     const frameNum = `${18 + i}A`;
     const framedPng = `${OUT_DIR}/tmp_framed_${i}.png`;
 
-    // 1. Scale photo — landscape gets letterboxed, portrait gets cropped to fill
-    const isLandscape = i === 5; // 006 is 3630x2900 landscape
-    if (isLandscape) {
-      // Fit within frame, black bars above/below
-      execSync(
-        `magick "${photos[i]}" -resize ${imgW}x${imgH} -gravity center -background "#0a0800" -extent ${imgW}x${imgH} "${OUT_DIR}/tmp_crop_${i}.png"`,
-        { stdio: 'pipe' }
-      );
-    } else {
-      execSync(
-        `magick "${photos[i]}" -resize ${imgW}x${imgH}^ -gravity center -extent ${imgW}x${imgH} "${OUT_DIR}/tmp_crop_${i}.png"`,
-        { stdio: 'pipe' }
-      );
-    }
+    // 1. Scale photo to fill image area (crop to fit portrait)
+    execSync(
+      `magick "${photos[i]}" -resize ${imgW}x${imgH}^ -gravity center -extent ${imgW}x${imgH} "${OUT_DIR}/tmp_crop_${i}.png"`,
+      { stdio: 'pipe' }
+    );
 
     // 2. Build the film scan frame with ImageMagick
     // Start with dark film base
