@@ -346,37 +346,27 @@ export default function V17Page() {
         </div>
       )}
 
-      {/* Hero */}
-      <div
-        className="v17-hero"
-        data-idx="0"
-        ref={(el) => { sectionRefs.current[0] = el; }}
-      >
-        <img
-          src={`/images/large/${images[0].src}`}
-          alt={`${images[0].name} — ${images[0].city}`}
-          className="v17-visible"
-        />
-        <p style={{
-          color: 'rgba(255,255,255,0.45)',
-          fontSize: '11px',
-          letterSpacing: '0.3em',
-          textTransform: 'uppercase',
-          fontFamily: 'system-ui, -apple-system, sans-serif',
-          margin: '16px 0 0',
-          fontWeight: 400,
-        }}>
-          Selected Works
-        </p>
-      </div>
+      {/* Page title */}
+      <p style={{
+        color: 'rgba(255,255,255,0.45)',
+        fontSize: '11px',
+        letterSpacing: '0.3em',
+        textTransform: 'uppercase',
+        fontFamily: 'system-ui, -apple-system, sans-serif',
+        textAlign: 'center',
+        margin: '80px 0 20px',
+        fontWeight: 400,
+      }}>
+        Selected Works
+      </p>
 
       {/* Photo sections */}
-      {images.slice(1).map((img, i) => (
+      {images.map((img, i) => (
         <div
           className="v17-photo-section"
           key={img.src}
-          data-idx={i + 1}
-          ref={(el) => { sectionRefs.current[i + 1] = el; }}
+          data-idx={i}
+          ref={(el) => { sectionRefs.current[i] = el; }}
         >
           <img
             src={`/images/large/${img.src}`}
