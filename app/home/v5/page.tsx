@@ -30,7 +30,7 @@ const images = [
   { src: 'manila-gallery-dsc-0911.jpg', name: 'Zarissa', city: 'KL' },
 ];
 
-const TOTAL_SLIDES = images.length + 2; // +1 for intro slide, +1 for CTA slide
+const TOTAL_SLIDES = images.length + 1; // +1 for CTA slide
 
 const CSS = `
   body > header, body > footer, .fixed.inset-x-0.bottom-0 { display: none !important; }
@@ -351,55 +351,6 @@ const CSS = `
     font-family: system-ui, sans-serif;
   }
 
-  /* Intro slide */
-  .v5-intro {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    gap: 16px;
-  }
-
-  .v5-intro-title {
-    color: #fff;
-    font-family: Georgia, 'Times New Roman', serif;
-    font-size: 42px;
-    font-weight: 400;
-    letter-spacing: 0.08em;
-    margin: 0;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 1s ease 0.2s, transform 1s ease 0.2s;
-  }
-
-  .v5-intro-line {
-    width: 60px;
-    height: 1px;
-    background: rgba(255,255,255,0.3);
-    opacity: 0;
-    transition: opacity 1s ease 0.6s;
-  }
-
-  .v5-intro-sub {
-    color: rgba(255,255,255,0.4);
-    font-family: system-ui, -apple-system, sans-serif;
-    font-size: 12px;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    margin: 0;
-    opacity: 0;
-    transform: translateY(10px);
-    transition: opacity 1s ease 0.8s, transform 1s ease 0.8s;
-  }
-
-  .v5-slide.v5-active .v5-intro-title,
-  .v5-slide.v5-active .v5-intro-line,
-  .v5-slide.v5-active .v5-intro-sub {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
   @media (max-width: 700px) {
     .v5-image-stack {
       max-width: calc(100% - 80px);
@@ -498,7 +449,7 @@ export default function Page() {
   }, [next, prev, resetTimer]);
 
   const progress = ((current + 1) / totalSlides) * 100;
-  const isCtaSlide = current === images.length + 1;
+  const isCtaSlide = current === images.length;
 
   return (
     <>
@@ -513,7 +464,7 @@ export default function Page() {
           href="#"
           onClick={(e) => {
             e.preventDefault();
-            goTo(images.length + 1);
+            goTo(images.length);
             resetTimer();
           }}
         >
@@ -544,19 +495,10 @@ export default function Page() {
       {/* Viewport */}
       <div className="v5-viewport">
         <div className="v5-image-stack">
-          {/* Intro slide */}
-          <div className={`v5-slide${current === 0 ? ' v5-active' : ''}`}>
-            <div className="v5-intro">
-              <h2 className="v5-intro-title">Selected Works</h2>
-              <div className="v5-intro-line" />
-              <p className="v5-intro-sub">Aidan Torrence — Film Photography</p>
-            </div>
-          </div>
-
           {/* Image slides */}
           {images.map((img, i) => (
             <div
-              className={`v5-slide${i + 1 === current ? ' v5-active' : ''}`}
+              className={`v5-slide${i === current ? ' v5-active' : ''}`}
               key={img.src}
             >
               <img
