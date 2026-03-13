@@ -406,14 +406,23 @@ export default function GravityDropPage() {
     };
   }, [dropNext, liftLast]);
 
-  // Auto-drop the title card on mount
+  // Auto-drop cards continuously
   useEffect(() => {
+    // Drop the title card first, then auto-drop photos every 1.5s
     const timer = setTimeout(() => {
       dropNext();
     }, 600);
     return () => clearTimeout(timer);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  useEffect(() => {
+    if (droppedCount === 0 || allDone) return;
+    const timer = setTimeout(() => {
+      dropNext();
+    }, 1500);
+    return () => clearTimeout(timer);
+  }, [droppedCount, allDone, dropNext]);
 
   // Calculate stack layout
   // The "stack" is all landed items. The newest is at the bottom visually (largest),
