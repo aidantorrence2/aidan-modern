@@ -177,13 +177,14 @@ const CSS = `
 
   .v17-page-title {
     color: rgba(255,255,255,0.5);
-    font-family: Georgia, 'Times New Roman', serif;
-    font-size: 18px;
-    font-weight: 300;
-    letter-spacing: 0.08em;
+    font-family: system-ui, -apple-system, sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
     text-align: center;
     margin: 0;
-    padding: 56px 20px 24px;
+    padding: 90px 20px 30px;
   }
 
   .v17-cta-section {
