@@ -69,25 +69,25 @@ const CSS = `
 
   .v17-counter {
     position: fixed;
-    top: 60px;
+    bottom: 20px;
     right: 20px;
     z-index: 100;
-    color: #fff;
+    color: rgba(255,255,255,0.5);
     font-family: 'SF Mono', 'Fira Code', 'Courier New', monospace;
-    font-size: 18px;
-    font-weight: 500;
+    font-size: 13px;
+    font-weight: 400;
     letter-spacing: 0.05em;
-    background: rgba(0,0,0,0.6);
+    background: rgba(0,0,0,0.5);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    padding: 10px 16px;
-    border-radius: 20px;
-    border: 1px solid rgba(255,255,255,0.1);
+    padding: 8px 14px;
+    border-radius: 16px;
+    border: 1px solid rgba(255,255,255,0.08);
     transition: transform 0.3s cubic-bezier(0.34,1.56,0.64,1);
   }
 
   .v17-counter.v17-bump {
-    transform: scale(1.15);
+    transform: scale(1.1);
   }
 
   .v17-progress {
@@ -175,23 +175,15 @@ const CSS = `
     margin: 3px 0 0;
   }
 
-  .v17-hero {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    padding: 20px;
-    box-sizing: border-box;
-  }
-
-  .v17-hero img {
-    width: 100%;
-    max-width: 600px;
-    max-height: 65vh;
-    object-fit: cover;
-    border-radius: 2px;
+  .v17-page-title {
+    color: rgba(255,255,255,0.5);
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 18px;
+    font-weight: 300;
+    letter-spacing: 0.08em;
+    text-align: center;
+    margin: 0;
+    padding: 56px 20px 24px;
   }
 
   .v17-cta-section {
@@ -347,18 +339,7 @@ export default function V17Page() {
       )}
 
       {/* Page title */}
-      <p style={{
-        color: 'rgba(255,255,255,0.45)',
-        fontSize: '11px',
-        letterSpacing: '0.3em',
-        textTransform: 'uppercase',
-        fontFamily: 'system-ui, -apple-system, sans-serif',
-        textAlign: 'center',
-        margin: '80px 0 20px',
-        fontWeight: 400,
-      }}>
-        Selected Works
-      </p>
+      <p className="v17-page-title">Selected Works</p>
 
       {/* Photo sections */}
       {images.map((img, i) => (
