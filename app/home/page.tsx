@@ -33,6 +33,7 @@ const versions = [
   { num: 28, title: 'Cinematic Letterbox', desc: 'Ultra-wide letterbox format with slow pans — documentary film aesthetic' },
   { num: 29, title: 'Gravity Drop', desc: 'Photos fall from above and stack up — satisfying physics-based interaction' },
   { num: 30, title: 'Morphing Portraits', desc: 'Organic blob-shaped transitions between fullscreen photos — liquid reveals' },
+  { num: 31, title: 'Vertical Sine Wave', desc: 'Photos flow along a vertical sine wave — mobile-first natural scroll with rhythm' },
 ];
 
 const CSS = `
@@ -121,7 +122,7 @@ export default function HomeIndex() {
       <style dangerouslySetInnerHTML={{ __html: CSS }} />
       <div className="home-index">
         <h1>Homepage Variations</h1>
-        <p className="subtitle">30 Design Explorations</p>
+        <p className="subtitle">31 Design Explorations</p>
         <div className="home-grid">
           {versions.map((v) => (
             <Link key={v.num} href={`/home/v${v.num}` as any} className="home-card">
