@@ -58,32 +58,42 @@ const CSS = `
     perspective: 1200px;
   }
 
-  /* Fixed nav */
-  .gd-nav {
+  /* Fixed header */
+  .gd-header {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     z-index: 100;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
-    padding: 24px 32px;
+    padding: 28px 32px 16px;
     pointer-events: none;
+    background: linear-gradient(to bottom, rgba(12,12,12,0.9) 0%, rgba(12,12,12,0.5) 70%, transparent 100%);
   }
-  .gd-nav-logo {
-    font-size: 11px;
-    letter-spacing: 4px;
+  .gd-header-name {
+    font-size: 16px;
+    letter-spacing: 8px;
     text-transform: uppercase;
-    color: rgba(255,255,255,0.5);
+    color: rgba(255,255,255,0.85);
+    font-weight: 200;
+  }
+  .gd-header-sub {
+    font-size: 10px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.35);
     font-weight: 300;
+    margin-top: 6px;
   }
   .gd-nav-counter {
-    font-size: 12px;
+    font-size: 11px;
     letter-spacing: 2px;
-    color: rgba(255,255,255,0.4);
+    color: rgba(255,255,255,0.3);
     font-variant-numeric: tabular-nums;
     font-weight: 300;
+    margin-top: 10px;
   }
 
   /* Stack area */
@@ -205,30 +215,6 @@ const CSS = `
     margin-top: 4px;
   }
 
-  /* Title card */
-  .gd-title-card {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #0c0c0c;
-    border: 1px solid rgba(255,255,255,0.08);
-  }
-  .gd-title-text {
-    font-size: 18px;
-    letter-spacing: 10px;
-    text-transform: uppercase;
-    color: rgba(255,255,255,0.9);
-    font-weight: 200;
-    text-align: center;
-    line-height: 1.6;
-  }
-  .gd-title-sub {
-    font-size: 10px;
-    letter-spacing: 5px;
-    color: rgba(255,255,255,0.35);
-    margin-top: 8px;
-  }
-
   /* CTA */
   .gd-cta {
     position: fixed;
@@ -326,7 +312,7 @@ export default function GravityDropPage() {
   const isAnimatingRef = useRef(false);
   const containerRef = useRef<HTMLDivElement>(null);
 
-  const totalItems = TOTAL + 1; // title + 25 photos
+  const totalItems = TOTAL; // photos only
 
   const dropNext = useCallback(() => {
     if (isAnimatingRef.current) return;
@@ -406,12 +392,11 @@ export default function GravityDropPage() {
     };
   }, [dropNext, liftLast]);
 
-  // Auto-drop cards continuously
+  // Auto-drop first card after short delay
   useEffect(() => {
-    // Drop the title card first, then auto-drop photos every 1.5s
     const timer = setTimeout(() => {
       dropNext();
-    }, 600);
+    }, 800);
     return () => clearTimeout(timer);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -427,7 +412,7 @@ export default function GravityDropPage() {
   // Calculate stack layout
   // The "stack" is all landed items. The newest is at the bottom visually (largest),
   // older ones compress and move up.
-  const getCardStyle = (stackIndex: number, stackSize: number, isTitle: boolean) => {
+  const getCardStyle = (stackIndex: number, stackSize: number) => {
     // stackIndex: 0 = oldest in stack, stackSize-1 = newest (top of stack)
     const posFromTop = stackSize - 1 - stackIndex; // 0 = newest, 1 = second newest...
 
@@ -436,8 +421,8 @@ export default function GravityDropPage() {
     }
 
     // Size: newest = biggest, each older one shrinks
-    const baseWidth = isTitle ? 340 : 380;
-    const baseHeight = isTitle ? 200 : 480;
+    const baseWidth = 380;
+    const baseHeight = 480;
     const scaleFactor = 1 - posFromTop * 0.12;
     const w = baseWidth * scaleFactor;
     const h = baseHeight * scaleFactor;
@@ -476,8 +461,7 @@ export default function GravityDropPage() {
     } as React.CSSProperties;
   };
 
-  // Build the list of all items (title + photos)
-  // Index 0 = title, 1..25 = photos
+  // Build the list of photo items
   // "Landed" items: indices 0..droppedCount-1 (excluding animating one if lifting)
   // "Animating" item: animatingIndex
 
@@ -487,19 +471,16 @@ export default function GravityDropPage() {
     landedIndices.push(i);
   }
 
-  const photoCount = droppedCount > 0 ? droppedCount - 1 : 0;
-  const currentPhotoIndex = animatingDirection === 'lift' && animatingIndex !== null
-    ? Math.max(0, droppedCount - 2)
-    : Math.max(0, droppedCount - 2);
-  const displayPhotoNum = Math.min(Math.max(photoCount, 0), TOTAL);
+  const displayPhotoNum = Math.min(droppedCount, TOTAL);
 
   return (
     <>
       <style dangerouslySetInnerHTML={{ __html: CSS }} />
       <div className="gd-container" ref={containerRef}>
-        {/* Nav */}
-        <div className="gd-nav">
-          <div className="gd-nav-logo">Aidan Torrence</div>
+        {/* Header */}
+        <div className="gd-header">
+          <div className="gd-header-name">Aidan Torrence</div>
+          <div className="gd-header-sub">Film Photographer</div>
           <div className="gd-nav-counter">
             {displayPhotoNum > 0 ? (
               <>{String(displayPhotoNum).padStart(2, '0')} / {String(TOTAL).padStart(2, '0')}</>
@@ -513,10 +494,9 @@ export default function GravityDropPage() {
         <div className="gd-stack">
           {/* Render landed items */}
           {landedIndices.map((itemIndex, si) => {
-            const isTitle = itemIndex === 0;
-            const style = getCardStyle(si, landedIndices.length, isTitle);
+            const style = getCardStyle(si, landedIndices.length);
             const isTop = si === landedIndices.length - 1;
-            const photo = isTitle ? null : images[itemIndex - 1];
+            const photo = images[itemIndex];
 
             return (
               <div
@@ -527,27 +507,16 @@ export default function GravityDropPage() {
                   transform: `translateX(calc(-50% + var(--x-jitter))) translateY(var(--land-y)) rotate(var(--land-rot))`,
                 }}
               >
-                <div className="gd-card-inner" style={isTitle ? {} : {}}>
-                  {isTitle ? (
-                    <div className="gd-title-card" style={{ width: '100%', height: '100%' }}>
-                      <div style={{ textAlign: 'center' }}>
-                        <div className="gd-title-text">Aidan<br />Torrence</div>
-                        <div className="gd-title-sub">Photography</div>
-                      </div>
-                    </div>
-                  ) : (
-                    <>
-                      <img
-                        src={`/images/large/${photo!.src}`}
-                        alt={photo!.name}
-                        loading="eager"
-                      />
-                      <div className={`gd-caption ${isTop ? 'visible' : ''}`}>
-                        <div className="gd-caption-name">{photo!.name}</div>
-                        <div className="gd-caption-city">{photo!.city}</div>
-                      </div>
-                    </>
-                  )}
+                <div className="gd-card-inner">
+                  <img
+                    src={`/images/large/${photo.src}`}
+                    alt={photo.name}
+                    loading="eager"
+                  />
+                  <div className={`gd-caption ${isTop ? 'visible' : ''}`}>
+                    <div className="gd-caption-name">{photo.name}</div>
+                    <div className="gd-caption-city">{photo.city}</div>
+                  </div>
                 </div>
               </div>
             );
@@ -556,15 +525,10 @@ export default function GravityDropPage() {
           {/* Render animating item */}
           {animatingIndex !== null && (
             (() => {
-              const isTitle = animatingIndex === 0;
-              // For dropping: it will land at the top of the current stack
-              // For lifting: it's leaving from its current position
-              const stackForCalc = animatingDirection === 'drop'
-                ? [...landedIndices, animatingIndex]
-                : [...landedIndices, animatingIndex];
+              const stackForCalc = [...landedIndices, animatingIndex];
               const si = stackForCalc.length - 1;
-              const style = getCardStyle(si, stackForCalc.length, isTitle);
-              const photo = isTitle ? null : images[animatingIndex - 1];
+              const style = getCardStyle(si, stackForCalc.length);
+              const photo = images[animatingIndex];
 
               return (
                 <div
@@ -576,26 +540,15 @@ export default function GravityDropPage() {
                   }}
                 >
                   <div className="gd-card-inner">
-                    {isTitle ? (
-                      <div className="gd-title-card" style={{ width: '100%', height: '100%' }}>
-                        <div style={{ textAlign: 'center' }}>
-                          <div className="gd-title-text">Aidan<br />Torrence</div>
-                          <div className="gd-title-sub">Photography</div>
-                        </div>
-                      </div>
-                    ) : (
-                      <>
-                        <img
-                          src={`/images/large/${photo!.src}`}
-                          alt={photo!.name}
-                          loading="eager"
-                        />
-                        <div className="gd-caption visible">
-                          <div className="gd-caption-name">{photo!.name}</div>
-                          <div className="gd-caption-city">{photo!.city}</div>
-                        </div>
-                      </>
-                    )}
+                    <img
+                      src={`/images/large/${photo.src}`}
+                      alt={photo.name}
+                      loading="eager"
+                    />
+                    <div className="gd-caption visible">
+                      <div className="gd-caption-name">{photo.name}</div>
+                      <div className="gd-caption-city">{photo.city}</div>
+                    </div>
                   </div>
                 </div>
               );
