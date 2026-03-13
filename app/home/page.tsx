@@ -104,7 +104,7 @@ export default function HomeIndex() {
         <p className="subtitle">10 Design Explorations</p>
         <div className="home-grid">
           {versions.map((v) => (
-            <Link key={v.num} href={`/home/v${v.num}`} className="home-card">
+            <Link key={v.num} href={`/home/v${v.num}` as any} className="home-card">
               <p className="num">V{String(v.num).padStart(2, '0')}</p>
               <p className="title">{v.title}</p>
               <p className="desc">{v.desc}</p>
