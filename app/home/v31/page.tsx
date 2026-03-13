@@ -71,6 +71,26 @@ export default function VerticalWaveGallery() {
   const pausedByUserRef = useRef(false);
   const pauseTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
+  // Smooth eased scroll to a target Y position
+  const smoothScrollTo = useCallback((targetY: number, duration: number, onDone: () => void) => {
+    const startY = window.scrollY;
+    const diff = targetY - startY;
+    if (Math.abs(diff) < 2) { onDone(); return; }
+    const startTime = performance.now();
+    const easeInOutCubic = (t: number) => t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+    const step = (now: number) => {
+      const elapsed = now - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      window.scrollTo(0, startY + diff * easeInOutCubic(progress));
+      if (progress < 1) {
+        requestAnimationFrame(step);
+      } else {
+        onDone();
+      }
+    };
+    requestAnimationFrame(step);
+  }, []);
+
   // Auto-scroll: snap to next photo every 2.5s
   const scrollToNextPhoto = useCallback(() => {
     if (pausedByUserRef.current) {
@@ -80,10 +100,13 @@ export default function VerticalWaveGallery() {
     currentAutoIdx.current++;
     const nextEl = photoRefs.current[currentAutoIdx.current];
     if (nextEl) {
-      nextEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      autoAdvanceRef.current = setTimeout(scrollToNextPhoto, 2500);
+      const rect = nextEl.getBoundingClientRect();
+      const targetY = window.scrollY + rect.top - window.innerHeight / 2 + rect.height / 2;
+      smoothScrollTo(targetY, 1200, () => {
+        autoAdvanceRef.current = setTimeout(scrollToNextPhoto, 2500);
+      });
     }
-  }, []);
+  }, [smoothScrollTo]);
 
   // Start auto-scroll after 2s
   useEffect(() => {
