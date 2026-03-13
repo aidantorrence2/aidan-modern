@@ -120,12 +120,11 @@ const CSS = `
   }
 
   .v17-photo-section {
-    min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 60px 16px;
+    padding: 20px 16px;
     box-sizing: border-box;
   }
 
