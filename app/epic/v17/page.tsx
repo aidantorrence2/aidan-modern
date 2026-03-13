@@ -69,7 +69,7 @@ const CSS = `
 
   .v17-counter {
     position: fixed;
-    top: 20px;
+    top: 60px;
     right: 20px;
     z-index: 100;
     color: #fff;
