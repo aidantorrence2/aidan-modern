@@ -16,15 +16,18 @@ var FPS = 30;
 var SAFE_TOP = 213;
 var SAFE_BOTTOM = 430;
 
+// Film negative photos (pre-processed: cropped, inverted, color-corrected)
 var PROOF_PHOTOS = [
-  'manila-gallery-dsc-0190.jpg',
-  'manila-gallery-night-001.jpg',
-  'manila-gallery-garden-001.jpg',
-  'manila-gallery-urban-001.jpg',
-  'manila-gallery-canal-001.jpg',
-  'manila-gallery-ivy-001.jpg',
-  'manila-gallery-closeup-001.jpg',
-  'manila-gallery-dsc-0911.jpg',
+  '/tmp/reel-36-photos/DSC_0898_processed.jpg',
+  '/tmp/reel-36-photos/DSC_0897_processed.jpg',
+  '/tmp/reel-36-photos/DSC_0894_processed.jpg',
+  '/tmp/reel-36-photos/DSC_0893_processed.jpg',
+  '/tmp/reel-36-photos/DSC_0891_processed.jpg',
+  '/tmp/reel-36-photos/DSC_0886_processed.jpg',
+  '/tmp/reel-36-photos/DSC_0885_processed.jpg',
+  '/tmp/reel-36-photos/DSC_0892_processed.jpg',
+  '/tmp/reel-36-photos/DSC_0889_processed.jpg',
+  '/tmp/reel-36-photos/DSC_0890_processed.jpg',
 ];
 
 /*
@@ -76,7 +79,7 @@ function buildBTSClip() {
 
   var cmd = 'ffmpeg -y -i "' + BTS_CLIP + '" -i "' + overlayPng + '" ' +
     '-filter_complex "' + filterComplex + '" ' +
-    '-map "[out]" -t 8 -c:v libx264 -preset slow -crf 18 -pix_fmt yuv420p -r ' + FPS + ' -an "' + btsMp4 + '"';
+    '-map "[out]" -map 0:a -t 8 -c:v libx264 -preset slow -crf 18 -pix_fmt yuv420p -r ' + FPS + ' -c:a aac -b:a 128k "' + btsMp4 + '"';
 
   execSync(cmd, { stdio: 'inherit' });
   console.log('BTS clip done: ' + btsMp4);
@@ -112,7 +115,7 @@ function buildRevealHTML(imageDataMap) {
   html += '    <div class="hit-text" id="s1text" style="font-size:96px">THE<br><span class="accent">RESULTS:</span></div>\n';
   html += '  </div>\n\n';
 
-  // Scene 2: Photo slideshow (1.2-12s of part 2 = 8 photos ~1.35s each)
+  // Scene 2: Photo slideshow (1.2-12s of part 2)
   html += '  <div class="scene" id="scene2" style="background:#0a0a0a">\n';
   html += '    <div class="flash-overlay" id="photoFlash"></div>\n';
   html += '    <div class="photo-frame" id="photoFrame">\n';
@@ -149,8 +152,9 @@ function buildRevealHTML(imageDataMap) {
   html += '    [1.2, function() { document.getElementById("scene2").classList.add("active"); }],\n';
 
   var photoStart = 1.2;
-  var photoDur = 1.35;
-  for (var pi = 0; pi < 8; pi++) {
+  var photoCount = PROOF_PHOTOS.length;
+  var photoDur = Math.round((10.8 / photoCount) * 100) / 100; // fit all in ~10.8s window
+  for (var pi = 0; pi < photoCount; pi++) {
     var t = photoStart + pi * photoDur;
     // Flash before each photo
     html += '    [' + (t - 0.05).toFixed(2) + ', function() { document.getElementById("photoFlash").style.opacity = "0.85"; }],\n';
@@ -158,7 +162,7 @@ function buildRevealHTML(imageDataMap) {
 
     // Show photo — zoom from 1.2 to 1.0
     html += '    [' + t.toFixed(2) + ', function() {\n';
-    for (var pj = 0; pj < 8; pj++) {
+    for (var pj = 0; pj < photoCount; pj++) {
       if (pj === pi) {
         html += '      document.getElementById("photo' + pj + '").style.opacity = "1";\n';
         html += '      document.getElementById("photo' + pj + '").style.transform = "scale(1)";\n';
@@ -168,7 +172,7 @@ function buildRevealHTML(imageDataMap) {
         html += '      document.getElementById("photo' + pj + '").style.opacity = "0";\n';
       }
     }
-    html += '      document.getElementById("photoCounter").textContent = "' + (pi + 1) + ' / 8";\n';
+    html += '      document.getElementById("photoCounter").textContent = "' + (pi + 1) + ' / ' + photoCount + '";\n';
     html += '    }],\n';
   }
 
@@ -249,13 +253,12 @@ async function buildRevealVideo(imageDataMap) {
       var flash = document.getElementById('photoFlash');
       if (flash) flash.style.opacity = '0';
 
-      for (var i = 0; i < 8; i++) {
+      for (var i = 0; i < 20; i++) {
         var img = document.getElementById('photo' + i);
-        if (img) {
-          img.style.opacity = '0';
-          img.style.transform = 'scale(1.2)';
-          img.style.transition = 'none';
-        }
+        if (!img) break;
+        img.style.opacity = '0';
+        img.style.transform = 'scale(1.2)';
+        img.style.transition = 'none';
       }
 
       var counter = document.getElementById('photoCounter');
@@ -282,7 +285,7 @@ async function buildRevealVideo(imageDataMap) {
 
   var revealMp4 = path.join(OUT_DIR, 'tmp_reveal.mp4');
   execSync(
-    'ffmpeg -y -framerate ' + FPS + ' -i "' + path.join(framesDir, 'frame_%05d.png') + '" -c:v libx264 -preset slow -crf 18 -pix_fmt yuv420p -r ' + FPS + ' "' + revealMp4 + '"',
+    'ffmpeg -y -framerate ' + FPS + ' -i "' + path.join(framesDir, 'frame_%05d.png') + '" -f lavfi -i anullsrc=r=44100:cl=stereo -c:v libx264 -preset slow -crf 18 -pix_fmt yuv420p -r ' + FPS + ' -c:a aac -b:a 128k -shortest "' + revealMp4 + '"',
     { stdio: 'inherit' }
   );
 
@@ -295,18 +298,17 @@ async function main() {
   console.log('=== Manila BTS Reveal Reel v36a ===');
   resetOutputDir();
 
-  // Load photos
+  // Load photos (full paths — pre-processed film negatives)
   console.log('Loading photos...');
   var imageDataMap = {};
   for (var p of PROOF_PHOTOS) {
-    var photoPath = path.join(IMG_DIR, p);
-    if (!existsSync(photoPath)) {
-      console.error('Photo not found: ' + photoPath);
+    if (!existsSync(p)) {
+      console.error('Photo not found: ' + p);
       process.exit(1);
     }
-    var buf = readFileSync(photoPath);
+    var buf = readFileSync(p);
     imageDataMap[p] = 'data:image/jpeg;base64,' + buf.toString('base64');
-    console.log('  ' + p + ' (' + (buf.length / 1024).toFixed(0) + ' KB)');
+    console.log('  ' + path.basename(p) + ' (' + (buf.length / 1024).toFixed(0) + ' KB)');
   }
 
   // Build both parts
