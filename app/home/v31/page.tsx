@@ -66,6 +66,67 @@ export default function VerticalWaveGallery() {
   const [visibleSet, setVisibleSet] = useState<Set<number>>(new Set());
   const [scrollProgress, setScrollProgress] = useState(0);
   const photoRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const currentAutoIdx = useRef(-1);
+  const autoAdvanceRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const pausedByUserRef = useRef(false);
+  const pauseTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  // Auto-scroll: snap to next photo every 2.5s
+  const scrollToNextPhoto = useCallback(() => {
+    if (pausedByUserRef.current) {
+      autoAdvanceRef.current = setTimeout(scrollToNextPhoto, 1000);
+      return;
+    }
+    currentAutoIdx.current++;
+    const nextEl = photoRefs.current[currentAutoIdx.current];
+    if (nextEl) {
+      nextEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      autoAdvanceRef.current = setTimeout(scrollToNextPhoto, 2500);
+    }
+  }, []);
+
+  // Start auto-scroll after 2s
+  useEffect(() => {
+    autoAdvanceRef.current = setTimeout(scrollToNextPhoto, 2000);
+    return () => {
+      if (autoAdvanceRef.current) clearTimeout(autoAdvanceRef.current);
+    };
+  }, [scrollToNextPhoto]);
+
+  // Pause on user interaction for 5s
+  useEffect(() => {
+    const handleInteraction = () => {
+      pausedByUserRef.current = true;
+      if (pauseTimerRef.current) clearTimeout(pauseTimerRef.current);
+      pauseTimerRef.current = setTimeout(() => {
+        pausedByUserRef.current = false;
+      }, 5000);
+
+      // Sync currentAutoIdx to whichever photo is closest to center
+      const viewportCenter = window.scrollY + window.innerHeight / 2;
+      let closestIdx = 0;
+      let closestDist = Infinity;
+      photoRefs.current.forEach((el, i) => {
+        if (!el) return;
+        const rect = el.getBoundingClientRect();
+        const elCenter = window.scrollY + rect.top + rect.height / 2;
+        const dist = Math.abs(elCenter - viewportCenter);
+        if (dist < closestDist) {
+          closestDist = dist;
+          closestIdx = i;
+        }
+      });
+      currentAutoIdx.current = closestIdx;
+    };
+
+    window.addEventListener('wheel', handleInteraction, { passive: true });
+    window.addEventListener('touchstart', handleInteraction, { passive: true });
+    return () => {
+      window.removeEventListener('wheel', handleInteraction);
+      window.removeEventListener('touchstart', handleInteraction);
+      if (pauseTimerRef.current) clearTimeout(pauseTimerRef.current);
+    };
+  }, []);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
