@@ -211,10 +211,10 @@ function buildHTML(imageDataMap) {
 
   .real-title .sub {
     font-family: ${SF};
-    font-size: 32px;
+    font-size: 28px;
     font-weight: 700;
     color: rgba(255,255,255,0.95);
-    letter-spacing: 0.25em;
+    letter-spacing: 0.15em;
     text-transform: uppercase;
     margin-top: 12px;
     text-shadow: 0 2px 12px rgba(0,0,0,0.5);
