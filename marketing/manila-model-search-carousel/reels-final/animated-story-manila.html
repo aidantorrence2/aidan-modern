@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1080px;
+    height: 1920px;
+    overflow: hidden;
+    background: #0a0a0a;
+    font-family: -apple-system, system-ui, 'Helvetica Neue', sans-serif;
+    color: white;
+  }
+
+  .scene {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+  }
+  .scene.active { opacity: 1; }
+
+  .hit-text {
+    font-size: 88px;
+    font-weight: 800;
+    text-align: center;
+    line-height: 1.15;
+    padding: 0 70px;
+    letter-spacing: -0.03em;
+    transform: scale(0);
+    opacity: 0;
+  }
+  .hit-text.pop { transform: scale(1); opacity: 1; }
+
+  .sub-text {
+    font-size: 48px;
+    font-weight: 500;
+    color: rgba(255,255,255,0.5);
+    text-align: center;
+    margin-top: 16px;
+    transform: scale(0);
+    opacity: 0;
+  }
+  .sub-text.pop { transform: scale(1); opacity: 1; }
+
+  .accent { color: #E8443A; }
+
+  @keyframes shake {
+    0%, 100% { transform: translate(0,0); }
+    10% { transform: translate(-14px, 10px); }
+    20% { transform: translate(12px, -8px); }
+    30% { transform: translate(-10px, -12px); }
+    40% { transform: translate(8px, 14px); }
+    50% { transform: translate(-12px, -6px); }
+    60% { transform: translate(10px, 8px); }
+    70% { transform: translate(-8px, 12px); }
+    80% { transform: translate(14px, -10px); }
+    90% { transform: translate(-6px, 8px); }
+  }
+  .shake { animation: shake 0.4s ease-out; }
+
+  .flash-overlay {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: white;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 100;
+  }
+
+  .dim { opacity: 0.3 !important; }
+
+  /* Photo grid placeholders */
+  .photo-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    width: 700px;
+    margin-top: 40px;
+  }
+  .photo-placeholder {
+    width: 100%;
+    aspect-ratio: 1;
+    background: #1a1a1a;
+    border-radius: 8px;
+    transform: scale(0);
+    opacity: 0;
+  }
+  .photo-placeholder.pop {
+    transform: scale(1);
+    opacity: 1;
+    background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 50%, #222 100%);
+  }
+
+  /* Confident person transition */
+  .person-wrap {
+    position: relative;
+    margin-bottom: 40px;
+  }
+
+  /* New photos on profile */
+  .photo-placeholder.new-photo {
+    background: linear-gradient(135deg, #E8443A22 0%, #E8443A11 50%, #E8443A22 100%);
+    border: 2px solid #E8443A44;
+  }
+
+  /* Suspense dots */
+  .suspense-dot {
+    display: inline-block;
+    font-size: 90px;
+    font-weight: 800;
+    letter-spacing: 0.3em;
+    opacity: 0;
+    transform: scale(0);
+  }
+  .suspense-dot.pop {
+    opacity: 1;
+    transform: scale(1);
+  }
+</style>
+</head>
+<body>
+
+  <!-- SCENE 1: Scrolling Instagram -->
+  <div class="scene" id="scene1" style="background:#0a0a0a">
+    <!-- Phone frame -->
+    <svg width="420" height="700" viewBox="0 0 420 700" style="margin-bottom:30px">
+      <!-- Phone body -->
+      <rect x="10" y="10" width="400" height="680" rx="40" fill="#1a1a1a" stroke="#333" stroke-width="3"/>
+      <!-- Screen -->
+      <rect x="25" y="50" width="370" height="600" rx="8" fill="#111"/>
+      <!-- Notch -->
+      <rect x="140" y="10" width="140" height="28" rx="14" fill="#0a0a0a"/>
+      <!-- Instagram header bar -->
+      <rect x="25" y="50" width="370" height="50" fill="#111"/>
+      <text x="50" y="82" font-size="26" font-weight="700" fill="#fff" font-family="system-ui">Instagram</text>
+      <!-- Feed posts (scroll indicators) -->
+      <rect x="40" y="120" width="340" height="200" rx="6" fill="#1a1a1a"/>
+      <rect x="40" y="335" width="340" height="200" rx="6" fill="#1a1a1a"/>
+      <rect x="40" y="550" width="340" height="80" rx="6" fill="#1a1a1a"/>
+      <!-- Thumb scroll indicator -->
+      <circle cx="210" cy="660" r="8" fill="#333"/>
+    </svg>
+    <div class="hit-text" id="s1text" style="font-size:72px">You're scrolling<br>Instagram...</div>
+  </div>
+
+  <!-- SCENE 2: Everyone has amazing photos -->
+  <div class="scene" id="scene2" style="background:#0a0a0a">
+    <div class="hit-text" id="s2text" style="font-size:68px;margin-bottom:20px">Everyone has<br>amazing photos.</div>
+    <div class="photo-grid" id="photoGrid">
+      <div class="photo-placeholder" id="ph1"></div>
+      <div class="photo-placeholder" id="ph2"></div>
+      <div class="photo-placeholder" id="ph3"></div>
+      <div class="photo-placeholder" id="ph4"></div>
+      <div class="photo-placeholder" id="ph5"></div>
+      <div class="photo-placeholder" id="ph6"></div>
+    </div>
+  </div>
+
+  <!-- SCENE 3: Except you -->
+  <div class="scene" id="scene3" style="background:#0a0a0a">
+    <div class="hit-text" id="s3text" style="font-size:120px;font-weight:900">Except you.</div>
+  </div>
+
+  <!-- SCENE 4: Manila map pin -->
+  <div class="scene" id="scene4" style="background:#0a0a0a">
+    <!-- Map pin SVG -->
+    <svg width="200" height="260" viewBox="0 0 200 260" id="mapPin" style="transform:scale(0);opacity:0;margin-bottom:20px">
+      <!-- Pin body -->
+      <path d="M100 240 C100 240 30 150 30 100 C30 61 61 30 100 30 C139 30 170 61 170 100 C170 150 100 240 100 240Z" fill="#E8443A"/>
+      <!-- Inner circle -->
+      <circle cx="100" cy="100" r="35" fill="#fff"/>
+      <!-- Star marker -->
+      <circle cx="100" cy="100" r="12" fill="#E8443A"/>
+    </svg>
+    <div class="hit-text" id="s4text" style="font-size:130px;font-weight:900;letter-spacing:0.05em" class="accent">
+      <span class="accent">MANILA</span>
+    </div>
+    <div class="sub-text" id="s4sub" style="font-size:42px;color:rgba(255,255,255,0.6)">A photographer is offering<br>free shoots.</div>
+  </div>
+
+  <!-- SCENE 5: Camera with flash -->
+  <div class="scene" id="scene5" style="background:#0a0a0a">
+    <svg width="420" height="320" viewBox="0 0 440 340" style="margin-bottom:40px;filter:drop-shadow(0 8px 30px rgba(232,68,58,0.2))">
+      <defs>
+        <linearGradient id="camBody" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#4a4a4a"/>
+          <stop offset="100%" stop-color="#2a2a2a"/>
+        </linearGradient>
+        <radialGradient id="lensG" cx="40%" cy="40%">
+          <stop offset="0%" stop-color="#2a2a3a"/>
+          <stop offset="60%" stop-color="#111"/>
+          <stop offset="100%" stop-color="#050508"/>
+        </radialGradient>
+      </defs>
+      <!-- Camera body -->
+      <rect x="40" y="80" width="360" height="220" rx="18" fill="url(#camBody)"/>
+      <rect x="40" y="80" width="75" height="220" rx="18" fill="#333"/>
+      <!-- Top housing -->
+      <path d="M 150 80 L 170 42 L 290 42 L 310 80" fill="#444"/>
+      <rect x="170" y="42" width="120" height="38" rx="4" fill="#444"/>
+      <!-- Lens -->
+      <circle cx="240" cy="190" r="82" fill="#333" stroke="#444" stroke-width="3"/>
+      <circle cx="240" cy="190" r="74" fill="#222"/>
+      <circle cx="240" cy="190" r="58" fill="url(#lensG)"/>
+      <circle cx="240" cy="190" r="22" fill="#050510"/>
+      <circle cx="225" cy="175" r="6" fill="rgba(150,180,255,0.2)"/>
+      <!-- Flash -->
+      <rect x="130" y="48" width="30" height="20" rx="4" fill="#E8443A" opacity="0.8"/>
+      <!-- Flash burst lines -->
+      <line x1="145" y1="30" x2="145" y2="10" stroke="#E8443A" stroke-width="3" stroke-linecap="round" opacity="0.6"/>
+      <line x1="125" y1="38" x2="112" y2="22" stroke="#E8443A" stroke-width="3" stroke-linecap="round" opacity="0.6"/>
+      <line x1="165" y1="38" x2="178" y2="22" stroke="#E8443A" stroke-width="3" stroke-linecap="round" opacity="0.6"/>
+    </svg>
+    <div class="hit-text" id="s5text" style="font-size:80px">Professional.<br><span class="accent">Editorial.</span><br>Free.</div>
+  </div>
+
+  <!-- SCENE 6: No experience needed -->
+  <div class="scene" id="scene6" style="background:#0a0a0a">
+    <div class="person-wrap">
+      <!-- Confused person → confident -->
+      <svg width="300" height="360" viewBox="0 0 300 360" id="personSvg">
+        <!-- Body -->
+        <rect x="100" y="160" width="100" height="130" rx="20" fill="#333"/>
+        <!-- Arms -->
+        <line x1="100" y1="190" x2="60" y2="250" stroke="#333" stroke-width="16" stroke-linecap="round"/>
+        <line x1="200" y1="190" x2="240" y2="250" stroke="#333" stroke-width="16" stroke-linecap="round"/>
+        <!-- Head -->
+        <circle cx="150" cy="120" r="55" fill="#8B7355"/>
+        <!-- Confused face (default) -->
+        <g id="confusedFace">
+          <circle cx="130" cy="110" r="8" fill="#222"/>
+          <circle cx="170" cy="110" r="8" fill="#222"/>
+          <!-- Wavy mouth -->
+          <path d="M 125 145 Q 137 140 150 148 Q 163 155 175 145" fill="none" stroke="#222" stroke-width="4" stroke-linecap="round"/>
+          <!-- Question mark -->
+          <text x="200" y="85" font-size="50" font-weight="800" fill="rgba(255,255,255,0.4)">?</text>
+        </g>
+        <!-- Confident face (hidden initially) -->
+        <g id="confidentFace" style="opacity:0">
+          <circle cx="130" cy="110" r="8" fill="#222"/>
+          <circle cx="170" cy="110" r="8" fill="#222"/>
+          <!-- Confident smile -->
+          <path d="M 125 140 Q 150 165 175 140" fill="none" stroke="#222" stroke-width="4" stroke-linecap="round"/>
+          <!-- Thumbs up sparkle -->
+          <text x="200" y="85" font-size="50" font-weight="800" fill="#E8443A">!</text>
+        </g>
+      </svg>
+    </div>
+    <div class="hit-text" id="s6text" style="font-size:72px">No experience<br>needed.</div>
+  </div>
+
+  <!-- SCENE 7: Golden hour -->
+  <div class="scene" id="scene7" style="background:linear-gradient(180deg, #1a0a00 0%, #3a1a00 30%, #5a2a00 60%, #E8443A33 100%)">
+    <!-- Sun SVG -->
+    <svg width="500" height="500" viewBox="0 0 500 500" style="position:absolute;top:15%">
+      <!-- Sun glow -->
+      <circle cx="250" cy="250" r="180" fill="rgba(232,68,58,0.05)"/>
+      <circle cx="250" cy="250" r="130" fill="rgba(255,160,50,0.08)"/>
+      <circle cx="250" cy="250" r="80" fill="rgba(255,200,100,0.12)"/>
+      <!-- Sun -->
+      <circle cx="250" cy="250" r="50" fill="#ffa832"/>
+      <circle cx="250" cy="250" r="42" fill="#ffbe50"/>
+      <!-- Rays -->
+      <line x1="250" y1="170" x2="250" y2="140" stroke="#ffa832" stroke-width="4" stroke-linecap="round" opacity="0.4"/>
+      <line x1="250" y1="330" x2="250" y2="360" stroke="#ffa832" stroke-width="4" stroke-linecap="round" opacity="0.4"/>
+      <line x1="170" y1="250" x2="140" y2="250" stroke="#ffa832" stroke-width="4" stroke-linecap="round" opacity="0.4"/>
+      <line x1="330" y1="250" x2="360" y2="250" stroke="#ffa832" stroke-width="4" stroke-linecap="round" opacity="0.4"/>
+      <line x1="194" y1="194" x2="172" y2="172" stroke="#ffa832" stroke-width="4" stroke-linecap="round" opacity="0.3"/>
+      <line x1="306" y1="194" x2="328" y2="172" stroke="#ffa832" stroke-width="4" stroke-linecap="round" opacity="0.3"/>
+      <line x1="194" y1="306" x2="172" y2="328" stroke="#ffa832" stroke-width="4" stroke-linecap="round" opacity="0.3"/>
+      <line x1="306" y1="306" x2="328" y2="328" stroke="#ffa832" stroke-width="4" stroke-linecap="round" opacity="0.3"/>
+      <!-- Horizon line -->
+      <line x1="0" y1="400" x2="500" y2="400" stroke="rgba(255,160,50,0.15)" stroke-width="2"/>
+    </svg>
+    <div class="hit-text" id="s7text" style="font-size:76px;position:absolute;bottom:25%">Golden hour.<br><span style="color:rgba(255,200,100,0.8)">Perfect light.</span></div>
+  </div>
+
+  <!-- SCENE 8: The shoot — camera flashes -->
+  <div class="scene" id="scene8" style="background:#0a0a0a">
+    <div class="flash-overlay" id="shootFlash1"></div>
+    <div class="flash-overlay" id="shootFlash2"></div>
+    <div class="flash-overlay" id="shootFlash3"></div>
+    <svg width="400" height="300" viewBox="0 0 440 340" style="margin-bottom:50px;filter:drop-shadow(0 12px 40px rgba(0,0,0,0.5))">
+      <rect x="40" y="80" width="360" height="220" rx="18" fill="url(#camBody)"/>
+      <rect x="40" y="80" width="75" height="220" rx="18" fill="#333"/>
+      <path d="M 150 80 L 170 42 L 290 42 L 310 80" fill="#444"/>
+      <rect x="170" y="42" width="120" height="38" rx="4" fill="#444"/>
+      <circle cx="240" cy="190" r="82" fill="#333" stroke="#444" stroke-width="3"/>
+      <circle cx="240" cy="190" r="74" fill="#222"/>
+      <circle cx="240" cy="190" r="58" fill="url(#lensG)"/>
+      <circle cx="240" cy="190" r="22" fill="#050510"/>
+      <circle cx="225" cy="175" r="6" fill="rgba(150,180,255,0.2)"/>
+    </svg>
+    <div class="hit-text" id="s8text" style="font-size:84px">The shoot.</div>
+  </div>
+
+  <!-- SCENE 9: Photos delivered -->
+  <div class="scene" id="scene9" style="background:#0a0a0a">
+    <!-- File/gallery SVG -->
+    <svg width="500" height="400" viewBox="0 0 500 400" id="gallerySvg" style="margin-bottom:30px">
+      <!-- Stack of photo files -->
+      <rect x="60" y="50" width="280" height="200" rx="12" fill="#222" stroke="#333" stroke-width="2" id="file1" style="transform:rotate(-8deg);transform-origin:200px 150px;opacity:0"/>
+      <rect x="80" y="40" width="280" height="200" rx="12" fill="#2a2a2a" stroke="#444" stroke-width="2" id="file2" style="transform:rotate(-3deg);transform-origin:220px 140px;opacity:0"/>
+      <rect x="100" y="30" width="280" height="200" rx="12" fill="#333" stroke="#555" stroke-width="2" id="file3" style="opacity:0"/>
+      <!-- Photo icon on top card -->
+      <g id="photoIcon" style="opacity:0">
+        <circle cx="180" cy="100" r="20" fill="none" stroke="#666" stroke-width="3"/>
+        <path d="M 130 190 L 180 140 L 220 170 L 260 120 L 340 190" fill="none" stroke="#666" stroke-width="3" stroke-linejoin="round"/>
+      </g>
+      <!-- Checkmark -->
+      <g id="checkMark" style="opacity:0">
+        <circle cx="380" cy="80" r="35" fill="#E8443A"/>
+        <path d="M 362 80 L 375 93 L 398 67" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+      </g>
+    </svg>
+    <div class="hit-text" id="s9text" style="font-size:72px">Your photos.<br><span class="accent">Delivered.</span></div>
+  </div>
+
+  <!-- SCENE 10: Feed transformed -->
+  <div class="scene" id="scene10" style="background:#0a0a0a">
+    <!-- Phone with new photos -->
+    <svg width="420" height="650" viewBox="0 0 420 650" style="margin-bottom:20px">
+      <rect x="10" y="10" width="400" height="630" rx="40" fill="#1a1a1a" stroke="#333" stroke-width="3"/>
+      <rect x="25" y="50" width="370" height="560" rx="8" fill="#111"/>
+      <rect x="140" y="10" width="140" height="28" rx="14" fill="#0a0a0a"/>
+      <!-- Profile header -->
+      <circle cx="80" cy="100" r="30" fill="#333"/>
+      <text x="125" y="95" font-size="22" font-weight="700" fill="#fff" font-family="system-ui">@you</text>
+      <text x="125" y="118" font-size="16" fill="rgba(255,255,255,0.4)" font-family="system-ui">Your profile</text>
+      <!-- NEW photo grid (with red tint = new amazing photos) -->
+      <rect x="35" y="160" width="115" height="115" rx="4" fill="#E8443A22" stroke="#E8443A44" stroke-width="1" id="newP1" style="opacity:0"/>
+      <rect x="155" y="160" width="115" height="115" rx="4" fill="#E8443A22" stroke="#E8443A44" stroke-width="1" id="newP2" style="opacity:0"/>
+      <rect x="275" y="160" width="115" height="115" rx="4" fill="#E8443A22" stroke="#E8443A44" stroke-width="1" id="newP3" style="opacity:0"/>
+      <rect x="35" y="280" width="115" height="115" rx="4" fill="#E8443A22" stroke="#E8443A44" stroke-width="1" id="newP4" style="opacity:0"/>
+      <rect x="155" y="280" width="115" height="115" rx="4" fill="#E8443A22" stroke="#E8443A44" stroke-width="1" id="newP5" style="opacity:0"/>
+      <rect x="275" y="280" width="115" height="115" rx="4" fill="#E8443A22" stroke="#E8443A44" stroke-width="1" id="newP6" style="opacity:0"/>
+      <rect x="35" y="400" width="115" height="115" rx="4" fill="#E8443A22" stroke="#E8443A44" stroke-width="1" id="newP7" style="opacity:0"/>
+      <rect x="155" y="400" width="115" height="115" rx="4" fill="#E8443A22" stroke="#E8443A44" stroke-width="1" id="newP8" style="opacity:0"/>
+      <rect x="275" y="400" width="115" height="115" rx="4" fill="#E8443A22" stroke="#E8443A44" stroke-width="1" id="newP9" style="opacity:0"/>
+    </svg>
+    <div class="hit-text" id="s10text" style="font-size:68px">Your feed.<br><span class="accent">Transformed.</span></div>
+  </div>
+
+  <!-- SCENE 11: CTA -->
+  <div class="scene" id="scene11" style="background:#0a0a0a">
+    <div class="hit-text" id="s11text" style="font-size:72px;font-weight:900">Want photos<br>like these?</div>
+    <div id="suspenseDots" style="margin-top:40px;opacity:0;transform:scale(0)">
+      <span style="font-size:90px;font-weight:800;letter-spacing:0.3em;color:rgba(255,255,255,0.5)">. . .</span>
+    </div>
+    <div class="hit-text" id="s11cta" style="font-size:64px;margin-top:50px;color:#E8443A">DM @madebyaidan</div>
+  </div>
+
+<script>
+  window.__currentTime = 0;
+
+  var timeline = [
+    /* === SCENE 1: Scrolling Instagram (0 - 1.5s) === */
+    [0, function() {
+      document.getElementById('scene1').classList.add('active');
+    }],
+    [0.2, function() {
+      document.getElementById('s1text').classList.add('pop');
+    }],
+    [1.5, function() {
+      document.getElementById('scene1').classList.remove('active');
+    }],
+
+    /* === SCENE 2: Everyone has amazing photos (1.5 - 3.0s) === */
+    [1.5, function() {
+      document.getElementById('scene2').classList.add('active');
+    }],
+    [1.6, function() {
+      document.getElementById('s2text').classList.add('pop');
+    }],
+    [1.8, function() { document.getElementById('ph1').classList.add('pop'); }],
+    [1.9, function() { document.getElementById('ph2').classList.add('pop'); }],
+    [2.0, function() { document.getElementById('ph3').classList.add('pop'); }],
+    [2.1, function() { document.getElementById('ph4').classList.add('pop'); }],
+    [2.2, function() { document.getElementById('ph5').classList.add('pop'); }],
+    [2.3, function() { document.getElementById('ph6').classList.add('pop'); }],
+    [3.0, function() {
+      document.getElementById('scene2').classList.remove('active');
+    }],
+
+    /* === SCENE 3: Except you (3.0 - 4.5s) === */
+    [3.0, function() {
+      document.getElementById('scene3').classList.add('active');
+    }],
+    [3.1, function() {
+      document.getElementById('s3text').classList.add('pop');
+    }],
+    [3.3, function() {
+      document.getElementById('scene3').classList.add('shake');
+    }],
+    [4.5, function() {
+      document.getElementById('scene3').classList.remove('active');
+    }],
+
+    /* === SCENE 4: Manila map pin (4.5 - 6.5s) === */
+    [4.5, function() {
+      document.getElementById('scene4').classList.add('active');
+    }],
+    [4.6, function() {
+      var pin = document.getElementById('mapPin');
+      pin.style.transform = 'scale(1)';
+      pin.style.opacity = '1';
+    }],
+    [4.8, function() {
+      document.getElementById('s4text').classList.add('pop');
+    }],
+    [5.2, function() {
+      document.getElementById('s4sub').classList.add('pop');
+    }],
+    [6.5, function() {
+      document.getElementById('scene4').classList.remove('active');
+    }],
+
+    /* === SCENE 5: Professional. Editorial. Free. (6.5 - 8.0s) === */
+    [6.5, function() {
+      document.getElementById('scene5').classList.add('active');
+    }],
+    [6.6, function() {
+      document.getElementById('s5text').classList.add('pop');
+    }],
+    [8.0, function() {
+      document.getElementById('scene5').classList.remove('active');
+    }],
+
+    /* === SCENE 6: No experience needed (8.0 - 9.5s) === */
+    [8.0, function() {
+      document.getElementById('scene6').classList.add('active');
+    }],
+    [8.1, function() {
+      document.getElementById('s6text').classList.add('pop');
+    }],
+    [8.8, function() {
+      document.getElementById('confusedFace').style.opacity = '0';
+      document.getElementById('confidentFace').style.opacity = '1';
+    }],
+    [9.5, function() {
+      document.getElementById('scene6').classList.remove('active');
+    }],
+
+    /* === SCENE 7: Golden hour (9.5 - 11.0s) === */
+    [9.5, function() {
+      document.getElementById('scene7').classList.add('active');
+    }],
+    [9.6, function() {
+      document.getElementById('s7text').classList.add('pop');
+    }],
+    [11.0, function() {
+      document.getElementById('scene7').classList.remove('active');
+    }],
+
+    /* === SCENE 8: The shoot — flashes (11.0 - 12.5s) === */
+    [11.0, function() {
+      document.getElementById('scene8').classList.add('active');
+      document.getElementById('s8text').classList.add('pop');
+    }],
+    [11.3, function() { document.getElementById('shootFlash1').style.opacity = '1'; }],
+    [11.4, function() { document.getElementById('shootFlash1').style.opacity = '0'; }],
+    [11.7, function() { document.getElementById('shootFlash2').style.opacity = '1'; }],
+    [11.8, function() { document.getElementById('shootFlash2').style.opacity = '0'; }],
+    [12.0, function() { document.getElementById('shootFlash3').style.opacity = '1'; }],
+    [12.1, function() { document.getElementById('shootFlash3').style.opacity = '0'; }],
+    [12.5, function() {
+      document.getElementById('scene8').classList.remove('active');
+    }],
+
+    /* === SCENE 9: Photos delivered (12.5 - 14.5s) === */
+    [12.5, function() {
+      document.getElementById('scene9').classList.add('active');
+    }],
+    [12.6, function() { document.getElementById('file1').style.opacity = '1'; }],
+    [12.8, function() { document.getElementById('file2').style.opacity = '1'; }],
+    [13.0, function() {
+      document.getElementById('file3').style.opacity = '1';
+      document.getElementById('photoIcon').style.opacity = '1';
+    }],
+    [13.3, function() {
+      document.getElementById('checkMark').style.opacity = '1';
+    }],
+    [13.5, function() {
+      document.getElementById('s9text').classList.add('pop');
+    }],
+    [14.5, function() {
+      document.getElementById('scene9').classList.remove('active');
+    }],
+
+    /* === SCENE 10: Feed transformed (14.5 - 16.0s) === */
+    [14.5, function() {
+      document.getElementById('scene10').classList.add('active');
+    }],
+    [14.6, function() { document.getElementById('newP1').style.opacity = '1'; }],
+    [14.7, function() { document.getElementById('newP2').style.opacity = '1'; }],
+    [14.75, function() { document.getElementById('newP3').style.opacity = '1'; }],
+    [14.8, function() { document.getElementById('newP4').style.opacity = '1'; }],
+    [14.85, function() { document.getElementById('newP5').style.opacity = '1'; }],
+    [14.9, function() { document.getElementById('newP6').style.opacity = '1'; }],
+    [14.95, function() { document.getElementById('newP7').style.opacity = '1'; }],
+    [15.0, function() { document.getElementById('newP8').style.opacity = '1'; }],
+    [15.05, function() { document.getElementById('newP9').style.opacity = '1'; }],
+    [15.2, function() {
+      document.getElementById('s10text').classList.add('pop');
+    }],
+    [16.0, function() {
+      document.getElementById('scene10').classList.remove('active');
+    }],
+
+    /* === SCENE 11: CTA (16.0 - 19.0s) === */
+    [16.0, function() {
+      document.getElementById('scene11').classList.add('active');
+    }],
+    [16.1, function() {
+      document.getElementById('s11text').classList.add('pop');
+    }],
+    [17.0, function() {
+      var dots = document.getElementById('suspenseDots');
+      dots.style.opacity = '1';
+      dots.style.transform = 'scale(1)';
+    }],
+    [18.0, function() {
+      document.getElementById('s11cta').classList.add('pop');
+    }],
+    [19.0, function() {
+      /* end */
+    }]
+  ];
+
+  var started = false;
+  function runTimeline() {
+    if (started) return;
+    started = true;
+    var t0 = performance.now();
+    var idx = 0;
+    function tick() {
+      var elapsed = (performance.now() - t0) / 1000;
+      while (idx < timeline.length && timeline[idx][0] <= elapsed) {
+        timeline[idx][1]();
+        idx++;
+      }
+      if (idx < timeline.length) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  }
+
+  if (!location.search.includes('capture=1')) {
+    runTimeline();
+  }
+
+  window.__applyUpTo = function(t) {
+    for (var i = 0; i < timeline.length; i++) {
+      if (timeline[i][0] <= t) timeline[i][1]();
+    }
+  };
+
+  window.__timeline = timeline;
+
+  if (location.search.includes('capture=1')) {
+    var style = document.createElement('style');
+    style.textContent = '*, *::before, *::after { transition-duration: 0s !important; animation-duration: 0s !important; }';
+    document.head.appendChild(style);
+  }
+</script>
+</body>
+</html>
