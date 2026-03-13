@@ -33,7 +33,7 @@ const images = [
 const PHOTO_SPACING = 620;
 const PHOTO_WIDTH = 380;
 const PHOTO_HEIGHT = 507;
-const AMPLITUDE = 100;
+const AMPLITUDE = 200;
 const FREQUENCY = 0.008;
 const HERO_HEIGHT = 600;
 const CTA_HEIGHT = 500;
@@ -423,7 +423,7 @@ export default function VerticalWaveGallery() {
       <div style={{
         position: 'relative',
         width: '100%',
-        maxWidth: 600,
+        maxWidth: 900,
         margin: '0 auto',
         paddingBottom: 40,
       }}>
