@@ -476,8 +476,89 @@
     <div class="sub-text" id="s7sub">Obviously.</div>
   </div>
 
-  <!-- SCENE 8: WE GOT THE SHOTS -->
+  <!-- SCENE 8: Train back -->
   <div class="scene" id="scene8">
+    <div class="hit-text" id="s8text" style="position:absolute;top:30%">Straight back<br>to the airport.</div>
+    <div class="platform"><span>KL Sentral</span></div>
+    <div style="position:absolute;bottom:0;width:100%;height:440px;background:#1a1a1a;"></div>
+    <div class="train-wrap" id="trainWrap2" style="left:240px">
+      <svg width="560" height="200" viewBox="0 0 600 220" style="filter:drop-shadow(0 6px 25px rgba(0,0,0,0.4));transform:scaleX(-1)">
+        <rect x="0" y="20" width="580" height="150" rx="10" fill="url(#tBody)"/>
+        <path d="M 580 20 Q 598 30, 598 95 Q 598 160, 580 170" fill="url(#tBody)"/>
+        <rect x="0" y="140" width="580" height="30" fill="#1a4a88"/>
+        <rect x="30" y="45" width="75" height="65" rx="7" fill="rgba(200,220,255,0.35)"/>
+        <rect x="120" y="45" width="75" height="65" rx="7" fill="rgba(200,220,255,0.35)"/>
+        <rect x="210" y="45" width="75" height="65" rx="7" fill="rgba(200,220,255,0.35)"/>
+        <rect x="300" y="45" width="75" height="65" rx="7" fill="rgba(200,220,255,0.35)"/>
+        <rect x="390" y="45" width="75" height="65" rx="7" fill="rgba(200,220,255,0.35)"/>
+        <rect x="500" y="35" width="55" height="110" rx="4" fill="#2560aa" stroke="#1a4a88" stroke-width="2"/>
+        <rect x="0" y="125" width="580" height="5" fill="rgba(255,255,255,0.15)"/>
+        <circle cx="80" cy="190" r="20" fill="#333" stroke="#555" stroke-width="5"/>
+        <circle cx="200" cy="190" r="20" fill="#333" stroke="#555" stroke-width="5"/>
+        <circle cx="400" cy="190" r="20" fill="#333" stroke="#555" stroke-width="5"/>
+        <circle cx="520" cy="190" r="20" fill="#333" stroke="#555" stroke-width="5"/>
+      </svg>
+    </div>
+  </div>
+
+  <!-- SCENE 9: Plane to Cebu -->
+  <div class="scene" id="scene9">
+    <div class="cloud-s" style="width:220px;top:18%;left:3%"></div>
+    <div class="cloud-s" style="width:280px;top:48%;right:-2%"></div>
+    <div class="cloud-s" style="width:180px;top:68%;left:22%"></div>
+    <div class="plane-wrap" id="planeWrap2" style="left:-400px;top:40%">
+      <svg width="340" height="140" viewBox="0 0 380 160" style="filter:drop-shadow(0 6px 25px rgba(0,0,0,0.3))">
+        <ellipse cx="190" cy="80" rx="175" ry="33" fill="url(#fuse)"/>
+        <rect x="20" y="72" width="345" height="4" rx="2" fill="#cc3333" opacity="0.6"/>
+        <path d="M 15 80 L 5 22 L 58 22 L 53 57" fill="#e0e0e0"/>
+        <path d="M 120 80 L 85 32 L 235 32 L 228 80" fill="#e8e8e8" stroke="#ddd" stroke-width="1"/>
+        <ellipse cx="160" cy="94" rx="20" ry="11" fill="#ccc"/>
+        <ellipse cx="160" cy="94" rx="6" ry="4" fill="#888"/>
+        <circle cx="280" cy="73" r="6.5" fill="#3a5a9a"/>
+        <circle cx="260" cy="73" r="6.5" fill="#3a5a9a"/>
+        <circle cx="240" cy="73" r="6.5" fill="#3a5a9a"/>
+        <circle cx="220" cy="73" r="6.5" fill="#3a5a9a"/>
+        <circle cx="200" cy="73" r="6.5" fill="#3a5a9a"/>
+        <circle cx="180" cy="73" r="6.5" fill="#3a5a9a"/>
+        <circle cx="160" cy="73" r="6.5" fill="#3a5a9a"/>
+        <path d="M 340 72 Q 355 68, 360 73 Q 358 78, 348 78" fill="#3a5a9a"/>
+      </svg>
+    </div>
+    <div class="route-text" id="routeText2" style="font-size:68px">KL → CEBU CITY</div>
+  </div>
+
+  <!-- SCENE 10: Sleeping -->
+  <div class="scene" id="scene10" style="background:#000">
+    <svg width="500" height="300" viewBox="0 0 500 300" style="margin-bottom:40px;opacity:0.9">
+      <!-- Bed/surface -->
+      <rect x="50" y="200" width="400" height="20" rx="10" fill="#222"/>
+      <!-- Pillow -->
+      <ellipse cx="130" cy="180" rx="70" ry="30" fill="#333"/>
+      <!-- Body lying down -->
+      <ellipse cx="300" cy="178" rx="150" ry="25" fill="#2a2a2a"/>
+      <!-- Head on pillow -->
+      <circle cx="140" cy="160" r="30" fill="#c8a882"/>
+      <!-- Closed eyes -->
+      <line x1="128" y1="155" x2="138" y2="155" stroke="#333" stroke-width="2.5" stroke-linecap="round"/>
+      <line x1="148" y1="155" x2="158" y2="155" stroke="#333" stroke-width="2.5" stroke-linecap="round"/>
+      <!-- Blanket -->
+      <path d="M 170 195 Q 300 165, 430 195" fill="#333" stroke="#3a3a3a" stroke-width="1"/>
+    </svg>
+    <!-- ZZZ -->
+    <div style="position:absolute;top:30%;right:22%;transform:scale(0);opacity:0" id="zzz1">
+      <span style="font-size:60px;font-weight:800;color:rgba(255,255,255,0.25)">z</span>
+    </div>
+    <div style="position:absolute;top:24%;right:18%;transform:scale(0);opacity:0" id="zzz2">
+      <span style="font-size:80px;font-weight:800;color:rgba(255,255,255,0.18)">z</span>
+    </div>
+    <div style="position:absolute;top:17%;right:14%;transform:scale(0);opacity:0" id="zzz3">
+      <span style="font-size:100px;font-weight:800;color:rgba(255,255,255,0.12)">z</span>
+    </div>
+    <div class="hit-text" id="s10text" style="font-size:60px;color:rgba(255,255,255,0.7)">Crashed out.</div>
+  </div>
+
+  <!-- SCENE 11: Suspense -->
+  <div class="scene" id="scene11" style="background:#000">
     <div class="mega-flash" id="megaFlash"></div>
     <div class="final-text" id="finalText" style="font-size:72px">Did we get the shots?</div>
     <div class="dot-dot" id="dotDot" style="font-size:80px;font-weight:800;opacity:0;transform:scale(0);margin-top:30px;letter-spacing:0.3em;">. . .</div>
@@ -548,24 +629,49 @@
     [9.3, () => { document.getElementById('s7sub').classList.add('pop'); }],
     [10.5, () => { document.getElementById('scene7').classList.remove('active'); }],
 
-    // === BEAT 8: FLASH + suspense (10.5 – 13s) ===
-    [10.5, () => {
-      document.getElementById('scene8').classList.add('active');
+    // === BEAT 8: Train back to airport (10.5 – 11.7s) ===
+    [10.5, () => { document.getElementById('scene8').classList.add('active'); }],
+    [10.6, () => {
+      document.getElementById('s8text').classList.add('pop');
+      document.getElementById('trainWrap2').style.left = '-700px';
+    }],
+    [11.8, () => { document.getElementById('scene8').classList.remove('active'); }],
+
+    // === BEAT 9: Plane KL → Cebu (11.8 – 13.1s) ===
+    [11.8, () => { document.getElementById('scene9').classList.add('active'); }],
+    [11.9, () => {
+      document.getElementById('planeWrap2').style.left = '1200px';
+      document.getElementById('planeWrap2').style.top = '30%';
+    }],
+    [12.1, () => { document.getElementById('routeText2').classList.add('pop'); }],
+    [13.2, () => { document.getElementById('scene9').classList.remove('active'); }],
+
+    // === BEAT 10: Sleeping (13.2 – 14.5s) ===
+    [13.2, () => { document.getElementById('scene10').classList.add('active'); }],
+    [13.3, () => { document.getElementById('s10text').classList.add('pop'); }],
+    [13.5, () => { const z = document.getElementById('zzz1'); z.style.opacity='1'; z.style.transform='scale(1)'; }],
+    [13.7, () => { const z = document.getElementById('zzz2'); z.style.opacity='1'; z.style.transform='scale(1)'; }],
+    [13.9, () => { const z = document.getElementById('zzz3'); z.style.opacity='1'; z.style.transform='scale(1)'; }],
+    [14.8, () => { document.getElementById('scene10').classList.remove('active'); }],
+
+    // === BEAT 11: FLASH + suspense (14.8 – 17s) ===
+    [14.8, () => {
+      document.getElementById('scene11').classList.add('active');
       document.getElementById('megaFlash').classList.add('pop');
     }],
-    [10.8, () => {
+    [15.1, () => {
       document.getElementById('megaFlash').classList.remove('pop');
       document.getElementById('megaFlash').classList.add('dim');
     }],
-    [11.0, () => {
+    [15.3, () => {
       document.getElementById('finalText').classList.add('pop');
     }],
-    [11.8, () => {
+    [16.0, () => {
       const d = document.getElementById('dotDot');
       d.style.opacity = '1';
       d.style.transform = 'scale(1)';
     }],
-    [13.0, () => { document.getElementById('scene8').classList.remove('active'); }],
+    [17.0, () => { document.getElementById('scene11').classList.remove('active'); }],
   ];
 
   let started = false;
