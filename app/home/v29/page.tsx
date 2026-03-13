@@ -421,8 +421,8 @@ export default function GravityDropPage() {
     }
 
     // Size: newest = biggest, each older one shrinks
-    const baseWidth = 380;
-    const baseHeight = 480;
+    const baseWidth = 460;
+    const baseHeight = 580;
     const scaleFactor = 1 - posFromTop * 0.12;
     const w = baseWidth * scaleFactor;
     const h = baseHeight * scaleFactor;
