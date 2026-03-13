@@ -133,11 +133,20 @@ async function main() {
     const frameNum = `${18 + i}A`;
     const framedPng = `${OUT_DIR}/tmp_framed_${i}.png`;
 
-    // 1. Scale photo to fill image area (crop to fit, portrait orientation)
-    execSync(
-      `magick "${photos[i]}" -resize ${imgW}x${imgH}^ -gravity center -extent ${imgW}x${imgH} "${OUT_DIR}/tmp_crop_${i}.png"`,
-      { stdio: 'pipe' }
-    );
+    // 1. Scale photo — landscape gets letterboxed, portrait gets cropped to fill
+    const isLandscape = i === 5; // 006 is 3630x2900 landscape
+    if (isLandscape) {
+      // Fit within frame, black bars above/below
+      execSync(
+        `magick "${photos[i]}" -resize ${imgW}x${imgH} -gravity center -background "#0a0800" -extent ${imgW}x${imgH} "${OUT_DIR}/tmp_crop_${i}.png"`,
+        { stdio: 'pipe' }
+      );
+    } else {
+      execSync(
+        `magick "${photos[i]}" -resize ${imgW}x${imgH}^ -gravity center -extent ${imgW}x${imgH} "${OUT_DIR}/tmp_crop_${i}.png"`,
+        { stdio: 'pipe' }
+      );
+    }
 
     // 2. Build the film scan frame with ImageMagick
     // Start with dark film base
