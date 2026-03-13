@@ -353,7 +353,8 @@ export default function Page() {
     window.addEventListener('wheel', pauseForUser, { passive: true });
     window.addEventListener('touchstart', pauseForUser, { passive: true });
 
-    // Auto-scroll animation loop
+    // Auto-scroll animation loop — use scrollTop directly to avoid
+    // Chrome "Skipping auto-scroll" warnings on fixed/sticky elements
     const autoScroll = () => {
       if (
         autoScrollingRef.current &&
@@ -361,8 +362,9 @@ export default function Page() {
         !isPausedAtPhotoRef.current
       ) {
         const maxScroll = document.body.scrollHeight - window.innerHeight;
-        if (window.scrollY < maxScroll) {
-            window.scrollBy(0, 1);
+        const el = document.documentElement;
+        if (el.scrollTop < maxScroll) {
+          el.scrollTop += 1;
         }
       }
       rafRef.current = requestAnimationFrame(autoScroll);
