@@ -60,45 +60,47 @@ export default function JourneyTimeline() {
     setVisibleNodes(newVisible);
   }, []);
 
-  const [autoScrollEnabled, setAutoScrollEnabled] = useState(true);
-  const autoScrollingRef = useRef(true);
   const pausedByUserRef = useRef(false);
   const userScrollTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
-  const rafRef = useRef<number>(0);
+  const autoAdvanceTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const currentAutoIdxRef = useRef(0);
 
   useEffect(() => {
     const pauseForUser = () => {
-      if (autoScrollingRef.current) {
-        pausedByUserRef.current = true;
-        if (userScrollTimeoutRef.current) clearTimeout(userScrollTimeoutRef.current);
-        userScrollTimeoutRef.current = setTimeout(() => {
-          pausedByUserRef.current = false;
-        }, 5000);
-      }
+      pausedByUserRef.current = true;
+      if (userScrollTimeoutRef.current) clearTimeout(userScrollTimeoutRef.current);
+      userScrollTimeoutRef.current = setTimeout(() => {
+        pausedByUserRef.current = false;
+      }, 6000);
     };
 
-    const autoScroll = () => {
-      if (autoScrollingRef.current && !pausedByUserRef.current) {
-        const maxScroll = document.body.scrollHeight - window.innerHeight;
-        const el = document.documentElement;
-        if (el.scrollTop < maxScroll) {
-          el.scrollTop += 1;
-        }
+    // Snap to next image, settle for 2.5s, then snap again
+    const scrollToNextNode = () => {
+      if (pausedByUserRef.current) {
+        autoAdvanceTimerRef.current = setTimeout(scrollToNextNode, 1000);
+        return;
       }
-      rafRef.current = requestAnimationFrame(autoScroll);
+      currentAutoIdxRef.current++;
+      const nextNode = nodeRefs.current[currentAutoIdxRef.current];
+      if (nextNode) {
+        nextNode.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        autoAdvanceTimerRef.current = setTimeout(scrollToNextNode, 2500);
+      }
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
     window.addEventListener('wheel', pauseForUser, { passive: true });
     window.addEventListener('touchstart', pauseForUser, { passive: true });
     handleScroll();
-    rafRef.current = requestAnimationFrame(autoScroll);
+
+    // Start auto-advance after initial 2s delay
+    autoAdvanceTimerRef.current = setTimeout(scrollToNextNode, 2000);
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
       window.removeEventListener('wheel', pauseForUser);
       window.removeEventListener('touchstart', pauseForUser);
-      cancelAnimationFrame(rafRef.current);
+      if (autoAdvanceTimerRef.current) clearTimeout(autoAdvanceTimerRef.current);
       if (userScrollTimeoutRef.current) clearTimeout(userScrollTimeoutRef.current);
     };
   }, [handleScroll]);
