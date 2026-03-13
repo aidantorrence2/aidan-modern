@@ -186,10 +186,22 @@ async function main() {
     );
   }
 
+  // === Ending card: "We got the shots." ===
+  console.log('=== Creating ending card ===');
+  execSync(
+    `magick -size ${W}x${H} xc:black -gravity Center -font /tmp/ArialBold.ttf -pointsize 72 -fill white -annotate +0+0 "We got the shots." "${OUT_DIR}/tmp_end.png"`,
+    { stdio: 'pipe' }
+  );
+  execSync(
+    `ffmpeg -y -loop 1 -i "${OUT_DIR}/tmp_end.png" -t 2.5 -c:v libx264 -preset slow -crf 18 -pix_fmt yuv420p -r ${FPS} "${OUT_DIR}/tmp_end.mp4"`,
+    { stdio: 'pipe' }
+  );
+
   console.log('=== Concatenating ===');
   const concatList = [
     `file 'tmp_anim.mp4'`,
     ...photos.map((_, i) => `file 'tmp_photo_${i}.mp4'`),
+    `file 'tmp_end.mp4'`,
   ].join('\n');
 
   writeFileSync(`${OUT_DIR}/tmp_concat.txt`, concatList);
@@ -201,7 +213,7 @@ async function main() {
 
   // Cleanup
   rmSync(FRAMES_DIR, { recursive: true, force: true });
-  execSync(`rm -f "${OUT_DIR}/tmp_anim.mp4" "${OUT_DIR}"/tmp_photo_*.mp4 "${OUT_DIR}"/tmp_crop_*.png "${OUT_DIR}"/tmp_framed_*.png "${OUT_DIR}/tmp_concat.txt"`);
+  execSync(`rm -f "${OUT_DIR}/tmp_anim.mp4" "${OUT_DIR}"/tmp_photo_*.mp4 "${OUT_DIR}"/tmp_crop_*.png "${OUT_DIR}"/tmp_framed_*.png "${OUT_DIR}/tmp_end.png" "${OUT_DIR}/tmp_end.mp4" "${OUT_DIR}/tmp_concat.txt"`);
 
   console.log('=== Done! ===');
   execSync(`ls -lh "${OUT_DIR}/reel_animated_story_v2.mp4"`, { stdio: 'inherit' });
