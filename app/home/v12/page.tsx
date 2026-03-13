@@ -259,61 +259,15 @@ export default function DarkroomReveal() {
         position: 'relative',
         zIndex: 2,
       }}>
-        {/* Hero section */}
+        {/* Header — text then first image flows right below, all above the fold */}
         <section style={{
-          height: '100vh',
           display: 'flex',
           flexDirection: 'column',
-          justifyContent: 'center',
           alignItems: 'center',
           position: 'relative',
-          overflow: 'hidden',
+          paddingTop: '100px',
+          paddingBottom: '40px',
         }}>
-          {/* Developer drip lines in hero */}
-          <div style={{ position: 'absolute', top: 0, left: '20%', width: '1px', background: 'linear-gradient(to bottom, rgba(180, 40, 40, 0.2), transparent)', overflow: 'hidden', height: '100%' }}>
-            <div className="drip-line" style={{ width: '100%', background: 'rgba(180, 40, 40, 0.15)' }} />
-          </div>
-          <div style={{ position: 'absolute', top: 0, left: '65%', width: '1px', background: 'linear-gradient(to bottom, rgba(180, 40, 40, 0.15), transparent)', overflow: 'hidden', height: '100%' }}>
-            <div className="drip-line" style={{ width: '100%', background: 'rgba(180, 40, 40, 0.12)' }} />
-          </div>
-          <div style={{ position: 'absolute', top: 0, left: '85%', width: '1px', background: 'linear-gradient(to bottom, rgba(180, 40, 40, 0.1), transparent)', overflow: 'hidden', height: '100%' }}>
-            <div className="drip-line" style={{ width: '100%', background: 'rgba(180, 40, 40, 0.1)' }} />
-          </div>
-
-          {/* Hero photo card */}
-          <div style={{
-            position: 'relative',
-            width: 'min(280px, 70vw)',
-            marginBottom: '24px',
-          }}>
-            <div style={{
-              border: '1px solid rgba(140, 30, 30, 0.3)',
-              padding: '8px',
-              background: 'rgba(40, 5, 5, 0.4)',
-            }}>
-              <img
-                src={`/images/large/${images[0].src}`}
-                alt={images[0].name}
-                style={{
-                  width: '100%',
-                  height: 'auto',
-                  display: 'block',
-                  filter: 'brightness(0.7) saturate(0.8)',
-                }}
-              />
-            </div>
-            <div style={{
-              textAlign: 'center',
-              marginTop: '8px',
-              fontFamily: 'ui-monospace, monospace',
-              fontSize: '10px',
-              color: '#553333',
-              letterSpacing: '1px',
-            }}>
-              01A
-            </div>
-          </div>
-
           <h1 style={{
             fontFamily: 'system-ui, -apple-system, sans-serif',
             fontSize: 'clamp(28px, 5vw, 56px)',
@@ -321,7 +275,7 @@ export default function DarkroomReveal() {
             color: '#cc8888',
             letterSpacing: '6px',
             textTransform: 'uppercase',
-            marginBottom: '12px',
+            marginBottom: '8px',
             textAlign: 'center',
           }} className="heroGlow">
             Darkroom
@@ -333,22 +287,10 @@ export default function DarkroomReveal() {
             letterSpacing: '4px',
             textTransform: 'uppercase',
             fontWeight: 300,
+            marginBottom: '0',
           }}>
             Scroll to develop
           </p>
-
-          {/* Down arrow */}
-          <div style={{
-            position: 'absolute',
-            bottom: '48px',
-            left: '50%',
-            transform: 'translateX(-50%)',
-            color: '#663333',
-            fontSize: '24px',
-            opacity: 0.5,
-          }}>
-            &#8595;
-          </div>
         </section>
 
         {/* Gallery */}
