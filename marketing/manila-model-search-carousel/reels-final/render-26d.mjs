@@ -197,7 +197,12 @@ function buildHTML(imageDataMap) {
       // Move grid to end of content (after all the typed lines)
       content.appendChild(grid)
       grid.style.display = 'grid'
-      scrollToBottom()
+      // Wait a frame for layout to compute before scrolling
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          scrollToBottom()
+        })
+      })
 
       // Animate each photo in with stagger
       for (let i = 0; i < 8; i++) {
@@ -205,7 +210,7 @@ function buildHTML(imageDataMap) {
           setTimeout(() => {
             const el = document.getElementById('photo-' + idx)
             if (el) el.style.animation = 'photoIn 0.4s ease-out forwards'
-            scrollToBottom()
+            requestAnimationFrame(() => scrollToBottom())
           }, 100 + idx * 200)
         })(i)
       }
