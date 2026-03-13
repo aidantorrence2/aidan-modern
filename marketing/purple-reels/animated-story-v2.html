@@ -8,7 +8,7 @@
     width: 1080px;
     height: 1920px;
     overflow: hidden;
-    background: #0a0a0a;
+    background: #000;
     font-family: -apple-system, system-ui, 'Helvetica Neue', sans-serif;
     color: white;
   }
@@ -22,917 +22,546 @@
     align-items: center;
     justify-content: center;
     opacity: 0;
-    transition: opacity 0.5s;
+    pointer-events: none;
   }
   .scene.active { opacity: 1; }
 
-  .scene-text {
-    font-size: 72px;
-    font-weight: 700;
-    opacity: 0;
-    transform: translateY(40px);
-    transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  /* === TEXT STYLES === */
+  .hit-text {
+    font-size: 88px;
+    font-weight: 800;
     text-align: center;
-    line-height: 1.2;
-    padding: 0 80px;
-    letter-spacing: -0.02em;
-  }
-  .scene-text.show {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  .scene-subtext {
-    font-size: 48px;
-    font-weight: 400;
-    color: rgba(255,255,255,0.55);
+    line-height: 1.15;
+    padding: 0 70px;
+    letter-spacing: -0.03em;
+    transform: scale(0);
     opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-    text-align: center;
-    margin-top: 20px;
-    padding: 0 80px;
-    letter-spacing: -0.01em;
   }
-  .scene-subtext.show {
+  .hit-text.pop {
+    transform: scale(1);
     opacity: 1;
-    transform: translateY(0);
+  }
+  .sub-text {
+    font-size: 52px;
+    font-weight: 500;
+    color: rgba(255,255,255,0.5);
+    text-align: center;
+    margin-top: 12px;
+    transform: scale(0);
+    opacity: 0;
+  }
+  .sub-text.pop {
+    transform: scale(1);
+    opacity: 1;
   }
 
-  /* ===== SCENE 1: Camera Misfire ===== */
+  /* === SHAKE === */
+  @keyframes shake {
+    0%, 100% { transform: translate(0,0); }
+    10% { transform: translate(-12px, 8px); }
+    20% { transform: translate(10px, -6px); }
+    30% { transform: translate(-8px, -10px); }
+    40% { transform: translate(6px, 12px); }
+    50% { transform: translate(-10px, -4px); }
+    60% { transform: translate(8px, 6px); }
+    70% { transform: translate(-6px, 10px); }
+    80% { transform: translate(12px, -8px); }
+    90% { transform: translate(-4px, 6px); }
+  }
+  .shake {
+    animation: shake 0.4s ease-out;
+  }
+
+  /* === SCENE 1: Camera Misfire === */
   #scene1 {
-    background: radial-gradient(ellipse at 50% 45%, #1a1a2a 0%, #0a0a0a 70%);
+    background: #000;
   }
-
-  /* ===== SCENE 2: Lost Photos ===== */
-  #scene2 {
-    background: #0a0a0a;
-  }
-  .photo-fragments {
-    position: absolute;
-    width: 100%; height: 100%;
-  }
-  .photo-frag {
-    position: absolute;
-    border-radius: 8px;
-    opacity: 0;
-    transition: all 1.5s ease-out;
-  }
-  .photo-frag.scatter {
+  .cam-wrap {
+    position: relative;
+    transform: scale(0);
     opacity: 0;
   }
-  .photo-frag:nth-child(1) {
-    width: 160px; height: 200px; background: linear-gradient(135deg, #3a3a4a, #2a2a3a);
-    top: 25%; left: 20%; opacity: 0.35; transform: rotate(-5deg);
+  .cam-wrap.pop {
+    transform: scale(1);
+    opacity: 1;
   }
-  .photo-frag:nth-child(2) {
-    width: 140px; height: 180px; background: linear-gradient(135deg, #4a3a3a, #3a2a2a);
-    top: 35%; right: 18%; opacity: 0.3; transform: rotate(8deg);
+  .misfire-overlay {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+    z-index: 10;
   }
-  .photo-frag:nth-child(3) {
-    width: 120px; height: 160px; background: linear-gradient(135deg, #3a4a3a, #2a3a2a);
-    top: 55%; left: 35%; opacity: 0.25; transform: rotate(-12deg);
+  .misfire-overlay.pop {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
   }
-  .photo-frag:nth-child(4) {
-    width: 100px; height: 130px; background: linear-gradient(135deg, #4a4a3a, #3a3a2a);
-    top: 20%; left: 55%; opacity: 0.2; transform: rotate(15deg);
-  }
-  .photo-frag.scatter:nth-child(1) { transform: translate(-200px, 400px) rotate(-45deg) scale(0.3); }
-  .photo-frag.scatter:nth-child(2) { transform: translate(200px, 300px) rotate(35deg) scale(0.2); }
-  .photo-frag.scatter:nth-child(3) { transform: translate(-150px, 500px) rotate(-60deg) scale(0.15); }
-  .photo-frag.scatter:nth-child(4) { transform: translate(250px, 450px) rotate(50deg) scale(0.1); }
-
-  /* ===== SCENE 3: So I flew back ===== */
-  #scene3 {
-    background: radial-gradient(ellipse at 50% 50%, #1a1020 0%, #0a0a0a 70%);
-  }
-
-  /* ===== SCENE 4: Scooter ===== */
-  #scene4 {
-    background: linear-gradient(180deg, #040418 0%, #0a0a30 20%, #141445 40%, #1a1a3a 65%, #222 100%);
-  }
-  .stars {
+  /* Red flash */
+  .red-flash {
     position: absolute;
     top: 0; left: 0;
-    width: 100%; height: 50%;
+    width: 100%; height: 100%;
+    background: rgba(255,0,0,0.25);
+    opacity: 0;
+    pointer-events: none;
   }
+  .red-flash.pop { opacity: 1; }
+  .red-flash.out { opacity: 0; }
+
+  /* === SCENE 4: Scooter === */
+  #scene4 {
+    background: linear-gradient(180deg, #020215 0%, #080830 30%, #101050 60%, #1a1a3a 80%, #222 100%);
+  }
+  .stars { position: absolute; top: 0; left: 0; width: 100%; height: 50%; }
   .star {
-    position: absolute;
-    background: white;
-    border-radius: 50%;
-    animation: twinkle 2s ease-in-out infinite;
+    position: absolute; background: white; border-radius: 50%;
+    animation: twinkle 1.5s ease-in-out infinite;
   }
-  .star:nth-child(1) { width: 6px; height: 6px; top: 5%; left: 10%; }
-  .star:nth-child(2) { width: 4px; height: 4px; top: 8%; left: 35%; animation-delay: 0.5s; }
-  .star:nth-child(3) { width: 5px; height: 5px; top: 3%; left: 62%; animation-delay: 1s; }
-  .star:nth-child(4) { width: 8px; height: 8px; top: 12%; left: 22%; animation-delay: 0.3s; }
-  .star:nth-child(5) { width: 4px; height: 4px; top: 10%; left: 50%; animation-delay: 0.8s; }
-  .star:nth-child(6) { width: 6px; height: 6px; top: 18%; left: 78%; animation-delay: 1.2s; }
-  .star:nth-child(7) { width: 5px; height: 5px; top: 6%; left: 88%; animation-delay: 0.4s; }
-  .star:nth-child(8) { width: 7px; height: 7px; top: 20%; left: 43%; animation-delay: 0.7s; }
-  .star:nth-child(9) { width: 3px; height: 3px; top: 2%; left: 75%; animation-delay: 1.5s; }
-  .star:nth-child(10) { width: 5px; height: 5px; top: 15%; left: 6%; animation-delay: 0.2s; }
-  .star:nth-child(11) { width: 4px; height: 4px; top: 25%; left: 55%; animation-delay: 0.9s; }
-  .star:nth-child(12) { width: 6px; height: 6px; top: 22%; left: 92%; animation-delay: 1.3s; }
+  .star:nth-child(1) { width: 5px; height: 5px; top: 4%; left: 8%; }
+  .star:nth-child(2) { width: 3px; height: 3px; top: 7%; left: 32%; animation-delay: 0.3s; }
+  .star:nth-child(3) { width: 4px; height: 4px; top: 3%; left: 58%; animation-delay: 0.7s; }
+  .star:nth-child(4) { width: 6px; height: 6px; top: 11%; left: 20%; animation-delay: 0.2s; }
+  .star:nth-child(5) { width: 3px; height: 3px; top: 9%; left: 48%; animation-delay: 0.6s; }
+  .star:nth-child(6) { width: 5px; height: 5px; top: 16%; left: 75%; animation-delay: 1s; }
+  .star:nth-child(7) { width: 4px; height: 4px; top: 5%; left: 85%; animation-delay: 0.4s; }
+  .star:nth-child(8) { width: 6px; height: 6px; top: 18%; left: 40%; animation-delay: 0.8s; }
+  .star:nth-child(9) { width: 3px; height: 3px; top: 2%; left: 72%; animation-delay: 1.2s; }
+  .star:nth-child(10) { width: 4px; height: 4px; top: 14%; left: 5%; animation-delay: 0.1s; }
 
-  /* Moon */
-  .moon {
+  .time-text {
     position: absolute;
-    top: 6%; right: 10%;
-    width: 100px; height: 100px;
-    border-radius: 50%;
-    background: radial-gradient(circle at 35% 35%, #fffde8, #e8d888);
-    box-shadow: 0 0 60px rgba(255,253,200,0.25), 0 0 120px rgba(255,253,200,0.1);
-  }
-  .moon-crater {
-    position: absolute;
-    border-radius: 50%;
-    background: rgba(0,0,0,0.08);
-  }
-  .moon-crater:nth-child(1) { width: 20px; height: 20px; top: 25px; left: 30px; }
-  .moon-crater:nth-child(2) { width: 14px; height: 14px; top: 50px; left: 55px; }
-  .moon-crater:nth-child(3) { width: 10px; height: 10px; top: 35px; left: 15px; }
-
-  .time-big {
-    position: absolute;
-    top: 120px;
-    font-size: 130px;
-    font-weight: 800;
+    top: 130px;
+    font-size: 140px;
+    font-weight: 900;
     font-family: 'Courier New', monospace;
     letter-spacing: 0.05em;
+    text-shadow: 0 0 60px rgba(255,255,255,0.2);
+    transform: scale(0);
     opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.5s ease;
-    text-shadow: 0 0 40px rgba(255,255,255,0.15);
   }
-  .time-big.show { opacity: 1; transform: translateY(0); }
+  .time-text.pop { transform: scale(1); opacity: 1; }
 
-  .location-label {
+  .loc-text {
     position: absolute;
-    top: 270px;
-    font-size: 42px;
-    color: rgba(255,255,255,0.4);
-    letter-spacing: 0.2em;
+    top: 290px;
+    font-size: 38px;
+    color: rgba(255,255,255,0.35);
+    letter-spacing: 0.25em;
     text-transform: uppercase;
+    transform: scale(0);
     opacity: 0;
-    transition: all 0.5s ease;
   }
-  .location-label.show { opacity: 1; }
-
-  /* Palm tree silhouettes */
-  .palm-tree {
-    position: absolute;
-    bottom: 340px;
-  }
-  .palm-trunk {
-    width: 12px;
-    background: #111;
-    border-radius: 6px;
-    margin: 0 auto;
-  }
-  .palm-fronds {
-    position: relative;
-    width: 100%; display: flex; justify-content: center;
-  }
-  .palm-frond {
-    position: absolute;
-    height: 8px;
-    background: #0e0e1e;
-    border-radius: 0 50px 50px 0;
-    transform-origin: left center;
-  }
-  .palm-tree:nth-child(13) { left: 5%; }
-  .palm-tree:nth-child(13) .palm-trunk { height: 120px; }
-  .palm-tree:nth-child(13) .palm-frond:nth-child(1) { width: 90px; transform: rotate(-25deg); }
-  .palm-tree:nth-child(13) .palm-frond:nth-child(2) { width: 100px; transform: rotate(-55deg); }
-  .palm-tree:nth-child(13) .palm-frond:nth-child(3) { width: 85px; transform: rotate(15deg); }
-  .palm-tree:nth-child(13) .palm-frond:nth-child(4) { width: 95px; transform: rotate(40deg); }
-
-  .palm-tree:nth-child(14) { right: 8%; }
-  .palm-tree:nth-child(14) .palm-trunk { height: 150px; }
-  .palm-tree:nth-child(14) .palm-frond:nth-child(1) { width: 110px; transform: rotate(-20deg); }
-  .palm-tree:nth-child(14) .palm-frond:nth-child(2) { width: 120px; transform: rotate(-50deg); }
-  .palm-tree:nth-child(14) .palm-frond:nth-child(3) { width: 100px; transform: rotate(20deg); }
-  .palm-tree:nth-child(14) .palm-frond:nth-child(4) { width: 115px; transform: rotate(45deg); }
+  .loc-text.pop { transform: scale(1); opacity: 1; }
 
   .road {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 340px;
-    background: linear-gradient(180deg, #1a1a1a 0%, #151515 100%);
+    position: absolute; bottom: 0; width: 100%; height: 320px;
+    background: #111;
   }
-  .road-edge {
-    position: absolute;
-    top: 0; width: 100%; height: 3px;
-    background: rgba(255,255,255,0.06);
+  .road-line {
+    position: absolute; top: 48%; height: 8px; width: 90px;
+    background: rgba(255,255,200,0.15); border-radius: 4px;
+    animation: stripeFly 0.5s linear infinite;
   }
-  .road-stripe {
-    position: absolute;
-    top: 48%;
-    height: 8px;
-    background: rgba(255,255,200,0.18);
-    border-radius: 4px;
-    animation: stripeMove 0.7s linear infinite;
-  }
-  .road-stripe:nth-child(2) { width: 90px; left: -90px; }
-  .road-stripe:nth-child(3) { width: 90px; left: 200px; animation-delay: 0.14s; }
-  .road-stripe:nth-child(4) { width: 90px; left: 490px; animation-delay: 0.28s; }
-  .road-stripe:nth-child(5) { width: 90px; left: 780px; animation-delay: 0.42s; }
+  .road-line:nth-child(1) { left: -90px; }
+  .road-line:nth-child(2) { left: 270px; animation-delay: 0.1s; }
+  .road-line:nth-child(3) { left: 630px; animation-delay: 0.2s; }
+  .road-line:nth-child(4) { left: 990px; animation-delay: 0.3s; }
 
-  .scooter-group {
+  .scooter-wrap {
     position: absolute;
-    bottom: 350px;
-    transition: left 3.5s ease-in-out;
+    bottom: 330px;
+    transition: left 2s ease-in-out;
   }
 
-  /* ===== SCENE 5: Plane ===== */
+  /* === SCENE 5: Plane === */
   #scene5 {
-    background: linear-gradient(180deg, #0a1230 0%, #152050 30%, #1a3070 60%, #2040a0 100%);
+    background: linear-gradient(180deg, #081030 0%, #102060 40%, #1840a0 100%);
   }
-  .cloud {
-    position: absolute;
-    border-radius: 80px;
-  }
-  .cloud-main {
-    background: rgba(255,255,255,0.06);
-    border-radius: 60px;
-  }
-  .cloud-puff {
+  .cloud-s {
     position: absolute;
     background: rgba(255,255,255,0.05);
-    border-radius: 50%;
+    border-radius: 50px;
+    height: 50px;
   }
-  .cloud:nth-child(1) { top: 15%; left: 2%; }
-  .cloud:nth-child(1) .cloud-main { width: 260px; height: 70px; }
-  .cloud:nth-child(1) .cloud-puff:nth-child(2) { width: 100px; height: 100px; top: -40px; left: 50px; }
-  .cloud:nth-child(1) .cloud-puff:nth-child(3) { width: 80px; height: 80px; top: -30px; left: 130px; }
-  .cloud:nth-child(2) { top: 45%; right: -3%; }
-  .cloud:nth-child(2) .cloud-main { width: 320px; height: 80px; }
-  .cloud:nth-child(2) .cloud-puff:nth-child(2) { width: 120px; height: 120px; top: -50px; left: 70px; }
-  .cloud:nth-child(2) .cloud-puff:nth-child(3) { width: 90px; height: 90px; top: -35px; left: 170px; }
-  .cloud:nth-child(3) { top: 70%; left: 20%; }
-  .cloud:nth-child(3) .cloud-main { width: 200px; height: 55px; }
-  .cloud:nth-child(3) .cloud-puff:nth-child(2) { width: 70px; height: 70px; top: -30px; left: 40px; }
-  .cloud:nth-child(3) .cloud-puff:nth-child(3) { width: 55px; height: 55px; top: -20px; left: 110px; }
+  .cloud-s:nth-child(1) { width: 220px; top: 18%; left: 3%; }
+  .cloud-s:nth-child(2) { width: 280px; top: 48%; right: -2%; }
+  .cloud-s:nth-child(3) { width: 180px; top: 68%; left: 22%; }
 
-  .plane-group {
+  .plane-wrap {
     position: absolute;
-    transition: left 3s ease-in-out, top 3s ease-in-out;
+    transition: left 2s ease-in-out, top 2s ease-in-out;
   }
 
-  .route-label {
+  .route-text {
     position: absolute;
-    bottom: 26%;
-    font-size: 84px;
-    font-weight: 800;
-    letter-spacing: 0.08em;
+    bottom: 25%;
+    font-size: 90px;
+    font-weight: 900;
+    letter-spacing: 0.1em;
+    text-shadow: 0 4px 40px rgba(0,0,0,0.4);
+    transform: scale(0);
     opacity: 0;
-    transition: all 0.5s ease;
-    text-shadow: 0 4px 30px rgba(0,0,0,0.3);
   }
-  .route-label.show { opacity: 1; }
+  .route-text.pop { transform: scale(1); opacity: 1; }
 
-  /* Contrail */
-  .contrail {
-    position: absolute;
-    top: 50%;
-    left: -20px;
-    width: 0;
-    height: 4px;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15));
-    border-radius: 2px;
-    transition: width 3s ease-in-out;
-  }
-  .contrail.show { width: 600px; }
-
-  /* ===== SCENE 6: Train ===== */
-  #scene6 {
-    background: linear-gradient(180deg, #111 0%, #0e0e0e 100%);
-  }
-  .train-group {
+  /* === SCENE 6: Train === */
+  #scene6 { background: #0e0e0e; }
+  .train-wrap {
     position: absolute;
     bottom: 500px;
-    transition: left 2s ease-out;
+    transition: left 1.5s ease-out;
   }
+  .platform {
+    position: absolute; bottom: 440px; width: 100%; height: 60px;
+    background: #222; border-top: 3px solid #444;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .platform span {
+    font-size: 26px; color: rgba(255,255,255,0.3);
+    letter-spacing: 0.5em; text-transform: uppercase;
+  }
+  #scene6 .hit-text { position: absolute; top: 30%; }
 
-  .platform-bar {
-    position: absolute;
-    bottom: 440px;
-    width: 100%; height: 70px;
-    background: linear-gradient(180deg, #333 0%, #2a2a2a 100%);
-    border-top: 4px solid #555;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .platform-bar span {
-    font-size: 28px;
-    color: rgba(255,255,255,0.35);
-    letter-spacing: 0.5em;
-    text-transform: uppercase;
-  }
-  .platform-floor {
-    position: absolute;
-    bottom: 0;
-    width: 100%; height: 440px;
-    background: linear-gradient(180deg, #1a1a1a, #151515);
-  }
-  .platform-tile {
-    position: absolute;
-    bottom: 0;
-    height: 100%;
-    width: 2px;
-    background: rgba(255,255,255,0.03);
-  }
-  #scene6 .scene-text {
-    position: absolute;
-    top: 28%;
-  }
-
-  /* LED sign */
-  .led-sign {
-    position: absolute;
-    top: 20%;
-    background: #111;
-    border: 3px solid #333;
-    border-radius: 8px;
-    padding: 16px 40px;
-  }
-  .led-sign span {
-    font-family: 'Courier New', monospace;
-    font-size: 32px;
-    color: #ffaa00;
-    letter-spacing: 0.1em;
-    text-shadow: 0 0 10px rgba(255,170,0,0.5);
-  }
-
-  /* ===== SCENE 7: Noodles ===== */
+  /* === SCENE 7: Noodles === */
   #scene7 {
-    background: radial-gradient(ellipse at 50% 55%, #2a1a0a 0%, #0a0a0a 70%);
+    background: radial-gradient(ellipse at 50% 55%, #2a1a0a 0%, #000 70%);
   }
 
-  /* ===== SCENE 8: Camera Works ===== */
-  #scene8 {
-    background: radial-gradient(ellipse at 50% 45%, #0a1a0a 0%, #0a0a0a 70%);
-  }
-  .flash-burst {
+  /* === SCENE 8: Flash + Done === */
+  #scene8 { background: #000; }
+  .mega-flash {
     position: absolute;
-    top: 50%; left: 50%;
-    transform: translate(-50%, -50%) scale(0);
-    width: 900px; height: 900px;
-    background: radial-gradient(circle, rgba(255,255,255,0.98) 0%, rgba(255,255,255,0.5) 25%, rgba(255,255,255,0) 60%);
-    border-radius: 50%;
-    transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: white;
     opacity: 0;
   }
-  .flash-burst.show {
-    transform: translate(-50%, -50%) scale(1);
-    opacity: 1;
+  .mega-flash.pop { opacity: 1; }
+  .mega-flash.dim { opacity: 0; }
+  .final-text {
+    font-size: 80px;
+    font-weight: 800;
+    text-align: center;
+    letter-spacing: -0.02em;
+    transform: scale(0);
+    opacity: 0;
   }
-  .flash-burst.fade { opacity: 0; }
-
-  .check-big {
-    position: absolute;
-    top: 50%; left: 50%;
-    transform: translate(-50%, -50%) scale(0);
-    font-size: 220px;
-    color: #33ee55;
-    font-weight: 900;
-    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-    text-shadow: 0 0 80px rgba(50,240,80,0.4);
+  .final-text.pop { transform: scale(1); opacity: 1; }
+  .final-sub {
+    font-size: 36px;
+    color: rgba(255,255,255,0.4);
+    margin-top: 20px;
+    transform: scale(0);
+    opacity: 0;
   }
-  .check-big.show {
-    transform: translate(-50%, -50%) scale(1);
-  }
-
-  /* Film strip decoration for scene 8 */
-  .film-strip {
-    position: absolute;
-    width: 80px;
-    background: repeating-linear-gradient(
-      180deg,
-      #222 0px, #222 20px,
-      #0a0a0a 20px, #0a0a0a 24px
-    );
-    opacity: 0.3;
-  }
-  .film-strip-l { left: 40px; top: 0; height: 100%; }
-  .film-strip-r { right: 40px; top: 0; height: 100%; }
-  .film-perf {
-    position: absolute;
-    width: 16px; height: 12px;
-    background: #0a0a0a;
-    border-radius: 3px;
-  }
+  .final-sub.pop { transform: scale(1); opacity: 1; }
 
   @keyframes twinkle {
-    0%, 100% { opacity: 0.15; }
+    0%, 100% { opacity: 0.1; }
     50% { opacity: 1; }
   }
-  @keyframes stripeMove {
+  @keyframes stripeFly {
     from { transform: translateX(0); }
-    to { transform: translateX(-290px); }
+    to { transform: translateX(-360px); }
   }
-  @keyframes steamFloat {
+  @keyframes steamUp {
     0% { opacity: 0.2; transform: translateY(0) scale(1); }
-    50% { opacity: 0.1; }
-    100% { opacity: 0; transform: translateY(-120px) scale(3.5); }
+    100% { opacity: 0; transform: translateY(-90px) scale(3); }
   }
-  @keyframes wheelSpin {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
-  }
-  @keyframes bobFloat {
+  @keyframes noodleBob {
     0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-8px); }
+    50% { transform: translateY(-6px); }
   }
 </style>
 </head>
 <body>
 
-  <!-- Scene 1: Camera Misfire -->
+  <!-- SCENE 1: Camera misfire — HOOK -->
   <div class="scene" id="scene1">
-    <svg width="420" height="320" viewBox="0 0 420 320" style="margin-bottom:60px;filter:drop-shadow(0 12px 40px rgba(0,0,0,0.5))">
-      <!-- Camera body -->
-      <defs>
-        <linearGradient id="camBody" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stop-color="#4a4a4a"/>
-          <stop offset="100%" stop-color="#2a2a2a"/>
-        </linearGradient>
-        <linearGradient id="camGrip" x1="0" y1="0" x2="1" y2="0">
-          <stop offset="0%" stop-color="#333"/>
-          <stop offset="100%" stop-color="#3a3a3a"/>
-        </linearGradient>
-        <radialGradient id="lensGrad" cx="40%" cy="40%">
-          <stop offset="0%" stop-color="#2a2a3a"/>
-          <stop offset="60%" stop-color="#111"/>
-          <stop offset="100%" stop-color="#0a0a0a"/>
-        </radialGradient>
-        <radialGradient id="lensFlare" cx="35%" cy="35%">
-          <stop offset="0%" stop-color="rgba(100,140,255,0.3)"/>
-          <stop offset="100%" stop-color="transparent"/>
-        </radialGradient>
-      </defs>
-      <!-- Main body -->
-      <rect x="30" y="70" width="360" height="220" rx="20" fill="url(#camBody)"/>
-      <!-- Grip -->
-      <rect x="30" y="70" width="80" height="220" rx="20" fill="url(#camGrip)"/>
-      <!-- Grip texture -->
-      <line x1="45" y1="100" x2="45" y2="260" stroke="#444" stroke-width="2" stroke-dasharray="4,6"/>
-      <line x1="55" y1="100" x2="55" y2="260" stroke="#444" stroke-width="2" stroke-dasharray="4,6"/>
-      <line x1="65" y1="100" x2="65" y2="260" stroke="#444" stroke-width="2" stroke-dasharray="4,6"/>
-      <line x1="75" y1="100" x2="75" y2="260" stroke="#444" stroke-width="2" stroke-dasharray="4,6"/>
-      <!-- Pentaprism hump -->
-      <path d="M 140 70 L 160 30 L 280 30 L 300 70" fill="#444"/>
-      <rect x="160" y="30" width="120" height="40" rx="5" fill="#444"/>
-      <!-- Hot shoe -->
-      <rect x="190" y="22" width="60" height="10" rx="3" fill="#555"/>
-      <!-- Viewfinder -->
-      <rect x="195" y="38" width="50" height="24" rx="4" fill="#222"/>
-      <rect x="200" y="42" width="40" height="16" rx="2" fill="#111"/>
-      <!-- Lens mount ring -->
-      <circle cx="230" cy="180" r="85" fill="#333" stroke="#444" stroke-width="3"/>
-      <circle cx="230" cy="180" r="78" fill="#2a2a2a"/>
-      <!-- Lens rings -->
-      <circle cx="230" cy="180" r="72" fill="none" stroke="#3a3a3a" stroke-width="2"/>
-      <circle cx="230" cy="180" r="66" fill="none" stroke="#383838" stroke-width="1.5"/>
-      <!-- Inner lens -->
-      <circle cx="230" cy="180" r="60" fill="url(#lensGrad)"/>
-      <!-- Lens flare -->
-      <circle cx="230" cy="180" r="60" fill="url(#lensFlare)"/>
-      <!-- Aperture blades hint -->
-      <circle cx="230" cy="180" r="30" fill="none" stroke="rgba(50,50,80,0.3)" stroke-width="1"/>
-      <circle cx="230" cy="180" r="20" fill="#050510"/>
-      <!-- Lens reflection dot -->
-      <circle cx="215" cy="165" r="8" fill="rgba(150,180,255,0.15)"/>
-      <circle cx="212" cy="162" r="3" fill="rgba(200,220,255,0.25)"/>
-      <!-- Shutter button -->
-      <circle cx="130" cy="55" r="16" fill="#666" stroke="#777" stroke-width="2"/>
-      <circle cx="130" cy="55" r="10" fill="#555"/>
-      <!-- Mode dial -->
-      <rect x="310" y="45" width="50" height="25" rx="12" fill="#555"/>
-      <line x1="335" y1="48" x2="335" y2="67" stroke="#777" stroke-width="1.5"/>
-      <!-- Brand badge -->
-      <rect x="280" y="85" width="80" height="16" rx="3" fill="rgba(255,255,255,0.06)"/>
-      <!-- SD card slot hint -->
-      <rect x="370" y="140" width="15" height="40" rx="3" fill="#333"/>
-    </svg>
-    <!-- Misfire X overlay -->
-    <div style="position:absolute;top:0;left:0;width:100%;height:100%;display:flex;align-items:center;justify-content:center;pointer-events:none;">
-      <svg id="misfireX" width="300" height="300" viewBox="0 0 300 300" style="position:absolute;top:calc(50% - 220px);opacity:0;transform:scale(0);transition:all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);">
-        <circle cx="150" cy="150" r="120" fill="rgba(255,30,30,0.15)" stroke="#ff3333" stroke-width="8"/>
-        <line x1="80" y1="80" x2="220" y2="220" stroke="#ff3333" stroke-width="12" stroke-linecap="round"/>
-        <line x1="220" y1="80" x2="80" y2="220" stroke="#ff3333" stroke-width="12" stroke-linecap="round"/>
+    <div class="red-flash" id="redFlash"></div>
+    <div class="cam-wrap" id="camWrap">
+      <svg width="400" height="300" viewBox="0 0 420 320">
+        <defs>
+          <linearGradient id="camBody" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#4a4a4a"/>
+            <stop offset="100%" stop-color="#2a2a2a"/>
+          </linearGradient>
+          <radialGradient id="lensG" cx="40%" cy="40%">
+            <stop offset="0%" stop-color="#2a2a3a"/>
+            <stop offset="60%" stop-color="#111"/>
+            <stop offset="100%" stop-color="#050508"/>
+          </radialGradient>
+        </defs>
+        <rect x="30" y="70" width="360" height="220" rx="18" fill="url(#camBody)"/>
+        <rect x="30" y="70" width="75" height="220" rx="18" fill="#333"/>
+        <path d="M 140 70 L 160 32 L 280 32 L 300 70" fill="#444"/>
+        <rect x="160" y="32" width="120" height="38" rx="4" fill="#444"/>
+        <circle cx="230" cy="180" r="82" fill="#333" stroke="#444" stroke-width="3"/>
+        <circle cx="230" cy="180" r="74" fill="#222"/>
+        <circle cx="230" cy="180" r="58" fill="url(#lensG)"/>
+        <circle cx="230" cy="180" r="22" fill="#050510"/>
+        <circle cx="215" cy="165" r="6" fill="rgba(150,180,255,0.2)"/>
+        <circle cx="130" cy="52" r="14" fill="#666" stroke="#777" stroke-width="2"/>
+      </svg>
+      <!-- X overlay -->
+      <svg class="misfire-overlay" id="misfireX" width="240" height="240" viewBox="0 0 240 240">
+        <circle cx="120" cy="120" r="100" fill="rgba(255,20,20,0.2)" stroke="#ff2222" stroke-width="10"/>
+        <line x1="60" y1="60" x2="180" y2="180" stroke="#ff2222" stroke-width="14" stroke-linecap="round"/>
+        <line x1="180" y1="60" x2="60" y2="180" stroke="#ff2222" stroke-width="14" stroke-linecap="round"/>
       </svg>
     </div>
-    <div class="scene-text" id="s1text">My camera misfired.</div>
+    <div class="hit-text" id="s1text" style="margin-top:40px">My camera<br>misfired.</div>
   </div>
 
-  <!-- Scene 2: Lost photos -->
+  <!-- SCENE 2: Lost every photo -->
   <div class="scene" id="scene2">
-    <div class="photo-fragments">
-      <div class="photo-frag" id="frag1"></div>
-      <div class="photo-frag" id="frag2"></div>
-      <div class="photo-frag" id="frag3"></div>
-      <div class="photo-frag" id="frag4"></div>
-    </div>
-    <div class="scene-text" id="s2text" style="font-size:68px;position:relative;z-index:2;">I lost every single photo.</div>
+    <div class="hit-text" id="s2text" style="font-size:78px">I lost every<br>single photo.</div>
   </div>
 
-  <!-- Scene 3: So I flew back -->
+  <!-- SCENE 3: Flew back -->
   <div class="scene" id="scene3">
-    <div class="scene-text" id="s3text" style="font-size:84px;font-weight:800;">So I flew back.</div>
+    <div class="hit-text" id="s3text" style="font-size:96px;font-weight:900;">So I flew back.</div>
   </div>
 
-  <!-- Scene 4: 5am Scooter -->
+  <!-- SCENE 4: 5am scooter -->
   <div class="scene" id="scene4">
     <div class="stars">
       <div class="star"></div><div class="star"></div><div class="star"></div>
       <div class="star"></div><div class="star"></div><div class="star"></div>
       <div class="star"></div><div class="star"></div><div class="star"></div>
-      <div class="star"></div><div class="star"></div><div class="star"></div>
+      <div class="star"></div>
     </div>
-    <div class="moon">
-      <div class="moon-crater"></div>
-      <div class="moon-crater"></div>
-      <div class="moon-crater"></div>
-    </div>
-    <!-- Palm trees -->
-    <div class="palm-tree">
-      <div class="palm-fronds">
-        <div class="palm-frond"></div><div class="palm-frond"></div>
-        <div class="palm-frond"></div><div class="palm-frond"></div>
-      </div>
-      <div class="palm-trunk"></div>
-    </div>
-    <div class="palm-tree">
-      <div class="palm-fronds">
-        <div class="palm-frond"></div><div class="palm-frond"></div>
-        <div class="palm-frond"></div><div class="palm-frond"></div>
-      </div>
-      <div class="palm-trunk"></div>
-    </div>
-    <div class="time-big" id="timeBig">5:00 AM</div>
-    <div class="location-label" id="locLabel">UNGASAN, BALI</div>
+    <div class="time-text" id="timeText">5:00 AM</div>
+    <div class="loc-text" id="locText">UNGASAN, BALI</div>
     <div class="road">
-      <div class="road-edge"></div>
-      <div class="road-stripe"></div><div class="road-stripe"></div>
-      <div class="road-stripe"></div><div class="road-stripe"></div>
+      <div class="road-line"></div><div class="road-line"></div>
+      <div class="road-line"></div><div class="road-line"></div>
     </div>
-    <div class="scooter-group" id="scooterGroup" style="left:-300px">
-      <svg width="280" height="200" viewBox="0 0 280 200" style="filter:drop-shadow(0 4px 15px rgba(0,0,0,0.4))">
-        <defs>
-          <linearGradient id="scBody" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stop-color="#5a5a5a"/>
-            <stop offset="100%" stop-color="#3a3a3a"/>
-          </linearGradient>
-          <radialGradient id="headlightGlow" cx="100%" cy="50%">
-            <stop offset="0%" stop-color="#ffee88"/>
-            <stop offset="100%" stop-color="transparent"/>
-          </radialGradient>
-        </defs>
-        <!-- Headlight glow -->
-        <ellipse cx="250" cy="130" rx="80" ry="50" fill="rgba(255,238,136,0.08)"/>
-        <!-- Deck/footrest -->
-        <rect x="55" y="135" width="160" height="16" rx="8" fill="#444"/>
-        <!-- Front fork -->
-        <line x1="230" y1="95" x2="235" y2="150" stroke="#666" stroke-width="8" stroke-linecap="round"/>
-        <!-- Rear section -->
-        <path d="M 60 130 Q 40 110, 55 90 L 130 85 Q 140 85, 140 95 L 140 130" fill="url(#scBody)" stroke="#4a4a4a" stroke-width="1"/>
-        <!-- Seat -->
-        <rect x="60" y="78" width="80" height="16" rx="8" fill="#333"/>
-        <rect x="65" y="76" width="70" height="8" rx="4" fill="#444"/>
-        <!-- Handlebar stem -->
-        <line x1="225" y1="55" x2="232" y2="95" stroke="#777" stroke-width="6" stroke-linecap="round"/>
-        <!-- Handlebar cross -->
-        <line x1="205" y1="50" x2="245" y2="50" stroke="#888" stroke-width="5" stroke-linecap="round"/>
-        <!-- Mirror -->
-        <ellipse cx="205" cy="44" rx="10" ry="7" fill="#555" stroke="#666" stroke-width="1.5"/>
-        <ellipse cx="205" cy="44" rx="6" ry="4" fill="#3a3a4a"/>
-        <!-- Rear wheel -->
-        <circle cx="55" cy="168" r="30" fill="#222" stroke="#555" stroke-width="7"/>
-        <circle cx="55" cy="168" r="16" fill="#333"/>
+    <div class="scooter-wrap" id="scooterWrap" style="left:-300px">
+      <svg width="260" height="180" viewBox="0 0 280 200" style="filter:drop-shadow(0 4px 20px rgba(0,0,0,0.5))">
+        <ellipse cx="250" cy="130" rx="70" ry="45" fill="rgba(255,238,136,0.06)"/>
+        <rect x="55" y="135" width="160" height="14" rx="7" fill="#444"/>
+        <line x1="230" y1="95" x2="235" y2="150" stroke="#666" stroke-width="7" stroke-linecap="round"/>
+        <path d="M 60 130 Q 40 110, 55 90 L 130 85 Q 140 85, 140 95 L 140 130" fill="#4a4a4a"/>
+        <rect x="60" y="78" width="80" height="14" rx="7" fill="#333"/>
+        <line x1="225" y1="55" x2="232" y2="95" stroke="#777" stroke-width="5" stroke-linecap="round"/>
+        <line x1="208" y1="50" x2="242" y2="50" stroke="#888" stroke-width="4" stroke-linecap="round"/>
+        <circle cx="55" cy="168" r="28" fill="#222" stroke="#555" stroke-width="6"/>
         <circle cx="55" cy="168" r="5" fill="#555"/>
-        <!-- Rear wheel spokes -->
-        <line x1="55" y1="145" x2="55" y2="191" stroke="#444" stroke-width="1.5"/>
-        <line x1="32" y1="168" x2="78" y2="168" stroke="#444" stroke-width="1.5"/>
-        <!-- Front wheel -->
-        <circle cx="235" cy="168" r="30" fill="#222" stroke="#555" stroke-width="7"/>
-        <circle cx="235" cy="168" r="16" fill="#333"/>
+        <circle cx="235" cy="168" r="28" fill="#222" stroke="#555" stroke-width="6"/>
         <circle cx="235" cy="168" r="5" fill="#555"/>
-        <!-- Front wheel spokes -->
-        <line x1="235" y1="145" x2="235" y2="191" stroke="#444" stroke-width="1.5"/>
-        <line x1="212" y1="168" x2="258" y2="168" stroke="#444" stroke-width="1.5"/>
-        <!-- Fender -->
-        <path d="M 210 148 A 32 32 0 0 1 260 148" fill="none" stroke="#555" stroke-width="4"/>
-        <!-- Headlight -->
-        <ellipse cx="248" cy="110" rx="12" ry="10" fill="#ffee88"/>
-        <ellipse cx="248" cy="110" rx="8" ry="6" fill="#fffde0"/>
-        <!-- Tail light -->
-        <rect x="30" y="118" width="12" height="8" rx="3" fill="#ff4444"/>
-        <!-- Rider -->
-        <!-- Body -->
-        <rect x="80" y="28" width="40" height="50" rx="10" fill="#3a3a3a"/>
-        <!-- Backpack -->
-        <rect x="70" y="35" width="18" height="35" rx="6" fill="#555"/>
-        <!-- Head -->
-        <circle cx="100" cy="18" r="18" fill="#c8a882"/>
-        <!-- Hair -->
-        <path d="M 82 14 Q 85 0, 100 2 Q 115 0, 118 14" fill="#333"/>
-        <!-- Helmet -->
-        <path d="M 82 18 Q 82 0, 100 -2 Q 118 0, 118 18" fill="#555" stroke="#666" stroke-width="1"/>
-        <!-- Arms -->
-        <line x1="115" y1="45" x2="215" y2="52" stroke="#c8a882" stroke-width="7" stroke-linecap="round"/>
-        <line x1="80" y1="48" x2="60" y2="75" stroke="#c8a882" stroke-width="6" stroke-linecap="round"/>
-        <!-- Legs -->
-        <line x1="90" y1="78" x2="75" y2="130" stroke="#333" stroke-width="8" stroke-linecap="round"/>
-        <line x1="110" y1="78" x2="130" y2="130" stroke="#333" stroke-width="8" stroke-linecap="round"/>
-        <!-- Shoe outlines -->
-        <rect x="65" y="127" width="20" height="10" rx="4" fill="#2a2a2a"/>
-        <rect x="122" y="127" width="20" height="10" rx="4" fill="#2a2a2a"/>
+        <path d="M 210 148 A 30 30 0 0 1 260 148" fill="none" stroke="#555" stroke-width="3"/>
+        <ellipse cx="248" cy="110" rx="10" ry="8" fill="#ffee88"/>
+        <ellipse cx="248" cy="110" rx="6" ry="5" fill="#fffde0"/>
+        <rect x="30" y="118" width="10" height="7" rx="3" fill="#ff4444"/>
+        <rect x="80" y="28" width="38" height="48" rx="10" fill="#3a3a3a"/>
+        <rect x="70" y="35" width="16" height="32" rx="5" fill="#555"/>
+        <circle cx="100" cy="18" r="16" fill="#c8a882"/>
+        <path d="M 84 16 Q 86 2, 100 4 Q 114 2, 116 16" fill="#555"/>
+        <line x1="113" y1="45" x2="215" y2="52" stroke="#c8a882" stroke-width="6" stroke-linecap="round"/>
+        <line x1="90" y1="76" x2="75" y2="130" stroke="#333" stroke-width="7" stroke-linecap="round"/>
+        <line x1="108" y1="76" x2="128" y2="130" stroke="#333" stroke-width="7" stroke-linecap="round"/>
       </svg>
     </div>
   </div>
 
-  <!-- Scene 5: Plane -->
+  <!-- SCENE 5: Plane -->
   <div class="scene" id="scene5">
-    <div class="cloud"><div class="cloud-main"></div><div class="cloud-puff"></div><div class="cloud-puff"></div></div>
-    <div class="cloud"><div class="cloud-main"></div><div class="cloud-puff"></div><div class="cloud-puff"></div></div>
-    <div class="cloud"><div class="cloud-main"></div><div class="cloud-puff"></div><div class="cloud-puff"></div></div>
-    <div class="contrail" id="contrail"></div>
-    <div class="plane-group" id="planeGroup" style="left:-400px;top:42%">
-      <svg width="380" height="160" viewBox="0 0 380 160" style="filter:drop-shadow(0 6px 30px rgba(0,0,0,0.3))">
+    <div class="cloud-s"></div><div class="cloud-s"></div><div class="cloud-s"></div>
+    <div class="plane-wrap" id="planeWrap" style="left:-400px;top:40%">
+      <svg width="340" height="140" viewBox="0 0 380 160" style="filter:drop-shadow(0 6px 25px rgba(0,0,0,0.3))">
         <defs>
-          <linearGradient id="fuselage" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stop-color="#ffffff"/>
-            <stop offset="40%" stop-color="#f0f0f0"/>
+          <linearGradient id="fuse" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#fff"/>
             <stop offset="100%" stop-color="#d8d8d8"/>
           </linearGradient>
-          <linearGradient id="wingGrad" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stop-color="#e8e8e8"/>
-            <stop offset="100%" stop-color="#d0d0d0"/>
-          </linearGradient>
         </defs>
-        <!-- Fuselage -->
-        <ellipse cx="190" cy="80" rx="180" ry="35" fill="url(#fuselage)"/>
-        <!-- Nose -->
-        <path d="M 368 80 Q 380 75, 380 80 Q 380 85, 368 80" fill="#e0e0e0"/>
-        <!-- Stripe -->
-        <rect x="20" y="72" width="350" height="4" rx="2" fill="#cc3333" opacity="0.6"/>
-        <!-- Tail fin -->
-        <path d="M 15 80 L 5 20 L 60 20 L 55 55" fill="url(#wingGrad)" stroke="#ccc" stroke-width="1"/>
-        <rect x="12" y="22" width="40" height="4" rx="2" fill="#cc3333" opacity="0.5"/>
-        <!-- Wing -->
-        <path d="M 120 80 L 80 30 L 240 30 L 230 80" fill="url(#wingGrad)" stroke="#ddd" stroke-width="1"/>
-        <!-- Engine under wing -->
-        <ellipse cx="160" cy="95" rx="22" ry="12" fill="#ccc" stroke="#bbb" stroke-width="1"/>
-        <ellipse cx="160" cy="95" rx="14" ry="8" fill="#999"/>
-        <ellipse cx="160" cy="95" rx="6" ry="4" fill="#777"/>
-        <!-- Windows -->
-        <circle cx="290" cy="73" r="7" fill="#3a5a9a"/>
-        <circle cx="268" cy="73" r="7" fill="#3a5a9a"/>
-        <circle cx="246" cy="73" r="7" fill="#3a5a9a"/>
-        <circle cx="224" cy="73" r="7" fill="#3a5a9a"/>
-        <circle cx="202" cy="73" r="7" fill="#3a5a9a"/>
-        <circle cx="180" cy="73" r="7" fill="#3a5a9a"/>
-        <circle cx="158" cy="73" r="7" fill="#3a5a9a"/>
-        <circle cx="136" cy="73" r="7" fill="#3a5a9a"/>
-        <!-- Cockpit windows -->
-        <path d="M 345 72 Q 360 68, 365 72 Q 365 76, 355 78" fill="#3a5a9a"/>
-        <path d="M 340 78 Q 350 75, 355 78 Q 355 82, 345 83" fill="#3a5a9a"/>
-        <!-- Landing gear hint -->
-        <line x1="150" y1="105" x2="150" y2="120" stroke="#999" stroke-width="3"/>
-        <circle cx="150" cy="123" r="5" fill="#666"/>
+        <ellipse cx="190" cy="80" rx="175" ry="33" fill="url(#fuse)"/>
+        <rect x="20" y="72" width="345" height="4" rx="2" fill="#cc3333" opacity="0.6"/>
+        <path d="M 15 80 L 5 22 L 58 22 L 53 57" fill="#e0e0e0"/>
+        <path d="M 120 80 L 85 32 L 235 32 L 228 80" fill="#e8e8e8" stroke="#ddd" stroke-width="1"/>
+        <ellipse cx="160" cy="94" rx="20" ry="11" fill="#ccc"/>
+        <ellipse cx="160" cy="94" rx="6" ry="4" fill="#888"/>
+        <circle cx="280" cy="73" r="6.5" fill="#3a5a9a"/>
+        <circle cx="260" cy="73" r="6.5" fill="#3a5a9a"/>
+        <circle cx="240" cy="73" r="6.5" fill="#3a5a9a"/>
+        <circle cx="220" cy="73" r="6.5" fill="#3a5a9a"/>
+        <circle cx="200" cy="73" r="6.5" fill="#3a5a9a"/>
+        <circle cx="180" cy="73" r="6.5" fill="#3a5a9a"/>
+        <circle cx="160" cy="73" r="6.5" fill="#3a5a9a"/>
+        <path d="M 340 72 Q 355 68, 360 73 Q 358 78, 348 78" fill="#3a5a9a"/>
       </svg>
     </div>
-    <div class="route-label" id="routeLabel">BALI → KL</div>
+    <div class="route-text" id="routeText">BALI → KL</div>
   </div>
 
-  <!-- Scene 6: Train -->
+  <!-- SCENE 6: Train -->
   <div class="scene" id="scene6">
-    <div class="led-sign" id="ledSign">
-      <span>NEXT: KL SENTRAL</span>
-    </div>
-    <div class="scene-text" id="s6text" style="position:absolute;top:28%">Took the train into town.</div>
-    <div class="platform-bar"><span>KL Sentral</span></div>
-    <div class="platform-floor">
-      <div class="platform-tile" style="left:15%"></div>
-      <div class="platform-tile" style="left:30%"></div>
-      <div class="platform-tile" style="left:45%"></div>
-      <div class="platform-tile" style="left:60%"></div>
-      <div class="platform-tile" style="left:75%"></div>
-      <div class="platform-tile" style="left:90%"></div>
-    </div>
-    <div class="train-group" id="trainGroup" style="left:1200px">
-      <svg width="600" height="220" viewBox="0 0 600 220" style="filter:drop-shadow(0 8px 30px rgba(0,0,0,0.4))">
+    <div class="hit-text" id="s6text" style="position:absolute;top:28%">Train into town.</div>
+    <div class="platform"><span>KL Sentral</span></div>
+    <div style="position:absolute;bottom:0;width:100%;height:440px;background:#1a1a1a;"></div>
+    <div class="train-wrap" id="trainWrap" style="left:1200px">
+      <svg width="560" height="200" viewBox="0 0 600 220" style="filter:drop-shadow(0 6px 25px rgba(0,0,0,0.4))">
         <defs>
-          <linearGradient id="trainBody" x1="0" y1="0" x2="0" y2="1">
+          <linearGradient id="tBody" x1="0" y1="0" x2="0" y2="1">
             <stop offset="0%" stop-color="#4090dd"/>
-            <stop offset="50%" stop-color="#3070cc"/>
             <stop offset="100%" stop-color="#2060aa"/>
           </linearGradient>
         </defs>
-        <!-- Train body -->
-        <rect x="0" y="20" width="580" height="150" rx="12" fill="url(#trainBody)"/>
-        <!-- Nose shape -->
-        <path d="M 580 20 Q 600 30, 600 95 Q 600 160, 580 170" fill="url(#trainBody)"/>
-        <!-- Bottom panel -->
-        <rect x="0" y="140" width="580" height="30" rx="0" fill="#1a4a88"/>
-        <!-- Windows -->
-        <rect x="30" y="45" width="80" height="70" rx="8" fill="rgba(200,220,255,0.35)"/>
-        <rect x="125" y="45" width="80" height="70" rx="8" fill="rgba(200,220,255,0.35)"/>
-        <rect x="220" y="45" width="80" height="70" rx="8" fill="rgba(200,220,255,0.35)"/>
-        <rect x="315" y="45" width="80" height="70" rx="8" fill="rgba(200,220,255,0.35)"/>
-        <rect x="410" y="45" width="80" height="70" rx="8" fill="rgba(200,220,255,0.35)"/>
-        <!-- Door -->
-        <rect x="505" y="35" width="55" height="110" rx="4" fill="#2560aa" stroke="#1a4a88" stroke-width="2"/>
-        <line x1="532" y1="35" x2="532" y2="145" stroke="#1a4a88" stroke-width="1.5"/>
-        <circle cx="522" cy="90" r="4" fill="#888"/>
-        <!-- Destination sign -->
-        <rect x="30" y="25" width="120" height="16" rx="3" fill="#111"/>
-        <text x="90" y="37" font-family="monospace" font-size="10" fill="#ffaa00" text-anchor="middle">KL SENTRAL</text>
-        <!-- Stripe -->
-        <rect x="0" y="125" width="580" height="6" fill="rgba(255,255,255,0.15)"/>
-        <!-- Wheels -->
-        <circle cx="80" cy="190" r="22" fill="#333" stroke="#555" stroke-width="5"/>
-        <circle cx="80" cy="190" r="8" fill="#666"/>
-        <circle cx="200" cy="190" r="22" fill="#333" stroke="#555" stroke-width="5"/>
-        <circle cx="200" cy="190" r="8" fill="#666"/>
-        <circle cx="400" cy="190" r="22" fill="#333" stroke="#555" stroke-width="5"/>
-        <circle cx="400" cy="190" r="8" fill="#666"/>
-        <circle cx="520" cy="190" r="22" fill="#333" stroke="#555" stroke-width="5"/>
-        <circle cx="520" cy="190" r="8" fill="#666"/>
-        <!-- Bogie frame -->
-        <rect x="55" y="175" width="170" height="8" rx="4" fill="#444"/>
-        <rect x="375" y="175" width="170" height="8" rx="4" fill="#444"/>
-        <!-- Pantograph hint on top -->
-        <line x1="250" y1="20" x2="270" y2="0" stroke="#777" stroke-width="3"/>
-        <line x1="270" y1="0" x2="310" y2="0" stroke="#777" stroke-width="3"/>
-        <line x1="310" y1="0" x2="330" y2="20" stroke="#777" stroke-width="3"/>
+        <rect x="0" y="20" width="580" height="150" rx="10" fill="url(#tBody)"/>
+        <path d="M 580 20 Q 598 30, 598 95 Q 598 160, 580 170" fill="url(#tBody)"/>
+        <rect x="0" y="140" width="580" height="30" fill="#1a4a88"/>
+        <rect x="30" y="45" width="75" height="65" rx="7" fill="rgba(200,220,255,0.35)"/>
+        <rect x="120" y="45" width="75" height="65" rx="7" fill="rgba(200,220,255,0.35)"/>
+        <rect x="210" y="45" width="75" height="65" rx="7" fill="rgba(200,220,255,0.35)"/>
+        <rect x="300" y="45" width="75" height="65" rx="7" fill="rgba(200,220,255,0.35)"/>
+        <rect x="390" y="45" width="75" height="65" rx="7" fill="rgba(200,220,255,0.35)"/>
+        <rect x="500" y="35" width="55" height="110" rx="4" fill="#2560aa" stroke="#1a4a88" stroke-width="2"/>
+        <line x1="527" y1="35" x2="527" y2="145" stroke="#1a4a88" stroke-width="1.5"/>
+        <rect x="0" y="125" width="580" height="5" fill="rgba(255,255,255,0.15)"/>
+        <circle cx="80" cy="190" r="20" fill="#333" stroke="#555" stroke-width="5"/>
+        <circle cx="200" cy="190" r="20" fill="#333" stroke="#555" stroke-width="5"/>
+        <circle cx="400" cy="190" r="20" fill="#333" stroke="#555" stroke-width="5"/>
+        <circle cx="520" cy="190" r="20" fill="#333" stroke="#555" stroke-width="5"/>
+        <line x1="250" y1="20" x2="270" y2="2" stroke="#777" stroke-width="3"/>
+        <line x1="270" y1="2" x2="310" y2="2" stroke="#777" stroke-width="3"/>
+        <line x1="310" y1="2" x2="330" y2="20" stroke="#777" stroke-width="3"/>
       </svg>
     </div>
   </div>
 
-  <!-- Scene 7: Noodles -->
+  <!-- SCENE 7: Noodles -->
   <div class="scene" id="scene7">
-    <div style="position:relative;margin-bottom:60px;">
-      <svg width="440" height="380" viewBox="0 0 440 380" style="filter:drop-shadow(0 8px 30px rgba(0,0,0,0.3));animation:bobFloat 3s ease-in-out infinite">
+    <div style="position:relative;margin-bottom:40px;animation:noodleBob 2.5s ease-in-out infinite">
+      <svg width="400" height="340" viewBox="0 0 440 380" style="filter:drop-shadow(0 8px 25px rgba(0,0,0,0.4))">
         <defs>
-          <linearGradient id="bowlGrad" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stop-color="#f8f4ee"/>
-            <stop offset="100%" stop-color="#e8e0d4"/>
-          </linearGradient>
           <linearGradient id="broth" x1="0" y1="0" x2="0" y2="1">
             <stop offset="0%" stop-color="#c89040"/>
             <stop offset="100%" stop-color="#a06820"/>
           </linearGradient>
-          <linearGradient id="chopGrad" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stop-color="#8B5A2B"/>
-            <stop offset="100%" stop-color="#5a3010"/>
+          <linearGradient id="bowlG" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#f8f4ee"/>
+            <stop offset="100%" stop-color="#e0d8cc"/>
           </linearGradient>
         </defs>
-        <!-- Steam puffs -->
-        <circle cx="120" cy="60" r="25" fill="rgba(255,255,255,0.08)" style="animation:steamFloat 2.5s ease-out infinite"/>
-        <circle cx="220" cy="50" r="30" fill="rgba(255,255,255,0.06)" style="animation:steamFloat 2.8s ease-out infinite 0.5s"/>
-        <circle cx="300" cy="55" r="22" fill="rgba(255,255,255,0.07)" style="animation:steamFloat 2.3s ease-out infinite 1s"/>
-        <circle cx="170" cy="70" r="18" fill="rgba(255,255,255,0.05)" style="animation:steamFloat 3s ease-out infinite 1.5s"/>
-        <circle cx="270" cy="65" r="20" fill="rgba(255,255,255,0.06)" style="animation:steamFloat 2.6s ease-out infinite 0.8s"/>
+        <!-- Steam -->
+        <circle cx="130" cy="65" r="22" fill="rgba(255,255,255,0.07)" style="animation:steamUp 2s ease-out infinite"/>
+        <circle cx="220" cy="55" r="26" fill="rgba(255,255,255,0.06)" style="animation:steamUp 2.2s ease-out infinite 0.4s"/>
+        <circle cx="300" cy="60" r="20" fill="rgba(255,255,255,0.07)" style="animation:steamUp 2.4s ease-out infinite 0.9s"/>
         <!-- Chopsticks -->
-        <rect x="300" y="20" width="10" height="240" rx="5" fill="url(#chopGrad)" transform="rotate(12, 305, 140)"/>
-        <rect x="330" y="30" width="10" height="240" rx="5" fill="url(#chopGrad)" transform="rotate(-8, 335, 150)"/>
-        <!-- Chopstick tips -->
-        <circle cx="315" cy="250" r="4" fill="#3a1a08" transform="rotate(12, 305, 140)"/>
-        <circle cx="345" cy="260" r="4" fill="#3a1a08" transform="rotate(-8, 335, 150)"/>
-        <!-- Bowl rim -->
-        <ellipse cx="220" cy="140" rx="200" ry="30" fill="#f0ece4" stroke="#e0d8cc" stroke-width="2"/>
-        <!-- Bowl body -->
-        <path d="M 20 140 Q 30 340, 220 340 Q 410 340, 420 140" fill="url(#bowlGrad)" stroke="#e0d8cc" stroke-width="1"/>
-        <!-- Bowl pattern -->
-        <path d="M 60 200 Q 140 180, 220 200 Q 300 220, 380 200" fill="none" stroke="rgba(200,60,60,0.15)" stroke-width="3"/>
-        <path d="M 80 240 Q 150 225, 220 240 Q 290 255, 360 240" fill="none" stroke="rgba(200,60,60,0.12)" stroke-width="3"/>
-        <!-- Broth surface -->
-        <ellipse cx="220" cy="140" rx="185" ry="22" fill="url(#broth)" opacity="0.9"/>
+        <rect x="300" y="25" width="9" height="220" rx="4.5" fill="#6B3410" transform="rotate(11, 305, 135)"/>
+        <rect x="325" y="35" width="9" height="220" rx="4.5" fill="#8B5A2B" transform="rotate(-7, 330, 145)"/>
+        <!-- Rim -->
+        <ellipse cx="220" cy="140" rx="195" ry="28" fill="#ede8e0" stroke="#ddd5c8" stroke-width="2"/>
+        <!-- Bowl -->
+        <path d="M 25 140 Q 35 335, 220 335 Q 405 335, 415 140" fill="url(#bowlG)"/>
+        <!-- Broth -->
+        <ellipse cx="220" cy="140" rx="180" ry="20" fill="url(#broth)" opacity="0.9"/>
         <!-- Noodles -->
-        <path d="M 100 135 Q 130 125, 160 140 Q 190 155, 220 138 Q 250 122, 280 140" fill="none" stroke="#ddb866" stroke-width="6" stroke-linecap="round"/>
-        <path d="M 120 148 Q 155 135, 190 150 Q 225 165, 260 148 Q 280 138, 300 148" fill="none" stroke="#ccaa55" stroke-width="5" stroke-linecap="round"/>
-        <path d="M 140 130 Q 170 118, 200 132 Q 230 146, 260 130" fill="none" stroke="#ddb866" stroke-width="5" stroke-linecap="round"/>
-        <path d="M 110 142 Q 145 130, 180 145 Q 215 158, 250 142" fill="none" stroke="#c8a040" stroke-width="4" stroke-linecap="round"/>
-        <!-- Garnishes -->
+        <path d="M 100 135 Q 140 122, 180 138 Q 220 154, 260 135 Q 290 120, 320 138" fill="none" stroke="#ddb866" stroke-width="6" stroke-linecap="round"/>
+        <path d="M 120 145 Q 160 132, 200 148 Q 240 162, 280 145" fill="none" stroke="#ccaa55" stroke-width="5" stroke-linecap="round"/>
+        <path d="M 140 128 Q 175 116, 210 130 Q 245 144, 275 128" fill="none" stroke="#ddb866" stroke-width="5" stroke-linecap="round"/>
+        <!-- Egg -->
+        <ellipse cx="135" cy="132" rx="20" ry="14" fill="#f0e8d0"/>
+        <ellipse cx="135" cy="132" rx="11" ry="8" fill="#e8a030"/>
         <!-- Green onion -->
-        <ellipse cx="160" cy="130" rx="12" ry="5" fill="#4a8a3a" opacity="0.8"/>
-        <ellipse cx="185" cy="125" rx="10" ry="4" fill="#5a9a4a" opacity="0.7"/>
-        <ellipse cx="270" cy="135" rx="11" ry="5" fill="#4a8a3a" opacity="0.75"/>
-        <!-- Egg half -->
-        <ellipse cx="130" cy="132" rx="22" ry="16" fill="#f0e8d0"/>
-        <ellipse cx="130" cy="132" rx="12" ry="9" fill="#e8a030"/>
-        <!-- Meat slices -->
-        <ellipse cx="240" cy="128" rx="20" ry="8" fill="#c86040" opacity="0.8" transform="rotate(-10, 240, 128)"/>
-        <ellipse cx="260" cy="133" rx="18" ry="7" fill="#b85535" opacity="0.7" transform="rotate(5, 260, 133)"/>
-        <!-- Chili -->
-        <ellipse cx="300" cy="130" rx="8" ry="4" fill="#cc2222" opacity="0.6"/>
+        <ellipse cx="165" cy="128" rx="10" ry="4" fill="#4a8a3a" opacity="0.8"/>
+        <ellipse cx="275" cy="133" rx="9" ry="4" fill="#4a8a3a" opacity="0.7"/>
+        <!-- Meat -->
+        <ellipse cx="240" cy="127" rx="18" ry="7" fill="#c86040" opacity="0.8" transform="rotate(-8,240,127)"/>
       </svg>
     </div>
-    <div class="scene-text" id="s7text" style="font-size:60px">Noodles first.</div>
-    <div class="scene-subtext" id="s7sub">Obviously.</div>
+    <div class="hit-text" id="s7text" style="font-size:68px">Noodles first.</div>
+    <div class="sub-text" id="s7sub">Obviously.</div>
   </div>
 
-  <!-- Scene 8: Camera Works -->
+  <!-- SCENE 8: WE GOT THE SHOTS -->
   <div class="scene" id="scene8">
-    <div class="film-strip film-strip-l"></div>
-    <div class="film-strip film-strip-r"></div>
-    <svg width="420" height="320" viewBox="0 0 420 320" style="margin-bottom:60px;filter:drop-shadow(0 12px 40px rgba(0,0,0,0.5));position:relative;z-index:2">
-      <use href="#camBody" x="0" y="0"/>
-      <!-- Camera body (copy) -->
-      <rect x="30" y="70" width="360" height="220" rx="20" fill="url(#camBody)"/>
-      <rect x="30" y="70" width="80" height="220" rx="20" fill="url(#camGrip)"/>
-      <line x1="45" y1="100" x2="45" y2="260" stroke="#444" stroke-width="2" stroke-dasharray="4,6"/>
-      <line x1="55" y1="100" x2="55" y2="260" stroke="#444" stroke-width="2" stroke-dasharray="4,6"/>
-      <line x1="65" y1="100" x2="65" y2="260" stroke="#444" stroke-width="2" stroke-dasharray="4,6"/>
-      <line x1="75" y1="100" x2="75" y2="260" stroke="#444" stroke-width="2" stroke-dasharray="4,6"/>
-      <path d="M 140 70 L 160 30 L 280 30 L 300 70" fill="#444"/>
-      <rect x="160" y="30" width="120" height="40" rx="5" fill="#444"/>
-      <rect x="190" y="22" width="60" height="10" rx="3" fill="#555"/>
-      <rect x="195" y="38" width="50" height="24" rx="4" fill="#222"/>
-      <rect x="200" y="42" width="40" height="16" rx="2" fill="#111"/>
-      <circle cx="230" cy="180" r="85" fill="#333" stroke="#444" stroke-width="3"/>
-      <circle cx="230" cy="180" r="78" fill="#2a2a2a"/>
-      <circle cx="230" cy="180" r="72" fill="none" stroke="#3a3a3a" stroke-width="2"/>
-      <circle cx="230" cy="180" r="66" fill="none" stroke="#383838" stroke-width="1.5"/>
-      <circle cx="230" cy="180" r="60" fill="url(#lensGrad)"/>
-      <circle cx="230" cy="180" r="60" fill="url(#lensFlare)"/>
-      <circle cx="230" cy="180" r="30" fill="none" stroke="rgba(50,50,80,0.3)" stroke-width="1"/>
-      <circle cx="230" cy="180" r="20" fill="#050510"/>
-      <circle cx="215" cy="165" r="8" fill="rgba(150,180,255,0.15)"/>
-      <circle cx="212" cy="162" r="3" fill="rgba(200,220,255,0.25)"/>
-      <circle cx="130" cy="55" r="16" fill="#666" stroke="#777" stroke-width="2"/>
-      <circle cx="130" cy="55" r="10" fill="#555"/>
-      <rect x="310" y="45" width="50" height="25" rx="12" fill="#555"/>
-      <line x1="335" y1="48" x2="335" y2="67" stroke="#777" stroke-width="1.5"/>
-      <rect x="280" y="85" width="80" height="16" rx="3" fill="rgba(255,255,255,0.06)"/>
-      <rect x="370" y="140" width="15" height="40" rx="3" fill="#333"/>
-    </svg>
-    <div class="flash-burst" id="flashBurst"></div>
-    <div class="check-big" id="checkBig">✓</div>
-    <div class="scene-text" id="s8text" style="position:relative;z-index:2">This time it worked.</div>
+    <div class="mega-flash" id="megaFlash"></div>
+    <div class="final-text" id="finalText">We got the shots.</div>
+    <div class="final-sub" id="finalSub">@madebyaidan</div>
   </div>
 
 <script>
   window.__currentTime = 0;
 
+  // PUNCHY TIMELINE — every beat hits fast
   const timeline = [
-    [0, () => { document.getElementById('scene1').classList.add('active'); }],
-    [0.8, () => { document.getElementById('misfireX').style.opacity = '1'; document.getElementById('misfireX').style.transform = 'scale(1)'; }],
-    [1.2, () => { document.getElementById('s1text').classList.add('show'); }],
-    [3.2, () => { document.getElementById('scene1').classList.remove('active'); }],
-
-    [3.5, () => { document.getElementById('scene2').classList.add('active'); }],
-    [3.8, () => { document.getElementById('s2text').classList.add('show'); }],
-    [4.5, () => {
-      document.querySelectorAll('.photo-frag').forEach(f => f.classList.add('scatter'));
+    // === BEAT 1: Camera misfire (0 – 1.4s) ===
+    [0, () => {
+      document.getElementById('scene1').classList.add('active');
+      document.getElementById('camWrap').classList.add('pop');
     }],
-    [5.8, () => { document.getElementById('scene2').classList.remove('active'); }],
-
-    [6.2, () => { document.getElementById('scene3').classList.add('active'); }],
-    [6.5, () => { document.getElementById('s3text').classList.add('show'); }],
-    [8.5, () => { document.getElementById('scene3').classList.remove('active'); }],
-
-    [9.0, () => { document.getElementById('scene4').classList.add('active'); }],
-    [9.3, () => { document.getElementById('timeBig').classList.add('show'); }],
-    [9.8, () => {
-      document.getElementById('locLabel').classList.add('show');
-      document.getElementById('scooterGroup').style.left = '1200px';
+    [0.3, () => {
+      document.getElementById('misfireX').classList.add('pop');
+      document.getElementById('redFlash').classList.add('pop');
+      document.getElementById('scene1').classList.add('shake');
     }],
-    [13.0, () => { document.getElementById('scene4').classList.remove('active'); }],
-
-    [13.5, () => { document.getElementById('scene5').classList.add('active'); }],
-    [13.8, () => {
-      document.getElementById('planeGroup').style.left = '1200px';
-      document.getElementById('planeGroup').style.top = '28%';
-      document.getElementById('contrail').classList.add('show');
+    [0.5, () => {
+      document.getElementById('redFlash').classList.remove('pop');
     }],
-    [14.2, () => { document.getElementById('routeLabel').classList.add('show'); }],
-    [17.0, () => { document.getElementById('scene5').classList.remove('active'); }],
-
-    [17.5, () => { document.getElementById('scene6').classList.add('active'); }],
-    [17.8, () => {
-      document.getElementById('s6text').classList.add('show');
-      document.getElementById('trainGroup').style.left = '240px';
+    [0.6, () => {
+      document.getElementById('s1text').classList.add('pop');
     }],
-    [20.5, () => { document.getElementById('scene6').classList.remove('active'); }],
+    [1.6, () => { document.getElementById('scene1').classList.remove('active'); }],
 
-    [21.0, () => { document.getElementById('scene7').classList.add('active'); }],
-    [21.3, () => { document.getElementById('s7text').classList.add('show'); }],
-    [21.8, () => { document.getElementById('s7sub').classList.add('show'); }],
-    [24.0, () => { document.getElementById('scene7').classList.remove('active'); }],
+    // === BEAT 2: Lost every photo (1.6 – 2.6s) ===
+    [1.6, () => { document.getElementById('scene2').classList.add('active'); }],
+    [1.7, () => { document.getElementById('s2text').classList.add('pop'); }],
+    [2.7, () => { document.getElementById('scene2').classList.remove('active'); }],
 
-    [24.5, () => { document.getElementById('scene8').classList.add('active'); }],
-    [25.3, () => { document.getElementById('flashBurst').classList.add('show'); }],
-    [25.8, () => {
-      document.getElementById('flashBurst').classList.add('fade');
-      document.getElementById('checkBig').classList.add('show');
+    // === BEAT 3: So I flew back (2.7 – 3.8s) ===
+    [2.7, () => { document.getElementById('scene3').classList.add('active'); }],
+    [2.8, () => { document.getElementById('s3text').classList.add('pop'); }],
+    [3.9, () => { document.getElementById('scene3').classList.remove('active'); }],
+
+    // === BEAT 4: 5am scooter (3.9 – 5.6s) ===
+    [3.9, () => { document.getElementById('scene4').classList.add('active'); }],
+    [4.0, () => { document.getElementById('timeText').classList.add('pop'); }],
+    [4.2, () => {
+      document.getElementById('locText').classList.add('pop');
+      document.getElementById('scooterWrap').style.left = '1200px';
     }],
-    [26.0, () => { document.getElementById('s8text').classList.add('show'); }],
-    [28.0, () => { document.getElementById('scene8').classList.remove('active'); }],
+    [5.8, () => { document.getElementById('scene4').classList.remove('active'); }],
+
+    // === BEAT 5: Plane (5.8 – 7.3s) ===
+    [5.8, () => { document.getElementById('scene5').classList.add('active'); }],
+    [5.9, () => {
+      document.getElementById('planeWrap').style.left = '1200px';
+      document.getElementById('planeWrap').style.top = '28%';
+    }],
+    [6.1, () => { document.getElementById('routeText').classList.add('pop'); }],
+    [7.4, () => { document.getElementById('scene5').classList.remove('active'); }],
+
+    // === BEAT 6: Train (7.4 – 8.8s) ===
+    [7.4, () => { document.getElementById('scene6').classList.add('active'); }],
+    [7.5, () => {
+      document.getElementById('s6text').classList.add('pop');
+      document.getElementById('trainWrap').style.left = '240px';
+    }],
+    [8.9, () => { document.getElementById('scene6').classList.remove('active'); }],
+
+    // === BEAT 7: Noodles (8.9 – 10.3s) ===
+    [8.9, () => { document.getElementById('scene7').classList.add('active'); }],
+    [9.0, () => { document.getElementById('s7text').classList.add('pop'); }],
+    [9.3, () => { document.getElementById('s7sub').classList.add('pop'); }],
+    [10.5, () => { document.getElementById('scene7').classList.remove('active'); }],
+
+    // === BEAT 8: FLASH + "We got the shots." (10.5 – 12.5s) ===
+    [10.5, () => {
+      document.getElementById('scene8').classList.add('active');
+      document.getElementById('megaFlash').classList.add('pop');
+    }],
+    [10.8, () => {
+      document.getElementById('megaFlash').classList.remove('pop');
+      document.getElementById('megaFlash').classList.add('dim');
+    }],
+    [11.0, () => {
+      document.getElementById('finalText').classList.add('pop');
+    }],
+    [11.3, () => {
+      document.getElementById('finalSub').classList.add('pop');
+    }],
+    [13.0, () => { document.getElementById('scene8').classList.remove('active'); }],
   ];
 
   let started = false;
