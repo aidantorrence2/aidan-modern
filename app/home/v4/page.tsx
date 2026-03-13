@@ -38,7 +38,18 @@ const CSS = `
     background: #0c0c0c !important;
     margin: 0 !important;
     padding: 0 !important;
-    overflow-x: hidden !important;
+    overflow: hidden !important;
+    height: 100% !important;
+  }
+
+  /* Scrollable container — avoids Chrome scroll-anchoring issues with fixed elements */
+  .v4-scroll-container {
+    position: fixed;
+    inset: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    overflow-anchor: none;
+    -webkit-overflow-scrolling: touch;
   }
 
   .v17-fixed-nav {
@@ -270,6 +281,7 @@ export default function Page() {
   const [bump, setBump] = useState(false);
   const [autoScrollEnabled, setAutoScrollEnabled] = useState(true);
   const sectionRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
 
   // Auto-scroll state refs (not state to avoid re-renders in rAF loop)
   const autoScrollingRef = useRef(true);
@@ -293,6 +305,9 @@ export default function Page() {
   }, []);
 
   useEffect(() => {
+    const container = scrollContainerRef.current;
+    if (!container) return;
+
     // Intersection observer for visibility animations and photo tracking
     const observer = new IntersectionObserver(
       (entries) => {
@@ -321,23 +336,23 @@ export default function Page() {
           }
         });
       },
-      { threshold: 0.4 }
+      { root: container, threshold: 0.4 }
     );
 
     sectionRefs.current.forEach((el) => {
       if (el) observer.observe(el);
     });
 
-    // Scroll handler for cue hiding and end detection only
+    // Scroll handler for cue hiding and end detection
     const handleScroll = () => {
-      if (window.scrollY > window.innerHeight * 0.5) {
+      if (container.scrollTop > container.clientHeight * 0.5) {
         setShowCue(false);
       }
-      const nearBottom = window.innerHeight + window.scrollY >= document.body.scrollHeight - 200;
+      const nearBottom = container.scrollTop + container.clientHeight >= container.scrollHeight - 200;
       setAtEnd(nearBottom);
     };
 
-    // Detect user interaction via events that ONLY fire on real user input
+    // Detect user interaction
     const pauseForUser = () => {
       if (autoScrollingRef.current) {
         pausedByUserRef.current = true;
@@ -349,22 +364,21 @@ export default function Page() {
       }
     };
 
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    window.addEventListener('wheel', pauseForUser, { passive: true });
-    window.addEventListener('touchstart', pauseForUser, { passive: true });
+    container.addEventListener('scroll', handleScroll, { passive: true });
+    container.addEventListener('wheel', pauseForUser, { passive: true });
+    container.addEventListener('touchstart', pauseForUser, { passive: true });
 
-    // Auto-scroll animation loop — use scrollTop directly to avoid
-    // Chrome "Skipping auto-scroll" warnings on fixed/sticky elements
+    // Auto-scroll loop — scrolls the container element directly
+    // No fixed/sticky elements inside the scroll container, so no Chrome warnings
     const autoScroll = () => {
       if (
         autoScrollingRef.current &&
         !pausedByUserRef.current &&
         !isPausedAtPhotoRef.current
       ) {
-        const maxScroll = document.body.scrollHeight - window.innerHeight;
-        const el = document.documentElement;
-        if (el.scrollTop < maxScroll) {
-          el.scrollTop += 1;
+        const maxScroll = container.scrollHeight - container.clientHeight;
+        if (container.scrollTop < maxScroll) {
+          container.scrollTop += 1;
         }
       }
       rafRef.current = requestAnimationFrame(autoScroll);
@@ -374,9 +388,9 @@ export default function Page() {
 
     return () => {
       observer.disconnect();
-      window.removeEventListener('scroll', handleScroll);
-      window.removeEventListener('wheel', pauseForUser);
-      window.removeEventListener('touchstart', pauseForUser);
+      container.removeEventListener('scroll', handleScroll);
+      container.removeEventListener('wheel', pauseForUser);
+      container.removeEventListener('touchstart', pauseForUser);
       cancelAnimationFrame(rafRef.current);
       if (userScrollTimeoutRef.current) clearTimeout(userScrollTimeoutRef.current);
       if (photoPauseTimeoutRef.current) clearTimeout(photoPauseTimeoutRef.current);
@@ -389,12 +403,16 @@ export default function Page() {
     <>
       <style dangerouslySetInnerHTML={{ __html: CSS }} />
 
-      {/* Progress bar */}
+      {/* Progress bar — outside scroll container (fixed) */}
       <div className="v17-progress" style={{ width: `${progress}%` }} />
 
-      {/* Fixed nav */}
+      {/* Fixed nav — outside scroll container */}
       <div className="v17-fixed-nav">
-        <a href="#inquiry">Inquire</a>
+        <a href="#inquiry" onClick={(e) => {
+          e.preventDefault();
+          const el = document.getElementById('inquiry');
+          if (el) el.scrollIntoView({ behavior: 'smooth' });
+        }}>Inquire</a>
         <div style={{ textAlign: 'right', pointerEvents: 'none' }}>
           <p style={{
             color: 'rgba(255,255,255,0.7)',
@@ -414,12 +432,12 @@ export default function Page() {
         </div>
       </div>
 
-      {/* Counter */}
+      {/* Counter — outside scroll container */}
       <div className={`v17-counter${bump ? ' v17-bump' : ''}`}>
         {current} / {TOTAL}
       </div>
 
-      {/* Play/Pause button */}
+      {/* Play/Pause button — outside scroll container */}
       <button className="v4-play-pause" onClick={toggleAutoScroll} title={autoScrollEnabled ? 'Pause auto-scroll' : 'Resume auto-scroll'}>
         {autoScrollEnabled ? (
           <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
@@ -433,7 +451,7 @@ export default function Page() {
         )}
       </button>
 
-      {/* Scroll cue — shows AUTO when auto-scrolling, SCROLL otherwise */}
+      {/* Scroll cue — outside scroll container */}
       {showCue && !atEnd && (
         <div className="v17-scroll-cue">
           <span style={{
@@ -451,58 +469,61 @@ export default function Page() {
         </div>
       )}
 
-      {/* Page title */}
-      <p className="v17-page-title">Selected Works</p>
+      {/* Scrollable content container — no fixed/sticky elements inside */}
+      <div className="v4-scroll-container" ref={scrollContainerRef}>
+        {/* Page title */}
+        <p className="v17-page-title">Selected Works</p>
 
-      {/* Photo sections */}
-      {images.map((img, i) => (
-        <div
-          className="v17-photo-section"
-          key={img.src}
-          data-idx={i}
-          ref={(el) => { sectionRefs.current[i] = el; }}
-        >
-          <img
-            src={`/images/large/${img.src}`}
-            alt={`${img.name} — ${img.city}`}
-            loading="lazy"
-          />
-          <div className="v17-caption">
-            <p className="v17-caption-name">{img.name}</p>
-            <p className="v17-caption-city">{img.city}</p>
+        {/* Photo sections */}
+        {images.map((img, i) => (
+          <div
+            className="v17-photo-section"
+            key={img.src}
+            data-idx={i}
+            ref={(el) => { sectionRefs.current[i] = el; }}
+          >
+            <img
+              src={`/images/large/${img.src}`}
+              alt={`${img.name} — ${img.city}`}
+              loading="lazy"
+            />
+            <div className="v17-caption">
+              <p className="v17-caption-name">{img.name}</p>
+              <p className="v17-caption-city">{img.city}</p>
+            </div>
           </div>
-        </div>
-      ))}
+        ))}
 
-      {/* CTA */}
-      <div className="v17-cta-section" id="inquiry">
-        <h3 style={{
-          color: '#fff', fontSize: '22px', fontWeight: 300,
-          letterSpacing: '0.06em', marginBottom: '24px',
-          fontFamily: 'Georgia, serif',
-        }}>
-          Get in Touch
-        </h3>
-        <form
-          onSubmit={(e) => {
-            e.preventDefault();
-            window.location.href = 'mailto:aidan@aidantorrence.com';
-          }}
-          style={{ width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center' }}
-        >
-          <input type="text" placeholder="Name" required />
-          <input type="email" placeholder="Email" required />
-          <input type="text" placeholder="Instagram" />
-          <textarea placeholder="Tell me about your project..." />
-          <button type="submit" className="v17-submit">Send Inquiry</button>
-        </form>
-        <div style={{ marginTop: '36px', textAlign: 'center' }}>
-          <p style={{ color: 'rgba(255,255,255,0.4)', fontSize: '13px', margin: '4px 0', fontFamily: 'system-ui, sans-serif' }}>
-            aidan@aidantorrence.com
-          </p>
-          <p style={{ color: 'rgba(255,255,255,0.4)', fontSize: '13px', margin: '4px 0', fontFamily: 'system-ui, sans-serif' }}>
-            WhatsApp: +49 175 8966210 · @madebyaidan
-          </p>
+        {/* CTA */}
+        <div className="v17-cta-section" id="inquiry">
+          <h3 style={{
+            color: '#fff', fontSize: '22px', fontWeight: 300,
+            letterSpacing: '0.06em', marginBottom: '24px',
+            fontFamily: 'Georgia, serif',
+          }}>
+            Get in Touch
+          </h3>
+          <form
+            onSubmit={(e) => {
+              e.preventDefault();
+              window.location.href = 'mailto:aidan@aidantorrence.com';
+            }}
+            style={{ width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center' }}
+          >
+            <input type="text" placeholder="Name" required />
+            <input type="email" placeholder="Email" required />
+            <input type="text" placeholder="Instagram" />
+            <textarea placeholder="Tell me about your project..." />
+            <button type="submit" className="v17-submit">Send Inquiry</button>
+          </form>
+          <div style={{ marginTop: '36px', textAlign: 'center' }}>
+            <p style={{ color: 'rgba(255,255,255,0.4)', fontSize: '13px', margin: '4px 0', fontFamily: 'system-ui, sans-serif' }}>
+              aidan@aidantorrence.com
+            </p>
+            <p style={{ color: 'rgba(255,255,255,0.4)', fontSize: '13px', margin: '4px 0', fontFamily: 'system-ui, sans-serif' }}>
+              WhatsApp: +49 175 8966210 · @madebyaidan
+            </p>
+          </div>
         </div>
       </div>
     </>
