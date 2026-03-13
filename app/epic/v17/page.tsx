@@ -3,31 +3,31 @@
 import React, { useEffect, useRef, useState } from 'react';
 
 const images = [
-  { src: 'manila-gallery-dsc-0075.jpg', name: 'Rina', city: 'Makati' },
-  { src: 'manila-gallery-night-001.jpg', name: 'Jess', city: 'BGC' },
-  { src: 'manila-gallery-garden-001.jpg', name: 'Suki', city: 'Manila' },
-  { src: 'manila-gallery-street-001.jpg', name: 'Clara', city: 'Poblacion' },
-  { src: 'manila-gallery-closeup-001.jpg', name: 'Althea', city: 'Manila' },
-  { src: 'manila-gallery-canal-001.jpg', name: 'Ana', city: 'Escolta' },
-  { src: 'manila-gallery-ivy-001.jpg', name: 'Mei', city: 'Intramuros' },
-  { src: 'manila-gallery-urban-001.jpg', name: 'Ivy', city: 'Makati' },
-  { src: 'manila-gallery-dsc-0130.jpg', name: 'Lara', city: 'BGC' },
-  { src: 'manila-gallery-shadow-001.jpg', name: 'Lena', city: 'Manila' },
-  { src: 'manila-gallery-tropical-001.jpg', name: 'Kira', city: 'Intramuros' },
-  { src: 'manila-gallery-statue-001.jpg', name: 'Dani', city: 'Manila' },
-  { src: 'manila-gallery-night-002.jpg', name: 'Aya', city: 'Poblacion' },
-  { src: 'manila-gallery-market-001.jpg', name: 'Tala', city: 'Escolta' },
-  { src: 'manila-gallery-park-001.jpg', name: 'Nina', city: 'BGC' },
-  { src: 'manila-gallery-floor-001.jpg', name: 'Mia', city: 'Makati' },
-  { src: 'manila-gallery-garden-002.jpg', name: 'Rosa', city: 'Manila' },
-  { src: 'manila-gallery-urban-002.jpg', name: 'Jade', city: 'Poblacion' },
-  { src: 'manila-gallery-dsc-0190.jpg', name: 'Bea', city: 'Intramuros' },
-  { src: 'manila-gallery-ivy-002.jpg', name: 'Sol', city: 'Manila' },
-  { src: 'manila-gallery-canal-002.jpg', name: 'Pia', city: 'Escolta' },
-  { src: 'manila-gallery-night-003.jpg', name: 'Elle', city: 'BGC' },
-  { src: 'manila-gallery-urban-003.jpg', name: 'Kai', city: 'Makati' },
-  { src: 'manila-gallery-white-001.jpg', name: 'Yuki', city: 'Manila' },
-  { src: 'manila-gallery-dsc-0911.jpg', name: 'Isa', city: 'Poblacion' },
+  { src: 'manila-gallery-dsc-0075.jpg', name: 'Portrait', city: 'Bangkok' },
+  { src: 'manila-gallery-night-001.jpg', name: 'Night Session', city: 'Tokyo' },
+  { src: 'manila-gallery-garden-001.jpg', name: 'Garden Editorial', city: 'Bali' },
+  { src: 'manila-gallery-street-001.jpg', name: 'Street Portrait', city: 'Rome' },
+  { src: 'manila-gallery-closeup-001.jpg', name: 'Close-up', city: 'Vienna' },
+  { src: 'manila-gallery-canal-001.jpg', name: 'Canal Session', city: 'Venice' },
+  { src: 'manila-gallery-ivy-001.jpg', name: 'Ivy Editorial', city: 'Lisbon' },
+  { src: 'manila-gallery-urban-001.jpg', name: 'Urban Portrait', city: 'Berlin' },
+  { src: 'manila-gallery-dsc-0130.jpg', name: 'Film Portrait', city: 'Bangkok' },
+  { src: 'manila-gallery-shadow-001.jpg', name: 'Shadow Study', city: 'Milan' },
+  { src: 'manila-gallery-tropical-001.jpg', name: 'Tropical Session', city: 'Bali' },
+  { src: 'manila-gallery-statue-001.jpg', name: 'Statue Garden', city: 'Rome' },
+  { src: 'manila-gallery-night-002.jpg', name: 'Night Portrait', city: 'Tokyo' },
+  { src: 'manila-gallery-market-001.jpg', name: 'Market Day', city: 'Bangkok' },
+  { src: 'manila-gallery-park-001.jpg', name: 'Park Session', city: 'Vienna' },
+  { src: 'manila-gallery-floor-001.jpg', name: 'Studio Floor', city: 'Berlin' },
+  { src: 'manila-gallery-garden-002.jpg', name: 'Garden Portrait', city: 'Bali' },
+  { src: 'manila-gallery-urban-002.jpg', name: 'Urban Editorial', city: 'Warsaw' },
+  { src: 'manila-gallery-dsc-0190.jpg', name: 'On Film', city: 'Krakow' },
+  { src: 'manila-gallery-ivy-002.jpg', name: 'Ivy Portrait', city: 'Lisbon' },
+  { src: 'manila-gallery-canal-002.jpg', name: 'Canal Portrait', city: 'Venice' },
+  { src: 'manila-gallery-night-003.jpg', name: 'Late Night', city: 'Tokyo' },
+  { src: 'manila-gallery-urban-003.jpg', name: 'Urban Session', city: 'Berlin' },
+  { src: 'manila-gallery-white-001.jpg', name: 'White Series', city: 'Milan' },
+  { src: 'manila-gallery-dsc-0911.jpg', name: 'Golden Hour', city: 'Bangkok' },
 ];
 
 const TOTAL = images.length;
@@ -111,7 +111,7 @@ const CSS = `
     align-items: center;
     gap: 4px;
     animation: v17-bounce 1.8s ease-in-out infinite;
-    transition: opacity 0.4s;
+    transition: opacity 0.5s;
   }
 
   @keyframes v17-bounce {
@@ -194,35 +194,8 @@ const CSS = `
     border-radius: 2px;
   }
 
-  .v17-done {
-    min-height: 60vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 40px 20px;
-    text-align: center;
-  }
-
-  .v17-checkmark {
-    width: 48px;
-    height: 48px;
-    border: 2px solid rgba(255,255,255,0.3);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 20px;
-    animation: v17-pop 0.5s cubic-bezier(0.34,1.56,0.64,1);
-  }
-
-  @keyframes v17-pop {
-    0% { transform: scale(0); }
-    100% { transform: scale(1); }
-  }
-
   .v17-cta-section {
-    padding: 40px 24px 80px;
+    padding: 60px 24px 80px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -274,6 +247,7 @@ const CSS = `
 export default function V17Page() {
   const [current, setCurrent] = useState(1);
   const [showCue, setShowCue] = useState(true);
+  const [atEnd, setAtEnd] = useState(false);
   const [bump, setBump] = useState(false);
   const sectionRefs = useRef<(HTMLDivElement | null)[]>([]);
 
@@ -306,6 +280,9 @@ export default function V17Page() {
       if (window.scrollY > window.innerHeight * 0.5) {
         setShowCue(false);
       }
+      // Hide scroll cue when near bottom
+      const nearBottom = window.innerHeight + window.scrollY >= document.body.scrollHeight - 200;
+      setAtEnd(nearBottom);
     };
     window.addEventListener('scroll', handleScroll, { passive: true });
 
@@ -351,8 +328,8 @@ export default function V17Page() {
         {current} / {TOTAL}
       </div>
 
-      {/* Scroll cue */}
-      {showCue && (
+      {/* Scroll cue — hidden after first scroll and at end */}
+      {showCue && !atEnd && (
         <div className="v17-scroll-cue">
           <span style={{
             color: 'rgba(255,255,255,0.7)',
@@ -377,7 +354,7 @@ export default function V17Page() {
       >
         <img
           src={`/images/large/${images[0].src}`}
-          alt={`${images[0].name} in ${images[0].city}`}
+          alt={`${images[0].name} — ${images[0].city}`}
           className="v17-visible"
         />
         <div className="v17-caption v17-caption-visible" style={{ marginTop: 12 }}>
@@ -396,7 +373,7 @@ export default function V17Page() {
         >
           <img
             src={`/images/large/${img.src}`}
-            alt={`${img.name} in ${img.city}`}
+            alt={`${img.name} — ${img.city}`}
             loading="lazy"
           />
           <div className="v17-caption">
@@ -405,28 +382,6 @@ export default function V17Page() {
           </div>
         </div>
       ))}
-
-      {/* Completion message */}
-      <div className="v17-done">
-        <div className="v17-checkmark">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2" strokeLinecap="round">
-            <path d="M5 12l5 5L20 7" />
-          </svg>
-        </div>
-        <h2 style={{
-          color: '#fff', fontSize: '24px', fontWeight: 300,
-          letterSpacing: '0.06em', margin: '0 0 8px',
-          fontFamily: 'Georgia, serif',
-        }}>
-          You&apos;ve seen everything
-        </h2>
-        <p style={{
-          color: 'rgba(255,255,255,0.4)', fontSize: '14px',
-          fontFamily: 'system-ui, sans-serif',
-        }}>
-          Like what you see? Let&apos;s create something together.
-        </p>
-      </div>
 
       {/* CTA */}
       <div className="v17-cta-section" id="inquiry">
@@ -455,10 +410,7 @@ export default function V17Page() {
             aidan@aidantorrence.com
           </p>
           <p style={{ color: 'rgba(255,255,255,0.4)', fontSize: '13px', margin: '4px 0', fontFamily: 'system-ui, sans-serif' }}>
-            WhatsApp: +49 175 8966210 · @aidantorrence
-          </p>
-          <p style={{ color: 'rgba(255,255,255,0.25)', fontSize: '11px', marginTop: '16px', fontFamily: 'system-ui, sans-serif' }}>
-            Featured in Vogue Italia · Hypebeast · WWD
+            WhatsApp: +49 175 8966210 · @madebyaidan
           </p>
         </div>
       </div>
