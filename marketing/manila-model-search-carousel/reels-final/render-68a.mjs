@@ -18,16 +18,16 @@ var SAFE_BOTTOM = 430;
 
 var FILM_SCANS_DIR = '/Volumes/PortableSSD/Exports/film scans';
 var PHOTO_NAMES = [
-  '000041-5.jpg',
-  '000042-4.jpg',
-  '000042-6.jpg',
-  '000043-5.jpg',
-  '000044-5.jpg',
-  '000045-5.jpg',
-  '000046-5.jpg',
-  '000047-5.jpg',
-  '000048-4.jpg',
-  '000053-5.jpg',
+  'DSC_0002.jpg',
+  'DSC_0003.jpg',
+  'DSC_0004.jpg',
+  'DSC_0005.jpg',
+  'DSC_0006.jpg',
+  'DSC_0007.jpg',
+  'DSC_0009.jpg',
+  'DSC_0011.jpg',
+  'DSC_0012.jpg',
+  'DSC_0015.jpg',
 ];
 
 function resetOutputDir() {
@@ -128,7 +128,7 @@ function buildHTML(imageDataMap) {
       radial-gradient(circle at 60% 70%, rgba(110,70,25,0.15), transparent 18%);
   }
 
-  /* WANTED title */
+  /* WANTED IN MANILA title */
   #wanted-title {
     position: absolute;
     top: ${SAFE_TOP + 40}px;
@@ -138,16 +138,16 @@ function buildHTML(imageDataMap) {
     z-index: 10;
     opacity: 0;
     font-family: 'Georgia', serif;
-    font-size: 140px;
+    font-size: 88px;
     font-weight: 900;
     color: #2a1a0a;
-    letter-spacing: 16px;
+    letter-spacing: 10px;
     text-shadow: 4px 4px 0 rgba(139,69,19,0.3), -1px -1px 0 rgba(0,0,0,0.1);
     line-height: 1;
     transform: scale(1);
   }
 
-  /* Decorative lines under WANTED */
+  /* Decorative lines under WANTED IN MANILA */
   #wanted-line {
     position: absolute;
     top: ${SAFE_TOP + 195}px;
@@ -209,7 +209,6 @@ function buildHTML(imageDataMap) {
     height: 100%;
     object-fit: cover;
     display: block;
-    filter: sepia(0.6) contrast(1.1) brightness(0.95);
   }
 
   /* Stacking poster containers */
@@ -247,7 +246,7 @@ function buildHTML(imageDataMap) {
     width: ${W}px;
     text-align: center;
     font-family: 'Georgia', serif;
-    font-size: 120px;
+    font-size: 72px;
     font-weight: 900;
     color: #2a1a0a;
     letter-spacing: 14px;
@@ -284,7 +283,6 @@ function buildHTML(imageDataMap) {
     height: 100%;
     object-fit: cover;
     display: block;
-    filter: sepia(0.6) contrast(1.1) brightness(0.95);
   }
 
   .poster-bottom-text {
@@ -426,7 +424,7 @@ function buildHTML(imageDataMap) {
     <div id="burnt-edges"></div>
     <div id="stains"></div>
 
-    <div id="wanted-title">WANTED</div>
+    <div id="wanted-title">WANTED IN MANILA</div>
     <div id="wanted-line"></div>
 
     <div id="subtitle"><span id="subtitle-text"></span></div>
@@ -441,7 +439,7 @@ function buildHTML(imageDataMap) {
         html += '<div id="poster-' + i + '" class="poster-container">';
         html += '<div class="poster-bg"></div>';
         html += '<div class="poster-burnt"></div>';
-        html += '<div class="poster-wanted">WANTED</div>';
+        html += '<div class="poster-wanted">WANTED IN MANILA</div>';
         html += '<div class="poster-line"></div>';
         html += '<div class="photo-frame"><img id="poster-img-' + i + '" src="" alt="Wanted"/></div>';
         html += '<div class="poster-bottom-text">DEAD OR ALIVE</div>';
@@ -516,7 +514,7 @@ function buildHTML(imageDataMap) {
     var shakeContainer = document.getElementById('shake-container');
     var shakeX = 0, shakeY = 0;
 
-    // ---- 0-1.5s: Parchment + WANTED stamp ----
+    // ---- 0-1.5s: Parchment + WANTED IN MANILA stamp ----
     var parchment = document.getElementById('parchment');
     var paperNoise = document.getElementById('paper-noise');
     var burntEdges = document.getElementById('burnt-edges');

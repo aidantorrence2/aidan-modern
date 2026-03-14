@@ -149,19 +149,19 @@ function buildHTML(imageDataMap) {
       <!-- Three reel windows -->
       <div style="display:flex;gap:12px;justify-content:center;">
 
-        <div id="reel-window-0" style="width:228px;height:300px;border:4px solid #FFD700;border-radius:16px;overflow:hidden;background:#000;position:relative;box-shadow:inset 0 0 20px rgba(0,0,0,0.8);">
+        <div id="reel-window-0" style="width:300px;height:400px;border:4px solid #FFD700;border-radius:16px;overflow:hidden;background:#000;position:relative;box-shadow:inset 0 0 20px rgba(0,0,0,0.8);">
           <div id="reel-strip-0" style="position:absolute;left:0;right:0;top:0;will-change:transform;display:flex;flex-direction:column;"></div>
           <div style="position:absolute;inset:0;pointer-events:none;background:linear-gradient(to bottom,rgba(0,0,0,0.6) 0%,transparent 25%,transparent 75%,rgba(0,0,0,0.6) 100%);z-index:10;"></div>
           <div style="position:absolute;top:50%;left:0;right:0;height:3px;background:rgba(255,215,0,0.6);transform:translateY(-50%);z-index:11;"></div>
         </div>
 
-        <div id="reel-window-1" style="width:228px;height:300px;border:4px solid #FFD700;border-radius:16px;overflow:hidden;background:#000;position:relative;box-shadow:inset 0 0 20px rgba(0,0,0,0.8);">
+        <div id="reel-window-1" style="width:300px;height:400px;border:4px solid #FFD700;border-radius:16px;overflow:hidden;background:#000;position:relative;box-shadow:inset 0 0 20px rgba(0,0,0,0.8);">
           <div id="reel-strip-1" style="position:absolute;left:0;right:0;top:0;will-change:transform;display:flex;flex-direction:column;"></div>
           <div style="position:absolute;inset:0;pointer-events:none;background:linear-gradient(to bottom,rgba(0,0,0,0.6) 0%,transparent 25%,transparent 75%,rgba(0,0,0,0.6) 100%);z-index:10;"></div>
           <div style="position:absolute;top:50%;left:0;right:0;height:3px;background:rgba(255,215,0,0.6);transform:translateY(-50%);z-index:11;"></div>
         </div>
 
-        <div id="reel-window-2" style="width:228px;height:300px;border:4px solid #FFD700;border-radius:16px;overflow:hidden;background:#000;position:relative;box-shadow:inset 0 0 20px rgba(0,0,0,0.8);">
+        <div id="reel-window-2" style="width:300px;height:400px;border:4px solid #FFD700;border-radius:16px;overflow:hidden;background:#000;position:relative;box-shadow:inset 0 0 20px rgba(0,0,0,0.8);">
           <div id="reel-strip-2" style="position:absolute;left:0;right:0;top:0;will-change:transform;display:flex;flex-direction:column;"></div>
           <div style="position:absolute;inset:0;pointer-events:none;background:linear-gradient(to bottom,rgba(0,0,0,0.6) 0%,transparent 25%,transparent 75%,rgba(0,0,0,0.6) 100%);z-index:10;"></div>
           <div style="position:absolute;top:50%;left:0;right:0;height:3px;background:rgba(255,215,0,0.6);transform:translateY(-50%);z-index:11;"></div>
