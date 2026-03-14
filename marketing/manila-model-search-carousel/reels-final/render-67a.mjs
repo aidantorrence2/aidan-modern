@@ -17,9 +17,8 @@ var FILM_SCANS_DIR = '/Volumes/PortableSSD/Exports/film scans';
 var PHOTO_NAMES = [
   'DSC_0718.jpg',
   'DSC_0723.jpg',
-  'DSC_0726.jpg',
+  'DSC_0724.jpg',
   'DSC_0728.jpg',
-  'DSC_0732.jpg',
   'DSC_0739.jpg',
   'DSC_0740.jpg',
 ];
@@ -588,7 +587,7 @@ async function main() {
   await browser.close();
   console.log('All frames captured');
 
-  var outputMp4 = path.join(OUT_DIR, 'reel-67a.mp4');
+  var outputMp4 = path.join(OUT_DIR, '67a-glitch-art.mp4');
   execSync(
     'ffmpeg -y -framerate ' + FPS + ' -i "' + path.join(framesDir, 'frame_%05d.png') + '" ' +
     '-c:v libx264 -preset slow -crf 18 -pix_fmt yuv420p -r ' + FPS + ' -an "' + outputMp4 + '"',
@@ -599,7 +598,7 @@ async function main() {
 
   var reelsDir = path.join(__dirname, 'reels');
   if (!existsSync(reelsDir)) mkdirSync(reelsDir, { recursive: true });
-  var reelsDst = path.join(reelsDir, 'reel-67a.mp4');
+  var reelsDst = path.join(reelsDir, '67a-glitch-art.mp4');
   execSync('cp "' + outputMp4 + '" "' + reelsDst + '"');
 
   var sz = statSync(outputMp4);
