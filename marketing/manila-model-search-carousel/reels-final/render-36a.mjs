@@ -330,7 +330,7 @@ async function main() {
 
   // Build both parts
   var btsMp4 = buildBTSClip();
-  var revealMp4 = await buildRevealVideo(imageDataMap);
+  var revealMp4 = await buildRevealVideo(imageDataMap, PROOF_PHOTOS);
 
   // Concat
   console.log('=== Concatenating final video ===');
