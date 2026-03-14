@@ -20,7 +20,6 @@ var PHOTO_NAMES = [
   'DSC_0682-2.jpg',
   'DSC_0685-2.jpg',
   'DSC_0686-2.jpg',
-  'DSC_0693.jpg',
 ];
 
 var TOTAL_FRAMES = 720; // 24s at 30fps
