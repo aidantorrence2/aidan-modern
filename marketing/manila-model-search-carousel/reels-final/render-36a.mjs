@@ -113,12 +113,12 @@ function buildRevealHTML(imageDataMap, PROOF_PHOTOS) {
   html += '  .slide-up.go { animation: slideUp 0.4s ease-out forwards; }\n';
   html += '</style>\n</head>\n<body>\n\n';
 
-  // Scene 1: "THE RESULTS:" (0-1.2s of part 2)
+  // Scene 1: "THE RESULTS:" (0-0.8s of part 2)
   html += '  <div class="scene" id="scene1" style="background:#0a0a0a">\n';
   html += '    <div class="hit-text" id="s1text" style="font-size:96px">THE<br><span class="accent">RESULTS:</span></div>\n';
   html += '  </div>\n\n';
 
-  // Scene 2: Photo slideshow (1.2-12s of part 2)
+  // Scene 2: Photo slideshow (0.8-6.5s of part 2)
   html += '  <div class="scene" id="scene2" style="background:#0a0a0a">\n';
   html += '    <div class="flash-overlay" id="photoFlash"></div>\n';
   html += '    <div class="photo-frame" id="photoFrame">\n';
@@ -129,49 +129,42 @@ function buildRevealHTML(imageDataMap, PROOF_PHOTOS) {
   html += '    <div class="photo-counter" id="photoCounter"></div>\n';
   html += '  </div>\n\n';
 
-  // Scene 3: "Want photos like this?" (12-13.5s)
+  // Scene 3: CTA (6.5-8.5s)
   html += '  <div class="scene" id="scene3" style="background:#0a0a0a">\n';
-  html += '    <div class="hit-text" id="s3text" style="font-size:84px">Want photos<br>like <span class="accent">this?</span></div>\n';
-  html += '  </div>\n\n';
-
-  // Scene 4: CTA (13.5-16s)
-  html += '  <div class="scene" id="scene4" style="background:#0a0a0a">\n';
-  html += '    <div class="slide-up" id="s4handle" style="font-size:64px;font-weight:900;color:#E8443A;text-align:center;">@madebyaidan</div>\n';
-  html += '    <div class="slide-up" id="s4sub" style="font-size:36px;color:rgba(255,255,255,0.5);text-align:center;margin-top:16px;">DM me on Instagram</div>\n';
-  html += '    <div class="slide-up" id="s4free" style="font-size:28px;font-weight:700;color:rgba(255,255,255,0.35);text-align:center;margin-top:40px;letter-spacing:6px;">IT\'S FREE</div>\n';
+  html += '    <div class="slide-up" id="s3handle" style="font-size:64px;font-weight:900;color:#E8443A;text-align:center;">@madebyaidan</div>\n';
+  html += '    <div class="slide-up" id="s3sub" style="font-size:36px;color:rgba(255,255,255,0.5);text-align:center;margin-top:16px;">DM for a free shoot</div>\n';
   html += '  </div>\n\n';
 
   // Timeline script
   html += '<script>\n';
   html += '  var timeline = [\n';
 
-  // Scene 1: "THE RESULTS:" — 0 to 1.2s
+  // Scene 1: "THE RESULTS:" — 0 to 0.8s
   html += '    [0, function() { document.getElementById("scene1").classList.add("active"); }],\n';
   html += '    [0.1, function() { document.getElementById("s1text").classList.add("pop"); }],\n';
-  html += '    [0.15, function() { document.getElementById("scene1").classList.add("shake"); }],\n';
-  html += '    [1.2, function() { document.getElementById("scene1").classList.remove("active"); }],\n';
+  html += '    [0.12, function() { document.getElementById("scene1").classList.add("shake"); }],\n';
+  html += '    [0.8, function() { document.getElementById("scene1").classList.remove("active"); }],\n';
 
-  // Scene 2: Photos — 1.2 to 12.0s
-  html += '    [1.2, function() { document.getElementById("scene2").classList.add("active"); }],\n';
+  // Scene 2: Photos — 0.8 to 6.5s (fast slideshow)
+  html += '    [0.8, function() { document.getElementById("scene2").classList.add("active"); }],\n';
 
-  var photoStart = 1.2;
+  var photoStart = 0.8;
   var photoCount = PROOF_PHOTOS.length;
-  var photoDur = Math.round((10.8 / photoCount) * 100) / 100; // fit all in ~10.8s window
+  var photoDur = Math.round((5.7 / photoCount) * 100) / 100; // fit all in ~5.7s window
   for (var pi = 0; pi < photoCount; pi++) {
     var t = photoStart + pi * photoDur;
     // Flash before each photo
-    html += '    [' + (t - 0.05).toFixed(2) + ', function() { document.getElementById("photoFlash").style.opacity = "0.85"; }],\n';
-    html += '    [' + (t + 0.08).toFixed(2) + ', function() { document.getElementById("photoFlash").style.opacity = "0"; }],\n';
+    html += '    [' + (t - 0.03).toFixed(2) + ', function() { document.getElementById("photoFlash").style.opacity = "0.85"; }],\n';
+    html += '    [' + (t + 0.06).toFixed(2) + ', function() { document.getElementById("photoFlash").style.opacity = "0"; }],\n';
 
-    // Show photo — zoom from 1.2 to 1.0
+    // Show photo — zoom from 1.15 to 1.0
     html += '    [' + t.toFixed(2) + ', function() {\n';
     for (var pj = 0; pj < photoCount; pj++) {
       if (pj === pi) {
         html += '      document.getElementById("photo' + pj + '").style.opacity = "1";\n';
         html += '      document.getElementById("photo' + pj + '").style.transform = "scale(1)";\n';
-        html += '      document.getElementById("photo' + pj + '").style.transition = "transform 1.2s ease-out";\n';
+        html += '      document.getElementById("photo' + pj + '").style.transition = "transform 0.6s ease-out";\n';
       } else if (pj < pi) {
-        // Previous photos hidden
         html += '      document.getElementById("photo' + pj + '").style.opacity = "0";\n';
       }
     }
@@ -179,21 +172,14 @@ function buildRevealHTML(imageDataMap, PROOF_PHOTOS) {
     html += '    }],\n';
   }
 
-  html += '    [12.0, function() { document.getElementById("scene2").classList.remove("active"); }],\n';
+  html += '    [6.5, function() { document.getElementById("scene2").classList.remove("active"); }],\n';
 
-  // Scene 3: "Want photos like this?" — 12.0 to 13.5s
-  html += '    [12.0, function() { document.getElementById("scene3").classList.add("active"); }],\n';
-  html += '    [12.1, function() { document.getElementById("s3text").classList.add("pop"); }],\n';
-  html += '    [12.15, function() { document.getElementById("scene3").classList.add("shake"); }],\n';
-  html += '    [13.5, function() { document.getElementById("scene3").classList.remove("active"); }],\n';
-
-  // Scene 4: CTA — 13.5 to 16s
-  html += '    [13.5, function() { document.getElementById("scene4").classList.add("active"); }],\n';
-  html += '    [13.6, function() { document.getElementById("s4handle").classList.add("go"); }],\n';
-  html += '    [13.9, function() { document.getElementById("s4sub").classList.add("go"); }],\n';
-  html += '    [14.3, function() { document.getElementById("s4free").classList.add("go"); }],\n';
-  html += '    [14.8, function() { document.getElementById("s4handle").classList.add("pulse"); }],\n';
-  html += '    [16.0, function() { /* end */ }]\n';
+  // Scene 3: CTA — 6.5 to 8.5s
+  html += '    [6.5, function() { document.getElementById("scene3").classList.add("active"); }],\n';
+  html += '    [6.6, function() { document.getElementById("s3handle").classList.add("go"); }],\n';
+  html += '    [6.9, function() { document.getElementById("s3sub").classList.add("go"); }],\n';
+  html += '    [7.3, function() { document.getElementById("s3handle").classList.add("pulse"); }],\n';
+  html += '    [8.5, function() { /* end */ }]\n';
 
   html += '  ];\n\n';
 
@@ -225,7 +211,7 @@ async function buildRevealVideo(imageDataMap, PROOF_PHOTOS) {
   var htmlPath = path.join(OUT_DIR, 'reveal.html');
   writeFileSync(htmlPath, html);
 
-  var revealDuration = 16; // seconds
+  var revealDuration = 8.5; // seconds
   var totalFrames = Math.ceil(revealDuration * FPS);
 
   var browser = await chromium.launch();
