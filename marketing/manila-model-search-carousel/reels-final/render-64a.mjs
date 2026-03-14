@@ -10,19 +10,24 @@ var OUT_DIR = path.join(__dirname, 'output-64a');
 var W = 1080;
 var H = 1920;
 var FPS = 30;
-var TOTAL_FRAMES = 720; // 24s at 30fps
-var TOTAL_DURATION = 24;
+var TOTAL_FRAMES = 420; // 14s at 30fps
+var TOTAL_DURATION = 14;
+
+var SAFE_TOP = 213;
+var SAFE_BOTTOM = 430;
 
 var FILM_SCANS_DIR = '/Volumes/PortableSSD/Exports/film scans';
 var PHOTO_NAMES = [
-  'DSC_0064-3.jpg',
+  'DSC_0064.jpg',
   'DSC_0065.jpg',
   'DSC_0066.jpg',
   'DSC_0071.jpg',
   'DSC_0074.jpg',
   'DSC_0075.jpg',
-  'DSC_0034-2.jpg',
-  'DSC_0035.jpg',
+  'DSC_0086.jpg',
+  'DSC_0087.jpg',
+  'DSC_0093.jpg',
+  'DSC_0097.jpg',
 ];
 
 function resetOutputDir() {
@@ -51,615 +56,509 @@ function processPhotos() {
 
 function buildHTML(imageDataMap) {
   var photoCount = PHOTO_NAMES.length;
+  // 9 gallery photos + 1 hero photo (last one)
+  var galleryPhotos = PHOTO_NAMES.slice(0, 9);
+  var heroPhoto = PHOTO_NAMES[9];
 
-  // Build base64 data array as JSON for inline script
   var imgDataJSON = JSON.stringify(PHOTO_NAMES.map(function(name) {
     return imageDataMap[name];
   }));
 
-  return `<!DOCTYPE html>
-<html>
-<head>
-<meta charset="utf-8">
-<style>
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  html, body { margin: 0; padding: 0; background: #f0f0f0; overflow: hidden; }
+  // Each gallery frame is ~900px wide with gaps between them
+  var FRAME_WIDTH = 680;
+  var FRAME_GAP = 300;
+  var FRAME_TOTAL = FRAME_WIDTH + FRAME_GAP;
+  var GALLERY_TOTAL_WIDTH = galleryPhotos.length * FRAME_TOTAL + 600; // extra padding at end
 
-  @font-face {
-    font-family: 'GallerySerif';
-    src: local('Georgia'), local('Times New Roman');
-  }
-
-  /* Gallery entrance overlay */
-  #entrance-overlay {
-    position: absolute;
-    inset: 0;
-    background: #000;
-    z-index: 200;
-    pointer-events: none;
-  }
-
-  /* Wooden floor strip at bottom */
-  #floor {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: ${W}px;
-    height: 160px;
-    background: linear-gradient(180deg, #c8a96e 0%, #a07840 60%, #7a5a28 100%);
-    z-index: 2;
-    pointer-events: none;
-  }
-  /* Floor planks texture */
-  #floor::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: repeating-linear-gradient(
-      90deg,
-      transparent 0px,
-      transparent 78px,
-      rgba(0,0,0,0.12) 78px,
-      rgba(0,0,0,0.12) 80px
-    );
-  }
-
-  /* Ceiling strip at top */
-  #ceiling {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: ${W}px;
-    height: 80px;
-    background: linear-gradient(180deg, #d0d0d0 0%, #e8e8e8 100%);
-    z-index: 2;
-    pointer-events: none;
-  }
-
-  /* Gallery wall */
-  #wall {
-    position: absolute;
-    top: 80px;
-    left: 0;
-    width: ${W}px;
-    bottom: 160px;
-    background: #f0f0f0;
-    z-index: 1;
-    pointer-events: none;
-    overflow: hidden;
-  }
-
-  /* Gallery name header */
-  #gallery-name {
-    position: absolute;
-    top: 24px;
-    left: 0;
-    width: ${W}px;
-    text-align: center;
-    font-family: 'Helvetica Neue', Arial, sans-serif;
-    font-size: 22px;
-    font-weight: 300;
-    letter-spacing: 10px;
-    text-transform: uppercase;
-    color: #555;
-    z-index: 50;
-    pointer-events: none;
-    opacity: 0;
-  }
-
-  /* Photo frame container — absolutely positioned, animates left */
-  .frame-wrapper {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 10;
-    pointer-events: none;
-    will-change: left;
-  }
-
-  /* The outer dark frame */
-  .photo-frame {
-    background: #1a1210;
-    padding: 8px;
-    box-shadow:
-      0 0 0 1px #0a0806,
-      4px 8px 40px rgba(0,0,0,0.55),
-      0 2px 8px rgba(0,0,0,0.3);
-  }
-
-  /* White mat */
-  .photo-mat {
-    background: #fff;
-    padding: 30px;
-  }
-
-  /* Photo itself */
-  .photo-img {
-    display: block;
-    width: 760px;
-    height: 570px;
-    object-fit: cover;
-  }
-
-  /* Spotlight: radial gradient overlay from top, over the frame */
-  .spotlight {
-    position: absolute;
-    top: -320px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 900px;
-    height: 700px;
-    background: radial-gradient(
-      ellipse 340px 400px at 50% 0%,
-      rgba(255, 245, 210, 0.55) 0%,
-      rgba(255, 235, 180, 0.25) 35%,
-      transparent 70%
-    );
-    pointer-events: none;
-    z-index: 5;
-  }
-
-  /* Brass plaque below frame */
-  .plaque {
-    margin-top: 16px;
-    text-align: center;
-    font-family: Georgia, 'Times New Roman', serif;
-    font-size: 18px;
-    letter-spacing: 4px;
-    color: #8a6a30;
-    text-transform: uppercase;
-  }
-  .plaque-title {
-    font-size: 13px;
-    letter-spacing: 6px;
-    color: #aaa;
-    margin-top: 4px;
-    font-family: 'Helvetica Neue', Arial, sans-serif;
-    font-weight: 300;
-  }
-
-  /* --- Entrance section --- */
-  #entrance-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    z-index: 210;
-    pointer-events: none;
-    opacity: 0;
-    width: 900px;
-  }
-  #entrance-title {
-    font-family: Georgia, 'Times New Roman', serif;
-    font-size: 64px;
-    font-weight: 400;
-    color: #e8e0d0;
-    letter-spacing: 6px;
-    line-height: 1.1;
-    text-transform: uppercase;
-  }
-  #entrance-subtitle {
-    font-family: 'Helvetica Neue', Arial, sans-serif;
-    font-size: 18px;
-    font-weight: 300;
-    letter-spacing: 12px;
-    color: rgba(232,224,208,0.6);
-    text-transform: uppercase;
-    margin-top: 20px;
-  }
-
-  /* --- Artist Statement section --- */
-  #artist-statement {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 10;
-    width: 820px;
-    opacity: 0;
-    pointer-events: none;
-  }
-  .statement-header {
-    font-family: Georgia, 'Times New Roman', serif;
-    font-size: 13px;
-    letter-spacing: 8px;
-    color: #888;
-    text-transform: uppercase;
-    margin-bottom: 28px;
-    border-top: 1px solid #ccc;
-    padding-top: 16px;
-  }
-  .statement-title {
-    font-family: Georgia, 'Times New Roman', serif;
-    font-size: 52px;
-    font-weight: 400;
-    color: #1a1a1a;
-    letter-spacing: 2px;
-    margin-bottom: 36px;
-  }
-  .statement-step {
-    font-family: Georgia, 'Times New Roman', serif;
-    font-size: 26px;
-    font-weight: 400;
-    color: #2a2a2a;
-    line-height: 1.6;
-    margin-bottom: 18px;
-    opacity: 0;
-    transform: translateY(8px);
-    transition: opacity 0.3s, transform 0.3s;
-  }
-  .statement-step.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  /* --- CTA section --- */
-  #cta-section {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 10;
-    text-align: center;
-    opacity: 0;
-    pointer-events: none;
-    width: 860px;
-  }
-  #cta-gold-frame {
-    border: 6px solid;
-    border-image: linear-gradient(145deg, #c9a84c, #f0d080, #c9a84c, #9a7030) 1;
-    padding: 60px 50px;
-    background: rgba(255,252,245,0.95);
-    box-shadow:
-      0 0 0 1px rgba(201,168,76,0.3),
-      6px 12px 60px rgba(0,0,0,0.3);
-    position: relative;
-  }
-  /* Corner ornaments */
-  #cta-gold-frame::before,
-  #cta-gold-frame::after {
-    content: '✦';
-    position: absolute;
-    font-size: 20px;
-    color: #c9a84c;
-    top: 12px;
-  }
-  #cta-gold-frame::before { left: 16px; }
-  #cta-gold-frame::after { right: 16px; }
-  #cta-handle {
-    font-family: Georgia, 'Times New Roman', serif;
-    font-size: 80px;
-    font-weight: 400;
-    color: #1a1a1a;
-    letter-spacing: 2px;
-    line-height: 1;
-    margin-bottom: 12px;
-  }
-  #cta-sub {
-    font-family: 'Helvetica Neue', Arial, sans-serif;
-    font-size: 22px;
-    font-weight: 300;
-    letter-spacing: 8px;
-    color: #555;
-    text-transform: uppercase;
-    margin-bottom: 32px;
-  }
-  #cta-free {
-    font-family: 'Helvetica Neue', Arial, sans-serif;
-    font-size: 14px;
-    font-weight: 400;
-    letter-spacing: 7px;
-    color: #8a6a30;
-    text-transform: uppercase;
-    border-top: 1px solid #ddd;
-    padding-top: 20px;
-  }
-  /* Spotlight behind CTA */
-  #cta-spotlight {
-    position: absolute;
-    top: -400px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 1000px;
-    height: 900px;
-    background: radial-gradient(
-      ellipse 380px 500px at 50% 0%,
-      rgba(255, 248, 220, 0.7) 0%,
-      rgba(255, 240, 190, 0.3) 40%,
-      transparent 70%
-    );
-    pointer-events: none;
-    z-index: 5;
-  }
-
-  /* Dim overlay for transitions */
-  #dim-overlay {
-    position: absolute;
-    inset: 0;
-    background: #000;
-    z-index: 150;
-    pointer-events: none;
-    opacity: 0;
-  }
-</style>
-</head>
-<body>
-  <div id="root" style="width:${W}px;height:${H}px;position:relative;overflow:hidden;background:#f0f0f0;">
-
-    <!-- Entrance overlay (black, fades out) -->
-    <div id="entrance-overlay"></div>
-
-    <!-- Dim overlay for transitions -->
-    <div id="dim-overlay"></div>
-
-    <!-- Ceiling -->
-    <div id="ceiling"></div>
-
-    <!-- Gallery wall -->
-    <div id="wall">
-      <!-- Subtle wall texture via repeating gradient -->
-      <div style="position:absolute;inset:0;background:repeating-linear-gradient(90deg,rgba(0,0,0,0.012) 0px,rgba(0,0,0,0.012) 1px,transparent 1px,transparent 200px);pointer-events:none;"></div>
-    </div>
-
-    <!-- Floor -->
-    <div id="floor"></div>
-
-    <!-- Gallery name at top -->
-    <div id="gallery-name">Manila Gallery</div>
-
-    <!-- Entrance text -->
-    <div id="entrance-text">
-      <div id="entrance-title">Manila Free<br>Photo Shoot</div>
-      <div id="entrance-subtitle">An Exhibition</div>
-    </div>
-
-    <!-- Photo frame slots (8 total, only one shown at a time) -->
-    ${PHOTO_NAMES.map(function(name, i) {
-      return `<div id="frame-${i}" class="frame-wrapper" style="left:${W * 2}px; width: 900px; margin-left: -450px;">
-      <div class="spotlight"></div>
-      <div class="photo-frame">
-        <div class="photo-mat">
-          <img class="photo-img" src="" id="photo-img-${i}" />
-        </div>
-      </div>
-      <div class="plaque">${String(i + 1).padStart(2, '0')}&nbsp;&nbsp;/&nbsp;&nbsp;${String(photoCount).padStart(2, '0')}</div>
-      <div class="plaque-title">Manila, 2025 &nbsp;&mdash;&nbsp; @madebyaidan</div>
-    </div>`;
-    }).join('\n    ')}
-
-    <!-- Artist Statement (museum wall text style) -->
-    <div id="artist-statement">
-      <div class="statement-header">The Process</div>
-      <div class="statement-title">The Process</div>
-      <div id="step-1" class="statement-step">I.&nbsp;&nbsp; DM the artist on Instagram</div>
-      <div id="step-2" class="statement-step">II.&nbsp;&nbsp; Schedule your session</div>
-      <div id="step-3" class="statement-step">III.&nbsp; Arrive. Be guided. Leave with art.</div>
-    </div>
-
-    <!-- CTA section -->
-    <div id="cta-section">
-      <div style="position:relative;">
-        <div id="cta-spotlight"></div>
-        <div id="cta-gold-frame">
-          <div id="cta-handle">@madebyaidan</div>
-          <div id="cta-sub">DM on Instagram</div>
-          <div id="cta-free">Free Admission</div>
-        </div>
-      </div>
-    </div>
-
-  </div>
-
-<script>
-  var W = ${W};
-  var H = ${H};
-  var PHOTO_COUNT = ${photoCount};
-  var IMG_DATA = ${imgDataJSON};
-
-  // Inject image sources
-  for (var i = 0; i < PHOTO_COUNT; i++) {
-    var img = document.getElementById('photo-img-' + i);
-    if (img) img.src = IMG_DATA[i];
-  }
-
-  // ---- Easing functions ----
-  function easeOut(t) { return 1 - Math.pow(1 - t, 3); }
-  function easeIn(t) { return Math.pow(t, 3); }
-  function easeInOut(t) { return t < 0.5 ? 4*t*t*t : 1 - Math.pow(-2*t+2,3)/2; }
-  function clamp(v, lo, hi) { return Math.max(lo, Math.min(hi, v)); }
-  function lerp(a, b, t) { return a + (b - a) * clamp(t, 0, 1); }
-  function progress(t, start, end) { return clamp((t - start) / (end - start), 0, 1); }
-
-  // Frame left positions (as px from left, center = W/2 - frameW/2 = 1080/2 - 900/2 = 90)
-  var CENTER_LEFT = 90;    // px: frame centered on screen
-  var OFF_RIGHT = W + 100; // frame starts off right edge
-  var OFF_LEFT = -1000;    // frame exits off left edge
-
-  // ---- Gallery walk photo timing ----
-  // 2-3s: first photo
-  // 3-12s: 8 photos, each ~1.2s hold, 0.3s slide in, 0.3s slide out
-  // Photo i enter: enterStart[i], hold until exitStart[i], exit ends exitEnd[i]
-  // Total 8 photos across 10 seconds (2s–12s)
-  // Each photo: 0.4s in, 1.0s hold, 0.4s out
-  // But 8 * (0.4 + 1.0 + 0.0) = 11.2s, that's too much.
-  // Let overlaps: next enters while current is still centered.
-  // Stagger: 1.2s per photo
-  // Photo 0: enter 2.0, hold 2.4–3.2, exit 3.2–3.6
-  // Photo 1: enter 3.2, etc. — slide in 0.4s, hold ends at start+1.2, exit 0.4s
-  var PHOTO_STAGGER = 1.25; // seconds per photo
-  var SLIDE_DUR = 0.38;
-
-  function getPhotoTimes(i) {
-    var enterStart = 2.0 + i * PHOTO_STAGGER;
-    var holdStart  = enterStart + SLIDE_DUR;
-    var exitStart  = holdStart + (PHOTO_STAGGER - SLIDE_DUR * 2);
-    var exitEnd    = exitStart + SLIDE_DUR;
-    return { enterStart: enterStart, holdStart: holdStart, exitStart: exitStart, exitEnd: exitEnd };
-  }
-
-  // ---- Main render function ----
-  window.__applyUpTo = function(t) {
-
-    // ---- Entrance overlay ----
-    var entranceOverlay = document.getElementById('entrance-overlay');
-    // 0-0.5s: solid black
-    // 0.5-2.0s: lights turn on = fade to transparent (but we show spotlights sequentially)
-    if (t < 0.5) {
-      entranceOverlay.style.opacity = '1';
-    } else if (t < 2.0) {
-      var p = progress(t, 0.5, 2.0);
-      entranceOverlay.style.opacity = String(1 - easeOut(p));
-    } else {
-      entranceOverlay.style.opacity = '0';
-    }
-
-    // ---- Gallery name ----
-    var galleryName = document.getElementById('gallery-name');
-    if (t < 0.8) {
-      galleryName.style.opacity = '0';
-    } else if (t < 1.8) {
-      galleryName.style.opacity = String(easeOut(progress(t, 0.8, 1.8)));
-    } else if (t > 12.0 && t < 13.0) {
-      galleryName.style.opacity = String(1 - easeIn(progress(t, 12.0, 13.0)));
-    } else if (t >= 13.0 && t < 18.0) {
-      galleryName.style.opacity = '0';
-    } else if (t >= 18.0 && t < 18.5) {
-      galleryName.style.opacity = String(easeOut(progress(t, 18.0, 18.5)));
-    } else if (t >= 18.5) {
-      galleryName.style.opacity = '1';
-    } else {
-      galleryName.style.opacity = '1';
-    }
-
-    // ---- Entrance text ----
-    var entranceText = document.getElementById('entrance-text');
-    if (t < 0.4) {
-      entranceText.style.opacity = '0';
-    } else if (t < 1.2) {
-      entranceText.style.opacity = String(easeOut(progress(t, 0.4, 1.2)));
-    } else if (t < 1.8) {
-      entranceText.style.opacity = '1';
-    } else if (t < 2.5) {
-      entranceText.style.opacity = String(1 - easeIn(progress(t, 1.8, 2.5)));
-    } else {
-      entranceText.style.opacity = '0';
-    }
-
-    // ---- Photo frames (gallery walk) ----
-    for (var i = 0; i < PHOTO_COUNT; i++) {
-      var frame = document.getElementById('frame-' + i);
-      if (!frame) continue;
-      var pt = getPhotoTimes(i);
-
-      if (t < pt.enterStart) {
-        // waiting off-right
-        frame.style.left = OFF_RIGHT + 'px';
-        frame.style.opacity = '1';
-      } else if (t < pt.holdStart) {
-        // sliding in from right
-        var p2 = easeOut(progress(t, pt.enterStart, pt.holdStart));
-        var lx = lerp(OFF_RIGHT, CENTER_LEFT, p2);
-        frame.style.left = lx + 'px';
-        frame.style.opacity = '1';
-      } else if (t < pt.exitStart) {
-        // holding center
-        frame.style.left = CENTER_LEFT + 'px';
-        frame.style.opacity = '1';
-      } else if (t < pt.exitEnd) {
-        // sliding out to left
-        var p3 = easeIn(progress(t, pt.exitStart, pt.exitEnd));
-        var lx2 = lerp(CENTER_LEFT, OFF_LEFT, p3);
-        frame.style.left = lx2 + 'px';
-        frame.style.opacity = '1';
-      } else {
-        // gone
-        frame.style.left = OFF_LEFT + 'px';
-        frame.style.opacity = '0';
-      }
-    }
-
-    // ---- Dim overlay (transitions) ----
-    var dimOverlay = document.getElementById('dim-overlay');
-    // 12.0 - 13.0s: dim to black
-    // 13.0 - 13.5s: reveal artist statement (fade wall back in = dim goes to 0)
-    // 17.0 - 18.0s: dim again
-    // 18.0 - 18.5s: fade back for CTA
-    // 22.0 - 24.0s: dim to black for end
-    var dimOpacity = 0;
-    if (t >= 12.0 && t < 13.0) {
-      dimOpacity = easeInOut(progress(t, 12.0, 12.6));
-    } else if (t >= 13.0 && t < 13.5) {
-      dimOpacity = lerp(1, 0, easeOut(progress(t, 13.0, 13.5)));
-    } else if (t >= 13.5 && t < 17.0) {
-      dimOpacity = 0;
-    } else if (t >= 17.0 && t < 17.8) {
-      dimOpacity = easeInOut(progress(t, 17.0, 17.8));
-    } else if (t >= 17.8 && t < 18.5) {
-      dimOpacity = lerp(1, 0, easeOut(progress(t, 17.8, 18.5)));
-    } else if (t >= 22.0 && t < 24.0) {
-      dimOpacity = easeInOut(progress(t, 22.0, 24.0));
-    }
-    dimOverlay.style.opacity = String(dimOpacity);
-
-    // ---- Artist Statement (13-17s) ----
-    var statement = document.getElementById('artist-statement');
-    if (t >= 13.5 && t < 17.0) {
-      statement.style.opacity = '1';
-    } else if (t >= 17.0 && t < 17.8) {
-      statement.style.opacity = String(1 - progress(t, 17.0, 17.8));
-    } else {
-      statement.style.opacity = '0';
-    }
-
-    // Individual steps fade in
-    var step1 = document.getElementById('step-1');
-    var step2 = document.getElementById('step-2');
-    var step3 = document.getElementById('step-3');
-
-    function applyStep(el, fadeInTime) {
-      if (!el) return;
-      if (t >= fadeInTime && t < 17.0) {
-        el.style.opacity = String(easeOut(progress(t, fadeInTime, fadeInTime + 0.5)));
-        el.style.transform = 'translateY(' + lerp(12, 0, easeOut(progress(t, fadeInTime, fadeInTime + 0.5))) + 'px)';
-      } else if (t >= 17.0) {
-        el.style.opacity = '0';
-      } else {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(12px)';
-      }
-    }
-    applyStep(step1, 14.0);
-    applyStep(step2, 14.8);
-    applyStep(step3, 15.6);
-
-    // ---- CTA Section (18-22s) ----
-    var ctaSection = document.getElementById('cta-section');
-    if (t >= 18.5 && t < 22.0) {
-      ctaSection.style.opacity = String(easeOut(progress(t, 18.5, 19.5)));
-    } else if (t >= 22.0) {
-      ctaSection.style.opacity = '0';
-    } else {
-      ctaSection.style.opacity = '0';
-    }
-
-    // ---- Wall/floor/ceiling visibility during statement ----
-    // During statement (13-17s), wall is visible normally (dim overlay handles darkening).
-    // Frames are all off-screen anyway during this time, so nothing extra needed.
-  };
-
-  if (location.search.includes('capture=1')) {
-    var style = document.createElement('style');
-    style.textContent = '*, *::before, *::after { transition-duration: 0s !important; animation-duration: 0.001s !important; }';
-    document.head.appendChild(style);
-  }
-</script>
-</body>
-</html>`;
+  return '<!DOCTYPE html>\n<html>\n<head>\n<meta charset="utf-8">\n<style>\n' +
+    '  * { box-sizing: border-box; margin: 0; padding: 0; }\n' +
+    '  html, body { margin: 0; padding: 0; overflow: hidden; }\n' +
+    '\n' +
+    '  #root {\n' +
+    '    width: ' + W + 'px;\n' +
+    '    height: ' + H + 'px;\n' +
+    '    position: relative;\n' +
+    '    overflow: hidden;\n' +
+    '    background: #f2f0ec;\n' +
+    '  }\n' +
+    '\n' +
+    '  /* Gallery white walls */\n' +
+    '  #gallery-bg {\n' +
+    '    position: absolute;\n' +
+    '    inset: 0;\n' +
+    '    background: linear-gradient(180deg, #e8e6e2 0%, #f2f0ec 15%, #f5f3ef 50%, #eae8e4 85%, #d8d4cc 100%);\n' +
+    '  }\n' +
+    '\n' +
+    '  /* Subtle wall texture */\n' +
+    '  #wall-texture {\n' +
+    '    position: absolute;\n' +
+    '    inset: 0;\n' +
+    '    background: repeating-linear-gradient(\n' +
+    '      90deg,\n' +
+    '      rgba(0,0,0,0.008) 0px,\n' +
+    '      rgba(0,0,0,0.008) 1px,\n' +
+    '      transparent 1px,\n' +
+    '      transparent 180px\n' +
+    '    );\n' +
+    '    pointer-events: none;\n' +
+    '  }\n' +
+    '\n' +
+    '  /* Floor */\n' +
+    '  #floor {\n' +
+    '    position: absolute;\n' +
+    '    bottom: 0;\n' +
+    '    left: 0;\n' +
+    '    width: ' + W + 'px;\n' +
+    '    height: 200px;\n' +
+    '    background: linear-gradient(180deg, #bfb5a0 0%, #a89880 50%, #8a7a60 100%);\n' +
+    '    z-index: 2;\n' +
+    '  }\n' +
+    '  #floor::after {\n' +
+    '    content: "";\n' +
+    '    position: absolute;\n' +
+    '    inset: 0;\n' +
+    '    background: repeating-linear-gradient(\n' +
+    '      90deg,\n' +
+    '      transparent 0px,\n' +
+    '      transparent 100px,\n' +
+    '      rgba(0,0,0,0.08) 100px,\n' +
+    '      rgba(0,0,0,0.08) 102px\n' +
+    '    );\n' +
+    '  }\n' +
+    '\n' +
+    '  /* Baseboard */\n' +
+    '  #baseboard {\n' +
+    '    position: absolute;\n' +
+    '    bottom: 200px;\n' +
+    '    left: 0;\n' +
+    '    width: ' + W + 'px;\n' +
+    '    height: 24px;\n' +
+    '    background: linear-gradient(180deg, #d0ccc0 0%, #c0b8a8 100%);\n' +
+    '    box-shadow: 0 -1px 4px rgba(0,0,0,0.1);\n' +
+    '    z-index: 3;\n' +
+    '  }\n' +
+    '\n' +
+    '  /* Entrance overlay */\n' +
+    '  #entrance-overlay {\n' +
+    '    position: absolute;\n' +
+    '    inset: 0;\n' +
+    '    background: #fff;\n' +
+    '    z-index: 200;\n' +
+    '    pointer-events: none;\n' +
+    '    opacity: 1;\n' +
+    '  }\n' +
+    '\n' +
+    '  /* Exhibition title on wall */\n' +
+    '  #exhibition-title {\n' +
+    '    position: absolute;\n' +
+    '    top: ' + (SAFE_TOP + 80) + 'px;\n' +
+    '    left: 0;\n' +
+    '    width: ' + W + 'px;\n' +
+    '    text-align: center;\n' +
+    '    z-index: 100;\n' +
+    '    pointer-events: none;\n' +
+    '    opacity: 0;\n' +
+    '  }\n' +
+    '  #exhibition-title .name {\n' +
+    '    font-family: Georgia, "Times New Roman", serif;\n' +
+    '    font-size: 48px;\n' +
+    '    font-weight: 400;\n' +
+    '    letter-spacing: 14px;\n' +
+    '    text-transform: uppercase;\n' +
+    '    color: #2a2a2a;\n' +
+    '  }\n' +
+    '  #exhibition-title .sub {\n' +
+    '    font-family: "Helvetica Neue", Arial, sans-serif;\n' +
+    '    font-size: 14px;\n' +
+    '    font-weight: 300;\n' +
+    '    letter-spacing: 8px;\n' +
+    '    text-transform: uppercase;\n' +
+    '    color: #888;\n' +
+    '    margin-top: 16px;\n' +
+    '  }\n' +
+    '  #exhibition-title .line {\n' +
+    '    width: 60px;\n' +
+    '    height: 1px;\n' +
+    '    background: #bbb;\n' +
+    '    margin: 20px auto 0;\n' +
+    '  }\n' +
+    '\n' +
+    '  /* Gallery strip container that pans horizontally */\n' +
+    '  #gallery-strip {\n' +
+    '    position: absolute;\n' +
+    '    top: 0;\n' +
+    '    left: 0;\n' +
+    '    width: ' + GALLERY_TOTAL_WIDTH + 'px;\n' +
+    '    height: ' + (H - 200) + 'px;\n' +
+    '    z-index: 10;\n' +
+    '    will-change: transform;\n' +
+    '  }\n' +
+    '\n' +
+    '  /* Individual framed photo */\n' +
+    '  .gallery-frame {\n' +
+    '    position: absolute;\n' +
+    '    top: 50%;\n' +
+    '    transform: translateY(-55%);\n' +
+    '    width: ' + FRAME_WIDTH + 'px;\n' +
+    '  }\n' +
+    '\n' +
+    '  /* Dark ornate frame */\n' +
+    '  .frame-outer {\n' +
+    '    background: linear-gradient(145deg, #2a2218 0%, #1a160e 50%, #0e0c08 100%);\n' +
+    '    padding: 12px;\n' +
+    '    box-shadow:\n' +
+    '      0 8px 40px rgba(0,0,0,0.35),\n' +
+    '      0 2px 10px rgba(0,0,0,0.2),\n' +
+    '      inset 0 1px 0 rgba(255,255,255,0.08),\n' +
+    '      inset 0 -1px 0 rgba(0,0,0,0.3);\n' +
+    '    border: 1px solid rgba(80,60,30,0.4);\n' +
+    '  }\n' +
+    '\n' +
+    '  /* Inner gold accent line */\n' +
+    '  .frame-inner-border {\n' +
+    '    border: 1px solid rgba(180,150,80,0.25);\n' +
+    '    padding: 2px;\n' +
+    '  }\n' +
+    '\n' +
+    '  /* White mat */\n' +
+    '  .frame-mat {\n' +
+    '    background: #faf8f5;\n' +
+    '    padding: 28px;\n' +
+    '  }\n' +
+    '\n' +
+    '  .frame-img {\n' +
+    '    display: block;\n' +
+    '    width: 100%;\n' +
+    '    height: 440px;\n' +
+    '    object-fit: cover;\n' +
+    '  }\n' +
+    '\n' +
+    '  /* Spotlight above each frame */\n' +
+    '  .spotlight {\n' +
+    '    position: absolute;\n' +
+    '    top: -280px;\n' +
+    '    left: 50%;\n' +
+    '    transform: translateX(-50%);\n' +
+    '    width: 800px;\n' +
+    '    height: 650px;\n' +
+    '    background: radial-gradient(\n' +
+    '      ellipse 300px 380px at 50% 0%,\n' +
+    '      rgba(255, 248, 220, 0.45) 0%,\n' +
+    '      rgba(255, 240, 195, 0.2) 35%,\n' +
+    '      transparent 70%\n' +
+    '    );\n' +
+    '    pointer-events: none;\n' +
+    '  }\n' +
+    '\n' +
+    '  /* Museum placard */\n' +
+    '  .placard {\n' +
+    '    margin-top: 24px;\n' +
+    '    text-align: center;\n' +
+    '  }\n' +
+    '  .placard-num {\n' +
+    '    font-family: Georgia, "Times New Roman", serif;\n' +
+    '    font-size: 14px;\n' +
+    '    letter-spacing: 6px;\n' +
+    '    color: #999;\n' +
+    '    text-transform: uppercase;\n' +
+    '  }\n' +
+    '  .placard-detail {\n' +
+    '    font-family: "Helvetica Neue", Arial, sans-serif;\n' +
+    '    font-size: 11px;\n' +
+    '    font-weight: 300;\n' +
+    '    letter-spacing: 4px;\n' +
+    '    color: #aaa;\n' +
+    '    text-transform: uppercase;\n' +
+    '    margin-top: 4px;\n' +
+    '  }\n' +
+    '\n' +
+    '  /* Hero photo section (end wall) */\n' +
+    '  #hero-section {\n' +
+    '    position: absolute;\n' +
+    '    top: 50%;\n' +
+    '    left: 50%;\n' +
+    '    transform: translate(-50%, -55%);\n' +
+    '    z-index: 50;\n' +
+    '    opacity: 0;\n' +
+    '    width: 800px;\n' +
+    '    pointer-events: none;\n' +
+    '  }\n' +
+    '  .hero-frame {\n' +
+    '    background: linear-gradient(145deg, #2a2218 0%, #1a160e 50%, #0e0c08 100%);\n' +
+    '    padding: 16px;\n' +
+    '    box-shadow:\n' +
+    '      0 12px 60px rgba(0,0,0,0.45),\n' +
+    '      0 4px 16px rgba(0,0,0,0.25),\n' +
+    '      inset 0 1px 0 rgba(255,255,255,0.08);\n' +
+    '    border: 1px solid rgba(80,60,30,0.4);\n' +
+    '  }\n' +
+    '  .hero-inner-border {\n' +
+    '    border: 1px solid rgba(180,150,80,0.3);\n' +
+    '    padding: 3px;\n' +
+    '  }\n' +
+    '  .hero-mat {\n' +
+    '    background: #faf8f5;\n' +
+    '    padding: 36px;\n' +
+    '  }\n' +
+    '  .hero-img {\n' +
+    '    display: block;\n' +
+    '    width: 100%;\n' +
+    '    height: 520px;\n' +
+    '    object-fit: cover;\n' +
+    '  }\n' +
+    '  .hero-spotlight {\n' +
+    '    position: absolute;\n' +
+    '    top: -350px;\n' +
+    '    left: 50%;\n' +
+    '    transform: translateX(-50%);\n' +
+    '    width: 1000px;\n' +
+    '    height: 800px;\n' +
+    '    background: radial-gradient(\n' +
+    '      ellipse 400px 500px at 50% 0%,\n' +
+    '      rgba(255, 248, 220, 0.55) 0%,\n' +
+    '      rgba(255, 240, 195, 0.25) 35%,\n' +
+    '      transparent 70%\n' +
+    '    );\n' +
+    '    pointer-events: none;\n' +
+    '  }\n' +
+    '\n' +
+    '  /* CTA gallery placard style */\n' +
+    '  #cta-section {\n' +
+    '    position: absolute;\n' +
+    '    top: 50%;\n' +
+    '    left: 50%;\n' +
+    '    transform: translate(-50%, -50%);\n' +
+    '    z-index: 60;\n' +
+    '    text-align: center;\n' +
+    '    opacity: 0;\n' +
+    '    pointer-events: none;\n' +
+    '    width: 860px;\n' +
+    '  }\n' +
+    '  #cta-placard {\n' +
+    '    background: #faf8f5;\n' +
+    '    border: 1px solid #ddd;\n' +
+    '    padding: 60px 50px;\n' +
+    '    box-shadow: 0 4px 30px rgba(0,0,0,0.12);\n' +
+    '  }\n' +
+    '  #cta-handle {\n' +
+    '    font-family: Georgia, "Times New Roman", serif;\n' +
+    '    font-size: 64px;\n' +
+    '    font-weight: 400;\n' +
+    '    color: #1a1a1a;\n' +
+    '    letter-spacing: 2px;\n' +
+    '  }\n' +
+    '  #cta-desc {\n' +
+    '    font-family: "Helvetica Neue", Arial, sans-serif;\n' +
+    '    font-size: 18px;\n' +
+    '    font-weight: 300;\n' +
+    '    letter-spacing: 6px;\n' +
+    '    color: #666;\n' +
+    '    text-transform: uppercase;\n' +
+    '    margin-top: 20px;\n' +
+    '  }\n' +
+    '  #cta-book {\n' +
+    '    font-family: "Helvetica Neue", Arial, sans-serif;\n' +
+    '    font-size: 14px;\n' +
+    '    font-weight: 400;\n' +
+    '    letter-spacing: 6px;\n' +
+    '    color: #999;\n' +
+    '    text-transform: uppercase;\n' +
+    '    margin-top: 28px;\n' +
+    '    padding-top: 24px;\n' +
+    '    border-top: 1px solid #ddd;\n' +
+    '  }\n' +
+    '  #cta-spotlight {\n' +
+    '    position: absolute;\n' +
+    '    top: -350px;\n' +
+    '    left: 50%;\n' +
+    '    transform: translateX(-50%);\n' +
+    '    width: 1000px;\n' +
+    '    height: 800px;\n' +
+    '    background: radial-gradient(\n' +
+    '      ellipse 400px 500px at 50% 0%,\n' +
+    '      rgba(255, 248, 220, 0.5) 0%,\n' +
+    '      rgba(255, 240, 195, 0.2) 35%,\n' +
+    '      transparent 70%\n' +
+    '    );\n' +
+    '    pointer-events: none;\n' +
+    '  }\n' +
+    '</style>\n</head>\n<body>\n' +
+    '<div id="root">\n' +
+    '  <div id="gallery-bg"></div>\n' +
+    '  <div id="wall-texture"></div>\n' +
+    '  <div id="entrance-overlay"></div>\n' +
+    '\n' +
+    '  <!-- Exhibition title -->\n' +
+    '  <div id="exhibition-title">\n' +
+    '    <div class="name">Aidan Torrence</div>\n' +
+    '    <div class="sub">Manila, 2026 &mdash; Film on Nikon</div>\n' +
+    '    <div class="line"></div>\n' +
+    '  </div>\n' +
+    '\n' +
+    '  <!-- Gallery strip (pans left) -->\n' +
+    '  <div id="gallery-strip">\n' +
+    galleryPhotos.map(function(name, i) {
+      var leftPos = 200 + i * FRAME_TOTAL;
+      return '    <div id="gframe-' + i + '" class="gallery-frame" style="left:' + leftPos + 'px;">\n' +
+        '      <div class="spotlight"></div>\n' +
+        '      <div class="frame-outer">\n' +
+        '        <div class="frame-inner-border">\n' +
+        '          <div class="frame-mat">\n' +
+        '            <img class="frame-img" id="gimg-' + i + '" src="" />\n' +
+        '          </div>\n' +
+        '        </div>\n' +
+        '      </div>\n' +
+        '      <div class="placard">\n' +
+        '        <div class="placard-num">' + String(i + 1).padStart(2, '0') + ' / ' + String(galleryPhotos.length).padStart(2, '0') + '</div>\n' +
+        '        <div class="placard-detail">Manila, 2026 &mdash; Film on Nikon</div>\n' +
+        '      </div>\n' +
+        '    </div>\n';
+    }).join('') +
+    '  </div>\n' +
+    '\n' +
+    '  <!-- Floor + baseboard -->\n' +
+    '  <div id="baseboard"></div>\n' +
+    '  <div id="floor"></div>\n' +
+    '\n' +
+    '  <!-- Hero photo (end wall) -->\n' +
+    '  <div id="hero-section">\n' +
+    '    <div class="hero-spotlight"></div>\n' +
+    '    <div class="hero-frame">\n' +
+    '      <div class="hero-inner-border">\n' +
+    '        <div class="hero-mat">\n' +
+    '          <img class="hero-img" id="hero-img" src="" />\n' +
+    '        </div>\n' +
+    '      </div>\n' +
+    '    </div>\n' +
+    '    <div class="placard" style="margin-top:28px;">\n' +
+    '      <div class="placard-num" style="font-size:16px;letter-spacing:8px;">Featured Work</div>\n' +
+    '      <div class="placard-detail">Manila, 2026 &mdash; Film on Nikon</div>\n' +
+    '    </div>\n' +
+    '  </div>\n' +
+    '\n' +
+    '  <!-- CTA -->\n' +
+    '  <div id="cta-section">\n' +
+    '    <div style="position:relative;">\n' +
+    '      <div id="cta-spotlight"></div>\n' +
+    '      <div id="cta-placard">\n' +
+    '        <div id="cta-handle">@madebyaidan</div>\n' +
+    '        <div id="cta-desc">Free Portrait Sessions</div>\n' +
+    '        <div id="cta-book">DM to Book</div>\n' +
+    '      </div>\n' +
+    '    </div>\n' +
+    '  </div>\n' +
+    '\n' +
+    '</div>\n' +
+    '\n<script>\n' +
+    '  var W = ' + W + ';\n' +
+    '  var H = ' + H + ';\n' +
+    '  var GALLERY_COUNT = ' + galleryPhotos.length + ';\n' +
+    '  var FRAME_TOTAL = ' + FRAME_TOTAL + ';\n' +
+    '  var IMG_DATA = ' + imgDataJSON + ';\n' +
+    '\n' +
+    '  // Inject images\n' +
+    '  for (var i = 0; i < GALLERY_COUNT; i++) {\n' +
+    '    var el = document.getElementById("gimg-" + i);\n' +
+    '    if (el) el.src = IMG_DATA[i];\n' +
+    '  }\n' +
+    '  var heroImg = document.getElementById("hero-img");\n' +
+    '  if (heroImg) heroImg.src = IMG_DATA[IMG_DATA.length - 1];\n' +
+    '\n' +
+    '  function easeOut(t) { return 1 - Math.pow(1 - t, 3); }\n' +
+    '  function easeIn(t) { return Math.pow(t, 3); }\n' +
+    '  function easeInOut(t) { return t < 0.5 ? 4*t*t*t : 1 - Math.pow(-2*t+2,3)/2; }\n' +
+    '  function clamp(v, lo, hi) { return Math.max(lo, Math.min(hi, v)); }\n' +
+    '  function lerp(a, b, t) { return a + (b - a) * clamp(t, 0, 1); }\n' +
+    '  function progress(t, start, end) { return clamp((t - start) / (end - start), 0, 1); }\n' +
+    '\n' +
+    '  // Pan range: start with first frame centered, end with last frame visible\n' +
+    '  // First frame center at x=200 + 680/2 = 540, screen center = 540 -> translateX = 0\n' +
+    '  // Last frame center at x=200 + 8*980 + 340 = 8380, to center: translateX = -(8380 - 540) = -7840\n' +
+    '  var PAN_START = 0;\n' +
+    '  var PAN_END = -(200 + (GALLERY_COUNT - 1) * FRAME_TOTAL + 680/2 - W/2);\n' +
+    '\n' +
+    '  window.__applyUpTo = function(t) {\n' +
+    '    var entranceOverlay = document.getElementById("entrance-overlay");\n' +
+    '    var exhibitionTitle = document.getElementById("exhibition-title");\n' +
+    '    var galleryStrip = document.getElementById("gallery-strip");\n' +
+    '    var heroSection = document.getElementById("hero-section");\n' +
+    '    var ctaSection = document.getElementById("cta-section");\n' +
+    '\n' +
+    '    // === 0-1s: Gallery entrance — white walls fade in, exhibition title ===\n' +
+    '    if (t < 0.4) {\n' +
+    '      entranceOverlay.style.opacity = "1";\n' +
+    '      exhibitionTitle.style.opacity = "0";\n' +
+    '    } else if (t < 1.0) {\n' +
+    '      var p = easeOut(progress(t, 0.4, 1.0));\n' +
+    '      entranceOverlay.style.opacity = String(1 - p);\n' +
+    '      exhibitionTitle.style.opacity = String(p);\n' +
+    '    } else if (t < 1.5) {\n' +
+    '      entranceOverlay.style.opacity = "0";\n' +
+    '      exhibitionTitle.style.opacity = "1";\n' +
+    '    } else if (t < 2.0) {\n' +
+    '      entranceOverlay.style.opacity = "0";\n' +
+    '      exhibitionTitle.style.opacity = String(1 - easeIn(progress(t, 1.5, 2.0)));\n' +
+    '    } else {\n' +
+    '      entranceOverlay.style.opacity = "0";\n' +
+    '      exhibitionTitle.style.opacity = "0";\n' +
+    '    }\n' +
+    '\n' +
+    '    // === 1-10s: Pan through gallery ===\n' +
+    '    // Gallery strip visible from 1s to 10s\n' +
+    '    if (t < 1.0) {\n' +
+    '      galleryStrip.style.opacity = "0";\n' +
+    '      galleryStrip.style.transform = "translateX(" + PAN_START + "px)";\n' +
+    '    } else if (t < 1.5) {\n' +
+    '      galleryStrip.style.opacity = String(easeOut(progress(t, 1.0, 1.5)));\n' +
+    '      galleryStrip.style.transform = "translateX(" + PAN_START + "px)";\n' +
+    '    } else if (t < 10.0) {\n' +
+    '      galleryStrip.style.opacity = "1";\n' +
+    '      // Smooth pan from 1.5s to 9.5s\n' +
+    '      var panP = easeInOut(progress(t, 1.5, 9.5));\n' +
+    '      var panX = lerp(PAN_START, PAN_END, panP);\n' +
+    '      galleryStrip.style.transform = "translateX(" + panX + "px)";\n' +
+    '    } else if (t < 10.5) {\n' +
+    '      // Fade out gallery strip\n' +
+    '      galleryStrip.style.opacity = String(1 - easeIn(progress(t, 10.0, 10.5)));\n' +
+    '      galleryStrip.style.transform = "translateX(" + PAN_END + "px)";\n' +
+    '    } else {\n' +
+    '      galleryStrip.style.opacity = "0";\n' +
+    '    }\n' +
+    '\n' +
+    '    // === 10-12s: Hero photo on end wall ===\n' +
+    '    if (t >= 10.0 && t < 10.5) {\n' +
+    '      heroSection.style.opacity = String(easeOut(progress(t, 10.0, 10.5)));\n' +
+    '    } else if (t >= 10.5 && t < 11.8) {\n' +
+    '      heroSection.style.opacity = "1";\n' +
+    '    } else if (t >= 11.8 && t < 12.2) {\n' +
+    '      heroSection.style.opacity = String(1 - easeIn(progress(t, 11.8, 12.2)));\n' +
+    '    } else {\n' +
+    '      heroSection.style.opacity = "0";\n' +
+    '    }\n' +
+    '\n' +
+    '    // === 12-14s: CTA placard ===\n' +
+    '    if (t >= 12.0 && t < 12.5) {\n' +
+    '      ctaSection.style.opacity = String(easeOut(progress(t, 12.0, 12.5)));\n' +
+    '    } else if (t >= 12.5 && t < 13.5) {\n' +
+    '      ctaSection.style.opacity = "1";\n' +
+    '    } else if (t >= 13.5 && t < 14.0) {\n' +
+    '      ctaSection.style.opacity = String(1 - easeIn(progress(t, 13.5, 14.0)));\n' +
+    '    } else if (t < 12.0) {\n' +
+    '      ctaSection.style.opacity = "0";\n' +
+    '    }\n' +
+    '  };\n' +
+    '\n' +
+    '  if (location.search.includes("capture=1")) {\n' +
+    '    var style = document.createElement("style");\n' +
+    '    style.textContent = "*, *::before, *::after { transition-duration: 0s !important; animation-duration: 0.001s !important; }";\n' +
+    '    document.head.appendChild(style);\n' +
+    '  }\n' +
+    '</script>\n' +
+    '</body>\n</html>';
 }
 
 async function main() {
-  console.log('=== Manila Art Gallery Walk Reel v64a ===');
+  console.log('=== Art Gallery Walk Reel v64a ===');
   resetOutputDir();
 
   console.log('Processing photos...');
@@ -668,6 +567,7 @@ async function main() {
   var html = buildHTML(imageDataMap);
   var htmlPath = path.join(OUT_DIR, 'index.html');
   writeFileSync(htmlPath, html);
+  console.log('HTML written: ' + htmlPath);
 
   var framesDir = path.join(OUT_DIR, 'tmp-frames');
   mkdirSync(framesDir, { recursive: true });
@@ -693,7 +593,7 @@ async function main() {
   await browser.close();
   console.log('All frames captured');
 
-  var outputMp4 = path.join(OUT_DIR, 'manila-gallery-v64a.mp4');
+  var outputMp4 = path.join(OUT_DIR, 'reel-64a.mp4');
   execSync(
     'ffmpeg -y -framerate ' + FPS + ' -i "' + path.join(framesDir, 'frame_%05d.png') + '" ' +
     '-c:v libx264 -preset slow -crf 18 -pix_fmt yuv420p -r ' + FPS + ' -an "' + outputMp4 + '"',
@@ -704,11 +604,13 @@ async function main() {
 
   var reelsDir = path.join(__dirname, 'reels');
   if (!existsSync(reelsDir)) mkdirSync(reelsDir, { recursive: true });
-  execSync('cp "' + outputMp4 + '" "' + path.join(reelsDir, 'manila-gallery-v64a.mp4') + '"');
+  var reelsDst = path.join(reelsDir, 'reel-64a.mp4');
+  execSync('cp "' + outputMp4 + '" "' + reelsDst + '"');
 
   var sz = statSync(outputMp4);
   console.log('Final: ' + (sz.size / (1024 * 1024)).toFixed(1) + ' MB');
-  console.log('Copied to reels/manila-gallery-v64a.mp4');
+  console.log('Output: ' + outputMp4);
+  console.log('Copied to: ' + reelsDst);
   console.log('=== Done ===');
 }
 
