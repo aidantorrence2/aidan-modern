@@ -314,7 +314,7 @@ async function main() {
       process.exit(1);
     }
     var outFile = path.join(tmpPhotosDir, name.replace('.jpg', '_processed.jpg'));
-    execSync('magick "' + src + '" -crop 94%x97%+3%+1.5% +repage -auto-level -quality 95 "' + outFile + '"');
+    execSync('magick "' + src + '" -shave 500x600 +repage -auto-level -quality 95 "' + outFile + '"');
     PROOF_PHOTOS.push(outFile);
     console.log('  Processed: ' + name);
   }
