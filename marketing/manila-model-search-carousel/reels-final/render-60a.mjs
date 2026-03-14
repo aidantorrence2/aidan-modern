@@ -10,25 +10,21 @@ var OUT_DIR = path.join(__dirname, 'output-60a');
 var W = 1080;
 var H = 1920;
 var FPS = 30;
-var SAFE_TOP = 213;
-var SAFE_BOTTOM = 430;
 
 var FILM_SCANS_DIR = '/Volumes/PortableSSD/Exports/film scans';
 var PHOTO_NAMES = [
   'DSC_0674.jpg',
-  'DSC_0675.jpg',
-  'DSC_0676.jpg',
-  'DSC_0677.jpg',
+  'DSC_0675-2.jpg',
+  'DSC_0676-2.jpg',
   'DSC_0678.jpg',
-  'DSC_0679.jpg',
-  'DSC_0680.jpg',
-  'DSC_0682.jpg',
-  'DSC_0684.jpg',
-  'DSC_0685.jpg',
+  'DSC_0682-2.jpg',
+  'DSC_0685-2.jpg',
+  'DSC_0686-2.jpg',
+  'DSC_0693.jpg',
 ];
 
-var TOTAL_DURATION = 15;
-var TOTAL_FRAMES = TOTAL_DURATION * FPS; // 450 frames
+var TOTAL_FRAMES = 720; // 24s at 30fps
+var TOTAL_DURATION = 24;
 
 function resetOutputDir() {
   rmSync(OUT_DIR, { recursive: true, force: true });
@@ -59,13 +55,20 @@ function buildHTML(imageDataMap) {
     return '<img id="slide-' + i + '" src="' + imageDataMap[name] + '" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;" />';
   }).join('\n      ');
 
+  // Build strip divs for tracking effect (40 strips of 48px each = 1920px)
+  var strips = [];
+  for (var s = 0; s < 40; s++) {
+    strips.push('<div class="vhs-strip" id="strip-' + s + '" style="position:absolute;left:0;width:100%;height:48px;top:' + (s * 48) + 'px;overflow:hidden;"></div>');
+  }
+  var stripHTML = strips.join('\n');
+
   return `<!DOCTYPE html>
 <html>
 <head>
 <meta charset="utf-8">
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  html, body { margin: 0; padding: 0; background: #000; font-family: 'Courier New', 'Courier', monospace; overflow: hidden; }
+  html, body { margin: 0; padding: 0; background: #000033; font-family: 'Courier New', 'Courier', monospace; overflow: hidden; }
 
   @keyframes recBlink {
     0%, 45% { opacity: 1; }
@@ -85,6 +88,40 @@ function buildHTML(imageDataMap) {
     90% { background-position: -5% 25%; }
     100% { background-position: 0 0; }
   }
+  @keyframes staticFlash {
+    0%, 100% { opacity: 0; }
+    50% { opacity: 0.9; }
+  }
+  @keyframes colorBleed {
+    0%, 100% { text-shadow: 2px 0 #ff0000, -2px 0 #0000ff; }
+    25% { text-shadow: 3px 0 #ff0000, -3px 0 #0000ff; }
+    50% { text-shadow: 1px 0 #ff0000, -1px 0 #0000ff; }
+    75% { text-shadow: 4px 0 #ff0000, -4px 0 #0000ff; }
+  }
+  @keyframes vhsJitter {
+    0%, 80%, 100% { transform: translateX(0); }
+    85% { transform: translateX(2px); }
+    90% { transform: translateX(-1px); }
+    95% { transform: translateX(3px); }
+  }
+
+  .vhs-text {
+    font-family: 'Courier New', monospace;
+    font-weight: 700;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-shadow: 2px 0 #ff0000, -2px 0 #0000ff;
+  }
+
+  .vhs-ui-text {
+    font-family: 'Courier New', monospace;
+    font-weight: 700;
+    color: #ffffff;
+    font-size: 36px;
+    letter-spacing: 2px;
+    text-shadow: 1px 0 rgba(255,0,0,0.7), -1px 0 rgba(0,0,255,0.7);
+  }
 
   .scanlines {
     position: absolute;
@@ -93,8 +130,8 @@ function buildHTML(imageDataMap) {
     pointer-events: none;
     background: repeating-linear-gradient(
       0deg,
-      rgba(0,0,0,0.2) 0px,
-      rgba(0,0,0,0.2) 2px,
+      rgba(0,0,0,0.25) 0px,
+      rgba(0,0,0,0.25) 2px,
       transparent 2px,
       transparent 4px
     );
@@ -105,7 +142,7 @@ function buildHTML(imageDataMap) {
     inset: 0;
     z-index: 150;
     pointer-events: none;
-    opacity: 0.06;
+    opacity: 0.07;
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
     background-size: 200px 200px;
     animation: noiseShift 0.1s steps(1) infinite;
@@ -116,7 +153,7 @@ function buildHTML(imageDataMap) {
     inset: 0;
     z-index: 190;
     pointer-events: none;
-    background: radial-gradient(ellipse at center, transparent 50%, rgba(0,0,10,0.7) 100%);
+    background: radial-gradient(ellipse at center, transparent 50%, rgba(0,0,10,0.6) 100%);
   }
 
   .static-burst {
@@ -126,8 +163,8 @@ function buildHTML(imageDataMap) {
     pointer-events: none;
     background: repeating-linear-gradient(
       90deg,
-      rgba(255,255,255,0.15) 0px, rgba(0,0,0,0.3) 2px,
-      rgba(200,200,255,0.1) 4px, rgba(0,0,0,0.2) 6px,
+      rgba(255,255,255,0.1) 0px, rgba(0,0,0,0.3) 2px,
+      rgba(200,200,255,0.15) 4px, rgba(0,0,0,0.2) 6px,
       rgba(255,255,200,0.08) 8px, rgba(0,0,0,0.4) 10px
     );
     mix-blend-mode: screen;
@@ -140,7 +177,7 @@ function buildHTML(imageDataMap) {
     width: 100%;
     height: 6px;
     background: rgba(255,255,255,0.4);
-    z-index: 250;
+    z-index: 180;
     pointer-events: none;
     display: none;
   }
@@ -150,99 +187,103 @@ function buildHTML(imageDataMap) {
     inset: 0;
     z-index: 10;
   }
-
-  .vhs-ui-text {
-    font-family: 'Courier New', monospace;
-    font-weight: 700;
-    color: #ffffff;
-    letter-spacing: 2px;
-    text-shadow: 1px 0 rgba(255,0,0,0.7), -1px 0 rgba(0,0,255,0.7);
-  }
-
-  .color-bleed {
-    filter: contrast(1.1) saturate(1.3);
-  }
 </style>
 </head>
 <body>
-  <div id="root" style="width:${W}px;height:${H}px;position:relative;overflow:hidden;background:#000;">
+  <div id="root" style="width:${W}px;height:${H}px;position:relative;overflow:hidden;background:#000033;">
 
-    <!-- Photo layer -->
+    <!-- Photo layer — full bleed behind everything -->
     <div class="photo-layer" id="photo-layer">
       ${slideImgs}
     </div>
 
-    <!-- Blue screen background -->
-    <div id="bg-screen" style="position:absolute;inset:0;z-index:5;background:#000044;"></div>
+    <!-- VHS tracking strips container (for horizontal offset glitch) -->
+    <div id="tracking-container" style="position:absolute;inset:0;z-index:20;pointer-events:none;opacity:0;">
+      ${stripHTML}
+    </div>
+
+    <!-- Blue screen / background color -->
+    <div id="bg-screen" style="position:absolute;inset:0;z-index:5;background:#000033;"></div>
 
     <!-- Static burst overlay -->
     <div class="static-burst" id="static-burst"></div>
 
     <!-- Noise overlay -->
-    <div class="noise-overlay" id="noise-overlay"></div>
+    <div class="noise-overlay"></div>
     <!-- Scanlines -->
     <div class="scanlines"></div>
     <!-- Vignette -->
     <div class="vignette"></div>
 
-    <!-- Tracking bands -->
+    <!-- Tracking band (scrolling horizontal glitch line) -->
     <div class="tracking-band" id="tracking-band-1"></div>
     <div class="tracking-band" id="tracking-band-2" style="height:3px;background:rgba(150,100,255,0.3);"></div>
 
-    <!-- Color bleed horizontal bars (VHS artifact) -->
-    <div id="color-bleed-bar" style="position:absolute;left:0;width:100%;height:12px;z-index:220;pointer-events:none;display:none;background:linear-gradient(90deg, rgba(255,0,0,0.15), rgba(0,0,255,0.15), rgba(255,0,0,0.1));mix-blend-mode:screen;"></div>
-
-    <!-- ======= NO SIGNAL SCREEN ======= -->
-    <div id="no-signal" style="position:absolute;inset:0;z-index:400;background:#000044;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:30px;">
-      <div style="font-size:72px;font-weight:900;color:#ffffff;letter-spacing:8px;text-shadow:4px 0 #ff0000,-4px 0 #0000ff;font-family:'Courier New',monospace;text-transform:uppercase;">NO SIGNAL</div>
-      <div style="width:250px;height:3px;background:linear-gradient(90deg,transparent,#ffffff,transparent);opacity:0.4;"></div>
-      <div style="font-size:28px;color:rgba(255,255,255,0.4);font-family:'Courier New',monospace;letter-spacing:6px;">CH 03</div>
-    </div>
-
-    <!-- ======= VHS HUD OVERLAYS ======= -->
+    <!-- ======= VHS UI OVERLAYS ======= -->
 
     <!-- REC indicator top-left -->
-    <div id="rec-indicator" style="position:absolute;top:${SAFE_TOP + 20}px;left:50px;z-index:500;display:none;align-items:center;gap:12px;">
-      <div id="rec-dot" style="width:22px;height:22px;border-radius:50%;background:#ff0000;animation:recBlink 1s step-end infinite;box-shadow:0 0 8px #ff0000;"></div>
-      <span class="vhs-ui-text" style="font-size:32px;letter-spacing:4px;">REC</span>
+    <div id="rec-indicator" style="position:absolute;top:60px;left:60px;z-index:500;display:none;align-items:center;gap:12px;">
+      <div id="rec-dot" style="width:24px;height:24px;border-radius:50%;background:#ff0000;animation:recBlink 1s step-end infinite;box-shadow:0 0 8px #ff0000;"></div>
+      <span class="vhs-ui-text" style="font-size:34px;letter-spacing:4px;">REC</span>
     </div>
 
     <!-- PLAY indicator -->
-    <div id="play-indicator" style="position:absolute;top:${SAFE_TOP + 20}px;left:50px;z-index:500;display:none;">
-      <span class="vhs-ui-text" style="font-size:32px;letter-spacing:4px;">PLAY ▶</span>
+    <div id="play-indicator" style="position:absolute;top:60px;left:60px;z-index:500;display:none;">
+      <span class="vhs-ui-text" style="font-size:34px;letter-spacing:4px;">PLAY ▶</span>
     </div>
 
-    <!-- REW indicator -->
-    <div id="rew-indicator" style="position:absolute;top:${SAFE_TOP + 20}px;left:50px;z-index:500;display:none;">
-      <span class="vhs-ui-text" style="font-size:32px;letter-spacing:4px;color:#00ffff;text-shadow:1px 0 #0088ff,-1px 0 #0088ff;">◀◀ REW</span>
+    <!-- PAUSE indicator -->
+    <div id="pause-indicator" style="position:absolute;top:60px;left:60px;z-index:500;display:none;">
+      <span class="vhs-ui-text" style="font-size:34px;letter-spacing:4px;color:#ffff00;text-shadow:1px 0 #ff8800,-1px 0 #ff8800;">PAUSE ❚❚</span>
     </div>
 
-    <!-- Date top-right -->
-    <div id="vhs-date" style="position:absolute;top:${SAFE_TOP + 20}px;right:50px;z-index:500;display:none;">
-      <span class="vhs-ui-text" style="font-size:28px;letter-spacing:3px;">03.14.2026</span>
+    <!-- REWIND indicator -->
+    <div id="rewind-indicator" style="position:absolute;top:60px;left:60px;z-index:500;display:none;">
+      <span class="vhs-ui-text" style="font-size:34px;letter-spacing:4px;color:#00ffff;text-shadow:1px 0 #0088ff,-1px 0 #0088ff;">◀◀ REW</span>
     </div>
 
-    <!-- Location label -->
-    <div id="vhs-location" style="position:absolute;top:${SAFE_TOP + 60}px;right:50px;z-index:500;display:none;">
-      <span class="vhs-ui-text" style="font-size:22px;letter-spacing:4px;opacity:0.7;">MANILA</span>
+    <!-- Timestamp bottom-right -->
+    <div id="timestamp" style="position:absolute;bottom:80px;right:60px;z-index:500;display:none;">
+      <span id="ts-text" class="vhs-ui-text" style="font-size:38px;letter-spacing:3px;">00:00:00</span>
     </div>
 
-    <!-- Timecode bottom-right -->
-    <div id="timecode" style="position:absolute;bottom:${SAFE_BOTTOM + 20}px;right:50px;z-index:500;display:none;">
-      <span id="tc-text" class="vhs-ui-text" style="font-size:34px;letter-spacing:3px;">00:00:00:00</span>
+    <!-- SP indicator (tape speed) -->
+    <div id="sp-label" style="position:absolute;bottom:80px;left:60px;z-index:500;display:none;">
+      <span class="vhs-ui-text" style="font-size:28px;letter-spacing:3px;opacity:0.7;">SP</span>
     </div>
 
-    <!-- SP label bottom-left -->
-    <div id="sp-label" style="position:absolute;bottom:${SAFE_BOTTOM + 20}px;left:50px;z-index:500;display:none;">
-      <span class="vhs-ui-text" style="font-size:24px;letter-spacing:3px;opacity:0.6;">SP</span>
+    <!-- NO SIGNAL screen -->
+    <div id="no-signal" style="position:absolute;inset:0;z-index:400;background:#000033;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:40px;">
+      <div style="font-size:80px;font-weight:900;color:#ffffff;letter-spacing:8px;text-shadow:4px 0 #ff0000,-4px 0 #0000ff;font-family:'Courier New',monospace;text-transform:uppercase;">NO SIGNAL</div>
+      <div style="width:300px;height:4px;background:linear-gradient(90deg,transparent,#ffffff,transparent);opacity:0.4;"></div>
+      <div style="font-size:32px;color:rgba(255,255,255,0.4);font-family:'Courier New',monospace;letter-spacing:6px;">CH 03</div>
     </div>
 
-    <!-- CTA screen -->
-    <div id="cta-screen" style="position:absolute;inset:0;z-index:350;display:none;flex-direction:column;align-items:center;justify-content:center;gap:30px;padding:80px;">
-      <div id="cta-handle" style="font-size:80px;font-weight:900;color:#ffffff;font-family:'Courier New',monospace;letter-spacing:4px;text-shadow:4px 0 #ff0000,-4px 0 #0000ff;text-align:center;line-height:1;opacity:0;">@madebyaidan</div>
-      <div id="cta-sub" style="font-size:36px;color:rgba(255,255,255,0.8);font-family:'Courier New',monospace;letter-spacing:4px;text-shadow:2px 0 #ff0000,-2px 0 #0000ff;text-align:center;opacity:0;">DM FOR A FREE SHOOT</div>
-      <div id="cta-line" style="width:500px;height:3px;background:linear-gradient(90deg,transparent,#ffffff,transparent);opacity:0;margin:10px 0;"></div>
-      <div id="cta-location" style="font-size:28px;color:rgba(255,255,255,0.5);font-family:'Courier New',monospace;letter-spacing:6px;text-shadow:1px 0 #ff0000,-1px 0 #0000ff;opacity:0;">MANILA 2026</div>
+    <!-- Title screen -->
+    <div id="title-screen" style="position:absolute;inset:0;z-index:350;background:transparent;display:none;flex-direction:column;align-items:center;justify-content:center;gap:30px;padding:80px;">
+      <div id="title-main" style="font-size:88px;font-weight:900;color:#ffffff;letter-spacing:6px;text-align:center;font-family:'Courier New',monospace;text-transform:uppercase;line-height:1.1;text-shadow:4px 0 #ff0000,-4px 0 #0000ff;animation:vhsJitter 2s ease-in-out infinite;opacity:0;">MANILA<br>FREE PHOTO<br>SHOOT</div>
+      <div id="title-sub" style="font-size:40px;color:rgba(255,255,255,0.6);font-family:'Courier New',monospace;letter-spacing:8px;text-shadow:2px 0 #ff0000,-2px 0 #0000ff;opacity:0;">MANILA · 2026</div>
+    </div>
+
+    <!-- Main content area: VHS text overlays for CTA/steps -->
+    <div id="vhs-content" style="position:absolute;inset:0;z-index:300;pointer-events:none;display:none;">
+
+      <!-- Steps overlay (bottom half) -->
+      <div id="steps-panel" style="position:absolute;bottom:160px;left:60px;right:60px;z-index:310;display:none;flex-direction:column;gap:24px;">
+        <div id="step1" style="opacity:0;font-family:'Courier New',monospace;font-size:46px;font-weight:700;color:#ffffff;text-shadow:2px 0 #ff0000,-2px 0 #0000ff;letter-spacing:2px;">1. DM @MADEBYAIDAN</div>
+        <div id="step2" style="opacity:0;font-family:'Courier New',monospace;font-size:46px;font-weight:700;color:#ffffff;text-shadow:2px 0 #ff0000,-2px 0 #0000ff;letter-spacing:2px;">2. PICK A DATE</div>
+        <div id="step3" style="opacity:0;font-family:'Courier New',monospace;font-size:46px;font-weight:700;color:#ffffff;text-shadow:2px 0 #ff0000,-2px 0 #0000ff;letter-spacing:2px;">3. SHOW UP — IT'S FREE</div>
+      </div>
+
+      <!-- CTA screen -->
+      <div id="cta-panel" style="position:absolute;inset:0;z-index:320;display:none;flex-direction:column;align-items:center;justify-content:center;gap:40px;padding:80px;background:rgba(0,0,20,0.7);">
+        <div style="font-size:30px;color:rgba(255,255,255,0.5);font-family:'Courier New',monospace;letter-spacing:8px;text-shadow:1px 0 #ff0000,-1px 0 #0000ff;">FREE PHOTO SHOOT</div>
+        <div style="font-size:100px;font-weight:900;color:#ffffff;font-family:'Courier New',monospace;letter-spacing:4px;text-shadow:5px 0 #ff0000,-5px 0 #0000ff;animation:vhsJitter 1.5s ease-in-out infinite;text-align:center;line-height:1;">@madebyaidan</div>
+        <div style="font-size:44px;color:rgba(255,255,255,0.8);font-family:'Courier New',monospace;letter-spacing:4px;text-shadow:2px 0 #ff0000,-2px 0 #0000ff;">DM ME ON INSTAGRAM</div>
+        <div style="width:600px;height:3px;background:linear-gradient(90deg,transparent,#ffffff,transparent);margin:10px 0;opacity:0.5;"></div>
+        <div id="cta-tracking" style="font-size:34px;color:rgba(255,255,255,0.5);font-family:'Courier New',monospace;letter-spacing:6px;">▶ MANILA 2026 ◀</div>
+      </div>
+
     </div>
 
   </div>
@@ -254,25 +295,24 @@ function buildHTML(imageDataMap) {
   var PHOTO_COUNT = ${PHOTO_NAMES.length};
 
   var noSignal = document.getElementById('no-signal');
-  var bgScreen = document.getElementById('bg-screen');
+  var titleScreen = document.getElementById('title-screen');
+  var titleMain = document.getElementById('title-main');
+  var titleSub = document.getElementById('title-sub');
   var staticBurst = document.getElementById('static-burst');
-  var noiseOverlay = document.getElementById('noise-overlay');
+  var bgScreen = document.getElementById('bg-screen');
   var recIndicator = document.getElementById('rec-indicator');
   var playIndicator = document.getElementById('play-indicator');
-  var rewIndicator = document.getElementById('rew-indicator');
-  var vhsDate = document.getElementById('vhs-date');
-  var vhsLocation = document.getElementById('vhs-location');
-  var timecode = document.getElementById('timecode');
-  var tcText = document.getElementById('tc-text');
+  var pauseIndicator = document.getElementById('pause-indicator');
+  var rewindIndicator = document.getElementById('rewind-indicator');
+  var tsText = document.getElementById('ts-text');
+  var timestamp = document.getElementById('timestamp');
   var spLabel = document.getElementById('sp-label');
+  var vhsContent = document.getElementById('vhs-content');
+  var stepsPanel = document.getElementById('steps-panel');
+  var ctaPanel = document.getElementById('cta-panel');
+  var trackingContainer = document.getElementById('tracking-container');
   var trackingBand1 = document.getElementById('tracking-band-1');
   var trackingBand2 = document.getElementById('tracking-band-2');
-  var colorBleedBar = document.getElementById('color-bleed-bar');
-  var ctaScreen = document.getElementById('cta-screen');
-  var ctaHandle = document.getElementById('cta-handle');
-  var ctaSub = document.getElementById('cta-sub');
-  var ctaLine = document.getElementById('cta-line');
-  var ctaLocation = document.getElementById('cta-location');
 
   function showSlide(index) {
     for (var i = 0; i < PHOTO_COUNT; i++) {
@@ -289,288 +329,323 @@ function buildHTML(imageDataMap) {
   }
 
   function showEl(el) { if (el) el.style.display = 'flex'; }
+  function showBlock(el) { if (el) el.style.display = 'block'; }
   function hideEl(el) { if (el) el.style.display = 'none'; }
 
-  function formatTimecode(t) {
-    var h = Math.floor(t / 3600);
-    var m = Math.floor((t % 3600) / 60);
-    var s = Math.floor(t % 60);
-    var f = Math.floor((t % 1) * 30);
+  function formatTimestamp(t) {
+    // t is video time; offset to start at 00:00:01 when playback begins at 1s
+    var offset = Math.max(0, t - 1.0);
+    var h = Math.floor(offset / 3600);
+    var m = Math.floor((offset % 3600) / 60);
+    var s = Math.floor(offset % 60);
     return (h < 10 ? '0' : '') + h + ':' +
            (m < 10 ? '0' : '') + m + ':' +
-           (s < 10 ? '0' : '') + s + ':' +
-           (f < 10 ? '0' : '') + f;
+           (s < 10 ? '0' : '') + s;
   }
 
-  // Deterministic pseudo-random
-  function seededRand(seed, i) {
-    var x = Math.sin(seed * 127.1 + i * 311.7) * 43758.5453;
-    return x - Math.floor(x);
+  // Apply VHS tracking distortion: randomly shift horizontal strips
+  function applyTrackingDistortion(intensity, t) {
+    var container = trackingContainer;
+    if (!container) return;
+
+    // Use a pseudo-random but deterministic seed based on time
+    var seed = Math.floor(t * 30);
+    function seededRand(i) {
+      var x = Math.sin(seed * 127.1 + i * 311.7) * 43758.5453;
+      return x - Math.floor(x);
+    }
+
+    for (var s = 0; s < 40; s++) {
+      var strip = document.getElementById('strip-' + s);
+      if (!strip) continue;
+      var r = seededRand(s);
+      // Only shift some strips based on intensity
+      if (r < intensity) {
+        var offsetX = (seededRand(s + 100) - 0.5) * 2 * 60 * intensity;
+        strip.style.transform = 'translateX(' + offsetX + 'px)';
+        strip.style.filter = intensity > 0.5 ? 'hue-rotate(' + (r * 180) + 'deg) saturate(2)' : '';
+      } else {
+        strip.style.transform = 'translateX(0)';
+        strip.style.filter = '';
+      }
+    }
   }
 
-  // Show tracking bands at position
-  function showTrackingBands(y1) {
-    trackingBand1.style.top = (y1 % H) + 'px';
-    trackingBand1.style.display = 'block';
-    trackingBand2.style.top = ((y1 + 180) % H) + 'px';
-    trackingBand2.style.display = 'block';
+  // Show a tracking band (horizontal glitch line)
+  function showTrackingBand(band, yPos) {
+    band.style.top = yPos + 'px';
+    band.style.display = 'block';
   }
 
-  function hideTrackingBands() {
-    trackingBand1.style.display = 'none';
-    trackingBand2.style.display = 'none';
-  }
-
-  // Show color bleed bar (VHS artifact)
-  function showColorBleed(y) {
-    colorBleedBar.style.top = (y % H) + 'px';
-    colorBleedBar.style.display = 'block';
-  }
-
-  // =============================================
-  // __applyUpTo — full state machine
-  // =============================================
+  // The full state machine driven by time t
   window.__applyUpTo = function(t) {
-    // Reset all
+    // =============================================
+    // Reset all state
+    // =============================================
     hideAllSlides();
     hideEl(recIndicator);
     hideEl(playIndicator);
-    hideEl(rewIndicator);
-    hideEl(vhsDate);
-    hideEl(vhsLocation);
-    hideEl(timecode);
+    hideEl(pauseIndicator);
+    hideEl(rewindIndicator);
+    hideEl(timestamp);
     hideEl(spLabel);
-    hideEl(ctaScreen);
-    hideTrackingBands();
-    colorBleedBar.style.display = 'none';
+    hideEl(titleScreen);
+    hideEl(vhsContent);
+    hideEl(stepsPanel);
+    hideEl(ctaPanel);
+    hideEl(trackingBand1);
+    hideEl(trackingBand2);
+    titleMain.style.opacity = '0';
+    titleSub.style.opacity = '0';
     bgScreen.style.opacity = '1';
-    bgScreen.style.background = '#000044';
+    bgScreen.style.background = '#000033';
+    trackingContainer.style.opacity = '0';
     staticBurst.style.opacity = '0';
     noSignal.style.display = 'flex';
-    ctaHandle.style.opacity = '0';
-    ctaSub.style.opacity = '0';
-    ctaLine.style.opacity = '0';
-    ctaLocation.style.opacity = '0';
 
     // =============================================
-    // 0–0.8s: Blue "NO SIGNAL" screen
+    // 0-1s: Blue screen with NO SIGNAL
     // =============================================
-    if (t < 0.8) {
+    if (t >= 0) {
       noSignal.style.display = 'flex';
-      bgScreen.style.background = '#000044';
-      return;
-    }
-
-    // =============================================
-    // 0.8–1.2s: Static burst / noise flicker
-    // =============================================
-    if (t >= 0.8 && t < 1.2) {
-      noSignal.style.display = 'flex';
-      var flickerVal = Math.abs(Math.sin(t * 80)) * Math.abs(Math.cos(t * 53));
-      staticBurst.style.opacity = String(0.9 * flickerVal);
-      // Tracking lines scroll through
-      showTrackingBands(t * 2000);
-      return;
-    }
-
-    // =============================================
-    // 1.2–1.5s: Tracking adjustment — lines settle
-    // =============================================
-    if (t >= 1.2 && t < 1.5) {
-      noSignal.style.display = 'none';
       bgScreen.style.background = '#000033';
-      var settleP = (t - 1.2) / 0.3;
-      staticBurst.style.opacity = String(0.4 * (1 - settleP));
-      // Tracking bands slow down and disappear
-      var bandSpeed = 3000 * (1 - settleP);
-      showTrackingBands(t * bandSpeed);
-      return;
+      bgScreen.style.opacity = '1';
+    }
+
+    // Static burst at ~0.6s (noise before play starts)
+    if (t >= 0.6 && t < 1.0) {
+      var burstProgress = (t - 0.6) / 0.4;
+      // Flicker rapidly
+      var flickerVal = (Math.sin(t * 120) + 1) / 2;
+      staticBurst.style.opacity = String(0.8 * flickerVal);
     }
 
     // =============================================
-    // 1.5–2.5s: REC appears, date, location text
+    // 1-2s: PLAY appears, title approaches
     // =============================================
-    noSignal.style.display = 'none';
+    if (t >= 1.0) {
+      noSignal.style.display = 'none';
+      showEl(titleScreen);
+      bgScreen.style.background = '#000022';
+      bgScreen.style.opacity = '0.95';
+
+      showEl(playIndicator);
+      showEl(timestamp);
+      showEl(spLabel);
+      tsText.textContent = formatTimestamp(t);
+    }
 
     if (t >= 1.5) {
-      showEl(recIndicator);
-      showEl(vhsDate);
-      showEl(timecode);
-      showEl(spLabel);
-      tcText.textContent = formatTimecode(Math.max(0, t - 1.5));
+      titleMain.style.opacity = '1';
     }
-
     if (t >= 1.8) {
-      showEl(vhsLocation);
+      titleSub.style.opacity = '1';
     }
 
     // =============================================
-    // 1.5–2.5s: Dark screen with HUD, first photo fades in
+    // 2-3s: Tracking distortion, title dissolves
     // =============================================
-    if (t >= 1.5 && t < 2.5) {
-      bgScreen.style.opacity = '1';
-      bgScreen.style.background = '#000022';
-      // First photo starts fading in at 2.0s
-      if (t >= 2.0) {
-        var fadeIn = Math.min(1, (t - 2.0) / 0.4);
-        bgScreen.style.opacity = String(1 - fadeIn);
-        showSlide(0);
+    if (t >= 2.0 && t < 3.0) {
+      var trProgress = (t - 2.0) / 1.0;
+      trackingContainer.style.opacity = '1';
+      applyTrackingDistortion(Math.min(1, trProgress * 2), t);
+
+      // Title fades out
+      if (t >= 2.5) {
+        titleMain.style.opacity = String(Math.max(0, 1 - (t - 2.5) * 2));
+        titleSub.style.opacity = String(Math.max(0, 1 - (t - 2.5) * 2));
       }
-      // Show a color bleed bar scrolling
-      showColorBleed(t * 600);
-      return;
+
+      // Show tracking bands
+      var band1Y = ((t - 2.0) / 1.0) * H;
+      showTrackingBand(trackingBand1, band1Y);
+      showTrackingBand(trackingBand2, Math.max(0, band1Y - 120));
     }
 
     // =============================================
-    // 2.5–10.0s: Photo slideshow with VHS effects
-    // 10 photos, ~0.9s each (photos 0-9 over 7.5s = 0.75s each)
-    // But we want ~0.9s per photo for 10 photos = 9s?
-    // Actually 2.5–10.0 = 7.5s for 10 photos = 0.75s each
-    // Let's do 0.75s each
+    // 3-13s: Photo slideshow with VHS effects
     // =============================================
-    if (t >= 2.5 && t < 10.0) {
-      bgScreen.style.opacity = '0';
-      showEl(recIndicator);
-      showEl(vhsDate);
-      showEl(vhsLocation);
-      showEl(timecode);
-      showEl(spLabel);
-      tcText.textContent = formatTimecode(t - 1.5);
+    if (t >= 3.0 && t < 13.0) {
+      hideEl(titleScreen);
+      hideEl(playIndicator);
+      trackingContainer.style.opacity = '0';
+      bgScreen.style.opacity = '0'; // Photos show through
 
-      var photoTime = t - 2.5;
-      var photoDur = 0.75; // seconds per photo
-      var photoIndex = Math.floor(photoTime / photoDur);
+      showEl(recIndicator);
+      showEl(timestamp);
+      showEl(spLabel);
+      tsText.textContent = formatTimestamp(t);
+
+      // Photo timing: 8 photos over 10 seconds = 1.25s each
+      var photoIndex = Math.floor((t - 3.0) / 1.25);
       photoIndex = Math.min(photoIndex, PHOTO_COUNT - 1);
       showSlide(photoIndex);
 
-      // Tracking distortion at each transition
-      var photoLocalT = photoTime % photoDur;
-      if (photoLocalT < 0.1 && photoIndex > 0) {
-        // Brief static/tracking burst at transition
-        var burstFade = Math.sin((photoLocalT / 0.1) * Math.PI);
-        staticBurst.style.opacity = String(0.5 * burstFade);
-        showTrackingBands(t * 4000);
+      // Brief static burst at each photo transition
+      var photoLocalT = (t - 3.0) % 1.25;
+      if (photoLocalT < 0.12) {
+        var burstFade = Math.sin((photoLocalT / 0.12) * Math.PI);
+        staticBurst.style.opacity = String(0.6 * burstFade);
       }
 
-      // Periodic subtle color bleed bar
-      var bleedCycle = Math.sin(t * 3.7);
-      if (bleedCycle > 0.7) {
-        showColorBleed(t * 400 + 200);
-      }
-
-      // Subtle tracking band that scrolls slowly
-      if (photoLocalT >= 0.1) {
-        var subtleBand = Math.sin(t * 1.3) * 0.5 + 0.5;
-        if (subtleBand > 0.85) {
-          showTrackingBands(t * 300);
+      // Subtle ongoing tracking noise
+      if (t >= 3.0) {
+        // Light periodic tracking distortion
+        var trackNoise = Math.sin(t * 7.3) * 0.5 + 0.5;
+        if (trackNoise > 0.8) {
+          trackingContainer.style.opacity = String((trackNoise - 0.8) * 2.5 * 0.4);
+          applyTrackingDistortion((trackNoise - 0.8) * 2.5 * 0.3, t);
         }
       }
-      return;
     }
 
     // =============================================
-    // 10.0–12.0s: Tape rewind effect
-    // Fast backward flicker through photos
+    // 13-14s: PAUSE effect — freeze on last photo
     // =============================================
-    if (t >= 10.0 && t < 12.0) {
+    if (t >= 13.0 && t < 14.0) {
       bgScreen.style.opacity = '0';
+      showSlide(PHOTO_COUNT - 1);
       hideEl(recIndicator);
-      showEl(rewIndicator);
-      showEl(timecode);
+      showEl(pauseIndicator);
+      showEl(timestamp);
       showEl(spLabel);
+      tsText.textContent = formatTimestamp(13.0); // frozen timestamp
 
-      // Timecode counts backwards fast
-      var rewTime = 12.0 - t;
-      tcText.textContent = formatTimecode(rewTime * 3);
+      // Intensify scanlines effect via tracking container
+      trackingContainer.style.opacity = String(0.5);
+      applyTrackingDistortion(0.2, t);
 
-      // Rapid photo flicker in reverse
-      var rewindSpeed = 6; // photos per second
-      var rewindElapsed = t - 10.0;
-      var rewindIdx = Math.floor((PHOTO_COUNT - 1) - (rewindElapsed * rewindSpeed));
-      rewindIdx = ((rewindIdx % PHOTO_COUNT) + PHOTO_COUNT) % PHOTO_COUNT;
-      showSlide(rewindIdx);
-
-      // Heavy tracking distortion during rewind
-      showTrackingBands(t * 5000);
-      staticBurst.style.opacity = String(0.25 * Math.abs(Math.sin(t * 25)));
-
-      // Color bleed prominent
-      showColorBleed(t * 800);
-
-      // Flicker the date/location
-      if (Math.sin(t * 40) > 0) {
-        showEl(vhsDate);
-        showEl(vhsLocation);
-      }
-      return;
+      // Show tracking bands
+      var pauseBandY = ((t - 13.0) / 1.0) * H;
+      showTrackingBand(trackingBand1, pauseBandY % H);
+      showTrackingBand(trackingBand2, (pauseBandY + 400) % H);
     }
 
     // =============================================
-    // 12.0–13.5s: PLAY appears, last best photo fills screen
+    // 14-18s: REWIND then PLAY with steps
     // =============================================
-    if (t >= 12.0 && t < 13.5) {
+    if (t >= 14.0 && t < 18.0) {
       bgScreen.style.opacity = '0';
-      hideEl(rewIndicator);
-      showEl(playIndicator);
-      showEl(vhsDate);
-      showEl(vhsLocation);
-      showEl(timecode);
+      hideEl(pauseIndicator);
+      hideEl(recIndicator);
+      showEl(timestamp);
       showEl(spLabel);
-      tcText.textContent = formatTimecode(t - 1.5);
 
-      // Show the last photo (best shot)
-      showSlide(PHOTO_COUNT - 1);
+      if (t >= 14.0 && t < 16.0) {
+        // Rewind: rapidly flash previous photos
+        showEl(rewindIndicator);
+        tsText.textContent = formatTimestamp(t);
 
-      // Brief static at start of this section
-      if (t < 12.3) {
-        var playBurst = Math.sin(((t - 12.0) / 0.3) * Math.PI);
-        staticBurst.style.opacity = String(0.4 * playBurst);
-        showTrackingBands(t * 3000);
+        // Flash through photos rapidly in reverse
+        var rewindSpeed = 8; // photos per second
+        var rewindIndex = Math.floor((PHOTO_COUNT - 1) - ((t - 14.0) * rewindSpeed)) % PHOTO_COUNT;
+        rewindIndex = Math.max(0, rewindIndex);
+        showSlide(rewindIndex);
+
+        // Heavy tracking distortion during rewind
+        trackingContainer.style.opacity = '0.8';
+        applyTrackingDistortion(0.7, t);
+        staticBurst.style.opacity = String(0.3 * Math.abs(Math.sin(t * 20)));
       }
 
-      // Subtle color bleed
-      showColorBleed(t * 200 + 900);
-      return;
+      if (t >= 16.0) {
+        // PLAY resumes — show steps
+        hideEl(rewindIndicator);
+        showEl(playIndicator);
+        tsText.textContent = formatTimestamp(t);
+
+        // Show first photo as background
+        showSlide(0);
+        trackingContainer.style.opacity = '0.2';
+        applyTrackingDistortion(0.15, t);
+
+        // Show steps panel
+        showEl(vhsContent);
+        stepsPanel.style.display = 'flex';
+
+        // Steps appear one by one
+        var step1 = document.getElementById('step1');
+        var step2 = document.getElementById('step2');
+        var step3 = document.getElementById('step3');
+
+        if (t >= 16.3) step1.style.opacity = '1';
+        if (t >= 16.9) step2.style.opacity = '1';
+        if (t >= 17.5) step3.style.opacity = '1';
+      }
     }
 
     // =============================================
-    // 13.5–15.0s: CTA with VHS styling
+    // 18-22s: Static burst -> CTA screen
     // =============================================
-    if (t >= 13.5) {
-      // Darken background, keep last photo slightly visible
-      showSlide(PHOTO_COUNT - 1);
-      bgScreen.style.opacity = '0.65';
-      bgScreen.style.background = '#000022';
-
+    if (t >= 18.0 && t < 22.0) {
+      hideEl(rewindIndicator);
       hideEl(playIndicator);
-      showEl(recIndicator);
-      showEl(vhsDate);
-      showEl(vhsLocation);
-      showEl(timecode);
+      hideEl(recIndicator);
+      bgScreen.style.opacity = '0';
+
+      showEl(vhsContent);
+      showEl(timestamp);
       showEl(spLabel);
-      tcText.textContent = formatTimecode(t - 1.5);
+      tsText.textContent = formatTimestamp(t);
 
-      showEl(ctaScreen);
-      ctaScreen.style.display = 'flex';
-
-      // Stagger CTA elements in
-      var ctaElapsed = t - 13.5;
-      if (ctaElapsed >= 0.1) {
-        ctaHandle.style.opacity = String(Math.min(1, (ctaElapsed - 0.1) / 0.3));
-      }
-      if (ctaElapsed >= 0.4) {
-        ctaSub.style.opacity = String(Math.min(1, (ctaElapsed - 0.4) / 0.3));
-      }
-      if (ctaElapsed >= 0.6) {
-        ctaLine.style.opacity = String(Math.min(1, (ctaElapsed - 0.6) / 0.3));
-      }
-      if (ctaElapsed >= 0.8) {
-        ctaLocation.style.opacity = String(Math.min(1, (ctaElapsed - 0.8) / 0.3));
+      // Static burst transition at 18.0
+      if (t >= 18.0 && t < 18.5) {
+        var burstT = (t - 18.0) / 0.5;
+        var flicker2 = Math.abs(Math.sin(t * 80));
+        staticBurst.style.opacity = String(0.9 * flicker2 * (1 - burstT));
+        // Show last slide during burst
+        showSlide(PHOTO_COUNT - 1);
+        trackingContainer.style.opacity = '0.9';
+        applyTrackingDistortion(0.9, t);
       }
 
-      // Subtle tracking line
-      showColorBleed(t * 150 + 400);
-      return;
+      if (t >= 18.5) {
+        stepsPanel.style.display = 'none';
+        ctaPanel.style.display = 'flex';
+        hideAllSlides();
+        bgScreen.style.opacity = '0.6';
+        bgScreen.style.background = '#000022';
+        trackingContainer.style.opacity = '0.15';
+        applyTrackingDistortion(0.1, t);
+        staticBurst.style.opacity = '0';
+      }
+    }
+
+    // =============================================
+    // 22-24s: Signal degrades -> NO SIGNAL returns
+    // =============================================
+    if (t >= 22.0) {
+      hideEl(ctaPanel);
+      hideEl(stepsPanel);
+      hideEl(playIndicator);
+      hideEl(recIndicator);
+      showEl(timestamp);
+      tsText.textContent = formatTimestamp(t);
+
+      var degradeProgress = (t - 22.0) / 2.0;
+
+      // Degrade: increase tracking distortion
+      trackingContainer.style.opacity = String(Math.min(1, degradeProgress * 2));
+      applyTrackingDistortion(Math.min(1, degradeProgress * 1.5), t);
+
+      // Static intensifies
+      var degrade2 = Math.abs(Math.sin(t * 15));
+      staticBurst.style.opacity = String(degradeProgress * 0.8 * degrade2);
+
+      bgScreen.style.opacity = String(Math.min(1, degradeProgress * 1.2));
+      bgScreen.style.background = '#000033';
+      hideAllSlides();
+
+      // NO SIGNAL fades back in
+      if (degradeProgress > 0.7) {
+        noSignal.style.display = 'flex';
+        noSignal.style.opacity = String(Math.min(1, (degradeProgress - 0.7) / 0.3));
+      }
+    }
+
+    // Update timestamp continuously when visible
+    if (t >= 1.0 && t < 13.0) {
+      tsText.textContent = formatTimestamp(t);
     }
   };
 
@@ -594,7 +669,6 @@ async function main() {
   var html = buildHTML(imageDataMap);
   var htmlPath = path.join(OUT_DIR, 'index.html');
   writeFileSync(htmlPath, html);
-  console.log('HTML written: ' + htmlPath);
 
   var framesDir = path.join(OUT_DIR, 'tmp-frames');
   mkdirSync(framesDir, { recursive: true });
@@ -612,7 +686,7 @@ async function main() {
     await page.waitForTimeout(2);
     var padded = String(frame).padStart(5, '0');
     await page.screenshot({ path: path.join(framesDir, 'frame_' + padded + '.png'), type: 'png' });
-    if (frame % (FPS * 3) === 0) {
+    if (frame % (FPS * 4) === 0) {
       console.log('  ' + t.toFixed(1) + 's / ' + TOTAL_DURATION + 's');
     }
   }
@@ -620,7 +694,7 @@ async function main() {
   await browser.close();
   console.log('All frames captured');
 
-  var outputMp4 = path.join(OUT_DIR, 'reel-60a.mp4');
+  var outputMp4 = path.join(OUT_DIR, 'manila-vhs-v60a.mp4');
   execSync(
     'ffmpeg -y -framerate ' + FPS + ' -i "' + path.join(framesDir, 'frame_%05d.png') + '" ' +
     '-c:v libx264 -preset slow -crf 18 -pix_fmt yuv420p -r ' + FPS + ' -an "' + outputMp4 + '"',
@@ -631,7 +705,7 @@ async function main() {
 
   var reelsDir = path.join(__dirname, 'reels');
   if (!existsSync(reelsDir)) mkdirSync(reelsDir, { recursive: true });
-  var reelsDest = path.join(reelsDir, 'reel-60a.mp4');
+  var reelsDest = path.join(reelsDir, 'manila-vhs-v60a.mp4');
   execSync('cp "' + outputMp4 + '" "' + reelsDest + '"');
 
   var sz = statSync(outputMp4);
