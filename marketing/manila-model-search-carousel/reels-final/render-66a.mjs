@@ -303,7 +303,7 @@ function buildHTML(imageDataMap) {
   <!-- Booth title -->
   <div id="booth-title">
     <div id="booth-title-text">MANILA</div>
-    <div id="booth-title-sub">PHOTO BOOTH</div>
+    <div id="booth-title-sub">FREE PHOTO SHOOT</div>
   </div>
 
   <!-- Countdown -->
@@ -324,7 +324,7 @@ function buildHTML(imageDataMap) {
       <div id="sp-1" class="strip-photo"><img id="sp-img-1" src="" alt=""/></div>
       <div id="sp-2" class="strip-photo"><img id="sp-img-2" src="" alt=""/></div>
       <div id="sp-3" class="strip-photo"><img id="sp-img-3" src="" alt=""/></div>
-      <div id="strip-label">MANILA 2025</div>
+      <div id="strip-label">MANILA FREE PHOTO SHOOT · 2026</div>
     </div>
   </div>
 
@@ -336,7 +336,7 @@ function buildHTML(imageDataMap) {
   <!-- CTA -->
   <div id="cta">
     <div id="cta-handle">@madebyaidan</div>
-    <div id="cta-sub">DM for your free session</div>
+    <div id="cta-sub">DM for a free photo shoot</div>
   </div>
 
 </div>
