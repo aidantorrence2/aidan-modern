@@ -152,7 +152,7 @@ function buildHTML(imageDataMap) {
 
     // Status bar
     '    <div style="position:absolute;left:0;right:0;top:0;height:54px;padding:14px 32px 0;display:flex;align-items:center;justify-content:space-between;z-index:30;background:#000;">\n' +
-    '      <span style="font-family:' + SF + ';font-size:17px;font-weight:600;color:#fff;">9:41</span>\n' +
+    '      <span style="font-family:' + SF + ';font-size:40px;font-weight:600;color:#fff;">9:41</span>\n' +
     '      <div style="position:absolute;left:50%;top:10px;transform:translateX(-50%);width:126px;height:34px;background:#000;border-radius:0 0 20px 20px;"></div>\n' +
     '      <div style="display:flex;align-items:center;gap:6px;">\n' +
     '        <svg width="18" height="12" viewBox="0 0 18 12"><rect x="0" y="4" width="3" height="8" rx="1" fill="#fff"/><rect x="5" y="2" width="3" height="10" rx="1" fill="#fff"/><rect x="10" y="0" width="3" height="12" rx="1" fill="#fff"/><rect x="15" y="1" width="3" height="11" rx="1" fill="#fff" opacity="0.35"/></svg>\n' +
@@ -165,17 +165,17 @@ function buildHTML(imageDataMap) {
     '    <div style="position:absolute;left:0;right:0;top:54px;height:96px;display:flex;align-items:center;z-index:30;background:#000;border-bottom:0.5px solid #2C2C2E;padding:0 16px;">\n' +
     '      <div style="display:flex;align-items:center;gap:6px;width:60px;">\n' +
     '        <svg width="11" height="18" viewBox="0 0 11 18" fill="none"><path d="M10 1L2 9l8 8" stroke="#0A84FF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>\n' +
-    '        <span style="font-family:' + SF + ';font-size:17px;color:#0A84FF;">12</span>\n' +
+    '        <span style="font-family:' + SF + ';font-size:40px;color:#0A84FF;">12</span>\n' +
     '      </div>\n' +
     '      <div style="flex:1;display:flex;flex-direction:column;align-items:center;">\n' +
     '        <div style="display:flex;margin-bottom:4px;">\n' +
     ['Mia', 'Luna', 'Ava'].map(function(name, i) {
       var c = COLORS[name];
-      return '<div style="width:34px;height:34px;border-radius:50%;background:' + c + ';border:2px solid #000;display:flex;align-items:center;justify-content:center;margin-left:' + (i === 0 ? '0' : '-8') + 'px;z-index:' + (10-i) + ';"><span style="font-family:' + SF + ';font-size:13px;font-weight:700;color:#fff;">' + name[0] + '</span></div>';
+      return '<div style="width:60px;height:60px;border-radius:50%;background:' + c + ';border:2px solid #000;display:flex;align-items:center;justify-content:center;margin-left:' + (i === 0 ? '0' : '-8') + 'px;z-index:' + (10-i) + ';"><span style="font-family:' + SF + ';font-size:30px;font-weight:700;color:#fff;">' + name[0] + '</span></div>';
     }).join('') + '\n' +
     '        </div>\n' +
-    '        <p style="font-family:' + SF + ';font-size:17px;font-weight:600;color:#fff;margin:0;">manila girlies \uD83C\uDF34</p>\n' +
-    '        <p style="font-family:' + SF + ';font-size:13px;color:' + IMSG_GRAY + ';margin:2px 0 0;">4 people</p>\n' +
+    '        <p style="font-family:' + SF + ';font-size:40px;font-weight:600;color:#fff;margin:0;">manila girlies \uD83C\uDF34</p>\n' +
+    '        <p style="font-family:' + SF + ';font-size:30px;color:' + IMSG_GRAY + ';margin:2px 0 0;">4 people</p>\n' +
     '      </div>\n' +
     '      <div style="width:60px;display:flex;justify-content:flex-end;">\n' +
     '        <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M4 4h14v14H4z" stroke="transparent"/><path d="M17 8c0-2.2-1.8-4-4-4H9C6.8 4 5 5.8 5 8v1.5c0 1 .4 2 1.1 2.7L11 17l4.9-4.8c.7-.7 1.1-1.7 1.1-2.7V8z" stroke="#0A84FF" stroke-width="1.8" fill="none"/></svg>\n' +
@@ -200,7 +200,7 @@ function buildHTML(imageDataMap) {
     '        <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><circle cx="14" cy="14" r="13" stroke="#8E8E93" stroke-width="1.5"/><path d="M14 8v12M8 14h12" stroke="#8E8E93" stroke-width="1.8" stroke-linecap="round"/></svg>\n' +
     '      </div>\n' +
     '      <div style="flex:1;padding:8px 16px;border:1px solid #3A3A3C;border-radius:20px;background:#1C1C1E;">\n' +
-    '        <span style="font-family:' + SF + ';font-size:17px;color:#636366;">iMessage</span>\n' +
+    '        <span style="font-family:' + SF + ';font-size:40px;color:#636366;">iMessage</span>\n' +
     '      </div>\n' +
     '      <div style="width:32px;height:32px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">\n' +
     '        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 3a3 3 0 0 1 3 3v5a3 3 0 1 1-6 0V6a3 3 0 0 1 3-3z" stroke="#8E8E93" stroke-width="1.5"/><path d="M19 11a7 7 0 1 1-14 0" stroke="#8E8E93" stroke-width="1.5" stroke-linecap="round"/><path d="M12 18v3" stroke="#8E8E93" stroke-width="1.5" stroke-linecap="round"/></svg>\n' +
@@ -211,8 +211,8 @@ function buildHTML(imageDataMap) {
 
     // CTA overlay at bottom (always visible)
     '  <div id="cta-bar" style="position:absolute;left:0;right:0;bottom:0;height:' + (SAFE_BOTTOM - 100) + 'px;display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:50;opacity:0;">\n' +
-    '    <p style="font-family:' + SF + ';font-size:38px;font-weight:800;color:#fff;text-align:center;margin:0;">Free Photo Shoot in Manila</p>\n' +
-    '    <p style="font-family:' + SF + ';font-size:24px;font-weight:500;color:rgba(255,255,255,0.6);text-align:center;margin:8px 0 0;">DM @madebyaidan on Instagram</p>\n' +
+    '    <p style="font-family:' + SF + ';font-size:72px;font-weight:800;color:#fff;text-align:center;margin:0;">Free Photo Shoot in Manila</p>\n' +
+    '    <p style="font-family:' + SF + ';font-size:48px;font-weight:500;color:rgba(255,255,255,0.6);text-align:center;margin:8px 0 0;">DM @madebyaidan on Instagram</p>\n' +
     '  </div>\n' +
 
     '</div>\n' +
@@ -243,7 +243,7 @@ function buildHTML(imageDataMap) {
     '\n' +
     'function avatar(name) {\n' +
     '  var c = COLORS[name] || "#555";\n' +
-    '  return \'<div style="width:32px;height:32px;border-radius:50%;background:\' + c + \';display:flex;align-items:center;justify-content:center;flex-shrink:0;"><span style="font-family:\' + SF + \';font-size:13px;font-weight:700;color:#fff;">\' + name[0] + \'</span></div>\';\n' +
+    '  return \'<div style="width:56px;height:56px;border-radius:50%;background:\' + c + \';display:flex;align-items:center;justify-content:center;flex-shrink:0;"><span style="font-family:\' + SF + \';font-size:30px;font-weight:700;color:#fff;">\' + name[0] + \'</span></div>\';\n' +
     '}\n' +
     '\n' +
     'function createTypingIndicator(who) {\n' +
@@ -263,7 +263,7 @@ function buildHTML(imageDataMap) {
     '  var el = document.createElement("div");\n' +
     '  el.style.cssText = "display:flex;align-items:flex-end;gap:8px;margin-bottom:" + (consecutive ? "2" : "10") + "px;padding:0 4px;";\n' +
     '  var av = consecutive ? \'<div style="width:32px;flex-shrink:0;"></div>\' : avatar(who);\n' +
-    '  var nameLabel = consecutive ? "" : \'<span style="font-family:\' + SF + \';font-size:12px;color:\' + IMSG_GRAY + \';display:block;margin-bottom:2px;margin-left:4px;">\' + who + \'</span>\';\n' +
+    '  var nameLabel = consecutive ? "" : \'<span style="font-family:\' + SF + \';font-size:28px;color:\' + IMSG_GRAY + \';display:block;margin-bottom:2px;margin-left:4px;">\' + who + \'</span>\';\n' +
     '  var textColor = "#fff";\n' +
     '  var displayText = text;\n' +
     '  if (isHandle && text.indexOf("@madebyaidan") !== -1) {\n' +
@@ -272,7 +272,7 @@ function buildHTML(imageDataMap) {
     '  el.innerHTML = av +\n' +
     '    \'<div style="max-width:70%;">\' + nameLabel +\n' +
     '    \'<div style="background:\' + IMSG_RECV + \';border-radius:\' + (consecutive ? "12px 18px 18px 12px" : "18px 18px 18px 6px") + \';padding:10px 16px;">\' +\n' +
-    '    \'<p style="font-family:\' + SF + \';font-size:17px;color:\' + textColor + \';margin:0;line-height:1.35;">\' + displayText + \'</p>\' +\n' +
+    '    \'<p style="font-family:\' + SF + \';font-size:40px;color:\' + textColor + \';margin:0;line-height:1.35;">\' + displayText + \'</p>\' +\n' +
     '    \'</div></div>\';\n' +
     '  return el;\n' +
     '}\n' +
@@ -281,7 +281,7 @@ function buildHTML(imageDataMap) {
     '  var el = document.createElement("div");\n' +
     '  el.style.cssText = "display:flex;justify-content:flex-end;margin-bottom:10px;padding:0 4px;";\n' +
     '  el.innerHTML = \'<div style="max-width:70%;background:\' + IMSG_BLUE + \';border-radius:18px 18px 6px 18px;padding:10px 16px;">\' +\n' +
-    '    \'<p style="font-family:\' + SF + \';font-size:17px;color:#fff;margin:0;line-height:1.35;">\' + text + \'</p>\' +\n' +
+    '    \'<p style="font-family:\' + SF + \';font-size:40px;color:#fff;margin:0;line-height:1.35;">\' + text + \'</p>\' +\n' +
     '    \'</div>\';\n' +
     '  return el;\n' +
     '}\n' +
@@ -290,7 +290,7 @@ function buildHTML(imageDataMap) {
     '  var el = document.createElement("div");\n' +
     '  el.style.cssText = "display:flex;align-items:flex-end;gap:8px;margin-bottom:" + (consecutive ? "2" : "10") + "px;padding:0 4px;";\n' +
     '  var av = consecutive ? \'<div style="width:32px;flex-shrink:0;"></div>\' : avatar(who);\n' +
-    '  var nameLabel = consecutive ? "" : \'<span style="font-family:\' + SF + \';font-size:12px;color:\' + IMSG_GRAY + \';display:block;margin-bottom:2px;margin-left:4px;">\' + who + \'</span>\';\n' +
+    '  var nameLabel = consecutive ? "" : \'<span style="font-family:\' + SF + \';font-size:28px;color:\' + IMSG_GRAY + \';display:block;margin-bottom:2px;margin-left:4px;">\' + who + \'</span>\';\n' +
     '  el.innerHTML = av +\n' +
     '    \'<div style="max-width:70%;">\' + nameLabel +\n' +
     '    \'<div style="width:260px;height:340px;border-radius:18px;overflow:hidden;">\' +\n' +
@@ -302,7 +302,7 @@ function buildHTML(imageDataMap) {
     'function createReadReceipt(text) {\n' +
     '  var el = document.createElement("div");\n' +
     '  el.style.cssText = "display:flex;justify-content:flex-end;margin-bottom:10px;padding:0 8px;";\n' +
-    '  el.innerHTML = \'<span style="font-family:\' + SF + \';font-size:11px;color:\' + IMSG_GRAY + \';font-weight:500;">\' + text + \'</span>\';\n' +
+    '  el.innerHTML = \'<span style="font-family:\' + SF + \';font-size:26px;color:\' + IMSG_GRAY + \';font-weight:500;">\' + text + \'</span>\';\n' +
     '  return el;\n' +
     '}\n' +
     '\n' +
@@ -311,8 +311,8 @@ function buildHTML(imageDataMap) {
     '  el.style.cssText = "display:flex;align-items:center;margin-bottom:6px;padding:0 4px 0 44px;";\n' +
     '  var emojiDisplay = emoji === "!!" ? "\\u203C\\uFE0F" : emoji;\n' +
     '  el.innerHTML = \'<div style="background:#1C1C1E;border:1px solid #3A3A3C;border-radius:14px;padding:3px 10px;display:flex;align-items:center;gap:5px;">\' +\n' +
-    '    \'<span style="font-size:14px;">\' + emojiDisplay + \'</span>\' +\n' +
-    '    \'<span style="font-family:\' + SF + \';font-size:12px;color:\' + IMSG_GRAY + \';font-weight:500;">\' + label + \'</span>\' +\n' +
+    '    \'<span style="font-size:32px;">\' + emojiDisplay + \'</span>\' +\n' +
+    '    \'<span style="font-family:\' + SF + \';font-size:28px;color:\' + IMSG_GRAY + \';font-weight:500;">\' + label + \'</span>\' +\n' +
     '    \'</div>\';\n' +
     '  return el;\n' +
     '}\n' +

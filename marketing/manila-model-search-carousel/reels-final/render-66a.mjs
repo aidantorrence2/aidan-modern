@@ -650,7 +650,7 @@ async function main() {
   await browser.close();
   console.log('All frames captured');
 
-  var outputMp4 = path.join(OUT_DIR, 'reel-66a.mp4');
+  var outputMp4 = path.join(OUT_DIR, '66a-photo-booth.mp4');
   execSync(
     'ffmpeg -y -framerate ' + FPS + ' -i "' + path.join(framesDir, 'frame_%05d.png') + '" ' +
     '-c:v libx264 -preset slow -crf 18 -pix_fmt yuv420p -r ' + FPS + ' -an "' + outputMp4 + '"',
@@ -661,11 +661,11 @@ async function main() {
 
   var reelsDir = path.join(__dirname, 'reels');
   if (!existsSync(reelsDir)) mkdirSync(reelsDir, { recursive: true });
-  execSync('cp "' + outputMp4 + '" "' + path.join(reelsDir, 'reel-66a.mp4') + '"');
+  execSync('cp "' + outputMp4 + '" "' + path.join(reelsDir, '66a-photo-booth.mp4') + '"');
 
   var sz = statSync(outputMp4);
   console.log('Final: ' + (sz.size / (1024 * 1024)).toFixed(1) + ' MB');
-  console.log('Copied to reels/reel-66a.mp4');
+  console.log('Copied to reels/66a-photo-booth.mp4');
   console.log('=== Done ===');
 }
 

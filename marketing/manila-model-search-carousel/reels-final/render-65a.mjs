@@ -614,7 +614,7 @@ async function main() {
   await browser.close();
   console.log('All frames captured');
 
-  var outputMp4 = path.join(OUT_DIR, 'reel-65a.mp4');
+  var outputMp4 = path.join(OUT_DIR, '65a-vinyl-record.mp4');
   execSync(
     'ffmpeg -y -framerate ' + FPS + ' -i "' + path.join(framesDir, 'frame_%05d.png') + '" ' +
     '-c:v libx264 -preset slow -crf 18 -pix_fmt yuv420p -r ' + FPS + ' -an "' + outputMp4 + '"',
@@ -625,7 +625,7 @@ async function main() {
 
   var reelsDir = path.join(__dirname, 'reels');
   if (!existsSync(reelsDir)) mkdirSync(reelsDir, { recursive: true });
-  var reelsDst = path.join(reelsDir, 'reel-65a.mp4');
+  var reelsDst = path.join(reelsDir, '65a-vinyl-record.mp4');
   execSync('cp "' + outputMp4 + '" "' + reelsDst + '"');
 
   var sz = statSync(outputMp4);
