@@ -290,3 +290,18 @@
 - Notes:
   - Same layout as V13.
   - Page 1 and page 5 increase image size further and switch to `cover` framing so the photos read as larger, cleaner image blocks with no bordered look.
+
+## Manila Model Search Carousel Reel v70a (Subway/Transit Map)
+- Script: `marketing/manila-model-search-carousel/reels-final/render-70a.mjs`
+- Output: `marketing/manila-model-search-carousel/reels-final/output-70a/manila-subway-v70a.mp4`
+- Copied to: `marketing/manila-model-search-carousel/reels-final/reels/manila-subway-v70a.mp4`
+- Render command: `node marketing/manila-model-search-carousel/reels-final/render-70a.mjs`
+- Notes:
+  - 1080x1920, 30fps, 24s duration (720 frames). Frame-capture approach with Playwright.
+  - Photos from `/Volumes/PortableSSD/Exports/film scans/` (8 film scan filenames starting with 000040850xxx.jpg).
+  - Transit map concept: red main line (#E53935) draws itself down screen, stopping at 8 stations.
+  - Each station pops a photo card (scaleX expand) and a solid station dot; train rect moves along the line.
+  - 12–14s: map zooms out to 0.75x to show the full line.
+  - 14–18s: blue branch line (#1E88E5) branches from STATION 08 with CTA stops: DM / PICK YOUR DATE / SHOW UP.
+  - 18–22s: dark CTA board ("@madebyaidan · Transfer to Instagram · Fare: FREE · Now Boarding").
+  - 22–24s: train pulses at terminus, white flash, hold.
