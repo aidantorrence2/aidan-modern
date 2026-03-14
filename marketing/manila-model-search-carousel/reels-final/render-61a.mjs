@@ -10,33 +10,25 @@ var OUT_DIR = path.join(__dirname, 'output-61a');
 var W = 1080;
 var H = 1920;
 var FPS = 30;
-var TOTAL_FRAMES = 720; // 24s at 30fps
-var TOTAL_DURATION = 24;
+var TOTAL_DURATION = 14;
+var TOTAL_FRAMES = FPS * TOTAL_DURATION; // 420 frames
+
+var SAFE_TOP = 213;
+var SAFE_BOTTOM = 430;
 
 var FILM_SCANS_DIR = '/Volumes/PortableSSD/Exports/film scans';
 var PHOTO_NAMES = [
   'DSC_0149.jpg',
-  'DSC_0150-2.jpg',
+  'DSC_0150.jpg',
+  'DSC_0151.jpg',
   'DSC_0153.jpg',
+  'DSC_0154.jpg',
   'DSC_0157.jpg',
-  'DSC_0162-2.jpg',
+  'DSC_0161.jpg',
+  'DSC_0162.jpg',
   'DSC_0163.jpg',
-  'DSC_0164-2.jpg',
-  'DSC_0167.jpg',
+  'DSC_0164.jpg',
 ];
-
-// Deterministic scatter positions for each polaroid in the pile
-var PILE_TOPS  = [1480,1510,1540,1490,1520,1500,1555,1530];
-var PILE_LEFTS = [52,38,60,44,55,40,62,47];
-var PILE_ROTS  = [3.2,-4.1,1.7,-2.9,4.5,-1.3,3.0,-3.7];
-var PILE_SCALE = 0.52;
-// Legacy alias used in HTML building
-var PILE_POSITIONS = PILE_LEFTS.map(function(x, i) {
-  return { x: x, y: PILE_TOPS[i], rot: PILE_ROTS[i], scale: PILE_SCALE };
-});
-
-// Random rotations for center-screen presentation
-var CENTER_ROTS = [-2.1, 3.4, -4.7, 1.8, -3.2, 4.1, -1.5, 2.9];
 
 function resetOutputDir() {
   rmSync(OUT_DIR, { recursive: true, force: true });
@@ -53,7 +45,7 @@ function processPhotos() {
       console.error('Photo not found: ' + src);
       process.exit(1);
     }
-    var dst = path.join(cropDir, name.replace(/\.(jpg|jpeg)$/i, '_processed.jpg'));
+    var dst = path.join(cropDir, name.replace(/\.jpg$/i, '_processed.jpg'));
     execSync('magick "' + src + '" -shave 500x600 +repage -auto-level -quality 95 "' + dst + '"', { stdio: 'pipe' });
     var buf = readFileSync(dst);
     processed[name] = 'data:image/jpeg;base64,' + buf.toString('base64');
@@ -63,543 +55,451 @@ function processPhotos() {
 }
 
 function buildHTML(imageDataMap) {
-  var n = PHOTO_NAMES.length;
+  var photoCount = PHOTO_NAMES.length;
+  var imgDataJSON = JSON.stringify(PHOTO_NAMES.map(function(name) {
+    return imageDataMap[name];
+  }));
 
-  // Build polaroid elements for center-screen (one per photo)
-  var centerPolaroids = PHOTO_NAMES.map(function(name, i) {
-    return `
-    <div id="cpol-${i}" style="
-      position:absolute;
-      left:50%; top:50%;
-      transform: translate(-50%, -60%) rotate(${CENTER_ROTS[i]}deg) scale(0.9);
-      width:520px; height:640px;
-      background:#fff;
-      border-radius:4px;
-      box-shadow: 0 20px 60px rgba(0,0,0,0.35), 0 4px 12px rgba(0,0,0,0.2);
-      padding: 20px 20px 80px 20px;
-      opacity:0;
-      z-index:60;
-      pointer-events:none;
-    ">
-      <div style="position:relative;width:100%;height:100%;overflow:hidden;background:#fff;">
-        <img src="${imageDataMap[name]}" style="
-          position:absolute;inset:0;width:100%;height:100%;
-          object-fit:cover;
-          filter: brightness(4) contrast(0.3) saturate(0);
-          transition: none;
-        " id="cimg-${i}" />
-        <!-- White developing overlay -->
-        <div id="cdev-${i}" style="
-          position:absolute;inset:0;
-          background:rgba(255,255,255,1);
-          pointer-events:none;
-        "></div>
-      </div>
-      <!-- Bottom strip handwriting text -->
-      <div id="ctext-${i}" style="
-        position:absolute;
-        bottom:0; left:0; right:0; height:80px;
-        display:flex; align-items:center; justify-content:center;
-        font-family: 'Georgia', serif;
-        font-style: italic;
-        font-size: 22px;
-        color: #555;
-        letter-spacing: 0.5px;
-        opacity:0;
-      ">Shot on film ♡</div>
-    </div>`;
-  }).join('\n');
+  // Polaroid layout: 10 polaroids on a cork board
+  // Positions chosen to fill the frame with some overlap, each at a slight angle
+  // Format: { x, y, rot, dropTime } — x/y is top-left of the polaroid frame
+  var polaroids = [
+    { x: 40,   y: 300,  rot: -7,   dropTime: 1.0 },
+    { x: 390,  y: 260,  rot: 5,    dropTime: 1.8 },
+    { x: 720,  y: 320,  rot: -4,   dropTime: 2.6 },
+    { x: 120,  y: 640,  rot: 6,    dropTime: 3.4 },
+    { x: 480,  y: 600,  rot: -8,   dropTime: 4.2 },
+    { x: 30,   y: 960,  rot: 3,    dropTime: 5.0 },
+    { x: 380,  y: 940,  rot: -5,   dropTime: 5.8 },
+    { x: 700,  y: 640,  rot: 4,    dropTime: 6.6 },
+    { x: 200,  y: 1260, rot: -6,   dropTime: 7.4 },
+    { x: 570,  y: 1220, rot: 7,    dropTime: 8.2 },
+  ];
 
-  // Build pile polaroids (smaller, scattered at bottom)
-  var pilePolaroids = PHOTO_NAMES.map(function(name, i) {
-    var pp = PILE_POSITIONS[i];
-    return `
-    <div id="ppol-${i}" style="
-      position:absolute;
-      left:${pp.x}%; top:${pp.y}px;
-      transform: translate(-50%, 0) rotate(${pp.rot}deg) scale(${pp.scale});
-      transform-origin: center center;
-      width:520px; height:640px;
-      background:#fff;
-      border-radius:4px;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.3);
-      padding: 20px 20px 80px 20px;
-      opacity:0;
-      z-index: ${20 + i};
-      pointer-events:none;
-    ">
-      <div style="width:100%;height:100%;overflow:hidden;background:#eee;">
-        <img src="${imageDataMap[name]}" style="
-          width:100%;height:100%;object-fit:cover;
-        " />
-      </div>
-    </div>`;
-  }).join('\n');
-
-  // "How it works" info polaroids (no photo — white card with text)
-  var howItWorksCards = [
-    { id: 'how0', text: '<span style="font-size:38px;">1.</span><br><span style="font-size:30px;">DM me</span><br><span style="font-size:20px;color:#888;">@madebyaidan</span>', rot: -3 },
-    { id: 'how1', text: '<span style="font-size:38px;">2.</span><br><span style="font-size:28px;">We pick a date</span><br><span style="font-size:19px;color:#888;">location + vibe, together</span>', rot: 1 },
-    { id: 'how2', text: '<span style="font-size:38px;">3.</span><br><span style="font-size:27px;">Show up</span><br><span style="font-size:20px;color:#888;">I guide you ✦</span>', rot: -1.5 },
-  ].map(function(c, i) {
-    return `
-    <div id="${c.id}" style="
-      position:absolute;
-      left:${[18, 40, 62][i]}%; top:50%;
-      transform: translate(-50%, -55%) rotate(${c.rot}deg) scale(0);
-      transform-origin: center bottom;
-      width:280px; height:360px;
-      background:#fff;
-      border-radius:4px;
-      box-shadow: 0 16px 40px rgba(0,0,0,0.28);
-      padding: 16px 16px 60px 16px;
-      opacity:0;
-      z-index:70;
-      pointer-events:none;
-      display:flex; flex-direction:column;
-    ">
-      <div style="flex:1;display:flex;align-items:center;justify-content:center;background:#f8f3ec;"></div>
-      <div style="
-        position:absolute;bottom:0;left:0;right:0;height:60px;
-        display:flex;align-items:center;justify-content:center;
-        font-family:'Georgia',serif;font-style:italic;
-        text-align:center;line-height:1.3;padding:4px 8px;
-        color:#333;
-      ">${c.text}</div>
-    </div>`;
-  }).join('\n');
-
-  // Rain polaroids (22-24s)
-  var rainPolaroids = Array.from({length: 10}, function(_, i) {
-    var rainImg = PHOTO_NAMES[i % n];
-    var rainRot = [-4.2, 3.1, -1.8, 4.5, -3.0, 2.2, -4.8, 1.4, -2.6, 3.9][i];
-    var rainLeft = [8, 20, 35, 48, 62, 74, 85, 14, 54, 70][i];
-    return `
-    <div id="rain${i}" style="
-      position:absolute;
-      left:${rainLeft}%; top:-300px;
-      transform: translate(-50%, 0) rotate(${rainRot}deg);
-      transform-origin: center center;
-      width:260px; height:320px;
-      background:#fff;
-      border-radius:4px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.25);
-      padding:14px 14px 50px 14px;
-      opacity:0;
-      z-index:80;
-      pointer-events:none;
-    ">
-      <div style="width:100%;height:100%;overflow:hidden;">
-        <img src="${imageDataMap[rainImg]}" style="width:100%;height:100%;object-fit:cover;" />
-      </div>
-    </div>`;
-  }).join('\n');
+  var pinColors = ['#E53935', '#1E88E5', '#43A047', '#FB8C00', '#8E24AA',
+                   '#E53935', '#43A047', '#1E88E5', '#FB8C00', '#8E24AA'];
 
   return `<!DOCTYPE html>
 <html>
 <head>
 <meta charset="utf-8">
 <style>
+  @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap');
+
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  html, body { margin: 0; padding: 0; overflow: hidden; }
+  html, body { margin: 0; padding: 0; background: #8B6F47; overflow: hidden; }
 
-  @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap');
-
-  /* Wood grain background */
   #root {
     width: ${W}px;
     height: ${H}px;
     position: relative;
     overflow: hidden;
-    background-color: #c8a96e;
+    font-family: 'Caveat', cursive, sans-serif;
+  }
+
+  /* Cork board background */
+  #cork-bg {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 20% 30%, rgba(160,120,60,0.3) 0%, transparent 60%),
+      radial-gradient(ellipse at 80% 70%, rgba(120,80,30,0.3) 0%, transparent 60%),
+      linear-gradient(135deg, #A0845C 0%, #8B6F47 25%, #9C7E52 50%, #85693F 75%, #97764A 100%);
+    opacity: 0;
+    z-index: 0;
+  }
+
+  /* Cork texture dots */
+  #cork-texture {
+    position: absolute;
+    inset: 0;
     background-image:
-      repeating-linear-gradient(
-        92deg,
-        transparent,
-        transparent 2px,
-        rgba(0,0,0,0.04) 2px,
-        rgba(0,0,0,0.04) 4px
-      ),
-      repeating-linear-gradient(
-        178deg,
-        transparent,
-        transparent 8px,
-        rgba(255,255,255,0.03) 8px,
-        rgba(255,255,255,0.03) 16px
-      ),
-      repeating-linear-gradient(
-        1deg,
-        rgba(180,130,70,0.4) 0px,
-        rgba(200,155,90,0.3) 20px,
-        rgba(165,120,60,0.4) 40px,
-        rgba(195,148,82,0.35) 60px,
-        rgba(185,138,72,0.4) 80px
-      );
+      radial-gradient(circle at 15% 25%, rgba(0,0,0,0.06) 1px, transparent 1px),
+      radial-gradient(circle at 45% 65%, rgba(0,0,0,0.04) 1px, transparent 1px),
+      radial-gradient(circle at 75% 35%, rgba(0,0,0,0.05) 1px, transparent 1px),
+      radial-gradient(circle at 85% 85%, rgba(0,0,0,0.04) 1px, transparent 1px),
+      radial-gradient(circle at 35% 95%, rgba(0,0,0,0.06) 1px, transparent 1px);
+    background-size: 12px 12px, 18px 18px, 15px 15px, 20px 20px, 10px 10px;
+    opacity: 0;
+    z-index: 1;
+    pointer-events: none;
   }
 
-  /* Vignette on wood */
+  /* Vignette */
   #vignette {
-    position:absolute;inset:0;z-index:200;pointer-events:none;
-    background: radial-gradient(ellipse at center, transparent 55%, rgba(0,0,0,0.22) 100%);
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at center, transparent 50%, rgba(0,0,0,0.3) 100%);
+    z-index: 2;
+    pointer-events: none;
+    opacity: 0;
   }
 
-  /* Camera flash */
-  #flash {
-    position:absolute;inset:0;z-index:500;pointer-events:none;
-    background:white;
-    opacity:0;
+  /* Header text */
+  #header-text {
+    position: absolute;
+    top: ${SAFE_TOP + 15}px;
+    left: 0;
+    width: ${W}px;
+    text-align: center;
+    z-index: 50;
+    opacity: 0;
+    pointer-events: none;
+  }
+  #header-text h1 {
+    font-family: 'Caveat', cursive;
+    font-size: 68px;
+    font-weight: 700;
+    color: #fff;
+    text-shadow: 2px 3px 10px rgba(0,0,0,0.6);
+    letter-spacing: 6px;
   }
 
-  /* Title layer */
-  #title-layer {
-    position:absolute;
-    top:0;left:0;right:0;bottom:0;
-    z-index:30;
-    display:flex;flex-direction:column;
-    align-items:center;justify-content:center;
-    pointer-events:none;
-    opacity:0;
-  }
-
-  /* CTA polaroid */
-  #cta-pol {
-    position:absolute;
-    left:50%; top:50%;
-    transform: translate(-50%, -52%) scale(0);
+  /* Zoom container for board content */
+  #board-zoom {
+    position: absolute;
+    top: 0; left: 0;
+    width: ${W}px;
+    height: ${H}px;
     transform-origin: center center;
-    width:720px; height:820px;
-    background:#fff;
-    border-radius:6px;
-    box-shadow: 0 30px 80px rgba(0,0,0,0.4);
-    padding: 30px 30px 100px 30px;
-    opacity:0;
-    z-index:65;
-    pointer-events:none;
+    z-index: 10;
   }
 
+  /* Polaroid frame */
+  .polaroid {
+    position: absolute;
+    width: 300px;
+    background: #fff;
+    padding: 14px 14px 52px 14px;
+    box-shadow: 0 6px 30px rgba(0,0,0,0.35), 0 2px 8px rgba(0,0,0,0.2);
+    z-index: 20;
+    opacity: 0;
+    transform-origin: center top;
+  }
+  .polaroid-photo {
+    width: 272px;
+    height: 272px;
+    overflow: hidden;
+    position: relative;
+    background: #e8e4d8;
+  }
+  .polaroid-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  /* White developing overlay */
+  .polaroid-developing {
+    position: absolute;
+    inset: 0;
+    background: #e8e4d8;
+    z-index: 5;
+    opacity: 1;
+  }
+
+  /* Thumbtack */
+  .thumbtack {
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    z-index: 30;
+    opacity: 0;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.45), inset 0 -2px 3px rgba(0,0,0,0.2), inset 0 2px 3px rgba(255,255,255,0.35);
+    transform: translate(-11px, -11px);
+  }
+  .thumbtack::after {
+    content: '';
+    position: absolute;
+    top: 4px;
+    left: 6px;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.4);
+  }
+
+  /* "Free photo shoot" handwritten text overlay */
+  #free-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 60;
+    opacity: 0;
+    pointer-events: none;
+  }
+  #free-text h2 {
+    font-family: 'Caveat', cursive;
+    font-size: 82px;
+    font-weight: 700;
+    color: #fff;
+    text-shadow: 3px 4px 14px rgba(0,0,0,0.7), 0 0 40px rgba(0,0,0,0.3);
+    text-align: center;
+    line-height: 1.15;
+  }
+
+  /* CTA card (polaroid style) */
+  #cta-card {
+    position: absolute;
+    bottom: ${SAFE_BOTTOM + 60}px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 60;
+    opacity: 0;
+    pointer-events: none;
+  }
   #cta-inner {
-    width:100%;height:100%;
-    background: #f8f3ec;
-    display:flex;flex-direction:column;align-items:center;justify-content:center;
-    gap:18px;
+    background: #fff;
+    padding: 18px 18px 58px 18px;
+    box-shadow: 0 10px 50px rgba(0,0,0,0.5);
+    text-align: center;
+    width: 520px;
+  }
+  #cta-photo-strip {
+    width: 484px;
+    height: 180px;
+    background: linear-gradient(135deg, #A0845C, #8B6F47);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  #cta-photo-strip span {
+    font-family: 'Caveat', cursive;
+    font-size: 38px;
+    color: #fff;
+    text-shadow: 1px 2px 6px rgba(0,0,0,0.4);
+  }
+  #cta-handle {
+    font-family: 'Caveat', cursive;
+    font-size: 54px;
+    font-weight: 700;
+    color: #333;
+    margin-top: 10px;
+  }
+  #cta-dm {
+    font-family: 'Caveat', cursive;
+    font-size: 38px;
+    color: #E53935;
+    margin-top: 4px;
   }
 </style>
 </head>
 <body>
 <div id="root">
 
-  <!-- Wood vignette -->
+  <div id="cork-bg"></div>
+  <div id="cork-texture"></div>
   <div id="vignette"></div>
 
-  <!-- Camera flash overlay -->
-  <div id="flash"></div>
+  <!-- Zoom container for all board elements -->
+  <div id="board-zoom">
 
-  <!-- Title layer (0-1.5s) -->
-  <div id="title-layer">
-    <div style="font-size:72px;margin-bottom:10px;">📷</div>
-    <div id="title-text" style="
-      font-family: 'Dancing Script', 'Georgia', cursive;
-      font-size: 56px;
-      font-weight: 700;
-      color: #2a1a08;
-      text-align:center;
-      line-height:1.2;
-      text-shadow: 1px 2px 4px rgba(255,255,255,0.3);
-      max-width:800px;
-      padding:0 40px;
-      opacity:0;
-    ">MANILA FREE PHOTO SHOOT</div>
-    <div id="title-sub" style="
-      margin-top:16px;
-      font-family:'Georgia',serif;font-style:italic;
-      font-size:28px;color:#5a3a18;opacity:0;
-    ">by @madebyaidan</div>
+    <!-- Polaroids -->
+    ${polaroids.map(function(p, i) {
+      return '<div id="polaroid-' + i + '" class="polaroid" style="left:' + p.x + 'px;top:' + p.y + 'px;transform:rotate(' + p.rot + 'deg);">' +
+        '<div class="polaroid-photo">' +
+          '<img id="pimg-' + i + '" src="" alt="Photo ' + (i+1) + '"/>' +
+          '<div id="pdev-' + i + '" class="polaroid-developing"></div>' +
+        '</div>' +
+      '</div>';
+    }).join('\\n    ')}
+
+    <!-- Thumbtacks (positioned at top-center of each polaroid) -->
+    ${polaroids.map(function(p, i) {
+      var pinX = p.x + 150;
+      var pinY = p.y + 2;
+      return '<div id="pin-' + i + '" class="thumbtack" style="left:' + pinX + 'px;top:' + pinY + 'px;background:' + pinColors[i] + ';"></div>';
+    }).join('\\n    ')}
+
   </div>
 
-  <!-- Center-screen developing polaroids -->
-  ${centerPolaroids}
+  <!-- Header -->
+  <div id="header-text">
+    <h1>MANILA 2026</h1>
+  </div>
 
-  <!-- Pile polaroids (bottom of screen) -->
-  ${pilePolaroids}
+  <!-- Free photo shoot overlay -->
+  <div id="free-text">
+    <h2>Free photo<br/>shoot</h2>
+  </div>
 
-  <!-- "How it works" cards -->
-  ${howItWorksCards}
-
-  <!-- CTA big polaroid -->
-  <div id="cta-pol">
+  <!-- CTA card -->
+  <div id="cta-card">
     <div id="cta-inner">
-      <div style="font-size:72px;">📷</div>
-      <div style="
-        font-family:'Dancing Script','Georgia',cursive;
-        font-size:64px;font-weight:700;color:#2a1a08;
-        text-align:center;line-height:1.1;
-      ">@madebyaidan</div>
-      <div style="
-        font-family:'Georgia',serif;font-style:italic;
-        font-size:30px;color:#666;text-align:center;
-      ">DM me on Instagram</div>
-      <div style="
-        margin-top:8px;
-        background:#c8a96e;
-        border-radius:40px;
-        padding:18px 48px;
-        font-family:'Georgia',serif;font-style:italic;
-        font-size:32px;font-weight:bold;color:#fff;
-        letter-spacing:0.5px;
-      ">It's free ♡</div>
+      <div id="cta-photo-strip">
+        <span>Your photo here</span>
+      </div>
+      <div id="cta-handle">@madebyaidan</div>
+      <div id="cta-dm">DM me</div>
     </div>
   </div>
-
-  <!-- Rain polaroids (22-24s) -->
-  ${rainPolaroids}
 
 </div>
 
 <script>
-var FPS = ${FPS};
-var flash = document.getElementById('flash');
-var titleLayer = document.getElementById('title-layer');
-var titleText = document.getElementById('title-text');
-var titleSub = document.getElementById('title-sub');
-var ctaPol = document.getElementById('cta-pol');
+  var W = ${W};
+  var H = ${H};
+  var PHOTO_COUNT = ${photoCount};
+  var IMG_DATA = ${imgDataJSON};
+  var polaroids = ${JSON.stringify(polaroids)};
 
-// ─── helpers ───────────────────────────────────────────────────────
-
-function clamp(v, lo, hi) { return Math.max(lo, Math.min(hi, v)); }
-function lerp(a, b, t) { return a + (b - a) * clamp(t, 0, 1); }
-// ease in-out cubic
-function easeInOut(t) { return t < 0.5 ? 2*t*t : -1+(4-2*t)*t; }
-function easeOut(t) { return 1 - Math.pow(1 - clamp(t, 0, 1), 3); }
-function easeIn(t) { return Math.pow(clamp(t, 0, 1), 2); }
-
-function progress(t, start, end) {
-  return clamp((t - start) / (end - start), 0, 1);
-}
-
-// ─── per-photo timing ─────────────────────────────────────────────
-// Photo i: enter flash at flashT[i], develop from devStart[i] to devEnd[i], toss at tossT[i]
-var PHOTO_COUNT = ${n};
-
-// Photo 0: flash at 1.5s, develop 2.0-3.2s, toss at 3.5s
-// Photos 1-7: each cycle = 1.5s (flash + develop + toss)
-var CYCLE = 1.45; // seconds per photo after the first
-var FIRST_FLASH = 1.5;
-var flashTimes   = [];
-var devStartTimes = [];
-var devEndTimes   = [];
-var tossTimes     = [];
-
-for (var pi = 0; pi < PHOTO_COUNT; pi++) {
-  var base = FIRST_FLASH + pi * CYCLE;
-  flashTimes[pi]    = base;
-  devStartTimes[pi] = base + 0.35;
-  devEndTimes[pi]   = base + 1.45;
-  tossTimes[pi]     = base + 1.55;
-}
-// Last toss ends at ~13.3s → matches spec ~13s
-
-// ─── pile fan-out timing ──────────────────────────────────────────
-var FAN_START = 13.3;
-var FAN_END   = 14.0;
-
-// ─── How it works cards ───────────────────────────────────────────
-var HOW_START = [14.1, 15.0, 15.9];
-var HOW_END   = [14.9, 15.8, 16.7];
-
-// ─── CTA ──────────────────────────────────────────────────────────
-var CTA_START = 18.0;
-var CTA_END   = 19.2;
-
-// ─── Rain ─────────────────────────────────────────────────────────
-var RAIN_COUNT = 10;
-var RAIN_START_BASE = 22.0;
-// Each rain polaroid falls at slightly staggered times
-var rainStartTimes = [22.0,22.1,22.25,22.4,22.55,22.7,22.85,23.0,23.15,23.3];
-var rainEndTimes   = rainStartTimes.map(function(t) { return t + 1.2; });
-// Landing y positions (where they end up)
-var rainLandY = [1300,1400,1250,1450,1350,1300,1420,1360,1200,1480];
-var rainLefts = [8, 20, 35, 48, 62, 74, 85, 14, 54, 70];
-
-// ─── PILE BASE POSITIONS (top px of pile polaroid) ────────────────
-var PILE_TOPS  = [1480,1510,1540,1490,1520,1500,1555,1530];
-var PILE_LEFTS = [52,38,60,44,55,40,62,47];
-var PILE_ROTS  = [3.2,-4.1,1.7,-2.9,4.5,-1.3,3.0,-3.7];
-var PILE_SCALE = 0.52;
-
-// Fan-out offsets (extra displacement during fan phase)
-var FAN_OFFSETS_X = [60,-70,80,-50,55,-65,75,-45];
-var FAN_OFFSETS_Y = [20,-10,30,-5,15,-20,25,-15];
-var FAN_ROTS_EXTRA = [4,-5,3,-4,5,-3,4,-5];
-
-// ─── MAIN APPLY FUNCTION ──────────────────────────────────────────
-window.__applyUpTo = function(t) {
-
-  // ── TITLE (0 – 1.5s) ──────────────────────────────────────────
-  var titleP = progress(t, 0, 0.8);
-  var titleFade = easeOut(titleP);
-  titleLayer.style.opacity = t < 1.5 ? String(titleFade) : '0';
-  titleText.style.opacity = t >= 0.15 ? '1' : '0';
-  titleSub.style.opacity  = t >= 0.6  ? '1' : '0';
-
-  // ── FLASH ─────────────────────────────────────────────────────
-  var flashOpacity = 0;
-  for (var pi = 0; pi < PHOTO_COUNT; pi++) {
-    var ft = flashTimes[pi];
-    var fp = progress(t, ft, ft + 0.25);
-    // Flash: fast burst → bright → fade
-    var fv = fp < 0.3
-      ? easeIn(fp / 0.3)                          // rise
-      : easeOut(1 - (fp - 0.3) / 0.7);            // fall
-    if (fv > flashOpacity) flashOpacity = fv;
-  }
-  flash.style.opacity = String(flashOpacity);
-
-  // ── CENTER POLAROIDS ──────────────────────────────────────────
-  for (var pi = 0; pi < PHOTO_COUNT; pi++) {
-    var cpol  = document.getElementById('cpol-' + pi);
-    var cimg  = document.getElementById('cimg-' + pi);
-    var cdev  = document.getElementById('cdev-' + pi);
-    var ctxt  = document.getElementById('ctext-' + pi);
-    if (!cpol) continue;
-
-    var ds = devStartTimes[pi];
-    var de = devEndTimes[pi];
-    var tt = tossTimes[pi];
-    var ft = flashTimes[pi];
-
-    // Visibility window: from flash+0.1 until toss+0.4
-    var visible = t >= ft + 0.08 && t < tt + 0.4;
-
-    if (!visible) {
-      cpol.style.opacity = '0';
-      continue;
-    }
-    cpol.style.opacity = '1';
-
-    // ENTRY: slide from top (fast)
-    var entryP = progress(t, ft + 0.08, ds);
-    var entryEase = easeOut(entryP);
-    var entryY = lerp(-350, 0, entryEase);
-
-    // TOSS: rotate + scale + fly to pile
-    var tossP = progress(t, tt, tt + 0.4);
-    var tossEase = easeInOut(tossP);
-
-    // Toss destination (pile position converted to center-relative offset)
-    var pileCenterX = (PILE_LEFTS[pi] / 100) * ${W} - ${W} / 2;
-    var pileCenterY = PILE_TOPS[pi] - ${H} / 2;
-
-    var posX = lerp(0, pileCenterX, tossEase);
-    var posY = lerp(entryY, pileCenterY, tossEase);
-    var scaleVal = lerp(0.9, PILE_SCALE, tossEase);
-    var rotVal = lerp(${CENTER_ROTS[0]}, PILE_ROTS[0], tossEase);
-    // Use correct per-photo values
-    var centerRots = [${CENTER_ROTS.join(',')}];
-    var pileRotsFull = [${PILE_ROTS.join(',')}];
-    rotVal = lerp(centerRots[pi], pileRotsFull[pi], tossEase);
-
-    // During entry phase use entry Y
-    if (tossP === 0) posY = entryY;
-
-    cpol.style.transform =
-      'translate(calc(-50% + ' + posX + 'px), calc(-60% + ' + posY + 'px)) ' +
-      'rotate(' + rotVal + 'deg) scale(' + scaleVal + ')';
-
-    // DEVELOP: white overlay fades out, image filter transitions
-    var devP = easeOut(progress(t, ds, de));
-    // Image filter: brightness fades from 4→1, contrast 0.3→1, saturation 0→1
-    var brightness = lerp(4, 1, devP);
-    var contrast   = lerp(0.3, 1, devP);
-    var saturation = lerp(0, 1, devP);
-    cimg.style.filter =
-      'brightness(' + brightness + ') contrast(' + contrast + ') saturate(' + saturation + ')';
-    // White overlay fades from 1→0 in first half of develop
-    var overlayP = easeOut(progress(t, ds, ds + 0.6));
-    cdev.style.opacity = String(1 - overlayP);
-    // Text appears near end of develop
-    ctxt.style.opacity = String(easeOut(progress(t, de - 0.3, de + 0.2)));
+  // Inject images
+  for (var i = 0; i < PHOTO_COUNT; i++) {
+    var img = document.getElementById('pimg-' + i);
+    if (img) img.src = IMG_DATA[i];
   }
 
-  // ── PILE POLAROIDS ────────────────────────────────────────────
-  for (var pi = 0; pi < PHOTO_COUNT; pi++) {
-    var ppol = document.getElementById('ppol-' + pi);
-    if (!ppol) continue;
+  // ---- Easing ----
+  function clamp(v, lo, hi) { return Math.max(lo, Math.min(hi, v)); }
+  function lerp(a, b, t) { return a + (b - a) * clamp(t, 0, 1); }
+  function prog(t, start, end) { return clamp((t - start) / (end - start), 0, 1); }
+  function easeOut(t) { return 1 - Math.pow(1 - t, 3); }
+  function easeIn(t) { return Math.pow(t, 3); }
+  function easeInOut(t) { return t < 0.5 ? 4*t*t*t : 1 - Math.pow(-2*t+2,3)/2; }
 
-    var tt = tossTimes[pi];
-    // Show once toss is nearly complete
-    var showP = progress(t, tt + 0.35, tt + 0.55);
-    if (showP <= 0) {
-      ppol.style.opacity = '0';
-      continue;
+  function easeOutBounce(t) {
+    if (t < 1 / 2.75) return 7.5625 * t * t;
+    if (t < 2 / 2.75) { t -= 1.5 / 2.75; return 7.5625 * t * t + 0.75; }
+    if (t < 2.5 / 2.75) { t -= 2.25 / 2.75; return 7.5625 * t * t + 0.9375; }
+    t -= 2.625 / 2.75; return 7.5625 * t * t + 0.984375;
+  }
+
+  // ---- Timeline ----
+  // 0-1s: Cork board fades in, header appears
+  // 1-9s: Polaroids drop in one at a time (~0.8s each), develop over 1.5s
+  // 9-11s: Zoom out to show all
+  // 11-12s: "Free photo shoot" text
+  // 12-14s: CTA card
+
+  window.__applyUpTo = function(t) {
+
+    // ---- Cork board & vignette (0-1s) ----
+    var boardFade = easeOut(prog(t, 0, 1.0));
+    document.getElementById('cork-bg').style.opacity = String(boardFade);
+    document.getElementById('cork-texture').style.opacity = String(boardFade);
+    document.getElementById('vignette').style.opacity = String(boardFade);
+
+    // ---- Header (0.3-1s in, fades out 9-9.5s) ----
+    var headerEl = document.getElementById('header-text');
+    if (t < 0.3) {
+      headerEl.style.opacity = '0';
+    } else if (t < 1.0) {
+      headerEl.style.opacity = String(easeOut(prog(t, 0.3, 1.0)));
+    } else if (t < 9.0) {
+      headerEl.style.opacity = '1';
+    } else if (t < 9.5) {
+      headerEl.style.opacity = String(1 - easeIn(prog(t, 9.0, 9.5)));
+    } else {
+      headerEl.style.opacity = '0';
     }
 
-    var fanP = easeOut(progress(t, FAN_START, FAN_END));
-    var dx = FAN_OFFSETS_X[pi] * fanP;
-    var dy = FAN_OFFSETS_Y[pi] * fanP;
-    var dr = FAN_ROTS_EXTRA[pi] * fanP;
-    var baseRot = PILE_ROTS[pi] + dr;
+    // ---- Polaroids (1-9s) ----
+    for (var i = 0; i < polaroids.length; i++) {
+      var p = polaroids[i];
+      var pol = document.getElementById('polaroid-' + i);
+      var dev = document.getElementById('pdev-' + i);
+      var pin = document.getElementById('pin-' + i);
+      if (!pol || !dev || !pin) continue;
 
-    ppol.style.opacity = String(easeOut(showP));
-    ppol.style.transform =
-      'translate(calc(-50% + ' + dx + 'px), ' + dy + 'px) ' +
-      'rotate(' + baseRot + 'deg) scale(' + PILE_SCALE + ')';
-  }
+      var dropStart = p.dropTime;
+      var dropDur = 0.45;
+      var dropEnd = dropStart + dropDur;
+      var devStart = dropStart + 0.25;
+      var devEnd = devStart + 1.5;
 
-  // ── HOW IT WORKS CARDS ────────────────────────────────────────
-  var howIds = ['how0','how1','how2'];
-  for (var hi = 0; hi < 3; hi++) {
-    var hel = document.getElementById(howIds[hi]);
-    if (!hel) continue;
-    var hs = HOW_START[hi];
-    var he = HOW_END[hi];
-    var hp = easeOut(progress(t, hs, hs + 0.5));
-    var hOut = progress(t, 17.8, 18.2);
+      if (t < dropStart) {
+        pol.style.opacity = '0';
+        pol.style.transform = 'rotate(' + p.rot + 'deg) translateY(-150px)';
+        pin.style.opacity = '0';
+        dev.style.opacity = '1';
+      } else if (t < dropEnd) {
+        var dp = prog(t, dropStart, dropEnd);
+        var bounced = easeOutBounce(dp);
+        pol.style.opacity = String(easeOut(dp));
+        var yOff = lerp(-150, 0, bounced);
+        pol.style.transform = 'rotate(' + p.rot + 'deg) translateY(' + yOff + 'px)';
+        pin.style.opacity = String(easeOut(prog(t, dropStart + 0.25, dropEnd)));
+        dev.style.opacity = '1';
+      } else {
+        pol.style.opacity = '1';
+        pol.style.transform = 'rotate(' + p.rot + 'deg) translateY(0px)';
+        pin.style.opacity = '1';
 
-    var scaleH = lerp(0, 1, hp) * lerp(1, 0, easeIn(hOut));
-    var opH = clamp(hp, 0, 1) * (1 - easeIn(hOut));
-
-    hel.style.opacity = String(opH);
-    hel.style.transform =
-      'translate(-50%, -55%) rotate(' + [-3,1,-1.5][hi] + 'deg) scale(' + scaleH + ')';
-  }
-
-  // ── CTA POLAROID ──────────────────────────────────────────────
-  var ctaP = easeOut(progress(t, CTA_START, CTA_END));
-  ctaPol.style.opacity = String(clamp(ctaP, 0, 1));
-  ctaPol.style.transform =
-    'translate(-50%, -52%) scale(' + lerp(0, 1, ctaP) + ')';
-
-  // ── RAIN POLAROIDS ────────────────────────────────────────────
-  for (var ri = 0; ri < RAIN_COUNT; ri++) {
-    var rel = document.getElementById('rain' + ri);
-    if (!rel) continue;
-    var rs = rainStartTimes[ri];
-    var re = rainEndTimes[ri];
-    var rp = easeIn(progress(t, rs, re));
-
-    if (t < rs) {
-      rel.style.opacity = '0';
-      rel.style.transform =
-        'translate(-50%, 0) rotate(' + [-4.2, 3.1,-1.8, 4.5,-3.0, 2.2,-4.8, 1.4,-2.6, 3.9][ri] + 'deg)';
-      continue;
+        // Developing: overlay fades out
+        if (t < devEnd) {
+          var devP = easeInOut(prog(t, devStart, devEnd));
+          dev.style.opacity = String(1 - devP);
+        } else {
+          dev.style.opacity = '0';
+        }
+      }
     }
-    var startY = -300;
-    var endY = rainLandY[ri] - 0; // already in px from top
-    var curY = lerp(startY, endY, rp);
-    var rainRots = [-4.2, 3.1,-1.8, 4.5,-3.0, 2.2,-4.8, 1.4,-2.6, 3.9];
-    rel.style.opacity = String(clamp(rp * 3, 0, 1));
-    rel.style.transform =
-      'translate(-50%, 0) rotate(' + rainRots[ri] + 'deg)';
-    rel.style.top = curY + 'px';
-  }
-};
 
-// Freeze animations when capturing frames
-if (location.search.includes('capture=1')) {
-  var s = document.createElement('style');
-  s.textContent = '*, *::before, *::after { transition-duration: 0s !important; animation-duration: 0.001s !important; }';
-  document.head.appendChild(s);
-}
+    // ---- Zoom out (9-11s) ----
+    var boardZoom = document.getElementById('board-zoom');
+    if (t < 9.0) {
+      boardZoom.style.transform = 'scale(1) translate(0px, 0px)';
+    } else if (t < 11.0) {
+      var zp = easeInOut(prog(t, 9.0, 11.0));
+      var sc = lerp(1.0, 0.78, zp);
+      var ty = lerp(0, 50, zp);
+      boardZoom.style.transform = 'scale(' + sc + ') translate(0px, ' + ty + 'px)';
+    } else {
+      boardZoom.style.transform = 'scale(0.78) translate(0px, 50px)';
+    }
+
+    // ---- Dim board for overlays (11+) ----
+    if (t >= 10.5) {
+      var dimP = easeOut(prog(t, 10.5, 11.5));
+      boardZoom.style.opacity = String(lerp(1.0, 0.3, dimP));
+    } else {
+      boardZoom.style.opacity = '1';
+    }
+
+    // ---- "Free photo shoot" (11-12s) ----
+    var freeEl = document.getElementById('free-text');
+    if (t < 11.0) {
+      freeEl.style.opacity = '0';
+      freeEl.style.transform = 'translate(-50%, -50%) scale(0.8)';
+    } else if (t < 11.5) {
+      var fp = easeOut(prog(t, 11.0, 11.5));
+      freeEl.style.opacity = String(fp);
+      freeEl.style.transform = 'translate(-50%, -50%) scale(' + lerp(0.8, 1, fp) + ')';
+    } else if (t < 12.0) {
+      freeEl.style.opacity = '1';
+      freeEl.style.transform = 'translate(-50%, -50%) scale(1)';
+    } else if (t < 12.3) {
+      var fout = easeIn(prog(t, 12.0, 12.3));
+      freeEl.style.opacity = String(1 - fout);
+      freeEl.style.transform = 'translate(-50%, -50%) scale(' + lerp(1, 1.1, fout) + ')';
+    } else {
+      freeEl.style.opacity = '0';
+    }
+
+    // ---- CTA card (12-14s) ----
+    var ctaEl = document.getElementById('cta-card');
+    if (t < 12.0) {
+      ctaEl.style.opacity = '0';
+      ctaEl.style.transform = 'translateX(-50%) translateY(50px)';
+    } else if (t < 12.8) {
+      var cp = easeOut(prog(t, 12.0, 12.8));
+      ctaEl.style.opacity = String(cp);
+      ctaEl.style.transform = 'translateX(-50%) translateY(' + lerp(50, 0, cp) + 'px)';
+    } else {
+      ctaEl.style.opacity = '1';
+      ctaEl.style.transform = 'translateX(-50%) translateY(0px)';
+    }
+
+  };
+
+  if (location.search.includes('capture=1')) {
+    var s = document.createElement('style');
+    s.textContent = '*, *::before, *::after { transition-duration: 0s !important; animation-duration: 0.001s !important; }';
+    document.head.appendChild(s);
+  }
 </script>
 </body>
 </html>`;
@@ -622,7 +522,7 @@ async function main() {
   var browser = await chromium.launch();
   var page = await browser.newPage({ viewport: { width: W, height: H } });
   await page.goto('file://' + htmlPath + '?capture=1', { waitUntil: 'load' });
-  await page.waitForTimeout(800);
+  await page.waitForTimeout(600);
 
   console.log('Capturing ' + TOTAL_FRAMES + ' frames...');
 
@@ -632,7 +532,7 @@ async function main() {
     await page.waitForTimeout(2);
     var padded = String(frame).padStart(5, '0');
     await page.screenshot({ path: path.join(framesDir, 'frame_' + padded + '.png'), type: 'png' });
-    if (frame % (FPS * 4) === 0) {
+    if (frame % (FPS * 2) === 0) {
       console.log('  ' + t.toFixed(1) + 's / ' + TOTAL_DURATION + 's');
     }
   }
@@ -640,7 +540,7 @@ async function main() {
   await browser.close();
   console.log('All frames captured');
 
-  var outputMp4 = path.join(OUT_DIR, 'manila-polaroid-v61a.mp4');
+  var outputMp4 = path.join(OUT_DIR, 'reel-61a.mp4');
   execSync(
     'ffmpeg -y -framerate ' + FPS + ' -i "' + path.join(framesDir, 'frame_%05d.png') + '" ' +
     '-c:v libx264 -preset slow -crf 18 -pix_fmt yuv420p -r ' + FPS + ' -an "' + outputMp4 + '"',
@@ -651,11 +551,11 @@ async function main() {
 
   var reelsDir = path.join(__dirname, 'reels');
   if (!existsSync(reelsDir)) mkdirSync(reelsDir, { recursive: true });
-  execSync('cp "' + outputMp4 + '" "' + path.join(reelsDir, 'manila-polaroid-v61a.mp4') + '"');
+  execSync('cp "' + outputMp4 + '" "' + path.join(reelsDir, 'reel-61a.mp4') + '"');
 
   var sz = statSync(outputMp4);
   console.log('Final: ' + (sz.size / (1024 * 1024)).toFixed(1) + ' MB');
-  console.log('Copied to reels/manila-polaroid-v61a.mp4');
+  console.log('Copied to reels/reel-61a.mp4');
   console.log('=== Done ===');
 }
 
