@@ -47,7 +47,7 @@ function prepPhotos() {
       process.exit(1);
     }
     var dst = path.join(cropDir, f.replace('.jpg', '_processed.jpg'));
-    execSync('magick "' + src + '" -crop 94%x97%+3%+1.5% +repage -auto-level -quality 95 "' + dst + '"', { stdio: 'pipe' });
+    execSync('magick "' + src + '" -shave 500x600 +repage -auto-level -quality 95 "' + dst + '"', { stdio: 'pipe' });
     processed.push(dst);
     console.log('  Processed: ' + f.replace('.jpg', ''));
   }
