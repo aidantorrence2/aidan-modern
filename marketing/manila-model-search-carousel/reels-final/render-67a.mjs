@@ -17,12 +17,9 @@ var FILM_SCANS_DIR = '/Volumes/PortableSSD/Exports/film scans';
 var PHOTO_NAMES = [
   'DSC_0718.jpg',
   'DSC_0723.jpg',
-  'DSC_0724.jpg',
-  'DSC_0725.jpg',
   'DSC_0726.jpg',
   'DSC_0728.jpg',
   'DSC_0732.jpg',
-  'DSC_0737.jpg',
   'DSC_0739.jpg',
   'DSC_0740.jpg',
 ];
