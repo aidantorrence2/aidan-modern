@@ -250,6 +250,17 @@
   - Concepts are explicitly authored one-by-one (not permutation mixing), each with distinct hook copy and assigned visual treatment.
   - Renderer currently uses 10 layout families (`hero`, `glass`, `proof`, `checklist`, `split`, `chat`, `magazine`, `urgency`, `timeline`, `sticky`) to keep feed variety high while preserving readability.
 
+## Antipolo CPC Story Ads V5 (Quality + Copy Upgrade)
+- Source folder: `marketing/cpc-carousel-ads`
+- Render command:
+  - `node marketing/cpc-carousel-ads/render-antipolo-low-cpc-v5.mjs`
+- Output folder:
+  - `marketing/cpc-carousel-ads/output/antipolo-low-cpc-v5`
+- Notes:
+  - V5 keeps the 100-concept structure but improves conversion-oriented copy quality (cleaner hooks, clearer offer language, less low-trust phrasing).
+  - Typography was upgraded to use `Oswald` as the display face for stronger headline legibility.
+  - Renderer now uses `deviceScaleFactor: 2` for crisper final PNG output.
+
 ## Manila Model Search Carousel V9 (Larger Manila Label)
 - Source folder: `marketing/manila-model-search-carousel`
 - Render command:
