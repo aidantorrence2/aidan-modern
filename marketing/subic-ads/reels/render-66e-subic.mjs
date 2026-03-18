@@ -12,6 +12,7 @@ var H = 1920;
 var FPS = 30;
 
 var FILM_SCANS_DIR = '/Volumes/PortableSSD/Exports/film scans';
+var LOCAL_PHOTOS_DIR = path.join(__dirname, '..', '..', '..', 'public', 'images', 'large');
 var PHOTO_NAMES = [
   'DSC_0943.jpg',
   'DSC_0945.jpg',
@@ -21,6 +22,13 @@ var PHOTO_NAMES = [
   'DSC_0962.jpg',
   'DSC_0967.jpg',
   'DSC_0977.jpg',
+];
+
+// Local portfolio photos used when SSD is not mounted and cache is unavailable
+var LOCAL_PHOTO_NAMES = [
+  '000001.jpg', '000002.jpg', '000003.jpg',
+  '000004.jpg', '000007.jpg', '000008.jpg',
+  '000009.jpg', '000013.jpg',
 ];
 
 var TOTAL_FRAMES = 540; // 18s at 30fps
@@ -35,6 +43,26 @@ function processPhotos() {
   // Use cached processed photos from original 66a output
   var cacheDir = '/Users/aidantorrence/Documents/aidan-modern/marketing/manila-model-search-carousel/reels-final/output-66a/tmp-photos';
   var processed = {};
+
+  // Check if cache or SSD is available; otherwise use local portfolio photos
+  var useLocal = !existsSync(cacheDir) && !existsSync(FILM_SCANS_DIR);
+  if (useLocal) {
+    console.log('  Cache and SSD not available, using local portfolio photos');
+    for (var i = 0; i < PHOTO_NAMES.length; i++) {
+      var name = PHOTO_NAMES[i];
+      var localName = LOCAL_PHOTO_NAMES[i];
+      var src = path.join(LOCAL_PHOTOS_DIR, localName);
+      if (!existsSync(src)) {
+        console.error('Local photo not found: ' + src);
+        process.exit(1);
+      }
+      var buf = readFileSync(src);
+      processed[name] = 'data:image/jpeg;base64,' + buf.toString('base64');
+      console.log('  Loaded local: ' + localName + ' (' + (buf.length / 1024).toFixed(0) + ' KB)');
+    }
+    return processed;
+  }
+
   for (var name of PHOTO_NAMES) {
     var cached = path.join(cacheDir, name.replace(/\.jpg$/i, '_processed.jpg'));
     if (existsSync(cached)) {
