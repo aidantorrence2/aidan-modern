@@ -22,7 +22,7 @@ const LANDSCAPE_FILES = new Set([
   'DSC_0861-2.jpg','DSC_0988.jpg'
 ])
 
-const allFiles = fs.readdirSync(IMG_DIR).filter(f => f.endsWith('.jpg'))
+const allFiles = fs.readdirSync(IMG_DIR).filter(f => f.endsWith('.jpg') && !f.startsWith('._'))
 const portraitPhotos = allFiles.filter(f => !LANDSCAPE_FILES.has(f)).map(f => img(f))
 const landscapePhotos = allFiles.filter(f => LANDSCAPE_FILES.has(f)).map(f => img(f))
 
