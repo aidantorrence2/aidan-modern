@@ -19,6 +19,11 @@ var SAFE_BOTTOM = 430;
 // Film scan source folder
 var FILM_SCANS_DIR = '/Volumes/PortableSSD/Exports/film scans';
 
+// Cached processed photos (already cropped + auto-leveled) from a prior render
+var CACHED_PHOTOS_DIR = '/Users/aidantorrence/Documents/aidan-modern/marketing/manila-model-search-carousel/reels-final/output-36b/tmp-photos';
+// Local cache extracted from HTML base64
+var LOCAL_CACHE_DIR = path.join(__dirname, 'cached-photos-36b');
+
 // Film scan filenames (same as 36a)
 var PHOTO_NAMES = [
   'DSC_0898.jpg',
@@ -470,14 +475,27 @@ async function main() {
   var PROOF_PHOTOS = [];
   for (var name of PHOTO_NAMES) {
     var src = path.join(FILM_SCANS_DIR, name);
-    if (!existsSync(src)) {
-      console.error('Photo not found: ' + src);
+    var cachedProcessed = path.join(CACHED_PHOTOS_DIR, name.replace('.jpg', '_processed.jpg'));
+    var outFile = path.join(tmpPhotosDir, name.replace('.jpg', '_processed.jpg'));
+
+    if (existsSync(src)) {
+      // Process from original film scan
+      execSync('magick "' + src + '" -shave 500x600 +repage -auto-level -quality 95 "' + outFile + '"');
+      console.log('  Processed from scan: ' + name);
+    } else if (existsSync(cachedProcessed)) {
+      // Use cached processed version
+      execSync('cp "' + cachedProcessed + '" "' + outFile + '"');
+      console.log('  Using cached: ' + name);
+    } else if (existsSync(path.join(LOCAL_CACHE_DIR, name.replace('.jpg', '_processed.jpg')))) {
+      // Use local extracted cache
+      var localCached = path.join(LOCAL_CACHE_DIR, name.replace('.jpg', '_processed.jpg'));
+      execSync('cp "' + localCached + '" "' + outFile + '"');
+      console.log('  Using local cache: ' + name);
+    } else {
+      console.error('Photo not found (neither SSD nor cache): ' + src);
       process.exit(1);
     }
-    var outFile = path.join(tmpPhotosDir, name.replace('.jpg', '_processed.jpg'));
-    execSync('magick "' + src + '" -shave 500x600 +repage -auto-level -quality 95 "' + outFile + '"');
     PROOF_PHOTOS.push(outFile);
-    console.log('  Processed: ' + name);
   }
 
   // Load processed photos as base64
