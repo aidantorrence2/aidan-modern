@@ -48,7 +48,7 @@ const landscapePhotos = [
 ]
 
 // Variants that have landscape-oriented image containers
-const LANDSCAPE_VARIANTS = new Set([0, 1, 2, 9, 10, 19, 23, 29])
+const LANDSCAPE_VARIANTS = new Set([0, 1, 2, 6, 9, 10, 13, 19, 23, 29])
 
 // macOS system fonts that render perfectly in Playwright
 const SERIF = "Georgia, 'Times New Roman', serif"
@@ -160,7 +160,7 @@ function makeSlide(city, p, p2, p3, variant) {
         <!-- Grid of photos -->
         <div style="position:absolute;top:300px;left:50px;right:50px;display:grid;grid-template-columns:repeat(3,1fr);gap:12px;">
           ${[p,p2,p3,p,p2,p3,p,p2,p3].map((ph,i) => `
-            <div style="position:relative;height:300px;overflow:hidden;">
+            <div style="position:relative;height:420px;overflow:hidden;">
               <img src="${ph}" style="width:100%;height:100%;object-fit:cover;filter:contrast(1.1);"/>
               <div style="position:absolute;top:4px;left:6px;font-family:${MONO};font-size:14px;color:rgba(255,102,0,0.8);">${i+32}A</div>
               ${i===1||i===5||i===7 ? `<div style="position:absolute;inset:8px;border:4px solid #E63946;border-radius:50%;"></div>` : ''}
@@ -498,10 +498,10 @@ function makeSlide(city, p, p2, p3, variant) {
         </div>
         <div style="position:absolute;top:80px;right:80px;font-family:${MONO};font-size:22px;color:rgba(200,100,100,0.4);">01/08</div>
         <!-- Photo developing -->
-        <div style="position:absolute;top:500px;left:100px;right:100px;height:800px;border:2px solid rgba(180,30,30,0.2);overflow:hidden;">
+        <div style="position:absolute;top:460px;left:140px;right:140px;height:1000px;border:2px solid rgba(180,30,30,0.2);overflow:hidden;">
           <img src="${p}" style="width:100%;height:100%;object-fit:cover;filter:sepia(0.3) contrast(1.1) brightness(0.85);"/>
         </div>
-        <div style="position:absolute;top:480px;left:50%;transform:translateX(-50%);width:60px;height:40px;background:linear-gradient(180deg,#666,#444);border-radius:4px 4px 0 0;box-shadow:0 2px 6px rgba(0,0,0,0.4);"></div>
+        <div style="position:absolute;top:440px;left:50%;transform:translateX(-50%);width:60px;height:40px;background:linear-gradient(180deg,#666,#444);border-radius:4px 4px 0 0;box-shadow:0 2px 6px rgba(0,0,0,0.4);"></div>
       </div>`
 
     // 16: MARQUEE / BROADWAY
@@ -547,11 +547,11 @@ function makeSlide(city, p, p2, p3, variant) {
           <div style="font-family:${MONO};font-size:22px;color:rgba(0,0,0,0.5);margin-top:16px;">${CTA}<span style="display:inline-block;width:4px;height:24px;background:#111;margin-left:4px;vertical-align:bottom;"></span></div>
         </div>
         <!-- Photo taped on -->
-        <div style="position:absolute;top:700px;left:120px;right:120px;height:800px;overflow:hidden;box-shadow:0 4px 16px rgba(0,0,0,0.1);transform:rotate(-1deg);">
+        <div style="position:absolute;top:620px;left:160px;right:160px;height:1000px;overflow:hidden;box-shadow:0 4px 16px rgba(0,0,0,0.1);transform:rotate(-1deg);">
           <img src="${p}" style="width:100%;height:100%;object-fit:cover;"/>
         </div>
-        <div style="position:absolute;top:688px;left:160px;width:100px;height:28px;background:rgba(255,230,150,0.6);transform:rotate(-5deg);"></div>
-        <div style="position:absolute;top:688px;right:160px;width:100px;height:28px;background:rgba(255,230,150,0.6);transform:rotate(3deg);"></div>
+        <div style="position:absolute;top:608px;left:200px;width:100px;height:28px;background:rgba(255,230,150,0.6);transform:rotate(-5deg);"></div>
+        <div style="position:absolute;top:608px;right:200px;width:100px;height:28px;background:rgba(255,230,150,0.6);transform:rotate(3deg);"></div>
       </div>`
 
     // 18: CASSETTE TAPE
