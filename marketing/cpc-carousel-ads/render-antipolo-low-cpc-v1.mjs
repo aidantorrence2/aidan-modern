@@ -4,7 +4,8 @@ import path from 'path'
 import fs from 'fs'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
-const OUT = path.join(__dirname, 'output', 'antipolo-low-cpc-v1')
+const OUT_SLUG = process.env.CPC_OUT_SLUG || 'antipolo-low-cpc-v1'
+const OUT = path.join(__dirname, 'output', OUT_SLUG)
 const IMG_DIR = '/Users/aidantorrence/Documents/aidan-modern/public/images/large'
 
 const CITY = 'Antipolo'
@@ -166,9 +167,9 @@ const ads = [
       `,
       `
         ${topRail(CITY_UPPER, 'NO CATCH', '#ffd66b')}
-        <div style="position:absolute;left:48px;right:48px;bottom:250px;z-index:5;background:rgba(10,10,10,0.88);backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,0.12);border-radius:34px;padding:48px 42px 46px;">
+          <div style="position:absolute;left:48px;right:48px;bottom:250px;z-index:5;background:rgba(10,10,10,0.88);backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,0.12);border-radius:34px;padding:48px 42px 46px;">
           <div style="font-family:${FONT_DISPLAY};font-size:82px;font-weight:900;line-height:0.95;letter-spacing:-2px;color:white;">FREE MEANS FREE.</div>
-          <div style="font-family:${FONT_SANS};font-size:30px;line-height:1.35;color:rgba(255,255,255,0.78);margin-top:16px;">If the offer is not obvious, CPC gets worse. So here it is:</div>
+          <div style="font-family:${FONT_SANS};font-size:30px;line-height:1.35;color:rgba(255,255,255,0.78);margin-top:16px;">Here is exactly what you get from the free session:</div>
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px 22px;margin-top:28px;">
             ${[
               '10+ edited photos',
@@ -197,7 +198,7 @@ const ads = [
         ${topRail('RECENT WORK', `${CITY_UPPER} FREE SHOOT`, '#ffcf40')}
         <div style="position:absolute;top:230px;left:0;right:0;text-align:center;z-index:5;">
           <div style="font-family:${FONT_SERIF};font-size:86px;font-style:italic;font-weight:700;color:white;${SHADOW}">This is the look.</div>
-          <div style="font-family:${FONT_SANS};font-size:30px;color:rgba(255,255,255,0.8);margin-top:10px;">Run proof, not just pretty type.</div>
+          <div style="font-family:${FONT_SANS};font-size:30px;color:rgba(255,255,255,0.8);margin-top:10px;">Recent portraits from real sessions.</div>
         </div>
         ${polaroid(photos.proofA, 90, 430, -4)}
         ${polaroid(photos.proofB, 585, 455, 3)}
@@ -224,7 +225,7 @@ const ads = [
         ${topRail(CITY_UPPER, 'SUPER SIMPLE', '#74f0d5')}
         <div style="position:absolute;left:58px;right:58px;top:260px;z-index:5;">
           <div style="font-family:${FONT_DISPLAY};font-size:96px;font-weight:900;line-height:0.92;letter-spacing:-2px;color:white;${SHADOW}">DM. PLAN. SHOOT.</div>
-          <div style="font-family:${FONT_SANS};font-size:32px;line-height:1.35;color:rgba(255,255,255,0.84);margin-top:18px;max-width:760px;">Low CPC comes from clarity. This is the whole process.</div>
+          <div style="font-family:${FONT_SANS};font-size:32px;line-height:1.35;color:rgba(255,255,255,0.84);margin-top:18px;max-width:760px;">Simple process. No long forms. No awkward guesswork.</div>
         </div>
         <div style="position:absolute;left:58px;right:58px;top:650px;display:flex;flex-direction:column;gap:24px;z-index:5;">
           ${[
