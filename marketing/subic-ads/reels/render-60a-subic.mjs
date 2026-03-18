@@ -18,13 +18,24 @@ var PHOTO_NAMES = [
   'DSC_0674.jpg',
   'DSC_0675.jpg',
   'DSC_0676.jpg',
-  'DSC_0677.jpg',
   'DSC_0678.jpg',
   'DSC_0679.jpg',
   'DSC_0680.jpg',
   'DSC_0682.jpg',
-  'DSC_0684.jpg',
   'DSC_0685.jpg',
+];
+
+// Portfolio photo fallbacks when the SSD is not mounted
+var PORTFOLIO_DIR = path.resolve(__dirname, '../../../public/images/large');
+var PORTFOLIO_FALLBACKS = [
+  'manila-gallery-garden-001.jpg',
+  'manila-gallery-canal-001.jpg',
+  'manila-gallery-ivy-001.jpg',
+  'manila-gallery-night-001.jpg',
+  'manila-gallery-park-001.jpg',
+  'manila-gallery-rocks-001.jpg',
+  'manila-gallery-street-001.jpg',
+  'manila-gallery-urban-001.jpg',
 ];
 
 var TOTAL_DURATION = 15;
@@ -39,14 +50,29 @@ function processPhotos() {
   var cropDir = path.join(OUT_DIR, 'tmp-photos');
   mkdirSync(cropDir, { recursive: true });
   var processed = {};
-  for (var name of PHOTO_NAMES) {
-    var src = path.join(FILM_SCANS_DIR, name);
-    if (!existsSync(src)) {
-      console.error('Photo not found: ' + src);
-      process.exit(1);
-    }
+  var useFallback = !existsSync(FILM_SCANS_DIR);
+  if (useFallback) {
+    console.log('  SSD not mounted, using portfolio fallback photos');
+  }
+  for (var i = 0; i < PHOTO_NAMES.length; i++) {
+    var name = PHOTO_NAMES[i];
     var dst = path.join(cropDir, name.replace(/\.jpg$/i, '_processed.jpg'));
-    execSync('magick "' + src + '" -shave 500x600 +repage -auto-level -quality 95 "' + dst + '"', { stdio: 'pipe' });
+    if (useFallback) {
+      var fallbackName = PORTFOLIO_FALLBACKS[i];
+      var fallbackSrc = path.join(PORTFOLIO_DIR, fallbackName);
+      if (!existsSync(fallbackSrc)) {
+        console.error('Fallback photo not found: ' + fallbackSrc);
+        process.exit(1);
+      }
+      execSync('cp "' + fallbackSrc + '" "' + dst + '"', { stdio: 'pipe' });
+    } else {
+      var src = path.join(FILM_SCANS_DIR, name);
+      if (!existsSync(src)) {
+        console.error('Photo not found: ' + src);
+        process.exit(1);
+      }
+      execSync('magick "' + src + '" -shave 500x600 +repage -auto-level -quality 95 "' + dst + '"', { stdio: 'pipe' });
+    }
     var buf = readFileSync(dst);
     processed[name] = 'data:image/jpeg;base64,' + buf.toString('base64');
     console.log('  Processed: ' + name + ' (' + (buf.length / 1024).toFixed(0) + ' KB)');
