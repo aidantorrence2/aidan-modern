@@ -238,6 +238,18 @@
   - `sources.json` in the output folder records the photo sources and the strategy for each creative.
   - If you need more local specificity, add new Antipolo-specific source images first; the current pack still uses the shared portfolio library from `public/images/large`.
 
+## Antipolo CPC Story Ads V4 (100 Creative Concepts)
+- Source folder: `marketing/cpc-carousel-ads`
+- Render command:
+  - `node marketing/cpc-carousel-ads/render-antipolo-low-cpc-v4.mjs`
+- Output folder:
+  - `marketing/cpc-carousel-ads/output/antipolo-low-cpc-v4`
+- Notes:
+  - V4 exports 100 static 1080x1920 slides plus `sources.json`.
+  - `render-antipolo-low-cpc-v4.mjs` is a dedicated entrypoint that sets `CPC_OUT_SLUG=antipolo-low-cpc-v4` and runs the V3 concept renderer.
+  - Concepts are explicitly authored one-by-one (not permutation mixing), each with distinct hook copy and assigned visual treatment.
+  - Renderer currently uses 10 layout families (`hero`, `glass`, `proof`, `checklist`, `split`, `chat`, `magazine`, `urgency`, `timeline`, `sticky`) to keep feed variety high while preserving readability.
+
 ## Manila Model Search Carousel V9 (Larger Manila Label)
 - Source folder: `marketing/manila-model-search-carousel`
 - Render command:
