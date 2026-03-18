@@ -131,26 +131,31 @@ function vhsTheme(loc) {
     </body></html>`,
 
     // Slide 3: How it works
-    `<html><head><style>${RESET_CSS}</style></head><body style="background:#0a0a0a;">
-      <div style="position:relative;width:1080px;height:1920px;padding:80px 60px;">
+    `<html><head><style>${RESET_CSS}</style></head><body style="background:#000;">
+      <div style="position:relative;width:1080px;height:1920px;">
+        <img src="${bgPhotos[0]}" style="width:100%;height:100%;object-fit:cover;filter:saturate(0.6) brightness(0.35);">
+        <div style="position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.55);"></div>
         ${vhsScanlines()}
-        <div style="font-family:'Courier New',monospace;font-size:90px;color:#0f0;font-weight:bold;letter-spacing:4px;text-shadow:0 0 30px rgba(0,255,0,0.5);margin-bottom:80px;">HOW IT<br>WORKS</div>
-        <div style="display:flex;flex-direction:column;gap:60px;margin-top:40px;">
-          ${[
-            ['01', 'DM @madebyaidan on Instagram'],
-            ['02', 'We pick a date & location'],
-            ['03', 'Show up — get your photos free'],
-          ].map(([num, text]) => `
-            <div style="display:flex;align-items:flex-start;gap:30px;">
-              <div style="font-family:'Courier New',monospace;font-size:80px;color:#0f0;font-weight:bold;text-shadow:0 0 20px rgba(0,255,0,0.4);line-height:1;">${num}</div>
-              <div style="font-family:'Courier New',monospace;font-size:44px;color:#ccc;line-height:1.3;padding-top:10px;">${text}</div>
-            </div>
-          `).join('')}
+        ${vhsRec()}
+        <div style="position:absolute;top:0;left:0;width:100%;height:100%;display:flex;flex-direction:column;justify-content:center;padding:0 60px;z-index:20;">
+          <div style="font-family:'Courier New',monospace;font-size:100px;color:#0f0;font-weight:bold;letter-spacing:4px;text-shadow:0 0 30px rgba(0,255,0,0.5);margin-bottom:100px;">HOW IT<br>WORKS</div>
+          <div style="display:flex;flex-direction:column;gap:80px;">
+            ${[
+              ['01', 'DM @madebyaidan on Instagram'],
+              ['02', 'We pick a date & location'],
+              ['03', 'Show up — get your photos free'],
+            ].map(([num, text]) => `
+              <div style="display:flex;align-items:flex-start;gap:30px;">
+                <div style="font-family:'Courier New',monospace;font-size:100px;color:#0f0;font-weight:bold;text-shadow:0 0 20px rgba(0,255,0,0.4);line-height:1;">${num}</div>
+                <div style="font-family:'Courier New',monospace;font-size:50px;color:#eee;line-height:1.3;padding-top:16px;text-shadow:${HEAVY_SHADOW};">${text}</div>
+              </div>
+            `).join('')}
+          </div>
         </div>
         <!-- VHS tracking lines -->
-        <div style="position:absolute;top:1100px;left:0;width:100%;height:6px;background:rgba(0,255,0,0.2);"></div>
-        <div style="position:absolute;top:1120px;left:0;width:70%;height:3px;background:rgba(0,255,0,0.15);"></div>
-        <div style="position:absolute;top:1140px;left:20%;width:60%;height:4px;background:rgba(0,255,0,0.1);"></div>
+        <div style="position:absolute;top:1500px;left:0;width:100%;height:6px;background:rgba(0,255,0,0.2);z-index:20;"></div>
+        <div style="position:absolute;top:1520px;left:0;width:70%;height:3px;background:rgba(0,255,0,0.15);z-index:20;"></div>
+        <div style="position:absolute;top:1540px;left:20%;width:60%;height:4px;background:rgba(0,255,0,0.1);z-index:20;"></div>
         <div style="position:absolute;bottom:80px;left:0;width:100%;text-align:center;z-index:20;">
           <span style="font-family:'Courier New',monospace;font-size:40px;color:#0f0;letter-spacing:4px;text-shadow:0 0 20px rgba(0,255,0,0.4);">FREE PHOTO SHOOT &bull; ${city}</span>
         </div>
@@ -160,12 +165,12 @@ function vhsTheme(loc) {
     // Slide 4: What you get
     `<html><head><style>${RESET_CSS}</style></head><body style="background:#000;">
       <div style="position:relative;width:1080px;height:1920px;">
-        <img src="${heroPhotos[4]}" style="width:100%;height:100%;object-fit:cover;filter:saturate(0.7) brightness(0.5);">
-        <div style="position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.5);"></div>
+        <img src="${heroPhotos[4]}" style="width:100%;height:100%;object-fit:cover;filter:saturate(0.7) brightness(0.45);">
+        <div style="position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.45);"></div>
         ${vhsScanlines()}
         ${vhsRec()}
-        <div style="position:absolute;top:200px;left:60px;z-index:20;width:calc(100% - 120px);">
-          <div style="font-family:'Courier New',monospace;font-size:90px;color:#fff;font-weight:bold;text-shadow:${HEAVY_SHADOW};margin-bottom:60px;letter-spacing:2px;">WHAT<br>YOU GET</div>
+        <div style="position:absolute;top:0;left:0;width:100%;height:100%;display:flex;flex-direction:column;justify-content:center;padding:0 60px;z-index:20;">
+          <div style="font-family:'Courier New',monospace;font-size:100px;color:#fff;font-weight:bold;text-shadow:${HEAVY_SHADOW};margin-bottom:80px;letter-spacing:2px;">WHAT<br>YOU GET</div>
           ${[
             '30-minute session',
             '15+ edited photos',
@@ -173,8 +178,8 @@ function vhsTheme(loc) {
             'Use anywhere you want',
             '100% free, no catch',
           ].map(item => `
-            <div style="font-family:'Courier New',monospace;font-size:44px;color:#fff;margin-bottom:28px;text-shadow:${HEAVY_SHADOW};display:flex;align-items:center;gap:16px;">
-              <span style="color:#0f0;font-size:36px;">&#9654;</span> ${item}
+            <div style="font-family:'Courier New',monospace;font-size:50px;color:#fff;margin-bottom:50px;text-shadow:${HEAVY_SHADOW};display:flex;align-items:center;gap:20px;">
+              <span style="color:#0f0;font-size:44px;">&#9654;</span> ${item}
             </div>
           `).join('')}
         </div>
@@ -261,40 +266,48 @@ function photoBoothTheme(loc) {
     </body></html>`,
 
     // Slide 3: How it works
-    `<html><head><style>${RESET_CSS}</style></head><body style="background:${creamBg};">
-      <div style="position:relative;width:1080px;height:1920px;padding:100px 60px 140px;">
-        <div style="font-family:Georgia,serif;font-size:80px;font-weight:bold;color:#1a0a08;margin-bottom:80px;line-height:1.1;">HOW IT<br>WORKS</div>
-        <div style="display:flex;flex-direction:column;gap:50px;">
-          ${[
-            ['1', 'DM @madebyaidan on Instagram'],
-            ['2', 'We plan the shoot together'],
-            ['3', 'Show up & get free photos'],
-          ].map(([num, text]) => `
-            <div style="background:#1a0a08;padding:40px;display:flex;align-items:center;gap:30px;">
-              <div style="font-family:Georgia,serif;font-size:80px;color:${gold};font-weight:bold;min-width:80px;text-align:center;">${num}</div>
-              <div style="font-family:Georgia,serif;font-size:42px;color:#e8d5c0;line-height:1.3;">${text}</div>
-            </div>
-          `).join('')}
+    `<html><head><style>${RESET_CSS}</style></head><body style="background:#000;">
+      <div style="position:relative;width:1080px;height:1920px;">
+        <img src="${bgPhotos[1]}" style="width:100%;height:100%;object-fit:cover;filter:saturate(0.7) brightness(0.35);">
+        <div style="position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(to bottom, rgba(26,10,8,0.85) 0%, rgba(26,10,8,0.7) 50%, rgba(26,10,8,0.85) 100%);"></div>
+        <div style="position:absolute;top:0;left:0;width:100%;height:100%;display:flex;flex-direction:column;justify-content:center;padding:0 60px;z-index:10;">
+          <div style="font-family:Georgia,serif;font-size:90px;font-weight:bold;color:${gold};margin-bottom:100px;line-height:1.1;text-shadow:0 4px 20px rgba(212,160,96,0.3);">HOW IT<br>WORKS</div>
+          <div style="display:flex;flex-direction:column;gap:60px;">
+            ${[
+              ['1', 'DM @madebyaidan on Instagram'],
+              ['2', 'We plan the shoot together'],
+              ['3', 'Show up & get free photos'],
+            ].map(([num, text]) => `
+              <div style="background:rgba(26,10,8,0.8);padding:50px 40px;display:flex;align-items:center;gap:30px;border:2px solid ${gold}40;">
+                <div style="font-family:Georgia,serif;font-size:90px;color:${gold};font-weight:bold;min-width:90px;text-align:center;">${num}</div>
+                <div style="font-family:Georgia,serif;font-size:48px;color:#e8d5c0;line-height:1.3;">${text}</div>
+              </div>
+            `).join('')}
+          </div>
         </div>
         ${boothFooter(city)}
       </div>
     </body></html>`,
 
     // Slide 4: What's included
-    `<html><head><style>${RESET_CSS}</style></head><body style="background:${warmBg};">
-      <div style="position:relative;width:1080px;height:1920px;padding:100px 60px;">
-        <div style="font-family:Georgia,serif;font-size:80px;font-weight:bold;color:${gold};margin-bottom:80px;text-shadow:0 4px 20px rgba(212,160,96,0.3);line-height:1.1;">WHAT'S<br>INCLUDED</div>
-        ${[
-          '30-minute session',
-          '15+ edited photos',
-          'All digital files',
-          'No cost, ever',
-        ].map(item => `
-          <div style="background:rgba(212,160,96,0.1);border:2px solid ${gold};padding:32px 40px;margin-bottom:24px;display:flex;align-items:center;gap:20px;">
-            <div style="width:16px;height:16px;background:${gold};border-radius:50%;flex-shrink:0;"></div>
-            <span style="font-family:Georgia,serif;font-size:44px;color:#e8d5c0;">${item}</span>
-          </div>
-        `).join('')}
+    `<html><head><style>${RESET_CSS}</style></head><body style="background:#000;">
+      <div style="position:relative;width:1080px;height:1920px;">
+        <img src="${bgPhotos[2]}" style="width:100%;height:100%;object-fit:cover;filter:saturate(0.7) brightness(0.35);">
+        <div style="position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(to bottom, rgba(26,10,8,0.85) 0%, rgba(26,10,8,0.65) 50%, rgba(26,10,8,0.85) 100%);"></div>
+        <div style="position:absolute;top:0;left:0;width:100%;height:100%;display:flex;flex-direction:column;justify-content:center;padding:0 60px;z-index:10;">
+          <div style="font-family:Georgia,serif;font-size:90px;font-weight:bold;color:${gold};margin-bottom:100px;text-shadow:0 4px 20px rgba(212,160,96,0.3);line-height:1.1;">WHAT'S<br>INCLUDED</div>
+          ${[
+            '30-minute session',
+            '15+ edited photos',
+            'All digital files',
+            'No cost, ever',
+          ].map(item => `
+            <div style="background:rgba(26,10,8,0.7);border:2px solid ${gold};padding:44px 40px;margin-bottom:30px;display:flex;align-items:center;gap:20px;">
+              <div style="width:20px;height:20px;background:${gold};border-radius:50%;flex-shrink:0;"></div>
+              <span style="font-family:Georgia,serif;font-size:50px;color:#e8d5c0;">${item}</span>
+            </div>
+          `).join('')}
+        </div>
         <div style="position:absolute;bottom:80px;left:0;width:100%;text-align:center;z-index:20;">
           <span style="font-family:Georgia,serif;font-size:40px;color:${gold};letter-spacing:3px;">FREE &bull; ${city}</span>
         </div>
@@ -391,21 +404,25 @@ function slotMachineTheme(loc) {
     </body></html>`,
 
     // Slide 3: How to win
-    `<html><head><style>${RESET_CSS}</style></head><body style="background:linear-gradient(180deg, #1a0008 0%, #2a0010 100%);">
-      <div style="position:relative;width:1080px;height:1920px;padding:100px 60px;">
+    `<html><head><style>${RESET_CSS}</style></head><body style="background:#000;">
+      <div style="position:relative;width:1080px;height:1920px;">
+        <img src="${bgPhotos[3]}" style="width:100%;height:100%;object-fit:cover;filter:saturate(0.6) brightness(0.3);">
+        <div style="position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(180deg, rgba(26,0,8,0.8) 0%, rgba(42,0,16,0.75) 50%, rgba(26,0,8,0.85) 100%);"></div>
         ${marqueeBorder()}
-        <div style="font-family:Georgia,serif;font-size:90px;font-weight:900;color:${gold};text-shadow:0 0 30px rgba(255,215,0,0.5);margin-bottom:80px;z-index:20;position:relative;line-height:1.1;">HOW TO<br>WIN</div>
-        <div style="display:flex;flex-direction:column;gap:50px;z-index:20;position:relative;">
-          ${[
-            ['&#127920; 1.', 'DM me on Instagram'],
-            ['&#127920; 2.', 'We plan the shoot'],
-            ['&#127920; 3.', 'Get your photos free'],
-          ].map(([label, text]) => `
-            <div style="background:rgba(255,215,0,0.08);border:3px solid ${gold};padding:40px;display:flex;align-items:center;gap:24px;">
-              <span style="font-family:Georgia,serif;font-size:56px;color:${gold};white-space:nowrap;">${label}</span>
-              <span style="font-family:Georgia,serif;font-size:48px;color:#fff;">${text}</span>
-            </div>
-          `).join('')}
+        <div style="position:absolute;top:0;left:0;width:100%;height:100%;display:flex;flex-direction:column;justify-content:center;padding:0 60px;z-index:20;">
+          <div style="font-family:Georgia,serif;font-size:100px;font-weight:900;color:${gold};text-shadow:0 0 30px rgba(255,215,0,0.5);margin-bottom:100px;line-height:1.1;">HOW TO<br>WIN</div>
+          <div style="display:flex;flex-direction:column;gap:60px;">
+            ${[
+              ['&#127920; 1.', 'DM me on Instagram'],
+              ['&#127920; 2.', 'We plan the shoot'],
+              ['&#127920; 3.', 'Get your photos free'],
+            ].map(([label, text]) => `
+              <div style="background:rgba(255,215,0,0.08);border:3px solid ${gold};padding:55px 40px;display:flex;align-items:center;gap:24px;box-shadow:0 0 20px rgba(255,215,0,0.1);">
+                <span style="font-family:Georgia,serif;font-size:64px;color:${gold};white-space:nowrap;">${label}</span>
+                <span style="font-family:Georgia,serif;font-size:52px;color:#fff;">${text}</span>
+              </div>
+            `).join('')}
+          </div>
         </div>
         <div style="position:absolute;bottom:80px;left:0;width:100%;text-align:center;z-index:20;">
           <span style="font-family:Georgia,serif;font-size:44px;color:${gold};letter-spacing:4px;">FREE PHOTO SHOOT &bull; ${city}</span>
@@ -414,21 +431,25 @@ function slotMachineTheme(loc) {
     </body></html>`,
 
     // Slide 4: What you win
-    `<html><head><style>${RESET_CSS}</style></head><body style="background:${darkBg};">
-      <div style="position:relative;width:1080px;height:1920px;padding:100px 60px;">
+    `<html><head><style>${RESET_CSS}</style></head><body style="background:#000;">
+      <div style="position:relative;width:1080px;height:1920px;">
+        <img src="${bgPhotos[4]}" style="width:100%;height:100%;object-fit:cover;filter:saturate(0.6) brightness(0.3);">
+        <div style="position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(180deg, rgba(12,0,8,0.8) 0%, rgba(12,0,8,0.7) 50%, rgba(12,0,8,0.85) 100%);"></div>
         ${marqueeBorder()}
-        <div style="font-family:Georgia,serif;font-size:90px;font-weight:900;color:${gold};text-shadow:0 0 30px rgba(255,215,0,0.5);margin-bottom:80px;z-index:20;position:relative;line-height:1.1;">WHAT<br>YOU WIN</div>
-        ${[
-          '30-minute session',
-          '15+ edited photos',
-          'All digital files',
-          'Use them anywhere',
-          '100% free',
-        ].map(item => `
-          <div style="font-family:Georgia,serif;font-size:48px;color:${gold};margin-bottom:36px;display:flex;align-items:center;gap:20px;z-index:20;position:relative;">
-            <span style="font-size:40px;">&#9733;</span> ${item}
-          </div>
-        `).join('')}
+        <div style="position:absolute;top:0;left:0;width:100%;height:100%;display:flex;flex-direction:column;justify-content:center;padding:0 60px;z-index:20;">
+          <div style="font-family:Georgia,serif;font-size:100px;font-weight:900;color:${gold};text-shadow:0 0 30px rgba(255,215,0,0.5);margin-bottom:90px;line-height:1.1;">WHAT<br>YOU WIN</div>
+          ${[
+            '30-minute session',
+            '15+ edited photos',
+            'All digital files',
+            'Use them anywhere',
+            '100% free',
+          ].map(item => `
+            <div style="font-family:Georgia,serif;font-size:54px;color:${gold};margin-bottom:50px;display:flex;align-items:center;gap:24px;">
+              <span style="font-size:48px;">&#9733;</span> ${item}
+            </div>
+          `).join('')}
+        </div>
         <div style="position:absolute;bottom:80px;left:0;width:100%;text-align:center;z-index:20;">
           <span style="font-family:Georgia,serif;font-size:40px;color:${gold};letter-spacing:3px;">FREE &bull; ${city}</span>
         </div>
@@ -505,22 +526,27 @@ function btsContactSheetTheme(loc) {
     </body></html>`,
 
     // Slide 3: The Process
-    `<html><head><style>${RESET_CSS}</style></head><body style="background:#111;">
-      <div style="position:relative;width:1080px;height:1920px;padding:100px 60px;">
+    `<html><head><style>${RESET_CSS}</style></head><body style="background:#000;">
+      <div style="position:relative;width:1080px;height:1920px;">
+        <img src="${bgPhotos[5]}" style="width:100%;height:100%;object-fit:cover;filter:brightness(0.3) saturate(0.7);">
+        <div style="position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(to bottom, rgba(17,17,17,0.8) 0%, rgba(17,17,17,0.65) 50%, rgba(17,17,17,0.8) 100%);"></div>
+        ${filmPerforations()}
         <!-- Subtle grid -->
         <div style="position:absolute;top:0;left:0;width:100%;height:100%;background:repeating-linear-gradient(0deg, transparent 0px, transparent 99px, rgba(255,255,255,0.03) 99px, rgba(255,255,255,0.03) 100px), repeating-linear-gradient(90deg, transparent 0px, transparent 99px, rgba(255,255,255,0.03) 99px, rgba(255,255,255,0.03) 100px);"></div>
-        <div style="font-family:Georgia,serif;font-size:90px;font-weight:bold;color:#fff;margin-bottom:80px;z-index:10;position:relative;line-height:1.1;">THE<br>PROCESS</div>
-        <div style="display:flex;flex-direction:column;gap:40px;z-index:10;position:relative;">
-          ${[
-            ['01', 'DM @madebyaidan on IG'],
-            ['02', 'Pick a date & location'],
-            ['03', 'Show up, get photos free'],
-          ].map(([num, text]) => `
-            <div style="background:#1a1a1a;border:2px solid #444;padding:40px;display:flex;align-items:center;gap:30px;">
-              <div style="font-family:'Courier New',monospace;font-size:70px;color:#888;font-weight:bold;min-width:110px;">${num}</div>
-              <div style="font-family:Georgia,serif;font-size:44px;color:#ddd;line-height:1.3;">${text}</div>
-            </div>
-          `).join('')}
+        <div style="position:absolute;top:0;left:0;width:100%;height:100%;display:flex;flex-direction:column;justify-content:center;padding:0 80px;z-index:10;">
+          <div style="font-family:Georgia,serif;font-size:100px;font-weight:bold;color:#fff;margin-bottom:100px;line-height:1.1;text-shadow:${HEAVY_SHADOW};">THE<br>PROCESS</div>
+          <div style="display:flex;flex-direction:column;gap:55px;">
+            ${[
+              ['01', 'DM @madebyaidan on IG'],
+              ['02', 'Pick a date & location'],
+              ['03', 'Show up, get photos free'],
+            ].map(([num, text]) => `
+              <div style="background:rgba(26,26,26,0.8);border:2px solid #555;padding:50px 40px;display:flex;align-items:center;gap:30px;">
+                <div style="font-family:'Courier New',monospace;font-size:80px;color:#999;font-weight:bold;min-width:120px;">${num}</div>
+                <div style="font-family:Georgia,serif;font-size:48px;color:#eee;line-height:1.3;text-shadow:${HEAVY_SHADOW};">${text}</div>
+              </div>
+            `).join('')}
+          </div>
         </div>
         <div style="position:absolute;bottom:80px;left:0;width:100%;text-align:center;z-index:20;">
           <span style="font-family:Georgia,serif;font-size:42px;color:#fff;letter-spacing:4px;text-shadow:${HEAVY_SHADOW};">FREE PHOTO SHOOT &bull; ${city}</span>
@@ -531,11 +557,11 @@ function btsContactSheetTheme(loc) {
     // Slide 4: What's in the package
     `<html><head><style>${RESET_CSS}</style></head><body style="background:#000;">
       <div style="position:relative;width:1080px;height:1920px;">
-        <img src="${heroPhotos[2]}" style="width:100%;height:100%;object-fit:cover;filter:brightness(0.35);">
+        <img src="${heroPhotos[2]}" style="width:100%;height:100%;object-fit:cover;filter:brightness(0.4);">
         <div style="position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.4);"></div>
         ${filmPerforations()}
-        <div style="position:absolute;top:200px;left:80px;z-index:20;width:calc(100% - 160px);">
-          <div style="font-family:Georgia,serif;font-size:80px;font-weight:bold;color:#fff;text-shadow:${HEAVY_SHADOW};margin-bottom:60px;line-height:1.1;">WHAT'S IN<br>THE PACKAGE</div>
+        <div style="position:absolute;top:0;left:0;width:100%;height:100%;display:flex;flex-direction:column;justify-content:center;padding:0 80px;z-index:20;">
+          <div style="font-family:Georgia,serif;font-size:90px;font-weight:bold;color:#fff;text-shadow:${HEAVY_SHADOW};margin-bottom:90px;line-height:1.1;">WHAT'S IN<br>THE PACKAGE</div>
           ${[
             '30-minute session',
             '15+ edited photos',
@@ -543,8 +569,8 @@ function btsContactSheetTheme(loc) {
             'Use anywhere you want',
             'Completely free',
           ].map(item => `
-            <div style="font-family:Georgia,serif;font-style:italic;font-size:44px;color:#eee;margin-bottom:32px;text-shadow:${HEAVY_SHADOW};display:flex;align-items:center;gap:16px;">
-              <span style="color:#ff6666;font-size:32px;font-style:normal;">&#10003;</span> ${item}
+            <div style="font-family:Georgia,serif;font-style:italic;font-size:50px;color:#eee;margin-bottom:48px;text-shadow:${HEAVY_SHADOW};display:flex;align-items:center;gap:20px;">
+              <span style="color:#ff6666;font-size:40px;font-style:normal;">&#10003;</span> ${item}
             </div>
           `).join('')}
         </div>
@@ -557,8 +583,8 @@ function btsContactSheetTheme(loc) {
     // Slide 5: CTA
     `<html><head><style>${RESET_CSS}</style></head><body style="background:#000;">
       <div style="position:relative;width:1080px;height:1920px;">
-        <img src="${heroPhotos[4]}" style="width:100%;height:100%;object-fit:cover;filter:brightness(0.5);">
-        <div style="position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.5) 100%);"></div>
+        <img src="${heroPhotos[4]}" style="width:100%;height:100%;object-fit:cover;filter:brightness(0.75);">
+        <div style="position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.15) 50%, rgba(0,0,0,0.35) 100%);"></div>
         ${filmPerforations()}
         <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:20;text-align:center;width:85%;">
           <div style="font-family:Georgia,serif;font-size:96px;font-weight:900;color:#fff;text-shadow:${HEAVY_SHADOW};line-height:1.15;">BOOK YOUR<br>SESSION</div>
@@ -596,23 +622,39 @@ function tetrisTheme(loc) {
         <!-- Decorative small tetris pieces -->
         <div style="position:absolute;top:40px;right:60px;width:80px;height:80px;background:#f0a000;z-index:6;"></div>
         <div style="position:absolute;top:40px;right:140px;width:80px;height:40px;background:#f0a000;z-index:6;"></div>
-        <div style="position:absolute;bottom:200px;left:40px;width:120px;height:40px;background:#a000f0;z-index:6;"></div>
-        <div style="position:absolute;bottom:240px;left:40px;width:40px;height:40px;background:#a000f0;z-index:6;"></div>
-        <div style="position:absolute;bottom:120px;right:80px;width:80px;height:80px;background:#f00000;z-index:6;"></div>
 
-        <div style="position:absolute;top:200px;left:50%;transform:translateX(-50%);z-index:20;width:90%;display:flex;flex-direction:column;gap:16px;">
+        <div style="position:absolute;top:120px;left:50%;transform:translateX(-50%);z-index:20;width:90%;display:flex;flex-direction:column;gap:20px;">
           ${[
             { text: 'FREE', color: '#00f0f0' },
             { text: 'PHOTO', color: '#f0a000' },
             { text: 'SHOOT', color: '#a000f0' },
           ].map(({ text, color }) => `
-            <div style="background:${color};padding:40px 0;text-align:center;border:4px solid rgba(255,255,255,0.3);box-shadow:inset 0 0 30px rgba(0,0,0,0.3), 0 0 20px ${color}40;">
-              <span style="font-family:'Courier New',monospace;font-size:110px;font-weight:900;color:#fff;text-shadow:4px 4px 0 rgba(0,0,0,0.5);letter-spacing:8px;">${text}</span>
+            <div style="background:${color};padding:55px 0;text-align:center;border:4px solid rgba(255,255,255,0.3);box-shadow:inset 0 0 30px rgba(0,0,0,0.3), 0 0 20px ${color}40;">
+              <span style="font-family:'Courier New',monospace;font-size:120px;font-weight:900;color:#fff;text-shadow:4px 4px 0 rgba(0,0,0,0.5);letter-spacing:8px;">${text}</span>
             </div>
           `).join('')}
         </div>
-        <div style="position:absolute;bottom:280px;left:0;width:100%;text-align:center;z-index:20;">
-          <div style="font-family:'Courier New',monospace;font-size:70px;color:${cyan};letter-spacing:10px;text-shadow:0 0 30px ${cyan}60;">${city}</div>
+
+        <div style="position:absolute;top:820px;left:0;width:100%;text-align:center;z-index:20;">
+          <div style="font-family:'Courier New',monospace;font-size:80px;color:${cyan};letter-spacing:10px;text-shadow:0 0 30px ${cyan}60;">${city}</div>
+        </div>
+
+        <!-- Photo tetris blocks filling bottom -->
+        <div style="position:absolute;bottom:0;left:0;width:100%;z-index:15;display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;padding:0 8px 8px 8px;">
+          ${[proofPhotos[0], proofPhotos[1], proofPhotos[2]].map((src, i) => `
+            <div style="height:360px;overflow:hidden;border:4px solid ${tetrisColors[i % tetrisColors.length]};box-shadow:0 0 15px ${tetrisColors[i % tetrisColors.length]}30;">
+              <img src="${src}" style="width:100%;height:100%;object-fit:cover;">
+            </div>
+          `).join('')}
+          ${[proofPhotos[3], proofPhotos[4]].map((src, i) => `
+            <div style="height:280px;overflow:hidden;border:4px solid ${tetrisColors[(i+3) % tetrisColors.length]};box-shadow:0 0 15px ${tetrisColors[(i+3) % tetrisColors.length]}30;">
+              <img src="${src}" style="width:100%;height:100%;object-fit:cover;">
+            </div>
+          `).join('')}
+          <div style="height:280px;display:flex;flex-direction:column;gap:8px;">
+            <div style="flex:1;background:#a000f0;border:4px solid rgba(255,255,255,0.3);"></div>
+            <div style="flex:1;background:#f00000;border:4px solid rgba(255,255,255,0.3);"></div>
+          </div>
         </div>
       </div>
     </body></html>`,
@@ -639,26 +681,30 @@ function tetrisTheme(loc) {
     </body></html>`,
 
     // Slide 3: How to play (levels)
-    `<html><head><style>${RESET_CSS}</style></head><body style="background:${darkBg};">
-      <div style="position:relative;width:1080px;height:1920px;padding:80px 60px;">
+    `<html><head><style>${RESET_CSS}</style></head><body style="background:#000;">
+      <div style="position:relative;width:1080px;height:1920px;">
+        <img src="${bgPhotos[6]}" style="width:100%;height:100%;object-fit:cover;filter:brightness(0.25) saturate(0.5);">
+        <div style="position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(to bottom, rgba(10,14,26,0.85) 0%, rgba(10,14,26,0.7) 50%, rgba(10,14,26,0.85) 100%);"></div>
         ${tetrisGrid()}
         <!-- Score display -->
-        <div style="position:relative;z-index:20;display:flex;justify-content:space-between;margin-bottom:40px;">
+        <div style="position:absolute;top:80px;left:60px;right:60px;z-index:20;display:flex;justify-content:space-between;">
           <span style="font-family:'Courier New',monospace;font-size:28px;color:#666;">SCORE: 999999</span>
           <span style="font-family:'Courier New',monospace;font-size:28px;color:#666;">LINES: 075</span>
         </div>
-        <div style="font-family:'Courier New',monospace;font-size:90px;font-weight:bold;color:${cyan};text-shadow:0 0 30px ${cyan}60;margin-bottom:80px;z-index:20;position:relative;line-height:1.1;">HOW TO<br>PLAY</div>
-        <div style="display:flex;flex-direction:column;gap:50px;z-index:20;position:relative;">
-          ${[
-            { level: 'LEVEL 1', text: 'DM @madebyaidan on IG', color: '#00f0f0' },
-            { level: 'LEVEL 2', text: 'Plan the shoot together', color: '#f0a000' },
-            { level: 'LEVEL 3', text: 'Show up & get free photos', color: '#a000f0' },
-          ].map(({ level, text, color }) => `
-            <div>
-              <div style="font-family:'Courier New',monospace;font-size:56px;color:${color};font-weight:bold;text-shadow:0 0 15px ${color}40;margin-bottom:8px;">${level}</div>
-              <div style="font-family:'Courier New',monospace;font-size:42px;color:#ddd;padding-left:20px;">${text}</div>
-            </div>
-          `).join('')}
+        <div style="position:absolute;top:0;left:0;width:100%;height:100%;display:flex;flex-direction:column;justify-content:center;padding:0 60px;z-index:20;">
+          <div style="font-family:'Courier New',monospace;font-size:100px;font-weight:bold;color:${cyan};text-shadow:0 0 30px ${cyan}60;margin-bottom:100px;line-height:1.1;">HOW TO<br>PLAY</div>
+          <div style="display:flex;flex-direction:column;gap:70px;">
+            ${[
+              { level: 'LEVEL 1', text: 'DM @madebyaidan on IG', color: '#00f0f0' },
+              { level: 'LEVEL 2', text: 'Plan the shoot together', color: '#f0a000' },
+              { level: 'LEVEL 3', text: 'Show up & get free photos', color: '#a000f0' },
+            ].map(({ level, text, color }) => `
+              <div style="background:rgba(10,14,26,0.7);border-left:6px solid ${color};padding:40px 30px;">
+                <div style="font-family:'Courier New',monospace;font-size:60px;color:${color};font-weight:bold;text-shadow:0 0 15px ${color}40;margin-bottom:12px;">${level}</div>
+                <div style="font-family:'Courier New',monospace;font-size:46px;color:#eee;padding-left:10px;text-shadow:${HEAVY_SHADOW};">${text}</div>
+              </div>
+            `).join('')}
+          </div>
         </div>
         <div style="position:absolute;bottom:80px;left:0;width:100%;text-align:center;z-index:20;">
           <span style="font-family:'Courier New',monospace;font-size:40px;color:${cyan};letter-spacing:4px;">FREE PHOTO SHOOT &bull; ${city}</span>
@@ -667,22 +713,26 @@ function tetrisTheme(loc) {
     </body></html>`,
 
     // Slide 4: Power-ups (what you get)
-    `<html><head><style>${RESET_CSS}</style></head><body style="background:${darkBg};">
-      <div style="position:relative;width:1080px;height:1920px;padding:100px 60px;">
+    `<html><head><style>${RESET_CSS}</style></head><body style="background:#000;">
+      <div style="position:relative;width:1080px;height:1920px;">
+        <img src="${bgPhotos[0]}" style="width:100%;height:100%;object-fit:cover;filter:brightness(0.25) saturate(0.5);">
+        <div style="position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(to bottom, rgba(10,14,26,0.85) 0%, rgba(10,14,26,0.7) 50%, rgba(10,14,26,0.85) 100%);"></div>
         ${tetrisGrid()}
-        <div style="font-family:'Courier New',monospace;font-size:90px;font-weight:bold;color:${cyan};text-shadow:0 0 30px ${cyan}60;margin-bottom:80px;z-index:20;position:relative;line-height:1.1;">POWER<br>UPS</div>
-        ${[
-          { text: '30-minute session', color: '#00f0f0' },
-          { text: '15+ edited photos', color: '#f0a000' },
-          { text: 'All digital files', color: '#a000f0' },
-          { text: 'Use them anywhere', color: '#00f000' },
-          { text: '100% free', color: '#f00000' },
-        ].map(({ text, color }) => `
-          <div style="display:flex;align-items:center;gap:20px;margin-bottom:36px;z-index:20;position:relative;">
-            <div style="width:40px;height:40px;background:${color};border:3px solid rgba(255,255,255,0.3);box-shadow:0 0 10px ${color}40;flex-shrink:0;"></div>
-            <span style="font-family:'Courier New',monospace;font-size:46px;color:#fff;">${text}</span>
-          </div>
-        `).join('')}
+        <div style="position:absolute;top:0;left:0;width:100%;height:100%;display:flex;flex-direction:column;justify-content:center;padding:0 60px;z-index:20;">
+          <div style="font-family:'Courier New',monospace;font-size:100px;font-weight:bold;color:${cyan};text-shadow:0 0 30px ${cyan}60;margin-bottom:90px;line-height:1.1;">POWER<br>UPS</div>
+          ${[
+            { text: '30-minute session', color: '#00f0f0' },
+            { text: '15+ edited photos', color: '#f0a000' },
+            { text: 'All digital files', color: '#a000f0' },
+            { text: 'Use them anywhere', color: '#00f000' },
+            { text: '100% free', color: '#f00000' },
+          ].map(({ text, color }) => `
+            <div style="display:flex;align-items:center;gap:24px;margin-bottom:50px;">
+              <div style="width:50px;height:50px;background:${color};border:3px solid rgba(255,255,255,0.3);box-shadow:0 0 10px ${color}40;flex-shrink:0;"></div>
+              <span style="font-family:'Courier New',monospace;font-size:52px;color:#fff;text-shadow:${HEAVY_SHADOW};">${text}</span>
+            </div>
+          `).join('')}
+        </div>
         <div style="position:absolute;bottom:80px;left:0;width:100%;text-align:center;z-index:20;">
           <span style="font-family:'Courier New',monospace;font-size:40px;color:${cyan};letter-spacing:4px;">FREE PHOTO SHOOT &bull; ${city}</span>
         </div>
