@@ -14,10 +14,18 @@ var SAFE_TOP = 213;
 var SAFE_BOTTOM = 430;
 
 var FILM_SCANS_DIR = '/Volumes/PortableSSD/Exports/film scans';
+var LOCAL_PHOTOS_DIR = path.join(__dirname, '..', '..', '..', 'public', 'images', 'large');
 
-// Fallback directories containing pre-processed photos (used when SSD is not mounted)
-var FALLBACK_PROCESSED_DIRS = [
-  path.join(__dirname, '..', '..', 'subic-ads', 'reels', 'output-60a-subic', 'tmp-photos'),
+// Local portfolio photos used when SSD is not mounted
+var LOCAL_PHOTO_NAMES = [
+  'manila-gallery-garden-001.jpg',
+  'manila-gallery-canal-001.jpg',
+  'manila-gallery-ivy-001.jpg',
+  'manila-gallery-night-001.jpg',
+  'manila-gallery-park-001.jpg',
+  'manila-gallery-rocks-001.jpg',
+  'manila-gallery-street-001.jpg',
+  'manila-gallery-urban-001.jpg',
 ];
 
 var PHOTO_NAMES = [
@@ -39,40 +47,35 @@ function resetOutputDir() {
   mkdirSync(OUT_DIR, { recursive: true });
 }
 
-function findFallbackProcessed(name) {
-  var processedName = name.replace(/\.jpg$/i, '_processed.jpg');
-  for (var dir of FALLBACK_PROCESSED_DIRS) {
-    var candidate = path.join(dir, processedName);
-    if (existsSync(candidate)) return candidate;
-  }
-  return null;
-}
-
 function processPhotos() {
   var cropDir = path.join(OUT_DIR, 'tmp-photos');
   mkdirSync(cropDir, { recursive: true });
   var processed = {};
   var useFallback = !existsSync(FILM_SCANS_DIR);
   if (useFallback) {
-    console.log('  SSD not mounted — using pre-processed photo cache');
+    console.log('  SSD not mounted, using local portfolio photos');
+    for (var i = 0; i < PHOTO_NAMES.length; i++) {
+      var name = PHOTO_NAMES[i];
+      var localName = LOCAL_PHOTO_NAMES[i];
+      var src = path.join(LOCAL_PHOTOS_DIR, localName);
+      if (!existsSync(src)) {
+        console.error('Local photo not found: ' + src);
+        process.exit(1);
+      }
+      var buf = readFileSync(src);
+      processed[name] = 'data:image/jpeg;base64,' + buf.toString('base64');
+      console.log('  Loaded local: ' + localName + ' (' + (buf.length / 1024).toFixed(0) + ' KB)');
+    }
+    return processed;
   }
   for (var name of PHOTO_NAMES) {
-    var dst = path.join(cropDir, name.replace(/\.jpg$/i, '_processed.jpg'));
-    if (useFallback) {
-      var fallback = findFallbackProcessed(name);
-      if (!fallback) {
-        console.error('No fallback processed photo found for: ' + name);
-        process.exit(1);
-      }
-      execSync('cp "' + fallback + '" "' + dst + '"', { stdio: 'pipe' });
-    } else {
-      var src = path.join(FILM_SCANS_DIR, name);
-      if (!existsSync(src)) {
-        console.error('Photo not found: ' + src);
-        process.exit(1);
-      }
-      execSync('magick "' + src + '" -shave 500x600 +repage -auto-level -quality 95 "' + dst + '"', { stdio: 'pipe' });
+    var src = path.join(FILM_SCANS_DIR, name);
+    if (!existsSync(src)) {
+      console.error('Photo not found: ' + src);
+      process.exit(1);
     }
+    var dst = path.join(cropDir, name.replace(/\.jpg$/i, '_processed.jpg'));
+    execSync('magick "' + src + '" -shave 500x600 +repage -auto-level -quality 95 "' + dst + '"', { stdio: 'pipe' });
     var buf = readFileSync(dst);
     processed[name] = 'data:image/jpeg;base64,' + buf.toString('base64');
     console.log('  Processed: ' + name + ' (' + (buf.length / 1024).toFixed(0) + ' KB)');
