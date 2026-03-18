@@ -1383,7 +1383,10 @@ async function main() {
     { stdio: 'inherit' }
   );
 
-  rmSync(framesDir, { recursive: true, force: true });
+  try { rmSync(framesDir, { recursive: true, force: true }); } catch(e) {
+    // macOS can race with rmSync; fall back to shell rm
+    try { execSync('rm -rf "' + framesDir + '"'); } catch(e2) {}
+  }
 
   var reelsDir = path.join(__dirname, 'reels');
   if (!existsSync(reelsDir)) mkdirSync(reelsDir, { recursive: true });
