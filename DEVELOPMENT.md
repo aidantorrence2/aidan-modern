@@ -305,3 +305,19 @@
   - 14–18s: blue branch line (#1E88E5) branches from STATION 08 with CTA stops: DM / PICK YOUR DATE / SHOW UP.
   - 18–22s: dark CTA board ("@madebyaidan · Transfer to Instagram · Fare: FREE · Now Boarding").
   - 22–24s: train pulses at terminus, white flash, hold.
+
+## Story Carousel Image Ads (5 Themes x 3 Locations)
+- Source folder: `marketing/story-carousels`
+- Render command:
+  - `node marketing/story-carousels/render-story-carousels.mjs`
+- Output folder:
+  - `marketing/story-carousels/output/{theme}/{location}/01-hook.png ... 05-cta.png`
+- Themes: `vhs`, `photo-booth`, `slot-machine`, `bts-contact-sheet`, `tetris`
+- Locations: `manila`, `antipolo`, `subic`
+- Notes:
+  - Generates 75 total 1080x1920 PNG story carousel slides (5 themes x 3 locations x 5 slides each).
+  - Uses Playwright screenshot approach (same pattern as `render-v4.mjs`).
+  - Photos sourced from `public/images/large/manila-gallery-*.jpg`.
+  - Each carousel follows a 5-slide flow: hook -> proof -> how -> what -> cta.
+  - Location name appears on hook and CTA slides; middle slides are shared across location variants.
+  - Typography: Georgia serif for headlines, system sans-serif for body, Courier New monospace for VHS/Tetris themes.
