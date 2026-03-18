@@ -70,6 +70,8 @@ function cs(base, city) {
 // ALL main text (city, "FREE PHOTO SHOOT") stays in the top 75% (above y=1440)
 function makeSlide(city, p, p2, p3, variant) {
   const C = city.toUpperCase()
+  // "Philippines" subtitle — pass color to match variant theme
+  const PH = (color, font = SANS) => `<div style="font-family:${font};font-size:20px;letter-spacing:4px;color:${color};margin-top:2px;">PHILIPPINES</div>`
   const bg = `<img src="${p}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"`
 
   switch (variant) {
@@ -83,6 +85,7 @@ function makeSlide(city, p, p2, p3, variant) {
         <!-- Top text -->
         <div style="position:absolute;top:40px;left:60px;right:60px;">
           <div style="font-family:${SERIF};font-size:${cs(100,city)}px;font-weight:bold;font-style:italic;color:#FFD700;text-shadow:0 4px 12px rgba(0,0,0,0.8);">${C}</div>
+          ${PH('rgba(255,215,0,0.5)')}
           <div style="font-family:${FUTURA};font-size:46px;font-weight:bold;color:white;letter-spacing:6px;margin-top:4px;">FREE PHOTO SHOOT</div>
         </div>
         <!-- White photo strip -->
@@ -102,6 +105,7 @@ function makeSlide(city, p, p2, p3, variant) {
         <!-- Top text -->
         <div style="position:absolute;top:60px;left:60px;right:60px;">
           <div style="font-family:${SERIF};font-size:${cs(130,city)}px;font-weight:bold;font-style:italic;color:white;text-shadow:0 4px 16px rgba(0,0,0,0.6);">${C}</div>
+          ${PH('rgba(255,255,255,0.4)')}
           <div style="font-family:${FUTURA};font-size:50px;font-weight:bold;color:white;letter-spacing:6px;margin-top:8px;">FREE PHOTO SHOOT</div>
           <div style="font-family:${SANS};font-size:22px;color:rgba(255,255,255,0.4);margin-top:10px;">${CTA}</div>
         </div>
@@ -130,6 +134,7 @@ function makeSlide(city, p, p2, p3, variant) {
         <!-- Text area top -->
         <div style="position:absolute;top:60px;left:100px;right:100px;text-align:center;">
           <div style="font-family:${SERIF};font-size:${cs(130,city)}px;font-weight:bold;font-style:italic;color:white;">${C}</div>
+          ${PH('rgba(255,255,255,0.4)')}
           <div style="font-family:${FUTURA};font-size:56px;font-weight:bold;color:#FF6600;letter-spacing:6px;margin-top:4px;">FREE PHOTO SHOOT</div>
           <div style="font-family:${MONO};font-size:20px;color:rgba(255,102,0,0.5);margin-top:12px;">${CTA}</div>
         </div>
@@ -153,6 +158,7 @@ function makeSlide(city, p, p2, p3, variant) {
         <div style="position:absolute;top:50px;left:50px;right:50px;display:flex;justify-content:space-between;align-items:flex-end;">
           <div>
             <div style="font-family:${SERIF};font-size:${cs(100,city)}px;font-weight:bold;font-style:italic;color:#111;">${C}</div>
+            ${PH('rgba(0,0,0,0.35)')}
             <div style="font-family:${FUTURA};font-size:48px;font-weight:bold;color:#E63946;letter-spacing:4px;">FREE PHOTO SHOOT</div>
           </div>
           <div style="font-family:${SERIF};font-size:32px;font-style:italic;color:#E63946;transform:rotate(-8deg);">selects ✓</div>
@@ -187,6 +193,7 @@ function makeSlide(city, p, p2, p3, variant) {
         <!-- Main text — upper area -->
         <div style="position:absolute;top:200px;left:60px;right:60px;">
           <div style="font-family:${DISPLAY};font-size:${cs(200,city)}px;color:white;text-transform:uppercase;line-height:0.85;text-shadow:0 4px 8px rgba(0,0,0,0.8),0 0 30px rgba(255,255,255,0.1);">${C}</div>
+          ${PH('rgba(255,255,255,0.5)', MONO)}
           <div style="font-family:${FUTURA};font-size:68px;font-weight:bold;color:white;letter-spacing:6px;margin-top:12px;text-shadow:0 2px 6px rgba(0,0,0,0.8);">FREE PHOTO SHOOT</div>
           <div style="font-family:${MONO};font-size:22px;color:rgba(255,255,255,0.5);margin-top:16px;">${CTA}</div>
         </div>
@@ -212,6 +219,7 @@ function makeSlide(city, p, p2, p3, variant) {
         <!-- City + text -->
         <div style="position:absolute;top:220px;left:60px;right:60px;text-align:center;">
           <div style="font-family:${SERIF};font-size:${cs(150,city)}px;font-weight:bold;font-style:italic;color:#FFD700;text-shadow:0 0 30px rgba(255,215,0,0.4),0 4px 12px rgba(0,0,0,0.8);">${C}</div>
+          ${PH('rgba(255,215,0,0.4)')}
           <div style="font-family:${FUTURA};font-size:60px;font-weight:bold;color:white;letter-spacing:6px;margin-top:8px;">FREE PHOTO SHOOT</div>
           <div style="font-family:${SANS};font-size:22px;color:rgba(255,215,0,0.4);margin-top:14px;">${CTA}</div>
         </div>
@@ -256,6 +264,7 @@ function makeSlide(city, p, p2, p3, variant) {
         <!-- City + text -->
         <div style="position:absolute;top:200px;left:60px;right:60px;text-align:center;">
           <div style="font-family:${MONO};font-size:${cs(120,city)}px;font-weight:bold;color:white;text-shadow:0 0 20px rgba(0,240,240,0.4);">${C}</div>
+          ${PH('rgba(0,240,240,0.35)', MONO)}
           <div style="font-family:${MONO};font-size:48px;font-weight:bold;color:#00f0f0;text-shadow:0 0 15px rgba(0,240,240,0.5);margin-top:8px;">FREE PHOTO SHOOT</div>
           <div style="font-family:${MONO};font-size:18px;color:rgba(0,240,240,0.35);margin-top:14px;">${CTA}</div>
         </div>
@@ -284,6 +293,7 @@ function makeSlide(city, p, p2, p3, variant) {
         <div style="position:absolute;top:800px;left:60px;right:60px;">
           <div style="font-family:${FUTURA};font-size:36px;font-weight:bold;color:white;letter-spacing:4px;margin-bottom:12px;">EXCLUSIVE</div>
           <div style="font-family:${SERIF};font-size:${cs(150,city)}px;font-weight:bold;font-style:italic;color:white;line-height:0.82;">${C}</div>
+          ${PH('rgba(255,255,255,0.4)')}
           <div style="font-family:${FUTURA};font-size:64px;font-weight:bold;color:#FF4444;letter-spacing:4px;margin-top:12px;">FREE PHOTO SHOOT</div>
           <div style="font-family:${SANS};font-size:24px;color:rgba(255,255,255,0.5);margin-top:16px;">${CTA}</div>
         </div>
@@ -303,6 +313,7 @@ function makeSlide(city, p, p2, p3, variant) {
         <!-- Title block -->
         <div style="position:absolute;top:140px;left:60px;right:60px;">
           <div style="font-family:${SERIF};font-size:${cs(160,city)}px;font-weight:bold;font-style:italic;color:white;line-height:0.82;">${C}</div>
+          ${PH('rgba(255,255,255,0.4)')}
           <div style="font-family:${FUTURA};font-size:62px;font-weight:bold;color:#FFD700;letter-spacing:6px;margin-top:12px;">FREE PHOTO SHOOT</div>
           <div style="font-family:${SANS};font-size:22px;color:rgba(255,255,255,0.4);margin-top:12px;">${CTA}</div>
         </div>
@@ -323,6 +334,7 @@ function makeSlide(city, p, p2, p3, variant) {
         <!-- Top text -->
         <div style="position:absolute;top:40px;left:50px;right:50px;">
           <div style="font-family:${DISPLAY};font-size:${cs(160,city)}px;color:#111;text-transform:uppercase;line-height:0.82;">${C}</div>
+          ${PH('rgba(0,0,0,0.35)')}
           <div style="font-family:${DISPLAY};font-size:72px;color:#E63946;text-transform:uppercase;letter-spacing:2px;margin-top:4px;">FREE PHOTO SHOOT</div>
         </div>
         <!-- Photo strip -->
@@ -361,7 +373,7 @@ function makeSlide(city, p, p2, p3, variant) {
         </div>
         <div style="position:absolute;top:180px;left:50px;right:50px;height:2px;background:#111;"></div>
         <div style="position:absolute;top:200px;left:50px;right:50px;">
-          <div style="font-family:${SERIF};font-size:76px;font-weight:bold;color:#111;line-height:1.0;">Free Photo Shoot Announced in ${city}</div>
+          <div style="font-family:${SERIF};font-size:76px;font-weight:bold;color:#111;line-height:1.0;">Free Photo Shoot Announced in ${city}, Philippines</div>
           <div style="font-family:${SERIF};font-size:22px;font-style:italic;color:#555;margin-top:8px;">Photographer offers complimentary sessions to locals</div>
         </div>
         <div style="position:absolute;top:520px;left:50px;right:50px;height:700px;overflow:hidden;">
@@ -384,6 +396,7 @@ function makeSlide(city, p, p2, p3, variant) {
         <!-- Top text -->
         <div style="position:absolute;top:60px;left:60px;right:60px;text-align:center;">
           <div style="font-family:${SERIF};font-size:${cs(120,city)}px;font-weight:bold;font-style:italic;color:white;text-shadow:0 4px 16px rgba(0,0,0,0.8);">${C}</div>
+          ${PH('rgba(255,255,255,0.4)')}
           <div style="font-family:${FUTURA};font-size:50px;font-weight:bold;color:white;letter-spacing:4px;margin-top:8px;">FREE PHOTO SHOOT</div>
           <div style="font-family:${SANS};font-size:22px;color:rgba(255,255,255,0.4);margin-top:10px;">${CTA}</div>
         </div>
@@ -425,6 +438,7 @@ function makeSlide(city, p, p2, p3, variant) {
         <!-- Neon text at top -->
         <div style="position:absolute;top:120px;left:60px;right:60px;text-align:center;">
           <div style="font-family:${SERIF};font-size:${cs(160,city)}px;font-weight:bold;font-style:italic;color:#FF1493;text-shadow:0 0 20px rgba(255,20,147,0.8),0 0 60px rgba(255,20,147,0.4),0 0 120px rgba(255,20,147,0.2);line-height:0.85;">${C}</div>
+          ${PH('rgba(255,20,147,0.4)')}
           <div style="font-family:${FUTURA};font-size:60px;font-weight:bold;color:#00FF88;text-shadow:0 0 15px rgba(0,255,136,0.7),0 0 50px rgba(0,255,136,0.3);margin-top:16px;letter-spacing:4px;">FREE PHOTO SHOOT</div>
           <div style="font-family:${SANS};font-size:22px;color:rgba(255,20,147,0.4);margin-top:16px;">${CTA}</div>
         </div>
@@ -447,6 +461,7 @@ function makeSlide(city, p, p2, p3, variant) {
         <div style="position:absolute;top:60px;left:60px;">
           <div style="font-family:${SERIF};font-size:32px;font-style:italic;color:#8B7355;">Greetings from</div>
           <div style="font-family:${SERIF};font-size:${cs(110,city)}px;font-weight:bold;font-style:italic;color:#E63946;line-height:0.85;">${city}</div>
+          ${PH('#8B7355')}
           <div style="font-family:${FUTURA};font-size:36px;font-weight:bold;color:#E63946;letter-spacing:4px;margin-top:8px;">FREE PHOTO SHOOT</div>
         </div>
         <!-- Photo -->
@@ -477,7 +492,7 @@ function makeSlide(city, p, p2, p3, variant) {
         </div>
         <!-- Museum placard -->
         <div style="position:absolute;top:1120px;left:50%;transform:translateX(-50%);width:480px;background:white;padding:24px 32px;box-shadow:0 2px 8px rgba(0,0,0,0.08);">
-          <div style="font-family:${SANS};font-size:22px;font-weight:bold;color:#111;letter-spacing:2px;">${C}</div>
+          <div style="font-family:${SANS};font-size:22px;font-weight:bold;color:#111;letter-spacing:2px;">${C}, PHILIPPINES</div>
           <div style="font-family:${SERIF};font-size:18px;font-style:italic;color:#666;margin-top:4px;">Free Photo Shoot, 2026</div>
           <div style="font-family:${SANS};font-size:14px;color:#999;margin-top:6px;">Digital photography • Courtesy of @madebyaidan</div>
         </div>
@@ -493,6 +508,7 @@ function makeSlide(city, p, p2, p3, variant) {
         <!-- Text top -->
         <div style="position:absolute;top:80px;left:80px;right:80px;">
           <div style="font-family:${SERIF};font-size:${cs(140,city)}px;font-weight:bold;font-style:italic;color:rgba(220,180,180,0.9);line-height:0.82;text-shadow:0 0 20px rgba(180,30,30,0.2);">${C}</div>
+          ${PH('rgba(200,120,120,0.4)')}
           <div style="font-family:${FUTURA};font-size:56px;font-weight:bold;color:rgba(200,120,120,0.8);letter-spacing:6px;margin-top:12px;">FREE PHOTO SHOOT</div>
           <div style="font-family:${MONO};font-size:20px;color:rgba(200,100,100,0.35);margin-top:14px;">${CTA}</div>
         </div>
@@ -523,6 +539,7 @@ function makeSlide(city, p, p2, p3, variant) {
         <div style="position:absolute;top:100px;left:80px;right:80px;text-align:center;">
           <div style="font-family:${SERIF};font-size:40px;font-style:italic;color:#FFE44D;text-shadow:0 0 10px rgba(255,228,77,0.3);">now showing</div>
           <div style="font-family:${DISPLAY};font-size:${cs(140,city)}px;color:white;text-transform:uppercase;line-height:0.85;text-shadow:0 4px 12px rgba(0,0,0,0.5);">${C}</div>
+          ${PH('rgba(255,228,77,0.4)')}
           <div style="font-family:${FUTURA};font-size:58px;font-weight:bold;color:#FFE44D;letter-spacing:4px;margin-top:8px;text-shadow:0 0 15px rgba(255,228,77,0.4);">FREE PHOTO SHOOT</div>
           <div style="font-family:${SANS};font-size:22px;color:rgba(255,228,77,0.4);margin-top:14px;">${CTA}</div>
         </div>
@@ -543,6 +560,7 @@ function makeSlide(city, p, p2, p3, variant) {
         <div style="position:absolute;top:80px;left:140px;right:100px;">
           <div style="font-family:${MONO};font-size:26px;color:rgba(0,0,0,0.7);line-height:2.0;">TO: You<br>FROM: Aidan Torrence<br>RE: Free Photo Shoot</div>
           <div style="font-family:${MONO};font-size:${cs(70,city)}px;font-weight:bold;color:#111;line-height:1.0;margin-top:20px;">${C}</div>
+          ${PH('rgba(0,0,0,0.35)', MONO)}
           <div style="font-family:${MONO};font-size:44px;font-weight:bold;color:#111;margin-top:16px;">FREE PHOTO SHOOT</div>
           <div style="font-family:${MONO};font-size:22px;color:rgba(0,0,0,0.5);margin-top:16px;">${CTA}<span style="display:inline-block;width:4px;height:24px;background:#111;margin-left:4px;vertical-align:bottom;"></span></div>
         </div>
@@ -566,6 +584,7 @@ function makeSlide(city, p, p2, p3, variant) {
               <div style="font-family:${MONO};font-size:14px;color:#999;">C-90</div>
             </div>
             <div style="font-family:${SERIF};font-size:${cs(72,city)}px;font-weight:bold;font-style:italic;color:#111;line-height:0.85;">${city}</div>
+            ${PH('#999')}
             <div style="font-family:${FUTURA};font-size:38px;font-weight:bold;color:#E63946;letter-spacing:4px;margin-top:8px;">FREE PHOTO SHOOT</div>
             <div style="width:100%;height:2px;background:#ddd;margin:12px 0;"></div>
             <div style="font-family:${MONO};font-size:16px;color:#666;line-height:1.8;">01. Show up<br>02. Look amazing<br>03. Get free photos<br>04. That's it</div>
@@ -599,6 +618,7 @@ function makeSlide(city, p, p2, p3, variant) {
         <!-- Text overlay — above bottom quadrant -->
         <div style="position:absolute;bottom:560px;left:0;right:0;height:200px;background:linear-gradient(180deg,transparent,rgba(0,0,0,0.95));display:flex;flex-direction:column;justify-content:flex-end;align-items:center;padding-bottom:20px;">
           <div style="font-family:${FUTURA};font-size:${cs(72,city)}px;font-weight:bold;color:white;letter-spacing:4px;">${C}</div>
+          ${PH('rgba(255,255,255,0.4)')}
           <div style="font-family:${FUTURA};font-size:44px;font-weight:bold;color:#0B93F6;letter-spacing:4px;margin-top:2px;">FREE PHOTO SHOOT</div>
         </div>
       </div>`
@@ -610,6 +630,7 @@ function makeSlide(city, p, p2, p3, variant) {
         <!-- Top text -->
         <div style="position:absolute;top:60px;left:60px;right:60px;text-align:center;">
           <div style="font-family:${SERIF};font-size:${cs(110,city)}px;font-weight:bold;font-style:italic;color:white;text-shadow:0 4px 16px rgba(0,0,0,0.8);">${C}</div>
+          ${PH('rgba(255,255,255,0.4)')}
           <div style="font-family:${FUTURA};font-size:48px;font-weight:bold;color:white;letter-spacing:4px;margin-top:6px;">FREE PHOTO SHOOT</div>
         </div>
         <!-- Receipt -->
@@ -643,6 +664,7 @@ function makeSlide(city, p, p2, p3, variant) {
           <div style="width:80px;height:1px;background:#D4AF37;margin:28px auto;"></div>
           <div style="font-family:${FUTURA};font-size:22px;color:#999;letter-spacing:8px;margin-bottom:12px;">LOCATION</div>
           <div style="font-family:${SERIF};font-size:${cs(90,city)}px;font-weight:bold;font-style:italic;color:#D4AF37;line-height:0.85;">${city}</div>
+          <div style="font-family:${SANS};font-size:18px;letter-spacing:6px;color:#999;margin-top:6px;">PHILIPPINES</div>
           <div style="width:80px;height:1px;background:#D4AF37;margin:28px auto;"></div>
           <div style="font-family:${FUTURA};font-size:22px;color:#999;letter-spacing:8px;margin-bottom:6px;">HOSTED BY</div>
           <div style="font-family:${SERIF};font-size:32px;font-style:italic;color:#555;">Aidan Torrence</div>
@@ -663,6 +685,7 @@ function makeSlide(city, p, p2, p3, variant) {
             <img src="${p}" style="width:100%;height:100%;object-fit:cover;filter:sepia(0.4) contrast(1.1);"/>
           </div>
           <div style="font-family:${SERIF};font-size:${cs(80,city)}px;font-weight:bold;color:#3a2a1a;margin-top:20px;">${C}</div>
+          <div style="font-family:${SANS};font-size:18px;letter-spacing:4px;color:#5a4a3a;margin-top:2px;">PHILIPPINES</div>
           <div style="width:60%;height:3px;background:#3a2a1a;margin:16px 0;opacity:0.5;"></div>
           <div style="font-family:${SERIF};font-size:32px;color:#5a4a3a;text-align:center;">FOR LOOKING TOO GOOD IN FREE PHOTOS</div>
           <div style="margin-top:20px;text-align:center;">
@@ -687,6 +710,7 @@ function makeSlide(city, p, p2, p3, variant) {
           </div>
           <div style="padding:0 26px;">
             <div style="font-family:${SERIF};font-size:${cs(72,city)}px;font-weight:bold;font-style:italic;color:#111;line-height:0.85;">${city}</div>
+            ${PH('#999')}
             <div style="font-family:${FUTURA};font-size:32px;font-weight:bold;color:#E63946;letter-spacing:4px;margin-top:6px;">FREE PHOTO SHOOT</div>
           </div>
           <div style="margin:14px;padding:16px;background:rgba(0,0,0,0.03);border-radius:8px;border:1px solid rgba(0,0,0,0.08);">
@@ -709,6 +733,7 @@ function makeSlide(city, p, p2, p3, variant) {
           <div style="flex:1;background:#FFE44D;padding:44px 36px;border-radius:12px 0 0 12px;">
             <div style="font-family:${FUTURA};font-size:20px;font-weight:bold;color:rgba(0,0,0,0.3);letter-spacing:8px;">ADMIT ONE</div>
             <div style="font-family:${DISPLAY};font-size:${cs(90,city)}px;color:#111;text-transform:uppercase;line-height:0.85;margin-top:10px;">${C}</div>
+            ${PH('rgba(0,0,0,0.3)')}
             <div style="font-family:${FUTURA};font-size:46px;font-weight:bold;color:#E63946;letter-spacing:2px;margin-top:10px;">FREE PHOTO SHOOT</div>
             <div style="width:100%;height:2px;background:rgba(0,0,0,0.1);margin:16px 0;"></div>
             <div style="font-family:${SANS};font-size:20px;color:rgba(0,0,0,0.5);">DATE: Whenever you want</div>
@@ -733,6 +758,7 @@ function makeSlide(city, p, p2, p3, variant) {
         <div style="position:absolute;top:100px;left:80px;right:80px;">
           <div style="font-family:${FUTURA};font-size:26px;font-weight:bold;color:rgba(255,255,255,0.5);letter-spacing:6px;">YOUR 2026 WRAPPED</div>
           <div style="font-family:${AVENIR};font-size:${cs(130,city)}px;font-weight:bold;color:white;line-height:0.85;margin-top:8px;">${C}</div>
+          ${PH('rgba(255,255,255,0.4)')}
           <div style="font-family:${FUTURA};font-size:58px;font-weight:bold;color:#1DB954;letter-spacing:4px;margin-top:12px;">FREE PHOTO SHOOT</div>
           <div style="font-family:${SANS};font-size:22px;color:rgba(255,255,255,0.35);margin-top:12px;">${CTA}</div>
         </div>
@@ -764,6 +790,7 @@ function makeSlide(city, p, p2, p3, variant) {
         <!-- Title block top -->
         <div style="position:absolute;top:60px;left:80px;right:80px;text-align:center;">
           <div style="font-family:${SERIF};font-size:${cs(140,city)}px;font-weight:bold;font-style:italic;color:white;line-height:0.82;text-shadow:0 4px 16px rgba(0,0,0,0.6);">${C}</div>
+          ${PH('rgba(255,255,255,0.4)')}
           <div style="font-family:${FUTURA};font-size:56px;font-weight:bold;color:#FFD700;letter-spacing:4px;margin-top:12px;">FREE PHOTO SHOOT</div>
           <div style="font-family:${SANS};font-size:22px;color:rgba(255,255,255,0.4);margin-top:14px;">${CTA}</div>
         </div>
@@ -790,6 +817,7 @@ function makeSlide(city, p, p2, p3, variant) {
         <div style="position:absolute;top:180px;left:60px;right:60px;text-align:center;">
           <div style="font-family:${DISPLAY};font-size:56px;color:#FFE600;letter-spacing:10px;">⚠ WARNING ⚠</div>
           <div style="font-family:${DISPLAY};font-size:${cs(180,city)}px;color:white;text-transform:uppercase;line-height:0.82;margin-top:16px;text-shadow:0 4px 12px rgba(0,0,0,0.8);">${C}</div>
+          ${PH('rgba(255,230,0,0.5)')}
           <div style="font-family:${DISPLAY};font-size:74px;color:#FFE600;margin-top:16px;letter-spacing:4px;">FREE PHOTO SHOOT</div>
           <div style="font-family:${SANS};font-size:28px;color:rgba(255,255,255,0.5);margin-top:20px;">CAUTION: MAY CAUSE EXCESSIVE COMPLIMENTS</div>
           <div style="font-family:${SANS};font-size:22px;color:rgba(255,230,0,0.4);margin-top:20px;">${CTA}</div>
@@ -803,6 +831,7 @@ function makeSlide(city, p, p2, p3, variant) {
         <!-- Top text -->
         <div style="position:absolute;top:60px;left:80px;right:80px;">
           <div style="font-family:${SERIF};font-size:${cs(130,city)}px;font-weight:bold;font-style:italic;color:white;line-height:0.85;">${C}</div>
+          ${PH('rgba(255,255,255,0.3)')}
           <div style="font-family:${FUTURA};font-size:54px;font-weight:bold;color:#E63946;letter-spacing:4px;margin-top:10px;">FREE PHOTO SHOOT</div>
           <div style="font-family:${MONO};font-size:16px;color:rgba(255,255,255,0.3);margin-top:12px;">SIDE A • TRACK 01 • NOW PLAYING</div>
           <div style="font-family:${SANS};font-size:20px;color:rgba(255,255,255,0.35);margin-top:8px;">${CTA}</div>
@@ -857,6 +886,7 @@ function makeSlide(city, p, p2, p3, variant) {
         <!-- Text above bottom quadrant -->
         <div style="position:absolute;top:1300px;left:60px;right:60px;text-align:center;">
           <div style="font-family:${FUTURA};font-size:${cs(72,city)}px;font-weight:bold;color:white;">${C}</div>
+          ${PH('rgba(255,255,255,0.4)')}
           <div style="font-family:${FUTURA};font-size:44px;font-weight:bold;color:rgba(255,255,255,0.8);letter-spacing:4px;margin-top:2px;">FREE PHOTO SHOOT</div>
         </div>
       </div>`
