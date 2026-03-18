@@ -1,0 +1,75 @@
+{
+  "createdAt": "2026-03-18T10:43:59.377Z",
+  "city": "Antipolo",
+  "folder": "output/antipolo-low-cpc-v2",
+  "strategy": "Antipolo low-CPC v1: local callout + explicit free offer + objection handling + proof + urgency.",
+  "handle": "@madebyaidan",
+  "photos": {
+    "heroWarm": "manila-gallery-dsc-0130.jpg",
+    "heroDark": "manila-gallery-night-001.jpg",
+    "heroMotion": "manila-gallery-dsc-0075.jpg",
+    "heroUrban": "manila-gallery-urban-003.jpg",
+    "heroClose": "manila-gallery-closeup-001.jpg",
+    "heroGarden": "manila-gallery-garden-002.jpg",
+    "heroIvy": "manila-gallery-ivy-002.jpg",
+    "heroCanal": "manila-gallery-canal-001.jpg",
+    "proofA": "manila-gallery-dsc-0190.jpg",
+    "proofB": "manila-gallery-dsc-0911.jpg",
+    "proofC": "manila-gallery-garden-001.jpg",
+    "proofD": "manila-gallery-market-001.jpg",
+    "proofE": "manila-gallery-urban-001.jpg",
+    "proofF": "manila-gallery-ivy-001.jpg"
+  },
+  "ads": [
+    {
+      "file": "01-local-offer.png",
+      "sourcePhoto": "heroWarm",
+      "strategy": "Big local callout with clear free offer and beginner-safe promise."
+    },
+    {
+      "file": "02-beginner-safe.png",
+      "sourcePhoto": "heroDark",
+      "strategy": "Calls out first-timers and removes posing anxiety fast."
+    },
+    {
+      "file": "03-need-better-photos.png",
+      "sourcePhoto": "heroUrban",
+      "strategy": "Outcome-focused hook that names the use cases people already care about."
+    },
+    {
+      "file": "04-free-means-free.png",
+      "sourcePhoto": "heroMotion",
+      "strategy": "Kills skepticism by making the offer concrete and specific."
+    },
+    {
+      "file": "05-proof-grid.png",
+      "sourcePhoto": "proofA",
+      "strategy": "Proof-first creative that sells the style before the CTA."
+    },
+    {
+      "file": "06-dm-plan-shoot.png",
+      "sourcePhoto": "heroCanal",
+      "strategy": "Process creative that makes the offer feel easy and low-friction."
+    },
+    {
+      "file": "07-hate-posing.png",
+      "sourcePhoto": "heroClose",
+      "strategy": "Calls out the awkwardness objection directly."
+    },
+    {
+      "file": "08-fast-value.png",
+      "sourcePhoto": "heroGarden",
+      "strategy": "Makes the time-to-value obvious and easy to process in one glance."
+    },
+    {
+      "file": "09-limited-slots.png",
+      "sourcePhoto": "heroIvy",
+      "strategy": "Urgency-led local creative that makes the timing explicit."
+    },
+    {
+      "file": "10-direct-cta.png",
+      "sourcePhoto": "proofF",
+      "strategy": "Straight CTA creative for the platform to push once the hook is validated."
+    }
+  ]
+}

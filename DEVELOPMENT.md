@@ -226,6 +226,18 @@
   - Pages 1 and 5 place the copy in the upper half with the image below to simplify composition.
   - Page 5 uses shorter CTA copy than V7.
 
+## Antipolo CPC Story Ads (Low-CPC Static Pack)
+- Source folder: `marketing/cpc-carousel-ads`
+- Render command:
+  - `node marketing/cpc-carousel-ads/render-antipolo-low-cpc-v2.mjs`
+- Output folder:
+  - `marketing/cpc-carousel-ads/output/antipolo-low-cpc-v2`
+- Notes:
+  - This renderer creates a brand new Antipolo-only folder and does not touch `marketing/cpc-carousel-ads/output/antipolo` or `marketing/cpc-carousel-ads/output/antipolo-low-cpc-v1`.
+  - The pack is built for story/reels placement and keeps the message focused on local callout + explicit free offer + proof + objection handling + urgency.
+  - `sources.json` in the output folder records the photo sources and the strategy for each creative.
+  - If you need more local specificity, add new Antipolo-specific source images first; the current pack still uses the shared portfolio library from `public/images/large`.
+
 ## Manila Model Search Carousel V9 (Larger Manila Label)
 - Source folder: `marketing/manila-model-search-carousel`
 - Render command:
