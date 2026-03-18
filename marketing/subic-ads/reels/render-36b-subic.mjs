@@ -19,6 +19,9 @@ var SAFE_BOTTOM = 430;
 // Film scan source folder
 var FILM_SCANS_DIR = '/Volumes/PortableSSD/Exports/film scans';
 
+// Cached processed photos (fallback when SSD not mounted)
+var CACHED_PHOTOS_DIR = path.join(__dirname, 'photo-cache');
+
 // Film scan filenames (same as 36a)
 var PHOTO_NAMES = [
   'DSC_0898.jpg',
@@ -470,14 +473,20 @@ async function main() {
   var PROOF_PHOTOS = [];
   for (var name of PHOTO_NAMES) {
     var src = path.join(FILM_SCANS_DIR, name);
-    if (!existsSync(src)) {
-      console.error('Photo not found: ' + src);
+    var outFile = path.join(tmpPhotosDir, name.replace('.jpg', '_processed.jpg'));
+    var cachedFile = path.join(CACHED_PHOTOS_DIR, name.replace('.jpg', '_processed.jpg'));
+
+    if (existsSync(src)) {
+      execSync('magick "' + src + '" -shave 500x600 +repage -auto-level -quality 95 "' + outFile + '"');
+      console.log('  Processed from SSD: ' + name);
+    } else if (existsSync(cachedFile)) {
+      execSync('cp "' + cachedFile + '" "' + outFile + '"');
+      console.log('  Using cached: ' + name);
+    } else {
+      console.error('Photo not found on SSD or in cache: ' + src);
       process.exit(1);
     }
-    var outFile = path.join(tmpPhotosDir, name.replace('.jpg', '_processed.jpg'));
-    execSync('magick "' + src + '" -shave 500x600 +repage -auto-level -quality 95 "' + outFile + '"');
     PROOF_PHOTOS.push(outFile);
-    console.log('  Processed: ' + name);
   }
 
   // Load processed photos as base64
