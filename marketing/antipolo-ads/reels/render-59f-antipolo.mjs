@@ -8,6 +8,7 @@ var __dirname = path.dirname(fileURLToPath(import.meta.url));
 var OUT_DIR = path.join(__dirname, 'output-59f-antipolo');
 var TEMP_FRAMES_DIR = existsSync('/Volumes/PortableSSD') ? '/Volumes/PortableSSD/reels-final-temp/output-59f-antipolo-frames' : path.join(OUT_DIR, 'tmp-frames');
 var FILM_SCANS_DIR = '/Volumes/PortableSSD/Exports/film scans';
+var LOCAL_PHOTOS_DIR = '/Users/aidantorrence/Documents/aidan-modern/public/images/large';
 var W = 1080, H = 1920, FPS = 30;
 var TOTAL_DURATION = 15;
 var TOTAL_FRAMES = FPS * TOTAL_DURATION; // 450
@@ -16,6 +17,13 @@ var PHOTO_NAMES = [
   'DSC_0306.jpg', 'DSC_0307.jpg', 'DSC_0308.jpg',
   'DSC_0309.jpg', 'DSC_0310.jpg', 'DSC_0311.jpg',
   'DSC_0312.jpg', 'DSC_0313.jpg', 'DSC_0315.jpg',
+];
+
+// Local portfolio photos used when SSD is not mounted
+var LOCAL_PHOTO_NAMES = [
+  '000001.jpg', '000002.jpg', '000003.jpg',
+  '000004.jpg', '000007.jpg', '000008.jpg',
+  '000009.jpg', '000013.jpg', '000020.jpg',
 ];
 
 // Safe zones
@@ -27,13 +35,29 @@ function resetOutputDir() {
 }
 
 function processPhotos() {
-  if (!existsSync(FILM_SCANS_DIR)) {
-    console.error('ERROR: PortableSSD is not connected. Mount the SSD so that "' + FILM_SCANS_DIR + '" is accessible, then re-run.');
-    process.exit(1);
-  }
   var cropDir = path.join(OUT_DIR, 'tmp-photos');
   mkdirSync(cropDir, { recursive: true });
   var processed = {};
+
+  // Check if SSD is available
+  var useFallback = !existsSync(FILM_SCANS_DIR);
+  if (useFallback) {
+    console.log('  SSD not mounted, using local portfolio photos');
+    for (var i = 0; i < PHOTO_NAMES.length; i++) {
+      var name = PHOTO_NAMES[i];
+      var localName = LOCAL_PHOTO_NAMES[i];
+      var src = path.join(LOCAL_PHOTOS_DIR, localName);
+      if (!existsSync(src)) {
+        console.error('Local photo not found: ' + src);
+        process.exit(1);
+      }
+      var buf = readFileSync(src);
+      processed[name] = 'data:image/jpeg;base64,' + buf.toString('base64');
+      console.log('  Loaded local: ' + localName + ' (' + (buf.length / 1024).toFixed(0) + ' KB)');
+    }
+    return processed;
+  }
+
   for (var name of PHOTO_NAMES) {
     var src = path.join(FILM_SCANS_DIR, name);
     if (!existsSync(src)) {
