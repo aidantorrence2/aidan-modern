@@ -6,7 +6,7 @@ import path from 'path';
 
 var __dirname = path.dirname(fileURLToPath(import.meta.url));
 var OUT_DIR = path.join(__dirname, 'output-59f-antipolo');
-var TEMP_FRAMES_DIR = '/Volumes/PortableSSD/reels-final-temp/output-59f-antipolo-frames';
+var TEMP_FRAMES_DIR = existsSync('/Volumes/PortableSSD') ? '/Volumes/PortableSSD/reels-final-temp/output-59f-antipolo-frames' : path.join(OUT_DIR, 'tmp-frames');
 var FILM_SCANS_DIR = '/Volumes/PortableSSD/Exports/film scans';
 var W = 1080, H = 1920, FPS = 30;
 var TOTAL_DURATION = 15;
@@ -27,6 +27,10 @@ function resetOutputDir() {
 }
 
 function processPhotos() {
+  if (!existsSync(FILM_SCANS_DIR)) {
+    console.error('ERROR: PortableSSD is not connected. Mount the SSD so that "' + FILM_SCANS_DIR + '" is accessible, then re-run.');
+    process.exit(1);
+  }
   var cropDir = path.join(OUT_DIR, 'tmp-photos');
   mkdirSync(cropDir, { recursive: true });
   var processed = {};
