@@ -14,26 +14,41 @@ function img(filename) {
   return `data:image/jpeg;base64,${buf.toString('base64')}`
 }
 
-// Portrait-only photos — no landscape crops in portrait ads
-const photos = [
-  img('manila-gallery-dsc-0075.jpg'),
-  img('manila-gallery-dsc-0130.jpg'),
-  img('manila-gallery-dsc-0911.jpg'),
-  img('manila-gallery-dsc-0190.jpg'),
-  img('manila-gallery-night-003.jpg'),
-  img('manila-gallery-market-001.jpg'),
-  img('manila-gallery-urban-003.jpg'),
-  img('manila-gallery-canal-001.jpg'),
-  img('manila-gallery-ivy-002.jpg'),
-  img('manila-gallery-park-001.jpg'),
-  img('manila-gallery-statue-001.jpg'),
-  img('manila-gallery-street-001.jpg'),
-  img('manila-gallery-night-001.jpg'),
-  img('manila-gallery-closeup-001.jpg'),
-  img('manila-gallery-shadow-001.jpg'),
-  img('manila-gallery-floor-001.jpg'),
-  img('manila-gallery-tropical-001.jpg'),
+// Portrait photos (h > w) — for portrait-oriented containers
+const portraitPhotos = [
+  img('manila-gallery-dsc-0075.jpg'),       // 976x1551
+  img('manila-gallery-dsc-0130.jpg'),       // 968x1508
+  img('manila-gallery-dsc-0911.jpg'),       // 957x1510
+  img('manila-gallery-dsc-0190.jpg'),       // 992x1505
+  img('manila-gallery-market-001.jpg'),     // 1600x2362
+  img('manila-gallery-urban-003.jpg'),      // 1228x1818
+  img('manila-gallery-canal-001.jpg'),      // 1600x2392
+  img('manila-gallery-ivy-002.jpg'),        // 1600x2380
+  img('manila-gallery-park-001.jpg'),       // 1600x2400
+  img('manila-gallery-statue-001.jpg'),     // 1600x2392
+  img('manila-gallery-street-001.jpg'),     // 1600x2387
+  img('manila-gallery-closeup-001.jpg'),    // 1059x1600
+  img('manila-gallery-shadow-001.jpg'),     // 1067x1600
+  img('manila-gallery-floor-001.jpg'),      // 1600x2408
+  img('manila-gallery-tropical-001.jpg'),   // 1600x2384
+  img('manila-gallery-white-001.jpg'),      // 1600x2366
+  img('manila-gallery-urban-001.jpg'),      // 1228x1818
 ]
+
+// Landscape photos (w > h) — for landscape-oriented containers
+const landscapePhotos = [
+  img('manila-gallery-canal-002.jpg'),      // 1600x1072
+  img('manila-gallery-garden-001.jpg'),     // 1600x1061
+  img('manila-gallery-garden-002.jpg'),     // 1600x1061
+  img('manila-gallery-ivy-001.jpg'),        // 1600x1061
+  img('manila-gallery-rocks-001.jpg'),      // 1600x1075
+  img('manila-gallery-night-001.jpg'),      // 1080x1080 (square — works for landscape)
+  img('manila-gallery-night-002.jpg'),      // 1080x1080
+  img('manila-gallery-night-003.jpg'),      // 1080x1080
+]
+
+// Variants that have landscape-oriented image containers
+const LANDSCAPE_VARIANTS = new Set([0, 1, 2, 9, 10, 19, 23, 29])
 
 // macOS system fonts that render perfectly in Playwright
 const SERIF = "Georgia, 'Times New Roman', serif"
@@ -854,13 +869,15 @@ const slides = []
 for (let ci = 0; ci < cities.length; ci++) {
   const city = cities[ci]
   for (let v = 0; v < 30; v++) {
-    const pi1 = (v * 3 + ci * 7) % photos.length
-    const pi2 = (v * 3 + ci * 7 + 1) % photos.length
-    const pi3 = (v * 3 + ci * 7 + 2) % photos.length
+    // Pick from the right pool based on container orientation
+    const pool = LANDSCAPE_VARIANTS.has(v) ? landscapePhotos : portraitPhotos
+    const pi1 = (v * 3 + ci * 7) % pool.length
+    const pi2 = (v * 3 + ci * 7 + 1) % pool.length
+    const pi3 = (v * 3 + ci * 7 + 2) % pool.length
     slides.push({
       name: `${city.toLowerCase()}-${String(v + 1).padStart(2, '0')}`,
       city,
-      html: makeSlide(city, photos[pi1], photos[pi2], photos[pi3], v),
+      html: makeSlide(city, pool[pi1], pool[pi2], pool[pi3], v),
     })
   }
 }
