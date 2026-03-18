@@ -61,7 +61,7 @@ const proofPool = [
 ]
 
 const FONT_SANS = "'Space Grotesk', 'Helvetica Neue', sans-serif"
-const FONT_DISPLAY = "'Bebas Neue', 'Archivo Black', Impact, sans-serif"
+const FONT_DISPLAY = "'Oswald', 'Archivo Black', Impact, sans-serif"
 const FONT_SERIF = "'Fraunces', Georgia, serif"
 const FONT_MONO = "'IBM Plex Mono', 'Courier New', monospace"
 
@@ -331,7 +331,7 @@ const RENDERERS = {
 }
 
 const RAW_CONCEPTS = `
-beginner-no-model|No model experience good|Free Antipolo sessions for first timers|I direct every pose so you never feel lost|hero|citron|Beginner Safe,Free Slot,Antipolo|Pose coaching included;Outfit guidance before shoot;Edited photos in 7 days
+beginner-no-model|No model experience needed|Free Antipolo sessions for first timers|I direct every pose so you never feel lost|hero|citron|Beginner Safe,Free Slot,Antipolo|Pose coaching included;Outfit guidance before shoot;Edited photos in 7 days
 awkward-to-confident|Camera shy to confident|You do not need to know angles|I coach the full flow from first frame to last frame|glass|mint|No Pressure,Guided,Free Session|Warm up poses first;Simple direction all shoot;Fast final gallery
 confidence-reset|Confidence reset portraits|If your feed feels stale this is your reset|One free session can give you a fresh month of content|magazine|ember|Confidence,Fresh Feed,Antipolo|Planning chat before shoot;Three look ideas suggested;Cinematic edits delivered
 sunday-main-character|Sunday main character energy|Antipolo light plus your best outfit|We build images that feel like a scene not random snapshots|split|gold|Main Character,Free Shoot,Weekend|Location matching your vibe;Shot list built together;Guided posing throughout
@@ -354,11 +354,11 @@ dancer-motion-portraits|Dancer motion portraits free|Capture movement without bl
 tattoo-fresh-ink|Fresh ink portrait set|New tattoo deserves proper photos|Free Antipolo shoot built around ink details|hero|coral|Tattoo,Detail Shots,Free|Macro and wide combinations;Skin tone conscious edits;Simple guided posing
 thrift-fit-editorial|Thrift fit editorial day|Your outfit game deserves better photos|Free Antipolo shoot for lookbook style posts|magazine|gold|Outfit Focus,Editorial,Free|Lookbook flow planning;Fabric detail shots;Natural movement direction
 sneakerhead-lookbook|Sneakerhead lookbook free|Show the kicks and the full fit together|Free Antipolo session for fashion content|split|mono|Sneaker Fit,Lookbook,Free|Low angle sneaker frames;Street texture backgrounds;Edited carousel set
-cafe-owner-story|Cafe owner story portraits|Put your face behind your brand|Free Antipolo shoot for authentic business content|timeline|cream|Cafe Owner,Brand Story,Free|Owner at work frames;Product plus portrait mix;Social first edits
+cafe-owner-story|Story-led brand portraits|Put your face behind your brand|Free Antipolo shoot for authentic business content|timeline|cream|Brand Story,Personal Brand,Free|Owner style lifestyle frames;Portrait plus detail mix;Social-first edits
 real-estate-agent-headshots|Real estate profile upgrade|Trust starts with a strong photo|Free Antipolo portraits that look polished not fake|checklist|cobalt|Agent Profile,Trust,Free|Friendly confident expressions;Phone and signboard props;Ready for listings
 makeup-artist-portfolio|Makeup artist portfolio portraits|Show your face and your craft in one set|Free Antipolo shoot with beauty focused framing|glass|coral|MUA,Portfolio,Free|Beauty closeups and wides;Color accurate retouching;Story highlight crops
 lash-tech-branding|Lash tech brand photos|Your service quality should be visible online|Free Antipolo portraits to level your booking page|split|mint|Lash Tech,Branding,Free|Client and owner style frames;Before and after concepts;Optimized social edits
-barber-reel-thumbnails|Barber reel thumbnail pack|Scroll stopping reels need a killer cover|Free Antipolo portraits with gritty barber energy|urgency|ember|Barber,Reel Covers,Free|High contrast portraits;Tool and chair props;Thumbnail safe crops
+barber-reel-thumbnails|Reel cover portrait pack|Scroll stopping reels need a killer cover|Free Antipolo portraits built for cover frames|urgency|ember|Reel Covers,Creator Pack,Free|High contrast portraits;Bold expression options;Thumbnail-safe crops
 chef-social-content|Chef social content portraits|If people see your face they remember your food|Free Antipolo shoot for chef brand pages|timeline|gold|Chef Brand,Personal Story,Free|Kitchen and portrait blend;Action hand shots;Edited cross platform set
 wedding-vendor-profile|Wedding vendor profile shots|Couples trust faces not logos|Free Antipolo portraits for planners and coordinators|checklist|cream|Wedding Vendor,Profile,Free|Elegant pose coaching;Warm light treatment;Booking page ready images
 couple-no-cringe|Couple photos without cringe|Natural chemistry over forced poses|Free Antipolo session that feels like a date not a chore|hero|citron|Couples,Natural,Free|Prompt based direction;Walking and laughing frames;Soft color edits
@@ -378,7 +378,7 @@ never-photogenic|Never photogenic until now|Most people just need direction and 
 tired-of-selfies|Tired of selfie era|Your next level starts with proper photos|Free Antipolo shoot for clean polished images|split|gold|Selfie Upgrade,Free,Antipolo|Pro camera depth and color;Varied compositions;Edited final pack
 same-old-mirror|Same old mirror pics stop|Your feed deserves new scenes|Free Antipolo portraits with real locations and vibe|magazine|ember|Feed Refresh,Free Session,Creative|Scene variety in one shoot;Outfit change guidance;Post ready exports
 blurry-night-pics|Blurry night pics no more|Low light can still look sharp and cinematic|Free Antipolo night style portraits with pro lighting|hero|violet|Night Portrait,Free,Antipolo|Controlled low light setup;Crisp eyes and skin detail;Moody color grading
-no-one-to-shoot-you|No one to shoot you properly|That is exactly why this offer exists|Free Antipolo session with full direction and pacing|urgency|neon|No Photographer Friend,Free,Apply|Solo friendly process;Hands on direction;Clear deliverable promise
+no-one-to-shoot-you|No one to shoot you properly|That is exactly why this offer exists|Free Antipolo session with full direction and pacing|urgency|neon|Solo Friendly,Free,Apply|Solo-friendly process;Hands-on direction;Clear deliverable promise
 no-idea-what-to-wear|No idea what to wear|I help you pick outfits that read well on camera|Free Antipolo portraits with styling support|checklist|cream|Outfit Help,Free,Antipolo|Pre shoot outfit check;Color and texture advice;Looks matched to locations
 dont-know-locations|Do not know where to shoot|I suggest Antipolo spots based on your vibe|Free session with location planning included|timeline|mint|Location Help,Antipolo,Free|Urban and nature options;Time of day optimization;Travel efficient route
 golden-hour-rideout|Golden hour ride out portraits|Warm light plus motion equals premium feel|Free Antipolo session timed for sunset glow|hero|gold|Golden Hour,Free,Antipolo|Sunset timing lock;Movement prompts;Warm cinematic edits
@@ -394,7 +394,7 @@ rooftop-energy|Rooftop energy portraits|Skyline mood and confident framing|Free 
 before-after-photos|Before and after glow up|Walk in unsure walk out with strong photos|Free Antipolo session with visible transformation|checklist|coral|Glow Up,Free,Result|Warm up then power shots;Preview feedback during shoot;Final best picks
 one-hour-new-you|One hour new you|You do not need a whole day|Free Antipolo portrait session in under one hour|urgency|citron|Fast Shoot,Free,Antipolo|Efficient shot flow;Three location angles;Quick final turnaround
 zero-budget-banger|Zero budget banger portraits|No fee does not mean low quality|Free Antipolo session with premium style direction|hero|neon|No Budget,High Quality,Free|Deliberate shot list;Lighting and composition focus;Professional final edits
-free-not-cheap|Free not cheap|The offer is free the execution is not basic|Antipolo session with careful art direction and edits|glass|gold|Free Offer,Premium Feel,Antipolo|Creative direction included;Consistent quality control;Edited outputs polished
+free-not-cheap|Free, not cheap|The offer is free. The execution is not basic|Antipolo session with careful art direction and edits|glass|gold|Free Offer,Premium Feel,Antipolo|Creative direction included;Consistent quality control;Edited outputs polished
 quality-over-filter|Quality over filters|Real lighting beats heavy apps every time|Free Antipolo session for clean trustworthy images|split|mono|No Filter Needed,Free,Antipolo|Natural light control;Skin friendly editing;True to life tones
 stop-waiting-look-good|Stop waiting look good now|If you keep delaying your feed stays outdated|Free Antipolo slot open right now|urgency|ember|Act Now,Free Session,Antipolo|Simple DM booking;Flexible scheduling options;Clear delivery promise
 shoot-now-post-month|Shoot now post all month|One session can fill weeks of posts|Free Antipolo content batch for creators and pros|timeline|mint|Content Batch,Free,Antipolo|Multiple scenes in one run;Portrait and detail mix;Exported for multiple platforms
@@ -410,7 +410,7 @@ casting-call-ready|Casting call ready now|When opportunity hits your photos shou
 model-search-vibes|Model search vibes free|Want agency style photos without agency stress|Free Antipolo portraits with clean model test energy|magazine|mono|Model Test,Free Session,Antipolo|Simple pose progression;Body line direction;Minimal retouch style
 campus-famous-photos|Campus famous photo set|Pull up with better photos this semester|Free Antipolo portraits for student creators|sticky|citron|Campus,Student,Free|Youthful location picks;Casual confidence prompts;Share ready delivery
 barkada-jealous-post|Barkada jealous post pack|Post once and everyone asks who shot this|Free Antipolo portraits with high impact styling|proof|violet|Social Flex,Free,Antipolo|Attention grabbing opener;Story plus feed variants;Fast edit turnaround
-make-your-ex-look|Make your ex look twice|New era photos with real confidence|Free Antipolo portrait session for your comeback arc|hero|ember|Comeback Era,Free,Antipolo|Power stance coaching;Mood shift sequence;Strong final selects
+make-your-ex-look|Comeback portrait pack|New era photos with real confidence|Free Antipolo portrait session for your next chapter|hero|ember|Comeback Era,Free,Antipolo|Power stance coaching;Mood shift sequence;Strong final selects
 this-month-only|This month only free slots|Offer window is open now not forever|Antipolo slots close as soon as calendar fills|urgency|neon|This Month,Limited,Free|Priority to fast replies;Short booking process;Clear date options
 last-few-slots|Last few Antipolo slots|Most people wait then miss|DM now if you want a free portrait session|urgency|coral|Last Few Slots,Antipolo,Free|Real time slot updates;Simple confirmation steps;Fast scheduling support
 first-come-antipolo|First come first shoot|I book based on who confirms quickly|Free Antipolo portraits for fast movers|urgency|citron|First Come,Free Session,Antipolo|Quick DM triage;Clear booking order;Transparent slot status
@@ -419,7 +419,7 @@ weekend-slots-gone-fast|Weekend slots go fast|Prime times fill first every batch
 weekday-hidden-slots|Weekday hidden slots open|Want less crowds and cleaner locations|Free Antipolo sessions available on selected weekdays|timeline|mint|Weekday Slots,Free,Antipolo|Calmer shoot environment;Flexible time windows;Faster turnaround queue
 sunrise-slot-limited|Sunrise slot limited run|Best soft light has very few windows|Free Antipolo sunrise sessions for dreamy portraits|hero|cream|Sunrise,Limited,Free|Early light advantage;Quiet locations at dawn;Soft cinematic edits
 sunset-slot-limited|Sunset slot limited run|Golden hour is short and competitive|Free Antipolo sunset sessions available now|hero|gold|Sunset,Limited,Free|Timed sunset sequence;Warm tone grading;Efficient shot pacing
-no-form-dm-only|No long form DM only|Two messages and you are in process|Free Antipolo sessions with direct booking flow|chat|cobalt|DM Only,Easy Booking,Free|No long questionnaire;Quick vibe check;Fast schedule lock
+no-form-dm-only|No long forms. DM only|Two messages and you are in process|Free Antipolo sessions with direct booking flow|chat|cobalt|DM Only,Easy Booking,Free|No long questionnaire;Quick vibe check;Fast schedule lock
 two-message-booking|Two message booking flow|Message one for slot message two to confirm|Free Antipolo portraits with zero friction signup|chat|mint|Quick Booking,Free Session,Antipolo|Simple booking script;Prompt replies rewarded;No complicated steps
 quick-reply-priority|Quick reply gets priority|I prioritize people who respond fast|Free Antipolo slots move quickly once opened|urgency|neon|Priority Queue,Free,Antipolo|Fast reply advantage;Clear hold times;Instant confirmation when ready
 anti-ghosting-process|Anti ghosting booking process|Clear timelines and clear expectations|Free Antipolo portraits with no messy scheduling|timeline|mono|Clear Process,Free,Antipolo|Message checkpoints;Auto release inactive holds;Simple reminders
@@ -461,7 +461,7 @@ function documentFor(body) {
         <meta charset="utf-8" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fraunces:opsz,wght,SOFT,WONK@9..144,500,0,0;9..144,700,0,0;9..144,700,100,0&family=IBM+Plex+Mono:wght@500;700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,500,0,0;9..144,700,0,0;9..144,700,100,0&family=IBM+Plex+Mono:wght@500;700&family=Oswald:wght@500;600;700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet" />
         <style>
           * { box-sizing: border-box; }
           html, body { margin: 0; width: 1080px; height: 1920px; overflow: hidden; background: #000; }
@@ -474,7 +474,7 @@ function documentFor(body) {
 
 async function render() {
   const browser = await chromium.launch()
-  const context = await browser.newContext({ viewport: { width: 1080, height: 1920 }, deviceScaleFactor: 1 })
+  const context = await browser.newContext({ viewport: { width: 1080, height: 1920 }, deviceScaleFactor: 2 })
 
   const summary = {
     createdAt: new Date().toISOString(),
