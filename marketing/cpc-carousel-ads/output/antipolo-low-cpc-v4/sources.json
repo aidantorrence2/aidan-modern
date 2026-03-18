@@ -1,0 +1,837 @@
+{
+  "createdAt": "2026-03-18T12:41:50.867Z",
+  "city": "Antipolo",
+  "folder": "output/antipolo-low-cpc-v4",
+  "strategy": "Antipolo low-CPC (antipolo-low-cpc-v4): 100 explicitly authored concepts with distinct hooks and visual treatments.",
+  "handle": "@madebyaidan",
+  "conceptCount": 100,
+  "photos": [
+    "manila-gallery-dsc-0075.jpg",
+    "manila-gallery-dsc-0130.jpg",
+    "manila-gallery-dsc-0190.jpg",
+    "manila-gallery-dsc-0911.jpg",
+    "manila-gallery-night-001.jpg",
+    "manila-gallery-night-002.jpg",
+    "manila-gallery-night-003.jpg",
+    "manila-gallery-market-001.jpg",
+    "manila-gallery-urban-001.jpg",
+    "manila-gallery-urban-002.jpg",
+    "manila-gallery-urban-003.jpg",
+    "manila-gallery-garden-001.jpg",
+    "manila-gallery-garden-002.jpg",
+    "manila-gallery-canal-001.jpg",
+    "manila-gallery-canal-002.jpg",
+    "manila-gallery-ivy-001.jpg",
+    "manila-gallery-ivy-002.jpg",
+    "manila-gallery-closeup-001.jpg",
+    "manila-gallery-park-001.jpg",
+    "manila-gallery-statue-001.jpg",
+    "manila-gallery-street-001.jpg",
+    "manila-gallery-shadow-001.jpg",
+    "manila-gallery-rocks-001.jpg",
+    "manila-gallery-floor-001.jpg",
+    "manila-gallery-tropical-001.jpg"
+  ],
+  "concepts": [
+    {
+      "file": "001-beginner-no-model.png",
+      "slug": "beginner-no-model",
+      "hook": "No model experience good",
+      "layout": "hero",
+      "palette": "citron",
+      "photo": "manila-gallery-dsc-0075.jpg"
+    },
+    {
+      "file": "002-awkward-to-confident.png",
+      "slug": "awkward-to-confident",
+      "hook": "Camera shy to confident",
+      "layout": "glass",
+      "palette": "mint",
+      "photo": "manila-gallery-dsc-0130.jpg"
+    },
+    {
+      "file": "003-confidence-reset.png",
+      "slug": "confidence-reset",
+      "hook": "Confidence reset portraits",
+      "layout": "magazine",
+      "palette": "ember",
+      "photo": "manila-gallery-dsc-0190.jpg"
+    },
+    {
+      "file": "004-sunday-main-character.png",
+      "slug": "sunday-main-character",
+      "hook": "Sunday main character energy",
+      "layout": "split",
+      "palette": "gold",
+      "photo": "manila-gallery-dsc-0911.jpg"
+    },
+    {
+      "file": "005-soft-glam-free.png",
+      "slug": "soft-glam-free",
+      "hook": "Soft glam photos for free",
+      "layout": "hero",
+      "palette": "cream",
+      "photo": "manila-gallery-night-001.jpg"
+    },
+    {
+      "file": "006-street-cool-antipolo.png",
+      "slug": "street-cool-antipolo",
+      "hook": "Street cool Antipolo set",
+      "layout": "split",
+      "palette": "cobalt",
+      "photo": "manila-gallery-night-002.jpg"
+    },
+    {
+      "file": "007-date-app-refresh.png",
+      "slug": "date-app-refresh",
+      "hook": "Dating app refresh day",
+      "layout": "checklist",
+      "palette": "coral",
+      "photo": "manila-gallery-night-003.jpg"
+    },
+    {
+      "file": "008-profile-glow-up.png",
+      "slug": "profile-glow-up",
+      "hook": "Profile glow up now",
+      "layout": "urgency",
+      "palette": "neon",
+      "photo": "manila-gallery-market-001.jpg"
+    },
+    {
+      "file": "009-breakup-comeback.png",
+      "slug": "breakup-comeback",
+      "hook": "Breakup comeback portraits",
+      "layout": "magazine",
+      "palette": "violet",
+      "photo": "manila-gallery-urban-001.jpg"
+    },
+    {
+      "file": "010-new-hair-new-feed.png",
+      "slug": "new-hair-new-feed",
+      "hook": "New hair new feed",
+      "layout": "hero",
+      "palette": "ember",
+      "photo": "manila-gallery-urban-002.jpg"
+    },
+    {
+      "file": "011-birthday-week-shoot.png",
+      "slug": "birthday-week-shoot",
+      "hook": "Birthday week shoot idea",
+      "layout": "glass",
+      "palette": "gold",
+      "photo": "manila-gallery-urban-003.jpg"
+    },
+    {
+      "file": "012-quarter-life-rebrand.png",
+      "slug": "quarter-life-rebrand",
+      "hook": "Quarter life rebrand visuals",
+      "layout": "timeline",
+      "palette": "cobalt",
+      "photo": "manila-gallery-garden-001.jpg"
+    },
+    {
+      "file": "013-first-job-photo-upgrade.png",
+      "slug": "first-job-photo-upgrade",
+      "hook": "First job photo upgrade",
+      "layout": "checklist",
+      "palette": "mono",
+      "photo": "manila-gallery-garden-002.jpg"
+    },
+    {
+      "file": "014-grad-season-content.png",
+      "slug": "grad-season-content",
+      "hook": "Grad season content bank",
+      "layout": "timeline",
+      "palette": "citron",
+      "photo": "manila-gallery-canal-001.jpg"
+    },
+    {
+      "file": "015-board-exam-finished.png",
+      "slug": "board-exam-finished",
+      "hook": "Board exam done now celebrate",
+      "layout": "sticky",
+      "palette": "cream",
+      "photo": "manila-gallery-canal-002.jpg"
+    },
+    {
+      "file": "016-creator-content-bank.png",
+      "slug": "creator-content-bank",
+      "hook": "Creator content bank day",
+      "layout": "checklist",
+      "palette": "mint",
+      "photo": "manila-gallery-ivy-001.jpg"
+    },
+    {
+      "file": "017-entrepreneur-brand-face.png",
+      "slug": "entrepreneur-brand-face",
+      "hook": "Entrepreneur brand face set",
+      "layout": "split",
+      "palette": "cobalt",
+      "photo": "manila-gallery-ivy-002.jpg"
+    },
+    {
+      "file": "018-fitness-coach-photos.png",
+      "slug": "fitness-coach-photos",
+      "hook": "Fitness coach photo refresh",
+      "layout": "timeline",
+      "palette": "neon",
+      "photo": "manila-gallery-closeup-001.jpg"
+    },
+    {
+      "file": "019-musician-press-kit.png",
+      "slug": "musician-press-kit",
+      "hook": "Musician press kit starter",
+      "layout": "magazine",
+      "palette": "violet",
+      "photo": "manila-gallery-park-001.jpg"
+    },
+    {
+      "file": "020-dancer-motion-portraits.png",
+      "slug": "dancer-motion-portraits",
+      "hook": "Dancer motion portraits free",
+      "layout": "proof",
+      "palette": "ember",
+      "photo": "manila-gallery-statue-001.jpg"
+    },
+    {
+      "file": "021-tattoo-fresh-ink.png",
+      "slug": "tattoo-fresh-ink",
+      "hook": "Fresh ink portrait set",
+      "layout": "hero",
+      "palette": "coral",
+      "photo": "manila-gallery-street-001.jpg"
+    },
+    {
+      "file": "022-thrift-fit-editorial.png",
+      "slug": "thrift-fit-editorial",
+      "hook": "Thrift fit editorial day",
+      "layout": "magazine",
+      "palette": "gold",
+      "photo": "manila-gallery-shadow-001.jpg"
+    },
+    {
+      "file": "023-sneakerhead-lookbook.png",
+      "slug": "sneakerhead-lookbook",
+      "hook": "Sneakerhead lookbook free",
+      "layout": "split",
+      "palette": "mono",
+      "photo": "manila-gallery-rocks-001.jpg"
+    },
+    {
+      "file": "024-cafe-owner-story.png",
+      "slug": "cafe-owner-story",
+      "hook": "Cafe owner story portraits",
+      "layout": "timeline",
+      "palette": "cream",
+      "photo": "manila-gallery-floor-001.jpg"
+    },
+    {
+      "file": "025-real-estate-agent-headshots.png",
+      "slug": "real-estate-agent-headshots",
+      "hook": "Real estate profile upgrade",
+      "layout": "checklist",
+      "palette": "cobalt",
+      "photo": "manila-gallery-tropical-001.jpg"
+    },
+    {
+      "file": "026-makeup-artist-portfolio.png",
+      "slug": "makeup-artist-portfolio",
+      "hook": "Makeup artist portfolio portraits",
+      "layout": "glass",
+      "palette": "coral",
+      "photo": "manila-gallery-dsc-0075.jpg"
+    },
+    {
+      "file": "027-lash-tech-branding.png",
+      "slug": "lash-tech-branding",
+      "hook": "Lash tech brand photos",
+      "layout": "split",
+      "palette": "mint",
+      "photo": "manila-gallery-dsc-0130.jpg"
+    },
+    {
+      "file": "028-barber-reel-thumbnails.png",
+      "slug": "barber-reel-thumbnails",
+      "hook": "Barber reel thumbnail pack",
+      "layout": "urgency",
+      "palette": "ember",
+      "photo": "manila-gallery-dsc-0190.jpg"
+    },
+    {
+      "file": "029-chef-social-content.png",
+      "slug": "chef-social-content",
+      "hook": "Chef social content portraits",
+      "layout": "timeline",
+      "palette": "gold",
+      "photo": "manila-gallery-dsc-0911.jpg"
+    },
+    {
+      "file": "030-wedding-vendor-profile.png",
+      "slug": "wedding-vendor-profile",
+      "hook": "Wedding vendor profile shots",
+      "layout": "checklist",
+      "palette": "cream",
+      "photo": "manila-gallery-night-001.jpg"
+    },
+    {
+      "file": "031-couple-no-cringe.png",
+      "slug": "couple-no-cringe",
+      "hook": "Couple photos without cringe",
+      "layout": "hero",
+      "palette": "citron",
+      "photo": "manila-gallery-night-002.jpg"
+    },
+    {
+      "file": "032-bestfriend-shoot-day.png",
+      "slug": "bestfriend-shoot-day",
+      "hook": "Best friend shoot day",
+      "layout": "proof",
+      "palette": "mint",
+      "photo": "manila-gallery-night-003.jpg"
+    },
+    {
+      "file": "033-siblings-finally.png",
+      "slug": "siblings-finally",
+      "hook": "Sibling photos finally",
+      "layout": "glass",
+      "palette": "gold",
+      "photo": "manila-gallery-market-001.jpg"
+    },
+    {
+      "file": "034-mom-and-daughter.png",
+      "slug": "mom-and-daughter",
+      "hook": "Mom and daughter portraits",
+      "layout": "sticky",
+      "palette": "cream",
+      "photo": "manila-gallery-urban-001.jpg"
+    },
+    {
+      "file": "035-dad-and-kid.png",
+      "slug": "dad-and-kid",
+      "hook": "Dad and kid photo day",
+      "layout": "timeline",
+      "palette": "mint",
+      "photo": "manila-gallery-urban-002.jpg"
+    },
+    {
+      "file": "036-engaged-but-chill.png",
+      "slug": "engaged-but-chill",
+      "hook": "Engaged but chill portraits",
+      "layout": "split",
+      "palette": "cobalt",
+      "photo": "manila-gallery-urban-003.jpg"
+    },
+    {
+      "file": "037-prenup-style-free.png",
+      "slug": "prenup-style-free",
+      "hook": "Prenup style test shoot free",
+      "layout": "checklist",
+      "palette": "coral",
+      "photo": "manila-gallery-garden-001.jpg"
+    },
+    {
+      "file": "038-anniversary-reset.png",
+      "slug": "anniversary-reset",
+      "hook": "Anniversary reset shoot",
+      "layout": "hero",
+      "palette": "violet",
+      "photo": "manila-gallery-garden-002.jpg"
+    },
+    {
+      "file": "039-travel-before-you-go.png",
+      "slug": "travel-before-you-go",
+      "hook": "Travel before you go portraits",
+      "layout": "magazine",
+      "palette": "ember",
+      "photo": "manila-gallery-canal-001.jpg"
+    },
+    {
+      "file": "040-balikbayan-week.png",
+      "slug": "balikbayan-week",
+      "hook": "Balikbayan week photo slot",
+      "layout": "urgency",
+      "palette": "gold",
+      "photo": "manila-gallery-canal-002.jpg"
+    },
+    {
+      "file": "041-introvert-safe-shoot.png",
+      "slug": "introvert-safe-shoot",
+      "hook": "Introvert safe photo session",
+      "layout": "glass",
+      "palette": "mint",
+      "photo": "manila-gallery-ivy-001.jpg"
+    },
+    {
+      "file": "042-anxious-no-problem.png",
+      "slug": "anxious-no-problem",
+      "hook": "Anxious on camera no problem",
+      "layout": "timeline",
+      "palette": "cobalt",
+      "photo": "manila-gallery-ivy-002.jpg"
+    },
+    {
+      "file": "043-hate-smile-photos.png",
+      "slug": "hate-smile-photos",
+      "hook": "You hate your smile in photos",
+      "layout": "hero",
+      "palette": "mono",
+      "photo": "manila-gallery-closeup-001.jpg"
+    },
+    {
+      "file": "044-never-photogenic.png",
+      "slug": "never-photogenic",
+      "hook": "Never photogenic until now",
+      "layout": "checklist",
+      "palette": "citron",
+      "photo": "manila-gallery-park-001.jpg"
+    },
+    {
+      "file": "045-tired-of-selfies.png",
+      "slug": "tired-of-selfies",
+      "hook": "Tired of selfie era",
+      "layout": "split",
+      "palette": "gold",
+      "photo": "manila-gallery-statue-001.jpg"
+    },
+    {
+      "file": "046-same-old-mirror.png",
+      "slug": "same-old-mirror",
+      "hook": "Same old mirror pics stop",
+      "layout": "magazine",
+      "palette": "ember",
+      "photo": "manila-gallery-street-001.jpg"
+    },
+    {
+      "file": "047-blurry-night-pics.png",
+      "slug": "blurry-night-pics",
+      "hook": "Blurry night pics no more",
+      "layout": "hero",
+      "palette": "violet",
+      "photo": "manila-gallery-shadow-001.jpg"
+    },
+    {
+      "file": "048-no-one-to-shoot-you.png",
+      "slug": "no-one-to-shoot-you",
+      "hook": "No one to shoot you properly",
+      "layout": "urgency",
+      "palette": "neon",
+      "photo": "manila-gallery-rocks-001.jpg"
+    },
+    {
+      "file": "049-no-idea-what-to-wear.png",
+      "slug": "no-idea-what-to-wear",
+      "hook": "No idea what to wear",
+      "layout": "checklist",
+      "palette": "cream",
+      "photo": "manila-gallery-floor-001.jpg"
+    },
+    {
+      "file": "050-dont-know-locations.png",
+      "slug": "dont-know-locations",
+      "hook": "Do not know where to shoot",
+      "layout": "timeline",
+      "palette": "mint",
+      "photo": "manila-gallery-tropical-001.jpg"
+    },
+    {
+      "file": "051-golden-hour-rideout.png",
+      "slug": "golden-hour-rideout",
+      "hook": "Golden hour ride out portraits",
+      "layout": "hero",
+      "palette": "gold",
+      "photo": "manila-gallery-dsc-0075.jpg"
+    },
+    {
+      "file": "052-rain-day-cinematic.png",
+      "slug": "rain-day-cinematic",
+      "hook": "Rain day cinematic portraits",
+      "layout": "magazine",
+      "palette": "cobalt",
+      "photo": "manila-gallery-dsc-0130.jpg"
+    },
+    {
+      "file": "053-neon-night-antipolo.png",
+      "slug": "neon-night-antipolo",
+      "hook": "Neon night Antipolo set",
+      "layout": "split",
+      "palette": "violet",
+      "photo": "manila-gallery-dsc-0190.jpg"
+    },
+    {
+      "file": "054-morning-coffee-portraits.png",
+      "slug": "morning-coffee-portraits",
+      "hook": "Morning coffee portrait vibe",
+      "layout": "glass",
+      "palette": "cream",
+      "photo": "manila-gallery-dsc-0911.jpg"
+    },
+    {
+      "file": "055-film-look-digital-price.png",
+      "slug": "film-look-digital-price",
+      "hook": "Film look zero shoot fee",
+      "layout": "checklist",
+      "palette": "gold",
+      "photo": "manila-gallery-night-001.jpg"
+    },
+    {
+      "file": "056-moody-black-and-white.png",
+      "slug": "moody-black-and-white",
+      "hook": "Moody black and white set",
+      "layout": "hero",
+      "palette": "mono",
+      "photo": "manila-gallery-night-002.jpg"
+    },
+    {
+      "file": "057-clean-white-minimal.png",
+      "slug": "clean-white-minimal",
+      "hook": "Clean white minimal portraits",
+      "layout": "split",
+      "palette": "cobalt",
+      "photo": "manila-gallery-night-003.jpg"
+    },
+    {
+      "file": "058-gritty-street-mode.png",
+      "slug": "gritty-street-mode",
+      "hook": "Gritty street mode portraits",
+      "layout": "magazine",
+      "palette": "ember",
+      "photo": "manila-gallery-market-001.jpg"
+    },
+    {
+      "file": "059-garden-soft-light.png",
+      "slug": "garden-soft-light",
+      "hook": "Garden soft light set",
+      "layout": "glass",
+      "palette": "mint",
+      "photo": "manila-gallery-urban-001.jpg"
+    },
+    {
+      "file": "060-rooftop-energy.png",
+      "slug": "rooftop-energy",
+      "hook": "Rooftop energy portraits",
+      "layout": "timeline",
+      "palette": "cobalt",
+      "photo": "manila-gallery-urban-002.jpg"
+    },
+    {
+      "file": "061-before-after-photos.png",
+      "slug": "before-after-photos",
+      "hook": "Before and after glow up",
+      "layout": "checklist",
+      "palette": "coral",
+      "photo": "manila-gallery-urban-003.jpg"
+    },
+    {
+      "file": "062-one-hour-new-you.png",
+      "slug": "one-hour-new-you",
+      "hook": "One hour new you",
+      "layout": "urgency",
+      "palette": "citron",
+      "photo": "manila-gallery-garden-001.jpg"
+    },
+    {
+      "file": "063-zero-budget-banger.png",
+      "slug": "zero-budget-banger",
+      "hook": "Zero budget banger portraits",
+      "layout": "hero",
+      "palette": "neon",
+      "photo": "manila-gallery-garden-002.jpg"
+    },
+    {
+      "file": "064-free-not-cheap.png",
+      "slug": "free-not-cheap",
+      "hook": "Free not cheap",
+      "layout": "glass",
+      "palette": "gold",
+      "photo": "manila-gallery-canal-001.jpg"
+    },
+    {
+      "file": "065-quality-over-filter.png",
+      "slug": "quality-over-filter",
+      "hook": "Quality over filters",
+      "layout": "split",
+      "palette": "mono",
+      "photo": "manila-gallery-canal-002.jpg"
+    },
+    {
+      "file": "066-stop-waiting-look-good.png",
+      "slug": "stop-waiting-look-good",
+      "hook": "Stop waiting look good now",
+      "layout": "urgency",
+      "palette": "ember",
+      "photo": "manila-gallery-ivy-001.jpg"
+    },
+    {
+      "file": "067-shoot-now-post-month.png",
+      "slug": "shoot-now-post-month",
+      "hook": "Shoot now post all month",
+      "layout": "timeline",
+      "palette": "mint",
+      "photo": "manila-gallery-ivy-002.jpg"
+    },
+    {
+      "file": "068-content-for-30-days.png",
+      "slug": "content-for-30-days",
+      "hook": "30 days of content one shoot",
+      "layout": "checklist",
+      "palette": "cobalt",
+      "photo": "manila-gallery-closeup-001.jpg"
+    },
+    {
+      "file": "069-one-session-many-looks.png",
+      "slug": "one-session-many-looks",
+      "hook": "One session many looks",
+      "layout": "hero",
+      "palette": "coral",
+      "photo": "manila-gallery-park-001.jpg"
+    },
+    {
+      "file": "070-outfit-switch-magic.png",
+      "slug": "outfit-switch-magic",
+      "hook": "Outfit switch magic",
+      "layout": "timeline",
+      "palette": "cream",
+      "photo": "manila-gallery-statue-001.jpg"
+    },
+    {
+      "file": "071-ig-story-magnet.png",
+      "slug": "ig-story-magnet",
+      "hook": "IG story magnet portraits",
+      "layout": "split",
+      "palette": "violet",
+      "photo": "manila-gallery-street-001.jpg"
+    },
+    {
+      "file": "072-reel-cover-pack.png",
+      "slug": "reel-cover-pack",
+      "hook": "Reel cover pack portraits",
+      "layout": "checklist",
+      "palette": "ember",
+      "photo": "manila-gallery-shadow-001.jpg"
+    },
+    {
+      "file": "073-tinder-bumble-hinge-pack.png",
+      "slug": "tinder-bumble-hinge-pack",
+      "hook": "Dating app hero set",
+      "layout": "hero",
+      "palette": "coral",
+      "photo": "manila-gallery-rocks-001.jpg"
+    },
+    {
+      "file": "074-linkedin-but-not-boring.png",
+      "slug": "linkedin-but-not-boring",
+      "hook": "LinkedIn but not boring",
+      "layout": "glass",
+      "palette": "mono",
+      "photo": "manila-gallery-floor-001.jpg"
+    },
+    {
+      "file": "075-portfolio-for-auditions.png",
+      "slug": "portfolio-for-auditions",
+      "hook": "Audition portfolio starter",
+      "layout": "timeline",
+      "palette": "cobalt",
+      "photo": "manila-gallery-tropical-001.jpg"
+    },
+    {
+      "file": "076-casting-call-ready.png",
+      "slug": "casting-call-ready",
+      "hook": "Casting call ready now",
+      "layout": "urgency",
+      "palette": "gold",
+      "photo": "manila-gallery-dsc-0075.jpg"
+    },
+    {
+      "file": "077-model-search-vibes.png",
+      "slug": "model-search-vibes",
+      "hook": "Model search vibes free",
+      "layout": "magazine",
+      "palette": "mono",
+      "photo": "manila-gallery-dsc-0130.jpg"
+    },
+    {
+      "file": "078-campus-famous-photos.png",
+      "slug": "campus-famous-photos",
+      "hook": "Campus famous photo set",
+      "layout": "sticky",
+      "palette": "citron",
+      "photo": "manila-gallery-dsc-0190.jpg"
+    },
+    {
+      "file": "079-barkada-jealous-post.png",
+      "slug": "barkada-jealous-post",
+      "hook": "Barkada jealous post pack",
+      "layout": "proof",
+      "palette": "violet",
+      "photo": "manila-gallery-dsc-0911.jpg"
+    },
+    {
+      "file": "080-make-your-ex-look.png",
+      "slug": "make-your-ex-look",
+      "hook": "Make your ex look twice",
+      "layout": "hero",
+      "palette": "ember",
+      "photo": "manila-gallery-night-001.jpg"
+    },
+    {
+      "file": "081-this-month-only.png",
+      "slug": "this-month-only",
+      "hook": "This month only free slots",
+      "layout": "urgency",
+      "palette": "neon",
+      "photo": "manila-gallery-night-002.jpg"
+    },
+    {
+      "file": "082-last-few-slots.png",
+      "slug": "last-few-slots",
+      "hook": "Last few Antipolo slots",
+      "layout": "urgency",
+      "palette": "coral",
+      "photo": "manila-gallery-night-003.jpg"
+    },
+    {
+      "file": "083-first-come-antipolo.png",
+      "slug": "first-come-antipolo",
+      "hook": "First come first shoot",
+      "layout": "urgency",
+      "palette": "citron",
+      "photo": "manila-gallery-market-001.jpg"
+    },
+    {
+      "file": "084-dm-before-full.png",
+      "slug": "dm-before-full",
+      "hook": "DM before calendar fills",
+      "layout": "urgency",
+      "palette": "ember",
+      "photo": "manila-gallery-urban-001.jpg"
+    },
+    {
+      "file": "085-weekend-slots-gone-fast.png",
+      "slug": "weekend-slots-gone-fast",
+      "hook": "Weekend slots go fast",
+      "layout": "urgency",
+      "palette": "gold",
+      "photo": "manila-gallery-urban-002.jpg"
+    },
+    {
+      "file": "086-weekday-hidden-slots.png",
+      "slug": "weekday-hidden-slots",
+      "hook": "Weekday hidden slots open",
+      "layout": "timeline",
+      "palette": "mint",
+      "photo": "manila-gallery-urban-003.jpg"
+    },
+    {
+      "file": "087-sunrise-slot-limited.png",
+      "slug": "sunrise-slot-limited",
+      "hook": "Sunrise slot limited run",
+      "layout": "hero",
+      "palette": "cream",
+      "photo": "manila-gallery-garden-001.jpg"
+    },
+    {
+      "file": "088-sunset-slot-limited.png",
+      "slug": "sunset-slot-limited",
+      "hook": "Sunset slot limited run",
+      "layout": "hero",
+      "palette": "gold",
+      "photo": "manila-gallery-garden-002.jpg"
+    },
+    {
+      "file": "089-no-form-dm-only.png",
+      "slug": "no-form-dm-only",
+      "hook": "No long form DM only",
+      "layout": "chat",
+      "palette": "cobalt",
+      "photo": "manila-gallery-canal-001.jpg"
+    },
+    {
+      "file": "090-two-message-booking.png",
+      "slug": "two-message-booking",
+      "hook": "Two message booking flow",
+      "layout": "chat",
+      "palette": "mint",
+      "photo": "manila-gallery-canal-002.jpg"
+    },
+    {
+      "file": "091-quick-reply-priority.png",
+      "slug": "quick-reply-priority",
+      "hook": "Quick reply gets priority",
+      "layout": "urgency",
+      "palette": "neon",
+      "photo": "manila-gallery-ivy-001.jpg"
+    },
+    {
+      "file": "092-anti-ghosting-process.png",
+      "slug": "anti-ghosting-process",
+      "hook": "Anti ghosting booking process",
+      "layout": "timeline",
+      "palette": "mono",
+      "photo": "manila-gallery-ivy-002.jpg"
+    },
+    {
+      "file": "093-show-up-get-files.png",
+      "slug": "show-up-get-files",
+      "hook": "Show up get files",
+      "layout": "checklist",
+      "palette": "citron",
+      "photo": "manila-gallery-closeup-001.jpg"
+    },
+    {
+      "file": "094-delivered-in-7-days.png",
+      "slug": "delivered-in-7-days",
+      "hook": "Delivered in seven days",
+      "layout": "glass",
+      "palette": "cobalt",
+      "photo": "manila-gallery-park-001.jpg"
+    },
+    {
+      "file": "095-free-coaching-included.png",
+      "slug": "free-coaching-included",
+      "hook": "Free coaching included",
+      "layout": "timeline",
+      "palette": "mint",
+      "photo": "manila-gallery-statue-001.jpg"
+    },
+    {
+      "file": "096-location-guidance-included.png",
+      "slug": "location-guidance-included",
+      "hook": "Location guidance included",
+      "layout": "checklist",
+      "palette": "cream",
+      "photo": "manila-gallery-street-001.jpg"
+    },
+    {
+      "file": "097-outfit-guidance-included.png",
+      "slug": "outfit-guidance-included",
+      "hook": "Outfit guidance included",
+      "layout": "chat",
+      "palette": "coral",
+      "photo": "manila-gallery-shadow-001.jpg"
+    },
+    {
+      "file": "098-creative-direction-included.png",
+      "slug": "creative-direction-included",
+      "hook": "Creative direction included",
+      "layout": "magazine",
+      "palette": "violet",
+      "photo": "manila-gallery-rocks-001.jpg"
+    },
+    {
+      "file": "099-personal-hype-photographer.png",
+      "slug": "personal-hype-photographer",
+      "hook": "Personal hype photographer mode",
+      "layout": "hero",
+      "palette": "neon",
+      "photo": "manila-gallery-floor-001.jpg"
+    },
+    {
+      "file": "100-your-turn-antipolo.png",
+      "slug": "your-turn-antipolo",
+      "hook": "Your turn Antipolo",
+      "layout": "proof",
+      "palette": "gold",
+      "photo": "manila-gallery-tropical-001.jpg"
+    }
+  ]
+}
