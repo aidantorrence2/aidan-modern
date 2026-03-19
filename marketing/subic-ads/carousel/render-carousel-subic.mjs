@@ -225,82 +225,23 @@ const steps = [
   'Show up and get great photos'
 ]
 
-function signupSheet(name, cityName) {
+function signupSlide(name, cityName, heroImg) {
   return {
     name,
     html: `
-      <div style="width:1080px;height:1920px;position:relative;overflow:hidden;background:#f7f6f2;">
-        <div style="position:absolute;inset:0;background:linear-gradient(170deg, #fff9f3 0%, #f5ede4 60%, #ede0d3 100%);"></div>
-        <!-- subtle paper texture -->
-        <div style="position:absolute;inset:0;opacity:0.04;background:repeating-linear-gradient(0deg, rgba(0,0,0,0.1) 0 1px, transparent 1px 3px),repeating-linear-gradient(90deg, rgba(0,0,0,0.05) 0 1px, transparent 1px 4px);"></div>
-
-        <!-- header -->
-        <div style="position:absolute;top:80px;left:80px;right:80px;">
-          <div style="font-family:${SERIF};font-size:72px;font-weight:700;font-style:italic;color:#1a1a1a;line-height:1;">Sign up</div>
-          <div style="font-family:${SANS};font-size:26px;color:#888;margin-top:8px;letter-spacing:1px;">FREE PHOTO SHOOT — ${cityName.toUpperCase()}</div>
-          <div style="width:100%;height:2px;background:linear-gradient(90deg,#1a1a1a,transparent);margin-top:20px;"></div>
+      <div style="width:1080px;height:1920px;position:relative;overflow:hidden;background:#000;">
+        <img src="${heroImg}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(1.05) brightness(0.55);"/>
+        <div style="position:absolute;inset:0;background:linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.3) 30%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.85) 80%, rgba(0,0,0,0.95) 100%);"></div>
+        <div style="position:absolute;top:0;left:0;right:0;bottom:0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:80px;">
+          <div style="font-family:${SERIF};font-size:100px;font-weight:700;font-style:italic;color:white;text-align:center;line-height:1;margin-bottom:20px;${S}">Sign up</div>
+          <div style="font-family:${SANS};font-size:30px;color:rgba(255,255,255,0.6);letter-spacing:2px;text-transform:uppercase;margin-bottom:60px;">FREE PHOTO SHOOT — ${cityName.toUpperCase()}</div>
+          <div style="background:white;border-radius:16px;padding:40px 60px;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,0.5);">
+            <div style="font-family:${SANS};font-size:28px;font-weight:600;color:#1a1a1a;letter-spacing:1px;margin-bottom:12px;">FILL OUT THE FORM AT</div>
+            <div style="font-family:${SERIF};font-size:52px;font-weight:700;color:#1a1a1a;line-height:1.2;">aidantorrence.com/signup</div>
+          </div>
+          <div style="font-family:${SANS};font-size:28px;color:rgba(255,255,255,0.6);margin-top:40px;text-align:center;line-height:1.5;">Pick your location, share your moodboard,<br/>and choose your photo shoot vibe</div>
         </div>
-
-        <!-- profile photo placeholder -->
-        <div style="position:absolute;top:310px;left:80px;display:flex;align-items:center;gap:28px;">
-          <div style="width:140px;height:140px;border-radius:50%;border:3px dashed #bbb;background:#f0ebe5;display:flex;align-items:center;justify-content:center;">
-            <div style="font-family:${SANS};font-size:14px;color:#aaa;text-align:center;line-height:1.3;">your<br/>photo</div>
-          </div>
-          <div>
-            <div style="font-family:${SANS};font-size:20px;color:#aaa;letter-spacing:2px;text-transform:uppercase;">Your Name</div>
-            <div style="width:400px;height:2px;background:#ddd;margin-top:40px;"></div>
-          </div>
-        </div>
-
-        <!-- form fields -->
-        <div style="position:absolute;top:530px;left:80px;right:80px;display:flex;flex-direction:column;gap:48px;">
-
-          <!-- Location -->
-          <div>
-            <div style="font-family:${SANS};font-size:22px;font-weight:600;color:#1a1a1a;letter-spacing:1px;text-transform:uppercase;">Location</div>
-            <div style="font-family:${SANS};font-size:16px;color:#aaa;margin-top:4px;">Where in ${cityName} would you like to shoot?</div>
-            <div style="width:100%;height:2px;background:#ddd;margin-top:32px;"></div>
-            <div style="width:100%;height:2px;background:#ddd;margin-top:40px;"></div>
-          </div>
-
-          <!-- Vibe / Moodboard -->
-          <div>
-            <div style="font-family:${SANS};font-size:22px;font-weight:600;color:#1a1a1a;letter-spacing:1px;text-transform:uppercase;">Photo Shoot Moodboard</div>
-            <div style="font-family:${SANS};font-size:16px;color:#aaa;margin-top:4px;">Check all that apply or describe your vibe</div>
-            <div style="display:flex;flex-wrap:wrap;gap:16px;margin-top:24px;">
-              ${['Golden hour', 'Street style', 'Nature / outdoor', 'Urban / city', 'Moody / editorial', 'Casual / candid', 'Vintage film', 'Night vibes'].map(tag => `
-                <div style="display:flex;align-items:center;gap:10px;">
-                  <div style="width:28px;height:28px;border:2px solid #bbb;border-radius:4px;background:transparent;"></div>
-                  <span style="font-family:${SANS};font-size:22px;color:#555;">${tag}</span>
-                </div>
-              `).join('')}
-            </div>
-            <div style="font-family:${SANS};font-size:18px;color:#aaa;margin-top:28px;">Other:</div>
-            <div style="width:100%;height:2px;background:#ddd;margin-top:32px;"></div>
-            <div style="width:100%;height:2px;background:#ddd;margin-top:40px;"></div>
-          </div>
-
-          <!-- Outfit ideas -->
-          <div>
-            <div style="font-family:${SANS};font-size:22px;font-weight:600;color:#1a1a1a;letter-spacing:1px;text-transform:uppercase;">Outfit Ideas</div>
-            <div style="font-family:${SANS};font-size:16px;color:#aaa;margin-top:4px;">What are you thinking of wearing? (don't worry, I can help)</div>
-            <div style="width:100%;height:2px;background:#ddd;margin-top:32px;"></div>
-            <div style="width:100%;height:2px;background:#ddd;margin-top:40px;"></div>
-          </div>
-
-          <!-- Availability -->
-          <div>
-            <div style="font-family:${SANS};font-size:22px;font-weight:600;color:#1a1a1a;letter-spacing:1px;text-transform:uppercase;">Availability</div>
-            <div style="font-family:${SANS};font-size:16px;color:#aaa;margin-top:4px;">When works best for you?</div>
-            <div style="width:100%;height:2px;background:#ddd;margin-top:32px;"></div>
-          </div>
-        </div>
-
-        <!-- footer -->
-        <div style="position:absolute;bottom:80px;left:80px;right:80px;text-align:center;">
-          <div style="font-family:${SANS};font-size:22px;color:#aaa;">Screenshot this & send it to me via DM</div>
-          <div style="font-family:${SERIF};font-size:28px;font-style:italic;color:#555;margin-top:8px;">@aidantorrence</div>
-        </div>
+        ${filmGrain(0.1)}
       </div>
     `
   }
@@ -314,7 +255,7 @@ const slides = [
   howSlideWarm('subic-carousel-03-how', 'Super simple.', steps, img0075),
   whatSlideDark('subic-carousel-04-what', 'All of this.<br/>For free.', deliverables, imgNight3),
   ctaSlide('subic-carousel-05-cta', imgIvy2, 'Your turn.', 'DM me to book your free photo shoot in Subic/Olongapo.'),
-  signupSheet('subic-carousel-06-signup', 'Subic/Olongapo')
+  signupSlide('subic-carousel-06-signup', 'Subic/Olongapo', imgIvy2)
 ]
 
 async function render() {
