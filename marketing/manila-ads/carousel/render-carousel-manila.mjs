@@ -199,8 +199,31 @@ const slide5 = {
     </div>`
 }
 
+// ════════════════════════════════════════════════════════════════════
+//  SLIDE 6 — SIGN UP
+//  Full-bleed hero with URL to sign-up form
+// ════════════════════════════════════════════════════════════════════
+const slide6 = {
+  name: `${PREFIX}-06-signup`,
+  html: `
+    <div style="width:1080px;height:1920px;position:relative;overflow:hidden;background:#000;">
+      <img src="${imgIvy2}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(1.05) brightness(0.55);"/>
+      <div style="position:absolute;inset:0;background:linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.3) 30%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.85) 80%, rgba(0,0,0,0.95) 100%);"></div>
+      <div style="position:absolute;top:0;left:0;right:0;bottom:0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:80px;">
+        <div style="font-family:${SERIF};font-size:100px;font-weight:700;font-style:italic;color:white;text-align:center;line-height:1;margin-bottom:20px;${TS}">Sign up</div>
+        <div style="font-family:${SANS};font-size:30px;color:rgba(255,255,255,0.6);letter-spacing:2px;text-transform:uppercase;margin-bottom:60px;">FREE PHOTO SHOOT — ${CITY_UPPER}</div>
+        <div style="background:white;border-radius:16px;padding:40px 60px;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,0.5);">
+          <div style="font-family:${SANS};font-size:28px;font-weight:600;color:#1a1a1a;letter-spacing:1px;margin-bottom:12px;">FILL OUT THE FORM AT</div>
+          <div style="font-family:${SERIF};font-size:52px;font-weight:700;color:#1a1a1a;line-height:1.2;">aidantorrence.com/signup</div>
+        </div>
+        <div style="font-family:${SANS};font-size:28px;color:rgba(255,255,255,0.6);margin-top:40px;text-align:center;line-height:1.5;">Pick your location, share your moodboard,<br/>and choose your photo shoot vibe</div>
+      </div>
+      ${filmGrain(0.08)}
+    </div>`
+}
+
 // ── Render ───────────────────────────────────────────────────────────
-const slides = [slide1, slide2, slide3, slide4, slide5]
+const slides = [slide1, slide2, slide3, slide4, slide5, slide6]
 
 async function render() {
   const browser = await chromium.launch()
