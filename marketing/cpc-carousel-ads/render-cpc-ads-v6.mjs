@@ -10,8 +10,7 @@ const IMG_DIR = '/Volumes/PortableSSD/Exports/film scans selected'
 fs.mkdirSync(OUT, { recursive: true })
 
 function img(filename) {
-  const buf = fs.readFileSync(path.join(IMG_DIR, filename))
-  return `data:image/jpeg;base64,${buf.toString('base64')}`
+  return `file://${path.join(IMG_DIR, filename).replace(/ /g, '%20')}`
 }
 
 const LANDSCAPE_FILES = new Set([
@@ -22,10 +21,15 @@ const LANDSCAPE_FILES = new Set([
 ])
 
 const allFiles = fs.readdirSync(IMG_DIR).filter(f => f.endsWith('.jpg') && !f.startsWith('._'))
-const portraitPhotos = allFiles.filter(f => !LANDSCAPE_FILES.has(f)).map(f => img(f))
-const landscapePhotos = allFiles.filter(f => LANDSCAPE_FILES.has(f)).map(f => img(f))
+const portraitFiles = allFiles.filter(f => !LANDSCAPE_FILES.has(f))
+const landscapeFiles = allFiles.filter(f => LANDSCAPE_FILES.has(f))
+// Lazy-load photos by index to avoid holding all base64 in memory
+function getPhoto(pool, idx) {
+  const files = pool === 'landscape' ? landscapeFiles : portraitFiles
+  return img(files[idx % files.length])
+}
 
-console.log(`Loaded ${portraitPhotos.length} portrait, ${landscapePhotos.length} landscape photos`)
+console.log(`Loaded ${portraitFiles.length} portrait, ${landscapeFiles.length} landscape photos`)
 
 const SERIF = "Georgia, 'Times New Roman', serif"
 const SANS = "'Helvetica Neue', 'Arial', sans-serif"
@@ -4200,44 +4204,52 @@ function makeSlide(city, p, p2, p3, variant) {
 
 const LANDSCAPE_VARIANTS = new Set([1,4,14,21,22,27,34,41,50,53,57,63,72,80,88,95])
 
-const slides = []
-for (let ci = 0; ci < cities.length; ci++) {
-  const city = cities[ci]
-  for (let v = 0; v < 100; v++) {
-    const pool = LANDSCAPE_VARIANTS.has(v) ? landscapePhotos : portraitPhotos
-    const pi1 = (v * 3 + ci * 7) % pool.length
-    const pi2 = (v * 3 + ci * 7 + 1) % pool.length
-    const pi3 = (v * 3 + ci * 7 + 2) % pool.length
-    slides.push({
-      name: `${slug(city)}-${String(v + 1).padStart(3, '0')}`,
-      city,
-      html: makeSlide(city, pool[pi1], pool[pi2], pool[pi3], v),
-    })
-  }
-}
-
 async function render() {
   for (const city of cities) {
     fs.mkdirSync(path.join(OUT, slug(city)), { recursive: true })
   }
-  console.log(`Launching browser — rendering ${slides.length} CPC ads...`)
-  const browser = await chromium.launch()
-  const context = await browser.newContext({ viewport: { width: 1080, height: 1920 }, deviceScaleFactor: 1 })
-  for (let i = 0; i < slides.length; i++) {
-    const slide = slides[i]
-    const page = await context.newPage()
-    await page.setContent(`<!doctype html><html><head><style>
-      * { box-sizing: border-box; }
-      html, body { margin: 0; width: 1080px; height: 1920px; background: #000; overflow: hidden; }
-      body { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
-    </style></head><body>${slide.html}</body></html>`, { waitUntil: 'load' })
-    await page.waitForTimeout(300)
-    const outPath = path.join(OUT, slug(slide.city), `${slide.name}.png`)
-    await page.screenshot({ path: outPath, type: 'png' })
-    await page.close()
-    console.log(`  [${i + 1}/${slides.length}] ${slide.name}`)
+  const total = cities.length * 100
+  console.log(`Launching browser — rendering ${total} CPC ads...`)
+  let browser = await chromium.launch()
+  let context = await browser.newContext({ viewport: { width: 1080, height: 1920 }, deviceScaleFactor: 1 })
+  let count = 0
+  for (let ci = 0; ci < cities.length; ci++) {
+    const city = cities[ci]
+    for (let v = 0; v < 100; v++) {
+      const poolType = LANDSCAPE_VARIANTS.has(v) ? 'landscape' : 'portrait'
+      const poolLen = poolType === 'landscape' ? landscapeFiles.length : portraitFiles.length
+      const pi1 = (v * 3 + ci * 7) % poolLen
+      const pi2 = (v * 3 + ci * 7 + 1) % poolLen
+      const pi3 = (v * 3 + ci * 7 + 2) % poolLen
+      const p1 = getPhoto(poolType, pi1)
+      const p2 = getPhoto(poolType, pi2)
+      const p3 = getPhoto(poolType, pi3)
+      const html = makeSlide(city, p1, p2, p3, v)
+      const name = `${slug(city)}-${String(v + 1).padStart(3, '0')}`
+      const page = await context.newPage()
+      const tmpHtml = path.join(OUT, '_tmp.html')
+      fs.writeFileSync(tmpHtml, `<!doctype html><html><head><style>
+        * { box-sizing: border-box; }
+        html, body { margin: 0; width: 1080px; height: 1920px; background: #000; overflow: hidden; }
+        body { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+      </style></head><body>${html}</body></html>`)
+      await page.goto(`file://${tmpHtml}`, { waitUntil: 'load' })
+      await page.waitForTimeout(300)
+      const outPath = path.join(OUT, slug(city), `${name}.png`)
+      await page.screenshot({ path: outPath, type: 'png' })
+      await page.close()
+      count++
+      console.log(`  [${count}/${total}] ${name}`)
+      // Restart browser every 10 renders to prevent memory buildup
+      if (count % 10 === 0 && count < total) {
+        await browser.close()
+        browser = await chromium.launch()
+        context = await browser.newContext({ viewport: { width: 1080, height: 1920 }, deviceScaleFactor: 1 })
+        console.log(`  (browser restarted at ${count})`)
+      }
+    }
   }
   await browser.close()
-  console.log(`\nDone — ${slides.length} CPC ads rendered to ${OUT}`)
+  console.log(`\nDone — ${total} CPC ads rendered to ${OUT}`)
 }
 render()
