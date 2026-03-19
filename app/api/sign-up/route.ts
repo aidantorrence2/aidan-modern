@@ -10,6 +10,8 @@ export async function POST(req: Request) {
     const city = body?.city
     const contactMethod = body?.contactMethod
     const contact = body?.contact
+    const location = body?.location || null
+    const moodboard = Array.isArray(body?.moodboard) ? body.moodboard : null
     const hasPhoto = !!body?.photo
 
     if (
@@ -25,6 +27,8 @@ export async function POST(req: Request) {
       city: city.trim(),
       contactMethod,
       contact: contact.trim(),
+      location: isString(location) ? location.trim() : null,
+      moodboard,
       hasPhoto,
       ts: new Date().toISOString()
     }
@@ -47,7 +51,9 @@ export async function POST(req: Request) {
                   '*New photo shoot sign-up*',
                   `*City:* ${payload.city}`,
                   `*${contactLabel}:* ${payload.contact}`,
-                  `*Photo:* ${hasPhoto ? 'Yes' : 'No'}`
+                  `*Photo:* ${hasPhoto ? 'Yes' : 'No'}`,
+                  ...(payload.location ? [`*Location:* ${payload.location}`] : []),
+                  ...(payload.moodboard?.length ? [`*Moodboard:* ${payload.moodboard.join(', ')}`] : [])
                 ].join('\n')
               }
             },

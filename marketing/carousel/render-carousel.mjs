@@ -260,8 +260,7 @@ for (const city of cities) {
     proofSlide(prefix, 'My recent work', proof8),
     howSlide(prefix, 'Super simple.', steps, img0075),
     whatSlide(prefix, 'All of this.<br/>For free.', deliverables, imgNight3),
-    ctaSlide(prefix, city, imgIvy2, 'Your turn.', `DM me to book your free photo shoot in ${city}.`),
-    signupSlide(prefix, city, imgIvy2)
+    ctaSlide(prefix, city, imgIvy2, 'Your turn.', `DM me to book your free photo shoot in ${city}.`)
   )
 }
 
