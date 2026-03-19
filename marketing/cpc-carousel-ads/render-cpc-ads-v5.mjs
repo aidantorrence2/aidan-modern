@@ -34,13 +34,18 @@ const MONO = "Menlo, 'Courier New', monospace"
 const FUTURA = "Futura, 'Trebechet MS', sans-serif"
 const AVENIR = "'Avenir Next', 'Avenir', 'Helvetica Neue', sans-serif"
 
-const cities = ['Manila', 'Antipolo', 'Subic']
+const cities = ['Manila', 'Antipolo', 'Subic/Olongapo', 'Quezon City']
 const CTA = 'if interested, message me for details'
+
+function slug(city) {
+  return city.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/-+$/, '')
+}
 
 function cs(base, city) {
   if (city.length <= 5) return base
   if (city.length <= 6) return Math.round(base * 0.88)
-  return Math.round(base * 0.6)
+  if (city.length <= 8) return Math.round(base * 0.6)
+  return Math.round(base * 0.42)
 }
 
 function makeSlide(city, p, p2, p3, variant) {
@@ -1191,7 +1196,7 @@ for (let ci = 0; ci < cities.length; ci++) {
     const pi2 = (v * 3 + ci * 7 + 1) % pool.length
     const pi3 = (v * 3 + ci * 7 + 2) % pool.length
     slides.push({
-      name: `${city.toLowerCase()}-${String(v + 1).padStart(3, '0')}`,
+      name: `${slug(city)}-${String(v + 1).padStart(3, '0')}`,
       city,
       html: makeSlide(city, pool[pi1], pool[pi2], pool[pi3], v),
     })
@@ -1200,7 +1205,7 @@ for (let ci = 0; ci < cities.length; ci++) {
 
 async function render() {
   for (const city of cities) {
-    fs.mkdirSync(path.join(OUT, city.toLowerCase()), { recursive: true })
+    fs.mkdirSync(path.join(OUT, slug(city)), { recursive: true })
   }
 
   console.log(`Launching browser — rendering ${slides.length} CPC ads...`)
@@ -1216,7 +1221,7 @@ async function render() {
       body { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
     </style></head><body>${slide.html}</body></html>`, { waitUntil: 'load' })
     await page.waitForTimeout(300)
-    const outPath = path.join(OUT, slide.city.toLowerCase(), `${slide.name}.png`)
+    const outPath = path.join(OUT, slug(slide.city), `${slide.name}.png`)
     await page.screenshot({ path: outPath, type: 'png' })
     await page.close()
     console.log(`  [${i + 1}/${slides.length}] ${slide.name}`)
