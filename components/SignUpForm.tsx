@@ -8,10 +8,15 @@ export default function SignUpForm() {
   const [city, setCity] = useState('')
   const [contactMethod, setContactMethod] = useState<'whatsapp' | 'instagram'>('whatsapp')
   const [contact, setContact] = useState('')
+  const [location, setLocation] = useState('')
+  const [moodboard, setMoodboard] = useState<string[]>([])
+  const [moodboardOther, setMoodboardOther] = useState('')
   const [photoPreview, setPhotoPreview] = useState<string | null>(null)
   const [photoData, setPhotoData] = useState<string | null>(null)
   const [submitting, setSubmitting] = useState(false)
   const fileRef = useRef<HTMLInputElement>(null)
+
+  const moodboardOptions = ['Golden hour', 'Street style', 'Nature / outdoor', 'Urban / city', 'Moody / editorial', 'Casual / candid', 'Vintage film', 'Night vibes']
 
   const cityDone = city.trim().length > 0
   const contactDone = contact.trim().length > 0
@@ -73,6 +78,8 @@ export default function SignUpForm() {
           city: city.trim(),
           contactMethod,
           contact: contact.trim(),
+          location: location.trim() || null,
+          moodboard: moodboard.length > 0 || moodboardOther.trim() ? [...moodboard, ...(moodboardOther.trim() ? [moodboardOther.trim()] : [])] : null,
           photo: photoData || null
         })
       })
@@ -90,6 +97,9 @@ export default function SignUpForm() {
       setCity('')
       setContact('')
       setContactMethod('whatsapp')
+      setLocation('')
+      setMoodboard([])
+      setMoodboardOther('')
       setPhotoPreview(null)
       setPhotoData(null)
     } catch {
@@ -228,6 +238,59 @@ export default function SignUpForm() {
           className="hidden"
         />
       </div>
+
+      {/* Step 4: Location preference */}
+      <div className="space-y-1.5">
+        <label className="flex items-center gap-2 text-sm font-medium text-white/80">
+          <StepNumber n={4} />
+          Preferred location
+          <span className="text-xs text-white/30">(optional)</span>
+        </label>
+        <input
+          name="location"
+          value={location}
+          onChange={e => { setLocation(e.target.value); clearStatus() }}
+          className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-white/30 outline-none transition focus:border-emerald-400 focus:ring-2 focus:ring-emerald-400/30"
+          placeholder="e.g. Intramuros, a park, a café — or I can suggest spots"
+        />
+      </div>
+
+      {/* Step 5: Moodboard */}
+      <fieldset className="space-y-2">
+        <legend className="flex items-center gap-2 text-sm font-medium text-white/80">
+          <StepNumber n={5} />
+          Photo shoot vibe
+          <span className="text-xs text-white/30">(optional)</span>
+        </legend>
+        <div className="flex flex-wrap gap-2">
+          {moodboardOptions.map(option => (
+            <button
+              key={option}
+              type="button"
+              onClick={() => {
+                setMoodboard(prev =>
+                  prev.includes(option) ? prev.filter(o => o !== option) : [...prev, option]
+                )
+                clearStatus()
+              }}
+              className={`rounded-full border px-4 py-1.5 text-sm font-medium transition-all ${
+                moodboard.includes(option)
+                  ? 'border-emerald-400 bg-emerald-400/20 text-emerald-400'
+                  : 'border-white/15 bg-white/5 text-white/60 hover:border-white/30 hover:text-white/80'
+              }`}
+            >
+              {option}
+            </button>
+          ))}
+        </div>
+        <input
+          name="moodboard_other"
+          value={moodboardOther}
+          onChange={e => { setMoodboardOther(e.target.value); clearStatus() }}
+          className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-white/30 outline-none transition focus:border-emerald-400 focus:ring-2 focus:ring-emerald-400/30"
+          placeholder="Other vibe or inspiration (optional)"
+        />
+      </fieldset>
 
       {/* Honeypot */}
       <input type="text" name="company" className="hidden" tabIndex={-1} autoComplete="off" />
