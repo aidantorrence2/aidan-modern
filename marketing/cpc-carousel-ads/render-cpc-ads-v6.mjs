@@ -3905,7 +3905,295 @@ function makeSlide(city, p, p2, p3, variant) {
       </div>`
     }
 
-    // PLACEHOLDER_NEXT
+    // 90: POST-IT BOARD — corkboard background with colorful sticky notes and photos pinned
+    case 90: return `
+      <div style="width:1080px;height:1920px;position:relative;overflow:hidden;background:#8B6914;">
+        <div style="position:absolute;inset:0;background:repeating-conic-gradient(#8B6914 0% 25%, #7D5F12 0% 50%) 0 0 / 40px 40px;opacity:0.3;"></div>
+        <div style="position:absolute;inset:0;background:radial-gradient(ellipse at center,transparent 40%,rgba(0,0,0,0.3) 100%);"></div>
+        <!-- sticky note 1 — title -->
+        <div style="position:absolute;top:60px;left:80px;width:400px;background:#FFEB3B;padding:30px;transform:rotate(-3deg);box-shadow:2px 4px 10px rgba(0,0,0,0.3);">
+          <div style="font-family:${SANS};font-size:${cs(50,city)}px;font-weight:bold;color:#333;line-height:1;">${C}</div>
+          ${PH('#33333380')}
+          <div style="font-family:${SANS};font-size:22px;color:#555;margin-top:8px;">FREE PHOTO SHOOT</div>
+        </div>
+        <!-- sticky note 2 — CTA -->
+        <div style="position:absolute;top:100px;right:80px;width:300px;background:#FF80AB;padding:24px;transform:rotate(5deg);box-shadow:2px 4px 10px rgba(0,0,0,0.3);">
+          <div style="font-family:${SANS};font-size:18px;color:#333;">${CTA}</div>
+        </div>
+        <!-- photo 1 pinned -->
+        <div style="position:absolute;top:380px;left:40px;width:480px;height:640px;background:white;padding:12px;transform:rotate(-4deg);box-shadow:3px 6px 15px rgba(0,0,0,0.4);">
+          <img src="${p}" style="width:100%;height:100%;object-fit:cover;"/>
+          <div style="position:absolute;top:-8px;left:50%;width:20px;height:20px;border-radius:50%;background:red;box-shadow:0 2px 4px rgba(0,0,0,0.3);"></div>
+        </div>
+        <!-- photo 2 pinned -->
+        <div style="position:absolute;top:480px;right:40px;width:480px;height:640px;background:white;padding:12px;transform:rotate(3deg);box-shadow:3px 6px 15px rgba(0,0,0,0.4);">
+          <img src="${p2}" style="width:100%;height:100%;object-fit:cover;"/>
+          <div style="position:absolute;top:-8px;left:50%;width:20px;height:20px;border-radius:50%;background:#2196F3;box-shadow:0 2px 4px rgba(0,0,0,0.3);"></div>
+        </div>
+        <!-- photo 3 pinned -->
+        <div style="position:absolute;top:1180px;left:180px;width:700px;height:500px;background:white;padding:12px;transform:rotate(-1deg);box-shadow:3px 6px 15px rgba(0,0,0,0.4);">
+          <img src="${p3}" style="width:100%;height:100%;object-fit:cover;"/>
+          <div style="position:absolute;top:-8px;left:50%;width:20px;height:20px;border-radius:50%;background:#4CAF50;box-shadow:0 2px 4px rgba(0,0,0,0.3);"></div>
+        </div>
+      </div>`
+
+    // 91: CORK BOARD WITH PINS — darker cork with string connecting photos
+    case 91: return `
+      <div style="width:1080px;height:1920px;position:relative;overflow:hidden;background:#6B4226;">
+        <div style="position:absolute;inset:0;background:url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%224%22 height=%224%22><rect width=%224%22 height=%224%22 fill=%22%236B4226%22/><circle cx=%222%22 cy=%222%22 r=%220.8%22 fill=%22%235A3720%22/></svg>');opacity:0.5;"></div>
+        <div style="position:absolute;top:0;left:0;right:0;height:6px;background:linear-gradient(90deg,#8B5E3C,#A0522D,#8B5E3C);"></div>
+        <!-- header area -->
+        <div style="position:absolute;top:50px;left:60px;right:60px;text-align:center;">
+          <div style="font-family:${SERIF};font-size:${cs(80,city)}px;font-weight:bold;color:#F5DEB3;text-shadow:2px 2px 4px rgba(0,0,0,0.5);line-height:1;">${C}</div>
+          ${PH('#F5DEB380', SERIF)}
+          <div style="font-family:${FUTURA};font-size:36px;font-weight:bold;color:#FFD700;margin-top:10px;">FREE PHOTO SHOOT</div>
+          <div style="font-family:${SANS};font-size:18px;color:#F5DEB360;margin-top:8px;">${CTA}</div>
+        </div>
+        <!-- red string line connecting photos -->
+        <div style="position:absolute;top:350px;left:250px;right:250px;height:2px;background:#FF0000;transform:rotate(8deg);"></div>
+        <div style="position:absolute;top:750px;left:200px;right:200px;height:2px;background:#FF0000;transform:rotate(-5deg);"></div>
+        <!-- photo 1 -->
+        <div style="position:absolute;top:300px;left:50px;width:450px;height:400px;background:white;padding:10px;transform:rotate(-6deg);box-shadow:2px 4px 12px rgba(0,0,0,0.4);">
+          <img src="${p}" style="width:100%;height:100%;object-fit:cover;"/>
+          <div style="position:absolute;top:-6px;left:45%;width:16px;height:16px;border-radius:50%;background:#FF0000;box-shadow:0 1px 3px rgba(0,0,0,0.4);"></div>
+        </div>
+        <!-- photo 2 -->
+        <div style="position:absolute;top:380px;right:50px;width:450px;height:400px;background:white;padding:10px;transform:rotate(4deg);box-shadow:2px 4px 12px rgba(0,0,0,0.4);">
+          <img src="${p2}" style="width:100%;height:100%;object-fit:cover;"/>
+          <div style="position:absolute;top:-6px;left:45%;width:16px;height:16px;border-radius:50%;background:#FF0000;box-shadow:0 1px 3px rgba(0,0,0,0.4);"></div>
+        </div>
+        <!-- photo 3 large -->
+        <div style="position:absolute;top:850px;left:100px;right:100px;height:700px;background:white;padding:14px;transform:rotate(-1deg);box-shadow:2px 4px 12px rgba(0,0,0,0.4);">
+          <img src="${p3}" style="width:100%;height:100%;object-fit:cover;"/>
+          <div style="position:absolute;top:-6px;left:45%;width:16px;height:16px;border-radius:50%;background:#FF0000;box-shadow:0 1px 3px rgba(0,0,0,0.4);"></div>
+        </div>
+      </div>`
+
+    // 92: STRING CONSPIRACY BOARD — dark board with red string connecting elements
+    case 92: return `
+      <div style="width:1080px;height:1920px;position:relative;overflow:hidden;background:#1a1a1a;">
+        <!-- grid lines -->
+        <div style="position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent,transparent 99px,rgba(255,255,255,0.03) 100px),repeating-linear-gradient(180deg,transparent,transparent 99px,rgba(255,255,255,0.03) 100px);"></div>
+        <!-- red strings -->
+        ${Array.from({length:6}, (_,i) => `<div style="position:absolute;top:${200+i*250}px;left:${50+i*80}px;width:${400+i*60}px;height:2px;background:#FF0000;transform:rotate(${-15+i*8}deg);opacity:0.6;"></div>`).join('')}
+        <!-- header -->
+        <div style="position:absolute;top:50px;left:50px;background:rgba(0,0,0,0.8);border:1px solid #FF0000;padding:20px;">
+          <div style="font-family:${MONO};font-size:14px;color:#FF0000;letter-spacing:4px;">CLASSIFIED</div>
+          <div style="font-family:${DISPLAY};font-size:${cs(70,city)}px;color:#fff;line-height:0.9;">${C}</div>
+          ${PH('#FF000080', MONO)}
+          <div style="font-family:${MONO};font-size:24px;color:#FF0000;margin-top:8px;">FREE PHOTO SHOOT</div>
+          <div style="font-family:${MONO};font-size:14px;color:#FF000060;margin-top:6px;">${CTA}</div>
+        </div>
+        <!-- evidence photos -->
+        <div style="position:absolute;top:420px;left:40px;width:380px;height:500px;background:white;padding:10px;transform:rotate(-8deg);box-shadow:0 4px 12px rgba(0,0,0,0.6);">
+          <img src="${p}" style="width:100%;height:100%;object-fit:cover;"/>
+        </div>
+        <div style="position:absolute;top:500px;right:40px;width:380px;height:500px;background:white;padding:10px;transform:rotate(6deg);box-shadow:0 4px 12px rgba(0,0,0,0.6);">
+          <img src="${p2}" style="width:100%;height:100%;object-fit:cover;"/>
+        </div>
+        <div style="position:absolute;top:1080px;left:180px;width:700px;height:520px;background:white;padding:12px;transform:rotate(-2deg);box-shadow:0 4px 12px rgba(0,0,0,0.6);">
+          <img src="${p3}" style="width:100%;height:100%;object-fit:cover;"/>
+        </div>
+      </div>`
+
+    // 93: FILING CABINET — metal drawer with photos as file tabs
+    case 93: return `
+      <div style="width:1080px;height:1920px;position:relative;overflow:hidden;background:#4A4A4A;">
+        <!-- metal texture -->
+        <div style="position:absolute;inset:0;background:linear-gradient(180deg,#5A5A5A,#4A4A4A,#3A3A3A);"></div>
+        <div style="position:absolute;inset:0;background:repeating-linear-gradient(90deg,rgba(255,255,255,0.02) 0px,transparent 1px,transparent 60px);"></div>
+        <!-- label plate -->
+        <div style="position:absolute;top:60px;left:280px;right:280px;height:120px;background:linear-gradient(180deg,#D4AF37,#B8960C);border-radius:6px;border:2px solid #8B7355;box-shadow:inset 0 2px 4px rgba(255,255,255,0.3);display:flex;align-items:center;justify-content:center;flex-direction:column;">
+          <div style="font-family:${SERIF};font-size:${cs(40,city)}px;font-weight:bold;color:#333;">${C}</div>
+          <div style="font-family:${SANS};font-size:16px;color:#555;letter-spacing:2px;">FREE PHOTO SHOOT</div>
+        </div>
+        <!-- drawer handle -->
+        <div style="position:absolute;top:200px;left:440px;right:440px;height:30px;background:linear-gradient(180deg,#888,#666);border-radius:4px;border:1px solid #999;box-shadow:0 4px 8px rgba(0,0,0,0.3);"></div>
+        <!-- file folders with photos -->
+        <div style="position:absolute;top:280px;left:40px;right:40px;display:flex;gap:12px;height:1400px;">
+          ${[p,p2,p3].map((ph,i) => {
+            const colors = ['#FFECB3','#C8E6C9','#BBDEFB']
+            const tabs = ['A-F','G-M','N-Z']
+            return `<div style="flex:1;position:relative;">
+              <div style="position:absolute;top:0;left:10%;right:10%;height:50px;background:${colors[i]};border-radius:8px 8px 0 0;display:flex;align-items:center;justify-content:center;">
+                <div style="font-family:${MONO};font-size:18px;font-weight:bold;color:#333;">${tabs[i]}</div>
+              </div>
+              <div style="position:absolute;top:40px;inset:0;background:${colors[i]};border-radius:0 0 4px 4px;padding:12px;overflow:hidden;">
+                <img src="${ph}" style="width:100%;height:100%;object-fit:cover;border-radius:4px;"/>
+              </div>
+            </div>`
+          }).join('')}
+        </div>
+        <div style="position:absolute;bottom:120px;left:0;right:0;text-align:center;font-family:${SANS};font-size:18px;color:rgba(255,255,255,0.3);">${CTA}</div>
+      </div>`
+
+    // 94: PAINT PALETTE — artist palette shape with photos in paint blob areas
+    case 94: return `
+      <div style="width:1080px;height:1920px;position:relative;overflow:hidden;background:#2c1810;">
+        <div style="position:absolute;inset:0;background:linear-gradient(135deg,#3d2418,#2c1810,#1a0e08);"></div>
+        <!-- palette shape -->
+        <div style="position:absolute;top:300px;left:40px;right:40px;bottom:200px;background:#D2B48C;border-radius:50% 50% 30% 70%;box-shadow:inset 0 4px 20px rgba(0,0,0,0.2),0 10px 40px rgba(0,0,0,0.4);">
+          <!-- thumb hole -->
+          <div style="position:absolute;bottom:120px;left:100px;width:140px;height:140px;border-radius:50%;background:#2c1810;box-shadow:inset 0 4px 10px rgba(0,0,0,0.3);"></div>
+          <!-- paint blobs / photo circles -->
+          <div style="position:absolute;top:80px;left:80px;width:350px;height:350px;border-radius:50%;overflow:hidden;border:8px solid #E53935;box-shadow:0 4px 12px rgba(0,0,0,0.3);">
+            <img src="${p}" style="width:100%;height:100%;object-fit:cover;"/>
+          </div>
+          <div style="position:absolute;top:60px;right:80px;width:300px;height:300px;border-radius:50%;overflow:hidden;border:8px solid #1E88E5;box-shadow:0 4px 12px rgba(0,0,0,0.3);">
+            <img src="${p2}" style="width:100%;height:100%;object-fit:cover;"/>
+          </div>
+          <div style="position:absolute;bottom:180px;right:120px;width:380px;height:380px;border-radius:50%;overflow:hidden;border:8px solid #43A047;box-shadow:0 4px 12px rgba(0,0,0,0.3);">
+            <img src="${p3}" style="width:100%;height:100%;object-fit:cover;"/>
+          </div>
+          <!-- small paint dots -->
+          <div style="position:absolute;top:450px;left:350px;width:60px;height:60px;border-radius:50%;background:#FFD600;"></div>
+          <div style="position:absolute;top:500px;left:430px;width:40px;height:40px;border-radius:50%;background:#FF6F00;"></div>
+          <div style="position:absolute;top:180px;left:460px;width:50px;height:50px;border-radius:50%;background:#AB47BC;"></div>
+        </div>
+        <!-- text at top -->
+        <div style="position:absolute;top:60px;left:60px;right:60px;text-align:center;">
+          <div style="font-family:${SERIF};font-size:${cs(90,city)}px;font-weight:bold;font-style:italic;color:#D2B48C;line-height:1;">${C}</div>
+          ${PH('#D2B48C80', SERIF)}
+          <div style="font-family:${SERIF};font-size:34px;color:#FFD700;font-style:italic;margin-top:8px;">Free Photo Shoot</div>
+          <div style="font-family:${SANS};font-size:18px;color:#D2B48C60;margin-top:8px;">${CTA}</div>
+        </div>
+      </div>`
+
+    // 95: EMBROIDERY HOOP — circular framed photos like embroidery hoops on fabric
+    case 95: return `
+      <div style="width:1080px;height:1920px;position:relative;overflow:hidden;background:#F5F0E8;">
+        <!-- fabric texture -->
+        <div style="position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent,transparent 3px,rgba(0,0,0,0.02) 4px),repeating-linear-gradient(180deg,transparent,transparent 3px,rgba(0,0,0,0.02) 4px);"></div>
+        <!-- text -->
+        <div style="position:absolute;top:60px;left:60px;right:60px;text-align:center;">
+          <div style="font-family:${SERIF};font-size:${cs(80,city)}px;font-weight:bold;font-style:italic;color:#8B4513;line-height:1;">${C}</div>
+          ${PH('#8B451380', SERIF)}
+          <div style="font-family:${SERIF};font-size:32px;color:#CD853F;font-style:italic;margin-top:10px;">Free Photo Shoot</div>
+          <div style="font-family:${SANS};font-size:18px;color:#8B451360;margin-top:8px;">${CTA}</div>
+        </div>
+        <!-- hoop 1 large -->
+        <div style="position:absolute;top:340px;left:140px;width:800px;height:800px;border-radius:50%;border:24px solid #D2691E;box-shadow:0 8px 24px rgba(0,0,0,0.15),inset 0 4px 12px rgba(0,0,0,0.1);overflow:hidden;">
+          <img src="${p}" style="width:100%;height:100%;object-fit:cover;"/>
+        </div>
+        <!-- hoop clamp -->
+        <div style="position:absolute;top:310px;left:480px;width:120px;height:50px;background:linear-gradient(180deg,#B8860B,#8B6914);border-radius:8px;"></div>
+        <!-- hoop 2 small -->
+        <div style="position:absolute;top:1200px;left:60px;width:420px;height:420px;border-radius:50%;border:18px solid #D2691E;box-shadow:0 6px 16px rgba(0,0,0,0.15);overflow:hidden;">
+          <img src="${p2}" style="width:100%;height:100%;object-fit:cover;"/>
+        </div>
+        <!-- hoop 3 small -->
+        <div style="position:absolute;top:1260px;right:60px;width:380px;height:380px;border-radius:50%;border:18px solid #D2691E;box-shadow:0 6px 16px rgba(0,0,0,0.15);overflow:hidden;">
+          <img src="${p3}" style="width:100%;height:100%;object-fit:cover;"/>
+        </div>
+      </div>`
+
+    // 96: QUILT PATTERN — patchwork squares with photos and colored blocks
+    case 96: return `
+      <div style="width:1080px;height:1920px;overflow:hidden;background:#F5F0E8;">
+        <!-- text header -->
+        <div style="padding:50px 60px 20px;text-align:center;">
+          <div style="font-family:${SERIF};font-size:${cs(80,city)}px;font-weight:bold;color:#5D4037;line-height:1;">${C}</div>
+          ${PH('#5D403780', SERIF)}
+          <div style="font-family:${SERIF};font-size:30px;color:#8D6E63;font-style:italic;margin-top:8px;">Free Photo Shoot</div>
+          <div style="font-family:${SANS};font-size:16px;color:#5D403760;margin-top:6px;">${CTA}</div>
+        </div>
+        <!-- quilt grid -->
+        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:6px;padding:10px 30px 30px;height:1560px;">
+          ${Array.from({length:16}, (_,i) => {
+            const photos = [p,p2,p3]
+            const colors = ['#FFCDD2','#C8E6C9','#BBDEFB','#FFF9C4','#D1C4E9','#FFE0B2','#B2DFDB','#F8BBD0']
+            if ([0,3,5,8,10,13].includes(i)) {
+              return `<div style="overflow:hidden;border:3px solid #D7CCC8;"><img src="${photos[i%3]}" style="width:100%;height:100%;object-fit:cover;"/></div>`
+            }
+            return `<div style="background:${colors[i%8]};border:3px solid #D7CCC8;display:flex;align-items:center;justify-content:center;">
+              <div style="width:60%;height:60%;border:2px dashed #5D403730;border-radius:${i%2===0?'50%':'0'};"></div>
+            </div>`
+          }).join('')}
+        </div>
+      </div>`
+
+    // 97: MOSAIC TILE — small tiles with photos fragmented across grid
+    case 97: return `
+      <div style="width:1080px;height:1920px;position:relative;overflow:hidden;background:#1a1a2e;">
+        <!-- grout lines -->
+        <div style="position:absolute;inset:0;background:repeating-linear-gradient(90deg,#1a1a2e 0px,#1a1a2e 3px,transparent 3px,transparent 180px),repeating-linear-gradient(180deg,#1a1a2e 0px,#1a1a2e 3px,transparent 3px,transparent 180px);z-index:2;pointer-events:none;"></div>
+        <!-- header tile -->
+        <div style="position:absolute;top:40px;left:40px;right:40px;height:260px;background:linear-gradient(135deg,#4A148C,#6A1B9A);border-radius:4px;display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:3;">
+          <div style="font-family:${DISPLAY};font-size:${cs(90,city)}px;color:#E1BEE7;line-height:0.9;">${C}</div>
+          ${PH('#CE93D880', DISPLAY)}
+          <div style="font-family:${FUTURA};font-size:38px;font-weight:bold;color:#FFD600;margin-top:8px;letter-spacing:4px;">FREE PHOTO SHOOT</div>
+          <div style="font-family:${SANS};font-size:16px;color:#CE93D860;margin-top:6px;">${CTA}</div>
+        </div>
+        <!-- mosaic photos -->
+        <div style="position:absolute;top:340px;left:40px;right:40px;bottom:40px;display:grid;grid-template-columns:repeat(3,1fr);gap:4px;">
+          ${Array.from({length:9}, (_,i) => {
+            const photos = [p,p2,p3]
+            const colors = ['#4A148C','#1B5E20','#BF360C','#01579B','#4E342E','#33691E']
+            if ([0,2,4,6,8].includes(i)) {
+              return `<div style="overflow:hidden;border-radius:4px;"><img src="${photos[i%3]}" style="width:100%;height:100%;object-fit:cover;"/></div>`
+            }
+            return `<div style="background:${colors[i%6]};border-radius:4px;"></div>`
+          }).join('')}
+        </div>
+      </div>`
+
+    // 98: TOOLBOX — metal toolbox with photos as tool compartments
+    case 98: return `
+      <div style="width:1080px;height:1920px;position:relative;overflow:hidden;background:#333;">
+        <!-- metal bg -->
+        <div style="position:absolute;inset:0;background:linear-gradient(180deg,#555,#444,#333,#2a2a2a);"></div>
+        <div style="position:absolute;inset:0;background:repeating-linear-gradient(90deg,rgba(255,255,255,0.015) 0px,transparent 1px,transparent 40px);"></div>
+        <!-- handle -->
+        <div style="position:absolute;top:30px;left:340px;right:340px;height:60px;border-radius:30px;background:linear-gradient(180deg,#888,#666);border:3px solid #999;box-shadow:0 6px 16px rgba(0,0,0,0.4);"></div>
+        <!-- latch -->
+        <div style="position:absolute;top:110px;left:480px;right:480px;height:40px;background:linear-gradient(180deg,#FFD600,#FFC107);border-radius:4px;border:2px solid #FF8F00;"></div>
+        <!-- label -->
+        <div style="position:absolute;top:170px;left:200px;right:200px;background:rgba(0,0,0,0.6);border:1px solid rgba(255,255,255,0.1);padding:20px;text-align:center;">
+          <div style="font-family:${DISPLAY};font-size:${cs(60,city)}px;color:#FFD600;line-height:1;">${C}</div>
+          ${PH('#FFD60080', DISPLAY)}
+          <div style="font-family:${FUTURA};font-size:28px;color:white;letter-spacing:3px;margin-top:6px;">FREE PHOTO SHOOT</div>
+          <div style="font-family:${SANS};font-size:14px;color:#FFD60060;margin-top:6px;">${CTA}</div>
+        </div>
+        <!-- compartments -->
+        <div style="position:absolute;top:400px;left:40px;right:40px;bottom:40px;display:flex;flex-direction:column;gap:8px;">
+          <div style="flex:2;display:flex;gap:8px;">
+            <div style="flex:2;overflow:hidden;border:3px solid #555;border-radius:4px;"><img src="${p}" style="width:100%;height:100%;object-fit:cover;"/></div>
+            <div style="flex:1;overflow:hidden;border:3px solid #555;border-radius:4px;"><img src="${p2}" style="width:100%;height:100%;object-fit:cover;"/></div>
+          </div>
+          <div style="flex:1;overflow:hidden;border:3px solid #555;border-radius:4px;"><img src="${p3}" style="width:100%;height:100%;object-fit:cover;"/></div>
+        </div>
+      </div>`
+
+    // 99: DESK DRAWER — open drawer view with photos scattered inside
+    case 99: return `
+      <div style="width:1080px;height:1920px;position:relative;overflow:hidden;background:#5D4037;">
+        <!-- wood grain -->
+        <div style="position:absolute;inset:0;background:linear-gradient(180deg,#6D4C41,#5D4037,#4E342E);"></div>
+        <div style="position:absolute;inset:0;background:repeating-linear-gradient(175deg,transparent,transparent 8px,rgba(0,0,0,0.04) 8px,rgba(0,0,0,0.04) 10px);"></div>
+        <!-- drawer interior -->
+        <div style="position:absolute;top:80px;left:60px;right:60px;bottom:80px;background:#EFEBE9;border:8px solid #4E342E;box-shadow:inset 0 8px 24px rgba(0,0,0,0.2);border-radius:2px;">
+          <!-- header card -->
+          <div style="position:absolute;top:20px;left:20px;width:400px;background:white;padding:24px;box-shadow:2px 4px 10px rgba(0,0,0,0.15);transform:rotate(-3deg);">
+            <div style="font-family:${SERIF};font-size:${cs(48,city)}px;font-weight:bold;color:#333;line-height:1;">${C}</div>
+            ${PH('#33333360', SERIF)}
+            <div style="font-family:${SANS};font-size:22px;color:#E53935;margin-top:6px;">FREE PHOTO SHOOT</div>
+            <div style="font-family:${SANS};font-size:14px;color:#999;margin-top:6px;">${CTA}</div>
+          </div>
+          <!-- scattered photos -->
+          <div style="position:absolute;top:200px;left:30px;width:440px;height:580px;background:white;padding:10px;transform:rotate(-5deg);box-shadow:2px 4px 10px rgba(0,0,0,0.15);">
+            <img src="${p}" style="width:100%;height:100%;object-fit:cover;"/>
+          </div>
+          <div style="position:absolute;top:280px;right:30px;width:440px;height:580px;background:white;padding:10px;transform:rotate(4deg);box-shadow:2px 4px 10px rgba(0,0,0,0.15);">
+            <img src="${p2}" style="width:100%;height:100%;object-fit:cover;"/>
+          </div>
+          <div style="position:absolute;bottom:40px;left:160px;width:640px;height:480px;background:white;padding:10px;transform:rotate(-1deg);box-shadow:2px 4px 10px rgba(0,0,0,0.15);">
+            <img src="${p3}" style="width:100%;height:100%;object-fit:cover;"/>
+          </div>
+          <!-- paper clip -->
+          <div style="position:absolute;top:30px;right:80px;width:30px;height:60px;border:3px solid #888;border-radius:15px;transform:rotate(15deg);"></div>
+        </div>
+      </div>`
+
     default: return `<div style="width:1080px;height:1920px;background:#000;color:white;display:flex;align-items:center;justify-content:center;font-size:60px;">Variant ${variant}</div>`
   }
 }
