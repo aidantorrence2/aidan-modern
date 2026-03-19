@@ -4,7 +4,7 @@ import path from 'path'
 import fs from 'fs'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
-const OUT = path.join(__dirname, 'output')
+const OUT = path.join(__dirname, 'output-qc')
 const IMG_DIR = '/Users/aidantorrence/Documents/aidan-modern/public/images/large'
 
 fs.mkdirSync(OUT, { recursive: true })
@@ -97,7 +97,7 @@ function hookSlide(name, heroImg, subtext, imgPos = 'center') {
         <img src="${heroImg}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:${imgPos};filter:saturate(1.1) contrast(1.05);"/>
         <div style="position:absolute;inset:0;background:linear-gradient(180deg, rgba(0,0,0,0.3) 0%, transparent 20%, transparent 45%, rgba(0,0,0,0.92) 100%);"></div>
         <div style="position:absolute;bottom:440px;left:64px;right:64px;">
-          <h1 style="font-family:${SERIF};font-size:108px;font-weight:700;font-style:italic;color:white;line-height:0.88;margin:0;${S}">Subic/Olongapo</h1>
+          <h1 style="font-family:${SERIF};font-size:108px;font-weight:700;font-style:italic;color:white;line-height:0.88;margin:0;${S}">Quezon City</h1>
           <h2 style="font-family:${SERIF};font-size:108px;font-weight:700;font-style:italic;color:white;line-height:0.92;margin:12px 0 0;${S}">Free photo<br/>shoot</h2>
           <p style="font-family:${SANS};font-size:30px;color:rgba(255,255,255,0.6);margin:32px 0 0 4px;${S}">${subtext}</p>
         </div>
@@ -309,12 +309,12 @@ function signupSheet(name, cityName) {
 // -- Version B only --
 
 const slides = [
-  hookSlide('subic-carousel-01-hook', imgUrban3, 'Want photos like these? No experience needed.'),
-  proofSlide('subic-carousel-02-proof', 'My recent work', proof8),
-  howSlideWarm('subic-carousel-03-how', 'Super simple.', steps, img0075),
-  whatSlideDark('subic-carousel-04-what', 'All of this.<br/>For free.', deliverables, imgNight3),
-  ctaSlide('subic-carousel-05-cta', imgIvy2, 'Your turn.', 'DM me to book your free photo shoot in Subic/Olongapo.'),
-  signupSheet('subic-carousel-06-signup', 'Subic/Olongapo')
+  hookSlide('qc-carousel-01-hook', imgUrban3, 'Want photos like these? No experience needed.'),
+  proofSlide('qc-carousel-02-proof', 'My recent work', proof8),
+  howSlideWarm('qc-carousel-03-how', 'Super simple.', steps, img0075),
+  whatSlideDark('qc-carousel-04-what', 'All of this.<br/>For free.', deliverables, imgNight3),
+  ctaSlide('qc-carousel-05-cta', imgIvy2, 'Your turn.', 'DM me to book your free photo shoot in Quezon City.'),
+  signupSheet('qc-carousel-06-signup', 'Quezon City')
 ]
 
 async function render() {
