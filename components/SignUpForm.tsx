@@ -226,7 +226,7 @@ export default function SignUpForm() {
       {/* Moodboards */}
       <fieldset className="space-y-2">
         <legend className="text-sm font-medium text-white/80">Choose a shoot concept (or suggest your own)</legend>
-        <div className="grid grid-cols-1 gap-3 max-w-[200px] mx-auto">
+        <div className="grid grid-cols-1 gap-4 max-w-[260px] mx-auto">
           {moodboardOptions.map(option => (
             <button
               key={option.id}
@@ -243,6 +243,7 @@ export default function SignUpForm() {
                   : 'border-white/10 hover:border-white/25'
               }`}
             >
+              <div className="px-3 pt-3 pb-1.5 text-left font-display text-base font-semibold tracking-wide text-white">{option.id}</div>
               <img src={option.img} alt={option.id} className="w-full object-cover" />
               {moodboard.includes(option.id) && (
                 <div className="absolute inset-0 bg-emerald-400/20" />
@@ -254,7 +255,6 @@ export default function SignUpForm() {
                   </svg>
                 </div>
               )}
-              <div className="py-2 text-center text-sm font-medium text-white/80">{option.id}</div>
             </button>
           ))}
         </div>
