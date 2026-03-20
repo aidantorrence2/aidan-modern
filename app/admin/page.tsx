@@ -1,5 +1,6 @@
 import { neon } from '@neondatabase/serverless'
 import AdminClient from './AdminClient'
+import AutoRefresh from './AutoRefresh'
 
 export const dynamic = 'force-dynamic'
 export const revalidate = 0
@@ -30,5 +31,10 @@ async function getSignups(): Promise<Signup[]> {
 
 export default async function AdminPage() {
   const signups = await getSignups()
-  return <AdminClient signups={signups} />
+  return (
+    <>
+      <AutoRefresh interval={10000} />
+      <AdminClient signups={signups} />
+    </>
+  )
 }
