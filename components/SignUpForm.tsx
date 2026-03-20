@@ -347,7 +347,7 @@ export default function SignUpForm() {
         className="w-full rounded-full bg-emerald-500 py-3.5 text-sm font-bold text-white shadow-lg shadow-emerald-500/25 transition hover:bg-emerald-400 disabled:opacity-50"
         data-cta="sign-up-submit"
       >
-        {submitting ? 'Submitting...' : 'Sign Up'}
+        {submitting ? 'Submitting...' : 'Sign Up & Get Details'}
       </button>
     </form>
   )

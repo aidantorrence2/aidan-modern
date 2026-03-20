@@ -14,7 +14,7 @@ export default function SignUpPage() {
           Design your photo shoot
         </h1>
         <p className="mt-3 text-base text-white/50">
-          Pick your vibe and I&apos;ll handle the rest. Completely free.
+          Pick your vibe below and I&apos;ll send you all the details — timing, location ideas, what to wear, and next steps.
         </p>
         <SignUpForm />
       </div>
