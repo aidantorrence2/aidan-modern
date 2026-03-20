@@ -1,8 +1,5 @@
-import { neon } from '@neondatabase/serverless'
-
-export const dynamic = 'force-dynamic'
-export const revalidate = 0
-export const fetchCache = 'force-no-store'
+"use client"
+import { useEffect, useState } from 'react'
 
 type Signup = {
   id: number
@@ -14,35 +11,81 @@ type Signup = {
   created_at: string
 }
 
-async function getSignups(): Promise<Signup[]> {
-  const url = process.env.DATABASE_URL
-  if (!url) return []
-  const sql = neon(url)
-  try {
-    const rows = await sql`SELECT id, city, contact_method, contact, moodboard, photo_url, created_at FROM signups ORDER BY created_at DESC`
-    return rows as Signup[]
-  } catch (e) {
-    console.error('[ADMIN] Failed to fetch signups:', e)
-    return []
-  }
-}
+export default function AdminPage() {
+  const [signups, setSignups] = useState<Signup[]>([])
+  const [loading, setLoading] = useState(true)
+  const [zoomedPhoto, setZoomedPhoto] = useState<string | null>(null)
 
-export default async function AdminPage() {
-  const signups = await getSignups()
+  async function fetchSignups() {
+    try {
+      const res = await fetch(`/api/admin/signups?t=${Date.now()}`)
+      if (!res.ok) throw new Error(`${res.status}`)
+      setSignups(await res.json())
+    } catch {
+      // silent
+    } finally {
+      setLoading(false)
+    }
+  }
+
+  async function softDelete(id: number) {
+    if (!confirm('Remove this entry?')) return
+    try {
+      const res = await fetch('/api/admin/delete', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ id })
+      })
+      if (res.ok) {
+        setSignups(prev => prev.filter(s => s.id !== id))
+      }
+    } catch {
+      // silent
+    }
+  }
+
+  useEffect(() => {
+    fetchSignups()
+    const interval = setInterval(fetchSignups, 10000)
+    return () => clearInterval(interval)
+  }, [])
 
   return (
     <>
       <style>{`header, footer { display: none !important; }`}</style>
+
+      {/* Photo zoom overlay */}
+      {zoomedPhoto && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-sm"
+          onClick={() => setZoomedPhoto(null)}
+        >
+          <img
+            src={zoomedPhoto}
+            alt=""
+            className="max-h-[85vh] max-w-[90vw] rounded-xl object-contain"
+          />
+          <button
+            onClick={() => setZoomedPhoto(null)}
+            className="absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-xl text-white hover:bg-white/20"
+          >
+            &times;
+          </button>
+        </div>
+      )}
+
       <section className="min-h-screen bg-[#0a0a0a] py-10">
         <div className="mx-auto max-w-4xl px-5">
           <div className="flex items-center justify-between">
             <h1 className="text-2xl font-bold text-white">Sign-ups</h1>
             <span className="rounded-full bg-white/10 px-3 py-1 text-sm font-medium text-white/60">
-              {signups.length} total
+              {loading ? '...' : `${signups.length} total`}
             </span>
           </div>
 
-          {signups.length === 0 ? (
+          {loading ? (
+            <p className="mt-10 text-center text-white/40">Loading...</p>
+          ) : signups.length === 0 ? (
             <p className="mt-10 text-center text-white/40">No sign-ups yet.</p>
           ) : (
             <div className="mt-6 space-y-3">
@@ -53,15 +96,24 @@ export default async function AdminPage() {
                       <img
                         src={s.photo_url}
                         alt=""
-                        className="h-16 w-16 flex-shrink-0 rounded-lg border border-white/10 object-cover"
+                        className="h-24 w-24 flex-shrink-0 cursor-pointer rounded-lg border border-white/10 object-cover transition hover:border-white/30 hover:opacity-80"
+                        onClick={() => setZoomedPhoto(s.photo_url)}
                       />
                     )}
                     <div className="min-w-0 flex-1">
-                      <div className="flex items-center gap-2">
-                        <span className="text-sm font-semibold text-white">{s.contact}</span>
-                        <span className="rounded-full bg-white/10 px-2 py-0.5 text-xs text-white/50">
-                          {s.contact_method === 'whatsapp' ? 'WhatsApp' : 'Instagram'}
-                        </span>
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center gap-2">
+                          <span className="text-sm font-semibold text-white">{s.contact}</span>
+                          <span className="rounded-full bg-white/10 px-2 py-0.5 text-xs text-white/50">
+                            {s.contact_method === 'whatsapp' ? 'WhatsApp' : 'Instagram'}
+                          </span>
+                        </div>
+                        <button
+                          onClick={() => softDelete(s.id)}
+                          className="text-xs text-white/20 hover:text-red-400 transition"
+                        >
+                          Remove
+                        </button>
                       </div>
                       <div className="mt-1 flex flex-wrap gap-x-4 gap-y-1 text-xs text-white/40">
                         <span>{s.city}</span>
