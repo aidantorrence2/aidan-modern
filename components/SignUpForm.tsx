@@ -243,7 +243,10 @@ export default function SignUpForm() {
                   : 'border-white/10 hover:border-white/25'
               }`}
             >
-              <div className="px-3 pt-3 pb-1.5 text-left font-display text-base font-semibold tracking-wide text-white">{option.id}</div>
+              <div className="px-3 pt-3 pb-2 text-left" style={{ fontFamily: "Georgia, 'Times New Roman', serif" }}>
+                <span className="text-lg font-bold italic text-white">{option.id}</span>
+                <span className="ml-2 text-[10px] uppercase tracking-[0.15em] text-white/30 font-sans">moodboard</span>
+              </div>
               <img src={option.img} alt={option.id} className="w-full object-cover" />
               {moodboard.includes(option.id) && (
                 <div className="absolute inset-0 bg-emerald-400/20" />
