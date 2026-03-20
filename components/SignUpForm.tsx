@@ -34,15 +34,15 @@ function resizeImage(dataUrl: string, maxBytes: number): Promise<string> {
 }
 
 const moodboardOptions = [
-  { id: 'Street editorial', img: '/images/moodboards/street-editorial.jpg' },
-  { id: 'Nature editorial', img: '/images/moodboards/nature-editorial.jpg' },
-  { id: 'Indoor', img: '/images/moodboards/indoor.jpg' },
+  { id: 'Street', img: '/images/moodboards/street-editorial.jpg' },
+  { id: 'Nature', img: '/images/moodboards/nature-editorial.jpg' },
+  { id: 'Indoor/Studio', img: '/images/moodboards/indoor.jpg' },
 ]
 
 const shootDetails: Record<string, { duration: string; bestTime: string; what: string }> = {
-  'Street editorial': { duration: '1–2 hours', bestTime: 'Late afternoon (golden hour)', what: 'Urban textures, architecture, street life as backdrop. Outfit changes welcome.' },
-  'Nature editorial': { duration: '1–2 hours', bestTime: 'Morning or golden hour', what: 'Parks, gardens, greenery. Flowy outfits work great.' },
-  'Indoor': { duration: '1–2 hours', bestTime: 'Anytime', what: 'Cafés, studios, or homes. Cozy, intimate vibes.' },
+  'Street': { duration: '1–2 hours', bestTime: 'Late afternoon (golden hour)', what: 'Urban textures, architecture, street life as backdrop. Outfit changes welcome.' },
+  'Nature': { duration: '1–2 hours', bestTime: 'Morning or golden hour', what: 'Parks, gardens, greenery. Flowy outfits work great.' },
+  'Indoor/Studio': { duration: '1–2 hours', bestTime: 'Anytime', what: 'Cafés, studios, or homes. Cozy, intimate vibes.' },
 }
 
 export default function SignUpForm() {
@@ -243,7 +243,7 @@ export default function SignUpForm() {
                   : 'border-white/10 hover:border-white/25'
               }`}
             >
-              <img src={option.img} alt={option.id} className="aspect-square w-full object-cover" />
+              <img src={option.img} alt={option.id} className="aspect-[4/3] w-full object-cover" />
               {moodboard.includes(option.id) && (
                 <div className="absolute inset-0 bg-emerald-400/20" />
               )}
