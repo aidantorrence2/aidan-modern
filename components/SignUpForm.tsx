@@ -243,7 +243,7 @@ export default function SignUpForm() {
                   : 'border-white/10 hover:border-white/25'
               }`}
             >
-              <div className="px-3 pt-3 pb-1.5 text-left font-display text-base font-semibold tracking-wide text-white">{option.id}</div>
+              <div className="px-3 py-2.5 text-left font-display text-base font-semibold tracking-wide text-white">{option.id}</div>
               <img src={option.img} alt={option.id} className="w-full object-cover" />
               {moodboard.includes(option.id) && (
                 <div className="absolute inset-0 bg-emerald-400/20" />
