@@ -211,6 +211,13 @@ export default function SignUpForm() {
 
   // ── Form: single page ──
   return (
+    <div>
+    <h1 className="font-display text-3xl font-semibold leading-tight text-white sm:text-4xl">
+      Design your photo shoot
+    </h1>
+    <p className="mt-3 text-base text-white/50">
+      Pick your vibe below and I&apos;ll send you all the details — timing, location ideas, what to wear, and next steps.
+    </p>
     <form onSubmit={onSubmit} className="mt-6 space-y-6">
       {state && !state.ok && (
         <div className="rounded-xl border border-red-500/30 bg-red-500/10 px-4 py-3 text-sm font-medium text-red-300">
@@ -350,5 +357,6 @@ export default function SignUpForm() {
         {submitting ? 'Submitting...' : 'Sign Up & Get Details'}
       </button>
     </form>
+    </div>
   )
 }
