@@ -583,7 +583,7 @@ export default function V19Page() {
 
             <section
               className="v19-section"
-              ref={(el) => { sectionRefs.current[i] = el; }}
+              ref={(el) => { sectionRefs.current[i] = el as HTMLDivElement; }}
             >
               <div className="v19-photo-container">
                 {/* Photo */}
