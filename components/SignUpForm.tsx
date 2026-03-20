@@ -157,7 +157,7 @@ export default function SignUpForm() {
         </div>
 
         <div className="rounded-2xl border border-white/10 bg-white/5 p-5 space-y-5">
-          <h3 className="font-display text-lg font-semibold text-white">Your photo shoot details</h3>
+          <h3 className="font-display text-lg font-semibold text-white">What to expect</h3>
 
           <div className="space-y-1">
             <p className="text-xs font-medium text-white/40 uppercase tracking-wider">Location</p>
@@ -203,6 +203,14 @@ export default function SignUpForm() {
             <p><span className="text-white/60 font-medium">Cost:</span> Free</p>
             <p><span className="text-white/60 font-medium">What you get:</span> Edited photos ready to post</p>
             <p><span className="text-white/60 font-medium">Experience needed:</span> None — I direct everything</p>
+          </div>
+
+          <div className="space-y-1">
+            <p className="text-xs font-medium text-white/40 uppercase tracking-wider">What to bring</p>
+            <ul className="text-xs text-white/60 space-y-0.5">
+              <li>• 2–3 fashion outfits</li>
+              <li>• Natural hair/makeup</li>
+            </ul>
           </div>
         </div>
       </div>
