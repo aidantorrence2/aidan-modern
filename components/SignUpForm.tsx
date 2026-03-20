@@ -144,32 +144,69 @@ export default function SignUpForm() {
   // ── Success: info sheet ──
   if (state?.ok) {
     const allMoodboard = [...moodboard, ...(customConcept.trim() ? [customConcept.trim()] : [])]
+    const selectedImg = moodboardOptions.find(o => moodboard.includes(o.id))?.img
     return (
-      <div className="mt-6 rounded-2xl border border-white/10 bg-white/5 p-6 space-y-5">
-        <div className="text-center">
-          <div className="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-emerald-500/20">
-            <svg className="h-6 w-6 text-emerald-400" viewBox="0 0 20 20" fill="currentColor">
-              <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-            </svg>
+      <div className="mt-6 space-y-0 overflow-hidden rounded-2xl border border-white/[0.08]" style={{ background: 'linear-gradient(165deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.02) 100%)' }}>
+        {/* Hero image from selected moodboard */}
+        {selectedImg && (
+          <div className="relative h-48 overflow-hidden">
+            <img src={selectedImg} alt="" className="w-full h-full object-cover" style={{ filter: 'brightness(0.6) saturate(1.2)' }} />
+            <div className="absolute inset-0" style={{ background: 'linear-gradient(180deg, transparent 30%, rgba(10,10,10,0.95) 100%)' }} />
+            <div className="absolute bottom-4 left-5 right-5">
+              <p className="font-display text-2xl font-semibold text-white" style={{ fontFamily: "Georgia, serif", fontStyle: 'italic' }}>Thanks for signing up</p>
+            </div>
           </div>
-          <p className="text-lg font-semibold text-white">Thanks for signing up!</p>
-          <p className="mt-1 text-sm text-white/60">I&apos;ll reach out soon to plan everything.</p>
-        </div>
+        )}
+        {!selectedImg && (
+          <div className="px-6 pt-6 pb-2">
+            <p className="font-display text-2xl font-semibold text-white" style={{ fontFamily: "Georgia, serif", fontStyle: 'italic' }}>Thanks for signing up</p>
+          </div>
+        )}
 
-        <div className="h-px bg-white/10" />
+        <div className="px-6 pt-4 pb-6 space-y-5">
+          <p className="text-sm text-white/50">I&apos;ll reach out soon to plan everything. Here&apos;s a preview of your shoot.</p>
 
-        <h3 className="text-xs font-semibold uppercase tracking-wider text-white/50">WHAT TO EXPECT</h3>
+          {/* Details grid */}
+          <div className="grid grid-cols-2 gap-4">
+            <div className="space-y-1">
+              <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-white/30">Location</p>
+              <p className="text-sm font-medium text-white">{city}</p>
+            </div>
+            {allMoodboard.length > 0 && (
+              <div className="space-y-1">
+                <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-white/30">Concept</p>
+                <p className="text-sm font-medium text-white">{allMoodboard.join(', ')}</p>
+              </div>
+            )}
+            <div className="space-y-1">
+              <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-white/30">Duration</p>
+              <p className="text-sm font-medium text-white">1–2 hours</p>
+            </div>
+            <div className="space-y-1">
+              <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-white/30">Cost</p>
+              <p className="text-sm font-medium text-emerald-400">Free</p>
+            </div>
+          </div>
 
-        <div className="space-y-3 text-sm text-white/70">
-          <p><span className="text-white font-medium">Location:</span> {city}</p>
-          {allMoodboard.length > 0 && (
-            <p><span className="text-white font-medium">Concept:</span> {allMoodboard.join(', ')}</p>
-          )}
-          <p><span className="text-white font-medium">Duration:</span> 1–2 hours</p>
-          <p><span className="text-white font-medium">Cost:</span> Free</p>
-          <p><span className="text-white font-medium">What you get:</span> Edited photos ready to post</p>
-          <p><span className="text-white font-medium">Experience needed:</span> None — I direct everything</p>
-          <p><span className="text-white font-medium">What to bring:</span> 2–3 fashion outfits, natural hair/makeup</p>
+          <div className="h-px bg-white/[0.06]" />
+
+          {/* What to expect */}
+          <div className="space-y-3">
+            <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-white/30">What to expect</p>
+            <div className="space-y-2.5">
+              {[
+                { icon: '📸', text: 'Edited photos ready to post' },
+                { icon: '🎯', text: 'I direct everything — no experience needed' },
+                { icon: '👗', text: 'Bring 2–3 fashion outfits' },
+                { icon: '✨', text: 'Natural hair & makeup' },
+              ].map((item, i) => (
+                <div key={i} className="flex items-center gap-3">
+                  <span className="text-base">{item.icon}</span>
+                  <span className="text-sm text-white/70">{item.text}</span>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     )
