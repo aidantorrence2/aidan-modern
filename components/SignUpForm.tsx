@@ -56,6 +56,8 @@ export default function SignUpForm() {
   const [photoData, setPhotoData] = useState<string | null>(null)
   const [submitting, setSubmitting] = useState(false)
   const fileRef = useRef<HTMLInputElement>(null)
+  const cityRef = useRef<HTMLInputElement>(null)
+  const contactRef = useRef<HTMLInputElement>(null)
 
   function clearStatus() {
     if (state) setState(null)
@@ -97,10 +99,14 @@ export default function SignUpForm() {
 
     if (!city.trim()) {
       setState({ ok: false, error: 'Please enter your city.' })
+      cityRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' })
+      cityRef.current?.focus()
       return
     }
     if (!contact.trim()) {
       setState({ ok: false, error: `Please enter your ${contactMethod === 'whatsapp' ? 'WhatsApp number' : 'Instagram handle'}.` })
+      contactRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' })
+      contactRef.current?.focus()
       return
     }
 
@@ -216,6 +222,7 @@ export default function SignUpForm() {
       <div className="space-y-1.5">
         <label className="text-sm font-medium text-white/80">Where are you located?</label>
         <input
+          ref={cityRef}
           value={city}
           onChange={e => { setCity(e.target.value); clearStatus() }}
           className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-white/30 outline-none transition focus:border-emerald-400 focus:ring-2 focus:ring-emerald-400/30"
@@ -286,6 +293,7 @@ export default function SignUpForm() {
           ))}
         </div>
         <input
+          ref={contactRef}
           required
           key={contactMethod}
           name={contactMethod === 'whatsapp' ? 'whatsapp' : 'instagram'}
