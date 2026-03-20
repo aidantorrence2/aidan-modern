@@ -20,7 +20,13 @@ export async function GET() {
       )
     `
     const rows = await sql`SELECT id, city, contact_method, contact, moodboard, created_at FROM signups ORDER BY created_at DESC`
-    return NextResponse.json(rows)
+    return NextResponse.json(rows, {
+      headers: {
+        'Cache-Control': 'no-store, no-cache, must-revalidate',
+        'CDN-Cache-Control': 'no-store',
+        'Vercel-CDN-Cache-Control': 'no-store',
+      }
+    })
   } catch (e) {
     console.error('[ADMIN] Failed to fetch signups:', e)
     return NextResponse.json([])
