@@ -1,26 +1,29 @@
 "use client"
 import { useEffect, useState } from 'react'
 
-export default function AdminPage() {
-  type Signup = {
-    id: number
-    city: string
-    contact_method: string
-    contact: string
-    moodboard: string[] | null
-    created_at: string
-  }
+type Signup = {
+  id: number
+  city: string
+  contact_method: string
+  contact: string
+  moodboard: string[] | null
+  created_at: string
+}
 
+export default function AdminPage() {
   const [signups, setSignups] = useState<Signup[]>([])
   const [loading, setLoading] = useState(true)
+  const [error, setError] = useState<string | null>(null)
 
   async function fetchSignups() {
     try {
-      const res = await fetch('/api/admin/signups', { cache: 'no-store' })
+      const res = await fetch('/api/admin/signups')
+      if (!res.ok) throw new Error(`${res.status}`)
       const data = await res.json()
       setSignups(data)
-    } catch {
-      // silent
+      setError(null)
+    } catch (e) {
+      setError(String(e))
     } finally {
       setLoading(false)
     }
@@ -43,6 +46,10 @@ export default function AdminPage() {
               {loading ? '...' : `${signups.length} total`}
             </span>
           </div>
+
+          {error && (
+            <p className="mt-4 text-sm text-red-400">Error: {error}</p>
+          )}
 
           {loading ? (
             <p className="mt-10 text-center text-white/40">Loading...</p>
