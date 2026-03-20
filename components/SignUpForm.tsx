@@ -227,7 +227,7 @@ export default function SignUpForm() {
       <fieldset className="space-y-2">
         <legend className="text-sm font-medium text-white/80">Choose your shoot concept</legend>
         <p className="text-xs text-white/40">Select one or more</p>
-        <div className="grid grid-cols-2 gap-2">
+        <div className="grid grid-cols-1 gap-3">
           {moodboardOptions.map(option => (
             <button
               key={option.id}
