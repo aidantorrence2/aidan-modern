@@ -8,18 +8,7 @@ export async function GET() {
   if (!url) return NextResponse.json([])
   const sql = neon(url)
   try {
-    await sql`
-      CREATE TABLE IF NOT EXISTS signups (
-        id SERIAL PRIMARY KEY,
-        city TEXT NOT NULL,
-        contact_method TEXT NOT NULL,
-        contact TEXT NOT NULL,
-        moodboard TEXT[],
-        photo_url TEXT,
-        created_at TIMESTAMPTZ DEFAULT NOW()
-      )
-    `
-    const rows = await sql`SELECT id, city, contact_method, contact, moodboard, created_at FROM signups ORDER BY created_at DESC`
+    const rows = await sql`SELECT id, city, contact_method, contact, moodboard, photo_url, created_at FROM signups WHERE deleted_at IS NULL ORDER BY created_at DESC`
     return NextResponse.json(rows, {
       headers: {
         'Cache-Control': 'no-store, no-cache, must-revalidate',
