@@ -225,8 +225,7 @@ export default function SignUpForm() {
 
       {/* Moodboards */}
       <fieldset className="space-y-2">
-        <legend className="text-sm font-medium text-white/80">Choose your shoot concept</legend>
-        <p className="text-xs text-white/40">Select one or more</p>
+        <legend className="text-sm font-medium text-white/80">Choose a shoot concept (or suggest your own)</legend>
         <div className="grid grid-cols-1 gap-3">
           {moodboardOptions.map(option => (
             <button
