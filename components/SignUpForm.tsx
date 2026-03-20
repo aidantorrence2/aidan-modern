@@ -38,7 +38,6 @@ const moodboardOptions = [
   { id: 'Nature editorial', img: '/images/moodboards/nature-editorial.jpg' },
   { id: 'Swim', img: '/images/moodboards/swim.jpg' },
   { id: 'Indoor', img: '/images/moodboards/indoor.jpg' },
-  { id: 'Night', img: '/images/moodboards/night.jpg' },
 ]
 
 const shootDetails: Record<string, { duration: string; bestTime: string; what: string }> = {
@@ -46,7 +45,6 @@ const shootDetails: Record<string, { duration: string; bestTime: string; what: s
   'Nature editorial': { duration: '1–2 hours', bestTime: 'Morning or golden hour', what: 'Parks, gardens, greenery. Flowy outfits work great.' },
   'Swim': { duration: '1–2 hours', bestTime: 'Midday or golden hour', what: 'Beach or pool. Bring swimwear + a cover-up for variety.' },
   'Indoor': { duration: '1–2 hours', bestTime: 'Anytime', what: 'Cafés, studios, or homes. Cozy, intimate vibes.' },
-  'Night': { duration: '1–2 hours', bestTime: 'After sunset', what: 'Neon, city lights, moody tones. Dark or bold outfits pop.' },
 }
 
 export default function SignUpForm() {
