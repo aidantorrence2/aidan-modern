@@ -17,7 +17,7 @@ export default function AdminPage() {
 
   async function fetchSignups() {
     try {
-      const res = await fetch('/api/admin/signups')
+      const res = await fetch(`/api/admin/signups?t=${Date.now()}`)
       if (!res.ok) throw new Error(`${res.status}`)
       const data = await res.json()
       setSignups(data)
