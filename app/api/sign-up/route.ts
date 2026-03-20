@@ -1,7 +1,38 @@
 import { NextResponse } from 'next/server'
+import { neon } from '@neondatabase/serverless'
 
 function isString(x: unknown): x is string {
   return typeof x === 'string'
+}
+
+async function saveToDb(payload: {
+  city: string
+  contactMethod: string
+  contact: string
+  moodboard: string[] | null
+  photoUrl: string | null
+}) {
+  const url = process.env.DATABASE_URL
+  if (!url) {
+    console.warn('[SIGN-UP] No DATABASE_URL — skipping DB save')
+    return
+  }
+  const sql = neon(url)
+  await sql`
+    CREATE TABLE IF NOT EXISTS signups (
+      id SERIAL PRIMARY KEY,
+      city TEXT NOT NULL,
+      contact_method TEXT NOT NULL,
+      contact TEXT NOT NULL,
+      moodboard TEXT[],
+      photo_url TEXT,
+      created_at TIMESTAMPTZ DEFAULT NOW()
+    )
+  `
+  await sql`
+    INSERT INTO signups (city, contact_method, contact, moodboard, photo_url)
+    VALUES (${payload.city}, ${payload.contactMethod}, ${payload.contact}, ${payload.moodboard}, ${payload.photoUrl})
+  `
 }
 
 export async function POST(req: Request) {
@@ -10,9 +41,8 @@ export async function POST(req: Request) {
     const city = body?.city
     const contactMethod = body?.contactMethod
     const contact = body?.contact
-    const location = body?.location || null
     const moodboard = Array.isArray(body?.moodboard) ? body.moodboard : null
-    const hasPhoto = !!body?.photo
+    const photo = isString(body?.photo) ? body.photo : null
 
     if (
       !isString(city) ||
@@ -27,17 +57,22 @@ export async function POST(req: Request) {
       city: city.trim(),
       contactMethod,
       contact: contact.trim(),
-      location: isString(location) ? location.trim() : null,
       moodboard,
-      hasPhoto,
+      photoUrl: photo,
       ts: new Date().toISOString()
     }
-    console.log('[SIGN-UP]', payload)
+    console.log('[SIGN-UP]', { ...payload, photoUrl: photo ? '(base64)' : null })
 
+    // Save to database
+    try {
+      await saveToDb(payload)
+    } catch (err) {
+      console.error('[SIGN-UP] DB save failed:', err)
+    }
+
+    // Slack notification
     const webhookUrl = process.env.SLACK_BOOKING_WEBHOOK
-    if (!webhookUrl) {
-      console.warn('[SIGN-UP] Missing SLACK_BOOKING_WEBHOOK env; skipping Slack alert')
-    } else {
+    if (webhookUrl) {
       try {
         const contactLabel = contactMethod === 'whatsapp' ? 'WhatsApp' : 'Instagram'
         const slackBody = {
@@ -51,9 +86,8 @@ export async function POST(req: Request) {
                   '*New photo shoot sign-up*',
                   `*City:* ${payload.city}`,
                   `*${contactLabel}:* ${payload.contact}`,
-                  `*Photo:* ${hasPhoto ? 'Yes' : 'No'}`,
-                  ...(payload.location ? [`*Location:* ${payload.location}`] : []),
-                  ...(payload.moodboard?.length ? [`*Moodboard:* ${payload.moodboard.join(', ')}`] : [])
+                  `*Photo:* ${photo ? 'Yes' : 'No'}`,
+                  ...(moodboard?.length ? [`*Moodboard:* ${moodboard.join(', ')}`] : [])
                 ].join('\n')
               }
             },

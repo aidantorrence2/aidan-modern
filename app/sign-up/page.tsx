@@ -1,9 +1,9 @@
 import SignUpForm from '@/components/SignUpForm'
 
 export const metadata = {
-  title: 'Sign Up — Free Photo Shoot in Manila',
+  title: 'Free Photo Shoot — Sign Up for Details',
   description:
-    'Sign up for a free photo shoot collab in Manila. Quick form, no commitment.'
+    'Sign up to get details about a free photo shoot collab. Quick form, no commitment.'
 }
 
 export default function SignUpPage() {
@@ -11,10 +11,10 @@ export default function SignUpPage() {
     <section className="min-h-screen bg-[#0a0a0a] py-12 sm:py-20">
       <div className="mx-auto max-w-md px-5">
         <h1 className="font-display text-3xl font-semibold leading-tight text-white sm:text-4xl">
-          Free Photo Shoot Collab
+          Free Photo Shoot
         </h1>
         <p className="mt-3 text-base text-white/50">
-          Sign up below and I&apos;ll message you to plan everything. It takes just a minute.
+          Sign up below and I&apos;ll send you all the details. Takes less than a minute.
         </p>
         <SignUpForm />
       </div>

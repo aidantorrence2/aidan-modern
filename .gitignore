@@ -11,3 +11,10 @@ coverage
 yarn.lock
 pnpm-lock.yaml
 tsconfig.tsbuildinfo
+
+# Video assets (keep local, don't push to remote)
+*.mp4
+*.mov
+*.avi
+*.mkv
+*.webm
