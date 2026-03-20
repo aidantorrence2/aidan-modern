@@ -39,10 +39,10 @@ const moodboardOptions = [
   { id: 'Indoor/Studio', img: '/images/moodboards/indoor.jpg' },
 ]
 
-const shootDetails: Record<string, { duration: string; bestTime: string; what: string }> = {
-  'Street': { duration: '1–2 hours', bestTime: 'Late afternoon (golden hour)', what: 'Urban textures, architecture, street life as backdrop. Outfit changes welcome.' },
-  'Nature': { duration: '1–2 hours', bestTime: 'Morning or golden hour', what: 'Parks, gardens, greenery. Flowy outfits work great.' },
-  'Indoor/Studio': { duration: '1–2 hours', bestTime: 'Anytime', what: 'Cafés, studios, or homes. Cozy, intimate vibes.' },
+const shootDetails: Record<string, { duration: string; what: string }> = {
+  'Street': { duration: '1–2 hours', what: 'Urban textures, architecture, street life as backdrop. Outfit changes welcome.' },
+  'Nature': { duration: '1–2 hours', what: 'Parks, gardens, greenery. Flowy outfits work great.' },
+  'Indoor/Studio': { duration: '1–2 hours', what: 'Cafés, studios, or homes. Cozy, intimate vibes.' },
 }
 
 export default function SignUpForm() {
@@ -145,8 +145,8 @@ export default function SignUpForm() {
   if (state?.ok) {
     const allMoodboard = [...moodboard, ...(customConcept.trim() ? [customConcept.trim()] : [])]
     return (
-      <div className="mt-6 space-y-6">
-        <div className="rounded-2xl border border-emerald-500/30 bg-emerald-500/10 px-6 py-6 text-center">
+      <div className="mt-6 rounded-2xl border border-white/10 bg-white/5 p-6 space-y-5">
+        <div className="text-center">
           <div className="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-emerald-500/20">
             <svg className="h-6 w-6 text-emerald-400" viewBox="0 0 20 20" fill="currentColor">
               <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
@@ -156,62 +156,20 @@ export default function SignUpForm() {
           <p className="mt-1 text-sm text-white/60">I&apos;ll reach out soon to plan everything.</p>
         </div>
 
-        <div className="rounded-2xl border border-white/10 bg-white/5 p-5 space-y-5">
-          <h3 className="font-display text-lg font-semibold text-white">What to expect</h3>
+        <div className="h-px bg-white/10" />
 
-          <div className="space-y-1">
-            <p className="text-xs font-medium text-white/40 uppercase tracking-wider">Location</p>
-            <p className="text-sm text-white">{city}</p>
-          </div>
+        <h3 className="text-xs font-semibold uppercase tracking-wider text-white/50">WHAT TO EXPECT</h3>
 
+        <div className="space-y-3 text-sm text-white/70">
+          <p><span className="text-white font-medium">Location:</span> {city}</p>
           {allMoodboard.length > 0 && (
-            <div className="space-y-1">
-              <p className="text-xs font-medium text-white/40 uppercase tracking-wider">Selected concepts</p>
-              <div className="flex flex-wrap gap-1.5">
-                {allMoodboard.map(m => (
-                  <span key={m} className="rounded-full border border-emerald-400/30 bg-emerald-400/10 px-3 py-1 text-xs font-medium text-emerald-400">{m}</span>
-                ))}
-              </div>
-            </div>
+            <p><span className="text-white font-medium">Concept:</span> {allMoodboard.join(', ')}</p>
           )}
-
-          {moodboard.map(m => {
-            const d = shootDetails[m]
-            if (!d) return null
-            return (
-              <div key={m} className="rounded-xl border border-white/5 bg-white/[0.03] p-4 space-y-2">
-                <p className="text-sm font-semibold text-white">{m}</p>
-                <div className="grid grid-cols-2 gap-2 text-xs">
-                  <div>
-                    <span className="text-white/40">Duration</span>
-                    <p className="text-white/80 mt-0.5">{d.duration}</p>
-                  </div>
-                  <div>
-                    <span className="text-white/40">Best time</span>
-                    <p className="text-white/80 mt-0.5">{d.bestTime}</p>
-                  </div>
-                </div>
-                <div className="text-xs">
-                  <span className="text-white/40">What to expect</span>
-                  <p className="text-white/80 mt-0.5">{d.what}</p>
-                </div>
-              </div>
-            )
-          })}
-
-          <div className="space-y-1 text-xs text-white/40">
-            <p><span className="text-white/60 font-medium">Cost:</span> Free</p>
-            <p><span className="text-white/60 font-medium">What you get:</span> Edited photos ready to post</p>
-            <p><span className="text-white/60 font-medium">Experience needed:</span> None — I direct everything</p>
-          </div>
-
-          <div className="space-y-1">
-            <p className="text-xs font-medium text-white/40 uppercase tracking-wider">What to bring</p>
-            <ul className="text-xs text-white/60 space-y-0.5">
-              <li>• 2–3 fashion outfits</li>
-              <li>• Natural hair/makeup</li>
-            </ul>
-          </div>
+          <p><span className="text-white font-medium">Duration:</span> 1–2 hours</p>
+          <p><span className="text-white font-medium">Cost:</span> Free</p>
+          <p><span className="text-white font-medium">What you get:</span> Edited photos ready to post</p>
+          <p><span className="text-white font-medium">Experience needed:</span> None — I direct everything</p>
+          <p><span className="text-white font-medium">What to bring:</span> 2–3 fashion outfits, natural hair/makeup</p>
         </div>
       </div>
     )
