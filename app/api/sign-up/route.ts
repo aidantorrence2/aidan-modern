@@ -1,5 +1,7 @@
 import { NextResponse } from 'next/server'
-import { neon } from '@neondatabase/serverless'
+import { Pool, neonConfig } from '@neondatabase/serverless'
+// eslint-disable-next-line @typescript-eslint/no-require-imports
+neonConfig.webSocketConstructor = require('ws')
 
 function isString(x: unknown): x is string {
   return typeof x === 'string'
@@ -17,22 +19,27 @@ async function saveToDb(payload: {
     console.warn('[SIGN-UP] No DATABASE_URL — skipping DB save')
     return
   }
-  const sql = neon(url)
-  await sql`
-    CREATE TABLE IF NOT EXISTS signups (
-      id SERIAL PRIMARY KEY,
-      city TEXT NOT NULL,
-      contact_method TEXT NOT NULL,
-      contact TEXT NOT NULL,
-      moodboard TEXT[],
-      photo_url TEXT,
-      created_at TIMESTAMPTZ DEFAULT NOW()
+  const pool = new Pool({ connectionString: url })
+  try {
+    await pool.query(`
+      CREATE TABLE IF NOT EXISTS signups (
+        id SERIAL PRIMARY KEY,
+        city TEXT NOT NULL,
+        contact_method TEXT NOT NULL,
+        contact TEXT NOT NULL,
+        moodboard TEXT[],
+        photo_url TEXT,
+        created_at TIMESTAMPTZ DEFAULT NOW()
+      )
+    `)
+    await pool.query(
+      `INSERT INTO signups (city, contact_method, contact, moodboard, photo_url)
+       VALUES ($1, $2, $3, $4, $5)`,
+      [payload.city, payload.contactMethod, payload.contact, payload.moodboard, payload.photoUrl]
     )
-  `
-  await sql`
-    INSERT INTO signups (city, contact_method, contact, moodboard, photo_url)
-    VALUES (${payload.city}, ${payload.contactMethod}, ${payload.contact}, ${payload.moodboard}, ${payload.photoUrl})
-  `
+  } finally {
+    await pool.end()
+  }
 }
 
 export async function POST(req: Request) {
@@ -63,26 +70,12 @@ export async function POST(req: Request) {
     }
     console.log('[SIGN-UP]', { ...payload, photoUrl: photo ? '(base64)' : null })
 
-    // Save to database (retry once on failure)
-    let dbSaved = false
-    for (let attempt = 0; attempt < 2; attempt++) {
-      try {
-        await saveToDb(payload)
-        dbSaved = true
-        break
-      } catch (err) {
-        console.error(`[SIGN-UP] DB save attempt ${attempt + 1} failed:`, err)
-        if (attempt === 0) {
-          // On first failure with photo, retry without photo
-          if (payload.photoUrl) {
-            console.log('[SIGN-UP] Retrying without photo...')
-            payload.photoUrl = null
-          }
-        }
-      }
-    }
-    if (!dbSaved) {
-      console.error('[SIGN-UP] DB save completely failed for:', { city: payload.city, contact: payload.contact })
+    // Save to database
+    try {
+      await saveToDb(payload)
+    } catch (err) {
+      console.error('[SIGN-UP] DB save failed:', err)
+      return NextResponse.json({ ok: false, error: 'Failed to save' }, { status: 500 })
     }
 
     // Slack notification

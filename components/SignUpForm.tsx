@@ -74,7 +74,7 @@ export default function SignUpForm() {
     const reader = new FileReader()
     reader.onload = async () => {
       const raw = reader.result as string
-      const resized = await resizeImage(raw, 50 * 1024)
+      const resized = await resizeImage(raw, 300 * 1024)
       setPhotoPreview(resized)
       setPhotoData(resized)
     }
