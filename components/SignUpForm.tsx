@@ -3,42 +3,71 @@ import { useRef, useState } from 'react'
 
 type State = { ok: boolean; error?: string }
 
+function resizeImage(dataUrl: string, maxBytes: number): Promise<string> {
+  return new Promise((resolve) => {
+    const img = new Image()
+    img.onload = () => {
+      const canvas = document.createElement('canvas')
+      let w = img.width, h = img.height
+      // scale down until under maxBytes
+      let quality = 0.8
+      let scale = 1
+      const attempt = () => {
+        canvas.width = w * scale
+        canvas.height = h * scale
+        const ctx = canvas.getContext('2d')!
+        ctx.drawImage(img, 0, 0, canvas.width, canvas.height)
+        const result = canvas.toDataURL('image/jpeg', quality)
+        const size = Math.round((result.length - 'data:image/jpeg;base64,'.length) * 0.75)
+        if (size > maxBytes && (scale > 0.15 || quality > 0.3)) {
+          if (quality > 0.4) quality -= 0.1
+          else scale *= 0.7
+          attempt()
+        } else {
+          resolve(result)
+        }
+      }
+      if (w > 800) { scale = 800 / w }
+      attempt()
+    }
+    img.src = dataUrl
+  })
+}
+
 export default function SignUpForm() {
   const [state, setState] = useState<State | null>(null)
   const [city, setCity] = useState('')
   const [contactMethod, setContactMethod] = useState<'whatsapp' | 'instagram'>('whatsapp')
   const [contact, setContact] = useState('')
-  const [location, setLocation] = useState('')
   const [moodboard, setMoodboard] = useState<string[]>([])
-  const [moodboardOther, setMoodboardOther] = useState('')
   const [photoPreview, setPhotoPreview] = useState<string | null>(null)
   const [photoData, setPhotoData] = useState<string | null>(null)
   const [submitting, setSubmitting] = useState(false)
   const fileRef = useRef<HTMLInputElement>(null)
 
-  const moodboardOptions = ['Golden hour', 'Street style', 'Nature / outdoor', 'Urban / city', 'Moody / editorial', 'Casual / candid', 'Vintage film', 'Night vibes']
+  const moodboardOptions = ['Street editorial', 'Nature editorial', 'Swim', 'Indoor', 'Night']
 
   const cityDone = city.trim().length > 0
   const contactDone = contact.trim().length > 0
-  const photoDone = !!photoPreview
 
   function clearStatus() {
     if (state) setState(null)
   }
 
-  function handlePhoto(e: React.ChangeEvent<HTMLInputElement>) {
+  async function handlePhoto(e: React.ChangeEvent<HTMLInputElement>) {
     const file = e.target.files?.[0]
     if (!file) return
-    if (file.size > 10 * 1024 * 1024) {
-      setState({ ok: false, error: 'Photo must be under 10 MB.' })
+    if (file.size > 20 * 1024 * 1024) {
+      setState({ ok: false, error: 'Photo must be under 20 MB.' })
       return
     }
     clearStatus()
     const reader = new FileReader()
-    reader.onload = () => {
-      const result = reader.result as string
-      setPhotoPreview(result)
-      setPhotoData(result)
+    reader.onload = async () => {
+      const raw = reader.result as string
+      const resized = await resizeImage(raw, 300 * 1024)
+      setPhotoPreview(resized)
+      setPhotoData(resized)
     }
     reader.readAsDataURL(file)
   }
@@ -78,8 +107,7 @@ export default function SignUpForm() {
           city: city.trim(),
           contactMethod,
           contact: contact.trim(),
-          location: location.trim() || null,
-          moodboard: moodboard.length > 0 || moodboardOther.trim() ? [...moodboard, ...(moodboardOther.trim() ? [moodboardOther.trim()] : [])] : null,
+          moodboard: moodboard.length > 0 ? moodboard : null,
           photo: photoData || null
         })
       })
@@ -97,9 +125,7 @@ export default function SignUpForm() {
       setCity('')
       setContact('')
       setContactMethod('whatsapp')
-      setLocation('')
       setMoodboard([])
-      setMoodboardOther('')
       setPhotoPreview(null)
       setPhotoData(null)
     } catch {
@@ -134,7 +160,7 @@ export default function SignUpForm() {
           </svg>
         </div>
         <p className="text-lg font-semibold text-white">You&apos;re in!</p>
-        <p className="mt-1 text-sm text-white/60">I&apos;ll reach out soon to plan everything.</p>
+        <p className="mt-1 text-sm text-white/60">I&apos;ll reach out soon with all the details.</p>
       </div>
     )
   }
@@ -198,11 +224,42 @@ export default function SignUpForm() {
         )}
       </fieldset>
 
-      {/* Step 3: Photo */}
+      {/* Step 3: Moodboard */}
+      <fieldset className="space-y-2">
+        <legend className="flex items-center gap-2 text-sm font-medium text-white/80">
+          {moodboard.length > 0 ? <Check /> : <StepNumber n={3} />}
+          Photo shoot vibe
+          <span className="text-xs text-white/30">(optional)</span>
+        </legend>
+        <div className="flex flex-wrap gap-2">
+          {moodboardOptions.map(option => (
+            <button
+              key={option}
+              type="button"
+              onClick={() => {
+                setMoodboard(prev =>
+                  prev.includes(option) ? prev.filter(o => o !== option) : [...prev, option]
+                )
+                clearStatus()
+              }}
+              className={`rounded-full border px-4 py-1.5 text-sm font-medium transition-all ${
+                moodboard.includes(option)
+                  ? 'border-emerald-400 bg-emerald-400/20 text-emerald-400'
+                  : 'border-white/15 bg-white/5 text-white/60 hover:border-white/30 hover:text-white/80'
+              }`}
+            >
+              {option}
+            </button>
+          ))}
+        </div>
+      </fieldset>
+
+      {/* Step 4: Photo (optional, at end) */}
       <div className="space-y-1.5">
         <label className="flex items-center gap-2 text-sm font-medium text-white/80">
-          {photoDone ? <Check /> : <StepNumber n={3} />}
+          {photoPreview ? <Check /> : <StepNumber n={4} />}
           What you look like
+          <span className="text-xs text-white/30">(optional)</span>
         </label>
         <p className="text-xs text-white/40">A basic selfie or headshot is fine</p>
         {photoPreview ? (
@@ -239,59 +296,6 @@ export default function SignUpForm() {
         />
       </div>
 
-      {/* Step 4: Location preference */}
-      <div className="space-y-1.5">
-        <label className="flex items-center gap-2 text-sm font-medium text-white/80">
-          <StepNumber n={4} />
-          Preferred location
-          <span className="text-xs text-white/30">(optional)</span>
-        </label>
-        <input
-          name="location"
-          value={location}
-          onChange={e => { setLocation(e.target.value); clearStatus() }}
-          className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-white/30 outline-none transition focus:border-emerald-400 focus:ring-2 focus:ring-emerald-400/30"
-          placeholder="e.g. Intramuros, a park, a café — or I can suggest spots"
-        />
-      </div>
-
-      {/* Step 5: Moodboard */}
-      <fieldset className="space-y-2">
-        <legend className="flex items-center gap-2 text-sm font-medium text-white/80">
-          <StepNumber n={5} />
-          Photo shoot vibe
-          <span className="text-xs text-white/30">(optional)</span>
-        </legend>
-        <div className="flex flex-wrap gap-2">
-          {moodboardOptions.map(option => (
-            <button
-              key={option}
-              type="button"
-              onClick={() => {
-                setMoodboard(prev =>
-                  prev.includes(option) ? prev.filter(o => o !== option) : [...prev, option]
-                )
-                clearStatus()
-              }}
-              className={`rounded-full border px-4 py-1.5 text-sm font-medium transition-all ${
-                moodboard.includes(option)
-                  ? 'border-emerald-400 bg-emerald-400/20 text-emerald-400'
-                  : 'border-white/15 bg-white/5 text-white/60 hover:border-white/30 hover:text-white/80'
-              }`}
-            >
-              {option}
-            </button>
-          ))}
-        </div>
-        <input
-          name="moodboard_other"
-          value={moodboardOther}
-          onChange={e => { setMoodboardOther(e.target.value); clearStatus() }}
-          className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-white/30 outline-none transition focus:border-emerald-400 focus:ring-2 focus:ring-emerald-400/30"
-          placeholder="Other vibe or inspiration (optional)"
-        />
-      </fieldset>
-
       {/* Honeypot */}
       <input type="text" name="company" className="hidden" tabIndex={-1} autoComplete="off" />
 
@@ -301,11 +305,11 @@ export default function SignUpForm() {
           <div className="flex h-1.5 flex-1 overflow-hidden rounded-full bg-white/10">
             <div
               className="h-full rounded-full bg-emerald-400 transition-all duration-500"
-              style={{ width: `${((cityDone ? 1 : 0) + (contactDone ? 1 : 0) + (photoDone ? 1 : 0)) / 3 * 100}%` }}
+              style={{ width: `${((cityDone ? 1 : 0) + (contactDone ? 1 : 0)) / 2 * 100}%` }}
             />
           </div>
           <span className="text-xs font-medium text-white/40">
-            {(cityDone ? 1 : 0) + (contactDone ? 1 : 0) + (photoDone ? 1 : 0)}/3
+            {(cityDone ? 1 : 0) + (contactDone ? 1 : 0)}/2
           </span>
         </div>
         <button
@@ -314,7 +318,7 @@ export default function SignUpForm() {
           className="w-full rounded-full bg-emerald-500 py-3.5 text-sm font-bold text-white shadow-lg shadow-emerald-500/25 transition hover:bg-emerald-400 disabled:opacity-50"
           data-cta="sign-up-submit"
         >
-          {submitting ? 'Submitting...' : 'Sign Up'}
+          {submitting ? 'Submitting...' : 'Get Details'}
         </button>
       </div>
     </form>
