@@ -36,31 +36,26 @@ function resizeImage(dataUrl: string, maxBytes: number): Promise<string> {
 const moodboardOptions = [
   { id: 'Street editorial', img: '/images/moodboards/street-editorial.jpg' },
   { id: 'Nature editorial', img: '/images/moodboards/nature-editorial.jpg' },
-  { id: 'Swim', img: '/images/moodboards/swim.jpg' },
   { id: 'Indoor', img: '/images/moodboards/indoor.jpg' },
 ]
 
 const shootDetails: Record<string, { duration: string; bestTime: string; what: string }> = {
   'Street editorial': { duration: '1–2 hours', bestTime: 'Late afternoon (golden hour)', what: 'Urban textures, architecture, street life as backdrop. Outfit changes welcome.' },
   'Nature editorial': { duration: '1–2 hours', bestTime: 'Morning or golden hour', what: 'Parks, gardens, greenery. Flowy outfits work great.' },
-  'Swim': { duration: '1–2 hours', bestTime: 'Midday or golden hour', what: 'Beach or pool. Bring swimwear + a cover-up for variety.' },
   'Indoor': { duration: '1–2 hours', bestTime: 'Anytime', what: 'Cafés, studios, or homes. Cozy, intimate vibes.' },
 }
 
 export default function SignUpForm() {
   const [state, setState] = useState<State | null>(null)
-  const [step, setStep] = useState<'design' | 'contact' | 'done'>('design')
   const [city, setCity] = useState('')
   const [moodboard, setMoodboard] = useState<string[]>([])
+  const [customConcept, setCustomConcept] = useState('')
   const [contactMethod, setContactMethod] = useState<'whatsapp' | 'instagram'>('whatsapp')
   const [contact, setContact] = useState('')
   const [photoPreview, setPhotoPreview] = useState<string | null>(null)
   const [photoData, setPhotoData] = useState<string | null>(null)
   const [submitting, setSubmitting] = useState(false)
   const fileRef = useRef<HTMLInputElement>(null)
-
-  const cityDone = city.trim().length > 0
-  const moodboardDone = moodboard.length > 0
 
   function clearStatus() {
     if (state) setState(null)
@@ -90,29 +85,20 @@ export default function SignUpForm() {
     if (fileRef.current) fileRef.current.value = ''
   }
 
-  function handleContinue() {
-    if (!cityDone) {
-      setState({ ok: false, error: 'Please enter your city.' })
-      return
-    }
-    if (!moodboardDone) {
-      setState({ ok: false, error: 'Please select at least one shoot concept.' })
-      return
-    }
-    setState(null)
-    setStep('contact')
-  }
-
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
     const form = e.currentTarget
     const data = Object.fromEntries(new FormData(form).entries()) as Record<string, string>
 
     if (data.company) {
-      setStep('done')
+      setState({ ok: true })
       return
     }
 
+    if (!city.trim()) {
+      setState({ ok: false, error: 'Please enter your city.' })
+      return
+    }
     if (!contact.trim()) {
       setState({ ok: false, error: `Please enter your ${contactMethod === 'whatsapp' ? 'WhatsApp number' : 'Instagram handle'}.` })
       return
@@ -121,6 +107,7 @@ export default function SignUpForm() {
     setSubmitting(true)
     setState(null)
     try {
+      const allMoodboard = [...moodboard, ...(customConcept.trim() ? [customConcept.trim()] : [])]
       const res = await fetch('/api/sign-up', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -128,11 +115,12 @@ export default function SignUpForm() {
           city: city.trim(),
           contactMethod,
           contact: contact.trim(),
-          moodboard: moodboard.length > 0 ? moodboard : null,
+          moodboard: allMoodboard.length > 0 ? allMoodboard : null,
           photo: photoData || null
         })
       })
       if (!res.ok) throw new Error('Failed to submit')
+      setState({ ok: true })
 
       if (typeof window !== 'undefined') {
         const fbq = (window as typeof window & { fbq?: (...args: unknown[]) => void }).fbq
@@ -140,8 +128,6 @@ export default function SignUpForm() {
           fbq('track', 'Lead', { source: 'sign-up' })
         }
       }
-
-      setStep('done')
     } catch {
       setState({ ok: false, error: 'Something went wrong. Try again or DM @madebyaidan on IG.' })
     } finally {
@@ -149,8 +135,9 @@ export default function SignUpForm() {
     }
   }
 
-  // ── Step 3: Confirmation / shoot info sheet ──
-  if (step === 'done') {
+  // ── Success: info sheet ──
+  if (state?.ok) {
+    const allMoodboard = [...moodboard, ...(customConcept.trim() ? [customConcept.trim()] : [])]
     return (
       <div className="mt-6 space-y-6">
         <div className="rounded-2xl border border-emerald-500/30 bg-emerald-500/10 px-6 py-6 text-center">
@@ -171,14 +158,16 @@ export default function SignUpForm() {
             <p className="text-sm text-white">{city}</p>
           </div>
 
-          <div className="space-y-1">
-            <p className="text-xs font-medium text-white/40 uppercase tracking-wider">Selected concepts</p>
-            <div className="flex flex-wrap gap-1.5">
-              {moodboard.map(m => (
-                <span key={m} className="rounded-full border border-emerald-400/30 bg-emerald-400/10 px-3 py-1 text-xs font-medium text-emerald-400">{m}</span>
-              ))}
+          {allMoodboard.length > 0 && (
+            <div className="space-y-1">
+              <p className="text-xs font-medium text-white/40 uppercase tracking-wider">Selected concepts</p>
+              <div className="flex flex-wrap gap-1.5">
+                {allMoodboard.map(m => (
+                  <span key={m} className="rounded-full border border-emerald-400/30 bg-emerald-400/10 px-3 py-1 text-xs font-medium text-emerald-400">{m}</span>
+                ))}
+              </div>
             </div>
-          </div>
+          )}
 
           {moodboard.map(m => {
             const d = shootDetails[m]
@@ -214,111 +203,9 @@ export default function SignUpForm() {
     )
   }
 
-  // ── Step 2: Contact info ──
-  if (step === 'contact') {
-    return (
-      <form onSubmit={onSubmit} className="mt-6 space-y-5">
-        {state && !state.ok && (
-          <div className="rounded-xl border border-red-500/30 bg-red-500/10 px-4 py-3 text-sm font-medium text-red-300">
-            {state.error}
-          </div>
-        )}
-
-        {/* Summary of selections */}
-        <div className="rounded-xl border border-white/10 bg-white/5 p-4 space-y-2">
-          <div className="flex items-center justify-between">
-            <p className="text-xs font-medium text-white/40 uppercase tracking-wider">Your shoot</p>
-            <button type="button" onClick={() => setStep('design')} className="text-xs text-emerald-400 hover:text-emerald-300">Edit</button>
-          </div>
-          <p className="text-sm text-white">{city}</p>
-          <div className="flex flex-wrap gap-1">
-            {moodboard.map(m => (
-              <span key={m} className="rounded-full bg-white/10 px-2 py-0.5 text-xs text-white/60">{m}</span>
-            ))}
-          </div>
-        </div>
-
-        {/* Contact method */}
-        <fieldset className="space-y-2">
-          <legend className="text-sm font-medium text-white/80">How should I contact you?</legend>
-          <div className="flex gap-2">
-            {(['whatsapp', 'instagram'] as const).map(method => (
-              <button
-                key={method}
-                type="button"
-                onClick={() => { setContactMethod(method); setContact(''); clearStatus() }}
-                className={`rounded-full border px-5 py-2 text-sm font-semibold transition-all ${
-                  contactMethod === method
-                    ? 'border-emerald-400 bg-emerald-400/20 text-emerald-400'
-                    : 'border-white/15 bg-white/5 text-white/60 hover:border-white/30 hover:text-white/80'
-                }`}
-              >
-                {method === 'whatsapp' ? 'WhatsApp' : 'Instagram'}
-              </button>
-            ))}
-          </div>
-          <input
-            required
-            key={contactMethod}
-            name={contactMethod === 'whatsapp' ? 'whatsapp' : 'instagram'}
-            value={contact}
-            onChange={e => { setContact(e.target.value); clearStatus() }}
-            className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-white/30 outline-none transition focus:border-emerald-400 focus:ring-2 focus:ring-emerald-400/30"
-            placeholder={contactMethod === 'whatsapp' ? '+63 917 123 4567' : '@yourhandle'}
-          />
-          {contactMethod === 'instagram' && (
-            <p className="text-xs text-amber-400/80">Follow @madebyaidan so I can message you</p>
-          )}
-        </fieldset>
-
-        {/* Photo (optional) */}
-        <div className="space-y-1.5">
-          <label className="text-sm font-medium text-white/80">
-            What you look like <span className="text-xs text-white/30">(optional)</span>
-          </label>
-          <p className="text-xs text-white/40">A basic selfie or headshot is fine</p>
-          {photoPreview ? (
-            <div className="relative mt-1 inline-block">
-              <img src={photoPreview} alt="Preview" className="h-28 w-28 rounded-xl border border-white/10 object-cover" />
-              <button
-                type="button"
-                onClick={removePhoto}
-                className="absolute -right-2 -top-2 flex h-6 w-6 items-center justify-center rounded-full bg-white/20 text-xs text-white backdrop-blur transition hover:bg-red-500"
-                aria-label="Remove photo"
-              >
-                &times;
-              </button>
-            </div>
-          ) : (
-            <button
-              type="button"
-              onClick={() => fileRef.current?.click()}
-              className="mt-1 flex h-20 w-full items-center justify-center rounded-xl border border-dashed border-white/15 bg-white/5 text-sm text-white/40 transition hover:border-emerald-400/50 hover:text-emerald-400"
-            >
-              Tap to upload a photo
-            </button>
-          )}
-          <input ref={fileRef} type="file" accept="image/*" onChange={handlePhoto} className="hidden" />
-        </div>
-
-        {/* Honeypot */}
-        <input type="text" name="company" className="hidden" tabIndex={-1} autoComplete="off" />
-
-        <button
-          type="submit"
-          disabled={submitting}
-          className="w-full rounded-full bg-emerald-500 py-3.5 text-sm font-bold text-white shadow-lg shadow-emerald-500/25 transition hover:bg-emerald-400 disabled:opacity-50"
-          data-cta="sign-up-submit"
-        >
-          {submitting ? 'Submitting...' : 'Sign Up'}
-        </button>
-      </form>
-    )
-  }
-
-  // ── Step 1: Design your shoot (city + moodboard) ──
+  // ── Form: single page ──
   return (
-    <div className="mt-6 space-y-6">
+    <form onSubmit={onSubmit} className="mt-6 space-y-6">
       {state && !state.ok && (
         <div className="rounded-xl border border-red-500/30 bg-red-500/10 px-4 py-3 text-sm font-medium text-red-300">
           {state.error}
@@ -371,15 +258,89 @@ export default function SignUpForm() {
             </button>
           ))}
         </div>
+        <input
+          value={customConcept}
+          onChange={e => { setCustomConcept(e.target.value); clearStatus() }}
+          className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-white/30 outline-none transition focus:border-emerald-400 focus:ring-2 focus:ring-emerald-400/30"
+          placeholder="Or suggest your own concept..."
+        />
       </fieldset>
 
+      {/* Contact method */}
+      <fieldset className="space-y-2">
+        <legend className="text-sm font-medium text-white/80">How should I contact you?</legend>
+        <div className="flex gap-2">
+          {(['whatsapp', 'instagram'] as const).map(method => (
+            <button
+              key={method}
+              type="button"
+              onClick={() => { setContactMethod(method); setContact(''); clearStatus() }}
+              className={`rounded-full border px-5 py-2 text-sm font-semibold transition-all ${
+                contactMethod === method
+                  ? 'border-emerald-400 bg-emerald-400/20 text-emerald-400'
+                  : 'border-white/15 bg-white/5 text-white/60 hover:border-white/30 hover:text-white/80'
+              }`}
+            >
+              {method === 'whatsapp' ? 'WhatsApp' : 'Instagram'}
+            </button>
+          ))}
+        </div>
+        <input
+          required
+          key={contactMethod}
+          name={contactMethod === 'whatsapp' ? 'whatsapp' : 'instagram'}
+          value={contact}
+          onChange={e => { setContact(e.target.value); clearStatus() }}
+          className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-white/30 outline-none transition focus:border-emerald-400 focus:ring-2 focus:ring-emerald-400/30"
+          placeholder={contactMethod === 'whatsapp' ? '+63 917 123 4567' : '@yourhandle'}
+        />
+        {contactMethod === 'instagram' && (
+          <p className="text-xs text-amber-400/80">Follow @madebyaidan so I can message you</p>
+        )}
+      </fieldset>
+
+      {/* Photo (optional) */}
+      <div className="space-y-1.5">
+        <label className="text-sm font-medium text-white/80">
+          What you look like <span className="text-xs text-white/30">(optional)</span>
+        </label>
+        <p className="text-xs text-white/40">A basic selfie or headshot is fine</p>
+        {photoPreview ? (
+          <div className="relative mt-1 inline-block">
+            <img src={photoPreview} alt="Preview" className="h-28 w-28 rounded-xl border border-white/10 object-cover" />
+            <button
+              type="button"
+              onClick={removePhoto}
+              className="absolute -right-2 -top-2 flex h-6 w-6 items-center justify-center rounded-full bg-white/20 text-xs text-white backdrop-blur transition hover:bg-red-500"
+              aria-label="Remove photo"
+            >
+              &times;
+            </button>
+          </div>
+        ) : (
+          <button
+            type="button"
+            onClick={() => fileRef.current?.click()}
+            className="mt-1 flex h-20 w-full items-center justify-center rounded-xl border border-dashed border-white/15 bg-white/5 text-sm text-white/40 transition hover:border-emerald-400/50 hover:text-emerald-400"
+          >
+            Tap to upload a photo
+          </button>
+        )}
+        <input ref={fileRef} type="file" accept="image/*" onChange={handlePhoto} className="hidden" />
+      </div>
+
+      {/* Honeypot */}
+      <input type="text" name="company" className="hidden" tabIndex={-1} autoComplete="off" />
+
+      {/* Submit */}
       <button
-        type="button"
-        onClick={handleContinue}
-        className="w-full rounded-full bg-emerald-500 py-3.5 text-sm font-bold text-white shadow-lg shadow-emerald-500/25 transition hover:bg-emerald-400"
+        type="submit"
+        disabled={submitting}
+        className="w-full rounded-full bg-emerald-500 py-3.5 text-sm font-bold text-white shadow-lg shadow-emerald-500/25 transition hover:bg-emerald-400 disabled:opacity-50"
+        data-cta="sign-up-submit"
       >
-        Continue
+        {submitting ? 'Submitting...' : 'Sign Up'}
       </button>
-    </div>
+    </form>
   )
 }
