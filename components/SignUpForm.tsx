@@ -45,7 +45,13 @@ export default function SignUpForm() {
   const [submitting, setSubmitting] = useState(false)
   const fileRef = useRef<HTMLInputElement>(null)
 
-  const moodboardOptions = ['Street editorial', 'Nature editorial', 'Swim', 'Indoor', 'Night']
+  const moodboardOptions = [
+    { id: 'Street editorial', img: '/images/moodboards/street-editorial.jpg' },
+    { id: 'Nature editorial', img: '/images/moodboards/nature-editorial.jpg' },
+    { id: 'Swim', img: '/images/moodboards/swim.jpg' },
+    { id: 'Indoor', img: '/images/moodboards/indoor.jpg' },
+    { id: 'Night', img: '/images/moodboards/night.jpg' },
+  ]
 
   const cityDone = city.trim().length > 0
   const contactDone = contact.trim().length > 0
@@ -231,24 +237,34 @@ export default function SignUpForm() {
           Photo shoot vibe
           <span className="text-xs text-white/30">(optional)</span>
         </legend>
-        <div className="flex flex-wrap gap-2">
+        <div className="grid grid-cols-2 gap-2">
           {moodboardOptions.map(option => (
             <button
-              key={option}
+              key={option.id}
               type="button"
               onClick={() => {
                 setMoodboard(prev =>
-                  prev.includes(option) ? prev.filter(o => o !== option) : [...prev, option]
+                  prev.includes(option.id) ? prev.filter(o => o !== option.id) : [...prev, option.id]
                 )
                 clearStatus()
               }}
-              className={`rounded-full border px-4 py-1.5 text-sm font-medium transition-all ${
-                moodboard.includes(option)
-                  ? 'border-emerald-400 bg-emerald-400/20 text-emerald-400'
-                  : 'border-white/15 bg-white/5 text-white/60 hover:border-white/30 hover:text-white/80'
+              className={`relative overflow-hidden rounded-xl border-2 transition-all ${
+                moodboard.includes(option.id)
+                  ? 'border-emerald-400 ring-2 ring-emerald-400/30'
+                  : 'border-white/10 hover:border-white/25'
               }`}
             >
-              {option}
+              <img src={option.img} alt={option.id} className="aspect-square w-full object-cover" />
+              {moodboard.includes(option.id) && (
+                <div className="absolute inset-0 bg-emerald-400/20" />
+              )}
+              {moodboard.includes(option.id) && (
+                <div className="absolute right-2 top-2 flex h-6 w-6 items-center justify-center rounded-full bg-emerald-500">
+                  <svg className="h-3.5 w-3.5 text-white" viewBox="0 0 20 20" fill="currentColor">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                </div>
+              )}
             </button>
           ))}
         </div>
@@ -318,7 +334,7 @@ export default function SignUpForm() {
           className="w-full rounded-full bg-emerald-500 py-3.5 text-sm font-bold text-white shadow-lg shadow-emerald-500/25 transition hover:bg-emerald-400 disabled:opacity-50"
           data-cta="sign-up-submit"
         >
-          {submitting ? 'Submitting...' : 'Get Details'}
+          {submitting ? 'Submitting...' : 'Sign Up'}
         </button>
       </div>
     </form>
