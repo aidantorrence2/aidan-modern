@@ -63,11 +63,26 @@ export async function POST(req: Request) {
     }
     console.log('[SIGN-UP]', { ...payload, photoUrl: photo ? '(base64)' : null })
 
-    // Save to database
-    try {
-      await saveToDb(payload)
-    } catch (err) {
-      console.error('[SIGN-UP] DB save failed:', err)
+    // Save to database (retry once on failure)
+    let dbSaved = false
+    for (let attempt = 0; attempt < 2; attempt++) {
+      try {
+        await saveToDb(payload)
+        dbSaved = true
+        break
+      } catch (err) {
+        console.error(`[SIGN-UP] DB save attempt ${attempt + 1} failed:`, err)
+        if (attempt === 0) {
+          // On first failure with photo, retry without photo
+          if (payload.photoUrl) {
+            console.log('[SIGN-UP] Retrying without photo...')
+            payload.photoUrl = null
+          }
+        }
+      }
+    }
+    if (!dbSaved) {
+      console.error('[SIGN-UP] DB save completely failed for:', { city: payload.city, contact: payload.contact })
     }
 
     // Slack notification
