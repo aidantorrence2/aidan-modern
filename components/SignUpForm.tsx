@@ -226,7 +226,7 @@ export default function SignUpForm() {
       {/* Moodboards */}
       <fieldset className="space-y-2">
         <legend className="text-sm font-medium text-white/80">Choose a shoot concept (or suggest your own)</legend>
-        <div className="grid grid-cols-1 gap-3 max-w-xs mx-auto">
+        <div className="grid grid-cols-1 gap-3 max-w-[200px] mx-auto">
           {moodboardOptions.map(option => (
             <button
               key={option.id}
@@ -254,6 +254,7 @@ export default function SignUpForm() {
                   </svg>
                 </div>
               )}
+              <div className="py-2 text-center text-sm font-medium text-white/80">{option.id}</div>
             </button>
           ))}
         </div>
