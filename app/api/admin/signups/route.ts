@@ -8,7 +8,7 @@ export async function GET() {
   if (!url) return NextResponse.json([])
   const sql = neon(url)
   try {
-    const rows = await sql`SELECT id, city, contact_method, contact, moodboard, photo_url, created_at FROM signups WHERE deleted_at IS NULL ORDER BY created_at DESC`
+    const rows = await sql`SELECT id, city, contact_method, contact, moodboard, photo_url, photos, created_at FROM signups WHERE deleted_at IS NULL ORDER BY created_at DESC`
     return NextResponse.json(rows, {
       headers: {
         'Cache-Control': 'no-store, no-cache, must-revalidate',
