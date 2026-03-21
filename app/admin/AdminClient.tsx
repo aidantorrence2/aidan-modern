@@ -8,6 +8,7 @@ type Signup = {
   contact: string
   moodboard: string[] | null
   photo_url: string | null
+  photos: string[] | null
   created_at: string
 }
 
@@ -76,14 +77,22 @@ export default function AdminClient({ signups: initial }: { signups: Signup[] })
                 return (
                   <div key={s.id} className="rounded-2xl border border-white/[0.08] bg-white/[0.04] p-5 sm:p-6 transition hover:bg-white/[0.06]">
                     <div className="flex items-start gap-5">
-                      {s.photo_url && (
-                        <img
-                          src={s.photo_url}
-                          alt=""
-                          className="h-28 w-28 flex-shrink-0 cursor-pointer rounded-xl border border-white/10 object-cover transition hover:border-white/30 hover:scale-105"
-                          onClick={() => setZoomedPhoto(s.photo_url)}
-                        />
-                      )}
+                      {(() => {
+                        const allPhotos = s.photos && s.photos.length > 0 ? s.photos : s.photo_url ? [s.photo_url] : []
+                        return allPhotos.length > 0 ? (
+                          <div className="flex flex-shrink-0 gap-2">
+                            {allPhotos.map((p, i) => (
+                              <img
+                                key={i}
+                                src={p}
+                                alt=""
+                                className="h-28 w-28 cursor-pointer rounded-xl border border-white/10 object-cover transition hover:border-white/30 hover:scale-105"
+                                onClick={() => setZoomedPhoto(p)}
+                              />
+                            ))}
+                          </div>
+                        ) : null
+                      })()}
                       <div className="min-w-0 flex-1 space-y-3">
                         <div className="flex items-start justify-between">
                           <div>

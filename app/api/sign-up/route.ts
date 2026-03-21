@@ -10,7 +10,7 @@ async function saveToDb(payload: {
   contactMethod: string
   contact: string
   moodboard: string[] | null
-  photoUrl: string | null
+  photos: string[] | null
 }) {
   const url = process.env.DATABASE_URL
   if (!url) {
@@ -18,29 +18,30 @@ async function saveToDb(payload: {
     return
   }
   const sql = neon(url)
-  await sql`
-    CREATE TABLE IF NOT EXISTS signups (
-      id SERIAL PRIMARY KEY,
-      city TEXT NOT NULL,
-      contact_method TEXT NOT NULL,
-      contact TEXT NOT NULL,
-      moodboard TEXT[],
-      photo_url TEXT,
-      created_at TIMESTAMPTZ DEFAULT NOW()
-    )
-  `
-  // Insert row first without photo
+  // Insert row without photos first
   const rows = await sql`
     INSERT INTO signups (city, contact_method, contact, moodboard)
     VALUES (${payload.city}, ${payload.contactMethod}, ${payload.contact}, ${payload.moodboard})
     RETURNING id
   `
-  // Then update with photo separately if present
-  if (payload.photoUrl && rows[0]?.id) {
+  const id = rows[0]?.id
+  if (!id) return
+
+  // Save photos one at a time to avoid HTTP size limit
+  if (payload.photos && payload.photos.length > 0) {
+    // Also set photo_url to first photo for backwards compat
     try {
-      await sql`UPDATE signups SET photo_url = ${payload.photoUrl} WHERE id = ${rows[0].id}`
+      await sql`UPDATE signups SET photo_url = ${payload.photos[0]} WHERE id = ${id}`
     } catch (err) {
-      console.error('[SIGN-UP] Photo save failed (row saved without photo):', err)
+      console.error('[SIGN-UP] photo_url save failed:', err)
+    }
+    // Save each photo into the photos array column one at a time
+    for (const photo of payload.photos) {
+      try {
+        await sql`UPDATE signups SET photos = array_append(photos, ${photo}) WHERE id = ${id}`
+      } catch (err) {
+        console.error('[SIGN-UP] Photo array append failed:', err)
+      }
     }
   }
 }
@@ -52,7 +53,9 @@ export async function POST(req: Request) {
     const contactMethod = body?.contactMethod
     const contact = body?.contact
     const moodboard = Array.isArray(body?.moodboard) ? body.moodboard : null
-    const photo = isString(body?.photo) ? body.photo : null
+    // Support both old single photo and new multi photos
+    const photos: string[] | null = Array.isArray(body?.photos) ? body.photos.filter(isString) :
+      isString(body?.photo) ? [body.photo] : null
 
     if (
       !isString(city) ||
@@ -68,10 +71,10 @@ export async function POST(req: Request) {
       contactMethod,
       contact: contact.trim(),
       moodboard,
-      photoUrl: photo,
+      photos,
       ts: new Date().toISOString()
     }
-    console.log('[SIGN-UP]', { ...payload, photoUrl: photo ? '(base64)' : null })
+    console.log('[SIGN-UP]', { ...payload, photos: photos ? `${photos.length} photo(s)` : null })
 
     try {
       await saveToDb(payload)
@@ -96,7 +99,7 @@ export async function POST(req: Request) {
                   '*New photo shoot sign-up*',
                   `*City:* ${payload.city}`,
                   `*${contactLabel}:* ${payload.contact}`,
-                  `*Photo:* ${photo ? 'Yes' : 'No'}`,
+                  `*Photos:* ${photos ? photos.length : 0}`,
                   ...(moodboard?.length ? [`*Moodboard:* ${moodboard.join(', ')}`] : [])
                 ].join('\n')
               }

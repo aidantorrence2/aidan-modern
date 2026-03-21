@@ -13,6 +13,7 @@ type Signup = {
   contact: string
   moodboard: string[] | null
   photo_url: string | null
+  photos: string[] | null
   created_at: string
 }
 
@@ -21,7 +22,7 @@ async function getSignups(): Promise<Signup[]> {
   if (!url) return []
   const sql = neon(url)
   try {
-    const rows = await sql`SELECT id, city, contact_method, contact, moodboard, photo_url, created_at FROM signups WHERE deleted_at IS NULL ORDER BY created_at DESC`
+    const rows = await sql`SELECT id, city, contact_method, contact, moodboard, photo_url, photos, created_at FROM signups WHERE deleted_at IS NULL ORDER BY created_at DESC`
     return rows as Signup[]
   } catch (e) {
     console.error('[ADMIN] Failed to fetch signups:', e)

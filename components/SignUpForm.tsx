@@ -52,8 +52,7 @@ export default function SignUpForm() {
   const [customConcept, setCustomConcept] = useState('')
   const [contactMethod, setContactMethod] = useState<'whatsapp' | 'instagram'>('whatsapp')
   const [contact, setContact] = useState('')
-  const [photoPreview, setPhotoPreview] = useState<string | null>(null)
-  const [photoData, setPhotoData] = useState<string | null>(null)
+  const [photos, setPhotos] = useState<string[]>([])
   const [submitting, setSubmitting] = useState(false)
   const fileRef = useRef<HTMLInputElement>(null)
   const cityRef = useRef<HTMLInputElement>(null)
@@ -65,28 +64,28 @@ export default function SignUpForm() {
     if (state) setState(null)
   }
 
-  async function handlePhoto(e: React.ChangeEvent<HTMLInputElement>) {
-    const file = e.target.files?.[0]
-    if (!file) return
-    if (file.size > 20 * 1024 * 1024) {
-      setState({ ok: false, error: 'Photo must be under 20 MB.' })
-      return
-    }
+  async function handlePhotos(e: React.ChangeEvent<HTMLInputElement>) {
+    const files = e.target.files
+    if (!files) return
     clearStatus()
-    const reader = new FileReader()
-    reader.onload = async () => {
-      const raw = reader.result as string
+    for (const file of Array.from(files)) {
+      if (file.size > 20 * 1024 * 1024) {
+        setState({ ok: false, error: 'Each photo must be under 20 MB.' })
+        continue
+      }
+      const raw = await new Promise<string>((resolve) => {
+        const reader = new FileReader()
+        reader.onload = () => resolve(reader.result as string)
+        reader.readAsDataURL(file)
+      })
       const resized = await resizeImage(raw, 300 * 1024)
-      setPhotoPreview(resized)
-      setPhotoData(resized)
+      setPhotos(prev => [...prev, resized])
     }
-    reader.readAsDataURL(file)
+    if (fileRef.current) fileRef.current.value = ''
   }
 
-  function removePhoto() {
-    setPhotoPreview(null)
-    setPhotoData(null)
-    if (fileRef.current) fileRef.current.value = ''
+  function removePhoto(index: number) {
+    setPhotos(prev => prev.filter((_, i) => i !== index))
   }
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
@@ -116,7 +115,7 @@ export default function SignUpForm() {
       contactRef.current?.focus()
       return
     }
-    if (!photoData) {
+    if (photos.length === 0) {
       setState({ ok: false, error: 'Please upload a photo of yourself.' })
       photoRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' })
       return
@@ -134,7 +133,7 @@ export default function SignUpForm() {
           contactMethod,
           contact: contact.trim(),
           moodboard: allMoodboard.length > 0 ? allMoodboard : null,
-          photo: photoData || null
+          photos: photos.length > 0 ? photos : null
         })
       })
       if (!res.ok) throw new Error('Failed to submit')
@@ -329,34 +328,35 @@ export default function SignUpForm() {
         )}
       </fieldset>
 
-      {/* Photo (required) */}
+      {/* Photos (required) */}
       <div ref={photoRef} className="space-y-1.5">
         <label className="text-sm font-medium text-white/80">
           What you look like <span className="text-xs text-red-400/70">*</span>
         </label>
-        <p className="text-xs text-white/40">A basic selfie or headshot is fine</p>
-        {photoPreview ? (
-          <div className="relative mt-1 inline-block">
-            <img src={photoPreview} alt="Preview" className="h-28 w-28 rounded-xl border border-white/10 object-cover" />
-            <button
-              type="button"
-              onClick={removePhoto}
-              className="absolute -right-2 -top-2 flex h-6 w-6 items-center justify-center rounded-full bg-white/20 text-xs text-white backdrop-blur transition hover:bg-red-500"
-              aria-label="Remove photo"
-            >
-              &times;
-            </button>
-          </div>
-        ) : (
+        <p className="text-xs text-white/40">A selfie or headshot — you can upload multiple</p>
+        <div className="flex flex-wrap gap-2 mt-1">
+          {photos.map((p, i) => (
+            <div key={i} className="relative">
+              <img src={p} alt="Preview" className="h-24 w-24 rounded-xl border border-white/10 object-cover" />
+              <button
+                type="button"
+                onClick={() => removePhoto(i)}
+                className="absolute -right-2 -top-2 flex h-6 w-6 items-center justify-center rounded-full bg-white/20 text-xs text-white backdrop-blur transition hover:bg-red-500"
+                aria-label="Remove photo"
+              >
+                &times;
+              </button>
+            </div>
+          ))}
           <button
             type="button"
             onClick={() => fileRef.current?.click()}
-            className="mt-1 flex h-20 w-full items-center justify-center rounded-xl border border-dashed border-white/15 bg-white/5 text-sm text-white/40 transition hover:border-emerald-400/50 hover:text-emerald-400"
+            className="flex h-24 w-24 items-center justify-center rounded-xl border border-dashed border-white/15 bg-white/5 text-2xl text-white/30 transition hover:border-emerald-400/50 hover:text-emerald-400"
           >
-            Tap to upload a photo
+            +
           </button>
-        )}
-        <input ref={fileRef} type="file" accept="image/*" onChange={handlePhoto} className="hidden" />
+        </div>
+        <input ref={fileRef} type="file" accept="image/*" multiple onChange={handlePhotos} className="hidden" />
       </div>
 
       {/* Honeypot */}
