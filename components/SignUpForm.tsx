@@ -58,6 +58,8 @@ export default function SignUpForm() {
   const fileRef = useRef<HTMLInputElement>(null)
   const cityRef = useRef<HTMLInputElement>(null)
   const contactRef = useRef<HTMLInputElement>(null)
+  const photoRef = useRef<HTMLDivElement>(null)
+  const moodboardRef = useRef<HTMLFieldSetElement>(null)
 
   function clearStatus() {
     if (state) setState(null)
@@ -103,10 +105,20 @@ export default function SignUpForm() {
       cityRef.current?.focus()
       return
     }
+    if (moodboard.length === 0 && !customConcept.trim()) {
+      setState({ ok: false, error: 'Please select at least one shoot concept or suggest your own.' })
+      moodboardRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' })
+      return
+    }
     if (!contact.trim()) {
       setState({ ok: false, error: `Please enter your ${contactMethod === 'whatsapp' ? 'WhatsApp number' : 'Instagram handle'}.` })
       contactRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' })
       contactRef.current?.focus()
+      return
+    }
+    if (!photoData) {
+      setState({ ok: false, error: 'Please upload a photo of yourself.' })
+      photoRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' })
       return
     }
 
@@ -241,8 +253,8 @@ export default function SignUpForm() {
       </div>
 
       {/* Moodboards */}
-      <fieldset className="space-y-2">
-        <legend className="text-sm font-medium text-white/80">Choose a shoot concept (or suggest your own)</legend>
+      <fieldset ref={moodboardRef} className="space-y-2">
+        <legend className="text-sm font-medium text-white/80">Choose a shoot concept (or suggest your own) <span className="text-xs text-red-400/70">*</span></legend>
         <div className="grid grid-cols-1 gap-4 max-w-[260px] mx-auto">
           {moodboardOptions.map(option => (
             <button
@@ -317,10 +329,10 @@ export default function SignUpForm() {
         )}
       </fieldset>
 
-      {/* Photo (optional) */}
-      <div className="space-y-1.5">
+      {/* Photo (required) */}
+      <div ref={photoRef} className="space-y-1.5">
         <label className="text-sm font-medium text-white/80">
-          What you look like <span className="text-xs text-white/30">(optional)</span>
+          What you look like <span className="text-xs text-red-400/70">*</span>
         </label>
         <p className="text-xs text-white/40">A basic selfie or headshot is fine</p>
         {photoPreview ? (
