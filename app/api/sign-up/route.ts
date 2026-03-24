@@ -1,49 +1,36 @@
 import { NextResponse } from 'next/server'
-import { neon } from '@neondatabase/serverless'
+import { createClient } from '@supabase/supabase-js'
 
 function isString(x: unknown): x is string {
   return typeof x === 'string'
 }
 
-async function saveToDb(payload: {
-  city: string
-  contactMethod: string
-  contact: string
-  moodboard: string[] | null
-  photos: string[] | null
-}) {
-  const url = process.env.DATABASE_URL
-  if (!url) {
-    console.warn('[SIGN-UP] No DATABASE_URL — skipping DB save')
-    return
-  }
-  const sql = neon(url)
-  // Insert row without photos first
-  const rows = await sql`
-    INSERT INTO signups (city, contact_method, contact, moodboard)
-    VALUES (${payload.city}, ${payload.contactMethod}, ${payload.contact}, ${payload.moodboard})
-    RETURNING id
-  `
-  const id = rows[0]?.id
-  if (!id) return
+function getSupabase() {
+  return createClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.SUPABASE_SERVICE_ROLE_KEY!
+  )
+}
 
-  // Save photos one at a time to avoid HTTP size limit
-  if (payload.photos && payload.photos.length > 0) {
-    // Also set photo_url to first photo for backwards compat
-    try {
-      await sql`UPDATE signups SET photo_url = ${payload.photos[0]} WHERE id = ${id}`
-    } catch (err) {
-      console.error('[SIGN-UP] photo_url save failed:', err)
-    }
-    // Save each photo into the photos array column one at a time
-    for (const photo of payload.photos) {
-      try {
-        await sql`UPDATE signups SET photos = array_append(photos, ${photo}) WHERE id = ${id}`
-      } catch (err) {
-        console.error('[SIGN-UP] Photo array append failed:', err)
-      }
-    }
+async function uploadPhoto(base64: string, signupId: number, index: number): Promise<string | null> {
+  const sb = getSupabase()
+  // Strip data URL prefix
+  const match = base64.match(/^data:image\/(\w+);base64,(.+)$/)
+  if (!match) return null
+  const ext = match[1] === 'jpeg' ? 'jpg' : match[1]
+  const buffer = Buffer.from(match[2], 'base64')
+  const filePath = `signups/${signupId}/${index}.${ext}`
+
+  const { error } = await sb.storage.from('photos').upload(filePath, buffer, {
+    contentType: `image/${match[1]}`,
+    upsert: true
+  })
+  if (error) {
+    console.error('[SIGN-UP] Photo upload failed:', error)
+    return null
   }
+  const { data } = sb.storage.from('photos').getPublicUrl(filePath)
+  return data.publicUrl
 }
 
 export async function POST(req: Request) {
@@ -53,7 +40,6 @@ export async function POST(req: Request) {
     const contactMethod = body?.contactMethod
     const contact = body?.contact
     const moodboard = Array.isArray(body?.moodboard) ? body.moodboard : null
-    // Support both old single photo and new multi photos
     const photos: string[] | null = Array.isArray(body?.photos) ? body.photos.filter(isString) :
       isString(body?.photo) ? [body.photo] : null
 
@@ -66,21 +52,37 @@ export async function POST(req: Request) {
       return NextResponse.json({ ok: false, error: 'Invalid input' }, { status: 400 })
     }
 
-    const payload = {
-      city: city.trim(),
-      contactMethod,
-      contact: contact.trim(),
-      moodboard,
-      photos,
-      ts: new Date().toISOString()
-    }
-    console.log('[SIGN-UP]', { ...payload, photos: photos ? `${photos.length} photo(s)` : null })
+    console.log('[SIGN-UP]', { city, contactMethod, contact, moodboard, photos: photos ? `${photos.length} photo(s)` : null })
 
-    try {
-      await saveToDb(payload)
-    } catch (err) {
-      console.error('[SIGN-UP] DB save failed:', err)
+    const sb = getSupabase()
+
+    // Insert row
+    const { data: row, error: insertErr } = await sb
+      .from('signups')
+      .insert({
+        city: city.trim(),
+        contact_method: contactMethod,
+        contact: contact.trim(),
+        moodboard
+      })
+      .select('id')
+      .single()
+
+    if (insertErr || !row) {
+      console.error('[SIGN-UP] DB insert failed:', insertErr)
       return NextResponse.json({ ok: false, error: 'Failed to save' }, { status: 500 })
+    }
+
+    // Upload photos to storage
+    if (photos && photos.length > 0) {
+      const urls: string[] = []
+      for (let i = 0; i < photos.length; i++) {
+        const url = await uploadPhoto(photos[i], row.id, i)
+        if (url) urls.push(url)
+      }
+      if (urls.length > 0) {
+        await sb.from('signups').update({ photo_urls: urls }).eq('id', row.id)
+      }
     }
 
     // Slack notification
@@ -89,7 +91,7 @@ export async function POST(req: Request) {
       try {
         const contactLabel = contactMethod === 'whatsapp' ? 'WhatsApp' : 'Instagram'
         const slackBody = {
-          text: `New sign-up from ${payload.contact}`,
+          text: `New sign-up from ${contact}`,
           blocks: [
             {
               type: 'section',
@@ -97,21 +99,12 @@ export async function POST(req: Request) {
                 type: 'mrkdwn',
                 text: [
                   '*New photo shoot sign-up*',
-                  `*City:* ${payload.city}`,
-                  `*${contactLabel}:* ${payload.contact}`,
+                  `*City:* ${city.trim()}`,
+                  `*${contactLabel}:* ${contact.trim()}`,
                   `*Photos:* ${photos ? photos.length : 0}`,
                   ...(moodboard?.length ? [`*Moodboard:* ${moodboard.join(', ')}`] : [])
                 ].join('\n')
               }
-            },
-            {
-              type: 'context',
-              elements: [
-                {
-                  type: 'mrkdwn',
-                  text: `Received ${new Date(payload.ts).toLocaleString('en-US', { timeZone: 'UTC' })} UTC`
-                }
-              ]
             }
           ]
         }

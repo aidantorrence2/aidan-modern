@@ -1,13 +1,14 @@
 import { NextResponse } from 'next/server'
-import { neon } from '@neondatabase/serverless'
+import { createClient } from '@supabase/supabase-js'
 
 export async function POST(req: Request) {
-  const url = process.env.DATABASE_URL
-  if (!url) return NextResponse.json({ ok: false }, { status: 500 })
+  const url = process.env.NEXT_PUBLIC_SUPABASE_URL
+  const key = process.env.SUPABASE_SERVICE_ROLE_KEY
+  if (!url || !key) return NextResponse.json({ ok: false }, { status: 500 })
   const body = await req.json().catch(() => ({}))
   const id = body?.id
   if (typeof id !== 'number') return NextResponse.json({ ok: false }, { status: 400 })
-  const sql = neon(url)
-  await sql`UPDATE signups SET deleted_at = NOW() WHERE id = ${id}`
+  const sb = createClient(url, key)
+  await sb.from('signups').update({ deleted_at: new Date().toISOString() }).eq('id', id)
   return NextResponse.json({ ok: true })
 }

@@ -1,4 +1,4 @@
-import { neon } from '@neondatabase/serverless'
+import { createClient } from '@supabase/supabase-js'
 import AdminClient from './AdminClient'
 import AutoRefresh from './AutoRefresh'
 
@@ -12,22 +12,25 @@ type Signup = {
   contact_method: string
   contact: string
   moodboard: string[] | null
-  photo_url: string | null
-  photos: string[] | null
+  photo_urls: string[] | null
   created_at: string
 }
 
 async function getSignups(): Promise<Signup[]> {
-  const url = process.env.DATABASE_URL
-  if (!url) return []
-  const sql = neon(url)
-  try {
-    const rows = await sql`SELECT id, city, contact_method, contact, moodboard, photo_url, photos, created_at FROM signups WHERE deleted_at IS NULL ORDER BY created_at DESC`
-    return rows as Signup[]
-  } catch (e) {
-    console.error('[ADMIN] Failed to fetch signups:', e)
+  const url = process.env.NEXT_PUBLIC_SUPABASE_URL
+  const key = process.env.SUPABASE_SERVICE_ROLE_KEY
+  if (!url || !key) return []
+  const sb = createClient(url, key)
+  const { data, error } = await sb
+    .from('signups')
+    .select('id, city, contact_method, contact, moodboard, photo_urls, created_at')
+    .is('deleted_at', null)
+    .order('created_at', { ascending: false })
+  if (error) {
+    console.error('[ADMIN]', error)
     return []
   }
+  return data as Signup[]
 }
 
 export default async function AdminPage() {
