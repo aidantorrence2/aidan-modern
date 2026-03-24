@@ -7,8 +7,7 @@ type Signup = {
   contact_method: string
   contact: string
   moodboard: string[] | null
-  photo_url: string | null
-  photos: string[] | null
+  photo_urls: string[] | null
   created_at: string
 }
 
@@ -20,9 +19,7 @@ function contactLink(s: Signup) {
 }
 
 function getPhotos(s: Signup): string[] {
-  if (s.photos && s.photos.length > 0) return s.photos
-  if (s.photo_url) return [s.photo_url]
-  return []
+  return s.photo_urls && s.photo_urls.length > 0 ? s.photo_urls : []
 }
 
 export default function AdminClient({ signups: initial }: { signups: Signup[] }) {
