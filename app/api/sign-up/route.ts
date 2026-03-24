@@ -1,5 +1,12 @@
 import { NextResponse } from 'next/server'
 import { createClient } from '@supabase/supabase-js'
+import { v2 as cloudinary } from 'cloudinary'
+
+cloudinary.config({
+  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+  api_key: process.env.CLOUDINARY_API_KEY,
+  api_secret: process.env.CLOUDINARY_API_SECRET
+})
 
 function isString(x: unknown): x is string {
   return typeof x === 'string'
@@ -13,24 +20,16 @@ function getSupabase() {
 }
 
 async function uploadPhoto(base64: string, signupId: number, index: number): Promise<string | null> {
-  const sb = getSupabase()
-  // Strip data URL prefix
-  const match = base64.match(/^data:image\/(\w+);base64,(.+)$/)
-  if (!match) return null
-  const ext = match[1] === 'jpeg' ? 'jpg' : match[1]
-  const buffer = Buffer.from(match[2], 'base64')
-  const filePath = `signups/${signupId}/${index}.${ext}`
-
-  const { error } = await sb.storage.from('photos').upload(filePath, buffer, {
-    contentType: `image/${match[1]}`,
-    upsert: true
-  })
-  if (error) {
-    console.error('[SIGN-UP] Photo upload failed:', error)
+  try {
+    const result = await cloudinary.uploader.upload(base64, {
+      folder: `signups/${signupId}`,
+      resource_type: 'image'
+    })
+    return result.secure_url
+  } catch (err) {
+    console.error(`[SIGN-UP] Cloudinary upload failed (${index}):`, err)
     return null
   }
-  const { data } = sb.storage.from('photos').getPublicUrl(filePath)
-  return data.publicUrl
 }
 
 export async function POST(req: Request) {
@@ -56,7 +55,6 @@ export async function POST(req: Request) {
 
     const sb = getSupabase()
 
-    // Insert row
     const { data: row, error: insertErr } = await sb
       .from('signups')
       .insert({
@@ -73,7 +71,7 @@ export async function POST(req: Request) {
       return NextResponse.json({ ok: false, error: 'Failed to save' }, { status: 500 })
     }
 
-    // Upload photos to storage
+    // Upload photos to Cloudinary
     if (photos && photos.length > 0) {
       const urls: string[] = []
       for (let i = 0; i < photos.length; i++) {
