@@ -50,7 +50,7 @@ export default function SignUpForm() {
   const [city, setCity] = useState('')
   const [moodboard, setMoodboard] = useState<string[]>([])
   const [customConcept, setCustomConcept] = useState('')
-  const [contactMethod, setContactMethod] = useState<'whatsapp' | 'instagram'>('whatsapp')
+  const [contactMethod, setContactMethod] = useState<'whatsapp' | 'instagram'>('instagram')
   const [contact, setContact] = useState('')
   const [photos, setPhotos] = useState<string[]>([])
   const [submitting, setSubmitting] = useState(false)
