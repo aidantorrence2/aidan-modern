@@ -171,7 +171,7 @@ function ctaSlide(prefix, city, heroImg) {
         <div style="position:absolute;bottom:380px;left:64px;right:64px;">
           <h2 style="font-family:${SERIF};font-size:110px;font-weight:700;font-style:italic;color:white;line-height:0.95;margin:0;${S}">Your turn.</h2>
           <div style="margin:36px 0 0;display:flex;flex-direction:column;gap:20px;">
-            <p style="font-family:${SANS};font-size:36px;color:rgba(255,255,255,0.9);line-height:1.45;margin:0;${S}">Tap <strong style="color:white;">Learn More</strong> below to sign up for a free photo shoot in ${city}.</p>
+            <p style="font-family:${SANS};font-size:36px;color:rgba(255,255,255,0.9);line-height:1.45;margin:0;${S}">Click the button below to sign up for a free photo shoot in ${city}.</p>
             <p style="font-family:${SANS};font-size:32px;color:rgba(255,255,255,0.55);line-height:1.45;margin:0;${S}">Pick your vibe, upload a selfie, and I'll reach out to plan everything. No experience needed.</p>
           </div>
         </div>
@@ -190,7 +190,7 @@ const deliverables = [
   'Direct communication with me from start to finish'
 ]
 const steps = [
-  'Tap "Learn More" and sign up',
+  'Click the button below and sign up',
   'We chat and plan your shoot',
   'Show up and get great photos'
 ]
