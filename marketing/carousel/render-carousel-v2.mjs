@@ -166,11 +166,14 @@ function ctaSlide(prefix, city, heroImg) {
     name: `${prefix}-05-cta`,
     html: `
       <div style="width:1080px;height:1920px;position:relative;overflow:hidden;background:#000;">
-        <img src="${heroImg}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(1.1) brightness(0.85);"/>
-        <div style="position:absolute;inset:0;background:linear-gradient(180deg, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.2) 30%, rgba(0,0,0,0.2) 55%, rgba(0,0,0,0.9) 100%);"></div>
-        <div style="position:absolute;bottom:480px;left:64px;right:64px;">
-          <h2 style="font-family:${SERIF};font-size:120px;font-weight:700;font-style:italic;color:white;line-height:0.95;margin:0;${S}">Your turn.</h2>
-          <p style="font-family:${SANS};font-size:36px;color:rgba(255,255,255,0.75);line-height:1.4;margin:28px 0 0 4px;${S}">Sign up for your free photo shoot in ${city}.<br/>Takes less than a minute.</p>
+        <img src="${heroImg}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(1.1) brightness(0.7);"/>
+        <div style="position:absolute;inset:0;background:linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.25) 30%, rgba(0,0,0,0.25) 50%, rgba(0,0,0,0.92) 100%);"></div>
+        <div style="position:absolute;bottom:380px;left:64px;right:64px;">
+          <h2 style="font-family:${SERIF};font-size:110px;font-weight:700;font-style:italic;color:white;line-height:0.95;margin:0;${S}">Your turn.</h2>
+          <div style="margin:36px 0 0;display:flex;flex-direction:column;gap:20px;">
+            <p style="font-family:${SANS};font-size:36px;color:rgba(255,255,255,0.9);line-height:1.45;margin:0;${S}">Tap <strong style="color:white;">Learn More</strong> below to sign up for a free photo shoot in ${city}.</p>
+            <p style="font-family:${SANS};font-size:32px;color:rgba(255,255,255,0.55);line-height:1.45;margin:0;${S}">Pick your vibe, upload a selfie, and I'll reach out to plan everything. No experience needed.</p>
+          </div>
         </div>
         ${filmGrain(0.1)}
       </div>
