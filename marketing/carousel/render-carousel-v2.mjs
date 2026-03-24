@@ -166,16 +166,11 @@ function ctaSlide(prefix, city, heroImg) {
     name: `${prefix}-05-cta`,
     html: `
       <div style="width:1080px;height:1920px;position:relative;overflow:hidden;background:#000;">
-        <img src="${heroImg}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(1.05) brightness(0.55);"/>
-        <div style="position:absolute;inset:0;background:linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.3) 30%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.85) 80%, rgba(0,0,0,0.95) 100%);"></div>
-        <div style="position:absolute;top:0;left:0;right:0;bottom:0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:80px;">
-          <div style="font-family:${SERIF};font-size:100px;font-weight:700;font-style:italic;color:white;text-align:center;line-height:1;margin-bottom:20px;${S}">Sign up now</div>
-          <div style="font-family:${SANS};font-size:28px;color:rgba(255,255,255,0.55);letter-spacing:2px;text-transform:uppercase;margin-bottom:50px;">FREE PHOTO SHOOT — ${city.toUpperCase()}</div>
-          <div style="background:white;border-radius:20px;padding:44px 64px;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,0.5);">
-            <div style="font-family:${SANS};font-size:24px;font-weight:600;color:#666;letter-spacing:1px;margin-bottom:14px;text-transform:uppercase;">Takes less than a minute</div>
-            <div style="font-family:${SERIF};font-size:48px;font-weight:700;color:#1a1a1a;line-height:1.2;">aidantorrence.com<span style="color:#10b981;">/sign-up</span></div>
-          </div>
-          <div style="font-family:${SANS};font-size:26px;color:rgba(255,255,255,0.5);margin-top:44px;text-align:center;line-height:1.6;">Pick your concept, upload a photo,<br/>and I'll reach out with all the details.</div>
+        <img src="${heroImg}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(1.1) brightness(0.85);"/>
+        <div style="position:absolute;inset:0;background:linear-gradient(180deg, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.2) 30%, rgba(0,0,0,0.2) 55%, rgba(0,0,0,0.9) 100%);"></div>
+        <div style="position:absolute;bottom:480px;left:64px;right:64px;">
+          <h2 style="font-family:${SERIF};font-size:120px;font-weight:700;font-style:italic;color:white;line-height:0.95;margin:0;${S}">Your turn.</h2>
+          <p style="font-family:${SANS};font-size:36px;color:rgba(255,255,255,0.75);line-height:1.4;margin:28px 0 0 4px;${S}">Sign up for your free photo shoot in ${city}.<br/>Takes less than a minute.</p>
         </div>
         ${filmGrain(0.1)}
       </div>
@@ -192,7 +187,7 @@ const deliverables = [
   'Direct communication with me from start to finish'
 ]
 const steps = [
-  'Sign up at aidantorrence.com/sign-up',
+  'Tap "Learn More" and sign up',
   'We chat and plan your shoot',
   'Show up and get great photos'
 ]
