@@ -250,7 +250,7 @@ function buildHTML(imageDataMap) {
 }
 
 async function renderFrames(htmlPath) {
-  var browser = await chromium.launch();
+  var browser = await chromium.launch({ executablePath: '/root/.cache/ms-playwright/chromium-1194/chrome-linux/chrome', args: ['--no-sandbox'] });
   var page = await browser.newPage({ viewport: { width: W, height: H } });
   await page.goto('file://' + htmlPath, { waitUntil: 'networkidle' });
   await page.waitForTimeout(500);
