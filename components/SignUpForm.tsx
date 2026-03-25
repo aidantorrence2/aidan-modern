@@ -1,5 +1,6 @@
 "use client"
 import { useRef, useState } from 'react'
+import NextImage from 'next/image'
 
 type State = { ok: boolean; error?: string }
 
@@ -52,7 +53,7 @@ export default function SignUpForm() {
   const [customConcept, setCustomConcept] = useState('')
   const [contactMethod, setContactMethod] = useState<'whatsapp' | 'instagram'>('instagram')
   const [contact, setContact] = useState('')
-  const [photos, setPhotos] = useState<string[]>([])
+  const [photos, setPhotos] = useState<{ preview: string; base64: string | null }[]>([])
   const [submitting, setSubmitting] = useState(false)
   const fileRef = useRef<HTMLInputElement>(null)
   const cityRef = useRef<HTMLInputElement>(null)
@@ -73,13 +74,18 @@ export default function SignUpForm() {
         setState({ ok: false, error: 'Each photo must be under 20 MB.' })
         continue
       }
+      // Add placeholder immediately so user sees feedback
+      setPhotos(prev => [...prev, { preview: '', base64: null }])
+      const idx = photos.length
+
+      // Read and resize, then update preview + base64 together
       const raw = await new Promise<string>((resolve) => {
         const reader = new FileReader()
         reader.onload = () => resolve(reader.result as string)
         reader.readAsDataURL(file)
       })
       const resized = await resizeImage(raw, 300 * 1024)
-      setPhotos(prev => [...prev, resized])
+      setPhotos(prev => prev.map((p, i) => i === idx ? { preview: resized, base64: resized } : p))
     }
     if (fileRef.current) fileRef.current.value = ''
   }
@@ -120,6 +126,11 @@ export default function SignUpForm() {
       photoRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' })
       return
     }
+    const stillProcessing = photos.some(p => !p.base64)
+    if (stillProcessing) {
+      setState({ ok: false, error: 'Photos are still processing, please wait a moment.' })
+      return
+    }
 
     setSubmitting(true)
     setState(null)
@@ -133,7 +144,7 @@ export default function SignUpForm() {
           contactMethod,
           contact: contact.trim(),
           moodboard: allMoodboard.length > 0 ? allMoodboard : null,
-          photos: photos.length > 0 ? photos : null
+          photos: photos.length > 0 ? photos.map(p => p.base64) : null
         })
       })
       if (!res.ok) throw new Error('Failed to submit')
@@ -161,7 +172,7 @@ export default function SignUpForm() {
         {/* Hero image from selected moodboard */}
         {selectedImg && (
           <div className="relative h-48 overflow-hidden">
-            <img src={selectedImg} alt="" className="w-full h-full object-cover" style={{ filter: 'brightness(0.6) saturate(1.2)' }} />
+            <NextImage src={selectedImg} alt="" width={400} height={192} className="w-full h-full object-cover" style={{ filter: 'brightness(0.6) saturate(1.2)' }} />
             <div className="absolute inset-0" style={{ background: 'linear-gradient(180deg, transparent 30%, rgba(10,10,10,0.95) 100%)' }} />
             <div className="absolute bottom-4 left-5 right-5">
               <p className="font-display text-2xl font-semibold text-white" style={{ fontFamily: "Georgia, serif", fontStyle: 'italic' }}>Thanks for signing up</p>
@@ -272,7 +283,7 @@ export default function SignUpForm() {
               }`}
             >
               <div className="px-2 py-1.5 text-left font-display text-sm font-semibold tracking-wide text-white">{option.id}</div>
-              <img src={option.img} alt={option.id} className="w-full object-cover" />
+              <NextImage src={option.img} alt={option.id} width={260} height={390} className="w-full object-cover" placeholder="blur" blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAKAAoDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABgcI/8QAIhAAAQMEAgIDAAAAAAAAAAAAAQIDBAUGESEAEjFBUWFx/8QAFQEBAQAAAAAAAAAAAAAAAAAAAQP/xAAYEQEBAQEBAAAAAAAAAAAAAAABAgARA//aAAwDAQACEQMRAD8Am1v2/SqsqU9NqUiC00sBpLcVLhcBGSdqGABkePPOLU1aVOgVFifHkzFOwni8lC3QQdEEEjHvzxFqGQ5u3az//9k=" />
               {moodboard.includes(option.id) && (
                 <div className="absolute inset-0 bg-emerald-400/20" />
               )}
@@ -337,7 +348,11 @@ export default function SignUpForm() {
         <div className="flex flex-wrap gap-2 mt-1">
           {photos.map((p, i) => (
             <div key={i} className="relative">
-              <img src={p} alt="Preview" className="h-24 w-24 rounded-xl border border-white/10 object-cover" />
+              {p.preview ? (
+                <img src={p.preview} alt="Preview" className="h-24 w-24 rounded-xl border border-white/10 object-cover" />
+              ) : (
+                <div className="h-24 w-24 rounded-xl border border-white/10 bg-white/5 animate-pulse" />
+              )}
               <button
                 type="button"
                 onClick={() => removePhoto(i)}

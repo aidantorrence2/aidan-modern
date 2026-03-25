@@ -18,4 +18,6 @@ tsconfig.tsbuildinfo
 *.avi
 *.mkv
 *.webm
+.env*.local
 marketing/location-content/output-city-*
+public/images/locations/
