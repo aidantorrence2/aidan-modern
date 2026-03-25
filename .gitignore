@@ -18,3 +18,4 @@ tsconfig.tsbuildinfo
 *.avi
 *.mkv
 *.webm
+marketing/location-content/output-city-*
