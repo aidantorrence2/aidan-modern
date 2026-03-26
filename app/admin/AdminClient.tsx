@@ -1,5 +1,6 @@
 "use client"
 import { useCallback, useEffect, useRef, useState } from 'react'
+import NextImage from 'next/image'
 
 type Signup = {
   id: number
@@ -145,11 +146,14 @@ export default function AdminClient({ signups: initial }: { signups: Signup[] })
           )}
 
           {/* Image */}
-          <img
+          <NextImage
             src={lightboxUrl(lightbox.photos[lightbox.index])}
             alt=""
-            decoding="async"
+            width={1200}
+            height={800}
+            priority
             className="max-h-[80vh] max-w-[90vw] rounded-2xl object-contain"
+            style={{ width: 'auto', height: 'auto' }}
           />
 
           {/* Navigation arrows */}
@@ -181,7 +185,7 @@ export default function AdminClient({ signups: initial }: { signups: Signup[] })
                     i === lightbox.index ? 'border-white' : 'border-transparent opacity-50 hover:opacity-80'
                   }`}
                 >
-                  <img src={miniThumbUrl(p)} alt="" decoding="async" className="h-full w-full object-cover" />
+                  <NextImage src={miniThumbUrl(p)} alt="" width={80} height={80} className="h-full w-full object-cover" />
                 </button>
               ))}
             </div>
@@ -250,14 +254,12 @@ export default function AdminClient({ signups: initial }: { signups: Signup[] })
                       {photos.length > 0 && (
                         <div className="flex gap-2 overflow-x-auto mt-2 pb-1">
                           {photos.map((p, i) => (
-                            <img
+                            <NextImage
                               key={i}
                               src={thumbUrl(p)}
                               alt=""
                               width={128}
                               height={128}
-                              loading="lazy"
-                              decoding="async"
                               className="h-32 w-32 flex-shrink-0 cursor-pointer rounded-xl border border-white/10 object-cover transition hover:border-white/30 hover:brightness-110"
                               onClick={() => openLightbox(photos, i)}
                             />
