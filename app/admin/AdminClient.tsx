@@ -1,5 +1,5 @@
 "use client"
-import { useCallback, useEffect, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 
 type Signup = {
   id: number
@@ -20,6 +20,52 @@ function contactLink(s: Signup) {
 
 function getPhotos(s: Signup): string[] {
   return s.photo_urls && s.photo_urls.length > 0 ? s.photo_urls : []
+}
+
+/** Insert Cloudinary transformation into URL for optimized delivery */
+function cloudinaryUrl(url: string, transforms: string): string {
+  const marker = '/upload/'
+  const idx = url.indexOf(marker)
+  if (idx === -1) return url
+  return url.slice(0, idx + marker.length) + transforms + '/' + url.slice(idx + marker.length)
+}
+
+/** Thumbnail: 256px, auto quality & format */
+function thumbUrl(url: string): string {
+  return cloudinaryUrl(url, 'w_256,h_256,c_fill,q_auto,f_auto')
+}
+
+/** Lightbox: capped at 1200px wide, auto quality & format */
+function lightboxUrl(url: string): string {
+  return cloudinaryUrl(url, 'w_1200,q_auto,f_auto')
+}
+
+/** Mini thumbnail for lightbox strip: 80px */
+function miniThumbUrl(url: string): string {
+  return cloudinaryUrl(url, 'w_80,h_80,c_fill,q_auto,f_auto')
+}
+
+/** Lazy-rendered card that only mounts when near viewport */
+function LazyCard({ children }: { children: React.ReactNode }) {
+  const ref = useRef<HTMLDivElement>(null)
+  const [visible, setVisible] = useState(false)
+
+  useEffect(() => {
+    const el = ref.current
+    if (!el) return
+    const observer = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) { setVisible(true); observer.disconnect() } },
+      { rootMargin: '200px' }
+    )
+    observer.observe(el)
+    return () => observer.disconnect()
+  }, [])
+
+  return (
+    <div ref={ref} style={visible ? undefined : { minHeight: 120 }}>
+      {visible ? children : null}
+    </div>
+  )
 }
 
 export default function AdminClient({ signups: initial }: { signups: Signup[] }) {
@@ -100,8 +146,9 @@ export default function AdminClient({ signups: initial }: { signups: Signup[] })
 
           {/* Image */}
           <img
-            src={lightbox.photos[lightbox.index]}
+            src={lightboxUrl(lightbox.photos[lightbox.index])}
             alt=""
+            decoding="async"
             className="max-h-[80vh] max-w-[90vw] rounded-2xl object-contain"
           />
 
@@ -134,7 +181,7 @@ export default function AdminClient({ signups: initial }: { signups: Signup[] })
                     i === lightbox.index ? 'border-white' : 'border-transparent opacity-50 hover:opacity-80'
                   }`}
                 >
-                  <img src={p} alt="" className="h-full w-full object-cover" />
+                  <img src={miniThumbUrl(p)} alt="" decoding="async" className="h-full w-full object-cover" />
                 </button>
               ))}
             </div>
@@ -159,60 +206,66 @@ export default function AdminClient({ signups: initial }: { signups: Signup[] })
                 const link = contactLink(s)
                 const photos = getPhotos(s)
                 return (
-                  <div key={s.id} className="rounded-2xl border border-white/[0.08] bg-white/[0.04] p-5 sm:p-6 transition hover:bg-white/[0.06]">
-                    {/* Header */}
-                    <div className="flex items-start justify-between mb-3">
-                      <div>
-                        {link ? (
-                          <a href={link} target="_blank" rel="noopener noreferrer" className="text-base font-semibold text-white hover:text-emerald-400 transition">
-                            {s.contact}
-                          </a>
-                        ) : (
-                          <span className="text-base font-semibold text-white">{s.contact}</span>
-                        )}
-                        <span className="ml-2 rounded-full bg-white/10 px-2.5 py-0.5 text-xs font-medium text-white/50 align-middle">
-                          {s.contact_method === 'whatsapp' ? 'WhatsApp' : 'IG'}
-                        </span>
+                  <LazyCard key={s.id}>
+                    <div className="rounded-2xl border border-white/[0.08] bg-white/[0.04] p-5 sm:p-6 transition hover:bg-white/[0.06]">
+                      {/* Header */}
+                      <div className="flex items-start justify-between mb-3">
+                        <div>
+                          {link ? (
+                            <a href={link} target="_blank" rel="noopener noreferrer" className="text-base font-semibold text-white hover:text-emerald-400 transition">
+                              {s.contact}
+                            </a>
+                          ) : (
+                            <span className="text-base font-semibold text-white">{s.contact}</span>
+                          )}
+                          <span className="ml-2 rounded-full bg-white/10 px-2.5 py-0.5 text-xs font-medium text-white/50 align-middle">
+                            {s.contact_method === 'whatsapp' ? 'WhatsApp' : 'IG'}
+                          </span>
+                        </div>
+                        <button onClick={() => softDelete(s.id)} className="text-sm text-white/15 hover:text-red-400 transition ml-4">
+                          Remove
+                        </button>
                       </div>
-                      <button onClick={() => softDelete(s.id)} className="text-sm text-white/15 hover:text-red-400 transition ml-4">
-                        Remove
-                      </button>
-                    </div>
 
-                    {/* Meta */}
-                    <div className="flex flex-wrap items-center gap-x-5 gap-y-1 text-sm text-white/50 mb-3">
-                      <span>{s.city}</span>
-                      {s.created_at && (
-                        <span>{new Date(s.created_at).toLocaleDateString('en-US', { month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' })}</span>
+                      {/* Meta */}
+                      <div className="flex flex-wrap items-center gap-x-5 gap-y-1 text-sm text-white/50 mb-3">
+                        <span>{s.city}</span>
+                        {s.created_at && (
+                          <span>{new Date(s.created_at).toLocaleDateString('en-US', { month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' })}</span>
+                        )}
+                      </div>
+
+                      {/* Moodboard */}
+                      {s.moodboard && s.moodboard.length > 0 && (
+                        <div className="flex flex-wrap gap-1.5 mb-3">
+                          {s.moodboard.map(m => (
+                            <span key={m} className="rounded-full border border-emerald-400/20 bg-emerald-400/10 px-3 py-1 text-xs font-medium text-emerald-400/70">
+                              {m}
+                            </span>
+                          ))}
+                        </div>
+                      )}
+
+                      {/* Photos */}
+                      {photos.length > 0 && (
+                        <div className="flex gap-2 overflow-x-auto mt-2 pb-1">
+                          {photos.map((p, i) => (
+                            <img
+                              key={i}
+                              src={thumbUrl(p)}
+                              alt=""
+                              width={128}
+                              height={128}
+                              loading="lazy"
+                              decoding="async"
+                              className="h-32 w-32 flex-shrink-0 cursor-pointer rounded-xl border border-white/10 object-cover transition hover:border-white/30 hover:brightness-110"
+                              onClick={() => openLightbox(photos, i)}
+                            />
+                          ))}
+                        </div>
                       )}
                     </div>
-
-                    {/* Moodboard */}
-                    {s.moodboard && s.moodboard.length > 0 && (
-                      <div className="flex flex-wrap gap-1.5 mb-3">
-                        {s.moodboard.map(m => (
-                          <span key={m} className="rounded-full border border-emerald-400/20 bg-emerald-400/10 px-3 py-1 text-xs font-medium text-emerald-400/70">
-                            {m}
-                          </span>
-                        ))}
-                      </div>
-                    )}
-
-                    {/* Photos */}
-                    {photos.length > 0 && (
-                      <div className="flex gap-2 overflow-x-auto mt-2 pb-1">
-                        {photos.map((p, i) => (
-                          <img
-                            key={i}
-                            src={p}
-                            alt=""
-                            className="h-32 w-32 flex-shrink-0 cursor-pointer rounded-xl border border-white/10 object-cover transition hover:border-white/30 hover:brightness-110"
-                            onClick={() => openLightbox(photos, i)}
-                          />
-                        ))}
-                      </div>
-                    )}
-                  </div>
+                  </LazyCard>
                 )
               })}
             </div>
