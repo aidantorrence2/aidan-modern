@@ -53,7 +53,7 @@ export default function SignUpForm() {
   const [customConcept, setCustomConcept] = useState('')
   const [contactMethod, setContactMethod] = useState<'whatsapp' | 'instagram'>('instagram')
   const [contact, setContact] = useState('')
-  const [photos, setPhotos] = useState<{ preview: string; base64: string | null }[]>([])
+  const [photos, setPhotos] = useState<string[]>([])
   const [submitting, setSubmitting] = useState(false)
   const fileRef = useRef<HTMLInputElement>(null)
   const cityRef = useRef<HTMLInputElement>(null)
@@ -74,18 +74,13 @@ export default function SignUpForm() {
         setState({ ok: false, error: 'Each photo must be under 20 MB.' })
         continue
       }
-      // Add placeholder immediately so user sees feedback
-      setPhotos(prev => [...prev, { preview: '', base64: null }])
-      const idx = photos.length
-
-      // Read and resize, then update preview + base64 together
       const raw = await new Promise<string>((resolve) => {
         const reader = new FileReader()
         reader.onload = () => resolve(reader.result as string)
         reader.readAsDataURL(file)
       })
       const resized = await resizeImage(raw, 300 * 1024)
-      setPhotos(prev => prev.map((p, i) => i === idx ? { preview: resized, base64: resized } : p))
+      setPhotos(prev => [...prev, resized])
     }
     if (fileRef.current) fileRef.current.value = ''
   }
@@ -126,11 +121,6 @@ export default function SignUpForm() {
       photoRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' })
       return
     }
-    const stillProcessing = photos.some(p => !p.base64)
-    if (stillProcessing) {
-      setState({ ok: false, error: 'Photos are still processing, please wait a moment.' })
-      return
-    }
 
     setSubmitting(true)
     setState(null)
@@ -144,7 +134,7 @@ export default function SignUpForm() {
           contactMethod,
           contact: contact.trim(),
           moodboard: allMoodboard.length > 0 ? allMoodboard : null,
-          photos: photos.length > 0 ? photos.map(p => p.base64) : null
+          photos: photos.length > 0 ? photos : null
         })
       })
       if (!res.ok) throw new Error('Failed to submit')
@@ -348,11 +338,7 @@ export default function SignUpForm() {
         <div className="flex flex-wrap gap-2 mt-1">
           {photos.map((p, i) => (
             <div key={i} className="relative">
-              {p.preview ? (
-                <img src={p.preview} alt="Preview" className="h-24 w-24 rounded-xl border border-white/10 object-cover" />
-              ) : (
-                <div className="h-24 w-24 rounded-xl border border-white/10 bg-white/5 animate-pulse" />
-              )}
+              <img src={p} alt="Preview" className="h-24 w-24 rounded-xl border border-white/10 object-cover" />
               <button
                 type="button"
                 onClick={() => removePhoto(i)}
