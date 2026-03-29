@@ -3,7 +3,7 @@ import { NextResponse } from 'next/server'
 
 export const dynamic = 'force-dynamic'
 
-export async function GET() {
+export async function GET(request: Request) {
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL
   const key = process.env.SUPABASE_SERVICE_ROLE_KEY
 
@@ -12,12 +12,25 @@ export async function GET() {
   }
 
   const supabase = createClient(url, key)
+  const { searchParams } = new URL(request.url)
+  const deleted = searchParams.get('deleted') === 'true'
+  const contact = searchParams.get('contact')
 
-  const { data, error } = await supabase
+  let query = supabase
     .from('signups')
-    .select('id, city, contact_method, contact, moodboard, photo_urls, created_at')
-    .is('deleted_at', null)
-    .order('created_at', { ascending: false })
+    .select('id, city, contact_method, contact, moodboard, photo_urls, created_at, deleted_at')
+
+  if (deleted) {
+    query = query.not('deleted_at', 'is', null)
+  } else {
+    query = query.is('deleted_at', null)
+  }
+
+  if (contact) {
+    query = query.ilike('contact', `%${contact}%`)
+  }
+
+  const { data, error } = await query.order('created_at', { ascending: false })
 
   if (error) {
     return NextResponse.json({ error: error.message }, { status: 500 })
