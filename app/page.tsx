@@ -295,7 +295,7 @@ export default function Page() {
 
       {/* Fixed nav */}
       <div className="v17-fixed-nav">
-        <a href="#inquiry">Inquire</a>
+        <a href="/sign-up">Inquire</a>
         <div style={{ textAlign: 'right', pointerEvents: 'none' }}>
           <p style={{
             color: 'rgba(255,255,255,0.7)',
@@ -361,37 +361,6 @@ export default function Page() {
         </div>
       ))}
 
-      {/* CTA */}
-      <div className="v17-cta-section" id="inquiry">
-        <h3 style={{
-          color: '#fff', fontSize: '22px', fontWeight: 300,
-          letterSpacing: '0.06em', marginBottom: '24px',
-          fontFamily: 'Georgia, serif',
-        }}>
-          Get in Touch
-        </h3>
-        <form
-          onSubmit={(e) => {
-            e.preventDefault();
-            window.location.href = 'mailto:aidan@aidantorrence.com';
-          }}
-          style={{ width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center' }}
-        >
-          <input type="text" placeholder="Name" required />
-          <input type="email" placeholder="Email" required />
-          <input type="text" placeholder="Instagram" />
-          <textarea placeholder="Tell me about your project..." />
-          <button type="submit" className="v17-submit">Send Inquiry</button>
-        </form>
-        <div style={{ marginTop: '36px', textAlign: 'center' }}>
-          <p style={{ color: 'rgba(255,255,255,0.4)', fontSize: '13px', margin: '4px 0', fontFamily: 'system-ui, sans-serif' }}>
-            aidan@aidantorrence.com
-          </p>
-          <p style={{ color: 'rgba(255,255,255,0.4)', fontSize: '13px', margin: '4px 0', fontFamily: 'system-ui, sans-serif' }}>
-            WhatsApp: +49 175 8966210 · @madebyaidan
-          </p>
-        </div>
-      </div>
     </>
   );
 }
