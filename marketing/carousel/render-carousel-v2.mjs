@@ -5,7 +5,7 @@ import fs from 'fs'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const OUT = path.join(__dirname, 'output-v2')
-const IMG_DIR = '/Users/aidantorrence/Documents/aidan-modern/public/images/large'
+const IMG_DIR = path.resolve(__dirname, '../../public/images/large')
 
 fs.mkdirSync(OUT, { recursive: true })
 
