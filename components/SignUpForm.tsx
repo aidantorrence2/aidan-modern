@@ -227,7 +227,15 @@ export default function SignUpForm() {
   // ── Form: single page ──
   return (
     <div>
-    <h1 className="font-display text-3xl font-semibold leading-tight text-white sm:text-4xl">
+    <div className="mb-4 flex justify-end">
+      <a
+        href="/"
+        className="rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-xs font-semibold text-white/80 transition hover:border-white/30 hover:text-white"
+      >
+        My Works
+      </a>
+    </div>
+    <h1 className="font-display whitespace-nowrap text-2xl font-semibold leading-tight text-white sm:text-3xl">
       Design your photo shoot
     </h1>
     <p className="mt-3 text-base text-white/50">
@@ -248,14 +256,14 @@ export default function SignUpForm() {
           value={city}
           onChange={e => { setCity(e.target.value); clearStatus() }}
           className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-white/30 outline-none transition focus:border-emerald-400 focus:ring-2 focus:ring-emerald-400/30"
-          placeholder="e.g. Manila, Antipolo, Quezon City"
+          placeholder="e.g. Tokyo, New York City"
         />
       </div>
 
       {/* Moodboards */}
       <fieldset ref={moodboardRef} className="space-y-2">
         <legend className="text-sm font-medium text-white/80">Choose a shoot concept (or suggest your own) <span className="text-xs text-red-400/70">*</span></legend>
-        <div className="grid grid-cols-1 gap-4 max-w-[260px] mx-auto">
+        <div className="grid grid-cols-3 gap-2">
           {moodboardOptions.map(option => (
             <button
               key={option.id}
