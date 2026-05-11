@@ -72,6 +72,15 @@ function LazyCard({ children }: { children: React.ReactNode }) {
 export default function AdminClient({ signups: initial }: { signups: Signup[] }) {
   const [signups, setSignups] = useState(initial)
   const [lightbox, setLightbox] = useState<{ photos: string[]; index: number } | null>(null)
+  const [query, setQuery] = useState('')
+
+  const normalizedQuery = query.trim().replace(/^@/, '').toLowerCase()
+  const filtered = normalizedQuery
+    ? signups.filter(s =>
+        s.contact_method === 'instagram' &&
+        s.contact.replace(/^@/, '').toLowerCase().includes(normalizedQuery)
+      )
+    : signups
 
   const closeLightbox = useCallback(() => {
     setLightbox(null)
@@ -195,18 +204,30 @@ export default function AdminClient({ signups: initial }: { signups: Signup[] })
 
       <section className="min-h-screen bg-[#0a0a0a] py-10 sm:py-14">
         <div className="mx-auto max-w-3xl px-5">
-          <div className="flex items-center justify-between mb-8">
+          <div className="flex items-center justify-between mb-6">
             <h1 className="text-3xl font-bold text-white">Sign-ups</h1>
             <span className="rounded-full bg-white/10 px-4 py-1.5 text-sm font-medium text-white/60">
-              {signups.length} total
+              {normalizedQuery ? `${filtered.length} / ${signups.length}` : `${signups.length} total`}
             </span>
+          </div>
+
+          <div className="mb-6">
+            <input
+              type="text"
+              value={query}
+              onChange={e => setQuery(e.target.value)}
+              placeholder="Search by IG username…"
+              className="w-full rounded-xl border border-white/10 bg-white/[0.04] px-4 py-2.5 text-sm text-white placeholder:text-white/30 focus:border-emerald-400/40 focus:outline-none focus:ring-1 focus:ring-emerald-400/20"
+            />
           </div>
 
           {signups.length === 0 ? (
             <p className="mt-10 text-center text-lg text-white/40">No sign-ups yet.</p>
+          ) : filtered.length === 0 ? (
+            <p className="mt-10 text-center text-lg text-white/40">No matches for &ldquo;{query}&rdquo;.</p>
           ) : (
             <div className="space-y-4">
-              {signups.map(s => {
+              {filtered.map(s => {
                 const link = contactLink(s)
                 const photos = getPhotos(s)
                 return (
