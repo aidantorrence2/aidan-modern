@@ -34,7 +34,9 @@ function resizeImage(dataUrl: string, maxBytes: number): Promise<string> {
   })
 }
 
-const moodboardOptions = [
+type MoodboardOption = { id: string; img: string }
+
+const defaultMoodboardOptions: MoodboardOption[] = [
   { id: 'Street', img: '/images/moodboards/street-editorial.jpg' },
   { id: 'Nature', img: '/images/moodboards/nature-editorial.jpg' },
   { id: 'Indoor/Studio', img: '/images/moodboards/indoor.jpg' },
@@ -46,7 +48,17 @@ const shootDetails: Record<string, { duration: string; what: string }> = {
   'Indoor/Studio': { duration: '1–2 hours', what: 'Cafés, studios, or homes. Cozy, intimate vibes.' },
 }
 
-export default function SignUpForm() {
+type SignUpFormProps = {
+  moodboardOptions?: MoodboardOption[]
+  cityPlaceholder?: string
+  successVariant?: 'default' | 'next-steps'
+}
+
+export default function SignUpForm({
+  moodboardOptions = defaultMoodboardOptions,
+  cityPlaceholder = 'e.g. Tokyo, New York City',
+  successVariant = 'default',
+}: SignUpFormProps = {}) {
   const [state, setState] = useState<State | null>(null)
   const [city, setCity] = useState('')
   const [moodboard, setMoodboard] = useState<string[]>([])
@@ -157,6 +169,65 @@ export default function SignUpForm() {
   if (state?.ok) {
     const allMoodboard = [...moodboard, ...(customConcept.trim() ? [customConcept.trim()] : [])]
     const selectedImg = moodboardOptions.find(o => moodboard.includes(o.id))?.img
+    const whatToExpect = [
+      { icon: '📸', text: 'Edited photos ready to post' },
+      { icon: '🎯', text: 'I direct everything — no experience needed' },
+      { icon: '👗', text: 'Bring 2–3 fashion outfits' },
+      { icon: '✨', text: 'Natural hair & makeup' },
+    ]
+
+    if (successVariant === 'next-steps') {
+      return (
+        <div className="mt-6 space-y-0 overflow-hidden rounded-2xl border border-white/[0.08]" style={{ background: 'linear-gradient(165deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.02) 100%)' }}>
+          {selectedImg ? (
+            <div className="relative h-48 overflow-hidden">
+              <NextImage src={selectedImg} alt="" width={400} height={192} className="w-full h-full object-cover" style={{ filter: 'brightness(0.6) saturate(1.2)' }} />
+              <div className="absolute inset-0" style={{ background: 'linear-gradient(180deg, transparent 30%, rgba(10,10,10,0.95) 100%)' }} />
+              <div className="absolute bottom-4 left-5 right-5">
+                <p className="font-display text-2xl font-semibold text-white" style={{ fontFamily: "Georgia, serif", fontStyle: 'italic' }}>Thanks for signing up</p>
+              </div>
+            </div>
+          ) : (
+            <div className="px-6 pt-6 pb-2">
+              <p className="font-display text-2xl font-semibold text-white" style={{ fontFamily: "Georgia, serif", fontStyle: 'italic' }}>Thanks for signing up</p>
+            </div>
+          )}
+
+          <div className="px-6 pt-4 pb-6 space-y-5">
+            <div className="space-y-2">
+              <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-white/30">Next Steps</p>
+              <p className="text-sm text-white/70">
+                Please reach out to{' '}
+                <a
+                  href="https://instagram.com/madebyaidan"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="font-medium text-emerald-400 hover:text-emerald-300"
+                >
+                  @madebyaidan
+                </a>{' '}
+                with your concept preference (or just say hi).
+              </p>
+            </div>
+
+            <div className="h-px bg-white/[0.06]" />
+
+            <div className="space-y-3">
+              <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-white/30">What to expect</p>
+              <div className="space-y-2.5">
+                {whatToExpect.map((item, i) => (
+                  <div key={i} className="flex items-center gap-3">
+                    <span className="text-base">{item.icon}</span>
+                    <span className="text-sm text-white/70">{item.text}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      )
+    }
+
     return (
       <div className="mt-6 space-y-0 overflow-hidden rounded-2xl border border-white/[0.08]" style={{ background: 'linear-gradient(165deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.02) 100%)' }}>
         {/* Hero image from selected moodboard */}
@@ -206,12 +277,7 @@ export default function SignUpForm() {
           <div className="space-y-3">
             <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-white/30">What to expect</p>
             <div className="space-y-2.5">
-              {[
-                { icon: '📸', text: 'Edited photos ready to post' },
-                { icon: '🎯', text: 'I direct everything — no experience needed' },
-                { icon: '👗', text: 'Bring 2–3 fashion outfits' },
-                { icon: '✨', text: 'Natural hair & makeup' },
-              ].map((item, i) => (
+              {whatToExpect.map((item, i) => (
                 <div key={i} className="flex items-center gap-3">
                   <span className="text-base">{item.icon}</span>
                   <span className="text-sm text-white/70">{item.text}</span>
@@ -256,7 +322,7 @@ export default function SignUpForm() {
           value={city}
           onChange={e => { setCity(e.target.value); clearStatus() }}
           className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-white/30 outline-none transition focus:border-emerald-400 focus:ring-2 focus:ring-emerald-400/30"
-          placeholder="e.g. Tokyo, New York City"
+          placeholder={cityPlaceholder}
         />
       </div>
 
