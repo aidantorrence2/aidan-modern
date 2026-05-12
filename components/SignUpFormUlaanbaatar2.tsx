@@ -34,10 +34,10 @@ function resizeImage(dataUrl: string, maxBytes: number): Promise<string> {
 }
 
 const locationOptions = [
-  { id: 'Ger district', desc: 'Inside a ger or on the streets' },
-  { id: 'Old streets & architecture', desc: 'Historic facades, doorways, alleys' },
-  { id: 'Nature', desc: 'Mountains, steppe, open landscapes' },
-  { id: 'Indoor', desc: 'Intimate, sexy vibes' },
+  { id: 'Indoor', desc: 'Intimate, sexy vibes', img: '/images/moodboards/ub-indoor.jpg' },
+  { id: 'Ger district', desc: 'Inside a ger or on the streets', img: '/images/moodboards/ub-ger.png' },
+  { id: 'Old streets & architecture', desc: 'Historic facades, doorways, alleys', img: '/images/moodboards/ub-old-streets.png' },
+  { id: 'Nature', desc: 'Mountains, steppe, open landscapes', img: '/images/moodboards/ub-nature.png' },
   { id: 'Other', desc: "Let me know what you're thinking!" },
 ]
 
@@ -250,14 +250,29 @@ export default function SignUpFormUlaanbaatar2() {
                 key={opt.id}
                 type="button"
                 onClick={() => { setLocation(opt.id); clearStatus() }}
-                className={`group rounded-xl border px-4 py-3 text-left transition-all ${
+                className={`relative overflow-hidden rounded-xl border-2 text-left transition-all ${
                   location === opt.id
-                    ? 'border-emerald-400 bg-emerald-400/10 ring-2 ring-emerald-400/30'
-                    : 'border-white/10 bg-white/5 hover:border-white/25'
+                    ? 'border-emerald-400 ring-2 ring-emerald-400/30'
+                    : 'border-white/10 hover:border-white/25'
                 }`}
               >
-                <div className={`text-sm font-semibold ${location === opt.id ? 'text-emerald-300' : 'text-white'}`}>{opt.id}</div>
-                <div className="mt-0.5 text-xs text-white/40">{opt.desc}</div>
+                {'img' in opt && opt.img && (
+                  <NextImage src={opt.img} alt={opt.id} width={400} height={300} className="w-full h-40 object-cover" unoptimized />
+                )}
+                <div className={`px-3 py-2 ${!('img' in opt && opt.img) ? 'py-3 px-4' : ''}`}>
+                  <div className={`text-sm font-semibold ${location === opt.id ? 'text-emerald-300' : 'text-white'}`}>{opt.id}</div>
+                  <div className="mt-0.5 text-xs text-white/40">{opt.desc}</div>
+                </div>
+                {location === opt.id && (
+                  <div className="absolute inset-0 bg-emerald-400/15" />
+                )}
+                {location === opt.id && (
+                  <div className="absolute right-2 top-2 flex h-6 w-6 items-center justify-center rounded-full bg-emerald-500">
+                    <svg className="h-3.5 w-3.5 text-white" viewBox="0 0 20 20" fill="currentColor">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                )}
               </button>
             ))}
           </div>
