@@ -50,19 +50,25 @@ const shootDetails: Record<string, { duration: string; what: string }> = {
 
 type SignUpFormProps = {
   moodboardOptions?: MoodboardOption[]
+  outfitOptions?: MoodboardOption[]
   cityPlaceholder?: string
   successVariant?: 'default' | 'next-steps'
+  showRecommendations?: boolean
 }
 
 export default function SignUpForm({
   moodboardOptions = defaultMoodboardOptions,
+  outfitOptions,
   cityPlaceholder = 'e.g. Tokyo, New York City',
   successVariant = 'default',
+  showRecommendations = false,
 }: SignUpFormProps = {}) {
   const [state, setState] = useState<State | null>(null)
   const [city, setCity] = useState('')
   const [moodboard, setMoodboard] = useState<string[]>([])
+  const [outfits, setOutfits] = useState<string[]>([])
   const [customConcept, setCustomConcept] = useState('')
+  const [recommendations, setRecommendations] = useState('')
   const [contactMethod, setContactMethod] = useState<'whatsapp' | 'instagram'>('instagram')
   const [contact, setContact] = useState('')
   const [photos, setPhotos] = useState<string[]>([])
@@ -117,7 +123,7 @@ export default function SignUpForm({
       cityRef.current?.focus()
       return
     }
-    if (moodboard.length === 0 && !customConcept.trim()) {
+    if (moodboard.length === 0 && outfits.length === 0 && !customConcept.trim() && !recommendations.trim()) {
       setState({ ok: false, error: 'Please select at least one shoot concept or suggest your own.' })
       moodboardRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' })
       return
@@ -137,7 +143,12 @@ export default function SignUpForm({
     setSubmitting(true)
     setState(null)
     try {
-      const allMoodboard = [...moodboard, ...(customConcept.trim() ? [customConcept.trim()] : [])]
+      const allMoodboard = [
+        ...moodboard.map(m => `theme: ${m}`),
+        ...outfits.map(o => `outfit: ${o}`),
+        ...(customConcept.trim() ? [customConcept.trim()] : []),
+        ...(recommendations.trim() ? [`recommendations: ${recommendations.trim()}`] : []),
+      ]
       const res = await fetch('/api/sign-up', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -167,8 +178,8 @@ export default function SignUpForm({
 
   // ── Success: info sheet ──
   if (state?.ok) {
-    const allMoodboard = [...moodboard, ...(customConcept.trim() ? [customConcept.trim()] : [])]
-    const selectedImg = moodboardOptions.find(o => moodboard.includes(o.id))?.img
+    const allMoodboard = [...moodboard, ...outfits, ...(customConcept.trim() ? [customConcept.trim()] : [])]
+    const selectedImg = moodboardOptions.find(o => moodboard.includes(o.id))?.img || outfitOptions?.find(o => outfits.includes(o.id))?.img
     const whatToExpect = [
       { icon: '📸', text: 'Edited photos ready to post' },
       { icon: '🎯', text: 'I direct everything — no experience needed' },
@@ -368,6 +379,59 @@ export default function SignUpForm({
           placeholder="Or suggest your own concept..."
         />
       </fieldset>
+
+      {/* Outfits */}
+      {outfitOptions && outfitOptions.length > 0 && (
+        <fieldset className="space-y-2">
+          <legend className="text-sm font-medium text-white/80">Choose your outfit</legend>
+          <div className="grid grid-cols-3 gap-2">
+            {outfitOptions.map(option => (
+              <button
+                key={option.id}
+                type="button"
+                onClick={() => {
+                  setOutfits(prev =>
+                    prev.includes(option.id) ? prev.filter(o => o !== option.id) : [...prev, option.id]
+                  )
+                  clearStatus()
+                }}
+                className={`relative overflow-hidden rounded-xl border-2 transition-all ${
+                  outfits.includes(option.id)
+                    ? 'border-emerald-400 ring-2 ring-emerald-400/30'
+                    : 'border-white/10 hover:border-white/25'
+                }`}
+              >
+                <div className="px-2 py-1.5 text-left font-display text-xs font-semibold tracking-wide text-white">{option.id}</div>
+                <NextImage src={option.img} alt={option.id} width={260} height={390} className="w-full object-cover" unoptimized />
+                {outfits.includes(option.id) && (
+                  <div className="absolute inset-0 bg-emerald-400/20" />
+                )}
+                {outfits.includes(option.id) && (
+                  <div className="absolute right-2 top-2 flex h-6 w-6 items-center justify-center rounded-full bg-emerald-500">
+                    <svg className="h-3.5 w-3.5 text-white" viewBox="0 0 20 20" fill="currentColor">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                )}
+              </button>
+            ))}
+          </div>
+        </fieldset>
+      )}
+
+      {/* Recommendations */}
+      {showRecommendations && (
+        <div className="space-y-1.5">
+          <label className="text-sm font-medium text-white/80">Any recommendations?</label>
+          <textarea
+            value={recommendations}
+            onChange={e => { setRecommendations(e.target.value); clearStatus() }}
+            rows={3}
+            className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-white/25 outline-none transition focus:border-emerald-400 focus:ring-2 focus:ring-emerald-400/30 resize-none"
+            placeholder="Locations you love, outfit ideas, anything you want me to know..."
+          />
+        </div>
+      )}
 
       {/* Contact method */}
       <fieldset className="space-y-2">

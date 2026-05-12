@@ -1,16 +1,16 @@
-import SignUpForm from '@/components/SignUpForm'
+import SignUpFormUlaanbaatar2 from '@/components/SignUpFormUlaanbaatar2'
 
 export const metadata = {
-  title: 'Design Your Photo Shoot — Free',
+  title: 'Ulaanbaatar Photo Shoot — Dramatic, Sexy, Editorial',
   description:
-    'Design your free photo shoot. Pick your vibe, choose a concept, and sign up.'
+    'Not for casual photos. For dramatic, sexy, editorial photos in Ulaanbaatar — gers, old streets, standout wardrobe.'
 }
 
-export default function SignUpPage() {
+export default function SignUpUlaanbaatar2Page() {
   return (
     <section className="min-h-screen bg-[#0a0a0a] py-12 sm:py-20">
       <div className="mx-auto max-w-md px-5">
-        <SignUpForm />
+        <SignUpFormUlaanbaatar2 />
       </div>
     </section>
   )

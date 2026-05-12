@@ -34,25 +34,18 @@ function resizeImage(dataUrl: string, maxBytes: number): Promise<string> {
 }
 
 const locationOptions = [
-  { id: 'Inside a ger', desc: 'Warm light, intimate, textural' },
-  { id: 'Ger neighborhood', desc: 'Outdoor, lived-in, real Ulaanbaatar' },
+  { id: 'Ger district', desc: 'Inside a ger or on the streets' },
   { id: 'Old streets & architecture', desc: 'Historic facades, doorways, alleys' },
-  { id: 'Surprise me', desc: "Let's scout something together" },
+  { id: 'Nature', desc: 'Mountains, steppe, open landscapes' },
+  { id: 'Indoor', desc: 'Intimate, sexy vibes' },
+  { id: 'Other', desc: "Let me know what you're thinking!" },
 ]
 
 const wardrobeOptions = [
-  { id: 'Dramatic & standout', desc: 'Bold silhouettes, statement pieces' },
+  { id: 'Dramatic & standout', desc: 'Eye-catching, statement pieces' },
   { id: 'Intimate & personal', desc: 'Soft, close, your most you' },
-  { id: 'Both — give me range', desc: 'Two looks, two moods' },
-  { id: 'Need direction', desc: "I'll help you build it" },
-]
-
-const dramaLevels = [
-  { value: 1, label: 'Quiet' },
-  { value: 2, label: 'Soft' },
-  { value: 3, label: 'Balanced' },
-  { value: 4, label: 'Bold' },
-  { value: 5, label: 'Max drama' },
+  { id: 'Traditional', desc: 'Deel or other Mongolian dress' },
+  { id: "A mix, or let's discuss", desc: "We'll figure it out together" },
 ]
 
 const heroImage = '/images/moodboards/ulaanbaatar-street.jpg'
@@ -62,7 +55,6 @@ export default function SignUpFormUlaanbaatar2() {
   const [city, setCity] = useState('Ulaanbaatar')
   const [location, setLocation] = useState<string>('')
   const [wardrobe, setWardrobe] = useState<string>('')
-  const [drama, setDrama] = useState<number>(0)
   const [notes, setNotes] = useState('')
   const [contactMethod, setContactMethod] = useState<'whatsapp' | 'instagram'>('instagram')
   const [contact, setContact] = useState('')
@@ -139,7 +131,6 @@ export default function SignUpFormUlaanbaatar2() {
       const moodboard = [
         `Location: ${location}`,
         ...(wardrobe ? [`Wardrobe: ${wardrobe}`] : []),
-        ...(drama ? [`Drama: ${drama}/5 (${dramaLevels.find(d => d.value === drama)?.label})`] : []),
         ...(notes.trim() ? [`Notes: ${notes.trim()}`] : []),
       ]
       const res = await fetch('/api/sign-up', {
@@ -186,6 +177,16 @@ export default function SignUpFormUlaanbaatar2() {
               with your concept preference (or just say hi).
             </p>
           </div>
+          <div className="grid grid-cols-2 gap-4">
+            <div className="space-y-1">
+              <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-white/30">Duration</p>
+              <p className="text-sm font-medium text-white">1–2 hours</p>
+            </div>
+            <div className="space-y-1">
+              <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-white/30">Cost</p>
+              <p className="text-sm font-medium text-emerald-400">Free</p>
+            </div>
+          </div>
           <div className="h-px bg-white/[0.06]" />
           <div className="space-y-3">
             <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-white/30">What to expect</p>
@@ -222,24 +223,12 @@ export default function SignUpFormUlaanbaatar2() {
 
       {/* Manifesto */}
       <div className="space-y-4">
-        <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-emerald-400/80">Ulaanbaatar · By invitation of vibe</p>
-        <h1 className="font-display text-3xl font-semibold leading-[1.05] text-white sm:text-4xl" style={{ fontFamily: 'Georgia, serif' }}>
-          Not for casual photos.
+        <h1 className="font-display whitespace-nowrap text-2xl font-semibold leading-[1.05] text-white sm:text-3xl" style={{ fontFamily: 'Georgia, serif' }}>
+          Ulaanbaatar photo shoot
         </h1>
-        <p className="text-base leading-relaxed text-white/70">
-          If you want safe, boring, or just-fine photos — this is <span className="text-white/40">not</span> for you.
-          <br />
-          If you want <span className="text-white">dramatic, sexy, editorial</span> photos — this is for you.
+        <p className="mt-3 text-base text-white/50">
+          Please fill out the form below and I&apos;ll send you all the details &mdash; timing, location, what to wear, and next steps.
         </p>
-
-        <div className="rounded-2xl border border-white/[0.08] bg-white/[0.03] p-5 space-y-3">
-          <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-white/40">A note from Aidan</p>
-          <p className="text-sm leading-relaxed text-white/70" style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic' }}>
-            Here&apos;s what I&apos;m dreaming about: shooting inside a ger, or just out in a ger neighborhood. I love old-fashioned
-            architecture and streets. And for wardrobe — either really dramatic, standout pieces, or something intimate and
-            deeply personal. Either direction works. Just not the middle.
-          </p>
-        </div>
       </div>
 
       <form onSubmit={onSubmit} className="mt-8 space-y-7">
@@ -253,7 +242,7 @@ export default function SignUpFormUlaanbaatar2() {
         <fieldset ref={locationRef} className="space-y-2.5">
           <div className="flex items-center gap-2">
             <span className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-500/20 text-[10px] font-bold text-emerald-400">1</span>
-            <legend className="text-sm font-medium text-white/80">Where should we shoot?</legend>
+            <legend className="text-sm font-medium text-white/80">Where do you want to shoot?</legend>
           </div>
           <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
             {locationOptions.map(opt => (
@@ -279,7 +268,7 @@ export default function SignUpFormUlaanbaatar2() {
           <fieldset className="space-y-2.5">
             <div className="flex items-center gap-2">
               <span className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-500/20 text-[10px] font-bold text-emerald-400">2</span>
-              <legend className="text-sm font-medium text-white/80">Your wardrobe energy?</legend>
+              <legend className="text-sm font-medium text-white/80">What do you want to wear?</legend>
             </div>
             <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
               {wardrobeOptions.map(opt => (
@@ -301,44 +290,12 @@ export default function SignUpFormUlaanbaatar2() {
           </fieldset>
         )}
 
-        {/* Step 3: Drama level */}
-        {wardrobe && (
-          <fieldset className="space-y-2.5">
-            <div className="flex items-center gap-2">
-              <span className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-500/20 text-[10px] font-bold text-emerald-400">3</span>
-              <legend className="text-sm font-medium text-white/80">How dramatic do you want it?</legend>
-            </div>
-            <div className="flex gap-1.5">
-              {dramaLevels.map(d => (
-                <button
-                  key={d.value}
-                  type="button"
-                  onClick={() => { setDrama(d.value); clearStatus() }}
-                  className={`flex-1 rounded-xl border py-3 text-center transition-all ${
-                    drama === d.value
-                      ? 'border-emerald-400 bg-emerald-400/10 ring-2 ring-emerald-400/30'
-                      : 'border-white/10 bg-white/5 hover:border-white/25'
-                  }`}
-                >
-                  <div className={`text-lg font-bold ${drama === d.value ? 'text-emerald-300' : 'text-white'}`}>{d.value}</div>
-                </button>
-              ))}
-            </div>
-            <div className="flex justify-between text-[10px] uppercase tracking-wider text-white/30">
-              <span>Quiet</span>
-              <span>Max drama</span>
-            </div>
-            {drama > 0 && (
-              <p className="text-xs text-emerald-400/80">{dramaLevels.find(d => d.value === drama)?.label}</p>
-            )}
-          </fieldset>
-        )}
 
-        {/* Step 4: Notes */}
-        {drama > 0 && (
+        {/* Step 3: Notes */}
+        {wardrobe && (
           <div className="space-y-2">
             <div className="flex items-center gap-2">
-              <span className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-500/20 text-[10px] font-bold text-emerald-400">4</span>
+              <span className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-500/20 text-[10px] font-bold text-emerald-400">3</span>
               <label className="text-sm font-medium text-white/80">Anything else? <span className="text-xs text-white/30">(optional)</span></label>
             </div>
             <textarea
@@ -352,9 +309,9 @@ export default function SignUpFormUlaanbaatar2() {
         )}
 
         {/* City */}
-        {drama > 0 && (
+        {wardrobe && (
           <div className="space-y-1.5">
-            <label className="text-sm font-medium text-white/80">City</label>
+            <label className="text-sm font-medium text-white/80">Location</label>
             <input
               ref={cityRef}
               value={city}
@@ -366,7 +323,7 @@ export default function SignUpFormUlaanbaatar2() {
         )}
 
         {/* Contact */}
-        {drama > 0 && (
+        {wardrobe && (
           <fieldset className="space-y-2">
             <legend className="text-sm font-medium text-white/80">How should I reach you?</legend>
             <div className="flex gap-2">
@@ -402,7 +359,7 @@ export default function SignUpFormUlaanbaatar2() {
         )}
 
         {/* Photo */}
-        {drama > 0 && (
+        {wardrobe && (
           <div ref={photoRef} className="space-y-1.5">
             <label className="text-sm font-medium text-white/80">
               What you look like <span className="text-xs text-red-400/70">*</span>
@@ -437,15 +394,17 @@ export default function SignUpFormUlaanbaatar2() {
         {/* Honeypot */}
         <input type="text" name="company" className="hidden" tabIndex={-1} autoComplete="off" />
 
-        {drama > 0 && (
-          <button
-            type="submit"
-            disabled={submitting}
-            className="w-full rounded-full bg-emerald-500 py-3.5 text-sm font-bold text-white shadow-lg shadow-emerald-500/25 transition hover:bg-emerald-400 disabled:opacity-50"
-            data-cta="sign-up-ulaanbaatar-2-submit"
-          >
-            {submitting ? 'Submitting…' : "I'm in — send details"}
-          </button>
+        {wardrobe && (
+          <>
+            <button
+              type="submit"
+              disabled={submitting}
+              className="w-full rounded-full bg-emerald-500 py-3.5 text-sm font-bold text-white shadow-lg shadow-emerald-500/25 transition hover:bg-emerald-400 disabled:opacity-50"
+              data-cta="sign-up-ulaanbaatar-2-submit"
+            >
+              {submitting ? 'Submitting…' : 'Sign Up & Get Details'}
+            </button>
+          </>
         )}
       </form>
     </div>
