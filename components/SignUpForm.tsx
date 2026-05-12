@@ -181,7 +181,7 @@ export default function SignUpForm({
         <div className="mt-6 space-y-0 overflow-hidden rounded-2xl border border-white/[0.08]" style={{ background: 'linear-gradient(165deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.02) 100%)' }}>
           {selectedImg ? (
             <div className="relative h-48 overflow-hidden">
-              <NextImage src={selectedImg} alt="" width={400} height={192} className="w-full h-full object-cover" style={{ filter: 'brightness(0.6) saturate(1.2)' }} />
+              <NextImage src={selectedImg} alt="" width={400} height={192} className="w-full h-full object-cover" unoptimized style={{ filter: 'brightness(0.6) saturate(1.2)' }} />
               <div className="absolute inset-0" style={{ background: 'linear-gradient(180deg, transparent 30%, rgba(10,10,10,0.95) 100%)' }} />
               <div className="absolute bottom-4 left-5 right-5">
                 <p className="font-display text-2xl font-semibold text-white" style={{ fontFamily: "Georgia, serif", fontStyle: 'italic' }}>Thanks for signing up</p>
@@ -347,7 +347,7 @@ export default function SignUpForm({
               }`}
             >
               <div className="px-2 py-1.5 text-left font-display text-sm font-semibold tracking-wide text-white">{option.id}</div>
-              <NextImage src={option.img} alt={option.id} width={260} height={390} className="w-full object-cover" placeholder="blur" blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAKAAoDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABgcI/8QAIhAAAQMEAgIDAAAAAAAAAAAAAQIDBAUGESEAEjFBUWFx/8QAFQEBAQAAAAAAAAAAAAAAAAAAAQP/xAAYEQEBAQEBAAAAAAAAAAAAAAABAgARA//aAAwDAQACEQMRAD8Am1v2/SqsqU9NqUiC00sBpLcVLhcBGSdqGABkePPOLU1aVOgVFifHkzFOwni8lC3QQdEEEjHvzxFqGQ5u3az//9k=" />
+              <NextImage src={option.img} alt={option.id} width={260} height={390} className="w-full object-cover" unoptimized placeholder="blur" blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAKAAoDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABgcI/8QAIhAAAQMEAgIDAAAAAAAAAAAAAQIDBAUGESEAEjFBUWFx/8QAFQEBAQAAAAAAAAAAAAAAAAAAAQP/xAAYEQEBAQEBAAAAAAAAAAAAAAABAgARA//aAAwDAQACEQMRAD8Am1v2/SqsqU9NqUiC00sBpLcVLhcBGSdqGABkePPOLU1aVOgVFifHkzFOwni8lC3QQdEEEjHvzxFqGQ5u3az//9k=" />
               {moodboard.includes(option.id) && (
                 <div className="absolute inset-0 bg-emerald-400/20" />
               )}
