@@ -34,17 +34,15 @@ function resizeImage(dataUrl: string, maxBytes: number): Promise<string> {
 }
 
 const locationOptions = [
-  { id: 'Marina Bay & skyline', desc: 'Iconic skyline, waterfront, futuristic' },
-  { id: 'Chinatown & heritage shophouses', desc: 'Colorful facades, lanterns, alleys' },
-  { id: 'Kampong Glam & Little India', desc: 'Murals, textiles, bold color' },
-  { id: 'Gardens & nature', desc: 'Gardens by the Bay, MacRitchie, lush green' },
-  { id: 'Indoor / studio', desc: 'Intimate, sexy, controlled lighting' },
+  { id: 'Old streets & architecture', desc: 'Historic facades, doorways, alleys' },
+  { id: 'Nature', desc: 'Lush greenery, gardens, open landscapes' },
+  { id: 'Indoor', desc: 'Intimate, controlled lighting' },
   { id: 'Other', desc: "Let me know what you're thinking!" },
 ]
 
 const wardrobeOptions = [
-  { id: 'Dramatic & standout', desc: 'Eye-catching, statement pieces' },
-  { id: 'Intimate & personal', desc: 'Soft, close, your most you' },
+  { id: 'High fashion, editorial', desc: 'Dramatic statement pieces' },
+  { id: 'Sultry & alluring', desc: 'Soft, intimate, magnetic' },
   { id: 'Cultural / traditional', desc: 'Cheongsam, saree, baju kurung, etc.' },
   { id: "A mix, or let's discuss", desc: "We'll figure it out together" },
 ]
