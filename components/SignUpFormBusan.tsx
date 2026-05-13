@@ -43,15 +43,15 @@ const locationOptions = [
 const wardrobeOptions = [
   { id: 'High fashion, editorial', desc: 'Dramatic statement pieces' },
   { id: 'Edgy, intimate, sexy', desc: 'Close, magnetic, your most you' },
-  { id: 'Cultural / traditional', desc: 'Cheongsam, saree, baju kurung, etc.' },
+  { id: 'Cultural / traditional', desc: 'Hanbok or other Korean dress' },
   { id: "A mix, or let's discuss", desc: "We'll figure it out together" },
 ]
 
 const heroImage = '/images/moodboards/editorial.jpg'
 
-export default function SignUpFormSingapore() {
+export default function SignUpFormBusan() {
   const [state, setState] = useState<State | null>(null)
-  const [city, setCity] = useState('Singapore')
+  const [city, setCity] = useState('Busan')
   const [location, setLocation] = useState<string>('')
   const [wardrobe, setWardrobe] = useState<string>('')
   const [notes, setNotes] = useState('')
@@ -147,7 +147,7 @@ export default function SignUpFormSingapore() {
       setState({ ok: true })
       if (typeof window !== 'undefined') {
         const fbq = (window as typeof window & { fbq?: (...args: unknown[]) => void }).fbq
-        if (typeof fbq === 'function') fbq('track', 'Lead', { source: 'sign-up-singapore' })
+        if (typeof fbq === 'function') fbq('track', 'Lead', { source: 'sign-up-busan' })
       }
     } catch {
       setState({ ok: false, error: 'Something went wrong. Try again or DM @madebyaidan on IG.' })
@@ -223,7 +223,7 @@ export default function SignUpFormSingapore() {
       {/* Manifesto */}
       <div className="space-y-4">
         <h1 className="font-display whitespace-nowrap text-2xl font-semibold leading-[1.05] text-white sm:text-3xl" style={{ fontFamily: 'Georgia, serif' }}>
-          Singapore photo shoot
+          Busan photo shoot
         </h1>
         <p className="mt-3 text-base text-white/50">
           Please fill out the form below and I&apos;ll send you all the details &mdash; timing, location, what to wear, and next steps.
@@ -317,7 +317,7 @@ export default function SignUpFormSingapore() {
             value={city}
             onChange={e => { setCity(e.target.value); clearStatus() }}
             className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-white/30 outline-none transition focus:border-emerald-400 focus:ring-2 focus:ring-emerald-400/30"
-            placeholder="e.g. Singapore"
+            placeholder="e.g. Busan"
           />
         </div>
 
@@ -348,7 +348,7 @@ export default function SignUpFormSingapore() {
             value={contact}
             onChange={e => { setContact(e.target.value); clearStatus() }}
             className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-white/30 outline-none transition focus:border-emerald-400 focus:ring-2 focus:ring-emerald-400/30"
-            placeholder={contactMethod === 'whatsapp' ? '+65 9123 4567' : '@yourhandle'}
+            placeholder={contactMethod === 'whatsapp' ? '+82 10 1234 5678' : '@yourhandle'}
           />
           {contactMethod === 'instagram' && (
             <p className="text-xs text-amber-400/80">Follow @madebyaidan so I can message you</p>
@@ -393,7 +393,7 @@ export default function SignUpFormSingapore() {
           type="submit"
           disabled={submitting}
           className="w-full rounded-full bg-emerald-500 py-3.5 text-sm font-bold text-white shadow-lg shadow-emerald-500/25 transition hover:bg-emerald-400 disabled:opacity-50"
-          data-cta="sign-up-singapore-submit"
+          data-cta="sign-up-busan-submit"
         >
           {submitting ? 'Submitting…' : 'Sign Up & Get Details'}
         </button>
