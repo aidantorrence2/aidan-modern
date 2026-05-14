@@ -34,7 +34,7 @@ function resizeImage(dataUrl: string, maxBytes: number): Promise<string> {
 }
 
 const locationOptions = [
-  { id: 'Old streets & architecture', desc: 'Historic facades, doorways, alleys' },
+  { id: 'On the street', desc: 'Historic facades, doorways, alleys' },
   { id: 'Nature', desc: 'Lush greenery, gardens, open landscapes' },
   { id: 'Indoor', desc: 'Intimate, controlled lighting' },
   { id: 'Other', desc: "Let me know what you're thinking!" },
@@ -223,7 +223,7 @@ export default function SignUpFormBusan() {
       {/* Manifesto */}
       <div className="space-y-4">
         <h1 className="font-display whitespace-nowrap text-2xl font-semibold leading-[1.05] text-white sm:text-3xl" style={{ fontFamily: 'Georgia, serif' }}>
-          Busan photo shoot
+          Busan free photo shoot
         </h1>
         <p className="mt-3 text-base text-white/50">
           Please fill out the form below and I&apos;ll send you all the details &mdash; timing, location, what to wear, and next steps.
