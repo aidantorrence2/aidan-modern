@@ -1,7 +1,7 @@
 import SignUpFormBusan from '@/components/SignUpFormBusan'
 
 export const metadata = {
-  title: 'Busan Photo Shoot — Dramatic, Sexy, Editorial',
+  title: 'Busan Free Photo Shoot — Dramatic, Sexy, Editorial',
   description:
     'Not for casual photos. For dramatic, sexy, editorial photos in Busan — old streets, nature, indoor, standout wardrobe.'
 }
