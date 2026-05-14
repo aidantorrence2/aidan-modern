@@ -42,9 +42,8 @@ const locationOptions = [
 
 const wardrobeOptions = [
   { id: 'High fashion, editorial', desc: 'Dramatic statement pieces' },
-  { id: 'Edgy, intimate, sexy', desc: 'Close, magnetic, your most you' },
-  { id: 'Cultural / traditional', desc: 'Cheongsam, saree, baju kurung, etc.' },
-  { id: "A mix, or let's discuss", desc: "We'll figure it out together" },
+  { id: 'Edgy and intimate', desc: 'Close, magnetic, your most you' },
+  { id: "Let's discuss", desc: "We'll figure it out together" },
 ]
 
 const heroImage = '/images/moodboards/editorial.jpg'
