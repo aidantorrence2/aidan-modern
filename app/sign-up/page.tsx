@@ -1,16 +1,16 @@
-import SignUpFormSingapore from '@/components/SignUpFormSingapore'
+import SignUpForm from '@/components/SignUpForm'
 
 export const metadata = {
-  title: 'Singapore Photo Shoot — Dramatic, Sexy, Editorial',
+  title: 'Design Your Photo Shoot — Free',
   description:
-    'Not for casual photos. For dramatic, sexy, editorial photos in Singapore — Marina Bay, shophouses, gardens, standout wardrobe.'
+    'Design your free photo shoot. Pick your vibe, choose a concept, and sign up.'
 }
 
-export default function SignUpSingaporePage() {
+export default function SignUpPage() {
   return (
     <section className="min-h-screen bg-[#0a0a0a] py-12 sm:py-20">
       <div className="mx-auto max-w-md px-5">
-        <SignUpFormSingapore />
+        <SignUpForm />
       </div>
     </section>
   )
