@@ -1,7 +1,7 @@
 import SignUpFormSingapore from '@/components/SignUpFormSingapore'
 
 export const metadata = {
-  title: 'Singapore Photo Shoot — Dramatic, Sexy, Editorial',
+  title: 'Singapore Free Photo Shoot — Dramatic, Sexy, Editorial',
   description:
     'Not for casual photos. For dramatic, sexy, editorial photos in Singapore — old streets, nature, indoor, standout wardrobe.'
 }

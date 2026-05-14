@@ -34,7 +34,7 @@ function resizeImage(dataUrl: string, maxBytes: number): Promise<string> {
 }
 
 const locationOptions = [
-  { id: 'Old streets & architecture', desc: 'Historic facades, doorways, alleys' },
+  { id: 'On the street', desc: 'Historic facades, doorways, alleys' },
   { id: 'Nature', desc: 'Lush greenery, gardens, open landscapes' },
   { id: 'Indoor', desc: 'Intimate, controlled lighting' },
   { id: 'Other', desc: "Let me know what you're thinking!" },
