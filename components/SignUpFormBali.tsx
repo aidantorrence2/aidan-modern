@@ -50,7 +50,8 @@ const vibeOptions = [
   { id: "Let's figure it out", desc: "We'll vibe check and decide together" },
 ]
 
-const pricePresets = [25, 50, 75, 100, 150, 200]
+const pricePresetsIDR = [200000, 1000000, 5000000]
+const pricePresetsUSD = [15, 60, 300]
 
 const heroImage = '/images/moodboards/nature-editorial.jpg'
 
@@ -58,6 +59,7 @@ export default function SignUpFormBali() {
   const [state, setState] = useState<State | null>(null)
   const [location, setLocation] = useState('')
   const [vibe, setVibe] = useState('')
+  const [currency, setCurrency] = useState<'idr' | 'usd'>('idr')
   const [price, setPrice] = useState<number | null>(null)
   const [customPrice, setCustomPrice] = useState('')
   const [notes, setNotes] = useState('')
@@ -75,7 +77,10 @@ export default function SignUpFormBali() {
     if (state) setState(null)
   }
 
+  const pricePresets = currency === 'idr' ? pricePresetsIDR : pricePresetsUSD
+  const sym = currency === 'idr' ? 'Rp' : '$'
   const effectivePrice = price === -1 ? (parseInt(customPrice) || 0) : (price ?? 0)
+  const fmtPrice = (n: number) => `${sym} ${n.toLocaleString()}`
 
   async function handlePhotos(e: React.ChangeEvent<HTMLInputElement>) {
     const files = e.target.files
@@ -139,7 +144,7 @@ export default function SignUpFormBali() {
       const moodboard = [
         `Location: ${location}`,
         ...(vibe ? [`Vibe: ${vibe}`] : []),
-        `Price: $${effectivePrice} (pay what you want)`,
+        `Price: ${fmtPrice(effectivePrice)} (pay what you want)`,
         ...(notes.trim() ? [`Notes: ${notes.trim()}`] : []),
       ]
       const res = await fetch('/api/sign-up', {
@@ -157,7 +162,7 @@ export default function SignUpFormBali() {
       setState({ ok: true })
       if (typeof window !== 'undefined') {
         const fbq = (window as typeof window & { fbq?: (...args: unknown[]) => void }).fbq
-        if (typeof fbq === 'function') fbq('track', 'Lead', { source: 'sign-up-bali', value: effectivePrice, currency: 'USD' })
+        if (typeof fbq === 'function') fbq('track', 'Lead', { source: 'sign-up-bali', value: effectivePrice, currency: currency.toUpperCase() })
       }
     } catch {
       setState({ ok: false, error: 'Something went wrong. Try again or DM @madebyaidan on IG.' })
@@ -196,7 +201,7 @@ export default function SignUpFormBali() {
             </div>
             <div className="space-y-1">
               <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-white/30">Your price</p>
-              <p className="text-sm font-medium text-emerald-400">${effectivePrice}</p>
+              <p className="text-sm font-medium text-emerald-400">{fmtPrice(effectivePrice)}</p>
             </div>
           </div>
           <div className="h-px bg-white/[0.06]" />
@@ -242,7 +247,7 @@ export default function SignUpFormBali() {
         <div className="rounded-2xl border border-emerald-400/20 bg-emerald-400/[0.06] px-5 py-4">
           <p className="text-sm font-semibold text-emerald-400">Pay what you want</p>
           <p className="mt-1 text-xs text-white/50 leading-relaxed">
-            There&apos;s no set price. Choose what feels right to you &mdash; $25, $200, or anything in between.
+            There&apos;s no set price. Choose what feels right to you.
             Every shoot gets the same quality, the same effort, the same me.
           </p>
         </div>
@@ -309,7 +314,23 @@ export default function SignUpFormBali() {
         <fieldset ref={priceRef} className="space-y-3">
           <div className="flex items-center gap-2">
             <span className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-500/20 text-[10px] font-bold text-emerald-400">3</span>
-            <legend className="text-sm font-medium text-white/80">Choose your price <span className="text-xs text-white/30">(USD)</span></legend>
+            <legend className="text-sm font-medium text-white/80">Choose your price</legend>
+          </div>
+          <div className="flex gap-1.5 mb-1">
+            {(['idr', 'usd'] as const).map(c => (
+              <button
+                key={c}
+                type="button"
+                onClick={() => { setCurrency(c); setPrice(null); setCustomPrice(''); clearStatus() }}
+                className={`rounded-full border px-4 py-1 text-xs font-semibold transition-all ${
+                  currency === c
+                    ? 'border-emerald-400 bg-emerald-400/20 text-emerald-400'
+                    : 'border-white/15 bg-white/5 text-white/50 hover:border-white/25'
+                }`}
+              >
+                {c === 'idr' ? 'IDR' : 'USD'}
+              </button>
+            ))}
           </div>
           <div className="grid grid-cols-3 gap-2">
             {pricePresets.map(p => (
@@ -323,7 +344,7 @@ export default function SignUpFormBali() {
                     : 'border-white/10 bg-white/[0.03] hover:border-white/25'
                 }`}
               >
-                <div className={`text-lg font-bold ${price === p ? 'text-emerald-300' : 'text-white'}`}>${p}</div>
+                <div className={`text-base font-bold ${price === p ? 'text-emerald-300' : 'text-white'}`}>{fmtPrice(p)}</div>
               </button>
             ))}
           </div>
@@ -341,13 +362,13 @@ export default function SignUpFormBali() {
             </button>
             {price === -1 && (
               <div className="relative flex-1">
-                <span className="absolute left-4 top-1/2 -translate-y-1/2 text-sm text-white/40">$</span>
+                <span className="absolute left-4 top-1/2 -translate-y-1/2 text-sm text-white/40">{sym}</span>
                 <input
                   type="number"
                   min="1"
                   value={customPrice}
                   onChange={e => { setCustomPrice(e.target.value); clearStatus() }}
-                  className="w-full rounded-xl border border-white/10 bg-white/5 pl-8 pr-4 py-3 text-sm text-white placeholder-white/30 outline-none transition focus:border-emerald-400 focus:ring-2 focus:ring-emerald-400/30"
+                  className="w-full rounded-xl border border-white/10 bg-white/5 pl-10 pr-4 py-3 text-sm text-white placeholder-white/30 outline-none transition focus:border-emerald-400 focus:ring-2 focus:ring-emerald-400/30"
                   placeholder="Your amount"
                   autoFocus
                 />
@@ -446,7 +467,7 @@ export default function SignUpFormBali() {
           className="w-full rounded-full bg-emerald-500 py-3.5 text-sm font-bold text-white shadow-lg shadow-emerald-500/25 transition hover:bg-emerald-400 disabled:opacity-50"
           data-cta="sign-up-bali-submit"
         >
-          {submitting ? 'Submitting\u2026' : effectivePrice > 0 ? `Book for $${effectivePrice}` : 'Book Your Shoot'}
+          {submitting ? 'Submitting\u2026' : effectivePrice > 0 ? `Book for ${fmtPrice(effectivePrice)}` : 'Book Your Shoot'}
         </button>
       </form>
     </div>
