@@ -467,7 +467,7 @@ export default function SignUpFormBali() {
           className="w-full rounded-full bg-emerald-500 py-3.5 text-sm font-bold text-white shadow-lg shadow-emerald-500/25 transition hover:bg-emerald-400 disabled:opacity-50"
           data-cta="sign-up-bali-submit"
         >
-          {submitting ? 'Submitting\u2026' : effectivePrice > 0 ? `Book for ${fmtPrice(effectivePrice)}` : 'Book Your Shoot'}
+          {submitting ? 'Submitting\u2026' : 'Sign Up & Get Details'}
         </button>
       </form>
     </div>
