@@ -32,7 +32,7 @@ const SERIF = "Georgia, 'Times New Roman', serif"
 const SANS = "Inter, -apple-system, system-ui, sans-serif"
 const S = 'text-shadow: 0 2px 4px rgba(0,0,0,0.95), 0 8px 30px rgba(0,0,0,0.7), 0 0 80px rgba(0,0,0,0.4);'
 
-const cities = ['Quezon City', 'Baguio', 'La Union', 'Busan', 'Singapore']
+const cities = ['Quezon City', 'Baguio', 'La Union', 'Busan', 'Singapore', 'Bali']
 
 function slug(city) {
   return city.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/-+$/, '')
@@ -210,10 +210,79 @@ for (const city of cities) {
   )
 }
 
+// -- Bali paid variant --
+{
+  const s = 'bali-paid'
+  const prefix = `${s}-carousel`
+  const paidDeliverables = [
+    '1–2 hour directed shoot at your dream location',
+    'Edited photos delivered within 48 hours',
+    'Outfit, vibe, and location planning together',
+    'Direct communication from start to finish'
+  ]
+  const paidSteps = [
+    'Click below and sign up — choose your price',
+    'We plan your shoot together',
+    'Show up, shoot, and get incredible photos'
+  ]
+  allSlides.push(
+    {
+      name: `${prefix}-01-hook`,
+      html: `
+        <div style="width:1080px;height:1920px;position:relative;overflow:hidden;background:#000;">
+          <img src="${imgUrban3}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;filter:saturate(1.1) contrast(1.05);"/>
+          <div style="position:absolute;inset:0;background:linear-gradient(180deg, rgba(0,0,0,0.3) 0%, transparent 20%, transparent 45%, rgba(0,0,0,0.92) 100%);"></div>
+          <div style="position:absolute;bottom:440px;left:64px;right:64px;">
+            <h1 style="font-family:${SERIF};font-size:148px;font-weight:700;font-style:italic;color:white;line-height:0.88;margin:0;${S}">Bali</h1>
+            <h2 style="font-family:${SERIF};font-size:96px;font-weight:700;font-style:italic;color:white;line-height:0.92;margin:12px 0 0;${S}">Photo shoot</h2>
+            <p style="font-family:${SANS};font-size:30px;color:rgba(255,255,255,0.6);margin:32px 0 0 4px;${S}">Pay what you want. No minimums.</p>
+          </div>
+          ${filmGrain(0.1)}
+        </div>
+      `
+    },
+    proofSlide(prefix, 'My recent work', proof8),
+    howSlide(prefix, 'Super simple.', paidSteps, img0075),
+    {
+      name: `${prefix}-04-what`,
+      html: splitSlide(`${prefix}-04-what`, imgNight3, `
+          <h2 style="font-family:${SERIF};font-size:62px;font-weight:700;color:#0a0a0a;margin:0 0 32px;line-height:1.1;">What you get.</h2>
+          <div style="display:flex;flex-direction:column;gap:18px;">
+            ${paidDeliverables.map(item => `
+              <div style="display:flex;align-items:flex-start;gap:14px;">
+                <span style="font-family:${SANS};font-size:34px;color:#0a0a0a;flex-shrink:0;">-</span>
+                <span style="font-family:${SANS};font-size:34px;color:#404040;line-height:1.35;">${item}</span>
+              </div>
+            `).join('\n')}
+          </div>
+          <p style="font-family:${SANS};margin:36px 0 0;font-size:34px;font-weight:600;color:#0a0a0a;line-height:1.3;">Pay what you want.<br/>Seriously — you choose the price.</p>
+      `).html
+    },
+    {
+      name: `${prefix}-05-cta`,
+      html: `
+        <div style="width:1080px;height:1920px;position:relative;overflow:hidden;background:#000;">
+          <img src="${imgIvy2}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(1.1) brightness(0.7);"/>
+          <div style="position:absolute;inset:0;background:linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.25) 30%, rgba(0,0,0,0.25) 50%, rgba(0,0,0,0.92) 100%);"></div>
+          <div style="position:absolute;bottom:380px;left:64px;right:64px;">
+            <h2 style="font-family:${SERIF};font-size:110px;font-weight:700;font-style:italic;color:white;line-height:0.95;margin:0;${S}">Your turn.</h2>
+            <div style="margin:36px 0 0;display:flex;flex-direction:column;gap:20px;">
+              <p style="font-family:${SANS};font-size:36px;color:rgba(255,255,255,0.9);line-height:1.45;margin:0;${S}">Click the button below to book your photo shoot in Bali.</p>
+              <p style="font-family:${SANS};font-size:32px;color:rgba(255,255,255,0.55);line-height:1.45;margin:0;${S}">Choose your price, pick your vibe, and I'll plan everything. No experience needed.</p>
+            </div>
+          </div>
+          ${filmGrain(0.1)}
+        </div>
+      `
+    }
+  )
+}
+
 async function render() {
   for (const city of cities) {
     fs.mkdirSync(path.join(OUT, slug(city)), { recursive: true })
   }
+  fs.mkdirSync(path.join(OUT, 'bali-paid'), { recursive: true })
   console.log(`Rendering ${allSlides.length} slides for ${cities.length} cities...`)
   const browser = await chromium.launch()
   const context = await browser.newContext({ viewport: { width: 1080, height: 1920 }, deviceScaleFactor: 1 })
