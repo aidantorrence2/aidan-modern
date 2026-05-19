@@ -37,7 +37,7 @@ const locationOptions = [
   { id: 'Rice terraces', desc: 'Tegallalang, Jatiluwih — iconic green layers' },
   { id: 'Beach & cliffs', desc: 'Uluwatu, Padang Padang, black sand' },
   { id: 'Temple & jungle', desc: 'Tirta Empul, monkey forest, hidden waterfalls' },
-  { id: 'Villa / indoor', desc: 'Private villa, bathtub, intimate setting' },
+  { id: 'Indoor / studio', desc: 'Villa, studio, etc.' },
   { id: 'Streets of Ubud', desc: 'Art markets, cafes, lush alleyways' },
   { id: 'Other', desc: "You have a spot in mind — tell me!" },
 ]
