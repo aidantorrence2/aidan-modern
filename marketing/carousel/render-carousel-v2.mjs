@@ -32,7 +32,7 @@ const SERIF = "Georgia, 'Times New Roman', serif"
 const SANS = "Inter, -apple-system, system-ui, sans-serif"
 const S = 'text-shadow: 0 2px 4px rgba(0,0,0,0.95), 0 8px 30px rgba(0,0,0,0.7), 0 0 80px rgba(0,0,0,0.4);'
 
-const cities = ['Quezon City', 'Baguio', 'La Union', 'Busan', 'Singapore', 'Bali']
+const cities = ['Quezon City', 'Baguio', 'La Union', 'Busan', 'Singapore', 'Bali', 'Canggu', 'Ubud', 'Amed', 'Uluwatu']
 
 function slug(city) {
   return city.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/-+$/, '')
