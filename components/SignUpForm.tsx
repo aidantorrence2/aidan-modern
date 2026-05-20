@@ -60,7 +60,7 @@ type SignUpFormProps = {
 export default function SignUpForm({
   moodboardOptions = defaultMoodboardOptions,
   outfitOptions,
-  cityPlaceholder = 'e.g. Tokyo, New York City',
+  cityPlaceholder = 'e.g. Canggu, Uluwatu, Ubud',
   successVariant = 'default',
   showRecommendations = false,
 }: SignUpFormProps = {}) {
