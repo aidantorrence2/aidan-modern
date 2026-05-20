@@ -341,7 +341,7 @@ export default function SignUpForm({
       {/* Moodboards */}
       <fieldset ref={moodboardRef} className="space-y-2">
         <legend className="text-sm font-medium text-white/80">Choose a shoot concept (or suggest your own) <span className="text-xs text-red-400/70">*</span></legend>
-        <div className="grid grid-cols-3 gap-2">
+        <div className="grid grid-cols-4 gap-2">
           {moodboardOptions.map(option => (
             <button
               key={option.id}
