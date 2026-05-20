@@ -40,6 +40,7 @@ const defaultMoodboardOptions: MoodboardOption[] = [
   { id: 'Street', img: '/images/moodboards/street-editorial.jpg' },
   { id: 'Nature', img: '/images/moodboards/nature-editorial.jpg' },
   { id: 'Indoor/Studio', img: '/images/moodboards/indoor.jpg' },
+  { id: 'Beach', img: '/images/moodboards/beach.png' },
 ]
 
 const shootDetails: Record<string, { duration: string; what: string }> = {
