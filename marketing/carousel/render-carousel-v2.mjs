@@ -360,12 +360,171 @@ for (const city of cities) {
   )
 }
 
+// -- Bali collab v2: scarcity/urgency hook --
+{
+  const s = 'bali-collab-v2'
+  const prefix = `${s}-carousel`
+  allSlides.push(
+    {
+      name: `${prefix}-01-hook`,
+      html: `
+        <div style="width:1080px;height:1920px;position:relative;overflow:hidden;background:#000;">
+          <img src="${img0190}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;filter:saturate(1.1) contrast(1.05);"/>
+          <div style="position:absolute;inset:0;background:linear-gradient(180deg, rgba(0,0,0,0.25) 0%, transparent 20%, transparent 40%, rgba(0,0,0,0.94) 100%);"></div>
+          <div style="position:absolute;bottom:420px;left:64px;right:64px;">
+            <h1 style="font-family:${SERIF};font-size:108px;font-weight:700;font-style:italic;color:white;line-height:0.92;margin:0;${S}">In Bali for<br/>2 weeks.</h1>
+            <h2 style="font-family:${SERIF};font-size:80px;font-weight:700;font-style:italic;color:rgba(255,255,255,0.7);line-height:0.95;margin:16px 0 0;${S}">Looking<br/>for faces.</h2>
+            <p style="font-family:${SANS};font-size:30px;color:rgba(255,255,255,0.5);margin:32px 0 0 4px;line-height:1.5;${S}">Photographer from the US. Let's collaborate.</p>
+          </div>
+          ${filmGrain(0.1)}
+        </div>
+      `
+    },
+    proofSlide(prefix, 'Recent collaborations', proof8),
+    howSlide(prefix, 'Super simple.', ['DM me or click the link below', 'We plan the concept together', 'We both get amazing content'], img0075),
+    whatSlide(prefix, 'What you get.', [
+      'Edited photos — use them however you want',
+      'Full creative direction from me',
+      'Content for your portfolio or socials',
+      'A real creative collaboration'
+    ], imgNight3),
+    {
+      name: `${prefix}-05-cta`,
+      html: `
+        <div style="width:1080px;height:1920px;position:relative;overflow:hidden;background:#000;">
+          <img src="${imgIvy2}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(1.1) brightness(0.7);"/>
+          <div style="position:absolute;inset:0;background:linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.25) 30%, rgba(0,0,0,0.25) 50%, rgba(0,0,0,0.92) 100%);"></div>
+          <div style="position:absolute;bottom:380px;left:64px;right:64px;">
+            <h2 style="font-family:${SERIF};font-size:100px;font-weight:700;font-style:italic;color:white;line-height:0.95;margin:0;${S}">Limited spots.</h2>
+            <div style="margin:36px 0 0;display:flex;flex-direction:column;gap:20px;">
+              <p style="font-family:${SANS};font-size:36px;color:rgba(255,255,255,0.9);line-height:1.45;margin:0;${S}">DM me or click the link to sign up.</p>
+              <p style="font-family:${SANS};font-size:32px;color:rgba(255,255,255,0.55);line-height:1.45;margin:0;${S}">I'm only here for a short time. Send me your look and let's make it happen.</p>
+            </div>
+          </div>
+          ${filmGrain(0.1)}
+        </div>
+      `
+    }
+  )
+}
+
+// -- Bali collab v3: bold/direct hook --
+{
+  const s = 'bali-collab-v3'
+  const prefix = `${s}-carousel`
+  allSlides.push(
+    {
+      name: `${prefix}-01-hook`,
+      html: `
+        <div style="width:1080px;height:1920px;position:relative;overflow:hidden;background:#000;">
+          <img src="${imgNight3}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;filter:saturate(1.1) contrast(1.05);"/>
+          <div style="position:absolute;inset:0;background:linear-gradient(180deg, rgba(0,0,0,0.3) 0%, transparent 20%, transparent 40%, rgba(0,0,0,0.94) 100%);"></div>
+          <div style="position:absolute;bottom:420px;left:64px;right:64px;">
+            <h1 style="font-family:${SERIF};font-size:118px;font-weight:700;font-style:italic;color:white;line-height:0.90;margin:0;${S}">You should<br/>be in my<br/>portfolio.</h1>
+            <p style="font-family:${SANS};font-size:30px;color:rgba(255,255,255,0.5);margin:36px 0 0 4px;line-height:1.5;${S}">Bali. TFP collaboration. DM me.</p>
+          </div>
+          ${filmGrain(0.1)}
+        </div>
+      `
+    },
+    proofSlide(prefix, 'My work', proof8),
+    howSlide(prefix, 'Super simple.', ['DM me on Instagram', 'We plan your shoot together', 'Show up and we create something great'], img0075),
+    whatSlide(prefix, 'What you get.', [
+      'Edited photos for your portfolio and socials',
+      'I direct everything — no experience needed',
+      'We plan the concept, location, and vibe together',
+      'A collaboration, not a transaction'
+    ], imgNight3),
+    {
+      name: `${prefix}-05-cta`,
+      html: `
+        <div style="width:1080px;height:1920px;position:relative;overflow:hidden;background:#000;">
+          <img src="${imgCanal1}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(1.1) brightness(0.7);"/>
+          <div style="position:absolute;inset:0;background:linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.25) 30%, rgba(0,0,0,0.25) 50%, rgba(0,0,0,0.92) 100%);"></div>
+          <div style="position:absolute;bottom:380px;left:64px;right:64px;">
+            <h2 style="font-family:${SERIF};font-size:110px;font-weight:700;font-style:italic;color:white;line-height:0.95;margin:0;${S}">DM me.</h2>
+            <div style="margin:36px 0 0;display:flex;flex-direction:column;gap:20px;">
+              <p style="font-family:${SANS};font-size:36px;color:rgba(255,255,255,0.9);line-height:1.45;margin:0;${S}">@madebyaidan on Instagram.</p>
+              <p style="font-family:${SANS};font-size:32px;color:rgba(255,255,255,0.55);line-height:1.45;margin:0;${S}">Send me a few photos and your vibe. I'll handle the rest.</p>
+            </div>
+          </div>
+          ${filmGrain(0.1)}
+        </div>
+      `
+    }
+  )
+}
+
+// -- Bali proof-heavy: wall of photos, minimal text --
+{
+  const s = 'bali-proof'
+  const prefix = s + '-carousel'
+  const imgCloseup = img('manila-gallery-closeup-001.jpg')
+  const imgFloor = img('manila-gallery-floor-001.jpg')
+  const imgGarden1 = img('manila-gallery-garden-001.jpg')
+  const imgGarden2 = img('manila-gallery-garden-002.jpg')
+  const imgIvy1 = img('manila-gallery-ivy-001.jpg')
+  const imgNight1 = img('manila-gallery-night-001.jpg')
+  const imgNight2 = img('manila-gallery-night-002.jpg')
+  const imgCanal2 = img('manila-gallery-canal-002.jpg')
+  const imgShadow = img('manila-gallery-shadow-001.jpg')
+  const imgTropical = img('manila-gallery-tropical-001.jpg')
+  const imgWhite = img('manila-gallery-white-001.jpg')
+  const imgUrban1 = img('manila-gallery-urban-001.jpg')
+  const imgPurple1 = img('manila-gallery-purple-001-cropped.jpg')
+  const imgPurple2 = img('manila-gallery-purple-002-cropped.jpg')
+  const imgPurple3 = img('manila-gallery-purple-003-cropped.jpg')
+  const img0130 = img('manila-gallery-dsc-0130.jpg')
+
+  function photoGrid(name, photos, overlayText) {
+    const rows = Math.ceil(photos.length / 3)
+    const cellH = Math.floor(1920 / rows)
+    const cells = photos.map((src, i) => {
+      const col = i % 3
+      const row = Math.floor(i / 3)
+      return '<img src="' + src + '" style="position:absolute;left:' + (col * 360) + 'px;top:' + (row * cellH) + 'px;width:360px;height:' + cellH + 'px;object-fit:cover;object-position:center;display:block;"/>'
+    }).join('\n')
+    const overlay = overlayText ? '<div style="position:absolute;inset:0;background:linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.0) 30%, rgba(0,0,0,0.0) 50%, rgba(0,0,0,0.75) 100%);"></div><div style="position:absolute;bottom:380px;left:64px;right:64px;"><p style="font-family:' + SERIF + ';font-size:72px;font-weight:700;font-style:italic;color:white;line-height:0.95;margin:0;' + S + '">' + overlayText + '</p></div>' : ''
+    return {
+      name,
+      html: '<div style="width:1080px;height:1920px;position:relative;overflow:hidden;background:#000;">' + cells + overlay + filmGrain(0.06) + '</div>'
+    }
+  }
+
+  allSlides.push(
+    // Slide 1: hero photo, tiny text
+    hookSlide(prefix, 'Bali', imgIvy2, 'Open for collaboration. This is what I do.'),
+    // Slide 2: 9-photo grid
+    photoGrid(prefix + '-02-grid-a', [
+      img0190, imgCanal1, img0911,
+      imgPurple1, imgUrban3, imgGarden1,
+      imgNight1, imgShadow, imgIvy1
+    ]),
+    // Slide 3: 9-photo grid (different photos)
+    photoGrid(prefix + '-03-grid-b', [
+      imgMarket, imgPurple2, img0075,
+      imgFloor, imgTropical, imgCloseup,
+      imgPurple3, imgCanal2, imgNight2
+    ]),
+    // Slide 4: 6-photo grid with overlay text
+    photoGrid(prefix + '-04-grid-c', [
+      imgWhite, imgGarden2, imgStatue,
+      imgUrban1, img0130, imgStreet
+    ], 'Want photos<br/>like these?'),
+    // Slide 5: CTA
+    ctaSlide(prefix, 'Bali', imgPark)
+  )
+}
+
 async function render() {
   for (const city of cities) {
     fs.mkdirSync(path.join(OUT, slug(city)), { recursive: true })
   }
   fs.mkdirSync(path.join(OUT, 'bali-paid'), { recursive: true })
   fs.mkdirSync(path.join(OUT, 'bali-collab'), { recursive: true })
+  fs.mkdirSync(path.join(OUT, 'bali-collab-v2'), { recursive: true })
+  fs.mkdirSync(path.join(OUT, 'bali-collab-v3'), { recursive: true })
+  fs.mkdirSync(path.join(OUT, 'bali-proof'), { recursive: true })
   console.log(`Rendering ${allSlides.length} slides for ${cities.length} cities...`)
   const browser = await chromium.launch()
   const context = await browser.newContext({ viewport: { width: 1080, height: 1920 }, deviceScaleFactor: 1 })
