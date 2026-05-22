@@ -238,6 +238,18 @@
   - `sources.json` in the output folder records the photo sources and the strategy for each creative.
   - If you need more local specificity, add new Antipolo-specific source images first; the current pack still uses the shared portfolio library from `public/images/large`.
 
+## Bali Model-Test / TFP Carousel (High-Intent Pivot)
+- Source script: `marketing/carousel/render-bali-model-collab.mjs`
+- Render command:
+  - `node marketing/carousel/render-bali-model-collab.mjs`
+- Output folder:
+  - `marketing/carousel/output-v3/bali-model-collab`
+- Notes:
+  - Exports a five-slide 1080x1920 PNG story/reels carousel.
+  - This campaign intentionally avoids broad "free photo shoot" language and positions the offer as a selected Bali model-test / TFP collaboration.
+  - The CTA asks viewers to send `BALI` with IG, Bali area, availability, and recent photos so follow-up quality is easier to screen.
+  - Re-running the script deletes and regenerates only `marketing/carousel/output-v3/bali-model-collab`.
+
 ## Antipolo CPC Story Ads V4 (100 Creative Concepts)
 - Source folder: `marketing/cpc-carousel-ads`
 - Render command:
