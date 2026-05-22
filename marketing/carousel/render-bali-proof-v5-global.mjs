@@ -4,7 +4,7 @@ import path from 'path'
 import fs from 'fs'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
-const BASE_OUT = path.join(__dirname, 'output-bali-proof-v7')
+const BASE_OUT = path.join(__dirname, 'output-bali-proof-v8')
 const NEW_DIR = '/Users/aidantorrence/Documents/aidan-modern/public/images/new'
 
 fs.mkdirSync(BASE_OUT, { recursive: true })
@@ -103,29 +103,54 @@ function hook(photo) {
 function ctaEnd(photo) {
   return { name: '10-cta', html: cta(photo, h1('Sign up.', 520) + ctaBlock) }
 }
+// 8 portrait prints — 3 rows staggered
 function d8(name, tagText, imgs, bottomText) {
   return { name, html: dark(
     tag(tagText, 64, 40) +
-    pr(imgs[0], 20, 80, 300, 400, -4, 10) +
-    pr(imgs[1], 320, 60, 340, 440, 2.5, 10) +
-    pr(imgs[2], 660, 100, 340, 420, -1.5, 10) +
-    pr(imgs[3], 40, 500, 320, 420, 3, 10) +
-    pr(imgs[4], 380, 520, 300, 380, -2.5, 10) +
-    pr(imgs[5], 680, 540, 320, 420, 1.8, 10) +
-    pr(imgs[6], 100, 960, 400, 320, -2, 10) +
-    pr(imgs[7], 480, 980, 460, 360, 2, 10) +
+    pr(imgs[0], 20, 80, 240, 340, -3.5, 10) +
+    pr(imgs[1], 280, 60, 260, 360, 2, 10) +
+    pr(imgs[2], 560, 90, 240, 330, -1.5, 10) +
+    pr(imgs[3], 800, 70, 220, 320, 3, 10) +
+    pr(imgs[4], 40, 460, 260, 370, 2.5, 10) +
+    pr(imgs[5], 320, 440, 240, 340, -2, 10) +
+    pr(imgs[6], 580, 470, 260, 360, 1.5, 10) +
+    pr(imgs[7], 840, 450, 200, 300, -3, 10) +
     sub(bottomText, 80)
   )}
 }
+// 6 portrait floating
 function d6(name, tagText, imgs, bottomText) {
   return { name, html: dark(
     tag(tagText, 64, 40) +
-    fl(imgs[0], 20, 60, 520, 420, -3) +
-    fl(imgs[1], 480, 40, 540, 440, 2.5) +
-    fl(imgs[2], 40, 480, 480, 400, 2) +
-    fl(imgs[3], 500, 500, 520, 420, -2) +
-    fl(imgs[4], 60, 900, 500, 400, -1.5) +
-    fl(imgs[5], 480, 920, 540, 420, 2.5) +
+    fl(imgs[0], 20, 60, 320, 460, -3) +
+    fl(imgs[1], 360, 40, 340, 480, 2.5) +
+    fl(imgs[2], 700, 80, 320, 450, -1.5) +
+    fl(imgs[3], 60, 540, 340, 480, 2) +
+    fl(imgs[4], 400, 560, 320, 450, -2) +
+    fl(imgs[5], 720, 540, 310, 440, 2.5) +
+    sub(bottomText, 80)
+  )}
+}
+// 5 portrait prints — 2 top + 3 bottom
+function d5(name, tagText, imgs, bottomText) {
+  return { name, html: dark(
+    tag(tagText, 64, 40) +
+    pr(imgs[0], 40, 80, 320, 460, -3, 12) +
+    pr(imgs[1], 400, 60, 340, 480, 2.5, 12) +
+    pr(imgs[2], 760, 100, 260, 380, -1.5, 12) +
+    pr(imgs[3], 100, 580, 380, 520, 2, 12) +
+    pr(imgs[4], 500, 600, 420, 560, -2.5, 12) +
+    sub(bottomText, 80)
+  )}
+}
+// 4 large portrait prints — 2x2 scattered
+function d4(name, tagText, imgs, bottomText) {
+  return { name, html: dark(
+    tag(tagText, 64, 40) +
+    pr(imgs[0], 30, 80, 380, 540, -3, 14) +
+    pr(imgs[1], 460, 60, 400, 560, 2.5, 14) +
+    pr(imgs[2], 60, 660, 400, 560, 2, 14) +
+    pr(imgs[3], 480, 680, 380, 540, -2.5, 14) +
     sub(bottomText, 80)
   )}
 }
@@ -133,10 +158,10 @@ function d6(name, tagText, imgs, bottomText) {
 V.push({ slug: 'v1-dense-global', slides: [
   hook(p.tw1),
   d8('02', 'Taipei \u00b7 Shot on film', [p.tw1, p.tw2, p.tw3, p.tw4, p.tw5, p.tw6, p.tw7, p.tw8], 'One city. Eight different people.'),
-  d8('03', 'Hong Kong \u00b7 Night', [p.hk1, p.hk2, p.hk3, p.hk4, p.hk5, p.st3, p.st4, p.st2], 'City lights. Film grain. No flash.'),
+  d5('03', 'Hong Kong \u00b7 Night', [p.hk1, p.hk2, p.hk3, p.hk4, p.hk5, p.st3, p.st4, p.st2], 'City lights. Film grain. No flash.'),
   { name: '04', html: hero(p.kr1, tag('Seoul', 64, 60) + h2('Every face<br/>is different.', 440) + sub('Same film. Same photographer.', 370)) },
   d8('05', 'Kaohsiung \u00b7 Tainan \u00b7 Chongqing', [p.st1, p.st5, p.st6, p.ba6, p.ba7, p.ba9, p.m10, p.m11], 'Markets. Streets. Real life.'),
-  d6('06', 'Singapore \u00b7 Ulaanbaatar \u00b7 Tokyo', [p.m5, p.m1, p.m8, p.m22, p.m12, p.m16], 'I find people worth shooting everywhere.'),
+  d5('06', 'Singapore \u00b7 Ulaanbaatar \u00b7 Tokyo', [p.m5, p.m1, p.m8, p.m22, p.m12, p.m16], 'I find people worth shooting everywhere.'),
   { name: '07', html: hero(p.ou1, tag('La Union \u00b7 Baguio', 64, 60) + h2('Nature on film<br/>hits different.', 440) + sub('Golden hour. Mountains. Beach.', 370)) },
   d8('08', 'All 35mm film \u00b7 All directed by me', [p.in1, p.in4, p.ba5, p.ba10, p.m29, p.m28, p.m30, p.m31], 'No experience needed. I handle everything.'),
   { name: '09', html: hero(p.ba10, h1('Now Bali.', 500) + sub('Sign up if you want photos like this.', 420)) },
@@ -146,7 +171,7 @@ V.push({ slug: 'v1-dense-global', slides: [
 V.push({ slug: 'v2-journey-dense', slides: [
   hook(p.kr1),
   { name: '02', html: hero(p.st1, tag('Kaohsiung', 64, 60) + h2('It started in<br/>alleyways.', 440) + sub('Shooting strangers on 35mm.', 370)) },
-  d8('03', 'Then everywhere', [p.tw1, p.hk1, p.kr1, p.m5, p.st6, p.ba6, p.m22, p.ou1], 'Same camera. Different continents.'),
+  d5('03', 'Then everywhere', [p.tw1, p.hk1, p.kr1, p.m5, p.st6, p.ba6, p.m22, p.ou1], 'Same camera. Different continents.'),
   d8('04', 'Night shoots across Asia', [p.hk1, p.hk2, p.hk3, p.hk4, p.hk5, p.st3, p.m30, p.m31], 'Hong Kong. Taipei. Kaohsiung. All film.'),
   { name: '05', html: hero(p.in1, h2('The quiet<br/>moments are<br/>the best.', 400) + sub('Intimate on 35mm.', 330)) },
   d8('06', 'Guangzhou \u00b7 Chongqing \u00b7 Mui Wo \u00b7 Tainan', [p.m1, p.m5, p.m8, p.m10, p.m15, p.m18, p.m20, p.m22], 'Everywhere I go I find faces.'),
@@ -159,8 +184,8 @@ V.push({ slug: 'v2-journey-dense', slides: [
 V.push({ slug: 'v3-city-dense', slides: [
   hook(p.m5),
   d8('02', 'Taiwan', [p.tw1, p.tw2, p.tw3, p.tw4, p.tw5, p.tw6, p.tw7, p.tw8], 'Taipei \u00b7 Kaohsiung \u00b7 Tainan'),
-  d8('03', 'Hong Kong', [p.hk1, p.hk2, p.hk3, p.hk4, p.hk5, p.st2, p.st3, p.st4], 'Night markets. Neon. Film grain.'),
-  d6('04', 'Korea', [p.kr1, p.kr2, p.kr3, p.kr4, p.m29, p.m28], 'Seoul on 35mm.'),
+  d5('03', 'Hong Kong', [p.hk1, p.hk2, p.hk3, p.hk4, p.hk5, p.st2, p.st3, p.st4], 'Night markets. Neon. Film grain.'),
+  d4('04', 'Korea', [p.kr1, p.kr2, p.kr3, p.kr4, p.m29, p.m28], 'Seoul on 35mm.'),
   d8('05', 'Singapore \u00b7 Ulaanbaatar \u00b7 Tokyo', [p.m1, p.m5, p.m8, p.m12, p.m16, p.m20, p.m22, p.m25], 'Asia. Everywhere.'),
   d8('06', 'Philippines', [p.ba1, p.ba3, p.ba5, p.ba6, p.ba7, p.ba10, p.ou1, p.ou2], 'Baguio. La Union. Manila.'),
   { name: '07', html: hero(p.in1, h2('Every one of<br/>these people<br/>trusted me.', 400) + sub('None of them had modeled before.', 330)) },
@@ -172,12 +197,12 @@ V.push({ slug: 'v3-city-dense', slides: [
 V.push({ slug: 'v4-stories-dense', slides: [
   hook(p.hk1),
   { name: '02', html: hero(p.tw1, tag('She was a barista in Taipei', 64, 60) + sub('First shoot ever. Could not tell.', 420)) },
-  d8('03', 'Then I kept going', [p.hk1, p.kr1, p.st1, p.m5, p.ba6, p.m22, p.ou1, p.in1], 'Every city. New strangers. Same camera.'),
+  d5('03', 'Then I kept going', [p.hk1, p.kr1, p.st1, p.m5, p.ba6, p.m22, p.ou1, p.in1], 'Every city. New strangers. Same camera.'),
   { name: '04', html: hero(p.kr1, tag('Seoul', 64, 60) + h2('She almost<br/>cancelled.', 460) + sub('Glad she did not.', 400)) },
   d8('05', 'Night people', [p.hk1, p.hk2, p.hk3, p.hk4, p.hk5, p.st3, p.st4, p.m30], 'Some of my best work happens after dark.'),
   { name: '06', html: hero(p.m5, tag('Singapore', 64, 60) + h2('She had never<br/>done this before.', 440) + sub('Most of them have not.', 370)) },
-  d8('07', 'All real. All directed by me.', [p.tw4, p.ba5, p.m8, p.m1, p.kr2, p.st6, p.m22, p.in4], 'No experience needed. That is the point.'),
-  d6('08', 'Shot on 35mm film', [p.ba10, p.ou1, p.ba1, p.ou2, p.m26, p.m27], 'Mountains. Golden hour. Nature.'),
+  d4('07', 'All real. All directed by me.', [p.tw4, p.ba5, p.m8, p.m1, p.kr2, p.st6, p.m22, p.in4], 'No experience needed. That is the point.'),
+  d4('08', 'Shot on 35mm film', [p.ba10, p.ou1, p.ba1, p.ou2, p.m26, p.m27], 'Mountains. Golden hour. Nature.'),
   { name: '09', html: hero(p.ba10, h1('Who is next<br/>in Bali?', 500) + sub('Maybe you. Sign up below.', 420)) },
   ctaEnd(p.tw6),
 ]})
@@ -198,12 +223,12 @@ V.push({ slug: 'v5-minimal-heroes', slides: [
 V.push({ slug: 'v6-faces-stories', slides: [
   hook(p.st6),
   { name: '02', html: hero(p.tw1, tag('Taipei', 64, 60) + sub('A barista. Her first shoot. Shot on 35mm.', 420)) },
-  d8('03', 'Then I kept finding people', [p.hk1, p.hk3, p.kr1, p.st1, p.m5, p.tw4, p.ba6, p.in1], 'Strangers who became subjects.'),
+  d5('03', 'Then I kept finding people', [p.hk1, p.hk3, p.kr1, p.st1, p.m5, p.tw4, p.ba6, p.in1], 'Strangers who became subjects.'),
   { name: '04', html: hero(p.kr1, tag('Seoul', 64, 60) + h2('She said she had<br/>never modeled.', 460) + sub('Look at her.', 400)) },
   d8('05', 'Hong Kong at night', [p.hk1, p.hk2, p.hk3, p.hk4, p.hk5, p.st2, p.st3, p.st4], 'Three strangers. One night. All film.'),
   { name: '06', html: hero(p.m5, tag('Singapore', 64, 60) + sub('A designer. She brought her own collection.', 420)) },
-  d8('07', 'Everywhere else', [p.m1, p.m8, p.m22, p.ou1, p.ba1, p.ba10, p.m26, p.m30], 'Ulaanbaatar. Baguio. La Union. Chongqing.'),
-  d6('08', 'The intimate ones', [p.in1, p.in4, p.in2, p.m29, p.m28, p.m35], 'Are always the best.'),
+  d4('07', 'Everywhere else', [p.m1, p.m8, p.m22, p.ou1, p.ba1, p.ba10, p.m26, p.m30], 'Ulaanbaatar. Baguio. La Union. Chongqing.'),
+  d4('08', 'The intimate ones', [p.in1, p.in4, p.in2, p.m29, p.m28, p.m35], 'Are always the best.'),
   { name: '09', html: hero(p.ba10, h1('Who is next<br/>in Bali?', 500) + sub('Maybe you. Sign up below.', 420)) },
   ctaEnd(p.tw6),
 ]})
@@ -224,20 +249,20 @@ V.push({ slug: 'v7-not-boring', slides: [
 V.push({ slug: 'v8-stats-dense', slides: [
   hook(p.tw1),
   d8('02', 'Baguio \u00b7 La Union \u00b7 Kaohsiung \u00b7 Taipei', [p.ba1, p.ba5, p.tw1, p.tw4, p.ou1, p.ou2, p.st1, p.st5], '8 shoots. 4 cities. All 35mm.'),
-  d8('03', 'Mui Wo \u00b7 HK \u00b7 Tainan \u00b7 Chongqing', [p.hk1, p.hk2, p.hk3, p.hk4, p.hk5, p.st3, p.m10, p.m15], 'Night. Markets. Neon. Film grain.'),
+  d5('03', 'Mui Wo \u00b7 HK \u00b7 Tainan \u00b7 Chongqing', [p.hk1, p.hk2, p.hk3, p.hk4, p.hk5, p.st3, p.m10, p.m15], 'Night. Markets. Neon. Film grain.'),
   d8('04', 'Guangzhou \u00b7 Seoul \u00b7 Tokyo', [p.kr1, p.kr2, p.kr3, p.kr4, p.m5, p.m8, p.m12, p.m16], 'Fashion meets documentary.'),
   d8('05', 'Ulaanbaatar \u00b7 Singapore', [p.m1, p.m22, p.m25, p.m26, p.m28, p.m29, p.m30, p.m31], 'I find faces everywhere I go.'),
   { name: '06', html: hero(p.in1, h2('Every single one<br/>directed by me.', 440) + sub('No experience needed.', 370)) },
-  d8('07', 'The range', [p.tw1, p.st6, p.hk1, p.kr1, p.m5, p.in1, p.ou1, p.ba10], 'Street. Fashion. Intimate. Nature.'),
+  d4('07', 'The range', [p.tw1, p.st6, p.hk1, p.kr1, p.m5, p.in1, p.ou1, p.ba10], 'Street. Fashion. Intimate. Nature.'),
   { name: '08', html: hero(p.ba10, h1('City #14:<br/>Bali.', 500) + sub('I need new faces.', 420)) },
-  d6('09', 'This could be you', [p.m29, p.ba10, p.in1, p.m28, p.ba5, p.tw4], 'Sign up below.'),
+  d5('09', 'This could be you', [p.m29, p.ba10, p.in1, p.m28, p.ba5, p.tw4], 'Sign up below.'),
   ctaEnd(p.m30),
 ]})
 
 V.push({ slug: 'v9-journey-packed', slides: [
   hook(p.st5),
   { name: '02', html: hero(p.tw1, tag('Taipei - where it started', 64, 60) + sub('First roll of film. First collaboration.', 420)) },
-  d8('03', 'Then everywhere else', [p.hk1, p.kr1, p.st1, p.m5, p.ba6, p.m22, p.ou1, p.m1], 'Same camera. Different continent every month.'),
+  d5('03', 'Then everywhere else', [p.hk1, p.kr1, p.st1, p.m5, p.ba6, p.m22, p.ou1, p.m1], 'Same camera. Different continent every month.'),
   d8('04', 'Night shoots', [p.hk1, p.hk2, p.hk3, p.hk4, p.hk5, p.st3, p.st4, p.m30], 'Hong Kong. Taipei. Kaohsiung. All after midnight.'),
   { name: '05', html: hero(p.ou1, tag('La Union \u00b7 Baguio', 64, 60) + h2('Beach towns.<br/>Mountain towns.', 440) + sub('Nature on film.', 370)) },
   d8('06', 'Mongolia \u00b7 Singapore \u00b7 Philippines', [p.m1, p.m8, p.m22, p.ba1, p.ba5, p.ba10, p.ou2, p.m26], 'People everywhere want great photos.'),
@@ -250,12 +275,12 @@ V.push({ slug: 'v9-journey-packed', slides: [
 V.push({ slug: 'v10-aspirational', slides: [
   hook(p.m5),
   d8('02', 'Taipei', [p.tw1, p.tw2, p.tw3, p.tw4, p.tw5, p.tw6, p.tw7, p.tw8], 'Her first time in front of a camera.'),
-  d8('03', 'Hong Kong', [p.hk1, p.hk2, p.hk3, p.hk4, p.hk5, p.st2, p.st3, p.st4], 'Three strangers. One night. All film.'),
+  d5('03', 'Hong Kong', [p.hk1, p.hk2, p.hk3, p.hk4, p.hk5, p.st2, p.st3, p.st4], 'Three strangers. One night. All film.'),
   { name: '04', html: hero(p.kr1, tag('Seoul', 64, 60) + h2('She almost<br/>cancelled.', 460) + sub('Glad she did not.', 400)) },
   d8('05', 'Kaohsiung \u00b7 Tainan \u00b7 Chongqing', [p.st1, p.st5, p.st6, p.ba6, p.ba7, p.ba9, p.m10, p.m11], 'Every face has something.'),
   { name: '06', html: hero(p.ou1, tag('La Union \u00b7 Baguio', 64, 60) + h2('Nature shoots<br/>hit different<br/>on film.', 400)) },
-  d8('07', 'Ulaanbaatar \u00b7 Singapore \u00b7 Tokyo', [p.m1, p.m5, p.m8, p.m12, p.m22, p.m25, p.m30, p.m31], 'I find interesting people everywhere.'),
-  d6('08', 'The intimate ones', [p.in1, p.in4, p.in2, p.m29, p.m28, p.m35], 'The grain is the point.'),
+  d4('07', 'Ulaanbaatar \u00b7 Singapore \u00b7 Tokyo', [p.m1, p.m5, p.m8, p.m12, p.m22, p.m25, p.m30, p.m31], 'I find interesting people everywhere.'),
+  d4('08', 'The intimate ones', [p.in1, p.in4, p.in2, p.m29, p.m28, p.m35], 'The grain is the point.'),
   { name: '09', html: hero(p.ba10, h1('Now imagine<br/>yourself here.', 480) + sub('Bali. Sign up below.', 400)) },
   ctaEnd(p.tw6),
 ]})
