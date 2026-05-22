@@ -112,8 +112,8 @@ function slide03() {
     { src: imageData.proofA, x: 72, y: 520, w: 308, h: 430, r: -2.4 },
     { src: imageData.proofB, x: 408, y: 490, w: 300, h: 440, r: 1.4 },
     { src: imageData.proofC, x: 735, y: 535, w: 270, h: 410, r: -1.6 },
-    { src: imageData.proofD, x: 110, y: 980, w: 330, h: 470, r: 1.8 },
-    { src: imageData.detail, x: 475, y: 950, w: 510, h: 510, r: -1.2 }
+    { src: imageData.proofD, x: 122, y: 980, w: 305, h: 410, r: 1.8 },
+    { src: imageData.detail, x: 492, y: 958, w: 470, h: 430, r: -1.2 }
   ]
   const images = slots.map(slot => `
     <img src="${slot.src}" style="position:absolute;left:${slot.x}px;top:${slot.y}px;width:${slot.w}px;height:${slot.h}px;object-fit:cover;transform:rotate(${slot.r}deg);border:14px solid #fbf5ea;box-shadow:0 26px 60px rgba(0,0,0,0.32);"/>
