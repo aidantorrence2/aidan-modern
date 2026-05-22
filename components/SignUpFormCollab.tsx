@@ -228,7 +228,7 @@ export default function SignUpFormCollab() {
 
         <div className="rounded-2xl border border-white/[0.08] bg-white/[0.03] p-5 space-y-3">
           <p className="text-sm leading-relaxed text-white/60">
-            I&apos;m a traveling photographer building new work in Bali. Looking for models who want to create together &mdash; you get edited photos for your portfolio, I get to shoot.
+            I&apos;m a photographer building new work in Bali. Looking for models who want to create together &mdash; you get edited photos for your portfolio, I get to shoot.
             TFP. No cost, no catch.
           </p>
         </div>
