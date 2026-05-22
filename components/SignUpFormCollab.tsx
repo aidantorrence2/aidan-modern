@@ -218,19 +218,36 @@ export default function SignUpFormCollab() {
         </a>
       </div>
 
-      <div className="space-y-4">
+      <div className="space-y-5">
         <h1 className="font-display text-3xl font-semibold leading-[1.05] text-white sm:text-4xl" style={{ fontFamily: 'Georgia, serif' }}>
-          Model collaboration
+          Sign Up
         </h1>
-        <p className="text-lg leading-relaxed text-white/50" style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic' }}>
-          Open for collaborations this month.
-        </p>
 
-        <div className="rounded-2xl border border-white/[0.08] bg-white/[0.03] p-5 space-y-3">
-          <p className="text-sm leading-relaxed text-white/60">
-            I&apos;m a photographer building new work in Bali. Looking for models who want to create together &mdash; you get edited photos for your portfolio, I get to shoot.
-            TFP. No cost, no catch.
-          </p>
+        <div className="space-y-2.5">
+          <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-white/30">Recent work</p>
+          <div className="grid grid-cols-4 gap-1.5">
+            {[
+              '/images/new/000005-3.jpg',
+              '/images/new/000016.jpg',
+              '/images/new/000008-3.jpg',
+              '/images/new/000013-3.jpg',
+              '/images/new/000009.jpg',
+              '/images/new/000012.jpg',
+              '/images/new/000042-5.jpg',
+              '/images/new/000015-3.jpg',
+            ].map((src, i) => (
+              <div key={i} className="relative overflow-hidden rounded-lg aspect-[3/4]">
+                <NextImage
+                  src={src}
+                  alt=""
+                  width={200}
+                  height={267}
+                  className="w-full h-full object-cover object-top"
+                  unoptimized
+                />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 
