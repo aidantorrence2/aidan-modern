@@ -167,9 +167,11 @@ for (let i = 0; i < 10; i++) {
   groups.push(shuffled.slice(i * perGroup, (i + 1) * perGroup))
 }
 
-// Build 10 variations
+// Build 10 variations — wrap around if group is short
 const variations = groups.map((photos, vi) => {
-  const p = photos.map(f => loaded[f]) // base64 data
+  const pRaw = photos.map(f => loaded[f])
+  // Ensure at least 16 entries by wrapping
+  const p = Array.from({length: 20}, (_, i) => pRaw[i % pRaw.length])
   const hk = HOOKS[vi]
   const sc = SLIDE_COPY[vi]
   const sp = SPLIT_COPY[vi % SPLIT_COPY.length]
