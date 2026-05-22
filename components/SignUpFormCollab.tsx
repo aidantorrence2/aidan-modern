@@ -40,10 +40,11 @@ const experienceOptions = [
 ]
 
 const vibeOptions = [
-  { id: 'Editorial & fashion', desc: 'Magazine-quality, styled, dramatic' },
+  { id: 'Editorial & fashion', desc: 'Dramatic landscapes, fashion outfits, like from a magazine' },
   { id: 'Street & urban', desc: 'Gritty, real, in-the-moment' },
-  { id: 'Nature & golden hour', desc: 'Rice fields, jungle, beach, soft light' },
+  { id: 'Beach / nature', desc: 'Rice fields, jungle, beach, golden hour, soft light' },
   { id: 'Intimate & personal', desc: 'Close, quiet, vulnerable' },
+  { id: 'Villa / studio', desc: 'White walls, clean backdrops, modern and sophisticated' },
   { id: 'Open to anything', desc: 'Let\u2019s figure it out together' },
 ]
 
