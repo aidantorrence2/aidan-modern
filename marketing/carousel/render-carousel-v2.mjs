@@ -6,11 +6,17 @@ import fs from 'fs'
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const OUT = path.join(__dirname, 'output-v2')
 const IMG_DIR = '/Users/aidantorrence/Documents/aidan-modern/public/images/large'
+const NEW_DIR = '/Users/aidantorrence/Documents/aidan-modern/public/images/new'
 
 fs.mkdirSync(OUT, { recursive: true })
 
 function img(filename) {
   const buf = fs.readFileSync(path.join(IMG_DIR, filename))
+  return `data:image/jpeg;base64,${buf.toString('base64')}`
+}
+
+function newImg(filename) {
+  const buf = fs.readFileSync(path.join(NEW_DIR, filename))
   return `data:image/jpeg;base64,${buf.toString('base64')}`
 }
 
@@ -372,9 +378,8 @@ for (const city of cities) {
           <img src="${img0190}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;filter:saturate(1.1) contrast(1.05);"/>
           <div style="position:absolute;inset:0;background:linear-gradient(180deg, rgba(0,0,0,0.25) 0%, transparent 20%, transparent 40%, rgba(0,0,0,0.94) 100%);"></div>
           <div style="position:absolute;bottom:420px;left:64px;right:64px;">
-            <h1 style="font-family:${SERIF};font-size:108px;font-weight:700;font-style:italic;color:white;line-height:0.92;margin:0;${S}">In Bali for<br/>2 weeks.</h1>
-            <h2 style="font-family:${SERIF};font-size:80px;font-weight:700;font-style:italic;color:rgba(255,255,255,0.7);line-height:0.95;margin:16px 0 0;${S}">Looking<br/>for faces.</h2>
-            <p style="font-family:${SANS};font-size:30px;color:rgba(255,255,255,0.5);margin:32px 0 0 4px;line-height:1.5;${S}">Photographer from the US. Let's collaborate.</p>
+            <h1 style="font-family:${SERIF};font-size:98px;font-weight:700;font-style:italic;color:white;line-height:0.92;margin:0;${S}">Collaboration<br/>spots open<br/>this month.</h1>
+            <p style="font-family:${SANS};font-size:30px;color:rgba(255,255,255,0.5);margin:32px 0 0 4px;line-height:1.5;${S}">Bali. Traveling photographer. Let's create together.</p>
           </div>
           ${filmGrain(0.1)}
         </div>
@@ -421,7 +426,7 @@ for (const city of cities) {
           <div style="position:absolute;inset:0;background:linear-gradient(180deg, rgba(0,0,0,0.3) 0%, transparent 20%, transparent 40%, rgba(0,0,0,0.94) 100%);"></div>
           <div style="position:absolute;bottom:420px;left:64px;right:64px;">
             <h1 style="font-family:${SERIF};font-size:118px;font-weight:700;font-style:italic;color:white;line-height:0.90;margin:0;${S}">You should<br/>be in my<br/>portfolio.</h1>
-            <p style="font-family:${SANS};font-size:30px;color:rgba(255,255,255,0.5);margin:36px 0 0 4px;line-height:1.5;${S}">Bali. TFP collaboration. DM me.</p>
+            <h2 style="font-family:${SERIF};font-size:64px;font-weight:700;font-style:italic;color:rgba(255,255,255,0.6);line-height:0.95;margin:28px 0 0;${S}">Open for collaborations<br/>this month.</h2>
           </div>
           ${filmGrain(0.1)}
         </div>
@@ -455,91 +460,164 @@ for (const city of cities) {
   )
 }
 
-// -- Bali proof-heavy: magazine-style layouts, collab framing --
+// -- Bali proof-heavy: 10 slides, new photos, beautiful layouts, collab framing --
 {
   const s = 'bali-proof'
   const prefix = s + '-carousel'
-  const imgCloseup = img('manila-gallery-closeup-001.jpg')
-  const imgFloor = img('manila-gallery-floor-001.jpg')
-  const imgGarden1 = img('manila-gallery-garden-001.jpg')
-  const imgGarden2 = img('manila-gallery-garden-002.jpg')
-  const imgIvy1 = img('manila-gallery-ivy-001.jpg')
-  const imgNight1 = img('manila-gallery-night-001.jpg')
-  const imgNight2 = img('manila-gallery-night-002.jpg')
-  const imgCanal2 = img('manila-gallery-canal-002.jpg')
-  const imgShadow = img('manila-gallery-shadow-001.jpg')
-  const imgTropical = img('manila-gallery-tropical-001.jpg')
-  const imgWhite = img('manila-gallery-white-001.jpg')
-  const imgUrban1 = img('manila-gallery-urban-001.jpg')
-  const imgPurple1 = img('manila-gallery-purple-001-cropped.jpg')
-  const imgPurple2 = img('manila-gallery-purple-002-cropped.jpg')
-  const imgPurple3 = img('manila-gallery-purple-003-cropped.jpg')
-  const img0130 = img('manila-gallery-dsc-0130.jpg')
+  const G = 6 // gap between images
+  // Load new portfolio photos
+  const n01 = newImg('000001.jpg')       // bicycle street
+  const n03 = newImg('000003.jpg')       // blue wall sitting
+  const n04 = newImg('000004.jpg')       // blue wall curly hair
+  const n05 = newImg('000005-3.jpg')     // silver dress cafe
+  const n06 = newImg('000006-12.jpg')    // silver dress smoking
+  const n07 = newImg('000007-3.jpg')     // silver dress kegs
+  const n08 = newImg('000008-3.jpg')     // corset circular frame
+  const n09 = newImg('000009.jpg')       // market stall dark dress
+  const n10 = newImg('000010-11.jpg')    // denim jacket waterfall
+  const n11 = newImg('000011-4.jpg')     // arms up white top
+  const n12 = newImg('000012.jpg')       // dark dress shutter
+  const n13 = newImg('000013-3.jpg')     // night dragon top wall
+  const n14 = newImg('000014-3.jpg')     // night railing
+  const n15 = newImg('000015-3.jpg')     // night street fashion
+  const n16 = newImg('000016.jpg')       // closeup hands face
+  const n17 = newImg('000017-4.jpg')     // lying down pink intimate
+  const n18 = newImg('000001-8.jpg')     // red top stairs
+  const n19 = newImg('000003-5.jpg')     // varied
+  const n20 = newImg('000004-5.jpg')     // varied
+  const n21 = newImg('000005-4.jpg')     // varied
+  const n22 = newImg('000009-11.jpg')    // varied
+  const n23 = newImg('000010-3.jpg')     // varied
+  const n24 = newImg('000015-8.jpg')     // varied
+  const n25 = newImg('000016-3.jpg')     // varied
+  const n26 = newImg('000002-4.jpg')     // varied
+  const n27 = newImg('000003-8.jpg')     // varied
 
-  // Slide 1: big hero with one line
+  function fImg(src, l, t, w, h, pos) {
+    pos = pos || 'center'
+    return '<img src="' + src + '" style="position:absolute;left:' + l + 'px;top:' + t + 'px;width:' + w + 'px;height:' + h + 'px;object-fit:cover;object-position:' + pos + ';display:block;"/>'
+  }
+
+  function slide(name, inner) {
+    return { name, html: '<div style="width:1080px;height:1920px;position:relative;overflow:hidden;background:#0a0a0a;">' + inner + filmGrain(0.06) + '</div>' }
+  }
+
+  // Photo with white border, rotation, and shadow — like a real print
+  function print(src, l, t, w, h, rot, border) {
+    border = border || 12
+    return '<div style="position:absolute;left:' + l + 'px;top:' + t + 'px;width:' + (w + border*2) + 'px;height:' + (h + border*2) + 'px;background:white;padding:' + border + 'px;transform:rotate(' + rot + 'deg);box-shadow:0 8px 40px rgba(0,0,0,0.45), 0 2px 8px rgba(0,0,0,0.2);"><img src="' + src + '" style="width:' + w + 'px;height:' + h + 'px;object-fit:cover;object-position:center;display:block;"/></div>'
+  }
+
+  // Floating photo with shadow, no border
+  function floating(src, l, t, w, h, rot) {
+    return '<img src="' + src + '" style="position:absolute;left:' + l + 'px;top:' + t + 'px;width:' + w + 'px;height:' + h + 'px;object-fit:cover;object-position:center;display:block;transform:rotate(' + rot + 'deg);filter:drop-shadow(0 16px 40px rgba(0,0,0,0.5));"/>'
+  }
+
+  function darkBg(inner) {
+    return '<div style="width:1080px;height:1920px;position:relative;overflow:hidden;background:#080a0e;">'
+      + '<div style="position:absolute;inset:0;background:linear-gradient(170deg, #0c1420 0%, #080c14 50%, #060a10 100%);"></div>'
+      + '<div style="position:absolute;inset:0;background:radial-gradient(circle at 20% 20%, rgba(80,140,220,0.12), transparent 30%), radial-gradient(circle at 80% 80%, rgba(220,170,100,0.08), transparent 25%);"></div>'
+      + inner + filmGrain(0.08) + '</div>'
+  }
+
+  // Slide 1: Hook
   allSlides.push({
     name: prefix + '-01-hook',
     html: '<div style="width:1080px;height:1920px;position:relative;overflow:hidden;background:#000;">'
-      + '<img src="' + img0190 + '" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;filter:saturate(1.1) contrast(1.05);"/>'
-      + '<div style="position:absolute;inset:0;background:linear-gradient(180deg, rgba(0,0,0,0.15) 0%, transparent 25%, transparent 55%, rgba(0,0,0,0.92) 100%);"></div>'
+      + '<img src="' + n05 + '" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;filter:saturate(1.1) contrast(1.05);"/>'
+      + '<div style="position:absolute;inset:0;background:linear-gradient(180deg, rgba(0,0,0,0.1) 0%, transparent 25%, transparent 50%, rgba(0,0,0,0.92) 100%);"></div>'
       + '<div style="position:absolute;bottom:420px;left:64px;right:64px;">'
       + '<p style="font-family:' + SANS + ';font-size:22px;font-weight:700;color:rgba(255,255,255,0.4);letter-spacing:0.15em;text-transform:uppercase;margin:0 0 16px;' + S + '">Bali \u00b7 Model collab</p>'
       + '<h1 style="font-family:' + SERIF + ';font-size:108px;font-weight:700;font-style:italic;color:white;line-height:0.90;margin:0;' + S + '">I don\u2019t need<br/>to explain.<br/>Just look.</h1>'
-      + '</div>'
-      + filmGrain(0.1)
-      + '</div>'
+      + '</div>' + filmGrain(0.1) + '</div>'
   })
 
-  // Slide 2: big/small mosaic — 1 large left + 2 stacked right, 6px gap
-  allSlides.push({
-    name: prefix + '-02-mosaic-a',
-    html: '<div style="width:1080px;height:1920px;position:relative;overflow:hidden;background:#0a0a0a;">'
-      + '<img src="' + imgIvy2 + '" style="position:absolute;left:0;top:0;width:534px;height:1920px;object-fit:cover;object-position:center;"/>'
-      + '<img src="' + imgPurple1 + '" style="position:absolute;left:540px;top:0;width:540px;height:954px;object-fit:cover;object-position:center;"/>'
-      + '<img src="' + imgNight1 + '" style="position:absolute;left:540px;top:960px;width:540px;height:960px;object-fit:cover;object-position:center;"/>'
-      + filmGrain(0.06)
-      + '</div>'
-  })
+  // Slide 2: One big tilted print center + two small prints tucked behind
+  allSlides.push({ name: prefix + '-02-prints', html: darkBg(
+    print(n13, 40, 100, 380, 500, -4) +
+    print(n15, 580, 60, 420, 540, 3.5) +
+    print(n16, 180, 620, 700, 880, -1.2, 16) +
+    print(n18, 50, 1480, 340, 380, 2.8) +
+    print(n11, 480, 1420, 480, 440, -2)
+  )})
 
-  // Slide 3: 2 stacked left + 1 large right, 6px gap
-  allSlides.push({
-    name: prefix + '-03-mosaic-b',
-    html: '<div style="width:1080px;height:1920px;position:relative;overflow:hidden;background:#0a0a0a;">'
-      + '<img src="' + imgCanal1 + '" style="position:absolute;left:0;top:0;width:540px;height:954px;object-fit:cover;object-position:center;"/>'
-      + '<img src="' + imgGarden1 + '" style="position:absolute;left:0;top:960px;width:540px;height:960px;object-fit:cover;object-position:center;"/>'
-      + '<img src="' + imgUrban3 + '" style="position:absolute;left:546px;top:0;width:534px;height:1920px;object-fit:cover;object-position:center;"/>'
-      + filmGrain(0.06)
-      + '</div>'
-  })
+  // Slide 3: Diagonal cascade — photos stepping down L to R like dropped cards
+  allSlides.push({ name: prefix + '-03-cascade', html: darkBg(
+    floating(n08, 40, 60, 520, 650, -2.5) +
+    floating(n09, 440, 380, 560, 700, 1.8) +
+    floating(n03, 80, 820, 480, 600, 2.2) +
+    floating(n14, 460, 1150, 540, 680, -1.5)
+  )})
 
-  // Slide 4: one full bleed photo + text overlay at bottom
+  // Slide 4: One massive hero (80% of frame) + tiny accent overlapping corner
+  allSlides.push({ name: prefix + '-04-hero', html: darkBg(
+    '<img src="' + n12 + '" style="position:absolute;left:60px;top:120px;width:960px;height:1400px;object-fit:cover;object-position:center;display:block;filter:drop-shadow(0 30px 60px rgba(0,0,0,0.6));"/>' +
+    print(n17, 560, 1340, 420, 500, 3, 10) +
+    print(n04, -20, 1380, 340, 440, -4, 10)
+  )})
+
+  // Slide 5: Tight cluster — 4 overlapping prints dropped on a table, centered
+  allSlides.push({ name: prefix + '-05-cluster', html: darkBg(
+    print(n01, 80, 280, 480, 620, -6) +
+    print(n06, 420, 200, 520, 660, 4) +
+    print(n10, 140, 880, 520, 650, 3.5) +
+    print(n07, 380, 940, 560, 700, -2.5) +
+    print(n22, 200, 1560, 600, 340, 1.2, 10)
+  )})
+
+  // Slide 6: Fan spread — photos radiating from bottom center like a hand of cards
+  allSlides.push({ name: prefix + '-06-fan', html: darkBg(
+    floating(n23, 40, 200, 360, 500, -12) +
+    floating(n24, 220, 120, 380, 520, -4) +
+    floating(n25, 380, 80, 380, 520, 2) +
+    floating(n26, 560, 140, 380, 520, 8) +
+    floating(n27, 680, 260, 360, 500, 14) +
+    '<div style="position:absolute;bottom:380px;left:64px;right:64px;text-align:center;">'
+    + '<p style="font-family:' + SERIF + ';font-size:80px;font-weight:700;font-style:italic;color:white;line-height:0.95;margin:0;' + S + '">All real.<br/>All directed<br/>by me.</p></div>'
+  )})
+
+  // Slide 7: Vertical triptych — 3 tall photos with slight offsets and tilts
+  allSlides.push({ name: prefix + '-07-triptych', html: darkBg(
+    floating(n19, 20, 80, 330, 1760, -1.5) +
+    floating(n21, 370, 40, 330, 1760, 0.8) +
+    floating(n20, 720, 100, 330, 1760, -0.5)
+  )})
+
+  // Slide 8: "This could be you" — single breathtaking photo with text
   allSlides.push({
-    name: prefix + '-04-fullbleed',
+    name: prefix + '-08-you',
     html: '<div style="width:1080px;height:1920px;position:relative;overflow:hidden;background:#000;">'
-      + '<img src="' + imgShadow + '" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(1.08);"/>'
-      + '<div style="position:absolute;inset:0;background:linear-gradient(180deg, transparent 50%, rgba(0,0,0,0.85) 100%);"></div>'
+      + '<img src="' + n16 + '" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(1.08);"/>'
+      + '<div style="position:absolute;inset:0;background:linear-gradient(180deg, transparent 40%, rgba(0,0,0,0.88) 100%);"></div>'
       + '<div style="position:absolute;bottom:400px;left:64px;right:64px;">'
-      + '<p style="font-family:' + SERIF + ';font-size:80px;font-weight:700;font-style:italic;color:white;line-height:0.95;margin:0;' + S + '">This could<br/>be you.</p>'
-      + '<p style="font-family:' + SANS + ';font-size:30px;color:rgba(255,255,255,0.5);margin:28px 0 0;' + S + '">TFP collaboration. I direct everything.</p>'
-      + '</div>'
-      + filmGrain(0.1)
-      + '</div>'
+      + '<p style="font-family:' + SERIF + ';font-size:96px;font-weight:700;font-style:italic;color:white;line-height:0.95;margin:0;' + S + '">This could<br/>be you.</p>'
+      + '<p style="font-family:' + SANS + ';font-size:30px;color:rgba(255,255,255,0.5);margin:28px 0 0;' + S + '">TFP. I direct everything. No experience needed.</p>'
+      + '</div>' + filmGrain(0.1) + '</div>'
   })
 
-  // Slide 5: CTA
+  // Slide 9: Scattered prints with mixed sizes — messy editorial table
+  allSlides.push({ name: prefix + '-09-editorial', html: darkBg(
+    print(n15, 20, 40, 500, 380, -3, 14) +
+    print(n05, 480, 20, 540, 420, 2.5, 14) +
+    print(n08, 60, 460, 440, 560, 1.8, 12) +
+    print(n09, 500, 500, 500, 620, -2.8, 12) +
+    print(n03, 120, 1080, 420, 340, -1.5, 10) +
+    print(n12, 520, 1140, 480, 380, 3.2, 10) +
+    print(n14, 200, 1460, 600, 440, -0.8, 14)
+  )})
+
+  // Slide 10: CTA
   allSlides.push({
-    name: prefix + '-05-cta',
+    name: prefix + '-10-cta',
     html: '<div style="width:1080px;height:1920px;position:relative;overflow:hidden;background:#000;">'
-      + '<img src="' + imgPark + '" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(1.1) brightness(0.6);"/>'
+      + '<img src="' + n13 + '" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(1.1) brightness(0.55);"/>'
       + '<div style="position:absolute;inset:0;background:linear-gradient(180deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.15) 30%, rgba(0,0,0,0.15) 50%, rgba(0,0,0,0.92) 100%);"></div>'
       + '<div style="position:absolute;bottom:380px;left:64px;right:64px;">'
-      + '<h2 style="font-family:' + SERIF + ';font-size:100px;font-weight:700;font-style:italic;color:white;line-height:0.95;margin:0;' + S + '">DM me.</h2>'
+      + '<h2 style="font-family:' + SERIF + ';font-size:100px;font-weight:700;font-style:italic;color:white;line-height:0.95;margin:0;' + S + '">Let\u2019s<br/>collaborate.</h2>'
       + '<div style="margin:36px 0 0;display:flex;flex-direction:column;gap:20px;">'
-      + '<p style="font-family:' + SANS + ';font-size:36px;color:rgba(255,255,255,0.9);line-height:1.45;margin:0;' + S + '">@madebyaidan on Instagram.</p>'
-      + '<p style="font-family:' + SANS + ';font-size:32px;color:rgba(255,255,255,0.55);line-height:1.45;margin:0;' + S + '">Send me your look. No experience needed.<br/>I handle everything.</p>'
-      + '</div></div>'
-      + filmGrain(0.1)
-      + '</div>'
+      + '<p style="font-family:' + SANS + ';font-size:36px;color:rgba(255,255,255,0.9);line-height:1.45;margin:0;' + S + '">DM @madebyaidan on Instagram.</p>'
+      + '<p style="font-family:' + SANS + ';font-size:32px;color:rgba(255,255,255,0.55);line-height:1.45;margin:0;' + S + '">Send me your look. No experience needed. I handle everything.</p>'
+      + '</div></div>' + filmGrain(0.1) + '</div>'
   })
 }
 
