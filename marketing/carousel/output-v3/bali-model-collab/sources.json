@@ -1,0 +1,21 @@
+{
+  "strategy": "Bali model-test / TFP collaboration carousel. Replaces broad free-shoot framing with selective, high-intent qualification.",
+  "format": "1080x1920 story/reels safe carousel",
+  "safeBottomPixels": 410,
+  "slides": [
+    "01-bali-model-test-collab",
+    "02-who-qualifies",
+    "03-style-proof",
+    "04-what-you-get",
+    "05-apply"
+  ],
+  "photos": {
+    "hero": "manila-gallery-urban-003.jpg",
+    "proofA": "manila-gallery-dsc-0190.jpg",
+    "proofB": "manila-gallery-canal-001.jpg",
+    "proofC": "manila-gallery-dsc-0911.jpg",
+    "proofD": "manila-gallery-dsc-0075.jpg",
+    "detail": "manila-gallery-night-003.jpg",
+    "cta": "manila-gallery-ivy-002.jpg"
+  }
+}
