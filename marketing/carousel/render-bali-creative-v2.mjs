@@ -16,7 +16,7 @@ const MO = "'Courier New', monospace"
 const SH = 'text-shadow: 0 3px 6px rgba(0,0,0,1), 0 10px 40px rgba(0,0,0,0.8), 0 0 100px rgba(0,0,0,0.5);'
 const GR = '<div style="position:absolute;inset:0;pointer-events:none;opacity:0.08;mix-blend-mode:soft-light;background-image:radial-gradient(circle at 14% 18%, rgba(255,255,255,0.5), transparent 17%),radial-gradient(circle at 84% 12%, rgba(255,255,255,0.28), transparent 15%),repeating-linear-gradient(0deg, rgba(255,255,255,0.08) 0 1px, transparent 1px 4px);"></div>'
 
-// Portrait image helper — always taller than wide
+// 35mm filmit image helper — always taller than wide
 function img(src, l, t, w, h, extra) { extra=extra||''; return '<img src="'+src+'" style="position:absolute;left:'+l+'px;top:'+t+'px;width:'+w+'px;height:'+h+'px;object-fit:cover;object-position:center top;display:block;'+extra+'"/>' }
 // Print — portrait with white border
 function pr(src, l, t, w, h, rot, b) { b=b||12; return '<div style="position:absolute;left:'+l+'px;top:'+t+'px;width:'+(w+b*2)+'px;height:'+(h+b*2)+'px;background:white;padding:'+b+'px;transform:rotate('+rot+'deg);box-shadow:0 8px 40px rgba(0,0,0,0.45), 0 2px 8px rgba(0,0,0,0.2);"><img src="'+src+'" style="width:'+w+'px;height:'+h+'px;object-fit:cover;object-position:center top;display:block;"/></div>' }
@@ -120,7 +120,7 @@ function filmStrip(nm, tg, p3, btm) { return { name: nm, html:
   Array.from({length:10}, (_,i) => '<div style="position:absolute;left:20px;top:'+(60+i*190)+'px;width:36px;height:24px;background:#0a0a0a;border-radius:3px;"></div><div style="position:absolute;right:20px;top:'+(60+i*190)+'px;width:36px;height:24px;background:#0a0a0a;border-radius:3px;"></div>').join('') +
   img(p3[0], 80, 40, 440, 600) + img(p3[1], 560, 40, 440, 600) +
   img(p3[2], 80, 680, 920, 700, 'object-position:center top;') +
-  '<p style="position:absolute;left:80px;bottom:80px;font-family:'+MO+';font-size:14px;color:rgba(255,180,60,0.5);margin:0;">KODAK PORTRA 400 &nbsp;&nbsp; 24A &nbsp; 25A &nbsp; 26A</p>' +
+  '<p style="position:absolute;left:80px;bottom:80px;font-family:'+MO+';font-size:14px;color:rgba(255,180,60,0.5);margin:0;">KODAK 35MM &nbsp;&nbsp; 24A &nbsp; 25A &nbsp; 26A</p>' +
   '<p style="position:absolute;right:80px;bottom:80px;font-family:'+SA+';font-size:20px;font-weight:600;color:rgba(255,255,255,0.5);letter-spacing:0.1em;text-transform:uppercase;margin:0;">'+tg+'</p>' +
   sub(btm, 120) + GR + '</div>'
 }}
@@ -168,7 +168,7 @@ const variations = [
   // V1: Film strip + scatter + magazine
   { slug: 'v1', slides: [
     hookSlide(P.d1),
-    filmStrip('02', 'Hong Kong \u00b7 35mm', [P.a4, P.a10, P.a17], 'Shot on Portra 400.'),
+    filmStrip('02', 'Hong Kong \u00b7 35mm', [P.a4, P.a10, P.a17], 'Shot on 35mm film.'),
     scatter8('03', 'Taipei \u00b7 Night', [P.a7, P.a8, P.a11, P.a12, P.a13, P.a14, P.a15, P.a16], 'Eight people. One city. All film.'),
     magazine('04', P.d3, 'Kaohsiung \u00b7 Shot on film', 'Every face<br/>tells a<br/>different story.', 'I direct everything. No experience needed. All shot on 35mm film across 13 cities.', P.d4),
     pile6('05', 'Chongqing \u00b7 Guangzhou', [P.b1, P.b2, P.b3, P.b4, P.b5, P.b6], 'Markets. Streets. Real life.'),
@@ -246,7 +246,7 @@ const variations = [
   // V7: Booth + film strip + fan
   { slug: 'v7', slides: [
     hookSlide(P.d4),
-    filmStrip('02', 'Hong Kong \u00b7 Night', [P.a1, P.a5, P.a17], 'Kodak Portra 400.'),
+    filmStrip('02', 'Hong Kong \u00b7 Night', [P.a1, P.a5, P.a17], 'Kodak 35mm film.'),
     booth3('03', 'Taipei', [P.a7, P.a12, P.a15], 'Fashion meets film.'),
     { name: '04', html: hero(P.b1, tag('Chongqing', 64, 60) + h2('Street markets<br/>at golden hour.', 440)) },
     fan5('05', 'Night people', [P.a2, P.a6, P.a8, P.d6, P.d9], 'City lights. Film grain.'),
