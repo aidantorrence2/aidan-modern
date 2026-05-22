@@ -278,11 +278,94 @@ for (const city of cities) {
   )
 }
 
+// -- Bali collab variant (model search) --
+{
+  const s = 'bali-collab'
+  const prefix = `${s}-carousel`
+  allSlides.push(
+    {
+      name: `${prefix}-01-hook`,
+      html: `
+        <div style="width:1080px;height:1920px;position:relative;overflow:hidden;background:#000;">
+          <img src="${imgUrban3}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;filter:saturate(1.1) contrast(1.05);"/>
+          <div style="position:absolute;inset:0;background:linear-gradient(180deg, rgba(0,0,0,0.25) 0%, transparent 20%, transparent 40%, rgba(0,0,0,0.94) 100%);"></div>
+          <div style="position:absolute;bottom:420px;left:64px;right:64px;">
+            <p style="font-family:${SANS};font-size:26px;font-weight:600;color:rgba(255,255,255,0.5);letter-spacing:0.08em;text-transform:uppercase;margin:0 0 16px;${S}">Open call · Bali</p>
+            <h1 style="font-family:${SERIF};font-size:108px;font-weight:700;font-style:italic;color:white;line-height:0.92;margin:0;${S}">Looking for<br/>models to<br/>collaborate</h1>
+            <p style="font-family:${SANS};font-size:30px;color:rgba(255,255,255,0.55);margin:32px 0 0 4px;line-height:1.5;${S}">I'm a traveling photographer building<br/>new work in Bali. Let's create together.</p>
+          </div>
+          ${filmGrain(0.1)}
+        </div>
+      `
+    },
+    proofSlide(prefix, 'Recent collaborations', proof8),
+    {
+      name: `${prefix}-03-how`,
+      html: splitSlide(`${prefix}-03-how`, img0075, `
+          <h2 style="font-family:${SERIF};font-size:62px;font-weight:700;color:#0a0a0a;margin:0 0 36px;line-height:1.1;">How it works</h2>
+          <div style="display:flex;flex-direction:column;gap:28px;">
+            <div style="display:flex;align-items:flex-start;gap:20px;">
+              <span style="font-family:${SANS};display:flex;align-items:center;justify-content:center;width:52px;height:52px;border-radius:50%;background:#0a0a0a;color:white;font-size:26px;font-weight:700;flex-shrink:0;">1</span>
+              <span style="font-family:${SANS};font-size:34px;color:#404040;line-height:1.35;padding-top:4px;">DM me or sign up below</span>
+            </div>
+            <div style="display:flex;align-items:flex-start;gap:20px;">
+              <span style="font-family:${SANS};display:flex;align-items:center;justify-content:center;width:52px;height:52px;border-radius:50%;background:#0a0a0a;color:white;font-size:26px;font-weight:700;flex-shrink:0;">2</span>
+              <span style="font-family:${SANS};font-size:34px;color:#404040;line-height:1.35;padding-top:4px;">We plan the concept together</span>
+            </div>
+            <div style="display:flex;align-items:flex-start;gap:20px;">
+              <span style="font-family:${SANS};display:flex;align-items:center;justify-content:center;width:52px;height:52px;border-radius:50%;background:#0a0a0a;color:white;font-size:26px;font-weight:700;flex-shrink:0;">3</span>
+              <span style="font-family:${SANS};font-size:34px;color:#404040;line-height:1.35;padding-top:4px;">We both walk away with great content</span>
+            </div>
+          </div>
+          <p style="font-family:${SANS};margin:36px 0 0;font-size:34px;font-weight:600;color:#0a0a0a;line-height:1.3;">No experience needed.<br/>I direct the whole shoot.</p>
+      `).html
+    },
+    {
+      name: `${prefix}-04-what`,
+      html: splitSlide(`${prefix}-04-what`, imgNight3, `
+          <h2 style="font-family:${SERIF};font-size:62px;font-weight:700;color:#0a0a0a;margin:0 0 32px;line-height:1.1;">What you get</h2>
+          <div style="display:flex;flex-direction:column;gap:18px;">
+            ${[
+              'Edited photos you can use however you want',
+              'Creative direction — I handle posing, lighting, everything',
+              'A real collaboration, not a transactional shoot',
+              'Content for your portfolio, socials, or agencies',
+            ].map(item => `
+              <div style="display:flex;align-items:flex-start;gap:14px;">
+                <span style="font-family:${SANS};font-size:34px;color:#0a0a0a;flex-shrink:0;">-</span>
+                <span style="font-family:${SANS};font-size:34px;color:#404040;line-height:1.35;">${item}</span>
+              </div>
+            `).join('\n')}
+          </div>
+          <p style="font-family:${SANS};margin:36px 0 0;font-size:34px;font-weight:600;color:#0a0a0a;line-height:1.3;">TFP — we both build our books.</p>
+      `).html
+    },
+    {
+      name: `${prefix}-05-cta`,
+      html: `
+        <div style="width:1080px;height:1920px;position:relative;overflow:hidden;background:#000;">
+          <img src="${imgIvy2}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(1.1) brightness(0.7);"/>
+          <div style="position:absolute;inset:0;background:linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.25) 30%, rgba(0,0,0,0.25) 50%, rgba(0,0,0,0.92) 100%);"></div>
+          <div style="position:absolute;bottom:380px;left:64px;right:64px;">
+            <h2 style="font-family:${SERIF};font-size:100px;font-weight:700;font-style:italic;color:white;line-height:0.95;margin:0;${S}">Let's shoot.</h2>
+            <div style="margin:36px 0 0;display:flex;flex-direction:column;gap:20px;">
+              <p style="font-family:${SANS};font-size:36px;color:rgba(255,255,255,0.9);line-height:1.45;margin:0;${S}">DM me on Instagram or click below to sign up.</p>
+              <p style="font-family:${SANS};font-size:32px;color:rgba(255,255,255,0.55);line-height:1.45;margin:0;${S}">Tell me your vibe, send a few photos, and we'll make something worth posting.</p>
+            </div>
+          </div>
+          ${filmGrain(0.1)}
+        </div>
+      `
+    }
+  )
+}
+
 async function render() {
   for (const city of cities) {
     fs.mkdirSync(path.join(OUT, slug(city)), { recursive: true })
   }
   fs.mkdirSync(path.join(OUT, 'bali-paid'), { recursive: true })
+  fs.mkdirSync(path.join(OUT, 'bali-collab'), { recursive: true })
   console.log(`Rendering ${allSlides.length} slides for ${cities.length} cities...`)
   const browser = await chromium.launch()
   const context = await browser.newContext({ viewport: { width: 1080, height: 1920 }, deviceScaleFactor: 1 })
