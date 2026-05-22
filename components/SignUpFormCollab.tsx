@@ -45,7 +45,7 @@ const vibeOptions = [
   { id: 'Beach / nature', desc: 'Rice fields, jungle, beach, golden hour, soft light' },
   { id: 'Intimate & personal', desc: 'Close, quiet, vulnerable' },
   { id: 'Villa / studio', desc: 'White walls, clean backdrops, modern and sophisticated' },
-  { id: 'Open to anything', desc: 'Let\u2019s figure it out together' },
+  { id: 'No preference', desc: 'Let\u2019s figure it out together' },
 ]
 
 const heroImage = '/images/moodboards/editorial.jpg'
