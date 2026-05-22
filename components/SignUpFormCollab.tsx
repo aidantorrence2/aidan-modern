@@ -222,9 +222,12 @@ export default function SignUpFormCollab() {
         <h1 className="font-display text-3xl font-semibold leading-[1.05] text-white sm:text-4xl" style={{ fontFamily: 'Georgia, serif' }}>
           Sign Up
         </h1>
+        <p className="text-base leading-relaxed text-white/50">
+          I&apos;m looking for models in Bali. Sign up if you want photos like this.
+        </p>
 
         <div className="space-y-2.5">
-          <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-white/30">Recent work</p>
+          <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-white/30">Recent work &middot; Shot on film</p>
           <div className="columns-3 gap-1.5 [column-fill:balance]">
             {[
               { src: '/images/proof/000005-3.jpg', h: 'h-44' },
@@ -248,6 +251,15 @@ export default function SignUpFormCollab() {
               </div>
             ))}
           </div>
+        </div>
+
+        <div className="rounded-2xl border border-white/[0.08] bg-white/[0.03] p-5 space-y-3">
+          <p className="text-sm leading-relaxed text-white/60">
+            All of these were shot on 35mm film. I direct the entire shoot &mdash; posing, lighting, locations, everything. You don&apos;t need any experience. You show up, I handle the rest, and we both walk away with great content.
+          </p>
+          <p className="text-sm leading-relaxed text-white/60">
+            This is a TFP collaboration: no cost, no catch. I&apos;m building my portfolio in Bali and I need interesting faces. If that&apos;s you, fill out the form below and I&apos;ll reach out.
+          </p>
         </div>
       </div>
 
