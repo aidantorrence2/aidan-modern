@@ -4,7 +4,7 @@ import path from 'path'
 import fs from 'fs'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
-const BASE_OUT = path.join(__dirname, 'output-bali-proof-v2')
+const BASE_OUT = path.join(__dirname, 'output-bali-proof-v3')
 const NEW_DIR = '/Users/aidantorrence/Documents/aidan-modern/public/images/new'
 
 fs.mkdirSync(BASE_OUT, { recursive: true })
@@ -146,7 +146,7 @@ const variations = []
 
 // ── V1: "The work speaks." — scattered prints on dark ──
 variations.push({ slug: 'v1-work-speaks', slides: [
-  { name: '01-hook', html: heroBg(p.a05_3, tag('Bali \u00b7 Model collab', 64, 60) + heading('The work<br/>speaks.', 420, 108)) },
+  { name: '01-hook', html: heroBg(p.a05_3, tag('Bali \u00b7 Model collab', 64, 60) + heading('The work<br/>speaks.', 460, 108) + subtext('I\u2019m looking for models in Bali. Sign up if you want photos like this.', 380)) },
   { name: '02', html: darkBg(tag('Recent work \u00b7 Shot on film', 64, 50) + pr(p.a16, 60, 120, 600, 750, -1.5, 14) + pr(p.a13_3, 520, 680, 460, 580, 2.5) + pr(p.a01_8, 80, 1360, 400, 480, 3)) },
   { name: '03', html: darkBg(pr(p.a09, 40, 80, 480, 640, -3) + pr(p.a08_3, 460, 60, 540, 680, 2) + pr(p.a15_3, 140, 780, 700, 520, -1) + subtext('All directed by me. No experience needed.', 180)) },
   { name: '04', html: heroBg(p.a12, heading('Every shoot<br/>tells a story.', 420, 88)) },
@@ -160,7 +160,7 @@ variations.push({ slug: 'v1-work-speaks', slides: [
 
 // ── V2: "I shoot people." — bold, minimal, full bleed heroes ──
 variations.push({ slug: 'v2-i-shoot-people', slides: [
-  { name: '01-hook', html: heroBg(p.a08_3, tag('Bali \u00b7 Open call', 64, 60) + heading('I shoot<br/>people.', 420, 120) + subtext('Looking for models to collaborate.', 340)) },
+  { name: '01-hook', html: heroBg(p.a08_3, tag('Bali \u00b7 Open call', 64, 60) + heading('I shoot<br/>people.', 460, 120) + subtext('I\u2019m looking for models in Bali. Sign up if you want photos like this.', 380)) },
   { name: '02', html: heroBg(p.a09, tag('01', 64, 60)) },
   { name: '03', html: heroBg(p.a13_3, tag('02', 64, 60)) },
   { name: '04', html: heroBg(p.a05_3, tag('03', 64, 60)) },
@@ -174,7 +174,7 @@ variations.push({ slug: 'v2-i-shoot-people', slides: [
 
 // ── V3: "Not your average photographer." — alternating prints + heroes ──
 variations.push({ slug: 'v3-not-average', slides: [
-  { name: '01-hook', html: heroBg(p.a17_4, tag('Bali', 64, 60) + heading('Not your<br/>average<br/>photographer.', 380, 96)) },
+  { name: '01-hook', html: heroBg(p.a17_4, tag('Bali', 64, 60) + heading('Not your<br/>average<br/>photographer.', 420, 96) + subtext('I\u2019m looking for models. Sign up if you want photos like this.', 340)) },
   { name: '02', html: darkBg(tag('Shot on 35mm film', 64, 50) + pr(p.a03, 80, 120, 560, 720, -2, 16) + pr(p.a14_3, 440, 660, 500, 640, 3)) },
   { name: '03', html: heroBg(p.a41_3, subtext('@madebyaidan', 420)) },
   { name: '04', html: darkBg(pr(p.a63, 40, 80, 480, 620, 3) + pr(p.a47_4, 460, 100, 520, 680, -2) + pr(p.a65, 160, 780, 680, 500, -1.5, 14) + subtext('Film. Digital. Whatever works.', 140)) },
@@ -188,7 +188,7 @@ variations.push({ slug: 'v3-not-average', slides: [
 
 // ── V4: "Casting call." — editorial grid/cluster heavy ──
 variations.push({ slug: 'v4-casting-call', slides: [
-  { name: '01-hook', html: heroBg(p.a09, tag('Open casting \u00b7 Bali', 64, 60) + heading('Casting call.', 440, 120)) },
+  { name: '01-hook', html: heroBg(p.a09, tag('Open casting \u00b7 Bali', 64, 60) + heading('Casting call.', 480, 120) + subtext('Looking for models. Sign up if you want photos like this.', 400)) },
   { name: '02', html: darkBg(pr(p.a16, 40, 80, 620, 800, -1, 16) + pr(p.a11_4, 520, 700, 480, 600, 3) + tag('Shot on film', 64, 50)) },
   { name: '03', html: darkBg(pr(p.a42_6, 60, 80, 460, 580, 3.5) + pr(p.a43_4, 460, 60, 520, 660, -2) + pr(p.a44_4, 140, 700, 500, 640, -2.5) + pr(p.a45_4, 520, 740, 460, 580, 2) + subtext('All shot on film.', 140)) },
   { name: '04', html: heroBg(p.a62, heading('I need<br/>new faces.', 420, 96)) },
@@ -202,7 +202,7 @@ variations.push({ slug: 'v4-casting-call', slides: [
 
 // ── V5: "Swipe through my portfolio." — warm bg, clean prints ──
 variations.push({ slug: 'v5-warm-portfolio', slides: [
-  { name: '01-hook', html: heroBg(p.a08_3, tag('Bali \u00b7 Collaboration', 64, 60) + heading('Swipe<br/>through my<br/>portfolio.', 380, 100)) },
+  { name: '01-hook', html: heroBg(p.a08_3, tag('Bali \u00b7 Collaboration', 64, 60) + heading('Swipe<br/>through my<br/>portfolio.', 420, 100) + subtext('Looking for models. Sign up if you want photos like this.', 340)) },
   { name: '02', html: warmBg(darkTag('@madebyaidan', 64, 50) + pr(p.a16, 120, 120, 800, 1000, -0.5, 20)) },
   { name: '03', html: warmBg(pr(p.a09, 60, 80, 440, 580, -3, 14) + pr(p.a12, 500, 100, 480, 620, 2, 14) + pr(p.a03, 180, 720, 680, 500, 1, 16)) },
   { name: '04', html: warmBg(darkTag('Film photography', 64, 50) + pr(p.a05_3, 100, 100, 840, 700, -0.8, 18) + pr(p.a06_12, 160, 860, 460, 580, 2.5, 14) + pr(p.a13_7, 540, 880, 400, 520, -2, 14)) },
@@ -216,7 +216,7 @@ variations.push({ slug: 'v5-warm-portfolio', slides: [
 
 // ── V6: "You + me + Bali." — relationship/partnership energy ──
 variations.push({ slug: 'v6-you-me-bali', slides: [
-  { name: '01-hook', html: heroBg(p.a03, heading('You + me<br/>+ Bali.', 440, 120) + subtext('Model collaboration. TFP.', 380)) },
+  { name: '01-hook', html: heroBg(p.a03, heading('You + me<br/>+ Bali.', 480, 120) + subtext('I\u2019m looking for models. Sign up if you want photos like this.', 400)) },
   { name: '02', html: darkBg(tag('What I bring', 64, 50) + fl(p.a16, 80, 120, 900, 700, -0.5) + heading('The eye.<br/>The direction.<br/>The edit.', 280, 64, 'rgba(255,255,255,0.6)')) },
   { name: '03', html: darkBg(tag('What you bring', 64, 50) + fl(p.a41, 80, 120, 900, 700, 0.5) + heading('The face.<br/>The energy.<br/>The vibe.', 280, 64, 'rgba(255,255,255,0.6)')) },
   { name: '04', html: darkBg(tag('What we make', 64, 50) + pr(p.a42_5, 60, 120, 440, 560, -3) + pr(p.a43_4, 460, 100, 520, 660, 2) + pr(p.a62, 140, 720, 520, 660, 2.5) + pr(p.a15_3, 500, 780, 460, 580, -2.5) + heading('Something worth posting.', 100, 48, 'rgba(255,255,255,0.5)')) },
@@ -230,7 +230,7 @@ variations.push({ slug: 'v6-you-me-bali', slides: [
 
 // ── V7: "Proof, not promises." — heavy proof, numbers ──
 variations.push({ slug: 'v7-proof-not-promises', slides: [
-  { name: '01-hook', html: heroBg(p.a05_3, tag('Bali \u00b7 Model collab', 64, 60) + heading('Proof, not<br/>promises.', 440, 108)) },
+  { name: '01-hook', html: heroBg(p.a05_3, tag('Bali \u00b7 Model collab', 64, 60) + heading('Proof, not<br/>promises.', 480, 108) + subtext('Looking for models. Sign up if you want photos like this.', 400)) },
   { name: '02', html: darkBg(pr(p.a16, 60, 80, 920, 720, -0.5, 18) + heading('50+ collaborations<br/>across Asia.', 280, 56, 'rgba(255,255,255,0.5)')) },
   { name: '03', html: darkBg(pr(p.a09, 40, 60, 460, 580, -4) + pr(p.a12, 480, 40, 520, 660, 2.5) + pr(p.a03, 60, 680, 480, 600, 2) + pr(p.a14_3, 480, 700, 500, 640, -2) + tag('All real. All mine.', 64, 50)) },
   { name: '04', html: heroBg(p.a13_3, tag('Film', 64, 60)) },
@@ -244,7 +244,7 @@ variations.push({ slug: 'v7-proof-not-promises', slides: [
 
 // ── V8: "Looking for interesting faces." — casting director energy ──
 variations.push({ slug: 'v8-interesting-faces', slides: [
-  { name: '01-hook', html: heroBg(p.a16, tag('Bali', 64, 60) + heading('Looking for<br/>interesting<br/>faces.', 380, 96)) },
+  { name: '01-hook', html: heroBg(p.a16, tag('Bali', 64, 60) + heading('Looking for<br/>interesting<br/>faces.', 420, 96) + subtext('Sign up if you want photos like this.', 340)) },
   { name: '02', html: darkBg(fl(p.a08_3, 40, 40, 1000, 800, 0) + heading('Not perfect.<br/>Interesting.', 200, 72, 'rgba(255,255,255,0.55)')) },
   { name: '03', html: darkBg(pr(p.a03, 60, 80, 460, 580, -3) + pr(p.a42_5, 460, 60, 520, 660, 2) + pr(p.a13_3, 80, 700, 500, 640, 2.5) + pr(p.a62, 480, 740, 480, 600, -2) + tag('People I\u2019ve shot', 64, 50)) },
   { name: '04', html: heroBg(p.a04, heading('Freckles.<br/>Tattoos.<br/>Character.', 380, 88)) },
@@ -258,7 +258,7 @@ variations.push({ slug: 'v8-interesting-faces', slides: [
 
 // ── V9: "Free content. Real quality." — value proposition forward ──
 variations.push({ slug: 'v9-free-content', slides: [
-  { name: '01-hook', html: heroBg(p.a12, tag('Bali \u00b7 TFP', 64, 60) + heading('Free content.<br/>Real quality.', 420, 100)) },
+  { name: '01-hook', html: heroBg(p.a12, tag('Bali \u00b7 TFP', 64, 60) + heading('Free content.<br/>Real quality.', 460, 100) + subtext('Looking for models. Sign up if you want photos like this.', 380)) },
   { name: '02', html: darkBg(tag('Here\u2019s what you get', 64, 50) + '<div style="position:absolute;top:120px;left:64px;right:64px;"><p style="font-family:'+SERIF+';font-size:52px;font-weight:700;font-style:italic;color:white;line-height:1.15;margin:0;'+S+'">Edited photos<br/>for your portfolio,<br/>socials, or agency.</p><p style="font-family:'+SANS+';font-size:30px;color:rgba(255,255,255,0.45);margin:36px 0 0;'+S+'">Full creative direction.<br/>No cost. No catch.</p></div>' + pr(p.a16, 120, 760, 800, 640, -0.5, 18)) },
   { name: '03', html: darkBg(pr(p.a42_5, 40, 60, 480, 620, -3) + pr(p.a05_3, 460, 40, 540, 680, 2) + pr(p.a41, 80, 720, 520, 660, 2) + pr(p.a15_3, 500, 740, 480, 600, -2.5) + tag('Recent work \u00b7 Shot on film', 64, 50)) },
   { name: '04', html: heroBg(p.a03, heading('I handle<br/>everything.', 440, 96) + subtext('Posing. Lighting. Location. Editing.', 380)) },
@@ -272,7 +272,7 @@ variations.push({ slug: 'v9-free-content', slides: [
 
 // ── V10: "My camera, your story." — emotional/storytelling angle ──
 variations.push({ slug: 'v10-your-story', slides: [
-  { name: '01-hook', html: heroBg(p.a17_4, tag('Bali', 64, 60) + heading('My camera,<br/>your story.', 440, 108)) },
+  { name: '01-hook', html: heroBg(p.a17_4, tag('Bali', 64, 60) + heading('My camera,<br/>your story.', 480, 108) + subtext('I\u2019m looking for models. Sign up if you want photos like this.', 400)) },
   { name: '02', html: darkBg(pr(p.a16, 80, 80, 880, 700, -0.5, 18) + heading('Everyone has<br/>a look worth<br/>capturing.', 240, 56, 'rgba(255,255,255,0.5)')) },
   { name: '03', html: darkBg(pr(p.a09, 40, 60, 460, 580, -4) + pr(p.a08_3, 460, 40, 540, 680, 2.5) + pr(p.a13_3, 80, 680, 500, 640, 2) + pr(p.a03, 480, 700, 480, 600, -2) + tag('Stories I\u2019ve told', 64, 50)) },
   { name: '04', html: heroBg(p.a42_5, heading('She was<br/>nervous.<br/>Didn\u2019t matter.', 380, 80)) },
