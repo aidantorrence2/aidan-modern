@@ -224,14 +224,14 @@ export default function SignUpFormCollab() {
           <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-white/30">Recent work &middot; Shot on film</p>
           <div className="grid grid-cols-4 gap-1">
             {[
-              '/images/proof/000023.jpg',
-              '/images/proof/000016.jpg',
-              '/images/proof/000014-3.jpg',
-              '/images/proof/000025.jpg',
-              '/images/proof/000008-3-2.jpg',
-              '/images/proof/000039.jpg',
-              '/images/proof/DSC_0347.jpg',
-              '/images/proof/000062.jpg',
+              '/images/proof/000001-8.jpg',
+              '/images/proof/000019-6.jpg',
+              '/images/proof/000038-4.jpg',
+              '/images/proof/000041.jpg',
+              '/images/proof/000053-5.jpg',
+              '/images/proof/DSC_0075.jpg',
+              '/images/proof/DSC_0321.jpg',
+              '/images/proof/DSC_0526.jpg',
             ].map((src, i) => (
               <div key={i} className="relative overflow-hidden rounded-md aspect-[3/4]">
                 <NextImage
@@ -262,7 +262,7 @@ export default function SignUpFormCollab() {
             <span className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-500/20 text-[10px] font-bold text-emerald-400">1</span>
             <legend className="text-sm font-medium text-white/80">What kind of shoot interests you? <span className="text-xs text-white/30">(pick any)</span></legend>
           </div>
-          <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
+          <div className="grid grid-cols-2 gap-2">
             {vibeOptions.map(opt => (
               <button
                 key={opt.id}
