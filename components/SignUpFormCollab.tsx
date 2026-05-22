@@ -290,24 +290,10 @@ export default function SignUpFormCollab() {
           </div>
         </fieldset>
 
-        {/* Availability */}
-        <div className="space-y-2">
-          <div className="flex items-center gap-2">
-            <span className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-500/20 text-[10px] font-bold text-emerald-400">3</span>
-            <label className="text-sm font-medium text-white/80">When are you free? <span className="text-xs text-white/30">(optional)</span></label>
-          </div>
-          <input
-            value={availability}
-            onChange={e => { setAvailability(e.target.value); clearStatus() }}
-            className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-white/30 outline-none transition focus:border-emerald-400 focus:ring-2 focus:ring-emerald-400/30"
-            placeholder="e.g. Weekday mornings, anytime next week"
-          />
-        </div>
-
         {/* Notes */}
         <div className="space-y-2">
           <div className="flex items-center gap-2">
-            <span className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-500/20 text-[10px] font-bold text-emerald-400">4</span>
+            <span className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-500/20 text-[10px] font-bold text-emerald-400">3</span>
             <label className="text-sm font-medium text-white/80">Anything else? <span className="text-xs text-white/30">(optional)</span></label>
           </div>
           <textarea
@@ -358,7 +344,7 @@ export default function SignUpFormCollab() {
           <label className="text-sm font-medium text-white/80">
             Photos of yourself <span className="text-xs text-red-400/70">*</span>
           </label>
-          <p className="text-xs text-white/40">Selfies, headshots, or previous shoots &mdash; upload a few so I can see your look</p>
+          <p className="text-xs text-white/40">Selfies, headshots, or previous shoots</p>
           <div className="mt-1 flex flex-wrap gap-2">
             {photos.map((p, i) => (
               <div key={i} className="relative">
