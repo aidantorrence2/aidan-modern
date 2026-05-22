@@ -109,11 +109,11 @@ function slide02() {
 
 function slide03() {
   const slots = [
-    { src: imageData.proofA, x: 72, y: 390, w: 308, h: 430, r: -2.4 },
-    { src: imageData.proofB, x: 408, y: 350, w: 300, h: 440, r: 1.4 },
-    { src: imageData.proofC, x: 735, y: 405, w: 270, h: 410, r: -1.6 },
-    { src: imageData.proofD, x: 110, y: 850, w: 330, h: 470, r: 1.8 },
-    { src: imageData.detail, x: 475, y: 820, w: 510, h: 510, r: -1.2 }
+    { src: imageData.proofA, x: 72, y: 520, w: 308, h: 430, r: -2.4 },
+    { src: imageData.proofB, x: 408, y: 490, w: 300, h: 440, r: 1.4 },
+    { src: imageData.proofC, x: 735, y: 535, w: 270, h: 410, r: -1.6 },
+    { src: imageData.proofD, x: 110, y: 980, w: 330, h: 470, r: 1.8 },
+    { src: imageData.detail, x: 475, y: 950, w: 510, h: 510, r: -1.2 }
   ]
   const images = slots.map(slot => `
     <img src="${slot.src}" style="position:absolute;left:${slot.x}px;top:${slot.y}px;width:${slot.w}px;height:${slot.h}px;object-fit:cover;transform:rotate(${slot.r}deg);border:14px solid #fbf5ea;box-shadow:0 26px 60px rgba(0,0,0,0.32);"/>
@@ -125,10 +125,10 @@ function slide03() {
       <div style="position:absolute;inset:0;background:linear-gradient(180deg,#0e1713 0%,#12100d 100%);"></div>
       <div style="position:absolute;top:96px;left:64px;right:64px;text-align:center;">
         ${label('The mood')}
-        <h2 style="font-family:${SERIF};font-size:96px;font-weight:700;font-style:italic;color:#fff7ea;line-height:0.94;margin:24px 0 0;">Editorial, cinematic,<br/>guided.</h2>
+        <h2 style="font-family:${SERIF};font-size:82px;font-weight:700;font-style:italic;color:#fff7ea;line-height:0.96;margin:24px 0 0;">Editorial, cinematic,<br/>guided.</h2>
       </div>
       ${images}
-      <div style="position:absolute;left:64px;right:64px;bottom:430px;text-align:center;">
+      <div style="position:absolute;left:64px;right:64px;bottom:360px;text-align:center;">
         <p style="font-family:${SANS};font-size:34px;font-weight:700;line-height:1.28;color:#fff7ea;margin:0;">You do not need to know poses. I direct the whole shoot.</p>
       </div>
     `)
