@@ -225,23 +225,23 @@ export default function SignUpFormCollab() {
 
         <div className="space-y-2.5">
           <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-white/30">Recent work</p>
-          <div className="grid grid-cols-4 gap-1.5">
+          <div className="columns-3 gap-1.5 [column-fill:balance]">
             {[
-              '/images/new/000005-3.jpg',
-              '/images/new/000016.jpg',
-              '/images/new/000008-3.jpg',
-              '/images/new/000013-3.jpg',
-              '/images/new/000009.jpg',
-              '/images/new/000012.jpg',
-              '/images/new/000042-5.jpg',
-              '/images/new/000015-3.jpg',
-            ].map((src, i) => (
-              <div key={i} className="relative overflow-hidden rounded-lg aspect-[3/4]">
+              { src: '/images/proof/000005-3.jpg', h: 'h-44' },
+              { src: '/images/proof/000016.jpg', h: 'h-32' },
+              { src: '/images/proof/000008-3.jpg', h: 'h-40' },
+              { src: '/images/proof/000013-3.jpg', h: 'h-36' },
+              { src: '/images/proof/000009.jpg', h: 'h-44' },
+              { src: '/images/proof/000012.jpg', h: 'h-36' },
+              { src: '/images/proof/000042-5.jpg', h: 'h-32' },
+              { src: '/images/proof/000015-3.jpg', h: 'h-40' },
+            ].map((item, i) => (
+              <div key={i} className={`relative overflow-hidden rounded-lg ${item.h} mb-1.5 break-inside-avoid`}>
                 <NextImage
-                  src={src}
+                  src={item.src}
                   alt=""
-                  width={200}
-                  height={267}
+                  width={300}
+                  height={400}
                   className="w-full h-full object-cover object-top"
                   unoptimized
                 />
