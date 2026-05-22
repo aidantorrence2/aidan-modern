@@ -128,7 +128,7 @@ function slide03() {
         <h2 style="font-family:${SERIF};font-size:82px;font-weight:700;font-style:italic;color:#fff7ea;line-height:0.96;margin:24px 0 0;">Editorial, cinematic,<br/>guided.</h2>
       </div>
       ${images}
-      <div style="position:absolute;left:64px;right:64px;bottom:360px;text-align:center;">
+      <div style="position:absolute;left:64px;right:64px;bottom:430px;text-align:center;">
         <p style="font-family:${SANS};font-size:34px;font-weight:700;line-height:1.28;color:#fff7ea;margin:0;">You do not need to know poses. I direct the whole shoot.</p>
       </div>
     `)
