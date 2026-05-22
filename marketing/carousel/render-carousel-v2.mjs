@@ -455,7 +455,7 @@ for (const city of cities) {
   )
 }
 
-// -- Bali proof-heavy: wall of photos, minimal text --
+// -- Bali proof-heavy: magazine-style layouts, collab framing --
 {
   const s = 'bali-proof'
   const prefix = s + '-carousel'
@@ -476,44 +476,71 @@ for (const city of cities) {
   const imgPurple3 = img('manila-gallery-purple-003-cropped.jpg')
   const img0130 = img('manila-gallery-dsc-0130.jpg')
 
-  function photoGrid(name, photos, overlayText) {
-    const rows = Math.ceil(photos.length / 3)
-    const cellH = Math.floor(1920 / rows)
-    const cells = photos.map((src, i) => {
-      const col = i % 3
-      const row = Math.floor(i / 3)
-      return '<img src="' + src + '" style="position:absolute;left:' + (col * 360) + 'px;top:' + (row * cellH) + 'px;width:360px;height:' + cellH + 'px;object-fit:cover;object-position:center;display:block;"/>'
-    }).join('\n')
-    const overlay = overlayText ? '<div style="position:absolute;inset:0;background:linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.0) 30%, rgba(0,0,0,0.0) 50%, rgba(0,0,0,0.75) 100%);"></div><div style="position:absolute;bottom:380px;left:64px;right:64px;"><p style="font-family:' + SERIF + ';font-size:72px;font-weight:700;font-style:italic;color:white;line-height:0.95;margin:0;' + S + '">' + overlayText + '</p></div>' : ''
-    return {
-      name,
-      html: '<div style="width:1080px;height:1920px;position:relative;overflow:hidden;background:#000;">' + cells + overlay + filmGrain(0.06) + '</div>'
-    }
-  }
+  // Slide 1: big hero with one line
+  allSlides.push({
+    name: prefix + '-01-hook',
+    html: '<div style="width:1080px;height:1920px;position:relative;overflow:hidden;background:#000;">'
+      + '<img src="' + img0190 + '" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;filter:saturate(1.1) contrast(1.05);"/>'
+      + '<div style="position:absolute;inset:0;background:linear-gradient(180deg, rgba(0,0,0,0.15) 0%, transparent 25%, transparent 55%, rgba(0,0,0,0.92) 100%);"></div>'
+      + '<div style="position:absolute;bottom:420px;left:64px;right:64px;">'
+      + '<p style="font-family:' + SANS + ';font-size:22px;font-weight:700;color:rgba(255,255,255,0.4);letter-spacing:0.15em;text-transform:uppercase;margin:0 0 16px;' + S + '">Bali \u00b7 Model collab</p>'
+      + '<h1 style="font-family:' + SERIF + ';font-size:108px;font-weight:700;font-style:italic;color:white;line-height:0.90;margin:0;' + S + '">I don\u2019t need<br/>to explain.<br/>Just look.</h1>'
+      + '</div>'
+      + filmGrain(0.1)
+      + '</div>'
+  })
 
-  allSlides.push(
-    // Slide 1: hero photo, tiny text
-    hookSlide(prefix, 'Bali', imgIvy2, 'Open for collaboration. This is what I do.'),
-    // Slide 2: 9-photo grid
-    photoGrid(prefix + '-02-grid-a', [
-      img0190, imgCanal1, img0911,
-      imgPurple1, imgUrban3, imgGarden1,
-      imgNight1, imgShadow, imgIvy1
-    ]),
-    // Slide 3: 9-photo grid (different photos)
-    photoGrid(prefix + '-03-grid-b', [
-      imgMarket, imgPurple2, img0075,
-      imgFloor, imgTropical, imgCloseup,
-      imgPurple3, imgCanal2, imgNight2
-    ]),
-    // Slide 4: 6-photo grid with overlay text
-    photoGrid(prefix + '-04-grid-c', [
-      imgWhite, imgGarden2, imgStatue,
-      imgUrban1, img0130, imgStreet
-    ], 'Want photos<br/>like these?'),
-    // Slide 5: CTA
-    ctaSlide(prefix, 'Bali', imgPark)
-  )
+  // Slide 2: big/small mosaic — 1 large left + 2 stacked right, 6px gap
+  allSlides.push({
+    name: prefix + '-02-mosaic-a',
+    html: '<div style="width:1080px;height:1920px;position:relative;overflow:hidden;background:#0a0a0a;">'
+      + '<img src="' + imgIvy2 + '" style="position:absolute;left:0;top:0;width:534px;height:1920px;object-fit:cover;object-position:center;"/>'
+      + '<img src="' + imgPurple1 + '" style="position:absolute;left:540px;top:0;width:540px;height:954px;object-fit:cover;object-position:center;"/>'
+      + '<img src="' + imgNight1 + '" style="position:absolute;left:540px;top:960px;width:540px;height:960px;object-fit:cover;object-position:center;"/>'
+      + filmGrain(0.06)
+      + '</div>'
+  })
+
+  // Slide 3: 2 stacked left + 1 large right, 6px gap
+  allSlides.push({
+    name: prefix + '-03-mosaic-b',
+    html: '<div style="width:1080px;height:1920px;position:relative;overflow:hidden;background:#0a0a0a;">'
+      + '<img src="' + imgCanal1 + '" style="position:absolute;left:0;top:0;width:540px;height:954px;object-fit:cover;object-position:center;"/>'
+      + '<img src="' + imgGarden1 + '" style="position:absolute;left:0;top:960px;width:540px;height:960px;object-fit:cover;object-position:center;"/>'
+      + '<img src="' + imgUrban3 + '" style="position:absolute;left:546px;top:0;width:534px;height:1920px;object-fit:cover;object-position:center;"/>'
+      + filmGrain(0.06)
+      + '</div>'
+  })
+
+  // Slide 4: one full bleed photo + text overlay at bottom
+  allSlides.push({
+    name: prefix + '-04-fullbleed',
+    html: '<div style="width:1080px;height:1920px;position:relative;overflow:hidden;background:#000;">'
+      + '<img src="' + imgShadow + '" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(1.08);"/>'
+      + '<div style="position:absolute;inset:0;background:linear-gradient(180deg, transparent 50%, rgba(0,0,0,0.85) 100%);"></div>'
+      + '<div style="position:absolute;bottom:400px;left:64px;right:64px;">'
+      + '<p style="font-family:' + SERIF + ';font-size:80px;font-weight:700;font-style:italic;color:white;line-height:0.95;margin:0;' + S + '">This could<br/>be you.</p>'
+      + '<p style="font-family:' + SANS + ';font-size:30px;color:rgba(255,255,255,0.5);margin:28px 0 0;' + S + '">TFP collaboration. I direct everything.</p>'
+      + '</div>'
+      + filmGrain(0.1)
+      + '</div>'
+  })
+
+  // Slide 5: CTA
+  allSlides.push({
+    name: prefix + '-05-cta',
+    html: '<div style="width:1080px;height:1920px;position:relative;overflow:hidden;background:#000;">'
+      + '<img src="' + imgPark + '" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(1.1) brightness(0.6);"/>'
+      + '<div style="position:absolute;inset:0;background:linear-gradient(180deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.15) 30%, rgba(0,0,0,0.15) 50%, rgba(0,0,0,0.92) 100%);"></div>'
+      + '<div style="position:absolute;bottom:380px;left:64px;right:64px;">'
+      + '<h2 style="font-family:' + SERIF + ';font-size:100px;font-weight:700;font-style:italic;color:white;line-height:0.95;margin:0;' + S + '">DM me.</h2>'
+      + '<div style="margin:36px 0 0;display:flex;flex-direction:column;gap:20px;">'
+      + '<p style="font-family:' + SANS + ';font-size:36px;color:rgba(255,255,255,0.9);line-height:1.45;margin:0;' + S + '">@madebyaidan on Instagram.</p>'
+      + '<p style="font-family:' + SANS + ';font-size:32px;color:rgba(255,255,255,0.55);line-height:1.45;margin:0;' + S + '">Send me your look. No experience needed.<br/>I handle everything.</p>'
+      + '</div></div>'
+      + filmGrain(0.1)
+      + '</div>'
+  })
 }
 
 async function render() {
