@@ -16,7 +16,7 @@ const MO = "'Courier New', monospace"
 const SH = 'text-shadow: 0 3px 6px rgba(0,0,0,1), 0 10px 40px rgba(0,0,0,0.8), 0 0 100px rgba(0,0,0,0.5);'
 const GR = '<div style="position:absolute;inset:0;pointer-events:none;opacity:0.08;mix-blend-mode:soft-light;background-image:radial-gradient(circle at 14% 18%, rgba(255,255,255,0.5), transparent 17%),radial-gradient(circle at 84% 12%, rgba(255,255,255,0.28), transparent 15%),repeating-linear-gradient(0deg, rgba(255,255,255,0.08) 0 1px, transparent 1px 4px);"></div>'
 
-// Portrait image helper — always taller than wide
+// 35mm filmit image helper — always taller than wide
 function img(src, l, t, w, h, extra) { extra=extra||''; return '<img src="'+src+'" style="position:absolute;left:'+l+'px;top:'+t+'px;width:'+w+'px;height:'+h+'px;object-fit:cover;object-position:center top;display:block;'+extra+'"/>' }
 // Print — portrait with white border
 function pr(src, l, t, w, h, rot, b) { b=b||12; return '<div style="position:absolute;left:'+l+'px;top:'+t+'px;width:'+(w+b*2)+'px;height:'+(h+b*2)+'px;background:white;padding:'+b+'px;transform:rotate('+rot+'deg);box-shadow:0 8px 40px rgba(0,0,0,0.45), 0 2px 8px rgba(0,0,0,0.2);"><img src="'+src+'" style="width:'+w+'px;height:'+h+'px;object-fit:cover;object-position:center top;display:block;"/></div>' }
@@ -92,7 +92,7 @@ function filmStrip(nm, tg, p3, btm) { return { name: nm, html:
   Array.from({length:10}, (_,i) => '<div style="position:absolute;left:20px;top:'+(60+i*190)+'px;width:36px;height:24px;background:#0a0a0a;border-radius:3px;"></div><div style="position:absolute;right:20px;top:'+(60+i*190)+'px;width:36px;height:24px;background:#0a0a0a;border-radius:3px;"></div>').join('') +
   img(p3[0], 80, 40, 440, 600) + img(p3[1], 560, 40, 440, 600) +
   img(p3[2], 80, 680, 920, 700, 'object-position:center top;') +
-  '<p style="position:absolute;left:80px;bottom:80px;font-family:'+MO+';font-size:14px;color:rgba(255,180,60,0.5);margin:0;">KODAK PORTRA 400 &nbsp;&nbsp; 24A &nbsp; 25A &nbsp; 26A</p>' +
+  '<p style="position:absolute;left:80px;bottom:80px;font-family:'+MO+';font-size:14px;color:rgba(255,180,60,0.5);margin:0;">KODAK 35MM &nbsp;&nbsp; 24A &nbsp; 25A &nbsp; 26A</p>' +
   '<p style="position:absolute;right:80px;bottom:80px;font-family:'+SA+';font-size:20px;font-weight:600;color:rgba(255,255,255,0.5);letter-spacing:0.1em;text-transform:uppercase;margin:0;">'+tg+'</p>' +
   sub(btm, 120) + GR + '</div>'
 }}
@@ -168,7 +168,7 @@ const P = {
   f71:n('000041.jpg'), f72:n('000042-5.jpg'), f73:n('000042-2.jpg'),
   f74:n('000044-2.jpg'), f75:n('000045.jpg'),
   f76:n('000048-2.jpg'), f77:n('000050-6.jpg'),
-  f78:n('000062.jpg'), f79:n('000062-7.jpg'),
+  f78:n('000062.jpg'), f79:n('000062-2.jpg'),
   f80:n('000063.jpg'), f81:n('000066-5.jpg'), f82:n('000067-9.jpg'),
   f83:n('000068-2.jpg'), f84:n('000068-9.jpg'),
   f85:n('0017_17.jpg'), f86:n('0021_21-6.jpg'),
@@ -181,7 +181,7 @@ const variations = [
   // V1: Film noir meets fashion
   { slug: 'v1', slides: [
     hookSlide(P.f11),
-    scatter8('02', 'Hong Kong \u00b7 Shot on film', [P.f24, P.f25, P.f26, P.f28, P.f43, P.f44, P.f46, P.f47], 'Eight strangers. One roll of Portra.'),
+    scatter8('02', 'Hong Kong \u00b7 Shot on film', [P.f24, P.f25, P.f26, P.f28, P.f43, P.f44, P.f46, P.f47], 'Eight strangers. One roll of film.'),
     { name: '03', html: hero(P.f14, tag('Seoul', 64, 60) + h2('First-timers<br/>shoot like pros<br/>when I direct.', 400) + sub('No experience needed. Ever.', 330)) },
     cascade4('04', 'Taipei \u00b7 35mm', [P.f48, P.f49, P.f50, P.f52], 'Four faces. Four alleyways.'),
     magazine('05', P.f31, 'Kaohsiung \u00b7 Shot on film', 'Your face.<br/>My film.<br/>Magic.', 'All directed. All on 35mm. Across 13 cities in Asia.', P.f19),
@@ -233,7 +233,7 @@ const variations = [
     { name: '06', html: hero(P.f33, tag('Chapter 5: Quiet', 64, 60) + h2('Not every shoot<br/>needs a location.', 440) + sub('Sometimes a bed and a window are enough.', 370)) },
     pile6('07', 'Chapter 6: Proof', [P.f72, P.f71, P.f78, P.f82, P.f20, P.f63], 'Six more faces. Six more cities. Same film.'),
     booth3('08', 'Chapter 7: The strip', [P.f34, P.f38, P.f39], 'Three frames from one afternoon in La Union.'),
-    warm4('09', 'Chapter 8: The film', [P.f64, P.f65, P.f68, P.f70], 'Portra 400.<br/>Every single time.'),
+    warm4('09', 'Chapter 8: The film', [P.f64, P.f65, P.f68, P.f70], '35mm film.<br/>Every single time.'),
     { name: '10', html: hero(P.f09, h1('Chapter 9:<br/>Bali.', 500) + sub('This chapter needs you. Sign up below.', 420)) },
     ctaSlide(P.f11),
   ]},
@@ -245,7 +245,7 @@ const variations = [
     scatter8('03', 'Hong Kong', [P.f24, P.f25, P.f26, P.f43, P.f44, P.f45, P.f46, P.f47], 'Zero of these people are professional models.'),
     { name: '04', html: dark(h1('No experience<br/>needed.', 700, 96) + sub('I direct every single frame.', 600) + pr(P.f14, 100, 800, 380, 520, -2, 14) + pr(P.f33, 520, 780, 420, 560, 2.5, 14)) },
     fan5('05', 'Taipei \u00b7 Seoul \u00b7 Kaohsiung', [P.f48, P.f50, P.f52, P.f15, P.f16], 'Fashion. Street. Night. Film handles them all.'),
-    { name: '06', html: hero(P.f40, h1('Real<br/>people.', 500, 120) + sub('Chongqing. Golden hour. Portra 400.', 420)) },
+    { name: '06', html: hero(P.f40, h1('Real<br/>people.', 500, 120) + sub('Chongqing. Golden hour. 35mm film.', 420)) },
     pile6('07', 'The rest of Asia', [P.f72, P.f78, P.f71, P.f20, P.f03, P.f63], 'Singapore. Mongolia. Philippines. Tokyo.'),
     { name: '08', html: dark(h1('Same camera<br/>since 2023.', 700, 88) + sub('Same film. Different continent every month.', 600) + pr(P.f68, 120, 800, 360, 500, -2, 14) + pr(P.f34, 520, 780, 400, 540, 2, 14)) },
     warm4('09', 'Shot on 35mm', [P.f64, P.f65, P.f38, P.f39], 'The grain<br/>is the point.'),
@@ -257,7 +257,7 @@ const variations = [
   { slug: 'v6', slides: [
     hookSlide(P.f43),
     warm4('02', 'Taipei', [P.f48, P.f49, P.f50, P.f52], 'Her first shoot.<br/>My hundredth.'),
-    warm4('03', 'Hong Kong', [P.f24, P.f25, P.f43, P.f44], 'Night markets<br/>on Portra 400.'),
+    warm4('03', 'Hong Kong', [P.f24, P.f25, P.f43, P.f44], 'Night markets<br/>on 35mm film.'),
     { name: '04', html: hero(P.f14, h2('Seoul in<br/>one frame.', 460) + sub('Corset. Concrete. Film grain.', 390)) },
     warm4('05', 'Chongqing \u00b7 Guangzhou', [P.f40, P.f41, P.f42, P.f55], 'China on film.<br/>Pure and honest.'),
     warm4('06', 'Singapore \u00b7 Mongolia', [P.f72, P.f71, P.f78, P.f76], 'Even the most<br/>unlikely cities.'),
@@ -274,11 +274,11 @@ const variations = [
     filmStrip('02', 'Hong Kong \u00b7 35mm', [P.f43, P.f44, P.f46], 'Three strangers. One roll.'),
     booth3('03', 'Seoul \u00b7 Film', [P.f14, P.f15, P.f16], 'She walked in nervous. Walked out a model.'),
     { name: '04', html: hero(P.f31, tag('Kaohsiung', 64, 60) + h2('The best photos<br/>happen when<br/>you stop trying.', 380) + sub('I direct. You breathe.', 310)) },
-    filmStrip('05', 'Taipei \u00b7 Night', [P.f48, P.f50, P.f52], 'Portra 400 after midnight.'),
+    filmStrip('05', 'Taipei \u00b7 Night', [P.f48, P.f50, P.f52], '35mm film after midnight.'),
     booth3('06', 'Chongqing', [P.f40, P.f55, P.f42], 'Street stalls. Film frames. Done.'),
     scatter8('07', 'Everywhere else', [P.f72, P.f78, P.f71, P.f03, P.f20, P.f63, P.f82, P.f83], 'Singapore to Mongolia. All on one camera.'),
     { name: '08', html: hero(P.f33, h2('Quiet light.<br/>Loud photos.', 460) + sub('35mm does not lie.', 390)) },
-    filmStrip('09', 'The grain is the point', [P.f34, P.f38, P.f64], 'Portra 400. Always.'),
+    filmStrip('09', 'The grain is the point', [P.f34, P.f38, P.f64], '35mm film. Always.'),
     { name: '10', html: hero(P.f09, h1('Bali.<br/>Your turn.', 500) + sub('Sign up if you want photos like this.', 420)) },
     ctaSlide(P.f28),
   ]},
@@ -286,13 +286,13 @@ const variations = [
   // V8: Hero-heavy — let photos breathe
   { slug: 'v8', slides: [
     hookSlide(P.f31),
-    { name: '02', html: hero(P.f44, tag('Hong Kong', 64, 60) + sub('She was buying fruit. I had Portra loaded.', 420)) },
+    { name: '02', html: hero(P.f44, tag('Hong Kong', 64, 60) + sub('She was buying fruit. I had film loaded.', 420)) },
     { name: '03', html: hero(P.f14, tag('Seoul', 64, 60) + sub('No posing experience. Could not tell.', 420)) },
     heroAcc('04', '35mm film \u00b7 13 cities', [P.f48, P.f24, P.f40, P.f72, P.f03], 'One camera does not get boring if the faces change.'),
     { name: '05', html: hero(P.f33, tag('Intimate', 64, 60) + h2('Soft light is<br/>underrated.', 460) + sub('Film knows this.', 390)) },
     { name: '06', html: hero(P.f40, tag('Chongqing', 64, 60) + sub('20 minutes between her shift and mine.', 420)) },
     { name: '07', html: hero(P.f55, tag('Ulaanbaatar', 64, 60) + sub('She had never seen a film camera before.', 420)) },
-    { name: '08', html: hero(P.f37, tag('La Union', 64, 60) + h2('Golden hour.<br/>No filter.<br/>Just Portra.', 400)) },
+    { name: '08', html: hero(P.f37, tag('La Union', 64, 60) + h2('Golden hour.<br/>No filter.<br/>Just film.', 400)) },
     { name: '09', html: hero(P.f78, tag('Singapore', 64, 60) + sub('Fashion week dropout. My favorite kind.', 420)) },
     { name: '10', html: hero(P.f09, h1('Bali needs<br/>your face.', 500) + sub('Sign up below. I handle everything.', 420)) },
     ctaSlide(P.f11),
@@ -306,7 +306,7 @@ const variations = [
     magazine('04', P.f31, 'Kaohsiung \u00b7 Film', 'I do not need<br/>models. I need<br/>faces.', 'The best subjects are people who do not think they are photogenic.', P.f19),
     cascade4('05', 'Chongqing \u00b7 35mm', [P.f40, P.f41, P.f55, P.f42], 'Street vendors. Flower girls. Film rolls.'),
     { name: '06', html: hero(P.f78, tag('Singapore', 64, 60) + h2('She brought<br/>three outfits.<br/>We used one.', 400) + sub('Less is always more on film.', 330)) },
-    pile6('07', 'Everywhere else', [P.f72, P.f71, P.f03, P.f20, P.f82, P.f63], 'Mongolia. Philippines. Tokyo. Same Portra.'),
+    pile6('07', 'Everywhere else', [P.f72, P.f71, P.f03, P.f20, P.f82, P.f63], 'Mongolia. Philippines. Tokyo. Same film.'),
     booth3('08', 'The range', [P.f34, P.f64, P.f68], 'Nature. Night. Intimate. All film.'),
     warm4('09', 'Shot on 35mm', [P.f38, P.f39, P.f65, P.f70], 'The warmth<br/>is not a filter.'),
     { name: '10', html: hero(P.f09, h1('Bali.<br/>Let us<br/>make this.', 480, 96) + sub('Sign up if you want photos like this.', 400)) },
@@ -316,7 +316,7 @@ const variations = [
   // V10: Proof overload
   { slug: 'v10', slides: [
     hookSlide(P.f14),
-    scatter8('02', 'Hong Kong', [P.f24, P.f25, P.f26, P.f43, P.f44, P.f45, P.f46, P.f47], 'Night shift on Portra 400.'),
+    scatter8('02', 'Hong Kong', [P.f24, P.f25, P.f26, P.f43, P.f44, P.f45, P.f46, P.f47], 'Night shift on 35mm film.'),
     scatter8('03', 'Taipei \u00b7 Seoul', [P.f48, P.f49, P.f50, P.f52, P.f53, P.f14, P.f15, P.f16], 'Fashion capitals. Film camera.'),
     scatter8('04', 'Chongqing \u00b7 Guangzhou', [P.f40, P.f41, P.f42, P.f55, P.f56, P.f58, P.f59, P.f60], 'China on one roll.'),
     { name: '05', html: hero(P.f33, h1('Still not<br/>convinced?', 500) + sub('Keep swiping.', 420)) },

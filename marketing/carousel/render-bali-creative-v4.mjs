@@ -16,7 +16,7 @@ const MO = "'Courier New', monospace"
 const SH = 'text-shadow: 0 3px 6px rgba(0,0,0,1), 0 10px 40px rgba(0,0,0,0.8), 0 0 100px rgba(0,0,0,0.5);'
 const GR = '<div style="position:absolute;inset:0;pointer-events:none;opacity:0.08;mix-blend-mode:soft-light;background-image:radial-gradient(circle at 14% 18%, rgba(255,255,255,0.5), transparent 17%),radial-gradient(circle at 84% 12%, rgba(255,255,255,0.28), transparent 15%),repeating-linear-gradient(0deg, rgba(255,255,255,0.08) 0 1px, transparent 1px 4px);"></div>'
 
-// Portrait image helper — always taller than wide
+// 35mm filmit image helper — always taller than wide
 function img(src, l, t, w, h, extra) { extra=extra||''; return '<img src="'+src+'" style="position:absolute;left:'+l+'px;top:'+t+'px;width:'+w+'px;height:'+h+'px;object-fit:cover;object-position:center top;display:block;'+extra+'"/>' }
 // Print — portrait with white border
 function pr(src, l, t, w, h, rot, b) { b=b||12; return '<div style="position:absolute;left:'+l+'px;top:'+t+'px;width:'+(w+b*2)+'px;height:'+(h+b*2)+'px;background:white;padding:'+b+'px;transform:rotate('+rot+'deg);box-shadow:0 8px 40px rgba(0,0,0,0.45), 0 2px 8px rgba(0,0,0,0.2);"><img src="'+src+'" style="width:'+w+'px;height:'+h+'px;object-fit:cover;object-position:center top;display:block;"/></div>' }
@@ -128,7 +128,7 @@ const P = {
   f71:n('000041.jpg'), f72:n('000042-5.jpg'), f73:n('000042-2.jpg'),
   f74:n('000044-2.jpg'), f75:n('000045.jpg'),
   f76:n('000048-2.jpg'), f77:n('000050-6.jpg'),
-  f78:n('000062.jpg'), f79:n('000062-7.jpg'),
+  f78:n('000062.jpg'), f79:n('000062-2.jpg'),
   f80:n('000063.jpg'), f81:n('000066-5.jpg'), f82:n('000067-9.jpg'),
   f83:n('000068-2.jpg'), f84:n('000068-9.jpg'),
   f85:n('0017_17.jpg'), f86:n('0021_21-6.jpg'),
@@ -164,7 +164,7 @@ const variations = [
   // V2: "Be my next muse"
   { slug: 'v2', slides: [
     hookSlide(P.f44, "Be my next<br/>muse in Bali.", 'I shoot on film. You get every photo.'),
-    split2('02', P.f43, P.f46, 'All shot on Portra 400', 'No filters.<br/>Just film grain.'),
+    split2('02', P.f43, P.f46, 'All shot on 35mm film', 'No filters.<br/>Just film grain.'),
     darkSingle('03', P.f14, 'No modeling<br/>experience?', 'Perfect. I direct every single pose.'),
     stacked('04', P.f33, P.f37, 'Intimate or outdoor.<br/>Your call.'),
     magazine('05', P.f31, 'What you get', 'Free edited<br/>photos from<br/>a real shoot.', 'TFP means we both walk away with portfolio pieces. Win-win.', P.f55),
@@ -196,7 +196,7 @@ const variations = [
     darkDuo('03', P.f24, P.f43, 'Looking for<br/>fresh faces.', 'Models, creators, anyone who wants great photos.'),
     stacked('04', P.f14, P.f16, 'I direct every<br/>single frame.'),
     magazine('05', P.f33, 'The deal', 'You show up.<br/>I do the rest.', 'Posing, lighting, direction, editing. All handled. All free.', P.f37),
-    split2('06', P.f48, P.f52, 'Portra 400', 'The film that<br/>makes everyone glow.'),
+    split2('06', P.f48, P.f52, '35mm film', 'The film that<br/>makes everyone glow.'),
     darkSingle('07', P.f72, 'Want to<br/>be next?', 'Sign up and lock in your spot.'),
     warm3('08', 'Real film', [P.f68, P.f38, P.f65], 'Grain you<br/>can feel.'),
     { name: '09', html: hero(P.f09, tag('Bali', 64, 60) + h2('Limited spots.<br/>Sign up now.', 460) + sub('Click the link below.', 380)) },
@@ -212,7 +212,7 @@ const variations = [
     magazine('05', P.f48, 'What you get', 'Edited 35mm<br/>film portraits.', 'Professional direction. Beautiful locations in Bali. Every photo yours to keep.', P.f50),
     stacked('06', P.f40, P.f42, 'The camera<br/>loves everyone.'),
     darkDuo('07', P.f34, P.f64, 'Nature.<br/>Night.<br/>Golden hour.', 'We pick the best setting for your look.'),
-    warm3('08', 'Shot on Portra 400', [P.f72, P.f78, P.f82], 'Film warmth<br/>is unmatched.'),
+    warm3('08', 'Shot on 35mm film', [P.f72, P.f78, P.f82], 'Film warmth<br/>is unmatched.'),
     { name: '09', html: hero(P.f87, tag('Bali', 64, 60) + h2('Spots going<br/>fast.', 480) + sub('Click the link below to sign up.', 400)) },
     ctaSlide(P.f28),
   ]},
@@ -220,7 +220,7 @@ const variations = [
   // V6: "Film portraits in Bali"
   { slug: 'v6', slides: [
     hookSlide(P.f48, "Film portraits<br/>in Bali.", 'Looking for models to collaborate with.'),
-    { name: '02', html: hero(P.f24, tag('35mm', 64, 60) + h2('Shot on real film.<br/>Not a filter.', 440) + sub('Portra 400. Every frame.', 370)) },
+    { name: '02', html: hero(P.f24, tag('35mm', 64, 60) + h2('Shot on real film.<br/>Not a filter.', 440) + sub('35mm film. Every frame.', 370)) },
     darkDuo('03', P.f43, P.f46, 'You could be<br/>in this collection.', 'All it takes is signing up.'),
     split2('04', P.f14, P.f31, 'No experience needed', 'I guide you<br/>through everything.'),
     magazine('05', P.f33, 'The vibe', 'Relaxed.<br/>Creative.<br/>Fun.', 'This is not a stiff studio shoot. We explore Bali and shoot what feels right.', P.f37),
@@ -251,9 +251,9 @@ const variations = [
     darkDuo('02', P.f24, P.f28, 'This is what<br/>film looks like.', 'No Instagram filters can replicate this.'),
     { name: '03', html: hero(P.f14, tag('I direct everything', 64, 60) + h2('You just<br/>show up.', 460) + sub('No posing skills needed. I handle it all.', 380)) },
     split2('04', P.f33, P.f37, 'TFP collaboration', 'Two vibes.<br/>Same film.'),
-    magazine('05', P.f44, 'What you walk away with', 'Professionally<br/>directed film<br/>portraits.', 'Edited, high-res scans from 35mm Portra 400. Yours to use however you want.', P.f43),
+    magazine('05', P.f44, 'What you walk away with', 'Professionally<br/>directed film<br/>portraits.', 'Edited, high-res scans from 35mm 35mm film. Yours to use however you want.', P.f43),
     darkSingle('06', P.f48, 'Your portfolio<br/>deserves film.', 'Stand out from the digital crowd.'),
-    stacked('07', P.f72, P.f82, 'Every face<br/>looks good on Portra.'),
+    stacked('07', P.f72, P.f82, 'Every face<br/>looks good on 35mm.'),
     warm3('08', 'Bali locations', [P.f64, P.f68, P.f70], 'Beautiful<br/>backdrops.'),
     { name: '09', html: hero(P.f87, tag('Bali', 64, 60) + h2('Be next.', 520, 96) + sub('Click the link below to sign up.', 420)) },
     ctaSlide(P.f09),
@@ -261,7 +261,7 @@ const variations = [
 
   // V9: "Your face on film"
   { slug: 'v9', slides: [
-    hookSlide(P.f43, "Your face<br/>on film.", 'Bali. Portra 400. Free session.'),
+    hookSlide(P.f43, "Your face<br/>on film.", 'Bali. 35mm film. Free session.'),
     { name: '02', html: hero(P.f31, tag('35mm film', 64, 60) + h2('The texture<br/>digital cannot<br/>touch.', 380) + sub('Grain. Warmth. Soul.', 310)) },
     darkDuo('03', P.f14, P.f16, 'I bring the<br/>camera.', 'You bring the face. That is the whole deal.'),
     split2('04', P.f48, P.f52, 'All types welcome', 'Every face has<br/>a story.'),
@@ -276,7 +276,7 @@ const variations = [
   // V10: "Show up. Get shot. Keep everything."
   { slug: 'v10', slides: [
     hookSlide(P.f24, "Show up.<br/>Get shot.<br/>Keep everything.", 'Free 35mm film session in Bali.'),
-    darkSingle('02', P.f44, 'I shoot<br/>on film.', 'Portra 400. The gold standard.'),
+    darkSingle('02', P.f44, 'I shoot<br/>on film.', '35mm film. The gold standard.'),
     split2('03', P.f14, P.f33, 'No experience needed', 'First-timers<br/>are my favorite.'),
     { name: '04', html: hero(P.f31, tag('What you get', 64, 60) + h2('All the photos.<br/>All edited.<br/>All free.', 380) + sub('TFP collaboration. We both win.', 300)) },
     magazine('05', P.f48, 'The shoot', 'Relaxed vibes.<br/>Beautiful<br/>locations.', 'I pick the spots. I direct the poses. You just enjoy the experience.', P.f50),

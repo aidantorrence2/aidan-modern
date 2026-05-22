@@ -72,7 +72,7 @@ slides.push({ name: '02-contact-sheet', html:
   '<img src="'+d+'" style="position:absolute;left:90px;top:1110px;width:900px;height:340px;object-fit:cover;object-position:center top;"/>' +
   '<img src="'+e+'" style="position:absolute;left:90px;top:1470px;width:900px;height:340px;object-fit:cover;object-position:center top;"/>' +
   // Frame numbers
-  '<p style="position:absolute;left:100px;top:1830px;font-family:'+MONO+';font-size:16px;color:rgba(255,180,60,0.6);margin:0;">KODAK PORTRA 400  &nbsp; 13 &nbsp; 14 &nbsp; 15 &nbsp; 16 &nbsp; 17</p>' +
+  '<p style="position:absolute;left:100px;top:1830px;font-family:'+MONO+';font-size:16px;color:rgba(255,180,60,0.6);margin:0;">KODAK 35MM  &nbsp; 13 &nbsp; 14 &nbsp; 15 &nbsp; 16 &nbsp; 17</p>' +
   '<p style="position:absolute;right:100px;top:1830px;font-family:'+SANS+';font-size:20px;font-weight:600;color:rgba(255,255,255,0.5);letter-spacing:0.1em;text-transform:uppercase;margin:0;">Hong Kong \u00b7 35mm</p>' +
   grain + '</div>'
 })
