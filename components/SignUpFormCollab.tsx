@@ -43,7 +43,6 @@ const vibeOptions = [
   { id: 'Editorial & fashion', desc: 'Dramatic landscapes, fashion outfits, like from a magazine' },
   { id: 'Street & urban', desc: 'Gritty, real, in-the-moment' },
   { id: 'Beach / nature', desc: 'Rice fields, jungle, beach, golden hour, soft light' },
-  { id: 'Intimate & personal', desc: 'Close, quiet, vulnerable' },
   { id: 'Villa / studio', desc: 'White walls, clean backdrops, modern and sophisticated' },
   { id: 'No preference', desc: 'Let\u2019s figure it out together' },
 ]
@@ -103,11 +102,6 @@ export default function SignUpFormCollab() {
     const data = Object.fromEntries(new FormData(e.currentTarget).entries()) as Record<string, string>
     if (data.company) { setState({ ok: true }); return }
 
-    if (!experience) {
-      setState({ ok: false, error: 'Let me know your experience level.' })
-      expRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' })
-      return
-    }
     if (!contact.trim()) {
       setState({ ok: false, error: `Please enter your ${contactMethod === 'whatsapp' ? 'WhatsApp number' : 'Instagram handle'}.` })
       contactRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' })
@@ -223,21 +217,21 @@ export default function SignUpFormCollab() {
           Sign Up for Free Collab
         </h1>
         <p className="text-base leading-relaxed text-white/50">
-          I&apos;m looking for models in Bali. Sign up if you want photos like this.
+          I&apos;m looking for models in Bali. Sign up if you are interested in collaborating.
         </p>
 
         <div className="space-y-2.5">
           <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-white/30">Recent work &middot; Shot on film</p>
           <div className="grid grid-cols-4 gap-1">
             {[
-              '/images/proof/000005-3.jpg',
+              '/images/proof/000023.jpg',
               '/images/proof/000016.jpg',
-              '/images/proof/000008-3.jpg',
-              '/images/proof/000013-3.jpg',
-              '/images/proof/000009.jpg',
-              '/images/proof/000012.jpg',
-              '/images/proof/000042-5.jpg',
-              '/images/proof/000015-3.jpg',
+              '/images/proof/000014-3.jpg',
+              '/images/proof/000025.jpg',
+              '/images/proof/000008-3-2.jpg',
+              '/images/proof/000039.jpg',
+              '/images/proof/DSC_0347.jpg',
+              '/images/proof/000062.jpg',
             ].map((src, i) => (
               <div key={i} className="relative overflow-hidden rounded-md aspect-[3/4]">
                 <NextImage
@@ -253,14 +247,6 @@ export default function SignUpFormCollab() {
           </div>
         </div>
 
-        <div className="rounded-2xl border border-white/[0.08] bg-white/[0.03] p-5 space-y-3">
-          <p className="text-sm leading-relaxed text-white/60">
-            All of these were shot on 35mm film. I direct the entire shoot &mdash; posing, lighting, locations, everything. You don&apos;t need any experience. You show up, I handle the rest, and we both walk away with great content.
-          </p>
-          <p className="text-sm leading-relaxed text-white/60">
-            This is a TFP collaboration: no cost, no catch. I&apos;m building my portfolio in Bali and I need interesting faces. If that&apos;s you, fill out the form below and I&apos;ll reach out.
-          </p>
-        </div>
       </div>
 
       <form onSubmit={onSubmit} className="mt-8 space-y-7">
@@ -270,35 +256,10 @@ export default function SignUpFormCollab() {
           </div>
         )}
 
-        {/* Experience */}
-        <fieldset ref={expRef} className="space-y-2.5">
-          <div className="flex items-center gap-2">
-            <span className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-500/20 text-[10px] font-bold text-emerald-400">1</span>
-            <legend className="text-sm font-medium text-white/80">Your modeling experience</legend>
-          </div>
-          <div className="grid grid-cols-1 gap-2">
-            {experienceOptions.map(opt => (
-              <button
-                key={opt.id}
-                type="button"
-                onClick={() => { setExperience(opt.id); clearStatus() }}
-                className={`rounded-xl border px-4 py-3 text-left transition-all ${
-                  experience === opt.id
-                    ? 'border-emerald-400 bg-emerald-400/10 ring-2 ring-emerald-400/30'
-                    : 'border-white/10 bg-white/[0.03] hover:border-white/25'
-                }`}
-              >
-                <div className={`text-sm font-semibold ${experience === opt.id ? 'text-emerald-300' : 'text-white'}`}>{opt.id}</div>
-                <div className="mt-0.5 text-xs text-white/40">{opt.desc}</div>
-              </button>
-            ))}
-          </div>
-        </fieldset>
-
         {/* Vibes */}
         <fieldset className="space-y-2.5">
           <div className="flex items-center gap-2">
-            <span className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-500/20 text-[10px] font-bold text-emerald-400">2</span>
+            <span className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-500/20 text-[10px] font-bold text-emerald-400">1</span>
             <legend className="text-sm font-medium text-white/80">What kind of shoot interests you? <span className="text-xs text-white/30">(pick any)</span></legend>
           </div>
           <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
@@ -323,7 +284,7 @@ export default function SignUpFormCollab() {
         {/* Notes */}
         <div className="space-y-2">
           <div className="flex items-center gap-2">
-            <span className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-500/20 text-[10px] font-bold text-emerald-400">3</span>
+            <span className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-500/20 text-[10px] font-bold text-emerald-400">2</span>
             <label className="text-sm font-medium text-white/80">Anything else? <span className="text-xs text-white/30">(optional)</span></label>
           </div>
           <textarea
