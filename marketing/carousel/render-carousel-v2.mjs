@@ -505,12 +505,19 @@ for (const city of cities) {
   // Photo with white border, rotation, and shadow — like a real print
   function print(src, l, t, w, h, rot, border) {
     border = border || 12
-    return '<div style="position:absolute;left:' + l + 'px;top:' + t + 'px;width:' + (w + border*2) + 'px;height:' + (h + border*2) + 'px;background:white;padding:' + border + 'px;transform:rotate(' + rot + 'deg);box-shadow:0 8px 40px rgba(0,0,0,0.45), 0 2px 8px rgba(0,0,0,0.2);"><img src="' + src + '" style="width:' + w + 'px;height:' + h + 'px;object-fit:cover;object-position:center;display:block;"/></div>'
+    return '<div style="position:absolute;left:' + l + 'px;top:' + t + 'px;width:' + (w + border*2) + 'px;height:' + (h + border*2) + 'px;background:white;padding:' + border + 'px;transform:rotate(' + rot + 'deg);box-shadow:0 8px 40px rgba(0,0,0,0.45), 0 2px 8px rgba(0,0,0,0.2);"><img src="' + src + '" style="width:' + w + 'px;height:' + h + 'px;object-fit:cover;object-position:center top;display:block;"/></div>'
   }
 
   // Floating photo with shadow, no border
   function floating(src, l, t, w, h, rot) {
-    return '<img src="' + src + '" style="position:absolute;left:' + l + 'px;top:' + t + 'px;width:' + w + 'px;height:' + h + 'px;object-fit:cover;object-position:center;display:block;transform:rotate(' + rot + 'deg);filter:drop-shadow(0 16px 40px rgba(0,0,0,0.5));"/>'
+    return '<img src="' + src + '" style="position:absolute;left:' + l + 'px;top:' + t + 'px;width:' + w + 'px;height:' + h + 'px;object-fit:cover;object-position:center top;display:block;transform:rotate(' + rot + 'deg);filter:drop-shadow(0 16px 40px rgba(0,0,0,0.5));"/>'
+  }
+
+  // Small text label
+  function label(text, l, t, size, color) {
+    size = size || 22
+    color = color || 'rgba(255,255,255,0.4)'
+    return '<p style="position:absolute;left:' + l + 'px;top:' + t + 'px;font-family:' + SANS + ';font-size:' + size + 'px;font-weight:600;color:' + color + ';letter-spacing:0.1em;text-transform:uppercase;margin:0;' + S + '">' + text + '</p>'
   }
 
   function darkBg(inner) {
@@ -532,8 +539,9 @@ for (const city of cities) {
       + '</div>' + filmGrain(0.1) + '</div>'
   })
 
-  // Slide 2: One big tilted print center + two small prints tucked behind
+  // Slide 2: Prints with "Recent work" label
   allSlides.push({ name: prefix + '-02-prints', html: darkBg(
+    label('Recent work', 64, 50, 20) +
     print(n13, 40, 100, 380, 500, -4) +
     print(n15, 580, 60, 420, 540, 3.5) +
     print(n16, 180, 620, 700, 880, -1.2, 16) +
@@ -541,31 +549,35 @@ for (const city of cities) {
     print(n11, 480, 1420, 480, 440, -2)
   )})
 
-  // Slide 3: Diagonal cascade — photos stepping down L to R like dropped cards
+  // Slide 3: Diagonal cascade with "Different models. Different vibes."
   allSlides.push({ name: prefix + '-03-cascade', html: darkBg(
     floating(n08, 40, 60, 520, 650, -2.5) +
     floating(n09, 440, 380, 560, 700, 1.8) +
     floating(n03, 80, 820, 480, 600, 2.2) +
-    floating(n14, 460, 1150, 540, 680, -1.5)
+    floating(n14, 460, 1150, 540, 680, -1.5) +
+    '<div style="position:absolute;bottom:120px;left:64px;right:64px;">' +
+    '<p style="font-family:' + SERIF + ';font-size:44px;font-weight:700;font-style:italic;color:rgba(255,255,255,0.5);line-height:1.1;margin:0;' + S + '">Different models.<br/>Different vibes.</p></div>'
   )})
 
-  // Slide 4: One massive hero (80% of frame) + tiny accent overlapping corner
+  // Slide 4: One massive hero + accent prints, "Every shoot is unique"
   allSlides.push({ name: prefix + '-04-hero', html: darkBg(
-    '<img src="' + n12 + '" style="position:absolute;left:60px;top:120px;width:960px;height:1400px;object-fit:cover;object-position:center;display:block;filter:drop-shadow(0 30px 60px rgba(0,0,0,0.6));"/>' +
+    label('Every shoot is unique', 64, 50, 20) +
+    '<img src="' + n12 + '" style="position:absolute;left:60px;top:120px;width:960px;height:1400px;object-fit:cover;object-position:center top;display:block;filter:drop-shadow(0 30px 60px rgba(0,0,0,0.6));"/>' +
     print(n17, 560, 1340, 420, 500, 3, 10) +
     print(n04, -20, 1380, 340, 440, -4, 10)
   )})
 
-  // Slide 5: Tight cluster — 4 overlapping prints dropped on a table, centered
+  // Slide 5: Tight cluster, "I direct. You show up."
   allSlides.push({ name: prefix + '-05-cluster', html: darkBg(
-    print(n01, 80, 280, 480, 620, -6) +
-    print(n06, 420, 200, 520, 660, 4) +
-    print(n10, 140, 880, 520, 650, 3.5) +
-    print(n07, 380, 940, 560, 700, -2.5) +
-    print(n22, 200, 1560, 600, 340, 1.2, 10)
+    print(n01, 80, 220, 480, 620, -6) +
+    print(n06, 420, 140, 520, 660, 4) +
+    print(n10, 140, 820, 520, 650, 3.5) +
+    print(n07, 380, 880, 560, 700, -2.5) +
+    '<div style="position:absolute;bottom:140px;left:64px;right:64px;text-align:center;">' +
+    '<p style="font-family:' + SERIF + ';font-size:52px;font-weight:700;font-style:italic;color:rgba(255,255,255,0.6);line-height:1.05;margin:0;' + S + '">I direct. You show up.</p></div>'
   )})
 
-  // Slide 6: Fan spread — photos radiating from bottom center like a hand of cards
+  // Slide 6: Fan spread, "All real. All directed by me."
   allSlides.push({ name: prefix + '-06-fan', html: darkBg(
     floating(n23, 40, 200, 360, 500, -12) +
     floating(n24, 220, 120, 380, 520, -4) +
@@ -576,34 +588,38 @@ for (const city of cities) {
     + '<p style="font-family:' + SERIF + ';font-size:80px;font-weight:700;font-style:italic;color:white;line-height:0.95;margin:0;' + S + '">All real.<br/>All directed<br/>by me.</p></div>'
   )})
 
-  // Slide 7: Vertical triptych — 3 tall photos with slight offsets and tilts
+  // Slide 7: Triptych, "No experience needed"
   allSlides.push({ name: prefix + '-07-triptych', html: darkBg(
-    floating(n19, 20, 80, 330, 1760, -1.5) +
-    floating(n21, 370, 40, 330, 1760, 0.8) +
-    floating(n20, 720, 100, 330, 1760, -0.5)
+    floating(n19, 20, 80, 330, 1700, -1.5) +
+    floating(n21, 370, 40, 330, 1700, 0.8) +
+    floating(n20, 720, 100, 330, 1700, -0.5) +
+    '<div style="position:absolute;bottom:60px;left:0;right:0;text-align:center;">' +
+    '<p style="font-family:' + SANS + ';font-size:24px;font-weight:600;color:rgba(255,255,255,0.4);letter-spacing:0.1em;text-transform:uppercase;margin:0;' + S + '">No experience needed \u00b7 @madebyaidan</p></div>'
   )})
 
-  // Slide 8: "This could be you" — single breathtaking photo with text
+  // Slide 8: "This could be you"
   allSlides.push({
     name: prefix + '-08-you',
     html: '<div style="width:1080px;height:1920px;position:relative;overflow:hidden;background:#000;">'
-      + '<img src="' + n16 + '" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(1.08);"/>'
+      + '<img src="' + n16 + '" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;filter:saturate(1.08);"/>'
       + '<div style="position:absolute;inset:0;background:linear-gradient(180deg, transparent 40%, rgba(0,0,0,0.88) 100%);"></div>'
       + '<div style="position:absolute;bottom:400px;left:64px;right:64px;">'
       + '<p style="font-family:' + SERIF + ';font-size:96px;font-weight:700;font-style:italic;color:white;line-height:0.95;margin:0;' + S + '">This could<br/>be you.</p>'
-      + '<p style="font-family:' + SANS + ';font-size:30px;color:rgba(255,255,255,0.5);margin:28px 0 0;' + S + '">TFP. I direct everything. No experience needed.</p>'
+      + '<p style="font-family:' + SANS + ';font-size:30px;color:rgba(255,255,255,0.5);margin:28px 0 0;' + S + '">TFP collaboration. I direct everything.</p>'
       + '</div>' + filmGrain(0.1) + '</div>'
   })
 
-  // Slide 9: Scattered prints with mixed sizes — messy editorial table
+  // Slide 9: Editorial table, "Swipe up or DM me"
   allSlides.push({ name: prefix + '-09-editorial', html: darkBg(
-    print(n15, 20, 40, 500, 380, -3, 14) +
-    print(n05, 480, 20, 540, 420, 2.5, 14) +
-    print(n08, 60, 460, 440, 560, 1.8, 12) +
-    print(n09, 500, 500, 500, 620, -2.8, 12) +
-    print(n03, 120, 1080, 420, 340, -1.5, 10) +
-    print(n12, 520, 1140, 480, 380, 3.2, 10) +
-    print(n14, 200, 1460, 600, 440, -0.8, 14)
+    label('@madebyaidan \u00b7 Bali', 64, 40, 20) +
+    print(n15, 20, 90, 500, 380, -3, 14) +
+    print(n05, 480, 70, 540, 420, 2.5, 14) +
+    print(n08, 60, 510, 440, 560, 1.8, 12) +
+    print(n09, 500, 550, 500, 620, -2.8, 12) +
+    print(n03, 120, 1130, 420, 340, -1.5, 10) +
+    print(n12, 520, 1190, 480, 380, 3.2, 10) +
+    '<div style="position:absolute;bottom:120px;left:64px;right:64px;text-align:center;">' +
+    '<p style="font-family:' + SERIF + ';font-size:48px;font-weight:700;font-style:italic;color:rgba(255,255,255,0.5);line-height:1.1;margin:0;' + S + '">Your photos could be here.</p></div>'
   )})
 
   // Slide 10: CTA
