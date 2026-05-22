@@ -362,7 +362,7 @@ export default function SignUpFormCollab() {
           <label className="text-sm font-medium text-white/80">
             Photos of yourself <span className="text-xs text-red-400/70">*</span>
           </label>
-          <p className="text-xs text-white/40">Selfies, headshots, or previous shoots</p>
+          <p className="text-xs text-white/40">A selfie or headshot &mdash; you can upload multiple</p>
           <div className="mt-1 flex flex-wrap gap-2">
             {photos.map((p, i) => (
               <div key={i} className="relative">
