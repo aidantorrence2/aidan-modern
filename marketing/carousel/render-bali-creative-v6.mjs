@@ -171,7 +171,8 @@ const variations = [
     ctaSlide(F.f20),
   ]},
   { slug: 'v9', slides: [
-    hookSlide(H.h13), // 000062-7 — landscape, works as full bleed hero
+    // Custom hook for landscape photo — contained in frame, not cropped
+    {name:'01-hook',html:dark(tag('Shot on 35mm film',64,60)+'<div style="position:absolute;left:40px;top:120px;right:40px;height:640px;border-radius:12px;overflow:hidden;"><img src="'+H.h13+'" style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;"/></div>'+h1("I'm looking for<br/>models in Bali.",540)+sub('Sign up if you are interested<br/>in collaborating.',420,42))},
     heroText('02', H.h18, 'Bali', 'Models wanted<br/>in Bali.', 'TFP. All skill levels.'), // manila square, works as hero
     split2('03', F.f07, F.f08, 'Night shoots', 'City lights<br/>on film.'),
     magazine('04', F.f05, 'What you get', 'Edited 35mm<br/>portraits.', 'Professional direction. Every photo yours to keep. No cost.', F.f36),
