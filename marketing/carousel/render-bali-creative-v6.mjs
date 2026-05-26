@@ -171,8 +171,8 @@ const variations = [
     ctaSlide(F.f20),
   ]},
   { slug: 'v9', slides: [
-    // Custom hook for landscape photo — contained in frame, not cropped
-    {name:'01-hook',html:dark(tag('Shot on 35mm film',64,60)+'<div style="position:absolute;left:40px;top:120px;right:40px;height:640px;border-radius:12px;overflow:hidden;"><img src="'+H.h13+'" style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;"/></div>'+h1("I'm looking for<br/>models in Bali.",540)+sub('Sign up if you are interested<br/>in collaborating.',420,42))},
+    // Landscape photo rotated 90deg to fill portrait frame
+    {name:'01-hook',html:'<div style="width:1080px;height:1920px;position:relative;overflow:hidden;background:#000;"><img src="'+H.h13+'" style="position:absolute;top:50%;left:50%;width:1920px;height:1080px;object-fit:cover;object-position:center;transform:translate(-50%,-50%) rotate(90deg);filter:saturate(1.1) contrast(1.05);"/><div style="position:absolute;inset:0;background:linear-gradient(180deg, rgba(0,0,0,0.08) 0%, transparent 15%, rgba(0,0,0,0.35) 55%, rgba(0,0,0,0.96) 100%);"></div>'+tag('Shot on 35mm film',64,60)+h1("I'm looking for<br/>models in Bali.",540)+sub('Sign up if you are interested<br/>in collaborating.',420,42)+GR+'</div>'},
     heroText('02', H.h18, 'Bali', 'Models wanted<br/>in Bali.', 'TFP. All skill levels.'), // manila square, works as hero
     split2('03', F.f07, F.f08, 'Night shoots', 'City lights<br/>on film.'),
     magazine('04', F.f05, 'What you get', 'Edited 35mm<br/>portraits.', 'Professional direction. Every photo yours to keep. No cost.', F.f36),
