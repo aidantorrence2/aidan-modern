@@ -159,8 +159,8 @@ const variations = [
     ctaSlide(F.f13),
   ]},
   { slug: 'v8', slides: [
-    hookSlide(H.h02), // 000015-2
-    heroText('02', H.h08, '35mm film', 'Free 35mm<br/>portraits.', 'TFP. You get every photo.'), // 000036-5
+    hookSlide(H.h08), // 000036-5
+    heroText('02', H.h02, '35mm film', 'Free 35mm<br/>portraits.', 'TFP. You get every photo.'), // 000015-2
     darkDuo('03', F.f26, F.f23, 'Bali shoots', 'Villa. Beach. Night. Your call.'),
     heroText('04', F.f03, 'Shot on film', 'Film portraits<br/>hit different.', 'No filter. Just grain and light.'),
     split2('05', F.f06, F.f15, 'TFP collaboration', 'No cost.<br/>Real content.'),
@@ -172,7 +172,7 @@ const variations = [
   ]},
   { slug: 'v9', slides: [
     // Landscape photo rotated 90deg to fill portrait frame
-    {name:'01-hook',html:'<div style="width:1080px;height:1920px;position:relative;overflow:hidden;background:#000;"><img src="'+H.h13+'" style="position:absolute;top:50%;left:50%;width:1920px;height:1080px;object-fit:cover;object-position:center;transform:translate(-50%,-50%) rotate(90deg);filter:saturate(1.1) contrast(1.05);"/><div style="position:absolute;inset:0;background:linear-gradient(180deg, rgba(0,0,0,0.08) 0%, transparent 15%, rgba(0,0,0,0.35) 55%, rgba(0,0,0,0.96) 100%);"></div>'+tag('Shot on 35mm film',64,60)+h1("I'm looking for<br/>models in Bali.",540)+sub('Sign up if you are interested<br/>in collaborating.',420,42)+GR+'</div>'},
+    {name:'01-hook',html:'<div style="width:1080px;height:1920px;position:relative;overflow:hidden;background:#000;"><img src="'+H.h13+'" style="position:absolute;top:50%;left:50%;width:1920px;height:1080px;object-fit:cover;object-position:center;transform:translate(-50%,-50%) rotate(-90deg);filter:saturate(1.1) contrast(1.05);"/><div style="position:absolute;inset:0;background:linear-gradient(180deg, rgba(0,0,0,0.08) 0%, transparent 15%, rgba(0,0,0,0.35) 55%, rgba(0,0,0,0.96) 100%);"></div>'+tag('Shot on 35mm film',64,60)+h1("I'm looking for<br/>models in Bali.",540)+sub('Sign up if you are interested<br/>in collaborating.',420,42)+GR+'</div>'},
     heroText('02', H.h18, 'Bali', 'Models wanted<br/>in Bali.', 'TFP. All skill levels.'), // manila square, works as hero
     split2('03', F.f07, F.f08, 'Night shoots', 'City lights<br/>on film.'),
     magazine('04', F.f05, 'What you get', 'Edited 35mm<br/>portraits.', 'Professional direction. Every photo yours to keep. No cost.', F.f36),
