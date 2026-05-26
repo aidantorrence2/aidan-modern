@@ -51,6 +51,7 @@ const heroImage = '/images/moodboards/editorial.jpg'
 
 export default function SignUpFormCollab() {
   const [state, setState] = useState<State | null>(null)
+  const [location, setLocation] = useState('')
   const [experience, setExperience] = useState('')
   const [vibes, setVibes] = useState<string[]>([])
   const [availability, setAvailability] = useState('')
@@ -119,6 +120,7 @@ export default function SignUpFormCollab() {
     try {
       const moodboard = [
         'Collab sign-up',
+        ...(location.trim() ? ['Location: ' + location.trim()] : []),
         'Experience: ' + experience,
         ...(vibes.length > 0 ? ['Vibes: ' + vibes.join(', ')] : []),
         ...(availability.trim() ? ['Availability: ' + availability.trim()] : []),
@@ -256,10 +258,24 @@ export default function SignUpFormCollab() {
           </div>
         )}
 
+        {/* Location */}
+        <div className="space-y-2">
+          <div className="flex items-center gap-2">
+            <span className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-500/20 text-[10px] font-bold text-emerald-400">1</span>
+            <label className="text-sm font-medium text-white/80">Where are you located?</label>
+          </div>
+          <input
+            value={location}
+            onChange={e => { setLocation(e.target.value); clearStatus() }}
+            className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-white/30 outline-none transition focus:border-emerald-400 focus:ring-2 focus:ring-emerald-400/30"
+            placeholder="e.g. Canggu, Ubud, Seminyak"
+          />
+        </div>
+
         {/* Vibes */}
         <fieldset className="space-y-2.5">
           <div className="flex items-center gap-2">
-            <span className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-500/20 text-[10px] font-bold text-emerald-400">1</span>
+            <span className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-500/20 text-[10px] font-bold text-emerald-400">2</span>
             <legend className="text-sm font-medium text-white/80">What kind of shoot interests you? <span className="text-xs text-white/30">(pick any)</span></legend>
           </div>
           <div className="grid grid-cols-2 gap-2">
@@ -284,7 +300,7 @@ export default function SignUpFormCollab() {
         {/* Notes */}
         <div className="space-y-2">
           <div className="flex items-center gap-2">
-            <span className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-500/20 text-[10px] font-bold text-emerald-400">2</span>
+            <span className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-500/20 text-[10px] font-bold text-emerald-400">3</span>
             <label className="text-sm font-medium text-white/80">Anything else? <span className="text-xs text-white/30">(optional)</span></label>
           </div>
           <textarea
