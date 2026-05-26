@@ -308,7 +308,7 @@ export default function SignUpFormCollab() {
             onChange={e => { setNotes(e.target.value); clearStatus() }}
             rows={3}
             className="w-full resize-none rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-white/30 outline-none transition focus:border-emerald-400 focus:ring-2 focus:ring-emerald-400/30"
-            placeholder="Your IG portfolio, references, ideas, anything..."
+            placeholder="Inspo, references, ideas, anything..."
           />
         </div>
 
