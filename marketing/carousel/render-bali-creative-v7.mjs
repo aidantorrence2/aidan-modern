@@ -43,9 +43,9 @@ function duo(nm,a,b,tg,hl){return {name:nm,html:dark(tag(tg,64,40)+pr(a,30,80,46
 // 2 photos offset cascade
 function cascade2(nm,a,b,tg,sl){return {name:nm,html:dark(tag(tg,64,40)+pr(a,40,80,480,680,-2.5,14)+pr(b,480,520,480,680,2,14)+sub(sl,80))}}
 // 3 photos in a row
-function trio(nm,a,b,c,tg,sl){return {name:nm,html:dark(tag(tg,64,40)+pr(a,20,80,310,440,-2.5,12)+pr(b,360,60,310,440,1.5,12)+pr(c,700,90,310,440,-1,12)+sub(sl,60))}}
+function trio(nm,a,b,c,tg,sl){return {name:nm,html:dark(tag(tg,64,40)+pr(a,10,80,320,900,-2.5,10)+pr(b,355,60,320,900,1.5,10)+pr(c,700,80,320,900,-1,10)+sub(sl,60))}}
 // 3 photos warm paper
-function warm3(nm,tg,a,b,c,sl){return {name:nm,html:warm(dtag(tg,64,50)+pr(a,30,80,310,440,-3,12)+pr(b,370,60,310,440,2,12)+pr(c,700,90,310,440,-1.5,12)+dh(sl,60))}}
+function warm3(nm,tg,a,b,c,sl){return {name:nm,html:warm(dtag(tg,64,50)+pr(a,10,80,320,900,-3,10)+pr(b,355,60,320,900,2,10)+pr(c,700,80,320,900,-1.5,10)+dh(sl,60))}}
 // 2-photo magazine
 function magazine(nm,s,tg,hl,body,ins){return {name:nm,html:'<div style="width:1080px;height:1920px;position:relative;overflow:hidden;background:#f5f0e6;"><div style="position:absolute;inset:0;background:linear-gradient(170deg, #faf6ee 0%, #f0e8d8 50%, #e5d8c4 100%);"></div>'+img(s,40,40,580,860,'object-position:center top;border-radius:8px;')+'<div style="position:absolute;left:64px;top:940px;right:64px;"><p style="font-family:'+SA+';font-size:16px;font-weight:700;color:rgba(0,0,0,0.3);letter-spacing:0.15em;text-transform:uppercase;margin:0 0 16px;">'+tg+'</p><p style="font-family:'+SE+';font-size:60px;font-weight:700;font-style:italic;color:#1a1a1a;line-height:0.95;margin:0;">'+hl+'</p><p style="font-family:'+SA+';font-size:24px;color:rgba(0,0,0,0.4);line-height:1.5;margin:28px 0 0;">'+body+'</p></div><div style="position:absolute;right:40px;bottom:60px;width:240px;height:340px;background:white;padding:10px;transform:rotate(3deg);box-shadow:4px 4px 20px rgba(0,0,0,0.12);"><img src="'+ins+'" style="width:220px;height:320px;object-fit:cover;object-position:center top;display:block;"/></div></div>'}}
 
@@ -132,34 +132,29 @@ const variations = groups.map((files, vi) => {
   return { slug: 'v' + (vi + 1), slides: [
     // Slide 1: headliner hook (1)
     hookSlide(hk),
-    // Slide 2: hero (1)
-    heroText('02', p[0], c.ht, c.hh, c.hs),
+    // Slide 2: trio (3)
+    trio('02', p[0], p[1], p[2], c.ht, c.ts),
     // Slide 3: trio (3)
-    trio('03', p[1], p[2], p[3], c.tt, c.ts),
-    // Slide 4: duo (2)
-    duo('04', p[4], p[5], c.dt, c.dh),
+    trio('03', p[3], p[4], p[5], c.tt, 'I direct every frame.'),
+    // Slide 4: magazine (2)
+    magazine('04', p[6], c.mt, c.mh, c.mb, p[7]),
     // Slide 5: trio (3)
-    trio('05', p[6], p[7], p[8], 'Shot on 35mm film', 'I direct every frame.'),
-    // Slide 6: magazine (2)
-    magazine('06', p[9], c.mt, c.mh, c.mb, p[10]),
-    // Slide 7: trio (3)
-    trio('07', p[11], p[12], p[13], c.ct, c.cs),
-    // Slide 8: duo (2)
-    duo('08', p[14], p[15], 'All directed by me', 'No experience needed.'),
-    // Slide 9: warm3 (3)
-    warm3('09', c.wt, p[16], p[17], p[18], c.ws),
-    // Slide 10: cascade2 (2)
-    cascade2('10', p[19], p[20], c.ct, 'Build your portfolio with real film.'),
-    // Slide 11: trio (3)
-    trio('11', p[21], p[22], p[23], 'Bali', 'Every face is worth shooting.'),
-    // Slide 12: darkSingle (1)
-    darkSingle('12', p[24], c.sh, c.ss),
-    // Slide 13: duo (2)
-    duo('13', p[25], p[26], '35mm film', 'Content for your socials, agencies, or just for you.'),
-    // Slide 14: hero "this could be you" (1)
-    heroText('14', p[27], 'Bali', c.eh, c.es),
-    // Slide 15: CTA (1)
-    ctaSlide(p[28]),
+    trio('05', p[8], p[9], p[10], c.dt, c.cs),
+    // Slide 6: trio (3)
+    trio('06', p[11], p[12], p[13], c.ct, 'No experience needed. I handle everything.'),
+    // Slide 7: warm3 (3)
+    warm3('07', c.wt, p[14], p[15], p[16], c.ws),
+    // Slide 8: trio (3)
+    trio('08', p[17], p[18], p[19], 'All directed by me', 'Build your portfolio with real film.'),
+    // Slide 9: trio (3) + duo (2) = cascade + duo
+    cascade2('09', p[20], p[21], 'Bali', 'This could be you. Sign up below.'),
+    // Slide 10: CTA with trio behind
+    {name:'10-cta', html: dark(
+      tag('Sign up below',64,40) +
+      pr(p[22],10,80,320,900,-2.5,10) + pr(p[23],355,60,320,900,1.5,10) + pr(p[24],700,80,320,900,-1,10) +
+      h1('Sign up.',540) +
+      sub('Click the link below. I handle everything.',420)
+    )},
   ]}
 })
 
