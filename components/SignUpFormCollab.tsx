@@ -216,10 +216,10 @@ export default function SignUpFormCollab() {
 
       <div className="space-y-5">
         <h1 className="font-display text-3xl font-semibold leading-[1.05] text-white sm:text-4xl" style={{ fontFamily: 'Georgia, serif' }}>
-          Sign Up for Free Collab
+          Sign Up for Free Collab Photo Shoot
         </h1>
         <p className="text-base leading-relaxed text-white/50">
-          I&apos;m looking for models in Bali. Sign up if you are interested in collaborating.
+          Sign up if you are interested in collaborating.
         </p>
 
         <div className="space-y-2.5">
