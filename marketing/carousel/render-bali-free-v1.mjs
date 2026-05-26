@@ -4,7 +4,7 @@ import path from 'path'
 import fs from 'fs'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
-const OUT = path.join(__dirname, 'output-bali-free-v1')
+const OUT = path.join(__dirname, 'output-bali-free-v2')
 const NT = '/Users/aidantorrence/Documents/aidan-modern/public/images/nature'
 fs.mkdirSync(OUT, { recursive: true })
 
@@ -31,7 +31,7 @@ function dtag(t,l,top){return '<p style="position:absolute;left:'+l+'px;top:'+to
 function dh(t,bot,sz){sz=sz||52;return '<div style="position:absolute;bottom:'+bot+'px;left:64px;right:64px;"><p style="font-family:'+SE+';font-size:'+sz+'px;font-weight:700;font-style:italic;color:#1a1a1a;line-height:0.95;margin:0;">'+t+'</p></div>'}
 
 // Layouts
-function L_hook(s){return {name:'01-hook',html:hero(s,tag('Bali \u00b7 Shot on 35mm film',64,60)+h1("I'm looking for<br/>models in Bali.",540,108)+sub('Free photo shoot on 35mm film.<br/>Sign up below. It is free.',400,42))}}
+function L_hook(s){return {name:'01-hook',html:hero(s,tag('Bali \u00b7 Shot on 35mm film',64,60)+h1("Bali free<br/>photo shoot.",540,108)+sub('Free photo shoot on 35mm film.<br/>Sign up below. It is free.',400,42))}}
 function L_cta(s){return {name:'10-cta',html:cta(s,h1('Sign up.',520)+'<div style="position:absolute;bottom:380px;left:64px;right:64px;"><p style="font-family:'+SA+';font-size:38px;font-weight:600;color:white;margin:0;'+SH+'">Click the link below to sign up.</p><p style="font-family:'+SA+';font-size:32px;color:rgba(255,255,255,0.7);margin:20px 0 0;'+SH+'">Free photo shoot. I handle everything.</p></div>')}}
 function L_hero(nm,s,tg,hl,sl){return {name:nm,html:hero(s,tag(tg,64,60)+h2(hl,440)+sub(sl,370))}}
 function L_trio(nm,a,b,c,tg,sl){return {name:nm,html:dark(tag(tg,64,40)+pr(a,10,80,320,900,-2.5,10)+pr(b,355,60,320,900,1.5,10)+pr(c,700,80,320,900,-1,10)+sub(sl,60))}}
