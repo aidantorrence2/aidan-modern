@@ -56,12 +56,13 @@ export default function SignUpFormCollab() {
   const [vibes, setVibes] = useState<string[]>([])
   const [availability, setAvailability] = useState('')
   const [notes, setNotes] = useState('')
-  const [contactMethod, setContactMethod] = useState<'whatsapp' | 'instagram'>('instagram')
-  const [contact, setContact] = useState('')
+  const [whatsapp, setWhatsapp] = useState('')
+  const [instagram, setInstagram] = useState('')
   const [photos, setPhotos] = useState<string[]>([])
   const [submitting, setSubmitting] = useState(false)
   const fileRef = useRef<HTMLInputElement>(null)
-  const contactRef = useRef<HTMLInputElement>(null)
+  const whatsappRef = useRef<HTMLInputElement>(null)
+  const instagramRef = useRef<HTMLInputElement>(null)
   const photoRef = useRef<HTMLDivElement>(null)
   const expRef = useRef<HTMLFieldSetElement>(null)
 
@@ -103,10 +104,12 @@ export default function SignUpFormCollab() {
     const data = Object.fromEntries(new FormData(e.currentTarget).entries()) as Record<string, string>
     if (data.company) { setState({ ok: true }); return }
 
-    if (!contact.trim()) {
-      setState({ ok: false, error: `Please enter your ${contactMethod === 'whatsapp' ? 'WhatsApp number' : 'Instagram handle'}.` })
-      contactRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' })
-      contactRef.current?.focus()
+    const whatsappTrim = whatsapp.trim()
+    const instagramTrim = instagram.trim()
+    if (!whatsappTrim && !instagramTrim) {
+      setState({ ok: false, error: 'Please enter your WhatsApp number or Instagram handle.' })
+      whatsappRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' })
+      whatsappRef.current?.focus()
       return
     }
     if (photos.length === 0) {
@@ -118,6 +121,11 @@ export default function SignUpFormCollab() {
     setSubmitting(true)
     setState(null)
     try {
+      const primaryMethod: 'whatsapp' | 'instagram' = whatsappTrim ? 'whatsapp' : 'instagram'
+      const primaryContact = whatsappTrim || instagramTrim
+      const secondaryLine = whatsappTrim && instagramTrim
+        ? ['Instagram: ' + instagramTrim]
+        : []
       const moodboard = [
         'Collab sign-up',
         ...(location.trim() ? ['Location: ' + location.trim()] : []),
@@ -125,14 +133,15 @@ export default function SignUpFormCollab() {
         ...(vibes.length > 0 ? ['Vibes: ' + vibes.join(', ')] : []),
         ...(availability.trim() ? ['Availability: ' + availability.trim()] : []),
         ...(notes.trim() ? ['Notes: ' + notes.trim()] : []),
+        ...secondaryLine,
       ]
       const res = await fetch('/api/sign-up', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           city: 'Bali (collab)',
-          contactMethod,
-          contact: contact.trim(),
+          contactMethod: primaryMethod,
+          contact: primaryContact,
           moodboard,
           photos,
         }),
@@ -313,37 +322,35 @@ export default function SignUpFormCollab() {
         </div>
 
         {/* Contact */}
-        <fieldset className="space-y-2">
-          <legend className="text-sm font-medium text-white/80">How should I reach you?</legend>
-          <div className="flex gap-2">
-            {(['whatsapp', 'instagram'] as const).map(method => (
-              <button
-                key={method}
-                type="button"
-                onClick={() => { setContactMethod(method); setContact(''); clearStatus() }}
-                className={`rounded-full border px-5 py-2 text-sm font-semibold transition-all ${
-                  contactMethod === method
-                    ? 'border-emerald-400 bg-emerald-400/20 text-emerald-400'
-                    : 'border-white/15 bg-white/5 text-white/60 hover:border-white/30 hover:text-white/80'
-                }`}
-              >
-                {method === 'whatsapp' ? 'WhatsApp' : 'Instagram'}
-              </button>
-            ))}
+        <fieldset className="space-y-3">
+          <legend className="text-sm font-medium text-white/80">How should I reach you? <span className="text-xs text-white/30">(at least one)</span></legend>
+
+          <div className="space-y-1.5">
+            <label className="text-xs font-semibold uppercase tracking-[0.12em] text-white/40">WhatsApp</label>
+            <input
+              ref={whatsappRef}
+              name="whatsapp"
+              value={whatsapp}
+              onChange={e => { setWhatsapp(e.target.value); clearStatus() }}
+              className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-white/30 outline-none transition focus:border-emerald-400 focus:ring-2 focus:ring-emerald-400/30"
+              placeholder="+62 812 345 6789"
+            />
           </div>
-          <input
-            ref={contactRef}
-            required
-            key={contactMethod}
-            name={contactMethod}
-            value={contact}
-            onChange={e => { setContact(e.target.value); clearStatus() }}
-            className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-white/30 outline-none transition focus:border-emerald-400 focus:ring-2 focus:ring-emerald-400/30"
-            placeholder={contactMethod === 'whatsapp' ? '+62 812 345 6789' : '@yourhandle'}
-          />
-          {contactMethod === 'instagram' && (
-            <p className="text-xs text-amber-400/80">Follow @madebyaidan so I can message you</p>
-          )}
+
+          <div className="space-y-1.5">
+            <label className="text-xs font-semibold uppercase tracking-[0.12em] text-white/40">Instagram</label>
+            <input
+              ref={instagramRef}
+              name="instagram"
+              value={instagram}
+              onChange={e => { setInstagram(e.target.value); clearStatus() }}
+              className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-white/30 outline-none transition focus:border-emerald-400 focus:ring-2 focus:ring-emerald-400/30"
+              placeholder="@yourhandle"
+            />
+            {instagram.trim() && (
+              <p className="text-xs text-amber-400/80">Follow @madebyaidan so I can message you</p>
+            )}
+          </div>
         </fieldset>
 
         {/* Photos */}
