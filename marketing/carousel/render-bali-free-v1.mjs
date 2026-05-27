@@ -41,7 +41,7 @@ function L_warm3(nm,tg,a,b,c,sl){return {name:nm,html:warm(dtag(tg,64,50)+pr(a,1
 function L_mag(nm,s,tg,hl,body,ins){return {name:nm,html:'<div style="width:1080px;height:1920px;position:relative;overflow:hidden;background:#f0ebe0;"><div style="position:absolute;inset:0;background:linear-gradient(170deg,#f5f0e4 0%,#ece4d4 50%,#e0d8c4 100%);"></div>'+img(s,40,40,580,860,'object-position:center top;border-radius:8px;')+'<div style="position:absolute;left:64px;top:940px;right:64px;"><p style="font-family:'+SA+';font-size:16px;font-weight:700;color:rgba(0,0,0,0.3);letter-spacing:0.15em;text-transform:uppercase;margin:0 0 16px;">'+tg+'</p><p style="font-family:'+SE+';font-size:60px;font-weight:700;font-style:italic;color:#1a1a1a;line-height:0.95;margin:0;">'+hl+'</p><p style="font-family:'+SA+';font-size:24px;color:rgba(0,0,0,0.4);line-height:1.5;margin:28px 0 0;">'+body+'</p></div><div style="position:absolute;right:40px;bottom:60px;width:240px;height:340px;background:white;padding:10px;transform:rotate(3deg);box-shadow:4px 4px 20px rgba(0,0,0,0.12);"><img src="'+ins+'" style="width:220px;height:320px;object-fit:cover;object-position:center top;display:block;"/></div></div>'}}
 function L_landscape(nm,s,hl,sl){return {name:nm,html:dark(tag('Bali \u00b7 35mm film',64,40)+'<div style="position:absolute;left:40px;top:120px;right:40px;height:640px;border-radius:12px;overflow:hidden;"><img src="'+s+'" style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;"/></div>'+h2(hl,340)+sub(sl,260))}}
 function L_cascade(nm,a,b,tg,sl){return {name:nm,html:dark(tag(tg,64,40)+pr(a,40,60,500,720,-2.5,14)+pr(b,460,480,500,720,2,14)+sub(sl,60))}}
-function L_herodup(nm,a,b,c,tg,hl,sl){return {name:nm,html:hero(a,tag(tg,64,60)+pr(b,40,1200,420,600,-3,12)+pr(c,560,1180,420,600,2.5,12)+h2(hl,200)+sub(sl,130))}}
+function L_herodup(nm,a,b,c,tg,hl,sl){return {name:nm,html:hero(a,tag(tg,64,60)+pr(b,580,140,420,600,-3,12)+pr(c,560,1180,420,600,2.5,12)+h2(hl,200)+sub(sl,130))}}
 
 // === LOAD ALL 42 NATURE PHOTOS ===
 // 40 portrait
@@ -79,7 +79,7 @@ const variations = [
     L_mag('06', p39, 'Bali \u00b7 Nature', 'Your face.<br/>Natural light.<br/>Real film.', 'Free collab. I direct everything. Rice fields, jungle, golden hour — your choice.', p36),
     L_hero('07', p20, 'Bali', 'Beach. Waves.<br/>Flowing fabric.', 'Film captures movement better.'),
     L_single('08', p34, 'Jungle<br/>portraits.', 'Ivy. Greenery. Shade.'),
-    L_hero('09', p37, 'Bali', 'This could<br/>be you.', 'Sign up below. It is free.in collaborating.'),
+    L_hero('09', p37, 'Bali', 'This could<br/>be you.', 'Sign up below. It is free.'),
     L_cta(p25),
   ]},
   // V2: 11 photos — hook(1) + herodup(3) + trio(3) + hero(1) + duo(2) + hero(1) = 11
@@ -105,7 +105,7 @@ const variations = [
     L_hero('06', p17, 'Ubud', 'Red dress.<br/>Green alley.<br/>Film.', 'Color on 35mm is unmatched.'),
     L_single('07', p18, 'Night nature<br/>on film.', 'Warm light. Real grain.'),
     L_hero('08', p19, 'Ubud', 'Golden hour<br/>outdoors.', 'I direct everything.'),
-    L_hero('09', p35, 'Bali', 'This could<br/>be you.', 'Sign up below. It is free.in collaborating.'),
+    L_hero('09', p35, 'Bali', 'This could<br/>be you.', 'Sign up below. It is free.'),
     L_cta(p33),
   ]},
   // V4: 10 photos — hook(1) + warm3(3) + duo(2) + hero(1) + hero(1) + hero(1) + hero(1) = 10
