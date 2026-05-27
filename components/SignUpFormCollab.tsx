@@ -354,7 +354,7 @@ export default function SignUpFormCollab() {
             className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-white/30 outline-none transition focus:border-emerald-400 focus:ring-2 focus:ring-emerald-400/30"
             placeholder="@yourhandle"
           />
-          <p className="text-xs text-amber-400/80">Follow @madebyaidan so I can message you</p>
+          <p className="text-xs text-amber-400/80">follow @madebyaidan! 😊</p>
         </div>
 
         {/* Photos */}
