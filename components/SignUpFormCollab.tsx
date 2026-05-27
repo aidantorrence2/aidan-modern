@@ -106,10 +106,16 @@ export default function SignUpFormCollab() {
 
     const whatsappTrim = whatsapp.trim()
     const instagramTrim = instagram.trim()
-    if (!whatsappTrim && !instagramTrim) {
-      setState({ ok: false, error: 'Please enter your WhatsApp number or Instagram handle.' })
+    if (!whatsappTrim) {
+      setState({ ok: false, error: 'Please enter your WhatsApp number.' })
       whatsappRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' })
       whatsappRef.current?.focus()
+      return
+    }
+    if (!instagramTrim) {
+      setState({ ok: false, error: 'Please enter your Instagram handle.' })
+      instagramRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' })
+      instagramRef.current?.focus()
       return
     }
     if (photos.length === 0) {
@@ -121,11 +127,6 @@ export default function SignUpFormCollab() {
     setSubmitting(true)
     setState(null)
     try {
-      const primaryMethod: 'whatsapp' | 'instagram' = whatsappTrim ? 'whatsapp' : 'instagram'
-      const primaryContact = whatsappTrim || instagramTrim
-      const secondaryLine = whatsappTrim && instagramTrim
-        ? ['Instagram: ' + instagramTrim]
-        : []
       const moodboard = [
         'Collab sign-up',
         ...(location.trim() ? ['Location: ' + location.trim()] : []),
@@ -133,15 +134,15 @@ export default function SignUpFormCollab() {
         ...(vibes.length > 0 ? ['Vibes: ' + vibes.join(', ')] : []),
         ...(availability.trim() ? ['Availability: ' + availability.trim()] : []),
         ...(notes.trim() ? ['Notes: ' + notes.trim()] : []),
-        ...secondaryLine,
+        'Instagram: ' + instagramTrim,
       ]
       const res = await fetch('/api/sign-up', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           city: 'Bali (collab)',
-          contactMethod: primaryMethod,
-          contact: primaryContact,
+          contactMethod: 'whatsapp',
+          contact: whatsappTrim,
           moodboard,
           photos,
         }),
@@ -323,12 +324,13 @@ export default function SignUpFormCollab() {
 
         {/* Contact */}
         <fieldset className="space-y-3">
-          <legend className="text-sm font-medium text-white/80">How should I reach you? <span className="text-xs text-white/30">(at least one)</span></legend>
+          <legend className="text-sm font-medium text-white/80">How should I reach you? <span className="text-xs text-white/30">(both required)</span></legend>
 
           <div className="space-y-1.5">
-            <label className="text-xs font-semibold uppercase tracking-[0.12em] text-white/40">WhatsApp</label>
+            <label className="text-xs font-semibold uppercase tracking-[0.12em] text-white/40">WhatsApp <span className="text-red-400/70">*</span></label>
             <input
               ref={whatsappRef}
+              required
               name="whatsapp"
               value={whatsapp}
               onChange={e => { setWhatsapp(e.target.value); clearStatus() }}
@@ -338,18 +340,17 @@ export default function SignUpFormCollab() {
           </div>
 
           <div className="space-y-1.5">
-            <label className="text-xs font-semibold uppercase tracking-[0.12em] text-white/40">Instagram</label>
+            <label className="text-xs font-semibold uppercase tracking-[0.12em] text-white/40">Instagram <span className="text-red-400/70">*</span></label>
             <input
               ref={instagramRef}
+              required
               name="instagram"
               value={instagram}
               onChange={e => { setInstagram(e.target.value); clearStatus() }}
               className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-white/30 outline-none transition focus:border-emerald-400 focus:ring-2 focus:ring-emerald-400/30"
               placeholder="@yourhandle"
             />
-            {instagram.trim() && (
-              <p className="text-xs text-amber-400/80">Follow @madebyaidan so I can message you</p>
-            )}
+            <p className="text-xs text-amber-400/80">Follow @madebyaidan so I can message you</p>
           </div>
         </fieldset>
 
