@@ -322,43 +322,47 @@ export default function SignUpFormCollab() {
           />
         </div>
 
-        {/* Contact */}
-        <fieldset className="space-y-3">
-          <legend className="text-sm font-medium text-white/80">How should I reach you?</legend>
-
-          <div className="space-y-1.5">
-            <label className="text-xs font-semibold uppercase tracking-[0.12em] text-white/40">WhatsApp</label>
-            <input
-              ref={whatsappRef}
-              required
-              name="whatsapp"
-              value={whatsapp}
-              onChange={e => { setWhatsapp(e.target.value); clearStatus() }}
-              className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-white/30 outline-none transition focus:border-emerald-400 focus:ring-2 focus:ring-emerald-400/30"
-              placeholder="+62 812 345 6789"
-            />
+        {/* WhatsApp */}
+        <div className="space-y-2">
+          <div className="flex items-center gap-2">
+            <span className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-500/20 text-[10px] font-bold text-emerald-400">4</span>
+            <label className="text-sm font-medium text-white/80">WhatsApp</label>
           </div>
+          <input
+            ref={whatsappRef}
+            required
+            name="whatsapp"
+            value={whatsapp}
+            onChange={e => { setWhatsapp(e.target.value); clearStatus() }}
+            className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-white/30 outline-none transition focus:border-emerald-400 focus:ring-2 focus:ring-emerald-400/30"
+            placeholder="+62 812 345 6789"
+          />
+        </div>
 
-          <div className="space-y-1.5">
-            <label className="text-xs font-semibold uppercase tracking-[0.12em] text-white/40">Instagram</label>
-            <input
-              ref={instagramRef}
-              required
-              name="instagram"
-              value={instagram}
-              onChange={e => { setInstagram(e.target.value); clearStatus() }}
-              className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-white/30 outline-none transition focus:border-emerald-400 focus:ring-2 focus:ring-emerald-400/30"
-              placeholder="@yourhandle"
-            />
-            <p className="text-xs text-amber-400/80">Follow @madebyaidan so I can message you</p>
+        {/* Instagram */}
+        <div className="space-y-2">
+          <div className="flex items-center gap-2">
+            <span className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-500/20 text-[10px] font-bold text-emerald-400">5</span>
+            <label className="text-sm font-medium text-white/80">Instagram</label>
           </div>
-        </fieldset>
+          <input
+            ref={instagramRef}
+            required
+            name="instagram"
+            value={instagram}
+            onChange={e => { setInstagram(e.target.value); clearStatus() }}
+            className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-white/30 outline-none transition focus:border-emerald-400 focus:ring-2 focus:ring-emerald-400/30"
+            placeholder="@yourhandle"
+          />
+          <p className="text-xs text-amber-400/80">Follow @madebyaidan so I can message you</p>
+        </div>
 
         {/* Photos */}
-        <div ref={photoRef} className="space-y-1.5">
-          <label className="text-sm font-medium text-white/80">
-            Photos of yourself
-          </label>
+        <div ref={photoRef} className="space-y-2">
+          <div className="flex items-center gap-2">
+            <span className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-500/20 text-[10px] font-bold text-emerald-400">6</span>
+            <label className="text-sm font-medium text-white/80">Photos of yourself</label>
+          </div>
           <p className="text-xs text-white/40">A selfie or headshot &mdash; you can upload multiple</p>
           <div className="mt-1 flex flex-wrap gap-2">
             {photos.map((p, i) => (
