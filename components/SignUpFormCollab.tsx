@@ -324,7 +324,7 @@ export default function SignUpFormCollab() {
 
         {/* Contact */}
         <fieldset className="space-y-3">
-          <legend className="text-sm font-medium text-white/80">How should I reach you? <span className="text-xs text-white/30">(both required)</span></legend>
+          <legend className="text-sm font-medium text-white/80">How should I reach you?</legend>
 
           <div className="space-y-1.5">
             <label className="text-xs font-semibold uppercase tracking-[0.12em] text-white/40">WhatsApp <span className="text-red-400/70">*</span></label>
