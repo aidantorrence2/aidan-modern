@@ -146,7 +146,14 @@ export async function POST(req: Request) {
       }
     }
 
-    return NextResponse.json({ ok: true })
+    return NextResponse.json({
+      ok: true,
+      _diag: {
+        cmbConfigured: Boolean(process.env.CALLMEBOT_PHONE && process.env.CALLMEBOT_API_KEY),
+        photosIn: photos ? photos.length : 0,
+        photosUploaded: photoUrls.length
+      }
+    })
   } catch {
     return NextResponse.json({ ok: false }, { status: 500 })
   }
