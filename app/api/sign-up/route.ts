@@ -83,14 +83,20 @@ export async function POST(req: Request) {
       }
     }
 
-    // WhatsApp notification via Twilio (native media attachments)
-    const twSid = process.env.TWILIO_ACCOUNT_SID
-    const twToken = process.env.TWILIO_AUTH_TOKEN
-    const twFrom = process.env.TWILIO_WHATSAPP_FROM
-    const twTo = process.env.TWILIO_WHATSAPP_TO
-    if (twSid && twToken && twFrom && twTo) {
+    // WhatsApp notification via CallMeBot (text-only; photos sent as Cloudinary links)
+    const cmbPhone = process.env.CALLMEBOT_PHONE
+    const cmbKey = process.env.CALLMEBOT_API_KEY
+    if (cmbPhone && cmbKey) {
       try {
         const contactLabel = contactMethod === 'whatsapp' ? 'WhatsApp' : 'Instagram'
+        const send = async (text: string) => {
+          const qs = new URLSearchParams({ phone: cmbPhone, apikey: cmbKey, text })
+          const res = await fetch(`https://api.callmebot.com/whatsapp.php?${qs.toString()}`)
+          const body = await res.text().catch(() => '')
+          if (!res.ok || /\bERROR\b/i.test(body)) {
+            console.error('[SIGN-UP] CallMeBot response', res.status, body.slice(0, 300))
+          }
+        }
         const summary = [
           'New photo shoot sign-up',
           `City: ${city.trim()}`,
@@ -98,36 +104,12 @@ export async function POST(req: Request) {
           `Photos: ${photoUrls.length}`,
           ...(moodboard?.length ? [`Moodboard: ${moodboard.join(', ')}`] : [])
         ].join('\n')
-        const auth = 'Basic ' + Buffer.from(`${twSid}:${twToken}`).toString('base64')
-        const endpoint = `https://api.twilio.com/2010-04-01/Accounts/${twSid}/Messages.json`
-        const sendTwilio = async (body: string, mediaUrls: string[]) => {
-          const form = new URLSearchParams()
-          form.set('From', twFrom)
-          form.set('To', twTo)
-          if (body) form.set('Body', body)
-          for (const u of mediaUrls) form.append('MediaUrl', u)
-          const res = await fetch(endpoint, {
-            method: 'POST',
-            headers: { Authorization: auth, 'Content-Type': 'application/x-www-form-urlencoded' },
-            body: form.toString()
-          })
-          if (!res.ok) {
-            console.error('[SIGN-UP] Twilio response', res.status, (await res.text().catch(() => '')).slice(0, 400))
-          }
-        }
-        // Twilio caps at 10 MediaUrls per message — chunk if needed.
-        if (photoUrls.length === 0) {
-          await sendTwilio(summary, [])
-        } else {
-          const chunks: string[][] = []
-          for (let i = 0; i < photoUrls.length; i += 10) chunks.push(photoUrls.slice(i, i + 10))
-          for (let i = 0; i < chunks.length; i++) {
-            const body = i === 0 ? summary : `(continued ${i + 1}/${chunks.length})`
-            await sendTwilio(body, chunks[i])
-          }
+        await send(summary)
+        for (const url of photoUrls) {
+          await send(url)
         }
       } catch (err) {
-        console.error('[SIGN-UP] Failed to notify WhatsApp via Twilio', err)
+        console.error('[SIGN-UP] Failed to notify WhatsApp', err)
       }
     }
 
