@@ -12,10 +12,25 @@ type Signup = {
   created_at: string
 }
 
-function contactLink(s: Signup) {
-  const handle = s.contact.replace(/^@/, '')
-  if (s.contact_method === 'instagram') return `https://instagram.com/${handle}`
-  if (s.contact_method === 'whatsapp') return `https://wa.me/${s.contact.replace(/\D/g, '')}`
+function instagramLink(handle: string) {
+  return `https://instagram.com/${handle.replace(/^@/, '')}`
+}
+
+function whatsappLink(number: string) {
+  return `https://wa.me/${number.replace(/\D/g, '')}`
+}
+
+function getInstagram(s: Signup): string | null {
+  if (s.contact_method === 'instagram') return s.contact
+  if (s.moodboard) {
+    const entry = s.moodboard.find(m => /^instagram:/i.test(m))
+    if (entry) return entry.replace(/^instagram:\s*/i, '').trim()
+  }
+  return null
+}
+
+function getWhatsapp(s: Signup): string | null {
+  if (s.contact_method === 'whatsapp') return s.contact
   return null
 }
 
@@ -76,10 +91,10 @@ export default function AdminClient({ signups: initial }: { signups: Signup[] })
 
   const normalizedQuery = query.trim().replace(/^@/, '').toLowerCase()
   const filtered = normalizedQuery
-    ? signups.filter(s =>
-        s.contact_method === 'instagram' &&
-        s.contact.replace(/^@/, '').toLowerCase().includes(normalizedQuery)
-      )
+    ? signups.filter(s => {
+        const ig = getInstagram(s)
+        return ig ? ig.replace(/^@/, '').toLowerCase().includes(normalizedQuery) : false
+      })
     : signups
 
   const closeLightbox = useCallback(() => {
@@ -228,24 +243,36 @@ export default function AdminClient({ signups: initial }: { signups: Signup[] })
           ) : (
             <div className="space-y-4">
               {filtered.map(s => {
-                const link = contactLink(s)
+                const whatsapp = getWhatsapp(s)
+                const instagram = getInstagram(s)
+                const moodboardItems = s.moodboard ? s.moodboard.filter(m => !/^instagram:/i.test(m)) : []
                 const photos = getPhotos(s)
                 return (
                   <LazyCard key={s.id}>
                     <div className="rounded-2xl border border-white/[0.08] bg-white/[0.04] p-5 sm:p-6 transition hover:bg-white/[0.06]">
                       {/* Header */}
                       <div className="flex items-start justify-between mb-3">
-                        <div>
-                          {link ? (
-                            <a href={link} target="_blank" rel="noopener noreferrer" className="text-base font-semibold text-white hover:text-emerald-400 transition">
-                              {s.contact}
-                            </a>
-                          ) : (
-                            <span className="text-base font-semibold text-white">{s.contact}</span>
+                        <div className="flex flex-col gap-1">
+                          {whatsapp && (
+                            <div>
+                              <a href={whatsappLink(whatsapp)} target="_blank" rel="noopener noreferrer" className="text-base font-semibold text-white hover:text-emerald-400 transition">
+                                {whatsapp}
+                              </a>
+                              <span className="ml-2 rounded-full bg-white/10 px-2.5 py-0.5 text-xs font-medium text-white/50 align-middle">
+                                WhatsApp
+                              </span>
+                            </div>
                           )}
-                          <span className="ml-2 rounded-full bg-white/10 px-2.5 py-0.5 text-xs font-medium text-white/50 align-middle">
-                            {s.contact_method === 'whatsapp' ? 'WhatsApp' : 'IG'}
-                          </span>
+                          {instagram && (
+                            <div>
+                              <a href={instagramLink(instagram)} target="_blank" rel="noopener noreferrer" className="text-base font-semibold text-white hover:text-emerald-400 transition">
+                                {instagram}
+                              </a>
+                              <span className="ml-2 rounded-full bg-white/10 px-2.5 py-0.5 text-xs font-medium text-white/50 align-middle">
+                                IG
+                              </span>
+                            </div>
+                          )}
                         </div>
                         <button onClick={() => softDelete(s.id)} className="text-sm text-white/15 hover:text-red-400 transition ml-4">
                           Remove
@@ -261,9 +288,9 @@ export default function AdminClient({ signups: initial }: { signups: Signup[] })
                       </div>
 
                       {/* Moodboard */}
-                      {s.moodboard && s.moodboard.length > 0 && (
+                      {moodboardItems.length > 0 && (
                         <div className="flex flex-wrap gap-1.5 mb-3">
-                          {s.moodboard.map(m => (
+                          {moodboardItems.map(m => (
                             <span key={m} className="rounded-full border border-emerald-400/20 bg-emerald-400/10 px-3 py-1 text-xs font-medium text-emerald-400/70">
                               {m}
                             </span>
