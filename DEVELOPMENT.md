@@ -26,6 +26,19 @@
 - Campaign/landing experiences are co-located in `app/<route>/page.tsx`.
 - Meta Pixel support is gated by `NEXT_PUBLIC_META_PIXEL_ID` environment variable.
 
+## Sign-Up Notifications
+- Slack: posts to `SLACK_BOOKING_WEBHOOK` if set.
+- WhatsApp (via CallMeBot, free): posts a text summary + one message per uploaded Cloudinary photo if both `CALLMEBOT_PHONE` and `CALLMEBOT_API_KEY` are set.
+  - One-time setup to obtain an API key for a recipient phone:
+    1. From the recipient phone, save +34 644 51 95 23 (CallMeBot) as a contact.
+    2. Send the exact text: `I allow callmebot to send me messages` to that contact via WhatsApp.
+    3. You'll receive a reply with your personal API key.
+    4. Set env vars:
+       - `CALLMEBOT_PHONE` — recipient number in international format with `+` (e.g. `+491758966210`).
+       - `CALLMEBOT_API_KEY` — the key returned by the bot.
+  - Add these to `.env.local` (dev) and the Vercel project settings (production).
+  - CallMeBot has a small rate limit (~1 message every few seconds); each sign-up sends 1 text + N image messages sequentially.
+
 ## Key Routes (Nov 2025)
 - `/` – portfolio home and gallery.
 - `/about`, `/book`, `/shoots/[slug]` – supporting storytelling + booking flows.
