@@ -90,10 +90,14 @@ export default function AdminClient({ signups: initial }: { signups: Signup[] })
   const [query, setQuery] = useState('')
 
   const normalizedQuery = query.trim().replace(/^@/, '').toLowerCase()
+  const digitsQuery = query.replace(/\D/g, '')
   const filtered = normalizedQuery
     ? signups.filter(s => {
         const ig = getInstagram(s)
-        return ig ? ig.replace(/^@/, '').toLowerCase().includes(normalizedQuery) : false
+        if (ig && ig.replace(/^@/, '').toLowerCase().includes(normalizedQuery)) return true
+        const wa = getWhatsapp(s)
+        if (wa && digitsQuery && wa.replace(/\D/g, '').includes(digitsQuery)) return true
+        return false
       })
     : signups
 
@@ -231,7 +235,7 @@ export default function AdminClient({ signups: initial }: { signups: Signup[] })
               type="text"
               value={query}
               onChange={e => setQuery(e.target.value)}
-              placeholder="Search by IG username…"
+              placeholder="Search by IG username or WhatsApp number…"
               className="w-full rounded-xl border border-white/10 bg-white/[0.04] px-4 py-2.5 text-sm text-white placeholder:text-white/30 focus:border-emerald-400/40 focus:outline-none focus:ring-1 focus:ring-emerald-400/20"
             />
           </div>
