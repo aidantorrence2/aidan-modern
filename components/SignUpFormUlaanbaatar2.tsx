@@ -5,9 +5,11 @@ import NextImage from 'next/image'
 type State = { ok: boolean; error?: string }
 
 function resizeImage(dataUrl: string, maxBytes: number): Promise<string> {
-  return new Promise((resolve) => {
+  return new Promise((resolve, reject) => {
     const img = new Image()
+    const timer = setTimeout(() => reject(new Error('Image load timed out')), 30000)
     img.onload = () => {
+      clearTimeout(timer)
       const canvas = document.createElement('canvas')
       const w = img.width, h = img.height
       let quality = 0.8
@@ -28,6 +30,10 @@ function resizeImage(dataUrl: string, maxBytes: number): Promise<string> {
         }
       }
       attempt()
+    }
+    img.onerror = () => {
+      clearTimeout(timer)
+      reject(new Error('Could not load image — unsupported format'))
     }
     img.src = dataUrl
   })
@@ -72,22 +78,36 @@ export default function SignUpFormUlaanbaatar2() {
 
   async function handlePhotos(e: React.ChangeEvent<HTMLInputElement>) {
     const files = e.target.files
-    if (!files) return
+    if (!files || files.length === 0) return
     clearStatus()
+    let failures = 0
     for (const file of Array.from(files)) {
       if (file.size > 20 * 1024 * 1024) {
-        setState({ ok: false, error: 'Each photo must be under 20 MB.' })
+        failures++
         continue
       }
-      const raw = await new Promise<string>((resolve) => {
-        const reader = new FileReader()
-        reader.onload = () => resolve(reader.result as string)
-        reader.readAsDataURL(file)
-      })
-      const resized = await resizeImage(raw, 300 * 1024)
-      setPhotos(prev => [...prev, resized])
+      try {
+        const raw = await new Promise<string>((resolve, reject) => {
+          const reader = new FileReader()
+          reader.onload = () => resolve(reader.result as string)
+          reader.onerror = () => reject(new Error('Could not read file'))
+          reader.readAsDataURL(file)
+        })
+        const resized = await resizeImage(raw, 300 * 1024)
+        setPhotos(prev => [...prev, resized])
+      } catch {
+        failures++
+      }
     }
     if (fileRef.current) fileRef.current.value = ''
+    if (failures > 0) {
+      setState({
+        ok: false,
+        error: failures === 1
+          ? 'One photo could not be added (too large or unsupported — try JPG/PNG under 20 MB).'
+          : `${failures} photos could not be added (too large or unsupported — try JPG/PNG under 20 MB).`
+      })
+    }
   }
 
   function removePhoto(index: number) {
