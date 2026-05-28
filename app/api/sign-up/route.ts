@@ -150,6 +150,12 @@ export async function POST(req: Request) {
       ok: true,
       _diag: {
         cmbConfigured: Boolean(process.env.CALLMEBOT_PHONE && process.env.CALLMEBOT_API_KEY),
+        cmbPhonePresent: typeof process.env.CALLMEBOT_PHONE === 'string',
+        cmbPhoneLen: (process.env.CALLMEBOT_PHONE || '').length,
+        cmbKeyPresent: typeof process.env.CALLMEBOT_API_KEY === 'string',
+        cmbKeyLen: (process.env.CALLMEBOT_API_KEY || '').length,
+        envKeysMatching: Object.keys(process.env).filter(k => /CALLMEBOT|CLOUDINARY|SLACK/i.test(k)).sort(),
+        vercelEnv: process.env.VERCEL_ENV || null,
         photosIn: photos ? photos.length : 0,
         photosUploaded: photoUrls.length
       }
