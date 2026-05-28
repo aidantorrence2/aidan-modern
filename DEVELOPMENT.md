@@ -28,18 +28,16 @@
 
 ## Sign-Up Notifications
 - Slack: posts to `SLACK_BOOKING_WEBHOOK` if set.
-- WhatsApp (via Twilio): sends a single WhatsApp message with the sign-up summary plus the Cloudinary photos as native media attachments (up to 10 per message; >10 photos are split into continuation messages). Active when all of `TWILIO_ACCOUNT_SID`, `TWILIO_AUTH_TOKEN`, `TWILIO_WHATSAPP_FROM`, and `TWILIO_WHATSAPP_TO` are set.
-  - One-time setup (sandbox path, free):
-    1. Create a free Twilio account at twilio.com — grab the **Account SID** and **Auth Token** from the console.
-    2. Activate the WhatsApp Sandbox (Console → Messaging → Try it out → Send a WhatsApp message). Twilio shows a sandbox sender number (e.g. `+14155238886`) and a `join <two-words>` code.
-    3. From the recipient phone, send the `join <two-words>` text to the Twilio sandbox number via WhatsApp.
+- WhatsApp (via CallMeBot, free): posts a text summary + one message per uploaded Cloudinary photo if both `CALLMEBOT_PHONE` and `CALLMEBOT_API_KEY` are set.
+  - One-time setup to obtain an API key for a recipient phone:
+    1. From the recipient phone, save +34 644 51 95 23 (CallMeBot) as a contact.
+    2. Send the exact text: `I allow callmebot to send me messages` to that contact via WhatsApp.
+    3. You'll receive a reply with your personal API key.
     4. Set env vars:
-       - `TWILIO_ACCOUNT_SID`
-       - `TWILIO_AUTH_TOKEN`
-       - `TWILIO_WHATSAPP_FROM` — e.g. `whatsapp:+14155238886` (must include the `whatsapp:` prefix).
-       - `TWILIO_WHATSAPP_TO` — e.g. `whatsapp:+491758966210`.
+       - `CALLMEBOT_PHONE` — recipient number in international format with `+` (e.g. `+491758966210`).
+       - `CALLMEBOT_API_KEY` — the key returned by the bot.
   - Add these to `.env.local` (dev) and the Vercel project settings (production).
-  - Sandbox caveat: the recipient must send any message to the sandbox at least once every 72h to keep the channel open. For production at scale, upgrade to a Twilio WhatsApp Business Sender.
+  - CallMeBot has a small rate limit (~1 message every few seconds); each sign-up sends 1 text + N image messages sequentially.
 
 ## Key Routes (Nov 2025)
 - `/` – portfolio home and gallery.
