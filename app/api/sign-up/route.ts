@@ -83,29 +83,30 @@ export async function POST(req: Request) {
       }
     }
 
-    // WhatsApp notification via CallMeBot
+    // WhatsApp notification via CallMeBot (text-only; photos sent as Cloudinary links)
     const cmbPhone = process.env.CALLMEBOT_PHONE
     const cmbKey = process.env.CALLMEBOT_API_KEY
     if (cmbPhone && cmbKey) {
       try {
         const contactLabel = contactMethod === 'whatsapp' ? 'WhatsApp' : 'Instagram'
-        const lines = [
+        const send = async (text: string) => {
+          const qs = new URLSearchParams({ phone: cmbPhone, apikey: cmbKey, text })
+          const res = await fetch(`https://api.callmebot.com/whatsapp.php?${qs.toString()}`)
+          const body = await res.text().catch(() => '')
+          if (!res.ok || /\bERROR\b/i.test(body)) {
+            console.error('[SIGN-UP] CallMeBot response', res.status, body.slice(0, 300))
+          }
+        }
+        const summary = [
           'New photo shoot sign-up',
           `City: ${city.trim()}`,
           `${contactLabel}: ${contact.trim()}`,
           `Photos: ${photoUrls.length}`,
           ...(moodboard?.length ? [`Moodboard: ${moodboard.join(', ')}`] : [])
-        ]
-        const send = async (params: Record<string, string>) => {
-          const qs = new URLSearchParams({ phone: cmbPhone, apikey: cmbKey, ...params })
-          const res = await fetch(`https://api.callmebot.com/whatsapp.php?${qs.toString()}`)
-          if (!res.ok) {
-            console.error('[SIGN-UP] CallMeBot non-OK', res.status, await res.text().catch(() => ''))
-          }
-        }
-        await send({ text: lines.join('\n') })
+        ].join('\n')
+        await send(summary)
         for (const url of photoUrls) {
-          await send({ image: url })
+          await send(url)
         }
       } catch (err) {
         console.error('[SIGN-UP] Failed to notify WhatsApp', err)
