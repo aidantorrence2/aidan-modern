@@ -5,9 +5,11 @@ import NextImage from 'next/image'
 type State = { ok: boolean; error?: string }
 
 function resizeImage(dataUrl: string, maxBytes: number): Promise<string> {
-  return new Promise((resolve) => {
+  return new Promise((resolve, reject) => {
     const img = new Image()
+    const timer = setTimeout(() => reject(new Error('Image load timed out')), 30000)
     img.onload = () => {
+      clearTimeout(timer)
       const canvas = document.createElement('canvas')
       const w = img.width, h = img.height
       let quality = 0.8
@@ -28,6 +30,10 @@ function resizeImage(dataUrl: string, maxBytes: number): Promise<string> {
         }
       }
       attempt()
+    }
+    img.onerror = () => {
+      clearTimeout(timer)
+      reject(new Error('Could not load image — unsupported format'))
     }
     img.src = dataUrl
   })
@@ -60,6 +66,7 @@ export default function SignUpFormCollab() {
   const [instagram, setInstagram] = useState('')
   const [photos, setPhotos] = useState<string[]>([])
   const [submitting, setSubmitting] = useState(false)
+  const [processingPhotos, setProcessingPhotos] = useState(false)
   const fileRef = useRef<HTMLInputElement>(null)
   const whatsappRef = useRef<HTMLInputElement>(null)
   const instagramRef = useRef<HTMLInputElement>(null)
@@ -77,22 +84,41 @@ export default function SignUpFormCollab() {
 
   async function handlePhotos(e: React.ChangeEvent<HTMLInputElement>) {
     const files = e.target.files
-    if (!files) return
+    if (!files || files.length === 0) return
     clearStatus()
-    for (const file of Array.from(files)) {
-      if (file.size > 20 * 1024 * 1024) {
-        setState({ ok: false, error: 'Each photo must be under 20 MB.' })
-        continue
+    setProcessingPhotos(true)
+    let failures = 0
+    try {
+      for (const file of Array.from(files)) {
+        if (file.size > 20 * 1024 * 1024) {
+          failures++
+          continue
+        }
+        try {
+          const raw = await new Promise<string>((resolve, reject) => {
+            const reader = new FileReader()
+            reader.onload = () => resolve(reader.result as string)
+            reader.onerror = () => reject(new Error('Could not read file'))
+            reader.readAsDataURL(file)
+          })
+          const resized = await resizeImage(raw, 300 * 1024)
+          setPhotos(prev => [...prev, resized])
+        } catch {
+          failures++
+        }
       }
-      const raw = await new Promise<string>((resolve) => {
-        const reader = new FileReader()
-        reader.onload = () => resolve(reader.result as string)
-        reader.readAsDataURL(file)
-      })
-      const resized = await resizeImage(raw, 300 * 1024)
-      setPhotos(prev => [...prev, resized])
+    } finally {
+      setProcessingPhotos(false)
+      if (fileRef.current) fileRef.current.value = ''
+      if (failures > 0) {
+        setState({
+          ok: false,
+          error: failures === 1
+            ? 'One photo could not be added (too large or unsupported format — try a JPG/PNG under 20 MB).'
+            : `${failures} photos could not be added (too large or unsupported format — try JPG/PNG under 20 MB).`
+        })
+      }
     }
-    if (fileRef.current) fileRef.current.value = ''
   }
 
   function removePhoto(index: number) {
@@ -103,6 +129,12 @@ export default function SignUpFormCollab() {
     e.preventDefault()
     const data = Object.fromEntries(new FormData(e.currentTarget).entries()) as Record<string, string>
     if (data.company) { setState({ ok: true }); return }
+
+    if (processingPhotos) {
+      setState({ ok: false, error: 'Photos are still processing — hang on a sec and try again.' })
+      photoRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' })
+      return
+    }
 
     const whatsappTrim = whatsapp.trim()
     const instagramTrim = instagram.trim()
@@ -331,6 +363,9 @@ export default function SignUpFormCollab() {
           <input
             ref={whatsappRef}
             required
+            type="tel"
+            inputMode="tel"
+            autoComplete="tel"
             name="whatsapp"
             value={whatsapp}
             onChange={e => { setWhatsapp(e.target.value); clearStatus() }}
@@ -351,6 +386,9 @@ export default function SignUpFormCollab() {
             name="instagram"
             value={instagram}
             onChange={e => { setInstagram(e.target.value); clearStatus() }}
+            autoCapitalize="off"
+            autoCorrect="off"
+            spellCheck={false}
             className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-white/30 outline-none transition focus:border-emerald-400 focus:ring-2 focus:ring-emerald-400/30"
             placeholder="@yourhandle"
           />
@@ -381,11 +419,17 @@ export default function SignUpFormCollab() {
             <button
               type="button"
               onClick={() => fileRef.current?.click()}
-              className="flex h-24 w-24 items-center justify-center rounded-xl border border-dashed border-white/15 bg-white/5 text-2xl text-white/30 transition hover:border-emerald-400/50 hover:text-emerald-400"
+              disabled={processingPhotos}
+              className="flex h-24 w-24 items-center justify-center rounded-xl border border-dashed border-white/15 bg-white/5 text-2xl text-white/30 transition hover:border-emerald-400/50 hover:text-emerald-400 disabled:opacity-50"
             >
-              +
+              {processingPhotos ? (
+                <span className="inline-block h-5 w-5 animate-spin rounded-full border-2 border-white/30 border-t-emerald-400" aria-label="Processing" />
+              ) : '+'}
             </button>
           </div>
+          {processingPhotos && (
+            <p className="text-xs text-emerald-300/80">Processing your photos…</p>
+          )}
           <input ref={fileRef} type="file" accept="image/*" multiple onChange={handlePhotos} className="hidden" />
         </div>
 
@@ -394,11 +438,11 @@ export default function SignUpFormCollab() {
 
         <button
           type="submit"
-          disabled={submitting}
+          disabled={submitting || processingPhotos}
           className="w-full rounded-full bg-emerald-500 py-3.5 text-sm font-bold text-white shadow-lg shadow-emerald-500/25 transition hover:bg-emerald-400 disabled:opacity-50"
           data-cta="sign-up-collab-submit"
         >
-          {submitting ? 'Submitting\u2026' : 'Sign Up & Get Details'}
+          {submitting ? 'Submitting\u2026' : processingPhotos ? 'Processing photos\u2026' : 'Sign Up & Get Details'}
         </button>
       </form>
     </div>
