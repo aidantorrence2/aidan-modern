@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 
 const TITLE = 'Session Moodboard — Aidan Torrence'
 const DESCRIPTION = 'Natural light, film, editorial portraiture. A reference moodboard for your shoot.'
-const OG_IMAGE = 'https://aidantorrence.com/moodboard/og.jpg'
+const OG_IMAGE = 'https://aidantorrence.com/moodboard/og-v2.jpg'
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -36,10 +36,10 @@ export default function MoodboardPage() {
       <div className="flex min-h-[100dvh] items-center justify-center bg-paper">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src="/moodboard/nature-moodboard.png"
+          src="/moodboard/nature-moodboard-v2.png"
           alt="Photo session moodboard — natural light film portraits in nature"
-          width={1000}
-          height={1000}
+          width={2399}
+          height={2399}
           className="h-auto max-h-[100dvh] w-full max-w-[100vw] object-contain"
         />
       </div>
