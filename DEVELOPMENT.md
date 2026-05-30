@@ -44,6 +44,14 @@
 - `/about`, `/book`, `/shoots/[slug]` – supporting storytelling + booking flows.
 - `/manila` – Instagram ads landing page for Manila sessions with Cal.com "learn more" + quick intro call CTA flow and Meta Pixel interactions (`ViewContent`, `LandingScrollDepth`, lead clicks).
 - `/manila-free` – Free collab/TFP version of the Manila landing page. Same structure but no pricing, emphasizes free sessions. Separate Cal.com link (`manila-free-photo-shoot`) and distinct Pixel tracking names.
+- `/availability` – Public, mobile/iPhone-first page listing the next open session slots (e.g. "Tomorrow · 4pm"). Client component fetching `GET /api/availability`; each slot opens a prefilled mailto request.
+- `/availability/admin` (alias: `/availability-admin`) – Desktop admin to add/remove availability slots. Add posts to `POST /api/availability`; remove sends `DELETE /api/availability/admin`.
+
+## Availability Slots (May 2026)
+- Persistence: **Neon** Postgres (`DATABASE_URL`), table `availability_slots (id, start_at timestamptz, note, created_at, deleted_at)`. Removals are soft deletes (`deleted_at`). DB helper: `lib/neon.ts` (`@neondatabase/serverless`).
+- Public/admin APIs filter to `deleted_at IS NULL AND start_at >= now()`, ordered soonest-first.
+- `datetime-local` in the admin is interpreted in the admin's local timezone, stored as UTC; the public page renders times in each visitor's local timezone with relative day labels (Today/Tomorrow/weekday).
+- Note: this feature uses Neon, not Supabase (which backs the `signups` flow).
 
 ## Daily Ops Checklist for Campaign Pages
 - Confirm CTA phone/email destinations when duplicating sticky bars.
