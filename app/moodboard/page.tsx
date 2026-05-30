@@ -25,8 +25,14 @@ export const metadata: Metadata = {
 export default function MoodboardPage() {
   return (
     <>
-      {/* This page is just the moodboard — hide the global header/footer chrome. */}
-      <style>{`body > header, body > footer { display: none !important; }`}</style>
+      {/* This page is just the moodboard — hide the global header/footer chrome.
+          Use dangerouslySetInnerHTML so the CSS isn't HTML-escaped (a plain
+          JSX text child would render `body &gt; header`, which is invalid CSS). */}
+      <style
+        dangerouslySetInnerHTML={{
+          __html: 'body > header, body > footer { display: none !important; }',
+        }}
+      />
       <div className="flex min-h-[100dvh] items-center justify-center bg-paper">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
