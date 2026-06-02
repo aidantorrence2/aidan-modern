@@ -261,7 +261,7 @@ export default function SignUpFormCollab() {
           Sign Up for Free Collab Photo Shoot
         </h1>
         <p className="text-base leading-relaxed text-white/50">
-          Sign up if you are interested in collaborating.
+          Fill out the form below and I&apos;ll send you all the details &mdash; timing, location ideas, what to wear, and next steps.
         </p>
 
         <div className="space-y-2.5">
