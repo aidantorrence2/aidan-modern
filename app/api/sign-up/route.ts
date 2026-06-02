@@ -83,36 +83,6 @@ export async function POST(req: Request) {
       }
     }
 
-    // WhatsApp notification via CallMeBot (text-only; photos sent as Cloudinary links)
-    const cmbPhone = process.env.CALLMEBOT_PHONE
-    const cmbKey = process.env.CALLMEBOT_API_KEY
-    if (cmbPhone && cmbKey) {
-      try {
-        const contactLabel = contactMethod === 'whatsapp' ? 'WhatsApp' : 'Instagram'
-        const send = async (text: string) => {
-          const qs = new URLSearchParams({ phone: cmbPhone, apikey: cmbKey, text })
-          const res = await fetch(`https://api.callmebot.com/whatsapp.php?${qs.toString()}`)
-          const body = await res.text().catch(() => '')
-          if (!res.ok || /\bERROR\b/i.test(body)) {
-            console.error('[SIGN-UP] CallMeBot response', res.status, body.slice(0, 300))
-          }
-        }
-        const summary = [
-          'New photo shoot sign-up',
-          `City: ${city.trim()}`,
-          `${contactLabel}: ${contact.trim()}`,
-          `Photos: ${photoUrls.length}`,
-          ...(moodboard?.length ? [`Moodboard: ${moodboard.join(', ')}`] : [])
-        ].join('\n')
-        await send(summary)
-        for (const url of photoUrls) {
-          await send(url)
-        }
-      } catch (err) {
-        console.error('[SIGN-UP] Failed to notify WhatsApp', err)
-      }
-    }
-
     // Slack notification
     const webhookUrl = process.env.SLACK_BOOKING_WEBHOOK
     if (webhookUrl) {
@@ -129,11 +99,18 @@ export async function POST(req: Request) {
                   '*New photo shoot sign-up*',
                   `*City:* ${city.trim()}`,
                   `*${contactLabel}:* ${contact.trim()}`,
-                  `*Photos:* ${photos ? photos.length : 0}`,
-                  ...(moodboard?.length ? [`*Moodboard:* ${moodboard.join(', ')}`] : [])
+                  `*Photos:* ${photoUrls.length}`,
+                  ...(moodboard?.length ? [`*Moodboard:* ${moodboard.join(', ')}`] : []),
+                  ...(photoUrls.length ? [`*Links:* ${photoUrls.map((u, i) => `<${u}|${i + 1}>`).join('  ')}`] : [])
                 ].join('\n')
               }
-            }
+            },
+            // Inline photo previews (Slack caps at ~50 blocks; we'll never exceed that)
+            ...photoUrls.map(url => ({
+              type: 'image',
+              image_url: url,
+              alt_text: 'sign-up photo'
+            }))
           ]
         }
         await fetch(webhookUrl, {
