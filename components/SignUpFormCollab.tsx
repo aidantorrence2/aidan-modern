@@ -48,8 +48,8 @@ const experienceOptions = [
 const vibeOptions = [
   { id: 'Editorial & fashion', desc: 'Dramatic landscapes, fashion outfits, like from a magazine' },
   { id: 'Street & urban', desc: 'Gritty, real, in-the-moment' },
-  { id: 'Beach / nature', desc: 'Rice fields, jungle, beach, golden hour, soft light' },
-  { id: 'Villa / studio', desc: 'White walls, clean backdrops, modern and sophisticated' },
+  { id: 'Nature / beach', desc: 'Rice fields, jungle, beach, golden hour, soft light' },
+  { id: 'Indoor / studio', desc: 'White walls, clean backdrops, modern and sophisticated' },
   { id: 'No preference', desc: 'Let\u2019s figure it out together' },
 ]
 
@@ -310,7 +310,7 @@ export default function SignUpFormCollab() {
             value={location}
             onChange={e => { setLocation(e.target.value); clearStatus() }}
             className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-white/30 outline-none transition focus:border-emerald-400 focus:ring-2 focus:ring-emerald-400/30"
-            placeholder="e.g. Canggu, Ubud, Seminyak"
+            placeholder="e.g. Bali, Surabaya, Malang"
           />
         </div>
 
