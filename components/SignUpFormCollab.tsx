@@ -402,14 +402,14 @@ export default function SignUpFormCollab() {
             <label className="text-sm font-medium text-white/80">Photos of yourself</label>
           </div>
           <p className="text-xs text-white/40">A selfie or headshot &mdash; you can upload multiple</p>
-          <div className="mt-1 flex flex-wrap gap-2">
+          <div className="mt-1 flex flex-wrap gap-1.5">
             {photos.map((p, i) => (
               <div key={i} className="relative">
-                <img src={p} alt="Preview" className="h-24 w-24 rounded-xl border border-white/10 object-cover" />
+                <img src={p} alt="Preview" className="h-14 w-14 rounded-lg border border-white/10 object-cover" />
                 <button
                   type="button"
                   onClick={() => removePhoto(i)}
-                  className="absolute -right-2 -top-2 flex h-6 w-6 items-center justify-center rounded-full bg-white/20 text-xs text-white backdrop-blur transition hover:bg-red-500"
+                  className="absolute -right-1.5 -top-1.5 flex h-5 w-5 items-center justify-center rounded-full bg-white/20 text-xs text-white backdrop-blur transition hover:bg-red-500"
                   aria-label="Remove photo"
                 >
                   &times;
@@ -420,16 +420,13 @@ export default function SignUpFormCollab() {
               type="button"
               onClick={() => fileRef.current?.click()}
               disabled={processingPhotos}
-              className="flex h-24 w-24 items-center justify-center rounded-xl border border-dashed border-white/15 bg-white/5 text-2xl text-white/30 transition hover:border-emerald-400/50 hover:text-emerald-400 disabled:opacity-50"
+              className="flex h-14 w-14 items-center justify-center rounded-lg border border-dashed border-white/15 bg-white/5 text-xl text-white/30 transition hover:border-emerald-400/50 hover:text-emerald-400 disabled:opacity-50"
             >
               {processingPhotos ? (
-                <span className="inline-block h-5 w-5 animate-spin rounded-full border-2 border-white/30 border-t-emerald-400" aria-label="Processing" />
+                <span className="inline-block h-4 w-4 animate-spin rounded-full border-2 border-white/30 border-t-emerald-400" aria-label="Processing" />
               ) : '+'}
             </button>
           </div>
-          {processingPhotos && (
-            <p className="text-xs text-emerald-300/80">Processing your photos…</p>
-          )}
           <input ref={fileRef} type="file" accept="image/*" multiple onChange={handlePhotos} className="hidden" />
         </div>
 
@@ -442,7 +439,9 @@ export default function SignUpFormCollab() {
           className="w-full rounded-full bg-emerald-500 py-3.5 text-sm font-bold text-white shadow-lg shadow-emerald-500/25 transition hover:bg-emerald-400 disabled:opacity-50"
           data-cta="sign-up-collab-submit"
         >
-          {submitting ? 'Submitting\u2026' : processingPhotos ? 'Processing photos\u2026' : 'Sign Up & Get Details'}
+          {submitting || processingPhotos ? (
+            <span className="inline-block h-4 w-4 animate-spin rounded-full border-2 border-white/40 border-t-white align-[-2px]" aria-label="Loading" />
+          ) : 'Sign Up & Get Details'}
         </button>
       </form>
     </div>
