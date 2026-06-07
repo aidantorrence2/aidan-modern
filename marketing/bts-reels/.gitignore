@@ -1,0 +1,12 @@
+# Heavy/working media — keep local (mirrors repo's global video-asset policy)
+src/
+photos/
+frames/
+audio/
+work/
+output-85*/
+reels/
+*.wav
+*.png
+*.jpg
+*.jpeg

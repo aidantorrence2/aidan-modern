@@ -389,3 +389,30 @@
   - Each carousel follows a 5-slide flow: hook -> proof -> how -> what -> cta.
   - Location name appears on hook and CTA slides; middle slides are shared across location variants.
   - Typography: Georgia serif for headlines, system sans-serif for body, Courier New monospace for VHS/Tetris themes.
+
+## BTS Bridge Reels — Concept Set 85 (a–e) — Video Reels (MP4)
+- Source folder: `marketing/bts-reels`
+- Render command: `node marketing/bts-reels/render-85.mjs [a b c d e]` (no args = all five)
+- Output: `marketing/bts-reels/output-85{x}/85{x}-{name}.mp4`, copied to
+  `marketing/bts-reels/reels/` and the shared `marketing/manila-model-search-carousel/reels-final/reels/`.
+- Inputs (kept LOCAL, gitignored — not in repo):
+  - BTS clip: `marketing/bts-reels/src/bts-source.mp4` (copied from
+    `/Volumes/PortableSSD/VID_20260607_013526.mp4` — rope-bridge BTS, 22.4s, 1080x1920).
+  - 10 film-scan portraits in `marketing/bts-reels/photos/` (from
+    `/Volumes/PortableSSD/Exports/ray selects/`).
+  - Fonts in `marketing/bts-reels/fonts/` (Bebas Neue, Anton, Montserrat — committed).
+- The five reels intercut the BTS bridge clip with the portraits (BTS→reveal format). The funny
+  original audio ("how many people have died on this?" → "hopefully it's zero") is the spine of
+  every cut, timed so the punchline lands on a photo reveal. See `PLAN.md` + `research/` + `captions/`.
+- Pipeline (all in `render-85.mjs`, ffmpeg-driven): uniform 1080x1920/30fps silent segments
+  (BTS trims, contain-on-blur Ken-Burns photos, freeze-frame zoom-punch, white-flash) → concat →
+  audio built from original-audio spans (loudnorm −14 LUFS, 48kHz AAC) → final mux + burned
+  drawtext overlays (hooks/captions/labels/CTA).
+- Specs: 1080x1920, 30fps, H.264 + AAC, +faststart. Text in safe zones; burned text is
+  emoji-free (ffmpeg drawtext has no color-emoji) — emoji live in `captions/captions.md`.
+- Gotchas:
+  - Prefer `/opt/homebrew/opt/ffmpeg-full/bin/ffmpeg` (the script auto-detects it).
+  - Long single-line captions overflow 1080px ~size 50+; use the `CAP2()` two-line helper.
+  - `buildAudio` pads to video length with silence — make audio spans cover the full video or
+    the tail plays silent (fixed in 85b with a trailing-laugh span).
+  - Photos are positive film scans: shown contain-on-blur, NOT recropped or regraded.
