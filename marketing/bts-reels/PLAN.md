@@ -1,3 +1,9 @@
+> **UPDATE 2 — set 87 is the current direction.** Per user: do NOT cut the bridge clip. Prepend
+> the `VID_20260323_165127.mp4` tower clip, add a beginning "tag" (setup→payoff, e.g. "looking for
+> shoot locations…" → "ok perfect"), play the bridge clip UNCUT with small but very-readable
+> dialogue captions, then append the result photos UNCAPTIONED. 4 tag variations (87a–d).
+> Render: `node render-87.mjs`. (Sets 85/86 kept for reference.)
+
 > **UPDATE — set 86 supersedes set 85.** v85 (yellow meme captions, blurred-bar photos,
 > white-flash cuts, "10/10" overlays) was rejected as off-brand/cheap. **Set 86** is the
 > editorial redo: full-frame photos, a filmic grade on the phone clip so it matches the film

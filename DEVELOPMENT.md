@@ -436,3 +436,24 @@
   86d the-gallery / quiet portfolio montage (18.8s), 86e seamless loop (9.4s).
 - Gotcha: the animated-crop "push" (gentle zoom on stills) was flaky and is disabled — photos
   render static. If you re-enable motion, supersample first and test the crop expression.
+
+## BTS Bridge Reels — Concept Set 87 (uncut clip + scouting intro + results)
+- Render command: `node marketing/bts-reels/render-87.mjs [a b c d]`
+- Output: `output-87{x}/87{x}-{name}.mp4` → copied to `reels/` + shared `reels-final/reels/`.
+- Structure (per user direction): **[front tower clip + beginning "tag"] → [the 22.4s bridge clip
+  played COMPLETELY UNCUT, with small but very-readable dialogue captions] → [results photos,
+  uncaptioned].** The 4 variations differ ONLY in the beginning tag (setup→payoff):
+  - 87a "looking for shoot locations…" → "ok perfect."
+  - 87b "POV: you find the perfect location" → "then you see how to get the shot"
+  - 87c "everyone shoots the same 3 spots…" → "so we found this one."
+  - 87d (serif) "me: i want somewhere with a view" → "the view:"
+- Front clip: `/Volumes/PortableSSD/VID_20260323_165127.mp4` (2.7s landscape, same tower) copied
+  to `src/front-clip.mp4`. Shown FULL-FRAME (cover-crop keeps the centered tower → matches the
+  bridge clip; chosen over letterbox/blur per the no-cheap-bars preference).
+- Captions: the bridge dialogue ("don't look down" / "how many people have died on this?" /
+  "don't say that!" / "hopefully it's zero"), Inter SemiBold ~46px, lower-third, subtle scrim —
+  small but high-contrast. Timed to the bridge's NATIVE times + the front-clip offset.
+- Audio: native front-clip audio + full bridge audio (kept in sync since nothing is cut), then a
+  soft looped ambient bed under the results, faded out; loudnorm −14 LUFS. No music (rights-clean).
+- Results: 4 full-frame heroes (22, 37, 26, 10-2), uncaptioned, 2.1s each. Total ~33.5s, ~36MB.
+- Per user note: results carry NO captions and there is NO end CTA (the post caption carries it).
