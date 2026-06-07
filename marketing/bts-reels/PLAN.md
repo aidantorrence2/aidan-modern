@@ -1,3 +1,10 @@
+> **UPDATE — set 86 supersedes set 85.** v85 (yellow meme captions, blurred-bar photos,
+> white-flash cuts, "10/10" overlays) was rejected as off-brand/cheap. **Set 86** is the
+> editorial redo: full-frame photos, a filmic grade on the phone clip so it matches the film
+> stock, minimal type (Inter Light + Playfair italic), clean cuts, original funny audio carrying
+> it. Same 5 concepts, same punchline-on-reveal timing. Render: `node render-86.mjs`.
+> v85 files are archived under `reels/_archive-v85/` (kept, not deleted).
+
 # BTS Bridge Reels — Concept Set 85 (a–e)
 
 Source shoot: film-scan editorial (denim jacket / navy crop / black tulle) at an industrial
