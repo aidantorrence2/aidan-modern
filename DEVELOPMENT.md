@@ -416,3 +416,23 @@
   - `buildAudio` pads to video length with silence — make audio spans cover the full video or
     the tail plays silent (fixed in 85b with a trailing-laugh span).
   - Photos are positive film scans: shown contain-on-blur, NOT recropped or regraded.
+
+## BTS Bridge Reels — Concept Set 86 (editorial redo of 85)
+- Render command: `node marketing/bts-reels/render-86.mjs [a b c d e]`
+- Output: `marketing/bts-reels/output-86{x}/86{x}-{name}.mp4`, copied to `reels/` + shared
+  `reels-final/reels/`. **86 supersedes 85** (85 was rejected as cheap/off-brand; 85 mp4s moved
+  to `reels/_archive-v85/`, not deleted).
+- What changed vs 85 (the fixes that made them not-garbage):
+  - **Full-frame photos** (cover-crop to 1080x1920 at a per-photo `FX` focus point) instead of
+    blurred-bar contain. Photos still pristine (no regrade); `FX` keeps each subject in frame.
+  - **Filmic grade + vignette on the BTS phone clip** (`GRADE` const: eq/colorbalance/vignette)
+    so the digital clip matches the warm film scans. NO synthetic `noise` grain — it exploded
+    the bitrate to 100MB+ and the scans already carry grain.
+  - **Minimal editorial type**: Inter Light hooks / Playfair Display italic / Inter Medium
+    captions, white with a soft shadow + faint scrim box. No yellow, no heavy borders, no ratings.
+  - **Clean cuts** + global fade in/out; no white-flash transitions; photos held static (lookbook).
+- Encoder: `-crf 20 -maxrate 12M -bufsize 24M`, preset medium → ~8–18MB per reel (IG-friendly).
+- The 5 concepts: 86a same-evening (17.8s), 86b for-one-photo (20.8s), 86c what-it-took (12.3s),
+  86d the-gallery / quiet portfolio montage (18.8s), 86e seamless loop (9.4s).
+- Gotcha: the animated-crop "push" (gentle zoom on stills) was flaky and is disabled — photos
+  render static. If you re-enable motion, supersample first and test the crop expression.

@@ -1,4 +1,11 @@
-# Instagram Post Captions — Concept Set 85
+# Instagram Post Captions — Concept Sets 85/86
+
+> These pair with the **86x** editorial reels (same concepts/copy; 86 supersedes 85). Map:
+> 86a same-evening → "youd-never-guess" copy · 86b for-one-photo → "things-we-do" · 86c
+> what-it-took → "youre-so-creative" · 86d the-gallery → "rating-photos" (drop the ratings
+> line) · 86e loop → "one-good-photo-loop".
+
+## (original set 85 copy below — still usable)
 
 Pair each MP4 with the matching caption. Keep the keyword CTA as the FIRST comment too (drives
 comment→DM). Burned-in text is emoji-free by design; emoji live here. Rotate 3–5 DM reply
