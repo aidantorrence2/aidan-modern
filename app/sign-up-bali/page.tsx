@@ -1,9 +1,9 @@
 import SignUpFormBali from '@/components/SignUpFormBali'
 
 export const metadata = {
-  title: 'Bali Photo Shoot — Pay What You Want',
+  title: 'Bali Photo Shoot — Book Your Session',
   description:
-    'Book a photo shoot in Bali. Choose your own price, pick your vibe, and get incredible photos.'
+    'Book a photo shoot in Bali. Pick your package, pick your vibe, and get incredible photos.'
 }
 
 export default function SignUpBaliPage() {
