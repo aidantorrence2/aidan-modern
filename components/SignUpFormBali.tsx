@@ -56,8 +56,19 @@ const vibeOptions = [
   { id: "Let's figure it out", desc: "We'll vibe check and decide together" },
 ]
 
-const pricePresetsIDR = [200000, 1000000, 5000000]
-const pricePresetsUSD = [15, 60, 300]
+const packageOptions = [
+  { id: 'Essential', priceIDR: 2500000, usd: 150, desc: '45 min · 1 location · 15 edited photos', duration: '45 minutes' },
+  { id: 'Signature', priceIDR: 5000000, usd: 300, desc: '2 hours · 2 locations · 35 edited photos + 1 reel', duration: '2 hours' },
+  { id: 'Editorial', priceIDR: 9000000, usd: 550, desc: 'Half day · full creative direction · 60 edited photos + 2 reels', duration: 'Half day' },
+]
+
+const studentOption = {
+  id: 'Student / pay what you want',
+  minIDR: 800000,
+  usd: 50,
+  desc: 'For students and tight budgets — pay what you can. Limited slots each month.',
+  duration: '1 hour',
+}
 
 const heroImage = '/images/moodboards/nature-editorial.jpg'
 
@@ -65,9 +76,8 @@ export default function SignUpFormBali() {
   const [state, setState] = useState<State | null>(null)
   const [location, setLocation] = useState('')
   const [vibe, setVibe] = useState('')
-  const [currency, setCurrency] = useState<'idr' | 'usd'>('idr')
-  const [price, setPrice] = useState<number | null>(null)
-  const [customPrice, setCustomPrice] = useState('')
+  const [pkg, setPkg] = useState('Signature')
+  const [studentPrice, setStudentPrice] = useState('')
   const [notes, setNotes] = useState('')
   const [contactMethod, setContactMethod] = useState<'whatsapp' | 'instagram'>('instagram')
   const [contact, setContact] = useState('')
@@ -83,10 +93,10 @@ export default function SignUpFormBali() {
     if (state) setState(null)
   }
 
-  const pricePresets = currency === 'idr' ? pricePresetsIDR : pricePresetsUSD
-  const sym = currency === 'idr' ? 'Rp' : '$'
-  const effectivePrice = price === -1 ? (parseInt(customPrice) || 0) : (price ?? 0)
-  const fmtPrice = (n: number) => `${sym} ${n.toLocaleString()}`
+  const isStudent = pkg === studentOption.id
+  const selectedPackage = packageOptions.find(p => p.id === pkg)
+  const effectivePrice = isStudent ? (parseInt(studentPrice) || 0) : (selectedPackage?.priceIDR ?? 0)
+  const fmtPrice = (n: number) => `Rp ${n.toLocaleString()}`
 
   async function handlePhotos(e: React.ChangeEvent<HTMLInputElement>) {
     const files = e.target.files
@@ -136,13 +146,8 @@ export default function SignUpFormBali() {
       locationRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' })
       return
     }
-    if (price === null) {
-      setState({ ok: false, error: 'Choose your price.' })
-      priceRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' })
-      return
-    }
-    if (price === -1 && !customPrice.trim()) {
-      setState({ ok: false, error: 'Enter your custom amount.' })
+    if (isStudent && effectivePrice < studentOption.minIDR) {
+      setState({ ok: false, error: `Enter an amount of ${fmtPrice(studentOption.minIDR)} or more.` })
       priceRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' })
       return
     }
@@ -164,7 +169,9 @@ export default function SignUpFormBali() {
       const moodboard = [
         `Location: ${location}`,
         ...(vibe ? [`Vibe: ${vibe}`] : []),
-        `Price: ${fmtPrice(effectivePrice)} (pay what you want)`,
+        isStudent
+          ? `Price: ${fmtPrice(effectivePrice)} (student / pay what you want)`
+          : `Price: ${pkg} package — ${fmtPrice(effectivePrice)} (~$${selectedPackage?.usd})`,
         ...(notes.trim() ? [`Notes: ${notes.trim()}`] : []),
       ]
       const res = await fetch('/api/sign-up', {
@@ -182,7 +189,7 @@ export default function SignUpFormBali() {
       setState({ ok: true })
       if (typeof window !== 'undefined') {
         const fbq = (window as typeof window & { fbq?: (...args: unknown[]) => void }).fbq
-        if (typeof fbq === 'function') fbq('track', 'Lead', { source: 'sign-up-bali', value: effectivePrice, currency: currency.toUpperCase() })
+        if (typeof fbq === 'function') fbq('track', 'Lead', { source: 'sign-up-bali', value: effectivePrice, currency: 'IDR' })
       }
     } catch {
       setState({ ok: false, error: 'Something went wrong. Try again or DM @madebyaidan on IG.' })
@@ -217,11 +224,11 @@ export default function SignUpFormBali() {
             )}
             <div className="space-y-1">
               <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-white/30">Duration</p>
-              <p className="text-sm font-medium text-white">1&ndash;2 hours</p>
+              <p className="text-sm font-medium text-white">{isStudent ? studentOption.duration : selectedPackage?.duration}</p>
             </div>
             <div className="space-y-1">
-              <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-white/30">Your price</p>
-              <p className="text-sm font-medium text-emerald-400">{fmtPrice(effectivePrice)}</p>
+              <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-white/30">Package</p>
+              <p className="text-sm font-medium text-emerald-400">{isStudent ? 'Student' : pkg} &mdash; {fmtPrice(effectivePrice)}</p>
             </div>
           </div>
           <div className="h-px bg-white/[0.06]" />
@@ -260,15 +267,16 @@ export default function SignUpFormBali() {
           Bali photo shoot
         </h1>
         <p className="text-base leading-relaxed text-white/50">
-          Choose your location, your vibe, and your price. I&apos;ll handle the rest.
+          Choose your location, your vibe, and your package. I&apos;ll handle the rest.
         </p>
 
-        {/* Pay what you want callout */}
+        {/* Packages callout */}
         <div className="rounded-2xl border border-emerald-400/20 bg-emerald-400/[0.06] px-5 py-4">
-          <p className="text-sm font-semibold text-emerald-400">Pay what you want</p>
+          <p className="text-sm font-semibold text-emerald-400">Pick your package</p>
           <p className="mt-1 text-xs text-white/50 leading-relaxed">
-            There&apos;s no set price. Choose what feels right to you.
-            Every shoot gets the same quality, the same effort, the same me.
+            Every package gets the same eye, the same effort, the same me &mdash;
+            they differ in time and what you walk away with.
+            Students: there&apos;s a pay-what-you-want option with limited slots.
           </p>
         </div>
       </div>
@@ -334,68 +342,65 @@ export default function SignUpFormBali() {
         <fieldset ref={priceRef} className="space-y-3">
           <div className="flex items-center gap-2">
             <span className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-500/20 text-[10px] font-bold text-emerald-400">3</span>
-            <legend className="text-sm font-medium text-white/80">Choose your price</legend>
+            <legend className="text-sm font-medium text-white/80">Pick your package</legend>
           </div>
-          <div className="flex gap-1.5 mb-1">
-            {(['idr', 'usd'] as const).map(c => (
+          <div className="grid grid-cols-1 gap-2">
+            {packageOptions.map(opt => (
               <button
-                key={c}
+                key={opt.id}
                 type="button"
-                onClick={() => { setCurrency(c); setPrice(null); setCustomPrice(''); clearStatus() }}
-                className={`rounded-full border px-4 py-1 text-xs font-semibold transition-all ${
-                  currency === c
-                    ? 'border-emerald-400 bg-emerald-400/20 text-emerald-400'
-                    : 'border-white/15 bg-white/5 text-white/50 hover:border-white/25'
-                }`}
-              >
-                {c === 'idr' ? 'IDR' : 'USD'}
-              </button>
-            ))}
-          </div>
-          <div className="grid grid-cols-3 gap-2">
-            {pricePresets.map(p => (
-              <button
-                key={p}
-                type="button"
-                onClick={() => { setPrice(p); setCustomPrice(''); clearStatus() }}
-                className={`rounded-xl border py-3 text-center transition-all ${
-                  price === p
+                onClick={() => { setPkg(opt.id); clearStatus() }}
+                className={`rounded-xl border px-4 py-3 text-left transition-all ${
+                  pkg === opt.id
                     ? 'border-emerald-400 bg-emerald-400/10 ring-2 ring-emerald-400/30'
                     : 'border-white/10 bg-white/[0.03] hover:border-white/25'
                 }`}
               >
-                <div className={`text-base font-bold ${price === p ? 'text-emerald-300' : 'text-white'}`}>{fmtPrice(p)}</div>
+                <div className="flex items-baseline justify-between gap-3">
+                  <span className={`text-sm font-semibold ${pkg === opt.id ? 'text-emerald-300' : 'text-white'}`}>{opt.id}</span>
+                  <span className={`text-sm font-bold ${pkg === opt.id ? 'text-emerald-300' : 'text-white'}`}>
+                    {fmtPrice(opt.priceIDR)} <span className="text-xs font-normal text-white/40">(~${opt.usd})</span>
+                  </span>
+                </div>
+                <div className="mt-0.5 text-xs text-white/40">{opt.desc}</div>
               </button>
             ))}
-          </div>
-          <div className="flex items-center gap-3">
             <button
               type="button"
-              onClick={() => { setPrice(-1); clearStatus() }}
-              className={`rounded-xl border px-4 py-3 text-sm font-semibold transition-all ${
-                price === -1
-                  ? 'border-emerald-400 bg-emerald-400/10 text-emerald-300 ring-2 ring-emerald-400/30'
-                  : 'border-white/10 bg-white/[0.03] text-white hover:border-white/25'
+              onClick={() => { setPkg(studentOption.id); clearStatus() }}
+              className={`rounded-xl border px-4 py-3 text-left transition-all ${
+                isStudent
+                  ? 'border-emerald-400 bg-emerald-400/10 ring-2 ring-emerald-400/30'
+                  : 'border-white/10 bg-white/[0.03] hover:border-white/25'
               }`}
             >
-              Custom
+              <div className="flex items-baseline justify-between gap-3">
+                <span className={`text-sm font-semibold ${isStudent ? 'text-emerald-300' : 'text-white'}`}>{studentOption.id}</span>
+                <span className={`text-sm font-bold ${isStudent ? 'text-emerald-300' : 'text-white'}`}>
+                  from {fmtPrice(studentOption.minIDR)} <span className="text-xs font-normal text-white/40">(~${studentOption.usd})</span>
+                </span>
+              </div>
+              <div className="mt-0.5 text-xs text-white/40">{studentOption.desc}</div>
             </button>
-            {price === -1 && (
-              <div className="relative flex-1">
-                <span className="absolute left-4 top-1/2 -translate-y-1/2 text-sm text-white/40">{sym}</span>
+          </div>
+          {isStudent && (
+            <div className="space-y-1.5">
+              <div className="relative">
+                <span className="absolute left-4 top-1/2 -translate-y-1/2 text-sm text-white/40">Rp</span>
                 <input
                   type="number"
-                  min="1"
-                  value={customPrice}
-                  onChange={e => { setCustomPrice(e.target.value); clearStatus() }}
+                  min={studentOption.minIDR}
+                  step={50000}
+                  value={studentPrice}
+                  onChange={e => { setStudentPrice(e.target.value); clearStatus() }}
                   className="w-full rounded-xl border border-white/10 bg-white/5 pl-10 pr-4 py-3 text-sm text-white placeholder-white/30 outline-none transition focus:border-emerald-400 focus:ring-2 focus:ring-emerald-400/30"
                   placeholder="Your amount"
                   autoFocus
                 />
               </div>
-            )}
-          </div>
-          <p className="text-xs text-white/30">Every shoot gets the same quality regardless of price.</p>
+              <p className="text-xs text-white/30">Minimum {fmtPrice(studentOption.minIDR)}. Same eye and effort, scoped to about an hour.</p>
+            </div>
+          )}
         </fieldset>
 
         {/* Step 4: Notes */}
