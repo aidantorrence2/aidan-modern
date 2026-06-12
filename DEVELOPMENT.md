@@ -58,6 +58,21 @@
 - If a new page is created, add it to navigation via `components/Header.tsx` when appropriate.
 - Map any new Tailwind utility usage to files included in `tailwind.config.ts#content`.
 
+## Bali Booking Packages (June 2026)
+- `/sign-up-bali` (`components/SignUpFormBali.tsx`) no longer offers an open pay-what-you-want price. It has four packages with a price floor:
+  - Essential — Rp 2,500,000 (~$150): 45 min, 1 location, 15 edited photos
+  - Signature — Rp 5,000,000 (~$300, default selected): 2 hours, 2 locations, 35 edited photos + 1 reel
+  - Editorial — Rp 9,000,000 (~$550): half day, full creative direction, 60 edited photos + 2 reels
+  - Student / pay-what-you-want: minimum Rp 800,000, limited slots, custom amount input
+- The package is mapped into the same `Price:` line of the `moodboard` array POSTed to `/api/sign-up`, so the Slack/CallMeBot notification pipeline is unchanged. Meta Pixel `Lead` value is the package price in IDR.
+
+## Vercel Deploy Verification (June 2026 gotcha)
+- A GitHub-push-triggered production deployment went **Ready but never took the domain alias** (and later disappeared from `vercel ls`). The CLI deploy (`vercel --prod --yes`) is what actually moved `www.aidantorrence.com`.
+- After any production deploy, do not trust "Ready" alone. Verify all three:
+  1. `vercel ls` shows the new deployment Ready (Production)
+  2. `vercel inspect https://www.aidantorrence.com` resolves to the NEW deployment URL
+  3. `curl` the changed route on the live domain and grep for the new content (the edge can serve a cached page from the old deployment — check `x-vercel-cache`/`age` headers)
+
 ## Common Issues & Fixes
 - **Lint failures**: escape `'`/`"` in JSX strings (`&apos;`, `&quot;`) before shipping.
 - **Slow image loads**: rerun `npm run images` to generate thumbnails/manifest and ensure new photos land under `public/images`.
