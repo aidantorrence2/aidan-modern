@@ -67,6 +67,16 @@
 - The package is mapped into the same `Price:` line of the `moodboard` array POSTed to `/api/sign-up`, so the Slack/CallMeBot notification pipeline is unchanged. Meta Pixel `Lead` value is the package price in IDR.
 
 ## Vercel Deploy Verification (June 2026 gotcha)
+- Production is the Vercel Pro project `aidan-vercel/aidan-modern-at9e`
+  (`prj_IprqbRdPN7RV4OpOzzAYPhGHTvAr`). Despite the generated-looking name, this is the
+  longstanding project that owns `aidantorrence.com` and `www.aidantorrence.com`.
+- Do not deploy the site to `aidan-vercel/aidan-modern` or the legacy Hobby-team project under
+  `aidantorrences-projects`. Before a CLI deploy, confirm `.vercel/project.json` names
+  `aidan-modern-at9e`, or relink with:
+  `vercel link --project aidan-modern-at9e --scope aidan-vercel --yes`.
+- Never run `vercel --prod` from a dirty working tree with tracked image deletions. Vercel uploads
+  the working tree, not a clean copy of git `HEAD`, so deleted local assets become production 404s.
+  If that happens, use `vercel rollback <known-good-deployment-url> --scope aidan-vercel --yes`.
 - A GitHub-push-triggered production deployment went **Ready but never took the domain alias** (and later disappeared from `vercel ls`). The CLI deploy (`vercel --prod --yes`) is what actually moved `www.aidantorrence.com`.
 - After any production deploy, do not trust "Ready" alone. Verify all three:
   1. `vercel ls` shows the new deployment Ready (Production)
