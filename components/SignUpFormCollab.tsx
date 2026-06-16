@@ -48,7 +48,7 @@ const experienceOptions = [
 const vibeOptions = [
   { id: 'Editorial & fashion', desc: 'Dramatic landscapes, fashion outfits, like from a magazine' },
   { id: 'Street & urban', desc: 'Gritty, real, in-the-moment' },
-  { id: 'Nature / beach', desc: 'Rice fields, jungle, beach, golden hour, soft light' },
+  { id: 'Nature / outdoors', desc: 'Mountains, temples, hills, golden hour, soft light' },
   { id: 'Indoor / studio', desc: 'White walls, clean backdrops, modern and sophisticated' },
   { id: 'No preference', desc: 'Let\u2019s figure it out together' },
 ]
@@ -172,7 +172,7 @@ export default function SignUpFormCollab() {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          city: 'Bali (collab)',
+          city: 'Kathmandu (collab)',
           contactMethod: 'whatsapp',
           contact: whatsappTrim,
           moodboard,
@@ -197,7 +197,7 @@ export default function SignUpFormCollab() {
     return (
       <div className="mt-6 space-y-0 overflow-hidden rounded-2xl border border-white/[0.08]" style={{ background: 'linear-gradient(165deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.02) 100%)' }}>
         <div className="relative h-48 overflow-hidden">
-          <NextImage src={heroImage} alt="" width={400} height={192} className="w-full h-full object-cover" unoptimized style={{ filter: 'brightness(0.5) saturate(1.2)' }} />
+          <NextImage src={heroImage} alt="" width={400} height={192} priority sizes="(max-width: 640px) 100vw, 400px" className="w-full h-full object-cover" style={{ filter: 'brightness(0.5) saturate(1.2)' }} />
           <div className="absolute inset-0" style={{ background: 'linear-gradient(180deg, transparent 30%, rgba(10,10,10,0.95) 100%)' }} />
           <div className="absolute bottom-4 left-5 right-5">
             <p className="font-display text-2xl font-semibold text-white" style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic' }}>You&apos;re in.</p>
@@ -283,8 +283,8 @@ export default function SignUpFormCollab() {
                   alt=""
                   width={200}
                   height={267}
+                  sizes="(max-width: 640px) 25vw, 150px"
                   className="w-full h-full object-cover object-top"
-                  unoptimized
                 />
               </div>
             ))}
@@ -310,7 +310,7 @@ export default function SignUpFormCollab() {
             value={location}
             onChange={e => { setLocation(e.target.value); clearStatus() }}
             className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-white/30 outline-none transition focus:border-emerald-400 focus:ring-2 focus:ring-emerald-400/30"
-            placeholder="e.g. Bali, Surabaya, Malang"
+            placeholder="e.g. Kathmandu, New York City, Tokyo"
           />
         </div>
 
