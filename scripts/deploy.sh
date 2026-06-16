@@ -70,8 +70,19 @@ done
 echo "  ✓ build Ready: https://$URL"
 
 # --- promote it onto the live domain --------------------------------------
+# at9e's auto-assign usually moves the domain on its own; promote is the
+# belt-and-suspenders guarantee. "already the current production deployment"
+# (409) means auto-assign already did it — that's success, not failure.
 echo "▶ Promoting https://$URL to the production domain…"
-vercel promote "https://$URL" --scope "$SCOPE" --yes
+promote_out=$(vercel promote "https://$URL" --scope "$SCOPE" --yes 2>&1) || true
+echo "$promote_out" | sed 's/^/  /'
+if echo "$promote_out" | grep -qiE "already the current production deployment"; then
+  echo "  ✓ already auto-assigned as current production — nothing to promote"
+elif echo "$promote_out" | grep -qiE "Success|promoted"; then
+  echo "  ✓ promoted"
+else
+  echo "✗ promote failed (see output above)"; exit 1
+fi
 
 # --- verify the live domain actually moved --------------------------------
 echo "▶ Verifying $DOMAIN now resolves to the new deployment…"
