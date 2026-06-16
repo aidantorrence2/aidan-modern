@@ -1,6 +1,7 @@
 "use client"
 import { useCallback, useEffect, useRef, useState } from 'react'
 import NextImage from 'next/image'
+import { normalizeWhatsapp } from '../../lib/whatsapp'
 
 type Signup = {
   id: number
@@ -16,9 +17,8 @@ function instagramLink(handle: string) {
   return `https://instagram.com/${handle.replace(/^@/, '')}`
 }
 
-function whatsappLink(number: string) {
-  return `https://wa.me/${number.replace(/\D/g, '')}`
-}
+// WhatsApp links are built via normalizeWhatsapp(contact, city) at the call site,
+// so numbers missing their international code get one inferred from the signup's city.
 
 function getInstagram(s: Signup): string | null {
   if (s.contact_method === 'instagram') return s.contact
@@ -32,6 +32,13 @@ function getInstagram(s: Signup): string | null {
 function getWhatsapp(s: Signup): string | null {
   if (s.contact_method === 'whatsapp') return s.contact
   return null
+}
+
+/** The user's real location is stored in moodboard as "Location: <place>";
+ *  the `city` column is an unreliable campaign label (e.g. "Bali (collab)"). */
+function getLocation(s: Signup): string {
+  const entry = s.moodboard?.find(m => /^location:/i.test(m))
+  return entry ? entry.replace(/^location:\s*/i, '').trim() : s.city
 }
 
 function getPhotos(s: Signup): string[] {
@@ -257,16 +264,24 @@ export default function AdminClient({ signups: initial }: { signups: Signup[] })
                       {/* Header */}
                       <div className="flex items-start justify-between mb-3">
                         <div className="flex flex-col gap-1">
-                          {whatsapp && (
-                            <div>
-                              <a href={whatsappLink(whatsapp)} target="_blank" rel="noopener noreferrer" className="text-base font-semibold text-white hover:text-emerald-400 transition">
-                                {whatsapp}
-                              </a>
-                              <span className="ml-2 rounded-full bg-white/10 px-2.5 py-0.5 text-xs font-medium text-white/50 align-middle">
-                                WhatsApp
-                              </span>
-                            </div>
-                          )}
+                          {whatsapp && (() => {
+                            const wa = normalizeWhatsapp(whatsapp, getLocation(s))
+                            return (
+                              <div>
+                                <a href={wa.link} target="_blank" rel="noopener noreferrer" className="text-base font-semibold text-white hover:text-emerald-400 transition">
+                                  {wa.e164 ?? whatsapp}
+                                </a>
+                                {wa.resolved && wa.e164 && wa.e164.replace(/\D/g, '') !== whatsapp.replace(/\D/g, '') && (
+                                  <span className="ml-2 text-xs text-white/30 align-middle" title={`entered as "${whatsapp}" — country code inferred from ${s.city}`}>
+                                    was {whatsapp}
+                                  </span>
+                                )}
+                                <span className="ml-2 rounded-full bg-white/10 px-2.5 py-0.5 text-xs font-medium text-white/50 align-middle">
+                                  WhatsApp
+                                </span>
+                              </div>
+                            )
+                          })()}
                           {instagram && (
                             <div>
                               <a href={instagramLink(instagram)} target="_blank" rel="noopener noreferrer" className="text-base font-semibold text-white hover:text-emerald-400 transition">

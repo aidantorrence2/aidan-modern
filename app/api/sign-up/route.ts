@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server'
 import { createClient } from '@supabase/supabase-js'
 import { v2 as cloudinary } from 'cloudinary'
+import { normalizeWhatsappServer, locationFromSignup } from '../../../lib/whatsapp-server'
 
 cloudinary.config({
   cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
@@ -51,7 +52,19 @@ export async function POST(req: Request) {
       return NextResponse.json({ ok: false, error: 'Invalid input' }, { status: 400 })
     }
 
-    console.log('[SIGN-UP]', { city, contactMethod, contact, moodboard, photos: photos ? `${photos.length} photo(s)` : null })
+    // Normalize WhatsApp numbers to E.164 at write time: infer the country code
+    // from the user's location (moodboard "Location:" → gazetteer → DeepSeek).
+    // Never blocks the signup — falls back to the entered value on any failure.
+    let storedContact = contact.trim()
+    if (contactMethod === 'whatsapp') {
+      try {
+        storedContact = await normalizeWhatsappServer(contact.trim(), locationFromSignup(city, moodboard))
+      } catch (err) {
+        console.error('[SIGN-UP] WhatsApp normalize failed, storing raw:', err)
+      }
+    }
+
+    console.log('[SIGN-UP]', { city, contactMethod, contact: storedContact, raw: contact.trim(), moodboard, photos: photos ? `${photos.length} photo(s)` : null })
 
     const sb = getSupabase()
 
@@ -60,7 +73,7 @@ export async function POST(req: Request) {
       .insert({
         city: city.trim(),
         contact_method: contactMethod,
-        contact: contact.trim(),
+        contact: storedContact,
         moodboard
       })
       .select('id')
@@ -89,7 +102,7 @@ export async function POST(req: Request) {
       try {
         const contactLabel = contactMethod === 'whatsapp' ? 'WhatsApp' : 'Instagram'
         const slackBody = {
-          text: `New sign-up from ${contact}`,
+          text: `New sign-up from ${storedContact}`,
           blocks: [
             {
               type: 'section',
@@ -98,7 +111,7 @@ export async function POST(req: Request) {
                 text: [
                   '*New photo shoot sign-up*',
                   `*City:* ${city.trim()}`,
-                  `*${contactLabel}:* ${contact.trim()}`,
+                  `*${contactLabel}:* ${storedContact}`,
                   `*Photos:* ${photoUrls.length}`,
                   ...(moodboard?.length ? [`*Moodboard:* ${moodboard.join(', ')}`] : []),
                   ...(photoUrls.length ? [`*Links:* ${photoUrls.map((u, i) => `<${u}|${i + 1}>`).join('  ')}`] : [])

@@ -21,3 +21,6 @@ tsconfig.tsbuildinfo
 .env*.local
 marketing/location-content/output-city-*
 public/images/locations/
+
+# Local DB backups (contain customer PII — never commit)
+data/backups/
