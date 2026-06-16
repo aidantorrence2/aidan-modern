@@ -1,484 +1,162 @@
-# Development Guide
+# Development Guide — aidan-modern
 
-## Prerequisites
-- Node.js 20.x (project verified with 20.11)
-- npm 10+
-- Python 3.x for the optional image tooling (`npm run images`)
+## Build commands
 
-## Setup & Common Commands
-- Install deps: `npm install`
-- Start dev server (http://localhost:5173):
-  - Foreground: `npm run dev`
-  - Background from this CLI: `npm run dev >/tmp/aidan-modern-dev.log 2>&1 & echo $!`
-- Build for production: `npm run build`
-- Serve built site: `npm run start`
-- Optimise images from the default source folder: `npm run images`
+```bash
+npm install
+npm run build       # production build (catches type errors; run before pushing)
+npm run lint        # ESLint
+```
 
-## Testing & Quality
-- Lint: `npm run lint`
-  - Known issue: legacy travel promo pages still trigger `react/no-unescaped-entities` until their copy is entity-escaped.
-- No other automated tests are configured; manual review is recommended after major UI edits.
+## Test commands
 
-## Architecture Overview
-- Next.js 14 App Router (`app/` directory) with TypeScript and TailwindCSS.
-- Global layout + scripts: `app/layout.tsx`, typography/utilities: `app/globals.css`.
-- Shared UI lives in `components/` (header, footer, gallery, lightbox, sticky CTAs).
-- Campaign/landing experiences are co-located in `app/<route>/page.tsx`.
-- Meta Pixel support is gated by `NEXT_PUBLIC_META_PIXEL_ID` environment variable.
+No automated tests configured. Manual review is recommended after major UI edits.
 
-## Sign-Up Notifications
-- Slack: posts to `SLACK_BOOKING_WEBHOOK` if set.
-- WhatsApp (via CallMeBot, free): posts a text summary + one message per uploaded Cloudinary photo if both `CALLMEBOT_PHONE` and `CALLMEBOT_API_KEY` are set.
-  - One-time setup to obtain an API key for a recipient phone:
-    1. From the recipient phone, save +34 644 51 95 23 (CallMeBot) as a contact.
-    2. Send the exact text: `I allow callmebot to send me messages` to that contact via WhatsApp.
-    3. You'll receive a reply with your personal API key.
-    4. Set env vars:
-       - `CALLMEBOT_PHONE` — recipient number in international format with `+` (e.g. `+491758966210`).
-       - `CALLMEBOT_API_KEY` — the key returned by the bot.
-  - Add these to `.env.local` (dev) and the Vercel project settings (production).
-  - CallMeBot has a small rate limit (~1 message every few seconds); each sign-up sends 1 text + N image messages sequentially.
+```bash
+npm run lint        # known issue: legacy travel promo pages still trigger react/no-unescaped-entities
+```
 
-## Key Routes (Nov 2025)
-- `/` – portfolio home and gallery.
-- `/about`, `/book`, `/shoots/[slug]` – supporting storytelling + booking flows.
-- `/manila` – Instagram ads landing page for Manila sessions with Cal.com "learn more" + quick intro call CTA flow and Meta Pixel interactions (`ViewContent`, `LandingScrollDepth`, lead clicks).
-- `/manila-free` – Free collab/TFP version of the Manila landing page. Same structure but no pricing, emphasizes free sessions. Separate Cal.com link (`manila-free-photo-shoot`) and distinct Pixel tracking names.
-- `/availability` – Public, mobile/iPhone-first page listing the next open session slots (e.g. "Tomorrow · 4pm"). Client component fetching `GET /api/availability`; each slot opens a prefilled mailto request.
-- `/availability/admin` (alias: `/availability-admin`) – Desktop admin to add/remove availability slots. Add posts to `POST /api/availability`; remove sends `DELETE /api/availability/admin`.
+## Run / restart
 
-## Availability Slots (May 2026)
-- Persistence: **Neon** Postgres (`DATABASE_URL`), table `availability_slots (id, start_at timestamptz, note, created_at, deleted_at)`. Removals are soft deletes (`deleted_at`). DB helper: `lib/neon.ts` (`@neondatabase/serverless`).
-- Public/admin APIs filter to `deleted_at IS NULL AND start_at >= now()`, ordered soonest-first.
-- `datetime-local` in the admin is interpreted in the admin's local timezone, stored as UTC; the public page renders times in each visitor's local timezone with relative day labels (Today/Tomorrow/weekday).
-- Note: this feature uses Neon, not Supabase (which backs the `signups` flow).
+```bash
+# Dev server (http://localhost:5173)
+npm run dev
+# Background:
+npm run dev >/tmp/aidan-modern-dev.log 2>&1 & echo $!
 
-## Daily Ops Checklist for Campaign Pages
-- Confirm CTA phone/email destinations when duplicating sticky bars.
-- If a new page is created, add it to navigation via `components/Header.tsx` when appropriate.
-- Map any new Tailwind utility usage to files included in `tailwind.config.ts#content`.
+# Serve built site
+npm run start
 
-## Bali Booking Packages (June 2026)
-- `/sign-up-bali` (`components/SignUpFormBali.tsx`) no longer offers an open pay-what-you-want price. It has four packages with a price floor:
-  - Essential — Rp 2,500,000 (~$150): 45 min, 1 location, 15 edited photos
-  - Signature — Rp 5,000,000 (~$300, default selected): 2 hours, 2 locations, 35 edited photos + 1 reel
-  - Editorial — Rp 9,000,000 (~$550): half day, full creative direction, 60 edited photos + 2 reels
-  - Student / pay-what-you-want: minimum Rp 800,000, limited slots, custom amount input
-- The package is mapped into the same `Price:` line of the `moodboard` array POSTed to `/api/sign-up`, so the Slack/CallMeBot notification pipeline is unchanged. Meta Pixel `Lead` value is the package price in IDR.
+# Optimise images from default source folder
+npm run images
+```
 
-## Vercel Deploy Verification (June 2026 gotcha)
-- Production is the Vercel Pro project `aidan-vercel/aidan-modern-at9e`
-  (`prj_IprqbRdPN7RV4OpOzzAYPhGHTvAr`). Despite the generated-looking name, this is the
-  longstanding project that owns `aidantorrence.com` and `www.aidantorrence.com`.
-- Do not deploy the site to `aidan-vercel/aidan-modern` or the legacy Hobby-team project under
-  `aidantorrences-projects`. Before a CLI deploy, confirm `.vercel/project.json` names
-  `aidan-modern-at9e`, or relink with:
-  `vercel link --project aidan-modern-at9e --scope aidan-vercel --yes`.
-- Never run `vercel --prod` from a dirty working tree with tracked image deletions. Vercel uploads
-  the working tree, not a clean copy of git `HEAD`, so deleted local assets become production 404s.
-  If that happens, use `vercel rollback <known-good-deployment-url> --scope aidan-vercel --yes`.
-- A GitHub-push-triggered production deployment went **Ready but never took the domain alias** (and later disappeared from `vercel ls`). The CLI deploy (`vercel --prod --yes`) is what actually moved `www.aidantorrence.com`.
-- After any production deploy, do not trust "Ready" alone. Verify all three:
-  1. `vercel ls` shows the new deployment Ready (Production)
-  2. `vercel inspect https://www.aidantorrence.com` resolves to the NEW deployment URL
-  3. `curl` the changed route on the live domain and grep for the new content (the edge can serve a cached page from the old deployment — check `x-vercel-cache`/`age` headers)
+## Architecture overview
 
-## Common Issues & Fixes
+Next.js 14 App Router (TypeScript, TailwindCSS). Deployed on Vercel Pro project `aidan-vercel/aidan-modern-at9e`.
+
+- `app/` — App Router pages. Global layout + scripts: `app/layout.tsx`; typography/utilities: `app/globals.css`.
+- `components/` — shared UI (header, footer, gallery, lightbox, sticky CTAs).
+- Campaign/landing experiences co-located in `app/<route>/page.tsx`.
+- Meta Pixel support gated by `NEXT_PUBLIC_META_PIXEL_ID`.
+- Availability slots persisted in **Neon** Postgres (`DATABASE_URL`), table `availability_slots` (`lib/neon.ts`, `@neondatabase/serverless`). Separate from the Supabase-backed `signups` flow.
+
+### Sign-up notifications
+
+- Slack: `SLACK_BOOKING_WEBHOOK`
+- WhatsApp via CallMeBot (free): `CALLMEBOT_PHONE` + `CALLMEBOT_API_KEY`. Rate limit: ~1 msg/few seconds; each sign-up sends 1 text + N image messages.
+
+## Important file locations
+
+| Path | Purpose |
+|---|---|
+| `app/layout.tsx` | Global layout and scripts |
+| `app/globals.css` | Typography and utilities |
+| `components/Header.tsx` | Navigation (add new pages here) |
+| `components/SignUpFormBali.tsx` | Bali booking form with 4 packages |
+| `lib/neon.ts` | Neon Postgres helper for availability slots |
+| `tailwind.config.ts` | Tailwind content paths — update when adding new files |
+| `tools/process_images.py` | Rewrites `public/images/manifest.json` from source directory |
+| `public/images/large/` | Full-size images served by the site |
+| `public/images/thumbs/` | Thumbnail images |
+| `tools/render_manila_video_ads.sh` | Manila V1 video ads render script |
+| `tools/render_manila_video_ads_v2.sh` | Manila V2 video ads render script |
+| `tools/render_manila_free_video_ads.sh` | Manila Free V4 video ads |
+| `tools/render_manila_free_video_ads_v5.sh` | Manila Free V5 video ads |
+| `marketing/manila-model-search-carousel/` | Static carousel renders (V1–V14) + reels |
+| `marketing/bts-reels/` | BTS Bridge Reels (sets 85, 86, 87) |
+| `marketing/cpc-carousel-ads/` | Antipolo CPC story ads |
+| `marketing/story-carousels/` | 5-theme × 3-location story carousel set |
+| `marketing/manila-free-ads-ultimate/` | Manila Free story/reels ad set (Playwright-rendered) |
+| `.vercel/project.json` | Must name `aidan-modern-at9e` |
+
+## Quirks & gotchas
+
+### Vercel deploy (critical — read before deploying)
+
+**Always deploy with `scripts/deploy.sh`. Do not hand-run `git push` / `vercel --prod` for a production ship.**
+
+```sh
+scripts/deploy.sh
+```
+
+That script is the single supported path. It: builds locally (catches missing-env/type errors), pushes committed `HEAD` only, waits for the `at9e` production build of that exact commit to reach Ready, **promotes it onto `www.aidantorrence.com`**, and verifies the live domain actually moved. It exists because of the failure mode below — promotion is easy to forget, and forgetting leaves the live site silently stale on an old build.
+
+Background / why the script does what it does:
+
+- Production project is `aidan-vercel/aidan-modern-at9e` (`prj_IprqbRdPN7RV4OpOzzAYPhGHTvAr`). Do NOT deploy to `aidan-vercel/aidan-modern` (a **stray duplicate** that rebuilds on every push but serves no real domain — safe to ignore, or delete it in the dashboard) or the legacy Hobby project under `aidantorrences-projects`. `scripts/deploy.sh` asserts `.vercel/project.json` names `aidan-modern-at9e` before doing anything; relink if needed with `vercel link --project aidan-modern-at9e --scope aidan-vercel --yes`.
+- **Auto-assign-domain is ON for at9e but does NOT reliably move the alias** — the live domain had been manually pinned to a specific deployment, which overrides auto-assign, so new Ready production builds stay dark until explicitly promoted. The script always promotes; never rely on the push alone.
+- **Never run `vercel --prod` from this dirty working tree.** It uploads the working tree (not clean git `HEAD`) — and this repo carries ~9GB of `marketing/` assets plus tracked deletions that would become production 404s. The script ships via `git push` + `vercel promote` precisely to avoid this. If a bad upload ever lands: `vercel rollback <known-good-deployment-url> --scope aidan-vercel --yes`.
+- The script self-verifies, but for a manual spot-check the live domain after any deploy: `vercel inspect https://www.aidantorrence.com` should resolve to the NEW deployment URL, and `curl` the changed route and grep for new content (edge can serve a cached page from an old deployment — check `x-vercel-cache`/`age` headers).
+
+### Video ad rendering
+
+- Requires `ffmpeg-full` (not plain `ffmpeg`) for `drawtext` and `subtitles` filters: `brew install ffmpeg-full`. Scripts auto-detect `/opt/homebrew/opt/ffmpeg-full/bin/ffmpeg`.
+- If overlays/captions fail with `No such filter: drawtext`, the shell is using plain `ffmpeg` without libfreetype/libass support.
+- Long single-line captions overflow 1080px at size 50+; use the `CAP2()` two-line helper in the render scripts.
+- BTS reels 85 was rejected (cheap/off-brand); 85 mp4s moved to `reels/_archive-v85/` (not deleted). 86 supersedes 85.
+- BTS reel 86: NO synthetic `noise` grain — it exploded bitrate to 100MB+. The film scans already carry grain.
+- Photos from exports/film scans are already positive — do NOT negate them.
+- Photos are shown full-frame (cover-crop to 1080x1920 with per-photo focus point) in 86+; 85 used blurred-bar contain (rejected).
+
+### Availability slots
+
+- `datetime-local` in the admin is interpreted in the admin's local timezone, stored as UTC; the public page renders in each visitor's local timezone with relative day labels (Today/Tomorrow/weekday).
+- Removals are soft deletes (`deleted_at`). Public/admin APIs filter to `deleted_at IS NULL AND start_at >= now()`.
+- Uses Neon (not Supabase) for availability.
+
+### Bali booking packages
+
+`/sign-up-bali` has a price floor with four packages: Essential (Rp 2,500,000 ~$150), Signature (Rp 5,000,000 ~$300, default), Editorial (Rp 9,000,000 ~$550), Student/PWYW (min Rp 800,000). Package maps to the `Price:` line in the Slack/CallMeBot notification.
+
+### Carousel / reels versioning
+
+- New concept → new version **number** (e.g., 59, 60)
+- Changes to existing concept → bump version **letter** (e.g., 59a → 59b)
+- File naming: `{number}{letter}-{description}.mp4`; render scripts: `render-{number}{letter}.mjs`; output dirs: `output-{number}{letter}/`
+- Every rendered mp4 must be copied to `reels-final/reels/` with the correct name
+
+## Common issues & fixes
+
 - **Lint failures**: escape `'`/`"` in JSX strings (`&apos;`, `&quot;`) before shipping.
-- **Slow image loads**: rerun `npm run images` to generate thumbnails/manifest and ensure new photos land under `public/images`.
-- **Dev server port conflicts**: override with `npm run dev -- -p 3000` or stop existing process (e.g., `kill <pid>` from `/tmp/aidan-modern-dev.log`).
-- **One-off landing page image swaps**: `tools/process_images.py` rewrites `public/images/manifest.json` from its source directory. For ad-hoc replacements on a single route, add resized files directly under `public/images/large` and `public/images/thumbs` with stable slugs instead of rerunning the full manifest pipeline.
+- **Slow image loads**: rerun `npm run images` to generate thumbnails/manifest; ensure new photos land under `public/images`.
+- **Dev server port conflicts**: override with `npm run dev -- -p 3000` or kill existing process (find pid in `/tmp/aidan-modern-dev.log`).
+- **One-off landing page image swaps**: for ad-hoc replacements on a single route, add resized files directly under `public/images/large` and `public/images/thumbs` with stable slugs instead of rerunning the full manifest pipeline.
 
-## Video Ad Rendering (Manila Campaign)
-- Rendering script: `tools/render_manila_video_ads.sh`
-- Output folder: `marketing/manila-video-ads/videos`
-- Requires `ffmpeg-full` (not plain `ffmpeg`) for `drawtext` and `subtitles` filters.
-  - Install: `brew install ffmpeg-full`
-  - Binary used by script when available: `/opt/homebrew/opt/ffmpeg-full/bin/ffmpeg`
-- Re-render command:
-  - `tools/render_manila_video_ads.sh`
-- Gotcha:
-  - If overlays/captions fail with `No such filter: drawtext`, the shell is using plain `ffmpeg` without libfreetype/libass support.
+## Non-obvious procedures
 
-## Video Ad Rendering V2 (Rebuild)
-- Rendering script: `tools/render_manila_video_ads_v2.sh`
-- Output folder: `marketing/manila-video-ads-v2/videos`
-- Inputs:
-  - Moving source clips from `/Users/aidantorrence/Downloads/reel-VEED*.mp4`
-  - Subtitle templates in `marketing/manila-video-ads-v2/subtitles`
-- V2 pipeline characteristics:
-  - 8-segment fast-cut assembly per ad (18s total)
-  - Voiceover generation via macOS `say` + dynamic ducking
-  - Burned-in hooks, CTA strip, and subtitles
-- Regenerate:
-  - `tools/render_manila_video_ads_v2.sh`
+### CallMeBot one-time setup
 
-## Manila Free Story / Reels Ad Rendering (Ultimate)
-- Source folder: `marketing/manila-free-ads-ultimate`
-- Render command:
-  - `node marketing/manila-free-ads-ultimate/render.mjs`
-- Output folders:
-  - `marketing/manila-free-ads-ultimate/funnel-01_last-chance-electric`
-  - `marketing/manila-free-ads-ultimate/funnel-02_last-chance-fresh`
-  - `marketing/manila-free-ads-ultimate/funnel-03_last-chance-bold`
-- Notes:
-  - The script uses Playwright to render static 1080x1920 PNG story/reels frames from inline HTML.
-  - Script behavior: each run deletes prior `story-*` and `funnel-*` output folders before rendering fresh frames.
-  - All funnels follow a fixed five-slide flow: `hey free photo shoot` -> `proof` -> `how it works` -> `what you get` -> `cta`.
-  - Messaging is interest/questions via direct message to move forward (no intro-call flow).
-  - Creative strategy keeps direct-response structure with simple upbeat copy and clear urgency (last chance, limited time, limited slots).
-  - Photo layers use `object-fit: contain` so source images are not cropped.
-  - The package intentionally reuses only the Manila photo assets while replacing all prior ad copy/layouts.
+1. From the recipient phone, save +34 644 51 95 23 (CallMeBot) as a contact.
+2. Send the exact text `I allow callmebot to send me messages` to that contact via WhatsApp.
+3. You'll receive a reply with your personal API key.
+4. Set `CALLMEBOT_PHONE` (international format with `+`) and `CALLMEBOT_API_KEY` in `.env.local` and Vercel project settings.
 
-## Manila Free V4 Video Ads (Instagram MP4)
-- Motion clip inputs:
-  - `/Users/aidantorrence/Downloads/reel-VEED.mp4`
-  - `/Users/aidantorrence/Downloads/reel-VEED (1).mp4`
-  - `/Users/aidantorrence/Downloads/reel-VEED (2).mp4`
-  - `/Users/aidantorrence/Downloads/reel-VEED (3).mp4`
-  - `/Users/aidantorrence/Downloads/reel-VEED (4).mp4`
-  - `/Users/aidantorrence/Downloads/reel-VEED (5).mp4`
-- Rendering script: `tools/render_manila_free_video_ads.sh`
-- Output folder: `marketing/manila-free-ads/v4/videos`
-- Re-render command:
-  - `tools/render_manila_free_video_ads.sh`
-- Notes:
-  - Generates 5 vertical MP4 ads (`manila_free_A.mp4` ... `manila_free_E.mp4`) from stitched moving footage.
-  - Uses 30fps H.264 + AAC output at 1080x1920, each 18s.
-  - Render strategy is direct-response:
-    - Hook (top text)
-    - Offer/value line
-    - Burned subtitle captions
-    - Explicit bottom CTA
-  - Script generates voiceovers using macOS `say` and mixes them over source audio.
-  - Prefers `/opt/homebrew/opt/ffmpeg-full/bin/ffmpeg`; falls back to `ffmpeg` if present.
+### Video ad render commands
 
-## Manila Free V5 Video Ads (New Creative Set)
-- Motion clip inputs:
-  - `/Users/aidantorrence/Downloads/Copy of Copy of Copy of Copy of Copy of best ph (1080 x 1080 px) (Mobile Video).mp4`
-  - `/Users/aidantorrence/Downloads/Copy of Copy of IMG_1430-VEED (1).mp4`
-  - `/Users/aidantorrence/Downloads/Copy of Copy of IMG_1430-VEED (2).mp4`
-  - `/Users/aidantorrence/Downloads/Copy of Copy of IMG_1430-VEED (3).mp4`
-  - `/Users/aidantorrence/Downloads/Copy of Copy of IMG_1430-VEED (4).mp4`
-  - `/Users/aidantorrence/Downloads/Copy of Copy of Copy of Copy of Copy of Copy of best ph (1080 x 1080 px).mp4`
-- Rendering script: `tools/render_manila_free_video_ads_v5.sh`
-- Output folder: `marketing/manila-free-ads/v5/videos`
-- Re-render command:
-  - `tools/render_manila_free_video_ads_v5.sh`
-- Notes:
-  - Generates 5 vertical MP4 ads (`manila_free_new_01.mp4` ... `manila_free_new_05.mp4`) at 1080x1920, 30fps, 18s.
-  - Uses square-source framing with blurred background + centered foreground composite.
-  - Handles mixed source clips where some inputs have no audio tracks.
-  - Final videos currently use synthesized voiceover only (no source-bed audio mix).
+| Ad set | Script | Output |
+|---|---|---|
+| Manila V1 | `tools/render_manila_video_ads.sh` | `marketing/manila-video-ads/videos` |
+| Manila V2 | `tools/render_manila_video_ads_v2.sh` | `marketing/manila-video-ads-v2/videos` |
+| Manila Free story ads (ultimate) | `node marketing/manila-free-ads-ultimate/render.mjs` | `marketing/manila-free-ads-ultimate/funnel-01..03` |
+| Manila Free V4 | `tools/render_manila_free_video_ads.sh` | `marketing/manila-free-ads/v4/videos` |
+| Manila Free V5 | `tools/render_manila_free_video_ads_v5.sh` | `marketing/manila-free-ads/v5/videos` |
+| BTS Bridge 85 | `node marketing/bts-reels/render-85.mjs [a b c d e]` | `marketing/bts-reels/output-85{x}/` |
+| BTS Bridge 86 (supersedes 85) | `node marketing/bts-reels/render-86.mjs [a b c d e]` | `marketing/bts-reels/output-86{x}/` |
+| BTS Bridge 87 | `node marketing/bts-reels/render-87.mjs [a b c d]` | `marketing/bts-reels/output-87{x}/` |
+| Manila subway reel v70a | `node marketing/manila-model-search-carousel/reels-final/render-70a.mjs` | `reels-final/output-70a/` + `reels/` |
+| Story carousels (5 themes × 3 locations) | `node marketing/story-carousels/render-story-carousels.mjs` | `marketing/story-carousels/output/{theme}/{location}/` |
+| Antipolo CPC V2 | `node marketing/cpc-carousel-ads/render-antipolo-low-cpc-v2.mjs` | `output/antipolo-low-cpc-v2` |
+| Antipolo CPC V4 (100 concepts) | `node marketing/cpc-carousel-ads/render-antipolo-low-cpc-v4.mjs` | `output/antipolo-low-cpc-v4` |
+| Antipolo CPC V5 | `node marketing/cpc-carousel-ads/render-antipolo-low-cpc-v5.mjs` | `output/antipolo-low-cpc-v5` |
+| Bali model-collab carousel | `node marketing/carousel/render-bali-model-collab.mjs` | `marketing/carousel/output-v3/bali-model-collab` |
 
-## Manila Model Search Carousel (Static Instagram Ad)
-- Source folder: `marketing/manila-model-search-carousel`
-- Render command:
-  - `node marketing/manila-model-search-carousel/render.mjs`
-- Output folder:
-  - `marketing/manila-model-search-carousel/output`
-- Notes:
-  - Exports a five-slide 1080x1350 PNG carousel:
-    - `01_models_in_manila`
-    - `02_what_you_get`
-    - `03_how_the_shoot_works`
-    - `04_faq`
-    - `05_sign_up`
-  - Slide 2 proof images are scraped from the live homepage at `https://aidantorrence.com` and recorded in `output/proof-sources.json`.
-  - If the homepage scrape fails, the renderer falls back to local portfolio files in `public/images/large`.
-  - As of March 11, 2026, `https://aidantorrence.com/manila-free` returns `404`, so the carousel proof references the live homepage portfolio instead of that route.
+Manila static carousel (V1–V14): `node marketing/manila-model-search-carousel/render-v{N}.mjs` → output in `output-v{N}/`.
 
-## Manila Model Search Carousel V2 (Stories / Reels Safe)
-- Source folder: `marketing/manila-model-search-carousel`
-- Render command:
-  - `node marketing/manila-model-search-carousel/render-v2.mjs`
-- Output folder:
-  - `marketing/manila-model-search-carousel/output-v2`
-- Notes:
-  - Exports a five-slide 1080x1920 PNG set for story/reels ad placement.
-  - Important text is intentionally kept above the lower CTA-safe area so platform overlays do not cover copy.
-  - The sign-up button is not baked into the creative; slide 5 tells viewers to use the platform CTA.
-  - Source photos come from the top image files in `public/images/large` by sorted filename order and are recorded in `output-v2/sources.json`.
+### BTS reel inputs (local, gitignored)
 
-## Manila Model Search Carousel V3 (Manila-Only, No Face Overlays)
-- Source folder: `marketing/manila-model-search-carousel`
-- Render command:
-  - `node marketing/manila-model-search-carousel/render-v3.mjs`
-- Output folder:
-  - `marketing/manila-model-search-carousel/output-v3`
-- Notes:
-  - Exports a five-slide 1080x1920 PNG set for story/reels use.
-  - Uses the top `manila*` prefixed images from `public/images/large` by sorted filename order and records them in `output-v3/sources.json`.
-  - Layout avoids placing text over subjects' faces by using solid copy panels and separate framed photos.
-
-## Manila Model Search Carousel V4 (Full-Height Imagery)
-- Source folder: `marketing/manila-model-search-carousel`
-- Render command:
-  - `node marketing/manila-model-search-carousel/render-v4.mjs`
-- Output folder:
-  - `marketing/manila-model-search-carousel/output-v4`
-- Notes:
-  - Exports a five-slide 1080x1920 PNG set for story/reels use.
-  - Continues to keep text above the lower CTA-safe area, while allowing imagery to extend farther to the bottom of the frame.
-  - Uses the same top `manila*` image selection strategy as V3 and records it in `output-v4/sources.json`.
-  - Slide 3 uses simpler process copy and avoids disclosing any selective review language.
-
-## Manila Model Search Carousel V5 (Photo Proof Flow)
-- Source folder: `marketing/manila-model-search-carousel`
-- Render command:
-  - `node marketing/manila-model-search-carousel/render-v5.mjs`
-- Output folder:
-  - `marketing/manila-model-search-carousel/output-v5`
-- Notes:
-  - Exports a five-slide 1080x1920 PNG set for story/reels use.
-  - Flow order is:
-    - `models in Manila`
-    - `photo proof`
-    - `what you get`
-    - `how the shoot works`
-    - `sign up`
-  - No FAQ card/page is included in V5.
-
-## Manila Model Search Carousel V6 (Manila Label + Portfolio Proof)
-- Source folder: `marketing/manila-model-search-carousel`
-- Render command:
-  - `node marketing/manila-model-search-carousel/render-v6.mjs`
-- Output folder:
-  - `marketing/manila-model-search-carousel/output-v6`
-- Notes:
-  - Exports a five-slide 1080x1920 PNG set for story/reels use.
-  - Every slide includes a large visible `MANILA` label without using pill UI.
-  - Page 2 is positioned as portfolio proof and uses stronger Manila photos while keeping the first two proof images from the prior layout.
-
-## Manila Model Search Carousel V7 (Improved Direct-Response UI)
-- Source folder: `marketing/manila-model-search-carousel`
-- Render command:
-  - `node marketing/manila-model-search-carousel/render-v7.mjs`
-- Output folder:
-  - `marketing/manila-model-search-carousel/output-v7`
-- Notes:
-  - Exports a five-slide 1080x1920 PNG set for story/reels use.
-  - Keeps `MANILA` clearly visible on every slide.
-  - Uses a more aggressive visual hierarchy and cleaner proof/CTA layouts than V6 while preserving the same message flow.
-
-## Manila Model Search Carousel V8 (Text-First Hook + CTA)
-- Source folder: `marketing/manila-model-search-carousel`
-- Render command:
-  - `node marketing/manila-model-search-carousel/render-v8.mjs`
-- Output folder:
-  - `marketing/manila-model-search-carousel/output-v8`
-- Notes:
-  - Exports a five-slide 1080x1920 PNG set for story/reels use.
-  - Pages 1 and 5 place the copy in the upper half with the image below to simplify composition.
-  - Page 5 uses shorter CTA copy than V7.
-
-## Antipolo CPC Story Ads (Low-CPC Static Pack)
-- Source folder: `marketing/cpc-carousel-ads`
-- Render command:
-  - `node marketing/cpc-carousel-ads/render-antipolo-low-cpc-v2.mjs`
-- Output folder:
-  - `marketing/cpc-carousel-ads/output/antipolo-low-cpc-v2`
-- Notes:
-  - This renderer creates a brand new Antipolo-only folder and does not touch `marketing/cpc-carousel-ads/output/antipolo` or `marketing/cpc-carousel-ads/output/antipolo-low-cpc-v1`.
-  - The pack is built for story/reels placement and keeps the message focused on local callout + explicit free offer + proof + objection handling + urgency.
-  - `sources.json` in the output folder records the photo sources and the strategy for each creative.
-  - If you need more local specificity, add new Antipolo-specific source images first; the current pack still uses the shared portfolio library from `public/images/large`.
-
-## Bali Model-Test / TFP Carousel (High-Intent Pivot)
-- Source script: `marketing/carousel/render-bali-model-collab.mjs`
-- Render command:
-  - `node marketing/carousel/render-bali-model-collab.mjs`
-- Output folder:
-  - `marketing/carousel/output-v3/bali-model-collab`
-- Notes:
-  - Exports a five-slide 1080x1920 PNG story/reels carousel.
-  - This campaign intentionally avoids broad "free photo shoot" language and positions the offer as a selected Bali model-test / TFP collaboration.
-  - The CTA asks viewers to send `BALI` with IG, Bali area, availability, and recent photos so follow-up quality is easier to screen.
-  - Re-running the script deletes and regenerates only `marketing/carousel/output-v3/bali-model-collab`.
-
-## Antipolo CPC Story Ads V4 (100 Creative Concepts)
-- Source folder: `marketing/cpc-carousel-ads`
-- Render command:
-  - `node marketing/cpc-carousel-ads/render-antipolo-low-cpc-v4.mjs`
-- Output folder:
-  - `marketing/cpc-carousel-ads/output/antipolo-low-cpc-v4`
-- Notes:
-  - V4 exports 100 static 1080x1920 slides plus `sources.json`.
-  - `render-antipolo-low-cpc-v4.mjs` is a dedicated entrypoint that sets `CPC_OUT_SLUG=antipolo-low-cpc-v4` and runs the V3 concept renderer.
-  - Concepts are explicitly authored one-by-one (not permutation mixing), each with distinct hook copy and assigned visual treatment.
-  - Renderer currently uses 10 layout families (`hero`, `glass`, `proof`, `checklist`, `split`, `chat`, `magazine`, `urgency`, `timeline`, `sticky`) to keep feed variety high while preserving readability.
-
-## Antipolo CPC Story Ads V5 (Quality + Copy Upgrade)
-- Source folder: `marketing/cpc-carousel-ads`
-- Render command:
-  - `node marketing/cpc-carousel-ads/render-antipolo-low-cpc-v5.mjs`
-- Output folder:
-  - `marketing/cpc-carousel-ads/output/antipolo-low-cpc-v5`
-- Notes:
-  - V5 keeps the 100-concept structure but improves conversion-oriented copy quality (cleaner hooks, clearer offer language, less low-trust phrasing).
-  - Typography was upgraded to use `Oswald` as the display face for stronger headline legibility.
-  - Renderer now uses `deviceScaleFactor: 2` for crisper final PNG output.
-
-## Manila Model Search Carousel V9 (Larger Manila Label)
-- Source folder: `marketing/manila-model-search-carousel`
-- Render command:
-  - `node marketing/manila-model-search-carousel/render-v9.mjs`
-- Output folder:
-  - `marketing/manila-model-search-carousel/output-v9`
-- Notes:
-  - Exports a five-slide 1080x1920 PNG set for story/reels use.
-  - Enlarges the `MANILA` label across all slides.
-  - Removes small kicker labels and uses simpler top-level copy.
-  - Uses taller portrait image framing on pages 1 and 5.
-
-## Manila Model Search Carousel V10 (Refined Layout Pass)
-- Source folder: `marketing/manila-model-search-carousel`
-- Render command:
-  - `node marketing/manila-model-search-carousel/render-v10.mjs`
-- Output folder:
-  - `marketing/manila-model-search-carousel/output-v10`
-- Notes:
-  - Exports a five-slide 1080x1920 PNG set for story/reels use.
-  - Enlarges the page 1 and page 5 images further.
-  - Rebuilds page 2 and page 3 layouts for a cleaner, higher-quality presentation.
-  - Makes the page 4 image column wider than in V9.
-
-## Manila Model Search Carousel V11 (Copy + Image Scale Pass)
-- Source folder: `marketing/manila-model-search-carousel`
-- Render command:
-  - `node marketing/manila-model-search-carousel/render-v11.mjs`
-- Output folder:
-  - `marketing/manila-model-search-carousel/output-v11`
-- Notes:
-  - Exports a five-slide 1080x1920 PNG set for story/reels use.
-  - Increases the visual weight of pages 1 and 5 by scaling the images up further.
-  - Rewrites page 2 and page 5 copy to sound more natural and sales-oriented.
-
-## Manila Model Search Carousel V12 (Header Text Update)
-- Source folder: `marketing/manila-model-search-carousel`
-- Render command:
-  - `node marketing/manila-model-search-carousel/render-v12.mjs`
-- Output folder:
-  - `marketing/manila-model-search-carousel/output-v12`
-- Notes:
-  - Same layout as V11.
-  - Shared page header text is updated from `MANILA` to `MANILA MODEL SEARCH`.
-
-## Manila Model Search Carousel V13 (Borderless Hero + CTA Images)
-- Source folder: `marketing/manila-model-search-carousel`
-- Render command:
-  - `node marketing/manila-model-search-carousel/render-v13.mjs`
-- Output folder:
-  - `marketing/manila-model-search-carousel/output-v13`
-- Notes:
-  - Same layout as V12.
-  - Page 1 and page 5 remove the white framed image treatment in favor of larger borderless image blocks.
-
-## Manila Model Search Carousel V14 (Larger Page 1 + 5 Images)
-- Source folder: `marketing/manila-model-search-carousel`
-- Render command:
-  - `node marketing/manila-model-search-carousel/render-v14.mjs`
-- Output folder:
-  - `marketing/manila-model-search-carousel/output-v14`
-- Notes:
-  - Same layout as V13.
-  - Page 1 and page 5 increase image size further and switch to `cover` framing so the photos read as larger, cleaner image blocks with no bordered look.
-
-## Manila Model Search Carousel Reel v70a (Subway/Transit Map)
-- Script: `marketing/manila-model-search-carousel/reels-final/render-70a.mjs`
-- Output: `marketing/manila-model-search-carousel/reels-final/output-70a/manila-subway-v70a.mp4`
-- Copied to: `marketing/manila-model-search-carousel/reels-final/reels/manila-subway-v70a.mp4`
-- Render command: `node marketing/manila-model-search-carousel/reels-final/render-70a.mjs`
-- Notes:
-  - 1080x1920, 30fps, 24s duration (720 frames). Frame-capture approach with Playwright.
-  - Photos from `/Volumes/PortableSSD/Exports/film scans/` (8 film scan filenames starting with 000040850xxx.jpg).
-  - Transit map concept: red main line (#E53935) draws itself down screen, stopping at 8 stations.
-  - Each station pops a photo card (scaleX expand) and a solid station dot; train rect moves along the line.
-  - 12–14s: map zooms out to 0.75x to show the full line.
-  - 14–18s: blue branch line (#1E88E5) branches from STATION 08 with CTA stops: DM / PICK YOUR DATE / SHOW UP.
-  - 18–22s: dark CTA board ("@madebyaidan · Transfer to Instagram · Fare: FREE · Now Boarding").
-  - 22–24s: train pulses at terminus, white flash, hold.
-
-## Story Carousel Image Ads (5 Themes x 3 Locations)
-- Source folder: `marketing/story-carousels`
-- Render command:
-  - `node marketing/story-carousels/render-story-carousels.mjs`
-- Output folder:
-  - `marketing/story-carousels/output/{theme}/{location}/01-hook.png ... 05-cta.png`
-- Themes: `vhs`, `photo-booth`, `slot-machine`, `bts-contact-sheet`, `tetris`
-- Locations: `manila`, `antipolo`, `subic`
-- Notes:
-  - Generates 75 total 1080x1920 PNG story carousel slides (5 themes x 3 locations x 5 slides each).
-  - Uses Playwright screenshot approach (same pattern as `render-v4.mjs`).
-  - Photos sourced from `public/images/large/manila-gallery-*.jpg`.
-  - Each carousel follows a 5-slide flow: hook -> proof -> how -> what -> cta.
-  - Location name appears on hook and CTA slides; middle slides are shared across location variants.
-  - Typography: Georgia serif for headlines, system sans-serif for body, Courier New monospace for VHS/Tetris themes.
-
-## BTS Bridge Reels — Concept Set 85 (a–e) — Video Reels (MP4)
-- Source folder: `marketing/bts-reels`
-- Render command: `node marketing/bts-reels/render-85.mjs [a b c d e]` (no args = all five)
-- Output: `marketing/bts-reels/output-85{x}/85{x}-{name}.mp4`, copied to
-  `marketing/bts-reels/reels/` and the shared `marketing/manila-model-search-carousel/reels-final/reels/`.
-- Inputs (kept LOCAL, gitignored — not in repo):
-  - BTS clip: `marketing/bts-reels/src/bts-source.mp4` (copied from
-    `/Volumes/PortableSSD/VID_20260607_013526.mp4` — rope-bridge BTS, 22.4s, 1080x1920).
-  - 10 film-scan portraits in `marketing/bts-reels/photos/` (from
-    `/Volumes/PortableSSD/Exports/ray selects/`).
-  - Fonts in `marketing/bts-reels/fonts/` (Bebas Neue, Anton, Montserrat — committed).
-- The five reels intercut the BTS bridge clip with the portraits (BTS→reveal format). The funny
-  original audio ("how many people have died on this?" → "hopefully it's zero") is the spine of
-  every cut, timed so the punchline lands on a photo reveal. See `PLAN.md` + `research/` + `captions/`.
-- Pipeline (all in `render-85.mjs`, ffmpeg-driven): uniform 1080x1920/30fps silent segments
-  (BTS trims, contain-on-blur Ken-Burns photos, freeze-frame zoom-punch, white-flash) → concat →
-  audio built from original-audio spans (loudnorm −14 LUFS, 48kHz AAC) → final mux + burned
-  drawtext overlays (hooks/captions/labels/CTA).
-- Specs: 1080x1920, 30fps, H.264 + AAC, +faststart. Text in safe zones; burned text is
-  emoji-free (ffmpeg drawtext has no color-emoji) — emoji live in `captions/captions.md`.
-- Gotchas:
-  - Prefer `/opt/homebrew/opt/ffmpeg-full/bin/ffmpeg` (the script auto-detects it).
-  - Long single-line captions overflow 1080px ~size 50+; use the `CAP2()` two-line helper.
-  - `buildAudio` pads to video length with silence — make audio spans cover the full video or
-    the tail plays silent (fixed in 85b with a trailing-laugh span).
-  - Photos are positive film scans: shown contain-on-blur, NOT recropped or regraded.
-
-## BTS Bridge Reels — Concept Set 86 (editorial redo of 85)
-- Render command: `node marketing/bts-reels/render-86.mjs [a b c d e]`
-- Output: `marketing/bts-reels/output-86{x}/86{x}-{name}.mp4`, copied to `reels/` + shared
-  `reels-final/reels/`. **86 supersedes 85** (85 was rejected as cheap/off-brand; 85 mp4s moved
-  to `reels/_archive-v85/`, not deleted).
-- What changed vs 85 (the fixes that made them not-garbage):
-  - **Full-frame photos** (cover-crop to 1080x1920 at a per-photo `FX` focus point) instead of
-    blurred-bar contain. Photos still pristine (no regrade); `FX` keeps each subject in frame.
-  - **Filmic grade + vignette on the BTS phone clip** (`GRADE` const: eq/colorbalance/vignette)
-    so the digital clip matches the warm film scans. NO synthetic `noise` grain — it exploded
-    the bitrate to 100MB+ and the scans already carry grain.
-  - **Minimal editorial type**: Inter Light hooks / Playfair Display italic / Inter Medium
-    captions, white with a soft shadow + faint scrim box. No yellow, no heavy borders, no ratings.
-  - **Clean cuts** + global fade in/out; no white-flash transitions; photos held static (lookbook).
-- Encoder: `-crf 20 -maxrate 12M -bufsize 24M`, preset medium → ~8–18MB per reel (IG-friendly).
-- The 5 concepts: 86a same-evening (17.8s), 86b for-one-photo (20.8s), 86c what-it-took (12.3s),
-  86d the-gallery / quiet portfolio montage (18.8s), 86e seamless loop (9.4s).
-- Gotcha: the animated-crop "push" (gentle zoom on stills) was flaky and is disabled — photos
-  render static. If you re-enable motion, supersample first and test the crop expression.
-
-## BTS Bridge Reels — Concept Set 87 (uncut clip + scouting intro + results)
-- Render command: `node marketing/bts-reels/render-87.mjs [a b c d]`
-- Output: `output-87{x}/87{x}-{name}.mp4` → copied to `reels/` + shared `reels-final/reels/`.
-- Structure (per user direction): **[front tower clip + beginning "tag"] → [the 22.4s bridge clip
-  played COMPLETELY UNCUT, with small but very-readable dialogue captions] → [results photos,
-  uncaptioned].** The 4 variations differ ONLY in the beginning tag (setup→payoff):
-  - 87a "looking for shoot locations…" → "ok perfect."
-  - 87b "POV: you find the perfect location" → "then you see how to get the shot"
-  - 87c "everyone shoots the same 3 spots…" → "so we found this one."
-  - 87d (serif) "me: i want somewhere with a view" → "the view:"
-- Front clip: `/Volumes/PortableSSD/VID_20260323_165127.mp4` (2.7s landscape, same tower) copied
-  to `src/front-clip.mp4`. Shown FULL-FRAME (cover-crop keeps the centered tower → matches the
-  bridge clip; chosen over letterbox/blur per the no-cheap-bars preference).
-- Captions: the bridge dialogue ("don't look down" / "how many people have died on this?" /
-  "don't say that!" / "hopefully it's zero"), Inter SemiBold ~46px, lower-third, subtle scrim —
-  small but high-contrast. Timed to the bridge's NATIVE times + the front-clip offset.
-- Audio: native front-clip audio + full bridge audio (kept in sync since nothing is cut), then a
-  soft looped ambient bed under the results, faded out; loudnorm −14 LUFS. No music (rights-clean).
-- Results: 4 full-frame heroes (22, 37, 26, 10-2), uncaptioned, 2.1s each. Total ~33.5s, ~36MB.
-- Per user note: results carry NO captions and there is NO end CTA (the post caption carries it).
+- BTS clip: `marketing/bts-reels/src/bts-source.mp4` (copied from `/Volumes/PortableSSD/VID_20260607_013526.mp4`)
+- Front clip (87): `marketing/bts-reels/src/front-clip.mp4` (copied from `/Volumes/PortableSSD/VID_20260323_165127.mp4`)
+- 10 film-scan portraits: `marketing/bts-reels/photos/` (from `/Volumes/PortableSSD/Exports/ray selects/`)
+- Fonts (committed): `marketing/bts-reels/fonts/` (Bebas Neue, Anton, Montserrat)
+- Subway reel photos: 8 film scan filenames starting with `000040850xxx.jpg` from `/Volumes/PortableSSD/Exports/film scans/`
