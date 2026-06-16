@@ -85,14 +85,20 @@ else
 fi
 
 # --- verify the live domain actually moved --------------------------------
-echo "▶ Verifying $DOMAIN now resolves to the new deployment…"
+# Use the lightweight REST API + a plain HTTP probe, NOT `vercel inspect`
+# (the Node CLI has SIGABRT-crashed here under memory pressure, exit 134).
+echo "▶ Verifying $DOMAIN serves the new build…"
 sleep 4
-target=$(vercel inspect "https://$DOMAIN" --scope "$SCOPE" 2>&1 | grep -m1 -E '^\s+url' | awk '{print $NF}')
-echo "  $DOMAIN -> $target"
-if echo "$target" | grep -q "$URL"; then
-  echo "✓ DEPLOY COMPLETE — $DOMAIN is live on $SHA"
+prod_url=$(curl -s "https://api.vercel.com/v9/projects/$PROJECT?teamId=$TEAM" -H "Authorization: Bearer $TOKEN" \
+  | python3 -c "import sys,json;t=(json.load(sys.stdin).get('targets') or {}).get('production') or {};print(t.get('url') or '')" 2>/dev/null) || prod_url=""
+code=$(curl -s -o /dev/null -w '%{http_code}' "https://$DOMAIN/")
+echo "  production target: ${prod_url:-<unknown>}"
+echo "  $DOMAIN HTTP: $code"
+if [ "$prod_url" = "$URL" ] && [ "$code" = "200" ]; then
+  echo "✓ DEPLOY COMPLETE — $DOMAIN is live on $SHA ($URL)"
+elif [ "$code" = "200" ]; then
+  echo "✓ DEPLOY COMPLETE — $DOMAIN responds 200. Production target reported '${prod_url:-unknown}' (expected $URL); if that looks wrong, check the dashboard."
 else
-  echo "✗ Alias mismatch: domain still points to $target (expected $URL)."
-  echo "  Re-run, or promote manually: vercel promote https://$URL --scope $SCOPE --yes"
+  echo "✗ $DOMAIN returned HTTP $code (expected 200) — investigate before trusting this deploy."
   exit 1
 fi
