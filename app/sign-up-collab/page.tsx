@@ -3,7 +3,7 @@ import SignUpFormCollab from '@/components/SignUpFormCollab'
 export const metadata = {
   title: 'Model Collaboration — Kathmandu',
   description:
-    'Open for model collaborations in Kathmandu. TFP — we both build our portfolios. DM or sign up.'
+    'Open for model collaborations in Kathmandu. Pitch a unique cultural concept — a homestay, a festival, traditional dress — or go fashion editorial. TFP, we both build our portfolios.'
 }
 
 export default function SignUpCollabPage() {
