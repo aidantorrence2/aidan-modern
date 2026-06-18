@@ -50,7 +50,7 @@ const preferenceOptions = [
   { id: 'Tea house / caf\u00e9', desc: 'Cozy, intimate, warm interiors' },
   { id: 'Family or elders', desc: 'Generations, connection, storytelling' },
   { id: 'A craft or trade', desc: 'Hands at work, a skill, your world' },
-  { id: 'Fashion editorial', desc: 'Dramatic, magazine-style \u2014 the default', default: true },
+  { id: 'Fashion editorial', desc: 'Dramatic, magazine-style' },
 ]
 
 const heroImage = '/images/moodboards/editorial.jpg'
@@ -58,7 +58,7 @@ const heroImage = '/images/moodboards/editorial.jpg'
 export default function SignUpFormCollab() {
   const [state, setState] = useState<State | null>(null)
   const [location, setLocation] = useState('')
-  const [vibes, setVibes] = useState<string[]>([])
+  const [vibes, setVibes] = useState<string[]>(['Fashion editorial'])
   const [idea, setIdea] = useState('')
   const [whatsapp, setWhatsapp] = useState('')
   const [instagram, setInstagram] = useState('')
@@ -259,7 +259,7 @@ export default function SignUpFormCollab() {
 
       <div className="space-y-5">
         <h1 className="font-display text-3xl font-semibold leading-[1.05] text-white sm:text-4xl" style={{ fontFamily: 'Georgia, serif' }}>
-          Let&apos;s Create Something Unique &mdash; Free Collab Shoot
+          Sign Up for Free Collab Photo Shoot
         </h1>
         <p className="text-base leading-relaxed text-white/50">
           Fill out the form below and I&apos;ll send you all the details &mdash; timing, location ideas, what to wear, and next steps.
@@ -332,9 +332,6 @@ export default function SignUpFormCollab() {
                     : 'border-white/10 bg-white/[0.03] hover:border-white/25'
                 }`}
               >
-                {opt.default && !vibes.includes(opt.id) && (
-                  <span className="absolute right-2 top-2 rounded-full bg-white/10 px-1.5 py-0.5 text-[9px] font-semibold uppercase tracking-wider text-white/40">Default</span>
-                )}
                 <div className={`text-sm font-semibold ${vibes.includes(opt.id) ? 'text-emerald-300' : 'text-white'}`}>{opt.id}</div>
                 <div className="mt-0.5 text-xs text-white/40">{opt.desc}</div>
               </button>
