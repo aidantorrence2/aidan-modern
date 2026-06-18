@@ -39,18 +39,27 @@ function resizeImage(dataUrl: string, maxBytes: number): Promise<string> {
   })
 }
 
-const experienceOptions = [
-  { id: 'Professional model', desc: 'Agency or freelance, experienced' },
-  { id: 'Some experience', desc: 'Done a few shoots before' },
-  { id: 'No experience', desc: 'First time \u2014 totally fine, I direct everything' },
+// Cultural concept sparks \u2014 tap to drop one into your pitch and build from there.
+// These are meant to get people brainstorming something unique to their world.
+const ideaPrompts = [
+  'Homestay / local life',
+  'Festival or ceremony',
+  'Traditional dress',
+  'Temple or monastery',
+  'Himalayan backdrop',
+  'Local market',
+  'Tea house / caf\u00e9',
+  'Family or elders',
+  'A craft or trade',
+  'Street food',
 ]
 
 const vibeOptions = [
-  { id: 'Editorial & fashion', desc: 'Dramatic landscapes, fashion outfits, like from a magazine' },
+  { id: 'Fashion editorial', desc: 'Dramatic, magazine-style \u2014 the default if you\u2019re unsure', default: true },
+  { id: 'Cultural / documentary', desc: 'Real moments, traditions, a sense of place' },
   { id: 'Street & urban', desc: 'Gritty, real, in-the-moment' },
   { id: 'Nature / outdoors', desc: 'Mountains, temples, hills, golden hour, soft light' },
   { id: 'Indoor / studio', desc: 'White walls, clean backdrops, modern and sophisticated' },
-  { id: 'No preference', desc: 'Let\u2019s figure it out together' },
 ]
 
 const heroImage = '/images/moodboards/editorial.jpg'
@@ -58,10 +67,8 @@ const heroImage = '/images/moodboards/editorial.jpg'
 export default function SignUpFormCollab() {
   const [state, setState] = useState<State | null>(null)
   const [location, setLocation] = useState('')
-  const [experience, setExperience] = useState('')
   const [vibes, setVibes] = useState<string[]>([])
-  const [availability, setAvailability] = useState('')
-  const [notes, setNotes] = useState('')
+  const [idea, setIdea] = useState('')
   const [whatsapp, setWhatsapp] = useState('')
   const [instagram, setInstagram] = useState('')
   const [photos, setPhotos] = useState<string[]>([])
@@ -71,7 +78,7 @@ export default function SignUpFormCollab() {
   const whatsappRef = useRef<HTMLInputElement>(null)
   const instagramRef = useRef<HTMLInputElement>(null)
   const photoRef = useRef<HTMLDivElement>(null)
-  const expRef = useRef<HTMLFieldSetElement>(null)
+  const ideaRef = useRef<HTMLTextAreaElement>(null)
 
   function clearStatus() {
     if (state) setState(null)
@@ -80,6 +87,18 @@ export default function SignUpFormCollab() {
   function toggleVibe(v: string) {
     setVibes(prev => prev.includes(v) ? prev.filter(x => x !== v) : [...prev, v])
     clearStatus()
+  }
+
+  // Drop a culture spark into the pitch box so people can riff on it rather than
+  // start from a blank page. We add it once, then hand focus back to the textarea.
+  function addIdea(prompt: string) {
+    setIdea(prev => {
+      const parts = prev.split(',').map(s => s.trim()).filter(Boolean)
+      if (parts.some(p => p.toLowerCase() === prompt.toLowerCase())) return prev
+      return prev ? `${prev.replace(/[\s,]+$/, '')}, ${prompt}` : prompt
+    })
+    clearStatus()
+    requestAnimationFrame(() => ideaRef.current?.focus())
   }
 
   async function handlePhotos(e: React.ChangeEvent<HTMLInputElement>) {
@@ -162,10 +181,8 @@ export default function SignUpFormCollab() {
       const moodboard = [
         'Collab sign-up',
         ...(location.trim() ? ['Location: ' + location.trim()] : []),
-        'Experience: ' + experience,
-        ...(vibes.length > 0 ? ['Vibes: ' + vibes.join(', ')] : []),
-        ...(availability.trim() ? ['Availability: ' + availability.trim()] : []),
-        ...(notes.trim() ? ['Notes: ' + notes.trim()] : []),
+        ...(idea.trim() ? ['Idea: ' + idea.trim()] : []),
+        ...(vibes.length > 0 ? ['Style: ' + vibes.join(', ')] : []),
         'Instagram: ' + instagramTrim,
       ]
       const res = await fetch('/api/sign-up', {
@@ -220,11 +237,17 @@ export default function SignUpFormCollab() {
             </div>
             {vibes.length > 0 && (
               <div className="space-y-1">
-                <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-white/30">Vibes</p>
+                <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-white/30">Style</p>
                 <p className="text-sm font-medium text-white">{vibes.join(', ')}</p>
               </div>
             )}
           </div>
+          {idea.trim() && (
+            <div className="space-y-1">
+              <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-white/30">Your concept</p>
+              <p className="text-sm font-medium leading-relaxed text-white">{idea.trim()}</p>
+            </div>
+          )}
           <div className="h-px bg-white/[0.06]" />
           <div className="space-y-3">
             <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-white/30">What to expect</p>
@@ -258,10 +281,10 @@ export default function SignUpFormCollab() {
 
       <div className="space-y-5">
         <h1 className="font-display text-3xl font-semibold leading-[1.05] text-white sm:text-4xl" style={{ fontFamily: 'Georgia, serif' }}>
-          Sign Up for Free Collab Photo Shoot
+          Let&apos;s Create Something Unique &mdash; Free Collab Shoot
         </h1>
         <p className="text-base leading-relaxed text-white/50">
-          Fill out the form below and I&apos;ll send you all the details &mdash; timing, location ideas, what to wear, and next steps.
+          This is an open invitation to dream up something original together &mdash; a homestay, a festival, traditional dress, a hidden corner of your culture. Pitch me your idea below, and I&apos;ll send you all the details. No idea yet? We&apos;ll shoot a fashion editorial.
         </p>
 
         <div className="space-y-2.5">
@@ -314,11 +337,43 @@ export default function SignUpFormCollab() {
           />
         </div>
 
-        {/* Vibes */}
-        <fieldset className="space-y-2.5">
+        {/* Pitch your idea — the open-form heart of the collab */}
+        <div className="space-y-3 rounded-2xl border border-emerald-400/20 bg-emerald-400/[0.04] p-4">
           <div className="flex items-center gap-2">
             <span className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-500/20 text-[10px] font-bold text-emerald-400">2</span>
-            <legend className="text-sm font-medium text-white/80">What kind of shoot interests you? <span className="text-xs text-white/30">(pick any)</span></legend>
+            <label htmlFor="collab-idea" className="text-sm font-medium text-white/80">Pitch your concept <span className="text-xs text-white/30">(the fun part)</span></label>
+          </div>
+          <p className="text-xs leading-relaxed text-white/40">
+            What story do you want to tell? The more personal and cultural, the better &mdash; a homestay, a ceremony, traditional dress, your grandmother&apos;s kitchen. Tap an idea to start, or write your own.
+          </p>
+          <div className="flex flex-wrap gap-1.5">
+            {ideaPrompts.map(p => (
+              <button
+                key={p}
+                type="button"
+                onClick={() => addIdea(p)}
+                className="rounded-full border border-white/15 bg-white/5 px-3 py-1.5 text-xs text-white/70 transition hover:border-emerald-400/50 hover:text-emerald-300"
+              >
+                + {p}
+              </button>
+            ))}
+          </div>
+          <textarea
+            id="collab-idea"
+            ref={ideaRef}
+            value={idea}
+            onChange={e => { setIdea(e.target.value); clearStatus() }}
+            rows={4}
+            className="w-full resize-none rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-white/30 outline-none transition focus:border-emerald-400 focus:ring-2 focus:ring-emerald-400/30"
+            placeholder="Describe your idea — a concept, a location, a feeling, references... Anything goes. Leave blank and we'll do a fashion editorial."
+          />
+        </div>
+
+        {/* Style direction — optional, fashion editorial is the default */}
+        <fieldset className="space-y-2.5">
+          <div className="flex items-center gap-2">
+            <span className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-500/20 text-[10px] font-bold text-emerald-400">3</span>
+            <legend className="text-sm font-medium text-white/80">Style direction <span className="text-xs text-white/30">(optional — pick any)</span></legend>
           </div>
           <div className="grid grid-cols-2 gap-2">
             {vibeOptions.map(opt => (
@@ -326,33 +381,21 @@ export default function SignUpFormCollab() {
                 key={opt.id}
                 type="button"
                 onClick={() => toggleVibe(opt.id)}
-                className={`rounded-xl border px-4 py-3 text-left transition-all ${
+                className={`relative rounded-xl border px-4 py-3 text-left transition-all ${
                   vibes.includes(opt.id)
                     ? 'border-emerald-400 bg-emerald-400/10 ring-2 ring-emerald-400/30'
                     : 'border-white/10 bg-white/[0.03] hover:border-white/25'
                 }`}
               >
+                {opt.default && !vibes.includes(opt.id) && (
+                  <span className="absolute right-2 top-2 rounded-full bg-white/10 px-1.5 py-0.5 text-[9px] font-semibold uppercase tracking-wider text-white/40">Default</span>
+                )}
                 <div className={`text-sm font-semibold ${vibes.includes(opt.id) ? 'text-emerald-300' : 'text-white'}`}>{opt.id}</div>
                 <div className="mt-0.5 text-xs text-white/40">{opt.desc}</div>
               </button>
             ))}
           </div>
         </fieldset>
-
-        {/* Notes */}
-        <div className="space-y-2">
-          <div className="flex items-center gap-2">
-            <span className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-500/20 text-[10px] font-bold text-emerald-400">3</span>
-            <label className="text-sm font-medium text-white/80">Anything else? <span className="text-xs text-white/30">(optional)</span></label>
-          </div>
-          <textarea
-            value={notes}
-            onChange={e => { setNotes(e.target.value); clearStatus() }}
-            rows={3}
-            className="w-full resize-none rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-white/30 outline-none transition focus:border-emerald-400 focus:ring-2 focus:ring-emerald-400/30"
-            placeholder="Inspo, references, ideas, anything..."
-          />
-        </div>
 
         {/* WhatsApp */}
         <div className="space-y-2">
