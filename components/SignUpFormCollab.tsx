@@ -39,27 +39,18 @@ function resizeImage(dataUrl: string, maxBytes: number): Promise<string> {
   })
 }
 
-// Cultural concept sparks \u2014 tap to drop one into your pitch and build from there.
-// These are meant to get people brainstorming something unique to their world.
-const ideaPrompts = [
-  'Homestay / local life',
-  'Festival or ceremony',
-  'Traditional dress',
-  'Temple or monastery',
-  'Himalayan backdrop',
-  'Local market',
-  'Tea house / caf\u00e9',
-  'Family or elders',
-  'A craft or trade',
-  'Street food',
-]
-
-const vibeOptions = [
-  { id: 'Fashion editorial', desc: 'Dramatic, magazine-style \u2014 the default if you\u2019re unsure', default: true },
-  { id: 'Cultural / documentary', desc: 'Real moments, traditions, a sense of place' },
-  { id: 'Street & urban', desc: 'Gritty, real, in-the-moment' },
-  { id: 'Nature / outdoors', desc: 'Mountains, temples, hills, golden hour, soft light' },
-  { id: 'Indoor / studio', desc: 'White walls, clean backdrops, modern and sophisticated' },
+// One question: tap any concepts you'd like to explore \u2014 culture-driven ideas
+// are the most fun \u2014 or pick nothing and we'll shoot a fashion editorial.
+const preferenceOptions = [
+  { id: 'Homestay / local life', desc: 'Everyday life, where you live, real moments' },
+  { id: 'Streets and markets', desc: 'Gritty, real, in-the-moment city life' },
+  { id: 'Festival or ceremony', desc: 'Color, tradition, a moment that matters' },
+  { id: 'Traditional dress', desc: 'Heritage, textiles, cultural identity' },
+  { id: 'Temple or monastery', desc: 'Sacred spaces, quiet, soft light' },
+  { id: 'Tea house / caf\u00e9', desc: 'Cozy, intimate, warm interiors' },
+  { id: 'Family or elders', desc: 'Generations, connection, storytelling' },
+  { id: 'A craft or trade', desc: 'Hands at work, a skill, your world' },
+  { id: 'Fashion editorial', desc: 'Dramatic, magazine-style \u2014 the default', default: true },
 ]
 
 const heroImage = '/images/moodboards/editorial.jpg'
@@ -78,7 +69,6 @@ export default function SignUpFormCollab() {
   const whatsappRef = useRef<HTMLInputElement>(null)
   const instagramRef = useRef<HTMLInputElement>(null)
   const photoRef = useRef<HTMLDivElement>(null)
-  const ideaRef = useRef<HTMLTextAreaElement>(null)
 
   function clearStatus() {
     if (state) setState(null)
@@ -87,18 +77,6 @@ export default function SignUpFormCollab() {
   function toggleVibe(v: string) {
     setVibes(prev => prev.includes(v) ? prev.filter(x => x !== v) : [...prev, v])
     clearStatus()
-  }
-
-  // Drop a culture spark into the pitch box so people can riff on it rather than
-  // start from a blank page. We add it once, then hand focus back to the textarea.
-  function addIdea(prompt: string) {
-    setIdea(prev => {
-      const parts = prev.split(',').map(s => s.trim()).filter(Boolean)
-      if (parts.some(p => p.toLowerCase() === prompt.toLowerCase())) return prev
-      return prev ? `${prev.replace(/[\s,]+$/, '')}, ${prompt}` : prompt
-    })
-    clearStatus()
-    requestAnimationFrame(() => ideaRef.current?.focus())
   }
 
   async function handlePhotos(e: React.ChangeEvent<HTMLInputElement>) {
@@ -181,8 +159,8 @@ export default function SignUpFormCollab() {
       const moodboard = [
         'Collab sign-up',
         ...(location.trim() ? ['Location: ' + location.trim()] : []),
-        ...(idea.trim() ? ['Idea: ' + idea.trim()] : []),
-        ...(vibes.length > 0 ? ['Style: ' + vibes.join(', ')] : []),
+        ...(vibes.length > 0 ? ['Preference: ' + vibes.join(', ')] : []),
+        ...(idea.trim() ? ['Notes: ' + idea.trim()] : []),
         'Instagram: ' + instagramTrim,
       ]
       const res = await fetch('/api/sign-up', {
@@ -237,14 +215,14 @@ export default function SignUpFormCollab() {
             </div>
             {vibes.length > 0 && (
               <div className="space-y-1">
-                <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-white/30">Style</p>
+                <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-white/30">Preference</p>
                 <p className="text-sm font-medium text-white">{vibes.join(', ')}</p>
               </div>
             )}
           </div>
           {idea.trim() && (
             <div className="space-y-1">
-              <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-white/30">Your concept</p>
+              <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-white/30">Notes</p>
               <p className="text-sm font-medium leading-relaxed text-white">{idea.trim()}</p>
             </div>
           )}
@@ -284,7 +262,7 @@ export default function SignUpFormCollab() {
           Let&apos;s Create Something Unique &mdash; Free Collab Shoot
         </h1>
         <p className="text-base leading-relaxed text-white/50">
-          This is an open invitation to dream up something original together &mdash; a homestay, a festival, traditional dress, a hidden corner of your culture. Pitch me your idea below, and I&apos;ll send you all the details. No idea yet? We&apos;ll shoot a fashion editorial.
+          Fill out the form below and I&apos;ll send you all the details &mdash; timing, location ideas, what to wear, and next steps.
         </p>
 
         <div className="space-y-2.5">
@@ -295,10 +273,6 @@ export default function SignUpFormCollab() {
               '/images/proof/000019-6.jpg',
               '/images/proof/000038-4.jpg',
               '/images/proof/000041.jpg',
-              '/images/proof/000053-5.jpg',
-              '/images/proof/DSC_0075.jpg',
-              '/images/proof/DSC_0321.jpg',
-              '/images/proof/DSC_0526.jpg',
             ].map((src, i) => (
               <div key={i} className="relative overflow-hidden rounded-md aspect-[3/4]">
                 <NextImage
@@ -337,46 +311,17 @@ export default function SignUpFormCollab() {
           />
         </div>
 
-        {/* Pitch your idea — the open-form heart of the collab */}
-        <div className="space-y-3 rounded-2xl border border-emerald-400/20 bg-emerald-400/[0.04] p-4">
-          <div className="flex items-center gap-2">
-            <span className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-500/20 text-[10px] font-bold text-emerald-400">2</span>
-            <label htmlFor="collab-idea" className="text-sm font-medium text-white/80">Pitch your concept <span className="text-xs text-white/30">(the fun part)</span></label>
-          </div>
-          <p className="text-xs leading-relaxed text-white/40">
-            What story do you want to tell? The more personal and cultural, the better &mdash; a homestay, a ceremony, traditional dress, your grandmother&apos;s kitchen. Tap an idea to start, or write your own.
-          </p>
-          <div className="flex flex-wrap gap-1.5">
-            {ideaPrompts.map(p => (
-              <button
-                key={p}
-                type="button"
-                onClick={() => addIdea(p)}
-                className="rounded-full border border-white/15 bg-white/5 px-3 py-1.5 text-xs text-white/70 transition hover:border-emerald-400/50 hover:text-emerald-300"
-              >
-                + {p}
-              </button>
-            ))}
-          </div>
-          <textarea
-            id="collab-idea"
-            ref={ideaRef}
-            value={idea}
-            onChange={e => { setIdea(e.target.value); clearStatus() }}
-            rows={4}
-            className="w-full resize-none rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-white/30 outline-none transition focus:border-emerald-400 focus:ring-2 focus:ring-emerald-400/30"
-            placeholder="Describe your idea — a concept, a location, a feeling, references... Anything goes. Leave blank and we'll do a fashion editorial."
-          />
-        </div>
-
-        {/* Style direction — optional, fashion editorial is the default */}
+        {/* Preference — selectable concepts, fashion editorial is the default */}
         <fieldset className="space-y-2.5">
           <div className="flex items-center gap-2">
-            <span className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-500/20 text-[10px] font-bold text-emerald-400">3</span>
-            <legend className="text-sm font-medium text-white/80">Style direction <span className="text-xs text-white/30">(optional — pick any)</span></legend>
+            <span className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-500/20 text-[10px] font-bold text-emerald-400">2</span>
+            <legend className="text-sm font-medium text-white/80">Do you have a preference? <span className="text-xs text-white/30">(optional — pick any)</span></legend>
           </div>
+          <p className="text-xs leading-relaxed text-white/40">
+            Tap any concepts you&apos;d like to explore &mdash; the more personal and cultural, the better. No preference? We&apos;ll shoot a fashion editorial.
+          </p>
           <div className="grid grid-cols-2 gap-2">
-            {vibeOptions.map(opt => (
+            {preferenceOptions.map(opt => (
               <button
                 key={opt.id}
                 type="button"
@@ -396,6 +341,22 @@ export default function SignUpFormCollab() {
             ))}
           </div>
         </fieldset>
+
+        {/* Notes — open space for their own idea */}
+        <div className="space-y-2">
+          <div className="flex items-center gap-2">
+            <span className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-500/20 text-[10px] font-bold text-emerald-400">3</span>
+            <label htmlFor="collab-idea" className="text-sm font-medium text-white/80">Anything else? <span className="text-xs text-white/30">(optional)</span></label>
+          </div>
+          <textarea
+            id="collab-idea"
+            value={idea}
+            onChange={e => { setIdea(e.target.value); clearStatus() }}
+            rows={3}
+            className="w-full resize-none rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-white/30 outline-none transition focus:border-emerald-400 focus:ring-2 focus:ring-emerald-400/30"
+            placeholder="Your own idea, inspo, references, anything..."
+          />
+        </div>
 
         {/* WhatsApp */}
         <div className="space-y-2">
