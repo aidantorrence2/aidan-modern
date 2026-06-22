@@ -41,8 +41,9 @@ function resizeImage(dataUrl: string, maxBytes: number): Promise<string> {
 
 // Concept tiles. The redesign collapsed the seven low-traction culture/personal
 // options into a single "Culture & everyday life" tile and re-added Nature and
-// Studio (proven demand from the prior form). "No preference" is a separate
-// full-width chip below the grid.
+// Studio (proven demand from the prior form). "No preference" sits in the grid
+// as a regular tile but is mutually exclusive with the others.
+const NO_PREFERENCE = 'No preference'
 type ConceptOption = { id: string; desc: string }
 const preferenceOptions: ConceptOption[] = [
   { id: 'Fashion editorial', desc: 'Dramatic, magazine-style' },
@@ -50,9 +51,9 @@ const preferenceOptions: ConceptOption[] = [
   { id: 'Nature & outdoors', desc: 'Lakes, hills, greenery, golden light' },
   { id: 'Studio & indoor', desc: 'Cozy interiors, caf\u00e9s, controlled light' },
   { id: 'Culture & everyday life', desc: 'Tradition, dress, temples, real moments' },
+  { id: NO_PREFERENCE, desc: "You direct it \u2014 I'll design the shoot" },
 ]
 
-const NO_PREFERENCE = 'No preference'
 const locationChips = ['Pokhara', 'Kathmandu', 'Lalitpur']
 
 const heroImage = '/images/moodboards/editorial.jpg'
@@ -342,7 +343,7 @@ export default function SignUpFormCollab() {
         <fieldset className="space-y-2.5">
           <div className="flex items-center gap-2">
             <span className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-500/20 text-[10px] font-bold text-emerald-400">2</span>
-            <legend className="text-sm font-medium text-white/80">Do you have a preference? <span className="text-xs text-white/30">(optional — pick any)</span></legend>
+            <legend className="text-sm font-medium text-white/80">Choose a shoot concept <span className="text-xs text-white/30">(optional — pick any)</span></legend>
           </div>
           <p className="text-xs leading-relaxed text-white/40">
             Tap any that speak to you &mdash; mix as many as you like. Not sure? Pick &ldquo;No preference&rdquo; and I&apos;ll design it for you.
@@ -365,17 +366,6 @@ export default function SignUpFormCollab() {
               )
             })}
           </div>
-          <button
-            type="button"
-            onClick={() => toggleVibe(NO_PREFERENCE)}
-            className={`w-full rounded-xl border px-4 py-3 text-center text-sm font-semibold transition-all ${
-              vibes.includes(NO_PREFERENCE)
-                ? 'border-emerald-400 bg-emerald-400/10 text-emerald-300 ring-2 ring-emerald-400/30'
-                : 'border-white/10 bg-white/[0.03] text-white/60 hover:border-white/25 hover:text-white/80'
-            }`}
-          >
-            No preference &mdash; you direct it
-          </button>
         </fieldset>
 
         {/* Notes — open space for their own idea */}
