@@ -39,26 +39,31 @@ function resizeImage(dataUrl: string, maxBytes: number): Promise<string> {
   })
 }
 
-// One question: tap any concepts you'd like to explore \u2014 culture-driven ideas
-// are the most fun \u2014 or pick nothing and we'll shoot a fashion editorial.
-const preferenceOptions = [
-  { id: 'Homestay / local life', desc: 'Everyday life, where you live, real moments' },
-  { id: 'Streets and markets', desc: 'Gritty, real, in-the-moment city life' },
-  { id: 'Festival or ceremony', desc: 'Color, tradition, a moment that matters' },
-  { id: 'Traditional dress', desc: 'Heritage, textiles, cultural identity' },
-  { id: 'Temple or monastery', desc: 'Sacred spaces, quiet, soft light' },
-  { id: 'Tea house / caf\u00e9', desc: 'Cozy, intimate, warm interiors' },
-  { id: 'Family or elders', desc: 'Generations, connection, storytelling' },
-  { id: 'A craft or trade', desc: 'Hands at work, a skill, your world' },
+// Concept tiles. The redesign collapsed the seven low-traction culture/personal
+// options into a single "Culture & everyday life" tile and re-added Nature and
+// Studio (proven demand from the prior form). "No preference" is a separate
+// full-width chip below the grid.
+type ConceptOption = { id: string; desc: string }
+const preferenceOptions: ConceptOption[] = [
   { id: 'Fashion editorial', desc: 'Dramatic, magazine-style' },
+  { id: 'Streets & markets', desc: 'Gritty, real city life' },
+  { id: 'Nature & outdoors', desc: 'Lakes, hills, greenery, golden light' },
+  { id: 'Studio & indoor', desc: 'Cozy interiors, caf\u00e9s, controlled light' },
+  { id: 'Culture & everyday life', desc: 'Tradition, dress, temples, real moments' },
 ]
+
+const NO_PREFERENCE = 'No preference'
+const locationChips = ['Pokhara', 'Kathmandu', 'Lalitpur']
 
 const heroImage = '/images/moodboards/editorial.jpg'
 
 export default function SignUpFormCollab() {
   const [state, setState] = useState<State | null>(null)
   const [location, setLocation] = useState('')
-  const [vibes, setVibes] = useState<string[]>(['Fashion editorial'])
+  // No default pre-selection: keeps "what did they actually want" measurable
+  // instead of everyone inheriting Fashion editorial.
+  const [vibes, setVibes] = useState<string[]>([])
+  const [directMe, setDirectMe] = useState(false)
   const [idea, setIdea] = useState('')
   const [whatsapp, setWhatsapp] = useState('')
   const [instagram, setInstagram] = useState('')
@@ -75,7 +80,12 @@ export default function SignUpFormCollab() {
   }
 
   function toggleVibe(v: string) {
-    setVibes(prev => prev.includes(v) ? prev.filter(x => x !== v) : [...prev, v])
+    // "No preference" is mutually exclusive with the concept tiles.
+    setVibes(prev => {
+      if (v === NO_PREFERENCE) return prev.includes(v) ? [] : [NO_PREFERENCE]
+      const withoutNoPref = prev.filter(x => x !== NO_PREFERENCE)
+      return withoutNoPref.includes(v) ? withoutNoPref.filter(x => x !== v) : [...withoutNoPref, v]
+    })
     clearStatus()
   }
 
@@ -160,6 +170,7 @@ export default function SignUpFormCollab() {
         'Collab sign-up',
         ...(location.trim() ? ['Location: ' + location.trim()] : []),
         ...(vibes.length > 0 ? ['Preference: ' + vibes.join(', ')] : []),
+        ...(directMe ? ['Direction: New to this — full direction welcome'] : []),
         ...(idea.trim() ? ['Notes: ' + idea.trim()] : []),
         'Instagram: ' + instagramTrim,
       ]
@@ -303,11 +314,27 @@ export default function SignUpFormCollab() {
             <span className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-500/20 text-[10px] font-bold text-emerald-400">1</span>
             <label className="text-sm font-medium text-white/80">Where are you located?</label>
           </div>
+          <div className="flex flex-wrap gap-2">
+            {locationChips.map(chip => (
+              <button
+                key={chip}
+                type="button"
+                onClick={() => { setLocation(chip); clearStatus() }}
+                className={`rounded-full border px-4 py-1.5 text-sm font-semibold transition-all ${
+                  location.trim() === chip
+                    ? 'border-emerald-400 bg-emerald-400/20 text-emerald-300'
+                    : 'border-white/15 bg-white/5 text-white/60 hover:border-white/30 hover:text-white/80'
+                }`}
+              >
+                {chip}
+              </button>
+            ))}
+          </div>
           <input
             value={location}
             onChange={e => { setLocation(e.target.value); clearStatus() }}
             className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-white/30 outline-none transition focus:border-emerald-400 focus:ring-2 focus:ring-emerald-400/30"
-            placeholder="e.g. Kathmandu, Pokhara, New York City, Tokyo"
+            placeholder="Or type another place — e.g. Chitwan, Tokyo"
           />
         </div>
 
@@ -318,25 +345,37 @@ export default function SignUpFormCollab() {
             <legend className="text-sm font-medium text-white/80">Do you have a preference? <span className="text-xs text-white/30">(optional — pick any)</span></legend>
           </div>
           <p className="text-xs leading-relaxed text-white/40">
-            Tap any concepts you&apos;d like to explore &mdash; the more personal and cultural, the better. No preference? We&apos;ll shoot a fashion editorial.
+            Tap any that speak to you &mdash; mix as many as you like. Not sure? Pick &ldquo;No preference&rdquo; and I&apos;ll design it for you.
           </p>
           <div className="grid grid-cols-2 gap-2">
-            {preferenceOptions.map(opt => (
-              <button
-                key={opt.id}
-                type="button"
-                onClick={() => toggleVibe(opt.id)}
-                className={`relative rounded-xl border px-4 py-3 text-left transition-all ${
-                  vibes.includes(opt.id)
-                    ? 'border-emerald-400 bg-emerald-400/10 ring-2 ring-emerald-400/30'
-                    : 'border-white/10 bg-white/[0.03] hover:border-white/25'
-                }`}
-              >
-                <div className={`text-sm font-semibold ${vibes.includes(opt.id) ? 'text-emerald-300' : 'text-white'}`}>{opt.id}</div>
-                <div className="mt-0.5 text-xs text-white/40">{opt.desc}</div>
-              </button>
-            ))}
+            {preferenceOptions.map(opt => {
+              const selected = vibes.includes(opt.id)
+              return (
+                <button
+                  key={opt.id}
+                  type="button"
+                  onClick={() => toggleVibe(opt.id)}
+                  className={`relative rounded-xl border px-4 py-3 text-left transition-all ${
+                    selected ? 'border-emerald-400 bg-emerald-400/10 ring-2 ring-emerald-400/30' : 'border-white/10 bg-white/[0.03] hover:border-white/25'
+                  }`}
+                >
+                  <div className={`text-sm font-semibold ${selected ? 'text-emerald-300' : 'text-white'}`}>{opt.id}</div>
+                  <div className="mt-0.5 text-xs text-white/40">{opt.desc}</div>
+                </button>
+              )
+            })}
           </div>
+          <button
+            type="button"
+            onClick={() => toggleVibe(NO_PREFERENCE)}
+            className={`w-full rounded-xl border px-4 py-3 text-center text-sm font-semibold transition-all ${
+              vibes.includes(NO_PREFERENCE)
+                ? 'border-emerald-400 bg-emerald-400/10 text-emerald-300 ring-2 ring-emerald-400/30'
+                : 'border-white/10 bg-white/[0.03] text-white/60 hover:border-white/25 hover:text-white/80'
+            }`}
+          >
+            No preference &mdash; you direct it
+          </button>
         </fieldset>
 
         {/* Notes — open space for their own idea */}
@@ -353,6 +392,24 @@ export default function SignUpFormCollab() {
             className="w-full resize-none rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-white/30 outline-none transition focus:border-emerald-400 focus:ring-2 focus:ring-emerald-400/30"
             placeholder="Your own idea, inspo, references, anything..."
           />
+          <button
+            type="button"
+            onClick={() => { setDirectMe(v => !v); clearStatus() }}
+            className={`flex w-full items-center gap-3 rounded-xl border px-4 py-3 text-left transition-all ${
+              directMe ? 'border-emerald-400 bg-emerald-400/10' : 'border-white/10 bg-white/[0.03] hover:border-white/25'
+            }`}
+          >
+            <span className={`flex h-5 w-5 shrink-0 items-center justify-center rounded-md border ${directMe ? 'border-emerald-400 bg-emerald-500' : 'border-white/25'}`}>
+              {directMe && (
+                <svg className="h-3 w-3 text-white" viewBox="0 0 20 20" fill="currentColor">
+                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                </svg>
+              )}
+            </span>
+            <span className={`text-sm ${directMe ? 'text-emerald-300' : 'text-white/70'}`}>
+              New to this? I&apos;ll fully direct you &mdash; no experience needed.
+            </span>
+          </button>
         </div>
 
         {/* WhatsApp */}
