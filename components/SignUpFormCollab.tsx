@@ -39,22 +39,21 @@ function resizeImage(dataUrl: string, maxBytes: number): Promise<string> {
   })
 }
 
-// Image-backed concept tiles. The redesign collapsed the seven low-traction
-// culture/personal options into a single "Culture & everyday life" tile and
-// re-added Nature and Studio (proven demand from the prior form). "No
-// preference" is a separate full-width chip below the grid.
-type ConceptOption = { id: string; desc: string; img: string }
+// Concept tiles. The redesign collapsed the seven low-traction culture/personal
+// options into a single "Culture & everyday life" tile and re-added Nature and
+// Studio (proven demand from the prior form). "No preference" is a separate
+// full-width chip below the grid.
+type ConceptOption = { id: string; desc: string }
 const preferenceOptions: ConceptOption[] = [
-  { id: 'Fashion editorial', desc: 'Dramatic, magazine-style', img: '/images/moodboards/editorial.jpg' },
-  { id: 'Streets & markets', desc: 'Gritty, real city life', img: '/images/moodboards/street-editorial.jpg' },
-  { id: 'Nature & outdoors', desc: 'Lakes, hills, greenery, golden light', img: '/images/moodboards/nature-editorial.jpg' },
-  { id: 'Studio & indoor', desc: 'Cozy interiors, caf\u00e9s, controlled light', img: '/images/moodboards/indoor.jpg' },
-  // TODO: swap for a culture-specific frame (traditional dress / temple / daily life)
-  { id: 'Culture & everyday life', desc: 'Tradition, dress, temples, real moments', img: '/images/proof/000019-6.jpg' },
+  { id: 'Fashion editorial', desc: 'Dramatic, magazine-style' },
+  { id: 'Streets & markets', desc: 'Gritty, real city life' },
+  { id: 'Nature & outdoors', desc: 'Lakes, hills, greenery, golden light' },
+  { id: 'Studio & indoor', desc: 'Cozy interiors, caf\u00e9s, controlled light' },
+  { id: 'Culture & everyday life', desc: 'Tradition, dress, temples, real moments' },
 ]
 
 const NO_PREFERENCE = 'No preference'
-const locationChips = ['Pokhara', 'Kathmandu', 'Lalitpur', 'Bhaktapur']
+const locationChips = ['Pokhara', 'Kathmandu', 'Lalitpur']
 
 const heroImage = '/images/moodboards/editorial.jpg'
 
@@ -356,25 +355,12 @@ export default function SignUpFormCollab() {
                   key={opt.id}
                   type="button"
                   onClick={() => toggleVibe(opt.id)}
-                  className={`relative overflow-hidden rounded-xl border text-left transition-all ${
-                    selected ? 'border-emerald-400 ring-2 ring-emerald-400/30' : 'border-white/10 hover:border-white/25'
+                  className={`relative rounded-xl border px-4 py-3 text-left transition-all ${
+                    selected ? 'border-emerald-400 bg-emerald-400/10 ring-2 ring-emerald-400/30' : 'border-white/10 bg-white/[0.03] hover:border-white/25'
                   }`}
                 >
-                  <div className="relative h-24 w-full">
-                    <NextImage src={opt.img} alt="" fill sizes="(max-width: 640px) 50vw, 220px" className="object-cover" style={{ filter: selected ? 'brightness(0.6) saturate(1.1)' : 'brightness(0.5)' }} />
-                    <div className="absolute inset-0" style={{ background: 'linear-gradient(180deg, transparent 35%, rgba(10,10,10,0.92) 100%)' }} />
-                    {selected && (
-                      <div className="absolute right-2 top-2 flex h-5 w-5 items-center justify-center rounded-full bg-emerald-500">
-                        <svg className="h-3 w-3 text-white" viewBox="0 0 20 20" fill="currentColor">
-                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                        </svg>
-                      </div>
-                    )}
-                  </div>
-                  <div className="px-3 py-2">
-                    <div className={`text-sm font-semibold ${selected ? 'text-emerald-300' : 'text-white'}`}>{opt.id}</div>
-                    <div className="mt-0.5 text-xs text-white/40">{opt.desc}</div>
-                  </div>
+                  <div className={`text-sm font-semibold ${selected ? 'text-emerald-300' : 'text-white'}`}>{opt.id}</div>
+                  <div className="mt-0.5 text-xs text-white/40">{opt.desc}</div>
                 </button>
               )
             })}
