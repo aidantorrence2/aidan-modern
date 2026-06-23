@@ -27,27 +27,37 @@ function pr(s,l,t,w,h,r,b){b=b||12;return '<div style="position:absolute;left:'+
 function hero(s,inner){return '<div style="width:1080px;height:1920px;position:relative;overflow:hidden;background:#000;">'+img(s,0,0,1080,1920,'filter:saturate(1.08) contrast(1.04);')+'<div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0.28) 0%,transparent 22%,transparent 55%,rgba(0,0,0,0.55) 100%);"></div>'+inner+GR+'</div>'}
 function dark(inner){return '<div style="width:1080px;height:1920px;position:relative;overflow:hidden;background:#0a0e08;"><div style="position:absolute;inset:0;background:linear-gradient(170deg,#0e1410 0%,#0a0e08 50%,#080c06 100%);"></div><div style="position:absolute;inset:0;background:radial-gradient(circle at 20% 18%,rgba(80,160,80,0.10),transparent 30%),radial-gradient(circle at 80% 82%,rgba(180,150,80,0.08),transparent 25%);"></div>'+inner+GR+'</div>'}
 function ctaBg(s,inner){return '<div style="width:1080px;height:1920px;position:relative;overflow:hidden;background:#000;">'+img(s,0,0,1080,1920,'filter:saturate(1.05) brightness(0.46);')+'<div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0.45) 0%,rgba(0,0,0,0.2) 30%,rgba(0,0,0,0.35) 60%,rgba(0,0,0,0.9) 100%);"></div>'+inner+GR+'</div>'}
+// Title-slide background — ORIGINAL gradient (dark at the very bottom so the lower-third headline reads). LOCKED.
+function heroHook(s,inner){return '<div style="width:1080px;height:1920px;position:relative;overflow:hidden;background:#000;">'+img(s,0,0,1080,1920,'filter:saturate(1.1) contrast(1.05);')+'<div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0.08) 0%,transparent 15%,rgba(0,0,0,0.35) 55%,rgba(0,0,0,0.96) 100%);"></div>'+inner+GR+'</div>'}
 
-// === Copy block — ALWAYS in the safe middle third (y ~760–1280) ===
-// scrim: soft spotlight band so white copy reads over any photo (skip on dark bg)
-function copyMid(eyebrow,head,sub,pill,headSz,noScrim){
-  headSz=headSz||92
-  const sc=noScrim?'':'<div style="position:absolute;left:0;right:0;top:660px;height:720px;background:linear-gradient(180deg,transparent,rgba(0,0,0,0.34) 16%,rgba(0,0,0,0.68) 50%,rgba(0,0,0,0.34) 84%,transparent);"></div>'
-  const eb=eyebrow?'<p style="font-family:'+SA+';font-size:25px;font-weight:700;color:#dcbb7d;letter-spacing:0.14em;text-transform:uppercase;margin:0 0 22px;'+SH+'">'+eyebrow+'</p>':''
-  const pl=pill?'<p style="display:inline-block;font-family:'+SA+';font-size:26px;font-weight:700;color:#0a0e08;background:#dcbb7d;padding:13px 26px;border-radius:999px;letter-spacing:0.02em;margin:32px 0 0;box-shadow:0 6px 24px rgba(0,0,0,0.4);">'+pill+'</p>':''
-  const blk='<div style="position:absolute;left:74px;right:74px;top:760px;">'+eb
-    +'<p style="font-family:'+SE+';font-size:'+headSz+'px;font-weight:700;font-style:italic;color:#fff;line-height:0.97;margin:0;'+SH+'">'+head+'</p>'
-    +'<p style="font-family:'+SA+';font-size:37px;font-weight:500;color:rgba(255,255,255,0.92);line-height:1.34;margin:26px 0 0;'+SH+'">'+sub+'</p>'+pl+'</div>'
+// === ORIGINAL title-slide helpers — DO NOT CHANGE. Kicker top, big headline + sub in the lower third. ===
+function tagTop(t,l,top){return '<p style="position:absolute;left:'+l+'px;top:'+top+'px;font-family:'+SA+';font-size:24px;font-weight:700;color:rgba(255,255,255,0.7);letter-spacing:0.12em;text-transform:uppercase;margin:0;'+SH+'">'+t+'</p>'}
+function h1B(t,bot,sz){sz=sz||108;return '<div style="position:absolute;bottom:'+bot+'px;left:64px;right:64px;"><p style="font-family:'+SE+';font-size:'+sz+'px;font-weight:700;font-style:italic;color:white;line-height:0.92;margin:0;'+SH+'">'+t+'</p></div>'}
+function subB(t,bot,sz){sz=sz||34;return '<div style="position:absolute;bottom:'+bot+'px;left:64px;right:64px;"><p style="font-family:'+SA+';font-size:'+sz+'px;font-weight:500;color:rgba(255,255,255,0.85);line-height:1.35;margin:0;'+SH+'">'+t+'</p></div>'}
+
+// === Copy block — middle third, but POSITION + COLOR vary per slide for rhythm ===
+// c = {eyebrow,head,sub,headSz,pos:'high'|'mid'|'low',accent:'gold'}
+function copyMid(c,noScrim){
+  const headSz=c.headSz||92
+  const top=c.pos==='high'?600:c.pos==='low'?940:760
+  const hcol=c.accent==='gold'?'#e9c986':'#fff'
+  const ebcol=c.accent==='gold'?'rgba(255,255,255,0.82)':'#dcbb7d'
+  const sc=noScrim?'':'<div style="position:absolute;left:0;right:0;top:'+(top-110)+'px;height:700px;background:linear-gradient(180deg,transparent,rgba(0,0,0,0.34) 16%,rgba(0,0,0,0.68) 50%,rgba(0,0,0,0.34) 84%,transparent);"></div>'
+  const eb=c.eyebrow?'<p style="font-family:'+SA+';font-size:25px;font-weight:700;color:'+ebcol+';letter-spacing:0.14em;text-transform:uppercase;margin:0 0 22px;'+SH+'">'+c.eyebrow+'</p>':''
+  const blk='<div style="position:absolute;left:74px;right:74px;top:'+top+'px;">'+eb
+    +'<p style="font-family:'+SE+';font-size:'+headSz+'px;font-weight:700;font-style:italic;color:'+hcol+';line-height:0.97;margin:0;'+SH+'">'+c.head+'</p>'
+    +'<p style="font-family:'+SA+';font-size:37px;font-weight:500;color:rgba(255,255,255,0.92);line-height:1.34;margin:26px 0 0;'+SH+'">'+c.sub+'</p></div>'
   return sc+blk
 }
 
 // === Layouts (10 distinct slides) ===
-function L_hook(s,c){return {name:'01',html:hero(s,copyMid(c.eyebrow,c.head,c.sub,c.pill,98))}}
-function L_collage(nm,a,b,d,c){return {name:nm,html:dark(pr(a,55,90,430,510,-2,12)+pr(b,545,90,430,240,2,10)+pr(d,545,378,430,250,-1.5,10)+copyMid(c.eyebrow,c.head,c.sub,c.pill,84,true))}}
-function L_duo(nm,a,b,c){return {name:nm,html:dark(pr(a,70,100,440,500,-2,12)+pr(b,560,120,440,490,2,12)+copyMid(c.eyebrow,c.head,c.sub,c.pill,86,true))}}
-function L_single(nm,s,c){return {name:nm,html:dark(pr(s,244,86,560,520,-0.5,16)+copyMid(c.eyebrow,c.head,c.sub,c.pill,86,true))}}
-function L_hero(nm,s,c){return {name:nm,html:hero(s,copyMid(c.eyebrow,c.head,c.sub,c.pill,92))}}
-function L_cta(nm,s,c){return {name:nm,html:ctaBg(s,copyMid(c.eyebrow,c.head,c.sub,c.pill,104))}}
+// LOCKED title slide — original structure, always this way.
+function L_hook(s,F){return {name:'01',html:heroHook(s,tagTop(F.title+' · Shot on 35mm film',64,64)+h1B(F.hookH,540,108)+subB(F.hookS,400,42))}}
+function L_collage(nm,a,b,d,c){return {name:nm,html:dark(pr(a,55,90,430,510,-2,12)+pr(b,545,90,430,240,2,10)+pr(d,545,378,430,250,-1.5,10)+copyMid(c,true))}}
+function L_duo(nm,a,b,c){return {name:nm,html:dark(pr(a,70,100,440,500,-2,12)+pr(b,560,120,440,490,2,12)+copyMid(c,true))}}
+function L_single(nm,s,c){return {name:nm,html:dark(pr(s,244,86,560,520,-0.5,16)+copyMid(c,true))}}
+function L_hero(nm,s,c){return {name:nm,html:hero(s,copyMid(c,false))}}
+function L_cta(nm,s,c){return {name:nm,html:ctaBg(s,copyMid(c,false))}}
 
 // How it works — numbered, compressed to stay clear of the bottom link zone
 function L_steps(nm){
@@ -74,36 +84,37 @@ function pick(off){const a=[];for(let i=0;i<11;i++)a.push(P[(off+i)%P.length]);r
 
 // === 3 VARIANTS — Pokhara location flavor; shared anti-scam spine ===
 const VARIANTS=[
- { slug:'a', off:0,
-   hookSub:'Lakeside golden hour on real 35mm. I bring the camera, the direction, and the edits.',
+ { slug:'a', off:0, title:'Pokhara',
+   hookH:'Pokhara<br/>free photo shoot.', hookS:'Free photo shoot on 35mm film.<br/>Lakeside golden hour. Sign up below.',
    collH:'Shot around<br/>Phewa Lake.', collS:'A few frames from recent film shoots here in Pokhara.',
-   teaseS:'Lakeside golden hour on film. A few spots open this month.',
+   teaseS:'Lakeside golden hour, on film — the kind of frames worth printing.',
    spots:'Phewa shoreline, Tal Barahi, the old bazaar' },
- { slug:'b', off:13,
-   hookSub:'Himalayan sunrise on real 35mm. I bring the camera, the direction, and the edits.',
+ { slug:'b', off:13, title:'Pokhara',
+   hookH:'Pokhara<br/>free photo shoot.', hookS:'Free photo shoot on 35mm film.<br/>Himalayan backdrop. Sign up below.',
    collH:'Shot up at<br/>Sarangkot.', collS:'A few frames from recent film shoots here in Pokhara.',
-   teaseS:'Fishtail at sunrise on film. A few spots open this month.',
+   teaseS:'Fishtail at sunrise, on film — the kind of frames worth printing.',
    spots:'Sarangkot sunrise, the Fishtail backdrop, hill terraces' },
- { slug:'c', off:26,
-   hookSub:'Pagoda & open-sky views on real 35mm. I bring the camera, the direction, and the edits.',
+ { slug:'c', off:26, title:'Pokhara',
+   hookH:'Pokhara<br/>free photo shoot.', hookS:'Free photo shoot on 35mm film.<br/>Pagoda & sky views. Sign up below.',
    collH:'Shot at the<br/>Peace Pagoda.', collS:'A few frames from recent film shoots here in Pokhara.',
-   teaseS:'Hilltop golden hour on film. A few spots open this month.',
+   teaseS:'Hilltop golden hour, on film — the kind of frames worth printing.',
    spots:'the World Peace Pagoda, the ridges, the old bazaar' },
 ]
 
+// pos + accent vary per slide so the copy lands in a different spot/color as you swipe.
 function buildVariant(F){
   const p=pick(F.off)
   return [
-    L_hook(p[0],  {eyebrow:'Pokhara · 35mm film', head:'Free film<br/>photo shoot.', sub:F.hookSub}),
-    L_collage('02',p[1],p[2],p[3], {eyebrow:'Recent work', head:F.collH, sub:F.collS}),
-    L_duo('03',p[4],p[5], {eyebrow:'What you get', head:'Edited photos,<br/>yours to keep.', sub:'Scanned 35mm film, color-graded, and sent straight to you.'}),
-    L_hero('04',p[6], {eyebrow:'Why it’s free', head:'I’m building<br/>my portfolio.', sub:'I need new faces for my book, so the shoot’s on me. You just show up.'}),
-    L_hero('05',p[7], {eyebrow:'On the day', head:'I direct<br/>every shot.', sub:'Posing, angles, light — no experience needed. I’ll walk you through all of it.'}),
-    L_hero('06',p[8], {eyebrow:'Before we shoot', head:'Let’s talk<br/>it through.', sub:'Happy to hop on a phone or video call first to plan the shoot and answer anything.'}),
-    L_single('07',p[9], {eyebrow:'Where', head:'You pick<br/>the spot.', sub:'Daytime and public — '+F.spots+'. Bring a friend if you like.'}),
+    L_hook(p[0], F),
+    L_collage('02',p[1],p[2],p[3], {eyebrow:'Recent work', head:F.collH, sub:F.collS, headSz:84, pos:'mid'}),
+    L_duo('03',p[4],p[5], {eyebrow:'What you get', head:'Edited photos,<br/>yours to keep.', sub:'Scanned 35mm film, color-graded, and sent straight to you.', headSz:84, pos:'mid', accent:'gold'}),
+    L_hero('04',p[6], {eyebrow:'Why it’s free', head:'I’m building<br/>my portfolio.', sub:'I need new faces for my book, so the shoot’s on me. You just show up.', headSz:92, pos:'high'}),
+    L_hero('05',p[7], {eyebrow:'On the day', head:'I direct<br/>every shot.', sub:'Posing, angles, light — no experience needed. I’ll walk you through all of it.', headSz:92, pos:'low', accent:'gold'}),
+    L_hero('06',p[8], {eyebrow:'Before we shoot', head:'Let’s talk<br/>it through.', sub:'Happy to hop on a phone or video call first to plan the shoot and answer anything.', headSz:92, pos:'mid'}),
+    L_single('07',p[9], {eyebrow:'Where', head:'You pick<br/>the spot.', sub:'Daytime and public — '+F.spots+'. Bring a friend if you like.', headSz:86, pos:'mid'}),
     L_steps('08'),
-    L_hero('09',p[10], {eyebrow:'Pokhara', head:'This could<br/>be you.', sub:F.teaseS}),
-    L_cta('10',p[2], {eyebrow:'Sign up', head:'Tap the link<br/>below.', sub:'Fill out a quick form and I’ll reach out. We can plan it over a call.'}),
+    L_hero('09',p[10], {eyebrow:'Pokhara', head:'Let’s create<br/>iconic photos.', sub:F.teaseS, headSz:88, pos:'high', accent:'gold'}),
+    L_cta('10',p[2], {eyebrow:'Sign up', head:'Tap the link<br/>below.', sub:'Fill out a quick form and I’ll reach out. We can plan it over a call.', headSz:100, pos:'low'}),
   ]
 }
 
