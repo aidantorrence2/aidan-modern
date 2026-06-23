@@ -53,11 +53,11 @@ function L_cta(nm,s,c){return {name:nm,html:ctaBg(s,copyMid(c.eyebrow,c.head,c.s
 function L_steps(nm){
   const row=(n,t,d,top)=>'<div style="position:absolute;left:74px;top:'+top+'px;font-family:'+SE+';font-size:52px;font-weight:700;font-style:italic;color:#dcbb7d;line-height:1;'+SH+'">'+n+'</div><div style="position:absolute;left:160px;right:74px;top:'+(top+1)+'px;"><p style="font-family:'+SE+';font-size:40px;font-weight:700;font-style:italic;color:#fff;margin:0;line-height:1.04;'+SH+'">'+t+'</p><p style="font-family:'+SA+';font-size:25px;color:rgba(255,255,255,0.66);margin:9px 0 0;line-height:1.3;">'+d+'</p></div>'
   const inner='<div style="position:absolute;left:74px;right:74px;top:300px;"><p style="font-family:'+SA+';font-size:25px;font-weight:700;color:#dcbb7d;letter-spacing:0.14em;text-transform:uppercase;margin:0 0 20px;'+SH+'">How it works</p><p style="font-family:'+SE+';font-size:64px;font-weight:700;font-style:italic;color:#fff;margin:0;line-height:0.95;'+SH+'">Here’s how<br/>it works.</p></div>'
-    +row('1','Sign up — it’s free.','Tap the link below. Takes a minute.',560)
-    +row('2','We chat first.','Phone or video call to go over the details.',730)
-    +row('3','We shoot — I direct it all.','Posing, angles, light. No experience needed.',900)
-    +row('4','You keep the photos.','Edited 35mm film shots, yours forever.',1070)
-    +'<div style="position:absolute;left:74px;right:74px;top:1240px;"><p style="font-family:'+SA+';font-size:25px;color:rgba(255,255,255,0.6);margin:0;line-height:1.4;'+SH+'">A real photographer building a real Pokhara film portfolio. 100% free — no payment, ever.</p></div>'
+    +row('1','Sign up.','Quick form below — takes a minute.',560)
+    +row('2','We plan it.','A call to pick the spot, time, and look.',730)
+    +row('3','We shoot.','About an hour. I direct every frame.',900)
+    +row('4','You get the photos.','Edited 35mm scans, yours to keep.',1070)
+    +'<div style="position:absolute;left:74px;right:74px;top:1240px;"><p style="font-family:'+SA+';font-size:25px;color:rgba(255,255,255,0.6);margin:0;line-height:1.4;'+SH+'">Shooting around Pokhara on 35mm film this month.</p></div>'
   return {name:nm,html:dark(inner)}
 }
 
@@ -75,35 +75,35 @@ function pick(off){const a=[];for(let i=0;i<11;i++)a.push(P[(off+i)%P.length]);r
 // === 3 VARIANTS — Pokhara location flavor; shared anti-scam spine ===
 const VARIANTS=[
  { slug:'a', off:0,
-   hookSub:'Lakeside golden hour, shot on real 35mm film. 100% free.',
-   collH:'Phewa Lake.<br/>On real film.', collS:'Still water, wooden boats, golden light. These are my actual shoots — not stock, not AI.',
-   teaseS:'Lakeside golden hour on real film. Free collab — I direct everything.',
-   spots:'Phewa shoreline, wooden boats, Tal Barahi temple' },
+   hookSub:'Lakeside golden hour on real 35mm. I bring the camera, the direction, and the edits.',
+   collH:'Shot around<br/>Phewa Lake.', collS:'A few frames from recent film shoots here in Pokhara.',
+   teaseS:'Lakeside golden hour on film. A few spots open this month.',
+   spots:'Phewa shoreline, Tal Barahi, the old bazaar' },
  { slug:'b', off:13,
-   hookSub:'Himalayan sunrise, shot on real 35mm film. 100% free.',
-   collH:'Annapurna.<br/>On real film.', collS:'Snow peaks, sea of cloud, dawn light. These are my actual shoots — not stock, not AI.',
-   teaseS:'Fishtail at sunrise on real film. Free collab — I direct everything.',
-   spots:'Sarangkot sunrise, Fishtail backdrop, hill terraces' },
+   hookSub:'Himalayan sunrise on real 35mm. I bring the camera, the direction, and the edits.',
+   collH:'Shot up at<br/>Sarangkot.', collS:'A few frames from recent film shoots here in Pokhara.',
+   teaseS:'Fishtail at sunrise on film. A few spots open this month.',
+   spots:'Sarangkot sunrise, the Fishtail backdrop, hill terraces' },
  { slug:'c', off:26,
-   hookSub:'Pagoda & open-sky views, shot on real 35mm film. 100% free.',
-   collH:'Peace Pagoda.<br/>On real film.', collS:'White pagoda, wide skies, warm light. These are my actual shoots — not stock, not AI.',
-   teaseS:'Hilltop golden hour on real film. Free collab — I direct everything.',
-   spots:'World Peace Pagoda, paragliding ridges, old bazaar' },
+   hookSub:'Pagoda & open-sky views on real 35mm. I bring the camera, the direction, and the edits.',
+   collH:'Shot at the<br/>Peace Pagoda.', collS:'A few frames from recent film shoots here in Pokhara.',
+   teaseS:'Hilltop golden hour on film. A few spots open this month.',
+   spots:'the World Peace Pagoda, the ridges, the old bazaar' },
 ]
 
 function buildVariant(F){
   const p=pick(F.off)
   return [
-    L_hook(p[0],  {eyebrow:'Pokhara · Shot on 35mm film', head:'Free film<br/>photo shoot.', sub:F.hookSub, pill:'No payment — ever'}),
-    L_collage('02',p[1],p[2],p[3], {eyebrow:'My actual work', head:F.collH, sub:F.collS}),
-    L_duo('03',p[4],p[5], {eyebrow:'Not a scam', head:'Real photos.<br/>Real people.', sub:'A genuine portfolio of real film shoots. Check my profile — it’s all there.', pill:'See my work'}),
-    L_hero('04',p[6], {eyebrow:'The catch?', head:'There is<br/>no catch.', sub:'Completely free. You keep every edited photo. No upsells, no hidden fees, no strings.', pill:'100% free'}),
-    L_hero('05',p[7], {eyebrow:'Why free?', head:'I’m building<br/>my portfolio.', sub:'I’m a real photographer who needs fresh faces for my book. That’s the whole deal.', pill:'Real photographer'}),
-    L_hero('06',p[8], {eyebrow:'Before we shoot', head:'Let’s talk<br/>first.', sub:'We can schedule a phone or video call to go over every detail. Ask me anything.', pill:'Phone or video call'}),
-    L_single('07',p[9], {eyebrow:'On your terms', head:'Public spots.<br/>Bring a friend.', sub:'Daytime, public locations — think '+F.spots+'. A time that suits you.', pill:'Your call'}),
+    L_hook(p[0],  {eyebrow:'Pokhara · 35mm film', head:'Free film<br/>photo shoot.', sub:F.hookSub}),
+    L_collage('02',p[1],p[2],p[3], {eyebrow:'Recent work', head:F.collH, sub:F.collS}),
+    L_duo('03',p[4],p[5], {eyebrow:'What you get', head:'Edited photos,<br/>yours to keep.', sub:'Scanned 35mm film, color-graded, and sent straight to you.'}),
+    L_hero('04',p[6], {eyebrow:'Why it’s free', head:'I’m building<br/>my portfolio.', sub:'I need new faces for my book, so the shoot’s on me. You just show up.'}),
+    L_hero('05',p[7], {eyebrow:'On the day', head:'I direct<br/>every shot.', sub:'Posing, angles, light — no experience needed. I’ll walk you through all of it.'}),
+    L_hero('06',p[8], {eyebrow:'Before we shoot', head:'Let’s talk<br/>it through.', sub:'Happy to hop on a phone or video call first to plan the shoot and answer anything.'}),
+    L_single('07',p[9], {eyebrow:'Where', head:'You pick<br/>the spot.', sub:'Daytime and public — '+F.spots+'. Bring a friend if you like.'}),
     L_steps('08'),
-    L_hero('09',p[10], {eyebrow:'Pokhara', head:'This could<br/>be you.', sub:F.teaseS, pill:'Limited spots'}),
-    L_cta('10',p[2], {eyebrow:'Ready?', head:'Sign up free.', sub:'Tap the link below. Prefer to chat first? We can hop on a quick call.', pill:'Free · No catch · Real film'}),
+    L_hero('09',p[10], {eyebrow:'Pokhara', head:'This could<br/>be you.', sub:F.teaseS}),
+    L_cta('10',p[2], {eyebrow:'Sign up', head:'Tap the link<br/>below.', sub:'Fill out a quick form and I’ll reach out. We can plan it over a call.'}),
   ]
 }
 
