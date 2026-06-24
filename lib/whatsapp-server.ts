@@ -8,11 +8,39 @@
 // Never throws to the caller and never blocks a signup: on any failure it returns
 // the original contact unchanged so the submission still succeeds.
 import { normalizeWhatsapp } from './whatsapp'
+import { parsePhoneNumberFromString } from 'libphonenumber-js'
 
 const ccCache = new Map<string, string | null>() // location(lower) -> calling code digits | null
 
 function digits(s: string): string {
   return (s || '').replace(/[^\d+]/g, '')
+}
+
+/** Is `e164` a valid international number per libphonenumber? */
+function isValidIntl(e164: string | null | undefined): boolean {
+  if (!e164) return false
+  const p = parsePhoneNumberFromString(e164.startsWith('+') ? e164 : '+' + e164)
+  return !!p && p.isValid()
+}
+
+/**
+ * If a location-based prepend produced an INVALID number but the digits the user
+ * typed are ALREADY a valid international number on their own (foreign phone in
+ * this location, e.g. an Indian +91 number entered from Nepal), trust the
+ * self-coded number. Returns the corrected E.164, or null when no override applies.
+ *
+ * Precise on purpose: only fires when the prepend is provably broken AND the
+ * as-typed number is provably valid — so a genuine local number (whose prepend
+ * IS valid) is never touched.
+ */
+function selfCodedOverride(prepended: string, rawDigits: string): string | null {
+  if (isValidIntl(prepended)) return null
+  const d = rawDigits.replace(/^\+/, '').replace(/^00/, '')
+  // A leading trunk 0 signals a NATIONAL number, never a self-coded international
+  // one (E.164 has no leading 0 after the +). Don't reinterpret it.
+  if (d.startsWith('0')) return null
+  const asTyped = parsePhoneNumberFromString('+' + d)
+  return asTyped && asTyped.isValid() ? asTyped.number : null
 }
 
 /** Ask DeepSeek for the international dialing code (digits, no +) of a location. */
@@ -72,12 +100,19 @@ export async function normalizeWhatsappServer(contact: string, location: string)
   const raw = (contact || '').trim()
   if (!raw) return raw
 
+  const d = digits(raw)
+
   // 1. Sync path: already-international, or a location the gazetteer knows.
   const sync = normalizeWhatsapp(raw, location)
-  if (sync.resolved && sync.e164) return sync.e164
+  if (sync.resolved && sync.e164) {
+    // Guard: the gazetteer prepends the LOCATION's code without checking whether
+    // the digits already carry a (different) country code. If that produced an
+    // invalid number but the as-typed digits are already valid international,
+    // the user self-coded a foreign number — keep theirs, don't double-code.
+    return selfCodedOverride(sync.e164, d) ?? sync.e164
+  }
 
   // 2. Already international but not flagged (rare formatting) — leave as-is.
-  const d = digits(raw)
   if (d.startsWith('+') || d.startsWith('00')) return raw
 
   // 3. DeepSeek fallback: resolve the dialing code from the location.
@@ -87,7 +122,8 @@ export async function normalizeWhatsappServer(contact: string, location: string)
   let national = d.replace(/^\+/, '')
   if (national.startsWith(cc) && national.length > cc.length + 5) return '+' + national // already had code
   if (national.startsWith('0')) national = national.slice(1) // strip national trunk 0
-  return '+' + cc + national
+  const prepended = '+' + cc + national
+  return selfCodedOverride(prepended, d) ?? prepended
 }
 
 /** Extract the real location: moodboard "Location: …" wins over the city field. */

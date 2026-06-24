@@ -56,7 +56,7 @@ const CITY_KEYWORDS: Array<[string, string]> = [
   // Korea
   ['seoul', 'KR'], ['soeul', 'KR'], ['séoul', 'KR'], ['ansan', 'KR'], ['suwon', 'KR'],
   ['daegu', 'KR'], ['pyeongtaek', 'KR'], ['namyangju', 'KR'], ['gangnam', 'KR'],
-  ['eunpyeong', 'KR'], ['seongbuk', 'KR'], ['mapo', 'KR'], ['gu,', 'KR'],
+  ['eunpyeong', 'KR'], ['seongbuk', 'KR'], ['mapo', 'KR'], ['-gu', 'KR'],
   ['korea', 'KR'], ['한국', 'KR'], ['관악구', 'KR'],
   // Japan
   ['tokyo', 'JP'], ['osaka', 'JP'], ['kanagawa', 'JP'], ['yokohama', 'JP'],
