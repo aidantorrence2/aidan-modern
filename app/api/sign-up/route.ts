@@ -55,16 +55,17 @@ export async function POST(req: Request) {
     // Normalize WhatsApp numbers to E.164 at write time: infer the country code
     // from the user's location (moodboard "Location:" → gazetteer → DeepSeek).
     // Never blocks the signup — falls back to the entered value on any failure.
-    let storedContact = contact.trim()
+    const rawContact = contact.trim()
+    let storedContact = rawContact
     if (contactMethod === 'whatsapp') {
       try {
-        storedContact = await normalizeWhatsappServer(contact.trim(), locationFromSignup(city, moodboard))
+        storedContact = await normalizeWhatsappServer(rawContact, locationFromSignup(city, moodboard))
       } catch (err) {
         console.error('[SIGN-UP] WhatsApp normalize failed, storing raw:', err)
       }
     }
 
-    console.log('[SIGN-UP]', { city, contactMethod, contact: storedContact, raw: contact.trim(), moodboard, photos: photos ? `${photos.length} photo(s)` : null })
+    console.log('[SIGN-UP]', { city, contactMethod, contact: storedContact, raw: rawContact, moodboard, photos: photos ? `${photos.length} photo(s)` : null })
 
     const sb = getSupabase()
 
@@ -74,6 +75,7 @@ export async function POST(req: Request) {
         city: city.trim(),
         contact_method: contactMethod,
         contact: storedContact,
+        contact_raw: rawContact,
         moodboard
       })
       .select('id')

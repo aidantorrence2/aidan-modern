@@ -18,7 +18,7 @@ export async function GET(request: Request) {
 
   let query = supabase
     .from('signups')
-    .select('id, city, contact_method, contact, moodboard, photo_urls, created_at, deleted_at')
+    .select('id, city, contact_method, contact, contact_raw, moodboard, photo_urls, created_at, deleted_at')
 
   if (deleted) {
     query = query.not('deleted_at', 'is', null)
