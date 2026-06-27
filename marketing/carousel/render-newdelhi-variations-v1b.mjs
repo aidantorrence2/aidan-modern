@@ -4,7 +4,7 @@ import path from 'path'
 import fs from 'fs'
 
 // Exact clone of output-pokhara-variations-v1/b — same photos, same layout, same
-// offsets. ONLY the copy is changed to New Delhi (variant b: India Gate / boulevards).
+// offsets. ONLY the copy is changed to Delhi (variant b: India Gate / boulevards).
 // Photos load from public/images/nature first, falling back to public/images/large
 // (some originals were later moved out of nature/).
 
@@ -81,19 +81,19 @@ console.log('Loaded '+(P.length+2)+' nature photos')
 // rotate the 40-portrait pool by offset so each location uses a distinct set
 function pick(off){const a=[];for(let i=0;i<11;i++)a.push(P[(off+i)%P.length]);return a}
 
-// === Variant B ONLY — New Delhi copy (India Gate & boulevards) ===
+// === Variant B ONLY — Delhi copy (India Gate & boulevards) ===
 const LOCATIONS=[
- { slug:'b', title:'New Delhi', land:L2, off:13,
-   hookH:'New Delhi<br/>free photo shoot.', hookS:'Free photo shoot on 35mm film.<br/>Boulevards & sandstone. Sign up below.',
+ { slug:'b', title:'Delhi', land:L2, off:13,
+   hookH:'Delhi<br/>free photo shoot.', hookS:'Free photo shoot on 35mm film.<br/>Boulevards & sandstone. Sign up below.',
    s:[
     ['India Gate · 35mm','Wide avenues. Sandstone. Film grain.'],
     ['Golden hour','Kartavya Path at sunset. Real film.'],
     ['Delhi light on film<br/>hits different.','Open boulevards. Real 35mm.'],
-    ['New Delhi','India Gate.<br/>Kartavya Path.<br/>Film.','Boulevard photo shoots on 35mm.'],
+    ['Delhi','India Gate.<br/>Kartavya Path.<br/>Film.','Boulevard photo shoots on 35mm.'],
     ['Your face.<br/>City light.<br/>Real film.','Free collab. I direct everything. India Gate, Kartavya Path, Connaught Place — your choice.'],
-    ['New Delhi','Grand avenues.<br/>Warm sandstone.','Film loves wide city light.'],
+    ['Delhi','Grand avenues.<br/>Warm sandstone.','Film loves wide city light.'],
     ['Avenue<br/>portraits.','Boulevards. Arches. Soft dusk.'],
-    ['New Delhi','This could<br/>be you.','Sign up below. It is free.'],
+    ['Delhi','This could<br/>be you.','Sign up below. It is free.'],
    ]},
 ]
 

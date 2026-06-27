@@ -68,46 +68,46 @@ console.log('Loaded '+P.length+' nature photos')
 // rotate the portrait pool by offset so each location uses a distinct set
 function pick(off){const a=[];for(let i=0;i<11;i++)a.push(P[(off+i)%P.length]);return a}
 
-// === 3 LOCATIONS — New Delhi themed copy ===
+// === 3 LOCATIONS — Delhi themed copy ===
 const LOCATIONS=[
  // Variant A — Humayun's Tomb & Lodhi Gardens (Mughal gardens)
- { slug:'a', title:'New Delhi', land:L1, off:0,
-   hookH:'New Delhi<br/>free photo shoot.', hookS:'Free photo shoot on 35mm film.<br/>Mughal gardens, golden hour. Sign up below.',
+ { slug:'a', title:'Delhi', land:L1, off:0,
+   hookH:'Delhi<br/>free photo shoot.', hookS:'Free photo shoot on 35mm film.<br/>Mughal gardens, golden hour. Sign up below.',
    s:[
     ['Lodhi Gardens · 35mm','Domes. Old stone. Film grain.'],
     ['Golden hour','Garden light at sunset. Real film.'],
     ['Garden light on film<br/>hits different.','Arches. Real 35mm.'],
-    ['New Delhi','Humayun’s Tomb.<br/>Lodhi arches.<br/>Film.','Mughal-garden photo shoots on 35mm.'],
+    ['Delhi','Humayun’s Tomb.<br/>Lodhi arches.<br/>Film.','Mughal-garden photo shoots on 35mm.'],
     ['Your face.<br/>Garden light.<br/>Real film.','Free collab. I direct everything. Humayun’s Tomb, Lodhi Gardens, Sunder Nursery — your choice.'],
-    ['New Delhi','Still gardens.<br/>Stone domes.','Film loves soft garden light.'],
+    ['Delhi','Still gardens.<br/>Stone domes.','Film loves soft garden light.'],
     ['Garden<br/>portraits.','Arches. Lawns. Warm dusk.'],
-    ['New Delhi','This could<br/>be you.','Sign up below. It is free.'],
+    ['Delhi','This could<br/>be you.','Sign up below. It is free.'],
    ]},
  // Variant B — India Gate & Lutyens' Delhi (boulevards, sandstone)
- { slug:'b', title:'New Delhi', land:L2, off:13,
-   hookH:'New Delhi<br/>free photo shoot.', hookS:'Free photo shoot on 35mm film.<br/>Boulevards & sandstone. Sign up below.',
+ { slug:'b', title:'Delhi', land:L2, off:13,
+   hookH:'Delhi<br/>free photo shoot.', hookS:'Free photo shoot on 35mm film.<br/>Boulevards & sandstone. Sign up below.',
    s:[
     ['India Gate · 35mm','Wide avenues. Sandstone. Film grain.'],
     ['Golden hour','Kartavya Path at sunset. Real film.'],
     ['Delhi light on film<br/>hits different.','Open boulevards. Real 35mm.'],
-    ['New Delhi','India Gate.<br/>Kartavya Path.<br/>Film.','Boulevard photo shoots on 35mm.'],
+    ['Delhi','India Gate.<br/>Kartavya Path.<br/>Film.','Boulevard photo shoots on 35mm.'],
     ['Your face.<br/>City light.<br/>Real film.','Free collab. I direct everything. India Gate, Kartavya Path, Connaught Place — your choice.'],
-    ['New Delhi','Grand avenues.<br/>Warm sandstone.','Film loves wide city light.'],
+    ['Delhi','Grand avenues.<br/>Warm sandstone.','Film loves wide city light.'],
     ['Avenue<br/>portraits.','Boulevards. Arches. Soft dusk.'],
-    ['New Delhi','This could<br/>be you.','Sign up below. It is free.'],
+    ['Delhi','This could<br/>be you.','Sign up below. It is free.'],
    ]},
  // Variant C — Old Delhi: Qutub Minar, Jama Masjid, Chandni Chowk (heritage)
- { slug:'c', title:'New Delhi', land:L1, off:26,
-   hookH:'New Delhi<br/>free photo shoot.', hookS:'Free photo shoot on 35mm film.<br/>Old city & heritage. Sign up below.',
+ { slug:'c', title:'Delhi', land:L1, off:26,
+   hookH:'Delhi<br/>free photo shoot.', hookS:'Free photo shoot on 35mm film.<br/>Old city & heritage. Sign up below.',
    s:[
     ['Old Delhi · 35mm','Red sandstone. Narrow lanes. Film grain.'],
     ['Golden hour','Qutub at sunset. Real film.'],
     ['Heritage light on film<br/>hits different.','Old stone. Real 35mm.'],
-    ['New Delhi','Qutub Minar.<br/>Chandni Chowk.<br/>Film.','Heritage photo shoots on 35mm.'],
+    ['Delhi','Qutub Minar.<br/>Chandni Chowk.<br/>Film.','Heritage photo shoots on 35mm.'],
     ['Your face.<br/>Heritage light.<br/>Real film.','Free collab. I direct everything. Qutub Minar, Jama Masjid, Chandni Chowk lanes — your choice.'],
-    ['New Delhi','Red sandstone.<br/>Old-city lanes.','Film loves warm heritage light.'],
+    ['Delhi','Red sandstone.<br/>Old-city lanes.','Film loves warm heritage light.'],
     ['Old-city<br/>portraits.','Minarets. Lanes. Golden hour.'],
-    ['New Delhi','This could<br/>be you.','Sign up below. It is free.'],
+    ['Delhi','This could<br/>be you.','Sign up below. It is free.'],
    ]},
 ]
 

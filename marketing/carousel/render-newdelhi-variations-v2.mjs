@@ -3,7 +3,7 @@ import { fileURLToPath } from 'url'
 import path from 'path'
 import fs from 'fs'
 
-// === New Delhi carousel v2 ===
+// === Delhi carousel v2 ===
 // New creative. 10 slides (only 10 go into Meta). Anti-scam copy on EVERY slide.
 // All copy lives in the SAFE MIDDLE THIRD (~y760–1280) so it never covers the
 // Meta link/CTA overlay (bottom) and is never too high (top profile overlay).
@@ -82,20 +82,20 @@ const P=[
 console.log('Loaded '+P.length+' portraits')
 function pick(off){const a=[];for(let i=0;i<11;i++)a.push(P[(off+i)%P.length]);return a}
 
-// === 3 VARIANTS — New Delhi location flavor; shared anti-scam spine ===
+// === 3 VARIANTS — Delhi location flavor; shared anti-scam spine ===
 const VARIANTS=[
- { slug:'a', off:0, title:'New Delhi',
-   hookH:'New Delhi<br/>free photo shoot.', hookS:'Free photo shoot on 35mm film.<br/>Mughal gardens, golden hour. Sign up below.',
+ { slug:'a', off:0, title:'Delhi',
+   hookH:'Delhi<br/>free photo shoot.', hookS:'Free photo shoot on 35mm film.<br/>Mughal gardens, golden hour. Sign up below.',
    collH:'Shot around<br/>Lodhi Gardens.', collS:'A few frames from recent film shoots here in Delhi.',
    teaseS:'Garden golden hour, on film — the kind of frames worth printing.',
    spots:'Humayun’s Tomb, Lodhi Gardens, Sunder Nursery' },
- { slug:'b', off:13, title:'New Delhi',
-   hookH:'New Delhi<br/>free photo shoot.', hookS:'Free photo shoot on 35mm film.<br/>Boulevards & sandstone. Sign up below.',
+ { slug:'b', off:13, title:'Delhi',
+   hookH:'Delhi<br/>free photo shoot.', hookS:'Free photo shoot on 35mm film.<br/>Boulevards & sandstone. Sign up below.',
    collH:'Shot along<br/>Kartavya Path.', collS:'A few frames from recent film shoots here in Delhi.',
    teaseS:'Golden hour on the boulevards, on film — the kind of frames worth printing.',
    spots:'India Gate, Kartavya Path, Connaught Place' },
- { slug:'c', off:26, title:'New Delhi',
-   hookH:'New Delhi<br/>free photo shoot.', hookS:'Free photo shoot on 35mm film.<br/>Old city & heritage. Sign up below.',
+ { slug:'c', off:26, title:'Delhi',
+   hookH:'Delhi<br/>free photo shoot.', hookS:'Free photo shoot on 35mm film.<br/>Old city & heritage. Sign up below.',
    collH:'Shot at<br/>Qutub Minar.', collS:'A few frames from recent film shoots here in Delhi.',
    teaseS:'Heritage golden hour, on film — the kind of frames worth printing.',
    spots:'Qutub Minar, Jama Masjid, Chandni Chowk lanes' },
