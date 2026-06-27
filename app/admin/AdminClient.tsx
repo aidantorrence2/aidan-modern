@@ -272,7 +272,7 @@ export default function AdminClient({ signups: initial }: { signups: Signup[] })
                                   {wa.e164 ?? whatsapp}
                                 </a>
                                 {wa.resolved && wa.e164 && wa.e164.replace(/\D/g, '') !== whatsapp.replace(/\D/g, '') && (
-                                  <span className="ml-2 text-xs text-white/30 align-middle" title={`entered as "${whatsapp}" — country code inferred from ${s.city}`}>
+                                  <span className="ml-2 text-xs text-white/30 align-middle" title={`entered as "${whatsapp}" — country code inferred from ${getLocation(s)}`}>
                                     was {whatsapp}
                                   </span>
                                 )}
@@ -300,7 +300,7 @@ export default function AdminClient({ signups: initial }: { signups: Signup[] })
 
                       {/* Meta */}
                       <div className="flex flex-wrap items-center gap-x-5 gap-y-1 text-sm text-white/50 mb-3">
-                        <span>{s.city}</span>
+                        {getLocation(s) && <span>{getLocation(s)}</span>}
                         {s.created_at && (
                           <span>{new Date(s.created_at).toLocaleDateString('en-US', { month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' })}</span>
                         )}

@@ -167,7 +167,7 @@ export default function SignUpFormCollab() {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          city: 'New Delhi (collab)',
+          city: location.trim(),
           contactMethod: 'whatsapp',
           contact: whatsappTrim,
           moodboard,
@@ -307,7 +307,7 @@ export default function SignUpFormCollab() {
             value={location}
             onChange={e => { setLocation(e.target.value); clearStatus() }}
             className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-white/30 outline-none transition focus:border-emerald-400 focus:ring-2 focus:ring-emerald-400/30"
-            placeholder="e.g. New Delhi, Mumbai, Jaipur, Bangalore"
+            placeholder="e.g. Delhi, Agra, Jaipur"
           />
         </div>
 
