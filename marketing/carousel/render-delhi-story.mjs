@@ -73,7 +73,7 @@ slides.push(story('03-deal', 'here’s the deal',
 // 04 — some of my work (scattered film prints, portrait aspect kept)
 // keeper = 000016-3 (chinese-characters print) at f[2]; rest swapped fresh
 {
-  const f = [Fv('000002-11.jpg'), Fv('000019-10.jpg'), Fv('000016-3.jpg'), Fv('000023.jpg'), Fv('000063.jpg')]
+  const f = [Fv('000035-4.jpg'), Fv('000041.jpg'), Fv('000016-3.jpg'), Fv('0012_12-6.jpg'), Fv('000020-5.jpg')]
   const pr = (src, l, t, w, h, rot) => `<div style="position:absolute;left:${l}px;top:${t}px;width:${w + 24}px;height:${h + 24}px;background:#fafafa;padding:12px 12px 14px;transform:rotate(${rot}deg);box-shadow:0 16px 44px rgba(0,0,0,0.55),0 3px 10px rgba(0,0,0,0.3);"><img src="${src}" style="width:${w}px;height:${h}px;object-fit:cover;object-position:center top;display:block;"/></div>`
   const collage =
     pr(f[0], 50, 480, 350, 460, -5) +
