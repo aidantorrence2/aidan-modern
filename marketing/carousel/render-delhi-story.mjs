@@ -89,9 +89,20 @@ slides.push(story('03-deal', 'here’s the deal',
   })
 }
 
-// 05 — how it works
+// 05–08 — image proofs (full-bleed work, each line busts an objection & nudges to sign up)
+const cap = (big, small) => `<div style="position:absolute;bottom:150px;left:64px;right:64px;text-align:center;">
+   <p style="font-family:${RD};font-size:62px;font-weight:700;color:#fff;margin:0;line-height:1.02;${SH}">${big}</p>
+   <p style="font-family:${SE};font-size:35px;font-style:italic;color:rgba(255,255,255,0.92);margin:18px 0 0;line-height:1.3;${SH}">${small}</p>
+ </div>`
+const proofScrim = 'linear-gradient(180deg,rgba(0,0,0,0.3) 0%,rgba(0,0,0,0.08) 30%,rgba(0,0,0,0.55) 62%,rgba(0,0,0,0.92) 100%)'
+slides.push(bleed('05-proof', H('000023.jpg'), cap('you don’t need to be a model', 'I direct every frame — you just show up.'), proofScrim))
+slides.push(bleed('06-proof', H('000050-6.jpg'), cap('shot on 35mm film', 'a full, directed shoot — completely free.'), proofScrim))
+slides.push(bleed('07-proof', H('DSC_0321.jpg'), cap('the photos are yours', 'edited, high-res — sent straight to you.'), proofScrim))
+slides.push(bleed('08-proof', H('000062-7.jpg'), cap('only a few spots', 'Sign up below — it takes a minute →'), proofScrim))
+
+// 09 — how it works
 slides.push({
-  name: '05-how', html: frame(`
+  name: '09-how', html: frame(`
     <div style="position:absolute;top:210px;left:60px;right:60px;text-align:center;"><p style="font-family:${RD};font-size:60px;font-weight:700;color:#fff;margin:0;">how it works</p></div>
     <div style="position:absolute;top:480px;left:120px;right:120px;">
       ${[['1', 'Sign up', 'Tap the link below — takes a minute.'], ['2', 'We plan it', 'A quick chat to pick the spot, time & look.'], ['3', 'We shoot', 'About an hour. I direct every frame.']].map(s => `<div style="display:flex;gap:30px;align-items:flex-start;margin:0 0 58px;"><span style="font-family:${SE};font-size:78px;font-style:italic;font-weight:700;color:#e9c986;line-height:0.85;">${s[0]}</span><div><p style="font-family:${RD};font-size:44px;font-weight:700;color:#fff;margin:0;">${s[1]}</p><p style="font-family:${SE};font-size:33px;color:rgba(255,255,255,0.62);margin:8px 0 0;line-height:1.3;">${s[2]}</p></div></div>`).join('')}
@@ -100,8 +111,8 @@ slides.push({
   ` + grain(), '#0a0a0a')
 })
 
-// 06 — CTA (full-bleed, handwritten, no @handle)
-slides.push(bleed('06-cta', H('DSC_0249.jpg'),
+// 10 — CTA (full-bleed, handwritten, no @handle)
+slides.push(bleed('10-cta', H('DSC_0249.jpg'),
   `<div style="position:absolute;bottom:330px;left:64px;right:64px;text-align:center;">
      <p style="font-family:${HW};font-size:138px;font-weight:700;color:#fff;margin:0;line-height:0.95;${SH}">Want in?</p>
      <p style="font-family:${HW};font-size:138px;font-weight:700;color:#fff;margin:0;line-height:0.95;${SH}">Sign up below.</p>
