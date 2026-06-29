@@ -70,28 +70,27 @@ slides.push(story('03-deal', 'here’s the deal',
   "I'll photograph you on 35mm film — a full shoot, directed start to finish, edited photos to keep. Completely free.",
   photo(H('DSC_0321.jpg'), 700, 990, 190, 700)))
 
-// 04 — why it's free (its own slide)
-slides.push(story('04-whyfree', 'why it’s free',
-  "I'm building my portfolio city by city. You get a free shoot and edited photos — I get fresh work for my book. A real trade, nothing weird.",
-  photo(H('000020-5.jpg'), 700, 990, 190, 700)))
-
-// 05 — some of my work (6-image grid)
+// 04 — some of my work (scattered film prints, portrait aspect kept)
 {
-  const f = favs(8, 6)
-  const grid = `<div style="position:absolute;top:540px;left:56px;right:56px;bottom:130px;display:grid;grid-template-columns:1fr 1fr;grid-auto-rows:1fr;gap:16px;">${f.map(s => `<div style="overflow:hidden;border-radius:6px;"><img src="${s}" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;"/></div>`).join('')}</div>`
+  const f = favs(8, 5)
+  const pr = (src, l, t, w, h, rot) => `<div style="position:absolute;left:${l}px;top:${t}px;width:${w + 24}px;height:${h + 24}px;background:#fafafa;padding:12px 12px 14px;transform:rotate(${rot}deg);box-shadow:0 16px 44px rgba(0,0,0,0.55),0 3px 10px rgba(0,0,0,0.3);"><img src="${src}" style="width:${w}px;height:${h}px;object-fit:cover;object-position:center top;display:block;"/></div>`
+  const collage =
+    pr(f[0], 50, 480, 350, 460, -5) +
+    pr(f[1], 620, 440, 370, 490, 4) +
+    pr(f[2], 110, 1010, 360, 480, 3) +
+    pr(f[3], 600, 1020, 370, 490, -4) +
+    pr(f[4], 370, 760, 340, 450, 2)   // center, on top — photo-pile
   slides.push({
-    name: '05-work', html: frame(`
-      <div style="position:absolute;top:150px;left:60px;right:60px;text-align:center;"><p style="font-family:${RD};font-size:60px;font-weight:700;color:#fff;margin:0;">some of my work</p></div>
-      <div style="position:absolute;top:300px;left:74px;right:74px;text-align:center;"><p style="font-family:${SE};font-size:34px;color:rgba(255,255,255,0.8);line-height:1.4;margin:0;">A few frames from recent shoots around the world. All shot &amp; directed by me.</p></div>
-      ${grid}
-      <div style="position:absolute;bottom:60px;left:0;right:0;text-align:center;"><p style="font-family:${SE};font-size:28px;font-style:italic;color:rgba(255,255,255,0.5);margin:0;">…and yours could be next.</p></div>
+    name: '04-work', html: frame(`
+      <div style="position:absolute;top:120px;left:60px;right:60px;text-align:center;"><p style="font-family:${RD};font-size:60px;font-weight:700;color:#fff;margin:0;">some of my work</p></div>
+      ${collage}
     ` + grain(), '#0a0a0a')
   })
 }
 
-// 06 — how it works
+// 05 — how it works
 slides.push({
-  name: '06-how', html: frame(`
+  name: '05-how', html: frame(`
     <div style="position:absolute;top:210px;left:60px;right:60px;text-align:center;"><p style="font-family:${RD};font-size:60px;font-weight:700;color:#fff;margin:0;">how it works</p></div>
     <div style="position:absolute;top:480px;left:120px;right:120px;">
       ${[['1', 'Sign up', 'Tap the link below — takes a minute.'], ['2', 'We plan it', 'A quick chat to pick the spot, time & look.'], ['3', 'We shoot', 'About an hour. I direct every frame.']].map(s => `<div style="display:flex;gap:30px;align-items:flex-start;margin:0 0 58px;"><span style="font-family:${SE};font-size:78px;font-style:italic;font-weight:700;color:#e9c986;line-height:0.85;">${s[0]}</span><div><p style="font-family:${RD};font-size:44px;font-weight:700;color:#fff;margin:0;">${s[1]}</p><p style="font-family:${SE};font-size:33px;color:rgba(255,255,255,0.62);margin:8px 0 0;line-height:1.3;">${s[2]}</p></div></div>`).join('')}
@@ -100,8 +99,8 @@ slides.push({
   ` + grain(), '#0a0a0a')
 })
 
-// 07 — CTA (full-bleed, handwritten, no @handle)
-slides.push(bleed('07-cta', H('DSC_0526.jpg'),
+// 06 — CTA (full-bleed, handwritten, no @handle)
+slides.push(bleed('06-cta', H('DSC_0249.jpg'),
   `<div style="position:absolute;bottom:330px;left:64px;right:64px;text-align:center;">
      <p style="font-family:${HW};font-size:138px;font-weight:700;color:#fff;margin:0;line-height:0.95;${SH}">Want in?</p>
      <p style="font-family:${HW};font-size:138px;font-weight:700;color:#fff;margin:0;line-height:0.95;${SH}">Sign up below.</p>
