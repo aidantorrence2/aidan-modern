@@ -4,9 +4,9 @@ import path from 'path'
 import fs from 'fs'
 
 // Delhi STORY carousel — offer-led spine (sell the free shoot; story = proof).
-// Visual language borrowed from maciejsphotos: black slides, centered serif body,
-// one clean photo, handwritten (Bradley Hand) CTA.
-// big images -> headliners/ , small -> faves/ , self -> self/
+// Visual language from maciejsphotos: black slides, Poppins titles, Georgia serif
+// body, Caveat handwriting on the CTA.
+// big -> headliners/ , small -> faves/ , self -> self/
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const OUT = path.join(__dirname, 'output-delhi-story')
@@ -22,7 +22,7 @@ const Sf = f => enc(path.join(SELF, f))
 const faveFiles = fs.readdirSync(FAVE).filter(f => /\.jpe?g$/i.test(f)).sort()
 const favs = (off, n) => { const a = []; for (let i = 0; i < n; i++) a.push(Fv(faveFiles[(off + i * 11) % faveFiles.length])); return a }
 
-const SE = "'Fraunces', Georgia, serif"
+const SE = "Georgia, 'Times New Roman', serif"
 const RD = "'Poppins', 'Arial Rounded MT Bold', sans-serif"
 const HW = "'Caveat', 'Bradley Hand', cursive"
 const SH = 'text-shadow:0 2px 8px rgba(0,0,0,0.85),0 12px 50px rgba(0,0,0,0.6);'
@@ -30,17 +30,12 @@ const SH = 'text-shadow:0 2px 8px rgba(0,0,0,0.85),0 12px 50px rgba(0,0,0,0.6);'
 // embed real fonts (base64) so they render reliably in headless chromium
 const FDIR = path.join(__dirname, 'fonts')
 const fontB64 = f => fs.readFileSync(path.join(FDIR, f)).toString('base64')
-const face = (fam, file, weight, style) => `@font-face{font-family:'${fam}';font-weight:${weight};font-style:${style};font-display:block;src:url(data:font/woff2;base64,${fontB64(file)}) format('woff2');}`
-const FONTCSS = [
-  face('Poppins', 'poppins-700.woff2', '700', 'normal'),
-  face('Caveat', 'caveat-700.woff2', '700', 'normal'),
-  face('Fraunces', 'fraunces-600.woff2', '100 900', 'normal'),
-  face('Fraunces', 'fraunces-500i.woff2', '100 900', 'italic'),
-].join('')
+const face = (fam, file, weight) => `@font-face{font-family:'${fam}';font-weight:${weight};font-style:normal;font-display:block;src:url(data:font/woff2;base64,${fontB64(file)}) format('woff2');}`
+const FONTCSS = [face('Poppins', 'poppins-700.woff2', '700'), face('Caveat', 'caveat-700.woff2', '700')].join('')
 
 const frame = (inner, bg) => `<div style="width:1080px;height:1920px;position:relative;overflow:hidden;background:${bg || '#000'};">${inner}</div>`
 const grain = (o = 0.06) => `<div style="position:absolute;inset:0;pointer-events:none;opacity:${o};mix-blend-mode:soft-light;background-image:radial-gradient(circle at 14% 18%,rgba(255,255,255,0.5),transparent 17%),radial-gradient(circle at 84% 12%,rgba(255,255,255,0.28),transparent 15%),repeating-linear-gradient(0deg,rgba(255,255,255,0.08) 0 1px,transparent 1px 4px);"></div>`
-const photo = (src, w, h, l, t, rad = 8) => `<img src="${src}" style="position:absolute;left:${l}px;top:${t}px;width:${w}px;height:${h}px;object-fit:cover;object-position:center top;display:block;border-radius:${rad}px;"/>`
+const photo = (src, w, h, l, t, rad = 8, pos = 'center top') => `<img src="${src}" style="position:absolute;left:${l}px;top:${t}px;width:${w}px;height:${h}px;object-fit:cover;object-position:${pos};display:block;border-radius:${rad}px;"/>`
 
 function story(name, title, body, photosHtml) {
   return {
@@ -57,35 +52,46 @@ function bleed(name, src, overlay, scrim) {
 
 const slides = []
 
-// 01 — HOOK (full-bleed work shot) — location BIG, offer
+// 01 — HOOK (full-bleed work shot) — location BIG, Georgia
 slides.push(bleed('01-hook', H('000016-7.jpg'),
   `<div style="position:absolute;bottom:300px;left:64px;right:64px;text-align:center;">
      <p style="font-family:${SE};font-size:150px;font-weight:700;font-style:italic;color:#fff;margin:0;line-height:0.88;${SH}">Delhi</p>
      <p style="font-family:${SE};font-size:80px;font-weight:700;font-style:italic;color:#fff;margin:10px 0 0;line-height:0.98;${SH}">free photo shoot.</p>
-     <p style="font-family:${SE};font-size:33px;font-style:italic;color:rgba(255,255,255,0.85);margin:30px 0 0;${SH}">I'm giving a few away this month. Here's the deal →</p>
+     <p style="font-family:${SE};font-size:33px;font-style:italic;color:rgba(255,255,255,0.85);margin:30px 0 0;${SH}">Here's the deal →</p>
    </div>`))
 
-// 02 — the deal
-slides.push(story('02-deal', 'here’s the deal',
+// 02 — a bit about me (who) — self photo, bigger, less gap
+slides.push(story('02-about', 'a bit about me',
+  "I'm Aidan, from the USA. For the last 3 years I've been traveling the world with my camera — 47 countries so far. Right now, I'm in Delhi.",
+  photo(Sf('aidan-cropped-01.jpg'), 560, 700, 260, 580, 8, 'center top')))
+
+// 03 — the deal (what you get)
+slides.push(story('03-deal', 'here’s the deal',
   "I'll photograph you on 35mm film — a full shoot, directed start to finish, edited photos to keep. Completely free.",
-  photo(H('DSC_0321.jpg'), 720, 1010, 180, 700)))
+  photo(H('DSC_0321.jpg'), 700, 990, 190, 700)))
 
-// 03 — why free / who I am (selfie = proof)
-slides.push(story('03-whoami', 'why free? who am i?',
-  "I'm Aidan, from the USA. I've spent 3 years traveling — 47 countries — building my photography. Now I'm in Delhi, and I need new faces for my portfolio.",
-  photo(Sf('aidan-cropped-01.jpg'), 600, 780, 240, 800)))
+// 04 — why it's free (its own slide)
+slides.push(story('04-whyfree', 'why it’s free',
+  "I'm building my portfolio city by city. You get a free shoot and edited photos — I get fresh work for my book. A real trade, nothing weird.",
+  photo(H('000020-5.jpg'), 700, 990, 190, 700)))
 
-// 04 — my work (faves row, small)
+// 05 — some of my work (6-image grid)
 {
-  const f = favs(8, 3)
-  const row = f.map((s, i) => photo(s, 300, 420, 60 + i * 320, 820, 6)).join('')
-  slides.push(story('04-work', 'some of my work',
-    'A few frames from recent shoots around the world. All shot &amp; directed by me.', row))
+  const f = favs(8, 6)
+  const grid = `<div style="position:absolute;top:540px;left:56px;right:56px;bottom:130px;display:grid;grid-template-columns:1fr 1fr;grid-auto-rows:1fr;gap:16px;">${f.map(s => `<div style="overflow:hidden;border-radius:6px;"><img src="${s}" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;"/></div>`).join('')}</div>`
+  slides.push({
+    name: '05-work', html: frame(`
+      <div style="position:absolute;top:150px;left:60px;right:60px;text-align:center;"><p style="font-family:${RD};font-size:60px;font-weight:700;color:#fff;margin:0;">some of my work</p></div>
+      <div style="position:absolute;top:300px;left:74px;right:74px;text-align:center;"><p style="font-family:${SE};font-size:34px;color:rgba(255,255,255,0.8);line-height:1.4;margin:0;">A few frames from recent shoots around the world. All shot &amp; directed by me.</p></div>
+      ${grid}
+      <div style="position:absolute;bottom:60px;left:0;right:0;text-align:center;"><p style="font-family:${SE};font-size:28px;font-style:italic;color:rgba(255,255,255,0.5);margin:0;">…and yours could be next.</p></div>
+    ` + grain(), '#0a0a0a')
+  })
 }
 
-// 05 — how it works
+// 06 — how it works
 slides.push({
-  name: '05-how', html: frame(`
+  name: '06-how', html: frame(`
     <div style="position:absolute;top:210px;left:60px;right:60px;text-align:center;"><p style="font-family:${RD};font-size:60px;font-weight:700;color:#fff;margin:0;">how it works</p></div>
     <div style="position:absolute;top:480px;left:120px;right:120px;">
       ${[['1', 'Sign up', 'Tap the link below — takes a minute.'], ['2', 'We plan it', 'A quick chat to pick the spot, time & look.'], ['3', 'We shoot', 'About an hour. I direct every frame.']].map(s => `<div style="display:flex;gap:30px;align-items:flex-start;margin:0 0 58px;"><span style="font-family:${SE};font-size:78px;font-style:italic;font-weight:700;color:#e9c986;line-height:0.85;">${s[0]}</span><div><p style="font-family:${RD};font-size:44px;font-weight:700;color:#fff;margin:0;">${s[1]}</p><p style="font-family:${SE};font-size:33px;color:rgba(255,255,255,0.62);margin:8px 0 0;line-height:1.3;">${s[2]}</p></div></div>`).join('')}
@@ -94,14 +100,13 @@ slides.push({
   ` + grain(), '#0a0a0a')
 })
 
-// 06 — CTA (full-bleed, handwritten)
-slides.push(bleed('06-cta', H('DSC_0526.jpg'),
-  `<div style="position:absolute;bottom:310px;left:64px;right:64px;text-align:center;">
-     <p style="font-family:${HW};font-size:132px;font-weight:700;color:#fff;margin:0;line-height:0.95;${SH}">Want in?</p>
-     <p style="font-family:${HW};font-size:132px;font-weight:700;color:#fff;margin:0;line-height:0.95;${SH}">Sign up below.</p>
-     <p style="font-family:${SE};font-size:34px;color:rgba(255,255,255,0.9);margin:32px 0 0;${SH}">A free photo shoot in Delhi. I direct everything.</p>
-   </div>
-   <p style="position:absolute;bottom:130px;left:0;right:0;text-align:center;font-family:${HW};font-size:46px;color:rgba(255,255,255,0.85);margin:0;${SH}">@madebyaidan</p>`,
+// 07 — CTA (full-bleed, handwritten, no @handle)
+slides.push(bleed('07-cta', H('DSC_0526.jpg'),
+  `<div style="position:absolute;bottom:330px;left:64px;right:64px;text-align:center;">
+     <p style="font-family:${HW};font-size:138px;font-weight:700;color:#fff;margin:0;line-height:0.95;${SH}">Want in?</p>
+     <p style="font-family:${HW};font-size:138px;font-weight:700;color:#fff;margin:0;line-height:0.95;${SH}">Sign up below.</p>
+     <p style="font-family:${SE};font-size:34px;color:rgba(255,255,255,0.9);margin:34px 0 0;${SH}">A free photo shoot in Delhi. I direct everything.</p>
+   </div>`,
   'linear-gradient(180deg,rgba(0,0,0,0.35) 0%,rgba(0,0,0,0.12) 35%,rgba(0,0,0,0.9) 100%)'))
 
 async function render() {
