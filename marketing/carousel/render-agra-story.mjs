@@ -3,13 +3,13 @@ import { fileURLToPath } from 'url'
 import path from 'path'
 import fs from 'fs'
 
-// Delhi STORY carousel — offer-led spine (sell the free shoot; story = proof).
+// Agra STORY carousel — offer-led spine (sell the free shoot; story = proof).
 // Visual language from maciejsphotos: black slides, Poppins titles, Georgia serif
 // body, Caveat handwriting on the CTA.
 // big -> headliners/ , small -> faves/ , self -> self/
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
-const OUT = path.join(__dirname, 'output-delhi-story')
+const OUT = path.join(__dirname, 'output-agra-story')
 const HEAD = '/Users/aidantorrence/Documents/aidan-modern/public/images/headliners'
 const FAVE = '/Users/aidantorrence/Documents/aidan-modern/public/images/faves'
 const SELF = '/Users/aidantorrence/Documents/aidan-modern/public/images/self'
@@ -55,14 +55,14 @@ const slides = []
 // 01 — HOOK (full-bleed work shot) — location BIG, Georgia
 slides.push(bleed('01-hook', H('000016-7.jpg'),
   `<div style="position:absolute;bottom:300px;left:64px;right:64px;text-align:center;">
-     <p style="font-family:${SE};font-size:150px;font-weight:700;font-style:italic;color:#fff;margin:0;line-height:0.88;${SH}">Delhi</p>
+     <p style="font-family:${SE};font-size:150px;font-weight:700;font-style:italic;color:#fff;margin:0;line-height:0.88;${SH}">Agra</p>
      <p style="font-family:${SE};font-size:80px;font-weight:700;font-style:italic;color:#fff;margin:10px 0 0;line-height:0.98;${SH}">free photo shoot.</p>
      <p style="font-family:${SE};font-size:33px;font-style:italic;color:rgba(255,255,255,0.85);margin:30px 0 0;${SH}">Here's the deal →</p>
    </div>`))
 
 // 02 — a bit about me (who) — self photo, bigger, less gap
 slides.push(story('02-about', 'a bit about me',
-  "I'm Aidan, from the USA. For the last 3 years I've been traveling the world with my camera — 47 countries so far. Right now, I'm in Delhi.",
+  "I'm Aidan, from the USA. For the last 3 years I've been traveling the world with my camera — 47 countries so far. Right now, I'm in Agra.",
   photo(Sf('aidan-cropped-01.jpg'), 560, 700, 260, 580, 8, 'center top')))
 
 // 03 — the deal (what you get)
@@ -116,12 +116,12 @@ slides.push(bleed('10-cta', H('DSC_0249.jpg'),
   `<div style="position:absolute;bottom:330px;left:64px;right:64px;text-align:center;">
      <p style="font-family:${HW};font-size:138px;font-weight:700;color:#fff;margin:0;line-height:0.95;${SH}">Want in?</p>
      <p style="font-family:${HW};font-size:138px;font-weight:700;color:#fff;margin:0;line-height:0.95;${SH}">Sign up below.</p>
-     <p style="font-family:${SE};font-size:34px;color:rgba(255,255,255,0.9);margin:34px 0 0;${SH}">A free photo shoot in Delhi. I direct everything.</p>
+     <p style="font-family:${SE};font-size:34px;color:rgba(255,255,255,0.9);margin:34px 0 0;${SH}">A free photo shoot in Agra. I direct everything.</p>
    </div>`,
   'linear-gradient(180deg,rgba(0,0,0,0.35) 0%,rgba(0,0,0,0.12) 35%,rgba(0,0,0,0.9) 100%)'))
 
 async function render() {
-  const dir = path.join(OUT, 'delhi'); fs.mkdirSync(dir, { recursive: true })
+  const dir = path.join(OUT, 'agra'); fs.mkdirSync(dir, { recursive: true })
   console.log(`Rendering ${slides.length} slides...`)
   const browser = await chromium.launch()
   const ctx = await browser.newContext({ viewport: { width: 1080, height: 1920 }, deviceScaleFactor: 2 })
