@@ -77,7 +77,7 @@ slides.push({
   name: '02-deal', html: frame(`
     <div style="position:absolute;top:240px;left:60px;right:60px;text-align:center;">${TITLE('here are the details')}</div>
     <div style="position:absolute;top:410px;left:120px;right:120px;text-align:center;">
-      ${["we'll take photos on film", "i'll direct you throughout", "i'll send you the photos afterwards", "and it's totally free"].map((p, i) => `<p style="font-family:${SE};font-size:38px;color:rgba(255,255,255,0.95);line-height:1.3;margin:${i ? '22px' : '0'} 0 0;">${p}</p>`).join('')}
+      ${["we'll take photos on film.", "i'll direct you throughout.", "i'll send you the photos afterwards.", "and it's totally free."].map((p, i) => `<p style="font-family:${SE};font-size:38px;color:rgba(255,255,255,0.95);line-height:1.3;margin:${i ? '22px' : '0'} 0 0;">${p}</p>`).join('')}
     </div>
     ${photo(H('000019-6.jpg'), 640, 870, 220, 880)}
   ` + grain(), '#0a0a0a')
@@ -89,7 +89,7 @@ slides.push({
     <div style="position:absolute;top:240px;left:60px;right:60px;text-align:center;">${TITLE('about me')}</div>
     <div style="position:absolute;top:400px;left:120px;right:120px;text-align:center;">
       <p style="font-family:${SE};font-size:36px;color:rgba(255,255,255,0.94);line-height:1.42;margin:0;">hi, i'm aidan. i'm a photographer from USA. for the past 3 years i've been traveling the world taking photos and documenting my experiences.</p>
-      <p style="font-family:${SE};font-size:36px;color:rgba(255,255,255,0.94);line-height:1.42;margin:24px 0 0;">currently i'm in india, looking to create something special.</p>
+      <p style="font-family:${SE};font-size:36px;color:rgba(255,255,255,0.94);line-height:1.42;margin:24px 0 0;">currently i'm in India, looking to create something special.</p>
       <p style="font-family:${SE};font-size:36px;color:rgba(255,255,255,0.94);line-height:1.42;margin:24px 0 0;">if you're in varanasi, let's chat.</p>
     </div>
     ${photo(Sf('aidan-cropped-01.jpg'), 460, 580, 310, 880, 8, 'center top')}
