@@ -33,8 +33,14 @@ const fontB64 = f => fs.readFileSync(path.join(FDIR, f)).toString('base64')
 const face = (fam, file, weight) => `@font-face{font-family:'${fam}';font-weight:${weight};font-style:normal;font-display:block;src:url(data:font/woff2;base64,${fontB64(file)}) format('woff2');}`
 const FONTCSS = [face('Poppins', 'poppins-700.woff2', '700'), face('Caveat', 'caveat-700.woff2', '700')].join('')
 
-// persistent small-but-visible label, top-right of every slide
-const BADGE = `<div style="position:absolute;top:40px;right:40px;z-index:60;font-family:${RD};font-size:23px;font-weight:700;letter-spacing:0.03em;color:#fff;background:rgba(0,0,0,0.5);padding:9px 17px;border-radius:999px;border:1px solid rgba(255,255,255,0.3);text-shadow:0 1px 4px rgba(0,0,0,0.9);">varanasi free photo shoot</div>`
+// persistent corner wordmark — refined editorial mark, top-right of every slide
+const BADGE = `<div style="position:absolute;top:48px;right:50px;z-index:60;text-align:right;text-shadow:0 1px 10px rgba(0,0,0,0.9),0 1px 3px rgba(0,0,0,0.85);">
+  <div style="font-family:${SE};font-size:27px;font-weight:700;letter-spacing:0.16em;color:#fff;line-height:1;">VARANASI</div>
+  <div style="display:flex;align-items:center;justify-content:flex-end;gap:11px;margin-top:9px;">
+    <span style="width:42px;height:1px;background:rgba(255,255,255,0.6);display:inline-block;"></span>
+    <span style="font-family:${RD};font-size:13px;font-weight:600;letter-spacing:0.32em;color:rgba(255,255,255,0.92);">FREE PHOTO SHOOT</span>
+  </div>
+</div>`
 const frame = (inner, bg) => `<div style="width:1080px;height:1920px;position:relative;overflow:hidden;background:${bg || '#000'};">${inner}${BADGE}</div>`
 const grain = (o = 0.06) => `<div style="position:absolute;inset:0;pointer-events:none;opacity:${o};mix-blend-mode:soft-light;background-image:radial-gradient(circle at 14% 18%,rgba(255,255,255,0.5),transparent 17%),radial-gradient(circle at 84% 12%,rgba(255,255,255,0.28),transparent 15%),repeating-linear-gradient(0deg,rgba(255,255,255,0.08) 0 1px,transparent 1px 4px);"></div>`
 const photo = (src, w, h, l, t, rad = 8, pos = 'center top') => `<img src="${src}" style="position:absolute;left:${l}px;top:${t}px;width:${w}px;height:${h}px;object-fit:cover;object-position:${pos};display:block;border-radius:${rad}px;"/>`
