@@ -75,7 +75,7 @@ slides.push(bleed('01-hook', H('000016-7.jpg'),
 // 02 — what you get (personal, natural copy — narrow column)
 slides.push({
   name: '02-deal', html: frame(`
-    <div style="position:absolute;top:240px;left:60px;right:60px;text-align:center;">${TITLE('here are the details')}</div>
+    <div style="position:absolute;top:240px;left:60px;right:60px;text-align:center;">${TITLE("it's simple")}</div>
     <div style="position:absolute;top:410px;left:120px;right:120px;text-align:center;">
       ${["we'll take photos on film.", "i'll direct you throughout.", "i'll send you the photos afterwards.", "and it's totally free."].map((p, i) => `<p style="font-family:${SE};font-size:38px;color:rgba(255,255,255,0.95);line-height:1.3;margin:${i ? '22px' : '0'} 0 0;">${p}</p>`).join('')}
     </div>
