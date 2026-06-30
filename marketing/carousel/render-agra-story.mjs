@@ -90,14 +90,14 @@ slides.push(story('03-deal', 'here’s the deal',
 }
 
 // 05–08 — image proofs (full-bleed work, each line busts an objection & nudges to sign up)
-const cap = (big, small) => `<div style="position:absolute;bottom:150px;left:64px;right:64px;text-align:center;">
+const cap = (big, small) => `<div style="position:absolute;top:150px;left:64px;right:64px;text-align:center;">
    <p style="font-family:${RD};font-size:62px;font-weight:700;color:#fff;margin:0;line-height:1.02;${SH}">${big}</p>
    <p style="font-family:${SE};font-size:35px;font-style:italic;color:rgba(255,255,255,0.92);margin:18px 0 0;line-height:1.3;${SH}">${small}</p>
  </div>`
-const proofScrim = 'linear-gradient(180deg,rgba(0,0,0,0.3) 0%,rgba(0,0,0,0.08) 30%,rgba(0,0,0,0.55) 62%,rgba(0,0,0,0.92) 100%)'
+const proofScrim = 'linear-gradient(180deg,rgba(0,0,0,0.92) 0%,rgba(0,0,0,0.55) 36%,rgba(0,0,0,0.08) 68%,transparent 100%)'
 slides.push(bleed('05-proof', H('000023.jpg'), cap('you don’t need to be a model', 'I direct every frame — you just show up.'), proofScrim))
 slides.push(bleed('06-proof', H('000050-6.jpg'), cap('shot on 35mm film', 'a full, directed shoot — completely free.'), proofScrim))
-slides.push(bleed('07-proof', H('DSC_0321.jpg'), cap('the photos are yours', 'edited, high-res — sent straight to you.'), proofScrim))
+slides.push(bleed('07-proof', H('000001-8.jpg'), cap('the photos are yours', 'edited, high-res — sent straight to you.'), proofScrim))
 slides.push(bleed('08-proof', H('000062-7.jpg'), cap('act now', 'before it’s too late →'), proofScrim))
 
 // 09 — how it works
@@ -113,12 +113,12 @@ slides.push({
 
 // 10 — CTA (full-bleed, handwritten, no @handle)
 slides.push(bleed('10-cta', H('DSC_0249.jpg'),
-  `<div style="position:absolute;bottom:330px;left:64px;right:64px;text-align:center;">
+  `<div style="position:absolute;top:170px;left:64px;right:64px;text-align:center;">
      <p style="font-family:${HW};font-size:138px;font-weight:700;color:#fff;margin:0;line-height:0.95;${SH}">Want in?</p>
      <p style="font-family:${HW};font-size:138px;font-weight:700;color:#fff;margin:0;line-height:0.95;${SH}">Sign up below.</p>
      <p style="font-family:${SE};font-size:34px;color:rgba(255,255,255,0.9);margin:34px 0 0;${SH}">A free photo shoot in Agra. I direct everything.</p>
    </div>`,
-  'linear-gradient(180deg,rgba(0,0,0,0.35) 0%,rgba(0,0,0,0.12) 35%,rgba(0,0,0,0.9) 100%)'))
+  'linear-gradient(180deg,rgba(0,0,0,0.9) 0%,rgba(0,0,0,0.5) 32%,rgba(0,0,0,0.12) 60%,rgba(0,0,0,0.5) 100%)'))
 
 async function render() {
   const dir = path.join(OUT, 'agra'); fs.mkdirSync(dir, { recursive: true })
