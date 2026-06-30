@@ -34,29 +34,33 @@ const face = (fam, file, weight) => `@font-face{font-family:'${fam}';font-weight
 const FONTCSS = [face('Poppins', 'poppins-700.woff2', '700'), face('Caveat', 'caveat-700.woff2', '700')].join('')
 
 // persistent corner wordmark — refined editorial mark, top-right of every slide
-const BADGE = `<div style="position:absolute;top:48px;right:50px;z-index:60;text-align:right;text-shadow:0 1px 10px rgba(0,0,0,0.9),0 1px 3px rgba(0,0,0,0.85);">
-  <div style="font-family:${SE};font-size:27px;font-weight:700;letter-spacing:0.16em;color:#fff;line-height:1;">VARANASI</div>
-  <div style="display:flex;align-items:center;justify-content:flex-end;gap:11px;margin-top:9px;">
-    <span style="width:42px;height:1px;background:rgba(255,255,255,0.6);display:inline-block;"></span>
-    <span style="font-family:${RD};font-size:13px;font-weight:600;letter-spacing:0.32em;color:rgba(255,255,255,0.92);">FREE PHOTO SHOOT</span>
+const BADGE_BG = `<div style="position:absolute;top:0;right:0;width:620px;height:300px;z-index:55;pointer-events:none;background:radial-gradient(125% 125% at 100% 0%,rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.3) 40%,transparent 70%);"></div>`
+const BADGE = `<div style="position:absolute;top:52px;right:54px;z-index:60;text-align:right;text-shadow:0 2px 12px rgba(0,0,0,0.95),0 1px 3px rgba(0,0,0,0.9);">
+  <div style="font-family:${SE};font-size:37px;font-weight:700;letter-spacing:0.17em;color:#fff;line-height:1;">VARANASI</div>
+  <div style="display:flex;align-items:center;justify-content:flex-end;gap:13px;margin-top:11px;">
+    <span style="width:56px;height:1.5px;background:rgba(255,255,255,0.75);display:inline-block;"></span>
+    <span style="font-family:${RD};font-size:17px;font-weight:600;letter-spacing:0.3em;color:#fff;">FREE PHOTO SHOOT</span>
   </div>
 </div>`
-const frame = (inner, bg) => `<div style="width:1080px;height:1920px;position:relative;overflow:hidden;background:${bg || '#000'};">${inner}${BADGE}</div>`
+const frame = (inner, bg, showBadge = true) => `<div style="width:1080px;height:1920px;position:relative;overflow:hidden;background:${bg || '#000'};">${inner}${showBadge ? BADGE_BG + BADGE : ''}</div>`
 const grain = (o = 0.06) => `<div style="position:absolute;inset:0;pointer-events:none;opacity:${o};mix-blend-mode:soft-light;background-image:radial-gradient(circle at 14% 18%,rgba(255,255,255,0.5),transparent 17%),radial-gradient(circle at 84% 12%,rgba(255,255,255,0.28),transparent 15%),repeating-linear-gradient(0deg,rgba(255,255,255,0.08) 0 1px,transparent 1px 4px);"></div>`
 const photo = (src, w, h, l, t, rad = 8, pos = 'center top') => `<img src="${src}" style="position:absolute;left:${l}px;top:${t}px;width:${w}px;height:${h}px;object-fit:cover;object-position:${pos};display:block;border-radius:${rad}px;"/>`
 
 function story(name, title, body, photosHtml) {
   return {
     name, html: frame(`
-    <div style="position:absolute;top:150px;left:60px;right:60px;text-align:center;"><p style="font-family:${RD};font-size:60px;font-weight:700;color:#fff;margin:0;line-height:1.0;letter-spacing:-0.01em;">${title}</p></div>
+    <div style="position:absolute;top:150px;left:60px;right:60px;text-align:center;">${TITLE(title)}</div>
     <div style="position:absolute;top:300px;left:74px;right:74px;text-align:center;"><p style="font-family:${SE};font-size:38px;color:rgba(255,255,255,0.92);line-height:1.45;margin:0;">${body}</p></div>
     ${photosHtml || ''}` + grain(), '#0a0a0a')
   }
 }
-function bleed(name, src, overlay, scrim) {
+function bleed(name, src, overlay, scrim, showBadge = true) {
   const sc = scrim || 'linear-gradient(180deg,rgba(0,0,0,0.45) 0%,transparent 30%,transparent 55%,rgba(0,0,0,0.9) 100%)'
-  return { name, html: frame(`<img src="${src}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;display:block;filter:saturate(1.06) contrast(1.03);"/><div style="position:absolute;inset:0;background:${sc};"></div>${overlay}${grain(0.08)}`) }
+  return { name, html: frame(`<img src="${src}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;display:block;filter:saturate(1.06) contrast(1.03);"/><div style="position:absolute;inset:0;background:${sc};"></div>${overlay}${grain(0.08)}`, null, showBadge) }
 }
+
+// serif title style for section headings (replaces the old Poppins look)
+const TITLE = (txt, size = 64) => `<p style="font-family:${SE};font-style:italic;font-size:${size}px;font-weight:700;color:#fff;margin:0;line-height:1.0;">${txt}</p>`
 
 const slides = []
 
@@ -66,35 +70,29 @@ slides.push(bleed('01-hook', H('000016-7.jpg'),
      <p style="font-family:${SE};font-size:150px;font-weight:700;font-style:italic;color:#fff;margin:0;line-height:0.88;${SH}">Varanasi</p>
      <p style="font-family:${SE};font-size:80px;font-weight:700;font-style:italic;color:#fff;margin:10px 0 0;line-height:0.98;${SH}">free photo shoot.</p>
      <p style="font-family:${SE};font-size:33px;font-style:italic;color:rgba(255,255,255,0.85);margin:30px 0 0;${SH}">Here's the deal →</p>
-   </div>`))
+   </div>`, undefined, false))
 
-// 02 — the deal (formal, narrow column, sharp point-point-point)
-{
-  const points = [
-    'A full portrait session, shot on 35mm film.',
-    'Directed start to finish — every frame.',
-    'Edited images, yours to keep. No cost.',
-  ]
-  slides.push({
-    name: '02-deal', html: frame(`
-      <div style="position:absolute;top:150px;left:60px;right:60px;text-align:center;"><p style="font-family:${RD};font-size:60px;font-weight:700;color:#fff;margin:0;line-height:1.0;letter-spacing:-0.01em;">here’s the deal</p></div>
-      <div style="position:absolute;top:330px;left:170px;right:170px;text-align:center;">
-        ${points.map((p, i) => `<p style="font-family:${SE};font-size:36px;color:rgba(255,255,255,0.94);line-height:1.28;margin:${i ? '26px' : '0'} 0 0;">${p}</p>`).join('')}
-      </div>
-      ${photo(H('000019-6.jpg'), 680, 940, 200, 760)}
-    ` + grain(), '#0a0a0a')
-  })
-}
+// 02 — what you get (personal, natural copy — narrow column)
+slides.push({
+  name: '02-deal', html: frame(`
+    <div style="position:absolute;top:150px;left:60px;right:60px;text-align:center;">${TITLE('what you get')}</div>
+    <div style="position:absolute;top:320px;left:155px;right:155px;text-align:center;">
+      <p style="font-family:${SE};font-size:37px;color:rgba(255,255,255,0.95);line-height:1.4;margin:0;">I'll photograph you on 35mm film — a full session, directed start to finish, with edited images that are yours to keep.</p>
+      <p style="font-family:${SE};font-size:37px;font-style:italic;color:#e9c986;line-height:1.4;margin:26px 0 0;">And it's completely free.</p>
+    </div>
+    ${photo(H('000019-6.jpg'), 660, 900, 210, 800)}
+  ` + grain(), '#0a0a0a')
+})
 
-// 03 — about me (professional, photographer-based)
+// 03 — about me (professional, photographer-based) — text above, photo below
 slides.push({
   name: '03-about', html: frame(`
-    <div style="position:absolute;top:150px;left:60px;right:60px;text-align:center;"><p style="font-family:${RD};font-size:60px;font-weight:700;color:#fff;margin:0;line-height:1.0;letter-spacing:-0.01em;">about me</p></div>
-    ${photo(Sf('aidan-cropped-01.jpg'), 500, 640, 290, 320, 8, 'center top')}
-    <div style="position:absolute;top:1050px;left:130px;right:130px;text-align:center;">
-      <p style="font-family:${SE};font-size:36px;color:rgba(255,255,255,0.94);line-height:1.42;margin:0;">hi, i'm aidan. i'm a photographer from the united states. for the past 3 years i've been traveling the world capturing portraits and documenting the experience.</p>
-      <p style="font-family:${SE};font-size:36px;font-style:italic;color:#e9c986;line-height:1.42;margin:30px 0 0;">currently i'm in india, looking to create something special. are you in varanasi?</p>
+    <div style="position:absolute;top:150px;left:60px;right:60px;text-align:center;">${TITLE('about me')}</div>
+    <div style="position:absolute;top:310px;left:120px;right:120px;text-align:center;">
+      <p style="font-family:${SE};font-size:36px;color:rgba(255,255,255,0.94);line-height:1.42;margin:0;">hi, i'm aidan. i'm a photographer from the united states. for the past 3 years i've been traveling the world taking photos and documenting my experiences.</p>
+      <p style="font-family:${SE};font-size:36px;font-style:italic;color:#e9c986;line-height:1.42;margin:28px 0 0;">currently i'm in india, looking to create something special. are you in varanasi?</p>
     </div>
+    ${photo(Sf('aidan-cropped-01.jpg'), 470, 590, 305, 770, 8, 'center top')}
   ` + grain(), '#0a0a0a')
 })
 
@@ -111,7 +109,7 @@ slides.push({
     pr(f[4], 370, 760, 340, 450, 2)   // center, on top — photo-pile
   slides.push({
     name: '04-work', html: frame(`
-      <div style="position:absolute;top:120px;left:60px;right:60px;text-align:center;"><p style="font-family:${RD};font-size:60px;font-weight:700;color:#fff;margin:0;">some of my work</p></div>
+      <div style="position:absolute;top:120px;left:60px;right:60px;text-align:center;">${TITLE('some of my work')}</div>
       ${collage}
     ` + grain(), '#0a0a0a')
   })
@@ -119,7 +117,7 @@ slides.push({
 
 // 05–08 — image proofs (each line busts an objection & nudges to sign up)
 const cap = (big, small, pos = 'top:1120px') => `<div style="position:absolute;${pos};left:64px;right:64px;text-align:center;">
-   <p style="font-family:${RD};font-size:62px;font-weight:700;color:#fff;margin:0;line-height:1.02;${SH}">${big}</p>
+   <p style="font-family:${SE};font-style:italic;font-size:64px;font-weight:700;color:#fff;margin:0;line-height:1.02;${SH}">${big}</p>
    <p style="font-family:${SE};font-size:35px;font-style:italic;color:rgba(255,255,255,0.92);margin:18px 0 0;line-height:1.3;${SH}">${small}</p>
  </div>`
 // scrim that darkens the lower-middle band where the (now lower) captions sit
@@ -129,12 +127,13 @@ const proofScrim = 'linear-gradient(180deg,transparent 0%,transparent 40%,rgba(0
 {
   const g = [Fv('000002-11.jpg'), Fv('000019-10.jpg'), Fv('000063.jpg')]
   const pr = (src, l, t, w, h, rot) => `<div style="position:absolute;left:${l}px;top:${t}px;width:${w + 22}px;height:${h + 22}px;background:#fafafa;padding:11px 11px 13px;transform:rotate(${rot}deg);box-shadow:0 14px 40px rgba(0,0,0,0.5),0 3px 9px rgba(0,0,0,0.3);"><img src="${src}" style="width:${w}px;height:${h}px;object-fit:cover;object-position:center top;display:block;"/></div>`
-  const trip = pr(g[0], -15, 860, 470, 610, -4) + pr(g[2], 625, 875, 470, 610, 4) + pr(g[1], 305, 700, 490, 645, 2)
+  // staggered: middle highest, left lower, right lowest
+  const trip = pr(g[1], 305, 660, 480, 630, 1) + pr(g[0], -20, 900, 460, 600, -4) + pr(g[2], 630, 1010, 460, 600, 4)
   slides.push({
     name: '05-proof', html: frame(`
       <div style="position:absolute;top:150px;left:64px;right:64px;text-align:center;">
-        <p style="font-family:${RD};font-size:62px;font-weight:700;color:#fff;margin:0;line-height:1.02;">you don’t need to be a model</p>
-        <p style="font-family:${SE};font-size:35px;font-style:italic;color:rgba(255,255,255,0.85);margin:18px 0 0;line-height:1.3;">I direct every frame — you just show up.</p>
+        ${TITLE('never done this before?', 60)}
+        <p style="font-family:${SE};font-size:35px;font-style:italic;color:rgba(255,255,255,0.85);margin:20px 0 0;line-height:1.3;">perfect — i'll direct you through every frame.</p>
       </div>
       ${trip}
     ` + grain(), '#0a0a0a')
@@ -147,9 +146,9 @@ slides.push(bleed('08-proof', H('000062-7.jpg'), cap('act now', 'before it’s t
 // 09 — how it works
 slides.push({
   name: '09-how', html: frame(`
-    <div style="position:absolute;top:210px;left:60px;right:60px;text-align:center;"><p style="font-family:${RD};font-size:60px;font-weight:700;color:#fff;margin:0;">how it works</p></div>
+    <div style="position:absolute;top:210px;left:60px;right:60px;text-align:center;">${TITLE('how it works')}</div>
     <div style="position:absolute;top:480px;left:120px;right:120px;">
-      ${[['1', 'Sign up', 'Tap the link below — takes a minute.'], ['2', 'We plan it', 'A quick chat to pick the spot, time & look.'], ['3', 'We shoot', 'About an hour. I direct every frame.']].map(s => `<div style="display:flex;gap:30px;align-items:flex-start;margin:0 0 58px;"><span style="font-family:${SE};font-size:78px;font-style:italic;font-weight:700;color:#e9c986;line-height:0.85;">${s[0]}</span><div><p style="font-family:${RD};font-size:44px;font-weight:700;color:#fff;margin:0;">${s[1]}</p><p style="font-family:${SE};font-size:33px;color:rgba(255,255,255,0.62);margin:8px 0 0;line-height:1.3;">${s[2]}</p></div></div>`).join('')}
+      ${[['1', 'Sign up', 'Tap the link below — takes a minute.'], ['2', 'We plan it', 'A quick chat to pick the spot, time & look.'], ['3', 'We shoot', 'About an hour. I direct every frame.']].map(s => `<div style="display:flex;gap:30px;align-items:flex-start;margin:0 0 58px;"><span style="font-family:${SE};font-size:78px;font-style:italic;font-weight:700;color:#e9c986;line-height:0.85;">${s[0]}</span><div><p style="font-family:${SE};font-style:italic;font-size:46px;font-weight:700;color:#fff;margin:0;">${s[1]}</p><p style="font-family:${SE};font-size:33px;color:rgba(255,255,255,0.62);margin:8px 0 0;line-height:1.3;">${s[2]}</p></div></div>`).join('')}
     </div>
     <div style="position:absolute;bottom:230px;left:74px;right:74px;text-align:center;"><p style="font-family:${SE};font-size:34px;font-style:italic;color:rgba(255,255,255,0.6);margin:0;">No experience needed — that's my job.</p></div>
   ` + grain(), '#0a0a0a')
