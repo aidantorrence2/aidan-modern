@@ -3,14 +3,13 @@ import { fileURLToPath } from 'url'
 import path from 'path'
 import fs from 'fs'
 
-// Delhi STORY carousel (MODELS variant) — same spine, copy subtly tuned for
-// models / aspiring models (editorial, portfolio, "your book") without shouting it.
-// Visual language from maciejsphotos: black slides, Poppins titles, Georgia serif
-// body, Caveat handwriting on the CTA.
+// Varanasi STORY carousel — offer-led spine (sell the free shoot; story = proof).
+// Order: hook -> deal -> about -> work -> proofs -> how -> cta.
+// Persistent "varanasi free photo shoot" badge top-right of every slide.
 // big -> headliners/ , small -> faves/ , self -> self/
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
-const OUT = path.join(__dirname, 'output-delhi-models')
+const OUT = path.join(__dirname, 'output-varanasi-story')
 const HEAD = '/Users/aidantorrence/Documents/aidan-modern/public/images/headliners'
 const FAVE = '/Users/aidantorrence/Documents/aidan-modern/public/images/faves'
 const SELF = '/Users/aidantorrence/Documents/aidan-modern/public/images/self'
@@ -34,7 +33,9 @@ const fontB64 = f => fs.readFileSync(path.join(FDIR, f)).toString('base64')
 const face = (fam, file, weight) => `@font-face{font-family:'${fam}';font-weight:${weight};font-style:normal;font-display:block;src:url(data:font/woff2;base64,${fontB64(file)}) format('woff2');}`
 const FONTCSS = [face('Poppins', 'poppins-700.woff2', '700'), face('Caveat', 'caveat-700.woff2', '700')].join('')
 
-const frame = (inner, bg) => `<div style="width:1080px;height:1920px;position:relative;overflow:hidden;background:${bg || '#000'};">${inner}</div>`
+// persistent small-but-visible label, top-right of every slide
+const BADGE = `<div style="position:absolute;top:40px;right:40px;z-index:60;font-family:${RD};font-size:23px;font-weight:700;letter-spacing:0.03em;color:#fff;background:rgba(0,0,0,0.5);padding:9px 17px;border-radius:999px;border:1px solid rgba(255,255,255,0.3);text-shadow:0 1px 4px rgba(0,0,0,0.9);">varanasi free photo shoot</div>`
+const frame = (inner, bg) => `<div style="width:1080px;height:1920px;position:relative;overflow:hidden;background:${bg || '#000'};">${inner}${BADGE}</div>`
 const grain = (o = 0.06) => `<div style="position:absolute;inset:0;pointer-events:none;opacity:${o};mix-blend-mode:soft-light;background-image:radial-gradient(circle at 14% 18%,rgba(255,255,255,0.5),transparent 17%),radial-gradient(circle at 84% 12%,rgba(255,255,255,0.28),transparent 15%),repeating-linear-gradient(0deg,rgba(255,255,255,0.08) 0 1px,transparent 1px 4px);"></div>`
 const photo = (src, w, h, l, t, rad = 8, pos = 'center top') => `<img src="${src}" style="position:absolute;left:${l}px;top:${t}px;width:${w}px;height:${h}px;object-fit:cover;object-position:${pos};display:block;border-radius:${rad}px;"/>`
 
@@ -56,20 +57,40 @@ const slides = []
 // 01 — HOOK (full-bleed work shot) — location BIG, Georgia
 slides.push(bleed('01-hook', H('000016-7.jpg'),
   `<div style="position:absolute;bottom:300px;left:64px;right:64px;text-align:center;">
-     <p style="font-family:${SE};font-size:150px;font-weight:700;font-style:italic;color:#fff;margin:0;line-height:0.88;${SH}">Delhi</p>
+     <p style="font-family:${SE};font-size:150px;font-weight:700;font-style:italic;color:#fff;margin:0;line-height:0.88;${SH}">Varanasi</p>
      <p style="font-family:${SE};font-size:80px;font-weight:700;font-style:italic;color:#fff;margin:10px 0 0;line-height:0.98;${SH}">free photo shoot.</p>
      <p style="font-family:${SE};font-size:33px;font-style:italic;color:rgba(255,255,255,0.85);margin:30px 0 0;${SH}">Here's the deal →</p>
    </div>`))
 
-// 02 — a bit about me (who) — self photo, bigger, less gap
-slides.push(story('02-about', 'a bit about me',
-  "I'm Aidan, from the USA. For the last 3 years I've been shooting portraits around the world — 47 countries so far. Right now, I'm in Delhi.",
-  photo(Sf('aidan-cropped-01.jpg'), 560, 700, 260, 580, 8, 'center top')))
+// 02 — the deal (formal, narrow column, sharp point-point-point)
+{
+  const points = [
+    'A full portrait session, shot on 35mm film.',
+    'Directed start to finish — every frame.',
+    'Edited images, yours to keep. No cost.',
+  ]
+  slides.push({
+    name: '02-deal', html: frame(`
+      <div style="position:absolute;top:150px;left:60px;right:60px;text-align:center;"><p style="font-family:${RD};font-size:60px;font-weight:700;color:#fff;margin:0;line-height:1.0;letter-spacing:-0.01em;">here’s the deal</p></div>
+      <div style="position:absolute;top:330px;left:170px;right:170px;text-align:center;">
+        ${points.map((p, i) => `<p style="font-family:${SE};font-size:36px;color:rgba(255,255,255,0.94);line-height:1.28;margin:${i ? '26px' : '0'} 0 0;">${p}</p>`).join('')}
+      </div>
+      ${photo(H('000019-6.jpg'), 680, 940, 200, 760)}
+    ` + grain(), '#0a0a0a')
+  })
+}
 
-// 03 — the deal (what you get)
-slides.push(story('03-deal', 'here’s the deal',
-  "I'll photograph you on 35mm film — a full, directed editorial shoot, with edited images to keep. Completely free.",
-  photo(H('000019-6.jpg'), 700, 990, 190, 700)))
+// 03 — about me (professional, photographer-based)
+slides.push({
+  name: '03-about', html: frame(`
+    <div style="position:absolute;top:150px;left:60px;right:60px;text-align:center;"><p style="font-family:${RD};font-size:60px;font-weight:700;color:#fff;margin:0;line-height:1.0;letter-spacing:-0.01em;">about me</p></div>
+    ${photo(Sf('aidan-cropped-01.jpg'), 500, 640, 290, 320, 8, 'center top')}
+    <div style="position:absolute;top:1050px;left:130px;right:130px;text-align:center;">
+      <p style="font-family:${SE};font-size:36px;color:rgba(255,255,255,0.94);line-height:1.42;margin:0;">hi, i'm aidan. i'm a photographer from the united states. for the past 3 years i've been traveling the world capturing portraits and documenting the experience.</p>
+      <p style="font-family:${SE};font-size:36px;font-style:italic;color:#e9c986;line-height:1.42;margin:30px 0 0;">currently i'm in india, looking to create something special. are you in varanasi?</p>
+    </div>
+  ` + grain(), '#0a0a0a')
+})
 
 // 04 — some of my work (scattered film prints, portrait aspect kept)
 // keeper = 000016-3 (chinese-characters print) at f[2]; rest swapped fresh
@@ -106,15 +127,15 @@ const proofScrim = 'linear-gradient(180deg,transparent 0%,transparent 40%,rgba(0
   slides.push({
     name: '05-proof', html: frame(`
       <div style="position:absolute;top:150px;left:64px;right:64px;text-align:center;">
-        <p style="font-family:${RD};font-size:62px;font-weight:700;color:#fff;margin:0;line-height:1.02;">images for your portfolio</p>
-        <p style="font-family:${SE};font-size:35px;font-style:italic;color:rgba(255,255,255,0.85);margin:18px 0 0;line-height:1.3;">editorial shots you can actually use.</p>
+        <p style="font-family:${RD};font-size:62px;font-weight:700;color:#fff;margin:0;line-height:1.02;">you don’t need to be a model</p>
+        <p style="font-family:${SE};font-size:35px;font-style:italic;color:rgba(255,255,255,0.85);margin:18px 0 0;line-height:1.3;">I direct every frame — you just show up.</p>
       </div>
       ${trip}
     ` + grain(), '#0a0a0a')
   })
 }
-slides.push(bleed('06-proof', H('000050-6.jpg'), cap('shot on 35mm film', 'a full editorial shoot — completely free.'), proofScrim))
-slides.push(bleed('07-proof', H('000001-8.jpg'), cap('the photos are yours', 'edited, high-res — ready for your book.'), proofScrim))
+slides.push(bleed('06-proof', H('000050-6.jpg'), cap('shot on 35mm film', 'a full, directed shoot — completely free.'), proofScrim))
+slides.push(bleed('07-proof', H('000001-8.jpg'), cap('the photos are yours', 'edited, high-res — sent straight to you.'), proofScrim))
 slides.push(bleed('08-proof', H('000062-7.jpg'), cap('act now', 'before it’s too late →'), proofScrim))
 
 // 09 — how it works
@@ -122,7 +143,7 @@ slides.push({
   name: '09-how', html: frame(`
     <div style="position:absolute;top:210px;left:60px;right:60px;text-align:center;"><p style="font-family:${RD};font-size:60px;font-weight:700;color:#fff;margin:0;">how it works</p></div>
     <div style="position:absolute;top:480px;left:120px;right:120px;">
-      ${[['1', 'Sign up', 'Tap the link below — takes a minute.'], ['2', 'We plan it', 'A quick chat to pick the spot, time & look.'], ['3', 'We shoot', 'About an hour, directed like an editorial.']].map(s => `<div style="display:flex;gap:30px;align-items:flex-start;margin:0 0 58px;"><span style="font-family:${SE};font-size:78px;font-style:italic;font-weight:700;color:#e9c986;line-height:0.85;">${s[0]}</span><div><p style="font-family:${RD};font-size:44px;font-weight:700;color:#fff;margin:0;">${s[1]}</p><p style="font-family:${SE};font-size:33px;color:rgba(255,255,255,0.62);margin:8px 0 0;line-height:1.3;">${s[2]}</p></div></div>`).join('')}
+      ${[['1', 'Sign up', 'Tap the link below — takes a minute.'], ['2', 'We plan it', 'A quick chat to pick the spot, time & look.'], ['3', 'We shoot', 'About an hour. I direct every frame.']].map(s => `<div style="display:flex;gap:30px;align-items:flex-start;margin:0 0 58px;"><span style="font-family:${SE};font-size:78px;font-style:italic;font-weight:700;color:#e9c986;line-height:0.85;">${s[0]}</span><div><p style="font-family:${RD};font-size:44px;font-weight:700;color:#fff;margin:0;">${s[1]}</p><p style="font-family:${SE};font-size:33px;color:rgba(255,255,255,0.62);margin:8px 0 0;line-height:1.3;">${s[2]}</p></div></div>`).join('')}
     </div>
     <div style="position:absolute;bottom:230px;left:74px;right:74px;text-align:center;"><p style="font-family:${SE};font-size:34px;font-style:italic;color:rgba(255,255,255,0.6);margin:0;">No experience needed — that's my job.</p></div>
   ` + grain(), '#0a0a0a')
@@ -133,12 +154,12 @@ slides.push(bleed('10-cta', H('DSC_0249.jpg'),
   `<div style="position:absolute;top:170px;left:64px;right:64px;text-align:center;">
      <p style="font-family:${HW};font-size:138px;font-weight:700;color:#fff;margin:0;line-height:0.95;${SH}">Want in?</p>
      <p style="font-family:${HW};font-size:138px;font-weight:700;color:#fff;margin:0;line-height:0.95;${SH}">Sign up below.</p>
-     <p style="font-family:${SE};font-size:34px;color:rgba(255,255,255,0.9);margin:34px 0 0;${SH}">A free editorial shoot in Delhi. I direct everything.</p>
+     <p style="font-family:${SE};font-size:34px;color:rgba(255,255,255,0.9);margin:34px 0 0;${SH}">A free photo shoot in Varanasi. I direct everything.</p>
    </div>`,
   'linear-gradient(180deg,rgba(0,0,0,0.9) 0%,rgba(0,0,0,0.5) 32%,rgba(0,0,0,0.12) 60%,rgba(0,0,0,0.5) 100%)'))
 
 async function render() {
-  const dir = path.join(OUT, 'delhi'); fs.mkdirSync(dir, { recursive: true })
+  const dir = path.join(OUT, 'varanasi'); fs.mkdirSync(dir, { recursive: true })
   console.log(`Rendering ${slides.length} slides...`)
   const browser = await chromium.launch()
   const ctx = await browser.newContext({ viewport: { width: 1080, height: 1920 }, deviceScaleFactor: 2 })
