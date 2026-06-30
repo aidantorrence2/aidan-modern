@@ -90,7 +90,7 @@ slides.push({
     <div style="position:absolute;top:400px;left:120px;right:120px;text-align:center;">
       <p style="font-family:${SE};font-size:36px;color:rgba(255,255,255,0.94);line-height:1.42;margin:0;">hi, i'm aidan. i'm a photographer from USA. for the past 3 years i've been traveling the world taking photos and documenting my experiences.</p>
       <p style="font-family:${SE};font-size:36px;color:rgba(255,255,255,0.94);line-height:1.42;margin:24px 0 0;">currently i'm in India, looking to create something special.</p>
-      <p style="font-family:${SE};font-size:36px;color:rgba(255,255,255,0.94);line-height:1.42;margin:24px 0 0;">if you're in varanasi, let's chat.</p>
+      <p style="font-family:${SE};font-size:36px;color:rgba(255,255,255,0.94);line-height:1.42;margin:24px 0 0;">if you're in Varanasi, let's chat.</p>
     </div>
     ${photo(Sf('aidan-cropped-01.jpg'), 460, 580, 310, 880, 8, 'center top')}
   ` + grain(), '#0a0a0a')
