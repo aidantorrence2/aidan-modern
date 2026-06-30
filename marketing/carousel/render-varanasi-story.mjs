@@ -36,10 +36,10 @@ const FONTCSS = [face('Poppins', 'poppins-700.woff2', '700'), face('Caveat', 'ca
 // persistent corner wordmark — refined editorial mark, top-right of every slide
 const BADGE_BG = `<div style="position:absolute;top:0;right:0;width:620px;height:300px;z-index:55;pointer-events:none;background:radial-gradient(125% 125% at 100% 0%,rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.3) 40%,transparent 70%);"></div>`
 const BADGE = `<div style="position:absolute;top:52px;right:54px;z-index:60;text-align:right;text-shadow:0 2px 12px rgba(0,0,0,0.95),0 1px 3px rgba(0,0,0,0.9);">
-  <div style="font-family:${SE};font-size:37px;font-weight:700;letter-spacing:0.17em;color:#fff;line-height:1;">VARANASI</div>
-  <div style="display:flex;align-items:center;justify-content:flex-end;gap:13px;margin-top:11px;">
-    <span style="width:56px;height:1.5px;background:rgba(255,255,255,0.75);display:inline-block;"></span>
-    <span style="font-family:${RD};font-size:17px;font-weight:600;letter-spacing:0.3em;color:#fff;">FREE PHOTO SHOOT</span>
+  <div style="font-family:${SE};font-size:50px;font-weight:700;letter-spacing:0.15em;color:#fff;line-height:1;">VARANASI</div>
+  <div style="display:flex;align-items:center;justify-content:flex-end;gap:15px;margin-top:13px;">
+    <span style="width:70px;height:2px;background:rgba(255,255,255,0.8);display:inline-block;"></span>
+    <span style="font-family:${RD};font-size:22px;font-weight:600;letter-spacing:0.28em;color:#fff;">FREE PHOTO SHOOT</span>
   </div>
 </div>`
 const frame = (inner, bg, showBadge = true) => `<div style="width:1080px;height:1920px;position:relative;overflow:hidden;background:${bg || '#000'};">${inner}${showBadge ? BADGE_BG + BADGE : ''}</div>`
@@ -127,8 +127,8 @@ const proofScrim = 'linear-gradient(180deg,transparent 0%,transparent 40%,rgba(0
 {
   const g = [Fv('000002-11.jpg'), Fv('000019-10.jpg'), Fv('000063.jpg')]
   const pr = (src, l, t, w, h, rot) => `<div style="position:absolute;left:${l}px;top:${t}px;width:${w + 22}px;height:${h + 22}px;background:#fafafa;padding:11px 11px 13px;transform:rotate(${rot}deg);box-shadow:0 14px 40px rgba(0,0,0,0.5),0 3px 9px rgba(0,0,0,0.3);"><img src="${src}" style="width:${w}px;height:${h}px;object-fit:cover;object-position:center top;display:block;"/></div>`
-  // staggered: middle highest, left lower, right lowest
-  const trip = pr(g[1], 305, 660, 480, 630, 1) + pr(g[0], -20, 900, 460, 600, -4) + pr(g[2], 630, 1010, 460, 600, 4)
+  // staggered hard: middle high, left mid, right low (big vertical steps)
+  const trip = pr(g[1], 305, 520, 470, 620, 1) + pr(g[0], -25, 870, 455, 595, -4) + pr(g[2], 635, 1215, 455, 595, 4)
   slides.push({
     name: '05-proof', html: frame(`
       <div style="position:absolute;top:220px;left:64px;right:64px;text-align:center;">
