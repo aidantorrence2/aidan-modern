@@ -133,7 +133,7 @@ const proofScrim = 'linear-gradient(180deg,transparent 0%,transparent 40%,rgba(0
     name: '05-proof', html: frame(`
       <div style="position:absolute;top:220px;left:64px;right:64px;text-align:center;">
         ${TITLE('never done this before?', 60)}
-        <p style="font-family:${SE};font-size:35px;color:rgba(255,255,255,0.85);margin:20px 0 0;line-height:1.3;">perfect — i'll direct you through every frame.</p>
+        <p style="font-family:${SE};font-size:35px;color:rgba(255,255,255,0.85);margin:20px 0 0;line-height:1.3;">don't worry — i'll direct you through every frame.</p>
       </div>
       ${trip}
     ` + grain(), '#0a0a0a')
