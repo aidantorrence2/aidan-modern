@@ -89,13 +89,29 @@ slides.push(story('03-deal', 'here’s the deal',
   })
 }
 
-// 05–08 — image proofs (full-bleed work, each line busts an objection & nudges to sign up)
-const cap = (big, small) => `<div style="position:absolute;top:150px;left:64px;right:64px;text-align:center;">
+// 05–08 — image proofs (each line busts an objection & nudges to sign up)
+const cap = (big, small, pos = 'top:1120px') => `<div style="position:absolute;${pos};left:64px;right:64px;text-align:center;">
    <p style="font-family:${RD};font-size:62px;font-weight:700;color:#fff;margin:0;line-height:1.02;${SH}">${big}</p>
    <p style="font-family:${SE};font-size:35px;font-style:italic;color:rgba(255,255,255,0.92);margin:18px 0 0;line-height:1.3;${SH}">${small}</p>
  </div>`
-const proofScrim = 'linear-gradient(180deg,rgba(0,0,0,0.92) 0%,rgba(0,0,0,0.55) 36%,rgba(0,0,0,0.08) 68%,transparent 100%)'
-slides.push(bleed('05-proof', H('000023.jpg'), cap('you don’t need to be a model', 'I direct every frame — you just show up.'), proofScrim))
+// scrim that darkens the lower-middle band where the (now lower) captions sit
+const proofScrim = 'linear-gradient(180deg,transparent 0%,transparent 40%,rgba(0,0,0,0.5) 60%,rgba(0,0,0,0.92) 100%)'
+
+// 05 — multi-image proof (triptych on black)
+{
+  const g = [Fv('000002-11.jpg'), Fv('000019-10.jpg'), Fv('000063.jpg')]
+  const pr = (src, l, t, w, h, rot) => `<div style="position:absolute;left:${l}px;top:${t}px;width:${w + 22}px;height:${h + 22}px;background:#fafafa;padding:11px 11px 13px;transform:rotate(${rot}deg);box-shadow:0 14px 40px rgba(0,0,0,0.5),0 3px 9px rgba(0,0,0,0.3);"><img src="${src}" style="width:${w}px;height:${h}px;object-fit:cover;object-position:center top;display:block;"/></div>`
+  const trip = pr(g[0], -15, 860, 470, 610, -4) + pr(g[2], 625, 875, 470, 610, 4) + pr(g[1], 305, 700, 490, 645, 2)
+  slides.push({
+    name: '05-proof', html: frame(`
+      <div style="position:absolute;top:150px;left:64px;right:64px;text-align:center;">
+        <p style="font-family:${RD};font-size:62px;font-weight:700;color:#fff;margin:0;line-height:1.02;">you don’t need to be a model</p>
+        <p style="font-family:${SE};font-size:35px;font-style:italic;color:rgba(255,255,255,0.85);margin:18px 0 0;line-height:1.3;">I direct every frame — you just show up.</p>
+      </div>
+      ${trip}
+    ` + grain(), '#0a0a0a')
+  })
+}
 slides.push(bleed('06-proof', H('000050-6.jpg'), cap('shot on 35mm film', 'a full, directed shoot — completely free.'), proofScrim))
 slides.push(bleed('07-proof', H('000001-8.jpg'), cap('the photos are yours', 'edited, high-res — sent straight to you.'), proofScrim))
 slides.push(bleed('08-proof', H('000062-7.jpg'), cap('act now', 'before it’s too late →'), proofScrim))
