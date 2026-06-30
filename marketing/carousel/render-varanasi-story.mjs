@@ -88,7 +88,7 @@ slides.push({
   name: '03-about', html: frame(`
     <div style="position:absolute;top:240px;left:60px;right:60px;text-align:center;">${TITLE('about me')}</div>
     <div style="position:absolute;top:400px;left:120px;right:120px;text-align:center;">
-      <p style="font-family:${SE};font-size:36px;color:rgba(255,255,255,0.94);line-height:1.42;margin:0;">hi, i'm aidan. i'm a photographer from the united states. for the past 3 years i've been traveling the world taking photos and documenting my experiences.</p>
+      <p style="font-family:${SE};font-size:36px;color:rgba(255,255,255,0.94);line-height:1.42;margin:0;">hi, i'm aidan. i'm a photographer from USA. for the past 3 years i've been traveling the world taking photos and documenting my experiences.</p>
       <p style="font-family:${SE};font-size:36px;color:rgba(255,255,255,0.94);line-height:1.42;margin:24px 0 0;">currently i'm in india, looking to create something special. are you in varanasi?</p>
     </div>
     ${photo(Sf('aidan-cropped-01.jpg'), 460, 580, 310, 880, 8, 'center top')}
