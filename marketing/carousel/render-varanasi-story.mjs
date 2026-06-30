@@ -125,7 +125,7 @@ const proofScrim = 'linear-gradient(180deg,transparent 0%,transparent 40%,rgba(0
 
 // 05 — multi-image proof (triptych on black)
 {
-  const g = [Fv('000007-3.jpg'), Fv('000027-9.jpg'), Fv('DSC_0309-2.jpg')]
+  const g = [Fv('000002-11.jpg'), Fv('000019-10.jpg'), Fv('DSC_0309-2.jpg')]
   const pr = (src, l, t, w, h, rot) => `<div style="position:absolute;left:${l}px;top:${t}px;width:${w + 22}px;height:${h + 22}px;background:#fafafa;padding:11px 11px 13px;transform:rotate(${rot}deg);box-shadow:0 14px 40px rgba(0,0,0,0.5),0 3px 9px rgba(0,0,0,0.3);"><img src="${src}" style="width:${w}px;height:${h}px;object-fit:cover;object-position:center top;display:block;"/></div>`
   // staggered hard: middle high, left mid, right low (big vertical steps)
   const trip = pr(g[1], 305, 520, 470, 620, 1) + pr(g[0], -25, 870, 455, 595, -4) + pr(g[2], 480, 1215, 455, 595, 4)
