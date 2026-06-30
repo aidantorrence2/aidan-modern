@@ -79,7 +79,7 @@ slides.push({
     <div style="position:absolute;top:410px;left:120px;right:120px;text-align:center;">
       ${["we'll take photos on film.", "i'll direct you throughout.", "i'll send you the photos afterwards.", "and it's totally free."].map((p, i) => `<p style="font-family:${SE};font-size:38px;color:rgba(255,255,255,0.95);line-height:1.3;margin:${i ? '22px' : '0'} 0 0;">${p}</p>`).join('')}
     </div>
-    ${photo(H('000019-6.jpg'), 640, 870, 220, 880)}
+    ${photo(H('000019-6.jpg'), 770, 1020, 155, 800)}
   ` + grain(), '#0a0a0a')
 })
 
