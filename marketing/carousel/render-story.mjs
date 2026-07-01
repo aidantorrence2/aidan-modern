@@ -163,6 +163,10 @@ async function render() {
     const slides = buildSlides(city)
     const dir = path.join(__dirname, `output-${city.slug}-story`, city.slug)
     fs.mkdirSync(dir, { recursive: true })
+    // clean stale slides so renamed/removed slides never linger (old + new mixed)
+    for (const f of fs.readdirSync(dir)) {
+      if (f.toLowerCase().endsWith('.jpg')) fs.rmSync(path.join(dir, f))
+    }
     for (const s of slides) {
       const page = await ctx.newPage()
       await page.setContent(`<!doctype html><html><head><style>${FONTCSS}*{box-sizing:border-box}html,body{margin:0;width:1080px;height:1920px;background:#000;overflow:hidden}body{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}</style></head><body>${s.html}</body></html>`, { waitUntil: 'load' })
