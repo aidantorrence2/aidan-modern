@@ -103,14 +103,14 @@ function hookSlide(prefix, city, heroImg, subtext, imgPos = 'center') {
 }
 function proofSlide(prefix, headline, images) {
   const slots = [
-    { left: 40, top: 380, w: 290, h: 370, rot: -2.5 },
-    { left: 380, top: 350, w: 290, h: 370, rot: 1.8 },
-    { left: 720, top: 400, w: 290, h: 370, rot: -1.2 },
-    { left: 80, top: 770, w: 280, h: 350, rot: 1.6 },
-    { left: 420, top: 740, w: 280, h: 350, rot: -2.0 },
-    { left: 730, top: 780, w: 280, h: 350, rot: 2.4 },
-    { left: 160, top: 1130, w: 310, h: 390, rot: -1.4 },
-    { left: 560, top: 1110, w: 310, h: 390, rot: 1.9 }
+    { left: 40, top: 510, w: 290, h: 370, rot: -2.5 },
+    { left: 380, top: 480, w: 290, h: 370, rot: 1.8 },
+    { left: 720, top: 530, w: 290, h: 370, rot: -1.2 },
+    { left: 80, top: 895, w: 280, h: 350, rot: 1.6 },
+    { left: 420, top: 865, w: 280, h: 350, rot: -2.0 },
+    { left: 730, top: 905, w: 280, h: 350, rot: 2.4 },
+    { left: 160, top: 1250, w: 310, h: 390, rot: -1.4 },
+    { left: 560, top: 1230, w: 310, h: 390, rot: 1.9 }
   ]
   const imgHtml = images.map((src, i) => {
     const sl = slots[i]
@@ -222,13 +222,15 @@ async function render() {
       if (f.toLowerCase().endsWith('.png')) fs.rmSync(path.join(dir, f))
     }
     for (const slide of slides) {
+      // hook (slide 1) already carries the big location — wordmark only on 2–5
+      const mark = slide.name.endsWith('01-hook') ? '' : BADGE_BG + badge(city)
       const page = await context.newPage()
       await page.setContent(`<!doctype html><html><head><style>
         ${FONTCSS}
         * { box-sizing: border-box; }
         html, body { margin: 0; width: 1080px; height: 1920px; background: #000; overflow: hidden; }
         body { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
-      </style></head><body>${slide.html}${BADGE_BG}${badge(city)}</body></html>`, { waitUntil: 'load' })
+      </style></head><body>${slide.html}${mark}</body></html>`, { waitUntil: 'load' })
       await page.evaluate(() => document.fonts.ready)
       await page.waitForTimeout(400)
       await page.screenshot({ path: path.join(dir, `${slide.name}.png`), type: 'png' })
