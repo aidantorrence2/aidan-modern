@@ -24,3 +24,14 @@ public/images/locations/
 
 # Local DB backups (contain customer PII — never commit)
 data/backups/
+
+# marketing media outputs live on PortableSSD (aidan-modern-archive), not in git (2026-07-02 history rewrite)
+marketing/**/*.png
+marketing/**/*.jpg
+marketing/**/*.jpeg
+marketing/**/*.webp
+marketing/**/*.gif
+marketing/**/*.bmp
+marketing/**/*.heic
+marketing/**/*.tif
+marketing/**/*.tiff
