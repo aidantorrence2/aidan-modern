@@ -56,6 +56,15 @@ const preferenceOptions: ConceptOption[] = [
 
 const locationChips = ['Varanasi', 'Agra', 'Jaipur']
 
+// Two required photo slots replace the old free-form multi-upload. Naming the
+// exact shots (face + full length) sets the quality bar while "phone pic is
+// perfect" keeps the ask feeling small.
+type PhotoSlot = 'face' | 'body'
+const photoSlots: { key: PhotoSlot; emoji: string; title: string; desc: string }[] = [
+  { key: 'face', emoji: '\u{1F642}', title: 'Your face', desc: 'Facing the camera, good light — a selfie works' },
+  { key: 'body', emoji: '\u{1F9CD}', title: 'Full length', desc: 'Head to toe (or 3/4) — a mirror pic works' },
+]
+
 const heroImage = '/images/moodboards/editorial.jpg'
 
 export default function SignUpFormCollab() {
@@ -67,10 +76,12 @@ export default function SignUpFormCollab() {
   const [idea, setIdea] = useState('')
   const [whatsapp, setWhatsapp] = useState('')
   const [instagram, setInstagram] = useState('')
-  const [photos, setPhotos] = useState<string[]>([])
+  const [facePhoto, setFacePhoto] = useState<string | null>(null)
+  const [bodyPhoto, setBodyPhoto] = useState<string | null>(null)
   const [submitting, setSubmitting] = useState(false)
-  const [processingPhotos, setProcessingPhotos] = useState(false)
+  const [processingSlot, setProcessingSlot] = useState<PhotoSlot | null>(null)
   const fileRef = useRef<HTMLInputElement>(null)
+  const pendingSlotRef = useRef<PhotoSlot | null>(null)
   const whatsappRef = useRef<HTMLInputElement>(null)
   const instagramRef = useRef<HTMLInputElement>(null)
   const photoRef = useRef<HTMLDivElement>(null)
@@ -89,47 +100,42 @@ export default function SignUpFormCollab() {
     clearStatus()
   }
 
-  async function handlePhotos(e: React.ChangeEvent<HTMLInputElement>) {
-    const files = e.target.files
-    if (!files || files.length === 0) return
+  function pickPhoto(slot: PhotoSlot) {
+    pendingSlotRef.current = slot
+    fileRef.current?.click()
+  }
+
+  async function handleSlotPhoto(e: React.ChangeEvent<HTMLInputElement>) {
+    const file = e.target.files?.[0]
+    const slot = pendingSlotRef.current
+    if (!file || !slot) return
     clearStatus()
-    setProcessingPhotos(true)
-    let failures = 0
+    setProcessingSlot(slot)
     try {
-      for (const file of Array.from(files)) {
-        if (file.size > 20 * 1024 * 1024) {
-          failures++
-          continue
-        }
-        try {
-          const raw = await new Promise<string>((resolve, reject) => {
-            const reader = new FileReader()
-            reader.onload = () => resolve(reader.result as string)
-            reader.onerror = () => reject(new Error('Could not read file'))
-            reader.readAsDataURL(file)
-          })
-          const resized = await resizeImage(raw, 300 * 1024)
-          setPhotos(prev => [...prev, resized])
-        } catch {
-          failures++
-        }
-      }
+      if (file.size > 20 * 1024 * 1024) throw new Error('File too large')
+      const raw = await new Promise<string>((resolve, reject) => {
+        const reader = new FileReader()
+        reader.onload = () => resolve(reader.result as string)
+        reader.onerror = () => reject(new Error('Could not read file'))
+        reader.readAsDataURL(file)
+      })
+      const resized = await resizeImage(raw, 300 * 1024)
+      if (slot === 'face') setFacePhoto(resized)
+      else setBodyPhoto(resized)
+    } catch {
+      setState({
+        ok: false,
+        error: 'That photo could not be added (too large or unsupported format — try a JPG/PNG under 20 MB).'
+      })
     } finally {
-      setProcessingPhotos(false)
+      setProcessingSlot(null)
       if (fileRef.current) fileRef.current.value = ''
-      if (failures > 0) {
-        setState({
-          ok: false,
-          error: failures === 1
-            ? 'One photo could not be added (too large or unsupported format — try a JPG/PNG under 20 MB).'
-            : `${failures} photos could not be added (too large or unsupported format — try JPG/PNG under 20 MB).`
-        })
-      }
     }
   }
 
-  function removePhoto(index: number) {
-    setPhotos(prev => prev.filter((_, i) => i !== index))
+  function removePhoto(slot: PhotoSlot) {
+    if (slot === 'face') setFacePhoto(null)
+    else setBodyPhoto(null)
   }
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
@@ -137,7 +143,7 @@ export default function SignUpFormCollab() {
     const data = Object.fromEntries(new FormData(e.currentTarget).entries()) as Record<string, string>
     if (data.company) { setState({ ok: true }); return }
 
-    if (processingPhotos) {
+    if (processingSlot) {
       setState({ ok: false, error: 'Photos are still processing — hang on a sec and try again.' })
       photoRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' })
       return
@@ -157,8 +163,13 @@ export default function SignUpFormCollab() {
       instagramRef.current?.focus()
       return
     }
-    if (photos.length === 0) {
-      setState({ ok: false, error: 'Upload a few photos of yourself.' })
+    if (!facePhoto) {
+      setState({ ok: false, error: 'Add a clear photo of your face — a simple selfie facing the camera works.' })
+      photoRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' })
+      return
+    }
+    if (!bodyPhoto) {
+      setState({ ok: false, error: 'Add a full-length photo (head to toe) — a casual mirror pic works.' })
       photoRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' })
       return
     }
@@ -172,6 +183,7 @@ export default function SignUpFormCollab() {
         ...(vibes.length > 0 ? ['Preference: ' + vibes.join(', ')] : []),
         ...(idea.trim() ? ['Notes: ' + idea.trim()] : []),
         'Instagram: ' + instagramTrim,
+        'Photos: face + full length',
       ]
       const res = await fetch('/api/sign-up', {
         method: 'POST',
@@ -181,7 +193,7 @@ export default function SignUpFormCollab() {
           contactMethod: 'whatsapp',
           contact: whatsappTrim,
           moodboard,
-          photos,
+          photos: [facePhoto, bodyPhoto],
         }),
       })
       if (!res.ok) throw new Error('Failed')
@@ -423,39 +435,59 @@ export default function SignUpFormCollab() {
           <p className="text-xs text-amber-400/80">follow @madebyaidan! 😊</p>
         </div>
 
-        {/* Photos */}
+        {/* Photos — two named slots: face + full length */}
         <div ref={photoRef} className="space-y-2">
           <div className="flex items-center gap-2">
             <span className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-500/20 text-[10px] font-bold text-emerald-400">6</span>
-            <label className="text-sm font-medium text-white/80">Photos of yourself</label>
+            <label className="text-sm font-medium text-white/80">Two quick photos</label>
           </div>
-          <p className="text-xs text-white/40">A selfie or headshot &mdash; you can upload multiple</p>
-          <div className="mt-1 flex flex-wrap gap-1.5">
-            {photos.map((p, i) => (
-              <div key={i} className="relative">
-                <img src={p} alt="Preview" className="h-14 w-14 rounded-lg border border-white/10 object-cover" />
+          <p className="text-xs leading-relaxed text-white/40">
+            Normal phone pics are perfect &mdash; no professional shots, no editing. This just helps me plan your best angles and outfits.
+          </p>
+          <div className="grid grid-cols-2 gap-2">
+            {photoSlots.map(slot => {
+              const photo = slot.key === 'face' ? facePhoto : bodyPhoto
+              if (photo) {
+                return (
+                  <div key={slot.key} className="relative aspect-[3/4] overflow-hidden rounded-xl border border-emerald-400/50">
+                    <img src={photo} alt={slot.title} className="h-full w-full object-cover" />
+                    <div className="absolute inset-x-0 bottom-0 px-3 py-2" style={{ background: 'linear-gradient(180deg, transparent 0%, rgba(10,10,10,0.9) 100%)' }}>
+                      <p className="text-xs font-semibold text-emerald-300">&#10003; {slot.title}</p>
+                    </div>
+                    <button
+                      type="button"
+                      onClick={() => removePhoto(slot.key)}
+                      className="absolute right-1.5 top-1.5 flex h-6 w-6 items-center justify-center rounded-full bg-black/50 text-sm text-white backdrop-blur transition hover:bg-red-500"
+                      aria-label={`Remove ${slot.title} photo`}
+                    >
+                      &times;
+                    </button>
+                  </div>
+                )
+              }
+              return (
                 <button
+                  key={slot.key}
                   type="button"
-                  onClick={() => removePhoto(i)}
-                  className="absolute -right-1.5 -top-1.5 flex h-5 w-5 items-center justify-center rounded-full bg-white/20 text-xs text-white backdrop-blur transition hover:bg-red-500"
-                  aria-label="Remove photo"
+                  onClick={() => pickPhoto(slot.key)}
+                  disabled={processingSlot !== null}
+                  className="flex aspect-[3/4] flex-col items-center justify-center gap-1.5 rounded-xl border border-dashed border-white/15 bg-white/[0.03] px-3 text-center transition hover:border-emerald-400/50 hover:bg-white/[0.05] disabled:opacity-50"
                 >
-                  &times;
+                  {processingSlot === slot.key ? (
+                    <span className="inline-block h-5 w-5 animate-spin rounded-full border-2 border-white/30 border-t-emerald-400" aria-label="Processing" />
+                  ) : (
+                    <>
+                      <span className="text-2xl">{slot.emoji}</span>
+                      <span className="text-sm font-semibold text-white">{slot.title}</span>
+                      <span className="text-xs leading-snug text-white/40">{slot.desc}</span>
+                      <span className="mt-1 rounded-full border border-emerald-400/40 bg-emerald-400/10 px-3 py-1 text-xs font-semibold text-emerald-300">Tap to add</span>
+                    </>
+                  )}
                 </button>
-              </div>
-            ))}
-            <button
-              type="button"
-              onClick={() => fileRef.current?.click()}
-              disabled={processingPhotos}
-              className="flex h-14 w-14 items-center justify-center rounded-lg border border-dashed border-white/15 bg-white/5 text-xl text-white/30 transition hover:border-emerald-400/50 hover:text-emerald-400 disabled:opacity-50"
-            >
-              {processingPhotos ? (
-                <span className="inline-block h-4 w-4 animate-spin rounded-full border-2 border-white/30 border-t-emerald-400" aria-label="Processing" />
-              ) : '+'}
-            </button>
+              )
+            })}
           </div>
-          <input ref={fileRef} type="file" accept="image/*" multiple onChange={handlePhotos} className="hidden" />
+          <input ref={fileRef} type="file" accept="image/*" onChange={handleSlotPhoto} className="hidden" />
         </div>
 
         {/* Honeypot */}
@@ -463,11 +495,11 @@ export default function SignUpFormCollab() {
 
         <button
           type="submit"
-          disabled={submitting || processingPhotos}
+          disabled={submitting || processingSlot !== null}
           className="w-full rounded-full bg-emerald-500 py-3.5 text-sm font-bold text-white shadow-lg shadow-emerald-500/25 transition hover:bg-emerald-400 disabled:opacity-50"
           data-cta="sign-up-collab-submit"
         >
-          {submitting || processingPhotos ? (
+          {submitting || processingSlot !== null ? (
             <span className="inline-block h-4 w-4 animate-spin rounded-full border-2 border-white/40 border-t-white align-[-2px]" aria-label="Loading" />
           ) : 'Sign Up & Get Details'}
         </button>
