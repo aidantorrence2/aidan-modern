@@ -1,9 +1,9 @@
 import SignUpFormCollab from '@/components/SignUpFormCollab'
 
 export const metadata = {
-  title: 'Model Collaboration — Delhi',
+  title: 'Model Collaboration — Kolkata',
   description:
-    'Open for model collaborations in Delhi. TFP — we both build our portfolios. DM or sign up.'
+    'Open for model collaborations in Kolkata. TFP — we both build our portfolios. DM or sign up.'
 }
 
 export default function SignUpCollabPage() {

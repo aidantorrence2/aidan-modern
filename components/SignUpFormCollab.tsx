@@ -54,7 +54,7 @@ const preferenceOptions: ConceptOption[] = [
   { id: NO_PREFERENCE, desc: "You direct it \u2014 I'll design the shoot" },
 ]
 
-const locationChips = ['Varanasi', 'Agra', 'Jaipur']
+const locationChips = ['Kolkata', 'Varanasi', 'Agra', 'Jaipur']
 
 const heroImage = '/images/moodboards/editorial.jpg'
 
@@ -66,13 +66,11 @@ export default function SignUpFormCollab() {
   const [vibes, setVibes] = useState<string[]>([])
   const [idea, setIdea] = useState('')
   const [whatsapp, setWhatsapp] = useState('')
-  const [instagram, setInstagram] = useState('')
   const [photos, setPhotos] = useState<string[]>([])
   const [submitting, setSubmitting] = useState(false)
   const [processingPhotos, setProcessingPhotos] = useState(false)
   const fileRef = useRef<HTMLInputElement>(null)
   const whatsappRef = useRef<HTMLInputElement>(null)
-  const instagramRef = useRef<HTMLInputElement>(null)
   const photoRef = useRef<HTMLDivElement>(null)
 
   function clearStatus() {
@@ -144,17 +142,10 @@ export default function SignUpFormCollab() {
     }
 
     const whatsappTrim = whatsapp.trim()
-    const instagramTrim = instagram.trim()
     if (!whatsappTrim) {
       setState({ ok: false, error: 'Please enter your WhatsApp number.' })
       whatsappRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' })
       whatsappRef.current?.focus()
-      return
-    }
-    if (!instagramTrim) {
-      setState({ ok: false, error: 'Please enter your Instagram handle.' })
-      instagramRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' })
-      instagramRef.current?.focus()
       return
     }
     if (photos.length === 0) {
@@ -171,7 +162,6 @@ export default function SignUpFormCollab() {
         ...(location.trim() ? ['Location: ' + location.trim()] : []),
         ...(vibes.length > 0 ? ['Preference: ' + vibes.join(', ')] : []),
         ...(idea.trim() ? ['Notes: ' + idea.trim()] : []),
-        'Instagram: ' + instagramTrim,
       ]
       const res = await fetch('/api/sign-up', {
         method: 'POST',
@@ -402,31 +392,10 @@ export default function SignUpFormCollab() {
           />
         </div>
 
-        {/* Instagram */}
-        <div className="space-y-2">
-          <div className="flex items-center gap-2">
-            <span className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-500/20 text-[10px] font-bold text-emerald-400">5</span>
-            <label className="text-sm font-medium text-white/80">Instagram</label>
-          </div>
-          <input
-            ref={instagramRef}
-            required
-            name="instagram"
-            value={instagram}
-            onChange={e => { setInstagram(e.target.value); clearStatus() }}
-            autoCapitalize="off"
-            autoCorrect="off"
-            spellCheck={false}
-            className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-white/30 outline-none transition focus:border-emerald-400 focus:ring-2 focus:ring-emerald-400/30"
-            placeholder="@yourhandle"
-          />
-          <p className="text-xs text-amber-400/80">follow @madebyaidan! 😊</p>
-        </div>
-
         {/* Photos */}
         <div ref={photoRef} className="space-y-2">
           <div className="flex items-center gap-2">
-            <span className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-500/20 text-[10px] font-bold text-emerald-400">6</span>
+            <span className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-500/20 text-[10px] font-bold text-emerald-400">5</span>
             <label className="text-sm font-medium text-white/80">Photos of yourself</label>
           </div>
           <p className="text-xs leading-relaxed text-white/40">
