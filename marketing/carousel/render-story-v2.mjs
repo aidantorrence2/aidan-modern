@@ -14,6 +14,7 @@ import fs from 'fs'
 // Prints are matted at each photo's native aspect — no crops.
 const CITIES = [
   { name: 'Varanasi', slug: 'varanasi' },
+  { name: 'Kolkata', slug: 'kolkata' },
 ]
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
