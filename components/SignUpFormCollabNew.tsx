@@ -52,8 +52,6 @@ const proofImages = [
   '/images/proof/000041.jpg',
 ]
 
-const dontNeed = ['A makeup team', 'A mood board', 'Modeling experience', 'Weeks of planning']
-
 export default function SignUpFormCollabNew() {
   const [state, setState] = useState<State | null>(null)
   const [location, setLocation] = useState('')
@@ -212,51 +210,18 @@ export default function SignUpFormCollabNew() {
         </a>
       </div>
 
-      {/* Hero — same concept as the carousel title slides */}
-      <div className="space-y-5">
+      {/* Hero — the carousel concept in three lines, then straight into the form */}
+      <div className="space-y-3">
         <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-white/50">Free photo shoot &middot; Shot on 35mm film</p>
         <h1 className="text-4xl font-bold leading-[1.02] text-white sm:text-5xl" style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic' }}>
           Pick an outfit.<br />Pick a location.<br /><span style={{ color: GOLD }}>Show up.</span>
         </h1>
-        <p className="text-base leading-relaxed text-white/50">
-          That&apos;s the whole plan. No prep, no production — I direct every frame, and you keep the edited film scans. Free, because we both get content.
+        <p className="text-sm leading-relaxed text-white/50">
+          That&apos;s the whole plan. Free — I direct every frame, you keep the edited film scans.
         </p>
-
-        {/* What you don't need — straight from the ad creative */}
-        <div className="rounded-2xl border border-white/[0.08] bg-white/[0.03] px-5 py-4">
-          <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-white/30">What you need</p>
-          <div className="mt-2.5 space-y-1.5">
-            {dontNeed.map(item => (
-              <p key={item} className="text-[15px] text-white/35" style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic' }}>
-                <span className="line-through" style={{ textDecorationColor: 'rgba(233,201,134,0.8)', textDecorationThickness: '2px' }}>{item}</span>
-              </p>
-            ))}
-            <p className="pt-1 text-lg font-semibold" style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic', color: GOLD }}>
-              An outfit. A location. You.
-            </p>
-          </div>
-        </div>
-
-        <div className="space-y-2.5">
-          <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-white/30">Recent work &middot; Shot on 35mm film</p>
-          <div className="grid grid-cols-4 gap-1">
-            {proofImages.map((src, i) => (
-              <div key={i} className="relative overflow-hidden rounded-md aspect-[3/4]">
-                <NextImage
-                  src={src}
-                  alt=""
-                  width={200}
-                  height={267}
-                  sizes="(max-width: 640px) 25vw, 150px"
-                  className="w-full h-full object-cover object-top"
-                />
-              </div>
-            ))}
-          </div>
-        </div>
       </div>
 
-      <form onSubmit={onSubmit} className="mt-10 space-y-9">
+      <form onSubmit={onSubmit} className="mt-7 space-y-9">
         {state && !state.ok && (
           <div className="rounded-xl border border-red-500/30 bg-red-500/10 px-4 py-3 text-sm font-medium text-red-300">
             {state.error}
@@ -352,10 +317,42 @@ export default function SignUpFormCollabNew() {
           </div>
 
           <div ref={photoRef} className="space-y-2">
-            <label className="text-sm font-medium text-white/80">A photo or two of you</label>
+            <label className="text-sm font-medium text-white/80">Photos of yourself</label>
             <p className="text-xs leading-relaxed text-white/40">
-              Selfies are fine — no makeup, no filters, just the real you.
+              Selfies are fine &mdash; just looking to see the real you.
             </p>
+            <div className="space-y-1.5">
+              <p className="flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-[0.15em] text-emerald-400">
+                <svg viewBox="0 0 24 24" className="h-3.5 w-3.5" fill="none" stroke="currentColor" strokeWidth={3} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5" /></svg>
+                Like this &mdash; simple &amp; natural, don&apos;t hide your face
+              </p>
+              <div className="grid grid-cols-4 gap-1.5">
+                {['/images/collab-examples/good-1.jpg', '/images/collab-examples/good-2.jpg', '/images/collab-examples/good-3.jpg', '/images/collab-examples/good-4.jpg'].map((src, i) => (
+                  <div key={i} className="relative overflow-hidden rounded-lg border border-emerald-400/40 aspect-[3/4]">
+                    <NextImage src={src} alt="Good example photo" width={200} height={267} sizes="(max-width: 640px) 25vw, 100px" className="w-full h-full object-cover" />
+                    <span className="absolute right-1 top-1 flex h-6 w-6 items-center justify-center rounded-full bg-emerald-500 text-white">
+                      <svg viewBox="0 0 24 24" className="h-3.5 w-3.5" fill="none" stroke="currentColor" strokeWidth={3.5} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5" /></svg>
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="space-y-1.5">
+              <p className="flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-[0.15em] text-red-400/90">
+                <svg viewBox="0 0 24 24" className="h-3.5 w-3.5" fill="none" stroke="currentColor" strokeWidth={3} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12" /></svg>
+                Not like this &mdash; heavy makeup, filters, face hidden
+              </p>
+              <div className="grid grid-cols-4 gap-1.5">
+                {['/images/collab-examples/bad-1.jpg', '/images/collab-examples/bad-2.jpg', '/images/collab-examples/bad-3.jpg', '/images/collab-examples/bad-4.jpg'].map((src, i) => (
+                  <div key={i} className="relative overflow-hidden rounded-lg border border-red-400/30 aspect-[3/4]">
+                    <NextImage src={src} alt="Bad example photo" width={150} height={200} sizes="(max-width: 640px) 25vw, 100px" className="w-full h-full object-cover opacity-70 saturate-[0.85]" />
+                    <span className="absolute right-1 top-1 flex h-6 w-6 items-center justify-center rounded-full bg-red-500 text-white">
+                      <svg viewBox="0 0 24 24" className="h-3.5 w-3.5" fill="none" stroke="currentColor" strokeWidth={3.5} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12" /></svg>
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
             <div className="mt-1 flex flex-wrap gap-1.5">
               {photos.map((p, i) => (
                 <div key={i} className="relative">
@@ -405,8 +402,27 @@ export default function SignUpFormCollabNew() {
         </div>
       </form>
 
+      {/* Proof + how it works — below the form so nothing delays filling it out */}
+      <div className="mt-12 space-y-2.5 border-t border-white/[0.06] pt-8">
+        <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-white/30">Recent work &middot; Shot on 35mm film</p>
+        <div className="grid grid-cols-4 gap-1">
+          {proofImages.map((src, i) => (
+            <div key={i} className="relative overflow-hidden rounded-md aspect-[3/4]">
+              <NextImage
+                src={src}
+                alt=""
+                width={200}
+                height={267}
+                sizes="(max-width: 640px) 25vw, 150px"
+                className="w-full h-full object-cover object-top"
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+
       {/* How it works — same four beats as the ads */}
-      <div className="mt-12 space-y-4 border-t border-white/[0.06] pt-8">
+      <div className="mt-8 space-y-4">
         <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-white/30">How it works</p>
         {[
           ['1', 'Sign up.', 'The form above — takes a minute.'],
