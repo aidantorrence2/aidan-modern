@@ -429,7 +429,31 @@ export default function SignUpFormCollab() {
             <span className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-500/20 text-[10px] font-bold text-emerald-400">6</span>
             <label className="text-sm font-medium text-white/80">Photos of yourself</label>
           </div>
-          <p className="text-xs text-white/40">A selfie or headshot &mdash; you can upload multiple</p>
+          <p className="text-xs leading-relaxed text-white/40">
+            Two photos: <span className="text-white/70">one headshot</span> with hair pulled back, and <span className="text-white/70">one full-length</span> (or 3/4). Non-smiling, no or light makeup. A mirror selfie is fine.
+          </p>
+          <div className="space-y-1.5">
+            <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-emerald-400">&#10003; Like this &mdash; simple &amp; natural</p>
+            <div className="grid grid-cols-3 gap-1.5">
+              {['/images/collab-examples/good-1.jpg', '/images/collab-examples/good-2.jpg', '/images/collab-examples/good-3.jpg'].map((src, i) => (
+                <div key={i} className="relative overflow-hidden rounded-lg border border-emerald-400/40 aspect-[3/4]">
+                  <NextImage src={src} alt="Good example photo" width={200} height={267} sizes="(max-width: 640px) 33vw, 130px" className="w-full h-full object-cover" />
+                  <span className="absolute right-1 top-1 flex h-4 w-4 items-center justify-center rounded-full bg-emerald-500 text-[9px] font-bold text-white">&#10003;</span>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="space-y-1.5">
+            <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-red-400/90">&#10005; Not like this &mdash; makeup, filters, face hidden</p>
+            <div className="grid grid-cols-4 gap-1.5">
+              {['/images/collab-examples/bad-1.jpg', '/images/collab-examples/bad-2.jpg', '/images/collab-examples/bad-3.jpg', '/images/collab-examples/bad-4.jpg'].map((src, i) => (
+                <div key={i} className="relative overflow-hidden rounded-lg border border-red-400/30 aspect-[3/4]">
+                  <NextImage src={src} alt="Bad example photo" width={150} height={200} sizes="(max-width: 640px) 25vw, 100px" className="w-full h-full object-cover opacity-70 saturate-[0.85]" />
+                  <span className="absolute right-1 top-1 flex h-4 w-4 items-center justify-center rounded-full bg-red-500 text-[9px] font-bold text-white">&#10005;</span>
+                </div>
+              ))}
+            </div>
+          </div>
           <div className="mt-1 flex flex-wrap gap-1.5">
             {photos.map((p, i) => (
               <div key={i} className="relative">
