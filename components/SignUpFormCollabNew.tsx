@@ -231,9 +231,9 @@ export default function SignUpFormCollabNew() {
           ['3', 'Show up. We take photos. I’ll let you know how to pose, what to do, etc.'],
           ['4', 'I’ll send you the photos.'],
         ].map(([n, t]) => (
-          <div key={n} className="flex gap-4">
-            <span className="w-5 text-xl font-bold" style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic', color: GOLD }}>{n}</span>
-            <p className="text-sm font-semibold text-white" style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic' }}>{t}</p>
+          <div key={n} className="flex items-baseline gap-3">
+            <span className="w-5 shrink-0 text-lg font-bold" style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic', color: GOLD }}>{n}</span>
+            <p className="text-sm font-medium leading-relaxed text-white/85">{t}</p>
           </div>
         ))}
         <p className="text-sm font-semibold" style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic', color: GOLD }}>and yes, it&apos;s totally free.</p>
