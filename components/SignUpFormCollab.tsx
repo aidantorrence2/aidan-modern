@@ -497,7 +497,7 @@ export default function SignUpFormCollab() {
         <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-white/30">How it works</p>
         {[
           ['1', 'Sign up.', 'The form above — takes a minute.'],
-          ['2', 'Pick your outfit & spot.', 'One quick call to lock the time. That’s all the planning.'],
+          ['2', 'Pick your outfit & location.', 'One quick call to lock the time. That’s all the planning.'],
           ['3', 'Show up. We shoot.', 'About an hour. I direct every frame — posing, angles, light.'],
           ['4', 'You get the photos.', 'Edited 35mm scans, yours to keep. Free — we both get content.'],
         ].map(([n, t, d]) => (

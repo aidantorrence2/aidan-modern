@@ -204,20 +204,13 @@ export default function SignUpFormCollabNew() {
   // ── Form ──
   return (
     <div>
-      <div className="mb-4 flex justify-end">
-        <a href="/" className="rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-xs font-semibold text-white/80 transition hover:border-white/30 hover:text-white">
-          My Works
-        </a>
-      </div>
-
-      {/* Hero — the carousel concept in three lines, then straight into the form */}
-      <div className="space-y-3">
-        <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-white/50">Free photo shoot &middot; Shot on 35mm film</p>
-        <h1 className="text-4xl font-bold leading-[1.02] text-white sm:text-5xl" style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic' }}>
-          Pick an outfit.<br />Pick a location.<br /><span style={{ color: GOLD }}>Show up.</span>
+      {/* Header */}
+      <div className="space-y-4">
+        <h1 className="text-3xl font-semibold leading-[1.05] text-white sm:text-4xl" style={{ fontFamily: 'Georgia, serif' }}>
+          Sign Up for Free Photo Shoot
         </h1>
         <p className="text-sm leading-relaxed text-white/50">
-          That&apos;s the whole plan. Free — I direct every frame, you keep the edited film scans.
+          Pick an outfit, pick a location, show up &mdash; I direct everything else. Free, shot on 35mm film, and the edited scans are yours.
         </p>
       </div>
 
@@ -228,15 +221,9 @@ export default function SignUpFormCollabNew() {
           </div>
         )}
 
-        {/* Step 1 — location */}
-        <div className="space-y-3">
-          <div className="flex items-baseline gap-3">
-            <span className="text-3xl font-bold" style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic', color: GOLD }}>1</span>
-            <div>
-              <p className="text-lg font-semibold text-white" style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic' }}>Pick a location.</p>
-              <p className="text-xs text-white/40">Your city — we&apos;ll pick the exact spot together. Daytime and public.</p>
-            </div>
-          </div>
+        {/* Location */}
+        <div className="space-y-2">
+          <label className="text-sm font-medium text-white/80">Location</label>
           <div className="flex flex-wrap gap-2">
             {locationChips.map(chip => (
               <button
@@ -261,31 +248,17 @@ export default function SignUpFormCollabNew() {
           />
         </div>
 
-        {/* Step 2 — outfit: nothing to fill in, that's the point */}
-        <div className="space-y-3">
-          <div className="flex items-baseline gap-3">
-            <span className="text-3xl font-bold" style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic', color: GOLD }}>2</span>
-            <div>
-              <p className="text-lg font-semibold text-white" style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic' }}>Pick an outfit.</p>
-              <p className="text-xs text-white/40">Nothing to fill in here — it&apos;s already in your closet.</p>
-            </div>
-          </div>
+        {/* Outfit — nothing to fill in, that's the point */}
+        <div className="space-y-2">
+          <label className="text-sm font-medium text-white/80">Outfit</label>
           <div className="flex items-center gap-3 rounded-xl border border-white/[0.08] bg-white/[0.03] px-4 py-3.5">
             <svg viewBox="0 0 24 24" className="h-5 w-5 shrink-0" fill="none" stroke={GOLD} strokeWidth={3} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5" /></svg>
             <p className="text-sm text-white/70">Wear the thing you feel best in. Your closet is the styling department.</p>
           </div>
         </div>
 
-        {/* Step 3 — show up: just enough so I can reach you */}
+        {/* Contact + photos */}
         <div className="space-y-5">
-          <div className="flex items-baseline gap-3">
-            <span className="text-3xl font-bold" style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic', color: GOLD }}>3</span>
-            <div>
-              <p className="text-lg font-semibold text-white" style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic' }}>Show up.</p>
-              <p className="text-xs text-white/40">Leave your WhatsApp and a photo or two, and we&apos;ll lock a time on one quick call.</p>
-            </div>
-          </div>
-
           <div className="space-y-2">
             <label className="text-sm font-medium text-white/80">WhatsApp</label>
             <input
@@ -385,48 +358,24 @@ export default function SignUpFormCollabNew() {
         {/* Honeypot */}
         <input type="text" name="company" className="hidden" tabIndex={-1} autoComplete="off" />
 
-        <div className="space-y-3">
-          <button
-            type="submit"
-            disabled={submitting || processingPhotos}
-            className="w-full rounded-full bg-emerald-500 py-3.5 text-sm font-bold text-white shadow-lg shadow-emerald-500/25 transition hover:bg-emerald-400 disabled:opacity-50"
-            data-cta="sign-up-collab-new-submit"
-          >
-            {submitting || processingPhotos ? (
-              <span className="inline-block h-4 w-4 animate-spin rounded-full border-2 border-white/40 border-t-white align-[-2px]" aria-label="Loading" />
-            ) : 'That’s the whole plan — sign me up'}
-          </button>
-          <p className="text-center text-xs text-white/40">
-            About an hour &middot; daytime &amp; public &middot; bring a friend if you like
-          </p>
-        </div>
+        <button
+          type="submit"
+          disabled={submitting || processingPhotos}
+          className="w-full rounded-full bg-emerald-500 py-3.5 text-sm font-bold text-white shadow-lg shadow-emerald-500/25 transition hover:bg-emerald-400 disabled:opacity-50"
+          data-cta="sign-up-collab-new-submit"
+        >
+          {submitting || processingPhotos ? (
+            <span className="inline-block h-4 w-4 animate-spin rounded-full border-2 border-white/40 border-t-white align-[-2px]" aria-label="Loading" />
+          ) : 'That’s the whole plan — sign me up'}
+        </button>
       </form>
 
-      {/* Proof + how it works — below the form so nothing delays filling it out */}
-      <div className="mt-12 space-y-2.5 border-t border-white/[0.06] pt-8">
-        <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-white/30">Recent work &middot; Shot on 35mm film</p>
-        <div className="grid grid-cols-4 gap-1">
-          {proofImages.map((src, i) => (
-            <div key={i} className="relative overflow-hidden rounded-md aspect-[3/4]">
-              <NextImage
-                src={src}
-                alt=""
-                width={200}
-                height={267}
-                sizes="(max-width: 640px) 25vw, 150px"
-                className="w-full h-full object-cover object-top"
-              />
-            </div>
-          ))}
-        </div>
-      </div>
-
       {/* How it works — same four beats as the ads */}
-      <div className="mt-8 space-y-4">
+      <div className="mt-12 space-y-4 border-t border-white/[0.06] pt-8">
         <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-white/30">How it works</p>
         {[
           ['1', 'Sign up.', 'The form above — takes a minute.'],
-          ['2', 'Pick your outfit & spot.', 'One quick call to lock the time. That’s all the planning.'],
+          ['2', 'Pick your outfit & location.', 'One quick call to lock the time. That’s all the planning.'],
           ['3', 'Show up. We shoot.', 'About an hour. I direct every frame — posing, angles, light.'],
           ['4', 'You get the photos.', 'Edited 35mm scans, yours to keep. Free — we both get content.'],
         ].map(([n, t, d]) => (
