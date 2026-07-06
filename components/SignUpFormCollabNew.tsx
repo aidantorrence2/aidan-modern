@@ -1,6 +1,7 @@
 "use client"
 import { useRef, useState } from 'react'
 import NextImage from 'next/image'
+import CountryCodeSelect from './CountryCodeSelect'
 
 type State = { ok: boolean; error?: string }
 
@@ -40,23 +41,6 @@ function resizeImage(dataUrl: string, maxBytes: number): Promise<string> {
 }
 
 const locationChips = ['Kolkata', 'Varanasi', 'Agra', 'Jaipur']
-
-const countryCodes = [
-  { code: '+91', flag: '🇮🇳' },
-  { code: '+880', flag: '🇧🇩' },
-  { code: '+977', flag: '🇳🇵' },
-  { code: '+94', flag: '🇱🇰' },
-  { code: '+92', flag: '🇵🇰' },
-  { code: '+971', flag: '🇦🇪' },
-  { code: '+62', flag: '🇮🇩' },
-  { code: '+63', flag: '🇵🇭' },
-  { code: '+66', flag: '🇹🇭' },
-  { code: '+65', flag: '🇸🇬' },
-  { code: '+60', flag: '🇲🇾' },
-  { code: '+1', flag: '🇺🇸' },
-  { code: '+44', flag: '🇬🇧' },
-  { code: '+61', flag: '🇦🇺' },
-]
 
 // The gold used across the Kolkata carousel creative — this form is the same
 // concept as those ads: outfit + location + show up, zero production.
@@ -287,16 +271,7 @@ export default function SignUpFormCollabNew() {
           <div className="space-y-2">
             <label className="text-sm font-medium text-white/80">WhatsApp</label>
             <div className="flex gap-2">
-              <select
-                value={countryCode}
-                onChange={e => { setCountryCode(e.target.value); clearStatus() }}
-                aria-label="Country code"
-                className="rounded-xl border border-white/10 bg-white/5 px-2.5 py-3 text-sm text-white outline-none transition focus:border-emerald-400 focus:ring-2 focus:ring-emerald-400/30"
-              >
-                {countryCodes.map(c => (
-                  <option key={c.code} value={c.code} className="bg-[#0a0a0a] text-white">{c.flag} {c.code}</option>
-                ))}
-              </select>
+              <CountryCodeSelect value={countryCode} onChange={code => { setCountryCode(code); clearStatus() }} />
               <input
                 ref={whatsappRef}
                 required

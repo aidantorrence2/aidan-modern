@@ -1,6 +1,7 @@
 "use client"
 import { useRef, useState } from 'react'
 import NextImage from 'next/image'
+import CountryCodeSelect from './CountryCodeSelect'
 
 type State = { ok: boolean; error?: string }
 
@@ -55,23 +56,6 @@ const preferenceOptions: ConceptOption[] = [
 ]
 
 const locationChips = ['Kolkata', 'Varanasi', 'Agra', 'Jaipur']
-
-const countryCodes = [
-  { code: '+91', flag: '🇮🇳' },
-  { code: '+880', flag: '🇧🇩' },
-  { code: '+977', flag: '🇳🇵' },
-  { code: '+94', flag: '🇱🇰' },
-  { code: '+92', flag: '🇵🇰' },
-  { code: '+971', flag: '🇦🇪' },
-  { code: '+62', flag: '🇮🇩' },
-  { code: '+63', flag: '🇵🇭' },
-  { code: '+66', flag: '🇹🇭' },
-  { code: '+65', flag: '🇸🇬' },
-  { code: '+60', flag: '🇲🇾' },
-  { code: '+1', flag: '🇺🇸' },
-  { code: '+44', flag: '🇬🇧' },
-  { code: '+61', flag: '🇦🇺' },
-]
 
 const heroImage = '/images/moodboards/editorial.jpg'
 
@@ -393,16 +377,7 @@ export default function SignUpFormCollab() {
             <label className="text-sm font-medium text-white/80">WhatsApp</label>
           </div>
           <div className="flex gap-2">
-            <select
-              value={countryCode}
-              onChange={e => { setCountryCode(e.target.value); clearStatus() }}
-              aria-label="Country code"
-              className="rounded-xl border border-white/10 bg-white/5 px-2.5 py-3 text-sm text-white outline-none transition focus:border-emerald-400 focus:ring-2 focus:ring-emerald-400/30"
-            >
-              {countryCodes.map(c => (
-                <option key={c.code} value={c.code} className="bg-[#0a0a0a] text-white">{c.flag} {c.code}</option>
-              ))}
-            </select>
+            <CountryCodeSelect value={countryCode} onChange={code => { setCountryCode(code); clearStatus() }} />
             <input
               ref={whatsappRef}
               required
@@ -521,23 +496,6 @@ export default function SignUpFormCollab() {
           ) : 'Sign Up & Get Details'}
         </button>
       </form>
-
-      {/* How it works — same four beats as the ads */}
-      <div className="mt-12 space-y-4 border-t border-white/[0.06] pt-8">
-        <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-white/30">How it works</p>
-        {[
-          ['1', 'Sign up.'],
-          ['2', 'We will quickly discuss the outfit and the photo shoot location.'],
-          ['3', 'Show up. We take photos. I’ll let you know how to pose, what to do, etc.'],
-          ['4', 'I’ll send you the photos.'],
-        ].map(([n, t]) => (
-          <div key={n} className="flex items-baseline gap-3">
-            <span className="w-5 shrink-0 text-lg font-bold" style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic', color: '#e9c986' }}>{n}</span>
-            <p className="text-sm font-medium leading-relaxed text-white/85">{t}</p>
-          </div>
-        ))}
-        <p className="text-sm font-semibold" style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic', color: '#e9c986' }}>and yes, it&apos;s totally free.</p>
-      </div>
     </div>
   )
 }
