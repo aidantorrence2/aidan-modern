@@ -496,19 +496,17 @@ export default function SignUpFormCollab() {
       <div className="mt-12 space-y-4 border-t border-white/[0.06] pt-8">
         <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-white/30">How it works</p>
         {[
-          ['1', 'Sign up.', 'The form above — takes a minute.'],
-          ['2', 'Pick your outfit & location.', 'One quick call to lock the time. That’s all the planning.'],
-          ['3', 'Show up. We shoot.', 'About an hour. I direct every frame — posing, angles, light.'],
-          ['4', 'You get the photos.', 'Edited 35mm scans, yours to keep. Free — we both get content.'],
-        ].map(([n, t, d]) => (
+          ['1', 'Sign up.'],
+          ['2', 'We will quickly discuss the outfit and the photo shoot location.'],
+          ['3', 'Show up. We take photos. I’ll let you know how to pose, what to do, etc.'],
+          ['4', 'I’ll send you the photos.'],
+        ].map(([n, t]) => (
           <div key={n} className="flex gap-4">
             <span className="w-5 text-xl font-bold" style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic', color: '#e9c986' }}>{n}</span>
-            <div>
-              <p className="text-sm font-semibold text-white" style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic' }}>{t}</p>
-              <p className="text-xs text-white/45">{d}</p>
-            </div>
+            <p className="text-sm font-semibold text-white" style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic' }}>{t}</p>
           </div>
         ))}
+        <p className="text-sm font-semibold" style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic', color: '#e9c986' }}>and yes, it&apos;s totally free.</p>
       </div>
     </div>
   )
