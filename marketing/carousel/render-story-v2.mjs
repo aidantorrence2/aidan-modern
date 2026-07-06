@@ -15,6 +15,7 @@ import fs from 'fs'
 const CITIES = [
   { name: 'Varanasi', slug: 'varanasi' },
   { name: 'Kolkata', slug: 'kolkata' },
+  { name: 'Jaipur', slug: 'jaipur' },
 ]
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
@@ -144,7 +145,8 @@ function buildSlides({ name }) {
 async function render() {
   const browser = await chromium.launch()
   const ctx = await browser.newContext({ viewport: { width: 1080, height: 1920 }, deviceScaleFactor: 2 })
-  for (const city of CITIES) {
+  const only = process.argv[2] // optional slug: render just one city, leave other outputs untouched
+  for (const city of CITIES.filter(c => !only || c.slug === only)) {
     const slides = buildSlides(city)
     const dir = path.join(__dirname, `output-${city.slug}-story-v2`, city.slug)
     fs.mkdirSync(dir, { recursive: true })
