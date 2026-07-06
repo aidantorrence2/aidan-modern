@@ -253,12 +253,6 @@ export default function SignUpFormCollab() {
   // ── Form ──
   return (
     <div>
-      <div className="mb-4 flex justify-end">
-        <a href="/" className="rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-xs font-semibold text-white/80 transition hover:border-white/30 hover:text-white">
-          My Works
-        </a>
-      </div>
-
       <div className="space-y-5">
         <h1 className="font-display text-3xl font-semibold leading-[1.05] text-white sm:text-4xl" style={{ fontFamily: 'Georgia, serif' }}>
           Sign Up for Free Collab Photo Shoot
@@ -392,6 +386,7 @@ export default function SignUpFormCollab() {
             className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-white/30 outline-none transition focus:border-emerald-400 focus:ring-2 focus:ring-emerald-400/30"
             placeholder="+91 98765 43210"
           />
+          <p className="text-xs text-amber-400/80">this is how I will contact you</p>
         </div>
 
         {/* Instagram — optional */}
@@ -496,6 +491,25 @@ export default function SignUpFormCollab() {
           ) : 'Sign Up & Get Details'}
         </button>
       </form>
+
+      {/* How it works — same four beats as the ads */}
+      <div className="mt-12 space-y-4 border-t border-white/[0.06] pt-8">
+        <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-white/30">How it works</p>
+        {[
+          ['1', 'Sign up.', 'The form above — takes a minute.'],
+          ['2', 'Pick your outfit & spot.', 'One quick call to lock the time. That’s all the planning.'],
+          ['3', 'Show up. We shoot.', 'About an hour. I direct every frame — posing, angles, light.'],
+          ['4', 'You get the photos.', 'Edited 35mm scans, yours to keep. Free — we both get content.'],
+        ].map(([n, t, d]) => (
+          <div key={n} className="flex gap-4">
+            <span className="w-5 text-xl font-bold" style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic', color: '#e9c986' }}>{n}</span>
+            <div>
+              <p className="text-sm font-semibold text-white" style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic' }}>{t}</p>
+              <p className="text-xs text-white/45">{d}</p>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   )
 }
