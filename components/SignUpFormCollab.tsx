@@ -435,7 +435,7 @@ export default function SignUpFormCollab() {
           <div className="space-y-1.5">
             <p className="flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-[0.15em] text-emerald-400">
               <svg viewBox="0 0 24 24" className="h-3.5 w-3.5" fill="none" stroke="currentColor" strokeWidth={3} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5" /></svg>
-              Like this &mdash; simple &amp; natural
+              Like this &mdash; simple &amp; natural, don&apos;t hide your face
             </p>
             <div className="grid grid-cols-4 gap-1.5">
               {['/images/collab-examples/good-1.jpg', '/images/collab-examples/good-2.jpg', '/images/collab-examples/good-3.jpg', '/images/collab-examples/good-4.jpg'].map((src, i) => (
@@ -451,7 +451,7 @@ export default function SignUpFormCollab() {
           <div className="space-y-1.5">
             <p className="flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-[0.15em] text-red-400/90">
               <svg viewBox="0 0 24 24" className="h-3.5 w-3.5" fill="none" stroke="currentColor" strokeWidth={3} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12" /></svg>
-              Not like this &mdash; heavy makeup, filters, face hidden, etc.
+              Not like this &mdash; heavy makeup, filters, face hidden
             </p>
             <div className="grid grid-cols-4 gap-1.5">
               {['/images/collab-examples/bad-1.jpg', '/images/collab-examples/bad-2.jpg', '/images/collab-examples/bad-3.jpg', '/images/collab-examples/bad-4.jpg'].map((src, i) => (
