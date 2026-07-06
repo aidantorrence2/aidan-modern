@@ -429,6 +429,9 @@ export default function SignUpFormCollab() {
             <span className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-500/20 text-[10px] font-bold text-emerald-400">6</span>
             <label className="text-sm font-medium text-white/80">Photos of yourself</label>
           </div>
+          <p className="text-xs leading-relaxed text-white/40">
+            Selfies are fine &mdash; just looking to see the real you.
+          </p>
           <div className="space-y-1.5">
             <p className="flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-[0.15em] text-emerald-400">
               <svg viewBox="0 0 24 24" className="h-3.5 w-3.5" fill="none" stroke="currentColor" strokeWidth={3} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5" /></svg>
@@ -448,7 +451,7 @@ export default function SignUpFormCollab() {
           <div className="space-y-1.5">
             <p className="flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-[0.15em] text-red-400/90">
               <svg viewBox="0 0 24 24" className="h-3.5 w-3.5" fill="none" stroke="currentColor" strokeWidth={3} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12" /></svg>
-              Not like this &mdash; makeup, filters, face hidden
+              Not like this &mdash; heavy makeup, filters, face hidden, etc.
             </p>
             <div className="grid grid-cols-4 gap-1.5">
               {['/images/collab-examples/bad-1.jpg', '/images/collab-examples/bad-2.jpg', '/images/collab-examples/bad-3.jpg', '/images/collab-examples/bad-4.jpg'].map((src, i) => (
