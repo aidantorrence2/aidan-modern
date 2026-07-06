@@ -1,0 +1,428 @@
+"use client"
+import { useRef, useState } from 'react'
+import NextImage from 'next/image'
+
+type State = { ok: boolean; error?: string }
+
+function resizeImage(dataUrl: string, maxBytes: number): Promise<string> {
+  return new Promise((resolve, reject) => {
+    const img = new Image()
+    const timer = setTimeout(() => reject(new Error('Image load timed out')), 30000)
+    img.onload = () => {
+      clearTimeout(timer)
+      const canvas = document.createElement('canvas')
+      const w = img.width, h = img.height
+      let quality = 0.8
+      let scale = w > 800 ? 800 / w : 1
+      const attempt = () => {
+        canvas.width = w * scale
+        canvas.height = h * scale
+        const ctx = canvas.getContext('2d')!
+        ctx.drawImage(img, 0, 0, canvas.width, canvas.height)
+        const result = canvas.toDataURL('image/jpeg', quality)
+        const size = Math.round((result.length - 'data:image/jpeg;base64,'.length) * 0.75)
+        if (size > maxBytes && (scale > 0.15 || quality > 0.3)) {
+          if (quality > 0.4) quality -= 0.1
+          else scale *= 0.7
+          attempt()
+        } else {
+          resolve(result)
+        }
+      }
+      attempt()
+    }
+    img.onerror = () => {
+      clearTimeout(timer)
+      reject(new Error('Could not load image — unsupported format'))
+    }
+    img.src = dataUrl
+  })
+}
+
+const locationChips = ['Kolkata', 'Varanasi', 'Agra', 'Jaipur']
+
+// The gold used across the Kolkata carousel creative — this form is the same
+// concept as those ads: outfit + location + show up, zero production.
+const GOLD = '#e9c986'
+
+const proofImages = [
+  '/images/proof/000001-8.jpg',
+  '/images/proof/000019-6.jpg',
+  '/images/proof/000038-4.jpg',
+  '/images/proof/000041.jpg',
+]
+
+const dontNeed = ['A makeup team', 'A mood board', 'Modeling experience', 'Weeks of planning']
+
+export default function SignUpFormCollabNew() {
+  const [state, setState] = useState<State | null>(null)
+  const [location, setLocation] = useState('')
+  const [whatsapp, setWhatsapp] = useState('')
+  const [instagram, setInstagram] = useState('')
+  const [photos, setPhotos] = useState<string[]>([])
+  const [submitting, setSubmitting] = useState(false)
+  const [processingPhotos, setProcessingPhotos] = useState(false)
+  const fileRef = useRef<HTMLInputElement>(null)
+  const whatsappRef = useRef<HTMLInputElement>(null)
+  const photoRef = useRef<HTMLDivElement>(null)
+
+  function clearStatus() {
+    if (state) setState(null)
+  }
+
+  async function handlePhotos(e: React.ChangeEvent<HTMLInputElement>) {
+    const files = e.target.files
+    if (!files || files.length === 0) return
+    clearStatus()
+    setProcessingPhotos(true)
+    let failures = 0
+    try {
+      for (const file of Array.from(files)) {
+        if (file.size > 20 * 1024 * 1024) {
+          failures++
+          continue
+        }
+        try {
+          const raw = await new Promise<string>((resolve, reject) => {
+            const reader = new FileReader()
+            reader.onload = () => resolve(reader.result as string)
+            reader.onerror = () => reject(new Error('Could not read file'))
+            reader.readAsDataURL(file)
+          })
+          const resized = await resizeImage(raw, 300 * 1024)
+          setPhotos(prev => [...prev, resized])
+        } catch {
+          failures++
+        }
+      }
+    } finally {
+      setProcessingPhotos(false)
+      if (fileRef.current) fileRef.current.value = ''
+      if (failures > 0) {
+        setState({
+          ok: false,
+          error: failures === 1
+            ? 'One photo could not be added (too large or unsupported format — try a JPG/PNG under 20 MB).'
+            : `${failures} photos could not be added (too large or unsupported format — try JPG/PNG under 20 MB).`
+        })
+      }
+    }
+  }
+
+  function removePhoto(index: number) {
+    setPhotos(prev => prev.filter((_, i) => i !== index))
+  }
+
+  async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault()
+    const data = Object.fromEntries(new FormData(e.currentTarget).entries()) as Record<string, string>
+    if (data.company) { setState({ ok: true }); return }
+
+    if (processingPhotos) {
+      setState({ ok: false, error: 'Photos are still processing — hang on a sec and try again.' })
+      photoRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' })
+      return
+    }
+
+    const whatsappTrim = whatsapp.trim()
+    if (!whatsappTrim) {
+      setState({ ok: false, error: 'Please enter your WhatsApp number.' })
+      whatsappRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' })
+      whatsappRef.current?.focus()
+      return
+    }
+    if (photos.length === 0) {
+      setState({ ok: false, error: 'Add a photo or two of yourself — selfies are fine.' })
+      photoRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' })
+      return
+    }
+
+    setSubmitting(true)
+    setState(null)
+    try {
+      const moodboard = [
+        'Collab sign-up',
+        'Variant: 3step',
+        ...(location.trim() ? ['Location: ' + location.trim()] : []),
+        ...(instagram.trim() ? ['Instagram: ' + instagram.trim()] : []),
+      ]
+      const res = await fetch('/api/sign-up', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          city: location.trim(),
+          contactMethod: 'whatsapp',
+          contact: whatsappTrim,
+          moodboard,
+          photos,
+        }),
+      })
+      if (!res.ok) throw new Error('Failed')
+      setState({ ok: true })
+      if (typeof window !== 'undefined') {
+        const fbq = (window as typeof window & { fbq?: (...args: unknown[]) => void }).fbq
+        if (typeof fbq === 'function') fbq('track', 'Lead', { source: 'sign-up-collab-new' })
+      }
+    } catch {
+      setState({ ok: false, error: 'Something went wrong. Try again or DM @madebyaidan on IG.' })
+    } finally {
+      setSubmitting(false)
+    }
+  }
+
+  // ── Success ──
+  if (state?.ok) {
+    return (
+      <div className="mt-6 overflow-hidden rounded-2xl border border-white/[0.08]" style={{ background: 'linear-gradient(165deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.02) 100%)' }}>
+        <div className="relative h-48 overflow-hidden">
+          <NextImage src={proofImages[3]} alt="" width={400} height={192} priority sizes="(max-width: 640px) 100vw, 400px" className="w-full h-full object-cover object-top" style={{ filter: 'brightness(0.55) saturate(1.15)' }} />
+          <div className="absolute inset-0" style={{ background: 'linear-gradient(180deg, transparent 30%, rgba(10,10,10,0.95) 100%)' }} />
+          <div className="absolute bottom-4 left-5 right-5">
+            <p className="text-2xl font-semibold text-white" style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic' }}>That&apos;s it. You&apos;re in.</p>
+          </div>
+        </div>
+        <div className="px-6 pt-4 pb-6 space-y-5">
+          <p className="text-sm text-white/50">
+            See? Told you it was easy. I&apos;ll reach out within 24 hours — we&apos;ll lock your spot and time on one quick call.
+          </p>
+          <div className="space-y-2.5">
+            {[
+              'Your outfit is the styling — wear what you feel best in',
+              'I direct every frame — posing, angles, light',
+              'About an hour, daytime and public',
+              'Edited 35mm scans, yours to keep. Free — we both get content',
+            ].map((text, i) => (
+              <div key={i} className="flex items-start gap-3">
+                <svg viewBox="0 0 24 24" className="mt-0.5 h-4 w-4 shrink-0" fill="none" stroke={GOLD} strokeWidth={3} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5" /></svg>
+                <span className="text-sm text-white/70">{text}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    )
+  }
+
+  // ── Form ──
+  return (
+    <div>
+      <div className="mb-4 flex justify-end">
+        <a href="/" className="rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-xs font-semibold text-white/80 transition hover:border-white/30 hover:text-white">
+          My Works
+        </a>
+      </div>
+
+      {/* Hero — same concept as the carousel title slides */}
+      <div className="space-y-5">
+        <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-white/50">Free photo shoot &middot; Shot on 35mm film</p>
+        <h1 className="text-4xl font-bold leading-[1.02] text-white sm:text-5xl" style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic' }}>
+          Pick an outfit.<br />Pick a location.<br /><span style={{ color: GOLD }}>Show up.</span>
+        </h1>
+        <p className="text-base leading-relaxed text-white/50">
+          That&apos;s the whole plan. No prep, no production — I direct every frame, and you keep the edited film scans. Free, because we both get content.
+        </p>
+
+        {/* What you don't need — straight from the ad creative */}
+        <div className="rounded-2xl border border-white/[0.08] bg-white/[0.03] px-5 py-4">
+          <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-white/30">What you need</p>
+          <div className="mt-2.5 space-y-1.5">
+            {dontNeed.map(item => (
+              <p key={item} className="text-[15px] text-white/35" style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic' }}>
+                <span className="line-through" style={{ textDecorationColor: 'rgba(233,201,134,0.8)', textDecorationThickness: '2px' }}>{item}</span>
+              </p>
+            ))}
+            <p className="pt-1 text-lg font-semibold" style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic', color: GOLD }}>
+              An outfit. A location. You.
+            </p>
+          </div>
+        </div>
+
+        <div className="space-y-2.5">
+          <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-white/30">Recent work &middot; Shot on 35mm film</p>
+          <div className="grid grid-cols-4 gap-1">
+            {proofImages.map((src, i) => (
+              <div key={i} className="relative overflow-hidden rounded-md aspect-[3/4]">
+                <NextImage
+                  src={src}
+                  alt=""
+                  width={200}
+                  height={267}
+                  sizes="(max-width: 640px) 25vw, 150px"
+                  className="w-full h-full object-cover object-top"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <form onSubmit={onSubmit} className="mt-10 space-y-9">
+        {state && !state.ok && (
+          <div className="rounded-xl border border-red-500/30 bg-red-500/10 px-4 py-3 text-sm font-medium text-red-300">
+            {state.error}
+          </div>
+        )}
+
+        {/* Step 1 — location */}
+        <div className="space-y-3">
+          <div className="flex items-baseline gap-3">
+            <span className="text-3xl font-bold" style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic', color: GOLD }}>1</span>
+            <div>
+              <p className="text-lg font-semibold text-white" style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic' }}>Pick a location.</p>
+              <p className="text-xs text-white/40">Your city — we&apos;ll pick the exact spot together. Daytime and public.</p>
+            </div>
+          </div>
+          <div className="flex flex-wrap gap-2">
+            {locationChips.map(chip => (
+              <button
+                key={chip}
+                type="button"
+                onClick={() => { setLocation(chip); clearStatus() }}
+                className={`rounded-full border px-4 py-1.5 text-sm font-semibold transition-all ${
+                  location.trim() === chip
+                    ? 'border-emerald-400 bg-emerald-400/20 text-emerald-300'
+                    : 'border-white/15 bg-white/5 text-white/60 hover:border-white/30 hover:text-white/80'
+                }`}
+              >
+                {chip}
+              </button>
+            ))}
+          </div>
+          <input
+            value={location}
+            onChange={e => { setLocation(e.target.value); clearStatus() }}
+            className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-white/30 outline-none transition focus:border-emerald-400 focus:ring-2 focus:ring-emerald-400/30"
+            placeholder="Or type another city"
+          />
+        </div>
+
+        {/* Step 2 — outfit: nothing to fill in, that's the point */}
+        <div className="space-y-3">
+          <div className="flex items-baseline gap-3">
+            <span className="text-3xl font-bold" style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic', color: GOLD }}>2</span>
+            <div>
+              <p className="text-lg font-semibold text-white" style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic' }}>Pick an outfit.</p>
+              <p className="text-xs text-white/40">Nothing to fill in here — it&apos;s already in your closet.</p>
+            </div>
+          </div>
+          <div className="flex items-center gap-3 rounded-xl border border-white/[0.08] bg-white/[0.03] px-4 py-3.5">
+            <svg viewBox="0 0 24 24" className="h-5 w-5 shrink-0" fill="none" stroke={GOLD} strokeWidth={3} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5" /></svg>
+            <p className="text-sm text-white/70">Wear the thing you feel best in. Your closet is the styling department.</p>
+          </div>
+        </div>
+
+        {/* Step 3 — show up: just enough so I can reach you */}
+        <div className="space-y-5">
+          <div className="flex items-baseline gap-3">
+            <span className="text-3xl font-bold" style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic', color: GOLD }}>3</span>
+            <div>
+              <p className="text-lg font-semibold text-white" style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic' }}>Show up.</p>
+              <p className="text-xs text-white/40">Leave your WhatsApp and a photo or two, and we&apos;ll lock a time on one quick call.</p>
+            </div>
+          </div>
+
+          <div className="space-y-2">
+            <label className="text-sm font-medium text-white/80">WhatsApp</label>
+            <input
+              ref={whatsappRef}
+              required
+              type="tel"
+              inputMode="tel"
+              autoComplete="tel"
+              name="whatsapp"
+              value={whatsapp}
+              onChange={e => { setWhatsapp(e.target.value); clearStatus() }}
+              className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-white/30 outline-none transition focus:border-emerald-400 focus:ring-2 focus:ring-emerald-400/30"
+              placeholder="+91 98765 43210"
+            />
+          </div>
+
+          <div className="space-y-2">
+            <label className="text-sm font-medium text-white/80">Instagram <span className="text-xs text-white/30">(optional)</span></label>
+            <input
+              name="instagram"
+              value={instagram}
+              onChange={e => { setInstagram(e.target.value); clearStatus() }}
+              autoCapitalize="off"
+              autoCorrect="off"
+              spellCheck={false}
+              className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-white/30 outline-none transition focus:border-emerald-400 focus:ring-2 focus:ring-emerald-400/30"
+              placeholder="@yourhandle"
+            />
+          </div>
+
+          <div ref={photoRef} className="space-y-2">
+            <label className="text-sm font-medium text-white/80">A photo or two of you</label>
+            <p className="text-xs leading-relaxed text-white/40">
+              Selfies are fine — no makeup, no filters, just the real you.
+            </p>
+            <div className="mt-1 flex flex-wrap gap-1.5">
+              {photos.map((p, i) => (
+                <div key={i} className="relative">
+                  <img src={p} alt="Preview" className="h-14 w-14 rounded-lg border border-white/10 object-cover" />
+                  <button
+                    type="button"
+                    onClick={() => removePhoto(i)}
+                    className="absolute -right-1.5 -top-1.5 flex h-5 w-5 items-center justify-center rounded-full bg-white/20 text-xs text-white backdrop-blur transition hover:bg-red-500"
+                    aria-label="Remove photo"
+                  >
+                    &times;
+                  </button>
+                </div>
+              ))}
+              <button
+                type="button"
+                onClick={() => fileRef.current?.click()}
+                disabled={processingPhotos}
+                className="flex h-24 w-24 items-center justify-center rounded-xl border border-dashed border-white/20 bg-white/5 text-4xl font-light text-white/40 transition hover:border-emerald-400/50 hover:text-emerald-400 disabled:opacity-50"
+              >
+                {processingPhotos ? (
+                  <span className="inline-block h-6 w-6 animate-spin rounded-full border-2 border-white/30 border-t-emerald-400" aria-label="Processing" />
+                ) : '+'}
+              </button>
+            </div>
+            <input ref={fileRef} type="file" accept="image/*" multiple onChange={handlePhotos} className="hidden" />
+          </div>
+        </div>
+
+        {/* Honeypot */}
+        <input type="text" name="company" className="hidden" tabIndex={-1} autoComplete="off" />
+
+        <div className="space-y-3">
+          <button
+            type="submit"
+            disabled={submitting || processingPhotos}
+            className="w-full rounded-full bg-emerald-500 py-3.5 text-sm font-bold text-white shadow-lg shadow-emerald-500/25 transition hover:bg-emerald-400 disabled:opacity-50"
+            data-cta="sign-up-collab-new-submit"
+          >
+            {submitting || processingPhotos ? (
+              <span className="inline-block h-4 w-4 animate-spin rounded-full border-2 border-white/40 border-t-white align-[-2px]" aria-label="Loading" />
+            ) : 'That’s the whole plan — sign me up'}
+          </button>
+          <p className="text-center text-xs text-white/40">
+            About an hour &middot; daytime &amp; public &middot; bring a friend if you like
+          </p>
+        </div>
+      </form>
+
+      {/* How it works — same four beats as the ads */}
+      <div className="mt-12 space-y-4 border-t border-white/[0.06] pt-8">
+        <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-white/30">How it works</p>
+        {[
+          ['1', 'Sign up.', 'The form above — takes a minute.'],
+          ['2', 'Pick your outfit & spot.', 'One quick call to lock the time. That’s all the planning.'],
+          ['3', 'Show up. We shoot.', 'About an hour. I direct every frame — posing, angles, light.'],
+          ['4', 'You get the photos.', 'Edited 35mm scans, yours to keep. Free — we both get content.'],
+        ].map(([n, t, d]) => (
+          <div key={n} className="flex gap-4">
+            <span className="w-5 text-xl font-bold" style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic', color: GOLD }}>{n}</span>
+            <div>
+              <p className="text-sm font-semibold text-white" style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic' }}>{t}</p>
+              <p className="text-xs text-white/45">{d}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  )
+}
