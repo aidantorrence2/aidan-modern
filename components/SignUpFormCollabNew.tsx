@@ -41,6 +41,23 @@ function resizeImage(dataUrl: string, maxBytes: number): Promise<string> {
 
 const locationChips = ['Kolkata', 'Varanasi', 'Agra', 'Jaipur']
 
+const countryCodes = [
+  { code: '+91', flag: '🇮🇳' },
+  { code: '+880', flag: '🇧🇩' },
+  { code: '+977', flag: '🇳🇵' },
+  { code: '+94', flag: '🇱🇰' },
+  { code: '+92', flag: '🇵🇰' },
+  { code: '+971', flag: '🇦🇪' },
+  { code: '+62', flag: '🇮🇩' },
+  { code: '+63', flag: '🇵🇭' },
+  { code: '+66', flag: '🇹🇭' },
+  { code: '+65', flag: '🇸🇬' },
+  { code: '+60', flag: '🇲🇾' },
+  { code: '+1', flag: '🇺🇸' },
+  { code: '+44', flag: '🇬🇧' },
+  { code: '+61', flag: '🇦🇺' },
+]
+
 // The gold used across the Kolkata carousel creative — this form is the same
 // concept as those ads: outfit + location + show up, zero production.
 const GOLD = '#e9c986'
@@ -56,6 +73,7 @@ export default function SignUpFormCollabNew() {
   const [state, setState] = useState<State | null>(null)
   const [location, setLocation] = useState('')
   const [whatsapp, setWhatsapp] = useState('')
+  const [countryCode, setCountryCode] = useState('+91')
   const [instagram, setInstagram] = useState('')
   const [photos, setPhotos] = useState<string[]>([])
   const [submitting, setSubmitting] = useState(false)
@@ -150,7 +168,7 @@ export default function SignUpFormCollabNew() {
         body: JSON.stringify({
           city: location.trim(),
           contactMethod: 'whatsapp',
-          contact: whatsappTrim,
+          contact: countryCode + ' ' + whatsappTrim,
           moodboard,
           photos,
         }),
@@ -204,14 +222,21 @@ export default function SignUpFormCollabNew() {
   // ── Form ──
   return (
     <div>
-      {/* Header */}
+      {/* Header — the How-it-works section opens the page */}
       <div className="space-y-4">
-        <h1 className="text-3xl font-semibold leading-[1.05] text-white sm:text-4xl" style={{ fontFamily: 'Georgia, serif' }}>
-          Sign Up for Free Photo Shoot
-        </h1>
-        <p className="text-sm leading-relaxed text-white/50">
-          Pick an outfit, pick a location, show up &mdash; I direct everything else. Free, shot on 35mm film, and the edited scans are yours.
-        </p>
+        <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-white/30">How it works</p>
+        {[
+          ['1', 'Sign up.'],
+          ['2', 'We will quickly discuss the outfit and the photo shoot location.'],
+          ['3', 'Show up. We take photos. I’ll let you know how to pose, what to do, etc.'],
+          ['4', 'I’ll send you the photos.'],
+        ].map(([n, t]) => (
+          <div key={n} className="flex gap-4">
+            <span className="w-5 text-xl font-bold" style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic', color: GOLD }}>{n}</span>
+            <p className="text-sm font-semibold text-white" style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic' }}>{t}</p>
+          </div>
+        ))}
+        <p className="text-sm font-semibold" style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic', color: GOLD }}>and yes, it&apos;s totally free.</p>
       </div>
 
       <form onSubmit={onSubmit} className="mt-7 space-y-9">
@@ -261,18 +286,30 @@ export default function SignUpFormCollabNew() {
         <div className="space-y-5">
           <div className="space-y-2">
             <label className="text-sm font-medium text-white/80">WhatsApp</label>
-            <input
-              ref={whatsappRef}
-              required
-              type="tel"
-              inputMode="tel"
-              autoComplete="tel"
-              name="whatsapp"
-              value={whatsapp}
-              onChange={e => { setWhatsapp(e.target.value); clearStatus() }}
-              className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-white/30 outline-none transition focus:border-emerald-400 focus:ring-2 focus:ring-emerald-400/30"
-              placeholder="+91 98765 43210"
-            />
+            <div className="flex gap-2">
+              <select
+                value={countryCode}
+                onChange={e => { setCountryCode(e.target.value); clearStatus() }}
+                aria-label="Country code"
+                className="rounded-xl border border-white/10 bg-white/5 px-2.5 py-3 text-sm text-white outline-none transition focus:border-emerald-400 focus:ring-2 focus:ring-emerald-400/30"
+              >
+                {countryCodes.map(c => (
+                  <option key={c.code} value={c.code} className="bg-[#0a0a0a] text-white">{c.flag} {c.code}</option>
+                ))}
+              </select>
+              <input
+                ref={whatsappRef}
+                required
+                type="tel"
+                inputMode="tel"
+                autoComplete="tel-national"
+                name="whatsapp"
+                value={whatsapp}
+                onChange={e => { setWhatsapp(e.target.value); clearStatus() }}
+                className="min-w-0 flex-1 rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-white/30 outline-none transition focus:border-emerald-400 focus:ring-2 focus:ring-emerald-400/30"
+                placeholder="98765 43210"
+              />
+            </div>
           </div>
 
           <div className="space-y-2">
@@ -370,22 +407,6 @@ export default function SignUpFormCollabNew() {
         </button>
       </form>
 
-      {/* How it works — same four beats as the ads */}
-      <div className="mt-12 space-y-4 border-t border-white/[0.06] pt-8">
-        <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-white/30">How it works</p>
-        {[
-          ['1', 'Sign up.'],
-          ['2', 'We will quickly discuss the outfit and the photo shoot location.'],
-          ['3', 'Show up. We take photos. I’ll let you know how to pose, what to do, etc.'],
-          ['4', 'I’ll send you the photos.'],
-        ].map(([n, t]) => (
-          <div key={n} className="flex gap-4">
-            <span className="w-5 text-xl font-bold" style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic', color: GOLD }}>{n}</span>
-            <p className="text-sm font-semibold text-white" style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic' }}>{t}</p>
-          </div>
-        ))}
-        <p className="text-sm font-semibold" style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic', color: GOLD }}>and yes, it&apos;s totally free.</p>
-      </div>
     </div>
   )
 }

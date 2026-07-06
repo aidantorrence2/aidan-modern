@@ -56,6 +56,23 @@ const preferenceOptions: ConceptOption[] = [
 
 const locationChips = ['Kolkata', 'Varanasi', 'Agra', 'Jaipur']
 
+const countryCodes = [
+  { code: '+91', flag: '🇮🇳' },
+  { code: '+880', flag: '🇧🇩' },
+  { code: '+977', flag: '🇳🇵' },
+  { code: '+94', flag: '🇱🇰' },
+  { code: '+92', flag: '🇵🇰' },
+  { code: '+971', flag: '🇦🇪' },
+  { code: '+62', flag: '🇮🇩' },
+  { code: '+63', flag: '🇵🇭' },
+  { code: '+66', flag: '🇹🇭' },
+  { code: '+65', flag: '🇸🇬' },
+  { code: '+60', flag: '🇲🇾' },
+  { code: '+1', flag: '🇺🇸' },
+  { code: '+44', flag: '🇬🇧' },
+  { code: '+61', flag: '🇦🇺' },
+]
+
 const heroImage = '/images/moodboards/editorial.jpg'
 
 export default function SignUpFormCollab() {
@@ -66,6 +83,7 @@ export default function SignUpFormCollab() {
   const [vibes, setVibes] = useState<string[]>([])
   const [idea, setIdea] = useState('')
   const [whatsapp, setWhatsapp] = useState('')
+  const [countryCode, setCountryCode] = useState('+91')
   const [instagram, setInstagram] = useState('')
   const [photos, setPhotos] = useState<string[]>([])
   const [submitting, setSubmitting] = useState(false)
@@ -171,7 +189,7 @@ export default function SignUpFormCollab() {
         body: JSON.stringify({
           city: location.trim(),
           contactMethod: 'whatsapp',
-          contact: whatsappTrim,
+          contact: countryCode + ' ' + whatsappTrim,
           moodboard,
           photos,
         }),
@@ -374,18 +392,30 @@ export default function SignUpFormCollab() {
             <span className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-500/20 text-[10px] font-bold text-emerald-400">4</span>
             <label className="text-sm font-medium text-white/80">WhatsApp</label>
           </div>
-          <input
-            ref={whatsappRef}
-            required
-            type="tel"
-            inputMode="tel"
-            autoComplete="tel"
-            name="whatsapp"
-            value={whatsapp}
-            onChange={e => { setWhatsapp(e.target.value); clearStatus() }}
-            className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-white/30 outline-none transition focus:border-emerald-400 focus:ring-2 focus:ring-emerald-400/30"
-            placeholder="+91 98765 43210"
-          />
+          <div className="flex gap-2">
+            <select
+              value={countryCode}
+              onChange={e => { setCountryCode(e.target.value); clearStatus() }}
+              aria-label="Country code"
+              className="rounded-xl border border-white/10 bg-white/5 px-2.5 py-3 text-sm text-white outline-none transition focus:border-emerald-400 focus:ring-2 focus:ring-emerald-400/30"
+            >
+              {countryCodes.map(c => (
+                <option key={c.code} value={c.code} className="bg-[#0a0a0a] text-white">{c.flag} {c.code}</option>
+              ))}
+            </select>
+            <input
+              ref={whatsappRef}
+              required
+              type="tel"
+              inputMode="tel"
+              autoComplete="tel-national"
+              name="whatsapp"
+              value={whatsapp}
+              onChange={e => { setWhatsapp(e.target.value); clearStatus() }}
+              className="min-w-0 flex-1 rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-white/30 outline-none transition focus:border-emerald-400 focus:ring-2 focus:ring-emerald-400/30"
+              placeholder="98765 43210"
+            />
+          </div>
           <p className="text-xs text-amber-400/80">this is how I will contact you</p>
         </div>
 
