@@ -7,7 +7,7 @@ import fs from 'fs'
 //   - CITY = Udaipur
 //   - nepal headliners sourced LOCALLY from public/images/nepal-headliners
 //     (copied off PortableSSD so renders no longer need the SSD mounted)
-//   - 07-about photographer image = aidan-udaipur-mirror-02.jpg (haveli mirror selfie)
+//   - 07-about photographer image = aidan-udaipur-mirror-03.jpg (haveli mirror selfie, rounded)
 // If the nepal files are missing, the two nepal slides are skipped with a loud
 // warning so the rest of the set can still be previewed.
 const CITY = { name: 'Udaipur', slug: 'udaipur' }
@@ -147,7 +147,7 @@ function buildSlides({ name }) {
         <p style="font-family:${SE};font-size:36px;color:rgba(255,255,255,0.94);line-height:1.42;margin:24px 0 0;">right now i'm in India, and ${name} is next.</p>
         <p style="font-family:${SE};font-size:36px;color:rgba(255,255,255,0.94);line-height:1.42;margin:24px 0 0;">if you're here, let's make something special.</p>
       </div>
-      <img src="${Sf('aidan-udaipur-mirror-02.jpg')}" style="position:absolute;left:310px;top:880px;width:460px;height:580px;object-fit:cover;object-position:center top;display:block;border-radius:8px;"/>
+      <img src="${Sf('aidan-udaipur-mirror-03.jpg')}" style="position:absolute;left:310px;top:880px;width:460px;height:631px;object-fit:cover;object-position:center top;display:block;border-radius:28px;"/>
     ` + grain(), '#0a0a0a')
   })
 
