@@ -16,6 +16,7 @@ const CITIES = [
   { name: 'Varanasi', slug: 'varanasi' },
   { name: 'Kolkata', slug: 'kolkata' },
   { name: 'Jaipur', slug: 'jaipur' },
+  { name: 'Udaipur', slug: 'udaipur' },
 ]
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
