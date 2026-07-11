@@ -130,11 +130,11 @@ function buildSlides({ name }) {
   // 06 — casting framing (selective, not a giveaway; "free" not repeated in body)
   slides.push({
     name: '06-casting', html: frame(`
-      <div style="position:absolute;top:240px;left:60px;right:60px;text-align:center;">${TITLE(`now in ${name}`)}</div>
-      <div style="position:absolute;top:410px;left:110px;right:110px;text-align:center;">
-        <p style="font-family:${SE};font-size:38px;color:rgba(255,255,255,0.95);line-height:1.3;margin:0;">it's totally free</p>
+      <div style="position:absolute;top:240px;left:60px;right:60px;text-align:center;">
+        ${TITLE(`now in ${name}`)}
+        <p style="font-family:${SE};font-size:38px;font-style:italic;color:rgba(255,255,255,0.85);margin:24px 0 0;line-height:1.3;">it's totally free</p>
       </div>
-      ${pr(L('manila-gallery-market-001.jpg'), 178, 790, 700, 1034, -1.5)}
+      ${pr(L('manila-gallery-market-001.jpg'), 178, 620, 700, 1034, -1.5)}
     ` + grain(), '#0a0a0a')
   })
 
