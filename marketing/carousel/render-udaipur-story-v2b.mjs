@@ -43,7 +43,7 @@ const grain = (o = 0.06) => `<div style="position:absolute;inset:0;pointer-event
 const TITLE = (txt, size = 64) => `<p style="font-family:${SE};font-style:italic;font-size:${size}px;font-weight:700;color:#fff;margin:0;line-height:1.0;">${txt}</p>`
 const cap = (big, small, pos = 'top:1120px') => `<div style="position:absolute;${pos};left:64px;right:64px;text-align:center;">
    <p style="font-family:${SE};font-style:italic;font-size:64px;font-weight:700;color:#fff;margin:0;line-height:1.02;${SH}">${big}</p>
-   <p style="font-family:${SE};font-size:35px;font-style:italic;color:rgba(255,255,255,0.92);margin:18px 0 0;line-height:1.3;${SH}">${small}</p>
+   ${small ? `<p style="font-family:${SE};font-size:35px;font-style:italic;color:rgba(255,255,255,0.92);margin:18px 0 0;line-height:1.3;${SH}">${small}</p>` : ''}
  </div>`
 const proofScrim = 'linear-gradient(180deg,transparent 0%,transparent 40%,rgba(0,0,0,0.5) 60%,rgba(0,0,0,0.92) 100%)'
 // film print matted at the photo's native aspect (w/h passed per photo — no crop)
@@ -125,14 +125,14 @@ function buildSlides({ name }) {
   }
 
   // 05 — full-bleed editorial proof (red dress / green wall — strongest single frame)
-  slides.push(bleed('05-proof', H('000050-6.jpg'), cap('shot on 35mm film', 'a full, directed editorial shoot.'), proofScrim))
+  slides.push(bleed('05-proof', H('000050-6.jpg'), cap('shot on 35mm film', ''), proofScrim))
 
   // 06 — casting framing (selective, not a giveaway; "free" not repeated in body)
   slides.push({
     name: '06-casting', html: frame(`
-      <div style="position:absolute;top:240px;left:60px;right:60px;text-align:center;">${TITLE(`i'm casting in ${name}`)}</div>
+      <div style="position:absolute;top:240px;left:60px;right:60px;text-align:center;">${TITLE(`now in ${name}`)}</div>
       <div style="position:absolute;top:410px;left:110px;right:110px;text-align:center;">
-        ${["i'm looking for faces to shoot with while i'm in the city.", "a full directed shoot on 35mm film.", "the edited photos are yours."].map((p, i) => `<p style="font-family:${SE};font-size:38px;color:rgba(255,255,255,0.95);line-height:1.3;margin:${i ? '22px' : '0'} 0 0;">${p}</p>`).join('')}
+        <p style="font-family:${SE};font-size:38px;color:rgba(255,255,255,0.95);line-height:1.3;margin:0;">it's totally free</p>
       </div>
       ${pr(L('manila-gallery-market-001.jpg'), 178, 790, 700, 1034, -1.5)}
     ` + grain(), '#0a0a0a')
