@@ -55,7 +55,7 @@ const preferenceOptions: ConceptOption[] = [
   { id: NO_PREFERENCE, desc: "You direct it \u2014 I'll design the shoot" },
 ]
 
-const locationChips = ['Ahmedabad', 'Kolkata', 'Varanasi', 'Agra', 'Jaipur']
+const locationChips = ['Ahmedabad', 'Mumbai', 'Udaipur']
 
 const heroImage = '/images/moodboards/editorial.jpg'
 
@@ -262,29 +262,6 @@ export default function SignUpFormCollab() {
         <p className="text-base leading-relaxed text-white/50">
           Fill out the form below and I&apos;ll send you all the details &mdash; timing, location ideas, what to wear, and next steps.
         </p>
-
-        <div className="space-y-2.5">
-          <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-white/30">Recent work &middot; Shot on film</p>
-          <div className="grid grid-cols-4 gap-1">
-            {[
-              '/images/proof/000001-8.jpg',
-              '/images/proof/000019-6.jpg',
-              '/images/proof/000038-4.jpg',
-              '/images/proof/000041.jpg',
-            ].map((src, i) => (
-              <div key={i} className="relative overflow-hidden rounded-md aspect-[3/4]">
-                <NextImage
-                  src={src}
-                  alt=""
-                  width={200}
-                  height={267}
-                  sizes="(max-width: 640px) 25vw, 150px"
-                  className="w-full h-full object-cover object-top"
-                />
-              </div>
-            ))}
-          </div>
-        </div>
 
       </div>
 
