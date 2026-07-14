@@ -40,28 +40,26 @@ function resizeImage(dataUrl: string, maxBytes: number): Promise<string> {
   })
 }
 
-// Concept tiles. The redesign collapsed the seven low-traction culture/personal
-// options into a single "Culture & everyday life" tile and re-added Nature and
-// Studio (proven demand from the prior form). "No preference" sits in the grid
-// as a regular tile but is mutually exclusive with the others.
 const NO_PREFERENCE = 'No preference'
 type ConceptOption = { id: string; desc: string }
 const preferenceOptions: ConceptOption[] = [
   { id: 'Fashion editorial', desc: 'Dramatic, magazine-style' },
-  { id: 'Streets & markets', desc: 'Gritty, real city life' },
-  { id: 'Nature & outdoors', desc: 'Lakes, hills, greenery, golden light' },
-  { id: 'Studio & indoor', desc: 'Cozy interiors, caf\u00e9s, controlled light' },
-  { id: 'Culture & everyday life', desc: 'Tradition, dress, temples, real moments' },
+  { id: 'Old city streets', desc: 'Pols, markets, walls, real Ahmedabad texture' },
+  { id: 'Stepwell / heritage', desc: 'Architecture, fabric, quiet dramatic light' },
+  { id: 'Cafe / indoor', desc: 'Simple, comfortable, controlled light' },
+  { id: 'Nature & golden light', desc: 'Riverfront, greenery, soft portraits' },
   { id: NO_PREFERENCE, desc: "You direct it \u2014 I'll design the shoot" },
 ]
 
-const locationChips = ['Kolkata', 'Varanasi', 'Agra', 'Jaipur']
+const DEFAULT_CITY = 'Ahmedabad'
+const CAMPAIGN_SOURCE = 'Ahmedabad carousel ad'
+const locationChips = ['Ahmedabad', 'Gandhinagar', 'Vadodara', 'Surat']
 
 const heroImage = '/images/moodboards/editorial.jpg'
 
 export default function SignUpFormCollab() {
   const [state, setState] = useState<State | null>(null)
-  const [location, setLocation] = useState('')
+  const [location, setLocation] = useState(DEFAULT_CITY)
   // No default pre-selection: keeps "what did they actually want" measurable
   // instead of everyone inheriting Fashion editorial.
   const [vibes, setVibes] = useState<string[]>([])
@@ -151,38 +149,36 @@ export default function SignUpFormCollab() {
       whatsappRef.current?.focus()
       return
     }
-    if (photos.length === 0) {
-      setState({ ok: false, error: 'Upload a few photos of yourself.' })
-      photoRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' })
-      return
-    }
-
     setSubmitting(true)
     setState(null)
     try {
+      const signupCity = location.trim() || DEFAULT_CITY
       const moodboard = [
         'Collab sign-up',
-        ...(location.trim() ? ['Location: ' + location.trim()] : []),
+        'Campaign: ' + CAMPAIGN_SOURCE,
+        'Variant: ahmedabad-whatsapp-first',
+        'Location: ' + signupCity,
         ...(vibes.length > 0 ? ['Preference: ' + vibes.join(', ')] : []),
         ...(idea.trim() ? ['Notes: ' + idea.trim()] : []),
         ...(instagram.trim() ? ['Instagram: ' + instagram.trim()] : []),
+        ...(photos.length === 0 ? ['Photos: not uploaded yet'] : []),
       ]
       const res = await fetch('/api/sign-up', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          city: location.trim(),
+          city: signupCity,
           contactMethod: 'whatsapp',
           contact: countryCode + ' ' + whatsappTrim,
           moodboard,
-          photos,
+          photos: photos.length > 0 ? photos : null,
         }),
       })
       if (!res.ok) throw new Error('Failed')
       setState({ ok: true })
       if (typeof window !== 'undefined') {
         const fbq = (window as typeof window & { fbq?: (...args: unknown[]) => void }).fbq
-        if (typeof fbq === 'function') fbq('track', 'Lead', { source: 'sign-up-collab' })
+        if (typeof fbq === 'function') fbq('track', 'Lead', { source: 'sign-up-collab', campaign: 'ahmedabad-carousel' })
       }
     } catch {
       setState({ ok: false, error: 'Something went wrong. Try again or DM @madebyaidan on IG.' })
@@ -203,7 +199,9 @@ export default function SignUpFormCollab() {
           </div>
         </div>
         <div className="px-6 pt-4 pb-6 space-y-5">
-          <p className="text-sm text-white/50">I&apos;ll reach out within 24 hours. Let&apos;s make something great together.</p>
+          <p className="text-sm text-white/50">
+            I&apos;ll WhatsApp you within 24 hours to confirm the Ahmedabad plan, timing, and location. If you skipped photos, just send a selfie there.
+          </p>
           <div className="grid grid-cols-2 gap-4">
             <div className="space-y-1">
               <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-white/30">Type</p>
@@ -215,7 +213,7 @@ export default function SignUpFormCollab() {
             </div>
             <div className="space-y-1">
               <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-white/30">Cost</p>
-              <p className="text-sm font-medium text-emerald-400">Free &mdash; we both get content</p>
+              <p className="text-sm font-medium text-emerald-400">Free &mdash; no hidden fees</p>
             </div>
             {vibes.length > 0 && (
               <div className="space-y-1">
@@ -236,9 +234,9 @@ export default function SignUpFormCollab() {
             <div className="space-y-2.5">
               {[
                 { icon: '\u{1F4F8}', text: 'Edited photos you can use however you want' },
-                { icon: '\u{1F3AF}', text: 'Full creative direction from me' },
-                { icon: '\u{1F91D}', text: 'A real collaboration, not a transaction' },
-                { icon: '\u{1F4AC}', text: 'We plan the concept together' },
+                { icon: '\u{1F3AF}', text: 'I direct posing, angles, and light' },
+                { icon: '\u{1F46F}', text: 'Bring a friend if that makes you more comfortable' },
+                { icon: '\u{1F4AC}', text: 'We lock the concept together on WhatsApp' },
               ].map((item, i) => (
                 <div key={i} className="flex items-center gap-3">
                   <span className="text-base">{item.icon}</span>
@@ -257,11 +255,19 @@ export default function SignUpFormCollab() {
     <div>
       <div className="space-y-5">
         <h1 className="font-display text-3xl font-semibold leading-[1.05] text-white sm:text-4xl" style={{ fontFamily: 'Georgia, serif' }}>
-          Sign Up for Free Collab Photo Shoot
+          Ahmedabad free photo shoot
         </h1>
         <p className="text-base leading-relaxed text-white/50">
-          Fill out the form below and I&apos;ll send you all the details &mdash; timing, location ideas, what to wear, and next steps.
+          I&apos;m casting a few people in Ahmedabad for a free 35mm film collab. Leave your WhatsApp now; we&apos;ll choose the outfit and location together.
         </p>
+
+        <div className="grid grid-cols-3 gap-2 text-center">
+          {['Free TFP', 'No experience', 'Public shoot'].map(item => (
+            <div key={item} className="rounded-lg border border-white/10 bg-white/[0.04] px-2 py-2 text-[11px] font-semibold text-white/70">
+              {item}
+            </div>
+          ))}
+        </div>
 
         <div className="space-y-2.5">
           <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-white/30">Recent work &middot; Shot on film</p>
@@ -288,7 +294,7 @@ export default function SignUpFormCollab() {
 
       </div>
 
-      <form onSubmit={onSubmit} className="mt-8 space-y-7">
+      <form onSubmit={onSubmit} className="mt-7 space-y-7">
         {state && !state.ok && (
           <div className="rounded-xl border border-red-500/30 bg-red-500/10 px-4 py-3 text-sm font-medium text-red-300">
             {state.error}
@@ -321,7 +327,7 @@ export default function SignUpFormCollab() {
             value={location}
             onChange={e => { setLocation(e.target.value); clearStatus() }}
             className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-white/30 outline-none transition focus:border-emerald-400 focus:ring-2 focus:ring-emerald-400/30"
-            placeholder="Or type another place — e.g. Mumbai, Goa, Bangalore"
+            placeholder="Or type another city"
           />
         </div>
 
@@ -329,10 +335,10 @@ export default function SignUpFormCollab() {
         <fieldset className="space-y-2.5">
           <div className="flex items-center gap-2">
             <span className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-500/20 text-[10px] font-bold text-emerald-400">2</span>
-            <legend className="text-sm font-medium text-white/80">Choose a shoot concept <span className="text-xs text-white/30">(optional — pick any)</span></legend>
+            <legend className="text-sm font-medium text-white/80">Choose a shoot concept <span className="text-xs text-white/30">(optional)</span></legend>
           </div>
           <p className="text-xs leading-relaxed text-white/40">
-            Tap any that speak to you &mdash; mix as many as you like. Not sure? Pick &ldquo;No preference&rdquo; and I&apos;ll design it for you.
+            Tap any that speak to you. Not sure? Pick &ldquo;No preference&rdquo; and I&apos;ll design it for you.
           </p>
           <div className="grid grid-cols-2 gap-2">
             {preferenceOptions.map(opt => {
@@ -391,7 +397,7 @@ export default function SignUpFormCollab() {
               placeholder="98765 43210"
             />
           </div>
-          <p className="text-xs text-amber-400/80">this is how I will contact you</p>
+          <p className="text-xs text-amber-400/80">Fastest path: submit this and I&apos;ll send the shoot details on WhatsApp.</p>
         </div>
 
         {/* Instagram — optional */}
@@ -417,10 +423,10 @@ export default function SignUpFormCollab() {
         <div ref={photoRef} className="space-y-2">
           <div className="flex items-center gap-2">
             <span className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-500/20 text-[10px] font-bold text-emerald-400">6</span>
-            <label className="text-sm font-medium text-white/80">Photos of yourself</label>
+            <label className="text-sm font-medium text-white/80">Photos of yourself <span className="text-xs text-white/30">(optional now)</span></label>
           </div>
           <p className="text-xs leading-relaxed text-white/40">
-            Selfies are fine &mdash; just looking to see the real you.
+            Helpful, but not required. Selfies are fine &mdash; you can also send them later on WhatsApp.
           </p>
           <div className="space-y-1.5">
             <p className="flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-[0.15em] text-emerald-400">
@@ -493,7 +499,7 @@ export default function SignUpFormCollab() {
         >
           {submitting || processingPhotos ? (
             <span className="inline-block h-4 w-4 animate-spin rounded-full border-2 border-white/40 border-t-white align-[-2px]" aria-label="Loading" />
-          ) : 'Sign Up & Get Details'}
+          ) : 'Save my Ahmedabad spot'}
         </button>
       </form>
     </div>
