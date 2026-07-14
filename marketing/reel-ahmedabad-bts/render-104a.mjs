@@ -20,7 +20,7 @@
 //   - text = pre-rendered PNG overlays (make-text.py) because this ffmpeg has
 //     no drawtext filter. Run `python3 make-text.py` first (render() does it).
 //
-// Usage: node render-104.mjs
+// Usage: node render-104a.mjs
 import { execFileSync } from 'node:child_process';
 import { mkdirSync, copyFileSync, writeFileSync, rmSync } from 'node:fs';
 import { join, dirname } from 'node:path';
@@ -28,7 +28,7 @@ import { fileURLToPath } from 'node:url';
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const TXT = join(HERE, 'text-overlays');
-const OUTDIR = join(HERE, 'out');
+const OUTDIR = join(HERE, 'output-104a');
 const A = '/Users/aidantorrence/reels-planner/assets';
 const DOCS = '/Users/aidantorrence/Documents';
 const U5 = join(DOCS, 'Untitled 5.mov');       // beach golden hour (waves ambient @33-45s)
@@ -54,7 +54,9 @@ function clip(out, src, ss, to, overlays = []) {
   const inputs = ['-ss', String(ss), '-to', String(to), '-i', src];
   let fc = `[0:v]scale=${W}:${H}:force_original_aspect_ratio=increase,crop=${W}:${H},${GRADE}[v0]`;
   overlays.forEach((o, i) => {
-    inputs.push('-loop', '1', '-i', join(TXT, o.png));
+    // NB: every looped PNG input MUST be bounded with -t, or ffmpeg runs away
+    // encoding past the main input's end (observed: 6s clip -> endless encode).
+    inputs.push('-loop', '1', '-t', String(to - ss), '-i', join(TXT, o.png));
     fc += `;[v${i}][${i + 1}:v]overlay=0:0:enable='between(t,${o.s},${o.e})'[v${i + 1}]`;
   });
   fc += `;[v${overlays.length}]setsar=1,fps=${FPS},format=yuv420p[vout]`;
@@ -66,7 +68,7 @@ function still(out, img, dur, overlays = []) {
   const inputs = ['-loop', '1', '-t', String(dur), '-i', img];
   let fc = `[0:v]split[a][b];[a]scale=${W}:${H}:force_original_aspect_ratio=increase,crop=${W}:${H},boxblur=42:4,eq=brightness=-0.28[bg];[b]scale=${W}:${H}:force_original_aspect_ratio=decrease[fg];[bg][fg]overlay=(W-w)/2:(H-h)/2[v0]`;
   overlays.forEach((o, i) => {
-    inputs.push('-loop', '1', '-i', join(TXT, o.png));
+    inputs.push('-loop', '1', '-t', String(dur), '-i', join(TXT, o.png));
     fc += `;[v${i}][${i + 1}:v]overlay=0:0:enable='between(t,${o.s},${o.e})'[v${i + 1}]`;
   });
   fc += `;[v${overlays.length}]setsar=1,fps=${FPS},format=yuv420p[vout]`;
