@@ -1,9 +1,9 @@
 import SignUpFormCollab from '@/components/SignUpFormCollab'
 
 export const metadata = {
-  title: 'Ahmedabad Free Photo Shoot Collab',
+  title: 'Model Collaboration — Kolkata',
   description:
-    'Free 35mm film photo shoot collaboration in Ahmedabad. No modeling experience needed — sign up with WhatsApp and get the details.'
+    'Open for model collaborations in Kolkata. TFP — we both build our portfolios. DM or sign up.'
 }
 
 export default function SignUpCollabPage() {
