@@ -55,7 +55,7 @@ const preferenceOptions: ConceptOption[] = [
   { id: NO_PREFERENCE, desc: "You direct it \u2014 I'll design the shoot" },
 ]
 
-const locationChips = ['Kolkata', 'Varanasi', 'Agra', 'Jaipur']
+const locationChips = ['Ahmedabad', 'Kolkata', 'Varanasi', 'Agra', 'Jaipur']
 
 const heroImage = '/images/moodboards/editorial.jpg'
 
