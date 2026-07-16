@@ -295,7 +295,7 @@ export default function Page() {
 
       {/* Fixed nav */}
       <div className="v17-fixed-nav">
-        <a href="/sign-up-bali">Inquire</a>
+        <a href="/sign-up-collab">want to collab?</a>
         <div style={{ textAlign: 'right', pointerEvents: 'none' }}>
           <p style={{
             color: 'rgba(255,255,255,0.7)',
