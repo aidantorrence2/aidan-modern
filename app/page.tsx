@@ -57,7 +57,9 @@ const CSS = `
   .v17-fixed-nav a {
     pointer-events: auto;
     color: rgba(255,255,255,0.6);
-    text-decoration: none;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    text-decoration-color: rgba(255,255,255,0.4);
     font-family: system-ui, -apple-system, sans-serif;
     font-size: 12px;
     letter-spacing: 0.2em;
@@ -65,7 +67,7 @@ const CSS = `
     transition: color 0.2s;
   }
 
-  .v17-fixed-nav a:hover { color: #fff; }
+  .v17-fixed-nav a:hover { color: #fff; text-decoration-color: #fff; }
 
   .v17-counter {
     position: fixed;

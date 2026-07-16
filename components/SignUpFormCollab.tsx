@@ -55,7 +55,7 @@ const preferenceOptions: ConceptOption[] = [
   { id: NO_PREFERENCE, desc: "You direct it \u2014 I'll design the shoot" },
 ]
 
-const locationChips = ['Ahmedabad', 'Mumbai', 'Udaipur']
+const locationChips = ['Anjuna / Vagator', 'Baga / Calangute', 'Panaji', 'South Goa']
 
 const heroImage = '/images/moodboards/editorial.jpg'
 
@@ -298,7 +298,7 @@ export default function SignUpFormCollab() {
             value={location}
             onChange={e => { setLocation(e.target.value); clearStatus() }}
             className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-white/30 outline-none transition focus:border-emerald-400 focus:ring-2 focus:ring-emerald-400/30"
-            placeholder="Or type another place — e.g. Mumbai, Goa, Bangalore"
+            placeholder="Or type another place — e.g. Candolim, Morjim, Margao"
           />
         </div>
 
