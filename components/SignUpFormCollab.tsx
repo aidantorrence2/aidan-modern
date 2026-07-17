@@ -1,7 +1,8 @@
 "use client"
-import { useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import NextImage from 'next/image'
 import CountryCodeSelect from './CountryCodeSelect'
+import { initPageAnalytics, track, pageElapsedMs, flushNow } from '@/lib/track'
 
 type State = { ok: boolean; error?: string }
 
@@ -75,6 +76,30 @@ export default function SignUpFormCollab() {
   const fileRef = useRef<HTMLInputElement>(null)
   const whatsappRef = useRef<HTMLInputElement>(null)
   const photoRef = useRef<HTMLDivElement>(null)
+  const engagedFields = useRef<Set<string>>(new Set())
+  const lastTracked = useRef<Record<string, string>>({})
+
+  useEffect(() => {
+    initPageAnalytics('/sign-up-collab')
+  }, [])
+
+  // First interaction with any field fires form_start; first interaction with
+  // each field fires field_engaged — both once, so funnels stay countable.
+  function fieldEngaged(field: string) {
+    if (engagedFields.current.size === 0) track('form_start', { first_field: field })
+    if (!engagedFields.current.has(field)) {
+      engagedFields.current.add(field)
+      track('field_engaged', { field })
+    }
+  }
+
+  // Value-bearing events (typed location, notes length…) fire on blur, once
+  // per distinct value, so retyping doesn't spam duplicates.
+  function trackOnce(event: string, value: string, props: Record<string, string | number | boolean>) {
+    if (lastTracked.current[event] === value) return
+    lastTracked.current[event] = value
+    track(event, props)
+  }
 
   function clearStatus() {
     if (state) setState(null)
@@ -82,20 +107,24 @@ export default function SignUpFormCollab() {
 
   function toggleVibe(v: string) {
     // "No preference" is mutually exclusive with the concept tiles.
-    setVibes(prev => {
-      if (v === NO_PREFERENCE) return prev.includes(v) ? [] : [NO_PREFERENCE]
-      const withoutNoPref = prev.filter(x => x !== NO_PREFERENCE)
-      return withoutNoPref.includes(v) ? withoutNoPref.filter(x => x !== v) : [...withoutNoPref, v]
-    })
+    const withoutNoPref = vibes.filter(x => x !== NO_PREFERENCE)
+    const next = v === NO_PREFERENCE
+      ? (vibes.includes(v) ? [] : [NO_PREFERENCE])
+      : (withoutNoPref.includes(v) ? withoutNoPref.filter(x => x !== v) : [...withoutNoPref, v])
+    fieldEngaged('concept')
+    track('concept_toggled', { concept: v, selected: next.includes(v), total_selected: next.length })
+    setVibes(next)
     clearStatus()
   }
 
   async function handlePhotos(e: React.ChangeEvent<HTMLInputElement>) {
     const files = e.target.files
     if (!files || files.length === 0) return
+    fieldEngaged('photos')
     clearStatus()
     setProcessingPhotos(true)
     let failures = 0
+    const selected = files.length
     try {
       for (const file of Array.from(files)) {
         if (file.size > 20 * 1024 * 1024) {
@@ -118,6 +147,7 @@ export default function SignUpFormCollab() {
     } finally {
       setProcessingPhotos(false)
       if (fileRef.current) fileRef.current.value = ''
+      track('photos_added', { selected, added: selected - failures, failed: failures, total: photos.length + selected - failures })
       if (failures > 0) {
         setState({
           ok: false,
@@ -130,15 +160,17 @@ export default function SignUpFormCollab() {
   }
 
   function removePhoto(index: number) {
+    track('photo_removed', { remaining: photos.length - 1 })
     setPhotos(prev => prev.filter((_, i) => i !== index))
   }
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
     const data = Object.fromEntries(new FormData(e.currentTarget).entries()) as Record<string, string>
-    if (data.company) { setState({ ok: true }); return }
+    if (data.company) { track('honeypot_triggered'); setState({ ok: true }); return }
 
     if (processingPhotos) {
+      track('validation_error', { reason: 'photos_processing' })
       setState({ ok: false, error: 'Photos are still processing — hang on a sec and try again.' })
       photoRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' })
       return
@@ -146,17 +178,28 @@ export default function SignUpFormCollab() {
 
     const whatsappTrim = whatsapp.trim()
     if (!whatsappTrim) {
+      track('validation_error', { reason: 'whatsapp_missing' })
       setState({ ok: false, error: 'Please enter your WhatsApp number.' })
       whatsappRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' })
       whatsappRef.current?.focus()
       return
     }
     if (photos.length === 0) {
+      track('validation_error', { reason: 'photos_missing' })
       setState({ ok: false, error: 'Upload a few photos of yourself.' })
       photoRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' })
       return
     }
 
+    track('submit_attempt', {
+      photos: photos.length,
+      concepts: vibes.length,
+      has_location: location.trim().length > 0,
+      has_instagram: instagram.trim().length > 0,
+      notes_chars: idea.trim().length,
+      country_code: countryCode,
+      elapsed_ms: pageElapsedMs(),
+    })
     setSubmitting(true)
     setState(null)
     try {
@@ -180,11 +223,14 @@ export default function SignUpFormCollab() {
       })
       if (!res.ok) throw new Error('Failed')
       setState({ ok: true })
+      track('submit_success', { photos: photos.length, concepts: vibes.length, elapsed_ms: pageElapsedMs() })
+      flushNow()
       if (typeof window !== 'undefined') {
         const fbq = (window as typeof window & { fbq?: (...args: unknown[]) => void }).fbq
         if (typeof fbq === 'function') fbq('track', 'Lead', { source: 'sign-up-collab' })
       }
     } catch {
+      track('submit_error', { elapsed_ms: pageElapsedMs() })
       setState({ ok: false, error: 'Something went wrong. Try again or DM @madebyaidan on IG.' })
     } finally {
       setSubmitting(false)
@@ -283,7 +329,7 @@ export default function SignUpFormCollab() {
               <button
                 key={chip}
                 type="button"
-                onClick={() => { setLocation(chip); clearStatus() }}
+                onClick={() => { fieldEngaged('location'); track('location_selected', { method: 'chip', value: chip }); setLocation(chip); clearStatus() }}
                 className={`rounded-full border px-4 py-1.5 text-sm font-semibold transition-all ${
                   location.trim() === chip
                     ? 'border-emerald-400 bg-emerald-400/20 text-emerald-300'
@@ -296,7 +342,11 @@ export default function SignUpFormCollab() {
           </div>
           <input
             value={location}
-            onChange={e => { setLocation(e.target.value); clearStatus() }}
+            onChange={e => { fieldEngaged('location'); setLocation(e.target.value); clearStatus() }}
+            onBlur={() => {
+              const v = location.trim()
+              if (v && !locationChips.includes(v)) trackOnce('location_selected', v, { method: 'typed', value: v.slice(0, 80) })
+            }}
             className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-white/30 outline-none transition focus:border-emerald-400 focus:ring-2 focus:ring-emerald-400/30"
             placeholder="Or type another place — e.g. Candolim, Morjim, Margao"
           />
@@ -340,7 +390,11 @@ export default function SignUpFormCollab() {
           <textarea
             id="collab-idea"
             value={idea}
-            onChange={e => { setIdea(e.target.value); clearStatus() }}
+            onChange={e => { fieldEngaged('notes'); setIdea(e.target.value); clearStatus() }}
+            onBlur={() => {
+              const v = idea.trim()
+              if (v) trackOnce('notes_filled', v, { chars: v.length })
+            }}
             rows={3}
             className="w-full resize-none rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-white/30 outline-none transition focus:border-emerald-400 focus:ring-2 focus:ring-emerald-400/30"
             placeholder="Your own idea, inspo, references, anything..."
@@ -354,7 +408,7 @@ export default function SignUpFormCollab() {
             <label className="text-sm font-medium text-white/80">WhatsApp</label>
           </div>
           <div className="flex gap-2">
-            <CountryCodeSelect value={countryCode} onChange={code => { setCountryCode(code); clearStatus() }} />
+            <CountryCodeSelect value={countryCode} onChange={code => { fieldEngaged('country_code'); track('country_code_changed', { code }); setCountryCode(code); clearStatus() }} />
             <input
               ref={whatsappRef}
               required
@@ -363,7 +417,11 @@ export default function SignUpFormCollab() {
               autoComplete="tel-national"
               name="whatsapp"
               value={whatsapp}
-              onChange={e => { setWhatsapp(e.target.value); clearStatus() }}
+              onChange={e => { fieldEngaged('whatsapp'); setWhatsapp(e.target.value); clearStatus() }}
+              onBlur={() => {
+                const digits = whatsapp.replace(/\D/g, '')
+                if (digits) trackOnce('whatsapp_filled', digits, { digits: digits.length })
+              }}
               className="min-w-0 flex-1 rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-white/30 outline-none transition focus:border-emerald-400 focus:ring-2 focus:ring-emerald-400/30"
               placeholder="98765 43210"
             />
@@ -380,7 +438,11 @@ export default function SignUpFormCollab() {
           <input
             name="instagram"
             value={instagram}
-            onChange={e => { setInstagram(e.target.value); clearStatus() }}
+            onChange={e => { fieldEngaged('instagram'); setInstagram(e.target.value); clearStatus() }}
+            onBlur={() => {
+              const v = instagram.trim()
+              if (v) trackOnce('instagram_filled', v, { chars: v.length })
+            }}
             autoCapitalize="off"
             autoCorrect="off"
             spellCheck={false}
