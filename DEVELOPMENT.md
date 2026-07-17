@@ -41,6 +41,12 @@ Next.js 14 App Router (TypeScript, TailwindCSS). Deployed on Vercel Pro project 
 - Meta Pixel support gated by `NEXT_PUBLIC_META_PIXEL_ID`.
 - Availability slots persisted in **Neon** Postgres (`DATABASE_URL`), table `availability_slots` (`lib/neon.ts`, `@neondatabase/serverless`). Separate from the Supabase-backed `signups` flow.
 
+### First-party analytics (/sign-up-collab)
+
+- Client tracker `lib/track.ts` batches events to `POST /api/events`, stored in Neon table `analytics_events` (auto-created on first insert; geo from Vercel headers).
+- `SignUpFormCollab` tracks the full funnel: page_view → form_start → field_engaged per field → validation_error → submit_attempt/success/error, plus scroll depth, active time, concept/location choices, UTM/referrer attribution. Counts and booleans only — no raw contact details in events.
+- Report: `node scripts/pull-collab-analytics.mjs [days]` (funnel, drop-off, sources, geo, engagement). Headless/bot UAs are excluded.
+
 ### Sign-up notifications
 
 - Slack: `SLACK_BOOKING_WEBHOOK`
