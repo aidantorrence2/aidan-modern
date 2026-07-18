@@ -68,9 +68,10 @@ const proofImages = [
 ]
 
 const checkmarks = [
-  "I will send you the photos — it's 100% free",
-  '1–2 hour shoot · we plan the concept together',
-  'I reply on WhatsApp within 24 hours',
+  'Sign up below',
+  'I message you on WhatsApp',
+  'We plan the concept and choose a location',
+  "I send you the photos — it's 100% free",
 ]
 
 const heroImage = '/images/moodboards/editorial.jpg'
@@ -336,49 +337,44 @@ export default function SignUpFormCollab() {
           Fill out the form below and I&apos;ll send you all the details &mdash; timing, location ideas, what to wear, and next steps.
         </p>
 
-        {/* Checkmarks */}
-        <ul className="space-y-2.5">
-          {checkmarks.map((c, i) => (
-            <li key={i} className="flex items-start gap-2.5">
+        {/* How it works — one consolidated checkmark flow */}
+        <div className="space-y-2.5">
+          <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-neutral-400">How it works</p>
+          <ul className="space-y-2.5">
+            {checkmarks.map((c, i) => (
+              <li key={i} className="flex items-start gap-2.5">
+                <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-emerald-600">
+                  <CheckIcon className="h-3 w-3" />
+                </span>
+                <span className="text-sm font-medium text-neutral-700">{c}</span>
+              </li>
+            ))}
+            <li className="flex items-start gap-2.5">
               <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-emerald-600">
                 <CheckIcon className="h-3 w-3" />
               </span>
-              <span className="text-sm font-medium text-neutral-700">{c}</span>
+              <span className="text-sm font-medium text-neutral-700">
+                <span className="font-semibold text-neutral-900">Why?</span> I&apos;m traveling the world &mdash; this is how I meet new people and capture beautiful places
+              </span>
             </li>
-          ))}
-          <li className="flex items-start gap-2.5">
-            <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-emerald-600">
-              <CheckIcon className="h-3 w-3" />
-            </span>
-            <span className="text-sm font-medium text-neutral-700">
-              <span className="font-semibold text-neutral-900">Why?</span> I&apos;m traveling the world and want to meet new people and capture each place&apos;s beauty
-            </span>
-          </li>
-          <li className="flex items-start gap-2.5">
-            <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-emerald-600">
-              <CheckIcon className="h-3 w-3" />
-            </span>
-            <span className="text-sm font-medium text-neutral-700">
-              See my work:{' '}
-              <a
-                href="https://www.instagram.com/madebyaidan"
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => track('handle_clicked', { placement: 'checkmarks' })}
-                className="font-semibold text-emerald-600 underline decoration-emerald-300 underline-offset-2"
-              >
-                @madebyaidan
-              </a>
-            </span>
-          </li>
-        </ul>
-
-        {/* How it works */}
-        <div className="rounded-xl border border-neutral-200 bg-neutral-50 px-4 py-3">
-          <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-neutral-400">How it works</p>
-          <p className="mt-1 text-sm leading-relaxed text-neutral-700">
-            Sign up &rarr; I message you on WhatsApp &rarr; we plan the concept and choose a location, and I will send you the photos &mdash; free.
-          </p>
+            <li className="flex items-start gap-2.5">
+              <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-emerald-600">
+                <CheckIcon className="h-3 w-3" />
+              </span>
+              <span className="text-sm font-medium text-neutral-700">
+                See my work:{' '}
+                <a
+                  href="https://www.instagram.com/madebyaidan"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => track('handle_clicked', { placement: 'checkmarks' })}
+                  className="font-semibold text-emerald-600 underline decoration-emerald-300 underline-offset-2"
+                >
+                  @madebyaidan
+                </a>
+              </span>
+            </li>
+          </ul>
         </div>
 
         {/* Proof strip */}
