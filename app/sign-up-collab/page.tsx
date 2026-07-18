@@ -1,9 +1,9 @@
 import SignUpFormCollab from '@/components/SignUpFormCollab'
 
 export const metadata = {
-  title: 'Model Collaboration',
+  title: 'Free Collab Photo Shoot',
   description:
-    'Open for model collaborations. TFP — you keep the edited photos, free. Sign up and I will send the details on WhatsApp.'
+    'Sign up for a free collab photo shoot — you keep the edited photos. I will send you the details on WhatsApp.'
 }
 
 export default function SignUpCollabPage() {
