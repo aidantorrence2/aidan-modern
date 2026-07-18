@@ -4,7 +4,9 @@ import NextImage from 'next/image'
 import CountryCodeSelect from './CountryCodeSelect'
 import { initPageAnalytics, track, pageElapsedMs, flushNow } from '@/lib/track'
 
-type State = { ok: boolean; error?: string }
+// `field` pins the error message to the section that failed, so the scroll-to
+// -error always lands the user on the message itself.
+type State = { ok: boolean; error?: string; field?: 'whatsapp' | 'photos' | 'submit' }
 
 function resizeImage(dataUrl: string, maxBytes: number): Promise<string> {
   return new Promise((resolve, reject) => {
@@ -173,6 +175,7 @@ export default function SignUpFormCollab() {
       if (failures > 0) {
         setState({
           ok: false,
+          field: 'photos',
           error: failures === 1
             ? 'One photo could not be added (too large or unsupported format — try a JPG/PNG under 20 MB).'
             : `${failures} photos could not be added (too large or unsupported format — try JPG/PNG under 20 MB).`
@@ -193,7 +196,7 @@ export default function SignUpFormCollab() {
 
     if (processingPhotos) {
       track('validation_error', { reason: 'photos_processing' })
-      setState({ ok: false, error: 'Photos are still processing — hang on a sec and try again.' })
+      setState({ ok: false, field: 'photos', error: 'Photos are still processing — hang on a sec and try again.' })
       photoRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' })
       return
     }
@@ -201,14 +204,14 @@ export default function SignUpFormCollab() {
     const whatsappTrim = whatsapp.trim()
     if (!whatsappTrim) {
       track('validation_error', { reason: 'whatsapp_missing' })
-      setState({ ok: false, error: 'Please enter your WhatsApp number.' })
+      setState({ ok: false, field: 'whatsapp', error: 'Please enter your WhatsApp number.' })
       whatsappRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' })
       whatsappRef.current?.focus()
       return
     }
     if (photos.length === 0) {
       track('validation_error', { reason: 'photos_missing' })
-      setState({ ok: false, error: 'Upload a few photos of yourself.' })
+      setState({ ok: false, field: 'photos', error: 'Upload a few photos of yourself.' })
       photoRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' })
       return
     }
@@ -253,7 +256,7 @@ export default function SignUpFormCollab() {
       }
     } catch {
       track('submit_error', { elapsed_ms: pageElapsedMs() })
-      setState({ ok: false, error: 'Something went wrong. Try again or DM @madebyaidan on IG.' })
+      setState({ ok: false, field: 'submit', error: 'Something went wrong. Try again or DM @madebyaidan on IG.' })
     } finally {
       setSubmitting(false)
     }
@@ -324,44 +327,44 @@ export default function SignUpFormCollab() {
   return (
     <div>
       {/* Wordmark */}
-      <p className="text-[11px] font-semibold uppercase leading-relaxed tracking-[0.22em] text-neutral-900" style={{ fontFamily: 'Georgia, serif' }}>
+      <a href="/" onClick={() => track('wordmark_clicked')} className="inline-block text-[11px] font-semibold uppercase leading-snug tracking-[0.22em] text-neutral-900" style={{ fontFamily: 'Georgia, serif' }}>
         Aidan Torrence<br />
         <span className="text-neutral-400">Photography</span>
-      </p>
+      </a>
 
-      <div className="mt-6 space-y-5">
-        <h1 className="font-display text-3xl font-semibold leading-[1.05] text-neutral-900 sm:text-4xl" style={{ fontFamily: 'Georgia, serif' }}>
+      <div className="mt-4 space-y-3">
+        <h1 className="font-display text-2xl font-semibold leading-[1.05] text-neutral-900 sm:text-3xl" style={{ fontFamily: 'Georgia, serif' }}>
           Sign Up for Free Collab Photo Shoot
         </h1>
-        <p className="text-base leading-relaxed text-neutral-500">
+        <p className="text-sm leading-snug text-neutral-500">
           Fill out the form below and I&apos;ll send you all the details &mdash; timing, location ideas, what to wear, and next steps.
         </p>
 
         {/* How it works — one consolidated checkmark flow */}
-        <div className="space-y-2.5">
+        <div className="space-y-1.5">
           <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-neutral-400">How it works</p>
-          <ul className="space-y-2.5">
+          <ul className="space-y-1.5">
             {checkmarks.map((c, i) => (
-              <li key={i} className="flex items-start gap-2.5">
-                <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-emerald-600">
-                  <CheckIcon className="h-3 w-3" />
+              <li key={i} className="flex items-start gap-2">
+                <span className="mt-0.5 flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-emerald-600">
+                  <CheckIcon className="h-2.5 w-2.5" />
                 </span>
-                <span className="text-sm font-medium text-neutral-700">{c}</span>
+                <span className="text-[13px] leading-snug font-medium text-neutral-700">{c}</span>
               </li>
             ))}
-            <li className="flex items-start gap-2.5">
-              <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-emerald-600">
-                <CheckIcon className="h-3 w-3" />
+            <li className="flex items-start gap-2">
+              <span className="mt-0.5 flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-emerald-600">
+                <CheckIcon className="h-2.5 w-2.5" />
               </span>
-              <span className="text-sm font-medium text-neutral-700">
+              <span className="text-[13px] leading-snug font-medium text-neutral-700">
                 <span className="font-semibold text-neutral-900">Why?</span> I&apos;m traveling the world &mdash; this is how I meet new people and capture beautiful places
               </span>
             </li>
-            <li className="flex items-start gap-2.5">
-              <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-emerald-600">
-                <CheckIcon className="h-3 w-3" />
+            <li className="flex items-start gap-2">
+              <span className="mt-0.5 flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-emerald-600">
+                <CheckIcon className="h-2.5 w-2.5" />
               </span>
-              <span className="text-sm font-medium text-neutral-700">
+              <span className="text-[13px] leading-snug font-medium text-neutral-700">
                 See my work:{' '}
                 <a
                   href="https://www.instagram.com/madebyaidan"
@@ -378,11 +381,11 @@ export default function SignUpFormCollab() {
         </div>
 
         {/* Proof strip */}
-        <div className="space-y-1.5">
-          <div className="grid grid-cols-4 gap-1.5">
+        <div className="space-y-1">
+          <div className="grid grid-cols-4 gap-1">
             {proofImages.map((src, i) => (
-              <div key={i} className="overflow-hidden rounded-lg aspect-[3/4] bg-neutral-100">
-                <NextImage src={src} alt="Recent photo shoot" width={200} height={267} priority={i < 2} sizes="(max-width: 640px) 25vw, 100px" className="w-full h-full object-cover" />
+              <div key={i} className="overflow-hidden rounded-lg aspect-square bg-neutral-100">
+                <NextImage src={src} alt="Recent photo shoot" width={200} height={200} priority={i < 2} sizes="(max-width: 640px) 25vw, 100px" className="w-full h-full object-cover" />
               </div>
             ))}
           </div>
@@ -390,13 +393,7 @@ export default function SignUpFormCollab() {
         </div>
       </div>
 
-      <form onSubmit={onSubmit} className="mt-8 space-y-7">
-        {state && !state.ok && (
-          <div className="rounded-xl border border-red-300 bg-red-50 px-4 py-3 text-sm font-medium text-red-700">
-            {state.error}
-          </div>
-        )}
-
+      <form onSubmit={onSubmit} className="mt-6 space-y-7">
         {/* Location */}
         <div className="space-y-2">
           <div className="flex items-center gap-2">
@@ -505,6 +502,11 @@ export default function SignUpFormCollab() {
               placeholder="98765 43210"
             />
           </div>
+          {state && !state.ok && state.field === 'whatsapp' && (
+            <div className="rounded-xl border border-red-300 bg-red-50 px-4 py-3 text-sm font-medium text-red-700">
+              {state.error}
+            </div>
+          )}
           <p className="text-xs text-amber-600">this is how I will contact you</p>
         </div>
 
@@ -540,6 +542,11 @@ export default function SignUpFormCollab() {
           <p className="text-xs leading-relaxed text-neutral-500">
             Selfies are fine &mdash; just looking to see the real you.
           </p>
+          {state && !state.ok && state.field === 'photos' && (
+            <div className="rounded-xl border border-red-300 bg-red-50 px-4 py-3 text-sm font-medium text-red-700">
+              {state.error}
+            </div>
+          )}
           <div className="space-y-1.5">
             <p className="flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-[0.15em] text-emerald-600">
               <CheckIcon className="h-3.5 w-3.5" />
@@ -590,11 +597,18 @@ export default function SignUpFormCollab() {
               type="button"
               onClick={() => fileRef.current?.click()}
               disabled={processingPhotos}
-              className="flex h-24 w-24 items-center justify-center rounded-xl border border-dashed border-neutral-300 bg-neutral-50 text-4xl font-light text-neutral-400 transition hover:border-emerald-400 hover:text-emerald-500 disabled:opacity-50"
+              className="flex h-24 w-32 flex-col items-center justify-center gap-1.5 rounded-xl border-2 border-dashed border-emerald-400 bg-emerald-50 text-emerald-700 transition hover:bg-emerald-100 disabled:opacity-50"
             >
               {processingPhotos ? (
-                <span className="inline-block h-6 w-6 animate-spin rounded-full border-2 border-neutral-300 border-t-emerald-500" aria-label="Processing" />
-              ) : '+'}
+                <span className="inline-block h-6 w-6 animate-spin rounded-full border-2 border-emerald-200 border-t-emerald-600" aria-label="Processing" />
+              ) : (
+                <>
+                  <svg viewBox="0 0 24 24" className="h-7 w-7" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                    <path d="M12 16V4m0 0L7 9m5-5l5 5" /><path d="M4 17v2a1 1 0 001 1h14a1 1 0 001-1v-2" />
+                  </svg>
+                  <span className="text-xs font-bold uppercase tracking-wide">Add photos</span>
+                </>
+              )}
             </button>
           </div>
           <input ref={fileRef} type="file" accept="image/*" multiple onChange={handlePhotos} className="hidden" />
@@ -602,6 +616,12 @@ export default function SignUpFormCollab() {
 
         {/* Honeypot */}
         <input type="text" name="company" className="hidden" tabIndex={-1} autoComplete="off" />
+
+        {state && !state.ok && state.field === 'submit' && (
+          <div className="rounded-xl border border-red-300 bg-red-50 px-4 py-3 text-sm font-medium text-red-700">
+            {state.error}
+          </div>
+        )}
 
         <button
           type="submit"
