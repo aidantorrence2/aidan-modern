@@ -8,7 +8,7 @@ export const metadata = {
 
 export default function SignUpCollabPage() {
   return (
-    <section className="min-h-screen bg-white py-10 sm:py-16">
+    <section className="min-h-screen bg-white pt-4 pb-10 sm:pt-6 sm:pb-16">
       <div className="mx-auto max-w-md px-5">
         <SignUpFormCollab />
       </div>

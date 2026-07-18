@@ -323,11 +323,12 @@ export default function SignUpFormCollab() {
   return (
     <div>
       {/* Wordmark */}
-      <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-neutral-900" style={{ fontFamily: 'Georgia, serif' }}>
-        Aidan Torrence <span className="text-neutral-400">Photography</span>
+      <p className="text-[11px] font-semibold uppercase leading-relaxed tracking-[0.22em] text-neutral-900" style={{ fontFamily: 'Georgia, serif' }}>
+        Aidan Torrence<br />
+        <span className="text-neutral-400">Photography</span>
       </p>
 
-      <div className="mt-7 space-y-5">
+      <div className="mt-6 space-y-5">
         <h1 className="font-display text-4xl font-bold leading-[1.02] text-neutral-900 sm:text-5xl" style={{ fontFamily: 'Georgia, serif' }}>
           Free Photo Shoot in Goa
         </h1>
