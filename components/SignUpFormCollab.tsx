@@ -68,7 +68,7 @@ const proofImages = [
 ]
 
 const checkmarks = [
-  'You keep all the edited photos — 100% free',
+  "I will send you the photos — it's 100% free",
   '1–2 hour shoot · we plan the concept together',
   'I reply on WhatsApp within 24 hours',
 ]
@@ -351,6 +351,14 @@ export default function SignUpFormCollab() {
               <CheckIcon className="h-3 w-3" />
             </span>
             <span className="text-sm font-medium text-neutral-700">
+              <span className="font-semibold text-neutral-900">Why?</span> I&apos;m traveling the world and want to meet new people and capture each place&apos;s beauty
+            </span>
+          </li>
+          <li className="flex items-start gap-2.5">
+            <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-emerald-600">
+              <CheckIcon className="h-3 w-3" />
+            </span>
+            <span className="text-sm font-medium text-neutral-700">
               See my work:{' '}
               <a
                 href="https://www.instagram.com/madebyaidan"
@@ -364,6 +372,14 @@ export default function SignUpFormCollab() {
             </span>
           </li>
         </ul>
+
+        {/* How it works */}
+        <div className="rounded-xl border border-neutral-200 bg-neutral-50 px-4 py-3">
+          <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-neutral-400">How it works</p>
+          <p className="mt-1 text-sm leading-relaxed text-neutral-700">
+            Sign up &rarr; I message you on WhatsApp &rarr; we plan the concept and choose a location, and I will send you the photos &mdash; free.
+          </p>
+        </div>
 
         {/* Proof strip */}
         <div className="space-y-1.5">
