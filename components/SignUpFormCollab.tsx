@@ -329,11 +329,11 @@ export default function SignUpFormCollab() {
       </p>
 
       <div className="mt-6 space-y-5">
-        <h1 className="font-display text-4xl font-bold leading-[1.02] text-neutral-900 sm:text-5xl" style={{ fontFamily: 'Georgia, serif' }}>
-          Free Photo Shoot in Goa
+        <h1 className="font-display text-3xl font-semibold leading-[1.05] text-neutral-900 sm:text-4xl" style={{ fontFamily: 'Georgia, serif' }}>
+          Sign Up for Free Collab Photo Shoot
         </h1>
         <p className="text-base leading-relaxed text-neutral-500">
-          I&apos;m shooting model collaborations across Goa this season. Fill out the form and I&apos;ll send you the details &mdash; timing, location ideas, what to wear, and next steps.
+          Fill out the form below and I&apos;ll send you all the details &mdash; timing, location ideas, what to wear, and next steps.
         </p>
 
         {/* Checkmarks */}
