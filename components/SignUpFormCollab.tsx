@@ -51,18 +51,38 @@ const preferenceOptions: ConceptOption[] = [
   { id: 'Fashion editorial', desc: 'Dramatic, magazine-style' },
   { id: 'Streets & markets', desc: 'Gritty, real city life' },
   { id: 'Nature & outdoors', desc: 'Lakes, hills, greenery, golden light' },
-  { id: 'Studio & indoor', desc: 'Cozy interiors, caf\u00e9s, controlled light' },
+  { id: 'Studio & indoor', desc: 'Cozy interiors, cafés, controlled light' },
   { id: 'Culture & everyday life', desc: 'Tradition, dress, temples, real moments' },
-  { id: NO_PREFERENCE, desc: "You direct it \u2014 I'll design the shoot" },
+  { id: NO_PREFERENCE, desc: "You direct it — I'll design the shoot" },
 ]
 
 const locationChips = ['Anjuna / Vagator', 'Baga / Calangute', 'Panaji', 'South Goa']
 
+// Same curated set the earlier "recent work" strip used before it was dropped —
+// analytics showed engaged readers bail on a proof-free page, so it's back.
+const proofImages = [
+  '/images/proof/000001-8.jpg',
+  '/images/proof/000019-6.jpg',
+  '/images/proof/000038-4.jpg',
+  '/images/proof/000041.jpg',
+]
+
+const checkmarks = [
+  'You keep all the edited photos — 100% free',
+  '1–2 hour shoot · we plan the concept together',
+  'I reply on WhatsApp within 24 hours',
+]
+
 const heroImage = '/images/moodboards/editorial.jpg'
+
+function CheckIcon({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" className={className} fill="none" stroke="currentColor" strokeWidth={3} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5" /></svg>
+  )
+}
 
 export default function SignUpFormCollab() {
   const [state, setState] = useState<State | null>(null)
-  const [fieldErrors, setFieldErrors] = useState<{ whatsapp?: string; photos?: string }>({})
   const [location, setLocation] = useState('')
   // No default pre-selection: keeps "what did they actually want" measurable
   // instead of everyone inheriting Fashion editorial.
@@ -81,7 +101,7 @@ export default function SignUpFormCollab() {
   const lastTracked = useRef<Record<string, string>>({})
 
   useEffect(() => {
-    initPageAnalytics('/sign-up-collab')
+    initPageAnalytics('/sign-up-collab', { version: 'white-v2' })
   }, [])
 
   // First interaction with any field fires form_start; first interaction with
@@ -104,7 +124,6 @@ export default function SignUpFormCollab() {
 
   function clearStatus() {
     if (state) setState(null)
-    if (fieldErrors.whatsapp || fieldErrors.photos) setFieldErrors({})
   }
 
   function toggleVibe(v: string) {
@@ -173,25 +192,23 @@ export default function SignUpFormCollab() {
 
     if (processingPhotos) {
       track('validation_error', { reason: 'photos_processing' })
-      setFieldErrors({ photos: 'Photos are still processing — hang on a sec and try again.' })
+      setState({ ok: false, error: 'Photos are still processing — hang on a sec and try again.' })
       photoRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' })
       return
     }
 
     const whatsappTrim = whatsapp.trim()
-    const errors: { whatsapp?: string; photos?: string } = {}
-    if (!whatsappTrim) errors.whatsapp = 'Please enter your WhatsApp number.'
-    if (photos.length === 0) errors.photos = 'Upload a few photos of yourself.'
-    if (errors.whatsapp || errors.photos) {
-      if (errors.whatsapp) track('validation_error', { reason: 'whatsapp_missing' })
-      if (errors.photos) track('validation_error', { reason: 'photos_missing' })
-      setFieldErrors(errors)
-      if (errors.whatsapp) {
-        whatsappRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' })
-        whatsappRef.current?.focus()
-      } else {
-        photoRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' })
-      }
+    if (!whatsappTrim) {
+      track('validation_error', { reason: 'whatsapp_missing' })
+      setState({ ok: false, error: 'Please enter your WhatsApp number.' })
+      whatsappRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' })
+      whatsappRef.current?.focus()
+      return
+    }
+    if (photos.length === 0) {
+      track('validation_error', { reason: 'photos_missing' })
+      setState({ ok: false, error: 'Upload a few photos of yourself.' })
+      photoRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' })
       return
     }
 
@@ -220,7 +237,7 @@ export default function SignUpFormCollab() {
         body: JSON.stringify({
           city: location.trim(),
           contactMethod: 'whatsapp',
-          contact: countryCode + ' ' + whatsappTrim,
+          contact: countryCode + ' ' + whatsapp.trim(),
           moodboard,
           photos,
         }),
@@ -244,45 +261,45 @@ export default function SignUpFormCollab() {
   // ── Success ──
   if (state?.ok) {
     return (
-      <div className="mt-6 space-y-0 overflow-hidden rounded-2xl border border-white/[0.08]" style={{ background: 'linear-gradient(165deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.02) 100%)' }}>
+      <div className="mt-6 space-y-0 overflow-hidden rounded-2xl border border-neutral-200 bg-white shadow-sm">
         <div className="relative h-48 overflow-hidden">
-          <NextImage src={heroImage} alt="" width={400} height={192} priority sizes="(max-width: 640px) 100vw, 400px" className="w-full h-full object-cover" style={{ filter: 'brightness(0.5) saturate(1.2)' }} />
-          <div className="absolute inset-0" style={{ background: 'linear-gradient(180deg, transparent 30%, rgba(10,10,10,0.95) 100%)' }} />
+          <NextImage src={heroImage} alt="" width={400} height={192} priority sizes="(max-width: 640px) 100vw, 400px" className="w-full h-full object-cover" style={{ filter: 'brightness(0.55) saturate(1.2)' }} />
+          <div className="absolute inset-0" style={{ background: 'linear-gradient(180deg, transparent 30%, rgba(0,0,0,0.8) 100%)' }} />
           <div className="absolute bottom-4 left-5 right-5">
             <p className="font-display text-2xl font-semibold text-white" style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic' }}>You&apos;re in.</p>
           </div>
         </div>
         <div className="px-6 pt-4 pb-6 space-y-5">
-          <p className="text-sm text-white/50">I&apos;ll reach out within 24 hours. Let&apos;s make something great together.</p>
+          <p className="text-sm text-neutral-500">I&apos;ll reach out within 24 hours. Let&apos;s make something great together.</p>
           <div className="grid grid-cols-2 gap-4">
             <div className="space-y-1">
-              <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-white/30">Type</p>
-              <p className="text-sm font-medium text-white">TFP Collaboration</p>
+              <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-neutral-400">Type</p>
+              <p className="text-sm font-medium text-neutral-900">TFP Collaboration</p>
             </div>
             <div className="space-y-1">
-              <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-white/30">Duration</p>
-              <p className="text-sm font-medium text-white">1&ndash;2 hours</p>
+              <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-neutral-400">Duration</p>
+              <p className="text-sm font-medium text-neutral-900">1&ndash;2 hours</p>
             </div>
             <div className="space-y-1">
-              <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-white/30">Cost</p>
-              <p className="text-sm font-medium text-emerald-400">Free &mdash; we both get content</p>
+              <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-neutral-400">Cost</p>
+              <p className="text-sm font-medium text-emerald-600">Free &mdash; we both get content</p>
             </div>
             {vibes.length > 0 && (
               <div className="space-y-1">
-                <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-white/30">Preference</p>
-                <p className="text-sm font-medium text-white">{vibes.join(', ')}</p>
+                <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-neutral-400">Preference</p>
+                <p className="text-sm font-medium text-neutral-900">{vibes.join(', ')}</p>
               </div>
             )}
           </div>
           {idea.trim() && (
             <div className="space-y-1">
-              <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-white/30">Notes</p>
-              <p className="text-sm font-medium leading-relaxed text-white">{idea.trim()}</p>
+              <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-neutral-400">Notes</p>
+              <p className="text-sm font-medium leading-relaxed text-neutral-900">{idea.trim()}</p>
             </div>
           )}
-          <div className="h-px bg-white/[0.06]" />
+          <div className="h-px bg-neutral-100" />
           <div className="space-y-3">
-            <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-white/30">What to expect</p>
+            <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-neutral-400">What to expect</p>
             <div className="space-y-2.5">
               {[
                 { icon: '\u{1F4F8}', text: 'Edited photos you can use however you want' },
@@ -292,7 +309,7 @@ export default function SignUpFormCollab() {
               ].map((item, i) => (
                 <div key={i} className="flex items-center gap-3">
                   <span className="text-base">{item.icon}</span>
-                  <span className="text-sm text-white/70">{item.text}</span>
+                  <span className="text-sm text-neutral-600">{item.text}</span>
                 </div>
               ))}
             </div>
@@ -305,22 +322,73 @@ export default function SignUpFormCollab() {
   // ── Form ──
   return (
     <div>
-      <div className="space-y-5">
-        <h1 className="font-display text-3xl font-semibold leading-[1.05] text-white sm:text-4xl" style={{ fontFamily: 'Georgia, serif' }}>
-          Sign Up for Free Collab Photo Shoot
+      {/* Wordmark */}
+      <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-neutral-900" style={{ fontFamily: 'Georgia, serif' }}>
+        Aidan Torrence <span className="text-neutral-400">Photography</span>
+      </p>
+
+      <div className="mt-7 space-y-5">
+        <h1 className="font-display text-4xl font-bold leading-[1.02] text-neutral-900 sm:text-5xl" style={{ fontFamily: 'Georgia, serif' }}>
+          Free Photo Shoot in Goa
         </h1>
-        <p className="text-base leading-relaxed text-white/50">
-          Fill out the form below and I&apos;ll send you all the details &mdash; timing, location ideas, what to wear, and next steps.
+        <p className="text-base leading-relaxed text-neutral-500">
+          I&apos;m shooting model collaborations across Goa this season. Fill out the form and I&apos;ll send you the details &mdash; timing, location ideas, what to wear, and next steps.
         </p>
 
+        {/* Checkmarks */}
+        <ul className="space-y-2.5">
+          {checkmarks.map((c, i) => (
+            <li key={i} className="flex items-start gap-2.5">
+              <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-emerald-600">
+                <CheckIcon className="h-3 w-3" />
+              </span>
+              <span className="text-sm font-medium text-neutral-700">{c}</span>
+            </li>
+          ))}
+          <li className="flex items-start gap-2.5">
+            <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-emerald-600">
+              <CheckIcon className="h-3 w-3" />
+            </span>
+            <span className="text-sm font-medium text-neutral-700">
+              See my work:{' '}
+              <a
+                href="https://www.instagram.com/madebyaidan"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => track('handle_clicked', { placement: 'checkmarks' })}
+                className="font-semibold text-emerald-600 underline decoration-emerald-300 underline-offset-2"
+              >
+                @madebyaidan
+              </a>
+            </span>
+          </li>
+        </ul>
+
+        {/* Proof strip */}
+        <div className="space-y-1.5">
+          <div className="grid grid-cols-4 gap-1.5">
+            {proofImages.map((src, i) => (
+              <div key={i} className="overflow-hidden rounded-lg aspect-[3/4] bg-neutral-100">
+                <NextImage src={src} alt="Recent photo shoot" width={200} height={267} priority={i < 2} sizes="(max-width: 640px) 25vw, 100px" className="w-full h-full object-cover" />
+              </div>
+            ))}
+          </div>
+          <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-neutral-400">Recent work &middot; shot on film</p>
+        </div>
       </div>
 
       <form onSubmit={onSubmit} className="mt-8 space-y-7">
+        {state && !state.ok && (
+          <div className="rounded-xl border border-red-300 bg-red-50 px-4 py-3 text-sm font-medium text-red-700">
+            {state.error}
+          </div>
+        )}
+
         {/* Location */}
         <div className="space-y-2">
           <div className="flex items-center gap-2">
-            <span className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-500/20 text-[10px] font-bold text-emerald-400">1</span>
-            <label className="text-sm font-medium text-white/80">Where are you located?</label>
+            <span className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-100 text-[10px] font-bold text-emerald-700">1</span>
+            <label className="text-sm font-medium text-neutral-800">Where are you located?</label>
           </div>
           <div className="flex flex-wrap gap-2">
             {locationChips.map(chip => (
@@ -330,8 +398,8 @@ export default function SignUpFormCollab() {
                 onClick={() => { fieldEngaged('location'); track('location_selected', { method: 'chip', value: chip }); setLocation(chip); clearStatus() }}
                 className={`rounded-full border px-4 py-1.5 text-sm font-semibold transition-all ${
                   location.trim() === chip
-                    ? 'border-emerald-400 bg-emerald-400/20 text-emerald-300'
-                    : 'border-white/15 bg-white/5 text-white/60 hover:border-white/30 hover:text-white/80'
+                    ? 'border-emerald-500 bg-emerald-50 text-emerald-700'
+                    : 'border-neutral-200 bg-white text-neutral-600 hover:border-neutral-400 hover:text-neutral-800'
                 }`}
               >
                 {chip}
@@ -345,18 +413,18 @@ export default function SignUpFormCollab() {
               const v = location.trim()
               if (v && !locationChips.includes(v)) trackOnce('location_selected', v, { method: 'typed', value: v.slice(0, 80) })
             }}
-            className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-white/30 outline-none transition focus:border-emerald-400 focus:ring-2 focus:ring-emerald-400/30"
-            placeholder="Or type another place — e.g. Candolim, Morjim, Margao"
+            className="w-full rounded-xl border border-neutral-300 bg-white px-4 py-3 text-sm text-neutral-900 placeholder-neutral-400 outline-none transition focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200"
+            placeholder="Or type another place — e.g. Margao, Mapusa, Ponda"
           />
         </div>
 
-        {/* Preference — selectable concepts, fashion editorial is the default */}
+        {/* Preference — selectable concepts */}
         <fieldset className="space-y-2.5">
           <div className="flex items-center gap-2">
-            <span className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-500/20 text-[10px] font-bold text-emerald-400">2</span>
-            <legend className="text-sm font-medium text-white/80">Choose a shoot concept <span className="text-xs text-white/30">(optional — pick any)</span></legend>
+            <span className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-100 text-[10px] font-bold text-emerald-700">2</span>
+            <legend className="text-sm font-medium text-neutral-800">Choose a shoot concept <span className="text-xs text-neutral-400">(optional — pick any)</span></legend>
           </div>
-          <p className="text-xs leading-relaxed text-white/40">
+          <p className="text-xs leading-relaxed text-neutral-500">
             Tap any that speak to you &mdash; mix as many as you like. Not sure? Pick &ldquo;No preference&rdquo; and I&apos;ll design it for you.
           </p>
           <div className="grid grid-cols-2 gap-2">
@@ -368,11 +436,11 @@ export default function SignUpFormCollab() {
                   type="button"
                   onClick={() => toggleVibe(opt.id)}
                   className={`relative rounded-xl border px-4 py-3 text-left transition-all ${
-                    selected ? 'border-emerald-400 bg-emerald-400/10 ring-2 ring-emerald-400/30' : 'border-white/10 bg-white/[0.03] hover:border-white/25'
+                    selected ? 'border-emerald-500 bg-emerald-50 ring-2 ring-emerald-200' : 'border-neutral-200 bg-white hover:border-neutral-400'
                   }`}
                 >
-                  <div className={`text-sm font-semibold ${selected ? 'text-emerald-300' : 'text-white'}`}>{opt.id}</div>
-                  <div className="mt-0.5 text-xs text-white/40">{opt.desc}</div>
+                  <div className={`text-sm font-semibold ${selected ? 'text-emerald-700' : 'text-neutral-900'}`}>{opt.id}</div>
+                  <div className="mt-0.5 text-xs text-neutral-500">{opt.desc}</div>
                 </button>
               )
             })}
@@ -382,8 +450,8 @@ export default function SignUpFormCollab() {
         {/* Notes — open space for their own idea */}
         <div className="space-y-2">
           <div className="flex items-center gap-2">
-            <span className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-500/20 text-[10px] font-bold text-emerald-400">3</span>
-            <label htmlFor="collab-idea" className="text-sm font-medium text-white/80">Anything else? <span className="text-xs text-white/30">(optional)</span></label>
+            <span className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-100 text-[10px] font-bold text-emerald-700">3</span>
+            <label htmlFor="collab-idea" className="text-sm font-medium text-neutral-800">Anything else? <span className="text-xs text-neutral-400">(optional)</span></label>
           </div>
           <textarea
             id="collab-idea"
@@ -394,7 +462,7 @@ export default function SignUpFormCollab() {
               if (v) trackOnce('notes_filled', v, { chars: v.length })
             }}
             rows={3}
-            className="w-full resize-none rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-white/30 outline-none transition focus:border-emerald-400 focus:ring-2 focus:ring-emerald-400/30"
+            className="w-full resize-none rounded-xl border border-neutral-300 bg-white px-4 py-3 text-sm text-neutral-900 placeholder-neutral-400 outline-none transition focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200"
             placeholder="Your own idea, inspo, references, anything..."
           />
         </div>
@@ -402,13 +470,14 @@ export default function SignUpFormCollab() {
         {/* WhatsApp */}
         <div className="space-y-2">
           <div className="flex items-center gap-2">
-            <span className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-500/20 text-[10px] font-bold text-emerald-400">4</span>
-            <label className="text-sm font-medium text-white/80">WhatsApp</label>
+            <span className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-100 text-[10px] font-bold text-emerald-700">4</span>
+            <label className="text-sm font-medium text-neutral-800">WhatsApp</label>
           </div>
           <div className="flex gap-2">
             <CountryCodeSelect value={countryCode} onChange={code => { fieldEngaged('country_code'); track('country_code_changed', { code }); setCountryCode(code); clearStatus() }} />
             <input
               ref={whatsappRef}
+              required
               type="tel"
               inputMode="tel"
               autoComplete="tel-national"
@@ -419,25 +488,18 @@ export default function SignUpFormCollab() {
                 const digits = whatsapp.replace(/\D/g, '')
                 if (digits) trackOnce('whatsapp_filled', digits, { digits: digits.length })
               }}
-              className={`min-w-0 flex-1 rounded-xl border bg-white/5 px-4 py-3 text-sm text-white placeholder-white/30 outline-none transition focus:ring-2 ${
-                fieldErrors.whatsapp
-                  ? 'border-red-500/60 focus:border-red-400 focus:ring-red-400/30'
-                  : 'border-white/10 focus:border-emerald-400 focus:ring-emerald-400/30'
-              }`}
+              className="min-w-0 flex-1 rounded-xl border border-neutral-300 bg-white px-4 py-3 text-sm text-neutral-900 placeholder-neutral-400 outline-none transition focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200"
               placeholder="98765 43210"
             />
           </div>
-          {fieldErrors.whatsapp && (
-            <p className="text-sm font-medium text-red-400">{fieldErrors.whatsapp}</p>
-          )}
-          <p className="text-xs text-amber-400/80">this is how I will contact you</p>
+          <p className="text-xs text-amber-600">this is how I will contact you</p>
         </div>
 
         {/* Instagram — optional */}
         <div className="space-y-2">
           <div className="flex items-center gap-2">
-            <span className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-500/20 text-[10px] font-bold text-emerald-400">5</span>
-            <label className="text-sm font-medium text-white/80">Instagram <span className="text-xs text-white/30">(optional)</span></label>
+            <span className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-100 text-[10px] font-bold text-emerald-700">5</span>
+            <label className="text-sm font-medium text-neutral-800">Instagram <span className="text-xs text-neutral-400">(optional)</span></label>
           </div>
           <input
             name="instagram"
@@ -450,45 +512,45 @@ export default function SignUpFormCollab() {
             autoCapitalize="off"
             autoCorrect="off"
             spellCheck={false}
-            className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-white/30 outline-none transition focus:border-emerald-400 focus:ring-2 focus:ring-emerald-400/30"
+            className="w-full rounded-xl border border-neutral-300 bg-white px-4 py-3 text-sm text-neutral-900 placeholder-neutral-400 outline-none transition focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200"
             placeholder="@yourhandle"
           />
-          <p className="text-xs text-amber-400/80">follow @madebyaidan! 😊</p>
+          <p className="text-xs text-amber-600">follow @madebyaidan! 😊</p>
         </div>
 
         {/* Photos */}
         <div ref={photoRef} className="space-y-2">
           <div className="flex items-center gap-2">
-            <span className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-500/20 text-[10px] font-bold text-emerald-400">6</span>
-            <label className="text-sm font-medium text-white/80">Photos of yourself</label>
+            <span className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-100 text-[10px] font-bold text-emerald-700">6</span>
+            <label className="text-sm font-medium text-neutral-800">Photos of yourself</label>
           </div>
-          <p className="text-xs leading-relaxed text-white/40">
+          <p className="text-xs leading-relaxed text-neutral-500">
             Selfies are fine &mdash; just looking to see the real you.
           </p>
           <div className="space-y-1.5">
-            <p className="flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-[0.15em] text-emerald-400">
-              <svg viewBox="0 0 24 24" className="h-3.5 w-3.5" fill="none" stroke="currentColor" strokeWidth={3} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5" /></svg>
+            <p className="flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-[0.15em] text-emerald-600">
+              <CheckIcon className="h-3.5 w-3.5" />
               Like this &mdash; simple &amp; natural, don&apos;t hide your face
             </p>
             <div className="grid grid-cols-4 gap-1.5">
               {['/images/collab-examples/good-1.jpg', '/images/collab-examples/good-2.jpg', '/images/collab-examples/good-3.jpg', '/images/collab-examples/good-4.jpg'].map((src, i) => (
-                <div key={i} className="relative overflow-hidden rounded-lg border border-emerald-400/40 aspect-[3/4]">
+                <div key={i} className="relative overflow-hidden rounded-lg border border-emerald-300 aspect-[3/4]">
                   <NextImage src={src} alt="Good example photo" width={200} height={267} sizes="(max-width: 640px) 25vw, 100px" className="w-full h-full object-cover" />
                   <span className="absolute right-1 top-1 flex h-6 w-6 items-center justify-center rounded-full bg-emerald-500 text-white">
-                    <svg viewBox="0 0 24 24" className="h-3.5 w-3.5" fill="none" stroke="currentColor" strokeWidth={3.5} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5" /></svg>
+                    <CheckIcon className="h-3.5 w-3.5" />
                   </span>
                 </div>
               ))}
             </div>
           </div>
           <div className="space-y-1.5">
-            <p className="flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-[0.15em] text-red-400/90">
+            <p className="flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-[0.15em] text-red-500">
               <svg viewBox="0 0 24 24" className="h-3.5 w-3.5" fill="none" stroke="currentColor" strokeWidth={3} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12" /></svg>
               Not like this &mdash; heavy makeup, filters, face hidden
             </p>
             <div className="grid grid-cols-4 gap-1.5">
               {['/images/collab-examples/bad-1.jpg', '/images/collab-examples/bad-2.jpg', '/images/collab-examples/bad-3.jpg', '/images/collab-examples/bad-4.jpg'].map((src, i) => (
-                <div key={i} className="relative overflow-hidden rounded-lg border border-red-400/30 aspect-[3/4]">
+                <div key={i} className="relative overflow-hidden rounded-lg border border-red-200 aspect-[3/4]">
                   <NextImage src={src} alt="Bad example photo" width={150} height={200} sizes="(max-width: 640px) 25vw, 100px" className="w-full h-full object-cover opacity-70 saturate-[0.85]" />
                   <span className="absolute right-1 top-1 flex h-6 w-6 items-center justify-center rounded-full bg-red-500 text-white">
                     <svg viewBox="0 0 24 24" className="h-3.5 w-3.5" fill="none" stroke="currentColor" strokeWidth={3.5} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12" /></svg>
@@ -500,11 +562,11 @@ export default function SignUpFormCollab() {
           <div className="mt-1 flex flex-wrap gap-1.5">
             {photos.map((p, i) => (
               <div key={i} className="relative">
-                <img src={p} alt="Preview" className="h-14 w-14 rounded-lg border border-white/10 object-cover" />
+                <img src={p} alt="Preview" className="h-14 w-14 rounded-lg border border-neutral-200 object-cover" />
                 <button
                   type="button"
                   onClick={() => removePhoto(i)}
-                  className="absolute -right-1.5 -top-1.5 flex h-5 w-5 items-center justify-center rounded-full bg-white/20 text-xs text-white backdrop-blur transition hover:bg-red-500"
+                  className="absolute -right-1.5 -top-1.5 flex h-5 w-5 items-center justify-center rounded-full bg-neutral-500 text-xs text-white transition hover:bg-red-500"
                   aria-label="Remove photo"
                 >
                   &times;
@@ -515,32 +577,23 @@ export default function SignUpFormCollab() {
               type="button"
               onClick={() => fileRef.current?.click()}
               disabled={processingPhotos}
-              className="flex h-24 w-24 items-center justify-center rounded-xl border border-dashed border-white/20 bg-white/5 text-4xl font-light text-white/40 transition hover:border-emerald-400/50 hover:text-emerald-400 disabled:opacity-50"
+              className="flex h-24 w-24 items-center justify-center rounded-xl border border-dashed border-neutral-300 bg-neutral-50 text-4xl font-light text-neutral-400 transition hover:border-emerald-400 hover:text-emerald-500 disabled:opacity-50"
             >
               {processingPhotos ? (
-                <span className="inline-block h-6 w-6 animate-spin rounded-full border-2 border-white/30 border-t-emerald-400" aria-label="Processing" />
+                <span className="inline-block h-6 w-6 animate-spin rounded-full border-2 border-neutral-300 border-t-emerald-500" aria-label="Processing" />
               ) : '+'}
             </button>
           </div>
-          {fieldErrors.photos && (
-            <p className="text-sm font-medium text-red-400">{fieldErrors.photos}</p>
-          )}
           <input ref={fileRef} type="file" accept="image/*" multiple onChange={handlePhotos} className="hidden" />
         </div>
 
         {/* Honeypot */}
         <input type="text" name="company" className="hidden" tabIndex={-1} autoComplete="off" />
 
-        {state && !state.ok && (
-          <div className="rounded-xl border border-red-500/30 bg-red-500/10 px-4 py-3 text-sm font-medium text-red-300">
-            {state.error}
-          </div>
-        )}
-
         <button
           type="submit"
           disabled={submitting || processingPhotos}
-          className="w-full rounded-full bg-emerald-500 py-3.5 text-sm font-bold text-white shadow-lg shadow-emerald-500/25 transition hover:bg-emerald-400 disabled:opacity-50"
+          className="w-full rounded-full bg-emerald-600 py-3.5 text-sm font-bold text-white shadow-lg shadow-emerald-600/20 transition hover:bg-emerald-500 disabled:opacity-50"
           data-cta="sign-up-collab-submit"
         >
           {submitting || processingPhotos ? (

@@ -160,7 +160,7 @@ function onVisibility() {
   }
 }
 
-export function initPageAnalytics(pagePath: string) {
+export function initPageAnalytics(pagePath: string, pageProps?: Props) {
   if (typeof window === 'undefined' || initialized) return
   initialized = true
   page = pagePath
@@ -169,7 +169,9 @@ export function initPageAnalytics(pagePath: string) {
   visitorId = getId(localStorage, 'at_vid')
   sessionId = getId(sessionStorage, 'at_sid')
   context = buildContext()
-  track('page_view')
+  // pageProps lets a page tag its design version so before/after comparisons
+  // survive redeploys (e.g. { version: 'white-v2' }).
+  track('page_view', pageProps)
   window.addEventListener('scroll', onScroll, { passive: true })
   document.addEventListener('visibilitychange', onVisibility)
   window.addEventListener('pagehide', () => {

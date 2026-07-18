@@ -1,14 +1,14 @@
 import SignUpFormCollab from '@/components/SignUpFormCollab'
 
 export const metadata = {
-  title: 'Model Collaboration',
+  title: 'Free Photo Shoot in Goa | Aidan Torrence Photography',
   description:
-    'Open for model collaborations. TFP — we both build our portfolios. DM or sign up.'
+    'Open for model collaborations in Goa. TFP — you keep the edited photos, free. Sign up and I will send the details on WhatsApp.'
 }
 
 export default function SignUpCollabPage() {
   return (
-    <section className="min-h-screen bg-[#0a0a0a] py-12 sm:py-20">
+    <section className="min-h-screen bg-white py-10 sm:py-16">
       <div className="mx-auto max-w-md px-5">
         <SignUpFormCollab />
       </div>
