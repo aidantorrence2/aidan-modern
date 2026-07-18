@@ -33,6 +33,10 @@ grep -q "aidan-modern-at9e" .vercel/project.json \
   || { echo "✗ .vercel/project.json is NOT linked to aidan-modern-at9e. Run: vercel link --project aidan-modern-at9e --scope $SCOPE --yes"; exit 1; }
 [ -f "$AUTH" ] || { echo "✗ Vercel CLI not authenticated ($AUTH missing). Run: vercel login"; exit 1; }
 TOKEN=$(python3 -c "import json;print(json.load(open('$AUTH'))['token'])")
+# A token can exist but be expired — then every deployment poll silently returns
+# an auth error that parses as "no deployments" and we wait 15 min for nothing.
+curl -s -H "Authorization: Bearer $TOKEN" "https://api.vercel.com/v2/user" | grep -q '"invalidToken"' \
+  && { echo "✗ Vercel token is expired/invalid. Run: vercel login  — then re-run this script."; exit 1; }
 
 # --- build sanity (catches the missing-env / type errors early) ----------
 echo "▶ Building locally to catch errors before pushing…"
