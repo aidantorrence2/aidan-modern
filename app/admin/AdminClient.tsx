@@ -95,16 +95,23 @@ export default function AdminClient({ signups: initial }: { signups: Signup[] })
   const [signups, setSignups] = useState(initial)
   const [lightbox, setLightbox] = useState<{ photos: string[]; index: number } | null>(null)
   const [query, setQuery] = useState('')
+  const [locationQuery, setLocationQuery] = useState('')
 
   const normalizedQuery = query.trim().replace(/^@/, '').toLowerCase()
   const digitsQuery = query.replace(/\D/g, '')
-  const filtered = normalizedQuery
+  const normalizedLocation = locationQuery.trim().toLowerCase()
+  const hasFilter = Boolean(normalizedQuery || normalizedLocation)
+  const filtered = hasFilter
     ? signups.filter(s => {
-        const ig = getInstagram(s)
-        if (ig && ig.replace(/^@/, '').toLowerCase().includes(normalizedQuery)) return true
-        const wa = getWhatsapp(s)
-        if (wa && digitsQuery && wa.replace(/\D/g, '').includes(digitsQuery)) return true
-        return false
+        if (normalizedQuery) {
+          const ig = getInstagram(s)
+          const igMatch = ig && ig.replace(/^@/, '').toLowerCase().includes(normalizedQuery)
+          const wa = getWhatsapp(s)
+          const waMatch = wa && digitsQuery && wa.replace(/\D/g, '').includes(digitsQuery)
+          if (!igMatch && !waMatch) return false
+        }
+        if (normalizedLocation && !getLocation(s).toLowerCase().includes(normalizedLocation)) return false
+        return true
       })
     : signups
 
@@ -233,24 +240,33 @@ export default function AdminClient({ signups: initial }: { signups: Signup[] })
           <div className="flex items-center justify-between mb-6">
             <h1 className="text-3xl font-bold text-white">Sign-ups</h1>
             <span className="rounded-full bg-white/10 px-4 py-1.5 text-sm font-medium text-white/60">
-              {normalizedQuery ? `${filtered.length} / ${signups.length}` : `${signups.length} total`}
+              {hasFilter ? `${filtered.length} / ${signups.length}` : `${signups.length} total`}
             </span>
           </div>
 
-          <div className="mb-6">
+          <div className="mb-6 flex flex-col gap-3 sm:flex-row">
             <input
               type="text"
               value={query}
               onChange={e => setQuery(e.target.value)}
               placeholder="Search by IG username or WhatsApp number…"
-              className="w-full rounded-xl border border-white/10 bg-white/[0.04] px-4 py-2.5 text-sm text-white placeholder:text-white/30 focus:border-emerald-400/40 focus:outline-none focus:ring-1 focus:ring-emerald-400/20"
+              className="w-full flex-1 rounded-xl border border-white/10 bg-white/[0.04] px-4 py-2.5 text-sm text-white placeholder:text-white/30 focus:border-emerald-400/40 focus:outline-none focus:ring-1 focus:ring-emerald-400/20"
+            />
+            <input
+              type="text"
+              value={locationQuery}
+              onChange={e => setLocationQuery(e.target.value)}
+              placeholder="Filter by location…"
+              className="w-full rounded-xl border border-white/10 bg-white/[0.04] px-4 py-2.5 text-sm text-white placeholder:text-white/30 focus:border-emerald-400/40 focus:outline-none focus:ring-1 focus:ring-emerald-400/20 sm:w-56"
             />
           </div>
 
           {signups.length === 0 ? (
             <p className="mt-10 text-center text-lg text-white/40">No sign-ups yet.</p>
           ) : filtered.length === 0 ? (
-            <p className="mt-10 text-center text-lg text-white/40">No matches for &ldquo;{query}&rdquo;.</p>
+            <p className="mt-10 text-center text-lg text-white/40">
+              No matches for &ldquo;{[query.trim(), locationQuery.trim()].filter(Boolean).join('” + “')}&rdquo;.
+            </p>
           ) : (
             <div className="space-y-4">
               {filtered.map(s => {
