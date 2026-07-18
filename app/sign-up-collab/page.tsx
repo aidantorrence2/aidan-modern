@@ -1,9 +1,9 @@
 import SignUpFormCollab from '@/components/SignUpFormCollab'
 
 export const metadata = {
-  title: 'Free Photo Shoot in Goa | Aidan Torrence Photography',
+  title: 'Model Collaboration',
   description:
-    'Open for model collaborations in Goa. TFP — you keep the edited photos, free. Sign up and I will send the details on WhatsApp.'
+    'Open for model collaborations. TFP — you keep the edited photos, free. Sign up and I will send the details on WhatsApp.'
 }
 
 export default function SignUpCollabPage() {

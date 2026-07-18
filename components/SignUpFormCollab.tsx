@@ -52,13 +52,13 @@ type ConceptOption = { id: string; desc: string }
 const preferenceOptions: ConceptOption[] = [
   { id: 'Fashion editorial', desc: 'Dramatic, magazine-style' },
   { id: 'Streets & markets', desc: 'Gritty, real city life' },
-  { id: 'Nature & outdoors', desc: 'Lakes, hills, greenery, golden light' },
+  { id: 'Nature & outdoors', desc: 'Water, hills, greenery, golden light' },
   { id: 'Studio & indoor', desc: 'Cozy interiors, cafés, controlled light' },
   { id: 'Culture & everyday life', desc: 'Tradition, dress, temples, real moments' },
   { id: NO_PREFERENCE, desc: "You direct it — I'll design the shoot" },
 ]
 
-const locationChips = ['Anjuna / Vagator', 'Baga / Calangute', 'Panaji', 'South Goa']
+const locationChips = ['Anjuna', 'Panjim', 'South Goa']
 
 // Same curated set the earlier "recent work" strip used before it was dropped —
 // analytics showed engaged readers bail on a proof-free page, so it's back.
