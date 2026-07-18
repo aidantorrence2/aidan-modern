@@ -62,6 +62,7 @@ const heroImage = '/images/moodboards/editorial.jpg'
 
 export default function SignUpFormCollab() {
   const [state, setState] = useState<State | null>(null)
+  const [fieldErrors, setFieldErrors] = useState<{ whatsapp?: string; photos?: string }>({})
   const [location, setLocation] = useState('')
   // No default pre-selection: keeps "what did they actually want" measurable
   // instead of everyone inheriting Fashion editorial.
@@ -103,6 +104,7 @@ export default function SignUpFormCollab() {
 
   function clearStatus() {
     if (state) setState(null)
+    if (fieldErrors.whatsapp || fieldErrors.photos) setFieldErrors({})
   }
 
   function toggleVibe(v: string) {
@@ -171,23 +173,25 @@ export default function SignUpFormCollab() {
 
     if (processingPhotos) {
       track('validation_error', { reason: 'photos_processing' })
-      setState({ ok: false, error: 'Photos are still processing — hang on a sec and try again.' })
+      setFieldErrors({ photos: 'Photos are still processing — hang on a sec and try again.' })
       photoRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' })
       return
     }
 
     const whatsappTrim = whatsapp.trim()
-    if (!whatsappTrim) {
-      track('validation_error', { reason: 'whatsapp_missing' })
-      setState({ ok: false, error: 'Please enter your WhatsApp number.' })
-      whatsappRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' })
-      whatsappRef.current?.focus()
-      return
-    }
-    if (photos.length === 0) {
-      track('validation_error', { reason: 'photos_missing' })
-      setState({ ok: false, error: 'Upload a few photos of yourself.' })
-      photoRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' })
+    const errors: { whatsapp?: string; photos?: string } = {}
+    if (!whatsappTrim) errors.whatsapp = 'Please enter your WhatsApp number.'
+    if (photos.length === 0) errors.photos = 'Upload a few photos of yourself.'
+    if (errors.whatsapp || errors.photos) {
+      if (errors.whatsapp) track('validation_error', { reason: 'whatsapp_missing' })
+      if (errors.photos) track('validation_error', { reason: 'photos_missing' })
+      setFieldErrors(errors)
+      if (errors.whatsapp) {
+        whatsappRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' })
+        whatsappRef.current?.focus()
+      } else {
+        photoRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' })
+      }
       return
     }
 
@@ -312,12 +316,6 @@ export default function SignUpFormCollab() {
       </div>
 
       <form onSubmit={onSubmit} className="mt-8 space-y-7">
-        {state && !state.ok && (
-          <div className="rounded-xl border border-red-500/30 bg-red-500/10 px-4 py-3 text-sm font-medium text-red-300">
-            {state.error}
-          </div>
-        )}
-
         {/* Location */}
         <div className="space-y-2">
           <div className="flex items-center gap-2">
@@ -411,7 +409,6 @@ export default function SignUpFormCollab() {
             <CountryCodeSelect value={countryCode} onChange={code => { fieldEngaged('country_code'); track('country_code_changed', { code }); setCountryCode(code); clearStatus() }} />
             <input
               ref={whatsappRef}
-              required
               type="tel"
               inputMode="tel"
               autoComplete="tel-national"
@@ -422,10 +419,17 @@ export default function SignUpFormCollab() {
                 const digits = whatsapp.replace(/\D/g, '')
                 if (digits) trackOnce('whatsapp_filled', digits, { digits: digits.length })
               }}
-              className="min-w-0 flex-1 rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-white/30 outline-none transition focus:border-emerald-400 focus:ring-2 focus:ring-emerald-400/30"
+              className={`min-w-0 flex-1 rounded-xl border bg-white/5 px-4 py-3 text-sm text-white placeholder-white/30 outline-none transition focus:ring-2 ${
+                fieldErrors.whatsapp
+                  ? 'border-red-500/60 focus:border-red-400 focus:ring-red-400/30'
+                  : 'border-white/10 focus:border-emerald-400 focus:ring-emerald-400/30'
+              }`}
               placeholder="98765 43210"
             />
           </div>
+          {fieldErrors.whatsapp && (
+            <p className="text-sm font-medium text-red-400">{fieldErrors.whatsapp}</p>
+          )}
           <p className="text-xs text-amber-400/80">this is how I will contact you</p>
         </div>
 
@@ -518,11 +522,20 @@ export default function SignUpFormCollab() {
               ) : '+'}
             </button>
           </div>
+          {fieldErrors.photos && (
+            <p className="text-sm font-medium text-red-400">{fieldErrors.photos}</p>
+          )}
           <input ref={fileRef} type="file" accept="image/*" multiple onChange={handlePhotos} className="hidden" />
         </div>
 
         {/* Honeypot */}
         <input type="text" name="company" className="hidden" tabIndex={-1} autoComplete="off" />
+
+        {state && !state.ok && (
+          <div className="rounded-xl border border-red-500/30 bg-red-500/10 px-4 py-3 text-sm font-medium text-red-300">
+            {state.error}
+          </div>
+        )}
 
         <button
           type="submit"
