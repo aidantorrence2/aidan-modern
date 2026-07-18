@@ -385,7 +385,7 @@ export default function SignUpFormCollab() {
           <div className="grid grid-cols-4 gap-1">
             {proofImages.map((src, i) => (
               <div key={i} className="overflow-hidden rounded-lg aspect-square bg-neutral-100">
-                <NextImage src={src} alt="Recent photo shoot" width={200} height={200} priority={i < 2} sizes="(max-width: 640px) 25vw, 100px" className="w-full h-full object-cover" />
+                <NextImage src={src} alt="Recent photo shoot" width={200} height={200} priority={i < 2} sizes="(max-width: 640px) 25vw, 100px" className="w-full h-full object-cover object-top" />
               </div>
             ))}
           </div>
@@ -397,7 +397,7 @@ export default function SignUpFormCollab() {
         {/* Location */}
         <div className="space-y-2">
           <div className="flex items-center gap-2">
-            <span className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-100 text-[10px] font-bold text-emerald-700">1</span>
+            <span className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-700 text-[10px] font-bold text-white">1</span>
             <label className="text-sm font-medium text-neutral-800">Where are you located?</label>
           </div>
           <div className="flex flex-wrap gap-2">
@@ -431,7 +431,7 @@ export default function SignUpFormCollab() {
         {/* Preference — selectable concepts */}
         <fieldset className="space-y-2.5">
           <div className="flex items-center gap-2">
-            <span className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-100 text-[10px] font-bold text-emerald-700">2</span>
+            <span className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-700 text-[10px] font-bold text-white">2</span>
             <legend className="text-sm font-medium text-neutral-800">Choose a shoot concept <span className="text-xs text-neutral-400">(optional — pick any)</span></legend>
           </div>
           <p className="text-xs leading-relaxed text-neutral-500">
@@ -460,7 +460,7 @@ export default function SignUpFormCollab() {
         {/* Notes — open space for their own idea */}
         <div className="space-y-2">
           <div className="flex items-center gap-2">
-            <span className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-100 text-[10px] font-bold text-emerald-700">3</span>
+            <span className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-700 text-[10px] font-bold text-white">3</span>
             <label htmlFor="collab-idea" className="text-sm font-medium text-neutral-800">Anything else? <span className="text-xs text-neutral-400">(optional)</span></label>
           </div>
           <textarea
@@ -480,7 +480,7 @@ export default function SignUpFormCollab() {
         {/* WhatsApp */}
         <div className="space-y-2">
           <div className="flex items-center gap-2">
-            <span className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-100 text-[10px] font-bold text-emerald-700">4</span>
+            <span className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-700 text-[10px] font-bold text-white">4</span>
             <label className="text-sm font-medium text-neutral-800">WhatsApp</label>
           </div>
           <div className="flex gap-2">
@@ -513,7 +513,7 @@ export default function SignUpFormCollab() {
         {/* Instagram — optional */}
         <div className="space-y-2">
           <div className="flex items-center gap-2">
-            <span className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-100 text-[10px] font-bold text-emerald-700">5</span>
+            <span className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-700 text-[10px] font-bold text-white">5</span>
             <label className="text-sm font-medium text-neutral-800">Instagram <span className="text-xs text-neutral-400">(optional)</span></label>
           </div>
           <input
@@ -536,7 +536,7 @@ export default function SignUpFormCollab() {
         {/* Photos */}
         <div ref={photoRef} className="space-y-2">
           <div className="flex items-center gap-2">
-            <span className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-100 text-[10px] font-bold text-emerald-700">6</span>
+            <span className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-700 text-[10px] font-bold text-white">6</span>
             <label className="text-sm font-medium text-neutral-800">Photos of yourself</label>
           </div>
           <p className="text-xs leading-relaxed text-neutral-500">
