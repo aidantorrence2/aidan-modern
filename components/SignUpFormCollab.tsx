@@ -3,6 +3,8 @@ import { useEffect, useRef, useState } from 'react'
 import NextImage from 'next/image'
 import CountryCodeSelect from './CountryCodeSelect'
 import { initPageAnalytics, track, pageElapsedMs, flushNow } from '@/lib/track'
+import { detectCountry } from '@/lib/detectCountry'
+import { cityChipsForCountry, DEFAULT_CITY_CHIPS } from '@/lib/cityChips'
 
 // `field` pins the error message to the section that failed, so the scroll-to
 // -error always lands the user on the message itself.
@@ -58,7 +60,6 @@ const preferenceOptions: ConceptOption[] = [
   { id: NO_PREFERENCE, desc: "You direct it — I'll design the shoot" },
 ]
 
-const locationChips = ['New York', 'Istanbul', 'Bangkok']
 
 // Same curated set the earlier "recent work" strip used before it was dropped —
 // analytics showed engaged readers bail on a proof-free page, so it's back.
@@ -86,6 +87,9 @@ function CheckIcon({ className }: { className?: string }) {
 
 export default function SignUpFormCollab() {
   const [state, setState] = useState<State | null>(null)
+  // Chips localize to the visitor's country after mount (post-hydration, so
+  // SSR markup stays stable); the global defaults cover failed detection.
+  const [locationChips, setLocationChips] = useState(DEFAULT_CITY_CHIPS)
   const [location, setLocation] = useState('')
   // No default pre-selection: keeps "what did they actually want" measurable
   // instead of everyone inheriting Fashion editorial.
@@ -105,6 +109,11 @@ export default function SignUpFormCollab() {
 
   useEffect(() => {
     initPageAnalytics('/sign-up-collab', { version: 'white-v2' })
+    const country = detectCountry()
+    if (country) {
+      setLocationChips(cityChipsForCountry(country.iso))
+      track('country_detected', { iso: country.iso })
+    }
   }, [])
 
   // First interaction with any field fires form_start; first interaction with
