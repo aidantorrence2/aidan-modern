@@ -271,7 +271,7 @@ export default function SignUpFormCollabNew() {
           <div className="space-y-2">
             <label className="text-sm font-medium text-white/80">WhatsApp</label>
             <div className="flex gap-2">
-              <CountryCodeSelect value={countryCode} onChange={code => { setCountryCode(code); clearStatus() }} />
+              <CountryCodeSelect value={countryCode} onDetect={setCountryCode} onChange={code => { setCountryCode(code); clearStatus() }} />
               <input
                 ref={whatsappRef}
                 required
