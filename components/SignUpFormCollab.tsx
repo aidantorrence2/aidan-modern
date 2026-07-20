@@ -4,7 +4,7 @@ import NextImage from 'next/image'
 import CountryCodeSelect from './CountryCodeSelect'
 import { initPageAnalytics, track, pageElapsedMs, flushNow } from '@/lib/track'
 import { detectCountry } from '@/lib/detectCountry'
-import { cityChipsForCountry, DEFAULT_CITY_CHIPS } from '@/lib/cityChips'
+import { cityChipsForCountry, cityExamplesForCountry } from '@/lib/cityChips'
 
 // `field` pins the error message to the section that failed, so the scroll-to
 // -error always lands the user on the message itself.
@@ -87,9 +87,9 @@ function CheckIcon({ className }: { className?: string }) {
 
 export default function SignUpFormCollab() {
   const [state, setState] = useState<State | null>(null)
-  // Chips localize to the visitor's country after mount (post-hydration, so
-  // SSR markup stays stable); the global defaults cover failed detection.
-  const [locationChips, setLocationChips] = useState(DEFAULT_CITY_CHIPS)
+  // Set post-hydration (SSR markup stays stable); chips and placeholder
+  // examples stay blank until a country is detected.
+  const [countryIso, setCountryIso] = useState<string | null>(null)
   const [location, setLocation] = useState('')
   // No default pre-selection: keeps "what did they actually want" measurable
   // instead of everyone inheriting Fashion editorial.
@@ -111,10 +111,13 @@ export default function SignUpFormCollab() {
     initPageAnalytics('/sign-up-collab', { version: 'white-v2' })
     const country = detectCountry()
     if (country) {
-      setLocationChips(cityChipsForCountry(country.iso))
+      setCountryIso(country.iso)
       track('country_detected', { iso: country.iso })
     }
   }, [])
+
+  const locationChips = cityChipsForCountry(countryIso)
+  const cityExamples = cityExamplesForCountry(countryIso)
 
   // First interaction with any field fires form_start; first interaction with
   // each field fires field_engaged — both once, so funnels stay countable.
@@ -409,7 +412,7 @@ export default function SignUpFormCollab() {
             <span className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-700 text-[10px] font-bold text-white">1</span>
             <label className="text-sm font-medium text-neutral-800">Where are you located?</label>
           </div>
-          <div className="flex flex-wrap gap-2">
+          {locationChips.length > 0 && <div className="flex flex-wrap gap-2">
             {locationChips.map(chip => (
               <button
                 key={chip}
@@ -424,7 +427,7 @@ export default function SignUpFormCollab() {
                 {chip}
               </button>
             ))}
-          </div>
+          </div>}
           <input
             value={location}
             onChange={e => { fieldEngaged('location'); setLocation(e.target.value); clearStatus() }}
@@ -433,7 +436,13 @@ export default function SignUpFormCollab() {
               if (v && !locationChips.includes(v)) trackOnce('location_selected', v, { method: 'typed', value: v.slice(0, 80) })
             }}
             className="w-full rounded-xl border border-neutral-300 bg-white px-4 py-3 text-sm text-neutral-900 placeholder-neutral-400 outline-none transition focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200"
-            placeholder="Or type another place — e.g. Paris, Tokyo, Mexico City"
+            placeholder={
+              cityExamples.length > 0
+                ? `Or type another place — e.g. ${cityExamples.join(', ')}`
+                : locationChips.length > 0
+                  ? 'Or type another place'
+                  : 'Type your city or town'
+            }
           />
         </div>
 
