@@ -58,7 +58,7 @@ const preferenceOptions: ConceptOption[] = [
   { id: NO_PREFERENCE, desc: "You direct it — I'll design the shoot" },
 ]
 
-const locationChips = ['Anjuna', 'Panjim', 'South Goa']
+const locationChips = ['New York', 'Istanbul', 'Bangkok']
 
 // Same curated set the earlier "recent work" strip used before it was dropped —
 // analytics showed engaged readers bail on a proof-free page, so it's back.
@@ -424,7 +424,7 @@ export default function SignUpFormCollab() {
               if (v && !locationChips.includes(v)) trackOnce('location_selected', v, { method: 'typed', value: v.slice(0, 80) })
             }}
             className="w-full rounded-xl border border-neutral-300 bg-white px-4 py-3 text-sm text-neutral-900 placeholder-neutral-400 outline-none transition focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200"
-            placeholder="Or type another place — e.g. Margao, Mapusa, Ponda"
+            placeholder="Or type another place — e.g. Paris, Tokyo, Mexico City"
           />
         </div>
 
@@ -484,7 +484,7 @@ export default function SignUpFormCollab() {
             <label className="text-sm font-medium text-neutral-800">WhatsApp</label>
           </div>
           <div className="flex gap-2">
-            <CountryCodeSelect light value={countryCode} onChange={code => { fieldEngaged('country_code'); track('country_code_changed', { code }); setCountryCode(code); clearStatus() }} />
+            <CountryCodeSelect light value={countryCode} onDetect={setCountryCode} onChange={code => { fieldEngaged('country_code'); track('country_code_changed', { code }); setCountryCode(code); clearStatus() }} />
             <input
               ref={whatsappRef}
               required

@@ -1,18 +1,31 @@
 "use client"
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { COUNTRY_CODES } from './countryCodes'
+import { detectCountry } from '@/lib/detectCountry'
 
 // Searchable dial-code picker used by the collab sign-up forms.
 // Reports the dial code (e.g. "+91") via onChange; tracks the chosen ISO
 // internally so shared dial codes (+1 US/Canada) display the right flag.
+// `onDetect` (not `onChange`, which parents treat as user interaction for
+// analytics) receives a dial code auto-detected from the visitor's
+// timezone/locale on mount.
 // `light` switches to the white-page palette (sign-up-collab); the default
 // dark palette is still used by the dark sign-up-collab-new page.
-export default function CountryCodeSelect({ value, onChange, light = false }: { value: string; onChange: (dial: string) => void; light?: boolean }) {
+export default function CountryCodeSelect({ value, onChange, onDetect, light = false }: { value: string; onChange: (dial: string) => void; onDetect?: (dial: string) => void; light?: boolean }) {
   const [iso, setIso] = useState('IN')
   const [open, setOpen] = useState(false)
   const [query, setQuery] = useState('')
   const rootRef = useRef<HTMLDivElement>(null)
   const searchRef = useRef<HTMLInputElement>(null)
+  const detectRef = useRef(onDetect)
+  detectRef.current = onDetect
+
+  useEffect(() => {
+    const detected = detectCountry()
+    if (!detected) return
+    setIso(detected.iso)
+    detectRef.current?.(detected.dial)
+  }, [])
 
   const current = useMemo(
     () => COUNTRY_CODES.find(c => c.iso === iso && c.dial === value) || COUNTRY_CODES.find(c => c.dial === value),
