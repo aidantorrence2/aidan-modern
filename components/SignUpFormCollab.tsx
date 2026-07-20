@@ -96,7 +96,9 @@ export default function SignUpFormCollab() {
   const [vibes, setVibes] = useState<string[]>([])
   const [idea, setIdea] = useState('')
   const [whatsapp, setWhatsapp] = useState('')
-  const [countryCode, setCountryCode] = useState('+91')
+  // Empty until detection succeeds — with no detected country there's no
+  // dial-code dropdown at all and the visitor types the intl code themselves.
+  const [countryCode, setCountryCode] = useState('')
   const [instagram, setInstagram] = useState('')
   const [photos, setPhotos] = useState<string[]>([])
   const [submitting, setSubmitting] = useState(false)
@@ -112,6 +114,7 @@ export default function SignUpFormCollab() {
     const country = detectCountry()
     if (country) {
       setCountryIso(country.iso)
+      setCountryCode(country.dial)
       track('country_detected', { iso: country.iso })
     }
   }, [])
@@ -253,7 +256,7 @@ export default function SignUpFormCollab() {
         body: JSON.stringify({
           city: location.trim(),
           contactMethod: 'whatsapp',
-          contact: countryCode + ' ' + whatsapp.trim(),
+          contact: countryCode ? countryCode + ' ' + whatsapp.trim() : whatsapp.trim(),
           moodboard,
           photos,
         }),
@@ -502,7 +505,7 @@ export default function SignUpFormCollab() {
             <label className="text-sm font-medium text-neutral-800">WhatsApp</label>
           </div>
           <div className="flex gap-2">
-            <CountryCodeSelect light value={countryCode} onDetect={setCountryCode} onChange={code => { fieldEngaged('country_code'); track('country_code_changed', { code }); setCountryCode(code); clearStatus() }} />
+            {countryCode && <CountryCodeSelect light value={countryCode} onChange={code => { fieldEngaged('country_code'); track('country_code_changed', { code }); setCountryCode(code); clearStatus() }} />}
             <input
               ref={whatsappRef}
               required
@@ -517,7 +520,7 @@ export default function SignUpFormCollab() {
                 if (digits) trackOnce('whatsapp_filled', digits, { digits: digits.length })
               }}
               className="min-w-0 flex-1 rounded-xl border border-neutral-300 bg-white px-4 py-3 text-sm text-neutral-900 placeholder-neutral-400 outline-none transition focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200"
-              placeholder="98765 43210"
+              placeholder={countryCode ? '98765 43210' : '+1 555 123 4567'}
             />
           </div>
           {state && !state.ok && state.field === 'whatsapp' && (
