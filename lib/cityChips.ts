@@ -88,7 +88,7 @@ const COUNTRY_CITIES: Record<string, string[]> = {
   TM: ['Ashgabat'],
   AF: ['Kabul', 'Herat', 'Mazar-i-Sharif'],
   // South Asia
-  IN: ['Mumbai', 'Delhi', 'Bangalore', 'Goa', 'Jaipur', 'Hyderabad'],
+  IN: ['Goa', 'Mumbai', 'Delhi', 'Bangalore', 'Jaipur', 'Hyderabad'],
   PK: ['Karachi', 'Lahore', 'Islamabad', 'Rawalpindi', 'Faisalabad'],
   BD: ['Dhaka', 'Chittagong', 'Sylhet', "Cox's Bazar"],
   LK: ['Colombo', 'Kandy', 'Galle', 'Ella', 'Negombo'],
