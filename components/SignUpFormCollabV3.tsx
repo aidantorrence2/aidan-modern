@@ -2,7 +2,8 @@
 import { useEffect, useRef, useState } from 'react'
 import NextImage from 'next/image'
 import CountryCodeSelect from './CountryCodeSelect'
-import { COUNTRY_CODES } from './countryCodes'
+import { detectCountry } from '@/lib/detectCountry'
+import { cityChipsForCountry, cityExamplesForCountry } from '@/lib/cityChips'
 import { initPageAnalytics, track, pageElapsedMs, flushNow } from '@/lib/track'
 
 // v3 "capture-first": the lead (WhatsApp number) is captured with a single
@@ -49,18 +50,6 @@ function resizeImage(dataUrl: string, maxBytes: number): Promise<string> {
   })
 }
 
-const DEFAULT_CHIPS = ['Anjuna', 'Panjim', 'South Goa']
-// Location chips adapt to the visitor's detected country (ad campaigns run in
-// many cities); India keeps the Goa campaign set.
-const CHIPS_BY_REGION: Record<string, string[]> = {
-  IN: DEFAULT_CHIPS,
-  TH: ['Bangkok', 'Pattaya', 'Chiang Mai'],
-  TR: ['Istanbul'],
-  VN: ['Da Nang', 'Ho Chi Minh City'],
-  GE: ['Tbilisi'],
-  GR: ['Athens', 'Corfu'],
-}
-
 const heroImage = '/images/faves/000039-3.jpg'
 
 const proofImages = [
@@ -71,34 +60,6 @@ const proofImages = [
   '/images/proof/000038-4.jpg',
   '/images/proof/DSC_0347.jpg',
 ]
-
-// Timezone → ISO region for auto-defaulting the dial code AND the location
-// chips. Timezone beats device locale here: phones worldwide ship set to
-// en-US, but the timezone tracks where the visitor physically is.
-const TZ_REGION: Record<string, string> = {
-  'Asia/Kolkata': 'IN', 'Asia/Calcutta': 'IN', 'Asia/Bangkok': 'TH',
-  'Europe/Istanbul': 'TR', 'Asia/Ho_Chi_Minh': 'VN', 'Asia/Saigon': 'VN',
-  'Asia/Tbilisi': 'GE', 'Europe/Athens': 'GR', 'Asia/Jakarta': 'ID',
-  'Asia/Makassar': 'ID', 'Asia/Manila': 'PH', 'Asia/Kathmandu': 'NP',
-  'Asia/Colombo': 'LK', 'Asia/Ulaanbaatar': 'MN', 'Asia/Seoul': 'KR',
-  'Asia/Tokyo': 'JP', 'Asia/Singapore': 'SG', 'Asia/Kuala_Lumpur': 'MY',
-  'Asia/Dubai': 'AE', 'Asia/Karachi': 'PK', 'Asia/Dhaka': 'BD',
-  'Asia/Shanghai': 'CN', 'Asia/Hong_Kong': 'HK', 'Asia/Taipei': 'TW',
-  'Asia/Phnom_Penh': 'KH', 'Asia/Vientiane': 'LA', 'Asia/Yangon': 'MM',
-  'Asia/Riyadh': 'SA', 'Asia/Jerusalem': 'IL', 'Asia/Beirut': 'LB',
-  'Asia/Amman': 'JO', 'Asia/Baghdad': 'IQ', 'Asia/Tehran': 'IR',
-  'Asia/Baku': 'AZ', 'Asia/Yerevan': 'AM', 'Asia/Tashkent': 'UZ',
-  'Europe/London': 'GB', 'Europe/Paris': 'FR', 'Europe/Berlin': 'DE',
-  'Europe/Madrid': 'ES', 'Europe/Rome': 'IT', 'Europe/Lisbon': 'PT',
-  'Europe/Amsterdam': 'NL', 'Europe/Kyiv': 'UA', 'Europe/Kiev': 'UA',
-  'Europe/Moscow': 'RU', 'America/New_York': 'US', 'America/Chicago': 'US',
-  'America/Denver': 'US', 'America/Los_Angeles': 'US', 'America/Phoenix': 'US',
-  'America/Toronto': 'CA', 'America/Vancouver': 'CA', 'America/Mexico_City': 'MX',
-  'America/Sao_Paulo': 'BR', 'America/Buenos_Aires': 'AR',
-  'Australia/Sydney': 'AU', 'Australia/Melbourne': 'AU', 'Australia/Perth': 'AU',
-  'Pacific/Auckland': 'NZ', 'Africa/Cairo': 'EG', 'Africa/Lagos': 'NG',
-  'Africa/Nairobi': 'KE', 'Africa/Johannesburg': 'ZA', 'Africa/Casablanca': 'MA',
-}
 
 const howItWorks = [
   'Drop your WhatsApp number below',
@@ -119,7 +80,10 @@ export default function SignUpFormCollabV3({ analyticsPath = '/sign-up-collab' }
 
   // Step 1 — the lead
   const [whatsapp, setWhatsapp] = useState('')
-  const [countryCode, setCountryCode] = useState('+91')
+  // Empty until detection succeeds — with no detected country there's no
+  // dial-code dropdown at all and the visitor types the intl code themselves.
+  const [countryCode, setCountryCode] = useState('')
+  const [countryIso, setCountryIso] = useState<string | null>(null)
 
   // Step 2 — the boost profile
   const [location, setLocation] = useState('')
@@ -127,7 +91,6 @@ export default function SignUpFormCollabV3({ analyticsPath = '/sign-up-collab' }
   const [instagram, setInstagram] = useState('')
   const [photos, setPhotos] = useState<string[]>([])
   const [processingPhotos, setProcessingPhotos] = useState(false)
-  const [chips, setChips] = useState<string[]>(DEFAULT_CHIPS)
 
   const fileRef = useRef<HTMLInputElement>(null)
   const whatsappRef = useRef<HTMLInputElement>(null)
@@ -138,20 +101,14 @@ export default function SignUpFormCollabV3({ analyticsPath = '/sign-up-collab' }
 
   useEffect(() => {
     initPageAnalytics(analyticsPath, { version: 'v3-capture-first' })
-    // Auto-default the dial code for international visitors; timezone first,
-    // device locale region as fallback. Never overrides a manual selection.
-    try {
-      const tz = Intl.DateTimeFormat().resolvedOptions().timeZone || ''
-      const region = TZ_REGION[tz] || new Intl.Locale(navigator.language || 'en').region || ''
-      if (region) {
-        if (CHIPS_BY_REGION[region]) setChips(CHIPS_BY_REGION[region])
-        const dial = COUNTRY_CODES.find(c => c.iso === region)?.dial
-        if (dial && !engagedFields.current.has('country_code')) {
-          setCountryCode(dial)
-          track('region_autodetected', { region, dial, tz })
-        }
-      }
-    } catch { /* keep the defaults */ }
+    // Same detection the old form shipped with (PRs #27–#30): timezone →
+    // country, chips + dial localized, nothing shown until detection succeeds.
+    const country = detectCountry()
+    if (country) {
+      setCountryIso(country.iso)
+      setCountryCode(country.dial)
+      track('country_detected', { iso: country.iso })
+    }
   }, [analyticsPath])
 
   // The sticky CTA appears only while the capture card is scrolled out of view.
@@ -164,6 +121,9 @@ export default function SignUpFormCollabV3({ analyticsPath = '/sign-up-collab' }
     obs.observe(captureCardRef.current)
     return () => obs.disconnect()
   }, [step])
+
+  const chips = cityChipsForCountry(countryIso)
+  const cityExamples = cityExamplesForCountry(countryIso)
 
   function fieldEngaged(field: string) {
     if (engagedFields.current.size === 0) track('form_start', { first_field: field })
@@ -243,7 +203,7 @@ export default function SignUpFormCollabV3({ analyticsPath = '/sign-up-collab' }
 
     track('submit_attempt', { country_code: countryCode, digits: digits.length, elapsed_ms: pageElapsedMs() })
     setError(null)
-    startLeadPost(countryCode + ' ' + whatsapp.trim())
+    startLeadPost(countryCode ? countryCode + ' ' + whatsapp.trim() : whatsapp.trim())
     setStep('location')
     track('slide_shown', { slide: 'location' })
     window.scrollTo({ top: 0 })
@@ -353,7 +313,7 @@ export default function SignUpFormCollabV3({ analyticsPath = '/sign-up-collab' }
           body: JSON.stringify({
             city: location.trim(),
             contactMethod: 'whatsapp',
-            contact: countryCode + ' ' + whatsapp.trim(),
+            contact: countryCode ? countryCode + ' ' + whatsapp.trim() : whatsapp.trim(),
             moodboard: moodboardSoFar(),
             photos,
           }),
@@ -539,7 +499,7 @@ export default function SignUpFormCollabV3({ analyticsPath = '/sign-up-collab' }
       <div className="mx-auto max-w-md px-5 py-8">
         {slideKicker(2)}
         {slideTitle('Where are you located?')}
-        <div className="mt-6 flex flex-wrap gap-2">
+        {chips.length > 0 && <div className="mt-6 flex flex-wrap gap-2">
           {chips.map(chip => (
             <button
               key={chip}
@@ -554,7 +514,7 @@ export default function SignUpFormCollabV3({ analyticsPath = '/sign-up-collab' }
               {chip}
             </button>
           ))}
-        </div>
+        </div>}
         <input
           value={location}
           onChange={e => { fieldEngaged('location'); setLocation(e.target.value) }}
@@ -563,7 +523,13 @@ export default function SignUpFormCollabV3({ analyticsPath = '/sign-up-collab' }
             if (v && !chips.includes(v)) trackOnce('location_selected', v, { method: 'typed', value: v.slice(0, 80) })
           }}
           className={`${inputCls} mt-3`}
-          placeholder="Or type another place — e.g. Margao, Mapusa, Ponda"
+          placeholder={
+            cityExamples.length > 0
+              ? `Or type another place — e.g. ${cityExamples.join(', ')}`
+              : chips.length > 0
+                ? 'Or type another place'
+                : 'Type your city or town'
+          }
         />
         <div className="mt-8 space-y-3">
           {errorBox}
@@ -665,7 +631,7 @@ export default function SignUpFormCollabV3({ analyticsPath = '/sign-up-collab' }
         <form onSubmit={onCapture} className="space-y-3">
           <p className="text-sm leading-snug text-neutral-600">I&apos;ll send you all the details &mdash; timing, location ideas, what to wear, and next steps.</p>
           <div className="flex gap-2">
-            <CountryCodeSelect light value={countryCode} onChange={code => { fieldEngaged('country_code'); track('country_code_changed', { code }); setCountryCode(code); setError(null) }} />
+            {countryCode && <CountryCodeSelect light value={countryCode} onChange={code => { fieldEngaged('country_code'); track('country_code_changed', { code }); setCountryCode(code); setError(null) }} />}
             <input
               ref={whatsappRef}
               type="tel"
@@ -679,7 +645,7 @@ export default function SignUpFormCollabV3({ analyticsPath = '/sign-up-collab' }
                 if (digits) trackOnce('whatsapp_filled', digits, { digits: digits.length })
               }}
               className="min-w-0 flex-1 rounded-xl border border-neutral-300 bg-white px-4 py-3 text-base text-neutral-900 placeholder-neutral-400 outline-none transition focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200"
-              placeholder="WhatsApp number"
+              placeholder={countryCode ? 'WhatsApp number' : 'WhatsApp number, e.g. +1 555 123 4567'}
             />
           </div>
           {error && (
