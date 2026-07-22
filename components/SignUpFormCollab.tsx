@@ -3,6 +3,8 @@ import { useEffect, useRef, useState } from 'react'
 import NextImage from 'next/image'
 import CountryCodeSelect from './CountryCodeSelect'
 import { initPageAnalytics, track, pageElapsedMs, flushNow } from '@/lib/track'
+import { detectCountry } from '@/lib/detectCountry'
+import { cityChipsForCountry, cityExamplesForCountry } from '@/lib/cityChips'
 
 // `field` pins the error message to the section that failed, so the scroll-to
 // -error always lands the user on the message itself.
@@ -58,7 +60,6 @@ const preferenceOptions: ConceptOption[] = [
   { id: NO_PREFERENCE, desc: "You direct it — I'll design the shoot" },
 ]
 
-const locationChips = ['Anjuna', 'Panjim', 'South Goa']
 
 // Same curated set the earlier "recent work" strip used before it was dropped —
 // analytics showed engaged readers bail on a proof-free page, so it's back.
@@ -86,13 +87,18 @@ function CheckIcon({ className }: { className?: string }) {
 
 export default function SignUpFormCollab() {
   const [state, setState] = useState<State | null>(null)
+  // Set post-hydration (SSR markup stays stable); chips and placeholder
+  // examples stay blank until a country is detected.
+  const [countryIso, setCountryIso] = useState<string | null>(null)
   const [location, setLocation] = useState('')
   // No default pre-selection: keeps "what did they actually want" measurable
   // instead of everyone inheriting Fashion editorial.
   const [vibes, setVibes] = useState<string[]>([])
   const [idea, setIdea] = useState('')
   const [whatsapp, setWhatsapp] = useState('')
-  const [countryCode, setCountryCode] = useState('+91')
+  // Empty until detection succeeds — with no detected country there's no
+  // dial-code dropdown at all and the visitor types the intl code themselves.
+  const [countryCode, setCountryCode] = useState('')
   const [instagram, setInstagram] = useState('')
   const [photos, setPhotos] = useState<string[]>([])
   const [submitting, setSubmitting] = useState(false)
@@ -105,7 +111,16 @@ export default function SignUpFormCollab() {
 
   useEffect(() => {
     initPageAnalytics('/sign-up-collab', { version: 'white-v2' })
+    const country = detectCountry()
+    if (country) {
+      setCountryIso(country.iso)
+      setCountryCode(country.dial)
+      track('country_detected', { iso: country.iso })
+    }
   }, [])
+
+  const locationChips = cityChipsForCountry(countryIso)
+  const cityExamples = cityExamplesForCountry(countryIso)
 
   // First interaction with any field fires form_start; first interaction with
   // each field fires field_engaged — both once, so funnels stay countable.
@@ -241,7 +256,7 @@ export default function SignUpFormCollab() {
         body: JSON.stringify({
           city: location.trim(),
           contactMethod: 'whatsapp',
-          contact: countryCode + ' ' + whatsapp.trim(),
+          contact: countryCode ? countryCode + ' ' + whatsapp.trim() : whatsapp.trim(),
           moodboard,
           photos,
         }),
@@ -400,7 +415,7 @@ export default function SignUpFormCollab() {
             <span className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-700 text-[10px] font-bold text-white">1</span>
             <label className="text-sm font-medium text-neutral-800">Where are you located?</label>
           </div>
-          <div className="flex flex-wrap gap-2">
+          {locationChips.length > 0 && <div className="flex flex-wrap gap-2">
             {locationChips.map(chip => (
               <button
                 key={chip}
@@ -415,7 +430,7 @@ export default function SignUpFormCollab() {
                 {chip}
               </button>
             ))}
-          </div>
+          </div>}
           <input
             value={location}
             onChange={e => { fieldEngaged('location'); setLocation(e.target.value); clearStatus() }}
@@ -424,7 +439,13 @@ export default function SignUpFormCollab() {
               if (v && !locationChips.includes(v)) trackOnce('location_selected', v, { method: 'typed', value: v.slice(0, 80) })
             }}
             className="w-full rounded-xl border border-neutral-300 bg-white px-4 py-3 text-sm text-neutral-900 placeholder-neutral-400 outline-none transition focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200"
-            placeholder="Or type another place — e.g. Margao, Mapusa, Ponda"
+            placeholder={
+              cityExamples.length > 0
+                ? `Or type another place — e.g. ${cityExamples.join(', ')}`
+                : locationChips.length > 0
+                  ? 'Or type another place'
+                  : 'Type your city or town'
+            }
           />
         </div>
 
@@ -484,7 +505,7 @@ export default function SignUpFormCollab() {
             <label className="text-sm font-medium text-neutral-800">WhatsApp</label>
           </div>
           <div className="flex gap-2">
-            <CountryCodeSelect light value={countryCode} onChange={code => { fieldEngaged('country_code'); track('country_code_changed', { code }); setCountryCode(code); clearStatus() }} />
+            {countryCode && <CountryCodeSelect light value={countryCode} onChange={code => { fieldEngaged('country_code'); track('country_code_changed', { code }); setCountryCode(code); clearStatus() }} />}
             <input
               ref={whatsappRef}
               required
@@ -499,7 +520,7 @@ export default function SignUpFormCollab() {
                 if (digits) trackOnce('whatsapp_filled', digits, { digits: digits.length })
               }}
               className="min-w-0 flex-1 rounded-xl border border-neutral-300 bg-white px-4 py-3 text-sm text-neutral-900 placeholder-neutral-400 outline-none transition focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200"
-              placeholder="98765 43210"
+              placeholder={countryCode ? '98765 43210' : '+1 555 123 4567'}
             />
           </div>
           {state && !state.ok && state.field === 'whatsapp' && (
