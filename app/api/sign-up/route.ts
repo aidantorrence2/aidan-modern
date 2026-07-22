@@ -136,6 +136,99 @@ export async function POST(req: Request) {
       }
     }
 
+    // id + stored contact let the capture-first flow enrich this row later
+    // (PATCH below); the pair acts as an unguessable-enough claim check.
+    return NextResponse.json({ ok: true, id: row.id, contact: storedContact })
+  } catch {
+    return NextResponse.json({ ok: false }, { status: 500 })
+  }
+}
+
+// Enrich an existing sign-up with the optional details collected after the
+// lead is captured (location, concept, photos, IG). Requires the exact
+// (id, contact) pair returned by POST so rows can't be modified by id-guessing.
+export async function PATCH(req: Request) {
+  try {
+    const body = await req.json().catch(() => ({}))
+    const id = body?.id
+    const contact = body?.contact
+    if (typeof id !== 'number' || !isString(contact) || !contact.trim()) {
+      return NextResponse.json({ ok: false, error: 'Invalid input' }, { status: 400 })
+    }
+    const city = isString(body?.city) ? body.city.trim() : ''
+    const moodboard: string[] | null = Array.isArray(body?.moodboard) ? body.moodboard.filter(isString) : null
+    const photos: string[] = Array.isArray(body?.photos) ? body.photos.filter(isString) : []
+
+    const sb = getSupabase()
+    const { data: row, error: fetchErr } = await sb
+      .from('signups')
+      .select('id, contact, photo_urls')
+      .eq('id', id)
+      .single()
+    if (fetchErr || !row || row.contact !== contact.trim()) {
+      return NextResponse.json({ ok: false, error: 'Not found' }, { status: 404 })
+    }
+
+    const photoUrls: string[] = []
+    for (let i = 0; i < photos.length; i++) {
+      const url = await uploadPhoto(photos[i], id, i)
+      if (url) photoUrls.push(url)
+    }
+
+    const update: Record<string, unknown> = {}
+    if (city) update.city = city
+    if (moodboard && moodboard.length > 0) update.moodboard = moodboard
+    if (photoUrls.length > 0) {
+      const existing = Array.isArray(row.photo_urls) ? row.photo_urls : []
+      update.photo_urls = [...existing, ...photoUrls]
+    }
+    if (Object.keys(update).length > 0) {
+      const { error: updateErr } = await sb.from('signups').update(update).eq('id', id)
+      if (updateErr) {
+        console.error('[SIGN-UP] PATCH update failed:', updateErr)
+        return NextResponse.json({ ok: false, error: 'Failed to save' }, { status: 500 })
+      }
+    }
+
+    console.log('[SIGN-UP] PATCH', { id, city, moodboard, photos: `${photoUrls.length} photo(s)` })
+
+    const webhookUrl = process.env.SLACK_BOOKING_WEBHOOK
+    if (webhookUrl) {
+      try {
+        const slackBody = {
+          text: `Sign-up ${contact.trim()} completed their profile`,
+          blocks: [
+            {
+              type: 'section',
+              text: {
+                type: 'mrkdwn',
+                text: [
+                  `*Sign-up completed their profile* (#${id})`,
+                  `*WhatsApp:* ${contact.trim()}`,
+                  ...(city ? [`*City:* ${city}`] : []),
+                  ...(moodboard?.length ? [`*Moodboard:* ${moodboard.join(', ')}`] : []),
+                  `*Photos added:* ${photoUrls.length}`,
+                  ...(photoUrls.length ? [`*Links:* ${photoUrls.map((u, i) => `<${u}|${i + 1}>`).join('  ')}`] : [])
+                ].join('\n')
+              }
+            },
+            ...photoUrls.map(url => ({
+              type: 'image',
+              image_url: url,
+              alt_text: 'sign-up photo'
+            }))
+          ]
+        }
+        await fetch(webhookUrl, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(slackBody)
+        })
+      } catch (err) {
+        console.error('[SIGN-UP] Failed to notify Slack (PATCH)', err)
+      }
+    }
+
     return NextResponse.json({ ok: true })
   } catch {
     return NextResponse.json({ ok: false }, { status: 500 })
