@@ -2,6 +2,7 @@
 import { useEffect, useRef, useState } from 'react'
 import NextImage from 'next/image'
 import CountryCodeSelect from './CountryCodeSelect'
+import { COUNTRY_CODES } from './countryCodes'
 import { initPageAnalytics, track, pageElapsedMs, flushNow } from '@/lib/track'
 
 // v3 "capture-first": the lead (WhatsApp number) is captured with a single
@@ -11,7 +12,7 @@ import { initPageAnalytics, track, pageElapsedMs, flushNow } from '@/lib/track'
 // killed 24% of the rest — so nothing may stand between the hero and the
 // number field, and no field after it may cost the lead.
 
-type Step = 'capture' | 'enrich' | 'done'
+type Step = 'capture' | 'photos' | 'location' | 'instagram' | 'notes' | 'done'
 
 function resizeImage(dataUrl: string, maxBytes: number): Promise<string> {
   return new Promise((resolve, reject) => {
@@ -48,20 +49,19 @@ function resizeImage(dataUrl: string, maxBytes: number): Promise<string> {
   })
 }
 
-const NO_PREFERENCE = 'No preference'
-type ConceptOption = { id: string; desc: string }
-const preferenceOptions: ConceptOption[] = [
-  { id: 'Fashion editorial', desc: 'Dramatic, magazine-style' },
-  { id: 'Streets & markets', desc: 'Gritty, real city life' },
-  { id: 'Nature & outdoors', desc: 'Water, hills, greenery, golden light' },
-  { id: 'Studio & indoor', desc: 'Cozy interiors, cafés, controlled light' },
-  { id: 'Culture & everyday life', desc: 'Tradition, dress, temples, real moments' },
-  { id: NO_PREFERENCE, desc: "You direct it — I'll design the shoot" },
-]
+const DEFAULT_CHIPS = ['Anjuna', 'Panjim', 'South Goa']
+// Location chips adapt to the visitor's detected country (ad campaigns run in
+// many cities); India keeps the Goa campaign set.
+const CHIPS_BY_REGION: Record<string, string[]> = {
+  IN: DEFAULT_CHIPS,
+  TH: ['Bangkok', 'Pattaya', 'Chiang Mai'],
+  TR: ['Istanbul'],
+  VN: ['Da Nang', 'Ho Chi Minh City'],
+  GE: ['Tbilisi'],
+  GR: ['Athens', 'Corfu'],
+}
 
-const locationChips = ['Anjuna', 'Panjim', 'South Goa']
-
-const heroImage = '/images/proof/000019-6.jpg'
+const heroImage = '/images/faves/000039-3.jpg'
 
 const proofImages = [
   '/images/moodboards/editorial.jpg',
@@ -71,6 +71,34 @@ const proofImages = [
   '/images/proof/000038-4.jpg',
   '/images/proof/DSC_0347.jpg',
 ]
+
+// Timezone → ISO region for auto-defaulting the dial code AND the location
+// chips. Timezone beats device locale here: phones worldwide ship set to
+// en-US, but the timezone tracks where the visitor physically is.
+const TZ_REGION: Record<string, string> = {
+  'Asia/Kolkata': 'IN', 'Asia/Calcutta': 'IN', 'Asia/Bangkok': 'TH',
+  'Europe/Istanbul': 'TR', 'Asia/Ho_Chi_Minh': 'VN', 'Asia/Saigon': 'VN',
+  'Asia/Tbilisi': 'GE', 'Europe/Athens': 'GR', 'Asia/Jakarta': 'ID',
+  'Asia/Makassar': 'ID', 'Asia/Manila': 'PH', 'Asia/Kathmandu': 'NP',
+  'Asia/Colombo': 'LK', 'Asia/Ulaanbaatar': 'MN', 'Asia/Seoul': 'KR',
+  'Asia/Tokyo': 'JP', 'Asia/Singapore': 'SG', 'Asia/Kuala_Lumpur': 'MY',
+  'Asia/Dubai': 'AE', 'Asia/Karachi': 'PK', 'Asia/Dhaka': 'BD',
+  'Asia/Shanghai': 'CN', 'Asia/Hong_Kong': 'HK', 'Asia/Taipei': 'TW',
+  'Asia/Phnom_Penh': 'KH', 'Asia/Vientiane': 'LA', 'Asia/Yangon': 'MM',
+  'Asia/Riyadh': 'SA', 'Asia/Jerusalem': 'IL', 'Asia/Beirut': 'LB',
+  'Asia/Amman': 'JO', 'Asia/Baghdad': 'IQ', 'Asia/Tehran': 'IR',
+  'Asia/Baku': 'AZ', 'Asia/Yerevan': 'AM', 'Asia/Tashkent': 'UZ',
+  'Europe/London': 'GB', 'Europe/Paris': 'FR', 'Europe/Berlin': 'DE',
+  'Europe/Madrid': 'ES', 'Europe/Rome': 'IT', 'Europe/Lisbon': 'PT',
+  'Europe/Amsterdam': 'NL', 'Europe/Kyiv': 'UA', 'Europe/Kiev': 'UA',
+  'Europe/Moscow': 'RU', 'America/New_York': 'US', 'America/Chicago': 'US',
+  'America/Denver': 'US', 'America/Los_Angeles': 'US', 'America/Phoenix': 'US',
+  'America/Toronto': 'CA', 'America/Vancouver': 'CA', 'America/Mexico_City': 'MX',
+  'America/Sao_Paulo': 'BR', 'America/Buenos_Aires': 'AR',
+  'Australia/Sydney': 'AU', 'Australia/Melbourne': 'AU', 'Australia/Perth': 'AU',
+  'Pacific/Auckland': 'NZ', 'Africa/Cairo': 'EG', 'Africa/Lagos': 'NG',
+  'Africa/Nairobi': 'KE', 'Africa/Johannesburg': 'ZA', 'Africa/Casablanca': 'MA',
+}
 
 const howItWorks = [
   'Drop your WhatsApp number below',
@@ -92,22 +120,14 @@ export default function SignUpFormCollabV3({ analyticsPath = '/sign-up-collab' }
   // Step 1 — the lead
   const [whatsapp, setWhatsapp] = useState('')
   const [countryCode, setCountryCode] = useState('+91')
-  const [submitting, setSubmitting] = useState(false)
-  const [leadId, setLeadId] = useState<number | null>(null)
-  const [leadContact, setLeadContact] = useState('')
 
   // Step 2 — the boost profile
   const [location, setLocation] = useState('')
-  const [vibes, setVibes] = useState<string[]>([])
   const [idea, setIdea] = useState('')
   const [instagram, setInstagram] = useState('')
   const [photos, setPhotos] = useState<string[]>([])
   const [processingPhotos, setProcessingPhotos] = useState(false)
-  const [saving, setSaving] = useState(false)
-
-  // The hero city is swappable per ad set via ?loc= so one page serves every
-  // campaign; Goa is the current default target.
-  const [heroCity, setHeroCity] = useState('Goa')
+  const [chips, setChips] = useState<string[]>(DEFAULT_CHIPS)
 
   const fileRef = useRef<HTMLInputElement>(null)
   const whatsappRef = useRef<HTMLInputElement>(null)
@@ -118,12 +138,20 @@ export default function SignUpFormCollabV3({ analyticsPath = '/sign-up-collab' }
 
   useEffect(() => {
     initPageAnalytics(analyticsPath, { version: 'v3-capture-first' })
+    // Auto-default the dial code for international visitors; timezone first,
+    // device locale region as fallback. Never overrides a manual selection.
     try {
-      const loc = new URLSearchParams(window.location.search).get('loc')
-      if (loc && loc.trim()) {
-        setHeroCity(loc.trim().replace(/\b\w/g, c => c.toUpperCase()).slice(0, 40))
+      const tz = Intl.DateTimeFormat().resolvedOptions().timeZone || ''
+      const region = TZ_REGION[tz] || new Intl.Locale(navigator.language || 'en').region || ''
+      if (region) {
+        if (CHIPS_BY_REGION[region]) setChips(CHIPS_BY_REGION[region])
+        const dial = COUNTRY_CODES.find(c => c.iso === region)?.dial
+        if (dial && !engagedFields.current.has('country_code')) {
+          setCountryCode(dial)
+          track('region_autodetected', { region, dial, tz })
+        }
       }
-    } catch { /* hero keeps its default city */ }
+    } catch { /* keep the defaults */ }
   }, [analyticsPath])
 
   // The sticky CTA appears only while the capture card is scrolled out of view.
@@ -158,65 +186,70 @@ export default function SignUpFormCollabV3({ analyticsPath = '/sign-up-collab' }
   }
 
   // ── Step 1: capture the lead ──
-  async function onCapture(e: React.FormEvent<HTMLFormElement>) {
-    e.preventDefault()
-    const data = Object.fromEntries(new FormData(e.currentTarget).entries()) as Record<string, string>
-    if (data.company) { track('honeypot_triggered'); setStep('enrich'); return }
+  // The transition to step 2 is instant; the POST runs in the background with
+  // one silent retry. If it still fails, onEnrichSave/Skip fall back to a
+  // fresh full-payload POST — the lead can be delayed but never lost.
+  const leadRef = useRef<Promise<{ id: number | null; contact: string } | null> | null>(null)
+  const patchChain = useRef<Promise<unknown> | null>(null)
 
-    const digits = whatsapp.replace(/\D/g, '')
-    if (digits.length < 7) {
-      track('validation_error', { reason: 'whatsapp_invalid' })
-      setError('Please enter your full WhatsApp number.')
-      whatsappRef.current?.focus()
-      return
-    }
-
-    track('submit_attempt', { country_code: countryCode, digits: digits.length, elapsed_ms: pageElapsedMs() })
-    setSubmitting(true)
-    setError(null)
-    try {
+  function startLeadPost(contact: string) {
+    const attempt = async (): Promise<{ id: number | null; contact: string }> => {
       const res = await fetch('/api/sign-up', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           city: '',
           contactMethod: 'whatsapp',
-          contact: countryCode + ' ' + whatsapp.trim(),
+          contact,
           moodboard: ['Collab sign-up', 'Signup flow: v3-capture-first'],
         }),
       })
       const json = await res.json().catch(() => null)
       if (!res.ok || !json?.ok) throw new Error('Failed')
-      if (typeof json.id === 'number') setLeadId(json.id)
-      if (typeof json.contact === 'string') setLeadContact(json.contact)
-      track('submit_success', { elapsed_ms: pageElapsedMs() })
-      flushNow()
-      if (typeof window !== 'undefined') {
-        const fbq = (window as typeof window & { fbq?: (...args: unknown[]) => void }).fbq
-        if (typeof fbq === 'function') fbq('track', 'Lead', { source: 'sign-up-collab-v3' })
+      return {
+        id: typeof json.id === 'number' ? json.id : null,
+        contact: typeof json.contact === 'string' ? json.contact : contact,
       }
-      setStep('enrich')
-      track('enrich_shown')
-      window.scrollTo({ top: 0 })
-    } catch {
-      track('submit_error', { elapsed_ms: pageElapsedMs() })
-      setError('Something went wrong. Try again or DM @madebyaidan on IG.')
-    } finally {
-      setSubmitting(false)
     }
+    leadRef.current = attempt()
+      .catch(() => new Promise(r => setTimeout(r, 1500)).then(attempt))
+      .then(lead => {
+        track('submit_success', { elapsed_ms: pageElapsedMs() })
+        flushNow()
+        if (typeof window !== 'undefined') {
+          const fbq = (window as typeof window & { fbq?: (...args: unknown[]) => void }).fbq
+          if (typeof fbq === 'function') fbq('track', 'Lead', { source: 'sign-up-collab-v3' })
+        }
+        return lead
+      })
+      .catch(() => {
+        track('submit_error', { elapsed_ms: pageElapsedMs() })
+        return null
+      })
+  }
+
+  function onCapture(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault()
+    const data = Object.fromEntries(new FormData(e.currentTarget).entries()) as Record<string, string>
+    if (data.company) { track('honeypot_triggered'); setStep('location'); return }
+
+    const digits = whatsapp.replace(/\D/g, '')
+    if (digits.length < 7) {
+      track('validation_error', { reason: 'whatsapp_invalid' })
+      setError('Please enter your WhatsApp number.')
+      whatsappRef.current?.focus()
+      return
+    }
+
+    track('submit_attempt', { country_code: countryCode, digits: digits.length, elapsed_ms: pageElapsedMs() })
+    setError(null)
+    startLeadPost(countryCode + ' ' + whatsapp.trim())
+    setStep('location')
+    track('slide_shown', { slide: 'location' })
+    window.scrollTo({ top: 0 })
   }
 
   // ── Step 2 helpers ──
-  function toggleVibe(v: string) {
-    const withoutNoPref = vibes.filter(x => x !== NO_PREFERENCE)
-    const next = v === NO_PREFERENCE
-      ? (vibes.includes(v) ? [] : [NO_PREFERENCE])
-      : (withoutNoPref.includes(v) ? withoutNoPref.filter(x => x !== v) : [...withoutNoPref, v])
-    fieldEngaged('concept')
-    track('concept_toggled', { concept: v, selected: next.includes(v), total_selected: next.length })
-    setVibes(next)
-  }
-
   async function handlePhotos(e: React.ChangeEvent<HTMLInputElement>) {
     const files = e.target.files
     if (!files || files.length === 0) return
@@ -261,65 +294,78 @@ export default function SignUpFormCollabV3({ analyticsPath = '/sign-up-collab' }
     setPhotos(prev => prev.filter((_, i) => i !== index))
   }
 
-  // ── Step 2: enrich the lead (never blocks — the lead is already saved) ──
-  async function onEnrichSave() {
-    if (processingPhotos) {
-      setError('Photos are still processing — hang on a sec and try again.')
-      return
+  function moodboardSoFar(): string[] {
+    return [
+      'Collab sign-up',
+      'Signup flow: v3-capture-first',
+      ...(location.trim() ? ['Location: ' + location.trim()] : []),
+      ...(idea.trim() ? ['Notes: ' + idea.trim()] : []),
+      ...(instagram.trim() ? ['Instagram: ' + instagram.trim()] : []),
+    ]
+  }
+
+  // Each slide advance saves progress in the background. PATCHes are chained
+  // so they can never land out of order; photos are sent exactly once (the
+  // server appends them).
+  function queuePatch(withPhotos?: string[]) {
+    const payload = {
+      city: location.trim(),
+      moodboard: moodboardSoFar(),
+      ...(withPhotos && withPhotos.length > 0 ? { photos: withPhotos } : {}),
     }
-    const hasAnything = location.trim() || vibes.length > 0 || idea.trim() || instagram.trim() || photos.length > 0
-    if (!hasAnything || leadId === null) {
-      track('enrich_skipped', { reason: hasAnything ? 'no_lead_id' : 'empty' })
-      setStep('done')
-      window.scrollTo({ top: 0 })
-      return
-    }
+    patchChain.current = (patchChain.current ?? Promise.resolve())
+      .then(async () => {
+        const lead = leadRef.current ? await leadRef.current : null
+        if (!lead || lead.id === null) return
+        const res = await fetch('/api/sign-up', {
+          method: 'PATCH',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ id: lead.id, contact: lead.contact, ...payload }),
+        })
+        if (!res.ok) track('patch_error', { slide: step })
+      })
+      .catch(() => track('patch_error', { slide: step }))
+  }
+
+  function advance(next: Step, save: boolean, withPhotos?: string[]) {
+    if (save) queuePatch(withPhotos)
+    track('slide_shown', { slide: next })
+    setStep(next)
+    window.scrollTo({ top: 0 })
+  }
+
+  function finishSignup() {
     track('enrich_attempt', {
       photos: photos.length,
-      concepts: vibes.length,
       has_location: location.trim().length > 0,
       has_instagram: instagram.trim().length > 0,
       notes_chars: idea.trim().length,
       elapsed_ms: pageElapsedMs(),
     })
-    setSaving(true)
-    setError(null)
-    try {
-      const moodboard = [
-        'Collab sign-up',
-        'Signup flow: v3-capture-first',
-        ...(location.trim() ? ['Location: ' + location.trim()] : []),
-        ...(vibes.length > 0 ? ['Preference: ' + vibes.join(', ')] : []),
-        ...(idea.trim() ? ['Notes: ' + idea.trim()] : []),
-        ...(instagram.trim() ? ['Instagram: ' + instagram.trim()] : []),
-      ]
-      const res = await fetch('/api/sign-up', {
-        method: 'PATCH',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          id: leadId,
-          contact: leadContact,
-          city: location.trim(),
-          moodboard,
-          photos,
-        }),
-      })
-      const json = await res.json().catch(() => null)
-      if (!res.ok || !json?.ok) throw new Error('Failed')
-      track('enrich_success', { photos: photos.length, elapsed_ms: pageElapsedMs() })
-      flushNow()
-      setStep('done')
-      window.scrollTo({ top: 0 })
-    } catch {
-      track('enrich_error', { elapsed_ms: pageElapsedMs() })
-      setError("Couldn't save the extra details — your sign-up itself is safe. Try again, or just skip.")
-    } finally {
-      setSaving(false)
-    }
-  }
-
-  function onEnrichSkip() {
-    track('enrich_skipped', { reason: 'user_skip' })
+    queuePatch()
+    // If the background capture never landed, save everything in one shot so
+    // finishing can't lose the lead.
+    leadRef.current?.then(lead => {
+      if (lead === null) {
+        fetch('/api/sign-up', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            city: location.trim(),
+            contactMethod: 'whatsapp',
+            contact: countryCode + ' ' + whatsapp.trim(),
+            moodboard: moodboardSoFar(),
+            photos,
+          }),
+        }).then(res => {
+          if (!res.ok) return
+          track('submit_success', { recovered: true, elapsed_ms: pageElapsedMs() })
+          const fbq = (window as typeof window & { fbq?: (...args: unknown[]) => void }).fbq
+          if (typeof fbq === 'function') fbq('track', 'Lead', { source: 'sign-up-collab-v3' })
+        }).catch(() => {})
+      }
+    })
+    track('enrich_success', { photos: photos.length, elapsed_ms: pageElapsedMs() })
     flushNow()
     setStep('done')
     window.scrollTo({ top: 0 })
@@ -354,12 +400,6 @@ export default function SignUpFormCollabV3({ analyticsPath = '/sign-up-collab' }
                 <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-neutral-400">Cost</p>
                 <p className="text-sm font-medium text-emerald-600">Free &mdash; we both get content</p>
               </div>
-              {vibes.length > 0 && (
-                <div className="space-y-1">
-                  <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-neutral-400">Preference</p>
-                  <p className="text-sm font-medium text-neutral-900">{vibes.join(', ')}</p>
-                </div>
-              )}
             </div>
             <div className="h-px bg-neutral-100" />
             <div className="space-y-3">
@@ -384,177 +424,204 @@ export default function SignUpFormCollabV3({ analyticsPath = '/sign-up-collab' }
     )
   }
 
-  // ── Step 2: enrich ──
-  if (step === 'enrich') {
+  // ── Slides 2–6: one field per page, instant transitions ──
+  const slideKicker = (n: number) => (
+    <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-neutral-400">Step {n} of 5</p>
+  )
+  const slideTitle = (t: string) => (
+    <h1 className="mt-1 font-display text-3xl font-semibold text-neutral-900" style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic' }}>{t}</h1>
+  )
+  const nextBtn = (onClick: () => void, label = 'Next', busy = false) => (
+    <button
+      type="button"
+      onClick={onClick}
+      disabled={busy}
+      className="w-full rounded-full bg-emerald-600 py-3.5 text-sm font-bold text-white shadow-lg shadow-emerald-600/20 transition hover:bg-emerald-500 disabled:opacity-50"
+      data-cta="sign-up-collab-v3-next"
+    >
+      {busy ? (
+        <span className="inline-block h-4 w-4 animate-spin rounded-full border-2 border-white/40 border-t-white align-[-2px]" aria-label="Loading" />
+      ) : label}
+    </button>
+  )
+  const skipBtn = (onClick: () => void) => (
+    <button type="button" onClick={onClick} className="w-full text-center text-sm font-medium text-neutral-400 underline-offset-2 hover:underline">
+      Skip
+    </button>
+  )
+  const errorBox = error ? (
+    <div className="rounded-xl border border-red-300 bg-red-50 px-4 py-3 text-sm font-medium text-red-700">{error}</div>
+  ) : null
+
+  if (step === 'photos') {
     return (
       <div className="mx-auto max-w-md px-5 py-8">
-        <div className="flex items-start gap-3">
-          <span className="mt-1 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-emerald-600">
-            <CheckIcon className="h-4 w-4" />
-          </span>
-          <div>
-            <h1 className="font-display text-3xl font-semibold text-neutral-900" style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic' }}>You&apos;re in.</h1>
-            <p className="mt-1 text-sm text-neutral-500">I&apos;ll message you on WhatsApp within 24 hours.</p>
+        {slideKicker(3)}
+        {slideTitle('Photos of yourself')}
+        <p className="mt-1.5 text-sm text-neutral-500">Selfies are fine &mdash; just looking to see the real you.</p>
+        <div className="mt-4 space-y-1.5">
+          <p className="flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-[0.15em] text-emerald-600">
+            <CheckIcon className="h-3.5 w-3.5" />
+            Like this &mdash; simple &amp; natural, don&apos;t hide your face
+          </p>
+          <div className="grid grid-cols-4 gap-1.5">
+            {['/images/collab-examples/good-1.jpg', '/images/collab-examples/good-2.jpg', '/images/collab-examples/good-3.jpg', '/images/collab-examples/good-4.jpg'].map((src, i) => (
+              <div key={i} className="relative overflow-hidden rounded-lg border border-emerald-300 aspect-square">
+                <NextImage src={src} alt="Good example photo" width={200} height={267} sizes="(max-width: 640px) 25vw, 100px" className="w-full h-full object-cover" />
+                <span className="absolute right-1 top-1 flex h-6 w-6 items-center justify-center rounded-full bg-emerald-500 text-white">
+                  <CheckIcon className="h-3.5 w-3.5" />
+                </span>
+              </div>
+            ))}
           </div>
         </div>
-
-        <div className="mt-6 rounded-2xl border border-emerald-200 bg-emerald-50/60 px-4 py-3">
-          <p className="text-sm font-semibold text-emerald-800">Want priority? Complete your shoot profile.</p>
-          <p className="mt-0.5 text-xs text-emerald-700">Sign-ups with photos get scheduled first &mdash; takes about a minute.</p>
-        </div>
-
-        <div className="mt-7 space-y-7">
-          {/* Location */}
-          <div className="space-y-2">
-            <label className="text-sm font-medium text-neutral-800">Where are you located?</label>
-            <div className="flex flex-wrap gap-2">
-              {locationChips.map(chip => (
-                <button
-                  key={chip}
-                  type="button"
-                  onClick={() => { fieldEngaged('location'); track('location_selected', { method: 'chip', value: chip }); setLocation(chip) }}
-                  className={`rounded-full border px-4 py-1.5 text-sm font-semibold transition-all ${
-                    location.trim() === chip
-                      ? 'border-emerald-500 bg-emerald-50 text-emerald-700'
-                      : 'border-neutral-200 bg-white text-neutral-600 hover:border-neutral-400 hover:text-neutral-800'
-                  }`}
-                >
-                  {chip}
-                </button>
-              ))}
-            </div>
-            <input
-              value={location}
-              onChange={e => { fieldEngaged('location'); setLocation(e.target.value) }}
-              onBlur={() => {
-                const v = location.trim()
-                if (v && !locationChips.includes(v)) trackOnce('location_selected', v, { method: 'typed', value: v.slice(0, 80) })
-              }}
-              className={inputCls}
-              placeholder="Or type another place — e.g. Margao, Mapusa, Ponda"
-            />
+        <div className="mt-2.5 space-y-1.5">
+          <p className="flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-[0.15em] text-red-500">
+            <svg viewBox="0 0 24 24" className="h-3.5 w-3.5" fill="none" stroke="currentColor" strokeWidth={3} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12" /></svg>
+            Not like this &mdash; heavy makeup, filters, face hidden
+          </p>
+          <div className="grid grid-cols-4 gap-1.5">
+            {['/images/collab-examples/bad-1.jpg', '/images/collab-examples/bad-2.jpg', '/images/collab-examples/bad-3.jpg', '/images/collab-examples/bad-4.jpg'].map((src, i) => (
+              <div key={i} className="relative overflow-hidden rounded-lg border border-red-200 aspect-square">
+                <NextImage src={src} alt="Bad example photo" width={150} height={200} sizes="(max-width: 640px) 25vw, 100px" className="w-full h-full object-cover opacity-70 saturate-[0.85]" />
+                <span className="absolute right-1 top-1 flex h-6 w-6 items-center justify-center rounded-full bg-red-500 text-white">
+                  <svg viewBox="0 0 24 24" className="h-3.5 w-3.5" fill="none" stroke="currentColor" strokeWidth={3.5} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12" /></svg>
+                </span>
+              </div>
+            ))}
           </div>
-
-          {/* Photos — first among the optionals: it's the one that matters most */}
-          <div className="space-y-2">
-            <label className="text-sm font-medium text-neutral-800">Photos of yourself <span className="text-xs text-neutral-400">(selfies are fine)</span></label>
-            <p className="text-xs leading-relaxed text-neutral-500">Simple &amp; natural, don&apos;t hide your face &mdash; just looking to see the real you. No heavy filters.</p>
-            <div className="flex flex-wrap gap-1.5">
-              {photos.map((p, i) => (
-                <div key={i} className="relative">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={p} alt="Preview" className="h-14 w-14 rounded-lg border border-neutral-200 object-cover" />
-                  <button
-                    type="button"
-                    onClick={() => removePhoto(i)}
-                    className="absolute -right-1.5 -top-1.5 flex h-5 w-5 items-center justify-center rounded-full bg-neutral-500 text-xs text-white transition hover:bg-red-500"
-                    aria-label="Remove photo"
-                  >
-                    &times;
-                  </button>
-                </div>
-              ))}
+        </div>
+        <div className="mt-4 flex flex-wrap gap-1.5">
+          {photos.map((p, i) => (
+            <div key={i} className="relative">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={p} alt="Preview" className="h-20 w-20 rounded-lg border border-neutral-200 object-cover" />
               <button
                 type="button"
-                onClick={() => fileRef.current?.click()}
-                disabled={processingPhotos}
-                className="flex h-24 w-32 flex-col items-center justify-center gap-1.5 rounded-xl border-2 border-dashed border-emerald-400 bg-emerald-50 text-emerald-700 transition hover:bg-emerald-100 disabled:opacity-50"
+                onClick={() => removePhoto(i)}
+                className="absolute -right-1.5 -top-1.5 flex h-5 w-5 items-center justify-center rounded-full bg-neutral-500 text-xs text-white transition hover:bg-red-500"
+                aria-label="Remove photo"
               >
-                {processingPhotos ? (
-                  <span className="inline-block h-6 w-6 animate-spin rounded-full border-2 border-emerald-200 border-t-emerald-600" aria-label="Processing" />
-                ) : (
-                  <>
-                    <svg viewBox="0 0 24 24" className="h-7 w-7" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                      <path d="M12 16V4m0 0L7 9m5-5l5 5" /><path d="M4 17v2a1 1 0 001 1h14a1 1 0 001-1v-2" />
-                    </svg>
-                    <span className="text-xs font-bold uppercase tracking-wide">Add photos</span>
-                  </>
-                )}
+                &times;
               </button>
             </div>
-            <input ref={fileRef} type="file" accept="image/*" multiple onChange={handlePhotos} className="hidden" />
-          </div>
+          ))}
+          <button
+            type="button"
+            onClick={() => fileRef.current?.click()}
+            disabled={processingPhotos}
+            className="flex h-24 w-full flex-row items-center justify-center gap-2 rounded-xl border-2 border-dashed border-emerald-400 bg-emerald-50 text-emerald-700 transition hover:bg-emerald-100 disabled:opacity-50"
+          >
+            {processingPhotos ? (
+              <span className="inline-block h-6 w-6 animate-spin rounded-full border-2 border-emerald-200 border-t-emerald-600" aria-label="Processing" />
+            ) : (
+              <>
+                <svg viewBox="0 0 24 24" className="h-7 w-7" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <path d="M12 16V4m0 0L7 9m5-5l5 5" /><path d="M4 17v2a1 1 0 001 1h14a1 1 0 001-1v-2" />
+                </svg>
+                <span className="text-xs font-bold uppercase tracking-wide">Add photos</span>
+              </>
+            )}
+          </button>
+        </div>
+        <input ref={fileRef} type="file" accept="image/*" multiple onChange={handlePhotos} className="hidden" />
+        <div className="mt-5 space-y-3">
+          {errorBox}
+          {nextBtn(() => advance('instagram', photos.length > 0, photos), 'Next', processingPhotos)}
+          {skipBtn(() => advance('instagram', false))}
+        </div>
+      </div>
+    )
+  }
 
-          {/* Concept */}
-          <fieldset className="space-y-2.5">
-            <legend className="text-sm font-medium text-neutral-800">Choose a shoot concept <span className="text-xs text-neutral-400">(pick any)</span></legend>
-            <div className="grid grid-cols-2 gap-2">
-              {preferenceOptions.map(opt => {
-                const selected = vibes.includes(opt.id)
-                return (
-                  <button
-                    key={opt.id}
-                    type="button"
-                    onClick={() => toggleVibe(opt.id)}
-                    className={`relative rounded-xl border px-4 py-3 text-left transition-all ${
-                      selected ? 'border-emerald-500 bg-emerald-50 ring-2 ring-emerald-200' : 'border-neutral-200 bg-white hover:border-neutral-400'
-                    }`}
-                  >
-                    <div className={`text-sm font-semibold ${selected ? 'text-emerald-700' : 'text-neutral-900'}`}>{opt.id}</div>
-                    <div className="mt-0.5 text-xs text-neutral-500">{opt.desc}</div>
-                  </button>
-                )
-              })}
-            </div>
-          </fieldset>
-
-          {/* Instagram */}
-          <div className="space-y-2">
-            <label className="text-sm font-medium text-neutral-800">Instagram</label>
-            <input
-              value={instagram}
-              onChange={e => { fieldEngaged('instagram'); setInstagram(e.target.value) }}
-              onBlur={() => {
-                const v = instagram.trim()
-                if (v) trackOnce('instagram_filled', v, { chars: v.length })
-              }}
-              autoCapitalize="off"
-              autoCorrect="off"
-              spellCheck={false}
-              className={inputCls}
-              placeholder="@yourhandle"
-            />
-          </div>
-
-          {/* Notes */}
-          <div className="space-y-2">
-            <label htmlFor="collab-idea" className="text-sm font-medium text-neutral-800">Anything else?</label>
-            <textarea
-              id="collab-idea"
-              value={idea}
-              onChange={e => { fieldEngaged('notes'); setIdea(e.target.value) }}
-              onBlur={() => {
-                const v = idea.trim()
-                if (v) trackOnce('notes_filled', v, { chars: v.length })
-              }}
-              rows={3}
-              className={`${inputCls} resize-none`}
-              placeholder="Your own idea, inspo, references, anything..."
-            />
-          </div>
-
-          {error && (
-            <div className="rounded-xl border border-red-300 bg-red-50 px-4 py-3 text-sm font-medium text-red-700">
-              {error}
-            </div>
-          )}
-
-          <div className="space-y-3">
+  if (step === 'location') {
+    return (
+      <div className="mx-auto max-w-md px-5 py-8">
+        {slideKicker(2)}
+        {slideTitle('Where are you located?')}
+        <div className="mt-6 flex flex-wrap gap-2">
+          {chips.map(chip => (
             <button
+              key={chip}
               type="button"
-              onClick={onEnrichSave}
-              disabled={saving || processingPhotos}
-              className="w-full rounded-full bg-emerald-600 py-3.5 text-sm font-bold text-white shadow-lg shadow-emerald-600/20 transition hover:bg-emerald-500 disabled:opacity-50"
-              data-cta="sign-up-collab-v3-enrich"
+              onClick={() => { fieldEngaged('location'); track('location_selected', { method: 'chip', value: chip }); setLocation(chip) }}
+              className={`rounded-full border px-4 py-1.5 text-sm font-semibold transition-all ${
+                location.trim() === chip
+                  ? 'border-emerald-500 bg-emerald-50 text-emerald-700'
+                  : 'border-neutral-200 bg-white text-neutral-600 hover:border-neutral-400 hover:text-neutral-800'
+              }`}
             >
-              {saving || processingPhotos ? (
-                <span className="inline-block h-4 w-4 animate-spin rounded-full border-2 border-white/40 border-t-white align-[-2px]" aria-label="Loading" />
-              ) : 'Complete My Profile'}
+              {chip}
             </button>
-            <button type="button" onClick={onEnrichSkip} className="w-full text-center text-sm font-medium text-neutral-400 underline-offset-2 hover:underline">
-              Skip for now
-            </button>
-          </div>
+          ))}
+        </div>
+        <input
+          value={location}
+          onChange={e => { fieldEngaged('location'); setLocation(e.target.value) }}
+          onBlur={() => {
+            const v = location.trim()
+            if (v && !chips.includes(v)) trackOnce('location_selected', v, { method: 'typed', value: v.slice(0, 80) })
+          }}
+          className={`${inputCls} mt-3`}
+          placeholder="Or type another place — e.g. Margao, Mapusa, Ponda"
+        />
+        <div className="mt-8 space-y-3">
+          {errorBox}
+          {nextBtn(() => advance('photos', location.trim().length > 0))}
+          {skipBtn(() => advance('photos', false))}
+        </div>
+      </div>
+    )
+  }
+
+  if (step === 'instagram') {
+    return (
+      <div className="mx-auto max-w-md px-5 py-8">
+        {slideKicker(4)}
+        <h1 className="mt-1 font-display text-3xl font-semibold text-neutral-900" style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic' }}>
+          Your Instagram <span className="text-lg font-normal text-neutral-400">(optional)</span>
+        </h1>
+        <input
+          value={instagram}
+          onChange={e => { fieldEngaged('instagram'); setInstagram(e.target.value) }}
+          onBlur={() => {
+            const v = instagram.trim()
+            if (v) trackOnce('instagram_filled', v, { chars: v.length })
+          }}
+          autoCapitalize="off"
+          autoCorrect="off"
+          spellCheck={false}
+          className={`${inputCls} mt-6`}
+          placeholder="@yourhandle"
+        />
+        <div className="mt-8 space-y-3">
+          {nextBtn(() => advance('notes', instagram.trim().length > 0))}
+          {skipBtn(() => advance('notes', false))}
+        </div>
+      </div>
+    )
+  }
+
+  if (step === 'notes') {
+    return (
+      <div className="mx-auto max-w-md px-5 py-8">
+        {slideKicker(5)}
+        {slideTitle('Anything else?')}
+        <p className="mt-1.5 text-sm text-neutral-500">Your own idea, inspo, references &mdash; anything.</p>
+        <textarea
+          id="collab-idea"
+          value={idea}
+          onChange={e => { fieldEngaged('notes'); setIdea(e.target.value) }}
+          onBlur={() => {
+            const v = idea.trim()
+            if (v) trackOnce('notes_filled', v, { chars: v.length })
+          }}
+          rows={4}
+          className={`${inputCls} mt-6 resize-none`}
+          placeholder="Totally optional..."
+        />
+        <div className="mt-8 space-y-3">
+          {nextBtn(finishSignup, 'Finish Sign-Up')}
         </div>
       </div>
     )
@@ -577,29 +644,30 @@ export default function SignUpFormCollabV3({ analyticsPath = '/sign-up-collab' }
           target="_blank"
           rel="noopener noreferrer"
           onClick={() => track('handle_clicked', { placement: 'hero' })}
-          className="absolute right-5 top-4 text-[11px] font-semibold tracking-wide text-white/85"
+          className="absolute right-5 top-4 flex items-center gap-1.5 text-[12px] font-semibold tracking-wide text-white/90"
         >
+          <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+            <rect x="2" y="2" width="20" height="20" rx="5" />
+            <circle cx="12" cy="12" r="4.5" />
+            <circle cx="17.3" cy="6.7" r="1.3" fill="currentColor" stroke="none" />
+          </svg>
           @madebyaidan
         </a>
         <div className="absolute inset-x-0 bottom-0 px-5 pb-6">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-emerald-300">Traveling photographer &middot; shot on 35mm film</p>
-          <h1 className="mt-1 font-display text-6xl font-semibold leading-none text-white" style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic' }}>
-            {heroCity}
+          <h1 className="font-display text-[40px] font-bold leading-[1.05] text-white" style={{ fontFamily: "Georgia, 'Times New Roman', serif", fontStyle: 'italic', textShadow: '0 2px 8px rgba(0,0,0,0.85), 0 12px 50px rgba(0,0,0,0.6)' }}>
+            Sign Up For Free Photo Shoot
           </h1>
-          <p className="mt-1.5 text-2xl font-semibold leading-tight text-white">Free Photo Shoot</p>
-          <p className="mt-2 text-sm text-white/85">1&ndash;2 hours &middot; you keep every edited photo &middot; costs nothing</p>
         </div>
       </div>
 
       {/* Capture card — one field, one button */}
       <div ref={captureCardRef} className="relative z-10 mx-4 -mt-5 rounded-2xl border border-neutral-200 bg-white p-4 shadow-xl">
         <form onSubmit={onCapture} className="space-y-3">
-          <label className="block text-sm font-medium text-neutral-800">Where can I WhatsApp you the details?</label>
+          <p className="text-sm leading-snug text-neutral-600">I&apos;ll send you all the details &mdash; timing, location ideas, what to wear, and next steps.</p>
           <div className="flex gap-2">
             <CountryCodeSelect light value={countryCode} onChange={code => { fieldEngaged('country_code'); track('country_code_changed', { code }); setCountryCode(code); setError(null) }} />
             <input
               ref={whatsappRef}
-              required
               type="tel"
               inputMode="tel"
               autoComplete="tel-national"
@@ -611,7 +679,7 @@ export default function SignUpFormCollabV3({ analyticsPath = '/sign-up-collab' }
                 if (digits) trackOnce('whatsapp_filled', digits, { digits: digits.length })
               }}
               className="min-w-0 flex-1 rounded-xl border border-neutral-300 bg-white px-4 py-3 text-base text-neutral-900 placeholder-neutral-400 outline-none transition focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200"
-              placeholder="98765 43210"
+              placeholder="WhatsApp number"
             />
           </div>
           {error && (
@@ -623,15 +691,11 @@ export default function SignUpFormCollabV3({ analyticsPath = '/sign-up-collab' }
           <input type="text" name="company" className="hidden" tabIndex={-1} autoComplete="off" />
           <button
             type="submit"
-            disabled={submitting}
-            className="w-full rounded-full bg-emerald-600 py-4 text-base font-bold text-white shadow-lg shadow-emerald-600/25 transition hover:bg-emerald-500 disabled:opacity-50"
+            className="w-full rounded-full bg-emerald-600 py-4 text-base font-bold text-white shadow-lg shadow-emerald-600/25 transition hover:bg-emerald-500"
             data-cta="sign-up-collab-v3-submit"
           >
-            {submitting ? (
-              <span className="inline-block h-4 w-4 animate-spin rounded-full border-2 border-white/40 border-t-white align-[-2px]" aria-label="Loading" />
-            ) : 'Get My Free Shoot'}
+            Get Started
           </button>
-          <p className="text-center text-xs text-neutral-400">Free forever &middot; I reply on WhatsApp within 24 hrs</p>
         </form>
       </div>
 
@@ -674,13 +738,6 @@ export default function SignUpFormCollabV3({ analyticsPath = '/sign-up-collab' }
           </p>
         </div>
 
-        <button
-          type="button"
-          onClick={jumpToCapture}
-          className="mt-8 w-full rounded-full bg-emerald-600 py-3.5 text-sm font-bold text-white shadow-lg shadow-emerald-600/20 transition hover:bg-emerald-500"
-        >
-          Get My Free Shoot
-        </button>
       </div>
 
       {/* Sticky CTA — only while the capture card is off-screen */}
@@ -692,7 +749,7 @@ export default function SignUpFormCollabV3({ analyticsPath = '/sign-up-collab' }
               onClick={jumpToCapture}
               className="w-full rounded-full bg-emerald-600 py-3.5 text-sm font-bold text-white shadow-lg shadow-emerald-600/25 transition hover:bg-emerald-500"
             >
-              Get My Free Shoot
+              Get Started
             </button>
           </div>
         </div>

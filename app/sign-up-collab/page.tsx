@@ -1,4 +1,4 @@
-import SignUpFormCollab from '@/components/SignUpFormCollab'
+import SignUpFormCollabV3 from '@/components/SignUpFormCollabV3'
 
 export const metadata = {
   title: 'Free Collab Photo Shoot',
@@ -8,10 +8,8 @@ export const metadata = {
 
 export default function SignUpCollabPage() {
   return (
-    <section className="min-h-screen bg-white pt-3 pb-10 sm:pt-5 sm:pb-16">
-      <div className="mx-auto max-w-md px-5">
-        <SignUpFormCollab />
-      </div>
+    <section className="min-h-screen bg-white">
+      <SignUpFormCollabV3 />
     </section>
   )
 }
