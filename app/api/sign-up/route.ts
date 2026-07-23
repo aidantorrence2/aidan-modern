@@ -64,7 +64,14 @@ export async function POST(req: Request) {
       }
     }
 
-    console.log('[SIGN-UP]', { city, contactMethod, contact: storedContact, raw: contact.trim(), moodboard, photos: photos ? `${photos.length} photo(s)` : null })
+    // Whenever normalization changed the number, keep exactly what the visitor
+    // typed on the row (moodboard entry, same pattern as "Location:") so the
+    // original is never lost to a bad inference.
+    const storedMoodboard = storedContact !== contact.trim()
+      ? [...(moodboard ?? []), `Raw contact: ${contact.trim()}`]
+      : moodboard
+
+    console.log('[SIGN-UP]', { city, contactMethod, contact: storedContact, raw: contact.trim(), moodboard: storedMoodboard, photos: photos ? `${photos.length} photo(s)` : null })
 
     const sb = getSupabase()
 
@@ -74,7 +81,7 @@ export async function POST(req: Request) {
         city: city.trim(),
         contact_method: contactMethod,
         contact: storedContact,
-        moodboard
+        moodboard: storedMoodboard
       })
       .select('id')
       .single()
@@ -162,7 +169,7 @@ export async function PATCH(req: Request) {
     const sb = getSupabase()
     const { data: row, error: fetchErr } = await sb
       .from('signups')
-      .select('id, contact, photo_urls')
+      .select('id, contact, photo_urls, moodboard')
       .eq('id', id)
       .single()
     if (fetchErr || !row || row.contact !== contact.trim()) {
@@ -177,7 +184,15 @@ export async function PATCH(req: Request) {
 
     const update: Record<string, unknown> = {}
     if (city) update.city = city
-    if (moodboard && moodboard.length > 0) update.moodboard = moodboard
+    if (moodboard && moodboard.length > 0) {
+      // The enrich step replaces the moodboard wholesale; carry over the
+      // "Raw contact:" entry written at capture time so it survives.
+      const existingMood: string[] = Array.isArray(row.moodboard) ? row.moodboard : []
+      const rawEntry = existingMood.find(m => /^raw contact:/i.test(m))
+      update.moodboard = rawEntry && !moodboard.some(m => /^raw contact:/i.test(m))
+        ? [...moodboard, rawEntry]
+        : moodboard
+    }
     if (photoUrls.length > 0) {
       const existing = Array.isArray(row.photo_urls) ? row.photo_urls : []
       update.photo_urls = [...existing, ...photoUrls]

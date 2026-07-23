@@ -272,7 +272,8 @@ export default function AdminClient({ signups: initial }: { signups: Signup[] })
               {filtered.map(s => {
                 const whatsapp = getWhatsapp(s)
                 const instagram = getInstagram(s)
-                const moodboardItems = s.moodboard ? s.moodboard.filter(m => !/^instagram:/i.test(m)) : []
+                const rawContact = s.moodboard?.find(m => /^raw contact:/i.test(m))?.replace(/^raw contact:\s*/i, '').trim()
+                const moodboardItems = s.moodboard ? s.moodboard.filter(m => !/^instagram:/i.test(m) && !/^raw contact:/i.test(m)) : []
                 const photos = getPhotos(s)
                 return (
                   <LazyCard key={s.id}>
@@ -287,7 +288,11 @@ export default function AdminClient({ signups: initial }: { signups: Signup[] })
                                 <a href={wa.link} target="_blank" rel="noopener noreferrer" className="text-base font-semibold text-white hover:text-emerald-400 transition">
                                   {wa.e164 ?? whatsapp}
                                 </a>
-                                {wa.resolved && wa.e164 && wa.e164.replace(/\D/g, '') !== whatsapp.replace(/\D/g, '') && (
+                                {rawContact ? (
+                                  <span className="ml-2 text-xs text-white/30 align-middle" title={`entered as "${rawContact}" — normalized at signup`}>
+                                    was {rawContact}
+                                  </span>
+                                ) : wa.resolved && wa.e164 && wa.e164.replace(/\D/g, '') !== whatsapp.replace(/\D/g, '') && (
                                   <span className="ml-2 text-xs text-white/30 align-middle" title={`entered as "${whatsapp}" — country code inferred from ${getLocation(s)}`}>
                                     was {whatsapp}
                                   </span>

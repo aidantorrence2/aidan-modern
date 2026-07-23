@@ -43,6 +43,32 @@ function selfCodedOverride(prepended: string, rawDigits: string): string | null 
   return asTyped && asTyped.isValid() ? asTyped.number : null
 }
 
+/**
+ * Canonicalize a candidate international number to strict E.164 via
+ * libphonenumber. Repairs the two breakages the "dial code prepended to
+ * whatever the visitor typed" flows produce:
+ *  - retained national trunk 0 after the country code (+66 0921 603 927 —
+ *    libphonenumber strips it while parsing, wa.me does not)
+ *  - doubled country code (+91 91 93735 53343 — the visitor typed their number
+ *    including its country code)
+ * Returns null when neither the number nor its repair is valid; callers keep
+ * the original so nothing is ever guessed into a different number.
+ */
+export function canonicalizeE164(candidate: string): string | null {
+  const d = (candidate || '').replace(/\D/g, '')
+  if (!d) return null
+  const direct = parsePhoneNumberFromString('+' + d)
+  if (direct && direct.isValid()) return direct.number
+  // Doubled country code: only attempted when the direct parse is invalid, and
+  // the repair must be valid under the SAME country code — never a reinterpretation.
+  const cc = direct?.countryCallingCode
+  if (cc && d.startsWith(cc + cc)) {
+    const repaired = parsePhoneNumberFromString('+' + d.slice(cc.length))
+    if (repaired && repaired.isValid() && repaired.countryCallingCode === cc) return repaired.number
+  }
+  return null
+}
+
 /** Ask DeepSeek for the international dialing code (digits, no +) of a location. */
 async function dialCodeFromLocationLLM(location: string): Promise<string | null> {
   const apiKey = process.env.DEEPSEEK_API_KEY
@@ -109,11 +135,11 @@ export async function normalizeWhatsappServer(contact: string, location: string)
     // the digits already carry a (different) country code. If that produced an
     // invalid number but the as-typed digits are already valid international,
     // the user self-coded a foreign number — keep theirs, don't double-code.
-    return selfCodedOverride(sync.e164, d) ?? sync.e164
+    return selfCodedOverride(sync.e164, d) ?? canonicalizeE164(sync.e164) ?? sync.e164
   }
 
   // 2. Already international but not flagged (rare formatting) — leave as-is.
-  if (d.startsWith('+') || d.startsWith('00')) return raw
+  if (d.startsWith('+') || d.startsWith('00')) return canonicalizeE164(d) ?? raw
 
   // 3. DeepSeek fallback: resolve the dialing code from the location.
   const cc = await dialCodeFromLocationLLM(location)
@@ -123,7 +149,7 @@ export async function normalizeWhatsappServer(contact: string, location: string)
   if (national.startsWith(cc) && national.length > cc.length + 5) return '+' + national // already had code
   if (national.startsWith('0')) national = national.slice(1) // strip national trunk 0
   const prepended = '+' + cc + national
-  return selfCodedOverride(prepended, d) ?? prepended
+  return selfCodedOverride(prepended, d) ?? canonicalizeE164(prepended) ?? prepended
 }
 
 /** Extract the real location: moodboard "Location: …" wins over the city field. */
