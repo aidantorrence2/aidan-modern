@@ -78,7 +78,7 @@ const howItWorks = [
 // this button on the confirmation screen is what actually opens the channel;
 // the number is still captured either way. The button renders only once this
 // is set, so an empty value simply leaves the done screen as it was.
-const LINE_ADD_URL = ''
+const LINE_ADD_URL = 'https://line.me/ti/p/XKpsnykVaM'
 
 // Both channels are phone numbers, so the dial-code select, the digit
 // validation and the E.164 normalization are shared — only the copy and the
