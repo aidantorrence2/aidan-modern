@@ -2,7 +2,7 @@
 import { useEffect, useRef, useState } from 'react'
 import NextImage from 'next/image'
 import CountryCodeSelect from './CountryCodeSelect'
-import { detectCountry } from '@/lib/detectCountry'
+import { detectCountry, detectPhoneCountry } from '@/lib/detectCountry'
 import { cityChipsForCountry, cityExamplesForCountry } from '@/lib/cityChips'
 import { initPageAnalytics, track, pageElapsedMs, flushNow } from '@/lib/track'
 
@@ -348,13 +348,17 @@ export default function SignUpFormCollabV3({ analyticsPath = '/sign-up-collab' }
 
     // Same detection the old form shipped with (PRs #27–#30): timezone →
     // country, chips + dial localized, nothing shown until detection succeeds.
+    // The two answer different questions, so they're detected separately: the
+    // chips are about the place they'll be photographed in, the dial code about
+    // whose phone number is going in the field.
     const country = detectCountry()
-    if (country) {
-      setCountryIso(country.iso)
-      // A restored dial code is the visitor's own pick — detection must not
-      // overwrite it.
-      if (!resumed?.countryCode) setCountryCode(country.dial)
-      track('country_detected', { iso: country.iso })
+    const phoneCountry = detectPhoneCountry()
+    if (country) setCountryIso(country.iso)
+    // A restored dial code is the visitor's own pick — detection must not
+    // overwrite it.
+    if (phoneCountry && !resumed?.countryCode) setCountryCode(phoneCountry.dial)
+    if (country || phoneCountry) {
+      track('country_detected', { iso: country?.iso ?? null, dial_iso: phoneCountry?.iso ?? null })
     }
 
     // Open on whichever channel they're likely to have. Skipped entirely for a
