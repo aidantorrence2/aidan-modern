@@ -85,19 +85,17 @@ const LINE_ADD_URL = 'https://line.me/ti/p/XKpsnykVaM'
 // stored contactMethod differ.
 type Channel = 'line' | 'whatsapp'
 
-const CHANNELS: Record<Channel, { name: string; placeholder: string; placeholderIntl: string; helper: string; step: string }> = {
+const CHANNELS: Record<Channel, { name: string; placeholder: string; placeholderIntl: string; step: string }> = {
   line: {
     name: 'LINE',
     placeholder: 'LINE number',
     placeholderIntl: 'LINE number, e.g. +66 81 234 5678',
-    helper: 'The phone number on your LINE account.',
     step: 'Drop your LINE number below',
   },
   whatsapp: {
     name: 'WhatsApp',
     placeholder: 'WhatsApp number',
     placeholderIntl: 'WhatsApp number, e.g. +66 81 234 5678',
-    helper: 'The number your WhatsApp is registered to.',
     step: 'Drop your WhatsApp number below',
   },
 }
@@ -746,7 +744,6 @@ export default function SignUpFormCollabV3({ analyticsPath = '/sign-up-collab' }
               placeholder={countryCode ? CHANNELS[channel].placeholder : CHANNELS[channel].placeholderIntl}
             />
           </div>
-          <p className="text-xs leading-snug text-neutral-400">{CHANNELS[channel].helper}</p>
           {/* The fallback stays quiet on purpose: the capture step is built to
               put no decision in front of the ask for the LINE majority. */}
           <p className="flex flex-wrap items-center gap-x-1.5 gap-y-1 text-xs text-neutral-400">
