@@ -15,7 +15,8 @@ import { initPageAnalytics, track, pageElapsedMs, flushNow } from '@/lib/track'
 //
 // The channel is LINE (Thailand) — it's the phone number on their LINE
 // account, so the dial-code detection and E.164 normalization the WhatsApp
-// flow shipped with all still apply unchanged.
+// flow shipped with all still apply unchanged. WhatsApp remains available as
+// a quiet fallback for the minority not on LINE.
 
 type Step = 'capture' | 'photos' | 'location' | 'instagram' | 'notes' | 'done'
 
@@ -65,17 +66,54 @@ const proofImages = [
   '/images/proof/DSC_0347.jpg',
 ]
 
+// The opening step names whichever channel is selected — see CHANNELS.step.
 const howItWorks = [
-  'Drop your LINE number below',
   'I message you the details — timing, locations, what to wear',
   'We plan the concept together and shoot for 1–2 hours',
   "You get the edited photos — it's 100% free, always",
 ]
 
+// Your own LINE add-friend link — LINE app → Settings → Profile → share, or
+// https://line.me/ti/p/~<your-line-id>. LINE can't deliver to a non-friend, so
+// this button on the confirmation screen is what actually opens the channel;
+// the number is still captured either way. The button renders only once this
+// is set, so an empty value simply leaves the done screen as it was.
+const LINE_ADD_URL = ''
+
+// Both channels are phone numbers, so the dial-code select, the digit
+// validation and the E.164 normalization are shared — only the copy and the
+// stored contactMethod differ.
+type Channel = 'line' | 'whatsapp'
+
+const CHANNELS: Record<Channel, { name: string; placeholder: string; placeholderIntl: string; helper: string; step: string }> = {
+  line: {
+    name: 'LINE',
+    placeholder: 'LINE number',
+    placeholderIntl: 'LINE number, e.g. +66 81 234 5678',
+    helper: 'The phone number on your LINE account.',
+    step: 'Drop your LINE number below',
+  },
+  whatsapp: {
+    name: 'WhatsApp',
+    placeholder: 'WhatsApp number',
+    placeholderIntl: 'WhatsApp number, e.g. +66 81 234 5678',
+    helper: 'The number your WhatsApp is registered to.',
+    step: 'Drop your WhatsApp number below',
+  },
+}
+
 function LineIcon({ className }: { className?: string }) {
   return (
     <svg viewBox="0 0 24 24" className={className} fill="currentColor" aria-hidden="true">
       <path d="M12 2C6.201 2 1.5 5.79 1.5 10.463c0 4.188 3.727 7.696 8.762 8.36.341.073.805.225.923.516.106.264.069.677.034.945l-.15.897c-.045.265-.21 1.037.909.565 1.12-.472 6.036-3.554 8.234-6.084C21.65 13.998 22.5 12.34 22.5 10.463 22.5 5.79 17.799 2 12 2zM7.79 13.19H5.702a.553.553 0 01-.553-.553V8.462a.553.553 0 111.106 0v3.622H7.79a.553.553 0 010 1.106zm2.166-.553a.553.553 0 01-1.106 0V8.462a.553.553 0 111.106 0v4.175zm5.028 0a.553.553 0 01-.995.332l-2.14-2.914v2.582a.553.553 0 01-1.106 0V8.462a.553.553 0 01.995-.332l2.14 2.914V8.462a.553.553 0 111.106 0v4.175zm3.35-2.641a.553.553 0 010 1.106h-1.535v.982h1.535a.553.553 0 010 1.106h-2.088a.553.553 0 01-.553-.553V8.462a.553.553 0 01.553-.553h2.088a.553.553 0 010 1.106h-1.535v.981h1.535z" />
+    </svg>
+  )
+}
+
+function WhatsappIcon({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" className={className} fill="currentColor" aria-hidden="true">
+      <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.9 9.9 0 004.79 1.22h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0012.04 2zm5.8 14.13c-.25.69-1.44 1.32-1.99 1.4-.53.08-1.2.11-1.94-.12a17.6 17.6 0 01-1.75-.65c-3.08-1.33-5.09-4.43-5.24-4.63-.15-.2-1.25-1.66-1.25-3.17s.79-2.25 1.07-2.56c.28-.31.61-.38.81-.38h.58c.19 0 .44-.07.69.53.25.6.85 2.08.93 2.23.08.15.13.33.02.53-.1.2-.15.33-.3.5l-.45.53c-.15.15-.3.32-.13.62.17.3.76 1.25 1.62 2.03 1.12 1 2.06 1.3 2.35 1.45.3.15.47.13.64-.08.17-.2.74-.86.94-1.16.2-.3.4-.25.66-.15.27.1 1.71.81 2 .96.3.15.5.22.57.35.07.13.07.75-.18 1.44z" />
     </svg>
   )
 }
@@ -90,8 +128,10 @@ export default function SignUpFormCollabV3({ analyticsPath = '/sign-up-collab' }
   const [step, setStep] = useState<Step>('capture')
   const [error, setError] = useState<string | null>(null)
 
-  // Step 1 — the lead
-  const [line, setLine] = useState('')
+  // Step 1 — the lead. LINE is the default; WhatsApp is the fallback for the
+  // minority who aren't on it.
+  const [channel, setChannel] = useState<Channel>('line')
+  const [phone, setPhone] = useState('')
   // Empty until detection succeeds — with no detected country there's no
   // dial-code dropdown at all and the visitor types the intl code themselves.
   const [countryCode, setCountryCode] = useState('')
@@ -105,7 +145,7 @@ export default function SignUpFormCollabV3({ analyticsPath = '/sign-up-collab' }
   const [processingPhotos, setProcessingPhotos] = useState(false)
 
   const fileRef = useRef<HTMLInputElement>(null)
-  const lineRef = useRef<HTMLInputElement>(null)
+  const phoneRef = useRef<HTMLInputElement>(null)
   const captureCardRef = useRef<HTMLDivElement>(null)
   const [showStickyCta, setShowStickyCta] = useState(false)
   const engagedFields = useRef<Set<string>>(new Set())
@@ -151,10 +191,19 @@ export default function SignUpFormCollabV3({ analyticsPath = '/sign-up-collab' }
     track(event, props)
   }
 
+  // Switching keeps whatever they've typed — it's the same phone number either
+  // way, so re-typing it would be the only cost of changing their mind.
+  function switchChannel(next: Channel) {
+    track('channel_switched', { to: next, had_digits: phone.replace(/\D/g, '').length > 0 })
+    setChannel(next)
+    setError(null)
+    phoneRef.current?.focus()
+  }
+
   function jumpToCapture() {
     track('sticky_cta_clicked')
     window.scrollTo({ top: 0, behavior: 'smooth' })
-    lineRef.current?.focus({ preventScroll: true })
+    phoneRef.current?.focus({ preventScroll: true })
   }
 
   // ── Step 1: capture the lead ──
@@ -171,7 +220,7 @@ export default function SignUpFormCollabV3({ analyticsPath = '/sign-up-collab' }
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           city: '',
-          contactMethod: 'line',
+          contactMethod: channel,
           contact,
           moodboard: ['Collab sign-up', 'Signup flow: v3-capture-first'],
         }),
@@ -186,7 +235,7 @@ export default function SignUpFormCollabV3({ analyticsPath = '/sign-up-collab' }
     leadRef.current = attempt()
       .catch(() => new Promise(r => setTimeout(r, 1500)).then(attempt))
       .then(lead => {
-        track('submit_success', { elapsed_ms: pageElapsedMs() })
+        track('submit_success', { channel, elapsed_ms: pageElapsedMs() })
         flushNow()
         if (typeof window !== 'undefined') {
           const fbq = (window as typeof window & { fbq?: (...args: unknown[]) => void }).fbq
@@ -205,17 +254,17 @@ export default function SignUpFormCollabV3({ analyticsPath = '/sign-up-collab' }
     const data = Object.fromEntries(new FormData(e.currentTarget).entries()) as Record<string, string>
     if (data.company) { track('honeypot_triggered'); setStep('location'); return }
 
-    const digits = line.replace(/\D/g, '')
+    const digits = phone.replace(/\D/g, '')
     if (digits.length < 7) {
-      track('validation_error', { reason: 'line_invalid' })
-      setError('Please enter the phone number on your LINE account.')
-      lineRef.current?.focus()
+      track('validation_error', { reason: `${channel}_invalid` })
+      setError(`Please enter your ${CHANNELS[channel].name} number.`)
+      phoneRef.current?.focus()
       return
     }
 
-    track('submit_attempt', { country_code: countryCode, digits: digits.length, elapsed_ms: pageElapsedMs() })
+    track('submit_attempt', { channel, country_code: countryCode, digits: digits.length, elapsed_ms: pageElapsedMs() })
     setError(null)
-    startLeadPost(countryCode ? countryCode + ' ' + line.trim() : line.trim())
+    startLeadPost(countryCode ? countryCode + ' ' + phone.trim() : phone.trim())
     setStep('location')
     track('slide_shown', { slide: 'location' })
     window.scrollTo({ top: 0 })
@@ -324,8 +373,8 @@ export default function SignUpFormCollabV3({ analyticsPath = '/sign-up-collab' }
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
             city: location.trim(),
-            contactMethod: 'line',
-            contact: countryCode ? countryCode + ' ' + line.trim() : line.trim(),
+            contactMethod: channel,
+            contact: countryCode ? countryCode + ' ' + phone.trim() : phone.trim(),
             moodboard: moodboardSoFar(),
             photos,
           }),
@@ -358,7 +407,26 @@ export default function SignUpFormCollabV3({ analyticsPath = '/sign-up-collab' }
             </div>
           </div>
           <div className="px-6 pt-4 pb-6 space-y-5">
-            <p className="text-sm text-neutral-500">I&apos;ll message you on LINE within 24 hours. Let&apos;s make something great together.</p>
+            {/* LINE can't deliver to a non-friend, so this is the tap that
+                actually opens the channel — offered at peak intent, right
+                after the lead is already saved. */}
+            {channel === 'line' && LINE_ADD_URL ? (
+              <div className="space-y-2">
+                <a
+                  href={LINE_ADD_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => { track('line_add_clicked'); flushNow() }}
+                  className="flex w-full items-center justify-center gap-2 rounded-full bg-[#06C755] py-3.5 text-sm font-bold text-white shadow-lg shadow-[#06C755]/25 transition hover:bg-[#05b34c]"
+                  data-cta="sign-up-collab-v3-line-add"
+                >
+                  <LineIcon className="h-5 w-5" />
+                  Add me on LINE
+                </a>
+                <p className="text-center text-xs text-neutral-400">One tap &mdash; then I can message you straight away.</p>
+              </div>
+            ) : null}
+            <p className="text-sm text-neutral-500">I&apos;ll message you on {CHANNELS[channel].name} within 24 hours. Let&apos;s make something great together.</p>
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-1">
                 <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-neutral-400">Type</p>
@@ -642,28 +710,49 @@ export default function SignUpFormCollabV3({ analyticsPath = '/sign-up-collab' }
       <div ref={captureCardRef} className="relative z-10 mx-4 -mt-5 rounded-2xl border border-neutral-200 bg-white p-4 shadow-xl">
         <form onSubmit={onCapture} className="space-y-3">
           <p className="flex items-start gap-2 text-sm leading-snug text-neutral-600">
-            <LineIcon className="mt-0.5 h-4 w-4 shrink-0 text-[#06C755]" />
-            <span>I&apos;ll message you on <span className="font-semibold text-neutral-800">LINE</span> with all the details &mdash; timing, location ideas, what to wear, and next steps.</span>
+            {channel === 'line'
+              ? <LineIcon className="mt-0.5 h-4 w-4 shrink-0 text-[#06C755]" />
+              : <WhatsappIcon className="mt-0.5 h-4 w-4 shrink-0 text-[#25D366]" />}
+            <span>I&apos;ll message you on <span className="font-semibold text-neutral-800">{CHANNELS[channel].name}</span> with all the details &mdash; timing, location ideas, what to wear, and next steps.</span>
           </p>
           <div className="flex gap-2">
             {countryCode && <CountryCodeSelect light value={countryCode} onChange={code => { fieldEngaged('country_code'); track('country_code_changed', { code }); setCountryCode(code); setError(null) }} />}
             <input
-              ref={lineRef}
+              ref={phoneRef}
               type="tel"
               inputMode="tel"
               autoComplete="tel-national"
-              name="line"
-              value={line}
-              onChange={e => { fieldEngaged('line'); setLine(e.target.value); setError(null) }}
+              name={channel}
+              value={phone}
+              onChange={e => { fieldEngaged(channel); setPhone(e.target.value); setError(null) }}
               onBlur={() => {
-                const digits = line.replace(/\D/g, '')
-                if (digits) trackOnce('line_filled', digits, { digits: digits.length })
+                const digits = phone.replace(/\D/g, '')
+                if (digits) trackOnce(`${channel}_filled`, digits, { digits: digits.length })
               }}
               className="min-w-0 flex-1 rounded-xl border border-neutral-300 bg-white px-4 py-3 text-base text-neutral-900 placeholder-neutral-400 outline-none transition focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200"
-              placeholder={countryCode ? 'LINE number' : 'LINE number, e.g. +66 81 234 5678'}
+              placeholder={countryCode ? CHANNELS[channel].placeholder : CHANNELS[channel].placeholderIntl}
             />
           </div>
-          <p className="text-xs leading-snug text-neutral-400">The phone number on your LINE account.</p>
+          <p className="text-xs leading-snug text-neutral-400">{CHANNELS[channel].helper}</p>
+          {/* The fallback stays quiet on purpose: the capture step is built to
+              put no decision in front of the ask for the LINE majority. */}
+          <p className="flex flex-wrap items-center gap-x-1.5 gap-y-1 text-xs text-neutral-400">
+            {channel === 'line' ? (
+              <>
+                <span>No LINE?</span>
+                <button type="button" onClick={() => switchChannel('whatsapp')} className="font-semibold text-neutral-600 underline underline-offset-2 transition hover:text-neutral-900">
+                  Use WhatsApp
+                </button>
+              </>
+            ) : (
+              <>
+                <span>Sending to WhatsApp.</span>
+                <button type="button" onClick={() => switchChannel('line')} className="font-semibold text-neutral-600 underline underline-offset-2 transition hover:text-neutral-900">
+                  Back to LINE
+                </button>
+              </>
+            )}
+          </p>
           {error && (
             <div className="rounded-xl border border-red-300 bg-red-50 px-4 py-3 text-sm font-medium text-red-700">
               {error}
@@ -697,7 +786,7 @@ export default function SignUpFormCollabV3({ analyticsPath = '/sign-up-collab' }
         <div className="mt-8 space-y-2">
           <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-neutral-400">How it works</p>
           <ul className="space-y-2">
-            {howItWorks.map((c, i) => (
+            {[CHANNELS[channel].step, ...howItWorks].map((c, i) => (
               <li key={i} className="flex items-start gap-2.5">
                 <span className="mt-0.5 flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-emerald-600">
                   <CheckIcon className="h-2.5 w-2.5" />
