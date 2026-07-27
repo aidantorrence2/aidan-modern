@@ -177,6 +177,9 @@ export default function SignUpFormCollabV3({ analyticsPath = '/sign-up-collab' }
   const chips = cityChipsForCountry(countryIso)
   const cityExamples = cityExamplesForCountry(countryIso)
 
+  // The capture CTA doubles as the add-friend tap on the LINE channel.
+  const opensLine = channel === 'line' && !!LINE_ADD_URL
+
   function fieldEngaged(field: string) {
     if (engagedFields.current.size === 0) track('form_start', { first_field: field })
     if (!engagedFields.current.has(field)) {
@@ -265,6 +268,16 @@ export default function SignUpFormCollabV3({ analyticsPath = '/sign-up-collab' }
     track('submit_attempt', { channel, country_code: countryCode, digits: digits.length, elapsed_ms: pageElapsedMs() })
     setError(null)
     startLeadPost(countryCode ? countryCode + ' ' + phone.trim() : phone.trim())
+
+    // Opened synchronously inside the submit handler so pop-up blockers treat
+    // it as user-initiated — the lead POST is already in flight and doesn't
+    // need to finish first. New tab, so this page (and the rest of the flow)
+    // survives behind LINE.
+    if (opensLine) {
+      track('line_add_clicked', { placement: 'capture' })
+      flushNow()
+      window.open(LINE_ADD_URL, '_blank', 'noopener,noreferrer')
+    }
     setStep('location')
     track('slide_shown', { slide: 'location' })
     window.scrollTo({ top: 0 })
@@ -416,7 +429,7 @@ export default function SignUpFormCollabV3({ analyticsPath = '/sign-up-collab' }
                   href={LINE_ADD_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  onClick={() => { track('line_add_clicked'); flushNow() }}
+                  onClick={() => { track('line_add_clicked', { placement: 'done' }); flushNow() }}
                   className="flex w-full items-center justify-center gap-2 rounded-full bg-[#06C755] py-3.5 text-sm font-bold text-white shadow-lg shadow-[#06C755]/25 transition hover:bg-[#05b34c]"
                   data-cta="sign-up-collab-v3-line-add"
                 >
@@ -760,13 +773,22 @@ export default function SignUpFormCollabV3({ analyticsPath = '/sign-up-collab' }
           )}
           {/* Honeypot */}
           <input type="text" name="company" className="hidden" tabIndex={-1} autoComplete="off" />
+          {/* One action: the number is saved and LINE opens in a new tab, so
+              nothing is lost whichever way they follow through. */}
           <button
             type="submit"
-            className="w-full rounded-full bg-emerald-600 py-4 text-base font-bold text-white shadow-lg shadow-emerald-600/25 transition hover:bg-emerald-500"
+            className={`flex w-full items-center justify-center gap-2 rounded-full py-4 text-base font-bold text-white shadow-lg transition ${
+              opensLine
+                ? 'bg-[#06C755] shadow-[#06C755]/25 hover:bg-[#05b34c]'
+                : 'bg-emerald-600 shadow-emerald-600/25 hover:bg-emerald-500'
+            }`}
             data-cta="sign-up-collab-v3-submit"
           >
-            Get Started
+            {opensLine ? <><LineIcon className="h-5 w-5" />Add me on LINE</> : 'Get Started'}
           </button>
+          {opensLine && (
+            <p className="text-center text-xs text-neutral-400">Opens LINE &mdash; I&apos;ll have your number either way.</p>
+          )}
         </form>
       </div>
 
