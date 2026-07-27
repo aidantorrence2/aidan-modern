@@ -816,10 +816,10 @@ export default function SignUpFormCollabV3({ analyticsPath = '/sign-up-collab' }
       <button
         type="button"
         onClick={() => goBack(back)}
-        aria-label="Back"
-        className="-my-2 -ml-2 flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-neutral-400 transition hover:bg-neutral-100 hover:text-neutral-800 active:scale-95"
+        className="-ml-1 flex shrink-0 items-center gap-1 rounded-full border border-neutral-200 bg-[#faf9f6] py-2.5 pl-2.5 pr-4 text-[12px] font-bold text-neutral-700 transition hover:border-neutral-300 hover:bg-neutral-100 hover:text-neutral-900 active:scale-95"
       >
-        <svg viewBox="0 0 24 24" className="h-[17px] w-[17px]" fill="none" stroke="currentColor" strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6" /></svg>
+        <svg viewBox="0 0 24 24" className="h-3.5 w-3.5" fill="none" stroke="currentColor" strokeWidth={3} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6" /></svg>
+        Back
       </button>
       <p className="shrink-0 text-[9px] font-bold uppercase tracking-[0.22em] text-neutral-400">{n} / 5</p>
       <span className="flex flex-1 gap-1.5" aria-hidden="true">
