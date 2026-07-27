@@ -66,6 +66,35 @@ const proofImages = [
   '/images/proof/DSC_0347.jpg',
 ]
 
+// Each post-capture slide opens on a band of real shoots — the work is the
+// pitch, and it should stay the pitch after the tap, not only on the hero.
+const locationBand = [
+  '/images/proof/000009.jpg',
+  '/images/proof/000023.jpg',
+  '/images/proof/DSC_0321.jpg',
+  '/images/proof/000015-3.jpg',
+  '/images/proof/000062.jpg',
+  '/images/proof/DSC_0526.jpg',
+]
+
+const instagramBand = [
+  '/images/proof/000013-3.jpg',
+  '/images/proof/000042-5.jpg',
+  '/images/proof/000005-3.jpg',
+  '/images/proof/000019-6.jpg',
+  '/images/proof/000053-5.jpg',
+]
+
+// Single subjects only — the collage moodboards turn to mush at thumbnail size.
+const notesBand = [
+  '/images/moodboards/dramatic-fashion.jpg',
+  '/images/proof/000012.jpg',
+  '/images/proof/000025.jpg',
+  '/images/proof/000039.jpg',
+  '/images/proof/000014-3.jpg',
+  '/images/proof/000016.jpg',
+]
+
 // The opening step names whichever channel is selected — see CHANNELS.step.
 const howItWorks = [
   'I message you the details — timing, locations, what to wear',
@@ -79,6 +108,12 @@ const howItWorks = [
 // percent-encoded because some in-app browsers mangle a bare one in the path.
 // Empty disables the button and falls the capture card back to a number field.
 const LINE_ADD_URL = 'https://line.me/R/ti/p/%40594xieva'
+
+// A LINE row is created before there's anything to identify it by — they
+// tapped the add link, so the contact column can only say so. Their Instagram
+// handle lands in the moodboard as it does on every other signup, and admin
+// surfaces it from there.
+const LINE_ROW_CONTACT = 'LINE — added me'
 
 // Both channels are phone numbers, so the dial-code select, the digit
 // validation and the E.164 normalization are shared — only the copy and the
@@ -236,16 +271,16 @@ export default function SignUpFormCollabV3({ analyticsPath = '/sign-up-collab' }
   const leadRef = useRef<Promise<{ id: number | null; contact: string } | null> | null>(null)
   const patchChain = useRef<Promise<unknown> | null>(null)
 
-  function startLeadPost(contact: string) {
+  function startLeadPost(contact: string, extra?: { city?: string; moodboard?: string[] }) {
     const attempt = async (): Promise<{ id: number | null; contact: string }> => {
       const res = await fetch('/api/sign-up', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          city: '',
+          city: extra?.city ?? '',
           contactMethod: channel,
           contact,
-          moodboard: ['Collab sign-up', 'Signup flow: v3-capture-first'],
+          moodboard: extra?.moodboard ?? ['Collab sign-up', 'Signup flow: v3-capture-first'],
         }),
       })
       const json = await res.json().catch(() => null)
@@ -260,7 +295,8 @@ export default function SignUpFormCollabV3({ analyticsPath = '/sign-up-collab' }
       .then(lead => {
         track('submit_success', { channel, elapsed_ms: pageElapsedMs() })
         flushNow()
-        if (typeof window !== 'undefined') {
+        // The LINE path already counted its Lead at the add-friend tap.
+        if (typeof window !== 'undefined' && !opensLine) {
           const fbq = (window as typeof window & { fbq?: (...args: unknown[]) => void }).fbq
           if (typeof fbq === 'function') fbq('track', 'Lead', { source: 'sign-up-collab-v3' })
         }
@@ -377,6 +413,13 @@ export default function SignUpFormCollabV3({ analyticsPath = '/sign-up-collab' }
       moodboard: moodboardSoFar(),
       ...(withPhotos && withPhotos.length > 0 ? { photos: withPhotos } : {}),
     }
+    // The LINE path has no number to POST at capture, so the row is created on
+    // the first advance that carries anything — same as the number channels,
+    // where it already exists by now. Dropping off later costs the rest of the
+    // profile, never the lead.
+    if (!leadRef.current && opensLine) {
+      startLeadPost(LINE_ROW_CONTACT, { city: location.trim(), moodboard: moodboardSoFar() })
+    }
     patchChain.current = (patchChain.current ?? Promise.resolve())
       .then(async () => {
         const lead = leadRef.current ? await leadRef.current : null
@@ -461,25 +504,6 @@ export default function SignUpFormCollabV3({ analyticsPath = '/sign-up-collab' }
             </div>
           </div>
           <div className="px-6 pt-4 pb-6 space-y-5">
-            {/* LINE can't deliver to a non-friend, so this is the tap that
-                actually opens the channel — offered at peak intent, right
-                after the lead is already saved. */}
-            {channel === 'line' && LINE_ADD_URL ? (
-              <div className="space-y-2">
-                <a
-                  href={LINE_ADD_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={() => { track('line_add_clicked', { placement: 'done' }); flushNow() }}
-                  className="flex w-full items-center justify-center gap-2 rounded-full bg-[#06C755] py-3.5 text-sm font-bold text-white shadow-lg shadow-[#06C755]/25 transition hover:bg-[#05b34c]"
-                  data-cta="sign-up-collab-v3-line-add"
-                >
-                  <LineIcon className="h-5 w-5" />
-                  Add me on LINE
-                </a>
-                <p className="text-center text-xs text-neutral-400">One tap &mdash; then I can message you straight away.</p>
-              </div>
-            ) : null}
             <p className="text-sm text-neutral-500">I&apos;ll message you on {CHANNELS[channel].name} within 24 hours. Let&apos;s make something great together.</p>
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-1">
@@ -519,11 +543,34 @@ export default function SignUpFormCollabV3({ analyticsPath = '/sign-up-collab' }
   }
 
   // ── Slides 2–6: one field per page, instant transitions ──
+  // Each slide opens on a strip of real work — the shoot is the pitch, and it
+  // has to stay the pitch after the tap, not just on the hero.
   const slideKicker = (n: number) => (
-    <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-neutral-400">Step {n} of 5</p>
+    <div className="flex items-center gap-2">
+      <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-neutral-400">Step {n} of 5</p>
+      <span className="flex flex-1 gap-1" aria-hidden="true">
+        {[2, 3, 4, 5].map(i => (
+          <span key={i} className={`h-0.5 flex-1 rounded-full transition-colors ${i <= n ? 'bg-emerald-500' : 'bg-neutral-200'}`} />
+        ))}
+      </span>
+    </div>
   )
   const slideTitle = (t: string) => (
-    <h1 className="mt-1 font-display text-3xl font-semibold text-neutral-900" style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic' }}>{t}</h1>
+    <h1 className="mt-2 font-display text-3xl font-semibold text-neutral-900" style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic' }}>{t}</h1>
+  )
+  // A full-bleed band of shoots, bled past the slide's own padding.
+  const slideBand = (srcs: string[], caption: string) => (
+    <div className="-mx-5 mt-5">
+      <div className="flex gap-1.5 overflow-x-auto px-5 pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+        {srcs.map((src, i) => (
+          <div key={i} className="relative h-40 w-28 shrink-0 overflow-hidden rounded-xl bg-neutral-100 shadow-sm">
+            <NextImage src={src} alt="" width={224} height={320} sizes="112px" className="h-full w-full object-cover" />
+            <span className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-black/5" />
+          </div>
+        ))}
+      </div>
+      <p className="px-5 pt-1 text-[10px] font-semibold uppercase tracking-[0.15em] text-neutral-400">{caption}</p>
+    </div>
   )
   const nextBtn = (onClick: () => void, label = 'Next', busy = false) => (
     <button
@@ -551,7 +598,7 @@ export default function SignUpFormCollabV3({ analyticsPath = '/sign-up-collab' }
     return (
       <div className="mx-auto max-w-md px-5 py-8">
         {slideKicker(3)}
-        {slideTitle('Photos of yourself')}
+        {slideTitle('Your photo')}
         <p className="mt-1.5 text-sm text-neutral-500">Selfies are fine &mdash; just looking to see the real you.</p>
         <div className="mt-4 space-y-1.5">
           <p className="flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-[0.15em] text-emerald-600">
@@ -613,7 +660,7 @@ export default function SignUpFormCollabV3({ analyticsPath = '/sign-up-collab' }
                 <svg viewBox="0 0 24 24" className="h-7 w-7" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                   <path d="M12 16V4m0 0L7 9m5-5l5 5" /><path d="M4 17v2a1 1 0 001 1h14a1 1 0 001-1v-2" />
                 </svg>
-                <span className="text-xs font-bold uppercase tracking-wide">Add photos</span>
+                <span className="text-xs font-bold uppercase tracking-wide">Upload</span>
               </>
             )}
           </button>
@@ -621,8 +668,14 @@ export default function SignUpFormCollabV3({ analyticsPath = '/sign-up-collab' }
         <input ref={fileRef} type="file" accept="image/*" multiple onChange={handlePhotos} className="hidden" />
         <div className="mt-5 space-y-3">
           {errorBox}
-          {nextBtn(() => advance('instagram', photos.length > 0, photos), 'Next', processingPhotos)}
-          {skipBtn(() => advance('instagram', false))}
+          {nextBtn(() => {
+            if (photos.length === 0) {
+              track('validation_error', { reason: 'photo_missing' })
+              setError("Add one photo of yourself so I know who I'm shooting.")
+              return
+            }
+            advance('instagram', true, photos)
+          }, 'Next', processingPhotos)}
         </div>
       </div>
     )
@@ -633,15 +686,17 @@ export default function SignUpFormCollabV3({ analyticsPath = '/sign-up-collab' }
       <div className="mx-auto max-w-md px-5 py-8">
         {slideKicker(2)}
         {slideTitle('Where are you located?')}
-        {chips.length > 0 && <div className="mt-6 flex flex-wrap gap-2">
+        <p className="mt-1.5 text-sm text-neutral-500">So I can pick the right spots for the shoot.</p>
+        {slideBand(locationBand, "Locations I've shot · on film")}
+        {chips.length > 0 && <div className="mt-5 flex flex-wrap gap-2">
           {chips.map(chip => (
             <button
               key={chip}
               type="button"
-              onClick={() => { fieldEngaged('location'); track('location_selected', { method: 'chip', value: chip }); setLocation(chip) }}
+              onClick={() => { fieldEngaged('location'); track('location_selected', { method: 'chip', value: chip }); setLocation(chip); setError(null) }}
               className={`rounded-full border px-4 py-1.5 text-sm font-semibold transition-all ${
                 location.trim() === chip
-                  ? 'border-emerald-500 bg-emerald-50 text-emerald-700'
+                  ? 'border-emerald-500 bg-emerald-50 text-emerald-700 shadow-sm shadow-emerald-600/10'
                   : 'border-neutral-200 bg-white text-neutral-600 hover:border-neutral-400 hover:text-neutral-800'
               }`}
             >
@@ -651,7 +706,7 @@ export default function SignUpFormCollabV3({ analyticsPath = '/sign-up-collab' }
         </div>}
         <input
           value={location}
-          onChange={e => { fieldEngaged('location'); setLocation(e.target.value) }}
+          onChange={e => { fieldEngaged('location'); setLocation(e.target.value); setError(null) }}
           onBlur={() => {
             const v = location.trim()
             if (v && !chips.includes(v)) trackOnce('location_selected', v, { method: 'typed', value: v.slice(0, 80) })
@@ -667,8 +722,14 @@ export default function SignUpFormCollabV3({ analyticsPath = '/sign-up-collab' }
         />
         <div className="mt-8 space-y-3">
           {errorBox}
-          {nextBtn(() => advance('photos', location.trim().length > 0))}
-          {skipBtn(() => advance('photos', false))}
+          {nextBtn(() => {
+            if (!location.trim()) {
+              track('validation_error', { reason: 'location_missing' })
+              setError('Let me know where you are so I can plan the shoot.')
+              return
+            }
+            advance('photos', true)
+          })}
         </div>
       </div>
     )
@@ -678,22 +739,27 @@ export default function SignUpFormCollabV3({ analyticsPath = '/sign-up-collab' }
     return (
       <div className="mx-auto max-w-md px-5 py-8">
         {slideKicker(4)}
-        <h1 className="mt-1 font-display text-3xl font-semibold text-neutral-900" style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic' }}>
+        <h1 className="mt-2 font-display text-3xl font-semibold text-neutral-900" style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic' }}>
           Your Instagram <span className="text-lg font-normal text-neutral-400">(optional)</span>
         </h1>
-        <input
-          value={instagram}
-          onChange={e => { fieldEngaged('instagram'); setInstagram(e.target.value) }}
-          onBlur={() => {
-            const v = instagram.trim()
-            if (v) trackOnce('instagram_filled', v, { chars: v.length })
-          }}
-          autoCapitalize="off"
-          autoCorrect="off"
-          spellCheck={false}
-          className={`${inputCls} mt-6`}
-          placeholder="@yourhandle"
-        />
+        <p className="mt-1.5 text-sm text-neutral-500">So I can see your style &mdash; and tag you when the shots go up.</p>
+        {slideBand(instagramBand, 'Shot & edited by me')}
+        <div className="mt-5 flex items-center gap-2 rounded-xl border border-neutral-300 bg-white px-3 transition focus-within:border-emerald-500 focus-within:ring-2 focus-within:ring-emerald-200">
+          <span className="text-base font-semibold text-neutral-400">@</span>
+          <input
+            value={instagram}
+            onChange={e => { fieldEngaged('instagram'); setInstagram(e.target.value) }}
+            onBlur={() => {
+              const v = instagram.trim()
+              if (v) trackOnce('instagram_filled', v, { chars: v.length })
+            }}
+            autoCapitalize="off"
+            autoCorrect="off"
+            spellCheck={false}
+            className="w-full bg-transparent py-3 text-sm text-neutral-900 placeholder-neutral-400 outline-none"
+            placeholder="yourhandle"
+          />
+        </div>
         <div className="mt-8 space-y-3">
           {nextBtn(() => advance('notes', instagram.trim().length > 0))}
           {skipBtn(() => advance('notes', false))}
@@ -708,6 +774,7 @@ export default function SignUpFormCollabV3({ analyticsPath = '/sign-up-collab' }
         {slideKicker(5)}
         {slideTitle('Anything else?')}
         <p className="mt-1.5 text-sm text-neutral-500">Your own idea, inspo, references &mdash; anything.</p>
+        {slideBand(notesBand, 'A few directions we could take it')}
         <textarea
           id="collab-idea"
           value={idea}
@@ -717,7 +784,7 @@ export default function SignUpFormCollabV3({ analyticsPath = '/sign-up-collab' }
             if (v) trackOnce('notes_filled', v, { chars: v.length })
           }}
           rows={4}
-          className={`${inputCls} mt-6 resize-none`}
+          className={`${inputCls} mt-5 resize-none`}
           placeholder="Totally optional..."
         />
         <div className="mt-8 space-y-3">
