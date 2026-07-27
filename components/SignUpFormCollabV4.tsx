@@ -275,6 +275,10 @@ export default function SignUpFormCollabV4({ analyticsPath = '/sign-up-collab-v4
   const [leadRecord, setLeadRecord] = useState<{ id: number | null; contact: string } | null>(null)
   const [postedContact, setPostedContact] = useState<string | null>(null)
   const [leadFired, setLeadFired] = useState(false)
+  // The channel we opened on. Drives segment ORDER only — it stays put when
+  // they toggle, because a control that reorders itself under the thumb is
+  // horrible to use.
+  const [defaultChannel, setDefaultChannel] = useState<Channel>('line')
   const [hydrated, setHydrated] = useState(false)
 
   useEffect(() => {
@@ -306,6 +310,7 @@ export default function SignUpFormCollabV4({ analyticsPath = '/sign-up-collab-v4
         setLeadRecord(resumed.lead)
         leadRef.current = Promise.resolve(resumed.lead)
       }
+      setDefaultChannel(resumed.channel)
       track('flow_resumed', { slide: resumed.step, has_row: !!resumed.lead, away_ms: Date.now() - resumed.ts })
     }
 
@@ -322,6 +327,7 @@ export default function SignUpFormCollabV4({ analyticsPath = '/sign-up-collab-v4
     if (!resumed) {
       const preferred = preferredChannel(country?.iso ?? null)
       setChannel(preferred)
+      setDefaultChannel(preferred)
       let primaryLang: string | null = null
       try { primaryLang = navigator.languages?.[0] ?? navigator.language ?? null } catch {}
       track('channel_defaulted', { to: preferred, iso: country?.iso ?? null, lang: primaryLang })
@@ -1018,15 +1024,15 @@ export default function SignUpFormCollabV4({ analyticsPath = '/sign-up-collab-v4
     return slideShell(4, (
       <>
         {kicker(4, BACK_TO.capture)}
-        {slideTitle('Where do I message you?')}
-        <p className="mt-2 text-[13px] leading-relaxed text-neutral-500">
-          I&rsquo;ll send the details &mdash; timing, location ideas, what to wear, and next steps.
+        {slideTitle(`Your ${CHANNELS[channel].name}`)}
+        <p className="mt-2.5 text-[15px] leading-relaxed text-neutral-600">
+          This is how I will contact you. I&rsquo;ll send you the details &mdash; timing, location ideas, what to wear, and next steps.
         </p>
         <form onSubmit={onCapture} className="mt-5 space-y-3">
           {/* Same number either way — the segment only says which app it's on. */}
           <div className="grid grid-cols-2 gap-1 rounded-2xl border border-neutral-200 bg-[#f5f5f4] p-1">
-            {segment('line')}
-            {segment('whatsapp')}
+            {segment(defaultChannel)}
+            {segment(defaultChannel === 'line' ? 'whatsapp' : 'line')}
           </div>
           <div className="flex gap-2">
             {countryCode && <CountryCodeSelect light value={countryCode} onChange={code => { fieldEngaged('country_code'); track('country_code_changed', { code }); setCountryCode(code); setError(null) }} />}
