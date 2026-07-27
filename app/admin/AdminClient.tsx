@@ -29,9 +29,15 @@ function getInstagram(s: Signup): string | null {
   return null
 }
 
-function getWhatsapp(s: Signup): string | null {
-  if (s.contact_method === 'whatsapp') return s.contact
+/** WhatsApp and LINE are both phone-number channels and share one row. */
+function getPhoneContact(s: Signup): string | null {
+  if (s.contact_method === 'whatsapp' || s.contact_method === 'line') return s.contact
   return null
+}
+
+/** LINE signups written before the column knew 'line' carry "Channel: LINE". */
+function isLine(s: Signup): boolean {
+  return s.contact_method === 'line' || !!s.moodboard?.some(m => /^channel:\s*line$/i.test(m))
 }
 
 /** The user's real location is stored in moodboard as "Location: <place>";
@@ -106,9 +112,9 @@ export default function AdminClient({ signups: initial }: { signups: Signup[] })
         if (normalizedQuery) {
           const ig = getInstagram(s)
           const igMatch = ig && ig.replace(/^@/, '').toLowerCase().includes(normalizedQuery)
-          const wa = getWhatsapp(s)
-          const waMatch = wa && digitsQuery && wa.replace(/\D/g, '').includes(digitsQuery)
-          if (!igMatch && !waMatch) return false
+          const phone = getPhoneContact(s)
+          const phoneMatch = phone && digitsQuery && phone.replace(/\D/g, '').includes(digitsQuery)
+          if (!igMatch && !phoneMatch) return false
         }
         if (normalizedLocation && !getLocation(s).toLowerCase().includes(normalizedLocation)) return false
         return true
@@ -270,10 +276,11 @@ export default function AdminClient({ signups: initial }: { signups: Signup[] })
           ) : (
             <div className="space-y-4">
               {filtered.map(s => {
-                const whatsapp = getWhatsapp(s)
+                const phone = getPhoneContact(s)
+                const line = isLine(s)
                 const instagram = getInstagram(s)
                 const rawContact = s.moodboard?.find(m => /^raw contact:/i.test(m))?.replace(/^raw contact:\s*/i, '').trim()
-                const moodboardItems = s.moodboard ? s.moodboard.filter(m => !/^instagram:/i.test(m) && !/^raw contact:/i.test(m)) : []
+                const moodboardItems = s.moodboard ? s.moodboard.filter(m => !/^instagram:/i.test(m) && !/^raw contact:/i.test(m) && !/^channel:/i.test(m)) : []
                 const photos = getPhotos(s)
                 return (
                   <LazyCard key={s.id}>
@@ -281,24 +288,27 @@ export default function AdminClient({ signups: initial }: { signups: Signup[] })
                       {/* Header */}
                       <div className="flex items-start justify-between mb-3">
                         <div className="flex flex-col gap-1">
-                          {whatsapp && (() => {
-                            const wa = normalizeWhatsapp(whatsapp, getLocation(s))
+                          {phone && (() => {
+                            const wa = normalizeWhatsapp(phone, getLocation(s))
+                            // LINE has no "message this number" web link — the number
+                            // is what you add as a friend, so link it as tel:.
+                            const href = line ? `tel:${(wa.e164 ?? phone).replace(/[^\d+]/g, '')}` : wa.link
                             return (
                               <div>
-                                <a href={wa.link} target="_blank" rel="noopener noreferrer" className="text-base font-semibold text-white hover:text-emerald-400 transition">
-                                  {wa.e164 ?? whatsapp}
+                                <a href={href} target="_blank" rel="noopener noreferrer" className="text-base font-semibold text-white hover:text-emerald-400 transition">
+                                  {wa.e164 ?? phone}
                                 </a>
                                 {rawContact ? (
                                   <span className="ml-2 text-xs text-white/30 align-middle" title={`entered as "${rawContact}" — normalized at signup`}>
                                     was {rawContact}
                                   </span>
-                                ) : wa.resolved && wa.e164 && wa.e164.replace(/\D/g, '') !== whatsapp.replace(/\D/g, '') && (
-                                  <span className="ml-2 text-xs text-white/30 align-middle" title={`entered as "${whatsapp}" — country code inferred from ${getLocation(s)}`}>
-                                    was {whatsapp}
+                                ) : wa.resolved && wa.e164 && wa.e164.replace(/\D/g, '') !== phone.replace(/\D/g, '') && (
+                                  <span className="ml-2 text-xs text-white/30 align-middle" title={`entered as "${phone}" — country code inferred from ${getLocation(s)}`}>
+                                    was {phone}
                                   </span>
                                 )}
-                                <span className="ml-2 rounded-full bg-white/10 px-2.5 py-0.5 text-xs font-medium text-white/50 align-middle">
-                                  WhatsApp
+                                <span className={`ml-2 rounded-full px-2.5 py-0.5 text-xs font-medium align-middle ${line ? 'bg-[#06C755]/15 text-[#06C755]' : 'bg-white/10 text-white/50'}`}>
+                                  {line ? 'LINE' : 'WhatsApp'}
                                 </span>
                               </div>
                             )

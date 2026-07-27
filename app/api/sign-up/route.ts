@@ -47,16 +47,17 @@ export async function POST(req: Request) {
       !isString(city) ||
       !isString(contactMethod) ||
       !isString(contact) ||
-      !['whatsapp', 'instagram'].includes(contactMethod)
+      !['whatsapp', 'line', 'instagram'].includes(contactMethod)
     ) {
       return NextResponse.json({ ok: false, error: 'Invalid input' }, { status: 400 })
     }
 
-    // Normalize WhatsApp numbers to E.164 at write time: infer the country code
-    // from the user's location (moodboard "Location:" → gazetteer → DeepSeek).
-    // Never blocks the signup — falls back to the entered value on any failure.
+    // Normalize phone-based contacts (WhatsApp, LINE) to E.164 at write time:
+    // infer the country code from the user's location (moodboard "Location:" →
+    // gazetteer → DeepSeek). Never blocks the signup — falls back to the
+    // entered value on any failure.
     let storedContact = contact.trim()
-    if (contactMethod === 'whatsapp') {
+    if (contactMethod === 'whatsapp' || contactMethod === 'line') {
       try {
         storedContact = await normalizeWhatsappServer(contact.trim(), locationFromSignup(city, moodboard))
       } catch (err) {
@@ -75,16 +76,27 @@ export async function POST(req: Request) {
 
     const sb = getSupabase()
 
-    const { data: row, error: insertErr } = await sb
+    const insert = (method: string, moodboardValue: string[] | null) => sb
       .from('signups')
       .insert({
         city: city.trim(),
-        contact_method: contactMethod,
+        contact_method: method,
         contact: storedContact,
-        moodboard: storedMoodboard
+        moodboard: moodboardValue
       })
       .select('id')
       .single()
+
+    let { data: row, error: insertErr } = await insert(contactMethod, storedMoodboard)
+
+    // `contact_method` has only ever held 'whatsapp'/'instagram'. If a newer
+    // channel is rejected by the column (legacy CHECK constraint / enum), fall
+    // back to 'whatsapp' and record the real channel in the moodboard — a lead
+    // is never worth losing to a schema that hasn't caught up.
+    if (insertErr && contactMethod === 'line') {
+      console.error('[SIGN-UP] insert with contact_method=line failed, retrying as whatsapp:', insertErr)
+      ;({ data: row, error: insertErr } = await insert('whatsapp', [...(storedMoodboard ?? []), 'Channel: LINE']))
+    }
 
     if (insertErr || !row) {
       console.error('[SIGN-UP] DB insert failed:', insertErr)
@@ -107,7 +119,9 @@ export async function POST(req: Request) {
     const webhookUrl = process.env.SLACK_BOOKING_WEBHOOK
     if (webhookUrl) {
       try {
-        const contactLabel = contactMethod === 'whatsapp' ? 'WhatsApp' : 'Instagram'
+        const contactLabel = contactMethod === 'whatsapp' ? 'WhatsApp'
+          : contactMethod === 'line' ? 'LINE'
+          : 'Instagram'
         const slackBody = {
           text: `New sign-up from ${storedContact}`,
           blocks: [
@@ -219,7 +233,7 @@ export async function PATCH(req: Request) {
                 type: 'mrkdwn',
                 text: [
                   `*Sign-up completed their profile* (#${id})`,
-                  `*WhatsApp:* ${contact.trim()}`,
+                  `*Contact:* ${contact.trim()}`,
                   ...(city ? [`*City:* ${city}`] : []),
                   ...(moodboard?.length ? [`*Moodboard:* ${moodboard.join(', ')}`] : []),
                   `*Photos added:* ${photoUrls.length}`,
