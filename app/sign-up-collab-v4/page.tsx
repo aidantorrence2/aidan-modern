@@ -9,7 +9,7 @@ export const metadata = {
 
 export default function SignUpCollabV4Page() {
   return (
-    <section className="min-h-screen bg-[#f4f2ee]">
+    <section className="min-h-screen bg-white">
       <SignUpFormCollabV4 />
     </section>
   )
