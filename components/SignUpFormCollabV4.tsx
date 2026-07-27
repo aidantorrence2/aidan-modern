@@ -704,16 +704,16 @@ export default function SignUpFormCollabV4({ analyticsPath = '/sign-up-collab-v4
                     <>
                       <NextImage src={v.src} alt="" fill sizes="(max-width: 640px) 45vw, 200px" className="object-cover" />
                       <span className="absolute inset-0" style={{ background: 'linear-gradient(180deg, transparent 45%, rgba(0,0,0,0.72))' }} />
+                      <span className="absolute bottom-2.5 left-3 right-3 text-[13px] font-bold text-white" style={{ textShadow: '0 1px 5px rgba(0,0,0,0.9)' }}>
+                        {v.label}
+                      </span>
                     </>
                   ) : (
-                    <span className="absolute inset-0 bg-[#faf9f6]" />
-                  )}
-                  <span className={`absolute bottom-2.5 left-3 text-[13px] font-bold ${v.src ? 'text-white' : 'text-neutral-700'}`} style={v.src ? { textShadow: '0 1px 5px rgba(0,0,0,0.9)' } : undefined}>
-                    {v.label}
-                  </span>
-                  {!v.src && (
-                    <span className="absolute left-3 right-3 top-3 text-[11px] font-medium leading-snug text-neutral-400">
-                      You pick &mdash; I&rsquo;ll suggest what suits the place.
+                    // No photograph to show for this one, so it's centred type
+                    // rather than a caption pinned to the corner of nothing.
+                    <span className="absolute inset-0 flex flex-col items-center justify-center gap-1 bg-[#faf9f6] px-3 text-center">
+                      <span className="text-[13px] font-bold text-neutral-700">{v.label}</span>
+                      <span className="text-[11px] font-medium leading-snug text-neutral-400">I&rsquo;ll suggest what suits the place</span>
                     </span>
                   )}
                   {on && (
