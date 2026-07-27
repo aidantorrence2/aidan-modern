@@ -786,9 +786,6 @@ export default function SignUpFormCollabV3({ analyticsPath = '/sign-up-collab' }
           >
             {opensLine ? <><LineIcon className="h-5 w-5" />Add me on LINE</> : 'Get Started'}
           </button>
-          {opensLine && (
-            <p className="text-center text-xs text-neutral-400">Opens LINE &mdash; I&apos;ll have your number either way.</p>
-          )}
         </form>
       </div>
 
