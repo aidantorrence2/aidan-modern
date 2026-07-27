@@ -6,12 +6,16 @@ import { detectCountry } from '@/lib/detectCountry'
 import { cityChipsForCountry, cityExamplesForCountry } from '@/lib/cityChips'
 import { initPageAnalytics, track, pageElapsedMs, flushNow } from '@/lib/track'
 
-// v3 "capture-first": the lead (WhatsApp number) is captured with a single
+// v3 "capture-first": the lead (LINE number) is captured with a single
 // field in the first viewport; everything else (location, concept, photos,
 // IG) moves to a post-capture "boost your chances" step. Analytics showed
 // 93% of ad clickers bounced at 0% scroll and the required photo upload
 // killed 24% of the rest — so nothing may stand between the hero and the
 // number field, and no field after it may cost the lead.
+//
+// The channel is LINE (Thailand) — it's the phone number on their LINE
+// account, so the dial-code detection and E.164 normalization the WhatsApp
+// flow shipped with all still apply unchanged.
 
 type Step = 'capture' | 'photos' | 'location' | 'instagram' | 'notes' | 'done'
 
@@ -62,11 +66,19 @@ const proofImages = [
 ]
 
 const howItWorks = [
-  'Drop your WhatsApp number below',
+  'Drop your LINE number below',
   'I message you the details — timing, locations, what to wear',
   'We plan the concept together and shoot for 1–2 hours',
   "You get the edited photos — it's 100% free, always",
 ]
+
+function LineIcon({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" className={className} fill="currentColor" aria-hidden="true">
+      <path d="M12 2C6.201 2 1.5 5.79 1.5 10.463c0 4.188 3.727 7.696 8.762 8.36.341.073.805.225.923.516.106.264.069.677.034.945l-.15.897c-.045.265-.21 1.037.909.565 1.12-.472 6.036-3.554 8.234-6.084C21.65 13.998 22.5 12.34 22.5 10.463 22.5 5.79 17.799 2 12 2zM7.79 13.19H5.702a.553.553 0 01-.553-.553V8.462a.553.553 0 111.106 0v3.622H7.79a.553.553 0 010 1.106zm2.166-.553a.553.553 0 01-1.106 0V8.462a.553.553 0 111.106 0v4.175zm5.028 0a.553.553 0 01-.995.332l-2.14-2.914v2.582a.553.553 0 01-1.106 0V8.462a.553.553 0 01.995-.332l2.14 2.914V8.462a.553.553 0 111.106 0v4.175zm3.35-2.641a.553.553 0 010 1.106h-1.535v.982h1.535a.553.553 0 010 1.106h-2.088a.553.553 0 01-.553-.553V8.462a.553.553 0 01.553-.553h2.088a.553.553 0 010 1.106h-1.535v.981h1.535z" />
+    </svg>
+  )
+}
 
 function CheckIcon({ className }: { className?: string }) {
   return (
@@ -79,7 +91,7 @@ export default function SignUpFormCollabV3({ analyticsPath = '/sign-up-collab' }
   const [error, setError] = useState<string | null>(null)
 
   // Step 1 — the lead
-  const [whatsapp, setWhatsapp] = useState('')
+  const [line, setLine] = useState('')
   // Empty until detection succeeds — with no detected country there's no
   // dial-code dropdown at all and the visitor types the intl code themselves.
   const [countryCode, setCountryCode] = useState('')
@@ -93,7 +105,7 @@ export default function SignUpFormCollabV3({ analyticsPath = '/sign-up-collab' }
   const [processingPhotos, setProcessingPhotos] = useState(false)
 
   const fileRef = useRef<HTMLInputElement>(null)
-  const whatsappRef = useRef<HTMLInputElement>(null)
+  const lineRef = useRef<HTMLInputElement>(null)
   const captureCardRef = useRef<HTMLDivElement>(null)
   const [showStickyCta, setShowStickyCta] = useState(false)
   const engagedFields = useRef<Set<string>>(new Set())
@@ -142,7 +154,7 @@ export default function SignUpFormCollabV3({ analyticsPath = '/sign-up-collab' }
   function jumpToCapture() {
     track('sticky_cta_clicked')
     window.scrollTo({ top: 0, behavior: 'smooth' })
-    whatsappRef.current?.focus({ preventScroll: true })
+    lineRef.current?.focus({ preventScroll: true })
   }
 
   // ── Step 1: capture the lead ──
@@ -159,7 +171,7 @@ export default function SignUpFormCollabV3({ analyticsPath = '/sign-up-collab' }
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           city: '',
-          contactMethod: 'whatsapp',
+          contactMethod: 'line',
           contact,
           moodboard: ['Collab sign-up', 'Signup flow: v3-capture-first'],
         }),
@@ -193,17 +205,17 @@ export default function SignUpFormCollabV3({ analyticsPath = '/sign-up-collab' }
     const data = Object.fromEntries(new FormData(e.currentTarget).entries()) as Record<string, string>
     if (data.company) { track('honeypot_triggered'); setStep('location'); return }
 
-    const digits = whatsapp.replace(/\D/g, '')
+    const digits = line.replace(/\D/g, '')
     if (digits.length < 7) {
-      track('validation_error', { reason: 'whatsapp_invalid' })
-      setError('Please enter your WhatsApp number.')
-      whatsappRef.current?.focus()
+      track('validation_error', { reason: 'line_invalid' })
+      setError('Please enter the phone number on your LINE account.')
+      lineRef.current?.focus()
       return
     }
 
     track('submit_attempt', { country_code: countryCode, digits: digits.length, elapsed_ms: pageElapsedMs() })
     setError(null)
-    startLeadPost(countryCode ? countryCode + ' ' + whatsapp.trim() : whatsapp.trim())
+    startLeadPost(countryCode ? countryCode + ' ' + line.trim() : line.trim())
     setStep('location')
     track('slide_shown', { slide: 'location' })
     window.scrollTo({ top: 0 })
@@ -312,8 +324,8 @@ export default function SignUpFormCollabV3({ analyticsPath = '/sign-up-collab' }
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
             city: location.trim(),
-            contactMethod: 'whatsapp',
-            contact: countryCode ? countryCode + ' ' + whatsapp.trim() : whatsapp.trim(),
+            contactMethod: 'line',
+            contact: countryCode ? countryCode + ' ' + line.trim() : line.trim(),
             moodboard: moodboardSoFar(),
             photos,
           }),
@@ -346,7 +358,7 @@ export default function SignUpFormCollabV3({ analyticsPath = '/sign-up-collab' }
             </div>
           </div>
           <div className="px-6 pt-4 pb-6 space-y-5">
-            <p className="text-sm text-neutral-500">I&apos;ll message you on WhatsApp within 24 hours. Let&apos;s make something great together.</p>
+            <p className="text-sm text-neutral-500">I&apos;ll message you on LINE within 24 hours. Let&apos;s make something great together.</p>
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-1">
                 <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-neutral-400">Type</p>
@@ -629,25 +641,29 @@ export default function SignUpFormCollabV3({ analyticsPath = '/sign-up-collab' }
       {/* Capture card — one field, one button */}
       <div ref={captureCardRef} className="relative z-10 mx-4 -mt-5 rounded-2xl border border-neutral-200 bg-white p-4 shadow-xl">
         <form onSubmit={onCapture} className="space-y-3">
-          <p className="text-sm leading-snug text-neutral-600">I&apos;ll send you all the details &mdash; timing, location ideas, what to wear, and next steps.</p>
+          <p className="flex items-start gap-2 text-sm leading-snug text-neutral-600">
+            <LineIcon className="mt-0.5 h-4 w-4 shrink-0 text-[#06C755]" />
+            <span>I&apos;ll message you on <span className="font-semibold text-neutral-800">LINE</span> with all the details &mdash; timing, location ideas, what to wear, and next steps.</span>
+          </p>
           <div className="flex gap-2">
             {countryCode && <CountryCodeSelect light value={countryCode} onChange={code => { fieldEngaged('country_code'); track('country_code_changed', { code }); setCountryCode(code); setError(null) }} />}
             <input
-              ref={whatsappRef}
+              ref={lineRef}
               type="tel"
               inputMode="tel"
               autoComplete="tel-national"
-              name="whatsapp"
-              value={whatsapp}
-              onChange={e => { fieldEngaged('whatsapp'); setWhatsapp(e.target.value); setError(null) }}
+              name="line"
+              value={line}
+              onChange={e => { fieldEngaged('line'); setLine(e.target.value); setError(null) }}
               onBlur={() => {
-                const digits = whatsapp.replace(/\D/g, '')
-                if (digits) trackOnce('whatsapp_filled', digits, { digits: digits.length })
+                const digits = line.replace(/\D/g, '')
+                if (digits) trackOnce('line_filled', digits, { digits: digits.length })
               }}
               className="min-w-0 flex-1 rounded-xl border border-neutral-300 bg-white px-4 py-3 text-base text-neutral-900 placeholder-neutral-400 outline-none transition focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200"
-              placeholder={countryCode ? 'WhatsApp number' : 'WhatsApp number, e.g. +1 555 123 4567'}
+              placeholder={countryCode ? 'LINE number' : 'LINE number, e.g. +66 81 234 5678'}
             />
           </div>
+          <p className="text-xs leading-snug text-neutral-400">The phone number on your LINE account.</p>
           {error && (
             <div className="rounded-xl border border-red-300 bg-red-50 px-4 py-3 text-sm font-medium text-red-700">
               {error}

@@ -25,7 +25,9 @@ if (!dbUrl) {
 const sql = neon(dbUrl)
 const days = Math.max(1, Number(process.argv[2]) || 14)
 const PAGE = '/sign-up-collab'
-const FIELD_ORDER = ['location', 'concept', 'notes', 'whatsapp', 'country_code', 'instagram', 'photos']
+// 'whatsapp' is the pre-Thailand name for the capture field, kept so historical
+// events still slot into the funnel alongside the current 'line'.
+const FIELD_ORDER = ['location', 'concept', 'notes', 'line', 'whatsapp', 'country_code', 'instagram', 'photos']
 
 // Shared filter fragments (interpolated values are parameterized by neon).
 const base = () => sql`
