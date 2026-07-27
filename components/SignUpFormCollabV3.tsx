@@ -2,7 +2,7 @@
 import { useEffect, useRef, useState } from 'react'
 import NextImage from 'next/image'
 import CountryCodeSelect from './CountryCodeSelect'
-import { detectCountry } from '@/lib/detectCountry'
+import { detectCountry, detectPhoneCountry } from '@/lib/detectCountry'
 import { cityChipsForCountry, cityExamplesForCountry } from '@/lib/cityChips'
 import { initPageAnalytics, track, pageElapsedMs, flushNow } from '@/lib/track'
 
@@ -154,6 +154,56 @@ type ResumeState = {
 // stored contactMethod differ.
 type Channel = 'line' | 'whatsapp'
 
+// ── Which channel to open on ──
+// LINE is Thailand, Japan and Taiwan; the rest of the world runs on WhatsApp.
+// So the question on load isn't "are they European" — it's whether there's a
+// positive reason to think this person has LINE at all, with WhatsApp as the
+// answer when there isn't.
+//
+// Language decides and timezone breaks the tie, because they answer different
+// questions: the timezone says where the phone is (a Berliner on holiday
+// reports Asia/Bangkok the day they land), while the language says whose phone
+// it is and survives the flight.
+const LINE_COUNTRIES = new Set(['TH', 'JP', 'TW'])
+
+function localeParts(tag: string) {
+  const parts = (tag || '').split('-')
+  return {
+    lang: (parts[0] || '').toLowerCase(),
+    // Skips script subtags, so zh-Hant-TW reads as TW.
+    region: parts.slice(1).find(p => /^[A-Za-z]{2}$/.test(p))?.toUpperCase() ?? null,
+  }
+}
+
+function preferredChannel(iso: string | null): Channel {
+  let tags: string[] = []
+  try {
+    tags = (navigator.languages?.length ? [...navigator.languages] : [navigator.language]).filter(Boolean)
+  } catch {}
+
+  // A LINE-country language anywhere in their list is the strongest signal
+  // available.
+  const speaksLineLanguage = tags.some(t => {
+    const { lang, region } = localeParts(t)
+    return lang === 'th' || lang === 'ja' || (lang === 'zh' && region === 'TW')
+  })
+  if (speaksLineLanguage) return 'line'
+
+  const { lang, region } = localeParts(tags[0] ?? '')
+
+  // Any other non-English phone in Thailand belongs to a visitor, and visitors
+  // don't have LINE.
+  if (lang && lang !== 'en') return 'whatsapp'
+
+  // English carries a region on iOS and most Androids, and that region is the
+  // tell: en-TH is a Thai phone switched to English, en-GB is a tourist.
+  // en-US is the factory default the world over and says nothing either way.
+  if (region && region !== 'US') return LINE_COUNTRIES.has(region) ? 'line' : 'whatsapp'
+
+  // Nothing left to go on but where they physically are.
+  return iso && LINE_COUNTRIES.has(iso) ? 'line' : 'whatsapp'
+}
+
 const CHANNELS: Record<Channel, { name: string; placeholder: string; placeholderIntl: string; step: string }> = {
   line: {
     name: 'LINE',
@@ -298,13 +348,29 @@ export default function SignUpFormCollabV3({ analyticsPath = '/sign-up-collab' }
 
     // Same detection the old form shipped with (PRs #27–#30): timezone →
     // country, chips + dial localized, nothing shown until detection succeeds.
+    // The two answer different questions, so they're detected separately: the
+    // chips are about the place they'll be photographed in, the dial code about
+    // whose phone number is going in the field.
     const country = detectCountry()
-    if (country) {
-      setCountryIso(country.iso)
-      // A restored dial code is the visitor's own pick — detection must not
-      // overwrite it.
-      if (!resumed?.countryCode) setCountryCode(country.dial)
-      track('country_detected', { iso: country.iso })
+    const phoneCountry = detectPhoneCountry()
+    if (country) setCountryIso(country.iso)
+    // A restored dial code is the visitor's own pick — detection must not
+    // overwrite it.
+    if (phoneCountry && !resumed?.countryCode) setCountryCode(phoneCountry.dial)
+    if (country || phoneCountry) {
+      track('country_detected', { iso: country?.iso ?? null, dial_iso: phoneCountry?.iso ?? null })
+    }
+
+    // Open on whichever channel they're likely to have. Skipped entirely for a
+    // resumed visitor: the snapshot's channel is one they've already lived
+    // with, and may have picked by hand. Pair channel_defaulted with the
+    // channel_switched that follows it to see how often this guesses wrong.
+    if (!resumed) {
+      const preferred = preferredChannel(country?.iso ?? null)
+      setChannel(preferred)
+      let primaryLang: string | null = null
+      try { primaryLang = navigator.languages?.[0] ?? navigator.language ?? null } catch {}
+      track('channel_defaulted', { to: preferred, iso: country?.iso ?? null, lang: primaryLang })
     }
     setHydrated(true)
   }, [analyticsPath])
@@ -375,26 +441,25 @@ export default function SignUpFormCollabV3({ analyticsPath = '/sign-up-collab' }
   // The capture CTA doubles as the add-friend tap on the LINE channel.
   const opensLine = channel === 'line' && !!LINE_ADD_URL
 
-  // Quiet on purpose: the capture step is built to put no decision in front of
-  // the ask for the LINE majority.
-  const fallbackSwitch = (
-    <p className="flex flex-wrap items-center justify-center gap-x-1.5 gap-y-1 text-xs text-neutral-400">
-      {channel === 'line' ? (
-        <>
-          <span>No LINE?</span>
-          <button type="button" onClick={() => switchChannel('whatsapp')} className="font-semibold text-neutral-600 underline underline-offset-2 transition hover:text-neutral-900">
-            Use WhatsApp
-          </button>
-        </>
-      ) : (
-        <>
-          <span>Sending to WhatsApp.</span>
-          <button type="button" onClick={() => switchChannel('line')} className="font-semibold text-neutral-600 underline underline-offset-2 transition hover:text-neutral-900">
-            Back to LINE
-          </button>
-        </>
-      )}
-    </p>
+  // The other channel is a real control, not small print. It sits under the
+  // primary CTA as an outlined button in that channel's own green: unmissable
+  // for anyone the default guessed wrong, while the filled/outlined split keeps
+  // one obvious primary so the capture step still reads as a single ask.
+  const switchButton = (
+    <button
+      type="button"
+      onClick={() => switchChannel(channel === 'line' ? 'whatsapp' : 'line')}
+      className={`flex w-full items-center justify-center gap-2 rounded-full border-[1.5px] py-3.5 text-[15px] font-bold transition active:scale-[0.99] ${
+        channel === 'line'
+          ? 'border-[#25D366]/55 bg-[#25D366]/[0.06] text-[#1a7f47] hover:border-[#25D366] hover:bg-[#25D366]/[0.11]'
+          : 'border-[#06C755]/55 bg-[#06C755]/[0.06] text-[#05803a] hover:border-[#06C755] hover:bg-[#06C755]/[0.11]'
+      }`}
+      data-cta="sign-up-collab-v3-switch"
+    >
+      {channel === 'line'
+        ? <><WhatsappIcon className="h-5 w-5" />Use WhatsApp instead</>
+        : <><LineIcon className="h-5 w-5" />Add me on LINE instead</>}
+    </button>
   )
 
   function fieldEngaged(field: string) {
@@ -414,10 +479,12 @@ export default function SignUpFormCollabV3({ analyticsPath = '/sign-up-collab' }
   // Switching keeps whatever they've typed — it's the same phone number either
   // way, so re-typing it would be the only cost of changing their mind.
   function switchChannel(next: Channel) {
-    track('channel_switched', { to: next, had_digits: phone.replace(/\D/g, '').length > 0 })
+    track('channel_switched', { from: channel, to: next, had_digits: phone.replace(/\D/g, '').length > 0 })
     setChannel(next)
     setError(null)
-    phoneRef.current?.focus()
+    // Coming from LINE there's no field on screen yet, so the focus has to wait
+    // for the number channel to render it.
+    requestAnimationFrame(() => phoneRef.current?.focus())
   }
 
   function jumpToCapture() {
@@ -1113,27 +1180,24 @@ export default function SignUpFormCollabV3({ analyticsPath = '/sign-up-collab' }
           </p>
           {/* On LINE the tap replaces the field entirely — nothing to type. */}
           {!opensLine && (
-            <>
-              <div className="flex gap-2">
-                {countryCode && <CountryCodeSelect light value={countryCode} onChange={code => { fieldEngaged('country_code'); track('country_code_changed', { code }); setCountryCode(code); setError(null) }} />}
-                <input
-                  ref={phoneRef}
-                  type="tel"
-                  inputMode="tel"
-                  autoComplete="tel-national"
-                  name={channel}
-                  value={phone}
-                  onChange={e => { fieldEngaged(channel); setPhone(e.target.value); setError(null) }}
-                  onBlur={() => {
-                    const digits = phone.replace(/\D/g, '')
-                    if (digits) trackOnce(`${channel}_filled`, digits, { digits: digits.length })
-                  }}
-                  className="min-w-0 flex-1 rounded-xl border border-neutral-300 bg-white px-4 py-3 text-base text-neutral-900 placeholder-neutral-400 outline-none transition focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200"
-                  placeholder={countryCode ? CHANNELS[channel].placeholder : CHANNELS[channel].placeholderIntl}
-                />
-              </div>
-              {fallbackSwitch}
-            </>
+            <div className="flex gap-2">
+              {countryCode && <CountryCodeSelect light value={countryCode} onChange={code => { fieldEngaged('country_code'); track('country_code_changed', { code }); setCountryCode(code); setError(null) }} />}
+              <input
+                ref={phoneRef}
+                type="tel"
+                inputMode="tel"
+                autoComplete="tel-national"
+                name={channel}
+                value={phone}
+                onChange={e => { fieldEngaged(channel); setPhone(e.target.value); setError(null) }}
+                onBlur={() => {
+                  const digits = phone.replace(/\D/g, '')
+                  if (digits) trackOnce(`${channel}_filled`, digits, { digits: digits.length })
+                }}
+                className="min-w-0 flex-1 rounded-xl border border-neutral-300 bg-white px-4 py-3 text-base text-neutral-900 placeholder-neutral-400 outline-none transition focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200"
+                placeholder={countryCode ? CHANNELS[channel].placeholder : CHANNELS[channel].placeholderIntl}
+              />
+            </div>
           )}
           {error && (
             <div className="rounded-xl border border-red-300 bg-red-50 px-4 py-3 text-sm font-medium text-red-700">
@@ -1153,11 +1217,9 @@ export default function SignUpFormCollabV3({ analyticsPath = '/sign-up-collab' }
           >
             {opensLine ? <><LineIcon className="h-5 w-5" />Add me on LINE</> : 'Get Started'}
           </button>
+          {switchButton}
           {opensLine && (
-            <>
-              <p className="text-center text-sm text-neutral-500">&hellip;then finish signing up :)</p>
-              {fallbackSwitch}
-            </>
+            <p className="text-center text-sm text-neutral-500">&hellip;then finish signing up :)</p>
           )}
         </form>
       </div>

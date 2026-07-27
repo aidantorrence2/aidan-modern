@@ -126,11 +126,43 @@ function isoFromLanguage(): string | null {
   }
 }
 
-// Best-effort, permissionless guess of the visitor's country: physical
-// location via timezone first, browser-language region second. Returns null
-// when neither yields a country we have a dial code for.
+// The locale's region subtag, ignoring en-US — that one is the factory default
+// the world over, so it says nothing about who the phone belongs to, while
+// every other region tag is a deliberate setting. A visitor whose list reads
+// ['en-US', 'de-DE'] is German.
+function isoFromLocaleRegion(): string | null {
+  try {
+    const langs = navigator.languages?.length ? navigator.languages : [navigator.language]
+    for (const lang of langs) {
+      const m = /^([a-z]{2,3})-([A-Z]{2})\b/.exec(lang || '')
+      if (!m) continue
+      if (m[1].toLowerCase() === 'en' && m[2] === 'US') continue
+      return m[2]
+    }
+    return null
+  } catch {
+    return null
+  }
+}
+
+// Best-effort, permissionless guess of where the visitor physically is:
+// timezone first, browser-language region second. This is the one to ask for
+// anything about the place — the city chips on the location slide, say.
+// Returns null when neither yields a country we have a dial code for.
 export function detectCountry(): CountryCode | null {
   const iso = isoFromTimezone() || isoFromLanguage()
+  if (!iso) return null
+  return COUNTRY_CODES.find(c => c.iso === iso) || null
+}
+
+// The country to prefill a phone number's dial code from — deliberately the
+// mirror of detectCountry(), because a phone number belongs to the person and
+// not to the place. A German on holiday in Bangkok has a phone reporting
+// Asia/Bangkok from the moment they land, but their locale stays de-DE and the
+// WhatsApp number they are about to type is +49, not +66. So the locale region
+// leads and the timezone is the fallback for anyone it can't speak for.
+export function detectPhoneCountry(): CountryCode | null {
+  const iso = isoFromLocaleRegion() || isoFromTimezone()
   if (!iso) return null
   return COUNTRY_CODES.find(c => c.iso === iso) || null
 }
