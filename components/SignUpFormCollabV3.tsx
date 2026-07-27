@@ -66,34 +66,27 @@ const proofImages = [
   '/images/proof/DSC_0347.jpg',
 ]
 
-// Each post-capture slide opens on a band of real shoots — the work is the
-// pitch, and it should stay the pitch after the tap, not only on the hero.
-const locationBand = [
+// ONE roll of film, not four galleries. Each slide shows a four-frame window
+// into it, two frames further on than the last — so moving through the form
+// winds the same roll forward. Frame numbers advance with it.
+const ROLL = [
   '/images/proof/000009.jpg',
   '/images/proof/000023.jpg',
   '/images/proof/DSC_0321.jpg',
   '/images/proof/000015-3.jpg',
-  '/images/proof/000062.jpg',
-  '/images/proof/DSC_0526.jpg',
-]
-
-const instagramBand = [
   '/images/proof/000013-3.jpg',
   '/images/proof/000042-5.jpg',
   '/images/proof/000005-3.jpg',
   '/images/proof/000019-6.jpg',
-  '/images/proof/000053-5.jpg',
+  '/images/proof/000062.jpg',
+  '/images/proof/DSC_0526.jpg',
 ]
 
-// Single subjects only — the collage moodboards turn to mush at thumbnail size.
-const notesBand = [
-  '/images/moodboards/dramatic-fashion.jpg',
-  '/images/proof/000012.jpg',
-  '/images/proof/000025.jpg',
-  '/images/proof/000039.jpg',
-  '/images/proof/000014-3.jpg',
-  '/images/proof/000016.jpg',
-]
+/** Window into the roll for a given step (2–5), plus its frame numbering. */
+function rollAt(stepNo: number) {
+  const offset = (stepNo - 2) * 2
+  return { frames: ROLL.slice(offset, offset + 4), from: 11 + offset }
+}
 
 // The opening step names whichever channel is selected — see CHANNELS.step.
 const howItWorks = [
@@ -138,6 +131,34 @@ const CHANNELS: Record<Channel, { name: string; placeholder: string; placeholder
     step: 'Drop your WhatsApp number below',
   },
 }
+
+// Motion for the post-capture slides. The card rises as the ribbon winds on,
+// frames catching up one at a time, so consecutive steps read as one take.
+const slideMotionCss = `
+@keyframes atfCardIn {
+  from { opacity: 0; transform: translateY(12px) }
+  to   { opacity: 1; transform: none }
+}
+@keyframes atfWindOn {
+  from { opacity: 0; transform: translateX(13%) }
+  to   { opacity: 1; transform: none }
+}
+@keyframes atfWindOnBack {
+  from { opacity: 0; translate: 34px 26px }
+  to   { opacity: 0.35; translate: none }
+}
+@keyframes atfFrameIn {
+  from { opacity: 0; translate: 26px 18px }
+  to   { opacity: 1; translate: none }
+}
+.atf-card { animation: atfCardIn 520ms cubic-bezier(.22,1,.36,1) both }
+.atf-ribbon { animation: atfWindOn 780ms cubic-bezier(.19,1,.28,1) 90ms both }
+.atf-ribbon-back { animation: atfWindOnBack 860ms cubic-bezier(.19,1,.28,1) both }
+.atf-frame { animation: atfFrameIn 620ms cubic-bezier(.19,1,.28,1) both }
+@media (prefers-reduced-motion: reduce) {
+  .atf-card, .atf-ribbon, .atf-ribbon-back, .atf-frame { animation: none }
+}
+`
 
 function LineIcon({ className }: { className?: string }) {
   return (
@@ -549,13 +570,16 @@ export default function SignUpFormCollabV3({ analyticsPath = '/sign-up-collab' }
   // ── Slides 2–6: one field per page, instant transitions ──
   // Slides sit on a warm paper ground with the form on a raised card — the
   // stark white pages were the reason the flow fell off a cliff after the hero.
-  const slideShell = (children: React.ReactNode, strip?: React.ReactNode) => (
+  const slideShell = (stepNo: number, children: React.ReactNode) => (
     <div className="min-h-screen bg-[#f4f2ee]">
-      <div className="mx-auto max-w-md px-4 pb-14 pt-7">
-        <div className="rounded-[26px] border border-black/[0.06] bg-white px-5 pb-6 pt-5 shadow-[0_24px_60px_-34px_rgba(23,21,15,0.55)]">
+      <style dangerouslySetInnerHTML={{ __html: slideMotionCss }} />
+      {/* key forces the enter animation to replay on every step, so the five
+          slides read as one continuous sequence rather than five hard cuts. */}
+      <div key={stepNo} className="mx-auto max-w-md px-4 pb-10 pt-7">
+        <div className="atf-card rounded-[26px] border border-black/[0.06] bg-white px-5 pb-6 pt-5 shadow-[0_24px_60px_-34px_rgba(23,21,15,0.55)]">
           {children}
         </div>
-        {strip}
+        {ribbon(stepNo)}
       </div>
     </div>
   )
@@ -572,38 +596,77 @@ export default function SignUpFormCollabV3({ analyticsPath = '/sign-up-collab' }
   const slideTitle = (t: string) => (
     <h1 className="mt-4 text-[30px] font-semibold leading-[1.1] tracking-[-0.01em] text-neutral-900" style={{ fontFamily: "Georgia, 'Times New Roman', serif", fontStyle: 'italic', textWrap: 'balance' }}>{t}</h1>
   )
-  // He shoots film, so the proof is presented as film: a 35mm strip, sprockets
-  // and frame numbers, bleeding off both edges. It sits under the card as an
-  // outro — never above the field, never competing with the question.
-  const sprockets = (
-    <div className="h-[7px] w-full" aria-hidden="true" style={{
-      backgroundImage: 'repeating-linear-gradient(to right, #ddd8cc 0 8px, transparent 8px 20px)',
-      backgroundSize: '20px 4px',
+  // He shoots film, so the proof is film — and the roll doesn't lie flat. Each
+  // frame is placed on a sine, tilted to the tangent and overlapped with its
+  // neighbours, so the strip genuinely rises and falls across the slide instead
+  // of being a rotated bar. The phase shifts by step, so the ribbon is caught
+  // mid-travel at a different point every time.
+  const sprockets = (small = false) => (
+    <div className={small ? 'h-[5px] w-full' : 'h-[6px] w-full'} aria-hidden="true" style={{
+      backgroundImage: 'repeating-linear-gradient(to right, #d9d3c6 0 7px, transparent 7px 18px)',
+      backgroundSize: '18px 3px',
       backgroundPosition: 'center',
       backgroundRepeat: 'repeat-x',
     }} />
   )
-  const filmstrip = (srcs: string[]) => (
-    <div className="relative mt-7 -mx-4 select-none" aria-hidden="true">
-      <div className="bg-[#17150f] py-1 shadow-[0_14px_34px_-24px_rgba(23,21,15,0.9)]">
-        {sprockets}
-        <div className="flex gap-[3px] px-[3px] py-[3px]">
-          {srcs.map((src, i) => (
-            <div key={i} className="relative h-[86px] flex-1 overflow-hidden bg-black">
-              <NextImage src={src} alt="" width={220} height={300} sizes="96px" className="h-full w-full object-cover" />
-            </div>
-          ))}
-        </div>
-        <div className="flex items-center justify-between px-2 pb-[3px]">
-          <span className="text-[6.5px] font-bold uppercase tracking-[0.3em] text-[#e0a13f]">A. Torrence</span>
-          <span className="text-[6.5px] font-bold uppercase tracking-[0.3em] text-[#e0a13f]">35mm &middot; 12a &rarr; 14</span>
-        </div>
-        {sprockets}
+  const cell = (src: string, no: number, i: number, small: boolean) => (
+    <div className={`bg-[#17150f] px-[3px] ${small ? 'py-[3px]' : 'py-[4px]'} shadow-[0_18px_30px_-20px_rgba(23,21,15,0.95)]`}>
+      {sprockets(small)}
+      <div className="relative overflow-hidden bg-black" style={{ height: small ? 92 : 124 }}>
+        <NextImage src={src} alt="" width={260} height={340} sizes="128px" className="h-full w-full object-cover" />
       </div>
-      <span className="pointer-events-none absolute inset-y-0 left-0 w-9 bg-gradient-to-r from-[#f4f2ee] to-transparent" />
-      <span className="pointer-events-none absolute inset-y-0 right-0 w-9 bg-gradient-to-l from-[#f4f2ee] to-transparent" />
+      {sprockets(small)}
+      <div className="flex justify-start pl-1 pt-[1px]">
+        <span className="text-[6px] font-bold tracking-[0.22em] text-[#e0a13f]">{no}{i % 2 === 0 ? 'A' : ''}</span>
+      </div>
     </div>
   )
+  const ribbon = (stepNo: number) => {
+    const { frames, from } = rollAt(stepNo)
+    const phase = (stepNo - 2) * 0.75
+    // Trailing frames from further down the roll, smaller and set back.
+    const trail = ROLL.slice(6, 9)
+    return (
+      <div className="relative mt-2 -mx-4 h-[214px] select-none overflow-hidden" aria-hidden="true">
+        {trail.map((src, i) => {
+          const t = i + phase + 2.4
+          return (
+            <div
+              key={`t-${src}`}
+              className="atf-ribbon-back absolute w-[86px] opacity-[0.35]"
+              style={{
+                left: `${4 + i * 27}%`,
+                top: 74 + Math.sin(t * 0.8) * 28,
+                transform: `rotate(${Math.cos(t * 0.8) * 9}deg)`,
+                animationDelay: `${i * 80}ms`,
+              }}
+            >
+              {cell(src, from + 6 + i, i, true)}
+            </div>
+          )
+        })}
+        {frames.map((src, i) => {
+          const t = i + phase
+          return (
+            <div
+              key={src}
+              className="atf-frame absolute w-[118px]"
+              style={{
+                left: `${-9 + i * 25}%`,
+                top: 22 + Math.sin(t * 0.8) * 32,
+                transform: `rotate(${Math.cos(t * 0.8) * 8}deg)`,
+                animationDelay: `${120 + i * 90}ms`,
+              }}
+            >
+              {cell(src, from + i, i, false)}
+            </div>
+          )
+        })}
+        <span className="pointer-events-none absolute inset-y-0 left-0 w-8 bg-gradient-to-r from-[#f4f2ee] to-transparent" />
+        <span className="pointer-events-none absolute inset-y-0 right-0 w-8 bg-gradient-to-l from-[#f4f2ee] to-transparent" />
+      </div>
+    )
+  }
   const nextBtn = (onClick: () => void, label = 'Next', busy = false) => (
     <button
       type="button"
@@ -659,7 +722,7 @@ export default function SignUpFormCollabV3({ analyticsPath = '/sign-up-collab' }
         <span className="font-semibold tracking-[0.12em] text-neutral-400">{note}</span>
       </p>
     )
-    return slideShell(
+    return slideShell(3,
       <>
         {slideKicker(3)}
         {slideTitle('Your photo')}
@@ -730,7 +793,7 @@ export default function SignUpFormCollabV3({ analyticsPath = '/sign-up-collab' }
   }
 
   if (step === 'location') {
-    return slideShell(
+    return slideShell(2,
       <>
         {slideKicker(2)}
         {slideTitle('Where are you located?')}
@@ -778,12 +841,11 @@ export default function SignUpFormCollabV3({ analyticsPath = '/sign-up-collab' }
           })}
         </div>
       </>,
-      filmstrip(locationBand.slice(0, 4)),
     )
   }
 
   if (step === 'instagram') {
-    return slideShell(
+    return slideShell(4,
       <>
         {slideKicker(4)}
         <h1 className="mt-4 text-[30px] font-semibold leading-[1.1] tracking-[-0.01em] text-neutral-900" style={{ fontFamily: "Georgia, 'Times New Roman', serif", fontStyle: 'italic' }}>
@@ -810,12 +872,11 @@ export default function SignUpFormCollabV3({ analyticsPath = '/sign-up-collab' }
           {skipBtn(() => advance('notes', false))}
         </div>
       </>,
-      filmstrip(instagramBand.slice(0, 4)),
     )
   }
 
   if (step === 'notes') {
-    return slideShell(
+    return slideShell(5,
       <>
         {slideKicker(5)}
         {slideTitle('Anything else?')}
@@ -836,7 +897,6 @@ export default function SignUpFormCollabV3({ analyticsPath = '/sign-up-collab' }
           {nextBtn(finishSignup, 'Finish Sign-Up')}
         </div>
       </>,
-      filmstrip(notesBand.slice(0, 4)),
     )
   }
 
