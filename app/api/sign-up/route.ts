@@ -56,8 +56,14 @@ export async function POST(req: Request) {
     // infer the country code from the user's location (moodboard "Location:" →
     // gazetteer → DeepSeek). Never blocks the signup — falls back to the
     // entered value on any failure.
+    // A LINE row can arrive without a number at all — the visitor tapped the
+    // add-friend link and the handle (or a placeholder) is the contact. Running
+    // that through the phone normalizer would turn it into a bare dial code, so
+    // anything without a plausible number of digits is stored verbatim.
+    const looksLikePhone = (contact.match(/\d/g) ?? []).length >= 7
+
     let storedContact = contact.trim()
-    if (contactMethod === 'whatsapp' || contactMethod === 'line') {
+    if (looksLikePhone && (contactMethod === 'whatsapp' || contactMethod === 'line')) {
       try {
         storedContact = await normalizeWhatsappServer(contact.trim(), locationFromSignup(city, moodboard))
       } catch (err) {

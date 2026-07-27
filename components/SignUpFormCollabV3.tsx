@@ -90,7 +90,7 @@ const CHANNELS: Record<Channel, { name: string; placeholder: string; placeholder
     name: 'LINE',
     placeholder: 'LINE number',
     placeholderIntl: 'LINE number, e.g. +66 81 234 5678',
-    step: 'Drop your LINE number below',
+    step: 'Tap "Add me on LINE" below',
   },
   whatsapp: {
     name: 'WhatsApp',
@@ -178,6 +178,28 @@ export default function SignUpFormCollabV3({ analyticsPath = '/sign-up-collab' }
   // The capture CTA doubles as the add-friend tap on the LINE channel.
   const opensLine = channel === 'line' && !!LINE_ADD_URL
 
+  // Quiet on purpose: the capture step is built to put no decision in front of
+  // the ask for the LINE majority.
+  const fallbackSwitch = (
+    <p className="flex flex-wrap items-center justify-center gap-x-1.5 gap-y-1 text-xs text-neutral-400">
+      {channel === 'line' ? (
+        <>
+          <span>No LINE?</span>
+          <button type="button" onClick={() => switchChannel('whatsapp')} className="font-semibold text-neutral-600 underline underline-offset-2 transition hover:text-neutral-900">
+            Use WhatsApp
+          </button>
+        </>
+      ) : (
+        <>
+          <span>Sending to WhatsApp.</span>
+          <button type="button" onClick={() => switchChannel('line')} className="font-semibold text-neutral-600 underline underline-offset-2 transition hover:text-neutral-900">
+            Back to LINE
+          </button>
+        </>
+      )}
+    </p>
+  )
+
   function fieldEngaged(field: string) {
     if (engagedFields.current.size === 0) track('form_start', { first_field: field })
     if (!engagedFields.current.has(field)) {
@@ -255,6 +277,26 @@ export default function SignUpFormCollabV3({ analyticsPath = '/sign-up-collab' }
     const data = Object.fromEntries(new FormData(e.currentTarget).entries()) as Record<string, string>
     if (data.company) { track('honeypot_triggered'); setStep('location'); return }
 
+    // LINE path: nothing is typed, so the tap itself is the conversion. LINE
+    // opens (synchronously, so pop-up blockers treat it as user-initiated) and
+    // the flow carries on in this tab — the row is written at the end from
+    // whatever they fill in on the way.
+    if (opensLine) {
+      track('line_add_clicked', { placement: 'capture' })
+      track('submit_attempt', { channel, digits: 0, elapsed_ms: pageElapsedMs() })
+      flushNow()
+      // Fired here rather than on a POST: on this path the tap is the lead, so
+      // without it the ad account would see no conversions at all.
+      const fbq = (window as typeof window & { fbq?: (...args: unknown[]) => void }).fbq
+      if (typeof fbq === 'function') fbq('track', 'Lead', { source: 'sign-up-collab-v3' })
+      window.open(LINE_ADD_URL, '_blank', 'noopener,noreferrer')
+      setError(null)
+      setStep('location')
+      track('slide_shown', { slide: 'location' })
+      window.scrollTo({ top: 0 })
+      return
+    }
+
     const digits = phone.replace(/\D/g, '')
     if (digits.length < 7) {
       track('validation_error', { reason: `${channel}_invalid` })
@@ -266,16 +308,6 @@ export default function SignUpFormCollabV3({ analyticsPath = '/sign-up-collab' }
     track('submit_attempt', { channel, country_code: countryCode, digits: digits.length, elapsed_ms: pageElapsedMs() })
     setError(null)
     startLeadPost(countryCode ? countryCode + ' ' + phone.trim() : phone.trim())
-
-    // Opened synchronously inside the submit handler so pop-up blockers treat
-    // it as user-initiated — the lead POST is already in flight and doesn't
-    // need to finish first. New tab, so this page (and the rest of the flow)
-    // survives behind LINE.
-    if (opensLine) {
-      track('line_add_clicked', { placement: 'capture' })
-      flushNow()
-      window.open(LINE_ADD_URL, '_blank', 'noopener,noreferrer')
-    }
     setStep('location')
     track('slide_shown', { slide: 'location' })
     window.scrollTo({ top: 0 })
@@ -375,28 +407,39 @@ export default function SignUpFormCollabV3({ analyticsPath = '/sign-up-collab' }
       elapsed_ms: pageElapsedMs(),
     })
     queuePatch()
-    // If the background capture never landed, save everything in one shot so
-    // finishing can't lose the lead.
-    leadRef.current?.then(lead => {
-      if (lead === null) {
-        fetch('/api/sign-up', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            city: location.trim(),
-            contactMethod: channel,
-            contact: countryCode ? countryCode + ' ' + phone.trim() : phone.trim(),
-            moodboard: moodboardSoFar(),
-            photos,
-          }),
-        }).then(res => {
-          if (!res.ok) return
-          track('submit_success', { recovered: true, elapsed_ms: pageElapsedMs() })
-          const fbq = (window as typeof window & { fbq?: (...args: unknown[]) => void }).fbq
-          if (typeof fbq === 'function') fbq('track', 'Lead', { source: 'sign-up-collab-v3' })
-        }).catch(() => {})
-      }
-    })
+
+    // Two cases land here with no row yet: a capture POST that failed, and the
+    // LINE path, which never had a number to POST in the first place. Both save
+    // everything in one shot. With no number, the Instagram handle is the only
+    // contact there is — and when that's blank too, the row is still worth
+    // writing for the location and photos.
+    const saveInOneShot = () => {
+      const typedNumber = countryCode ? countryCode + ' ' + phone.trim() : phone.trim()
+      const contact = opensLine
+        ? (instagram.trim() || 'LINE — added, no handle given')
+        : typedNumber
+      fetch('/api/sign-up', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          city: location.trim(),
+          contactMethod: channel,
+          contact,
+          moodboard: moodboardSoFar(),
+          photos,
+        }),
+      }).then(res => {
+        if (!res.ok) return
+        track('submit_success', { channel, recovered: true, elapsed_ms: pageElapsedMs() })
+        // Already counted at the tap on the LINE path — don't double-count.
+        if (opensLine) return
+        const fbq = (window as typeof window & { fbq?: (...args: unknown[]) => void }).fbq
+        if (typeof fbq === 'function') fbq('track', 'Lead', { source: 'sign-up-collab-v3' })
+      }).catch(() => {})
+    }
+
+    if (leadRef.current) leadRef.current.then(lead => { if (lead === null) saveInOneShot() })
+    else saveInOneShot()
     track('enrich_success', { photos: photos.length, elapsed_ms: pageElapsedMs() })
     flushNow()
     setStep('done')
@@ -726,43 +769,30 @@ export default function SignUpFormCollabV3({ analyticsPath = '/sign-up-collab' }
               : <WhatsappIcon className="mt-0.5 h-4 w-4 shrink-0 text-[#25D366]" />}
             <span>I&apos;ll message you on <span className="font-semibold text-neutral-800">{CHANNELS[channel].name}</span> with all the details &mdash; timing, location ideas, what to wear, and next steps.</span>
           </p>
-          <div className="flex gap-2">
-            {countryCode && <CountryCodeSelect light value={countryCode} onChange={code => { fieldEngaged('country_code'); track('country_code_changed', { code }); setCountryCode(code); setError(null) }} />}
-            <input
-              ref={phoneRef}
-              type="tel"
-              inputMode="tel"
-              autoComplete="tel-national"
-              name={channel}
-              value={phone}
-              onChange={e => { fieldEngaged(channel); setPhone(e.target.value); setError(null) }}
-              onBlur={() => {
-                const digits = phone.replace(/\D/g, '')
-                if (digits) trackOnce(`${channel}_filled`, digits, { digits: digits.length })
-              }}
-              className="min-w-0 flex-1 rounded-xl border border-neutral-300 bg-white px-4 py-3 text-base text-neutral-900 placeholder-neutral-400 outline-none transition focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200"
-              placeholder={countryCode ? CHANNELS[channel].placeholder : CHANNELS[channel].placeholderIntl}
-            />
-          </div>
-          {/* The fallback stays quiet on purpose: the capture step is built to
-              put no decision in front of the ask for the LINE majority. */}
-          <p className="flex flex-wrap items-center gap-x-1.5 gap-y-1 text-xs text-neutral-400">
-            {channel === 'line' ? (
-              <>
-                <span>No LINE?</span>
-                <button type="button" onClick={() => switchChannel('whatsapp')} className="font-semibold text-neutral-600 underline underline-offset-2 transition hover:text-neutral-900">
-                  Use WhatsApp
-                </button>
-              </>
-            ) : (
-              <>
-                <span>Sending to WhatsApp.</span>
-                <button type="button" onClick={() => switchChannel('line')} className="font-semibold text-neutral-600 underline underline-offset-2 transition hover:text-neutral-900">
-                  Back to LINE
-                </button>
-              </>
-            )}
-          </p>
+          {/* On LINE the tap replaces the field entirely — nothing to type. */}
+          {!opensLine && (
+            <>
+              <div className="flex gap-2">
+                {countryCode && <CountryCodeSelect light value={countryCode} onChange={code => { fieldEngaged('country_code'); track('country_code_changed', { code }); setCountryCode(code); setError(null) }} />}
+                <input
+                  ref={phoneRef}
+                  type="tel"
+                  inputMode="tel"
+                  autoComplete="tel-national"
+                  name={channel}
+                  value={phone}
+                  onChange={e => { fieldEngaged(channel); setPhone(e.target.value); setError(null) }}
+                  onBlur={() => {
+                    const digits = phone.replace(/\D/g, '')
+                    if (digits) trackOnce(`${channel}_filled`, digits, { digits: digits.length })
+                  }}
+                  className="min-w-0 flex-1 rounded-xl border border-neutral-300 bg-white px-4 py-3 text-base text-neutral-900 placeholder-neutral-400 outline-none transition focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200"
+                  placeholder={countryCode ? CHANNELS[channel].placeholder : CHANNELS[channel].placeholderIntl}
+                />
+              </div>
+              {fallbackSwitch}
+            </>
+          )}
           {error && (
             <div className="rounded-xl border border-red-300 bg-red-50 px-4 py-3 text-sm font-medium text-red-700">
               {error}
@@ -770,8 +800,6 @@ export default function SignUpFormCollabV3({ analyticsPath = '/sign-up-collab' }
           )}
           {/* Honeypot */}
           <input type="text" name="company" className="hidden" tabIndex={-1} autoComplete="off" />
-          {/* One action: the number is saved and LINE opens in a new tab, so
-              nothing is lost whichever way they follow through. */}
           <button
             type="submit"
             className={`flex w-full items-center justify-center gap-2 rounded-full py-4 text-base font-bold text-white shadow-lg transition ${
@@ -783,6 +811,12 @@ export default function SignUpFormCollabV3({ analyticsPath = '/sign-up-collab' }
           >
             {opensLine ? <><LineIcon className="h-5 w-5" />Add me on LINE</> : 'Get Started'}
           </button>
+          {opensLine && (
+            <>
+              <p className="text-center text-sm text-neutral-500">&hellip;then finish signing up :)</p>
+              {fallbackSwitch}
+            </>
+          )}
         </form>
       </div>
 

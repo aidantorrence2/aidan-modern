@@ -29,10 +29,18 @@ function getInstagram(s: Signup): string | null {
   return null
 }
 
-/** WhatsApp and LINE are both phone-number channels and share one row. */
+/** WhatsApp and LINE are both phone-number channels and share one row. A LINE
+ *  row can also carry no number at all — the visitor tapped the add-friend link
+ *  instead of typing one — in which case there is nothing to dial. */
 function getPhoneContact(s: Signup): string | null {
-  if (s.contact_method === 'whatsapp' || s.contact_method === 'line') return s.contact
-  return null
+  if (s.contact_method !== 'whatsapp' && s.contact_method !== 'line') return null
+  return (s.contact.match(/\d/g) ?? []).length >= 7 ? s.contact : null
+}
+
+/** A LINE row whose contact is a handle or a placeholder, not a number. */
+function getNumberlessLine(s: Signup): string | null {
+  if (s.contact_method !== 'line' || getPhoneContact(s)) return null
+  return s.contact
 }
 
 /** LINE signups written before the column knew 'line' carry "Channel: LINE". */
@@ -277,6 +285,7 @@ export default function AdminClient({ signups: initial }: { signups: Signup[] })
             <div className="space-y-4">
               {filtered.map(s => {
                 const phone = getPhoneContact(s)
+                const numberlessLine = getNumberlessLine(s)
                 const line = isLine(s)
                 const instagram = getInstagram(s)
                 const rawContact = s.moodboard?.find(m => /^raw contact:/i.test(m))?.replace(/^raw contact:\s*/i, '').trim()
@@ -313,6 +322,14 @@ export default function AdminClient({ signups: initial }: { signups: Signup[] })
                               </div>
                             )
                           })()}
+                          {numberlessLine && (
+                            <div>
+                              <span className="text-base font-semibold text-white/70">{numberlessLine}</span>
+                              <span className="ml-2 rounded-full bg-[#06C755]/15 px-2.5 py-0.5 text-xs font-medium text-[#06C755] align-middle">
+                                LINE &middot; added me
+                              </span>
+                            </div>
+                          )}
                           {instagram && (
                             <div>
                               <a href={instagramLink(instagram)} target="_blank" rel="noopener noreferrer" className="text-base font-semibold text-white hover:text-emerald-400 transition">
