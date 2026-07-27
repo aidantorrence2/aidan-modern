@@ -74,6 +74,9 @@ const HERO_SLIDES = [
   '/images/proof/DSC_0347.jpg',
 ]
 const heroImage = HERO_SLIDES[0]
+// The done screen's banner is short and full-width, which crops a portrait
+// frame to a knee. This one is landscape and holds up at that ratio.
+const doneImage = '/images/faves/000062-7.jpg'
 
 const proofImages = [
   '/images/large/000020-7.jpg',
@@ -1183,7 +1186,7 @@ export default function SignUpFormCollabV4({ analyticsPath = '/sign-up-collab-v4
           <button
             type="button"
             onClick={startOver}
-            className="-mr-1 flex shrink-0 items-center gap-1.5 rounded-full border border-neutral-200 bg-[#faf9f6] py-2.5 pl-4 pr-3 text-[12px] font-bold text-neutral-700 transition hover:border-neutral-300 hover:bg-neutral-100 hover:text-neutral-900 active:scale-95"
+            className="-mr-1 flex shrink-0 items-center gap-1.5 rounded-full bg-emerald-600 py-2.5 pl-4 pr-3.5 text-[12px] font-bold text-white shadow-[0_8px_18px_-8px_rgba(5,150,105,0.9)] transition hover:bg-emerald-500 active:scale-95"
             data-cta="v4-start-over"
           >
             Start over
@@ -1194,7 +1197,7 @@ export default function SignUpFormCollabV4({ analyticsPath = '/sign-up-collab-v4
         </div>
         <div className="atf-card overflow-hidden rounded-[26px] border border-black/[0.06] bg-white shadow-[0_24px_60px_-34px_rgba(23,21,15,0.55)]">
           <div className="relative h-48">
-            <NextImage src={heroImage} alt="" fill priority sizes="(max-width: 640px) 100vw, 448px" className="object-cover object-top" style={{ filter: 'brightness(0.6) saturate(1.15)' }} />
+            <NextImage src={doneImage} alt="" fill priority sizes="(max-width: 640px) 100vw, 448px" className="object-cover object-center" style={{ filter: 'brightness(0.72) saturate(1.1)' }} />
             <div className="absolute inset-0" style={{ background: 'linear-gradient(180deg, transparent 30%, rgba(0,0,0,0.8) 100%)' }} />
             <p className="absolute bottom-4 left-5 right-5 text-2xl font-semibold text-white" style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic' }}>You&apos;re in.</p>
           </div>
