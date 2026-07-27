@@ -102,12 +102,16 @@ const howItWorks = [
   "You get the edited photos — it's 100% free, always",
 ]
 
-// Add-friend link for the "Aidan Torrence Photo" Official Account (@693bfnuc).
-// LINE can't deliver to a non-friend, so this tap is what opens the channel at
-// all — on the LINE path it replaces the number field outright. The "@" is
-// percent-encoded because some in-app browsers mangle a bare one in the path.
-// Empty disables the button and falls the capture card back to a number field.
-const LINE_ADD_URL = 'https://line.me/R/ti/p/%40693bfnuc'
+// Personal add-friend link. LINE can't deliver to a non-friend, so this tap is
+// what opens the channel at all — on the LINE path it replaces the number field
+// outright. Empty disables the button and falls the capture card back to a
+// number field.
+//
+// Deliberately NOT the Official Account (@693bfnuc): LINE shows an "account is
+// not verified" caution to anyone adding an unverified OA, which lands on cold
+// ad traffic seconds after the tap. Worth revisiting once the OA is verified —
+// the greeting message and the follow webhook only exist on that side.
+const LINE_ADD_URL = 'https://line.me/ti/p/XKpsnykVaM'
 
 // A LINE row is created before there's anything to identify it by — they
 // tapped the add link, so the contact column can only say so. Their Instagram
