@@ -19,14 +19,14 @@ import { initPageAnalytics, track, pageElapsedMs, flushNow } from '@/lib/track'
 // Every frame — including the first, which used to be its own page — sits on
 // the same paper, in the same card, under the same roll of film.
 
-type Step = 'vibe' | 'location' | 'notes' | 'capture' | 'photos' | 'instagram' | 'done'
+type Step = 'location' | 'vibe' | 'notes' | 'capture' | 'photos' | 'instagram' | 'done'
 
 const SLIDE_NO: Record<Exclude<Step, 'done'>, number> = {
-  vibe: 1, location: 2, notes: 3, capture: 4, photos: 5, instagram: 6,
+  location: 1, vibe: 2, notes: 3, capture: 4, photos: 5, instagram: 6,
 }
 const TOTAL_SLIDES = 6
 const BACK_TO: Partial<Record<Step, Step>> = {
-  location: 'vibe', notes: 'location', capture: 'notes', photos: 'capture', instagram: 'photos',
+  vibe: 'location', notes: 'vibe', capture: 'notes', photos: 'capture', instagram: 'photos',
 }
 
 function resizeImage(dataUrl: string, maxBytes: number): Promise<string> {
@@ -76,20 +76,24 @@ const HERO_SLIDES = [
 const heroImage = HERO_SLIDES[0]
 
 const proofImages = [
-  '/images/moodboards/editorial.jpg',
-  '/images/proof/000008-3-2.jpg',
-  '/images/proof/000041.jpg',
-  '/images/proof/000001-8.jpg',
-  '/images/proof/000038-4.jpg',
-  '/images/proof/DSC_0347.jpg',
+  '/images/large/000020-7.jpg',
+  '/images/large/aidanto-r4-053-25.jpg',
+  '/images/faves/000047-4.jpg',
+  '/images/faves/000040-5.jpg',
+  '/images/large/manila-gallery-tropical-001.jpg',
+  '/images/faves/000010-6.jpg',
 ]
 
 const howItWorks = [
-  'Pick the look you want and tell me where you are',
+  'Share your preferences',
   'I message you the details — timing, locations, what to wear',
   'We plan the concept together and shoot for 1–2 hours',
   "You get the edited photos — it's 100% free, always",
 ]
+
+const CHIP_ORDER: Record<string, string[]> = {
+  TH: ['Bangkok', 'Chiang Mai', 'Pattaya'],
+}
 
 type VibeKey = 'street' | 'nature' | 'indoor' | 'any'
 
@@ -97,14 +101,13 @@ type VibeKey = 'street' | 'nature' | 'indoor' | 'any'
 // pitch for that look. No single photograph stands for "any", so that one is a
 // quarter-grid of the others: it reads as a bit of everything and still sits in
 // the row as an image tile rather than a beige box among photographs.
-const VIBES: { key: VibeKey; label: string; src: string | null; montage?: string[] }[] = [
-  { key: 'street', label: 'Street', src: '/images/proof/000015-3.jpg' },
-  { key: 'nature', label: 'Nature', src: '/images/proof/000038-4.jpg' },
-  { key: 'indoor', label: 'Indoor', src: '/images/proof/000042-5.jpg' },
-  {
-    key: 'any', label: 'No preference', src: null,
-    montage: ['/images/proof/000015-3.jpg', '/images/proof/000038-4.jpg', '/images/proof/000042-5.jpg', '/images/proof/000041.jpg'],
-  },
+const VIBES: { key: VibeKey; label: string; src: string | null }[] = [
+  { key: 'street', label: 'Street', src: '/images/faves/000016-3.jpg' },
+  { key: 'nature', label: 'Nature', src: '/images/large/manila-gallery-statue-001.jpg' },
+  { key: 'indoor', label: 'Indoor', src: '/images/large/000048750034.jpg' },
+  // Nothing to photograph for "any", so this one doesn't pretend: a grey box
+  // with something moving inside it, which is what the choice actually is.
+  { key: 'any', label: 'No preference', src: null },
 ]
 
 // ONE roll of film. Each slide shows a four-frame window into it, two frames
@@ -141,7 +144,10 @@ const resumeKey = (path: string) => `atf_signup_resume:${path}`
 type Channel = 'line' | 'whatsapp'
 
 type ResumeState = {
-  v: 1
+  // Bumped to 2 when v4 took over /sign-up-collab. A v1 snapshot came from v3,
+  // where 'capture' was the FIRST frame rather than the fourth — restoring one
+  // would drop a returning visitor into the wrong place. Old ones are dropped.
+  v: 2
   ts: number
   step: Step
   channel: Channel
@@ -206,7 +212,11 @@ const slideMotionCss = `
 .atf-card { animation: atfCardIn 520ms cubic-bezier(.22,1,.36,1) both }
 .atf-ribbon-back { animation: atfWindOnBack 860ms cubic-bezier(.19,1,.28,1) both }
 .atf-frame { animation: atfFrameIn 620ms cubic-bezier(.19,1,.28,1) both }
-@media (prefers-reduced-motion: reduce) { .atf-card, .atf-ribbon-back, .atf-frame { animation: none } }
+@keyframes atfShimmer { 0% { transform: translateX(-160%) } 55%, 100% { transform: translateX(260%) } }
+@keyframes atfWobble { 0%, 84%, 100% { transform: rotate(0deg) scale(1) } 88% { transform: rotate(-7deg) scale(1.06) } 92% { transform: rotate(6deg) scale(1.06) } 96% { transform: rotate(-3deg) scale(1.02) } }
+.atf-shimmer { animation: atfShimmer 3s cubic-bezier(.4,0,.2,1) infinite }
+.atf-wobble { animation: atfWobble 4.4s ease-in-out infinite }
+@media (prefers-reduced-motion: reduce) { .atf-card, .atf-ribbon-back, .atf-frame, .atf-shimmer, .atf-wobble { animation: none } }
 `
 
 function LineIcon({ className }: { className?: string }) {
@@ -232,7 +242,7 @@ function CheckIcon({ className }: { className?: string }) {
 }
 
 export default function SignUpFormCollabV4({ analyticsPath = '/sign-up-collab-v4' }: { analyticsPath?: string }) {
-  const [step, setStep] = useState<Step>('vibe')
+  const [step, setStep] = useState<Step>('location')
   const [error, setError] = useState<string | null>(null)
 
   const [vibe, setVibe] = useState<VibeKey | null>(null)
@@ -272,7 +282,7 @@ export default function SignUpFormCollabV4({ analyticsPath = '/sign-up-collab-v4
       const raw = localStorage.getItem(resumeKey(analyticsPath))
       if (raw) {
         const saved = JSON.parse(raw) as ResumeState
-        if (saved?.v === 1 && Date.now() - saved.ts < RESUME_TTL_MS) resumed = saved
+        if (saved?.v === 2 && Date.now() - saved.ts < RESUME_TTL_MS) resumed = saved
         else localStorage.removeItem(resumeKey(analyticsPath))
       }
     } catch {}
@@ -317,10 +327,10 @@ export default function SignUpFormCollabV4({ analyticsPath = '/sign-up-collab-v4
   }, [analyticsPath])
 
   function persistResume() {
-    const touched = step !== 'vibe' || !!vibe
+    const touched = step !== 'location' || !!location || !!vibe
     if (!touched) return
     const base: Omit<ResumeState, 'photos'> = {
-      v: 1, ts: Date.now(), step, channel, vibe, phone, countryCode,
+      v: 2, ts: Date.now(), step, channel, vibe, phone, countryCode,
       location, idea, instagram, lead: leadRecord, postedContact, leadFired,
     }
     const write = (withPhotos: string[]) =>
@@ -346,7 +356,7 @@ export default function SignUpFormCollabV4({ analyticsPath = '/sign-up-collab-v4
 
   // The sticky CTA appears only while the picker is scrolled out of view.
   useEffect(() => {
-    if (step !== 'vibe' || !pickerCardRef.current) return
+    if (step !== 'location' || !pickerCardRef.current) return
     const obs = new IntersectionObserver(entries => setShowStickyCta(!entries[0].isIntersecting), { threshold: 0.1 })
     obs.observe(pickerCardRef.current)
     return () => obs.disconnect()
@@ -355,7 +365,7 @@ export default function SignUpFormCollabV4({ analyticsPath = '/sign-up-collab-v4
   // Hero crossfade. Stopped entirely for anyone who asked for less motion —
   // they get the opening frame and nothing moves.
   useEffect(() => {
-    if (step !== 'vibe') return
+    if (step !== 'location') return
     let reduced = false
     try { reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches } catch {}
     if (reduced) return
@@ -363,8 +373,12 @@ export default function SignUpFormCollabV4({ analyticsPath = '/sign-up-collab-v4
     return () => clearInterval(t)
   }, [step])
 
-  const chips = cityChipsForCountry(countryIso).slice(0, 3)
-  const cityExamples = cityExamplesForCountry(countryIso)
+  // Pattaya earns a chip ahead of Phuket for this audience, and Phuket drops
+  // into the typed examples. Scoped here rather than in lib/cityChips, which
+  // still feeds the live page and shouldn't shift under it.
+  const allCities = [...cityChipsForCountry(countryIso), ...cityExamplesForCountry(countryIso)]
+  const chips = (countryIso && CHIP_ORDER[countryIso]) || allCities.slice(0, 3)
+  const cityExamples = allCities.filter(c => !chips.includes(c)).slice(0, 3)
 
   function fieldEngaged(field: string) {
     if (engagedFields.current.size === 0) track('form_start', { first_field: field })
@@ -512,7 +526,7 @@ export default function SignUpFormCollabV4({ analyticsPath = '/sign-up-collab-v4
     setInstagram('')
     setPhotos([])
     setError(null)
-    setStep('vibe')
+    setStep('location')
     window.scrollTo({ top: 0 })
   }
 
@@ -723,12 +737,12 @@ export default function SignUpFormCollabV4({ analyticsPath = '/sign-up-collab-v4
     <div className="rounded-2xl border border-red-200 bg-red-50 px-4 py-3 text-[13px] font-semibold text-red-700">{error}</div>
   ) : null
 
-  // ── Frame 1 · the look ──
+  // ── Frame 1 · where ──
   // The original opening page, unchanged apart from what sits in the card: the
   // full-bleed hero and headline, the proof grid and how-it-works below the
-  // fold, the sticky CTA. Only the ask has been swapped out for the picker —
-  // everything that made the first screen work is still doing its job.
-  if (step === 'vibe') {
+  // fold, the sticky CTA. Only the ask has been swapped — the card now opens on
+  // location instead of the number.
+  if (step === 'location') {
     return (
       <div className="mx-auto w-full max-w-md bg-white">
         {/* Hero — the proof IS the pitch */}
@@ -771,53 +785,68 @@ export default function SignUpFormCollabV4({ analyticsPath = '/sign-up-collab-v4
           </div>
         </div>
 
-        {/* Picker card — sits exactly where the capture card used to */}
+        {/* Opening card — sits exactly where the capture card used to */}
         <div ref={pickerCardRef} className="relative z-10 mx-4 -mt-5 rounded-2xl border border-neutral-200 bg-white p-4 shadow-xl">
-          <p className="text-sm leading-snug text-neutral-600">
-            Pick the kind of shoot you want &mdash; I&rsquo;ll build it around that.
+          {/* h2, not h1 — the hero headline above is the page's h1. Same face
+              and size as every other frame's title so the card belongs to the set. */}
+          <h2 className="text-[30px] font-semibold leading-[1.1] tracking-[-0.01em] text-neutral-900" style={{ fontFamily: "Georgia, 'Times New Roman', serif", fontStyle: 'italic', textWrap: 'balance' }}>
+            Where are you located?
+          </h2>
+          <p className="mt-2 text-[13px] leading-relaxed text-neutral-500">
+            I&rsquo;ll message you with all the details &mdash; timing, location ideas, what to wear, and next steps.
           </p>
-          <div className="mt-3 grid grid-cols-2 gap-2.5">
-            {VIBES.map(v => {
-              const on = vibe === v.key
-              return (
+          {chips.length > 0 && (
+            <div className="mt-3 flex flex-wrap gap-2">
+              {chips.map(chip => (
                 <button
-                  key={v.key}
+                  key={chip}
                   type="button"
-                  onClick={() => {
-                    setVibe(v.key)
-                    track('vibe_selected', { value: v.key })
-                    fieldEngaged('vibe')
-                    advance('location')
-                  }}
-                  className={`relative aspect-square overflow-hidden rounded-xl border-2 text-left transition active:scale-[0.98] ${
-                    on ? 'border-emerald-600 shadow-[0_0_0_3px_rgba(5,150,105,0.16)]' : 'border-transparent'
+                  onClick={() => { fieldEngaged('location'); track('location_selected', { method: 'chip', value: chip }); setLocation(chip); setError(null) }}
+                  className={`rounded-full border px-4 py-2 text-[13px] font-bold tracking-[-0.01em] transition-all ${
+                    location.trim() === chip
+                      ? 'border-emerald-600 bg-emerald-600 text-white shadow-[0_8px_18px_-10px_rgba(5,150,105,0.9)]'
+                      : 'border-neutral-200 bg-[#faf9f6] text-neutral-600 hover:border-neutral-300 hover:text-neutral-900'
                   }`}
-                  data-cta={`v4-vibe-${v.key}`}
                 >
-                  {v.src ? (
-                    <NextImage src={v.src} alt="" fill sizes="(max-width: 640px) 45vw, 200px" className="object-cover" />
-                  ) : (
-                    <span className="absolute inset-0 grid grid-cols-2 grid-rows-2 gap-px bg-white">
-                      {(v.montage ?? []).map(s => (
-                        <span key={s} className="relative overflow-hidden">
-                          <NextImage src={s} alt="" fill sizes="100px" className="object-cover" />
-                        </span>
-                      ))}
-                    </span>
-                  )}
-                  <span className="absolute inset-0" style={{ background: 'linear-gradient(180deg, transparent 45%, rgba(0,0,0,0.72))' }} />
-                  <span className="absolute bottom-2.5 left-3 right-3 text-[13px] font-bold text-white" style={{ textShadow: '0 1px 5px rgba(0,0,0,0.9)' }}>
-                    {v.label}
-                  </span>
-                  {on && (
-                    <span className="absolute right-2 top-2 flex h-5 w-5 items-center justify-center rounded-full bg-emerald-600 text-white">
-                      <CheckIcon className="h-2.5 w-2.5" />
-                    </span>
-                  )}
+                  {chip}
                 </button>
-              )
-            })}
-          </div>
+              ))}
+            </div>
+          )}
+          <input
+            value={location}
+            onChange={e => { fieldEngaged('location'); setLocation(e.target.value); setError(null) }}
+            onBlur={() => {
+              const v = location.trim()
+              if (v && !chips.includes(v)) trackOnce('location_selected', v, { method: 'typed', value: v.slice(0, 80) })
+            }}
+            className="mt-2.5 w-full rounded-xl border border-neutral-300 bg-white px-4 py-3 text-base text-neutral-900 placeholder-neutral-400 outline-none transition focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200"
+            placeholder={
+              cityExamples.length > 0
+                ? `Or type another place — e.g. ${cityExamples.join(', ')}`
+                : chips.length > 0 ? 'Or type another place' : 'Type your city or town'
+            }
+          />
+          {error && (
+            <div className="mt-3 rounded-xl border border-red-300 bg-red-50 px-4 py-3 text-sm font-medium text-red-700">
+              {error}
+            </div>
+          )}
+          <button
+            type="button"
+            onClick={() => {
+              if (!location.trim()) {
+                track('validation_error', { reason: 'location_missing' })
+                setError('Let me know where you are so I can plan the shoot.')
+                return
+              }
+              advance('vibe')
+            }}
+            className="mt-3 w-full rounded-full bg-emerald-600 py-4 text-base font-bold text-white shadow-lg shadow-emerald-600/25 transition hover:bg-emerald-500 active:scale-[0.99]"
+            data-cta="v4-submit-location"
+          >
+            Get Started
+          </button>
         </div>
 
         {/* Below the fold — proof and how it works, for the scrollers */}
@@ -881,53 +910,51 @@ export default function SignUpFormCollabV4({ analyticsPath = '/sign-up-collab-v4
     )
   }
 
-  // ── Frame 2 · where ──
-  if (step === 'location') {
+  // ── Frame 2 · the look ──
+  if (step === 'vibe') {
     return slideShell(2, (
       <>
-        {kicker(2, BACK_TO.location)}
-        {slideTitle('Where are you located?')}
-        {chips.length > 0 && (
-          <div className="mt-5 flex flex-wrap gap-2">
-            {chips.map(chip => (
+        {kicker(2, BACK_TO.vibe)}
+        {slideTitle("What's your vibe?")}
+        <div className="mt-5 grid grid-cols-2 gap-2.5">
+          {VIBES.map(v => {
+            const on = vibe === v.key
+            return (
               <button
-                key={chip}
+                key={v.key}
                 type="button"
-                onClick={() => { fieldEngaged('location'); track('location_selected', { method: 'chip', value: chip }); setLocation(chip); setError(null) }}
-                className={`rounded-full border px-4 py-2 text-[13px] font-bold tracking-[-0.01em] transition-all ${
-                  location.trim() === chip
-                    ? 'border-emerald-600 bg-emerald-600 text-white shadow-[0_8px_18px_-10px_rgba(5,150,105,0.9)]'
-                    : 'border-neutral-200 bg-[#faf9f6] text-neutral-600 hover:border-neutral-300 hover:text-neutral-900'
+                onClick={() => {
+                  setVibe(v.key)
+                  track('vibe_selected', { value: v.key })
+                  fieldEngaged('vibe')
+                  advance('notes')
+                }}
+                className={`relative aspect-square overflow-hidden rounded-2xl border-2 text-left transition active:scale-[0.98] ${
+                  on ? 'border-emerald-600 shadow-[0_0_0_3px_rgba(5,150,105,0.16)]' : 'border-transparent'
                 }`}
+                data-cta={`v4-vibe-${v.key}`}
               >
-                {chip}
+                {v.src ? (
+                  <NextImage src={v.src} alt="" fill sizes="(max-width: 640px) 45vw, 200px" className="object-cover" />
+                ) : (
+                  <span className="absolute inset-0 overflow-hidden" style={{ background: 'linear-gradient(145deg, #423e38, #22201b)' }}>
+                    <span className="atf-shimmer absolute inset-y-0 w-1/2" style={{ background: 'linear-gradient(100deg, transparent, rgba(255,255,255,0.14), transparent)' }} />
+                    <span className="absolute inset-0 flex items-center justify-center">
+                      <span className="atf-wobble flex h-11 w-11 items-center justify-center rounded-[14px] border-2 border-white/30 text-[20px] font-bold text-white/75">?</span>
+                    </span>
+                  </span>
+                )}
+                <span className="absolute inset-0" style={{ background: 'linear-gradient(180deg, transparent 45%, rgba(0,0,0,0.72))' }} />
+                <span className="absolute bottom-2.5 left-3 right-3 text-[13px] font-bold text-white" style={{ textShadow: '0 1px 5px rgba(0,0,0,0.9)' }}>
+                  {v.label}
+                </span>
+                {on && (
+                  <span className="absolute right-2 top-2 flex h-5 w-5 items-center justify-center rounded-full bg-emerald-600 text-white">
+                    <CheckIcon className="h-2.5 w-2.5" />
+                  </span>
+                )}
               </button>
-            ))}
-          </div>
-        )}
-        <input
-          value={location}
-          onChange={e => { fieldEngaged('location'); setLocation(e.target.value); setError(null) }}
-          onBlur={() => {
-            const v = location.trim()
-            if (v && !chips.includes(v)) trackOnce('location_selected', v, { method: 'typed', value: v.slice(0, 80) })
-          }}
-          className={`${inputCls} mt-3`}
-          placeholder={
-            cityExamples.length > 0
-              ? `Or type another place — e.g. ${cityExamples.join(', ')}`
-              : chips.length > 0 ? 'Or type another place' : 'Type your city or town'
-          }
-        />
-        <div className="mt-6 space-y-3">
-          {errorBox}
-          {nextBtn(() => {
-            if (!location.trim()) {
-              track('validation_error', { reason: 'location_missing' })
-              setError('Let me know where you are so I can plan the shoot.')
-              return
-            }
-            advance('notes')
+            )
           })}
         </div>
       </>
@@ -1021,7 +1048,7 @@ export default function SignUpFormCollabV4({ analyticsPath = '/sign-up-collab-v4
             className="w-full rounded-2xl bg-emerald-600 py-4 text-[15px] font-bold tracking-[-0.01em] text-white shadow-[0_12px_26px_-12px_rgba(5,150,105,0.9)] transition hover:bg-emerald-500 active:scale-[0.99]"
             data-cta="v4-submit"
           >
-            Message me the details
+            Next
           </button>
         </form>
       </>
@@ -1150,6 +1177,21 @@ export default function SignUpFormCollabV4({ analyticsPath = '/sign-up-collab-v4
     <div className="min-h-screen bg-[#f4f2ee]">
       <style dangerouslySetInnerHTML={{ __html: slideMotionCss }} />
       <div className="mx-auto max-w-md px-4 pb-10 pt-7">
+        {/* Sits where Back sits on every other frame, mirrored to the right —
+            there's nothing to go back to here, only to begin again. */}
+        <div className="mb-3 flex justify-end">
+          <button
+            type="button"
+            onClick={startOver}
+            className="-mr-1 flex shrink-0 items-center gap-1.5 rounded-full border border-neutral-200 bg-[#faf9f6] py-2.5 pl-4 pr-3 text-[12px] font-bold text-neutral-700 transition hover:border-neutral-300 hover:bg-neutral-100 hover:text-neutral-900 active:scale-95"
+            data-cta="v4-start-over"
+          >
+            Start over
+            <svg viewBox="0 0 24 24" className="h-3.5 w-3.5" fill="none" stroke="currentColor" strokeWidth={2.6} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <path d="M3 2v6h6" /><path d="M3.5 13a9 9 0 106-9.7L3 8" />
+            </svg>
+          </button>
+        </div>
         <div className="atf-card overflow-hidden rounded-[26px] border border-black/[0.06] bg-white shadow-[0_24px_60px_-34px_rgba(23,21,15,0.55)]">
           <div className="relative h-48">
             <NextImage src={heroImage} alt="" fill priority sizes="(max-width: 640px) 100vw, 448px" className="object-cover object-top" style={{ filter: 'brightness(0.6) saturate(1.15)' }} />
@@ -1158,21 +1200,6 @@ export default function SignUpFormCollabV4({ analyticsPath = '/sign-up-collab-v4
           </div>
           <div className="space-y-5 px-6 pb-6 pt-4">
             <p className="text-sm text-neutral-500">I&apos;ll message you on {CHANNELS[channel].name} within 24 hours. Let&apos;s make something great together.</p>
-            <div className="grid grid-cols-2 gap-4">
-              <div className="space-y-1">
-                <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-neutral-400">Type</p>
-                <p className="text-sm font-medium text-neutral-900">TFP Collaboration</p>
-              </div>
-              <div className="space-y-1">
-                <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-neutral-400">Duration</p>
-                <p className="text-sm font-medium text-neutral-900">1&ndash;2 hours</p>
-              </div>
-              <div className="space-y-1">
-                <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-neutral-400">Cost</p>
-                <p className="text-sm font-medium text-emerald-600">Free &mdash; we both get content</p>
-              </div>
-            </div>
-            <div className="h-px bg-neutral-100" />
             <div className="space-y-3">
               <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-neutral-400">What to expect</p>
               <div className="space-y-2.5">
@@ -1191,14 +1218,6 @@ export default function SignUpFormCollabV4({ analyticsPath = '/sign-up-collab-v4
             </div>
           </div>
         </div>
-        <button
-          type="button"
-          onClick={startOver}
-          className="mt-5 w-full rounded-2xl border border-neutral-200 bg-white py-3.5 text-[14px] font-bold text-neutral-700 transition hover:border-neutral-300 hover:bg-neutral-50 hover:text-neutral-900 active:scale-[0.99]"
-          data-cta="v4-start-over"
-        >
-          Start over
-        </button>
         {ribbon(6)}
       </div>
     </div>
