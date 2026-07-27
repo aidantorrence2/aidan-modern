@@ -106,11 +106,48 @@ const howItWorks = [
 // the greeting message and the follow webhook only exist on that side.
 const LINE_ADD_URL = 'https://line.me/ti/p/XKpsnykVaM'
 
-// A LINE row is created before there's anything to identify it by — they
-// tapped the add link, so the contact column can only say so. Their Instagram
-// handle lands in the moodboard as it does on every other signup, and admin
-// surfaces it from there.
+// The row is written at the tap, before there's anything to identify it by —
+// they tapped the add link, so the contact column can only say so. Everything
+// after (location, photos, Instagram) PATCHes onto it. Their handle lands in
+// the moodboard as it does on every other signup, and admin surfaces it from
+// there.
+//
+// The cost is a row per tap, bounces included; the alternative was waiting for
+// a slide they mostly never came back to, which lost the lead outright.
 const LINE_ROW_CONTACT = 'LINE — added me'
+
+// ── Resume ──
+// The add-friend tap hands the visitor to the LINE app, and on mobile the
+// browser goes to the background — often for good, sometimes with the tab
+// discarded outright. Whatever they'd filled in was lost with it, and coming
+// back meant starting at the hero again (and re-tapping a button that had
+// already added them). A snapshot per change puts them back on the slide they
+// left, holding the row they already created, so the return trip costs one tap
+// and still enriches a single entry.
+//
+// localStorage, not sessionStorage: the way back is usually a fresh tab — a
+// re-tapped ad, a reopened browser — which a session store can't reach.
+const RESUME_TTL_MS = 24 * 60 * 60 * 1000
+
+const resumeKey = (path: string) => `atf_signup_resume:${path}`
+
+type ResumeState = {
+  v: 1
+  ts: number
+  step: Step
+  channel: Channel
+  phone: string
+  countryCode: string
+  location: string
+  idea: string
+  instagram: string
+  photos: string[]
+  lead: { id: number | null; contact: string } | null
+  // What was last sent to POST, so re-submitting an unchanged capture card
+  // re-uses the row instead of writing a second one.
+  postedContact: string | null
+  leadFired: boolean
+}
 
 // Both channels are phone numbers, so the dial-code select, the digit
 // validation and the E.164 normalization are shared — only the copy and the
@@ -209,17 +246,117 @@ export default function SignUpFormCollabV3({ analyticsPath = '/sign-up-collab' }
   const engagedFields = useRef<Set<string>>(new Set())
   const lastTracked = useRef<Record<string, string>>({})
 
+  // The row this visitor owns. The ref is what the PATCH chain awaits; the
+  // state mirror is what gets snapshotted, so a resumed visitor enriches the
+  // same entry rather than creating a second one.
+  const leadRef = useRef<Promise<{ id: number | null; contact: string } | null> | null>(null)
+  const patchChain = useRef<Promise<unknown> | null>(null)
+  const [leadRecord, setLeadRecord] = useState<{ id: number | null; contact: string } | null>(null)
+  const [postedContact, setPostedContact] = useState<string | null>(null)
+  // The Meta Lead has been counted for this visitor. Backing up to the capture
+  // card and submitting again must not count a second one.
+  const [leadFired, setLeadFired] = useState(false)
+  // Nothing is written to storage until the restore pass has run, or the empty
+  // first render would clobber the snapshot it's about to read.
+  const [hydrated, setHydrated] = useState(false)
+
   useEffect(() => {
     initPageAnalytics(analyticsPath, { version: 'v3-capture-first' })
+
+    let resumed: ResumeState | null = null
+    try {
+      const raw = localStorage.getItem(resumeKey(analyticsPath))
+      if (raw) {
+        const saved = JSON.parse(raw) as ResumeState
+        if (saved?.v === 1 && Date.now() - saved.ts < RESUME_TTL_MS) resumed = saved
+        else localStorage.removeItem(resumeKey(analyticsPath))
+      }
+    } catch {}
+
+    if (resumed) {
+      setStep(resumed.step)
+      setChannel(resumed.channel)
+      setPhone(resumed.phone)
+      setCountryCode(resumed.countryCode)
+      setLocation(resumed.location)
+      setIdea(resumed.idea)
+      setInstagram(resumed.instagram)
+      setPhotos(resumed.photos)
+      setPostedContact(resumed.postedContact)
+      setLeadFired(resumed.leadFired)
+      if (resumed.lead) {
+        setLeadRecord(resumed.lead)
+        leadRef.current = Promise.resolve(resumed.lead)
+      }
+      track('flow_resumed', {
+        slide: resumed.step,
+        has_row: !!resumed.lead,
+        away_ms: Date.now() - resumed.ts,
+        photos: resumed.photos.length,
+      })
+    }
+
     // Same detection the old form shipped with (PRs #27–#30): timezone →
     // country, chips + dial localized, nothing shown until detection succeeds.
     const country = detectCountry()
     if (country) {
       setCountryIso(country.iso)
-      setCountryCode(country.dial)
+      // A restored dial code is the visitor's own pick — detection must not
+      // overwrite it.
+      if (!resumed?.countryCode) setCountryCode(country.dial)
       track('country_detected', { iso: country.iso })
     }
+    setHydrated(true)
   }, [analyticsPath])
+
+  // Snapshot of everything needed to put them back. Called from the two
+  // effects below rather than on every render — with photos in the payload
+  // this serializes megabytes, which is not something to do per keystroke.
+  function persistResume() {
+    const touched = step !== 'capture' || !!phone || !!location || !!idea || !!instagram || photos.length > 0
+    if (!touched) return
+    const base: Omit<ResumeState, 'photos'> = {
+      v: 1,
+      ts: Date.now(),
+      step,
+      channel,
+      phone,
+      countryCode,
+      location,
+      idea,
+      instagram,
+      lead: leadRecord,
+      postedContact,
+      leadFired,
+    }
+    const write = (withPhotos: string[]) =>
+      localStorage.setItem(resumeKey(analyticsPath), JSON.stringify({ ...base, photos: withPhotos }))
+    try {
+      // resizeImage already caps each photo at 300 KB, so a realistic set fits
+      // the ~5 MB quota several times over. If an outlier does blow it, the
+      // typed fields are worth far more than the previews — and anything past
+      // the photos slide is uploaded to the row regardless.
+      write(photos)
+    } catch {
+      try { write([]) } catch {}
+    }
+  }
+
+  // Discrete moves — a slide change, an upload, the row landing. Written at
+  // once: the LINE tap advances the slide and hands the browser off in the
+  // same beat, so a debounce window here could be the last thing that ever
+  // happens on this page.
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  useEffect(() => { if (hydrated) persistResume() }, [hydrated, step, channel, photos, leadRecord, postedContact, leadFired])
+
+  // Typing coalesces. Nothing is lost by a keystroke going unsaved — the next
+  // Next/Back writes the field anyway.
+  useEffect(() => {
+    if (!hydrated) return
+    const t = setTimeout(persistResume, 400)
+    return () => clearTimeout(t)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [hydrated, phone, countryCode, location, idea, instagram])
 
   // The sticky CTA appears only while the capture card is scrolled out of view.
   useEffect(() => {
@@ -293,10 +430,8 @@ export default function SignUpFormCollabV3({ analyticsPath = '/sign-up-collab' }
   // The transition to step 2 is instant; the POST runs in the background with
   // one silent retry. If it still fails, onEnrichSave/Skip fall back to a
   // fresh full-payload POST — the lead can be delayed but never lost.
-  const leadRef = useRef<Promise<{ id: number | null; contact: string } | null> | null>(null)
-  const patchChain = useRef<Promise<unknown> | null>(null)
-
   function startLeadPost(contact: string, extra?: { city?: string; moodboard?: string[] }) {
+    setPostedContact(contact)
     const attempt = async (): Promise<{ id: number | null; contact: string }> => {
       const res = await fetch('/api/sign-up', {
         method: 'POST',
@@ -320,10 +455,13 @@ export default function SignUpFormCollabV3({ analyticsPath = '/sign-up-collab' }
       .then(lead => {
         track('submit_success', { channel, elapsed_ms: pageElapsedMs() })
         flushNow()
-        // The LINE path already counted its Lead at the add-friend tap.
-        if (typeof window !== 'undefined' && !opensLine) {
+        setLeadRecord(lead)
+        // The LINE path already counted its Lead at the add-friend tap, and a
+        // visitor who backed up and re-submitted has been counted once too.
+        if (typeof window !== 'undefined' && !opensLine && !leadFired) {
           const fbq = (window as typeof window & { fbq?: (...args: unknown[]) => void }).fbq
           if (typeof fbq === 'function') fbq('track', 'Lead', { source: 'sign-up-collab-v3' })
+          setLeadFired(true)
         }
         return lead
       })
@@ -338,18 +476,28 @@ export default function SignUpFormCollabV3({ analyticsPath = '/sign-up-collab' }
     const data = Object.fromEntries(new FormData(e.currentTarget).entries()) as Record<string, string>
     if (data.company) { track('honeypot_triggered'); setStep('location'); return }
 
-    // LINE path: nothing is typed, so the tap itself is the conversion. LINE
-    // opens (synchronously, so pop-up blockers treat it as user-initiated) and
-    // the flow carries on in this tab — the row is written at the end from
-    // whatever they fill in on the way.
+    // LINE path: nothing is typed, so the tap itself is the conversion — and
+    // it's the last thing a good share of these visitors ever do on this page,
+    // because LINE takes the foreground and the browser doesn't get it back.
+    // So the row goes in here, at the tap, with everything they fill in
+    // afterwards PATCHing onto it. LINE opens synchronously, so pop-up blockers
+    // treat it as user-initiated; the POST is already in flight by then and
+    // doesn't need to finish first.
     if (opensLine) {
-      track('line_add_clicked', { placement: 'capture' })
+      track('line_add_clicked', { placement: 'capture', repeat: leadFired })
       track('submit_attempt', { channel, digits: 0, elapsed_ms: pageElapsedMs() })
       flushNow()
       // Fired here rather than on a POST: on this path the tap is the lead, so
-      // without it the ad account would see no conversions at all.
-      const fbq = (window as typeof window & { fbq?: (...args: unknown[]) => void }).fbq
-      if (typeof fbq === 'function') fbq('track', 'Lead', { source: 'sign-up-collab-v3' })
+      // without it the ad account would see no conversions at all. Once only —
+      // backing up to this card and tapping again is the same lead.
+      if (!leadFired) {
+        const fbq = (window as typeof window & { fbq?: (...args: unknown[]) => void }).fbq
+        if (typeof fbq === 'function') fbq('track', 'Lead', { source: 'sign-up-collab-v3' })
+        setLeadFired(true)
+      }
+      // Guarded so backing up to this card and tapping again enriches the row
+      // they already have instead of writing a second one.
+      if (!leadRef.current) startLeadPost(LINE_ROW_CONTACT)
       window.open(LINE_ADD_URL, '_blank', 'noopener,noreferrer')
       setError(null)
       setStep('location')
@@ -368,7 +516,11 @@ export default function SignUpFormCollabV3({ analyticsPath = '/sign-up-collab' }
 
     track('submit_attempt', { channel, country_code: countryCode, digits: digits.length, elapsed_ms: pageElapsedMs() })
     setError(null)
-    startLeadPost(countryCode ? countryCode + ' ' + phone.trim() : phone.trim())
+    // Backing up and coming through again re-uses the row — unless the number
+    // itself changed, in which case the old row holds one they've corrected and
+    // a fresh POST is the only way to record the new one.
+    const typed = countryCode ? countryCode + ' ' + phone.trim() : phone.trim()
+    if (!leadRef.current || postedContact !== typed) startLeadPost(typed)
     setStep('location')
     track('slide_shown', { slide: 'location' })
     window.scrollTo({ top: 0 })
@@ -438,10 +590,9 @@ export default function SignUpFormCollabV3({ analyticsPath = '/sign-up-collab' }
       moodboard: moodboardSoFar(),
       ...(withPhotos && withPhotos.length > 0 ? { photos: withPhotos } : {}),
     }
-    // The LINE path has no number to POST at capture, so the row is created on
-    // the first advance that carries anything — same as the number channels,
-    // where it already exists by now. Dropping off later costs the rest of the
-    // profile, never the lead.
+    // Both paths POST at capture, so by here the row exists. This is the net
+    // for the one case that skips it: a channel switched to LINE after the
+    // capture card was already behind them.
     if (!leadRef.current && opensLine) {
       startLeadPost(LINE_ROW_CONTACT, { city: location.trim(), moodboard: moodboardSoFar() })
     }
@@ -466,6 +617,16 @@ export default function SignUpFormCollabV3({ analyticsPath = '/sign-up-collab' }
     window.scrollTo({ top: 0 })
   }
 
+  // Back never saves: they're on their way to change something, and the PATCH
+  // for whatever they change lands on the next forward move.
+  function goBack(prev: Step) {
+    track('slide_back', { from: step, to: prev })
+    setError(null)
+    setStep(prev)
+    window.scrollTo({ top: 0 })
+  }
+
+
   function finishSignup() {
     track('enrich_attempt', {
       photos: photos.length,
@@ -476,11 +637,11 @@ export default function SignUpFormCollabV3({ analyticsPath = '/sign-up-collab' }
     })
     queuePatch()
 
-    // Two cases land here with no row yet: a capture POST that failed, and the
-    // LINE path, which never had a number to POST in the first place. Both save
-    // everything in one shot. With no number, the Instagram handle is the only
-    // contact there is — and when that's blank too, the row is still worth
-    // writing for the location and photos.
+    // Only one case lands here with no row now that both paths POST at
+    // capture: that POST failed, twice. Save everything in one shot. On the
+    // LINE path there's no number, so the Instagram handle is the only contact
+    // there is — and when that's blank too, the row is still worth writing for
+    // the location and photos.
     const saveInOneShot = () => {
       const typedNumber = countryCode ? countryCode + ' ' + phone.trim() : phone.trim()
       const contact = opensLine
@@ -583,8 +744,16 @@ export default function SignUpFormCollabV3({ analyticsPath = '/sign-up-collab' }
       </div>
     </div>
   )
-  const slideKicker = (n: number) => (
-    <div className="flex items-center gap-3">
+  const slideKicker = (n: number, back: Step) => (
+    <div className="flex items-center gap-2.5">
+      <button
+        type="button"
+        onClick={() => goBack(back)}
+        aria-label="Back"
+        className="-my-2 -ml-2 flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-neutral-400 transition hover:bg-neutral-100 hover:text-neutral-800 active:scale-95"
+      >
+        <svg viewBox="0 0 24 24" className="h-[17px] w-[17px]" fill="none" stroke="currentColor" strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6" /></svg>
+      </button>
       <p className="shrink-0 text-[9px] font-bold uppercase tracking-[0.22em] text-neutral-400">{n} / 5</p>
       <span className="flex flex-1 gap-1.5" aria-hidden="true">
         {[2, 3, 4, 5].map(i => (
@@ -724,7 +893,7 @@ export default function SignUpFormCollabV3({ analyticsPath = '/sign-up-collab' }
     )
     return slideShell(3,
       <>
-        {slideKicker(3)}
+        {slideKicker(3, 'location')}
         {slideTitle('Your photo')}
         <p className="mt-2 text-[13px] leading-relaxed text-neutral-500">Selfies are fine &mdash; just looking to see the real you.</p>
 
@@ -795,7 +964,7 @@ export default function SignUpFormCollabV3({ analyticsPath = '/sign-up-collab' }
   if (step === 'location') {
     return slideShell(2,
       <>
-        {slideKicker(2)}
+        {slideKicker(2, 'capture')}
         {slideTitle('Where are you located?')}
         {chips.length > 0 && <div className="mt-5 flex flex-wrap gap-2">
           {chips.map(chip => (
@@ -847,7 +1016,7 @@ export default function SignUpFormCollabV3({ analyticsPath = '/sign-up-collab' }
   if (step === 'instagram') {
     return slideShell(4,
       <>
-        {slideKicker(4)}
+        {slideKicker(4, 'photos')}
         <h1 className="mt-4 text-[30px] font-semibold leading-[1.1] tracking-[-0.01em] text-neutral-900" style={{ fontFamily: "Georgia, 'Times New Roman', serif", fontStyle: 'italic' }}>
           Your Instagram <span className="text-[17px] font-normal not-italic text-neutral-400">optional</span>
         </h1>
@@ -878,7 +1047,7 @@ export default function SignUpFormCollabV3({ analyticsPath = '/sign-up-collab' }
   if (step === 'notes') {
     return slideShell(5,
       <>
-        {slideKicker(5)}
+        {slideKicker(5, 'instagram')}
         {slideTitle('Anything else?')}
         <p className="mt-2 text-[13px] leading-relaxed text-neutral-500">Your own idea, inspo, references &mdash; anything.</p>
         <textarea
