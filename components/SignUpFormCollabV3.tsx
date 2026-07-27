@@ -66,34 +66,27 @@ const proofImages = [
   '/images/proof/DSC_0347.jpg',
 ]
 
-// Each post-capture slide opens on a band of real shoots — the work is the
-// pitch, and it should stay the pitch after the tap, not only on the hero.
-const locationBand = [
+// ONE roll of film, not four galleries. Each slide shows a four-frame window
+// into it, two frames further on than the last — so moving through the form
+// winds the same roll forward. Frame numbers advance with it.
+const ROLL = [
   '/images/proof/000009.jpg',
   '/images/proof/000023.jpg',
   '/images/proof/DSC_0321.jpg',
   '/images/proof/000015-3.jpg',
-  '/images/proof/000062.jpg',
-  '/images/proof/DSC_0526.jpg',
-]
-
-const instagramBand = [
   '/images/proof/000013-3.jpg',
   '/images/proof/000042-5.jpg',
   '/images/proof/000005-3.jpg',
   '/images/proof/000019-6.jpg',
-  '/images/proof/000053-5.jpg',
+  '/images/proof/000062.jpg',
+  '/images/proof/DSC_0526.jpg',
 ]
 
-// Single subjects only — the collage moodboards turn to mush at thumbnail size.
-const notesBand = [
-  '/images/moodboards/dramatic-fashion.jpg',
-  '/images/proof/000012.jpg',
-  '/images/proof/000025.jpg',
-  '/images/proof/000039.jpg',
-  '/images/proof/000014-3.jpg',
-  '/images/proof/000016.jpg',
-]
+/** Window into the roll for a given step (2–5), plus its frame numbering. */
+function rollAt(stepNo: number) {
+  const offset = (stepNo - 2) * 2
+  return { frames: ROLL.slice(offset, offset + 4), from: 11 + offset }
+}
 
 // The opening step names whichever channel is selected — see CHANNELS.step.
 const howItWorks = [
@@ -138,6 +131,34 @@ const CHANNELS: Record<Channel, { name: string; placeholder: string; placeholder
     step: 'Drop your WhatsApp number below',
   },
 }
+
+// Motion for the post-capture slides. The card rises as the ribbon winds on,
+// frames catching up one at a time, so consecutive steps read as one take.
+const slideMotionCss = `
+@keyframes atfCardIn {
+  from { opacity: 0; transform: translateY(12px) }
+  to   { opacity: 1; transform: none }
+}
+@keyframes atfWindOn {
+  from { opacity: 0; transform: translateX(13%) }
+  to   { opacity: 1; transform: none }
+}
+@keyframes atfWindOnBack {
+  from { opacity: 0; translate: 34px 26px }
+  to   { opacity: 0.35; translate: none }
+}
+@keyframes atfFrameIn {
+  from { opacity: 0; translate: 26px 18px }
+  to   { opacity: 1; translate: none }
+}
+.atf-card { animation: atfCardIn 520ms cubic-bezier(.22,1,.36,1) both }
+.atf-ribbon { animation: atfWindOn 780ms cubic-bezier(.19,1,.28,1) 90ms both }
+.atf-ribbon-back { animation: atfWindOnBack 860ms cubic-bezier(.19,1,.28,1) both }
+.atf-frame { animation: atfFrameIn 620ms cubic-bezier(.19,1,.28,1) both }
+@media (prefers-reduced-motion: reduce) {
+  .atf-card, .atf-ribbon, .atf-ribbon-back, .atf-frame { animation: none }
+}
+`
 
 function LineIcon({ className }: { className?: string }) {
   return (
@@ -493,7 +514,7 @@ export default function SignUpFormCollabV3({ analyticsPath = '/sign-up-collab' }
     window.scrollTo({ top: 0 })
   }
 
-  const inputCls = 'w-full rounded-xl border border-neutral-300 bg-white px-4 py-3 text-sm text-neutral-900 placeholder-neutral-400 outline-none transition focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200'
+  const inputCls = 'w-full rounded-2xl border border-neutral-200 bg-[#faf9f6] px-4 py-3.5 text-[15px] text-neutral-900 placeholder-neutral-400 outline-none transition focus:border-emerald-500 focus:bg-white focus:ring-4 focus:ring-emerald-500/10'
 
   // ── Done ──
   if (step === 'done') {
@@ -547,41 +568,111 @@ export default function SignUpFormCollabV3({ analyticsPath = '/sign-up-collab' }
   }
 
   // ── Slides 2–6: one field per page, instant transitions ──
-  // Each slide opens on a strip of real work — the shoot is the pitch, and it
-  // has to stay the pitch after the tap, not just on the hero.
+  // Slides sit on a warm paper ground with the form on a raised card — the
+  // stark white pages were the reason the flow fell off a cliff after the hero.
+  const slideShell = (stepNo: number, children: React.ReactNode) => (
+    <div className="min-h-screen bg-[#f4f2ee]">
+      <style dangerouslySetInnerHTML={{ __html: slideMotionCss }} />
+      {/* key forces the enter animation to replay on every step, so the five
+          slides read as one continuous sequence rather than five hard cuts. */}
+      <div key={stepNo} className="mx-auto max-w-md px-4 pb-10 pt-7">
+        <div className="atf-card rounded-[26px] border border-black/[0.06] bg-white px-5 pb-6 pt-5 shadow-[0_24px_60px_-34px_rgba(23,21,15,0.55)]">
+          {children}
+        </div>
+        {ribbon(stepNo)}
+      </div>
+    </div>
+  )
   const slideKicker = (n: number) => (
-    <div className="flex items-center gap-2">
-      <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-neutral-400">Step {n} of 5</p>
-      <span className="flex flex-1 gap-1" aria-hidden="true">
+    <div className="flex items-center gap-3">
+      <p className="shrink-0 text-[9px] font-bold uppercase tracking-[0.22em] text-neutral-400">{n} / 5</p>
+      <span className="flex flex-1 gap-1.5" aria-hidden="true">
         {[2, 3, 4, 5].map(i => (
-          <span key={i} className={`h-0.5 flex-1 rounded-full transition-colors ${i <= n ? 'bg-emerald-500' : 'bg-neutral-200'}`} />
+          <span key={i} className={`h-[3px] flex-1 rounded-full transition-colors duration-300 ${i <= n ? 'bg-emerald-600' : 'bg-neutral-200'}`} />
         ))}
       </span>
     </div>
   )
   const slideTitle = (t: string) => (
-    <h1 className="mt-2 font-display text-3xl font-semibold text-neutral-900" style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic' }}>{t}</h1>
+    <h1 className="mt-4 text-[30px] font-semibold leading-[1.1] tracking-[-0.01em] text-neutral-900" style={{ fontFamily: "Georgia, 'Times New Roman', serif", fontStyle: 'italic', textWrap: 'balance' }}>{t}</h1>
   )
-  // A full-bleed band of shoots, bled past the slide's own padding.
-  const slideBand = (srcs: string[], caption: string) => (
-    <div className="-mx-5 mt-5">
-      <div className="flex gap-1.5 overflow-x-auto px-5 pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-        {srcs.map((src, i) => (
-          <div key={i} className="relative h-40 w-28 shrink-0 overflow-hidden rounded-xl bg-neutral-100 shadow-sm">
-            <NextImage src={src} alt="" width={224} height={320} sizes="112px" className="h-full w-full object-cover" />
-            <span className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-black/5" />
-          </div>
-        ))}
+  // He shoots film, so the proof is film — and the roll doesn't lie flat. Each
+  // frame is placed on a sine, tilted to the tangent and overlapped with its
+  // neighbours, so the strip genuinely rises and falls across the slide instead
+  // of being a rotated bar. The phase shifts by step, so the ribbon is caught
+  // mid-travel at a different point every time.
+  const sprockets = (small = false) => (
+    <div className={small ? 'h-[5px] w-full' : 'h-[6px] w-full'} aria-hidden="true" style={{
+      backgroundImage: 'repeating-linear-gradient(to right, #d9d3c6 0 7px, transparent 7px 18px)',
+      backgroundSize: '18px 3px',
+      backgroundPosition: 'center',
+      backgroundRepeat: 'repeat-x',
+    }} />
+  )
+  const cell = (src: string, no: number, i: number, small: boolean) => (
+    <div className={`bg-[#17150f] px-[3px] ${small ? 'py-[3px]' : 'py-[4px]'} shadow-[0_18px_30px_-20px_rgba(23,21,15,0.95)]`}>
+      {sprockets(small)}
+      <div className="relative overflow-hidden bg-black" style={{ height: small ? 92 : 124 }}>
+        <NextImage src={src} alt="" width={260} height={340} sizes="128px" className="h-full w-full object-cover" />
       </div>
-      <p className="px-5 pt-1 text-[10px] font-semibold uppercase tracking-[0.15em] text-neutral-400">{caption}</p>
+      {sprockets(small)}
+      <div className="flex justify-start pl-1 pt-[1px]">
+        <span className="text-[6px] font-bold tracking-[0.22em] text-[#e0a13f]">{no}{i % 2 === 0 ? 'A' : ''}</span>
+      </div>
     </div>
   )
+  const ribbon = (stepNo: number) => {
+    const { frames, from } = rollAt(stepNo)
+    const phase = (stepNo - 2) * 0.75
+    // Trailing frames from further down the roll, smaller and set back.
+    const trail = ROLL.slice(6, 9)
+    return (
+      <div className="relative mt-2 -mx-4 h-[214px] select-none overflow-hidden" aria-hidden="true">
+        {trail.map((src, i) => {
+          const t = i + phase + 2.4
+          return (
+            <div
+              key={`t-${src}`}
+              className="atf-ribbon-back absolute w-[86px] opacity-[0.35]"
+              style={{
+                left: `${4 + i * 27}%`,
+                top: 74 + Math.sin(t * 0.8) * 28,
+                transform: `rotate(${Math.cos(t * 0.8) * 9}deg)`,
+                animationDelay: `${i * 80}ms`,
+              }}
+            >
+              {cell(src, from + 6 + i, i, true)}
+            </div>
+          )
+        })}
+        {frames.map((src, i) => {
+          const t = i + phase
+          return (
+            <div
+              key={src}
+              className="atf-frame absolute w-[118px]"
+              style={{
+                left: `${-9 + i * 25}%`,
+                top: 22 + Math.sin(t * 0.8) * 32,
+                transform: `rotate(${Math.cos(t * 0.8) * 8}deg)`,
+                animationDelay: `${120 + i * 90}ms`,
+              }}
+            >
+              {cell(src, from + i, i, false)}
+            </div>
+          )
+        })}
+        <span className="pointer-events-none absolute inset-y-0 left-0 w-8 bg-gradient-to-r from-[#f4f2ee] to-transparent" />
+        <span className="pointer-events-none absolute inset-y-0 right-0 w-8 bg-gradient-to-l from-[#f4f2ee] to-transparent" />
+      </div>
+    )
+  }
   const nextBtn = (onClick: () => void, label = 'Next', busy = false) => (
     <button
       type="button"
       onClick={onClick}
       disabled={busy}
-      className="w-full rounded-full bg-emerald-600 py-3.5 text-sm font-bold text-white shadow-lg shadow-emerald-600/20 transition hover:bg-emerald-500 disabled:opacity-50"
+      className="w-full rounded-2xl bg-emerald-600 py-4 text-[15px] font-bold tracking-[-0.01em] text-white shadow-[0_12px_26px_-12px_rgba(5,150,105,0.9)] transition hover:bg-emerald-500 active:scale-[0.99] disabled:opacity-50"
       data-cta="sign-up-collab-v3-next"
     >
       {busy ? (
@@ -590,87 +681,103 @@ export default function SignUpFormCollabV3({ analyticsPath = '/sign-up-collab' }
     </button>
   )
   const skipBtn = (onClick: () => void) => (
-    <button type="button" onClick={onClick} className="w-full text-center text-sm font-medium text-neutral-400 underline-offset-2 hover:underline">
+    <button type="button" onClick={onClick} className="w-full text-center text-[13px] font-semibold text-neutral-400 transition hover:text-neutral-600">
       Skip
     </button>
   )
   const errorBox = error ? (
-    <div className="rounded-xl border border-red-300 bg-red-50 px-4 py-3 text-sm font-medium text-red-700">{error}</div>
+    <div className="rounded-2xl border border-red-200 bg-red-50 px-4 py-3 text-[13px] font-semibold text-red-700">{error}</div>
   ) : null
 
   if (step === 'photos') {
-    return (
-      <div className="mx-auto max-w-md px-5 py-8">
+    // The examples are a contact sheet: two rows of frames, marked up the way
+    // you'd mark up a proof print — a grease-pencil tick or cross in the corner.
+    const sheet = (srcs: string[], good: boolean) => (
+      <div className="grid grid-cols-4 gap-[3px] rounded-xl bg-[#17150f] p-[3px]">
+        {srcs.map((src, i) => (
+          <div key={i} className="relative aspect-square overflow-hidden bg-black">
+            <NextImage
+              src={src}
+              alt=""
+              width={200}
+              height={200}
+              sizes="(max-width: 640px) 25vw, 100px"
+              className={`h-full w-full object-cover ${good ? '' : 'opacity-[0.62] grayscale'}`}
+            />
+            <span className={`absolute bottom-0.5 right-0.5 flex h-4 w-4 items-center justify-center rounded-full ${good ? 'bg-emerald-500' : 'bg-red-500'} text-white`}>
+              {good
+                ? <CheckIcon className="h-2.5 w-2.5" />
+                : <svg viewBox="0 0 24 24" className="h-2.5 w-2.5" fill="none" stroke="currentColor" strokeWidth={4} strokeLinecap="round" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12" /></svg>}
+            </span>
+          </div>
+        ))}
+      </div>
+    )
+    const sheetLabel = (good: boolean, text: string, note: string) => (
+      <p className="flex flex-wrap items-baseline gap-x-1.5 text-[9px] font-bold uppercase tracking-[0.2em]">
+        <span className={`inline-flex items-center gap-1.5 ${good ? 'text-emerald-600' : 'text-red-500'}`}>
+          <span className={`h-1 w-1 rounded-full ${good ? 'bg-emerald-500' : 'bg-red-500'}`} />
+          {text}
+        </span>
+        <span className="font-semibold tracking-[0.12em] text-neutral-400">{note}</span>
+      </p>
+    )
+    return slideShell(3,
+      <>
         {slideKicker(3)}
         {slideTitle('Your photo')}
-        <p className="mt-1.5 text-sm text-neutral-500">Selfies are fine &mdash; just looking to see the real you.</p>
-        <div className="mt-4 space-y-1.5">
-          <p className="flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-[0.15em] text-emerald-600">
-            <CheckIcon className="h-3.5 w-3.5" />
-            Like this &mdash; simple &amp; natural, don&apos;t hide your face
-          </p>
-          <div className="grid grid-cols-4 gap-1.5">
-            {['/images/collab-examples/good-1.jpg', '/images/collab-examples/good-2.jpg', '/images/collab-examples/good-3.jpg', '/images/collab-examples/good-4.jpg'].map((src, i) => (
-              <div key={i} className="relative overflow-hidden rounded-lg border border-emerald-300 aspect-square">
-                <NextImage src={src} alt="Good example photo" width={200} height={267} sizes="(max-width: 640px) 25vw, 100px" className="w-full h-full object-cover" />
-                <span className="absolute right-1 top-1 flex h-6 w-6 items-center justify-center rounded-full bg-emerald-500 text-white">
-                  <CheckIcon className="h-3.5 w-3.5" />
-                </span>
+        <p className="mt-2 text-[13px] leading-relaxed text-neutral-500">Selfies are fine &mdash; just looking to see the real you.</p>
+
+        <div className="mt-5 space-y-2">
+          {sheetLabel(true, "Like this", "simple & natural, don't hide your face")}
+          {sheet(['/images/collab-examples/good-1.jpg', '/images/collab-examples/good-2.jpg', '/images/collab-examples/good-3.jpg', '/images/collab-examples/good-4.jpg'], true)}
+        </div>
+        <div className="mt-3 space-y-2">
+          {sheetLabel(false, "Not like this", "heavy makeup, filters, face hidden")}
+          {sheet(['/images/collab-examples/bad-1.jpg', '/images/collab-examples/bad-2.jpg', '/images/collab-examples/bad-3.jpg', '/images/collab-examples/bad-4.jpg'], false)}
+        </div>
+
+        {photos.length > 0 && (
+          <div className="mt-5 flex flex-wrap gap-2">
+            {photos.map((p, i) => (
+              <div key={i} className="relative">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={p} alt="Preview" className="h-[72px] w-[72px] rounded-xl object-cover shadow-[0_8px_18px_-10px_rgba(23,21,15,0.7)] ring-1 ring-black/10" />
+                <button
+                  type="button"
+                  onClick={() => removePhoto(i)}
+                  className="absolute -right-1.5 -top-1.5 flex h-5 w-5 items-center justify-center rounded-full bg-neutral-900 text-[11px] text-white shadow transition hover:bg-red-500"
+                  aria-label="Remove photo"
+                >
+                  &times;
+                </button>
               </div>
             ))}
           </div>
-        </div>
-        <div className="mt-2.5 space-y-1.5">
-          <p className="flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-[0.15em] text-red-500">
-            <svg viewBox="0 0 24 24" className="h-3.5 w-3.5" fill="none" stroke="currentColor" strokeWidth={3} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12" /></svg>
-            Not like this &mdash; heavy makeup, filters, face hidden
-          </p>
-          <div className="grid grid-cols-4 gap-1.5">
-            {['/images/collab-examples/bad-1.jpg', '/images/collab-examples/bad-2.jpg', '/images/collab-examples/bad-3.jpg', '/images/collab-examples/bad-4.jpg'].map((src, i) => (
-              <div key={i} className="relative overflow-hidden rounded-lg border border-red-200 aspect-square">
-                <NextImage src={src} alt="Bad example photo" width={150} height={200} sizes="(max-width: 640px) 25vw, 100px" className="w-full h-full object-cover opacity-70 saturate-[0.85]" />
-                <span className="absolute right-1 top-1 flex h-6 w-6 items-center justify-center rounded-full bg-red-500 text-white">
-                  <svg viewBox="0 0 24 24" className="h-3.5 w-3.5" fill="none" stroke="currentColor" strokeWidth={3.5} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12" /></svg>
-                </span>
-              </div>
-            ))}
-          </div>
-        </div>
-        <div className="mt-4 flex flex-wrap gap-1.5">
-          {photos.map((p, i) => (
-            <div key={i} className="relative">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={p} alt="Preview" className="h-20 w-20 rounded-lg border border-neutral-200 object-cover" />
-              <button
-                type="button"
-                onClick={() => removePhoto(i)}
-                className="absolute -right-1.5 -top-1.5 flex h-5 w-5 items-center justify-center rounded-full bg-neutral-500 text-xs text-white transition hover:bg-red-500"
-                aria-label="Remove photo"
-              >
-                &times;
-              </button>
-            </div>
-          ))}
-          <button
-            type="button"
-            onClick={() => fileRef.current?.click()}
-            disabled={processingPhotos}
-            className="flex h-24 w-full flex-row items-center justify-center gap-2 rounded-xl border-2 border-dashed border-emerald-400 bg-emerald-50 text-emerald-700 transition hover:bg-emerald-100 disabled:opacity-50"
-          >
-            {processingPhotos ? (
-              <span className="inline-block h-6 w-6 animate-spin rounded-full border-2 border-emerald-200 border-t-emerald-600" aria-label="Processing" />
-            ) : (
-              <>
-                <svg viewBox="0 0 24 24" className="h-7 w-7" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+        )}
+
+        <button
+          type="button"
+          onClick={() => fileRef.current?.click()}
+          disabled={processingPhotos}
+          className="group mt-5 flex w-full items-center justify-center gap-2.5 rounded-2xl border border-dashed border-emerald-500/50 bg-emerald-50/70 py-5 text-emerald-700 transition hover:border-emerald-500 hover:bg-emerald-50 disabled:opacity-50"
+        >
+          {processingPhotos ? (
+            <span className="inline-block h-5 w-5 animate-spin rounded-full border-2 border-emerald-200 border-t-emerald-600" aria-label="Processing" />
+          ) : (
+            <>
+              <span className="flex h-8 w-8 items-center justify-center rounded-full bg-emerald-600 text-white shadow-[0_8px_16px_-8px_rgba(5,150,105,0.9)] transition group-hover:bg-emerald-500">
+                <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                   <path d="M12 16V4m0 0L7 9m5-5l5 5" /><path d="M4 17v2a1 1 0 001 1h14a1 1 0 001-1v-2" />
                 </svg>
-                <span className="text-xs font-bold uppercase tracking-wide">Upload</span>
-              </>
-            )}
-          </button>
-        </div>
+              </span>
+              <span className="text-[11px] font-bold uppercase tracking-[0.2em]">{photos.length > 0 ? 'Add another' : 'Upload'}</span>
+            </>
+          )}
+        </button>
         <input ref={fileRef} type="file" accept="image/*" multiple onChange={handlePhotos} className="hidden" />
-        <div className="mt-5 space-y-3">
+
+        <div className="mt-6 space-y-3">
           {errorBox}
           {nextBtn(() => {
             if (photos.length === 0) {
@@ -681,27 +788,25 @@ export default function SignUpFormCollabV3({ analyticsPath = '/sign-up-collab' }
             advance('instagram', true, photos)
           }, 'Next', processingPhotos)}
         </div>
-      </div>
+      </>,
     )
   }
 
   if (step === 'location') {
-    return (
-      <div className="mx-auto max-w-md px-5 py-8">
+    return slideShell(2,
+      <>
         {slideKicker(2)}
         {slideTitle('Where are you located?')}
-        <p className="mt-1.5 text-sm text-neutral-500">So I can pick the right spots for the shoot.</p>
-        {slideBand(locationBand, "Locations I've shot · on film")}
         {chips.length > 0 && <div className="mt-5 flex flex-wrap gap-2">
           {chips.map(chip => (
             <button
               key={chip}
               type="button"
               onClick={() => { fieldEngaged('location'); track('location_selected', { method: 'chip', value: chip }); setLocation(chip); setError(null) }}
-              className={`rounded-full border px-4 py-1.5 text-sm font-semibold transition-all ${
+              className={`rounded-full border px-4 py-2 text-[13px] font-bold tracking-[-0.01em] transition-all ${
                 location.trim() === chip
-                  ? 'border-emerald-500 bg-emerald-50 text-emerald-700 shadow-sm shadow-emerald-600/10'
-                  : 'border-neutral-200 bg-white text-neutral-600 hover:border-neutral-400 hover:text-neutral-800'
+                  ? 'border-emerald-600 bg-emerald-600 text-white shadow-[0_8px_18px_-10px_rgba(5,150,105,0.9)]'
+                  : 'border-neutral-200 bg-[#faf9f6] text-neutral-600 hover:border-neutral-300 hover:text-neutral-900'
               }`}
             >
               {chip}
@@ -724,7 +829,7 @@ export default function SignUpFormCollabV3({ analyticsPath = '/sign-up-collab' }
                 : 'Type your city or town'
           }
         />
-        <div className="mt-8 space-y-3">
+        <div className="mt-6 space-y-3">
           {errorBox}
           {nextBtn(() => {
             if (!location.trim()) {
@@ -735,21 +840,19 @@ export default function SignUpFormCollabV3({ analyticsPath = '/sign-up-collab' }
             advance('photos', true)
           })}
         </div>
-      </div>
+      </>,
     )
   }
 
   if (step === 'instagram') {
-    return (
-      <div className="mx-auto max-w-md px-5 py-8">
+    return slideShell(4,
+      <>
         {slideKicker(4)}
-        <h1 className="mt-2 font-display text-3xl font-semibold text-neutral-900" style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic' }}>
-          Your Instagram <span className="text-lg font-normal text-neutral-400">(optional)</span>
+        <h1 className="mt-4 text-[30px] font-semibold leading-[1.1] tracking-[-0.01em] text-neutral-900" style={{ fontFamily: "Georgia, 'Times New Roman', serif", fontStyle: 'italic' }}>
+          Your Instagram <span className="text-[17px] font-normal not-italic text-neutral-400">optional</span>
         </h1>
-        <p className="mt-1.5 text-sm text-neutral-500">So I can see your style &mdash; and tag you when the shots go up.</p>
-        {slideBand(instagramBand, 'Shot & edited by me')}
-        <div className="mt-5 flex items-center gap-2 rounded-xl border border-neutral-300 bg-white px-3 transition focus-within:border-emerald-500 focus-within:ring-2 focus-within:ring-emerald-200">
-          <span className="text-base font-semibold text-neutral-400">@</span>
+        <div className="mt-5 flex items-center rounded-2xl border border-neutral-200 bg-[#faf9f6] px-4 transition focus-within:border-emerald-500 focus-within:bg-white focus-within:ring-4 focus-within:ring-emerald-500/10">
+          <span className="pr-1 text-[17px] font-semibold text-neutral-300">@</span>
           <input
             value={instagram}
             onChange={e => { fieldEngaged('instagram'); setInstagram(e.target.value) }}
@@ -760,25 +863,24 @@ export default function SignUpFormCollabV3({ analyticsPath = '/sign-up-collab' }
             autoCapitalize="off"
             autoCorrect="off"
             spellCheck={false}
-            className="w-full bg-transparent py-3 text-sm text-neutral-900 placeholder-neutral-400 outline-none"
+            className="w-full bg-transparent py-3.5 text-[15px] text-neutral-900 placeholder-neutral-400 outline-none"
             placeholder="yourhandle"
           />
         </div>
-        <div className="mt-8 space-y-3">
+        <div className="mt-6 space-y-3">
           {nextBtn(() => advance('notes', instagram.trim().length > 0))}
           {skipBtn(() => advance('notes', false))}
         </div>
-      </div>
+      </>,
     )
   }
 
   if (step === 'notes') {
-    return (
-      <div className="mx-auto max-w-md px-5 py-8">
+    return slideShell(5,
+      <>
         {slideKicker(5)}
         {slideTitle('Anything else?')}
-        <p className="mt-1.5 text-sm text-neutral-500">Your own idea, inspo, references &mdash; anything.</p>
-        {slideBand(notesBand, 'A few directions we could take it')}
+        <p className="mt-2 text-[13px] leading-relaxed text-neutral-500">Your own idea, inspo, references &mdash; anything.</p>
         <textarea
           id="collab-idea"
           value={idea}
@@ -788,13 +890,13 @@ export default function SignUpFormCollabV3({ analyticsPath = '/sign-up-collab' }
             if (v) trackOnce('notes_filled', v, { chars: v.length })
           }}
           rows={4}
-          className={`${inputCls} mt-5 resize-none`}
+          className={`${inputCls} mt-4 resize-none leading-relaxed`}
           placeholder="Totally optional..."
         />
-        <div className="mt-8 space-y-3">
+        <div className="mt-6 space-y-3">
           {nextBtn(finishSignup, 'Finish Sign-Up')}
         </div>
-      </div>
+      </>,
     )
   }
 
