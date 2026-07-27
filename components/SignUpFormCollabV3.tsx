@@ -73,12 +73,12 @@ const howItWorks = [
   "You get the edited photos — it's 100% free, always",
 ]
 
-// Your own LINE add-friend link — LINE app → Settings → Profile → share, or
-// https://line.me/ti/p/~<your-line-id>. LINE can't deliver to a non-friend, so
-// this button on the confirmation screen is what actually opens the channel;
-// the number is still captured either way. The button renders only once this
-// is set, so an empty value simply leaves the done screen as it was.
-const LINE_ADD_URL = 'https://line.me/ti/p/XKpsnykVaM'
+// Add-friend link for the "Aidan Torrence Photo" Official Account (@594xieva).
+// LINE can't deliver to a non-friend, so this tap is what opens the channel at
+// all — on the LINE path it replaces the number field outright. The "@" is
+// percent-encoded because some in-app browsers mangle a bare one in the path.
+// Empty disables the button and falls the capture card back to a number field.
+const LINE_ADD_URL = 'https://line.me/R/ti/p/%40594xieva'
 
 // Both channels are phone numbers, so the dial-code select, the digit
 // validation and the E.164 normalization are shared — only the copy and the
