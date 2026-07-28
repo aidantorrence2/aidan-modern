@@ -1,6 +1,7 @@
 import { createClient } from '@supabase/supabase-js'
 import AdminClient from './AdminClient'
 import AutoRefresh from './AutoRefresh'
+import { fetchAllSignups } from '@/lib/adminSignups'
 
 export const dynamic = 'force-dynamic'
 export const revalidate = 0
@@ -21,16 +22,14 @@ async function getSignups(): Promise<Signup[]> {
   const key = process.env.SUPABASE_SERVICE_ROLE_KEY
   if (!url || !key) return []
   const sb = createClient(url, key)
-  const { data, error } = await sb
-    .from('signups')
-    .select('id, city, contact_method, contact, moodboard, photo_urls, created_at')
-    .is('deleted_at', null)
-    .order('created_at', { ascending: false })
-  if (error) {
+  try {
+    return await fetchAllSignups<Signup>(sb, {
+      columns: 'id, city, contact_method, contact, moodboard, photo_urls, created_at',
+    })
+  } catch (error) {
     console.error('[ADMIN]', error)
     return []
   }
-  return data as Signup[]
 }
 
 export default async function AdminPage() {
