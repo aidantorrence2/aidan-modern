@@ -126,7 +126,7 @@ const ROLL = [
   '/images/proof/000005-3.jpg',
   '/images/proof/000019-6.jpg',
   '/images/proof/000062.jpg',
-  '/images/proof/DSC_0526.jpg',
+  '/images/proof/000012.jpg',
 ]
 
 function rollAt(stepNo: number) {
