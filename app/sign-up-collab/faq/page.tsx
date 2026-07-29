@@ -32,7 +32,7 @@ const FAQS: { q: string; a: React.ReactNode }[] = [
   },
   {
     q: 'Where do we shoot?',
-    a: <>Wherever you are — tell me your city on the first step and I&rsquo;ll suggest locations that suit the look you&rsquo;re after. Street, nature, indoors, or a mix.</>
+    a: <>We&rsquo;ll decide together based on the vibe of the shoot, quality of shoot location, and convenience for traveling.</>
   },
   {
     q: 'What should I wear?',
