@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server'
 import { createClient } from '@supabase/supabase-js'
 import { v2 as cloudinary } from 'cloudinary'
 import { normalizeWhatsappServer, locationFromSignup } from '../../../lib/whatsapp-server'
+import { stampUpdated } from '../../../lib/signupActivity'
 
 cloudinary.config({
   cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
@@ -20,28 +21,39 @@ function getSupabase() {
   )
 }
 
-/** Postgres 42703 — undefined_column, for deployments predating `updated_at`. */
+/** Postgres 42703 — undefined_column, for a table without `updated_at`. */
 function isMissingUpdatedAt(error: { code?: string; message?: string } | null): boolean {
   if (!error) return false
   return error.code === '42703' || /updated_at/.test(error.message ?? '')
 }
 
-// Every enrich stamps `updated_at` so /admin can float a row back to the top
-// when someone fills in the rest of their sign-up later. A row's details are
-// worth more than its timestamp, so if the column isn't there the write is
-// retried without it rather than dropped.
+// The stamp that /admin sorts on lives in `moodboard` (see lib/signupActivity),
+// so an enrich needs no schema this table doesn't have. An `updated_at` column
+// is written too when one exists — it's the better home, and this way adding it
+// is all it takes to switch over. The miss is remembered so a table without the
+// column pays for the discovery once rather than on every enrich, and it
+// expires so the column is picked up soon after it appears.
+const MISSING_TTL = 5 * 60 * 1000
+let updatedAtMissingSince = 0
+
 async function updateSignup(
   sb: ReturnType<typeof getSupabase>,
   id: number,
   update: Record<string, unknown>
 ) {
+  const skipColumn = updatedAtMissingSince > 0 && Date.now() - updatedAtMissingSince < MISSING_TTL
+  if (skipColumn) return sb.from('signups').update(update).eq('id', id)
+
   const { error } = await sb
     .from('signups')
     .update({ ...update, updated_at: new Date().toISOString() })
     .eq('id', id)
 
+  // A row's details are worth more than its timestamp: if the column isn't
+  // there the write is retried without it rather than dropped.
   if (error && isMissingUpdatedAt(error)) {
-    console.warn('[SIGN-UP] signups.updated_at not found — saving without it')
+    console.warn('[SIGN-UP] signups.updated_at not found — moodboard stamp only')
+    updatedAtMissingSince = Date.now()
     return sb.from('signups').update(update).eq('id', id)
   }
   return { error }
@@ -144,7 +156,14 @@ export async function POST(req: Request) {
         if (url) photoUrls.push(url)
       }
       if (photoUrls.length > 0) {
-        await updateSignup(sb, row.id, { photo_urls: photoUrls })
+        // Stamped at capture time too, though it reads as "no edit" either way
+        // — it's within a second of created_at. It marks the row as needing no
+        // Cloudinary lookup from the /admin backfill, which only knows a row is
+        // done by the presence of a stamp.
+        await updateSignup(sb, row.id, {
+          photo_urls: photoUrls,
+          moodboard: stampUpdated(storedMoodboard, new Date().toISOString()),
+        })
       }
     }
 
@@ -243,6 +262,15 @@ export async function PATCH(req: Request) {
     if (photoUrls.length > 0) {
       const existing = Array.isArray(row.photo_urls) ? row.photo_urls : []
       update.photo_urls = [...existing, ...photoUrls]
+    }
+    // Stamp last, over whichever moodboard is about to be written — the one
+    // the visitor just sent, or the stored one when this enrich changed
+    // something else. Only for an enrich that actually carries a change, so a
+    // no-op PATCH can't float a row up the list on its own.
+    if (Object.keys(update).length > 0) {
+      const base = (update.moodboard as string[] | undefined)
+        ?? (Array.isArray(row.moodboard) ? row.moodboard : [])
+      update.moodboard = stampUpdated(base, new Date().toISOString())
     }
     if (Object.keys(update).length > 0) {
       const { error: updateErr } = await updateSignup(sb, id, update)

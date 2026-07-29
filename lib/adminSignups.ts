@@ -1,4 +1,5 @@
 import type { SupabaseClient } from '@supabase/supabase-js'
+import { byActivityDesc, type ActivityRow } from './signupActivity'
 
 // PostgREST caps any response at 1000 rows and says nothing about it — the
 // query just stops short. Ordered newest-first that silently hides the oldest
@@ -14,28 +15,18 @@ const MAX_PAGES = 50
 export const SIGNUP_COLUMNS =
   'id, city, contact_method, contact, moodboard, photo_urls, created_at, updated_at, deleted_at'
 
-type ActivityRow = { created_at?: string | null; updated_at?: string | null; id?: number }
-
 // A row's real position in the list is when it was last touched, not when it
-// was first written: the sign-up flow captures the contact up front and PATCHes
-// the rest in as the visitor works through the frames, so a row that gains
-// photos an hour later is fresher news than one that has sat untouched.
-export function activityAt(row: ActivityRow): number {
-  const created = Date.parse(row.created_at ?? '') || 0
-  const updated = Date.parse(row.updated_at ?? '') || 0
-  return Math.max(created, updated)
-}
-
-function byActivityDesc(a: ActivityRow, b: ActivityRow): number {
-  return activityAt(b) - activityAt(a) || (b.id ?? 0) - (a.id ?? 0)
-}
-
-// `updated_at` is newer than some of the deployments that read this table, and
-// the whole of /admin is not worth losing to a column that isn't there yet.
-// The first miss is remembered so only one query per process pays for it, and
-// ordering quietly falls back to created_at until the column is added. The
-// memory expires so a warm instance picks the column up once it exists, rather
-// than serving created_at order until it happens to recycle.
+// was first written: the flow captures the contact up front and PATCHes the
+// rest in as the visitor works through the frames, so a row that gains photos
+// an hour later is fresher news than one that has sat untouched. Where that
+// timestamp is kept — and why it isn't a column — is in lib/signupActivity.
+//
+// `updated_at` is asked for anyway: the table doesn't have the column today,
+// but it's the right home for this if it's ever added, and the whole of /admin
+// is not worth losing to a column that isn't there. The first miss is
+// remembered so only one query per process pays for it, and it expires so a
+// warm instance picks the column up once it exists rather than ignoring it
+// until the instance happens to recycle.
 const MISSING_TTL = 5 * 60 * 1000
 let missingSince = 0
 

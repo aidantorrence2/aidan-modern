@@ -2,6 +2,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 import NextImage from 'next/image'
 import { normalizeWhatsapp } from '../../lib/whatsapp'
+import { isUpdatedEntry, readUpdatedAt } from '../../lib/signupActivity'
 
 type Signup = {
   id: number
@@ -20,11 +21,13 @@ const stamp = (iso: string) =>
 /** Rows sort by last touch, so a sign-up enriched days later sits at the top
  *  above its own creation date. Surface the edit rather than leave that
  *  looking like a shuffle — but only once it's a minute clear of the insert,
- *  since the photo write at capture time lands moments after the row. */
+ *  since the photo write at capture time lands moments after the row, and a
+ *  row with no edit to show is stamped at its own created_at. */
 function getUpdated(s: Signup): string | null {
-  if (!s.updated_at) return null
-  const gap = Date.parse(s.updated_at) - Date.parse(s.created_at)
-  return Number.isFinite(gap) && gap > 60_000 ? s.updated_at : null
+  const stamp = s.updated_at ?? readUpdatedAt(s.moodboard)
+  if (!stamp) return null
+  const gap = Date.parse(stamp) - Date.parse(s.created_at)
+  return Number.isFinite(gap) && gap > 60_000 ? stamp : null
 }
 
 function instagramLink(handle: string) {
@@ -303,7 +306,7 @@ export default function AdminClient({ signups: initial }: { signups: Signup[] })
                 const line = isLine(s)
                 const instagram = getInstagram(s)
                 const rawContact = s.moodboard?.find(m => /^raw contact:/i.test(m))?.replace(/^raw contact:\s*/i, '').trim()
-                const moodboardItems = s.moodboard ? s.moodboard.filter(m => !/^instagram:/i.test(m) && !/^raw contact:/i.test(m) && !/^channel:/i.test(m)) : []
+                const moodboardItems = s.moodboard ? s.moodboard.filter(m => !/^instagram:/i.test(m) && !/^raw contact:/i.test(m) && !/^channel:/i.test(m) && !isUpdatedEntry(m)) : []
                 const photos = getPhotos(s)
                 const updated = getUpdated(s)
                 return (
