@@ -10,8 +10,19 @@ import { initPageAnalytics, track } from '@/lib/track'
 
 type Identity = 'anonymous' | 'instagram'
 
+// The first real visitor tapped through, looked at the empty textarea, and left
+// without typing. Chips are for exactly that person: one tap says why, and the
+// textarea becomes optional color rather than the price of the door.
+const REASONS = [
+  'Bad timing',
+  'Seems too good to be true',
+  'Just browsing',
+  'Not confident on camera',
+]
+
 export default function NotForMePage() {
   const [reason, setReason] = useState('')
+  const [picked, setPicked] = useState<string[]>([])
   const [identity, setIdentity] = useState<Identity>('anonymous')
   const [instagram, setInstagram] = useState('')
   const [busy, setBusy] = useState(false)
@@ -29,6 +40,14 @@ export default function NotForMePage() {
     track('feedback_started')
   }
 
+  function toggleReason(r: string) {
+    const on = picked.includes(r)
+    fieldStarted()
+    setError(null)
+    setPicked(p => on ? p.filter(x => x !== r) : [...p, r])
+    track('feedback_chip_toggled', { chip: r, on: !on })
+  }
+
   function chooseIdentity(next: Identity) {
     setIdentity(next)
     // Withdrawing the handle has to actually withdraw it — see the API, which
@@ -42,8 +61,11 @@ export default function NotForMePage() {
     if (busy) return
 
     const text = reason.trim()
-    if (!text) {
-      setError('Please enter a message.')
+    // Chips alone are a complete answer; text alone still works too. The two
+    // combine into the one `reason` string the API already expects.
+    const combined = [picked.join(', '), text].filter(Boolean).join(' — ')
+    if (!combined) {
+      setError('Please pick a reason or enter a message.')
       return
     }
 
@@ -56,14 +78,14 @@ export default function NotForMePage() {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          reason: text,
+          reason: combined,
           instagram: identity === 'instagram' ? instagram.trim() : '',
           source: '/sign-up-collab',
           company: form.get('company') || '',
         }),
       })
       if (!res.ok) throw new Error('save failed')
-      track('feedback_sent', { anonymous: identity === 'anonymous', chars: text.length })
+      track('feedback_sent', { anonymous: identity === 'anonymous', chars: text.length, chips: picked.length, chip_values: picked.join(',') })
       setSent(true)
     } catch {
       track('feedback_error')
@@ -124,15 +146,35 @@ export default function NotForMePage() {
       </p>
 
       <form onSubmit={submit} className="mt-6">
+        <div className="flex flex-wrap gap-2">
+          {REASONS.map(r => {
+            const on = picked.includes(r)
+            return (
+              <button
+                key={r}
+                type="button"
+                onClick={() => toggleReason(r)}
+                aria-pressed={on}
+                className={`rounded-full border px-4 py-2.5 text-[13px] font-bold tracking-[-0.01em] transition-all ${
+                  on
+                    ? 'border-emerald-600 bg-emerald-600 text-white shadow-[0_8px_18px_-10px_rgba(5,150,105,0.9)]'
+                    : 'border-neutral-200 bg-[#faf9f6] text-neutral-600 hover:border-neutral-300 hover:text-neutral-900'
+                }`}
+              >
+                {r}
+              </button>
+            )
+          })}
+        </div>
         <textarea
           id="reason"
           aria-label="Your feedback"
           value={reason}
           onChange={e => { fieldStarted(); setReason(e.target.value); setError(null) }}
-          rows={6}
+          rows={4}
           maxLength={4000}
-          placeholder="Too good to be true? Bad timing? Anything at all — be blunt."
-          className="mt-2 w-full resize-y rounded-xl border border-neutral-300 bg-white px-4 py-3 text-base leading-relaxed text-neutral-900 placeholder-neutral-400 outline-none transition focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200"
+          placeholder="Or say it in your own words — be blunt."
+          className="mt-2.5 w-full resize-y rounded-xl border border-neutral-300 bg-white px-4 py-3 text-base leading-relaxed text-neutral-900 placeholder-neutral-400 outline-none transition focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200"
         />
 
         <p className="mt-5 text-[11px] font-bold uppercase tracking-[0.2em] text-neutral-400">
