@@ -868,6 +868,17 @@ export default function SignUpFormCollabV4({ analyticsPath = '/sign-up-collab-v4
           >
             Get Started
           </button>
+          {/* Same quiet exit as the page bottom, for the majority who never
+              scroll past the card. */}
+          <p className="mt-3 text-center text-[13px] text-neutral-400">
+            <a
+              href="/sign-up-collab/not-for-me"
+              onClick={() => track('not_for_me_clicked', { placement: 'first_frame_card' })}
+              className="underline decoration-neutral-300 underline-offset-2 transition hover:text-neutral-700"
+            >
+              It&rsquo;s not for me
+            </a>
+          </p>
         </div>
 
         {/* Below the fold — proof and how it works, for the scrollers */}
