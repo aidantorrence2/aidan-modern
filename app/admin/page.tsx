@@ -15,6 +15,7 @@ type Signup = {
   moodboard: string[] | null
   photo_urls: string[] | null
   created_at: string
+  updated_at?: string | null
 }
 
 async function getSignups(): Promise<Signup[]> {
@@ -24,7 +25,7 @@ async function getSignups(): Promise<Signup[]> {
   const sb = createClient(url, key)
   try {
     return await fetchAllSignups<Signup>(sb, {
-      columns: 'id, city, contact_method, contact, moodboard, photo_urls, created_at',
+      columns: 'id, city, contact_method, contact, moodboard, photo_urls, created_at, updated_at',
     })
   } catch (error) {
     console.error('[ADMIN]', error)

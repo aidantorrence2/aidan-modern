@@ -20,6 +20,33 @@ function getSupabase() {
   )
 }
 
+/** Postgres 42703 — undefined_column, for deployments predating `updated_at`. */
+function isMissingUpdatedAt(error: { code?: string; message?: string } | null): boolean {
+  if (!error) return false
+  return error.code === '42703' || /updated_at/.test(error.message ?? '')
+}
+
+// Every enrich stamps `updated_at` so /admin can float a row back to the top
+// when someone fills in the rest of their sign-up later. A row's details are
+// worth more than its timestamp, so if the column isn't there the write is
+// retried without it rather than dropped.
+async function updateSignup(
+  sb: ReturnType<typeof getSupabase>,
+  id: number,
+  update: Record<string, unknown>
+) {
+  const { error } = await sb
+    .from('signups')
+    .update({ ...update, updated_at: new Date().toISOString() })
+    .eq('id', id)
+
+  if (error && isMissingUpdatedAt(error)) {
+    console.warn('[SIGN-UP] signups.updated_at not found — saving without it')
+    return sb.from('signups').update(update).eq('id', id)
+  }
+  return { error }
+}
+
 async function uploadPhoto(base64: string, signupId: number, index: number): Promise<string | null> {
   try {
     const result = await cloudinary.uploader.upload(base64, {
@@ -117,7 +144,7 @@ export async function POST(req: Request) {
         if (url) photoUrls.push(url)
       }
       if (photoUrls.length > 0) {
-        await sb.from('signups').update({ photo_urls: photoUrls }).eq('id', row.id)
+        await updateSignup(sb, row.id, { photo_urls: photoUrls })
       }
     }
 
@@ -218,7 +245,7 @@ export async function PATCH(req: Request) {
       update.photo_urls = [...existing, ...photoUrls]
     }
     if (Object.keys(update).length > 0) {
-      const { error: updateErr } = await sb.from('signups').update(update).eq('id', id)
+      const { error: updateErr } = await updateSignup(sb, id, update)
       if (updateErr) {
         console.error('[SIGN-UP] PATCH update failed:', updateErr)
         return NextResponse.json({ ok: false, error: 'Failed to save' }, { status: 500 })
