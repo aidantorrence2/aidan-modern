@@ -811,7 +811,20 @@ export default function SignUpFormCollabV4({ analyticsPath = '/sign-up-collab-v4
             Where are you located?
           </h2>
           <p className="mt-2 text-[13px] leading-relaxed text-neutral-500">
-            I&rsquo;ll message you with all the details &mdash; timing, location ideas, what to wear, and next steps.
+            I&rsquo;ll message you with all the details &mdash; timing, location ideas, what to wear, and next steps.{' '}
+            {/* In the card, not below the fold: the "is this really free?" doubt
+                is what the first frame has to answer, and 93% of ad clickers
+                never scroll far enough to find an answer further down. Opens in
+                a new tab so reading it doesn't cost them the form. */}
+            <a
+              href="/sign-up-collab/faq"
+              target="_blank"
+              rel="noopener"
+              onClick={() => track('faq_opened', { slide: 'location' })}
+              className="font-semibold text-emerald-600 underline decoration-emerald-300 underline-offset-2"
+            >
+              Questions?
+            </a>
           </p>
           {chips.length > 0 && (
             <div className="mt-3 flex flex-wrap gap-2">
