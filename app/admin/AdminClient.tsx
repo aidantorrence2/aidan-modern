@@ -2,6 +2,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 import NextImage from 'next/image'
 import { normalizeWhatsapp } from '../../lib/whatsapp'
+import { isUpdatedEntry, readUpdatedAt } from '../../lib/signupActivity'
 
 type Signup = {
   id: number
@@ -11,6 +12,22 @@ type Signup = {
   moodboard: string[] | null
   photo_urls: string[] | null
   created_at: string
+  updated_at?: string | null
+}
+
+const stamp = (iso: string) =>
+  new Date(iso).toLocaleDateString('en-US', { month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' })
+
+/** Rows sort by last touch, so a sign-up enriched days later sits at the top
+ *  above its own creation date. Surface the edit rather than leave that
+ *  looking like a shuffle — but only once it's a minute clear of the insert,
+ *  since the photo write at capture time lands moments after the row, and a
+ *  row with no edit to show is stamped at its own created_at. */
+function getUpdated(s: Signup): string | null {
+  const stamp = s.updated_at ?? readUpdatedAt(s.moodboard)
+  if (!stamp) return null
+  const gap = Date.parse(stamp) - Date.parse(s.created_at)
+  return Number.isFinite(gap) && gap > 60_000 ? stamp : null
 }
 
 function instagramLink(handle: string) {
@@ -289,8 +306,9 @@ export default function AdminClient({ signups: initial }: { signups: Signup[] })
                 const line = isLine(s)
                 const instagram = getInstagram(s)
                 const rawContact = s.moodboard?.find(m => /^raw contact:/i.test(m))?.replace(/^raw contact:\s*/i, '').trim()
-                const moodboardItems = s.moodboard ? s.moodboard.filter(m => !/^instagram:/i.test(m) && !/^raw contact:/i.test(m) && !/^channel:/i.test(m)) : []
+                const moodboardItems = s.moodboard ? s.moodboard.filter(m => !/^instagram:/i.test(m) && !/^raw contact:/i.test(m) && !/^channel:/i.test(m) && !isUpdatedEntry(m)) : []
                 const photos = getPhotos(s)
+                const updated = getUpdated(s)
                 return (
                   <LazyCard key={s.id}>
                     <div className="rounded-2xl border border-white/[0.08] bg-white/[0.04] p-5 sm:p-6 transition hover:bg-white/[0.06]">
@@ -349,8 +367,9 @@ export default function AdminClient({ signups: initial }: { signups: Signup[] })
                       {/* Meta */}
                       <div className="flex flex-wrap items-center gap-x-5 gap-y-1 text-sm text-white/50 mb-3">
                         {getLocation(s) && <span>{getLocation(s)}</span>}
-                        {s.created_at && (
-                          <span>{new Date(s.created_at).toLocaleDateString('en-US', { month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' })}</span>
+                        {s.created_at && <span>{stamp(s.created_at)}</span>}
+                        {updated && (
+                          <span className="text-emerald-400/70">updated {stamp(updated)}</span>
                         )}
                       </div>
 

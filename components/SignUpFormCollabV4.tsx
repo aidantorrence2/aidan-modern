@@ -811,7 +811,20 @@ export default function SignUpFormCollabV4({ analyticsPath = '/sign-up-collab-v4
             Where are you located?
           </h2>
           <p className="mt-2 text-[13px] leading-relaxed text-neutral-500">
-            I&rsquo;ll message you with all the details &mdash; timing, location ideas, what to wear, and next steps.
+            I&rsquo;ll message you with all the details &mdash; timing, location ideas, what to wear, and next steps.{' '}
+            {/* In the card, not below the fold: the "is this really free?" doubt
+                is what the first frame has to answer, and 93% of ad clickers
+                never scroll far enough to find an answer further down. Opens in
+                a new tab so reading it doesn't cost them the form. */}
+            <a
+              href="/sign-up-collab/faq"
+              target="_blank"
+              rel="noopener"
+              onClick={() => track('faq_opened', { slide: 'location' })}
+              className="font-semibold text-emerald-600 underline decoration-emerald-300 underline-offset-2"
+            >
+              Questions?
+            </a>
           </p>
           {chips.length > 0 && (
             <div className="mt-3 flex flex-wrap gap-2">
@@ -905,6 +918,20 @@ export default function SignUpFormCollabV4({ analyticsPath = '/sign-up-collab-v4
               </a>
             </p>
           </div>
+
+          {/* The way out, at the bottom where someone who has read everything
+              and still isn't sold will be. Deliberately quiet — it's an exit,
+              not an option being offered. Why they left is the one thing the
+              funnel can't tell me. */}
+          <p className="mt-8 border-t border-neutral-100 pt-5 text-center text-[13px] text-neutral-400">
+            <a
+              href="/sign-up-collab/not-for-me"
+              onClick={() => track('not_for_me_clicked', { placement: 'first_frame' })}
+              className="underline decoration-neutral-300 underline-offset-2 transition hover:text-neutral-700"
+            >
+              It&rsquo;s not for me
+            </a>
+          </p>
         </div>
 
         {/* Sticky CTA — only while the picker is off-screen */}
