@@ -28,7 +28,7 @@ const FAQS: { q: string; a: React.ReactNode }[] = [
   },
   {
     q: 'How long does it take?',
-    a: <>We shoot for one to two hours. We&rsquo;ll plan the concept together beforehand over WhatsApp, Instagram, or LINE, so the time on the day is spent shooting.</>
+    a: <>I will send you the final photos after the film is developed and scanned. The whole process is usually completed within 2 weeks. I will send you the photos in full resolution over Google Drive.</>
   },
   {
     q: 'Where do we shoot?',
