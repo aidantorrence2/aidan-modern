@@ -36,7 +36,7 @@ const FAQS: { q: string; a: React.ReactNode }[] = [
   },
   {
     q: 'What should I wear?',
-    a: <>Bring a couple of options and we&rsquo;ll pick together. Once you sign up I&rsquo;ll message you with the details — timing, location ideas, and what works on camera.</>
+    a: <>I will send over a moodboard and I would love to know your ideas as well. Once everything is decided, you can choose outfit options accordingly.</>
   },
   {
     q: 'Can I bring a friend?',
