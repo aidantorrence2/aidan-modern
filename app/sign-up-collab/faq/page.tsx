@@ -112,6 +112,16 @@ export default function CollabFaqPage() {
       >
         Sign Up For Free Photo Shoot
       </Link>
+
+      {/* Answers didn't land — this is the other honest ending to this page. */}
+      <p className="mt-5 text-center text-[13px] text-neutral-400">
+        <Link
+          href="/sign-up-collab/not-for-me"
+          className="underline decoration-neutral-300 underline-offset-2 transition hover:text-neutral-700"
+        >
+          It&rsquo;s not for me
+        </Link>
+      </p>
     </main>
   )
 }

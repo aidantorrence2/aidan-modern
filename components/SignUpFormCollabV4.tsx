@@ -918,6 +918,20 @@ export default function SignUpFormCollabV4({ analyticsPath = '/sign-up-collab-v4
               </a>
             </p>
           </div>
+
+          {/* The way out, at the bottom where someone who has read everything
+              and still isn't sold will be. Deliberately quiet — it's an exit,
+              not an option being offered. Why they left is the one thing the
+              funnel can't tell me. */}
+          <p className="mt-8 border-t border-neutral-100 pt-5 text-center text-[13px] text-neutral-400">
+            <a
+              href="/sign-up-collab/not-for-me"
+              onClick={() => track('not_for_me_clicked', { placement: 'first_frame' })}
+              className="underline decoration-neutral-300 underline-offset-2 transition hover:text-neutral-700"
+            >
+              It&rsquo;s not for me
+            </a>
+          </p>
         </div>
 
         {/* Sticky CTA — only while the picker is off-screen */}
