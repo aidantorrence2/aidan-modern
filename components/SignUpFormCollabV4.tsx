@@ -547,6 +547,7 @@ export default function SignUpFormCollabV4({ analyticsPath = '/sign-up-collab-v4
     setProcessingPhotos(true)
     let failures = 0
     const selected = files.length
+    const added: string[] = []
     try {
       for (const file of Array.from(files)) {
         if (file.size > 20 * 1024 * 1024) { failures++; continue }
@@ -558,18 +559,26 @@ export default function SignUpFormCollabV4({ analyticsPath = '/sign-up-collab-v4
             reader.readAsDataURL(file)
           })
           const resized = await resizeImage(raw, 300 * 1024)
+          added.push(resized)
           setPhotos(prev => [...prev, resized])
         } catch { failures++ }
       }
     } finally {
       setProcessingPhotos(false)
       if (fileRef.current) fileRef.current.value = ''
-      track('photos_added', { selected, added: selected - failures, failed: failures, total: photos.length + selected - failures })
+      track('photos_added', { selected, added: added.length, failed: failures, total: photos.length + added.length })
       if (failures > 0) {
         setError(failures === 1
           ? 'One photo could not be added (too large or unsupported format — try a JPG/PNG under 20 MB).'
           : `${failures} photos could not be added (too large or unsupported format — try JPG/PNG under 20 MB).`)
       }
+    }
+
+    // The upload finishing is the answer to this frame — one tap, not two. Only
+    // a clean run moves on: a failure keeps them here to see the error and retry.
+    if (failures === 0 && added.length > 0) {
+      track('photos_autoadvance', { total: photos.length + added.length })
+      advance('instagram', true, [...photos, ...added])
     }
   }
 
