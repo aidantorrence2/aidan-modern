@@ -39,14 +39,6 @@ const FAQS: { q: string; a: React.ReactNode }[] = [
     a: <>I will send over a moodboard and I would love to know your ideas as well. Once everything is decided, you can choose outfit options accordingly.</>
   },
   {
-    q: 'Can I bring a friend?',
-    a: <>Yes. Bring someone along for support, and we can take a few photos of the two of you while we&rsquo;re at it.</>
-  },
-  {
-    q: 'Why do you need a photo of me?',
-    a: <>Just so I know who I&rsquo;m shooting and can plan for the light and the location. A selfie is fine — no makeup or filters needed.</>
-  },
-  {
     q: 'When do I get the photos?',
     a: <>You&rsquo;ll get a gallery of edited photos after the shoot. I&rsquo;ll tell you the timing when we lock in the date.</>
   },
