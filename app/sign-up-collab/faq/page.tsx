@@ -41,12 +41,14 @@ const FAQS: { q: string; a: React.ReactNode }[] = [
   {
     q: 'When do I get the photos?',
     a: <>You&rsquo;ll get a gallery of edited photos after the shoot. I&rsquo;ll tell you the timing when we lock in the date.</>
-  },
-  {
-    q: 'How do you contact me?',
-    a: <>On whichever you give me — WhatsApp, Instagram, or LINE. That&rsquo;s the only thing I use it for.</>
   }
 ]
+
+// Opens WhatsApp with the question already started, so asking is one tap and
+// they finish the sentence there instead of hunting for a contact route.
+const ASK_HREF =
+  'https://wa.me/491758966210?text=' +
+  encodeURIComponent('Hi Aidan! I have a question about the free photo shoot: ')
 
 export default function CollabFaqPage() {
   return (
@@ -85,18 +87,20 @@ export default function CollabFaqPage() {
         ))}
       </dl>
 
-      <p className="mt-6 text-[13px] leading-relaxed text-neutral-500">
-        Still wondering something? Ask me on{' '}
+      <div className="mt-6">
+        <p className="text-[13px] leading-relaxed text-neutral-500">Got a different question? Ask me anything:</p>
         <a
-          href="https://www.instagram.com/madebyaidan"
+          href={ASK_HREF}
           target="_blank"
           rel="noopener noreferrer"
-          className="font-semibold text-emerald-600 underline decoration-emerald-300 underline-offset-2"
+          className="mt-2.5 flex w-full items-center justify-center gap-2 rounded-full border-2 border-emerald-600 py-3.5 text-[15px] font-bold text-emerald-700 transition hover:bg-emerald-50 active:scale-[0.99]"
         >
-          @madebyaidan
+          <svg viewBox="0 0 24 24" className="h-[18px] w-[18px]" fill="currentColor" aria-hidden="true">
+            <path d="M12 2a10 10 0 00-8.5 15.3L2 22l4.9-1.4A10 10 0 1012 2zm5.5 14.1c-.2.7-1.4 1.3-1.9 1.4-.5.1-1.1.2-3.4-.7-2.8-1.2-4.6-4-4.8-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.4.7-.4h.5c.2 0 .4 0 .6.4.2.5.7 1.8.8 1.9.1.1.1.3 0 .5-.1.2-.2.3-.3.5l-.4.5c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.6-.1.2-.2.7-.8.9-1.1.2-.3.4-.2.6-.1.3.1 1.7.8 2 .9.3.2.5.2.5.4.1.1.1.6-.3 1.1z" />
+          </svg>
+          Ask on WhatsApp
         </a>
-        .
-      </p>
+      </div>
 
       <Link
         href="/sign-up-collab"

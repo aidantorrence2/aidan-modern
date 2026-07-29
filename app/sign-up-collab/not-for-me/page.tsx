@@ -43,7 +43,7 @@ export default function NotForMePage() {
 
     const text = reason.trim()
     if (!text) {
-      setError('Tell me what put you off — even one line helps.')
+      setError('Please enter a message.')
       return
     }
 
@@ -119,21 +119,19 @@ export default function NotForMePage() {
         No worries at all
       </h1>
       <p className="mt-2 text-[13px] leading-relaxed text-neutral-500">
-        It won&rsquo;t be for everyone. If you&rsquo;ve got a moment, telling me why helps more than
-        signing up would have — there&rsquo;s no pitch coming back.
+        It won&rsquo;t be for everyone. If you&rsquo;ve got a moment, I&rsquo;d love to know why so I can
+        tailor future photo sessions accordingly.
       </p>
 
       <form onSubmit={submit} className="mt-6">
-        <label htmlFor="reason" className="text-[11px] font-bold uppercase tracking-[0.2em] text-neutral-400">
-          What put you off?
-        </label>
         <textarea
           id="reason"
+          aria-label="Your feedback"
           value={reason}
           onChange={e => { fieldStarted(); setReason(e.target.value); setError(null) }}
           rows={6}
           maxLength={4000}
-          placeholder="Too good to be true? Not sure about the photos being shared? Bad timing? Anything at all — be blunt."
+          placeholder="Too good to be true? Bad timing? Anything at all — be blunt."
           className="mt-2 w-full resize-y rounded-xl border border-neutral-300 bg-white px-4 py-3 text-base leading-relaxed text-neutral-900 placeholder-neutral-400 outline-none transition focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200"
         />
 
@@ -177,11 +175,6 @@ export default function NotForMePage() {
             />
           </div>
         )}
-        <p className="mt-2 text-[12px] leading-relaxed text-neutral-400">
-          {identity === 'anonymous'
-            ? 'Nothing identifying is sent — just what you wrote.'
-            : 'Only so I can thank you or ask a follow-up. Never added to the sign-up list.'}
-        </p>
 
         <input type="text" name="company" className="hidden" tabIndex={-1} autoComplete="off" />
 
