@@ -261,8 +261,6 @@ export default function SignUpFormCollabV4({ analyticsPath = '/sign-up-collab-v4
 
   const fileRef = useRef<HTMLInputElement>(null)
   const phoneRef = useRef<HTMLInputElement>(null)
-  const pickerCardRef = useRef<HTMLDivElement>(null)
-  const [showStickyCta, setShowStickyCta] = useState(false)
   const [heroIndex, setHeroIndex] = useState(0)
   const engagedFields = useRef<Set<string>>(new Set())
   const lastTracked = useRef<Record<string, string>>({})
@@ -362,14 +360,6 @@ export default function SignUpFormCollabV4({ analyticsPath = '/sign-up-collab-v4
     return () => clearTimeout(t)
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [hydrated, phone, countryCode, location, idea, instagram])
-
-  // The sticky CTA appears only while the picker is scrolled out of view.
-  useEffect(() => {
-    if (step !== 'location' || !pickerCardRef.current) return
-    const obs = new IntersectionObserver(entries => setShowStickyCta(!entries[0].isIntersecting), { threshold: 0.1 })
-    obs.observe(pickerCardRef.current)
-    return () => obs.disconnect()
-  }, [step])
 
   // Hero crossfade. Stopped entirely for anyone who asked for less motion —
   // they get the opening frame and nothing moves.
@@ -804,7 +794,7 @@ export default function SignUpFormCollabV4({ analyticsPath = '/sign-up-collab-v4
         </div>
 
         {/* Opening card — sits exactly where the capture card used to */}
-        <div ref={pickerCardRef} className="relative z-10 mx-4 -mt-5 rounded-2xl border border-neutral-200 bg-white p-4 shadow-xl">
+        <div className="relative z-10 mx-4 -mt-5 rounded-2xl border border-neutral-200 bg-white p-4 shadow-xl">
           {/* h2, not h1 — the hero headline above is the page's h1. Same face
               and size as every other frame's title so the card belongs to the set. */}
           <h2 className="text-[30px] font-semibold leading-[1.1] tracking-[-0.01em] text-neutral-900" style={{ fontFamily: "Georgia, 'Times New Roman', serif", fontStyle: 'italic', textWrap: 'balance' }}>
@@ -932,25 +922,20 @@ export default function SignUpFormCollabV4({ analyticsPath = '/sign-up-collab-v4
               It&rsquo;s not for me
             </a>
           </p>
-        </div>
 
-        {/* Sticky CTA — only while the picker is off-screen */}
-        {showStickyCta && (
-          <div className="fixed inset-x-0 bottom-0 z-20 border-t border-neutral-200 bg-white/95 px-4 py-3 backdrop-blur">
-            <div className="mx-auto max-w-md">
-              <button
-                type="button"
-                onClick={() => {
-                  track('sticky_cta_clicked')
-                  window.scrollTo({ top: 0, behavior: 'smooth' })
-                }}
-                className="w-full rounded-full bg-emerald-600 py-3.5 text-sm font-bold text-white shadow-lg shadow-emerald-600/25 transition hover:bg-emerald-500"
-              >
-                Get Started
-              </button>
-            </div>
-          </div>
-        )}
+          {/* Bottom CTA — part of the page, not a floating bar. Whoever read
+              this far scrolled past the form; this takes them back to it. */}
+          <button
+            type="button"
+            onClick={() => {
+              track('sticky_cta_clicked', { placement: 'inline_bottom' })
+              window.scrollTo({ top: 0, behavior: 'smooth' })
+            }}
+            className="mt-5 w-full rounded-full bg-emerald-600 py-3.5 text-sm font-bold text-white shadow-lg shadow-emerald-600/25 transition hover:bg-emerald-500"
+          >
+            Get Started
+          </button>
+        </div>
       </div>
     )
   }
