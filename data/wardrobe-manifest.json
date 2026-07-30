@@ -1104,5 +1104,257 @@
     "hex": "#d9c4a5"
    }
   ]
+ },
+ {
+  "id": "floral-midi-dress",
+  "kind": "dress",
+  "label": "Floral midi dress",
+  "colorways": [
+   {
+    "name": "Rose floral",
+    "hex": "#c96f7e"
+   },
+   {
+    "name": "Black floral",
+    "hex": "#2b2622"
+   },
+   {
+    "name": "Ditsy blue floral",
+    "hex": "#6d87ad"
+   },
+   {
+    "name": "Yellow meadow floral",
+    "hex": "#e3c264"
+   }
+  ]
+ },
+ {
+  "id": "gingham-sundress",
+  "kind": "dress",
+  "label": "Gingham sundress",
+  "colorways": [
+   {
+    "name": "Red gingham",
+    "hex": "#b8453d"
+   },
+   {
+    "name": "Black gingham",
+    "hex": "#3a3733"
+   },
+   {
+    "name": "Blue gingham",
+    "hex": "#5e7ca6"
+   },
+   {
+    "name": "Green gingham",
+    "hex": "#5f7d53"
+   }
+  ]
+ },
+ {
+  "id": "polka-dot-dress",
+  "kind": "dress",
+  "label": "Polka-dot dress",
+  "colorways": [
+   {
+    "name": "Black polka dot",
+    "hex": "#28241f"
+   },
+   {
+    "name": "Red polka dot",
+    "hex": "#a4292e"
+   },
+   {
+    "name": "Navy polka dot",
+    "hex": "#2e3a51"
+   }
+  ]
+ },
+ {
+  "id": "striped-midi-dress",
+  "kind": "dress",
+  "label": "Striped midi dress",
+  "colorways": [
+   {
+    "name": "Navy stripe",
+    "hex": "#2e3a51"
+   },
+   {
+    "name": "Black stripe",
+    "hex": "#2a2724"
+   },
+   {
+    "name": "Red stripe",
+    "hex": "#a4362f"
+   }
+  ]
+ },
+ {
+  "id": "leopard-slip-dress",
+  "kind": "dress",
+  "label": "Leopard slip dress",
+  "colorways": [
+   {
+    "name": "Classic leopard",
+    "hex": "#b58a4f"
+   },
+   {
+    "name": "Grey leopard",
+    "hex": "#9a948b"
+   }
+  ]
+ },
+ {
+  "id": "paisley-maxi-dress",
+  "kind": "dress",
+  "label": "Paisley maxi dress",
+  "colorways": [
+   {
+    "name": "Terracotta paisley",
+    "hex": "#b0603f"
+   },
+   {
+    "name": "Navy paisley",
+    "hex": "#2e3a51"
+   },
+   {
+    "name": "Green paisley",
+    "hex": "#4e6b4a"
+   }
+  ]
+ },
+ {
+  "id": "satin-mini-dress",
+  "kind": "dress",
+  "label": "Satin mini dress",
+  "colorways": [
+   {
+    "name": "Champagne",
+    "hex": "#d6bf9d"
+   },
+   {
+    "name": "Black",
+    "hex": "#26211d"
+   },
+   {
+    "name": "Emerald",
+    "hex": "#1e5a47"
+   },
+   {
+    "name": "Blush",
+    "hex": "#d8afa9"
+   }
+  ]
+ },
+ {
+  "id": "linen-midi-dress",
+  "kind": "dress",
+  "label": "Linen midi dress",
+  "colorways": [
+   {
+    "name": "Natural",
+    "hex": "#d9cfb8"
+   },
+   {
+    "name": "White",
+    "hex": "#f0ebe1"
+   },
+   {
+    "name": "Sage",
+    "hex": "#9aa48a"
+   },
+   {
+    "name": "Terracotta",
+    "hex": "#b96b4d"
+   }
+  ]
+ },
+ {
+  "id": "knit-sweater-dress",
+  "kind": "dress",
+  "label": "Knit sweater dress",
+  "colorways": [
+   {
+    "name": "Oatmeal",
+    "hex": "#cfc4ad"
+   },
+   {
+    "name": "Camel",
+    "hex": "#b08a55"
+   },
+   {
+    "name": "Charcoal",
+    "hex": "#3a3733"
+   },
+   {
+    "name": "Forest",
+    "hex": "#35523f"
+   }
+  ]
+ },
+ {
+  "id": "halter-maxi-dress",
+  "kind": "dress",
+  "label": "Halter maxi dress",
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#26221f"
+   },
+   {
+    "name": "Cobalt",
+    "hex": "#35528f"
+   },
+   {
+    "name": "Rust",
+    "hex": "#a45237"
+   },
+   {
+    "name": "Cream",
+    "hex": "#e8e0cf"
+   }
+  ]
+ },
+ {
+  "id": "tiered-boho-dress",
+  "kind": "dress",
+  "label": "Tiered boho dress",
+  "colorways": [
+   {
+    "name": "White",
+    "hex": "#f0ece2"
+   },
+   {
+    "name": "Dusty rose",
+    "hex": "#c49898"
+   },
+   {
+    "name": "Olive",
+    "hex": "#6b6a4f"
+   },
+   {
+    "name": "Ditsy floral",
+    "hex": "#d9cbb0"
+   }
+  ]
+ },
+ {
+  "id": "blazer-dress",
+  "kind": "dress",
+  "label": "Blazer dress",
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#26221f"
+   },
+   {
+    "name": "Camel",
+    "hex": "#b08a55"
+   },
+   {
+    "name": "White",
+    "hex": "#f2efe9"
+   }
+  ]
  }
 ]

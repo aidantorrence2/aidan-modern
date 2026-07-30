@@ -985,9 +985,6 @@ export default function SignUpFormCollabV5({ analyticsPath = '/sign-up-collab-v5
       <>
         {kicker(3, BACK_TO.outfit)}
         {slideTitle('Style your look')}
-        <p className="mt-2 text-[13px] leading-relaxed text-neutral-500">
-          Dress the model &mdash; mix pieces, tune the colors. We&rsquo;ll build the real look together from this.
-        </p>
         <WardrobeStyler
           look={look}
           onChange={next => { setError(null); setLook(next) }}
@@ -1003,7 +1000,9 @@ export default function SignUpFormCollabV5({ analyticsPath = '/sign-up-collab-v5
             }
             advance('notes', true)
           })}
-          {skipBtn(() => { track('outfit_skipped'); advance('notes') })}
+          {/* Skip really skips: the preselected look must not ride along into
+              the moodboard on a later save. */}
+          {skipBtn(() => { track('outfit_skipped'); setLook(EMPTY_LOOK); advance('notes') })}
         </div>
       </>
     ))

@@ -71,6 +71,18 @@ const DESCRIPTORS = {
   'maxi-dress': "women's flowing maxi dress with V-neck, gathered empire waist and full-length soft skirt, airy chiffon",
   'shirt-dress': "women's belted shirt dress with pointed collar, full button placket and short sleeves, knee length, crisp cotton",
   'evening-gown': "women's floor-length evening gown with structured strapless sweetheart bodice and high side slit, heavy satin",
+  'floral-midi-dress': "women's floral midi dress with a fitted button-front bodice, short flutter sleeves and a softly flared skirt, lightweight crinkled viscose",
+  'gingham-sundress': "women's gingham sundress with a smocked fitted bodice, thin straps and a flared knee-length skirt, crisp checked cotton",
+  'polka-dot-dress': "women's polka-dot dress with a V-neck, short sleeves and a swishy below-knee skirt, fluid crepe",
+  'striped-midi-dress': "women's fitted midi t-shirt dress with a crew neck and elbow-length sleeves, soft cotton jersey knit with crisp horizontal stripes",
+  'leopard-slip-dress': "women's bias-cut slip dress with thin spaghetti straps and a draped cowl neckline, midi length, fluid satin with soft sheen",
+  'paisley-maxi-dress': "women's flowing paisley maxi dress with a V-neck, gathered ruffle-trimmed tiers and long billowy sleeves, airy lightweight viscose",
+  'satin-mini-dress': "women's satin mini dress with a draped cowl neckline, thin straps and a bias-cut skirt, liquid satin with soft sheen",
+  'linen-midi-dress': "women's linen midi dress with a square neckline, wide straps and a relaxed A-line skirt with patch pockets, breathable linen weave with soft natural crumple",
+  'knit-sweater-dress': "women's ribbed knit sweater dress with a mock neck and long sleeves, fitted midi length, soft plush rib knit",
+  'halter-maxi-dress': "women's halter-neck maxi dress tied behind the neck, open shoulders, gathered waist and full-length flowing skirt, fluid matte jersey",
+  'tiered-boho-dress': "women's tiered boho maxi dress with a smocked bodice, ruffled straps and full gathered tiers, lightweight cotton voile",
+  'blazer-dress': "women's tailored blazer dress with notch lapels, button front and a nipped waist, above-knee length, structured suiting wool",
 }
 
 const slug = s => s.toLowerCase().replace(/[^a-z0-9]+/g, '-')
@@ -94,10 +106,17 @@ const sleep = ms => new Promise(r => setTimeout(r, ms))
 let done = 0
 const failures = []
 
+// Pattern colorways read as prints, not flat colors — phrase them that way and
+// skip the hex (it is only a representative swatch for the UI dot).
+const PATTERN_RE = /floral|gingham|polka|stripe|leopard|paisley|ditsy|meadow/i
+
 async function generate(job) {
   const { piece, cw, desc, file } = job
+  const colorPhrase = PATTERN_RE.test(cw.name)
+    ? `in a ${cw.name.toLowerCase()} print`
+    : `in ${cw.name.toLowerCase()} color (${cw.hex})`
   const prompt =
-    `Professional e-commerce product photograph: ${desc}, in ${cw.name.toLowerCase()} color (${cw.hex}). ` +
+    `Professional e-commerce product photograph: ${desc}, ${colorPhrase}. ` +
     `Neatly styled flat lay, centered on a warm cream seamless studio background (#f0e9dc), soft diffused ` +
     `studio lighting from the upper left, gentle natural folds showing true fabric texture, garment fills ` +
     `about 80% of the frame. No person, no mannequin, no hangers, no props, no text, no watermark. Square image.`
