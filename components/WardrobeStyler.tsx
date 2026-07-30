@@ -2,9 +2,10 @@
 // The outfit styler, mix-and-match edition. The model is always dressed:
 // every dress variant and every top×bottom combination has a prebuilt
 // photographic look shot, so swiping just swaps photos — no waiting, no
-// button. Color changes on separates re-key the prebuilt shot client-side
-// (lib/recolorLook); dress variants each have their own real shot, which is
-// what makes patterned dresses possible.
+// button. Tuning a color swaps to a REAL photograph of that exact color
+// pairing: cached ones are instant, a first-ever pairing generates once on
+// the server (base shot stays up meanwhile) and is cached for everyone
+// after. Client-side recoloring was tried and rejected — it looked fake.
 //
 // Dresses are the default mode; "Top & bottoms" is the secondary mode with
 // both pickers on screen at once — swipe the tops row and the bottoms row,
@@ -14,7 +15,7 @@ import { useEffect, useMemo, useRef, useState } from 'react'
 import NextImage from 'next/image'
 import { WARDROBE, pieceById, type Piece, type PieceKind } from '@/components/wardrobe'
 import { pieceImage, colorwaySlug } from '@/lib/wardrobeImages'
-import { baseColorway, recolorLook } from '@/lib/recolorLook'
+import { baseColorway } from '@/lib/recolorLook'
 
 export type LookPick = { id: string; hex: string }
 export type Look = { top: LookPick | null; bottom: LookPick | null; dress: LookPick | null; layer: LookPick | null }
@@ -38,22 +39,35 @@ export function lookLabel(look: Look): string | null {
 }
 
 /** Path to the prebuilt look shot for the current selection. */
-function lookShot(look: Look): { src: string; recolor: { from: string; to: string }[] } | null {
+type Shot =
+  | { src: string; exact: true }
+  | { src: string; exact: false; req: { top: { id: string; colorway: string }; bottom: { id: string; colorway: string } } }
+
+function lookShot(look: Look): Shot | null {
   if (look.dress) {
     const dress = pieceById(look.dress.id)
     if (!dress) return null
     const cw = dress.colorways.find(c => c.hex === look.dress!.hex) ?? dress.colorways[0]
-    return { src: `/images/wardrobe-looks/${dress.id}--${colorwaySlug(cw.name)}.jpg`, recolor: [] }
+    // Every dress variant has its own prebuilt shot — always exact.
+    return { src: `/images/wardrobe-looks/${dress.id}--${colorwaySlug(cw.name)}.jpg`, exact: true }
   }
   if (look.top && look.bottom) {
     const top = pieceById(look.top.id)
     const bottom = pieceById(look.bottom.id)
     if (!top || !bottom) return null
-    const jobs: { from: string; to: string }[] = []
     const tBase = baseColorway(top), bBase = baseColorway(bottom)
-    if (look.top.hex !== tBase.hex) jobs.push({ from: tBase.hex, to: look.top.hex })
-    if (look.bottom.hex !== bBase.hex) jobs.push({ from: bBase.hex, to: look.bottom.hex })
-    return { src: `/images/wardrobe-looks/${top.id}__${bottom.id}.jpg`, recolor: jobs }
+    const src = `/images/wardrobe-looks/${top.id}__${bottom.id}.jpg`
+    if (look.top.hex === tBase.hex && look.bottom.hex === bBase.hex) return { src, exact: true }
+    const cwName = (piece: Piece, hex: string) =>
+      (piece.colorways.find(c => c.hex === hex) ?? piece.colorways[0]).name
+    return {
+      src,
+      exact: false,
+      req: {
+        top: { id: top.id, colorway: cwName(top, look.top.hex) },
+        bottom: { id: bottom.id, colorway: cwName(bottom, look.bottom.hex) },
+      },
+    }
   }
   return null
 }
@@ -164,7 +178,8 @@ export default function WardrobeStyler({
 }) {
   const [mode, setMode] = useState<Mode>(look.top || look.bottom ? 'separates' : 'dress')
   const [shotSrc, setShotSrc] = useState<string | null>(null)
-  const recolorCache = useRef(new Map<string, string>())
+  const [matching, setMatching] = useState(false)
+  const exactCache = useRef(new Map<string, string>())
 
   const dresses = WARDROBE.dress
   const tops = WARDROBE.top
@@ -182,19 +197,32 @@ export default function WardrobeStyler({
 
   useEffect(() => {
     let cancelled = false
-    if (!shot) { setShotSrc(null); return }
-    if (shot.recolor.length === 0) { setShotSrc(shot.src); return }
-    const key = shot.src + '|' + shot.recolor.map(j => j.from + '>' + j.to).join(',')
-    const cached = recolorCache.current.get(key)
-    if (cached) { setShotSrc(cached); return }
-    // Show the base combo instantly, then swap in the re-keyed version.
+    if (!shot) { setShotSrc(null); setMatching(false); return }
+    if (shot.exact) { setShotSrc(shot.src); setMatching(false); return }
+    const key = JSON.stringify(shot.req)
+    const cached = exactCache.current.get(key)
+    if (cached) { setShotSrc(cached); setMatching(false); return }
+    // Base combo up instantly; the exact-color photograph swaps in when the
+    // server has it (instant when cached there, ~10s the first time ever).
     setShotSrc(shot.src)
-    recolorLook(shot.src, shot.recolor)
-      .then(dataUrl => {
-        recolorCache.current.set(key, dataUrl)
-        if (!cancelled) setShotSrc(dataUrl)
+    setMatching(true)
+    fetch('/api/wardrobe-model', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: key,
+    })
+      .then(r => r.json())
+      .then(async j => {
+        if (!j?.image) throw new Error('no image')
+        // Decode fully before swapping, so the frame on screen never shows
+        // the old colors under the new caption.
+        const img = new Image()
+        img.src = j.image
+        await img.decode().catch(() => {})
+        exactCache.current.set(key, j.image)
+        if (!cancelled) { setShotSrc(j.image); setMatching(false) }
       })
-      .catch(() => {})
+      .catch(() => { if (!cancelled) setMatching(false) })
     return () => { cancelled = true }
   }, [shot])
 
@@ -205,10 +233,11 @@ export default function WardrobeStyler({
 
   function pickSeparate(kind: 'top' | 'bottom', piece: Piece) {
     onEngage?.('outfit_piece_toggled', { kind, value: piece.label, on: true })
-    const next: Look = { ...look, dress: null, [kind]: { id: piece.id, hex: piece.colorways[0].hex } }
-    // Both rows always have a wearer — entering separates fills the other row.
-    if (!next.top) next.top = { id: tops[0].id, hex: tops[0].colorways[0].hex }
-    if (!next.bottom) next.bottom = { id: bottoms[0].id, hex: bottoms[0].colorways[0].hex }
+    // Defaults land on the BASE colorway — the one in the prebuilt shot — so
+    // picking a piece is always instant and exact.
+    const next: Look = { ...look, dress: null, [kind]: { id: piece.id, hex: baseColorway(piece).hex } }
+    if (!next.top) next.top = { id: tops[0].id, hex: baseColorway(tops[0]).hex }
+    if (!next.bottom) next.bottom = { id: bottoms[0].id, hex: baseColorway(bottoms[0]).hex }
     onChange(next)
   }
 
@@ -223,8 +252,8 @@ export default function WardrobeStyler({
       onChange({
         ...look,
         dress: null,
-        top: look.top ?? { id: tops[0].id, hex: tops[0].colorways[0].hex },
-        bottom: look.bottom ?? { id: bottoms[0].id, hex: bottoms[0].colorways[0].hex },
+        top: look.top ?? { id: tops[0].id, hex: baseColorway(tops[0]).hex },
+        bottom: look.bottom ?? { id: bottoms[0].id, hex: baseColorway(bottoms[0]).hex },
       })
     }
   }
@@ -276,11 +305,18 @@ export default function WardrobeStyler({
       <div className="mt-4">
         <div className="relative mx-auto aspect-[3/4] w-[62%] overflow-hidden rounded-2xl border border-neutral-200 bg-[#f0e9dc]">
           {shotSrc ? (
-            // Recolored shots are data URLs — plain img, not the optimizer.
+            // Exact shots can come from the Cloudinary cache — plain img, not
+            // the Next optimizer, so remote and local paths both just work.
             // eslint-disable-next-line @next/next/no-img-element
             <img src={shotSrc} alt={text ?? 'Your look'} className="h-full w-full object-cover" />
           ) : (
             <span className="flex h-full items-center justify-center text-[11px] text-neutral-400">Your look</span>
+          )}
+          {matching && (
+            <span className="absolute inset-x-0 bottom-0 flex items-center justify-center gap-1.5 bg-black/45 py-1.5 text-[10px] font-bold uppercase tracking-[0.14em] text-white backdrop-blur-[2px]">
+              <span className="inline-block h-3 w-3 animate-spin rounded-full border-[1.5px] border-white/40 border-t-white" />
+              Matching your colors
+            </span>
           )}
         </div>
         {text && <p className="mt-2 text-center text-[12px] font-semibold text-neutral-600">{text}</p>}
