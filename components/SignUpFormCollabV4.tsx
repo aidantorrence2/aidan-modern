@@ -22,11 +22,11 @@ import { initPageAnalytics, track, pageElapsedMs, flushNow } from '@/lib/track'
 type Step = 'location' | 'vibe' | 'notes' | 'capture' | 'photos' | 'instagram' | 'done'
 
 const SLIDE_NO: Record<Exclude<Step, 'done'>, number> = {
-  vibe: 1, notes: 2, location: 3, capture: 4, photos: 5, instagram: 6,
+  capture: 1, vibe: 2, notes: 3, location: 4, photos: 5, instagram: 6,
 }
 const TOTAL_SLIDES = 6
 const BACK_TO: Partial<Record<Step, Step>> = {
-  notes: 'vibe', location: 'notes', capture: 'location', photos: 'capture', instagram: 'photos',
+  vibe: 'capture', notes: 'vibe', location: 'notes', photos: 'location', instagram: 'photos',
 }
 
 function resizeImage(dataUrl: string, maxBytes: number): Promise<string> {
@@ -219,9 +219,7 @@ const slideMotionCss = `
 @keyframes atfWobble { 0%, 84%, 100% { transform: rotate(0deg) scale(1) } 88% { transform: rotate(-7deg) scale(1.06) } 92% { transform: rotate(6deg) scale(1.06) } 96% { transform: rotate(-3deg) scale(1.02) } }
 .atf-shimmer { animation: atfShimmer 3s cubic-bezier(.4,0,.2,1) infinite }
 .atf-wobble { animation: atfWobble 4.4s ease-in-out infinite }
-@keyframes atfNudge { 0%, 100% { transform: none } 20% { transform: translateX(-5px) } 40% { transform: translateX(4px) } 60% { transform: translateX(-3px) } 80% { transform: translateX(2px) } }
-.atf-nudge { animation: atfNudge 0.45s ease-in-out 2 }
-@media (prefers-reduced-motion: reduce) { .atf-card, .atf-ribbon-back, .atf-frame, .atf-shimmer, .atf-wobble, .atf-nudge { animation: none } }
+@media (prefers-reduced-motion: reduce) { .atf-card, .atf-ribbon-back, .atf-frame, .atf-shimmer, .atf-wobble { animation: none } }
 `
 
 function LineIcon({ className }: { className?: string }) {
@@ -247,12 +245,10 @@ function CheckIcon({ className }: { className?: string }) {
 }
 
 export default function SignUpFormCollabV4({ analyticsPath = '/sign-up-collab-v4' }: { analyticsPath?: string }) {
-  const [step, setStep] = useState<Step>('vibe')
+  const [step, setStep] = useState<Step>('capture')
   const [error, setError] = useState<string | null>(null)
 
   const [vibe, setVibe] = useState<VibeKey | null>(null)
-  // Get Started pressed with no vibe picked — shakes the tile row at the answer.
-  const [vibeFlash, setVibeFlash] = useState(false)
   const [location, setLocation] = useState('')
   const [idea, setIdea] = useState('')
   const [channel, setChannel] = useState<Channel>('line')
@@ -338,7 +334,7 @@ export default function SignUpFormCollabV4({ analyticsPath = '/sign-up-collab-v4
   }, [analyticsPath])
 
   function persistResume() {
-    const touched = step !== 'vibe' || !!location || !!vibe
+    const touched = step !== 'capture' || !!phone || !!vibe
     if (!touched) return
     const base: Omit<ResumeState, 'photos'> = {
       v: 2, ts: Date.now(), step, channel, vibe, phone, countryCode,
@@ -410,9 +406,10 @@ export default function SignUpFormCollabV4({ analyticsPath = '/sign-up-collab-v4
   }
 
   // ── The lead ──
-  // Nothing is written until frame 4, because until then there's no way to
-  // reach anyone. The POST runs in the background with one silent retry so the
-  // advance to frame 5 is instant.
+  // The number is the doorstep again, so the row is written from frame 1 —
+  // city arrives blank and the PATCHes that follow each later frame fill it
+  // in. The POST runs in the background with one silent retry so the advance
+  // to frame 2 is instant.
   function startLeadPost(contact: string) {
     setPostedContact(contact)
     const attempt = async (): Promise<{ id: number | null; contact: string }> => {
@@ -450,7 +447,7 @@ export default function SignUpFormCollabV4({ analyticsPath = '/sign-up-collab-v4
   function onCapture(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
     const data = Object.fromEntries(new FormData(e.currentTarget).entries()) as Record<string, string>
-    if (data.company) { track('honeypot_triggered'); advance('photos'); return }
+    if (data.company) { track('honeypot_triggered'); advance('vibe'); return }
 
     const digits = phone.replace(/\D/g, '')
     if (digits.length < 7) {
@@ -466,7 +463,7 @@ export default function SignUpFormCollabV4({ analyticsPath = '/sign-up-collab-v4
     // itself changed, in which case the old row holds one they've corrected.
     const typed = countryCode ? countryCode + ' ' + phone.trim() : phone.trim()
     if (!leadRef.current || postedContact !== typed) startLeadPost(typed)
-    advance('photos')
+    advance('vibe')
   }
 
   // Each advance past the ask saves in the background. PATCHes are chained so
@@ -749,11 +746,36 @@ export default function SignUpFormCollabV4({ analyticsPath = '/sign-up-collab-v4
     <div className="rounded-2xl border border-red-200 bg-red-50 px-4 py-3 text-[13px] font-semibold text-red-700">{error}</div>
   ) : null
 
-  // ── Frame 1 · the look ──
+  // ── Frame 1 · the ask ──
   // The opening page: full-bleed hero and headline, proof grid and how-it-works
-  // below the fold. The card opens on the vibe pick — one row of small tiles,
-  // and the tap that picks one IS the way forward, so there's no Get Started.
-  if (step === 'vibe') {
+  // below the fold. The card opens on the number — the contact ask is back on
+  // the doorstep, so the row is written before anything else is asked.
+  if (step === 'capture') {
+    const segment = (c: Channel) => {
+      const on = channel === c
+      const Icon = c === 'line' ? LineIcon : WhatsappIcon
+      return (
+        <button
+          key={c}
+          type="button"
+          onClick={() => {
+            if (on) return
+            track('channel_switched', { from: channel, to: c, had_digits: phone.replace(/\D/g, '').length > 0 })
+            setChannel(c)
+            setError(null)
+            requestAnimationFrame(() => phoneRef.current?.focus())
+          }}
+          className={`flex items-center justify-center gap-1.5 rounded-xl py-2.5 text-[13px] font-bold transition ${
+            on ? 'bg-white text-neutral-900 shadow-[0_1px_3px_rgba(0,0,0,0.16)]' : 'text-neutral-500 hover:text-neutral-800'
+          }`}
+          data-cta={`v4-channel-${c}`}
+          aria-pressed={on}
+        >
+          <Icon className={`h-4 w-4 ${on ? (c === 'line' ? 'text-[#06C755]' : 'text-[#25D366]') : 'text-neutral-400'}`} />
+          {CHANNELS[c].name}
+        </button>
+      )
+    }
     return (
       <div className="mx-auto w-full max-w-md bg-white">
         {/* For the shimmer/wobble on the "No preference" tile — the other
@@ -804,86 +826,53 @@ export default function SignUpFormCollabV4({ analyticsPath = '/sign-up-collab-v4
           {/* h2, not h1 — the hero headline above is the page's h1. Same face
               and size as every other frame's title so the card belongs to the set. */}
           <h2 className="text-[30px] font-semibold leading-[1.1] tracking-[-0.01em] text-neutral-900" style={{ fontFamily: "Georgia, 'Times New Roman', serif", fontStyle: 'italic', textWrap: 'balance' }}>
-            What&rsquo;s your vibe?
+            Your {CHANNELS[channel].name}
           </h2>
           <p className="mt-2 text-[13px] leading-relaxed text-neutral-500">
-            I&rsquo;ll message you with all the details &mdash; timing, location ideas, what to wear, and next steps.{' '}
+            This is how I will contact you. I&rsquo;ll send you the details &mdash; timing, location ideas, what to wear, and next steps.{' '}
             {/* In the card, not below the fold: the "is this really free?" doubt
                 is what the first frame has to answer, and 93% of ad clickers
                 never scroll far enough to find an answer further down. */}
             <a
               href="/sign-up-collab/faq"
-              onClick={() => track('faq_opened', { slide: 'vibe' })}
+              onClick={() => track('faq_opened', { slide: 'capture' })}
               className="font-semibold text-emerald-600 underline decoration-emerald-300 underline-offset-2"
             >
               Questions?
             </a>
           </p>
-          {/* One row of small tiles — a tap advances on its own; Get Started
-              below is for whoever looks for a button instead. */}
-          <div className={`mt-3.5 grid grid-cols-4 gap-1.5 ${vibeFlash ? 'atf-nudge' : ''}`}>
-            {VIBES.map(v => {
-              const on = vibe === v.key
-              return (
-                <button
-                  key={v.key}
-                  type="button"
-                  onClick={() => {
-                    setVibe(v.key)
-                    track('vibe_selected', { value: v.key })
-                    fieldEngaged('vibe')
-                    advance('notes')
-                  }}
-                  className={`relative aspect-square overflow-hidden rounded-xl border-2 text-left transition active:scale-[0.98] ${
-                    on ? 'border-emerald-600 shadow-[0_0_0_3px_rgba(5,150,105,0.16)]' : 'border-transparent'
-                  }`}
-                  data-cta={`v4-vibe-${v.key}`}
-                >
-                  {v.src ? (
-                    <NextImage src={v.src} alt="" fill sizes="(max-width: 640px) 24vw, 104px" className="object-cover" />
-                  ) : (
-                    <span className="absolute inset-0 overflow-hidden" style={{ background: 'linear-gradient(145deg, #423e38, #22201b)' }}>
-                      <span className="atf-shimmer absolute inset-y-0 w-1/2" style={{ background: 'linear-gradient(100deg, transparent, rgba(255,255,255,0.14), transparent)' }} />
-                      <span className="absolute inset-0 flex items-center justify-center">
-                        <span className="atf-wobble flex h-7 w-7 items-center justify-center rounded-[9px] border-2 border-white/30 text-[13px] font-bold text-white/75">?</span>
-                      </span>
-                    </span>
-                  )}
-                  <span className="absolute inset-0" style={{ background: 'linear-gradient(180deg, transparent 40%, rgba(0,0,0,0.74))' }} />
-                  <span className="absolute bottom-1.5 left-1.5 right-1.5 text-[10px] font-bold leading-tight text-white" style={{ textShadow: '0 1px 4px rgba(0,0,0,0.9)' }}>
-                    {v.label}
-                  </span>
-                  {on && (
-                    <span className="absolute right-1 top-1 flex h-4 w-4 items-center justify-center rounded-full bg-emerald-600 text-white">
-                      <CheckIcon className="h-2 w-2" />
-                    </span>
-                  )}
-                </button>
-              )
-            })}
-          </div>
-          {error && (
-            <div className="mt-3 rounded-xl border border-red-300 bg-red-50 px-4 py-3 text-sm font-medium text-red-700">
-              {error}
+          <form onSubmit={onCapture} className="mt-4 space-y-3">
+            {/* Same number either way — the segment only says which app it's on. */}
+            <div className="grid grid-cols-2 gap-1 rounded-2xl border border-neutral-200 bg-[#f5f5f4] p-1">
+              {segment(defaultChannel)}
+              {segment(defaultChannel === 'line' ? 'whatsapp' : 'line')}
             </div>
-          )}
-          <button
-            type="button"
-            onClick={() => {
-              if (!vibe) {
-                track('validation_error', { reason: 'vibe_missing' })
-                setError('Pick a vibe first — tap one above.')
-                setVibeFlash(true)
-                setTimeout(() => setVibeFlash(false), 1000)
-                return
-              }
-              advance('notes')
-            }}
-            className="mt-3 w-full rounded-full bg-emerald-600 py-4 text-base font-bold text-white shadow-lg shadow-emerald-600/25 transition hover:bg-emerald-500 active:scale-[0.99]"
-            data-cta="v4-submit-vibe"
-          >
-            Get Started
-          </button>
+            <div className="flex gap-2">
+              {countryCode && <CountryCodeSelect light value={countryCode} onChange={code => { fieldEngaged('country_code'); track('country_code_changed', { code }); setCountryCode(code); setError(null) }} />}
+              <input
+                ref={phoneRef}
+                type="tel"
+                inputMode="tel"
+                autoComplete="tel-national"
+                name={channel}
+                value={phone}
+                onChange={e => { fieldEngaged(channel); setPhone(e.target.value); setError(null) }}
+                onBlur={() => { const digits = phone.replace(/\D/g, ''); if (digits) trackOnce(`${channel}_filled`, digits, { digits: digits.length }) }}
+                className="min-w-0 flex-1 rounded-2xl border border-neutral-200 bg-[#faf9f6] px-4 py-3.5 text-base text-neutral-900 placeholder-neutral-400 outline-none transition focus:border-emerald-500 focus:bg-white focus:ring-4 focus:ring-emerald-500/10"
+                placeholder={countryCode ? CHANNELS[channel].placeholder : CHANNELS[channel].placeholderIntl}
+              />
+            </div>
+            {errorBox}
+            {/* Honeypot */}
+            <input type="text" name="company" className="hidden" tabIndex={-1} autoComplete="off" />
+            <button
+              type="submit"
+              className="w-full rounded-full bg-emerald-600 py-4 text-base font-bold text-white shadow-lg shadow-emerald-600/25 transition hover:bg-emerald-500 active:scale-[0.99]"
+              data-cta="v4-submit"
+            >
+              Get Started
+            </button>
+          </form>
           {/* Same quiet exit as the page bottom, for the majority who never
               scroll past the card. */}
           <p className="mt-3 text-center text-[13px] text-neutral-400">
@@ -967,11 +956,11 @@ export default function SignUpFormCollabV4({ analyticsPath = '/sign-up-collab-v4
     )
   }
 
-  // ── Frame 3 · where ──
+  // ── Frame 4 · where ──
   if (step === 'location') {
-    return slideShell(3, (
+    return slideShell(4, (
       <>
-        {kicker(3, BACK_TO.location)}
+        {kicker(4, BACK_TO.location)}
         {slideTitle('Confirm your location')}
         {chips.length > 0 && (
           <div className="mt-4 flex flex-wrap gap-2">
@@ -1013,18 +1002,20 @@ export default function SignUpFormCollabV4({ analyticsPath = '/sign-up-collab-v4
               setError('Let me know where you are so I can plan the shoot.')
               return
             }
-            advance('capture')
+            // The lead row already exists (frame 1), so the city it was born
+            // without lands here.
+            advance('photos', true)
           })}
         </div>
       </>
     ))
   }
 
-  // ── Frame 2 · notes ──
+  // ── Frame 3 · notes ──
   if (step === 'notes') {
-    return slideShell(2, (
+    return slideShell(3, (
       <>
-        {kicker(2, BACK_TO.notes)}
+        {kicker(3, BACK_TO.notes)}
         {slideTitle('Any notes or questions?')}
         <p className="mt-2 text-[13px] leading-relaxed text-neutral-500">Your own idea, inspo, references &mdash; anything.</p>
         <textarea
@@ -1043,73 +1034,53 @@ export default function SignUpFormCollabV4({ analyticsPath = '/sign-up-collab-v4
     ))
   }
 
-  // ── Frame 4 · the ask ──
-  if (step === 'capture') {
-    const segment = (c: Channel) => {
-      const on = channel === c
-      const Icon = c === 'line' ? LineIcon : WhatsappIcon
-      return (
-        <button
-          key={c}
-          type="button"
-          onClick={() => {
-            if (on) return
-            track('channel_switched', { from: channel, to: c, had_digits: phone.replace(/\D/g, '').length > 0 })
-            setChannel(c)
-            setError(null)
-            requestAnimationFrame(() => phoneRef.current?.focus())
-          }}
-          className={`flex items-center justify-center gap-1.5 rounded-xl py-2.5 text-[13px] font-bold transition ${
-            on ? 'bg-white text-neutral-900 shadow-[0_1px_3px_rgba(0,0,0,0.16)]' : 'text-neutral-500 hover:text-neutral-800'
-          }`}
-          data-cta={`v4-channel-${c}`}
-          aria-pressed={on}
-        >
-          <Icon className={`h-4 w-4 ${on ? (c === 'line' ? 'text-[#06C755]' : 'text-[#25D366]') : 'text-neutral-400'}`} />
-          {CHANNELS[c].name}
-        </button>
-      )
-    }
-
-    return slideShell(4, (
+  // ── Frame 2 · the look ──
+  if (step === 'vibe') {
+    return slideShell(2, (
       <>
-        {kicker(4, BACK_TO.capture)}
-        {slideTitle(`Your ${CHANNELS[channel].name}`)}
-        <p className="mt-2.5 text-[15px] leading-relaxed text-neutral-600">
-          This is how I will contact you. I&rsquo;ll send you the details &mdash; timing, location ideas, what to wear, and next steps.
-        </p>
-        <form onSubmit={onCapture} className="mt-5 space-y-3">
-          {/* Same number either way — the segment only says which app it's on. */}
-          <div className="grid grid-cols-2 gap-1 rounded-2xl border border-neutral-200 bg-[#f5f5f4] p-1">
-            {segment(defaultChannel)}
-            {segment(defaultChannel === 'line' ? 'whatsapp' : 'line')}
-          </div>
-          <div className="flex gap-2">
-            {countryCode && <CountryCodeSelect light value={countryCode} onChange={code => { fieldEngaged('country_code'); track('country_code_changed', { code }); setCountryCode(code); setError(null) }} />}
-            <input
-              ref={phoneRef}
-              type="tel"
-              inputMode="tel"
-              autoComplete="tel-national"
-              name={channel}
-              value={phone}
-              onChange={e => { fieldEngaged(channel); setPhone(e.target.value); setError(null) }}
-              onBlur={() => { const digits = phone.replace(/\D/g, ''); if (digits) trackOnce(`${channel}_filled`, digits, { digits: digits.length }) }}
-              className="min-w-0 flex-1 rounded-2xl border border-neutral-200 bg-[#faf9f6] px-4 py-3.5 text-base text-neutral-900 placeholder-neutral-400 outline-none transition focus:border-emerald-500 focus:bg-white focus:ring-4 focus:ring-emerald-500/10"
-              placeholder={countryCode ? CHANNELS[channel].placeholder : CHANNELS[channel].placeholderIntl}
-            />
-          </div>
-          {errorBox}
-          {/* Honeypot */}
-          <input type="text" name="company" className="hidden" tabIndex={-1} autoComplete="off" />
-          <button
-            type="submit"
-            className="w-full rounded-2xl bg-emerald-600 py-4 text-[15px] font-bold tracking-[-0.01em] text-white shadow-[0_12px_26px_-12px_rgba(5,150,105,0.9)] transition hover:bg-emerald-500 active:scale-[0.99]"
-            data-cta="v4-submit"
-          >
-            Next
-          </button>
-        </form>
+        {kicker(2, BACK_TO.vibe)}
+        {slideTitle("What's your vibe?")}
+        <div className="mt-5 grid grid-cols-2 gap-2.5">
+          {VIBES.map(v => {
+            const on = vibe === v.key
+            return (
+              <button
+                key={v.key}
+                type="button"
+                onClick={() => {
+                  setVibe(v.key)
+                  track('vibe_selected', { value: v.key })
+                  fieldEngaged('vibe')
+                  advance('notes')
+                }}
+                className={`relative aspect-square overflow-hidden rounded-2xl border-2 text-left transition active:scale-[0.98] ${
+                  on ? 'border-emerald-600 shadow-[0_0_0_3px_rgba(5,150,105,0.16)]' : 'border-transparent'
+                }`}
+                data-cta={`v4-vibe-${v.key}`}
+              >
+                {v.src ? (
+                  <NextImage src={v.src} alt="" fill sizes="(max-width: 640px) 45vw, 200px" className="object-cover" />
+                ) : (
+                  <span className="absolute inset-0 overflow-hidden" style={{ background: 'linear-gradient(145deg, #423e38, #22201b)' }}>
+                    <span className="atf-shimmer absolute inset-y-0 w-1/2" style={{ background: 'linear-gradient(100deg, transparent, rgba(255,255,255,0.14), transparent)' }} />
+                    <span className="absolute inset-0 flex items-center justify-center">
+                      <span className="atf-wobble flex h-11 w-11 items-center justify-center rounded-[14px] border-2 border-white/30 text-[20px] font-bold text-white/75">?</span>
+                    </span>
+                  </span>
+                )}
+                <span className="absolute inset-0" style={{ background: 'linear-gradient(180deg, transparent 45%, rgba(0,0,0,0.72))' }} />
+                <span className="absolute bottom-2.5 left-3 right-3 text-[13px] font-bold text-white" style={{ textShadow: '0 1px 5px rgba(0,0,0,0.9)' }}>
+                  {v.label}
+                </span>
+                {on && (
+                  <span className="absolute right-2 top-2 flex h-5 w-5 items-center justify-center rounded-full bg-emerald-600 text-white">
+                    <CheckIcon className="h-2.5 w-2.5" />
+                  </span>
+                )}
+              </button>
+            )
+          })}
+        </div>
       </>
     ))
   }
