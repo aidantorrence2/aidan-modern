@@ -1,0 +1,1108 @@
+[
+ {
+  "id": "silk-blouse",
+  "kind": "top",
+  "label": "Silk blouse",
+  "colorways": [
+   {
+    "name": "Ivory",
+    "hex": "#ece3d3"
+   },
+   {
+    "name": "Champagne",
+    "hex": "#d6bf9d"
+   },
+   {
+    "name": "Emerald",
+    "hex": "#23684f"
+   },
+   {
+    "name": "Burgundy",
+    "hex": "#6d2f38"
+   },
+   {
+    "name": "Dusty blue",
+    "hex": "#8ea3b8"
+   },
+   {
+    "name": "Black",
+    "hex": "#282420"
+   }
+  ]
+ },
+ {
+  "id": "tank-top",
+  "kind": "top",
+  "label": "Tank top",
+  "colorways": [
+   {
+    "name": "White",
+    "hex": "#f2efe9"
+   },
+   {
+    "name": "Black",
+    "hex": "#26221f"
+   },
+   {
+    "name": "Grey marle",
+    "hex": "#a8a49d"
+   },
+   {
+    "name": "Navy",
+    "hex": "#2c3547"
+   },
+   {
+    "name": "Sage",
+    "hex": "#9aa48a"
+   },
+   {
+    "name": "Chocolate",
+    "hex": "#5c4534"
+   }
+  ]
+ },
+ {
+  "id": "cami",
+  "kind": "top",
+  "label": "Lace-trim cami",
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#282420"
+   },
+   {
+    "name": "Ivory",
+    "hex": "#ece3d3"
+   },
+   {
+    "name": "Champagne",
+    "hex": "#d6bf9d"
+   },
+   {
+    "name": "Blush",
+    "hex": "#d8afa9"
+   },
+   {
+    "name": "Navy",
+    "hex": "#2e3850"
+   },
+   {
+    "name": "Burgundy",
+    "hex": "#6d2f38"
+   }
+  ]
+ },
+ {
+  "id": "crop-tee",
+  "kind": "top",
+  "label": "Fitted crop tee",
+  "colorways": [
+   {
+    "name": "White",
+    "hex": "#f2efe9"
+   },
+   {
+    "name": "Black",
+    "hex": "#26221f"
+   },
+   {
+    "name": "Grey marle",
+    "hex": "#a8a49d"
+   },
+   {
+    "name": "Sage",
+    "hex": "#9aa48a"
+   },
+   {
+    "name": "Butter",
+    "hex": "#e6d3a3"
+   }
+  ]
+ },
+ {
+  "id": "crew-tee",
+  "kind": "top",
+  "label": "Crew-neck tee",
+  "colorways": [
+   {
+    "name": "White",
+    "hex": "#f2efe9"
+   },
+   {
+    "name": "Black",
+    "hex": "#26221f"
+   },
+   {
+    "name": "Grey marle",
+    "hex": "#a8a49d"
+   },
+   {
+    "name": "Navy",
+    "hex": "#2c3547"
+   },
+   {
+    "name": "Sage",
+    "hex": "#9aa48a"
+   },
+   {
+    "name": "Bone",
+    "hex": "#e0dacc"
+   }
+  ]
+ },
+ {
+  "id": "off-shoulder-top",
+  "kind": "top",
+  "label": "Off-shoulder top",
+  "colorways": [
+   {
+    "name": "White",
+    "hex": "#f2efe9"
+   },
+   {
+    "name": "Black",
+    "hex": "#26221f"
+   },
+   {
+    "name": "Scarlet",
+    "hex": "#a4292e"
+   },
+   {
+    "name": "Blush",
+    "hex": "#d8afa9"
+   },
+   {
+    "name": "Chambray",
+    "hex": "#8ea3b8"
+   }
+  ]
+ },
+ {
+  "id": "corset-top",
+  "kind": "top",
+  "label": "Corset top",
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#211d1a"
+   },
+   {
+    "name": "Ivory",
+    "hex": "#eae0cf"
+   },
+   {
+    "name": "Scarlet",
+    "hex": "#a4292e"
+   },
+   {
+    "name": "Champagne",
+    "hex": "#d4bc98"
+   }
+  ]
+ },
+ {
+  "id": "bodysuit",
+  "kind": "top",
+  "label": "Bodysuit",
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#26221f"
+   },
+   {
+    "name": "Ivory",
+    "hex": "#eae2d4"
+   },
+   {
+    "name": "Chocolate",
+    "hex": "#5c4534"
+   },
+   {
+    "name": "Burgundy",
+    "hex": "#64303a"
+   },
+   {
+    "name": "Olive",
+    "hex": "#6b6a4f"
+   }
+  ]
+ },
+ {
+  "id": "oversized-shirt",
+  "kind": "top",
+  "label": "Oversized shirt",
+  "colorways": [
+   {
+    "name": "White",
+    "hex": "#f4f1ea"
+   },
+   {
+    "name": "Pale blue",
+    "hex": "#cfdce8"
+   },
+   {
+    "name": "Black",
+    "hex": "#2a2724"
+   },
+   {
+    "name": "Striped",
+    "hex": "#f2efe8"
+   }
+  ]
+ },
+ {
+  "id": "turtleneck",
+  "kind": "top",
+  "label": "Turtleneck",
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#262220"
+   },
+   {
+    "name": "Cream",
+    "hex": "#e8e0cf"
+   },
+   {
+    "name": "Charcoal",
+    "hex": "#3a3733"
+   },
+   {
+    "name": "Camel",
+    "hex": "#b08a55"
+   },
+   {
+    "name": "Forest",
+    "hex": "#35523f"
+   },
+   {
+    "name": "Burgundy",
+    "hex": "#64303a"
+   }
+  ]
+ },
+ {
+  "id": "knit-sweater",
+  "kind": "top",
+  "label": "Fine-knit sweater",
+  "colorways": [
+   {
+    "name": "Oatmeal",
+    "hex": "#cfc4ad"
+   },
+   {
+    "name": "Cream",
+    "hex": "#e8e0cf"
+   },
+   {
+    "name": "Charcoal",
+    "hex": "#3a3733"
+   },
+   {
+    "name": "Camel",
+    "hex": "#b08a55"
+   },
+   {
+    "name": "Forest",
+    "hex": "#35523f"
+   },
+   {
+    "name": "Burgundy",
+    "hex": "#64303a"
+   }
+  ]
+ },
+ {
+  "id": "wrap-top",
+  "kind": "top",
+  "label": "Wrap top",
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#26221f"
+   },
+   {
+    "name": "Ivory",
+    "hex": "#eae1d2"
+   },
+   {
+    "name": "Terracotta",
+    "hex": "#b0603f"
+   },
+   {
+    "name": "Olive",
+    "hex": "#6b6a4f"
+   },
+   {
+    "name": "Dusty rose",
+    "hex": "#c49898"
+   }
+  ]
+ },
+ {
+  "id": "halter-top",
+  "kind": "top",
+  "label": "Halter top",
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#26221f"
+   },
+   {
+    "name": "Ivory",
+    "hex": "#eae1d2"
+   },
+   {
+    "name": "Scarlet",
+    "hex": "#a4292e"
+   },
+   {
+    "name": "Chocolate",
+    "hex": "#5c4534"
+   },
+   {
+    "name": "Sage",
+    "hex": "#9aa48a"
+   }
+  ]
+ },
+ {
+  "id": "tube-top",
+  "kind": "top",
+  "label": "Tube top",
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#26221f"
+   },
+   {
+    "name": "White",
+    "hex": "#f2efe9"
+   },
+   {
+    "name": "Cocoa",
+    "hex": "#6b503c"
+   },
+   {
+    "name": "Scarlet",
+    "hex": "#a4292e"
+   }
+  ]
+ },
+ {
+  "id": "puff-blouse",
+  "kind": "top",
+  "label": "Puff-sleeve blouse",
+  "colorways": [
+   {
+    "name": "White",
+    "hex": "#f4f1ea"
+   },
+   {
+    "name": "Ivory",
+    "hex": "#ece3d3"
+   },
+   {
+    "name": "Blush",
+    "hex": "#d8afa9"
+   },
+   {
+    "name": "Sky",
+    "hex": "#b9cbdd"
+   },
+   {
+    "name": "Black",
+    "hex": "#2a2724"
+   }
+  ]
+ },
+ {
+  "id": "cardigan",
+  "kind": "top",
+  "label": "Cardigan",
+  "colorways": [
+   {
+    "name": "Oatmeal",
+    "hex": "#cfc4ad"
+   },
+   {
+    "name": "Cream",
+    "hex": "#e8e0cf"
+   },
+   {
+    "name": "Camel",
+    "hex": "#b08a55"
+   },
+   {
+    "name": "Charcoal",
+    "hex": "#3a3733"
+   },
+   {
+    "name": "Forest",
+    "hex": "#35523f"
+   },
+   {
+    "name": "Black",
+    "hex": "#262220"
+   }
+  ]
+ },
+ {
+  "id": "sb-blazer",
+  "kind": "layer",
+  "label": "Single-breasted blazer",
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#2a2521"
+   },
+   {
+    "name": "Charcoal",
+    "hex": "#46423e"
+   },
+   {
+    "name": "Camel",
+    "hex": "#b08a58"
+   },
+   {
+    "name": "Pinstripe grey",
+    "hex": "#57534f"
+   },
+   {
+    "name": "Cream",
+    "hex": "#e7ddca"
+   }
+  ]
+ },
+ {
+  "id": "moto-jacket",
+  "kind": "layer",
+  "label": "Leather moto jacket",
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#221f1d"
+   },
+   {
+    "name": "Chocolate",
+    "hex": "#4e3526"
+   },
+   {
+    "name": "Oxblood",
+    "hex": "#58242b"
+   }
+  ]
+ },
+ {
+  "id": "denim-jacket",
+  "kind": "layer",
+  "label": "Denim jacket",
+  "colorways": [
+   {
+    "name": "Mid wash",
+    "hex": "#64789a"
+   },
+   {
+    "name": "Light wash",
+    "hex": "#93a7bd"
+   },
+   {
+    "name": "Washed black",
+    "hex": "#2e2b28"
+   },
+   {
+    "name": "Ecru",
+    "hex": "#cfc7b4"
+   }
+  ]
+ },
+ {
+  "id": "trench-coat",
+  "kind": "layer",
+  "label": "Trench coat",
+  "colorways": [
+   {
+    "name": "Classic tan",
+    "hex": "#c2a476"
+   },
+   {
+    "name": "Black",
+    "hex": "#2a2622"
+   },
+   {
+    "name": "Stone",
+    "hex": "#d8d0bd"
+   },
+   {
+    "name": "Navy",
+    "hex": "#2e3a52"
+   }
+  ]
+ },
+ {
+  "id": "wool-coat",
+  "kind": "layer",
+  "label": "Long wool coat",
+  "colorways": [
+   {
+    "name": "Camel",
+    "hex": "#b3865a"
+   },
+   {
+    "name": "Black",
+    "hex": "#282420"
+   },
+   {
+    "name": "Grey melange",
+    "hex": "#8e8a84"
+   },
+   {
+    "name": "Burgundy",
+    "hex": "#5d2b33"
+   },
+   {
+    "name": "Cream",
+    "hex": "#e9e0cf"
+   }
+  ]
+ },
+ {
+  "id": "duster-cardigan",
+  "kind": "layer",
+  "label": "Knit duster cardigan",
+  "colorways": [
+   {
+    "name": "Oatmeal",
+    "hex": "#d8ccb6"
+   },
+   {
+    "name": "Charcoal",
+    "hex": "#45403b"
+   },
+   {
+    "name": "Rust",
+    "hex": "#a55f38"
+   },
+   {
+    "name": "Sage",
+    "hex": "#98a289"
+   }
+  ]
+ },
+ {
+  "id": "straight-jeans",
+  "kind": "bottom",
+  "label": "Straight jeans",
+  "colorways": [
+   {
+    "name": "Indigo",
+    "hex": "#37455e"
+   },
+   {
+    "name": "Mid wash",
+    "hex": "#64789a"
+   },
+   {
+    "name": "Light wash",
+    "hex": "#93a7bd"
+   },
+   {
+    "name": "Washed black",
+    "hex": "#2e2b28"
+   },
+   {
+    "name": "Ecru",
+    "hex": "#cfc7b4"
+   }
+  ]
+ },
+ {
+  "id": "mini-a-line-skirt",
+  "kind": "bottom",
+  "label": "Mini A-line skirt",
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#26221f"
+   },
+   {
+    "name": "Camel",
+    "hex": "#b3906a"
+   },
+   {
+    "name": "Charcoal",
+    "hex": "#48443f"
+   },
+   {
+    "name": "Oxblood",
+    "hex": "#5c2430"
+   },
+   {
+    "name": "Cream",
+    "hex": "#e8e0cd"
+   }
+  ]
+ },
+ {
+  "id": "pencil-midi-skirt",
+  "kind": "bottom",
+  "label": "Pencil midi skirt",
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#26221f"
+   },
+   {
+    "name": "Charcoal",
+    "hex": "#48443f"
+   },
+   {
+    "name": "Camel",
+    "hex": "#b3906a"
+   },
+   {
+    "name": "Navy",
+    "hex": "#2b3550"
+   },
+   {
+    "name": "Cream",
+    "hex": "#e8e0cd"
+   }
+  ]
+ },
+ {
+  "id": "pleated-midi-skirt",
+  "kind": "bottom",
+  "label": "Pleated midi skirt",
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#24211e"
+   },
+   {
+    "name": "Navy",
+    "hex": "#2b3550"
+   },
+   {
+    "name": "Champagne",
+    "hex": "#d3bd9c"
+   },
+   {
+    "name": "Forest",
+    "hex": "#2e4a3a"
+   },
+   {
+    "name": "Dove grey",
+    "hex": "#b7b2a9"
+   },
+   {
+    "name": "Oxblood",
+    "hex": "#5c2430"
+   }
+  ]
+ },
+ {
+  "id": "satin-slip-skirt",
+  "kind": "bottom",
+  "label": "Satin slip skirt",
+  "colorways": [
+   {
+    "name": "Champagne",
+    "hex": "#d8c3ad"
+   },
+   {
+    "name": "Black",
+    "hex": "#26211d"
+   },
+   {
+    "name": "Sage",
+    "hex": "#9aa48a"
+   },
+   {
+    "name": "Oxblood",
+    "hex": "#5c2430"
+   },
+   {
+    "name": "Ivory",
+    "hex": "#eae1d2"
+   }
+  ]
+ },
+ {
+  "id": "tiered-maxi-skirt",
+  "kind": "bottom",
+  "label": "Tiered maxi skirt",
+  "colorways": [
+   {
+    "name": "White",
+    "hex": "#f0ece2"
+   },
+   {
+    "name": "Natural",
+    "hex": "#dcd2bd"
+   },
+   {
+    "name": "Black",
+    "hex": "#272321"
+   },
+   {
+    "name": "Terracotta",
+    "hex": "#b96b4d"
+   },
+   {
+    "name": "Dusty blue",
+    "hex": "#8ea3b8"
+   }
+  ]
+ },
+ {
+  "id": "denim-mini-skirt",
+  "kind": "bottom",
+  "label": "Denim mini skirt",
+  "colorways": [
+   {
+    "name": "Indigo",
+    "hex": "#37455e"
+   },
+   {
+    "name": "Mid wash",
+    "hex": "#64789a"
+   },
+   {
+    "name": "Light wash",
+    "hex": "#93a7bd"
+   },
+   {
+    "name": "Washed black",
+    "hex": "#2e2b28"
+   },
+   {
+    "name": "Ecru",
+    "hex": "#cfc7b4"
+   }
+  ]
+ },
+ {
+  "id": "wide-leg-trousers",
+  "kind": "bottom",
+  "label": "Wide-leg trousers",
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#26221f"
+   },
+   {
+    "name": "Charcoal",
+    "hex": "#48443f"
+   },
+   {
+    "name": "Camel",
+    "hex": "#b3906a"
+   },
+   {
+    "name": "Navy",
+    "hex": "#2b3550"
+   },
+   {
+    "name": "Cream",
+    "hex": "#e8e0cd"
+   }
+  ]
+ },
+ {
+  "id": "tailored-slim-trousers",
+  "kind": "bottom",
+  "label": "Tailored slim trousers",
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#26221f"
+   },
+   {
+    "name": "Charcoal",
+    "hex": "#48443f"
+   },
+   {
+    "name": "Camel",
+    "hex": "#b3906a"
+   },
+   {
+    "name": "Navy",
+    "hex": "#2b3550"
+   },
+   {
+    "name": "Cream",
+    "hex": "#e8e0cd"
+   }
+  ]
+ },
+ {
+  "id": "leather-pants",
+  "kind": "bottom",
+  "label": "Leather pants",
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#211e1c"
+   },
+   {
+    "name": "Chocolate",
+    "hex": "#442f24"
+   },
+   {
+    "name": "Oxblood",
+    "hex": "#58242c"
+   },
+   {
+    "name": "Cognac",
+    "hex": "#8a5a35"
+   }
+  ]
+ },
+ {
+  "id": "cargo-pants",
+  "kind": "bottom",
+  "label": "Cargo pants",
+  "colorways": [
+   {
+    "name": "Olive",
+    "hex": "#5b5a41"
+   },
+   {
+    "name": "Sand",
+    "hex": "#c7b493"
+   },
+   {
+    "name": "Black",
+    "hex": "#2a2622"
+   },
+   {
+    "name": "Stone",
+    "hex": "#a9a396"
+   }
+  ]
+ },
+ {
+  "id": "linen-wide-pants",
+  "kind": "bottom",
+  "label": "Linen wide pants",
+  "colorways": [
+   {
+    "name": "Natural",
+    "hex": "#d9cfb8"
+   },
+   {
+    "name": "White",
+    "hex": "#f0ebe1"
+   },
+   {
+    "name": "Sage",
+    "hex": "#9aa48a"
+   },
+   {
+    "name": "Terracotta",
+    "hex": "#b96b4d"
+   }
+  ]
+ },
+ {
+  "id": "slip-dress",
+  "kind": "dress",
+  "label": "Slip dress",
+  "colorways": [
+   {
+    "name": "Champagne",
+    "hex": "#d8c3ad"
+   },
+   {
+    "name": "Black",
+    "hex": "#26211d"
+   },
+   {
+    "name": "Oxblood",
+    "hex": "#5c2430"
+   },
+   {
+    "name": "Sage",
+    "hex": "#9aa48a"
+   },
+   {
+    "name": "Ivory",
+    "hex": "#eae1d2"
+   },
+   {
+    "name": "Gunmetal",
+    "hex": "#6b6f78"
+   }
+  ]
+ },
+ {
+  "id": "sundress",
+  "kind": "dress",
+  "label": "Sundress",
+  "colorways": [
+   {
+    "name": "White",
+    "hex": "#f4efe5"
+   },
+   {
+    "name": "Butter",
+    "hex": "#ecd9a2"
+   },
+   {
+    "name": "Sky",
+    "hex": "#aec8da"
+   },
+   {
+    "name": "Blush",
+    "hex": "#e8c8c1"
+   },
+   {
+    "name": "Picnic",
+    "hex": "#c2d6d2"
+   }
+  ]
+ },
+ {
+  "id": "wrap-dress",
+  "kind": "dress",
+  "label": "Wrap dress",
+  "colorways": [
+   {
+    "name": "Terracotta",
+    "hex": "#ae5a40"
+   },
+   {
+    "name": "Navy",
+    "hex": "#2e3a51"
+   },
+   {
+    "name": "Olive",
+    "hex": "#6f6a45"
+   },
+   {
+    "name": "Black",
+    "hex": "#26221e"
+   },
+   {
+    "name": "Wine",
+    "hex": "#5e2634"
+   }
+  ]
+ },
+ {
+  "id": "bodycon-midi",
+  "kind": "dress",
+  "label": "Bodycon midi",
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#221f1c"
+   },
+   {
+    "name": "Chocolate",
+    "hex": "#4a352a"
+   },
+   {
+    "name": "Bone",
+    "hex": "#ddd4c4"
+   },
+   {
+    "name": "Rust",
+    "hex": "#a45237"
+   }
+  ]
+ },
+ {
+  "id": "cocktail-dress",
+  "kind": "dress",
+  "label": "Cocktail dress",
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#211d1b"
+   },
+   {
+    "name": "Emerald",
+    "hex": "#1e5a47"
+   },
+   {
+    "name": "Ruby",
+    "hex": "#8f2338"
+   },
+   {
+    "name": "Navy",
+    "hex": "#293750"
+   }
+  ]
+ },
+ {
+  "id": "maxi-dress",
+  "kind": "dress",
+  "label": "Flowing maxi dress",
+  "colorways": [
+   {
+    "name": "Cream",
+    "hex": "#ebe1cd"
+   },
+   {
+    "name": "Dusty rose",
+    "hex": "#c9a29e"
+   },
+   {
+    "name": "Sage",
+    "hex": "#a4ad94"
+   },
+   {
+    "name": "Cobalt",
+    "hex": "#35528f"
+   }
+  ]
+ },
+ {
+  "id": "shirt-dress",
+  "kind": "dress",
+  "label": "Shirt dress",
+  "colorways": [
+   {
+    "name": "White",
+    "hex": "#f1ece2"
+   },
+   {
+    "name": "Khaki",
+    "hex": "#b5a486"
+   },
+   {
+    "name": "Black",
+    "hex": "#2a2621"
+   },
+   {
+    "name": "Fine stripe",
+    "hex": "#c3ccd4"
+   }
+  ]
+ },
+ {
+  "id": "evening-gown",
+  "kind": "dress",
+  "label": "Evening gown",
+  "colorways": [
+   {
+    "name": "Black",
+    "hex": "#1f1c1a"
+   },
+   {
+    "name": "Oxblood",
+    "hex": "#58222c"
+   },
+   {
+    "name": "Emerald",
+    "hex": "#1d5244"
+   },
+   {
+    "name": "Champagne",
+    "hex": "#d9c4a5"
+   }
+  ]
+ }
+]
