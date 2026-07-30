@@ -5,6 +5,7 @@ import CountryCodeSelect from './CountryCodeSelect'
 import { detectCountry, detectPhoneCountry } from '@/lib/detectCountry'
 import { cityChipsForCountry, cityExamplesForCountry } from '@/lib/cityChips'
 import { initPageAnalytics, track, pageElapsedMs, flushNow } from '@/lib/track'
+import WardrobeStyler, { EMPTY_LOOK, isLookEmpty, lookLabel, type Look } from './WardrobeStyler'
 
 // v5 "outfit". The capture-first v4 flow plus one new frame: choose your
 // outfit, third, right after the vibe. Tops and bottoms mix into a look, a
@@ -105,108 +106,6 @@ const VIBES: { key: VibeKey; label: string; src: string | null }[] = [
   { key: 'any', label: 'No preference', src: null },
 ]
 
-// ── The wardrobe (frame 3) ──
-// No product photos exist for clothes nobody has packed yet, so the tiles are
-// drawn: flat-lay garment illustrations in muted tones, one silhouette each.
-// Tops and bottoms mix; a dress replaces both.
-type GarmentKind = 'top' | 'bottom' | 'dress'
-type Garment = { id: string; kind: GarmentKind; label: string; fill: string; art: React.ReactNode }
-
-const garmentStroke = { stroke: '#3a352e', strokeWidth: 2, strokeLinejoin: 'round' as const, strokeLinecap: 'round' as const }
-
-const GARMENTS: Garment[] = [
-  // Tops
-  {
-    id: 'crop-top', kind: 'top', label: 'Crop top', fill: '#e5b8a5',
-    art: <>
-      <path d="M24 12 L23 20 M40 12 L41 20" fill="none" {...garmentStroke} />
-      <path d="M23 20 Q32 27 41 20 L45 28 L43 46 Q32 51 21 46 L19 28 Z" fill="#e5b8a5" {...garmentStroke} />
-    </>
-  },
-  {
-    id: 'blouse', kind: 'top', label: 'Silk blouse', fill: '#f0e6d2',
-    art: <>
-      <path d="M25 12 Q32 18 39 12 L50 18 L47 32 L43 28 L44 56 Q32 61 20 56 L21 28 L17 32 L14 18 Z" fill="#f0e6d2" {...garmentStroke} />
-      <path d="M28 12 L32 19 L36 12 M32 24 L32 55" fill="none" {...garmentStroke} strokeDasharray="1 5" />
-    </>
-  },
-  {
-    id: 'tee', kind: 'top', label: 'Casual tee', fill: '#b9c5ab',
-    art: <path d="M25 13 Q32 18 39 13 L51 19 L47 31 L43 28 L43 54 L21 54 L21 28 L17 31 L13 19 Z" fill="#b9c5ab" {...garmentStroke} />
-  },
-  {
-    id: 'sweater', kind: 'top', label: 'Knit sweater', fill: '#c98f6d',
-    art: <>
-      <path d="M24 13 Q32 19 40 13 L50 19 L49 46 L43 42 L43 58 L21 58 L21 42 L15 46 L14 19 Z" fill="#c98f6d" {...garmentStroke} />
-      <path d="M22 53 L42 53" fill="none" {...garmentStroke} strokeDasharray="2 3" />
-    </>
-  },
-  // Bottoms
-  {
-    id: 'midi-skirt', kind: 'bottom', label: 'Midi skirt', fill: '#a8666a',
-    art: <>
-      <path d="M23 10 L41 10 L42 16 L22 16 Z" fill="#a8666a" {...garmentStroke} />
-      <path d="M22 16 L15 64 Q32 70 49 64 L42 16 Z" fill="#a8666a" {...garmentStroke} />
-      <path d="M32 18 L32 66" fill="none" {...garmentStroke} strokeDasharray="1 6" opacity="0.5" />
-    </>
-  },
-  {
-    id: 'mini-skirt', kind: 'bottom', label: 'Mini skirt', fill: '#3d3934',
-    art: <>
-      <path d="M23 14 L41 14 L42 20 L22 20 Z" fill="#3d3934" {...garmentStroke} />
-      <path d="M22 20 L18 42 Q32 47 46 42 L42 20 Z" fill="#3d3934" {...garmentStroke} />
-    </>
-  },
-  {
-    id: 'jeans', kind: 'bottom', label: 'Jeans', fill: '#7e94ae',
-    art: <>
-      <path d="M22 10 L42 10 L43 20 L41 70 L34 70 L32 32 L30 70 L23 70 L21 20 Z" fill="#7e94ae" {...garmentStroke} />
-      <path d="M22 16 L42 16" fill="none" {...garmentStroke} strokeDasharray="2 3" opacity="0.6" />
-    </>
-  },
-  {
-    id: 'wide-pants', kind: 'bottom', label: 'Wide-leg pants', fill: '#b3a48c',
-    art: <path d="M23 10 L41 10 L46 68 L34 68 L32 30 L30 68 L18 68 Z" fill="#b3a48c" {...garmentStroke} />
-  },
-  // Dresses
-  {
-    id: 'slip-dress', kind: 'dress', label: 'Slip dress', fill: '#ddc6b8',
-    art: <>
-      <path d="M25 8 L26 16 M39 8 L38 16" fill="none" {...garmentStroke} />
-      <path d="M26 16 Q32 22 38 16 L43 32 L41 70 Q32 75 23 70 L21 32 Z" fill="#ddc6b8" {...garmentStroke} />
-    </>
-  },
-  {
-    id: 'sundress', kind: 'dress', label: 'Sundress', fill: '#e3cf87',
-    art: <>
-      <path d="M25 8 L26 14 M39 8 L38 14" fill="none" {...garmentStroke} />
-      <path d="M26 14 L38 14 L40 34 L24 34 Z" fill="#e3cf87" {...garmentStroke} />
-      <path d="M24 34 L16 64 Q32 70 48 64 L40 34 Z" fill="#e3cf87" {...garmentStroke} />
-    </>
-  },
-  {
-    id: 'maxi-dress', kind: 'dress', label: 'Maxi dress', fill: '#a9b6c9',
-    art: <>
-      <path d="M25 6 L27 14 M39 6 L37 14" fill="none" {...garmentStroke} />
-      <path d="M27 14 Q32 18 37 14 L42 30 L45 76 Q32 81 19 76 L22 30 Z" fill="#a9b6c9" {...garmentStroke} />
-    </>
-  },
-  {
-    id: 'lbd', kind: 'dress', label: 'Little black dress', fill: '#2f2b27',
-    art: <>
-      <path d="M26 10 Q32 16 38 10 L42 22 L40 48 Q32 53 24 48 L22 22 Z" fill="#2f2b27" {...garmentStroke} />
-    </>
-  },
-]
-
-function GarmentIcon({ g }: { g: Garment }) {
-  return (
-    <svg viewBox="0 0 64 84" className="h-full w-full" aria-hidden="true">
-      {g.art}
-    </svg>
-  )
-}
-
 // ONE roll of film. Each slide shows a four-frame window into it, two frames
 // further on than the last, so moving through the form winds the same roll
 // forward. It wraps, so the roll never runs out however many frames there are.
@@ -240,12 +139,6 @@ const resumeKey = (path: string) => `atf_signup_resume:${path}`
 
 type Channel = 'line' | 'whatsapp'
 
-// What they'd like to wear. A dress is a complete look on its own, so picking
-// one clears the separates and vice versa — the state can never describe an
-// outfit that doesn't make sense.
-type OutfitPick = { top: string | null; bottom: string | null; dress: string | null }
-const NO_OUTFIT: OutfitPick = { top: null, bottom: null, dress: null }
-
 type ResumeState = {
   // Snapshots are keyed by route, so v5's never collide with the live flow's.
   // Same shape as v4's plus the outfit pick; a snapshot without one (never
@@ -255,7 +148,7 @@ type ResumeState = {
   step: Step
   channel: Channel
   vibe: VibeKey | null
-  outfit?: OutfitPick
+  outfit?: Look
   phone: string
   countryCode: string
   location: string
@@ -350,7 +243,7 @@ export default function SignUpFormCollabV5({ analyticsPath = '/sign-up-collab-v5
   const [error, setError] = useState<string | null>(null)
 
   const [vibe, setVibe] = useState<VibeKey | null>(null)
-  const [outfit, setOutfit] = useState<OutfitPick>(NO_OUTFIT)
+  const [look, setLook] = useState<Look>(EMPTY_LOOK)
   const [location, setLocation] = useState('')
   const [idea, setIdea] = useState('')
   const [channel, setChannel] = useState<Channel>('line')
@@ -398,7 +291,19 @@ export default function SignUpFormCollabV5({ analyticsPath = '/sign-up-collab-v5
       setStep(resumed.step)
       setChannel(resumed.channel)
       setVibe(resumed.vibe)
-      setOutfit(resumed.outfit ?? NO_OUTFIT)
+      // Old snapshots (or hand-edited ones) may hold a different shape — only
+      // restore picks that still parse as {id, hex}.
+      const savedLook = resumed.outfit
+      if (savedLook && typeof savedLook === 'object') {
+        const valid = (p: unknown): p is { id: string; hex: string } =>
+          !!p && typeof p === 'object' && typeof (p as { id?: unknown }).id === 'string' && typeof (p as { hex?: unknown }).hex === 'string'
+        setLook({
+          top: valid(savedLook.top) ? savedLook.top : null,
+          bottom: valid(savedLook.bottom) ? savedLook.bottom : null,
+          dress: valid(savedLook.dress) ? savedLook.dress : null,
+          layer: valid(savedLook.layer) ? savedLook.layer : null,
+        })
+      }
       setPhone(resumed.phone)
       setCountryCode(resumed.countryCode)
       setLocation(resumed.location)
@@ -440,7 +345,7 @@ export default function SignUpFormCollabV5({ analyticsPath = '/sign-up-collab-v5
     const touched = step !== 'capture' || !!phone || !!vibe
     if (!touched) return
     const base: Omit<ResumeState, 'photos'> = {
-      v: 2, ts: Date.now(), step, channel, vibe, outfit, phone, countryCode,
+      v: 2, ts: Date.now(), step, channel, vibe, outfit: look, phone, countryCode,
       location, idea, instagram, lead: leadRecord, postedContact, leadFired,
     }
     const write = (withPhotos: string[]) =>
@@ -496,21 +401,15 @@ export default function SignUpFormCollabV5({ analyticsPath = '/sign-up-collab-v5
     track(event, props)
   }
 
-  // "Slip dress", or "Crop top + Midi skirt" — whatever of the look exists.
-  function outfitLabel(): string | null {
-    if (outfit.dress) return outfit.dress
-    const parts = [outfit.top, outfit.bottom].filter(Boolean)
-    return parts.length > 0 ? parts.join(' + ') : null
-  }
 
   function moodboardSoFar(): string[] {
     const vibeLabel = VIBES.find(v => v.key === vibe)?.label
-    const look = outfitLabel()
+    const outfitText = lookLabel(look)
     return [
       'Collab sign-up',
       'Signup flow: v5-outfit',
       ...(vibeLabel ? ['Look: ' + vibeLabel] : []),
-      ...(look ? ['Outfit: ' + look] : []),
+      ...(outfitText ? ['Outfit: ' + outfitText] : []),
       ...(location.trim() ? ['Location: ' + location.trim()] : []),
       ...(idea.trim() ? ['Notes: ' + idea.trim()] : []),
       ...(instagram.trim() ? ['Instagram: ' + instagram.trim()] : []),
@@ -632,7 +531,7 @@ export default function SignUpFormCollabV5({ analyticsPath = '/sign-up-collab-v5
     setPostedContact(null)
     setLeadFired(false)
     setVibe(null)
-    setOutfit(NO_OUTFIT)
+    setLook(EMPTY_LOOK)
     setPhone('')
     setLocation('')
     setIdea('')
@@ -1126,78 +1025,25 @@ export default function SignUpFormCollabV5({ analyticsPath = '/sign-up-collab-v5
 
   // ── Frame 3 · the outfit ──
   if (step === 'outfit') {
-    const pick = (g: Garment) => {
-      fieldEngaged('outfit')
-      setError(null)
-      const wasOn = g.kind === 'dress' ? outfit.dress === g.label : outfit[g.kind] === g.label
-      track('outfit_selected', { kind: g.kind, value: g.label, on: !wasOn })
-      setOutfit(o => {
-        if (g.kind === 'dress') return o.dress === g.label ? { ...o, dress: null } : { top: null, bottom: null, dress: g.label }
-        return { ...o, dress: null, [g.kind]: o[g.kind] === g.label ? null : g.label }
-      })
-    }
-    const isOn = (g: Garment) => (g.kind === 'dress' ? outfit.dress : outfit[g.kind]) === g.label
-    const row = (kind: GarmentKind) => (
-      <div className="mt-2 grid grid-cols-4 gap-1.5">
-        {GARMENTS.filter(g => g.kind === kind).map(g => {
-          const on = isOn(g)
-          return (
-            <button
-              key={g.id}
-              type="button"
-              onClick={() => pick(g)}
-              aria-pressed={on}
-              className={`flex flex-col items-center rounded-xl border-2 bg-[#faf8f4] px-1 pb-1.5 pt-2 transition active:scale-[0.97] ${
-                on ? 'border-emerald-600 shadow-[0_0_0_3px_rgba(5,150,105,0.16)]' : 'border-neutral-200 hover:border-neutral-300'
-              }`}
-              data-cta={`v5-outfit-${g.id}`}
-            >
-              <span className="relative h-14 w-full">
-                <GarmentIcon g={g} />
-                {on && (
-                  <span className="absolute -right-0.5 -top-1 flex h-4 w-4 items-center justify-center rounded-full bg-emerald-600 text-white">
-                    <CheckIcon className="h-2 w-2" />
-                  </span>
-                )}
-              </span>
-              <span className="mt-1 text-center text-[9px] font-bold leading-tight text-neutral-700">{g.label}</span>
-            </button>
-          )
-        })}
-      </div>
-    )
-    const sectionLabel = (t: string) => (
-      <p className="mt-4 text-[9px] font-bold uppercase tracking-[0.22em] text-neutral-400">{t}</p>
-    )
-    const look = outfitLabel()
+    const lookText = lookLabel(look)
     return slideShell(3, (
       <>
         {kicker(3, BACK_TO.outfit)}
-        {slideTitle('Choose your outfit')}
+        {slideTitle('Style your look')}
         <p className="mt-2 text-[13px] leading-relaxed text-neutral-500">
-          Mix a top with a bottom, or go with a dress &mdash; we&rsquo;ll refine it together on the moodboard.
+          Dress the model &mdash; mix pieces, tune the colors. We&rsquo;ll build the real look together from this.
         </p>
-        {sectionLabel('Tops')}
-        {row('top')}
-        {sectionLabel('Bottoms')}
-        {row('bottom')}
-        <div className="mt-5 flex items-center gap-3" aria-hidden="true">
-          <span className="h-px flex-1 bg-neutral-200" />
-          <span className="text-[9px] font-bold uppercase tracking-[0.22em] text-neutral-400">or a dress</span>
-          <span className="h-px flex-1 bg-neutral-200" />
-        </div>
-        {row('dress')}
-        {look && (
-          <p className="mt-4 rounded-xl bg-emerald-50 px-4 py-2.5 text-[13px] font-semibold text-emerald-800">
-            Your look: {look}
-          </p>
-        )}
+        <WardrobeStyler
+          look={look}
+          onChange={next => { setError(null); setLook(next) }}
+          onEngage={(event, props) => { fieldEngaged('outfit'); track(event, props) }}
+        />
         <div className="mt-6 space-y-3">
           {errorBox}
           {nextBtn(() => {
-            if (!look) {
+            if (!lookText) {
               track('validation_error', { reason: 'outfit_missing' })
-              setError('Pick a dress, or a top and a bottom — or tap Skip.')
+              setError('Dress the model with at least one piece — or tap Skip.')
               return
             }
             advance('notes', true)
