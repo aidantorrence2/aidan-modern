@@ -166,40 +166,8 @@ type ResumeState = {
   leadFired: boolean
 }
 
-// ── Which channel the number belongs to ──
-// LINE is Thailand, Japan and Taiwan; the rest of the world runs on WhatsApp.
-// Language decides and timezone breaks the tie, because they answer different
-// questions: the timezone says where the phone is (a Berliner reports
-// Asia/Bangkok the day they land), the language says whose phone it is.
-const LINE_COUNTRIES = new Set(['TH', 'JP', 'TW'])
-
-function localeParts(tag: string) {
-  const parts = (tag || '').split('-')
-  return {
-    lang: (parts[0] || '').toLowerCase(),
-    region: parts.slice(1).find(p => /^[A-Za-z]{2}$/.test(p))?.toUpperCase() ?? null,
-  }
-}
-
-function preferredChannel(iso: string | null): Channel {
-  let tags: string[] = []
-  try {
-    tags = (navigator.languages?.length ? [...navigator.languages] : [navigator.language]).filter(Boolean)
-  } catch {}
-
-  const speaksLineLanguage = tags.some(t => {
-    const { lang, region } = localeParts(t)
-    return lang === 'th' || lang === 'ja' || (lang === 'zh' && region === 'TW')
-  })
-  if (speaksLineLanguage) return 'line'
-
-  const { lang, region } = localeParts(tags[0] ?? '')
-  if (lang && lang !== 'en') return 'whatsapp'
-  // en-TH is a Thai phone switched to English; en-GB is a tourist. en-US is the
-  // factory default the world over and says nothing either way.
-  if (region && region !== 'US') return LINE_COUNTRIES.has(region) ? 'line' : 'whatsapp'
-  return iso && LINE_COUNTRIES.has(iso) ? 'line' : 'whatsapp'
-}
+// LINE stays available as the secondary channel everywhere, but WhatsApp is
+// the default for everyone — LINE is never pre-selected.
 
 const CHANNELS: Record<Channel, { name: string; placeholder: string; placeholderIntl: string }> = {
   line: { name: 'LINE', placeholder: 'LINE number', placeholderIntl: 'LINE number, e.g. +66 81 234 5678' },
@@ -251,7 +219,7 @@ export default function SignUpFormCollabV4({ analyticsPath = '/sign-up-collab-v4
   const [vibe, setVibe] = useState<VibeKey | null>(null)
   const [location, setLocation] = useState('')
   const [idea, setIdea] = useState('')
-  const [channel, setChannel] = useState<Channel>('line')
+  const [channel, setChannel] = useState<Channel>('whatsapp')
   const [phone, setPhone] = useState('')
   const [countryCode, setCountryCode] = useState('')
   const [countryIso, setCountryIso] = useState<string | null>(null)
@@ -273,10 +241,6 @@ export default function SignUpFormCollabV4({ analyticsPath = '/sign-up-collab-v4
   const [leadRecord, setLeadRecord] = useState<{ id: number | null; contact: string } | null>(null)
   const [postedContact, setPostedContact] = useState<string | null>(null)
   const [leadFired, setLeadFired] = useState(false)
-  // The channel we opened on. Drives segment ORDER only — it stays put when
-  // they toggle, because a control that reorders itself under the thumb is
-  // horrible to use.
-  const [defaultChannel, setDefaultChannel] = useState<Channel>('line')
   const [hydrated, setHydrated] = useState(false)
 
   useEffect(() => {
@@ -308,7 +272,6 @@ export default function SignUpFormCollabV4({ analyticsPath = '/sign-up-collab-v4
         setLeadRecord(resumed.lead)
         leadRef.current = Promise.resolve(resumed.lead)
       }
-      setDefaultChannel(resumed.channel)
       track('flow_resumed', { slide: resumed.step, has_row: !!resumed.lead, away_ms: Date.now() - resumed.ts })
     }
 
@@ -322,14 +285,6 @@ export default function SignUpFormCollabV4({ analyticsPath = '/sign-up-collab-v4
       track('country_detected', { iso: country?.iso ?? null, dial_iso: phoneCountry?.iso ?? null })
     }
 
-    if (!resumed) {
-      const preferred = preferredChannel(country?.iso ?? null)
-      setChannel(preferred)
-      setDefaultChannel(preferred)
-      let primaryLang: string | null = null
-      try { primaryLang = navigator.languages?.[0] ?? navigator.language ?? null } catch {}
-      track('channel_defaulted', { to: preferred, iso: country?.iso ?? null, lang: primaryLang })
-    }
     setHydrated(true)
   }, [analyticsPath])
 
@@ -844,8 +799,8 @@ export default function SignUpFormCollabV4({ analyticsPath = '/sign-up-collab-v4
           <form onSubmit={onCapture} className="mt-4 space-y-3">
             {/* Same number either way — the segment only says which app it's on. */}
             <div className="grid grid-cols-2 gap-1 rounded-2xl border border-neutral-200 bg-[#f5f5f4] p-1">
-              {segment(defaultChannel)}
-              {segment(defaultChannel === 'line' ? 'whatsapp' : 'line')}
+              {segment('whatsapp')}
+              {segment('line')}
             </div>
             <div className="flex gap-2">
               {countryCode && <CountryCodeSelect light value={countryCode} onChange={code => { fieldEngaged('country_code'); track('country_code_changed', { code }); setCountryCode(code); setError(null) }} />}
