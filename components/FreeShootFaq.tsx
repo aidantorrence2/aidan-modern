@@ -30,7 +30,6 @@ const proofImages = [
 ]
 
 const howItWorks = [
-  'Message me on Instagram',
   'I send you the details — timing, locations, what to wear',
   'We plan the concept together and shoot for 1–2 hours',
   "You get the edited photos — it's 100% free, always",
@@ -84,17 +83,7 @@ const FAQS: { q: string; a: React.ReactNode }[] = [
     q: 'Can I use the photos however I want?',
     a: <>Yes &mdash; they&rsquo;re yours. Post them, print them, use them for whatever you like.</>,
   },
-  {
-    q: 'How do I sign up?',
-    a: <>Just DM me on Instagram &mdash; say you&rsquo;re interested and tell me your city. That&rsquo;s it; I&rsquo;ll take it from there.</>,
-  },
 ]
-
-function CheckIcon({ className }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 24 24" className={className} fill="none" stroke="currentColor" strokeWidth={3} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5" /></svg>
-  )
-}
 
 function InstagramIcon({ className }: { className?: string }) {
   return (
@@ -168,36 +157,7 @@ export default function FreeShootFaq({ analyticsPath = '/free-shoot' }: { analyt
           <h1 className="font-display text-[40px] font-bold leading-[1.05] text-white" style={{ fontFamily: "Georgia, 'Times New Roman', serif", fontStyle: 'italic', textShadow: '0 2px 8px rgba(0,0,0,0.85), 0 12px 50px rgba(0,0,0,0.6)' }}>
             Free Photo Shoot
           </h1>
-          <p className="mt-1.5 text-[15px] font-medium text-white/85" style={{ textShadow: '0 1px 6px rgba(0,0,0,0.8)' }}>
-            Everything you need to know, then one DM.
-          </p>
         </div>
-      </div>
-
-      {/* Opening card — sits where v5's capture card sits, but it answers the
-          first question instead of asking one. */}
-      <div className="relative z-10 mx-4 -mt-5 rounded-2xl border border-neutral-200 bg-white p-4 shadow-xl">
-        <h2 className="text-[30px] font-semibold leading-[1.1] tracking-[-0.01em] text-neutral-900" style={{ fontFamily: "Georgia, 'Times New Roman', serif", fontStyle: 'italic', textWrap: 'balance' }}>
-          The short version
-        </h2>
-        <ul className="mt-3 space-y-2">
-          {[
-            'A real photo shoot, shot on 35mm film',
-            "100% free, always — no fee, no deposit, no catch",
-            'You keep the edited photos and use them however you want',
-            'No experience needed — I direct the whole shoot',
-          ].map((c, i) => (
-            <li key={i} className="flex items-start gap-2.5">
-              <span className="mt-0.5 flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-emerald-600">
-                <CheckIcon className="h-2.5 w-2.5" />
-              </span>
-              <span className="text-[13px] leading-snug font-medium text-neutral-700">{c}</span>
-            </li>
-          ))}
-        </ul>
-        <p className="mt-3 text-[13px] leading-relaxed text-neutral-500">
-          The full story is below &mdash; how it works, what to expect, and every question people ask. When you&rsquo;re ready, signing up is one Instagram message.
-        </p>
       </div>
 
       <div className="px-5 pb-24 pt-8">
