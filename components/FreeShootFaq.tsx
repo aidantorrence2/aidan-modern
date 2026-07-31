@@ -1,15 +1,14 @@
 "use client"
 import { useEffect, useState } from 'react'
 import NextImage from 'next/image'
-import { initPageAnalytics, track } from '@/lib/track'
+import { initPageAnalytics, track, pageElapsedMs, flushNow } from '@/lib/track'
 
-// The v5 opening page with the form taken out. Same hero, same proof grid,
-// same how-it-works — but the card answers questions instead of asking for a
-// number, the FAQ is the body of the page, and the only ask is at the very
-// end: DM me on Instagram. Everything before that is information.
+// Info page for people who have ALREADY signed up — the v5 opening page with
+// the sign-up flow taken out. Proof, what happens next, and the full FAQ. The
+// only input is at the very end: their Instagram handle, collected purely so
+// this visit can be matched to the sign-up they already made.
 
 const INSTAGRAM_HANDLE = 'madebyaidan'
-const IG_DM_URL = `https://ig.me/m/${INSTAGRAM_HANDLE}`
 const IG_PROFILE_URL = `https://www.instagram.com/${INSTAGRAM_HANDLE}`
 
 const HERO_SLIDES = [
@@ -97,9 +96,13 @@ function InstagramIcon({ className }: { className?: string }) {
 
 export default function FreeShootFaq({ analyticsPath = '/free-shoot' }: { analyticsPath?: string }) {
   const [heroIndex, setHeroIndex] = useState(0)
+  const [instagram, setInstagram] = useState('')
+  const [submitting, setSubmitting] = useState(false)
+  const [submitted, setSubmitted] = useState(false)
+  const [error, setError] = useState<string | null>(null)
 
   useEffect(() => {
-    initPageAnalytics(analyticsPath, { version: 'faq-ig' })
+    initPageAnalytics(analyticsPath, { version: 'faq-info' })
   }, [analyticsPath])
 
   // Hero crossfade, same cadence as v5. Stopped entirely for anyone who asked
@@ -112,10 +115,42 @@ export default function FreeShootFaq({ analyticsPath = '/free-shoot' }: { analyt
     return () => clearInterval(t)
   }, [])
 
-  function onDmClick(placement: string) {
-    track('ig_dm_clicked', { placement })
-    const fbq = (window as typeof window & { fbq?: (...args: unknown[]) => void }).fbq
-    if (typeof fbq === 'function') fbq('track', 'Lead', { source: 'free-shoot-faq' })
+  // The handle is only for matching this page's reader to the sign-up they
+  // already made — it writes a row tagged with the info page so it's easy to
+  // pair up in /admin, not a new lead.
+  async function submitInstagram(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault()
+    const handle = instagram.trim().replace(/^@+/, '')
+    if (!handle) {
+      track('validation_error', { reason: 'instagram_missing' })
+      setError('Enter your Instagram handle so I can match you to your sign-up.')
+      return
+    }
+    setError(null)
+    setSubmitting(true)
+    track('instagram_submit_attempt', { chars: handle.length, elapsed_ms: pageElapsedMs() })
+    try {
+      const res = await fetch('/api/sign-up', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          city: '',
+          contactMethod: 'instagram',
+          contact: '@' + handle,
+          moodboard: ['Info page: ' + analyticsPath, 'Instagram: @' + handle],
+        }),
+      })
+      const json = await res.json().catch(() => null)
+      if (!res.ok || !json?.ok) throw new Error('Failed')
+      track('instagram_submit_success', { elapsed_ms: pageElapsedMs() })
+      flushNow()
+      setSubmitted(true)
+    } catch {
+      track('instagram_submit_error', { elapsed_ms: pageElapsedMs() })
+      setError('Something went wrong — please try again.')
+    } finally {
+      setSubmitting(false)
+    }
   }
 
   const sectionLabel = (text: string) => (
@@ -173,9 +208,10 @@ export default function FreeShootFaq({ analyticsPath = '/free-shoot' }: { analyt
           </div>
         </div>
 
-        {/* How it works */}
+        {/* What happens next — they've signed up already; this is the process
+            from here. */}
         <div className="mt-8 space-y-2">
-          {sectionLabel('How it works')}
+          {sectionLabel('What happens next')}
           <ul className="space-y-2">
             {howItWorks.map((c, i) => (
               <li key={i} className="flex items-start gap-2.5">
@@ -208,46 +244,64 @@ export default function FreeShootFaq({ analyticsPath = '/free-shoot' }: { analyt
           </dl>
         </div>
 
-        {/* The ask — the one and only sign-up step, saved for the end. */}
-        <div className="mt-10 rounded-2xl border border-neutral-200 bg-[#faf9f6] p-5 text-center">
-          <h2 className="text-[26px] font-semibold leading-[1.15] tracking-[-0.01em] text-neutral-900" style={{ fontFamily: "Georgia, 'Times New Roman', serif", fontStyle: 'italic', textWrap: 'balance' }}>
-            Sound good?
-          </h2>
-          <p className="mt-2 text-[13px] leading-relaxed text-neutral-500">
-            Send me a DM &mdash; say you&rsquo;re interested and tell me your city. I reply personally to everyone.
-          </p>
-          <a
-            href={IG_DM_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={() => onDmClick('bottom_card')}
-            className="mt-4 flex w-full items-center justify-center gap-2 rounded-full bg-emerald-600 py-4 text-base font-bold text-white shadow-lg shadow-emerald-600/25 transition hover:bg-emerald-500 active:scale-[0.99]"
-            data-cta="free-shoot-ig-dm"
-          >
-            <InstagramIcon className="h-5 w-5" />
-            DM me on Instagram
-          </a>
-          <a
-            href={IG_PROFILE_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={() => track('handle_clicked', { placement: 'bottom_card' })}
-            className="mt-3 inline-block text-[13px] font-semibold text-emerald-600 underline decoration-emerald-300 underline-offset-2"
-          >
-            or see my work first: @{INSTAGRAM_HANDLE}
-          </a>
+        {/* The only input on the page — the handle that pairs this reader with
+            the sign-up they already made. */}
+        <div className="mt-10 rounded-2xl border border-neutral-200 bg-[#faf9f6] p-5">
+          {submitted ? (
+            <div className="text-center">
+              <span className="mx-auto flex h-10 w-10 items-center justify-center rounded-full bg-emerald-100 text-emerald-600">
+                <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth={3} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5" /></svg>
+              </span>
+              <h2 className="mt-3 text-[26px] font-semibold leading-[1.15] tracking-[-0.01em] text-neutral-900" style={{ fontFamily: "Georgia, 'Times New Roman', serif", fontStyle: 'italic' }}>
+                Got it
+              </h2>
+              <p className="mt-2 text-[13px] leading-relaxed text-neutral-500">
+                You&rsquo;re matched up. I&rsquo;ll be in touch on Instagram.
+              </p>
+            </div>
+          ) : (
+            <>
+              <h2 className="text-[26px] font-semibold leading-[1.15] tracking-[-0.01em] text-neutral-900" style={{ fontFamily: "Georgia, 'Times New Roman', serif", fontStyle: 'italic', textWrap: 'balance' }}>
+                Your Instagram
+              </h2>
+              <p className="mt-2 text-[13px] leading-relaxed text-neutral-500">
+                So I can match you to your sign-up &mdash; that&rsquo;s all it&rsquo;s for.
+              </p>
+              <form onSubmit={submitInstagram} className="mt-4 space-y-3">
+                <div className="flex items-center rounded-2xl border border-neutral-200 bg-white px-4 transition focus-within:border-emerald-500 focus-within:ring-4 focus-within:ring-emerald-500/10">
+                  <span className="pr-1 text-[17px] font-semibold text-neutral-300">@</span>
+                  <input
+                    value={instagram}
+                    onChange={e => { setInstagram(e.target.value); setError(null) }}
+                    autoCapitalize="off"
+                    autoCorrect="off"
+                    spellCheck={false}
+                    className="w-full bg-transparent py-3.5 text-[15px] text-neutral-900 placeholder-neutral-400 outline-none"
+                    placeholder="yourhandle"
+                  />
+                </div>
+                {error && (
+                  <div className="rounded-2xl border border-red-200 bg-red-50 px-4 py-3 text-[13px] font-semibold text-red-700">{error}</div>
+                )}
+                <button
+                  type="submit"
+                  disabled={submitting}
+                  className="flex w-full items-center justify-center gap-2 rounded-full bg-emerald-600 py-4 text-base font-bold text-white shadow-lg shadow-emerald-600/25 transition hover:bg-emerald-500 active:scale-[0.99] disabled:opacity-50"
+                  data-cta="free-shoot-ig-submit"
+                >
+                  {submitting ? (
+                    <span className="inline-block h-4 w-4 animate-spin rounded-full border-2 border-white/40 border-t-white" aria-label="Sending" />
+                  ) : (
+                    <>
+                      <InstagramIcon className="h-5 w-5" />
+                      Submit
+                    </>
+                  )}
+                </button>
+              </form>
+            </>
+          )}
         </div>
-
-        {/* The way out, quiet as ever — an exit, not an option being offered. */}
-        <p className="mt-8 border-t border-neutral-100 pt-5 text-center text-[13px] text-neutral-400">
-          <a
-            href="/sign-up-collab/not-for-me"
-            onClick={() => track('not_for_me_clicked', { placement: 'page_bottom' })}
-            className="underline decoration-neutral-300 underline-offset-2 transition hover:text-neutral-700"
-          >
-            It&rsquo;s not for me
-          </a>
-        </p>
       </div>
     </div>
   )
