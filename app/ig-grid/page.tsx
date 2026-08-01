@@ -2,34 +2,92 @@
 
 import React, { useState } from 'react';
 
-// Grid posts in posting order (newest first = top-left)
-// Curated for color/tone alternation to create a cohesive grid
-const posts = [
-  { src: 'manila-gallery-night-001.jpg', type: 'post' },
-  { src: 'manila-gallery-garden-001.jpg', type: 'post' },
-  { src: 'manila-gallery-urban-001.jpg', type: 'post' },
-  { src: 'manila-gallery-closeup-001.jpg', type: 'post' },
-  { src: 'manila-gallery-dsc-0075.jpg', type: 'post' },
-  { src: 'manila-gallery-canal-001.jpg', type: 'post' },
-  { src: 'manila-gallery-ivy-001.jpg', type: 'post' },
-  { src: 'manila-gallery-shadow-001.jpg', type: 'post' },
-  { src: 'manila-gallery-street-001.jpg', type: 'post' },
-  { src: 'manila-gallery-tropical-001.jpg', type: 'post' },
-  { src: 'manila-gallery-dsc-0130.jpg', type: 'post' },
-  { src: 'manila-gallery-statue-001.jpg', type: 'post' },
-  { src: 'manila-gallery-night-002.jpg', type: 'post' },
-  { src: 'manila-gallery-floor-001.jpg', type: 'post' },
-  { src: 'manila-gallery-market-001.jpg', type: 'post' },
-  { src: 'manila-gallery-park-001.jpg', type: 'post' },
-  { src: 'manila-gallery-ivy-002.jpg', type: 'post' },
-  { src: 'manila-gallery-canal-002.jpg', type: 'post' },
-  { src: 'manila-gallery-dsc-0190.jpg', type: 'post' },
-  { src: 'manila-gallery-garden-002.jpg', type: 'post' },
-  { src: 'manila-gallery-white-001.jpg', type: 'post' },
-  { src: 'manila-gallery-urban-002.jpg', type: 'post' },
-  { src: 'manila-gallery-night-003.jpg', type: 'post' },
-  { src: 'manila-gallery-dsc-0911.jpg', type: 'post' },
-  { src: 'manila-gallery-urban-003.jpg', type: 'post' },
+// ── PLANNED GRID ─────────────────────────────────────────────────────────────
+// Curated 2026-08 from the full portfolio (data/shoots.ts) after reviewing all
+// 26 shoot galleries + the previous Manila-branded set (which was largely the
+// same portfolio frames under manila-gallery-* names).
+//
+// Posting order: index 0 = newest = top-left. Sequenced in rows of 3 so every
+// row balances one warm frame, one cool/color-anchor frame, and one
+// neutral/dark frame, and no two adjacent posts share a shoot.
+//
+// Color anchors placed deliberately: turquoise (Merasa pool ×2, spaced),
+// blue-on-yellow (Francisca), red (Greta Venice), pink (Kristin bánh mì),
+// jungle teal (Althea), B&W (Ly Gia Han lighter), pattern-breaker (sea lions).
+type PlannedPost = { src: string; shoot: string; loc: string };
+
+const planned: PlannedPost[] = [
+  // Row 1
+  { src: 'merasa-jewelry-04.jpg', shoot: 'Merasa Jewelry', loc: 'Bali' },
+  { src: '000043-5.jpg', shoot: 'Sasha', loc: 'Bangkok' },
+  { src: 'r1-05454-0002.jpg', shoot: 'Hana', loc: 'Bratislava' },
+  // Row 2
+  { src: 'aidanto-r2-009-3.jpg', shoot: 'Indy', loc: 'Dunedin' },
+  { src: '13.jpg', shoot: 'Ly Gia Han', loc: 'Saigon' },
+  { src: '000008.jpg', shoot: 'Francisca', loc: 'Cascais' },
+  // Row 3
+  { src: '000027-3.jpg', shoot: 'Paula', loc: 'Sitges' },
+  { src: '000038-9.jpg', shoot: 'Daniela', loc: 'Rome' },
+  { src: '000044-9.jpg', shoot: 'Kristin', loc: 'Da Nang' },
+  // Row 4
+  { src: '000049660026.jpg', shoot: 'Rin', loc: 'Tokyo' },
+  { src: '000021-2.jpg', shoot: 'Althea', loc: 'Bali' },
+  { src: '000002.jpg', shoot: 'Greta', loc: 'Venice' },
+  // Row 5
+  { src: '000048750031.jpg', shoot: 'Ellie', loc: 'Tokyo' },
+  { src: 'aidantorre000577-000012.jpg', shoot: 'Kiritokia', loc: 'Rotorua' },
+  { src: 'merasa-jewelry-15.jpg', shoot: 'Merasa Jewelry', loc: 'Bali' },
+  // Row 6
+  { src: '000012-3.jpg', shoot: 'Mary', loc: 'Warsaw' },
+  { src: '000015-2.jpg', shoot: 'Paris', loc: 'Berlin' },
+  { src: 'aidanto-r4-021-9.jpg', shoot: 'Indy', loc: 'Dunedin' },
+  // Row 7
+  { src: '000008-11.jpg', shoot: 'Maria', loc: 'Rome' },
+  { src: '000049740018.jpg', shoot: 'Sumika', loc: 'Tokyo' },
+  { src: '000033-7.jpg', shoot: 'Yana', loc: 'Krakow' },
+  // Row 8
+  { src: '000027-5.jpg', shoot: 'Minka', loc: 'Ghent' },
+  { src: '000038-10.jpg', shoot: 'Kristin', loc: 'Da Nang' },
+  { src: '000012-5.jpg', shoot: 'Silvia', loc: 'Milan' },
+  // Row 9
+  { src: '000040-4.jpg', shoot: 'Kiki', loc: 'Bangkok' },
+  { src: '000039-2.jpg', shoot: 'Linda', loc: 'Vienna' },
+  { src: '000046-4.jpg', shoot: 'Pharima', loc: 'Bangkok' },
+  // Row 10
+  { src: '000036.jpg', shoot: 'Soph', loc: 'Vienna' },
+  { src: '000004.jpg', shoot: 'Ly Gia Han', loc: 'Saigon' },
+  { src: '000041.jpg', shoot: 'Tess', loc: 'Glasgow' },
+];
+
+// ── PREVIOUS PLAN (kept for comparison) ──────────────────────────────────────
+// The earlier Manila-branded sequence. Most of these are the same portfolio
+// frames under manila-gallery-* filenames.
+const previous: PlannedPost[] = [
+  { src: 'manila-gallery-night-001.jpg', shoot: 'Manila set', loc: '' },
+  { src: 'manila-gallery-garden-001.jpg', shoot: 'Manila set', loc: '' },
+  { src: 'manila-gallery-urban-001.jpg', shoot: 'Manila set', loc: '' },
+  { src: 'manila-gallery-closeup-001.jpg', shoot: 'Manila set', loc: '' },
+  { src: 'manila-gallery-dsc-0075.jpg', shoot: 'Manila set', loc: '' },
+  { src: 'manila-gallery-canal-001.jpg', shoot: 'Manila set', loc: '' },
+  { src: 'manila-gallery-ivy-001.jpg', shoot: 'Manila set', loc: '' },
+  { src: 'manila-gallery-shadow-001.jpg', shoot: 'Manila set', loc: '' },
+  { src: 'manila-gallery-street-001.jpg', shoot: 'Manila set', loc: '' },
+  { src: 'manila-gallery-tropical-001.jpg', shoot: 'Manila set', loc: '' },
+  { src: 'manila-gallery-dsc-0130.jpg', shoot: 'Manila set', loc: '' },
+  { src: 'manila-gallery-statue-001.jpg', shoot: 'Manila set', loc: '' },
+  { src: 'manila-gallery-night-002.jpg', shoot: 'Manila set', loc: '' },
+  { src: 'manila-gallery-floor-001.jpg', shoot: 'Manila set', loc: '' },
+  { src: 'manila-gallery-market-001.jpg', shoot: 'Manila set', loc: '' },
+  { src: 'manila-gallery-park-001.jpg', shoot: 'Manila set', loc: '' },
+  { src: 'manila-gallery-ivy-002.jpg', shoot: 'Manila set', loc: '' },
+  { src: 'manila-gallery-canal-002.jpg', shoot: 'Manila set', loc: '' },
+  { src: 'manila-gallery-dsc-0190.jpg', shoot: 'Manila set', loc: '' },
+  { src: 'manila-gallery-garden-002.jpg', shoot: 'Manila set', loc: '' },
+  { src: 'manila-gallery-white-001.jpg', shoot: 'Manila set', loc: '' },
+  { src: 'manila-gallery-urban-002.jpg', shoot: 'Manila set', loc: '' },
+  { src: 'manila-gallery-night-003.jpg', shoot: 'Manila set', loc: '' },
+  { src: 'manila-gallery-dsc-0911.jpg', shoot: 'Manila set', loc: '' },
+  { src: 'manila-gallery-urban-003.jpg', shoot: 'Manila set', loc: '' },
 ];
 
 const CSS = `
@@ -64,7 +122,6 @@ const CSS = `
   .ig-header-logo {
     font-size: 22px;
     font-weight: 700;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     color: #262626;
     letter-spacing: -0.5px;
   }
@@ -133,7 +190,7 @@ const CSS = `
     font-weight: 600;
   }
 
-  .ig-buttons {
+  .ig-controls {
     display: flex;
     gap: 6px;
     margin-top: 14px;
@@ -160,26 +217,6 @@ const CSS = `
     color: #262626;
   }
 
-  .ig-tabs {
-    display: flex;
-    border-top: 1px solid #efefef;
-    margin-top: 16px;
-  }
-
-  .ig-tab {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    padding: 12px 0;
-    cursor: pointer;
-    border-top: 1px solid transparent;
-    margin-top: -1px;
-  }
-
-  .ig-tab.active {
-    border-top-color: #262626;
-  }
-
   .ig-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -189,7 +226,7 @@ const CSS = `
   .ig-grid-item {
     aspect-ratio: 1;
     overflow: hidden;
-    cursor: pointer;
+    cursor: grab;
     position: relative;
   }
 
@@ -205,39 +242,33 @@ const CSS = `
     opacity: 0.85;
   }
 
-  .ig-grid-new {
-    position: relative;
-  }
-
-  .ig-new-badge {
+  .ig-cell-label {
     position: absolute;
-    top: 6px;
-    right: 6px;
-    background: #0095f6;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.62);
     color: #fff;
     font-size: 9px;
+    line-height: 1.3;
+    padding: 3px 4px;
+    pointer-events: none;
+  }
+
+  .ig-order-badge {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    background: rgba(0,0,0,0.62);
+    color: #fff;
+    font-size: 10px;
     font-weight: 700;
-    padding: 2px 5px;
+    min-width: 18px;
+    text-align: center;
+    padding: 2px 3px;
     border-radius: 3px;
     z-index: 2;
-    letter-spacing: 0.03em;
-  }
-
-  .ig-row-label {
-    grid-column: 1 / -1;
-    padding: 8px 4px 4px;
-    font-size: 11px;
-    color: #8e8e8e;
-    font-weight: 500;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-  }
-
-  .ig-divider {
-    grid-column: 1 / -1;
-    height: 1px;
-    background: #efefef;
-    margin: 4px 0;
+    pointer-events: none;
   }
 
   .ig-grid-label {
@@ -251,11 +282,12 @@ const CSS = `
 `;
 
 export default function IGGridPage() {
+  const [view, setView] = useState<'planned' | 'previous'>('planned');
+  const [showLabels, setShowLabels] = useState(true);
   const [dragIdx, setDragIdx] = useState<number | null>(null);
-  const [gridPosts, setGridPosts] = useState(posts);
+  const [plannedPosts, setPlannedPosts] = useState(planned);
 
-  const newPosts = gridPosts.slice(0, 9);
-  const existingPosts = gridPosts.slice(9);
+  const posts = view === 'planned' ? plannedPosts : previous;
 
   return (
     <>
@@ -274,7 +306,7 @@ export default function IGGridPage() {
           <div className="ig-profile-top">
             <img
               className="ig-avatar"
-              src="/images/large/manila-gallery-dsc-0075.jpg"
+              src="/images/large/merasa-jewelry-02.jpg"
               alt="Profile"
             />
             <div className="ig-stats">
@@ -298,66 +330,65 @@ export default function IGGridPage() {
             Editorial &middot; Portraits &middot; Worldwide<br />
             <span className="ig-bio-link">aidantorrence.com</span>
           </p>
-          <div className="ig-buttons">
-            <button className="ig-btn ig-btn-primary">Follow</button>
-            <button className="ig-btn ig-btn-secondary">Message</button>
-          </div>
-        </div>
-
-        {/* Tabs */}
-        <div className="ig-tabs">
-          <div className="ig-tab active">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="#262626">
-              <rect x="2" y="2" width="9" height="9" rx="1" />
-              <rect x="13" y="2" width="9" height="9" rx="1" />
-              <rect x="2" y="13" width="9" height="9" rx="1" />
-              <rect x="13" y="13" width="9" height="9" rx="1" />
-            </svg>
-          </div>
-          <div className="ig-tab">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="#8e8e8e">
-              <path d="M12 2a1 1 0 011 1v8h8a1 1 0 010 2h-8v8a1 1 0 01-2 0v-8H3a1 1 0 010-2h8V3a1 1 0 011-1z" />
-            </svg>
+          <div className="ig-controls">
+            <button
+              className={`ig-btn ${view === 'planned' ? 'ig-btn-primary' : 'ig-btn-secondary'}`}
+              onClick={() => setView('planned')}
+            >
+              Planned grid
+            </button>
+            <button
+              className={`ig-btn ${view === 'previous' ? 'ig-btn-primary' : 'ig-btn-secondary'}`}
+              onClick={() => setView('previous')}
+            >
+              Previous plan
+            </button>
+            <button
+              className="ig-btn ig-btn-secondary"
+              onClick={() => setShowLabels(v => !v)}
+            >
+              {showLabels ? 'Hide labels' : 'Show labels'}
+            </button>
           </div>
         </div>
 
         {/* Grid */}
         <div className="ig-grid">
-          <div className="ig-grid-label">NEW POSTS (drag to reorder)</div>
-          {newPosts.map((post, i) => (
+          <div className="ig-grid-label">
+            {view === 'planned'
+              ? `PLANNED — ${plannedPosts.length} POSTS, #1 POSTS LAST (drag to reorder)`
+              : `PREVIOUS PLAN — ${previous.length} POSTS`}
+          </div>
+          {posts.map((post, i) => (
             <div
-              className="ig-grid-item ig-grid-new"
-              key={`new-${i}`}
-              draggable
+              className="ig-grid-item"
+              key={`${view}-${post.src}`}
+              draggable={view === 'planned'}
               onDragStart={() => setDragIdx(i)}
               onDragOver={(e) => e.preventDefault()}
               onDrop={() => {
-                if (dragIdx === null || dragIdx === i) return;
-                const updated = [...gridPosts];
+                if (view !== 'planned' || dragIdx === null || dragIdx === i) return;
+                const updated = [...plannedPosts];
                 const [moved] = updated.splice(dragIdx, 1);
                 updated.splice(i, 0, moved);
-                setGridPosts(updated);
+                setPlannedPosts(updated);
                 setDragIdx(null);
               }}
             >
-              <span className="ig-new-badge">NEW</span>
+              {view === 'planned' && <span className="ig-order-badge">{i + 1}</span>}
               <img
                 src={`/images/large/${post.src}`}
-                alt={`Post ${i + 1}`}
+                alt={`${post.shoot}${post.loc ? `, ${post.loc}` : ''}`}
+                loading="lazy"
               />
-            </div>
-          ))}
-
-          <div className="ig-divider" />
-          <div className="ig-grid-label">EXISTING POSTS</div>
-
-          {existingPosts.map((post, i) => (
-            <div className="ig-grid-item" key={`existing-${i}`}>
-              <img
-                src={`/images/large/${post.src}`}
-                alt={`Existing post ${i + 1}`}
-                style={{ opacity: 0.7 }}
-              />
+              {showLabels && (
+                <span className="ig-cell-label">
+                  {post.shoot}
+                  {post.loc ? ` · ${post.loc}` : ''}
+                  <br />
+                  {post.src}
+                </span>
+              )}
             </div>
           ))}
         </div>
