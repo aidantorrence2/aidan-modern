@@ -3,60 +3,68 @@
 import React, { useState } from 'react';
 
 // ── PLANNED GRID ─────────────────────────────────────────────────────────────
-// Curated 2026-08 from the full portfolio (data/shoots.ts) after reviewing all
-// 26 shoot galleries + the previous Manila-branded set (which was largely the
-// same portfolio frames under manila-gallery-* names).
+// Curated 2026-08 from the full portfolio (data/shoots.ts), sequenced for IG's
+// 3:4 portrait grid. Index 0 = newest = top-left; post #30 first, #1 last.
 //
-// Posting order: index 0 = newest = top-left. Sequenced in rows of 3 so every
-// row balances one warm frame, one cool/color-anchor frame, and one
-// neutral/dark frame, and no two adjacent posts share a shoot.
-//
-// Color anchors placed deliberately: turquoise (Merasa pool ×2, spaced),
-// blue-on-yellow (Francisca), red (Greta Venice), pink (Kristin bánh mì),
-// jungle teal (Althea), B&W (Ly Gia Han lighter), pattern-breaker (sea lions).
+// Design system:
+// - First screen (rows 1–4) carries the whole pitch: sunset gold / night /
+//   turquoise water in row 1, then sparkle, white, color-block, jungle, pink,
+//   a male subject, and a night close-up — full tonal + geographic range.
+// - Right rail leans inward: every right-column subject faces or moves left,
+//   into the grid. Left column mirrors where possible.
+// - Dark frames land at 2, 7, 12, 21, 27 — never touching, each surrounded by
+//   light neighbors so they pop like rests in a bar.
+// - Turquoise (the signature hue) sweeps a long diagonal: top-right (3) →
+//   center (14) → bottom-left teal doors (28).
+// - Scale rhythm per row: mix of close-up / full-body / environmental, no row
+//   with three frames at the same distance.
+// - Two no-face breathers (sea lions 23, Photoautomat 29) rest the eye deep in
+//   the grid; 23+26 stack as a deliberate Dunedin coastal pair (ENV → FULL).
+// - Grid closes environmental + documentary (teal doors, photo booth, dog) so
+//   deep scrollers hit charm, not filler.
 type PlannedPost = { src: string; shoot: string; loc: string };
 
 const planned: PlannedPost[] = [
-  // Row 1
-  { src: 'merasa-jewelry-04.jpg', shoot: 'Merasa Jewelry', loc: 'Bali' },
-  { src: '000043-5.jpg', shoot: 'Sasha', loc: 'Bangkok' },
-  { src: 'r1-05454-0002.jpg', shoot: 'Hana', loc: 'Bratislava' },
-  // Row 2
+  // Row 1 — thesis: gold dusk / night face / turquoise water
   { src: 'aidanto-r2-009-3.jpg', shoot: 'Indy', loc: 'Dunedin' },
-  { src: '13.jpg', shoot: 'Ly Gia Han', loc: 'Saigon' },
-  { src: '000008.jpg', shoot: 'Francisca', loc: 'Cascais' },
-  // Row 3
-  { src: '000027-3.jpg', shoot: 'Paula', loc: 'Sitges' },
-  { src: '000038-9.jpg', shoot: 'Daniela', loc: 'Rome' },
-  { src: '000044-9.jpg', shoot: 'Kristin', loc: 'Da Nang' },
-  // Row 4
-  { src: '000049660026.jpg', shoot: 'Rin', loc: 'Tokyo' },
-  { src: '000021-2.jpg', shoot: 'Althea', loc: 'Bali' },
-  { src: '000002.jpg', shoot: 'Greta', loc: 'Venice' },
-  // Row 5
+  { src: '000043-5.jpg', shoot: 'Sasha', loc: 'Bangkok' },
+  { src: 'merasa-jewelry-04.jpg', shoot: 'Merasa Jewelry', loc: 'Bali' },
+  // Row 2 — sparkle / airy white / blue-on-yellow color block
+  { src: 'r1-05454-0002.jpg', shoot: 'Hana', loc: 'Bratislava' },
   { src: '000048750031.jpg', shoot: 'Ellie', loc: 'Tokyo' },
-  { src: 'aidantorre000577-000012.jpg', shoot: 'Kiritokia', loc: 'Rotorua' },
-  { src: 'merasa-jewelry-15.jpg', shoot: 'Merasa Jewelry', loc: 'Bali' },
-  // Row 6
-  { src: '000012-3.jpg', shoot: 'Mary', loc: 'Warsaw' },
-  { src: '000015-2.jpg', shoot: 'Paris', loc: 'Berlin' },
-  { src: 'aidanto-r4-021-9.jpg', shoot: 'Indy', loc: 'Dunedin' },
-  // Row 7
-  { src: '000008-11.jpg', shoot: 'Maria', loc: 'Rome' },
+  { src: '000008.jpg', shoot: 'Francisca', loc: 'Cascais' },
+  // Row 3 — jungle dark / pink street / male subject
+  { src: '000021-2.jpg', shoot: 'Althea', loc: 'Bali' },
+  { src: '000044-9.jpg', shoot: 'Kristin', loc: 'Da Nang' },
+  { src: '000049660026.jpg', shoot: 'Rin', loc: 'Tokyo' },
+  // Row 4 — cream warmth / green jersey / night blue close-up
+  { src: '000027-3.jpg', shoot: 'Paula', loc: 'Sitges' },
   { src: '000049740018.jpg', shoot: 'Sumika', loc: 'Tokyo' },
-  { src: '000033-7.jpg', shoot: 'Yana', loc: 'Krakow' },
-  // Row 8
+  { src: '13.jpg', shoot: 'Ly Gia Han', loc: 'Saigon' },
+  // Row 5 — red / turquoise echo / documentary profile
+  { src: '000009-3.jpg', shoot: 'Greta', loc: 'Venice' },
+  { src: 'merasa-jewelry-15.jpg', shoot: 'Merasa Jewelry', loc: 'Bali' },
+  { src: 'aidantorre000577-000012.jpg', shoot: 'Kiritokia', loc: 'Rotorua' },
+  // Row 6 — pink sweep / green slip / brick crochet
+  { src: 'r1-05461-0009.jpg', shoot: 'Hana', loc: 'Bratislava' },
+  { src: '000012-3.jpg', shoot: 'Mary', loc: 'Warsaw' },
   { src: '000027-5.jpg', shoot: 'Minka', loc: 'Ghent' },
+  // Row 7 — coracle sea / warm skin close-up / dark pop
   { src: '000038-10.jpg', shoot: 'Kristin', loc: 'Da Nang' },
+  { src: '000008-7.jpg', shoot: 'Daniela', loc: 'Rome' },
+  { src: '000033-7.jpg', shoot: 'Yana', loc: 'Krakow' },
+  // Row 8 — dark lace / sea-lion breather / mural pop
   { src: '000012-5.jpg', shoot: 'Silvia', loc: 'Milan' },
-  // Row 9
-  { src: '000040-4.jpg', shoot: 'Kiki', loc: 'Bangkok' },
-  { src: '000039-2.jpg', shoot: 'Linda', loc: 'Vienna' },
+  { src: 'aidanto-r2-015-6.jpg', shoot: 'Indy (sea lion)', loc: 'Dunedin' },
   { src: '000046-4.jpg', shoot: 'Pharima', loc: 'Bangkok' },
-  // Row 10
-  { src: '000036.jpg', shoot: 'Soph', loc: 'Vienna' },
-  { src: '000004.jpg', shoot: 'Ly Gia Han', loc: 'Saigon' },
+  // Row 9 — garden bench / surf white (Dunedin pair) / B&W flame
   { src: '000041.jpg', shoot: 'Tess', loc: 'Glasgow' },
+  { src: 'aidanto-r4-047-22.jpg', shoot: 'Indy', loc: 'Dunedin' },
+  { src: '000004.jpg', shoot: 'Ly Gia Han', loc: 'Saigon' },
+  // Row 10 — teal doors / Photoautomat / dog sign-off
+  { src: '000040-4.jpg', shoot: 'Kiki', loc: 'Bangkok' },
+  { src: '000015-2.jpg', shoot: 'Paris', loc: 'Berlin' },
+  { src: '000036.jpg', shoot: 'Soph', loc: 'Vienna' },
 ];
 
 // ── PREVIOUS PLAN (kept for comparison) ──────────────────────────────────────
@@ -224,7 +232,7 @@ const CSS = `
   }
 
   .ig-grid-item {
-    aspect-ratio: 1;
+    aspect-ratio: 3 / 4;
     overflow: hidden;
     cursor: grab;
     position: relative;
