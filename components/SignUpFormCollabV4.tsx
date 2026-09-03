@@ -5,6 +5,7 @@ import CountryCodeSelect from './CountryCodeSelect'
 import { detectCountry, detectPhoneCountry } from '@/lib/detectCountry'
 import { cityChipsForCountry, cityExamplesForCountry } from '@/lib/cityChips'
 import { initPageAnalytics, track, pageElapsedMs, flushNow } from '@/lib/track'
+import { preparePhoto, fetchUploadTicket, describePhotoFailures, type PhotoFailure } from '@/lib/signupPhotos'
 
 // v4 "tap-first". v3 put the contact ask on the doorstep because 93% of ad
 // clickers bounced at 0% scroll. This moves it to frame 4, behind three steps
@@ -27,41 +28,6 @@ const SLIDE_NO: Record<Exclude<Step, 'done'>, number> = {
 const TOTAL_SLIDES = 6
 const BACK_TO: Partial<Record<Step, Step>> = {
   vibe: 'capture', notes: 'vibe', location: 'notes', photos: 'location', instagram: 'photos',
-}
-
-function resizeImage(dataUrl: string, maxBytes: number): Promise<string> {
-  return new Promise((resolve, reject) => {
-    const img = new Image()
-    const timer = setTimeout(() => reject(new Error('Image load timed out')), 30000)
-    img.onload = () => {
-      clearTimeout(timer)
-      const canvas = document.createElement('canvas')
-      const w = img.width, h = img.height
-      let quality = 0.8
-      let scale = w > 800 ? 800 / w : 1
-      const attempt = () => {
-        canvas.width = w * scale
-        canvas.height = h * scale
-        const ctx = canvas.getContext('2d')!
-        ctx.drawImage(img, 0, 0, canvas.width, canvas.height)
-        const result = canvas.toDataURL('image/jpeg', quality)
-        const size = Math.round((result.length - 'data:image/jpeg;base64,'.length) * 0.75)
-        if (size > maxBytes && (scale > 0.15 || quality > 0.3)) {
-          if (quality > 0.4) quality -= 0.1
-          else scale *= 0.7
-          attempt()
-        } else {
-          resolve(result)
-        }
-      }
-      attempt()
-    }
-    img.onerror = () => {
-      clearTimeout(timer)
-      reject(new Error('Could not load image — unsupported format'))
-    }
-    img.src = dataUrl
-  })
 }
 
 // The hero cycles. It opens on the bubbles frame and crossfades on, so the
@@ -228,6 +194,7 @@ export default function SignUpFormCollabV4({ analyticsPath = '/sign-up-collab-v4
   const [processingPhotos, setProcessingPhotos] = useState(false)
 
   const fileRef = useRef<HTMLInputElement>(null)
+  const errorRef = useRef<HTMLDivElement>(null)
   const phoneRef = useRef<HTMLInputElement>(null)
   const [heroIndex, setHeroIndex] = useState(0)
   const engagedFields = useRef<Set<string>>(new Set())
@@ -298,13 +265,20 @@ export default function SignUpFormCollabV4({ analyticsPath = '/sign-up-collab-v4
     const write = (withPhotos: string[]) =>
       localStorage.setItem(resumeKey(analyticsPath), JSON.stringify({ ...base, photos: withPhotos }))
     try {
-      // resizeImage caps each photo at 300 KB, so a realistic set fits the
-      // ~5 MB quota several times over; the catch covers the outliers.
+      // Photos are Cloudinary URLs when the direct upload worked and JPEG
+      // data URLs under 300 KB otherwise, so a realistic set fits the ~5 MB
+      // quota several times over; the catch covers the outliers.
       write(photos)
     } catch {
       try { write([]) } catch {}
     }
   }
+
+  // The photo frame is tall — two example sheets above the button — so a
+  // failure message that lands below the fold reads as nothing happening.
+  useEffect(() => {
+    if (error && step === 'photos') errorRef.current?.scrollIntoView({ block: 'center', behavior: 'smooth' })
+  }, [error, step])
 
   // Discrete moves are written at once; typing coalesces.
   // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -491,38 +465,38 @@ export default function SignUpFormCollabV4({ analyticsPath = '/sign-up-collab-v4
     fieldEngaged('photos')
     setError(null)
     setProcessingPhotos(true)
-    let failures = 0
     const selected = files.length
     const added: string[] = []
+    const reasons: PhotoFailure[] = []
+    let direct = 0
+    let inline = 0
+    let raw = 0
     try {
+      // One signed ticket covers the whole batch. Null means the bytes go
+      // through the API inline, as they always did.
+      const ticket = await fetchUploadTicket(leadRecord)
       for (const file of Array.from(files)) {
-        if (file.size > 20 * 1024 * 1024) { failures++; continue }
-        try {
-          const raw = await new Promise<string>((resolve, reject) => {
-            const reader = new FileReader()
-            reader.onload = () => resolve(reader.result as string)
-            reader.onerror = () => reject(new Error('Could not read file'))
-            reader.readAsDataURL(file)
-          })
-          const resized = await resizeImage(raw, 300 * 1024)
-          added.push(resized)
-          setPhotos(prev => [...prev, resized])
-        } catch { failures++ }
+        const result = await preparePhoto(file, ticket)
+        if (!result.ok) { reasons.push(result.reason); continue }
+        if (result.via === 'direct') direct++
+        else inline++
+        if (!result.decoded) raw++
+        added.push(result.value)
+        setPhotos(prev => [...prev, result.value])
       }
     } finally {
       setProcessingPhotos(false)
       if (fileRef.current) fileRef.current.value = ''
-      track('photos_added', { selected, added: added.length, failed: failures, total: photos.length + added.length })
-      if (failures > 0) {
-        setError(failures === 1
-          ? 'One photo could not be added (too large or unsupported format — try a JPG/PNG under 20 MB).'
-          : `${failures} photos could not be added (too large or unsupported format — try JPG/PNG under 20 MB).`)
-      }
+      track('photos_added', {
+        selected, added: added.length, failed: reasons.length, total: photos.length + added.length,
+        direct, inline, raw, reasons: reasons.join(',') || null,
+      })
+      if (reasons.length > 0) setError(describePhotoFailures(reasons))
     }
 
     // The upload finishing is the answer to this frame — one tap, not two. Only
     // a clean run moves on: a failure keeps them here to see the error and retry.
-    if (failures === 0 && added.length > 0) {
+    if (reasons.length === 0 && added.length > 0) {
       track('photos_autoadvance', { total: photos.length + added.length })
       advance('instagram', true, [...photos, ...added])
     }
@@ -698,7 +672,7 @@ export default function SignUpFormCollabV4({ analyticsPath = '/sign-up-collab-v4
     </button>
   )
   const errorBox = error ? (
-    <div className="rounded-2xl border border-red-200 bg-red-50 px-4 py-3 text-[13px] font-semibold text-red-700">{error}</div>
+    <div ref={errorRef} className="rounded-2xl border border-red-200 bg-red-50 px-4 py-3 text-[13px] font-semibold text-red-700">{error}</div>
   ) : null
 
   // ── Frame 1 · the ask ──
@@ -1093,14 +1067,15 @@ export default function SignUpFormCollabV4({ analyticsPath = '/sign-up-collab-v4
           </div>
         )}
 
-        <button
-          type="button"
-          onClick={() => fileRef.current?.click()}
-          disabled={processingPhotos}
-          className="group mt-5 flex w-full items-center justify-center gap-2.5 rounded-2xl border border-dashed border-emerald-500/50 bg-emerald-50/70 py-5 text-emerald-700 transition hover:border-emerald-500 hover:bg-emerald-50 disabled:opacity-50"
+        {/* A label wrapping the input: the tap opens the picker through the
+            browser's own label activation, so in-app browsers (Instagram,
+            LINE, Facebook) that ignore a scripted click() on a display:none
+            input still get the native chooser. */}
+        <label
+          className={`group mt-5 flex w-full items-center justify-center gap-2.5 rounded-2xl border border-dashed border-emerald-500/50 bg-emerald-50/70 py-5 text-emerald-700 transition hover:border-emerald-500 hover:bg-emerald-50 focus-within:ring-2 focus-within:ring-emerald-500/40 ${processingPhotos ? 'cursor-wait opacity-50' : 'cursor-pointer'}`}
         >
           {processingPhotos ? (
-            <span className="inline-block h-5 w-5 animate-spin rounded-full border-2 border-emerald-200 border-t-emerald-600" aria-label="Processing" />
+            <span className="inline-block h-5 w-5 animate-spin rounded-full border-2 border-emerald-200 border-t-emerald-600" aria-label="Uploading" />
           ) : (
             <>
               <span className="flex h-8 w-8 items-center justify-center rounded-full bg-emerald-600 text-white shadow-[0_8px_16px_-8px_rgba(5,150,105,0.9)] transition group-hover:bg-emerald-500">
@@ -1111,8 +1086,8 @@ export default function SignUpFormCollabV4({ analyticsPath = '/sign-up-collab-v4
               <span className="text-[11px] font-bold uppercase tracking-[0.2em]">{photos.length > 0 ? 'Add another' : 'Upload'}</span>
             </>
           )}
-        </button>
-        <input ref={fileRef} type="file" accept="image/*" multiple onChange={handlePhotos} className="hidden" />
+          <input ref={fileRef} type="file" accept="image/*,.heic,.heif" multiple onChange={handlePhotos} disabled={processingPhotos} className="sr-only" data-cta="v4-photo-input" />
+        </label>
 
         <div className="mt-6 space-y-3">
           {errorBox}
