@@ -33,7 +33,7 @@ page cannot reach storage are kept in the phone's local storage and synced on th
 
 ## Hourly coach (Routine)
 
-A Claude Code Routine named **Pocket Ledger hourly coach** runs `0 * * * *` (UTC), starts a fresh
+A Claude Code Routine named **Pocket Ledger hourly coach** runs hourly at 44 minutes past (cron `44 * * * *` UTC, trigger `trig_012j4PuPD4qCpjj61ddTgd2z`), starts a fresh
 session each time with `tracker/coach-prompt.md` as its prompt, and pushes its final message to the
 phone. It reads the documents above via the Artifact tool, applies the readiness gate, writes
 `reviews/latest` and `reviews/log`, and the page shows the result live under "Hourly coach".
