@@ -1,0 +1,14 @@
+# Long-history validation on data that needs no API key: Nasdaq-100 price index from FRED (1986-),
+# VIX (1990-) and 3-month T-bills. Run:  python -m tradingbot --config configs/validation-fred-40y.yaml backtest
+universe:
+  - symbol: QQQ
+    allocation: 1.0
+    data: {fred: NASDAQ100}
+implied_vol:
+  data: {fred: VIXCLS}
+  applies_to: [QQQ]
+cash_rate:
+  data: {fred: DTB3}
+data:
+  sources: [fred]
+  cache_dir: ../data/cache

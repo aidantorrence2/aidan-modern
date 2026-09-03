@@ -1,0 +1,6 @@
+numpy>=1.26
+pandas>=2.2
+requests>=2.31
+pyyaml>=6.0
+yfinance>=0.2.40   # optional but recommended for Yahoo data
+pytest>=8.0        # tests only

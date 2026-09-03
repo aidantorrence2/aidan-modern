@@ -1,0 +1,74 @@
+# Fortress trading bot configuration. Every key here overrides tradingbot/config.py DEFAULTS.
+
+universe:
+  - symbol: SPY
+    allocation: 0.5
+    data: {yahoo: SPY, stooq: spy.us, alpaca: SPY, fred: SP500}
+  - symbol: QQQ
+    allocation: 0.5
+    data: {yahoo: QQQ, stooq: qqq.us, alpaca: QQQ, fred: NASDAQ100}
+  # Optional third sleeve. Crypto is uncorrelated day-to-day but its vol is 3-5x equities; the vol
+  # targeting layer shrinks it automatically. Enable only if your broker supports it (Alpaca does).
+  # - symbol: BTC/USD
+  #   allocation: 0.1
+  #   data: {alpaca: BTC/USD, coinbase: BTC-USD, yahoo: BTC-USD}
+
+implied_vol:
+  data: {yahoo: ^VIX, stooq: ^vix, fred: VIXCLS}
+  applies_to: [SPY, QQQ]
+
+cash_rate:
+  data: {fred: DTB3}
+
+data:
+  sources: [yahoo, stooq, alpaca, fred, coinbase]
+  cache_dir: data/cache
+  max_age_hours: 12
+
+strategy:
+  max_weight: 1.0
+  trend:
+    sma_len: 200
+    weight: 0.7          # base exposure while in an uptrend
+  mean_reversion:
+    rsi_len: 2
+    entry: 10
+    exit: 65
+    exit_sma: 5
+    down_days: 3
+    regime_len: 200
+    bull_weight: 0.3     # extra exposure on a washout inside an uptrend (0.7 + 0.3 = fully invested)
+    bear_weight: 0.0     # never buy dips below the 200-day average
+    max_hold: 10
+    exit_on_regime_break: true
+
+risk:
+  target_vol: 0.12
+  vol_lookback: 20
+  use_implied_vol: true   # ex-ante vol = max(realised 20d, VIX * implied_vol_weight)
+  implied_vol_weight: 1.0
+  max_scale: 1.0
+  max_asset_weight: 1.0
+  max_gross: 1.0
+  drawdown_soft: 0.08
+  drawdown_hard: 0.15
+  soft_scale: 0.5
+  hard_scale: 0.25
+  recover_to: 0.04
+  rebalance_band: 0.05
+  max_daily_loss_pct: 0.02
+
+backtest:
+  initial_cash: 100000
+  cost_bps: 5
+  execution_lag: 1
+  use_drawdown_guard: true
+
+broker:
+  type: paper            # paper | alpaca  (alpaca reads ALPACA_API_KEY / ALPACA_SECRET_KEY / ALPACA_PAPER)
+  paper_state: data/paper_broker.json
+  slippage_bps: 3
+  alpaca_paper: true
+
+engine:
+  state_dir: data/state

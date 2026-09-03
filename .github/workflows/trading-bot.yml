@@ -1,0 +1,40 @@
+# Runs the Fortress bot's daily rebalance from GitHub Actions.
+# Manual only by default. To automate, uncomment the schedule (GitHub cron is UTC and can lag by
+# 10-30 minutes, so aim well before the 20:00/21:00 UTC close) and add ALPACA_API_KEY /
+# ALPACA_SECRET_KEY as repository secrets. Remove `--dry-run` guard by setting live=true.
+name: trading-bot
+
+on:
+  workflow_dispatch:
+    inputs:
+      live:
+        description: "Send real orders (otherwise dry run)"
+        type: boolean
+        default: false
+  # schedule:
+  #   - cron: "35 19 * * 1-5"   # 15:35 ET during EDT; use 35 20 during EST
+
+jobs:
+  rebalance:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: trading-bot
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install -r requirements.txt
+      - run: python -m pytest -q tests
+      - name: Rebalance
+        env:
+          ALPACA_API_KEY: ${{ secrets.ALPACA_API_KEY }}
+          ALPACA_SECRET_KEY: ${{ secrets.ALPACA_SECRET_KEY }}
+          ALPACA_PAPER: ${{ vars.ALPACA_PAPER || 'true' }}
+        run: |
+          if [ "${{ inputs.live }}" = "true" ] && [ -n "$ALPACA_API_KEY" ]; then
+            python -m tradingbot run --broker alpaca --live
+          else
+            python -m tradingbot run --broker paper
+          fi

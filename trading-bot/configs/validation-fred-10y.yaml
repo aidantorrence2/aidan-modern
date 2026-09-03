@@ -1,0 +1,19 @@
+# Default universe on key-free FRED proxies (S&P 500 and Nasdaq-100 price indices, 2016-).
+# Run:  python -m tradingbot --config configs/validation-fred-10y.yaml backtest --start 2016-09-06
+universe:
+  - symbol: SPY
+    allocation: 0.5
+    data: {fred: SP500}
+  - symbol: QQQ
+    allocation: 0.5
+    data: {fred: NASDAQ100}
+implied_vol:
+  data: {fred: VIXCLS}
+  applies_to: [SPY, QQQ]
+cash_rate:
+  data: {fred: DTB3}
+data:
+  sources: [fred]
+  cache_dir: ../data/cache
+backtest:
+  start: "2016-09-06"
