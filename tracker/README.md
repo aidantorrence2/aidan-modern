@@ -1,41 +1,52 @@
-# Pocket Ledger: phone-use tracker + hourly coach
+# Phone-use tracker + hourly coach
 
-A phone-first tracker for how the phone actually gets used, paired with an hourly Routine
-that reads the last 1 hour and 12 hours and writes a critique back into the page.
+Automatic tracking of real phone use, with an hourly Routine that reads the last 1 h and 12 h and
+critiques it. Nothing is self-reported: an iOS Shortcuts automation pings this site every time a
+tracked app opens or closes, the site rebuilds sessions from those pings, and the coach reviews them.
 
-## Install on the phone (no computer needed)
+## Pieces
 
-1. Open https://claude.ai/code/artifact/f506c17d-e479-498c-b1a3-2914a717c441 on the phone,
-   signed in to the Claude account that owns it.
-2. iPhone: Share → Add to Home Screen. Android: menu → Add to Home screen / Install app.
-3. Tap the sliders icon and save goals (daily limit, purpose, categories to cut down on, quiet hours).
-4. Log pickups ("Log a pickup") or run a live session ("I'm on my phone" → "Stop & log").
+| Piece | Where |
+| --- | --- |
+| Dashboard (add to home screen) | `https://www.aidantorrence.com/phone?k=KEY` → `app/phone/page.tsx` |
+| Event ingest, hit by the phone | `GET /api/phone/ping?k=KEY&app=Instagram` → `app/api/phone/ping/route.ts` |
+| Summary read by dashboard + coach | `GET /api/phone/summary?k=KEY` → `app/api/phone/summary/route.ts` |
+| Coach writes its critique | `POST /api/phone/review?k=KEY` → `app/api/phone/review/route.ts` |
+| Goals (limit, quiet hours, tz) | `GET/POST /api/phone/settings?k=KEY` |
+| Session logic + tables | `lib/phoneTracker.ts` |
+| Routine prompt | `tracker/coach-prompt.md` |
 
-The page is `tracker/pocket-ledger.html` in this repo. Republishing it to the same URL keeps the data.
+Tables (Neon, created on first use): `phone_events`, `phone_settings`, `phone_reviews`.
+
+## Access key
+
+There is no key in the repo or in Vercel env. The first request that presents a key of 16+ characters
+claims it (stored as a SHA-256 hash in `phone_settings`); every request after that must present the
+same key. The key lives in the Shortcut URL, the dashboard's local storage, and the Routine prompt.
+
+## Setting up the phone (no computer)
+
+1. Open the dashboard link on the phone, Share → Add to Home Screen.
+2. Shortcuts app → Automation → + → App → pick the app → tick "Is Opened" and "Is Closed" →
+   Run Immediately → New Blank Automation → action "Get Contents of URL" → paste the ping URL with the
+   app name after `app=`. One automation per app.
+3. Tap "Send test ping" on the dashboard to confirm the site is receiving.
+
+The same URL handles open and close (it toggles per app). An open with no close is capped at 30 min.
+
+## Sessions and windows
+
+`pairSessions` pairs open/close events per app; `windowStats` clips sessions to a window (last 1 h,
+last 12 h, local today) and reports minutes, pickups, quick checks (< 2 min), longest, minutes by app,
+and minutes inside quiet hours. Local day and quiet hours use the tz the dashboard saves.
 
 ## Ready state
 
-The tracker is **ready** when goals are saved and at least 3 entries exist in the last 24 hours.
-The page writes that flag to `meta/status`. While not ready, every hourly run sends
-"🚨 URGENT ALERT — not enough info" instead of a review.
+Ready = at least one event in the last 24 h. While not ready, every hourly run reports
+"🚨 URGENT ALERT — not enough info" with the reason instead of a review.
 
-## Data (artifact database, `db` capability)
+## Hourly coach
 
-| Path | Written by | Shape |
-| --- | --- | --- |
-| `meta/status` | page | `setupDone, ready, readyReason, entriesLast24h, lastEntryAt, tz, dailyLimitMin, purpose, avoid[], quietStart, quietEnd` |
-| `days/YYYY-MM-DD` | page | `date, tz, entries[{id, ts, endTs, minutes, category, intent, feeling, note, source}]` |
-| `reviews/latest` | coach | `at, status, headline, body, score, stats{h1,h12}` |
-| `reviews/log` | coach | `items[{at, status, headline, score}]`, last 48 |
-
-One document per day keeps the store far below the 5,000-document cap. Entries logged while the
-page cannot reach storage are kept in the phone's local storage and synced on the next open.
-
-## Hourly coach (Routine)
-
-A Claude Code Routine named **Pocket Ledger hourly coach** runs hourly at 44 minutes past (cron `44 * * * *` UTC, trigger `trig_012j4PuPD4qCpjj61ddTgd2z`), starts a fresh
-session each time with `tracker/coach-prompt.md` as its prompt, and pushes its final message to the
-phone. It reads the documents above via the Artifact tool, applies the readiness gate, writes
-`reviews/latest` and `reviews/log`, and the page shows the result live under "Hourly coach".
-
-To change the prompt, edit `tracker/coach-prompt.md` and update the Routine's prompt with it.
+Routine **Pocket Ledger hourly coach** (`trig_012j4PuPD4qCpjj61ddTgd2z`) runs at 44 past every hour
+in a fresh session with `tracker/coach-prompt.md` as its prompt and push notifications on. It curls
+the summary, applies the gate, posts the review, and the dashboard shows it under "Hourly coach".
