@@ -59,7 +59,16 @@ async function updateSignup(
   return { error }
 }
 
+/** A URL the browser already put on our own Cloudinary account (see
+ *  /api/sign-up/upload) — stored as-is, nothing to re-upload. Only our cloud
+ *  qualifies; anything else is treated as bytes for Cloudinary to ingest. */
+function isOwnCloudinaryUrl(value: string): boolean {
+  const cloud = process.env.CLOUDINARY_CLOUD_NAME
+  return !!cloud && value.startsWith(`https://res.cloudinary.com/${cloud}/`)
+}
+
 async function uploadPhoto(base64: string, signupId: number, index: number): Promise<string | null> {
+  if (isOwnCloudinaryUrl(base64)) return base64
   try {
     const result = await cloudinary.uploader.upload(base64, {
       folder: `signups/${signupId}`,
