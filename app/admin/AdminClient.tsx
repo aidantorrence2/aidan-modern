@@ -3,6 +3,7 @@ import { useCallback, useEffect, useRef, useState } from 'react'
 import NextImage from 'next/image'
 import { normalizeWhatsapp } from '../../lib/whatsapp'
 import { isUpdatedEntry, readUpdatedAt } from '../../lib/signupActivity'
+import { imagesForIds } from '../../lib/themePicker'
 
 type Signup = {
   id: number
@@ -306,7 +307,9 @@ export default function AdminClient({ signups: initial }: { signups: Signup[] })
                 const line = isLine(s)
                 const instagram = getInstagram(s)
                 const rawContact = s.moodboard?.find(m => /^raw contact:/i.test(m))?.replace(/^raw contact:\s*/i, '').trim()
-                const moodboardItems = s.moodboard ? s.moodboard.filter(m => !/^instagram:/i.test(m) && !/^raw contact:/i.test(m) && !/^channel:/i.test(m) && !isUpdatedEntry(m)) : []
+                const chosenIds = s.moodboard?.find(m => m.startsWith('Moodboard image IDs: '))?.slice('Moodboard image IDs: '.length).split(',') || []
+                const chosenImages = imagesForIds(chosenIds)
+                const moodboardItems = s.moodboard ? s.moodboard.filter(m => !/^instagram:/i.test(m) && !/^raw contact:/i.test(m) && !/^channel:/i.test(m) && !isUpdatedEntry(m) && !m.startsWith('Moodboard image IDs: ') && !m.startsWith('Reference: ')) : []
                 const photos = getPhotos(s)
                 const updated = getUpdated(s)
                 return (
@@ -374,6 +377,12 @@ export default function AdminClient({ signups: initial }: { signups: Signup[] })
                       </div>
 
                       {/* Moodboard */}
+                      {chosenImages.length > 0 && <div className="mb-3">
+                        <p className="mb-2 text-xs text-emerald-300">Suggested moodboard · {chosenImages.length} picks</p>
+                        <div className="flex gap-2 overflow-x-auto pb-2">{chosenImages.map(image => <button type="button" key={image.id} onClick={() => openLightbox(chosenImages.map(item => item.src), chosenImages.indexOf(image))} aria-label={`View moodboard reference: ${image.alt}`} className="shrink-0">
+                          <NextImage src={image.src} alt={image.alt} width={96} height={128} className="h-28 w-20 rounded object-cover" />
+                        </button>)}</div>
+                      </div>}
                       {moodboardItems.length > 0 && (
                         <div className="flex flex-wrap gap-1.5 mb-3">
                           {moodboardItems.map(m => (

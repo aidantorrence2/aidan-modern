@@ -1,0 +1,5 @@
+[
+  { "id": "mountain-park", "label": "Mountain / park", "description": "Open air, soft light, a little escape.", "image": "/images/theme-picker/mountain-park-reference.jpg", "source": "https://www.pinterest.com/pin/533958099593582289/" },
+  { "id": "street", "label": "Street", "description": "City walks, colour, everyday cinema.", "image": "/images/theme-picker/street-reference.jpg", "source": "https://www.pinterest.com/pin/533958099593582962/" },
+  { "id": "indoor", "label": "Indoor", "description": "Window light, quiet rooms, honest portraits.", "image": "/images/theme-picker/indoor-reference.jpg", "source": "https://www.pinterest.com/pin/533958099592500195/" }
+]

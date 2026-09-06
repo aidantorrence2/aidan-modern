@@ -3,6 +3,7 @@ import { createClient } from '@supabase/supabase-js'
 import { v2 as cloudinary } from 'cloudinary'
 import { normalizeWhatsappServer, locationFromSignup } from '../../../lib/whatsapp-server'
 import { stampUpdated } from '../../../lib/signupActivity'
+import { moodboardEntries, parseThemeSelection } from '../../../lib/themePicker'
 
 cloudinary.config({
   cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
@@ -87,7 +88,12 @@ export async function POST(req: Request) {
     const city = body?.city
     const contactMethod = body?.contactMethod
     const contact = body?.contact
-    const moodboard = Array.isArray(body?.moodboard) ? body.moodboard : null
+    let moodboard = Array.isArray(body?.moodboard) ? body.moodboard : null
+    if (body?.themeSelection !== undefined) {
+      const selection = parseThemeSelection(body.themeSelection)
+      if (!selection) return NextResponse.json({ ok: false, error: 'Invalid moodboard selection' }, { status: 400 })
+      moodboard = [...(moodboard ?? []).filter(isString), ...moodboardEntries(selection)]
+    }
     const photos: string[] | null = Array.isArray(body?.photos) ? body.photos.filter(isString) :
       isString(body?.photo) ? [body.photo] : null
 

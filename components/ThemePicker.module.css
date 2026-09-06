@@ -1,0 +1,47 @@
+.page { background: #f5f3ee; color: #252720; min-height: 100svh; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+.page h1 { font-family: inherit; font-size: clamp(25px, 6.8vw, 34px); font-weight: 600; letter-spacing: -.055em; line-height: 1.08; }
+.shell { max-width: 540px; margin: auto; padding: max(20px, env(safe-area-inset-top)) 18px max(16px, env(safe-area-inset-bottom)); }
+.topbar { display: flex; justify-content: space-between; align-items: center; font-size: 10px; color: #686b60; gap: 8px; }
+.wordmark { font-size: 12px; font-weight: 600; color: #252720; }
+.heading { margin: 32px 0 22px; }
+.heading > p:last-child, .pickerHeading p:last-child { font-size: 13px; line-height: 1.5; color: #62665c; margin-top: 10px; max-width: 360px; }
+.eyebrow { font-size: 9px; text-transform: uppercase; letter-spacing: .13em; color: #62665c; margin-bottom: 10px; }
+.startGrid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.startCard { position: relative; overflow: hidden; aspect-ratio: .76; background: #deded6; border-radius: 5px; text-align: left; }
+.startCard > img { width: 100%; height: 100%; object-fit: cover; }
+.startCard::after { content: ''; position: absolute; inset: 30% 0 0; background: linear-gradient(transparent, rgba(0,0,0,.72)); }
+.startCaption { position: absolute; bottom: 15px; left: 12px; right: 18px; z-index: 1; color: #fff; }
+.startCaption strong { display: block; font-size: 16px; line-height: 1.1; font-weight: 500; letter-spacing: -.04em; }
+.startCaption > span { display: block; font-size: 10px; line-height: 1.4; margin-top: 6px; max-width: 130px; }
+.arrow { position: absolute; right: 10px; top: 8px; color: white; font-size: 22px; z-index: 1; }
+.mixPhotos { display: flex; height: 100%; transform: rotate(-8deg) scale(1.3); }
+.mixPhotos img { width: 34%; object-fit: cover; }
+.footnote { font-size: 10px; line-height: 1.5; text-align: center; color: #727668; margin: 12px 0 0; }
+.credits { color: #8a8c82; font-size: 8px; text-align: center; line-height: 1.5; margin-top: 20px; }
+.pickerHeading { margin: 24px 0 16px; display: flex; gap: 12px; align-items: center; justify-content: space-between; }
+.pickerHeading h1 { font-size: clamp(23px, 6vw, 29px); max-width: 300px; }
+.pickerHeading p:last-child { font-size: 11px; }
+.counter { display: flex; flex-direction: column; align-items: center; justify-content: center; border: 1px solid #c9cdbf; border-radius: 50%; width: 49px; height: 49px; flex: 0 0 49px; font-size: 17px; }
+.counter span { font-size: 8px; }
+.progress { height: 2px; background: #dddfd5; margin-bottom: 14px; }
+.progress span { display: block; height: 100%; background: #3c513a; transition: width .2s ease; }
+.choiceGrid { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 9px; height: clamp(280px, calc(100svh - 310px), 590px); outline: none; }
+.choice { position: relative; min-height: 0; overflow: hidden; background: #deded6; border-radius: 4px; touch-action: manipulation; }
+.choice img { width: 100%; height: 100%; object-fit: cover; }
+.choiceCaption { position: absolute; left: 0; right: 0; bottom: 0; color: white; font-size: 10px; text-align: left; line-height: 1.25; padding: 25px 10px 10px; background: linear-gradient(transparent, rgba(0,0,0,.65)); }
+.choice.chosen { outline: 3px solid #8eaa71; outline-offset: -3px; }
+.check { position: absolute; top: 10px; right: 10px; display: grid; place-items: center; border-radius: 50%; background: #eef4dc; color: #2f422b; width: 32px; height: 32px; }
+.pickerControls { display: flex; justify-content: space-between; margin: 4px 0 3px; }
+.textButton { min-height: 44px; font-size: 11px; padding: 10px 0; color: #535b4a; }
+.primary { display: flex; align-items: center; justify-content: space-between; gap: 15px; min-height: 52px; padding: 14px 18px; width: 100%; background: #35472f; color: #fff; border-radius: 4px; font-size: 13px; font-weight: 500; text-decoration: none; }
+.primary:disabled { color: #777e6e; background: #dfe3d6; cursor: default; }
+.primary > span { font-size: 20px; }
+.page button:focus-visible, .page a:focus-visible { outline: 3px solid #71855e; outline-offset: 3px; }
+.reviewGrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.reviewCard { aspect-ratio: .75; position: relative; overflow: hidden; border-radius: 4px; }
+.reviewCard img { width: 100%; height: 100%; object-fit: cover; }
+.reviewCard button { position: absolute; right: 2px; top: 2px; width: 36px; height: 36px; border-radius: 50%; background: #fff; font-size: 23px; color: #222; }
+.reviewActions { margin-top: 24px; display: flex; flex-direction: column; align-items: center; }
+.srOnly { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; }
+@media (max-height: 730px) { .pickerHeading { margin-top: 18px; margin-bottom: 12px; } .pickerHeading p:last-child { margin-top: 7px; } .shell { padding-top: 14px; } .credits { margin-top: 12px; } }
+@media (prefers-reduced-motion: reduce) { .progress span { transition: none; } }
