@@ -29,7 +29,7 @@ const grain = (o = 0.05) => `<div style="position:absolute;inset:0;pointer-event
 const PR_W = 240, PR_H = 360
 const pr = (src, l, t, rot) => `<div style="position:absolute;left:${l}px;top:${t}px;width:${PR_W + 24}px;height:${PR_H + 26}px;background:#fafafa;padding:12px 12px 14px;transform:rotate(${rot}deg);box-shadow:0 16px 44px rgba(0,0,0,0.55),0 3px 10px rgba(0,0,0,0.3);"><img src="${src}" style="width:${PR_W}px;height:${PR_H}px;object-fit:cover;object-position:center top;display:block;"/></div>`
 const prints = () => {
-  const lay = [[96, 1310, -6], [408, 1288, 2.5], [720, 1316, -3]]
+  const lay = [[70, 1100, -6], [395, 1215, 2.5], [730, 1290, -3]]   // step down left → right
   return STRIP.map((f, i) => pr(enc(f), lay[i][0], lay[i][1], lay[i][2])).join('')
 }
 
