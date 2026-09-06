@@ -7,15 +7,15 @@
 .heading > p:last-child { font-size: 13px; line-height: 1.5; color: #62665c; margin-top: 10px; max-width: 360px; }
 .eyebrow { font-size: 9px; text-transform: uppercase; letter-spacing: .13em; color: #62665c; margin-bottom: 10px; }
 .footnote { font-size: 10px; line-height: 1.5; text-align: center; color: #727668; margin: 12px 0 0; }
-.cta { margin: 26px 0 0; line-height: 1; display: flex; align-items: baseline; flex-wrap: wrap; column-gap: 12px; row-gap: 6px; }
-.cta strong { display: inline-block; font-size: clamp(40px, 12.5vw, 56px); font-weight: 600; letter-spacing: -.06em; }
-.cta span { display: inline-block; font-size: clamp(19px, 5.8vw, 26px); font-weight: 500; letter-spacing: -.04em; }
-.ctaNote { font-size: clamp(19px, 5.6vw, 23px); font-weight: 600; letter-spacing: -.035em; line-height: 1.2; color: #252720; margin-top: 18px; }
-.ctaWhy { font-size: 14px; line-height: 1.45; color: #5d6255; margin-top: 8px; }
+.cta { margin: 22px 0 0; line-height: 1; display: flex; align-items: baseline; flex-wrap: wrap; column-gap: 14px; row-gap: 6px; }
+.cta strong { display: inline-block; font-size: clamp(38px, 11.5vw, 46px); font-weight: 600; letter-spacing: -.045em; }
+.cta span { display: inline-block; font-size: clamp(17px, 5vw, 20px); font-weight: 500; letter-spacing: -.015em; color: #4d5147; }
+.ctaNote { font-size: 16px; line-height: 1.45; letter-spacing: -.01em; color: #4d5147; margin-top: 12px; max-width: 420px; }
+.ctaNote strong { font-weight: 600; color: #252720; }
 .progress { height: 2px; background: #dddfd5; margin-top: 16px; }
 .progress span { display: block; height: 100%; background: #3c513a; transition: width .2s ease; }
-.segments { display: flex; gap: 5px; margin-top: 22px; }
-.segments i { flex: 1; height: 4px; border-radius: 2px; background: #dddfd5; transition: background .2s ease; }
+.segments { display: flex; gap: 4px; margin-top: 18px; }
+.segments i { flex: 1; height: 3px; border-radius: 2px; background: #d0d3c8; transition: background .2s ease; }
 .segments i.segmentOn { background: #35472f; }
 .choiceGrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; margin-top: 12px; outline: none; }
 .choice { position: relative; aspect-ratio: 4 / 5; overflow: hidden; background: #deded6; border-radius: 4px; touch-action: manipulation; }
