@@ -1,9 +1,13 @@
-.boardSummary { margin-bottom: 26px; }
-.filmstrip { display: flex; gap: 6px; overflow-x: auto; padding-bottom: 6px; }
-.filmstrip img { width: 75px; height: 95px; border-radius: 3px; object-fit: cover; flex-shrink: 0; }
+.signupCta { margin: 26px 0 16px; }
+.signupCta p { font-size: 15px; line-height: 1.45; color: #3f4438; margin-top: 12px; max-width: 360px; }
+.boardSummary { margin-bottom: 22px; }
+.filmstrip { display: flex; gap: 5px; overflow-x: auto; padding-bottom: 4px; }
+.filmstrip img { width: 56px; height: 70px; border-radius: 3px; object-fit: cover; flex-shrink: 0; }
 .boardActions { display: flex; justify-content: space-between; align-items: center; margin-top: 2px; }
 .back { padding-left: 0; }
-.form { display: flex; flex-direction: column; gap: 25px; padding-bottom: 24px; }
+.form { display: flex; flex-direction: column; gap: 25px; padding-bottom: 8px; }
+.submitBar { position: sticky; bottom: 0; margin: 0 -18px; padding: 10px 18px max(14px, env(safe-area-inset-bottom)); background: linear-gradient(rgba(245,243,238,0), #f5f3ee 40%); }
+.submitBar button { box-shadow: 0 6px 18px rgba(53,71,47,.28); }
 .form legend, .field { display: block; font-size: 13px; font-weight: 500; }
 .field > span { color: #79816f; font-size: 10px; font-weight: 400; margin-left: 5px; }
 .field input, .field textarea { display: block; background: #fff; border: 1px solid #d3d7cd; border-radius: 4px; width: 100%; padding: 14px 12px; font-size: 16px; font-weight: 400; margin-top: 9px; outline-offset: 3px; }

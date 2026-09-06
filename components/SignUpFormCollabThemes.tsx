@@ -84,7 +84,9 @@ export default function SignUpFormCollabThemes({ selection, onBack, onRestart }:
   return <section className={styles.page}><div className={styles.shell}>
     <div className={styles.topbar}><a href="/" className={styles.wordmark}>Aidan Torrence</a><span>Almaty · Sept 7–9</span></div>
     {!selection ? <div className={styles.heading}><a href="/choose-your-theme" className={styles.primary} style={{ marginTop: 24 }}>Choose your photos <span>↗</span></a></div> : <>
-      <div className={styles.heading}><h1>{done ? 'Got it.' : 'Let’s shoot in Almaty.'}</h1>{done && <p>I’ll message you to plan the shoot.</p>}</div>
+      {done
+        ? <div className={styles.heading}><h1>Got it.</h1><p>I’ll message you to plan the shoot.</p></div>
+        : <div className={form.signupCta}><h1 className={styles.cta}><strong>Now sign up.</strong></h1><p>Your picks are saved. Fill this in and I’ll message you.</p></div>}
       <div className={form.boardSummary}>
         <div className={form.filmstrip}>{images.map(image => <img src={image.src} alt={image.alt} key={image.id} />)}</div>
         {!done && (onBack || onRestart) && <div className={form.boardActions}>{onBack && <button type="button" className={`${styles.textButton} ${form.back}`} onClick={onBack}>← Back</button>}{onRestart && <button type="button" className={styles.textButton} onClick={onRestart}>Start over</button>}</div>}
@@ -96,7 +98,7 @@ export default function SignUpFormCollabThemes({ selection, onBack, onRestart }:
         <div><label className={form.field} htmlFor="model-photos">Photos of you <span>up to 3</span></label><div className={form.uploads}>{photos.map((photo, index) => <div key={photo}><img src={photo} alt={`Your photo ${index + 1}`} /><button type="button" aria-label={`Remove your photo ${index + 1}`} disabled={processing || saving} onClick={() => setPhotos(previous => previous.filter((_, i) => i !== index))}>×</button></div>)}</div><input id="model-photos" type="file" accept="image/*,.heic,.heif" multiple disabled={processing || saving || photos.length >= 3} onChange={addPhotos} className={form.fileInput} />{processing && <p role="status" className={form.hint}>Adding your photos…</p>}</div>
         <div className={styles.srOnly} aria-hidden="true"><label>Company<input name="company" tabIndex={-1} autoComplete="off" /></label></div>
         {error && <p role="alert" className={form.error}>{error}</p>}
-        <button type="submit" disabled={saving || processing} className={styles.primary}>{saving ? 'Signing up…' : processing ? 'Adding photos…' : 'Sign up'}<span aria-hidden="true">↗</span></button>
+        <div className={form.submitBar}><button type="submit" disabled={saving || processing} className={styles.primary}>{saving ? 'Signing up…' : processing ? 'Adding photos…' : 'Sign up'}<span aria-hidden="true">↗</span></button></div>
       </form>}
     </>}
   </div></section>
