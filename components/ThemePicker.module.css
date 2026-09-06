@@ -7,26 +7,23 @@
 .heading > p:last-child { font-size: 13px; line-height: 1.5; color: #62665c; margin-top: 10px; max-width: 360px; }
 .eyebrow { font-size: 9px; text-transform: uppercase; letter-spacing: .13em; color: #62665c; margin-bottom: 10px; }
 .footnote { font-size: 10px; line-height: 1.5; text-align: center; color: #727668; margin: 12px 0 0; }
-.cta { margin: 18px 0 0; line-height: 1; }
-.cta strong { display: block; font-size: clamp(36px, 11vw, 48px); font-weight: 600; letter-spacing: -.06em; }
-.cta span { display: block; font-size: clamp(18px, 5.4vw, 24px); font-weight: 500; letter-spacing: -.04em; margin-top: 5px; }
-.ctaNote { font-size: clamp(16px, 4.6vw, 19px); font-weight: 600; letter-spacing: -.03em; color: #252720; margin-top: 10px; }
-.progress { height: 2px; background: #dddfd5; margin-top: 12px; }
+.cta { margin: 26px 0 0; line-height: 1; }
+.cta strong { display: block; font-size: clamp(40px, 12.5vw, 56px); font-weight: 600; letter-spacing: -.06em; }
+.cta span { display: block; font-size: clamp(19px, 5.8vw, 26px); font-weight: 500; letter-spacing: -.04em; margin-top: 6px; }
+.ctaNote { font-size: clamp(17px, 4.9vw, 20px); font-weight: 600; letter-spacing: -.03em; color: #252720; margin-top: 14px; }
+.progress { height: 2px; background: #dddfd5; margin-top: 16px; }
 .progress span { display: block; height: 100%; background: #3c513a; transition: width .2s ease; }
-.instruction { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-top: 14px; scroll-margin-top: 10px; }
+.instruction { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-top: 18px; }
 .instruction strong { font-size: clamp(17px, 4.8vw, 20px); font-weight: 600; letter-spacing: -.035em; line-height: 1.2; }
 .instruction span { flex: 0 0 auto; font-size: 12px; font-weight: 500; color: #35472f; border: 1px solid #b9c2ad; border-radius: 999px; padding: 4px 10px; }
-@keyframes enter { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
-.choiceGrid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 12px; outline: none; animation: enter .32s cubic-bezier(.2,.7,.2,1) both; }
-.choice { position: relative; aspect-ratio: 4 / 5; overflow: hidden; background: #e6e5de; border-radius: 4px; touch-action: manipulation; transition: opacity .22s ease, transform .22s ease; }
-.choiceGrid[data-leaving] .choice:not(.chosen) { opacity: .3; transform: scale(.97); }
-.choiceGrid[data-leaving] .choice.chosen { transform: scale(1.02); }
-.choice img { width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity .35s ease; }
-.choice img.loaded { opacity: 1; }
+.choiceGrid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 12px; outline: none; }
+.choice { position: relative; aspect-ratio: 4 / 5; overflow: hidden; background: #deded6; border-radius: 4px; touch-action: manipulation; }
+.choice img { width: 100%; height: 100%; object-fit: cover; }
 .choice::after { content: ''; position: absolute; top: 10px; right: 10px; width: 26px; height: 26px; border-radius: 50%; border: 2px solid #fff; background: rgba(255,255,255,.18); box-shadow: 0 0 0 1px rgba(0,0,0,.28), 0 1px 4px rgba(0,0,0,.25); }
 .choice.chosen::after { display: none; }
 .choice:active { transform: scale(.98); }
-
+@keyframes nudge { 0%, 100% { transform: scale(1); } 50% { transform: scale(.965); } }
+.choiceGrid[data-round="1"] .choice { animation: nudge .8s ease .6s 1; }
 .choice.chosen { outline: 3px solid #8eaa71; outline-offset: -3px; }
 .check { position: absolute; top: 10px; right: 10px; display: grid; place-items: center; border-radius: 50%; background: #eef4dc; color: #2f422b; width: 32px; height: 32px; }
 .pickerControls { display: flex; justify-content: space-between; margin: 4px 0 3px; }
@@ -42,4 +39,4 @@
 .reviewActions { margin-top: 24px; display: flex; flex-direction: column; align-items: center; }
 .srOnly { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; }
 @media (max-height: 730px) { .shell { padding-top: 14px; } }
-@media (prefers-reduced-motion: reduce) { .progress span, .choice, .choice img { transition: none; } .choiceGrid { animation: none; } }
+@media (prefers-reduced-motion: reduce) { .progress span { transition: none; } .choiceGrid[data-round="1"] .choice { animation: none; } }
