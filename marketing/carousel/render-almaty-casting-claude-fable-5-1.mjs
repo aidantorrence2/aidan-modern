@@ -41,10 +41,8 @@ function buildSlides({ name, dates }) {
   return [{
     name: '01-callout', html: frame(`
       <div style="position:absolute;top:260px;left:90px;right:90px;text-align:center;">
-        ${line(lower)}
-        ${line('looking for models', 66, 1, 90)}
-        ${line('tfp collaboration', 66, 1, 90)}
-        ${line(dates, 66, 1, 90)}
+        ${line(`hi, i'm in ${lower}.`)}
+        ${line(`looking for models<br/>for tfp collabs ${dates}`, 66, 1, 90)}
         ${line('dm me if interested', 66, 1, 90)}
         ${line('share 🙂', 66, 1, 90)}
       </div>
