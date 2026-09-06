@@ -25,6 +25,14 @@ const FONTCSS = ''
 
 const grain = (o = 0.05) => `<div style="position:absolute;inset:0;pointer-events:none;opacity:${o};mix-blend-mode:soft-light;background-image:radial-gradient(circle at 14% 18%,rgba(255,255,255,0.5),transparent 17%),radial-gradient(circle at 84% 12%,rgba(255,255,255,0.28),transparent 15%),repeating-linear-gradient(0deg,rgba(255,255,255,0.08) 0 1px,transparent 1px 4px);"></div>`
 
+// three matted film prints laid loosely along the bottom, each tilted a touch
+const PR_W = 240, PR_H = 360
+const pr = (src, l, t, rot) => `<div style="position:absolute;left:${l}px;top:${t}px;width:${PR_W + 24}px;height:${PR_H + 26}px;background:#fafafa;padding:12px 12px 14px;transform:rotate(${rot}deg);box-shadow:0 16px 44px rgba(0,0,0,0.55),0 3px 10px rgba(0,0,0,0.3);"><img src="${src}" style="width:${PR_W}px;height:${PR_H}px;object-fit:cover;object-position:center top;display:block;"/></div>`
+const prints = () => {
+  const lay = [[96, 1310, -6], [408, 1288, 2.5], [720, 1316, -3]]
+  return STRIP.map((f, i) => pr(enc(f), lay[i][0], lay[i][1], lay[i][2])).join('')
+}
+
 function buildSlides({ name, dates }) {
   const lower = name.toLowerCase()
   const frame = inner => `<div style="width:1080px;height:1920px;position:relative;overflow:hidden;background:#000;">${inner}</div>`
@@ -32,7 +40,7 @@ function buildSlides({ name, dates }) {
   const line = (t, size = 66, dim = 1, mt = 0) => `<p style="font-family:${SS};font-size:${size}px;font-weight:500;color:rgba(255,255,255,${dim});margin:${mt}px 0 0;line-height:1.3;">${t}</p>`
   return [{
     name: '01-callout', html: frame(`
-      <div style="position:absolute;top:300px;left:90px;right:90px;text-align:center;">
+      <div style="position:absolute;top:260px;left:90px;right:90px;text-align:center;">
         ${line(lower)}
         ${line('looking for models', 66, 1, 90)}
         ${line('tfp collaboration', 66, 1, 90)}
@@ -40,9 +48,7 @@ function buildSlides({ name, dates }) {
         ${line('dm me if interested', 66, 1, 90)}
         ${line('share 🙂', 66, 1, 90)}
       </div>
-      <div style="position:absolute;top:1330px;left:0;right:0;display:flex;justify-content:center;gap:30px;">
-        ${STRIP.map(f => `<img src="${enc(f)}" style="width:214px;height:320px;object-fit:cover;object-position:center top;display:block;border-radius:6px;"/>`).join('')}
-      </div>
+      ${prints()}
     `)
   }]
 }
