@@ -10,9 +10,9 @@ const source = fs.readFileSync(path.join(root, 'lib/themePicker.ts'), 'utf8')
 const compiled = ts.transpileModule(source, { compilerOptions: { module: ts.ModuleKind.CommonJS, esModuleInterop: true, target: ts.ScriptTarget.ES2022 } }).outputText
 const module = { exports: {} }
 new Function('require', 'module', 'exports', compiled)(name => name.startsWith('@/data/') ? require(path.join(root, name.slice(2))) : require(name), module, module.exports)
-const { THEME_IMAGES, makeDeck, parseThemeSelection, moodboardEntries, boardPath, selectionFromQuery } = module.exports
+const { THEME_IMAGES, MAX_PICKS, ROUNDS, makeDeck, parseThemeSelection, moodboardEntries, boardPath, selectionFromQuery } = module.exports
 const total = THEME_IMAGES.length
-assert.ok(total >= 52, `need at least 52 images for 13 rounds of 4, got ${total}`)
+assert.ok(total >= MAX_PICKS * 4 && ROUNDS >= MAX_PICKS, `need at least ${MAX_PICKS * 4} images, got ${total}`)
 assert.equal(new Set(THEME_IMAGES.map(image => image.id)).size, total)
 assert.equal(new Set(THEME_IMAGES.map(image => image.src)).size, total)
 for (const image of THEME_IMAGES) {
@@ -26,23 +26,23 @@ for (const theme of ['any', 'mountain-park', 'street', 'indoor', 'road-trip']) {
     assert.equal(new Set(deck).size, total)
     assert.deepEqual(deck, makeDeck(theme, seed))
     const picks = []
-    for (let round = 0; round < 13; round++) {
+    for (let round = 0; round < ROUNDS; round++) {
       const choices = deck.slice(round * 4, round * 4 + 4)
       assert.equal(choices.length, 4)
-      picks.push(choices[0])
+      if (round < MAX_PICKS) picks.push(choices[0])
     }
-    assert.equal(new Set(picks).size, 13)
+    assert.equal(new Set(picks).size, MAX_PICKS)
     const selection = parseThemeSelection({ theme, imageIds: picks })
     assert.ok(selection)
     const query = Object.fromEntries(new URL(boardPath(selection), 'https://example.com').searchParams)
     assert.deepEqual(selectionFromQuery(query), selection)
-    assert.equal(moodboardEntries(selection).filter(line => line.startsWith('Reference: ')).length, 13)
+    assert.equal(moodboardEntries(selection).filter(line => line.startsWith('Reference: ')).length, MAX_PICKS)
   }
 }
 const first = THEME_IMAGES[0].id
 for (const input of [null, {}, { theme: 'invalid', imageIds: [first] }, { theme: 'any', imageIds: [] }, { theme: 'any', imageIds: ['not-an-image'] }, { theme: 'any', imageIds: [first, first] }, { theme: 'any', imageIds: [first], suggestedUrl: 'javascript:alert(1)' }, { theme: 'any', imageIds: [first], suggestedUrl: 'https://user:password@example.com' }]) assert.equal(parseThemeSelection(input), null)
 assert.ok(parseThemeSelection({ theme: 'any', imageIds: [first], suggestedUrl: 'https://www.pinterest.com/pin/533958099593582289/' }))
-console.log(`PASS: ${total} assets, 4 choices in every round, deterministic deck, no duplicate picks, share-link roundtrip, input validation.`)
+console.log(`PASS: ${total} assets, ${ROUNDS} rounds of 4, ${MAX_PICKS} picks to finish, deterministic deck, no duplicate picks, share-link roundtrip, input validation.`)
 
 if (process.argv.includes('--database-canary')) {
   // Local server only, started with SLACK_BOOKING_WEBHOOK='' to suppress

@@ -2,7 +2,7 @@
 /* eslint-disable @next/next/no-img-element -- Library files are pre-sized; the next round preloads these exact URLs. */
 
 import { useEffect, useRef, useState } from 'react'
-import { boardPath, imagesForIds, isStartingTheme, makeDeck, MAX_PICKS, PICKER_STORAGE_KEY, THEMES, themeLabel, type StartingTheme } from '@/lib/themePicker'
+import { boardPath, imagesForIds, isStartingTheme, makeDeck, MAX_PICKS, PICKER_STORAGE_KEY, ROUNDS, THEMES, themeLabel, type StartingTheme } from '@/lib/themePicker'
 import { initPageAnalytics, track } from '@/lib/track'
 import styles from './ThemePicker.module.css'
 
@@ -22,7 +22,7 @@ export default function ThemePicker() {
   const selectedIds = session?.choices.filter((id): id is string => !!id) || []
   const selected = imagesForIds(selectedIds)
   const options = imagesForIds(deck.slice(round * 4, round * 4 + 4))
-  const complete = round >= MAX_PICKS
+  const complete = selectedIds.length >= MAX_PICKS || round >= ROUNDS
   const board = { theme: session?.theme || 'any' as StartingTheme, imageIds: selectedIds }
 
   useEffect(() => {
@@ -30,7 +30,7 @@ export default function ThemePicker() {
     try {
       const saved = JSON.parse(localStorage.getItem(PICKER_STORAGE_KEY) || 'null') as Session | null
       if (saved?.version === 1 && isStartingTheme(saved.theme) && Number.isInteger(saved.seed) &&
-        Array.isArray(saved.choices) && saved.choices.length <= MAX_PICKS && Date.now() - saved.updatedAt < TTL) {
+        Array.isArray(saved.choices) && saved.choices.length <= ROUNDS && Date.now() - saved.updatedAt < TTL) {
         const savedDeck = makeDeck(saved.theme, saved.seed)
         if (saved.choices.every((id, i) => id === null || savedDeck.slice(i * 4, i * 4 + 4).includes(id))) setSession(saved)
       }
@@ -67,10 +67,18 @@ export default function ThemePicker() {
     lock.current = true
     setFlash(id)
     track(id ? 'moodboard_image_picked' : 'moodboard_round_skipped', { round: round + 1, image_id: id, theme: session.theme })
+    const next: Session = { ...session, choices: [...session.choices, id], updatedAt: Date.now() }
+    const nextIds = next.choices.filter((choice): choice is string => !!choice)
     timer.current = setTimeout(() => {
-      setSession(current => current ? { ...current, choices: [...current.choices, id], updatedAt: Date.now() } : current)
+      setSession(next)
       setFlash(null)
       lock.current = false
+      if (nextIds.length >= MAX_PICKS) {
+        // Fifth photo chosen: straight into the signup form, no review step.
+        try { localStorage.setItem(PICKER_STORAGE_KEY, JSON.stringify(next)) } catch {}
+        window.location.assign(boardPath({ theme: next.theme, imageIds: nextIds }, '/sign-up-collab-themes'))
+        return
+      }
       gridRef.current?.focus({ preventScroll: true })
     }, window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : 180)
   }
@@ -105,17 +113,17 @@ export default function ThemePicker() {
             <button className={styles.textButton} onClick={() => { setSession(null); setReview(false) }}>Start over</button>
           </div>
         </> : <>
-          <div className={styles.pickerHeading}><div><p className={styles.eyebrow}>{themeLabel(session.theme)} · {round + 1} / {MAX_PICKS}</p><h1>Which one feels like you?</h1><p>Tap one. We’ll save it and show you four more.</p></div><button className={styles.counter} onClick={() => setReview(true)} aria-label={`Review moodboard, ${selected.length} ${selected.length === 1 ? 'photo' : 'photos'} saved`}>{selected.length}<span>saved</span></button></div>
-          <div className={styles.progress} aria-hidden="true"><span style={{ width: `${round / MAX_PICKS * 100}%` }} /></div>
+          <div className={styles.pickerHeading}><div><p className={styles.eyebrow}>{themeLabel(session.theme)} · {Math.min(selected.length + 1, MAX_PICKS)} / {MAX_PICKS}</p><h1>Which one feels like you?</h1><p>Tap one. We’ll save it and show you four more.</p></div><button className={styles.counter} onClick={() => setReview(true)} aria-label={`Review moodboard, ${selected.length} ${selected.length === 1 ? 'photo' : 'photos'} saved`}>{selected.length}<span>saved</span></button></div>
+          <div className={styles.progress} aria-hidden="true"><span style={{ width: `${selected.length / MAX_PICKS * 100}%` }} /></div>
           <div className={styles.choiceGrid} ref={gridRef} tabIndex={-1} aria-label={`Choose one photo, round ${round + 1}`}>
             {options.map(image => <button key={image.id} className={`${styles.choice} ${flash === image.id ? styles.chosen : ''}`} onClick={() => pick(image.id)} aria-label={`Choose ${image.alt}`}>
               <img src={image.src} alt={image.alt} draggable={false} />{flash === image.id && <span className={styles.check} aria-hidden="true">✓</span>}
             </button>)}
           </div>
-          <p className={styles.srOnly} role="status" aria-live="polite">Round {round + 1} of {MAX_PICKS}. {selected.length} photos saved.</p>
+          <p className={styles.srOnly} role="status" aria-live="polite">Round {round + 1}. {selected.length} of {MAX_PICKS} photos saved.</p>
           <div className={styles.pickerControls}><button className={styles.textButton} onClick={round ? undo : () => setSession(null)}>{round ? '← Undo last' : '← Themes'}</button><button className={styles.textButton} onClick={() => pick(null)}>Skip these four →</button></div>
-          <button className={styles.primary} disabled={!selected.length} onClick={() => setReview(true)}>{selected.length ? `Use my ${selected.length} ${selected.length === 1 ? 'pick' : 'picks'}` : 'Pick a photo to begin'}<span aria-hidden="true">↗</span></button>
-          <p className={styles.footnote}>Keep picking, or finish whenever it feels right.</p>
+          {selected.length ? <a className={styles.primary} href={boardPath(board, '/sign-up-collab-themes')}>Use my {selected.length} {selected.length === 1 ? 'pick' : 'picks'}<span aria-hidden="true">↗</span></a> : <button className={styles.primary} disabled>Pick a photo to begin<span aria-hidden="true">↗</span></button>}
+          <p className={styles.footnote}>Pick {MAX_PICKS} and you’re through to the signup.</p>
         </>}
       </div>
     </section>

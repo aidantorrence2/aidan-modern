@@ -7,7 +7,9 @@ export type ThemeImage = { id: string; theme: string; src: string; alt: string; 
 export type ThemeSelection = { theme: StartingTheme; imageIds: string[]; suggestedUrl?: string }
 export const THEMES = themeData
 export const THEME_IMAGES: ThemeImage[] = imageData
-export const MAX_PICKS = 13
+export const MAX_PICKS = 5
+// Rounds of four available in the deck; skips consume rounds without consuming picks.
+export const ROUNDS = Math.floor(imageData.length / 4)
 export const PICKER_STORAGE_KEY = 'aidan:theme-picker:v2'
 export const IMAGE_BY_ID = new Map(THEME_IMAGES.map(image => [image.id, image]))
 
