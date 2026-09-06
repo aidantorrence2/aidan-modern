@@ -10,6 +10,10 @@ const CITY = { name: 'Almaty', slug: 'almaty', dates: 'sep 7-9' }
 const TAG = 'claude-fable-5-1'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
+const IMG = '/Users/aidantorrence/Documents/aidan-modern/public/images'
+const enc = p => 'data:image/jpeg;base64,' + fs.readFileSync(path.join(IMG, p)).toString('base64')
+// bottom row, left → right (order as asked: last, middle, first of the picked set)
+const STRIP = ['large/r1-05460-0022.jpg', 'nature/000042-2.jpg', 'faves/000024-3.jpg']
 
 const SS = "-apple-system, 'Helvetica Neue', Helvetica, Arial, sans-serif"
 
@@ -28,13 +32,16 @@ function buildSlides({ name, dates }) {
   const line = (t, size = 66, dim = 1, mt = 0) => `<p style="font-family:${SS};font-size:${size}px;font-weight:500;color:rgba(255,255,255,${dim});margin:${mt}px 0 0;line-height:1.3;">${t}</p>`
   return [{
     name: '01-callout', html: frame(`
-      <div style="position:absolute;top:50%;left:90px;right:90px;transform:translateY(-50%);text-align:center;">
+      <div style="position:absolute;top:300px;left:90px;right:90px;text-align:center;">
         ${line(lower)}
         ${line('looking for models', 66, 1, 90)}
         ${line('tfp collaboration', 66, 1, 90)}
         ${line(dates, 66, 1, 90)}
         ${line('dm me if interested', 66, 1, 90)}
         ${line('share 🙂', 66, 1, 90)}
+      </div>
+      <div style="position:absolute;top:1330px;left:0;right:0;display:flex;justify-content:center;gap:30px;">
+        ${STRIP.map(f => `<img src="${enc(f)}" style="width:214px;height:320px;object-fit:cover;object-position:center top;display:block;border-radius:6px;"/>`).join('')}
       </div>
     `)
   }]
