@@ -11,7 +11,6 @@ import form from './ThemeSignup.module.css'
 export default function SignUpFormCollabThemes({ selection, onBack, onRestart }: { selection: ThemeSelection | null; onBack?: () => void; onRestart?: () => void }) {
   const [channel, setChannel] = useState<'whatsapp' | 'instagram'>('whatsapp')
   const [contact, setContact] = useState('')
-  const [dates, setDates] = useState<string[]>([])
   const [notes, setNotes] = useState('')
   const [photos, setPhotos] = useState<string[]>([])
   const [processing, setProcessing] = useState(false)
@@ -56,7 +55,6 @@ export default function SignUpFormCollabThemes({ selection, onBack, onRestart }:
       value = value.replace(/^@/, '')
       if (!/^[a-zA-Z0-9._]{1,30}$/.test(value)) { setError('Enter your Instagram username, without a link.'); return }
     }
-    if (!dates.length) { setError('Choose the dates that work for you.'); return }
     if (!photos.length) { setError('Add at least one photo of you.'); return }
     submitting.current = true; setSaving(true); setError('')
     track('submit_attempt', { photos: photos.length, picks: images.length, channel })
@@ -65,7 +63,7 @@ export default function SignUpFormCollabThemes({ selection, onBack, onRestart }:
         method: 'POST', headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           city: 'Almaty', contactMethod: channel, contact: value, themeSelection: chosen,
-          moodboard: ['Collab sign-up', 'Location: Almaty', `Available: ${dates.join(', ')} September 2026`, ...(notes.trim() ? [`Notes: ${notes.trim()}`] : [])],
+          moodboard: ['Collab sign-up', 'Location: Almaty', ...(notes.trim() ? [`Notes: ${notes.trim()}`] : [])],
           photos,
         }),
       })
@@ -93,7 +91,6 @@ export default function SignUpFormCollabThemes({ selection, onBack, onRestart }:
       </div>
       {done ? <div className={styles.reviewActions}><a className={styles.textButton} href="https://www.instagram.com/madebyaidan" target="_blank" rel="noreferrer">@madebyaidan</a></div> : <form className={form.form} onSubmit={submit}>
         <fieldset><legend>Where should I message you?</legend><div className={form.channels}>{(['whatsapp', 'instagram'] as const).map(item => <button type="button" key={item} aria-pressed={channel === item} onClick={() => { setChannel(item); setContact(''); setError('') }}>{item === 'whatsapp' ? 'WhatsApp' : 'Instagram'}</button>)}</div><label className={form.field}><span className={styles.srOnly}>{channel === 'whatsapp' ? 'WhatsApp number' : 'Instagram username'}</span><input required type={channel === 'whatsapp' ? 'tel' : 'text'} autoComplete={channel === 'whatsapp' ? 'tel' : 'off'} autoCapitalize="none" maxLength={40} value={contact} onChange={event => setContact(event.target.value)} placeholder={channel === 'whatsapp' ? '+7 701 123 4567' : '@yourusername'} /></label>{channel === 'instagram' && <p className={form.hint}>Please follow <a href="https://www.instagram.com/madebyaidan" target="_blank" rel="noreferrer">@madebyaidan</a> or I won’t be able to message you.</p>}</fieldset>
-        <fieldset><legend>When are you free?</legend><div className={form.dates}>{['8', '9'].map(day => <button type="button" key={day} aria-pressed={dates.includes(day)} onClick={() => setDates(current => current.includes(day) ? current.filter(value => value !== day) : [...current, day].sort())}>Sept {day}</button>)}</div></fieldset>
         <label className={form.field}>Notes <span>optional</span><textarea maxLength={1500} rows={3} value={notes} onChange={event => setNotes(event.target.value)} /></label>
         <div><label className={form.field} htmlFor="model-photos">Photos of you <span>up to 3</span></label><div className={form.uploads}>{photos.map((photo, index) => <div key={photo}><img src={photo} alt={`Your photo ${index + 1}`} /><button type="button" aria-label={`Remove your photo ${index + 1}`} disabled={processing || saving} onClick={() => setPhotos(previous => previous.filter((_, i) => i !== index))}>×</button></div>)}</div><input id="model-photos" type="file" accept="image/*,.heic,.heif" multiple disabled={processing || saving || photos.length >= 3} onChange={addPhotos} className={form.fileInput} />{processing && <p role="status" className={form.hint}>Adding your photos…</p>}</div>
         <div className={styles.srOnly} aria-hidden="true"><label>Company<input name="company" tabIndex={-1} autoComplete="off" /></label></div>
