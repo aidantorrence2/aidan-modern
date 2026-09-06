@@ -105,8 +105,8 @@ export default function ThemePicker() {
           <div className={styles.reviewGrid}>{selected.map(image => <div key={image.id} className={styles.reviewCard}><img src={image.src} alt={image.alt} /><button aria-label={`Remove ${image.alt}`} onClick={() => remove(image.id)}>×</button></div>)}</div>
           <div className={styles.reviewActions}>
             {selected.length > 0 && <a className={styles.primary} href={boardPath(board, '/sign-up-collab-themes')}>Sign up with this moodboard <span>↗</span></a>}
-            <button className={styles.textButton} onClick={() => complete ? undo() : setReview(false)}>{complete ? 'Back to the last four' : 'Keep picking'}</button>
-            <button className={styles.textButton} onClick={() => { setSession(null); setReview(false) }}>Choose a different starting theme</button>
+            {!complete && <button className={styles.textButton} onClick={() => setReview(false)}>Keep picking</button>}
+            <button className={styles.textButton} onClick={() => { setSession(null); setReview(false) }}>Start over</button>
           </div>
         </> : <>
           <div className={styles.pickerHeading}><div><p className={styles.eyebrow}>{themeLabel(session.theme)} · {round + 1} / {MAX_PICKS}</p><h1>Which one feels like you?</h1><p>Tap one. We’ll save it and show you four more.</p></div><button className={styles.counter} onClick={() => setReview(true)} aria-label={`Review moodboard, ${selected.length} ${selected.length === 1 ? 'photo' : 'photos'} saved`}>{selected.length}<span>saved</span></button></div>
