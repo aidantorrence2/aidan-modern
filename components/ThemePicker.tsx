@@ -71,7 +71,7 @@ export default function ThemePicker() {
     setSession(session.done ? { ...session, done: false, updatedAt: Date.now() } : { ...session, choices: session.choices.slice(0, -1), updatedAt: Date.now() })
   }
 
-  const topbar = <div className={styles.topbar}><a href="/" className={styles.wordmark}>Aidan Torrence</a></div>
+  const topbar = <div className={styles.topbar}><a href="/" className={styles.wordmark}>Aidan Torrence</a><span>Sept 8–9</span></div>
 
   if (!session) return <section className={styles.page}><div className={styles.shell}>{topbar}</div></section>
 
@@ -88,7 +88,7 @@ export default function ThemePicker() {
     <section className={styles.page}>
       <div className={styles.shell}>
         {topbar}
-        <h1 className={styles.cta}><strong>Almaty</strong><span>Free photo shoot · Sept 8–9</span></h1>
+        <h1 className={styles.cta}><strong>Almaty</strong><span>Free photo shoot</span></h1>
         <p className={styles.ctaNote}>Pick {MAX_PICKS} photos you’d love to be in.</p>
         <p className={styles.ctaWhy}>I’ll plan your shoot around them. Then you sign up.</p>
         <div className={styles.instruction}>
