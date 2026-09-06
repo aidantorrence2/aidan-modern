@@ -30,10 +30,10 @@ function buildSlides({ name, dates }) {
     name: '01-callout', html: frame(`
       <div style="position:absolute;top:50%;left:90px;right:90px;transform:translateY(-50%);text-align:center;">
         ${line(lower)}
-        ${line('looking for models', 66, 1, 40)}
-        ${line(dates, 66, 1, 40)}
-        ${line('dm me if interested', 66, 1, 40)}
-        ${line('share 🙂', 66, 1, 40)}
+        ${line('looking for models', 66, 1, 90)}
+        ${line(dates, 66, 1, 90)}
+        ${line('dm me if interested', 66, 1, 90)}
+        ${line('share 🙂', 66, 1, 90)}
       </div>
     `)
   }]
