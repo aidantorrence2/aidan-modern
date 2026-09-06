@@ -8,7 +8,7 @@ export type ThemeSelection = { theme: StartingTheme; imageIds: string[]; suggest
 export const THEMES = themeData
 export const THEME_IMAGES: ThemeImage[] = imageData
 export const MAX_PICKS = 5
-export const PER_ROUND = 9
+export const PER_ROUND = 8 // photos per round; the ninth tile is Skip
 // Full rounds available; skips consume rounds without consuming picks.
 export const ROUNDS = Math.floor(imageData.length / PER_ROUND)
 export const PICKER_STORAGE_KEY = 'aidan:theme-picker:v2'

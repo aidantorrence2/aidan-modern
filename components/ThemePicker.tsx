@@ -96,13 +96,12 @@ export default function ThemePicker() {
           {options.map(image => <button key={image.id} className={`${styles.choice} ${flash === image.id ? styles.chosen : ''}`} onClick={() => pick(image.id)} aria-label={`Choose ${image.alt}`}>
             <img src={image.src} alt={image.alt} draggable={false} />{flash === image.id && <span className={styles.check} aria-hidden="true">✓</span>}
           </button>)}
+          <button className={styles.skipTile} onClick={() => pick(null)} aria-label="Skip">Skip<span aria-hidden="true">→</span></button>
         </div>
         <p className={styles.srOnly} role="status" aria-live="polite">Round {round + 1}. {selectedIds.length} of {MAX_PICKS} photos saved.</p>
         <div className={styles.pickerControls}>
           <button className={styles.textButton} onClick={back} disabled={!round}>← Back</button>
-          <button className={styles.textButton} onClick={() => pick(null)}>Skip →</button>
         </div>
-        {selectedIds.length > 0 && <button className={styles.primary} onClick={() => setSession({ ...session, done: true, updatedAt: Date.now() })}>Sign up<span aria-hidden="true">↗</span></button>}
       </div>
     </section>
   )
