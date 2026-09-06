@@ -121,7 +121,7 @@ export default function ThemePicker() {
           <button className={styles.primary} disabled={!selected.length} onClick={() => setReview(true)}>{selected.length ? `Use my ${selected.length} ${selected.length === 1 ? 'pick' : 'picks'}` : 'Pick a photo to begin'}<span aria-hidden="true">↗</span></button>
           <p className={styles.footnote}>Keep picking, or finish whenever it feels right.</p>
         </>}
-        <div className={styles.credits}>Photography by Aidan Torrence · starting references via Pinterest · codex</div>
+        <div className={styles.credits}>Photography by Aidan Torrence · starting references via Pinterest</div>
       </div>
     </section>
   )

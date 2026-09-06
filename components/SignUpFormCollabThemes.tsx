@@ -100,6 +100,6 @@ export default function SignUpFormCollabThemes({ selection }: { selection: Theme
         <p className={styles.footnote}>Your details and moodboard go to Aidan to plan your shoot.</p>
       </form>}
     </>}
-    <div className={styles.credits}>Aidan Torrence · codex</div>
+    <div className={styles.credits}>Aidan Torrence</div>
   </div></section>
 }
