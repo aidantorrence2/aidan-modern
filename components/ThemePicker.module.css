@@ -7,9 +7,9 @@
 .heading > p:last-child { font-size: 13px; line-height: 1.5; color: #62665c; margin-top: 10px; max-width: 360px; }
 .eyebrow { font-size: 9px; text-transform: uppercase; letter-spacing: .13em; color: #62665c; margin-bottom: 10px; }
 .footnote { font-size: 10px; line-height: 1.5; text-align: center; color: #727668; margin: 12px 0 0; }
-.cta { margin: 26px 0 0; line-height: 1; }
-.cta strong { display: block; font-size: clamp(40px, 12.5vw, 56px); font-weight: 600; letter-spacing: -.06em; }
-.cta span { display: block; font-size: clamp(19px, 5.8vw, 26px); font-weight: 500; letter-spacing: -.04em; margin-top: 6px; }
+.cta { margin: 26px 0 0; line-height: 1; display: flex; align-items: baseline; flex-wrap: wrap; column-gap: 12px; row-gap: 6px; }
+.cta strong { display: inline-block; font-size: clamp(40px, 12.5vw, 56px); font-weight: 600; letter-spacing: -.06em; }
+.cta span { display: inline-block; font-size: clamp(19px, 5.8vw, 26px); font-weight: 500; letter-spacing: -.04em; }
 .ctaNote { font-size: clamp(19px, 5.6vw, 23px); font-weight: 600; letter-spacing: -.035em; line-height: 1.2; color: #252720; margin-top: 18px; }
 .ctaWhy { font-size: 14px; line-height: 1.45; color: #5d6255; margin-top: 8px; }
 .progress { height: 2px; background: #dddfd5; margin-top: 16px; }
