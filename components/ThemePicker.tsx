@@ -20,6 +20,7 @@ export default function ThemePicker() {
   const lock = useRef(false)
   const timer = useRef<ReturnType<typeof setTimeout>>()
   const gridRef = useRef<HTMLDivElement>(null)
+  const instructionRef = useRef<HTMLDivElement>(null)
   const rounds = session ? makeRounds(session.seed) : []
   const round = session?.choices.length || 0
   const selectedIds = session?.choices.filter((id): id is string => !!id) || []
@@ -45,6 +46,14 @@ export default function ThemePicker() {
     try { localStorage.setItem(PICKER_STORAGE_KEY, JSON.stringify(session)) } catch {}
   }, [session])
 
+  // When a new round appears while the page is scrolled down to the last photos,
+  // ease back up so the visitor sees the full set (and the instruction) again.
+  useEffect(() => {
+    if (!round || complete) return
+    const top = instructionRef.current?.getBoundingClientRect().top ?? 0
+    if (top < 0) instructionRef.current?.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' })
+  }, [round, complete])
+
   // Warm only the next round's images, not the whole library on mobile.
   useEffect(() => {
     if (!session || complete) return
@@ -63,7 +72,7 @@ export default function ThemePicker() {
       setFlash(null)
       lock.current = false
       gridRef.current?.focus({ preventScroll: true })
-    }, window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : 180)
+    }, window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : 260)
   }
 
   function back() {
@@ -91,10 +100,10 @@ export default function ThemePicker() {
         <h1 className={styles.cta}><strong>Almaty</strong><span>Free photo shoot</span></h1>
         <p className={styles.ctaNote}>Choose the vibe for your shoot.</p>
         <div className={styles.progress} aria-hidden="true"><span style={{ width: `${selectedIds.length / MAX_PICKS * 100}%` }} /></div>
-        <div className={styles.instruction}><strong>Tap the photo closest to your vibe</strong><span>{Math.min(selectedIds.length + 1, MAX_PICKS)} of {MAX_PICKS}</span></div>
-        <div className={styles.choiceGrid} ref={gridRef} tabIndex={-1} data-round={round + 1} aria-label={`Choose one photo, round ${round + 1}`}>
+        <div className={styles.instruction} ref={instructionRef}><strong>Tap the photo closest to your vibe</strong><span>{Math.min(selectedIds.length + 1, MAX_PICKS)} of {MAX_PICKS}</span></div>
+        <div key={round} className={styles.choiceGrid} ref={gridRef} tabIndex={-1} data-leaving={lock.current ? 'true' : undefined} aria-label={`Choose one photo, round ${round + 1}`}>
           {options.map(image => <button key={image.id} className={`${styles.choice} ${flash === image.id ? styles.chosen : ''}`} onClick={() => pick(image.id)} aria-label={`Choose ${image.alt}`}>
-            <img src={image.src} alt={image.alt} draggable={false} />{flash === image.id && <span className={styles.check} aria-hidden="true">✓</span>}
+            <img src={image.src} alt={image.alt} draggable={false} ref={img => { if (img?.complete && img.naturalWidth) img.classList.add(styles.loaded) }} onLoad={event => event.currentTarget.classList.add(styles.loaded)} />{flash === image.id && <span className={styles.check} aria-hidden="true">✓</span>}
           </button>)}
         </div>
         <p className={styles.srOnly} role="status" aria-live="polite">Round {round + 1}. {selectedIds.length} of {MAX_PICKS} photos saved.</p>
