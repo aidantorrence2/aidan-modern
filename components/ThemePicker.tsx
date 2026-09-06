@@ -88,6 +88,8 @@ export default function ThemePicker() {
     <section className={styles.page}>
       <div className={styles.shell}>
         {topbar}
+        <h1 className={styles.cta}><strong>Almaty</strong><span>Free photo shoot</span></h1>
+        <p className={styles.ctaNote}>Choose your preference.</p>
         <div className={styles.progress} aria-hidden="true"><span style={{ width: `${selectedIds.length / MAX_PICKS * 100}%` }} /></div>
         <div className={styles.choiceGrid} ref={gridRef} tabIndex={-1} aria-label={`Choose one photo, round ${round + 1}`}>
           {options.map(image => <button key={image.id} className={`${styles.choice} ${flash === image.id ? styles.chosen : ''}`} onClick={() => pick(image.id)} aria-label={`Choose ${image.alt}`}>
