@@ -6,7 +6,7 @@ import fs from 'fs'
 // ALMATY CASTING CALLOUT — Claude (Fable 5.1) version, run head-to-head with a Codex build.
 // Black story frame, white typed text, informal: the ask in Aidan's own words with the
 // smallest useful additions (what it is + how to reply).
-const CITY = { name: 'Almaty', slug: 'almaty', dates: 'sep 7–9' }
+const CITY = { name: 'Almaty', slug: 'almaty', dates: 'sep 7-9' }
 const TAG = 'claude-fable-5-1'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
@@ -29,9 +29,12 @@ function buildSlides({ name, dates }) {
   return [{
     name: '01-callout', html: frame(`
       <div style="position:absolute;top:50%;left:90px;right:90px;transform:translateY(-50%);text-align:center;">
-        ${line(`hey, i'm looking for models<br/>in ${lower} ${dates}`)}
-        ${line('free film shoot, dm me', 66, 1, 70)}
-        ${line('pls share 🙏', 66, 1, 70)}
+        ${line('hey')}
+        ${line('looking for models', 66, 1, 40)}
+        ${line(lower, 66, 1, 40)}
+        ${line(dates, 66, 1, 40)}
+        ${line('dm me if interested', 66, 1, 40)}
+        ${line('share 🙂', 66, 1, 40)}
       </div>
     `)
   }]
