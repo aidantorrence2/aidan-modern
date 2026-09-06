@@ -10,7 +10,7 @@
 .cta { margin: 26px 0 0; line-height: 1; }
 .cta strong { display: block; font-size: clamp(40px, 12.5vw, 56px); font-weight: 600; letter-spacing: -.06em; }
 .cta span { display: block; font-size: clamp(19px, 5.8vw, 26px); font-weight: 500; letter-spacing: -.04em; margin-top: 6px; }
-.ctaNote { font-size: 13px; color: #62665c; margin-top: 10px; }
+.ctaNote { font-size: clamp(17px, 4.9vw, 20px); font-weight: 600; letter-spacing: -.03em; color: #252720; margin-top: 14px; }
 .progress { height: 2px; background: #dddfd5; margin-top: 16px; }
 .progress span { display: block; height: 100%; background: #3c513a; transition: width .2s ease; }
 .instruction { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-top: 18px; }
