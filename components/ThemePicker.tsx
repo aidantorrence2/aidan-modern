@@ -91,9 +91,7 @@ export default function ThemePicker() {
         <h1 className={styles.cta}><strong>Almaty</strong><span>Free photo shoot</span></h1>
         <p className={styles.ctaNote}>Choose your preferred photo vibe.</p>
         <p className={styles.ctaWhy}>Then we’ll plan a shoot around it.</p>
-        <div className={styles.instruction}>
-          <span className={styles.dots} aria-hidden="true">{Array.from({ length: MAX_PICKS }, (_, i) => <i key={i} className={i < selectedIds.length ? styles.dotOn : undefined} />)}</span>
-        </div>
+        <div className={styles.segments} aria-hidden="true">{Array.from({ length: MAX_PICKS }, (_, i) => <i key={i} className={i < selectedIds.length ? styles.segmentOn : undefined} />)}</div>
         <div className={styles.choiceGrid} ref={gridRef} tabIndex={-1} data-round={round + 1} aria-label={`Choose one photo, round ${round + 1}`}>
           {options.map(image => <button key={image.id} className={`${styles.choice} ${flash === image.id ? styles.chosen : ''}`} onClick={() => pick(image.id)} aria-label={`Choose ${image.alt}`}>
             <img src={image.src} alt={image.alt} draggable={false} />{flash === image.id && <span className={styles.check} aria-hidden="true">✓</span>}
