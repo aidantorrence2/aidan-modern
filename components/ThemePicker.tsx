@@ -89,8 +89,8 @@ export default function ThemePicker() {
       <div className={styles.shell}>
         {topbar}
         <h1 className={styles.cta}><strong>Almaty</strong><span>Free photo shoot</span></h1>
-        <p className={styles.ctaNote}>Pick {MAX_PICKS} photos you’d love to be in.</p>
-        <p className={styles.ctaWhy}>I’ll plan your shoot around them. Then you sign up.</p>
+        <p className={styles.ctaNote}>Choose your preferred photo vibe.</p>
+        <p className={styles.ctaWhy}>Then we’ll plan a shoot around it.</p>
         <div className={styles.instruction}>
           <span className={styles.dots} aria-hidden="true">{Array.from({ length: MAX_PICKS }, (_, i) => <i key={i} className={i < selectedIds.length ? styles.dotOn : undefined} />)}</span>
         </div>
