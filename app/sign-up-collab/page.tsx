@@ -1,17 +1,9 @@
-import SignUpFormCollabV4 from '@/components/SignUpFormCollabV4'
+import ThemePicker from '@/components/ThemePicker'
 
 export const metadata = {
-  title: 'Free Collab Photo Shoot',
-  description:
-    'Sign up for a free collab photo shoot — you keep the edited photos. I will message you with the details.'
+  title: 'Almaty free photo shoot · Aidan Torrence',
+  description: 'Choose the vibe for your shoot, then sign up. Almaty, Sept 8–9.',
+  openGraph: { title: 'Almaty free photo shoot', description: 'Choose the vibe for your shoot, then sign up. Sept 8–9.', images: ['/images/theme-picker/mountain-park-reference.jpg'] },
 }
 
-export default function SignUpCollabPage() {
-  return (
-    <section className="min-h-screen bg-white">
-      {/* Keeps the original analytics path so the funnel is continuous across
-          the v3 → v4 switch; initPageAnalytics tags the version separately. */}
-      <SignUpFormCollabV4 analyticsPath="/sign-up-collab" />
-    </section>
-  )
-}
+export default function ChooseThemePage() { return <ThemePicker /> }

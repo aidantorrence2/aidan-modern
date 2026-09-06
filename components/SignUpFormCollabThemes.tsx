@@ -81,7 +81,7 @@ export default function SignUpFormCollabThemes({ selection, onBack, onRestart }:
 
   return <section className={styles.page}><div className={styles.shell}>
     <div className={styles.topbar}><a href="/" className={styles.wordmark}>Aidan Torrence</a><span>Sept 8–9</span></div>
-    {!selection ? <div className={styles.heading}><a href="/choose-your-theme" className={styles.primary} style={{ marginTop: 24 }}>Choose your photos <span>↗</span></a></div> : <>
+    {!selection ? <div className={styles.heading}><a href="/sign-up-collab" className={styles.primary} style={{ marginTop: 24 }}>Choose your photos <span>↗</span></a></div> : <>
       {done
         ? <div className={styles.heading}><h1>Got it.</h1><p>I’ll message you to plan the shoot.</p></div>
         : <div className={form.signupCta}><h1 className={styles.cta}><strong>Now sign up.</strong></h1><p>Your picks are saved. Fill this in and I’ll message you.</p></div>}

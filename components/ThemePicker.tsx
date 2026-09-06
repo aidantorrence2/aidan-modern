@@ -27,7 +27,7 @@ export default function ThemePicker() {
   const complete = !!session?.done || selectedIds.length >= MAX_PICKS || round >= rounds.length
 
   useEffect(() => {
-    initPageAnalytics('/choose-your-theme', { version: 'v3' })
+    initPageAnalytics('/sign-up-collab', { version: 'picker-v3' })
     let restored: Session | null = null
     try {
       const saved = JSON.parse(localStorage.getItem(PICKER_STORAGE_KEY) || 'null') as Session | null
