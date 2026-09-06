@@ -50,10 +50,14 @@ for (const theme of themes) {
   // Seed reference: the pin's og:image, kept at its existing path.
   const seedDest = path.join(root, 'public', theme.image)
   if (!(await exists(seedDest))) {
-    const html = await (await fetch(theme.source, { headers: { 'User-Agent': UA } })).text()
-    const url = html.match(/<meta[^>]*property="og:image"[^>]*content="([^"]+)"/)?.[1]
+    // Prefer an explicit pinimg URL (theme.imageUrl); fall back to the pin page's og:image.
+    let url = theme.imageUrl
+    if (!url) {
+      const html = await (await fetch(theme.source, { headers: { 'User-Agent': UA } })).text()
+      url = html.match(/<meta[^>]*property="og:image"[^>]*content="([^"]+)"/)?.[1]
+    }
     if (!url?.startsWith('https://i.pinimg.com/')) throw new Error(`No image for ${theme.id}`)
-    if (!(await download([url], tmp))) throw new Error(`Seed download failed: ${theme.id}`)
+    if (!(await download([url, url.replace('/originals/', '/736x/')], tmp))) throw new Error(`Seed download failed: ${theme.id}`)
     optimise(tmp, seedDest)
   }
   library.push({ id: `${theme.id}-reference`, theme: theme.id, src: theme.image, alt: `${theme.label} reference`, source: theme.source, credit: 'Pinterest' })
@@ -71,6 +75,7 @@ for (const theme of themes) {
   }
 }
 await fs.rm(tmp, { force: true })
-if (library.length !== 52) throw new Error(`Expected 52 images, got ${library.length}`)
+const expected = themes.length + themes.reduce((n, theme) => n + (pins[theme.id] || []).length, 0)
+if (library.length !== expected) throw new Error(`Expected ${expected} images, got ${library.length}`)
 await fs.writeFile(path.join(root, 'data/theme-images.json'), JSON.stringify(library, null, 2) + '\n')
 console.log(`Prepared ${library.length} images across ${themes.length} themes.`)

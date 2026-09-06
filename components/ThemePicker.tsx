@@ -2,7 +2,7 @@
 /* eslint-disable @next/next/no-img-element -- Library files are pre-sized; the next round preloads these exact URLs. */
 
 import { useEffect, useRef, useState } from 'react'
-import { boardPath, imagesForIds, isStartingTheme, makeDeck, MAX_PICKS, PICKER_STORAGE_KEY, THEME_IMAGES, THEMES, themeLabel, type StartingTheme } from '@/lib/themePicker'
+import { boardPath, imagesForIds, isStartingTheme, makeDeck, MAX_PICKS, PICKER_STORAGE_KEY, THEMES, themeLabel, type StartingTheme } from '@/lib/themePicker'
 import { initPageAnalytics, track } from '@/lib/track'
 import styles from './ThemePicker.module.css'
 
@@ -90,16 +90,12 @@ export default function ThemePicker() {
       <div className={styles.shell}>
         <div className={styles.topbar}><a href="/" className={styles.wordmark}>Aidan Torrence</a><span>Almaty · Sept 7–9</span></div>
         {!session ? <>
-          <div className={styles.heading}><p className={styles.eyebrow}>Let’s make something together</p><h1>Choose your theme.</h1><p>A starting point for your shoot. Then pick the photos that feel like you.</p></div>
+          <div className={styles.heading}><h1>Choose your theme.</h1></div>
           <div className={styles.startGrid}>
-            {THEMES.map((theme, index) => <button key={theme.id} disabled={!ready} className={styles.startCard} onClick={() => start(theme.id as StartingTheme)}>
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={theme.image} alt={theme.label} loading={index === 0 ? 'eager' : 'lazy'} />
-              <span className={styles.startCaption}><strong>{theme.label}</strong><span>{theme.description}</span></span><span className={styles.arrow} aria-hidden="true">↗</span>
+            {THEMES.map((theme, index) => <button key={theme.id} disabled={!ready} className={styles.startCard} onClick={() => start(theme.id as StartingTheme)} aria-label={theme.label}>
+              <img src={theme.image} alt="" loading={index === 0 ? 'eager' : 'lazy'} />
             </button>)}
-            <button disabled={!ready} className={`${styles.startCard} ${styles.mixCard}`} onClick={() => start('any')}><span className={styles.mixPhotos}>{THEMES.map(theme => <img key={theme.id} src={theme.image} alt="" />)}</span><span className={styles.startCaption}><strong>A bit of everything</strong><span>Let me discover my look.</span></span><span className={styles.arrow} aria-hidden="true">↗</span></button>
           </div>
-          <p className={styles.footnote}>{THEME_IMAGES.length} images to explore · one favourite at a time</p>
         </> : review || complete ? <>
           <div className={styles.heading}><p className={styles.eyebrow}>{themeLabel(session.theme)}</p><h1>Your kind of shoot.</h1><p>{selected.length ? 'These are your references. We’ll plan the shoot around what you love.' : 'Nothing saved yet. Go back and pick a photo you love.'}</p></div>
           <div className={styles.reviewGrid}>{selected.map(image => <div key={image.id} className={styles.reviewCard}><img src={image.src} alt={image.alt} /><button aria-label={`Remove ${image.alt}`} onClick={() => remove(image.id)}>×</button></div>)}</div>

@@ -1,5 +1,31 @@
 [
-  { "id": "mountain-park", "label": "Mountain / park", "description": "Open air, soft light, a little escape.", "image": "/images/theme-picker/mountain-park-reference.jpg", "source": "https://www.pinterest.com/pin/533958099593582289/" },
-  { "id": "street", "label": "Street", "description": "City walks, colour, everyday cinema.", "image": "/images/theme-picker/street-reference.jpg", "source": "https://www.pinterest.com/pin/533958099593582962/" },
-  { "id": "indoor", "label": "Indoor", "description": "Window light, quiet rooms, honest portraits.", "image": "/images/theme-picker/indoor-reference.jpg", "source": "https://www.pinterest.com/pin/533958099592500195/" }
+  {
+    "id": "mountain-park",
+    "label": "Mountain / park",
+    "description": "Open air, soft light, a little escape.",
+    "image": "/images/theme-picker/mountain-park-reference.jpg",
+    "source": "https://www.pinterest.com/pin/533958099593582289/"
+  },
+  {
+    "id": "street",
+    "label": "Street",
+    "description": "City walks, colour, everyday cinema.",
+    "image": "/images/theme-picker/street-reference.jpg",
+    "source": "https://www.pinterest.com/pin/533958099593582962/"
+  },
+  {
+    "id": "indoor",
+    "label": "Indoor",
+    "description": "Window light, quiet rooms, honest portraits.",
+    "image": "/images/theme-picker/indoor-reference.jpg",
+    "source": "https://www.pinterest.com/pin/533958099592500195/"
+  },
+  {
+    "id": "road-trip",
+    "label": "Road trip",
+    "description": "Open roads, old cars, the steppe.",
+    "image": "/images/theme-picker/road-trip-reference.jpg",
+    "source": "https://www.pinterest.com/pin/633389135076263018/",
+    "imageUrl": "https://i.pinimg.com/originals/37/9d/90/379d905a5df4081b1a4dd5fe8b89e257.jpg"
+  }
 ]

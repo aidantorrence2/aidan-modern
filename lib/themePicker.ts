@@ -1,7 +1,7 @@
 import themeData from '@/data/shoot-themes.json'
 import imageData from '@/data/theme-images.json'
 
-export type ThemeId = 'mountain-park' | 'street' | 'indoor'
+export type ThemeId = 'mountain-park' | 'street' | 'indoor' | 'road-trip'
 export type StartingTheme = ThemeId | 'any'
 export type ThemeImage = { id: string; theme: string; src: string; alt: string; source: string; credit: string }
 export type ThemeSelection = { theme: StartingTheme; imageIds: string[]; suggestedUrl?: string }
@@ -51,7 +51,7 @@ export function boardPath(selection: ThemeSelection, path = '/your-moodboard'): 
 }
 
 export function themeLabel(theme: StartingTheme): string {
-  return THEMES.find(item => item.id === theme)?.label || 'A bit of everything'
+  return THEMES.find(item => item.id === theme)?.label || 'Your moodboard'
 }
 
 export function moodboardEntries(selection: ThemeSelection): string[] {

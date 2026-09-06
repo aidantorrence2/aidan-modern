@@ -11,18 +11,19 @@ const compiled = ts.transpileModule(source, { compilerOptions: { module: ts.Modu
 const module = { exports: {} }
 new Function('require', 'module', 'exports', compiled)(name => name.startsWith('@/data/') ? require(path.join(root, name.slice(2))) : require(name), module, module.exports)
 const { THEME_IMAGES, makeDeck, parseThemeSelection, moodboardEntries, boardPath, selectionFromQuery } = module.exports
-assert.equal(THEME_IMAGES.length, 52)
-assert.equal(new Set(THEME_IMAGES.map(image => image.id)).size, 52)
-assert.equal(new Set(THEME_IMAGES.map(image => image.src)).size, 52)
+const total = THEME_IMAGES.length
+assert.ok(total >= 52, `need at least 52 images for 13 rounds of 4, got ${total}`)
+assert.equal(new Set(THEME_IMAGES.map(image => image.id)).size, total)
+assert.equal(new Set(THEME_IMAGES.map(image => image.src)).size, total)
 for (const image of THEME_IMAGES) {
   assert.ok(fs.existsSync(path.join(root, 'public', image.src)), image.src)
   assert.ok(fs.statSync(path.join(root, 'public', image.src)).size < 500_000, image.src)
 }
-for (const theme of ['any', 'mountain-park', 'street', 'indoor']) {
+for (const theme of ['any', 'mountain-park', 'street', 'indoor', 'road-trip']) {
   for (const seed of [0, 1, 42, 0xffffffff]) {
     const deck = makeDeck(theme, seed)
-    assert.equal(deck.length, 52)
-    assert.equal(new Set(deck).size, 52)
+    assert.equal(deck.length, total)
+    assert.equal(new Set(deck).size, total)
     assert.deepEqual(deck, makeDeck(theme, seed))
     const picks = []
     for (let round = 0; round < 13; round++) {
@@ -41,7 +42,7 @@ for (const theme of ['any', 'mountain-park', 'street', 'indoor']) {
 const first = THEME_IMAGES[0].id
 for (const input of [null, {}, { theme: 'invalid', imageIds: [first] }, { theme: 'any', imageIds: [] }, { theme: 'any', imageIds: ['not-an-image'] }, { theme: 'any', imageIds: [first, first] }, { theme: 'any', imageIds: [first], suggestedUrl: 'javascript:alert(1)' }, { theme: 'any', imageIds: [first], suggestedUrl: 'https://user:password@example.com' }]) assert.equal(parseThemeSelection(input), null)
 assert.ok(parseThemeSelection({ theme: 'any', imageIds: [first], suggestedUrl: 'https://www.pinterest.com/pin/533958099593582289/' }))
-console.log('PASS: 52 assets, 4 choices in every round, deterministic deck, no duplicate picks, share-link roundtrip, input validation.')
+console.log(`PASS: ${total} assets, 4 choices in every round, deterministic deck, no duplicate picks, share-link roundtrip, input validation.`)
 
 if (process.argv.includes('--database-canary')) {
   // Local server only, started with SLACK_BOOKING_WEBHOOK='' to suppress
