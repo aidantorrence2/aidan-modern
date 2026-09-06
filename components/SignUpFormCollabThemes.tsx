@@ -23,7 +23,7 @@ export default function SignUpFormCollabThemes({ selection }: { selection: Theme
   const submitting = useRef(false)
   const images = imagesForIds(selection?.imageIds || [])
 
-  useEffect(() => { initPageAnalytics('/sign-up-collab-themes', { version: 'codex-v1' }) }, [])
+  useEffect(() => { initPageAnalytics('/sign-up-collab-themes', { version: 'pinterest-v2' }) }, [])
 
   async function addPhotos(event: React.ChangeEvent<HTMLInputElement>) {
     const input = event.currentTarget
@@ -100,6 +100,5 @@ export default function SignUpFormCollabThemes({ selection }: { selection: Theme
         <p className={styles.footnote}>Your details and moodboard go to Aidan to plan your shoot.</p>
       </form>}
     </>}
-    <div className={styles.credits}>Aidan Torrence</div>
   </div></section>
 }

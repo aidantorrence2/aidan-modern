@@ -26,7 +26,7 @@ export default function ThemePicker() {
   const board = { theme: session?.theme || 'any' as StartingTheme, imageIds: selectedIds }
 
   useEffect(() => {
-    initPageAnalytics('/choose-your-theme', { version: 'codex-v1' })
+    initPageAnalytics('/choose-your-theme', { version: 'pinterest-v2' })
     try {
       const saved = JSON.parse(localStorage.getItem(PICKER_STORAGE_KEY) || 'null') as Session | null
       if (saved?.version === 1 && isStartingTheme(saved.theme) && Number.isInteger(saved.seed) &&
@@ -113,7 +113,7 @@ export default function ThemePicker() {
           <div className={styles.progress} aria-hidden="true"><span style={{ width: `${round / MAX_PICKS * 100}%` }} /></div>
           <div className={styles.choiceGrid} ref={gridRef} tabIndex={-1} aria-label={`Choose one photo, round ${round + 1}`}>
             {options.map(image => <button key={image.id} className={`${styles.choice} ${flash === image.id ? styles.chosen : ''}`} onClick={() => pick(image.id)} aria-label={`Choose ${image.alt}`}>
-              <img src={image.src} alt={image.alt} draggable={false} /><span className={styles.choiceCaption}>{image.alt}</span>{flash === image.id && <span className={styles.check} aria-hidden="true">✓</span>}
+              <img src={image.src} alt={image.alt} draggable={false} />{flash === image.id && <span className={styles.check} aria-hidden="true">✓</span>}
             </button>)}
           </div>
           <p className={styles.srOnly} role="status" aria-live="polite">Round {round + 1} of {MAX_PICKS}. {selected.length} photos saved.</p>
@@ -121,7 +121,6 @@ export default function ThemePicker() {
           <button className={styles.primary} disabled={!selected.length} onClick={() => setReview(true)}>{selected.length ? `Use my ${selected.length} ${selected.length === 1 ? 'pick' : 'picks'}` : 'Pick a photo to begin'}<span aria-hidden="true">↗</span></button>
           <p className={styles.footnote}>Keep picking, or finish whenever it feels right.</p>
         </>}
-        <div className={styles.credits}>Photography by Aidan Torrence · starting references via Pinterest</div>
       </div>
     </section>
   )

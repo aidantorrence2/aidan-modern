@@ -8,7 +8,7 @@ export type ThemeSelection = { theme: StartingTheme; imageIds: string[]; suggest
 export const THEMES = themeData
 export const THEME_IMAGES: ThemeImage[] = imageData
 export const MAX_PICKS = 13
-export const PICKER_STORAGE_KEY = 'aidan:theme-picker:codex:v1'
+export const PICKER_STORAGE_KEY = 'aidan:theme-picker:v2'
 export const IMAGE_BY_ID = new Map(THEME_IMAGES.map(image => [image.id, image]))
 
 export function isStartingTheme(value: unknown): value is StartingTheme {
@@ -56,7 +56,7 @@ export function themeLabel(theme: StartingTheme): string {
 
 export function moodboardEntries(selection: ThemeSelection): string[] {
   return [
-    'Signup flow: theme-picker-codex-v1',
+    'Signup flow: theme-picker-v2',
     `Starting theme: ${themeLabel(selection.theme)}`,
     `Moodboard image IDs: ${selection.imageIds.join(',')}`,
     `View moodboard: https://www.aidantorrence.com${boardPath(selection)}`,
