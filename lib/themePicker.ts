@@ -8,8 +8,9 @@ export type ThemeSelection = { theme: StartingTheme; imageIds: string[]; suggest
 export const THEMES = themeData
 export const THEME_IMAGES: ThemeImage[] = imageData
 export const MAX_PICKS = 5
-// Rounds of four available in the deck; skips consume rounds without consuming picks.
-export const ROUNDS = Math.floor(imageData.length / 4)
+export const PER_ROUND = 6
+// Full rounds available; skips consume rounds without consuming picks.
+export const ROUNDS = Math.floor(imageData.length / PER_ROUND)
 export const PICKER_STORAGE_KEY = 'aidan:theme-picker:v2'
 export const IMAGE_BY_ID = new Map(THEME_IMAGES.map(image => [image.id, image]))
 
@@ -17,6 +18,15 @@ export function isStartingTheme(value: unknown): value is StartingTheme {
   return value === 'any' || THEMES.some(theme => theme.id === value)
 }
 
+// Library lookup, order preserved, unknown ids dropped. No cap: used for rounds.
+export function libraryImages(ids: string[]): ThemeImage[] {
+  return ids.flatMap(id => {
+    const image = IMAGE_BY_ID.get(id)
+    return image ? [image] : []
+  })
+}
+
+// A visitor's selection: de-duplicated and capped at MAX_PICKS.
 export function imagesForIds(ids: string[]): ThemeImage[] {
   return [...new Set(ids)].slice(0, MAX_PICKS).flatMap(id => {
     const image = IMAGE_BY_ID.get(id)
@@ -58,8 +68,8 @@ export function themeLabel(theme: StartingTheme): string {
 
 export function moodboardEntries(selection: ThemeSelection): string[] {
   return [
-    'Signup flow: theme-picker-v2',
-    `Starting theme: ${themeLabel(selection.theme)}`,
+    'Signup flow: theme-picker-v3',
+    ...(selection.theme === 'any' ? [] : [`Starting theme: ${themeLabel(selection.theme)}`]),
     `Moodboard image IDs: ${selection.imageIds.join(',')}`,
     `View moodboard: https://www.aidantorrence.com${boardPath(selection)}`,
     ...imagesForIds(selection.imageIds).map(image => `Reference: ${image.alt} — https://www.aidantorrence.com${image.src}`),
@@ -67,21 +77,31 @@ export function moodboardEntries(selection: ThemeSelection): string[] {
   ]
 }
 
-// A fixed deck per visit gives back/refresh stable rounds. The chosen starting
-// theme comes first; the rest stays available so people can discover a mix.
-export function makeDeck(theme: StartingTheme, seed: number): string[] {
+// Deterministic rounds for a visit (seed), so back/refresh replay the same photos.
+// Each round draws round-robin across the themes from per-theme shuffled queues,
+// so no round is all one style. Only full rounds are returned.
+export function makeRounds(seed: number): string[][] {
   let randomState = seed >>> 0
   const random = () => {
     randomState = (Math.imul(randomState, 1664525) + 1013904223) >>> 0
     return randomState / 4294967296
   }
-  const deck = THEME_IMAGES.map(image => image.id)
-  for (let i = deck.length - 1; i > 0; i--) {
-    const j = Math.floor(random() * (i + 1))
-    ;[deck[i], deck[j]] = [deck[j], deck[i]]
+  const shuffle = <T,>(items: T[]) => {
+    for (let i = items.length - 1; i > 0; i--) {
+      const j = Math.floor(random() * (i + 1))
+      ;[items[i], items[j]] = [items[j], items[i]]
+    }
+    return items
   }
-  return theme === 'any' ? deck : [
-    ...deck.filter(id => IMAGE_BY_ID.get(id)?.theme === theme),
-    ...deck.filter(id => IMAGE_BY_ID.get(id)?.theme !== theme),
-  ]
+  const queues = THEMES.map(theme => shuffle(THEME_IMAGES.filter(image => image.theme === theme.id).map(image => image.id)))
+  const rounds: string[][] = []
+  for (let round = 0; ; round++) {
+    const picks: string[] = []
+    for (let slot = 0; picks.length < PER_ROUND && slot < PER_ROUND * queues.length; slot++) {
+      const next = queues[(round + slot) % queues.length].shift()
+      if (next) picks.push(next)
+    }
+    if (picks.length < PER_ROUND) return rounds
+    rounds.push(shuffle(picks))
+  }
 }

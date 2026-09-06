@@ -2,19 +2,18 @@
 /* eslint-disable @next/next/no-img-element -- Pre-sized references and local upload previews need their original URLs. */
 
 import { useEffect, useRef, useState } from 'react'
-import { boardPath, imagesForIds, parseThemeSelection, themeLabel, type ThemeSelection } from '@/lib/themePicker'
+import { imagesForIds, parseThemeSelection, type ThemeSelection } from '@/lib/themePicker'
 import { fetchUploadTicket, preparePhoto, describePhotoFailures, type PhotoFailure } from '@/lib/signupPhotos'
 import { initPageAnalytics, track, flushNow } from '@/lib/track'
 import styles from './ThemePicker.module.css'
 import form from './ThemeSignup.module.css'
 
-export default function SignUpFormCollabThemes({ selection }: { selection: ThemeSelection | null }) {
+export default function SignUpFormCollabThemes({ selection, onBack }: { selection: ThemeSelection | null; onBack?: () => void }) {
   const [channel, setChannel] = useState<'whatsapp' | 'instagram'>('whatsapp')
   const [contact, setContact] = useState('')
   const [name, setName] = useState('')
   const [dates, setDates] = useState<string[]>([])
   const [notes, setNotes] = useState('')
-  const [suggestedUrl, setSuggestedUrl] = useState('')
   const [photos, setPhotos] = useState<string[]>([])
   const [processing, setProcessing] = useState(false)
   const [saving, setSaving] = useState(false)
@@ -23,7 +22,7 @@ export default function SignUpFormCollabThemes({ selection }: { selection: Theme
   const submitting = useRef(false)
   const images = imagesForIds(selection?.imageIds || [])
 
-  useEffect(() => { initPageAnalytics('/sign-up-collab-themes', { version: 'pinterest-v2' }) }, [])
+  useEffect(() => { initPageAnalytics('/sign-up-collab-themes', { version: 'v3', inline: !!onBack }) }, [onBack])
 
   async function addPhotos(event: React.ChangeEvent<HTMLInputElement>) {
     const input = event.currentTarget
@@ -48,8 +47,8 @@ export default function SignUpFormCollabThemes({ selection }: { selection: Theme
     if (!selection || submitting.current || processing) return
     const data = new FormData(event.currentTarget)
     if (data.get('company')) return
-    const chosen = parseThemeSelection({ ...selection, suggestedUrl: suggestedUrl.trim() })
-    if (!chosen) { setError('Please use a complete http or https link for your moodboard.'); return }
+    const chosen = parseThemeSelection(selection)
+    if (!chosen) { setError('Your picks didn’t come through. Go back and choose again.'); return }
     let value = contact.trim()
     if (channel === 'whatsapp') {
       const digits = value.replace(/\D/g, '').length
@@ -84,20 +83,21 @@ export default function SignUpFormCollabThemes({ selection }: { selection: Theme
 
   return <section className={styles.page}><div className={styles.shell}>
     <div className={styles.topbar}><a href="/" className={styles.wordmark}>Aidan Torrence</a><span>Almaty · Sept 7–9</span></div>
-    {!selection ? <div className={styles.heading}><h1>Let’s start with your moodboard.</h1><p>Pick a few photos you love, then sign up for your collab shoot.</p><a href="/choose-your-theme" className={styles.primary} style={{ marginTop: 24 }}>Choose your theme <span>↗</span></a></div> : <>
-      <div className={styles.heading}><p className={styles.eyebrow}>{done ? 'Signup received' : 'Your moodboard → your shoot'}</p><h1>{done ? 'Let’s make it happen.' : 'Let’s shoot in Almaty.'}</h1><p>{done ? `Your ${images.length} photo references and details are saved. I’ll message you to plan the shoot.` : 'A free collab shoot, planned around you. Leave your details and I’ll message you.'}</p></div>
-      <div className={form.boardSummary}><div className={form.filmstrip}>{images.map(image => <img src={image.src} alt={image.alt} key={image.id} />)}</div><div className={form.boardCaption}><span>{images.length} {images.length === 1 ? 'reference' : 'references'} · {themeLabel(selection.theme)}</span><a href={done ? boardPath(selection) : '/choose-your-theme'}>{done ? 'View moodboard' : 'Edit picks'}</a></div></div>
-      {done ? <div className={styles.reviewActions}><a href={boardPath(selection)} className={styles.primary}>See your moodboard <span>↗</span></a><a className={styles.textButton} href="https://www.instagram.com/madebyaidan" target="_blank" rel="noreferrer">Find me on Instagram · @madebyaidan</a></div> : <form className={form.form} onSubmit={submit}>
-        <label className={form.field}>Your name <span>optional</span><input autoComplete="given-name" maxLength={100} value={name} onChange={event => setName(event.target.value)} placeholder="What should I call you?" /></label>
-        <fieldset><legend>Where should I message you?</legend><div className={form.channels}>{(['whatsapp', 'instagram'] as const).map(item => <button type="button" key={item} aria-pressed={channel === item} onClick={() => { setChannel(item); setContact(''); setError('') }}>{item === 'whatsapp' ? 'WhatsApp' : 'Instagram'}</button>)}</div><label className={form.field}><span className={styles.srOnly}>{channel === 'whatsapp' ? 'WhatsApp number' : 'Instagram username'}</span><input required type={channel === 'whatsapp' ? 'tel' : 'text'} autoComplete={channel === 'whatsapp' ? 'tel' : 'off'} autoCapitalize="none" maxLength={40} value={contact} onChange={event => setContact(event.target.value)} placeholder={channel === 'whatsapp' ? '+7 701 123 4567' : '@yourusername'} /></label>{channel === 'whatsapp' && <p className={form.hint}>Include your country code.</p>}</fieldset>
-        <fieldset><legend>When are you free?</legend><div className={form.dates}>{['7', '8', '9'].map(day => <button type="button" key={day} aria-pressed={dates.includes(day)} onClick={() => setDates(current => current.includes(day) ? current.filter(value => value !== day) : [...current, day].sort())}>Sept {day}</button>)}</div><p className={form.hint}>Choose all that work. We’ll arrange the time together.</p></fieldset>
-        <label className={form.field}>Your own moodboard link <span>optional</span><input type="url" maxLength={2000} value={suggestedUrl} onChange={event => setSuggestedUrl(event.target.value)} placeholder="https://pinterest.com/…" /><p className={form.hint}>Have more inspiration? I’ll save this with your picks.</p></label>
-        <label className={form.field}>Anything you’d love to try? <span>optional</span><textarea maxLength={1500} rows={3} value={notes} onChange={event => setNotes(event.target.value)} placeholder="An outfit, a location, a feeling…" /></label>
-        <div><label className={form.field} htmlFor="model-photos">A few photos of you <span>optional · up to 3</span></label><p className={form.hint}>Simple snapshots are great.</p><div className={form.uploads}>{photos.map((photo, index) => <div key={photo}><img src={photo} alt={`Your photo ${index + 1}`} /><button type="button" aria-label={`Remove your photo ${index + 1}`} disabled={processing || saving} onClick={() => setPhotos(previous => previous.filter((_, i) => i !== index))}>×</button></div>)}</div><input id="model-photos" type="file" accept="image/*,.heic,.heif" multiple disabled={processing || saving || photos.length >= 3} onChange={addPhotos} className={form.fileInput} />{processing && <p role="status" className={form.hint}>Adding your photos…</p>}</div>
+    {!selection ? <div className={styles.heading}><a href="/choose-your-theme" className={styles.primary} style={{ marginTop: 24 }}>Choose your photos <span>↗</span></a></div> : <>
+      <div className={styles.heading}><h1>{done ? 'Got it.' : 'Let’s shoot in Almaty.'}</h1>{done && <p>I’ll message you to plan the shoot.</p>}</div>
+      <div className={form.boardSummary}>
+        <div className={form.filmstrip}>{images.map(image => <img src={image.src} alt={image.alt} key={image.id} />)}</div>
+        {!done && onBack && <button type="button" className={`${styles.textButton} ${form.back}`} onClick={onBack}>← Back</button>}
+      </div>
+      {done ? <div className={styles.reviewActions}><a className={styles.textButton} href="https://www.instagram.com/madebyaidan" target="_blank" rel="noreferrer">@madebyaidan</a></div> : <form className={form.form} onSubmit={submit}>
+        <label className={form.field}>Your name <span>optional</span><input autoComplete="given-name" maxLength={100} value={name} onChange={event => setName(event.target.value)} /></label>
+        <fieldset><legend>Where should I message you?</legend><div className={form.channels}>{(['whatsapp', 'instagram'] as const).map(item => <button type="button" key={item} aria-pressed={channel === item} onClick={() => { setChannel(item); setContact(''); setError('') }}>{item === 'whatsapp' ? 'WhatsApp' : 'Instagram'}</button>)}</div><label className={form.field}><span className={styles.srOnly}>{channel === 'whatsapp' ? 'WhatsApp number' : 'Instagram username'}</span><input required type={channel === 'whatsapp' ? 'tel' : 'text'} autoComplete={channel === 'whatsapp' ? 'tel' : 'off'} autoCapitalize="none" maxLength={40} value={contact} onChange={event => setContact(event.target.value)} placeholder={channel === 'whatsapp' ? '+7 701 123 4567' : '@yourusername'} /></label></fieldset>
+        <fieldset><legend>When are you free?</legend><div className={form.dates}>{['7', '8', '9'].map(day => <button type="button" key={day} aria-pressed={dates.includes(day)} onClick={() => setDates(current => current.includes(day) ? current.filter(value => value !== day) : [...current, day].sort())}>Sept {day}</button>)}</div></fieldset>
+        <label className={form.field}>Notes <span>optional</span><textarea maxLength={1500} rows={3} value={notes} onChange={event => setNotes(event.target.value)} /></label>
+        <div><label className={form.field} htmlFor="model-photos">Photos of you <span>optional · up to 3</span></label><div className={form.uploads}>{photos.map((photo, index) => <div key={photo}><img src={photo} alt={`Your photo ${index + 1}`} /><button type="button" aria-label={`Remove your photo ${index + 1}`} disabled={processing || saving} onClick={() => setPhotos(previous => previous.filter((_, i) => i !== index))}>×</button></div>)}</div><input id="model-photos" type="file" accept="image/*,.heic,.heif" multiple disabled={processing || saving || photos.length >= 3} onChange={addPhotos} className={form.fileInput} />{processing && <p role="status" className={form.hint}>Adding your photos…</p>}</div>
         <div className={styles.srOnly} aria-hidden="true"><label>Company<input name="company" tabIndex={-1} autoComplete="off" /></label></div>
         {error && <p role="alert" className={form.error}>{error}</p>}
-        <button type="submit" disabled={saving || processing} className={styles.primary}>{saving ? 'Saving your signup…' : processing ? 'Adding photos…' : 'Send my collab signup'}<span aria-hidden="true">↗</span></button>
-        <p className={styles.footnote}>Your details and moodboard go to Aidan to plan your shoot.</p>
+        <button type="submit" disabled={saving || processing} className={styles.primary}>{saving ? 'Sending…' : processing ? 'Adding photos…' : 'Send'}<span aria-hidden="true">↗</span></button>
       </form>}
     </>}
   </div></section>

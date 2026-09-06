@@ -2,129 +2,104 @@
 /* eslint-disable @next/next/no-img-element -- Library files are pre-sized; the next round preloads these exact URLs. */
 
 import { useEffect, useRef, useState } from 'react'
-import { boardPath, imagesForIds, isStartingTheme, makeDeck, MAX_PICKS, PICKER_STORAGE_KEY, ROUNDS, THEMES, themeLabel, type StartingTheme } from '@/lib/themePicker'
+import { libraryImages, makeRounds, MAX_PICKS, PICKER_STORAGE_KEY } from '@/lib/themePicker'
 import { initPageAnalytics, track } from '@/lib/track'
+import SignUpFormCollabThemes from './SignUpFormCollabThemes'
 import styles from './ThemePicker.module.css'
 
-type Session = { version: 1; theme: StartingTheme; seed: number; choices: (string | null)[]; updatedAt: number }
+// choices: one entry per round shown — an image id, or null for a skipped round.
+// done: the visitor pressed "Sign up" before reaching MAX_PICKS.
+type Session = { version: 2; seed: number; choices: (string | null)[]; done?: boolean; updatedAt: number }
 const TTL = 7 * 24 * 60 * 60 * 1000
+
+const fresh = (): Session => ({ version: 2, seed: Math.floor(Math.random() * 0xffffffff), choices: [], updatedAt: Date.now() })
 
 export default function ThemePicker() {
   const [session, setSession] = useState<Session | null>(null)
-  const [ready, setReady] = useState(false)
-  const [review, setReview] = useState(false)
   const [flash, setFlash] = useState<string | null>(null)
   const lock = useRef(false)
   const timer = useRef<ReturnType<typeof setTimeout>>()
   const gridRef = useRef<HTMLDivElement>(null)
-  const deck = session ? makeDeck(session.theme, session.seed) : []
+  const rounds = session ? makeRounds(session.seed) : []
   const round = session?.choices.length || 0
   const selectedIds = session?.choices.filter((id): id is string => !!id) || []
-  const selected = imagesForIds(selectedIds)
-  const options = imagesForIds(deck.slice(round * 4, round * 4 + 4))
-  const complete = selectedIds.length >= MAX_PICKS || round >= ROUNDS
-  const board = { theme: session?.theme || 'any' as StartingTheme, imageIds: selectedIds }
+  const options = libraryImages(rounds[round] || [])
+  const complete = !!session?.done || selectedIds.length >= MAX_PICKS || round >= rounds.length
 
   useEffect(() => {
-    initPageAnalytics('/choose-your-theme', { version: 'pinterest-v2' })
+    initPageAnalytics('/choose-your-theme', { version: 'v3' })
+    let restored: Session | null = null
     try {
       const saved = JSON.parse(localStorage.getItem(PICKER_STORAGE_KEY) || 'null') as Session | null
-      if (saved?.version === 1 && isStartingTheme(saved.theme) && Number.isInteger(saved.seed) &&
-        Array.isArray(saved.choices) && saved.choices.length <= ROUNDS && Date.now() - saved.updatedAt < TTL) {
-        const savedDeck = makeDeck(saved.theme, saved.seed)
-        if (saved.choices.every((id, i) => id === null || savedDeck.slice(i * 4, i * 4 + 4).includes(id))) setSession(saved)
+      if (saved?.version === 2 && Number.isInteger(saved.seed) && Array.isArray(saved.choices) && Date.now() - saved.updatedAt < TTL) {
+        const savedRounds = makeRounds(saved.seed)
+        if (saved.choices.length <= savedRounds.length && saved.choices.every((id, i) => id === null || savedRounds[i].includes(id))) restored = saved
       }
     } catch {}
-    setReady(true)
+    setSession(restored || fresh())
     return () => clearTimeout(timer.current)
   }, [])
 
   useEffect(() => {
-    if (!ready) return
-    try {
-      if (session) localStorage.setItem(PICKER_STORAGE_KEY, JSON.stringify(session))
-      else localStorage.removeItem(PICKER_STORAGE_KEY)
-    } catch {}
-  }, [session, ready])
+    if (!session) return
+    try { localStorage.setItem(PICKER_STORAGE_KEY, JSON.stringify(session)) } catch {}
+  }, [session])
 
-  // Warm only the next four small images, not the entire library on mobile.
+  // Warm only the next round's images, not the whole library on mobile.
   useEffect(() => {
     if (!session || complete) return
-    imagesForIds(deck.slice((round + 1) * 4, (round + 2) * 4)).forEach(image => {
-      const preload = new Image(); preload.src = image.src
-    })
+    libraryImages(rounds[round + 1] || []).forEach(image => { const preload = new Image(); preload.src = image.src })
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [session?.theme, session?.seed, round])
-
-  function start(theme: StartingTheme) {
-    setSession({ version: 1, theme, seed: Math.floor(Math.random() * 0xffffffff), choices: [], updatedAt: Date.now() })
-    setReview(false)
-    track('theme_started', { theme })
-  }
+  }, [session?.seed, round, complete])
 
   function pick(id: string | null) {
     if (!session || lock.current || complete) return
     lock.current = true
     setFlash(id)
-    track(id ? 'moodboard_image_picked' : 'moodboard_round_skipped', { round: round + 1, image_id: id, theme: session.theme })
+    track(id ? 'moodboard_image_picked' : 'moodboard_round_skipped', { round: round + 1, image_id: id })
     const next: Session = { ...session, choices: [...session.choices, id], updatedAt: Date.now() }
-    const nextIds = next.choices.filter((choice): choice is string => !!choice)
     timer.current = setTimeout(() => {
       setSession(next)
       setFlash(null)
       lock.current = false
-      if (nextIds.length >= MAX_PICKS) {
-        // Fifth photo chosen: straight into the signup form, no review step.
-        try { localStorage.setItem(PICKER_STORAGE_KEY, JSON.stringify(next)) } catch {}
-        window.location.assign(boardPath({ theme: next.theme, imageIds: nextIds }, '/sign-up-collab-themes'))
-        return
-      }
       gridRef.current?.focus({ preventScroll: true })
     }, window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : 180)
   }
 
-  function undo() {
-    if (lock.current) return
-    setSession(current => current ? { ...current, choices: current.choices.slice(0, -1), updatedAt: Date.now() } : current)
-    setReview(false)
+  function back() {
+    if (!session || lock.current) return
+    setSession(session.done ? { ...session, done: false, updatedAt: Date.now() } : { ...session, choices: session.choices.slice(0, -1), updatedAt: Date.now() })
   }
 
-  function remove(id: string) {
-    setSession(current => current ? { ...current, choices: current.choices.map(choice => choice === id ? null : choice), updatedAt: Date.now() } : current)
-  }
+  const topbar = <div className={styles.topbar}><a href="/" className={styles.wordmark}>Aidan Torrence</a><span>Almaty · Sept 7–9</span></div>
+
+  if (!session) return <section className={styles.page}><div className={styles.shell}>{topbar}</div></section>
+
+  if (complete && selectedIds.length) return <SignUpFormCollabThemes selection={{ theme: 'any', imageIds: selectedIds }} onBack={back} />
+
+  if (complete) return (
+    <section className={styles.page}><div className={styles.shell}>
+      {topbar}
+      <div className={styles.reviewActions} style={{ marginTop: 48 }}><button className={styles.primary} onClick={() => setSession(fresh())}>Start over<span aria-hidden="true">↗</span></button></div>
+    </div></section>
+  )
 
   return (
     <section className={styles.page}>
       <div className={styles.shell}>
-        <div className={styles.topbar}><a href="/" className={styles.wordmark}>Aidan Torrence</a><span>Almaty · Sept 7–9</span></div>
-        {!session ? <>
-          <div className={styles.heading}><h1>Choose your theme.</h1></div>
-          <div className={styles.startGrid}>
-            {THEMES.map((theme, index) => <button key={theme.id} disabled={!ready} className={styles.startCard} onClick={() => start(theme.id as StartingTheme)} aria-label={theme.label}>
-              <img src={theme.image} alt="" loading={index === 0 ? 'eager' : 'lazy'} />
-            </button>)}
-          </div>
-        </> : review || complete ? <>
-          <div className={styles.heading}><p className={styles.eyebrow}>{themeLabel(session.theme)}</p><h1>Your kind of shoot.</h1><p>{selected.length ? 'These are your references. We’ll plan the shoot around what you love.' : 'Nothing saved yet. Go back and pick a photo you love.'}</p></div>
-          <div className={styles.reviewGrid}>{selected.map(image => <div key={image.id} className={styles.reviewCard}><img src={image.src} alt={image.alt} /><button aria-label={`Remove ${image.alt}`} onClick={() => remove(image.id)}>×</button></div>)}</div>
-          <div className={styles.reviewActions}>
-            {selected.length > 0 && <a className={styles.primary} href={boardPath(board, '/sign-up-collab-themes')}>Sign up with this moodboard <span>↗</span></a>}
-            {!complete && <button className={styles.textButton} onClick={() => setReview(false)}>Keep picking</button>}
-            <button className={styles.textButton} onClick={() => { setSession(null); setReview(false) }}>Start over</button>
-          </div>
-        </> : <>
-          <div className={styles.pickerHeading}><div><p className={styles.eyebrow}>{themeLabel(session.theme)} · {Math.min(selected.length + 1, MAX_PICKS)} / {MAX_PICKS}</p><h1>Which one feels like you?</h1><p>Tap one. We’ll save it and show you four more.</p></div><button className={styles.counter} onClick={() => setReview(true)} aria-label={`Review moodboard, ${selected.length} ${selected.length === 1 ? 'photo' : 'photos'} saved`}>{selected.length}<span>saved</span></button></div>
-          <div className={styles.progress} aria-hidden="true"><span style={{ width: `${selected.length / MAX_PICKS * 100}%` }} /></div>
-          <div className={styles.choiceGrid} ref={gridRef} tabIndex={-1} aria-label={`Choose one photo, round ${round + 1}`}>
-            {options.map(image => <button key={image.id} className={`${styles.choice} ${flash === image.id ? styles.chosen : ''}`} onClick={() => pick(image.id)} aria-label={`Choose ${image.alt}`}>
-              <img src={image.src} alt={image.alt} draggable={false} />{flash === image.id && <span className={styles.check} aria-hidden="true">✓</span>}
-            </button>)}
-          </div>
-          <p className={styles.srOnly} role="status" aria-live="polite">Round {round + 1}. {selected.length} of {MAX_PICKS} photos saved.</p>
-          <div className={styles.pickerControls}><button className={styles.textButton} onClick={round ? undo : () => setSession(null)}>{round ? '← Undo last' : '← Themes'}</button><button className={styles.textButton} onClick={() => pick(null)}>Skip these four →</button></div>
-          {selected.length ? <a className={styles.primary} href={boardPath(board, '/sign-up-collab-themes')}>Use my {selected.length} {selected.length === 1 ? 'pick' : 'picks'}<span aria-hidden="true">↗</span></a> : <button className={styles.primary} disabled>Pick a photo to begin<span aria-hidden="true">↗</span></button>}
-          <p className={styles.footnote}>Pick {MAX_PICKS} and you’re through to the signup.</p>
-        </>}
+        {topbar}
+        <div className={styles.progress} aria-hidden="true"><span style={{ width: `${selectedIds.length / MAX_PICKS * 100}%` }} /></div>
+        <div className={styles.choiceGrid} ref={gridRef} tabIndex={-1} aria-label={`Choose one photo, round ${round + 1}`}>
+          {options.map(image => <button key={image.id} className={`${styles.choice} ${flash === image.id ? styles.chosen : ''}`} onClick={() => pick(image.id)} aria-label={`Choose ${image.alt}`}>
+            <img src={image.src} alt={image.alt} draggable={false} />{flash === image.id && <span className={styles.check} aria-hidden="true">✓</span>}
+          </button>)}
+        </div>
+        <p className={styles.srOnly} role="status" aria-live="polite">Round {round + 1}. {selectedIds.length} of {MAX_PICKS} photos saved.</p>
+        <div className={styles.pickerControls}>
+          <button className={styles.textButton} onClick={back} disabled={!round}>← Back</button>
+          <button className={styles.textButton} onClick={() => pick(null)}>Skip →</button>
+        </div>
+        {selectedIds.length > 0 && <button className={styles.primary} onClick={() => setSession({ ...session, done: true, updatedAt: Date.now() })}>Sign up<span aria-hidden="true">↗</span></button>}
       </div>
     </section>
   )

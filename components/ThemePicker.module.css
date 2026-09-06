@@ -4,21 +4,13 @@
 .topbar { display: flex; justify-content: space-between; align-items: center; font-size: 10px; color: #686b60; gap: 8px; }
 .wordmark { font-size: 12px; font-weight: 600; color: #252720; }
 .heading { margin: 32px 0 22px; }
-.heading > p:last-child, .pickerHeading p:last-child { font-size: 13px; line-height: 1.5; color: #62665c; margin-top: 10px; max-width: 360px; }
+.heading > p:last-child { font-size: 13px; line-height: 1.5; color: #62665c; margin-top: 10px; max-width: 360px; }
 .eyebrow { font-size: 9px; text-transform: uppercase; letter-spacing: .13em; color: #62665c; margin-bottom: 10px; }
-.startGrid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-.startCard { position: relative; overflow: hidden; aspect-ratio: .76; background: #deded6; border-radius: 5px; text-align: left; }
-.startCard > img { width: 100%; height: 100%; object-fit: cover; }
 .footnote { font-size: 10px; line-height: 1.5; text-align: center; color: #727668; margin: 12px 0 0; }
-.pickerHeading { margin: 24px 0 16px; display: flex; gap: 12px; align-items: center; justify-content: space-between; }
-.pickerHeading h1 { font-size: clamp(23px, 6vw, 29px); max-width: 300px; }
-.pickerHeading p:last-child { font-size: 11px; }
-.counter { display: flex; flex-direction: column; align-items: center; justify-content: center; border: 1px solid #c9cdbf; border-radius: 50%; width: 49px; height: 49px; flex: 0 0 49px; font-size: 17px; }
-.counter span { font-size: 8px; }
-.progress { height: 2px; background: #dddfd5; margin-bottom: 14px; }
+.progress { height: 2px; background: #dddfd5; margin-top: 18px; }
 .progress span { display: block; height: 100%; background: #3c513a; transition: width .2s ease; }
-.choiceGrid { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 9px; height: clamp(280px, calc(100svh - 310px), 590px); outline: none; }
-.choice { position: relative; min-height: 0; overflow: hidden; background: #deded6; border-radius: 4px; touch-action: manipulation; }
+.choiceGrid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 14px; outline: none; }
+.choice { position: relative; aspect-ratio: 4 / 5; overflow: hidden; background: #deded6; border-radius: 4px; touch-action: manipulation; }
 .choice img { width: 100%; height: 100%; object-fit: cover; }
 .choice.chosen { outline: 3px solid #8eaa71; outline-offset: -3px; }
 .check { position: absolute; top: 10px; right: 10px; display: grid; place-items: center; border-radius: 50%; background: #eef4dc; color: #2f422b; width: 32px; height: 32px; }
@@ -34,5 +26,5 @@
 .reviewCard button { position: absolute; right: 2px; top: 2px; width: 36px; height: 36px; border-radius: 50%; background: #fff; font-size: 23px; color: #222; }
 .reviewActions { margin-top: 24px; display: flex; flex-direction: column; align-items: center; }
 .srOnly { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; }
-@media (max-height: 730px) { .pickerHeading { margin-top: 18px; margin-bottom: 12px; } .pickerHeading p:last-child { margin-top: 7px; } .shell { padding-top: 14px; } }
+@media (max-height: 730px) { .shell { padding-top: 14px; } }
 @media (prefers-reduced-motion: reduce) { .progress span { transition: none; } }

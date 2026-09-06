@@ -10,39 +10,40 @@ const source = fs.readFileSync(path.join(root, 'lib/themePicker.ts'), 'utf8')
 const compiled = ts.transpileModule(source, { compilerOptions: { module: ts.ModuleKind.CommonJS, esModuleInterop: true, target: ts.ScriptTarget.ES2022 } }).outputText
 const module = { exports: {} }
 new Function('require', 'module', 'exports', compiled)(name => name.startsWith('@/data/') ? require(path.join(root, name.slice(2))) : require(name), module, module.exports)
-const { THEME_IMAGES, MAX_PICKS, ROUNDS, makeDeck, parseThemeSelection, moodboardEntries, boardPath, selectionFromQuery } = module.exports
+const { THEME_IMAGES, MAX_PICKS, PER_ROUND, ROUNDS, makeRounds, parseThemeSelection, moodboardEntries, boardPath, selectionFromQuery } = module.exports
 const total = THEME_IMAGES.length
-assert.ok(total >= MAX_PICKS * 4 && ROUNDS >= MAX_PICKS, `need at least ${MAX_PICKS * 4} images, got ${total}`)
+assert.ok(ROUNDS >= MAX_PICKS, `need at least ${MAX_PICKS * PER_ROUND} images, got ${total}`)
 assert.equal(new Set(THEME_IMAGES.map(image => image.id)).size, total)
 assert.equal(new Set(THEME_IMAGES.map(image => image.src)).size, total)
 for (const image of THEME_IMAGES) {
   assert.ok(fs.existsSync(path.join(root, 'public', image.src)), image.src)
   assert.ok(fs.statSync(path.join(root, 'public', image.src)).size < 500_000, image.src)
 }
-for (const theme of ['any', 'mountain-park', 'street', 'indoor', 'road-trip']) {
-  for (const seed of [0, 1, 42, 0xffffffff]) {
-    const deck = makeDeck(theme, seed)
-    assert.equal(deck.length, total)
-    assert.equal(new Set(deck).size, total)
-    assert.deepEqual(deck, makeDeck(theme, seed))
-    const picks = []
-    for (let round = 0; round < ROUNDS; round++) {
-      const choices = deck.slice(round * 4, round * 4 + 4)
-      assert.equal(choices.length, 4)
-      if (round < MAX_PICKS) picks.push(choices[0])
-    }
-    assert.equal(new Set(picks).size, MAX_PICKS)
-    const selection = parseThemeSelection({ theme, imageIds: picks })
-    assert.ok(selection)
-    const query = Object.fromEntries(new URL(boardPath(selection), 'https://example.com').searchParams)
-    assert.deepEqual(selectionFromQuery(query), selection)
-    assert.equal(moodboardEntries(selection).filter(line => line.startsWith('Reference: ')).length, MAX_PICKS)
+const themeOf = new Map(THEME_IMAGES.map(image => [image.id, image.theme]))
+let leastMixed = Infinity
+for (const seed of [0, 1, 42, 0xffffffff]) {
+  const rounds = makeRounds(seed)
+  assert.equal(rounds.length, ROUNDS)
+  assert.deepEqual(rounds, makeRounds(seed))
+  const shown = rounds.flat()
+  assert.equal(new Set(shown).size, shown.length)
+  for (const round of rounds) {
+    assert.equal(round.length, PER_ROUND)
+    const themes = new Set(round.map(id => themeOf.get(id)))
+    leastMixed = Math.min(leastMixed, themes.size)
+    assert.ok(themes.size >= 2, `every round mixes styles, got ${themes.size}`)
   }
+  const picks = rounds.slice(0, MAX_PICKS).map(round => round[0])
+  const selection = parseThemeSelection({ theme: 'any', imageIds: picks })
+  assert.ok(selection)
+  const query = Object.fromEntries(new URL(boardPath(selection), 'https://example.com').searchParams)
+  assert.deepEqual(selectionFromQuery(query), selection)
+  assert.equal(moodboardEntries(selection).filter(line => line.startsWith('Reference: ')).length, MAX_PICKS)
 }
 const first = THEME_IMAGES[0].id
 for (const input of [null, {}, { theme: 'invalid', imageIds: [first] }, { theme: 'any', imageIds: [] }, { theme: 'any', imageIds: ['not-an-image'] }, { theme: 'any', imageIds: [first, first] }, { theme: 'any', imageIds: [first], suggestedUrl: 'javascript:alert(1)' }, { theme: 'any', imageIds: [first], suggestedUrl: 'https://user:password@example.com' }]) assert.equal(parseThemeSelection(input), null)
 assert.ok(parseThemeSelection({ theme: 'any', imageIds: [first], suggestedUrl: 'https://www.pinterest.com/pin/533958099593582289/' }))
-console.log(`PASS: ${total} assets, ${ROUNDS} rounds of 4, ${MAX_PICKS} picks to finish, deterministic deck, no duplicate picks, share-link roundtrip, input validation.`)
+console.log(`PASS: ${total} assets, ${ROUNDS} rounds of ${PER_ROUND}, ${MAX_PICKS} picks to finish, every round mixes ≥${leastMixed} styles, deterministic, no repeats, share-link roundtrip, input validation.`)
 
 if (process.argv.includes('--database-canary')) {
   // Local server only, started with SLACK_BOOKING_WEBHOOK='' to suppress
@@ -51,7 +52,7 @@ if (process.argv.includes('--database-canary')) {
   const { createClient } = require('@supabase/supabase-js')
   const sb = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL, process.env.SUPABASE_SERVICE_ROLE_KEY)
   const contact = `codex_canary_${Date.now()}`
-  const selection = { theme: 'mountain-park', imageIds: makeDeck('mountain-park', 42).filter((_, i) => i % 4 === 0).slice(0, 4), suggestedUrl: 'https://www.pinterest.com/pin/533958099593582289/' }
+  const selection = { theme: 'mountain-park', imageIds: makeRounds(42).slice(0, 4).map(round => round[0]), suggestedUrl: 'https://www.pinterest.com/pin/533958099593582289/' }
   const base = 'http://localhost:5184/api/sign-up'
   const bad = await fetch(base, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ city: 'Almaty', contactMethod: 'instagram', contact, themeSelection: { ...selection, imageIds: ['invalid'] } }) })
   assert.equal(bad.status, 400)
