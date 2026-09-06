@@ -75,7 +75,7 @@ export default function ThemePicker() {
 
   if (!session) return <section className={styles.page}><div className={styles.shell}>{topbar}</div></section>
 
-  if (complete && selectedIds.length) return <SignUpFormCollabThemes selection={{ theme: 'any', imageIds: selectedIds }} onBack={back} />
+  if (complete && selectedIds.length) return <SignUpFormCollabThemes selection={{ theme: 'any', imageIds: selectedIds }} onBack={back} onRestart={() => setSession(fresh())} />
 
   if (complete) return (
     <section className={styles.page}><div className={styles.shell}>

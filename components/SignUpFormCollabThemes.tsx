@@ -8,7 +8,7 @@ import { initPageAnalytics, track, flushNow } from '@/lib/track'
 import styles from './ThemePicker.module.css'
 import form from './ThemeSignup.module.css'
 
-export default function SignUpFormCollabThemes({ selection, onBack }: { selection: ThemeSelection | null; onBack?: () => void }) {
+export default function SignUpFormCollabThemes({ selection, onBack, onRestart }: { selection: ThemeSelection | null; onBack?: () => void; onRestart?: () => void }) {
   const [channel, setChannel] = useState<'whatsapp' | 'instagram'>('whatsapp')
   const [contact, setContact] = useState('')
   const [dates, setDates] = useState<string[]>([])
@@ -87,7 +87,7 @@ export default function SignUpFormCollabThemes({ selection, onBack }: { selectio
       <div className={styles.heading}><h1>{done ? 'Got it.' : 'Let’s shoot in Almaty.'}</h1>{done && <p>I’ll message you to plan the shoot.</p>}</div>
       <div className={form.boardSummary}>
         <div className={form.filmstrip}>{images.map(image => <img src={image.src} alt={image.alt} key={image.id} />)}</div>
-        {!done && onBack && <button type="button" className={`${styles.textButton} ${form.back}`} onClick={onBack}>← Back</button>}
+        {!done && (onBack || onRestart) && <div className={form.boardActions}>{onBack && <button type="button" className={`${styles.textButton} ${form.back}`} onClick={onBack}>← Back</button>}{onRestart && <button type="button" className={styles.textButton} onClick={onRestart}>Start over</button>}</div>}
       </div>
       {done ? <div className={styles.reviewActions}><a className={styles.textButton} href="https://www.instagram.com/madebyaidan" target="_blank" rel="noreferrer">@madebyaidan</a></div> : <form className={form.form} onSubmit={submit}>
         <fieldset><legend>Where should I message you?</legend><div className={form.channels}>{(['whatsapp', 'instagram'] as const).map(item => <button type="button" key={item} aria-pressed={channel === item} onClick={() => { setChannel(item); setContact(''); setError('') }}>{item === 'whatsapp' ? 'WhatsApp' : 'Instagram'}</button>)}</div><label className={form.field}><span className={styles.srOnly}>{channel === 'whatsapp' ? 'WhatsApp number' : 'Instagram username'}</span><input required type={channel === 'whatsapp' ? 'tel' : 'text'} autoComplete={channel === 'whatsapp' ? 'tel' : 'off'} autoCapitalize="none" maxLength={40} value={contact} onChange={event => setContact(event.target.value)} placeholder={channel === 'whatsapp' ? '+7 701 123 4567' : '@yourusername'} /></label>{channel === 'instagram' && <p className={form.hint}>Please follow <a href="https://www.instagram.com/madebyaidan" target="_blank" rel="noreferrer">@madebyaidan</a> or I won’t be able to message you.</p>}</fieldset>

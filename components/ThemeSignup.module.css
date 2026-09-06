@@ -1,7 +1,8 @@
 .boardSummary { margin-bottom: 26px; }
 .filmstrip { display: flex; gap: 6px; overflow-x: auto; padding-bottom: 6px; }
 .filmstrip img { width: 75px; height: 95px; border-radius: 3px; object-fit: cover; flex-shrink: 0; }
-.back { display: block; margin-top: 2px; padding-left: 0; }
+.boardActions { display: flex; justify-content: space-between; align-items: center; margin-top: 2px; }
+.back { padding-left: 0; }
 .form { display: flex; flex-direction: column; gap: 25px; padding-bottom: 24px; }
 .form legend, .field { display: block; font-size: 13px; font-weight: 500; }
 .field > span { color: #79816f; font-size: 10px; font-weight: 400; margin-left: 5px; }
