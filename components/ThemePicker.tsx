@@ -5,6 +5,7 @@ import { useEffect, useRef, useState } from 'react'
 import { libraryImages, makeRounds, MAX_PICKS, PICKER_STORAGE_KEY } from '@/lib/themePicker'
 import { initPageAnalytics, track } from '@/lib/track'
 import SignUpFormCollabThemes from './SignUpFormCollabThemes'
+import { SHOOT } from '@/lib/shoot'
 import styles from './ThemePicker.module.css'
 
 // choices: one entry per round shown — an image id, or null for a skipped round.
@@ -71,7 +72,7 @@ export default function ThemePicker() {
     setSession(session.done ? { ...session, done: false, updatedAt: Date.now() } : { ...session, choices: session.choices.slice(0, -1), updatedAt: Date.now() })
   }
 
-  const topbar = <div className={styles.topbar}><a href="/" className={styles.wordmark}>Aidan Torrence</a><span>Sept 8–9</span></div>
+  const topbar = <div className={styles.topbar}><a href="/" className={styles.wordmark}>Aidan Torrence</a><span>{SHOOT.dates}</span></div>
 
   if (!session) return <section className={styles.page}><div className={styles.shell}>{topbar}</div></section>
 
@@ -88,7 +89,7 @@ export default function ThemePicker() {
     <section className={styles.page}>
       <div className={styles.shell}>
         {topbar}
-        <h1 className={styles.cta}><strong>Almaty</strong><span>Free photo shoot</span></h1>
+        <h1 className={styles.cta}><strong>{SHOOT.city}</strong><span>Free photo shoot</span></h1>
         <p className={styles.ctaNote}><strong>Choose your preferred photo vibe.</strong> Then we’ll plan a shoot around it.</p>
         <div className={styles.segments} aria-hidden="true">{Array.from({ length: MAX_PICKS }, (_, i) => <i key={i} className={i < selectedIds.length ? styles.segmentOn : undefined} />)}</div>
         <div className={styles.choiceGrid} ref={gridRef} tabIndex={-1} data-round={round + 1} aria-label={`Choose one photo, round ${round + 1}`}>

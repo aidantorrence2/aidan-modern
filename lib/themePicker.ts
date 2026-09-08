@@ -1,7 +1,7 @@
 import themeData from '@/data/shoot-themes.json'
 import imageData from '@/data/theme-images.json'
 
-export type ThemeId = 'mountain-park' | 'street' | 'indoor' | 'road-trip'
+export type ThemeId = 'sea' | 'old-town' | 'boat' | 'indoor'
 export type StartingTheme = ThemeId | 'any'
 export type ThemeImage = { id: string; theme: string; src: string; alt: string; source: string; credit: string }
 export type ThemeSelection = { theme: StartingTheme; imageIds: string[]; suggestedUrl?: string }

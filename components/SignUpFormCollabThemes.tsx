@@ -5,6 +5,7 @@ import { useEffect, useRef, useState } from 'react'
 import { imagesForIds, parseThemeSelection, type ThemeSelection } from '@/lib/themePicker'
 import { fetchUploadTicket, preparePhoto, describePhotoFailures, type PhotoFailure } from '@/lib/signupPhotos'
 import { initPageAnalytics, track, flushNow } from '@/lib/track'
+import { SHOOT } from '@/lib/shoot'
 import styles from './ThemePicker.module.css'
 import form from './ThemeSignup.module.css'
 
@@ -50,7 +51,7 @@ export default function SignUpFormCollabThemes({ selection, onBack, onRestart }:
     let value = contact.trim()
     if (channel === 'whatsapp') {
       const digits = value.replace(/\D/g, '').length
-      if (!/^\+[\d\s().-]{7,24}$/.test(value) || digits < 7 || digits > 15) { setError('Enter your WhatsApp number with its country code, for example +7 701 123 4567.'); return }
+      if (!/^\+[\d\s().-]{7,24}$/.test(value) || digits < 7 || digits > 15) { setError(`Enter your WhatsApp number with its country code, for example ${SHOOT.phoneExample}.`); return }
     } else {
       value = value.replace(/^@/, '')
       if (!/^[a-zA-Z0-9._]{1,30}$/.test(value)) { setError('Enter your Instagram username, without a link.'); return }
@@ -62,8 +63,8 @@ export default function SignUpFormCollabThemes({ selection, onBack, onRestart }:
       const response = await fetch('/api/sign-up', {
         method: 'POST', headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          city: 'Almaty', contactMethod: channel, contact: value, themeSelection: chosen,
-          moodboard: ['Collab sign-up', 'Location: Almaty', ...(notes.trim() ? [`Notes: ${notes.trim()}`] : [])],
+          city: SHOOT.city, contactMethod: channel, contact: value, themeSelection: chosen,
+          moodboard: ['Collab sign-up', `Location: ${SHOOT.city}`, ...(notes.trim() ? [`Notes: ${notes.trim()}`] : [])],
           photos,
         }),
       })
@@ -80,7 +81,7 @@ export default function SignUpFormCollabThemes({ selection, onBack, onRestart }:
   }
 
   return <section className={styles.page}><div className={styles.shell}>
-    <div className={styles.topbar}><a href="/" className={styles.wordmark}>Aidan Torrence</a><span>Sept 8–9</span></div>
+    <div className={styles.topbar}><a href="/" className={styles.wordmark}>Aidan Torrence</a><span>{SHOOT.dates}</span></div>
     {!selection ? <div className={styles.heading}><a href="/sign-up-collab" className={styles.primary} style={{ marginTop: 24 }}>Choose your photos <span>↗</span></a></div> : <>
       {done
         ? <div className={styles.heading}><h1>Got it.</h1><p>I’ll message you to plan the shoot.</p></div>
@@ -90,7 +91,7 @@ export default function SignUpFormCollabThemes({ selection, onBack, onRestart }:
         {!done && (onBack || onRestart) && <div className={form.boardActions}>{onBack && <button type="button" className={`${styles.textButton} ${form.back}`} onClick={onBack}>← Back</button>}{onRestart && <button type="button" className={styles.textButton} onClick={onRestart}>Start over</button>}</div>}
       </div>
       {done ? <div className={styles.reviewActions}><a className={styles.textButton} href="https://www.instagram.com/madebyaidan" target="_blank" rel="noreferrer">@madebyaidan</a></div> : <form className={form.form} onSubmit={submit}>
-        <fieldset><legend>Where should I message you?</legend><div className={form.channels}>{(['whatsapp', 'instagram'] as const).map(item => <button type="button" key={item} aria-pressed={channel === item} onClick={() => { setChannel(item); setContact(''); setError('') }}>{item === 'whatsapp' ? 'WhatsApp' : 'Instagram'}</button>)}</div><label className={form.field}><span className={styles.srOnly}>{channel === 'whatsapp' ? 'WhatsApp number' : 'Instagram username'}</span><input required type={channel === 'whatsapp' ? 'tel' : 'text'} autoComplete={channel === 'whatsapp' ? 'tel' : 'off'} autoCapitalize="none" maxLength={40} value={contact} onChange={event => setContact(event.target.value)} placeholder={channel === 'whatsapp' ? '+7 701 123 4567' : '@yourusername'} /></label>{channel === 'instagram' && <p className={form.hint}>Please follow <a href="https://www.instagram.com/madebyaidan" target="_blank" rel="noreferrer">@madebyaidan</a> or I won’t be able to message you.</p>}</fieldset>
+        <fieldset><legend>Where should I message you?</legend><div className={form.channels}>{(['whatsapp', 'instagram'] as const).map(item => <button type="button" key={item} aria-pressed={channel === item} onClick={() => { setChannel(item); setContact(''); setError('') }}>{item === 'whatsapp' ? 'WhatsApp' : 'Instagram'}</button>)}</div><label className={form.field}><span className={styles.srOnly}>{channel === 'whatsapp' ? 'WhatsApp number' : 'Instagram username'}</span><input required type={channel === 'whatsapp' ? 'tel' : 'text'} autoComplete={channel === 'whatsapp' ? 'tel' : 'off'} autoCapitalize="none" maxLength={40} value={contact} onChange={event => setContact(event.target.value)} placeholder={channel === 'whatsapp' ? SHOOT.phoneExample : '@yourusername'} /></label>{channel === 'instagram' && <p className={form.hint}>Please follow <a href="https://www.instagram.com/madebyaidan" target="_blank" rel="noreferrer">@madebyaidan</a> or I won’t be able to message you.</p>}</fieldset>
         <label className={form.field}>Notes <span>optional</span><textarea maxLength={1500} rows={3} value={notes} onChange={event => setNotes(event.target.value)} /></label>
         <div><label className={form.field} htmlFor="model-photos">Photos of you <span>up to 3</span></label><div className={form.uploads}>{photos.map((photo, index) => <div key={photo}><img src={photo} alt={`Your photo ${index + 1}`} /><button type="button" aria-label={`Remove your photo ${index + 1}`} disabled={processing || saving} onClick={() => setPhotos(previous => previous.filter((_, i) => i !== index))}>×</button></div>)}</div><input id="model-photos" type="file" accept="image/*,.heic,.heif" multiple disabled={processing || saving || photos.length >= 3} onChange={addPhotos} className={form.fileInput} />{processing && <p role="status" className={form.hint}>Adding your photos…</p>}</div>
         <div className={styles.srOnly} aria-hidden="true"><label>Company<input name="company" tabIndex={-1} autoComplete="off" /></label></div>

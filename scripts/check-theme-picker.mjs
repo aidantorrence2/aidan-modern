@@ -42,7 +42,7 @@ for (const seed of [0, 1, 42, 0xffffffff]) {
 }
 const first = THEME_IMAGES[0].id
 for (const input of [null, {}, { theme: 'invalid', imageIds: [first] }, { theme: 'any', imageIds: [] }, { theme: 'any', imageIds: ['not-an-image'] }, { theme: 'any', imageIds: [first, first] }, { theme: 'any', imageIds: [first], suggestedUrl: 'javascript:alert(1)' }, { theme: 'any', imageIds: [first], suggestedUrl: 'https://user:password@example.com' }]) assert.equal(parseThemeSelection(input), null)
-assert.ok(parseThemeSelection({ theme: 'any', imageIds: [first], suggestedUrl: 'https://www.pinterest.com/pin/533958099593582289/' }))
+assert.ok(parseThemeSelection({ theme: 'any', imageIds: [first], suggestedUrl: 'https://www.pinterest.com/pin/20758848278631571/' }))
 console.log(`PASS: ${total} assets, ${ROUNDS} rounds of ${PER_ROUND}, ${MAX_PICKS} picks to finish, every round mixes ≥${leastMixed} styles, deterministic, no repeats, share-link roundtrip, input validation.`)
 
 if (process.argv.includes('--database-canary')) {
@@ -52,13 +52,13 @@ if (process.argv.includes('--database-canary')) {
   const { createClient } = require('@supabase/supabase-js')
   const sb = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL, process.env.SUPABASE_SERVICE_ROLE_KEY)
   const contact = `codex_canary_${Date.now()}`
-  const selection = { theme: 'mountain-park', imageIds: makeRounds(42).slice(0, 4).map(round => round[0]), suggestedUrl: 'https://www.pinterest.com/pin/533958099593582289/' }
+  const selection = { theme: 'sea', imageIds: makeRounds(42).slice(0, 4).map(round => round[0]), suggestedUrl: 'https://www.pinterest.com/pin/20758848278631571/' }
   const base = 'http://localhost:5184/api/sign-up'
-  const bad = await fetch(base, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ city: 'Almaty', contactMethod: 'instagram', contact, themeSelection: { ...selection, imageIds: ['invalid'] } }) })
+  const bad = await fetch(base, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ city: 'Antalya', contactMethod: 'instagram', contact, themeSelection: { ...selection, imageIds: ['invalid'] } }) })
   assert.equal(bad.status, 400)
   let rowId
   try {
-    const response = await fetch(base, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ city: 'Almaty', contactMethod: 'instagram', contact, moodboard: ['TEST: Codex theme picker canary', 'Location: Almaty'], themeSelection: selection }) })
+    const response = await fetch(base, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ city: 'Antalya', contactMethod: 'instagram', contact, moodboard: ['TEST: Codex theme picker canary', 'Location: Antalya'], themeSelection: selection }) })
     const json = await response.json()
     assert.equal(response.status, 200, JSON.stringify(json))
     assert.equal(json.ok, true)

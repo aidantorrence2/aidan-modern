@@ -10,6 +10,7 @@
 //
 // Usage: node scripts/prepare-theme-library.mjs
 import fs from 'node:fs/promises'
+import fsSync from 'node:fs'
 import path from 'node:path'
 import { execFileSync } from 'node:child_process'
 import { fileURLToPath } from 'node:url'
@@ -34,10 +35,21 @@ async function download(urls, dest) {
 }
 
 // Resize for the picker grid; step quality down until it fits the size budget.
+// ImageMagick when it is installed, otherwise Pillow (pip install pillow).
+const hasMagick = (() => { try { execFileSync('magick', ['-version'], { stdio: 'ignore' }); return true } catch { return false } })()
+const PILLOW = `
+import sys
+from PIL import Image, ImageOps
+src, dest, quality = sys.argv[1], sys.argv[2], int(sys.argv[3])
+image = ImageOps.exif_transpose(Image.open(src)).convert('RGB')
+image.thumbnail((900, 1200))
+image.save(dest, 'JPEG', quality=quality, optimize=True)
+`
 function optimise(src, dest) {
   for (const quality of [84, 78, 72, 66]) {
-    execFileSync('magick', [src, '-auto-orient', '-resize', '900x1200>', '-strip', '-quality', String(quality), dest])
-    if (execFileSync('stat', ['-f', '%z', dest]).toString().trim() < 480_000) return
+    if (hasMagick) execFileSync('magick', [src, '-auto-orient', '-resize', '900x1200>', '-strip', '-quality', String(quality), dest])
+    else execFileSync('python3', ['-c', PILLOW, src, dest, String(quality)])
+    if (fsSync.statSync(dest).size < 480_000) return
   }
 }
 
