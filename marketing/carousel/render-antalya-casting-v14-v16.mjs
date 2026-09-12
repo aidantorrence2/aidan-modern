@@ -12,7 +12,7 @@ const IMG = path.resolve(ROOT, '../../public/images')
 const only = process.argv.find(x => x.startsWith('--only='))?.split('=')[1]
 const limit = Number(process.argv.find(x => x.startsWith('--limit='))?.split('=')[1] || 3)
 const photo = f => `data:image/jpeg;base64,${fs.readFileSync(path.join(IMG, f)).toString('base64')}`
-const P = ['large/r1-05460-0022.jpg', 'nature/000042-2.jpg', 'faves/000024-3.jpg', 'large/manila-gallery-park-001.jpg', 'headliners/000019-6.jpg', 'large/manila-gallery-floor-001.jpg']
+const P = ['large/aidanto-r4-047-22.jpg', 'large/0604804-0043.jpg', 'large/aidanto-r2-035-16.jpg', 'large/aidanto-r4-053-25.jpg', 'faves/DSC_0310-2.jpg', 'large/manila-gallery-floor-001.jpg']
 const line = (text, size = 64, mt = 0, opacity = 1) => `<p data-copy style="font-size:${size}px;margin:${mt}px 0 0;opacity:${opacity};line-height:1.25;font-weight:500">${text}</p>`
 const box = (top, content, align = 'left', left = 90, right = 90) => `<div style="position:absolute;top:${top}px;left:${left}px;right:${right}px;text-align:${align}">${content}</div>`
 const print = (i, x, y, w, h, rotate = 0) => `<div style="position:absolute;left:${x}px;top:${y}px;width:${w+24}px;padding:12px 12px 18px;background:#fafafa;transform:rotate(${rotate}deg);box-shadow:0 14px 30px #0007"><img src="${photo(P[i])}" style="display:block;width:${w}px;height:${h}px;object-fit:cover;object-position:center top"></div>`
@@ -29,17 +29,17 @@ const sets = {
   v14: { title: 'the invitation', slides: [
     slide('01-callout', frame(box(220, line("hi, i'm in antalya.") + line('looking for models<br>for a free photo collab', 64, 72) + line("let’s take a day trip<br>+ take some photos", 60, 64) + line('dm me if interested 🙂', 54, 64), 'center') + strip())),
     slide('02-possible-places', frame(box(220, tag('a few day-trip ideas') + line('where could we go?', 72, 30) + line('phaselis', 66, 65) + line('ruins + little bays', 42, 12, .75) + line('olympos / çıralı', 66, 48) + line('ancient ruins + the beach', 42, 12, .75) + line('adrasan', 66, 48) + line('a day by the water', 42, 12, .75) + line('just ideas — we pick one together.<br>or send me somewhere you’ve saved.', 44, 65)) + print(0, 650, 1330, 280, 360, 3))),
-    slide('03-collab-cta', frame(box(240, line('let’s make it happen.', 72) + line('free photo collab.<br>full-res photos in about 2 weeks.', 48, 50) + line('we choose the place, day + look together.', 42, 40, .85) + line('dm me if interested 🙂', 66, 65)) + print(3, 290, 920, 480, 570, -2) + handle(1570))),
+    slide('03-collab-cta', frame(box(240, line('let’s make it happen.', 72) + line('free photo collab.<br>photos in about 2 weeks.', 48, 50) + line('we choose the place, day + look together.', 42, 40, .85) + line('dm me if interested 🙂', 66, 65)) + print(3, 290, 920, 480, 570, -2) + handle(1570))),
   ]},
   v15: { title: 'the moodboard', slides: [
-    slide('01-callout', frame(box(190, line('a day out.<br>some photos.<br>you?', 88)) + print(0, 90, 660, 440, 600, -5) + print(1, 590, 790, 340, 480, 4) + box(1400, line('looking for models in antalya', 50) + line('free photo collab · day trips', 44, 22, .85)))),
+    slide('01-callout', frame(box(190, line('let’s take<br>a day trip.', 88)) + print(0, 90, 660, 440, 600, -5) + print(1, 590, 790, 340, 480, 4) + box(1400, line('looking for models in antalya', 50) + line('free photo collab · day trips', 44, 22, .85)))),
     slide('02-possible-places', frame(box(190, line('a few places<br>we could go.', 82)) + box(580, line('phaselis', 62) + line('ruins + bays', 40, 15, .75) + line('olympos / çıralı', 60, 70) + line('ruins + beach', 40, 15, .75) + line('adrasan', 62, 70) + line('by the water', 40, 15, .75), 'left', 90, 390) + print(0, 680, 560, 260, 370, 5) + print(5, 660, 1060, 280, 360, -4) + box(1480, line('just ideas. we choose together.', 44) + line('somewhere else in mind? send it over.', 40, 22, .8)))),
-    slide('03-collab-cta', frame(box(200, line('your idea.<br>my camera.', 88) + line('free photo collab.<br>full-res photos in about 2 weeks.', 46, 45)) + print(0, 100, 780, 360, 500, -5) + print(1, 580, 850, 350, 490, 4) + box(1450, line('dm me if interested 🙂', 62) + line('we’ll plan the place + day together.', 40, 25, .85) + line('@madebyaidan', 38, 25, .8)))),
+    slide('03-collab-cta', frame(box(200, line('your idea.<br>my camera.', 88) + line('free photo collab.<br>photos in about 2 weeks.', 46, 45)) + print(0, 100, 780, 360, 500, -5) + print(1, 580, 850, 350, 490, 4) + box(1450, line('dm me if interested 🙂', 62) + line('we’ll plan the place + day together.', 40, 25, .85) + line('@madebyaidan', 38, 25, .8)))),
   ]},
   v16: { title: 'the photo essay', slides: [
     slide('01-callout', full(0, box(180, tag('antalya') + line('let’s get<br>out of town.', 96, 32)) + box(1260, line('looking for models', 64) + line('for a free photo collab.<br>let’s take a day trip.', 50, 28)))),
     slide('02-possible-places', full(5, box(190, tag('possible day trips') + line('where could we go?', 72, 25)) + box(1020, line('phaselis<br>olympos / çıralı<br>adrasan', 76) + line('a few ideas, not a set plan.<br>we choose the place together.', 46, 50)))),
-    slide('03-collab-cta', full(3, box(1020, line('come shoot with me.', 72) + line('free photo collab.<br>full-res photos in about 2 weeks.', 44, 40) + line('dm me if interested 🙂', 62, 55) + line('let’s pick a place + day.', 44, 30) + line('@madebyaidan', 40, 30, .85)))),
+    slide('03-collab-cta', full(3, box(1020, line('come shoot with me.', 72) + line('free photo collab.<br>photos in about 2 weeks.', 44, 40) + line('dm me if interested 🙂', 62, 55) + line('let’s pick a place + day.', 44, 30) + line('@madebyaidan', 40, 30, .85)))),
   ]},
 }
 
