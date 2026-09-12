@@ -32,7 +32,7 @@ const sets = {
     slide('03-collab-cta', frame(box(240, line('let’s make it happen.', 72) + line('free photo collab.<br>photos in about 2 weeks.', 48, 50) + line('we choose the place, day + look together.', 42, 40, .85) + line('dm me if interested 🙂', 66, 65)) + print(3, 290, 920, 480, 570, -2) + handle(1570))),
   ]},
   v15: { title: 'the moodboard', slides: [
-    slide('01-callout', frame(box(190, line('looking for models<br>in antalya.', 76)) + print(0, 90, 660, 440, 600, -5) + print(1, 590, 790, 340, 480, 4) + box(1400, line('free photo collab', 50) + line('let’s take a trip + take some photos.', 42, 22, .85)))),
+    slide('01-callout', frame(box(190, line('looking for models<br>in antalya.', 76)) + print(0, 90, 660, 440, 600, -5) + print(1, 590, 790, 340, 480, 4) + box(1400, line('free photo collab', 50) + line('let’s take a trip + some photos.', 42, 22, .85)))),
     slide('02-possible-places', frame(box(190, line('possible shoot<br>locations.', 82)) + box(580, line('phaselis', 62) + line('ruins + bays', 40, 15, .75) + line('olympos / çıralı', 60, 70) + line('ruins + beach', 40, 15, .75) + line('adrasan', 62, 70) + line('by the water', 40, 15, .75), 'left', 90, 390) + print(0, 680, 560, 260, 370, 5) + print(5, 660, 1060, 280, 360, -4) + box(1480, line('location suggestions welcome.', 44) + line('we’ll agree on a spot before the shoot.', 40, 22, .8)))),
     slide('03-collab-cta', frame(box(200, line('about the shoot.', 88) + line('free photo collab.<br>photos in about 2 weeks.', 46, 45)) + print(0, 100, 780, 360, 500, -5) + print(1, 580, 850, 350, 490, 4) + box(1450, line('dm me if interested', 62) + line('we’ll work out the details over dm.', 40, 25, .85) + line('@madebyaidan', 38, 25, .8)))),
   ]},
