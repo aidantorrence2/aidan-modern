@@ -6,7 +6,8 @@ import { fileURLToPath } from 'node:url'
 // Format variations for the SAME open-ended Antalya day-trip model callout.
 // No destination, date, route, departure time, or return time is booked.
 // v14: invitation / v15: moodboard / v16: photo essay.
-// All photography is Aidan's existing portfolio, not destination reference imagery.
+// Portfolio photos on callout/CTA; v15 slide 2 uses actual destination photos.
+// Destination image credits: places-antalya/sources.json.
 const ROOT = path.dirname(fileURLToPath(import.meta.url))
 const IMG = path.resolve(ROOT, '../../public/images')
 const only = process.argv.find(x => x.startsWith('--only='))?.split('=')[1]
@@ -16,6 +17,7 @@ const P = ['large/aidanto-r4-047-22.jpg', 'large/0604804-0043.jpg', 'large/aidan
 const line = (text, size = 64, mt = 0, opacity = 1) => `<p data-copy style="font-size:${size}px;margin:${mt}px 0 0;opacity:${opacity};line-height:1.25;font-weight:500">${text}</p>`
 const box = (top, content, align = 'left', left = 90, right = 90) => `<div style="position:absolute;top:${top}px;left:${left}px;right:${right}px;text-align:${align}">${content}</div>`
 const print = (i, x, y, w, h, rotate = 0) => `<div style="position:absolute;left:${x}px;top:${y}px;width:${w+24}px;padding:12px 12px 18px;background:#fafafa;transform:rotate(${rotate}deg);box-shadow:0 14px 30px #0007"><img src="${photo(P[i])}" style="display:block;width:${w}px;height:${h}px;object-fit:cover;object-position:center top"></div>`
+const placePrint = (file, y, rotate = 0) => `<div style="position:absolute;left:590px;top:${y}px;width:414px;padding:12px;background:#fafafa;transform:rotate(${rotate}deg)"><img src="data:image/jpeg;base64,${fs.readFileSync(path.join(ROOT, 'places-antalya', file)).toString('base64')}" style="display:block;width:390px;height:280px;object-fit:cover"></div>`
 const frame = inner => `<main style="width:1080px;height:1920px;position:relative;overflow:hidden;background:#000">${inner}</main>`
 const tag = text => line(text, 34, 0, .65)
 const handle = top => box(top, line('@madebyaidan', 42, 0, .8), 'center')
@@ -33,7 +35,7 @@ const sets = {
   ]},
   v15: { title: 'the moodboard', slides: [
     slide('01-callout', frame(box(190, line('looking for models<br>in antalya.', 76)) + print(0, 90, 660, 440, 600, -5) + print(1, 590, 790, 340, 480, 4) + box(1400, line('free photo collab', 50) + line('let’s take a trip + some photos.', 42, 22, .85)))),
-    slide('02-possible-places', frame(box(190, line('possible shoot<br>locations.', 82)) + box(580, line('phaselis', 62) + line('ruins + bays', 40, 15, .75) + line('olympos / çıralı', 60, 70) + line('ruins + beach', 40, 15, .75) + line('adrasan', 62, 70) + line('by the water', 40, 15, .75), 'left', 90, 390) + print(0, 680, 560, 260, 370, 5) + print(5, 660, 1060, 280, 360, -4) + box(1480, line('location suggestions welcome.', 44) + line('we’ll agree on a spot before the shoot.', 40, 22, .8)))),
+    slide('02-possible-places', frame(box(180, line('possible shoot<br>locations.', 78)) + box(535, line('phaselis', 62) + line('ruins + bays', 40, 18, .75), 'left', 90, 510) + placePrint('phaselis-03.jpg', 450, 2) + box(925, line('olympos / çıralı', 52) + line('ruins + beach', 40, 18, .75), 'left', 90, 510) + placePrint('olympos-01.jpg', 840, -2) + box(1315, line('adrasan', 62) + line('by the water', 40, 18, .75), 'left', 90, 510) + placePrint('adrasan-01.jpg', 1230, 2) + box(1640, line('location suggestions welcome.', 42)))),
     slide('03-collab-cta', frame(box(200, line('about the shoot.', 88) + line('free photo collab.<br>photos in about 2 weeks.', 46, 45)) + print(0, 100, 780, 360, 500, -5) + print(1, 580, 850, 350, 490, 4) + box(1450, line('dm me if interested', 62) + line('we’ll work out the details over dm.', 40, 25, .85) + line('@madebyaidan', 38, 25, .8)))),
   ]},
   v16: { title: 'the photo essay', slides: [
