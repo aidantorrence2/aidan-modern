@@ -32,6 +32,10 @@ branch=$(git branch --show-current)
 grep -q "aidan-modern-at9e" .vercel/project.json \
   || { echo "✗ .vercel/project.json is NOT linked to aidan-modern-at9e. Run: vercel link --project aidan-modern-at9e --scope $SCOPE --yes"; exit 1; }
 [ -f "$AUTH" ] || { echo "✗ Vercel CLI not authenticated ($AUTH missing). Run: vercel login"; exit 1; }
+# Vercel CLI ≥ 41 stores a short-lived OAuth token + refresh token. The raw API
+# probe below can't refresh it, so let the CLI do that first (a no-op when the
+# token is still valid; harmless if it fails — the probe then reports it).
+npx vercel whoami --scope "$SCOPE" >/dev/null 2>&1 || true
 TOKEN=$(python3 -c "import json;print(json.load(open('$AUTH'))['token'])")
 # A token can exist but be expired — then every deployment poll silently returns
 # an auth error that parses as "no deployments" and we wait 15 min for nothing.
