@@ -4,7 +4,10 @@
 import { useEffect, useRef, useState } from 'react'
 import { libraryImages, makeRounds, MAX_PICKS, PICKER_STORAGE_KEY } from '@/lib/themePicker'
 import { initPageAnalytics, track } from '@/lib/track'
+import { detectLang, useLang } from '@/lib/locale'
+import { copyFor } from '@/lib/signupCopy'
 import SignUpFormCollabThemes from './SignUpFormCollabThemes'
+import LangToggle from './LangToggle'
 import { SHOOT } from '@/lib/shoot'
 import styles from './ThemePicker.module.css'
 
@@ -18,6 +21,8 @@ const fresh = (): Session => ({ version: 2, seed: Math.floor(Math.random() * 0xf
 export default function ThemePicker() {
   const [session, setSession] = useState<Session | null>(null)
   const [flash, setFlash] = useState<string | null>(null)
+  const [lang, setLang] = useLang()
+  const copy = copyFor(lang)
   const lock = useRef(false)
   const timer = useRef<ReturnType<typeof setTimeout>>()
   const gridRef = useRef<HTMLDivElement>(null)
@@ -28,7 +33,9 @@ export default function ThemePicker() {
   const complete = !!session?.done || selectedIds.length >= MAX_PICKS || round >= rounds.length
 
   useEffect(() => {
-    initPageAnalytics('/sign-up-collab', { version: 'picker-v3' })
+    // lang is tagged on the page view so the funnel can be split by language
+    // (the page paints in the detected language from its first frame).
+    initPageAnalytics('/sign-up-collab', { version: 'picker-v3', lang: detectLang() })
     let restored: Session | null = null
     try {
       const saved = JSON.parse(localStorage.getItem(PICKER_STORAGE_KEY) || 'null') as Session | null
@@ -72,7 +79,12 @@ export default function ThemePicker() {
     setSession(session.done ? { ...session, done: false, updatedAt: Date.now() } : { ...session, choices: session.choices.slice(0, -1), updatedAt: Date.now() })
   }
 
-  const topbar = <div className={styles.topbar}><a href="/" className={styles.wordmark}>Aidan Torrence</a><span>{SHOOT.dates}</span></div>
+  const topbar = (
+    <div className={styles.topbar}>
+      <a href="/" className={styles.wordmark}>Aidan Torrence</a>
+      <div className={styles.topbarRight}><LangToggle lang={lang} onChange={setLang} /><span>{copy.dates}</span></div>
+    </div>
+  )
 
   if (!session) return <section className={styles.page}><div className={styles.shell}>{topbar}</div></section>
 
@@ -81,7 +93,7 @@ export default function ThemePicker() {
   if (complete) return (
     <section className={styles.page}><div className={styles.shell}>
       {topbar}
-      <div className={styles.reviewActions} style={{ marginTop: 48 }}><button className={styles.primary} onClick={() => setSession(fresh())}>Start over<span aria-hidden="true">↗</span></button></div>
+      <div className={styles.reviewActions} style={{ marginTop: 48 }}><button className={styles.primary} onClick={() => setSession(fresh())}>{copy.startOver}<span aria-hidden="true">↗</span></button></div>
     </div></section>
   )
 
@@ -89,18 +101,18 @@ export default function ThemePicker() {
     <section className={styles.page}>
       <div className={styles.shell}>
         {topbar}
-        <h1 className={styles.cta}><strong>{SHOOT.city}</strong><span>Free photo shoot</span></h1>
-        <p className={styles.ctaNote}><strong>Choose your preferred photo vibe.</strong> Then we’ll plan a shoot around it.</p>
+        <h1 className={styles.cta}><strong>{SHOOT.city}</strong><span>{copy.headline}</span></h1>
+        <p className={styles.ctaNote}><strong>{copy.note.lead}</strong>{copy.note.rest}</p>
         <div className={styles.segments} aria-hidden="true">{Array.from({ length: MAX_PICKS }, (_, i) => <i key={i} className={i < selectedIds.length ? styles.segmentOn : undefined} />)}</div>
-        <div className={styles.choiceGrid} ref={gridRef} tabIndex={-1} data-round={round + 1} aria-label={`Choose one photo, round ${round + 1}`}>
-          {options.map(image => <button key={image.id} className={`${styles.choice} ${flash === image.id ? styles.chosen : ''}`} onClick={() => pick(image.id)} aria-label={`Choose ${image.alt}`}>
+        <div className={styles.choiceGrid} ref={gridRef} tabIndex={-1} data-round={round + 1} aria-label={copy.chooseRound(round + 1)}>
+          {options.map(image => <button key={image.id} className={`${styles.choice} ${flash === image.id ? styles.chosen : ''}`} onClick={() => pick(image.id)} aria-label={copy.chooseImage(image.alt)}>
             <img src={image.src} alt={image.alt} draggable={false} />{flash === image.id && <span className={styles.check} aria-hidden="true">✓</span>}
           </button>)}
-          <button className={styles.skipTile} onClick={() => pick(null)} aria-label="Skip">Skip<span aria-hidden="true">→</span></button>
+          <button className={styles.skipTile} onClick={() => pick(null)} aria-label={copy.skip}>{copy.skip}<span aria-hidden="true">→</span></button>
         </div>
-        <p className={styles.srOnly} role="status" aria-live="polite">Round {round + 1}. {selectedIds.length} of {MAX_PICKS} photos saved.</p>
+        <p className={styles.srOnly} role="status" aria-live="polite">{copy.status(round + 1, selectedIds.length, MAX_PICKS)}</p>
         <div className={styles.pickerControls}>
-          <button className={styles.textButton} onClick={back} disabled={!round}>← Back</button>
+          <button className={styles.textButton} onClick={back} disabled={!round}>{copy.back}</button>
         </div>
       </div>
     </section>

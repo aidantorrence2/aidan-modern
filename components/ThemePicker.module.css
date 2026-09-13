@@ -44,3 +44,9 @@
 .srOnly { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; }
 @media (max-height: 730px) { .shell { padding-top: 14px; } }
 @media (prefers-reduced-motion: reduce) { .progress span { transition: none; } .choiceGrid[data-round="1"] .choice { animation: none; } }
+
+/* Language toggle (EN · TR · RU) in the top bar — see lib/locale.ts. */
+.topbarRight { display: flex; align-items: center; gap: 10px; }
+.lang { display: flex; gap: 2px; }
+.lang button { min-height: 36px; min-width: 30px; padding: 0 5px; font-size: 11px; letter-spacing: .06em; color: #686b60; background: none; border: 0; border-radius: 3px; cursor: pointer; }
+.lang button[aria-pressed="true"] { color: #252720; font-weight: 600; text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1.5px; }
