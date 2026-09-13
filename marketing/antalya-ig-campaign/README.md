@@ -13,3 +13,7 @@ Rebuild stills with `node marketing/antalya-ig-campaign/render-stills.mjs notice
 Rebuild reels with `python3 marketing/antalya-ig-campaign/render-reels.py` or append `intro`. Requires Pillow, FFmpeg, external source footage and saved narration. The BTS source reel is saved under the export folder's `bts/source`.
 
 No fixed trip, dates, DM keywords, or technical delivery promises. No posting performed.
+
+## Pinterest concept revision
+
+The final concept now uses six Pinterest references. Rebuild with `node marketing/antalya-ig-campaign/render-pinterest-concept.mjs`. Sources and selection notes are in `pinterest/RESEARCH.md`. The original portfolio-based concept is preserved in the export folder under `concept-portfolio-original`.
