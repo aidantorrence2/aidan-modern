@@ -6,10 +6,15 @@ import { fileURLToPath } from 'node:url'
 // Layout unchanged since 13 Sept 2026. Reference images live in concept-refs/ (gitignored, disk only);
 // credits for the current set are in output-concept-v4/SOURCES.md.
 // v4 (15 Sept): the three slide heroes replaced with references Aidan picked from public/images/pinterest; slide 3 title 'interested?'.
-// Run:  node marketing/antalya-ig-campaign/render-concept.mjs            (writes output-concept-v4/)
-//       node marketing/antalya-ig-campaign/render-concept.mjs --out=output-concept-v5   (next version)
+// Run:  node marketing/antalya-ig-campaign/render-concept.mjs                 (dm CTA → output-concept-v4/)
+//       node marketing/antalya-ig-campaign/render-concept.mjs --cta=signup    (sign-up CTA for the website ad → output-concept-v4b-signup/)
+//       add --out=output-concept-v5 to write elsewhere
 const root = path.dirname(fileURLToPath(import.meta.url))
-const outName = (process.argv.find(a => a.startsWith('--out=')) || '--out=output-concept-v4').slice(6)
+const arg = (k, d) => (process.argv.find(a => a.startsWith(`--${k}=`)) || `--${k}=${d}`).slice(k.length + 3)
+const cta = arg('cta', 'dm')                                  // dm | signup
+if (!['dm', 'signup'].includes(cta)) throw new Error('--cta must be dm or signup')
+const CTA = cta === 'signup' ? 'sign up below' : 'dm if interested'   // "sign up below" = the Sign Up button under a Leads → website ad
+const outName = arg('out', cta === 'signup' ? 'output-concept-v4b-signup' : 'output-concept-v4')
 const out = path.join(root, outName)
 const REFS = path.join(root, 'concept-refs')
 const R = f => 'data:image/jpeg;base64,' + fs.readFileSync(path.join(REFS, f)).toString('base64')
@@ -27,9 +32,9 @@ const im = (k, l, t, w, h) => `<img src="${R(IMG[k][0])}" style="position:absolu
 const tx = (t, l, top, size, lh = 1.08, extra = '') => `<div data-copy style="position:absolute;left:${l}px;top:${top}px;font-family:${F};font-size:${size}px;line-height:${lh};color:#141414;letter-spacing:-0.012em;${extra}">${t}</div>`
 const frame = inner => `<div style="width:1080px;height:1350px;position:relative;overflow:hidden;background:#F2EFE8;">${inner}</div>`
 const slides = [
-  ['01-concept', frame(tx('photo collab', 62, 66, 28) + tx('free photo shoot<br/>in antalya', 62, 118, 86, 1.02) + im('s1hero', 62, 350, 548, 688) + im('s1top', 638, 350, 380, 330) + im('s1bot', 638, 708, 380, 330) + tx('looking for people to shoot with', 62, 1092, 48) + tx('dm if interested', 62, 1176, 35))],
+  ['01-concept', frame(tx('photo collab', 62, 66, 28) + tx('free photo shoot<br/>in antalya', 62, 118, 86, 1.02) + im('s1hero', 62, 350, 548, 688) + im('s1top', 638, 350, 380, 330) + im('s1bot', 638, 708, 380, 330) + tx('looking for people to shoot with', 62, 1092, 48) + tx(CTA, 62, 1176, 35))],
   ['02-direction', frame(tx('the mood', 62, 70, 76, 1.0) + tx('sea air. simple styling. beach light.', 62, 178, 32) + im('s2hero', 62, 262, 473, 663) + im('s2top', 568, 262, 424, 488) + im('s2bot', 568, 775, 424, 455) + tx('light layers,<br/>your own style.', 62, 990, 50))],
-  ['03-invitation', frame(tx('interested?', 62, 68, 90, 1.02) + im('s3', 62, 325, 538, 775) + tx('free photo collab<br/>in antalya', 638, 412, 40) + tx('we plan the<br/>styling, location<br/>and date together.', 638, 625, 33, 1.25) + tx('dm if interested', 62, 1148, 60) + tx('@madebyaidan', 62, 1240, 25))],
+  ['03-invitation', frame(tx('interested?', 62, 68, 90, 1.02) + im('s3', 62, 325, 538, 775) + tx('free photo collab<br/>in antalya', 638, 412, 40) + tx('we plan the<br/>styling, location<br/>and date together.', 638, 625, 33, 1.25) + tx(CTA, 62, 1148, 60) + tx('@madebyaidan', 62, 1240, 25))],
 ]
 const CSS = `*{box-sizing:border-box}html,body{margin:0;background:#F2EFE8;overflow:hidden}body{-webkit-font-smoothing:antialiased}`
 fs.mkdirSync(out, { recursive: true })
