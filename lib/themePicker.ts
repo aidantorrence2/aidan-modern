@@ -1,5 +1,9 @@
 import themeData from '@/data/shoot-themes.json'
 import imageData from '@/data/theme-images.json'
+// Previous libraries (moodboard/ + theme-picker/ files, still served). Never shown
+// in the picker; kept so picks saved by earlier signups still resolve on /admin,
+// /your-moodboard and in the moodboard lines.
+import legacyImageData from '@/data/theme-images-legacy.json'
 
 export type ThemeId = 'sea' | 'old-town' | 'boat' | 'indoor'
 export type StartingTheme = ThemeId | 'any'
@@ -12,7 +16,7 @@ export const PER_ROUND = 8 // photos per round; the ninth tile is Skip
 // Full rounds available; skips consume rounds without consuming picks.
 export const ROUNDS = Math.floor(imageData.length / PER_ROUND)
 export const PICKER_STORAGE_KEY = 'aidan:theme-picker:v2'
-export const IMAGE_BY_ID = new Map(THEME_IMAGES.map(image => [image.id, image]))
+export const IMAGE_BY_ID = new Map([...(legacyImageData as ThemeImage[]), ...THEME_IMAGES].map(image => [image.id, image]))
 
 export function isStartingTheme(value: unknown): value is StartingTheme {
   return value === 'any' || THEMES.some(theme => theme.id === value)
