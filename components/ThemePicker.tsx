@@ -8,7 +8,6 @@ import { detectLang, useLang } from '@/lib/locale'
 import { copyFor } from '@/lib/signupCopy'
 import SignUpFormCollabThemes from './SignUpFormCollabThemes'
 import LangToggle from './LangToggle'
-import { SHOOT } from '@/lib/shoot'
 import styles from './ThemePicker.module.css'
 
 // choices: one entry per round shown — an image id, or null for a skipped round.
@@ -101,7 +100,7 @@ export default function ThemePicker() {
     <section className={styles.page}>
       <div className={styles.shell}>
         {topbar}
-        <h1 className={styles.cta}><strong>{SHOOT.city}</strong><span>{copy.headline}</span></h1>
+        <h1 className={styles.cta}><strong>{copy.signUp}</strong><span>{copy.headline}</span></h1>
         <p className={styles.ctaNote}><strong>{copy.note.lead}</strong>{copy.note.rest}</p>
         <div className={styles.segments} aria-hidden="true">{Array.from({ length: MAX_PICKS }, (_, i) => <i key={i} className={i < selectedIds.length ? styles.segmentOn : undefined} />)}</div>
         <div className={styles.choiceGrid} ref={gridRef} tabIndex={-1} data-round={round + 1} aria-label={copy.chooseRound(round + 1)}>
