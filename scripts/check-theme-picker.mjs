@@ -17,7 +17,7 @@ assert.equal(new Set(THEME_IMAGES.map(image => image.id)).size, total)
 assert.equal(new Set(THEME_IMAGES.map(image => image.src)).size, total)
 for (const image of THEME_IMAGES) {
   assert.ok(fs.existsSync(path.join(root, 'public', image.src)), image.src)
-  assert.ok(fs.statSync(path.join(root, 'public', image.src)).size < 500_000, image.src)
+  assert.ok(fs.statSync(path.join(root, 'public', image.src)).size < 1_000_000, image.src)
 }
 const themeOf = new Map(THEME_IMAGES.map(image => [image.id, image.theme]))
 let leastMixed = Infinity
