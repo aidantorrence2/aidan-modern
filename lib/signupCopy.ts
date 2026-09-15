@@ -27,6 +27,8 @@ export type SignupCopy = {
   instagramLabel: string
   instagramPlaceholder: string
   followHint: { before: string; after: string }
+  whereAreYou: string
+  whereAreYouPlaceholder: string
   notes: string
   optional: string
   photosOfYou: string
@@ -41,6 +43,7 @@ export type SignupCopy = {
     picksLost: string
     whatsapp: string
     instagram: string
+    noLocation: string
     noPhoto: string
     saveFailed: string
   }
@@ -70,6 +73,8 @@ export const SIGNUP_COPY: Record<Lang, SignupCopy> = {
     instagramLabel: 'Instagram username',
     instagramPlaceholder: '@yourusername',
     followHint: { before: 'Please follow ', after: ' or I won’t be able to message you.' },
+    whereAreYou: 'Where are you?',
+    whereAreYouPlaceholder: 'Antalya, Kaş, Fethiye, Çıralı…',
     notes: 'Notes',
     optional: 'optional',
     photosOfYou: 'Photos of you',
@@ -84,6 +89,7 @@ export const SIGNUP_COPY: Record<Lang, SignupCopy> = {
       picksLost: 'Your picks didn’t come through. Go back and choose again.',
       whatsapp: `Enter your WhatsApp number with its country code, for example ${SHOOT.phoneExample}.`,
       instagram: 'Enter your Instagram username, without a link.',
+      noLocation: 'Tell me where you are.',
       noPhoto: 'Add at least one photo of you.',
       saveFailed: 'Your signup didn’t save. Your picks are still here — please try again.',
     },
@@ -111,6 +117,8 @@ export const SIGNUP_COPY: Record<Lang, SignupCopy> = {
     instagramLabel: 'Instagram kullanıcı adı',
     instagramPlaceholder: '@kullaniciadin',
     followHint: { before: 'Lütfen ', after: ' hesabını takip et, yoksa sana mesaj atamam.' },
+    whereAreYou: 'Neredesin?',
+    whereAreYouPlaceholder: 'Antalya, Kaş, Fethiye, Çıralı…',
     notes: 'Notlar',
     optional: 'isteğe bağlı',
     photosOfYou: 'Senin fotoğrafların',
@@ -125,6 +133,7 @@ export const SIGNUP_COPY: Record<Lang, SignupCopy> = {
       picksLost: 'Seçimlerin ulaşmadı. Geri dön ve tekrar seç.',
       whatsapp: `WhatsApp numaranı ülke koduyla yaz, örneğin ${SHOOT.phoneExample}.`,
       instagram: 'Instagram kullanıcı adını yaz, link olmadan.',
+      noLocation: 'Nerede olduğunu yaz.',
       noPhoto: 'En az bir fotoğrafını ekle.',
       saveFailed: 'Kaydın gönderilemedi. Seçimlerin hâlâ burada — lütfen tekrar dene.',
     },
@@ -152,6 +161,8 @@ export const SIGNUP_COPY: Record<Lang, SignupCopy> = {
     instagramLabel: 'Имя пользователя Instagram',
     instagramPlaceholder: '@твойник',
     followHint: { before: 'Пожалуйста, подпишись на ', after: ', иначе я не смогу тебе написать.' },
+    whereAreYou: 'Где ты сейчас?',
+    whereAreYouPlaceholder: 'Antalya, Kaş, Fethiye, Çıralı…',
     notes: 'Заметки',
     optional: 'необязательно',
     photosOfYou: 'Твои фото',
@@ -166,6 +177,7 @@ export const SIGNUP_COPY: Record<Lang, SignupCopy> = {
       picksLost: 'Твой выбор не дошёл. Вернись и выбери снова.',
       whatsapp: `Введи номер WhatsApp с кодом страны, например ${SHOOT.phoneExample}.`,
       instagram: 'Введи имя пользователя Instagram, без ссылки.',
+      noLocation: 'Напиши, где ты сейчас.',
       noPhoto: 'Добавь хотя бы одно своё фото.',
       saveFailed: 'Запись не сохранилась. Твой выбор на месте — попробуй ещё раз.',
     },
