@@ -10,9 +10,9 @@ import styles from './ThemePicker.module.css'
 import form from './ThemeSignup.module.css'
 import paid from './PaidPicker.module.css'
 
-type Props = { subject: SubjectId; selection: ThemeSelection; onBack: () => void; onRestart: () => void; onChangeSubject: () => void }
+type Props = { subject: SubjectId; selection: ThemeSelection; onBack: () => void; onRestart: () => void }
 
-export default function SignUpFormPaid({ subject, selection, onBack, onRestart, onChangeSubject }: Props) {
+export default function SignUpFormPaid({ subject, selection, onBack, onRestart }: Props) {
   const packages = packagesFor(subject)
   const [packageId, setPackageId] = useState(packages[0].id)
   const [channel, setChannel] = useState<ContactChannel>('text')
@@ -108,7 +108,9 @@ export default function SignUpFormPaid({ subject, selection, onBack, onRestart, 
     } finally { submitting.current = false; setSaving(false) }
   }
 
-  return <section className={styles.page}><div className={styles.shell}>
+  return <section className={styles.page}>
+    <style dangerouslySetInnerHTML={{ __html: 'body > header, body > footer, .fixed.inset-x-0.bottom-0 { display: none !important; }' }} />
+    <div className={styles.shell}>
     <div className={styles.topbar}>
       <a href="/" className={styles.wordmark}>{copy.wordmark}</a>
       <span>{copy.corner}</span>
@@ -119,7 +121,7 @@ export default function SignUpFormPaid({ subject, selection, onBack, onRestart, 
     <div className={form.boardSummary}>
       <div className={form.filmstrip}>{images.map(image => <img src={image.src} alt={image.alt} key={image.id} />)}</div>
       <div className={paid.chips}><span>{subjectLabel(subject)}</span>{done && <span>{chosenPackage.name} · {price(chosenPackage.price)}</span>}</div>
-      {!done && <div className={form.boardActions}><button type="button" className={`${styles.textButton} ${form.back}`} onClick={onBack}>{copy.back}</button><span><button type="button" className={styles.textButton} onClick={onChangeSubject}>{copy.changeSubject}</button> · <button type="button" className={styles.textButton} onClick={onRestart}>{copy.startOver}</button></span></div>}
+      {!done && <div className={form.boardActions}><button type="button" className={`${styles.textButton} ${form.back}`} onClick={onBack}>{copy.back}</button><button type="button" className={styles.textButton} onClick={onRestart}>{copy.startOver}</button></div>}
     </div>
     {done ? <div className={styles.reviewActions}><a className={styles.textButton} href="https://www.instagram.com/madebyaidan" target="_blank" rel="noreferrer">@madebyaidan</a></div> : <form className={form.form} onSubmit={submit}>
       <fieldset>

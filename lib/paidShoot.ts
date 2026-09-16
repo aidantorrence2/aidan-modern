@@ -79,7 +79,6 @@ export const PAID_COPY = {
   skip: 'Skip',
   back: '← Back',
   startOver: 'Start over',
-  changeSubject: 'Change who it’s for',
   chooseRound: (round: number) => `Choose one photo, round ${round}`,
   chooseImage: (alt: string) => `Choose ${alt}`,
   status: (round: number, saved: number, max: number) => `Round ${round}. ${saved} of ${max} photos saved.`,

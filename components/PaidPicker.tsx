@@ -96,10 +96,14 @@ export default function PaidPicker() {
     </div>
   )
 
-  if (!session) return <section className={styles.page}><div className={styles.shell}>{topbar}</div></section>
+  // Same page chrome rule as the other custom pages: no site header/footer.
+  const chrome = <style dangerouslySetInnerHTML={{ __html: 'body > header, body > footer, .fixed.inset-x-0.bottom-0 { display: none !important; }' }} />
+
+  if (!session) return <section className={styles.page}>{chrome}<div className={styles.shell}>{topbar}</div></section>
 
   if (!subject) return (
     <section className={styles.page}>
+      {chrome}
       <div className={styles.shell}>
         {topbar}
         <h1 className={styles.cta}><strong>{copy.bookTitle}</strong></h1>
@@ -123,20 +127,20 @@ export default function PaidPicker() {
       subject={subject}
       selection={{ theme: 'any', imageIds: selectedIds }}
       onBack={back}
-      onRestart={() => setSession(fresh(subject))}
-      onChangeSubject={() => setSession(fresh())}
+      onRestart={() => setSession(fresh())}
     />
   )
 
   if (complete) return (
-    <section className={styles.page}><div className={styles.shell}>
+    <section className={styles.page}>{chrome}<div className={styles.shell}>
       {topbar}
-      <div className={styles.reviewActions} style={{ marginTop: 48 }}><button className={styles.primary} onClick={() => setSession(fresh(subject))}>{copy.startOver}<span aria-hidden="true">↗</span></button></div>
+      <div className={styles.reviewActions} style={{ marginTop: 48 }}><button className={styles.primary} onClick={() => setSession(fresh())}>{copy.startOver}<span aria-hidden="true">↗</span></button></div>
     </div></section>
   )
 
   return (
     <section className={styles.page}>
+      {chrome}
       <div className={styles.shell}>
         {topbar}
         <h1 className={styles.cta}><strong>{copy.pickTitle}</strong><span>{PAID_SUBJECTS.find(item => item.id === subject)?.label}</span></h1>
@@ -150,7 +154,7 @@ export default function PaidPicker() {
         </div>
         <p className={styles.srOnly} role="status" aria-live="polite">{copy.status(round + 1, selectedIds.length, MAX_PICKS)}</p>
         <div className={styles.pickerControls}>
-          <button className={styles.textButton} onClick={back}>{round ? copy.back : copy.changeSubject}</button>
+          <button className={styles.textButton} onClick={back}>{round ? copy.back : copy.startOver}</button>
         </div>
       </div>
     </section>
