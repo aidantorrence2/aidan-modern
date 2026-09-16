@@ -16,6 +16,7 @@ export default function SignUpFormPaid({ subject, selection, onBack, onRestart }
   const [packageId, setPackageId] = useState(packages[0].id)
   const [channel, setChannel] = useState<ContactChannel>('text')
   const [phone, setPhone] = useState('')
+  const [email, setEmail] = useState('')
   const [social, setSocial] = useState('')
   const [location, setLocation] = useState('')
   const [when, setWhen] = useState('')
@@ -27,6 +28,8 @@ export default function SignUpFormPaid({ subject, selection, onBack, onRestart }
   const submitting = useRef(false)
   const images = imagesForIds(selection.imageIds)
   const chosenPackage = packages.find(pkg => pkg.id === packageId) || packages[0]
+  // Brands and companies are contacted by email; everyone else by phone.
+  const byEmail = subject === 'brand'
 
   async function submit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault()
@@ -35,16 +38,22 @@ export default function SignUpFormPaid({ subject, selection, onBack, onRestart }
     if (data.get('company')) return
     const chosen = parseThemeSelection(selection)
     if (!chosen) { setError(copy.errors.picksLost); return }
-    const contact = phone.trim()
-    const digits = contact.replace(/\D/g, '').length
-    if (!/^\+?[\d\s().-]{7,24}$/.test(contact) || digits < 7 || digits > 15) { setError(copy.errors.phone); return }
+    let contact: string
+    if (byEmail) {
+      contact = email.trim()
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(contact) || contact.length > 120) { setError(copy.errors.email); return }
+    } else {
+      contact = phone.trim()
+      const digits = contact.replace(/\D/g, '').length
+      if (!/^\+?[\d\s().-]{7,24}$/.test(contact) || digits < 7 || digits > 15) { setError(copy.errors.phone); return }
+    }
     const place = location.trim()
     if (!place) { setError(copy.errors.noLocation); return }
     const brand = brandName.trim()
     if (subject === 'brand' && !brand) { setError(copy.errors.noBrand); return }
-    const channelLabel = CONTACT_CHANNELS.find(item => item.id === channel)?.label || channel
+    const channelLabel = byEmail ? 'Email' : CONTACT_CHANNELS.find(item => item.id === channel)?.label || channel
     submitting.current = true; setSaving(true); setError('')
-    const analytics = { subject, package: chosenPackage.id, price: chosenPackage.price, channel, social: !!social.trim(), picks: images.length, location: place }
+    const analytics = { subject, package: chosenPackage.id, price: chosenPackage.price, channel: byEmail ? 'email' : channel, social: !!social.trim(), picks: images.length, location: place }
     track('submit_attempt', analytics)
     try {
       const response = await fetch('/api/sign-up', {
@@ -52,7 +61,7 @@ export default function SignUpFormPaid({ subject, selection, onBack, onRestart }
         body: JSON.stringify({
           // The phone number rides the API's phone channel so it is normalized
           // to E.164 and the admin page gets a tap-to-message link.
-          city: place, contactMethod: 'whatsapp', contact, themeSelection: chosen,
+          city: place, contactMethod: byEmail ? 'email' : 'whatsapp', contact, themeSelection: chosen,
           // "Location:" is what the admin page and the phone-country inference
           // read; the rest is for Aidan when he opens the row.
           moodboard: [
@@ -107,12 +116,19 @@ export default function SignUpFormPaid({ subject, selection, onBack, onRestart }
           </button>
         ))}</div>
       </fieldset>
-      <fieldset>
-        <legend>{copy.howToContact}</legend>
-        <div className={form.channels}>{CONTACT_CHANNELS.map(item => <button type="button" key={item.id} aria-pressed={channel === item.id} onClick={() => { setChannel(item.id); setError('') }}>{item.label}</button>)}</div>
-        <label className={form.field}><span className={styles.srOnly}>{copy.phoneLabel}</span><input required type="tel" name="phone" autoComplete="tel" inputMode="tel" maxLength={40} value={phone} onChange={event => setPhone(event.target.value)} placeholder={copy.phonePlaceholder} /></label>
-        <p className={form.hint}>{copy.phoneHint}</p>
-      </fieldset>
+      {byEmail ? (
+        <div>
+          <label className={form.field}>{copy.emailLabel}<input required type="email" name="email" autoComplete="email" inputMode="email" maxLength={120} value={email} onChange={event => setEmail(event.target.value)} placeholder={copy.emailPlaceholder} /></label>
+          <p className={form.hint}>{copy.emailHint}</p>
+        </div>
+      ) : (
+        <fieldset>
+          <legend>{copy.howToContact}</legend>
+          <div className={form.channels}>{CONTACT_CHANNELS.map(item => <button type="button" key={item.id} aria-pressed={channel === item.id} onClick={() => { setChannel(item.id); setError('') }}>{item.label}</button>)}</div>
+          <label className={form.field}><span className={styles.srOnly}>{copy.phoneLabel}</span><input required type="tel" name="phone" autoComplete="tel" inputMode="tel" maxLength={40} value={phone} onChange={event => setPhone(event.target.value)} placeholder={copy.phonePlaceholder} /></label>
+          <p className={form.hint}>{copy.phoneHint}</p>
+        </fieldset>
+      )}
       <label className={form.field}>{copy.social} <span>{copy.optional}</span><input type="text" name="social" autoComplete="off" autoCapitalize="none" maxLength={80} value={social} onChange={event => setSocial(event.target.value)} placeholder={copy.socialPlaceholder} /></label>
       <label className={form.field}>{copy.whereAreYou}<input required type="text" name="location" autoComplete="address-level2" maxLength={80} value={location} onChange={event => setLocation(event.target.value)} placeholder={copy.wherePlaceholder} /></label>
       <label className={form.field}>{copy.when} <span>{copy.optional}</span><input type="text" name="when" autoComplete="off" maxLength={120} value={when} onChange={event => setWhen(event.target.value)} placeholder={copy.whenPlaceholder} /></label>

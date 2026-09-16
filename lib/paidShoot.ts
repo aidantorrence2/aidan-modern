@@ -57,7 +57,8 @@ export const price = (amount: number) => `$${amount.toLocaleString('en-US')}`
 // Call or text — both go to the one phone number. The number is stored on the
 // API's phone channel ('whatsapp'), so it is normalized and the admin page gets
 // a tap-to-message link; the visitor's preference and their WhatsApp / Instagram
-// handle are kept on the row as moodboard lines.
+// handle are kept on the row as moodboard lines. Brand / company sign-ups are
+// contacted by email instead (contact_method 'email').
 export const CONTACT_CHANNELS: { id: ContactChannel; label: string }[] = [
   { id: 'phone', label: 'Phone call' },
   { id: 'text', label: 'Text' },
@@ -85,6 +86,9 @@ export const PAID_COPY = {
   phoneLabel: 'Phone number',
   phonePlaceholder: '+1 (555) 123-4567',
   phoneHint: 'Include your country code if you’re outside the US.',
+  emailLabel: 'Work email',
+  emailPlaceholder: 'you@company.com',
+  emailHint: 'I’ll reply with a quote and dates.',
   social: 'WhatsApp / Instagram',
   socialPlaceholder: '@username or WhatsApp number',
   whereAreYou: 'Where are you?',
@@ -102,6 +106,7 @@ export const PAID_COPY = {
   errors: {
     picksLost: 'Your picks didn’t come through. Go back and choose again.',
     phone: 'Enter a phone number I can reach you on, with the country code if you’re outside the US.',
+    email: 'Enter a work email I can reply to.',
     noLocation: 'Tell me where you are.',
     noBrand: 'Tell me the brand or company.',
     saveFailed: 'Your booking didn’t send. Your picks are still here — please try again.',

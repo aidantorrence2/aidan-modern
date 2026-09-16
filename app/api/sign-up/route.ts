@@ -101,7 +101,7 @@ export async function POST(req: Request) {
       !isString(city) ||
       !isString(contactMethod) ||
       !isString(contact) ||
-      !['whatsapp', 'line', 'instagram'].includes(contactMethod)
+      !['whatsapp', 'line', 'instagram', 'email'].includes(contactMethod)
     ) {
       return NextResponse.json({ ok: false, error: 'Invalid input' }, { status: 400 })
     }
@@ -150,12 +150,16 @@ export async function POST(req: Request) {
     let { data: row, error: insertErr } = await insert(contactMethod, storedMoodboard)
 
     // `contact_method` has only ever held 'whatsapp'/'instagram'. If a newer
-    // channel is rejected by the column (legacy CHECK constraint / enum), fall
-    // back to 'whatsapp' and record the real channel in the moodboard — a lead
-    // is never worth losing to a schema that hasn't caught up.
+    // channel (LINE, email) is rejected by the column (legacy CHECK constraint /
+    // enum), fall back to a known value and record the real channel in the
+    // moodboard — a lead is never worth losing to a schema that hasn't caught up.
     if (insertErr && contactMethod === 'line') {
       console.error('[SIGN-UP] insert with contact_method=line failed, retrying as whatsapp:', insertErr)
       ;({ data: row, error: insertErr } = await insert('whatsapp', [...(storedMoodboard ?? []), 'Channel: LINE']))
+    }
+    if (insertErr && contactMethod === 'email') {
+      console.error('[SIGN-UP] insert with contact_method=email failed, retrying as instagram:', insertErr)
+      ;({ data: row, error: insertErr } = await insert('instagram', [...(storedMoodboard ?? []), 'Channel: Email']))
     }
 
     if (insertErr || !row) {
@@ -188,6 +192,7 @@ export async function POST(req: Request) {
       try {
         const contactLabel = contactMethod === 'whatsapp' ? 'WhatsApp'
           : contactMethod === 'line' ? 'LINE'
+          : contactMethod === 'email' ? 'Email'
           : 'Instagram'
         const slackBody = {
           text: `New sign-up from ${storedContact}`,

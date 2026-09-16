@@ -38,7 +38,16 @@ function instagramLink(handle: string) {
 // WhatsApp links are built via normalizeWhatsapp(contact, city) at the call site,
 // so numbers missing their international code get one inferred from the signup's city.
 
+/** Email rows (brand sign-ups on /sign-up). Written as 'instagram' + "Channel: Email"
+ *  when the column predates the channel, so that shape is read as email too. */
+function getEmail(s: Signup): string | null {
+  if (s.contact_method === 'email') return s.contact
+  if (s.contact_method === 'instagram' && s.moodboard?.some(m => /^channel:\s*email$/i.test(m))) return s.contact
+  return null
+}
+
 function getInstagram(s: Signup): string | null {
+  if (getEmail(s)) return null
   if (s.contact_method === 'instagram') return s.contact
   if (s.moodboard) {
     const entry = s.moodboard.find(m => /^instagram:/i.test(m))
@@ -138,9 +147,11 @@ export default function AdminClient({ signups: initial }: { signups: Signup[] })
         if (normalizedQuery) {
           const ig = getInstagram(s)
           const igMatch = ig && ig.replace(/^@/, '').toLowerCase().includes(normalizedQuery)
+          const email = getEmail(s)
+          const emailMatch = email && email.toLowerCase().includes(normalizedQuery)
           const phone = getPhoneContact(s)
           const phoneMatch = phone && digitsQuery && phone.replace(/\D/g, '').includes(digitsQuery)
-          if (!igMatch && !phoneMatch) return false
+          if (!igMatch && !emailMatch && !phoneMatch) return false
         }
         if (normalizedLocation && !getLocation(s).toLowerCase().includes(normalizedLocation)) return false
         return true
@@ -306,6 +317,7 @@ export default function AdminClient({ signups: initial }: { signups: Signup[] })
                 const numberlessLine = getNumberlessLine(s)
                 const line = isLine(s)
                 const instagram = getInstagram(s)
+                const email = getEmail(s)
                 const rawContact = s.moodboard?.find(m => /^raw contact:/i.test(m))?.replace(/^raw contact:\s*/i, '').trim()
                 const chosenIds = s.moodboard?.find(m => m.startsWith('Moodboard image IDs: '))?.slice('Moodboard image IDs: '.length).split(',') || []
                 const chosenImages = imagesForIds(chosenIds)
@@ -358,6 +370,16 @@ export default function AdminClient({ signups: initial }: { signups: Signup[] })
                               </a>
                               <span className="ml-2 rounded-full bg-white/10 px-2.5 py-0.5 text-xs font-medium text-white/50 align-middle">
                                 IG
+                              </span>
+                            </div>
+                          )}
+                          {email && (
+                            <div>
+                              <a href={`mailto:${email}`} className="text-base font-semibold text-white hover:text-emerald-400 transition">
+                                {email}
+                              </a>
+                              <span className="ml-2 rounded-full bg-white/10 px-2.5 py-0.5 text-xs font-medium text-white/50 align-middle">
+                                Email
                               </span>
                             </div>
                           )}
