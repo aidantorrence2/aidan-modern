@@ -1,0 +1,30 @@
+/* /sign-up-paid additions on top of ThemePicker.module.css: the "who is it
+   for" entry tiles and the package cards. Same palette as the collab picker. */
+.subjects { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; margin-top: 18px; }
+.subject { position: relative; aspect-ratio: 4 / 5; overflow: hidden; border-radius: 6px; background: #deded6; text-align: left; touch-action: manipulation; }
+.subject img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .25s ease; }
+.subject:active img { transform: scale(1.02); }
+.subjectLabel { position: absolute; inset: auto 0 0 0; padding: 40px 12px 12px; background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,.62)); color: #fff; display: flex; flex-direction: column; gap: 2px; }
+.subjectLabel strong { font-size: 18px; font-weight: 600; letter-spacing: -.03em; line-height: 1.1; }
+.subjectLabel small { font-size: 11px; opacity: .85; }
+.subjectPrice { position: absolute; top: 8px; left: 8px; background: #f5f3ee; color: #252720; font-size: 11px; font-weight: 600; letter-spacing: -.01em; padding: 5px 8px; border-radius: 999px; }
+.entryNote { font-size: 12px; line-height: 1.5; color: #62665c; margin-top: 14px; }
+.entryNote a { text-decoration: underline; text-underline-offset: 3px; }
+
+.chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
+.chips span { font-size: 11px; font-weight: 500; color: #35472f; background: #e2e8d9; border-radius: 999px; padding: 5px 10px; }
+
+.packages { display: flex; flex-direction: column; gap: 8px; margin-top: 10px; }
+.package { text-align: left; border: 1px solid #c9cfc1; border-radius: 6px; padding: 14px 14px 13px; background: #fff; display: block; width: 100%; touch-action: manipulation; }
+.package[aria-pressed=true] { border-color: #35472f; background: #eef2e7; box-shadow: inset 0 0 0 1px #35472f; }
+.packageHead { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; }
+.packageHead strong { font-size: 15px; font-weight: 600; letter-spacing: -.02em; }
+.packageHead b { font-size: 17px; font-weight: 600; letter-spacing: -.03em; white-space: nowrap; }
+.packageTime { font-size: 12px; color: #5d6552; margin-top: 3px; }
+.packageIncludes { display: flex; flex-wrap: wrap; gap: 4px 10px; margin-top: 8px; padding: 0; list-style: none; }
+.packageIncludes li { font-size: 12px; color: #3f4438; }
+.packageIncludes li::before { content: '·'; margin-right: 5px; color: #8a9180; }
+.packageNote { font-size: 12px; color: #5d6552; line-height: 1.5; margin-top: 8px; }
+.payNote { font-size: 12px; line-height: 1.5; color: #5d6552; margin-top: 10px; }
+.total { display: flex; justify-content: space-between; align-items: baseline; font-size: 13px; color: #3f4438; margin-bottom: 8px; }
+.total b { font-size: 16px; letter-spacing: -.02em; color: #252720; }

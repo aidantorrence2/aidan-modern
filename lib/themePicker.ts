@@ -7,16 +7,27 @@ import legacyImageData from '@/data/theme-images-legacy.json'
 
 export type ThemeId = 'sea' | 'old-town' | 'boat' | 'indoor'
 export type StartingTheme = ThemeId | 'any'
-export type ThemeImage = { id: string; theme: string; src: string; alt: string; source: string; credit: string }
+// subjects: who is in the photo (woman / man / couple / brand — see
+// scripts/prepare-pinterest-library.mjs); collab: shown in the free
+// /sign-up-collab rotation. Both are absent on legacy entries.
+export type ThemeImage = { id: string; theme: string; src: string; alt: string; source: string; credit: string; subjects?: string[]; collab?: boolean }
 export type ThemeSelection = { theme: StartingTheme; imageIds: string[]; suggestedUrl?: string }
 export const THEMES = themeData
-export const THEME_IMAGES: ThemeImage[] = imageData
+// The whole pinterest/ library; /sign-up-paid draws from it per subject.
+export const LIBRARY_IMAGES: ThemeImage[] = imageData
+// The free collab picker's rotation (the original hand-picked set).
+export const THEME_IMAGES: ThemeImage[] = LIBRARY_IMAGES.filter(image => image.collab !== false)
 export const MAX_PICKS = 5
 export const PER_ROUND = 8 // photos per round; the ninth tile is Skip
 // Full rounds available; skips consume rounds without consuming picks.
-export const ROUNDS = Math.floor(imageData.length / PER_ROUND)
+export const ROUNDS = Math.floor(THEME_IMAGES.length / PER_ROUND)
 export const PICKER_STORAGE_KEY = 'aidan:theme-picker:v2'
-export const IMAGE_BY_ID = new Map([...(legacyImageData as ThemeImage[]), ...THEME_IMAGES].map(image => [image.id, image]))
+export const IMAGE_BY_ID = new Map([...(legacyImageData as ThemeImage[]), ...LIBRARY_IMAGES].map(image => [image.id, image]))
+
+// Every library pin tagged with this subject (order preserved).
+export function imagesForSubject(subject: string): ThemeImage[] {
+  return LIBRARY_IMAGES.filter(image => image.subjects?.includes(subject))
+}
 
 export function isStartingTheme(value: unknown): value is StartingTheme {
   return value === 'any' || THEMES.some(theme => theme.id === value)
@@ -83,8 +94,13 @@ export function moodboardEntries(selection: ThemeSelection): string[] {
 
 // Deterministic rounds for a visit (seed), so back/refresh replay the same photos.
 // Each round draws round-robin across the themes from per-theme shuffled queues,
-// so no round is all one style. Only full rounds are returned.
-export function makeRounds(seed: number): string[][] {
+// so no round is all one style. Only full rounds are returned. `pool` defaults
+// to the collab rotation; /sign-up-paid passes one subject's pins with
+// `balanced`, which takes one pin from every style that still has some and
+// fills the rest from the deepest queues — an uneven pool (many outdoor pins,
+// few indoor) keeps mixing for as many rounds as possible instead of running
+// the small styles dry in the first two rounds.
+export function makeRounds(seed: number, pool: ThemeImage[] = THEME_IMAGES, balanced = false): string[][] {
   let randomState = seed >>> 0
   const random = () => {
     randomState = (Math.imul(randomState, 1664525) + 1013904223) >>> 0
@@ -97,13 +113,28 @@ export function makeRounds(seed: number): string[][] {
     }
     return items
   }
-  const queues = THEMES.map(theme => shuffle(THEME_IMAGES.filter(image => image.theme === theme.id).map(image => image.id)))
+  const queues = THEMES.map(theme => shuffle(pool.filter(image => image.theme === theme.id).map(image => image.id)))
   const rounds: string[][] = []
   for (let round = 0; ; round++) {
     const picks: string[] = []
-    for (let slot = 0; picks.length < PER_ROUND && slot < PER_ROUND * queues.length; slot++) {
-      const next = queues[(round + slot) % queues.length].shift()
-      if (next) picks.push(next)
+    if (balanced) {
+      const order = queues.map((_, i) => (round + i) % queues.length)
+      for (const i of order) {
+        if (picks.length === PER_ROUND) break
+        const next = queues[i].shift()
+        if (next) picks.push(next)
+      }
+      while (picks.length < PER_ROUND) {
+        const deepest = order.reduce((best, i) => (queues[i].length > queues[best].length ? i : best), order[0])
+        const next = queues[deepest].shift()
+        if (!next) break
+        picks.push(next)
+      }
+    } else {
+      for (let slot = 0; picks.length < PER_ROUND && slot < PER_ROUND * queues.length; slot++) {
+        const next = queues[(round + slot) % queues.length].shift()
+        if (next) picks.push(next)
+      }
     }
     if (picks.length < PER_ROUND) return rounds
     rounds.push(shuffle(picks))

@@ -10,7 +10,28 @@ const source = fs.readFileSync(path.join(root, 'lib/themePicker.ts'), 'utf8')
 const compiled = ts.transpileModule(source, { compilerOptions: { module: ts.ModuleKind.CommonJS, esModuleInterop: true, target: ts.ScriptTarget.ES2022 } }).outputText
 const module = { exports: {} }
 new Function('require', 'module', 'exports', compiled)(name => name.startsWith('@/data/') ? require(path.join(root, name.slice(2))) : require(name), module, module.exports)
-const { THEME_IMAGES, MAX_PICKS, PER_ROUND, ROUNDS, makeRounds, parseThemeSelection, moodboardEntries, boardPath, selectionFromQuery } = module.exports
+const { THEME_IMAGES, LIBRARY_IMAGES, MAX_PICKS, PER_ROUND, ROUNDS, makeRounds, imagesForSubject, parseThemeSelection, moodboardEntries, boardPath, selectionFromQuery } = module.exports
+
+// /sign-up-paid: each subject's pool must fill MAX_PICKS full rounds that mix styles.
+for (const image of LIBRARY_IMAGES) {
+  assert.ok(fs.existsSync(path.join(root, 'public', image.src)), image.src)
+  assert.ok(fs.statSync(path.join(root, 'public', image.src)).size < 1_000_000, image.src)
+}
+for (const subject of ['woman', 'man', 'couple', 'brand']) {
+  const pool = imagesForSubject(subject)
+  const rounds = makeRounds(7, pool, true)
+  assert.ok(rounds.length >= MAX_PICKS, `${subject}: need ${MAX_PICKS * PER_ROUND} pins for ${MAX_PICKS} rounds, got ${pool.length}`)
+  assert.deepEqual(rounds, makeRounds(7, pool, true))
+  assert.equal(new Set(rounds.flat()).size, rounds.flat().length)
+  rounds.forEach((round, index) => {
+    assert.equal(round.length, PER_ROUND)
+    assert.ok(round.every(id => pool.some(image => image.id === id)), `${subject}: round leaks another subject`)
+    // Smaller pools run a style queue dry in the tail rounds; the rounds a
+    // visitor needs to finish must still mix.
+    if (index < MAX_PICKS) assert.ok(new Set(round.map(id => pool.find(image => image.id === id).theme)).size >= 2, `${subject}: round ${index + 1} mixes styles`)
+  })
+  console.log(`paid/${subject}: ${pool.length} pins, ${rounds.length} rounds`)
+}
 const total = THEME_IMAGES.length
 assert.ok(ROUNDS >= MAX_PICKS, `need at least ${MAX_PICKS * PER_ROUND} images, got ${total}`)
 assert.equal(new Set(THEME_IMAGES.map(image => image.id)).size, total)
