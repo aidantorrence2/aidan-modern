@@ -5,7 +5,7 @@
 export type SubjectId = 'man' | 'woman' | 'couple' | 'brand'
 export type Subject = { id: SubjectId; label: string; hint: string; cover: string }
 export type Package = { id: string; name: string; price: number; time: string; includes: string[]; note?: string }
-export type ContactChannel = 'text' | 'whatsapp' | 'instagram'
+export type ContactChannel = 'phone' | 'text'
 
 export const PAID_STORAGE_KEY = 'aidan:paid-picker:v1'
 export const PAID_ANALYTICS_PATH = '/sign-up'
@@ -54,18 +54,14 @@ export function startingPrice(subject: SubjectId): number {
 
 export const price = (amount: number) => `$${amount.toLocaleString('en-US')}`
 
+// Call or text — both go to the one phone number. The number is stored on the
+// API's phone channel ('whatsapp'), so it is normalized and the admin page gets
+// a tap-to-message link; the visitor's preference and their WhatsApp / Instagram
+// handle are kept on the row as moodboard lines.
 export const CONTACT_CHANNELS: { id: ContactChannel; label: string }[] = [
-  { id: 'text', label: 'Text / phone' },
-  { id: 'whatsapp', label: 'WhatsApp' },
-  { id: 'instagram', label: 'Instagram' },
+  { id: 'phone', label: 'Phone call' },
+  { id: 'text', label: 'Text' },
 ]
-
-// A phone-number channel is stored as WhatsApp (the API's phone channel), so
-// the number is normalized and the admin page gets a tap-to-message link. The
-// visitor's preference is kept on the row as a "Contact preference:" line.
-export function apiContactMethod(channel: ContactChannel): 'whatsapp' | 'instagram' {
-  return channel === 'instagram' ? 'instagram' : 'whatsapp'
-}
 
 export const PAID_COPY = {
   wordmark: 'Aidan Torrence',
@@ -88,11 +84,9 @@ export const PAID_COPY = {
   howToContact: 'How should I contact you?',
   phoneLabel: 'Phone number',
   phonePlaceholder: '+1 (555) 123-4567',
-  textHint: 'I’ll text you on WhatsApp if your number has it, otherwise by SMS.',
-  whatsappHint: 'Include your country code.',
-  instagramLabel: 'Instagram username',
-  instagramPlaceholder: '@yourusername',
-  followHint: { before: 'Please follow ', after: ' so my message doesn’t land in requests.' },
+  phoneHint: 'Include your country code if you’re outside the US.',
+  social: 'WhatsApp / Instagram',
+  socialPlaceholder: '@username or WhatsApp number',
   whereAreYou: 'Where are you?',
   wherePlaceholder: 'City or neighborhood',
   when: 'When works?',
@@ -101,21 +95,13 @@ export const PAID_COPY = {
   brandPlaceholder: 'Name, and a link if you have one',
   notes: 'Notes',
   optional: 'optional',
-  photosOfYou: 'Photos of you',
-  photosOfBrand: 'Your product or space',
-  upTo3: 'optional · up to 3',
-  yourPhoto: (n: number) => `Your photo ${n}`,
-  removePhoto: (n: number) => `Remove your photo ${n}`,
-  addingPhotos: 'Adding your photos…',
   booking: 'Sending…',
   book: 'Book it',
   doneTitle: 'Got it.',
   doneNote: 'I’ll message you to confirm the time and the spot.',
   errors: {
-    photoFailed: 'Could not add that photo. Please try again.',
     picksLost: 'Your picks didn’t come through. Go back and choose again.',
-    phone: 'Enter a phone number I can text, with the country code if you’re outside the US.',
-    instagram: 'Enter your Instagram username, without a link.',
+    phone: 'Enter a phone number I can reach you on, with the country code if you’re outside the US.',
     noLocation: 'Tell me where you are.',
     noBrand: 'Tell me the brand or company.',
     saveFailed: 'Your booking didn’t send. Your picks are still here — please try again.',
