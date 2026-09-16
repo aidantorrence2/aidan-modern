@@ -9,6 +9,7 @@
 //                                The free /sign-up-collab picker shows every 'woman' pin plus
 //                                any pin also tagged 'collab'; /sign-up filters by the
 //                                subject the visitor picks on its first screen.
+//   data/pinterest-excluded.json pins pulled from the free collab rotation (collab: false)
 //   data/pinterest-sources.json  hash → original URL, only for pins whose pinimg original is
 //                                not a .jpg (the default link is reconstructed as .jpg).
 // Hash-named files are pinimg originals, so their source URL is reconstructed
@@ -30,6 +31,9 @@ const subjectsOf = JSON.parse(fs.readFileSync(path.join(root, 'data/pinterest-su
 const sourceOf = JSON.parse(fs.readFileSync(path.join(root, 'data/pinterest-sources.json'), 'utf8'))
 const SUBJECTS = ['woman', 'man', 'couple', 'brand']
 const ALT = { woman: label => `${label} reference`, man: () => "Men's portrait reference", couple: () => 'Couple reference', brand: () => 'Brand campaign reference' }
+// data/pinterest-excluded.json: pins Aidan pulled from the free /sign-up-collab rotation.
+// They stay in the library (so /sign-up can still draw them and earlier picks resolve) with collab: false.
+const excluded = new Set(JSON.parse(fs.readFileSync(path.join(root, 'data/pinterest-excluded.json'), 'utf8')))
 const files = fs.readdirSync(folder).filter(name => /\.jpe?g$/i.test(name)).sort()
 const counters = {}
 const library = files.map(name => {
@@ -39,7 +43,7 @@ const library = files.map(name => {
   const tags = subjectsOf[name] || ['woman']
   const subjects = tags.filter(tag => SUBJECTS.includes(tag))
   if (!subjects.length) throw new Error(`${name}: no subject among ${tags}`)
-  const collab = subjects.includes('woman') || tags.includes('collab')
+  const collab = !excluded.has(name) && (subjects.includes('woman') || tags.includes('collab'))
   const hash = /^[0-9a-f]{32}$/.test(stem) ? stem : null
   const pin = stem.match(/^[a-z-]+-(\d+)$/)?.[1]
   const source = (hash && sourceOf[hash]) || (hash ? `https://i.pinimg.com/originals/${hash.slice(0, 2)}/${hash.slice(2, 4)}/${hash.slice(4, 6)}/${hash}.jpg` : pin ? `https://www.pinterest.com/pin/${pin}/` : 'https://www.pinterest.com/')
