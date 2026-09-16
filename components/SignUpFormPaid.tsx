@@ -134,7 +134,6 @@ export default function SignUpFormPaid({ subject, selection, onBack, onRestart }
             {pkg.note && packageId === pkg.id && <span className={paid.packageNote}>{pkg.note}</span>}
           </button>
         ))}</div>
-        <p className={paid.payNote}>{copy.payNote}</p>
       </fieldset>
       <fieldset>
         <legend>{copy.howToContact}</legend>

@@ -117,7 +117,6 @@ export default function PaidPicker() {
             </button>
           ))}
         </div>
-        <p className={paid.entryNote}>{copy.payNote}</p>
       </div>
     </section>
   )

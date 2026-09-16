@@ -8,8 +8,6 @@
 .subjectLabel strong { font-size: 18px; font-weight: 600; letter-spacing: -.03em; line-height: 1.1; }
 .subjectLabel small { font-size: 11px; opacity: .85; }
 .subjectPrice { position: absolute; top: 8px; left: 8px; background: #f5f3ee; color: #252720; font-size: 11px; font-weight: 600; letter-spacing: -.01em; padding: 5px 8px; border-radius: 999px; }
-.entryNote { font-size: 12px; line-height: 1.5; color: #62665c; margin-top: 14px; }
-.entryNote a { text-decoration: underline; text-underline-offset: 3px; }
 
 .chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
 .chips span { font-size: 11px; font-weight: 500; color: #35472f; background: #e2e8d9; border-radius: 999px; padding: 5px 10px; }
@@ -25,6 +23,5 @@
 .packageIncludes li { font-size: 12px; color: #3f4438; }
 .packageIncludes li::before { content: '·'; margin-right: 5px; color: #8a9180; }
 .packageNote { font-size: 12px; color: #5d6552; line-height: 1.5; margin-top: 8px; }
-.payNote { font-size: 12px; line-height: 1.5; color: #5d6552; margin-top: 10px; }
 .total { display: flex; justify-content: space-between; align-items: baseline; font-size: 13px; color: #3f4438; margin-bottom: 8px; }
 .total b { font-size: 16px; letter-spacing: -.02em; color: #252720; }

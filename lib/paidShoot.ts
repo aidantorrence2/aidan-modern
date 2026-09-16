@@ -27,15 +27,15 @@ export function subjectLabel(id: SubjectId): string {
 }
 
 const PORTRAITS: Package[] = [
-  { id: 'quick', name: 'Quick portraits', price: 100, time: '20 minutes · one spot', includes: ['10 edited photos', 'Delivered in 3 days'] },
-  { id: 'half', name: 'Half session', price: 180, time: '45 minutes · up to 2 spots', includes: ['25 edited photos', 'One outfit change', 'Delivered in 5 days'] },
-  { id: 'full', name: 'Full session', price: 300, time: '90 minutes · 2–3 spots', includes: ['50 edited photos', 'One short reel', 'Outfit changes', 'Delivered in 7 days'] },
+  { id: 'quick', name: 'Quick portraits', price: 100, time: '1 hour · one spot', includes: ['10 edited photos', 'Delivered in 3 days'] },
+  { id: 'half', name: 'Portrait session', price: 180, time: '90 minutes · up to 2 spots', includes: ['25 edited photos', 'One outfit change', 'Delivered in 5 days'] },
+  { id: 'full', name: 'Full session', price: 300, time: '2 hours · 2–3 spots', includes: ['50 edited photos', 'One short reel', 'Outfit changes', 'Delivered in 7 days'] },
 ]
 
 const COUPLES: Package[] = [
-  { id: 'quick', name: 'Quick couple portraits', price: 120, time: '20 minutes · one spot', includes: ['10 edited photos', 'Delivered in 3 days'] },
-  { id: 'half', name: 'Half session', price: 220, time: '45 minutes · up to 2 spots', includes: ['25 edited photos', 'One outfit change', 'Delivered in 5 days'] },
-  { id: 'full', name: 'Full session', price: 360, time: '90 minutes · 2–3 spots', includes: ['50 edited photos', 'One short reel', 'Outfit changes', 'Delivered in 7 days'] },
+  { id: 'quick', name: 'Quick couple portraits', price: 120, time: '1 hour · one spot', includes: ['10 edited photos', 'Delivered in 3 days'] },
+  { id: 'half', name: 'Couple session', price: 220, time: '90 minutes · up to 2 spots', includes: ['25 edited photos', 'One outfit change', 'Delivered in 5 days'] },
+  { id: 'full', name: 'Full session', price: 360, time: '2 hours · 2–3 spots', includes: ['50 edited photos', 'One short reel', 'Outfit changes', 'Delivered in 7 days'] },
 ]
 
 const BRANDS: Package[] = [
@@ -85,7 +85,6 @@ export const PAID_COPY = {
   formTitle: 'Now book it.',
   formNote: 'Your picks are saved. Choose a package and tell me how to reach you.',
   package: 'Package',
-  payNote: 'Nothing to pay now. I’ll confirm the time with you, and you pay after the shoot.',
   howToContact: 'How should I contact you?',
   phoneLabel: 'Phone number',
   phonePlaceholder: '+1 (555) 123-4567',
@@ -111,7 +110,7 @@ export const PAID_COPY = {
   booking: 'Sending…',
   book: 'Book it',
   doneTitle: 'Got it.',
-  doneNote: 'I’ll message you to confirm the time and the spot. Nothing to pay until the shoot.',
+  doneNote: 'I’ll message you to confirm the time and the spot.',
   errors: {
     photoFailed: 'Could not add that photo. Please try again.',
     picksLost: 'Your picks didn’t come through. Go back and choose again.',
