@@ -101,7 +101,7 @@ export default function SignUpFormPaid({ subject, selection, onBack, onRestart, 
       setDone(true)
       track('submit_success', analytics); flushNow()
       const fbq = (window as typeof window & { fbq?: (...args: unknown[]) => void }).fbq
-      fbq?.('track', 'Lead', { source: 'sign-up-paid', value: chosenPackage.price, currency: 'USD' })
+      fbq?.('track', 'Lead', { source: 'sign-up', value: chosenPackage.price, currency: 'USD' })
     } catch {
       setError(copy.errors.saveFailed)
       track('submit_error', { subject, package: chosenPackage.id })

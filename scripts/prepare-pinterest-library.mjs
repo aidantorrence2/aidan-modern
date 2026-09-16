@@ -1,4 +1,4 @@
-// Builds the picker library (/sign-up-collab and /sign-up-paid) from public/images/pinterest/.
+// Builds the picker library (/sign-up-collab and /sign-up) from public/images/pinterest/.
 //
 // Every file in that folder is a hand-picked Pinterest reference (Aidan drops
 // them in; nothing is downloaded here). Two sidecar files tag each pin:
@@ -7,7 +7,7 @@
 //   data/pinterest-subjects.json file → who is in the photo: 'woman' | 'man' | 'couple' | 'brand'
 //                                (several allowed). Unlisted files count as 'woman'.
 //                                The free /sign-up-collab picker shows every 'woman' pin plus
-//                                any pin also tagged 'collab'; /sign-up-paid filters by the
+//                                any pin also tagged 'collab'; /sign-up filters by the
 //                                subject the visitor picks on its first screen.
 //   data/pinterest-sources.json  hash → original URL, only for pins whose pinimg original is
 //                                not a .jpg (the default link is reconstructed as .jpg).

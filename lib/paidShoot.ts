@@ -1,4 +1,4 @@
-// Everything /sign-up-paid knows about what it sells: who the shoot is for, the
+// Everything /sign-up knows about what it sells: who the shoot is for, the
 // packages per subject (from $100 for quick portraits, scaling up), and how a
 // visitor can be contacted. The picker and the form both read from here.
 
@@ -8,7 +8,7 @@ export type Package = { id: string; name: string; price: number; time: string; i
 export type ContactChannel = 'text' | 'whatsapp' | 'instagram'
 
 export const PAID_STORAGE_KEY = 'aidan:paid-picker:v1'
-export const PAID_ANALYTICS_PATH = '/sign-up-paid'
+export const PAID_ANALYTICS_PATH = '/sign-up'
 
 // cover: a library pin (public/images/pinterest) shown on the entry tile.
 export const PAID_SUBJECTS: Subject[] = [

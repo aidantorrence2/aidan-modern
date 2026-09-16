@@ -13,7 +13,7 @@ export type StartingTheme = ThemeId | 'any'
 export type ThemeImage = { id: string; theme: string; src: string; alt: string; source: string; credit: string; subjects?: string[]; collab?: boolean }
 export type ThemeSelection = { theme: StartingTheme; imageIds: string[]; suggestedUrl?: string }
 export const THEMES = themeData
-// The whole pinterest/ library; /sign-up-paid draws from it per subject.
+// The whole pinterest/ library; /sign-up draws from it per subject.
 export const LIBRARY_IMAGES: ThemeImage[] = imageData
 // The free collab picker's rotation (the original hand-picked set).
 export const THEME_IMAGES: ThemeImage[] = LIBRARY_IMAGES.filter(image => image.collab !== false)
@@ -95,7 +95,7 @@ export function moodboardEntries(selection: ThemeSelection): string[] {
 // Deterministic rounds for a visit (seed), so back/refresh replay the same photos.
 // Each round draws round-robin across the themes from per-theme shuffled queues,
 // so no round is all one style. Only full rounds are returned. `pool` defaults
-// to the collab rotation; /sign-up-paid passes one subject's pins with
+// to the collab rotation; /sign-up passes one subject's pins with
 // `balanced`, which takes one pin from every style that still has some and
 // fills the rest from the deepest queues — an uneven pool (many outdoor pins,
 // few indoor) keeps mixing for as many rounds as possible instead of running

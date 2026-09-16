@@ -1,4 +1,4 @@
-/* /sign-up-paid additions on top of ThemePicker.module.css: the "who is it
+/* /sign-up (paid) additions on top of ThemePicker.module.css: the "who is it
    for" entry tiles and the package cards. Same palette as the collab picker. */
 .subjects { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; margin-top: 18px; }
 .subject { position: relative; aspect-ratio: 4 / 5; overflow: hidden; border-radius: 6px; background: #deded6; text-align: left; touch-action: manipulation; }

@@ -1,12 +1,6 @@
-import PaidPicker from '@/components/PaidPicker'
-import { PAID_SUBJECTS } from '@/lib/paidShoot'
+import { redirect } from 'next/navigation'
 
-const description = 'Film portraits from $100. Say who the shoot is for, pick the photos you like, choose a package, and I’ll message you to confirm.'
-
-export const metadata = {
-  title: 'Book a shoot · Aidan Torrence',
-  description,
-  openGraph: { title: 'Book a shoot — portraits from $100', description, images: [PAID_SUBJECTS[1].cover] },
+// The paid booking flow lives at /sign-up.
+export default function PaidSignupRedirect() {
+  redirect('/sign-up')
 }
-
-export default function PaidSignUpPage() { return <PaidPicker /> }

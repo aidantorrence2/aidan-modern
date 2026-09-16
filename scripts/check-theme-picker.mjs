@@ -12,7 +12,7 @@ const module = { exports: {} }
 new Function('require', 'module', 'exports', compiled)(name => name.startsWith('@/data/') ? require(path.join(root, name.slice(2))) : require(name), module, module.exports)
 const { THEME_IMAGES, LIBRARY_IMAGES, MAX_PICKS, PER_ROUND, ROUNDS, makeRounds, imagesForSubject, parseThemeSelection, moodboardEntries, boardPath, selectionFromQuery } = module.exports
 
-// /sign-up-paid: each subject's pool must fill MAX_PICKS full rounds that mix styles.
+// /sign-up (paid): each subject's pool must fill MAX_PICKS full rounds that mix styles.
 for (const image of LIBRARY_IMAGES) {
   assert.ok(fs.existsSync(path.join(root, 'public', image.src)), image.src)
   assert.ok(fs.statSync(path.join(root, 'public', image.src)).size < 1_000_000, image.src)

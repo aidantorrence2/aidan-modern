@@ -1,17 +1,12 @@
-import SignUpForm from '@/components/SignUpForm'
+import PaidPicker from '@/components/PaidPicker'
+import { PAID_SUBJECTS } from '@/lib/paidShoot'
+
+const description = 'Film portraits from $100. Say who the shoot is for, pick the photos you like, choose a package, and I’ll message you to confirm.'
 
 export const metadata = {
-  title: 'Design Your Photo Shoot — Free',
-  description:
-    'Design your free photo shoot. Pick your vibe, choose a concept, and sign up.'
+  title: 'Book a shoot · Aidan Torrence',
+  description,
+  openGraph: { title: 'Book a shoot — portraits from $100', description, images: [PAID_SUBJECTS[1].cover] },
 }
 
-export default function SignUpPage() {
-  return (
-    <section className="min-h-screen bg-[#0a0a0a] py-12 sm:py-20">
-      <div className="mx-auto max-w-md px-5">
-        <SignUpForm />
-      </div>
-    </section>
-  )
-}
+export default function PaidSignUpPage() { return <PaidPicker /> }
