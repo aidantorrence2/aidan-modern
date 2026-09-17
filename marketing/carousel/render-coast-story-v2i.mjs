@@ -19,11 +19,15 @@ import fs from 'fs'
 // no car, no "act now". Location is the BIG headline on every hook.
 //
 // Usage: node render-coast-story-v2i.mjs [--city=kas|fethiye|cirali] [--variant=a|b|c] [--only=NN-name]
+//        [--lang=en|tr|en,tr] [--cta=signup|dm|signup,dm]   (variant a only; b/c are en + signup)
+//   output folder: <city>-<variant> for en/signup, otherwise <city>-<variant>-<lang>-<cta>
 //   default renders every city × every variant into output-coast-story-v2i/<city>-<variant>/
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const ARG = k => process.argv.find(a => a.startsWith(`--${k}=`))?.split('=')[1]
 const ONLY_CITY = ARG('city'), ONLY_VARIANT = ARG('variant'), ONLY = ARG('only')
+// --lang=en|tr and --cta=signup|dm apply to variant a (the v2i layout); comma lists render every combo.
+const LANGS = (ARG('lang') || 'en').split(','), CTAS = (ARG('cta') || 'signup').split(',')
 
 const IMG = '/Users/aidantorrence/Documents/aidan-modern/public/images'
 const enc = p => 'data:image/jpeg;base64,' + fs.readFileSync(p).toString('base64')
@@ -76,32 +80,65 @@ const tile = (ph, l, t, w, h, pos = 'center 30%') => `<img src="${ph.src}" style
 // ---- cities: three real spots each, and the per-city photo slots ----
 const CITIES = {
   kas: {
-    name: 'Kaş', spots: ['Küçükçakıl and the little coves', 'the harbour at golden hour', 'the old town lanes'],
+    name: 'Kaş', tr: { in: "Kaş'ta", inAm: "Kaş'tayım" }, spots: ['Küçükçakıl and the little coves', 'the harbour at golden hour', 'the old town lanes'],
     hookA: () => L('000032-5.jpg'), castingA: () => L('000021.jpg'), ctaA: () => FV('DSC_0956.jpg'),
     hookB: () => L('000013.jpg'), whereB: () => L('000023-5.jpg'), ctaB: () => FV('DSC_0945.jpg'),
     heroC: () => L('000029.jpg'), ctaC: () => L('000020.jpg'),
   },
   fethiye: {
-    name: 'Fethiye', spots: ['Ölüdeniz and the lagoon', 'Çalış beach at sunset', 'Paspatur, the old town'],
+    name: 'Fethiye', tr: { in: "Fethiye'de", inAm: "Fethiye'deyim" }, spots: ['Ölüdeniz and the lagoon', 'Çalış beach at sunset', 'Paspatur, the old town'],
     hookA: () => L('aidanto-r4-047-22.jpg'), castingA: () => L('000041-10.jpg'), ctaA: () => L('aidanto-r2-035-16.jpg'),
     hookB: () => L('0604804-0043.jpg'), whereB: () => L('000044-10.jpg'), ctaB: () => L('aidanto-r4-051-24.jpg'),
     heroC: () => L('aidanto-r4-063-30.jpg'), ctaC: () => L('0604804-0053.jpg'),
   },
   cirali: {
-    name: 'Çıralı', spots: ['the beach at first light', 'the Olympos ruins', 'the pines along the river'],
+    name: 'Çıralı', tr: { in: "Çıralı'da", inAm: "Çıralı'dayım" }, spots: ['the beach at first light', 'the Olympos ruins', 'the pines along the river'],
     hookA: () => L('aidanto-r4-053-25.jpg'), castingA: () => FV('DSC_0316.jpg'), ctaA: () => L('000047-10.jpg'),
     hookB: () => FV('DSC_0314.jpg'), whereB: () => L('000041-6.jpg'), ctaB: () => FV('DSC_0310-2.jpg'),
     heroC: () => L('aidanto-r4-059-28.jpg'), ctaC: () => L('000040-10.jpg'),
   },
 }
 
-function build(city, variant) {
+// ---- copy for the v2i layout (variant a). TR wording = the Antalya TR deck (output-antalya-tr-story-v2i). ----
+const COPY = {
+  en: {
+    badge: 'FREE PHOTO SHOOT', hookTitle: 'Free Photo Shoot.', hookSub: 'Want photos like these? →',
+    work: 'my recent work', about: 'about me',
+    about1: "hi, i'm aidan — a photographer from the USA. for the past 3 years i've been traveling the world shooting film.",
+    about2: c => `right now i'm in Turkey, and i'm shooting in ${c.name}.`,
+    about3: "if you're here, let's make something special.",
+    nervous: 'never done this before?', nervousSub: "don't worry — i'll direct you through every frame.",
+    proof: 'shot on 35mm film', casting: c => `now in ${c.name}`, castingSub: "it's totally free",
+    how: 'how it works',
+    steps: { signup: [['1', 'Sign up', 'Tap the link below — takes a minute.']], dm: [['1', 'DM me', 'Send me a message on Instagram — takes a minute.']] },
+    steps23: [['2', 'We plan it', 'A quick chat to pick the spot, time & look.'], ['3', 'We shoot', 'About an hour. I direct every frame.']],
+    cta: { signup: ['Want in?', 'Sign up below.'], dm: ['Interested?', 'DM me.'] },
+    ctaLine: c => `I'm only in ${c.name} for a short time — let's shoot.`,
+  },
+  tr: {
+    badge: 'ÜCRETSİZ FOTOĞRAF ÇEKİMİ', hookTitle: 'Ücretsiz Fotoğraf Çekimi', hookTitleSize: 66, hookSub: 'Böyle fotoğraflar ister misin? →',
+    work: 'son çalışmalarım', about: 'hakkımda',
+    about1: 'selam, ben aidan — ABD\'li bir fotoğrafçıyım. son 3 yıldır dünyayı gezip film ile fotoğraf çekiyorum.',
+    about2: c => `şu an Türkiye'deyim ve ${c.tr.in} çekim yapıyorum.`,
+    about3: 'sen de buradaysan, birlikte özel bir şey yaratalım.',
+    nervous: 'daha önce hiç çekilmedin mi?', nervousSub: 'merak etme — her karede seni ben yönlendiririm.',
+    proof: '35mm film ile çekildi', casting: c => `şu an ${c.tr.inAm}`, castingSub: 'tamamen ücretsiz',
+    how: 'nasıl işliyor?',
+    steps: { signup: [['1', 'Kaydol', 'Aşağıdaki linke tıkla — bir dakika sürer.']], dm: [['1', 'Bana yaz', "Instagram'dan DM at — bir dakika sürer."]] },
+    steps23: [['2', 'Planlayalım', 'Kısa bir sohbetle yeri, zamanı ve tarzı seçeriz.'], ['3', 'Çekelim', 'Yaklaşık bir saat. Her kareyi ben yönlendiririm.']],
+    cta: { signup: ['Var mısın?', 'Aşağıdan kaydol.'], dm: ['ilgileniyorsan', 'DM at.'] /* lowercase: Caveat lacks a dotted capital İ */ },
+    ctaLine: c => `${c.tr.in} sadece kısa bir süre kalacağım — hadi çekelim.`,
+  },
+}
+
+function build(city, variant, lang = 'en', cta = 'signup') {
   const { name, spots } = city
+  const T = COPY[lang]
   const BADGE = `<div style="position:absolute;top:52px;right:54px;z-index:60;text-align:right;text-shadow:0 2px 12px rgba(0,0,0,0.95),0 1px 3px rgba(0,0,0,0.9);">
   <div style="font-family:${SE};font-size:50px;font-weight:700;letter-spacing:0.15em;color:#fff;line-height:1;">${name.toUpperCase()}</div>
   <div style="display:flex;align-items:center;justify-content:flex-end;gap:15px;margin-top:13px;">
     <span style="width:70px;height:2px;background:rgba(255,255,255,0.8);display:inline-block;"></span>
-    <span style="font-family:${RD};font-size:22px;font-weight:600;letter-spacing:0.28em;color:#fff;">FREE PHOTO SHOOT</span>
+    <span style="font-family:${RD};font-size:22px;font-weight:600;letter-spacing:0.28em;color:#fff;">${T.badge}</span>
   </div>
 </div>`
   const frame = (inner, bg, showBadge = true) => `<div style="width:1080px;height:1920px;position:relative;overflow:hidden;background:${bg || '#000'};">${inner}${showBadge ? BADGE_BG + BADGE : ''}</div>`
@@ -115,22 +152,22 @@ function build(city, variant) {
   const dark = (nm, inner) => ({ name: nm, html: frame(inner + grain(), '#0a0a0a') })
 
   const about = dark('03-about', `
-      <div style="position:absolute;top:240px;left:60px;right:60px;text-align:center;">${TITLE('about me')}</div>
+      <div style="position:absolute;top:240px;left:60px;right:60px;text-align:center;">${TITLE(T.about)}</div>
       <div style="position:absolute;top:400px;left:120px;right:120px;text-align:center;">
-        <p style="font-family:${SE};font-size:36px;color:rgba(255,255,255,0.94);line-height:1.42;margin:0;">hi, i'm aidan — a photographer from the USA. for the past 3 years i've been traveling the world shooting film.</p>
-        <p style="font-family:${SE};font-size:36px;color:rgba(255,255,255,0.94);line-height:1.42;margin:24px 0 0;">right now i'm in Turkey, and i'm shooting in ${name}.</p>
-        <p style="font-family:${SE};font-size:36px;color:rgba(255,255,255,0.94);line-height:1.42;margin:24px 0 0;">if you're here, let's make something special.</p>
+        <p style="font-family:${SE};font-size:36px;color:rgba(255,255,255,0.94);line-height:1.42;margin:0;">${T.about1}</p>
+        <p style="font-family:${SE};font-size:36px;color:rgba(255,255,255,0.94);line-height:1.42;margin:24px 0 0;">${T.about2(city)}</p>
+        <p style="font-family:${SE};font-size:36px;color:rgba(255,255,255,0.94);line-height:1.42;margin:24px 0 0;">${T.about3}</p>
       </div>
       <img src="${Sf('aidan-udaipur-mirror-03.jpg').src}" style="position:absolute;left:310px;top:880px;width:460px;height:631px;object-fit:cover;object-position:center top;display:block;border-radius:28px;border:12px solid #fafafa;${shadow}"/>`)
   const how = (nm = '07-how') => dark(nm, `
-      <div style="position:absolute;top:250px;left:60px;right:60px;text-align:center;">${TITLE('how it works')}</div>
+      <div style="position:absolute;top:250px;left:60px;right:60px;text-align:center;">${TITLE(T.how)}</div>
       <div style="position:absolute;top:500px;left:120px;right:120px;">
-        ${[['1', 'Sign up', 'Tap the link below — takes a minute.'], ['2', 'We plan it', 'A quick chat to pick the spot, time & look.'], ['3', 'We shoot', 'About an hour. I direct every frame.']].map(s => `<div style="display:flex;gap:30px;align-items:flex-start;margin:0 0 58px;"><span style="font-family:${SE};font-size:78px;font-weight:700;color:rgba(255,255,255,0.5);line-height:0.9;width:70px;flex:none;">${s[0]}</span><div><p style="font-family:${SE};font-size:44px;font-weight:700;color:#fff;margin:0;line-height:1.1;">${s[1]}</p><p style="font-family:${SE};font-size:30px;font-style:italic;color:rgba(255,255,255,0.72);margin:10px 0 0;line-height:1.35;">${s[2]}</p></div></div>`).join('')}
+        ${[...T.steps[cta], ...T.steps23].map(s => `<div style="display:flex;gap:30px;align-items:flex-start;margin:0 0 58px;"><span style="font-family:${SE};font-size:78px;font-weight:700;color:rgba(255,255,255,0.5);line-height:0.9;width:70px;flex:none;">${s[0]}</span><div><p style="font-family:${SE};font-size:44px;font-weight:700;color:#fff;margin:0;line-height:1.1;">${s[1]}</p><p style="font-family:${SE};font-size:30px;font-style:italic;color:rgba(255,255,255,0.72);margin:10px 0 0;line-height:1.35;">${s[2]}</p></div></div>`).join('')}
       </div>`)
-  const ctaHand = (nm, ph, line) => bleed(nm, ph,
+  const ctaHand = (nm, ph, line, lines = T.cta[cta]) => bleed(nm, ph,
     `<div style="position:absolute;top:980px;left:64px;right:64px;text-align:center;">
-       <p style="font-family:${HW};font-size:138px;font-weight:700;color:#fff;margin:0;line-height:0.95;${SH}">Want in?</p>
-       <p style="font-family:${HW};font-size:138px;font-weight:700;color:#fff;margin:0;line-height:0.95;${SH}">Sign up below.</p>
+       <p style="font-family:${HW};font-size:138px;font-weight:700;color:#fff;margin:0;line-height:0.95;${SH}">${lines[0]}</p>
+       <p style="font-family:${HW};font-size:138px;font-weight:700;color:#fff;margin:0;line-height:0.95;${SH}">${lines[1]}</p>
        <p style="font-family:${SE};font-size:34px;color:rgba(255,255,255,0.9);margin:34px 0 0;${SH}">${line}</p>
      </div>`, proofScrim)
 
@@ -141,11 +178,11 @@ function build(city, variant) {
     slides.push(bleed('01-hook', city.hookA(),
       `<div style="position:absolute;bottom:300px;left:64px;right:64px;text-align:center;">
          <p style="font-family:${SE};font-size:150px;font-weight:700;font-style:italic;color:#fff;margin:0;line-height:0.88;${SH}">${name}</p>
-         <p style="font-family:${SE};font-size:80px;font-weight:700;font-style:italic;color:#fff;margin:10px 0 0;line-height:0.98;${SH}">Free Photo Shoot.</p>
-         <p style="font-family:${SE};font-size:33px;font-style:italic;color:rgba(255,255,255,0.85);margin:30px 0 0;${SH}">Want photos like these? →</p>
+         <p style="font-family:${SE};font-size:80px;font-weight:700;font-style:italic;color:#fff;margin:10px 0 0;line-height:0.98;white-space:nowrap;font-size:${T.hookTitleSize || 80}px;${SH}">${T.hookTitle}</p>
+         <p style="font-family:${SE};font-size:33px;font-style:italic;color:rgba(255,255,255,0.85);margin:30px 0 0;${SH}">${T.hookSub}</p>
        </div>`, undefined, false))
     slides.push(dark('02-work', `
-        <div style="position:absolute;top:200px;left:60px;right:60px;text-align:center;">${TITLE('my recent work')}</div>
+        <div style="position:absolute;top:200px;left:60px;right:60px;text-align:center;">${TITLE(T.work)}</div>
         ${pr(FV('DSC_0310-2.jpg'), 45, 470, 350, -5)}
         ${pr(L('000013.jpg'), 615, 430, 370, 4)}
         ${pr(L('aidanto-r4-027-12.jpg'), 100, 1060, 360, 3)}
@@ -153,18 +190,18 @@ function build(city, variant) {
         ${pr(L('0604804-0050.jpg'), 360, 745, 340, 2)}`))
     slides.push(about)
     slides.push(dark('04-nervous', `
-        <div style="position:absolute;top:220px;left:64px;right:64px;text-align:center;">${TITLE('never done this before?', 60)}${SUB("don't worry — i'll direct you through every frame.")}</div>
+        <div style="position:absolute;top:220px;left:64px;right:64px;text-align:center;">${TITLE(T.nervous, 60)}${SUB(T.nervousSub)}</div>
         ${prx(FV('DSC_0321.jpg'), 45, 500, 350, -5)}
         ${prx(FV('DSC_0480.jpg'), 615, 460, 370, 4)}
         ${prx(L('000023.jpg'), 100, 1080, 360, 3)}
         ${prx(L('000024.jpg'), 605, 1090, 370, -4)}
         ${prx(L('aidanto-r4-051-24.jpg'), 360, 775, 340, 2)}`))
-    slides.push(bleed('05-proof', L('aidanto-r4-061-29.jpg'), cap('shot on 35mm film', ''), proofScrim, true, 'center 20%'))
+    slides.push(bleed('05-proof', L('aidanto-r4-061-29.jpg'), cap(T.proof, ''), proofScrim, true, 'center 20%'))
     slides.push(dark('06-casting', `
-      <div style="position:absolute;top:240px;left:60px;right:60px;text-align:center;">${TITLE(`now in ${name}`)}${SUB("it's totally free", 38, 24)}</div>
+      <div style="position:absolute;top:240px;left:60px;right:60px;text-align:center;">${TITLE(T.casting(city))}${SUB(T.castingSub, 38, 24)}</div>
       ${prx(city.castingA(), 178, 620, 700, -1.5)}`))
     slides.push(how())
-    slides.push(ctaHand('08-cta', city.ctaA(), `I'm only in ${name} for a short time — let's shoot.`))
+    slides.push(ctaHand('08-cta', city.ctaA(), T.ctaLine(city)))
   }
 
   if (variant === 'b') {
@@ -207,7 +244,7 @@ function build(city, variant) {
         ${pr(L('aidanto-r2-013-5.jpg'), 560, 620, 440, 3)}
         <div style="position:absolute;top:1480px;left:64px;right:64px;text-align:center;">${SUB('we plan the styling together — you bring what you love.', 34, 0)}</div>`))
     slides.push(how('06-how'))
-    slides.push(ctaHand('07-cta', city.ctaB(), `${name}, for a short while — let's make something by the sea.`))
+    slides.push(ctaHand('07-cta', city.ctaB(), `${name}, for a short while — let's make something by the sea.`, COPY.en.cta.signup))
   }
 
   if (variant === 'c') {
@@ -235,7 +272,7 @@ function build(city, variant) {
         ${prx(FV('DSC_0321.jpg'), 70, 560, 520, -3)}
         ${prx(L('000021.jpg'), 500, 820, 520, 3)}`))
     slides.push(how('04-how'))
-    slides.push(ctaHand('05-cta', city.ctaC(), `I'm only in ${name} for a short time — let's shoot.`))
+    slides.push(ctaHand('05-cta', city.ctaC(), `I'm only in ${name} for a short time — let's shoot.`, COPY.en.cta.signup))
   }
 
   return slides
@@ -244,13 +281,20 @@ function build(city, variant) {
 async function render() {
   const browser = await chromium.launch()
   const ctx = await browser.newContext({ viewport: { width: 1080, height: 1920 }, deviceScaleFactor: 2 })
-  const cities = Object.entries(CITIES).filter(([slug]) => !ONLY_CITY || slug === ONLY_CITY)
-  const variants = ['a', 'b', 'c'].filter(v => !ONLY_VARIANT || v === ONLY_VARIANT)
-  for (const [slug, city] of cities) for (const variant of variants) {
-    const all = build(city, variant)
+  const cities = Object.entries(CITIES).filter(([slug]) => !ONLY_CITY || ONLY_CITY.split(',').includes(slug))
+  const variants = ['a', 'b', 'c'].filter(v => !ONLY_VARIANT || ONLY_VARIANT.split(',').includes(v))
+  if (!cities.length || !variants.length) throw new Error(`nothing matches --city=${ONLY_CITY} --variant=${ONLY_VARIANT}`)
+  const combos = []
+  for (const variant of variants) {
+    if (variant === 'a') for (const lang of LANGS) for (const cta of CTAS) combos.push({ variant, lang, cta })
+    else combos.push({ variant, lang: 'en', cta: 'signup' })
+  }
+  for (const [slug, city] of cities) for (const { variant, lang, cta } of combos) {
+    const all = build(city, variant, lang, cta)
     const slides = ONLY ? all.filter(s => s.name === ONLY) : all
     if (!slides.length) throw new Error(`Unknown slide for --only: ${ONLY}`)
-    const dir = path.join(__dirname, 'output-coast-story-v2i', `${slug}-${variant}`)
+    const suffix = lang === 'en' && cta === 'signup' ? '' : `-${lang}-${cta}`
+    const dir = path.join(__dirname, 'output-coast-story-v2i', `${slug}-${variant}${suffix}`)
     fs.mkdirSync(dir, { recursive: true })
     if (!ONLY) for (const f of fs.readdirSync(dir)) if (f.toLowerCase().endsWith('.jpg')) fs.rmSync(path.join(dir, f))
     for (const s of slides) {
@@ -264,7 +308,7 @@ async function render() {
       await page.screenshot({ path: path.join(dir, `${s.name}.jpg`), type: 'jpeg', quality: 92 })
       await page.close()
     }
-    console.log(`${city.name} ${variant}: ${slides.length} slides -> ${path.relative(__dirname, dir)}`)
+    console.log(`${city.name} ${variant} ${lang}/${cta}: ${slides.length} slides -> ${path.relative(__dirname, dir)}`)
   }
   await browser.close()
   console.log('Done.')
