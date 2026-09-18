@@ -29,6 +29,8 @@ const ARG = k => process.argv.find(a => a.startsWith(`--${k}=`))?.split('=')[1]
 const ONLY_CITY = ARG('city'), ONLY_VARIANT = ARG('variant'), ONLY = ARG('only')
 // --lang=en|tr and --cta=signup|dm apply to variant a (the v2i layout); comma lists render every combo.
 const LANGS = (ARG('lang') || 'en').split(','), CTAS = (ARG('cta') || 'signup').split(',')
+// --tag=b appends a version letter to variant o's output folder so an existing deck is never overwritten
+const TAG = ARG('tag') || ''
 
 const IMG = '/Users/aidantorrence/Documents/aidan-modern/public/images'
 const enc = p => 'data:image/jpeg;base64,' + fs.readFileSync(p).toString('base64')
@@ -334,7 +336,7 @@ async function render() {
     const suffix = lang === 'en' && cta === 'signup' ? '' : `-${lang}-${cta}`
     // variant o mirrors the existing naming: output-<city>[-tr]-story-v2i[-dm]/<city>/
     const dir = variant === 'o'
-      ? path.join(__dirname, `output-${slug}${lang === 'tr' ? '-tr' : ''}-story-v2i${cta === 'dm' ? '-dm' : ''}`, slug)
+      ? path.join(__dirname, `output-${slug}${lang === 'tr' ? '-tr' : ''}-story-v2i${cta === 'dm' ? '-dm' : ''}${TAG}`, slug)
       : path.join(__dirname, 'output-coast-story-v2i', `${slug}-${variant}${suffix}`)
     fs.mkdirSync(dir, { recursive: true })
     if (!ONLY) for (const f of fs.readdirSync(dir)) if (f.toLowerCase().endsWith('.jpg')) fs.rmSync(path.join(dir, f))
