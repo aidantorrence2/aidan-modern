@@ -19,7 +19,8 @@ import fs from 'fs'
 // no car, no "act now". Location is the BIG headline on every hook.
 //
 // Usage: node render-coast-story-v2i.mjs [--city=kas|fethiye|cirali] [--variant=a|b|c] [--only=NN-name]
-//        [--lang=en|tr|en,tr] [--cta=signup|dm|signup,dm]   (variant a only; b/c are en + signup)
+//        [--lang=en|tr|en,tr] [--cta=signup|dm|signup,dm]   (variants a and o; b/c are en + signup)
+//   --variant=o = the ORIGINAL Antalya v2i deck photo for photo (city/lang/cta swapped) → output-<city>[-tr]-story-v2i[-dm]/<city>/
 //   output folder: <city>-<variant> for en/signup, otherwise <city>-<variant>-<lang>-<cta>
 //   default renders every city × every variant into output-coast-story-v2i/<city>-<variant>/
 
@@ -47,7 +48,7 @@ const photo = rel => {
   if (!cache.has(rel)) { const p = path.join(IMG, rel); cache.set(rel, { src: enc(p), ...dim(p) }) }
   return cache.get(rel)
 }
-const L = f => photo(`large/${f}`), FV = f => ({ ...photo(`faves/${f}`), scan: true }), Sf = f => photo(`self/${f}`)
+const L = f => photo(`large/${f}`), FV = f => ({ ...photo(`faves/${f}`), scan: true }), Sf = f => photo(`self/${f}`), H = f => photo(`headliners/${f}`)
 
 const SE = "Georgia, 'Times New Roman', serif"
 const RD = "'Poppins', 'Arial Rounded MT Bold', sans-serif"
@@ -74,11 +75,17 @@ const shadow = 'box-shadow:0 16px 44px rgba(0,0,0,0.55),0 3px 10px rgba(0,0,0,0.
 const pr = (ph, l, t, w, rot) => { const h = Math.round(w * ph.h / ph.w); return `<div style="position:absolute;left:${l}px;top:${t}px;width:${w + 24}px;height:${h + 26}px;background:#fafafa;padding:12px 12px 14px;transform:rotate(${rot}deg);${shadow}"><img src="${ph.src}" style="width:${w}px;height:${h}px;object-fit:cover;object-position:center;display:block;"/></div>` }
 // borderless print at native aspect (scans keep their own film borders)
 const prx = (ph, l, t, w, rot) => { const h = Math.round(w * ph.h / ph.w); return `<div style="position:absolute;left:${l}px;top:${t}px;width:${w}px;height:${h}px;transform:rotate(${rot}deg);${shadow}"><img src="${ph.src}" style="width:${w}px;height:${h}px;object-fit:cover;object-position:center;display:block;"/></div>` }
+// borderless print cropped to a sub-rect of the source (trims a scan's paper rebate) — from the v2h story renderer
+const prt = (ph, l, t, w, rot, cx, cy, cw, ch) => {
+  const sc = w / cw, h = Math.round(ch * sc)
+  return `<div style="position:absolute;left:${l}px;top:${t}px;width:${w}px;height:${h}px;overflow:hidden;transform:rotate(${rot}deg);${shadow}"><img src="${ph.src}" style="position:absolute;left:${-Math.round(cx * sc)}px;top:${-Math.round(cy * sc)}px;width:${Math.round(ph.w * sc)}px;height:${Math.round(ph.h * sc)}px;display:block;"/></div>`
+}
 // cover tile (crops) for grids
 const tile = (ph, l, t, w, h, pos = 'center 30%') => `<img src="${ph.src}" style="position:absolute;left:${l}px;top:${t}px;width:${w}px;height:${h}px;object-fit:cover;object-position:${pos};display:block;"/>`
 
 // ---- cities: three real spots each, and the per-city photo slots ----
 const CITIES = {
+  antalya: { name: 'Antalya', tr: { in: "Antalya'da", inAm: "Antalya'dayım" } },
   kas: {
     name: 'Kaş', tr: { in: "Kaş'ta", inAm: "Kaş'tayım" }, spots: ['Küçükçakıl and the little coves', 'the harbour at golden hour', 'the old town lanes'],
     hookA: () => L('000032-5.jpg'), castingA: () => L('000021.jpg'), ctaA: () => FV('DSC_0956.jpg'),
@@ -172,6 +179,37 @@ function build(city, variant, lang = 'en', cta = 'signup') {
      </div>`, proofScrim)
 
   const slides = []
+
+  if (variant === 'o') {
+    // ---- O: the ORIGINAL Antalya v2i deck, photo for photo (= the athens/antalya story-v2h set) ----
+    slides.push(bleed('01-hook', L('manila-gallery-urban-003.jpg'),
+      `<div style="position:absolute;bottom:300px;left:64px;right:64px;text-align:center;">
+         <p style="font-family:${SE};font-size:150px;font-weight:700;font-style:italic;color:#fff;margin:0;line-height:0.88;${SH}">${name}</p>
+         <p style="font-family:${SE};font-size:80px;font-weight:700;font-style:italic;color:#fff;margin:10px 0 0;line-height:0.98;white-space:nowrap;font-size:${T.hookTitleSize || 80}px;${SH}">${T.hookTitle}</p>
+         <p style="font-family:${SE};font-size:33px;font-style:italic;color:rgba(255,255,255,0.85);margin:30px 0 0;${SH}">${T.hookSub}</p>
+       </div>`, undefined, false))
+    slides.push(dark('02-work', `
+        <div style="position:absolute;top:200px;left:60px;right:60px;text-align:center;">${TITLE(T.work)}</div>
+        ${pr(L('manila-gallery-dsc-0190.jpg'), 45, 470, 350, -5)}
+        ${pr(L('manila-gallery-canal-001.jpg'), 615, 430, 370, 4)}
+        ${pr(L('manila-gallery-dsc-0911.jpg'), 100, 1060, 360, 3)}
+        ${pr(L('manila-gallery-park-001.jpg'), 605, 1075, 370, -4)}
+        ${pr(L('manila-gallery-statue-001.jpg'), 360, 745, 340, 2)}`))
+    slides.push(about)
+    slides.push(dark('04-nervous', `
+        <div style="position:absolute;top:220px;left:64px;right:64px;text-align:center;">${TITLE(T.nervous, 60)}${SUB(T.nervousSub)}</div>
+        ${prx(FV('000016-7.jpg'), 45, 500, 350, -5)}
+        ${prt(FV('DSC_0869.jpg'), 615, 460, 370, 4, 45, 30, 3555, 5710)}
+        ${prx(FV('000016.jpg'), 100, 1080, 360, 3)}
+        ${prx(FV('000016-3.jpg'), 605, 1090, 370, -4)}
+        ${prx(FV('000029-3-2.jpg'), 360, 775, 340, 2)}`))
+    slides.push(bleed('05-proof', H('000050-6.jpg'), cap(T.proof, ''), proofScrim))
+    slides.push(dark('06-casting', `
+      <div style="position:absolute;top:240px;left:60px;right:60px;text-align:center;">${TITLE(T.casting(city))}${SUB(T.castingSub, 38, 24)}</div>
+      ${prx(FV('000042-2.jpg'), 178, 620, 700, -1.5)}`))
+    slides.push(how())
+    slides.push(ctaHand('08-cta', FV('000051-12.jpg'), T.ctaLine(city)))
+  }
 
   if (variant === 'a') {
     // ---- A: the v2i layout, coastal photos ----
@@ -282,11 +320,11 @@ async function render() {
   const browser = await chromium.launch()
   const ctx = await browser.newContext({ viewport: { width: 1080, height: 1920 }, deviceScaleFactor: 2 })
   const cities = Object.entries(CITIES).filter(([slug]) => !ONLY_CITY || ONLY_CITY.split(',').includes(slug))
-  const variants = ['a', 'b', 'c'].filter(v => !ONLY_VARIANT || ONLY_VARIANT.split(',').includes(v))
+  const variants = (ONLY_VARIANT ? ONLY_VARIANT.split(',') : ['a', 'b', 'c']).filter(v => ['a', 'b', 'c', 'o'].includes(v))
   if (!cities.length || !variants.length) throw new Error(`nothing matches --city=${ONLY_CITY} --variant=${ONLY_VARIANT}`)
   const combos = []
   for (const variant of variants) {
-    if (variant === 'a') for (const lang of LANGS) for (const cta of CTAS) combos.push({ variant, lang, cta })
+    if (variant === 'a' || variant === 'o') for (const lang of LANGS) for (const cta of CTAS) combos.push({ variant, lang, cta })
     else combos.push({ variant, lang: 'en', cta: 'signup' })
   }
   for (const [slug, city] of cities) for (const { variant, lang, cta } of combos) {
@@ -294,7 +332,10 @@ async function render() {
     const slides = ONLY ? all.filter(s => s.name === ONLY) : all
     if (!slides.length) throw new Error(`Unknown slide for --only: ${ONLY}`)
     const suffix = lang === 'en' && cta === 'signup' ? '' : `-${lang}-${cta}`
-    const dir = path.join(__dirname, 'output-coast-story-v2i', `${slug}-${variant}${suffix}`)
+    // variant o mirrors the existing naming: output-<city>[-tr]-story-v2i[-dm]/<city>/
+    const dir = variant === 'o'
+      ? path.join(__dirname, `output-${slug}${lang === 'tr' ? '-tr' : ''}-story-v2i${cta === 'dm' ? '-dm' : ''}`, slug)
+      : path.join(__dirname, 'output-coast-story-v2i', `${slug}-${variant}${suffix}`)
     fs.mkdirSync(dir, { recursive: true })
     if (!ONLY) for (const f of fs.readdirSync(dir)) if (f.toLowerCase().endsWith('.jpg')) fs.rmSync(path.join(dir, f))
     for (const s of slides) {
