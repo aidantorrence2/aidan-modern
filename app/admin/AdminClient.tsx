@@ -82,6 +82,20 @@ function getLocation(s: Signup): string {
   return entry ? entry.replace(/^location:\s*/i, '').trim() : s.city
 }
 
+/** Text folded for matching. Lowercasing alone isn't enough: "İstanbul" lowercases to
+ *  "i̇stanbul" (i + a combining dot), which does not contain "istanbul" — so accents and
+ *  the Turkish dotted/dotless i are flattened first. */
+function fold(text: string): string {
+  return text.normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/ı/g, 'i').toLowerCase()
+}
+
+/** Whether a sign-up belongs to a searched place. The typed location AND the campaign city
+ *  both count: someone from the Istanbul campaign who wrote their district
+ *  ("Ataşehir/Uskudar/Kadikoy") is still an Istanbul sign-up. */
+function matchesLocation(s: Signup, foldedQuery: string): boolean {
+  return fold(getLocation(s)).includes(foldedQuery) || fold(s.city ?? '').includes(foldedQuery)
+}
+
 function getPhotos(s: Signup): string[] {
   return s.photo_urls && s.photo_urls.length > 0 ? s.photo_urls : []
 }
@@ -157,7 +171,7 @@ export default function AdminClient({ signups: initial }: { signups: Signup[] })
 
   const normalizedQuery = query.trim().replace(/^@/, '').toLowerCase()
   const digitsQuery = query.replace(/\D/g, '')
-  const normalizedLocation = locationQuery.trim().toLowerCase()
+  const normalizedLocation = fold(locationQuery.trim())
   const hasFilter = Boolean(normalizedQuery || normalizedLocation)
   const filtered = hasFilter
     ? signups.filter(s => {
@@ -170,7 +184,7 @@ export default function AdminClient({ signups: initial }: { signups: Signup[] })
           const phoneMatch = phone && digitsQuery && phone.replace(/\D/g, '').includes(digitsQuery)
           if (!igMatch && !emailMatch && !phoneMatch) return false
         }
-        if (normalizedLocation && !getLocation(s).toLowerCase().includes(normalizedLocation)) return false
+        if (normalizedLocation && !matchesLocation(s, normalizedLocation)) return false
         return true
       })
     : signups
