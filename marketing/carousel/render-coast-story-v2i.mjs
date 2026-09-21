@@ -88,6 +88,8 @@ const tile = (ph, l, t, w, h, pos = 'center 30%') => `<img src="${ph.src}" style
 // ---- cities: three real spots each, and the per-city photo slots ----
 const CITIES = {
   antalya: { name: 'Antalya', tr: { in: "Antalya'da", inAm: "Antalya'dayım" } },
+  // trName: the Turkish spelling (dotted İ) used for the big name + badge when --lang=tr
+  istanbul: { name: 'Istanbul', trName: 'İstanbul', tr: { in: "İstanbul'da", inAm: "İstanbul'dayım" } },
   kas: {
     name: 'Kaş', tr: { in: "Kaş'ta", inAm: "Kaş'tayım" }, spots: ['Küçükçakıl and the little coves', 'the harbour at golden hour', 'the old town lanes'],
     hookA: () => L('000032-5.jpg'), castingA: () => L('000021.jpg'), ctaA: () => FV('DSC_0956.jpg'),
@@ -141,7 +143,8 @@ const COPY = {
 }
 
 function build(city, variant, lang = 'en', cta = 'signup') {
-  const { name, spots } = city
+  const { spots } = city
+  const name = lang === 'tr' && city.trName ? city.trName : city.name
   const T = COPY[lang]
   const BADGE = `<div style="position:absolute;top:52px;right:54px;z-index:60;text-align:right;text-shadow:0 2px 12px rgba(0,0,0,0.95),0 1px 3px rgba(0,0,0,0.9);">
   <div style="font-family:${SE};font-size:50px;font-weight:700;letter-spacing:0.15em;color:#fff;line-height:1;">${name.toUpperCase()}</div>
