@@ -109,6 +109,23 @@ function miniThumbUrl(url: string): string {
   return cloudinaryUrl(url, 'w_80,h_80,c_fill,q_auto,f_auto')
 }
 
+/** One moodboard line as a pill. A line that is "<Label>: https://…" (the theme picker's
+ *  "View moodboard: <230-char URL>") renders as a short link: a URL has no break points, so
+ *  as plain text it made the pill ~1400px wide, widened the whole page on phones, and the
+ *  full-screen photo viewer then centred the photo off-screen. Everything else wraps. */
+const PILL = 'max-w-full rounded-2xl border border-emerald-400/20 bg-emerald-400/10 px-3 py-1 text-xs font-medium text-emerald-400/70 [overflow-wrap:anywhere]'
+function MoodboardPill({ text }: { text: string }) {
+  const link = text.match(/^([^:]{1,40}):\s*(https?:\/\/\S+)$/)
+  if (link) {
+    return (
+      <a href={link[2]} target="_blank" rel="noopener noreferrer" className={`${PILL} underline decoration-emerald-400/30 underline-offset-2 hover:text-emerald-300`}>
+        {link[1]} ↗
+      </a>
+    )
+  }
+  return <span className={PILL}>{text}</span>
+}
+
 /** Lazy-rendered card that only mounts when near viewport */
 function LazyCard({ children }: { children: React.ReactNode }) {
   const ref = useRef<HTMLDivElement>(null)
@@ -261,12 +278,12 @@ export default function AdminClient({ signups: initial }: { signups: Signup[] })
 
           {/* Thumbnails */}
           {lightbox.photos.length > 1 && (
-            <div className="mt-4 flex gap-2">
+            <div className="mt-4 flex max-w-[92vw] gap-2 overflow-x-auto">
               {lightbox.photos.map((p, i) => (
                 <button
                   key={i}
                   onClick={() => setLightbox(lb => lb ? { ...lb, index: i } : null)}
-                  className={`h-14 w-14 overflow-hidden rounded-lg border-2 transition ${
+                  className={`h-14 w-14 shrink-0 overflow-hidden rounded-lg border-2 transition ${
                     i === lightbox.index ? 'border-white' : 'border-transparent opacity-50 hover:opacity-80'
                   }`}
                 >
@@ -278,7 +295,7 @@ export default function AdminClient({ signups: initial }: { signups: Signup[] })
         </div>
       )}
 
-      <section className="min-h-screen bg-[#0a0a0a] py-10 sm:py-14">
+      <section className="min-h-screen overflow-x-clip bg-[#0a0a0a] py-10 sm:py-14">
         <div className="mx-auto max-w-3xl px-5">
           <div className="flex items-center justify-between mb-6">
             <h1 className="text-3xl font-bold text-white">Sign-ups</h1>
@@ -408,9 +425,7 @@ export default function AdminClient({ signups: initial }: { signups: Signup[] })
                       {moodboardItems.length > 0 && (
                         <div className="flex flex-wrap gap-1.5 mb-3">
                           {moodboardItems.map(m => (
-                            <span key={m} className="rounded-full border border-emerald-400/20 bg-emerald-400/10 px-3 py-1 text-xs font-medium text-emerald-400/70">
-                              {m}
-                            </span>
+                            <MoodboardPill key={m} text={m} />
                           ))}
                         </div>
                       )}
