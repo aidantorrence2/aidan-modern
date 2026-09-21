@@ -1,8 +1,8 @@
 [
   {
     "id": "sea",
-    "label": "Sea / beach",
-    "description": "Turquoise water, cliffs, golden light.",
+    "label": "By the water",
+    "description": "The Bosphorus and the Golden Horn, ferries passing, evening light.",
     "image": "/images/theme-picker/sea-reference.jpg",
     "source": "https://www.pinterest.com/pin/20758848278631571/",
     "imageUrl": "https://i.pinimg.com/originals/c1/24/4a/c1244a2758218cdaf88f489bcc47c0f3.jpg"
@@ -10,15 +10,15 @@
   {
     "id": "old-town",
     "label": "Old town",
-    "description": "Kaleiçi lanes, stone, bougainvillea.",
+    "description": "Balat and Sultanahmet lanes, old stone, painted houses.",
     "image": "/images/theme-picker/old-town-reference.jpg",
     "source": "https://www.pinterest.com/pin/71494712831255145/",
     "imageUrl": "https://i.pinimg.com/originals/6a/de/ec/6adeec08555d81e07be8db8408b56707.jpg"
   },
   {
     "id": "boat",
-    "label": "Boat / marina",
-    "description": "On the water, yachts, the harbour.",
+    "label": "Boat / ferry",
+    "description": "On the water, crossing the Bosphorus, the deck rail.",
     "image": "/images/theme-picker/boat-reference.jpg",
     "source": "https://www.pinterest.com/pin/380765343507359583/",
     "imageUrl": "https://i.pinimg.com/originals/fc/93/f4/fc93f45576ca767c4b8b84b3317c9341.jpg"

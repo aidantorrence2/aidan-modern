@@ -7,6 +7,9 @@ import { SHOOT } from './shoot'
 export type SignupCopy = {
   languageName: string
   dates: string
+  // The hook is the city, then the offer: "İstanbul · ücretsiz fotoğraf çekimi",
+  // the same pairing the ads' first slide uses, so the page matches the ad.
+  city: string
   headline: string
   note: { lead: string; rest: string }
   skip: string
@@ -53,7 +56,8 @@ export const SIGNUP_COPY: Record<Lang, SignupCopy> = {
   en: {
     languageName: 'English',
     dates: SHOOT.dates,
-    headline: 'Free photo shoot',
+    city: SHOOT.city,
+    headline: 'free photo shoot',
     note: { lead: 'Choose your preferred photo vibe.', rest: ' Then we’ll plan a shoot around it.' },
     skip: 'Skip',
     back: '← Back',
@@ -74,7 +78,7 @@ export const SIGNUP_COPY: Record<Lang, SignupCopy> = {
     instagramPlaceholder: '@yourusername',
     followHint: { before: 'Please follow ', after: ' or I won’t be able to message you.' },
     whereAreYou: 'Where are you?',
-    whereAreYouPlaceholder: 'Antalya, Kaş, Fethiye, Çıralı…',
+    whereAreYouPlaceholder: 'Kadıköy, Beşiktaş, Beyoğlu, Üsküdar…',
     notes: 'Notes',
     optional: 'optional',
     photosOfYou: 'Photos of you',
@@ -97,7 +101,8 @@ export const SIGNUP_COPY: Record<Lang, SignupCopy> = {
   tr: {
     languageName: 'Turkish',
     dates: 'Eylül',
-    headline: 'Ücretsiz fotoğraf çekimi',
+    city: 'İstanbul',
+    headline: 'ücretsiz fotoğraf çekimi',
     note: { lead: 'Sevdiğin fotoğraf tarzını seç.', rest: ' Sonra çekimi buna göre planlarız.' },
     skip: 'Atla',
     back: '← Geri',
@@ -118,7 +123,7 @@ export const SIGNUP_COPY: Record<Lang, SignupCopy> = {
     instagramPlaceholder: '@kullaniciadin',
     followHint: { before: 'Lütfen ', after: ' hesabını takip et, yoksa sana mesaj atamam.' },
     whereAreYou: 'Neredesin?',
-    whereAreYouPlaceholder: 'Antalya, Kaş, Fethiye, Çıralı…',
+    whereAreYouPlaceholder: 'Kadıköy, Beşiktaş, Beyoğlu, Üsküdar…',
     notes: 'Notlar',
     optional: 'isteğe bağlı',
     photosOfYou: 'Senin fotoğrafların',
@@ -141,7 +146,8 @@ export const SIGNUP_COPY: Record<Lang, SignupCopy> = {
   ru: {
     languageName: 'Russian',
     dates: 'Сентябрь',
-    headline: 'Бесплатная фотосессия',
+    city: 'Стамбул',
+    headline: 'бесплатная фотосессия',
     note: { lead: 'Выбери стиль фото, который тебе нравится.', rest: ' Потом спланируем съёмку под него.' },
     skip: 'Пропустить',
     back: '← Назад',
@@ -162,7 +168,7 @@ export const SIGNUP_COPY: Record<Lang, SignupCopy> = {
     instagramPlaceholder: '@твойник',
     followHint: { before: 'Пожалуйста, подпишись на ', after: ', иначе я не смогу тебе написать.' },
     whereAreYou: 'Где ты сейчас?',
-    whereAreYouPlaceholder: 'Antalya, Kaş, Fethiye, Çıralı…',
+    whereAreYouPlaceholder: 'Kadıköy, Beşiktaş, Beyoğlu, Üsküdar…',
     notes: 'Заметки',
     optional: 'необязательно',
     photosOfYou: 'Твои фото',
