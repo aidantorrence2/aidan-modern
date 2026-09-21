@@ -168,13 +168,35 @@ export default function AdminClient({ signups: initial }: { signups: Signup[] })
   const [lightbox, setLightbox] = useState<{ photos: string[]; index: number } | null>(null)
   const [query, setQuery] = useState('')
   const [locationQuery, setLocationQuery] = useState('')
+  const [showArchived, setShowArchived] = useState(false)
+  const [archived, setArchived] = useState<Signup[] | null>(null)
+  const [archivedLoading, setArchivedLoading] = useState(false)
+
+  async function toggleArchived() {
+    const next = !showArchived
+    setShowArchived(next)
+    if (next && archived === null) {
+      setArchivedLoading(true)
+      try {
+        const res = await fetch('/api/admin/signups?deleted=true')
+        const data = await res.json()
+        setArchived(Array.isArray(data.signups) ? data.signups : [])
+      } catch {
+        setArchived([])
+      } finally {
+        setArchivedLoading(false)
+      }
+    }
+  }
+
+  const activeList = showArchived ? archived ?? [] : signups
 
   const normalizedQuery = query.trim().replace(/^@/, '').toLowerCase()
   const digitsQuery = query.replace(/\D/g, '')
   const normalizedLocation = fold(locationQuery.trim())
   const hasFilter = Boolean(normalizedQuery || normalizedLocation)
   const filtered = hasFilter
-    ? signups.filter(s => {
+    ? activeList.filter(s => {
         if (normalizedQuery) {
           const ig = getInstagram(s)
           const igMatch = ig && ig.replace(/^@/, '').toLowerCase().includes(normalizedQuery)
@@ -187,7 +209,7 @@ export default function AdminClient({ signups: initial }: { signups: Signup[] })
         if (normalizedLocation && !matchesLocation(s, normalizedLocation)) return false
         return true
       })
-    : signups
+    : activeList
 
   const closeLightbox = useCallback(() => {
     setLightbox(null)
@@ -312,10 +334,20 @@ export default function AdminClient({ signups: initial }: { signups: Signup[] })
       <section className="min-h-screen overflow-x-clip bg-[#0a0a0a] py-10 sm:py-14">
         <div className="mx-auto max-w-3xl px-5">
           <div className="flex items-center justify-between mb-6">
-            <h1 className="text-3xl font-bold text-white">Sign-ups</h1>
-            <span className="rounded-full bg-white/10 px-4 py-1.5 text-sm font-medium text-white/60">
-              {hasFilter ? `${filtered.length} / ${signups.length}` : `${signups.length} total`}
-            </span>
+            <h1 className="text-3xl font-bold text-white">{showArchived ? 'Archived' : 'Sign-ups'}</h1>
+            <div className="flex items-center gap-2">
+              <span className="rounded-full bg-white/10 px-4 py-1.5 text-sm font-medium text-white/60">
+                {hasFilter ? `${filtered.length} / ${activeList.length}` : `${activeList.length} total`}
+              </span>
+              <button
+                onClick={toggleArchived}
+                className={`rounded-full px-4 py-1.5 text-sm font-medium transition ${
+                  showArchived ? 'bg-emerald-400/20 text-emerald-300' : 'bg-white/10 text-white/60 hover:bg-white/20'
+                }`}
+              >
+                {showArchived ? 'Back to sign-ups' : 'Archived'}
+              </button>
+            </div>
           </div>
 
           <div className="mb-6 flex flex-col gap-3 sm:flex-row">
@@ -335,8 +367,12 @@ export default function AdminClient({ signups: initial }: { signups: Signup[] })
             />
           </div>
 
-          {signups.length === 0 ? (
-            <p className="mt-10 text-center text-lg text-white/40">No sign-ups yet.</p>
+          {showArchived && archivedLoading ? (
+            <p className="mt-10 text-center text-lg text-white/40">Loading archived sign-ups…</p>
+          ) : activeList.length === 0 ? (
+            <p className="mt-10 text-center text-lg text-white/40">
+              {showArchived ? 'No archived sign-ups.' : 'No sign-ups yet.'}
+            </p>
           ) : filtered.length === 0 ? (
             <p className="mt-10 text-center text-lg text-white/40">
               No matches for &ldquo;{[query.trim(), locationQuery.trim()].filter(Boolean).join('” + “')}&rdquo;.
@@ -415,9 +451,11 @@ export default function AdminClient({ signups: initial }: { signups: Signup[] })
                             </div>
                           )}
                         </div>
-                        <button onClick={() => softDelete(s.id)} className="text-sm text-white/15 hover:text-red-400 transition ml-4">
-                          Remove
-                        </button>
+                        {!showArchived && (
+                          <button onClick={() => softDelete(s.id)} className="text-sm text-white/15 hover:text-red-400 transition ml-4">
+                            Remove
+                          </button>
+                        )}
                       </div>
 
                       {/* Meta */}
