@@ -15,7 +15,6 @@ import form from './ThemeSignup.module.css'
 export default function SignUpFormCollabThemes({ selection, onBack, onRestart }: { selection: ThemeSelection | null; onBack?: () => void; onRestart?: () => void }) {
   const [channel, setChannel] = useState<'whatsapp' | 'instagram'>('whatsapp')
   const [contact, setContact] = useState('')
-  const [location, setLocation] = useState('')
   const [notes, setNotes] = useState('')
   const [photos, setPhotos] = useState<string[]>([])
   const [processing, setProcessing] = useState(false)
@@ -62,28 +61,23 @@ export default function SignUpFormCollabThemes({ selection, onBack, onRestart }:
       value = value.replace(/^@/, '')
       if (!/^[a-zA-Z0-9._]{1,30}$/.test(value)) { setError(copy.errors.instagram); return }
     }
-    // The ads run in several towns and all point here, so the visitor tells us
-    // where they are. Saved as "Location: …" (the admin page and the phone
-    // country inference both read that line).
-    const place = location.trim()
-    if (!place) { setError(copy.errors.noLocation); return }
     if (!photos.length) { setError(copy.errors.noPhoto); return }
     submitting.current = true; setSaving(true); setError('')
-    track('submit_attempt', { photos: photos.length, picks: images.length, channel, lang, location: place })
+    track('submit_attempt', { photos: photos.length, picks: images.length, channel, lang })
     try {
       const response = await fetch('/api/sign-up', {
         method: 'POST', headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           city: SHOOT.city, contactMethod: channel, contact: value, themeSelection: chosen,
           // Language: … tells Aidan which language to open the DM in.
-          moodboard: ['Collab sign-up', `Location: ${place}`, `Language: ${copy.languageName}`, ...(notes.trim() ? [`Notes: ${notes.trim()}`] : [])],
+          moodboard: ['Collab sign-up', `Language: ${copy.languageName}`, ...(notes.trim() ? [`Notes: ${notes.trim()}`] : [])],
           photos,
         }),
       })
       const result = await response.json().catch(() => null)
       if (!response.ok || !result?.ok) throw new Error('Save failed')
       setDone(true)
-      track('submit_success', { picks: images.length, photos: photos.length, channel, lang, location: place }); flushNow()
+      track('submit_success', { picks: images.length, photos: photos.length, channel, lang }); flushNow()
       const fbq = (window as typeof window & { fbq?: (...args: unknown[]) => void }).fbq
       fbq?.('track', 'Lead', { source: 'sign-up-collab-themes' })
     } catch {
@@ -107,7 +101,6 @@ export default function SignUpFormCollabThemes({ selection, onBack, onRestart }:
       </div>
       {done ? <div className={styles.reviewActions}><a className={styles.textButton} href="https://www.instagram.com/madebyaidan" target="_blank" rel="noreferrer">@madebyaidan</a></div> : <form className={form.form} onSubmit={submit}>
         <fieldset><legend>{copy.whereToMessage}</legend><div className={form.channels}>{(['whatsapp', 'instagram'] as const).map(item => <button type="button" key={item} aria-pressed={channel === item} onClick={() => { setChannel(item); setContact(''); setError('') }}>{item === 'whatsapp' ? copy.whatsapp : copy.instagram}</button>)}</div><label className={form.field}><span className={styles.srOnly}>{channel === 'whatsapp' ? copy.whatsappLabel : copy.instagramLabel}</span><input required type={channel === 'whatsapp' ? 'tel' : 'text'} autoComplete={channel === 'whatsapp' ? 'tel' : 'off'} autoCapitalize="none" maxLength={40} value={contact} onChange={event => setContact(event.target.value)} placeholder={channel === 'whatsapp' ? SHOOT.phoneExample : copy.instagramPlaceholder} /></label>{channel === 'instagram' && <p className={form.hint}>{copy.followHint.before}<a href="https://www.instagram.com/madebyaidan" target="_blank" rel="noreferrer">@madebyaidan</a>{copy.followHint.after}</p>}</fieldset>
-        <label className={form.field}>{copy.whereAreYou}<input required type="text" name="location" autoComplete="address-level2" maxLength={80} value={location} onChange={event => setLocation(event.target.value)} placeholder={copy.whereAreYouPlaceholder} /></label>
         <label className={form.field}>{copy.notes} <span>{copy.optional}</span><textarea maxLength={1500} rows={3} value={notes} onChange={event => setNotes(event.target.value)} /></label>
         <div><label className={form.field} htmlFor="model-photos">{copy.photosOfYou} <span>{copy.upTo3}</span></label><div className={form.uploads}>{photos.map((photo, index) => <div key={photo}><img src={photo} alt={copy.yourPhoto(index + 1)} /><button type="button" aria-label={copy.removePhoto(index + 1)} disabled={processing || saving} onClick={() => setPhotos(previous => previous.filter((_, i) => i !== index))}>×</button></div>)}</div><input id="model-photos" type="file" accept="image/*,.heic,.heif" multiple disabled={processing || saving || photos.length >= 3} onChange={addPhotos} className={form.fileInput} />{processing && <p role="status" className={form.hint}>{copy.addingPhotos}</p>}</div>
         <div className={styles.srOnly} aria-hidden="true"><label>Company<input name="company" tabIndex={-1} autoComplete="off" /></label></div>
