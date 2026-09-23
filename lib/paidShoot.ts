@@ -1,6 +1,9 @@
 // Everything /sign-up knows about what it sells: who the shoot is for, the
-// packages per subject (from $100 for quick portraits, scaling up), and how a
-// visitor can be contacted. The picker and the form both read from here.
+// packages per subject (from $100 for quick portraits, scaling up), the market
+// they are priced in, and how a visitor can be contacted. The picker and the
+// form both read from here.
+
+import { imagesForSubject, type ThemeImage } from '@/lib/themePicker'
 
 export type SubjectId = 'man' | 'woman' | 'couple' | 'brand'
 export type Subject = { id: SubjectId; label: string; hint: string; cover: string }
@@ -52,7 +55,37 @@ export function startingPrice(subject: SubjectId): number {
   return Math.min(...packagesFor(subject).map(pkg => pkg.price))
 }
 
-export const price = (amount: number) => `$${amount.toLocaleString('en-US')}`
+// Markets: an ad can send ?city=berlin. Same page, same numbers — only the
+// currency sign, the women's photo pool and the phone example change. Plain
+// /sign-up (no or unknown city) is the dollar market and behaves as before.
+// collabWomen: women pick from the free /sign-up-collab women set only (no
+// paid-only pins). tag: the moodboard line saved on the row for /admin.
+// analytics: extra props on every track() call (none for the default market).
+export type Market = {
+  id: 'default' | 'berlin'; currency: 'USD' | 'EUR'; sign: string; collabWomen: boolean
+  phonePlaceholder: string; phoneHint: string; tag?: string; analytics: Record<string, string>
+}
+
+export const DEFAULT_MARKET: Market = { id: 'default', currency: 'USD', sign: '$', collabWomen: false, phonePlaceholder: '+1 (555) 123-4567', phoneHint: 'Include your country code if you’re outside the US.', analytics: {} }
+
+// id = the ?city= value that selects the market.
+const MARKETS: Market[] = [
+  { id: 'berlin', currency: 'EUR', sign: '€', collabWomen: true, phonePlaceholder: '+49 151 23456789', phoneHint: 'Include your country code.', tag: 'Market: Berlin (EUR)', analytics: { currency: 'EUR', city: 'berlin' } },
+]
+
+// ?city=… from the page URL (case-insensitive); anything else is the default.
+export function marketFromSearch(search: string): Market {
+  const city = new URLSearchParams(search).get('city')?.trim().toLowerCase()
+  return MARKETS.find(market => market.id === city) || DEFAULT_MARKET
+}
+
+// The pins a subject's rounds draw from in this market.
+export function poolFor(subject: SubjectId, market: Market): ThemeImage[] {
+  const pool = imagesForSubject(subject)
+  return subject === 'woman' && market.collabWomen ? pool.filter(image => image.collab !== false) : pool
+}
+
+export const price = (amount: number, market: Market = DEFAULT_MARKET) => `${market.sign}${amount.toLocaleString('en-US')}`
 
 // Call or text — both go to the one phone number. The number is stored on the
 // API's phone channel ('whatsapp'), so it is normalized and the admin page gets
@@ -66,11 +99,11 @@ export const CONTACT_CHANNELS: { id: ContactChannel; label: string }[] = [
 
 export const PAID_COPY = {
   wordmark: 'Aidan Torrence',
-  corner: 'Portraits from $100',
+  corner: (market: Market) => `Portraits from ${price(100, market)}`,
   bookTitle: 'Book a shoot',
   bookLead: 'Film portraits, planned around photos you actually like.',
   whoFor: 'Who is the shoot for?',
-  from: (amount: number) => `from ${price(amount)}`,
+  from: (amount: number, market: Market) => `from ${price(amount, market)}`,
   pickTitle: 'Pick your vibe.',
   pickNote: { lead: 'Choose one photo in each round.', rest: ' I’ll plan the shoot around your picks.' },
   skip: 'Skip',
@@ -84,8 +117,6 @@ export const PAID_COPY = {
   package: 'Package',
   howToContact: 'How should I contact you?',
   phoneLabel: 'Phone number',
-  phonePlaceholder: '+1 (555) 123-4567',
-  phoneHint: 'Include your country code if you’re outside the US.',
   emailLabel: 'Work email',
   emailPlaceholder: 'you@company.com',
   emailHint: 'I’ll reply with a quote and dates.',

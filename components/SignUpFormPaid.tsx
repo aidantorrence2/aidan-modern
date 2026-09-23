@@ -4,14 +4,14 @@
 import { useRef, useState } from 'react'
 import { imagesForIds, parseThemeSelection, type ThemeSelection } from '@/lib/themePicker'
 import { track, flushNow } from '@/lib/track'
-import { CONTACT_CHANNELS, PAID_COPY as copy, packagesFor, price, subjectLabel, type ContactChannel, type SubjectId } from '@/lib/paidShoot'
+import { CONTACT_CHANNELS, PAID_COPY as copy, packagesFor, price, subjectLabel, type ContactChannel, type Market, type SubjectId } from '@/lib/paidShoot'
 import styles from './ThemePicker.module.css'
 import form from './ThemeSignup.module.css'
 import paid from './PaidPicker.module.css'
 
-type Props = { subject: SubjectId; selection: ThemeSelection; onBack: () => void; onRestart: () => void }
+type Props = { subject: SubjectId; market: Market; selection: ThemeSelection; onBack: () => void; onRestart: () => void }
 
-export default function SignUpFormPaid({ subject, selection, onBack, onRestart }: Props) {
+export default function SignUpFormPaid({ subject, market, selection, onBack, onRestart }: Props) {
   const packages = packagesFor(subject)
   const [packageId, setPackageId] = useState(packages[0].id)
   const [channel, setChannel] = useState<ContactChannel>('text')
@@ -53,7 +53,7 @@ export default function SignUpFormPaid({ subject, selection, onBack, onRestart }
     if (subject === 'brand' && !brand) { setError(copy.errors.noBrand); return }
     const channelLabel = byEmail ? 'Email' : CONTACT_CHANNELS.find(item => item.id === channel)?.label || channel
     submitting.current = true; setSaving(true); setError('')
-    const analytics = { subject, package: chosenPackage.id, price: chosenPackage.price, channel: byEmail ? 'email' : channel, social: !!social.trim(), picks: images.length, location: place }
+    const analytics = { subject, package: chosenPackage.id, price: chosenPackage.price, channel: byEmail ? 'email' : channel, social: !!social.trim(), picks: images.length, location: place, ...market.analytics }
     track('submit_attempt', analytics)
     try {
       const response = await fetch('/api/sign-up', {
@@ -67,7 +67,8 @@ export default function SignUpFormPaid({ subject, selection, onBack, onRestart }
           moodboard: [
             'Paid sign-up',
             `Subject: ${subjectLabel(subject)}`,
-            `Package: ${chosenPackage.name} — ${price(chosenPackage.price)}`,
+            `Package: ${chosenPackage.name} — ${price(chosenPackage.price, market)}`,
+            ...(market.tag ? [market.tag] : []),
             `Contact preference: ${channelLabel}`,
             ...(social.trim() ? [`WhatsApp / Instagram: ${social.trim()}`] : []),
             `Location: ${place}`,
@@ -82,10 +83,10 @@ export default function SignUpFormPaid({ subject, selection, onBack, onRestart }
       setDone(true)
       track('submit_success', analytics); flushNow()
       const fbq = (window as typeof window & { fbq?: (...args: unknown[]) => void }).fbq
-      fbq?.('track', 'Lead', { source: 'sign-up', value: chosenPackage.price, currency: 'USD' })
+      fbq?.('track', 'Lead', { source: 'sign-up', value: chosenPackage.price, currency: market.currency })
     } catch {
       setError(copy.errors.saveFailed)
-      track('submit_error', { subject, package: chosenPackage.id })
+      track('submit_error', { subject, package: chosenPackage.id, ...market.analytics })
     } finally { submitting.current = false; setSaving(false) }
   }
 
@@ -94,14 +95,14 @@ export default function SignUpFormPaid({ subject, selection, onBack, onRestart }
     <div className={styles.shell}>
     <div className={styles.topbar}>
       <a href="/" className={styles.wordmark}>{copy.wordmark}</a>
-      <span>{copy.corner}</span>
+      <span>{copy.corner(market)}</span>
     </div>
     {done
       ? <div className={styles.heading}><h1>{copy.doneTitle}</h1><p>{copy.doneNote}</p></div>
       : <div className={form.signupCta}><h1 className={styles.cta}><strong>{copy.formTitle}</strong></h1><p>{copy.formNote}</p></div>}
     <div className={form.boardSummary}>
       <div className={form.filmstrip}>{images.map(image => <img src={image.src} alt={image.alt} key={image.id} />)}</div>
-      <div className={paid.chips}><span>{subjectLabel(subject)}</span>{done && <span>{chosenPackage.name} · {price(chosenPackage.price)}</span>}</div>
+      <div className={paid.chips}><span>{subjectLabel(subject)}</span>{done && <span>{chosenPackage.name} · {price(chosenPackage.price, market)}</span>}</div>
       {!done && <div className={form.boardActions}><button type="button" className={`${styles.textButton} ${form.back}`} onClick={onBack}>{copy.back}</button><button type="button" className={styles.textButton} onClick={onRestart}>{copy.startOver}</button></div>}
     </div>
     {done ? <div className={styles.reviewActions}><a className={styles.textButton} href="https://www.instagram.com/madebyaidan" target="_blank" rel="noreferrer">@madebyaidan</a></div> : <form className={form.form} onSubmit={submit}>
@@ -109,7 +110,7 @@ export default function SignUpFormPaid({ subject, selection, onBack, onRestart }
         <legend>{copy.package}</legend>
         <div className={paid.packages}>{packages.map(pkg => (
           <button type="button" key={pkg.id} className={paid.package} aria-pressed={packageId === pkg.id} onClick={() => { setPackageId(pkg.id); setError('') }}>
-            <span className={paid.packageHead}><strong>{pkg.name}</strong><b>{price(pkg.price)}</b></span>
+            <span className={paid.packageHead}><strong>{pkg.name}</strong><b>{price(pkg.price, market)}</b></span>
             <span className={paid.packageTime}>{pkg.time}</span>
             <ul className={paid.packageIncludes}>{pkg.includes.map(item => <li key={item}>{item}</li>)}</ul>
             {pkg.note && packageId === pkg.id && <span className={paid.packageNote}>{pkg.note}</span>}
@@ -125,8 +126,8 @@ export default function SignUpFormPaid({ subject, selection, onBack, onRestart }
         <fieldset>
           <legend>{copy.howToContact}</legend>
           <div className={form.channels}>{CONTACT_CHANNELS.map(item => <button type="button" key={item.id} aria-pressed={channel === item.id} onClick={() => { setChannel(item.id); setError('') }}>{item.label}</button>)}</div>
-          <label className={form.field}><span className={styles.srOnly}>{copy.phoneLabel}</span><input required type="tel" name="phone" autoComplete="tel" inputMode="tel" maxLength={40} value={phone} onChange={event => setPhone(event.target.value)} placeholder={copy.phonePlaceholder} /></label>
-          <p className={form.hint}>{copy.phoneHint}</p>
+          <label className={form.field}><span className={styles.srOnly}>{copy.phoneLabel}</span><input required type="tel" name="phone" autoComplete="tel" inputMode="tel" maxLength={40} value={phone} onChange={event => setPhone(event.target.value)} placeholder={market.phonePlaceholder} /></label>
+          <p className={form.hint}>{market.phoneHint}</p>
         </fieldset>
       )}
       <label className={form.field}>{copy.social} <span>{copy.optional}</span><input type="text" name="social" autoComplete="off" autoCapitalize="none" maxLength={80} value={social} onChange={event => setSocial(event.target.value)} placeholder={copy.socialPlaceholder} /></label>
@@ -137,7 +138,7 @@ export default function SignUpFormPaid({ subject, selection, onBack, onRestart }
       <div className={styles.srOnly} aria-hidden="true"><label>Company<input name="company" tabIndex={-1} autoComplete="off" /></label></div>
       {error && <p role="alert" className={form.error}>{error}</p>}
       <div className={form.submitBar}>
-        <p className={paid.total}><span>{chosenPackage.name}</span><b>{price(chosenPackage.price)}</b></p>
+        <p className={paid.total}><span>{chosenPackage.name}</span><b>{price(chosenPackage.price, market)}</b></p>
         <button type="submit" disabled={saving} className={styles.primary}>{saving ? copy.booking : copy.book}<span aria-hidden="true">↗</span></button>
       </div>
     </form>}

@@ -2,16 +2,17 @@
 /* eslint-disable @next/next/no-img-element -- Library files are pre-sized; the next round preloads these exact URLs. */
 
 import { useEffect, useRef, useState } from 'react'
-import { imagesForSubject, libraryImages, makeRounds, MAX_PICKS } from '@/lib/themePicker'
-import { PAID_ANALYTICS_PATH, PAID_COPY as copy, PAID_STORAGE_KEY, PAID_SUBJECTS, isSubjectId, startingPrice, type SubjectId } from '@/lib/paidShoot'
+import { libraryImages, makeRounds, MAX_PICKS } from '@/lib/themePicker'
+import { DEFAULT_MARKET, PAID_ANALYTICS_PATH, PAID_COPY as copy, PAID_STORAGE_KEY, PAID_SUBJECTS, isSubjectId, marketFromSearch, poolFor, startingPrice, type Market, type SubjectId } from '@/lib/paidShoot'
 import { initPageAnalytics, track } from '@/lib/track'
 import SignUpFormPaid from './SignUpFormPaid'
 import styles from './ThemePicker.module.css'
 import paid from './PaidPicker.module.css'
 
 // The paid flow is the collab picker with a step in front: who the shoot is
-// for. That choice picks the pin library the rounds draw from (see
-// imagesForSubject) and the packages the form offers.
+// for. That choice picks the pin library the rounds draw from (see poolFor)
+// and the packages the form offers. The market (?city=, read once on mount)
+// sets the currency and, for some cities, the women's pool.
 // choices: one entry per round shown — an image id, or null for a skipped round.
 // done: the visitor pressed "Book" before reaching MAX_PICKS.
 type Session = { version: 1; subject: SubjectId | null; seed: number; choices: (string | null)[]; done?: boolean; updatedAt: number }
@@ -21,12 +22,13 @@ const fresh = (subject: SubjectId | null = null): Session => ({ version: 1, subj
 
 export default function PaidPicker() {
   const [session, setSession] = useState<Session | null>(null)
+  const [market, setMarket] = useState<Market>(DEFAULT_MARKET)
   const [flash, setFlash] = useState<string | null>(null)
   const lock = useRef(false)
   const timer = useRef<ReturnType<typeof setTimeout>>()
   const gridRef = useRef<HTMLDivElement>(null)
   const subject = session?.subject || null
-  const pool = subject ? imagesForSubject(subject) : []
+  const pool = subject ? poolFor(subject, market) : []
   const rounds = session && subject ? makeRounds(session.seed, pool, true) : []
   const round = session?.choices.length || 0
   const selectedIds = session?.choices.filter((id): id is string => !!id) || []
@@ -34,18 +36,20 @@ export default function PaidPicker() {
   const complete = !!subject && (!!session?.done || selectedIds.length >= MAX_PICKS || round >= rounds.length)
 
   useEffect(() => {
-    initPageAnalytics(PAID_ANALYTICS_PATH, { version: 'paid-v1' })
+    const urlMarket = marketFromSearch(window.location.search)
+    initPageAnalytics(PAID_ANALYTICS_PATH, { version: 'paid-v1', ...urlMarket.analytics })
     let restored: Session | null = null
     try {
       const saved = JSON.parse(localStorage.getItem(PAID_STORAGE_KEY) || 'null') as Session | null
       if (saved?.version === 1 && Number.isInteger(saved.seed) && Array.isArray(saved.choices) && Date.now() - saved.updatedAt < TTL && (saved.subject === null || isSubjectId(saved.subject))) {
-        const savedRounds = saved.subject ? makeRounds(saved.seed, imagesForSubject(saved.subject), true) : []
+        const savedRounds = saved.subject ? makeRounds(saved.seed, poolFor(saved.subject, urlMarket), true) : []
         if (saved.choices.length <= savedRounds.length && saved.choices.every((id, i) => id === null || savedRounds[i].includes(id))) restored = saved
       }
     } catch {}
     // ?for=couple on the URL (ad links) skips the first screen.
     let preset: SubjectId | null = null
     try { const fromUrl = new URLSearchParams(window.location.search).get('for'); if (isSubjectId(fromUrl)) preset = fromUrl } catch {}
+    setMarket(urlMarket)
     setSession(restored && (!preset || restored.subject === preset) ? restored : fresh(preset))
     return () => clearTimeout(timer.current)
   }, [])
@@ -64,7 +68,7 @@ export default function PaidPicker() {
 
   function chooseSubject(next: SubjectId) {
     if (!session) return
-    track('paid_subject_picked', { subject: next })
+    track('paid_subject_picked', { subject: next, ...market.analytics })
     setSession({ ...fresh(next), seed: session.seed })
   }
 
@@ -72,7 +76,7 @@ export default function PaidPicker() {
     if (!session || lock.current || complete) return
     lock.current = true
     setFlash(id)
-    track(id ? 'moodboard_image_picked' : 'moodboard_round_skipped', { round: round + 1, image_id: id, subject })
+    track(id ? 'moodboard_image_picked' : 'moodboard_round_skipped', { round: round + 1, image_id: id, subject, ...market.analytics })
     const next: Session = { ...session, choices: [...session.choices, id], updatedAt: Date.now() }
     timer.current = setTimeout(() => {
       setSession(next)
@@ -92,7 +96,8 @@ export default function PaidPicker() {
   const topbar = (
     <div className={styles.topbar}>
       <a href="/" className={styles.wordmark}>{copy.wordmark}</a>
-      <span>{copy.corner}</span>
+      {/* Hidden until mount, when the market is known, so ?city= never flashes the wrong currency. */}
+      <span style={session ? undefined : { visibility: 'hidden' }}>{copy.corner(market)}</span>
     </div>
   )
 
@@ -110,9 +115,9 @@ export default function PaidPicker() {
         <p className={styles.ctaNote}><strong>{copy.whoFor}</strong> {copy.bookLead}</p>
         <div className={paid.subjects}>
           {PAID_SUBJECTS.map(item => (
-            <button key={item.id} className={paid.subject} onClick={() => chooseSubject(item.id)} aria-label={`${item.label}, ${copy.from(startingPrice(item.id))}`}>
+            <button key={item.id} className={paid.subject} onClick={() => chooseSubject(item.id)} aria-label={`${item.label}, ${copy.from(startingPrice(item.id), market)}`}>
               <img src={item.cover} alt="" draggable={false} />
-              <span className={paid.subjectPrice}>{copy.from(startingPrice(item.id))}</span>
+              <span className={paid.subjectPrice}>{copy.from(startingPrice(item.id), market)}</span>
               <span className={paid.subjectLabel}><strong>{item.label}</strong><small>{item.hint}</small></span>
             </button>
           ))}
@@ -124,6 +129,7 @@ export default function PaidPicker() {
   if (complete && selectedIds.length) return (
     <SignUpFormPaid
       subject={subject}
+      market={market}
       selection={{ theme: 'any', imageIds: selectedIds }}
       onBack={back}
       onRestart={() => setSession(fresh())}
