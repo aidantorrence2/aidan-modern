@@ -1,5 +1,5 @@
 // Everything /sign-up knows about what it sells: who the shoot is for, the
-// packages per subject (from $100 for quick portraits, scaling up), the market
+// packages per subject (€100 quick, €200 full; brands scale up), the market
 // they are priced in, and how a visitor can be contacted. The picker and the
 // form both read from here.
 
@@ -27,16 +27,10 @@ export function subjectLabel(id: SubjectId): string {
   return PAID_SUBJECTS.find(subject => subject.id === id)?.label || 'Portraits'
 }
 
+// Same two packages for a man, a woman or a couple.
 const PORTRAITS: Package[] = [
-  { id: 'quick', name: 'Quick portraits', price: 100, time: '1 hour · one spot', includes: ['10 edited photos', 'Delivered in 3 days'] },
-  { id: 'half', name: 'Portrait session', price: 180, time: '90 minutes · up to 2 spots', includes: ['25 edited photos', 'One outfit change', 'Delivered in 5 days'] },
-  { id: 'full', name: 'Full session', price: 300, time: '2 hours · 2–3 spots', includes: ['50 edited photos', 'One short reel', 'Outfit changes', 'Delivered in 7 days'] },
-]
-
-const COUPLES: Package[] = [
-  { id: 'quick', name: 'Quick couple portraits', price: 120, time: '1 hour · one spot', includes: ['10 edited photos', 'Delivered in 3 days'] },
-  { id: 'half', name: 'Couple session', price: 220, time: '90 minutes · up to 2 spots', includes: ['25 edited photos', 'One outfit change', 'Delivered in 5 days'] },
-  { id: 'full', name: 'Full session', price: 360, time: '2 hours · 2–3 spots', includes: ['50 edited photos', 'One short reel', 'Outfit changes', 'Delivered in 7 days'] },
+  { id: 'quick', name: 'Quick', price: 100, time: '1 hour · one spot', includes: ['10 edited photos', 'Delivered in 3 days'] },
+  { id: 'full', name: 'Full', price: 200, time: '2 hours · 2–3 spots', includes: ['50 edited photos', 'Outfit changes', 'Delivered in 7 days'] },
 ]
 
 const BRANDS: Package[] = [
@@ -46,7 +40,7 @@ const BRANDS: Package[] = [
 ]
 
 export function packagesFor(subject: SubjectId): Package[] {
-  return subject === 'brand' ? BRANDS : subject === 'couple' ? COUPLES : PORTRAITS
+  return subject === 'brand' ? BRANDS : PORTRAITS
 }
 
 export function startingPrice(subject: SubjectId): number {
@@ -55,7 +49,7 @@ export function startingPrice(subject: SubjectId): number {
 
 // Markets: an ad can send ?city=berlin. Same page, same numbers — only the
 // currency sign and the phone example change. Plain
-// /sign-up (no or unknown city) is the dollar market and behaves as before.
+// /sign-up (no or unknown city) is the euro market.
 // tag: the moodboard line saved on the row for /admin.
 // analytics: extra props on every track() call (none for the default market).
 export type Market = {
@@ -63,7 +57,7 @@ export type Market = {
   phonePlaceholder: string; phoneHint: string; tag?: string; analytics: Record<string, string>
 }
 
-export const DEFAULT_MARKET: Market = { id: 'default', currency: 'USD', sign: '$', phonePlaceholder: '+1 (555) 123-4567', phoneHint: 'Include your country code if you’re outside the US.', analytics: {} }
+export const DEFAULT_MARKET: Market = { id: 'default', currency: 'EUR', sign: '€', phonePlaceholder: '+1 (555) 123-4567', phoneHint: 'Include your country code if you’re outside the US.', analytics: {} }
 
 // id = the ?city= value that selects the market.
 const MARKETS: Market[] = [
