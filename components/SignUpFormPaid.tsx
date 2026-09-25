@@ -1,17 +1,15 @@
 'use client'
-/* eslint-disable @next/next/no-img-element -- Pre-sized references need their original URLs. */
 
 import { useRef, useState } from 'react'
-import { imagesForIds, parseThemeSelection, type ThemeSelection } from '@/lib/themePicker'
 import { track, flushNow } from '@/lib/track'
 import { CONTACT_CHANNELS, PAID_COPY as copy, packagesFor, price, subjectLabel, type ContactChannel, type Market, type SubjectId } from '@/lib/paidShoot'
 import styles from './ThemePicker.module.css'
 import form from './ThemeSignup.module.css'
 import paid from './PaidPicker.module.css'
 
-type Props = { subject: SubjectId; market: Market; selection: ThemeSelection; onBack: () => void; onRestart: () => void }
+type Props = { subject: SubjectId; market: Market; onBack: () => void }
 
-export default function SignUpFormPaid({ subject, market, selection, onBack, onRestart }: Props) {
+export default function SignUpFormPaid({ subject, market, onBack }: Props) {
   const packages = packagesFor(subject)
   const [packageId, setPackageId] = useState(packages[0].id)
   const [channel, setChannel] = useState<ContactChannel>('text')
@@ -26,7 +24,6 @@ export default function SignUpFormPaid({ subject, market, selection, onBack, onR
   const [done, setDone] = useState(false)
   const [error, setError] = useState('')
   const submitting = useRef(false)
-  const images = imagesForIds(selection.imageIds)
   const chosenPackage = packages.find(pkg => pkg.id === packageId) || packages[0]
   // Brands and companies are contacted by email; everyone else by phone.
   const byEmail = subject === 'brand'
@@ -36,8 +33,6 @@ export default function SignUpFormPaid({ subject, market, selection, onBack, onR
     if (submitting.current) return
     const data = new FormData(event.currentTarget)
     if (data.get('company')) return
-    const chosen = parseThemeSelection(selection)
-    if (!chosen) { setError(copy.errors.picksLost); return }
     let contact: string
     if (byEmail) {
       contact = email.trim()
@@ -53,7 +48,7 @@ export default function SignUpFormPaid({ subject, market, selection, onBack, onR
     if (subject === 'brand' && !brand) { setError(copy.errors.noBrand); return }
     const channelLabel = byEmail ? 'Email' : CONTACT_CHANNELS.find(item => item.id === channel)?.label || channel
     submitting.current = true; setSaving(true); setError('')
-    const analytics = { subject, package: chosenPackage.id, price: chosenPackage.price, channel: byEmail ? 'email' : channel, social: !!social.trim(), picks: images.length, location: place, ...market.analytics }
+    const analytics = { subject, package: chosenPackage.id, price: chosenPackage.price, channel: byEmail ? 'email' : channel, social: !!social.trim(), location: place, ...market.analytics }
     track('submit_attempt', analytics)
     try {
       const response = await fetch('/api/sign-up', {
@@ -61,7 +56,7 @@ export default function SignUpFormPaid({ subject, market, selection, onBack, onR
         body: JSON.stringify({
           // The phone number rides the API's phone channel so it is normalized
           // to E.164 and the admin page gets a tap-to-message link.
-          city: place, contactMethod: byEmail ? 'email' : 'whatsapp', contact, themeSelection: chosen,
+          city: place, contactMethod: byEmail ? 'email' : 'whatsapp', contact,
           // "Location:" is what the admin page and the phone-country inference
           // read; the rest is for Aidan when he opens the row.
           moodboard: [
@@ -101,9 +96,8 @@ export default function SignUpFormPaid({ subject, market, selection, onBack, onR
       ? <div className={styles.heading}><h1>{copy.doneTitle}</h1><p>{copy.doneNote}</p></div>
       : <div className={form.signupCta}><h1 className={styles.cta}><strong>{copy.formTitle}</strong></h1><p>{copy.formNote}</p></div>}
     <div className={form.boardSummary}>
-      <div className={form.filmstrip}>{images.map(image => <img src={image.src} alt={image.alt} key={image.id} />)}</div>
       <div className={paid.chips}><span>{subjectLabel(subject)}</span>{done && <span>{chosenPackage.name} · {price(chosenPackage.price, market)}</span>}</div>
-      {!done && <div className={form.boardActions}><button type="button" className={`${styles.textButton} ${form.back}`} onClick={onBack}>{copy.back}</button><button type="button" className={styles.textButton} onClick={onRestart}>{copy.startOver}</button></div>}
+      {!done && <div className={form.boardActions}><button type="button" className={`${styles.textButton} ${form.back}`} onClick={onBack}>{copy.back}</button></div>}
     </div>
     {done ? <div className={styles.reviewActions}><a className={styles.textButton} href="https://www.instagram.com/madebyaidan" target="_blank" rel="noreferrer">@madebyaidan</a></div> : <form className={form.form} onSubmit={submit}>
       <fieldset>
