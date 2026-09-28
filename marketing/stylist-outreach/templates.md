@@ -1,31 +1,22 @@
 # Stylist outreach templates
 
-Dates: Athens 30 Sept – 2 Oct · Paris 2 – 4 Oct · Istanbul from 13 Oct (inquiry only)
+Tone: a real shoot with dates, a specific reference, one direct question. No "turn it into a story", no "would you be up for it", no apologising for short notice.
 
-## Instagram DM (short, stylists read on phone)
+## DM
+Hi {FIRST}, Aidan here, editorial photographer (35mm film + digital). I'm shooting an editorial in {CITY} {DATES} with an agency model: {DIRECTION}. I'm looking for a stylist. {CREDIT}: that's exactly the reference. Are you free one of those days? {MOODBOARD} · aidantorrence.com
 
-### Athens / Paris (shoot booked)
-Hi {FIRST_NAME}, I'm Aidan, an editorial photographer (35mm film + digital). I'm in {CITY} {DATES} shooting tests with agency models and I'd love to build a proper story with a stylist. Your work for {CREDIT} is exactly the direction I have in mind. Would you be up for styling one? Moodboard: {MOODBOARD_LINK} · portfolio: aidantorrence.com
+## Email
+Subject: Stylist for an editorial, {CITY} {DATES}
 
-### Istanbul (inquiry)
-Hi {FIRST_NAME}, I'm Aidan, an editorial photographer (35mm film + digital). I'll be in Istanbul from mid-October and I'm putting together a couple of editorial stories with agency models. Loved your styling for {CREDIT}. Would you be open to collaborating? Happy to share a moodboard once dates are set. Portfolio: aidantorrence.com
+Hi {FIRST},
 
-## Email (for agency-represented stylists or published emails)
+I'm Aidan Torrence, an editorial photographer (35mm film and digital). I'm shooting an editorial in {CITY} between {DATES} with a model from a local agency, and I'm looking for a stylist.
 
-Subject: Editorial collaboration, {CITY} {DATES}
+{CREDIT} is exactly the reference. The direction: {DIRECTION}. [View the moodboard]
 
-Hi {FIRST_NAME},
+One day on location, 3 to 5 looks. The story goes out to independent magazines with full team credits, and you get the complete edited set.
 
-I'm Aidan Torrence, an editorial photographer working on 35mm film and digital. I'll be in {CITY} {DATES}, shooting with models from local agencies, and I'd like to turn one of those days into a full editorial story with a stylist, to submit to independent magazines.
+Are you free one of those days?
 
-I came across your work for {CREDIT} and it's very close to the direction I have in mind: {ONE_LINE_DIRECTION}. Moodboard: {MOODBOARD_LINK}
-
-The plan: one day (or half day) on location, 3 to 5 looks, model booked through a local agency. You'd get the full edited set and a credit on every submission.
-
-My work: aidantorrence.com · instagram.com/madebyaidan
-
-Would you be interested? Happy to jump on a quick call.
-
-Best,
-Aidan Torrence
-WhatsApp +49 175 8966210
+My work: aidantorrence.com · @madebyaidan
+Aidan Torrence · WhatsApp +49 175 8966210
