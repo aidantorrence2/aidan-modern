@@ -1,0 +1,138 @@
+<title>Athens, As It Is</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=IBM+Plex+Sans+Condensed:wght@400;500&display=swap">
+<style>
+/* Layout: a film contact-book — each location is one spread: big frame left, two frames right, caption above. Single dark look by choice. */
+:root {
+  --ground: #0f0e0c;
+  --paper: #ece6dc;
+  --muted: #a39b8f;
+  --faint: #6d665d;
+  --rule: #2a2723;
+  --kiosk: #c9a36b;
+  --display: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  --label: 'IBM Plex Sans Condensed', 'Arial Narrow', system-ui, sans-serif;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { background: var(--ground); color: var(--paper); font-family: var(--label); margin: 0; padding-inline: 16px; }
+.wrap { max-width: 1120px; margin: 0 auto; padding-block: 48px 72px; display: grid; gap: 88px; }
+img { display: block; width: 100%; height: 100%; object-fit: cover; max-width: 100%; }
+.kicker { font-size: 12px; letter-spacing: .2em; text-transform: uppercase; color: var(--kiosk); }
+h1, h2 { font-family: var(--display); font-weight: 400; margin: 0; text-wrap: balance; }
+p { margin: 0; }
+
+.cover { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: 48px; align-items: center; }
+.cover .hero { aspect-ratio: 736 / 853; }
+.cover .txt { display: grid; gap: 22px; min-width: 0; }
+.cover h1 { font-size: clamp(52px, 8vw, 96px); line-height: .92; }
+.cover h1 em { color: var(--kiosk); }
+.cover .sub { font-family: var(--display); font-style: italic; font-size: 22px; color: var(--paper); }
+.cover p { font-size: 15px; line-height: 1.65; color: var(--muted); max-width: 58ch; }
+.by { font-size: 12px; letter-spacing: .14em; text-transform: uppercase; }
+.by span { color: var(--faint); }
+
+.spread { display: grid; gap: 20px; border-top: 1px solid var(--rule); padding-top: 28px; }
+.head { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr); gap: 32px; align-items: end; }
+.head h2 { font-size: clamp(36px, 5vw, 56px); line-height: 1; margin-top: 8px; }
+.head p { font-size: 15px; line-height: 1.6; color: var(--muted); max-width: 60ch; }
+.frames { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr) minmax(0, 1fr); gap: 12px; align-items: end; }
+.frames .f { aspect-ratio: 2 / 3; overflow: hidden; }
+.frames .f.big { aspect-ratio: 3 / 4; }
+
+.plan { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1.2fr); gap: 16px; border-top: 1px solid var(--rule); padding-top: 28px; align-items: start; }
+.plan .f { aspect-ratio: 2 / 3; overflow: hidden; }
+.plan .info { display: grid; gap: 18px; min-width: 0; padding-left: 8px; }
+.plan h2 { font-size: clamp(36px, 5vw, 56px); line-height: 1; margin-top: 8px; }
+dl { margin: 0; display: grid; gap: 14px; }
+dt { font-size: 11px; letter-spacing: .2em; text-transform: uppercase; color: var(--kiosk); margin-bottom: 4px; }
+dd { margin: 0; font-size: 15px; line-height: 1.55; color: var(--paper); }
+.contact { font-size: 14px; line-height: 1.7; color: var(--muted); border-top: 1px solid var(--rule); padding-top: 14px; user-select: all; }
+.note { font-size: 12px; color: var(--faint); line-height: 1.5; max-width: 70ch; }
+
+@media (max-width: 760px) {
+  .wrap { gap: 64px; padding-block: 28px 56px; }
+  .cover, .head, .plan { grid-template-columns: minmax(0, 1fr); gap: 20px; }
+  .frames { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+  .frames .f.big { grid-column: 1 / -1; }
+  .plan .info { padding-left: 0; }
+}
+</style>
+
+<main class="wrap">
+  <section class="cover">
+    <div class="hero"><img src="img/cover.jpg" alt="Woman in a white dress on a wicker chair beside a dusty red car under trees"></div>
+    <div class="txt">
+      <div class="kicker">Editorial concept · Athens · 1–2 October 2026</div>
+      <h1>Athens,<br><em>as it is.</em></h1>
+      <div class="sub">The laiki, the periptero, the kafeneio, the port.</div>
+      <p>An editorial set inside everyday Athens rather than in front of it. The model lives in real places, with the people who work there in frame: the fruit seller, the kiosk owner, the old men over tavli, the fishermen at Piraeus. Shot on 35mm film in natural light. Styling that feels found, not placed.</p>
+      <div class="by">Aidan Torrence <span>· aidantorrence.com · @madebyaidan</span></div>
+    </div>
+  </section>
+
+  <section class="spread">
+    <div class="head">
+      <div><div class="kicker">Laiki &amp; Monastiraki</div><h2>The market</h2></div>
+      <p>Neighbourhood street markets and the Monastiraki flea market. Crates, awnings, stall owners, antiques piled on pavements. The model shops, eats, waits, bargains.</p>
+    </div>
+    <div class="frames">
+      <div class="f big"><img src="img/m1.jpg" alt="Model eating beside a bread cart, the vendor sitting behind her"></div>
+      <div class="f"><img src="img/m2.jpg" alt="Man with a cat in a cluttered antique shop"></div>
+      <div class="f"><img src="img/m3.jpg" alt="Bazaar lane hung with rugs and textiles"></div>
+    </div>
+  </section>
+
+  <section class="spread">
+    <div class="head">
+      <div><div class="kicker">Periptero &amp; kafeneio</div><h2>The regulars</h2></div>
+      <p>Kiosks plastered with newspapers and cigarettes, souvlaki counters, old kafeneia with plastic chairs and tavli boards. Locals stay in the frame.</p>
+    </div>
+    <div class="frames">
+      <div class="f big"><img src="img/k1.jpg" alt="Model leaning on a shop counter with the shopkeeper behind"></div>
+      <div class="f"><img src="img/k2.jpg" alt="Man smoking on a café chair at a mosaic table"></div>
+      <div class="f"><img src="img/k3.jpg" alt="Man in a green tracksuit eating at a fast-food counter"></div>
+    </div>
+  </section>
+
+  <section class="spread">
+    <div class="head">
+      <div><div class="kicker">Piraeus</div><h2>The port</h2></div>
+      <p>Ferries, rope, fishing boats, men with lines off the harbour wall. Salt, rust, work clothes against fashion.</p>
+    </div>
+    <div class="frames">
+      <div class="f big"><img src="img/p1.jpg" alt="Man standing among fishing crates and nets at a harbour"></div>
+      <div class="f"><img src="img/p2.jpg" alt="Man in a blazer on a pier between fishermen casting lines"></div>
+      <div class="f"><img src="img/p3.jpg" alt="Black-and-white shot of a man seated on a bridge among fishermen"></div>
+    </div>
+  </section>
+
+  <section class="spread">
+    <div class="head">
+      <div><div class="kicker">Exarchia &amp; Psyrri</div><h2>The walls</h2></div>
+      <p>Tagged shutters, faded posters, motorbikes parked on the pavement, hand-painted shop signs. The city talking back.</p>
+    </div>
+    <div class="frames">
+      <div class="f big"><img src="img/s1.jpg" alt="Model sitting on a motorbike beneath a large shop sign"></div>
+      <div class="f"><img src="img/s2.jpg" alt="Figure in white in front of a shutter hung with patterned fabric"></div>
+      <div class="f"><img src="img/s3.jpg" alt="Model in sequins beside a hand-painted vertical sign"></div>
+    </div>
+  </section>
+
+  <section class="plan">
+    <div class="f"><img src="img/x1.jpg" alt="Model crouching on a steep cobbled street"></div>
+    <div class="f"><img src="img/x2.jpg" alt="Two men leaning on a white car on a city street"></div>
+    <div class="info">
+      <div><div class="kicker">The plan</div><h2>The shoot</h2></div>
+      <dl>
+        <div><dt>When</dt><dd>1–2 October 2026, Athens</dd></div>
+        <div><dt>Casting</dt><dd>Model cast through Ace Models</dd></div>
+        <div><dt>Styling</dt><dd>Worn, lived-in, a little off. Greek vintage, flea-market finds, local labels. Tailoring and slips against workwear and plastic chairs.</dd></div>
+        <div><dt>Camera</dt><dd>35mm film and digital, natural light. Concept built together with the stylist.</dd></div>
+      </dl>
+      <div class="contact">Aidan Torrence<br>aidan.torrence@gmail.com<br>WhatsApp +49 175 8966210<br>aidantorrence.com · instagram.com/madebyaidan</div>
+    </div>
+  </section>
+
+  <p class="note">Reference images are for mood only; the shoot itself happens in Athens.</p>
+</main>
