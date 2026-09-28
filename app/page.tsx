@@ -5,10 +5,8 @@ import React, { useEffect, useState } from 'react';
 // [filename (no extension), width, height] — order is reading order, left to right
 const PHOTOS: [string, number, number][] = [
   ["manila-gallery-dsc-0190", 992, 1505],
-  ["manila-gallery-dsc-0911", 957, 1510],
   ["manila-gallery-night-001", 1080, 1080],
   ["manila-gallery-night-002", 1080, 1080],
-  ["manila-gallery-night-003", 1080, 1080],
   ["manila-gallery-ivy-001", 1600, 1061],
   ["manila-gallery-garden-002", 1600, 1061],
   ["manila-gallery-ivy-002", 1600, 2380],
@@ -28,15 +26,12 @@ const PHOTOS: [string, number, number][] = [
   ["000055", 1600, 2365],
   ["000049820006", 1600, 2413],
   ["000049740023", 1600, 1061],
-  ["000049740020", 1600, 1061],
-  ["000049740006", 1600, 2413],
   ["000048780010", 1600, 1061],
   ["000044", 1600, 2400],
   ["000036-5", 1600, 2397],
   ["000032-7", 1600, 2385],
   ["000020", 1600, 2384],
   ["000020-7", 1228, 1818],
-  ["000009", 1600, 2391],
   ["000008", 1600, 2402],
   ["000002", 1600, 1045],
   ["000008-11", 1600, 2361],
@@ -58,7 +53,12 @@ const PHOTOS: [string, number, number][] = [
   ["aidantorre001118-000013", 1070, 1600],
   ["aidantorre001118-000012", 1070, 1600],
   ["aidantorre001118-000008", 1070, 1600],
-  ["aidantorre001118-000003", 1070, 1600]
+  ["aidantorre001118-000003", 1070, 1600],
+  ["maria-4-000005", 1600, 1068],
+  ["maria-4-000039", 1600, 1068],
+  ["maria-4-000040", 1600, 1068],
+  ["maria-4-000046", 1600, 1068],
+  ["maria-4-000053", 1600, 1068]
 ];
 
 
