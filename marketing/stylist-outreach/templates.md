@@ -3,14 +3,14 @@
 Tone: a real shoot with dates, a specific reference, one direct question. No "turn it into a story", no "would you be up for it", no apologising for short notice.
 
 ## DM
-Hi {FIRST}, Aidan here, editorial photographer (35mm film + digital). I'm shooting an editorial in {CITY} {DATES} with an agency model: {DIRECTION}. I'm looking for a stylist. {CREDIT}: that's exactly the reference. Are you free one of those days? {MOODBOARD} · aidantorrence.com
+Hi {FIRST}, Aidan here, editorial photographer (35mm film + digital). I'm shooting an editorial in {CITY} {DATES} with an agency model: {DIRECTION}. I'm looking for a stylist to collaborate with: unpaid, for our books and independent magazine submissions. {CREDIT}: that's exactly the reference. Are you free one of those days? {MOODBOARD} · aidantorrence.com
 
 ## Email
-Subject: Stylist for an editorial, {CITY} {DATES}
+Subject: Stylist collaboration,, {CITY} {DATES}
 
 Hi {FIRST},
 
-I'm Aidan Torrence, an editorial photographer (35mm film and digital). I'm shooting an editorial in {CITY} between {DATES} with a model from a local agency, and I'm looking for a stylist.
+I'm Aidan Torrence, an editorial photographer (35mm film and digital). I'm shooting an editorial in {CITY} between {DATES} with a model from a local agency, and I'm looking for a stylist to collaborate with. It's unpaid, for our books and for submission to independent magazines.
 
 {CREDIT} is exactly the reference. The direction: {DIRECTION}. [View the moodboard]
 
