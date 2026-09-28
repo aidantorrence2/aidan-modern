@@ -1,0 +1,131 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<link href="fonts/fonts.css" rel="stylesheet">
+<style>
+@page { size: 297mm 210mm; margin: 0; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: #0c0c0c; color: #f2efe9; font-family: Inter, system-ui, sans-serif; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.page { width: 297mm; height: 210mm; padding: 14mm 16mm; position: relative; overflow: hidden; page-break-after: always; background: #0c0c0c; }
+.page:last-child { page-break-after: auto; }
+img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.serif { font-family: 'Cormorant Garamond', Georgia, serif; }
+.kicker { font-size: 7.5pt; letter-spacing: .22em; text-transform: uppercase; color: #c9b79c; }
+.foot { position: absolute; left: 16mm; right: 16mm; bottom: 8mm; display: flex; justify-content: space-between; font-size: 6.5pt; letter-spacing: .18em; text-transform: uppercase; color: #7d776e; }
+
+/* cover */
+.cover { display: grid; grid-template-columns: 118mm 1fr; gap: 16mm; }
+.cover .hero { height: 182mm; }
+.cover .txt { display: flex; flex-direction: column; justify-content: center; padding-bottom: 10mm; }
+.cover h1 { font-size: 62pt; font-weight: 400; line-height: .95; margin: 6mm 0 5mm; }
+.cover h1 em { color: #c9b79c; }
+.cover .dates { font-size: 15pt; font-style: italic; margin-bottom: 12mm; color: #d9d3c9; }
+.cover p { font-size: 9pt; line-height: 1.65; color: #bdb6ab; max-width: 118mm; }
+.cover .by { margin-top: 12mm; font-size: 8pt; letter-spacing: .14em; text-transform: uppercase; color: #f2efe9; }
+.cover .by span { color: #7d776e; }
+
+/* theme pages */
+.theme { display: grid; grid-template-columns: 112mm 1fr; gap: 6mm; }
+.theme .big { height: 176mm; }
+.theme .right { display: grid; grid-template-rows: auto 1fr; gap: 4mm; height: 176mm; }
+.theme h2 { font-size: 30pt; font-weight: 400; line-height: 1; margin: 2.5mm 0 2mm; }
+.theme .where { font-size: 8.5pt; color: #bdb6ab; line-height: 1.55; }
+.grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 5mm; align-self: end; }
+.grid2 > div { aspect-ratio: 2 / 3; }
+
+/* plan page */
+.plan { display: grid; grid-template-columns: 88mm 88mm 1fr; gap: 6mm; align-items: center; }
+.plan .ph { aspect-ratio: 2 / 3; }
+.plan .info { padding-left: 3mm; }
+.plan h2 { font-size: 30pt; font-weight: 400; margin: 2.5mm 0 3mm; }
+.plan h3 { font-size: 7.5pt; letter-spacing: .2em; text-transform: uppercase; color: #c9b79c; margin: 4.5mm 0 1.5mm; font-weight: 500; }
+.plan li, .plan p { font-size: 8.4pt; line-height: 1.55; color: #d9d3c9; }
+.plan ul { list-style: none; }
+.plan li::before { content: "— "; color: #7d776e; }
+.plan .contact { margin-top: 7mm; font-size: 8pt; line-height: 1.7; color: #f2efe9; }
+</style></head><body>
+<section class="page cover">
+  <div class="hero"><img src="img/cover.jpg"></div>
+  <div class="txt">
+    <div class="kicker">Editorial concept · Athens · 1–2 October 2026</div>
+    <h1 class="serif">Athens,<br><em>as it is.</em></h1>
+    <div class="dates serif">The laiki, the periptero, the kafeneio, the port.</div>
+    <p>An editorial set inside everyday Athens rather than in front of it. The model lives in real places, with the people who work there in frame: the fruit seller, the kiosk owner, the old men over tavli, the fishermen at Piraeus. Shot on 35mm film in natural light. Styling that feels found, not placed.</p>
+    <div class="by">Aidan Torrence <span>· aidantorrence.com · @madebyaidan</span></div>
+  </div>
+  <div class="foot"><span>Aidan Torrence</span><span>01 / 06</span></div>
+</section>
+<section class="page theme">
+  <div class="big"><img src="img/m1.jpg"></div>
+  <div class="right">
+    <div>
+      <div class="kicker">01 · Laiki & Monastiraki</div>
+      <h2 class="serif">The market</h2>
+      <p class="where">Neighbourhood street markets and the Monastiraki flea market. Crates, awnings, stall owners, antiques piled on pavements. The model shops, eats, waits, bargains.</p>
+    </div>
+    <div class="grid2">
+      <div><img src="img/m2.jpg"></div><div><img src="img/m3.jpg"></div>
+    </div>
+  </div>
+  <div class="foot"><span>Athens, as it is · Editorial concept</span><span>02 / 06</span></div>
+</section>
+<section class="page theme">
+  <div class="big"><img src="img/k1.jpg"></div>
+  <div class="right">
+    <div>
+      <div class="kicker">02 · Periptero & kafeneio</div>
+      <h2 class="serif">The regulars</h2>
+      <p class="where">Kiosks plastered with newspapers and cigarettes, souvlaki counters, old kafeneia with plastic chairs and tavli boards. Locals stay in the frame.</p>
+    </div>
+    <div class="grid2">
+      <div><img src="img/k2.jpg"></div><div><img src="img/k3.jpg"></div>
+    </div>
+  </div>
+  <div class="foot"><span>Athens, as it is · Editorial concept</span><span>03 / 06</span></div>
+</section>
+<section class="page theme">
+  <div class="big"><img src="img/p1.jpg"></div>
+  <div class="right">
+    <div>
+      <div class="kicker">03 · Piraeus</div>
+      <h2 class="serif">The port</h2>
+      <p class="where">Ferries, rope, fishing boats, men with lines off the harbour wall. Salt, rust, work clothes against fashion.</p>
+    </div>
+    <div class="grid2">
+      <div><img src="img/p2.jpg"></div><div><img src="img/p3.jpg"></div>
+    </div>
+  </div>
+  <div class="foot"><span>Athens, as it is · Editorial concept</span><span>04 / 06</span></div>
+</section>
+<section class="page theme">
+  <div class="big"><img src="img/s1.jpg"></div>
+  <div class="right">
+    <div>
+      <div class="kicker">04 · Exarchia & Psyrri</div>
+      <h2 class="serif">The walls</h2>
+      <p class="where">Tagged shutters, faded posters, motorbikes parked on the pavement, hand-painted shop signs. The city talking back.</p>
+    </div>
+    <div class="grid2">
+      <div><img src="img/s2.jpg"></div><div><img src="img/s3.jpg"></div>
+    </div>
+  </div>
+  <div class="foot"><span>Athens, as it is · Editorial concept</span><span>05 / 06</span></div>
+</section>
+<section class="page plan">
+  <div class="ph"><img src="img/x1.jpg"></div>
+  <div class="ph"><img src="img/x2.jpg"></div>
+  <div class="info">
+    <div class="kicker">05 · The plan</div>
+    <h2 class="serif">The shoot</h2>
+    <h3>When</h3>
+    <ul><li>1–2 October 2026, Athens</li></ul>
+    <h3>Casting</h3>
+    <ul><li>Model cast through Ace Models</li></ul>
+    <h3>Styling</h3>
+    <ul><li>Worn, lived-in, a little off</li><li>Greek vintage, flea-market finds, local labels</li><li>Tailoring and slips against workwear and plastic chairs</li></ul>
+    <h3>Camera</h3>
+    <ul><li>35mm film and digital, natural light</li><li>Concept built together with the stylist</li></ul>
+    <div class="contact">Aidan Torrence<br>aidan.torrence@gmail.com<br>WhatsApp +49 175 8966210<br>aidantorrence.com · instagram.com/madebyaidan</div>
+  </div>
+  <div class="foot"><span>Athens, as it is · 1–2 Oct 2026</span><span>06 / 06</span></div>
+</section>
+</body></html>
