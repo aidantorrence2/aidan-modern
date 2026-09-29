@@ -63,43 +63,19 @@ const CSS = `
 
   /* Nav */
   .hf-nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 50;
-    display: grid; grid-template-columns: 1fr auto 1fr; align-items: center;
-    padding: 20px var(--gutter);
-    color: #fff; mix-blend-mode: difference;
-    transition: background 0.5s, padding 0.5s;
+    position: fixed; top: 0; left: 0; right: 0; z-index: 50; height: 52px;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 0 var(--gutter);
+    background: rgba(12,12,12,0.9); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
   }
-  .hf-nav a { color: inherit; text-decoration: none; }
-  .hf-nav-mark { font-family: var(--serif); font-size: 15px; letter-spacing: 0.34em; text-transform: uppercase; white-space: nowrap; opacity: 0; transition: opacity 0.5s; }
-  .hf-nav-r { justify-self: end; display: flex; gap: 26px; }
-  .hf-scrolled .hf-nav {
-    mix-blend-mode: normal; color: var(--ivory);
-    background: rgba(12,12,12,0.85); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
-    padding-top: 14px; padding-bottom: 14px;
-  }
-  .hf-scrolled .hf-nav-mark { opacity: 1; }
-
-  /* Masthead */
-  .hf-top { padding: clamp(80px, 9vw, 130px) var(--gutter) clamp(18px, 2.4vw, 32px); text-align: center; }
-  .hf-masthead {
-    margin: 0; white-space: nowrap; line-height: 0.85;
-    font-family: var(--serif); font-weight: 400; text-transform: uppercase; letter-spacing: -0.02em;
-    font-size: clamp(44px, 8vw, 150px);
-    opacity: 0; animation: hf-rise 1.4s 0.1s cubic-bezier(.2,.7,.2,1) forwards;
-  }
-  .hf-masthead span + span { margin-left: 0.22em; }
-  @keyframes hf-rise { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: none; } }
-  .hf-top-meta {
-    display: grid; grid-template-columns: 1fr auto 1fr; align-items: baseline; gap: 16px;
-    margin-top: clamp(16px, 2vw, 28px); padding-top: 14px; border-top: 1px solid var(--rule);
-  }
-  .hf-top-meta > :first-child { text-align: left; }
-  .hf-top-meta > :last-child { text-align: right; }
-  .hf-top-meta .hf-eyebrow { color: var(--dim); }
-  .hf-top-line { font-family: var(--serif); font-style: italic; font-size: clamp(18px, 2vw, 26px); margin: 0; }
+  .hf-nav a { color: var(--ivory); text-decoration: none; }
+  .hf-nav-mark { font-family: var(--serif); font-size: 14px; letter-spacing: 0.3em; text-transform: uppercase; white-space: nowrap; }
+  .hf-nav-r { display: flex; gap: 26px; }
+  .hf-nav-r a { color: var(--dim); transition: color 0.2s; }
+  .hf-nav-r a:hover { color: var(--ivory); }
 
   /* Grid: justified rows */
-  .hf-grid { padding: 0 var(--gutter); display: flex; flex-direction: column; gap: var(--gap); --gap: 6px; }
+  .hf-grid { padding: 58px var(--gutter) 0; display: flex; flex-direction: column; gap: var(--gap); --gap: 6px; }
   .hf-row { display: flex; gap: var(--gap); }
   .hf-tile { position: relative; display: block; overflow: hidden; background: #151515; cursor: zoom-in; flex: none; }
   .hf-tile img { width: 100%; height: 100%; object-fit: cover; }
@@ -136,20 +112,11 @@ const CSS = `
   }
 
   @media (max-width: 760px) {
-    .hf-nav { grid-template-columns: 1fr auto; }
-    .hf-nav-l { display: none; }
-    .hf-nav-r { gap: 18px; }
-    .hf-nav-mark { font-size: 12px; letter-spacing: 0.24em; }
-    .hf-masthead { font-size: clamp(48px, 15.5vw, 120px); white-space: normal; }
-    .hf-masthead span { display: block; }
-    .hf-masthead span + span { margin-left: 0; }
-    .hf-top-meta { grid-template-columns: 1fr 1fr; }
-    .hf-top-line { display: none; }
-    .hf-hide-sm { display: none; }
+    .hf-nav-r { gap: 16px; }
+    .hf-nav-mark { font-size: 12px; letter-spacing: 0.22em; }
   }
 
   @media (prefers-reduced-motion: reduce) {
-    .hf-masthead { animation: none; opacity: 1; transform: none; }
     .hf-tile img { opacity: 1; transition: none; }
   }
 `;
@@ -176,13 +143,6 @@ export default function Page() {
   const target = gridW < 600 ? 150 : gridW < 1000 ? 210 : gridW < 1600 ? 250 : 290;
   const rows = toRows(gridW, target, 6);
 
-  useEffect(() => {
-    const root = document.querySelector('.hf');
-    const onScroll = () => root?.classList.toggle('hf-scrolled', window.scrollY > 240);
-    onScroll();
-    window.addEventListener('scroll', onScroll, { passive: true });
-    return () => window.removeEventListener('scroll', onScroll);
-  }, []);
 
   const year = new Date().getFullYear();
 
@@ -191,21 +151,12 @@ export default function Page() {
       <style dangerouslySetInnerHTML={{ __html: CSS }} />
 
       <nav className="hf-nav">
-        <a className="hf-eyebrow hf-nav-l" href="#index">Index</a>
         <a className="hf-nav-mark" href="/">Aidan Torrence</a>
         <div className="hf-nav-r">
           <a className="hf-eyebrow" href="/sign-up-collab">Collaborate</a>
           <a className="hf-eyebrow" href="mailto:aidan@aidantorrence.com">Contact</a>
         </div>
       </nav>
-      <header className="hf-top" id="index">
-        <h1 className="hf-masthead"><span>Aidan</span><span>Torrence</span></h1>
-        <div className="hf-top-meta">
-          <span className="hf-eyebrow">Portraits on 35mm film</span>
-          <p className="hf-top-line">Selected works</p>
-          <span className="hf-eyebrow"><span className="hf-hide-sm">Collection {year} · </span>{PHOTOS.length} plates</span>
-        </div>
-      </header>
 
       <div className="hf-grid" data-lightbox ref={gridRef}>
         {rows.map((row, r) => {
