@@ -41,6 +41,8 @@ const CSS = `
 
 export default function TiersEditor({ initial }: { initial: { tier1: Entry[]; tier2: Entry[] } }) {
   const start: Lists = { tier1: initial.tier1.map((e) => e[0]), tier2: initial.tier2.map((e) => e[0]) };
+  // Folder each photo's file is in right now (public/images/tier1 or tier2); files only move on save.
+  const [home, setHome] = useState<Record<string, Tier>>(() => Object.fromEntries([...start.tier1.map((k) => [k, 'tier1']), ...start.tier2.map((k) => [k, 'tier2'])]));
   const [lists, setLists] = useState<Lists>(start);
   const [saved, setSaved] = useState<Lists>(start);
   const [drag, setDrag] = useState<string | null>(null);
@@ -80,6 +82,7 @@ export default function TiersEditor({ initial }: { initial: { tier1: Entry[]; ti
       const j = await r.json();
       if (!r.ok) throw new Error(j.error || 'Save failed');
       setSaved(lists);
+      setHome(Object.fromEntries([...lists.tier1.map((k) => [k, 'tier1' as Tier]), ...lists.tier2.map((k) => [k, 'tier2' as Tier])]));
       setStatus({ text: `Saved: ${j.tier1} on the homepage, ${j.tier2} in backup. The homepage now uses this order.`, kind: '' });
     } catch (err) {
       setStatus({ text: (err as Error).message + ' Nothing was changed.', kind: 'err' });
@@ -111,7 +114,7 @@ export default function TiersEditor({ initial }: { initial: { tier1: Entry[]; ti
           onKeyDown={onKey}
         >
           <div className="ph">
-            <img src={`/_next/image?url=${encodeURIComponent(`/images/large/${key}.jpg`)}&w=384&q=70`} alt={key} loading="lazy" />
+            <img src={`/_next/image?url=${encodeURIComponent(`/images/${home[key]}/${key}.jpg`)}&w=384&q=70`} alt={key} loading="lazy" />
             <span className="no">{String(i + 1).padStart(3, '0')}</span>
             <button className="mv" onClick={(e) => { e.stopPropagation(); move(key, tier === 'tier1' ? 'tier2' : 'tier1', tier === 'tier1' ? 0 : lists.tier1.length); }}>
               {tier === 'tier1' ? '→ Tier 2' : '→ Tier 1'}

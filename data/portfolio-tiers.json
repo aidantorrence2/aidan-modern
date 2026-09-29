@@ -1,5 +1,5 @@
 {
-  "_readme": "Homepage photo tiers. tier1 = shown on aidantorrence.com in this order. tier2 = backups, kept in public/images/large but not shown; browse both at http://localhost:<port>/tiers when running locally. Each entry: [filename without .jpg, width, height].",
+  "_readme": "Homepage photo tiers. tier1 = shown on aidantorrence.com in this order; files in public/images/tier1. tier2 = backups, not shown; files in public/images/tier2. Rearrange at http://localhost:<port>/tiers when running locally (it moves files between the folders). Each entry: [filename without .jpg, width, height]. A few photos also used elsewhere on the site keep a copy in public/images/large.",
   "tier1": [
     ["2026-09-29-000036-2", 1072, 1600],
     ["bangkok-natcha-000049-6", 1070, 1600],

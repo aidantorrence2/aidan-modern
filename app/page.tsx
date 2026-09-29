@@ -6,7 +6,7 @@ import tiers from '@/data/portfolio-tiers.json';
 // Tier 1 photos, in display order. Edit data/portfolio-tiers.json (or /tiers locally) to change them.
 const PHOTOS = (tiers.tier1 as [string, number, number][]).map(([src, w, h]) => ({ src, w, h }));
 const N = PHOTOS.length;
-const img = (src: string, w: number) => `/_next/image?url=${encodeURIComponent(`/images/large/${src}.jpg`)}&w=${w}&q=80`;
+const img = (src: string, w: number) => `/_next/image?url=${encodeURIComponent(`/images/tier1/${src}.jpg`)}&w=${w}&q=80`;
 
 const CSS = `
   body > header, body > footer, .fixed.inset-x-0.bottom-0 { display: none !important; }

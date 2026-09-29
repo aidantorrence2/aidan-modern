@@ -2,9 +2,11 @@ import { NextResponse } from 'next/server';
 import { promises as fs } from 'fs';
 import path from 'path';
 
-// Local-only: saves the photo order/tiers chosen in the /tiers editor to data/portfolio-tiers.json.
+// Local-only: saves the photo order/tiers chosen in the /tiers editor to data/portfolio-tiers.json,
+// and moves each photo's file into the matching public/images/tier1 or tier2 folder.
 // Refuses to run anywhere but `next dev`, so the live site can never write files.
 const FILE = path.join(process.cwd(), 'data', 'portfolio-tiers.json');
+const IMAGES = path.join(process.cwd(), 'public', 'images');
 type Entry = [string, number, number];
 
 function format(readme: string, tier1: Entry[], tier2: Entry[]) {
@@ -22,6 +24,19 @@ export async function POST(req: Request) {
   // Only reorder/move existing photos: same set, no duplicates, nothing lost.
   if (all.length !== byKey.size || new Set(all).size !== all.length || !all.every((k) => byKey.has(k))) {
     return NextResponse.json({ error: 'Photo list does not match the saved tiers; reload the editor and try again.' }, { status: 400 });
+  }
+  // Move files whose tier changed; if any move fails, put the earlier ones back and save nothing.
+  const was = new Set(current.tier1.map((e) => e[0]));
+  const moves = [...t1.filter((k) => !was.has(k)).map((k) => [k, 'tier2', 'tier1']), ...t2.filter((k) => was.has(k)).map((k) => [k, 'tier1', 'tier2'])];
+  const done: string[][] = [];
+  try {
+    for (const [k, from, to] of moves) {
+      await fs.rename(path.join(IMAGES, from, `${k}.jpg`), path.join(IMAGES, to, `${k}.jpg`));
+      done.push([k, from, to]);
+    }
+  } catch (err) {
+    for (const [k, from, to] of done.reverse()) await fs.rename(path.join(IMAGES, to, `${k}.jpg`), path.join(IMAGES, from, `${k}.jpg`)).catch(() => {});
+    return NextResponse.json({ error: `Could not move photo files (${(err as Error).message}).` }, { status: 500 });
   }
   await fs.writeFile(FILE, format(current._readme, t1.map((k) => byKey.get(k)!), t2.map((k) => byKey.get(k)!)));
   return NextResponse.json({ ok: true, tier1: t1.length, tier2: t2.length });

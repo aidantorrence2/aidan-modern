@@ -8,7 +8,7 @@ export type Photo = { i: number; src: string; w: number; h: number; landscape: b
 export const PHOTOS: Photo[] = (tiers.tier1 as [string, number, number][]).map(([src, w, h], i) => ({ i, src, w, h, landscape: w > h }));
 
 export const pad = (n: number, len = 2) => String(n).padStart(len, '0');
-export const full = (src: string) => `/images/large/${src}.jpg`;
+export const full = (src: string) => `/images/tier1/${src}.jpg`;
 // Resized copy via Next's image optimizer. Allowed widths: 256 384 640 750 828 1080 1200 1920.
 export const thumb = (src: string, w: 256 | 384 | 640 | 750 | 828 | 1080 | 1200 | 1920 = 640) =>
   `/_next/image?url=${encodeURIComponent(full(src))}&w=${w}&q=75`;
