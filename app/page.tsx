@@ -9,22 +9,67 @@ const PHOTOS = tiers.tier1 as [string, number, number][];
 
 const pad = (n: number) => String(n).padStart(2, '0');
 
-// Justified rows: photos keep their order left to right, top to bottom; each row is
-// scaled so it exactly fills the container width at roughly the target height.
-type Tile = { i: number; src: string; w: number; h: number };
-function toRows(width: number, target: number, gap: number) {
-  const rows: { h: number; tiles: Tile[] }[] = [];
-  let cur: Tile[] = [], ar = 0;
-  PHOTOS.forEach(([src, pw, ph], i) => {
-    cur.push({ i, src, w: pw, h: ph }); ar += pw / ph;
-    const rowW = ar * target + gap * (cur.length - 1);
-    if (rowW >= width) {
-      const h = (width - gap * (cur.length - 1)) / ar;
-      rows.push({ h, tiles: cur }); cur = []; ar = 0;
+// Layout: the photos stay in their saved order; they are poured into a repeating editorial
+// sequence of blocks. Nothing is cropped: every tile keeps its photo's aspect ratio.
+type P = { i: number; src: string; w: number; h: number };
+type Row = { h: number; tiles: P[]; widths: number[] };
+type Block =
+  | { kind: 'rows'; big: boolean; rows: Row[] }
+  | { kind: 'stagger'; flip: boolean; a: P; b: P; wa: number; wb: number }
+  | { kind: 'solo'; p: P; w: number };
+
+const GAP = 6;
+const ALL: P[] = PHOTOS.map(([src, w, h], i) => ({ i, src, w, h }));
+// 'dense' = two rows of small photos, 'dense1' = one row; the rest are the featured moments.
+const SEQUENCE = ['dense', 'big', 'dense1', 'stagger', 'dense', 'solo', 'dense1', 'big', 'dense', 'stagger-flip', 'dense1', 'solo'] as const;
+
+// Justify photos from `start` into up to `maxRows` rows of roughly `target` height that fill `width`.
+function justify(start: number, width: number, target: number, maxRows: number) {
+  const rows: Row[] = [];
+  let i = start;
+  while (i < ALL.length && rows.length < maxRows) {
+    const tiles: P[] = []; let ar = 0;
+    while (i < ALL.length) {
+      const p = ALL[i++]; tiles.push(p); ar += p.w / p.h;
+      if (ar * target + GAP * (tiles.length - 1) >= width) break;
     }
-  });
-  if (cur.length) rows.push({ h: target, tiles: cur }); // last row keeps target height, left aligned
-  return rows;
+    const full = ar * target + GAP * (tiles.length - 1) >= width;
+    const h = full ? (width - GAP * (tiles.length - 1)) / ar : target;
+    const widths = tiles.map((p) => Math.floor((p.w / p.h) * h));
+    // Give rounding leftovers to the last tile so full rows end exactly at the edge.
+    if (full) widths[widths.length - 1] += Math.max(0, Math.floor(width - GAP * (tiles.length - 1) - widths.reduce((x, y) => x + y, 0)));
+    rows.push({ h: Math.floor(h), tiles, widths });
+  }
+  return { rows, used: i - start };
+}
+
+function layout(width: number, vh: number): Block[] {
+  const small = width < 640;
+  const dense = width < 600 ? 150 : width < 1000 ? 200 : width < 1600 ? 240 : 280;
+  const big = small ? width * 0.9 : Math.min(640, width * 0.4);
+  const maxH = Math.max(420, vh * 0.86); // featured photos never taller than the screen
+  const fit = (p: P, w: number) => Math.min(w, maxH * (p.w / p.h)); // width that respects maxH
+  const blocks: Block[] = [];
+  let i = 0, k = 0;
+  while (i < ALL.length) {
+    const kind = SEQUENCE[k++ % SEQUENCE.length];
+    const left = ALL.length - i;
+    if (kind === 'dense' || kind === 'dense1' || kind === 'big' || left < 2) {
+      const n = kind === 'big' ? 1 : kind === 'dense1' ? (small ? 2 : 1) : small ? 3 : 2;
+      const { rows, used } = justify(i, width, kind === 'big' ? big : dense, n);
+      blocks.push({ kind: 'rows', big: kind === 'big', rows }); i += used;
+    } else if (kind === 'solo') {
+      const p = ALL[i++];
+      const landscape = p.w > p.h;
+      blocks.push({ kind: 'solo', p, w: Math.floor(fit(p, landscape ? width * (small ? 1 : 0.8) : width * (small ? 0.86 : 0.5))) });
+    } else {
+      const a = ALL[i++], b = ALL[i++];
+      const wa = fit(a, width * (small ? 0.72 : a.w > a.h ? 0.52 : 0.38));
+      const wb = fit(b, width * (small ? 0.52 : b.w > b.h ? 0.36 : 0.24));
+      blocks.push({ kind: 'stagger', flip: kind === 'stagger-flip', a, b, wa: Math.floor(wa), wb: Math.floor(wb) });
+    }
+  }
+  return blocks;
 }
 
 // Serve grid tiles through Next's image resizer instead of the 1600px originals.
@@ -74,11 +119,40 @@ const CSS = `
   .hf-nav-r a { color: var(--dim); transition: color 0.2s; }
   .hf-nav-r a:hover { color: var(--ivory); }
 
-  /* Grid: justified rows */
+  /* Grid */
   .hf-grid { padding: 58px var(--gutter) 0; display: flex; flex-direction: column; gap: var(--gap); --gap: 6px; }
   .hf-row { display: flex; gap: var(--gap); }
-  .hf-tile { position: relative; display: block; overflow: hidden; background: #151515; cursor: zoom-in; flex: none; }
-  .hf-tile img { width: 100%; height: 100%; object-fit: cover; }
+  .hf-rows { display: flex; flex-direction: column; gap: var(--gap); }
+  .hf-rows.big { margin: clamp(26px, 4vw, 60px) 0; }
+  .hf-stagger { display: flex; justify-content: space-between; align-items: flex-end; margin: clamp(40px, 7vw, 120px) 0; padding: 0 clamp(0px, 5vw, 90px); }
+  .hf-stagger.flip { flex-direction: row-reverse; }
+  .hf-stagger > :nth-child(2) { margin-bottom: clamp(30px, 6vw, 110px); }
+  .hf-solo { display: flex; justify-content: center; margin: clamp(50px, 8vw, 140px) 0; }
+  .hf-fig { margin: 0; flex: none; }
+  .hf-fig figcaption { display: flex; justify-content: space-between; gap: 12px; padding-top: 10px; font-family: var(--sans); font-size: 10px; font-weight: 500; letter-spacing: 0.24em; text-transform: uppercase; color: var(--faint); }
+  @media (max-width: 640px) {
+    .hf-stagger, .hf-stagger.flip { flex-direction: column; align-items: flex-start; gap: 18px; padding: 0; }
+    .hf-stagger > :nth-child(2) { align-self: flex-end; margin-bottom: 0; }
+    .hf-stagger.flip > :nth-child(1) { align-self: flex-end; }
+    .hf-stagger.flip > :nth-child(2) { align-self: flex-start; }
+  }
+
+  /* Viewer */
+  .hf-view { position: fixed; inset: 0; z-index: 100; background: rgba(8,8,8,0.97); display: grid; place-items: center; touch-action: pan-y; }
+  .hf-view img { max-width: calc(100vw - 140px); max-height: calc(100svh - 110px); object-fit: contain; display: block; user-select: none; }
+  .hf-view .vb { position: absolute; background: none; border: 0; color: var(--ivory); cursor: pointer; opacity: 0.7; transition: opacity 0.2s; font-family: var(--sans); }
+  .hf-view .vb:hover, .hf-view .vb:focus-visible { opacity: 1; }
+  .hf-view .vb:focus-visible { outline: 1px solid var(--ivory); outline-offset: 4px; }
+  .hf-view .prev, .hf-view .next { top: 50%; transform: translateY(-50%); width: 56px; height: 90px; display: grid; place-items: center; }
+  .hf-view .prev { left: 8px; } .hf-view .next { right: 8px; }
+  .hf-view .close { top: 14px; right: 16px; font-size: 11px; letter-spacing: 0.24em; text-transform: uppercase; padding: 8px; }
+  .hf-view .count { position: absolute; bottom: 18px; left: 0; right: 0; text-align: center; font-family: var(--sans); font-size: 11px; letter-spacing: 0.24em; color: var(--dim); font-variant-numeric: tabular-nums; }
+  @media (max-width: 640px) {
+    .hf-view img { max-width: 100vw; max-height: calc(100svh - 120px); }
+    .hf-view .prev, .hf-view .next { top: auto; bottom: 4px; transform: none; height: 56px; }
+  }
+  .hf-tile { position: relative; display: block; overflow: hidden; background: #151515; cursor: zoom-in; flex: none; padding: 0; border: 0; }
+  .hf-tile img { width: 100%; height: 100%; object-fit: cover; display: block; }
   .hf-tile img { transition: transform 1.2s cubic-bezier(.2,.7,.2,1), opacity 0.8s ease; opacity: 0; }
   .hf-tile img.in { opacity: 1; }
   .hf-tile:hover img { transform: scale(1.03); }
@@ -88,10 +162,6 @@ const CSS = `
   }
   .hf-tile:hover .hf-no, .hf-tile:focus-visible .hf-no { opacity: 1; }
   .hf-tile:focus-visible { outline: 1px solid var(--ivory); outline-offset: 3px; }
-
-  /* Lightbox (global component) */
-  #lb { background: #0c0c0c; border-radius: 0 !important; }
-  #lb::backdrop { background: rgba(8,8,8,0.94); }
 
   /* Closing */
   .hf-close { padding: clamp(90px, 12vw, 180px) var(--gutter) 48px; text-align: center; }
@@ -121,28 +191,98 @@ const CSS = `
   }
 `;
 
-function useGridWidth() {
+function useGridSize() {
   const ref = React.useRef<HTMLDivElement>(null);
-  const [w, setW] = useState(1360);
+  const [size, setSize] = useState({ w: 1360, vh: 900 });
   useEffect(() => {
     const el = ref.current; if (!el) return;
     const measure = () => {
       const cs = getComputedStyle(el);
-      setW(el.clientWidth - parseFloat(cs.paddingLeft) - parseFloat(cs.paddingRight));
+      setSize({ w: el.clientWidth - parseFloat(cs.paddingLeft) - parseFloat(cs.paddingRight), vh: window.innerHeight });
     };
     measure();
     const ro = new ResizeObserver(measure); ro.observe(el);
     return () => ro.disconnect();
   }, []);
-  return [ref, w] as const;
+  return [ref, size] as const;
+}
+
+const Arrow = ({ dir }: { dir: 'l' | 'r' }) => (
+  <svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="currentColor" strokeWidth="1.2" aria-hidden="true">
+    <path d={dir === 'l' ? 'M17 5 8 14l9 9' : 'M11 5l9 9-9 9'} />
+  </svg>
+);
+
+function Viewer({ index, onClose, onGo }: { index: number; onClose: () => void; onGo: (i: number) => void }) {
+  const n = ALL.length;
+  const go = React.useCallback((d: number) => onGo((index + d + n) % n), [index, n, onGo]);
+  const touch = React.useRef<number | null>(null);
+  const closeRef = React.useRef<HTMLButtonElement>(null);
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'ArrowRight') go(1);
+      else if (e.key === 'ArrowLeft') go(-1);
+      else if (e.key === 'Escape') onClose();
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [go, onClose]);
+  useEffect(() => {
+    const prev = document.body.style.overflow; document.body.style.overflow = 'hidden';
+    closeRef.current?.focus();
+    return () => { document.body.style.overflow = prev; };
+  }, []);
+  useEffect(() => { // preload neighbours so arrowing through is instant
+    [1, -1].forEach((d) => { const img = new Image(); img.src = `/images/large/${ALL[(index + d + n) % n].src}.jpg`; });
+  }, [index, n]);
+  const p = ALL[index];
+  return (
+    <div className="hf-view" role="dialog" aria-modal="true" aria-label={`Plate ${index + 1} of ${n}`}
+      onClick={(e) => { if (e.target === e.currentTarget) onClose(); }}
+      onTouchStart={(e) => { touch.current = e.touches[0].clientX; }}
+      onTouchEnd={(e) => { if (touch.current === null) return; const dx = e.changedTouches[0].clientX - touch.current; touch.current = null; if (Math.abs(dx) > 50) go(dx < 0 ? 1 : -1); }}>
+      <img src={`/images/large/${p.src}.jpg`} alt={`Plate ${index + 1}`} />
+      <button className="vb prev" onClick={() => go(-1)} aria-label="Previous photo"><Arrow dir="l" /></button>
+      <button className="vb next" onClick={() => go(1)} aria-label="Next photo"><Arrow dir="r" /></button>
+      <button className="vb close" ref={closeRef} onClick={onClose}>Close</button>
+      <div className="count">{pad(index + 1)} / {n}</div>
+    </div>
+  );
+}
+
+function Tile({ p, w, h, eager, onOpen }: { p: P; w: number; h: number; eager: boolean; onOpen: (i: number) => void }) {
+  return (
+    <a className="hf-tile" href={`/images/large/${p.src}.jpg`} style={{ width: w, height: h }} aria-label={`Plate ${pad(p.i + 1)}, view larger`}
+      onClick={(e) => { e.preventDefault(); onOpen(p.i); }}>
+      <img
+        src={thumb(p.src, 640)}
+        srcSet={`${thumb(p.src, 384)} 384w, ${thumb(p.src, 640)} 640w, ${thumb(p.src, 1080)} 1080w, ${thumb(p.src, 1600)} 1600w`}
+        sizes={`${w}px`}
+        width={p.w} height={p.h}
+        alt={`Plate ${pad(p.i + 1)}`}
+        loading={eager ? 'eager' : 'lazy'}
+        decoding="async"
+        onLoad={(e) => e.currentTarget.classList.add('in')}
+        ref={(el) => { if (el?.complete) el.classList.add('in'); }}
+      />
+      <span className="hf-no">Nº {pad(p.i + 1)}</span>
+    </a>
+  );
+}
+
+function Fig({ p, w, onOpen }: { p: P; w: number; onOpen: (i: number) => void }) {
+  return (
+    <figure className="hf-fig" style={{ width: w }}>
+      <Tile p={p} w={w} h={Math.round((w * p.h) / p.w)} eager={false} onOpen={onOpen} />
+      <figcaption><span>Nº {pad(p.i + 1)}</span><span>35mm</span></figcaption>
+    </figure>
+  );
 }
 
 export default function Page() {
-  const [gridRef, gridW] = useGridWidth();
-  // Row height: ~2-3 photos per row on phones, ~7-9 per row on a laptop.
-  const target = gridW < 600 ? 150 : gridW < 1000 ? 210 : gridW < 1600 ? 250 : 290;
-  const rows = toRows(gridW, target, 6);
-
+  const [gridRef, size] = useGridSize();
+  const blocks = React.useMemo(() => layout(size.w, size.vh), [size.w, size.vh]);
+  const [open, setOpen] = useState<number | null>(null);
 
   const year = new Date().getFullYear();
 
@@ -158,38 +298,28 @@ export default function Page() {
         </div>
       </nav>
 
-      <div className="hf-grid" data-lightbox ref={gridRef}>
-        {rows.map((row, r) => {
-          // Floor each width, then give the leftover pixels to the last tile so full rows end exactly at the edge.
-          const widths = row.tiles.map(({ w, h }) => Math.floor((w / h) * row.h));
-          const full = r < rows.length - 1 || row.h !== target;
-          if (full) widths[widths.length - 1] += Math.max(0, Math.floor(gridW - 6 * (widths.length - 1) - widths.reduce((a, b) => a + b, 0)));
-          return (
-          <div className="hf-row" key={r} style={{ height: Math.floor(row.h) }}>
-            {row.tiles.map(({ i, src, w, h }, t) => {
-              const tw = widths[t];
-              return (
-                <a className="hf-tile" key={src} href={`/images/large/${src}.jpg`} style={{ width: tw }} aria-label={`Plate ${pad(i + 1)}, view larger`}>
-                  <img
-                    src={thumb(src, 640)}
-                    srcSet={`${thumb(src, 384)} 384w, ${thumb(src, 640)} 640w, ${thumb(src, 1080)} 1080w`}
-                    sizes={`${tw}px`}
-                    width={w}
-                    height={h}
-                    alt={`Plate ${pad(i + 1)}`}
-                    loading={r < 3 ? 'eager' : 'lazy'}
-                    decoding="async"
-                    onLoad={(e) => e.currentTarget.classList.add('in')}
-                    ref={(el) => { if (el?.complete) el.classList.add('in'); }}
-                  />
-                  <span className="hf-no">Nº {pad(i + 1)}</span>
-                </a>
-              );
-            })}
-          </div>
+      <div className="hf-grid" ref={gridRef}>
+        {blocks.map((bl, bi) => {
+          if (bl.kind === 'rows') return (
+            <div className={'hf-rows' + (bl.big ? ' big' : '')} key={bi}>
+              {bl.rows.map((row, r) => (
+                <div className="hf-row" key={r} style={{ height: row.h }}>
+                  {row.tiles.map((p, t) => <Tile key={p.src} p={p} w={row.widths[t]} h={row.h} eager={bi < 2} onOpen={setOpen} />)}
+                </div>
+              ))}
+            </div>
           );
+          if (bl.kind === 'stagger') return (
+            <div className={'hf-stagger' + (bl.flip ? ' flip' : '')} key={bi}>
+              <Fig p={bl.a} w={bl.wa} onOpen={setOpen} />
+              <Fig p={bl.b} w={bl.wb} onOpen={setOpen} />
+            </div>
+          );
+          return <div className="hf-solo" key={bi}><Fig p={bl.p} w={bl.w} onOpen={setOpen} /></div>;
         })}
       </div>
+
+      {open !== null && <Viewer index={open} onClose={() => setOpen(null)} onGo={setOpen} />}
 
       <section className="hf-close">
         <span className="hf-eyebrow">Now booking worldwide</span>
