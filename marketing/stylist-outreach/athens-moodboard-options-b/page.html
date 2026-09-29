@@ -1,0 +1,54 @@
+<title>Athens Moodboard Options</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,400&family=IBM+Plex+Sans+Condensed:wght@400;500&display=swap">
+<style>
+/* Layout: five stacked options, each a numbered title row and a 4x2 grid of references. Single dark look by choice. */
+:root {
+  --ground: #0f0e0c; --paper: #ece6dc; --muted: #a39b8f; --rule: #2a2723; --accent: #d2a45c;
+  --display: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  --label: 'IBM Plex Sans Condensed', 'Arial Narrow', system-ui, sans-serif;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { background: var(--ground); color: var(--paper); font-family: var(--label); margin: 0; padding-inline: 16px; }
+.wrap { max-width: 1180px; margin: 0 auto; padding-block: 44px 72px; display: grid; gap: 72px; }
+header h1 { font-family: var(--display); font-weight: 400; font-size: clamp(40px, 6vw, 68px); line-height: 1; margin: 0 0 12px; }
+header p { margin: 0; color: var(--muted); font-size: 15px; line-height: 1.6; max-width: 60ch; }
+section { display: grid; gap: 16px; border-top: 1px solid var(--rule); padding-top: 24px; }
+.head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 20px; }
+.num { font-size: 12px; letter-spacing: .2em; color: var(--accent); }
+h2 { font-family: var(--display); font-weight: 400; font-size: clamp(32px, 4.4vw, 50px); line-height: 1; margin: 0; }
+.head p { margin: 0; flex: 1 1 360px; min-width: 0; color: var(--muted); font-size: 15px; line-height: 1.55; }
+.grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
+.grid div { aspect-ratio: 3 / 4; overflow: hidden; }
+.grid img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 25%; max-width: 100%; }
+.note { font-size: 12px; color: #6d665d; }
+@media (max-width: 700px) { .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .wrap { gap: 56px; padding-block: 28px 56px; } }
+</style>
+<main class="wrap">
+  <header>
+    <h1>Athens moodboard options</h1>
+    <p>Five directions for the Athens editorial, 1–2 October. One mood each, eight references.</p>
+  </header>
+  <section id="noir">
+    <div class="head"><span class="num">OPTION 1</span><h2>Black dress, white stone</h2><p>Black and white, hard southern sun, a black dress against old walls. After Ferdinando Scianna.</p></div>
+    <div class="grid"><div><img src="ref/noir1.jpg" alt="Black dress, white stone reference 1"></div><div><img src="ref/noir2.jpg" alt="Black dress, white stone reference 2"></div><div><img src="ref/noir3.jpg" alt="Black dress, white stone reference 3"></div><div><img src="ref/noir4.jpg" alt="Black dress, white stone reference 4"></div><div><img src="ref/noir5.jpg" alt="Black dress, white stone reference 5"></div><div><img src="ref/noir6.jpg" alt="Black dress, white stone reference 6"></div><div><img src="ref/noir7.jpg" alt="Black dress, white stone reference 7"></div><div><img src="ref/noir8.jpg" alt="Black dress, white stone reference 8"></div></div>
+  </section>
+  <section id="light">
+    <div class="head"><span class="num">OPTION 2</span><h2>Hard light</h2><p>Saturated colour, deep shadow, a single strong shape. After Viviane Sassen.</p></div>
+    <div class="grid"><div><img src="ref/light1.jpg" alt="Hard light reference 1"></div><div><img src="ref/light2.jpg" alt="Hard light reference 2"></div><div><img src="ref/light3.jpg" alt="Hard light reference 3"></div><div><img src="ref/light4.jpg" alt="Hard light reference 4"></div><div><img src="ref/light5.jpg" alt="Hard light reference 5"></div><div><img src="ref/light6.jpg" alt="Hard light reference 6"></div><div><img src="ref/light7.jpg" alt="Hard light reference 7"></div><div><img src="ref/light8.jpg" alt="Hard light reference 8"></div></div>
+  </section>
+  <section id="flash">
+    <div class="head"><span class="num">OPTION 3</span><h2>Flash</h2><p>Direct flash, deadpan, ordinary rooms and tiles. After Juergen Teller.</p></div>
+    <div class="grid"><div><img src="ref/flash1.jpg" alt="Flash reference 1"></div><div><img src="ref/flash2.jpg" alt="Flash reference 2"></div><div><img src="ref/flash3.jpg" alt="Flash reference 3"></div><div><img src="ref/flash4.jpg" alt="Flash reference 4"></div><div><img src="ref/flash5.jpg" alt="Flash reference 5"></div><div><img src="ref/flash6.jpg" alt="Flash reference 6"></div><div><img src="ref/flash7.jpg" alt="Flash reference 7"></div><div><img src="ref/flash8.jpg" alt="Flash reference 8"></div></div>
+  </section>
+  <section id="wind">
+    <div class="head"><span class="num">OPTION 4</span><h2>Wind & volume</h2><p>Sculptural coats and gowns, sea wind, open sky. After Jamie Hawkesworth and Harley Weir.</p></div>
+    <div class="grid"><div><img src="ref/wind1.jpg" alt="Wind & volume reference 1"></div><div><img src="ref/wind2.jpg" alt="Wind & volume reference 2"></div><div><img src="ref/wind3.jpg" alt="Wind & volume reference 3"></div><div><img src="ref/wind4.jpg" alt="Wind & volume reference 4"></div><div><img src="ref/wind5.jpg" alt="Wind & volume reference 5"></div><div><img src="ref/wind6.jpg" alt="Wind & volume reference 6"></div><div><img src="ref/wind7.jpg" alt="Wind & volume reference 7"></div><div><img src="ref/wind8.jpg" alt="Wind & volume reference 8"></div></div>
+  </section>
+  <section id="night">
+    <div class="head"><span class="num">OPTION 5</span><h2>Nocturne</h2><p>Green-blue dusk, hotel rooms, fog, city glow. After Glen Luchford.</p></div>
+    <div class="grid"><div><img src="ref/night1.jpg" alt="Nocturne reference 1"></div><div><img src="ref/night2.jpg" alt="Nocturne reference 2"></div><div><img src="ref/night3.jpg" alt="Nocturne reference 3"></div><div><img src="ref/night4.jpg" alt="Nocturne reference 4"></div><div><img src="ref/night5.jpg" alt="Nocturne reference 5" style="object-position: 80% 50%"></div><div><img src="ref/night6.jpg" alt="Nocturne reference 6"></div><div><img src="ref/night7.jpg" alt="Nocturne reference 7"></div><div><img src="ref/night8.jpg" alt="Nocturne reference 8"></div></div>
+  </section>
+  <p class="note">Reference images are for mood and styling only.</p>
+</main>
