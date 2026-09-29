@@ -50,11 +50,10 @@ const CSS = `@import url('https://fonts.googleapis.com/css2?family=Instrument+Se
   .grain { position: fixed; inset: -50%; z-index: 40; pointer-events: none; opacity: .09; background-image: ${GRAIN}; animation: grain .9s steps(5) infinite; }
   @keyframes grain { 0% { transform: translate(0,0); } 20% { transform: translate(-4%,3%); } 40% { transform: translate(3%,-5%); } 60% { transform: translate(-6%,-2%); } 80% { transform: translate(5%,4%); } 100% { transform: translate(0,0); } }
 
-  .nm { position: absolute; left: 3.2vw; bottom: -0.16em; z-index: 1; margin: 0; font: italic 400 clamp(64px, 12.5vw, 220px)/1 "Instrument Serif", Georgia, serif; letter-spacing: -0.02em; white-space: nowrap; pointer-events: none;
-    transition: transform 1s cubic-bezier(.65,0,.15,1), opacity .8s; }
+  .nm { position: absolute; left: 28px; top: 14px; z-index: 20; margin: 0; font: italic 400 clamp(34px, 3.4vw, 54px)/1 "Instrument Serif", Georgia, serif; letter-spacing: -0.01em; white-space: nowrap; }
+  .nm a { opacity: 1 !important; }
   .nm span { display: inline-block; animation: rise 1.4s cubic-bezier(.2,.7,.1,1) both; }
   @keyframes rise { from { transform: translateY(60%); opacity: 0; } }
-  .gl.open .nm { transform: translateY(40%); opacity: 0; }
 
   .wrap { position: absolute; left: 0; top: 0; width: 0; height: 0; perspective: 2000px; transition: transform 1.05s cubic-bezier(.65,0,.15,1); z-index: 5; }
   .globe { position: absolute; left: 0; top: 0; transform-style: preserve-3d; }
@@ -76,8 +75,10 @@ const CSS = `@import url('https://fonts.googleapis.com/css2?family=Instrument+Se
 
   /* mobile */
   .pz { background: #000; color: #fff; min-height: 100svh; font: 13px/1 "Helvetica Neue", Helvetica, Arial, sans-serif; overflow-x: hidden; }
-  .pz .top { display: flex; justify-content: flex-end; gap: 18px; padding: 16px 16px 0; }
-  .pz h1 { margin: 6px 0 14px; padding: 0 12px; font: italic 400 16.5vw/0.95 "Instrument Serif", Georgia, serif; letter-spacing: -0.02em; }
+  .pz .top { display: flex; justify-content: space-between; align-items: center; padding: 14px 14px 16px; }
+  .pz .top nav { display: flex; gap: 16px; }
+  .pz h1 { margin: 0; font: italic 400 32px/1 "Instrument Serif", Georgia, serif; letter-spacing: -0.01em; }
+  .pz h1 a { opacity: 1 !important; }
   .pz h1 span { display: inline-block; animation: rise 1.3s cubic-bezier(.2,.7,.1,1) both; }
   .rows { display: flex; flex-direction: column; gap: 3px; }
   .rw { display: flex; gap: 3px; }
@@ -111,7 +112,7 @@ function Name() {
 }
 
 function Links() {
-  return <><a href={LINKS.collaborate}>Collaborate</a><a href={LINKS.instagram}>Instagram</a><a href={LINKS.email}>Contact</a></>;
+  return <><a href={LINKS.instagram}>Instagram</a><a href={LINKS.email}>Contact</a></>;
 }
 
 /** Up to two stacked blurred copies of the current photo, the newer fading in over the older. */
@@ -230,15 +231,15 @@ function Globe({ vp }: { vp: { w: number; h: number } }) {
   }, [sel]);
 
   const open = sel !== null;
-  const wrapT = open ? `translate(${vp.w * 0.84}px, ${vp.h / 2}px) scale(0.4)` : `translate(${vp.w / 2}px, ${vp.h * 0.46}px) scale(1)`;
-  const box = open ? fit(PHOTOS[sel], vp.w * 0.04, 76, vp.w * 0.68, vp.h - 48) : null;
+  const wrapT = open ? `translate(${vp.w * 0.84}px, ${vp.h / 2}px) scale(0.4)` : `translate(${vp.w / 2}px, ${vp.h * 0.53}px) scale(1)`;
+  const box = open ? fit(PHOTOS[sel], vp.w * 0.04, 90, vp.w * 0.68, vp.h - 40) : null;
   const hot = hov !== null || open;
 
   return (
     <div className={`gl${open ? ' open' : ''}`} onPointerDown={down}
       onClick={(e) => { if (open && e.target === e.currentTarget && moved.current < 5) close(); }}>
       <Glow i={sel ?? hov} />
-      <h1 className="nm"><Name /></h1>
+      <h1 className="nm"><a href="/designs/11"><Name /></a></h1>
       <nav className="hd"><Links /></nav>
       <div className={`wrap${open ? ' picked' : ''}`} style={{ transform: wrapT }}
         onPointerEnter={() => { if (!open) rot.current.want = 0.012; }}
@@ -322,8 +323,7 @@ function Puzzle({ vp }: { vp: { w: number; h: number } }) {
 
   return (
     <div className="pz">
-      <nav className="top"><Links /></nav>
-      <h1><Name /></h1>
+      <header className="top"><h1><a href="/designs/11"><Name /></a></h1><nav><Links /></nav></header>
       <div className="rows">
         {rows.map((r, k) => (
           <div className="rw" key={k} style={{ height: r.h }}>
