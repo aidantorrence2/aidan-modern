@@ -1,18 +1,23 @@
 'use client';
 
 import React, { useEffect, useRef, useState } from 'react';
-import { PHOTOS, thumb, srcSet, RESET, Nav, useViewer, useWidth, justify, masonry, useCols } from '../shared';
+import { PHOTOS, thumb, srcSet, RESET, LINKS, useViewer, useSlides, swipe, useWidth } from '../shared';
 
 const CSS = RESET + `
-  html, body { background: #f5f4f1 !important; }
-  .m { display: flex; gap: clamp(14px, 2.4vw, 40px); padding: clamp(20px, 4vw, 70px) clamp(14px, 6vw, 120px); align-items: flex-start; }
-  .c { flex: 1; display: flex; flex-direction: column; gap: clamp(14px, 2.4vw, 40px); min-width: 0; }
-  .c img { width: 100%; height: auto; display: block; cursor: pointer; }
+  html, body { background: #000 !important; }
+  .jd { height: 100svh; background: #000; color: #fff; font: 500 13px/1 "Helvetica Neue", Helvetica, Arial, sans-serif; display: grid; place-items: center; position: relative; overflow: hidden; }
+  .jd img { max-width: 100vw; max-height: 100svh; display: block; cursor: pointer; }
+  .jd .n { position: absolute; left: 40px; bottom: 34px; display: flex; gap: 26px; mix-blend-mode: difference; }
+  .jd .n span { opacity: .45; }
+  .jd .c { position: absolute; right: 40px; bottom: 34px; mix-blend-mode: difference; display: flex; gap: 26px; }
+  .jd a { color: #fff; text-decoration: none; }
+  @media (max-width: 700px) { .jd .n { left: 16px; bottom: 18px; } .jd .c { right: 16px; bottom: 18px; } }
 `;
-const BP: [number, number][] = [[0, 2], [800, 3]];
 export default function D() {
-  const { open, viewer } = useViewer('light');
-  const cols = masonry(PHOTOS, useCols(BP));
-  return (<div style={{ background: '#f5f4f1' }}><style dangerouslySetInnerHTML={{ __html: CSS }} /><Nav />
-    <div className="m">{cols.map((c, k) => <div className="c" key={k}>{c.map((p) => <img key={p.src} src={thumb(p.src, 640)} srcSet={srcSet(p.src)} sizes="33vw" alt="" width={p.w} height={p.h} loading={p.i < 10 ? 'eager' : 'lazy'} decoding="async" onClick={() => open(p.i)} />)}</div>)}</div>{viewer}</div>);
+  const [i, go] = useSlides();
+  const p = PHOTOS[i];
+  return (<div className="jd" {...swipe(go)}><style dangerouslySetInnerHTML={{ __html: CSS }} />
+    <img key={p.src} src={thumb(p.src, 1920)} alt="" onClick={() => go(1)} />
+    <div className="n"><a href="/designs/4">Aidan Torrence</a><span>Photographer</span></div>
+    <div className="c"><a href={LINKS.email}>Contact</a><a href={LINKS.instagram}>Instagram</a></div></div>);
 }

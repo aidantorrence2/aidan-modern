@@ -104,3 +104,25 @@ export function useCols(bp: [number, number][]) { // e.g. [[0,2],[700,3],[1200,4
   useEffect(() => { const f = () => { let v = bp[0][1]; for (const [w, c] of bp) if (window.innerWidth >= w) v = c; setN(v); }; f(); window.addEventListener('resize', f); return () => window.removeEventListener('resize', f); }, [bp]);
   return n;
 }
+
+/** One-photo-at-a-time state: ←/→ keys, preloading of neighbours. */
+export function useSlides(step = 1, size: 1080 | 1200 | 1920 = 1920) {
+  const [i, setI] = useState(0);
+  const n = PHOTOS.length;
+  const go = useCallback((d: number) => setI((x) => (x + d * step + n * 4) % n), [n, step]);
+  useEffect(() => {
+    const k = (e: KeyboardEvent) => { if (e.key === 'ArrowRight') go(1); if (e.key === 'ArrowLeft') go(-1); };
+    window.addEventListener('keydown', k); return () => window.removeEventListener('keydown', k);
+  }, [go]);
+  useEffect(() => { [1, 2, -1].forEach((d) => { const im = new Image(); im.src = thumb(PHOTOS[(i + d * step + n * 4) % n].src, size); }); }, [i, n, step, size]);
+  return [i, go, setI] as const;
+}
+
+/** Swipe handlers for touch screens. */
+export function swipe(go: (d: number) => void) {
+  let x: number | null = null;
+  return {
+    onTouchStart: (e: React.TouchEvent) => { x = e.touches[0].clientX; },
+    onTouchEnd: (e: React.TouchEvent) => { if (x === null) return; const dx = e.changedTouches[0].clientX - x; x = null; if (Math.abs(dx) > 50) go(dx < 0 ? 1 : -1); },
+  };
+}

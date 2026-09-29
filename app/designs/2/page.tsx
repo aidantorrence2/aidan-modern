@@ -1,24 +1,22 @@
 'use client';
 
 import React, { useEffect, useRef, useState } from 'react';
-import { PHOTOS, thumb, srcSet, RESET, Nav, useViewer, useWidth, justify, masonry, useCols } from '../shared';
+import { PHOTOS, thumb, srcSet, RESET, LINKS, useViewer, useSlides, swipe, useWidth } from '../shared';
 
 const CSS = RESET + `
   html, body { background: #fff !important; }
-  .s { height: 100svh; display: grid; grid-template-rows: auto 1fr; background: #fff; }
-  .stage { display: grid; place-items: center; padding: 3vh 6vw 7vh; min-height: 0; cursor: pointer; }
-  .stage img { max-width: 100%; max-height: 100%; object-fit: contain; display: block; }
+  .w { min-height: 100svh; display: flex; flex-direction: column; align-items: center; background: #fff; color: #000; font: 14px/1.3 "Times New Roman", Times, serif; }
+  .w a { color: inherit; text-decoration: none; }
+  .w h1 { font: inherit; letter-spacing: .08em; margin: 22px 0 18px; }
+  .w .st { flex: 1; display: flex; align-items: flex-start; justify-content: center; width: 100%; }
+  .w img { max-width: min(90vw, 1000px); max-height: calc(100svh - 120px); display: block; cursor: pointer; }
+  .w .ft { margin: 18px 0 22px; letter-spacing: .08em; font-size: 12px; display: flex; gap: 22px; }
 `;
 export default function D() {
-  const [i, setI] = useState(0);
-  const n = PHOTOS.length;
-  useEffect(() => {
-    const k = (e: KeyboardEvent) => { if (e.key === 'ArrowRight') setI((x) => (x + 1) % n); if (e.key === 'ArrowLeft') setI((x) => (x - 1 + n) % n); };
-    window.addEventListener('keydown', k); return () => window.removeEventListener('keydown', k);
-  }, [n]);
-  useEffect(() => { [1, -1].forEach((d) => { const im = new Image(); im.src = thumb(PHOTOS[(i + d + n) % n].src, 1920); }); }, [i, n]);
-  return (<div className="s"><style dangerouslySetInnerHTML={{ __html: CSS }} /><Nav />
-    <div className="stage" onClick={(e) => { const r = e.currentTarget.getBoundingClientRect(); setI((x) => (e.clientX - r.left < r.width / 3 ? x - 1 + n : x + 1) % n); }}>
-      <img key={i} src={thumb(PHOTOS[i].src, 1920)} alt="" />
-    </div></div>);
+  const [i, go] = useSlides();
+  const p = PHOTOS[i];
+  return (<div className="w" {...swipe(go)}><style dangerouslySetInnerHTML={{ __html: CSS }} />
+    <h1><a href="/designs/2">AIDAN TORRENCE</a></h1>
+    <div className="st"><img key={p.src} src={thumb(p.src, 1920)} alt="" onClick={() => go(1)} /></div>
+    <div className="ft"><a href={LINKS.email}>CONTACT</a><a href={LINKS.instagram}>INSTAGRAM</a></div></div>);
 }

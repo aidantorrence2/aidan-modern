@@ -1,22 +1,35 @@
 'use client';
 
 import React, { useEffect, useRef, useState } from 'react';
-import { PHOTOS, thumb, srcSet, RESET, Nav, useViewer, useWidth, justify, masonry, useCols } from '../shared';
+import { PHOTOS, thumb, srcSet, RESET, LINKS, useViewer, useSlides, swipe, useWidth } from '../shared';
 
 const CSS = RESET + `
-  html, body { background: #fff !important; }
-  .fc { display: grid; grid-template-columns: repeat(12, 1fr); column-gap: 1.6vw; row-gap: 1.6vw; padding: 3vw clamp(14px, 3vw, 48px) 16vh; align-items: start; }
-  .fc img { width: 100%; height: auto; display: block; cursor: pointer; }
-  @media (max-width: 700px) { .fc { grid-template-columns: repeat(6, 1fr); column-gap: 8px; row-gap: 8px; } }
+  html, body { background: #fbfaf7 !important; }
+  .ab { height: 100svh; background: #fbfaf7; color: #111; font: 12px/1.4 "Helvetica Neue", Helvetica, Arial, sans-serif; position: relative; overflow: hidden; cursor: pointer; }
+  .ab a { color: inherit; text-decoration: none; }
+  .ab .nm { position: absolute; top: 20px; left: 26px; z-index: 2; } .ab .ct { position: absolute; top: 20px; right: 26px; z-index: 2; }
+  .ab img { position: absolute; display: block; object-fit: contain; }
 `;
-// [column start, span] cycle — mixes very large, medium and small placements
-const DESK: [number, number][] = [[1, 7], [9, 3], [8, 5], [1, 4], [5, 3], [2, 5], [8, 4], [1, 3], [4, 6], [11, 2], [1, 5], [7, 6], [3, 3], [7, 3], [10, 3]];
-const MOB: [number, number][] = [[1, 6], [1, 3], [4, 3], [2, 4], [1, 4], [5, 2], [1, 6], [3, 4]];
+// Page positions cycle: [left, top, max width, max height] in viewport units; image anchored inside that box.
+const PAGES: [string, string, string, string, string][] = [
+  ['50%', '50%', '46vw', '78vh', 'translate(-50%, -50%)'],
+  ['8vw', '12vh', '26vw', '40vh', 'none'],
+  ['auto', 'auto', '40vw', '66vh', 'none'],
+  ['50%', '50%', '70vw', '86vh', 'translate(-50%, -50%)'],
+  ['60vw', '46vh', '22vw', '34vh', 'none'],
+  ['12vw', 'auto', '34vw', '58vh', 'none'],
+];
 export default function D() {
-  const { open, viewer } = useViewer('light');
-  const [ref, w] = useWidth<HTMLDivElement>();
-  const slots = w < 700 ? MOB : DESK;
-  let k = 0;
-  return (<div><style dangerouslySetInnerHTML={{ __html: CSS }} /><Nav />
-    <div className="fc" ref={ref}>{PHOTOS.map((p) => { const [c, s] = p.landscape ? (w < 700 ? [1, 6] : [2, 9]) : slots[k++ % slots.length]; return <img key={p.src} style={{ gridColumn: `${c} / span ${s}` }} src={thumb(p.src, s > 5 ? 1080 : 640)} srcSet={srcSet(p.src)} sizes={`${Math.round((s / 12) * 100)}vw`} alt="" width={p.w} height={p.h} loading={p.i < 10 ? 'eager' : 'lazy'} decoding="async" onClick={() => open(p.i)} />; })}</div>{viewer}</div>);
+  const [i, go] = useSlides(1, 1920);
+  const p = PHOTOS[i];
+  const [l, t, mw, mh, tr] = PAGES[i % PAGES.length];
+  const pos: React.CSSProperties = { left: l, top: t, maxWidth: mw, maxHeight: mh, transform: tr };
+  if (l === 'auto') Object.assign(pos, { right: '8vw', bottom: '10vh' });
+  if (t === 'auto' && l !== 'auto') Object.assign(pos, { bottom: '9vh' });
+  const small = typeof window !== 'undefined' && window.innerWidth < 700;
+  const style = small ? { left: '50%', top: '50%', maxWidth: '88vw', maxHeight: '76svh', transform: 'translate(-50%, -50%)' } : pos;
+  return (<div className="ab" onClick={(e) => { if ((e.target as HTMLElement).tagName !== 'A') go(e.clientX < window.innerWidth / 4 ? -1 : 1); }} {...swipe(go)}>
+    <style dangerouslySetInnerHTML={{ __html: CSS }} />
+    <a className="nm" href="/designs/10">Aidan Torrence</a><a className="ct" href={LINKS.email}>Contact</a>
+    <img key={p.src} src={thumb(p.src, 1920)} alt="" style={style} /></div>);
 }
