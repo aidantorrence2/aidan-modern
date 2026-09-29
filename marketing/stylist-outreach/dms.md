@@ -6,47 +6,47 @@ Standalone editorial pitch (not the agency tests). Same message per city, only t
 
 **Pax (Eirini Terzi)** · @pax.ter · priority A ✉
 
-Hi Pax, Aidan here, editorial photographer (35mm film + digital). I'd love to collaborate with you on an editorial. I'll be in Athens 1–2 Oct and I'm working with Ace Models, so we can cast the model through them. Happy to build the concept together. Would you be interested? aidantorrence.com
+Hi Pax, Aidan here, editorial photographer (35mm film + digital). I'd love to collaborate with you on an editorial. I'll be in Athens 1–2 Oct and I'm working with Ace Models, so we can cast the model through them. Happy to build the concept together. Would you be interested? Moodboard: https://www.aidantorrence.com/athens-editorial.jpg · aidantorrence.com
 
 **Maria Bifsa** · @pifssi · priority A
 
-Hi Maria, Aidan here, editorial photographer (35mm film + digital). I'd love to collaborate with you on an editorial. I'll be in Athens 1–2 Oct and I'm working with Ace Models, so we can cast the model through them. Happy to build the concept together. Would you be interested? aidantorrence.com
+Hi Maria, Aidan here, editorial photographer (35mm film + digital). I'd love to collaborate with you on an editorial. I'll be in Athens 1–2 Oct and I'm working with Ace Models, so we can cast the model through them. Happy to build the concept together. Would you be interested? Moodboard: https://www.aidantorrence.com/athens-editorial.jpg · aidantorrence.com
 
 **Elpida Palaiogianni** · @elionniz · priority A
 
-Hi Elpida, Aidan here, editorial photographer (35mm film + digital). I'd love to collaborate with you on an editorial. I'll be in Athens 1–2 Oct and I'm working with Ace Models, so we can cast the model through them. Happy to build the concept together. Would you be interested? aidantorrence.com
+Hi Elpida, Aidan here, editorial photographer (35mm film + digital). I'd love to collaborate with you on an editorial. I'll be in Athens 1–2 Oct and I'm working with Ace Models, so we can cast the model through them. Happy to build the concept together. Would you be interested? Moodboard: https://www.aidantorrence.com/athens-editorial.jpg · aidantorrence.com
 
 **Niki Pagiataki** · @nikipagiataki · priority A
 
-Hi Niki, Aidan here, editorial photographer (35mm film + digital). I'd love to collaborate with you on an editorial. I'll be in Athens 1–2 Oct and I'm working with Ace Models, so we can cast the model through them. Happy to build the concept together. Would you be interested? aidantorrence.com
+Hi Niki, Aidan here, editorial photographer (35mm film + digital). I'd love to collaborate with you on an editorial. I'll be in Athens 1–2 Oct and I'm working with Ace Models, so we can cast the model through them. Happy to build the concept together. Would you be interested? Moodboard: https://www.aidantorrence.com/athens-editorial.jpg · aidantorrence.com
 
 **Chrysa Chroni** · @chrysa.chr · priority A
 
-Hi Chrysa, Aidan here, editorial photographer (35mm film + digital). I'd love to collaborate with you on an editorial. I'll be in Athens 1–2 Oct and I'm working with Ace Models, so we can cast the model through them. Happy to build the concept together. Would you be interested? aidantorrence.com
+Hi Chrysa, Aidan here, editorial photographer (35mm film + digital). I'd love to collaborate with you on an editorial. I'll be in Athens 1–2 Oct and I'm working with Ace Models, so we can cast the model through them. Happy to build the concept together. Would you be interested? Moodboard: https://www.aidantorrence.com/athens-editorial.jpg · aidantorrence.com
 
 **Dynno Dada** · @dynnodada · priority A
 
-Hi Dynno, Aidan here, editorial photographer (35mm film + digital). I'd love to collaborate with you on an editorial. I'll be in Athens 1–2 Oct and I'm working with Ace Models, so we can cast the model through them. Happy to build the concept together. Would you be interested? aidantorrence.com
+Hi Dynno, Aidan here, editorial photographer (35mm film + digital). I'd love to collaborate with you on an editorial. I'll be in Athens 1–2 Oct and I'm working with Ace Models, so we can cast the model through them. Happy to build the concept together. Would you be interested? Moodboard: https://www.aidantorrence.com/athens-editorial.jpg · aidantorrence.com
 
 **Demi Bouki** · @demi1026_ · priority B
 
-Hi Demi, Aidan here, editorial photographer (35mm film + digital). I'd love to collaborate with you on an editorial. I'll be in Athens 1–2 Oct and I'm working with Ace Models, so we can cast the model through them. Happy to build the concept together. Would you be interested? aidantorrence.com
+Hi Demi, Aidan here, editorial photographer (35mm film + digital). I'd love to collaborate with you on an editorial. I'll be in Athens 1–2 Oct and I'm working with Ace Models, so we can cast the model through them. Happy to build the concept together. Would you be interested? Moodboard: https://www.aidantorrence.com/athens-editorial.jpg · aidantorrence.com
 
 **Yiorgos Mesimeris** · @yiorgos.mesimeris · priority B ✉
 
-Hi Yiorgos, Aidan here, editorial photographer (35mm film + digital). I'd love to collaborate with you on an editorial. I'll be in Athens 1–2 Oct and I'm working with Ace Models, so we can cast the model through them. Happy to build the concept together. Would you be interested? aidantorrence.com
+Hi Yiorgos, Aidan here, editorial photographer (35mm film + digital). I'd love to collaborate with you on an editorial. I'll be in Athens 1–2 Oct and I'm working with Ace Models, so we can cast the model through them. Happy to build the concept together. Would you be interested? Moodboard: https://www.aidantorrence.com/athens-editorial.jpg · aidantorrence.com
 
 **Panos Yerolemides** · @panosyerolemides · priority B ✉
 
-Hi Panos, Aidan here, editorial photographer (35mm film + digital). I'd love to collaborate with you on an editorial. I'll be in Athens 1–2 Oct and I'm working with Ace Models, so we can cast the model through them. Happy to build the concept together. Would you be interested? aidantorrence.com
+Hi Panos, Aidan here, editorial photographer (35mm film + digital). I'd love to collaborate with you on an editorial. I'll be in Athens 1–2 Oct and I'm working with Ace Models, so we can cast the model through them. Happy to build the concept together. Would you be interested? Moodboard: https://www.aidantorrence.com/athens-editorial.jpg · aidantorrence.com
 
 **George Karapetis** · @ohmygeorges · priority C
 
-Hi George, Aidan here, editorial photographer (35mm film + digital). I'd love to collaborate with you on an editorial. I'll be in Athens 1–2 Oct and I'm working with Ace Models, so we can cast the model through them. Happy to build the concept together. Would you be interested? aidantorrence.com
+Hi George, Aidan here, editorial photographer (35mm film + digital). I'd love to collaborate with you on an editorial. I'll be in Athens 1–2 Oct and I'm working with Ace Models, so we can cast the model through them. Happy to build the concept together. Would you be interested? Moodboard: https://www.aidantorrence.com/athens-editorial.jpg · aidantorrence.com
 
 **Vivian Rouvela** · @vivian_rouvela · priority C
 
-Hi Vivian, Aidan here, editorial photographer (35mm film + digital). I'd love to collaborate with you on an editorial. I'll be in Athens 1–2 Oct and I'm working with Ace Models, so we can cast the model through them. Happy to build the concept together. Would you be interested? aidantorrence.com
+Hi Vivian, Aidan here, editorial photographer (35mm film + digital). I'd love to collaborate with you on an editorial. I'll be in Athens 1–2 Oct and I'm working with Ace Models, so we can cast the model through them. Happy to build the concept together. Would you be interested? Moodboard: https://www.aidantorrence.com/athens-editorial.jpg · aidantorrence.com
 
 ## Paris
 
