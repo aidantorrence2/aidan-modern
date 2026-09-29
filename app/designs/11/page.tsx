@@ -239,7 +239,7 @@ function Globe({ vp }: { vp: { w: number; h: number } }) {
     <div className={`gl${open ? ' open' : ''}`} onPointerDown={down}
       onClick={(e) => { if (open && e.target === e.currentTarget && moved.current < 5) close(); }}>
       <Glow i={sel ?? hov} />
-      <h1 className="nm"><a href="/designs/11"><Name /></a></h1>
+      <h1 className="nm"><a href="/"><Name /></a></h1>
       <nav className="hd"><Links /></nav>
       <div className={`wrap${open ? ' picked' : ''}`} style={{ transform: wrapT }}
         onPointerEnter={() => { if (!open) rot.current.want = 0.012; }}
@@ -323,7 +323,7 @@ function Puzzle({ vp }: { vp: { w: number; h: number } }) {
 
   return (
     <div className="pz">
-      <header className="top"><h1><a href="/designs/11"><Name /></a></h1><nav><Links /></nav></header>
+      <header className="top"><h1><a href="/"><Name /></a></h1><nav><Links /></nav></header>
       <div className="rows">
         {rows.map((r, k) => (
           <div className="rw" key={k} style={{ height: r.h }}>
