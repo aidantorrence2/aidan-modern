@@ -1,0 +1,54 @@
+<title>Athens Moodboard Options</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,400&family=IBM+Plex+Sans+Condensed:wght@400;500&display=swap">
+<style>
+/* Layout: five stacked options, each a numbered title row and a 4x2 grid of references. Single dark look by choice. */
+:root {
+  --ground: #0f0e0c; --paper: #ece6dc; --muted: #a39b8f; --rule: #2a2723; --accent: #d2a45c;
+  --display: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  --label: 'IBM Plex Sans Condensed', 'Arial Narrow', system-ui, sans-serif;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { background: var(--ground); color: var(--paper); font-family: var(--label); margin: 0; padding-inline: 16px; }
+.wrap { max-width: 1180px; margin: 0 auto; padding-block: 44px 72px; display: grid; gap: 72px; }
+header h1 { font-family: var(--display); font-weight: 400; font-size: clamp(40px, 6vw, 68px); line-height: 1; margin: 0 0 12px; }
+header p { margin: 0; color: var(--muted); font-size: 15px; line-height: 1.6; max-width: 60ch; }
+section { display: grid; gap: 16px; border-top: 1px solid var(--rule); padding-top: 24px; }
+.head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 20px; }
+.num { font-size: 12px; letter-spacing: .2em; color: var(--accent); }
+h2 { font-family: var(--display); font-weight: 400; font-size: clamp(32px, 4.4vw, 50px); line-height: 1; margin: 0; }
+.head p { margin: 0; flex: 1 1 360px; min-width: 0; color: var(--muted); font-size: 15px; line-height: 1.55; }
+.grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
+.grid div { aspect-ratio: 3 / 4; overflow: hidden; }
+.grid img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; max-width: 100%; }
+.note { font-size: 12px; color: #6d665d; }
+@media (max-width: 700px) { .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .wrap { gap: 56px; padding-block: 28px 56px; } }
+</style>
+<main class="wrap">
+  <header>
+    <h1>Athens moodboard options</h1>
+    <p>Five directions for the Athens editorial, 1–2 October. Each is one theme with eight references.</p>
+  </header>
+  <section id="streets">
+    <div class="head"><span class="num">OPTION 1</span><h2>Greek streets</h2><p>Graffiti, polykatoikia balconies, shutters, scaffolding, church steps. Designer pieces worn like everyday clothes on the pavement.</p></div>
+    <div class="grid"><div><img src="opt/streets1.jpg" alt="Greek streets reference 1"></div><div><img src="opt/streets2.jpg" alt="Greek streets reference 2"></div><div><img src="opt/streets3.jpg" alt="Greek streets reference 3"></div><div><img src="opt/streets4.jpg" alt="Greek streets reference 4"></div><div><img src="opt/streets5.jpg" alt="Greek streets reference 5"></div><div><img src="opt/streets6.jpg" alt="Greek streets reference 6"></div><div><img src="opt/streets7.jpg" alt="Greek streets reference 7"></div><div><img src="opt/streets8.jpg" alt="Greek streets reference 8"></div></div>
+  </section>
+  <section id="laiki">
+    <div class="head"><span class="num">OPTION 2</span><h2>The laiki</h2><p>Street-market couture. Tulle, fur hems and headscarves between the crates, vendors in the frame.</p></div>
+    <div class="grid"><div><img src="opt/laiki1.jpg" alt="The laiki reference 1"></div><div><img src="opt/laiki2.jpg" alt="The laiki reference 2"></div><div><img src="opt/laiki3.jpg" alt="The laiki reference 3"></div><div><img src="opt/laiki4.jpg" alt="The laiki reference 4"></div><div><img src="opt/laiki5.jpg" alt="The laiki reference 5"></div><div><img src="opt/laiki6.jpg" alt="The laiki reference 6"></div><div><img src="opt/laiki7.jpg" alt="The laiki reference 7"></div><div><img src="opt/laiki8.jpg" alt="The laiki reference 8"></div></div>
+  </section>
+  <section id="varvakios">
+    <div class="head"><span class="num">OPTION 3</span><h2>Varvakios</h2><p>The central meat and fish market. Plastic, sequins and rubber against ice, steel and the catch.</p></div>
+    <div class="grid"><div><img src="opt/varvakios1.jpg" alt="Varvakios reference 1"></div><div><img src="opt/varvakios2.jpg" alt="Varvakios reference 2"></div><div><img src="opt/varvakios3.jpg" alt="Varvakios reference 3"></div><div><img src="opt/varvakios4.jpg" alt="Varvakios reference 4"></div><div><img src="opt/varvakios5.jpg" alt="Varvakios reference 5"></div><div><img src="opt/varvakios6.jpg" alt="Varvakios reference 6"></div><div><img src="opt/varvakios7.jpg" alt="Varvakios reference 7"></div><div><img src="opt/varvakios8.jpg" alt="Varvakios reference 8"></div></div>
+  </section>
+  <section id="piraeus">
+    <div class="head"><span class="num">OPTION 4</span><h2>Piraeus</h2><p>The harbour. Neon tailoring, knits and sculptural pieces among nets, floats and fishermen.</p></div>
+    <div class="grid"><div><img src="opt/piraeus1.jpg" alt="Piraeus reference 1"></div><div><img src="opt/piraeus2.jpg" alt="Piraeus reference 2"></div><div><img src="opt/piraeus3.jpg" alt="Piraeus reference 3"></div><div><img src="opt/piraeus4.jpg" alt="Piraeus reference 4"></div><div><img src="opt/piraeus5.jpg" alt="Piraeus reference 5"></div><div><img src="opt/piraeus6.jpg" alt="Piraeus reference 6"></div><div><img src="opt/piraeus7.jpg" alt="Piraeus reference 7"></div><div><img src="opt/piraeus8.jpg" alt="Piraeus reference 8"></div></div>
+  </section>
+  <section id="night">
+    <div class="head"><span class="num">OPTION 5</span><h2>After dark</h2><p>Omonia at night. Direct flash, wet asphalt, fur, leather and red under street light.</p></div>
+    <div class="grid"><div><img src="opt/night1.jpg" alt="After dark reference 1"></div><div><img src="opt/night2.jpg" alt="After dark reference 2"></div><div><img src="opt/night3.jpg" alt="After dark reference 3"></div><div><img src="opt/night4.jpg" alt="After dark reference 4"></div><div><img src="opt/night5.jpg" alt="After dark reference 5"></div><div><img src="opt/night6.jpg" alt="After dark reference 6"></div><div><img src="opt/night7.jpg" alt="After dark reference 7"></div><div><img src="opt/night8.jpg" alt="After dark reference 8"></div></div>
+  </section>
+  <p class="note">Reference images are for mood and styling only.</p>
+</main>
