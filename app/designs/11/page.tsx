@@ -4,11 +4,23 @@ import React, { useCallback, useEffect, useLayoutEffect, useRef, useState } from
 import { PHOTOS, opt, optSet, RESET, LINKS } from '../shared';
 
 const N = PHOTOS.length;
+const N0 = PHOTOS.filter((p) => p.star).length;
+const N1 = N - N0;
 const EASE = 'cubic-bezier(.2,.7,.1,1)';
 
-// Fibonacci sphere: every photo gets an evenly spread longitude/latitude on the globe.
+// Tier 0 photos run in two staggered bands around the equator, the part of the globe that faces you.
+// Tier 1 photos are spread evenly (Fibonacci spiral) over the rest, above and below the bands.
 const GOLDEN = 180 * (3 - Math.sqrt(5));
-const POS = PHOTOS.map((_, i) => ({ lon: (i * GOLDEN) % 360, lat: (Math.asin(1 - (2 * (i + 0.5)) / N) * 180) / Math.PI }));
+const BAND_LAT = 11, CAP = Math.sin((24 * Math.PI) / 180);
+const PER_BAND = Math.ceil(N0 / 2);
+const POS = PHOTOS.map((p, i) => {
+  if (p.star) {
+    const row = i % 2, k = Math.floor(i / 2);
+    return { lon: (k * 360) / PER_BAND + row * (180 / PER_BAND), lat: row ? -BAND_LAT : BAND_LAT };
+  }
+  const k = i - N0, z = 1 - (2 * (k + 0.5)) / N1;
+  return { lon: (k * GOLDEN) % 360, lat: (Math.asin(Math.sign(z) * (CAP + (1 - CAP) * Math.abs(z))) * 180) / Math.PI };
+});
 // Stable pseudo-random per photo (for intro scatter and puzzle tilt).
 const rnd = (i: number, s = 1) => { const x = Math.sin(i * 12.9898 + s * 78.233) * 43758.5453; return x - Math.floor(x); };
 
@@ -59,12 +71,14 @@ const CSS = `@import url('https://fonts.googleapis.com/css2?family=Instrument+Se
   .globe { position: absolute; left: 0; top: 0; transform-style: preserve-3d; }
   .tile { position: absolute; display: flex; align-items: center; justify-content: center; backface-visibility: hidden; -webkit-backface-visibility: hidden;
     transform: var(--t) translateZ(var(--r)); transition: transform .55s cubic-bezier(.2,.7,.1,1), opacity .5s; }
-  .tile img { max-width: 100%; max-height: 100%; display: block; opacity: .9; transition: opacity .4s, box-shadow .4s; pointer-events: none; }
+  .tile img { max-width: 100%; max-height: 100%; display: block; opacity: .58; filter: saturate(.85); transition: opacity .4s, box-shadow .4s, filter .4s; pointer-events: none; }
+  .tile.star img { opacity: 1; filter: none; box-shadow: 0 0 0 1px rgba(255,255,255,.18), 0 8px 30px rgba(0,0,0,.5); }
   .globe.intro .tile { transition: transform 1.9s cubic-bezier(.16,.8,.1,1), opacity 1.2s; transition-delay: var(--d); }
   .globe.pre .tile { transform: var(--t) translateZ(var(--far)) rotate(var(--spin)); opacity: 0; }
   .tile:hover { transform: var(--t) translateZ(calc(var(--r) + var(--pop))) scale(1.35); }
-  .tile:hover img { opacity: 1; box-shadow: 0 0 40px rgba(255,255,255,.25); }
-  .wrap.picked .tile img { opacity: .35; }
+  .tile:hover img { opacity: 1; filter: none; box-shadow: 0 0 40px rgba(255,255,255,.25); }
+  .wrap.picked .tile img { opacity: .3; }
+  .wrap.picked .tile.star img { opacity: .55; }
   .wrap.picked .tile.on { transform: var(--t) translateZ(calc(var(--r) + var(--pop))) scale(1.5); }
   .wrap.picked .tile.on img, .wrap.picked .tile:hover img { opacity: 1; }
 
@@ -84,6 +98,8 @@ const CSS = `@import url('https://fonts.googleapis.com/css2?family=Instrument+Se
   .rw { display: flex; gap: 3px; }
   .rw img { display: block; height: 100%; width: 100%; object-fit: cover; min-width: 0; opacity: 0; transform: scale(.82) rotate(var(--tilt)); transition: opacity .7s ease, transform .9s cubic-bezier(.2,.8,.2,1.2); transition-delay: var(--d); }
   .rw img.in { opacity: 1; transform: none; }
+  .rw.st { gap: 6px; } .rows .rw.st + .rw.st { margin-top: 3px; }
+  .rw.last { margin-bottom: 26px; }
   .ovw { position: fixed; inset: 0; z-index: 30; background: #000; }
   .ovw .glow img { opacity: .5; }
   .ov { position: absolute; inset: 0; overflow-y: auto; scroll-snap-type: y mandatory; overscroll-behavior: contain; }
@@ -144,7 +160,7 @@ function Globe({ vp }: { vp: { w: number; h: number } }) {
   const rot = useRef({ ax: -14, ay: -140, vx: 0, vy: 0, tx: null as number | null, ty: null as number | null, drag: false, spin: 2.2, want: 0.07, mx: 0, my: 0, px: 0, py: 0 });
 
   const R = Math.min(vp.w * 0.3, vp.h * 0.38);
-  const S = R * 0.26;
+  const S = R * 0.25, S0 = R * 0.34; // tier 1 / tier 0 tile size
 
   // Intro: photos fly in from all directions and settle into the globe.
   useEffect(() => {
@@ -256,18 +272,19 @@ function Globe({ vp }: { vp: { w: number; h: number } }) {
         onPointerLeave={() => { if (!open) rot.current.want = 0.07; setHov(null); }}>
         <div className={`globe ${phase === 'live' ? '' : phase}`} ref={globe}>
           {PHOTOS.map((p, i) => (
-            <div key={p.src} className={`tile${i === sel ? ' on' : ''}`}
+            <div key={p.src} className={`tile${p.star ? ' star' : ''}${i === sel ? ' on' : ''}`}
               style={{
-                width: S, height: S, left: -S / 2, top: -S / 2,
+                width: p.star ? S0 : S, height: p.star ? S0 : S, left: -(p.star ? S0 : S) / 2, top: -(p.star ? S0 : S) / 2,
                 ['--t' as string]: `rotateY(${POS[i].lon}deg) rotateX(${POS[i].lat}deg)`,
-                ['--r' as string]: `${R}px`, ['--pop' as string]: `${S * 0.45}px`,
+                ['--r' as string]: `${p.star ? R * 1.04 : R}px`, ['--pop' as string]: `${S * 0.45}px`,
                 ['--far' as string]: `${R * (2.5 + rnd(i) * 3)}px`, ['--spin' as string]: `${(rnd(i, 2) - 0.5) * 120}deg`,
-                ['--d' as string]: `${rnd(i, 3) * 1.1}s`,
+                // tier 0 lands last, so the band assembles in front of an already-formed globe
+                ['--d' as string]: `${p.star ? 0.9 + rnd(i, 3) * 0.6 : rnd(i, 3) * 0.9}s`,
               }}
               onPointerEnter={() => setHov(i)}
               onClick={(e) => { if (moved.current >= 5) return; pick(i, (e.currentTarget.firstChild as HTMLElement).getBoundingClientRect()); }}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={opt(p, 256)} alt="" decoding="async" draggable={false} />
+              <img src={opt(p, p.star ? 384 : 256)} alt="" decoding="async" draggable={false} />
             </div>
           ))}
         </div>
@@ -288,6 +305,7 @@ function Globe({ vp }: { vp: { w: number; h: number } }) {
 /* ---------------- mobile: the puzzle ---------------- */
 
 const ROW_H = [118, 92, 152, 104, 136, 86, 164];
+const STAR_H = [300, 230, 340, 250];
 
 function Puzzle({ vp }: { vp: { w: number; h: number } }) {
   const [sel, setSel] = useState<number | null>(null);
@@ -298,15 +316,23 @@ function Puzzle({ vp }: { vp: { w: number; h: number } }) {
   const ph = useRef(''); // the tapped tile's already-loaded image, shown until the sharp one arrives
 
   // Rows of varied heights, each filled edge to edge, so the photos lock together like puzzle pieces.
+  // Tier 0 fills the top with big rows (one or two photos each); tier 1 follows as a denser puzzle.
   const gap = 3;
-  const rows: { h: number; items: typeof PHOTOS; full: boolean }[] = [];
-  let cur: typeof PHOTOS = [], ar = 0;
-  PHOTOS.forEach((p) => {
-    cur.push(p); ar += p.w / p.h;
-    const target = ROW_H[rows.length % ROW_H.length];
-    if (ar * target + gap * (cur.length - 1) >= vp.w) { rows.push({ h: (vp.w - gap * (cur.length - 1)) / ar, items: cur, full: true }); cur = []; ar = 0; }
-  });
-  if (cur.length) rows.push({ h: ROW_H[rows.length % ROW_H.length], items: cur, full: false });
+  const rows: { h: number; items: typeof PHOTOS; full: boolean; star: boolean }[] = [];
+  const pack = (list: typeof PHOTOS, heights: number[], star: boolean) => {
+    let cur: typeof PHOTOS = [], ar = 0, k = 0;
+    list.forEach((p) => {
+      cur.push(p); ar += p.w / p.h;
+      const target = heights[k % heights.length];
+      if (ar * target + gap * (cur.length - 1) >= vp.w || (star && p.landscape)) {
+        rows.push({ h: Math.min((vp.w - gap * (cur.length - 1)) / ar, vp.h * 0.75), items: cur, full: true, star }); cur = []; ar = 0; k++;
+      }
+    });
+    // leftover photos: fill the row only if that doesn't make it taller than planned (otherwise they'd be cropped)
+    if (cur.length) { const fillH = (vp.w - gap * (cur.length - 1)) / ar, t = heights[k % heights.length]; rows.push({ h: Math.min(fillH, t), items: cur, full: fillH <= t, star }); }
+  };
+  pack(PHOTOS.filter((p) => p.star), STAR_H, true);
+  pack(PHOTOS.filter((p) => !p.star), ROW_H, false);
 
   // Pieces drop into place as they scroll into view.
   useEffect(() => {
@@ -339,11 +365,11 @@ function Puzzle({ vp }: { vp: { w: number; h: number } }) {
       <header className="top"><h1><a href="/"><Name /></a></h1><nav><Links /></nav></header>
       <div className="rows">
         {rows.map((r, k) => (
-          <div className="rw" key={k} style={{ height: r.h }}>
+          <div className={`rw${r.star ? ' st' : ''}${r.star && !rows[k + 1]?.star ? ' last' : ''}`} key={k} style={{ height: r.h }}>
             {r.items.map((p, j) => (
               // eslint-disable-next-line @next/next/no-img-element
-              <img key={p.src} ref={(el) => { tiles.current[p.i] = el; }} src={opt(p, 384)} srcSet={optSet(p)} sizes={`${Math.round((p.w / p.h) * r.h)}px`} alt="" decoding="async"
-                loading={p.i < 20 ? 'eager' : 'lazy'}
+              <img key={p.src} ref={(el) => { tiles.current[p.i] = el; }} src={opt(p, 384)} srcSet={optSet(p)} sizes={`${Math.round(Math.min(vp.w, (p.w / p.h) * r.h))}px`} alt="" decoding="async"
+                loading={p.i < 8 ? 'eager' : 'lazy'}
                 style={{ flex: r.full ? `${p.w / p.h} 1 0` : `0 0 ${(p.w / p.h) * r.h}px`, ['--tilt' as string]: `${(rnd(p.i) - 0.5) * 14}deg`, ['--d' as string]: `${j * 0.07}s` }}
                 onClick={(e) => { from.current = e.currentTarget.getBoundingClientRect(); ph.current = e.currentTarget.currentSrc; setSel(p.i); }} />
             ))}

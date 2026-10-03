@@ -3,12 +3,17 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import tiers from '@/data/portfolio-tiers.json';
 
-// Shared toolkit for the /designs/* explorations. Every design uses the same Tier 1 photos in the saved order.
-export type Photo = { i: number; src: string; w: number; h: number; landscape: boolean };
-export const PHOTOS: Photo[] = (tiers.tier1 as [string, number, number][]).map(([src, w, h], i) => ({ i, src, w, h, landscape: w > h }));
+// Shared toolkit for the homepage and /designs/* explorations: tier0 photos first (star = true), then tier1, in saved order.
+export type Photo = { i: number; src: string; w: number; h: number; landscape: boolean; star: boolean; tier: 'tier0' | 'tier1' };
+type Entry = [string, number, number];
+export const PHOTOS: Photo[] = [
+  ...(tiers.tier0 as Entry[]).map((e) => [e, 'tier0'] as const),
+  ...(tiers.tier1 as Entry[]).map((e) => [e, 'tier1'] as const),
+].map(([[src, w, h], tier], i) => ({ i, src, w, h, landscape: w > h, star: tier === 'tier0', tier }));
+const TIER = new Map(PHOTOS.map((p) => [p.src, p.tier]));
 
 export const pad = (n: number, len = 2) => String(n).padStart(len, '0');
-export const full = (src: string) => `/images/tier1/${src}.jpg`;
+export const full = (src: string) => `/images/${TIER.get(src) ?? 'tier1'}/${src}.jpg`;
 // Resized copy via Next's image optimizer. Allowed widths: 256 384 640 750 828 1080 1200 1920.
 export const thumb = (src: string, w: 256 | 384 | 640 | 750 | 828 | 1080 | 1200 | 1920 = 640) =>
   `/_next/image?url=${encodeURIComponent(full(src))}&w=${w}&q=75`;
