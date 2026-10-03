@@ -1,6 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  experimental: { typedRoutes: true },
+  experimental: {
+    typedRoutes: true,
+    // /api/tiers only runs locally (it moves photo files); keep the photos out of its deployed bundle.
+    outputFileTracingExcludes: { '/api/tiers': ['public/**'] },
+  },
   images: {
     remotePatterns: [
       { protocol: 'https', hostname: 'res.cloudinary.com' },
