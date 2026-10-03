@@ -37,5 +37,5 @@ marketing/**/*.tif
 marketing/**/*.tiff
 public/design-shots/
 
-# No Brakes reel render outputs (video/audio intermediates)
-marketing/no-brakes/output-*/
+# No Brakes render intermediates
+no-brakes/build/
