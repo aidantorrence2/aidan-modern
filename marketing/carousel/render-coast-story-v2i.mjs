@@ -146,16 +146,16 @@ const COPY = {
   fr: {
     badge: 'SHOOTING PHOTO GRATUIT', hookTitle: 'Shooting photo gratuit', hookTitleSize: 70, hookSub: 'Envie de photos comme celles-ci ? →',
     work: 'mes derniers travaux', about: 'à propos',
-    about1: "salut, moi c'est aidan — photographe américain. depuis 3 ans, je voyage à travers le monde et je photographie en argentique.",
+    about1: "salut, moi c'est aidan — photographe américain. depuis 3 ans, je voyage à travers le monde pour faire des photos.",
     about2: c => `en ce moment je suis ${c.country?.fr || 'en Turquie'}, et je fais des shootings ${c.fr.in}.`,
     about3: "si tu es dans le coin, créons quelque chose de spécial.",
-    nervous: 'jamais posé·e avant ?', nervousSub: "pas d'inquiétude — je te guide à chaque photo.",
-    proof: 'shooté sur pellicule 35mm', casting: c => `en ce moment ${c.fr.in}`, castingSub: "c'est totalement gratuit",
+    nervous: 'jamais fait de shooting ?', nervousSub: "pas d'inquiétude — je te guide à chaque photo.",
+    proof: '' /* Aidan 23 Sept: never mention film in ads, so 05 is photo-only */, casting: c => `en ce moment ${c.fr.in}`, castingSub: "c'est totalement gratuit",
     how: 'comment ça marche',
     steps: { signup: [['1', "Inscris-toi", 'Clique sur le lien ci-dessous — ça prend une minute.']], dm: [['1', 'Écris-moi', 'Envoie-moi un message sur Instagram — ça prend une minute.']] },
     steps23: [['2', 'On organise', "Un petit échange pour choisir le lieu, l'heure et le style."], ['3', 'On shoote', 'Environ une heure. Je te guide à chaque photo.']],
     cta: { signup: ['Ça te tente ?', 'Inscris-toi.'], dm: ['Ça te tente ?', 'Écris-moi.'] },
-    ctaLine: c => `Je ne suis ${c.fr.in} que pour peu de temps — shootons ensemble.`,
+    ctaLine: c => `Je ne suis ${c.fr.in} que quelques jours — faisons des photos ensemble.`,
   },
 }
 
