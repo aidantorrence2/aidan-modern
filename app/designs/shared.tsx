@@ -14,6 +14,14 @@ export const thumb = (src: string, w: 256 | 384 | 640 | 750 | 828 | 1080 | 1200 
   `/_next/image?url=${encodeURIComponent(full(src))}&w=${w}&q=75`;
 export const srcSet = (src: string) => [384, 640, 1080, 1920].map((w) => `${thumb(src, w as 384)} ${w}w`).join(', ');
 
+// Pre-generated WebP copies (scripts/optimize-portfolio-images.py): public/images/opt/<width>/<name>.webp
+// exists for each width in WIDTHS smaller than the photo, plus opt/full (at most 1920px wide).
+const WIDTHS = [256, 384, 640, 1080] as const;
+export const opt = (p: Photo, w: (typeof WIDTHS)[number] | 'full') => `/images/opt/${w !== 'full' && w < p.w ? w : 'full'}/${p.src}.webp`;
+/** srcset of the pre-generated copies from `min` px up; pair it with `sizes`. */
+export const optSet = (p: Photo, min = 256) =>
+  [...WIDTHS.filter((w) => w >= min && w < p.w).map((w) => `${opt(p, w)} ${w}w`), `${opt(p, 'full')} ${Math.min(p.w, 1920)}w`].join(', ');
+
 // Hides the site's global header/footer on these pages.
 export const RESET = `body > header, body > footer, .fixed.inset-x-0.bottom-0 { display: none !important; }
 html, body { margin: 0 !important; padding: 0 !important; height: auto !important; }`;

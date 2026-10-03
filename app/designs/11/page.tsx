@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react';
-import { PHOTOS, thumb, RESET, LINKS } from '../shared';
+import { PHOTOS, opt, optSet, RESET, LINKS } from '../shared';
 
 const N = PHOTOS.length;
 const EASE = 'cubic-bezier(.2,.7,.1,1)';
@@ -122,7 +122,7 @@ function Glow({ i }: { i: number | null }) {
   return (
     <div className="glow">
       {/* eslint-disable-next-line @next/next/no-img-element */}
-      {stack.map((k) => <img key={k} src={thumb(PHOTOS[k].src, 256)} alt="" />)}
+      {stack.map((k) => <img key={k} src={opt(PHOTOS[k], 256)} alt="" />)}
     </div>
   );
 }
@@ -230,6 +230,16 @@ function Globe({ vp }: { vp: { w: number; h: number } }) {
     if (sel !== null && big.current) { flip(big.current, from.current, dir.current); from.current = null; }
   }, [sel]);
 
+  // Preload the next and previous photos so moving through them is instant.
+  useEffect(() => {
+    if (sel === null) return;
+    [1, -1].forEach((d) => {
+      const q = PHOTOS[(sel + d + N) % N], im = new Image();
+      im.sizes = `${Math.round(fit(q, vp.w * 0.04, 90, vp.w * 0.68, vp.h - 40).width)}px`;
+      im.srcset = optSet(q, 640);
+    });
+  }, [sel, vp.w, vp.h]);
+
   const open = sel !== null;
   const wrapT = open ? `translate(${vp.w * 0.84}px, ${vp.h / 2}px) scale(0.4)` : `translate(${vp.w / 2}px, ${vp.h * 0.53}px) scale(1)`;
   const box = open ? fit(PHOTOS[sel], vp.w * 0.04, 90, vp.w * 0.68, vp.h - 40) : null;
@@ -257,15 +267,17 @@ function Globe({ vp }: { vp: { w: number; h: number } }) {
               onPointerEnter={() => setHov(i)}
               onClick={(e) => { if (moved.current >= 5) return; pick(i, (e.currentTarget.firstChild as HTMLElement).getBoundingClientRect()); }}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={thumb(p.src, 384)} alt="" draggable={false} />
+              <img src={opt(p, 256)} alt="" decoding="async" draggable={false} />
             </div>
           ))}
         </div>
       </div>
       {open && box && (
         // eslint-disable-next-line @next/next/no-img-element
-        <img key={sel} ref={big} className="big" src={thumb(PHOTOS[sel].src, 1920)} alt="Photograph by Aidan Torrence" draggable={false}
-          style={box} onClick={() => { if (moved.current < 5) pick((sel + 1) % N, null, 1); }} />
+        <img key={sel} ref={big} className="big" src={opt(PHOTOS[sel], 'full')} srcSet={optSet(PHOTOS[sel], 640)} sizes={`${Math.round(box.width)}px`}
+          alt="Photograph by Aidan Torrence" draggable={false}
+          // the small copy already loaded on the globe shows instantly while the sharp one arrives
+          style={{ ...box, backgroundImage: `url(${opt(PHOTOS[sel], 256)})`, backgroundSize: 'cover' }} onClick={() => { if (moved.current < 5) pick((sel + 1) % N, null, 1); }} />
       )}
       <div ref={cur} className={`cur${hot ? ' big' : ''}`} />
       <div className="grain" />
@@ -283,6 +295,7 @@ function Puzzle({ vp }: { vp: { w: number; h: number } }) {
   const ov = useRef<HTMLDivElement>(null);
   const from = useRef<DOMRect | null>(null);
   const tiles = useRef<(HTMLImageElement | null)[]>([]);
+  const ph = useRef(''); // the tapped tile's already-loaded image, shown until the sharp one arrives
 
   // Rows of varied heights, each filled edge to edge, so the photos lock together like puzzle pieces.
   const gap = 3;
@@ -329,10 +342,10 @@ function Puzzle({ vp }: { vp: { w: number; h: number } }) {
           <div className="rw" key={k} style={{ height: r.h }}>
             {r.items.map((p, j) => (
               // eslint-disable-next-line @next/next/no-img-element
-              <img key={p.src} ref={(el) => { tiles.current[p.i] = el; }} src={thumb(p.src, (p.w / p.h) * r.h > 180 ? 640 : 384)} alt=""
+              <img key={p.src} ref={(el) => { tiles.current[p.i] = el; }} src={opt(p, 384)} srcSet={optSet(p)} sizes={`${Math.round((p.w / p.h) * r.h)}px`} alt="" decoding="async"
                 loading={p.i < 20 ? 'eager' : 'lazy'}
                 style={{ flex: r.full ? `${p.w / p.h} 1 0` : `0 0 ${(p.w / p.h) * r.h}px`, ['--tilt' as string]: `${(rnd(p.i) - 0.5) * 14}deg`, ['--d' as string]: `${j * 0.07}s` }}
-                onClick={(e) => { from.current = e.currentTarget.getBoundingClientRect(); setSel(p.i); }} />
+                onClick={(e) => { from.current = e.currentTarget.getBoundingClientRect(); ph.current = e.currentTarget.currentSrc; setSel(p.i); }} />
             ))}
           </div>
         ))}
@@ -346,7 +359,8 @@ function Puzzle({ vp }: { vp: { w: number; h: number } }) {
               return (
                 <section key={p.src} style={{ height: vp.h }}>
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={thumb(p.src, 1080)} alt="" loading={Math.abs(p.i - sel) < 3 ? 'eager' : 'lazy'} style={b} />
+                  <img src={opt(p, 'full')} srcSet={optSet(p, 640)} sizes={`${Math.round(b.width)}px`} alt="" loading={Math.abs(p.i - sel) < 3 ? 'eager' : 'lazy'}
+                    style={p.i === sel && ph.current ? { ...b, backgroundImage: `url(${ph.current})`, backgroundSize: 'cover' } : b} />
                 </section>
               );
             })}
