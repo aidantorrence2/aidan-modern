@@ -1,0 +1,787 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>No Brakes — 88a</title>
+<!--
+  "NO BRAKES" (reel 88a) — a parody short about the AI intelligence explosion, starring a
+  caricature of Dario. Everything is drawn on one 1080x1920 canvas by a deterministic
+  renderAt(t), so render-88a.mjs can capture it frame-by-frame. Open this file directly in a
+  browser to preview in real time (click to restart).
+-->
+<style>
+@font-face { font-family: Anton; src: url(../bts-reels/fonts/Anton-Regular.ttf); }
+@font-face { font-family: Inter; font-weight: 100 900; src: url(../bts-reels/fonts/Inter-Regular.ttf); } /* variable; the static Inter files there are broken */
+@font-face { font-family: Playfair; font-style: italic; src: url(../bts-reels/fonts/PlayfairDisplay-MediumItalic.ttf); }
+html, body { margin: 0; background: #000; }
+canvas { display: block; width: 1080px; height: 1920px; }
+body:not(.capture) canvas { width: auto; height: 96vh; margin: 2vh auto; }
+</style>
+</head>
+<body>
+<canvas id="c" width="1080" height="1920"></canvas>
+<script>
+const W = 1080, H = 1920, TOTAL = 38.5;
+const cv = document.getElementById('c'), g = cv.getContext('2d');
+
+// Scene timing (seconds). render-88a.mjs reads window.TIMING to place the sound design.
+const T = {
+  title: 0, car: 3.2, gauge: 8.0, pedals: 13.0, mirror: 18.5, road: 23.0,
+  face: 28.5, black: 31.0, end: 35.0,
+};
+window.TIMING = T;
+window.TOTAL = TOTAL;
+
+// ---------- math ----------
+const clamp = (x, a = 0, b = 1) => (x < a ? a : x > b ? b : x);
+const lerp = (a, b, t) => a + (b - a) * t;
+const prog = (t, a, b) => clamp((t - a) / (b - a));
+const eOut = (x) => 1 - Math.pow(1 - x, 3);
+const eIn = (x) => x * x * x;
+const eIO = (x) => (x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2);
+const backOut = (x) => { const c1 = 2.0, c3 = c1 + 1; return 1 + c3 * Math.pow(x - 1, 3) + c1 * Math.pow(x - 1, 2); };
+const hash = (n) => { const s = Math.sin(n * 127.1 + 311.7) * 43758.5453; return s - Math.floor(s); };
+const noise = (x) => { const i = Math.floor(x), f = x - i, u = f * f * (3 - 2 * f); return lerp(hash(i), hash(i + 1), u) * 2 - 1; };
+const fract = (x) => x - Math.floor(x);
+
+// ---------- shared post ----------
+const grains = [0, 1, 2, 3].map((k) => {
+  const c = document.createElement('canvas'); c.width = c.height = 256;
+  const x = c.getContext('2d'), id = x.createImageData(256, 256);
+  let s = 1234567 + k * 7919;
+  for (let i = 0; i < 256 * 256; i++) {
+    s = (s * 1103515245 + 12345) & 0x7fffffff;
+    const v = (s >> 8) & 255;
+    id.data[i * 4] = id.data[i * 4 + 1] = id.data[i * 4 + 2] = v; id.data[i * 4 + 3] = 255;
+  }
+  x.putImageData(id, 0, 0); return c;
+});
+function grain(t, a = 0.07) {
+  const fr = Math.floor(t * 30), c = grains[fr % 4];
+  g.save(); g.globalAlpha = a; g.globalCompositeOperation = 'overlay';
+  g.translate(-((hash(fr) * 256) | 0), -((hash(fr + 7) * 256) | 0));
+  g.fillStyle = g.createPattern(c, 'repeat'); g.fillRect(0, 0, W + 256, H + 256);
+  g.restore();
+}
+function vignette(a = 0.65, col = '0,0,0', inner = 0.28) {
+  const gr = g.createRadialGradient(W / 2, H / 2, H * inner, W / 2, H / 2, H * 0.78);
+  gr.addColorStop(0, `rgba(${col},0)`); gr.addColorStop(1, `rgba(${col},${a})`);
+  g.fillStyle = gr; g.fillRect(0, 0, W, H);
+}
+function glow(x, y, r, col, a) {
+  if (a <= 0 || r <= 0) return;
+  const gr = g.createRadialGradient(x, y, 0, x, y, r);
+  gr.addColorStop(0, `rgba(${col},${a})`); gr.addColorStop(0.25, `rgba(${col},${a * 0.45})`);
+  gr.addColorStop(1, `rgba(${col},0)`);
+  g.fillStyle = gr; g.fillRect(x - r, y - r, r * 2, r * 2);
+}
+function flash(t, at, dur = 0.12, col = '255,255,255') {
+  const a = 1 - prog(t, at, at + dur);
+  if (t >= at && a > 0) { g.fillStyle = `rgba(${col},${a})`; g.fillRect(0, 0, W, H); }
+}
+
+// ---------- type ----------
+function txt(s, x, y, o = {}) {
+  const { font = 'Inter', w = 600, size = 56, color = '#fff', align = 'center', ls = 0, alpha = 1,
+    base = 'alphabetic', style = 'normal', shadow = 0, maxW } = o;
+  g.save(); g.globalAlpha *= alpha;
+  g.font = `${style} ${w} ${size}px ${font}`; g.letterSpacing = ls + 'px';
+  g.textAlign = align; g.textBaseline = base; g.fillStyle = color;
+  if (shadow) { g.shadowColor = 'rgba(0,0,0,.9)'; g.shadowBlur = shadow; }
+  if (maxW) g.fillText(s, x, y, maxW); else g.fillText(s, x, y);
+  g.restore();
+}
+function wrap(s, maxW) {
+  const words = s.split(' '), lines = []; let cur = '';
+  for (const w of words) {
+    const t2 = cur ? cur + ' ' + w : w;
+    if (g.measureText(t2).width > maxW && cur) { lines.push(cur); cur = w; } else cur = t2;
+  }
+  lines.push(cur); return lines;
+}
+// Caption: Inter SemiBold, soft shadow, fades/rises in.
+function caption(t, a, b, s, { y = 1560, size = 62, color = '#fff', maxW = 900 } = {}) {
+  if (t < a || t > b) return;
+  const fi = eOut(prog(t, a, a + 0.28)), fo = 1 - prog(t, b - 0.22, b), al = Math.min(fi, fo);
+  g.save(); g.font = `600 ${size}px Inter`; g.letterSpacing = '-0.5px';
+  const lines = wrap(s, maxW), lh = size * 1.2;
+  const y0 = y - ((lines.length - 1) * lh) / 2 + (1 - fi) * 22;
+  g.globalAlpha = al; g.textAlign = 'center'; g.textBaseline = 'middle';
+  g.shadowColor = 'rgba(0,0,0,.95)'; g.shadowBlur = 28; g.fillStyle = color;
+  lines.forEach((l, i) => g.fillText(l, W / 2, y0 + i * lh));
+  g.shadowBlur = 8; lines.forEach((l, i) => g.fillText(l, W / 2, y0 + i * lh));
+  g.restore();
+}
+
+// ---------- Dario (caricature, drawn into an offscreen canvas so lighting can be clipped) ----------
+const F = document.createElement('canvas'); F.width = 800; F.height = 1000;
+const f = F.getContext('2d');
+const FO = { x: 400, y: 330 }; // face centre inside F
+const SKIN = '#d6a585', SKIN_D = '#b07a5f', HAIR = '#15100d', SWEATER = '#1b2232';
+function curls(cx, cy, list) {
+  f.fillStyle = HAIR;
+  for (const [x, y, r] of list) { f.beginPath(); f.arc(cx + x, cy + y, r, 0, Math.PI * 2); f.fill(); }
+  f.strokeStyle = 'rgba(90,70,58,.55)'; f.lineWidth = 3;
+  for (const [x, y, r] of list) { f.beginPath(); f.arc(cx + x - r * 0.15, cy + y - r * 0.1, r * 0.55, Math.PI * 1.1, Math.PI * 1.75); f.stroke(); }
+}
+const HAIR_BACK = [], HAIR_FRONT = [];
+for (let i = 0; i < 26; i++) {
+  const a = -Math.PI * 1.06 + (i / 25) * Math.PI * 1.12, r = 98 + hash(i) * 12;
+  HAIR_BACK.push([Math.cos(a) * r * 0.98, -6 + Math.sin(a) * r * 1.08, 25 + hash(i + 40) * 11]);
+}
+for (let i = 0; i < 11; i++) {
+  const x = -86 + (i / 10) * 172;
+  HAIR_FRONT.push([x, -100 + Math.pow(x / 92, 2) * 46 - hash(i + 90) * 8, 22 + hash(i + 70) * 7]);
+}
+for (const s of [-1, 1]) for (let i = 0; i < 4; i++) HAIR_FRONT.push([s * (88 + hash(i + 5) * 6), -52 + i * 18, 15 + hash(i + 13) * 5]);
+
+function darioFig(p) {
+  const { tense = 0, look = 0, blink = 0, dash = 0.6, warm = 0, night = 0.35, sweat = 0 } = p;
+  f.setTransform(1, 0, 0, 1, 0, 0); f.clearRect(0, 0, F.width, F.height);
+  f.translate(FO.x, FO.y);
+  // torso
+  f.fillStyle = SWEATER; f.beginPath();
+  f.moveTo(-340, 720); f.lineTo(-300, 300);
+  f.bezierCurveTo(-285, 215, -200, 182, -105, 168); f.lineTo(105, 168);
+  f.bezierCurveTo(200, 182, 285, 215, 300, 300); f.lineTo(340, 720); f.closePath(); f.fill();
+  f.fillStyle = 'rgba(255,255,255,.04)';
+  f.beginPath(); f.moveTo(-240, 260); f.quadraticCurveTo(-170, 230, -120, 330); f.lineTo(-150, 720); f.lineTo(-300, 720); f.closePath(); f.fill();
+  // neck + collar
+  f.fillStyle = SKIN_D; f.beginPath(); f.roundRect(-52, 70, 104, 130, 34); f.fill();
+  f.fillStyle = '#2a3247'; f.beginPath(); f.ellipse(0, 182, 78, 26, 0, 0, Math.PI); f.fill();
+  f.strokeStyle = '#0d1119'; f.lineWidth = 12; f.beginPath(); f.ellipse(0, 176, 72, 22, 0, 0.05, Math.PI - 0.05); f.stroke();
+  // hair behind head
+  curls(0, 0, HAIR_BACK);
+  // ears
+  f.fillStyle = SKIN_D;
+  for (const s of [-1, 1]) { f.beginPath(); f.ellipse(s * 90, 4, 17, 30, 0, 0, Math.PI * 2); f.fill(); }
+  // head
+  f.save();
+  f.beginPath(); f.ellipse(0, 0, 92, 120, 0, 0, Math.PI * 2);
+  f.fillStyle = SKIN; f.fill(); f.clip();
+  const sh = f.createRadialGradient(-30, -40, 20, 0, 10, 140);
+  sh.addColorStop(0, 'rgba(255,230,210,.18)'); sh.addColorStop(1, 'rgba(90,50,35,.35)');
+  f.fillStyle = sh; f.fillRect(-100, -130, 200, 260);
+  // stubble
+  f.fillStyle = 'rgba(55,38,30,.2)'; f.beginPath(); f.ellipse(0, 78, 84, 62, 0, 0, Math.PI * 2); f.fill();
+  f.fillStyle = SKIN; f.globalAlpha = 0.55; f.beginPath(); f.ellipse(0, 40, 50, 30, 0, 0, Math.PI * 2); f.fill(); f.globalAlpha = 1;
+  // sweat sheen
+  if (sweat > 0) {
+    f.fillStyle = `rgba(255,255,255,${0.35 * sweat})`;
+    for (const [x, y, r] of [[-52, -62, 5], [44, -70, 4], [64, -40, 6], [-70, -30, 4]]) { f.beginPath(); f.ellipse(x, y, r * 0.7, r, 0, 0, Math.PI * 2); f.fill(); }
+  }
+  f.restore();
+  // hair over the forehead
+  curls(0, 0, HAIR_FRONT);
+  // brows (inner ends drop when tense)
+  f.strokeStyle = HAIR; f.lineCap = 'round'; f.lineWidth = 10;
+  for (const s of [-1, 1]) {
+    f.beginPath(); f.moveTo(s * 64, -46 - tense * 2); f.quadraticCurveTo(s * 40, -54 - tense * 4, s * 15, -44 + tense * 9); f.stroke();
+  }
+  // eyes
+  for (const s of [-1, 1]) {
+    const ex = s * 38 + look * 5, ey = -12, open = (1 - blink) * (0.75 + tense * 0.5);
+    f.fillStyle = '#f2ebe6'; f.beginPath(); f.ellipse(s * 38, ey, 13, 8.5 * open + 0.6, 0, 0, Math.PI * 2); f.fill();
+    f.fillStyle = '#2a1d16'; f.beginPath(); f.ellipse(ex, ey, 6.5, Math.min(6.5, 8.5 * open), 0, 0, Math.PI * 2); f.fill();
+    f.fillStyle = '#000'; f.beginPath(); f.arc(ex, ey, 3, 0, Math.PI * 2); f.fill();
+  }
+  // glasses
+  f.lineWidth = 4.5; f.strokeStyle = '#0c0c0c';
+  for (const s of [-1, 1]) {
+    f.beginPath(); f.roundRect(s * 38 - 34, -38, 68, 50, 17); f.stroke();
+    f.fillStyle = `rgba(120,185,255,${0.06 + dash * 0.08})`; f.fill();
+    f.save(); f.beginPath(); f.roundRect(s * 38 - 34, -38, 68, 50, 17); f.clip();
+    f.fillStyle = `rgba(200,230,255,${0.12 + dash * 0.22})`;
+    f.beginPath(); f.moveTo(s * 38 - 30, 12); f.lineTo(s * 38 - 8, -38); f.lineTo(s * 38 + 4, -38); f.lineTo(s * 38 - 18, 12); f.fill();
+    f.restore();
+    f.beginPath(); f.moveTo(s * 72, -24); f.lineTo(s * 92, -18); f.stroke();
+  }
+  f.beginPath(); f.moveTo(-4, -20); f.quadraticCurveTo(0, -27, 4, -20); f.stroke();
+  // nose
+  f.strokeStyle = SKIN_D; f.lineWidth = 4;
+  f.beginPath(); f.moveTo(-2, -4); f.quadraticCurveTo(-12, 34, -9, 40); f.quadraticCurveTo(0, 47, 12, 40); f.stroke();
+  // mouth: neutral → tight grimace
+  f.strokeStyle = '#6a3a2f'; f.lineWidth = 6;
+  f.beginPath(); f.moveTo(-26 - tense * 6, 74 + tense * 3); f.quadraticCurveTo(0, 72 - 5 + tense * 9, 26 + tense * 6, 74 + tense * 3); f.stroke();
+  if (tense > 0.6) {
+    f.fillStyle = `rgba(240,235,225,${(tense - 0.6) * 2})`;
+    f.beginPath(); f.roundRect(-22, 70, 44, 8, 3); f.fill();
+  }
+  // steering wheel + hands
+  f.lineWidth = 30; f.strokeStyle = '#0b0b0d';
+  f.beginPath(); f.ellipse(0, 330, 255, 82, 0, Math.PI * 1.02, Math.PI * 1.98); f.stroke();
+  f.lineWidth = 4; f.strokeStyle = 'rgba(255,255,255,.12)';
+  f.beginPath(); f.ellipse(0, 322, 255, 82, 0, Math.PI * 1.15, Math.PI * 1.85); f.stroke();
+  for (const s of [-1, 1]) {
+    f.fillStyle = SWEATER; f.beginPath(); f.moveTo(s * 250, 520); f.lineTo(s * 220, 300); f.lineTo(s * 300, 300); f.lineTo(s * 330, 520); f.fill();
+    f.fillStyle = SKIN; f.beginPath(); f.ellipse(s * 238, 266, 40, 32, s * 0.3, 0, Math.PI * 2); f.fill();
+    f.strokeStyle = SKIN_D; f.lineWidth = 3;
+    for (let k = 0; k < 3; k++) { f.beginPath(); f.moveTo(s * (222 + k * 12), 248); f.lineTo(s * (220 + k * 12), 262); f.stroke(); }
+  }
+  // lighting, clipped to the figure
+  f.globalCompositeOperation = 'source-atop';
+  f.fillStyle = `rgba(4,8,20,${night})`; f.fillRect(-400, -330, 800, 1000);
+  const dg = f.createLinearGradient(0, 380, 0, -160);
+  dg.addColorStop(0, `rgba(70,150,255,${0.42 * dash})`); dg.addColorStop(1, 'rgba(70,150,255,0)');
+  f.fillStyle = dg; f.fillRect(-400, -330, 800, 1000);
+  if (warm > 0) {
+    const wg = f.createLinearGradient(-300, -300, 200, 300);
+    wg.addColorStop(0, `rgba(255,190,120,${0.55 * warm})`); wg.addColorStop(1, `rgba(255,170,90,${0.1 * warm})`);
+    f.fillStyle = wg; f.fillRect(-400, -330, 800, 1000);
+  }
+  f.globalCompositeOperation = 'source-over';
+  return F;
+}
+
+// ---------- perspective road ----------
+// project(X, Y, z) with camera at height camH looking down +z
+function proj(cam, X, Y, z) { return [cam.vx + (X * cam.f) / z, cam.hz + ((cam.h - Y) * cam.f) / z]; }
+function quadWorld(cam, X1, X2, z1, z2, Y = 0) {
+  const a = proj(cam, X1, Y, z1), b = proj(cam, X2, Y, z1), c = proj(cam, X2, Y, z2), d = proj(cam, X1, Y, z2);
+  g.beginPath(); g.moveTo(...a); g.lineTo(...b); g.lineTo(...c); g.lineTo(...d); g.closePath();
+}
+// dir = +1: objects approach (POV forward); dir = -1: objects recede (camera looking back)
+function road(cam, D, dir, o = {}) {
+  const { far = 420, near = 0.6, fog = '10,16,30' } = o;
+  // asphalt
+  const top = proj(cam, 0, 0, far)[1];
+  const rg = g.createLinearGradient(0, top, 0, H);
+  rg.addColorStop(0, '#0d1018'); rg.addColorStop(1, '#151820');
+  g.fillStyle = rg; quadWorld(cam, -7.5, 7.5, near, far); g.fill();
+  // shoulders
+  g.fillStyle = '#07090c';
+  quadWorld(cam, -60, -7.5, near, far); g.fill(); quadWorld(cam, 7.5, 60, near, far); g.fill();
+  // solid edge lines
+  g.fillStyle = 'rgba(230,230,220,.55)';
+  quadWorld(cam, -5.6, -5.4, near, far); g.fill(); quadWorld(cam, 5.4, 5.6, near, far); g.fill();
+  // dashes every 12m, 4m long
+  for (let k = -2; k < 40; k++) {
+    let z1 = dir > 0 ? k * 12 - fract(D / 12) * 12 : k * 12 + fract(D / 12) * 12;
+    let z2 = z1 + 4;
+    if (z2 < near) continue; z1 = Math.max(z1, near); if (z1 > far) break;
+    const a = clamp(1 - z1 / far) * 0.9;
+    g.fillStyle = `rgba(235,225,190,${a})`;
+    for (const X of [-1.8, 1.8]) { quadWorld(cam, X - 0.08, X + 0.08, z1, z2); g.fill(); }
+  }
+  // distance fog
+  const fg = g.createLinearGradient(0, cam.hz, 0, cam.hz + 140);
+  fg.addColorStop(0, `rgba(${fog},.9)`); fg.addColorStop(1, `rgba(${fog},0)`);
+  g.fillStyle = fg; g.fillRect(0, cam.hz - 2, W, 142);
+}
+// streetlights every 36m on both sides; returns how strongly a lamp is overhead (for strobing)
+function streetlights(cam, D, dir, far = 400) {
+  let near = 0;
+  const lamps = [];
+  for (let k = 0; k < 14; k++) {
+    const z = dir > 0 ? k * 36 - fract(D / 36) * 36 + 3 : k * 36 + fract(D / 36) * 36 + 3;
+    if (z < 0.8 || z > far) continue;
+    lamps.push(z); near = Math.max(near, Math.exp(-(z - 3) / 7));
+  }
+  lamps.sort((a, b) => b - a);
+  for (const z of lamps) {
+    for (const s of [-1, 1]) {
+      const base = proj(cam, s * 9, 0, z), topP = proj(cam, s * 9, 8, z), lamp = proj(cam, s * 6.2, 7.8, z);
+      const wpx = Math.max(1, (0.25 * cam.f) / z), a = clamp(1.2 - z / far);
+      g.strokeStyle = `rgba(30,34,42,${a})`; g.lineWidth = wpx;
+      g.beginPath(); g.moveTo(...base); g.lineTo(...topP); g.lineTo(...lamp); g.stroke();
+      glow(lamp[0], lamp[1], Math.min(900, (5 * cam.f) / z), '255,196,120', 0.55 * a);
+      g.fillStyle = `rgba(255,236,200,${a})`; g.beginPath(); g.arc(lamp[0], lamp[1], Math.max(1.5, (0.35 * cam.f) / z), 0, Math.PI * 2); g.fill();
+    }
+  }
+  return near;
+}
+function sky(hz, a = '#02030a', b = '#0b1426', c = '22,40,70') {
+  const sg = g.createLinearGradient(0, 0, 0, hz);
+  sg.addColorStop(0, a); sg.addColorStop(1, b); g.fillStyle = sg; g.fillRect(0, 0, W, hz + 4);
+  glow(W / 2, hz, 700, c, 0.45);
+  for (let i = 0; i < 70; i++) {
+    const x = hash(i * 3.1) * W, y = hash(i * 7.7) * hz * 0.85, r = hash(i) * 1.6 + 0.4;
+    g.fillStyle = `rgba(255,255,255,${0.15 + hash(i * 1.9) * 0.4})`; g.fillRect(x, y, r, r);
+  }
+}
+
+// ---------- 1. TITLE ----------
+function sTitle(t) {
+  g.fillStyle = '#000'; g.fillRect(0, 0, W, H);
+  // a pair of headlights far away, slowly approaching
+  const k = prog(t, 0, 3.2), hx = 540, hy = 1520;
+  for (const s of [-1, 1]) glow(hx + s * (14 + k * 30), hy, 60 + k * 160, '210,225,255', 0.25 + k * 0.4);
+  const on = t > 0.45 && !(t > 0.62 && t < 0.7) && !(t > 0.82 && t < 0.86);
+  if (on) {
+    const sc = 1 + prog(t, 0.45, 3.2) * 0.06;
+    g.save(); g.translate(540, 900); g.scale(sc, sc);
+    g.shadowColor = 'rgba(255,40,30,.75)'; g.shadowBlur = 60;
+    txt('NO BRAKES', 0, 0, { font: 'Anton', w: 400, size: 230, color: '#ff2a1f', ls: 4, base: 'middle' });
+    g.restore();
+  }
+  txt('STARRING', 540, 1060, { w: 300, size: 30, ls: 14, alpha: eOut(prog(t, 1.25, 1.7)), color: '#cfcfcf' });
+  txt('DARIO', 540, 1132, { font: 'Anton', w: 400, size: 74, ls: 10, alpha: eOut(prog(t, 1.45, 1.9)) });
+  txt('a short film about the intelligence explosion', 540, 1250, { font: 'Playfair', w: 500, style: 'italic', size: 38, color: '#9a9a9a', alpha: eOut(prog(t, 2.0, 2.5)) });
+  vignette(0.5);
+}
+
+// ---------- 2. CAR, FRONT (camera tracks backwards ahead of the car) ----------
+const WS = [[300, 575], [780, 575], [935, 990], [145, 990]]; // windshield
+function carFront(t, lt, o) {
+  const { D, zoom = 1, shake = 0, tense = 0, sweat = 0, beams = 1 } = o;
+  const cam = { vx: 540, hz: 700, f: 900, h: 1.5 };
+  g.save();
+  const sx = noise(t * 23) * shake, sy = noise(t * 29 + 9) * shake;
+  g.translate(680 + sx, 760 + sy); g.scale(zoom, zoom); g.translate(-680, -760);
+  sky(cam.hz);
+  road(cam, D, -1);
+  const strobe = streetlights(cam, D, -1);
+  // body
+  g.save();
+  g.shadowColor = 'rgba(0,0,0,.8)'; g.shadowBlur = 60;
+  const bg = g.createLinearGradient(0, 560, 0, 1500);
+  bg.addColorStop(0, '#22262d'); bg.addColorStop(0.45, '#14171c'); bg.addColorStop(1, '#090a0c');
+  g.fillStyle = bg; g.beginPath();
+  g.moveTo(290, 555); g.quadraticCurveTo(540, 535, 790, 555);
+  g.lineTo(950, 985); g.lineTo(1005, 1170); g.quadraticCurveTo(1030, 1300, 1012, 1430);
+  g.lineTo(68, 1430); g.quadraticCurveTo(50, 1300, 75, 1170); g.lineTo(130, 985); g.closePath(); g.fill();
+  g.restore();
+  // tyres
+  g.fillStyle = '#050506'; g.beginPath(); g.roundRect(80, 1380, 150, 120, 20); g.roundRect(850, 1380, 150, 120, 20); g.fill();
+  // mirrors
+  g.fillStyle = '#121418';
+  g.beginPath(); g.moveTo(140, 900); g.lineTo(40, 880); g.quadraticCurveTo(20, 935, 60, 960); g.lineTo(150, 955); g.fill();
+  g.beginPath(); g.moveTo(940, 900); g.lineTo(1040, 880); g.quadraticCurveTo(1060, 935, 1020, 960); g.lineTo(930, 955); g.fill();
+  // cabin
+  g.save();
+  g.beginPath(); g.moveTo(...WS[0]); WS.slice(1).forEach((p) => g.lineTo(...p)); g.closePath(); g.clip();
+  g.fillStyle = '#05070b'; g.fillRect(0, 500, W, 600);
+  // passenger headrest (empty seat)
+  g.fillStyle = '#0d1016'; g.beginPath(); g.roundRect(330, 720, 120, 150, 40); g.fill();
+  g.fillRect(360, 860, 60, 140);
+  // the driver
+  const fig = darioFig({ tense, sweat, look: noise(t * 0.7) * 0.6, blink: hash(Math.floor(t * 2.3)) > 0.86 && fract(t * 2.3) < 0.15 ? 1 : 0,
+    dash: 0.75, warm: strobe, night: 0.28 });
+  const sc = 0.8, cx = 680, cy = 722;
+  g.drawImage(fig, cx - FO.x * sc, cy - FO.y * sc, F.width * sc, F.height * sc);
+  // dash glow
+  const dg = g.createLinearGradient(0, 990, 0, 880);
+  dg.addColorStop(0, 'rgba(60,140,255,.35)'); dg.addColorStop(1, 'rgba(60,140,255,0)');
+  g.fillStyle = dg; g.fillRect(0, 880, W, 110);
+  // glass: sheen + travelling reflection of streetlights
+  const gl = g.createLinearGradient(300, 575, 700, 990);
+  gl.addColorStop(0, 'rgba(160,190,230,.16)'); gl.addColorStop(0.5, 'rgba(160,190,230,.03)'); gl.addColorStop(1, 'rgba(160,190,230,.10)');
+  g.fillStyle = gl; g.fillRect(0, 500, W, 600);
+  const ph = fract(D / 36 + 0.15), rx = lerp(-200, 1200, ph), ra = Math.sin(ph * Math.PI) * 0.22;
+  g.fillStyle = `rgba(255,214,170,${ra})`;
+  g.beginPath(); g.moveTo(rx, 560); g.lineTo(rx + 90, 560); g.lineTo(rx - 160, 1000); g.lineTo(rx - 250, 1000); g.fill();
+  g.restore();
+  // pillars + roof edge
+  g.strokeStyle = '#0a0b0d'; g.lineWidth = 26; g.lineJoin = 'round';
+  g.beginPath(); g.moveTo(...WS[3]); g.lineTo(...WS[0]); g.lineTo(...WS[1]); g.lineTo(...WS[2]); g.stroke();
+  g.strokeStyle = 'rgba(255,255,255,.08)'; g.lineWidth = 3;
+  g.beginPath(); g.moveTo(290, 548); g.quadraticCurveTo(540, 528, 790, 548); g.stroke();
+  // hood crease highlights
+  g.strokeStyle = 'rgba(200,215,240,.10)'; g.lineWidth = 4;
+  g.beginPath(); g.moveTo(330, 1000); g.lineTo(260, 1180); g.moveTo(750, 1000); g.lineTo(820, 1180); g.stroke();
+  // grille
+  g.fillStyle = '#060607'; g.beginPath(); g.roundRect(370, 1240, 340, 140, 30); g.fill();
+  g.strokeStyle = '#1b1d22'; g.lineWidth = 4;
+  for (let i = 0; i < 5; i++) { g.beginPath(); g.moveTo(390, 1262 + i * 24); g.lineTo(690, 1262 + i * 24); g.stroke(); }
+  // headlights
+  for (const s of [-1, 1]) {
+    const hx = 540 + s * 305;
+    g.fillStyle = '#dfe9ff'; g.beginPath();
+    g.moveTo(hx - 120, 1215); g.lineTo(hx + 120, 1205); g.lineTo(hx + 105, 1280); g.lineTo(hx - 110, 1288); g.closePath(); g.fill();
+    g.save(); g.globalCompositeOperation = 'lighter'; glow(hx, 1247, 220, '200,220,255', 0.7); g.restore();
+  }
+  g.restore(); // camera
+  // light that blooms into the lens (after the camera transform so it stays huge)
+  g.save(); g.globalCompositeOperation = 'lighter';
+  for (const s of [-1, 1]) {
+    const hx = 680 + (540 + s * 305 - 680) * zoom, hy = 760 + (1245 - 760) * zoom;
+    glow(hx, hy, 380 * beams, '210,225,255', 0.55 * beams);
+  }
+  g.fillStyle = `rgba(150,190,255,${0.10 * beams})`; g.beginPath(); g.ellipse(540, 760 + 485 * zoom, 700, 10, 0, 0, Math.PI * 2); g.fill();
+  g.restore();
+  return strobe;
+}
+function distCar(lt) { return 26 * lt + 2.0 * lt * lt; }
+function sCar(t) {
+  const lt = t - T.car;
+  carFront(t, lt, { D: distCar(lt), zoom: 1 + lt * 0.018, shake: 2 + lt * 0.6, tense: 0.1 });
+  // name tag
+  const a = eOut(prog(t, 3.7, 4.1)) * (1 - prog(t, 5.4, 5.7));
+  if (a > 0) {
+    g.save(); g.globalAlpha = a;
+    g.strokeStyle = '#fff'; g.lineWidth = 3; g.beginPath(); g.moveTo(760, 640); g.lineTo(860, 470); g.lineTo(980, 470); g.stroke();
+    g.restore();
+    txt('DARIO', 870, 455, { font: 'Anton', w: 400, size: 64, align: 'left', ls: 3, alpha: a, shadow: 20 });
+    txt('THE DRIVER', 872, 505, { w: 500, size: 24, align: 'left', ls: 6, alpha: a, shadow: 20, color: '#ddd' });
+  }
+  caption(t, 3.5, 5.6, 'October 2026. Opus 5.5 just shipped.');
+  caption(t, 5.75, 7.95, 'The models now improve faster than anyone can check them.');
+  vignette(0.55);
+}
+
+// ---------- 3. GAUGE ----------
+const GK = [[8.0, 0.06], [8.55, 0.2], [9.25, 0.34], [9.85, 0.48], [10.35, 0.61], [10.75, 0.73], [11.1, 0.835], [11.5, 0.93], [11.85, 1.0], [13.0, 1.03]];
+function needle(t) {
+  for (let i = GK.length - 2; i >= 0; i--) {
+    const [ta, va] = GK[i], [tb, vb] = GK[i + 1];
+    if (t >= ta) return lerp(va, vb, backOut(clamp((t - ta) / Math.min(0.35, tb - ta))));
+  }
+  return GK[0][1];
+}
+window.GAUGE_STEPS = GK.slice(1, -1).map((k) => k[0]);
+function sGauge(t) {
+  const lt = t - T.gauge, v = needle(t), red = clamp((v - 0.83) / 0.17);
+  const C = [540, 960], R = 430, A = (x) => Math.PI * 0.75 + x * Math.PI * 1.5;
+  const shake = red * 9;
+  g.save(); g.translate(noise(t * 31) * shake, noise(t * 37 + 3) * shake);
+  // dashboard
+  const bg = g.createRadialGradient(540, 960, 100, 540, 960, 1100);
+  bg.addColorStop(0, '#11151c'); bg.addColorStop(1, '#030405'); g.fillStyle = bg; g.fillRect(-40, -40, W + 80, H + 80);
+  g.strokeStyle = 'rgba(255,255,255,.025)'; g.lineWidth = 2;
+  for (let y = -40; y < H + 40; y += 9) { g.beginPath(); g.moveTo(-40, y); g.lineTo(W + 40, y + 30); g.stroke(); }
+  // bezel
+  g.lineWidth = 34; g.strokeStyle = '#1b1f26'; g.beginPath(); g.arc(...C, R + 30, 0, Math.PI * 2); g.stroke();
+  g.lineWidth = 3; g.strokeStyle = 'rgba(255,255,255,.18)'; g.beginPath(); g.arc(...C, R + 47, Math.PI * 1.1, Math.PI * 1.7); g.stroke();
+  const face = g.createRadialGradient(...C, 40, ...C, R + 10);
+  face.addColorStop(0, '#0b0f15'); face.addColorStop(1, '#05070a'); g.fillStyle = face; g.beginPath(); g.arc(...C, R + 12, 0, Math.PI * 2); g.fill();
+  // red zone
+  g.save(); g.shadowColor = `rgba(255,40,30,${0.6 + red * 0.4})`; g.shadowBlur = 30 + red * 50;
+  g.strokeStyle = `rgba(255,${50 - red * 20},35,${0.75 + 0.25 * Math.abs(Math.sin(t * 18)) * red})`; g.lineWidth = 26;
+  g.beginPath(); g.arc(...C, R - 22, A(0.85), A(1.0)); g.stroke(); g.restore();
+  // ticks
+  for (let i = 0; i <= 60; i++) {
+    const x = i / 60, a = A(x), major = i % 10 === 0, len = major ? 46 : 22;
+    g.strokeStyle = x >= 0.85 ? '#ff5a4a' : 'rgba(225,235,255,.85)'; g.lineWidth = major ? 7 : 3;
+    g.beginPath(); g.moveTo(C[0] + Math.cos(a) * (R - 6), C[1] + Math.sin(a) * (R - 6));
+    g.lineTo(C[0] + Math.cos(a) * (R - 6 - len), C[1] + Math.sin(a) * (R - 6 - len)); g.stroke();
+  }
+  const labels = ['2020', '2022', '2023', '2024', '2025', '2026', '???'];
+  labels.forEach((s, i) => {
+    const x = i / 6, a = A(x), r = R - 105;
+    txt(s, C[0] + Math.cos(a) * r, C[1] + Math.sin(a) * r, { font: 'Anton', w: 400, size: i === 6 ? 64 : 46, base: 'middle', color: i === 6 ? '#ff4a3a' : '#dbe6ff', ls: 1 });
+  });
+  txt('CAPABILITY', C[0], C[1] - 150, { w: 500, size: 30, ls: 12, color: 'rgba(200,215,240,.7)' });
+  // readout
+  const val = Math.pow(10, -1.5 + v * 4.2);
+  const read = v > 0.99 ? (fract(t * 6) < 0.5 ? 'ERR' : '----') : val < 10 ? val.toFixed(2) : val < 1000 ? val.toFixed(0) : Math.round(val).toLocaleString('en-US');
+  g.fillStyle = '#020304'; g.beginPath(); g.roundRect(C[0] - 150, C[1] + 150, 300, 104, 14); g.fill();
+  g.strokeStyle = 'rgba(255,255,255,.1)'; g.lineWidth = 2; g.stroke();
+  txt(read, C[0], C[1] + 204, { font: 'Anton', w: 400, size: 70, base: 'middle', color: red > 0.2 ? '#ff4a3a' : '#7fd0ff', ls: 2 });
+  txt('INDEX', C[0], C[1] + 290, { w: 500, size: 22, ls: 8, color: 'rgba(200,215,240,.5)' });
+  // needle
+  const na = A(Math.min(v, 1.03)) + (red > 0.9 ? noise(t * 40) * 0.02 : 0);
+  g.save(); g.translate(...C); g.rotate(na);
+  g.shadowColor = 'rgba(255,80,40,.9)'; g.shadowBlur = 30;
+  g.fillStyle = '#ff3b26'; g.beginPath(); g.moveTo(-40, -9); g.lineTo(R - 30, -2); g.lineTo(R - 30, 2); g.lineTo(-40, 9); g.closePath(); g.fill();
+  g.restore();
+  g.fillStyle = '#1d2128'; g.beginPath(); g.arc(...C, 44, 0, Math.PI * 2); g.fill();
+  g.fillStyle = '#0a0c10'; g.beginPath(); g.arc(...C, 26, 0, Math.PI * 2); g.fill();
+  // "you are here" tag at 2026
+  const ta = eOut(prog(t, 11.1, 11.4));
+  if (ta > 0) {
+    const a = A(0.835), px = C[0] + Math.cos(a) * (R + 52), py = C[1] + Math.sin(a) * (R + 52);
+    g.save(); g.globalAlpha = ta; g.strokeStyle = '#fff'; g.lineWidth = 3;
+    g.beginPath(); g.moveTo(px, py); g.lineTo(px + 20, py + 30); g.lineTo(px + 20, 1450); g.stroke(); g.restore();
+    txt('YOU ARE HERE', 1044, 1500, { font: 'Anton', w: 400, size: 50, align: 'right', ls: 2, alpha: ta });
+    txt('OPUS 5.5', 1044, 1544, { w: 600, size: 26, align: 'right', ls: 6, alpha: ta, color: '#bbb' });
+  }
+  g.restore();
+  glow(540, 960, 1100, '255,30,20', red * 0.22 * (0.7 + 0.3 * Math.sin(t * 16)));
+  caption(t, 8.25, 10.9, 'Every release comes faster than the last.', { y: 1700 });
+  caption(t, 11.65, 12.95, 'Nobody knows where the redline is.', { y: 1700 });
+  vignette(0.7);
+  flash(t, T.gauge, 0.1);
+}
+
+// ---------- 4. PEDALS ----------
+function footPos(t) {
+  // keyframes: [t, x, y, press]
+  const K = [[13.0, 720, 1030, 1], [14.7, 720, 1030, 1], [15.1, 560, 920, 0], [15.45, 330, 950, 0],
+    [15.62, 330, 1170, 0], [15.85, 330, 990, 0], [16.05, 330, 1180, 0], [16.35, 330, 1000, 0],
+    [16.9, 330, 990, 0], [17.5, 600, 930, 0], [17.9, 720, 1030, 1], [18.5, 720, 1030, 1]];
+  for (let i = K.length - 2; i >= 0; i--) {
+    if (t >= K[i][0]) {
+      const [ta, xa, ya, pa] = K[i], [tb, xb, yb, pb] = K[i + 1], k = eIO(clamp((t - ta) / (tb - ta)));
+      return [lerp(xa, xb, k), lerp(ya, yb, k), lerp(pa, pb, k)];
+    }
+  }
+  return [K[0][1], K[0][2], 1];
+}
+window.STOMPS = [15.62, 16.05];
+function sPedals(t) {
+  const [fx, fy] = footPos(t), vib = 3.5;
+  g.save(); g.translate(noise(t * 33) * vib, noise(t * 41 + 2) * vib);
+  // footwell
+  const bg = g.createLinearGradient(0, 0, 0, H);
+  bg.addColorStop(0, '#07080a'); bg.addColorStop(0.35, '#121418'); bg.addColorStop(1, '#0a0b0d');
+  g.fillStyle = bg; g.fillRect(-20, -20, W + 40, H + 40);
+  // floor mat ribs
+  g.strokeStyle = 'rgba(255,255,255,.035)'; g.lineWidth = 6;
+  for (let i = 0; i < 26; i++) { const y = 1180 + i * i * 1.3 + i * 10; g.beginPath(); g.moveTo(-20, y); g.lineTo(W + 20, y); g.stroke(); }
+  // footwell light
+  glow(540, 380, 900, '255,220,180', 0.12);
+  // brake mount: bracket + empty bolt holes + cut-off arm + dangling wire
+  const bx = 330;
+  g.fillStyle = '#23262c'; g.beginPath(); g.roundRect(bx - 80, 560, 160, 120, 10); g.fill();
+  g.fillStyle = '#050506'; for (const dx of [-42, 42]) { g.beginPath(); g.arc(bx + dx, 620, 15, 0, Math.PI * 2); g.fill(); }
+  g.fillStyle = '#30343b'; g.beginPath(); g.moveTo(bx - 18, 680); g.lineTo(bx + 18, 680); g.lineTo(bx + 22, 800); g.lineTo(bx - 14, 812); g.closePath(); g.fill();
+  g.strokeStyle = '#4a4f57'; g.lineWidth = 3; g.beginPath(); g.moveTo(bx - 16, 812); g.lineTo(bx - 4, 798); g.lineTo(bx + 6, 815); g.lineTo(bx + 22, 800); g.stroke();
+  const sway = Math.sin(t * 2.2) * 14;
+  g.strokeStyle = '#1a1a1a'; g.lineWidth = 9; g.lineCap = 'round';
+  g.beginPath(); g.moveTo(bx + 60, 680); g.bezierCurveTo(bx + 100, 800, bx + 40 + sway, 900, bx + 80 + sway, 960); g.stroke();
+  g.fillStyle = '#c87533'; g.beginPath(); g.arc(bx + 80 + sway, 966, 7, 0, Math.PI * 2); g.fill();
+  // sticky note
+  const flutter = (fy > 1100 && Math.abs(fx - bx) < 60 ? 0.12 : 0) + Math.sin(t * 3) * 0.02;
+  g.save(); g.translate(bx - 10, 900); g.rotate(-0.12 + flutter);
+  g.shadowColor = 'rgba(0,0,0,.6)'; g.shadowBlur = 20; g.shadowOffsetY = 8;
+  g.fillStyle = '#f5d74a'; g.fillRect(-120, -10, 240, 220); g.shadowColor = 'transparent';
+  g.fillStyle = 'rgba(0,0,0,.08)'; g.fillRect(-120, -10, 240, 34);
+  txt('TODO:', 0, 80, { font: 'Playfair', style: 'italic', w: 500, size: 52, color: '#2b2416' });
+  txt('brakes', 0, 150, { font: 'Playfair', style: 'italic', w: 500, size: 60, color: '#2b2416' });
+  g.restore();
+  // accelerator: stays floored even when the foot lifts off
+  const ax = 720, press = 1;
+  g.save(); g.translate(ax, 600);
+  g.fillStyle = '#26292f'; g.fillRect(-14, 0, 28, 230 + press * 20);
+  g.translate(0, 230 + press * 30); g.scale(1, 1 - press * 0.08);
+  const pg = g.createLinearGradient(-95, 0, 95, 0);
+  pg.addColorStop(0, '#3a3e45'); pg.addColorStop(0.5, '#8b919b'); pg.addColorStop(1, '#3a3e45');
+  g.fillStyle = pg; g.beginPath(); g.roundRect(-95, 0, 190, 430, 24); g.fill();
+  g.fillStyle = '#16181c'; for (let i = 0; i < 9; i++) { g.beginPath(); g.roundRect(-72, 34 + i * 42, 144, 18, 9); g.fill(); }
+  g.restore();
+  txt('THE RACE', ax, 1328, { font: 'Anton', w: 400, size: 44, ls: 4, color: '#ff4a3a', shadow: 14 });
+  // the shoe + trouser leg
+  g.save();
+  g.fillStyle = '#1c1f26';
+  g.beginPath(); g.moveTo(fx + 150, -40); g.lineTo(fx + 360, -40); g.lineTo(fx + 95, fy - 120); g.lineTo(fx - 85, fy - 160); g.closePath(); g.fill();
+  g.fillStyle = 'rgba(255,255,255,.04)'; g.beginPath(); g.moveTo(fx + 200, -40); g.lineTo(fx + 250, -40); g.lineTo(fx + 10, fy - 140); g.lineTo(fx - 30, fy - 150); g.fill();
+  g.shadowColor = 'rgba(0,0,0,.8)'; g.shadowBlur = 40; g.shadowOffsetY = 20;
+  g.fillStyle = '#121214'; g.beginPath(); g.ellipse(fx, fy, 100, 175, -0.08, 0, Math.PI * 2); g.fill();
+  g.shadowColor = 'transparent';
+  g.fillStyle = '#26272b'; g.beginPath(); g.ellipse(fx - 6, fy - 30, 74, 130, -0.08, 0, Math.PI * 2); g.fill();
+  g.strokeStyle = 'rgba(255,255,255,.18)'; g.lineWidth = 4; g.beginPath(); g.ellipse(fx, fy, 100, 175, -0.08, Math.PI * 1.05, Math.PI * 1.6); g.stroke();
+  g.fillStyle = '#e8e8e6'; g.beginPath(); g.ellipse(fx, fy + 140, 74, 26, -0.08, 0, Math.PI); g.fill();
+  g.restore();
+  g.restore();
+  // stomp impact
+  for (const s of window.STOMPS) {
+    const k = prog(t, s, s + 0.25);
+    if (t >= s && k < 1) {
+      g.strokeStyle = `rgba(255,255,255,${0.5 * (1 - k)})`; g.lineWidth = 5;
+      g.beginPath(); g.ellipse(330, 1320, 120 + k * 200, 30 + k * 50, 0, 0, Math.PI * 2); g.stroke();
+    }
+  }
+  caption(t, 13.15, 15.0, "He's spent years warning everyone about this.", { y: 1610 });
+  caption(t, 15.1, 16.8, 'He knows exactly where the brake should be.', { y: 1610 });
+  caption(t, 16.9, 18.45, "There's nothing there.", { y: 1610, size: 70 });
+  vignette(0.7);
+}
+
+// ---------- 5. MIRROR ----------
+const CHASERS = [
+  { x: -6.5, z0: 46, v: 6.5, label: 'OTHER LABS', dy: 1 },
+  { x: 0.4, z0: 58, v: 9.5, label: 'INVESTORS', dy: -1 },
+  { x: 6.8, z0: 52, v: 8.0, label: 'RIVAL STATES', dy: 1 },
+];
+function sMirror(t) {
+  const lt = t - T.mirror;
+  g.fillStyle = '#030406'; g.fillRect(0, 0, W, H);
+  // blurred road ahead through the windshield
+  g.save(); g.filter = 'blur(18px)';
+  const cam = { vx: 540, hz: 1180, f: 1000, h: 1.3 };
+  sky(cam.hz, '#010205', '#08101e');
+  road(cam, 40 * lt + 30, 1);
+  streetlights(cam, 40 * lt + 30, 1);
+  g.restore();
+  // headliner
+  const hl = g.createLinearGradient(0, 0, 0, 520); hl.addColorStop(0, '#0d0f13'); hl.addColorStop(1, '#07080b');
+  g.fillStyle = hl; g.beginPath(); g.moveTo(0, 0); g.lineTo(W, 0); g.lineTo(W, 440); g.quadraticCurveTo(540, 540, 0, 440); g.fill();
+  // mirror
+  const M = { x: 540, y: 780, w: 940, h: 400 };
+  g.fillStyle = '#0a0b0d'; g.fillRect(522, 380, 36, 260);
+  g.save(); g.shadowColor = 'rgba(0,0,0,.9)'; g.shadowBlur = 50;
+  g.fillStyle = '#121418'; g.beginPath(); g.roundRect(M.x - M.w / 2 - 22, M.y - M.h / 2 - 22, M.w + 44, M.h + 44, 60); g.fill(); g.restore();
+  g.save(); g.beginPath(); g.roundRect(M.x - M.w / 2, M.y - M.h / 2, M.w, M.h, 46); g.clip();
+  const mc = { vx: 540, hz: M.y - 60, f: 620, h: 1.2 };
+  g.fillStyle = '#04060b'; g.fillRect(0, M.y - M.h / 2, W, M.h);
+  glow(540, mc.hz, 500, '30,50,90', 0.5);
+  g.save(); g.beginPath(); g.rect(0, mc.hz, W, M.h); g.clip();
+  road(mc, 30 * lt, -1, { far: 300, near: 2 }); g.restore();
+  // chasing headlights, closing in
+  let glare = 0;
+  CHASERS.slice().sort((a, b) => (b.z0 - b.v * lt) - (a.z0 - a.v * lt)).forEach((c, i) => {
+    const z = Math.max(7, c.z0 - c.v * lt * (1 + lt * 0.1));
+    const hi = t > 21.6 && t < 22.4 && fract(t * 5) < 0.5 ? 1.8 : 1;
+    for (const s of [-1, 1]) {
+      const [x, y] = proj(mc, c.x + s * 0.8, 0.7, z);
+      g.save(); g.globalCompositeOperation = 'lighter';
+      glow(x, y, (5 * mc.f) / z * hi, '215,228,255', 0.75);
+      g.fillStyle = '#fff'; g.beginPath(); g.arc(x, y, Math.max(2, (0.18 * mc.f) / z), 0, Math.PI * 2); g.fill();
+      g.restore();
+    }
+    glare = Math.max(glare, clamp(8 / z) * hi);
+    const [lx, ly0] = proj(mc, c.x, 0.7, z), ly = ly0 + c.dy * (34 + 120 / z) + (c.dy > 0 ? 10 : 0);
+    const la = eOut(prog(t, 18.9 + i * 0.35, 19.3 + i * 0.35));
+    txt(c.label, lx, ly, { w: 600, size: 28, ls: 4, alpha: la, shadow: 14, base: 'middle' });
+  });
+  g.fillStyle = `rgba(220,230,255,${glare * 0.22})`; g.fillRect(0, 0, W, H);
+  // glass sheen
+  const sh = g.createLinearGradient(M.x - M.w / 2, M.y - M.h / 2, M.x + M.w / 2, M.y + M.h / 2);
+  sh.addColorStop(0, 'rgba(255,255,255,.08)'); sh.addColorStop(0.4, 'rgba(255,255,255,0)'); sh.addColorStop(0.42, 'rgba(255,255,255,.05)'); sh.addColorStop(1, 'rgba(255,255,255,0)');
+  g.fillStyle = sh; g.fillRect(0, 0, W, H);
+  g.restore();
+  g.strokeStyle = 'rgba(255,255,255,.1)'; g.lineWidth = 3; g.beginPath(); g.roundRect(M.x - M.w / 2, M.y - M.h / 2, M.w, M.h, 46); g.stroke();
+  txt('OBJECTS IN MIRROR ARE CLOSER THAN THEY APPEAR', 540, M.y + M.h / 2 - 22, { w: 500, size: 17, ls: 3, color: 'rgba(255,255,255,.45)' });
+  caption(t, 18.75, 20.85, 'Ease off, and someone less careful takes the lead.', { y: 1430 });
+  caption(t, 20.95, 22.95, 'So nobody eases off.', { y: 1430, size: 72 });
+  vignette(0.6);
+}
+
+// ---------- 6. ROAD AHEAD (driver POV) ----------
+function distRoad(lt) { return 12 * lt + 2.2 * lt * lt; }
+const GANTRIES = [
+  { s: 36, panels: [{ top: 'SUPERINTELLIGENCE', bot: '2 MI', arrow: '↑' }, { top: 'ALIGNMENT', bot: '340 MI', arrow: '↗' }] },
+  { s: 80, panels: [{ top: 'INTERPRETABILITY', bot: 'EXIT CLOSED', arrow: '✕', warn: true }] },
+  { s: 145, yellow: true, panels: [{ top: 'NO MAP BEYOND', bot: 'THIS POINT', arrow: '' }] },
+];
+window.SIGN_PASSES = GANTRIES.map((gt) => {
+  // solve 2.2lt^2 + 12lt - (s - 2) = 0 for the moment the gantry passes overhead
+  const c = gt.s - 2; return T.road + (-12 + Math.sqrt(144 + 8.8 * c)) / 4.4;
+});
+function gantry(cam, gt, z) {
+  if (z < 1.5 || z > 260) return;
+  const a = clamp(1.2 - z / 260);
+  const n = gt.panels.length, span = n === 2 ? 12 : 8, Y0 = 5.6, Y1 = 8.8;
+  // posts + beam
+  g.strokeStyle = `rgba(40,44,52,${a})`; g.lineWidth = Math.max(1, (0.35 * cam.f) / z);
+  for (const s of [-1, 1]) { const b = proj(cam, s * 8.2, 0, z), tp = proj(cam, s * 8.2, Y1 + 0.4, z); g.beginPath(); g.moveTo(...b); g.lineTo(...tp); g.stroke(); }
+  const [l, top] = proj(cam, -span / 2, Y1, z), [r, bot] = proj(cam, span / 2, Y0, z);
+  const pw = (r - l) / n;
+  gt.panels.forEach((p, i) => {
+    const x0 = l + i * pw + pw * 0.03, x1 = l + (i + 1) * pw - pw * 0.03, w = x1 - x0, h = bot - top;
+    g.fillStyle = gt.yellow ? `rgba(240,196,30,${a})` : p.warn ? `rgba(150,30,25,${a})` : `rgba(14,104,58,${a})`;
+    g.beginPath(); g.roundRect(x0, top, w, h, h * 0.06); g.fill();
+    g.strokeStyle = gt.yellow ? `rgba(20,20,20,${a})` : `rgba(255,255,255,${a})`; g.lineWidth = Math.max(1, h * 0.025);
+    g.beginPath(); g.roundRect(x0 + h * 0.05, top + h * 0.05, w - h * 0.1, h - h * 0.1, h * 0.05); g.stroke();
+    const col = gt.yellow ? '#141414' : '#fff', fs = h * (n === 2 ? 0.2 : 0.22);
+    txt(p.top, x0 + w / 2, top + h * 0.4, { w: 600, size: fs, color: col, base: 'middle', alpha: a, maxW: w * 0.86 });
+    txt((p.arrow ? p.arrow + '  ' : '') + p.bot, x0 + w / 2, top + h * 0.7, { w: 600, size: fs * 1.15, color: col, base: 'middle', alpha: a, maxW: w * 0.86 });
+  });
+  // illuminate on approach
+  glow(lerp(l, r, 0.5), bot, (r - l) * 0.5, '255,240,220', 0.05 * a);
+}
+function sRoad(t) {
+  const lt = t - T.road, D = distRoad(lt), spd = 12 + 4.4 * lt;
+  const fogK = eIn(prog(t, 26.0, 28.5)) * 0.85;
+  const shake = 2 + lt * 1.6;
+  const cam = { vx: 540 + noise(t * 0.8) * 10, hz: 820, f: 1000, h: 1.3 };
+  g.save(); g.translate(noise(t * 27) * shake, noise(t * 35 + 5) * shake);
+  sky(cam.hz, '#010206', '#0b1222', '60,70,90');
+  road(cam, D, 1, { far: lerp(420, 120, fogK) });
+  streetlights(cam, D, 1, lerp(400, 140, fogK));
+  // gantries (far first)
+  GANTRIES.map((gt) => ({ gt, z: gt.s - D })).sort((a, b) => b.z - a.z).forEach(({ gt, z }) => gantry(cam, gt, z));
+  // the fog swallowing the road
+  glow(540, cam.hz, 300 + fogK * 1500, '235,238,245', 0.25 + fogK * 0.85);
+  // speed streaks
+  g.save(); g.globalCompositeOperation = 'lighter';
+  for (let i = 0; i < 40; i++) {
+    const ang = hash(i * 1.7) * Math.PI * 2, ph = fract(hash(i * 3.3) + lt * (0.6 + spd / 40));
+    const r0 = 120 + ph * 900, r1 = r0 + 40 + ph * spd * 6;
+    g.strokeStyle = `rgba(255,255,255,${0.12 * ph * clamp(lt / 2)})`; g.lineWidth = 2;
+    g.beginPath(); g.moveTo(540 + Math.cos(ang) * r0, 820 + Math.sin(ang) * r0); g.lineTo(540 + Math.cos(ang) * r1, 820 + Math.sin(ang) * r1); g.stroke();
+  }
+  g.restore();
+  // dashboard + wheel silhouette + hands
+  g.fillStyle = '#040507'; g.beginPath(); g.moveTo(-40, 1500); g.quadraticCurveTo(540, 1420, W + 40, 1500); g.lineTo(W + 40, H + 40); g.lineTo(-40, H + 40); g.fill();
+  glow(540, 1560, 360, '60,140,255', 0.18);
+  g.lineWidth = 46; g.strokeStyle = '#0b0c0f';
+  g.beginPath(); g.ellipse(540, 1820, 470, 300, 0, Math.PI * 1.05, Math.PI * 1.95); g.stroke();
+  g.lineWidth = 3; g.strokeStyle = 'rgba(255,255,255,.08)';
+  g.beginPath(); g.ellipse(540, 1800, 470, 300, 0, Math.PI * 1.15, Math.PI * 1.85); g.stroke();
+  for (const s of [-1, 1]) {
+    const hx = 540 + s * 400, hy = 1600;
+    g.fillStyle = SKIN; g.beginPath(); g.ellipse(hx, hy, 62, 50, s * 0.5, 0, Math.PI * 2); g.fill();
+    g.fillStyle = 'rgba(4,8,20,.45)'; g.beginPath(); g.ellipse(hx, hy, 62, 50, s * 0.5, 0, Math.PI * 2); g.fill();
+    g.fillStyle = SWEATER; g.beginPath(); g.moveTo(hx + s * 10, hy + 30); g.lineTo(hx + s * 120, hy + 20); g.lineTo(hx + s * 200, H + 40); g.lineTo(hx - s * 30, H + 40); g.fill();
+  }
+  g.restore();
+  caption(t, 26.9, 28.45, "And nobody knows what's past the fog.", { y: 1330 });
+  const red = prog(t, 24, 28.5);
+  vignette(0.55 + red * 0.25, red > 0.4 ? '60,0,0' : '0,0,0');
+  flash(t, T.road, 0.1);
+}
+
+// ---------- 7. FACE (push in) ----------
+function sFace(t) {
+  const lt = t - T.face, D = distCar(9) + 70 * lt + 25 * lt * lt;
+  carFront(t, lt, { D, zoom: 2.25 + lt * 0.45, shake: 8 + lt * 10, tense: 1, sweat: 1, beams: 0.7 });
+  // lights flicking across the cabin faster and faster
+  g.fillStyle = `rgba(255,210,160,${0.18 * Math.max(0, Math.sin(t * (20 + lt * 18)))})`; g.fillRect(0, 0, W, H);
+  vignette(0.75, '30,0,0');
+  // white-out
+  const wo = eIn(prog(t, 30.1, 31.0));
+  g.fillStyle = `rgba(255,255,255,${wo})`; g.fillRect(0, 0, W, H);
+}
+
+// ---------- 8. BLACK ----------
+function sBlack(t) {
+  g.fillStyle = '#000'; g.fillRect(0, 0, W, H);
+  const beat = window.BEATS.reduce((m, b) => Math.max(m, t >= b ? Math.exp(-(t - b) * 7) : 0), 0);
+  const a1 = eOut(prog(t, 31.5, 32.0)), a2 = eOut(prog(t, 33.0, 33.5));
+  g.save(); g.translate(540, 900); g.scale(1 + beat * 0.012, 1 + beat * 0.012);
+  txt('Nobody has built', 0, -70, { w: 600, size: 76, alpha: a1, ls: -1 });
+  txt('the brakes.', 0, 22, { w: 600, size: 76, alpha: a1, ls: -1 });
+  g.restore();
+  txt('Not even the people', 540, 1120, { font: 'Playfair', style: 'italic', w: 500, size: 54, color: '#b5b5b5', alpha: a2 });
+  txt('who know we need them.', 540, 1190, { font: 'Playfair', style: 'italic', w: 500, size: 54, color: '#b5b5b5', alpha: a2 });
+  glow(540, 960, 900, '120,0,0', beat * 0.25);
+}
+window.BEATS = [31.35, 31.62, 32.35, 32.62, 33.35, 33.62, 34.3, 34.56];
+
+// ---------- 9. END CARD ----------
+function sEnd(t) {
+  g.fillStyle = '#000'; g.fillRect(0, 0, W, H);
+  const a = eOut(prog(t, T.end, T.end + 0.5));
+  const flick = t > 35.05 && t < 35.12 ? 0.3 : 1;
+  g.save(); g.translate(540, 860); const sc = 1 + prog(t, T.end, TOTAL) * 0.04; g.scale(sc, sc);
+  g.shadowColor = 'rgba(255,40,30,.6)'; g.shadowBlur = 50;
+  txt('NO BRAKES', 0, 0, { font: 'Anton', w: 400, size: 230, color: '#ff2a1f', ls: 4, base: 'middle', alpha: a * flick });
+  g.restore();
+  txt('STARRING DARIO', 540, 1040, { w: 500, size: 30, ls: 14, color: '#cfcfcf', alpha: eOut(prog(t, 35.5, 36.0)) });
+  const da = eOut(prog(t, 36.0, 36.5));
+  txt('Parody & commentary. A fictional, illustrated depiction of a public figure.', 540, 1720, { w: 300, size: 24, color: '#777', alpha: da });
+  txt('Not affiliated with or endorsed by Anthropic. No real quotes are depicted.', 540, 1758, { w: 300, size: 24, color: '#777', alpha: da });
+  vignette(0.4);
+}
+
+// ---------- timeline ----------
+function renderAt(t) {
+  g.setTransform(1, 0, 0, 1, 0, 0); g.globalAlpha = 1; g.globalCompositeOperation = 'source-over'; g.filter = 'none';
+  if (t < T.car) sTitle(t);
+  else if (t < T.gauge) sCar(t);
+  else if (t < T.pedals) sGauge(t);
+  else if (t < T.mirror) sPedals(t);
+  else if (t < T.road) sMirror(t);
+  else if (t < T.face) sRoad(t);
+  else if (t < T.black) sFace(t);
+  else if (t < T.end) sBlack(t);
+  else sEnd(t);
+  grain(t, t >= T.black ? 0.05 : 0.08);
+}
+window.renderAt = renderAt;
+
+if (new URLSearchParams(location.search).has('capture')) {
+  document.body.classList.add('capture');
+} else {
+  let t0 = performance.now();
+  cv.addEventListener('click', () => { t0 = performance.now(); });
+  const seek = parseFloat(new URLSearchParams(location.search).get('t') || '0');
+  document.fonts.ready.then(() => {
+    const loop = () => { renderAt((seek + (performance.now() - t0) / 1000) % TOTAL); requestAnimationFrame(loop); };
+    loop();
+  });
+}
+</script>
+</body>
+</html>
