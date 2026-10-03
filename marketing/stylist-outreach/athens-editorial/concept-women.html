@@ -1,0 +1,150 @@
+<title>Athens, As It Is</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=IBM+Plex+Sans+Condensed:wght@400;500&display=swap">
+<style>
+/* Layout: a film contact-book — each location is one spread: big frame left, two frames right, caption above. Single dark look by choice. */
+:root {
+  --ground: #0f0e0c;
+  --paper: #ece6dc;
+  --muted: #a39b8f;
+  --faint: #6d665d;
+  --rule: #2a2723;
+  --kiosk: #c9a36b;
+  --display: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  --label: 'IBM Plex Sans Condensed', 'Arial Narrow', system-ui, sans-serif;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { background: var(--ground); color: var(--paper); font-family: var(--label); margin: 0; padding-inline: 16px; }
+.wrap { max-width: 1120px; margin: 0 auto; padding-block: 48px 72px; display: grid; gap: 88px; }
+img { display: block; width: 100%; height: 100%; object-fit: cover; max-width: 100%; }
+.kicker { font-size: 12px; letter-spacing: .2em; text-transform: uppercase; color: var(--kiosk); }
+h1, h2 { font-family: var(--display); font-weight: 400; margin: 0; text-wrap: balance; }
+p { margin: 0; }
+
+.cover { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: 48px; align-items: center; }
+.cover .hero { aspect-ratio: 736 / 853; }
+.cover .txt { display: grid; gap: 22px; min-width: 0; }
+.cover h1 { font-size: clamp(52px, 8vw, 96px); line-height: .92; }
+.cover h1 em { color: var(--kiosk); }
+.cover .sub { font-family: var(--display); font-style: italic; font-size: 22px; color: var(--paper); }
+.cover p { font-size: 15px; line-height: 1.65; color: var(--muted); max-width: 58ch; }
+.by { font-size: 12px; letter-spacing: .14em; text-transform: uppercase; }
+.by span { color: var(--faint); }
+
+.spread { display: grid; gap: 20px; border-top: 1px solid var(--rule); padding-top: 28px; }
+.head { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr); gap: 32px; align-items: end; }
+.head h2 { font-size: clamp(36px, 5vw, 56px); line-height: 1; margin-top: 8px; }
+.head p { font-size: 15px; line-height: 1.6; color: var(--muted); max-width: 60ch; }
+.frames { display: grid; grid-template-columns: minmax(0, 1.5fr) repeat(3, minmax(0, 1fr)); gap: 12px; align-items: end; }
+.frames .f { aspect-ratio: 3 / 4; overflow: hidden; }
+.frames .f.big { aspect-ratio: 4 / 5; }
+.styling { font-size: 13px; line-height: 1.55; color: var(--paper); max-width: 70ch; }
+.styling b { font-weight: 500; color: var(--kiosk); letter-spacing: .12em; text-transform: uppercase; font-size: 11px; margin-right: 8px; }
+
+.plan { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1.2fr); gap: 16px; border-top: 1px solid var(--rule); padding-top: 28px; align-items: start; }
+.plan .f { aspect-ratio: 2 / 3; overflow: hidden; }
+.plan .info { display: grid; gap: 18px; min-width: 0; padding-left: 8px; }
+.plan h2 { font-size: clamp(36px, 5vw, 56px); line-height: 1; margin-top: 8px; }
+dl { margin: 0; display: grid; gap: 14px; }
+dt { font-size: 11px; letter-spacing: .2em; text-transform: uppercase; color: var(--kiosk); margin-bottom: 4px; }
+dd { margin: 0; font-size: 15px; line-height: 1.55; color: var(--paper); }
+.contact { font-size: 14px; line-height: 1.7; color: var(--muted); border-top: 1px solid var(--rule); padding-top: 14px; user-select: all; }
+.note { font-size: 12px; color: var(--faint); line-height: 1.6; max-width: 90ch; }
+
+@media (max-width: 760px) {
+  .wrap { gap: 64px; padding-block: 28px 56px; }
+  .cover, .head, .plan { grid-template-columns: minmax(0, 1fr); gap: 20px; }
+  .frames { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+  .frames .f.big { grid-column: 1 / -1; }
+  .frames .f:last-child { grid-column: 1 / -1; aspect-ratio: 4 / 3; }
+  .plan .info { padding-left: 0; }
+}
+</style>
+
+<main class="wrap">
+  <section class="cover">
+    <div class="hero"><img src="img/r27.jpg" alt="Model in a red lace slip on a scooter in a Naples street, a local man behind her"></div>
+    <div class="txt">
+      <div class="kicker">Editorial concept · Athens</div>
+      <h1>Athens,<br><em>as it is.</em></h1>
+      <div class="sub">The laiki, the periptero, the kafeneio, the port.</div>
+      <p>A women's fashion story set inside everyday Athens. Serious clothes in real places: lace, sequins, tailoring and brocade worn at the fruit stall, the kiosk, the bakery counter and the harbour wall, with the people who work there left in frame. Shot on 35mm film in natural light.</p>
+      <div class="by">Aidan Torrence <span>· aidantorrence.com · @madebyaidan</span></div>
+    </div>
+  </section>
+
+  <section class="spread">
+    <div class="head">
+      <div><div class="kicker">Laiki &amp; Monastiraki</div><h2>The market</h2></div>
+      <p>Neighbourhood street markets and the Monastiraki flea market. Crates, awnings, fruit, stall owners at work.</p>
+    </div>
+    <div class="frames">
+      <div class="f big"><img src="img/r03.jpg" alt="Model in a rust knit maxi dress and headwrap behind a fruit stall, a vendor beside her"></div>
+      <div class="f"><img src="img/r01.jpg" alt="Model in a sequin slip dress sitting on a crate at a produce market"></div>
+      <div class="f"><img src="img/r02.jpg" alt="Model in a red pleated ruffle dress at a banana cart with two vendors"></div>
+      <div class="f"><img src="img/r07.jpg" alt="Model in red patent boots and an oversized blazer by a market truck"></div>
+    </div>
+    <p class="styling"><b>Styling</b>Evening pieces in daylight. A sequin slip on a fruit crate, a pleated ruffle dress at the banana cart, red patent boots by the produce van. Loafers and kitten heels, never trainers.</p>
+  </section>
+
+  <section class="spread">
+    <div class="head">
+      <div><div class="kicker">Periptero &amp; kafeneio</div><h2>The regulars</h2></div>
+      <p>Kiosks, bakeries, souvlaki counters, old kafeneia with tavli boards. The owners and the old men stay in the picture.</p>
+    </div>
+    <div class="frames">
+      <div class="f big"><img src="img/r11.jpg" alt="Model in a yellow and black floral volume dress at a shop counter, old men leaning behind it"></div>
+      <div class="f"><img src="img/r10.jpg" alt="Model in clashing prints in a bakery beside the baker"></div>
+      <div class="f"><img src="img/r08.jpg" alt="Model in a tuxedo squeezed in among older men at a bar"></div>
+      <div class="f"><img src="img/r09.jpg" alt="Model in black velvet and jewels at a café table with a spritz"></div>
+    </div>
+    <p class="styling"><b>Styling</b>Volume and print against plastic chairs and steel counters. A floral ball dress at the shop counter, clashing prints in the bakery, a men’s tuxedo among the regulars, velvet and jewels at a café table.</p>
+  </section>
+
+  <section class="spread">
+    <div class="head">
+      <div><div class="kicker">Piraeus</div><h2>The port</h2></div>
+      <p>Ferries, fishing boats, men with lines off the harbour wall, rope and rust.</p>
+    </div>
+    <div class="frames">
+      <div class="f big"><img src="img/r20.jpg" alt="Model in a brocade maxi coat against a bridge railing among fishing rods"></div>
+      <div class="f"><img src="img/r22.jpg" alt="Model in a lace slip dress on a café chair at a seawall"></div>
+      <div class="f"><img src="img/r21.jpg" alt="Model in a white trench and printed skirt on a quay among local men"></div>
+      <div class="f"><img src="img/r17.jpg" alt="Model in a sculptural corset dress and wide gold hat on marina pilings"></div>
+    </div>
+    <p class="styling"><b>Styling</b>Couture against work. A brocade coat among fishing rods, a lace slip on a café chair at the sea wall, a white trench on the quay, a sculptural corset and wide hat on the pilings.</p>
+  </section>
+
+  <section class="spread">
+    <div class="head">
+      <div><div class="kicker">Exarchia, Psyrri, Kypseli</div><h2>The streets</h2></div>
+      <p>Back streets, dented cars, scooters, peeling walls and the neighbours on their doorsteps.</p>
+    </div>
+    <div class="frames">
+      <div class="f big"><img src="img/r29.jpg" alt="Model in a sheer black ruffle dress sitting beside an elderly woman wearing red flowers"></div>
+      <div class="f"><img src="img/r26.jpg" alt="Model in a leather trench in an alley by a parked car, locals on a bench"></div>
+      <div class="f"><img src="img/r23.jpg" alt="Model in a red cold-shoulder dress leaning on an old car"></div>
+      <div class="f"><img src="img/r05.jpg" alt="Model in a black embroidered coat beside market trucks"></div>
+    </div>
+    <p class="styling"><b>Styling</b>Black lace and leather, a red column dress against a dented car. Hair and make-up kept real; the clothes do the talking.</p>
+  </section>
+
+  <section class="plan">
+    <div class="f"><img src="img/r14.jpg" alt="Model in a black coat seated under a hand-painted fish shop sign"></div>
+    <div class="f"><img src="img/r28.jpg" alt="Model in a blue ruffled dress against a vintage turquoise car"></div>
+    <div class="info">
+      <div><div class="kicker">The plan</div><h2>The shoot</h2></div>
+      <dl>
+        <div><dt>Casting</dt><dd>Women, cast through Ace Models</dd></div>
+        <div><dt>Styling</dt><dd>Designer and vintage at full strength: lace, sequins, brocade, tailoring, leather. Greek vintage and flea-market finds as accents, never as the whole look.</dd></div>
+        <div><dt>Locations</dt><dd>A laiki, a periptero, a kafeneio, Piraeus, the back streets. Locals asked to stay in frame.</dd></div>
+        <div><dt>Camera</dt><dd>35mm film and digital, natural light</dd></div>
+        <div><dt>Dates</dt><dd>To set together with the stylist</dd></div>
+      </dl>
+      <div class="contact">Aidan Torrence<br>aidan.torrence@gmail.com<br>WhatsApp +49 175 8966210<br>aidantorrence.com · instagram.com/madebyaidan</div>
+    </div>
+  </section>
+
+  <p class="note">References for mood only. Credits: Anja Rubik for FT HTSI (styling Isabelle Kountoure) · Giedre Dukauskaite by Takay for Marie Claire US (styling Enrique Campos) · Julia van Os by Mariano Vivanco for Vogue Japan (styling Aurora Sansone) · Jamilla Hoogenboom by Adriano Russo for ELLE Italia (styling Monica Cufetti) · Loli Bahia by Juergen Teller for Harper's Bazaar France · Rianne van Rompaey by Juergen Teller for Vogue Paris (styling Aleksandra Woroniecka) · Kristin Drab by Stephanie Galea for Vogue Czech (styling Christopher Maul) · Kerrigan Clark by Élio Nogueira for Vogue Portugal (styling Sandra Benbaruk) · Lena Werner by Can Büyükkalkan for Vogue Turkey (styling İdil Ekinil Kocaaydın) · Maggie Maurer by Emma Tempest for Vogue Germany (styling Natasha Royt) · Mona Tougaard and Jean Campbell by Colin Dodgson for Vogue Italia (styling Francesca Burns) · Achok Majak by Mikael Jansson for Porter (styling Georges Cortina).</p>
+</main>
