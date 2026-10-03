@@ -89,6 +89,8 @@ const tile = (ph, l, t, w, h, pos = 'center 30%') => `<img src="${ph.src}" style
 const CITIES = {
   antalya: { name: 'Antalya', tr: { in: "Antalya'da", inAm: "Antalya'dayım" } },
   // trName: the Turkish spelling (dotted İ) used for the big name + badge when --lang=tr
+  // country: used by the about slide (defaults to Turkey); fr = French locatives for --lang=fr
+  paris: { name: 'Paris', country: { en: 'France', fr: 'en France' }, fr: { in: 'à Paris' } },
   istanbul: { name: 'Istanbul', trName: 'İstanbul', tr: { in: "İstanbul'da", inAm: "İstanbul'dayım" } },
   kas: {
     name: 'Kaş', tr: { in: "Kaş'ta", inAm: "Kaş'tayım" }, spots: ['Küçükçakıl and the little coves', 'the harbour at golden hour', 'the old town lanes'],
@@ -116,7 +118,7 @@ const COPY = {
     badge: 'FREE PHOTO SHOOT', hookTitle: 'Free Photo Shoot.', hookSub: 'Want photos like these? →',
     work: 'my recent work', about: 'about me',
     about1: "hi, i'm aidan — a photographer from the USA. for the past 3 years i've been traveling the world shooting film.",
-    about2: c => `right now i'm in Turkey, and i'm shooting in ${c.name}.`,
+    about2: c => `right now i'm in ${c.country?.en || 'Turkey'}, and i'm shooting in ${c.name}.`,
     about3: "if you're here, let's make something special.",
     nervous: 'never done this before?', nervousSub: "don't worry — i'll direct you through every frame.",
     proof: 'shot on 35mm film', casting: c => `now in ${c.name}`, castingSub: "it's totally free",
@@ -139,6 +141,21 @@ const COPY = {
     steps23: [['2', 'Planlayalım', 'Kısa bir sohbetle yeri, zamanı ve tarzı seçeriz.'], ['3', 'Çekelim', 'Yaklaşık bir saat. Her kareyi ben yönlendiririm.']],
     cta: { signup: ['Var mısın?', 'Aşağıdan kaydol.'], dm: ['ilgileniyorsan', 'DM at.'] /* lowercase: Caveat lacks a dotted capital İ */ },
     ctaLine: c => `${c.tr.in} sadece kısa bir süre kalacağım — hadi çekelim.`,
+  },
+  // fr: informal "tu" (IG DM register);   = the French non-breaking space before ? and :
+  fr: {
+    badge: 'SHOOTING PHOTO GRATUIT', hookTitle: 'Shooting photo gratuit', hookTitleSize: 70, hookSub: 'Envie de photos comme celles-ci ? →',
+    work: 'mes derniers travaux', about: 'à propos',
+    about1: "salut, moi c'est aidan — photographe américain. depuis 3 ans, je voyage à travers le monde et je photographie en argentique.",
+    about2: c => `en ce moment je suis ${c.country?.fr || 'en Turquie'}, et je fais des shootings ${c.fr.in}.`,
+    about3: "si tu es dans le coin, créons quelque chose de spécial.",
+    nervous: 'jamais posé·e avant ?', nervousSub: "pas d'inquiétude — je te guide à chaque photo.",
+    proof: 'shooté sur pellicule 35mm', casting: c => `en ce moment ${c.fr.in}`, castingSub: "c'est totalement gratuit",
+    how: 'comment ça marche',
+    steps: { signup: [['1', "Inscris-toi", 'Clique sur le lien ci-dessous — ça prend une minute.']], dm: [['1', 'Écris-moi', 'Envoie-moi un message sur Instagram — ça prend une minute.']] },
+    steps23: [['2', 'On organise', "Un petit échange pour choisir le lieu, l'heure et le style."], ['3', 'On shoote', 'Environ une heure. Je te guide à chaque photo.']],
+    cta: { signup: ['Ça te tente ?', 'Inscris-toi.'], dm: ['Ça te tente ?', 'Écris-moi.'] },
+    ctaLine: c => `Je ne suis ${c.fr.in} que pour peu de temps — shootons ensemble.`,
   },
 }
 
@@ -339,7 +356,7 @@ async function render() {
     const suffix = lang === 'en' && cta === 'signup' ? '' : `-${lang}-${cta}`
     // variant o mirrors the existing naming: output-<city>[-tr]-story-v2i[-dm]/<city>/
     const dir = variant === 'o'
-      ? path.join(__dirname, `output-${slug}${lang === 'tr' ? '-tr' : ''}-story-v2i${cta === 'dm' ? '-dm' : ''}${TAG}`, slug)
+      ? path.join(__dirname, `output-${slug}${lang === 'en' ? '' : `-${lang}`}-story-v2i${cta === 'dm' ? '-dm' : ''}${TAG}`, slug)
       : path.join(__dirname, 'output-coast-story-v2i', `${slug}-${variant}${suffix}`)
     fs.mkdirSync(dir, { recursive: true })
     if (!ONLY) for (const f of fs.readdirSync(dir)) if (f.toLowerCase().endsWith('.jpg')) fs.rmSync(path.join(dir, f))
