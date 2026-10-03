@@ -1,0 +1,190 @@
+<title>Athens, As It Is</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=IBM+Plex+Sans+Condensed:wght@400;500&display=swap">
+<style>
+/* Layout: a contact book of working Athens — each place is one spread: caption row, then one large frame and three smaller ones. Single dark look by choice. */
+:root {
+  --ground: #0f0e0c;
+  --paper: #ece6dc;
+  --muted: #a39b8f;
+  --faint: #6d665d;
+  --rule: #2a2723;
+  --kiosk: #d2a45c;
+  --display: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  --label: 'IBM Plex Sans Condensed', 'Arial Narrow', system-ui, sans-serif;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { background: var(--ground); color: var(--paper); font-family: var(--label); margin: 0; padding-inline: 16px; }
+.wrap { max-width: 1180px; margin: 0 auto; padding-block: 48px 72px; display: grid; gap: 88px; }
+img { display: block; width: 100%; height: 100%; object-fit: cover; max-width: 100%; }
+.kicker { font-size: 12px; letter-spacing: .2em; text-transform: uppercase; color: var(--kiosk); }
+h1, h2 { font-family: var(--display); font-weight: 400; margin: 0; text-wrap: balance; }
+p { margin: 0; }
+
+.cover { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: 48px; align-items: center; }
+.cover .hero { aspect-ratio: 736 / 976; }
+.cover .txt { display: grid; gap: 22px; min-width: 0; }
+.cover h1 { font-size: clamp(52px, 8vw, 100px); line-height: .92; }
+.cover h1 em { color: var(--kiosk); }
+.cover .sub { font-family: var(--display); font-style: italic; font-size: 22px; line-height: 1.35; }
+.cover p { font-size: 15px; line-height: 1.65; color: var(--muted); max-width: 58ch; }
+.by { font-size: 12px; letter-spacing: .14em; text-transform: uppercase; }
+.by span { color: var(--faint); }
+
+.spread { display: grid; gap: 20px; border-top: 1px solid var(--rule); padding-top: 28px; }
+.head { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr); gap: 32px; align-items: end; }
+.head h2 { font-size: clamp(36px, 5vw, 58px); line-height: 1; margin-top: 8px; }
+.head p { font-size: 15px; line-height: 1.6; color: var(--muted); max-width: 62ch; }
+.frames { display: grid; grid-template-columns: minmax(0, 1.5fr) repeat(3, minmax(0, 1fr)); gap: 12px; align-items: end; }
+.frames .f { aspect-ratio: 2 / 3; overflow: hidden; }
+.frames .f.big { aspect-ratio: 3 / 4; }
+.frames.three { grid-template-columns: minmax(0, 1.5fr) repeat(2, minmax(0, 1fr)); }
+
+.city .grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+.city figure { margin: 0; display: grid; gap: 8px; }
+.city figure div { aspect-ratio: 4 / 5; overflow: hidden; }
+.city figcaption { font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+
+.plan { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1.3fr); gap: 16px; border-top: 1px solid var(--rule); padding-top: 28px; align-items: start; }
+.plan .f { aspect-ratio: 2 / 3; overflow: hidden; }
+.plan .info { display: grid; gap: 18px; min-width: 0; padding-left: 8px; }
+.plan h2 { font-size: clamp(36px, 5vw, 58px); line-height: 1; margin-top: 8px; }
+dl { margin: 0; display: grid; gap: 14px; }
+dt { font-size: 11px; letter-spacing: .2em; text-transform: uppercase; color: var(--kiosk); margin-bottom: 4px; }
+dd { margin: 0; font-size: 15px; line-height: 1.55; }
+.contact { font-size: 14px; line-height: 1.7; color: var(--muted); border-top: 1px solid var(--rule); padding-top: 14px; user-select: all; }
+.note { font-size: 12px; color: var(--faint); line-height: 1.5; max-width: 70ch; }
+
+@media (max-width: 760px) {
+  .wrap { gap: 64px; padding-block: 28px 56px; }
+  .cover, .head, .plan { grid-template-columns: minmax(0, 1fr); gap: 20px; }
+  .frames, .frames.three { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+  .frames .f.big { grid-column: 1 / -1; }
+  .city .grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+  .plan .info { padding-left: 0; }
+}
+</style>
+
+<main class="wrap">
+  <section class="cover">
+    <div class="hero"><img src="refs/cover.jpg" alt="Model in a headscarf, layered coat, striped skirt and fishnets at a fruit stall"></div>
+    <div class="txt">
+      <div class="kicker">Editorial concept · Athens · 1–2 October 2026</div>
+      <h1>Athens,<br><em>as it is.</em></h1>
+      <div class="sub">The laiki, Varvakios, the periptero, the kafeneio, Piraeus, Omonia.</div>
+      <p>An editorial set inside the working city. The model is dressed at full fashion pitch and placed where nobody dresses up: fish counters, kiosks, kafeneia, the harbour at dawn, Omonia after dark. The people who work there stay in the frame. Shot on 35mm film in natural light.</p>
+      <div class="by">Aidan Torrence <span>· aidantorrence.com · @madebyaidan</span></div>
+    </div>
+  </section>
+
+  <section class="spread">
+    <div class="head">
+      <div><div class="kicker">Neighbourhood street markets</div><h2>The laiki</h2></div>
+      <p>Crates, awnings, weighing scales, vendors calling prices. Couture against produce: tulle, loud prints, red boots, a headscarf.</p>
+    </div>
+    <div class="frames">
+      <div class="f big"><img src="refs/l1.jpg" alt="Model in a tiered tulle gown between market crates"></div>
+      <div class="f"><img src="refs/l2.jpg" alt="Red-haired model in a printed dress and red boots at a produce stall"></div>
+      <div class="f"><img src="refs/l3.jpg" alt="Model in mixed patchwork prints beside a market vendor"></div>
+      <div class="f"><img src="refs/l4.jpg" alt="Model in a pink jacket and printed skirt by a market forklift"></div>
+    </div>
+  </section>
+
+  <section class="spread">
+    <div class="head">
+      <div><div class="kicker">Varvakios, the central market</div><h2>Meat &amp; fish</h2></div>
+      <p>Athens' central meat and fish hall. Fluorescent light, ice, hanging carcasses, butchers in white. Rubber, chainmail, pearls and knitwear against steel counters.</p>
+    </div>
+    <div class="frames">
+      <div class="f big"><img src="refs/v1.jpg" alt="Model in a red rubber coat and yellow gloves behind a counter of octopus"></div>
+      <div class="f"><img src="refs/v2.jpg" alt="Model in a chainmail apron among hanging carcasses"></div>
+      <div class="f"><img src="refs/v3.jpg" alt="Model in a yellow cardigan leaning over a counter of oysters and lobster"></div>
+      <div class="f"><img src="refs/v4.jpg" alt="Older model in red velvet holding a butcher's knife"></div>
+    </div>
+  </section>
+
+  <section class="spread">
+    <div class="head">
+      <div><div class="kicker">The kiosk on every corner</div><h2>The periptero</h2></div>
+      <p>Walls of newspapers, cigarettes and gum, the owner leaning out of the hatch. Tailoring, fur and print crouched among the racks.</p>
+    </div>
+    <div class="frames three">
+      <div class="f big"><img src="refs/k1.jpg" alt="Model in patterned layers in front of a lit newsstand"></div>
+      <div class="f"><img src="refs/k2.jpg" alt="Model in a cream trench crouching by a magazine rack"></div>
+      <div class="f"><img src="refs/c1.jpg" alt="An Athens periptero with old men sitting in front and a boy with an ice cream"></div>
+    </div>
+  </section>
+
+  <section class="spread">
+    <div class="head">
+      <div><div class="kicker">Greek coffee, tavli, the regulars</div><h2>The kafeneio</h2></div>
+      <p>Plastic chairs and the men who have sat there since morning. Lace, fur and silk at a table of regulars, and a yiayia next to the model.</p>
+    </div>
+    <div class="frames">
+      <div class="f big"><img src="refs/n1.jpg" alt="Black-and-white shot of a model in black lace among older men"></div>
+      <div class="f"><img src="refs/k3.jpg" alt="Model in a silk headscarf and fur coat at a café table"></div>
+      <div class="f"><img src="refs/k4.jpg" alt="Model in a red skirt at a café at night"></div>
+      <div class="f"><img src="refs/n2.jpg" alt="Elderly Greek woman in black sitting on a step beside a young model"></div>
+    </div>
+  </section>
+
+  <section class="spread">
+    <div class="head">
+      <div><div class="kicker">The harbour</div><h2>Piraeus</h2></div>
+      <p>Fishing boats, nets and folding chairs on the harbour wall. Wide hats, waders, heavy knits and trench coats among the fishermen.</p>
+    </div>
+    <div class="frames">
+      <div class="f big"><img src="refs/p1.jpg" alt="Model in a wide hat and long coat on a folding chair among fishermen"></div>
+      <div class="f"><img src="refs/p2.jpg" alt="Model in white among fishing boats with a fisherman mending nets"></div>
+      <div class="f"><img src="refs/p3.jpg" alt="Black-and-white shot of a model in a headscarf holding a fish"></div>
+      <div class="f"><img src="refs/p4.jpg" alt="Model in a striped knit and waders holding a fishing net"></div>
+    </div>
+  </section>
+
+  <section class="spread">
+    <div class="head">
+      <div><div class="kicker">After dark</div><h2>Omonia</h2></div>
+      <p>Metro platforms, stairwells, arcades and neon. Fur, leather and a red coat under street light.</p>
+    </div>
+    <div class="frames">
+      <div class="f big"><img src="refs/o1.jpg" alt="Model in a white fur coat on yellow stairs at night"></div>
+      <div class="f"><img src="refs/o2.jpg" alt="Model in a trench coat on an empty metro platform"></div>
+      <div class="f"><img src="refs/o3.jpg" alt="Model in black smoking on a street corner"></div>
+      <div class="f"><img src="refs/o4.jpg" alt="Model in a red coat against a dusk sky with birds"></div>
+    </div>
+  </section>
+
+  <section class="spread city">
+    <div class="head">
+      <div><div class="kicker">Where it happens</div><h2>The city</h2></div>
+      <p>The real places the story is set in.</p>
+    </div>
+    <div class="grid">
+      <figure><div><img src="refs/c2.jpg" alt="Kafeneio with a neon sign at night"></div><figcaption>Kafeneio</figcaption></figure>
+      <figure><div><img src="refs/c3.jpg" alt="Covered stoa arcade with neon shop signs"></div><figcaption>Stoa arcade</figcaption></figure>
+      <figure><div><img src="refs/c4.jpg" alt="Omonia metro station sign on tiled wall"></div><figcaption>Omonia metro</figcaption></figure>
+      <figure><div><img src="refs/c5.jpg" alt="Street nut seller with his green cart"></div><figcaption>Nut seller</figcaption></figure>
+      <figure><div><img src="refs/c6.jpg" alt="Old souvlaki counter with the owner in the hatch"></div><figcaption>Souvlaki counter</figcaption></figure>
+      <figure><div><img src="refs/c1.jpg" alt="Periptero with newspapers and old men sitting outside"></div><figcaption>Periptero</figcaption></figure>
+    </div>
+  </section>
+
+  <section class="plan">
+    <div class="f"><img src="refs/l2.jpg" alt="Red-haired model in a printed dress and red boots at a produce stall"></div>
+    <div class="f"><img src="refs/v1.jpg" alt="Model in a red rubber coat behind a counter of octopus"></div>
+    <div class="info">
+      <div><div class="kicker">The plan</div><h2>The shoot</h2></div>
+      <dl>
+        <div><dt>When</dt><dd>1–2 October 2026, Athens</dd></div>
+        <div><dt>Casting</dt><dd>Women from Ace Models</dd></div>
+        <div><dt>Styling</dt><dd>Full fashion in working places. Statement outerwear: fur, rubber, leather, sharp tailoring. Texture on texture: tulle, lace, knit, chainmail, silk. Accessories as character: headscarves, pearls, rubber gloves, fishnets, kitten heels on wet tiles. Greek labels, archive pieces and flea-market finds.</dd></div>
+        <div><dt>Hair &amp; make-up</dt><dd>Undone hair, bare skin, one strong lip.</dd></div>
+        <div><dt>Camera</dt><dd>35mm film and digital, natural and available street light. Concept built together with the stylist.</dd></div>
+      </dl>
+      <div class="contact">Aidan Torrence<br>aidan.torrence@gmail.com<br>WhatsApp +49 175 8966210<br>aidantorrence.com · instagram.com/madebyaidan</div>
+    </div>
+  </section>
+
+  <p class="note">Reference images are for mood and styling only.</p>
+</main>
