@@ -22,7 +22,8 @@ const logRows = fs.existsSync(LOG) ? fs.readFileSync(LOG, 'utf8').split('\n').fi
 const done = new Set(logRows.filter((r) => !r.dry && !['no_composer', 'error', 'no_message_button'].includes(r.status)).map((r) => r.handle));
 const order = { A: 0, B: 1, C: 2 };
 const targets = parseCSV(fs.readFileSync(path.join(DIR, 'tracker.csv'), 'utf8'))
-  .filter((r) => r.city === CITY && r.dm_text && /^@[a-z0-9._]{2,30}$/i.test(r.instagram.trim()))
+  // An unfilled [PLACEHOLDER] (e.g. [DATES]) means the draft is not approved yet: never send it.
+  .filter((r) => r.city === CITY && r.dm_text && !/\[[A-Z ]+\]/.test(r.dm_text) && /^@[a-z0-9._]{2,30}$/i.test(r.instagram.trim()))
   .map((r) => ({ name: r.name, handle: r.instagram.trim().slice(1).toLowerCase(), text: r.dm_text, pr: r.priority }))
   .filter((t) => !done.has(t.handle) && (!ONLY || t.handle === ONLY))
   .sort((a, b) => order[a.pr] - order[b.pr]);
