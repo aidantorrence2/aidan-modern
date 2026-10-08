@@ -14,6 +14,7 @@
 - New replies get a reply draft in-thread; bounces and auto-replies are reported once (Gmail label `Outreach NY-Miami/Handled`).
 - From 12 Oct, threads with no reply and no bounce get one short follow-up draft (label `Outreach NY-Miami/Follow-up drafted`).
 - Magazines: the follow-up asks for a pull letter. On 8 Oct, 40 magazine threads got a pull-letter follow-up draft early (`2026-10-08-pull-letter-followups.csv`, all labelled Follow-up drafted), so the 12 Oct step only covers stylists and any magazine added later.
+- `PULL-LETTERS.md` lists each magazine's pull-letter process, the 9 new pull-letter pitch drafts and 2 tailored follow-ups (IRK, BRICKS) waiting on the proposal PDF, and the proposal checklist.
 - A magazine that offers a pull letter, or asks for the concept or proposal to issue one, is IMPORTANT: notify Aidan straight away. Pull letters need a concept, moodboard, team list and shoot dates (see `RESEARCH.md`).
 - Every draft is checked for `google.com/url` before it is reported.
 
