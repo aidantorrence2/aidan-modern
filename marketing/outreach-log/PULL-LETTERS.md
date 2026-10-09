@@ -17,6 +17,7 @@ Each draft has an `[AIDAN: ...]` placeholder. Attach the PDF or fill in the deta
 | OBVIOUS | contribute@obviousmag.com | r6230400836785523737 | Card and ID on file. Short bio, 8+ looks from several designers, one PDF. Deadlines stop at 2022/23, so it may be inactive. |
 | The Imagista | hello@theimagista.com | r-6883627934966115873 | Self-serve LOR template once approved. Footer reads 2022, so it may be inactive. |
 | Polyester | hello@polyesterzine.com | r3206892809217771893 | Pitch deck as PDF or Google Drive, 10+ images, casting from underrepresented groups, no AI. Currently commissions for its members' platform. |
+| BLANC (added 9 Oct) | submit@blancmagazine.com | r-5426285383702878518 | Letter only if Blanc commissions the pitch. Replies within 4 weeks if interested, so pitch early. Loans confirmed by email with its editors. No fast fashion, vintage or stylist's own. Shandi Alexander has styled for Blanc. |
 
 Already-pitched threads, follow-ups rewritten to match each title's process:
 
@@ -32,8 +33,9 @@ The other 38 pull-letter follow-ups from 8 Oct are in `2026-10-08-pull-letter-fo
 - Form or portal only: No. 8 (free, Pull Letter Request form, $55 fee to withdraw after acceptance) and SUPERIOR (no open calls on Submittable).
 - Not eligible: Solstice (stylist must have 3+ Solstice credits) and Solis (needs a recommendation from a Solis print contributor).
 - Closed: The Laterals.
-- Paid: Flanelle ($16.99, members only), Foreign Look ($50), LO'AMMI ($10), Vanity Teen (paid package) and PAP (Premium membership).
-- No pull letters: BASIC, GMARO, Féroce, and LIVID (rarely).
+- Paid: Flanelle ($16.99, members only), Foreign Look ($50), LO'AMMI ($10), Vanity Teen (paid package), PAP (Premium membership), KODD (EUR 150), FRUK (online features charged) and Flawless (processing fee).
+- Inactive or defunct: Tantalum, Lone Wolf, Elegant, Jute, Svelto, Superhype.
+- No pull letters: BASIC, GMARO, Féroce, LIVID (rarely), Cool America, Luxia/Edith Mode, and finished-only titles (33, NFM, Imbued, LOAD, CHIC Miami, Fashion Journal AU, Purplehaze).
 
 ## Proposal PDF checklist
 
