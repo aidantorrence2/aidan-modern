@@ -8,7 +8,8 @@
     "start": "next start -p 5173",
     "lint": "next lint",
     "test:portfolio": "node scripts/check-portfolio-tiers.mjs",
-    "images": "python3 tools/process_images.py /Users/aidantorrence/Documents/selected"
+    "images": "python3 tools/process_images.py /Users/aidantorrence/Documents/selected",
+    "test:photographic-edit": "node scripts/check-photographic-edit.mjs"
   },
   "dependencies": {
     "@neondatabase/serverless": "^1.0.2",
