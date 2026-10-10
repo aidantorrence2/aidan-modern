@@ -1,0 +1,493 @@
+
+@font-face{
+  font-family: Inter;
+  src: url(/fonts/inter.woff2) format("woff2");
+  font-weight: 100 900;
+  font-display: swap
+}
+.portfolio{
+  font-family: Inter,Arial,Helvetica,sans-serif;
+  font-synthesis: none;
+  color: #eeeee6;
+  background: #0b1512;
+  color-scheme: dark;
+  scroll-behavior: smooth;
+  --edge: clamp(22px,5vw,100px)
+}
+.portfolio *{
+  box-sizing: border-box
+}
+:global(html):has(.portfolio),:global(body):has(.portfolio){
+  margin: 0
+}
+:global(body):has(.portfolio){
+  min-width: 280px
+}
+.portfolio a{
+  color: inherit;
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent
+}
+.portfolio button{
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent
+}
+.portfolio a:focus-visible,.portfolio button:focus-visible{
+  outline: 1px solid #ece8f5;
+  outline-offset: 7px
+}
+.portfolio ::selection{
+  color: #0b1512;
+  background: #ddd8e7
+}
+.skip{
+  position: fixed;
+  top: 12px;
+  left: 18px;
+  z-index: 100;
+  background: #eeeee6;
+  color: #0b1512;
+  padding: 12px;
+  transform: translateY(-180%)
+}
+.skip:focus{
+  transform: none
+}
+.masthead{
+  height: 66px;
+  position: fixed;
+  z-index: 10;
+  inset: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 30px;
+  gap: 20px;
+  background: #0b1512
+}
+.wordmark{
+  font-size: 19px;
+  letter-spacing: -.7px;
+  font-weight: 400;
+  white-space: nowrap
+}
+.masthead nav{
+  display: flex;
+  gap: 28px;
+  font-size: 12px
+}
+.masthead nav a{
+  padding: 12px 0
+}
+.masthead nav a:hover{
+  text-decoration: underline;
+  text-underline-offset: 5px
+}
+.sequence{
+  padding-top: 66px
+}
+.passage{
+  background: var(--ground,#0b1512);
+  padding: 0 var(--edge);
+  overflow: clip
+}
+.composition{
+  display: grid;
+  grid-template-columns: repeat(12,minmax(0,1fr));
+  column-gap: clamp(16px,3.5vw,64px);
+  align-items: start;
+  padding: 80px 0 120px;
+  margin: 0 auto;
+  max-width: 1660px
+}
+.photo{
+  margin: 0;
+  min-width: 0;
+  grid-column: 2/7
+}
+.photo:nth-child(2){
+  grid-column: 8/13;
+  padding-top: 19%
+}
+.photo-link{
+  display: block;
+  cursor: zoom-in;
+  outline-offset: 8px;
+  position: relative;
+  background: #16211c
+}
+.photo img{
+  display: block;
+  width: 100%;
+  height: auto
+}
+.photo-link:focus-visible{
+  outline: 1px solid #eee6ed
+}
+.composition.scale .photo:first-child{
+  grid-column: 1/8
+}
+.composition.scale .photo:nth-child(2){
+  grid-column: 9/13;
+  padding-top: 45%
+}
+.composition.counter .photo:first-child{
+  grid-column: 1/5;
+  padding-top: 28%
+}
+.composition.counter .photo:nth-child(2){
+  grid-column: 6/13;
+  padding-top: 0
+}
+.composition.equal .photo:first-child{
+  grid-column: 1/7
+}
+.composition.equal .photo:nth-child(2){
+  grid-column: 7/13;
+  padding-top: 0
+}
+.composition.quiet .photo:first-child{
+  grid-column: 3/8
+}
+.composition.quiet .photo:nth-child(2){
+  grid-column: 9/13;
+  padding-top: 45%
+}
+.composition.solo .photo{
+  grid-column: 3/10
+}
+.composition.landscape .photo{
+  grid-column: 1/13
+}
+.composition.triptych{
+  column-gap: 20px
+}
+.composition.triptych .photo{
+  grid-column: 1/5;
+  padding-top: 0
+}
+.composition.triptych .photo:nth-child(2){
+  grid-column: 5/9;
+  padding-top: 24%
+}
+.composition.triptych .photo:nth-child(3){
+  grid-column: 9/13;
+  padding-top: 48%
+}
+.passage:first-child .composition{
+  padding-top: 10px
+}
+.composition.opening{
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  gap: 20px;
+  width: min(100%,calc((100svh - 102px)*1.3375 + 20px));
+  padding-bottom: 100px
+}
+.composition.opening .photo:first-child,.composition.opening .photo:nth-child(2){
+  grid-column: auto;
+  padding: 0
+}
+.composition.opening.solo{
+  grid-template-columns: 1fr;
+  width: min(100%,calc((100svh - 102px)*.66875))
+}
+.composition.opening.landscape{
+  grid-template-columns: 1fr;
+  width: min(100%,calc((100svh - 102px)*1.4953271))
+}
+.sequence-end{
+  height: 80px;
+  background: #13151b;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center
+}
+.top-link{
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px
+}
+.top-link svg{
+  width: 20px;
+  height: 20px
+}
+.lightbox{
+  position: fixed;
+  inset: 0;
+  border: 0;
+  width: 100%;
+  height: 100%;
+  max-height: none;
+  max-width: none;
+  padding: 0;
+  margin: 0;
+  background: #0b100e;
+  color: #eeeee6;
+  overflow: hidden
+}
+.lightbox::backdrop{
+  background: #0b100e
+}
+.lightbox[open]{
+  display: grid;
+  grid-template-rows: 58px minmax(0,1fr) 62px
+}
+.viewer-top{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 24px;
+  font-size: 12px
+}
+.viewer-close{
+  display: grid;
+  place-items: center;
+  border: 0;
+  background: none;
+  padding: 12px;
+  color: inherit
+}
+.viewer-close svg{
+  width: 20px;
+  height: 20px
+}
+.viewer-stage{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 0;
+  position: relative;
+  padding: 0 60px
+}
+.viewer-stage img{
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain
+}
+.viewer-bottom{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+  font-size: 11px
+}
+.viewer-bottom button{
+  border: 0;
+  background: none;
+  padding: 12px;
+  color: inherit;
+  display: grid;
+  place-items: center
+}
+.viewer-bottom svg{
+  width: 22px;
+  height: 22px
+}
+.viewer-counter{
+  min-width: 55px;
+  text-align: center;
+  font-variant-numeric: tabular-nums
+}
+.viewer-error{
+  position: absolute;
+  inset: auto 15px 15px;
+  text-align: center;
+  padding: 10px;
+  background: #0b100e
+}
+.sr-only{
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0
+}
+.image-unavailable{
+  min-height: 200px
+}
+.image-unavailable:before{
+  content: 'Photograph unavailable';
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font-size: 12px
+}
+@media(min-width:1900px){
+.composition.opening{
+  max-width: 1450px
+}
+}
+@media(max-width:900px){
+.portfolio{
+  --edge: 24px
+}
+.composition{
+  padding: 55px 0 90px;
+  column-gap: 24px
+}
+.composition.scale .photo:first-child{
+  grid-column: 1/8
+}
+.composition.scale .photo:nth-child(2){
+  grid-column: 9/13
+}
+.composition.counter .photo:first-child{
+  grid-column: 1/6
+}
+.composition.counter .photo:nth-child(2){
+  grid-column: 7/13
+}
+.composition.quiet .photo:first-child{
+  grid-column: 1/7
+}
+.composition.quiet .photo:nth-child(2){
+  grid-column: 8/13
+}
+.composition.opening{
+  width: 100%;
+  gap: 18px
+}
+.composition.triptych{
+  column-gap: 14px
+}
+}
+@media(max-width:560px){
+.portfolio{
+  --edge: 16px
+}
+.masthead{
+  height: 58px;
+  padding: 0 16px;
+  gap: 10px
+}
+.wordmark{
+  font-size: 18px;
+  letter-spacing: -.65px
+}
+.masthead nav{
+  font-size: 11px;
+  gap: 19px
+}
+.sequence{
+  padding-top: 58px
+}
+.passage{
+  padding: 0 16px
+}
+.composition,.composition.opening{
+  display: block;
+  width: 100%;
+  padding: 36px 0 60px
+}
+.passage:first-child .composition{
+  padding-top: 0
+}
+.composition .photo,.composition .photo:nth-child(2),.composition .photo:nth-child(3){
+  width: 100%;
+  padding: 0;
+  margin: 0
+}
+.composition .photo+.photo{
+  margin-top: 36px
+}
+.composition.counter .photo:first-child,.composition.quiet .photo:first-child{
+  width: 88%;
+  margin-right: auto
+}
+.composition.scale .photo:nth-child(2),.composition.quiet .photo:nth-child(2){
+  width: 88%;
+  margin-left: auto
+}
+.composition.equal .photo,.composition.equal .photo:nth-child(2){
+  width: 100%
+}
+.composition.opening .photo,.composition.opening .photo:nth-child(2){
+  width: 100%;
+  margin-left: 0;
+  margin-right: 0
+}
+.composition.opening.solo,.composition.opening.landscape{
+  width: 100%
+}
+.composition.solo .photo{
+  width: 100%
+}
+.composition.landscape{
+  width: calc(100% + 32px);
+  margin-left: -16px
+}
+.composition.opening.landscape{
+  width: calc(100% + 32px)
+}
+.composition.triptych .photo:nth-child(2){
+  width: 88%;
+  margin-left: auto
+}
+.composition.triptych .photo:nth-child(3){
+  width: 100%
+}
+.composition.opening{
+  padding-bottom: 52px
+}
+.composition.opening .photo+.photo{
+  margin-top: 36px
+}
+.sequence-end{
+  height: 64px
+}
+.viewer-stage{
+  padding: 0 10px
+}
+.viewer-top{
+  padding: 8px 12px
+}
+.lightbox[open]{
+  grid-template-rows: 54px minmax(0,1fr) 68px
+}
+.viewer-bottom{
+  padding-bottom: env(safe-area-inset-bottom,0)
+}
+}
+@media(prefers-reduced-motion:reduce){
+.portfolio{
+  scroll-behavior: auto
+}
+.portfolio *,.portfolio *:before,.portfolio *:after{
+  animation: none!important;
+  transition: none!important
+}
+}
+/* Keep the approved photographic edit local to the homepage. Other routes keep their existing shell. */
+.portfolio {
+  line-height: normal;
+  min-height: 100%;
+}
+:global(html):has(.portfolio) {
+  background: #0b1512;
+  color-scheme: dark;
+  scroll-behavior: smooth;
+}
+:global(body):has(.portfolio) {
+  background: #0b1512;
+}
+:global(body):has(.portfolio) > :global(header), :global(body):has(.portfolio) > :global(footer) {
+  display: none;
+}
+@media(prefers-reduced-motion:reduce) {
+:global(html):has(.portfolio) {
+  scroll-behavior: auto;
+}
+}
+
