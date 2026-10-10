@@ -1,5 +1,13 @@
 # Outreach log
 
+## Current confirmed availability and collaboration terms — 10 October 2026
+
+- New York: 21–28 October 2026.
+- Miami: 30 October–3 November 2026, now confirmed. This replaces earlier wording that Miami dates were unconfirmed or only "later this autumn".
+- Stylist collaborations are unpaid.
+- No magazine pull letter or publication backing has been secured. Do not describe either as confirmed.
+- These current facts supersede older availability wording in historical notes and templates. Replies and follow-ups still require approval.
+
 ## Codex migration — 10 October 2026
 
 Execution now runs entirely in Codex/ChatGPT using native Gmail, Slack, GitHub and web tools. The original Claude session and both Claude stylist/magazine routines are paused; do not send execution back to Claude or create another routine. Other campaigns remain separate.
@@ -10,7 +18,7 @@ Native Gmail: create a draft, read its saved message and inspect all MIME text (
 
 Native Slack: use Aidan's verified self DM, user `U09KLN151B2`, channel `D09JB0X1DDM`. Check every historical approval thread in `slack-pings.csv`, including older replies. Post a reminder every run while approvals remain and post complete new/changed draft text in the thread. Generated summaries are not approvals. If a draft disappears without a sent message, record user removal and stop reminding; never delete or trash drafts.
 
-Only New York 21–28 October 2026 is confirmed. Miami remains later this autumn, exact dates unconfirmed. Concepts, stylist/team bookings, agency models, brands, locations and shoot days remain prospective. One accepting publication per exclusive story; flag conflicts before promising a story. The draft proposal PDF remains held until its missing inputs are supplied.
+New York 21–28 October 2026 and Miami 30 October–3 November 2026 are confirmed. Stylist collaborations are unpaid. Concepts, stylist/team bookings, agency models, brands, locations and shoot days remain prospective. One accepting publication per exclusive story; flag conflicts before promising a story. The draft proposal PDF remains held until its missing inputs are supplied.
 
 `2026-10-10-codex-intros-sent.csv` records five introductions sent by this Codex run, with source, draft, message and thread IDs. It separately records newly observed sends from another process for deduplication. The older sent logs remain intact. Shandi's reply was already sent on 9 October and has no outstanding draft; Galore was found sent in live Gmail on 10 October, so neither is a pending reminder.
 
@@ -28,7 +36,7 @@ Only New York 21–28 October 2026 is confirmed. Miami remains later this autumn
 
 - **Outreach is sent automatically.** A first email to a new contact (stylist intro, magazine intro, or a re-pitch to a new contact named in an auto-reply) is drafted, checked by reading the stored Gmail message for URLs/placeholders, then sent with the native send_draft tool, logged in a dated `*-intros-sent.csv`, and its `leads.csv` row set to `sent`. Exceptions stay as drafts: anything with an `[AIDAN: ...]` placeholder, and pull-letter pitches that need the proposal PDF (see `PULL-LETTERS.md`).
 - **Follow-ups and replies need approval.** They are drafted in-thread and listed in `approvals.csv` (status `pending`). Every run pings Aidan in his own Slack DM (user U09KLN151B2, verified as Aidan Torrence, aidan.torrence@gmail.com; DM channel D09JB0X1DDM) with the pending list and the full draft text in a thread reply, until each one is approved, sent or denied. Ping timestamps are logged in `slack-pings.csv`; Aidan replies in the ping thread.
-- Dates: New York 21–28 October 2026 (confirmed 10 Oct). Miami dates are not confirmed; never fill them in.
+- Dates: New York 21–28 October 2026 and Miami 30 October–3 November 2026 (confirmed 10 Oct). Use these dates in new outreach; collaboration with stylists is unpaid.
   - Approved: Aidan sends it himself, or explicitly approves the exact reviewed draft in this chat or an approval Slack thread; the run then sends it and sets `approved`.
   - Denied: Aidan says "deny …"/"skip …"; set `denied` and stop pinging for it. Never delete the draft.
   - A draft that disappears without being sent is recorded as `removed-by-user` and no longer reminded.
@@ -42,6 +50,6 @@ Only New York 21–28 October 2026 is confirmed. Miami remains later this autumn
 Follow-up templates (in-thread reply to the original, htmlBody only, greeting copied from the original):
 
 - Stylist, New York: `Hi {name},<br><br>Just following up on my note below. I'll be in New York 21–28 October putting together an editorial for magazine submission, and I'd still love to have you style it.<br><br>Would you be open to it?<br><br>Best,<br>Aidan`
-- Stylist, Miami: same, with "I'll be in Miami later this autumn".
+- Stylist, Miami: same, with "I'll be in Miami 30 October–3 November".
 - Magazine (pull letter), New York and Miami: `Hi {name},<br><br>Following up on my note below. I now have a stylist interested in both New York and Miami, and the New York shoot is planned for 21–28 October. If one of the stories suits {magazine}, could you provide a pull letter so the stylist can request samples from PR? I'll send the concept, moodboard and team details for you to review first.<br><br>Best,<br>Aidan`
-  For a single city, use "a New York stylist … the shoot for 21–28 October" or "a Miami stylist … the shoot for later this autumn", and "If the story suits {magazine}".
+  For a single city, use "a New York stylist … the shoot for 21–28 October" or "a Miami stylist … the shoot for 30 October–3 November", and "If the story suits {magazine}".

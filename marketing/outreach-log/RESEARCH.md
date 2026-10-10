@@ -1,5 +1,13 @@
 # Research component: NY + Miami stylists and magazines
 
+## Current confirmed availability and collaboration terms — 10 October 2026
+
+- New York: 21–28 October 2026.
+- Miami: 30 October–3 November 2026, now confirmed. This replaces earlier wording that Miami dates were unconfirmed or only "later this autumn".
+- Stylist collaborations are unpaid.
+- No magazine pull letter or publication backing has been secured. Do not describe either as confirmed.
+- These current facts supersede older availability wording in historical notes and templates. Replies and follow-ups still require approval.
+
 Runs every hour in Codex/ChatGPT, and on demand. Every run researches new contacts and sends all qualifying initial introductions found, independently of the approval backlog. The former six-hour cadence is superseded from 10 October 2026. Native Gmail, Slack, GitHub and web tools execute this work; both former Claude routines are paused. Pitches that require the unfinished proposal PDF stay held.
 
 ## Segments and end dates
@@ -29,10 +37,10 @@ A lead is skipped if its email, or the person or magazine name, already appears 
 Write the site as `aidantorrence<span>.com</span>` and Instagram as `@madebyaidan`. Read every saved draft using native Gmail read_email, checking all MIME bodies and quotes for http/https/www URLs, Google redirects, anchors and placeholders. Only initial introductions are automatically sent with send_draft; confirm the SENT result and record IDs. All replies and follow-ups need explicit approval.
 
 - Stylist, subject `Editorial for submission, New York` (or `Miami`):
-  `Hi {first},<br><br>I'm Aidan Torrence, an editorial photographer working on 35mm film and digital. I came across {credit}.<br><br>I'll be in New York 21–28 October and I'm putting together a womenswear editorial for magazine submission, aimed at titles like Schön!, STREETS and Lady Gunn. I'm asking the magazine for a pull letter before the shoot so you can request samples from PR. I'd love to have you style it. Happy to build the concept together and cast an agency model around it.<br><br>Would you be open to it?<br><br>My work: aidantorrence<span>.com</span> · @madebyaidan<br>Aidan Torrence · WhatsApp +49 175 8966210`
-  For Miami use "I'll be in Miami later this autumn". The pull-letter line was added on 9 Oct after Shandi Alexander said she would only commit once there is an LOR.
+  `Hi {first},<br><br>I'm Aidan Torrence, an editorial photographer working on 35mm film and digital. I came across {credit}.<br><br>I'll be in New York 21–28 October and I'm putting together an unpaid womenswear editorial collaboration for magazine submission, aimed at titles like Schön!, STREETS and Lady Gunn. I'm asking the magazine for a pull letter before the shoot so you can request samples from PR. I'd love to have you style it. Happy to build the concept together and cast an agency model around it.<br><br>Would you be open to it?<br><br>My work: aidantorrence<span>.com</span> · @madebyaidan<br>Aidan Torrence · WhatsApp +49 175 8966210`
+  For Miami use "I'll be in Miami 30 October–3 November". The pull-letter line was added on 9 Oct after Shandi Alexander said she would only commit once there is an LOR.
 - Magazine, subject `Editorial pitch: New York and Miami`:
-  `Hi {first or magazine team},<br><br>I'm Aidan Torrence, an editorial photographer working on 35mm film and digital. I'll be in New York 21–28 October 2026 and Miami later this autumn, developing separate womenswear stories. I'm speaking with stylists and planning agency casting; the concept and team are still to be confirmed.<br><br>Would you consider reviewing a concept and moodboard when ready, and could an approved proposal receive a commissioning or pull letter so a stylist can request PR samples? I'm seeking editorial consideration without a publication fee.<br><br>My work: aidantorrence<span>.com</span> · @madebyaidan<br><br>Best,<br>Aidan<br>WhatsApp +49 175 8966210`
+  `Hi {first or magazine team},<br><br>I'm Aidan Torrence, an editorial photographer working on 35mm film and digital. I'll be in New York 21–28 October 2026 and Miami 30 October–3 November 2026, developing separate womenswear stories. I'm speaking with stylists and planning agency casting; the concept and team are still to be confirmed.<br><br>Would you consider reviewing a concept and moodboard when ready, and could an approved proposal receive a commissioning or pull letter so a stylist can request PR samples? I'm seeking editorial consideration without a publication fee.<br><br>My work: aidantorrence<span>.com</span> · @madebyaidan<br><br>Best,<br>Aidan<br>WhatsApp +49 175 8966210`
   Tailor to the loaded primary policy. Do not promise publication, an attachment, a confirmed team, or exclusive rights to the same story at multiple accepting publications.
   If the magazine only takes finished stories, swap the question for "Would you consider the finished story once it's shot?". Portal-only magazines get no draft; list them in the report.
 
