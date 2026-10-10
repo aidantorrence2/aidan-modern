@@ -43,3 +43,4 @@ sent_utc,type,city,to,name,subject,gmail_thread_id,gmail_message_id,status
 2026-10-10,magazine,New York and Miami,hey@galoremag.com,Galore,Editorial pitch: New York and Miami,1a11c152da6e5339,,"not sent: blocked by permission check, draft r7787223929640839403 kept"
 2026-10-10,magazine,New York and Miami,sohrab@tankmagazine.com,Tank (Sohrab),Editorial pitch: New York and Miami,1a11c1540a35faf6,,"not sent: blocked by permission check, draft r4863235645598782324 kept"
 2026-10-10,magazine,New York and Miami,info@gmaromagazine.com,GMARO,Editorial pitch: New York and Miami,1a11a6f362132d6b,1a12551705b41978,sent
+2026-10-10,magazine,New York and Miami,submissions@overduemagazine.com,OVERDUE,Editorial pitch: New York and Miami,1a1257c80df404bf,1a1257c9570fa5e0,sent

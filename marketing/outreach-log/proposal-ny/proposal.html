@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>New York Editorial Proposal</title>
+<style>
+/* DRAFT pull-letter proposal, New York 21–28 Oct 2026. Every highlighted [TBC] must be filled before this goes to a magazine.
+   Format follows the Athens concept deck (dark film contact-book look). Rendered to PDF by render.sh. */
+@font-face { font-family: 'Cormorant Garamond'; font-style: normal; font-weight: 400; src: url(fonts/CormorantGaramond-normal-400.woff2) format('woff2'); }
+@font-face { font-family: 'Cormorant Garamond'; font-style: italic; font-weight: 400; src: url(fonts/CormorantGaramond-italic-400.woff2) format('woff2'); }
+@font-face { font-family: 'Inter'; font-style: normal; font-weight: 400; src: url(fonts/Inter-normal-400.woff2) format('woff2'); }
+@font-face { font-family: 'Inter'; font-style: normal; font-weight: 500; src: url(fonts/Inter-normal-500.woff2) format('woff2'); }
+@page { size: 297mm 210mm; margin: 0; }
+:root {
+  --ground: #0f0e0c;
+  --paper: #ece6dc;
+  --muted: #a39b8f;
+  --faint: #6d665d;
+  --rule: #2a2723;
+  --accent: #c9a36b;
+  --tbc: #e0745a;
+  --display: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  --label: 'Inter', system-ui, sans-serif;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; background: var(--ground); color: var(--paper); font-family: var(--label); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+img { display: block; width: 100%; height: 100%; object-fit: cover; }
+p { margin: 0; }
+h1, h2 { font-family: var(--display); font-weight: 400; margin: 0; }
+.page { width: 297mm; height: 210mm; padding: 16mm 18mm; overflow: hidden; break-after: page; display: grid; }
+.page:last-child { break-after: auto; }
+.kicker { font-size: 9pt; letter-spacing: .2em; text-transform: uppercase; color: var(--accent); }
+.tbc { color: var(--tbc); font-style: normal; }
+.foot { font-size: 8pt; letter-spacing: .14em; text-transform: uppercase; color: var(--faint); align-self: end; }
+
+/* Cover */
+.cover { grid-template-columns: 92mm 1fr; gap: 14mm; align-items: center; }
+.cover .hero { height: 170mm; overflow: hidden; }
+.cover .txt { display: grid; gap: 7mm; }
+.cover h1 { font-size: 46pt; line-height: .95; }
+.cover .sub { font-family: var(--display); font-style: italic; font-size: 17pt; }
+.cover p { font-size: 10.5pt; line-height: 1.65; color: var(--muted); max-width: 120mm; }
+.by { font-size: 9pt; letter-spacing: .14em; text-transform: uppercase; }
+.by span { color: var(--faint); }
+
+/* Concept */
+.concept { grid-template-rows: auto 1fr auto; gap: 8mm; }
+.concept h2 { font-size: 34pt; margin-top: 3mm; }
+.cols { display: grid; grid-template-columns: 1fr 1fr; gap: 12mm; align-content: start; }
+.block { border-top: 1px solid var(--rule); padding-top: 5mm; display: grid; gap: 3mm; }
+.block h3 { font-family: var(--display); font-weight: 400; font-size: 18pt; margin: 0; }
+.block p, .block li { font-size: 10pt; line-height: 1.6; color: var(--muted); }
+.block ul { margin: 0; padding-left: 4mm; display: grid; gap: 1.5mm; }
+
+/* Work */
+.work { grid-template-rows: auto 1fr; gap: 7mm; }
+.work .head { display: flex; justify-content: space-between; align-items: end; gap: 10mm; }
+.work h2 { font-size: 30pt; margin-top: 3mm; }
+.work .head p { font-size: 10pt; color: var(--muted); max-width: 110mm; line-height: 1.55; }
+.grid6 { display: grid; grid-template-columns: repeat(6, 1fr); gap: 4mm; height: 145mm; }
+.grid6 .f { overflow: hidden; }
+
+/* Plan */
+.plan { grid-template-columns: 70mm 1fr; gap: 14mm; }
+.plan .f { height: 170mm; overflow: hidden; }
+.plan .info { display: grid; grid-template-rows: auto 1fr auto; gap: 6mm; }
+.plan h2 { font-size: 30pt; margin-top: 3mm; }
+dl { margin: 0; display: grid; grid-template-columns: 38mm 1fr; column-gap: 6mm; row-gap: 3.2mm; align-content: start; }
+dt { font-size: 8pt; letter-spacing: .18em; text-transform: uppercase; color: var(--accent); padding-top: 1mm; }
+dd { margin: 0; font-size: 10pt; line-height: 1.45; }
+.contact { font-size: 9.5pt; line-height: 1.7; color: var(--muted); border-top: 1px solid var(--rule); padding-top: 4mm; }
+</style>
+</head>
+<body>
+
+<section class="page cover">
+  <div class="hero"><img src="img/work-1.jpg" alt="Photograph by Aidan Torrence"></div>
+  <div class="txt">
+    <div class="kicker">Editorial proposal · New York · 21–28 October 2026</div>
+    <h1><span class="tbc">[Story title]</span></h1>
+    <div class="sub">A womenswear fashion story, shot on 35mm film and digital in natural light.</div>
+    <p><span class="tbc">[Concept in two or three sentences: see the next page.]</span></p>
+    <p>Unseen and unpublished, offered exclusively to the commissioning title.</p>
+    <div class="by">Aidan Torrence <span>· aidantorrence.com · @madebyaidan</span></div>
+  </div>
+</section>
+
+<section class="page concept">
+  <div>
+    <div class="kicker">The story</div>
+    <h2>Concept</h2>
+  </div>
+  <div class="cols">
+    <div class="block">
+      <h3>Concept <span class="tbc">[TBC]</span></h3>
+      <p class="tbc">[Up to 250 words: the story, the character, and how the clothes are shown. Choose a direction on the right or write your own.]</p>
+      <p>Looks: 8–12, from several designers. No fast fashion, high-street or stylist's own pieces, so the story meets the rules of most titles we are pitching.</p>
+      <p>Format: 35mm film and digital, natural light. For Teeth, film only.</p>
+    </div>
+    <div class="block">
+      <h3>Directions to choose from</h3>
+      <ul>
+        <li><strong>New York, as it is.</strong> The model inside everyday New York rather than in front of it: corner deli, laundromat, diner counter, subway platform, fire escape. The people who work there can appear in frame. Styling that feels found, not placed. This carries over the approach of the Athens concept.</li>
+        <li><strong>A week in the city.</strong> One character over a few days in late October, from morning walks to late dinners. Layered autumn tailoring and outerwear, shot as a diary.</li>
+        <li class="tbc">[Or the stylist's idea: build it together once the stylist is confirmed.]</li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot">Draft for Aidan · not for sending until every [TBC] is filled</div>
+</section>
+
+<section class="page work">
+  <div class="head">
+    <div>
+      <div class="kicker">Photographer</div>
+      <h2>Recent work</h2>
+    </div>
+    <p>Aidan Torrence, editorial photographer working on 35mm film and digital. Selected frames from aidantorrence.com.</p>
+  </div>
+  <div class="grid6">
+    <div class="f"><img src="img/work-2.jpg" alt="Photograph by Aidan Torrence"></div>
+    <div class="f"><img src="img/work-3.jpg" alt="Photograph by Aidan Torrence"></div>
+    <div class="f"><img src="img/work-4.jpg" alt="Photograph by Aidan Torrence"></div>
+    <div class="f"><img src="img/work-5.jpg" alt="Photograph by Aidan Torrence"></div>
+    <div class="f"><img src="img/work-6.jpg" alt="Photograph by Aidan Torrence"></div>
+    <div class="f"><img src="img/work-1.jpg" alt="Photograph by Aidan Torrence"></div>
+  </div>
+</section>
+
+<section class="page plan">
+  <div class="f"><img src="img/work-4.jpg" alt="Photograph by Aidan Torrence"></div>
+  <div class="info">
+    <div>
+      <div class="kicker">Production</div>
+      <h2>Team and plan</h2>
+    </div>
+    <dl>
+      <dt>Dates</dt><dd>In New York 21–28 October 2026. Shoot day <span class="tbc">[TBC]</span></dd>
+      <dt>Location</dt><dd>New York, <span class="tbc">[locations TBC, with reference photos]</span></dd>
+      <dt>Photographer</dt><dd>Aidan Torrence · aidantorrence.com · @madebyaidan</dd>
+      <dt>Stylist</dt><dd class="tbc">[Name · Instagram · portfolio]</dd>
+      <dt>Model</dt><dd class="tbc">[Name · agency · agency profile]</dd>
+      <dt>Hair and makeup</dt><dd class="tbc">[Name · Instagram · portfolio]</dd>
+      <dt>Looks and brands</dt><dd>8–12 looks from several designers. <span class="tbc">[Brand list with the stylist]</span></dd>
+      <dt>Delivery</dt><dd class="tbc">[Delivery date for the edit]</dd>
+      <dt>Placement</dt><dd class="tbc">[Print or online · issue or theme, per magazine]</dd>
+      <dt>Exclusivity</dt><dd>Unseen and unpublished, exclusive to the commissioning title.</dd>
+    </dl>
+    <div class="contact">Aidan Torrence · WhatsApp +49 175 8966210 · @madebyaidan</div>
+  </div>
+</section>
+
+</body>
+</html>

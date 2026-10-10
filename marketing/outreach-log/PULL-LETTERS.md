@@ -2,6 +2,13 @@
 
 A pull letter (also called a commissioning letter or LOR) is a magazine's letter that lets the stylist borrow samples from PR. Magazines only issue one for an approved proposal, so every pitch below needs the proposal PDF first. Policies are from each title's own pages, checked 8 Oct 2026. Full rows are in `leads.csv` (segment `magazine-pull-letter`).
 
+## Update 10 Oct
+
+- New York dates (21–28 October) added to the NY and two-city pitches: Schön!, STREETS, Teeth, Lucy's, Cole, TWILL, OBVIOUS, The Imagista, Polyester, BLANC, Jejune, FVM. Orlando Style (Miami) still has a placeholder for Miami dates.
+- Commitments removed from drafts: TWILL no longer offers to cover costs and insurance or take responsibility for samples; OBVIOUS no longer offers a card and ID on file; Orlando Style no longer promises sample condition. Their policies below still describe what each title asks for; agreeing to them is Aidan's call.
+- OVERDUE (UK) intro sent 10 Oct to submissions@overduemagazine.com: commissions editorials from proposals, online exclusives, unpublished, at least 7 looks, no high-street brands.
+- Draft NY proposal: `proposal-ny/Aidan-Torrence_New-York-editorial-proposal_DRAFT.pdf` (from `proposal-ny/proposal.html`, rendered with `proposal-ny/render.sh`). 4 pages: cover, concept (two suggested directions), recent work (six homepage images), team and plan. Only confirmed facts are filled in; every orange [TBC] (title, concept, stylist, model, hair and makeup, locations, brands, shoot day, delivery, placement) must be filled before it is attached. No team member is confirmed yet.
+
 ## Drafts waiting on the proposal (8 Oct)
 
 Each draft has an `[AIDAN: ...]` placeholder. Attach the PDF or fill in the details before sending. None of them contain links.
