@@ -3,7 +3,7 @@
 ## Current confirmed availability and collaboration terms — 10 October 2026
 
 - New York: 21–28 October 2026.
-- Miami: 30 October–3 November 2026, now confirmed. This replaces earlier wording that Miami dates were unconfirmed or only "later this autumn".
+- Miami: later this autumn; exact dates remain unconfirmed for this stylist/magazine campaign. Do not import dates from separate celebrity or portrait campaigns.
 - Stylist collaborations are unpaid.
 - No magazine pull letter or publication backing has been secured. Do not describe either as confirmed.
 - These current facts supersede older availability wording in historical notes and templates. Replies and follow-ups still require approval.
@@ -38,9 +38,9 @@ Write the site as `aidantorrence<span>.com</span>` and Instagram as `@madebyaida
 
 - Stylist, subject `Editorial for submission, New York` (or `Miami`):
   `Hi {first},<br><br>I'm Aidan Torrence, an editorial photographer working on 35mm film and digital. I came across {credit}.<br><br>I'll be in New York 21–28 October and I'm putting together an unpaid womenswear editorial collaboration for magazine submission, aimed at titles like Schön!, STREETS and Lady Gunn. I'm asking the magazine for a pull letter before the shoot so you can request samples from PR. I'd love to have you style it. Happy to build the concept together and cast an agency model around it.<br><br>Would you be open to it?<br><br>My work: aidantorrence<span>.com</span> · @madebyaidan<br>Aidan Torrence · WhatsApp +49 175 8966210`
-  For Miami use "I'll be in Miami 30 October–3 November". The pull-letter line was added on 9 Oct after Shandi Alexander said she would only commit once there is an LOR.
+  For Miami use "I'll be in Miami later this autumn". The pull-letter line was added on 9 Oct after Shandi Alexander said she would only commit once there is an LOR.
 - Magazine, subject `Editorial pitch: New York and Miami`:
-  `Hi {first or magazine team},<br><br>I'm Aidan Torrence, an editorial photographer working on 35mm film and digital. I'll be in New York 21–28 October 2026 and Miami 30 October–3 November 2026, developing separate womenswear stories. I'm speaking with stylists and planning agency casting; the concept and team are still to be confirmed.<br><br>Would you consider reviewing a concept and moodboard when ready, and could an approved proposal receive a commissioning or pull letter so a stylist can request PR samples? I'm seeking editorial consideration without a publication fee.<br><br>My work: aidantorrence<span>.com</span> · @madebyaidan<br><br>Best,<br>Aidan<br>WhatsApp +49 175 8966210`
+  `Hi {first or magazine team},<br><br>I'm Aidan Torrence, an editorial photographer working on 35mm film and digital. I'll be in New York 21–28 October 2026 and Miami later this autumn, developing separate womenswear stories. I'm speaking with stylists and planning agency casting; the concept and team are still to be confirmed.<br><br>Would you consider reviewing a concept and moodboard when ready, and could an approved proposal receive a commissioning or pull letter so a stylist can request PR samples? I'm seeking editorial consideration without a publication fee.<br><br>My work: aidantorrence<span>.com</span> · @madebyaidan<br><br>Best,<br>Aidan<br>WhatsApp +49 175 8966210`
   Tailor to the loaded primary policy. Do not promise publication, an attachment, a confirmed team, or exclusive rights to the same story at multiple accepting publications.
   If the magazine only takes finished stories, swap the question for "Would you consider the finished story once it's shot?". Portal-only magazines get no draft; list them in the report.
 
@@ -82,3 +82,12 @@ Write the site as `aidantorrence<span>.com</span>` and Instagram as `@madebyaida
 - Live Gmail showed that The Cube and LIVID had already received same-day introductions from another process. Both were deduped, recorded as sent-observed and not counted among this pass's five sends.
 - Fresh stylist research covered recent independent/editorial credits in New York and Miami. No qualifying new stylist introduction was sent: candidates either lacked a verified public direct email, were commercial-only or celebrity/agency-represented, were outside the target city, or had already been contacted/held. No address was guessed.
 - Foreign Look's pull-letter route was skipped because the current fee is incompatible with the unpaid campaign; Superior was portal-only; Révèle's 2026 deadline had passed; LAMODZI's displayed address remained obfuscated. No new campaign reply, bounce or Slack approval appeared. The live approval queue remains 51: eight replies, three permission-blocked introductions and forty magazine follow-ups. Thirteen proposal-dependent pitches remain held separately.
+
+## 10 October — fifth native Codex research pass
+
+- Sent and verified five new publication introductions: HUMBLE Magazine, A BOOK OF, Dixie Magazine, The Clothes Maiden and FashionEditorials.com. Every saved body was inspected before sending and the resulting Gmail message was confirmed with the SENT label. No body contained an http/https/www URL, Google redirect, placeholder or unfinished-proposal promise.
+- These five public routes require completed or unpublished fashion work, so each message asks only about later consideration of a finished story. No pull letter, attachment or commission was requested contrary to the loaded policy.
+- ArtPlay publishes an advance pull-letter route, but live Gmail showed it had already received a same-day introduction from another process. It was deduped, recorded as sent-observed and not counted among the five sends.
+- Fresh stylist research covered recent LADYGUNN and Schön! credits plus Miami editorial searches. No qualifying new stylist introduction was sent: the new names lacked a published direct email, were established celebrity/agency talent, had ambiguous city bases, or were commercial-only. No address was guessed.
+- Li's reply draft disappeared because another process sent message 1a1278e59547a8c5 without a Slack approval. That sent reply inserted Miami 30 October–3 November. Those dates belong to another workflow or remain unverified here and must not be reused in this stylist/magazine campaign; this campaign retains “later this autumn” with exact Miami dates unconfirmed.
+- No new campaign recipient reply, campaign bounce or Slack approval appeared. After reconciling Li, the live approval queue is 50: seven replies, three permission-blocked introductions and forty magazine follow-ups. Thirteen proposal-dependent pitches remain held separately.
