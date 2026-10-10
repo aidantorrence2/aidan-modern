@@ -23,36 +23,46 @@ function loadTs(file, mocks = {}, env = process.env) {
 const portfolio = loadTs('lib/portfolio.ts');
 const fixture = {
   _readme: 'Preserve this description.',
-  'tier-1': Array.from({ length: 99 }, (_, i) => [`selected-${i}`, i < 96 ? 1070 : 1600, i < 96 ? 1600 : 1070]),
+  'tier-2': Array.from({ length: 47 }, (_, i) => [`priority-${i}`, i < 46 ? 1070 : 1600, i < 46 ? 1600 : 1070]),
+  'tier-1': Array.from({ length: 52 }, (_, i) => [`selected-${i}`, i < 51 ? 1070 : 1600, i < 51 ? 1600 : 1070]),
   tier0: [['previous-top-b', 1000, 1500], ['previous-top-a', 1500, 1000]],
   tier1: [['existing-b', 1000, 1500], ['existing-a', 1500, 1000]],
   tier2: [['backup', 1000, 1500]],
 };
 const photos = portfolio.portfolioPhotos(fixture);
-assert.deepEqual(photos.map((p) => p.src), [...fixture['tier-1'], ...fixture.tier0, ...fixture.tier1].map(([src]) => src));
-assert.equal(photos.filter((p) => p.star).length, 99);
-assert.ok(photos.every((p, i) => p.i === i && p.star === (p.tier === 'tier-1')));
+assert.deepEqual(photos.map((p) => p.src), [...fixture['tier-2'], ...fixture['tier-1'], ...fixture.tier0, ...fixture.tier1].map(([src]) => src));
+assert.equal(photos.filter((p) => p.star).length, 47);
+assert.ok(photos.every((p, i) => p.i === i && p.star === (p.tier === 'tier-2')));
 assert.equal(photos[98].landscape, true);
 assert.equal(photos[0].landscape, false);
 assert.deepEqual(photos.filter((p) => p.tier !== 'tier1').map((p) => p.i), Array.from({ length: 101 }, (_, i) => i));
 assert.deepEqual(portfolio.portfolioPhotos({ tier0: fixture.tier0, tier1: fixture.tier1 }).map((p) => p.src), [...fixture.tier0, ...fixture.tier1].map(([src]) => src));
 
+for (const omitted of [['tier-2'], ['tier-2', 'tier-1']]) {
+  const reduced = { ...fixture, ...Object.fromEntries(omitted.map((tier) => [tier, []])) };
+  const highest = omitted.length === 1 ? 'tier-1' : 'tier0';
+  const fallback = portfolio.portfolioPhotos(reduced);
+  assert.equal(fallback.filter((p) => p.star).length, reduced[highest].length);
+  assert.ok(fallback.every((p) => p.star === (p.tier === highest)));
+}
+assert.deepEqual(portfolio.portfolioPhotos({ tier0: [], tier1: [] }), []);
+
 const shared = loadTs('app/designs/shared.tsx', { '@/data/portfolio-tiers.json': fixture, '@/lib/portfolio': portfolio });
 for (const p of photos) {
-  assert.equal(shared.full(p.src), `/images/${p.tier}/${p.src}.jpg`);
+  assert.equal(shared.full(p.src), `/images/${p.tier === 'tier-2' ? 'tier-1' : p.tier}/${p.src}.jpg`);
   assert.equal(shared.opt(p, 'full'), `/images/opt/full/${p.src}.webp`);
   assert.match(shared.optSet(p), new RegExp(`${p.src}\\.webp`));
 }
 
 const { portfolioGlobe } = loadTs('lib/portfolio-globe.ts');
-for (const [priority, rest] of [[99, 129], [32, 97], [1, 1], [0, 129], [99, 0], [0, 0]]) {
+for (const [priority, rest] of [[47, 181], [99, 129], [32, 97], [1, 1], [0, 129], [99, 0], [0, 0]]) {
   const globe = portfolioGlobe(priority, rest);
   assert.equal(globe.positions.length, priority + rest);
   assert.ok(globe.positions.every(({ lon, lat }) => Number.isFinite(lon) && Number.isFinite(lat) && Math.abs(lat) <= 90));
   assert.ok(globe.priorityTileScale > 0 && globe.otherTileScale > 0);
-  if (priority === 99) {
+  if (priority === 99 || priority === 47) {
     const bands = new Set(globe.positions.slice(0, priority).map((p) => p.lat));
-    assert.equal(bands.size, 4, '99 highlights need more than the old two crowded bands');
+    assert.equal(bands.size, priority === 99 ? 4 : 3, 'highlight bands adapt to the top-tier count');
     for (const lat of bands) {
       const ring = globe.positions.slice(0, priority).filter((p) => p.lat === lat);
       const gap = 2 * Math.cos(lat * Math.PI / 180) * Math.sin(Math.PI / ring.length);
@@ -75,12 +85,13 @@ async function save(body, environment = 'development') {
   }));
   return { response, writes, moves, reads };
 }
-const body = { tier1: ['backup', 'existing-a'], tier2: ['existing-b'], 'tier-1': [], tier0: [] };
+const body = { tier1: ['backup', 'existing-a'], tier2: ['existing-b'], 'tier-2': [], 'tier-1': [], tier0: [] };
 const saved = await save(body);
 assert.equal(saved.response.status, 200);
 assert.equal(saved.writes.length, 1);
 assert.equal(saved.moves.length, 2);
 const result = JSON.parse(saved.writes[0][1]);
+assert.deepEqual(result['tier-2'], fixture['tier-2'], 'saving editable tiers preserves the new highest tier');
 assert.deepEqual(result['tier-1'], fixture['tier-1'], 'saving editable tiers preserves all selected photos, dimensions, and order');
 assert.deepEqual(result.tier0, fixture.tier0, 'saving editable tiers preserves the previous top tier');
 assert.equal(result._readme, fixture._readme);
@@ -88,6 +99,7 @@ assert.deepEqual(result.tier1.map(([src]) => src), body.tier1);
 assert.deepEqual(result.tier2.map(([src]) => src), body.tier2);
 assert.ok(saved.moves.every((move) => move.every((file) => /[\\/]tier[12][\\/]/.test(file))), 'only editable-tier files can move');
 for (const invalid of [
+  { tier1: ['priority-0', 'existing-a'], tier2: ['existing-b'] },
   { tier1: ['selected-0', 'existing-a'], tier2: ['existing-b'] },
   { tier1: ['previous-top-a', 'existing-a'], tier2: ['existing-b'] },
   { tier1: ['existing-a', 'existing-a'], tier2: ['existing-b'] },
@@ -102,10 +114,62 @@ assert.equal(deployed.response.status, 404);
 assert.equal(deployed.reads.length + deployed.writes.length + deployed.moves.length, 0, 'the deployed API must not access local files');
 
 const manifest = JSON.parse(fs.readFileSync(path.join(root, 'data/portfolio-tiers.json'), 'utf8'));
-for (const tier of ['tier-1', 'tier0', 'tier1', 'tier2']) {
+for (const tier of ['tier-2', 'tier-1', 'tier0', 'tier1', 'tier2']) {
   assert.ok((manifest[tier] ?? []).every((entry) => entry.length === 3 && typeof entry[0] === 'string' && entry.slice(1).every((size) => Number.isFinite(size) && size > 0)), `${tier} entries need a filename and positive dimensions`);
 }
+const requestedPriority = [
+  "500t-2-r1-09789-0003",
+  "500t-2-r1-09789-0020",
+  "500t-3-r1-09790-0005",
+  "kodak-ultramax-2-r1-09798-028a",
+  "kodak-ultramax-2-r1-09798-030a",
+  "kodak-ultramax-2-r1-09798-032a",
+  "kodak-ultramax-2-r1-09798-035a",
+  "kodak-ultramax-r1-09796-001a",
+  "lucky-400-2-r1-09795-0012",
+  "lucky-400-2-r1-09795-0022",
+  "lucky-400-r1-09792-0005",
+  "lucky-400-r1-09792-0026",
+  "phoenix-ii-2-r1-09794-017a",
+  "phoenix-ii-2-r1-09794-021a",
+  "phoenix-ii-2-r1-09794-022a",
+  "phoenix-ii-2-r1-09794-025a",
+  "phoenix-ii-2-r1-09794-031a",
+  "phoenix-ii-2-r1-09794-032a",
+  "phoenix-ii-2-r1-09794-036a",
+  "phoenix-ii-2-r1-09794-037a",
+  "phoenix-ii-3-r1-09797-0001",
+  "phoenix-ii-3-r1-09797-0004",
+  "phoenix-ii-3-r1-09797-0005",
+  "phoenix-ii-3-r1-09797-0009",
+  "phoenix-ii-3-r1-09797-0012",
+  "phoenix-ii-3-r1-09797-0015",
+  "phoenix-ii-3-r1-09797-0016",
+  "phoenix-ii-3-r1-09797-0020",
+  "phoenix-ii-3-r1-09797-0021",
+  "phoenix-ii-3-r1-09797-0026",
+  "phoenix-ii-3-r1-09797-0029",
+  "phoenix-ii-3-r1-09797-0031",
+  "phoenix-ii-4-r1-09799-0005",
+  "phoenix-ii-4-r1-09799-0011",
+  "phoenix-ii-4-r1-09799-0025",
+  "phoenix-ii-4-r1-09799-0029",
+  "phoenix-ii-4-r1-09799-0034",
+  "phoenix-ii-5-r1-09804-0005",
+  "phoenix-ii-5-r1-09804-0031",
+  "phoenix-ii-r1-09793-0004",
+  "phoenix-ii-r1-09793-0016",
+  "phoenix-ii-r1-09793-0021",
+  "phoenix-ii-r1-09793-0025",
+  "phoenix-ii-r1-09793-0028",
+  "phoenix-ii-r1-09793-0029",
+  "phoenix-ii-r1-09793-0034",
+  "phoenix-ii-r1-09793-030a"
+];
+assert.deepEqual(manifest['tier-2'].map(([src]) => src), requestedPriority, 'exact priority selection from catalogue 04bd6062588236d1');
+assert.equal(manifest['tier-1'].length, 52);
 const actual = portfolio.portfolioPhotos(manifest);
-assert.deepEqual(actual.map((p) => p.src), ['tier-1', 'tier0', 'tier1'].flatMap((tier) => (manifest[tier] ?? []).map(([src]) => src)));
+assert.equal(actual.filter((p) => p.star).length, 47);
+assert.deepEqual(actual.map((p) => p.src), ['tier-2', 'tier-1', 'tier0', 'tier1'].flatMap((tier) => (manifest[tier] ?? []).map(([src]) => src)));
 assert.equal(new Set(actual.map((p) => p.src)).size, actual.length, 'portfolio filenames must be unique across tiers');
-console.log(`Portfolio regression checks passed (${actual.length} current photos; 99-photo priority fixture, image paths, globe spacing, tier preservation, and production write protection).`);
+console.log(`Portfolio regression checks passed (${actual.length} current photos; 47/52-photo priority fixture, image paths, globe spacing, tier preservation, and production write protection).`);

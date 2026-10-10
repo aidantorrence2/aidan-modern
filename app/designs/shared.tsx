@@ -2,15 +2,15 @@
 
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import tiers from '@/data/portfolio-tiers.json';
-import { portfolioPhotos, type PortfolioTiers, type Photo } from '@/lib/portfolio';
+import { portfolioPhotos, portfolioImageTier, type PortfolioTiers, type Photo } from '@/lib/portfolio';
 export type { Photo } from '@/lib/portfolio';
 
-// Shared toolkit: tier-1 selections first, then tier0 and tier1, preserving each saved order.
+// Shared toolkit: tier-2, tier-1, tier0, then tier1, preserving each saved order.
 export const PHOTOS = portfolioPhotos(tiers as unknown as PortfolioTiers);
 const TIER = new Map(PHOTOS.map((p) => [p.src, p.tier]));
 
 export const pad = (n: number, len = 2) => String(n).padStart(len, '0');
-export const full = (src: string) => `/images/${TIER.get(src) ?? 'tier1'}/${src}.jpg`;
+export const full = (src: string) => `/images/${portfolioImageTier(TIER.get(src) ?? 'tier1')}/${src}.jpg`;
 // Resized copy via Next's image optimizer. Allowed widths: 256 384 640 750 828 1080 1200 1920.
 export const thumb = (src: string, w: 256 | 384 | 640 | 750 | 828 | 1080 | 1200 | 1920 = 640) =>
   `/_next/image?url=${encodeURIComponent(full(src))}&w=${w}&q=75`;
