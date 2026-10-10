@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Pre-generates the WebP copies the homepage serves.
 
-Reads data/portfolio-tiers.json, takes each photo from public/images/tier0, tier1 or tier2 and writes
+Reads data/portfolio-tiers.json, takes each photo from public/images/tier-1, tier0, tier1 or tier2 and writes
 public/images/opt/<width>/<name>.webp for every width in WIDTHS that is smaller than the photo,
 plus public/images/opt/full/<name>.webp (capped at FULL px wide). Skips files that are up to date.
 Run after adding or replacing photos:  python3 scripts/optimize-portfolio-images.py
@@ -17,8 +17,8 @@ QUALITY = {256: 74, 384: 76, 640: 78, 1080: 80, 'full': 80}
 def main():
     tiers = json.load(open(os.path.join(ROOT, 'data', 'portfolio-tiers.json')))
     made = skipped = 0; total = 0
-    for tier in ('tier0', 'tier1', 'tier2'):
-        for name, w, h in tiers[tier]:
+    for tier in ('tier-1', 'tier0', 'tier1', 'tier2'):
+        for name, w, h in tiers.get(tier, []):
             src = os.path.join(ROOT, 'public', 'images', tier, name + '.jpg')
             if not os.path.exists(src): sys.exit(f'missing {src}')
             im = None

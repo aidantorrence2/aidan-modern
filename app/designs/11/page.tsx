@@ -1,26 +1,15 @@
 'use client';
 
 import React, { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
+import { portfolioGlobe } from '@/lib/portfolio-globe';
 import { PHOTOS, opt, optSet, RESET, LINKS, type Photo } from '../shared';
 
 const N = PHOTOS.length;
-const N0 = PHOTOS.filter((p) => p.star).length;
-const N1 = N - N0;
+const PRIORITY_COUNT = PHOTOS.filter((p) => p.star).length;
+const GLOBE = portfolioGlobe(PRIORITY_COUNT, N - PRIORITY_COUNT);
+const POS = GLOBE.positions;
 const EASE = 'cubic-bezier(.2,.7,.1,1)';
 
-// Tier 0 photos run in two staggered bands around the equator, the part of the globe that faces you.
-// Tier 1 photos are spread evenly (Fibonacci spiral) over the rest, above and below the bands.
-const GOLDEN = 180 * (3 - Math.sqrt(5));
-const BAND_LAT = 11, CAP = Math.sin((24 * Math.PI) / 180);
-const PER_BAND = Math.ceil(N0 / 2);
-const POS = PHOTOS.map((p, i) => {
-  if (p.star) {
-    const row = i % 2, k = Math.floor(i / 2);
-    return { lon: (k * 360) / PER_BAND + row * (180 / PER_BAND), lat: row ? -BAND_LAT : BAND_LAT };
-  }
-  const k = i - N0, z = 1 - (2 * (k + 0.5)) / N1;
-  return { lon: (k * GOLDEN) % 360, lat: (Math.asin(Math.sign(z) * (CAP + (1 - CAP) * Math.abs(z))) * 180) / Math.PI };
-});
 // Each tile's outward direction, matching the CSS `rotateY(lon) rotateX(lat) translateZ(r)` placement.
 const DIR = POS.map(({ lon, lat }) => {
   const a = (lon * Math.PI) / 180, b = (lat * Math.PI) / 180;
@@ -214,9 +203,9 @@ function Globe({ vp }: { vp: { w: number; h: number } }) {
   const rot = useRef({ ax: -14, ay: -140, vx: 0, vy: 0, tx: null as number | null, ty: null as number | null, drag: false, spin: 2.2, want: 0.07, mx: 0, my: 0, px: 0, py: 0 });
 
   const R = Math.min(vp.w * 0.3, vp.h * 0.38);
-  const S = R * 0.25, S0 = R * 0.34; // tier 1 / tier 0 tile size
+  const S = R * GLOBE.otherTileScale, S0 = R * GLOBE.priorityTileScale;
 
-  // Intro: photos fly in from all directions and settle into the globe (tier 0 lands last).
+  // Intro: photos fly in from all directions and settle into the globe (tier-1 selections land last).
   const replay = useCallback(() => {
     setPhase('pre');
     requestAnimationFrame(() => requestAnimationFrame(() => setPhase('intro')));
@@ -245,7 +234,7 @@ function Globe({ vp }: { vp: { w: number; h: number } }) {
       if (globe.current) globe.current.style.transform = `rotateX(${AX}deg) rotateY(${AY}deg)`;
 
       // Depth: photos facing you are bright, those turning away fade into the dark.
-      // Also track the tier 0 photo nearest the front; the background glow takes its colour.
+      // Also track the tier-1 photo nearest the front; the background glow takes its colour.
       const ca = Math.cos((AX * Math.PI) / 180), sa = Math.sin((AX * Math.PI) / 180);
       const cb = Math.cos((AY * Math.PI) / 180), sb = Math.sin((AY * Math.PI) / 180);
       let best = -2, bi = -1;
@@ -258,7 +247,7 @@ function Globe({ vp }: { vp: { w: number; h: number } }) {
         const o = z <= 0 ? 0 : Math.min(1, 0.1 + z * 1.25);
         if (Math.abs(o - shade[i]) > 0.03) { shade[i] = o; const el = tiles.current[i]; if (el) el.style.opacity = o.toFixed(2); }
       }
-      if (bi !== lastFront && now - frontAt > 1400) { lastFront = bi; frontAt = now; setFront(bi); }
+      if (bi >= 0 && bi !== lastFront && now - frontAt > 1400) { lastFront = bi; frontAt = now; setFront(bi); }
 
       c.x += (c.tx - c.x) * 0.22; c.y += (c.ty - c.y) * 0.22;
       if (cur.current) cur.current.style.transform = `translate(${c.x}px, ${c.y}px)`;
@@ -351,7 +340,7 @@ function Globe({ vp }: { vp: { w: number; h: number } }) {
     });
   }, [sel, vp.w, vp.h]);
 
-  // The wall: tier 0 in big rows, then tier 1.
+  // The wall: tier-1 selections in big rows, then tier0 and tier1 in their saved order.
   const pad = Math.max(24, vp.w * 0.03);
   const wall = useMemo(() => {
     const W = vp.w - pad * 2;
@@ -405,7 +394,7 @@ function Globe({ vp }: { vp: { w: number; h: number } }) {
                   ['--t' as string]: `rotateY(${POS[i].lon}deg) rotateX(${POS[i].lat}deg)`,
                   ['--r' as string]: `${p.star ? R * 1.04 : R}px`, ['--pop' as string]: `${S * 0.45}px`,
                   ['--far' as string]: `${R * (2.5 + rnd(i) * 3)}px`, ['--spin' as string]: `${(rnd(i, 2) - 0.5) * 120}deg`,
-                  // tier 0 lands last, so the band assembles in front of an already-formed globe
+                  // Tier-1 selections land last, in front of an already-formed globe.
                   ['--d' as string]: `${p.star ? 0.9 + rnd(i, 3) * 0.6 : rnd(i, 3) * 0.9}s`,
                 }}
                 onPointerEnter={() => setHov(i)}
@@ -447,7 +436,7 @@ function Globe({ vp }: { vp: { w: number; h: number } }) {
                       return (
                         // eslint-disable-next-line @next/next/no-img-element
                         <img key={p.src} data-i={p.i} src={opt(p, w > 400 ? 640 : 384)} srcSet={optSet(p)} sizes={`${Math.round(w)}px`} alt="" draggable={false}
-                          loading={t === 0 || k < 3 ? 'eager' : 'lazy'} decoding="async"
+                          loading={t === 0 && k < 3 ? 'eager' : 'lazy'} decoding="async"
                           style={{ width: w, height: r.h, backgroundImage: `url(${opt(p, p.star ? 384 : 256)})` }}
                           onPointerEnter={() => setHov(p.i)} onPointerLeave={() => setHov(null)}
                           onClick={(e) => { const b = e.currentTarget.getBoundingClientRect(); setMode('globe'); pick(p.i, b); }} />
@@ -478,10 +467,11 @@ function Globe({ vp }: { vp: { w: number; h: number } }) {
   );
 }
 
-/* ---------------- mobile: tier 0 puzzle ---------------- */
+/* ---------------- mobile: selected photos first ---------------- */
 
-// Mobile shows only the tier 0 photos. They come first in PHOTOS, so a photo's index there is also its index here.
-const STARS = PHOTOS.filter((p) => p.star);
+// Keep the original mobile tier0 collection after the tier-1 selections. These form
+// a contiguous prefix of PHOTOS, so the viewer and glow keep the same photo indices.
+const MOBILE_PHOTOS = PHOTOS.filter((p) => p.tier !== 'tier1');
 const ROW_H = [210, 150, 250, 170, 230, 140];
 
 function Puzzle({ vp }: { vp: { w: number; h: number } }) {
@@ -496,7 +486,7 @@ function Puzzle({ vp }: { vp: { w: number; h: number } }) {
   const gap = 3;
   const rows: { h: number; items: Photo[]; full: boolean }[] = [];
   let cur: Photo[] = [], ar = 0;
-  STARS.forEach((p) => {
+  MOBILE_PHOTOS.forEach((p) => {
     cur.push(p); ar += p.w / p.h;
     if (ar * ROW_H[rows.length % ROW_H.length] + gap * (cur.length - 1) >= vp.w) {
       rows.push({ h: Math.min((vp.w - gap * (cur.length - 1)) / ar, vp.h * 0.7), items: cur, full: true }); cur = []; ar = 0;
@@ -555,7 +545,7 @@ function Puzzle({ vp }: { vp: { w: number; h: number } }) {
         <div className="ovw">
           <Glow i={at} />
           <div className="ov" ref={ov} onScroll={(e) => { const i = Math.round(e.currentTarget.scrollTop / vp.h); if (i !== at) setAt(i); }}>
-            {STARS.map((p) => {
+            {MOBILE_PHOTOS.map((p) => {
               const b = fit(p, 14, 14, vp.w - 14, vp.h - 14);
               return (
                 <section key={p.src} style={{ height: vp.h }}>
