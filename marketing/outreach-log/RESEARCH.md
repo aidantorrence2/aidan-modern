@@ -57,3 +57,12 @@ Write the site as `aidantorrence<span>.com</span>` and Instagram as `@madebyaida
 - No new campaign reply, delivery failure or Slack approval appeared during reconciliation. The live approval queue remains 48: seven replies, one permission-blocked Tank re-pitch, and forty magazine follow-ups. The thirteen complete-proposal pitches remain separately held.
 
 - MOVES returned an automated receipt immediately after sending, stating that it aims to respond within seven working days and that no reply within fourteen days means the submission was unsuccessful. The auto-reply was labeled handled; it did not create a reply draft or approval item.
+
+## 10 October — third native Codex research pass
+
+- Sent and verified seven new introductions: New York stylists Savannah Avant and Noël Martin; magazines tmrw, 5ELEVEN, Desnudo, nEU and Asthetik. All stored sent bodies were re-read in Gmail and contained no http/https/www link, Google redirect, placeholder or unfinished-proposal promise.
+- Live Gmail showed Mariangel Robles had already received a Miami introduction at 17:43 UTC from another process. It was deduped, recorded as sent-observed and not counted among the seven sends.
+- MOOD and MITH were newly researched with clean exact-email dedupe checks. Gmail's safety layer blocked the send because it matched similar legacy text in the campaign log. Both inspected, link-free drafts were preserved and added to approvals; neither was retried.
+- A new reply arrived from Li, a Miami stylist: she is open to advance planning and asked whether there is a budget. A truthful in-thread draft says the editorial is unpaid, there is no stylist-fee budget, a pull letter is being pursued for PR samples, and Miami dates remain unconfirmed. It remains unsent for approval.
+- Current policy checks were respected: 5ELEVEN does not issue recommendation letters to first-time contributors; Desnudo and nEU require finished exclusive/unpublished work. Those titles were asked only about finished-story consideration. tmrw and Asthetik were asked whether they would review a concept/moodboard and issue a pull letter if commissioned; no proposal was attached or promised.
+- Additional researched leads without a verified direct email were logged instead of recycled: India Reed, Karo Delgobbo and Sophia Lenore. The live approval queue is now 51: eight replies, three permission-blocked intros and forty magazine follow-ups. Thirteen proposal-dependent pitches remain held separately.
