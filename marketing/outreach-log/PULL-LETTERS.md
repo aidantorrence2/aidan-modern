@@ -18,6 +18,9 @@ Each draft has an `[AIDAN: ...]` placeholder. Attach the PDF or fill in the deta
 | The Imagista | hello@theimagista.com | r-6883627934966115873 | Self-serve LOR template once approved. Footer reads 2022, so it may be inactive. |
 | Polyester | hello@polyesterzine.com | r3206892809217771893 | Pitch deck as PDF or Google Drive, 10+ images, casting from underrepresented groups, no AI. Currently commissions for its members' platform. |
 | BLANC (added 9 Oct) | submit@blancmagazine.com | r-5426285383702878518 | Letter only if Blanc commissions the pitch. Replies within 4 weeks if interested, so pitch early. Loans confirmed by email with its editors. No fast fashion, vintage or stylist's own. Shandi Alexander has styled for Blanc. |
+| Jejune (added 10 Oct) | jejunemagazine@gmail.com | r-3848831332986946179 | Free pull letters for an idea, mood board and team. Every story needs a social-cause angle (sustainable or deadstock designers, eco beauty). New York based. |
+| FVM (added 10 Oct) | editor@fashionverified.com | r-3380999289321399620 | LOR for mood board, team and concept; subject must end 'ATTN: Chris'. Online only, so weaker with showrooms; a New York backup. |
+| Orlando Style (added 10 Oct) | info@styletome.com | r-7295436498817395693 | Florida print. Letter on request for a full plan with team and model options; 8–10 looks, little vintage. Caution: its site terms claim copyright of submitted material, so read them before sending. |
 
 Already-pitched threads, follow-ups rewritten to match each title's process:
 
@@ -33,8 +36,9 @@ The other 38 pull-letter follow-ups from 8 Oct are in `2026-10-08-pull-letter-fo
 - Form or portal only: No. 8 (free, Pull Letter Request form, $55 fee to withdraw after acceptance) and SUPERIOR (no open calls on Submittable).
 - Not eligible: Solstice (stylist must have 3+ Solstice credits) and Solis (needs a recommendation from a Solis print contributor).
 - Closed: The Laterals.
-- Paid: Flanelle ($16.99, members only), Foreign Look ($50), LO'AMMI ($10), Vanity Teen (paid package), PAP (Premium membership), KODD (EUR 150), FRUK (online features charged) and Flawless (processing fee).
+- Paid: Flanelle ($16.99, members only), Foreign Look ($50), LO'AMMI ($10), Vanity Teen (paid package), PAP (Premium membership), KODD (EUR 150), FRUK (online features charged), Flawless (processing fee), La Botanica and WÜL (paid publication).
 - Inactive or defunct: Tantalum, Lone Wolf, Elegant, Jute, Svelto, Superhype.
+- To retry: OVERDUE (UK, active, may commission from proposals; its submissions page was down on 10 Oct).
 - No pull letters: BASIC, GMARO, Féroce, LIVID (rarely), Cool America, Luxia/Edith Mode, and finished-only titles (33, NFM, Imbued, LOAD, CHIC Miami, Fashion Journal AU, Purplehaze).
 
 ## Proposal PDF checklist
