@@ -10,9 +10,10 @@ npm run lint        # ESLint
 
 ## Test commands
 
-No automated tests configured. Manual review is recommended after major UI edits.
+Focused portfolio regression checks cover tier priority, globe spacing, and local-only tier saves. Manual review is recommended after major UI edits.
 
 ```bash
+npm run test:portfolio # tier order, image paths, globe geometry, and editor API
 npm run lint        # known issue: legacy travel promo pages still trigger react/no-unescaped-entities
 ```
 

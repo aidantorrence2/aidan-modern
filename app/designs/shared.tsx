@@ -2,14 +2,11 @@
 
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import tiers from '@/data/portfolio-tiers.json';
+import { portfolioPhotos, type PortfolioTiers, type Photo } from '@/lib/portfolio';
+export type { Photo } from '@/lib/portfolio';
 
-// Shared toolkit for the homepage and /designs/* explorations: tier0 photos first (star = true), then tier1, in saved order.
-export type Photo = { i: number; src: string; w: number; h: number; landscape: boolean; star: boolean; tier: 'tier0' | 'tier1' };
-type Entry = [string, number, number];
-export const PHOTOS: Photo[] = [
-  ...(tiers.tier0 as Entry[]).map((e) => [e, 'tier0'] as const),
-  ...(tiers.tier1 as Entry[]).map((e) => [e, 'tier1'] as const),
-].map(([[src, w, h], tier], i) => ({ i, src, w, h, landscape: w > h, star: tier === 'tier0', tier }));
+// Shared toolkit: tier-1 selections first, then tier0 and tier1, preserving each saved order.
+export const PHOTOS = portfolioPhotos(tiers as unknown as PortfolioTiers);
 const TIER = new Map(PHOTOS.map((p) => [p.src, p.tier]));
 
 export const pad = (n: number, len = 2) => String(n).padStart(len, '0');
