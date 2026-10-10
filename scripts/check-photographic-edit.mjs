@@ -16,10 +16,22 @@ const ids = edit.photos.map((photo) => photo.id);
 assert.equal(edit.sourceVersion, 'e330984387305137362cab8174ca3903a19bcbb4');
 assert.equal(ids.length, 47);
 assert.equal(new Set(ids).size, 47);
-assert.deepEqual(ids.slice(0, 2), ['phoenix-ii-3-r1-09797-0005', 'phoenix-ii-r1-09793-0028']);
+const openingSequence = [
+  'phoenix-ii-3-r1-09797-0005', 'phoenix-ii-r1-09793-0028',
+  'phoenix-ii-3-r1-09797-0009', 'phoenix-ii-r1-09793-0016',
+  'phoenix-ii-3-r1-09797-0029', 'phoenix-ii-r1-09793-0025',
+  'phoenix-ii-3-r1-09797-0031', 'phoenix-ii-r1-09793-030a',
+];
+assert.deepEqual(ids.slice(0, 8), openingSequence, 'Opening models followed by three more photographs of each');
+assert.deepEqual(edit.passages.slice(1, 5).map(({ ids, layout }) => ({ ids, layout })), [
+  { ids: openingSequence.slice(2, 4), layout: 'equal' },
+  { ids: openingSequence.slice(4, 6), layout: 'equal' },
+  { ids: openingSequence.slice(6, 7), layout: 'landscape' },
+  { ids: openingSequence.slice(7, 8), layout: 'landscape' },
+]);
 assert.deepEqual([...ids].sort(), tiers['tier-2'].map(([id]) => id).sort());
 assert.deepEqual(edit.passages.flatMap((passage) => passage.ids), ids);
-assert.equal(edit.passages.length, 26);
+assert.equal(edit.passages.length, 28);
 assert.deepEqual(edit.passages[0], { ids: ids.slice(0, 2), layout: 'equal', ground: '#0b1512' });
 assert.equal(tiers['tier-2'].length + tiers['tier-1'].length, 99, 'Retain all 99 prioritized photos');
 const landscapes = [];
@@ -54,4 +66,4 @@ assert.ok(html.includes('id="work"'), 'Preserve incoming /#work portfolio links'
 assert.ok(html.includes('aria-label="Photograph viewer"'));
 assert.ok(html.includes('href="mailto:aidan@aidantorrence.com"'));
 assert.ok(!read('app/page.tsx').includes('noindex'));
-console.log('Photographic edit checks passed: exact approved 47-photo set, 26 passages, 30/02 opener, 3 natural landscapes, 188 existing WebP files, SSR sequence, and all 99 priority photos retained.');
+console.log('Photographic edit checks passed: exact approved 47-photo set, 28 passages, opening models plus three more photographs each, 3 natural landscapes, 188 existing WebP files, SSR sequence, and all 99 priority photos retained.');

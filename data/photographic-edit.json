@@ -14,6 +14,42 @@
       "alt": "Close portrait in a black dress against lilac light and deep shadow."
     },
     {
+      "id": "phoenix-ii-3-r1-09797-0009",
+      "width": 1070,
+      "height": 1600,
+      "alt": "Portrait in a black blouse with one arm overhead beside an ornate cafe window."
+    },
+    {
+      "id": "phoenix-ii-r1-09793-0016",
+      "width": 1070,
+      "height": 1600,
+      "alt": "Close portrait framed by a textured coat and a softly lit doorway."
+    },
+    {
+      "id": "phoenix-ii-3-r1-09797-0029",
+      "width": 1070,
+      "height": 1600,
+      "alt": "Full-length portrait leaning against a river railing beneath a stone bridge."
+    },
+    {
+      "id": "phoenix-ii-r1-09793-0025",
+      "width": 1070,
+      "height": 1600,
+      "alt": "Full-length portrait in a black dress in a studio with a pink pool of light."
+    },
+    {
+      "id": "phoenix-ii-3-r1-09797-0031",
+      "width": 1600,
+      "height": 1070,
+      "alt": "Horizontal close portrait outdoors with one arm behind the head."
+    },
+    {
+      "id": "phoenix-ii-r1-09793-030a",
+      "width": 1600,
+      "height": 1070,
+      "alt": "Horizontal seated studio portrait in black, with an oval of pink light and cast shadows."
+    },
+    {
       "id": "500t-2-r1-09789-0003",
       "width": 1070,
       "height": 1600,
@@ -134,12 +170,6 @@
       "alt": "Full-length portrait in a textured coat beside a sunlit window."
     },
     {
-      "id": "phoenix-ii-r1-09793-0016",
-      "width": 1070,
-      "height": 1600,
-      "alt": "Close portrait framed by a textured coat and a softly lit doorway."
-    },
-    {
       "id": "phoenix-ii-5-r1-09804-0031",
       "width": 1070,
       "height": 1600,
@@ -176,12 +206,6 @@
       "alt": "Horizontal seated studio portrait in black with an oval patch of pink light."
     },
     {
-      "id": "phoenix-ii-r1-09793-0025",
-      "width": 1070,
-      "height": 1600,
-      "alt": "Full-length portrait in a black dress in a studio with a pink pool of light."
-    },
-    {
       "id": "phoenix-ii-5-r1-09804-0005",
       "width": 1070,
       "height": 1600,
@@ -210,12 +234,6 @@
       "width": 1070,
       "height": 1600,
       "alt": "Sunlit portrait leaning on a river railing, with a stone bridge behind."
-    },
-    {
-      "id": "phoenix-ii-3-r1-09797-0009",
-      "width": 1070,
-      "height": 1600,
-      "alt": "Portrait in a black blouse with one arm overhead beside an ornate cafe window."
     },
     {
       "id": "phoenix-ii-3-r1-09797-0012",
@@ -264,24 +282,6 @@
       "width": 1070,
       "height": 1600,
       "alt": "Portrait beside a river railing, with a stone bridge and city buildings behind."
-    },
-    {
-      "id": "phoenix-ii-3-r1-09797-0029",
-      "width": 1070,
-      "height": 1600,
-      "alt": "Full-length portrait leaning against a river railing beneath a stone bridge."
-    },
-    {
-      "id": "phoenix-ii-3-r1-09797-0031",
-      "width": 1600,
-      "height": 1070,
-      "alt": "Horizontal close portrait outdoors with one arm behind the head."
-    },
-    {
-      "id": "phoenix-ii-r1-09793-030a",
-      "width": 1600,
-      "height": 1070,
-      "alt": "Horizontal seated studio portrait in black, with an oval of pink light and cast shadows."
     }
   ],
   "passages": [
@@ -292,6 +292,36 @@
       ],
       "layout": "equal",
       "ground": "#0b1512"
+    },
+    {
+      "ids": [
+        "phoenix-ii-3-r1-09797-0009",
+        "phoenix-ii-r1-09793-0016"
+      ],
+      "layout": "equal",
+      "ground": "#0b1512"
+    },
+    {
+      "ids": [
+        "phoenix-ii-3-r1-09797-0029",
+        "phoenix-ii-r1-09793-0025"
+      ],
+      "layout": "equal",
+      "ground": "#0b1512"
+    },
+    {
+      "ids": [
+        "phoenix-ii-3-r1-09797-0031"
+      ],
+      "layout": "landscape",
+      "ground": "#101a18"
+    },
+    {
+      "ids": [
+        "phoenix-ii-r1-09793-030a"
+      ],
+      "layout": "landscape",
+      "ground": "#13151b"
     },
     {
       "ids": [
@@ -374,10 +404,9 @@
     },
     {
       "ids": [
-        "phoenix-ii-r1-09793-0004",
-        "phoenix-ii-r1-09793-0016"
+        "phoenix-ii-r1-09793-0004"
       ],
-      "layout": "counter",
+      "layout": "solo",
       "ground": "#201d18"
     },
     {
@@ -412,10 +441,9 @@
     },
     {
       "ids": [
-        "phoenix-ii-r1-09793-0025",
         "phoenix-ii-5-r1-09804-0005"
       ],
-      "layout": "counter",
+      "layout": "solo",
       "ground": "#171a21"
     },
     {
@@ -436,10 +464,9 @@
     },
     {
       "ids": [
-        "phoenix-ii-3-r1-09797-0009",
         "phoenix-ii-3-r1-09797-0012"
       ],
-      "layout": "counter",
+      "layout": "solo",
       "ground": "#101a18"
     },
     {
@@ -468,25 +495,10 @@
     },
     {
       "ids": [
-        "phoenix-ii-3-r1-09797-0026",
-        "phoenix-ii-3-r1-09797-0029"
+        "phoenix-ii-3-r1-09797-0026"
       ],
-      "layout": "equal",
+      "layout": "solo",
       "ground": "#101a18"
-    },
-    {
-      "ids": [
-        "phoenix-ii-3-r1-09797-0031"
-      ],
-      "layout": "landscape",
-      "ground": "#101a18"
-    },
-    {
-      "ids": [
-        "phoenix-ii-r1-09793-030a"
-      ],
-      "layout": "landscape",
-      "ground": "#13151b"
     }
   ]
 }

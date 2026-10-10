@@ -2,7 +2,9 @@
 
 The root route renders the approved photographic edit (source version `e330984387305137362cab8174ca3903a19bcbb4`). It presents exactly 47 selected photographs once each, opening with `phoenix-ii-3-r1-09797-0005` and `phoenix-ii-r1-09793-0028`.
 
-- `data/photographic-edit.json`: descriptive alt text, natural dimensions, final reading order, and all 26 image-specific passage layouts and grounds.
+The opening pair is immediately followed by three more photographs of each of those two models, alternating the subjects. The four additional portraits form two pairs; the two horizontal photographs retain their own landscape passages. These six photographs were moved from later in the edit, preserving the remaining reading order and all 47 unique images. Four former pairs now use solo layouts for their remaining photograph.
+
+- `data/photographic-edit.json`: descriptive alt text, natural dimensions, final reading order, and all 28 image-specific passage layouts and grounds.
 - `components/PhotographicPortfolio.tsx`: responsive image links and the native dialog viewer (Escape, arrow keys, swipe, wraparound navigation, focus restoration).
 - `components/PhotographicPortfolio.module.css`: approved desktop/mobile composition, scoped to this homepage. The existing Inter font and optimized WebP files are reused unchanged.
 - `app/page.tsx`: production metadata and canonical URL. The review-only noindex instruction is not present.
