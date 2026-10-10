@@ -1,11 +1,11 @@
 added_utc,kind,name,to,gmail_thread_id,gmail_draft_id,needs,status,note
 2026-10-10,reply,"Gabriela Langone (NY stylist, yes)",gabrielalangone@me.com,1a111115db6e8918,r-8367620656099591365,,pending,NY dates 21-28 Oct filled 10 Oct; ready
-2026-10-10,reply,"Nicole (Miami stylist, yes)",nicole@nclstyles.com,1a1110e86181ece0,r-2738203561166100605,"Miami dates, locations, number of models",pending,
-2026-10-10,reply,Noctis (wants finished story),genea@noctismag.com,1a11112cecfc21fe,r-4446078633400126174,timing of moodboard,pending,
-2026-10-10,reply,Harper's Bazaar Vietnam (paid only),contact.bazaar@sunflowermedia.vn,1a111149031ebad5,r2199525795948939756,,pending,
-2026-10-10,reply,Hube (declined),sasha@hubemag.com,1a1111385625bfa9,r1660436128048537492,,pending,
+2026-10-10,reply,"Nicole (Miami stylist, yes)",nicole@nclstyles.com,1a1110e86181ece0,r-2738203561166100605,"Miami dates, locations, number of models",pending,2026-10-10 Codex removed quoted anchors/remote signature images only; wording unchanged; current message 1a126f2a36b31ae9
+2026-10-10,reply,Noctis (wants finished story),genea@noctismag.com,1a11112cecfc21fe,r-4446078633400126174,timing of moodboard,pending,2026-10-10 Codex removed quoted anchors/remote signature images only; wording unchanged; current message 1a126f2b6e8cb95f
+2026-10-10,reply,Harper's Bazaar Vietnam (paid only),contact.bazaar@sunflowermedia.vn,1a111149031ebad5,r2199525795948939756,,pending,2026-10-10 Codex removed quoted anchors/remote signature images only; wording unchanged; current message 1a126f2ccf6f1c2b
+2026-10-10,reply,Hube (declined),sasha@hubemag.com,1a1111385625bfa9,r1660436128048537492,,pending,2026-10-10 Codex removed quoted anchors/remote signature images only; wording unchanged; current message 1a126f2e122e6ecf
 2026-10-10,outreach-blocked,Tank re-pitch to Sohrab,sohrab@tankmagazine.com,1a11c1540a35faf6,r4863235645598782324,permission check blocked auto-send,pending,
-2026-10-10,outreach-blocked,Galore intro,hey@galoremag.com,1a11c152da6e5339,r7787223929640839403,permission check blocked auto-send,pending,
+2026-10-10,outreach-blocked,Galore intro,hey@galoremag.com,1a11c152da6e5339,r7787223929640839403,permission check blocked auto-send,sent,"Live Gmail reconciliation 2026-10-10: message 1a126f1de4dd4a88 is SENT in original thread; sent by another process, not this Codex run. No specific approval found in reviewed Slack threads. Do not retry or remind."
 2026-10-08,follow-up,Boca Magazine,christiana@bocamag.com,1a11113abadc4d26,r-2296599217154742779,,pending,
 2026-10-08,follow-up,Haute Living,contactus@hauteliving.com,1a11113b38c08ba3,r1706158310400272708,,pending,
 2026-10-08,follow-up,Aventura Magazine,dnikolopoulos@palmbeachmedia.com,1a11115e49838fb9,r-7861120117604096971,,pending,
@@ -29,7 +29,7 @@ added_utc,kind,name,to,gmail_thread_id,gmail_draft_id,needs,status,note
 2026-10-08,follow-up,Nasty,fashion@nastymagazine.com,1a111170e498d9df,r-7978128374523130328,,pending,
 2026-10-08,follow-up,Numéro Berlin,fashion@oor.berlin,1a11114dbe9ec07f,r3938743731048172622,,pending,
 2026-10-08,follow-up,Lady Gunn,hello@ladygunn.com,1a1111613f5e32a6,r2022570191456982614,,pending,
-2026-10-08,follow-up,IRK,info@irkmagazine.com,1a1111642124b803,r-703921420234521863,stylist name + moodboard,pending,
+2026-10-08,follow-up,IRK,info@irkmagazine.com,1a1111642124b803,r-703921420234521863,stylist name + moodboard,pending,2026-10-10 Codex removed quoted anchors/remote signature images only; wording unchanged; current message 1a126f2f89757e83
 2026-10-08,follow-up,Puss Puss,info@pusspussmagazine.com,1a11112b34903dfb,r8925125064577066816,,pending,
 2026-10-08,follow-up,The Forumist,info@theforumist.com,1a111128b4d9c4cb,r-1180743741969301931,,pending,
 2026-10-08,follow-up,Vein,info@vein.es,1a1111295ab3d8cf,r6946404928438480566,,pending,
@@ -43,8 +43,9 @@ added_utc,kind,name,to,gmail_thread_id,gmail_draft_id,needs,status,note
 2026-10-08,follow-up,Achtung Mode,post@achtung-mode.com,1a111138cd39191f,r5618606887027317049,,pending,
 2026-10-08,follow-up,Vogue Czechoslovakia,redakce@vogue.cz,1a11113d7057140d,r-909466275331016972,,pending,
 2026-10-08,follow-up,L'Officiel Brasil,site@revistalofficiel.com.br,1a11114a4d1283ad,r-3507193229129610625,,pending,
-2026-10-08,follow-up,Bricks,submissions@bricksmagazine.co.uk,1a1111370873b4ab,r-8464190499890154795,stylist name + moodboard,pending,
+2026-10-08,follow-up,Bricks,submissions@bricksmagazine.co.uk,1a1111370873b4ab,r-8464190499890154795,stylist name + moodboard,pending,2026-10-10 Codex removed quoted anchors/remote signature images only; wording unchanged; current message 1a126f30c36e210e
 2026-10-08,follow-up,Glamcult,submissions@glamcultstudio.com,1a111137b3b23219,r4621254239232769352,,pending,
 2026-10-08,follow-up,Grazia,submissions@grazia.com.au,1a11114c91b7c012,r5322827817452513606,,pending,
-2026-10-10,reply,"Luanna Montes (Miami stylist, yes)",montesluanna@gmail.com,1a1254c4c7a951c5,r-4243565398561603298,,pending,"Away until first week of Nov; reply says Miami dates not set and offers to plan around her return (no dates invented); ready; a second draft in this thread (r8634457782431720571, 14:04 UTC, from another session) has an [AIDAN: exact Miami dates] placeholder and must not be sent; Aidan to pick one and discard the other"
-2026-10-10,reply,C-Heads (will review finished series),contact@c-heads.com,1a11a6f34bd6c75b,r-3054495847318014966,,pending,"Christine: can't confirm before seeing the finished series, happy to look at final images; no pull letter. Draft written by another session 17:04; quoted http link to aidantorrence.com removed 17:18; promises to keep it unpublished until they've looked (matches the original exclusive offer); ready"
+2026-10-10,reply,"Luanna Montes (Miami stylist, yes)",montesluanna@gmail.com,1a1254c4c7a951c5,r-4243565398561603298,,pending,"Away until first week of Nov; reply says Miami dates not set and offers to plan around her return (no dates invented); ready; a second draft in this thread (r8634457782431720571, 14:04 UTC, from another session) has an [AIDAN: exact Miami dates] placeholder and must not be sent; Aidan to pick one and discard the other; 2026-10-10 Codex removed quoted anchors/remote signature images only; wording unchanged; current message 1a126f32330db468"
+2026-10-10,reply,C-Heads (will review finished series),contact@c-heads.com,1a11a6f34bd6c75b,r-3054495847318014966,,pending,"Christine: can't confirm before seeing the finished series, happy to look at final images; no pull letter. Draft written by another session 17:04; quoted http link to aidantorrence.com removed 17:18; promises to keep it unpublished until they've looked (matches the original exclusive offer); ready; 2026-10-10 Codex removed quoted anchors/remote signature images only; wording unchanged; current message 1a126f3361a6030f"
+2026-10-10,reply-audit,Shandi Alexander,alexandershandi@gmail.com,1a11111423e87561,r4551542654307639736,,sent,Live Gmail audited: reply message 1a11e9a6fd3404e0 was sent 2026-10-09T03:00Z. No outstanding draft. Do not recreate or remind.
