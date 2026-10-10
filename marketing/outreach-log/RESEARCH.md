@@ -1,6 +1,6 @@
 # Research component: NY + Miami stylists and magazines
 
-Runs once a day as part of the scheduled outreach check (the first run after 06:00 UTC), and on demand. It finds new people to pitch, drafts intros for Aidan's approval, and never sends anything.
+Runs every 6 hours as part of the hourly outreach check (the first run after 00:00, 06:00, 12:00 and 18:00 UTC), and on demand. It finds new people to pitch and sends their intros automatically (see the send rules in `README.md`); pitches that need the proposal PDF stay as drafts.
 
 ## Segments and end dates
 
@@ -37,5 +37,5 @@ Write the site as `aidantorrence<span>.com</span>` and Instagram as `@madebyaida
 
 ## Record and report
 
-- Append every lead to `leads.csv` with its status (`drafted`, `no-email`, `portal-only`, `skipped-duplicate`) and the Gmail draft ID, then commit and push to `ccr-4510b981-i478hk`.
-- Report: number of new intro drafts by segment, with names and draft links, and a push notification if any drafts were created.
+- Append every lead to `leads.csv` with its status (`sent`, `drafted`, `no-email`, `portal-only`, `skipped-duplicate`) and the Gmail draft ID, then commit and push to `ccr-4510b981-i478hk`.
+- Report: number of intros sent by segment, with names, and any pitches left as drafts.
