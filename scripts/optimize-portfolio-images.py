@@ -4,6 +4,7 @@
 Reads data/portfolio-tiers.json, takes each photo from public/images/tier-1, tier0, tier1 or tier2 and writes
 public/images/opt/<width>/<name>.webp for every width in WIDTHS that is smaller than the photo,
 plus public/images/opt/full/<name>.webp (capped at FULL px wide). Skips files that are up to date.
+Tier-2 is a priority subset whose source files remain in tier-1.
 Run after adding or replacing photos:  python3 scripts/optimize-portfolio-images.py
 """
 import json, os, sys
@@ -17,9 +18,9 @@ QUALITY = {256: 74, 384: 76, 640: 78, 1080: 80, 'full': 80}
 def main():
     tiers = json.load(open(os.path.join(ROOT, 'data', 'portfolio-tiers.json')))
     made = skipped = 0; total = 0
-    for tier in ('tier-1', 'tier0', 'tier1', 'tier2'):
+    for tier in ('tier-2', 'tier-1', 'tier0', 'tier1', 'tier2'):
         for name, w, h in tiers.get(tier, []):
-            src = os.path.join(ROOT, 'public', 'images', tier, name + '.jpg')
+            src = os.path.join(ROOT, 'public', 'images', 'tier-1' if tier == 'tier-2' else tier, name + '.jpg')
             if not os.path.exists(src): sys.exit(f'missing {src}')
             im = None
             for key in [v for v in WIDTHS if v < w] + ['full']:

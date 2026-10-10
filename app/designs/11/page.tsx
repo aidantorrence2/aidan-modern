@@ -205,7 +205,7 @@ function Globe({ vp }: { vp: { w: number; h: number } }) {
   const R = Math.min(vp.w * 0.3, vp.h * 0.38);
   const S = R * GLOBE.otherTileScale, S0 = R * GLOBE.priorityTileScale;
 
-  // Intro: photos fly in from all directions and settle into the globe (tier-1 selections land last).
+  // Intro: photos fly in from all directions and settle into the globe (highest-priority selections land last).
   const replay = useCallback(() => {
     setPhase('pre');
     requestAnimationFrame(() => requestAnimationFrame(() => setPhase('intro')));
@@ -234,7 +234,7 @@ function Globe({ vp }: { vp: { w: number; h: number } }) {
       if (globe.current) globe.current.style.transform = `rotateX(${AX}deg) rotateY(${AY}deg)`;
 
       // Depth: photos facing you are bright, those turning away fade into the dark.
-      // Also track the tier-1 photo nearest the front; the background glow takes its colour.
+      // Also track the highest-priority photo nearest the front; the background glow takes its colour.
       const ca = Math.cos((AX * Math.PI) / 180), sa = Math.sin((AX * Math.PI) / 180);
       const cb = Math.cos((AY * Math.PI) / 180), sb = Math.sin((AY * Math.PI) / 180);
       let best = -2, bi = -1;
@@ -340,7 +340,7 @@ function Globe({ vp }: { vp: { w: number; h: number } }) {
     });
   }, [sel, vp.w, vp.h]);
 
-  // The wall: tier-1 selections in big rows, then tier0 and tier1 in their saved order.
+  // The wall: highest-priority selections in big rows, then the remaining tiers in their saved order.
   const pad = Math.max(24, vp.w * 0.03);
   const wall = useMemo(() => {
     const W = vp.w - pad * 2;
@@ -394,7 +394,7 @@ function Globe({ vp }: { vp: { w: number; h: number } }) {
                   ['--t' as string]: `rotateY(${POS[i].lon}deg) rotateX(${POS[i].lat}deg)`,
                   ['--r' as string]: `${p.star ? R * 1.04 : R}px`, ['--pop' as string]: `${S * 0.45}px`,
                   ['--far' as string]: `${R * (2.5 + rnd(i) * 3)}px`, ['--spin' as string]: `${(rnd(i, 2) - 0.5) * 120}deg`,
-                  // Tier-1 selections land last, in front of an already-formed globe.
+                  // Highest-priority selections land last, in front of an already-formed globe.
                   ['--d' as string]: `${p.star ? 0.9 + rnd(i, 3) * 0.6 : rnd(i, 3) * 0.9}s`,
                 }}
                 onPointerEnter={() => setHov(i)}
@@ -469,7 +469,7 @@ function Globe({ vp }: { vp: { w: number; h: number } }) {
 
 /* ---------------- mobile: selected photos first ---------------- */
 
-// Keep the original mobile tier0 collection after the tier-1 selections. These form
+// Keep the original mobile tier0 collection after the tier-2 and tier-1 selections. These form
 // a contiguous prefix of PHOTOS, so the viewer and glow keep the same photo indices.
 const MOBILE_PHOTOS = PHOTOS.filter((p) => p.tier !== 'tier1');
 const ROW_H = [210, 150, 250, 170, 230, 140];
