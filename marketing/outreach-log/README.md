@@ -2,7 +2,7 @@
 
 ## 2026-10-06: New York + Miami stylists and magazines
 
-`2026-10-10-intros-sent.csv`: 41 intros sent on 10 Oct (30 stylists, 11 magazines); Galore, Tank (Sohrab) and GMARO are still drafts.
+`2026-10-10-intros-sent.csv`: 42 intros sent on 10 Oct (30 stylists, 12 magazines); Galore and Tank (Sohrab) are still drafts, pending approval in `approvals.csv`.
 
 `2026-10-06-ny-miami-sent.csv`: the 89 intro emails sent from aidan.torrence@gmail.com on 6 Oct 2026 (41 stylists, 48 magazines), with Gmail thread and message IDs and delivery status.
 
