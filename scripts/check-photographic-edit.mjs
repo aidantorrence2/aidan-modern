@@ -65,5 +65,7 @@ assert.equal((html.match(/<img /g) ?? []).length, 47, 'No duplicated featured/in
 assert.ok(html.includes('id="work"'), 'Preserve incoming /#work portfolio links');
 assert.ok(html.includes('aria-label="Photograph viewer"'));
 assert.ok(html.includes('href="mailto:aidan@aidantorrence.com"'));
+assert.ok(html.includes('href="https://wa.me/491758966210" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp, opens in a new tab"'));
+assert.ok(html.includes('href="https://www.instagram.com/madebyaidan"'), 'Keep the existing Instagram contact');
 assert.ok(!read('app/page.tsx').includes('noindex'));
 console.log('Photographic edit checks passed: exact approved 47-photo set, 28 passages, opening models plus three more photographs each, 3 natural landscapes, 188 existing WebP files, SSR sequence, and all 99 priority photos retained.');

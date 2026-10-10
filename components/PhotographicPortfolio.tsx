@@ -82,6 +82,7 @@ export default function PhotographicPortfolio() {
         <a className={styles.wordmark} href="#top">Aidan Torrence</a>
         <nav aria-label="Contact">
           <a href="mailto:aidan@aidantorrence.com">Email</a>
+          <a href="https://wa.me/491758966210" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp, opens in a new tab">WhatsApp</a>
           <a href="https://www.instagram.com/madebyaidan" target="_blank" rel="noopener noreferrer" aria-label="Instagram, opens in a new tab">Instagram</a>
         </nav>
       </header>

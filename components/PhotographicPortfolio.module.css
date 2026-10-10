@@ -79,6 +79,11 @@
   font-size: 12px
 }
 .masthead nav a{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  min-width: 44px;
   padding: 12px 0
 }
 .masthead nav a:hover{
@@ -378,7 +383,7 @@
 }
 .masthead nav{
   font-size: 11px;
-  gap: 19px
+  gap: 14px
 }
 .sequence{
   padding-top: 58px
@@ -458,6 +463,31 @@
 }
 .viewer-bottom{
   padding-bottom: env(safe-area-inset-bottom,0)
+}
+}
+@media(max-width:380px){
+.masthead{
+  padding: 0 12px;
+  gap: 8px
+}
+.wordmark{
+  font-size: 16px
+}
+.masthead nav{
+  gap: 10px
+}
+}
+@media(max-width:320px){
+.masthead{
+  padding: 0 10px;
+  gap: 6px
+}
+.wordmark{
+  font-size: 14px
+}
+.masthead nav{
+  font-size: 10px;
+  gap: 6px
 }
 }
 @media(prefers-reduced-motion:reduce){
