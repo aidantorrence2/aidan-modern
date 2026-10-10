@@ -45,7 +45,7 @@ The other 38 pull-letter follow-ups from 8 Oct are in `2026-10-08-pull-letter-fo
 - Closed: The Laterals.
 - Paid: Flanelle ($16.99, members only), Foreign Look ($50), LO'AMMI ($10), Vanity Teen (paid package), PAP (Premium membership), KODD (EUR 150), FRUK (online features charged), Flawless (processing fee), La Botanica and WÜL (paid publication).
 - Inactive or defunct: Tantalum, Lone Wolf, Elegant, Jute, Svelto, Superhype.
-- To retry: OVERDUE (UK, active, may commission from proposals; its submissions page was down on 10 Oct).
+- Already sent: OVERDUE on 10 Oct (see original sent log); do not retry its introduction. Its follow-up/reply requires approval.
 - No pull letters: BASIC, GMARO, Féroce, LIVID (rarely), Cool America, Luxia/Edith Mode, and finished-only titles (33, NFM, Imbued, LOAD, CHIC Miami, Fashion Journal AU, Purplehaze, C-Heads: replied 10 Oct that it will review the finished series but can't confirm before).
 
 ## Proposal PDF checklist
