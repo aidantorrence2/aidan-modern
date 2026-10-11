@@ -226,3 +226,14 @@ Write the site as `aidantorrence<span>.com</span>` and Instagram as `@madebyaida
 - The live sender-based Gmail sweep found no new unhandled human campaign reply. No Slack approval or denial appeared; all 53 approval rows remain pending. No new follow-up was created because the campaign follow-up window begins on 12 October.
 - The thirteen complete-proposal pitches remain held pending concept/title, confirmed team, brands, location and exact shoot day.
 
+
+
+## Hourly run — 11 October 2026, 13:13–13:23 UTC
+
+- Sent one verified new initial introduction: New York stylist Whitney Leff at wleff89@gmail.com. Her primary portfolio publishes the address and identifies her as a New York wardrobe stylist; recent evidence includes a 2025 Leopard Magazine editorial and a September 2026 Flying Solo fashion story. The stored and sent body uses the confirmed New York window of 21–28 October, keeps the model prospective, contains no placeholders and contains no live URL.
+- Expanded New York research also surfaced Sal Lee, Zu SB and Laurie Brookins. Gmail showed that Sal and Zu had already received campaign introductions on 10 October, so neither was resent. Laurie was held because no dateable 2024–2026 independent styling credit was verified.
+- Expanded Miami research reviewed Natalie Ayers, Nelly Adham, Elsa Boutaric, Valerie Duardo and additional portfolio results. Natalie was already contacted; Nelly is agency represented and oriented toward established commercial clients; Elsa is primarily a luxury private-client stylist; Valerie exposed no published direct email on the loaded primary pages. No new Miami stylist passed all criteria.
+- Magazine research reviewed FAULT, MERDE, Quadro, HAZL, ICON, MIROITÉR, IN BLACK, StyleCruze and Institute. FAULT had already been contacted on 10 October. MERDE's current primary page still carries a submissions-pause notice. Quadro foregrounds paid placements, HAZL and MIROITÉR impose legal or financial terms, ICON requires a completed multi-look team package and releases, IN BLACK is paid, and StyleCruze/Institute route submissions through portals without a verified direct submissions email. No new magazine intro was sent.
+- Gmail reconciliation found a separate concurrent campaign send to ZERO Magazine at team@zerothemag.com at 13:02:32 UTC. It received an immediate permanent address-not-found bounce, was labeled handled, logged as observed rather than counted as this run's outreach, and will not be retried.
+- The complete sender-based inbox sweep found no new unhandled human reply. Slack contained no new approval or denial. All 53 approval rows remain pending: 10 replies, 3 permission-blocked intros and 40 magazine follow-ups.
+- No follow-up was created because the campaign follow-up window begins on 12 October. The thirteen complete-proposal pitches remain held pending concept/title, confirmed team, brands, location and exact shoot day.
