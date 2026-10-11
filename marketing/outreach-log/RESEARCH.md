@@ -299,3 +299,12 @@ Write the site as `aidantorrence<span>.com</span>` and Instagram as `@madebyaida
 - Corrected `PULL-LETTERS.md` to remove the false 30 October–3 November Miami dates inserted by another process. This campaign's Miami timing remains **later this autumn, exact dates unconfirmed**.
 - The thirteen complete-proposal pitches remain held pending concept/title, confirmed stylist/team/model/HMU, brands, location, exact shoot day, delivery and placement.
 - Slack approval ping: https://testing-oqz7522.slack.com/archives/D09JB0X1DDM/p1791742833507589
+
+## 12 October 2026 — 00:14 Asia/Almaty run
+
+- Sender-based Gmail reconciliation found a new real reply from Miami stylist **Camila Brosens**. She would like to collaborate and asked for dates and the concept. An in-thread reply draft states that Miami dates are not set, keeps timing as later this autumn, proposes developing the concept together and asks for her availability. It is unsent pending approval.
+- The 12 October follow-up phase began. Ten link-free, in-thread stylist follow-up drafts were created after confirming each thread had only the original sent message and no existing draft: **Yaya, Ana K, Anna Ruiz, Charlie Rincon, Dana Yurglich** (Miami) and **Ayoka Lucas, Bridgett Magyar, Cassadee Chase, Coquito Cassibba, Elanur Dobs** (New York). New York drafts use 21–28 October; Miami drafts use later this autumn.
+- Fresh magazine research produced two verified new contacts and both initial introductions were sent: **33 Magazine** (current 2026 fashion activity; finished unpublished exclusives, four looks/four brands) and **Athleisure Mag** (current 2026 fashion-editorial activity; finished unpublished exclusives, team and wardrobe credits). Both pitches honestly request finished-story review and do not ask for a pull letter contrary to stated rules.
+- Researched and skipped **OPALUS** (current call is extreme beauty rather than womenswear), **VIVYD** (outdated 2022 theme-led page and weak fit), and **La Botanica** (current rules say publication options are paid).
+- Fresh stylist searches did not produce another qualifying New York or Miami contact with both a verifiable current city/editorial fit and a public exact email outside the already exhausted/deduped pool. No unverified or guessed address was used.
+- Pending approval queue is now **65**: 12 replies, 3 permission-blocked introductions and 50 follow-ups.
