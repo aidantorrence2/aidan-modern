@@ -3,7 +3,7 @@
 ## Current confirmed availability and collaboration terms — 10 October 2026
 
 - New York: 21–28 October 2026.
-- Miami: 30 October–3 November 2026, now confirmed. This replaces earlier wording that Miami dates were unconfirmed or only "later this autumn".
+- Miami: later this autumn; exact dates remain unconfirmed for this campaign. Do not import dates from separate campaigns.
 - Stylist collaborations are unpaid.
 - No magazine pull letter or publication backing has been secured. Do not describe either as confirmed.
 - These current facts supersede older availability wording in historical notes and templates. Replies and follow-ups still require approval.
@@ -12,7 +12,7 @@ A pull letter (also called a commissioning letter or LOR) is a magazine's letter
 
 ## Update 10 Oct
 
-- New York dates (21–28 October) added to the NY and two-city pitches: Schön!, STREETS, Teeth, Lucy's, Cole, TWILL, OBVIOUS, The Imagista, Polyester, BLANC, Jejune, FVM. The earlier Orlando Style (Miami) draft had a Miami-date placeholder; the confirmed availability is now 30 October–3 November. Any reply or revised proposal still requires approval before sending.
+- New York dates (21–28 October) added to the NY and two-city pitches: Schön!, STREETS, Teeth, Lucy's, Cole, TWILL, OBVIOUS, The Imagista, Polyester, BLANC, Jejune, FVM. The earlier Orlando Style (Miami) draft had a Miami-date placeholder inserted by another process; those dates are not confirmed for this campaign. Keep Miami as “later this autumn” until Aidan supplies exact dates. Any reply or revised proposal still requires approval before sending.
 - Commitments removed from drafts: TWILL no longer offers to cover costs and insurance or take responsibility for samples; OBVIOUS no longer offers a card and ID on file; Orlando Style no longer promises sample condition. Their policies below still describe what each title asks for; agreeing to them is Aidan's call.
 - OVERDUE (UK) intro sent 10 Oct to submissions@overduemagazine.com: commissions editorials from proposals, online exclusives, unpublished, at least 7 looks, no high-street brands.
 - Draft NY proposal: `proposal-ny/Aidan-Torrence_New-York-editorial-proposal_DRAFT.pdf` (from `proposal-ny/proposal.html`, rendered with `proposal-ny/render.sh`). 4 pages: cover, concept (two suggested directions), recent work (six homepage images), team and plan. Only confirmed facts are filled in; every orange [TBC] (title, concept, stylist, model, hair and makeup, locations, brands, shoot day, delivery, placement) must be filled before it is attached. No team member is confirmed yet.
