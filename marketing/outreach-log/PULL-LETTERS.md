@@ -74,3 +74,7 @@ Send a pull-letter pitch only once the stylist and dates are confirmed. Several 
 ## Delivery note — 11 October 2026
 
 - Lucy's Magazine: Gmail reported a temporary DNS/MX delivery delay for an earlier 10 October inquiry sent by another process (sent message `1a126f0762d37b7c`, thread `1a1257db916a07d9`). Gmail will keep retrying until 13 October 2026 at 10:50:56 -0700. This is not a permanent bounce and must not trigger a manual resend. The substantive Lucy's proposal-dependent pitch remains held: do not follow up or attach the four-page draft proposal until concept/title, team, brands, location and exact shoot day are complete.
+
+### A Magazine Curated By — quarantined 2026-10-11
+
+An unlogged 10 October message from another workflow used unconfirmed Miami dates (30 October–3 November) and a live portfolio URL. Gmail reported a temporary SMTP 4.4.2 delivery delay on 11 October 21:14 UTC and will keep retrying until 13 October 20:52 UTC. Do not manually retry or follow up. Treat any later delivery/reply as contaminated by those dates and correct the record before making commitments.
