@@ -177,3 +177,11 @@ Write the site as `aidantorrence<span>.com</span>` and Instagram as `@madebyaida
 - Coral Avenue was skipped because its current terms include indemnity and cancellation-fee obligations. FORWARD Fashion was skipped because its submission terms grant broad reproduction, modification and derivative-work rights. No speculative terms were accepted.
 - Slack contained no new approval or denial. The live approval queue is 53: ten replies, three permission-blocked introductions and forty magazine follow-ups. The thirteen complete-proposal pitches remain held pending concept/title, confirmed team, brands, location and exact shoot day.
 
+## Sixteenth native Codex research pass — 11 October 2026, 08:20 UTC
+
+- Sent zero introductions in this pass: New York stylists 0, Miami stylists 0 and magazines 0. Fresh searches were expanded across current editorial credits, portfolio contact pages and publication submission pages; no new contact satisfied every required condition after deduplication.
+- New York candidates were not contacted when they lacked a named/dateable 2024–2026 independent editorial credit, were commercial or celebrity-assistant led, or lacked a published direct address. Miami candidates were duplicates, senior commercial/celebrity led, held back, or had no published direct email. No address was guessed.
+- KOLOR was held because its current route requires at least one black or brown model and a minimum of five looks, while casting and wardrobe are unconfirmed; it also says commissioning and pull letters are only provided when the magazine initiates contact. Boss Mann, Meraki and Athleisure were skipped for broad promotional/advertising rights, while PUMP was skipped as portal-only. Men’s-only publications were excluded from this womenswear campaign.
+- A full sender-based Gmail sweep found no new unhandled human campaign reply, delivery failure or auto-response. Every pending draft still exists. Historical and current Slack approval threads contained no new approval or denial, so the live queue remains 53: ten replies, three permission-blocked introductions and forty magazine follow-ups.
+- The thirteen complete-proposal pitches remain held pending concept/title, confirmed team, brands, location and exact shoot day. No new follow-up was created because the campaign follow-up window begins on 12 October.
+
