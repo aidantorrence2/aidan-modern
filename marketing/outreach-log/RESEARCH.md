@@ -249,3 +249,20 @@ Write the site as `aidantorrence<span>.com</span>` and Instagram as `@madebyaida
 - Publication searches checked current primary submission pages and deduped each viable address. Purplehaze and Flanelle remain expressly held back; Féroce, Merde, FashionX, Solis, Gladys, and other surfaced titles were already logged or contacted; JUTE's former fashion domain now resolves to unrelated medical-malpractice content. No additional qualifying, nonduplicate public magazine address survived verification.
 - No follow-up drafts were created because the campaign's follow-up phase begins on 12 October local time.
 - Slack approval ping: https://testing-oqz7522.slack.com/archives/D09JB0X1DDM/p1791728638596199
+
+## 11 October 2026 — 15:12–15:18 UTC run
+
+- Reconciled the live Gmail sender sweep, mailer-daemon traffic, campaign drafts, and all outstanding Slack approval threads. No new human reply or explicit approval was found; the queue remains **53** (10 replies, 3 permission-blocked introductions, and 40 magazine follow-ups).
+- A new bounce for `psommers@rizzoliusa.com` was inspected and belongs to a separate Carl Bernstein portrait campaign, so it was deliberately left out of this stylist/magazine campaign. No campaign bounce was added.
+- Sent two verified new New York stylist introductions:
+  - **Talia Cassel** — public direct email `taliacassel98@gmail.com`; her primary portfolio identifies her as New York-based with an editorial focus, and METAL published a current profile in 2026. Gmail message/thread/draft: `1a12b896cb772dd0` / `1a12b892287fb7ac` / `r2514936586912020515`.
+    - Contact: https://www.taliacassel.com/about
+    - Credit: https://metalmagazine.eu/en/post/talia-cassel
+  - **Caitlin Burke** — public direct email `caitlinburkenyc@gmail.com`; her primary portfolio identifies her as NYC-based, and The Impression credits her on Kallmeyer's Spring 2025 campaign. Gmail message/thread/draft: `1a12b897ef5f2caa` / `1a12b89211882eee` / `r8892735576833333185`.
+    - Contact: https://www.caitlinburkenyc.com/
+    - Credit: https://theimpression.com/kallmeyer-spring-2025-ad-campaign-review/
+- Expanded Miami research surfaced Kasia Johnson, Brit Diaz, Mariangel Robles, and Anna Ruiz, but live Gmail showed that each had already received campaign outreach, even where the current CSV corpus was incomplete. They were recorded as duplicates and not contacted again. Lucas Wynwood and Daria Beloyvan had current Miami/editorial evidence but no public email on loaded pages.
+- Publication research found FAULT had already been contacted in Gmail. No. 8 has a free pull-letter route but publishes no stable email, Solstice requires three prior publications with the magazine for pull-letter eligibility, Imbued says submissions are closed, and MERDE's primary page still displays a pause notice. None was contacted.
+- No follow-up drafts were created because the follow-up phase begins on 12 October local time.
+- Slack approval ping: https://testing-oqz7522.slack.com/archives/D09JB0X1DDM/p1791731879817529
+
