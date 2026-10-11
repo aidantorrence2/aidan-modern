@@ -286,3 +286,16 @@ Write the site as `aidantorrence<span>.com</span>` and Instagram as `@madebyaida
 - No explicit Slack approval or denial was found. The queue is now **54**: 11 replies, 3 permission-blocked introductions and 40 follow-ups. No follow-up drafts were created because the follow-up window begins on 12 October local time.
 - The thirteen complete-proposal pitches remain held pending concept/title, confirmed team, brands, location and exact shoot day.
 - Slack approval ping: https://testing-oqz7522.slack.com/archives/D09JB0X1DDM/p1791739186886689
+
+## 11 October 2026 — 18:15–18:22 UTC hourly run
+
+- Sent one verified new magazine introduction to **Pull Letter UK** at `jamie.maree91@gmail.com`. The current primary contact page publishes Jamie-Maree Shipton's editor-in-chief content address, and the title remains active in 2026. Gmail message/thread/draft: `1a12c313f73e4cee` / `1a12c311d5af2b1b` / `r5894725464204880515`. The saved and sent body was inspected before sending: no live URLs, placeholders, attachments or unconfirmed commitments. It asks whether the magazine will review a concept, moodboard and prospective team and consider a commissioning or pull letter before shooting.
+  - Contact evidence: https://www.pulllettermagazine.co.uk/pages/contact-1
+  - Publication: https://www.pulllettermagazine.co.uk/
+- Fresh New York research reviewed Luis David Llomuri, Anatolli Smith, B Charles Johnson and current 2026 editorial credits. Luis has a verified New York base and current KALTBLUT, Harper's Bazaar Vietnam and 17:23 Magazine work, but his public Linktree exposes only an opaque Email action rather than a readable exact address; no address was guessed. Anatolli is already operating at top-tier editor/cover level, and B Charles is primarily a photographer who self-styles, so both were excluded as poor fits for the emerging-to-mid-level unpaid stylist brief.
+- Fresh Miami research reviewed current Miami Shoot Magazine pages and additional local stylist/editorial results. Miami Shoot publishes an editorial-inquiries email, but no current independent-photographer fashion-editorial submission policy or no-fee commissioning route was verified, so it was not contacted. Remaining Miami stylist results were duplicates, held-back, senior/celebrity-led, personal-styling-led or lacked a public exact email.
+- The sender-based Gmail sweep found no new campaign reply or delivery failure. Slack contained no new explicit approval or denial. All **54** approval rows remain pending: 11 replies, 3 permission-blocked introductions and 40 magazine follow-ups.
+- No follow-up drafts were created because the campaign's follow-up phase begins on 12 October local time.
+- Corrected `PULL-LETTERS.md` to remove the false 30 October–3 November Miami dates inserted by another process. This campaign's Miami timing remains **later this autumn, exact dates unconfirmed**.
+- The thirteen complete-proposal pitches remain held pending concept/title, confirmed stylist/team/model/HMU, brands, location, exact shoot day, delivery and placement.
+- Slack approval ping: https://testing-oqz7522.slack.com/archives/D09JB0X1DDM/p1791742833507589
