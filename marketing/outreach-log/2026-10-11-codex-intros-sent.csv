@@ -33,3 +33,4 @@ run_utc,sent_utc,segment,to,name,subject,gmail_message_id,gmail_thread_id,gmail_
 
 2026-10-11,2026-10-11T13:02:32.000Z,magazine,team@zerothemag.com,ZERO Magazine,Pre-shoot fashion proposal / commissioning inquiry: New York and Miami,1a12b0ecda955012,1a12b0ecda955012,,,,"sent-observed-bounced-address-not-found","observed concurrent process; reconciled by this Codex run"
 2026-10-11,2026-10-11T13:19:20.000Z,stylist-ny,wleff89@gmail.com,Whitney Leff,"Editorial for submission, New York",1a12b1e2e11bb4f1,1a12b1de109663c8,r4021641053900235925,https://www.whitneyleff.com/about,https://www.leopardmagazine.com/post/editorial-friday-night,sent,this Codex run
+2026-10-11,2026-10-11T14:22:53.000Z,magazine,contact@theprestigemag.com,The Prestige Magazine,Editorial pitch: New York and Miami,1a12b585c81c8c0b,1a12b582b363f100,r1319073270264749895,https://theprestigemag.com/submissions-rights/,https://theprestigemag.com/fashion-editorial-submission-guide/,sent,this Codex run
