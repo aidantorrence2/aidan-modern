@@ -142,3 +142,13 @@ Write the site as `aidantorrence<span>.com</span>` and Instagram as `@madebyaida
 - New Face Magazine’s published submissions address, hello@nfmmag.com, returned a 550 5.1.1 address-not-found failure after the prior pass. The lead is now marked bounced and will not be retried without a newly published replacement address.
 - Fresh New York stylist research produced no additional qualifying send: candidates were already contacted, held back, senior celebrity/agency-led, primarily journalists or lacked a recent independent editorial credit. Other publication candidates were skipped because they were stale, closed, paid, portal-only, rights-heavy, required prior publication for a pull letter or had already been exhausted.
 - No new real campaign reply or Slack approval appeared. All 52 pending drafts remain present: nine replies, three permission-blocked introductions and forty magazine follow-ups. Thirteen complete-proposal pitches remain separately held pending concept/title, confirmed team, brands, location and exact shoot day.
+## Twelfth native Codex research pass — 11 October 2026, 04:20 UTC
+
+- Reconciled live Gmail, every historical Slack approval thread and the campaign ledger before sending. No new real campaign reply or Slack approval appeared. All 52 pending drafts remain present: nine replies, three permission-blocked introductions and forty magazine follow-ups.
+- Sent four verified new introductions after case-insensitive repository and exact Gmail dedupe, saved-draft inspection and Sent-mail confirmation:
+  - New York stylists: Nicole Chaux (public portfolio email; current NY/LA fashion-styling practice, 2025 lead-stylist work and i-D assistant-styling credit) and Olivia Jakubik (public portfolio email; NYC base and a December 2024 LEWIS fashion story).
+  - Publications: Figgi Magazine (current 2026 print/digital title with a free editorial-submission route by email) and Untamed Magazine (current fashion/editorial title with a free standard route and email listed as a submission method). Both were asked only about finished, unpublished story consideration; no pull letter or paid placement was requested.
+- A third New York candidate, Lauren Garrett Joly, passed the portfolio checks but was found already contacted in live Gmail on 10 October and was not resent.
+- Fresh Miami stylist searches produced no verified new send. Remaining names were already contacted or held back, senior celebrity/commercial-led, lacked a current public direct email, or lacked a recent qualifying independent/editorial credit.
+- No immediate delivery failure appeared for the four confirmed sends.
+- The thirteen complete-proposal pitches remain separately held pending concept/title, confirmed team, brands, location and exact shoot day.
