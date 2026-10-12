@@ -446,3 +446,13 @@ Pending queue after this run: **139** items — 15 replies, 3 permission-blocked
 - Fresh research also reviewed No. 8 Magazine (current submission evidence too stale), Janna McCabe (already contacted), SOLIS (requires a prior-contributor recommendation), and LO’AMMI (paid pull-letter route plus incomplete team/date inputs). None was contacted or retried.
 - No Slack approval or denial was found. The approval queue is now **145**: 16 replies, 3 permission-blocked introductions and 126 follow-ups.
 - The 13 proposal-dependent pitches remain held pending final concept/title, confirmed stylist/team/model/HMU, intended brands, location, exact shoot day, delivery plan and a completed non-DRAFT PDF.
+
+
+## 12 October 2026 — 12:40 UTC hourly run
+
+- Confirmed new introductions: **0**. Fresh New York, Miami and publication research did not surface a contact that simultaneously passed current editorial fit, 2024–2026 city/credit evidence, a published direct-email route and clean campaign/Gmail deduplication.
+- No new campaign human reply, delivery failure, Slack approval or denial was found. The latest campaign human reply remains DSCENE / Ana Markovic's already handled note that Aidan's portfolio would be shared with the editors.
+- New York stylist research rechecked India Reed, Lil Bulgac and Jagi Nelson. India Reed remains logged without a verified public direct email; Lil Bulgac is represented through Berlin and Jagi Nelson's current evidence is Europe-led, so neither met the New York-base requirement.
+- Miami research checked current Brickell, Key Biscayne, Aventura and Miami Living credits. Sofia Daguano and Mariela Ortega were already contacted; Charlie Rincon was already contacted; Mariana Marques is primarily a commercial personal/color stylist; Isabella Markman's surfaced editorial credits were not current; Noé César's current public role is luxury retail and his relevant editorial credits were too old for the 2024–2026 evidence requirement.
+- Publication research logged and skipped Bisous (stale 2021 print guidance plus permanent/broad marketing rights), No Kill (irrevocable, perpetual, transferable and sublicensable rights including advertising, indemnity and moral-rights waiver; also sustainability-concept mismatch), and VOUS (Kavyar route, paid guaranteed packages and pull letters limited to already-published claimed creators). No address was guessed and no duplicate or held contact was retried.
+- Pending approval queue remains **145**: 16 replies, 3 permission-blocked introductions and 126 follow-ups. The 13 proposal-dependent pitches remain held pending final concept/title, confirmed stylist/team/model/HMU, intended brands, location, exact shoot day, delivery plan and a completed non-DRAFT PDF.
