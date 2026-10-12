@@ -523,3 +523,16 @@ Pending queue after this run: **139** items — 15 replies, 3 permission-blocked
 - Publication research rechecked LO'AMMI, LOAD, SUPERIOR, LATEST, Purplehaze, MERDE, Artells and A Worldwide Magazine. Results were already contacted/held, paid or portal-only, or lacked a current loaded primary no-fee email route; none qualified for another introduction.
 - The 13 proposal-dependent pitches remain held pending final concept/title, confirmed stylist/team/model/HMU, intended brands, location, exact shoot day, delivery plan and a completed non-DRAFT PDF.
 - Slack approval ping: https://testing-oqz7522.slack.com/archives/D09JB0X1DDM/p1791836258251579.
+
+## Hourly research and send — 12 October 2026, 21:17 UTC
+
+- Live reconciliation: no new human campaign reply, Slack approval, denial or relevant bounce. All 148 pending Gmail drafts remain live: 20 replies, 3 permission-blocked introductions and 125 follow-ups.
+- Jensen Edmondson sent an automatic out-of-office notice saying she is away until late October. No replacement contact was supplied; no reply was drafted or sent.
+- New introduction delivered to Cocktail Revolution at partnerships@cocktailrevolution.net.au (sent message 1a131f988951bfb8; draft r-8131550653916956437). Its current primary contact page welcomes fashion-editorial pitches. The email asked only about considering a finished, unpublished story; it did not request a pull letter.
+- New introduction delivered to Teen Idle at submitteenidle@gmail.com (sent message 1a131f9969880f07; draft r2179385636557832253). Its current primary contribution page accepts photography and fashion-related editorials. The email asked only about considering a finished, unpublished story; it did not request a pull letter.
+- Both bodies were inspected before sending: no placeholders, attachments, URL schemes or redirect links.
+- New York stylist research: Dylan Andrews was excluded as menswear-focused; Nikita Vlassenko is Paris-based and too senior for this target; Lilly Barros has relevant recent credits but no verified public direct email; Marissa Baklayan already has a pending follow-up.
+- Miami stylist research: no new qualifying direct contact was found. Steven Lassalle remains explicitly held; reviewed names were already logged, insufficiently current, or lacked verified target fit and a public direct email.
+- Publication research exclusions: prior-contact duplicates were not re-pitched; Purplehaze and Kaltblut remain held; DominAsian and Iansá require unconfirmed cultural/editorial alignment; C’est Moi’s page is stale with a 2021 deadline; Institute Magazine’s primary page was inaccessible; INYIM is menswear/music-focused with no usable published address.
+- Proposal-dependent pitches remain held for Schön!, STREETS, Teeth, Lucy's, Cole, TWILL, OBVIOUS, The Imagista, Polyester, BLANC, Jejune, FVM and Orlando Style. Missing inputs: final concept/title, confirmed stylist/team/model/HMU, intended brands, location, exact shoot day, delivery plan, and a completed non-DRAFT PDF.
+- Slack approval queue: https://testing-oqz7522.slack.com/archives/D09JB0X1DDM/p1791839848720149
