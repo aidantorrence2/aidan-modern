@@ -511,3 +511,15 @@ Pending queue after this run: **139** items — 15 replies, 3 permission-blocked
 - Other publication research excluded Junior Style as childrenswear and Q Gentleman as menswear. VULKAN, SYN, The View and The Alchemist resurfaced only through old third-party lists or lacked a current loaded primary no-fee editorial route, so they were not contacted.
 - No new stylist introduction was sent. The pending queue remains **148**: 20 replies, 3 permission-blocked introductions and 125 follow-ups. The 13 proposal-dependent pitches remain held pending final concept/title, confirmed stylist/team/model/HMU, intended brands, location, exact shoot day, delivery plan and a completed non-DRAFT PDF.
 - Slack approval ping: https://testing-oqz7522.slack.com/archives/D09JB0X1DDM/p1791832969384079.
+
+## Hourly research and send — 12 October 2026, 20:17 UTC
+
+- Reconciled all live Gmail drafts, sender-based inbound results and the Slack self-DM before sending. No new human campaign reply, bounce, auto-response, approval or denial appeared after the preceding run. All **148** pending approval drafts remain live: 20 replies, 3 permission-blocked introductions and 125 follow-ups.
+- Sent two new, deduped New York stylist introductions:
+  - **Cassie Jekanoski** — official portfolio says she works primarily from New York City/Los Angeles, styles editorials and serves as Women's Fashion Editor at Office. Her official Instagram publishes `cjekanoski@gmail.com`; Office credited her on the 10 July 2026 editorial “The Black Swan Undressed.” Gmail message `1a131c2fb61a585b`, thread `1a131c2bdccb0dae`, draft `r5279168469654747938`.
+  - **Jensen Edmondson** — official site says she is a New York City-based editorial/commercial stylist working with indie talent and publications and publishes `Jensen.edmondson@gmail.com`. Office credited her as stylist for “HEAD GOLF” on 24 April 2026. Gmail message `1a131c3047f9d038`, thread `1a131c2bf563f408`, draft `r520342780281991596`.
+- Both messages used the confirmed 21–28 October New York dates, kept model casting and collaboration prospective, contained no URL/link or placeholder, and were confirmed in Gmail Sent. No immediate delivery failure was present.
+- Miami stylist research covered Steven Lassalle, Anna Ruiz, Valerie Duardo, Marla McLeod, Luis Rodriguez and Janelly Berroa. Steven remains explicitly held; the others lacked the required combination of a loaded primary direct email, verified current Miami base and recent 2024–2026 independent fashion-editorial credit, or appeared predominantly commercial/senior. No address was guessed.
+- Publication research rechecked LO'AMMI, LOAD, SUPERIOR, LATEST, Purplehaze, MERDE, Artells and A Worldwide Magazine. Results were already contacted/held, paid or portal-only, or lacked a current loaded primary no-fee email route; none qualified for another introduction.
+- The 13 proposal-dependent pitches remain held pending final concept/title, confirmed stylist/team/model/HMU, intended brands, location, exact shoot day, delivery plan and a completed non-DRAFT PDF.
+- Slack approval ping: https://testing-oqz7522.slack.com/archives/D09JB0X1DDM/p1791836258251579.
