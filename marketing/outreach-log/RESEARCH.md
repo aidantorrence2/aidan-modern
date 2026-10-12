@@ -391,3 +391,26 @@ Write the site as `aidantorrence<span>.com</span>` and Instagram as `@madebyaida
 - Prepared five additional unsent in-thread New York stylist follow-ups for approval: Blair Cannon, Queena Yan, Marina Forbatok, Greta Schacht and Savannah Avant. Each uses the confirmed 21–28 October dates. The saved body and quoted history were re-read, plain portfolio domains were neutralized with HTML spans, and no outbound URL or placeholder remains. The Follow-up drafted label was applied.
 - No new campaign reply or Slack approval was found; two fresh inbox messages were unrelated travel confirmations. The approval queue is now 132: 13 replies, 3 permission-blocked introductions and 116 follow-ups. The approval ping and the five full draft texts are in https://testing-oqz7522.slack.com/archives/D09JB0X1DDM/p1791787315652999.
 - The 13 proposal-dependent pitches remain held for the finished concept/title, confirmed stylist/team/model/HMU, brands, location, exact shoot day, delivery/placement plan and final non-DRAFT PDF.
+
+## Hourly run — 12 October 2026, 08:20 UTC
+
+### Confirmed new outreach sent
+
+- **DEVIN Magazine — Lara Ortega** — `creative@devinmagazine.es`. DEVIN's submissions team supplied Lara's address and identified her as Creative Director and the correct person for the womenswear proposal. A separate, link-free introduction asked whether she would review a future concept, moodboard and prospective team and issue a commissioning or pull letter if approved. New York was stated as 21–28 October; Miami remained date-unconfirmed. Gmail confirmed message `1a12f32b1953c176`; no immediate bounce.
+- **Somersault Magazine** — `info@somersaultmagazine.com`. The primary submissions page says website contributors may send either finished work or pitches and publishes this address. Its Issue 03 print deadline was already closed, so the introduction asked only about a prospective web fashion story and whether a pull letter could be issued if approved. Gmail confirmed message `1a12f338f411c087`; no immediate bounce.
+
+### New inbound and drafts
+
+- **Irina Chernyak** declined the current New York dates: she is in Milan and does not plan to be in New York before March. A short thank-you reply is drafted and unsent.
+- **SICKY / Alejandro Reyes** confirmed that SICKY is not issuing pull letters and will review finished submissions. A short acknowledgement preserving the story as unpublished is drafted and unsent.
+- Five unanswered New York stylist threads received one link-free in-thread follow-up draft each: Noël Martin, Alon Cameron, Chernisse Butcher, Nicole Chaux and Olivia Jakubik. All remain unsent pending approval.
+
+### Fresh research exclusions
+
+- **Révèle Magazine** has a published submissions address and accepts fashion editorial, but its Issue 01 deadline was 1 September 2026 and the live page reports that time is up.
+- **ALTAR** considers substantially developed unproduced visual proposals, but the Portals call closed in August 2026 and the current campaign proposal is incomplete.
+- **Jenleeíon Magazine** routes to a private site; no current readable direct editorial address or active 2026 route was verified.
+- **Lauren Garrett Joly** has a public New York contact and an editorial portfolio, but no named, dateable 2024–2026 independent womenswear magazine credit was verified from loaded sources.
+- Broader searches also returned held, previously sent, paid, portal-only, stale, celebrity/senior, or commercial/personal-styling contacts; none were recycled.
+
+Pending queue after this run: **139** items — 15 replies, 3 permission-blocked introductions and 121 follow-ups. The 13 proposal-dependent pitches remain held pending final concept/title, confirmed stylist/team/model/HMU, brands, location, exact shoot day, delivery/placement plan and a completed non-DRAFT PDF.
