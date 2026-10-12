@@ -414,3 +414,14 @@ Write the site as `aidantorrence<span>.com</span>` and Instagram as `@madebyaida
 - Broader searches also returned held, previously sent, paid, portal-only, stale, celebrity/senior, or commercial/personal-styling contacts; none were recycled.
 
 Pending queue after this run: **139** items — 15 replies, 3 permission-blocked introductions and 121 follow-ups. The 13 proposal-dependent pitches remain held pending final concept/title, confirmed stylist/team/model/HMU, brands, location, exact shoot day, delivery/placement plan and a completed non-DRAFT PDF.
+
+
+## 12 October 2026 — 09:35 UTC hourly run
+
+- Confirmed sends: 2 new introductions after campaign-log, live Gmail and draft dedupe.
+  - New York stylist: Sharifa Morris — official portfolio verifies New York base and direct email; 2025 Essence Best in Beauty and 2024 Nicotine Magazine editorial credits verified. Gmail message `1a12f767399e54c7`, thread `1a12f76200b79c5d`.
+  - Magazine: Casper Magazine — current independent digital fashion title whose official page welcomes fashion editorial collaborations and submissions. Asked about future concept/moodboard/team review and a conditional commissioning or pull letter, without promising an attachment. Gmail message `1a12f74a78d58307`, thread `1a12f745a2472fff`.
+- Fresh research also re-qualified House of Solo and MOVES, but live Gmail showed both had already received introductions on 10 October; no duplicates were sent.
+- Solis was skipped because its pull-letter route requires a recommendation from a prior SOLIS print contributor. FOREIGN LOOK was skipped because its pull letter is paid and requires an exact final team, date and moodboard. DRECK and Charlie Rincon were live Gmail duplicates.
+- Five unanswered New York stylist threads received new link-free in-thread follow-up drafts for approval: Sam Knoll, Lydia Tung, Whitney Leff, Talia Cassel and Caitlin Burke. No follow-up was sent.
+- No new Slack approval and no new campaign reply were found before drafting. After these additions the approval queue is 144: 15 replies, 3 permission-blocked intros and 126 follow-ups.
