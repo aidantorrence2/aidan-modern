@@ -485,3 +485,11 @@ Pending queue after this run: **139** items — 15 replies, 3 permission-blocked
 - Pending approval queue is **147**: 19 replies, 3 permission-blocked introductions and 125 follow-ups. The 13 proposal-dependent pitches remain held pending final concept/title, confirmed stylist/team/model/HMU, intended brands, location, exact shoot day, delivery plan and a completed non-DRAFT PDF.
 - Slack approval ping: https://testing-oqz7522.slack.com/archives/D09JB0X1DDM/p1791822108709839. ELIETTE's full draft is in thread reply `1791822117.379149`.
 
+## 2026-10-12 17:12 UTC — hourly run
+
+- Sender-based Gmail reconciliation found one new human campaign reply: Kira at Jejune Magazine asked to review socially aware concept(s), moodboard(s) and the confirmed team. A short link-free acknowledgement was drafted in the existing thread (draft `r5033306645147456609`); it remains unsent pending Aidan's approval.
+- Fresh publication research checked Artells Magazine's current 2026 media kit. Its standard review is free, but the page explicitly states publication is not included in that route and places publication in paid post-acceptance options, so it was excluded as pay-to-publish.
+- Fresh stylist research checked Katelyn Gray, Matthew Mazur and Nicholas MacKinnon. Katelyn and Matthew are major-agency/celebrity-level rather than the requested emerging-to-mid-level independent target; Nicholas specializes in menswear and VIP dressing rather than the planned womenswear story.
+- New initial outreach sent this run: **0**. No newly researched candidate met all targeting, current-credit, published-contact and no-pay-to-publish requirements after exact name/email deduplication.
+- Pending approval queue is **148**: 20 replies, 3 permission-blocked introductions and 125 follow-ups. The 13 proposal-dependent pitches remain held pending final concept/title, confirmed stylist/team/model/HMU, intended brands, location, exact shoot day, delivery plan and a completed non-DRAFT PDF.
+
