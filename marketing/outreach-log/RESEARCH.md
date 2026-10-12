@@ -425,3 +425,8 @@ Pending queue after this run: **139** items — 15 replies, 3 permission-blocked
 - Solis was skipped because its pull-letter route requires a recommendation from a prior SOLIS print contributor. FOREIGN LOOK was skipped because its pull letter is paid and requires an exact final team, date and moodboard. DRECK and Charlie Rincon were live Gmail duplicates.
 - Five unanswered New York stylist threads received new link-free in-thread follow-up drafts for approval: Sam Knoll, Lydia Tung, Whitney Leff, Talia Cassel and Caitlin Burke. No follow-up was sent.
 - No new Slack approval and no new campaign reply were found before drafting. After these additions the approval queue is 144: 15 replies, 3 permission-blocked intros and 126 follow-ups.
+
+
+### Delivery correction — 09:40 UTC
+
+- Casper Magazine immediately returned a permanent `550 5.4.1 Recipient address rejected: Access denied` after the Gmail send. The bounce is handled and the address is blocked from retry. Accordingly, this run has 1 confirmed deliverable new introduction: Sharifa Morris.
