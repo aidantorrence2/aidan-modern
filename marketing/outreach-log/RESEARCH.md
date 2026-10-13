@@ -674,3 +674,14 @@ Pending queue after this run: **139** items — 15 replies, 3 permission-blocked
 - Vanguard and Dappy were not contacted because the loaded routes were Kavyar/current-call pages with unclear or stale timing rather than a clean, current, public editorial inbox suitable for this pitch.
 - The **13 proposal-dependent pitches** remain held until the concept/title, moodboard, confirmed stylist/team/model/HMU, intended brands/looks, location, exact shoot day, delivery plan and completed non-DRAFT proposal PDF are available.
 - Slack approval review posted with the complete live queue: https://testing-oqz7522.slack.com/archives/D09JB0X1DDM/p1791911958503869.
+
+## Hourly run — 13 October 2026, 18:26 UTC
+
+- Reconciled Slack, Gmail and the repository. No new Slack approval, denial or skip instruction appeared. All **154** previously pending draft IDs were still live before reply handling.
+- New campaign replies were handled without sending: **Scott Shapiro** is in Los Angeles through the end of next week and may overlap the end of Aidan’s 21–28 October New York stay; **Tessa Dunlop** has moved from Miami to Houston; **Brandon Brownstein** accepts only projects with a styling budget; and **Soirée Fashion Magazine** will review finished editorials with full creative credits. Four clean in-thread drafts were saved unsent, inspected, and stripped of URL-bearing quoted history.
+- Gmail issued a final DNS/MX failure for **Lucy’s Magazine** at `submissions@LucysMagazine.com`. The dead address is now blocked from retry; its proposal-dependent pitch remains held unless a new public address is verified.
+- Fresh initial outreach sent: **zero**. Current research checked additional New York/Miami stylists and independent magazine routes. Carolina Orrico had current New York credentials and a direct email but was excluded as a senior Vogue/major-commercial stylist outside the emerging-to-mid-level target. WAJ Magazine’s current primary page routes editorial inquiries through a form and publishes an email only for writers/bloggers, so there was no valid editorial email to contact: https://wearejerseyent.com/submissions.
+- Other Miami results were existing contacts, held-back names, celebrity/commercial specialists, no-email candidates or people whose current base/credit evidence did not satisfy the required threshold. No address was guessed and no duplicate was sent.
+- The live approval queue is now **157** drafts: **30 replies, 3 permission-blocked introductions and 124 follow-ups**.
+- The 13 proposal-dependent titles remain held for a final concept/title, moodboard, confirmed stylist/team/model/HMU, intended brands/looks, location, exact shoot day, delivery plan and completed non-DRAFT proposal PDF.
+- Slack review: https://testing-oqz7522.slack.com/archives/D09JB0X1DDM/p1791915963707739. Full text of the four new/changed drafts is in thread reply 1791915983.557099.
