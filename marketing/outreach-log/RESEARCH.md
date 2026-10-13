@@ -654,3 +654,13 @@ Pending queue after this run: **139** items — 15 replies, 3 permission-blocked
 - Fresh magazine research also resolved À PART Publications as a live-Gmail duplicate: an introduction had already been sent on 10 October in thread `1a126eb1cedd4fe5`, so it was not resent.
 - New York stylist research checked current 2026 Ladygunn, NASTY, PAP and CAP 74024 credits. Phil Gomez was excluded as an in-house/senior editor with no published direct email; Lisa Tufo, Gia Hasenfratz and Bri Ilarda lacked a verifiable current New York base and public direct email. Miami searches did not yield a new candidate with all three required signals: current Miami base, a 2024–2026 independent/print credit and a published direct email.
 
+
+
+## 13 October 2026 — 16:14 UTC run
+
+- Reconciled Gmail, Slack and repository state. No explicit approval, denial or skip was found. Gmail returned 479 total drafts across 24 pages; every one of the 153 previously pending campaign draft IDs is still live, so no removed draft or silent send was inferred.
+- A new reply arrived from Miami stylist Ester Gattuso. She is interested in exploring an editorial, asks whether a concept or publications are in mind for a pull letter/submission, and asks to be kept posted on Miami dates. A short in-thread draft was created without links or placeholders; it truthfully says the concept, publication and Miami dates are still unconfirmed and remains unsent for approval. Queue: 154 pending drafts (26 replies, 3 specifically blocked introductions, 125 follow-ups).
+- Fresh outreach sent: **zero**. The magazine pass checked current official submission pages for Artego, Figgi, VIONNE, LOAD, Féroce, Solstice, HAZL, Asthetik, VOL•UP•2, The Nu Journal, Code B, Latest and related current titles. Usable public inboxes were already present in campaign history, while other routes were paid, closed, finished-work-only, proposal-dependent or carried unsuitable rights/eligibility terms.
+- The stylist pass checked current 2026 NASTY, Ladygunn and Vogue-related credits. Stella Evans, Lisa Tufo, Gia Hasenfratz and Parmis Katouzian were logged, but none had all required evidence for a safe introduction: a verified New York/Miami base, a qualifying 2024–2026 independent/print credit and a published direct email. No address was guessed.
+- The 13 proposal-dependent pitches remain held pending a final concept/title, confirmed stylist/team/model/HMU, intended brands/looks, location, exact shoot day, delivery plan and completed non-DRAFT proposal PDF.
+- Slack review posted: https://testing-oqz7522.slack.com/archives/D09JB0X1DDM/p1791908450673409. Ester's full draft appears in thread reply 1791908461.312689.
