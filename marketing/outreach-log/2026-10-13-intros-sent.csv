@@ -1,3 +1,4 @@
 sent_utc,type,city,to,name,subject,gmail_thread_id,gmail_message_id,gmail_draft_id,status,source_url
 2026-10-13T05:21:05Z,magazine,International,photohousemagazine@gmail.com,Photohouse Magazine,Editorial pitch: New York and Miami,1a133b4eb1d26558,1a133b50a5a0f34e,r-6332954761647002927,sent,https://photohousemagazine.com/submit
 2026-10-13T06:18:52Z,magazine,International,hausoftoh@gmail.com,TOH! Magazine,Editorial pitch: New York and Miami,1a133e9af34cb910,1a133e9f2a4b9622,r-3830995341443974119,sent,https://toh-magazine.com/contatti/
+2026-10-13T07:14:41Z,magazine,International,studio@unspunmagazine.com,UNSPUN Magazine,Editorial pitch: New York and Miami,1a1341ce5e00484c,1a1341d0d13ea3f3,r223264753610876654,sent-bounced-address-not-found,https://unspunmagazine.com/contribute
