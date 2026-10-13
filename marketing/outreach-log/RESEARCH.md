@@ -1,9 +1,9 @@
 # Research component: NY + Miami stylists and magazines
 
-## Current confirmed availability and collaboration terms — 10 October 2026
+## Current confirmed availability and collaboration terms — 13 October 2026
 
 - New York: 21–28 October 2026.
-- Miami: later this autumn; exact dates remain unconfirmed for this stylist/magazine campaign. Do not import dates from separate celebrity or portrait campaigns.
+- Miami: 30 October–3 November 2026, confirmed for new outreach from 13 October. Existing drafts and already-sent messages are not being back-edited; do not import dates from separate celebrity or portrait campaigns.
 - Stylist collaborations are unpaid.
 - No magazine pull letter or publication backing has been secured. Do not describe either as confirmed.
 - These current facts supersede older availability wording in historical notes and templates. Replies and follow-ups still require approval.
@@ -536,3 +536,27 @@ Pending queue after this run: **139** items — 15 replies, 3 permission-blocked
 - Publication research exclusions: prior-contact duplicates were not re-pitched; Purplehaze and Kaltblut remain held; DominAsian and Iansá require unconfirmed cultural/editorial alignment; C’est Moi’s page is stale with a 2021 deadline; Institute Magazine’s primary page was inaccessible; INYIM is menswear/music-focused with no usable published address.
 - Proposal-dependent pitches remain held for Schön!, STREETS, Teeth, Lucy's, Cole, TWILL, OBVIOUS, The Imagista, Polyester, BLANC, Jejune, FVM and Orlando Style. Missing inputs: final concept/title, confirmed stylist/team/model/HMU, intended brands, location, exact shoot day, delivery plan, and a completed non-DRAFT PDF.
 - Slack approval queue: https://testing-oqz7522.slack.com/archives/D09JB0X1DDM/p1791839848720149
+
+
+## Hourly run — 12 October 2026 22:25 UTC
+
+- One verified new introduction was delivered to Darkly Magazine at info@darklyartmag.com (sent message `1a132381dc9c8dda`; thread `1a13237c34a1c938`; draft `r-997890333257468596`).
+- Darkly's current primary site showed active October 2026 fashion editorials, a free submission route and the published contact address. The email asked only about finished, unpublished-story consideration; it did not request a pull letter or promise an attachment.
+- The stored body was inspected before sending: no placeholders, attachments, URL schemes or redirect links.
+- Lucy's Magazine remained a temporary DNS/MX delay. Gmail was left to retry; no manual resend was made.
+- No new human campaign reply, Slack approval or denial was found. All 148 pending approval drafts remained live.
+- Slack approval queue: https://testing-oqz7522.slack.com/archives/D09JB0X1DDM/p1791843954704139
+
+## Hourly run — 13 October 2026 05:21 UTC
+
+- Future Miami outreach now uses the confirmed dates 30 October–3 November 2026. Existing drafts and already-sent messages were left unchanged as requested.
+- One verified new introduction was delivered to Photohouse Magazine at photohousemagazine@gmail.com (sent message `1a133b50a5a0f34e`; thread `1a133b4eb1d26558`; draft `r-6332954761647002927`).
+- Photohouse's current primary pages showed October 2026 activity, fashion-editorial coverage, a free standard route, the published contact address, free tear sheets for accepted submissions, and retained photographer copyright. The email asked only whether a finished, unpublished story would be considered through the free route. It did not request a pull letter or promise an attachment.
+- The stored body was inspected before sending: no placeholders, attachments, URL schemes or redirect links. Gmail Sent confirmed delivery.
+- Hope Misterek cleared source quality but failed dedupe: Gmail already contained a sent introduction to hope@fashionandstyling.com from 11 October, so no repeat was sent.
+- New York and Miami stylist research did not produce another qualified, not-yet-contacted person with both a verified city base, current 2024–2026 independent editorial credit and public direct email.
+- Publication exclusions: The Style Syndicate's published route was for designer submissions rather than photographer fashion editorials; The Sanxtuary said print submissions were closed and accepted only written online pitches; nHAUS routed visual work through its form and published its email only for an accompanying article; Fashionably Male was menswear-only; Lamodzi's address remained Cloudflare-obfuscated in the loaded primary source.
+- A Magazine Curated By, Tides and Soil reported temporary delivery delays, not permanent bounces. Gmail was left to retry and none was resent.
+- No new human campaign reply, Slack approval or denial was found. All 148 pending approval drafts remained live.
+- Proposal-dependent pitches remain held for Schön!, STREETS, Teeth, Lucy's, Cole, TWILL, OBVIOUS, The Imagista, Polyester, BLANC, Jejune, FVM and Orlando Style. Missing inputs: final concept/title, confirmed stylist/team/model/HMU, intended brands, location, exact shoot day, delivery plan, and a completed non-DRAFT PDF.
+- Slack approval queue: https://testing-oqz7522.slack.com/archives/D09JB0X1DDM/p1791868919090139
