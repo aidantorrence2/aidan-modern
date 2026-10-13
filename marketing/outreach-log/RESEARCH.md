@@ -3,7 +3,7 @@
 ## Current confirmed availability and collaboration terms — 13 October 2026
 
 - New York: 21–28 October 2026.
-- Miami: 30 October–3 November 2026, confirmed for new outreach from 13 October. Existing drafts and already-sent messages are not being back-edited; do not import dates from separate celebrity or portrait campaigns.
+- Miami: later this autumn; exact dates are unconfirmed for this campaign. Do not copy New York dates into Miami or import dates from separate celebrity or portrait campaigns.
 - Stylist collaborations are unpaid.
 - No magazine pull letter or publication backing has been secured. Do not describe either as confirmed.
 - These current facts supersede older availability wording in historical notes and templates. Replies and follow-ups still require approval.
@@ -578,3 +578,12 @@ Pending queue after this run: **139** items — 15 replies, 3 permission-blocked
 - artPLAY offers pull letters when a moodboard fits, but Gmail proves Aidan already contacted it on 10 October; no duplicate was sent. UNDERWALL's next call says submissions are opening soon. Simon Portraits' public email belongs to its parent commercial photography business rather than a clearly identified editorial/submissions inbox. The Prestige and the remaining titles were exact duplicates or already excluded under live logs.
 - Fresh stylist searches returned no new qualifying New York or Miami contact. Results were senior celebrity/editorial figures, duplicates, held names, or lacked the required combination of verified city base, 2024–2026 independent fashion credit and published direct email.
 - Slack approval reminder: https://testing-oqz7522.slack.com/archives/D09JB0X1DDM/p1791875739509209
+
+## Run — 13 October 2026 08:19–08:29 UTC
+
+- Live Gmail and Slack reconciliation found no new approval or denial. All 148 pre-existing pending drafts were still present.
+- Two previously unhandled magazine replies were found by sender-based scanning. Bianca Nicole at F Word asked for the pitch and team; a clean in-thread draft says the concept/moodboard/team are not complete, promises to send them only when ready, and asks whether an approved pitch could receive a pull letter. Angel Neal at DISRUPSHION said the magazine would consider an exclusive unpublished finished series and asked to review the work; a clean in-thread draft supplies the portfolio in plain text and commits only to sending one completed story before publication elsewhere. Both drafts remain unsent for approval.
+- One verified new initial introduction was delivered to DEUX Magazine at `editor@deuxmag.com` (message `1a1345f35bfbaf66`, thread `1a1345e68e16200a`, draft `r3894934868954190344`). Its current primary page accepts exclusive finished fashion editorials by direct email. The introduction asks only whether DEUX would consider one completed unpublished story and uses “Miami later this autumn”; no pull letter, attachment or acceptance is claimed.
+- Fresh exclusions: ITEM Magazine requires an unrestricted ongoing license and broad promotional/product use; Urban Elite does not clearly separate a free editorial route from digital-tearsheet/custom-cover offers; Blueprint is a student general-arts publication rather than a focused fashion-editorial target; SWAGGER rejects pull-letter requests and requires broad rights/indemnity commitments; ZINK's primary page is compromised and still carries a 2016 calendar.
+- Fresh stylist research did not produce a qualifying new direct contact after current-credit, city-base, campaign and Gmail deduplication. No address was guessed.
+- Pending approval queue is **150**: 22 replies, 3 permission-blocked introductions and 125 follow-ups. The 13 proposal-dependent pitches remain held pending final concept/title, confirmed stylist/team/model/HMU, intended brands, location, exact shoot day, delivery plan and a completed non-DRAFT PDF.
