@@ -1,9 +1,9 @@
 # Outreach log
 
-## Current confirmed availability and collaboration terms — 10 October 2026
+## Current confirmed availability and collaboration terms — 13 October 2026
 
 - New York: 21–28 October 2026.
-- Miami: later this autumn; exact dates remain unconfirmed for this stylist/magazine campaign. Do not import dates from separate celebrity or portrait campaigns.
+- Miami: 30 October–3 November 2026, confirmed for new outreach from 13 October. Existing drafts and already-sent messages are not being back-edited; do not import dates from separate celebrity or portrait campaigns.
 - Stylist collaborations are unpaid.
 - No magazine pull letter or publication backing has been secured. Do not describe either as confirmed.
 - These current facts supersede older availability wording in historical notes and templates. Replies and follow-ups still require approval.
