@@ -73,7 +73,7 @@ Send a pull-letter pitch only once the stylist and dates are confirmed. Several 
 
 ## Delivery note — 11 October 2026
 
-- Lucy's Magazine: Gmail reported a temporary DNS/MX delivery delay for an earlier 10 October inquiry sent by another process (sent message `1a126f0762d37b7c`, thread `1a1257db916a07d9`). Gmail will keep retrying until 13 October 2026 at 10:50:56 -0700. This is not a permanent bounce and must not trigger a manual resend. The substantive Lucy's proposal-dependent pitch remains held: do not follow up or attach the four-page draft proposal until concept/title, team, brands, location and exact shoot day are complete.
+- Lucy's Magazine: Gmail issued a final DNS/MX delivery failure on 13 October 2026 for the earlier 10 October inquiry (sent message `1a126f0762d37b7c`, thread `1a1257db916a07d9`; failure message `1a1366e0d636450a`). Treat `submissions@LucysMagazine.com` as dead and do not retry it. The substantive proposal-dependent pitch remains held unless a new address is published and verified; even then, do not send or attach the four-page draft proposal until concept/title, team, brands, location and exact shoot day are complete.
 
 ### A Magazine Curated By — quarantined 2026-10-11
 
