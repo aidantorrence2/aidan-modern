@@ -664,3 +664,13 @@ Pending queue after this run: **139** items — 15 replies, 3 permission-blocked
 - The stylist pass checked current 2026 NASTY, Ladygunn and Vogue-related credits. Stella Evans, Lisa Tufo, Gia Hasenfratz and Parmis Katouzian were logged, but none had all required evidence for a safe introduction: a verified New York/Miami base, a qualifying 2024–2026 independent/print credit and a published direct email. No address was guessed.
 - The 13 proposal-dependent pitches remain held pending a final concept/title, confirmed stylist/team/model/HMU, intended brands/looks, location, exact shoot day, delivery plan and completed non-DRAFT proposal PDF.
 - Slack review posted: https://testing-oqz7522.slack.com/archives/D09JB0X1DDM/p1791908450673409. Ester's full draft appears in thread reply 1791908461.312689.
+
+## Hourly run — 13 October 2026, 17:19 UTC
+
+- Reconciled Slack and Gmail first: no new campaign approval, denial or human reply. All **154** pending approval draft IDs were present in Gmail before fresh outreach (**26 replies, 3 permission-blocked introductions, 125 follow-ups**).
+- Sent **1 verified new initial introduction** to **SFL Style** at `support@sflstyle.com` for the Miami segment. Its current primary submissions page invites original, unpublished work from South Florida/Miami photographers and fashion creatives, states that contributors retain copyright while granting publication/social rights, and does not state a submission fee: https://www.sflstyle.com/page/submission. Gmail confirmed sent message `1a13645a58f537c9` in thread `1a1364556a64df88`; no immediate bounce was found.
+- The New York stylist pass produced **0 sends**: fresh names did not meet the full combination of verified New York base, qualifying 2024–2026 independent/editorial credit and a publicly published direct email; held-back and previously contacted names were not recycled.
+- The Miami stylist pass produced **0 sends** for the same evidence/deduplication threshold. No address was guessed.
+- Vanguard and Dappy were not contacted because the loaded routes were Kavyar/current-call pages with unclear or stale timing rather than a clean, current, public editorial inbox suitable for this pitch.
+- The **13 proposal-dependent pitches** remain held until the concept/title, moodboard, confirmed stylist/team/model/HMU, intended brands/looks, location, exact shoot day, delivery plan and completed non-DRAFT proposal PDF are available.
+- Slack approval review posted with the complete live queue: https://testing-oqz7522.slack.com/archives/D09JB0X1DDM/p1791911958503869.
