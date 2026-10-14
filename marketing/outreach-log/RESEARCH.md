@@ -750,3 +750,22 @@ Pending queue after this run: **139** items — 15 replies, 3 permission-blocked
 - New initial outreach sent this pass: **0**. This reflects the documented qualification and dedupe blockers above, not an inbox-only run.
 - The active templates were reconciled to the governing state: Miami is “later this autumn”; exact dates are unconfirmed.
 - The approval queue is now **160**: 34 replies, 3 permission-blocked introductions and 123 follow-ups. Slack approval parent: https://testing-oqz7522.slack.com/archives/D09JB0X1DDM/p1791980721513339.
+
+## 14 October 2026 — 13:17 UTC run
+
+- Reconciled Gmail by sender, the live draft inventory and the active Slack approval thread. No new campaign reply or approval was found. A new mailer-daemon notice concerned Mall Grab in the separate celebrity Miami workflow, so it was left untouched and not added to this campaign.
+- Confirmed all **160** pending campaign drafts remain live: **34 replies, 3 permission-blocked introductions and 123 follow-ups**.
+- Fresh exact-name and 2024–2026 editorial-credit research produced three clean New York stylist contacts:
+  - **Ursula M. Agurto** — public email `umastyles@gmail.com` on her primary portfolio; credited as stylist on The Untitled Magazine's “Modern Alchemy” (21 July 2026).
+  - **Kristopher Fraser** — public email `kristopherfraser1@gmail.com`; credited as stylist on The Untitled Magazine's “City Girl” (9 April 2026).
+  - **Barbara Eisen** — public email `bestylegal@gmail.com` on her primary portfolio; New York metro base and The Untitled Magazine's “Industrial Identity” credit (16 October 2024).
+- Each contact was deduped by name/email across the campaign records and Gmail. The saved HTML bodies contained no placeholders, `http`, `https`, `www` or Google redirect URLs. All three introductions were sent and verified in Gmail Sent; no immediate bounce appeared.
+- New initial outreach sent this pass: **3** — Ursula M. Agurto, Kristopher Fraser and Barbara Eisen.
+- Other researched dispositions:
+  - **Holli Kingsbury** has a published direct email and New York base, but the current 2025 credit located is interiors/props styling rather than womenswear editorial; not sent.
+  - **Josie Nolan** has a July 2026 Numéro New York styling-assistant credit, but no public direct email was found; no address was guessed.
+  - **Elysze Held** has a published Miami contact and substantial fashion history, but her veteran celebrity/private-client profile is outside the emerging-to-mid-level unpaid editorial target.
+  - **Betina Bak** remains logged as a strong Miami credit without a public direct email; current searches did not resolve that blocker.
+  - Fresh magazine searches surfaced existing/deduped targets, fee/rights problems, closed routes or no public editorial email; no magazine address was guessed.
+- Approval Slack parent: https://testing-oqz7522.slack.com/archives/D09JB0X1DDM/p1791984258204069. The full 160-name queue and the 13 proposal-blocked publications are posted in thread replies.
+
