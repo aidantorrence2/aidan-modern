@@ -3,10 +3,10 @@
 ## Current confirmed availability and collaboration terms — 13 October 2026
 
 - New York: 21–28 October 2026.
-- Miami: later this autumn; exact dates are unconfirmed for this campaign. Do not copy New York dates into Miami or import dates from separate celebrity or portrait campaigns.
+- Miami: 30 October–3 November 2026 for new outreach. Existing drafts do not need date-only rewrites; do not import dates from unrelated campaigns.
 - Stylist collaborations are unpaid.
 - No magazine pull letter or publication backing has been secured. Do not describe either as confirmed.
-- These current facts supersede older availability wording in historical notes and templates. Replies and follow-ups still require approval.
+- These current facts supersede older availability wording in historical notes and templates. Replies require explicit approval. Aidan separately authorized one brief in-thread follow-up to a genuine nonresponder after verifying there is no reply, bounce or existing sent follow-up.
 
 Runs every hour in Codex/ChatGPT, and on demand. Every run researches new contacts and sends all qualifying initial introductions found, independently of the approval backlog. The former six-hour cadence is superseded from 10 October 2026. Native Gmail, Slack, GitHub and web tools execute this work; both former Claude routines are paused. Pitches that require the unfinished proposal PDF stay held.
 
@@ -34,13 +34,13 @@ A lead is skipped if its email, or the person or magazine name, already appears 
 
 ## Drafts (htmlBody only, no URLs, no Google redirects)
 
-Write the site as `aidantorrence<span>.com</span>` and Instagram as `@madebyaidan`. Read every saved draft using native Gmail read_email, checking all MIME bodies and quotes for http/https/www URLs, Google redirects, anchors and placeholders. Only initial introductions are automatically sent with send_draft; confirm the SENT result and record IDs. All replies and follow-ups need explicit approval.
+Write the site as `aidantorrence<span>.com</span>` and Instagram as `@madebyaidan`. Read every saved draft using native Gmail read_email, checking all MIME bodies and quotes for http/https/www URLs, Google redirects, anchors and placeholders. Initial introductions and one verified in-thread follow-up to a genuine nonresponder are authorized for automatic send; confirm the SENT result and record IDs. Replies always need explicit approval. If a follow-up send is blocked or interrupted, keep the draft, log the attempt and do not repeatedly retry it.
 
 - Stylist, subject `Editorial for submission, New York` (or `Miami`):
   `Hi {first},<br><br>I'm Aidan Torrence, an editorial photographer working on 35mm film and digital. I came across {credit}.<br><br>I'll be in New York 21–28 October and I'm putting together an unpaid womenswear editorial collaboration for magazine submission, aimed at titles like Schön!, STREETS and Lady Gunn. I'm asking the magazine for a pull letter before the shoot so you can request samples from PR. I'd love to have you style it. Happy to build the concept together and cast an agency model around it.<br><br>Would you be open to it?<br><br>My work: aidantorrence<span>.com</span> · @madebyaidan<br>Aidan Torrence · WhatsApp +49 175 8966210`
-  For Miami use "I'll be in Miami later this autumn". The pull-letter line was added on 9 Oct after Shandi Alexander said she would only commit once there is an LOR.
+  For new Miami outreach use "I'll be in Miami 30 October–3 November". Existing drafts do not need date-only rewrites. The pull-letter line was added on 9 Oct after Shandi Alexander said she would only commit once there is an LOR.
 - Magazine, subject `Editorial pitch: New York and Miami`:
-  `Hi {first or magazine team},<br><br>I'm Aidan Torrence, an editorial photographer working on 35mm film and digital. I'll be in New York 21–28 October 2026 and Miami later this autumn, developing separate womenswear stories. I'm speaking with stylists and planning agency casting; the concept and team are still to be confirmed.<br><br>Would you consider reviewing a concept and moodboard when ready, and could an approved proposal receive a commissioning or pull letter so a stylist can request PR samples? I'm seeking editorial consideration without a publication fee.<br><br>My work: aidantorrence<span>.com</span> · @madebyaidan<br><br>Best,<br>Aidan<br>WhatsApp +49 175 8966210`
+  `Hi {first or magazine team},<br><br>I'm Aidan Torrence, an editorial photographer working on 35mm film and digital. I'll be in New York 21–28 October 2026 and Miami 30 October–3 November 2026, developing separate womenswear stories. I'm speaking with stylists and planning agency casting; the concept and team are still to be confirmed.<br><br>Would you consider reviewing a concept and moodboard when ready, and could an approved proposal receive a commissioning or pull letter so a stylist can request PR samples? I'm seeking editorial consideration without a publication fee.<br><br>My work: aidantorrence<span>.com</span> · @madebyaidan<br><br>Best,<br>Aidan<br>WhatsApp +49 175 8966210`
   Tailor to the loaded primary policy. Do not promise publication, an attachment, a confirmed team, or exclusive rights to the same story at multiple accepting publications.
   If the magazine only takes finished stories, swap the question for "Would you consider the finished story once it's shot?". Portal-only magazines get no draft; list them in the report.
 
@@ -685,3 +685,11 @@ Pending queue after this run: **139** items — 15 replies, 3 permission-blocked
 - The live approval queue is now **157** drafts: **30 replies, 3 permission-blocked introductions and 124 follow-ups**.
 - The 13 proposal-dependent titles remain held for a final concept/title, moodboard, confirmed stylist/team/model/HMU, intended brands/looks, location, exact shoot day, delivery plan and completed non-DRAFT proposal PDF.
 - Slack review: https://testing-oqz7522.slack.com/archives/D09JB0X1DDM/p1791915963707739. Full text of the four new/changed drafts is in thread reply 1791915983.557099.
+
+
+## 14 October 2026 — 04:17 UTC research and send
+
+- Sent and verified three new introductions: New York stylists Brooke George (brookeegeorgee@gmail.com) and Chantelle Thach (info@chantellethach.com), plus JADED Magazine (Jade@jadedisland.com). Gmail confirmed SENT messages 1a138a0ef2568f7e, 1a138a10054b8b4a and 1a138a1111de332d. No immediate delivery failure appeared.
+- Brooke's primary site verifies a New York base, public direct email and current print/digital editorial work. Chantelle's primary site publishes her direct email; The Mercer Index 2025 verifies her New York base and GQ South Africa/PAUSE editorial styling. JADED's current primary submission page publishes a direct pitch address and an open alternative-fashion pitch route.
+- Live Gmail and Slack reconciliation found no new human campaign reply or approval after the prior reminder.
+- PAPER, The Daily Front Row, Avenue, Ponyboy and Cero were verified as genuine nonresponders, and their existing in-thread drafts were re-inspected. Two send attempts were interrupted by the authorization guard before delivery. All five drafts remain live and were not retried again.
