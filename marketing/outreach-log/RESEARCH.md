@@ -38,9 +38,9 @@ Write the site as `aidantorrence<span>.com</span>` and Instagram as `@madebyaida
 
 - Stylist, subject `Editorial for submission, New York` (or `Miami`):
   `Hi {first},<br><br>I'm Aidan Torrence, an editorial photographer working on 35mm film and digital. I came across {credit}.<br><br>I'll be in New York 21–28 October and I'm putting together an unpaid womenswear editorial collaboration for magazine submission, aimed at titles like Schön!, STREETS and Lady Gunn. I'm asking the magazine for a pull letter before the shoot so you can request samples from PR. I'd love to have you style it. Happy to build the concept together and cast an agency model around it.<br><br>Would you be open to it?<br><br>My work: aidantorrence<span>.com</span> · @madebyaidan<br>Aidan Torrence · WhatsApp +49 175 8966210`
-  For new Miami outreach use "I'll be in Miami 30 October–3 November". Existing drafts do not need date-only rewrites. The pull-letter line was added on 9 Oct after Shandi Alexander said she would only commit once there is an LOR.
+  For new Miami outreach use "I’ll be in Miami later this autumn"; exact dates remain unconfirmed. Existing drafts do not need date-only rewrites. The pull-letter line was added on 9 Oct after Shandi Alexander said she would only commit once there is an LOR.
 - Magazine, subject `Editorial pitch: New York and Miami`:
-  `Hi {first or magazine team},<br><br>I'm Aidan Torrence, an editorial photographer working on 35mm film and digital. I'll be in New York 21–28 October 2026 and Miami 30 October–3 November 2026, developing separate womenswear stories. I'm speaking with stylists and planning agency casting; the concept and team are still to be confirmed.<br><br>Would you consider reviewing a concept and moodboard when ready, and could an approved proposal receive a commissioning or pull letter so a stylist can request PR samples? I'm seeking editorial consideration without a publication fee.<br><br>My work: aidantorrence<span>.com</span> · @madebyaidan<br><br>Best,<br>Aidan<br>WhatsApp +49 175 8966210`
+  `Hi {first or magazine team},<br><br>I'm Aidan Torrence, an editorial photographer working on 35mm film and digital. I'll be in New York 21–28 October 2026 and Miami later this autumn, developing separate womenswear stories. I'm speaking with stylists and planning agency casting; the concept and team are still to be confirmed.<br><br>Would you consider reviewing a concept and moodboard when ready, and could an approved proposal receive a commissioning or pull letter so a stylist can request PR samples? I'm seeking editorial consideration without a publication fee.<br><br>My work: aidantorrence<span>.com</span> · @madebyaidan<br><br>Best,<br>Aidan<br>WhatsApp +49 175 8966210`
   Tailor to the loaded primary policy. Do not promise publication, an attachment, a confirmed team, or exclusive rights to the same story at multiple accepting publications.
   If the magazine only takes finished stories, swap the question for "Would you consider the finished story once it's shot?". Portal-only magazines get no draft; list them in the report.
 
@@ -549,7 +549,7 @@ Pending queue after this run: **139** items — 15 replies, 3 permission-blocked
 
 ## Hourly run — 13 October 2026 05:21 UTC
 
-- Future Miami outreach now uses the confirmed dates 30 October–3 November 2026. Existing drafts and already-sent messages were left unchanged as requested.
+- Superseded state note: a separate process had promoted 30 October–3 November for future Miami outreach. Under the governing campaign brief, those dates are not confirmed here; future outreach uses “later this autumn.” Existing already-sent messages remain historical records.
 - One verified new introduction was delivered to Photohouse Magazine at photohousemagazine@gmail.com (sent message `1a133b50a5a0f34e`; thread `1a133b4eb1d26558`; draft `r-6332954761647002927`).
 - Photohouse's current primary pages showed October 2026 activity, fashion-editorial coverage, a free standard route, the published contact address, free tear sheets for accepted submissions, and retained photographer copyright. The email asked only whether a finished, unpublished story would be considered through the free route. It did not request a pull letter or promise an attachment.
 - The stored body was inspected before sending: no placeholders, attachments, URL schemes or redirect links. Gmail Sent confirmed delivery.
@@ -735,3 +735,18 @@ Pending queue after this run: **139** items — 15 replies, 3 permission-blocked
 - Sender-based Gmail scanning, recent bounce checks and Slack approval-thread reconciliation found no new human campaign reply, delivery failure or explicit decision. All 159 pending review drafts remain live: 33 replies, 3 blocked intros and 123 follow-ups.
 - State correction: Miami remains “later this autumn; exact dates unconfirmed” under the governing campaign brief. The previously promoted 30 October–3 November wording was removed from the current-state header and should not be used for fresh outreach without renewed confirmation.
 
+## Hourly research and reconciliation — 14 October 2026, 12:19 UTC
+
+- Sender-based Gmail scanning covered the complete campaign sender set plus bounce and auto-response addresses. The only new real campaign reply was from DAYVII SEVEN (`contactus@dayviiseven.com`): the editor will review a completed story but cannot guarantee a feature before seeing the work.
+- A short in-thread acknowledgement was created as draft `r3666896711996959253` in thread `1a134927e653b988`. The saved MIME body was rechecked and contains no `http`, `https`, `www` or Google redirect text. It remains unsent pending approval.
+- Fresh magazine research checked current primary submission pages for MERDE, Sludge, OPALUS, FIZZY, KOLOR, Florum, Dixie and additional independent titles. No new introduction qualified:
+  - FIZZY, KOLOR and Florum had already received campaign outreach; exact Gmail dedupe found Florum message/thread `1a1278a92c3fedb4` from 10 October.
+  - MERDE still displays a submissions pause notice and explicitly rejects pitches in favor of finalized work.
+  - OPALUS is currently calling for extreme beauty stories rather than the planned womenswear editorial.
+  - Sludge publishes fashion requirements but no verified fashion-submission inbox; its visible address is explicitly for think pieces.
+  - Dixie asks contacts to request current fees, so it is outside the no-pay-to-publish brief.
+  - Florum's pull-sheet route requires the concept, moodboard, full team, exact date and location, which remain unconfirmed.
+- Fresh New York and Miami stylist searches surfaced only prior contacts, senior/celebrity profiles outside the target, or candidates without both a current 2024–2026 editorial credit and a published direct email. No address was guessed.
+- New initial outreach sent this pass: **0**. This reflects the documented qualification and dedupe blockers above, not an inbox-only run.
+- The active templates were reconciled to the governing state: Miami is “later this autumn”; exact dates are unconfirmed.
+- The approval queue is now **160**: 34 replies, 3 permission-blocked introductions and 123 follow-ups. Slack approval parent: https://testing-oqz7522.slack.com/archives/D09JB0X1DDM/p1791980721513339.
