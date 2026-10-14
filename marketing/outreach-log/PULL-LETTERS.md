@@ -10,6 +10,12 @@
 
 A pull letter (also called a commissioning letter or LOR) is a magazine's letter that lets the stylist borrow samples from PR. Magazines only issue one for an approved proposal, so every pitch below needs the proposal PDF first. Policies are from each title's own pages, checked 8 Oct 2026. Full rows are in `leads.csv` (segment `magazine-pull-letter`).
 
+## Live positive route — HOLLYWAY, 14 October 2026
+
+- Jenny at HOLLYWAY replied that the magazine is willing to review the concepts, moodboards and proposed creative teams for both New York and Miami, and can issue commissioning and pull letters for pre-approved projects once the concept and publication arrangement are confirmed.
+- This is not yet a commission, acceptance or secured pull letter. The reply draft declines the paid guaranteed-placement route and says Aidan will send a complete proposal when ready; it remains unsent pending approval.
+- Missing before a complete proposal can be sent: final concept/title, moodboard, named stylist and proposed team, model/casting plan, brands/looks, location, exact shoot day and delivery/placement plan. Miami dates remain unconfirmed.
+
 ## Update 10 Oct
 
 - New York dates (21–28 October) added to the NY and two-city pitches: Schön!, STREETS, Teeth, Lucy's, Cole, TWILL, OBVIOUS, The Imagista, Polyester, BLANC, Jejune, FVM. The earlier Orlando Style (Miami) draft had a Miami-date placeholder inserted by another process; those dates are not confirmed for this campaign. Keep Miami as “later this autumn” until Aidan supplies exact dates. Any reply or revised proposal still requires approval before sending.
