@@ -849,3 +849,10 @@ Pending queue after this run: **139** items — 15 replies, 3 permission-blocked
 - Re-listed all 514 Gmail drafts across 26 pages. All 163 pending campaign draft IDs remain live: 38 replies, 3 permission-blocked introductions and 122 follow-ups.
 - Fresh research covered current NYC and Miami stylist portfolios, recent editorial-credit searches, independent magazine submission pages and direct-email routes. New names and outlets screened included Alexandra Loeb, Alexis Badiyi, Tara Greene, Alexandria Carter, Liz Teich, MILIEU, AGNES SELECT, ELLAS and barecreative.
 - Initial outreach sent: **0**. Concrete blockers were senior or commercial/multi-market profiles outside the target, beauty/wedding-led work, no current qualifying independent womenswear editorial evidence, no published direct email, interiors/articles-only submission scopes, and closed portal calls. Previously researched or held titles were not recycled.
+
+## Hourly research run — 14 October 2026 23:20 UTC
+
+- Live Slack reconciliation found no new approval, denial or skip instruction. Sender-based Gmail review found no new campaign reply, bounce or auto-response after the preceding run; all 163 pending draft IDs remain live.
+- Fresh NYC/Miami stylist research screened Jillian Foisie, Styled by BRIJÈ, Jamie Grace, Rebecca Dennett, Natasha Colvin, ANA STYLING and Zoe Stewart. Jarad Gonzalez also surfaced, but Gmail confirmed his 10 October intro and existing unsent follow-up draft, so he was not contacted again.
+- Initial outreach sent: **0**. Jillian Foisie and Styled by BRIJÈ had no published direct email on loaded primary pages; Jamie Grace and Rebecca Dennett were senior major-title profiles; Natasha Colvin and Zoe Stewart were celebrity-led; ANA STYLING lacked a verifiable dated independent editorial credit. No address was guessed and no prior contact was duplicated.
+- Approval backlog remains 163: 38 replies, 3 permission-blocked intros and 122 follow-ups. The proposal-dependent titles remain held because the concept/title, moodboards, named team/model/HMU, brands/looks, location, exact shoot day, delivery/placement plan and finished non-DRAFT PDF are missing.
