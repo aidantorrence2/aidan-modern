@@ -717,3 +717,11 @@ Pending queue after this run: **139** items — 15 replies, 3 permission-blocked
 - Miami stylists: fresh searches resolved to Anna Ruiz, Veronica Garrote and Steven Lassalle, all already logged/contacted or explicitly held, plus commercial/personal-styling profiles without qualifying recent independent-editorial evidence. No duplicate was sent.
 - Magazines: Highlights Magazine's primary page showed a 1 June 2026 submission deadline, now passed, and Miami Living exposed a form but no public editorial/submissions email. Other current searches resolved to already contacted, paid, stale, closed, or rights-conflicting titles.
 - Live Gmail and Slack reconciliation found no new human campaign reply or explicit approval. The separate Michelle Renders email concerned the excluded celebrity Miami campaign and was left untouched. The pending review queue remains 159 items.
+
+### 2026-10-14 10:19 UTC — fresh hourly research pass
+
+- Result: **1 qualifying new introduction sent** to **IMIRAGE Magazine** at its public direct-submission address. The message pitches finished-story consideration only, uses New York 21–28 October and Miami 30 October–3 November, and commits to no publication terms, fee, team, attachment or pull letter. Gmail confirmed SENT message `1a139ec1972471b8` in thread `1a139ebdd5390e34`; no immediate delivery failure appeared.
+- IMIRAGE's primary 25 April 2025 page says the direct MagCloud route is free and accepts 4–22 finished images with a signed release, but also states broad display/marketing permissions and that contributors purchase their own issue. Any later submission or term acceptance therefore remains uncommitted and requires separate review; a paid requirement should be declined.
+- The Collective Magazine was not contacted: its live page still advertises Spring 2018 with a 10 January 2018 deadline and combines 8-look/10-image production requirements with production-cost liability and an exclusive royalty-free worldwide licence.
+- Current NYC/Miami stylist searches largely resolved to already-contacted people, senior/celebrity or agency-only profiles, or current editorial names without a published direct email. No address was guessed and no duplicate was sent.
+- Live Gmail and Slack reconciliation found no new human campaign reply or explicit approval. The pending review queue remains 159 items.
