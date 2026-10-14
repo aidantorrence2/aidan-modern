@@ -693,3 +693,12 @@ Pending queue after this run: **139** items — 15 replies, 3 permission-blocked
 - Brooke's primary site verifies a New York base, public direct email and current print/digital editorial work. Chantelle's primary site publishes her direct email; The Mercer Index 2025 verifies her New York base and GQ South Africa/PAUSE editorial styling. JADED's current primary submission page publishes a direct pitch address and an open alternative-fashion pitch route.
 - Live Gmail and Slack reconciliation found no new human campaign reply or approval after the prior reminder.
 - PAPER, The Daily Front Row, Avenue, Ponyboy and Cero were verified as genuine nonresponders, and their existing in-thread drafts were re-inspected. Two send attempts were interrupted by the authorization guard before delivery. All five drafts remain live and were not retried again.
+
+
+## 2026-10-14 07:18 UTC — live run
+
+- Sent and verified one new initial introduction: New York stylist Stella Evans (stella.evns@gmail.com). Gmail confirmed SENT message `1a13944495f96d51` in thread `1a1394421af33527`; no immediate delivery failure appeared.
+- Stella's primary contact page now publishes the exact Gmail address and identifies her as NYC-based, resolving the earlier no-email disposition. Her recent NASTY and PAPER fashion-editorial credits were independently verified before outreach.
+- Fresh Miami research checked Betina Bak, Emilio Uribe, Isa Zapata and Styled by Stefy. Betina and Emilio have qualifying current local credits but no published direct email; Isa is a senior editor/creative director outside the target stylist segment; Stefy's public service contact lacks a qualifying recent independent-editorial credit. No address was guessed.
+- Fresh publication research rechecked New Face Magazine (published address previously bounced 550), REVS (already contacted), Solstice (campaign ineligible for its pull-letter history requirement), LO'AMMI (paid pull-letter route), MERDE (stale submissions-pause notice) and KOLOR (already contacted and criteria held). No duplicate or policy-conflicting introduction was sent.
+- Live Gmail and Slack reconciliation found no new human campaign reply or explicit approval. The pending review queue remains 159 items.
