@@ -841,3 +841,11 @@ Pending queue after this run: **139** items — 15 replies, 3 permission-blocked
 - Fresh magazine screening covered Mature Magazine and It's Not You It's Me Media. Mature's current third-party call did not yield an official primary editor/submissions email, so no address was guessed. INYIM's loaded 2026 primary page is an independent route but focuses on menswear/model photography, not the planned womenswear stories.
 - Result: zero new introductions sent. The blockers were senior/commercial profiles outside target, stale or incomplete editorial evidence, no published primary direct email, and an ineligible menswear-only publication. The search also rechecked already logged SUPERIOR, LIVID, Artego, Figgi, QP, Révèle, Solstice and other exhausted titles without recycling them.
 
+
+## 2026-10-14 22:17 UTC — hourly research and reconciliation
+
+- Reconciled Slack after parent `1792013125.108459`: no explicit approval, denial, skip or send instruction was posted.
+- Rechecked sender-based campaign inbound across all logged contacts, plus bounce and auto-response senders: no new campaign message arrived after the prior checkpoint.
+- Re-listed all 514 Gmail drafts across 26 pages. All 163 pending campaign draft IDs remain live: 38 replies, 3 permission-blocked introductions and 122 follow-ups.
+- Fresh research covered current NYC and Miami stylist portfolios, recent editorial-credit searches, independent magazine submission pages and direct-email routes. New names and outlets screened included Alexandra Loeb, Alexis Badiyi, Tara Greene, Alexandria Carter, Liz Teich, MILIEU, AGNES SELECT, ELLAS and barecreative.
+- Initial outreach sent: **0**. Concrete blockers were senior or commercial/multi-market profiles outside the target, beauty/wedding-led work, no current qualifying independent womenswear editorial evidence, no published direct email, interiors/articles-only submission scopes, and closed portal calls. Previously researched or held titles were not recycled.
