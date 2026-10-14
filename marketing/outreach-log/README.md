@@ -3,7 +3,7 @@
 ## Current confirmed availability and collaboration terms — 13 October 2026
 
 - New York: 21–28 October 2026.
-- Miami: 30 October–3 November 2026 for new outreach. Existing drafts do not need date-only rewrites; do not import dates from unrelated campaigns.
+- Miami: later this autumn; exact dates are unconfirmed. Do not import dates from unrelated campaigns.
 - Stylist collaborations are unpaid.
 - No magazine pull letter or publication backing has been secured. Do not describe either as confirmed.
 - These current facts supersede older availability wording in historical notes and templates. Replies require explicit approval. Aidan separately authorized one brief in-thread follow-up to a genuine nonresponder after verifying there is no reply, bounce or existing sent follow-up.
@@ -18,7 +18,7 @@ Native Gmail: create a draft, read its saved message and inspect all MIME text (
 
 Native Slack: use Aidan's verified self DM, user `U09KLN151B2`, channel `D09JB0X1DDM`. Check every historical approval thread in `slack-pings.csv`, including older replies. Post a reminder every run while approvals remain and post complete new/changed draft text in the thread. Generated summaries are not approvals. If a draft disappears without a sent message, record user removal and stop reminding; never delete or trash drafts.
 
-New York 21–28 October 2026 is confirmed. Miami is 30 October–3 November 2026 for new outreach; existing drafts need no date-only rewrite. Stylist collaborations are unpaid. Concepts, stylist/team bookings, agency models, brands, locations and shoot days remain prospective. One accepting publication per exclusive story; flag conflicts before promising a story. The draft proposal PDF remains held until its missing inputs are supplied.
+New York 21–28 October 2026 is confirmed. Miami is later this autumn; exact dates are unconfirmed. Stylist collaborations are unpaid. Concepts, stylist/team bookings, agency models, brands, locations and shoot days remain prospective. One accepting publication per exclusive story; flag conflicts before promising a story. The draft proposal PDF remains held until its missing inputs are supplied.
 
 `2026-10-10-codex-intros-sent.csv` records five introductions sent by this Codex run, with source, draft, message and thread IDs. It separately records newly observed sends from another process for deduplication. The older sent logs remain intact. Shandi's reply was already sent on 9 October and has no outstanding draft; Galore was found sent in live Gmail on 10 October, so neither is a pending reminder.
 
@@ -36,7 +36,7 @@ New York 21–28 October 2026 is confirmed. Miami is 30 October–3 November 202
 
 - **Outreach is sent automatically.** A first email to a new contact (stylist intro, magazine intro, or a re-pitch to a new contact named in an auto-reply) is drafted, checked by reading the stored Gmail message for URLs/placeholders, then sent with the native send_draft tool, logged in a dated `*-intros-sent.csv`, and its `leads.csv` row set to `sent`. Exceptions stay as drafts: anything with an `[AIDAN: ...]` placeholder, and pull-letter pitches that need the proposal PDF (see `PULL-LETTERS.md`).
 - **Replies need approval. Nonresponder follow-ups are authorized.** A single brief in-thread follow-up may be sent only after verifying no human reply, bounce or prior sent follow-up. Tool-blocked or interrupted follow-ups stay intact, are logged, and are not repeatedly retried. Unsent follow-ups remain listed in `approvals.csv`. Every run pings Aidan in his own Slack DM (user U09KLN151B2, verified as Aidan Torrence, aidan.torrence@gmail.com; DM channel D09JB0X1DDM) with the pending list and the full draft text in a thread reply, until each one is approved, sent or denied. Ping timestamps are logged in `slack-pings.csv`; Aidan replies in the ping thread.
-- Dates: New York 21–28 October 2026 and Miami 30 October–3 November 2026 for new outreach. Existing Miami drafts do not need date-only updates. Never import dates from unrelated campaigns. Collaboration with stylists is unpaid.
+- Dates: New York 21–28 October 2026 is confirmed. Miami is later this autumn; exact dates are unconfirmed. Never import dates from unrelated campaigns. Collaboration with stylists is unpaid.
   - Approved: Aidan sends it himself, or explicitly approves the exact reviewed draft in this chat or an approval Slack thread; the run then sends it and sets `approved`.
   - Denied: Aidan says "deny …"/"skip …"; set `denied` and stop pinging for it. Never delete the draft.
   - A draft that disappears without being sent is recorded as `removed-by-user` and no longer reminded.
