@@ -3,7 +3,7 @@
 ## Current confirmed availability and collaboration terms — 13 October 2026
 
 - New York: 21–28 October 2026.
-- Miami: 30 October–3 November 2026 for new outreach. Existing drafts do not need date-only rewrites; do not import dates from unrelated campaigns.
+- Miami: later this autumn; exact dates are unconfirmed. Do not import dates from unrelated campaigns.
 - Stylist collaborations are unpaid.
 - No magazine pull letter or publication backing has been secured. Do not describe either as confirmed.
 - These current facts supersede older availability wording in historical notes and templates. Replies require explicit approval. Aidan separately authorized one brief in-thread follow-up to a genuine nonresponder after verifying there is no reply, bounce or existing sent follow-up.
@@ -725,3 +725,13 @@ Pending queue after this run: **139** items — 15 replies, 3 permission-blocked
 - The Collective Magazine was not contacted: its live page still advertises Spring 2018 with a 10 January 2018 deadline and combines 8-look/10-image production requirements with production-cost liability and an exclusive royalty-free worldwide licence.
 - Current NYC/Miami stylist searches largely resolved to already-contacted people, senior/celebrity or agency-only profiles, or current editorial names without a published direct email. No address was guessed and no duplicate was sent.
 - Live Gmail and Slack reconciliation found no new human campaign reply or explicit approval. The pending review queue remains 159 items.
+
+### 2026-10-14 11:18 UTC — fresh hourly research pass
+
+- Result: **1 qualifying new introduction sent** to **MAURI Magazine** at its public contributions address. MAURI's primary page identifies it as an independent fashion magazine created for and with disability and neurodivergent communities, invites work, projects and ideas for future issues, and publishes `info@maurimag.com`. The final message neutrally asks whether relevant contributors must be confirmed at the first pitch, whether MAURI reviews concept/moodboard/prospective team before the shoot, and whether an accepted pitch can receive a pull letter. It uses New York 21–28 October and the safer “Miami later this autumn” wording, with no attachment, fee, team, acceptance or rights commitment. Gmail confirmed SENT message `1a13a225a6613a64` in thread `1a13a21a0ec40396`.
+- New York stylist research found Nina Sterghiou and Elisa Maldonado with primary-site direct emails, but both were excluded as too senior for this unpaid emerging-to-mid-level target. Nina's page cites former ELLE/Marie Claire editing and global campaigns; Elisa's cites a decade-plus career and former Estée Lauder global creative direction, with no dateable 2024–2026 independent editorial credit.
+- ANA STYLING in Miami was re-verified on its primary 2026 site with a public address and Marie Claire/NOIR portfolio evidence, but exact Gmail and log dedupe confirmed prior contact and a live follow-up draft; no duplicate was sent.
+- Chartium is closed and restricted to contributors aged 13–25. Advisor Magazine accepts finished, fully credited Black fashion and beauty stories but exposed no public editorial email on the loaded primary page. ICON Magazine USA was excluded because its terms require purchase of the issue and include hold-harmless plus “forego all rights” language. No address was guessed.
+- Sender-based Gmail scanning, recent bounce checks and Slack approval-thread reconciliation found no new human campaign reply, delivery failure or explicit decision. All 159 pending review drafts remain live: 33 replies, 3 blocked intros and 123 follow-ups.
+- State correction: Miami remains “later this autumn; exact dates unconfirmed” under the governing campaign brief. The previously promoted 30 October–3 November wording was removed from the current-state header and should not be used for fresh outreach without renewed confirmation.
+
