@@ -968,7 +968,7 @@ Pending queue after this run: **139** items — 15 replies, 3 permission-blocked
 - **Slack reminder:** full new draft text and the complete queue were posted under parent `1792081477.796949` (https://testing-oqz7522.slack.com/archives/D09JB0X1DDM/p1792081477796949).
 
 
-## 15 October 2026 — 17:30 UTC run
+## 15 October 2026 — 17:23 UTC run
 
 - **Live reconciliation:** all 166 pending draft IDs remain present in Gmail (41 replies, 3 specifically blocked introductions and 122 follow-ups). Sender-based Gmail searches across every logged personal address and professional domain found no new campaign reply or permanent bounce after the prior checkpoint. The only later delivery notice concerned `info@mastaace.com` in the separate portrait campaign and was left untouched. Slack contained no new approval, denial or skip instruction.
 - **Fresh research, zero sends:** Ayumi Perry has current 2026 editorial credits and a New York/Los Angeles profile, but is agency-represented and operates at senior celebrity/editorial level. Kirby Marzec publishes a direct email and NYC base, but is a former Vogue senior market editor with management representation. Yana Echko publishes an NYC email, but no loaded source established a specific dated 2024–2026 independent editorial credit. IN BLVCK's primary submissions page charges $150–$199 for editorial publication and is therefore ineligible. These were logged so they are not recycled. No undeduplicated contact cleared all fit and verification gates, so no initial introduction was sent.
