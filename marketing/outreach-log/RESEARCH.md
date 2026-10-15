@@ -903,3 +903,13 @@ Pending queue after this run: **139** items — 15 replies, 3 permission-blocked
 - No new campaign reply, campaign bounce, Slack approval or denial appeared. A new WBD delivery failure belonged to the separate celebrity-portrait campaign and was deliberately left untouched.
 - All 164 pending Gmail drafts remain live: 39 replies, three specifically blocked introductions and 122 follow-ups. The thirteen proposal-dependent pitches remain held pending final concept/title, moodboard, confirmed team/model/HMU, brands/looks, location, exact shoot day, delivery plan, placement choice and a finished non-DRAFT PDF.
 
+
+
+## 2026-10-15 10:25 UTC — hourly research and send
+
+- **Sent:** ContentMode at `us@contentmode.com`. Its active primary site shows current 2026 fashion/cover/print work and publishes the address specifically for editorial submissions: https://www.contentmode.com/
+- The introduction was created, re-read from the saved Gmail MIME body, checked for placeholders, unsupported commitments and live/redirect URLs, sent, and confirmed in Gmail SENT as message `1a13f17b85fb064b` in thread `1a13f177fc8defb5`.
+- **New York stylist screening:** Maya Cruz has a current Brooklyn freelance-stylist profile and a June 2025 Ladygunn fashion editorial credit, but no public direct project email was published on the loaded current pages. Kelly Hill is an established former J.Crew senior fashion editor and represented commercial consultant, outside the emerging-to-mid-level independent target.
+- **Miami stylist screening:** Lina Palacios is Miami-based but currently specializes in menswear, athletes, celebrity and commercial work. Aiyana Ishmael has a 2025 Teen Vogue photographer/stylist credit, but her current Miami base and direct styling email could not be verified. Giorgia Imbrenda has current editorial credentials, but no verified New York/Miami base or public direct email.
+- **Magazine screening:** BELLO is active but exposes no current editorial-submission address or policy on its loaded primary site. VULKAN and JUTE could not be verified from accessible current primary pages. The current CAKE domain is an ophthalmology trade publication, not a fashion title.
+- Inbox search across every logged sender/domain plus mailer-daemon found no new campaign reply, auto-response or bounce after the preceding checkpoint. Live Gmail still contains all 164 pending approval drafts; the new ContentMode message was an authorized initial introduction and is not part of that approval queue.
