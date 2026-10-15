@@ -1025,3 +1025,12 @@ Pending queue after this run: **139** items — 15 replies, 3 permission-blocked
 - **Draft state:** all 168 pending campaign draft IDs remain live in Gmail: 43 replies, 3 specifically blocked introductions and 122 follow-ups.
 - **Slack reminder:** the complete queue and blockers were posted under parent `1792102954.512309` (https://testing-oqz7522.slack.com/archives/D09JB0X1DDM/p1792102954512309).
 
+
+
+## 15 October 2026 — 23:17 UTC checkpoint
+
+- **New outreach sent: 1 — Auxiliary Magazine.** Its current primary contact page publishes `auxiliarymagazine@gmail.com`, invites fashion and beauty editorial submissions and creative pitches, and the publication's current site lists an active Spring 2026 print/digital issue. The stored email was inspected before sending and had no URL, placeholder or attachment. Gmail confirmed sent message `1a141db1e6edac7f` in thread `1a141dae57c069c3`.
+- **Fresh research and exclusions:** current LADYGUNN, Cero, Office, Autre and Brickell editorial credits were screened for new New York and Miami names. Chelsea Volpe is New York-based but has a long celebrity/major-brand career and current agency representation, outside the emerging-to-mid independent target. The fresh Miami credits were already logged, publication-side, commercial, or lacked a public direct project email. Other magazine results were already logged, paid, portal-only, finished-work-only without a new direct route, or had stale policies. No address was guessed.
+- **Live reconciliation:** the complete sender-based sweep covered 523 logged addresses collapsed to 515 personal-address/professional-domain tokens across 15 Gmail queries plus mailer-daemon notices. No new campaign reply, auto-response or campaign bounce appeared. The new failure for `mhendrix@asanteworkspr.com` belongs to the separate Monie Love portrait campaign and was left untouched. Slack contained no approval, denial or skip instruction.
+- **Draft state:** all 168 pending campaign draft IDs remain live in Gmail: 43 replies, 3 specifically blocked introductions and 122 follow-ups.
+- **Slack reminder:** the sent result, complete queue and proposal blockers were posted under parent `1792106274.810069` (https://testing-oqz7522.slack.com/archives/D09JB0X1DDM/p1792106274810069).
