@@ -999,3 +999,11 @@ Pending queue after this run: **139** items — 15 replies, 3 permission-blocked
 - **New inbound:** LO'AMMI's immediate response is an automated acknowledgment, not a human editorial decision. It states review may take 7–10 days. No reply draft was created; the message was labeled handled. The pre-existing paid-pull-letter conflict remains controlling, and no automatic follow-up will be sent.
 - **Reconciliation:** no new Slack approval, denial or skip instruction appeared. Pending remains 167: 42 replies, 3 blocked introductions and 122 follow-ups.
 - **Slack reminder:** no-change approval ping posted at `1792092787.792209` (https://testing-oqz7522.slack.com/archives/D09JB0X1DDM/p1792092787792209), carrying the prior complete 167-name queue link and blockers.
+
+## 15 October 2026 — 20:12 UTC checkpoint
+
+- **New outreach sent: 0.** Fresh research covered current LADYGUNN and Cero fashion credits, independent New York stylist portfolios, Miami editorial credits, and independent-magazine pull-letter/submission pages.
+- **Best apparent match deduped:** Alejandra Garran's primary portfolio verifies New York/Sydney and publishes `ali@alejandragarran.com`; Cero credits her on the May 2025 womenswear story “The Stillness Archive.” Exact Gmail reconciliation found an existing introduction sent on 10 October 2026 (message `1a127a1781892004`), so it was not resent.
+- **Other exclusions:** Britt Layton Baptista and Tess Elizabeth were previously screened; Britt lacks a verified New York/Miami base and is above the emerging-to-mid target, while Tess has no published direct email. Aurora Luis remains Instagram-only. Anna Ruiz and the fresh Miami results were senior/commercial or already contacted. Magazine searches resolved to already logged, held, paid, portal-only, stale, or unsuitable-rights titles. No address was guessed.
+- **Live reconciliation:** Gmail showed no new human campaign reply or campaign bounce; Slack showed no approval, denial or skip instruction. Pending remains 167: 42 replies, 3 specifically blocked introductions and 122 follow-ups.
+- **Slack reminder:** full current queue and proposal blockers posted under parent `1792095268.012639` (https://testing-oqz7522.slack.com/archives/D09JB0X1DDM/p1792095268012639).
