@@ -921,3 +921,15 @@ Pending queue after this run: **139** items — 15 replies, 3 permission-blocked
 - **Miami stylist screening:** Samantha Brown's June 2025 profile confirms a 2024 move to Miami and photoshoot work, but also a fifteen-year career spanning celebrity and private-client styling, and no published direct project email was found. Other fresh results were already contacted, previously held, personal-styling-led or lacked a direct public email and current independent editorial credit.
 - **Magazine screening:** SHUBA routes editorial work through DEPO Place; MALVIE and Mob Journal route it through Kavyar; Vigour explicitly says email submissions are not reviewed. HIGHLIGHTS publishes `editorial@highlightsmag.com` but its listed 1 June 2026 deadline is closed. Mandale presents itself as a luxury marketing agency offering strategic exposure, not an open independent photographer-editorial route.
 - **Live state:** Gmail found no new campaign reply, auto-response or bounce in the last two hours; Slack contained no new approval or denial. All 164 pending draft IDs remain live: 39 replies, three specifically blocked introductions and 122 follow-ups.
+
+## 15 October 2026 — 12:14 UTC hourly research
+
+- **New introductions sent:** 0.
+- Rechecked current New York and Miami stylist credits and independent-magazine submission routes against Gmail, dated sent ledgers, drafts, and the lead log before considering contact.
+- **Anastasia Alexeichik:** current primary site verifies Miami base and `info@alexeichik.com`, but its only dated editorial credit is Harper's Bazaar September 2023; skipped because the required current-credit window is 2024–2026.
+- **Michaela Bushkin:** New York based, but has more than eight years' experience and is Fashion Director of Branded Content at Who What Wear and Marie Claire; skipped as senior/in-house.
+- **Ras Bartram:** editor-at-large at CR Fashion Book and former 032c fashion director; skipped as a senior international editorial stylist, with no public direct project email verified.
+- **Cece Liu, Veronica Blagoeva, Carolina Orrico and Ulrike Kache:** current 2025–2026 editorial credits were found, but no loaded primary source verified both a New York/Miami base and a public direct email; not contacted.
+- **NOMADSofORIGIN:** primary submissions page publishes `editorial@readorigin.co.uk`, but its active print/web themes are Escapism or Culture/Travel/People rather than fashion/womenswear; skipped for fit.
+- Magazine searches also returned previously logged/sent or ineligible titles including 5ELEVEN, QP, FashionX, Scorpio Jin, Artego, Project1, RARE, HAZL, FRUK and VOUS. Dedupe and prior policy outcomes were respected; none was recycled.
+- Full sender-based Gmail reconciliation used 495 personal-address/professional-domain tokens in 15 queries plus a fresh delivery-failure search. No new campaign reply or bounce was found. All 164 pending approval drafts remain live.
