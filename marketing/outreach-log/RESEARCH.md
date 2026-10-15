@@ -894,3 +894,12 @@ Pending queue after this run: **139** items — 15 replies, 3 permission-blocked
 - **Miami stylists:** fresh searches returned already-contacted or already-exhausted names (Steven Lassalle, Ester Gattuso, Veronica Garrote, Anna Ruiz, Ana Styling, Charlie Rincon, Dana Yurglich). Ashlyn Lin's older Miami interview conflicts with a current London profile, so she was not treated as Miami-based.
 - **Magazines:** current searches returned already-sent, held, paid, portal-only or previously skipped titles. Savage Prime surfaced only via a 2021 third-party issue listing; the current primary domain belongs to a different music publication, so no authoritative fashion submission address could be verified.
 - **New initial outreach sent this run:** 0. No candidate passed current segment fit, recent-credit/policy verification, direct published email and campaign/Gmail deduplication together.
+
+## 15 October — 09:25 UTC native Codex research pass
+
+- Fresh New York, Miami and magazine research produced no qualifying undeduplicated initial contact, so zero introductions were sent. Live Gmail showed Laura Spriet Brown and A2Z Fashion Magazine had already received campaign introductions; both were deduped and not resent.
+- DaNisha Greene has a current New York profile and published direct email, but her 15-plus-year fashion-director/stylist history and high-profile client work place her outside the emerging-to-mid-level target. Andrew Philip Nguyen has a current LADYGUNN credit and direct email, but his official profile places him in Greater Los Angeles rather than New York or Miami.
+- Newly screened publication routes were not padded into the send count. Dreamingless lacked a current authoritative primary submission page; IMIRAGE mixes Kavyar routing with free/paid opportunities and fee-based corrections; Edith is Kavyar-routed and does not offer commissioning/pull letters. FORWARD remained excluded under its previously logged broad modification/derivative-rights terms.
+- No new campaign reply, campaign bounce, Slack approval or denial appeared. A new WBD delivery failure belonged to the separate celebrity-portrait campaign and was deliberately left untouched.
+- All 164 pending Gmail drafts remain live: 39 replies, three specifically blocked introductions and 122 follow-ups. The thirteen proposal-dependent pitches remain held pending final concept/title, moodboard, confirmed team/model/HMU, brands/looks, location, exact shoot day, delivery plan, placement choice and a finished non-DRAFT PDF.
+
