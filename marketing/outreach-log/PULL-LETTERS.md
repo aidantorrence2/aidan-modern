@@ -103,3 +103,11 @@ An unlogged 10 October message from another workflow used unconfirmed Miami date
 - C-Heads pending reply commits to keeping the selected story unpublished during review; must be explicitly approved before sending. No conflicting accepting exclusive offers identified.
 
 Review: https://testing-oqz7522.slack.com/archives/D09JB0X1DDM/p1792179036824009
+
+
+## 16 October 2026, 20:13 UTC reconciliation
+
+- Roe / Sarah declined: at full capacity, no further fashion editorials/projects. Inbound 1a146553e86c44bb in thread 1a130ea22e6577dd, 20:08:37 UTC. Closed, not a letter or placement; no further pitch or follow-up.
+- ETUI initial introduction sent; Issue 03 Backstage Pass call permits original visual/textual submissions and email ideas until 18 December 2026 (https://www.etuimagazine.com/issue-03). Asked about no-fee proposal review/pull letters, or completed-story consideration. No claimed letter, placement, team or acceptance. No attachment promised.
+- Four ordinary nonresponder follow-ups sent: MOVES, Vogue Portugal, Œ (finished-story only), LATEST. Concepts/team still developing; no acceptance of fees, copyright, insurance or sample liability.
+- No new letter or accepted exclusive. All 13 unfinished-proposal holds unchanged: Schön!, STREETS, Teeth, Lucy’s, Cole, TWILL, OBVIOUS, The Imagista, Polyester, BLANC, Jejune, FVM, Orlando Style. Missing: final concept/title, moodboard, named stylist/team/model/agency/HMU, model count, brands/looks, location, exact shoot day, Miami dates, delivery/publication/exclusivity choice and final non-DRAFT PDF. C-Heads reviewed draft still includes unpublished-until-reviewed commitment, requiring explicit approval.
