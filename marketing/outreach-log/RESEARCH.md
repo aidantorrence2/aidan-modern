@@ -1185,3 +1185,12 @@ Pending queue after this run: **139** items — 15 replies, 3 permission-blocked
 - Magazine research produced no qualifying new email introduction. PhotoVogue Mondays is a finished-image upload platform with no published commissioning/pull-letter contact; LO'AMMI was already logged as paid; Purplehaze remains held back; other results were portal-only, paid, stale or already in campaign history.
 - Posted the mandatory Slack approval reminder with the complete 168-name queue and exact proposal blockers: https://testing-oqz7522.slack.com/archives/D09JB0X1DDM/p1792157032037579
 
+## 2026-10-16 14:25 UTC — Hourly research checkpoint
+
+- **New initial outreach sent:** 0.
+- Reconciled Gmail and Slack after the previous checkpoint. No new approval or denial was found; all **168 pending approval drafts** are live (44 replies, 3 permission-blocked intros, 121 follow-ups).
+- **New inbound:** Bridgett Magyar replied that she is generally open to collaborating but usually does not work unpaid, and asked for the vision, timeline and New York dates. Her existing in-thread draft was updated with the confirmed 21–28 October window, explicit unpaid framing, an open concept, and an agency model still to be cast. It remains unsent pending approval.
+- Fresh research checked current Miami editorial credits for Mariana Marques, Emilio Uribe, Isabella Markman and Jhon Jairo Santos, plus current Teeth work by Sophia Phillips and additional independent-magazine/pull-letter searches.
+- Mariana Marques and Isabella Markman were already logged; neither produced a new published direct editorial contact. Emilio Uribe remains excluded as a senior celebrity beauty profile. Jhon Jairo Santos has a current Miami fashion-editor/creative-direction credit but no verified public direct email. Sophia Phillips' current Teeth editorial appears Los Angeles-based, and the public email search resolved to a different USC student rather than the credited stylist.
+- No magazine lead met the combined standard of photographer-led fashion editorial fit, non-paid eligibility, a current primary submission policy and a public editor/submissions email. Existing proposal-dependent holds remain held.
+- Posted the mandatory Slack approval reminder, the full Bridgett draft, and the complete 168-name queue: https://testing-oqz7522.slack.com/archives/D09JB0X1DDM/p1792160691930079
