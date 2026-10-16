@@ -9,7 +9,10 @@
     "lint": "next lint",
     "test:portfolio": "node scripts/check-portfolio-tiers.mjs",
     "images": "python3 tools/process_images.py /Users/aidantorrence/Documents/selected",
-    "test:photographic-edit": "node scripts/check-photographic-edit.mjs"
+    "test:photographic-edit": "node scripts/check-photographic-edit.mjs",
+    "test:offers": "node scripts/check-offers.mjs",
+    "flywheel:kits": "node scripts/flywheel/kits.mjs",
+    "flywheel:stats": "node scripts/flywheel/stats.mjs"
   },
   "dependencies": {
     "@neondatabase/serverless": "^1.0.2",

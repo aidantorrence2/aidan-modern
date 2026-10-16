@@ -1,0 +1,339 @@
+[
+  {
+    "slug": "pitch-pilot",
+    "name": "Pitch Pilot",
+    "headline": "Find the published press and booking contacts for any magazine, agency or talent, and get the cold pitch drafted, in minutes.",
+    "buyer": "editorial and portrait photographers who chase magazines, agencies and talent by email",
+    "bullets": [
+      "Paste a name: it finds the published business email (never guessed), who it belongs to, and where it was published.",
+      "Drafts a short pitch in your voice with one specific reference, deduped against what you already sent.",
+      "Logs every pitch, reply and bounce, and nudges the ones that went quiet after five days."
+    ],
+    "price": "$29/month",
+    "priceUsd": 29,
+    "priceNote": "or $99 one-time setup for your own Gmail",
+    "status": "live",
+    "launched": "2026-10-16",
+    "reasonPrompt": "Who do you pitch most: magazines, agencies, publicists? What would make this a yes?",
+    "faq": [
+      { "q": "Does it send email for me?", "a": "Only if you want it to. Default is drafts in your Gmail that you press send on." },
+      { "q": "Where do the contacts come from?", "a": "Only addresses published for press, booking or submissions on the organisation's own pages. Nothing scraped from personal profiles." }
+    ],
+    "kit": {
+      "hook": "I sent 90 cold pitches to stylists and magazines in one morning. Here is the system, and I'm turning it into a tool.",
+      "script": "Open on the Gmail sent folder scrolling. VO: 'Ninety pitches, one morning, zero copy-paste.' Cut to a screen: a magazine name typed in, the published press email appearing with the page it came from. VO: 'It finds the published contact, never a guessed one, and drafts the pitch with one real reference.' Cut to a reply notification. VO: 'Then it tracks who answered and nudges who didn't.' End card: 'Pitch Pilot. $29 a month. Pre-launch: link in bio, tell me if you'd use it.'",
+      "caption": "Turning my own outreach system into a tool for photographers. Not built yet. If you'd pay $29/month for this, say so on the page and I build it first. aidantorrence.com/offers/pitch-pilot",
+      "community": "I run cold outreach to magazines and stylists as a photographer and automated most of it: finding the published press contact, drafting a short pitch, tracking replies. Thinking of packaging it for other photographers at $29/month. Before I build, honest question: would you use it, and what's the one thing it must do? Pre-launch page with an 'I'd pay' button, no charge: aidantorrence.com/offers/pitch-pilot",
+      "pitchSubject": "Cold pitching tool for photographers (pre-launch)",
+      "pitch": "Hi {first},\n\nI'm Aidan, an editorial photographer. I noticed {specific reference}.\n\nI automated my own magazine and agency outreach (finding the published press contact, drafting the pitch, tracking replies) and I'm deciding whether to turn it into a tool for other photographers at $29 a month.\n\nIf that's useful to you, the pre-launch page has an 'I'd pay' button and takes ten seconds: aidantorrence.com/offers/pitch-pilot?src=email\n\nIf not, a one-line 'no, because' helps just as much.\n\nBest,\nAidan"
+    }
+  },
+  {
+    "slug": "shoot-kit",
+    "name": "Shoot Kit",
+    "headline": "Call sheet, model release and usage agreement as one clean PDF, in two minutes, from your phone.",
+    "buyer": "freelance photographers and small production teams who still type these up the night before",
+    "bullets": [
+      "Fill in date, location, crew and times once; the call sheet, release and usage terms are generated together.",
+      "Plain-English release and usage agreement with the clauses agencies actually ask for, editable per shoot.",
+      "Share a link; everyone signs on their phone; signed PDFs land in your inbox."
+    ],
+    "price": "$9 per shoot",
+    "priceUsd": 9,
+    "priceNote": "or $7/month unlimited",
+    "status": "live",
+    "launched": "2026-10-16",
+    "reasonPrompt": "Which document do you dread most: call sheet, release or usage terms? What's missing from the ones you use now?",
+    "faq": [
+      { "q": "Is the release legally reviewed?", "a": "The first version is a plain-English template you can edit. If enough people want it, a reviewed version per country comes next." }
+    ],
+    "kit": {
+      "hook": "Every shoot I rewrite the same three documents at 11pm. So I'm making a tool that does it in two minutes.",
+      "script": "Open on a phone, a cramped notes app with 'CALL SHEET' typed at the top. VO: 'Call sheet, model release, usage agreement. Every shoot, from scratch, the night before.' Cut to a form: date, location, crew. Tap generate. Three PDFs stack up. VO: 'One form. Three documents. Everyone signs on their phone.' End card: 'Shoot Kit. $9 a shoot. Pre-launch, link in bio.'",
+      "caption": "Call sheet + release + usage terms in two minutes. Not built yet; I build it if enough photographers say they'd use it. $9 per shoot. aidantorrence.com/offers/shoot-kit",
+      "community": "Photographers: how do you do call sheets and model releases right now? I'm sketching a tool that generates the call sheet, release and usage agreement from one form and gets them signed on phones, $9 per shoot or $7/month. Pre-launch page, no charge, just an 'I'd pay' button so I know whether to build it: aidantorrence.com/offers/shoot-kit",
+      "pitchSubject": "Call sheet + release in two minutes (pre-launch)",
+      "pitch": "Hi {first},\n\nI'm Aidan, a photographer. I saw {specific reference}.\n\nI'm deciding whether to build a small tool that turns one form into a call sheet, model release and usage agreement, signed on phones, $9 per shoot.\n\nIf you'd use it, the pre-launch page has an 'I'd pay' button and takes ten seconds: aidantorrence.com/offers/shoot-kit?src=email\n\nIf not, 'no, because' in one line is just as useful.\n\nBest,\nAidan"
+    }
+  },
+  {
+    "slug": "submission-atlas",
+    "name": "Submission Atlas",
+    "headline": "Every magazine taking fashion and editorial submissions, with their rules, published contacts and what they actually run.",
+    "buyer": "emerging fashion photographers and stylists submitting stories",
+    "bullets": [
+      "Verified submission rules per title: exclusivity, image counts, file specs, response times.",
+      "Published submissions contacts with the page they came from, re-checked monthly.",
+      "Filters by genre, region, print or web, paid or unpaid, so you stop pitching titles that never answer."
+    ],
+    "price": "$39 one-off",
+    "priceUsd": 39,
+    "priceNote": "includes 12 months of updates",
+    "status": "live",
+    "launched": "2026-10-16",
+    "reasonPrompt": "Which titles do you wish you had rules and contacts for? Print, web, or both?",
+    "faq": [
+      { "q": "How many titles?", "a": "The first version targets 150 titles I can verify by hand. It grows from there." }
+    ],
+    "kit": {
+      "hook": "I pitched 40 magazines before I learned which ones even take submissions. I'm building the list I wish I'd had.",
+      "script": "Open on a spreadsheet with 40 magazine names, half struck through. VO: 'Forty pitches. Twenty of them to titles that never take submissions.' Cut to a directory: filter by fashion, Europe, web, unpaid. Rows with rules and contacts. VO: 'Rules, published contacts, response times. Re-checked monthly.' End card: 'Submission Atlas. $39 once. Pre-launch, link in bio.'",
+      "caption": "A directory of magazines that take fashion and editorial submissions, with rules and published contacts. $39 one-off. Not built yet; your 'I'd pay' click decides. aidantorrence.com/offers/submission-atlas",
+      "community": "Fashion photographers and stylists: I'm considering building a verified directory of magazines that take submissions (rules, published submission contacts, response times, filters by genre and region), $39 one-off with a year of updates. Pre-launch page, no charge, just tell me if you'd buy it: aidantorrence.com/offers/submission-atlas",
+      "pitchSubject": "Magazine submission directory (pre-launch)",
+      "pitch": "Hi {first},\n\nI'm Aidan, an editorial photographer. I noticed {specific reference}.\n\nI'm deciding whether to build a verified directory of magazines that take fashion and editorial submissions, with rules, published contacts and response times, $39 one-off.\n\nIf that's something you'd buy, the pre-launch page has an 'I'd pay' button: aidantorrence.com/offers/submission-atlas?src=email\n\nIf not, one line on why helps as much.\n\nBest,\nAidan"
+    }
+  },
+  {
+    "slug": "city-pages",
+    "name": "City Pages",
+    "headline": "A sign-up page for your next city that fills your model-test calendar before you land.",
+    "buyer": "traveling photographers who book model tests and collabs city by city",
+    "bullets": [
+      "One page per city with your dates, a moodboard picker and a WhatsApp or Instagram contact field; no website needed.",
+      "Sign-ups land in a simple list and on your phone, with their photos and chosen themes.",
+      "Availability slots in the visitor's time zone, so bookings stop clashing across cities."
+    ],
+    "price": "$19/month",
+    "priceUsd": 19,
+    "priceNote": "pause between trips",
+    "status": "live",
+    "launched": "2026-10-16",
+    "reasonPrompt": "Which cities are next for you, and how do you take sign-ups today?",
+    "faq": [
+      { "q": "Is this the page you use yourself?", "a": "Yes. It's the same flow behind my own city sign-ups, made generic so anyone can run it." }
+    ],
+    "kit": {
+      "hook": "I land in a new city with 30 model tests already booked. Here's the page that does it, and I'm making it yours.",
+      "script": "Open on an airport arrivals board. VO: 'New city, thirty shoots already booked.' Cut to the sign-up page on a phone: dates, moodboard picker, WhatsApp field. VO: 'One page per city. They pick a theme, drop a photo, book a slot in their time zone.' Cut to a list of sign-ups filling. End card: 'City Pages. $19 a month. Pre-launch, link in bio.'",
+      "caption": "The sign-up page I use to fill model tests in each city, as a tool for other traveling photographers. $19/month. Not built for others yet; say if you'd use it. aidantorrence.com/offers/city-pages",
+      "community": "Traveling photographers: how do you fill model tests in a new city? I run a sign-up page per city (dates, moodboard picker, WhatsApp contact, time-zone-aware slots) and I'm thinking of offering it as a hosted tool at $19/month. Pre-launch page, no charge: aidantorrence.com/offers/city-pages",
+      "pitchSubject": "City sign-up page for model tests (pre-launch)",
+      "pitch": "Hi {first},\n\nI'm Aidan, a photographer who shoots model tests city by city. I saw {specific reference}.\n\nI'm deciding whether to offer the sign-up page I use (dates, moodboard picker, WhatsApp contact, bookable slots) as a hosted tool at $19 a month.\n\nIf you'd use it, the pre-launch page has an 'I'd pay' button: aidantorrence.com/offers/city-pages?src=email\n\nIf not, a one-line 'no, because' is just as helpful.\n\nBest,\nAidan"
+    }
+  },
+  {
+    "slug": "interview-clipper",
+    "name": "Interview Clipper",
+    "headline": "Drop in a long interview, get captioned vertical cuts with three hook variants each, ready to post.",
+    "buyer": "small creators doing people-first video who lose a day to cutting clips",
+    "bullets": [
+      "Upload a 30 to 90 minute interview; it transcribes, finds the 8 to 12 strongest moments and cuts them to 9:16.",
+      "Every clip comes with burned-in captions and three different first lines to test as hooks.",
+      "Download the clips and a posting sheet with captions; nothing auto-posts."
+    ],
+    "price": "$15/month",
+    "priceUsd": 15,
+    "priceNote": "10 interviews a month",
+    "status": "live",
+    "launched": "2026-10-16",
+    "reasonPrompt": "What do you record (podcast, street interviews, client calls) and what takes longest today?",
+    "faq": [
+      { "q": "Is this just another AI clipper?", "a": "The market has many. This one is built on the FFmpeg and Whisper scripts I run on my own videos, and the three-hook output is the part I couldn't find elsewhere." }
+    ],
+    "kit": {
+      "hook": "One 40-minute interview became 11 clips with three hooks each. I didn't open an editor.",
+      "script": "Open on a timeline in an editor, hundreds of cuts. VO: 'This used to be my Sunday.' Cut to a terminal: a file drops in, a progress bar. VO: 'Transcribe, find the moments, cut to vertical, caption, write three hooks for each.' Cut to a grid of 11 captioned clips. End card: 'Interview Clipper. $15 a month. Pre-launch, link in bio.'",
+      "caption": "Long interview in, captioned vertical clips with three hook variants out. Built on scripts I already use. $15/month. Not launched; your click decides. aidantorrence.com/offers/interview-clipper",
+      "community": "Creators who record interviews: I'm deciding whether to package my FFmpeg + Whisper pipeline as a tool. Upload a long interview, get 8 to 12 captioned vertical clips, each with three hook variants to test. $15/month. Pre-launch page with an 'I'd pay' button, no charge: aidantorrence.com/offers/interview-clipper",
+      "pitchSubject": "Interview to captioned clips (pre-launch)",
+      "pitch": "Hi {first},\n\nI'm Aidan, a photographer and short-form creator. I saw {specific reference}.\n\nI'm deciding whether to turn my own clipping pipeline into a tool: a long interview in, captioned vertical clips with three hook variants out, $15 a month.\n\nIf that's useful, the pre-launch page has an 'I'd pay' button: aidantorrence.com/offers/interview-clipper?src=email\n\nIf not, a one-line 'no, because' helps just as much.\n\nBest,\nAidan"
+    }
+  },
+  {
+    "slug": "city-shot-lists",
+    "name": "City Shot Lists",
+    "headline": "Shot lists, golden-hour timings and permit notes for Asian cities, from someone who shot them.",
+    "buyer": "travel content creators landing in Bangkok, Manila, Bali, Chiang Mai, Singapore, Busan or Ulaanbaatar with two days to shoot",
+    "bullets": [
+      "Per city: 25 to 40 spots with the exact time of day they work, how to get there, and what to shoot.",
+      "Permit and etiquette notes: where a tripod gets you stopped, where a drone is illegal, where to ask first.",
+      "A two-day route that strings the spots together so you shoot instead of searching."
+    ],
+    "price": "$12 per city pack",
+    "priceUsd": 12,
+    "priceNote": "or $39 for all cities",
+    "status": "live",
+    "launched": "2026-10-16",
+    "reasonPrompt": "Which city, and when are you going?",
+    "faq": [
+      { "q": "Which cities first?", "a": "The ones I have shot: Bangkok, Manila, Bali, Chiang Mai, Singapore, Busan and Ulaanbaatar. The page's votes decide the order." }
+    ],
+    "kit": {
+      "hook": "Two days in Manila. Here are the 30 spots and the exact hour each one works. I'm packaging this per city.",
+      "script": "Fast cuts of city frames with a time stamp on each: 06:40, 17:55, 19:10. VO: 'Thirty spots, the hour each one works, how to get there, and where a tripod gets you stopped.' Cut to a map with a two-day route. End card: 'City Shot Lists. $12 per city. Pre-launch, link in bio: vote on your city.'",
+      "caption": "Shot lists with timings, permit notes and a two-day route for the Asian cities I've shot. $12 per city. Not made yet; vote on the page and I make yours first. aidantorrence.com/offers/city-shot-lists",
+      "community": "Travel creators: would you pay $12 for a per-city shot list (30+ spots with the exact hour they work, permit and tripod notes, a two-day route) from a photographer who has shot the city? Starting with Bangkok, Manila, Bali, Chiang Mai, Singapore, Busan, Ulaanbaatar. Pre-launch page, no charge, pick your city: aidantorrence.com/offers/city-shot-lists",
+      "pitchSubject": "City shot lists for Asia (pre-launch)",
+      "pitch": "Hi {first},\n\nI'm Aidan, a photographer who has been shooting across Asia this year. I saw {specific reference}.\n\nI'm deciding whether to make per-city shot lists: 30+ spots with the hour each works, permit notes, a two-day route, $12 per city.\n\nIf that's useful, the pre-launch page has an 'I'd pay' button and a city vote: aidantorrence.com/offers/city-shot-lists?src=email\n\nIf not, one line on why helps as much.\n\nBest,\nAidan"
+    }
+  },
+  {
+    "slug": "cull-assist",
+    "name": "Cull Assist",
+    "headline": "Turn 2,000 frames into a 60-frame edit in a minute, ranked by a model that learned your taste from your past selects.",
+    "buyer": "photographers who spend the evening after a shoot clicking through near-duplicates",
+    "bullets": [
+      "Point it at a folder; it groups bursts, drops closed eyes and misfocus, and ranks the rest.",
+      "Teach it once from 200 of your own selects and rejects; it ranks the way you would, not the way a stock model would.",
+      "Outputs a star-rated XMP sidecar set, so Lightroom and Capture One see the edit without any export."
+    ],
+    "price": "$12/month",
+    "priceUsd": 12,
+    "priceNote": "runs on your own computer",
+    "status": "live",
+    "launched": "2026-10-16",
+    "reasonPrompt": "What do you shoot, how many frames per job, and what do you cull in today?",
+    "faq": [
+      { "q": "Do my photos get uploaded?", "a": "No. The first version runs locally and writes XMP sidecars next to your RAWs." }
+    ],
+    "kit": {
+      "hook": "2,000 frames. 60 selects. One minute. And it picked the ones I would have picked.",
+      "script": "Open on a grid of near-identical frames scrolling forever. VO: 'The part of the job nobody posts about.' Cut to a terminal: 'ranking 2,014 frames', then a 60-frame grid with stars. VO: 'It learned from two hundred of my own selects. It groups bursts, drops closed eyes, and ranks the rest my way.' End card: 'Cull Assist. $12 a month. Pre-launch, link in bio.'",
+      "caption": "A culling tool that learns your taste from your own past selects and writes star ratings as XMP sidecars. Runs locally. $12/month. Not built yet; say if you'd use it. aidantorrence.com/offers/cull-assist",
+      "community": "Photographers: I'm deciding whether to build a local culling tool that learns from ~200 of your own selects/rejects, then ranks a new shoot the way you would (bursts grouped, closed eyes dropped, star ratings written as XMP so Lightroom/C1 just see them). $12/month, nothing uploaded. Pre-launch page, no charge, just an 'I'd pay' button: aidantorrence.com/offers/cull-assist",
+      "pitchSubject": "Culling that learns your taste (pre-launch)",
+      "pitch": "Hi {first},\n\nI'm Aidan, a photographer. I saw {specific reference}.\n\nI'm deciding whether to build a local culling tool that learns from your own past selects and ranks a new shoot the way you would, writing XMP star ratings for Lightroom or Capture One. $12 a month, nothing uploaded.\n\nIf you'd use it, the pre-launch page has an 'I'd pay' button: aidantorrence.com/offers/cull-assist?src=email\n\nIf not, a one-line 'no, because' is just as useful.\n\nBest,\nAidan"
+    }
+  },
+  {
+    "slug": "reel-renderer",
+    "name": "Reel Renderer",
+    "headline": "Twelve photos in, a finished 9:16 reel out, with captions, pacing and crop points set for you, in one minute.",
+    "buyer": "photographers who have the photos but never post the reel",
+    "bullets": [
+      "Drop in 8 to 15 photos; it picks the crop focus per frame, times the cuts to a beat grid, and adds your caption lines.",
+      "Twelve templates built from the ad reels I render for my own shoots, in your fonts and colours.",
+      "Export at TikTok, Reels and Shorts specs; re-render a variant with a new hook line in seconds."
+    ],
+    "price": "$10/month",
+    "priceUsd": 10,
+    "priceNote": "30 renders a month",
+    "status": "live",
+    "launched": "2026-10-16",
+    "reasonPrompt": "How often do you post reels today, and what stops you posting more?",
+    "faq": [
+      { "q": "Does it pick the music?", "a": "No. It times cuts to a beat grid you choose; you add licensed audio in the app you post from." }
+    ],
+    "kit": {
+      "hook": "I have 400 edited photos and posted two reels this year. So I built a thing that makes the reel for me.",
+      "script": "Open on a folder of finished photos, then an Instagram grid with two reels. VO: 'Four hundred photos. Two reels.' Cut to a drag of twelve photos into a box, a progress bar, then a reel plays with captions and beat-timed cuts. VO: 'Twelve photos in. A reel out. Crop points, pacing, captions, done.' End card: 'Reel Renderer. $10 a month. Pre-launch, link in bio.'",
+      "caption": "Photos in, finished 9:16 reel out with captions and beat-timed cuts. Built from the render scripts behind my own ad reels. $10/month. Not launched; your click decides. aidantorrence.com/offers/reel-renderer",
+      "community": "Photographers who never post reels: I render my own ad reels from stills with scripts (per-photo crop focus, beat-timed cuts, caption lines). Thinking of making that a tool: 12 photos in, finished reel out, $10/month. Pre-launch page, no charge, tell me if you'd use it: aidantorrence.com/offers/reel-renderer",
+      "pitchSubject": "Reels from your stills in a minute (pre-launch)",
+      "pitch": "Hi {first},\n\nI'm Aidan, a photographer. I saw {specific reference}.\n\nI'm deciding whether to turn the scripts that render my own reels from stills into a tool: twelve photos in, a finished captioned 9:16 reel out, $10 a month.\n\nIf that's useful, the pre-launch page has an 'I'd pay' button: aidantorrence.com/offers/reel-renderer?src=email\n\nIf not, one line on why helps just as much.\n\nBest,\nAidan"
+    }
+  },
+  {
+    "slug": "moodboard-maker",
+    "name": "Moodboard Maker",
+    "headline": "A one-link shoot moodboard your model, stylist and client can react to before the day, built in five minutes.",
+    "buyer": "photographers who send Pinterest links and screenshots and hope everyone saw the same thing",
+    "bullets": [
+      "Pick from themed reference sets or add your own; it lays out the board with wardrobe, light and location rows.",
+      "Each collaborator gets a link, taps what they love and what they'd skip, and adds a line; you see it in one view.",
+      "Export a one-page PDF for the call sheet; the link stays live for the shoot day."
+    ],
+    "price": "$8/month",
+    "priceUsd": 8,
+    "priceNote": "unlimited boards",
+    "status": "live",
+    "launched": "2026-10-16",
+    "reasonPrompt": "How do you share references today, and what goes wrong?",
+    "faq": [
+      { "q": "Is this what your sign-up moodboards use?", "a": "Yes, the same theme library and layout code, opened up so you can run it for your own shoots." }
+    ],
+    "kit": {
+      "hook": "The stylist saw a different moodboard than the model. Again. So I made one link that everyone reacts to.",
+      "script": "Open on three chat apps with three different screenshots of references. VO: 'Three people, three moodboards, one shoot.' Cut to a board with wardrobe, light and location rows; a model taps hearts and skips on her phone. VO: 'One link. Everyone reacts. You see it in one view.' End card: 'Moodboard Maker. $8 a month. Pre-launch, link in bio.'",
+      "caption": "One moodboard link your model, stylist and client react to before the shoot. $8/month. Not built for others yet; say if you'd use it. aidantorrence.com/offers/moodboard-maker",
+      "community": "Photographers: how do you share shoot references with model + stylist + client? I'm considering opening up the moodboard builder behind my own sign-ups (theme sets, wardrobe/light/location rows, a link each person reacts to, PDF export) at $8/month. Pre-launch, no charge, just an 'I'd pay' button: aidantorrence.com/offers/moodboard-maker",
+      "pitchSubject": "Shoot moodboards everyone reacts to (pre-launch)",
+      "pitch": "Hi {first},\n\nI'm Aidan, a photographer. I saw {specific reference}.\n\nI'm deciding whether to offer the moodboard builder I use for my own shoots as a tool: one link, your model, stylist and client react before the day, PDF for the call sheet, $8 a month.\n\nIf you'd use it, the pre-launch page has an 'I'd pay' button: aidantorrence.com/offers/moodboard-maker?src=email\n\nIf not, one line on why is just as helpful.\n\nBest,\nAidan"
+    }
+  },
+  {
+    "slug": "hook-bank",
+    "name": "Hook Bank",
+    "headline": "A hundred first lines for your next short videos, scored against what's working in your niche this week, every Monday.",
+    "buyer": "short-form creators who know what to film and freeze on the first sentence",
+    "bullets": [
+      "Tell it your niche and three recent videos; every Monday you get 100 hooks grouped by angle: curiosity, contrarian, result, list, story.",
+      "Each hook carries a one-line note on why it should work and a rewrite in your own voice.",
+      "Mark the ones you used; the next batch learns from what you kept."
+    ],
+    "price": "$9/month",
+    "priceUsd": 9,
+    "priceNote": "cancel anytime",
+    "status": "live",
+    "launched": "2026-10-16",
+    "reasonPrompt": "What's your niche, and what's the last hook that worked for you?",
+    "faq": [
+      { "q": "Is this generated by AI?", "a": "Yes, with a scoring pass and a weekly human spot-check. The page says so plainly because you'd find out anyway." }
+    ],
+    "kit": {
+      "hook": "I write 30 first lines before I film anything. Here's the one that worked, and the tool that writes the other 29.",
+      "script": "Open on a notes app with 30 crossed-out first lines. VO: 'Thirty first lines. One works.' Cut to a list: 100 hooks grouped by angle, each with a why. VO: 'A hundred every Monday, scored for your niche, rewritten in your voice.' End card: 'Hook Bank. $9 a month. Pre-launch, link in bio.'",
+      "caption": "100 scored hooks for your niche every Monday, rewritten in your voice. $9/month. Not launched yet; your click decides whether it gets built. aidantorrence.com/offers/hook-bank",
+      "community": "Short-form creators: would you pay $9/month for 100 hooks every Monday, scored for your niche, grouped by angle, each with a why and a rewrite in your voice? Generated, with a human spot-check. Pre-launch page with an 'I'd pay' button, no charge: aidantorrence.com/offers/hook-bank",
+      "pitchSubject": "Weekly hooks for your niche (pre-launch)",
+      "pitch": "Hi {first},\n\nI'm Aidan, a photographer and short-form creator. I saw {specific reference}.\n\nI'm deciding whether to build a weekly hook list: 100 first lines scored for your niche, grouped by angle, rewritten in your voice, $9 a month.\n\nIf that's useful, the pre-launch page has an 'I'd pay' button: aidantorrence.com/offers/hook-bank?src=email\n\nIf not, a one-line 'no, because' helps just as much.\n\nBest,\nAidan"
+    }
+  },
+  {
+    "slug": "form-to-whatsapp",
+    "name": "Form to WhatsApp",
+    "headline": "Every form submission on your website arrives on your phone as a WhatsApp message within a minute.",
+    "buyer": "freelancers and small studios who miss leads because they live in an inbox nobody checks",
+    "bullets": [
+      "Paste one line into any form (Webflow, Squarespace, Framer, WordPress, plain HTML); done.",
+      "The message carries the fields, the page, and a tap-to-reply link to the lead's number or email.",
+      "Daily summary and a simple list of every lead, so nothing depends on scrolling a chat."
+    ],
+    "price": "$5/month",
+    "priceUsd": 5,
+    "priceNote": "up to 300 leads a month",
+    "status": "live",
+    "launched": "2026-10-16",
+    "reasonPrompt": "Which form builder do you use, and how do you hear about leads now?",
+    "faq": [
+      { "q": "Does it need WhatsApp Business API?", "a": "No. The first version uses a simple relay number; you reply from your own WhatsApp." }
+    ],
+    "kit": {
+      "hook": "A lead filled my form at 2pm. I saw it at 11pm. Now every form hits my WhatsApp in under a minute.",
+      "script": "Open on an inbox with an unread 'New submission' from nine hours ago. VO: 'Nine hours. They'd booked someone else.' Cut to a phone: a WhatsApp message with the form fields and a reply button. VO: 'One line of code. Every lead on your phone in under a minute.' End card: 'Form to WhatsApp. $5 a month. Pre-launch, link in bio.'",
+      "caption": "Website form submissions as WhatsApp messages, one line to install, $5/month. Not built yet; say if you'd use it and I build it first. aidantorrence.com/offers/form-to-whatsapp",
+      "community": "Freelancers / small studios: I get my own booking forms as WhatsApp messages within a minute and it changed my reply time. Thinking of making it a $5/month tool that works with any form builder (one line to paste). Pre-launch page, no charge, just an 'I'd pay' button: aidantorrence.com/offers/form-to-whatsapp",
+      "pitchSubject": "Form leads on WhatsApp in a minute (pre-launch)",
+      "pitch": "Hi {first},\n\nI'm Aidan, a photographer. I saw {specific reference}.\n\nI route my own website forms to WhatsApp so I answer leads in minutes instead of hours, and I'm deciding whether to offer it as a $5 a month tool that works with any form builder.\n\nIf you'd use it, the pre-launch page has an 'I'd pay' button: aidantorrence.com/offers/form-to-whatsapp?src=email\n\nIf not, one line on why helps as much.\n\nBest,\nAidan"
+    }
+  },
+  {
+    "slug": "open-slots",
+    "name": "Open Slots",
+    "headline": "A booking widget for photographers that shows your open dates in the visitor's own time zone and sends the request to your phone.",
+    "buyer": "photographers who book across time zones and lose sessions to 'wait, which Tuesday?'",
+    "bullets": [
+      "Add slots from your phone in your time; visitors see them in theirs with Today, Tomorrow and weekday labels.",
+      "A request takes one tap and a contact; no account, no calendar sync to set up.",
+      "Embed on any site or share as a link; removals and reschedules update everywhere instantly."
+    ],
+    "price": "$7/month",
+    "priceUsd": 7,
+    "priceNote": "unlimited slots",
+    "status": "live",
+    "launched": "2026-10-16",
+    "reasonPrompt": "How do you take bookings today, and what breaks across time zones?",
+    "faq": [
+      { "q": "Why not Calendly?", "a": "If Calendly works for you, keep it. This is for a shoot-booking flow with photos and themes, no accounts for the visitor, and the request on WhatsApp." }
+    ],
+    "kit": {
+      "hook": "I booked a shoot for Tuesday 4pm. Their Tuesday. My Wednesday. So I built slots that show in the visitor's time zone.",
+      "script": "Open on a chat: 'Tuesday 4pm?' 'Your Tuesday or mine?' VO: 'Every booking across time zones.' Cut to a page with open slots labelled Today, Tomorrow, Thursday, in the visitor's time. One tap, a contact field, a WhatsApp notification. VO: 'Slots in their time. One tap to request. Lands on my phone.' End card: 'Open Slots. $7 a month. Pre-launch, link in bio.'",
+      "caption": "Open dates shown in the visitor's time zone, one-tap requests to your phone, $7/month. Not launched; your click decides. aidantorrence.com/offers/open-slots",
+      "community": "Photographers booking across time zones: I'm deciding whether to offer the availability widget I use (slots in the visitor's local time, one-tap request with contact, notification on WhatsApp, embed or link) at $7/month. Pre-launch page, no charge, just an 'I'd pay' button: aidantorrence.com/offers/open-slots",
+      "pitchSubject": "Booking slots in the visitor's time zone (pre-launch)",
+      "pitch": "Hi {first},\n\nI'm Aidan, a photographer. I saw {specific reference}.\n\nI'm deciding whether to offer the availability widget I use for my own bookings (slots shown in the visitor's time zone, one-tap request, notification on my phone) as a $7 a month tool.\n\nIf that's useful, the pre-launch page has an 'I'd pay' button: aidantorrence.com/offers/open-slots?src=email\n\nIf not, a one-line 'no, because' is just as useful.\n\nBest,\nAidan"
+    }
+  }
+]
