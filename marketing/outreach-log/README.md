@@ -1,5 +1,13 @@
 # Outreach log
 
+## Latest reconciliation — 16 October 2026, additional pass
+
+98 additional routine follow-ups were confirmed Sent (14 NY stylists, 2 Miami stylists, 82 magazines), separate from the earlier 117. Two new magazine introductions were sent: AfroStyle and VanderRose. Thirteen new human replies were drafted, not sent. There are 68 review items: 57 replies, 3 prior blocked intros, 6 newly send-safety-blocked follow-ups and 2 missing-input drafts. 5ELEVEN is a separate transient Gmail quota hold, not an approval item. Six native send-safety rejections (FACES, MOD, Factice, Leche, Elusive, Blaze) were retained without further retry or alternate send route. All seven unsent routine drafts remain intact. Full receipts and exact reasons are in the dated sent log, leads and approvals; no history removed.
+
+Routine nonresponder follow-ups still send without approval after live checks; only human replies, missing inputs and specific send-safety holds need review/clearance. No team, publication or pull letter is confirmed. All 13 unfinished-proposal pitches remain held. Fresh research remains part of every hourly pass.
+
+Latest review: https://testing-oqz7522.slack.com/archives/D09JB0X1DDM/p1792173481427509
+
 ## Current authorization — reaffirmed 16 October 2026
 
 Routine follow-ups to genuine nonresponders do **not** require approval. Send one brief in-thread follow-up after at least 48 hours, after reading the live thread and checking for any human reply, bounce, decline, opt-out or prior sent follow-up. Reuse and inspect the existing draft; never send missing inputs, placeholders, unready attachments or new commitments. Human replies, negotiations and requested-material responses still require Aidan's explicit approval. This direct instruction overrides older approval-only follow-up language in historical snapshots. Do not keep completed or ineligible nonresponder follow-ups in the approval-reminder queue.
