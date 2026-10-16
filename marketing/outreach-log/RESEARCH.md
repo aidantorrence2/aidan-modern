@@ -1157,3 +1157,20 @@ Pending queue after this run: **139** items — 15 replies, 3 permission-blocked
 - **Live reconciliation:** the sender-based Gmail delta sweep covered 537 logged addresses, normalized into 16 queries plus mailer-daemon/postmaster, and found no new campaign reply, bounce or auto-response. The latest Slack review thread contained no human approval, denial or skip instruction. All 168 pending campaign drafts remain live among 534 total account drafts.
 - **Pending review:** 168 total — 43 replies, three specifically blocked introductions and 122 follow-ups. The 13 proposal-dependent pull-letter routes remain held for a finished concept/title, moodboard, confirmed team, brands, location and exact shoot day; no unfinished PDF was attached.
 - **Slack reminder:** the zero-send result, priorities, all 168 pending names and blockers were posted under parent `1792149475.342939` (https://testing-oqz7522.slack.com/archives/D09JB0X1DDM/p1792149475342939).
+
+## 2026-10-16 12:29 UTC checkpoint
+
+- Sent: **0** new introductions.
+- Gmail delta sweep covered 536 unique sender terms in 16 under-900-character queries after the prior checkpoint. No new reply, bounce, auto-response, or replacement contact was found.
+- Slack reconciliation found no new approval or denial. All **168** pending drafts remain live among 534 total Gmail drafts: 43 replies, 3 specifically blocked introductions, and 122 follow-ups.
+- Fresh stylist screening:
+  - Anastasia Walker: current Timid Magazine credit, but the primary agency page identifies a Los Angeles base and celebrity/commercial focus.
+  - Hakan Solak: direct public email and current Office Magazine credit, but his primary contact page says Berlin-based.
+  - Benjamin Holtrop: current Timid credits, but Los Angeles-based and represented by The Wall Group.
+  - Suthee Ritthaworn: New York base and current VESTAL credit verified; no loaded primary source published a direct project email.
+  - Jordan Littleton: current Office Magazine credit; no verified New York/Miami base or public professional email.
+  - Vanessa Reid: represented worldwide and outside the emerging-to-mid-level independent target.
+- Fresh magazine screening: LOOKBOOK PARIS accepts completed editorials through its submission route but publishes no editor/submissions email and no pre-shoot pull-letter policy.
+- No address was guessed and no low-fit or wrong-city contact was used.
+- Slack review: https://testing-oqz7522.slack.com/archives/D09JB0X1DDM/p1792153724303989
+
