@@ -1,5 +1,15 @@
 # Outreach log
 
+## Latest reconciliation — 16 October 2026, 18:15 UTC pass
+
+This pass sent and verified one new magazine introduction (5.18 Magazine) and one routine nonresponder follow-up (Mia Le Journal / Federica). These are additional to earlier sends, not repeats. Vingt Sept looped editor Jheanelle Feanny into its pitch; a reply-all acknowledgement is drafted, not sent. No acceptance, booking or pull letter is confirmed.
+
+70 review items remain: 58 human replies, 3 blocked initial introductions, 7 specifically safety-blocked follow-ups, 2 missing-input follow-ups. 5ELEVEN's attempt was rejected with a mismatched Vingt Sept reply reason; no retry or alternate route. Routine nonresponder follow-ups remain authorized without approval. House of Solo and The Cube / Manuela bounced; an older UNPOLISHED mailbox-full failure was discovered. These addresses will not be retried. Historical send receipts remain intact.
+
+Fresh lead research remains part of each hourly pass. No new NY/Miami stylist qualified this pass because current editorial/contact/city requirements were not jointly met or the contact was a duplicate. The 13 unfinished-proposal pitches remain held.
+
+Current review: https://testing-oqz7522.slack.com/archives/D09JB0X1DDM/p1792175307538839
+
 ## Latest reconciliation — 16 October 2026, additional pass
 
 98 additional routine follow-ups were confirmed Sent (14 NY stylists, 2 Miami stylists, 82 magazines), separate from the earlier 117. Two new magazine introductions were sent: AfroStyle and VanderRose. Thirteen new human replies were drafted, not sent. There are 68 review items: 57 replies, 3 prior blocked intros, 6 newly send-safety-blocked follow-ups and 2 missing-input drafts. 5ELEVEN is a separate transient Gmail quota hold, not an approval item. Six native send-safety rejections (FACES, MOD, Factice, Leche, Elusive, Blaze) were retained without further retry or alternate send route. All seven unsent routine drafts remain intact. Full receipts and exact reasons are in the dated sent log, leads and approvals; no history removed.
