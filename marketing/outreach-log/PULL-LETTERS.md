@@ -91,3 +91,15 @@ Send a pull-letter pitch only once the stylist and dates are confirmed. Several 
 ### A Magazine Curated By — quarantined 2026-10-11
 
 An unlogged 10 October message from another workflow used unconfirmed Miami dates (30 October–3 November) and a live portfolio URL. Gmail reported a temporary SMTP 4.4.2 delivery delay on 11 October 21:14 UTC and will keep retrying until 13 October 20:52 UTC. Do not manually retry or follow up. Treat any later delivery/reply as contaminated by those dates and correct the record before making commitments.
+
+
+## 16 October 2026, 19:17 UTC reconciliation
+
+- 2LATE/Maya: will review a completed story for the website; asks for a deliverables timeline. This is not acceptance, commissioning or a pre-shoot letter. No timeline is confirmed. Clean in-thread reply r-5770319123962661946 remains unsent for explicit approval.
+- Ursula M. Agurto: unavailable, offers referrals, asks whether a letter exists/which publication. None confirmed. Honest reply r2331084666032018862 is held; no unnamed referral contacted.
+- Aventura/Daphne: declined because seasonal fashion coverage already planned. No further pitch or follow-up; optional acknowledgement r-267675137861874918 held.
+- Sixteen: new project-review inquiry sent; FAQ invitation-only publication but open work/project review. No letter offer or acceptance. ZOOT: older intro discovered, one routine follow-up sent and unsupported Miami dates corrected.
+- All 13 proposal holds remain. Missing final title/concept, moodboards, named stylist/model/agency/HMU/team, model count, brands/looks, location, exact day, Miami dates, delivery and exclusive placement choice, finished proposal PDF. Existing DRAFT is not attachable as complete.
+- C-Heads pending reply commits to keeping the selected story unpublished during review; must be explicitly approved before sending. No conflicting accepting exclusive offers identified.
+
+Review: https://testing-oqz7522.slack.com/archives/D09JB0X1DDM/p1792179036824009
