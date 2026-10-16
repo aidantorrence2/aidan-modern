@@ -1,5 +1,12 @@
 # Outreach log
 
+## Current authorization — reaffirmed 16 October 2026
+
+Routine follow-ups to genuine nonresponders do **not** require approval. Send one brief in-thread follow-up after at least 48 hours, after reading the live thread and checking for any human reply, bounce, decline, opt-out or prior sent follow-up. Reuse and inspect the existing draft; never send missing inputs, placeholders, unready attachments or new commitments. Human replies, negotiations and requested-material responses still require Aidan's explicit approval. This direct instruction overrides older approval-only follow-up language in historical snapshots. Do not keep completed or ineligible nonresponder follow-ups in the approval-reminder queue.
+
+On 16 October, 117 eligible existing follow-ups were sent and confirmed in Gmail. Two bounced-address drafts (Grazia and L'Officiel Brasil) were retained and closed to sending; IRK and BRICKS remain held for missing stylist/moodboard details. See `2026-10-16-followups-sent.csv` for the individual Gmail receipts.
+
+
 ## Current confirmed availability and collaboration terms — 13 October 2026
 
 - New York: 21–28 October 2026.
