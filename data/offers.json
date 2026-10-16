@@ -32,7 +32,8 @@
       "community": "I run cold outreach to magazines and stylists as a photographer and automated most of it: finding the published press contact, drafting a short pitch, tracking replies. Thinking of packaging it for other photographers at $29/month. Before I build, honest question: would you use it, and what's the one thing it must do? Pre-launch page with an 'I'd pay' button, no charge: aidantorrence.com/offers/pitch-pilot",
       "pitchSubject": "Cold pitching tool for photographers (pre-launch)",
       "pitch": "Hi {first},\n\nI'm Aidan, an editorial photographer. I noticed {specific reference}.\n\nI automated my own magazine and agency outreach (finding the published press contact, drafting the pitch, tracking replies) and I'm deciding whether to turn it into a tool for other photographers at $29 a month.\n\nIf that's useful to you, the pre-launch page has an 'I'd pay' button and takes ten seconds: aidantorrence.com/offers/pitch-pilot?src=email\n\nIf not, a one-line 'no, because' helps just as much.\n\nBest,\nAidan"
-    }
+    },
+    "artifactUrl": "https://claude.ai/artifact/4dMR9mWrMFQEJfo71pWjT4"
   },
   {
     "slug": "shoot-kit",
@@ -63,7 +64,8 @@
       "community": "Photographers: how do you do call sheets and model releases right now? I'm sketching a tool that generates the call sheet, release and usage agreement from one form and gets them signed on phones, $9 per shoot or $7/month. Pre-launch page, no charge, just an 'I'd pay' button so I know whether to build it: aidantorrence.com/offers/shoot-kit",
       "pitchSubject": "Call sheet + release in two minutes (pre-launch)",
       "pitch": "Hi {first},\n\nI'm Aidan, a photographer. I saw {specific reference}.\n\nI'm deciding whether to build a small tool that turns one form into a call sheet, model release and usage agreement, signed on phones, $9 per shoot.\n\nIf you'd use it, the pre-launch page has an 'I'd pay' button and takes ten seconds: aidantorrence.com/offers/shoot-kit?src=email\n\nIf not, 'no, because' in one line is just as useful.\n\nBest,\nAidan"
-    }
+    },
+    "artifactUrl": "https://claude.ai/artifact/4oARQvjamPUxJtRSAcc8q9"
   },
   {
     "slug": "submission-atlas",
@@ -125,7 +127,8 @@
       "community": "Traveling photographers: how do you fill model tests in a new city? I run a sign-up page per city (dates, moodboard picker, WhatsApp contact, time-zone-aware slots) and I'm thinking of offering it as a hosted tool at $19/month. Pre-launch page, no charge: aidantorrence.com/offers/city-pages",
       "pitchSubject": "City sign-up page for model tests (pre-launch)",
       "pitch": "Hi {first},\n\nI'm Aidan, a photographer who shoots model tests city by city. I saw {specific reference}.\n\nI'm deciding whether to offer the sign-up page I use (dates, moodboard picker, WhatsApp contact, bookable slots) as a hosted tool at $19 a month.\n\nIf you'd use it, the pre-launch page has an 'I'd pay' button: aidantorrence.com/offers/city-pages?src=email\n\nIf not, a one-line 'no, because' is just as helpful.\n\nBest,\nAidan"
-    }
+    },
+    "artifactUrl": "https://claude.ai/artifact/7VbdFK81CMsTq1NWgNYdms"
   },
   {
     "slug": "interview-clipper",
@@ -156,7 +159,8 @@
       "community": "Creators who record interviews: I'm deciding whether to package my FFmpeg + Whisper pipeline as a tool. Upload a long interview, get 8 to 12 captioned vertical clips, each with three hook variants to test. $15/month. Pre-launch page with an 'I'd pay' button, no charge: aidantorrence.com/offers/interview-clipper",
       "pitchSubject": "Interview to captioned clips (pre-launch)",
       "pitch": "Hi {first},\n\nI'm Aidan, a photographer and short-form creator. I saw {specific reference}.\n\nI'm deciding whether to turn my own clipping pipeline into a tool: a long interview in, captioned vertical clips with three hook variants out, $15 a month.\n\nIf that's useful, the pre-launch page has an 'I'd pay' button: aidantorrence.com/offers/interview-clipper?src=email\n\nIf not, a one-line 'no, because' helps just as much.\n\nBest,\nAidan"
-    }
+    },
+    "artifactUrl": "https://claude.ai/artifact/LyAUvKj1eiTKN1opKoZcUm"
   },
   {
     "slug": "city-shot-lists",
@@ -435,6 +439,68 @@
       "community": "Photographers: what do you pay for your portfolio site and what annoys you about it? I'm deciding whether to offer the engine behind my own site (folder in, auto-processed, tiered opening sequence, WhatsApp contact, shoot pages, your domain, phone editor) at $15/month. Pre-launch page, no charge: aidantorrence.com/offers/portfolio-globe",
       "pitchSubject": "Fast portfolio site from a folder (pre-launch)",
       "pitch": "Hi {first},\n\nI'm Aidan, a photographer. I saw {specific reference}.\n\nI'm deciding whether to offer the engine behind my own portfolio site as a product: a folder of photos in, a fast site on your own domain out, edited from your phone, $15 a month.\n\nIf you'd use it, the pre-launch page has an 'I'd pay' button: aidantorrence.com/offers/portfolio-globe?src=email\n\nIf not, a one-line 'no, because' is just as useful.\n\nBest,\nAidan"
+    }
+  },
+  {
+    "slug": "caption-burner",
+    "name": "Caption Burner",
+    "headline": "Word-level captions burned into your vertical video in your font and colours, from a file drop, in under two minutes.",
+    "buyer": "short-form creators who post daily and still caption by hand or pay per minute for it",
+    "bullets": [
+      "Drop an MP4; it transcribes with word timing, fixes names you teach it once, and burns captions in your style.",
+      "Three looks that work on phones (karaoke highlight, two-line clean, bold pop), with your font, colour and safe-zone position.",
+      "Returns the captioned video plus an SRT; no watermark, no account for viewers, nothing auto-posts."
+    ],
+    "price": "$6/month",
+    "priceUsd": 6,
+    "priceNote": "60 minutes of video a month",
+    "status": "live",
+    "launched": "2026-10-16",
+    "reasonPrompt": "How do you caption today (CapCut, by hand, a service), and what breaks?",
+    "faq": [
+      {
+        "q": "Isn't this built into CapCut?",
+        "a": "Yes, roughly. This is for people who want it done from a file drop with their names spelled right and their own font, without opening an editor. If that's not you, keep CapCut."
+      }
+    ],
+    "kit": {
+      "hook": "I captioned 40 videos this month without opening an editor. File in, captioned file out.",
+      "script": "Open on a phone editor with a caption being dragged into place. VO: 'Every video, same twenty minutes of captions.' Cut to a folder: a file drops in, a progress bar, a captioned vertical video plays with karaoke highlight in a custom font. VO: 'Word-level timing, your font, names spelled right. Under two minutes.' End card: 'Caption Burner. $6 a month. Pre-launch, link in bio.'",
+      "caption": "Word-level captions burned in from a file drop, your font, names spelled right. $6/month. Not built yet; say if you'd use it. aidantorrence.com/offers/caption-burner",
+      "community": "Creators who post daily: I caption my own videos with a Whisper + FFmpeg script (word-level timing, custom font, a name list so people's names come out right). Thinking of offering it as a $6/month drop-a-file service, captioned MP4 + SRT back. Pre-launch page, no charge, just an 'I'd pay' button: aidantorrence.com/offers/caption-burner",
+      "pitchSubject": "Captions from a file drop (pre-launch)",
+      "pitch": "Hi {first},\n\nI'm Aidan, a photographer and short-form creator. I saw {specific reference}.\n\nI'm deciding whether to offer my caption pipeline as a service: drop a vertical video, get it back with word-level captions in your font and names spelled right, $6 a month.\n\nIf that's useful, the pre-launch page has an 'I'd pay' button: aidantorrence.com/offers/caption-burner?src=email\n\nIf not, one line on why helps just as much.\n\nBest,\nAidan"
+    }
+  },
+  {
+    "slug": "proof-link",
+    "name": "Proof Link",
+    "headline": "A client proofing link that loads fast on a phone, takes selects and one-line notes, and tells you on WhatsApp when they're done.",
+    "buyer": "photographers who send a Drive folder and then chase selects over chat",
+    "bullets": [
+      "Upload the edit; the client gets one link, taps selects, leaves a note per frame, and hits done. No account for them.",
+      "You get the select list, the notes and a WhatsApp or email ping the moment they finish.",
+      "Optional download of selects at the size you allow, with your watermark on everything else."
+    ],
+    "price": "$8/month",
+    "priceUsd": 8,
+    "priceNote": "unlimited galleries, 90-day retention",
+    "status": "live",
+    "launched": "2026-10-16",
+    "reasonPrompt": "How do clients pick selects from you today, and what goes wrong?",
+    "faq": [
+      {
+        "q": "Why not Pixieset or Pic-Time?",
+        "a": "If they work for you, keep them. This is the stripped version: one link, selects and notes, a ping when done, nothing else to configure."
+      }
+    ],
+    "kit": {
+      "hook": "I sent a Drive link. Three days later: 'which ones did you like?' Now they tap, and I get a WhatsApp when they're done.",
+      "script": "Open on a chat: 'did you get the folder?' 'which ones?' 'the third one? or the fourth?'. VO: 'Selects over chat. Every time.' Cut to a phone: a gallery link, taps turn frames into selects, a note typed, Done. A WhatsApp notification arrives. VO: 'One link. They tap. You get pinged.' End card: 'Proof Link. $8 a month. Pre-launch, link in bio.'",
+      "caption": "One proofing link: client taps selects, leaves notes, you get a WhatsApp when they're done. $8/month. Not built yet; your click decides. aidantorrence.com/offers/proof-link",
+      "community": "Photographers: how do clients pick selects from you? I'm deciding whether to build a stripped proofing link (fast on phones, tap to select, one-line notes, WhatsApp ping when they finish, watermark on non-selects), $8/month. Pre-launch page, no charge, just an 'I'd pay' button: aidantorrence.com/offers/proof-link",
+      "pitchSubject": "Client selects without the chat chase (pre-launch)",
+      "pitch": "Hi {first},\n\nI'm Aidan, a photographer. I saw {specific reference}.\n\nI'm deciding whether to build a stripped proofing link: the client taps selects and leaves notes on their phone, and you get a WhatsApp when they're done, $8 a month.\n\nIf you'd use it, the pre-launch page has an 'I'd pay' button: aidantorrence.com/offers/proof-link?src=email\n\nIf not, a one-line 'no, because' is just as useful.\n\nBest,\nAidan"
     }
   }
 ]

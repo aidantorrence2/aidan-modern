@@ -5,6 +5,7 @@ Price: $15/month (10 interviews a month)
 Buyer: small creators doing people-first video who lose a day to cutting clips
 Status: live since 2026-10-16
 Hosted page: https://aidantorrence.com/offers/interview-clipper (live after merge to main + deploy)
+Artifact page: https://claude.ai/artifact/LyAUvKj1eiTKN1opKoZcUm
 
 ## Tracking links (one per channel)
 

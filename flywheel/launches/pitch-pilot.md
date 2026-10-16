@@ -5,6 +5,7 @@ Price: $29/month (or $99 one-time setup for your own Gmail)
 Buyer: editorial and portrait photographers who chase magazines, agencies and talent by email
 Status: live since 2026-10-16
 Hosted page: https://aidantorrence.com/offers/pitch-pilot (live after merge to main + deploy)
+Artifact page: https://claude.ai/artifact/4dMR9mWrMFQEJfo71pWjT4
 
 ## Tracking links (one per channel)
 

@@ -13,6 +13,27 @@ import { getOffer } from '../../../../lib/offers'
 export const dynamic = 'force-dynamic'
 
 const INTENTS = new Set(['signup', 'would_pay', 'preorder'])
+
+// The same offers also run as Claude artifact pages, where strangers cannot
+// write to the artifact's own database. Those pages post here instead, so the
+// claude.ai origins are allowed; everything else stays same-origin.
+const ALLOWED_ORIGINS = /^https:\/\/([a-z0-9-]+\.)?claude\.ai$/
+
+function corsHeaders(req: Request): Record<string, string> {
+  const origin = req.headers.get('origin') || ''
+  if (!ALLOWED_ORIGINS.test(origin)) return {}
+  return {
+    'Access-Control-Allow-Origin': origin,
+    'Access-Control-Allow-Methods': 'POST, OPTIONS',
+    'Access-Control-Allow-Headers': 'Content-Type',
+    'Access-Control-Max-Age': '86400',
+    Vary: 'Origin',
+  }
+}
+
+export async function OPTIONS(req: Request) {
+  return new NextResponse(null, { status: 204, headers: corsHeaders(req) })
+}
 const MAX_REASON = 1000
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
@@ -61,20 +82,21 @@ function header(req: Request, name: string): string | null {
 const isString = (x: unknown): x is string => typeof x === 'string'
 
 export async function POST(req: Request) {
+  const cors = corsHeaders(req)
   try {
     const body = await req.json().catch(() => ({}))
 
     // Honeypot: bots fill every field; they get a 200 and nothing is written.
-    if (isString(body?.company) && body.company.trim()) return NextResponse.json({ ok: true })
+    if (isString(body?.company) && body.company.trim()) return NextResponse.json({ ok: true }, { headers: cors })
 
     const slug = isString(body?.offer) ? body.offer.trim().slice(0, 64) : ''
     const offer = getOffer(slug)
     const intent = isString(body?.intent) && INTENTS.has(body.intent) ? body.intent : ''
-    if (!offer || !intent) return NextResponse.json({ ok: false, error: 'Invalid input' }, { status: 400 })
+    if (!offer || !intent) return NextResponse.json({ ok: false, error: 'Invalid input' }, { status: 400, headers: cors })
 
     const email = isString(body?.email) ? body.email.trim().toLowerCase().slice(0, 160) : ''
-    if (email && !EMAIL_RE.test(email)) return NextResponse.json({ ok: false, error: 'Check the email address' }, { status: 400 })
-    if (intent === 'signup' && !email) return NextResponse.json({ ok: false, error: 'Email is needed for early access' }, { status: 400 })
+    if (email && !EMAIL_RE.test(email)) return NextResponse.json({ ok: false, error: 'Check the email address' }, { status: 400, headers: cors })
+    if (intent === 'signup' && !email) return NextResponse.json({ ok: false, error: 'Email is needed for early access' }, { status: 400, headers: cors })
 
     const reason = isString(body?.reason) ? body.reason.trim().slice(0, MAX_REASON) || null : null
     const src = isString(body?.src) ? body.src.trim().slice(0, 100) || null : null
@@ -115,9 +137,9 @@ export async function POST(req: Request) {
       }).catch(err => console.error('[OFFERS] Slack notify failed:', err))
     }
 
-    return NextResponse.json({ ok: true })
+    return NextResponse.json({ ok: true }, { headers: cors })
   } catch (err) {
     console.error('[OFFERS] interest write failed:', err)
-    return NextResponse.json({ ok: false, error: 'Could not save. Try again.' }, { status: 500 })
+    return NextResponse.json({ ok: false, error: 'Could not save. Try again.' }, { status: 500, headers: cors })
   }
 }

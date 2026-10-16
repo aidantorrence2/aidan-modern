@@ -5,6 +5,7 @@ Price: $19/month (pause between trips)
 Buyer: traveling photographers who book model tests and collabs city by city
 Status: live since 2026-10-16
 Hosted page: https://aidantorrence.com/offers/city-pages (live after merge to main + deploy)
+Artifact page: https://claude.ai/artifact/7VbdFK81CMsTq1NWgNYdms
 
 ## Tracking links (one per channel)
 

@@ -5,6 +5,7 @@ Price: $9 per shoot (or $7/month unlimited)
 Buyer: freelance photographers and small production teams who still type these up the night before
 Status: live since 2026-10-16
 Hosted page: https://aidantorrence.com/offers/shoot-kit (live after merge to main + deploy)
+Artifact page: https://claude.ai/artifact/4oARQvjamPUxJtRSAcc8q9
 
 ## Tracking links (one per channel)
 
