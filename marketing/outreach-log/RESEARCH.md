@@ -1174,3 +1174,14 @@ Pending queue after this run: **139** items — 15 replies, 3 permission-blocked
 - No address was guessed and no low-fit or wrong-city contact was used.
 - Slack review: https://testing-oqz7522.slack.com/archives/D09JB0X1DDM/p1792153724303989
 
+## 2026-10-16 13:25 UTC — Hourly research checkpoint
+
+- **New initial outreach sent:** 0.
+- Reconciled the campaign against live Gmail and Slack after the previous checkpoint: no new campaign reply, bounce, auto-response, approval or denial; all **168 pending approval drafts** remain live (43 replies, 3 permission-blocked intros, 122 follow-ups).
+- Ran fresh current-credit searches across Timid, Office, Cero, Interview and Vogue, plus targeted NYC and Miami stylist-contact searches and 2026 independent-magazine submission/pull-letter searches.
+- Strongest new fit: **Aydan Nix**, verified as an emerging NYC stylist with current Timid/NYLON work, but no public professional email could be verified. Logged as no-email rather than guessing an address.
+- Other NYC dispositions: Hannah Kerri and Estella Aparongao lacked a verified campaign city/public email; Savannah Mendoza is Los Angeles-based and major-agency/celebrity-led; Marcus Allen and Wojciech Christopher Nowak are established high-profile/celebrity stylists without a suitable direct published contact; Nikita Vlassenko is Paris-based.
+- Miami dispositions: Rachael Russell Saiger and Marcela Bartolomeo are senior/agency-founder profiles; Gabriela Medina lacked both a 2024–2026 independent editorial credit and a public professional email. Previously logged Brit Diaz, Anna Ruiz, Heather Hannon, Lina Rodriguez and Steven Lassalle were not recycled.
+- Magazine research produced no qualifying new email introduction. PhotoVogue Mondays is a finished-image upload platform with no published commissioning/pull-letter contact; LO'AMMI was already logged as paid; Purplehaze remains held back; other results were portal-only, paid, stale or already in campaign history.
+- Posted the mandatory Slack approval reminder with the complete 168-name queue and exact proposal blockers: https://testing-oqz7522.slack.com/archives/D09JB0X1DDM/p1792157032037579
+
