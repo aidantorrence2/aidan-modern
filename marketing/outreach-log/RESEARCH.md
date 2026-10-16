@@ -1051,3 +1051,12 @@ Pending queue after this run: **139** items — 15 replies, 3 permission-blocked
 - **Draft state:** 168 approvals remain pending: 43 replies, three specifically blocked introductions and 122 follow-ups.
 - **Slack reminder:** the zero-send result, blockers and complete pending queue were posted under parent `1792113621.914159` (https://testing-oqz7522.slack.com/archives/D09JB0X1DDM/p1792113621914159).
 
+## 16 October 2026 — 02:22 UTC checkpoint
+
+- **New outreach sent: 0.** Fresh screening covered current Cero fashion credits, Models.com editorial-stylist profiles, Miami local profiles and independent-magazine submission routes. No candidate passed target-city fit, current independent editorial evidence, a directly published contact address and the live campaign dedupe together.
+- **Best new stylist lead:** Ian McRae is New York-based with current 2026 Puss Puss work and other independent print credits. No loaded primary or public source published a direct project email, so no address was guessed and no outreach was sent.
+- **Other fresh exclusions:** Chidera Ikegulu is an emerging Miami stylist, but no public direct email or qualifying current independent print credit was verified. Marisela Rondon's primary site publishes a Miami email, but her 20-year film, music and commercial profile is outside the target. Heathermary Jackson's decades of major-title work put her above the emerging-to-mid target. VÆLON surfaced only a form/open call; its primary page timed out and no public editor/submissions email or verified free pre-shoot pull-letter route was available.
+- **Live reconciliation:** the sender-based Gmail sweep covered 522 deduplicated personal-address/professional-domain tokens across 16 queries plus mailer-daemon notices. It found no new campaign reply, auto-response or campaign bounce since the prior checkpoint. Slack contained no approval, denial or skip instruction.
+- **Draft state:** all 168 pending campaign draft IDs remain live in Gmail: 43 replies, three specifically blocked introductions and 122 follow-ups.
+- **Proposal holds:** the 13 pull-letter routes remain blocked by the unfinished concept/title, moodboard, named stylist and proposed team, model/casting plan, brands/looks, location, exact shoot day, delivery/placement plan and final proposal PDF. Miami dates remain unconfirmed.
+- **Slack reminder:** the zero-send result, blockers and complete pending queue were posted under parent `1792117323.192049` (https://testing-oqz7522.slack.com/archives/D09JB0X1DDM/p1792117323192049).
