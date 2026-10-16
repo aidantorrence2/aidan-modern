@@ -16,8 +16,14 @@
     "launched": "2026-10-16",
     "reasonPrompt": "Who do you pitch most: magazines, agencies, publicists? What would make this a yes?",
     "faq": [
-      { "q": "Does it send email for me?", "a": "Only if you want it to. Default is drafts in your Gmail that you press send on." },
-      { "q": "Where do the contacts come from?", "a": "Only addresses published for press, booking or submissions on the organisation's own pages. Nothing scraped from personal profiles." }
+      {
+        "q": "Does it send email for me?",
+        "a": "Only if you want it to. Default is drafts in your Gmail that you press send on."
+      },
+      {
+        "q": "Where do the contacts come from?",
+        "a": "Only addresses published for press, booking or submissions on the organisation's own pages. Nothing scraped from personal profiles."
+      }
     ],
     "kit": {
       "hook": "I sent 90 cold pitches to stylists and magazines in one morning. Here is the system, and I'm turning it into a tool.",
@@ -45,7 +51,10 @@
     "launched": "2026-10-16",
     "reasonPrompt": "Which document do you dread most: call sheet, release or usage terms? What's missing from the ones you use now?",
     "faq": [
-      { "q": "Is the release legally reviewed?", "a": "The first version is a plain-English template you can edit. If enough people want it, a reviewed version per country comes next." }
+      {
+        "q": "Is the release legally reviewed?",
+        "a": "The first version is a plain-English template you can edit. If enough people want it, a reviewed version per country comes next."
+      }
     ],
     "kit": {
       "hook": "Every shoot I rewrite the same three documents at 11pm. So I'm making a tool that does it in two minutes.",
@@ -73,7 +82,10 @@
     "launched": "2026-10-16",
     "reasonPrompt": "Which titles do you wish you had rules and contacts for? Print, web, or both?",
     "faq": [
-      { "q": "How many titles?", "a": "The first version targets 150 titles I can verify by hand. It grows from there." }
+      {
+        "q": "How many titles?",
+        "a": "The first version targets 150 titles I can verify by hand. It grows from there."
+      }
     ],
     "kit": {
       "hook": "I pitched 40 magazines before I learned which ones even take submissions. I'm building the list I wish I'd had.",
@@ -101,7 +113,10 @@
     "launched": "2026-10-16",
     "reasonPrompt": "Which cities are next for you, and how do you take sign-ups today?",
     "faq": [
-      { "q": "Is this the page you use yourself?", "a": "Yes. It's the same flow behind my own city sign-ups, made generic so anyone can run it." }
+      {
+        "q": "Is this the page you use yourself?",
+        "a": "Yes. It's the same flow behind my own city sign-ups, made generic so anyone can run it."
+      }
     ],
     "kit": {
       "hook": "I land in a new city with 30 model tests already booked. Here's the page that does it, and I'm making it yours.",
@@ -129,7 +144,10 @@
     "launched": "2026-10-16",
     "reasonPrompt": "What do you record (podcast, street interviews, client calls) and what takes longest today?",
     "faq": [
-      { "q": "Is this just another AI clipper?", "a": "The market has many. This one is built on the FFmpeg and Whisper scripts I run on my own videos, and the three-hook output is the part I couldn't find elsewhere." }
+      {
+        "q": "Is this just another AI clipper?",
+        "a": "The market has many. This one is built on the FFmpeg and Whisper scripts I run on my own videos, and the three-hook output is the part I couldn't find elsewhere."
+      }
     ],
     "kit": {
       "hook": "One 40-minute interview became 11 clips with three hooks each. I didn't open an editor.",
@@ -157,7 +175,10 @@
     "launched": "2026-10-16",
     "reasonPrompt": "Which city, and when are you going?",
     "faq": [
-      { "q": "Which cities first?", "a": "The ones I have shot: Bangkok, Manila, Bali, Chiang Mai, Singapore, Busan and Ulaanbaatar. The page's votes decide the order." }
+      {
+        "q": "Which cities first?",
+        "a": "The ones I have shot: Bangkok, Manila, Bali, Chiang Mai, Singapore, Busan and Ulaanbaatar. The page's votes decide the order."
+      }
     ],
     "kit": {
       "hook": "Two days in Manila. Here are the 30 spots and the exact hour each one works. I'm packaging this per city.",
@@ -185,7 +206,10 @@
     "launched": "2026-10-16",
     "reasonPrompt": "What do you shoot, how many frames per job, and what do you cull in today?",
     "faq": [
-      { "q": "Do my photos get uploaded?", "a": "No. The first version runs locally and writes XMP sidecars next to your RAWs." }
+      {
+        "q": "Do my photos get uploaded?",
+        "a": "No. The first version runs locally and writes XMP sidecars next to your RAWs."
+      }
     ],
     "kit": {
       "hook": "2,000 frames. 60 selects. One minute. And it picked the ones I would have picked.",
@@ -213,7 +237,10 @@
     "launched": "2026-10-16",
     "reasonPrompt": "How often do you post reels today, and what stops you posting more?",
     "faq": [
-      { "q": "Does it pick the music?", "a": "No. It times cuts to a beat grid you choose; you add licensed audio in the app you post from." }
+      {
+        "q": "Does it pick the music?",
+        "a": "No. It times cuts to a beat grid you choose; you add licensed audio in the app you post from."
+      }
     ],
     "kit": {
       "hook": "I have 400 edited photos and posted two reels this year. So I built a thing that makes the reel for me.",
@@ -241,7 +268,10 @@
     "launched": "2026-10-16",
     "reasonPrompt": "How do you share references today, and what goes wrong?",
     "faq": [
-      { "q": "Is this what your sign-up moodboards use?", "a": "Yes, the same theme library and layout code, opened up so you can run it for your own shoots." }
+      {
+        "q": "Is this what your sign-up moodboards use?",
+        "a": "Yes, the same theme library and layout code, opened up so you can run it for your own shoots."
+      }
     ],
     "kit": {
       "hook": "The stylist saw a different moodboard than the model. Again. So I made one link that everyone reacts to.",
@@ -269,7 +299,10 @@
     "launched": "2026-10-16",
     "reasonPrompt": "What's your niche, and what's the last hook that worked for you?",
     "faq": [
-      { "q": "Is this generated by AI?", "a": "Yes, with a scoring pass and a weekly human spot-check. The page says so plainly because you'd find out anyway." }
+      {
+        "q": "Is this generated by AI?",
+        "a": "Yes, with a scoring pass and a weekly human spot-check. The page says so plainly because you'd find out anyway."
+      }
     ],
     "kit": {
       "hook": "I write 30 first lines before I film anything. Here's the one that worked, and the tool that writes the other 29.",
@@ -297,7 +330,10 @@
     "launched": "2026-10-16",
     "reasonPrompt": "Which form builder do you use, and how do you hear about leads now?",
     "faq": [
-      { "q": "Does it need WhatsApp Business API?", "a": "No. The first version uses a simple relay number; you reply from your own WhatsApp." }
+      {
+        "q": "Does it need WhatsApp Business API?",
+        "a": "No. The first version uses a simple relay number; you reply from your own WhatsApp."
+      }
     ],
     "kit": {
       "hook": "A lead filled my form at 2pm. I saw it at 11pm. Now every form hits my WhatsApp in under a minute.",
@@ -325,7 +361,10 @@
     "launched": "2026-10-16",
     "reasonPrompt": "How do you take bookings today, and what breaks across time zones?",
     "faq": [
-      { "q": "Why not Calendly?", "a": "If Calendly works for you, keep it. This is for a shoot-booking flow with photos and themes, no accounts for the visitor, and the request on WhatsApp." }
+      {
+        "q": "Why not Calendly?",
+        "a": "If Calendly works for you, keep it. This is for a shoot-booking flow with photos and themes, no accounts for the visitor, and the request on WhatsApp."
+      }
     ],
     "kit": {
       "hook": "I booked a shoot for Tuesday 4pm. Their Tuesday. My Wednesday. So I built slots that show in the visitor's time zone.",
@@ -334,6 +373,68 @@
       "community": "Photographers booking across time zones: I'm deciding whether to offer the availability widget I use (slots in the visitor's local time, one-tap request with contact, notification on WhatsApp, embed or link) at $7/month. Pre-launch page, no charge, just an 'I'd pay' button: aidantorrence.com/offers/open-slots",
       "pitchSubject": "Booking slots in the visitor's time zone (pre-launch)",
       "pitch": "Hi {first},\n\nI'm Aidan, a photographer. I saw {specific reference}.\n\nI'm deciding whether to offer the availability widget I use for my own bookings (slots shown in the visitor's time zone, one-tap request, notification on my phone) as a $7 a month tool.\n\nIf that's useful, the pre-launch page has an 'I'd pay' button: aidantorrence.com/offers/open-slots?src=email\n\nIf not, a one-line 'no, because' is just as useful.\n\nBest,\nAidan"
+    }
+  },
+  {
+    "slug": "proposal-deck",
+    "name": "Proposal Deck",
+    "headline": "Turn a concept, a moodboard and a team list into a magazine-ready editorial proposal PDF in ten minutes.",
+    "buyer": "fashion and editorial photographers and stylists pitching magazines for placements and pull letters",
+    "bullets": [
+      "Fill in title, concept, team, model count, location and shoot day; it lays out a four-page proposal in a clean editorial template.",
+      "Drop in reference images or a moodboard link; the deck crops and arranges them with wardrobe and light notes.",
+      "Exports a PDF plus a one-paragraph pitch and the exact fields an editor needs for a pull letter, so nothing goes out half-finished."
+    ],
+    "price": "$19 per proposal",
+    "priceUsd": 19,
+    "priceNote": "or $12/month unlimited",
+    "status": "live",
+    "launched": "2026-10-16",
+    "reasonPrompt": "Which magazines are you pitching, and what does your current proposal look like (deck, email, nothing)?",
+    "faq": [
+      {
+        "q": "Why not Canva?",
+        "a": "Canva makes a nice page. This asks for the eight things editors actually check before a pull letter and refuses to export until they are there."
+      }
+    ],
+    "kit": {
+      "hook": "Thirteen magazines said 'send the proposal'. I had a four-page draft and none of the fields they needed. So I'm making the tool that fills them.",
+      "script": "Open on an inbox: 'Happy to review a complete proposal.' VO: 'Thirteen editors asked for the same thing: a finished proposal.' Cut to a form: title, concept, team, model count, location, day, moodboard. Tap export. A clean four-page PDF flips through. VO: 'Ten minutes. Every field an editor checks before a pull letter.' End card: 'Proposal Deck. $19 per proposal. Pre-launch, link in bio.'",
+      "caption": "Concept + moodboard + team in, a magazine-ready proposal PDF out, with the fields editors check before a pull letter. $19 per proposal. Not built yet; your click decides. aidantorrence.com/offers/proposal-deck",
+      "community": "Photographers and stylists who pitch magazines: I'm deciding whether to build a proposal generator. You fill in title, concept, team, model count, location, shoot day and a moodboard; it exports a clean four-page PDF plus the exact fields editors ask for before a pull letter. $19 per proposal or $12/month. Pre-launch page, no charge, just an 'I'd pay' button: aidantorrence.com/offers/proposal-deck",
+      "pitchSubject": "Editorial proposal PDF in ten minutes (pre-launch)",
+      "pitch": "Hi {first},\n\nI'm Aidan, an editorial photographer. I saw {specific reference}.\n\nI'm deciding whether to build a tool that turns a concept, moodboard and team list into a magazine-ready proposal PDF with the fields editors check before a pull letter, $19 per proposal.\n\nIf that's useful, the pre-launch page has an 'I'd pay' button: aidantorrence.com/offers/proposal-deck?src=email\n\nIf not, one line on why helps just as much.\n\nBest,\nAidan"
+    }
+  },
+  {
+    "slug": "portfolio-globe",
+    "name": "Portfolio Globe",
+    "headline": "A photographer's portfolio site that loads in under a second, from a folder of photos, with no template to fight.",
+    "buyer": "photographers paying for a site builder they resent, or still sending a Google Drive link",
+    "bullets": [
+      "Upload a folder; it auto-orients, trims borders, makes the web sizes and builds the site. No drag-and-drop grid to arrange.",
+      "One opening sequence you control by priority tiers, a contact button that goes to WhatsApp or email, and a page per shoot.",
+      "Your own domain, week-long image caching, and an editor that works from your phone."
+    ],
+    "price": "$15/month",
+    "priceUsd": 15,
+    "priceNote": "domain included",
+    "status": "live",
+    "launched": "2026-10-16",
+    "reasonPrompt": "What do you use for your portfolio now, and what annoys you about it?",
+    "faq": [
+      {
+        "q": "Is this the engine behind aidantorrence.com?",
+        "a": "Yes. The site you can see is built on it: tiered opening sequence, pre-generated image sizes, contact button, shoot pages."
+      }
+    ],
+    "kit": {
+      "hook": "My portfolio site is a folder of photos and a script. It loads in under a second. I'm turning it into a product.",
+      "script": "Open on a slow site builder spinning. VO: 'Forty minutes rearranging a grid. Again.' Cut to a terminal: a folder drops in, 'optimising 212 photos', then a portfolio opens instantly on a phone. VO: 'A folder in. A site out. Fast, on your domain, edited from your phone.' End card: 'Portfolio Globe. $15 a month. Pre-launch, link in bio.'",
+      "caption": "The engine behind my portfolio as a product: folder in, fast site out, your domain, phone editor. $15/month. Not open to others yet; say if you'd use it. aidantorrence.com/offers/portfolio-globe",
+      "community": "Photographers: what do you pay for your portfolio site and what annoys you about it? I'm deciding whether to offer the engine behind my own site (folder in, auto-processed, tiered opening sequence, WhatsApp contact, shoot pages, your domain, phone editor) at $15/month. Pre-launch page, no charge: aidantorrence.com/offers/portfolio-globe",
+      "pitchSubject": "Fast portfolio site from a folder (pre-launch)",
+      "pitch": "Hi {first},\n\nI'm Aidan, a photographer. I saw {specific reference}.\n\nI'm deciding whether to offer the engine behind my own portfolio site as a product: a folder of photos in, a fast site on your own domain out, edited from your phone, $15 a month.\n\nIf you'd use it, the pre-launch page has an 'I'd pay' button: aidantorrence.com/offers/portfolio-globe?src=email\n\nIf not, a one-line 'no, because' is just as useful.\n\nBest,\nAidan"
     }
   }
 ]
