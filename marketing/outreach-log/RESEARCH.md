@@ -1,5 +1,12 @@
 # Research component: NY + Miami stylists and magazines
 
+## Current authorization — reaffirmed 16 October 2026
+
+Routine follow-ups to genuine nonresponders do **not** require approval. Send one brief in-thread follow-up after at least 48 hours, after reading the live thread and checking for any human reply, bounce, decline, opt-out or prior sent follow-up. Reuse and inspect the existing draft; never send missing inputs, placeholders, unready attachments or new commitments. Human replies, negotiations and requested-material responses still require Aidan's explicit approval. This direct instruction overrides older approval-only follow-up language in historical snapshots. Do not keep completed or ineligible nonresponder follow-ups in the approval-reminder queue.
+
+On 16 October, 117 eligible existing follow-ups were sent and confirmed in Gmail. Two bounced-address drafts (Grazia and L'Officiel Brasil) were retained and closed to sending; IRK and BRICKS remain held for missing stylist/moodboard details. See `2026-10-16-followups-sent.csv` for the individual Gmail receipts.
+
+
 ## Current confirmed availability and collaboration terms — 13 October 2026
 
 - New York: 21–28 October 2026.
@@ -1194,3 +1201,16 @@ Pending queue after this run: **139** items — 15 replies, 3 permission-blocked
 - Mariana Marques and Isabella Markman were already logged; neither produced a new published direct editorial contact. Emilio Uribe remains excluded as a senior celebrity beauty profile. Jhon Jairo Santos has a current Miami fashion-editor/creative-direction credit but no verified public direct email. Sophia Phillips' current Teeth editorial appears Los Angeles-based, and the public email search resolved to a different USC student rather than the credited stylist.
 - No magazine lead met the combined standard of photographer-led fashion editorial fit, non-paid eligibility, a current primary submission policy and a public editor/submissions email. Existing proposal-dependent holds remain held.
 - Posted the mandatory Slack approval reminder, the full Bridgett draft, and the complete 168-name queue: https://testing-oqz7522.slack.com/archives/D09JB0X1DDM/p1792160691930079
+
+## 2026-10-16 15:32 UTC — Follow-up backlog cleared and fresh research
+
+- Aidan directly reaffirmed that genuine nonresponder follow-ups do not require approval. Updated the existing standing task, README and PULL-LETTERS instructions; no additional routine was created.
+- **117 existing routine follow-ups SENT:** 61 New York stylists, 20 Miami stylists, 36 magazines. Read each live original thread and saved draft first; confirmed no human response/prior sent follow-up, verified recipients and link/placeholder-free bodies, then sent. Re-read all 117 sent copies and confirmed SENT labels and exact sent timestamps. Individual receipts are in `2026-10-16-followups-sent.csv`; sent messages have the follow-up marker.
+- Two ineligible older drafts were caught in the live audit: Grazia's submissions address was not found; L'Officiel Brasil rejected the original for full-mailbox quota. Both drafts are retained as held-bounced and removed from reminders. Brickell follow-up was sent only to editor@tagmedia.com; the prior trukreative address was not reused.
+- **1 new initial introduction SENT:** Luxe Mag NYC, info@luxebridge.com; message 1a145551bbb87961, thread 1a14554d417779dd, draft r4150389070034147480. Loaded primary home/about pages verify a current print/digital title and public submissions route inviting original unpublished photographer/stylist work. Asked whether they consider no-fee editorial proposals and pull letters or prefer finished work; did not submit a story or accept rights/placement obligations.
+- Fresh stylist research: Iryna Polieshchuk has a verified NYC base and April 2026 Teeth work, but no readable public direct email was found; logged no-email with Instagram. Maggie Dualan's NYC base was verified, but no named current independent editorial credit or readable direct email was established. Constanza Acevedo lacked a verified target-city base and direct public contact. Prior dispositions for Julia Golden, Elsa Boutaric, Paloma Balvin and StellarStyler were respected.
+- Fresh magazine research: Luxe qualified. VOUS, Krome, HAZL and Révèle were already excluded and remain so: portal/contributor gating, closed or contradictory deadlines, unsuitable focus/terms, or missing readable contact verification. No addresses guessed and no duplicate introductions sent.
+- Sender-based inbound sweep across 16 sub-900-character chunks found no new campaign reply after the previous checkpoint; the newer Titan Talent Group bounce belongs to another campaign and was left untouched. All 137 logged historical Slack approval threads were read; transient read rate limits were retried once successfully. No human approval/denial found.
+- **49 review drafts remain live:** 44 human replies, 3 specifically blocked introductions, 2 missing-input drafts (IRK/BRICKS). No eligible routine nonresponder follow-up remains in the former 121-draft backlog. The 13 proposal-dependent pitches remain held with exact concept/title, moodboard, named team/casting, brands, location, shoot-day and finished-PDF inputs missing.
+- Slack summary, complete remaining queue and all sent names: https://testing-oqz7522.slack.com/archives/D09JB0X1DDM/p1792164721107719
+
