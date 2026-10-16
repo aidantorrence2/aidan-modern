@@ -1,5 +1,15 @@
 # Outreach log
 
+## Reconciliation — 16 October 2026, 19:17 UTC pass
+
+Confirmed sends this pass: **1 new magazine introduction, Sixteen Journal / Sixteen World**, and **1 routine nonresponder follow-up, ZOOT / Andrea**. Both saved drafts were inspected and Sent copies re-read. No new NY or Miami stylist introduction qualified. ZOOT’s already-sent 10 October introduction was discovered live and recorded, not resent; its follow-up expressly corrected the old unsupported Miami 30 October–3 November dates to later this autumn, exact dates unconfirmed.
+
+Three new human replies were drafted and left unsent: Ursula M. Agurto is unavailable but offers referrals and asks which publication/pull letter; 2LATE/Maya will review a completed story and asks delivery timing; Aventura/Daphne declined because seasonal coverage is planned. No letter, placement or team booking is confirmed. **73 review items remain: 61 human replies, 3 specifically blocked intros, 7 current send-safety holds, and 2 missing-input follow-ups.** No blocked send was retried. Routine genuine-nonresponder follow-ups remain authorized without approval. The 13 unfinished-proposal pitches stay held.
+
+All 70 previously pending drafts were present; 140 historical approval threads were checked, with no new explicit user approval/denial found. Shandi has no live draft and was already answered on 9 October, so no duplicate draft/reminder was created. Fresh research was performed across all segments; evidence and concrete qualification blockers are appended in leads/RESEARCH. All existing CSV records were preserved byte-for-byte.
+
+Current review: https://testing-oqz7522.slack.com/archives/D09JB0X1DDM/p1792179036824009
+
 ## Latest reconciliation — 16 October 2026, 18:15 UTC pass
 
 This pass sent and verified one new magazine introduction (5.18 Magazine) and one routine nonresponder follow-up (Mia Le Journal / Federica). These are additional to earlier sends, not repeats. Vingt Sept looped editor Jheanelle Feanny into its pitch; a reply-all acknowledgement is drafted, not sent. No acceptance, booking or pull letter is confirmed.
