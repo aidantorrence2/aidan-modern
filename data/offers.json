@@ -1203,6 +1203,42 @@
       "community": "Photographers who run mini-session days: how do you fill and manage them? I'm deciding whether to build one page per mini day: open slots with a deposit to hold, a waitlist that fills cancellations, the day's timeline to your calendar, and a client page per slot with pin, what to wear, rain plan and reminders. $6/month or $12 per day. Pre-launch page, no charge, just an 'I'd pay' button: aidantorrence.com/offers/mini-day",
       "pitchSubject": "One page to run a mini-session day (pre-launch)",
       "pitch": "Hi {first},\n\nI'm Aidan, a photographer. I saw {specific reference}.\n\nI'm deciding whether to build one page per mini-session day: open slots with a deposit to hold, a waitlist that fills cancellations, the timeline to your calendar, and a client page per slot with reminders, $6 a month or $12 per day.\n\nIf that's useful, the pre-launch page has an 'I'd pay' button: aidantorrence.com/offers/mini-day?src=email\n\nIf not, one line on why helps just as much.\n\nBest,\nAidan"
+    },
+    "artifactUrl": "https://claude.ai/artifact/LYGYQqdXrhXSrLgBqeegAg"
+  },
+  {
+    "slug": "invoice-nudge",
+    "name": "Invoice Nudge",
+    "headline": "Unpaid photo invoices chase themselves: polite reminders on a schedule you set, in your voice, stopping the moment the money lands.",
+    "buyer": "freelance photographers and small studios who invoice brands, agencies and magazines and wait 30 to 90 days to get paid",
+    "bullets": [
+      "Paste or forward an invoice; set due date, amount and who to nudge. Reminders go out at the days you choose, each one written to sound like you, not a robot.",
+      "Mark it paid, or connect Stripe or your bank feed, and every pending reminder for that invoice is cancelled.",
+      "One page shows what is overdue, by how many days, and who has gone quiet, with a late-fee line ready to add when your terms allow it."
+    ],
+    "price": "$4/month",
+    "priceUsd": 4,
+    "priceNote": "unlimited invoices",
+    "status": "live",
+    "launched": "2026-10-17",
+    "reasonPrompt": "How long did your last brand or editorial invoice take to get paid, and how many times did you have to ask?",
+    "faq": [
+      {
+        "q": "Does it send invoices too?",
+        "a": "No. Keep invoicing from wherever you do now. It only follows up on the ones that are not paid yet."
+      },
+      {
+        "q": "Will it annoy my clients?",
+        "a": "You set the schedule and the wording. Most people use three short notes: a few days before due, the day after, and two weeks later."
+      }
+    ],
+    "kit": {
+      "hook": "Net 30 turned into day 74. The fourth 'just checking in' email is the one I never want to write again.",
+      "script": "Open on a sent folder: four emails to the same accounts-payable address, each starting 'Just following up'. VO: 'Day 74 on a net-30 invoice.' Cut to a phone: an invoice pasted in, three reminder dates picked, a preview that reads like a human wrote it. A 'paid' tap cancels the rest. VO: 'Reminders in your voice, on your schedule, stopping the second the money lands.' End card: 'Invoice Nudge. $4 a month. Pre-launch, link in bio.'",
+      "caption": "Overdue photo invoices that chase themselves, in your voice, and stop when paid. $4/month. Not built yet; tell me if you'd use it. aidantorrence.com/offers/invoice-nudge",
+      "community": "Photographers who invoice brands and magazines: how do you handle the chasing? Mine is a calendar reminder and a dread-filled 'just following up' email. I'm deciding whether to build a small tool: paste the invoice, pick reminder days, it sends short notes in your voice and cancels them the moment you mark it paid, with an overdue board on top. $4/month. Pre-launch page, no charge, just an 'I'd pay' button: aidantorrence.com/offers/invoice-nudge",
+      "pitchSubject": "Invoices that chase themselves (pre-launch)",
+      "pitch": "Hi {first},\n\nI'm Aidan, a photographer. I saw {specific reference}.\n\nI'm deciding whether to build a small tool for late invoices: paste the invoice, pick reminder days, it sends short follow-ups in your voice and stops the moment you mark it paid, $4 a month.\n\nIf that would save you the fourth 'just checking in', the pre-launch page has an 'I'd pay' button: aidantorrence.com/offers/invoice-nudge?src=email\n\nIf not, one line on why is just as useful.\n\nBest,\nAidan"
     }
   }
 ]

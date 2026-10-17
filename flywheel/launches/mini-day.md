@@ -5,6 +5,7 @@ Price: $6/month (or $12 per mini day)
 Buyer: family, pet and seasonal photographers who fill a mini-session day through DMs and a spreadsheet
 Status: live since 2026-10-17
 Hosted page: https://aidantorrence.com/offers/mini-day (live after merge to main + deploy)
+Artifact page: https://claude.ai/artifact/LYGYQqdXrhXSrLgBqeegAg
 
 ## Tracking links (one per channel)
 
