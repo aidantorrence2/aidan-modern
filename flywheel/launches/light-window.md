@@ -5,6 +5,7 @@ Price: $4/month (unlimited shoots)
 Buyer: photographers who plan outdoor shoots from a sunset app, a weather app and a guess
 Status: live since 2026-10-17
 Hosted page: https://aidantorrence.com/offers/light-window (live after merge to main + deploy)
+Artifact page: https://claude.ai/artifact/VnrjThSTJKxmCJ32GCnhRu
 
 ## Tracking links (one per channel)
 

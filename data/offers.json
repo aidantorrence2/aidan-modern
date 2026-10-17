@@ -660,7 +660,8 @@
       "community": "Photographers shooting outdoors: how do you plan light for a specific street? I'm deciding whether to build a tiny tool: address and date in, exact light windows, sun bearing per hour, a shade note from nearby building heights and the cloud forecast out, as one line you paste into the call sheet, re-checked the night before. $4/month. Pre-launch page, no charge, just an 'I'd pay' button: aidantorrence.com/offers/light-window",
       "pitchSubject": "Light windows for a street address (pre-launch)",
       "pitch": "Hi {first},\n\nI'm Aidan, a photographer. I saw {specific reference}.\n\nI'm deciding whether to build a tiny tool: an address and a date in, the exact golden and blue hour windows, sun bearing, a shade note and the cloud forecast out, as one line for the call sheet, $4 a month.\n\nIf that's useful, the pre-launch page has an 'I'd pay' button: aidantorrence.com/offers/light-window?src=email\n\nIf not, one line on why helps just as much.\n\nBest,\nAidan"
-    }
+    },
+    "artifactUrl": "https://claude.ai/artifact/VnrjThSTJKxmCJ32GCnhRu"
   },
   {
     "slug": "print-link",
@@ -691,6 +692,37 @@
       "community": "Portrait and family photographers: what happens when a client asks for a print? I'm deciding whether to build a one-link-per-shoot print order page (your edit locked, lab fulfils and ships in the buyer's region, you set the margin, weekly payout). $6/month plus wholesale lab cost. Pre-launch page, no charge, just an 'I'd pay' button: aidantorrence.com/offers/print-link",
       "pitchSubject": "Prints from a shoot, one link (pre-launch)",
       "pitch": "Hi {first},\n\nI'm Aidan, a photographer. I saw {specific reference}.\n\nI'm deciding whether to build a one-link-per-shoot print order page: your edit locked, a lab prints and ships in the buyer's region, you set the margin, $6 a month plus wholesale lab cost.\n\nIf that's useful, the pre-launch page has an 'I'd pay' button: aidantorrence.com/offers/print-link?src=email\n\nIf not, one line on why helps just as much.\n\nBest,\nAidan"
+    }
+  },
+  {
+    "slug": "tear-sheets",
+    "name": "Tear Sheets",
+    "headline": "Every published credit you have, turned into clean tear sheets and one submissions-ready PDF, kept current as you add credits.",
+    "buyer": "editorial photographers and stylists whose published work lives as screenshots in a camera roll",
+    "bullets": [
+      "Add a credit (title, issue, link or a photo of the page); it lays out a proper tear sheet with masthead, issue and your role.",
+      "One PDF, ordered by title weight or date, that an editor or agency can open in two seconds; a link version with the same pages.",
+      "Add a new credit from your phone; the PDF and link update themselves. No designer, no InDesign."
+    ],
+    "price": "$5/month",
+    "priceUsd": 5,
+    "priceNote": "or $29 one-off for a fixed PDF",
+    "status": "live",
+    "launched": "2026-10-17",
+    "reasonPrompt": "How many published credits do you have, and what do you send when an editor asks for tear sheets?",
+    "faq": [
+      {
+        "q": "Does it need the original files?",
+        "a": "No. A photo of the printed page or a screenshot of the web story is enough; it cleans the perspective and sets the masthead from the title you name."
+      }
+    ],
+    "kit": {
+      "hook": "An editor asked for tear sheets. I sent six screenshots. I'm making the thing I should have sent.",
+      "script": "Open on a camera roll of crooked magazine page photos. VO: 'Six credits. Six screenshots. No tear sheets.' Cut to a phone: a page photo is added, a title typed; a clean tear sheet appears with masthead and issue; a PDF cover stacks up. VO: 'Add a credit, get a tear sheet. One PDF, one link, always current.' End card: 'Tear Sheets. $5 a month. Pre-launch, link in bio.'",
+      "caption": "Published credits → clean tear sheets and one submissions-ready PDF, updated from your phone. $5/month. Not built yet; say if you'd use it. aidantorrence.com/offers/tear-sheets",
+      "community": "Editorial photographers and stylists: what do you send when someone asks for tear sheets? I'm deciding whether to build a tool: add a credit (title, issue, a photo of the page), get a clean tear sheet; one PDF and a link that update when you add more. $5/month or $29 one-off. Pre-launch page, no charge, just an 'I'd pay' button: aidantorrence.com/offers/tear-sheets",
+      "pitchSubject": "Tear sheets from your published credits (pre-launch)",
+      "pitch": "Hi {first},\n\nI'm Aidan, an editorial photographer. I saw {specific reference}.\n\nI'm deciding whether to build a small tool that turns published credits (a title, an issue, a photo of the page) into clean tear sheets and one submissions-ready PDF that stays current, $5 a month.\n\nIf that's useful, the pre-launch page has an 'I'd pay' button: aidantorrence.com/offers/tear-sheets?src=email\n\nIf not, one line on why helps just as much.\n\nBest,\nAidan"
     }
   }
 ]
