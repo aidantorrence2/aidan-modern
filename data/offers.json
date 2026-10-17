@@ -533,5 +533,36 @@
       "pitchSubject": "Film scan cleanup in batch (pre-launch)",
       "pitch": "Hi {first},\n\nI'm Aidan, a photographer shooting 35mm. I saw {specific reference}.\n\nI'm deciding whether to package the script I run on my lab scans (straighten, trim borders, dust and scratch removal that leaves grain alone, per-roll colour cast fix) as a $9 a month tool that runs on your own computer.\n\nIf that's useful, the pre-launch page has an 'I'd pay' button: aidantorrence.com/offers/scan-cleaner?src=email\n\nIf not, one line on why helps just as much.\n\nBest,\nAidan"
     }
+  },
+  {
+    "slug": "license-quote",
+    "name": "License Quote",
+    "headline": "Answer six questions about how a brand will use your photos and get a usage-rights quote and a one-page licence to send back, in two minutes.",
+    "buyer": "photographers who get asked 'how much for the rights?' and answer from a gut feeling",
+    "bullets": [
+      "Pick media (social, web, print, OOH), territory, term and exclusivity; it prices from a transparent base rate you set once.",
+      "Outputs a quote PDF with the line items spelled out, plus a plain-English licence the brand can sign on their phone.",
+      "Keeps every quote, so your next one starts from what the last brand accepted."
+    ],
+    "price": "$5/month",
+    "priceUsd": 5,
+    "priceNote": "or free for your first three quotes",
+    "status": "live",
+    "launched": "2026-10-17",
+    "reasonPrompt": "When did you last quote usage rights, and what did you base the number on?",
+    "faq": [
+      {
+        "q": "Where do the base rates come from?",
+        "a": "You set your own day rate and base licence fee once. The multipliers for media, territory, term and exclusivity are shown in the open, not hidden in a black box."
+      }
+    ],
+    "kit": {
+      "hook": "A brand asked 'how much for the rights?' and I made up a number. Never again.",
+      "script": "Open on a chat: 'Love the photos! How much for the rights to use them?' Cursor blinking in the reply box. VO: 'This question costs photographers money every week.' Cut to a form: social, web, print; worldwide; two years; exclusive. A quote PDF appears with line items, then a one-page licence. VO: 'Six questions. A quote with the maths shown. A licence they sign on their phone.' End card: 'License Quote. $5 a month. Pre-launch, link in bio.'",
+      "caption": "Six questions about usage, a quote PDF with the maths shown, a one-page licence they can sign. $5/month. Not built yet; say if you'd use it. aidantorrence.com/offers/license-quote",
+      "community": "Photographers: how do you price usage rights when a brand asks? I'm deciding whether to build a small quote tool: media, territory, term, exclusivity in; a quote PDF with the multipliers shown and a plain-English licence out. $5/month. Pre-launch page, no charge, just an 'I'd pay' button: aidantorrence.com/offers/license-quote",
+      "pitchSubject": "Usage-rights quotes in two minutes (pre-launch)",
+      "pitch": "Hi {first},\n\nI'm Aidan, a photographer. I saw {specific reference}.\n\nI'm deciding whether to build a small tool that turns six questions about how a brand will use your photos into a quote PDF with the maths shown and a one-page licence, $5 a month.\n\nIf that's useful, the pre-launch page has an 'I'd pay' button: aidantorrence.com/offers/license-quote?src=email\n\nIf not, one line on why helps just as much.\n\nBest,\nAidan"
+    }
   }
 ]
