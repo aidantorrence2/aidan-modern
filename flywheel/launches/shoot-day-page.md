@@ -5,6 +5,7 @@ Price: $4/month (unlimited bookings)
 Buyer: photographers who answer the same six 'what time, where exactly, what if it rains' messages before every session
 Status: live since 2026-10-17
 Hosted page: https://aidantorrence.com/offers/shoot-day-page (live after merge to main + deploy)
+Artifact page: https://claude.ai/artifact/LDqryoF4NBjNNUh7iqP8PS
 
 ## Tracking links (one per channel)
 

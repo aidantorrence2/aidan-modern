@@ -982,7 +982,8 @@
       "community": "Photographers: which pre-shoot questions do you answer most? I'm deciding whether to build a per-booking client page: timeline, map pin with parking notes, what to expect, rain plan, wardrobe brief, weather line, deposit status, day-before and morning-of reminders, a tap-to-call number. $4/month. Pre-launch page, no charge, just an 'I'd pay' button: aidantorrence.com/offers/shoot-day-page",
       "pitchSubject": "The page your confirmation email should have been (pre-launch)",
       "pitch": "Hi {first},\n\nI'm Aidan, a photographer. I saw {specific reference}.\n\nI'm deciding whether to build a per-booking client page: timeline, map pin with parking notes, rain plan, wardrobe brief, weather line and automatic reminders, so the pre-shoot questions stop, $4 a month.\n\nIf that's useful, the pre-launch page has an 'I'd pay' button: aidantorrence.com/offers/shoot-day-page?src=email\n\nIf not, one line on why helps just as much.\n\nBest,\nAidan"
-    }
+    },
+    "artifactUrl": "https://claude.ai/artifact/LDqryoF4NBjNNUh7iqP8PS"
   },
   {
     "slug": "creator-rate-card",
@@ -1107,6 +1108,37 @@
       "community": "Bridal hair and makeup artists: how do you track what's in your kit and what's expiring? I'm deciding whether to build a simple kit list with open dates and expiry flags, WhatsApp restock reminders a week before each wedding, and a packing list per look built from your trial notes. $3/month. Pre-launch page, no charge, just an 'I'd pay' button: aidantorrence.com/offers/kit-stock",
       "pitchSubject": "Your kit, expiry flags and a packing list per look (pre-launch)",
       "pitch": "Hi {first},\n\nI'm Aidan, a photographer who works a lot of shoot mornings alongside hair and makeup artists. I saw {specific reference}.\n\nI'm deciding whether to build a simple kit list: products with open dates and expiry flags, restock reminders a week before each wedding, and a packing list per look, $3 a month.\n\nIf that's useful, the pre-launch page has an 'I'd pay' button: aidantorrence.com/offers/kit-stock?src=email\n\nIf not, one line on why helps just as much.\n\nBest,\nAidan"
+    }
+  },
+  {
+    "slug": "reveal-room",
+    "name": "Reveal Room",
+    "headline": "A timed online reveal where the client sees the finished gallery for the first time, picks wall art at your prices, and orders before the link closes.",
+    "buyer": "portrait, pet and equine photographers who sell wall art and albums but can't always get clients into the studio for a reveal",
+    "bullets": [
+      "Schedule the reveal; the client gets a link that opens at the agreed time, with your opening note and the images shown one at a time before the grid.",
+      "Wall art and album options at your prices, with a room-view preview using their own photo of the wall; the order goes to you, not a lab.",
+      "The link closes when you say; a gentle reminder before it does; everything they picked and said is logged for the follow-up call."
+    ],
+    "price": "$6/month",
+    "priceUsd": 6,
+    "priceNote": "unlimited reveals",
+    "status": "live",
+    "launched": "2026-10-17",
+    "reasonPrompt": "How do you reveal and sell today: in person, a gallery link, or a phone call?",
+    "faq": [
+      {
+        "q": "Does it replace in-person sales?",
+        "a": "No. It is for the clients you cannot get into the room. In-person stays yours; this gives the others a reveal instead of a download link."
+      }
+    ],
+    "kit": {
+      "hook": "Half my clients can't make it to the studio for the reveal. They got a gallery link and bought nothing. So I'm making the reveal a link.",
+      "script": "Open on a gallery email: 'your photos are ready', then silence. VO: 'A link gets opened. A reveal gets bought.' Cut to a phone: a timed reveal opens, images one at a time, a wall preview on the client's own wall, an order with sizes. VO: 'The reveal, online. Your prices. Your order.' End card: 'Reveal Room. $6 a month. Pre-launch, link in bio.'",
+      "caption": "A timed online reveal with wall-art ordering at your prices, for the clients who can't come in. $6/month. Not built yet; say if you'd use it. aidantorrence.com/offers/reveal-room",
+      "community": "Portrait, pet and equine photographers who sell wall art: what happens with clients who can't come in for a reveal? I'm deciding whether to build a timed online reveal: images shown one at a time, wall-art and album options at your prices, a room preview on their own wall, the order sent to you, the link closing on a date. $6/month. Pre-launch page, no charge, just an 'I'd pay' button: aidantorrence.com/offers/reveal-room",
+      "pitchSubject": "A reveal for the clients who can't come in (pre-launch)",
+      "pitch": "Hi {first},\n\nI'm Aidan, a photographer. I saw {specific reference}.\n\nI'm deciding whether to build a timed online reveal for the clients who cannot come to the studio: images shown one at a time, wall art and albums at your prices with a room preview on their own wall, the order sent to you, the link closing on a date, $6 a month.\n\nIf that's useful, the pre-launch page has an 'I'd pay' button: aidantorrence.com/offers/reveal-room?src=email\n\nIf not, one line on why helps just as much.\n\nBest,\nAidan"
     }
   }
 ]
