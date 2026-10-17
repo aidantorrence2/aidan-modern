@@ -852,7 +852,8 @@
       "community": "Photographers: when did you last verify your backup actually ran? I'm deciding whether to build a small local tool: it compares shoot folders across your working drive, backup drive and cloud folder every night by file count and checksum, and sends one line each morning, or a WhatsApp when a shoot is missing or half-copied. $4/month, nothing uploaded. Pre-launch page, no charge, just an 'I'd pay' button: aidantorrence.com/offers/backup-check",
       "pitchSubject": "Did the backup actually run? (pre-launch)",
       "pitch": "Hi {first},\n\nI'm Aidan, a photographer. I saw {specific reference}.\n\nI'm deciding whether to build a small local tool that verifies every shoot folder exists in three places each night, by file count and checksum, and messages you the morning one is missing, $4 a month.\n\nIf that's useful, the pre-launch page has an 'I'd pay' button: aidantorrence.com/offers/backup-check?src=email\n\nIf not, one line on why helps just as much.\n\nBest,\nAidan"
-    }
+    },
+    "artifactUrl": "https://claude.ai/artifact/4e63JQfaJU1Pfq3nYcUSE8"
   },
   {
     "slug": "wardrobe-call",
@@ -915,6 +916,37 @@
       "community": "Creators: how do you read your comments for what to film next? I'm deciding whether to build a Monday digest: your last week of comments grouped by what people are actually asking, the top ten ranked, each with a 15-second video idea, a hook and a paste-ready reply, plus flags for comments that deserve a personal answer. $5/month. Pre-launch page, no charge, just an 'I'd pay' button: aidantorrence.com/offers/comment-miner",
       "pitchSubject": "Your comments as a content calendar (pre-launch)",
       "pitch": "Hi {first},\n\nI'm Aidan, a photographer and short-form creator. I saw {specific reference}.\n\nI'm deciding whether to build a Monday digest that groups a week of your comments by what people are really asking, ranks the top ten, and gives each a next-video idea, a hook and a paste-ready reply, $5 a month.\n\nIf that's useful, the pre-launch page has an 'I'd pay' button: aidantorrence.com/offers/comment-miner?src=email\n\nIf not, one line on why helps just as much.\n\nBest,\nAidan"
+    }
+  },
+  {
+    "slug": "shoot-ledger",
+    "name": "Shoot Ledger",
+    "headline": "Every shoot's money in one line: deposit, balance, lab, travel, assistant, what you kept. Receipts by WhatsApp photo, tax export at year end.",
+    "buyer": "freelance photographers who know their day rate and have no idea what a shoot actually earns them",
+    "bullets": [
+      "One row per shoot; income and costs attach to it, so you see margin per job and per client, not a bank balance.",
+      "Send a receipt photo to a WhatsApp number; it reads the amount and files it to the right shoot.",
+      "Quarterly and year-end exports your accountant can open, with VAT or sales tax columns per country you shot in."
+    ],
+    "price": "$5/month",
+    "priceUsd": 5,
+    "priceNote": "unlimited shoots; multi-currency",
+    "status": "live",
+    "launched": "2026-10-17",
+    "reasonPrompt": "How do you track what a shoot earns after costs today, if at all?",
+    "faq": [
+      {
+        "q": "Is this accounting software?",
+        "a": "No. It is a per-shoot ledger that exports cleanly to whatever your accountant uses. If you already love your bookkeeping app, keep it."
+      }
+    ],
+    "kit": {
+      "hook": "My 'best month ever' lost money once I counted the lab, the flights and the assistant. I didn't know for six weeks.",
+      "script": "Open on a bank app showing a healthy balance. VO: 'Looked great. Wasn't.' Cut to a phone: a shoot row with deposit, balance, lab, flights, assistant; a receipt photo arrives on WhatsApp and files itself; margin per shoot appears. VO: 'What each shoot actually kept. Receipts by photo. Tax export when you need it.' End card: 'Shoot Ledger. $5 a month. Pre-launch, link in bio.'",
+      "caption": "What each shoot actually earns after lab, travel and crew, receipts by WhatsApp photo, tax export at year end. $5/month. Not built yet; say if you'd use it. aidantorrence.com/offers/shoot-ledger",
+      "community": "Freelance photographers: do you know what a shoot earns after costs, or just the day rate? I'm deciding whether to build a per-shoot ledger: one row per job with deposit, balance, lab, travel and crew, receipts filed from a WhatsApp photo, margin per client, quarterly and year-end exports with tax columns per country. $5/month. Pre-launch page, no charge, just an 'I'd pay' button: aidantorrence.com/offers/shoot-ledger",
+      "pitchSubject": "What each shoot actually earns (pre-launch)",
+      "pitch": "Hi {first},\n\nI'm Aidan, a photographer. I saw {specific reference}.\n\nI'm deciding whether to build a per-shoot ledger: one row per job with deposit, balance, lab, travel and crew, receipts filed from a WhatsApp photo, margin per client and a year-end tax export, $5 a month.\n\nIf that's useful, the pre-launch page has an 'I'd pay' button: aidantorrence.com/offers/shoot-ledger?src=email\n\nIf not, one line on why helps just as much.\n\nBest,\nAidan"
     }
   }
 ]

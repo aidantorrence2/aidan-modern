@@ -5,6 +5,7 @@ Price: $4/month (runs on your own computer; nothing uploaded)
 Buyer: photographers who have a backup plan and no idea whether it ran last night
 Status: live since 2026-10-17
 Hosted page: https://aidantorrence.com/offers/backup-check (live after merge to main + deploy)
+Artifact page: https://claude.ai/artifact/4e63JQfaJU1Pfq3nYcUSE8
 
 ## Tracking links (one per channel)
 
