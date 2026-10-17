@@ -5,6 +5,7 @@ Price: $5/month (or free for your first three quotes)
 Buyer: photographers who get asked 'how much for the rights?' and answer from a gut feeling
 Status: live since 2026-10-17
 Hosted page: https://aidantorrence.com/offers/license-quote (live after merge to main + deploy)
+Artifact page: https://claude.ai/artifact/4SM2JXoLDPuLPb58aKYVhS
 
 ## Tracking links (one per channel)
 

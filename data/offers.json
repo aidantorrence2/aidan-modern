@@ -565,7 +565,8 @@
       "community": "Photographers: how do you price usage rights when a brand asks? I'm deciding whether to build a small quote tool: media, territory, term, exclusivity in; a quote PDF with the multipliers shown and a plain-English licence out. $5/month. Pre-launch page, no charge, just an 'I'd pay' button: aidantorrence.com/offers/license-quote",
       "pitchSubject": "Usage-rights quotes in two minutes (pre-launch)",
       "pitch": "Hi {first},\n\nI'm Aidan, a photographer. I saw {specific reference}.\n\nI'm deciding whether to build a small tool that turns six questions about how a brand will use your photos into a quote PDF with the maths shown and a one-page licence, $5 a month.\n\nIf that's useful, the pre-launch page has an 'I'd pay' button: aidantorrence.com/offers/license-quote?src=email\n\nIf not, one line on why helps just as much.\n\nBest,\nAidan"
-    }
+    },
+    "artifactUrl": "https://claude.ai/artifact/4SM2JXoLDPuLPb58aKYVhS"
   },
   {
     "slug": "digitals-kit",
@@ -627,6 +628,37 @@
       "community": "Creators who post daily: how do you pick cover frames? I'm deciding whether to build a drop-a-file tool that scores every frame (sharp face, open eyes, space for text), returns the top three with your title overlaid in your font, sized per platform. $5/month. Pre-launch page, no charge, just an 'I'd pay' button: aidantorrence.com/offers/cover-frame",
       "pitchSubject": "Cover frames picked for you (pre-launch)",
       "pitch": "Hi {first},\n\nI'm Aidan, a photographer and short-form creator. I saw {specific reference}.\n\nI'm deciding whether to build a small tool that scores every frame of a vertical video and returns the three best covers with your title overlaid in your font, sized per platform, $5 a month.\n\nIf that's useful, the pre-launch page has an 'I'd pay' button: aidantorrence.com/offers/cover-frame?src=email\n\nIf not, one line on why helps just as much.\n\nBest,\nAidan"
+    }
+  },
+  {
+    "slug": "light-window",
+    "name": "Light Window",
+    "headline": "Type an address and a date, get the exact golden and blue hour windows, sun direction on that street, shade and weather, as one line for the call sheet.",
+    "buyer": "photographers who plan outdoor shoots from a sunset app, a weather app and a guess",
+    "bullets": [
+      "Address plus date in; out comes sunrise, golden, blue and harsh-light windows in local time, with the sun's compass bearing each hour.",
+      "A street-level note on which side will be in shade and when, built from the building heights around the pin.",
+      "Weather and cloud cover for the window, re-checked the night before, with a text to you and the client if it turns."
+    ],
+    "price": "$4/month",
+    "priceUsd": 4,
+    "priceNote": "unlimited shoots",
+    "status": "live",
+    "launched": "2026-10-17",
+    "reasonPrompt": "How do you plan light for an outdoor shoot today, and when did it last go wrong?",
+    "faq": [
+      {
+        "q": "Isn't this PhotoPills?",
+        "a": "PhotoPills is a deep planning app you learn. This is one line for a call sheet, in a message, with no app to learn. If you already live in PhotoPills, keep it."
+      }
+    ],
+    "kit": {
+      "hook": "I booked a 5pm shoot on a street that was in shadow by 4:10. One address lookup would have told me.",
+      "script": "Open on a photo of a model half in hard shadow. VO: 'Golden hour said 5:40. The buildings said 4:10.' Cut to a phone: an address typed, a date; a card appears with light windows, a compass bearing, a shade note and a cloud forecast. VO: 'Address and date in. Light windows, sun direction, shade, weather. One line for the call sheet.' End card: 'Light Window. $4 a month. Pre-launch, link in bio.'",
+      "caption": "Address + date → golden and blue hour windows, sun bearing, shade note, weather, as one call-sheet line. $4/month. Not built yet; say if you'd use it. aidantorrence.com/offers/light-window",
+      "community": "Photographers shooting outdoors: how do you plan light for a specific street? I'm deciding whether to build a tiny tool: address and date in, exact light windows, sun bearing per hour, a shade note from nearby building heights and the cloud forecast out, as one line you paste into the call sheet, re-checked the night before. $4/month. Pre-launch page, no charge, just an 'I'd pay' button: aidantorrence.com/offers/light-window",
+      "pitchSubject": "Light windows for a street address (pre-launch)",
+      "pitch": "Hi {first},\n\nI'm Aidan, a photographer. I saw {specific reference}.\n\nI'm deciding whether to build a tiny tool: an address and a date in, the exact golden and blue hour windows, sun bearing, a shade note and the cloud forecast out, as one line for the call sheet, $4 a month.\n\nIf that's useful, the pre-launch page has an 'I'd pay' button: aidantorrence.com/offers/light-window?src=email\n\nIf not, one line on why helps just as much.\n\nBest,\nAidan"
     }
   }
 ]
