@@ -5,6 +5,7 @@ Price: $6/month (unlimited reveals)
 Buyer: portrait, pet and equine photographers who sell wall art and albums but can't always get clients into the studio for a reveal
 Status: live since 2026-10-17
 Hosted page: https://aidantorrence.com/offers/reveal-room (live after merge to main + deploy)
+Artifact page: https://claude.ai/artifact/AsVUyxd64esRD6Gi25du3T
 
 ## Tracking links (one per channel)
 

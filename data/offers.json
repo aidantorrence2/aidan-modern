@@ -1139,6 +1139,38 @@
       "community": "Portrait, pet and equine photographers who sell wall art: what happens with clients who can't come in for a reveal? I'm deciding whether to build a timed online reveal: images shown one at a time, wall-art and album options at your prices, a room preview on their own wall, the order sent to you, the link closing on a date. $6/month. Pre-launch page, no charge, just an 'I'd pay' button: aidantorrence.com/offers/reveal-room",
       "pitchSubject": "A reveal for the clients who can't come in (pre-launch)",
       "pitch": "Hi {first},\n\nI'm Aidan, a photographer. I saw {specific reference}.\n\nI'm deciding whether to build a timed online reveal for the clients who cannot come to the studio: images shown one at a time, wall art and albums at your prices with a room preview on their own wall, the order sent to you, the link closing on a date, $6 a month.\n\nIf that's useful, the pre-launch page has an 'I'd pay' button: aidantorrence.com/offers/reveal-room?src=email\n\nIf not, one line on why helps just as much.\n\nBest,\nAidan"
+    },
+    "artifactUrl": "https://claude.ai/artifact/AsVUyxd64esRD6Gi25du3T"
+  },
+  {
+    "slug": "album-proof",
+    "name": "Album Proof",
+    "headline": "Send album spreads for approval as one link: the client taps a spread, says what to change, and signs off the final version, with every round logged.",
+    "buyer": "wedding, newborn and family photographers whose album approvals live in a 40-message email thread with three PDFs called final",
+    "bullets": [
+      "Upload the spread PDFs or JPEGs; the client flips through on their phone, taps a spread to comment, and picks swaps from the gallery.",
+      "Each revision round is a numbered version; the client sees only the current one and the changes since last time.",
+      "A one-tap approval with a timestamp and the exact version approved, so 'that's not the one we signed off' never happens again."
+    ],
+    "price": "$5/month",
+    "priceUsd": 5,
+    "priceNote": "unlimited albums; two revision rounds enforced if you want",
+    "status": "live",
+    "launched": "2026-10-17",
+    "reasonPrompt": "How many revision rounds does an album usually take you, and how do you get the final sign-off today?",
+    "faq": [
+      {
+        "q": "Does it design the album?",
+        "a": "No. You design in whatever you use; this handles the proofing, revisions and sign-off."
+      }
+    ],
+    "kit": {
+      "hook": "Album v3-FINAL-final2.pdf. We've all been there. Now the client taps the spread and the change is logged.",
+      "script": "Open on a file list: album_final.pdf, album_final2.pdf, album_FINAL_v3.pdf. VO: 'Which one did they approve?' Cut to a phone: spreads flipping, a tap, a comment, a swap picked from the gallery, a green Approve with a timestamp and version number. VO: 'One link. Numbered rounds. A sign-off you can point to.' End card: 'Album Proof. $5 a month. Pre-launch, link in bio.'",
+      "caption": "Album spreads as one link: tap to comment, pick swaps, numbered rounds, timestamped sign-off. $5/month. Not built yet; say if you'd use it. aidantorrence.com/offers/album-proof",
+      "community": "Photographers who deliver albums: how do you run revisions and sign-off? I'm deciding whether to build a proofing link for spreads: the client taps a spread to comment, picks swaps from the gallery, each round is numbered, and the final approval is timestamped against the exact version. $5/month. Pre-launch page, no charge, just an 'I'd pay' button: aidantorrence.com/offers/album-proof",
+      "pitchSubject": "Album sign-off without the email thread (pre-launch)",
+      "pitch": "Hi {first},\n\nI'm Aidan, a photographer. I saw {specific reference}.\n\nI'm deciding whether to build an album proofing link: the client taps a spread to comment, picks swaps from the gallery, each revision round is numbered, and the final approval is timestamped against the exact version, $5 a month.\n\nIf that's useful, the pre-launch page has an 'I'd pay' button: aidantorrence.com/offers/album-proof?src=email\n\nIf not, one line on why helps just as much.\n\nBest,\nAidan"
     }
   }
 ]
