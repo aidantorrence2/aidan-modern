@@ -5,6 +5,7 @@ Price: $5/month (unlimited albums; two revision rounds enforced if you want)
 Buyer: wedding, newborn and family photographers whose album approvals live in a 40-message email thread with three PDFs called final
 Status: live since 2026-10-17
 Hosted page: https://aidantorrence.com/offers/album-proof (live after merge to main + deploy)
+Artifact page: https://claude.ai/artifact/7wheWCULnoGp8fX3bj8YZr
 
 ## Tracking links (one per channel)
 

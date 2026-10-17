@@ -1171,6 +1171,38 @@
       "community": "Photographers who deliver albums: how do you run revisions and sign-off? I'm deciding whether to build a proofing link for spreads: the client taps a spread to comment, picks swaps from the gallery, each round is numbered, and the final approval is timestamped against the exact version. $5/month. Pre-launch page, no charge, just an 'I'd pay' button: aidantorrence.com/offers/album-proof",
       "pitchSubject": "Album sign-off without the email thread (pre-launch)",
       "pitch": "Hi {first},\n\nI'm Aidan, a photographer. I saw {specific reference}.\n\nI'm deciding whether to build an album proofing link: the client taps a spread to comment, picks swaps from the gallery, each revision round is numbered, and the final approval is timestamped against the exact version, $5 a month.\n\nIf that's useful, the pre-launch page has an 'I'd pay' button: aidantorrence.com/offers/album-proof?src=email\n\nIf not, one line on why helps just as much.\n\nBest,\nAidan"
+    },
+    "artifactUrl": "https://claude.ai/artifact/7wheWCULnoGp8fX3bj8YZr"
+  },
+  {
+    "slug": "mini-day",
+    "name": "Mini Day",
+    "headline": "Run a mini-session day from one page: slots, price, deposit and waitlist, with the whole day's timeline and client pages built for you.",
+    "buyer": "family, pet and seasonal photographers who fill a mini-session day through DMs and a spreadsheet",
+    "bullets": [
+      "Set the date, location, slot length, price and deposit; the page shows the open slots and takes the deposit to hold one.",
+      "A waitlist fills cancellations on its own; the day's timeline, with buffers, exports to your calendar.",
+      "Each booked slot gets its own client page: time, pin, what to wear, rain plan, reminders the day before and the morning of."
+    ],
+    "price": "$6/month",
+    "priceUsd": 6,
+    "priceNote": "or $12 per mini day",
+    "status": "live",
+    "launched": "2026-10-17",
+    "reasonPrompt": "How did you fill your last mini-session day, and what fell through the cracks?",
+    "faq": [
+      {
+        "q": "Is this a full booking system?",
+        "a": "No. It is one page per mini day. If you already run minis through a booking system you like, keep it."
+      }
+    ],
+    "kit": {
+      "hook": "Twelve mini sessions, forty DMs, one spreadsheet, two no-shows. Next time the page runs the day.",
+      "script": "Open on a spreadsheet with crossed-out names and a DM thread. VO: 'Forty messages to fill twelve slots.' Cut to a phone: a mini-day page with slots, a deposit paid, a waitlist filling a cancelled slot, a client page with a map pin and what to wear. VO: 'Slots, deposits, waitlist, client pages. One page runs the day.' End card: 'Mini Day. $6 a month. Pre-launch, link in bio.'",
+      "caption": "A mini-session day from one page: slots, deposits, waitlist, timeline and client pages. $6/month. Not built yet; say if you'd use it. aidantorrence.com/offers/mini-day",
+      "community": "Photographers who run mini-session days: how do you fill and manage them? I'm deciding whether to build one page per mini day: open slots with a deposit to hold, a waitlist that fills cancellations, the day's timeline to your calendar, and a client page per slot with pin, what to wear, rain plan and reminders. $6/month or $12 per day. Pre-launch page, no charge, just an 'I'd pay' button: aidantorrence.com/offers/mini-day",
+      "pitchSubject": "One page to run a mini-session day (pre-launch)",
+      "pitch": "Hi {first},\n\nI'm Aidan, a photographer. I saw {specific reference}.\n\nI'm deciding whether to build one page per mini-session day: open slots with a deposit to hold, a waitlist that fills cancellations, the timeline to your calendar, and a client page per slot with reminders, $6 a month or $12 per day.\n\nIf that's useful, the pre-launch page has an 'I'd pay' button: aidantorrence.com/offers/mini-day?src=email\n\nIf not, one line on why helps just as much.\n\nBest,\nAidan"
     }
   }
 ]
