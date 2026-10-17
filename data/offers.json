@@ -1240,5 +1240,40 @@
       "pitchSubject": "Invoices that chase themselves (pre-launch)",
       "pitch": "Hi {first},\n\nI'm Aidan, a photographer. I saw {specific reference}.\n\nI'm deciding whether to build a small tool for late invoices: paste the invoice, pick reminder days, it sends short follow-ups in your voice and stops the moment you mark it paid, $4 a month.\n\nIf that would save you the fourth 'just checking in', the pre-launch page has an 'I'd pay' button: aidantorrence.com/offers/invoice-nudge?src=email\n\nIf not, one line on why is just as useful.\n\nBest,\nAidan"
     }
+  },
+  {
+    "slug": "tether-share",
+    "name": "Tether Share",
+    "headline": "A live link for the people who can't crowd the monitor: every tethered frame lands on their phone seconds after the shutter, with a heart to mark picks.",
+    "buyer": "commercial, e-commerce and editorial photographers shooting tethered for a client, art director or brand team on set or remote",
+    "bullets": [
+      "A small watcher on the shooting laptop uploads a proxy of each new capture; the client opens one private link and sees frames arrive live, no app, no account.",
+      "Hearts and short notes per frame come back into one list, so the picks are settled before the lights come down instead of a week later over email.",
+      "Each job gets its own link with an expiry; remote stakeholders see the same feed as the person next to the monitor."
+    ],
+    "price": "$6/month",
+    "priceUsd": 6,
+    "priceNote": "unlimited jobs, proxies kept 30 days",
+    "status": "live",
+    "launched": "2026-10-17",
+    "reasonPrompt": "How do clients and art directors see frames during your tethered shoots today, and where does it break down?",
+    "faq": [
+      {
+        "q": "Does it replace Capture One or Lightroom tethering?",
+        "a": "No. Keep shooting into whatever you use. The watcher only reads the folder your captures land in and pushes a small proxy to the link."
+      },
+      {
+        "q": "What about a slow venue connection?",
+        "a": "Proxies are small and queue when the connection drops, then catch up. Full-resolution files never leave your laptop."
+      }
+    ],
+    "kit": {
+      "hook": "Six people behind one monitor, two more on a video call asking 'can you zoom in'. The frames should just land on their phones.",
+      "script": "Open on a cramped set: a laptop monitor, a semicircle of people leaning in, a phone propped up on a video call. VO: 'Everyone wants to see the frame. Nobody can.' Cut to a phone: a private link, frames appearing one by one seconds after the shutter, a thumb tapping a heart on two of them. Cut to the laptop: a list of hearted frames with a note. VO: 'Every frame on their phone, live. Picks back before the lights come down.' End card: 'Tether Share. $6 a month. Pre-launch, link in bio.'",
+      "caption": "Tethered frames on the client's phone seconds after the shutter, with hearts for picks. $6/month. Not built yet; tell me if you'd use it. aidantorrence.com/offers/tether-share",
+      "community": "Photographers who shoot tethered with clients on set or remote: how do they see frames right now? Mine is a crowd behind the monitor and a laptop on a video call. I'm deciding whether to build a small watcher that pushes a proxy of each capture to one private link, where the client hearts picks and leaves short notes, with the picks coming back as one list. $6/month. Pre-launch page, no charge, just an 'I'd pay' button: aidantorrence.com/offers/tether-share",
+      "pitchSubject": "Live tethered frames on the client's phone (pre-launch)",
+      "pitch": "Hi {first},\n\nI'm Aidan, a photographer. I saw {specific reference}.\n\nI'm deciding whether to build a small tool for tethered shoots: a watcher on the shooting laptop pushes a proxy of each capture to one private link, the client or art director hearts picks on their phone, and the picks come back as one list, $6 a month.\n\nIf that would help on your sets, the pre-launch page has an 'I'd pay' button: aidantorrence.com/offers/tether-share?src=email\n\nIf not, one line on why is just as useful.\n\nBest,\nAidan"
+    }
   }
 ]
