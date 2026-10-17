@@ -5,6 +5,7 @@ Price: $8/month (unlimited galleries, 90-day retention)
 Buyer: photographers who send a Drive folder and then chase selects over chat
 Status: live since 2026-10-16
 Hosted page: https://aidantorrence.com/offers/proof-link (live after merge to main + deploy)
+Artifact page: https://claude.ai/artifact/WXrKuumFUrMYZP16EG963W
 
 ## Tracking links (one per channel)
 
