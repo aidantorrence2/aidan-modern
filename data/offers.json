@@ -821,7 +821,8 @@
       "community": "Photographers: how do you take deposits, and how often does a held date fall through? I'm deciding whether to build a tiny tool: shoot, date, total and deposit in; a payment link with your cancellation terms out; the date shows held only once paid; reminders and the balance request go out on their own. $5/month plus card fees. Pre-launch page, no charge, just an 'I'd pay' button: aidantorrence.com/offers/deposit-link",
       "pitchSubject": "Deposits that hold the date (pre-launch)",
       "pitch": "Hi {first},\n\nI'm Aidan, a photographer. I saw {specific reference}.\n\nI'm deciding whether to build a tiny tool for deposits: shoot, date and amount in, a payment link with your terms out, the date held only once paid, reminders and the balance request automatic, $5 a month plus card fees.\n\nIf that's useful, the pre-launch page has an 'I'd pay' button: aidantorrence.com/offers/deposit-link?src=email\n\nIf not, one line on why helps just as much.\n\nBest,\nAidan"
-    }
+    },
+    "artifactUrl": "https://claude.ai/artifact/JgaFSr1RBsXo3DKMUB6zeL"
   },
   {
     "slug": "backup-check",
@@ -947,6 +948,37 @@
       "community": "Freelance photographers: do you know what a shoot earns after costs, or just the day rate? I'm deciding whether to build a per-shoot ledger: one row per job with deposit, balance, lab, travel and crew, receipts filed from a WhatsApp photo, margin per client, quarterly and year-end exports with tax columns per country. $5/month. Pre-launch page, no charge, just an 'I'd pay' button: aidantorrence.com/offers/shoot-ledger",
       "pitchSubject": "What each shoot actually earns (pre-launch)",
       "pitch": "Hi {first},\n\nI'm Aidan, a photographer. I saw {specific reference}.\n\nI'm deciding whether to build a per-shoot ledger: one row per job with deposit, balance, lab, travel and crew, receipts filed from a WhatsApp photo, margin per client and a year-end tax export, $5 a month.\n\nIf that's useful, the pre-launch page has an 'I'd pay' button: aidantorrence.com/offers/shoot-ledger?src=email\n\nIf not, one line on why helps just as much.\n\nBest,\nAidan"
+    }
+  },
+  {
+    "slug": "shoot-day-page",
+    "name": "Shoot Day Page",
+    "headline": "One page per booking that tells your client everything about the day: time, pin, parking, what to expect, weather, wardrobe, who to call, updated as it changes.",
+    "buyer": "photographers who answer the same six 'what time, where exactly, what if it rains' messages before every session",
+    "bullets": [
+      "Fill in the booking once; the client gets a link with the timeline, a map pin with parking notes, what happens on the day and the rain plan.",
+      "Pulls in your wardrobe brief and the deposit status; shows a weather line for the slot and re-sends automatically if the time moves.",
+      "Day-before and morning-of reminders by WhatsApp or email, with the one tap-to-call number for running late."
+    ],
+    "price": "$4/month",
+    "priceUsd": 4,
+    "priceNote": "unlimited bookings",
+    "status": "live",
+    "launched": "2026-10-17",
+    "reasonPrompt": "Which question do clients ask most before a shoot, and how do you answer it today?",
+    "faq": [
+      {
+        "q": "Is this a booking system?",
+        "a": "No. It starts after the booking exists. It is the page you wish the confirmation email had been."
+      }
+    ],
+    "kit": {
+      "hook": "'What time again? Where do I park? What if it rains?' Same six messages, every shoot. Now they get a page.",
+      "script": "Open on a WhatsApp thread: three clients asking the same three questions. VO: 'Every shoot. Same six questions.' Cut to a phone: a booking page with timeline, map pin, parking note, rain plan, wardrobe link, weather line, a tap-to-call button. VO: 'One page per booking. Updated when the day changes. Reminders sent for you.' End card: 'Shoot Day Page. $4 a month. Pre-launch, link in bio.'",
+      "caption": "One page per booking with time, pin, parking, rain plan, wardrobe and reminders, so the questions stop. $4/month. Not built yet; say if you'd use it. aidantorrence.com/offers/shoot-day-page",
+      "community": "Photographers: which pre-shoot questions do you answer most? I'm deciding whether to build a per-booking client page: timeline, map pin with parking notes, what to expect, rain plan, wardrobe brief, weather line, deposit status, day-before and morning-of reminders, a tap-to-call number. $4/month. Pre-launch page, no charge, just an 'I'd pay' button: aidantorrence.com/offers/shoot-day-page",
+      "pitchSubject": "The page your confirmation email should have been (pre-launch)",
+      "pitch": "Hi {first},\n\nI'm Aidan, a photographer. I saw {specific reference}.\n\nI'm deciding whether to build a per-booking client page: timeline, map pin with parking notes, rain plan, wardrobe brief, weather line and automatic reminders, so the pre-shoot questions stop, $4 a month.\n\nIf that's useful, the pre-launch page has an 'I'd pay' button: aidantorrence.com/offers/shoot-day-page?src=email\n\nIf not, one line on why helps just as much.\n\nBest,\nAidan"
     }
   }
 ]
