@@ -5,6 +5,7 @@ Price: $39 one-off (includes 12 months of updates)
 Buyer: emerging fashion photographers and stylists submitting stories
 Status: live since 2026-10-16
 Hosted page: https://aidantorrence.com/offers/submission-atlas (live after merge to main + deploy)
+Artifact page: https://claude.ai/artifact/StsFNWV1biVBa4XJmRwkDr
 
 ## Tracking links (one per channel)
 

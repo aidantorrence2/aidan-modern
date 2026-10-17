@@ -5,6 +5,7 @@ Price: $8/month (unlimited boards)
 Buyer: photographers who send Pinterest links and screenshots and hope everyone saw the same thing
 Status: live since 2026-10-16
 Hosted page: https://aidantorrence.com/offers/moodboard-maker (live after merge to main + deploy)
+Artifact page: https://claude.ai/artifact/NFodpDSxJKMufwiwsdT4ov
 
 ## Tracking links (one per channel)
 

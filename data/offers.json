@@ -96,7 +96,8 @@
       "community": "Fashion photographers and stylists: I'm considering building a verified directory of magazines that take submissions (rules, published submission contacts, response times, filters by genre and region), $39 one-off with a year of updates. Pre-launch page, no charge, just tell me if you'd buy it: aidantorrence.com/offers/submission-atlas",
       "pitchSubject": "Magazine submission directory (pre-launch)",
       "pitch": "Hi {first},\n\nI'm Aidan, an editorial photographer. I noticed {specific reference}.\n\nI'm deciding whether to build a verified directory of magazines that take fashion and editorial submissions, with rules, published contacts and response times, $39 one-off.\n\nIf that's something you'd buy, the pre-launch page has an 'I'd pay' button: aidantorrence.com/offers/submission-atlas?src=email\n\nIf not, one line on why helps as much.\n\nBest,\nAidan"
-    }
+    },
+    "artifactUrl": "https://claude.ai/artifact/StsFNWV1biVBa4XJmRwkDr"
   },
   {
     "slug": "city-pages",
@@ -285,7 +286,8 @@
       "community": "Photographers: how do you share shoot references with model + stylist + client? I'm considering opening up the moodboard builder behind my own sign-ups (theme sets, wardrobe/light/location rows, a link each person reacts to, PDF export) at $8/month. Pre-launch, no charge, just an 'I'd pay' button: aidantorrence.com/offers/moodboard-maker",
       "pitchSubject": "Shoot moodboards everyone reacts to (pre-launch)",
       "pitch": "Hi {first},\n\nI'm Aidan, a photographer. I saw {specific reference}.\n\nI'm deciding whether to offer the moodboard builder I use for my own shoots as a tool: one link, your model, stylist and client react before the day, PDF for the call sheet, $8 a month.\n\nIf you'd use it, the pre-launch page has an 'I'd pay' button: aidantorrence.com/offers/moodboard-maker?src=email\n\nIf not, one line on why is just as helpful.\n\nBest,\nAidan"
-    }
+    },
+    "artifactUrl": "https://claude.ai/artifact/NFodpDSxJKMufwiwsdT4ov"
   },
   {
     "slug": "hook-bank",
@@ -850,6 +852,37 @@
       "community": "Photographers: when did you last verify your backup actually ran? I'm deciding whether to build a small local tool: it compares shoot folders across your working drive, backup drive and cloud folder every night by file count and checksum, and sends one line each morning, or a WhatsApp when a shoot is missing or half-copied. $4/month, nothing uploaded. Pre-launch page, no charge, just an 'I'd pay' button: aidantorrence.com/offers/backup-check",
       "pitchSubject": "Did the backup actually run? (pre-launch)",
       "pitch": "Hi {first},\n\nI'm Aidan, a photographer. I saw {specific reference}.\n\nI'm deciding whether to build a small local tool that verifies every shoot folder exists in three places each night, by file count and checksum, and messages you the morning one is missing, $4 a month.\n\nIf that's useful, the pre-launch page has an 'I'd pay' button: aidantorrence.com/offers/backup-check?src=email\n\nIf not, one line on why helps just as much.\n\nBest,\nAidan"
+    }
+  },
+  {
+    "slug": "wardrobe-call",
+    "name": "Wardrobe Call",
+    "headline": "Pick a shoot concept, get a wardrobe brief the model can actually follow: outfits, fabrics, colours, what to avoid, as one link with a checklist.",
+    "buyer": "photographers who type 'bring a few options' and then lose the first hour of the shoot to the wrong clothes",
+    "bullets": [
+      "Choose a concept (editorial, clean beauty, street, film-look, swim) and a location; it writes the brief with three outfit directions and example images.",
+      "Colour and fabric rules for your light and background, plus the standard don'ts: logos, tight stripes, new shoes, fresh haircuts.",
+      "The model gets a link with a packing checklist to tick off; you see what they've confirmed the night before."
+    ],
+    "price": "$4/month",
+    "priceUsd": 4,
+    "priceNote": "unlimited briefs",
+    "status": "live",
+    "launched": "2026-10-17",
+    "reasonPrompt": "What do you send models about wardrobe today, and what still goes wrong on the day?",
+    "faq": [
+      {
+        "q": "Is this the wardrobe tool from your sign-up flow?",
+        "a": "It grows out of it. The sign-up flow lets a model pick looks; this writes the brief for any photographer's concept and tracks what the model confirmed."
+      }
+    ],
+    "kit": {
+      "hook": "'Bring a few options' cost me the first hour of every shoot. Now the model gets a brief and a checklist.",
+      "script": "Open on a model unzipping a bag of logo tees and a striped shirt. VO: 'I said bring a few options. They did.' Cut to a phone: concept 'film-look street, overcast', three outfit directions appear with example frames, colour rules, don'ts, and a checklist. VO: 'A brief they can follow. A checklist they tick. You know the night before.' End card: 'Wardrobe Call. $4 a month. Pre-launch, link in bio.'",
+      "caption": "Concept in, a wardrobe brief and packing checklist out, one link for the model. $4/month. Not built yet; say if you'd use it. aidantorrence.com/offers/wardrobe-call",
+      "community": "Photographers: what do you send models about wardrobe, and what still shows up wrong? I'm deciding whether to build a brief generator: concept and location in, three outfit directions with example images, colour and fabric rules for your light, the usual don'ts, and a packing checklist the model ticks off so you know the night before. $4/month. Pre-launch page, no charge, just an 'I'd pay' button: aidantorrence.com/offers/wardrobe-call",
+      "pitchSubject": "Wardrobe briefs models follow (pre-launch)",
+      "pitch": "Hi {first},\n\nI'm Aidan, a photographer who shoots a lot of model tests. I saw {specific reference}.\n\nI'm deciding whether to build a wardrobe brief generator: concept and location in, three outfit directions with example images, colour rules for your light, the don'ts, and a packing checklist the model ticks off, $4 a month.\n\nIf that's useful, the pre-launch page has an 'I'd pay' button: aidantorrence.com/offers/wardrobe-call?src=email\n\nIf not, one line on why helps just as much.\n\nBest,\nAidan"
     }
   }
 ]
