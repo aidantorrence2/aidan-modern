@@ -5,6 +5,7 @@ Price: $4/month (unlimited briefs)
 Buyer: photographers who type 'bring a few options' and then lose the first hour of the shoot to the wrong clothes
 Status: live since 2026-10-17
 Hosted page: https://aidantorrence.com/offers/wardrobe-call (live after merge to main + deploy)
+Artifact page: https://claude.ai/artifact/1J8J1ywxvphSc5aZttCFcB
 
 ## Tracking links (one per channel)
 

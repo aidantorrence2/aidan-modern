@@ -883,6 +883,38 @@
       "community": "Photographers: what do you send models about wardrobe, and what still shows up wrong? I'm deciding whether to build a brief generator: concept and location in, three outfit directions with example images, colour and fabric rules for your light, the usual don'ts, and a packing checklist the model ticks off so you know the night before. $4/month. Pre-launch page, no charge, just an 'I'd pay' button: aidantorrence.com/offers/wardrobe-call",
       "pitchSubject": "Wardrobe briefs models follow (pre-launch)",
       "pitch": "Hi {first},\n\nI'm Aidan, a photographer who shoots a lot of model tests. I saw {specific reference}.\n\nI'm deciding whether to build a wardrobe brief generator: concept and location in, three outfit directions with example images, colour rules for your light, the don'ts, and a packing checklist the model ticks off, $4 a month.\n\nIf that's useful, the pre-launch page has an 'I'd pay' button: aidantorrence.com/offers/wardrobe-call?src=email\n\nIf not, one line on why helps just as much.\n\nBest,\nAidan"
+    },
+    "artifactUrl": "https://claude.ai/artifact/1J8J1ywxvphSc5aZttCFcB"
+  },
+  {
+    "slug": "comment-miner",
+    "name": "Comment Miner",
+    "headline": "Every Monday, your last week of comments turned into the ten questions people keep asking, with a next-video idea and a reply you can paste for each.",
+    "buyer": "short-form creators with hundreds of comments a week and no idea which ones are telling them what to film next",
+    "bullets": [
+      "Paste your TikTok, Reels or Shorts export (or connect once); it groups comments by what people are actually asking, not by keyword.",
+      "Top ten questions ranked by how often they recur and how many likes they carry, each with a 15-second video idea and a hook line.",
+      "A paste-ready reply for each question so you answer fifty people with ten answers; flags the comments that deserve a personal one."
+    ],
+    "price": "$5/month",
+    "priceUsd": 5,
+    "priceNote": "one account; add a second for $2",
+    "status": "live",
+    "launched": "2026-10-17",
+    "reasonPrompt": "How many comments do you get a week, and how do you decide what to film next?",
+    "faq": [
+      {
+        "q": "Does it post replies for me?",
+        "a": "No. It writes them; you paste. Nothing is posted from your account by this tool."
+      }
+    ],
+    "kit": {
+      "hook": "Four hundred comments last week. Three of them told me exactly what to film next. I almost missed all three.",
+      "script": "Open on a comment feed scrolling too fast to read. VO: 'Four hundred comments. Which ones matter?' Cut to a clean Monday list: ten questions, counts, a video idea and a hook under each, a paste-ready reply. VO: 'Grouped by what people are really asking. Ten answers. Ten next videos.' End card: 'Comment Miner. $5 a month. Pre-launch, link in bio.'",
+      "caption": "Your week of comments → the ten questions people keep asking, a next-video idea and a paste-ready reply for each. $5/month. Not built yet; say if you'd use it. aidantorrence.com/offers/comment-miner",
+      "community": "Creators: how do you read your comments for what to film next? I'm deciding whether to build a Monday digest: your last week of comments grouped by what people are actually asking, the top ten ranked, each with a 15-second video idea, a hook and a paste-ready reply, plus flags for comments that deserve a personal answer. $5/month. Pre-launch page, no charge, just an 'I'd pay' button: aidantorrence.com/offers/comment-miner",
+      "pitchSubject": "Your comments as a content calendar (pre-launch)",
+      "pitch": "Hi {first},\n\nI'm Aidan, a photographer and short-form creator. I saw {specific reference}.\n\nI'm deciding whether to build a Monday digest that groups a week of your comments by what people are really asking, ranks the top ten, and gives each a next-video idea, a hook and a paste-ready reply, $5 a month.\n\nIf that's useful, the pre-launch page has an 'I'd pay' button: aidantorrence.com/offers/comment-miner?src=email\n\nIf not, one line on why helps just as much.\n\nBest,\nAidan"
     }
   }
 ]
