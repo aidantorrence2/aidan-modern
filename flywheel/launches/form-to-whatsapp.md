@@ -5,6 +5,7 @@ Price: $5/month (up to 300 leads a month)
 Buyer: freelancers and small studios who miss leads because they live in an inbox nobody checks
 Status: live since 2026-10-16
 Hosted page: https://aidantorrence.com/offers/form-to-whatsapp (live after merge to main + deploy)
+Artifact page: https://claude.ai/artifact/Nxugv6rYVeVzcxA4ZpiZRS
 
 ## Tracking links (one per channel)
 

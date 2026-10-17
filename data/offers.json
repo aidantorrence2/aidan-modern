@@ -350,7 +350,8 @@
       "community": "Freelancers / small studios: I get my own booking forms as WhatsApp messages within a minute and it changed my reply time. Thinking of making it a $5/month tool that works with any form builder (one line to paste). Pre-launch page, no charge, just an 'I'd pay' button: aidantorrence.com/offers/form-to-whatsapp",
       "pitchSubject": "Form leads on WhatsApp in a minute (pre-launch)",
       "pitch": "Hi {first},\n\nI'm Aidan, a photographer. I saw {specific reference}.\n\nI route my own website forms to WhatsApp so I answer leads in minutes instead of hours, and I'm deciding whether to offer it as a $5 a month tool that works with any form builder.\n\nIf you'd use it, the pre-launch page has an 'I'd pay' button: aidantorrence.com/offers/form-to-whatsapp?src=email\n\nIf not, one line on why helps as much.\n\nBest,\nAidan"
-    }
+    },
+    "artifactUrl": "https://claude.ai/artifact/Nxugv6rYVeVzcxA4ZpiZRS"
   },
   {
     "slug": "open-slots",
@@ -444,7 +445,8 @@
       "community": "Photographers: what do you pay for your portfolio site and what annoys you about it? I'm deciding whether to offer the engine behind my own site (folder in, auto-processed, tiered opening sequence, WhatsApp contact, shoot pages, your domain, phone editor) at $15/month. Pre-launch page, no charge: aidantorrence.com/offers/portfolio-globe",
       "pitchSubject": "Fast portfolio site from a folder (pre-launch)",
       "pitch": "Hi {first},\n\nI'm Aidan, a photographer. I saw {specific reference}.\n\nI'm deciding whether to offer the engine behind my own portfolio site as a product: a folder of photos in, a fast site on your own domain out, edited from your phone, $15 a month.\n\nIf you'd use it, the pre-launch page has an 'I'd pay' button: aidantorrence.com/offers/portfolio-globe?src=email\n\nIf not, a one-line 'no, because' is just as useful.\n\nBest,\nAidan"
-    }
+    },
+    "artifactUrl": "https://claude.ai/artifact/N6uW3wUQTjZUUAPXhRHQEd"
   },
   {
     "slug": "caption-burner",
@@ -1042,6 +1044,37 @@
       "community": "Brands, venues and creators who repost UGC: how do you keep proof of permission? I'm deciding whether to build a one-link request: paste the post, state the use and credit, the creator approves in a tap without an account, and every approval is logged with terms and timestamp. $5/month. Pre-launch page, no charge, just an 'I'd pay' button: aidantorrence.com/offers/repost-permit",
       "pitchSubject": "Repost permission you can find later (pre-launch)",
       "pitch": "Hi {first},\n\nI'm Aidan, a photographer and creator. I saw {specific reference}.\n\nI'm deciding whether to build a one-link repost permission tool: paste a post, state the use and credit, the creator approves in a tap, and every approval is logged with its terms, $5 a month.\n\nIf that's useful, the pre-launch page has an 'I'd pay' button: aidantorrence.com/offers/repost-permit?src=email\n\nIf not, one line on why helps just as much.\n\nBest,\nAidan"
+    }
+  },
+  {
+    "slug": "trial-notes",
+    "name": "Trial Notes",
+    "headline": "One record per bride from the trial: the look, every product and shade, timings, photos and notes, so the wedding morning is a repeat, not a reinvention.",
+    "buyer": "bridal hair and makeup artists who run trials months before the day and keep the details in a notebook, a camera roll and their memory",
+    "bullets": [
+      "Log the trial on your phone as you go: products by shade, placement, hair prep, how long each step took, with photos of the finished look and the kit.",
+      "The bride gets a tidy link with her look, the agreed timings and what to do the night before; changes she asks for are logged, dated and visible to both of you.",
+      "On the day: a morning timeline for the whole party, built from the trial timings, with the kit list for that look and a tap-to-call number."
+    ],
+    "price": "$4/month",
+    "priceUsd": 4,
+    "priceNote": "unlimited brides",
+    "status": "live",
+    "launched": "2026-10-17",
+    "reasonPrompt": "Where do your trial notes live today, and what went wrong the last time a wedding morning didn't match the trial?",
+    "faq": [
+      {
+        "q": "Does the bride see my product list?",
+        "a": "Only if you turn that on. By default she sees the look, timings and prep notes; products and shades stay yours."
+      }
+    ],
+    "kit": {
+      "hook": "Six months between the trial and the wedding. My notes were a photo and three words. Never again.",
+      "script": "Open on a notebook page with 'foundation 2.5? lashes: wispy' scrawled. VO: 'Six months later, that was all I had.' Cut to a phone: a bride's record with products by shade, timings per step, finished-look photos, a prep note the bride can see. VO: 'Log the trial as you work. The bride gets her link. The morning repeats the trial.' End card: 'Trial Notes. $4 a month. Pre-launch, link in bio.'",
+      "caption": "One record per bride from the trial: products, shades, timings, photos, a link she can see. $4/month. Not built yet; say if you'd use it. aidantorrence.com/offers/trial-notes",
+      "community": "Bridal hair and makeup artists: where do your trial notes live? I'm deciding whether to build a per-bride record you fill in on your phone during the trial (products by shade, placement, timings, photos), a link the bride sees with her look and prep notes, and a wedding-morning timeline built from the trial. $4/month. Pre-launch page, no charge, just an 'I'd pay' button: aidantorrence.com/offers/trial-notes",
+      "pitchSubject": "Trial notes the wedding morning can follow (pre-launch)",
+      "pitch": "Hi {first},\n\nI'm Aidan, a photographer who works a lot of shoot days alongside hair and makeup artists. I saw {specific reference}.\n\nI'm deciding whether to build a per-bride trial record: products by shade, timings and photos logged on your phone during the trial, a link the bride sees with her look and prep notes, and a wedding-morning timeline built from it, $4 a month.\n\nIf that's useful, the pre-launch page has an 'I'd pay' button: aidantorrence.com/offers/trial-notes?src=email\n\nIf not, one line on why helps just as much.\n\nBest,\nAidan"
     }
   }
 ]
