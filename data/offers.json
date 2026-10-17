@@ -502,5 +502,36 @@
       "pitchSubject": "Client selects without the chat chase (pre-launch)",
       "pitch": "Hi {first},\n\nI'm Aidan, a photographer. I saw {specific reference}.\n\nI'm deciding whether to build a stripped proofing link: the client taps selects and leaves notes on their phone, and you get a WhatsApp when they're done, $8 a month.\n\nIf you'd use it, the pre-launch page has an 'I'd pay' button: aidantorrence.com/offers/proof-link?src=email\n\nIf not, a one-line 'no, because' is just as useful.\n\nBest,\nAidan"
     }
+  },
+  {
+    "slug": "scan-cleaner",
+    "name": "Scan Cleaner",
+    "headline": "Drop a folder of film scans, get them back straightened, border-trimmed, dust-spotted and colour-balanced, batch after batch.",
+    "buyer": "film photographers who get lab scans back and spend an evening fixing the same five things on every frame",
+    "bullets": [
+      "Auto-orients, trims the rebate and scanner border, and straightens each frame; you set the crop margin once.",
+      "Removes dust and hairline scratches without softening grain; a before/after strip per roll so you can veto any frame.",
+      "Neutralises the lab's colour cast per roll, optionally matched to one reference frame you pick; exports JPEG and 16-bit TIFF."
+    ],
+    "price": "$9/month",
+    "priceUsd": 9,
+    "priceNote": "20 rolls a month, runs on your own computer",
+    "status": "live",
+    "launched": "2026-10-17",
+    "reasonPrompt": "Which lab or scanner, and which fix eats the most time: dust, borders, colour?",
+    "faq": [
+      {
+        "q": "Does it change the look of the film?",
+        "a": "No. It removes what the scanner added (borders, dust, cast), not what the film did (grain, halation, tone)."
+      }
+    ],
+    "kit": {
+      "hook": "Every roll from the lab: same crooked frames, same dust, same green cast. I automated the fix and I'm packaging it.",
+      "script": "Open on a contact sheet of raw lab scans: tilted, borders, dust specks. VO: 'Every roll. Same five fixes, forty times.' Cut to a terminal: a folder drops in, 'cleaning 36 frames', then a before/after strip slides across. VO: 'Straightened, trimmed, dust gone, cast neutralised. Grain untouched.' End card: 'Scan Cleaner. $9 a month. Pre-launch, link in bio.'",
+      "caption": "Film scans in, straightened + trimmed + dust-spotted + colour-balanced scans out, grain untouched. $9/month. Not built yet; say if you'd use it. aidantorrence.com/offers/scan-cleaner",
+      "community": "Film shooters: what do you fix on every lab scan? I run a script on mine (auto-orient, trim the border, dust and scratch removal that leaves grain alone, per-roll cast neutralising) and I'm deciding whether to package it at $9/month, local, 20 rolls. Pre-launch page, no charge, just an 'I'd pay' button: aidantorrence.com/offers/scan-cleaner",
+      "pitchSubject": "Film scan cleanup in batch (pre-launch)",
+      "pitch": "Hi {first},\n\nI'm Aidan, a photographer shooting 35mm. I saw {specific reference}.\n\nI'm deciding whether to package the script I run on my lab scans (straighten, trim borders, dust and scratch removal that leaves grain alone, per-roll colour cast fix) as a $9 a month tool that runs on your own computer.\n\nIf that's useful, the pre-launch page has an 'I'd pay' button: aidantorrence.com/offers/scan-cleaner?src=email\n\nIf not, one line on why helps just as much.\n\nBest,\nAidan"
+    }
   }
 ]
