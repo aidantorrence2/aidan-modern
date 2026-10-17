@@ -5,6 +5,7 @@ Price: $7/month (unlimited slots)
 Buyer: photographers who book across time zones and lose sessions to 'wait, which Tuesday?'
 Status: live since 2026-10-16
 Hosted page: https://aidantorrence.com/offers/open-slots (live after merge to main + deploy)
+Artifact page: https://claude.ai/artifact/1BHSZGEvcv3JYw5W3aP2sp
 
 ## Tracking links (one per channel)
 
