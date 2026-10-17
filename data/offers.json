@@ -820,5 +820,36 @@
       "pitchSubject": "Deposits that hold the date (pre-launch)",
       "pitch": "Hi {first},\n\nI'm Aidan, a photographer. I saw {specific reference}.\n\nI'm deciding whether to build a tiny tool for deposits: shoot, date and amount in, a payment link with your terms out, the date held only once paid, reminders and the balance request automatic, $5 a month plus card fees.\n\nIf that's useful, the pre-launch page has an 'I'd pay' button: aidantorrence.com/offers/deposit-link?src=email\n\nIf not, one line on why helps just as much.\n\nBest,\nAidan"
     }
+  },
+  {
+    "slug": "backup-check",
+    "name": "Backup Check",
+    "headline": "A nightly check that every shoot folder exists in three places, with a WhatsApp message the morning one is missing.",
+    "buyer": "photographers who have a backup plan and no idea whether it ran last night",
+    "bullets": [
+      "Point it at your working drive, your backup drive and your cloud folder; it compares shoot folders by file count and checksum, not by trust.",
+      "Each morning: one line if all is well, a WhatsApp or email if a shoot is missing, half-copied or changed in only one place.",
+      "A monthly report of what's protected, what's only on one drive, and which drive is filling up first."
+    ],
+    "price": "$4/month",
+    "priceUsd": 4,
+    "priceNote": "runs on your own computer; nothing uploaded",
+    "status": "live",
+    "launched": "2026-10-17",
+    "reasonPrompt": "Where do your shoots live today, and when did you last verify the backup actually ran?",
+    "faq": [
+      {
+        "q": "Is this a backup tool?",
+        "a": "No. It does not copy anything. It verifies that the copies you already make are really there and match, and tells you when they are not."
+      }
+    ],
+    "kit": {
+      "hook": "My backup drive had been failing silently for three weeks. Nobody told me. Now something does.",
+      "script": "Open on a drive icon with a yellow triangle. VO: 'Three weeks of shoots, one copy, no alert.' Cut to a phone at 7am: a WhatsApp reads 'All 212 shoot folders in 3 places. Backup drive 88% full.' Then a red one: 'Shoot 2026-10-14 Bali: cloud copy missing 311 files.' VO: 'Every night it checks. Every morning you know.' End card: 'Backup Check. $4 a month. Pre-launch, link in bio.'",
+      "caption": "A nightly check that each shoot exists in three places, with a WhatsApp the morning one is missing. $4/month. Not built yet; say if you'd use it. aidantorrence.com/offers/backup-check",
+      "community": "Photographers: when did you last verify your backup actually ran? I'm deciding whether to build a small local tool: it compares shoot folders across your working drive, backup drive and cloud folder every night by file count and checksum, and sends one line each morning, or a WhatsApp when a shoot is missing or half-copied. $4/month, nothing uploaded. Pre-launch page, no charge, just an 'I'd pay' button: aidantorrence.com/offers/backup-check",
+      "pitchSubject": "Did the backup actually run? (pre-launch)",
+      "pitch": "Hi {first},\n\nI'm Aidan, a photographer. I saw {specific reference}.\n\nI'm deciding whether to build a small local tool that verifies every shoot folder exists in three places each night, by file count and checksum, and messages you the morning one is missing, $4 a month.\n\nIf that's useful, the pre-launch page has an 'I'd pay' button: aidantorrence.com/offers/backup-check?src=email\n\nIf not, one line on why helps just as much.\n\nBest,\nAidan"
+    }
   }
 ]
