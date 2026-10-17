@@ -5,6 +5,7 @@ Price: $5/month (unlimited shoots; multi-currency)
 Buyer: freelance photographers who know their day rate and have no idea what a shoot actually earns them
 Status: live since 2026-10-17
 Hosted page: https://aidantorrence.com/offers/shoot-ledger (live after merge to main + deploy)
+Artifact page: https://claude.ai/artifact/Mi3taCfxCtYimzVW7k346V
 
 ## Tracking links (one per channel)
 
