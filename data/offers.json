@@ -1044,7 +1044,8 @@
       "community": "Brands, venues and creators who repost UGC: how do you keep proof of permission? I'm deciding whether to build a one-link request: paste the post, state the use and credit, the creator approves in a tap without an account, and every approval is logged with terms and timestamp. $5/month. Pre-launch page, no charge, just an 'I'd pay' button: aidantorrence.com/offers/repost-permit",
       "pitchSubject": "Repost permission you can find later (pre-launch)",
       "pitch": "Hi {first},\n\nI'm Aidan, a photographer and creator. I saw {specific reference}.\n\nI'm deciding whether to build a one-link repost permission tool: paste a post, state the use and credit, the creator approves in a tap, and every approval is logged with its terms, $5 a month.\n\nIf that's useful, the pre-launch page has an 'I'd pay' button: aidantorrence.com/offers/repost-permit?src=email\n\nIf not, one line on why helps just as much.\n\nBest,\nAidan"
-    }
+    },
+    "artifactUrl": "https://claude.ai/artifact/QkE6z3fmeFZNY7boeCCiby"
   },
   {
     "slug": "trial-notes",
@@ -1075,6 +1076,37 @@
       "community": "Bridal hair and makeup artists: where do your trial notes live? I'm deciding whether to build a per-bride record you fill in on your phone during the trial (products by shade, placement, timings, photos), a link the bride sees with her look and prep notes, and a wedding-morning timeline built from the trial. $4/month. Pre-launch page, no charge, just an 'I'd pay' button: aidantorrence.com/offers/trial-notes",
       "pitchSubject": "Trial notes the wedding morning can follow (pre-launch)",
       "pitch": "Hi {first},\n\nI'm Aidan, a photographer who works a lot of shoot days alongside hair and makeup artists. I saw {specific reference}.\n\nI'm deciding whether to build a per-bride trial record: products by shade, timings and photos logged on your phone during the trial, a link the bride sees with her look and prep notes, and a wedding-morning timeline built from it, $4 a month.\n\nIf that's useful, the pre-launch page has an 'I'd pay' button: aidantorrence.com/offers/trial-notes?src=email\n\nIf not, one line on why helps just as much.\n\nBest,\nAidan"
+    }
+  },
+  {
+    "slug": "kit-stock",
+    "name": "Kit Stock",
+    "headline": "Your whole makeup and hair kit in one list with open dates and expiry, a restock reminder before a wedding, and a packing list per look.",
+    "buyer": "bridal hair and makeup artists who find the dried-out mascara and the empty setting spray on the morning of the wedding",
+    "bullets": [
+      "Scan or type each product once; it logs the open date, shade and expected shelf life, and flags what expires before your next booked date.",
+      "A packing list per look or per bride, built from your trial notes, so the kit you take matches the look you promised.",
+      "Restock reminders by WhatsApp a week before the wedding, with the exact products and shades running low."
+    ],
+    "price": "$3/month",
+    "priceUsd": 3,
+    "priceNote": "unlimited products",
+    "status": "live",
+    "launched": "2026-10-17",
+    "reasonPrompt": "What ran out or had expired at your last wedding, and how do you track your kit today?",
+    "faq": [
+      {
+        "q": "Do I have to scan everything?",
+        "a": "No. Type the name and shade; barcode scan is a shortcut, not a requirement."
+      }
+    ],
+    "kit": {
+      "hook": "The setting spray was empty at 6am on a wedding morning. One list would have told me on Monday.",
+      "script": "Open on a makeup kit zipped open, a hand shaking an empty bottle. VO: 'Wedding morning. Empty.' Cut to a phone: a kit list with open dates and expiry flags, a WhatsApp a week earlier: 'Setting spray low, mascara expires before the 24th.' VO: 'Your kit in one list. Reminders before the day. A packing list per look.' End card: 'Kit Stock. $3 a month. Pre-launch, link in bio.'",
+      "caption": "Your kit in one list with expiry flags, restock reminders before a wedding, a packing list per look. $3/month. Not built yet; say if you'd use it. aidantorrence.com/offers/kit-stock",
+      "community": "Bridal hair and makeup artists: how do you track what's in your kit and what's expiring? I'm deciding whether to build a simple kit list with open dates and expiry flags, WhatsApp restock reminders a week before each wedding, and a packing list per look built from your trial notes. $3/month. Pre-launch page, no charge, just an 'I'd pay' button: aidantorrence.com/offers/kit-stock",
+      "pitchSubject": "Your kit, expiry flags and a packing list per look (pre-launch)",
+      "pitch": "Hi {first},\n\nI'm Aidan, a photographer who works a lot of shoot mornings alongside hair and makeup artists. I saw {specific reference}.\n\nI'm deciding whether to build a simple kit list: products with open dates and expiry flags, restock reminders a week before each wedding, and a packing list per look, $3 a month.\n\nIf that's useful, the pre-launch page has an 'I'd pay' button: aidantorrence.com/offers/kit-stock?src=email\n\nIf not, one line on why helps just as much.\n\nBest,\nAidan"
     }
   }
 ]
