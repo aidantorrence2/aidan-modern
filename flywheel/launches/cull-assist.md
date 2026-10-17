@@ -5,6 +5,7 @@ Price: $12/month (runs on your own computer)
 Buyer: photographers who spend the evening after a shoot clicking through near-duplicates
 Status: live since 2026-10-16
 Hosted page: https://aidantorrence.com/offers/cull-assist (live after merge to main + deploy)
+Artifact page: https://claude.ai/artifact/5ekgwxVEfxdX3k1kb1FqiD
 
 ## Tracking links (one per channel)
 

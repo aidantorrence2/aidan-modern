@@ -222,7 +222,8 @@
       "community": "Photographers: I'm deciding whether to build a local culling tool that learns from ~200 of your own selects/rejects, then ranks a new shoot the way you would (bursts grouped, closed eyes dropped, star ratings written as XMP so Lightroom/C1 just see them). $12/month, nothing uploaded. Pre-launch page, no charge, just an 'I'd pay' button: aidantorrence.com/offers/cull-assist",
       "pitchSubject": "Culling that learns your taste (pre-launch)",
       "pitch": "Hi {first},\n\nI'm Aidan, a photographer. I saw {specific reference}.\n\nI'm deciding whether to build a local culling tool that learns from your own past selects and ranks a new shoot the way you would, writing XMP star ratings for Lightroom or Capture One. $12 a month, nothing uploaded.\n\nIf you'd use it, the pre-launch page has an 'I'd pay' button: aidantorrence.com/offers/cull-assist?src=email\n\nIf not, a one-line 'no, because' is just as useful.\n\nBest,\nAidan"
-    }
+    },
+    "artifactUrl": "https://claude.ai/artifact/5ekgwxVEfxdX3k1kb1FqiD"
   },
   {
     "slug": "reel-renderer",
@@ -659,6 +660,37 @@
       "community": "Photographers shooting outdoors: how do you plan light for a specific street? I'm deciding whether to build a tiny tool: address and date in, exact light windows, sun bearing per hour, a shade note from nearby building heights and the cloud forecast out, as one line you paste into the call sheet, re-checked the night before. $4/month. Pre-launch page, no charge, just an 'I'd pay' button: aidantorrence.com/offers/light-window",
       "pitchSubject": "Light windows for a street address (pre-launch)",
       "pitch": "Hi {first},\n\nI'm Aidan, a photographer. I saw {specific reference}.\n\nI'm deciding whether to build a tiny tool: an address and a date in, the exact golden and blue hour windows, sun bearing, a shade note and the cloud forecast out, as one line for the call sheet, $4 a month.\n\nIf that's useful, the pre-launch page has an 'I'd pay' button: aidantorrence.com/offers/light-window?src=email\n\nIf not, one line on why helps just as much.\n\nBest,\nAidan"
+    }
+  },
+  {
+    "slug": "print-link",
+    "name": "Print Link",
+    "headline": "One link per shoot where your subject or their family can order real prints, fulfilled by a lab, with your margin set by you and nothing to pack.",
+    "buyer": "portrait and family photographers who get asked 'can I get a print?' and answer with a Dropbox folder",
+    "bullets": [
+      "Upload the finals; the link shows them at print sizes with your edit locked, no filters, no cropping into your frame.",
+      "Buyer picks size and paper, pays, and a lab in their region prints and ships; you set the margin per size.",
+      "Payouts land weekly with a per-shoot statement; the link expires when you say so."
+    ],
+    "price": "$6/month",
+    "priceUsd": 6,
+    "priceNote": "plus lab cost at wholesale; you keep the margin",
+    "status": "live",
+    "launched": "2026-10-17",
+    "reasonPrompt": "When did someone last ask you for a print, and what did you do?",
+    "faq": [
+      {
+        "q": "How is this different from a gallery store?",
+        "a": "It is one link per shoot with nothing to configure: no storefront, no gallery theme, no product catalogue. If you already run a store, keep it."
+      }
+    ],
+    "kit": {
+      "hook": "'Can I get a print of that one?' I used to say 'sure' and never follow up. Now it's one link.",
+      "script": "Open on a WhatsApp: 'Can I order a print of the one on the stairs?' VO: 'The question I never had an answer for.' Cut to a phone: a shoot link, a photo at 30x40, paper choice, pay. A lab label prints. VO: 'They pick a size. A lab prints and ships. You set the margin. Nothing to pack.' End card: 'Print Link. $6 a month. Pre-launch, link in bio.'",
+      "caption": "One link per shoot for real prints, lab-fulfilled, your margin, nothing to pack. $6/month. Not built yet; say if you'd use it. aidantorrence.com/offers/print-link",
+      "community": "Portrait and family photographers: what happens when a client asks for a print? I'm deciding whether to build a one-link-per-shoot print order page (your edit locked, lab fulfils and ships in the buyer's region, you set the margin, weekly payout). $6/month plus wholesale lab cost. Pre-launch page, no charge, just an 'I'd pay' button: aidantorrence.com/offers/print-link",
+      "pitchSubject": "Prints from a shoot, one link (pre-launch)",
+      "pitch": "Hi {first},\n\nI'm Aidan, a photographer. I saw {specific reference}.\n\nI'm deciding whether to build a one-link-per-shoot print order page: your edit locked, a lab prints and ships in the buyer's region, you set the margin, $6 a month plus wholesale lab cost.\n\nIf that's useful, the pre-launch page has an 'I'd pay' button: aidantorrence.com/offers/print-link?src=email\n\nIf not, one line on why helps just as much.\n\nBest,\nAidan"
     }
   }
 ]
