@@ -315,7 +315,8 @@
       "community": "Short-form creators: would you pay $9/month for 100 hooks every Monday, scored for your niche, grouped by angle, each with a why and a rewrite in your voice? Generated, with a human spot-check. Pre-launch page with an 'I'd pay' button, no charge: aidantorrence.com/offers/hook-bank",
       "pitchSubject": "Weekly hooks for your niche (pre-launch)",
       "pitch": "Hi {first},\n\nI'm Aidan, a photographer and short-form creator. I saw {specific reference}.\n\nI'm deciding whether to build a weekly hook list: 100 first lines scored for your niche, grouped by angle, rewritten in your voice, $9 a month.\n\nIf that's useful, the pre-launch page has an 'I'd pay' button: aidantorrence.com/offers/hook-bank?src=email\n\nIf not, a one-line 'no, because' helps just as much.\n\nBest,\nAidan"
-    }
+    },
+    "artifactUrl": "https://claude.ai/artifact/FfB9BHNnGmquSYrgv6mgZA"
   },
   {
     "slug": "form-to-whatsapp",
@@ -595,6 +596,37 @@
       "community": "New faces and aspiring models: I photograph a lot of model tests and keep hearing that agency applications get bounced for format, not looks. I'm deciding whether to build a $7 kit: a phone guide for eight clean digitals, export sized and named to each agency's spec, and a tracker for applications and replies. Pre-launch page, no charge, just an 'I'd pay' button: aidantorrence.com/offers/digitals-kit",
       "pitchSubject": "Digitals formatted to each agency's spec (pre-launch)",
       "pitch": "Hi {first},\n\nI'm Aidan, a photographer who shoots model tests across Asia. I saw {specific reference}.\n\nI'm deciding whether to build a small kit for new faces: a phone guide for clean digitals, export sized and named to each agency's own spec, and a tracker for applications, $7 one-off.\n\nIf that would help the people you work with, the pre-launch page has an 'I'd pay' button: aidantorrence.com/offers/digitals-kit?src=email\n\nIf not, one line on why helps just as much.\n\nBest,\nAidan"
+    }
+  },
+  {
+    "slug": "cover-frame",
+    "name": "Cover Frame",
+    "headline": "Drop a vertical video, get the three best cover frames with your title overlaid in your style, sized for TikTok, Reels and Shorts.",
+    "buyer": "short-form creators who post with whatever frame the app picked and lose the profile-grid click",
+    "bullets": [
+      "Scans every frame for sharp faces, open eyes, clean motion and readable space for text, then ranks the top three.",
+      "Overlays your title in your font and colours, with safe zones for each platform's UI, and exports all three sizes.",
+      "Learns which cover you picked last time, so the next batch leans your way."
+    ],
+    "price": "$5/month",
+    "priceUsd": 5,
+    "priceNote": "60 videos a month",
+    "status": "live",
+    "launched": "2026-10-17",
+    "reasonPrompt": "How do you choose covers today, and do you care about your profile grid?",
+    "faq": [
+      {
+        "q": "Isn't the in-app cover picker enough?",
+        "a": "It is one frame slider with no title and no ranking. If you post once a week, keep it. If you post daily and care about the grid, this saves the ten minutes each time."
+      }
+    ],
+    "kit": {
+      "hook": "My profile grid looked like a blooper reel. The app picked every cover. Now a script picks three and I choose.",
+      "script": "Open on a profile grid of mid-blink, mid-motion cover frames. VO: 'The app picked every one of these.' Cut to a file drop, then three sharp frames side by side with the title overlaid in a custom font. VO: 'Sharp face, open eyes, room for the title. Three to pick from, sized for every platform.' End card: 'Cover Frame. $5 a month. Pre-launch, link in bio.'",
+      "caption": "Three ranked cover frames with your title in your font, sized for TikTok, Reels and Shorts. $5/month. Not built yet; say if you'd use it. aidantorrence.com/offers/cover-frame",
+      "community": "Creators who post daily: how do you pick cover frames? I'm deciding whether to build a drop-a-file tool that scores every frame (sharp face, open eyes, space for text), returns the top three with your title overlaid in your font, sized per platform. $5/month. Pre-launch page, no charge, just an 'I'd pay' button: aidantorrence.com/offers/cover-frame",
+      "pitchSubject": "Cover frames picked for you (pre-launch)",
+      "pitch": "Hi {first},\n\nI'm Aidan, a photographer and short-form creator. I saw {specific reference}.\n\nI'm deciding whether to build a small tool that scores every frame of a vertical video and returns the three best covers with your title overlaid in your font, sized per platform, $5 a month.\n\nIf that's useful, the pre-launch page has an 'I'd pay' button: aidantorrence.com/offers/cover-frame?src=email\n\nIf not, one line on why helps just as much.\n\nBest,\nAidan"
     }
   }
 ]

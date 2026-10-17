@@ -5,6 +5,7 @@ Price: $9/month (cancel anytime)
 Buyer: short-form creators who know what to film and freeze on the first sentence
 Status: live since 2026-10-16
 Hosted page: https://aidantorrence.com/offers/hook-bank (live after merge to main + deploy)
+Artifact page: https://claude.ai/artifact/FfB9BHNnGmquSYrgv6mgZA
 
 ## Tracking links (one per channel)
 
