@@ -3,6 +3,10 @@
 Speed-reading app that keeps the highlighted word locked to spoken audio at 1x, 1.5x, 2x, 2.5x, 3x
 (and any quarter-step from 0.5x to 4x).
 
+- **Library home screen** with ten popular nonfiction books, each with an original summary written for
+  the app (How to Win Friends and Influence People, Atomic Habits, Thinking, Fast and Slow, Sapiens,
+  The 7 Habits of Highly Effective People, Deep Work, The Power of Habit, Man's Search for Meaning,
+  Mindset, Outliers). Nothing to import; progress is remembered per title.
 - **Audio** comes from the phone's built-in text-to-speech engine. No accounts, no network.
 - **Sync** uses the engine's word-range callbacks, so highlighting is word-exact on Google's TTS. Engines
   that do not report ranges fall back to a timer calibrated from the voice's measured speaking rate.
@@ -25,7 +29,9 @@ Open the project folder in Android Studio to run on an emulator or device.
 
 ## Layout
 
-- `app/src/main/java/com/aidantorrence/syncreader/Document.kt` – tokenizing, paragraph and utterance chunking
+- `app/src/main/java/com/aidantorrence/syncreader/Library.kt` – the ten built-in titles and their summaries
+- `.../LibraryScreen.kt` – home screen
+- `.../Document.kt` – tokenizing, paragraph and utterance chunking
 - `.../ReaderViewModel.kt` – TextToSpeech playback, sync, calibration, persistence
 - `.../ReaderScreen.kt` – Compose UI (Flow view, Focus view, controls, text editor)
 - `.../MainActivity.kt` – entry point and share/process-text intents

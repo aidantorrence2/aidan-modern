@@ -20,6 +20,7 @@ import kotlinx.coroutines.isActive
 import kotlinx.coroutines.launch
 
 enum class ViewMode { FLOW, FOCUS }
+enum class Screen { LIBRARY, READER }
 
 /** How the highlighted word is being kept in step with the audio. */
 enum class SyncQuality { READY, EXACT, ESTIMATED, SILENT }
@@ -31,6 +32,11 @@ const val MAX_SPEED = 4f
 const val SPEED_STEP = 0.25f
 
 data class ReaderUiState(
+    val screen: Screen = Screen.LIBRARY,
+    val bookId: String = CUSTOM_BOOK_ID,
+    val title: String = "",
+    /** Fraction read of each library title, for the home screen. */
+    val progressByBook: Map<String, Float> = emptyMap(),
     val document: Document = Document.EMPTY,
     val currentWord: Int = 0,
     val playing: Boolean = false,
@@ -45,6 +51,11 @@ data class ReaderUiState(
     val charsPerSecond: Float = DEFAULT_CHARS_PER_SECOND,
 ) {
     private val safeWord: Int get() = currentWord.coerceIn(0, maxOf(0, document.lastWord))
+
+    val isCustom: Boolean get() = bookId == CUSTOM_BOOK_ID
+
+    /** Minutes to read [text] at 1x with the calibrated voice. */
+    fun minutesFor(text: String): Int = maxOf(1, Math.round(text.length / (charsPerSecond * 60f)))
 
     val wordsPerMinute: Int
         get() = (charsPerSecond * speed * 60f / document.averageCharsPerWord).toInt()
@@ -101,10 +112,12 @@ class ReaderViewModel(app: Application) : AndroidViewModel(app) {
     }
 
     private fun loadInitialState(): ReaderUiState {
-        val text = prefs.getString("text", null) ?: SAMPLE_TEXT
         val mode = runCatching { ViewMode.valueOf(prefs.getString("mode", "FLOW")!!) }.getOrDefault(ViewMode.FLOW)
+        val progress = (LIBRARY.map { it.id } + CUSTOM_BOOK_ID)
+            .associateWith { prefs.getFloat("progress:$it", 0f) }
+            .filterValues { it > 0f }
         return ReaderUiState(
-            document = Document(text),
+            progressByBook = progress,
             speed = prefs.getFloat("speed", 1f).coerceIn(MIN_SPEED, MAX_SPEED),
             mode = mode,
             silent = prefs.getBoolean("silent", false),
@@ -128,6 +141,52 @@ class ReaderViewModel(app: Application) : AndroidViewModel(app) {
         _state.update { it.copy(ttsReady = true, error = null) }
     }
 
+    // ---- navigation --------------------------------------------------------------------------
+
+    fun openBook(id: String) {
+        val book = findBook(id) ?: return
+        open(id, book.title, book.summary)
+    }
+
+    fun openCustom() {
+        open(CUSTOM_BOOK_ID, "Your text", prefs.getString("text", null) ?: SAMPLE_TEXT)
+    }
+
+    private fun open(id: String, title: String, text: String) {
+        pause()
+        val doc = Document(text)
+        val saved = prefs.getInt("word:$id", 0)
+        val finished = !doc.isEmpty && saved >= doc.words.size
+        _state.update {
+            it.copy(
+                screen = Screen.READER,
+                bookId = id,
+                title = title,
+                document = doc,
+                currentWord = if (finished) doc.lastWord else saved.coerceIn(0, maxOf(0, doc.lastWord)),
+                finished = finished,
+                sync = SyncQuality.READY,
+                error = null,
+            )
+        }
+    }
+
+    fun closeReader() {
+        pause()
+        _state.update { it.copy(screen = Screen.LIBRARY) }
+    }
+
+    /** Remembers where the reader is in the current title so it resumes and the library shows progress. */
+    private fun saveProgress() {
+        val s = _state.value
+        val doc = s.document
+        if (doc.isEmpty) return
+        val word = if (s.finished) doc.words.size else s.currentWord.coerceIn(0, doc.lastWord)
+        val fraction = word.toFloat() / doc.words.size
+        prefs.edit().putInt("word:${s.bookId}", word).putFloat("progress:${s.bookId}", fraction).apply()
+        _state.update { it.copy(progressByBook = it.progressByBook + (s.bookId to fraction)) }
+    }
+
     // ---- public controls -------------------------------------------------------------------
 
     fun togglePlay() {
@@ -147,11 +206,13 @@ class ReaderViewModel(app: Application) : AndroidViewModel(app) {
         ticker?.cancel()
         playingChunk = -1
         _state.update { it.copy(playing = false) }
+        saveProgress()
     }
 
     fun restart() {
         pause()
         _state.update { it.copy(currentWord = 0, finished = false) }
+        saveProgress()
     }
 
     fun seekToWord(word: Int) {
@@ -191,11 +252,23 @@ class ReaderViewModel(app: Application) : AndroidViewModel(app) {
         if (_state.value.playing) startFrom(_state.value.currentWord)
     }
 
+    /** Replaces the user's own text. Only the custom entry is editable; library titles are fixed. */
     fun setText(text: String) {
         pause()
         val clean = text.trim()
         prefs.edit().putString("text", clean).apply()
-        _state.update { it.copy(document = Document(clean), currentWord = 0, finished = false, sync = SyncQuality.READY) }
+        _state.update {
+            it.copy(
+                screen = Screen.READER,
+                bookId = CUSTOM_BOOK_ID,
+                title = "Your text",
+                document = Document(clean),
+                currentWord = 0,
+                finished = false,
+                sync = SyncQuality.READY,
+            )
+        }
+        saveProgress()
     }
 
     // ---- engine ------------------------------------------------------------------------------
@@ -329,7 +402,7 @@ class ReaderViewModel(app: Application) : AndroidViewModel(app) {
         }
         if (!rangeSeenEver) _state.update { it.copy(sync = SyncQuality.ESTIMATED) }
 
-        if (idx == doc.chunks.size - 1) finish()
+        if (idx == doc.chunks.size - 1) finish() else saveProgress()
     }
 
     private fun onUtteranceError(id: String?, code: Int) {
@@ -343,6 +416,7 @@ class ReaderViewModel(app: Application) : AndroidViewModel(app) {
         ticker?.cancel()
         playingChunk = -1
         _state.update { it.copy(playing = false, finished = true, currentWord = it.document.lastWord) }
+        saveProgress()
     }
 
     /** Estimates the spoken position between (or instead of) engine range callbacks. */
@@ -385,6 +459,7 @@ class ReaderViewModel(app: Application) : AndroidViewModel(app) {
     }
 
     override fun onCleared() {
+        saveProgress()
         ticker?.cancel()
         tts?.stop()
         tts?.shutdown()

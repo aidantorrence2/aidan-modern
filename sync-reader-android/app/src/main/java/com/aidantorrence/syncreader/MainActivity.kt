@@ -18,7 +18,7 @@ class MainActivity : ComponentActivity() {
         if (savedInstanceState == null) handleIntent(intent)
         setContent {
             SyncReaderTheme {
-                ReaderScreen(viewModel)
+                SyncReaderApp(viewModel)
             }
         }
     }

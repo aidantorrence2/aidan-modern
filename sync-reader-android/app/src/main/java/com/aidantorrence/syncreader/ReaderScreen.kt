@@ -26,7 +26,9 @@ import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.activity.compose.BackHandler
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.rounded.ArrowBack
 import androidx.compose.material.icons.automirrored.rounded.VolumeUp
 import androidx.compose.material.icons.rounded.Add
 import androidx.compose.material.icons.rounded.ContentPaste
@@ -78,16 +80,31 @@ import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.window.Dialog
 import androidx.compose.ui.window.DialogProperties
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 
+/** Root: the library is home, the reader opens on top of it. */
 @Composable
-fun ReaderScreen(viewModel: ReaderViewModel) {
+fun SyncReaderApp(viewModel: ReaderViewModel) {
     val state by viewModel.state.collectAsStateWithLifecycle()
+    when (state.screen) {
+        Screen.LIBRARY -> LibraryScreen(
+            state = state,
+            onOpenBook = viewModel::openBook,
+            onOpenCustom = viewModel::openCustom,
+        )
+        Screen.READER -> ReaderScreen(viewModel, state)
+    }
+}
+
+@Composable
+fun ReaderScreen(viewModel: ReaderViewModel, state: ReaderUiState) {
     var editing by remember { mutableStateOf(false) }
+    BackHandler(onBack = viewModel::closeReader)
 
     Column(
         modifier = Modifier
@@ -95,7 +112,7 @@ fun ReaderScreen(viewModel: ReaderViewModel) {
             .background(Background)
             .windowInsetsPadding(WindowInsets.safeDrawing)
     ) {
-        TopBar(state, onMode = viewModel::setMode, onEdit = { editing = true })
+        TopBar(state, onBack = viewModel::closeReader, onMode = viewModel::setMode, onEdit = { editing = true })
         SpeedRow(state, onSpeed = viewModel::setSpeed, onStep = viewModel::stepSpeed)
 
         Box(modifier = Modifier.weight(1f).fillMaxWidth()) {
@@ -128,17 +145,22 @@ fun ReaderScreen(viewModel: ReaderViewModel) {
 // ---- top ---------------------------------------------------------------------------------------
 
 @Composable
-private fun TopBar(state: ReaderUiState, onMode: (ViewMode) -> Unit, onEdit: () -> Unit) {
+private fun TopBar(state: ReaderUiState, onBack: () -> Unit, onMode: (ViewMode) -> Unit, onEdit: () -> Unit) {
     Row(
-        modifier = Modifier.fillMaxWidth().padding(start = 20.dp, end = 8.dp, top = 8.dp),
+        modifier = Modifier.fillMaxWidth().padding(start = 4.dp, end = 8.dp, top = 8.dp),
         verticalAlignment = Alignment.CenterVertically,
     ) {
+        IconButton(onClick = onBack) {
+            Icon(Icons.AutoMirrored.Rounded.ArrowBack, contentDescription = "Back to library", tint = Color.White)
+        }
         Text(
-            "Sync Reader",
-            modifier = Modifier.weight(1f),
+            state.title,
+            modifier = Modifier.weight(1f).padding(end = 8.dp),
             fontFamily = FontFamily.Serif,
-            fontSize = 20.sp,
+            fontSize = 17.sp,
             color = Color.White,
+            maxLines = 1,
+            overflow = TextOverflow.Ellipsis,
         )
         SingleChoiceSegmentedButtonRow {
             ViewMode.entries.forEachIndexed { i, mode ->
@@ -158,8 +180,10 @@ private fun TopBar(state: ReaderUiState, onMode: (ViewMode) -> Unit, onEdit: () 
                 }
             }
         }
-        IconButton(onClick = onEdit) {
-            Icon(Icons.Rounded.Edit, contentDescription = "Edit text", tint = Color.White)
+        if (state.isCustom) {
+            IconButton(onClick = onEdit) {
+                Icon(Icons.Rounded.Edit, contentDescription = "Edit text", tint = Color.White)
+            }
         }
     }
 }
