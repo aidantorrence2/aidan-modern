@@ -692,7 +692,8 @@
       "community": "Portrait and family photographers: what happens when a client asks for a print? I'm deciding whether to build a one-link-per-shoot print order page (your edit locked, lab fulfils and ships in the buyer's region, you set the margin, weekly payout). $6/month plus wholesale lab cost. Pre-launch page, no charge, just an 'I'd pay' button: aidantorrence.com/offers/print-link",
       "pitchSubject": "Prints from a shoot, one link (pre-launch)",
       "pitch": "Hi {first},\n\nI'm Aidan, a photographer. I saw {specific reference}.\n\nI'm deciding whether to build a one-link-per-shoot print order page: your edit locked, a lab prints and ships in the buyer's region, you set the margin, $6 a month plus wholesale lab cost.\n\nIf that's useful, the pre-launch page has an 'I'd pay' button: aidantorrence.com/offers/print-link?src=email\n\nIf not, one line on why helps just as much.\n\nBest,\nAidan"
-    }
+    },
+    "artifactUrl": "https://claude.ai/artifact/7UVLd9vkCSv65U348oSyUE"
   },
   {
     "slug": "tear-sheets",
@@ -723,6 +724,37 @@
       "community": "Editorial photographers and stylists: what do you send when someone asks for tear sheets? I'm deciding whether to build a tool: add a credit (title, issue, a photo of the page), get a clean tear sheet; one PDF and a link that update when you add more. $5/month or $29 one-off. Pre-launch page, no charge, just an 'I'd pay' button: aidantorrence.com/offers/tear-sheets",
       "pitchSubject": "Tear sheets from your published credits (pre-launch)",
       "pitch": "Hi {first},\n\nI'm Aidan, an editorial photographer. I saw {specific reference}.\n\nI'm deciding whether to build a small tool that turns published credits (a title, an issue, a photo of the page) into clean tear sheets and one submissions-ready PDF that stays current, $5 a month.\n\nIf that's useful, the pre-launch page has an 'I'd pay' button: aidantorrence.com/offers/tear-sheets?src=email\n\nIf not, one line on why helps just as much.\n\nBest,\nAidan"
+    }
+  },
+  {
+    "slug": "subtitle-pack",
+    "name": "Subtitle Pack",
+    "headline": "One vertical video in, five language versions out, each with burned-in subtitles that keep your timing, line breaks and slang.",
+    "buyer": "creators whose audience is split across languages and who post the same video once, in English, and hope",
+    "bullets": [
+      "Transcribes with word timing, translates with your glossary (names, brand words, jokes you want kept), and burns in each language's subtitles in your style.",
+      "Pick up to five languages per video; get five MP4s plus SRTs, sized for TikTok, Reels and Shorts.",
+      "A one-line native check per language from a human reviewer, optional, before you post."
+    ],
+    "price": "$7/month",
+    "priceUsd": 7,
+    "priceNote": "20 videos a month, 5 languages each",
+    "status": "live",
+    "launched": "2026-10-17",
+    "reasonPrompt": "Which languages does your audience speak, and have you ever posted a translated version?",
+    "faq": [
+      {
+        "q": "Is the translation machine-made?",
+        "a": "Yes, with your glossary applied, and an optional human native check per language. The page says so plainly."
+      }
+    ],
+    "kit": {
+      "hook": "Half my viewers are in Manila, Bangkok and Jakarta. I post in English and lose them at the first line. So I'm fixing it.",
+      "script": "Open on analytics: top cities Manila, Bangkok, Jakarta, Seoul. VO: 'Four countries. One language.' Cut to a file drop; five thumbnails appear, each with subtitles in a different script, same timing. VO: 'One video in. Five subtitled versions out. Your names and jokes kept.' End card: 'Subtitle Pack. $7 a month. Pre-launch, link in bio.'",
+      "caption": "One video, five subtitled language versions, your glossary kept. $7/month. Not built yet; say if you'd use it. aidantorrence.com/offers/subtitle-pack",
+      "community": "Creators with a multilingual audience: do you ever post translated versions? I'm deciding whether to build a drop-a-file tool: word-timed transcript, translation with your own glossary, burned-in subtitles per language, five MP4s and SRTs back, optional native check. $7/month. Pre-launch page, no charge, just an 'I'd pay' button: aidantorrence.com/offers/subtitle-pack",
+      "pitchSubject": "Five subtitled versions of one video (pre-launch)",
+      "pitch": "Hi {first},\n\nI'm Aidan, a photographer and short-form creator traveling through Asia. I saw {specific reference}.\n\nI'm deciding whether to build a tool that turns one vertical video into five subtitled language versions, with your glossary kept and an optional native check, $7 a month.\n\nIf that's useful, the pre-launch page has an 'I'd pay' button: aidantorrence.com/offers/subtitle-pack?src=email\n\nIf not, one line on why helps just as much.\n\nBest,\nAidan"
     }
   }
 ]
