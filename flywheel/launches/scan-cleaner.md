@@ -5,6 +5,7 @@ Price: $9/month (20 rolls a month, runs on your own computer)
 Buyer: film photographers who get lab scans back and spend an evening fixing the same five things on every frame
 Status: live since 2026-10-17
 Hosted page: https://aidantorrence.com/offers/scan-cleaner (live after merge to main + deploy)
+Artifact page: https://claude.ai/artifact/6jSZKESxyZ2nsErnwVHYXZ
 
 ## Tracking links (one per channel)
 

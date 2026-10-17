@@ -532,7 +532,8 @@
       "community": "Film shooters: what do you fix on every lab scan? I run a script on mine (auto-orient, trim the border, dust and scratch removal that leaves grain alone, per-roll cast neutralising) and I'm deciding whether to package it at $9/month, local, 20 rolls. Pre-launch page, no charge, just an 'I'd pay' button: aidantorrence.com/offers/scan-cleaner",
       "pitchSubject": "Film scan cleanup in batch (pre-launch)",
       "pitch": "Hi {first},\n\nI'm Aidan, a photographer shooting 35mm. I saw {specific reference}.\n\nI'm deciding whether to package the script I run on my lab scans (straighten, trim borders, dust and scratch removal that leaves grain alone, per-roll colour cast fix) as a $9 a month tool that runs on your own computer.\n\nIf that's useful, the pre-launch page has an 'I'd pay' button: aidantorrence.com/offers/scan-cleaner?src=email\n\nIf not, one line on why helps just as much.\n\nBest,\nAidan"
-    }
+    },
+    "artifactUrl": "https://claude.ai/artifact/6jSZKESxyZ2nsErnwVHYXZ"
   },
   {
     "slug": "license-quote",
@@ -563,6 +564,37 @@
       "community": "Photographers: how do you price usage rights when a brand asks? I'm deciding whether to build a small quote tool: media, territory, term, exclusivity in; a quote PDF with the multipliers shown and a plain-English licence out. $5/month. Pre-launch page, no charge, just an 'I'd pay' button: aidantorrence.com/offers/license-quote",
       "pitchSubject": "Usage-rights quotes in two minutes (pre-launch)",
       "pitch": "Hi {first},\n\nI'm Aidan, a photographer. I saw {specific reference}.\n\nI'm deciding whether to build a small tool that turns six questions about how a brand will use your photos into a quote PDF with the maths shown and a one-page licence, $5 a month.\n\nIf that's useful, the pre-launch page has an 'I'd pay' button: aidantorrence.com/offers/license-quote?src=email\n\nIf not, one line on why helps just as much.\n\nBest,\nAidan"
+    }
+  },
+  {
+    "slug": "digitals-kit",
+    "name": "Digitals Kit",
+    "headline": "Turn one set of phone photos into agency-ready digitals, cropped and sized to each agency's own submission spec, with a tracker for who you sent them to.",
+    "buyer": "aspiring models applying to agencies who keep getting 'please resend in the right format'",
+    "bullets": [
+      "Shoot eight plain photos on your phone following the on-screen guide; it checks light, background and framing before you submit.",
+      "Pick the agencies; it exports each set in that agency's size, naming and order, with your stats page included.",
+      "A tracker shows who you applied to, when, and what they answered, with a nudge date for silent ones."
+    ],
+    "price": "$7 one-off",
+    "priceUsd": 7,
+    "priceNote": "unlimited agencies for 90 days",
+    "status": "live",
+    "launched": "2026-10-17",
+    "reasonPrompt": "Which agencies are you applying to, and what got your last application bounced?",
+    "faq": [
+      {
+        "q": "Do you send my photos to agencies?",
+        "a": "No. You download the sets and apply through each agency's own page. The kit only formats and tracks."
+      }
+    ],
+    "kit": {
+      "hook": "Agencies reject digitals for the wrong size before they look at your face. Here's the fix.",
+      "script": "Open on an email: 'Please resend your digitals in the required format.' VO: 'Rejected before anyone looked.' Cut to a phone guide: eight frames with a framing overlay, a green check. Then one tap exports three folders, each labelled with an agency name. VO: 'Shoot once. Export to every agency's spec. Track who answered.' End card: 'Digitals Kit. $7 once. Pre-launch, link in bio.'",
+      "caption": "Shoot digitals once on your phone, export them to each agency's own spec, track the replies. $7 one-off. Not built yet; say if you'd use it. aidantorrence.com/offers/digitals-kit",
+      "community": "New faces and aspiring models: I photograph a lot of model tests and keep hearing that agency applications get bounced for format, not looks. I'm deciding whether to build a $7 kit: a phone guide for eight clean digitals, export sized and named to each agency's spec, and a tracker for applications and replies. Pre-launch page, no charge, just an 'I'd pay' button: aidantorrence.com/offers/digitals-kit",
+      "pitchSubject": "Digitals formatted to each agency's spec (pre-launch)",
+      "pitch": "Hi {first},\n\nI'm Aidan, a photographer who shoots model tests across Asia. I saw {specific reference}.\n\nI'm deciding whether to build a small kit for new faces: a phone guide for clean digitals, export sized and named to each agency's own spec, and a tracker for applications, $7 one-off.\n\nIf that would help the people you work with, the pre-launch page has an 'I'd pay' button: aidantorrence.com/offers/digitals-kit?src=email\n\nIf not, one line on why helps just as much.\n\nBest,\nAidan"
     }
   }
 ]
