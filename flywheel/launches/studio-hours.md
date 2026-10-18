@@ -5,6 +5,7 @@ Price: $6/month (no commission on bookings)
 Buyer: photographers who lease a studio that sits empty most weekdays and field 'is your space available?' DMs they never quite answer
 Status: live since 2026-10-18
 Hosted page: https://aidantorrence.com/offers/studio-hours (live after merge to main + deploy)
+Artifact page: https://claude.ai/artifact/LmMcvJUGA7SkiwcBK1VYqJ
 
 ## Tracking links (one per channel)
 

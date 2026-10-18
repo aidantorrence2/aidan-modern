@@ -1634,7 +1634,8 @@
       "community": "Photographers who lease a studio: do you rent out the hours you're not using? I keep meaning to and never answer the DMs. I'm deciding whether to build a small tool: a booking page that shows only your free hours from your calendar, takes a deposit, gets the renter to agree to your rules and insurance line, sends the door code an hour before, and keeps a ledger of hours and income. $6/month, no commission. Pre-launch page, no charge, just an 'I'd pay' button: aidantorrence.com/offers/studio-hours",
       "pitchSubject": "Your studio's empty hours, rented from one page (pre-launch)",
       "pitch": "Hi {first},\n\nI'm Aidan, a photographer. I saw {specific reference}.\n\nI'm deciding whether to build a small tool for renting out studio hours: a booking page showing only the hours you are free, a deposit and your rules agreed before booking, the door code sent an hour before, and a ledger of hours and income, $6 a month with no commission.\n\nIf your space sits empty on weekdays, the pre-launch page has an 'I'd pay' button: aidantorrence.com/offers/studio-hours?src=email\n\nIf not, one line on why is just as useful.\n\nBest,\nAidan"
-    }
+    },
+    "artifactUrl": "https://claude.ai/artifact/LmMcvJUGA7SkiwcBK1VYqJ"
   },
   {
     "slug": "shot-list-live",
