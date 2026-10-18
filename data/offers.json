@@ -1957,5 +1957,40 @@
       "pitchSubject": "Workshop seats sold from one page (pre-launch)",
       "pitch": "Hi {first},\n\nI'm Aidan, a photographer. I saw {specific reference}.\n\nI'm deciding whether to build a small tool for workshops and styled shoots: one page with seats left, deposit to hold, a waitlist that fills dropouts, a prep page per attendee with releases to sign, and one roster, $6 a month or $15 per event with no commission.\n\nIf your last event was run from DMs, the pre-launch page has an 'I'd pay' button: aidantorrence2.github.io/aidan-modern/workshop-seats?src=email\n\nIf not, one line on why is just as useful.\n\nBest,\nAidan"
     }
+  },
+  {
+    "slug": "travel-fee",
+    "name": "Travel Fee",
+    "headline": "Paste the venue address and get the travel line for your quote in seconds: miles, drive time, your per-mile rate, and the hotel night when the day runs past your limit.",
+    "buyer": "wedding, event and portrait photographers who guess travel fees in the inquiry reply and eat the difference on the day",
+    "bullets": [
+      "Set your base, your free radius, your per-mile or per-hour rate, and the drive time after which a hotel night applies. Set it once.",
+      "Paste any venue address or pin; get the round-trip miles, the drive time with wedding-day traffic, the fee and the hotel line, worded for a quote.",
+      "Multi-stop days (getting ready, ceremony, reception) are added as a route; the fee covers the whole day, not just the venue."
+    ],
+    "price": "$3/month",
+    "priceUsd": 3,
+    "priceNote": "unlimited quotes",
+    "status": "live",
+    "launched": "2026-10-18",
+    "reasonPrompt": "How do you work out travel fees today, and when did one last cost you money?",
+    "faq": [
+      {
+        "q": "Does it book hotels or track mileage?",
+        "a": "No. It prices the travel for the quote. For logging actual miles after the fact, see the Shoot Miles idea."
+      },
+      {
+        "q": "What about flights?",
+        "a": "Flights are quoted as a flat line you type in; the tool handles the driving maths and the hotel threshold."
+      }
+    ],
+    "kit": {
+      "hook": "Quoted $75 travel from memory. Drove 140 miles each way, hit a closure, paid for a hotel. The $75 covered the parking.",
+      "script": "Open on an inquiry reply being typed: 'travel is around $75'. VO: 'Around. From memory.' Cut to the day: a motorway closure, a late hotel booking. Cut to a phone: a venue address pasted, round-trip miles, drive time, fee and a hotel line appear, worded for the quote. VO: 'Your rates, their address, the real number.' End card: 'Travel Fee. $3 a month. Pre-launch, link in bio.'",
+      "caption": "Paste the venue address, get the travel line for your quote: miles, drive time, your rate, hotel night if needed. $3/month. Not built yet; tell me if you'd use it. aidantorrence2.github.io/aidan-modern/travel-fee",
+      "community": "Photographers: how do you set travel fees in quotes? I have been guessing and getting it wrong in both directions. I'm deciding whether to build a small tool: set your base, free radius, per-mile rate and hotel threshold once; paste a venue address and get round-trip miles, drive time, the fee and the hotel line worded for the quote, with multi-stop days as a route. $3/month. Pre-launch page, no charge, just an 'I'd pay' button: aidantorrence2.github.io/aidan-modern/travel-fee",
+      "pitchSubject": "The travel line for your quote, in seconds (pre-launch)",
+      "pitch": "Hi {first},\n\nI'm Aidan, a photographer. I saw {specific reference}.\n\nI'm deciding whether to build a small tool for travel fees: set your base, free radius, rate and hotel threshold once, paste a venue address and get the miles, drive time, fee and hotel line worded for the quote, $3 a month.\n\nIf travel has ever cost you more than you quoted, the pre-launch page has an 'I'd pay' button: aidantorrence2.github.io/aidan-modern/travel-fee?src=email\n\nIf not, one line on why is just as useful.\n\nBest,\nAidan"
+    }
   }
 ]
