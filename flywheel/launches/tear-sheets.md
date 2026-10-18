@@ -5,6 +5,7 @@ Price: $5/month (or $29 one-off for a fixed PDF)
 Buyer: editorial photographers and stylists whose published work lives as screenshots in a camera roll
 Status: live since 2026-10-17
 Hosted page: https://aidantorrence.com/offers/tear-sheets (live after merge to main + deploy)
+Artifact page: https://claude.ai/artifact/RotDpjJz8Ets1hn4axWhJL
 
 ## Tracking links (one per channel)
 

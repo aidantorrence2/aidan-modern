@@ -730,7 +730,8 @@
       "community": "Editorial photographers and stylists: what do you send when someone asks for tear sheets? I'm deciding whether to build a tool: add a credit (title, issue, a photo of the page), get a clean tear sheet; one PDF and a link that update when you add more. $5/month or $29 one-off. Pre-launch page, no charge, just an 'I'd pay' button: aidantorrence.com/offers/tear-sheets",
       "pitchSubject": "Tear sheets from your published credits (pre-launch)",
       "pitch": "Hi {first},\n\nI'm Aidan, an editorial photographer. I saw {specific reference}.\n\nI'm deciding whether to build a small tool that turns published credits (a title, an issue, a photo of the page) into clean tear sheets and one submissions-ready PDF that stays current, $5 a month.\n\nIf that's useful, the pre-launch page has an 'I'd pay' button: aidantorrence.com/offers/tear-sheets?src=email\n\nIf not, one line on why helps just as much.\n\nBest,\nAidan"
-    }
+    },
+    "artifactUrl": "https://claude.ai/artifact/RotDpjJz8Ets1hn4axWhJL"
   },
   {
     "slug": "subtitle-pack",
@@ -1418,6 +1419,41 @@
       "community": "Portrait and wedding photographers: how do you track referral thank-yous? Mine is a notes app and guilt. I'm deciding whether to build a small tool: each client gets a card and link with your reward on it, a friend who books through it is tied to them automatically, and one page shows the referral tree with credits owed and used. $5/month. Pre-launch page, no charge, just an 'I'd pay' button: aidantorrence.com/offers/referral-card",
       "pitchSubject": "Referral credits you never forget (pre-launch)",
       "pitch": "Hi {first},\n\nI'm Aidan, a photographer. I saw {specific reference}.\n\nI'm deciding whether to build a small tool for referrals: each client gets a personal link with the reward you set, a friend who books through it is tied to them automatically, and one page shows who sent whom and what credit is owed, $5 a month.\n\nIf word of mouth is most of your bookings, the pre-launch page has an 'I'd pay' button: aidantorrence.com/offers/referral-card?src=email\n\nIf not, one line on why is just as useful.\n\nBest,\nAidan"
+    }
+  },
+  {
+    "slug": "renewal-watch",
+    "name": "Renewal Watch",
+    "headline": "Every image license you've sold, with its end date, on one page: you get a heads-up 60 days out, the client gets a renewal note in your voice, and lapsed usage stops being free.",
+    "buyer": "commercial, editorial and brand photographers who license images for a term and know some clients keep using them after it ends",
+    "bullets": [
+      "Log each license once: client, images, usage, territory, term, fee. Or paste your usage agreement and the fields are filled for you to check.",
+      "Sixty days before a term ends you get a reminder with a renewal quote based on the original fee; one tap sends the client a plain note offering to extend.",
+      "A board shows live, ending soon and lapsed licenses, so a 'they're still running that campaign' moment becomes a renewal invoice instead of a shrug."
+    ],
+    "price": "$5/month",
+    "priceUsd": 5,
+    "priceNote": "unlimited licenses",
+    "status": "live",
+    "launched": "2026-10-18",
+    "reasonPrompt": "When did a client last keep using your images past the license term, and did you invoice for it?",
+    "faq": [
+      {
+        "q": "Does it detect where my images are used?",
+        "a": "No. It tracks the terms you agreed and the dates they end. Spotting out-of-term use is still on you; this makes sure you know the date and have the quote ready."
+      },
+      {
+        "q": "Does it send emails for me?",
+        "a": "Only the renewal note, only when you tap send, in wording you set once."
+      }
+    ],
+    "kit": {
+      "hook": "Sold a one-year license in 2024. The billboard is still up. I found out from a friend's photo of it.",
+      "script": "Open on a phone photo of a billboard, a text underneath: 'isn't this yours?' VO: 'One-year license. Year two, still up, nobody paid.' Cut to a board: licenses in three columns, live, ending soon, lapsed, one card flagged. Tap: a renewal quote based on the original fee, a short note to the client, send. VO: 'Every license with its end date. A reminder 60 days out. A renewal note in your voice.' End card: 'Renewal Watch. $5 a month. Pre-launch, link in bio.'",
+      "caption": "Every image license with its end date, a 60-day heads-up and a renewal note ready to send. $5/month. Not built yet; tell me if you'd use it. aidantorrence.com/offers/renewal-watch",
+      "community": "Commercial and editorial photographers: how do you track when your image licenses end? Mine was a spreadsheet I stopped updating, and I've definitely missed renewals. I'm deciding whether to build a small tool: log each license or paste the agreement, get a reminder 60 days before the term ends with a renewal quote from the original fee, and send the client a short note in your own wording. One board shows live, ending soon and lapsed. $5/month. Pre-launch page, no charge, just an 'I'd pay' button: aidantorrence.com/offers/renewal-watch",
+      "pitchSubject": "Image licenses that remind you to renew them (pre-launch)",
+      "pitch": "Hi {first},\n\nI'm Aidan, a photographer. I saw {specific reference}.\n\nI'm deciding whether to build a small tool for image licenses: log each one or paste the agreement, get a reminder 60 days before the term ends with a renewal quote from the original fee, and send the client a short note in your own wording, $5 a month.\n\nIf you've ever found your work still running after the term, the pre-launch page has an 'I'd pay' button: aidantorrence.com/offers/renewal-watch?src=email\n\nIf not, one line on why is just as useful.\n\nBest,\nAidan"
     }
   }
 ]
