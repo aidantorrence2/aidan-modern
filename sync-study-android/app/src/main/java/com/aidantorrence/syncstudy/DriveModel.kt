@@ -300,7 +300,8 @@ fun yesNo(text: String): Boolean? {
 
 enum class Verdict { RIGHT, WRONG, UNCLEAR }
 
-private fun tokenMatch(heard: String, key: String) = wordsMatch(heard, key) || (key.length >= 4 && heard.startsWith(key))
+private fun tokenMatch(heard: String, key: String) =
+    if (key.any(Char::isDigit)) heard == key else wordsMatch(heard, key) || (key.length >= 4 && heard.startsWith(key))
 
 /** True when every word of [phrase] was heard (stems like "appreciat" match "appreciation"). */
 fun phraseHeard(said: String, phrase: String): Boolean {
@@ -313,7 +314,10 @@ private fun optionCoverage(said: String, option: String): Float {
     val keys = contentWords(option)
     if (keys.isEmpty()) return 0f
     val heard = normalizeSpeech(said)
-    return keys.count { k -> heard.any { tokenMatch(it, k) } }.toFloat() / keys.size
+    val hit = keys.map { k -> heard.any { tokenMatch(it, k) } }
+    // A number in the answer has to be the right number: "365 times better" is not "37 times better".
+    if (keys.indices.any { keys[it].any(Char::isDigit) && !hit[it] }) return 0f
+    return hit.count { it }.toFloat() / keys.size
 }
 
 /**

@@ -4,7 +4,9 @@ import android.app.Application
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.ui.test.junit4.createComposeRule
+import androidx.compose.ui.test.hasSetTextAction
 import androidx.compose.ui.test.onNodeWithText
+import androidx.compose.ui.test.performTextInput
 import androidx.compose.ui.test.onRoot
 import androidx.compose.ui.test.performClick
 import androidx.test.core.app.ApplicationProvider
@@ -55,20 +57,22 @@ class StudyScreensTest {
 
     @Test fun pretest() {
         study.go(Route.Pretest("atomic-habits", 0)); show { SyncStudyApp(reader, study) }
-        rule.onNodeWithText("About 37× better").performClick(); shot("04-pretest")
+        rule.onNode(hasSetTextAction()).performTextInput("maybe twice as good?"); shot("04-pretest")
     }
 
     @Test fun checkpoint() {
         study.go(Route.Read("atomic-habits")); show { SyncStudyApp(reader, study) }
         rule.waitForIdle(); reader.checkpointForTest(0); shot("05-checkpoint")
-        rule.onNodeWithText("About 37× better").performClick(); shot("06-checkpoint-confidence")
+        rule.onNode(hasSetTextAction()).performTextInput("About 37 times better")
+        rule.onNodeWithText("Check").performClick(); shot("06-checkpoint-confidence")
         rule.onNodeWithText("Fairly sure").performClick(); shot("07-checkpoint-revealed")
     }
 
     @Test fun checkpointWrongButSure() {
         study.go(Route.Read("atomic-habits")); show { SyncStudyApp(reader, study) }
         rule.waitForIdle(); reader.checkpointForTest(2)
-        rule.onNodeWithText("Craving").performClick(); rule.onNodeWithText("Certain").performClick(); shot("08-checkpoint-hypercorrection")
+        rule.onNode(hasSetTextAction()).performTextInput("Craving")
+        rule.onNodeWithText("Check").performClick(); rule.onNodeWithText("Certain").performClick(); shot("08-checkpoint-hypercorrection")
     }
 
     @Test fun recall() {

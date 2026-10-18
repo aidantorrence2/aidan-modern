@@ -7,10 +7,11 @@ for every paragraph. Installs next to Sync Reader (`com.aidantorrence.syncstudy`
 ## How a book is studied
 
 1. **Guess first (pretest).** Three questions before you read. No score. Trying to answer primes memory for the
-   real answer, even when the guess is wrong.
+   real answer, even when the guess is wrong. You type a guess (or tap "No idea"); there are no options to pick from.
 2. **Listen and check.** The narrated summary plays with an animated explainer above the speed-reading word.
    At the end of every paragraph the narration pauses for a checkpoint question, answered from memory, with a
-   confidence rating before the reveal. Wrong answers can replay that paragraph. The paragraph's finished scene
+   confidence rating before the reveal. No answer options are shown anywhere: you type the answer, it's scored by
+   key words, and when it can't tell, you compare with the real answer and say whether you had it. Wrong answers can replay that paragraph. The paragraph's finished scene
    stays on screen while you answer.
 3. **Brain dump.** Write (or dictate) everything you remember, then tick off the key ideas you got.
 4. **Spaced review.** Every card is scheduled with an SM-2 style algorithm, mixed with other books, and missed

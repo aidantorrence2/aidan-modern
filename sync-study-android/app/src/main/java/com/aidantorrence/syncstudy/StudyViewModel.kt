@@ -63,13 +63,13 @@ class StudyViewModel(app: Application) : AndroidViewModel(app) {
 
     fun startBook(bookId: String) {
         val study = studyFor(bookId)
-        val unanswered = study?.pretest?.indexOfFirst { StudyStore.pretestChoice(it.id) == null } ?: -1
+        val unanswered = study?.pretest?.indexOfFirst { StudyStore.pretestGuess(it.id) == null } ?: -1
         _route.value = if (StudyStore.stage(bookId) == Stage.NEW && unanswered >= 0) Route.Pretest(bookId, unanswered) else Route.Read(bookId)
     }
 
-    fun answerPretest(bookId: String, index: Int, choice: Int) {
+    fun answerPretest(bookId: String, index: Int, guess: String) {
         val pre = studyFor(bookId)?.pretest ?: return
-        pre.getOrNull(index)?.let { StudyStore.setPretest(it.id, choice) }
+        pre.getOrNull(index)?.let { StudyStore.setPretest(it.id, guess.trim()) }
         if (index + 1 < pre.size) {
             _route.value = Route.Pretest(bookId, index + 1)
         } else {

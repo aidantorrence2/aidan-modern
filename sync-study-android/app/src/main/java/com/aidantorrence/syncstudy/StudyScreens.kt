@@ -323,14 +323,14 @@ private fun PretestScreen(bookId: String, index: Int, study: StudyViewModel) {
             }
             Text("You haven't read this yet. Guess anyway: trying to answer first makes the real answer stick when you hear it.",
                 color = TextMuted, fontSize = 13.sp, lineHeight = 18.sp)
-            var chosen by remember(card.id) { mutableStateOf<Int?>(null) }
-            val order = remember(card.id) { card.options.indices.shuffled(java.util.Random(card.id.hashCode().toLong())) }
-            Text(card.question, color = Color.White, fontSize = 19.sp, lineHeight = 26.sp, fontWeight = FontWeight.SemiBold, fontFamily = FontFamily.Serif)
-            order.forEachIndexed { pos, i ->
-                OptionRow('A' + pos, card.options[i], if (chosen == i) OptionLook.PICKED else OptionLook.IDLE) { chosen = i }
+            var guess by remember(card.id) { mutableStateOf("") }
+            val last = index + 1 >= pre.size
+            Text(spoken(card).prompt, color = Color.White, fontSize = 19.sp, lineHeight = 26.sp, fontWeight = FontWeight.SemiBold, fontFamily = FontFamily.Serif)
+            AnswerField(guess, { guess = it }, enabled = true, onDone = { if (guess.isNotBlank()) study.answerPretest(bookId, index, guess) }, placeholder = "Your best guess")
+            Row(horizontalArrangement = Arrangement.spacedBy(10.dp)) {
+                SecondaryButton("No idea", { study.answerPretest(bookId, index, "") }, Modifier.weight(1f))
+                PrimaryButton(if (last) "Lock in, start" else "Lock in guess", { study.answerPretest(bookId, index, guess) }, Modifier.weight(1f), enabled = guess.isNotBlank())
             }
-            PrimaryButton(if (index + 1 < pre.size) "Lock in guess" else "Lock in and start listening",
-                { chosen?.let { study.answerPretest(bookId, index, it) } }, Modifier.fillMaxWidth(), enabled = chosen != null)
         }
     }
 }
@@ -453,12 +453,13 @@ private fun SummaryScreen(bookId: String, study: StudyViewModel) {
             if (s.pretest.isNotEmpty()) {
                 SectionLabel("Your first guesses, now with answers")
                 s.pretest.forEach { c ->
-                    val g = StudyStore.pretestChoice(c.id)
-                    val right = g == c.answer
+                    val g = StudyStore.pretestGuess(c.id)
+                    val q = spoken(c)
+                    val right = !g.isNullOrBlank() && judgeOpen(g, c) == Verdict.RIGHT
                     Column(Modifier.fillMaxWidth().clip(RoundedCornerShape(14.dp)).background(Card2).padding(12.dp), verticalArrangement = Arrangement.spacedBy(4.dp)) {
-                        Text(c.question, color = Color.White, fontSize = 14.sp, lineHeight = 19.sp)
-                        if (g != null) Text("You guessed: ${c.options[g]}", color = if (right) Pal.Leaf else Pal.Coral, fontSize = 13.sp)
-                        if (!right) Text("Answer: ${c.options[c.answer]}", color = Pal.Leaf, fontSize = 13.sp)
+                        Text(q.prompt, color = Color.White, fontSize = 14.sp, lineHeight = 19.sp)
+                        if (g != null) Text(if (g.isBlank()) "You had no idea yet" else "You guessed: $g", color = if (right) Pal.Leaf else Pal.Coral, fontSize = 13.sp)
+                        if (!right) Text("Answer: ${q.answer}", color = Pal.Leaf, fontSize = 13.sp)
                     }
                 }
             }
@@ -494,7 +495,7 @@ private fun ReviewScreen(study: StudyViewModel) {
                 Column(Modifier.fillMaxSize().verticalScroll(rememberScrollState()), verticalArrangement = Arrangement.spacedBy(12.dp)) {
                     val book = findBook(card.bookId)
                     Row(verticalAlignment = Alignment.CenterVertically) {
-                        Pill(when (card) { is Mcq -> "Choose"; is Recall -> "Explain"; is Cloze -> "Fill the gap" }, Color(book?.color ?: 0xFF4FD1A5).lighten(0.3f))
+                        Pill(when (card) { is Mcq -> "Recall"; is Recall -> "Explain"; is Cloze -> "Fill the gap" }, Color(book?.color ?: 0xFF4FD1A5).lighten(0.3f))
                         Spacer(Modifier.width(8.dp))
                         Text(book?.title ?: "", color = TextMuted, fontSize = 12.sp, maxLines = 1, overflow = TextOverflow.Ellipsis)
                     }

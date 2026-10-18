@@ -75,6 +75,7 @@ class DriveTest {
         assertEquals(Verdict.WRONG, judgeOpen("habits", mcq(8)))
         assertEquals(Verdict.UNCLEAR, judgeOpen("banana", mcq(8)))
         assertEquals(Verdict.RIGHT, judgeOpen("about thirty seven times better", mcq(0)))
+        assertEquals(Verdict.WRONG, judgeOpen("about 365 times better", mcq(0)))
         val ii = atomic.cards.first { it.id == "atomic-habits:3:0" } as Mcq
         assertEquals(Verdict.RIGHT, judgeOpen("it's a plan for exactly when and where you'll do it", ii))
         assertEquals(Verdict.UNCLEAR, judgeOpen("trying harder", ii))
