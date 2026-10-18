@@ -1274,6 +1274,42 @@
       "community": "Photographers who shoot tethered with clients on set or remote: how do they see frames right now? Mine is a crowd behind the monitor and a laptop on a video call. I'm deciding whether to build a small watcher that pushes a proxy of each capture to one private link, where the client hearts picks and leaves short notes, with the picks coming back as one list. $6/month. Pre-launch page, no charge, just an 'I'd pay' button: aidantorrence.com/offers/tether-share",
       "pitchSubject": "Live tethered frames on the client's phone (pre-launch)",
       "pitch": "Hi {first},\n\nI'm Aidan, a photographer. I saw {specific reference}.\n\nI'm deciding whether to build a small tool for tethered shoots: a watcher on the shooting laptop pushes a proxy of each capture to one private link, the client or art director hearts picks on their phone, and the picks come back as one list, $6 a month.\n\nIf that would help on your sets, the pre-launch page has an 'I'd pay' button: aidantorrence.com/offers/tether-share?src=email\n\nIf not, one line on why is just as useful.\n\nBest,\nAidan"
+    },
+    "artifactUrl": "https://claude.ai/artifact/Y63SpVqDyRc5kv6eLAVeiX"
+  },
+  {
+    "slug": "headshot-roster",
+    "name": "Headshot Roster",
+    "headline": "Company headshot days without the spreadsheet: staff pick a slot, get reminders and a pick page, and HR sees one roster from booked to delivered.",
+    "buyer": "corporate and headshot photographers who shoot 20 to 200 staff in a day and coordinate it through an HR contact",
+    "bullets": [
+      "Send HR one link; staff pick a slot, add their name, team and pronunciation, and get a calendar invite plus a reminder the morning of.",
+      "On the day, a check-in list keeps the line moving; afterwards each person gets a private page to pick their frame, and the choices roll up to you.",
+      "HR sees one roster: booked, no-show, picked, retouched, delivered. No 'who still hasn't chosen?' emails from either side."
+    ],
+    "price": "$8/month",
+    "priceUsd": 8,
+    "priceNote": "or $15 per headshot day",
+    "status": "live",
+    "launched": "2026-10-18",
+    "reasonPrompt": "How did you schedule and deliver your last company headshot day, and what took the most back-and-forth?",
+    "faq": [
+      {
+        "q": "Does it do retouching or galleries?",
+        "a": "No. It runs the schedule, the picks and the roster. Deliver the finished files from wherever you do now; mark them delivered here so HR can see it."
+      },
+      {
+        "q": "Does staff need an account?",
+        "a": "No. Slots and pick pages are private links; the only login is yours."
+      }
+    ],
+    "kit": {
+      "hook": "Eighty staff, one headshot day, a spreadsheet HR built in a hurry, and three weeks of 'which photo did Priya pick?'",
+      "script": "Open on a spreadsheet with eighty names, half the cells yellow. VO: 'Company headshot day. Eighty people. One spreadsheet.' Cut to a phone: a staff member picks a 10:20 slot, gets a calendar invite. Cut to the day: a check-in list ticking down. Cut to a pick page, a thumb tapping one frame. Cut to HR's roster: booked, picked, delivered, all green. VO: 'Slots, reminders, picks, roster. Nobody chases anybody.' End card: 'Headshot Roster. $8 a month. Pre-launch, link in bio.'",
+      "caption": "Company headshot days without the spreadsheet: staff pick slots, pick frames, HR sees one roster. $8/month. Not built yet; tell me if you'd use it. aidantorrence.com/offers/headshot-roster",
+      "community": "Photographers who shoot company headshot days: how do you schedule the staff and collect their picks? Mine has been HR's spreadsheet, a sign-up sheet by the door and weeks of pick emails. I'm deciding whether to build one link for HR: staff pick slots and get reminders, a check-in list on the day, a private pick page per person, and a roster from booked to delivered. $8/month or $15 per day. Pre-launch page, no charge, just an 'I'd pay' button: aidantorrence.com/offers/headshot-roster",
+      "pitchSubject": "Headshot days without the spreadsheet (pre-launch)",
+      "pitch": "Hi {first},\n\nI'm Aidan, a photographer. I saw {specific reference}.\n\nI'm deciding whether to build a small tool for company headshot days: one link for HR, staff pick slots and get reminders, a check-in list on the day, a private pick page per person, and a roster from booked to delivered, $8 a month or $15 per day.\n\nIf that would cut the back-and-forth on your next one, the pre-launch page has an 'I'd pay' button: aidantorrence.com/offers/headshot-roster?src=email\n\nIf not, one line on why is just as useful.\n\nBest,\nAidan"
     }
   }
 ]

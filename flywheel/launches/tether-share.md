@@ -5,6 +5,7 @@ Price: $6/month (unlimited jobs, proxies kept 30 days)
 Buyer: commercial, e-commerce and editorial photographers shooting tethered for a client, art director or brand team on set or remote
 Status: live since 2026-10-17
 Hosted page: https://aidantorrence.com/offers/tether-share (live after merge to main + deploy)
+Artifact page: https://claude.ai/artifact/Y63SpVqDyRc5kv6eLAVeiX
 
 ## Tracking links (one per channel)
 
