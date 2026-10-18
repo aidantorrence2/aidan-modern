@@ -11,7 +11,7 @@ final class CardPanelController {
     private var panel: NSPanel?
     private var hosting: NSHostingView<AnyView>?
     private var cancellables: Set<AnyCancellable> = []
-    private let width: CGFloat = 384
+    private let width: CGFloat = 440
     private let margin: CGFloat = 12
 
     func start(store: ApprovalsStore) {
@@ -110,7 +110,7 @@ struct CardStackView: View {
             }
         }
         .padding(10)            // room for shadows inside the borderless panel
-        .frame(width: 384, alignment: .topTrailing)
+        .frame(width: 440, alignment: .topTrailing)
         .fixedSize(horizontal: false, vertical: true)
         .animation(.spring(response: 0.35, dampingFraction: 0.85), value: cards.map(\.id))
         .animation(.easeInOut(duration: 0.2), value: store.toast)
@@ -162,58 +162,64 @@ struct ApprovalCard: View {
     @State private var hovering = false
 
     var body: some View {
+        let pres = Presentation(item)
         let accent = KindStyle.color(item.kind)
         VStack(alignment: .leading, spacing: 10) {
-            HStack(spacing: 6) {
-                Label(item.kind.uppercased(), systemImage: KindStyle.icon(item.kind))
-                    .font(.system(size: 10, weight: .bold))
-                    .foregroundStyle(accent)
-                Text(item.source)
-                    .font(.system(size: 10, design: .monospaced))
-                    .foregroundStyle(.white.opacity(0.55))
+            // What happens if you approve, in plain words
+            HStack(spacing: 7) {
+                Image(systemName: pres.icon).font(.system(size: 13, weight: .semibold)).foregroundStyle(accent)
+                Text(pres.headline)
+                    .font(.system(size: 14, weight: .bold))
+                    .foregroundStyle(.white)
                     .lineLimit(1)
                 Spacer(minLength: 4)
                 if let c = item.created {
-                    Text(Self.age(c)).font(.system(size: 10)).foregroundStyle(.white.opacity(0.4))
+                    Text(Self.age(c)).font(.system(size: 11)).foregroundStyle(.white.opacity(0.5))
                 }
                 Button { store.dismissCard([item.id]) } label: {
-                    Image(systemName: "xmark").font(.system(size: 9, weight: .bold))
-                        .foregroundStyle(.white.opacity(hovering ? 0.8 : 0.35))
-                        .frame(width: 18, height: 18)
+                    Image(systemName: "xmark").font(.system(size: 10, weight: .bold))
+                        .foregroundStyle(.white.opacity(hovering ? 0.85 : 0.4))
+                        .frame(width: 20, height: 20)
                         .background(Circle().fill(Color.white.opacity(hovering ? 0.12 : 0)))
                 }
                 .buttonStyle(.plain)
                 .help("Hide this card (it stays in the menu bar list)")
             }
 
-            HStack(alignment: .top, spacing: 10) {
-                VStack(alignment: .leading, spacing: 4) {
-                    Text(item.title)
-                        .font(.system(size: 13, weight: .semibold))
+            // The actual content that goes out
+            HStack(alignment: .top, spacing: 12) {
+                if let img = pres.images.first {
+                    RemoteImage(url: img.url, contentMode: .fill)
+                        .frame(width: 92, height: 115)
+                        .clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous))
+                        .overlay(RoundedRectangle(cornerRadius: 8, style: .continuous).strokeBorder(Color.white.opacity(0.1)))
+                }
+                VStack(alignment: .leading, spacing: 5) {
+                    Text(pres.displayTitle)
+                        .font(.system(size: 13.5, weight: .semibold))
                         .foregroundStyle(.white)
                         .lineLimit(2)
-                    if !item.summary.isEmpty {
-                        Text(item.summary)
-                            .font(.system(size: 11.5))
-                            .foregroundStyle(.white.opacity(0.7))
-                            .lineLimit(3)
-                    }
-                }
-                Spacer(minLength: 0)
-                if let url = item.previewURL {
-                    AsyncImage(url: url) { phase in
-                        if case .success(let img) = phase {
-                            img.resizable().scaledToFill()
-                        } else {
-                            Color.white.opacity(0.06)
-                        }
-                    }
-                    .frame(width: 64, height: 64)
-                    .clipShape(RoundedRectangle(cornerRadius: 9, style: .continuous))
+                    Text(Presentation.cardText(item, pres))
+                        .font(.system(size: 13))
+                        .foregroundStyle(.white.opacity(0.85))
+                        .lineSpacing(1.5)
+                        .lineLimit(5)
+                        .fixedSize(horizontal: false, vertical: true)
                 }
             }
             .contentShape(Rectangle())
             .onTapGesture { store.openDetail(item.id) }
+            .help("Click to review everything")
+
+            HStack(spacing: 4) {
+                Text("from \(Presentation.agentName(item.source))")
+                if let link = pres.links.first {
+                    Text("·")
+                    Text(ItemDetailView.shortURL(link.url)).lineLimit(1).truncationMode(.middle)
+                }
+            }
+            .font(.system(size: 11))
+            .foregroundStyle(.white.opacity(0.5))
 
             HStack(spacing: 6) {
                 CardButton(title: "Approve", systemImage: "checkmark", style: .primary) {
@@ -225,7 +231,7 @@ struct ApprovalCard: View {
                 Spacer(minLength: 0)
                 CardButton(title: "4h", systemImage: "moon.zzz", style: .quiet) { store.snooze(item.id) }
                     .help("Snooze for 4 hours")
-                CardButton(title: "Details", systemImage: "arrow.up.right", style: .quiet) { store.openDetail(item.id) }
+                CardButton(title: "Review", systemImage: "arrow.up.right", style: .quiet) { store.openDetail(item.id) }
             }
         }
         .padding(14)
@@ -260,7 +266,7 @@ struct CardButton: View {
     var body: some View {
         Button(action: action) {
             Label(title, systemImage: systemImage)
-                .font(.system(size: 11.5, weight: style == .quiet ? .medium : .semibold))
+                .font(.system(size: 12.5, weight: style == .quiet ? .medium : .semibold))
                 .labelStyle(.titleAndIcon)
                 .padding(.horizontal, style == .quiet ? 8 : 12)
                 .padding(.vertical, 6)

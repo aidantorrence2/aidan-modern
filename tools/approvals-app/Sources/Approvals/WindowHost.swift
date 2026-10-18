@@ -11,6 +11,7 @@ enum WindowHost {
         let window: NSWindow
         if let existing = windows[id] {
             window = existing
+            window.setContentSize(size)
         } else {
             window = NSWindow(contentRect: NSRect(origin: .zero, size: size),
                               styleMask: [.titled, .closable, .miniaturizable, .resizable],

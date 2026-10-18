@@ -319,7 +319,7 @@ final class ApprovalsStore: ObservableObject {
 
     func openDetail(_ id: String) {
         let title = item(id)?.title ?? id
-        WindowHost.show(id: "detail", title: title, size: NSSize(width: 560, height: 720),
+        WindowHost.show(id: "detail", title: title, size: NSSize(width: 900, height: 680),
                         content: ItemDetailView(itemID: id).environmentObject(self))
     }
 
@@ -345,6 +345,16 @@ final class ApprovalsStore: ObservableObject {
     func renderCards(to path: String) async -> Int32 {
         guard let client = makeClient() else { print("no token"); return 1 }
         do { try await fetch(with: client, force: true) } catch { print("fetch failed: \(error)"); return 1 }
+        await ImageCache.shared.prefetch(cardItems.prefix(3).flatMap { Presentation($0).images.map(\.url) })
+        if let first = cardItems.first {
+            let detail = ItemDetailView(itemID: first.id, flatForRender: true).environmentObject(self).frame(width: 900, height: 680)
+                .background(Color(nsColor: .windowBackgroundColor))
+            let r = ImageRenderer(content: detail); r.scale = 2
+            if let img = r.nsImage, let tiff = img.tiffRepresentation,
+               let png = NSBitmapImageRep(data: tiff)?.representation(using: .png, properties: [:]) {
+                try? png.write(to: URL(fileURLWithPath: path.replacingOccurrences(of: ".png", with: "-detail.png")))
+            }
+        }
         showToast("Approve post:travel-fee", ok: true)
         let view = CardStackView(onSize: { _ in }).environmentObject(self)
             .background(Color(red: 0.35, green: 0.42, blue: 0.38))

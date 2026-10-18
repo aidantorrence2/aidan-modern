@@ -18,9 +18,13 @@ and **Contents: Read and write**, then paste it in Settings → Save token.
 
 - Requests show as the app's own floating cards in the top-right corner (not macOS
   notifications). They appear on every Space and over full-screen apps, never steal focus, and
-  stay until you act. Each card shows kind, source agent, age, title, summary and preview image,
-  with **Approve**, **Deny**, **4h** (snooze, the card comes back after) and **Details**.
-  Click a card's text or Details for the full payload as JSON, the large preview and a note field.
+  stay until you act. Each card leads with what approving does in plain words ("Post to
+  Instagram", "Send email to …", "Spend $40"), then the image and the real text that goes out,
+  who asked, and the link. Buttons: **Approve**, **Deny**, **4h** (snooze, the card comes back
+  after) and **Review**.
+- **Review** (or clicking the card) opens a window that says what happens if you approve, shows the
+  image full size (feed / story switch), the full caption or email body, clickable links, any other
+  fields as labeled rows, a note box, and Approve / Deny. Raw JSON is under "Technical details".
   The ✕ hides a card; the item stays in the menu-bar list ("Show cards" brings them back).
 - Up to three cards show at once with a "+N more waiting" row; the next slides in as you decide.
   A soft sound plays when a new request arrives (Settings to turn off).
@@ -88,6 +92,7 @@ those three lines.
 - `Sources/Approvals/ApprovalsStore.swift` – polling, card queue, decisions, write-back, gh token import
 - `Sources/Approvals/GitHubClient.swift` – Contents API GET (ETag) / PUT
 - `Sources/Approvals/CardPanel.swift` – the floating card panel (custom notifications)
+- `Sources/Approvals/Presentation.swift` – turns kind + payload into plain language and readable fields
 - `Sources/Approvals/JSONValue.swift` – order-preserving JSON parse/serialize
 - `Sources/Approvals/Keychain.swift` – token storage (Security framework)
 - `MenuView.swift`, `ItemDetailView.swift`, `SettingsView.swift` – SwiftUI UI
