@@ -240,6 +240,21 @@
       "status": "pending",
       "decided": null,
       "note": ""
+    },
+    {
+      "id": "other:approvals-app-test",
+      "kind": "other",
+      "source": "claude:approvals-app-setup",
+      "title": "Test: Approvals app is wired up",
+      "summary": "Test item from the app's setup. Approve or Deny it from the notification; it expires in 15 minutes and nothing acts on it.",
+      "payload": {
+        "action": "none"
+      },
+      "created": "2026-10-18T20:07Z",
+      "expires": "2026-10-18T20:22Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
     }
   ]
 }
