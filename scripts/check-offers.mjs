@@ -29,7 +29,9 @@ for (const o of offers) {
     const d = o.demand || {}
     const sig = Array.isArray(d.signals) ? d.signals : []
     const urls = new Set(sig.map(x => x && x.url))
-    if (sig.length < 3 || urls.size < 3) errors.push(`${at}: demand.signals needs 3+ distinct cited posts`)
+    const people = new Set(sig.map(x => x && x.who).filter(Boolean))
+    if (sig.length < 3 || urls.size < 3) errors.push(`${at}: demand.signals needs posts from 3+ distinct pages`)
+    if (people.size < 3) errors.push(`${at}: demand.signals needs 3+ different people (who)`)
     for (const x of sig) {
       if (!x || !/^https:\/\//.test(x.url || '')) errors.push(`${at}: every demand signal needs an https url`)
       if (!x || typeof x.quote !== 'string' || !x.quote.trim()) errors.push(`${at}: every demand signal needs a short verbatim quote`)
