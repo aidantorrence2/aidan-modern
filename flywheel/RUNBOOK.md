@@ -35,7 +35,12 @@ answer once the catalogue is large; traffic is. Order:
    branch, then `bash scripts/flywheel/publish-pages.sh`: exports `static-offers/` and pushes
    it to the `gh-pages` branch. Public at `config.publicBase` once GitHub Pages is enabled
    for that branch (Settings → Pages → Deploy from branch → gh-pages, root). Never Vercel.
-7. **Report.** One Slack DM to Aidan (U09KLN151B2) only when something changed: new
+7. **Approved actions.** `node scripts/flywheel/publish-approved.mjs` acts on every item in
+   `data/approvals.json` that Aidan approved (see `flywheel/APPROVALS.md`): Instagram posts go
+   through the Graph API when `IG_USER_ID` and `IG_ACCESS_TOKEN` are set in the environment;
+   other kinds are reported as waiting. New pending items (one per post card in
+   `data/post-queue.json`, three a day at most) are appended each run, newest offers first.
+8. **Report.** One Slack DM to Aidan (U09KLN151B2) only when something changed: new
    offer links + hook line, counts, thresholds crossed, what needs him. No empty pings.
 
 Hard limits: no spending, no public posting, no sending email, no invented numbers or
