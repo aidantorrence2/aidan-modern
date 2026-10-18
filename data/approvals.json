@@ -375,6 +375,24 @@
       "status": "denied",
       "decided": "2026-10-18T21:20:24Z",
       "note": ""
+    },
+    {
+      "id": "other:android-review-test-2",
+      "kind": "other",
+      "source": "claude:android-test",
+      "title": "Test: phone review screen with a photo",
+      "summary": "Android test of images on the card and Review screen. Please leave it for 2 minutes.",
+      "preview_url": "https://www.aidantorrence.com/images/large/000001-11.jpg",
+      "payload": {
+        "image": "https://www.aidantorrence.com/images/large/000001-11.jpg",
+        "description": "TEST ONLY: nothing happens either way. Checking the photo on the card and the Review screen.",
+        "link": "https://www.aidantorrence.com/"
+      },
+      "created": "2026-10-18T21:20:29Z",
+      "expires": "2026-10-18T22:20:29Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
     }
   ]
 }
