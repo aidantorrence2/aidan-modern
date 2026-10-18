@@ -5,6 +5,7 @@ Price: $4/month (unlimited jobs and people; no marketplace, your list only)
 Buyer: wedding and event photographers who keep a mental list of second shooters and assistants and spend an evening texting them one by one
 Status: live since 2026-10-18
 Hosted page: https://aidantorrence2.github.io/aidan-modern/second-shooter-call (live after merge to main + deploy)
+Artifact page: https://claude.ai/artifact/HRZGSzQZXieiQhDQA1ctew
 
 ## Tracking links (one per channel)
 

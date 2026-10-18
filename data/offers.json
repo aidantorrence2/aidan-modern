@@ -1920,6 +1920,42 @@
       "community": "Wedding photographers: how do you fill second-shooter and assistant slots? Mine is a text to seven people and a night of waiting. I'm deciding whether to build a small tool: your own list with rates, gear and cities, one message per date with a yes or no tap, replies on one screen, one-tap booking with a thank-you to the rest, a private call sheet page for the booked shooter, and a pay log for the year. No marketplace, your list only. $4/month. Pre-launch page, no charge, just an 'I'd pay' button: aidantorrence2.github.io/aidan-modern/second-shooter-call",
       "pitchSubject": "Second-shooter slots filled with one message (pre-launch)",
       "pitch": "Hi {first},\n\nI'm Aidan, a photographer. I saw {specific reference}.\n\nI'm deciding whether to build a small tool for second shooters and assistants: your own list with rates and cities, one message per date with a yes or no tap, one-tap booking with a thank-you to the rest, a private call sheet page for the booked shooter and a pay log, $4 a month, no marketplace.\n\nIf filling a slot still costs you an evening of texts, the pre-launch page has an 'I'd pay' button: aidantorrence2.github.io/aidan-modern/second-shooter-call?src=email\n\nIf not, one line on why is just as useful.\n\nBest,\nAidan"
+    },
+    "artifactUrl": "https://claude.ai/artifact/HRZGSzQZXieiQhDQA1ctew"
+  },
+  {
+    "slug": "workshop-seats",
+    "name": "Workshop Seats",
+    "headline": "Sell the seats for your workshop or styled shoot from one page: deposit holds a seat, the waitlist fills a dropout, and every attendee gets the prep page and the model release before the day.",
+    "buyer": "photographers who teach workshops, run styled shoots or host mentoring days and fill them through DMs and a spreadsheet",
+    "bullets": [
+      "Set the date, location, seat count, price and deposit. The page shows seats left and takes the deposit to hold one; the balance link goes out on the schedule you set.",
+      "A waitlist fills any dropout automatically and refunds the dropout per the policy you wrote once. No more 'is there still a spot?' DMs.",
+      "Attendees get a prep page with gear list, call time, pin and the model and venue releases to sign; you get one roster with paid, balance due and signed."
+    ],
+    "price": "$6/month",
+    "priceUsd": 6,
+    "priceNote": "or $15 per event; no commission on seats",
+    "status": "live",
+    "launched": "2026-10-18",
+    "reasonPrompt": "How did you fill your last workshop or styled shoot, and what did the back-and-forth cost you?",
+    "faq": [
+      {
+        "q": "Is this an events marketplace?",
+        "a": "No. There is no listing anywhere. It is your own page, shared where you choose, with your own payments."
+      },
+      {
+        "q": "Does it take the payments?",
+        "a": "It links to your payment provider for deposits and balances and records what came back. Money never passes through this tool."
+      }
+    ],
+    "kit": {
+      "hook": "Twelve seats, forty DMs, a spreadsheet, two dropouts the night before and a waitlist in my head.",
+      "script": "Open on a DM inbox: 'is there still a spot?' repeated. VO: 'Twelve seats. Forty DMs.' Cut to a phone: a workshop page with seats left, a deposit paid, the counter dropping; a dropout; the waitlist fills it. Cut to an attendee's prep page: gear list, pin, release signed. Cut to the roster: paid, balance due, signed. VO: 'Seats, deposits, waitlist, prep, releases. One page runs the day.' End card: 'Workshop Seats. $6 a month. Pre-launch, link in bio.'",
+      "caption": "Sell workshop and styled-shoot seats from one page: deposits, waitlist, prep page and releases. $6/month, no commission. Not built yet; tell me if you'd use it. aidantorrence2.github.io/aidan-modern/workshop-seats",
+      "community": "Photographers who run workshops, styled shoots or mentoring days: how do you fill and manage them? Mine was DMs and a spreadsheet. I'm deciding whether to build a small tool: one page per event with seats left, deposit to hold, balance on your schedule, a waitlist that fills dropouts and refunds per your policy, a prep page per attendee with gear list, pin and releases to sign, and one roster. $6/month or $15 per event, no commission. Pre-launch page, no charge, just an 'I'd pay' button: aidantorrence2.github.io/aidan-modern/workshop-seats",
+      "pitchSubject": "Workshop seats sold from one page (pre-launch)",
+      "pitch": "Hi {first},\n\nI'm Aidan, a photographer. I saw {specific reference}.\n\nI'm deciding whether to build a small tool for workshops and styled shoots: one page with seats left, deposit to hold, a waitlist that fills dropouts, a prep page per attendee with releases to sign, and one roster, $6 a month or $15 per event with no commission.\n\nIf your last event was run from DMs, the pre-launch page has an 'I'd pay' button: aidantorrence2.github.io/aidan-modern/workshop-seats?src=email\n\nIf not, one line on why is just as useful.\n\nBest,\nAidan"
     }
   }
 ]
