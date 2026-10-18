@@ -1,6 +1,6 @@
 {
   "_note": "Hand-tallied interest signals per offer from the hourly harvest. yes/no = email replies to pitches; signup/would_pay = form or [offer:] mails. Dates UTC.",
-  "updated": "2026-10-18T21:50Z",
+  "updated": "2026-10-18T22:45Z",
   "sent": {
     "second-shooter-call": 14,
     "renewal-watch": 10,
@@ -29,9 +29,12 @@
       ]
     },
     "renewal-watch": {
-      "no": 0,
+      "no": 1,
       "yes": 0,
-      "question": 0
+      "question": 0,
+      "notes": [
+        "22:01 Wren Photo: probably wouldn't; licensing is rare (1 or 2 a year) and easy to track by hand"
+      ]
     },
     "roll-status": {
       "no": 0,
@@ -51,6 +54,240 @@
     },
     "feed-match": {
       "launched": "2026-10-18T21:35Z",
+      "signups": 0,
+      "would_pay": 0,
+      "replies": 0
+    },
+    "pick-print": {
+      "launched": "2026-10-18",
+      "signups": 0,
+      "would_pay": 0,
+      "replies": 0
+    },
+    "flat-files": {
+      "launched": "2026-10-18",
+      "signups": 0,
+      "would_pay": 0,
+      "replies": 0
+    },
+    "plate-snap": {
+      "launched": "2026-10-18",
+      "signups": 0,
+      "would_pay": 0,
+      "replies": 0
+    },
+    "post-once": {
+      "launched": "2026-10-18",
+      "signups": 0,
+      "would_pay": 0,
+      "replies": 0
+    },
+    "fit-resume": {
+      "launched": "2026-10-18",
+      "signups": 0,
+      "would_pay": 0,
+      "replies": 0
+    },
+    "answer-check": {
+      "launched": "2026-10-18",
+      "signups": 0,
+      "would_pay": 0,
+      "replies": 0
+    },
+    "weekly-post": {
+      "launched": "2026-10-18",
+      "signups": 0,
+      "would_pay": 0,
+      "replies": 0
+    },
+    "story-shorts": {
+      "launched": "2026-10-18",
+      "signups": 0,
+      "would_pay": 0,
+      "replies": 0
+    },
+    "stage-shot": {
+      "launched": "2026-10-18",
+      "signups": 0,
+      "would_pay": 0,
+      "replies": 0
+    },
+    "practice-book": {
+      "launched": "2026-10-18",
+      "signups": 0,
+      "would_pay": 0,
+      "replies": 0
+    },
+    "ledger-link": {
+      "launched": "2026-10-18",
+      "signups": 0,
+      "would_pay": 0,
+      "replies": 0
+    },
+    "bay-sync": {
+      "launched": "2026-10-18",
+      "signups": 0,
+      "would_pay": 0,
+      "replies": 0
+    },
+    "own-label": {
+      "launched": "2026-10-18",
+      "signups": 0,
+      "would_pay": 0,
+      "replies": 0
+    },
+    "zone-date": {
+      "launched": "2026-10-18",
+      "signups": 0,
+      "would_pay": 0,
+      "replies": 0
+    },
+    "store-vault": {
+      "launched": "2026-10-18",
+      "signups": 0,
+      "would_pay": 0,
+      "replies": 0
+    },
+    "rent-slot": {
+      "launched": "2026-10-18",
+      "signups": 0,
+      "would_pay": 0,
+      "replies": 0
+    },
+    "custom-print": {
+      "launched": "2026-10-18",
+      "signups": 0,
+      "would_pay": 0,
+      "replies": 0
+    },
+    "flat-translate": {
+      "launched": "2026-10-18",
+      "signups": 0,
+      "would_pay": 0,
+      "replies": 0
+    },
+    "tab-vault": {
+      "launched": "2026-10-18",
+      "signups": 0,
+      "would_pay": 0,
+      "replies": 0
+    },
+    "free-restore": {
+      "launched": "2026-10-18",
+      "signups": 0,
+      "would_pay": 0,
+      "replies": 0
+    },
+    "dual-subs": {
+      "launched": "2026-10-18",
+      "signups": 0,
+      "would_pay": 0,
+      "replies": 0
+    },
+    "outlook-merge": {
+      "launched": "2026-10-18",
+      "signups": 0,
+      "would_pay": 0,
+      "replies": 0
+    },
+    "auto-statements": {
+      "launched": "2026-10-18",
+      "signups": 0,
+      "would_pay": 0,
+      "replies": 0
+    },
+    "repeat-book": {
+      "launched": "2026-10-18",
+      "signups": 0,
+      "would_pay": 0,
+      "replies": 0
+    },
+    "bulk-books": {
+      "launched": "2026-10-18",
+      "signups": 0,
+      "would_pay": 0,
+      "replies": 0
+    },
+    "exempt-ledger": {
+      "launched": "2026-10-18",
+      "signups": 0,
+      "would_pay": 0,
+      "replies": 0
+    },
+    "drawer-count": {
+      "launched": "2026-10-18",
+      "signups": 0,
+      "would_pay": 0,
+      "replies": 0
+    },
+    "lay-away": {
+      "launched": "2026-10-18",
+      "signups": 0,
+      "would_pay": 0,
+      "replies": 0
+    },
+    "count-scan": {
+      "launched": "2026-10-18",
+      "signups": 0,
+      "would_pay": 0,
+      "replies": 0
+    },
+    "reorder-smart": {
+      "launched": "2026-10-18",
+      "signups": 0,
+      "would_pay": 0,
+      "replies": 0
+    },
+    "square-woo-sync": {
+      "launched": "2026-10-18",
+      "signups": 0,
+      "would_pay": 0,
+      "replies": 0
+    },
+    "profile-back": {
+      "launched": "2026-10-18",
+      "signups": 0,
+      "would_pay": 0,
+      "replies": 0
+    },
+    "vector-logo": {
+      "launched": "2026-10-18",
+      "signups": 0,
+      "would_pay": 0,
+      "replies": 0
+    },
+    "kdp-ready": {
+      "launched": "2026-10-18",
+      "signups": 0,
+      "would_pay": 0,
+      "replies": 0
+    },
+    "inbox-fix": {
+      "launched": "2026-10-18",
+      "signups": 0,
+      "would_pay": 0,
+      "replies": 0
+    },
+    "tally-import": {
+      "launched": "2026-10-18",
+      "signups": 0,
+      "would_pay": 0,
+      "replies": 0
+    },
+    "team-requests": {
+      "launched": "2026-10-18",
+      "signups": 0,
+      "would_pay": 0,
+      "replies": 0
+    },
+    "receipt-export": {
+      "launched": "2026-10-18",
+      "signups": 0,
+      "would_pay": 0,
+      "replies": 0
+    },
+    "billable-hours": {
+      "launched": "2026-10-18",
       "signups": 0,
       "would_pay": 0,
       "replies": 0

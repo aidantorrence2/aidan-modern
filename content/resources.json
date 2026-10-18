@@ -1,5 +1,41 @@
 [
   {
+    "slug": "cash-drawer-count-sheet-by-denomination",
+    "offer": "drawer-count",
+    "title": "Cash drawer count sheet by denomination (with the deposit worked out)",
+    "description": "A copy-paste count sheet for closing a register: every bill, coin and roll, the starting float, the deposit, and over or short against your POS.",
+    "intro": "Closing a drawer goes wrong in two places: adding up the coins, and working out what to take out for the deposit. This sheet does both in the same order every night, so anyone on staff can close and the numbers can be checked the next morning.",
+    "sections": [
+      {
+        "h": "The count sheet",
+        "pre": "Date: ________  Register: ________  Counted by: ________\n\nBILLS        count   x value   = total\n$100         _____   x 100     = _____\n$50          _____   x 50      = _____\n$20          _____   x 20      = _____\n$10          _____   x 10      = _____\n$5           _____   x 5       = _____\n$1           _____   x 1       = _____\n\nCOINS (loose)\nQuarters     _____   x 0.25    = _____\nDimes        _____   x 0.10    = _____\nNickels      _____   x 0.05    = _____\nPennies      _____   x 0.01    = _____\n\nROLLS (full, unopened)\nQuarters (40 = $10.00)  _____  x 10.00 = _____\nDimes    (50 = $5.00)   _____  x 5.00  = _____\nNickels  (40 = $2.00)   _____  x 2.00  = _____\nPennies  (50 = $0.50)   _____  x 0.50  = _____\n\nCOUNTED TOTAL                         = _____"
+      },
+      {
+        "h": "Work out the deposit and over or short",
+        "list": [
+          "Starting float: the cash the drawer started with, the same amount every day (for example $150).",
+          "Deposit = counted total minus starting float. Take that out in large bills first, so the float left behind is small bills and coins.",
+          "Expected cash = starting float + cash sales - cash refunds - cash paid out + cash paid in. Your POS shows this on the drawer or shift report.",
+          "Over or short = counted total minus expected cash. Write it down every night, even when it is zero."
+        ]
+      },
+      {
+        "h": "Habits that keep drawers honest",
+        "list": [
+          "The person who counts is not the person who worked the drawer, or a second person checks the count.",
+          "Count bills face up and in the same order every time; it makes recounts fast.",
+          "Keep each sheet with the deposit slip. A pattern of small shorts on the same shift is worth a conversation."
+        ]
+      },
+      {
+        "h": "Doing this on a phone instead of paper",
+        "p": [
+          "Drawer Count is a tool being tested for Square sellers: staff type the counts on a phone or tablet, the total and deposit are worked out, the count is compared with Square’s expected cash for that shift, and every count is logged with who did it."
+        ]
+      }
+    ]
+  },
+  {
     "slug": "google-merchant-center-misrepresentation-feed-check",
     "offer": "feed-match",
     "title": "Merchant Center misrepresentation: check your feed against your product pages before you appeal",
