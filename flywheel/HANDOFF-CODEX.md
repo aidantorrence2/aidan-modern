@@ -6,7 +6,7 @@ Written 18 Oct 2026, about 21:00 UTC, by the Claude code-side session. Branch: `
 
 Aidan Torrence (photographer, @madebyaidan) asked for an hourly "money flywheel": launch small **software** offers, drive traffic to each, measure interest (sign-ups, "I'd pay", pre-orders), and only build the ones that cross a threshold. His number one goal is **interested traffic and leads**. Every work session should do at least one thing that adds leads.
 
-**Reset on 18 Oct 2026.** Aidan judged all 60 offers launched so far as not good, because they were guessed rather than taken from market demand. All 60 are now `status: killed` and the site shows no offers. Offers now come only from demand already visible in the market, and every one is software. See section 2, rule 1, and `flywheel/RUNBOOK.md` step 0.
+**Reset on 18 Oct 2026.** Aidan judged all 60 offers launched so far as not good, because they were guessed rather than taken from market demand. All 60 are now `status: killed`. The first two offers that passed the demand gate, Shelf Date and Feed Match, went live the same evening. Their evidence is in `flywheel/DEMAND.md`. Offers now come only from demand already visible in the market, and every one is software. See section 2, rule 1, and `flywheel/RUNBOOK.md` step 0.
 
 ## 2. Standing orders (all in force)
 
@@ -27,7 +27,6 @@ Aidan Torrence (photographer, @madebyaidan) asked for an hourly "money flywheel"
 | Free lead-magnet pages (8, all tied to retired offers, so none exported) | `content/resources.json` |
 | Site config (public base, mail, form endpoint) | `flywheel/config.json` |
 | Static export | `scripts/flywheel/export-static.mjs` writes `static-offers/` (gitignored) |
-| Post cards (feed + story PNGs) and post queue | `scripts/flywheel/post-cards.mjs`, `data/post-queue.json` |
 | Publish to GitHub Pages | `scripts/flywheel/publish-pages.sh` (pushes the `gh-pages` branch) |
 | Approved-item publisher (refuses every post item) | `scripts/flywheel/publish-approved.mjs` |
 | Approvals queue | `data/approvals.json`, schema in `flywheel/APPROVALS.md` |
@@ -46,8 +45,7 @@ The repo is also a Next.js 14.2.5 portfolio site. Keep it green even though offe
 npm run test:offers                      # offer data checks (headlines must be 200 chars or fewer)
 npx next build                           # must pass before every push
 node scripts/flywheel/export-static.mjs  # rebuild static-offers/
-node scripts/flywheel/post-cards.mjs     # run inside the repo; Chromium at /opt/pw-browsers/chromium
-bash scripts/flywheel/publish-pages.sh   # export + cards + push gh-pages
+bash scripts/flywheel/publish-pages.sh   # export + push gh-pages
 node scripts/flywheel/publish-approved.mjs --dry   # list what an approved run would do
 git pull --rebase origin ccr-d1938557-3pv196       # always before pushing; the Mac app pushes too
 ```

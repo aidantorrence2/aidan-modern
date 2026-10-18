@@ -3,7 +3,7 @@
 set -euo pipefail
 cd "$(dirname "$0")/../.."
 node scripts/flywheel/export-static.mjs
-node scripts/flywheel/post-cards.mjs
+# post cards removed 18 Oct 2026: nothing is posted to social accounts, so no cards are rendered
 WT="$(mktemp -d)"
 if git ls-remote --exit-code --heads origin gh-pages >/dev/null 2>&1; then
   git fetch -q origin gh-pages
