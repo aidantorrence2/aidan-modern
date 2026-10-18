@@ -125,9 +125,9 @@ class Bean(
             drawOval(Color(0xFF5A1E2A), Offset(-3f, my - 3.5f), Size(6f, 7f))
         } else {
             val curve = mood * 6f
-            val mouth = Path().apply { moveTo(-6f, my); quadraticBezierTo(0f, my + curve, 6f, my) }
+            val mouth = Path().apply { moveTo(-6f, my); quadraticTo(0f, my + curve, 6f, my) }
             if (mood > 0.65f) {
-                val open = Path().apply { moveTo(-6f, my); quadraticBezierTo(0f, my + curve * 1.3f, 6f, my); close() }
+                val open = Path().apply { moveTo(-6f, my); quadraticTo(0f, my + curve * 1.3f, 6f, my); close() }
                 drawPath(open, Color(0xFF6B2232))
             }
             drawPath(mouth, Pal.Ink, style = Stroke(2f, cap = StrokeCap.Round))
@@ -140,7 +140,7 @@ class Bean(
             moveTo(hc.x - 18f, hc.y + 1f)
             cubicTo(hc.x - 20f, hc.y - 25f, hc.x + 20f, hc.y - 25f, hc.x + 18f, hc.y + 1f)
             lineTo(hc.x + 15f, hc.y - 6f)
-            quadraticBezierTo(hc.x + 2f, hc.y - 13f, hc.x - 14f, hc.y - 6f)
+            quadraticTo(hc.x + 2f, hc.y - 13f, hc.x - 14f, hc.y - 6f)
             close()
         }
         if (hairStyle == 1) {
@@ -632,9 +632,9 @@ class Brain(val color: Color = Pal.Rose) : Prop() {
         for ((c, r) in lobes) drawCircle(shade(color, c.y - r, c.y + r, 0.25f, 0.15f), r, c)
         val sq = color.darken(0.3f)
         drawLine(sq, Offset(0f, -26f), Offset(0f, 20f), 2f, StrokeCap.Round)
-        val squig = listOf(Path().apply { moveTo(-22f, -10f); quadraticBezierTo(-14f, -16f, -8f, -8f); quadraticBezierTo(-4f, -2f, -12f, 2f) },
-            Path().apply { moveTo(20f, -14f); quadraticBezierTo(12f, -6f, 18f, 0f); quadraticBezierTo(22f, 6f, 12f, 10f) },
-            Path().apply { moveTo(-22f, 12f); quadraticBezierTo(-12f, 8f, -8f, 16f) })
+        val squig = listOf(Path().apply { moveTo(-22f, -10f); quadraticTo(-14f, -16f, -8f, -8f); quadraticTo(-4f, -2f, -12f, 2f) },
+            Path().apply { moveTo(20f, -14f); quadraticTo(12f, -6f, 18f, 0f); quadraticTo(22f, 6f, 12f, 10f) },
+            Path().apply { moveTo(-22f, 12f); quadraticTo(-12f, 8f, -8f, 16f) })
         for (q in squig) drawPath(q, sq, style = roundStroke(2f))
         drawRoundRect(color.darken(0.25f), Offset(-4f, 18f), Size(8f, 12f), CornerRadius(3f))
     }
@@ -711,10 +711,16 @@ class Sparkles(val color: Color = Pal.Gold, val radius: Float = 40f, val count: 
         for (i in 0 until count) {
             val ph = frac(s.t * (0.4f + 0.4f * hash01(i, 1)) + hash01(i, 2))
             val a = sin(ph * TAU / 2f)
+            if (a <= 0.02f) continue
             val c = polar(Offset.Zero, radius * (0.4f + 0.6f * hash01(i, 3)), hash01(i, 4) * TAU)
-            val r = 2f + 3f * a
-            drawLine(color.a(a), Offset(c.x - r, c.y), Offset(c.x + r, c.y), 1.5f, StrokeCap.Round)
-            drawLine(color.a(a), Offset(c.x, c.y - r), Offset(c.x, c.y + r), 1.5f, StrokeCap.Round)
+            val r = 2.5f + 4.5f * a
+            glow(color, c, r * 2.6f, 0.45f * a)
+            val star = Path().apply {
+                moveTo(c.x, c.y - r); quadraticTo(c.x, c.y, c.x + r, c.y)
+                quadraticTo(c.x, c.y, c.x, c.y + r); quadraticTo(c.x, c.y, c.x - r, c.y)
+                quadraticTo(c.x, c.y, c.x, c.y - r); close()
+            }
+            drawPath(star, color.lighten(0.4f).a(a))
         }
     }
 }
@@ -730,7 +736,7 @@ class Drips(val color: Color = Pal.Sky, val spread: Float = 30f) : Prop() {
             val x = (hash01(i, 2) - 0.5f) * spread
             val y = ph * ph * 40f
             val path = Path().apply {
-                moveTo(x, y - 5f); quadraticBezierTo(x + 3.5f, y + 1f, x, y + 3f); quadraticBezierTo(x - 3.5f, y + 1f, x, y - 5f); close()
+                moveTo(x, y - 5f); quadraticTo(x + 3.5f, y + 1f, x, y + 3f); quadraticTo(x - 3.5f, y + 1f, x, y - 5f); close()
             }
             drawPath(path, color.a(rate * (1f - ph * 0.6f)))
         }

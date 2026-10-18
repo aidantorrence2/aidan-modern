@@ -79,8 +79,8 @@ class GoalFlag(val text: String, val color: Color = Pal.Gold) : Prop() {
         drawCircle(Pal.Gold, 4f, Offset(0f, -92f))
         val wave = sin(s.t * 3f) * 4f
         val p = Path().apply {
-            moveTo(2f, -86f); quadraticBezierTo(30f, -92f + wave, 62f, -84f + wave)
-            lineTo(62f, -58f + wave); quadraticBezierTo(30f, -66f + wave, 2f, -60f); close()
+            moveTo(2f, -86f); quadraticTo(30f, -92f + wave, 62f, -84f + wave)
+            lineTo(62f, -58f + wave); quadraticTo(30f, -66f + wave, 2f, -60f); close()
         }
         drawPath(p, shade(color, -90f, -58f, 0.25f, 0.15f))
         label(s.m, text, 32f, -73f + wave * 0.6f, 9.5f, Pal.Ink, 800, maxWidth = 56f)
@@ -171,7 +171,7 @@ class CoffeeCup(val color: Color = Pal.Coral) : Prop() {
         softShadow(0f, 2f, 40f, 7f)
         drawOval(Pal.White.darken(0.1f), Offset(-22f, -4f), Size(44f, 8f))
         drawArc(color.darken(0.1f), -90f, 180f, false, Offset(8f, -24f), Size(16f, 14f), style = Stroke(4.5f))
-        val cup = Path().apply { moveTo(-15f, -30f); lineTo(15f, -30f); lineTo(12f, -2f); quadraticBezierTo(0f, 2f, -12f, -2f); close() }
+        val cup = Path().apply { moveTo(-15f, -30f); lineTo(15f, -30f); lineTo(12f, -2f); quadraticTo(0f, 2f, -12f, -2f); close() }
         drawPath(cup, shade(color, -30f, 0f))
         drawOval(Color(0xFF5B3A26), Offset(-14f, -33f), Size(28f, 6f))
         withTransform({ translate(0f, -34f) }) { with(Steam()) { render(s) } }
@@ -238,7 +238,7 @@ class Shoes(val color: Color = Pal.Coral) : Prop() {
     override fun DrawScope.render(s: PropState) {
         for (dx in listOf(-14f, 12f)) {
             softShadow(dx, 1f, 30f, 5f)
-            val p = Path().apply { moveTo(dx - 13f, 0f); lineTo(dx - 13f, -12f); quadraticBezierTo(dx - 4f, -16f, dx + 2f, -8f); quadraticBezierTo(dx + 14f, -6f, dx + 14f, 0f); close() }
+            val p = Path().apply { moveTo(dx - 13f, 0f); lineTo(dx - 13f, -12f); quadraticTo(dx - 4f, -16f, dx + 2f, -8f); quadraticTo(dx + 14f, -6f, dx + 14f, 0f); close() }
             drawPath(p, shade(color, -16f, 0f))
             drawRect(Color.White, Offset(dx - 13f, -3f), Size(27f, 3f))
             for (k in 0..2) drawLine(Color.White, Offset(dx - 8f + k * 3f, -12f + k), Offset(dx - 4f + k * 3f, -11f + k), 1.2f)

@@ -22,7 +22,7 @@ val ATOMIC_STAGE = listOf(
         add("drips", Drips(androidx.compose.ui.graphics.Color(0xFF9ED7FA), 34f), 512, 186)
         add("therm", Thermometer(), 602, 172)
         add("noIce", Caption("25° … 31°: nothing visible", 11f, Pal.Sky, chip = Pal.Ink.a(0.6f)), 500, 80)
-        add("melt", Caption("32°: it melts. The heat was building the whole time.", 11f, Pal.Gold, chip = Pal.Ink.a(0.6f), maxWidth = 190f), 495, 82)
+        add("melt", Caption("32°: it melts. The heat was building the whole time.", 11f, Pal.Gold, chip = Pal.Ink.a(0.6f), maxWidth = 160f), 470, 84)
         beat { show("you"); set("you", "look", 1, 600) }
         beat("big moments") { show("bigStar"); set("you", "wow", 1, 300); set("you", "arms", 0.6, 500) }
         beat("small, repeated actions") {
@@ -58,10 +58,10 @@ val ATOMIC_STAGE = listOf(
         add("lose", Bean(Pal.Coral, Pal.Skin[0], Pal.Hair[2], 1, seed = 4), 230, 236)
         add("bw", Bubble("I want to win!", 92f, 0f, thought = true), 110, 100)
         add("bl", Bubble("I want to win!", 92f, 0f, thought = true), 230, 100)
-        add("calW", Calendar(7, 3, "DAILY RUNS", Pal.Mint), 110, 100)
-        add("calL", Calendar(7, 3, "DAILY RUNS", Pal.Coral, misses = setOf(1, 2, 4, 5, 6, 8, 9, 11, 12, 13, 15, 16, 18, 19, 20)), 230, 100)
+        add("calW", Calendar(7, 3, "DAILY RUNS", Pal.Mint), 108, 108, 0.72)
+        add("calL", Calendar(7, 3, "DAILY RUNS", Pal.Coral, misses = setOf(1, 2, 4, 5, 6, 8, 9, 11, 12, 13, 15, 16, 18, 19, 20)), 232, 108, 0.72)
         add("same", Tag("same goal", Pal.Gold), 170, 40)
-        add("sys", Tag("different system", Pal.Mint), 170, 40)
+        add("sys", Tag("different system", Pal.Mint), 170, 50)
         add("you", Bean(Pal.Sky, Pal.Skin[2], Pal.Hair[3], 3, seed = 7), 500, 236)
         add("badge", IdBadge("A RUNNER", Pal.Sky), 500, 100)
         add("box", BallotBox(), 620, 206)
@@ -150,8 +150,8 @@ val ATOMIC_STAGE = listOf(
         beat("double follow-through") { show("bars"); play("bars", dur = 1600); set("you", "point", 0, 400); set("you", "mood", 0.9, 400) }
         beat("Habit stacking") { camera(650, 160, 1.05, 1500); show("table", "cup", "tAfter", delay = 500) }
         beat("meditate for one minute") { show("link"); play("link", dur = 900); show("med", "tMed", delay = 600) }
-        beat("guitar") { camera(1090, 160, 1.05, 1500); show("glowG", "guitar", "tG", delay = 500) }
-        beat("junk food") { show("shelf", "jar") }
+        beat("guitar") { camera(1090, 160, 1.05, 1500); show("glowG", "guitar", "tG", "shelf", "jar", delay = 500, stagger = 140) }
+        beat("junk food") { set("jar", "r", -8, 300); set("jar", "r", 8, 300, 300); set("jar", "r", 0, 300, 600) }
         beat("out of sight") { move("jar", 1240, 300, 1100, 0, Ease.In); hide("jar", delay = 800); show("tJ", delay = 300) }
     },
     stage("Law 2 · Make it attractive", Backdrops.studio(androidx.compose.ui.graphics.Color(0xFF3A2350))) {
