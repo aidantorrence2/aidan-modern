@@ -36,3 +36,6 @@ marketing/**/*.heic
 marketing/**/*.tif
 marketing/**/*.tiff
 public/design-shots/
+
+# Temporary git worktrees used by Claude Code background agents
+.claude/worktrees/
