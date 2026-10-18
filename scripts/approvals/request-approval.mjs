@@ -64,19 +64,29 @@ function detectSource() {
 
 // ---------- storage backends: GitHub Contents API, or plain git ----------
 
+// Retries brief network failures (connect timeouts, resets) so a blip doesn't lose a request.
+async function fetchRetry(url, opts, tries = 3) {
+  for (let i = 1; ; i++) {
+    try { return await fetch(url, opts) } catch (e) {
+      if (i >= tries) die(`network error talking to GitHub: ${e.cause?.code || e.message}`, 1)
+      await sleep(1500 * i)
+    }
+  }
+}
+
 function apiBackend(tok) {
   const url = `https://api.github.com/repos/${REPO}/contents/${FILE}`
   const headers = { Authorization: `Bearer ${tok}`, Accept: 'application/vnd.github+json', 'User-Agent': 'request-approval', 'X-GitHub-Api-Version': '2022-11-28' }
   return {
     async read() {
-      const r = await fetch(`${url}?ref=${encodeURIComponent(BRANCH)}`, { headers, cache: 'no-store' })
+      const r = await fetchRetry(`${url}?ref=${encodeURIComponent(BRANCH)}`, { headers, cache: 'no-store' })
       if (!r.ok) die(`GitHub GET ${r.status}: ${(await r.text()).slice(0, 200)}`, 1)
       const j = await r.json()
       return { db: JSON.parse(Buffer.from(j.content, 'base64').toString('utf8')), sha: j.sha }
     },
     async write(db, sha, message) {
       const body = JSON.stringify({ message, branch: BRANCH, sha, content: Buffer.from(JSON.stringify(db, null, 2) + '\n').toString('base64') })
-      const r = await fetch(url, { method: 'PUT', headers: { ...headers, 'Content-Type': 'application/json' }, body })
+      const r = await fetchRetry(url, { method: 'PUT', headers: { ...headers, 'Content-Type': 'application/json' }, body })
       if (r.status === 409 || r.status === 422) return false // stale sha: caller re-reads and retries
       if (!r.ok) die(`GitHub PUT ${r.status}: ${(await r.text()).slice(0, 200)}`, 1)
       return true
