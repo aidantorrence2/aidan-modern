@@ -1,0 +1,245 @@
+{
+  "_doc": "see flywheel/APPROVALS.md",
+  "items": [
+    {
+      "id": "post:travel-fee",
+      "kind": "post",
+      "source": "claude:flywheel-code",
+      "title": "Post: Travel Fee hook card",
+      "summary": "Paste the venue address, get the travel line for your quote: miles, drive time, your rate, hotel night if needed. $3/month. Not built yet; tell me if you'd use it. aidantorrence2.g",
+      "preview_url": "https://aidantorrence2.github.io/aidan-modern/posts/travel-fee-feed.png",
+      "payload": {
+        "channel": "instagram",
+        "image": "https://aidantorrence2.github.io/aidan-modern/posts/travel-fee-feed.png",
+        "story_image": "https://aidantorrence2.github.io/aidan-modern/posts/travel-fee-story.png",
+        "caption": "Paste the venue address, get the travel line for your quote: miles, drive time, your rate, hotel night if needed. $3/month. Not built yet; tell me if you'd use it. aidantorrence2.github.io/aidan-modern/travel-fee (link in bio)",
+        "link": "https://aidantorrence2.github.io/aidan-modern/travel-fee/?src=post"
+      },
+      "created": "2026-10-18T19:49Z",
+      "expires": "2026-10-23T19:49Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
+    },
+    {
+      "id": "post:workshop-seats",
+      "kind": "post",
+      "source": "claude:flywheel-code",
+      "title": "Post: Workshop Seats hook card",
+      "summary": "Sell workshop and styled-shoot seats from one page: deposits, waitlist, prep page and releases. $6/month, no commission. Not built yet; tell me if you'd use it. aidantorrence2.gith",
+      "preview_url": "https://aidantorrence2.github.io/aidan-modern/posts/workshop-seats-feed.png",
+      "payload": {
+        "channel": "instagram",
+        "image": "https://aidantorrence2.github.io/aidan-modern/posts/workshop-seats-feed.png",
+        "story_image": "https://aidantorrence2.github.io/aidan-modern/posts/workshop-seats-story.png",
+        "caption": "Sell workshop and styled-shoot seats from one page: deposits, waitlist, prep page and releases. $6/month, no commission. Not built yet; tell me if you'd use it. aidantorrence2.github.io/aidan-modern/workshop-seats (link in bio)",
+        "link": "https://aidantorrence2.github.io/aidan-modern/workshop-seats/?src=post"
+      },
+      "created": "2026-10-18T19:49Z",
+      "expires": "2026-10-23T19:49Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
+    },
+    {
+      "id": "post:second-shooter-call",
+      "kind": "post",
+      "source": "claude:flywheel-code",
+      "title": "Post: Second Shooter Call hook card",
+      "summary": "Fill a second-shooter slot with one message to your own list: yes/no taps, one-tap booking, call sheet and pay log included. $4/month. Not built yet; tell me if you'd use it. aidan",
+      "preview_url": "https://aidantorrence2.github.io/aidan-modern/posts/second-shooter-call-feed.png",
+      "payload": {
+        "channel": "instagram",
+        "image": "https://aidantorrence2.github.io/aidan-modern/posts/second-shooter-call-feed.png",
+        "story_image": "https://aidantorrence2.github.io/aidan-modern/posts/second-shooter-call-story.png",
+        "caption": "Fill a second-shooter slot with one message to your own list: yes/no taps, one-tap booking, call sheet and pay log included. $4/month. Not built yet; tell me if you'd use it. aidantorrence2.github.io/aidan-modern/second-shooter-call (link in bio)",
+        "link": "https://aidantorrence2.github.io/aidan-modern/second-shooter-call/?src=post"
+      },
+      "created": "2026-10-18T19:49Z",
+      "expires": "2026-10-23T19:49Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
+    },
+    {
+      "id": "post:price-guide",
+      "kind": "post",
+      "source": "claude:flywheel-code",
+      "title": "Post: Price Guide hook card",
+      "summary": "Packages entered once; the PDF guide, web page and inquiry text stay in sync and tell you who read them. $5/month. Not built yet; tell me if you'd use it. aidantorrence2.github.io/",
+      "preview_url": "https://aidantorrence2.github.io/aidan-modern/posts/price-guide-feed.png",
+      "payload": {
+        "channel": "instagram",
+        "image": "https://aidantorrence2.github.io/aidan-modern/posts/price-guide-feed.png",
+        "story_image": "https://aidantorrence2.github.io/aidan-modern/posts/price-guide-story.png",
+        "caption": "Packages entered once; the PDF guide, web page and inquiry text stay in sync and tell you who read them. $5/month. Not built yet; tell me if you'd use it. aidantorrence2.github.io/aidan-modern/price-guide (link in bio)",
+        "link": "https://aidantorrence2.github.io/aidan-modern/price-guide/?src=post"
+      },
+      "created": "2026-10-18T19:49Z",
+      "expires": "2026-10-23T19:49Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
+    },
+    {
+      "id": "post:event-pickup",
+      "kind": "post",
+      "source": "claude:flywheel-code",
+      "title": "Post: Event Pickup hook card",
+      "summary": "Event guests scan a QR, take a selfie, and get the photos they're in before they leave. $9 per event. Not built yet; tell me if you'd use it. aidantorrence2.github.io/aidan-modern/",
+      "preview_url": "https://aidantorrence2.github.io/aidan-modern/posts/event-pickup-feed.png",
+      "payload": {
+        "channel": "instagram",
+        "image": "https://aidantorrence2.github.io/aidan-modern/posts/event-pickup-feed.png",
+        "story_image": "https://aidantorrence2.github.io/aidan-modern/posts/event-pickup-story.png",
+        "caption": "Event guests scan a QR, take a selfie, and get the photos they're in before they leave. $9 per event. Not built yet; tell me if you'd use it. aidantorrence2.github.io/aidan-modern/event-pickup (link in bio)",
+        "link": "https://aidantorrence2.github.io/aidan-modern/event-pickup/?src=post"
+      },
+      "created": "2026-10-18T19:49Z",
+      "expires": "2026-10-23T19:49Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
+    },
+    {
+      "id": "post:shoot-miles",
+      "kind": "post",
+      "source": "claude:flywheel-code",
+      "title": "Post: Shoot Miles hook card",
+      "summary": "Shoot mileage logged from your calendar, confirmed with a tap, exported in one file. $3/month. Not built yet; tell me if you'd use it. aidantorrence2.github.io/aidan-modern/shoot-m",
+      "preview_url": "https://aidantorrence2.github.io/aidan-modern/posts/shoot-miles-feed.png",
+      "payload": {
+        "channel": "instagram",
+        "image": "https://aidantorrence2.github.io/aidan-modern/posts/shoot-miles-feed.png",
+        "story_image": "https://aidantorrence2.github.io/aidan-modern/posts/shoot-miles-story.png",
+        "caption": "Shoot mileage logged from your calendar, confirmed with a tap, exported in one file. $3/month. Not built yet; tell me if you'd use it. aidantorrence2.github.io/aidan-modern/shoot-miles (link in bio)",
+        "link": "https://aidantorrence2.github.io/aidan-modern/shoot-miles/?src=post"
+      },
+      "created": "2026-10-18T19:49Z",
+      "expires": "2026-10-23T19:49Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
+    },
+    {
+      "id": "post:roll-status",
+      "kind": "post",
+      "source": "claude:flywheel-code",
+      "title": "Post: Roll Status hook card",
+      "summary": "A status link for every roll in a film lab's queue, one tap per stage at the bench. $15/month. Not built yet; labs, tell me if you'd use it. aidantorrence2.github.io/aidan-modern/r",
+      "preview_url": "https://aidantorrence2.github.io/aidan-modern/posts/roll-status-feed.png",
+      "payload": {
+        "channel": "instagram",
+        "image": "https://aidantorrence2.github.io/aidan-modern/posts/roll-status-feed.png",
+        "story_image": "https://aidantorrence2.github.io/aidan-modern/posts/roll-status-story.png",
+        "caption": "A status link for every roll in a film lab's queue, one tap per stage at the bench. $15/month. Not built yet; labs, tell me if you'd use it. aidantorrence2.github.io/aidan-modern/roll-status (link in bio)",
+        "link": "https://aidantorrence2.github.io/aidan-modern/roll-status/?src=post"
+      },
+      "created": "2026-10-18T19:49Z",
+      "expires": "2026-10-23T19:49Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
+    },
+    {
+      "id": "post:first-reply",
+      "kind": "post",
+      "source": "claude:flywheel-code",
+      "title": "Post: First Reply hook card",
+      "summary": "Inquiries answered in two minutes, in your voice, with the date checked and the right guide attached. $6/month. Not built yet; tell me if you'd use it. aidantorrence2.github.io/aid",
+      "preview_url": "https://aidantorrence2.github.io/aidan-modern/posts/first-reply-feed.png",
+      "payload": {
+        "channel": "instagram",
+        "image": "https://aidantorrence2.github.io/aidan-modern/posts/first-reply-feed.png",
+        "story_image": "https://aidantorrence2.github.io/aidan-modern/posts/first-reply-story.png",
+        "caption": "Inquiries answered in two minutes, in your voice, with the date checked and the right guide attached. $6/month. Not built yet; tell me if you'd use it. aidantorrence2.github.io/aidan-modern/first-reply (link in bio)",
+        "link": "https://aidantorrence2.github.io/aidan-modern/first-reply/?src=post"
+      },
+      "created": "2026-10-18T19:49Z",
+      "expires": "2026-10-23T19:49Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
+    },
+    {
+      "id": "post:kit-checkout",
+      "kind": "post",
+      "source": "claude:flywheel-code",
+      "title": "Post: Kit Checkout hook card",
+      "summary": "A checkout record for every lens and body you lend, with condition photo and return reminder. $3/month. Not built yet; tell me if you'd use it. aidantorrence2.github.io/aidan-moder",
+      "preview_url": "https://aidantorrence2.github.io/aidan-modern/posts/kit-checkout-feed.png",
+      "payload": {
+        "channel": "instagram",
+        "image": "https://aidantorrence2.github.io/aidan-modern/posts/kit-checkout-feed.png",
+        "story_image": "https://aidantorrence2.github.io/aidan-modern/posts/kit-checkout-story.png",
+        "caption": "A checkout record for every lens and body you lend, with condition photo and return reminder. $3/month. Not built yet; tell me if you'd use it. aidantorrence2.github.io/aidan-modern/kit-checkout (link in bio)",
+        "link": "https://aidantorrence2.github.io/aidan-modern/kit-checkout/?src=post"
+      },
+      "created": "2026-10-18T19:49Z",
+      "expires": "2026-10-23T19:49Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
+    },
+    {
+      "id": "post:shot-list-live",
+      "kind": "post",
+      "source": "claude:flywheel-code",
+      "title": "Post: Shot List Live hook card",
+      "summary": "A shot list agreed with the client, ticked from your phone on the day, attached to the delivery. $4/month. Not built yet; tell me if you'd use it. aidantorrence2.github.io/aidan-mo",
+      "preview_url": "https://aidantorrence2.github.io/aidan-modern/posts/shot-list-live-feed.png",
+      "payload": {
+        "channel": "instagram",
+        "image": "https://aidantorrence2.github.io/aidan-modern/posts/shot-list-live-feed.png",
+        "story_image": "https://aidantorrence2.github.io/aidan-modern/posts/shot-list-live-story.png",
+        "caption": "A shot list agreed with the client, ticked from your phone on the day, attached to the delivery. $4/month. Not built yet; tell me if you'd use it. aidantorrence2.github.io/aidan-modern/shot-list-live (link in bio)",
+        "link": "https://aidantorrence2.github.io/aidan-modern/shot-list-live/?src=post"
+      },
+      "created": "2026-10-18T19:49Z",
+      "expires": "2026-10-23T19:49Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
+    },
+    {
+      "id": "post:studio-hours",
+      "kind": "post",
+      "source": "claude:flywheel-code",
+      "title": "Post: Studio Hours hook card",
+      "summary": "Rent your studio's empty hours from one page: availability from your calendar, deposit, rules, door code an hour before. $6/month, no commission. Not built yet; tell me if you'd us",
+      "preview_url": "https://aidantorrence2.github.io/aidan-modern/posts/studio-hours-feed.png",
+      "payload": {
+        "channel": "instagram",
+        "image": "https://aidantorrence2.github.io/aidan-modern/posts/studio-hours-feed.png",
+        "story_image": "https://aidantorrence2.github.io/aidan-modern/posts/studio-hours-story.png",
+        "caption": "Rent your studio's empty hours from one page: availability from your calendar, deposit, rules, door code an hour before. $6/month, no commission. Not built yet; tell me if you'd use it. aidantorrence2.github.io/aidan-modern/studio-hours (link in bio)",
+        "link": "https://aidantorrence2.github.io/aidan-modern/studio-hours/?src=post"
+      },
+      "created": "2026-10-18T19:49Z",
+      "expires": "2026-10-23T19:49Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
+    },
+    {
+      "id": "post:edit-tracker",
+      "kind": "post",
+      "source": "claude:flywheel-code",
+      "title": "Post: Edit Tracker hook card",
+      "summary": "A status page per gallery in progress, with a date clients can trust, and a queue view for you. $4/month. Not built yet; tell me if you'd use it. aidantorrence2.github.io/aidan-mod",
+      "preview_url": "https://aidantorrence2.github.io/aidan-modern/posts/edit-tracker-feed.png",
+      "payload": {
+        "channel": "instagram",
+        "image": "https://aidantorrence2.github.io/aidan-modern/posts/edit-tracker-feed.png",
+        "story_image": "https://aidantorrence2.github.io/aidan-modern/posts/edit-tracker-story.png",
+        "caption": "A status page per gallery in progress, with a date clients can trust, and a queue view for you. $4/month. Not built yet; tell me if you'd use it. aidantorrence2.github.io/aidan-modern/edit-tracker (link in bio)",
+        "link": "https://aidantorrence2.github.io/aidan-modern/edit-tracker/?src=post"
+      },
+      "created": "2026-10-18T19:49Z",
+      "expires": "2026-10-23T19:49Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
+    }
+  ]
+}
