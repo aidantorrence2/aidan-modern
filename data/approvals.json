@@ -17,9 +17,9 @@
       },
       "created": "2026-10-18T19:49Z",
       "expires": "2026-10-23T19:49Z",
-      "status": "approved",
-      "decided": "2026-10-18T20:05:56Z",
-      "note": ""
+      "status": "pending",
+      "decided": "2026-10-18T20:06:08Z",
+      "note": "test"
     },
     {
       "id": "post:workshop-seats",
