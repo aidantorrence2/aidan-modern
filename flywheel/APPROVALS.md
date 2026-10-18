@@ -34,3 +34,20 @@ Nothing outward (a post, a sent email, a spend) happens on an item that is not `
   file before writing to avoid clobbering; the file is small on purpose.
 - Approvals in Slack (`approve all`, `approve <names>`) remain valid for email drafts until the app
   is running; once it is, the app is the one place to approve.
+
+## How to ask (any agent: Claude Code, Codex, routines)
+
+Use the command; never hand-edit the file and never ask Aidan in Slack, email or chat instead.
+
+```sh
+node scripts/approvals/request-approval.mjs add --kind email \
+  --title "Send email to Ana Diaz: NY test shoot" \
+  --summary "Follow-up to Ana about the 24 Oct shoot; asks her to confirm the time." \
+  --payload '{"to":"ana@x.com","subject":"...","body":"..."}' --expires-hours 72
+node scripts/approvals/request-approval.mjs status <id>     # or: wait <id> --timeout 900
+node scripts/approvals/request-approval.mjs result <id> "sent:<messageId>"   # after acting on an approved item
+```
+
+On Aidan's Mac the same command is installed as `request-approval`. The title must say plainly
+what happens if he approves; the payload must hold exactly what will be done. Act only on
+`approved`, follow his `note`, and treat denied or expired as no.
