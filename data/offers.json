@@ -2861,6 +2861,317 @@
     }
   },
   {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-18",
+    "slug": "apply-track",
+    "name": "Apply Track",
+    "need": "Lost track of where you applied?",
+    "headline": "Save any job posting in one click, see every application on one board, and get reminded when to follow up.",
+    "buyer": "people applying to many jobs at once",
+    "bullets": [
+      "One click saves a job posting from any site into a board: saved, applied, interviewing, offer.",
+      "Follow-up reminders and a contact log for each company.",
+      "Each job links to the tailored resume you sent for it."
+    ],
+    "price": "$9/month",
+    "priceUsd": 9,
+    "priceNote": "free up to 30 jobs; or $49 lifetime",
+    "reasonPrompt": "How many jobs have you applied to, and how do you keep track now?",
+    "demand": {
+      "checked": "2026-10-18",
+      "summary": "Job application trackers sell subscriptions and lifetime plans, from a $99k indie tool to a 200,000-user extension.",
+      "wtp": "Eztrackr has $99,422 all-time revenue at $19/month or $149 lifetime; Huntr Pro is $40/month.",
+      "signals": [
+        {
+          "url": "https://trustmrr.com/startup/eztrackr-inc",
+          "who": "Eztrackr",
+          "date": "2026-10-18",
+          "quote": "$3,689 MRR, $99,422 all-time revenue, 160 active subscriptions",
+          "seen": "opened"
+        },
+        {
+          "url": "https://huntr.co/pricing",
+          "who": "Huntr pricing page",
+          "date": "2026-10-18",
+          "quote": "Pro $40/mo, $90 per quarter or $160 per six months",
+          "seen": "opened"
+        },
+        {
+          "url": "https://chromewebstore.google.com/detail/teal-free-job-search-cont/opafjjlpbiaicbbgifbejoochmmeikep",
+          "who": "Teal",
+          "date": "2025-06-26",
+          "quote": "200,000 users, 4.7 stars from 3.2K ratings",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Teal, Huntr, Eztrackr, Simplify.",
+      "risks": "Strong free tiers."
+    },
+    "faq": [
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ]
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-18",
+    "slug": "practice-round",
+    "name": "Practice Round",
+    "need": "Freeze up in interviews?",
+    "headline": "Practice out loud before the real interview: mock interviews built from the actual job and your resume, with honest feedback on every answer.",
+    "buyer": "job seekers with interviews coming up",
+    "bullets": [
+      "Mock interviews by voice, built from the job description and your resume.",
+      "Each answer scored for structure, length, filler words and relevance, with a stronger version to compare.",
+      "Practice only. It does not feed you answers during a real interview."
+    ],
+    "price": "$19 for 30 days",
+    "priceUsd": 19,
+    "priceNote": "or $12/month",
+    "reasonPrompt": "What kind of interview do you have coming up, and what worries you about it?",
+    "demand": {
+      "checked": "2026-10-18",
+      "summary": "Interview practice tools earn from small verified revenue to a reported $10M ARR, while the biggest player is rated 2.9 on Trustpilot for misleading marketing and billing.",
+      "wtp": "A Trustpilot reviewer paid USD 350 for an interview tool; CoPrep AI sells credit packs at $12 to $48 with $21,885 all-time revenue.",
+      "signals": [
+        {
+          "url": "https://arr.club/final-round",
+          "who": "Final Round AI (ARR Club data)",
+          "date": "2025-08-01",
+          "quote": "$10M ARR on Aug 1, 2025",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.trustpilot.com/review/finalroundai.com",
+          "who": "Kai (Final Round reviewer)",
+          "date": "2026-09-08",
+          "quote": "This platform feels completely deceptive-misleading marketing up front",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.trustpilot.com/review/finalroundai.com",
+          "who": "Praveen Kumar (Final Round reviewer)",
+          "date": "2026-07-12",
+          "quote": "Paid USD 350 for Final Round AI. Payment succeeded, but my subscription was never activated.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://trustmrr.com/startup/coprep-ai",
+          "who": "CoPrep AI",
+          "date": "2026-10-18",
+          "quote": "$1,833 MRR, $21,885 all-time revenue",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Final Round AI, Big Interview, Yoodli, Google Interview Warmup (free).",
+      "risks": "Free voice chatbots are a substitute; trust in the category is low."
+    },
+    "faq": [
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ]
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-18",
+    "slug": "fit-jobs",
+    "name": "Fit Jobs",
+    "need": "Every job wants a degree or experience you don't have?",
+    "headline": "A daily list of fresh jobs you actually qualify for, each with a fit score and the reasons, and stale or suspicious listings flagged.",
+    "buyer": "job seekers tired of applying to jobs they never had a chance at",
+    "bullets": [
+      "Add your resume once; get a daily list of new jobs that match what you've done.",
+      "Filters that matter: salary, remote, degree required or not, visa.",
+      "Flags listings that look stale, duplicated or suspicious."
+    ],
+    "price": "$9.99/month",
+    "priceUsd": 10,
+    "priceNote": "cancel any time",
+    "reasonPrompt": "What kind of job are you looking for, and what keeps going wrong?",
+    "demand": {
+      "checked": "2026-10-18",
+      "summary": "People pay monthly just to see better job listings, and users of the largest paid board say most jobs want a degree and lack salary filters.",
+      "wtp": "Piston has 912 active subscriptions at €9.99/month; RareRoles 151 subscriptions; FlexJobs charges a subscription and has 8,135 Trustpilot reviews.",
+      "signals": [
+        {
+          "url": "https://trustmrr.com/startup/ton-piston",
+          "who": "Piston",
+          "date": "2026-10-18",
+          "quote": "$9,582 MRR, 912 active subscriptions",
+          "seen": "opened"
+        },
+        {
+          "url": "https://trustmrr.com/startup/rareroles",
+          "who": "RareRoles",
+          "date": "2026-10-18",
+          "quote": "Remote jobs not found on LinkedIn or Indeed. $3,315 MRR",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.trustpilot.com/review/www.flexjobs.com",
+          "who": "Alma Rodriguez (FlexJobs reviewer)",
+          "date": "2026-10-06",
+          "quote": "most of the jobs are looking for a bachelor's degree.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.trustpilot.com/review/www.flexjobs.com",
+          "who": "Don Saathoff (FlexJobs reviewer)",
+          "date": "2026-09-23",
+          "quote": "Flexjobs definitely needs to add a filter for salary and rate",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "FlexJobs, LinkedIn Premium, Jobright, Simplify, RareRoles.",
+      "risks": "Reliable job listing supply and its terms of use."
+    },
+    "faq": [
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ]
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-18",
+    "slug": "bid-check",
+    "name": "Bid Check",
+    "need": "Spending Upwork Connects and hearing nothing back?",
+    "headline": "See which Upwork jobs are worth your Connects before you bid, and get a proposal draft from your own profile to edit and send yourself.",
+    "buyer": "freelancers on Upwork and similar sites",
+    "bullets": [
+      "Scores each job before you bid: payment verified, hiring history, how many proposals it already has.",
+      "Drafts a proposal from your profile and portfolio for you to edit and send. Nothing is submitted for you.",
+      "Alerts for new jobs that match your skills."
+    ],
+    "price": "$12/month",
+    "priceUsd": 12,
+    "priceNote": "free for 5 drafts",
+    "reasonPrompt": "How many Connects do you spend a week, and how many replies do you get?",
+    "faq": [
+      {
+        "q": "Is this made by Upwork?",
+        "a": "No. It is an independent tool. It never bids or sends anything for you."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-18",
+      "summary": "Freelancers already pay for Upwork Connects and complain they are getting more expensive; proposal tools sell monthly plans.",
+      "wtp": "Connects cost $0.15 each and Freelancer Plus $20/month; Copalat charges $9 to $99/month; GigRadar was reported at $106K MRR (2023, secondhand).",
+      "signals": [
+        {
+          "url": "https://www.trustpilot.com/review/www.upwork.com",
+          "who": "Basharat (Upwork reviewer)",
+          "date": "2026-10-15",
+          "quote": "Connects is getting more expensive",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.trustpilot.com/review/www.upwork.com",
+          "who": "Eric Fisher (Upwork reviewer)",
+          "date": "2026-10-15",
+          "quote": "The connections (you need to buy these to compete for work), are a rip off.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://chromewebstore.google.com/detail/upwork-gpt/pegclbgggajipbeekkdgmpccojjcjedd",
+          "who": "Copalat",
+          "date": "2026-10-07",
+          "quote": "$9/$15/$99 per month; 1,000 users",
+          "seen": "opened"
+        },
+        {
+          "url": "https://superframeworks.com/blog/gigradar",
+          "who": "GigRadar (secondhand)",
+          "date": "2023-09-08",
+          "quote": "It's making $106K MRR.",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "GigRadar, Vollna, Upwork's Uma assistant, Copalat.",
+      "risks": "Upwork bans automated bidding; a person must send every proposal."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-18",
+    "slug": "first-product",
+    "name": "First Product",
+    "need": "Want to sell templates or guides online but don't know what sells?",
+    "headline": "See what digital downloads actually sell in your niche and at what price, then turn what you know into an original product, listing and launch plan.",
+    "buyer": "people who want to sell their first digital product: templates, guides, planners, checklists",
+    "bullets": [
+      "Research real demand and price ranges for digital downloads in your niche on the big marketplaces.",
+      "Turn your own expertise into a finished, original product and its listing.",
+      "A launch checklist with honest fee math, so you know what you keep per sale."
+    ],
+    "price": "$15/month",
+    "priceUsd": 15,
+    "priceNote": "or $49 per launch",
+    "reasonPrompt": "What do you know well enough to teach or template?",
+    "faq": [
+      {
+        "q": "Will I make money?",
+        "a": "There is no promise of income. Many first products sell few copies. This helps you pick something people already buy and make it well."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-18",
+      "summary": "Creators pay for storefronts and product-research tools for digital downloads, and complain about fees and payouts on some platforms.",
+      "wtp": "Stan shows 101,590 active subscriptions; EverBee costs $29.99-$99/month with 200,000 extension users; eRank $5.99-$29.99/month.",
+      "signals": [
+        {
+          "url": "https://trustmrr.com/startup/stan",
+          "who": "Stan",
+          "date": "2026-04-20",
+          "quote": "$3,569,654 MRR, 101,590 active subscriptions (data last updated Apr 20, 2026)",
+          "seen": "opened"
+        },
+        {
+          "url": "https://chromewebstore.google.com/detail/everbee/oeicpkgdngoghobnbjngekclpcmpgpij",
+          "who": "EverBee",
+          "date": "2026-10-15",
+          "quote": "200,000 users, 4.1 stars from 399 ratings",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.trustpilot.com/review/gumroad.com",
+          "who": "Julien Tomezach (Gumroad reviewer)",
+          "date": "2026-07-05",
+          "quote": "They say 10% + 0.5cts for transaction fees, it s actually on top of the Stripe fees.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.trustpilot.com/review/stan.store",
+          "who": "Elizabeth (Stan reviewer)",
+          "date": "2026-10-10",
+          "quote": "My offers are converting like never before after I moved them to Stan.",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Stan, Gumroad, Payhip, EverBee, eRank.",
+      "risks": "Must avoid passive-income hype; marketplace rules on AI-made items."
+    }
+  },
+  {
     "slug": "pitch-pilot",
     "name": "Pitch Pilot",
     "headline": "Find the published press and booking contacts for any magazine, agency or talent, and get the cold pitch drafted, in minutes.",
