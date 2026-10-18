@@ -35,6 +35,8 @@ let acted = 0
 let waiting = 0
 for (const item of db.items) {
   if (item.status !== 'approved' || item.payload?.result) continue
+  // Aidan, 18 Oct 2026: nothing is ever posted to his Instagram or other social accounts.
+  if (item.kind === 'post') { console.log(`${item.id}: refused, posting to Aidan's accounts is disabled`); continue }
   if (item.kind === 'post' && item.payload?.channel === 'instagram') {
     if (!igUser || !igToken) { waiting++; continue }
     if (dry) { console.log(`would post ${item.id}`); continue }
