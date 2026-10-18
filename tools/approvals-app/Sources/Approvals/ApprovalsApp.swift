@@ -1,6 +1,6 @@
 import SwiftUI
 import AppKit
-import UserNotifications
+import ServiceManagement
 
 @main
 enum Entry {
@@ -14,13 +14,9 @@ enum Entry {
             return
         }
         #if DEBUG
-        if CommandLine.arguments.contains("--list-delivered") {
-            // Debug-only: list notifications Notification Center currently holds for this bundle id.
-            UNUserNotificationCenter.current().getDeliveredNotifications { list in
-                print("delivered: \(list.count)")
-                for n in list { print("  \(n.request.identifier) | \(n.request.content.title) | actions=\(n.request.content.categoryIdentifier) | attachments=\(n.request.content.attachments.count)") }
-                exit(0)
-            }
+        if let i = CommandLine.arguments.firstIndex(of: "--render-cards"), CommandLine.arguments.count > i + 1 {
+            let out = CommandLine.arguments[i + 1]
+            Task { @MainActor in exit(await ApprovalsStore.shared.renderCards(to: out)) }
             RunLoop.main.run()
         }
         if CommandLine.arguments.contains("--self-test-decide") {
@@ -55,7 +51,13 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationDidFinishLaunching(_ notification: Notification) {
         NSApp.setActivationPolicy(.accessory)
         let store = ApprovalsStore.shared
+        CardPanelController.shared.start(store: store)
         store.startPolling()
-        if !store.hasToken { store.openSettings() }
+        // Zero setup: start at login by default (once; turning it off in Settings sticks).
+        let d = UserDefaults.standard
+        if !d.bool(forKey: "didAutoRegisterLogin") {
+            d.set(true, forKey: "didAutoRegisterLogin")
+            try? SMAppService.mainApp.register()
+        }
     }
 }

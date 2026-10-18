@@ -1,40 +1,36 @@
 # Approvals (macOS menu-bar app)
 
 Approve or deny anything an agent wants to do (Claude Code sessions, Codex, scheduled routines)
-straight from a macOS notification. GitHub is the queue: `data/approvals.json` on branch
+from the app's own floating cards. GitHub is the queue: `data/approvals.json` on branch
 `ccr-d1938557-3pv196` of `aidantorrence2/aidan-modern`. No server, no paid service.
 
-## The one setup step: a GitHub token
+## Setup
 
-1. Open <https://github.com/settings/personal-access-tokens/new> (fine-grained token).
-2. Name it `Approvals app`, pick an expiration (1 year is fine).
-3. **Repository access → Only select repositories → `aidantorrence2/aidan-modern`.**
-4. **Permissions → Repository permissions → Contents: Read and write.** Leave everything else
-   at "No access" (Metadata: Read-only is added automatically).
-5. Generate, copy, then click the ✓ seal icon in the menu bar → **Settings…** → paste into
-   *Personal access token* → **Save token** → **Test connection** (should say `OK: N items`).
+None. The app takes the token your GitHub CLI already has (`gh auth token`), keeps it only in the
+login Keychain (item `com.aidantorrence.approvals`), and refreshes it from `gh` if GitHub ever
+rejects it. It registers itself as a login item on first launch (turn off in Settings).
 
-The token is stored only in your login Keychain (item `com.aidantorrence.approvals`), never in a
-file. During setup the app was seeded with your `gh` CLI token so it works today; replacing it
-with the narrower fine-grained token above is recommended. "Use gh CLI token" in Settings does the
-same seeding again if you ever need it.
-
-Tip: System Settings → Notifications → Approvals → set style to **Alerts** so notifications
-stay on screen until you press Approve or Deny (banners vanish after a few seconds; their buttons
-then live in Notification Center).
+Optional: to use a narrower token instead, create a fine-grained token at
+<https://github.com/settings/personal-access-tokens/new> with only `aidantorrence2/aidan-modern`
+and **Contents: Read and write**, then paste it in Settings → Save token.
 
 ## Using it
 
-- A new `pending`, not-expired item produces a notification within one poll (default 60 s) with
-  the title, summary, preview image and **Approve / Deny** buttons. Clicking the body opens the
-  item window (preview image, full payload as JSON, optional note).
-- The menu-bar icon shows the pending count. The panel groups items by `kind`, with Approve, Deny,
+- Requests show as the app's own floating cards in the top-right corner (not macOS
+  notifications). They appear on every Space and over full-screen apps, never steal focus, and
+  stay until you act. Each card shows kind, source agent, age, title, summary and preview image,
+  with **Approve**, **Deny**, **4h** (snooze, the card comes back after) and **Details**.
+  Click a card's text or Details for the full payload as JSON, the large preview and a note field.
+  The ✕ hides a card; the item stays in the menu-bar list ("Show cards" brings them back).
+- Up to three cards show at once with a "+N more waiting" row; the next slides in as you decide.
+  A soft sound plays when a new request arrives (Settings to turn off).
+- New items appear within one poll (default 60 s).
+- The menu-bar icon shows the pending count. Its panel groups items by `kind`, with Approve, Deny,
   Snooze 4h per item and "Approve all <kind>" per group.
 - A decision writes `status`, `decided` (ISO 8601 UTC) and `note` back with a commit such as
-  `Approve post:travel-fee`. On a sha conflict it re-reads and retries once; if GitHub is
-  unreachable the decision is kept locally and retried on the next poll.
-- Expired items are hidden and never notified. Quiet hours (Settings) hold notifications until
-  they end. Settings also has Launch at login.
+  `Approve post:travel-fee` and shows a small ✓ toast. On a sha conflict it re-reads and retries
+  once; if GitHub is unreachable the decision is kept on the Mac and retried on the next poll.
+- Expired items are hidden. Quiet hours (Settings) hide cards until they end.
 
 ## Build and install
 
@@ -45,20 +41,20 @@ cd tools/approvals-app
 ./build-app.sh --install   # release build -> build/Approvals.app -> /Applications, relaunch
 ```
 
-`swift build` alone does a debug build. The app is ad-hoc signed; after a rebuild, store the token
-again (Settings → Save token) if macOS asks for Keychain access.
+`swift build` alone does a debug build. The app is ad-hoc signed; after a rebuild run
+`gh auth token | /Applications/Approvals.app/Contents/MacOS/Approvals --set-token` so the new
+binary owns the Keychain item and macOS doesn't ask.
 
-Debug builds (`swift build`, binary at `.build/debug/Approvals`) have two test flags that are not
-compiled into the release app, so nothing on this Mac can approve through the app headlessly:
+Debug builds (`.build/debug/Approvals`) have two test flags that are not compiled into the release
+app, so nothing on this Mac can approve through the app headlessly:
 
 ```sh
 APPROVALS_TOKEN="$(gh auth token)" .build/debug/Approvals --self-test-decide <id> <approved|denied|pending> [note] [--stale-sha <sha>]
+APPROVALS_TOKEN="$(gh auth token)" .build/debug/Approvals --render-cards /tmp/cards.png
 ```
 
-`--self-test-decide` runs the same decide → PUT path the notification buttons use
-(`--stale-sha` forces the 409 retry). `--list-delivered` lists delivered notifications when run
-from inside an .app bundle. The release app writes its last notification outcome to
-`defaults read com.aidantorrence.approvals diag.lastNotify`.
+`--self-test-decide` runs the same decide → PUT path the card buttons use (`--stale-sha` forces
+the 409 retry). `--render-cards` renders the live queue's card stack to a PNG.
 
 ## How agents add items
 
@@ -89,9 +85,9 @@ those three lines.
 
 ## Files
 
-- `Sources/Approvals/ApprovalsStore.swift` – polling, diffing, decisions, write-back
+- `Sources/Approvals/ApprovalsStore.swift` – polling, card queue, decisions, write-back, gh token import
 - `Sources/Approvals/GitHubClient.swift` – Contents API GET (ETag) / PUT
-- `Sources/Approvals/Notifications.swift` – UserNotifications with Approve / Deny actions
+- `Sources/Approvals/CardPanel.swift` – the floating card panel (custom notifications)
 - `Sources/Approvals/JSONValue.swift` – order-preserving JSON parse/serialize
 - `Sources/Approvals/Keychain.swift` – token storage (Security framework)
 - `MenuView.swift`, `ItemDetailView.swift`, `SettingsView.swift` – SwiftUI UI

@@ -10,7 +10,7 @@ struct MenuView: View {
             if store.visibleItems.isEmpty {
                 VStack(spacing: 6) {
                     Image(systemName: "checkmark.circle").font(.largeTitle).foregroundStyle(.secondary)
-                    Text(store.hasToken ? "Nothing waiting for you." : "Set a GitHub token in Settings to start.")
+                    Text(store.hasToken ? "Nothing waiting for you." : "Can't reach GitHub yet. Is the gh CLI logged in?")
                         .foregroundStyle(.secondary)
                 }
                 .frame(maxWidth: .infinity).padding(24)
@@ -55,6 +55,9 @@ struct MenuView: View {
                 Text("Synced \(t.formatted(date: .omitted, time: .shortened))").font(.caption).foregroundStyle(.secondary)
             }
             HStack {
+                if !store.dismissed.isEmpty {
+                    Button("Show cards") { store.showAllCards() }.buttonStyle(.link).font(.caption)
+                }
                 if store.snoozedCount > 0 {
                     Button("Unsnooze \(store.snoozedCount)") { store.clearSnoozes() }.buttonStyle(.link).font(.caption)
                 }

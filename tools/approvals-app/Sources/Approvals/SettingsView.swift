@@ -14,7 +14,9 @@ struct SettingsView: View {
     var body: some View {
         Form {
             Section("GitHub") {
-                SecureField("Personal access token", text: $token)
+                Text("Uses your GitHub CLI login automatically. Paste a token only to use a different one.")
+                    .font(.caption).foregroundStyle(.secondary)
+                SecureField("Personal access token (optional)", text: $token)
                     .textFieldStyle(.roundedBorder)
                 HStack {
                     Button("Save token") { saveToken() }.disabled(token.isEmpty)
@@ -44,14 +46,20 @@ struct SettingsView: View {
                         .lineLimit(2)
                 }
             }
+            Section("Cards") {
+                Toggle("Play a sound when a new request arrives", isOn: $settings.playSound)
+                if !store.dismissed.isEmpty {
+                    Button("Show \(store.dismissed.count) hidden cards again") { store.showAllCards() }
+                }
+            }
             Section("Quiet hours") {
-                Toggle("Hold notifications during quiet hours", isOn: $settings.quietEnabled)
+                Toggle("Hide cards during quiet hours", isOn: $settings.quietEnabled)
                 HStack {
                     DatePicker("From", selection: minutesBinding($settings.quietStart), displayedComponents: .hourAndMinute)
                     DatePicker("to", selection: minutesBinding($settings.quietEnd), displayedComponents: .hourAndMinute)
                 }
                 .disabled(!settings.quietEnabled)
-                Text("Items that arrive during quiet hours are notified when they end. Approving in the menu still works.")
+                Text("Cards come back when quiet hours end. The menu-bar list still works.")
                     .font(.caption).foregroundStyle(.secondary)
             }
             Section("General") {

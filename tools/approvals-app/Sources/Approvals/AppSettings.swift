@@ -14,6 +14,7 @@ final class AppSettings: ObservableObject {
     /// minutes after midnight, local time
     @Published var quietStart: Int { didSet { d.set(quietStart, forKey: "quietStart") } }
     @Published var quietEnd: Int { didSet { d.set(quietEnd, forKey: "quietEnd") } }
+    @Published var playSound: Bool { didSet { d.set(playSound, forKey: "playSound") } }
 
     private init() {
         repo = d.string(forKey: "repo") ?? "aidantorrence2/aidan-modern"
@@ -24,6 +25,7 @@ final class AppSettings: ObservableObject {
         quietEnabled = d.bool(forKey: "quietEnabled")
         quietStart = d.object(forKey: "quietStart") as? Int ?? 23 * 60
         quietEnd = d.object(forKey: "quietEnd") as? Int ?? 8 * 60
+        playSound = d.object(forKey: "playSound") as? Bool ?? true
     }
 
     var isQuietNow: Bool {
