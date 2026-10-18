@@ -60,35 +60,32 @@ APPROVALS_TOKEN="$(gh auth token)" .build/debug/Approvals --render-cards /tmp/ca
 `--self-test-decide` runs the same decide → PUT path the card buttons use (`--stale-sha` forces
 the 409 retry). `--render-cards` renders the live queue's card stack to a PNG.
 
-## How agents add items
+## How agents ask (Claude Code, Codex, routines)
 
-The contract is `flywheel/APPROVALS.md` on the queue branch. In short: re-read the file, append
-an item to `items`, write the whole file back (git push or the Contents API with the current
-`sha`). Never change `status`; only the app (you) does.
+Every agent uses one command, `request-approval` (source: `bin/request-approval.mjs`; installed as
+`~/.local/bin/request-approval`; also on the queue branch as `scripts/approvals/request-approval.mjs`
+for cloud routines). The rule telling agents to use it, instead of asking in chat, Slack or email,
+is in `~/.claude/CLAUDE.md` and `~/.codex/AGENTS.md`.
 
-```json
-{
-  "id": "email:pitch-acme",
-  "kind": "email",
-  "source": "codex",
-  "title": "Email: pitch to Acme Studio",
-  "summary": "One or two lines you can decide on without opening anything.",
-  "preview_url": "https://.../optional.png",
-  "payload": { "to": "...", "subject": "...", "body": "..." },
-  "created": "2026-10-18T20:05Z",
-  "expires": "2026-10-21T20:05Z",
-  "status": "pending",
-  "decided": null,
-  "note": ""
-}
+```sh
+request-approval add --kind email --title "Send email to Ana Diaz: NY test shoot" \
+  --summary "Follow-up about the 24 Oct shoot" \
+  --payload '{"to":"ana@x.com","subject":"...","body":"..."}' --expires-hours 72
+request-approval status <id>            # or: wait <id> --timeout 900 (exit 0 approved, 3 denied/expired, 4 pending)
+request-approval result <id> "sent:<messageId>"   # after acting; refused unless approved
+request-approval list --pending
 ```
 
-`kind` is `post | email | spend | build | other`; `source` shows as a tag; no per-agent logic.
-The app preserves key order and formatting (2-space JSON), so a decision commit diff touches only
-those three lines.
+It writes through the GitHub API (token from `GH_TOKEN`/`GITHUB_TOKEN` or `gh auth token`) and falls
+back to a sparse git clone + push when no token exists. After editing `bin/request-approval.mjs`,
+copy it again to `~/.local/bin/request-approval` and to the queue branch.
+
+`kind` is `post | email | spend | build | other`; `source` shows as a tag; no per-agent logic. The
+item schema is in `flywheel/APPROVALS.md` on the queue branch. Agents never change `status`.
 
 ## Files
 
+- `bin/request-approval.mjs` – the command every agent uses to ask
 - `Sources/Approvals/ApprovalsStore.swift` – polling, card queue, decisions, write-back, gh token import
 - `Sources/Approvals/GitHubClient.swift` – Contents API GET (ETag) / PUT
 - `Sources/Approvals/CardPanel.swift` – the floating card panel (custom notifications)
