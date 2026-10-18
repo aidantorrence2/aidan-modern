@@ -393,6 +393,24 @@
       "status": "denied",
       "decided": "2026-10-18T21:20:59Z",
       "note": ""
+    },
+    {
+      "id": "other:android-notif-test-1",
+      "kind": "other",
+      "source": "claude:android-test",
+      "title": "Test: phone notification with Approve and Deny",
+      "summary": "Android test of the new notification. Please leave it for 2 minutes.",
+      "preview_url": "https://www.aidantorrence.com/images/large/000001-11.jpg",
+      "payload": {
+        "image": "https://www.aidantorrence.com/images/large/000001-11.jpg",
+        "description": "TEST ONLY: nothing happens either way. Checking the heads-up banner and its buttons.",
+        "link": "https://www.aidantorrence.com/"
+      },
+      "created": "2026-10-18T23:42:49Z",
+      "expires": "2026-10-19T00:42:49Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
     }
   ]
 }
