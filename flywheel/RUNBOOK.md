@@ -52,7 +52,8 @@ already visible in the market (step 0). Order:
 4. **Launch.** Only candidates that passed the gate in step 0b. `node scripts/flywheel/new-offer.mjs
    --slug ... --name ...`, set `type: "software"`, paste the `demand` block (signals with url,
    quote, seen; wtp; checked date), write the copy in the posters' own words, render the kit,
-   `npm run test:offers`. Add the row to the doc's Idea pipeline with the hosted link. Never
+   `npm run test:offers`, then `node scripts/flywheel/demand-log.mjs` to refresh the live table in
+   `flywheel/DEMAND.md`. Add the row to the doc's Idea pipeline with the hosted link. Never
    launch an offer from a guess, a brainstorm or "photographers probably need this".
 5. **Build.** For any `threshold_met`/`building` offer: one build chunk under
    `app/tools/<slug>/` (or a published artifact if it needs no backend), tests pass, note in

@@ -2168,6 +2168,539 @@
     }
   },
   {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-18",
+    "slug": "profile-back",
+    "name": "Profile Back",
+    "headline": "Google Business Profile suspended? Find the likely reason, fix it, and send an appeal with the right evidence, without paying a freelancer to guess.",
+    "buyer": "local businesses whose Google Maps listing was suspended or taken offline",
+    "bullets": [
+      "Answer a few questions about your listing and recent edits; get the policy triggers that most likely apply to you.",
+      "A checklist of what to fix first: address, name, category, website and the edits that may have triggered review.",
+      "An appeal pack with the documents to gather and the wording to submit."
+    ],
+    "price": "$39 per case",
+    "priceUsd": 39,
+    "priceNote": "one listing, one-off",
+    "reasonPrompt": "Is your profile suspended now? What did Google say, and what have you tried?",
+    "faq": [
+      {
+        "q": "Is this made by Google?",
+        "a": "No. It is an independent guide and checker. It never logs in to your Google account."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-18",
+      "summary": "Suspended businesses post paid jobs for Google Business Profile reinstatement every month, worldwide.",
+      "wtp": "Budgets from $10 to $750; average bids from about $25 to $414; about 30 such Freelancer posts between Sep 2025 and Oct 2026.",
+      "signals": [
+        {
+          "url": "https://www.freelancer.com/projects/google-ads/Reinstate-Google-Business-Listing",
+          "who": "Freelancer buyer, Detroit US (39864655)",
+          "date": "2025-10-09",
+          "quote": "My Google Business Profile was recently suspended",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.freelancer.com/projects/audit/Revive-Suspended-Google-Business-Profile",
+          "who": "Star Choice Finance, Forest Lake AU (39899416)",
+          "date": "2025-10-20",
+          "quote": "I filed one appeal, it was rejected, and the portal no longer lets me submit another.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.freelancer.com/projects/audit/Reinstate-Suspended-Google-Business",
+          "who": "Freelancer buyer, Cape Coral US (40429273)",
+          "date": "2026-05-08",
+          "quote": "I suspect that edit may have triggered the problem.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.freelancer.com/projects/audit/Reinstate-Suspended-Google-Business-40503865",
+          "who": "Key Remodeling & Design, North Port US (40503865)",
+          "date": "2026-06-10",
+          "quote": "a guidelines violation tied to an unverified business location.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.freelancer.com/projects/account-management/Fast-Google-Profile-Reinstatement",
+          "who": "Freelancer buyer, Northallerton UK (40710812)",
+          "date": "2026-09-14",
+          "quote": "every day the listing remains down is costing visibility and revenue.",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Freelancers and agencies doing reinstatements.",
+      "risks": "No tool can guarantee reinstatement; Google decides."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-18",
+    "slug": "vector-logo",
+    "name": "Vector Logo",
+    "headline": "Turn a PNG, JPEG or AI-generated logo into a clean, print-ready vector logo pack (SVG, AI, EPS, PDF) in minutes, for print, embroidery and merch.",
+    "buyer": "small brands with a logo only as an image file, including AI-generated logos",
+    "bullets": [
+      "Upload your logo image; get a true vector redraw with clean curves and flat colours, not an auto-trace mess.",
+      "A full logo pack: SVG, EPS, AI, PDF and transparent PNGs in every size, plus one-colour and reversed versions.",
+      "Fix spots by hand in the browser before you download."
+    ],
+    "price": "$12 per logo",
+    "priceUsd": 12,
+    "priceNote": "full logo pack",
+    "reasonPrompt": "What format is your logo in now, and what do you need it for?",
+    "faq": [
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-18",
+      "summary": "Buyers post dozens of paid jobs a month to redraw image logos, often AI-generated, as print-ready vectors.",
+      "wtp": "Freelancer budgets from about $10 to $250 with averages of $31 to $84; vector-tracing sellers on Fiverr show hundreds of reviews (snippet only).",
+      "signals": [
+        {
+          "url": "https://www.freelancer.com/api/projects/0.1/projects/?projects[]=40480152&full_description=true",
+          "who": "Freelancer buyer, Minneapolis US (40480152)",
+          "date": "2026-05-30",
+          "quote": "I already have the elephant logo in a flat JPEG/PNG; what I need now is a clean, fully-scalable vector master",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.freelancer.com/api/projects/0.1/projects/?projects[]=40485025&full_description=true",
+          "who": "Freelancer buyer, Estacada US (40485025)",
+          "date": "2026-06-02",
+          "quote": "I simply need them redrawn in Adobe Illustrator",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.freelancer.com/api/projects/0.1/projects/?projects[]=40486313&full_description=true",
+          "who": "Freelancer buyer, Warrenton US (40486313)",
+          "date": "2026-06-02",
+          "quote": "an AI-generated image—so your job is strictly to rebuild it as a true vector",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.freelancer.com/api/projects/0.1/projects/?projects[]=40487818&full_description=true",
+          "who": "Freelancer buyer, Sydney AU (40487818)",
+          "date": "2026-06-03",
+          "quote": "Recreate wiity.ai logo as professional vector artwork and export full logo pack",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "vectorizer.ai, Vector Magic, freelance tracers.",
+      "risks": "Auto-tracing quality is the whole product."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-18",
+    "slug": "kdp-ready",
+    "name": "KDP Ready",
+    "headline": "Upload your Word or PDF manuscript and get a reflowable Kindle eBook and a print-ready 6x9 paperback PDF that pass Amazon KDP's checks.",
+    "buyer": "self-publishing authors putting books on Amazon KDP",
+    "bullets": [
+      "One upload makes both files: a reflowable EPUB for Kindle and a print PDF at your trim size.",
+      "Chapter headings, table of contents, page numbers and margins set to KDP's requirements.",
+      "Preview both before downloading; re-run free after edits."
+    ],
+    "price": "$29 per book",
+    "priceUsd": 29,
+    "priceNote": "both files, free re-runs",
+    "reasonPrompt": "What are you publishing, and how are you formatting it now?",
+    "faq": [
+      {
+        "q": "Is this made by Amazon?",
+        "a": "No. It is an independent tool."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-18",
+      "summary": "Authors post paid jobs every week to turn a manuscript into KDP-ready Kindle and paperback files.",
+      "wtp": "Freelancer budgets from $15 to $250 with averages up to $172; Fiverr formatting gigs with 308 and 933 reviews charge up to $50 and $50-200 (snippet only).",
+      "signals": [
+        {
+          "url": "https://www.freelancer.com/api/projects/0.1/projects/?projects[]=40761292&full_description=true",
+          "who": "Freelancer buyer, Killeen US (40761292)",
+          "date": "2026-10-10",
+          "quote": "a 300-page manuscript in Word that now needs to become two flawless files—one for KDP paperback, one for Kindle e-book",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.freelancer.com/api/projects/0.1/projects/?projects[]=40754129&full_description=true",
+          "who": "Freelancer buyer, London UK (40754129)",
+          "date": "2026-10-06",
+          "quote": "a clean, fully-flowing ebook file that KDP will recognise as reflowable content.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.freelancer.com/api/projects/0.1/projects/?projects[]=40723021&full_description=true",
+          "who": "Freelancer buyer, Upton upon Severn UK (40723021)",
+          "date": "2026-09-20",
+          "quote": "format my fiction novel for Amazon Kindle Direct Publishing and ensure it's ready for 6 x 9 inches paperback.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.freelancer.com/api/projects/0.1/projects/?projects[]=40647389&full_description=true",
+          "who": "Freelancer buyer, Long Beach US (40647389)",
+          "date": "2026-08-14",
+          "quote": "self-publishing my biographical memoir on Kindle using Kindle Create.",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Vellum, Atticus, Kindle Create (free).",
+      "risks": "Free Kindle Create exists; the angle is both files, done for you."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-18",
+    "slug": "inbox-fix",
+    "name": "Inbox Fix",
+    "headline": "Find out why your email lands in spam, and get the exact SPF, DKIM and DMARC records to paste into your DNS, plus a weekly check that they still pass.",
+    "buyer": "small businesses sending from Google Workspace, Microsoft 365 or their own domain",
+    "bullets": [
+      "Enter your domain; see what's broken in SPF, DKIM and DMARC, in plain words.",
+      "Copy-paste DNS records written for your provider and your mail services.",
+      "A weekly re-check and an alert if something starts failing again."
+    ],
+    "price": "$9/month",
+    "priceUsd": 9,
+    "priceNote": "one domain",
+    "reasonPrompt": "Where does your email land today, and what do you send it from?",
+    "faq": [
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-18",
+      "summary": "Businesses post paid jobs every month because their email lands in spam and their SPF, DKIM or DMARC settings are wrong.",
+      "wtp": "Budgets from $10 to $250 with averages around $121-127; a Fiverr deliverability gig shows 63 reviews (snippet only).",
+      "signals": [
+        {
+          "url": "https://www.freelancer.com/api/projects/0.1/projects/?projects[]=40426750&full_description=true",
+          "who": "Freelancer buyer, US (40426750)",
+          "date": "2026-05-07",
+          "quote": "My outgoing messages from Google Workspace often land in spam and I need that fixed.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.freelancer.com/api/projects/0.1/projects/?projects[]=40077901&full_description=true",
+          "who": "Freelancer buyer, Hyde UK (40077901)",
+          "date": "2025-12-19",
+          "quote": "think the settings are incorrect/contradictory",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.freelancer.com/api/projects/0.1/projects/?projects[]=39974121&full_description=true",
+          "who": "Freelancer buyer, Sarasota US (39974121)",
+          "date": "2025-11-12",
+          "quote": "DMARC: Configured but failing",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.freelancer.com/api/projects/0.1/projects/?projects[]=40700727&full_description=true",
+          "who": "Freelancer buyer, Budapest HU (40700727)",
+          "date": "2026-09-09",
+          "quote": "consistently landing in spam and I need that corrected today.",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "MXToolbox, dmarcian, EasyDMARC, Valimail.",
+      "risks": "Crowded; the angle is fix-it records written for you."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-18",
+    "slug": "tally-import",
+    "name": "Tally Import",
+    "headline": "Import your Excel sales, purchases and bank statements into TallyPrime in one clean upload: map the columns once, and every voucher lands where it should.",
+    "buyer": "Indian businesses and accountants who keep data in Excel and file in TallyPrime",
+    "bullets": [
+      "Upload an Excel sheet; map its columns to Tally fields once and save the mapping.",
+      "Creates sales, purchase, payment, receipt and bank vouchers with ledgers and GST.",
+      "Check every voucher before import; nothing is re-typed."
+    ],
+    "price": "₹499/month",
+    "priceUsd": 6,
+    "priceNote": "unlimited imports",
+    "reasonPrompt": "What do you import into Tally, and how long does it take now?",
+    "faq": [
+      {
+        "q": "Is this made by Tally Solutions?",
+        "a": "No. It is an independent tool."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-18",
+      "summary": "Businesses and accountants post paid jobs every month to move Excel data into TallyPrime; one says the third-party template they use falls short.",
+      "wtp": "Freelancer budgets from about ₹600 to ₹12,500, with averages around ₹5,600-6,500, and up to $750 for one buyer.",
+      "signals": [
+        {
+          "url": "https://www.freelancer.com/api/projects/0.1/projects/?projects[]=40115251&full_description=true",
+          "who": "Freelancer buyer, Kannur IN (40115251)",
+          "date": "2026-01-03",
+          "quote": "a single .XLSX workbook that must be moved into Tally in one clean bulk upload.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.freelancer.com/api/projects/0.1/projects/?projects[]=40124380&full_description=true",
+          "who": "Freelancer buyer, Delhi IN (40124380)",
+          "date": "2026-01-06",
+          "quote": "click Import, point to the spreadsheet, and see each invoice appear in the Sales Voucher register",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.freelancer.com/api/projects/0.1/projects/?projects[]=40134982&full_description=true",
+          "who": "Freelancer buyer, Gurgaon IN (40134982)",
+          "date": "2026-01-10",
+          "quote": "every transaction moved into Tally without re-typing a single line.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.freelancer.com/api/projects/0.1/projects/?projects[]=40267890&full_description=true",
+          "who": "Freelancer buyer, Jodhpur IN (40267890)",
+          "date": "2026-03-01",
+          "quote": "We are already using third party tempelate to import",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Tally's own Excel import, paid templates and TDL add-ons.",
+      "risks": "TallyPrime's native Excel import improves each release."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-18",
+    "slug": "team-requests",
+    "name": "Team Requests",
+    "headline": "Share API collections with your small team again, for a few dollars, after Postman's free plan became single-user. Import your Postman collections in one step.",
+    "buyer": "small dev teams that shared a free Postman workspace",
+    "bullets": [
+      "Import Postman collections and environments; your requests keep working.",
+      "Shared workspace for up to 5 people on one low price.",
+      "Plain files you can export any time, so you're never locked in again."
+    ],
+    "price": "$5/month",
+    "priceUsd": 5,
+    "priceNote": "up to 5 people",
+    "reasonPrompt": "How many people on your team used the free Postman workspace, and what are you doing now?",
+    "faq": [
+      {
+        "q": "Is this made by Postman?",
+        "a": "No. It is an independent tool that imports Postman's export format."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-18",
+      "summary": "Postman's free plan became single-user in March 2026; teams of three on free workspaces report being unable to send requests or export.",
+      "wtp": "Postman Team is $19 per user a month and Solo $9, billed annually.",
+      "signals": [
+        {
+          "url": "https://community.postman.com/t/89020",
+          "who": "lakioktodocs",
+          "date": "2026-03-03",
+          "quote": "We have a 3-man team, in a free workspace. … I am not able to send ANY requests.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://community.postman.com/t/89020",
+          "who": "martian0x80",
+          "date": "2026-03-04",
+          "quote": "I can't export it either. I am literally stuck rn.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://community.postman.com/t/89020",
+          "who": "zk-explorer",
+          "date": "2026-03-04",
+          "quote": "Admin role, free shared workspace, 3 people. Not able to add folders / requests.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://community.postman.com/t/89959",
+          "who": "john26-carter01234",
+          "date": "2026-04-20",
+          "quote": "without constantly running into friction.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.postman.com/pricing/",
+          "who": "Postman pricing page",
+          "date": "2026-10-18",
+          "quote": "Team $19 per user per month; Solo $9, billed annually",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Bruno, Insomnia, Hoppscotch, Apidog.",
+      "risks": "Free open-source alternatives exist."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-18",
+    "slug": "receipt-export",
+    "name": "Receipt Export",
+    "headline": "Export every receipt and attachment from Xero in one go, sorted into folders, plus a report of every transaction with no document attached, before your audit or year end.",
+    "buyer": "accountants, auditors, grant recipients and businesses leaving Xero",
+    "bullets": [
+      "Download all attachments for a date range, named and foldered by month, contact or account.",
+      "A missing-documents report: every bank transaction, bill and invoice with nothing attached.",
+      "Run it again before each audit or tax deadline."
+    ],
+    "price": "$19 per export",
+    "priceUsd": 19,
+    "priceNote": "or $9/month for regular checks",
+    "reasonPrompt": "When did you last need all your Xero receipts in one place, and how did you get them?",
+    "faq": [
+      {
+        "q": "Is this made by Xero?",
+        "a": "No. It is an independent tool that connects to Xero with your permission."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-18",
+      "summary": "Xero users have voted for bulk attachment export (697 votes) and a file attachment report (300 votes); Xero staff say neither is planned.",
+      "wtp": "Users report buying one-off tools for this: BoxKite US$39 and BulkOps US$29.",
+      "signals": [
+        {
+          "url": "https://productideas.xero.com/forums/967130-contacts-documents/suggestions/44960626-document-bulk-export-print-attached-files",
+          "who": "Josh Freund",
+          "date": "2026-04-17",
+          "quote": "It's crazy that we cannot easily bulk export our receipts from Files Archive.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://productideas.xero.com/forums/967130-contacts-documents/suggestions/44960626-document-bulk-export-print-attached-files",
+          "who": "Rhys van der Waerden",
+          "date": "2026-07-01",
+          "quote": "I need to provide three years of invoices for a grant application.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://productideas.xero.com/forums/967130-contacts-documents/suggestions/44960626-document-bulk-export-print-attached-files",
+          "who": "David Corry",
+          "date": "2026-08-11",
+          "quote": "Just tried BoxKite - they have a one-off backup fee option too USD$39.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://productideas.xero.com/forums/967133-reports-tax/suggestions/44961178-reporting-file-attachment-report",
+          "who": "Jane Winning",
+          "date": "2025-02-13",
+          "quote": "It is essential for accountants to be able to determine if there are any supporting documentation gaps",
+          "seen": "opened"
+        },
+        {
+          "url": "https://productideas.xero.com/forums/967133-reports-tax/suggestions/44961178-reporting-file-attachment-report",
+          "who": "Adrian Fleming",
+          "date": "2024-11-08",
+          "quote": "Very difficult to prep for an audit without this function.",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "BoxKite, BulkOps, Control-C, instaClaim.",
+      "risks": "Low barrier; some users script it themselves."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-18",
+    "slug": "billable-hours",
+    "name": "Billable Hours",
+    "headline": "Client timesheets and retainer reports from ClickUp time tracking: billable vs non-billable, decimal hours, and how much of each retainer is used, ready to invoice.",
+    "buyer": "agencies, freelancers and consultancies that track time in ClickUp and bill clients",
+    "bullets": [
+      "One timesheet per client and period, in decimal hours, split billable and non-billable.",
+      "Retainer burn-down: hours used, hours left, and a warning before a client runs over.",
+      "Export to CSV or PDF in a format you can attach to an invoice."
+    ],
+    "price": "$9/month",
+    "priceUsd": 9,
+    "priceNote": "one workspace",
+    "reasonPrompt": "How do you turn ClickUp time into client invoices today?",
+    "faq": [
+      {
+        "q": "Is this made by ClickUp?",
+        "a": "No. It is an independent tool that connects to ClickUp with your permission."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-18",
+      "summary": "ClickUp users vote for usable time-tracking exports (364 votes) and better native time tracking (2.1k votes), and some pay for Everhour on top.",
+      "wtp": "Users pay for Everhour to get billable reporting on top of ClickUp.",
+      "signals": [
+        {
+          "url": "https://feedback.clickup.com/feature-requests/p/time-tracking-exports",
+          "who": "Jana Michelová",
+          "date": "2025-08-05",
+          "quote": "Such a crucial feature to download timesheet and invoice clients",
+          "seen": "opened"
+        },
+        {
+          "url": "https://feedback.clickup.com/feature-requests/p/time-tracking-exports",
+          "who": "Dan Eves",
+          "date": "2025-08-21",
+          "quote": "the CSV is unuseable",
+          "seen": "opened"
+        },
+        {
+          "url": "https://feedback.clickup.com/feature-requests/p/improve-native-time-tracking-big-time",
+          "who": "Gary Trojanowski",
+          "date": "2026-05-19",
+          "quote": "We currently use the Everhour extension to get this on top of ClickUp",
+          "seen": "opened"
+        },
+        {
+          "url": "https://feedback.clickup.com/feature-requests/p/improve-native-time-tracking-big-time",
+          "who": "Patty Tulloch",
+          "date": "2026-05-18",
+          "quote": "I would also need to be able to see by Billable vs Non Billable time.",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Everhour, Toggl, Harvest.",
+      "risks": "ClickUp shows the native improvement as building now."
+    }
+  },
+  {
     "slug": "pitch-pilot",
     "name": "Pitch Pilot",
     "headline": "Find the published press and booking contacts for any magazine, agency or talent, and get the cold pitch drafted, in minutes.",
