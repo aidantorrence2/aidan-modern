@@ -762,7 +762,8 @@
       "community": "Creators with a multilingual audience: do you ever post translated versions? I'm deciding whether to build a drop-a-file tool: word-timed transcript, translation with your own glossary, burned-in subtitles per language, five MP4s and SRTs back, optional native check. $7/month. Pre-launch page, no charge, just an 'I'd pay' button: aidantorrence.com/offers/subtitle-pack",
       "pitchSubject": "Five subtitled versions of one video (pre-launch)",
       "pitch": "Hi {first},\n\nI'm Aidan, a photographer and short-form creator traveling through Asia. I saw {specific reference}.\n\nI'm deciding whether to build a tool that turns one vertical video into five subtitled language versions, with your glossary kept and an optional native check, $7 a month.\n\nIf that's useful, the pre-launch page has an 'I'd pay' button: aidantorrence.com/offers/subtitle-pack?src=email\n\nIf not, one line on why helps just as much.\n\nBest,\nAidan"
-    }
+    },
+    "artifactUrl": "https://claude.ai/artifact/7Dvg8cjUYRLohUSmJGdvHB"
   },
   {
     "slug": "comp-card",
@@ -1490,6 +1491,41 @@
       "community": "Wedding photographers: how do you handle vendor credits and vendor galleries? Mine is retyping handles into every caption and sending Dropbox links with a 'please credit me' I'm not sure anyone reads. I'm deciding whether to build a small tool: one vendor list per wedding, a copy-paste credit block that is always complete, a private gallery per vendor with your terms and an 'I agree' before download, and a page showing which planners tag you back. $4/month. Pre-launch page, no charge, just an 'I'd pay' button: aidantorrence.com/offers/vendor-credits",
       "pitchSubject": "Vendor credits without the 'you forgot me' text (pre-launch)",
       "pitch": "Hi {first},\n\nI'm Aidan, a photographer. I saw {specific reference}.\n\nI'm deciding whether to build a small tool for vendor credits: one vendor list per wedding, a copy-paste credit block that is always complete, a private gallery per vendor with your terms attached, and a page showing which planners send work back, $4 a month.\n\nIf that would save you a few texts a season, the pre-launch page has an 'I'd pay' button: aidantorrence.com/offers/vendor-credits?src=email\n\nIf not, one line on why is just as useful.\n\nBest,\nAidan"
+    }
+  },
+  {
+    "slug": "expiry-nudge",
+    "name": "Expiry Nudge",
+    "headline": "Client galleries that expire without the panic: reminders at 30, 7 and 1 days with their download count, and a paid extension or archive link instead of a 'can you resend?' email a year later.",
+    "buyer": "wedding, family and portrait photographers whose galleries expire after 60 to 90 days and who still get resend requests long after",
+    "bullets": [
+      "Paste the gallery link and its expiry date, or connect your gallery host. The client gets three short reminders in your voice, each showing whether they've downloaded yet.",
+      "The final reminder carries your extension offer at your price, such as $25 for another year or $49 for a permanent archive; a tap pays and the new date is recorded.",
+      "A board shows every gallery by expiry date, downloaded or not, extended or not, so the 'did they ever download it?' question has an answer before they ask."
+    ],
+    "price": "$4/month",
+    "priceUsd": 4,
+    "priceNote": "unlimited galleries; extensions are paid to you directly",
+    "status": "live",
+    "launched": "2026-10-18",
+    "reasonPrompt": "How many resend requests did you get last year for expired galleries, and do you charge for extensions today?",
+    "faq": [
+      {
+        "q": "Does it host galleries?",
+        "a": "No. Keep your gallery host. It tracks the expiry dates, sends the reminders and takes the extension payment on your behalf, through your own payment link."
+      },
+      {
+        "q": "Does it extend the gallery for me?",
+        "a": "Not at first. It records the paid extension and tells you; you move the date in your host. Direct integration comes if enough people ask."
+      }
+    ],
+    "kit": {
+      "hook": "'Hi! Our gallery expired and we never downloaded it, could you resend?' Fourteen months later. Fourth one this month.",
+      "script": "Open on an inbox: three emails with 'resend' in the subject. VO: 'Fourteen months later. Nobody downloaded.' Cut to a phone: a reminder, '7 days left, you haven't downloaded yet', then a final one with 'extend for a year, $25', a tap, paid. Cut to a board of galleries by expiry date, green for downloaded, blue for extended. VO: 'Three reminders in your voice. An extension they can pay for. No resend emails.' End card: 'Expiry Nudge. $4 a month. Pre-launch, link in bio.'",
+      "caption": "Gallery expiry reminders with download status and a paid extension link, so the 'can you resend?' emails stop. $4/month. Not built yet; tell me if you'd use it. aidantorrence.com/offers/expiry-nudge",
+      "community": "Photographers whose galleries expire: how do you handle the resend requests a year later? Mine was free re-uploads and quiet resentment. I'm deciding whether to build a small tool: paste the gallery link and expiry, the client gets three reminders in your voice showing whether they've downloaded, the last one carries your paid extension or archive offer, and a board shows every gallery by expiry and download status. $4/month, extensions paid to you. Pre-launch page, no charge, just an 'I'd pay' button: aidantorrence.com/offers/expiry-nudge",
+      "pitchSubject": "Gallery expiries without the resend emails (pre-launch)",
+      "pitch": "Hi {first},\n\nI'm Aidan, a photographer. I saw {specific reference}.\n\nI'm deciding whether to build a small tool for gallery expiries: three reminders in your voice that show whether the client has downloaded, a paid extension or archive offer in the last one, and a board of every gallery by expiry and download status, $4 a month.\n\nIf you still get 'can you resend?' emails, the pre-launch page has an 'I'd pay' button: aidantorrence.com/offers/expiry-nudge?src=email\n\nIf not, one line on why is just as useful.\n\nBest,\nAidan"
     }
   }
 ]
