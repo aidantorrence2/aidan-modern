@@ -6,8 +6,8 @@ from the app's own floating cards. GitHub is the queue: `data/approvals.json` on
 
 ## Android
 
-The phone app (`../approvals-android`) shows the same queue as a pop-up card over any app plus
-persistent notifications; install it with `tools/approvals-android/install-phone.sh`.
+The phone app (`../approvals-android`) shows the same queue as persistent notifications with
+Approve / Deny right in them (tap for details); install it with `tools/approvals-android/install-phone.sh`.
 
 ## Setup
 

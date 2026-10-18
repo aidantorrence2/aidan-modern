@@ -5,14 +5,11 @@ import android.content.SharedPreferences
 import android.os.Handler
 import android.os.Looper
 
-/** App state shared by the service, overlay and activities (main thread for reads/writes). */
+/** App state shared by the service and activities (main thread for reads/writes). */
 object Store {
     var items: List<Item> = emptyList(); private set
     var lastSync: Long = 0; private set
     var lastError: String? = null
-    /** True while ReviewActivity is in front: the pop-up card steps aside so it does not cover it. */
-    var reviewing = false
-        set(v) { field = v; changed() }
     private lateinit var prefs: SharedPreferences
     private val listeners = mutableListOf<() -> Unit>()
     private val main = Handler(Looper.getMainLooper())
@@ -38,13 +35,14 @@ object Store {
             prefs.edit().putString("decisions", o.serialize()).apply()
         }
 
-    var dismissed: Set<String>
-        get() = set("dismissed")
-        set(v) = putSet("dismissed", v)
-
     var chimed: Set<String>
         get() = set("chimed")
         set(v) = putSet("chimed", v)
+
+    /** Requests whose notification was swiped away: they come back, but silently. */
+    var swiped: Set<String>
+        get() = set("swiped")
+        set(v) = putSet("swiped", v)
 
     fun snoozedUntil(id: String): Long = prefs.getLong("snooze:$id", 0)
     fun snooze(id: String, hours: Int = 4) =
@@ -59,15 +57,12 @@ object Store {
             .sortedBy { it.created ?: 0 }
     }
 
-    /** Items that get the pop-up card: visible and not closed with ✕. */
-    fun overlayItems(): List<Item> { val d = dismissed; return visible().filter { it.id !in d } }
-
     fun item(id: String) = items.firstOrNull { it.id == id }
 
     fun setItems(list: List<Item>) {
         items = list; lastSync = System.currentTimeMillis()
         val ids = list.map { it.id }.toSet()
-        dismissed = dismissed.intersect(ids); chimed = chimed.intersect(ids)
+        chimed = chimed.intersect(ids); swiped = swiped.intersect(ids)
         changed()
     }
 

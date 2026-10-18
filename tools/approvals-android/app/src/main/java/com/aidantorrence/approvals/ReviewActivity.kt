@@ -33,8 +33,6 @@ class ReviewActivity : Activity() {
 
     override fun onStart() { super.onStart(); Store.addListener(listener) }
     override fun onStop() { Store.removeListener(listener); super.onStop() }
-    override fun onResume() { super.onResume(); Store.reviewing = true }
-    override fun onPause() { Store.reviewing = false; super.onPause() }
 
     private fun render() {
         val item = itemId?.let { Store.item(it) }

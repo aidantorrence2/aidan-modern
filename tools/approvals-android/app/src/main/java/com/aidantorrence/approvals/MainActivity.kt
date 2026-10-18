@@ -42,15 +42,11 @@ class MainActivity : Activity(), Ui.CardActions {
             Ui.text(this, "Approvals", 28f, bold = true), Ui.spacer(this),
             Ui.button(this, "Refresh", Ui.Style.QUIET) { ApprovalService.start(this, ApprovalService.ACTION_POLL) }))
         val status = mutableListOf<String>()
-        if (!Settings.canDrawOverlays(this)) status += "Pop-up cards are off: allow “Display over other apps”."
         if (checkSelfPermission(Manifest.permission.POST_NOTIFICATIONS) != PackageManager.PERMISSION_GRANTED) status += "Notifications are off."
         Store.lastError?.let { status += it }
         val synced = if (Store.lastSync > 0) "Synced ${DateFormat.getTimeInstance(DateFormat.SHORT).format(Date(Store.lastSync))}" else "Not synced yet"
         body.addView(Ui.text(this, synced, 13f, Ui.FAINT).apply { setPadding(0, dp(4), 0, dp(8)) })
         for (s in status) body.addView(Ui.text(this, "• $s", 14f, 0xFFFFB454.toInt()).apply { setPadding(0, dp(2), 0, dp(2)) })
-        if (!Settings.canDrawOverlays(this)) body.addView(Ui.button(this, "Allow pop-up cards", Ui.Style.QUIET) {
-            startActivity(Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION, Uri.parse("package:$packageName")))
-        }.apply { layoutParams = LinearLayout.LayoutParams(-2, -2).apply { topMargin = dp(6) } })
 
         val visible = Store.visible()
         body.addView(Ui.text(this, if (visible.isEmpty()) "Nothing waiting for you." else "${visible.size} waiting", 15f, Ui.DIM).apply {
@@ -61,10 +57,6 @@ class MainActivity : Activity(), Ui.CardActions {
                 layoutParams = LinearLayout.LayoutParams(-1, -2).apply { bottomMargin = dp(12) }
             })
         }
-        val hidden = Store.dismissed.intersect(visible.map { it.id }.toSet())
-        if (hidden.isNotEmpty()) body.addView(Ui.button(this, "Pop up ${hidden.size} hidden card(s) again", Ui.Style.QUIET) {
-            Store.dismissed = emptySet(); Store.changed()
-        })
         setContentView(ScrollView(this).apply { setBackgroundColor(Ui.BG); addView(body) })
     }
 

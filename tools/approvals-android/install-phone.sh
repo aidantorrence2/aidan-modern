@@ -35,13 +35,12 @@ echo "==> Grants"
 op()     { adb shell appops set "$PKG" "$1" "$2" >/dev/null 2>&1 || true; }
 uid_op() { adb shell appops set --uid "$PKG" "$1" "$2" >/dev/null 2>&1 || true; }
 adb shell pm grant "$PKG" android.permission.POST_NOTIFICATIONS || true
-uid_op SYSTEM_ALERT_WINDOW allow          # draw the pop-up card over other apps
 op RUN_IN_BACKGROUND allow; op RUN_ANY_IN_BACKGROUND allow; op START_FOREGROUND allow; op WAKE_LOCK allow
 op AUTO_REVOKE_PERMISSIONS_IF_UNUSED ignore
 adb shell cmd deviceidle whitelist +"$PKG" >/dev/null 2>&1 || true
 if [[ -n "$MIUI" ]]; then
-  # HyperOS private ops: 10008 autostart, 10017/10020 background running/service, 10021 background pop-ups.
-  for o in 10008 10017 10020 10021; do op "$o" allow; done
+  # HyperOS private ops: 10008 autostart, 10017/10020 background running/service.
+  for o in 10008 10017 10020; do op "$o" allow; done
   cur=$(adb shell settings get system MILLET_NO_RESTRICT_APP | tr -d '\r[:space:]')
   if [[ ",$cur," != *",$PKG,"* ]]; then
     if [[ -z "$cur" || "$cur" == "null" ]]; then nxt="$PKG"; else nxt="$cur,$PKG"; fi
@@ -59,11 +58,11 @@ adb shell am start -n "$PKG/.MainActivity" >/dev/null
 sleep 6
 adb shell dumpsys activity services "$PKG" | grep -q "ApprovalService" && echo "    service running" || echo "    WARNING: service not running" >&2
 echo "==> Grant state"
-adb shell "appops get --uid $PKG SYSTEM_ALERT_WINDOW; dumpsys package $PKG | grep -m1 'POST_NOTIFICATIONS: granted'" | sed 's/^/    /'
-[[ -n "$MIUI" ]] && adb shell "appops get $PKG 10008; appops get $PKG 10021" | sed 's/^/    /'
+adb shell "dumpsys package $PKG | grep -m1 'POST_NOTIFICATIONS: granted'" | sed 's/^/    /'
+[[ -n "$MIUI" ]] && adb shell "appops get $PKG 10008" | sed 's/^/    /'
 if [[ -n "$MIUI" ]]; then cat <<'NOTE'
-==> NOTE (HyperOS): MIUI may revert adb-set op 10021 and Autostart later. If cards stop popping
-    after a reboot, set them durably through MIUI's own screens (see README, "Phone quirks").
+==> NOTE (HyperOS): MIUI may revert adb-set Autostart later. If notifications stop arriving after
+    a reboot, re-run this script with --no-build (see README, "Phone quirks").
 NOTE
 fi
 echo "==> Done"

@@ -72,7 +72,7 @@ object Ui {
         fun close(item: Item)
     }
 
-    /** The approval card used by the pop-up overlay and the in-app list. */
+    /** The approval card used by the in-app inbox. */
     fun card(ctx: Context, item: Item, actions: CardActions, showClose: Boolean): View {
         val pres = Presentation(item)
         val root = LinearLayout(ctx).apply {

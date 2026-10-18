@@ -20,14 +20,14 @@ import java.util.concurrent.Executors
 
 /**
  * Keeps the inbox live: polls the GitHub queue every minute (and on screen-on), keeps one ongoing
- * notification per waiting item (re-posted until decided), pops the overlay card for waiting items,
- * and writes decisions back (kept on the phone and retried until GitHub accepts them).
+ * notification per waiting item with Approve / Deny right in it (a heads-up banner the first time,
+ * silently re-posted until decided), and writes decisions back (kept on the phone and retried until
+ * GitHub accepts them).
  */
 class ApprovalService : Service(), Ui.CardActions {
     private val main = Handler(Looper.getMainLooper())
     private val io = Executors.newSingleThreadExecutor()
     private lateinit var nm: NotificationManager
-    private lateinit var overlay: Overlay
     private val listener: () -> Unit = { render() }
     private val pollTick = object : Runnable {
         override fun run() { pollNow(); main.postDelayed(this, POLL_MS) }
@@ -42,8 +42,10 @@ class ApprovalService : Service(), Ui.CardActions {
         super.onCreate()
         Store.init(this)
         nm = getSystemService(NotificationManager::class.java)
-        nm.createNotificationChannel(NotificationChannel(CH_ITEMS, "Approval requests", NotificationManager.IMPORTANCE_DEFAULT).apply {
-            description = "One per request waiting for your decision"
+        nm.deleteNotificationChannel("requests")   // pre-heads-up channel (importance can't be raised in place)
+        nm.createNotificationChannel(NotificationChannel(CH_ITEMS, "Approval requests", NotificationManager.IMPORTANCE_HIGH).apply {
+            description = "Drops down when a request arrives; Approve or Deny right in the notification"
+            lockscreenVisibility = Notification.VISIBILITY_PRIVATE
         })
         nm.createNotificationChannel(NotificationChannel(CH_QUIET, "Approval requests (reminders)", NotificationManager.IMPORTANCE_LOW).apply {
             description = "Silent re-posts of requests you were already alerted about"
@@ -52,7 +54,6 @@ class ApprovalService : Service(), Ui.CardActions {
             setShowBadge(false)
         })
         startForeground(ID_SERVICE, serviceNotification(), ServiceInfo.FOREGROUND_SERVICE_TYPE_SPECIAL_USE)
-        overlay = Overlay(this, this)
         Store.addListener(listener)
         registerReceiver(screenOn, IntentFilter(Intent.ACTION_SCREEN_ON))
         main.post(pollTick)
@@ -62,7 +63,6 @@ class ApprovalService : Service(), Ui.CardActions {
         Store.removeListener(listener)
         main.removeCallbacksAndMessages(null)
         try { unregisterReceiver(screenOn) } catch (_: Exception) {}
-        overlay.hide()
         super.onDestroy()
     }
 
@@ -74,6 +74,7 @@ class ApprovalService : Service(), Ui.CardActions {
             ACTION_SNOOZE -> Store.item(id ?: "")?.let { snooze(it) }
             ACTION_DECIDE -> if (id != null) decide(id, intent.getStringExtra(EXTRA_STATUS) ?: return START_STICKY, intent.getStringExtra(EXTRA_NOTE) ?: "")
             ACTION_POLL -> pollNow()
+            ACTION_SWIPED -> if (id != null) Store.swiped = Store.swiped + id
         }
         return START_STICKY
     }
@@ -90,6 +91,8 @@ class ApprovalService : Service(), Ui.CardActions {
             flush(client)
             val (root, _) = client.fetch()
             val list = (root["items"] as? JV.Arr)?.items?.mapNotNull { Item.from(it) } ?: emptyList()
+            // fetch images first so the banner can show the picture the moment it drops down
+            list.filter { it.pending }.forEach { item -> Presentation(item).images.firstOrNull()?.let { Images.loadBlocking(it.second, IMG_PX) } }
             android.util.Log.i("Approvals", "poll: ${list.size} items, pending=${list.count { it.status == "pending" }}, " +
                 "open=${list.count { it.pending }}: " + list.filter { it.status == "pending" }.joinToString { "${it.id} exp=${it.expires} now=${System.currentTimeMillis()}" })
             main.post { Store.lastError = null; Store.setItems(list) }
@@ -117,7 +120,7 @@ class ApprovalService : Service(), Ui.CardActions {
         Store.snooze(item.id); nm.cancel(notifId(item.id)); render()
         Toast.makeText(this, "Snoozed for 4 hours", Toast.LENGTH_SHORT).show()
     }
-    override fun close(item: Item) { Store.dismissed = Store.dismissed + item.id; render() }
+    override fun close(item: Item) {}
     override fun review(item: Item) {
         startActivity(Intent(this, ReviewActivity::class.java).putExtra(EXTRA_ID, item.id)
             .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP))
@@ -151,30 +154,46 @@ class ApprovalService : Service(), Ui.CardActions {
         for (item in visible) postItem(item, alert = item.id !in chimed)
         if (visible.any { it.id !in chimed }) Store.chimed = chimed + visible.map { it.id }
         nm.notify(ID_SERVICE, serviceNotification())
-        overlay.update(if (Store.reviewing) emptyList() else Store.overlayItems())
     }
 
     private fun postItem(item: Item, alert: Boolean) {
         val pres = Presentation(item)
-        // First appearance alerts; every re-post (each poll, or after a swipe) goes to the silent channel.
-        val b = Notification.Builder(this, if (alert) CH_ITEMS else CH_QUIET)
+        val body = pres.cardText(item)
+        // Alerting channel (heads-up the first time; updates don't re-alert thanks to onlyAlertOnce),
+        // unless you swiped it away: then it comes back quietly instead of buzzing every minute.
+        val b = Notification.Builder(this, if (item.id in Store.swiped) CH_QUIET else CH_ITEMS)
             .setSmallIcon(R.drawable.ic_stat)
             .setContentTitle(pres.headline)
             .setContentText(pres.displayTitle)
-            .setStyle(Notification.BigTextStyle().bigText("${pres.displayTitle}\n${pres.cardText(item)}"))
             .setSubText(Presentation.agentName(item.source))
             .setOngoing(true)
             .setOnlyAlertOnce(true)
             .setCategory(Notification.CATEGORY_REMINDER)
             .setColor(Presentation.kindColor(item.kind))
             .setContentIntent(activity(item.id))
-            .addAction(Notification.Action.Builder(null, "Approve", service(ACTION_APPROVE, item.id)).build())
-            .addAction(Notification.Action.Builder(null, "Deny", service(ACTION_DENY, item.id)).build())
-            .addAction(Notification.Action.Builder(null, "4h", service(ACTION_SNOOZE, item.id)).build())
-        pres.images.firstOrNull()?.second?.let { url -> Images.cached(url, 400)?.let { b.setLargeIcon(Icon.createWithBitmap(it)) }
-            ?: Images.load(url, 400) { bmp -> if (bmp != null && Store.visible().any { it.id == item.id }) postItem(item, false) } }
+            // Own group per request: stops Android bundling it with the status notification, which hides the buttons.
+            .setGroup("item:${item.id}")
+            .setDeleteIntent(service(ACTION_SWIPED, item.id))
+            .addAction(action("Approve", ACTION_APPROVE, item.id))
+            .addAction(action("Deny", ACTION_DENY, item.id))
+            .addAction(Notification.Action.Builder(null, "Later (4h)", service(ACTION_SNOOZE, item.id)).build())
+        val img = pres.images.firstOrNull()?.second?.let { Images.cached(it, IMG_PX) }
+        if (img != null) {
+            b.setLargeIcon(Icon.createWithBitmap(img))
+            b.setStyle(Notification.BigPictureStyle().bigPicture(img).bigLargeIcon(null as Icon?)
+                .setSummaryText("${pres.displayTitle}: $body"))
+        } else {
+            b.setStyle(Notification.BigTextStyle().bigText("${pres.displayTitle}\n$body"))
+            pres.images.firstOrNull()?.second?.let { url ->
+                Images.load(url, IMG_PX) { bmp -> if (bmp != null && Store.visible().any { it.id == item.id }) postItem(item, false) }
+            }
+        }
         nm.notify(notifId(item.id), b.build())
     }
+
+    /** Approve / Deny run in the background straight from the notification, no unlock or app needed. */
+    private fun action(label: String, act: String, id: String): Notification.Action =
+        Notification.Action.Builder(null, label, service(act, id)).build()
 
     private fun serviceNotification(): Notification {
         val n = if (::nm.isInitialized) Store.visible().size else 0
@@ -186,6 +205,7 @@ class ApprovalService : Service(), Ui.CardActions {
         return Notification.Builder(this, CH_SERVICE)
             .setSmallIcon(R.drawable.ic_stat)
             .setContentTitle("Approvals inbox")
+            .setGroup("status")
             .setContentText(text)
             .setOngoing(true)
             .setContentIntent(PendingIntent.getActivity(this, 0, Intent(this, MainActivity::class.java), PendingIntent.FLAG_IMMUTABLE))
@@ -200,7 +220,8 @@ class ApprovalService : Service(), Ui.CardActions {
         PendingIntent.FLAG_IMMUTABLE or PendingIntent.FLAG_UPDATE_CURRENT)
 
     companion object {
-        const val CH_ITEMS = "requests"
+        const val CH_ITEMS = "requests-alert"
+        const val IMG_PX = 900
         const val CH_QUIET = "requests-quiet"
         const val CH_SERVICE = "service"
         const val ID_SERVICE = 1
@@ -213,6 +234,7 @@ class ApprovalService : Service(), Ui.CardActions {
         const val ACTION_SNOOZE = "com.aidantorrence.approvals.SNOOZE"
         const val ACTION_DECIDE = "com.aidantorrence.approvals.DECIDE"
         const val ACTION_POLL = "com.aidantorrence.approvals.POLL"
+        const val ACTION_SWIPED = "com.aidantorrence.approvals.SWIPED"
         fun notifId(id: String) = 1000 + (id.hashCode() and 0x7fffffff) % 1_000_000
 
         fun start(ctx: Context, action: String? = null) {
