@@ -22,6 +22,23 @@ for (const o of offers) {
   if (!STATUS.has(o.status)) errors.push(`${at}: bad status ${o.status}`)
   if (o.launched && !/^\d{4}-\d{2}-\d{2}$/.test(o.launched)) errors.push(`${at}: launched must be YYYY-MM-DD`)
   if (o.headline && o.headline.length > 200) errors.push(`${at}: headline over 200 chars`)
+  // Demand gate (Aidan, 18 Oct 2026): an offer goes live only if it is software and the
+  // market already asked for it. Evidence is public posts by different people, each cited.
+  if (['live', 'threshold_met', 'building', 'shipped'].includes(o.status)) {
+    if (o.type !== 'software') errors.push(`${at}: type must be "software" to go live`)
+    const d = o.demand || {}
+    const sig = Array.isArray(d.signals) ? d.signals : []
+    const urls = new Set(sig.map(x => x && x.url))
+    if (sig.length < 3 || urls.size < 3) errors.push(`${at}: demand.signals needs 3+ distinct cited posts`)
+    for (const x of sig) {
+      if (!x || !/^https:\/\//.test(x.url || '')) errors.push(`${at}: every demand signal needs an https url`)
+      if (!x || typeof x.quote !== 'string' || !x.quote.trim()) errors.push(`${at}: every demand signal needs a short verbatim quote`)
+      if (!x || !['opened', 'snippet'].includes(x.seen)) errors.push(`${at}: demand signal seen must be "opened" or "snippet"`)
+    }
+    if (sig.filter(x => x && x.seen === 'opened').length < 2) errors.push(`${at}: at least 2 demand signals must have been opened, not just seen as snippets`)
+    if (typeof d.wtp !== 'string' || !d.wtp.trim()) errors.push(`${at}: demand.wtp must say who already pays, or says they'd pay`)
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(d.checked || '')) errors.push(`${at}: demand.checked must be YYYY-MM-DD`)
+  }
   if (o.kit) {
     for (const k of ['hook', 'script', 'caption', 'community', 'pitchSubject', 'pitch']) {
       if (typeof o.kit[k] !== 'string' || !o.kit[k].trim()) errors.push(`${at}: kit.${k} missing`)

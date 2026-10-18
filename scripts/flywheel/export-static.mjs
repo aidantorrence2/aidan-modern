@@ -68,9 +68,10 @@ ${faq ? `<section class="offer-faq">${faq}</section>` : ''}
 function index(list) {
   const resources = globalThis.__resources || []
   return `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Pre-launch offers — Aidan Torrence</title><meta name="description" content="Small tools for photographers and creators. Each one gets built only if enough people say they want it."><link rel="canonical" href="${cfg.publicBase}/"><meta property="og:title" content="Pre-launch tools for photographers — Aidan Torrence"><meta property="og:description" content="Small tools for photographers and creators. Each one gets built only if enough people say they want it."><style>${labCss}</style></head>
+<title>Pre-launch offers — Aidan Torrence</title><meta name="description" content="Small software tools, each one built only after people ask for it."><link rel="canonical" href="${cfg.publicBase}/"><meta property="og:title" content="Pre-launch software — Aidan Torrence"><meta property="og:description" content="Small software tools, each one built only after people ask for it."><style>${labCss}</style></head>
 <body><div class="lab"><main class="lab-main"><p class="lab-kicker">Pre-launch</p><h1>Tools I want to exist.</h1>
 <p class="lab-lead">Each page below is a promise, not a product. If enough people leave an email or say they’d pay, I build it, in that order. Nothing here charges you.</p>
+${list.length ? '' : '<p class="lab-lead">Nothing is open right now. New tools appear here once people have asked for them in public.</p>'}
 <ul class="lab-list">${list.map(o => `<li><a href="./${o.slug}/?src=lab"><span class="lab-name">${esc(o.name)}</span><span class="lab-head">${esc(o.headline)}</span><span class="lab-price">${esc(o.price)}</span></a></li>`).join('')}</ul>
 ${resources.length ? `<h2 class="lab-sub">Free resources</h2><ul class="lab-list">${resources.map(r => `<li><a href="./resources/${r.slug}/"><span class="lab-name">Free</span><span class="lab-head">${esc(r.title)}</span><span class="lab-price">${esc(r.description)}</span></a></li>`).join('')}</ul>` : ''}
 </main></div></body></html>`
@@ -83,6 +84,11 @@ fs.rmSync(out, { recursive: true, force: true })
 fs.mkdirSync(out, { recursive: true })
 if (fs.existsSync(keep)) fs.renameSync(keep, postsDir)
 const live = offers.filter(o => o.status !== 'draft' && o.status !== 'killed')
+// drop post cards for offers that are no longer live
+if (fs.existsSync(postsDir)) for (const f of fs.readdirSync(postsDir)) {
+  const slug = f.replace(/-(feed|story)\.png$/, '')
+  if (!live.some(o => o.slug === slug)) fs.rmSync(path.join(postsDir, f))
+}
 for (const o of live) {
   fs.mkdirSync(path.join(out, o.slug), { recursive: true })
   fs.writeFileSync(path.join(out, o.slug, 'index.html'), page(o))
@@ -91,9 +97,10 @@ fs.writeFileSync(path.join(out, '.nojekyll'), '')
 fs.writeFileSync(path.join(out, '404.html'), '<meta http-equiv="refresh" content="0;url=./">')
 // free resource pages (lead magnets): content/resources.json → /resources/<slug>/
 const resPath = path.join(root, 'content/resources.json')
-const resources = fs.existsSync(resPath) ? JSON.parse(fs.readFileSync(resPath, 'utf8')) : []
-globalThis.__resources = resources
 const bySlug = Object.fromEntries(live.map(o => [o.slug, o]))
+// a resource page only ships while the offer it feeds is live
+const resources = (fs.existsSync(resPath) ? JSON.parse(fs.readFileSync(resPath, 'utf8')) : []).filter(r => bySlug[r.offer])
+globalThis.__resources = resources
 for (const r of resources) {
   const o = bySlug[r.offer]
   const body = r.sections.map(sec => `<h2>${esc(sec.h)}</h2>${(sec.p || []).map(x => `<p>${esc(x)}</p>`).join('')}${sec.list ? `<ul>${sec.list.map(x => `<li>${esc(x)}</li>`).join('')}</ul>` : ''}${sec.pre ? `<pre>${esc(sec.pre)}</pre>` : ''}`).join('')

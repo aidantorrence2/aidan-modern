@@ -40,6 +40,14 @@ is merged. Both pages carry the same slug so counts can be added together.
 | `flywheel/launches/<slug>.md` | Traffic kit: post script, caption, community post, pitch template, tracking links with `?src=`. |
 | `flywheel/RUNBOOK.md` | What an hourly code-side run does, in order. |
 
+## Demand rule (Aidan, 18 Oct 2026)
+
+Offers come from demand already visible in the market, and every offer is a software
+solution. No offer is launched from a guess. The gate, the evidence format and the search
+sources are in `flywheel/RUNBOOK.md` step 0; `scripts/check-offers.mjs` enforces it. All 60
+offers launched on 16 to 18 Oct failed this test and were retired (`status: killed`).
+Research in progress and near-misses live in `flywheel/DEMAND.md`.
+
 ## Hosting rule (Aidan, 18 Oct 2026)
 
 Free hosting only, never Vercel. Offer pages are a static export on GitHub Pages

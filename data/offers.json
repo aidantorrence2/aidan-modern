@@ -12,7 +12,7 @@
     "price": "$29/month",
     "priceUsd": 29,
     "priceNote": "or $99 one-time setup for your own Gmail",
-    "status": "live",
+    "status": "killed",
     "launched": "2026-10-16",
     "reasonPrompt": "Who do you pitch most: magazines, agencies, publicists? What would make this a yes?",
     "faq": [
@@ -33,7 +33,9 @@
       "pitchSubject": "Cold pitching tool for photographers (pre-launch)",
       "pitch": "Hi {first},\n\nI'm Aidan, an editorial photographer. I noticed {specific reference}.\n\nI automated my own magazine and agency outreach (finding the published press contact, drafting the pitch, tracking replies) and I'm deciding whether to turn it into a tool for other photographers at $29 a month.\n\nIf that's useful to you, the pre-launch page has an 'I'd pay' button and takes ten seconds: aidantorrence2.github.io/aidan-modern/pitch-pilot?src=email\n\nIf not, a one-line 'no, because' helps just as much.\n\nBest,\nAidan"
     },
-    "artifactUrl": "https://claude.ai/artifact/4dMR9mWrMFQEJfo71pWjT4"
+    "artifactUrl": "https://claude.ai/artifact/4dMR9mWrMFQEJfo71pWjT4",
+    "killed": "2026-10-18",
+    "killedReason": "Retired by Aidan on 18 Oct 2026: picked from guesses, not market demand."
   },
   {
     "slug": "shoot-kit",
@@ -48,7 +50,7 @@
     "price": "$9 per shoot",
     "priceUsd": 9,
     "priceNote": "or $7/month unlimited",
-    "status": "live",
+    "status": "killed",
     "launched": "2026-10-16",
     "reasonPrompt": "Which document do you dread most: call sheet, release or usage terms? What's missing from the ones you use now?",
     "faq": [
@@ -65,7 +67,9 @@
       "pitchSubject": "Call sheet + release in two minutes (pre-launch)",
       "pitch": "Hi {first},\n\nI'm Aidan, a photographer. I saw {specific reference}.\n\nI'm deciding whether to build a small tool that turns one form into a call sheet, model release and usage agreement, signed on phones, $9 per shoot.\n\nIf you'd use it, the pre-launch page has an 'I'd pay' button and takes ten seconds: aidantorrence2.github.io/aidan-modern/shoot-kit?src=email\n\nIf not, 'no, because' in one line is just as useful.\n\nBest,\nAidan"
     },
-    "artifactUrl": "https://claude.ai/artifact/4oARQvjamPUxJtRSAcc8q9"
+    "artifactUrl": "https://claude.ai/artifact/4oARQvjamPUxJtRSAcc8q9",
+    "killed": "2026-10-18",
+    "killedReason": "Retired by Aidan on 18 Oct 2026: picked from guesses, not market demand."
   },
   {
     "slug": "submission-atlas",
@@ -80,7 +84,7 @@
     "price": "$39 one-off",
     "priceUsd": 39,
     "priceNote": "includes 12 months of updates",
-    "status": "live",
+    "status": "killed",
     "launched": "2026-10-16",
     "reasonPrompt": "Which titles do you wish you had rules and contacts for? Print, web, or both?",
     "faq": [
@@ -97,7 +101,9 @@
       "pitchSubject": "Magazine submission directory (pre-launch)",
       "pitch": "Hi {first},\n\nI'm Aidan, an editorial photographer. I noticed {specific reference}.\n\nI'm deciding whether to build a verified directory of magazines that take fashion and editorial submissions, with rules, published contacts and response times, $39 one-off.\n\nIf that's something you'd buy, the pre-launch page has an 'I'd pay' button: aidantorrence2.github.io/aidan-modern/submission-atlas?src=email\n\nIf not, one line on why helps as much.\n\nBest,\nAidan"
     },
-    "artifactUrl": "https://claude.ai/artifact/StsFNWV1biVBa4XJmRwkDr"
+    "artifactUrl": "https://claude.ai/artifact/StsFNWV1biVBa4XJmRwkDr",
+    "killed": "2026-10-18",
+    "killedReason": "Retired by Aidan on 18 Oct 2026: picked from guesses, not market demand."
   },
   {
     "slug": "city-pages",
@@ -112,7 +118,7 @@
     "price": "$19/month",
     "priceUsd": 19,
     "priceNote": "pause between trips",
-    "status": "live",
+    "status": "killed",
     "launched": "2026-10-16",
     "reasonPrompt": "Which cities are next for you, and how do you take sign-ups today?",
     "faq": [
@@ -129,7 +135,9 @@
       "pitchSubject": "City sign-up page for model tests (pre-launch)",
       "pitch": "Hi {first},\n\nI'm Aidan, a photographer who shoots model tests city by city. I saw {specific reference}.\n\nI'm deciding whether to offer the sign-up page I use (dates, moodboard picker, WhatsApp contact, bookable slots) as a hosted tool at $19 a month.\n\nIf you'd use it, the pre-launch page has an 'I'd pay' button: aidantorrence2.github.io/aidan-modern/city-pages?src=email\n\nIf not, a one-line 'no, because' is just as helpful.\n\nBest,\nAidan"
     },
-    "artifactUrl": "https://claude.ai/artifact/7VbdFK81CMsTq1NWgNYdms"
+    "artifactUrl": "https://claude.ai/artifact/7VbdFK81CMsTq1NWgNYdms",
+    "killed": "2026-10-18",
+    "killedReason": "Retired by Aidan on 18 Oct 2026: picked from guesses, not market demand."
   },
   {
     "slug": "interview-clipper",
@@ -144,7 +152,7 @@
     "price": "$15/month",
     "priceUsd": 15,
     "priceNote": "10 interviews a month",
-    "status": "live",
+    "status": "killed",
     "launched": "2026-10-16",
     "reasonPrompt": "What do you record (podcast, street interviews, client calls) and what takes longest today?",
     "faq": [
@@ -161,7 +169,9 @@
       "pitchSubject": "Interview to captioned clips (pre-launch)",
       "pitch": "Hi {first},\n\nI'm Aidan, a photographer and short-form creator. I saw {specific reference}.\n\nI'm deciding whether to turn my own clipping pipeline into a tool: a long interview in, captioned vertical clips with three hook variants out, $15 a month.\n\nIf that's useful, the pre-launch page has an 'I'd pay' button: aidantorrence2.github.io/aidan-modern/interview-clipper?src=email\n\nIf not, a one-line 'no, because' helps just as much.\n\nBest,\nAidan"
     },
-    "artifactUrl": "https://claude.ai/artifact/LyAUvKj1eiTKN1opKoZcUm"
+    "artifactUrl": "https://claude.ai/artifact/LyAUvKj1eiTKN1opKoZcUm",
+    "killed": "2026-10-18",
+    "killedReason": "Retired by Aidan on 18 Oct 2026: picked from guesses, not market demand."
   },
   {
     "slug": "city-shot-lists",
@@ -176,7 +186,7 @@
     "price": "$12 per city pack",
     "priceUsd": 12,
     "priceNote": "or $39 for all cities",
-    "status": "live",
+    "status": "killed",
     "launched": "2026-10-16",
     "reasonPrompt": "Which city, and when are you going?",
     "faq": [
@@ -192,7 +202,9 @@
       "community": "Travel creators: would you pay $12 for a per-city shot list (30+ spots with the exact hour they work, permit and tripod notes, a two-day route) from a photographer who has shot the city? Starting with Bangkok, Manila, Bali, Chiang Mai, Singapore, Busan, Ulaanbaatar. Pre-launch page, no charge, pick your city: aidantorrence2.github.io/aidan-modern/city-shot-lists",
       "pitchSubject": "City shot lists for Asia (pre-launch)",
       "pitch": "Hi {first},\n\nI'm Aidan, a photographer who has been shooting across Asia this year. I saw {specific reference}.\n\nI'm deciding whether to make per-city shot lists: 30+ spots with the hour each works, permit notes, a two-day route, $12 per city.\n\nIf that's useful, the pre-launch page has an 'I'd pay' button and a city vote: aidantorrence2.github.io/aidan-modern/city-shot-lists?src=email\n\nIf not, one line on why helps as much.\n\nBest,\nAidan"
-    }
+    },
+    "killed": "2026-10-18",
+    "killedReason": "Retired by Aidan on 18 Oct 2026: picked from guesses, not market demand."
   },
   {
     "slug": "cull-assist",
@@ -207,7 +219,7 @@
     "price": "$12/month",
     "priceUsd": 12,
     "priceNote": "runs on your own computer",
-    "status": "live",
+    "status": "killed",
     "launched": "2026-10-16",
     "reasonPrompt": "What do you shoot, how many frames per job, and what do you cull in today?",
     "faq": [
@@ -224,7 +236,9 @@
       "pitchSubject": "Culling that learns your taste (pre-launch)",
       "pitch": "Hi {first},\n\nI'm Aidan, a photographer. I saw {specific reference}.\n\nI'm deciding whether to build a local culling tool that learns from your own past selects and ranks a new shoot the way you would, writing XMP star ratings for Lightroom or Capture One. $12 a month, nothing uploaded.\n\nIf you'd use it, the pre-launch page has an 'I'd pay' button: aidantorrence2.github.io/aidan-modern/cull-assist?src=email\n\nIf not, a one-line 'no, because' is just as useful.\n\nBest,\nAidan"
     },
-    "artifactUrl": "https://claude.ai/artifact/5ekgwxVEfxdX3k1kb1FqiD"
+    "artifactUrl": "https://claude.ai/artifact/5ekgwxVEfxdX3k1kb1FqiD",
+    "killed": "2026-10-18",
+    "killedReason": "Retired by Aidan on 18 Oct 2026: picked from guesses, not market demand."
   },
   {
     "slug": "reel-renderer",
@@ -239,7 +253,7 @@
     "price": "$10/month",
     "priceUsd": 10,
     "priceNote": "30 renders a month",
-    "status": "live",
+    "status": "killed",
     "launched": "2026-10-16",
     "reasonPrompt": "How often do you post reels today, and what stops you posting more?",
     "faq": [
@@ -255,7 +269,9 @@
       "community": "Photographers who never post reels: I render my own ad reels from stills with scripts (per-photo crop focus, beat-timed cuts, caption lines). Thinking of making that a tool: 12 photos in, finished reel out, $10/month. Pre-launch page, no charge, tell me if you'd use it: aidantorrence2.github.io/aidan-modern/reel-renderer",
       "pitchSubject": "Reels from your stills in a minute (pre-launch)",
       "pitch": "Hi {first},\n\nI'm Aidan, a photographer. I saw {specific reference}.\n\nI'm deciding whether to turn the scripts that render my own reels from stills into a tool: twelve photos in, a finished captioned 9:16 reel out, $10 a month.\n\nIf that's useful, the pre-launch page has an 'I'd pay' button: aidantorrence2.github.io/aidan-modern/reel-renderer?src=email\n\nIf not, one line on why helps just as much.\n\nBest,\nAidan"
-    }
+    },
+    "killed": "2026-10-18",
+    "killedReason": "Retired by Aidan on 18 Oct 2026: picked from guesses, not market demand."
   },
   {
     "slug": "moodboard-maker",
@@ -270,7 +286,7 @@
     "price": "$8/month",
     "priceUsd": 8,
     "priceNote": "unlimited boards",
-    "status": "live",
+    "status": "killed",
     "launched": "2026-10-16",
     "reasonPrompt": "How do you share references today, and what goes wrong?",
     "faq": [
@@ -287,7 +303,9 @@
       "pitchSubject": "Shoot moodboards everyone reacts to (pre-launch)",
       "pitch": "Hi {first},\n\nI'm Aidan, a photographer. I saw {specific reference}.\n\nI'm deciding whether to offer the moodboard builder I use for my own shoots as a tool: one link, your model, stylist and client react before the day, PDF for the call sheet, $8 a month.\n\nIf you'd use it, the pre-launch page has an 'I'd pay' button: aidantorrence2.github.io/aidan-modern/moodboard-maker?src=email\n\nIf not, one line on why is just as helpful.\n\nBest,\nAidan"
     },
-    "artifactUrl": "https://claude.ai/artifact/NFodpDSxJKMufwiwsdT4ov"
+    "artifactUrl": "https://claude.ai/artifact/NFodpDSxJKMufwiwsdT4ov",
+    "killed": "2026-10-18",
+    "killedReason": "Retired by Aidan on 18 Oct 2026: picked from guesses, not market demand."
   },
   {
     "slug": "hook-bank",
@@ -302,7 +320,7 @@
     "price": "$9/month",
     "priceUsd": 9,
     "priceNote": "cancel anytime",
-    "status": "live",
+    "status": "killed",
     "launched": "2026-10-16",
     "reasonPrompt": "What's your niche, and what's the last hook that worked for you?",
     "faq": [
@@ -319,7 +337,9 @@
       "pitchSubject": "Weekly hooks for your niche (pre-launch)",
       "pitch": "Hi {first},\n\nI'm Aidan, a photographer and short-form creator. I saw {specific reference}.\n\nI'm deciding whether to build a weekly hook list: 100 first lines scored for your niche, grouped by angle, rewritten in your voice, $9 a month.\n\nIf that's useful, the pre-launch page has an 'I'd pay' button: aidantorrence2.github.io/aidan-modern/hook-bank?src=email\n\nIf not, a one-line 'no, because' helps just as much.\n\nBest,\nAidan"
     },
-    "artifactUrl": "https://claude.ai/artifact/FfB9BHNnGmquSYrgv6mgZA"
+    "artifactUrl": "https://claude.ai/artifact/FfB9BHNnGmquSYrgv6mgZA",
+    "killed": "2026-10-18",
+    "killedReason": "Retired by Aidan on 18 Oct 2026: picked from guesses, not market demand."
   },
   {
     "slug": "form-to-whatsapp",
@@ -334,7 +354,7 @@
     "price": "$5/month",
     "priceUsd": 5,
     "priceNote": "up to 300 leads a month",
-    "status": "live",
+    "status": "killed",
     "launched": "2026-10-16",
     "reasonPrompt": "Which form builder do you use, and how do you hear about leads now?",
     "faq": [
@@ -351,7 +371,9 @@
       "pitchSubject": "Form leads on WhatsApp in a minute (pre-launch)",
       "pitch": "Hi {first},\n\nI'm Aidan, a photographer. I saw {specific reference}.\n\nI route my own website forms to WhatsApp so I answer leads in minutes instead of hours, and I'm deciding whether to offer it as a $5 a month tool that works with any form builder.\n\nIf you'd use it, the pre-launch page has an 'I'd pay' button: aidantorrence2.github.io/aidan-modern/form-to-whatsapp?src=email\n\nIf not, one line on why helps as much.\n\nBest,\nAidan"
     },
-    "artifactUrl": "https://claude.ai/artifact/Nxugv6rYVeVzcxA4ZpiZRS"
+    "artifactUrl": "https://claude.ai/artifact/Nxugv6rYVeVzcxA4ZpiZRS",
+    "killed": "2026-10-18",
+    "killedReason": "Retired by Aidan on 18 Oct 2026: picked from guesses, not market demand."
   },
   {
     "slug": "open-slots",
@@ -366,7 +388,7 @@
     "price": "$7/month",
     "priceUsd": 7,
     "priceNote": "unlimited slots",
-    "status": "live",
+    "status": "killed",
     "launched": "2026-10-16",
     "reasonPrompt": "How do you take bookings today, and what breaks across time zones?",
     "faq": [
@@ -383,7 +405,9 @@
       "pitchSubject": "Booking slots in the visitor's time zone (pre-launch)",
       "pitch": "Hi {first},\n\nI'm Aidan, a photographer. I saw {specific reference}.\n\nI'm deciding whether to offer the availability widget I use for my own bookings (slots shown in the visitor's time zone, one-tap request, notification on my phone) as a $7 a month tool.\n\nIf that's useful, the pre-launch page has an 'I'd pay' button: aidantorrence2.github.io/aidan-modern/open-slots?src=email\n\nIf not, a one-line 'no, because' is just as useful.\n\nBest,\nAidan"
     },
-    "artifactUrl": "https://claude.ai/artifact/1BHSZGEvcv3JYw5W3aP2sp"
+    "artifactUrl": "https://claude.ai/artifact/1BHSZGEvcv3JYw5W3aP2sp",
+    "killed": "2026-10-18",
+    "killedReason": "Retired by Aidan on 18 Oct 2026: picked from guesses, not market demand."
   },
   {
     "slug": "proposal-deck",
@@ -398,7 +422,7 @@
     "price": "$19 per proposal",
     "priceUsd": 19,
     "priceNote": "or $12/month unlimited",
-    "status": "live",
+    "status": "killed",
     "launched": "2026-10-16",
     "reasonPrompt": "Which magazines are you pitching, and what does your current proposal look like (deck, email, nothing)?",
     "faq": [
@@ -414,7 +438,9 @@
       "community": "Photographers and stylists who pitch magazines: I'm deciding whether to build a proposal generator. You fill in title, concept, team, model count, location, shoot day and a moodboard; it exports a clean four-page PDF plus the exact fields editors ask for before a pull letter. $19 per proposal or $12/month. Pre-launch page, no charge, just an 'I'd pay' button: aidantorrence2.github.io/aidan-modern/proposal-deck",
       "pitchSubject": "Editorial proposal PDF in ten minutes (pre-launch)",
       "pitch": "Hi {first},\n\nI'm Aidan, an editorial photographer. I saw {specific reference}.\n\nI'm deciding whether to build a tool that turns a concept, moodboard and team list into a magazine-ready proposal PDF with the fields editors check before a pull letter, $19 per proposal.\n\nIf that's useful, the pre-launch page has an 'I'd pay' button: aidantorrence2.github.io/aidan-modern/proposal-deck?src=email\n\nIf not, one line on why helps just as much.\n\nBest,\nAidan"
-    }
+    },
+    "killed": "2026-10-18",
+    "killedReason": "Retired by Aidan on 18 Oct 2026: picked from guesses, not market demand."
   },
   {
     "slug": "portfolio-globe",
@@ -429,7 +455,7 @@
     "price": "$15/month",
     "priceUsd": 15,
     "priceNote": "domain included",
-    "status": "live",
+    "status": "killed",
     "launched": "2026-10-16",
     "reasonPrompt": "What do you use for your portfolio now, and what annoys you about it?",
     "faq": [
@@ -446,7 +472,9 @@
       "pitchSubject": "Fast portfolio site from a folder (pre-launch)",
       "pitch": "Hi {first},\n\nI'm Aidan, a photographer. I saw {specific reference}.\n\nI'm deciding whether to offer the engine behind my own portfolio site as a product: a folder of photos in, a fast site on your own domain out, edited from your phone, $15 a month.\n\nIf you'd use it, the pre-launch page has an 'I'd pay' button: aidantorrence2.github.io/aidan-modern/portfolio-globe?src=email\n\nIf not, a one-line 'no, because' is just as useful.\n\nBest,\nAidan"
     },
-    "artifactUrl": "https://claude.ai/artifact/N6uW3wUQTjZUUAPXhRHQEd"
+    "artifactUrl": "https://claude.ai/artifact/N6uW3wUQTjZUUAPXhRHQEd",
+    "killed": "2026-10-18",
+    "killedReason": "Retired by Aidan on 18 Oct 2026: picked from guesses, not market demand."
   },
   {
     "slug": "caption-burner",
@@ -461,7 +489,7 @@
     "price": "$6/month",
     "priceUsd": 6,
     "priceNote": "60 minutes of video a month",
-    "status": "live",
+    "status": "killed",
     "launched": "2026-10-16",
     "reasonPrompt": "How do you caption today (CapCut, by hand, a service), and what breaks?",
     "faq": [
@@ -477,7 +505,9 @@
       "community": "Creators who post daily: I caption my own videos with a Whisper + FFmpeg script (word-level timing, custom font, a name list so people's names come out right). Thinking of offering it as a $6/month drop-a-file service, captioned MP4 + SRT back. Pre-launch page, no charge, just an 'I'd pay' button: aidantorrence2.github.io/aidan-modern/caption-burner",
       "pitchSubject": "Captions from a file drop (pre-launch)",
       "pitch": "Hi {first},\n\nI'm Aidan, a photographer and short-form creator. I saw {specific reference}.\n\nI'm deciding whether to offer my caption pipeline as a service: drop a vertical video, get it back with word-level captions in your font and names spelled right, $6 a month.\n\nIf that's useful, the pre-launch page has an 'I'd pay' button: aidantorrence2.github.io/aidan-modern/caption-burner?src=email\n\nIf not, one line on why helps just as much.\n\nBest,\nAidan"
-    }
+    },
+    "killed": "2026-10-18",
+    "killedReason": "Retired by Aidan on 18 Oct 2026: picked from guesses, not market demand."
   },
   {
     "slug": "proof-link",
@@ -492,7 +522,7 @@
     "price": "$8/month",
     "priceUsd": 8,
     "priceNote": "unlimited galleries, 90-day retention",
-    "status": "live",
+    "status": "killed",
     "launched": "2026-10-16",
     "reasonPrompt": "How do clients pick selects from you today, and what goes wrong?",
     "faq": [
@@ -509,7 +539,9 @@
       "pitchSubject": "Client selects without the chat chase (pre-launch)",
       "pitch": "Hi {first},\n\nI'm Aidan, a photographer. I saw {specific reference}.\n\nI'm deciding whether to build a stripped proofing link: the client taps selects and leaves notes on their phone, and you get a WhatsApp when they're done, $8 a month.\n\nIf you'd use it, the pre-launch page has an 'I'd pay' button: aidantorrence2.github.io/aidan-modern/proof-link?src=email\n\nIf not, a one-line 'no, because' is just as useful.\n\nBest,\nAidan"
     },
-    "artifactUrl": "https://claude.ai/artifact/WXrKuumFUrMYZP16EG963W"
+    "artifactUrl": "https://claude.ai/artifact/WXrKuumFUrMYZP16EG963W",
+    "killed": "2026-10-18",
+    "killedReason": "Retired by Aidan on 18 Oct 2026: picked from guesses, not market demand."
   },
   {
     "slug": "scan-cleaner",
@@ -524,7 +556,7 @@
     "price": "$9/month",
     "priceUsd": 9,
     "priceNote": "20 rolls a month, runs on your own computer",
-    "status": "live",
+    "status": "killed",
     "launched": "2026-10-17",
     "reasonPrompt": "Which lab or scanner, and which fix eats the most time: dust, borders, colour?",
     "faq": [
@@ -541,7 +573,9 @@
       "pitchSubject": "Film scan cleanup in batch (pre-launch)",
       "pitch": "Hi {first},\n\nI'm Aidan, a photographer shooting 35mm. I saw {specific reference}.\n\nI'm deciding whether to package the script I run on my lab scans (straighten, trim borders, dust and scratch removal that leaves grain alone, per-roll colour cast fix) as a $9 a month tool that runs on your own computer.\n\nIf that's useful, the pre-launch page has an 'I'd pay' button: aidantorrence2.github.io/aidan-modern/scan-cleaner?src=email\n\nIf not, one line on why helps just as much.\n\nBest,\nAidan"
     },
-    "artifactUrl": "https://claude.ai/artifact/6jSZKESxyZ2nsErnwVHYXZ"
+    "artifactUrl": "https://claude.ai/artifact/6jSZKESxyZ2nsErnwVHYXZ",
+    "killed": "2026-10-18",
+    "killedReason": "Retired by Aidan on 18 Oct 2026: picked from guesses, not market demand."
   },
   {
     "slug": "license-quote",
@@ -556,7 +590,7 @@
     "price": "$5/month",
     "priceUsd": 5,
     "priceNote": "or free for your first three quotes",
-    "status": "live",
+    "status": "killed",
     "launched": "2026-10-17",
     "reasonPrompt": "When did you last quote usage rights, and what did you base the number on?",
     "faq": [
@@ -573,7 +607,9 @@
       "pitchSubject": "Usage-rights quotes in two minutes (pre-launch)",
       "pitch": "Hi {first},\n\nI'm Aidan, a photographer. I saw {specific reference}.\n\nI'm deciding whether to build a small tool that turns six questions about how a brand will use your photos into a quote PDF with the maths shown and a one-page licence, $5 a month.\n\nIf that's useful, the pre-launch page has an 'I'd pay' button: aidantorrence2.github.io/aidan-modern/license-quote?src=email\n\nIf not, one line on why helps just as much.\n\nBest,\nAidan"
     },
-    "artifactUrl": "https://claude.ai/artifact/4SM2JXoLDPuLPb58aKYVhS"
+    "artifactUrl": "https://claude.ai/artifact/4SM2JXoLDPuLPb58aKYVhS",
+    "killed": "2026-10-18",
+    "killedReason": "Retired by Aidan on 18 Oct 2026: picked from guesses, not market demand."
   },
   {
     "slug": "digitals-kit",
@@ -588,7 +624,7 @@
     "price": "$7 one-off",
     "priceUsd": 7,
     "priceNote": "unlimited agencies for 90 days",
-    "status": "live",
+    "status": "killed",
     "launched": "2026-10-17",
     "reasonPrompt": "Which agencies are you applying to, and what got your last application bounced?",
     "faq": [
@@ -604,7 +640,9 @@
       "community": "New faces and aspiring models: I photograph a lot of model tests and keep hearing that agency applications get bounced for format, not looks. I'm deciding whether to build a $7 kit: a phone guide for eight clean digitals, export sized and named to each agency's spec, and a tracker for applications and replies. Pre-launch page, no charge, just an 'I'd pay' button: aidantorrence2.github.io/aidan-modern/digitals-kit",
       "pitchSubject": "Digitals formatted to each agency's spec (pre-launch)",
       "pitch": "Hi {first},\n\nI'm Aidan, a photographer who shoots model tests across Asia. I saw {specific reference}.\n\nI'm deciding whether to build a small kit for new faces: a phone guide for clean digitals, export sized and named to each agency's own spec, and a tracker for applications, $7 one-off.\n\nIf that would help the people you work with, the pre-launch page has an 'I'd pay' button: aidantorrence2.github.io/aidan-modern/digitals-kit?src=email\n\nIf not, one line on why helps just as much.\n\nBest,\nAidan"
-    }
+    },
+    "killed": "2026-10-18",
+    "killedReason": "Retired by Aidan on 18 Oct 2026: picked from guesses, not market demand."
   },
   {
     "slug": "cover-frame",
@@ -619,7 +657,7 @@
     "price": "$5/month",
     "priceUsd": 5,
     "priceNote": "60 videos a month",
-    "status": "live",
+    "status": "killed",
     "launched": "2026-10-17",
     "reasonPrompt": "How do you choose covers today, and do you care about your profile grid?",
     "faq": [
@@ -635,7 +673,9 @@
       "community": "Creators who post daily: how do you pick cover frames? I'm deciding whether to build a drop-a-file tool that scores every frame (sharp face, open eyes, space for text), returns the top three with your title overlaid in your font, sized per platform. $5/month. Pre-launch page, no charge, just an 'I'd pay' button: aidantorrence2.github.io/aidan-modern/cover-frame",
       "pitchSubject": "Cover frames picked for you (pre-launch)",
       "pitch": "Hi {first},\n\nI'm Aidan, a photographer and short-form creator. I saw {specific reference}.\n\nI'm deciding whether to build a small tool that scores every frame of a vertical video and returns the three best covers with your title overlaid in your font, sized per platform, $5 a month.\n\nIf that's useful, the pre-launch page has an 'I'd pay' button: aidantorrence2.github.io/aidan-modern/cover-frame?src=email\n\nIf not, one line on why helps just as much.\n\nBest,\nAidan"
-    }
+    },
+    "killed": "2026-10-18",
+    "killedReason": "Retired by Aidan on 18 Oct 2026: picked from guesses, not market demand."
   },
   {
     "slug": "light-window",
@@ -650,7 +690,7 @@
     "price": "$4/month",
     "priceUsd": 4,
     "priceNote": "unlimited shoots",
-    "status": "live",
+    "status": "killed",
     "launched": "2026-10-17",
     "reasonPrompt": "How do you plan light for an outdoor shoot today, and when did it last go wrong?",
     "faq": [
@@ -667,7 +707,9 @@
       "pitchSubject": "Light windows for a street address (pre-launch)",
       "pitch": "Hi {first},\n\nI'm Aidan, a photographer. I saw {specific reference}.\n\nI'm deciding whether to build a tiny tool: an address and a date in, the exact golden and blue hour windows, sun bearing, a shade note and the cloud forecast out, as one line for the call sheet, $4 a month.\n\nIf that's useful, the pre-launch page has an 'I'd pay' button: aidantorrence2.github.io/aidan-modern/light-window?src=email\n\nIf not, one line on why helps just as much.\n\nBest,\nAidan"
     },
-    "artifactUrl": "https://claude.ai/artifact/VnrjThSTJKxmCJ32GCnhRu"
+    "artifactUrl": "https://claude.ai/artifact/VnrjThSTJKxmCJ32GCnhRu",
+    "killed": "2026-10-18",
+    "killedReason": "Retired by Aidan on 18 Oct 2026: picked from guesses, not market demand."
   },
   {
     "slug": "print-link",
@@ -682,7 +724,7 @@
     "price": "$6/month",
     "priceUsd": 6,
     "priceNote": "plus lab cost at wholesale; you keep the margin",
-    "status": "live",
+    "status": "killed",
     "launched": "2026-10-17",
     "reasonPrompt": "When did someone last ask you for a print, and what did you do?",
     "faq": [
@@ -699,7 +741,9 @@
       "pitchSubject": "Prints from a shoot, one link (pre-launch)",
       "pitch": "Hi {first},\n\nI'm Aidan, a photographer. I saw {specific reference}.\n\nI'm deciding whether to build a one-link-per-shoot print order page: your edit locked, a lab prints and ships in the buyer's region, you set the margin, $6 a month plus wholesale lab cost.\n\nIf that's useful, the pre-launch page has an 'I'd pay' button: aidantorrence2.github.io/aidan-modern/print-link?src=email\n\nIf not, one line on why helps just as much.\n\nBest,\nAidan"
     },
-    "artifactUrl": "https://claude.ai/artifact/7UVLd9vkCSv65U348oSyUE"
+    "artifactUrl": "https://claude.ai/artifact/7UVLd9vkCSv65U348oSyUE",
+    "killed": "2026-10-18",
+    "killedReason": "Retired by Aidan on 18 Oct 2026: picked from guesses, not market demand."
   },
   {
     "slug": "tear-sheets",
@@ -714,7 +758,7 @@
     "price": "$5/month",
     "priceUsd": 5,
     "priceNote": "or $29 one-off for a fixed PDF",
-    "status": "live",
+    "status": "killed",
     "launched": "2026-10-17",
     "reasonPrompt": "How many published credits do you have, and what do you send when an editor asks for tear sheets?",
     "faq": [
@@ -731,7 +775,9 @@
       "pitchSubject": "Tear sheets from your published credits (pre-launch)",
       "pitch": "Hi {first},\n\nI'm Aidan, an editorial photographer. I saw {specific reference}.\n\nI'm deciding whether to build a small tool that turns published credits (a title, an issue, a photo of the page) into clean tear sheets and one submissions-ready PDF that stays current, $5 a month.\n\nIf that's useful, the pre-launch page has an 'I'd pay' button: aidantorrence2.github.io/aidan-modern/tear-sheets?src=email\n\nIf not, one line on why helps just as much.\n\nBest,\nAidan"
     },
-    "artifactUrl": "https://claude.ai/artifact/RotDpjJz8Ets1hn4axWhJL"
+    "artifactUrl": "https://claude.ai/artifact/RotDpjJz8Ets1hn4axWhJL",
+    "killed": "2026-10-18",
+    "killedReason": "Retired by Aidan on 18 Oct 2026: picked from guesses, not market demand."
   },
   {
     "slug": "subtitle-pack",
@@ -746,7 +792,7 @@
     "price": "$7/month",
     "priceUsd": 7,
     "priceNote": "20 videos a month, 5 languages each",
-    "status": "live",
+    "status": "killed",
     "launched": "2026-10-17",
     "reasonPrompt": "Which languages does your audience speak, and have you ever posted a translated version?",
     "faq": [
@@ -763,7 +809,9 @@
       "pitchSubject": "Five subtitled versions of one video (pre-launch)",
       "pitch": "Hi {first},\n\nI'm Aidan, a photographer and short-form creator traveling through Asia. I saw {specific reference}.\n\nI'm deciding whether to build a tool that turns one vertical video into five subtitled language versions, with your glossary kept and an optional native check, $7 a month.\n\nIf that's useful, the pre-launch page has an 'I'd pay' button: aidantorrence2.github.io/aidan-modern/subtitle-pack?src=email\n\nIf not, one line on why helps just as much.\n\nBest,\nAidan"
     },
-    "artifactUrl": "https://claude.ai/artifact/7Dvg8cjUYRLohUSmJGdvHB"
+    "artifactUrl": "https://claude.ai/artifact/7Dvg8cjUYRLohUSmJGdvHB",
+    "killed": "2026-10-18",
+    "killedReason": "Retired by Aidan on 18 Oct 2026: picked from guesses, not market demand."
   },
   {
     "slug": "comp-card",
@@ -778,7 +826,7 @@
     "price": "$5 one-off",
     "priceUsd": 5,
     "priceNote": "or $3/month for unlimited updates",
-    "status": "live",
+    "status": "killed",
     "launched": "2026-10-17",
     "reasonPrompt": "When did you last need a comp card, and what did you use to make it?",
     "faq": [
@@ -794,7 +842,9 @@
       "community": "New faces and models: how do you make your comp card today? I photograph a lot of tests and the comp card is the step everyone gets stuck on. I'm deciding whether to build a two-minute generator: five photos and your stats in, a standard 5.5 x 8.5 front/back card out as print PDF, DM-size JPEG and a web link, editable from your phone. $5 one-off. Pre-launch page, no charge, just an 'I'd pay' button: aidantorrence2.github.io/aidan-modern/comp-card",
       "pitchSubject": "Comp cards in two minutes (pre-launch)",
       "pitch": "Hi {first},\n\nI'm Aidan, a photographer who shoots model tests across Asia. I saw {specific reference}.\n\nI'm deciding whether to build a two-minute comp card generator for new faces: five photos and stats in, a standard front/back card out as print PDF, DM-size JPEG and a link, $5 one-off.\n\nIf that would help the people you work with, the pre-launch page has an 'I'd pay' button: aidantorrence2.github.io/aidan-modern/comp-card?src=email\n\nIf not, one line on why helps just as much.\n\nBest,\nAidan"
-    }
+    },
+    "killed": "2026-10-18",
+    "killedReason": "Retired by Aidan on 18 Oct 2026: picked from guesses, not market demand."
   },
   {
     "slug": "deposit-link",
@@ -809,7 +859,7 @@
     "price": "$5/month",
     "priceUsd": 5,
     "priceNote": "plus the card processor's fee, nothing else",
-    "status": "live",
+    "status": "killed",
     "launched": "2026-10-17",
     "reasonPrompt": "How do you take deposits today, and when did a held date last fall through?",
     "faq": [
@@ -826,7 +876,9 @@
       "pitchSubject": "Deposits that hold the date (pre-launch)",
       "pitch": "Hi {first},\n\nI'm Aidan, a photographer. I saw {specific reference}.\n\nI'm deciding whether to build a tiny tool for deposits: shoot, date and amount in, a payment link with your terms out, the date held only once paid, reminders and the balance request automatic, $5 a month plus card fees.\n\nIf that's useful, the pre-launch page has an 'I'd pay' button: aidantorrence2.github.io/aidan-modern/deposit-link?src=email\n\nIf not, one line on why helps just as much.\n\nBest,\nAidan"
     },
-    "artifactUrl": "https://claude.ai/artifact/JgaFSr1RBsXo3DKMUB6zeL"
+    "artifactUrl": "https://claude.ai/artifact/JgaFSr1RBsXo3DKMUB6zeL",
+    "killed": "2026-10-18",
+    "killedReason": "Retired by Aidan on 18 Oct 2026: picked from guesses, not market demand."
   },
   {
     "slug": "backup-check",
@@ -841,7 +893,7 @@
     "price": "$4/month",
     "priceUsd": 4,
     "priceNote": "runs on your own computer; nothing uploaded",
-    "status": "live",
+    "status": "killed",
     "launched": "2026-10-17",
     "reasonPrompt": "Where do your shoots live today, and when did you last verify the backup actually ran?",
     "faq": [
@@ -858,7 +910,9 @@
       "pitchSubject": "Did the backup actually run? (pre-launch)",
       "pitch": "Hi {first},\n\nI'm Aidan, a photographer. I saw {specific reference}.\n\nI'm deciding whether to build a small local tool that verifies every shoot folder exists in three places each night, by file count and checksum, and messages you the morning one is missing, $4 a month.\n\nIf that's useful, the pre-launch page has an 'I'd pay' button: aidantorrence2.github.io/aidan-modern/backup-check?src=email\n\nIf not, one line on why helps just as much.\n\nBest,\nAidan"
     },
-    "artifactUrl": "https://claude.ai/artifact/4e63JQfaJU1Pfq3nYcUSE8"
+    "artifactUrl": "https://claude.ai/artifact/4e63JQfaJU1Pfq3nYcUSE8",
+    "killed": "2026-10-18",
+    "killedReason": "Retired by Aidan on 18 Oct 2026: picked from guesses, not market demand."
   },
   {
     "slug": "wardrobe-call",
@@ -873,7 +927,7 @@
     "price": "$4/month",
     "priceUsd": 4,
     "priceNote": "unlimited briefs",
-    "status": "live",
+    "status": "killed",
     "launched": "2026-10-17",
     "reasonPrompt": "What do you send models about wardrobe today, and what still goes wrong on the day?",
     "faq": [
@@ -890,7 +944,9 @@
       "pitchSubject": "Wardrobe briefs models follow (pre-launch)",
       "pitch": "Hi {first},\n\nI'm Aidan, a photographer who shoots a lot of model tests. I saw {specific reference}.\n\nI'm deciding whether to build a wardrobe brief generator: concept and location in, three outfit directions with example images, colour rules for your light, the don'ts, and a packing checklist the model ticks off, $4 a month.\n\nIf that's useful, the pre-launch page has an 'I'd pay' button: aidantorrence2.github.io/aidan-modern/wardrobe-call?src=email\n\nIf not, one line on why helps just as much.\n\nBest,\nAidan"
     },
-    "artifactUrl": "https://claude.ai/artifact/1J8J1ywxvphSc5aZttCFcB"
+    "artifactUrl": "https://claude.ai/artifact/1J8J1ywxvphSc5aZttCFcB",
+    "killed": "2026-10-18",
+    "killedReason": "Retired by Aidan on 18 Oct 2026: picked from guesses, not market demand."
   },
   {
     "slug": "comment-miner",
@@ -905,7 +961,7 @@
     "price": "$5/month",
     "priceUsd": 5,
     "priceNote": "one account; add a second for $2",
-    "status": "live",
+    "status": "killed",
     "launched": "2026-10-17",
     "reasonPrompt": "How many comments do you get a week, and how do you decide what to film next?",
     "faq": [
@@ -921,7 +977,9 @@
       "community": "Creators: how do you read your comments for what to film next? I'm deciding whether to build a Monday digest: your last week of comments grouped by what people are actually asking, the top ten ranked, each with a 15-second video idea, a hook and a paste-ready reply, plus flags for comments that deserve a personal answer. $5/month. Pre-launch page, no charge, just an 'I'd pay' button: aidantorrence2.github.io/aidan-modern/comment-miner",
       "pitchSubject": "Your comments as a content calendar (pre-launch)",
       "pitch": "Hi {first},\n\nI'm Aidan, a photographer and short-form creator. I saw {specific reference}.\n\nI'm deciding whether to build a Monday digest that groups a week of your comments by what people are really asking, ranks the top ten, and gives each a next-video idea, a hook and a paste-ready reply, $5 a month.\n\nIf that's useful, the pre-launch page has an 'I'd pay' button: aidantorrence2.github.io/aidan-modern/comment-miner?src=email\n\nIf not, one line on why helps just as much.\n\nBest,\nAidan"
-    }
+    },
+    "killed": "2026-10-18",
+    "killedReason": "Retired by Aidan on 18 Oct 2026: picked from guesses, not market demand."
   },
   {
     "slug": "shoot-ledger",
@@ -936,7 +994,7 @@
     "price": "$5/month",
     "priceUsd": 5,
     "priceNote": "unlimited shoots; multi-currency",
-    "status": "live",
+    "status": "killed",
     "launched": "2026-10-17",
     "reasonPrompt": "How do you track what a shoot earns after costs today, if at all?",
     "faq": [
@@ -953,7 +1011,9 @@
       "pitchSubject": "What each shoot actually earns (pre-launch)",
       "pitch": "Hi {first},\n\nI'm Aidan, a photographer. I saw {specific reference}.\n\nI'm deciding whether to build a per-shoot ledger: one row per job with deposit, balance, lab, travel and crew, receipts filed from a WhatsApp photo, margin per client and a year-end tax export, $5 a month.\n\nIf that's useful, the pre-launch page has an 'I'd pay' button: aidantorrence2.github.io/aidan-modern/shoot-ledger?src=email\n\nIf not, one line on why helps just as much.\n\nBest,\nAidan"
     },
-    "artifactUrl": "https://claude.ai/artifact/Mi3taCfxCtYimzVW7k346V"
+    "artifactUrl": "https://claude.ai/artifact/Mi3taCfxCtYimzVW7k346V",
+    "killed": "2026-10-18",
+    "killedReason": "Retired by Aidan on 18 Oct 2026: picked from guesses, not market demand."
   },
   {
     "slug": "shoot-day-page",
@@ -968,7 +1028,7 @@
     "price": "$4/month",
     "priceUsd": 4,
     "priceNote": "unlimited bookings",
-    "status": "live",
+    "status": "killed",
     "launched": "2026-10-17",
     "reasonPrompt": "Which question do clients ask most before a shoot, and how do you answer it today?",
     "faq": [
@@ -985,7 +1045,9 @@
       "pitchSubject": "The page your confirmation email should have been (pre-launch)",
       "pitch": "Hi {first},\n\nI'm Aidan, a photographer. I saw {specific reference}.\n\nI'm deciding whether to build a per-booking client page: timeline, map pin with parking notes, rain plan, wardrobe brief, weather line and automatic reminders, so the pre-shoot questions stop, $4 a month.\n\nIf that's useful, the pre-launch page has an 'I'd pay' button: aidantorrence2.github.io/aidan-modern/shoot-day-page?src=email\n\nIf not, one line on why helps just as much.\n\nBest,\nAidan"
     },
-    "artifactUrl": "https://claude.ai/artifact/LDqryoF4NBjNNUh7iqP8PS"
+    "artifactUrl": "https://claude.ai/artifact/LDqryoF4NBjNNUh7iqP8PS",
+    "killed": "2026-10-18",
+    "killedReason": "Retired by Aidan on 18 Oct 2026: picked from guesses, not market demand."
   },
   {
     "slug": "creator-rate-card",
@@ -1000,7 +1062,7 @@
     "price": "$5/month",
     "priceUsd": 5,
     "priceNote": "no cut of your deals",
-    "status": "live",
+    "status": "killed",
     "launched": "2026-10-17",
     "reasonPrompt": "What did you charge for your last brand video, and how did you arrive at the number?",
     "faq": [
@@ -1017,7 +1079,9 @@
       "pitchSubject": "A rate card brands quote themselves from (pre-launch)",
       "pitch": "Hi {first},\n\nI'm Aidan, a photographer and short-form creator. I saw {specific reference}.\n\nI'm deciding whether to build a rate card page for creators: rates set from your real numbers, a quote link brands fill in with deliverables and usage, the request on your WhatsApp, $5 a month and no cut of your deals.\n\nIf that's useful, the pre-launch page has an 'I'd pay' button: aidantorrence2.github.io/aidan-modern/creator-rate-card?src=email\n\nIf not, one line on why helps just as much.\n\nBest,\nAidan"
     },
-    "artifactUrl": "https://claude.ai/artifact/FdtsuYzruDuQeqgVf4Faim"
+    "artifactUrl": "https://claude.ai/artifact/FdtsuYzruDuQeqgVf4Faim",
+    "killed": "2026-10-18",
+    "killedReason": "Retired by Aidan on 18 Oct 2026: picked from guesses, not market demand."
   },
   {
     "slug": "repost-permit",
@@ -1032,7 +1096,7 @@
     "price": "$5/month",
     "priceUsd": 5,
     "priceNote": "unlimited requests; team seats later",
-    "status": "live",
+    "status": "killed",
     "launched": "2026-10-17",
     "reasonPrompt": "When did you last repost someone's content, and where is the proof you asked?",
     "faq": [
@@ -1049,7 +1113,9 @@
       "pitchSubject": "Repost permission you can find later (pre-launch)",
       "pitch": "Hi {first},\n\nI'm Aidan, a photographer and creator. I saw {specific reference}.\n\nI'm deciding whether to build a one-link repost permission tool: paste a post, state the use and credit, the creator approves in a tap, and every approval is logged with its terms, $5 a month.\n\nIf that's useful, the pre-launch page has an 'I'd pay' button: aidantorrence2.github.io/aidan-modern/repost-permit?src=email\n\nIf not, one line on why helps just as much.\n\nBest,\nAidan"
     },
-    "artifactUrl": "https://claude.ai/artifact/QkE6z3fmeFZNY7boeCCiby"
+    "artifactUrl": "https://claude.ai/artifact/QkE6z3fmeFZNY7boeCCiby",
+    "killed": "2026-10-18",
+    "killedReason": "Retired by Aidan on 18 Oct 2026: picked from guesses, not market demand."
   },
   {
     "slug": "trial-notes",
@@ -1064,7 +1130,7 @@
     "price": "$4/month",
     "priceUsd": 4,
     "priceNote": "unlimited brides",
-    "status": "live",
+    "status": "killed",
     "launched": "2026-10-17",
     "reasonPrompt": "Where do your trial notes live today, and what went wrong the last time a wedding morning didn't match the trial?",
     "faq": [
@@ -1081,7 +1147,9 @@
       "pitchSubject": "Trial notes the wedding morning can follow (pre-launch)",
       "pitch": "Hi {first},\n\nI'm Aidan, a photographer who works a lot of shoot days alongside hair and makeup artists. I saw {specific reference}.\n\nI'm deciding whether to build a per-bride trial record: products by shade, timings and photos logged on your phone during the trial, a link the bride sees with her look and prep notes, and a wedding-morning timeline built from it, $4 a month.\n\nIf that's useful, the pre-launch page has an 'I'd pay' button: aidantorrence2.github.io/aidan-modern/trial-notes?src=email\n\nIf not, one line on why helps just as much.\n\nBest,\nAidan"
     },
-    "artifactUrl": "https://claude.ai/artifact/5niKN2aHGHnyaa74K1znoH"
+    "artifactUrl": "https://claude.ai/artifact/5niKN2aHGHnyaa74K1znoH",
+    "killed": "2026-10-18",
+    "killedReason": "Retired by Aidan on 18 Oct 2026: picked from guesses, not market demand."
   },
   {
     "slug": "kit-stock",
@@ -1096,7 +1164,7 @@
     "price": "$3/month",
     "priceUsd": 3,
     "priceNote": "unlimited products",
-    "status": "live",
+    "status": "killed",
     "launched": "2026-10-17",
     "reasonPrompt": "What ran out or had expired at your last wedding, and how do you track your kit today?",
     "faq": [
@@ -1112,7 +1180,9 @@
       "community": "Bridal hair and makeup artists: how do you track what's in your kit and what's expiring? I'm deciding whether to build a simple kit list with open dates and expiry flags, WhatsApp restock reminders a week before each wedding, and a packing list per look built from your trial notes. $3/month. Pre-launch page, no charge, just an 'I'd pay' button: aidantorrence2.github.io/aidan-modern/kit-stock",
       "pitchSubject": "Your kit, expiry flags and a packing list per look (pre-launch)",
       "pitch": "Hi {first},\n\nI'm Aidan, a photographer who works a lot of shoot mornings alongside hair and makeup artists. I saw {specific reference}.\n\nI'm deciding whether to build a simple kit list: products with open dates and expiry flags, restock reminders a week before each wedding, and a packing list per look, $3 a month.\n\nIf that's useful, the pre-launch page has an 'I'd pay' button: aidantorrence2.github.io/aidan-modern/kit-stock?src=email\n\nIf not, one line on why helps just as much.\n\nBest,\nAidan"
-    }
+    },
+    "killed": "2026-10-18",
+    "killedReason": "Retired by Aidan on 18 Oct 2026: picked from guesses, not market demand."
   },
   {
     "slug": "reveal-room",
@@ -1127,7 +1197,7 @@
     "price": "$6/month",
     "priceUsd": 6,
     "priceNote": "unlimited reveals",
-    "status": "live",
+    "status": "killed",
     "launched": "2026-10-17",
     "reasonPrompt": "How do you reveal and sell today: in person, a gallery link, or a phone call?",
     "faq": [
@@ -1144,7 +1214,9 @@
       "pitchSubject": "A reveal for the clients who can't come in (pre-launch)",
       "pitch": "Hi {first},\n\nI'm Aidan, a photographer. I saw {specific reference}.\n\nI'm deciding whether to build a timed online reveal for the clients who cannot come to the studio: images shown one at a time, wall art and albums at your prices with a room preview on their own wall, the order sent to you, the link closing on a date, $6 a month.\n\nIf that's useful, the pre-launch page has an 'I'd pay' button: aidantorrence2.github.io/aidan-modern/reveal-room?src=email\n\nIf not, one line on why helps just as much.\n\nBest,\nAidan"
     },
-    "artifactUrl": "https://claude.ai/artifact/AsVUyxd64esRD6Gi25du3T"
+    "artifactUrl": "https://claude.ai/artifact/AsVUyxd64esRD6Gi25du3T",
+    "killed": "2026-10-18",
+    "killedReason": "Retired by Aidan on 18 Oct 2026: picked from guesses, not market demand."
   },
   {
     "slug": "album-proof",
@@ -1159,7 +1231,7 @@
     "price": "$5/month",
     "priceUsd": 5,
     "priceNote": "unlimited albums; two revision rounds enforced if you want",
-    "status": "live",
+    "status": "killed",
     "launched": "2026-10-17",
     "reasonPrompt": "How many revision rounds does an album usually take you, and how do you get the final sign-off today?",
     "faq": [
@@ -1176,7 +1248,9 @@
       "pitchSubject": "Album sign-off without the email thread (pre-launch)",
       "pitch": "Hi {first},\n\nI'm Aidan, a photographer. I saw {specific reference}.\n\nI'm deciding whether to build an album proofing link: the client taps a spread to comment, picks swaps from the gallery, each revision round is numbered, and the final approval is timestamped against the exact version, $5 a month.\n\nIf that's useful, the pre-launch page has an 'I'd pay' button: aidantorrence2.github.io/aidan-modern/album-proof?src=email\n\nIf not, one line on why helps just as much.\n\nBest,\nAidan"
     },
-    "artifactUrl": "https://claude.ai/artifact/7wheWCULnoGp8fX3bj8YZr"
+    "artifactUrl": "https://claude.ai/artifact/7wheWCULnoGp8fX3bj8YZr",
+    "killed": "2026-10-18",
+    "killedReason": "Retired by Aidan on 18 Oct 2026: picked from guesses, not market demand."
   },
   {
     "slug": "mini-day",
@@ -1191,7 +1265,7 @@
     "price": "$6/month",
     "priceUsd": 6,
     "priceNote": "or $12 per mini day",
-    "status": "live",
+    "status": "killed",
     "launched": "2026-10-17",
     "reasonPrompt": "How did you fill your last mini-session day, and what fell through the cracks?",
     "faq": [
@@ -1208,7 +1282,9 @@
       "pitchSubject": "One page to run a mini-session day (pre-launch)",
       "pitch": "Hi {first},\n\nI'm Aidan, a photographer. I saw {specific reference}.\n\nI'm deciding whether to build one page per mini-session day: open slots with a deposit to hold, a waitlist that fills cancellations, the timeline to your calendar, and a client page per slot with reminders, $6 a month or $12 per day.\n\nIf that's useful, the pre-launch page has an 'I'd pay' button: aidantorrence2.github.io/aidan-modern/mini-day?src=email\n\nIf not, one line on why helps just as much.\n\nBest,\nAidan"
     },
-    "artifactUrl": "https://claude.ai/artifact/LYGYQqdXrhXSrLgBqeegAg"
+    "artifactUrl": "https://claude.ai/artifact/LYGYQqdXrhXSrLgBqeegAg",
+    "killed": "2026-10-18",
+    "killedReason": "Retired by Aidan on 18 Oct 2026: picked from guesses, not market demand."
   },
   {
     "slug": "invoice-nudge",
@@ -1223,7 +1299,7 @@
     "price": "$4/month",
     "priceUsd": 4,
     "priceNote": "unlimited invoices",
-    "status": "live",
+    "status": "killed",
     "launched": "2026-10-17",
     "reasonPrompt": "How long did your last brand or editorial invoice take to get paid, and how many times did you have to ask?",
     "faq": [
@@ -1244,7 +1320,9 @@
       "pitchSubject": "Invoices that chase themselves (pre-launch)",
       "pitch": "Hi {first},\n\nI'm Aidan, a photographer. I saw {specific reference}.\n\nI'm deciding whether to build a small tool for late invoices: paste the invoice, pick reminder days, it sends short follow-ups in your voice and stops the moment you mark it paid, $4 a month.\n\nIf that would save you the fourth 'just checking in', the pre-launch page has an 'I'd pay' button: aidantorrence2.github.io/aidan-modern/invoice-nudge?src=email\n\nIf not, one line on why is just as useful.\n\nBest,\nAidan"
     },
-    "artifactUrl": "https://claude.ai/artifact/Y1zHdaWnaLqZk9VfzRYcjW"
+    "artifactUrl": "https://claude.ai/artifact/Y1zHdaWnaLqZk9VfzRYcjW",
+    "killed": "2026-10-18",
+    "killedReason": "Retired by Aidan on 18 Oct 2026: picked from guesses, not market demand."
   },
   {
     "slug": "tether-share",
@@ -1259,7 +1337,7 @@
     "price": "$6/month",
     "priceUsd": 6,
     "priceNote": "unlimited jobs, proxies kept 30 days",
-    "status": "live",
+    "status": "killed",
     "launched": "2026-10-17",
     "reasonPrompt": "How do clients and art directors see frames during your tethered shoots today, and where does it break down?",
     "faq": [
@@ -1280,7 +1358,9 @@
       "pitchSubject": "Live tethered frames on the client's phone (pre-launch)",
       "pitch": "Hi {first},\n\nI'm Aidan, a photographer. I saw {specific reference}.\n\nI'm deciding whether to build a small tool for tethered shoots: a watcher on the shooting laptop pushes a proxy of each capture to one private link, the client or art director hearts picks on their phone, and the picks come back as one list, $6 a month.\n\nIf that would help on your sets, the pre-launch page has an 'I'd pay' button: aidantorrence2.github.io/aidan-modern/tether-share?src=email\n\nIf not, one line on why is just as useful.\n\nBest,\nAidan"
     },
-    "artifactUrl": "https://claude.ai/artifact/Y63SpVqDyRc5kv6eLAVeiX"
+    "artifactUrl": "https://claude.ai/artifact/Y63SpVqDyRc5kv6eLAVeiX",
+    "killed": "2026-10-18",
+    "killedReason": "Retired by Aidan on 18 Oct 2026: picked from guesses, not market demand."
   },
   {
     "slug": "headshot-roster",
@@ -1295,7 +1375,7 @@
     "price": "$8/month",
     "priceUsd": 8,
     "priceNote": "or $15 per headshot day",
-    "status": "live",
+    "status": "killed",
     "launched": "2026-10-18",
     "reasonPrompt": "How did you schedule and deliver your last company headshot day, and what took the most back-and-forth?",
     "faq": [
@@ -1316,7 +1396,9 @@
       "pitchSubject": "Headshot days without the spreadsheet (pre-launch)",
       "pitch": "Hi {first},\n\nI'm Aidan, a photographer. I saw {specific reference}.\n\nI'm deciding whether to build a small tool for company headshot days: one link for HR, staff pick slots and get reminders, a check-in list on the day, a private pick page per person, and a roster from booked to delivered, $8 a month or $15 per day.\n\nIf that would cut the back-and-forth on your next one, the pre-launch page has an 'I'd pay' button: aidantorrence2.github.io/aidan-modern/headshot-roster?src=email\n\nIf not, one line on why is just as useful.\n\nBest,\nAidan"
     },
-    "artifactUrl": "https://claude.ai/artifact/DDVSU3meSUUYN5Gf9FrFFa"
+    "artifactUrl": "https://claude.ai/artifact/DDVSU3meSUUYN5Gf9FrFFa",
+    "killed": "2026-10-18",
+    "killedReason": "Retired by Aidan on 18 Oct 2026: picked from guesses, not market demand."
   },
   {
     "slug": "permit-finder",
@@ -1331,7 +1413,7 @@
     "price": "$6/month",
     "priceUsd": 6,
     "priceNote": "or $9 per city, one-off",
-    "status": "live",
+    "status": "killed",
     "launched": "2026-10-18",
     "reasonPrompt": "Which city do you shoot in most, and when did a permit question last cost you time or money?",
     "faq": [
@@ -1352,7 +1434,9 @@
       "pitchSubject": "Which spots in {city} need a photo permit (pre-launch)",
       "pitch": "Hi {first},\n\nI'm Aidan, a photographer. I saw {specific reference}.\n\nI'm deciding whether to build one page per city listing every park, beach and street with its photo-permit rule, fee, lead time and the office's own form, $6 a month or $9 per city.\n\nIf a permit question has ever cost you a shoot, the pre-launch page has an 'I'd pay' button and a box for your city: aidantorrence2.github.io/aidan-modern/permit-finder?src=email\n\nIf not, one line on why is just as useful.\n\nBest,\nAidan"
     },
-    "artifactUrl": "https://claude.ai/artifact/QFXoZS5SeKuiQttVxQLMqc"
+    "artifactUrl": "https://claude.ai/artifact/QFXoZS5SeKuiQttVxQLMqc",
+    "killed": "2026-10-18",
+    "killedReason": "Retired by Aidan on 18 Oct 2026: picked from guesses, not market demand."
   },
   {
     "slug": "rain-plan",
@@ -1367,7 +1451,7 @@
     "price": "$5/month",
     "priceUsd": 5,
     "priceNote": "unlimited shoots",
-    "status": "live",
+    "status": "killed",
     "launched": "2026-10-18",
     "reasonPrompt": "How many outdoor shoots did weather move for you this season, and how did you handle the reschedule each time?",
     "faq": [
@@ -1388,7 +1472,9 @@
       "pitchSubject": "Weather reschedules without the 9pm text (pre-launch)",
       "pitch": "Hi {first},\n\nI'm Aidan, a photographer. I saw {specific reference}.\n\nI'm deciding whether to build a small tool for outdoor shoots: you set a rain rule per shoot, the forecast is checked 48 and 24 hours out, and if it trips the client gets your open backup dates and taps one, with the retainer carried over and both calendars updated, $5 a month.\n\nIf that would save you the weather texts this season, the pre-launch page has an 'I'd pay' button: aidantorrence2.github.io/aidan-modern/rain-plan?src=email\n\nIf not, one line on why is just as useful.\n\nBest,\nAidan"
     },
-    "artifactUrl": "https://claude.ai/artifact/1R1uWr2MvmVGMysF3JJsG3"
+    "artifactUrl": "https://claude.ai/artifact/1R1uWr2MvmVGMysF3JJsG3",
+    "killed": "2026-10-18",
+    "killedReason": "Retired by Aidan on 18 Oct 2026: picked from guesses, not market demand."
   },
   {
     "slug": "referral-card",
@@ -1403,7 +1489,7 @@
     "price": "$5/month",
     "priceUsd": 5,
     "priceNote": "unlimited clients and links",
-    "status": "live",
+    "status": "killed",
     "launched": "2026-10-18",
     "reasonPrompt": "Roughly what share of your bookings come from past clients' referrals, and how do you track the thank-you credits today?",
     "faq": [
@@ -1423,7 +1509,9 @@
       "community": "Portrait and wedding photographers: how do you track referral thank-yous? Mine is a notes app and guilt. I'm deciding whether to build a small tool: each client gets a card and link with your reward on it, a friend who books through it is tied to them automatically, and one page shows the referral tree with credits owed and used. $5/month. Pre-launch page, no charge, just an 'I'd pay' button: aidantorrence2.github.io/aidan-modern/referral-card",
       "pitchSubject": "Referral credits you never forget (pre-launch)",
       "pitch": "Hi {first},\n\nI'm Aidan, a photographer. I saw {specific reference}.\n\nI'm deciding whether to build a small tool for referrals: each client gets a personal link with the reward you set, a friend who books through it is tied to them automatically, and one page shows who sent whom and what credit is owed, $5 a month.\n\nIf word of mouth is most of your bookings, the pre-launch page has an 'I'd pay' button: aidantorrence2.github.io/aidan-modern/referral-card?src=email\n\nIf not, one line on why is just as useful.\n\nBest,\nAidan"
-    }
+    },
+    "killed": "2026-10-18",
+    "killedReason": "Retired by Aidan on 18 Oct 2026: picked from guesses, not market demand."
   },
   {
     "slug": "renewal-watch",
@@ -1438,7 +1526,7 @@
     "price": "$5/month",
     "priceUsd": 5,
     "priceNote": "unlimited licenses",
-    "status": "live",
+    "status": "killed",
     "launched": "2026-10-18",
     "reasonPrompt": "When did a client last keep using your images past the license term, and did you invoice for it?",
     "faq": [
@@ -1459,7 +1547,9 @@
       "pitchSubject": "Image licenses that remind you to renew them (pre-launch)",
       "pitch": "Hi {first},\n\nI'm Aidan, a photographer. I saw {specific reference}.\n\nI'm deciding whether to build a small tool for image licenses: log each one or paste the agreement, get a reminder 60 days before the term ends with a renewal quote from the original fee, and send the client a short note in your own wording, $5 a month.\n\nIf you've ever found your work still running after the term, the pre-launch page has an 'I'd pay' button: aidantorrence2.github.io/aidan-modern/renewal-watch?src=email\n\nIf not, one line on why is just as useful.\n\nBest,\nAidan"
     },
-    "artifactUrl": "https://claude.ai/artifact/KcwFcpdjBL3TuT6Yj3FH7n"
+    "artifactUrl": "https://claude.ai/artifact/KcwFcpdjBL3TuT6Yj3FH7n",
+    "killed": "2026-10-18",
+    "killedReason": "Retired by Aidan on 18 Oct 2026: picked from guesses, not market demand."
   },
   {
     "slug": "vendor-credits",
@@ -1474,7 +1564,7 @@
     "price": "$4/month",
     "priceUsd": 4,
     "priceNote": "unlimited weddings",
-    "status": "live",
+    "status": "killed",
     "launched": "2026-10-18",
     "reasonPrompt": "How do you handle vendor credits and vendor galleries after a wedding today, and who usually gets left out?",
     "faq": [
@@ -1494,7 +1584,9 @@
       "community": "Wedding photographers: how do you handle vendor credits and vendor galleries? Mine is retyping handles into every caption and sending Dropbox links with a 'please credit me' I'm not sure anyone reads. I'm deciding whether to build a small tool: one vendor list per wedding, a copy-paste credit block that is always complete, a private gallery per vendor with your terms and an 'I agree' before download, and a page showing which planners tag you back. $4/month. Pre-launch page, no charge, just an 'I'd pay' button: aidantorrence2.github.io/aidan-modern/vendor-credits",
       "pitchSubject": "Vendor credits without the 'you forgot me' text (pre-launch)",
       "pitch": "Hi {first},\n\nI'm Aidan, a photographer. I saw {specific reference}.\n\nI'm deciding whether to build a small tool for vendor credits: one vendor list per wedding, a copy-paste credit block that is always complete, a private gallery per vendor with your terms attached, and a page showing which planners send work back, $4 a month.\n\nIf that would save you a few texts a season, the pre-launch page has an 'I'd pay' button: aidantorrence2.github.io/aidan-modern/vendor-credits?src=email\n\nIf not, one line on why is just as useful.\n\nBest,\nAidan"
-    }
+    },
+    "killed": "2026-10-18",
+    "killedReason": "Retired by Aidan on 18 Oct 2026: picked from guesses, not market demand."
   },
   {
     "slug": "expiry-nudge",
@@ -1509,7 +1601,7 @@
     "price": "$4/month",
     "priceUsd": 4,
     "priceNote": "unlimited galleries; extensions are paid to you directly",
-    "status": "live",
+    "status": "killed",
     "launched": "2026-10-18",
     "reasonPrompt": "How many resend requests did you get last year for expired galleries, and do you charge for extensions today?",
     "faq": [
@@ -1530,7 +1622,9 @@
       "pitchSubject": "Gallery expiries without the resend emails (pre-launch)",
       "pitch": "Hi {first},\n\nI'm Aidan, a photographer. I saw {specific reference}.\n\nI'm deciding whether to build a small tool for gallery expiries: three reminders in your voice that show whether the client has downloaded, a paid extension or archive offer in the last one, and a board of every gallery by expiry and download status, $4 a month.\n\nIf you still get 'can you resend?' emails, the pre-launch page has an 'I'd pay' button: aidantorrence2.github.io/aidan-modern/expiry-nudge?src=email\n\nIf not, one line on why is just as useful.\n\nBest,\nAidan"
     },
-    "artifactUrl": "https://claude.ai/artifact/CG43uAqhZPnLUWYQV9iP7H"
+    "artifactUrl": "https://claude.ai/artifact/CG43uAqhZPnLUWYQV9iP7H",
+    "killed": "2026-10-18",
+    "killedReason": "Retired by Aidan on 18 Oct 2026: picked from guesses, not market demand."
   },
   {
     "slug": "casting-call",
@@ -1545,7 +1639,7 @@
     "price": "$5/month",
     "priceUsd": 5,
     "priceNote": "unlimited castings and applicants",
-    "status": "live",
+    "status": "killed",
     "launched": "2026-10-18",
     "reasonPrompt": "How did you run your last model call, and how many applicants did you lose track of?",
     "faq": [
@@ -1566,7 +1660,9 @@
       "pitchSubject": "Model calls without the DM chaos (pre-launch)",
       "pitch": "Hi {first},\n\nI'm Aidan, a photographer. I saw {specific reference}.\n\nI'm deciding whether to build a small tool for model calls: one private page per casting, applicants add two photos, sizes and availability, you shortlist in a grid, and the booked ones get a page with call time, pin and release, $5 a month.\n\nIf your last casting lived in your DMs, the pre-launch page has an 'I'd pay' button: aidantorrence2.github.io/aidan-modern/casting-call?src=email\n\nIf not, one line on why is just as useful.\n\nBest,\nAidan"
     },
-    "artifactUrl": "https://claude.ai/artifact/FrEUEx8ydbcqLekwDBBAHZ"
+    "artifactUrl": "https://claude.ai/artifact/FrEUEx8ydbcqLekwDBBAHZ",
+    "killed": "2026-10-18",
+    "killedReason": "Retired by Aidan on 18 Oct 2026: picked from guesses, not market demand."
   },
   {
     "slug": "edit-tracker",
@@ -1581,7 +1677,7 @@
     "price": "$4/month",
     "priceUsd": 4,
     "priceNote": "unlimited jobs",
-    "status": "live",
+    "status": "killed",
     "launched": "2026-10-18",
     "reasonPrompt": "How many 'any update?' messages did you get last month, and how do you track your editing queue today?",
     "faq": [
@@ -1602,7 +1698,9 @@
       "pitchSubject": "A status page for every gallery in progress (pre-launch)",
       "pitch": "Hi {first},\n\nI'm Aidan, a photographer. I saw {specific reference}.\n\nI'm deciding whether to build a small tool for the editing backlog: each job gets a private status link with its stage and expected date, you move stages in one tap, falling behind pushes the date with a short note you wrote once, and your side is a queue by promised date, $4 a month.\n\nIf the 'any update?' messages sound familiar, the pre-launch page has an 'I'd pay' button: aidantorrence2.github.io/aidan-modern/edit-tracker?src=email\n\nIf not, one line on why is just as useful.\n\nBest,\nAidan"
     },
-    "artifactUrl": "https://claude.ai/artifact/GX59qVQoQu9aLyTvReP141"
+    "artifactUrl": "https://claude.ai/artifact/GX59qVQoQu9aLyTvReP141",
+    "killed": "2026-10-18",
+    "killedReason": "Retired by Aidan on 18 Oct 2026: picked from guesses, not market demand."
   },
   {
     "slug": "studio-hours",
@@ -1617,7 +1715,7 @@
     "price": "$6/month",
     "priceUsd": 6,
     "priceNote": "no commission on bookings",
-    "status": "live",
+    "status": "killed",
     "launched": "2026-10-18",
     "reasonPrompt": "How many hours a week is your studio empty, and what has stopped you renting it out so far?",
     "faq": [
@@ -1638,7 +1736,9 @@
       "pitchSubject": "Your studio's empty hours, rented from one page (pre-launch)",
       "pitch": "Hi {first},\n\nI'm Aidan, a photographer. I saw {specific reference}.\n\nI'm deciding whether to build a small tool for renting out studio hours: a booking page showing only the hours you are free, a deposit and your rules agreed before booking, the door code sent an hour before, and a ledger of hours and income, $6 a month with no commission.\n\nIf your space sits empty on weekdays, the pre-launch page has an 'I'd pay' button: aidantorrence2.github.io/aidan-modern/studio-hours?src=email\n\nIf not, one line on why is just as useful.\n\nBest,\nAidan"
     },
-    "artifactUrl": "https://claude.ai/artifact/LmMcvJUGA7SkiwcBK1VYqJ"
+    "artifactUrl": "https://claude.ai/artifact/LmMcvJUGA7SkiwcBK1VYqJ",
+    "killed": "2026-10-18",
+    "killedReason": "Retired by Aidan on 18 Oct 2026: picked from guesses, not market demand."
   },
   {
     "slug": "shot-list-live",
@@ -1653,7 +1753,7 @@
     "price": "$4/month",
     "priceUsd": 4,
     "priceNote": "unlimited jobs and lists",
-    "status": "live",
+    "status": "killed",
     "launched": "2026-10-18",
     "reasonPrompt": "What does your shot list look like today, and when did a missed shot last cost you a conversation?",
     "faq": [
@@ -1674,7 +1774,9 @@
       "pitchSubject": "The shot list, agreed before and ticked on the day (pre-launch)",
       "pitch": "Hi {first},\n\nI'm Aidan, a photographer. I saw {specific reference}.\n\nI'm deciding whether to build a small tool for shot lists: build and lock it with the client on one link, tick shots from your phone on the day with a second shooter ticking too, must-haves float to the top, and the ticked list goes into the delivery note, $4 a month.\n\nIf a missed shot has ever cost you a conversation, the pre-launch page has an 'I'd pay' button: aidantorrence2.github.io/aidan-modern/shot-list-live?src=email\n\nIf not, one line on why is just as useful.\n\nBest,\nAidan"
     },
-    "artifactUrl": "https://claude.ai/artifact/Sev23UqSqYz8drNfNXiZh7"
+    "artifactUrl": "https://claude.ai/artifact/Sev23UqSqYz8drNfNXiZh7",
+    "killed": "2026-10-18",
+    "killedReason": "Retired by Aidan on 18 Oct 2026: picked from guesses, not market demand."
   },
   {
     "slug": "kit-checkout",
@@ -1689,7 +1791,7 @@
     "price": "$3/month",
     "priceUsd": 3,
     "priceNote": "unlimited items and borrowers",
-    "status": "live",
+    "status": "killed",
     "launched": "2026-10-18",
     "reasonPrompt": "What piece of gear did you last lose track of, and how do you log loans today, if at all?",
     "faq": [
@@ -1709,7 +1811,9 @@
       "community": "Photographers who lend gear to second shooters and assistants: how do you keep track? I've lost card readers, batteries and once a lens to 'I gave that back'. I'm deciding whether to build a small tool: pick the item, the borrower accepts on their phone with a condition photo and return date, due dates nudge the borrower, overdue items sit at the top of your kit list, and per-job mode checks a whole bag out and back in. $3/month. Pre-launch page, no charge, just an 'I'd pay' button: aidantorrence2.github.io/aidan-modern/kit-checkout",
       "pitchSubject": "A checkout record for the gear you lend (pre-launch)",
       "pitch": "Hi {first},\n\nI'm Aidan, a photographer. I saw {specific reference}.\n\nI'm deciding whether to build a small tool for lent gear: the borrower accepts each item on their phone with a condition photo and return date, due dates nudge them, overdue items top your kit list, and per-job mode checks a whole bag out and back in, $3 a month.\n\nIf you've ever lost gear to 'I gave that back', the pre-launch page has an 'I'd pay' button: aidantorrence2.github.io/aidan-modern/kit-checkout?src=email\n\nIf not, one line on why is just as useful.\n\nBest,\nAidan"
-    }
+    },
+    "killed": "2026-10-18",
+    "killedReason": "Retired by Aidan on 18 Oct 2026: picked from guesses, not market demand."
   },
   {
     "slug": "first-reply",
@@ -1724,7 +1828,7 @@
     "price": "$6/month",
     "priceUsd": 6,
     "priceNote": "unlimited inquiries",
-    "status": "live",
+    "status": "killed",
     "launched": "2026-10-18",
     "reasonPrompt": "How long does your first reply to an inquiry take on an average shoot day, and how many leads did you hear 'we went with someone else' from last year?",
     "faq": [
@@ -1744,7 +1848,9 @@
       "community": "Photographers: how fast is your first reply to an inquiry on a shoot day? I've lost bookings replying at 11pm to a 2pm email. I'm deciding whether to build a small tool: connect your form and calendar, and each inquiry gets a reply you wrote once with the date actually checked, the right pricing guide for the session type, and a link to book a call, with the lead on your phone ready for a personal line. A board shows leads by stage and reply speed. $6/month. Pre-launch page, no charge, just an 'I'd pay' button: aidantorrence2.github.io/aidan-modern/first-reply",
       "pitchSubject": "Inquiries answered in two minutes, in your voice (pre-launch)",
       "pitch": "Hi {first},\n\nI'm Aidan, a photographer. I saw {specific reference}.\n\nI'm deciding whether to build a small tool for inquiries: your form and calendar connected, each lead gets a reply you wrote once with the date actually checked, the right pricing guide attached and a call slot offered, and a board shows leads by stage and reply speed, $6 a month.\n\nIf you've lost a booking to a faster reply, the pre-launch page has an 'I'd pay' button: aidantorrence2.github.io/aidan-modern/first-reply?src=email\n\nIf not, one line on why is just as useful.\n\nBest,\nAidan"
-    }
+    },
+    "killed": "2026-10-18",
+    "killedReason": "Retired by Aidan on 18 Oct 2026: picked from guesses, not market demand."
   },
   {
     "slug": "roll-status",
@@ -1759,7 +1865,7 @@
     "price": "$15/month",
     "priceUsd": 15,
     "priceNote": "unlimited orders; one lab, any number of staff",
-    "status": "live",
+    "status": "killed",
     "launched": "2026-10-18",
     "artifactUrl": "https://claude.ai/artifact/VdLuisXhQMmL7GtNDY9mnc",
     "reasonPrompt": "How many 'is my film ready?' messages does your lab answer in a week, and what do you use to track orders today?",
@@ -1780,7 +1886,9 @@
       "community": "Film lab owners and staff: how much of the day goes to 'is my film ready?' I'm deciding whether to build a small tool: check-in creates a status link for the customer, one tap per stage at the bench (received, developing, scanning, ready) with a short note at each step, and your site's turnaround line computed from the real queue. $15/month. Pre-launch page, no charge, just an 'I'd pay' button: aidantorrence2.github.io/aidan-modern/roll-status",
       "pitchSubject": "A status link for every roll in your queue (pre-launch)",
       "pitch": "Hi {first},\n\nI'm Aidan, a portrait photographer who shoots film. I saw {specific reference}.\n\nI'm deciding whether to build a small tool for labs: check-in creates a status link for the customer, one tap per stage at the bench with a short note at each step, and your site's turnaround line computed from the real queue, $15 a month.\n\nIf 'is my film ready?' is a daily email for you, the pre-launch page has an 'I'd pay' button: aidantorrence2.github.io/aidan-modern/roll-status?src=email\n\nIf not, one line on why is just as useful.\n\nBest,\nAidan"
-    }
+    },
+    "killed": "2026-10-18",
+    "killedReason": "Retired by Aidan on 18 Oct 2026: picked from guesses, not market demand."
   },
   {
     "slug": "shoot-miles",
@@ -1795,7 +1903,7 @@
     "price": "$3/month",
     "priceUsd": 3,
     "priceNote": "unlimited trips; export any time",
-    "status": "live",
+    "status": "killed",
     "launched": "2026-10-18",
     "reasonPrompt": "How do you track shoot mileage today, and how much do you think you left unclaimed last year?",
     "faq": [
@@ -1815,7 +1923,9 @@
       "community": "Photographers who drive to shoots: how do you log mileage? Mine was 'approximately' every April. I'm deciding whether to build a small tool: your calendar events with locations become round trips with the miles worked out, you confirm with a tap or add the ones off-calendar in ten seconds, and the year exports as one file with date, miles, purpose and client. No GPS tracking. $3/month. Pre-launch page, no charge, just an 'I'd pay' button: aidantorrence2.github.io/aidan-modern/shoot-miles",
       "pitchSubject": "Shoot mileage from your calendar, not your memory (pre-launch)",
       "pitch": "Hi {first},\n\nI'm Aidan, a photographer. I saw {specific reference}.\n\nI'm deciding whether to build a small tool for shoot mileage: calendar events with a location become round trips with miles worked out, you confirm with a tap, and the year exports as one file with date, miles, purpose and client, $3 a month, no GPS.\n\nIf April mileage is a guess for you too, the pre-launch page has an 'I'd pay' button: aidantorrence2.github.io/aidan-modern/shoot-miles?src=email\n\nIf not, one line on why is just as useful.\n\nBest,\nAidan"
-    }
+    },
+    "killed": "2026-10-18",
+    "killedReason": "Retired by Aidan on 18 Oct 2026: picked from guesses, not market demand."
   },
   {
     "slug": "event-pickup",
@@ -1830,7 +1940,7 @@
     "price": "$9 per event",
     "priceUsd": 9,
     "priceNote": "or $15/month for unlimited events",
-    "status": "live",
+    "status": "killed",
     "launched": "2026-10-18",
     "reasonPrompt": "How do guests get their photos after your events today, and how many actually find themselves in the gallery?",
     "faq": [
@@ -1850,7 +1960,9 @@
       "community": "Event and conference photographers: how do guests actually get their photos? My galleries go out days later and almost nobody finds themselves. I'm deciding whether to build a small tool: frames push to an event page through the night, guests scan a QR and take a selfie to get only the frames they're in (your credit on each, selfies deleted in 24 hours), and the organiser gets the full set plus a pickup count the next morning. $9 per event or $15/month. Pre-launch page, no charge, just an 'I'd pay' button: aidantorrence2.github.io/aidan-modern/event-pickup",
       "pitchSubject": "Guests get their event photos before they leave (pre-launch)",
       "pitch": "Hi {first},\n\nI'm Aidan, a photographer. I saw {specific reference}.\n\nI'm deciding whether to build a small tool for events: frames push to an event page through the night, guests scan a QR and take a selfie to get only the frames they're in with your credit on each, and the organiser gets the full set and a pickup count next morning, $9 per event or $15 a month.\n\nIf your galleries go unopened, the pre-launch page has an 'I'd pay' button: aidantorrence2.github.io/aidan-modern/event-pickup?src=email\n\nIf not, one line on why is just as useful.\n\nBest,\nAidan"
-    }
+    },
+    "killed": "2026-10-18",
+    "killedReason": "Retired by Aidan on 18 Oct 2026: picked from guesses, not market demand."
   },
   {
     "slug": "price-guide",
@@ -1865,7 +1977,7 @@
     "price": "$5/month",
     "priceUsd": 5,
     "priceNote": "unlimited guides and links",
-    "status": "live",
+    "status": "killed",
     "launched": "2026-10-18",
     "reasonPrompt": "How many versions of your pricing guide exist right now, and when did a client last quote you a price you no longer charge?",
     "faq": [
@@ -1885,7 +1997,9 @@
       "community": "Photographers: how many versions of your pricing guide are out there? I found a 2024 one still circulating. I'm deciding whether to build a small tool: enter packages once, generate the PDF, a private web version and an inquiry-reply block from a template, change a price and every link updates with old PDFs flagged, and see who opened the guide and where they lingered. $5/month. Pre-launch page, no charge, just an 'I'd pay' button: aidantorrence2.github.io/aidan-modern/price-guide",
       "pitchSubject": "One source of truth for your pricing guide (pre-launch)",
       "pitch": "Hi {first},\n\nI'm Aidan, a photographer. I saw {specific reference}.\n\nI'm deciding whether to build a small tool for pricing guides: packages entered once, the PDF, a web version and an inquiry-reply block generated and kept in sync, old PDFs flagged when prices change, and opens tracked per link, $5 a month.\n\nIf you have more than one 'final' guide floating around, the pre-launch page has an 'I'd pay' button: aidantorrence2.github.io/aidan-modern/price-guide?src=email\n\nIf not, one line on why is just as useful.\n\nBest,\nAidan"
-    }
+    },
+    "killed": "2026-10-18",
+    "killedReason": "Retired by Aidan on 18 Oct 2026: picked from guesses, not market demand."
   },
   {
     "slug": "second-shooter-call",
@@ -1900,7 +2014,7 @@
     "price": "$4/month",
     "priceUsd": 4,
     "priceNote": "unlimited jobs and people; no marketplace, your list only",
-    "status": "live",
+    "status": "killed",
     "launched": "2026-10-18",
     "reasonPrompt": "How did you fill your last second-shooter slot, and how many messages did it take?",
     "faq": [
@@ -1921,7 +2035,9 @@
       "pitchSubject": "Second-shooter slots filled with one message (pre-launch)",
       "pitch": "Hi {first},\n\nI'm Aidan, a photographer. I saw {specific reference}.\n\nI'm deciding whether to build a small tool for second shooters and assistants: your own list with rates and cities, one message per date with a yes or no tap, one-tap booking with a thank-you to the rest, a private call sheet page for the booked shooter and a pay log, $4 a month, no marketplace.\n\nIf filling a slot still costs you an evening of texts, the pre-launch page has an 'I'd pay' button: aidantorrence2.github.io/aidan-modern/second-shooter-call?src=email\n\nIf not, one line on why is just as useful.\n\nBest,\nAidan"
     },
-    "artifactUrl": "https://claude.ai/artifact/HRZGSzQZXieiQhDQA1ctew"
+    "artifactUrl": "https://claude.ai/artifact/HRZGSzQZXieiQhDQA1ctew",
+    "killed": "2026-10-18",
+    "killedReason": "Retired by Aidan on 18 Oct 2026: picked from guesses, not market demand."
   },
   {
     "slug": "workshop-seats",
@@ -1936,7 +2052,7 @@
     "price": "$6/month",
     "priceUsd": 6,
     "priceNote": "or $15 per event; no commission on seats",
-    "status": "live",
+    "status": "killed",
     "launched": "2026-10-18",
     "reasonPrompt": "How did you fill your last workshop or styled shoot, and what did the back-and-forth cost you?",
     "faq": [
@@ -1956,7 +2072,9 @@
       "community": "Photographers who run workshops, styled shoots or mentoring days: how do you fill and manage them? Mine was DMs and a spreadsheet. I'm deciding whether to build a small tool: one page per event with seats left, deposit to hold, balance on your schedule, a waitlist that fills dropouts and refunds per your policy, a prep page per attendee with gear list, pin and releases to sign, and one roster. $6/month or $15 per event, no commission. Pre-launch page, no charge, just an 'I'd pay' button: aidantorrence2.github.io/aidan-modern/workshop-seats",
       "pitchSubject": "Workshop seats sold from one page (pre-launch)",
       "pitch": "Hi {first},\n\nI'm Aidan, a photographer. I saw {specific reference}.\n\nI'm deciding whether to build a small tool for workshops and styled shoots: one page with seats left, deposit to hold, a waitlist that fills dropouts, a prep page per attendee with releases to sign, and one roster, $6 a month or $15 per event with no commission.\n\nIf your last event was run from DMs, the pre-launch page has an 'I'd pay' button: aidantorrence2.github.io/aidan-modern/workshop-seats?src=email\n\nIf not, one line on why is just as useful.\n\nBest,\nAidan"
-    }
+    },
+    "killed": "2026-10-18",
+    "killedReason": "Retired by Aidan on 18 Oct 2026: picked from guesses, not market demand."
   },
   {
     "slug": "travel-fee",
@@ -1971,7 +2089,7 @@
     "price": "$3/month",
     "priceUsd": 3,
     "priceNote": "unlimited quotes",
-    "status": "live",
+    "status": "killed",
     "launched": "2026-10-18",
     "reasonPrompt": "How do you work out travel fees today, and when did one last cost you money?",
     "faq": [
@@ -1991,6 +2109,8 @@
       "community": "Photographers: how do you set travel fees in quotes? I have been guessing and getting it wrong in both directions. I'm deciding whether to build a small tool: set your base, free radius, per-mile rate and hotel threshold once; paste a venue address and get round-trip miles, drive time, the fee and the hotel line worded for the quote, with multi-stop days as a route. $3/month. Pre-launch page, no charge, just an 'I'd pay' button: aidantorrence2.github.io/aidan-modern/travel-fee",
       "pitchSubject": "The travel line for your quote, in seconds (pre-launch)",
       "pitch": "Hi {first},\n\nI'm Aidan, a photographer. I saw {specific reference}.\n\nI'm deciding whether to build a small tool for travel fees: set your base, free radius, rate and hotel threshold once, paste a venue address and get the miles, drive time, fee and hotel line worded for the quote, $3 a month.\n\nIf travel has ever cost you more than you quoted, the pre-launch page has an 'I'd pay' button: aidantorrence2.github.io/aidan-modern/travel-fee?src=email\n\nIf not, one line on why is just as useful.\n\nBest,\nAidan"
-    }
+    },
+    "killed": "2026-10-18",
+    "killedReason": "Retired by Aidan on 18 Oct 2026: picked from guesses, not market demand."
   }
 ]

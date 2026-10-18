@@ -3,15 +3,28 @@
 Companion to the doc-driven run ("Money flywheel (hourly)", :11 UTC) which launches
 artifact pages, sends the cold intros (40 a day) and drafts replies. This run owns the hosted
 side. **Aidan's standing order (18 Oct): leads first.** Every hour the question is "what did
-this run do to get more interested people to the offers?" Launching another offer is not an
-answer once the catalogue is large; traffic is. Order:
+this run do to get more interested people to the offers?" Every offer must come from demand
+already visible in the market (step 0). Order:
 
-0. **Leads first.** Before anything else, one concrete traffic action that needs no account of
-   Aidan's: a new free resource page in `content/resources.json` aimed at a real search photographers
-   make, linked to its offer (one per run minimum); improvements to the pages that raise
-   conversion (clearer ask, fewer fields); sitemap/IndexNow pings; internal links from the
-   resource pages to each other. Prepared-for-Aidan items (community threads only; **no Instagram or other social posts**, see Hard limits) go in
-   `flywheel/POSTING-PLAN.md` with the newest at the top.
+0. **Demand first, then leads (Aidan, 18 Oct 2026).** Offers come only from demand already
+   visible in the market, and every offer is software. On 18 Oct all 60 earlier offers were
+   retired because they were guesses. Each run, in this order:
+   a. **Find demand.** Search public posts where people ask for a tool or complain one is
+      missing: "is there an app/tool that", "I'd pay for", "looking for software to", Ask HN,
+      niche subreddits and trade forums, 1 to 3 star reviews of paid tools people resent,
+      abandoned browser extensions, and paid freelance gigs for the same small task (Upwork,
+      Fiverr, r/forhire). Any market, not only photographers.
+   b. **Gate.** A candidate becomes an offer only with 3+ distinct cited posts from different
+      people (at least 2 opened, not just snippets), a willingness-to-pay signal (they pay for a
+      workaround, hire it out, or say they'd pay), a software product one builder can ship in
+      1 to 3 days, and no free tool that already solves it well. Record the evidence in the
+      offer's `demand` block; `npm run test:offers` refuses a live offer without it.
+      Candidates that miss the gate go in `flywheel/DEMAND.md` with what is still missing.
+   c. **Leads.** For live demand-backed offers only: a free resource page in
+      `content/resources.json` aimed at the exact words the posters used, linked to its offer
+      (resource pages for retired offers are not exported); conversion fixes on the pages;
+      sitemap pings. The people who posted the demand are the first leads: list the threads in
+      `flywheel/DEMAND.md` so a reply can be drafted for Aidan's approval. Nothing is posted.
 1. **Sync state.** `git pull origin ccr-d1938557-3pv196` (or the branch in use). Read the
    doc's Idea pipeline + last Run log rows. Any pipeline row without a hosted page gets one.
 2. **Harvest.** Count replies to the pitches (Gmail: `in:inbox newer_than:7d subject:Re:` with the
@@ -24,10 +37,11 @@ answer once the catalogue is large; traffic is. Order:
 3. **Decide.** Thresholds in `flywheel/PLAN.md`. Update `status` in `data/offers.json`:
    `threshold_met`, `building`, `shipped`, `killed`. Killed pages 404-safe: they stay
    routable but `noindex`, and drop off `/offers`.
-4. **Launch.** A new offer only when it fills a real gap (a segment or pain no live offer covers)
-   or a reply suggests one; otherwise skip this step and spend the time on step 0. When launching:
-   `node scripts/flywheel/new-offer.mjs --slug ... --name ...`, fill the copy, render the
-   kit, `npm run test:offers`. Add the row to the doc's Idea pipeline with the hosted link.
+4. **Launch.** Only candidates that passed the gate in step 0b. `node scripts/flywheel/new-offer.mjs
+   --slug ... --name ...`, set `type: "software"`, paste the `demand` block (signals with url,
+   quote, seen; wtp; checked date), write the copy in the posters' own words, render the kit,
+   `npm run test:offers`. Add the row to the doc's Idea pipeline with the hosted link. Never
+   launch an offer from a guess, a brainstorm or "photographers probably need this".
 5. **Build.** For any `threshold_met`/`building` offer: one build chunk under
    `app/tools/<slug>/` (or a published artifact if it needs no backend), tests pass, note in
    the launch kit's bottom what stands. Every run ends runnable (`npx next build` green).
