@@ -1562,6 +1562,42 @@
       "community": "Photographers who run model calls or test shoots: how do you manage the applicants? Mine is Instagram comments, DMs and a notes app that falls apart at 30 people. I'm deciding whether to build a small tool: one private page per casting, applicants add two photos, sizes and availability, you shortlist in a grid, the booked ones get a page with call time, pin and release, and the rest get a kind no you wrote once. $5/month. Pre-launch page, no charge, just an 'I'd pay' button: aidantorrence.com/offers/casting-call",
       "pitchSubject": "Model calls without the DM chaos (pre-launch)",
       "pitch": "Hi {first},\n\nI'm Aidan, a photographer. I saw {specific reference}.\n\nI'm deciding whether to build a small tool for model calls: one private page per casting, applicants add two photos, sizes and availability, you shortlist in a grid, and the booked ones get a page with call time, pin and release, $5 a month.\n\nIf your last casting lived in your DMs, the pre-launch page has an 'I'd pay' button: aidantorrence.com/offers/casting-call?src=email\n\nIf not, one line on why is just as useful.\n\nBest,\nAidan"
+    },
+    "artifactUrl": "https://claude.ai/artifact/FrEUEx8ydbcqLekwDBBAHZ"
+  },
+  {
+    "slug": "edit-tracker",
+    "name": "Edit Tracker",
+    "headline": "A status page for every gallery in progress: culled, editing, retouching, exporting, delivered, with a date the client can trust, so 'any update on our photos?' stops arriving.",
+    "buyer": "wedding, family and portrait photographers with a backlog of galleries and clients who check in by text, email and Instagram every few days",
+    "bullets": [
+      "Add a job and your usual turnaround; the client gets a private link showing the stage it is in and the expected delivery date, updated as you move it along.",
+      "Move jobs between stages from your phone in one tap; falling behind pushes the date and sends a short, honest note you wrote once, before the client has to ask.",
+      "Your view is the queue: every open gallery by promised date, the ones at risk first, so the week starts with a list instead of a sinking feeling."
+    ],
+    "price": "$4/month",
+    "priceUsd": 4,
+    "priceNote": "unlimited jobs",
+    "status": "live",
+    "launched": "2026-10-18",
+    "reasonPrompt": "How many 'any update?' messages did you get last month, and how do you track your editing queue today?",
+    "faq": [
+      {
+        "q": "Does it connect to Lightroom?",
+        "a": "Not at first. You move the stage by hand in one tap. A watcher that reads export folders comes if enough people want it."
+      },
+      {
+        "q": "Will clients see how far behind I am?",
+        "a": "They see the stage and the current expected date, in your words. The queue, the risk flags and the original date are only visible to you."
+      }
+    ],
+    "kit": {
+      "hook": "'Hi! Just checking in on our photos!' Fourth text this week, from a client whose gallery is due in nine days.",
+      "script": "Open on a phone: three 'just checking in' messages stacking up. VO: 'Nine days before it's due.' Cut to a client's status page: culled, editing (current), retouching, exporting, delivered, with 'expected 2 November'. Cut to the photographer's queue: galleries by promised date, one flagged at risk, a tap moves the date and sends a short note. VO: 'They see the stage and the date. You see the queue. Nobody has to ask.' End card: 'Edit Tracker. $4 a month. Pre-launch, link in bio.'",
+      "caption": "A status page per gallery in progress, with a date clients can trust, and a queue view for you. $4/month. Not built yet; tell me if you'd use it. aidantorrence.com/offers/edit-tracker",
+      "community": "Photographers with an editing backlog: how do you handle the 'any update?' messages? I'm deciding whether to build a small tool: each job gets a private status link showing the stage (culled, editing, retouching, exporting, delivered) and the expected date; you move stages in one tap from your phone; falling behind pushes the date and sends a short honest note you wrote once; your side is a queue sorted by promised date with at-risk jobs first. $4/month. Pre-launch page, no charge, just an 'I'd pay' button: aidantorrence.com/offers/edit-tracker",
+      "pitchSubject": "A status page for every gallery in progress (pre-launch)",
+      "pitch": "Hi {first},\n\nI'm Aidan, a photographer. I saw {specific reference}.\n\nI'm deciding whether to build a small tool for the editing backlog: each job gets a private status link with its stage and expected date, you move stages in one tap, falling behind pushes the date with a short note you wrote once, and your side is a queue by promised date, $4 a month.\n\nIf the 'any update?' messages sound familiar, the pre-launch page has an 'I'd pay' button: aidantorrence.com/offers/edit-tracker?src=email\n\nIf not, one line on why is just as useful.\n\nBest,\nAidan"
     }
   }
 ]

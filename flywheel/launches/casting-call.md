@@ -5,6 +5,7 @@ Price: $5/month (unlimited castings and applicants)
 Buyer: portrait, fashion and brand photographers who run model calls, test shoots and small castings through Instagram comments and a notes app
 Status: live since 2026-10-18
 Hosted page: https://aidantorrence.com/offers/casting-call (live after merge to main + deploy)
+Artifact page: https://claude.ai/artifact/FrEUEx8ydbcqLekwDBBAHZ
 
 ## Tracking links (one per channel)
 
