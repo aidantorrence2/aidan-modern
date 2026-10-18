@@ -1,0 +1,222 @@
+package com.aidantorrence.approvals
+
+import android.app.Notification
+import android.app.NotificationChannel
+import android.app.NotificationManager
+import android.app.PendingIntent
+import android.app.Service
+import android.content.BroadcastReceiver
+import android.content.Context
+import android.content.Intent
+import android.content.IntentFilter
+import android.content.pm.ServiceInfo
+import android.graphics.drawable.Icon
+import android.os.Handler
+import android.os.IBinder
+import android.os.Looper
+import android.os.PowerManager
+import android.widget.Toast
+import java.util.concurrent.Executors
+
+/**
+ * Keeps the inbox live: polls the GitHub queue every minute (and on screen-on), keeps one ongoing
+ * notification per waiting item (re-posted until decided), pops the overlay card for waiting items,
+ * and writes decisions back (kept on the phone and retried until GitHub accepts them).
+ */
+class ApprovalService : Service(), Ui.CardActions {
+    private val main = Handler(Looper.getMainLooper())
+    private val io = Executors.newSingleThreadExecutor()
+    private lateinit var nm: NotificationManager
+    private lateinit var overlay: Overlay
+    private val listener: () -> Unit = { render() }
+    private val pollTick = object : Runnable {
+        override fun run() { pollNow(); main.postDelayed(this, POLL_MS) }
+    }
+    private val screenOn = object : BroadcastReceiver() {
+        override fun onReceive(c: Context, i: Intent) { pollNow() }
+    }
+
+    override fun onBind(intent: Intent?): IBinder? = null
+
+    override fun onCreate() {
+        super.onCreate()
+        Store.init(this)
+        nm = getSystemService(NotificationManager::class.java)
+        nm.createNotificationChannel(NotificationChannel(CH_ITEMS, "Approval requests", NotificationManager.IMPORTANCE_DEFAULT).apply {
+            description = "One per request waiting for your decision"
+        })
+        nm.createNotificationChannel(NotificationChannel(CH_QUIET, "Approval requests (reminders)", NotificationManager.IMPORTANCE_LOW).apply {
+            description = "Silent re-posts of requests you were already alerted about"
+        })
+        nm.createNotificationChannel(NotificationChannel(CH_SERVICE, "Inbox status", NotificationManager.IMPORTANCE_MIN).apply {
+            setShowBadge(false)
+        })
+        startForeground(ID_SERVICE, serviceNotification(), ServiceInfo.FOREGROUND_SERVICE_TYPE_SPECIAL_USE)
+        overlay = Overlay(this, this)
+        Store.addListener(listener)
+        registerReceiver(screenOn, IntentFilter(Intent.ACTION_SCREEN_ON))
+        main.post(pollTick)
+    }
+
+    override fun onDestroy() {
+        Store.removeListener(listener)
+        main.removeCallbacksAndMessages(null)
+        try { unregisterReceiver(screenOn) } catch (_: Exception) {}
+        overlay.hide()
+        super.onDestroy()
+    }
+
+    override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
+        val id = intent?.getStringExtra(EXTRA_ID)
+        when (intent?.action) {
+            ACTION_APPROVE -> Store.item(id ?: "")?.let { approve(it) }
+            ACTION_DENY -> Store.item(id ?: "")?.let { deny(it) }
+            ACTION_SNOOZE -> Store.item(id ?: "")?.let { snooze(it) }
+            ACTION_DECIDE -> if (id != null) decide(id, intent.getStringExtra(EXTRA_STATUS) ?: return START_STICKY, intent.getStringExtra(EXTRA_NOTE) ?: "")
+            ACTION_POLL -> pollNow()
+        }
+        return START_STICKY
+    }
+
+    // ---------------- polling ----------------
+
+    private fun pollNow() = io.execute {
+        val pm = getSystemService(PowerManager::class.java)
+        val wl = pm.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, "approvals:poll").apply { acquire(30_000) }
+        try {
+            val token = TokenStore.load(this)
+            if (token == null) { Store.lastError = "No GitHub token yet: run install-phone.sh on the Mac"; Store.changed(); return@execute }
+            val client = QueueClient(token)
+            flush(client)
+            val (root, _) = client.fetch()
+            val list = (root["items"] as? JV.Arr)?.items?.mapNotNull { Item.from(it) } ?: emptyList()
+            android.util.Log.i("Approvals", "poll: ${list.size} items, pending=${list.count { it.status == "pending" }}, " +
+                "open=${list.count { it.pending }}: " + list.filter { it.status == "pending" }.joinToString { "${it.id} exp=${it.expires} now=${System.currentTimeMillis()}" })
+            main.post { Store.lastError = null; Store.setItems(list) }
+        } catch (e: Exception) {
+            android.util.Log.w("Approvals", "poll failed", e)
+            Store.lastError = e.message ?: e.toString(); Store.changed()
+        } finally { if (wl.isHeld) wl.release() }
+    }
+
+    /** Writes decisions made on this phone; on failure they stay queued for the next poll. */
+    private fun flush(client: QueueClient): String? {
+        val pending = Store.pendingDecisions
+        if (pending.isEmpty()) return null
+        val msg = client.decide(pending)
+        val now = Store.pendingDecisions
+        Store.pendingDecisions = now - pending.keys
+        return msg
+    }
+
+    // ---------------- decisions ----------------
+
+    override fun approve(item: Item) = decide(item.id, "approved", "")
+    override fun deny(item: Item) = decide(item.id, "denied", "")
+    override fun snooze(item: Item) {
+        Store.snooze(item.id); nm.cancel(notifId(item.id)); render()
+        Toast.makeText(this, "Snoozed for 4 hours", Toast.LENGTH_SHORT).show()
+    }
+    override fun close(item: Item) { Store.dismissed = Store.dismissed + item.id; render() }
+    override fun review(item: Item) {
+        startActivity(Intent(this, ReviewActivity::class.java).putExtra(EXTRA_ID, item.id)
+            .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP))
+    }
+
+    fun decide(id: String, status: String, note: String) {
+        Store.pendingDecisions = Store.pendingDecisions + (id to Decision(status, Iso.now(), note))
+        nm.cancel(notifId(id))
+        render()
+        io.execute {
+            try {
+                val token = TokenStore.load(this) ?: throw IllegalStateException("no token")
+                val msg = flush(QueueClient(token))
+                main.post { if (msg != null) Toast.makeText(this, "✓ $msg", Toast.LENGTH_SHORT).show() }
+                pollNow()
+            } catch (e: Exception) {
+                Store.lastError = e.message
+                main.post { Toast.makeText(this, "Saved on the phone; will retry: ${e.message}", Toast.LENGTH_LONG).show() }
+            }
+        }
+    }
+
+    // ---------------- rendering ----------------
+
+    private fun render() {
+        val visible = Store.visible()
+        // persistent notifications: one per waiting item, re-posted every render (silently after the first)
+        val keep = visible.map { notifId(it.id) }.toSet()
+        nm.activeNotifications.filter { it.id != ID_SERVICE && it.id !in keep }.forEach { nm.cancel(it.id) }
+        val chimed = Store.chimed
+        for (item in visible) postItem(item, alert = item.id !in chimed)
+        if (visible.any { it.id !in chimed }) Store.chimed = chimed + visible.map { it.id }
+        nm.notify(ID_SERVICE, serviceNotification())
+        overlay.update(if (Store.reviewing) emptyList() else Store.overlayItems())
+    }
+
+    private fun postItem(item: Item, alert: Boolean) {
+        val pres = Presentation(item)
+        // First appearance alerts; every re-post (each poll, or after a swipe) goes to the silent channel.
+        val b = Notification.Builder(this, if (alert) CH_ITEMS else CH_QUIET)
+            .setSmallIcon(R.drawable.ic_stat)
+            .setContentTitle(pres.headline)
+            .setContentText(pres.displayTitle)
+            .setStyle(Notification.BigTextStyle().bigText("${pres.displayTitle}\n${pres.cardText(item)}"))
+            .setSubText(Presentation.agentName(item.source))
+            .setOngoing(true)
+            .setOnlyAlertOnce(true)
+            .setCategory(Notification.CATEGORY_REMINDER)
+            .setColor(Presentation.kindColor(item.kind))
+            .setContentIntent(activity(item.id))
+            .addAction(Notification.Action.Builder(null, "Approve", service(ACTION_APPROVE, item.id)).build())
+            .addAction(Notification.Action.Builder(null, "Deny", service(ACTION_DENY, item.id)).build())
+            .addAction(Notification.Action.Builder(null, "4h", service(ACTION_SNOOZE, item.id)).build())
+        pres.images.firstOrNull()?.second?.let { url -> Images.cached(url, 400)?.let { b.setLargeIcon(Icon.createWithBitmap(it)) }
+            ?: Images.load(url, 400) { bmp -> if (bmp != null && Store.visible().any { it.id == item.id }) postItem(item, false) } }
+        nm.notify(notifId(item.id), b.build())
+    }
+
+    private fun serviceNotification(): Notification {
+        val n = if (::nm.isInitialized) Store.visible().size else 0
+        val text = when {
+            Store.lastError != null -> "Problem: ${Store.lastError}"
+            n == 0 -> "Nothing waiting"
+            else -> "$n waiting for you"
+        }
+        return Notification.Builder(this, CH_SERVICE)
+            .setSmallIcon(R.drawable.ic_stat)
+            .setContentTitle("Approvals inbox")
+            .setContentText(text)
+            .setOngoing(true)
+            .setContentIntent(PendingIntent.getActivity(this, 0, Intent(this, MainActivity::class.java), PendingIntent.FLAG_IMMUTABLE))
+            .build()
+    }
+
+    private fun activity(id: String) = PendingIntent.getActivity(this, id.hashCode(),
+        Intent(this, ReviewActivity::class.java).putExtra(EXTRA_ID, id), PendingIntent.FLAG_IMMUTABLE or PendingIntent.FLAG_UPDATE_CURRENT)
+
+    private fun service(action: String, id: String) = PendingIntent.getForegroundService(this, (action + id).hashCode(),
+        Intent(this, ApprovalService::class.java).setAction(action).putExtra(EXTRA_ID, id),
+        PendingIntent.FLAG_IMMUTABLE or PendingIntent.FLAG_UPDATE_CURRENT)
+
+    companion object {
+        const val CH_ITEMS = "requests"
+        const val CH_QUIET = "requests-quiet"
+        const val CH_SERVICE = "service"
+        const val ID_SERVICE = 1
+        const val POLL_MS = 60_000L
+        const val EXTRA_ID = "id"
+        const val EXTRA_STATUS = "status"
+        const val EXTRA_NOTE = "note"
+        const val ACTION_APPROVE = "com.aidantorrence.approvals.APPROVE"
+        const val ACTION_DENY = "com.aidantorrence.approvals.DENY"
+        const val ACTION_SNOOZE = "com.aidantorrence.approvals.SNOOZE"
+        const val ACTION_DECIDE = "com.aidantorrence.approvals.DECIDE"
+        const val ACTION_POLL = "com.aidantorrence.approvals.POLL"
+        fun notifId(id: String) = 1000 + (id.hashCode() and 0x7fffffff) % 1_000_000
+
+        fun start(ctx: Context, action: String? = null) {
+            ctx.startForegroundService(Intent(ctx, ApprovalService::class.java).apply { if (action != null) setAction(action) })
+        }
+    }
+}

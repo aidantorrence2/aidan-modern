@@ -4,6 +4,11 @@ Approve or deny anything an agent wants to do (Claude Code sessions, Codex, sche
 from the app's own floating cards. GitHub is the queue: `data/approvals.json` on branch
 `ccr-d1938557-3pv196` of `aidantorrence2/aidan-modern`. No server, no paid service.
 
+## Android
+
+The phone app (`../approvals-android`) shows the same queue as a pop-up card over any app plus
+persistent notifications; install it with `tools/approvals-android/install-phone.sh`.
+
 ## Setup
 
 None. The app takes the token your GitHub CLI already has (`gh auth token`), keeps it only in the
