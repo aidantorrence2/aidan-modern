@@ -40,6 +40,15 @@ is merged. Both pages carry the same slug so counts can be added together.
 | `flywheel/launches/<slug>.md` | Traffic kit: post script, caption, community post, pitch template, tracking links with `?src=`. |
 | `flywheel/RUNBOOK.md` | What an hourly code-side run does, in order. |
 
+## Hosting rule (Aidan, 18 Oct 2026)
+
+Free hosting only, never Vercel. Offer pages are a static export on GitHub Pages
+(`scripts/flywheel/publish-pages.sh`, branch `gh-pages`). A product that earns a build ships
+the same way: static where possible (GitHub Pages), and where it needs a backend use a free
+tier that bills nothing by default (Cloudflare Workers/Pages, Supabase or Neon free tier,
+Resend free tier for mail). No card on file anywhere; if a build cannot fit a free tier, say
+so in the run log and ask before choosing anything paid.
+
 ## Thresholds (same as the doc)
 
 Build now: 1 pre-order, or 3 "I'd pay" clicks, or 10 sign-ups in 72h.
