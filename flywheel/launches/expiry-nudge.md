@@ -5,6 +5,7 @@ Price: $4/month (unlimited galleries; extensions are paid to you directly)
 Buyer: wedding, family and portrait photographers whose galleries expire after 60 to 90 days and who still get resend requests long after
 Status: live since 2026-10-18
 Hosted page: https://aidantorrence.com/offers/expiry-nudge (live after merge to main + deploy)
+Artifact page: https://claude.ai/artifact/CG43uAqhZPnLUWYQV9iP7H
 
 ## Tracking links (one per channel)
 
