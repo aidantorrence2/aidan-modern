@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://aidantorrence2.github.io/aidan-modern/sitemap.xml
