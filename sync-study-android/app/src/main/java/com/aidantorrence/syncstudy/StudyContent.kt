@@ -1,0 +1,12 @@
+package com.aidantorrence.syncstudy
+
+/** Study content for every built-in title. */
+val STUDY: Map<String, BookStudy> by lazy {
+    listOf(
+        ATOMIC_STUDY,
+    ).associateBy { it.bookId }
+}
+
+fun studyFor(bookId: String): BookStudy? = STUDY[bookId]
+
+fun cardById(id: String): Card? = STUDY[id.substringBefore(':')]?.cards?.firstOrNull { it.id == id }
