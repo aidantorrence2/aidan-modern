@@ -76,8 +76,12 @@ ${resources.length ? `<h2 class="lab-sub">Free resources</h2><ul class="lab-list
 </main></div></body></html>`
 }
 
+// keep rendered post cards (static-offers/posts) across exports; everything else is rebuilt
+const postsDir = path.join(out, 'posts'), keep = path.join(root, '.posts-keep')
+if (fs.existsSync(postsDir)) { fs.rmSync(keep, { recursive: true, force: true }); fs.renameSync(postsDir, keep) }
 fs.rmSync(out, { recursive: true, force: true })
 fs.mkdirSync(out, { recursive: true })
+if (fs.existsSync(keep)) fs.renameSync(keep, postsDir)
 const live = offers.filter(o => o.status !== 'draft' && o.status !== 'killed')
 for (const o of live) {
   fs.mkdirSync(path.join(out, o.slug), { recursive: true })

@@ -3,6 +3,7 @@
 set -euo pipefail
 cd "$(dirname "$0")/../.."
 node scripts/flywheel/export-static.mjs
+node scripts/flywheel/post-cards.mjs
 WT="$(mktemp -d)"
 if git ls-remote --exit-code --heads origin gh-pages >/dev/null 2>&1; then
   git fetch -q origin gh-pages
