@@ -356,6 +356,25 @@
       "status": "denied",
       "decided": "2026-10-18T21:17:51Z",
       "note": ""
+    },
+    {
+      "id": "other:android-review-test",
+      "kind": "post",
+      "source": "claude:android-test",
+      "title": "Test: phone review screen",
+      "summary": "Android test of the Review screen. Please leave it for 2 minutes.",
+      "preview_url": "https://aidantorrence2.github.io/aidan-modern/posts/event-pickup-feed.png",
+      "payload": {
+        "channel": "none",
+        "image": "https://aidantorrence2.github.io/aidan-modern/posts/event-pickup-feed.png",
+        "caption": "TEST ONLY: nothing will be posted. Checking how the review screen shows an image and caption.",
+        "link": "https://aidantorrence2.github.io/aidan-modern/event-pickup/"
+      },
+      "created": "2026-10-18T21:18:19Z",
+      "expires": "2026-10-18T22:18:19Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
     }
   ]
 }
