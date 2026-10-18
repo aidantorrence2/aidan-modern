@@ -27,6 +27,34 @@ for every paragraph. Installs next to Sync Reader (`com.aidantorrence.syncstudy`
 | Successive relearning | Missed cards re-queued within a session |
 | Dual coding | Animated scenes, and a scene still on every card |
 
+## Drive mode (hands-free)
+
+The Drive tab runs a study session you can do in the car, on a walk or at the gym, with the screen off.
+Pick a book and a length (10–45 min) before you set off; everything after that is voice and buttons.
+
+- **Session shape:** two warm-up reviews, two guess-first questions for a new book, then the book narrated part by
+  part. Each part ends with a one-line spoken takeaway that turns its animated scene into a picture in words.
+  Each part's check question is asked one part later (a short lag makes recall effortful), due reviews from
+  other books are mixed in, a spoken brain dump closes a finished book, and spare time carries on into your
+  next unfinished book.
+- **Questions rewritten for listening:** multiple choice becomes "is it X, or Y?"; fill-in-the-blanks are said
+  out loud; "explain why" answers are scored by key words, or you compare with a model answer and say yes/no.
+- **Answers by voice** after a chime (on-device recognition when available). Spoken numbers, near-misses and
+  "the second one" are understood. Say "repeat", "skip", "I don't know", "slower", "faster", "pause", "done".
+- **Never blocks:** silence reveals the answer after a few seconds and schedules the card sooner.
+- **Buttons instead of voice:** steering-wheel / headset play-pause, next (skip, or "I knew it" after an answer)
+  and previous (repeat, or "I didn't"). If recognition fails mid-session it switches to buttons automatically.
+- **Car-friendly audio:** a foreground media service keeps playing with the screen off, shows lock-screen and
+  notification controls, pauses for navigation prompts and calls, and uses a second voice for questions plus
+  chimes for question / listening / right / wrong.
+- Results go into the same spaced-repetition schedule as the rest of the app.
+
+Code: `DriveModel.kt` (planning, spoken questions, speech scoring), `DriveEngine.kt` (session engine),
+`DriveAndroid.kt` (voices, chimes, recognition, audio focus), `DriveService.kt` (foreground media service),
+`DriveScreen.kt` (setup and live screens), `DriveLines.kt` (spoken takeaways).
+
+![Drive mode](docs/drive.png)
+
 ## Animated explainers
 
 `Stage.kt` is a small timeline engine: a scene has a backdrop, a cast of illustrated props and a list of beats.

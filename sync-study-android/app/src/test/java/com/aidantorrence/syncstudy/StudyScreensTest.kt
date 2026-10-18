@@ -95,4 +95,24 @@ class StudyScreensTest {
     }
 
     @Test fun progress() { seedProgress(); study.go(Route.Home(2)); show { SyncStudyApp(reader, study) }; shot("12-progress") }
+
+    @Test fun driveSetup() {
+        DriveController.showForTest(DriveState())
+        study.go(Route.Home(3)); show { SyncStudyApp(reader, study) }; shot("13-drive-setup")
+    }
+
+    @Test fun driveListening() {
+        DriveController.showForTest(DriveState(running = true, phase = DrivePhase.LISTENING, title = "Atomic Habits", label = "Check",
+            line = "Two runners have exactly the same goal. What separates the winner from the loser? Is it: their system of daily actions? Or: natural talent?",
+            heard = "", segment = 6, segments = 18, asked = 3, right = 2))
+        study.go(Route.Home(3)); show { SyncStudyApp(reader, study) }; shot("14-drive-listening")
+        DriveController.showForTest(DriveState())
+    }
+
+    @Test fun driveButtonsMode() {
+        DriveController.showForTest(DriveState(running = true, phase = DrivePhase.AWAIT_BUTTON, title = "Sapiens", label = "Review",
+            line = "Press next if you knew it, or back if you didn't.", segment = 9, segments = 18, asked = 5, right = 4, voiceAnswers = false))
+        study.go(Route.Home(3)); show { SyncStudyApp(reader, study) }; shot("15-drive-buttons")
+        DriveController.showForTest(DriveState())
+    }
 }

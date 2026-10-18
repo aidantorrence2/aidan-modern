@@ -35,6 +35,7 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.rounded.ArrowBack
 import androidx.compose.material.icons.rounded.AutoStories
 import androidx.compose.material.icons.rounded.Check
+import androidx.compose.material.icons.rounded.DirectionsCar
 import androidx.compose.material.icons.rounded.Insights
 import androidx.compose.material.icons.rounded.Style
 import androidx.compose.material3.Icon
@@ -110,7 +111,8 @@ private fun HomeScreen(tab: Int, study: StudyViewModel) {
             when (tab) {
                 0 -> LibraryTab(study)
                 1 -> ReviewTab(study)
-                else -> ProgressTab()
+                2 -> ProgressTab()
+                else -> DriveTab()
             }
         }
         val due = StudyStore.dueCount()
@@ -122,6 +124,9 @@ private fun HomeScreen(tab: Int, study: StudyViewModel) {
                 Box { Icon(Icons.Rounded.Style, null); if (due > 0) Box(Modifier.align(Alignment.TopEnd).size(8.dp).clip(CircleShape).background(Pal.Coral)) }
             }, label = { Text(if (due > 0) "Review · $due" else "Review") }, colors = colors)
             NavigationBarItem(tab == 2, { study.go(Route.Home(2)) }, { Icon(Icons.Rounded.Insights, null) }, label = { Text("Progress") }, colors = colors)
+            NavigationBarItem(tab == 3, { study.go(Route.Home(3)) }, {
+                Box { Icon(Icons.Rounded.DirectionsCar, null); if (DriveController.running) Box(Modifier.align(Alignment.TopEnd).size(8.dp).clip(CircleShape).background(Mint)) }
+            }, label = { Text("Drive") }, colors = colors)
         }
     }
 }
