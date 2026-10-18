@@ -4,5 +4,8 @@ package com.aidantorrence.syncstudy
 val STAGE_SCENES: Map<String, List<StageScene>> by lazy {
     mapOf(
         "atomic-habits" to ATOMIC_STAGE,
+        "mans-search" to MANS_SEARCH_STAGE,
+        "mindset" to MINDSET_STAGE,
+        "outliers" to OUTLIERS_STAGE,
     )
 }

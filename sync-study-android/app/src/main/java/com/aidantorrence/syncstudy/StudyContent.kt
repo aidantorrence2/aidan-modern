@@ -4,6 +4,9 @@ package com.aidantorrence.syncstudy
 val STUDY: Map<String, BookStudy> by lazy {
     listOf(
         ATOMIC_STUDY,
+        MANS_SEARCH_STUDY,
+        MINDSET_STUDY,
+        OUTLIERS_STUDY,
     ).associateBy { it.bookId }
 }
 
