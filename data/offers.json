@@ -1310,6 +1310,42 @@
       "community": "Photographers who shoot company headshot days: how do you schedule the staff and collect their picks? Mine has been HR's spreadsheet, a sign-up sheet by the door and weeks of pick emails. I'm deciding whether to build one link for HR: staff pick slots and get reminders, a check-in list on the day, a private pick page per person, and a roster from booked to delivered. $8/month or $15 per day. Pre-launch page, no charge, just an 'I'd pay' button: aidantorrence.com/offers/headshot-roster",
       "pitchSubject": "Headshot days without the spreadsheet (pre-launch)",
       "pitch": "Hi {first},\n\nI'm Aidan, a photographer. I saw {specific reference}.\n\nI'm deciding whether to build a small tool for company headshot days: one link for HR, staff pick slots and get reminders, a check-in list on the day, a private pick page per person, and a roster from booked to delivered, $8 a month or $15 per day.\n\nIf that would cut the back-and-forth on your next one, the pre-launch page has an 'I'd pay' button: aidantorrence.com/offers/headshot-roster?src=email\n\nIf not, one line on why is just as useful.\n\nBest,\nAidan"
+    },
+    "artifactUrl": "https://claude.ai/artifact/DDVSU3meSUUYN5Gf9FrFFa"
+  },
+  {
+    "slug": "permit-finder",
+    "name": "Permit Finder",
+    "headline": "Which parks, beaches and streets in your city need a photo permit, what it costs, how long it takes, and the exact form, on one page per city.",
+    "buyer": "portrait, wedding, engagement and small-crew commercial photographers who shoot on location and have been moved along or fined for not having a permit",
+    "bullets": [
+      "Pick a city; see each public location with its permit rule: none needed, free registration, paid permit, or crews only, with the fee and lead time.",
+      "Every entry links to the issuing office's own page and form, with the date it was last checked, so you can verify before you book.",
+      "A shoot checker: type a location and a crew size, get the rule, the cost and the deadline to apply, ready to paste into the client's booking notes."
+    ],
+    "price": "$6/month",
+    "priceUsd": 6,
+    "priceNote": "or $9 per city, one-off",
+    "status": "live",
+    "launched": "2026-10-18",
+    "reasonPrompt": "Which city do you shoot in most, and when did a permit question last cost you time or money?",
+    "faq": [
+      {
+        "q": "Is this legal advice?",
+        "a": "No. Each entry links to the issuing office's own rule and the date it was checked. Confirm with them before a paid shoot; the page is there so you know where to look and what to expect."
+      },
+      {
+        "q": "Which cities?",
+        "a": "The first cities are chosen by who signs up here. Say your city in the box and it moves up the list."
+      }
+    ],
+    "kit": {
+      "hook": "Ranger walks up mid-ceremony-portrait: 'Do you have a permit for this?' I didn't know the park needed one.",
+      "script": "Open on a couple posed under a tree, a photographer crouched, then a uniformed figure entering frame. VO: 'Do you have a permit for this?' Cut to a phone: a city page, a list of parks with a rule next to each: none, free registration, $75 permit, 10-day lead time. Tap one: the office's own form. VO: 'Every location in your city, the rule, the fee, the deadline, the form.' End card: 'Permit Finder. $6 a month. Pre-launch, link in bio.'",
+      "caption": "Every park, beach and street in your city with its photo-permit rule, fee, lead time and form. $6/month or $9 per city. Not built yet; tell me if you'd use it. aidantorrence.com/offers/permit-finder",
+      "community": "Location photographers: how do you find out whether a spot needs a permit? Mine is a mix of forum posts, a call to parks and rec, and hoping. I'm deciding whether to build one page per city: every public location with its rule (none, free registration, paid permit, crews only), fee, lead time and a link to the issuing office's own form with a last-checked date. $6/month or $9 per city. Pre-launch page, no charge, just an 'I'd pay' button and a box for your city: aidantorrence.com/offers/permit-finder",
+      "pitchSubject": "Which spots in {city} need a photo permit (pre-launch)",
+      "pitch": "Hi {first},\n\nI'm Aidan, a photographer. I saw {specific reference}.\n\nI'm deciding whether to build one page per city listing every park, beach and street with its photo-permit rule, fee, lead time and the office's own form, $6 a month or $9 per city.\n\nIf a permit question has ever cost you a shoot, the pre-launch page has an 'I'd pay' button and a box for your city: aidantorrence.com/offers/permit-finder?src=email\n\nIf not, one line on why is just as useful.\n\nBest,\nAidan"
     }
   }
 ]

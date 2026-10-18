@@ -5,6 +5,7 @@ Price: $8/month (or $15 per headshot day)
 Buyer: corporate and headshot photographers who shoot 20 to 200 staff in a day and coordinate it through an HR contact
 Status: live since 2026-10-18
 Hosted page: https://aidantorrence.com/offers/headshot-roster (live after merge to main + deploy)
+Artifact page: https://claude.ai/artifact/DDVSU3meSUUYN5Gf9FrFFa
 
 ## Tracking links (one per channel)
 
