@@ -255,5 +255,54 @@
         ]
       }
     ]
+  },
+  {
+    "slug": "mini-session-day-planning-checklist",
+    "offer": "mini-day",
+    "title": "Mini session day planning checklist: slots, deposits, waitlist, rain plan",
+    "description": "How to plan a holiday or fall mini-session day so it fills, holds and runs on time: slot maths, deposit rules, the waitlist, what to send families, and the rain plan written before you need it.",
+    "intro": "Mini days make or lose money in the planning week, not on the day. This is the checklist I use before announcing one. Copy it into your own notes and fill it in once; most of it carries over to the next date.",
+    "sections": [
+      {
+        "h": "Decide before you announce",
+        "list": [
+          "Date, location, and a backup date at the same location, booked now, not after the forecast turns.",
+          "Slot length and count: fifteen minutes with a five-minute buffer gives three families an hour; twelve slots is a full afternoon of light in autumn.",
+          "Price, deposit and what is included: say the image count and the delivery window in the first message, not the third.",
+          "Deposit rule in one sentence: holds the slot, applied to the balance, moved to the backup date for weather, refunded only if you cancel.",
+          "Cut-off: when booking closes and when the balance is due, so the day before is not a payment chase."
+        ]
+      },
+      {
+        "h": "Filling it",
+        "list": [
+          "One page or post with the slots visible. Families book faster when they can see which times are left.",
+          "Take the deposit at booking; a slot without money is a maybe. Maybes are what no-shows are made of.",
+          "Open a waitlist the moment the last slot goes. A cancellation offered to the next name on the list is filled within the hour; a cancellation announced publicly is filled by someone you have to onboard from scratch.",
+          "Announce once, remind twice: a week out and two days out, with the forecast and the rain plan in the second."
+        ]
+      },
+      {
+        "h": "What each family gets after booking",
+        "pre": "Subject: Your mini session: [date], [time]\n\nHi [name],\n\nYou are booked for [time] on [date] at [location]: [pin or link]. Please arrive ten minutes early; we start on the minute so every family gets their full slot.\n\nWhat to wear: [two lines, your palette]. What to bring: [props, snacks, a change of clothes for toddlers].\n\nRain plan: if the forecast on the morning shows [your rule, e.g. more than 60 percent chance of rain at your time], we move to [backup date] at the same time and your deposit moves with you. I will message by [time] that morning.\n\nGallery: [n] images within [n] days, with a link to choose extras.\n\n[your name]"
+      },
+      {
+        "h": "On the day",
+        "list": [
+          "Arrive an hour early, walk the light, choose two spots so a crying toddler can be moved, not stopped.",
+          "Keep a printed list by time with phone numbers. Tick as families arrive; text the next family when you are running five minutes behind so they do not stack up.",
+          "Shoot the first frame on the minute. Fifteen minutes is enough when you are not spending five of them deciding where to stand.",
+          "Hold the last slot for the waitlist no-show rule: if a family is ten minutes late with no message, text the next waitlisted family for the final slot."
+        ]
+      },
+      {
+        "h": "After",
+        "list": [
+          "Deliver on the day you promised, all galleries at once, with the extras link live.",
+          "Before galleries go out, send the next date to this list first. A family that just loved their photos books the spring minis in the same message.",
+          "Write down what broke: the slot that ran long, the spot that lost light, the deposit question you answered six times. Fix the page, not your memory."
+        ]
+      }
+    ]
   }
 ]
