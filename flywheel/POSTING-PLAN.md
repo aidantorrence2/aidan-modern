@@ -1,3 +1,5 @@
+> **RETIRED.** Aidan, 18 Oct 2026: never post anything to Aidan's Instagram or any of his social accounts, and never queue `post` items for approval. Kept only as a record; do not turn anything here into posts or approval items.
+
 # Posting plan (3 per day, hosted pages)
 
 Every page takes `?src=post`, `?src=reel`, `?src=story`, `?src=community` so the hourly harvest shows which channel moved. Pages are public now on GitHub Pages; the artifact link in `artifactUrl` is the private doc-side twin.
