@@ -9,17 +9,28 @@ already visible in the market (step 0). Order:
 0. **Demand first, then leads (Aidan, 18 Oct 2026).** Offers come only from demand already
    visible in the market, and every offer is software. On 18 Oct all 60 earlier offers were
    retired because they were guesses. Each run, in this order:
-   a. **Find demand.** Search public posts where people ask for a tool or complain one is
-      missing: "is there an app/tool that", "I'd pay for", "looking for software to", Ask HN,
-      niche subreddits and trade forums, 1 to 3 star reviews of paid tools people resent,
-      abandoned browser extensions, and paid freelance gigs for the same small task (Upwork,
-      Fiverr, r/forhire). Any market, not only photographers.
-   b. **Gate.** A candidate becomes an offer only with 3+ distinct cited posts from different
-      people (at least 2 opened, not just snippets), a willingness-to-pay signal (they pay for a
-      workaround, hire it out, or say they'd pay), a software product one builder can ship in
-      1 to 3 days, and no free tool that already solves it well. Record the evidence in the
-      offer's `demand` block; `npm run test:offers` refuses a live offer without it.
-      Candidates that miss the gate go in `flywheel/DEMAND.md` with what is still missing.
+   a. **Find demand.** Any market, not only photographers. Strongest first:
+      - Money already spent: products with verified revenue (Indie Hackers, TrustMRR,
+        Acquire.com, Flippa listings), marketplace apps and extensions with large paid install
+        or review counts (Shopify App Store, Chrome Web Store, WordPress.org, Google Workspace
+        Marketplace, Zapier), and advertisers buying ads on a problem (Google Ads Transparency
+        Center, Meta Ad Library).
+      - Repeated paid freelance work for the same task (Upwork, Freelancer, Fiverr gig and
+        review counts).
+      - Search demand (Google Trends, autocomplete, "People also ask").
+      - Platform changes that strand paying users (shutdowns, price hikes, API changes).
+      - Public posts: feature-request and community boards of software people already use,
+        1 to 3 star reviews, "is there an app/tool that", "I'd pay for", Ask HN, trade forums.
+   b. **Gate (Aidan, 18 Oct 2026).** A candidate becomes an offer when it has:
+      - evidence from 3+ distinct sources by different people or businesses, at least 2
+        opened (not just snippets), each with a URL and a short verbatim quote; and
+      - a willingness-to-pay signal: money already spent on the problem (a paid product or plan,
+        a hired freelancer), or people saying they'd pay.
+      Existing competitors never disqualify a candidate: people paying for a worse tool is
+      strong demand. Build size never disqualifies one either. Note both, don't filter on them.
+      Record the evidence in the offer's `demand` block; `npm run test:offers` refuses a live
+      offer without it. Candidates that miss the gate go in `flywheel/DEMAND.md` with what is
+      still missing.
    c. **Leads.** For live demand-backed offers only: a free resource page in
       `content/resources.json` aimed at the exact words the posters used, linked to its offer
       (resource pages for retired offers are not exported); conversion fixes on the pages;

@@ -3,10 +3,10 @@
 Every offer starts here. A candidate moves to `data/offers.json` only once it passes the gate in
 `flywheel/RUNBOOK.md` step 0b:
 
-- 3 or more distinct public posts by different people, at least 2 opened, each with a short verbatim quote.
-- A willingness-to-pay signal: they pay for a workaround, hire it out, or say they would pay.
-- Software that one builder can ship in 1 to 3 days.
-- No free tool that already solves it well.
+- Evidence from 3 or more distinct sources by different people or businesses, at least 2 opened, each with a URL and a short verbatim quote.
+- A willingness-to-pay signal: money already spent on the problem (a paid product or plan, a hired freelancer), or people saying they would pay.
+
+Competitors and build size never disqualify a candidate (Aidan, 18 Oct 2026). They are noted, not filtered on.
 
 The threads listed for each candidate are also its first leads. Replies are drafted for Aidan's
 approval and never posted without it.
@@ -35,12 +35,22 @@ Page: https://aidantorrence2.github.io/aidan-modern/feed-match/ · evidence bloc
 - Gap: AdNabu, GMCSuspension.com and GMC Scout check store-wide policy pages. None of the pages read describe comparing each product's feed data with its live page.
 - First leads: Shopify Community threads about misrepresentation suspensions, and freelancers who take these jobs.
 
+### Pick Print: flat-priced pick lists, packing slips and invoices for Shopify (live 18 Oct 2026)
+Page: https://aidantorrence2.github.io/aidan-modern/pick-print/ · evidence block in `data/offers.json`.
+- BR Pick List Pro 1-star reviews, Aug 2025, all opened: Bricker King ("they increased the price by four times and squeezed me out"), Little Shop of Magic ("Price doubled overnight from $10 to $20."), G-Spice Mexico. The app is now $19.99/month.
+- Shopify Order Printer 1-star reviews, Oct 2025 to Mar 2026, opened: Darts World Store (no order search), Funky Unicorn Treats (code-only templates), Sabaku Artwear, Dinkins Aquatic Gardens. It is rated 3.6 from 381 reviews.
+- Willingness to pay: these merchants were paying $5-10 a month and left over price.
+
+### Flat Files: digital file delivery for Shopify at a flat price (live 18 Oct 2026)
+Page: https://aidantorrence2.github.io/aidan-modern/flat-files/ · evidence block in `data/offers.json`.
+- Shopify Digital Products 1-star reviews, Dec 2025 to May 2026, opened: ///AtlasDSP (broken download links), Bible Study Collective, The Romance Queen, Running Lab, StickyBrickit.
+- Sky Pilot low-star reviews, opened: Fancy Steel (Jan 2026, charged for bandwidth on failed downloads, $700-1,000 bills), Biome4pets, Premier Legendz. Sky Pilot charges $9 to $54.99 a month plus $1-2 per GB over the allowance.
+- Willingness to pay: sellers already pay Sky Pilot.
+
 ## Candidates still short of evidence
 
 | Candidate | Evidence found | What is missing |
 |---|---|---|
-| Fixed-price Shopify pick lists and packing slips | BR Pick List Pro reviews, Aug 2025: "Price doubled overnight from $10 to $20." Shopify Order Printer is rated 3.6 from 381 reviews with "No search facility" (Mar 2026). All opened. | A $1.99/month alternative already exists, so there is little room on price. Needs a sharper angle, such as a no-code template editor plus order search. |
-| Shopify digital file delivery without bandwidth overage | Shopify Digital Products 1-star reviews from 2025 and 2026, plus one Sky Pilot reviewer quoting $700-1,000 bills. Opened. | Shopify's free app is rated 4.8 from 1,378 reviews, so a free tool solves it for most sellers. The overage complaint comes from one reviewer. |
 | Supplier spreadsheet to Shopify import CSV | Freelancer projects at EUR 30-300 with 40-89 bids. Opened. | Two of the three posts are very likely one buyer. ColdPress, Csvio and others already exist. |
 | Class and workshop rosters for Square sellers | Re-opened 18 Oct 21:50. Eight different sellers across four Square Community threads, 2020-2025, all opened: BlockhouseVT, kbird ("I am still handwriting all my class rosters"), glassc09, vievyr ("a huge pain having to manually pull data from each email"), TCSlaguna, Caper (Jan 2025), AnnaBYLY and DinaLRosenberg (Jun-Jul 2025). No Square staff reply says the export exists. | A willingness-to-pay signal. They copy by hand rather than pay. Pintuna pitches a paid events app in one thread, but no price is shown and no seller says they bought it. Ask for it in the reason prompt if this launches later, or fold it into a Square bundle with Shelf Date. |
 | "Items that didn't sell" report for Square | Three threads, 2022-2026. From the research pass, not yet re-opened. | A willingness-to-pay signal. Could be bundled into Shelf Date. |

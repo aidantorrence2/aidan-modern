@@ -143,6 +143,171 @@
     }
   },
   {
+    "slug": "pick-print",
+    "name": "Pick Print",
+    "type": "software",
+    "headline": "Pick lists, packing slips and invoices for your Shopify orders at one flat low price, with templates you edit without code and a search that finds any order.",
+    "buyer": "Shopify merchants who pick, pack and print their own orders",
+    "bullets": [
+      "Search or jump to any order by number, name or SKU, then print one or a whole batch in the order you pack them.",
+      "Edit the pick list, packing slip and invoice layouts by clicking and typing. No code, no template files to import.",
+      "Handles split shipments: print a slip for just the items going out today."
+    ],
+    "price": "$5/month",
+    "priceUsd": 5,
+    "priceNote": "flat, no order limits, no price jumps",
+    "status": "live",
+    "launched": "2026-10-18",
+    "reasonPrompt": "What do you print orders with today, and what does it cost you?",
+    "faq": [
+      {
+        "q": "Is this made by Shopify?",
+        "a": "No. It is an independent app that reads your orders with your permission."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough merchants want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "summary": "A popular pick-list app raised its price to $20/month and paying merchants left; Shopify's free Order Printer draws 1-star reviews for no order search and code-only templates.",
+      "checked": "2026-10-18",
+      "wtp": "Merchants paid $5-10/month for BR Pick List Pro (now $19.99/month) and left over the price, not the product; one moved to a $1.99/month app.",
+      "signals": [
+        {
+          "url": "https://appnavigator.io/app/picklist/reviews/?rating=1",
+          "who": "Bricker King",
+          "date": "2025-08-06",
+          "quote": "Used this app for years, then they increased the price by four times and squeezed me out.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://appnavigator.io/app/picklist/reviews/?rating=1",
+          "who": "G-Spice Mexico",
+          "date": "2025-08-30",
+          "quote": "the last one to US$20 is just ridiculous",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.shopify.com/reviews/1846068",
+          "who": "Little Shop of Magic",
+          "date": "2025-08-20",
+          "quote": "Price doubled overnight from $10 to $20.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.shopify.com/shopify-order-printer/reviews?ratings[]=1&sort_by=newest",
+          "who": "Darts World Store",
+          "date": "2026-03-02",
+          "quote": "No search facility on the Order Printer app means its so hard trying to find orders",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.shopify.com/shopify-order-printer/reviews?ratings[]=1&sort_by=newest",
+          "who": "Funky Unicorn Treats",
+          "date": "2026-02-26",
+          "quote": "I have to know code to customize this? Ridiculous!",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.shopify.com/shopify-order-printer/reviews?ratings[]=1&sort_by=newest",
+          "who": "Sabaku Artwear",
+          "date": "2026-01-30",
+          "quote": "Still unusable two years later.",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "BR Pick List Pro ($19.99/month, 4.2 from 31 reviews); Shopify Order Printer (free, 3.6 from 381 reviews, 172 one-star); Pickify ($1.99/month, named by a reviewer). Order Printer Pro and others not checked.",
+      "risks": "Crowded, low-priced category. The angle is no-code templates plus order search at a flat price."
+    }
+  },
+  {
+    "slug": "flat-files",
+    "name": "Flat Files",
+    "type": "software",
+    "headline": "Sell PDFs, patterns and other digital files on Shopify for one flat monthly price. No bandwidth bills, links that keep working, and a delivery email you write yourself.",
+    "buyer": "Shopify sellers of digital products: printables, patterns, presets, ebooks, templates",
+    "bullets": [
+      "Attach files to products. Buyers get a download email the moment the order is paid, and a link on the order page.",
+      "One flat price with no per-gigabyte charges, however many times your files are downloaded.",
+      "Write the delivery email yourself, resend a link in one click, and see which links were opened."
+    ],
+    "price": "$9/month",
+    "priceUsd": 9,
+    "priceNote": "flat, no bandwidth charges",
+    "status": "live",
+    "launched": "2026-10-18",
+    "reasonPrompt": "What do you use to deliver digital files today, and what has gone wrong with it?",
+    "faq": [
+      {
+        "q": "Is this made by Shopify?",
+        "a": "No. It is an independent app that connects to your store with your permission."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough sellers want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "summary": "Sellers report Shopify's free digital download app breaking links and not sending emails; sellers on the paid Sky Pilot app report bandwidth bills and complexity.",
+      "checked": "2026-10-18",
+      "wtp": "Sellers already pay Sky Pilot $9 to $54.99/month plus bandwidth overage ($1-2/GB); one long-time paying user reports $700-1,000 bills.",
+      "signals": [
+        {
+          "url": "https://apps.shopify.com/digital-downloads/reviews?ratings[]=1&sort_by=newest",
+          "who": "///AtlasDSP",
+          "date": "2026-05-06",
+          "quote": "ALL MY PRODUCTS DOWNLOAD LINKS GOT BROKEN PLEASE HELP ME",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.shopify.com/digital-downloads/reviews?ratings[]=1&sort_by=newest",
+          "who": "Bible Study Collective",
+          "date": "2026-05-05",
+          "quote": "randomly stops fulfilling orders despite the products being set to fulfill immediately after purchase",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.shopify.com/digital-downloads/reviews?ratings[]=1&sort_by=newest",
+          "who": "The Romance Queen",
+          "date": "2026-04-03",
+          "quote": "It doesn't send any emails!",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.shopify.com/digital-downloads/reviews?ratings[]=1&sort_by=newest",
+          "who": "Running Lab",
+          "date": "2025-12-21",
+          "quote": "You can't customize the delivery message.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.shopify.com/sky-pilot/reviews?ratings[]=1&ratings[]=2&sort_by=newest",
+          "who": "Fancy Steel",
+          "date": "2026-01-07",
+          "quote": "you're still charged for the data used even when customers can't access or complete the download",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.shopify.com/sky-pilot/reviews?ratings[]=1&ratings[]=2&sort_by=newest",
+          "who": "Biome4pets",
+          "date": "2025-10-26",
+          "quote": "too complicated, all I wanted to do is send a pdf to a customer on shopify",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.shopify.com/sky-pilot",
+          "who": "Sky Pilot pricing page",
+          "date": "2026-10-18",
+          "quote": "$2/GB of bandwidth over 15 GB",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Shopify Digital Products (free, 4.8 from 1,378 reviews, 74 one-star); Sky Pilot ($9-$54.99/month plus overage, 4.8 from 422 reviews). Others not checked.",
+      "risks": "The free app satisfies most sellers. The angle is flat pricing and reliability for sellers who outgrow it."
+    }
+  },
+  {
     "slug": "pitch-pilot",
     "name": "Pitch Pilot",
     "headline": "Find the published press and booking contacts for any magazine, agency or talent, and get the cold pitch drafted, in minutes.",
