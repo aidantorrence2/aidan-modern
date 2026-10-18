@@ -285,6 +285,22 @@
       "status": "denied",
       "decided": "2026-10-18T20:53:42Z",
       "note": "test"
+    },
+    {
+      "id": "email:send-thank-you-email-to-jamie-for-yester-202610182058",
+      "kind": "email",
+      "source": "codex:codex-test",
+      "title": "Send thank-you email to Jamie for yesterday’s portrait shoot",
+      "summary": "To: jamie@example.com\nJamie, thank you for yesterday’s portrait shoot—it was a pleasure working with you.\nI really appreciate your time and creativity. —Aidan",
+      "payload": {
+        "to": "jamie@example.com",
+        "subject": "Thank you for yesterday’s portrait shoot",
+        "body": "Jamie, thank you for yesterday’s portrait shoot—it was a pleasure working with you.\nI really appreciate your time and creativity. —Aidan"
+      },
+      "created": "2026-10-18T20:58:14Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
     }
   ]
 }
