@@ -428,6 +428,367 @@
       "status": "denied",
       "decided": "2026-10-18T23:45:19Z",
       "note": ""
+    },
+    {
+      "id": "email:r-5957547557096660439",
+      "kind": "email",
+      "source": "claude:flywheel-doc",
+      "title": "Email contact@trendsezon.ro about Feed Match (Merchant Center feed check)",
+      "summary": "Intro draft to store owner who posted on Shopify Community (Nov 2025) about a misrepresentation suspension. Asks if they'd use Feed Match (Merchant Center feed check); a reply of no ends it. No links in the email.",
+      "preview_url": "https://mail.google.com/mail/?authuser=aidan.torrence@gmail.com#drafts?compose=r-5957547557096660439",
+      "payload": {
+        "draftId": "r-5957547557096660439",
+        "to": "contact@trendsezon.ro",
+        "offer": "feed-match",
+        "page": "https://aidantorrence2.github.io/aidan-modern/feed-match/"
+      },
+      "created": "2026-10-18T23:46:56Z",
+      "expires": "2026-10-23T23:46:56Z",
+      "status": "pending",
+      "decided": "",
+      "note": ""
+    },
+    {
+      "id": "email:r3310186893626771668",
+      "kind": "email",
+      "source": "claude:flywheel-doc",
+      "title": "Email contact@x365.ro about Feed Match (Merchant Center feed check)",
+      "summary": "Intro draft to store owner who posted (Oct 2025) that Google blocked all their Merchant Center IDs and Google Ads. Doc-side run says: check the address by eye. Asks if they'd use Feed Match (Merchant Center feed check); a reply of no ends it. No links in the email.",
+      "preview_url": "https://mail.google.com/mail/?authuser=aidan.torrence@gmail.com#drafts?compose=r3310186893626771668",
+      "payload": {
+        "draftId": "r3310186893626771668",
+        "to": "contact@x365.ro",
+        "offer": "feed-match",
+        "page": "https://aidantorrence2.github.io/aidan-modern/feed-match/"
+      },
+      "created": "2026-10-18T23:46:56Z",
+      "expires": "2026-10-23T23:46:56Z",
+      "status": "pending",
+      "decided": "",
+      "note": ""
+    },
+    {
+      "id": "email:r-5055361131561005052",
+      "kind": "email",
+      "source": "claude:flywheel-doc",
+      "title": "Email toucan@thetoucancove.com about Feed Match (Merchant Center feed check)",
+      "summary": "Intro draft to store owner who posted (Mar 2025) about a misrepresentation warning. Asks if they'd use Feed Match (Merchant Center feed check); a reply of no ends it. No links in the email.",
+      "preview_url": "https://mail.google.com/mail/?authuser=aidan.torrence@gmail.com#drafts?compose=r-5055361131561005052",
+      "payload": {
+        "draftId": "r-5055361131561005052",
+        "to": "toucan@thetoucancove.com",
+        "offer": "feed-match",
+        "page": "https://aidantorrence2.github.io/aidan-modern/feed-match/"
+      },
+      "created": "2026-10-18T23:46:56Z",
+      "expires": "2026-10-23T23:46:56Z",
+      "status": "pending",
+      "decided": "",
+      "note": ""
+    },
+    {
+      "id": "email:r-2994268099607458399",
+      "kind": "email",
+      "source": "claude:flywheel-doc",
+      "title": "Email info@jahrundtag.com about Feed Match (Merchant Center feed check)",
+      "summary": "Intro draft to store owner who posted (Jan 2025) that their store keeps getting suspended. Asks if they'd use Feed Match (Merchant Center feed check); a reply of no ends it. No links in the email.",
+      "preview_url": "https://mail.google.com/mail/?authuser=aidan.torrence@gmail.com#drafts?compose=r-2994268099607458399",
+      "payload": {
+        "draftId": "r-2994268099607458399",
+        "to": "info@jahrundtag.com",
+        "offer": "feed-match",
+        "page": "https://aidantorrence2.github.io/aidan-modern/feed-match/"
+      },
+      "created": "2026-10-18T23:46:56Z",
+      "expires": "2026-10-23T23:46:56Z",
+      "status": "pending",
+      "decided": "",
+      "note": ""
+    },
+    {
+      "id": "email:r7625996610856068184",
+      "kind": "email",
+      "source": "claude:flywheel-doc",
+      "title": "Email sales@primarymenswear.com about Feed Match (Merchant Center feed check)",
+      "summary": "Intro draft to store owner who posted (Dec 2024) about a misrepresentation suspension. Asks if they'd use Feed Match (Merchant Center feed check); a reply of no ends it. No links in the email.",
+      "preview_url": "https://mail.google.com/mail/?authuser=aidan.torrence@gmail.com#drafts?compose=r7625996610856068184",
+      "payload": {
+        "draftId": "r7625996610856068184",
+        "to": "sales@primarymenswear.com",
+        "offer": "feed-match",
+        "page": "https://aidantorrence2.github.io/aidan-modern/feed-match/"
+      },
+      "created": "2026-10-18T23:46:56Z",
+      "expires": "2026-10-23T23:46:56Z",
+      "status": "pending",
+      "decided": "",
+      "note": ""
+    },
+    {
+      "id": "email:r-8752913946667725339",
+      "kind": "email",
+      "source": "claude:flywheel-doc",
+      "title": "Email info@highverseship.com about Feed Match (Merchant Center feed check)",
+      "summary": "Intro draft to store owner who posted (Jul 2026) about a suspension when Request Review unlocked. Asks if they'd use Feed Match (Merchant Center feed check); a reply of no ends it. No links in the email.",
+      "preview_url": "https://mail.google.com/mail/?authuser=aidan.torrence@gmail.com#drafts?compose=r-8752913946667725339",
+      "payload": {
+        "draftId": "r-8752913946667725339",
+        "to": "info@highverseship.com",
+        "offer": "feed-match",
+        "page": "https://aidantorrence2.github.io/aidan-modern/feed-match/"
+      },
+      "created": "2026-10-18T23:46:56Z",
+      "expires": "2026-10-23T23:46:56Z",
+      "status": "pending",
+      "decided": "",
+      "note": ""
+    },
+    {
+      "id": "email:r-4128449028351073522",
+      "kind": "email",
+      "source": "claude:flywheel-doc",
+      "title": "Email support@homefads.net about Feed Match (Merchant Center feed check)",
+      "summary": "Intro draft to store owner who posted (Aug 2024) about resolving a misrepresentation issue. Asks if they'd use Feed Match (Merchant Center feed check); a reply of no ends it. No links in the email.",
+      "preview_url": "https://mail.google.com/mail/?authuser=aidan.torrence@gmail.com#drafts?compose=r-4128449028351073522",
+      "payload": {
+        "draftId": "r-4128449028351073522",
+        "to": "support@homefads.net",
+        "offer": "feed-match",
+        "page": "https://aidantorrence2.github.io/aidan-modern/feed-match/"
+      },
+      "created": "2026-10-18T23:46:56Z",
+      "expires": "2026-10-23T23:46:56Z",
+      "status": "pending",
+      "decided": "",
+      "note": ""
+    },
+    {
+      "id": "email:r2494448475542170917",
+      "kind": "email",
+      "source": "claude:flywheel-doc",
+      "title": "Email kontakt@sklepdekoras.pl about Feed Match (Merchant Center feed check)",
+      "summary": "Intro draft to store owner who posted (Jan 2026) about being suspended for over two months. Asks if they'd use Feed Match (Merchant Center feed check); a reply of no ends it. No links in the email.",
+      "preview_url": "https://mail.google.com/mail/?authuser=aidan.torrence@gmail.com#drafts?compose=r2494448475542170917",
+      "payload": {
+        "draftId": "r2494448475542170917",
+        "to": "kontakt@sklepdekoras.pl",
+        "offer": "feed-match",
+        "page": "https://aidantorrence2.github.io/aidan-modern/feed-match/"
+      },
+      "created": "2026-10-18T23:46:56Z",
+      "expires": "2026-10-23T23:46:56Z",
+      "status": "pending",
+      "decided": "",
+      "note": ""
+    },
+    {
+      "id": "email:r4085551320920715699",
+      "kind": "email",
+      "source": "claude:flywheel-doc",
+      "title": "Email contact@yog4lyf.com about Feed Match (Merchant Center feed check)",
+      "summary": "Intro draft to store owner who posted (Apr 2025) about a misrepresentation suspension. Asks if they'd use Feed Match (Merchant Center feed check); a reply of no ends it. No links in the email.",
+      "preview_url": "https://mail.google.com/mail/?authuser=aidan.torrence@gmail.com#drafts?compose=r4085551320920715699",
+      "payload": {
+        "draftId": "r4085551320920715699",
+        "to": "contact@yog4lyf.com",
+        "offer": "feed-match",
+        "page": "https://aidantorrence2.github.io/aidan-modern/feed-match/"
+      },
+      "created": "2026-10-18T23:46:56Z",
+      "expires": "2026-10-23T23:46:56Z",
+      "status": "pending",
+      "decided": "",
+      "note": ""
+    },
+    {
+      "id": "email:r-8071779325763782108",
+      "kind": "email",
+      "source": "claude:flywheel-doc",
+      "title": "Email hello@adreinstate.com about Feed Match (Merchant Center feed check)",
+      "summary": "Intro draft to agency whose site says it handles Merchant Center suspensions. Asks if they'd use Feed Match (Merchant Center feed check); a reply of no ends it. No links in the email.",
+      "preview_url": "https://mail.google.com/mail/?authuser=aidan.torrence@gmail.com#drafts?compose=r-8071779325763782108",
+      "payload": {
+        "draftId": "r-8071779325763782108",
+        "to": "hello@adreinstate.com",
+        "offer": "feed-match",
+        "page": "https://aidantorrence2.github.io/aidan-modern/feed-match/"
+      },
+      "created": "2026-10-18T23:46:56Z",
+      "expires": "2026-10-23T23:46:56Z",
+      "status": "pending",
+      "decided": "",
+      "note": ""
+    },
+    {
+      "id": "email:r-8419630937337714937",
+      "kind": "email",
+      "source": "claude:flywheel-doc",
+      "title": "Email support@trustedwebeservices.com about Feed Match (Merchant Center feed check)",
+      "summary": "Intro draft to agency whose site offers a misrepresentation fix service. Asks if they'd use Feed Match (Merchant Center feed check); a reply of no ends it. No links in the email.",
+      "preview_url": "https://mail.google.com/mail/?authuser=aidan.torrence@gmail.com#drafts?compose=r-8419630937337714937",
+      "payload": {
+        "draftId": "r-8419630937337714937",
+        "to": "support@trustedwebeservices.com",
+        "offer": "feed-match",
+        "page": "https://aidantorrence2.github.io/aidan-modern/feed-match/"
+      },
+      "created": "2026-10-18T23:46:56Z",
+      "expires": "2026-10-23T23:46:56Z",
+      "status": "pending",
+      "decided": "",
+      "note": ""
+    },
+    {
+      "id": "email:r-1713096258905051545",
+      "kind": "email",
+      "source": "claude:flywheel-doc",
+      "title": "Email sales@gmcapproval.com about Feed Match (Merchant Center feed check)",
+      "summary": "Intro draft to agency whose site covers Merchant Center suspension recovery. Asks if they'd use Feed Match (Merchant Center feed check); a reply of no ends it. No links in the email.",
+      "preview_url": "https://mail.google.com/mail/?authuser=aidan.torrence@gmail.com#drafts?compose=r-1713096258905051545",
+      "payload": {
+        "draftId": "r-1713096258905051545",
+        "to": "sales@gmcapproval.com",
+        "offer": "feed-match",
+        "page": "https://aidantorrence2.github.io/aidan-modern/feed-match/"
+      },
+      "created": "2026-10-18T23:46:56Z",
+      "expires": "2026-10-23T23:46:56Z",
+      "status": "pending",
+      "decided": "",
+      "note": ""
+    },
+    {
+      "id": "email:r-7375385440703468404",
+      "kind": "email",
+      "source": "claude:flywheel-doc",
+      "title": "Email admin@juppleemail.com about Feed Match (Merchant Center feed check)",
+      "summary": "Intro draft to agency whose site says it diagnoses and fixes suspensions. Asks if they'd use Feed Match (Merchant Center feed check); a reply of no ends it. No links in the email.",
+      "preview_url": "https://mail.google.com/mail/?authuser=aidan.torrence@gmail.com#drafts?compose=r-7375385440703468404",
+      "payload": {
+        "draftId": "r-7375385440703468404",
+        "to": "admin@juppleemail.com",
+        "offer": "feed-match",
+        "page": "https://aidantorrence2.github.io/aidan-modern/feed-match/"
+      },
+      "created": "2026-10-18T23:46:56Z",
+      "expires": "2026-10-23T23:46:56Z",
+      "status": "pending",
+      "decided": "",
+      "note": ""
+    },
+    {
+      "id": "email:r-1346292574682169566",
+      "kind": "email",
+      "source": "claude:flywheel-doc",
+      "title": "Email lee@thegreenerapple.com about Shelf Date (Square expiry tracking)",
+      "summary": "Intro draft to The Greener Apple, Charlotte (grocery, pet supplies, beauty). Asks if they'd use Shelf Date (Square expiry tracking); a reply of no ends it. No links in the email.",
+      "preview_url": "https://mail.google.com/mail/?authuser=aidan.torrence@gmail.com#drafts?compose=r-1346292574682169566",
+      "payload": {
+        "draftId": "r-1346292574682169566",
+        "to": "lee@thegreenerapple.com",
+        "offer": "shelf-date",
+        "page": "https://aidantorrence2.github.io/aidan-modern/shelf-date/"
+      },
+      "created": "2026-10-18T23:46:56Z",
+      "expires": "2026-10-23T23:46:56Z",
+      "status": "pending",
+      "decided": "",
+      "note": ""
+    },
+    {
+      "id": "email:r4047036590748629699",
+      "kind": "email",
+      "source": "claude:flywheel-doc",
+      "title": "Email info@fifiandfidos.com about Shelf Date (Square expiry tracking)",
+      "summary": "Intro draft to Fifi & Fidos (pet food and treats). Asks if they'd use Shelf Date (Square expiry tracking); a reply of no ends it. No links in the email.",
+      "preview_url": "https://mail.google.com/mail/?authuser=aidan.torrence@gmail.com#drafts?compose=r4047036590748629699",
+      "payload": {
+        "draftId": "r4047036590748629699",
+        "to": "info@fifiandfidos.com",
+        "offer": "shelf-date",
+        "page": "https://aidantorrence2.github.io/aidan-modern/shelf-date/"
+      },
+      "created": "2026-10-18T23:46:56Z",
+      "expires": "2026-10-23T23:46:56Z",
+      "status": "pending",
+      "decided": "",
+      "note": ""
+    },
+    {
+      "id": "email:r6011224741934179400",
+      "kind": "email",
+      "source": "claude:flywheel-doc",
+      "title": "Email info@turnerfarm.org about Shelf Date (Square expiry tracking)",
+      "summary": "Intro draft to Turner Farm market (packaged food). Asks if they'd use Shelf Date (Square expiry tracking); a reply of no ends it. No links in the email.",
+      "preview_url": "https://mail.google.com/mail/?authuser=aidan.torrence@gmail.com#drafts?compose=r6011224741934179400",
+      "payload": {
+        "draftId": "r6011224741934179400",
+        "to": "info@turnerfarm.org",
+        "offer": "shelf-date",
+        "page": "https://aidantorrence2.github.io/aidan-modern/shelf-date/"
+      },
+      "created": "2026-10-18T23:46:56Z",
+      "expires": "2026-10-23T23:46:56Z",
+      "status": "pending",
+      "decided": "",
+      "note": ""
+    },
+    {
+      "id": "email:r4178570844065367593",
+      "kind": "email",
+      "source": "claude:flywheel-doc",
+      "title": "Email office@gastonsbakery.com about Shelf Date (Square expiry tracking)",
+      "summary": "Intro draft to Gaston's (milled flour by the bag). Asks if they'd use Shelf Date (Square expiry tracking); a reply of no ends it. No links in the email.",
+      "preview_url": "https://mail.google.com/mail/?authuser=aidan.torrence@gmail.com#drafts?compose=r4178570844065367593",
+      "payload": {
+        "draftId": "r4178570844065367593",
+        "to": "office@gastonsbakery.com",
+        "offer": "shelf-date",
+        "page": "https://aidantorrence2.github.io/aidan-modern/shelf-date/"
+      },
+      "created": "2026-10-18T23:46:56Z",
+      "expires": "2026-10-23T23:46:56Z",
+      "status": "pending",
+      "decided": "",
+      "note": ""
+    },
+    {
+      "id": "email:r-2338126555910786526",
+      "kind": "email",
+      "source": "claude:flywheel-doc",
+      "title": "Email ian@goodmancoffee.com about Shelf Date (Square expiry tracking)",
+      "summary": "Intro draft to Goodman Coffee (roast and best-by dates). Asks if they'd use Shelf Date (Square expiry tracking); a reply of no ends it. No links in the email.",
+      "preview_url": "https://mail.google.com/mail/?authuser=aidan.torrence@gmail.com#drafts?compose=r-2338126555910786526",
+      "payload": {
+        "draftId": "r-2338126555910786526",
+        "to": "ian@goodmancoffee.com",
+        "offer": "shelf-date",
+        "page": "https://aidantorrence2.github.io/aidan-modern/shelf-date/"
+      },
+      "created": "2026-10-18T23:46:56Z",
+      "expires": "2026-10-23T23:46:56Z",
+      "status": "pending",
+      "decided": "",
+      "note": ""
+    },
+    {
+      "id": "email:r-4742203757281493022",
+      "kind": "email",
+      "source": "claude:flywheel-doc",
+      "title": "Email info@indabacoffee.com about Shelf Date (Square expiry tracking)",
+      "summary": "Intro draft to Indaba Coffee (roast and best-by dates). Asks if they'd use Shelf Date (Square expiry tracking); a reply of no ends it. No links in the email.",
+      "preview_url": "https://mail.google.com/mail/?authuser=aidan.torrence@gmail.com#drafts?compose=r-4742203757281493022",
+      "payload": {
+        "draftId": "r-4742203757281493022",
+        "to": "info@indabacoffee.com",
+        "offer": "shelf-date",
+        "page": "https://aidantorrence2.github.io/aidan-modern/shelf-date/"
+      },
+      "created": "2026-10-18T23:46:56Z",
+      "expires": "2026-10-23T23:46:56Z",
+      "status": "pending",
+      "decided": "",
+      "note": ""
     }
   ]
 }

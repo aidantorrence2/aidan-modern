@@ -4307,6 +4307,65 @@
     }
   },
   {
+    "slug": "image-match",
+    "name": "Image Match",
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-18",
+    "headline": "Attach thousands of images to your Square items by SKU or barcode, list every item still missing a picture, and export your whole image library named by SKU.",
+    "buyer": "Square sellers with large catalogs: bookstores, parts, collectibles, and shops moving platforms",
+    "bullets": [
+      "Match a folder of image files to items and variations by SKU, barcode or name, several images per item.",
+      "Or upload a CSV with an image URL column and attach those.",
+      "A list of every item with no image, and a full export of your images named by SKU for a backup or a move."
+    ],
+    "price": "$15/month",
+    "priceUsd": 15,
+    "priceNote": "or $29 once for one catalog up to 5,000 items",
+    "reasonPrompt": "How many items are in your catalog, and how do you attach images today?",
+    "artifactUrl": "https://claude.ai/artifact/TQJ1YB4yCVrRLBV2tJ32cn",
+    "faq": [
+      {
+        "q": "Is this made by Square?",
+        "a": "No. It is an independent tool that connects to your Square account with your permission."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough sellers want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-18",
+      "summary": "Square sellers with thousands of items ask for bulk image upload by SKU and bulk image export; a Square Champion says no tool exists for it.",
+      "wtp": "A seller with a large catalog says they would consider premium or paid features, including a monthly fee (doc-side run, thread 805135).",
+      "signals": [
+        {
+          "url": "https://community.squareup.com/t5/Payments-Troubleshooting/Enquiry-Regarding-Bulk-Image-Upload-via-CSV-in-Square/m-p/805135",
+          "who": "Orderfor",
+          "date": "2025-08",
+          "quote": "Square seriously can't expect users to manually assign images to products if there is hundreds or thousands of them",
+          "seen": "opened"
+        },
+        {
+          "url": "https://community.squareup.com/t5/Orders-Menu-Items-Catalog/How-to-export-my-catalog-of-articles-with-pictures/m-p/826161",
+          "who": "AnimeWonderland",
+          "date": "2025-11",
+          "quote": "I need a method to download all the images automatically or in bulk, ideally organized by item",
+          "seen": "opened"
+        },
+        {
+          "url": "https://community.squareup.com/t5/Square-Point-of-Sale/Is-there-a-way-to-upload-a-large-amount-of-item-images-in-one/td-p/804248",
+          "who": "Cyclebitz",
+          "date": "2025-08",
+          "quote": "We need to upload 16 thousand items via CSV file but there doesn't seem to be a way to include image links to the upload.",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "None named in the threads.",
+      "risks": "Square API image limits."
+    }
+  },
+  {
     "slug": "pitch-pilot",
     "name": "Pitch Pilot",
     "headline": "Find the published press and booking contacts for any magazine, agency or talent, and get the cold pitch drafted, in minutes.",

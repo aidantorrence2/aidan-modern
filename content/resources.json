@@ -1,5 +1,50 @@
 [
   {
+    "slug": "how-to-stop-wasting-time-on-your-phone",
+    "offer": "hard-lock",
+    "title": "How to stop wasting time on your phone: a setup that actually sticks",
+    "description": "The phone settings that make it harder to scroll on autopilot, and the one trick that stops you switching your own limits off.",
+    "intro": "Most screen-time plans fail for one reason: the person setting the limit is the same person who turns it off at 11pm. This setup takes about fifteen minutes and is built around making the easy thing harder to undo.",
+    "sections": [
+      {
+        "h": "1. Give the passcode to someone else",
+        "p": [
+          "On an iPhone, Screen Time lets you set a separate passcode for its limits (Settings, Screen Time, Lock Screen Time Settings). Ask a partner or friend to type a code you don't know. Now an app limit actually holds, because you can't approve \"ignore limit\" yourself.",
+          "On Android, Digital Wellbeing app timers can be paused by you, so the same idea needs a parental-controls setup (Google Family Link) with someone else as the parent account."
+        ]
+      },
+      {
+        "h": "2. Make the apps slower to reach",
+        "list": [
+          "Move social apps off the home screen into the App Library or a folder on the last page.",
+          "Log out of them, so every visit starts with a password.",
+          "Delete the app and use the website version instead; it is clunkier, which is the point."
+        ]
+      },
+      {
+        "h": "3. Make the screen less rewarding",
+        "list": [
+          "Turn off notifications for every app that isn't a person messaging you.",
+          "Try grayscale: on iPhone, Accessibility, Display & Text Size, Color Filters, Grayscale. On Android, Bedtime mode can turn the screen grey at night.",
+          "Set an app limit that starts low, like 15 minutes a day, and raise it only if it feels impossible."
+        ]
+      },
+      {
+        "h": "4. Change where the phone sleeps",
+        "list": [
+          "Charge it outside the bedroom and use a cheap alarm clock.",
+          "Pick one place in your home where the phone lives during meals and the first hour of the morning."
+        ]
+      },
+      {
+        "h": "Why limits still get switched off",
+        "p": [
+          "Every one of these can be undone by you in a few taps when you're tired. That is the gap Hard Lock is meant to close: a block only a friend you choose, or a tag you keep in another room, can lift, with a heads-up to them if you try to remove it."
+        ]
+      }
+    ]
+  },
+  {
     "slug": "cash-drawer-count-sheet-by-denomination",
     "offer": "drawer-count",
     "title": "Cash drawer count sheet by denomination (with the deposit worked out)",
