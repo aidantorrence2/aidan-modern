@@ -308,6 +308,467 @@
     }
   },
   {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-18",
+    "slug": "plate-snap",
+    "name": "Plate Snap",
+    "headline": "Take a photo of your meal and get calories, protein and macros in seconds, for one simple yearly price instead of weekly billing.",
+    "buyer": "people tracking calories or protein, including people eating smaller portions on GLP-1 medication",
+    "bullets": [
+      "Snap a photo or type what you ate; get calories, protein, carbs and fat with the portion estimate shown so you can adjust it.",
+      "A daily protein target front and centre, for people whose appetite is small and protein is the hard part.",
+      "One price for the year. No weekly charge, no trial that silently converts."
+    ],
+    "price": "$29/year",
+    "priceUsd": 29,
+    "priceNote": "one yearly price",
+    "reasonPrompt": "What do you track your food with today, and what do you pay for it?",
+    "faq": [
+      {
+        "q": "Is this medical advice?",
+        "a": "No. It estimates nutrition from photos. Talk to your doctor about your diet and medication."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-18",
+      "summary": "Photo-based calorie trackers launched in 2025 already earn tens of thousands a month in verified subscription revenue.",
+      "wtp": "TrackAI charges $5.99/week, $9.99/month or $42.99/year with 5,163 active subscriptions; Nutria shows MRR $46,001.",
+      "signals": [
+        {
+          "url": "https://trustmrr.com/startup/nutria-9e3eaa",
+          "who": "Nutria",
+          "date": "2026-10-18",
+          "quote": "AI Calorie Tracker. MRR $46,001",
+          "seen": "opened"
+        },
+        {
+          "url": "https://trustmrr.com/startup/trackai",
+          "who": "TrackAI",
+          "date": "2026-10-18",
+          "quote": "snap a photo of your meal and instantly get calories and macros. MRR $19,649; 5163 active subscriptions",
+          "seen": "opened"
+        },
+        {
+          "url": "https://trustmrr.com/category/health-fitness",
+          "who": "nutrIA, Goodie AI, FitCal (category listing)",
+          "date": "2026-10-18",
+          "quote": "nutrIA $18k MRR; Goodie AI $12k MRR; FitCal $5.2k MRR",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Nutria, TrackAI, Cal AI and many more.",
+      "risks": "Crowded consumer app category; distribution through app stores and paid social."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-18",
+    "slug": "post-once",
+    "name": "Post Once",
+    "headline": "Write a post once and publish it to Instagram, TikTok, Facebook, LinkedIn, X, Threads and Pinterest at the same time, for less than the big schedulers.",
+    "buyer": "creators, small business owners and solo marketers who post to several platforms",
+    "bullets": [
+      "One editor for every platform, with each network's length and format checked before you post.",
+      "Schedule a week of posts in one sitting; see them on one calendar.",
+      "One flat price for all your accounts."
+    ],
+    "price": "$12/month",
+    "priceUsd": 12,
+    "priceNote": "all platforms, flat",
+    "reasonPrompt": "Which platforms do you post to, and what do you use now?",
+    "faq": [
+      {
+        "q": "Is this connected to the social networks officially?",
+        "a": "It would publish through each network's official API with your permission. It is an independent tool."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-18",
+      "summary": "Several independent post-everywhere schedulers earn verified recurring revenue, including one built for a single niche.",
+      "wtp": "Postiz plans from $29/month; POST BRIDGE $39 and $99/month; Marky has over $1M all-time revenue.",
+      "signals": [
+        {
+          "url": "https://trustmrr.com/startup/postiz",
+          "who": "Postiz",
+          "date": "2026-10-18",
+          "quote": "Postiz is the ultimate agentic social media scheduler tool. MRR $282,883; 8289 active subscriptions",
+          "seen": "opened"
+        },
+        {
+          "url": "https://trustmrr.com/startup/post-bridge",
+          "who": "POST BRIDGE",
+          "date": "2026-10-18",
+          "quote": "Post your content to multiple social media platforms at the same time. MRR $48,879",
+          "seen": "opened"
+        },
+        {
+          "url": "https://trustmrr.com/startup/marky",
+          "who": "Marky",
+          "date": "2026-10-18",
+          "quote": "A tool for self-publishing authors to manage their social media. MRR $21,608",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Postiz, POST BRIDGE, Buffer, Hootsuite, Later, Marky.",
+      "risks": "Platform API access and review for each network."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-18",
+    "slug": "fit-resume",
+    "name": "Fit Resume",
+    "headline": "Paste a job description and get your resume tailored to it in one click, right from the job page, without paying for a full resume suite.",
+    "buyer": "people actively applying for jobs",
+    "bullets": [
+      "A browser button on job pages: it reads the description and rewrites your bullets to match, using only what is true in your resume.",
+      "Shows which keywords from the posting your resume is missing.",
+      "Keeps every tailored version, labelled by company and role."
+    ],
+    "price": "$9/month",
+    "priceUsd": 9,
+    "priceNote": "cancel any time",
+    "reasonPrompt": "How many jobs are you applying to a week, and how long does each resume take you?",
+    "faq": [
+      {
+        "q": "Will it invent experience?",
+        "a": "No. It only rewords and reorders what is already in your resume."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-18",
+      "summary": "Resume tailoring tools earn verified recurring revenue, from a large suite to small single-purpose extensions.",
+      "wtp": "Rezi Pro $29/month or $149 lifetime, 10,200 subscriptions; smaller tools earn $1.7k-3.7k MRR.",
+      "signals": [
+        {
+          "url": "https://trustmrr.com/startup/rezi",
+          "who": "Rezi",
+          "date": "2026-10-18",
+          "quote": "Build, improve, and tailor your resume with AI. MRR $245,864; 10200 active subscriptions",
+          "seen": "opened"
+        },
+        {
+          "url": "https://trustmrr.com/startup/letmeapply",
+          "who": "LetMeApply",
+          "date": "2026-10-18",
+          "quote": "AI resume tailoring, MRR $2,481",
+          "seen": "opened"
+        },
+        {
+          "url": "https://trustmrr.com/startup/eztrackr-inc",
+          "who": "Eztrackr Inc.",
+          "date": "2026-10-18",
+          "quote": "MRR $3,689",
+          "seen": "opened"
+        },
+        {
+          "url": "https://trustmrr.com/category/recruiting",
+          "who": "ResuMax AI, SPRINTJOB (category listing)",
+          "date": "2026-10-18",
+          "quote": "ResuMax AI MRR $2k; SPRINTJOB MRR $1.7k",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Rezi, Teal, Jobscan, Kickresume.",
+      "risks": "Crowded; the angle is one-click tailoring from the job page at a low price."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-18",
+    "slug": "answer-check",
+    "name": "Answer Check",
+    "headline": "See whether ChatGPT, Google's AI answers and other AI search tools recommend your business, and get the fixes that make them mention you, at a small-business price.",
+    "buyer": "local and small business owners, and the freelancers and agencies who do their SEO",
+    "bullets": [
+      "Enter your business and the questions customers ask; see which AI answers mention you, which mention competitors, and which mention no one.",
+      "A plain list of what to fix: pages, facts and listings the AI tools are reading.",
+      "A monthly re-check so you can see if the fixes worked."
+    ],
+    "price": "$19/month",
+    "priceUsd": 19,
+    "priceNote": "one business, monthly re-check",
+    "reasonPrompt": "Have you checked whether AI tools recommend your business? What did you find?",
+    "demand": {
+      "checked": "2026-10-18",
+      "summary": "Tools and agencies that track and improve how businesses appear in AI search earn verified recurring revenue, with entry plans far above small-business budgets.",
+      "wtp": "Rank Prompt shows MRR $43,572 from 212 subscriptions with plans from 150/month; AEO Engine shows MRR $154k.",
+      "signals": [
+        {
+          "url": "https://trustmrr.com/startup/rank-prompt",
+          "who": "Rank Prompt",
+          "date": "2026-10-18",
+          "quote": "helps users understand how their website shows up on AI Search Engines and how to improve it. MRR $43,572",
+          "seen": "opened"
+        },
+        {
+          "url": "https://trustmrr.com/category/marketing",
+          "who": "AEO Engine, Launch Club (category listing)",
+          "date": "2026-10-18",
+          "quote": "AEO Engine MRR $154k; Launch Club MRR $34k",
+          "seen": "opened"
+        },
+        {
+          "url": "https://trustmrr.com/category/social-media",
+          "who": "Reddit Agency (category listing)",
+          "date": "2026-10-18",
+          "quote": "Reddit Agency MRR $32k",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Rank Prompt, AEO agencies, SEO suites adding AI visibility.",
+      "risks": "AI answers change often; results must be re-checked."
+    },
+    "faq": [
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ]
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-18",
+    "slug": "weekly-post",
+    "name": "Weekly Post",
+    "headline": "LinkedIn posts drafted in your voice from your own notes, scheduled for the week, for consultants and recruiters who know they should post but don't.",
+    "buyer": "consultants, coaches, recruiters and B2B founders who want inbound from LinkedIn",
+    "bullets": [
+      "Drop in voice notes, a call summary or bullet points; get three post drafts that sound like you, not like a template.",
+      "Schedule them across the week from one screen.",
+      "See which posts brought profile views and messages."
+    ],
+    "price": "$15/month",
+    "priceUsd": 15,
+    "priceNote": "one profile",
+    "reasonPrompt": "How often do you post on LinkedIn now, and what stops you posting more?",
+    "faq": [
+      {
+        "q": "Is this made by LinkedIn?",
+        "a": "No. It is an independent tool."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-18",
+      "summary": "LinkedIn content and outreach tools earn verified recurring revenue in the tens to hundreds of thousands a month.",
+      "wtp": "Supergrow showed MRR $79,479 with 2,315 subscriptions (data last updated Feb 2026); Podawaa MRR $65k; PROSP MRR $128,005.",
+      "signals": [
+        {
+          "url": "https://trustmrr.com/startup/supergrow",
+          "who": "Supergrow",
+          "date": "2026-02-28",
+          "quote": "10x your LinkedIn Inbound. One platform, zero chaos. MRR $79,479",
+          "seen": "opened",
+          "note": "Stripe data last updated Feb 28, 2026"
+        },
+        {
+          "url": "https://trustmrr.com/category/marketing",
+          "who": "Podawaa (category listing)",
+          "date": "2026-10-18",
+          "quote": "Podawaa MRR $65k",
+          "seen": "opened"
+        },
+        {
+          "url": "https://trustmrr.com/",
+          "who": "PROSP (top 100 list, rank 18)",
+          "date": "2026-10-18",
+          "quote": "PROSP MRR $128,005",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Supergrow, Taplio, Podawaa, PROSP.",
+      "risks": "LinkedIn API limits on scheduling; crowded."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-18",
+    "slug": "story-shorts",
+    "name": "Story Shorts",
+    "headline": "Type a topic and get a finished short video with script, voiceover, visuals and captions, ready for TikTok, Reels and Shorts, for less than the big generators.",
+    "buyer": "faceless channel creators and small brands who post short videos",
+    "bullets": [
+      "Topic or script in, a 30 to 90 second vertical video out, with voiceover and word-by-word captions.",
+      "Pick a niche style (history, facts, stories, local business) so videos look like a series.",
+      "Export or schedule; every video is yours to post."
+    ],
+    "price": "$19/month",
+    "priceUsd": 19,
+    "priceNote": "30 videos a month",
+    "reasonPrompt": "What kind of short videos do you make, and what do you use today?",
+    "demand": {
+      "checked": "2026-10-18",
+      "summary": "Text-to-short-video tools and faceless-video services earn verified recurring revenue.",
+      "wtp": "StoryShort plans $39 to $199 with MRR $18,852; Vid.AI MRR $47k; White Glove Content MRR $70k.",
+      "signals": [
+        {
+          "url": "https://trustmrr.com/startup/storyshort",
+          "who": "StoryShort",
+          "date": "2026-10-18",
+          "quote": "helps to create short videos with AI based on text prompts. MRR $18,852",
+          "seen": "opened"
+        },
+        {
+          "url": "https://trustmrr.com/category/social-media",
+          "who": "Vid.AI, White Glove Content, Vidgenie.ai (category listing)",
+          "date": "2026-10-18",
+          "quote": "Vid.AI MRR $47k; White Glove Content MRR $70k; Vidgenie.ai MRR $5.6k",
+          "seen": "opened"
+        },
+        {
+          "url": "https://trustmrr.com/",
+          "who": "Documentary video tool (top 100 list, rank 41)",
+          "date": "2026-10-18",
+          "quote": "One-click documentary videos for YouTube automation using AI. MRR $50,030",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "StoryShort, Vid.AI, InVideo, Pictory.",
+      "risks": "Video generation costs; platform rules on AI content."
+    },
+    "faq": [
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ]
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-18",
+    "slug": "stage-shot",
+    "name": "Stage Shot",
+    "headline": "Upload a photo of an empty room and get it virtually furnished in seconds, priced per photo for agents, landlords and short-let hosts.",
+    "buyer": "real estate agents, property managers, landlords and short-term rental hosts",
+    "bullets": [
+      "Pick a style and room type; get several furnished versions of your own photo.",
+      "Pay per photo, no subscription, with a clear 'virtually staged' label option for listings.",
+      "Remove old furniture or clutter from occupied rooms too."
+    ],
+    "price": "$2 per photo",
+    "priceUsd": 2,
+    "priceNote": "packs of 10, no subscription",
+    "reasonPrompt": "How do you stage empty listings today, and what does it cost per property?",
+    "demand": {
+      "checked": "2026-10-18",
+      "summary": "Virtual staging tools earn verified revenue, including one that bootstrapped to $1M ARR in ten months.",
+      "wtp": "Virtual Staging AI plans $12 to $69/month with 4,500 paying subscribers (TechCrunch, Feb 2024); Refined Listings credit packs $128 to $750.",
+      "signals": [
+        {
+          "url": "https://techcrunch.com/2024/02/23/virtual-staging-ai-helps-realtors-digitally-furnish-rooms-within-seconds",
+          "who": "Virtual Staging AI",
+          "date": "2024-02-23",
+          "quote": "The startup bootstrapped to $1 million in ARR over the past 10 months",
+          "seen": "opened"
+        },
+        {
+          "url": "https://trustmrr.com/startup/refined-listings",
+          "who": "Refined Listings",
+          "date": "2026-10-18",
+          "quote": "Virtual staging and marketing toolkit for real estate agents and property managers. $27,825 last 30 days",
+          "seen": "opened"
+        },
+        {
+          "url": "https://trustmrr.com/category/real-estate",
+          "who": "KitchenDesign, renderahouse, AiCasaDesign.com (category listing)",
+          "date": "2026-10-18",
+          "quote": "KitchenDesign MRR $2.2k; renderahouse MRR $2.4k; AiCasaDesign.com MRR $1.3k",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Virtual Staging AI, Refined Listings, BoxBrownie, REimagineHome.",
+      "risks": "Listing rules require disclosure of virtual staging in many markets."
+    },
+    "faq": [
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ]
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-18",
+    "slug": "practice-book",
+    "name": "Practice Book",
+    "headline": "Online booking, deposits, reminders and intake forms for solo therapists, coaches and practitioners, at one flat price with no per-booking fees.",
+    "buyer": "solo therapists, counsellors, coaches and wellness practitioners",
+    "bullets": [
+      "A booking page with your real availability; clients pay a deposit or the full fee to confirm.",
+      "Reminders by email and text cut no-shows; clients reschedule within your rules.",
+      "Intake forms sent automatically before the first session."
+    ],
+    "price": "$12/month",
+    "priceUsd": 12,
+    "priceNote": "flat, no per-booking fees",
+    "reasonPrompt": "What do you use for bookings and payments now, and what does it cost you a month?",
+    "faq": [
+      {
+        "q": "Is it suitable for clinical records?",
+        "a": "It would handle bookings, payments and intake forms only, not clinical notes."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-18",
+      "summary": "Booking and payment software for therapists and local service businesses earns verified recurring revenue.",
+      "wtp": "Calendesk shows MRR $21k; ConvertLabs MRR $27k; MedPilot $60k revenue in the last 30 days.",
+      "signals": [
+        {
+          "url": "https://trustmrr.com/category/health-fitness",
+          "who": "Calendesk, MedPilot (category listing)",
+          "date": "2026-10-18",
+          "quote": "Calendesk MRR $21k; MedPilot Revenue 30d $60k",
+          "seen": "opened"
+        },
+        {
+          "url": "https://trustmrr.com/category/marketing",
+          "who": "ConvertLabs (category listing)",
+          "date": "2026-10-18",
+          "quote": "ConvertLabs MRR $27k",
+          "seen": "opened"
+        },
+        {
+          "url": "https://trustmrr.com/category/legal",
+          "who": "Hidden Business (category listing, next to Calendesk)",
+          "date": "2026-10-18",
+          "quote": "Calendesk MRR $21k; Hidden Business MRR $12k",
+          "seen": "opened",
+          "note": "Hidden Business's product is not named; Calendesk repeats from the health listing"
+        }
+      ],
+      "competitors": "Calendesk, SimplePractice, Jane, Acuity, Calendly.",
+      "risks": "Crowded; health data rules if it grows beyond bookings."
+    }
+  },
+  {
     "slug": "pitch-pilot",
     "name": "Pitch Pilot",
     "headline": "Find the published press and booking contacts for any magazine, agency or talent, and get the cold pitch drafted, in minutes.",
