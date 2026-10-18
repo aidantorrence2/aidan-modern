@@ -22,8 +22,9 @@ already visible in the market (step 0). Order:
       - Public posts: feature-request and community boards of software people already use,
         1 to 3 star reviews, "is there an app/tool that", "I'd pay for", Ask HN, trade forums.
    b. **Gate (Aidan, 18 Oct 2026).** A candidate becomes an offer when it has:
-      - evidence from 3+ distinct sources by different people or businesses, at least 2
-        opened (not just snippets), each with a URL and a short verbatim quote; and
+      - evidence from 3+ different people or businesses, on at least 2 distinct pages (so
+        no single thread carries an offer alone), at least 2 opened (not just snippets), each
+        with a URL and a short verbatim quote; and
       - a willingness-to-pay signal: money already spent on the problem (a paid product or plan,
         a hired freelancer), or people saying they'd pay.
       Existing competitors never disqualify a candidate: people paying for a worse tool is

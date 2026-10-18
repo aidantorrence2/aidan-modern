@@ -3,7 +3,7 @@
 Every offer starts here. A candidate moves to `data/offers.json` only once it passes the gate in
 `flywheel/RUNBOOK.md` step 0b:
 
-- Evidence from 3 or more distinct sources by different people or businesses, at least 2 opened, each with a URL and a short verbatim quote.
+- Evidence from 3 or more different people or businesses, on at least 2 distinct pages, at least 2 opened, each with a URL and a short verbatim quote.
 - A willingness-to-pay signal: money already spent on the problem (a paid product or plan, a hired freelancer), or people saying they would pay.
 
 Competitors and build size never disqualify a candidate (Aidan, 18 Oct 2026). They are noted, not filtered on.

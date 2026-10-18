@@ -769,6 +769,1405 @@
     }
   },
   {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-18",
+    "slug": "ledger-link",
+    "name": "Ledger Link",
+    "headline": "Shopify to QuickBooks Online sync that keeps what the old connector did: invoice or sales receipt, classes, SKU mapping and the right tax codes.",
+    "buyer": "Shopify merchants on QuickBooks Online and their bookkeepers",
+    "bullets": [
+      "Choose invoice or sales receipt per sales channel or customer type.",
+      "Map SKUs to your existing QuickBooks items and classes, so nothing new gets created in your chart of accounts.",
+      "Zero-value orders, refunds and payouts sync too, with a log of every order sent."
+    ],
+    "price": "$15/month",
+    "priceUsd": 15,
+    "priceNote": "flat, unlimited orders",
+    "reasonPrompt": "What broke for you when the QuickBooks connector changed?",
+    "faq": [
+      {
+        "q": "Is this made by Shopify or QuickBooks?",
+        "a": "No. It is an independent tool that connects to Shopify or QuickBooks with your permission."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-18",
+      "summary": "Merchants report losing invoice vs sales receipt choice, class tracking and SKU mapping after Intuit's Shopify connector change in September 2026.",
+      "wtp": "Paid alternatives already sell: Webgility $79/$149, Synder $65/$129, A2X $29-$115, Parex Bridge $15, MyWorks $24/$49 a month.",
+      "signals": [
+        {
+          "url": "https://apps.shopify.com/reviews/2382402",
+          "who": "Ornemoi",
+          "date": "2026-10-03",
+          "quote": "You can't choose between invoice and sales receipt anymore, the dropdown has one option.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.shopify.com/reviews/2380528",
+          "who": "Dragonfly Leotards",
+          "date": "2026-10-01",
+          "quote": "No invoices only sales receipts. Zero value sales are not sent to quickbooks.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.shopify.com/reviews/2358328",
+          "who": "ThinSkinz.com",
+          "date": "2026-09-13",
+          "quote": "it created a bunch of items and messed the chart of accounts",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.shopify.com/reviews/2347206",
+          "who": "Perfect Skating Franchising",
+          "date": "2026-09-03",
+          "quote": "We were seamlessly syncing orders for 3 years via SKU mapping and now this feature is no longer available.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.shopify.com/reviews/2348389",
+          "who": "OverDosed Performance",
+          "date": "2026-09-04",
+          "quote": "The OneSaas app worked perfectly. This new app is complete garbage.",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "QuickBooks Online by Intuit (4.6, 3,341 reviews), Webgility, Synder, A2X, Parex Bridge, MyWorks.",
+      "risks": "Accounting sync errors are costly; needs careful testing."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-18",
+    "slug": "bay-sync",
+    "name": "Bay Sync",
+    "headline": "Shopify to eBay inventory and price sync that stays correct for large catalogs, built for collectibles, comics, cards and games sellers.",
+    "buyer": "Shopify stores that also sell on eBay (and Walmart), especially large collectibles catalogs",
+    "bullets": [
+      "Stock and prices push to eBay within minutes, with a log showing every change and any listing that failed.",
+      "Built for catalogs of tens of thousands of SKUs, including one-off items like single cards.",
+      "Alerts when a sync stalls instead of finding out from an oversold order."
+    ],
+    "price": "$19/month",
+    "priceUsd": 19,
+    "priceNote": "flat, no per-order fee",
+    "reasonPrompt": "How many listings do you sync to eBay, and what has gone wrong?",
+    "faq": [
+      {
+        "q": "Is this made by Shopify or eBay?",
+        "a": "No. It is an independent tool that connects to Shopify or eBay with your permission."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-18",
+      "summary": "Merchants report Shopify Marketplace Connect's eBay sync failing for weeks from August 2026, with oversells and wrong prices.",
+      "wtp": "Marketplace Connect charges 1% per synced order over 50 a month, capped at $99; LitCommerce $29, Lionz $9.99, Salestio $29/$49 a month.",
+      "signals": [
+        {
+          "url": "https://apps.shopify.com/reviews/2350776",
+          "who": "PSYNE CO. SHOP",
+          "date": "2026-09-12",
+          "quote": "Shopify Marketplace Connect's eBay integration ceased to work last month",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.shopify.com/reviews/2354001",
+          "who": "TFTOYS.CA",
+          "date": "2026-09-09",
+          "quote": "We finally had to find another app to use for this",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.shopify.com/reviews/2344334",
+          "who": "Peebles Comics & Games",
+          "date": "2026-09-01",
+          "quote": "Inventory takes days to sync, new products take days before they appear on eBay",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.shopify.com/reviews/2343432",
+          "who": "TradePro Hardware",
+          "date": "2026-08-31",
+          "quote": "Has cost my business thousands of dollars and there is no compensation at all.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.shopify.com/reviews/2346589",
+          "who": "Italist",
+          "date": "2026-09-03",
+          "quote": "due to our catalogue size (over 100k SKU's)",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Shopify Marketplace Connect (4.1, 2,128 reviews), LitCommerce, Lionz, Salestio.",
+      "risks": "eBay API limits for large catalogs."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-18",
+    "slug": "own-label",
+    "name": "Own Label",
+    "headline": "Print shipping labels in Shopify with your own carrier accounts on every plan, at a flat price, with order edits that always sync.",
+    "buyer": "Shopify merchants who have their own UPS, FedEx, DHL, Royal Mail or other carrier contracts",
+    "bullets": [
+      "Connect your own carrier accounts on the basic plan. No upgrade needed to use your own rates.",
+      "Order edits, address changes and location changes sync before you print.",
+      "Batch print labels and packing slips; tracking goes back to Shopify automatically."
+    ],
+    "price": "$12/month",
+    "priceUsd": 12,
+    "priceNote": "flat, your own carrier accounts included",
+    "reasonPrompt": "Which carriers do you use, and what do you pay for your shipping app now?",
+    "faq": [
+      {
+        "q": "Is this made by Shopify?",
+        "a": "No. It is an independent tool that connects to Shopify with your permission."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-18",
+      "summary": "Merchants complain that using their own carrier contracts is locked behind higher tiers and that order updates fail to sync.",
+      "wtp": "ShipStation Starter $14.99/Standard $29.99 a month; Sendcloud Lite $40 a month plus a per-label fee for own contracts; Easyship Plus $29; Shippo Professional $19.",
+      "signals": [
+        {
+          "url": "https://apps.shopify.com/reviews/2294386",
+          "who": "NZ Tack Saddlery Co",
+          "date": "2026-09-15",
+          "quote": "It WILL NOT sync any order updates or location changes",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.shopify.com/reviews/2117988",
+          "who": "THE BOXER",
+          "date": "2026-03-12",
+          "quote": "I'm begging somebody to come up with a better alternative.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.shopify.com/reviews/2200749",
+          "who": "Action Bike & Ski",
+          "date": "2026-05-14",
+          "quote": "having to pay the highest level subscription just to add our own carrier accounts",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.shopify.com/reviews/2264123",
+          "who": "DeinZaubershop.com",
+          "date": "2026-06-28",
+          "quote": "Eigene Labels oder Trackings können nicht hochgeladen werden. Auch nicht mit Vertrag.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.shopify.com/reviews/2278187",
+          "who": "RAD Roller",
+          "date": "2026-07-09",
+          "quote": "i would be better off asking agentic ai to code a shipstation variant for me",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "ShipStation (4.2, 707 reviews), Sendcloud (4.5, 516), Easyship (4.2, 412), Shippo (4.2, 317).",
+      "risks": "Carrier API integrations per carrier."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-18",
+    "slug": "zone-date",
+    "name": "Zone Date",
+    "headline": "Local delivery for florists and gift shops on Shopify: delivery zones and prices by postcode or radius, and a delivery date picker, with no cart-page postcode check.",
+    "buyer": "florists, balloon shops, bakeries and gift shops doing local delivery on Shopify",
+    "bullets": [
+      "Set zones by postcode list or distance from your shop, each with its own price and minimum.",
+      "Customers pick a delivery date and time slot, with cut-offs and blackout days for holidays.",
+      "Postcode is checked at checkout, not as an extra step on the cart page."
+    ],
+    "price": "$19/month",
+    "priceUsd": 19,
+    "priceNote": "flat, unlimited orders",
+    "reasonPrompt": "How do you handle delivery zones and dates today, and what does it cost?",
+    "faq": [
+      {
+        "q": "Is this made by Shopify?",
+        "a": "No. It is an independent tool that connects to Shopify with your permission."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-18",
+      "summary": "Florists and gift shops report paying for second subscriptions or add-on apps to get zone pricing, and lost sales from postcode checks.",
+      "wtp": "Zapiet Essential $49.99 a month (1 location, 250 orders), higher plans $79.99 and $179.99; one merchant cites a $14.99 zip code add-on or a $100/month Google API key.",
+      "signals": [
+        {
+          "url": "https://apps.shopify.com/reviews/2079606",
+          "who": "Market Flowers Auckland",
+          "date": "2026-02-24",
+          "quote": "Fixing this properly requires a second Zapiet subscription, adding extra cost.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.shopify.com/reviews/2028814",
+          "who": "Box and Blooms",
+          "date": "2026-02-16",
+          "quote": "Zapiet requires customers to enter and validate their postcode on the cart page before they can proceed to checkout",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.shopify.com/reviews/2103013",
+          "who": "Pittsburgh's # 1 Balloon Store and Style Shop",
+          "date": "2026-03-02",
+          "quote": "requires either an add-on zip code app ($14.99/mo) or a google API key ($100/mo)",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.shopify.com/reviews/2165311",
+          "who": "Bel Fiore Co.",
+          "date": "2026-04-16",
+          "quote": "the zip codes were not working for our radius of 20 miles. No one could place a delivery order.",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Zapiet Pickup + Delivery (4.9, 1,887 reviews) and others.",
+      "risks": "Peak days like Valentine's Day need it to be reliable."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-18",
+    "slug": "store-vault",
+    "name": "Store Vault",
+    "headline": "Daily Shopify store backups at one flat price that doesn't double, with restores of a single product, page or blog post instead of all or nothing.",
+    "buyer": "Shopify merchants who want their products, pages, themes and content backed up",
+    "bullets": [
+      "Daily backups of products, collections, pages, blog posts, themes and settings.",
+      "Restore one item, or a set you pick, without overwriting everything else.",
+      "One flat price, written down, not tied to your order volume."
+    ],
+    "price": "$9/month",
+    "priceUsd": 9,
+    "priceNote": "flat, not based on orders",
+    "reasonPrompt": "What do you use for backups now, and has the price changed on you?",
+    "faq": [
+      {
+        "q": "Is this made by Shopify?",
+        "a": "No. It is an independent tool that connects to Shopify with your permission."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-18",
+      "summary": "Merchants report backup app prices doubling without warning and restores that are all-or-nothing.",
+      "wtp": "Rewind Backups $19 a month up to 300 orders, Protection Suite $99 a month up to 600 orders.",
+      "signals": [
+        {
+          "url": "https://apps.shopify.com/reviews/2057194",
+          "who": "Cloud Cat",
+          "date": "2026-01-28",
+          "quote": "Annoyed they increased the price more than double without warning.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.shopify.com/reviews/2018044",
+          "who": "AS-TecDive",
+          "date": "2025-12-29",
+          "quote": "They raised the pricing by double without announcing it.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.shopify.com/reviews/2243778",
+          "who": "DESKSPACE",
+          "date": "2026-06-13",
+          "quote": "We thought this app will cost 9 USD a month... now we paid for long time around 40 to 50 USD",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.shopify.com/reviews/2332835",
+          "who": "Spice Realm",
+          "date": "2026-08-23",
+          "quote": "they've doubled the cost I originally agreed to",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.shopify.com/reviews/2177313",
+          "who": "Productos Religiosos",
+          "date": "2026-04-24",
+          "quote": "You either restore ALL blog posts or none, ALL products or none",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Rewind Backups (4.3, 631 reviews), StoreVault and others.",
+      "risks": "Restores must be reliable."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-18",
+    "slug": "rent-slot",
+    "name": "Rent Slot",
+    "headline": "Bookings and rentals for Shopify that work on current themes like Horizon, at a fair flat price, with variants and checkout that just work.",
+    "buyer": "Shopify shops that rent gear or sell bookable classes, sessions and events",
+    "bullets": [
+      "Calendar and time-slot booking on product pages, built for current Shopify themes.",
+      "Rentals by day or hour with multiple variants (size, model) and buffer times.",
+      "Checkout through Shopify's normal checkout; reminders before the booking."
+    ],
+    "price": "$15/month",
+    "priceUsd": 15,
+    "priceNote": "flat, no booking caps",
+    "reasonPrompt": "What do you rent or book through your store, and what do you use now?",
+    "faq": [
+      {
+        "q": "Is this made by Shopify?",
+        "a": "No. It is an independent tool that connects to Shopify with your permission."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-18",
+      "summary": "Merchants report a booking app breaking checkout and themes, feeling outdated, and raising prices.",
+      "wtp": "BookThatApp Lite $25 a month, Premium $49.95, higher plan $110.",
+      "signals": [
+        {
+          "url": "https://apps.shopify.com/reviews/2116762",
+          "who": "Divide Board Shop",
+          "date": "2026-03-11",
+          "quote": "The checkout on book that app is now not allowing people to check out their rentals.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.shopify.com/reviews/2091471",
+          "who": "Astral Auras",
+          "date": "2026-02-22",
+          "quote": "Overpriced and seems like it hasn't been updated in years.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.shopify.com/reviews/2308735",
+          "who": "Etch Workz",
+          "date": "2026-08-11",
+          "quote": "Does not add block correctly to page. Event calendar displays very small.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.shopify.com/reviews/1933205",
+          "who": "Mushiya Beauty",
+          "date": "2025-10-27",
+          "quote": "I was told I'd have to pay $49 for the exact same plan",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "BookThatApp (4.7, 417 reviews), Sesami and others.",
+      "risks": "Many booking apps exist."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-18",
+    "slug": "custom-print",
+    "name": "Custom Print",
+    "headline": "A print-on-demand product personalizer for Shopify with no per-item fee and print files rendered in seconds, even on busy days.",
+    "buyer": "print-on-demand and personalized gift sellers on Shopify",
+    "bullets": [
+      "Customers add names, photos and options on the product page with a live preview.",
+      "Print-ready files are generated in seconds per order, not minutes.",
+      "One flat monthly price. No fee per order item."
+    ],
+    "price": "$29/month",
+    "priceUsd": 29,
+    "priceNote": "flat, no per-item fees",
+    "reasonPrompt": "How many personalized orders do you ship a day, and what do you pay per item now?",
+    "faq": [
+      {
+        "q": "Is this made by Shopify?",
+        "a": "No. It is an independent tool that connects to Shopify with your permission."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-18",
+      "summary": "Sellers complain about per-item fees on top of monthly plans, slow render times and missing options in personalizer apps.",
+      "wtp": "Teeinblue $49 a month plus $0.10-$0.40 per order item; Customily $49 a month plus $0.10-$1 per item.",
+      "signals": [
+        {
+          "url": "https://apps.shopify.com/reviews/2052315",
+          "who": "memesbyapril",
+          "date": "2026-01-25",
+          "quote": "You are unable to provide a text dropdown list of items for users to select",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.shopify.com/reviews/1832358",
+          "who": "CASE XPRESS",
+          "date": "2026-05-30",
+          "quote": "Teeinblue did some updates, which caused our products to freeze",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.shopify.com/reviews/2085509",
+          "who": "Celebration Giftware",
+          "date": "2026-02-17",
+          "quote": "20 minutes to render a file, does not work if you are doing 20 + orders per day.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.shopify.com/reviews/1640876",
+          "who": "My Custom Designs",
+          "date": "2024-12-26",
+          "quote": "$1 FOR EVERY SINGLE TRANSACTION PLUS 50/MONTH",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Teeinblue (4.9, 381 reviews), Customily (4.9, 277).",
+      "risks": "Strong, well-rated incumbents."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-18",
+    "slug": "flat-translate",
+    "name": "Flat Translate",
+    "headline": "Translate your Shopify store into other languages for one flat monthly price, not by word count, and it works with Shopify Markets.",
+    "buyer": "Shopify merchants selling in more than one language",
+    "bullets": [
+      "Translate products, pages, checkout text and emails into the languages you pick.",
+      "Works with Shopify Markets, so each market shows its own language and URLs.",
+      "Edit any translation by hand; one flat price however many words you have."
+    ],
+    "price": "$15/month",
+    "priceUsd": 15,
+    "priceNote": "flat, unlimited words",
+    "reasonPrompt": "Which languages do you sell in, and what do you pay for translation now?",
+    "faq": [
+      {
+        "q": "Is this made by Shopify?",
+        "a": "No. It is an independent tool that connects to Shopify with your permission."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-18",
+      "summary": "Merchants complain that word-count pricing grows fast and that translation apps clash with Shopify Markets.",
+      "wtp": "Weglot Starter $17 a month (10,000 words), Business $32, Pro $87; one merchant reports paying $140 a month.",
+      "signals": [
+        {
+          "url": "https://apps.shopify.com/reviews/2166336",
+          "who": "Japanese Taste DEV",
+          "date": "2026-04-16",
+          "quote": "Their pricing model is thought to grow exponentially.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.shopify.com/reviews/2248566",
+          "who": "KIARA FLOW",
+          "date": "2026-06-17",
+          "quote": "There are too many complex issues when it comes to Shopify Markets and backend translations.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.shopify.com/reviews/1981378",
+          "who": "Bollard canada inc",
+          "date": "2025-11-29",
+          "quote": "leur service me coute 140$ par mois",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.shopify.com/reviews/1843002",
+          "who": "Fleur Nabert créations",
+          "date": "2025-11-16",
+          "quote": "The app does not work with shopify markets",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Weglot (4.5, 827 reviews), Shopify Translate & Adapt (free), LangShop and others.",
+      "risks": "Free native option exists."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-18",
+    "slug": "tab-vault",
+    "name": "Tab Vault",
+    "headline": "Save all your open tabs in one click and never lose them: every save is versioned and backed up automatically, so an update or a full disk can't wipe them.",
+    "buyer": "people who keep dozens or hundreds of tabs saved for research and work",
+    "bullets": [
+      "One click saves every tab in a window as a named group; restore any group or single tab.",
+      "Automatic versioned backups to a file you choose, plus optional sync between computers.",
+      "Import your existing OneTab or Toby lists."
+    ],
+    "price": "$3/month",
+    "priceUsd": 3,
+    "priceNote": "or $24 a year",
+    "reasonPrompt": "How many tabs do you keep saved, and have you lost them before?",
+    "faq": [
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-18",
+      "summary": "Users of the most popular tab savers report losing all saved tabs after updates, and a paid rival paywalled saving beyond 60 tabs.",
+      "wtp": "Toby charges $6 per member a month ($4.50 billed yearly) after a 60-tab free limit; users complain about the paywall but the plan exists because people pay.",
+      "signals": [
+        {
+          "url": "https://addons.mozilla.org/api/v5/ratings/rating/?addon=onetab&score=1",
+          "who": "michaelluu",
+          "date": "2026-08-24",
+          "quote": "Totally Suck, Updated and All Tabs Gone, No way to get them back.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://addons.mozilla.org/api/v5/ratings/rating/?addon=onetab&score=1",
+          "who": "mtntech",
+          "date": "2026-07-23",
+          "quote": "Hundreds of tabs up and disappeared. This is happening to a lot of users.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://chromewebstore.google.com/detail/onetab/chphlpgkkbolifaimnlloiipkdnihall/reviews",
+          "who": "Justin Lee",
+          "date": "2026-10-18",
+          "quote": "it got rid of all my saved tabs without notice.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://addons.mozilla.org/api/v5/ratings/rating/?addon=toby-for-tabs&score=1",
+          "who": "Lugh",
+          "date": "2024-10-16",
+          "quote": "now pay-walling the core feature of the app: Saving tabs.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://addons.mozilla.org/api/v5/ratings/rating/?addon=toby-for-tabs&score=1",
+          "who": "Firefox user 18035106",
+          "date": "2025-02-19",
+          "quote": "60 cards limit is insane.",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "OneTab (about 2M Chrome users, 3.8 stars), Toby (300,000 users, 3.5), others.",
+      "risks": "Browser extension store review."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-18",
+    "slug": "free-restore",
+    "name": "Free Restore",
+    "headline": "A WordPress backup and migration plugin where restoring is free too, with no hidden file-size limit that blocks your backup.",
+    "buyer": "WordPress freelancers, agencies and site owners moving or backing up sites",
+    "bullets": [
+      "Back up a whole site and restore it, or move it to another host, with no paid step to restore.",
+      "No artificial size limit; large sites back up in chunks.",
+      "Optional paid extras for scheduled cloud backups, priced up front."
+    ],
+    "price": "$29/year",
+    "priceUsd": 29,
+    "priceNote": "for cloud scheduling; backup and restore free",
+    "reasonPrompt": "What happened the last time you needed to restore or move a WordPress site?",
+    "faq": [
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-18",
+      "summary": "Users of the most-installed WordPress migration plugin complain that restoring a backup requires paying, and about hidden size limits.",
+      "wtp": "All-in-One WP Migration's Unlimited Extension costs $69 a year for up to 50 sites; reviewers say they were forced to pay to restore.",
+      "signals": [
+        {
+          "url": "https://wordpress.org/support/topic/free-backups-paid-restores/",
+          "who": "hakuna4matata",
+          "date": "2026-10-05",
+          "quote": "to restore it from the plugin's backup list, you have to pay.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://wordpress.org/support/topic/deceptive-advertising-this-is-not-a-free-product/",
+          "who": "Paul Hodara",
+          "date": "2026-09",
+          "quote": "This is not a free product.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://wordpress.org/support/topic/free-backup-but-paid-restore-absolute-rip-off/",
+          "who": "dieterbitz",
+          "date": "2026-09",
+          "quote": "you are forced to upgrade to the paid version.",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "All-in-One WP Migration (5M+ installs, 4.5 from 7,672 reviews, 868 one-star), Duplicator, WPvivid, UpdraftPlus.",
+      "risks": "Crowded; trust matters."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-18",
+    "slug": "dual-subs",
+    "name": "Dual Subs",
+    "headline": "Dual-language subtitles on Netflix and YouTube for language learners that load every time, with support that answers.",
+    "buyer": "language learners who watch shows and videos with subtitles in two languages",
+    "bullets": [
+      "Two subtitle tracks at once, with click-to-translate words and saved vocabulary.",
+      "Built to keep working after Netflix and YouTube changes, with status shown when something breaks.",
+      "Export saved words to flashcards."
+    ],
+    "price": "$4/month",
+    "priceUsd": 4,
+    "priceNote": "cancel any time",
+    "reasonPrompt": "Which languages are you learning, and what do you use today?",
+    "faq": [
+      {
+        "q": "Is this made by Netflix or YouTube?",
+        "a": "No. It is an independent browser extension."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-18",
+      "summary": "Paying users of the most popular dual-subtitle extension report it stuck on loading for months and ask for refunds.",
+      "wtp": "Language Reactor Pro (about $5 a month, snippet only) has paying users posting on its forum; about 2M Chrome users.",
+      "signals": [
+        {
+          "url": "https://forum.languagelearningwithnetflix.com/t/language-reactor-gets-stuck-on-loading/40501?page=3",
+          "who": "nat_t-d",
+          "date": "2026-06-30",
+          "quote": "If the bug can't be fixed, could I please be refunded?",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forum.languagelearningwithnetflix.com/t/language-reactor-gets-stuck-on-loading/40501?page=3",
+          "who": "Curex",
+          "date": "2026-06-30",
+          "quote": "I was about to buy the Language Reactor Premium but now i'm facing this issue.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forum.languagelearningwithnetflix.com/t/41812",
+          "who": "alina_valinciuc",
+          "date": "2026-06-30",
+          "quote": "Everything was working earlier today, but now Language Reactor is stuck on",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forum.languagelearningwithnetflix.com/t/it-doesnt-work-on-netflix/41518",
+          "who": "ken2",
+          "date": "2026-06-30",
+          "quote": "keeps showing 'Loading subtitles…'",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Language Reactor (about 2M users, 3.7 stars), Trancy and others.",
+      "risks": "Streaming sites change often; needs constant maintenance."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-18",
+    "slug": "outlook-merge",
+    "name": "Outlook Merge",
+    "headline": "Mail merge with personal attachments that works in the new Outlook for Windows and Outlook on the web, without Word or old add-ins.",
+    "buyer": "office administrators and small-business staff moved to the new Outlook",
+    "bullets": [
+      "Upload a spreadsheet, write the email once with fields, attach a different file to each person.",
+      "Sends from your own mailbox, so messages land in your Sent folder.",
+      "Works in the new Outlook and Outlook on the web."
+    ],
+    "price": "$5/user/month",
+    "priceUsd": 5,
+    "priceNote": "billed monthly",
+    "reasonPrompt": "How do you send mail merges today, and what broke when you moved to the new Outlook?",
+    "faq": [
+      {
+        "q": "Is this made by Microsoft?",
+        "a": "No. It is an independent tool."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-18",
+      "summary": "Users report mail merge and merge-with-attachments tools failing after the move to the new Outlook for Windows.",
+      "wtp": "MAPILab Mail Merge Toolkit sells at $2.50 or $8.25 per user a month billed annually; users relied on paid Merge Tools.",
+      "signals": [
+        {
+          "url": "https://learn.microsoft.com/answers/a/12611831",
+          "who": "Rich, Sharon Kay",
+          "date": "2026-02-23",
+          "quote": "I didn't see any emails in my Outlook Sent folder.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://learn.microsoft.com/en-za/answers/questions/5636157/merge-tools-not-working",
+          "who": "Alek Ruzic",
+          "date": "2025-11-25",
+          "quote": "when I try to use Merge-Tools to try and use Mail Merge with Attachments, the emails don't send.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://learn.microsoft.com/en-us/answers/a/12649484",
+          "who": "David Burland",
+          "date": "2026-03-09",
+          "quote": "Several add‑ins no longer function.",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "MAPILab Mail Merge Toolkit, SecureMailMerge, Word mail merge.",
+      "risks": "Microsoft's roadmap lists an advanced mail merge preview for the new Outlook."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-18",
+    "slug": "auto-statements",
+    "name": "Auto Statements",
+    "headline": "Customer statements that email themselves on a schedule from Xero or QuickBooks, with 30/60/90 ageing and optional late-payment interest, without paying for a top plan.",
+    "buyer": "small businesses, AR clerks and bookkeepers on Xero or QuickBooks Online",
+    "bullets": [
+      "Pick a schedule (weekly, fortnightly, monthly) and which customers get statements: all, overdue only, or a group.",
+      "Statements show overdue invoices in 30/60/90-day ageing columns.",
+      "Optionally add interest or a late fee to overdue balances at the rate in your terms."
+    ],
+    "price": "$12/month",
+    "priceUsd": 12,
+    "priceNote": "one organisation",
+    "reasonPrompt": "How do you send customer statements now, and how long does it take each month?",
+    "faq": [
+      {
+        "q": "Is this made by Xero or Intuit?",
+        "a": "No. It is an independent tool."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-18",
+      "summary": "Xero's request for automatic statements has 1,175 votes and is still in discovery; QuickBooks limits recurring statements to its Advanced plan in the US.",
+      "wtp": "Users say businesses pay third-party apps for statements; one says the alternative is 'min $99pm extra'; QuickBooks gates it to Advanced.",
+      "signals": [
+        {
+          "url": "https://productideas.xero.com/forums/967115-invoices-quotes/suggestions/44961106-customer-statements-ability-to-auto-email-statem",
+          "who": "Streamline Auto Parts",
+          "date": "2026-08-19",
+          "quote": "businesses are paying for third-party applications simply to obtain statement functionality",
+          "seen": "opened"
+        },
+        {
+          "url": "https://productideas.xero.com/forums/967115-invoices-quotes/suggestions/44961106-customer-statements-ability-to-auto-email-statem",
+          "who": "Karen Lovegrove",
+          "date": "2026-07-21",
+          "quote": "not feasible at min $99pm extra for basic plan just to get automated reminders/statements sent.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://productideas.xero.com/forums/967115-invoices-quotes/suggestions/44961106-customer-statements-ability-to-auto-email-statem",
+          "who": "Michael Dagel",
+          "date": "2026-07-09",
+          "quote": "automate emailing customer statements each month on a specified day",
+          "seen": "opened"
+        },
+        {
+          "url": "https://productideas.xero.com/forums/967115-invoices-quotes/suggestions/45186310-customer-statements-ageing-30-60-90days",
+          "who": "Lisa Hyland",
+          "date": "2026-09-10",
+          "quote": "Show the overdue invoices on the debtor statements in columns by aging period.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://quickbooks.intuit.com/community/reports-87/setup-recurring-statements-178384",
+          "who": "ReymondO (QuickBooks staff)",
+          "date": "2024-04-27",
+          "quote": "The option to set up recurring statements is only available in QuickBooks Online Advanced for the US region.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://productideas.xero.com/forums/967115-invoices-quotes/suggestions/44960305-sales-invoices-add-interest-to-late-invoices-in",
+          "who": "MICHAEL JOHN SMITH",
+          "date": "2025-10-17",
+          "quote": "workarounds or third-party apps from the Xero App Store (at additional cost)",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "AutoStatements, Paid Nice, ZeroAIMailer, Statey.",
+      "risks": "Xero is in discovery on a native version."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-18",
+    "slug": "repeat-book",
+    "name": "Repeat Book",
+    "headline": "Recurring bookings for coaches, tutors and therapists: clients book the same weekly slot for 6, 10 or 12 weeks in one go, with one payment or a package.",
+    "buyer": "coaches, tutors, therapists and anyone who sees clients at the same time every week",
+    "bullets": [
+      "Clients pick a weekly slot and how many weeks; every session is booked and added to both calendars.",
+      "Take one payment for the series or a package of sessions.",
+      "Reschedule one session without breaking the rest of the series."
+    ],
+    "price": "$10/month",
+    "priceUsd": 10,
+    "priceNote": "one calendar",
+    "reasonPrompt": "How many repeat clients do you rebook by hand each month?",
+    "faq": [
+      {
+        "q": "Is this made by Calendly?",
+        "a": "No. It is an independent tool."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-18",
+      "summary": "Paying Calendly users have asked for recurring bookings for years and some are leaving over it; one rebooks 80-120 appointments a month by hand.",
+      "wtp": "Commenters are paid Calendly subscribers threatening to switch; Acuity is cited as offering the feature.",
+      "signals": [
+        {
+          "url": "https://community.calendly.com/how-do-i-40/please-create-a-recurring-meeting-758/index4.html",
+          "who": "Janet888",
+          "date": "2024-04-14",
+          "quote": "I am paying for something that actually creates more work for me",
+          "seen": "opened"
+        },
+        {
+          "url": "https://community.calendly.com/how-do-i-40/recurring-meetings-dealbreaker-5253",
+          "who": "Melanie43006",
+          "date": "2026-01-19",
+          "quote": "After 10+ years (I think!) as a Calendly subscriber I am ready to move on.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://community.calendly.com/how-do-i-40/what-is-reason-calendly-does-not-yet-support-a-recurring-meeting-option-5948",
+          "who": "Serena72725",
+          "date": "2026-09-04",
+          "quote": "I am now actively searching for an alternative platform",
+          "seen": "opened"
+        },
+        {
+          "url": "https://community.calendly.com/how-do-i-40/please-create-a-recurring-meeting-758/index4.html",
+          "who": "Mariena23061",
+          "date": "2024-05-28",
+          "quote": "I upgraded to a paid account recently but this is the second time I run into a case",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Calendly, Acuity, HoneyBook.",
+      "risks": "Calendly may ship it."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-18",
+    "slug": "bulk-books",
+    "name": "Bulk Books",
+    "headline": "Bulk edit QuickBooks Online products, prices and transactions from a spreadsheet, without paying for the Advanced plan.",
+    "buyer": "QuickBooks Online users and bookkeepers with large product lists",
+    "bullets": [
+      "Export products to a spreadsheet, change prices or fields, and upload: only what changed is updated.",
+      "Batch-enter or batch-edit invoices, bills and expenses.",
+      "Preview every change before it is applied, with an undo log."
+    ],
+    "price": "$15/month",
+    "priceUsd": 15,
+    "priceNote": "one company file",
+    "reasonPrompt": "How many products or transactions do you edit at a time, and how do you do it now?",
+    "faq": [
+      {
+        "q": "Is this made by Intuit?",
+        "a": "No. It is an independent tool."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-18",
+      "summary": "QuickBooks staff confirm bulk price updates are unavailable and batch transactions are Advanced-only; users have 1,500+ products to update.",
+      "wtp": "Batch transactions are gated to QuickBooks Online Advanced; staff point users to paid marketplace apps.",
+      "signals": [
+        {
+          "url": "https://quickbooks.intuit.com/community/importing-and-exporting-data-86/how-can-i-bulk-update-the-sales-prices-eg-from-csv-importing-seems-to-change-also-quantities-and-product-type-177511",
+          "who": "CharmieH (QuickBooks staff)",
+          "date": "2025-04-13",
+          "quote": "While the option to update sales prices in bulk is currently unavailable",
+          "seen": "opened"
+        },
+        {
+          "url": "https://quickbooks.intuit.com/community/other-questions-72/updating-product-prices-in-bulk-144502",
+          "who": "Pompaleau",
+          "date": "2025-06-02",
+          "quote": "I need to update prices on 1500+ products",
+          "seen": "opened"
+        },
+        {
+          "url": "https://quickbooks.intuit.com/community/reports-and-accounting-5/bulk-edit-55147",
+          "who": "CJ Consulting1",
+          "date": "2024-12-31",
+          "quote": "bulk updates by CSV import",
+          "seen": "opened"
+        },
+        {
+          "url": "https://quickbooks.intuit.com/community/other-questions-99/my-batch-transactions-functions-is-not-appearing-why-181910",
+          "who": "MoiraskyeT (QuickBooks staff)",
+          "date": "2025-07-12",
+          "quote": "exclusive to users of QuickBooks Online Advanced.",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "SaasAnt, Transaction Pro (snippet only).",
+      "risks": "Crowded; Intuit app review."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-18",
+    "slug": "exempt-ledger",
+    "name": "Exempt Ledger",
+    "headline": "Tax-exempt customers for Square sellers: store each exemption certificate, track exempt sales, and get the tax-exempt sales report Square doesn't give you.",
+    "buyer": "Square retailers who sell to wholesale buyers, nonprofits, farms, schools or resellers",
+    "bullets": [
+      "Keep each exempt customer's certificate on file, with its expiry date and a reminder before it lapses.",
+      "One report of every exempt sale, by customer and period, ready for your sales tax filing or an audit.",
+      "Flags exempt customers who were charged tax so you can refund them quickly."
+    ],
+    "price": "$9/month",
+    "priceUsd": 9,
+    "priceNote": "one Square account",
+    "reasonPrompt": "How do you handle tax-exempt customers in Square today?",
+    "faq": [
+      {
+        "q": "Is this made by Square?",
+        "a": "No. It is an independent tool that connects to your Square account with your permission."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-18",
+      "summary": "Square sellers have asked since 2023 for tax-exempt customers and a tax-exempt sales report; some invoice outside Square or moved to another system.",
+      "wtp": "Sellers moved exempt sales to systems that handle it or invoice outside Square entirely; one is shopping for another POS at the same monthly price.",
+      "signals": [
+        {
+          "url": "https://community.squareup.com/t5/Feature-Requests/Tax-Exempt-Customers/idi-p/366916/page/4",
+          "who": "bagelboss",
+          "date": "2025-03-21",
+          "quote": "we tend to invoice those orders outside of Square entirely",
+          "seen": "opened"
+        },
+        {
+          "url": "https://community.squareup.com/t5/Feature-Requests/Tax-Exempt-Customers/idi-p/366916/page/4",
+          "who": "DeanSleeper",
+          "date": "2025-04-04",
+          "quote": "We need to be able to classify customers as taxable/untaxable.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://community.squareup.com/t5/Feature-Requests/Tax-Exempt-Customers/idi-p/366916/page/4",
+          "who": "SVLFever",
+          "date": "2025-09-08",
+          "quote": "I also need a report that shows how much in Tax-Exempt sales occurred.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://community.squareup.com/t5/Feature-Requests/Customer-Tax-Exempt-Automation-at-the-Customer-Level/idc-p/845874",
+          "who": "delmontag",
+          "date": "2026-07-07",
+          "quote": "Just give us the ability to mark a customer as tax exempt and then don't put the tax on their sales.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://community.squareup.com/t5/Feature-Requests/Customer-Tax-Exempt-Automation-at-the-Customer-Level/idc-p/845874",
+          "who": "WBDPS",
+          "date": "2025-09-08",
+          "quote": "we've had to move that to a system that DOES automatically turn off sales tax",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Avalara exemption certificate tools, Shopify POS, Lightspeed.",
+      "risks": "The checkout-level exempt flag is inside Square; the add-on covers certificates and reporting."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-18",
+    "slug": "drawer-count",
+    "name": "Drawer Count",
+    "headline": "Count the cash drawer by bill and coin on a phone or tablet, see the deposit worked out against Square's expected cash, and log who counted.",
+    "buyer": "Square cafés, bars and shops that close out cash drawers daily",
+    "bullets": [
+      "Staff enter how many of each bill, coin and roll; the total and the deposit amount are calculated.",
+      "Compares the count with Square's expected drawer total for that shift and flags over or short.",
+      "Keeps a log of every count with who did it, for the owner to review."
+    ],
+    "price": "$5/month",
+    "priceUsd": 5,
+    "priceNote": "all registers",
+    "reasonPrompt": "How do you count your cash drawer at close today?",
+    "faq": [
+      {
+        "q": "Is this made by Square?",
+        "a": "No. It is an independent tool that connects to your Square account with your permission."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-18",
+      "summary": "Sellers switching from Toast miss counting the drawer by denomination; some use a separate phone app, and some say it nearly made them go back.",
+      "wtp": "Sellers already use the Tilly Tally app for this; two say missing it nearly sent them back to Toast.",
+      "signals": [
+        {
+          "url": "https://community.squareup.com/t5/Feature-Requests/Register-Count-by-Denomination-Cash-Drawer/idi-p/680746",
+          "who": "cdelord21",
+          "date": "2025-09-29",
+          "quote": "we are switching from toast and my employees are already saying they want this feature back",
+          "seen": "opened"
+        },
+        {
+          "url": "https://community.squareup.com/t5/Feature-Requests/Register-Count-by-Denomination-Cash-Drawer/idi-p/680746",
+          "who": "HungryBuffalo1",
+          "date": "2025-09-29",
+          "quote": "Not having this feature on Square has nearly made me go back to Toast.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://community.squareup.com/t5/Feature-Requests/Register-Count-by-Denomination-Cash-Drawer/idi-p/680746",
+          "who": "dsachs",
+          "date": "2025-07-22",
+          "quote": "we have our employees download an app called Tilly Tally to their phone",
+          "seen": "opened"
+        },
+        {
+          "url": "https://community.squareup.com/t5/Cash-Management/Calculator-for-Cash-Drawers/idi-p/723445",
+          "who": "paulmiller",
+          "date": "2024-10-16",
+          "quote": "count the quantity per denomination of bills, coins and rolls",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Toast's built-in drawer count, Tilly Tally, paper forms.",
+      "risks": "Uses Square's Cash Drawer Shifts API."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-18",
+    "slug": "lay-away",
+    "name": "Lay Away",
+    "headline": "Layaway and deposits for Square shops that stay attached to the order: take a deposit, track the balance, send reminders, and close it out when it's paid.",
+    "buyer": "Square gift shops, boutiques, furniture and bead stores that hold items for customers",
+    "bullets": [
+      "Start a layaway from a Square order: deposit, payment plan and due date in one place.",
+      "Customers get reminders and a link to pay the next instalment.",
+      "One list of every open layaway, what's owed and what's overdue."
+    ],
+    "price": "$9/month",
+    "priceUsd": 9,
+    "priceNote": "one Square account",
+    "reasonPrompt": "How do you handle layaway or deposits today?",
+    "faq": [
+      {
+        "q": "Is this made by Square?",
+        "a": "No. It is an independent tool that connects to your Square account with your permission."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-18",
+      "summary": "Square sellers have asked for layaway and deposits for years and run them on invoices, house accounts or paper contracts.",
+      "wtp": "A seller notes their previous paid POS, Lightspeed, had this feature; others keep paper and invoice workarounds.",
+      "signals": [
+        {
+          "url": "https://community.squareup.com/t5/Feature-Requests/Square-Retail-Register-Take-a-Deposit-or-layaway/idi-p/696109",
+          "who": "sacredheart926",
+          "date": "2024-10-30",
+          "quote": "Invoices is a workaround only problem is it doesn't group it with the orders",
+          "seen": "opened"
+        },
+        {
+          "url": "https://community.squareup.com/t5/Feature-Requests/Square-Retail-Register-Take-a-Deposit-or-layaway/idi-p/696109",
+          "who": "Mobilebarn",
+          "date": "2024-10-06",
+          "quote": "We need those features asap. At the moment we use invoices as a workaround",
+          "seen": "opened"
+        },
+        {
+          "url": "https://community.squareup.com/t5/Feature-Requests/Square-Retail-Register-Take-a-Deposit-or-layaway/idi-p/696109",
+          "who": "RobinsRoostUT",
+          "date": "2023-12-23",
+          "quote": "We do a lot of layaway and have an offline way of doing it",
+          "seen": "opened"
+        },
+        {
+          "url": "https://community.squareup.com/t5/Orders-Menu-Items-Catalog/layaway/m-p/757292",
+          "who": "SheltonGiftBout",
+          "date": "2024-09-19",
+          "quote": "been asking for layaway for 2 years now",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Lightspeed, Shopify layaway apps.",
+      "risks": "Willingness to pay is indirect."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-18",
+    "slug": "count-scan",
+    "name": "Count Scan",
+    "headline": "Stock counts for Square by category or vendor, one barcode scan per item, with mismatches re-queued and the adjustments written back to Square.",
+    "buyer": "Square retailers, bars and liquor stores that count stock regularly",
+    "bullets": [
+      "Build a count list for one category, vendor or shelf instead of the whole store.",
+      "Each scan adds one; no taps between bottles.",
+      "Items that don't match get a second count; the results update Square's stock."
+    ],
+    "price": "$12/month",
+    "priceUsd": 12,
+    "priceNote": "unlimited counts",
+    "reasonPrompt": "How long does a stock count take you, and how often do you do one?",
+    "faq": [
+      {
+        "q": "Is this made by Square?",
+        "a": "No. It is an independent tool that connects to your Square account with your permission."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-18",
+      "summary": "Square sellers ask for partial counts by category and faster scan counting; some bought scanners or use other tools to do it.",
+      "wtp": "One seller bought Square's handheld scanner just for counting; sellers name Shopventory and Orca Scan as the tools they use instead.",
+      "signals": [
+        {
+          "url": "https://community.squareup.com/t5/Feature-Requests/Ability-to-Perform-Stock-Counts-by-Category/idi-p/811995",
+          "who": "dokidoki",
+          "date": "2025-09-22",
+          "quote": "too time-consuming and disruptive",
+          "seen": "opened"
+        },
+        {
+          "url": "https://community.squareup.com/t5/Feature-Requests/Ability-to-Perform-Stock-Counts-by-Category/idi-p/811995",
+          "who": "lewisbakedgoods",
+          "date": "2025-11-17",
+          "quote": "Other services have it and it'll be a deal breaker for me.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://community.squareup.com/t5/Hardware-Setup-Troubleshooting/Scanning-inventory-counts-Square-for-Restaurants/td-p/844643",
+          "who": "qyc",
+          "date": "2026-06-13",
+          "quote": "It's 1 scan, followed by 5 taps just to count 2 bottles.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://community.squareup.com/t5/Feature-Requests/Cycle-Counts-the-80-of-inventory-counting-that-matters-to/idi-p/841498",
+          "who": "JTPets",
+          "date": "2026-04-25",
+          "quote": "Square tracks inventory well. What it does not do is verify it.",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Shopventory, Orca Scan, a free open-source tool by a seller.",
+      "risks": "Uses Square's inventory API."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-18",
+    "slug": "reorder-smart",
+    "name": "Reorder Smart",
+    "headline": "Purchase orders for Square built from what actually sells: sales velocity, vendor lead times and case packs turn into suggested orders you send in one click.",
+    "buyer": "Square retailers with many vendors: pet, gift, apothecary and specialty shops",
+    "bullets": [
+      "Suggested order quantities per vendor from your real sales, lead times and safety days.",
+      "Respects case packs and minimums.",
+      "Exports straight to a Square purchase order."
+    ],
+    "price": "$15/month",
+    "priceUsd": 15,
+    "priceNote": "one Square account",
+    "reasonPrompt": "How do you decide what to reorder today?",
+    "faq": [
+      {
+        "q": "Is this made by Square?",
+        "a": "No. It is an independent tool that connects to your Square account with your permission."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-18",
+      "summary": "Square sellers ask for reorder suggestions based on sales; the existing tool suggests orders they call wrong, and some build POs by hand from exports.",
+      "wtp": "A seller notes they already pay for the premium tier; another sells a Google Sheet planner for this; another spent on AI tokens building their own.",
+      "signals": [
+        {
+          "url": "https://community.squareup.com/t5/Orders-Menu-Items-Catalog/Purchase-order-generation-is-broken/m-p/718892",
+          "who": "JTPets",
+          "date": "2024-03-26",
+          "quote": "when it takes 37 units 12 months to sell, the system should NOT be telling me to order 180+",
+          "seen": "opened"
+        },
+        {
+          "url": "https://community.squareup.com/t5/Orders-Menu-Items-Catalog/New-feature-suggestions-for-Purchase-Orders/m-p/807237",
+          "who": "DNay",
+          "date": "2025-08-25",
+          "quote": "Considering we are paying a premium for this option.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://community.squareup.com/t5/Feature-Requests/Bring-Back-Auto-Purchase-Order-Tool/idi-p/771296",
+          "who": "BlissBoulder",
+          "date": "2026-05-29",
+          "quote": "Seems like it's available in Square UK but not the USA??",
+          "seen": "opened"
+        },
+        {
+          "url": "https://community.squareup.com/t5/Feature-Requests/Bring-Back-Auto-Purchase-Order-Tool/idi-p/771296",
+          "who": "willkidger",
+          "date": "2026-03-06",
+          "quote": "+ 1 to this",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Inventory Planner-type tools, a seller's Google Sheet planner, Square's own auto POs in some regions.",
+      "risks": "Square may ship it in the US."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-18",
+    "slug": "square-woo-sync",
+    "name": "Square Woo Sync",
+    "headline": "Inventory and catalog sync between Square and WooCommerce that keeps working after updates, maps attributes and variations, and syncs both ways.",
+    "buyer": "shops selling in person on Square and online with WooCommerce",
+    "bullets": [
+      "Stock, prices and products sync both ways within minutes, with a log of every change.",
+      "Maps WooCommerce attributes and variations to Square items properly.",
+      "Alerts you when a sync fails instead of failing silently."
+    ],
+    "price": "$12/month",
+    "priceUsd": 12,
+    "priceNote": "one store",
+    "reasonPrompt": "What breaks in your Square and WooCommerce sync today?",
+    "faq": [
+      {
+        "q": "Is this made by Square or WooCommerce?",
+        "a": "No. It is an independent plugin."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-18",
+      "summary": "The official WooCommerce Square plugin is rated 2.1 from 121 reviews, with users reporting broken syncs after updates and no attribute mapping.",
+      "wtp": "A paid PRO sync plugin already sells real-time, multi-location and variation sync.",
+      "signals": [
+        {
+          "url": "https://wordpress.org/support/topic/works-well-with-caveats/",
+          "who": "gasurgaelach",
+          "date": "2026-02",
+          "quote": "It cannot do basic things like map attributes",
+          "seen": "opened"
+        },
+        {
+          "url": "https://wordpress.org/support/topic/so-many-issues-5/",
+          "who": "thekendog",
+          "date": "2025-05",
+          "quote": "The sync doesn't work.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://wordpress.org/support/topic/no-longer-works-zero-support/",
+          "who": "casbboy",
+          "date": "2026-04",
+          "quote": "After working fine for months, Square is giving this error",
+          "seen": "opened"
+        },
+        {
+          "url": "https://wordpress.org/support/plugin/woocommerce-square/reviews/",
+          "who": "WooCommerce Square plugin reviews page",
+          "date": "2026-10-18",
+          "quote": "2.1 out of 5 from 121 reviews, 82 one-star",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "WooCommerce Square (official), Square Sync for WooCommerce PRO, SKU IQ, Trunk.",
+      "risks": "Two APIs to keep in step."
+    }
+  },
+  {
     "slug": "pitch-pilot",
     "name": "Pitch Pilot",
     "headline": "Find the published press and booking contacts for any magazine, agency or talent, and get the cold pitch drafted, in minutes.",

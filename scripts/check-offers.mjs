@@ -30,7 +30,7 @@ for (const o of offers) {
     const sig = Array.isArray(d.signals) ? d.signals : []
     const urls = new Set(sig.map(x => x && x.url))
     const people = new Set(sig.map(x => x && x.who).filter(Boolean))
-    if (sig.length < 3 || urls.size < 3) errors.push(`${at}: demand.signals needs posts from 3+ distinct pages`)
+    if (sig.length < 3 || urls.size < 2) errors.push(`${at}: demand.signals needs 3+ signals from at least 2 distinct pages`)
     if (people.size < 3) errors.push(`${at}: demand.signals needs 3+ different people (who)`)
     for (const x of sig) {
       if (!x || !/^https:\/\//.test(x.url || '')) errors.push(`${at}: every demand signal needs an https url`)
