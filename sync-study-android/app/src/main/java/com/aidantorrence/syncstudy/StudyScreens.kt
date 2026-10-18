@@ -342,7 +342,7 @@ private fun ReadRoute(r: Route.Read, reader: ReaderViewModel, study: StudyViewMo
         val p = state.checkpoint
         val card = p?.let { studyFor(r.bookId)?.checkpoints?.get(it) }
         AnimatedVisibility(card != null, enter = slideInVertically { it / 2 } + fadeIn(), modifier = Modifier.align(Alignment.BottomCenter)) {
-            if (card != null && p != null) CheckpointSheet(card, p, state.document.paragraphs.size, reader, study)
+            if (card != null) CheckpointSheet(card, card.paragraph, state.document.paragraphs.size, reader, study)
         }
         val showDone = state.finished && state.checkpoint == null && state.quiz && studyFor(r.bookId) != null
         AnimatedVisibility(showDone, enter = slideInVertically { it / 2 } + fadeIn(), modifier = Modifier.align(Alignment.BottomCenter)) {

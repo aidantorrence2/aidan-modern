@@ -33,6 +33,8 @@ class StageRenderTest {
     private val out = File("build/stage").apply { mkdirs() }
     private val books = System.getProperty("stage.books")?.takeIf { it.isNotBlank() }?.split(',')?.toSet()
     private val frames = System.getProperty("stage.frames") == "true"
+    /** Optional "book-paragraph" keys (e.g. atomic-habits-0) to limit frame sequences to. */
+    private val frameScenes = System.getProperty("stage.frameScenes")?.takeIf { it.isNotBlank() }?.split(',')?.toSet()
     private val scale = 2f
 
     private val measurer by lazy {
@@ -73,7 +75,7 @@ class StageRenderTest {
                 save(render(scene, times, duration + 4f), File(out, "stills/$id-$p.png"))
                 // A frame just after each beat settles, to review each step.
                 times.forEachIndexed { i, tb -> save(render(scene, times, tb + 1.6f), File(out, "steps/$id-$p/step-${"%02d".format(i)}.png")) }
-                if (frames) {
+                if (frames && (frameScenes == null || "$id-$p" in frameScenes)) {
                     var t = 0f; var k = 0
                     while (t <= duration + 2f) { save(render(scene, times, t), File(out, "frames/$id-$p/f${"%04d".format(k)}.png")); t += 1f / 12f; k++ }
                 }

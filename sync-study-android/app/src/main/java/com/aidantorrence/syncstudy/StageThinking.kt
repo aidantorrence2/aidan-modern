@@ -8,6 +8,8 @@ import kotlin.math.sin
 /** Animated explainer films for Thinking, Fast and Slow, one per paragraph. */
 val THINKING_STAGE = listOf(
     stage("Two systems", Backdrops.Day) {
+        add("judge", Bean(Pal.Violet, Pal.Skin[1], Pal.Hair[1], 1, seed = 21), 200, 236).with("mood", 0.1)
+        add("ask", Bubble("how do I decide?", 110f, 0f, thought = true), 200, 120)
         add("hare", ThinkingProps.Hare(), 100, 236)
         add("tort", ThinkingProps.Tortoise(), 290, 236)
         add("t1", Tag("System 1 · fast, automatic", Pal.Gold), 100, 264)
@@ -21,7 +23,8 @@ val THINKING_STAGE = listOf(
         add("stamp", ThinkingProps.Stamp(), 268, 104)
         add("wrong", Mark(false, 12f), 318, 82)
         add("tEnd", Tag("…even when System 1 is wrong", Pal.Coral), 215, 150)
-        beat("two very different modes") { show("hare", "tort", stagger = 200) }
+        beat("make judgments") { show("judge"); show("ask", delay = 400); set("judge", "look", 0.6, 600, 600) }
+        beat("two very different modes") { hide("judge", "ask"); show("hare", "tort", delay = 250, stagger = 200) }
         beat("System One is fast") { show("t1"); set("hare", "run", 1, 300) }
         beat("reads emotions on faces") { show("face", "tFace", stagger = 200) }
         beat("bread and butter") { hide("face", "tFace"); show("bread", delay = 150) }

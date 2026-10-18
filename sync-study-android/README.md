@@ -39,6 +39,11 @@ a pure function of time since each beat started, so it stays in sync at any spee
 - `Props<Book>.kt`, `Stage<Book>.kt`: book-specific props and scenes
 - `Study<Book>.kt`: questions, explain cards, fill-in-the-blanks, key ideas
 
+![Scenes](docs/scenes.png)
+![Screens](docs/screens.png)
+
+Animated previews (one paragraph each, 1x narration timing): `docs/previews/*.mp4`.
+
 ## Build and test
 
 ```

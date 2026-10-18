@@ -43,7 +43,7 @@ android {
                 it.systemProperty("roborazzi.test.record", "true")
                 it.systemProperty("robolectric.pixelCopyRenderMode", "hardware")
                 it.maxHeapSize = "3g"
-                listOf("stage.books", "stage.frames").forEach { k -> project.findProperty(k)?.let { v -> it.systemProperty(k, v) } }
+                listOf("stage.books", "stage.frames", "stage.frameScenes").forEach { k -> project.findProperty(k)?.let { v -> it.systemProperty(k, v) } }
             }
         }
     }
