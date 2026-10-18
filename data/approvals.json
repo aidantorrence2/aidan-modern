@@ -303,6 +303,22 @@
       "status": "approved",
       "decided": "2026-10-18T20:58:40Z",
       "note": ""
+    },
+    {
+      "id": "other:move-old-client-notes-txt-to-the-trash-202610182101",
+      "kind": "other",
+      "source": "claude:aidan-modern",
+      "title": "Move old-client-notes.txt to the Trash",
+      "summary": "Move the old client notes file (30 bytes, in a Claude session scratchpad) to the macOS Trash. It is not permanently deleted; you empty the Trash yourself.",
+      "payload": {
+        "action": "move to macOS Trash",
+        "path": "/private/tmp/claude-501/-Users-aidantorrence-Documents-aidan-modern/61174046-7613-495a-be9b-3f4deaea760d/scratchpad/claude-test/old-client-notes.txt"
+      },
+      "created": "2026-10-18T21:01:13Z",
+      "expires": "2026-10-18T22:01:13Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
     }
   ]
 }
