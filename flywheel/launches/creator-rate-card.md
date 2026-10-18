@@ -5,6 +5,7 @@ Price: $5/month (no cut of your deals)
 Buyer: short-form creators between 5k and 200k followers who get brand DMs and answer each one from scratch
 Status: live since 2026-10-17
 Hosted page: https://aidantorrence.com/offers/creator-rate-card (live after merge to main + deploy)
+Artifact page: https://claude.ai/artifact/FdtsuYzruDuQeqgVf4Faim
 
 ## Tracking links (one per channel)
 

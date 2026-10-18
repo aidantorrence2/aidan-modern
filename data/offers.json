@@ -1015,7 +1015,8 @@
       "community": "Creators who get 'what are your rates?' DMs: how do you answer? I'm deciding whether to build a rate card page built from your last 30 days of numbers, with deliverables, usage and exclusivity priced, and a quote link brands fill in that lands on your WhatsApp with their brief. $5/month, no cut. Pre-launch page, no charge, just an 'I'd pay' button: aidantorrence.com/offers/creator-rate-card",
       "pitchSubject": "A rate card brands quote themselves from (pre-launch)",
       "pitch": "Hi {first},\n\nI'm Aidan, a photographer and short-form creator. I saw {specific reference}.\n\nI'm deciding whether to build a rate card page for creators: rates set from your real numbers, a quote link brands fill in with deliverables and usage, the request on your WhatsApp, $5 a month and no cut of your deals.\n\nIf that's useful, the pre-launch page has an 'I'd pay' button: aidantorrence.com/offers/creator-rate-card?src=email\n\nIf not, one line on why helps just as much.\n\nBest,\nAidan"
-    }
+    },
+    "artifactUrl": "https://claude.ai/artifact/FdtsuYzruDuQeqgVf4Faim"
   },
   {
     "slug": "repost-permit",
@@ -1454,6 +1455,41 @@
       "community": "Commercial and editorial photographers: how do you track when your image licenses end? Mine was a spreadsheet I stopped updating, and I've definitely missed renewals. I'm deciding whether to build a small tool: log each license or paste the agreement, get a reminder 60 days before the term ends with a renewal quote from the original fee, and send the client a short note in your own wording. One board shows live, ending soon and lapsed. $5/month. Pre-launch page, no charge, just an 'I'd pay' button: aidantorrence.com/offers/renewal-watch",
       "pitchSubject": "Image licenses that remind you to renew them (pre-launch)",
       "pitch": "Hi {first},\n\nI'm Aidan, a photographer. I saw {specific reference}.\n\nI'm deciding whether to build a small tool for image licenses: log each one or paste the agreement, get a reminder 60 days before the term ends with a renewal quote from the original fee, and send the client a short note in your own wording, $5 a month.\n\nIf you've ever found your work still running after the term, the pre-launch page has an 'I'd pay' button: aidantorrence.com/offers/renewal-watch?src=email\n\nIf not, one line on why is just as useful.\n\nBest,\nAidan"
+    }
+  },
+  {
+    "slug": "vendor-credits",
+    "name": "Vendor Credits",
+    "headline": "One vendor list per wedding, typed once: every caption gets the right tags, every vendor gets their gallery with your credit terms, and the referrals come back to you.",
+    "buyer": "wedding and event photographers who retype planner, florist, venue and dress handles into every post and still miss someone",
+    "bullets": [
+      "Add the vendors for a wedding once, from the timeline or the planner's list. Paste the credit block into any caption; it is always complete and in the order you choose.",
+      "Each vendor gets a private gallery of the images that show their work, with your crediting terms attached and a one-tap 'I agree' before download.",
+      "A vendor page shows who you've worked with, how many galleries they took, and who has tagged you back, so you know which planners actually send work."
+    ],
+    "price": "$4/month",
+    "priceUsd": 4,
+    "priceNote": "unlimited weddings",
+    "status": "live",
+    "launched": "2026-10-18",
+    "reasonPrompt": "How do you handle vendor credits and vendor galleries after a wedding today, and who usually gets left out?",
+    "faq": [
+      {
+        "q": "Does it post for me?",
+        "a": "No. It builds the credit block and the vendor galleries. You post where and when you like."
+      },
+      {
+        "q": "Does it cull which images show each vendor?",
+        "a": "Not at first. You tag images per vendor when you pick your sneak peeks; the tool keeps the lists and galleries straight from there."
+      }
+    ],
+    "kit": {
+      "hook": "Posted the sneak peek. Tagged seven vendors. The florist texted: 'you forgot me.' Third time this season.",
+      "script": "Open on a caption being typed: @venue @planner @florist... a pause, a scroll through old messages for a handle. VO: 'Seven vendors, every post, from memory.' Cut to a phone: a wedding's vendor list, one tap copies a complete credit block; a florist opens a private gallery, taps agree, downloads. Cut to a vendor page: planners ranked by galleries taken and tag-backs. VO: 'Type the list once. Credits, galleries and terms handle themselves.' End card: 'Vendor Credits. $4 a month. Pre-launch, link in bio.'",
+      "caption": "Vendor credits and vendor galleries from one list per wedding, with your terms attached. $4/month. Not built yet; tell me if you'd use it. aidantorrence.com/offers/vendor-credits",
+      "community": "Wedding photographers: how do you handle vendor credits and vendor galleries? Mine is retyping handles into every caption and sending Dropbox links with a 'please credit me' I'm not sure anyone reads. I'm deciding whether to build a small tool: one vendor list per wedding, a copy-paste credit block that is always complete, a private gallery per vendor with your terms and an 'I agree' before download, and a page showing which planners tag you back. $4/month. Pre-launch page, no charge, just an 'I'd pay' button: aidantorrence.com/offers/vendor-credits",
+      "pitchSubject": "Vendor credits without the 'you forgot me' text (pre-launch)",
+      "pitch": "Hi {first},\n\nI'm Aidan, a photographer. I saw {specific reference}.\n\nI'm deciding whether to build a small tool for vendor credits: one vendor list per wedding, a copy-paste credit block that is always complete, a private gallery per vendor with your terms attached, and a page showing which planners send work back, $4 a month.\n\nIf that would save you a few texts a season, the pre-launch page has an 'I'd pay' button: aidantorrence.com/offers/vendor-credits?src=email\n\nIf not, one line on why is just as useful.\n\nBest,\nAidan"
     }
   }
 ]
