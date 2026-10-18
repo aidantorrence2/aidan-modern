@@ -8,6 +8,7 @@ data class Book(
     val year: Int,
     val blurb: String,
     val color: Long,
+    val visual: VisualStyle,
     val summary: String,
 )
 
@@ -21,6 +22,7 @@ val LIBRARY: List<Book> = listOf(
         year = 1936,
         blurb = "The original playbook for getting along with people and bringing them around to your way of thinking.",
         color = 0xFFB5543A,
+        visual = VisualStyle.CONNECTIONS,
         summary = """
 Dale Carnegie's central claim is simple and a little uncomfortable: most of our success with other people has less to do with being right than with how we make them feel. He wrote the book from decades of teaching adults how to speak and deal with colleagues, and it reads less like theory than like a set of habits to practice.
 
@@ -42,6 +44,7 @@ Critics sometimes read the book as a manual for manipulation, but Carnegie keeps
         year = 2018,
         blurb = "Why tiny changes compound into remarkable results, and a four-step system for building habits that stick.",
         color = 0xFF2F6F8F,
+        visual = VisualStyle.COMPOUND,
         summary = """
 James Clear argues that we overrate big moments and underrate small, repeated actions. A habit that makes you one percent better each day compounds into something dramatic over a year, while a habit that makes you one percent worse quietly erodes everything. The problem is that the results of habits are delayed, so in the moment nothing seems to be happening. He calls this the plateau of latent potential: the work is building up long before the payoff shows, like ice that stays frozen as the room warms from twenty-five to thirty-one degrees and only melts at thirty-two.
 
@@ -69,6 +72,7 @@ The thesis is that you do not rise to the level of your goals; you fall to the l
         year = 2011,
         blurb = "A Nobel laureate's tour of the two systems in your head and the predictable ways they mislead you.",
         color = 0xFF5B4E8C,
+        visual = VisualStyle.TWO_SYSTEMS,
         summary = """
 Daniel Kahneman spent a career studying how people actually make judgments, and his conclusion is that the mind runs on two very different modes. System One is fast, automatic, and effortless. It reads emotions on faces, completes the phrase bread and butter, and drives a car on an empty road. System Two is slow, deliberate, and lazy. It does long division, fills out tax forms, and checks whether an argument holds up. The trouble is that System Two likes to conserve effort, so most of the time it simply endorses whatever System One proposes. The book is a catalog of what goes wrong when it does.
 
@@ -92,6 +96,7 @@ Kahneman is modest about the practical payoff. Knowing about biases does little 
         year = 2011,
         blurb = "A brief history of humankind, from an unremarkable ape to the species that runs the planet.",
         color = 0xFF8C6A3F,
+        visual = VisualStyle.STAR_TRAILS,
         summary = """
 Yuval Noah Harari asks a blunt question: how did one species of ape, not the strongest or the fastest, come to dominate the planet? His answer is organized around three revolutions. The Cognitive Revolution, roughly seventy thousand years ago, gave Homo sapiens a new kind of language. The Agricultural Revolution, about twelve thousand years ago, tied us to fields and villages. The Scientific Revolution, five hundred years ago, taught us to admit ignorance and turn knowledge into power.
 
@@ -113,6 +118,7 @@ The last chapters widen the lens. Industrial society reorganized time, dissolved
         year = 1989,
         blurb = "A character-first framework for moving from dependence to independence to real collaboration.",
         color = 0xFF3C7A5A,
+        visual = VisualStyle.CIRCLES,
         summary = """
 Stephen Covey opens by drawing a line between what he calls the personality ethic and the character ethic. The personality ethic, which dominated self-help in the twentieth century, is about techniques, image, and quick fixes. The character ethic, which he traces to older writing, is about principles such as integrity, fairness, and patience. Covey's claim is that lasting effectiveness comes from character, and that the seven habits are a way to build it. He also introduces the idea of paradigms, the mental maps we use without noticing them. Small changes in behavior come from working on attitudes; big changes come from changing the map.
 
@@ -142,6 +148,7 @@ Running beneath all seven is the emotional bank account, the trust built up or d
         year = 2016,
         blurb = "Why focused, distraction-free work is becoming rare and valuable, and how to build a life around it.",
         color = 0xFF2E5E6E,
+        visual = VisualStyle.DEPTH,
         summary = """
 Cal Newport defines deep work as professional activity performed in a state of distraction-free concentration that pushes your abilities to their limit. Shallow work is the opposite: logistical, easily replicated tasks, often done while distracted, that create little new value. His argument has two halves. First, deep work is becoming more valuable at the same time it is becoming rarer. Second, anyone who builds a deep work habit will have an outsized advantage.
 
@@ -167,6 +174,7 @@ Newport closes by arguing that a deep life is not only more productive but more 
         year = 2012,
         blurb = "How the habit loop runs individuals, companies, and movements, and where to press to change it.",
         color = 0xFF9A4F6A,
+        visual = VisualStyle.LOOP,
         summary = """
 Charles Duhigg builds his book around one piece of neuroscience and then follows it everywhere. The piece of neuroscience is the habit loop. A cue triggers a routine, the routine produces a reward, and over time the brain learns to anticipate the reward as soon as it sees the cue. Once a loop is established, the basal ganglia take over and the conscious mind steps back, which is why you can drive home without remembering the trip. Habits never truly disappear; they are overwritten by new loops that use the same cue and deliver the same reward.
 
@@ -190,6 +198,7 @@ The final section asks how movements happen. The Montgomery bus boycott spread t
         year = 1946,
         blurb = "A psychiatrist's account of the concentration camps and the therapy he built from what survived there.",
         color = 0xFF6B6B6B,
+        visual = VisualStyle.FLAME,
         summary = """
 Viktor Frankl was a Viennese psychiatrist who spent three years in Nazi concentration camps, including Auschwitz and Dachau. The first half of his book is a memoir of that experience, written not as a catalog of horrors but as a study of how ordinary prisoners reacted to extreme suffering. The second half describes logotherapy, the school of psychotherapy he developed around a single conviction: the primary drive in human beings is not pleasure or power but the search for meaning.
 
@@ -213,6 +222,7 @@ The book ends on tragic optimism, the capacity to say yes to life in spite of pa
         year = 2006,
         blurb = "The research behind fixed and growth mindsets, and how a single belief shapes learning, work, and love.",
         color = 0xFF3F7F7A,
+        visual = VisualStyle.GROWTH,
         summary = """
 Carol Dweck, a Stanford psychologist, spent decades studying why some people wilt in the face of difficulty while others dig in. Her answer comes down to a belief about the nature of ability. People with a fixed mindset believe that intelligence, talent, and character are set traits. People with a growth mindset believe they can be developed through effort, strategy, and help from others. The belief is often unconscious, it varies from one area of life to another, and it quietly shapes almost everything that follows.
 
@@ -234,6 +244,7 @@ The last chapter is a guide to change. Learn to notice the fixed-mindset voice, 
         year = 2008,
         blurb = "Why success has more to do with timing, culture, and opportunity than the myth of the self-made genius.",
         color = 0xFF8F5F2F,
+        visual = VisualStyle.OUTLIERS,
         summary = """
 Malcolm Gladwell opens with a town in Pennsylvania called Roseto, where Italian immigrants had strikingly low rates of heart disease despite smoking, drinking, and eating heavily. Researchers eventually concluded that the explanation was the community itself: tight families, shared meals, and a culture that discouraged showing off. Gladwell uses the story to announce his thesis. We like to explain success through individual traits such as talent and grit, but the people we call outliers are products of hidden advantages, cultural legacies, and extraordinary opportunities. To understand them, you have to look around them, not just at them.
 

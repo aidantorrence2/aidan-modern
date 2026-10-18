@@ -1,5 +1,7 @@
 package com.aidantorrence.syncreader
 
+import androidx.compose.animation.core.animateFloatAsState
+import androidx.compose.animation.core.tween
 import androidx.compose.foundation.background
 import androidx.compose.foundation.gestures.animateScrollBy
 import androidx.compose.foundation.gestures.detectTapGestures
@@ -31,6 +33,9 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.rounded.ArrowBack
 import androidx.compose.material.icons.automirrored.rounded.VolumeUp
 import androidx.compose.material.icons.rounded.Add
+import androidx.compose.material.icons.rounded.AutoAwesome
+import androidx.compose.material.icons.rounded.CenterFocusStrong
+import androidx.compose.material.icons.rounded.ViewHeadline
 import androidx.compose.material.icons.rounded.ContentPaste
 import androidx.compose.material.icons.rounded.Edit
 import androidx.compose.material.icons.rounded.Forward10
@@ -69,6 +74,10 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.draw.drawBehind
+import androidx.compose.ui.graphics.Brush
+import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.platform.LocalClipboardManager
@@ -96,6 +105,8 @@ fun SyncReaderApp(viewModel: ReaderViewModel) {
             state = state,
             onOpenBook = viewModel::openBook,
             onOpenCustom = viewModel::openCustom,
+            onResume = viewModel::showReader,
+            onTogglePlay = viewModel::togglePlay,
         )
         Screen.READER -> ReaderScreen(viewModel, state)
     }
@@ -106,31 +117,53 @@ fun ReaderScreen(viewModel: ReaderViewModel, state: ReaderUiState) {
     var editing by remember { mutableStateOf(false) }
     BackHandler(onBack = viewModel::closeReader)
 
-    Column(
-        modifier = Modifier
-            .fillMaxSize()
-            .background(Background)
-            .windowInsetsPadding(WindowInsets.safeDrawing)
-    ) {
-        TopBar(state, onBack = viewModel::closeReader, onMode = viewModel::setMode, onEdit = { editing = true })
-        SpeedRow(state, onSpeed = viewModel::setSpeed, onStep = viewModel::stepSpeed)
+    // The artwork breathes with the narration: faster at higher speeds, slow and calm when paused.
+    val tempo by animateFloatAsState(
+        if (state.playing) visualTempo(state.speed) else IDLE_TEMPO,
+        animationSpec = tween(900),
+        label = "tempo",
+    )
+    val clock = rememberVisualClock(tempo)
+    // Full strength in Visual mode; pulled back behind text, and further still while reading.
+    val artAlpha by animateFloatAsState(
+        when (state.mode) {
+            ViewMode.VISUAL -> 1f
+            ViewMode.FOCUS -> if (state.playing) 0.55f else 0.8f
+            ViewMode.FLOW -> if (state.playing) 0.6f else 0.9f
+        },
+        animationSpec = tween(700),
+        label = "artAlpha",
+    )
 
-        Box(modifier = Modifier.weight(1f).fillMaxWidth()) {
-            when {
-                state.document.isEmpty -> EmptyState(onEdit = { editing = true })
-                state.mode == ViewMode.FLOW -> FlowView(state.document, state.currentWord, onTapWord = viewModel::seekToWord)
-                else -> FocusView(state.document, state.currentWord)
+    Box(modifier = Modifier.fillMaxSize().background(Background)) {
+        BookVisual(artFor(state.bookId), clock, Modifier.fillMaxSize().graphicsLayer { alpha = artAlpha })
+        ReadingScrim(state.mode, Modifier.fillMaxSize())
+
+        Column(
+            modifier = Modifier
+                .fillMaxSize()
+                .windowInsetsPadding(WindowInsets.safeDrawing)
+        ) {
+            TopBar(state, onBack = viewModel::closeReader, onMode = viewModel::setMode, onEdit = { editing = true })
+            SpeedRow(state, onSpeed = viewModel::setSpeed, onStep = viewModel::stepSpeed)
+
+            Box(modifier = Modifier.weight(1f).fillMaxWidth()) {
+                when {
+                    state.document.isEmpty -> EmptyState(onEdit = { editing = true })
+                    state.mode == ViewMode.FLOW -> FlowView(state.document, state.currentWord, onTapWord = viewModel::seekToWord)
+                    else -> FocusView(state.document, state.currentWord, immersive = state.mode == ViewMode.VISUAL)
+                }
             }
-        }
 
-        BottomBar(
-            state = state,
-            onTogglePlay = viewModel::togglePlay,
-            onRestart = viewModel::restart,
-            onSkip = viewModel::skipWords,
-            onSeek = viewModel::seekToProgress,
-            onSilent = viewModel::setSilent,
-        )
+            BottomBar(
+                state = state,
+                onTogglePlay = viewModel::togglePlay,
+                onRestart = viewModel::restart,
+                onSkip = viewModel::skipWords,
+                onSeek = viewModel::seekToProgress,
+                onSilent = viewModel::setSilent,
+            )
+        }
     }
 
     if (editing) {
@@ -140,6 +173,59 @@ fun ReaderScreen(viewModel: ReaderViewModel, state: ReaderUiState) {
             onSave = { viewModel.setText(it); editing = false },
         )
     }
+}
+
+/**
+ * Keeps the artwork from competing with the words. Flow: the art shows in a band behind the title and fades to
+ * near-solid behind the text. Focus: a dark well in the center where the word sits. Visual: art at full strength,
+ * with only the edges darkened so the controls stay legible.
+ */
+@Composable
+private fun ReadingScrim(mode: ViewMode, modifier: Modifier) {
+    Box(
+        modifier.drawBehind {
+            val h = size.height
+            when (mode) {
+                ViewMode.FLOW -> {
+                    val band = (170.dp.toPx() / h).coerceIn(0.05f, 0.6f)
+                    drawRect(
+                        Brush.verticalGradient(
+                            0f to Background.copy(alpha = 0.15f),
+                            band to Background.copy(alpha = 0.9f),
+                            1f to Background.copy(alpha = 0.94f),
+                        )
+                    )
+                }
+                ViewMode.FOCUS -> {
+                    drawRect(
+                        Brush.radialGradient(
+                            0f to Background.copy(alpha = 0.93f),
+                            0.5f to Background.copy(alpha = 0.8f),
+                            1f to Background.copy(alpha = 0.4f),
+                            center = center,
+                            radius = maxOf(size.width, h) * 0.62f,
+                        )
+                    )
+                    drawRect(
+                        Brush.verticalGradient(
+                            0.7f to Color.Transparent,
+                            1f to Background.copy(alpha = 0.85f),
+                        )
+                    )
+                }
+                ViewMode.VISUAL -> {
+                    drawRect(
+                        Brush.verticalGradient(
+                            0f to Background.copy(alpha = 0.6f),
+                            0.2f to Color.Transparent,
+                            0.62f to Color.Transparent,
+                            1f to Background.copy(alpha = 0.9f),
+                        )
+                    )
+                }
+            }
+        }
+    )
 }
 
 // ---- top ---------------------------------------------------------------------------------------
@@ -176,7 +262,12 @@ private fun TopBar(state: ReaderUiState, onBack: () -> Unit, onMode: (ViewMode) 
                     ),
                     icon = {},
                 ) {
-                    Text(if (mode == ViewMode.FLOW) "Flow" else "Focus", fontSize = 13.sp)
+                    val (icon, label) = when (mode) {
+                        ViewMode.FLOW -> Icons.Rounded.ViewHeadline to "Flow: full text"
+                        ViewMode.FOCUS -> Icons.Rounded.CenterFocusStrong to "Focus: one word at a time"
+                        ViewMode.VISUAL -> Icons.Rounded.AutoAwesome to "Visual: word over artwork"
+                    }
+                    Icon(icon, contentDescription = label, modifier = Modifier.size(18.dp))
                 }
             }
         }
@@ -208,6 +299,7 @@ private fun SpeedRow(state: ReaderUiState, onSpeed: (Float) -> Unit, onStep: (In
                 onClick = { onSpeed(preset) },
                 label = { Text(formatSpeed(preset), fontWeight = if (selected) FontWeight.SemiBold else FontWeight.Normal) },
                 colors = FilterChipDefaults.filterChipColors(
+                    containerColor = Color.Black.copy(alpha = 0.35f),
                     selectedContainerColor = Accent,
                     selectedLabelColor = Background,
                     labelColor = Color(0xFFBBBBBB),
@@ -328,9 +420,12 @@ private fun ParagraphText(
     )
 }
 
-/** One word at a time, centered on its optimal recognition point. */
+/**
+ * One word at a time, centered on its optimal recognition point. In [immersive] mode the word and its context
+ * sit on dark glass panels so the artwork can play at full strength without costing contrast.
+ */
 @Composable
-private fun FocusView(doc: Document, current: Int) {
+private fun FocusView(doc: Document, current: Int, immersive: Boolean) {
     val idx = current.coerceIn(0, doc.lastWord)
     val word = doc.words[idx].text
     val orp = orpIndex(word.length).coerceAtMost(word.length - 1)
@@ -346,39 +441,60 @@ private fun FocusView(doc: Document, current: Int) {
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center,
     ) {
-        Box(modifier = Modifier.width(1.dp).height(22.dp).background(Color(0xFF444444)))
-        Spacer(Modifier.height(14.dp))
-        Row(modifier = Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
-            Text(
-                word.substring(0, orp),
-                modifier = Modifier.weight(1f),
-                textAlign = TextAlign.End,
-                style = big,
-                color = Color.White,
-                maxLines = 1,
-                softWrap = false,
-            )
-            Text(word.substring(orp, orp + 1), style = big, color = Accent)
-            Text(
-                word.substring(orp + 1),
-                modifier = Modifier.weight(1f),
-                textAlign = TextAlign.Start,
-                style = big,
-                color = Color.White,
-                maxLines = 1,
-                softWrap = false,
-            )
+        Column(
+            modifier = if (immersive) {
+                Modifier
+                    .fillMaxWidth()
+                    .clip(RoundedCornerShape(26.dp))
+                    .background(Color.Black.copy(alpha = 0.62f))
+                    .padding(vertical = 18.dp)
+            } else {
+                Modifier.fillMaxWidth()
+            },
+            horizontalAlignment = Alignment.CenterHorizontally,
+        ) {
+            Box(modifier = Modifier.width(1.dp).height(22.dp).background(Color(0xFF444444)))
+            Spacer(Modifier.height(14.dp))
+            Row(modifier = Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
+                Text(
+                    word.substring(0, orp),
+                    modifier = Modifier.weight(1f),
+                    textAlign = TextAlign.End,
+                    style = big,
+                    color = Color.White,
+                    maxLines = 1,
+                    softWrap = false,
+                )
+                Text(word.substring(orp, orp + 1), style = big, color = Accent)
+                Text(
+                    word.substring(orp + 1),
+                    modifier = Modifier.weight(1f),
+                    textAlign = TextAlign.Start,
+                    style = big,
+                    color = Color.White,
+                    maxLines = 1,
+                    softWrap = false,
+                )
+            }
+            Spacer(Modifier.height(14.dp))
+            Box(modifier = Modifier.width(1.dp).height(22.dp).background(Color(0xFF444444)))
         }
-        Spacer(Modifier.height(14.dp))
-        Box(modifier = Modifier.width(1.dp).height(22.dp).background(Color(0xFF444444)))
-        Spacer(Modifier.height(40.dp))
+        Spacer(Modifier.height(if (immersive) 18.dp else 40.dp))
         Text(
             text = contextLine(doc, idx),
-            color = TextMuted,
+            color = if (immersive) Color(0xFFBDBDBD) else TextMuted,
             fontSize = 14.sp,
             lineHeight = 22.sp,
             textAlign = TextAlign.Center,
-            modifier = Modifier.fillMaxWidth(0.85f),
+            modifier = if (immersive) {
+                Modifier
+                    .fillMaxWidth()
+                    .clip(RoundedCornerShape(16.dp))
+                    .background(Color.Black.copy(alpha = 0.5f))
+                    .padding(horizontal = 16.dp, vertical = 12.dp)
+            } else {
+                Modifier.fillMaxWidth(0.85f)
+            },
         )
     }
 }

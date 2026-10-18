@@ -19,7 +19,8 @@ import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.isActive
 import kotlinx.coroutines.launch
 
-enum class ViewMode { FLOW, FOCUS }
+/** FLOW: full text. FOCUS: one word at a time. VISUAL: one word over the title's full-screen artwork. */
+enum class ViewMode { FLOW, FOCUS, VISUAL }
 enum class Screen { LIBRARY, READER }
 
 /** How the highlighted word is being kept in step with the audio. */
@@ -42,7 +43,7 @@ data class ReaderUiState(
     val playing: Boolean = false,
     val finished: Boolean = false,
     val speed: Float = 1f,
-    val mode: ViewMode = ViewMode.FLOW,
+    val mode: ViewMode = ViewMode.VISUAL,
     val silent: Boolean = false,
     val sync: SyncQuality = SyncQuality.READY,
     val ttsReady: Boolean = false,
@@ -112,7 +113,7 @@ class ReaderViewModel(app: Application) : AndroidViewModel(app) {
     }
 
     private fun loadInitialState(): ReaderUiState {
-        val mode = runCatching { ViewMode.valueOf(prefs.getString("mode", "FLOW")!!) }.getOrDefault(ViewMode.FLOW)
+        val mode = runCatching { ViewMode.valueOf(prefs.getString("mode", "VISUAL")!!) }.getOrDefault(ViewMode.VISUAL)
         val progress = (LIBRARY.map { it.id } + CUSTOM_BOOK_ID)
             .associateWith { prefs.getFloat("progress:$it", 0f) }
             .filterValues { it > 0f }
@@ -145,11 +146,25 @@ class ReaderViewModel(app: Application) : AndroidViewModel(app) {
 
     fun openBook(id: String) {
         val book = findBook(id) ?: return
+        if (resumeIfLoaded(id)) return
         open(id, book.title, book.summary)
     }
 
     fun openCustom() {
+        if (resumeIfLoaded(CUSTOM_BOOK_ID)) return
         open(CUSTOM_BOOK_ID, "Your text", prefs.getString("text", null) ?: SAMPLE_TEXT)
+    }
+
+    /** Returns to the reader for the title already loaded, without interrupting playback. */
+    fun showReader() {
+        if (!_state.value.document.isEmpty) _state.update { it.copy(screen = Screen.READER) }
+    }
+
+    private fun resumeIfLoaded(id: String): Boolean {
+        val s = _state.value
+        if (s.bookId != id || s.document.isEmpty) return false
+        showReader()
+        return true
     }
 
     private fun open(id: String, title: String, text: String) {
@@ -171,8 +186,9 @@ class ReaderViewModel(app: Application) : AndroidViewModel(app) {
         }
     }
 
+    /** Back to the library. Narration keeps going; the library's now-playing bar controls it. */
     fun closeReader() {
-        pause()
+        saveProgress()
         _state.update { it.copy(screen = Screen.LIBRARY) }
     }
 

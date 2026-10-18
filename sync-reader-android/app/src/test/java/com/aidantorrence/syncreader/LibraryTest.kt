@@ -30,4 +30,19 @@ class LibraryTest {
             assertTrue(book.blurb.isNotBlank())
         }
     }
+
+    @Test
+    fun everyTitleHasItsOwnScene() {
+        assertEquals(10, LIBRARY.map { it.visual }.toSet().size)
+        assertTrue(LIBRARY.none { it.visual == CUSTOM_ART.style })
+        for (book in LIBRARY) assertEquals(book.visual, artFor(book.id).style)
+        assertEquals(CUSTOM_ART.style, artFor(CUSTOM_BOOK_ID).style)
+    }
+
+    @Test
+    fun artTempoRisesWithReadingSpeed() {
+        assertTrue(visualTempo(1f) < visualTempo(2f))
+        assertTrue(visualTempo(2f) < visualTempo(3f))
+        assertTrue(IDLE_TEMPO < visualTempo(0.5f))
+    }
 }
