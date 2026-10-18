@@ -1350,7 +1350,8 @@
       "community": "Location photographers: how do you find out whether a spot needs a permit? Mine is a mix of forum posts, a call to parks and rec, and hoping. I'm deciding whether to build one page per city: every public location with its rule (none, free registration, paid permit, crews only), fee, lead time and a link to the issuing office's own form with a last-checked date. $6/month or $9 per city. Pre-launch page, no charge, just an 'I'd pay' button and a box for your city: aidantorrence.com/offers/permit-finder",
       "pitchSubject": "Which spots in {city} need a photo permit (pre-launch)",
       "pitch": "Hi {first},\n\nI'm Aidan, a photographer. I saw {specific reference}.\n\nI'm deciding whether to build one page per city listing every park, beach and street with its photo-permit rule, fee, lead time and the office's own form, $6 a month or $9 per city.\n\nIf a permit question has ever cost you a shoot, the pre-launch page has an 'I'd pay' button and a box for your city: aidantorrence.com/offers/permit-finder?src=email\n\nIf not, one line on why is just as useful.\n\nBest,\nAidan"
-    }
+    },
+    "artifactUrl": "https://claude.ai/artifact/QFXoZS5SeKuiQttVxQLMqc"
   },
   {
     "slug": "rain-plan",
@@ -1526,6 +1527,41 @@
       "community": "Photographers whose galleries expire: how do you handle the resend requests a year later? Mine was free re-uploads and quiet resentment. I'm deciding whether to build a small tool: paste the gallery link and expiry, the client gets three reminders in your voice showing whether they've downloaded, the last one carries your paid extension or archive offer, and a board shows every gallery by expiry and download status. $4/month, extensions paid to you. Pre-launch page, no charge, just an 'I'd pay' button: aidantorrence.com/offers/expiry-nudge",
       "pitchSubject": "Gallery expiries without the resend emails (pre-launch)",
       "pitch": "Hi {first},\n\nI'm Aidan, a photographer. I saw {specific reference}.\n\nI'm deciding whether to build a small tool for gallery expiries: three reminders in your voice that show whether the client has downloaded, a paid extension or archive offer in the last one, and a board of every gallery by expiry and download status, $4 a month.\n\nIf you still get 'can you resend?' emails, the pre-launch page has an 'I'd pay' button: aidantorrence.com/offers/expiry-nudge?src=email\n\nIf not, one line on why is just as useful.\n\nBest,\nAidan"
+    }
+  },
+  {
+    "slug": "casting-call",
+    "name": "Casting Call",
+    "headline": "A model call that doesn't live in your DMs: one page per casting, applicants submit photos, sizes and dates, you shortlist in a grid, and the booked few get details and a release.",
+    "buyer": "portrait, fashion and brand photographers who run model calls, test shoots and small castings through Instagram comments and a notes app",
+    "bullets": [
+      "Set the casting: concept, dates, what you need, paid or trade. Share one link; applicants add two photos, sizes, socials and which dates work, in two minutes on a phone.",
+      "A grid shows every applicant with their answers; tap to shortlist, tap again to book. Everyone else gets a kind 'not this time' you wrote once.",
+      "Booked talent gets a page with call time, pin, what to bring and the release to sign; their answers flow into your shoot's call sheet."
+    ],
+    "price": "$5/month",
+    "priceUsd": 5,
+    "priceNote": "unlimited castings and applicants",
+    "status": "live",
+    "launched": "2026-10-18",
+    "reasonPrompt": "How did you run your last model call, and how many applicants did you lose track of?",
+    "faq": [
+      {
+        "q": "Is this a modelling platform?",
+        "a": "No. There is no public directory and no browsing. Each casting is a private link you share where you choose; applicants are only seen by you."
+      },
+      {
+        "q": "Does it handle minors?",
+        "a": "Not at first. Castings are for applicants 18 and over, and the form says so; a guardian flow comes later if people ask."
+      }
+    ],
+    "kit": {
+      "hook": "Posted a model call. 140 comments, 60 DMs, four screenshots of sizes, and I booked the wrong Sarah.",
+      "script": "Open on a comment thread scrolling fast: 'me!', 'interested', 'dm'd you'. VO: 'A hundred and forty comments. Sixty DMs.' Cut to a phone: a casting page, an applicant adding two photos, sizes, two dates. Cut to a grid of faces with tags, two tapped to shortlist, one booked. Cut to the booked talent's page: call time, pin, release signed. VO: 'One link. A grid. The right Sarah.' End card: 'Casting Call. $5 a month. Pre-launch, link in bio.'",
+      "caption": "Model calls without the DM chaos: one link, a grid to shortlist, booked talent gets details and a release. $5/month. Not built yet; tell me if you'd use it. aidantorrence.com/offers/casting-call",
+      "community": "Photographers who run model calls or test shoots: how do you manage the applicants? Mine is Instagram comments, DMs and a notes app that falls apart at 30 people. I'm deciding whether to build a small tool: one private page per casting, applicants add two photos, sizes and availability, you shortlist in a grid, the booked ones get a page with call time, pin and release, and the rest get a kind no you wrote once. $5/month. Pre-launch page, no charge, just an 'I'd pay' button: aidantorrence.com/offers/casting-call",
+      "pitchSubject": "Model calls without the DM chaos (pre-launch)",
+      "pitch": "Hi {first},\n\nI'm Aidan, a photographer. I saw {specific reference}.\n\nI'm deciding whether to build a small tool for model calls: one private page per casting, applicants add two photos, sizes and availability, you shortlist in a grid, and the booked ones get a page with call time, pin and release, $5 a month.\n\nIf your last casting lived in your DMs, the pre-launch page has an 'I'd pay' button: aidantorrence.com/offers/casting-call?src=email\n\nIf not, one line on why is just as useful.\n\nBest,\nAidan"
     }
   }
 ]

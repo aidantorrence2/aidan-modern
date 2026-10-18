@@ -5,6 +5,7 @@ Price: $6/month (or $9 per city, one-off)
 Buyer: portrait, wedding, engagement and small-crew commercial photographers who shoot on location and have been moved along or fined for not having a permit
 Status: live since 2026-10-18
 Hosted page: https://aidantorrence.com/offers/permit-finder (live after merge to main + deploy)
+Artifact page: https://claude.ai/artifact/QFXoZS5SeKuiQttVxQLMqc
 
 ## Tracking links (one per channel)
 
