@@ -2703,6 +2703,164 @@
     }
   },
   {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-18",
+    "slug": "shot-check",
+    "name": "Shot Check",
+    "need": "Can't get a date?",
+    "headline": "Find out which of your photos are costing you matches, and what to shoot instead. Real photos that look like you, not AI.",
+    "buyer": "adults on dating apps who get few matches",
+    "bullets": [
+      "Upload 10 to 30 photos from your camera roll; get them ranked, your lead photo picked, and plain reasons for each (light, expression, crop, sunglasses, group shots).",
+      "A shot list of the photos your profile is missing, with tips to take them on your phone.",
+      "Optional review of your picks by a working portrait photographer within 48 hours."
+    ],
+    "price": "$19",
+    "priceUsd": 19,
+    "priceNote": "one audit; $49 with the photographer's review",
+    "reasonPrompt": "How many matches do you get now, and which app are you on?",
+    "faq": [
+      {
+        "q": "Will it make AI photos of me?",
+        "a": "No. It helps you choose and take real photos that look like you."
+      },
+      {
+        "q": "Can I book a real photo shoot?",
+        "a": "Aidan is a portrait photographer. If enough people ask, in-person dating shoots will be offered in the cities he works in."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Adults 18 and over."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-18",
+      "summary": "Paid dating photo raters and AI photo sellers are live with thousands of ratings and verified revenue; users say the feedback helps but AI photos look fake and ratings feel generic.",
+      "wtp": "Photo rater apps charge $6.99/week to $19.99/month; TinderProfile.ai shows $170,289 verified all-time revenue at $14-$39 one-time; people pay $121 to $5,000 for in-person dating photo shoots.",
+      "signals": [
+        {
+          "url": "https://apps.apple.com/us/app/rare-ai-dating-assistant/id1668048955",
+          "who": "RARE reviewer LIBER8N",
+          "date": "2024-05-17",
+          "quote": "All you get is a photo rating system.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/picker-ai-best-photo-picker/id6448671716",
+          "who": "Picker AI reviewer Mp&Mp1734",
+          "date": "date not shown (read 2026-10-18)",
+          "quote": "the app selected many of the crooked, poorly positioned photos.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.trustpilot.com/review/roast.dating",
+          "who": "Marc Westmoreland (ROAST reviewer)",
+          "date": "2026-10-02",
+          "quote": "the advice regarding what's wrong with current photos was eye opening.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.trustpilot.com/review/roast.dating",
+          "who": "Rabih Wassel (ROAST reviewer)",
+          "date": "2026-09-28",
+          "quote": "still looks like AI in some photos.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://trustmrr.com/startup/tinderprofile-ai",
+          "who": "TinderProfile.ai",
+          "date": "2026-10-18",
+          "quote": "$170,289 all-time revenue, verified via Stripe; $14-$39 one-time",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.airbnb.com/services/2797510",
+          "who": "Airbnb 'Tinder Photoshoot' reviewer Roberto",
+          "date": "2025-03",
+          "quote": "she made me so comfortable, the photos were amazing.",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Photofeeler, ROAST, Picker AI, Standout AI, RARE, local dating photographers.",
+      "risks": "Crowded and cheap; ratings must never shame people about how they look."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-18",
+    "slug": "first-line",
+    "name": "First Line",
+    "need": "Matching but the conversations die?",
+    "headline": "Openers built on what your match actually wrote, and your own messages tightened up in your voice. It never sends anything for you.",
+    "buyer": "adults on dating apps who match but can't keep a conversation going",
+    "bullets": [
+      "Paste a match's profile; get three openers that reference something they wrote, with a one-line reason for each.",
+      "Paste your own draft and get it rewritten in your tone, shorter and less cheesy.",
+      "Rewrite your own bio and prompts for Hinge, Bumble or Tinder."
+    ],
+    "price": "$7.99/month",
+    "priceUsd": 8,
+    "priceNote": "or $39 a year",
+    "reasonPrompt": "Where do your conversations usually stall?",
+    "faq": [
+      {
+        "q": "Does it pretend to be me or send messages?",
+        "a": "No. It suggests; you choose, edit and send. Nothing is sent automatically."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Adults 18 and over."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-18",
+      "summary": "Dating conversation helpers have tens of thousands of ratings and paid tiers, and users complain the suggested lines are cheesy and generic.",
+      "wtp": "RIZZ has paid tiers from $3.99 to $99.99 and 40K ratings; YourMove AI charges $4.99/week or $49.99/year; SEDUCT shows verified revenue. AIbase reported RIZZ at $190,000 monthly revenue (unsourced).",
+      "signals": [
+        {
+          "url": "https://apps.apple.com/us/app/rizz/id1663430725",
+          "who": "RIZZ reviewer YPREE808",
+          "date": "2023-06-01",
+          "quote": "embarrassingly cheesy and lacked any semblance of originality.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/app/yourmove-ai/id6444244023",
+          "who": "YourMove AI (Squip AI LLC)",
+          "date": "2026-10-18",
+          "quote": "$4.99/week, $49.99/yr; 4.4 stars from 99 ratings",
+          "seen": "opened"
+        },
+        {
+          "url": "https://trustmrr.com/startup/seduct",
+          "who": "SEDUCT",
+          "date": "2026-10-18",
+          "quote": "Revenue verified via RevenueCat; €4.99/week or €29.99/yr",
+          "seen": "opened"
+        },
+        {
+          "url": "https://news.aibase.com/news/156",
+          "who": "AIbase (news)",
+          "date": "2024-07-17",
+          "quote": "1.5 million downloads and $190,000 monthly revenue (no source cited)",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "RIZZ, RARE, YourMove, Keys AI, Winggg.",
+      "risks": "Must never deceive matches; free chatbots are a substitute; strict 18+."
+    }
+  },
+  {
     "slug": "pitch-pilot",
     "name": "Pitch Pilot",
     "headline": "Find the published press and booking contacts for any magazine, agency or talent, and get the cold pitch drafted, in minutes.",
