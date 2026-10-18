@@ -1458,7 +1458,8 @@
       "community": "Commercial and editorial photographers: how do you track when your image licenses end? Mine was a spreadsheet I stopped updating, and I've definitely missed renewals. I'm deciding whether to build a small tool: log each license or paste the agreement, get a reminder 60 days before the term ends with a renewal quote from the original fee, and send the client a short note in your own wording. One board shows live, ending soon and lapsed. $5/month. Pre-launch page, no charge, just an 'I'd pay' button: aidantorrence2.github.io/aidan-modern/renewal-watch",
       "pitchSubject": "Image licenses that remind you to renew them (pre-launch)",
       "pitch": "Hi {first},\n\nI'm Aidan, a photographer. I saw {specific reference}.\n\nI'm deciding whether to build a small tool for image licenses: log each one or paste the agreement, get a reminder 60 days before the term ends with a renewal quote from the original fee, and send the client a short note in your own wording, $5 a month.\n\nIf you've ever found your work still running after the term, the pre-launch page has an 'I'd pay' button: aidantorrence2.github.io/aidan-modern/renewal-watch?src=email\n\nIf not, one line on why is just as useful.\n\nBest,\nAidan"
-    }
+    },
+    "artifactUrl": "https://claude.ai/artifact/KcwFcpdjBL3TuT6Yj3FH7n"
   },
   {
     "slug": "vendor-credits",
@@ -1884,6 +1885,41 @@
       "community": "Photographers: how many versions of your pricing guide are out there? I found a 2024 one still circulating. I'm deciding whether to build a small tool: enter packages once, generate the PDF, a private web version and an inquiry-reply block from a template, change a price and every link updates with old PDFs flagged, and see who opened the guide and where they lingered. $5/month. Pre-launch page, no charge, just an 'I'd pay' button: aidantorrence2.github.io/aidan-modern/price-guide",
       "pitchSubject": "One source of truth for your pricing guide (pre-launch)",
       "pitch": "Hi {first},\n\nI'm Aidan, a photographer. I saw {specific reference}.\n\nI'm deciding whether to build a small tool for pricing guides: packages entered once, the PDF, a web version and an inquiry-reply block generated and kept in sync, old PDFs flagged when prices change, and opens tracked per link, $5 a month.\n\nIf you have more than one 'final' guide floating around, the pre-launch page has an 'I'd pay' button: aidantorrence2.github.io/aidan-modern/price-guide?src=email\n\nIf not, one line on why is just as useful.\n\nBest,\nAidan"
+    }
+  },
+  {
+    "slug": "second-shooter-call",
+    "name": "Second Shooter Call",
+    "headline": "Need a second shooter for the 14th? One message to your own list, every one of them answers yes or no in a tap, you book one, and they get the call sheet without a single group text.",
+    "buyer": "wedding and event photographers who keep a mental list of second shooters and assistants and spend an evening texting them one by one",
+    "bullets": [
+      "Keep your people in one list with their rate, gear and the cities they cover. Add a date and the job basics; everyone fits gets one message with a yes or no tap.",
+      "Replies land on one screen as they come; book one and the rest get a short thank-you note. No reply after a day sends one quiet nudge, then stops.",
+      "The booked shooter gets the call sheet page: time, venue, your shot list, their rate and when it pays; the day after, one tap marks it paid and logs it for the year."
+    ],
+    "price": "$4/month",
+    "priceUsd": 4,
+    "priceNote": "unlimited jobs and people; no marketplace, your list only",
+    "status": "live",
+    "launched": "2026-10-18",
+    "reasonPrompt": "How did you fill your last second-shooter slot, and how many messages did it take?",
+    "faq": [
+      {
+        "q": "Is this a marketplace for second shooters?",
+        "a": "No. There is no directory. It only messages the people already on your list, and they see only your jobs."
+      },
+      {
+        "q": "Do my second shooters need an account?",
+        "a": "No. They reply from a link in a text or email; the booked one sees a private call sheet page."
+      }
+    ],
+    "kit": {
+      "hook": "Seven texts, four 'let me check', two 'sorry already booked', one yes at 11pm. Every single wedding.",
+      "script": "Open on a phone: a thread of 'are you free the 14th?' sent to seven people, replies trickling. VO: 'Seven texts. One yes. Eleven pm.' Cut to one message going out to a list; yes and no taps arriving on one screen; a tap books one; a thank-you to the rest. Cut to the booked shooter's call sheet page, then 'paid' the day after. VO: 'One message. Everyone answers. One tap books. The call sheet sends itself.' End card: 'Second Shooter Call. $4 a month. Pre-launch, link in bio.'",
+      "caption": "Fill a second-shooter slot with one message to your own list: yes/no taps, one-tap booking, call sheet and pay log included. $4/month. Not built yet; tell me if you'd use it. aidantorrence2.github.io/aidan-modern/second-shooter-call",
+      "community": "Wedding photographers: how do you fill second-shooter and assistant slots? Mine is a text to seven people and a night of waiting. I'm deciding whether to build a small tool: your own list with rates, gear and cities, one message per date with a yes or no tap, replies on one screen, one-tap booking with a thank-you to the rest, a private call sheet page for the booked shooter, and a pay log for the year. No marketplace, your list only. $4/month. Pre-launch page, no charge, just an 'I'd pay' button: aidantorrence2.github.io/aidan-modern/second-shooter-call",
+      "pitchSubject": "Second-shooter slots filled with one message (pre-launch)",
+      "pitch": "Hi {first},\n\nI'm Aidan, a photographer. I saw {specific reference}.\n\nI'm deciding whether to build a small tool for second shooters and assistants: your own list with rates and cities, one message per date with a yes or no tap, one-tap booking with a thank-you to the rest, a private call sheet page for the booked shooter and a pay log, $4 a month, no marketplace.\n\nIf filling a slot still costs you an evening of texts, the pre-launch page has an 'I'd pay' button: aidantorrence2.github.io/aidan-modern/second-shooter-call?src=email\n\nIf not, one line on why is just as useful.\n\nBest,\nAidan"
     }
   }
 ]
