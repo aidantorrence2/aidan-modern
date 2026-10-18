@@ -3619,6 +3619,694 @@
     ]
   },
   {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-18",
+    "slug": "hard-lock",
+    "name": "Hard Lock",
+    "need": "Your screen time limits are too easy to switch off?",
+    "headline": "A phone blocker you can't quietly undo: only a friend you choose, or a tag you leave in another room, can unlock it, and they hear about it if you try.",
+    "buyer": "people who keep switching off their own screen time limits",
+    "bullets": [
+      "Unlocking needs a friend's approval or a code on a cheap tag kept in another room.",
+      "Your friend gets an alert if the blocker's permission is turned off or the app is deleted.",
+      "A clear 'blocking is on' status, so you know it hasn't silently stopped working."
+    ],
+    "price": "$4.99/month",
+    "priceUsd": 5,
+    "priceNote": "or $39 a year; optional $9 tag",
+    "reasonPrompt": "Which apps do you lose the most time to, and how have you tried to stop?",
+    "demand": {
+      "checked": "2026-10-18",
+      "summary": "People say built-in and app blockers are easy to bypass; some pay for a physical device to make blocking stick.",
+      "wtp": "Brick sells a $59 physical blocker; Opal charges $99.99 a year with 90K ratings.",
+      "signals": [
+        {
+          "url": "https://discussions.apple.com/thread/255275058",
+          "who": "Coadams9 (Apple Community)",
+          "date": "2023-11-13",
+          "quote": "It is ridiculously easy to bypass any of the default screen time controls.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://discussions.apple.com/thread/255275058",
+          "who": "sweetypie4280 (Apple Community)",
+          "date": "2024-06-22",
+          "quote": "completely undermines any and all 3rd party apps",
+          "seen": "opened"
+        },
+        {
+          "url": "https://unstar.app/blog/opal-forest-freedom-one-sec-jomo-screen-time-apps-ranked-2026",
+          "who": "Opal reviewer quoted by Unstar",
+          "date": "2026-06-03",
+          "quote": "Opal block is gone the second you remove the app from Screen Time.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://getbrick.com",
+          "who": "Brick",
+          "date": "2026-10-18",
+          "quote": "$59 physical blocker",
+          "seen": "opened"
+        },
+        {
+          "url": "https://onwisconsin.uwalumni.com/how-to-beat-phone-addiction",
+          "who": "Brick founders (On Wisconsin)",
+          "date": "2026",
+          "quote": "too easy to override",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Brick, Opal, Jomo, Clearspace.",
+      "risks": "Apple's Screen Time API limits what any app can enforce."
+    },
+    "faq": [
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ]
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-18",
+    "slug": "one-pause",
+    "name": "One Pause",
+    "need": "Open Instagram without even thinking about it?",
+    "headline": "A short pause before the apps you choose, that changes so it never becomes automatic, for one price with no subscription.",
+    "buyer": "people who open social apps on autopilot",
+    "bullets": [
+      "A few seconds of pause or a breath before the apps you pick open.",
+      "The prompt changes over time so you don't tap through it on autopilot.",
+      "One payment, no trial that quietly turns into a charge."
+    ],
+    "price": "$24.99 lifetime",
+    "priceUsd": 25,
+    "priceNote": "one-time",
+    "reasonPrompt": "Which app do you open without meaning to?",
+    "demand": {
+      "checked": "2026-10-18",
+      "summary": "Pause-before-open apps sell subscriptions and lifetime plans; users' top complaint is surprise subscription charges.",
+      "wtp": "one sec sells $6.99/month, $19.99/year and $99.99 lifetime; a reviewer said they would pay $15 lifetime; Freedom sells monthly, yearly and lifetime plans.",
+      "signals": [
+        {
+          "url": "https://unstar.app/blog/opal-forest-freedom-one-sec-jomo-screen-time-apps-ranked-2026",
+          "who": "Freedom reviewer quoted by Unstar",
+          "date": "2026-06-03",
+          "quote": "Freedom auto-renewed at $39.99 with zero reminder. I used it twice.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/one-sec-screen-time-focus/id1532875441",
+          "who": "Tech How (one sec reviewer)",
+          "date": "2024-12-16",
+          "quote": "Especially for the lifetime license costing a whopping FIFTY dollars.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.revenuecat.com/blog/growth/frederik-riedel-expected-12-his-app-cut-screen-time-by-57",
+          "who": "one sec founder (RevenueCat)",
+          "date": "2026-04-15",
+          "quote": "revenue roughly doubled each month",
+          "seen": "opened"
+        },
+        {
+          "url": "https://freedom.to/pricing",
+          "who": "Freedom pricing page",
+          "date": "2026-10-18",
+          "quote": "$8.99/mo, $3.33/mo yearly, $99.50 lifetime",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "one sec, Clearspace, ScreenZen (free), Opal.",
+      "risks": "ScreenZen is free; one sec holds a US patent on its approach."
+    },
+    "faq": [
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ]
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-18",
+    "slug": "every-device-lock",
+    "name": "Every Device Lock",
+    "need": "Block your phone and you just switch to the laptop?",
+    "headline": "One block schedule for your phone, Mac and Windows PC at once, so switching devices doesn't get you around it.",
+    "buyer": "people whose time-wasting moves from phone to laptop",
+    "bullets": [
+      "One schedule blocks the same apps and sites on every device.",
+      "Blocks start on all devices together.",
+      "Locked mode survives a reinstall."
+    ],
+    "price": "$5.99/month",
+    "priceUsd": 6,
+    "priceNote": "or $49 a year",
+    "reasonPrompt": "Which devices do you lose time on?",
+    "demand": {
+      "checked": "2026-10-18",
+      "summary": "Users ask phone blockers for Windows support and get around single-device blocks by switching devices; cross-device blocking sells.",
+      "wtp": "Freedom sells $8.99/month, yearly and $99.50 lifetime plans built on cross-device blocking; Opal charges $99.99 a year.",
+      "signals": [
+        {
+          "url": "https://apps.apple.com/us/app/opal-screen-time-control/id1497465230",
+          "who": "ELBUHOMIKE (Opal reviewer)",
+          "date": "2025-04-22",
+          "quote": "I wish I could put it on my PC (Windows).",
+          "seen": "opened"
+        },
+        {
+          "url": "https://unstar.app/blog/opal-forest-freedom-one-sec-jomo-screen-time-apps-ranked-2026",
+          "who": "Forest users quoted by Unstar",
+          "date": "2026-06-03",
+          "quote": "defeat blocking by switching to another device",
+          "seen": "opened"
+        },
+        {
+          "url": "https://freedom.to/pricing",
+          "who": "stevenalexbaird (Freedom page)",
+          "date": "2026-10-18",
+          "quote": "work across multiple devices",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Freedom, Cold Turkey, Opal, BlockSite.",
+      "risks": "Several platforms to maintain."
+    },
+    "faq": [
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ]
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-18",
+    "slug": "day-reflow",
+    "name": "Day Reflow",
+    "need": "Your day plan falls apart the moment something comes up?",
+    "headline": "A visual day planner that re-slots everything when your day changes, counts travel time between meetings, and costs under $10.",
+    "buyer": "busy people, including people with ADHD, who plan their day but rarely follow it",
+    "bullets": [
+      "A timeline of your day that moves unfinished and bumped tasks automatically.",
+      "Pulls in calendar meetings and travel time so tasks land where they can actually happen.",
+      "One question each morning to set priorities; an ADHD-friendly mode."
+    ],
+    "price": "$7.99/month",
+    "priceUsd": 8,
+    "priceNote": "or $59 a year; 14-day trial, no card",
+    "reasonPrompt": "What usually wrecks your plan for the day?",
+    "demand": {
+      "checked": "2026-10-18",
+      "summary": "Day planners sell well, from 50,000 paying subscribers at one to $17-$49/month plans at others, and users ask for tasks that move when the day changes.",
+      "wtp": "Tiimo had 50,000+ paying subscribers; Motion costs $29-$49/month; Sunsama $17-22/month.",
+      "signals": [
+        {
+          "url": "https://apps.apple.com/us/app/structured-daily-planner/id1499198946",
+          "who": "skc7 (Structured reviewer)",
+          "date": "2026-01-21",
+          "quote": "I wish it could pull travel time from my Calendar.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.morgen.so/blog-posts/motion-review",
+          "who": "Motion (reviewed by Morgen, a competitor)",
+          "date": "2026-04-30",
+          "quote": "Pro AI $49/mo or $29/mo billed yearly; a Capterra user calls auto-scheduling rigid",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.sunsama.com/pricing",
+          "who": "Sunsama pricing page",
+          "date": "2026-10-18",
+          "quote": "$17-22/mo",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.tiimoapp.com/pt-br/resource-hub/tiimo-raises-4-8m-neurodivergent-planner",
+          "who": "Tiimo",
+          "date": "2024-08-27",
+          "quote": "50,000+ paying subscribers",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Motion, Sunsama, Structured, Tiimo, Reclaim.",
+      "risks": "Incumbents may ship the same feature."
+    },
+    "faq": [
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ]
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-18",
+    "slug": "goal-stake",
+    "name": "Goal Stake",
+    "need": "Keep setting goals and never sticking to them?",
+    "headline": "Put money and a friend on your goal: send proof, your friend checks it, and if you miss, the stake goes to charity.",
+    "buyer": "people who need real consequences to follow through",
+    "bullets": [
+      "Set a goal, a deadline and a stake; send photo, GPS or health-app proof.",
+      "A friend you name verifies the proof and hears when you miss.",
+      "Lost stakes go to charity; the app is paid by subscription."
+    ],
+    "price": "$6.99/month",
+    "priceUsd": 7,
+    "priceNote": "stakes optional",
+    "reasonPrompt": "What goal have you started and dropped more than once?",
+    "demand": {
+      "checked": "2026-10-18",
+      "summary": "People pay stakes and subscriptions to be held to their goals, and accountability apps earn real revenue.",
+      "wtp": "Beeminder earned from pledges and later sold $8-$256 plans; Forfeit sells $5.99 and $39.99 unlocks; Focusmate charges $6.99-9.99/month (estimated $83K/month revenue).",
+      "signals": [
+        {
+          "url": "https://blog.beeminder.com/premium",
+          "who": "Beeminder",
+          "date": "2013-04-12",
+          "quote": "Beeminder is profitable just with our crazy revenue model of collecting people's pledges.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/forfeit-habit-commitment/id6760597781",
+          "who": "Forfeit (App Store)",
+          "date": "2026-10-18",
+          "quote": "one-time Pro $5.99 and $39.99, No recurring subscription",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.starterstory.com/focusmate-breakdown",
+          "who": "Focusmate (Starter Story)",
+          "date": "2024-11-30",
+          "quote": "Plus $6.99-9.99/mo; about $83K/mo revenue, estimated",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Beeminder, stickK, Forfeit, Focusmate.",
+      "risks": "Handling stakes and charity payments."
+    },
+    "faq": [
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ]
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-18",
+    "slug": "mostly-habits",
+    "name": "Mostly Habits",
+    "need": "Lost a long streak and quit the habit altogether?",
+    "headline": "A habit tracker that counts consistency, like 5 of 7 days, instead of a streak you can lose, with pause days, sync that can't lose your data, and charts included.",
+    "buyer": "people who give up on habits after breaking a streak",
+    "bullets": [
+      "Consistency scores instead of fragile streaks, with pause days for travel or illness.",
+      "Automatic sync, so your history can't silently disappear.",
+      "Trend charts included in the price."
+    ],
+    "price": "$19.99 one-time",
+    "priceUsd": 20,
+    "priceNote": "or $2.99/month",
+    "reasonPrompt": "Which habit are you trying to build?",
+    "demand": {
+      "checked": "2026-10-18",
+      "summary": "Users of paid habit trackers say losing a streak feels worse than missing the habit, and complain about lost data and paywalled charts.",
+      "wtp": "Users already buy Streaks ($4.99), Strides ($39.99/year) and Way of Life unlocks.",
+      "signals": [
+        {
+          "url": "https://unstar.app/blog/streaks-habitica-way-of-life-strides-habit-tracking-apps-ranked-2026",
+          "who": "Streak user quoted by Unstar",
+          "date": "2026-05-05",
+          "quote": "I lost my 87-day streak.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://unstar.app/blog/streaks-habitica-way-of-life-strides-habit-tracking-apps-ranked-2026",
+          "who": "Habit app pricing (Unstar)",
+          "date": "2026-05-05",
+          "quote": "Streaks $4.99; Strides $39.99/yr; Way of Life $5 unlock",
+          "seen": "opened"
+        },
+        {
+          "url": "https://unstar.app/blog/opal-forest-freedom-one-sec-jomo-screen-time-apps-ranked-2026",
+          "who": "Forest reviewer quoted by Unstar",
+          "date": "2026-06-03",
+          "quote": "Forest killed my 40-day forest because I answered a phone call.",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Streaks, Habitica, Strides, Finch, HabitKit.",
+      "risks": "Crowded and cheap; retention is the real problem."
+    },
+    "faq": [
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ]
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-18",
+    "slug": "next-lift",
+    "name": "Next Lift",
+    "need": "Want bigger muscles but don't know what to lift next?",
+    "headline": "Before every set, the weight and reps to aim for based on your last sessions, with plateaus spotted early and a plan to break them.",
+    "buyer": "people lifting weights to build muscle",
+    "bullets": [
+      "A target weight and reps before each set, using double progression in 2.5, 5 or 10 lb steps.",
+      "Spots a plateau when the same weight repeats for 3 or 4 sessions and suggests holding, adding reps or a deload.",
+      "Your personal records and volume history per lift on one screen."
+    ],
+    "price": "$7.99/month",
+    "priceUsd": 8,
+    "priceNote": "or $49.99 a year; free logging",
+    "reasonPrompt": "How long have you been lifting, and where are you stuck?",
+    "faq": [
+      {
+        "q": "Who is it for?",
+        "a": "Adults 18 and over."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-18",
+      "summary": "Lifters and coaches ask apps to suggest the next weight from past sessions; workout apps with this sell at scale.",
+      "wtp": "Fitbod charges $12.99-$15.99/month with 288K ratings; Hevy Pro $2.99/month or $74.99 lifetime with 99K ratings.",
+      "signals": [
+        {
+          "url": "https://ironflow.featurebase.app/p/progressive-overload-suggestions",
+          "who": "tom.bradley88 (IronFlow request)",
+          "date": "date not shown",
+          "quote": "the app should suggest when and how much, based on past sessions.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://ideas.abcfitness.com/forums/167887-coach-trainer-abc-trainerize/suggestions/51255967-customizable-progressive-overload-automated-progre",
+          "who": "Coach (ABC Trainerize idea)",
+          "date": "2026-05-01",
+          "quote": "I'd love to see an automated progressive overload system built into the workout programming.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://ideas.abcfitness.com/forums/167887-coach-trainer-abc-trainerize/suggestions/37545844-progressive-overload-calculator",
+          "who": "Nicholas Hatzinikolao (ABC Trainerize idea)",
+          "date": "2026-04-12",
+          "quote": "increases triggered when the same weight is used for several workouts",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/fitbod-gym-fitness-planner/id1041517543",
+          "who": "Fitbod (App Store)",
+          "date": "2026-10-18",
+          "quote": "4.8 from 288K ratings; $12.99/$15.99 per month",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/hevy-workout-tracker-gym-log/id1458862350",
+          "who": "el-jefe-kyle (Hevy reviewer)",
+          "date": "2022-05-02",
+          "quote": "bought Lifetime because the free tier caps custom exercises",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Fitbod, Alpha Progression, Hevy, Strong.",
+      "risks": "Crowded; no injury or medical claims."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-18",
+    "slug": "physique-check",
+    "name": "Physique Check",
+    "need": "Not sure if you're building muscle or just gaining fat?",
+    "headline": "Weekly progress photos taken the same way every time, paired with your measurements and lifts, and a simple signal: on track, or gaining too fast.",
+    "buyer": "adults building muscle who want to see real progress",
+    "bullets": [
+      "A ghost-overlay camera with a self-timer for front, side and back photos, the same way every week.",
+      "A weekly check-in with photos, waist and arm measurements and lift trends.",
+      "Photos stay private on your device; side-by-side and time-lapse exports."
+    ],
+    "price": "$5.99/month",
+    "priceUsd": 6,
+    "priceNote": "or $39.99 a year",
+    "reasonPrompt": "How do you track your progress now?",
+    "faq": [
+      {
+        "q": "Who is it for?",
+        "a": "Adults 18 and over. Estimates are trends, not health measurements."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-18",
+      "summary": "Body progress apps earn verified revenue within months of launch, and users ask for timers, speed and private photos.",
+      "wtp": "GainFrame shows $2,379 MRR from 450 subscriptions; AbMaxx $18,981 MRR from 5,255 subscriptions; Progress Body Tracker sells $3.99-5.99/month with 9.4K ratings.",
+      "signals": [
+        {
+          "url": "https://trustmrr.com/startup/gainframe",
+          "who": "GainFrame",
+          "date": "2026-10-18",
+          "quote": "$2,379 MRR, 450 subscriptions",
+          "seen": "opened"
+        },
+        {
+          "url": "https://trustmrr.com/startup/abmaxx",
+          "who": "AbMaxx",
+          "date": "2026-10-18",
+          "quote": "$18,981 MRR, 5,255 subscriptions",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/body-measurement-photo-weight-tracker-progress/id583840813",
+          "who": "NellllSs (Progress reviewer)",
+          "date": "2017-12-29",
+          "quote": "It really matters to me that my info isn't being sold and that my photos are secure.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/body-tracker-photo-measure/id1265152738",
+          "who": "ZBM124 (Body tracker reviewer)",
+          "date": "2020-12-08",
+          "quote": "my ONLY problem with this app is that it doesn't have a timer on the camera.",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "GainFrame, AbMaxx, Progress Body Tracker, PicProgress.",
+      "risks": "Must be 18+; privacy of photos."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-18",
+    "slug": "trend-scale",
+    "name": "Trend Scale",
+    "need": "The scale just won't budge?",
+    "headline": "Your daily weigh-ins smoothed into a real trend, plateaus called only after weeks of no change, and the inches, photos and steps that show progress the scale misses.",
+    "buyer": "people losing weight who get discouraged by daily scale swings",
+    "bullets": [
+      "A moving-average trend with week-over-week change, instead of daily noise.",
+      "Calls a real plateau only after 3+ weeks flat, alongside inches, photos and steps.",
+      "Mark breakpoints like a trip or a new routine; hide numbers if you'd rather."
+    ],
+    "price": "$3.99/month",
+    "priceUsd": 4,
+    "priceNote": "or $24.99 a year",
+    "reasonPrompt": "How do you feel when you step on the scale?",
+    "faq": [
+      {
+        "q": "Who is it for?",
+        "a": "Adults 18 and over."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-18",
+      "summary": "Weight-trend apps sell paid tiers to large audiences, and dieters describe losing inches while the scale stays put.",
+      "wtp": "Happy Scale sells a paid full version with 58K ratings; MacroFactor charges $71.99/year with no free tier.",
+      "signals": [
+        {
+          "url": "https://apps.apple.com/us/app/happy-scale/id532430574?see-all=reviews",
+          "who": "S-H-E-66 (Happy Scale reviewer)",
+          "date": "2023-03-25",
+          "quote": "I do not beat myself up if my weight is up a pound or two.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/macrofactor-macro-tracker/id1553503471",
+          "who": "BoulderKiwi (MacroFactor reviewer)",
+          "date": "2023-11-06",
+          "quote": "It's not cheap or 'free'.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://cathe.com/forum/threads/i-lost-inches-but-the-scale-isnt-moving-why.224619/",
+          "who": "punka274 (Cathe forum)",
+          "date": "2007-07-13",
+          "quote": "hasn't been moving like it use too",
+          "seen": "opened"
+        },
+        {
+          "url": "https://community.myfitnesspal.com/en/discussion/comment/13231156",
+          "who": "MyFitnessPal thread",
+          "date": "2026-10-18",
+          "quote": "Getting really discouraged...the scale just won't budge",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Happy Scale, MacroFactor, Libra.",
+      "risks": "Neutral language; no rate-of-loss targets."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-18",
+    "slug": "week-plate",
+    "name": "Week Plate",
+    "need": "Tired of meal plans that repeat the same five foods?",
+    "headline": "A week of meals built from your calorie target, nothing repeated for three weeks, swaps in one tap, and a grocery list that fits your budget.",
+    "buyer": "people losing weight who want someone to just plan the meals",
+    "bullets": [
+      "A weekly plan from your calorie target, with no meal repeated within three weeks.",
+      "One-tap swaps that respect what you like; import recipes from links.",
+      "A right-sized grocery list with a budget cap, plus batch-cooking portions."
+    ],
+    "price": "$6.99/month",
+    "priceUsd": 7,
+    "priceNote": "or $49 a year",
+    "reasonPrompt": "What goes wrong with meal planning for you?",
+    "faq": [
+      {
+        "q": "Who is it for?",
+        "a": "Adults 18 and over."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-18",
+      "summary": "Meal planners sell monthly plans to large audiences, and users complain about the same foods repeating and odd portions.",
+      "wtp": "Eat This Much Premium is $5/month billed yearly or $14.99 monthly with 22K ratings; a reviewer called $50 a year a gem.",
+      "signals": [
+        {
+          "url": "https://apps.apple.com/us/app/eat-this-much-meal-planner/id981637806?see-all=reviews",
+          "who": "lsyler (Eat This Much reviewer)",
+          "date": "2021-11-12",
+          "quote": "The app gives me the same 3-5 foods over and over.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/eat-this-much-meal-planner/id981637806?see-all=reviews",
+          "who": "cadamson2 (Eat This Much reviewer)",
+          "date": "2024-08-30",
+          "quote": "the portion sizes are often odd.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.promealplan.com/en/blog/eat-this-much-review-2026",
+          "who": "Promealplan (competitor review)",
+          "date": "2026-05",
+          "quote": "Recipe repetition by week 3-4",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Eat This Much, Mealime, PlateJoy.",
+      "risks": "Calorie floors; allergies."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-18",
+    "slug": "check-in-buddy",
+    "name": "Check-In Buddy",
+    "need": "Need someone to hold you accountable while you lose weight?",
+    "headline": "A two-minute weekly check-in shared with a matched partner or a small group, with an optional human coach who writes back every week.",
+    "buyer": "adults losing weight who do better with someone checking in",
+    "bullets": [
+      "A weekly check-in: weight trend, steps, a photo and one win, shared with a partner or a group of five.",
+      "Optional weekly written feedback from a human coach.",
+      "Gentle nudges, no money penalties."
+    ],
+    "price": "$9.99/month",
+    "priceUsd": 10,
+    "priceNote": "$29/month with a coach",
+    "reasonPrompt": "What has helped you stick with it before?",
+    "faq": [
+      {
+        "q": "Who is it for?",
+        "a": "Adults 18 and over."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-18",
+      "summary": "People post looking for accountability partners, and weight programs built on coaching charge monthly at scale.",
+      "wtp": "Noom reached an estimated $1B ARR with 1.5M subscribers at $17-70/month (Sacra); WeightWatchers includes coaching in A$21-41 plans; Beeminder about $22K MRR.",
+      "signals": [
+        {
+          "url": "https://community.myfitnesspal.com/en/discussions/tagged/Accountability/p2",
+          "who": "MyFitnessPal Accountability threads",
+          "date": "2026-10-18",
+          "quote": "Accountability Partner; Looking for some accountability",
+          "seen": "opened"
+        },
+        {
+          "url": "https://sacra.com/c/noom",
+          "who": "Noom (Sacra)",
+          "date": "2026-10-18",
+          "quote": "$1B ARR in 2023, about 1.5M subscribers",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.weightwatchers.com/au/expert-coaches",
+          "who": "WeightWatchers Australia",
+          "date": "2026-10-18",
+          "quote": "Coaching & Workshops in plans from A$21-41 a month",
+          "seen": "opened"
+        },
+        {
+          "url": "https://theday1lab.beehiiv.com/p/app-charges-money-not-reaching-goal-22k-mrr",
+          "who": "Beeminder (Day 1 Lab)",
+          "date": "2023-02-03",
+          "quote": "~$22K MRR",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Noom, WW, Beeminder, coaching apps.",
+      "risks": "Moderation; coach costs; no GLP-1 or medical claims."
+    }
+  },
+  {
     "slug": "pitch-pilot",
     "name": "Pitch Pilot",
     "headline": "Find the published press and booking contacts for any magazine, agency or talent, and get the cold pitch drafted, in minutes.",
