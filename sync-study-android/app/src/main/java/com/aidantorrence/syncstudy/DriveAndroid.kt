@@ -1,30 +1,20 @@
 package com.aidantorrence.syncstudy
 
-import android.Manifest
 import android.content.Context
-import android.content.Intent
-import android.content.pm.PackageManager
 import android.media.AudioAttributes
 import android.media.AudioFocusRequest
 import android.media.AudioFormat
 import android.media.AudioManager
 import android.media.AudioTrack
-import android.os.Build
-import android.os.Bundle
-import android.speech.RecognitionListener
-import android.speech.RecognizerIntent
-import android.speech.SpeechRecognizer
 import android.speech.tts.TextToSpeech
 import android.speech.tts.UtteranceProgressListener
 import android.speech.tts.Voice
-import androidx.core.content.ContextCompat
 import kotlinx.coroutines.CancellableContinuation
 import kotlinx.coroutines.CompletableDeferred
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.suspendCancellableCoroutine
 import kotlinx.coroutines.withContext
-import kotlinx.coroutines.withTimeoutOrNull
 import java.util.Locale
 import java.util.UUID
 import java.util.concurrent.ConcurrentHashMap
@@ -34,7 +24,7 @@ import kotlin.math.min
 import kotlin.math.sin
 
 /**
- * The phone's speaker, chimes and microphone for drive mode.
+ * The phone's speaker and chimes for drive mode (it never uses the microphone).
  * Narration and questions use different voices (or a different pitch when only one voice is installed) so the
  * listener always knows whether they're hearing the book or being asked something.
  */
@@ -49,11 +39,7 @@ class AndroidDriveIO(
     private var narrator: Voice? = null
     private var coach: Voice? = null
     private var coachPitch = 1f
-    @Volatile private var narrationSpeed = 1f
-    private var recognizer: SpeechRecognizer? = null
-    private var onDeviceFailed = false
-    private var recognizerErrors = 0
-    @Volatile private var listening = false
+    @Volatile private var speed = 1f
     private val audio = context.getSystemService(AudioManager::class.java)
     private var focus: AudioFocusRequest? = null
 
@@ -82,7 +68,6 @@ class AndroidDriveIO(
         pending.values.forEach { if (it.isActive) it.resume(Unit) }
         pending.clear()
         tts?.stop(); tts?.shutdown(); tts = null
-        recognizer?.destroy(); recognizer = null
         focus?.let { audio.abandonAudioFocusRequest(it) }
     }
 
@@ -99,7 +84,7 @@ class AndroidDriveIO(
         coachPitch = if (coach == null) 1.14f else 1f
     }
 
-    override fun setNarrationSpeed(speed: Float) { narrationSpeed = speed }
+    override fun setSpeed(speed: Float) { this.speed = speed }
 
     override suspend fun say(text: String, role: VoiceRole) {
         if (!ready.await()) { delay(text.length * 45L); return }
@@ -109,8 +94,8 @@ class AndroidDriveIO(
             pending[id] = cont
             cont.invokeOnCancellation { pending.remove(id); engine.stop() }
             when (role) {
-                VoiceRole.NARRATOR -> { narrator?.let { runCatching { engine.voice = it } }; engine.setPitch(1f); engine.setSpeechRate(narrationSpeed) }
-                VoiceRole.COACH -> { (coach ?: narrator)?.let { runCatching { engine.voice = it } }; engine.setPitch(coachPitch); engine.setSpeechRate(min(narrationSpeed, 1.25f).coerceAtLeast(0.95f)) }
+                VoiceRole.NARRATOR -> { narrator?.let { runCatching { engine.voice = it } }; engine.setPitch(1f); engine.setSpeechRate(speed) }
+                VoiceRole.COACH -> { (coach ?: narrator)?.let { runCatching { engine.voice = it } }; engine.setPitch(coachPitch); engine.setSpeechRate(speed) }
             }
             if (engine.speak(text, TextToSpeech.QUEUE_FLUSH, null, id) != TextToSpeech.SUCCESS) {
                 pending.remove(id); if (cont.isActive) cont.resume(Unit)
@@ -123,7 +108,6 @@ class AndroidDriveIO(
     override suspend fun chime(c: Chime) {
         val notes = when (c) {
             Chime.QUESTION -> listOf(659.3f to 90, 880f to 150)
-            Chime.LISTEN -> listOf(987.8f to 70)
             Chime.RIGHT -> listOf(523.3f to 80, 659.3f to 80, 784f to 170)
             Chime.WRONG -> listOf(392f to 130, 329.6f to 220)
             Chime.DONE -> listOf(523.3f to 90, 659.3f to 90, 784f to 90, 1046.5f to 260)
@@ -160,77 +144,6 @@ class AndroidDriveIO(
         return out.toShortArray()
     }
 
-    // ---- listening ------------------------------------------------------------------------------------
-
-    override suspend fun listen(maxMs: Long): Heard = withContext(Dispatchers.Main) {
-        if (ContextCompat.checkSelfPermission(context, Manifest.permission.RECORD_AUDIO) != PackageManager.PERMISSION_GRANTED) return@withContext Heard.Unavailable
-        val rec = recognizer ?: createRecognizer() ?: return@withContext Heard.Unavailable
-        listening = true
-        try {
-            val r = withTimeoutOrNull(maxMs + 2_000) { recognize(rec, maxMs) }
-            if (r == null) { rec.cancel(); Heard.Silence } else r
-        } finally {
-            listening = false
-        }
-    }
-
-    private suspend fun recognize(rec: SpeechRecognizer, maxMs: Long): Heard = suspendCancellableCoroutine { cont ->
-        fun done(h: Heard) { if (cont.isActive) cont.resume(h) }
-        rec.setRecognitionListener(object : RecognitionListener {
-            override fun onResults(b: Bundle?) {
-                recognizerErrors = 0
-                val list = b?.getStringArrayList(SpeechRecognizer.RESULTS_RECOGNITION).orEmpty().filter { it.isNotBlank() }
-                done(if (list.isEmpty()) Heard.Silence else Heard.Words(list[0], list))
-            }
-            override fun onError(error: Int) {
-                done(when (error) {
-                    SpeechRecognizer.ERROR_NO_MATCH, SpeechRecognizer.ERROR_SPEECH_TIMEOUT -> Heard.Silence
-                    SpeechRecognizer.ERROR_INSUFFICIENT_PERMISSIONS, SpeechRecognizer.ERROR_NETWORK,
-                    SpeechRecognizer.ERROR_NETWORK_TIMEOUT, SpeechRecognizer.ERROR_SERVER -> unavailable()
-                    else -> if (++recognizerErrors >= 3) unavailable() else Heard.Silence
-                })
-            }
-            override fun onReadyForSpeech(p: Bundle?) = Unit
-            override fun onBeginningOfSpeech() = Unit
-            override fun onRmsChanged(v: Float) = Unit
-            override fun onBufferReceived(b: ByteArray?) = Unit
-            override fun onEndOfSpeech() = Unit
-            override fun onPartialResults(b: Bundle?) = Unit
-            override fun onEvent(t: Int, b: Bundle?) = Unit
-        })
-        cont.invokeOnCancellation { ContextCompat.getMainExecutor(context).execute { rec.cancel() } }
-        val long = maxMs > 12_000
-        rec.startListening(Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH).apply {
-            putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, RecognizerIntent.LANGUAGE_MODEL_FREE_FORM)
-            putExtra(RecognizerIntent.EXTRA_LANGUAGE, Locale.getDefault().toLanguageTag())
-            putExtra(RecognizerIntent.EXTRA_MAX_RESULTS, 4)
-            putExtra(RecognizerIntent.EXTRA_PREFER_OFFLINE, true)
-            putExtra(RecognizerIntent.EXTRA_SPEECH_INPUT_COMPLETE_SILENCE_LENGTH_MILLIS, if (long) 3_000L else 1_400L)
-            putExtra(RecognizerIntent.EXTRA_SPEECH_INPUT_POSSIBLY_COMPLETE_SILENCE_LENGTH_MILLIS, if (long) 2_500L else 1_100L)
-        })
-    }
-
-    /** On-device recognition failed for this language: fall back to the standard recognizer once. */
-    private fun unavailable(): Heard {
-        if (!onDeviceFailed && Build.VERSION.SDK_INT >= 33 && SpeechRecognizer.isRecognitionAvailable(context)) {
-            onDeviceFailed = true
-            recognizer?.destroy(); recognizer = null
-            return Heard.Silence
-        }
-        return Heard.Unavailable
-    }
-
-    private fun createRecognizer(): SpeechRecognizer? {
-        val r = when {
-            Build.VERSION.SDK_INT >= 33 && !onDeviceFailed && SpeechRecognizer.isOnDeviceRecognitionAvailable(context) ->
-                SpeechRecognizer.createOnDeviceSpeechRecognizer(context)
-            SpeechRecognizer.isRecognitionAvailable(context) -> SpeechRecognizer.createSpeechRecognizer(context)
-            else -> null
-        }
-        recognizer = r
-        return r
-    }
-
     // ---- audio focus: pause for navigation prompts and calls --------------------------------------------
 
     private fun requestFocus() {
@@ -238,7 +151,6 @@ class AndroidDriveIO(
             .setAudioAttributes(speech)
             .setWillPauseWhenDucked(true)
             .setOnAudioFocusChangeListener { change ->
-                if (listening) return@setOnAudioFocusChangeListener // the microphone briefly takes focus itself
                 when (change) {
                     AudioManager.AUDIOFOCUS_LOSS, AudioManager.AUDIOFOCUS_LOSS_TRANSIENT,
                     AudioManager.AUDIOFOCUS_LOSS_TRANSIENT_CAN_DUCK -> onFocusLost()

@@ -7,29 +7,22 @@ import kotlin.math.min
  * Drive mode: hands-free study for the car, a walk or the gym.
  *
  * A session is a planned list of segments (narrate a paragraph, ask a question, review a due card, free recall)
- * played through a DriveIO: a voice, chimes and a listener. Questions are rewritten for listening (two-option
- * "this or that" instead of four options, spoken blanks, out-loud explanations scored by key words), answers are
- * judged from the speech transcript, and everything is recorded in the same spaced-repetition schedule as the
- * rest of the app. Nothing ever waits on the listener: silence just reveals the answer and moves on.
+ * played through a DriveIO: a voice and chimes, never the microphone. Each question is asked open-ended, then a
+ * silent pause gives you time to answer in your head before the answer is read out. Everything is spoken at the
+ * chosen speed. A press of next/back while the answer is read records "knew it" / "didn't" in the same
+ * spaced-repetition schedule as the rest of the app; with no press, nothing is recorded.
  */
 
 enum class VoiceRole { NARRATOR, COACH }
-enum class Chime { QUESTION, LISTEN, RIGHT, WRONG, DONE }
+enum class Chime { QUESTION, RIGHT, WRONG, DONE }
 enum class Button { NEXT, PREVIOUS }
 
-sealed class Heard {
-    data class Words(val text: String, val alternatives: List<String> = listOf(text)) : Heard()
-    data object Silence : Heard()
-    /** Speech recognition can't run (no recognizer, no permission, no connection). */
-    data object Unavailable : Heard()
-}
-
-/** Speaker, chimes and microphone. Suspends until each action finishes; cancellation must stop it promptly. */
+/** Speaker and chimes. Suspends until each action finishes; cancellation must stop it promptly. */
 interface DriveIO {
     suspend fun say(text: String, role: VoiceRole)
     suspend fun chime(c: Chime)
-    suspend fun listen(maxMs: Long): Heard
-    fun setNarrationSpeed(speed: Float) {}
+    /** Speech rate for every voice, narration and questions alike. */
+    fun setSpeed(speed: Float) {}
 }
 
 /** Where drive sessions read and write study progress. */
@@ -47,33 +40,29 @@ interface DriveMemory {
 data class DriveSettings(
     val bookId: String,
     val minutes: Int = 20,
-    val voiceAnswers: Boolean = true,
-    val speed: Float = 1.15f,
+    val speed: Float = 1.5f,
     val charsPerSecond: Float = DEFAULT_CHARS_PER_SECOND,
 )
 
 /** Waiting times, adjustable for tests. */
 data class DriveTimings(
-    val answerMs: Long = 8_000,
-    val explainMs: Long = 16_000,
-    val yesNoMs: Long = 5_000,
-    val thinkMs: Long = 5_000,
-    val buttonMs: Long = 7_000,
-    val recallMs: Long = 22_000,
-    val recallRounds: Int = 3,
-    val silentRecallMs: Long = 30_000,
+    /** Silent time to answer in your head before the answer is read. */
+    val thinkMs: Long = 10_000,
+    /** After the answer, how long a next/back press still counts as "knew it" / "didn't". */
+    val gradeMs: Long = 3_000,
+    /** Silent time to go over the whole book before its key ideas are read. */
+    val recallMs: Long = 30_000,
 )
 
 sealed class Segment {
     data class Line(val text: String) : Segment()
-    data class Pretest(val card: Mcq) : Segment()
     data class Learn(val bookId: String, val paragraph: Int) : Segment()
     data class Ask(val card: Card, val label: String) : Segment()
     data class Recall(val bookId: String) : Segment()
     data object Outro : Segment()
 }
 
-enum class DrivePhase { IDLE, SPEAKING, NARRATING, QUESTION, LISTENING, THINKING, AWAIT_BUTTON, FEEDBACK, RECALL, PAUSED, DONE }
+enum class DrivePhase { IDLE, SPEAKING, NARRATING, QUESTION, THINKING, FEEDBACK, RECALL, PAUSED, DONE }
 
 data class DriveState(
     val running: Boolean = false,
@@ -81,23 +70,20 @@ data class DriveState(
     val title: String = "",
     val label: String = "",
     val line: String = "",
-    val heard: String = "",
     val segment: Int = 0,
     val segments: Int = 0,
     val asked: Int = 0,
     val right: Int = 0,
     val speed: Float = 1f,
-    val voiceAnswers: Boolean = true,
 )
 
 // ---- planning ----------------------------------------------------------------------------------------
 
-private const val SECONDS_PER_QUESTION = 28f
-private const val SECONDS_PER_RECALL = 80f
+private const val SECONDS_PER_QUESTION = 24f
+private const val SECONDS_PER_RECALL = 60f
 
 /**
- * Builds a session of about [DriveSettings.minutes]: a short intro, up to two warm-up reviews, two spoken
- * pretest guesses if the book is new, then paragraphs of the book with each paragraph's check question asked
+ * Builds a session of about [DriveSettings.minutes]: a short intro, up to two warm-up reviews, then paragraphs of the book with each paragraph's check question asked
  * one paragraph later (a short lag makes retrieval effortful), with due reviews woven in between. If the book is
  * finished, a free-recall segment closes it out; spare time goes to more reviews.
  */
@@ -120,7 +106,6 @@ fun buildDrivePlan(s: DriveSettings, memory: DriveMemory): List<Segment> {
         val start = memory.paragraph(b.id).coerceIn(0, doc.paragraphs.size)
         if (start >= doc.paragraphs.size) continue
         if (b != book) plan += Segment.Line("Next up: ${b.title}.")
-        if (memory.isNew(b.id) && start == 0) study?.pretest?.take(2)?.forEach { plan += Segment.Pretest(it); used += 18f }
         var p = start
         var pending: Mcq? = null
         while (p < doc.paragraphs.size) {
@@ -155,8 +140,7 @@ fun buildDrivePlan(s: DriveSettings, memory: DriveMemory): List<Segment> {
             else -> append("You've finished ${book.title}, so this one is all review. ")
         }
         if (reviews > 0) append("Plus $reviews review ${if (reviews == 1) "question" else "questions"}. ")
-        if (s.voiceAnswers) append("Answer out loud after the chime. You can say repeat, skip, or I don't know.")
-        else append("After each question, think of your answer. Press next if you knew it, back if you didn't.")
+        append("After each question, answer in your head. The answer comes ten seconds later.")
     }
     return listOf(Segment.Line(intro)) + plan + Segment.Outro
 }
@@ -170,7 +154,6 @@ fun planSeconds(plan: List<Segment>, s: DriveSettings): Float = plan.sumOf { seg
             ((doc.words[r.last].end - doc.words[r.first].start) / (s.charsPerSecond * s.speed) + 8f).toDouble()
         }
         is Segment.Ask -> SECONDS_PER_QUESTION.toDouble()
-        is Segment.Pretest -> 18.0
         is Segment.Recall -> SECONDS_PER_RECALL.toDouble()
         is Segment.Line -> seg.text.length / 15.0
         Segment.Outro -> 10.0
@@ -189,7 +172,7 @@ fun spoken(card: Card): SpokenQuestion = when (card) {
     is Mcq -> DRIVE_OPEN[card.id]?.let { SpokenQuestion(it.prompt, it.answer) }
         ?: SpokenQuestion(card.question, card.options[card.answer])
     is Cloze -> SpokenQuestion(card.text.replace("___", "blank") + " What's the missing ${if (card.answer.contains(' ')) "phrase" else "word"}?", card.answer)
-    is Recall -> SpokenQuestion(card.prompt + " Answer out loud.", card.answer)
+    is Recall -> SpokenQuestion(card.prompt, card.answer)
 }
 
 /** Short explanation spoken after an answer. */
@@ -199,9 +182,7 @@ fun explanation(card: Card): String = when (card) {
     is Recall -> card.answer
 }
 
-// ---- understanding speech ---------------------------------------------------------------------------
-
-enum class Command { REPEAT, SKIP, DONT_KNOW, PAUSE, SLOWER, FASTER, DONE }
+// ---- judging typed answers ------------------------------------------------------------------------------
 
 private val STOP = setOf(
     "a", "an", "the", "and", "or", "but", "of", "to", "in", "on", "at", "for", "with", "is", "it", "its", "it's", "be", "are",
@@ -264,40 +245,6 @@ fun wordsMatch(a: String, b: String): Boolean {
 
 fun contentWords(text: String): List<String> = normalizeSpeech(text).filter { it !in STOP && (it.length >= 3 || it.any(Char::isDigit)) }.distinct()
 
-/** The key words of a model answer, used to judge an out-loud explanation. */
-fun keywords(text: String, max: Int = 8): List<String> = contentWords(text).filter { it.length >= 4 || it.any(Char::isDigit) }.take(max)
-
-fun coverage(said: String, keys: List<String>): Float {
-    if (keys.isEmpty()) return 0f
-    val heard = contentWords(said)
-    return keys.count { k -> heard.any { wordsMatch(it, k) } }.toFloat() / keys.size
-}
-
-fun command(text: String): Command? {
-    val w = normalizeSpeech(text)
-    val s = w.joinToString(" ")
-    if (listOf("don't know", "dont know", "do not know", "no idea", "not sure", "dunno", "no clue").any { it in s } || s == "pass") return Command.DONT_KNOW
-    if (w.size > 4) return null
-    return when {
-        w.any { it in setOf("repeat", "again", "pardon", "what") } -> Command.REPEAT
-        w.any { it in setOf("skip", "next") } -> Command.SKIP
-        w.any { it in setOf("pause", "stop", "wait", "hold") } -> Command.PAUSE
-        w.any { it in setOf("slower", "slow") } -> Command.SLOWER
-        w.any { it in setOf("faster", "fast", "quicker") } -> Command.FASTER
-        w.any { it in setOf("done", "finished", "that's", "thats") } && w.size <= 3 -> Command.DONE
-        else -> null
-    }
-}
-
-fun yesNo(text: String): Boolean? {
-    val w = normalizeSpeech(text)
-    return when {
-        w.any { it in setOf("yes", "yeah", "yep", "yup", "sure", "correct", "right", "did", "got") } -> true
-        w.any { it in setOf("no", "nope", "nah", "didn't", "missed", "wrong") } -> false
-        else -> null
-    }
-}
-
 enum class Verdict { RIGHT, WRONG, UNCLEAR }
 
 private fun tokenMatch(heard: String, key: String) =
@@ -321,7 +268,7 @@ private fun optionCoverage(said: String, option: String): Float {
 }
 
 /**
- * Judges an open spoken answer to a multiple-choice card. RIGHT when it clearly carries the right answer, WRONG
+ * Judges an open (typed) answer to a multiple-choice card. RIGHT when it clearly carries the right answer, WRONG
  * when it clearly matches one of the wrong options instead, otherwise UNCLEAR (the listener self-checks).
  */
 fun judgeOpen(said: String, card: Mcq): Verdict {
@@ -333,22 +280,6 @@ fun judgeOpen(said: String, card: Mcq): Verdict {
     val wrong = card.options.indices.filter { it != card.answer }.maxOf { optionCoverage(said, card.options[it]) }
     if (wrong >= 0.6f && right < 0.3f) return Verdict.WRONG
     return Verdict.UNCLEAR
-}
-
-/** A fill-in-the-blank is right when every word of an accepted answer was said. */
-fun judgeCloze(said: String, card: Cloze): Boolean {
-    val heard = normalizeSpeech(said)
-    return (listOf(card.answer) + card.accept).any { a ->
-        val need = normalizeSpeech(a).filter { it !in setOf("the", "a", "an") }
-        need.isNotEmpty() && need.all { n -> heard.any { wordsMatch(it, n) || it.trimEnd('x') == n.trimEnd('x') } }
-    }
-}
-
-/** Free recall: which key ideas were covered (at least two key words, or half of them). */
-fun recalledIdeas(said: String, ideas: List<String>): List<Boolean> = ideas.map { idea ->
-    val keys = keywords(idea, 5)
-    val hit = keys.count { k -> contentWords(said).any { wordsMatch(it, k) } }
-    hit >= 2 || (keys.isNotEmpty() && hit * 2 >= keys.size)
 }
 
 /** Splits narration into sentences so pausing and resuming can pick up mid-paragraph. */

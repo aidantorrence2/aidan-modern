@@ -31,29 +31,26 @@ for every paragraph. Installs next to Sync Reader (`com.aidantorrence.syncstudy`
 ## Drive mode (hands-free)
 
 The Drive tab runs a study session you can do in the car, on a walk or at the gym, with the screen off.
-Pick a book and a length (10–45 min) before you set off; everything after that is voice and buttons.
+Pick a book, a length (10–45 min) and a speed (1x to 3x) before you set off. It never uses the microphone.
 
-- **Session shape:** two warm-up reviews, two guess-first questions for a new book, then the book narrated part by
-  part. Each part ends with a one-line spoken takeaway that turns its animated scene into a picture in words.
-  Each part's check question is asked one part later (a short lag makes recall effortful), due reviews from
-  other books are mixed in, a spoken brain dump closes a finished book, and spare time carries on into your
-  next unfinished book.
-- **No hints, only recall:** questions are asked open-ended, with no answer options read out (stems that only work
-  with options are rewritten as open questions). Answers are scored by key words; when it can't tell, you hear the
-  model answer and say yes or no. Fill-in-the-blanks are said out loud.
-- **Answers by voice** after a chime (on-device recognition when available). Spoken numbers, near-misses and
-  "the second one" are understood. Say "repeat", "skip", "I don't know", "slower", "faster", "pause", "done".
-- **Never blocks:** silence reveals the answer after a few seconds and schedules the card sooner.
-- **Buttons instead of voice:** steering-wheel / headset play-pause, next (skip, or "I knew it" after an answer)
-  and previous (repeat, or "I didn't"). If recognition fails mid-session it switches to buttons automatically.
+- **Session shape:** two warm-up reviews, then the book narrated part by part (no pre-read questions). Each part
+  ends with a one-line spoken takeaway that turns its animated scene into a picture in words. Each part's check
+  question is asked one part later (a short lag makes recall effortful), due reviews from other books are mixed
+  in, a 30-second brain dump followed by the key ideas closes a finished book, and spare time carries on into
+  your next unfinished book.
+- **Ask, pause, answer:** each question is asked open-ended (no answer options; stems that only work with
+  options are rewritten), then 10 seconds of silence to answer in your head, then the answer and why.
+- **One speed for everything:** the book, questions and answers are all read at the chosen speed.
+- **Buttons (steering wheel / headset / screen):** play-pause pauses. Next skips, or during the pause reveals the
+  answer now. Back repeats. While the answer is read, next = "I knew it" and back = "I didn't", which schedules
+  the card in the same spaced-repetition queue as the rest of the app. No press, nothing recorded.
 - **Car-friendly audio:** a foreground media service keeps playing with the screen off, shows lock-screen and
   notification controls, pauses for navigation prompts and calls, and uses a second voice for questions plus
-  chimes for question / listening / right / wrong.
-- Results go into the same spaced-repetition schedule as the rest of the app.
+  chimes.
 
-Code: `DriveModel.kt` (planning, spoken questions, speech scoring), `DriveEngine.kt` (session engine),
-`DriveAndroid.kt` (voices, chimes, recognition, audio focus), `DriveService.kt` (foreground media service),
-`DriveScreen.kt` (setup and live screens), `DriveLines.kt` (spoken takeaways).
+Code: `DriveModel.kt` (planning, questions, answer scoring), `DriveEngine.kt` (session engine),
+`DriveAndroid.kt` (voices, chimes, audio focus), `DriveService.kt` (foreground media service),
+`DriveScreen.kt` (setup and live screens), `DriveLines.kt` (spoken takeaways, open question rewrites).
 
 ![Drive mode](docs/drive.png)
 

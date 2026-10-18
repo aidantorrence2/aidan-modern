@@ -30,7 +30,6 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.rounded.Mic
 import androidx.compose.material.icons.rounded.Pause
 import androidx.compose.material.icons.rounded.PlayArrow
 import androidx.compose.material.icons.rounded.Replay
@@ -75,15 +74,12 @@ private fun DriveSetup(last: DriveState) {
     val defaultBook = remember { LIBRARY.firstOrNull { StudyStore.stage(it.id) < Stage.DONE && studyFor(it.id) != null }?.id ?: LIBRARY.first().id }
     var bookId by rememberSaveable { mutableStateOf(defaultBook) }
     var minutes by rememberSaveable { mutableIntStateOf(20) }
-    var voice by rememberSaveable { mutableStateOf(true) }
-    var speed by rememberSaveable { mutableFloatStateOf(1.15f) }
-    val settings = DriveSettings(bookId, minutes, voice, speed)
+    var speed by rememberSaveable { mutableFloatStateOf(1.5f) }
+    val settings = DriveSettings(bookId, minutes, speed)
     val plan = remember(settings, StudyStore.version.value) { buildDrivePlan(settings, memory) }
 
-    val permissions = rememberLauncherForActivityResult(ActivityResultContracts.RequestMultiplePermissions()) { granted ->
-        val mic = granted[Manifest.permission.RECORD_AUDIO] ?: hasMic(context)
-        DriveController.start(context, settings.copy(voiceAnswers = voice && mic))
-    }
+    // Notifications are optional (the session plays either way), so start whatever the answer.
+    val permissions = rememberLauncherForActivityResult(ActivityResultContracts.RequestPermission()) { DriveController.start(context, settings) }
 
     Column(Modifier.fillMaxSize().verticalScroll(rememberScrollState()).padding(16.dp), verticalArrangement = Arrangement.spacedBy(14.dp)) {
         Text("Drive mode", color = Color.White, fontFamily = FontFamily.Serif, fontSize = 30.sp)
@@ -116,41 +112,37 @@ private fun DriveSetup(last: DriveState) {
         SectionLabel("Session length")
         Choices(listOf(10, 20, 30, 45).map { "$it min" to (minutes == it) }) { minutes = listOf(10, 20, 30, 45)[it] }
 
-        SectionLabel("How you'll answer")
-        Choices(listOf("Out loud" to voice, "Buttons only" to !voice)) { voice = it == 0 }
-        Text(if (voice) "After each question you'll hear a chime. Just say your answer." else
-            "You'll get a moment to think, hear the answer, then press next if you knew it or back if you didn't.",
-            color = TextMuted, fontSize = 12.sp, lineHeight = 16.sp)
-
-        SectionLabel("Narration speed")
-        val speeds = listOf(1f, 1.15f, 1.35f, 1.6f, 2f)
+        SectionLabel("Speed")
+        val speeds = listOf(1f, 1.5f, 2f, 2.5f, 3f)
         Choices(speeds.map { "${it}x".replace(".0x", "x") to (speed == it) }) { speed = speeds[it] }
+        Text("Everything is read at this speed: the book, the questions and the answers.", color = TextMuted, fontSize = 12.sp, lineHeight = 16.sp)
 
         val learn = plan.count { it is Segment.Learn }
         val checks = plan.count { it is Segment.Ask && it.label == "Check" }
         val reviews = plan.count { it is Segment.Ask && it.label != "Check" }
         Column(Modifier.fillMaxWidth().clip(RoundedCornerShape(16.dp)).background(Card2).padding(14.dp), verticalArrangement = Arrangement.spacedBy(4.dp)) {
             Text("This session, about ${(planSeconds(plan, settings) / 60f).toInt().coerceAtLeast(1)} min", color = Color.White, fontWeight = FontWeight.Bold, fontSize = 15.sp)
-            if (learn > 0) Text("• $learn ${if (learn == 1) "part" else "parts"} of ${findBook(bookId)?.title}, each with a one-line takeaway", color = TextMuted, fontSize = 13.sp)
+            val books = plan.filterIsInstance<Segment.Learn>().map { it.bookId }.distinct()
+            if (learn > 0) Text("• $learn ${if (learn == 1) "part" else "parts"} of ${books.joinToString(", then ") { findBook(it)?.title ?: it }}, each with a one-line takeaway", color = TextMuted, fontSize = 13.sp)
             if (checks > 0) Text("• $checks check questions, each asked one part later so you really recall it", color = TextMuted, fontSize = 13.sp)
             if (reviews > 0) Text("• $reviews review questions mixed in from your other books", color = TextMuted, fontSize = 13.sp)
-            if (plan.any { it is Segment.Recall }) Text("• a spoken brain dump to finish the book", color = TextMuted, fontSize = 13.sp)
-            if (plan.any { it is Segment.Pretest }) Text("• two guess-first questions to start", color = TextMuted, fontSize = 13.sp)
+            if (plan.any { it is Segment.Recall }) Text("• a 30-second brain dump to finish the book", color = TextMuted, fontSize = 13.sp)
+            Text("Each question gets a 10-second pause to answer in your head, then the answer. No microphone.", color = TextMuted, fontSize = 12.sp, lineHeight = 16.sp, modifier = Modifier.padding(top = 4.dp))
         }
 
         PrimaryButton("Start drive session", {
-            val need = buildList {
-                if (voice && !hasMic(context)) add(Manifest.permission.RECORD_AUDIO)
-                if (Build.VERSION.SDK_INT >= 33 && ContextCompat.checkSelfPermission(context, Manifest.permission.POST_NOTIFICATIONS) != PackageManager.PERMISSION_GRANTED) add(Manifest.permission.POST_NOTIFICATIONS)
+            if (Build.VERSION.SDK_INT >= 33 && ContextCompat.checkSelfPermission(context, Manifest.permission.POST_NOTIFICATIONS) != PackageManager.PERMISSION_GRANTED) {
+                permissions.launch(Manifest.permission.POST_NOTIFICATIONS)
+            } else {
+                DriveController.start(context, settings)
             }
-            if (need.isEmpty()) DriveController.start(context, settings) else permissions.launch(need.toTypedArray())
         }, Modifier.fillMaxWidth())
 
         SectionLabel("Controls, no screen needed")
         listOf(
-            "Steering wheel / headset" to "Play-pause pauses. Next skips. Back repeats. After an answer is read out, next means \"I knew it\" and back means \"I didn't\".",
-            "Say it" to "\"repeat\", \"skip\", \"I don't know\", \"slower\", \"faster\", \"pause\". At the end of a book, say \"done\" when you've finished your brain dump.",
-            "No answer?" to "That's fine. After a few seconds you'll hear the answer, and the question comes back sooner next time.",
+            "Steering wheel / headset" to "Play-pause pauses. Next skips. Back repeats.",
+            "During the pause" to "Next hears the answer now. Back asks the question again.",
+            "Optional: mark it" to "While the answer is read, press next if you knew it or back if you didn't. It schedules the card. No press, no problem.",
             "Calls and directions" to "The session pauses for navigation prompts and phone calls, and picks up again afterwards.",
         ).forEach { (h, b) ->
             Row(Modifier.fillMaxWidth().clip(RoundedCornerShape(14.dp)).background(Card2).padding(12.dp)) {
@@ -158,14 +150,11 @@ private fun DriveSetup(last: DriveState) {
                 Text(b, color = Color.White.copy(alpha = 0.85f), fontSize = 12.sp, lineHeight = 17.sp)
             }
         }
-        Text("Keep your eyes on the road. Everything works by voice and buttons; don't use the screen while driving.",
+        Text("Keep your eyes on the road. Everything works by audio and the steering-wheel buttons; don't use the screen while driving.",
             color = TextMuted, fontSize = 11.sp, lineHeight = 15.sp)
         Spacer(Modifier.height(8.dp))
     }
 }
-
-private fun hasMic(context: android.content.Context) =
-    ContextCompat.checkSelfPermission(context, Manifest.permission.RECORD_AUDIO) == PackageManager.PERMISSION_GRANTED
 
 @Composable
 private fun Choices(items: List<Pair<String, Boolean>>, onPick: (Int) -> Unit) {
@@ -191,39 +180,34 @@ private fun DriveLive(s: DriveState) {
                 Text(s.title, color = TextMuted, fontSize = 13.sp, maxLines = 1, overflow = TextOverflow.Ellipsis)
                 Text(s.label.ifEmpty { "Drive mode" }, color = Color.White, fontSize = 18.sp, fontWeight = FontWeight.Bold)
             }
-            if (s.asked > 0) Pill("${s.right}/${s.asked} right", Mint)
+            if (s.asked > 0) Pill("knew ${s.right}/${s.asked}", Mint)
         }
         Spacer(Modifier.height(8.dp))
         MasteryBar(if (s.segments == 0) 0f else s.segment.toFloat() / s.segments)
         Spacer(Modifier.height(18.dp))
         val (phaseText, phaseColor) = when (s.phase) {
-            DrivePhase.LISTENING -> "Listening…" to Pal.Coral
             DrivePhase.QUESTION -> "Question" to Pal.Gold
             DrivePhase.NARRATING -> "Reading" to Pal.Sky
-            DrivePhase.FEEDBACK -> "Answer" to Mint
-            DrivePhase.THINKING -> "Think of your answer" to Pal.Violet
-            DrivePhase.AWAIT_BUTTON -> "Next = knew it · Back = didn't" to Pal.Violet
+            DrivePhase.FEEDBACK -> "Answer · next = knew it, back = didn't" to Mint
+            DrivePhase.THINKING -> "Answer in your head…" to Pal.Violet
             DrivePhase.RECALL -> "Brain dump" to Pal.Gold
             DrivePhase.PAUSED -> "Paused" to TextMuted
             else -> "Drive mode" to TextMuted
         }
         Row(verticalAlignment = Alignment.CenterVertically) {
-            Box(Modifier.size(14.dp).scale(if (s.phase == DrivePhase.LISTENING) pulse.value else 1f).clip(CircleShape).background(phaseColor))
+            Box(Modifier.size(14.dp).scale(if (s.phase == DrivePhase.THINKING) pulse.value else 1f).clip(CircleShape).background(phaseColor))
             Spacer(Modifier.width(8.dp))
-            if (s.phase == DrivePhase.LISTENING) { Icon(Icons.Rounded.Mic, null, tint = phaseColor, modifier = Modifier.size(20.dp)); Spacer(Modifier.width(4.dp)) }
             Text(phaseText, color = phaseColor, fontSize = 15.sp, fontWeight = FontWeight.Bold)
         }
         Spacer(Modifier.height(12.dp))
         Text(s.line, color = Color.White, fontSize = 24.sp, lineHeight = 32.sp, fontFamily = FontFamily.Serif,
             maxLines = 7, overflow = TextOverflow.Ellipsis, modifier = Modifier.weight(1f))
-        if (s.heard.isNotEmpty()) Text("You said: “${s.heard}”", color = TextMuted, fontSize = 14.sp, maxLines = 2, overflow = TextOverflow.Ellipsis)
-        if (!s.voiceAnswers) Text("Buttons mode: next = knew it, back = didn't", color = TextMuted, fontSize = 12.sp)
         Spacer(Modifier.height(14.dp))
         Row(horizontalArrangement = Arrangement.spacedBy(12.dp)) {
-            BigButton(Icons.Rounded.Replay, "Repeat", Card2, Modifier.weight(1f)) { DriveController.press(Button.PREVIOUS) }
+            BigButton(Icons.Rounded.Replay, if (s.phase == DrivePhase.FEEDBACK) "Didn't" else "Repeat", Card2, Modifier.weight(1f)) { DriveController.press(Button.PREVIOUS) }
             val paused = s.phase == DrivePhase.PAUSED
             BigButton(if (paused) Icons.Rounded.PlayArrow else Icons.Rounded.Pause, if (paused) "Resume" else "Pause", Mint, Modifier.weight(1.2f), dark = true) { DriveController.togglePause() }
-            BigButton(Icons.Rounded.SkipNext, if (s.phase == DrivePhase.AWAIT_BUTTON) "Knew it" else "Skip", Card2, Modifier.weight(1f)) { DriveController.press(Button.NEXT) }
+            BigButton(Icons.Rounded.SkipNext, when (s.phase) { DrivePhase.FEEDBACK -> "Knew it"; DrivePhase.THINKING -> "Answer"; else -> "Skip" }, Card2, Modifier.weight(1f)) { DriveController.press(Button.NEXT) }
         }
         Spacer(Modifier.height(10.dp))
         Text("End session", color = TextMuted, fontSize = 13.sp, textAlign = TextAlign.Center,

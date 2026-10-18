@@ -105,18 +105,18 @@ class StudyScreensTest {
         study.go(Route.Home(3)); show { SyncStudyApp(reader, study) }; shot("13-drive-setup")
     }
 
-    @Test fun driveListening() {
-        DriveController.showForTest(DriveState(running = true, phase = DrivePhase.LISTENING, title = "Atomic Habits", label = "Check",
+    @Test fun driveThinking() {
+        DriveController.showForTest(DriveState(running = true, phase = DrivePhase.THINKING, title = "Atomic Habits", label = "Check",
             line = "Two runners have exactly the same goal. What separates the winner from the loser?",
-            heard = "", segment = 6, segments = 18, asked = 3, right = 2))
-        study.go(Route.Home(3)); show { SyncStudyApp(reader, study) }; shot("14-drive-listening")
+            segment = 6, segments = 18, asked = 3, right = 2))
+        study.go(Route.Home(3)); show { SyncStudyApp(reader, study) }; shot("14-drive-thinking")
         DriveController.showForTest(DriveState())
     }
 
-    @Test fun driveButtonsMode() {
-        DriveController.showForTest(DriveState(running = true, phase = DrivePhase.AWAIT_BUTTON, title = "Sapiens", label = "Review",
-            line = "Press next if you knew it, or back if you didn't.", segment = 9, segments = 18, asked = 5, right = 4, voiceAnswers = false))
-        study.go(Route.Home(3)); show { SyncStudyApp(reader, study) }; shot("15-drive-buttons")
+    @Test fun driveAnswer() {
+        DriveController.showForTest(DriveState(running = true, phase = DrivePhase.FEEDBACK, title = "Sapiens", label = "Review",
+            line = "The answer: The Cognitive Revolution. Fiction let large groups cooperate.", segment = 9, segments = 18, asked = 5, right = 4))
+        study.go(Route.Home(3)); show { SyncStudyApp(reader, study) }; shot("15-drive-answer")
         DriveController.showForTest(DriveState())
     }
 }

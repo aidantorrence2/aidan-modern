@@ -13,16 +13,16 @@ import org.junit.Assert.assertNull
 import org.junit.Assert.assertTrue
 import org.junit.Test
 
-class FakeIO(vararg heard: Heard) : DriveIO {
-    val queue = ArrayDeque(heard.toList())
+class FakeIO : DriveIO {
     val log = mutableListOf<String>()
     var narrateDelay = 0L
+    var rate = 0f
     override suspend fun say(text: String, role: VoiceRole) {
         log += "${role.name}: $text"
         if (role == VoiceRole.NARRATOR && narrateDelay > 0) delay(narrateDelay) else yield()
     }
     override suspend fun chime(c: Chime) { log += "chime $c" }
-    override suspend fun listen(maxMs: Long): Heard { log += "listen"; return queue.removeFirstOrNull() ?: Heard.Silence }
+    override fun setSpeed(speed: Float) { rate = speed }
 }
 
 class FakeMemory(private val dueCards: List<Card> = emptyList(), var new: Boolean = true) : DriveMemory {
@@ -39,18 +39,18 @@ class FakeMemory(private val dueCards: List<Card> = emptyList(), var new: Boolea
 }
 
 class DriveTest {
-    private val fast = DriveTimings(answerMs = 50, explainMs = 50, yesNoMs = 50, thinkMs = 30, buttonMs = 2_000, recallMs = 50, silentRecallMs = 30)
+    private val fast = DriveTimings(thinkMs = 30, gradeMs = 30, recallMs = 30)
     private val atomic = studyFor("atomic-habits")!!
     private fun mcq(p: Int) = atomic.checkpoints.getValue(p)
     private val cloze = atomic.cards.filterIsInstance<Cloze>().first { it.answer == "majority" }
     private val explain = atomic.cards.filterIsInstance<Recall>().first { it.paragraph == 0 }
 
-    private fun run(plan: List<Segment>, io: FakeIO, mem: FakeMemory = FakeMemory(new = false), voice: Boolean = true) = runBlocking {
-        DriveEngine(io, mem, DriveSettings("atomic-habits", voiceAnswers = voice), fast).run(plan)
+    private fun run(plan: List<Segment>, io: FakeIO, mem: FakeMemory = FakeMemory(new = false)) = runBlocking {
+        DriveEngine(io, mem, DriveSettings("atomic-habits"), fast).run(plan)
         mem
     }
 
-    // ---- understanding speech ----
+    // ---- judging typed answers ----
 
     @Test fun spokenNumbersBecomeDigits() {
         assertEquals(listOf("37"), normalizeSpeech("thirty seven"))
@@ -81,31 +81,6 @@ class DriveTest {
         assertEquals(Verdict.UNCLEAR, judgeOpen("trying harder", ii))
     }
 
-    @Test fun clozeAcceptsNearMissesAndNumbers() {
-        assertTrue(judgeCloze("the majority", cloze))
-        assertTrue(judgeCloze("majorty", cloze))
-        assertFalse(judgeCloze("minority", cloze))
-        val pct = atomic.cards.filterIsInstance<Cloze>().first { it.answer == "0.03" }
-        assertTrue(judgeCloze("zero point zero three", pct))
-        assertTrue(judgeCloze("about three percent", pct))
-    }
-
-    @Test fun commandsAndYesNo() {
-        assertEquals(Command.REPEAT, command("can you repeat"))
-        assertEquals(Command.SKIP, command("skip"))
-        assertEquals(Command.DONT_KNOW, command("honestly I don't know this one"))
-        assertEquals(Command.SLOWER, command("slower please"))
-        assertNull(command("the habit loop has four stages and the second is craving"))
-        assertEquals(true, yesNo("yeah I got it"))
-        assertEquals(false, yesNo("nope"))
-    }
-
-    @Test fun keywordCoverageRewardsTheGist() {
-        val keys = keywords(explain.answer)
-        assertTrue(coverage("results are delayed, the work builds up below the surface like ice before it melts", keys) >= 0.4f)
-        assertTrue(coverage("I am not sure", keys) < 0.2f)
-    }
-
     @Test fun everyParagraphHasASpokenTakeaway() {
         for (b in LIBRARY) assertEquals(b.id, Document(b.summary).paragraphs.size, DRIVE_RECAPS[b.id]?.size)
     }
@@ -116,7 +91,7 @@ class DriveTest {
         val plan = buildDrivePlan(DriveSettings("atomic-habits", minutes = 90), FakeMemory())
         assertTrue(plan.first() is Segment.Line)
         assertTrue(plan.last() is Segment.Outro)
-        assertEquals(2, plan.count { it is Segment.Pretest && it.card.bookId == "atomic-habits" })
+        assertTrue("no pre-read questions", plan.none { it is Segment.Ask && it.label != "Check" && it.card.bookId == "atomic-habits" })
         val learns = plan.filterIsInstance<Segment.Learn>().filter { it.bookId == "atomic-habits" }.map { it.paragraph }
         assertEquals((0..8).toList(), learns)
         for (p in 0..8) {
@@ -148,67 +123,68 @@ class DriveTest {
 
     // ---- the engine ----
 
-    @Test fun rightSpokenAnswerIsRecordedAsGood() {
-        val io = FakeIO(Heard.Words("systems"))
+    @Test fun questionPausesInSilenceThenReadsTheAnswerWithoutListening() {
+        val io = FakeIO()
         val mem = run(listOf(Segment.Ask(mcq(8), "Check")), io)
-        assertFalse(io.log.any { "habits?" in it || "Or:" in it })
-        assertEquals(listOf(Triple(mcq(8).id, Grade.GOOD, true)), mem.records)
+        val q = io.log.indexOfFirst { it.contains(mcq(8).question) }
+        val a = io.log.indexOfFirst { it.contains("The answer: systems") }
+        assertTrue("asked, then answered: ${io.log}", q in 0 until a)
+        assertFalse("no options read out", io.log.any { "habits?" in it || "Or:" in it })
+        assertTrue("no grade without a press", mem.records.isEmpty())
     }
 
-    @Test fun wrongSilentAndDontKnowAreAllRelearned() {
-        assertEquals(Grade.AGAIN, run(listOf(Segment.Ask(mcq(8), "Check")), FakeIO(Heard.Words("habits"))).records.single().second)
-        assertEquals(Grade.AGAIN, run(listOf(Segment.Ask(mcq(8), "Check")), FakeIO(Heard.Silence)).records.single().second)
-        assertEquals(Grade.AGAIN, run(listOf(Segment.Ask(mcq(8), "Check")), FakeIO(Heard.Words("I don't know"))).records.single().second)
+    @Test fun thePauseLastsTenSecondsByDefault() {
+        assertEquals(10_000L, DriveTimings().thinkMs)
     }
 
-    @Test fun unclearAnswerIsCheckedAgainstTheModelAnswer() {
-        val yes = FakeIO(Heard.Words("something about consistency"), Heard.Words("yes"))
-        assertEquals(Grade.GOOD, run(listOf(Segment.Ask(mcq(8), "Check")), yes).records.single().second)
-        assertTrue(yes.log.any { it.contains("The answer: systems") })
-        assertEquals(Grade.AGAIN, run(listOf(Segment.Ask(mcq(8), "Check")), FakeIO(Heard.Words("something about consistency"), Heard.Words("no"))).records.single().second)
+    @Test fun everyVoiceUsesTheChosenSpeed() {
+        val io = FakeIO()
+        runBlocking { DriveEngine(io, FakeMemory(new = false), DriveSettings("atomic-habits", speed = 2.5f), fast).run(listOf(Segment.Line("hi"))) }
+        assertEquals(2.5f, io.rate)
     }
 
-    @Test fun skipRecordsNothing() {
-        assertTrue(run(listOf(Segment.Ask(mcq(8), "Check")), FakeIO(Heard.Words("skip"))).records.isEmpty())
-    }
-
-    @Test fun repeatAsksAgainThenAccepts() {
-        val io = FakeIO(Heard.Words("repeat"), Heard.Words("systems"))
-        val mem = run(listOf(Segment.Ask(mcq(8), "Check")), io)
-        assertEquals(2, io.log.count { it.contains(mcq(8).question) })
-        assertTrue(mem.records.single().third)
-    }
-
-    @Test fun spokenBlankIsJudged() {
-        assertTrue(run(listOf(Segment.Ask(cloze, "Review")), FakeIO(Heard.Words("a majority"))).records.single().third)
-    }
-
-    @Test fun outLoudExplanationScoredByKeyWordsOrSelfAssessed() {
-        val good = run(listOf(Segment.Ask(explain, "Review")), FakeIO(Heard.Words("because results are delayed and the work builds up out of sight until it suddenly shows, like ice melting")))
-        assertTrue(good.records.single().third)
-        val weak = run(listOf(Segment.Ask(explain, "Review")), FakeIO(Heard.Words("something about motivation"), Heard.Words("no")))
-        assertEquals(Grade.AGAIN, weak.records.single().second)
-        val unsure = run(listOf(Segment.Ask(explain, "Review")), FakeIO(Heard.Words("something about motivation"), Heard.Silence))
-        assertTrue(unsure.records.isEmpty())
-    }
-
-    @Test fun withoutAMicrophoneButtonsGradeTheAnswer() = runBlocking {
+    private fun pressDuring(card: Card, phase: DrivePhase, b: Button, thinkMs: Long = 30, gradeMs: Long = 30): Pair<FakeIO, FakeMemory> = runBlocking {
+        val io = FakeIO()
         val mem = FakeMemory(new = false)
-        val io = FakeIO(Heard.Unavailable)
-        val e = DriveEngine(io, mem, DriveSettings("atomic-habits"), fast)
-        val job = launch { e.run(listOf(Segment.Ask(mcq(8), "Check"), Segment.Ask(cloze, "Review"))) }
-        repeat(2) { n ->
-            try {
-                withTimeout(3_000) { e.state.first { it.segment == n && it.phase == DrivePhase.AWAIT_BUTTON && it.line.startsWith("Press next") } }
-            } catch (t: Throwable) { throw AssertionError("state=${e.state.value} log=${io.log}", t) }
-            e.press(if (n == 0) Button.NEXT else Button.PREVIOUS)
-            try {
-                withTimeout(3_000) { e.state.first { it.asked == n + 1 } }
-            } catch (t: Throwable) { throw AssertionError("after press $n: state=${e.state.value} log=${io.log}", t) }
-        }
+        val e = DriveEngine(io, mem, DriveSettings("atomic-habits"), DriveTimings(thinkMs = thinkMs, gradeMs = gradeMs, recallMs = 30))
+        val job = launch { e.run(listOf(Segment.Ask(card, "Check"))) }
+        try {
+            withTimeout(3_000) { e.state.first { it.phase == phase } }
+        } catch (t: Throwable) { throw AssertionError("state=${e.state.value} log=${io.log}", t) }
+        e.press(b)
         job.join()
-        assertEquals(listOf(true, false), mem.records.map { it.third })
-        assertFalse(e.state.value.voiceAnswers)
+        io to mem
+    }
+
+    @Test fun nextDuringThePauseRevealsTheAnswerEarly() {
+        val (io, mem) = pressDuring(mcq(8), DrivePhase.THINKING, Button.NEXT, thinkMs = 60_000)
+        assertTrue(io.log.any { it.contains("The answer: systems") })
+        assertTrue(mem.records.isEmpty())
+    }
+
+    @Test fun backDuringThePauseAsksAgain() = runBlocking {
+        val io = FakeIO()
+        val e = DriveEngine(io, FakeMemory(new = false), DriveSettings("atomic-habits"), DriveTimings(thinkMs = 60_000, gradeMs = 30, recallMs = 30))
+        val job = launch { e.run(listOf(Segment.Ask(mcq(8), "Check"))) }
+        withTimeout(3_000) { e.state.first { it.phase == DrivePhase.THINKING } }
+        e.press(Button.PREVIOUS)
+        withTimeout(3_000) { e.state.first { it.phase == DrivePhase.THINKING && io.log.count { l -> l.contains(mcq(8).question) } == 2 } }
+        e.press(Button.NEXT)
+        job.join()
+        assertTrue(io.log.any { it.contains("The answer: systems") })
+    }
+
+    @Test fun pressesWhileTheAnswerIsReadGradeTheCard() {
+        assertEquals(listOf(Triple(mcq(8).id, Grade.GOOD, true)), pressDuring(mcq(8), DrivePhase.FEEDBACK, Button.NEXT, gradeMs = 60_000).second.records)
+        assertEquals(Grade.AGAIN, pressDuring(cloze, DrivePhase.FEEDBACK, Button.PREVIOUS, gradeMs = 60_000).second.records.single().second)
+    }
+
+    @Test fun explainAndBlankCardsReadTheirAnswers() {
+        val io = FakeIO()
+        run(listOf(Segment.Ask(explain, "Review"), Segment.Ask(cloze, "Review")), io)
+        assertTrue(io.log.any { it.contains("A strong answer: ${explain.answer}") })
+        assertTrue(io.log.any { it.contains("The answer: majority") })
+        assertFalse(io.log.any { it.contains("out loud") })
     }
 
     @Test fun skippingNarrationMovesOnWithoutMarkingTheParagraphRead() = runBlocking {
@@ -240,13 +216,11 @@ class DriveTest {
         assertEquals(1, mem.paragraphs["atomic-habits"])
     }
 
-    @Test fun brainDumpScoresIdeasAndFinishesTheBook() {
-        val io = FakeIO(Heard.Words("tiny one percent improvements compound but there is a delay, focus on systems not goals"), Heard.Words("done"))
+    @Test fun brainDumpPausesThenReadsTheKeyIdeasAndFinishesTheBook() {
+        val io = FakeIO()
         val mem = run(listOf(Segment.Recall("atomic-habits")), io)
         assertEquals(listOf("atomic-habits"), mem.finished)
-        val score = io.log.first { it.contains("You covered") }
-        assertTrue(score, Regex("covered (\\d+) of 7").find(score)!!.groupValues[1].toInt() >= 2)
-        assertTrue(io.log.any { it.contains("Here's what you missed") })
+        atomic.keyIdeas.forEach { idea -> assertTrue(idea, io.log.any { it.endsWith(idea) }) }
     }
 
     @Test fun fullSessionRunsEndToEnd() {
@@ -256,20 +230,9 @@ class DriveTest {
         runBlocking { DriveEngine(io, mem, DriveSettings("atomic-habits", minutes = 90), fast).run(plan) }
         assertEquals(9, mem.paragraphs["atomic-habits"])
         assertEquals("atomic-habits", mem.finished.first())
-        assertTrue(mem.records.size >= 9) // every check question, unanswered (silent) → relearn
+        assertTrue("no presses, no grades", mem.records.isEmpty())
+        assertEquals(9, io.log.count { it.contains("The answer:") && atomic.checkpoints.values.any { c -> it.contains(c.why) } })
         assertNotNull(io.log.lastOrNull { it.contains("That's the session") })
-    }
-
-    @Test fun pressingDuringTheSpokenAnswerCountsAsKnewIt() = runBlocking {
-        val io = FakeIO(Heard.Unavailable).apply { narrateDelay = 0 }
-        val mem = FakeMemory(new = false)
-        val e = DriveEngine(io, mem, DriveSettings("atomic-habits"), fast)
-        val job = launch { e.run(listOf(Segment.Ask(mcq(8), "Check"))) }
-        withTimeout(3_000) { e.state.first { it.line.startsWith("The answer") } }
-        e.press(Button.NEXT)
-        job.join()
-        assertEquals(listOf(true), mem.records.map { it.third })
-        assertFalse("no need to prompt after an early press", io.log.any { it.contains("Press next") })
     }
 
     @Test fun shortBookCarriesOnIntoTheNextUnfinishedOne() {

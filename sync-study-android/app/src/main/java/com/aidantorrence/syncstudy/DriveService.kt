@@ -1,6 +1,5 @@
 package com.aidantorrence.syncstudy
 
-import android.Manifest
 import android.app.Notification
 import android.app.NotificationChannel
 import android.app.NotificationManager
@@ -8,7 +7,6 @@ import android.app.PendingIntent
 import android.app.Service
 import android.content.Context
 import android.content.Intent
-import android.content.pm.PackageManager
 import android.content.pm.ServiceInfo
 import android.os.IBinder
 import android.os.PowerManager
@@ -128,11 +126,7 @@ class DriveService : Service() {
     }
 
     private fun startInForeground(s: DriveState) {
-        var types = ServiceInfo.FOREGROUND_SERVICE_TYPE_MEDIA_PLAYBACK
-        if (ContextCompat.checkSelfPermission(this, Manifest.permission.RECORD_AUDIO) == PackageManager.PERMISSION_GRANTED) {
-            types = types or ServiceInfo.FOREGROUND_SERVICE_TYPE_MICROPHONE
-        }
-        ServiceCompat.startForeground(this, NOTIFICATION, notification(s), types)
+        ServiceCompat.startForeground(this, NOTIFICATION, notification(s), ServiceInfo.FOREGROUND_SERVICE_TYPE_MEDIA_PLAYBACK)
     }
 
     private fun update(s: DriveState) {
