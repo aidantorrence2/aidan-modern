@@ -273,8 +273,8 @@ class SceneSync(val scenes: List<SyncedScene>, val problems: List<String>)
 /** Pins every beat to the word where its phrase starts, searching in order within its own paragraph. */
 fun syncScenes(doc: Document, scenes: List<StageScene>): SceneSync {
     val problems = mutableListOf<String>()
-    if (scenes.size != doc.paragraphs.size) problems += "expected ${doc.paragraphs.size} scenes, found ${scenes.size}"
-    val out = doc.paragraphs.mapIndexed { p, range ->
+    if (scenes.size != doc.sections.size) problems += "expected ${doc.sections.size} scenes, found ${scenes.size}"
+    val out = doc.sections.mapIndexed { p, range ->
         val scene = scenes.getOrNull(p) ?: StageScene("", Backdrops.Studio, emptyList(), emptyList())
         val compiled = runCatching { CompiledScene(scene) }.getOrElse {
             problems += it.message ?: "scene $p failed"
@@ -288,7 +288,7 @@ fun syncScenes(doc: Document, scenes: List<StageScene>): SceneSync {
             val at = scene.beats[i].at ?: return@IntArray last
             val idx = text.indexOf(at.lowercase(), from)
             if (idx < 0) {
-                problems += "paragraph $p (${scene.title}): phrase not found in order: \"$at\""
+                problems += "section $p (${scene.title}): phrase not found in order: \"$at\""
                 return@IntArray last
             }
             from = idx + 1
@@ -322,9 +322,9 @@ fun StagePanel(
             return@Box
         }
         val word = currentWord.coerceIn(0, doc.lastWord)
-        val paragraph = doc.words[word].paragraph
+        val section = doc.words[word].section
         val tempo = if (playing) max(1f, speed).pow(0.7f) else 1f
-        Crossfade(targetState = paragraph, animationSpec = tween(450), label = "scene") { p ->
+        Crossfade(targetState = section, animationSpec = tween(450), label = "scene") { p ->
             sync.scenes.getOrNull(p)?.let { SceneCanvas(it, word, tempo, motion, clock) }
         }
     }

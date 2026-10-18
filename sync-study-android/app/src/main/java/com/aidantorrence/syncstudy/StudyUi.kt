@@ -18,19 +18,14 @@ import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.foundation.text.KeyboardActions
-import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.OutlinedButton
-import androidx.compose.material3.OutlinedTextField
-import androidx.compose.material3.OutlinedTextFieldDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -43,8 +38,6 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontFamily
-import androidx.compose.ui.text.input.ImeAction
-import androidx.compose.ui.text.input.KeyboardCapitalization
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.rememberTextMeasurer
 import androidx.compose.ui.text.style.TextAlign
@@ -99,113 +92,33 @@ fun SceneThumb(bookId: String, paragraph: Int, modifier: Modifier = Modifier) {
     }
 }
 
-/** A free-text answer box: the learner recalls before seeing anything. Enter submits. */
-@Composable
-fun AnswerField(value: String, onChange: (String) -> Unit, enabled: Boolean, onDone: () -> Unit, placeholder: String = "Type your answer") {
-    OutlinedTextField(
-        value, onChange, Modifier.fillMaxWidth().heightIn(min = 64.dp), enabled = enabled,
-        placeholder = { Text(placeholder, color = TextMuted) },
-        keyboardOptions = KeyboardOptions(capitalization = KeyboardCapitalization.Sentences, imeAction = ImeAction.Done),
-        keyboardActions = KeyboardActions(onDone = { onDone() }),
-        colors = OutlinedTextFieldDefaults.colors(focusedBorderColor = Mint, unfocusedBorderColor = Line, cursorColor = Mint,
-            focusedTextColor = Color.White, unfocusedTextColor = Color.White, disabledTextColor = Color.White.copy(alpha = 0.75f),
-            disabledBorderColor = Line),
-    )
-}
-
-@Composable
-private fun ChoiceRow(choices: List<Pair<String, () -> Unit>>) {
-    Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-        choices.forEach { (l, onClick) ->
-            Box(
-                Modifier.weight(1f).clip(RoundedCornerShape(12.dp)).background(Line).clickable(onClick = onClick).padding(vertical = 12.dp),
-                contentAlignment = Alignment.Center,
-            ) { Text(l, color = Color.White, fontWeight = FontWeight.SemiBold, fontSize = 14.sp) }
-        }
-    }
-}
-
 /**
- * A multiple-choice card asked with no options shown: the learner types an answer from memory, rates their
- * confidence, then sees the answer. Typed answers are scored by key words; when that can't decide, the learner
- * compares with the answer and says whether theirs matched. Calls [onResult] once; [footer] renders after the reveal.
+ * A flashcard: the question first, so you answer from memory; then the answer, its scene, and how well you knew it.
+ * [onGrade] is called once per card; [key] distinguishes repeat showings of the same card in one session.
  */
 @Composable
-fun McqPanel(
-    card: Mcq,
-    salt: Int,
-    onResult: (correct: Boolean, confidence: Confidence) -> Unit,
-    footer: @Composable (correct: Boolean) -> Unit,
-    askConfidence: Boolean = true,
-) {
-    val q = remember(card.id) { spoken(card) }
-    var typed by remember(card.id, salt) { mutableStateOf("") }
-    var submitted by remember(card.id, salt) { mutableStateOf(false) }
-    var conf by remember(card.id, salt) { mutableStateOf<Confidence?>(null) }
-    var correct by remember(card.id, salt) { mutableStateOf<Boolean?>(null) }
-    var gaveUp by remember(card.id, salt) { mutableStateOf(false) }
-    fun settle(c: Confidence) {
-        conf = c
-        when (judgeOpen(typed, card)) {
-            Verdict.RIGHT -> { correct = true; onResult(true, c) }
-            Verdict.WRONG -> { correct = false; onResult(false, c) }
-            Verdict.UNCLEAR -> Unit // the learner compares with the answer below
-        }
-    }
-    fun submit() {
-        if (typed.isBlank() || submitted) return
-        submitted = true
-        if (!askConfidence) settle(Confidence.UNSURE)
-    }
-    Column(verticalArrangement = Arrangement.spacedBy(10.dp)) {
-        Text(q.prompt, color = Color.White, fontSize = 19.sp, lineHeight = 26.sp, fontWeight = FontWeight.SemiBold, fontFamily = FontFamily.Serif)
-        AnswerField(typed, { typed = it }, enabled = !submitted, onDone = ::submit)
-        if (!submitted) {
-            Row(horizontalArrangement = Arrangement.spacedBy(10.dp)) {
-                SecondaryButton("I don't know", {
-                    submitted = true; gaveUp = true; conf = Confidence.GUESS; correct = false; onResult(false, Confidence.GUESS)
-                }, Modifier.weight(1f))
-                PrimaryButton("Check", ::submit, Modifier.weight(1f), enabled = typed.isNotBlank())
+fun FlashcardPanel(card: Card, key: Int = 0, showScene: Boolean = false, onGrade: (Grade) -> Unit) {
+    var flipped by remember(card.id, key) { mutableStateOf(false) }
+    Column(verticalArrangement = Arrangement.spacedBy(12.dp)) {
+        Column(
+            Modifier.fillMaxWidth().clip(RoundedCornerShape(18.dp)).background(Card2).border(1.dp, Line, RoundedCornerShape(18.dp)).padding(18.dp),
+            verticalArrangement = Arrangement.spacedBy(10.dp),
+        ) {
+            Text(card.front, color = Color.White, fontSize = 19.sp, lineHeight = 26.sp, fontWeight = FontWeight.SemiBold, fontFamily = FontFamily.Serif)
+            AnimatedVisibility(flipped, enter = fadeIn() + expandVertically()) {
+                Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
+                    Box(Modifier.fillMaxWidth().height(1.dp).background(Line))
+                    Text(card.back, color = Color.White.copy(alpha = 0.92f), fontSize = 16.sp, lineHeight = 23.sp)
+                }
             }
         }
-        AnimatedVisibility(submitted && conf == null, enter = fadeIn() + expandVertically()) {
-            Column {
-                Text("How sure are you?", color = TextMuted, fontSize = 13.sp, modifier = Modifier.padding(top = 4.dp, bottom = 6.dp))
-                ChoiceRow(listOf("Guessing" to { settle(Confidence.GUESS) }, "Fairly sure" to { settle(Confidence.UNSURE) }, "Certain" to { settle(Confidence.SURE) }))
-            }
-        }
-        val c = conf
-        if (c != null) {
-            val ok = correct
-            Column(
-                Modifier.fillMaxWidth().clip(RoundedCornerShape(14.dp))
-                    .background(Brush.verticalGradient(listOf((when (ok) { true -> Pal.Leaf; false -> Pal.Coral; null -> Mint }).copy(alpha = 0.16f), Card2)))
-                    .padding(14.dp),
-                verticalArrangement = Arrangement.spacedBy(6.dp),
-            ) {
-                Text(
-                    when {
-                        ok == null -> "Compare with your answer"
-                        gaveUp -> "Here's the answer."
-                        ok && c == Confidence.GUESS -> "Right, and now you know why."
-                        ok -> "Correct."
-                        c == Confidence.SURE -> "Surprise! You were sure. Confident mistakes like this are the ones memory fixes best."
-                        else -> "Not quite."
-                    },
-                    color = when (ok) { true -> Pal.Leaf; false -> Pal.Coral; null -> Mint }, fontWeight = FontWeight.Bold, fontSize = 15.sp, lineHeight = 20.sp,
-                )
-                Text(q.answer, color = Color.White, fontWeight = FontWeight.SemiBold, fontSize = 15.sp, lineHeight = 21.sp)
-                Text(card.why, color = Color.White.copy(alpha = 0.9f), fontSize = 14.sp, lineHeight = 20.sp)
-            }
-            if (ok == null) {
-                Text("Did you get it?", color = TextMuted, fontSize = 13.sp)
-                ChoiceRow(listOf(
-                    "No" to { correct = false; onResult(false, c) },
-                    "Yes, I had it" to { correct = true; onResult(true, c) },
-                ))
-            } else {
-                footer(ok)
-            }
+        if (!flipped) {
+            Text("Answer it in your head (or out loud), then flip.", color = TextMuted, fontSize = 13.sp)
+            PrimaryButton("Show answer", { flipped = true }, Modifier.fillMaxWidth())
+        } else {
+            if (showScene) SceneThumb(card.bookId, card.section, Modifier.fillMaxWidth())
+            Text("How well did you know it?", color = TextMuted, fontSize = 13.sp)
+            GradeButtons(card, onGrade)
         }
     }
 }

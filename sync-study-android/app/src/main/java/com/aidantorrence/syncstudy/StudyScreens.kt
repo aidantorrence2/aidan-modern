@@ -49,6 +49,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -64,6 +65,7 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import kotlin.math.roundToInt
 
 /** App root: routes between the study screens and the reader. */
 @Composable
@@ -78,7 +80,6 @@ fun SyncStudyApp(reader: ReaderViewModel, study: StudyViewModel) {
         when (val r = route) {
             is Route.Home -> HomeScreen(r.tab, study)
             is Route.Intro -> IntroScreen(r.bookId, study)
-            is Route.Pretest -> PretestScreen(r.bookId, r.index, study)
             is Route.Read -> ReadRoute(r, reader, study)
             is Route.Recall -> RecallScreen(r.bookId, study)
             is Route.Summary -> SummaryScreen(r.bookId, study)
@@ -210,8 +211,8 @@ private fun ReviewTab(study: StudyViewModel) {
         listOf(
             "Spaced" to "Each card returns just before you'd forget it, a little later every time you get it right.",
             "Mixed" to "Books are interleaved, so you practise telling ideas apart, not just repeating one.",
-            "Retrieval" to "You answer from memory before seeing anything. That effort is what makes it stick.",
-            "Confidence" to "Rate how sure you are. Confident mistakes get flagged; they're the easiest to fix for good.",
+            "Retrieval" to "Each flashcard asks about an idea worth knowing. Answer from memory, then flip. That effort is what makes it stick.",
+            "Honest" to "Say how well you knew it. Forgotten cards come back in the same session until they stick.",
         ).forEach { (h, b) ->
             Row(Modifier.fillMaxWidth().clip(RoundedCornerShape(14.dp)).background(Card2).padding(14.dp)) {
                 Text(h, color = Mint, fontWeight = FontWeight.Bold, fontSize = 13.sp, modifier = Modifier.width(86.dp))
@@ -278,9 +279,10 @@ private fun IntroScreen(bookId: String, study: StudyViewModel) {
                 return@Column
             }
             SectionLabel("Your study path")
+            val doc = remember(bookId) { Document(book.summary) }
             val steps = listOf(
-                Triple("Guess first", "${s.pretest.size} questions before you read. Wrong guesses still prime your memory.", stage >= Stage.PRETESTED),
-                Triple("Listen and check", "Narrated summary with animated explainers. ${s.checkpoints.size} quick checkpoints along the way.", stage >= Stage.READ),
+                Triple("Listen and check", "The full summary, about ${(doc.words.size / 165f).roundToInt()} min at 1x, in ${doc.sections.size} sections with animated explainers. " +
+                    "After each section, flashcards on its key ideas.", stage >= Stage.READ),
                 Triple("Brain dump", "Write down everything you remember, then compare with the ${s.keyIdeas.size} key ideas.", stage >= Stage.DONE),
                 Triple("Spaced review", "${s.cards.size} cards come back over the next weeks, mixed with your other books.", stage >= Stage.DONE && StudyStore.mastery(bookId) > 0.5f),
             )
@@ -308,34 +310,6 @@ private fun IntroScreen(bookId: String, study: StudyViewModel) {
 }
 
 @Composable
-private fun PretestScreen(bookId: String, index: Int, study: StudyViewModel) {
-    val pre = studyFor(bookId)?.pretest ?: return
-    val card = pre.getOrNull(index) ?: return
-    Screen("Guess first", { study.back() }) {
-        Column(Modifier.fillMaxSize().verticalScroll(rememberScrollState()).padding(16.dp), verticalArrangement = Arrangement.spacedBy(14.dp)) {
-            Row(horizontalArrangement = Arrangement.spacedBy(6.dp)) {
-                pre.indices.forEach { i -> Box(Modifier.weight(1f).height(5.dp).clip(RoundedCornerShape(3.dp)).background(if (i <= index) Pal.Gold else Line)) }
-            }
-            Row(verticalAlignment = Alignment.CenterVertically) {
-                Pill("Pretest ${index + 1} of ${pre.size}", Pal.Gold)
-                Spacer(Modifier.width(8.dp))
-                Text("No score. Just guess.", color = TextMuted, fontSize = 13.sp)
-            }
-            Text("You haven't read this yet. Guess anyway: trying to answer first makes the real answer stick when you hear it.",
-                color = TextMuted, fontSize = 13.sp, lineHeight = 18.sp)
-            var guess by remember(card.id) { mutableStateOf("") }
-            val last = index + 1 >= pre.size
-            Text(spoken(card).prompt, color = Color.White, fontSize = 19.sp, lineHeight = 26.sp, fontWeight = FontWeight.SemiBold, fontFamily = FontFamily.Serif)
-            AnswerField(guess, { guess = it }, enabled = true, onDone = { if (guess.isNotBlank()) study.answerPretest(bookId, index, guess) }, placeholder = "Your best guess")
-            Row(horizontalArrangement = Arrangement.spacedBy(10.dp)) {
-                SecondaryButton("No idea", { study.answerPretest(bookId, index, "") }, Modifier.weight(1f))
-                PrimaryButton(if (last) "Lock in, start" else "Lock in guess", { study.answerPretest(bookId, index, guess) }, Modifier.weight(1f), enabled = guess.isNotBlank())
-            }
-        }
-    }
-}
-
-@Composable
 private fun ReadRoute(r: Route.Read, reader: ReaderViewModel, study: StudyViewModel) {
     LaunchedEffect(r.bookId, r.quiz) {
         if (r.bookId == CUSTOM_BOOK_ID) reader.openCustom() else reader.openBook(r.bookId)
@@ -345,16 +319,16 @@ private fun ReadRoute(r: Route.Read, reader: ReaderViewModel, study: StudyViewMo
     if (state.bookId != r.bookId || state.document.isEmpty) return
     ReaderScreen(reader, state, onBack = { reader.closeReader(); study.back() }) {
         val p = state.checkpoint
-        val card = p?.let { studyFor(r.bookId)?.checkpoints?.get(it) }
-        AnimatedVisibility(card != null, enter = slideInVertically { it / 2 } + fadeIn(), modifier = Modifier.align(Alignment.BottomCenter)) {
-            if (card != null) CheckpointSheet(card, card.paragraph, state.document.paragraphs.size, reader, study)
+        val cards = p?.let { studyFor(r.bookId)?.checks(it) }.orEmpty()
+        AnimatedVisibility(p != null && cards.isNotEmpty(), enter = slideInVertically { it / 2 } + fadeIn(), modifier = Modifier.align(Alignment.BottomCenter)) {
+            if (p != null && cards.isNotEmpty()) CheckpointSheet(cards, p, state.document.sections.size, reader, study)
         }
         val showDone = state.finished && state.checkpoint == null && state.quiz && studyFor(r.bookId) != null
         AnimatedVisibility(showDone, enter = slideInVertically { it / 2 } + fadeIn(), modifier = Modifier.align(Alignment.BottomCenter)) {
             Sheet {
                 val res = study.checkpointResults[r.bookId].orEmpty()
                 Text("You finished the summary", color = Color.White, fontSize = 20.sp, fontFamily = FontFamily.Serif)
-                if (res.isNotEmpty()) Text("Checkpoints: ${res.values.count { it }} of ${res.size} right", color = Mint, fontSize = 14.sp)
+                if (res.isNotEmpty()) Text("Flashcards: you knew ${res.values.count { it }} of ${res.size}", color = Mint, fontSize = 14.sp)
                 Text("Next: a brain dump. Write down everything you remember before checking. It's the strongest memory exercise there is.",
                     color = TextMuted, fontSize = 13.sp, lineHeight = 18.sp)
                 PrimaryButton("Start brain dump", { reader.closeReader(); study.finishReading(r.bookId) }, Modifier.fillMaxWidth())
@@ -376,20 +350,32 @@ private fun Sheet(content: @Composable () -> Unit) {
     }
 }
 
+/** End of a section: its key flashcards, one at a time. */
 @Composable
-private fun CheckpointSheet(card: Mcq, p: Int, total: Int, reader: ReaderViewModel, study: StudyViewModel) {
+private fun CheckpointSheet(cards: List<Card>, section: Int, total: Int, reader: ReaderViewModel, study: StudyViewModel) {
+    var index by remember(cards.first().id) { mutableIntStateOf(0) }
+    var missed by remember(cards.first().id) { mutableStateOf(false) }
     Sheet {
         Row(verticalAlignment = Alignment.CenterVertically) {
-            Pill("Checkpoint ${p + 1} of $total", Mint)
+            Pill("Section ${section + 1} of $total", Mint)
             Spacer(Modifier.width(8.dp))
-            Text("Answer from memory", color = TextMuted, fontSize = 12.sp)
+            Text(if (index < cards.size) "Card ${index + 1} of ${cards.size} · answer from memory" else "Done", color = TextMuted, fontSize = 12.sp)
         }
-        McqPanel(card, salt = 0, onResult = { correct, conf -> study.recordCheckpoint(card, correct, conf) }, footer = { correct ->
+        val card = cards.getOrNull(index)
+        if (card != null) {
+            FlashcardPanel(card) { g ->
+                study.recordCheckpoint(card, g)
+                if (g == Grade.AGAIN) missed = true
+                index++
+            }
+        } else {
+            Text(if (missed) "Some of that didn't stick yet. Hear the section again, or carry on; missed cards come back soon in review."
+                else "You knew it. On to the next section.", color = Color.White, fontSize = 15.sp, lineHeight = 21.sp)
             Row(horizontalArrangement = Arrangement.spacedBy(10.dp)) {
-                if (!correct) SecondaryButton("Replay this part", { reader.replayParagraph(p) }, Modifier.weight(1f))
+                if (missed) SecondaryButton("Replay section", { reader.replaySection(section) }, Modifier.weight(1f))
                 PrimaryButton("Continue", { reader.continueAfterCheckpoint() }, Modifier.weight(1f))
             }
-        })
+        }
     }
 }
 
@@ -446,22 +432,9 @@ private fun SummaryScreen(bookId: String, study: StudyViewModel) {
             Text("Nice work.", color = Color.White, fontSize = 30.sp, fontFamily = FontFamily.Serif)
             Text(book.title, color = TextMuted, fontSize = 14.sp)
             Row(horizontalArrangement = Arrangement.spacedBy(10.dp)) {
-                StatTile(if (res.isEmpty()) "–" else "${res.values.count { it }}/${res.size}", "checkpoints right", Mint, Modifier.weight(1f))
+                StatTile(if (res.isEmpty()) "–" else "${res.values.count { it }}/${res.size}", "flashcards known", Mint, Modifier.weight(1f))
                 StatTile("${((StudyStore.recallScore(bookId) ?: 0f) * s.keyIdeas.size + 0.5f).toInt()}/${s.keyIdeas.size}", "key ideas recalled", Pal.Gold, Modifier.weight(1f))
                 StatTile("${s.cards.size}", "cards scheduled", Pal.Sky, Modifier.weight(1f))
-            }
-            if (s.pretest.isNotEmpty()) {
-                SectionLabel("Your first guesses, now with answers")
-                s.pretest.forEach { c ->
-                    val g = StudyStore.pretestGuess(c.id)
-                    val q = spoken(c)
-                    val right = !g.isNullOrBlank() && judgeOpen(g, c) == Verdict.RIGHT
-                    Column(Modifier.fillMaxWidth().clip(RoundedCornerShape(14.dp)).background(Card2).padding(12.dp), verticalArrangement = Arrangement.spacedBy(4.dp)) {
-                        Text(q.prompt, color = Color.White, fontSize = 14.sp, lineHeight = 19.sp)
-                        if (g != null) Text(if (g.isBlank()) "You had no idea yet" else "You guessed: $g", color = if (right) Pal.Leaf else Pal.Coral, fontSize = 13.sp)
-                        if (!right) Text("Answer: ${q.answer}", color = Pal.Leaf, fontSize = 13.sp)
-                    }
-                }
             }
             Text("Your cards will come back tomorrow, then in a few days, then weeks apart. A few minutes a day is enough.",
                 color = TextMuted, fontSize = 13.sp, lineHeight = 18.sp)
@@ -495,79 +468,13 @@ private fun ReviewScreen(study: StudyViewModel) {
                 Column(Modifier.fillMaxSize().verticalScroll(rememberScrollState()), verticalArrangement = Arrangement.spacedBy(12.dp)) {
                     val book = findBook(card.bookId)
                     Row(verticalAlignment = Alignment.CenterVertically) {
-                        Pill(when (card) { is Mcq -> "Recall"; is Recall -> "Explain"; is Cloze -> "Fill the gap" }, Color(book?.color ?: 0xFF4FD1A5).lighten(0.3f))
+                        Pill("Section ${card.section + 1}", Color(book?.color ?: 0xFF4FD1A5).lighten(0.3f))
                         Spacer(Modifier.width(8.dp))
                         Text(book?.title ?: "", color = TextMuted, fontSize = 12.sp, maxLines = 1, overflow = TextOverflow.Ellipsis)
                     }
-                    when (card) {
-                        is Mcq -> McqReview(card, s.pos, study)
-                        is Recall -> RecallReview(card, s.pos, study)
-                        is Cloze -> ClozeReview(card, s.pos, study)
-                    }
+                    FlashcardPanel(card, key = s.pos, showScene = true) { g -> study.answerReview(card, g) }
                     Spacer(Modifier.height(24.dp))
                 }
-            }
-        }
-    }
-}
-
-@Composable
-private fun McqReview(card: Mcq, pos: Int, study: StudyViewModel) {
-    var result by remember(card.id, pos) { mutableStateOf<Pair<Boolean, Confidence>?>(null) }
-    McqPanel(card, salt = pos + 1, onResult = { c, conf -> result = c to conf }, footer = {
-        SceneThumb(card.bookId, card.paragraph, Modifier.fillMaxWidth())
-        PrimaryButton("Next", { result?.let { (c, conf) -> study.answerReview(card, Scheduler.grade(c, conf), c) } }, Modifier.fillMaxWidth())
-    })
-}
-
-@Composable
-private fun RecallReview(card: Recall, pos: Int, study: StudyViewModel) {
-    var shown by remember(card.id, pos) { mutableStateOf(false) }
-    var typed by remember(card.id, pos) { mutableStateOf("") }
-    Text(card.prompt, color = Color.White, fontSize = 19.sp, lineHeight = 26.sp, fontWeight = FontWeight.SemiBold, fontFamily = FontFamily.Serif)
-    Text("Answer in your own words first: out loud, in your head, or typed below.", color = TextMuted, fontSize = 13.sp)
-    OutlinedTextField(typed, { typed = it }, Modifier.fillMaxWidth().heightIn(min = 90.dp), enabled = !shown,
-        placeholder = { Text("Optional", color = TextMuted) },
-        colors = OutlinedTextFieldDefaults.colors(focusedBorderColor = Mint, unfocusedBorderColor = Line, cursorColor = Mint,
-            focusedTextColor = Color.White, unfocusedTextColor = Color.White, disabledTextColor = Color.White.copy(alpha = 0.7f)))
-    if (!shown) {
-        PrimaryButton("Show answer", { shown = true }, Modifier.fillMaxWidth())
-    } else {
-        Column(Modifier.fillMaxWidth().clip(RoundedCornerShape(14.dp)).background(Card2).padding(14.dp)) {
-            Text("A good answer", color = Mint, fontWeight = FontWeight.Bold, fontSize = 13.sp)
-            Spacer(Modifier.height(4.dp))
-            Text(card.answer, color = Color.White, fontSize = 15.sp, lineHeight = 21.sp)
-        }
-        SceneThumb(card.bookId, card.paragraph, Modifier.fillMaxWidth())
-        Text("How well did you know it?", color = TextMuted, fontSize = 13.sp)
-        GradeButtons(card) { g -> study.answerReview(card, g, g != Grade.AGAIN) }
-    }
-}
-
-@Composable
-private fun ClozeReview(card: Cloze, pos: Int, study: StudyViewModel) {
-    var typed by remember(card.id, pos) { mutableStateOf("") }
-    var checked by remember(card.id, pos) { mutableStateOf<Boolean?>(null) }
-    Text(card.text.replace("___", "______"), color = Color.White, fontSize = 19.sp, lineHeight = 26.sp, fontWeight = FontWeight.SemiBold, fontFamily = FontFamily.Serif)
-    OutlinedTextField(typed, { typed = it }, Modifier.fillMaxWidth(), singleLine = true, enabled = checked == null,
-        placeholder = { Text("Type the missing word", color = TextMuted) },
-        colors = OutlinedTextFieldDefaults.colors(focusedBorderColor = Mint, unfocusedBorderColor = Line, cursorColor = Mint,
-            focusedTextColor = Color.White, unfocusedTextColor = Color.White, disabledTextColor = Color.White))
-    val c = checked
-    if (c == null) {
-        PrimaryButton("Check", { checked = answerMatches(typed, card.answer, card.accept) }, Modifier.fillMaxWidth(), enabled = typed.isNotBlank())
-    } else {
-        Column(Modifier.fillMaxWidth().clip(RoundedCornerShape(14.dp)).background((if (c) Pal.Leaf else Pal.Coral).copy(alpha = 0.14f)).padding(14.dp)) {
-            Text(if (c) "Correct." else "Answer: ${card.answer}", color = if (c) Pal.Leaf else Pal.Coral, fontWeight = FontWeight.Bold, fontSize = 15.sp)
-            Text(card.text.replace("___", card.answer), color = Color.White, fontSize = 14.sp, lineHeight = 20.sp)
-        }
-        SceneThumb(card.bookId, card.paragraph, Modifier.fillMaxWidth())
-        if (c) {
-            PrimaryButton("Next", { study.answerReview(card, Grade.GOOD, true) }, Modifier.fillMaxWidth())
-        } else {
-            Row(horizontalArrangement = Arrangement.spacedBy(10.dp)) {
-                SecondaryButton("I was right (typo)", { study.answerReview(card, Grade.HARD, true) }, Modifier.weight(1f))
-                PrimaryButton("Next", { study.answerReview(card, Grade.AGAIN, false) }, Modifier.weight(1f))
             }
         }
     }

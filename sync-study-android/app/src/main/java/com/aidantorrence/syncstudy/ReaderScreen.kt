@@ -141,8 +141,8 @@ fun ReaderScreen(
             SpeedRow(state, onSpeed = viewModel::setSpeed, onStep = viewModel::stepSpeed)
 
             val stage: @Composable (Modifier) -> Unit = { m ->
-                // While a checkpoint is up, keep showing the finished scene of the paragraph being asked about.
-                val shown = state.checkpoint?.let { state.document.paragraphs[it].last } ?: state.currentWord
+                // While a checkpoint is up, keep showing the finished scene of the section being asked about.
+                val shown = state.checkpoint?.let { state.document.sections[it].last } ?: state.currentWord
                 StagePanel(state.bookId, state.document, shown, state.speed, state.playing, clock, m)
             }
             when {
@@ -365,13 +365,21 @@ private fun FlowView(doc: Document, current: Int, onTapWord: (Int) -> Unit) {
         verticalArrangement = Arrangement.spacedBy(22.dp),
     ) {
         itemsIndexed(doc.paragraphs, key = { i, _ -> i }) { i, range ->
-            ParagraphText(
-                doc = doc,
-                range = range,
-                current = safeCurrent,
-                onLayout = { layouts[i] = it },
-                onTapWord = onTapWord,
-            )
+            val sec = doc.words[range.first].section
+            val title = doc.sectionTitles.getOrNull(sec)?.takeIf { doc.sections[sec].first == range.first }
+            Column {
+                if (title != null) {
+                    Text("${sec + 1} · $title", color = Accent, fontSize = 15.sp, fontWeight = FontWeight.Bold, letterSpacing = 0.5.sp,
+                        modifier = Modifier.padding(top = if (i == 0) 0.dp else 18.dp, bottom = 10.dp))
+                }
+                ParagraphText(
+                    doc = doc,
+                    range = range,
+                    current = safeCurrent,
+                    onLayout = { layouts[i] = it },
+                    onTapWord = onTapWord,
+                )
+            }
         }
     }
 }

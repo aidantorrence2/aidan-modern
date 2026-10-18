@@ -11,13 +11,12 @@ import java.time.Instant
 import java.time.ZoneId
 
 /** Where a reader is with a book. */
-object Stage { const val NEW = 0; const val PRETESTED = 1; const val READ = 2; const val DONE = 3 }
+object Stage { const val NEW = 0; const val STARTED = 1; const val READ = 2; const val DONE = 3 }
 
-/** Persistent study progress: card memory, pretest guesses, book stages and the daily review log. */
+/** Persistent study progress: card memory, book stages and the daily review log. */
 object StudyStore {
     private var prefs: SharedPreferences? = null
     private val states = HashMap<String, CardState>()
-    private val pretest = HashMap<String, String>()
     private val stages = HashMap<String, Int>()
     private val recall = HashMap<String, Float>()
     private val log = HashMap<Long, IntArray>()
@@ -36,11 +35,12 @@ object StudyStore {
     // ---- cards --------------------------------------------------------------------------------------
     fun state(id: String): CardState? = states[id]
 
-    fun record(card: Card, grade: Grade, correct: Boolean, now: Long = System.currentTimeMillis()) {
+    /** Records a flashcard answer; anything but AGAIN counts as known. */
+    fun record(card: Card, grade: Grade, now: Long = System.currentTimeMillis()) {
         states[card.id] = Scheduler.next(states[card.id], grade, now)
         val d = day(now)
         val e = log.getOrPut(d) { IntArray(2) }
-        e[0]++; if (correct) e[1]++
+        e[0]++; if (grade != Grade.AGAIN) e[1]++
         changed()
     }
 
@@ -72,10 +72,6 @@ object StudyStore {
     // ---- book flow ----------------------------------------------------------------------------------
     fun stage(bookId: String): Int = stages[bookId] ?: Stage.NEW
     fun advance(bookId: String, to: Int) { if (to > stage(bookId)) { stages[bookId] = to; changed() } }
-
-    /** The learner's typed pretest guess ("" when they had no idea). */
-    fun setPretest(cardId: String, guess: String) { pretest[cardId] = guess; changed() }
-    fun pretestGuess(cardId: String): String? = pretest[cardId]
 
     fun setRecallScore(bookId: String, score: Float) { recall[bookId] = score; changed() }
     fun recallScore(bookId: String): Float? = recall[bookId]
@@ -115,7 +111,6 @@ object StudyStore {
         for ((k, v) in log) lg.put(k.toString(), JSONArray(listOf(v[0], v[1])))
         p.edit()
             .putString("states", st.toString())
-            .putString("guesses", JSONObject(pretest as Map<*, *>).toString())
             .putString("stages", JSONObject(stages as Map<*, *>).toString())
             .putString("recall", JSONObject(recall.mapValues { it.value.toDouble() } as Map<*, *>).toString())
             .putString("log", lg.toString())
@@ -130,11 +125,6 @@ object StudyStore {
                 val a = st.getJSONArray(k)
                 states[k] = CardState(a.getDouble(0).toFloat(), a.getDouble(1).toFloat(), a.getLong(2), a.getInt(3), a.getInt(4), a.getLong(5), a.getInt(6) == 1)
             }
-            val gs = JSONObject(p.getString("guesses", "{}")!!); for (k in gs.keys()) pretest[k] = gs.getString(k)
-            // Older versions stored the index of a picked option.
-            val old = JSONObject(p.getString("pretest", "{}")!!)
-            for (k in old.keys()) if (k !in pretest) (STUDY.values.firstNotNullOfOrNull { s -> s.cards.find { it.id == k } } as? Mcq)
-                ?.let { pretest[k] = it.options.getOrElse(old.getInt(k)) { "" } }
             val sg = JSONObject(p.getString("stages", "{}")!!); for (k in sg.keys()) stages[k] = sg.getInt(k)
             val rc = JSONObject(p.getString("recall", "{}")!!); for (k in rc.keys()) recall[k] = rc.getDouble(k).toFloat()
             val lg = JSONObject(p.getString("log", "{}")!!); for (k in lg.keys()) { val a = lg.getJSONArray(k); log[k.toLong()] = intArrayOf(a.getInt(0), a.getInt(1)) }
@@ -142,5 +132,5 @@ object StudyStore {
     }
 
     /** Test hook: forget everything in memory (does not touch disk). */
-    internal fun resetForTest() { states.clear(); pretest.clear(); stages.clear(); recall.clear(); log.clear(); prefs = null }
+    internal fun resetForTest() { states.clear(); stages.clear(); recall.clear(); log.clear(); prefs = null }
 }

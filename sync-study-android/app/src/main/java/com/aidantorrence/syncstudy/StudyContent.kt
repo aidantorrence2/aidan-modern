@@ -18,4 +18,4 @@ val STUDY: Map<String, BookStudy> by lazy {
 
 fun studyFor(bookId: String): BookStudy? = STUDY[bookId]
 
-fun cardById(id: String): Card? = STUDY[id.substringBefore(':')]?.cards?.firstOrNull { it.id == id }
+fun cardById(id: String): Card? = STUDY[id.substringBefore('/')]?.cards?.firstOrNull { it.id == id }

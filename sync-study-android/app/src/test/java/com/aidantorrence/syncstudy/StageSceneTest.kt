@@ -4,15 +4,15 @@ import org.junit.Assert.assertEquals
 import org.junit.Assert.assertTrue
 import org.junit.Test
 
-/** Every animated step must be pinned to a phrase that appears, in order, in its paragraph. */
+/** Every animated step must be pinned to a phrase that appears, in order, in its section. */
 class StageSceneTest {
     @Test
-    fun scenesMatchParagraphsAndPhrasesResolve() {
+    fun scenesMatchSectionsAndPhrasesResolve() {
         val problems = mutableListOf<String>()
         for ((id, scenes) in STAGE_SCENES) {
             val book = findBook(id) ?: error("unknown book $id")
             val doc = Document(book.summary)
-            assertEquals("$id scene count", doc.paragraphs.size, scenes.size)
+            assertEquals("$id scene count", doc.sections.size, scenes.size)
             problems += syncScenes(doc, scenes).problems.map { "$id: $it" }
         }
         assertTrue(problems.joinToString("\n"), problems.isEmpty())

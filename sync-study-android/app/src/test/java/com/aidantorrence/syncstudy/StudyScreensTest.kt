@@ -4,9 +4,7 @@ import android.app.Application
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.ui.test.junit4.createComposeRule
-import androidx.compose.ui.test.hasSetTextAction
 import androidx.compose.ui.test.onNodeWithText
-import androidx.compose.ui.test.performTextInput
 import androidx.compose.ui.test.onRoot
 import androidx.compose.ui.test.performClick
 import androidx.test.core.app.ApplicationProvider
@@ -45,7 +43,7 @@ class StudyScreensTest {
         val now = System.currentTimeMillis()
         val s = studyFor("atomic-habits")!!
         StudyStore.advance("atomic-habits", Stage.DONE)
-        s.cards.take(6).forEachIndexed { i, c -> StudyStore.record(c, if (i % 3 == 0) Grade.AGAIN else Grade.GOOD, i % 3 != 0, now - 3 * Scheduler.DAY) }
+        s.cards.take(6).forEachIndexed { i, c -> StudyStore.record(c, if (i % 3 == 0) Grade.AGAIN else Grade.GOOD, now - 3 * Scheduler.DAY) }
         StudyStore.introduce("atomic-habits", now - 1000)
     }
 
@@ -55,30 +53,23 @@ class StudyScreensTest {
 
     @Test fun intro() { study.go(Route.Intro("atomic-habits")); show { SyncStudyApp(reader, study) }; shot("03-intro") }
 
-    @Test fun pretest() {
-        study.go(Route.Pretest("atomic-habits", 0)); show { SyncStudyApp(reader, study) }
-        rule.onNode(hasSetTextAction()).performTextInput("maybe twice as good?"); shot("04-pretest")
-    }
-
     @Test fun checkpoint() {
         study.go(Route.Read("atomic-habits")); show { SyncStudyApp(reader, study) }
         rule.waitForIdle(); reader.checkpointForTest(0); shot("05-checkpoint")
-        rule.onNode(hasSetTextAction()).performTextInput("About 37 times better")
-        rule.onNodeWithText("Check").performClick(); shot("06-checkpoint-confidence")
-        rule.onNodeWithText("Fairly sure").performClick(); shot("07-checkpoint-revealed")
+        rule.onNodeWithText("Show answer").performClick(); shot("06-checkpoint-flipped")
+        rule.onNodeWithText("Good").performClick()
+        rule.onNodeWithText("Show answer").performClick(); rule.onNodeWithText("Forgot").performClick(); shot("07-checkpoint-done")
     }
 
-    @Test fun checkpointWrongButSure() {
+    @Test fun readingWithSections() {
         study.go(Route.Read("atomic-habits")); show { SyncStudyApp(reader, study) }
-        rule.waitForIdle(); reader.checkpointForTest(2)
-        rule.onNode(hasSetTextAction()).performTextInput("Craving")
-        rule.onNodeWithText("Check").performClick(); rule.onNodeWithText("Certain").performClick(); shot("08-checkpoint-hypercorrection")
+        rule.waitForIdle(); reader.setMode(ViewMode.FLOW); shot("08-reading-sections")
     }
 
     @Test fun recall() {
         study.go(Route.Recall("atomic-habits")); show { SyncStudyApp(reader, study) }
         rule.onNodeWithText("Compare with the key ideas").performClick()
-        rule.onNodeWithText("Never miss twice.").performClick(); shot("09-recall")
+        rule.onNodeWithText(studyFor("atomic-habits")!!.keyIdeas.last()).performClick(); shot("09-recall")
     }
 
     @Test fun reviewCards() {
@@ -87,15 +78,15 @@ class StudyScreensTest {
     }
 
     @Test fun reviewRecallRevealed() {
-        val card = studyFor("atomic-habits")!!.cards.first { it is Recall }
+        val card = studyFor("atomic-habits")!!.cards[7]
         study.startReview("atomic-habits")
         // force a session holding just this card
         StudyStore.introduce("atomic-habits")
         study.startReview("atomic-habits", limit = 40)
         show { SyncStudyApp(reader, study) }
         var guard = 0
-        while (study.session.value?.current?.id != card.id && guard++ < 40) { study.answerReview(study.session.value!!.current!!, Grade.GOOD, true); rule.waitForIdle() }
-        rule.onNodeWithText("Show answer").performClick(); shot("11-review-explain")
+        while (study.session.value?.current?.id != card.id && guard++ < 40) { study.answerReview(study.session.value!!.current!!, Grade.GOOD); rule.waitForIdle() }
+        rule.onNodeWithText("Show answer").performClick(); shot("11-review-flipped")
     }
 
     @Test fun progress() { seedProgress(); study.go(Route.Home(2)); show { SyncStudyApp(reader, study) }; shot("12-progress") }

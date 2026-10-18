@@ -41,49 +41,27 @@ class StudyModelTest {
     }
 
     @Test
-    fun confidenceShapesTheGrade() {
-        assertEquals(Grade.AGAIN, Scheduler.grade(false, Confidence.SURE))
-        assertEquals(Grade.HARD, Scheduler.grade(true, Confidence.GUESS))
-        assertEquals(Grade.GOOD, Scheduler.grade(true, Confidence.UNSURE))
-        assertEquals(Grade.EASY, Scheduler.grade(true, Confidence.SURE))
-    }
-
-    @Test
     fun interleavingAlternatesBooks() {
         val mixed = interleave(listOf(listOf("a1", "a2", "a3"), listOf("b1"), listOf("c1", "c2")))
         assertEquals(listOf("a1", "b1", "c1", "a2", "c2", "a3"), mixed)
     }
 
     @Test
-    fun answersAreForgiving() {
-        assertTrue(answerMatches("Majority", "majority"))
-        assertTrue(answerMatches("the majorty", "majority"))
-        assertTrue(answerMatches("centre", "middle", listOf("center", "centre")))
-        assertTrue(answerMatches("showing up!", "showing up"))
-        assertFalse(answerMatches("minority", "majority"))
-        assertFalse(answerMatches("", "habit"))
-    }
-
-    @Test
-    fun studyContentIsComplete() {
+    fun everyBookIsAFullSummaryWithFlashcardsForEverySection() {
         for ((id, s) in STUDY) {
-            val book = findBook(id) ?: error("no book $id")
-            val paragraphs = Document(book.summary).paragraphs.size
-            assertEquals("$id: one checkpoint per paragraph", (0 until paragraphs).toSet(), s.checkpoints.keys)
-            assertEquals("$id: three pretest questions", 3, s.pretest.size)
-            assertTrue("$id: key ideas", s.keyIdeas.size in 5..9)
+            val doc = (findBook(id) ?: error("no book $id")).document
+            assertTrue("$id: a full summary, not a skim (${doc.words.size} words)", doc.words.size >= 3_300)
+            assertEquals("$id: every section titled", doc.sections.size, doc.sectionTitles.size)
+            assertEquals("$id: flashcards for every section", (0 until doc.sections.size).toSet(), s.bySection.keys)
+            s.bySection.forEach { (n, cards) -> assertTrue("$id section $n: ${cards.size} cards", cards.size in 4..6) }
+            assertTrue("$id: key ideas", s.keyIdeas.size in 6..9)
             assertEquals("$id: unique ids", s.cards.size, s.cards.map { it.id }.toSet().size)
-            assertTrue("$id: explain cards", s.cards.count { it is Recall } >= paragraphs - 1)
-            s.cards.filterIsInstance<Mcq>().forEach { assertTrue("${it.id} options", it.options.size >= 3) }
-        }
-    }
-
-    @Test
-    fun correctAnswersAreNotAlwaysInTheSameSlot() {
-        // Options are shuffled on screen, but authored positions shouldn't give the answer away either.
-        for ((id, s) in STUDY) {
-            val positions = s.cards.filterIsInstance<Mcq>().map { it.answer }
-            assertTrue("$id: answers all in slot ${positions.firstOrNull()}", positions.toSet().size > 1 || positions.size < 3)
+            for (c in s.cards) {
+                assertTrue("${c.id}: the front is a question", c.front.trim().endsWith("?"))
+                assertFalse("${c.id}: no fill-in-the-blank", "___" in c.front)
+                assertTrue("${c.id}: the back synthesises the idea", c.back.split(" ").size >= 8)
+                assertEquals(c, cardById(c.id))
+            }
         }
     }
 }

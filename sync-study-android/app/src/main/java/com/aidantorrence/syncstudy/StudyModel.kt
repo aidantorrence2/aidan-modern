@@ -7,35 +7,27 @@ import kotlin.math.roundToLong
 /*
  * Study content and the learning engine.
  *
- * Techniques used, with the research they come from:
- *  - Pretesting: guessing before learning improves later recall, even when the guess is wrong (Richland et al. 2009).
+ * Every book's study set is a deck of flashcards: a question about an important idea on the front, a short synthesis
+ * on the back. You answer from memory, flip, and say how well you knew it. Techniques used:
  *  - Retrieval practice: answering from memory beats re-reading (Roediger & Karpicke 2006).
  *  - Spaced repetition: reviews spread over growing gaps (Cepeda et al. 2006; SM-2 style scheduling).
- *  - Interleaving: mixing topics in a review session (Rohrer & Taylor 2007).
- *  - Elaborative interrogation and self-explanation: "why" and "explain" prompts (Dunlosky et al. 2013).
- *  - Confidence ratings and the hypercorrection effect: confident errors get corrected best (Butterfield & Metcalfe 2001).
- *  - Successive relearning: a missed card comes back in the same session until answered (Rawson & Dunlosky 2011).
- *  - Free recall: writing down everything you remember before checking (a strong retrieval task).
- *  - Dual coding: every card is paired with the animated scene for its paragraph.
+ *  - Interleaving: mixing books in a review session (Rohrer & Taylor 2007).
+ *  - Successive relearning: a missed card comes back in the same session until you know it (Rawson & Dunlosky 2011).
+ *  - Free recall: writing down everything you remember from a book before checking (a strong retrieval task).
+ *  - Dual coding: every card is paired with the animated scene for its section.
  */
 
-sealed class Card(val id: String, val bookId: String, val paragraph: Int)
-
-/** Multiple choice. The first one per paragraph is that paragraph's reading checkpoint. */
-class Mcq(id: String, bookId: String, paragraph: Int, val question: String, val options: List<String>, val answer: Int,
-          val why: String, val pretest: Boolean) : Card(id, bookId, paragraph)
-
-/** Open "why / explain / apply" prompt, answered in your own words, then self-graded. */
-class Recall(id: String, bookId: String, paragraph: Int, val prompt: String, val answer: String) : Card(id, bookId, paragraph)
-
-/** Type the missing word(s). "___" marks the blank. */
-class Cloze(id: String, bookId: String, paragraph: Int, val text: String, val answer: String, val accept: List<String>) :
-    Card(id, bookId, paragraph)
+/** A flashcard about section [section] of a book. */
+class Card(val id: String, val bookId: String, val section: Int, val front: String, val back: String)
 
 class BookStudy(val bookId: String, val keyIdeas: List<String>, val cards: List<Card>) {
-    val checkpoints: Map<Int, Mcq> = cards.filterIsInstance<Mcq>().groupBy { it.paragraph }.mapValues { it.value.first() }
-    val pretest: List<Mcq> = cards.filterIsInstance<Mcq>().filter { it.pretest }
+    /** Cards per section, most important first. */
+    val bySection: Map<Int, List<Card>> = cards.groupBy { it.section }
+    /** The cards checked at the end of each section while reading, and asked in drive mode. */
+    fun checks(section: Int): List<Card> = bySection[section].orEmpty().take(CHECKS_PER_SECTION)
 }
+
+const val CHECKS_PER_SECTION = 2
 
 // ---- authoring DSL -----------------------------------------------------------------------------------
 
@@ -48,29 +40,17 @@ class StudyScope(private val bookId: String) {
     internal val ideas = mutableListOf<String>()
     internal val cards = mutableListOf<Card>()
     fun keyIdeas(vararg i: String) { ideas += i }
-    fun para(p: Int, block: ParaScope.() -> Unit) { cards += ParaScope(bookId, p).apply(block).cards }
+    fun section(n: Int, block: SectionScope.() -> Unit) { cards += SectionScope(bookId, n).apply(block).cards }
 }
 
-class ParaScope(private val bookId: String, private val p: Int) {
+class SectionScope(private val bookId: String, private val n: Int) {
     internal val cards = mutableListOf<Card>()
-    private fun nextId() = "$bookId:$p:${cards.size}"
-
-    /** [options] in any order; [answer] is the index of the correct one. */
-    fun mcq(question: String, vararg options: String, answer: Int, why: String, pretest: Boolean = false) {
-        require(options.size in 2..5 && answer in options.indices) { "bad mcq: $question" }
-        cards += Mcq(nextId(), bookId, p, question, options.toList(), answer, why, pretest)
-    }
-    fun why(prompt: String, answer: String) { cards += Recall(nextId(), bookId, p, prompt, answer) }
-    fun cloze(text: String, answer: String, vararg accept: String) {
-        require("___" in text) { "cloze needs ___: $text" }
-        cards += Cloze(nextId(), bookId, p, text, answer, accept.toList())
-    }
+    fun card(front: String, back: String) { cards += Card("$bookId/$n/${cards.size}", bookId, n, front, back) }
 }
 
 // ---- scheduling ------------------------------------------------------------------------------------------
 
 enum class Grade { AGAIN, HARD, GOOD, EASY }
-enum class Confidence { GUESS, UNSURE, SURE }
 
 /** Memory state of one card. Times in epoch millis; [interval] in days. */
 data class CardState(
@@ -86,14 +66,6 @@ data class CardState(
 object Scheduler {
     const val DAY = 86_400_000L
     const val RELEARN = 10 * 60_000L
-
-    /** Objective answers: correctness plus how sure you were. */
-    fun grade(correct: Boolean, confidence: Confidence): Grade = when {
-        !correct -> Grade.AGAIN
-        confidence == Confidence.GUESS -> Grade.HARD
-        confidence == Confidence.UNSURE -> Grade.GOOD
-        else -> Grade.EASY
-    }
 
     /** SM-2 style update. AGAIN brings the card back in 10 minutes and resets its streak. */
     fun next(prev: CardState?, grade: Grade, now: Long): CardState {
@@ -142,28 +114,4 @@ fun <T> interleave(groups: List<List<T>>): List<T> {
         while (iter.hasNext()) { val i = iter.next(); if (i.hasNext()) out += i.next() else iter.remove() }
     }
     return out
-}
-
-/** Forgiving answer check: case, punctuation and one typo per ~6 letters are ignored. */
-fun answerMatches(given: String, answer: String, accept: List<String> = emptyList()): Boolean {
-    fun norm(x: String) = x.lowercase().replace(Regex("[^a-z0-9.%]+"), " ").trim().replace(Regex("^(the|a|an) "), "")
-    val g = norm(given)
-    if (g.isEmpty()) return false
-    return (listOf(answer) + accept).any { a ->
-        val n = norm(a)
-        n == g || levenshtein(n, g) <= max(0, n.length / 6)
-    }
-}
-
-private fun levenshtein(a: String, b: String): Int {
-    val dp = IntArray(b.length + 1) { it }
-    for (i in 1..a.length) {
-        var prev = dp[0]; dp[0] = i
-        for (j in 1..b.length) {
-            val tmp = dp[j]
-            dp[j] = minOf(dp[j] + 1, dp[j - 1] + 1, prev + if (a[i - 1] == b[j - 1]) 0 else 1)
-            prev = tmp
-        }
-    }
-    return dp[b.length]
 }

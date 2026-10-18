@@ -173,7 +173,7 @@ class ReaderViewModel(app: Application) : AndroidViewModel(app) {
 
     private fun open(id: String, title: String, text: String) {
         pause()
-        checkpointParas = studyFor(id)?.checkpoints?.keys ?: emptySet()
+        checkpointSections = studyFor(id)?.bySection?.keys ?: emptySet()
         asked.clear()
         val doc = Document(text)
         val saved = prefs.getInt("word:$id", 0)
@@ -198,15 +198,15 @@ class ReaderViewModel(app: Application) : AndroidViewModel(app) {
 
     // ---- checkpoints -------------------------------------------------------------------------------
 
-    private var checkpointParas: Set<Int> = emptySet()
+    private var checkpointSections: Set<Int> = emptySet()
     private val asked = HashSet<Int>()
-    private var tickParagraph = -1
+    private var tickSection = -1
 
     fun setQuiz(on: Boolean) { _state.update { it.copy(quiz = on) } }
 
-    private fun wantsCheckpoint(p: Int) = _state.value.quiz && p in checkpointParas && p !in asked
+    private fun wantsCheckpoint(p: Int) = _state.value.quiz && p in checkpointSections && p !in asked
 
-    /** Stops narration at the end of paragraph [p] and raises its question. */
+    /** Stops narration at the end of section [p] and raises its flashcards. */
     private fun pauseForCheckpoint(p: Int) {
         generation++
         tts?.stop()
@@ -214,31 +214,31 @@ class ReaderViewModel(app: Application) : AndroidViewModel(app) {
         playingChunk = -1
         asked += p
         val doc = _state.value.document
-        val last = p >= doc.paragraphs.size - 1
+        val last = p >= doc.sections.size - 1
         focus.release()
         _state.update {
             it.copy(
                 playing = false,
                 checkpoint = p,
                 finished = last,
-                currentWord = if (last) doc.lastWord else doc.paragraphs[p + 1].first,
+                currentWord = if (last) doc.lastWord else doc.sections[p + 1].first,
             )
         }
         saveProgress()
     }
 
-    /** Question answered: carry on reading (or stay finished after the last paragraph). */
+    /** Cards answered: carry on reading (or stay finished after the last section). */
     fun continueAfterCheckpoint() {
         val finished = _state.value.finished
         _state.update { it.copy(checkpoint = null) }
         if (!finished) play()
     }
 
-    /** Wrong answer: hear the paragraph again, and be asked again at its end. */
-    fun replayParagraph(p: Int) {
+    /** Missed cards: hear the section again, and see its cards again at its end. */
+    fun replaySection(p: Int) {
         val doc = _state.value.document
         asked -= p
-        _state.update { it.copy(checkpoint = null, finished = false, currentWord = doc.paragraphs[p].first) }
+        _state.update { it.copy(checkpoint = null, finished = false, currentWord = doc.sections[p].first) }
         play()
     }
 
@@ -367,7 +367,7 @@ class ReaderViewModel(app: Application) : AndroidViewModel(app) {
         _state.update { it.copy(currentWord = from, playing = true, finished = false, error = null) }
         if (!s.silent) focus.take()
 
-        tickParagraph = doc.words[from].paragraph
+        tickSection = doc.words[from].section
         if (s.silent || !s.ttsReady) {
             silentStartWord = from
             silentStartedAt = SystemClock.elapsedRealtime()
@@ -483,10 +483,10 @@ class ReaderViewModel(app: Application) : AndroidViewModel(app) {
         }
         if (!rangeSeenEver) _state.update { it.copy(sync = SyncQuality.ESTIMATED) }
 
-        // Chunks never span paragraphs, so the end of a chunk can be the end of a paragraph.
-        val para = doc.words[chunk.endWord - 1].paragraph
-        if (chunk.endWord - 1 == doc.paragraphs[para].last && wantsCheckpoint(para)) {
-            pauseForCheckpoint(para)
+        // Chunks never span paragraphs, so the end of a chunk can be the end of a section.
+        val sec = doc.words[chunk.endWord - 1].section
+        if (chunk.endWord - 1 == doc.sections[sec].last && wantsCheckpoint(sec)) {
+            pauseForCheckpoint(sec)
             return
         }
         if (idx == doc.chunks.size - 1) finish() else saveProgress()
@@ -528,17 +528,17 @@ class ReaderViewModel(app: Application) : AndroidViewModel(app) {
         if (s.silent || !s.ttsReady) {
             val charPos = doc.words[silentStartWord].start + (now - silentStartedAt) / 1000f * cps
             if (charPos >= doc.text.length) {
-                if (wantsCheckpoint(doc.paragraphs.size - 1)) pauseForCheckpoint(doc.paragraphs.size - 1) else finish()
+                if (wantsCheckpoint(doc.sections.size - 1)) pauseForCheckpoint(doc.sections.size - 1) else finish()
                 return
             }
             val word = doc.wordAtChar(charPos.toInt(), silentStartWord, doc.words.size)
-            val para = doc.words[word].paragraph
-            if (tickParagraph in 0 until para && wantsCheckpoint(tickParagraph)) {
-                pauseForCheckpoint(tickParagraph)
-                tickParagraph = -1
+            val sec = doc.words[word].section
+            if (tickSection in 0 until sec && wantsCheckpoint(tickSection)) {
+                pauseForCheckpoint(tickSection)
+                tickSection = -1
                 return
             }
-            tickParagraph = para
+            tickSection = sec
             if (word != s.currentWord) _state.update { it.copy(currentWord = word) }
             return
         }

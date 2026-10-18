@@ -33,7 +33,6 @@ class DriveEngine(
     private val buttons = Channel<Button>(Channel.CONFLATED)
     @Volatile private var awaitingButton = false
     private val narrated = HashMap<Int, Int>()
-    private val docs = HashMap<String, Document>()
 
     val isPaused: Boolean get() = paused.value
 
@@ -105,36 +104,33 @@ class DriveEngine(
         io.say(text, VoiceRole.COACH)
     }
 
-    private fun doc(bookId: String) = docs.getOrPut(bookId) { Document(findBook(bookId)!!.summary) }
-
     private suspend fun learn(i: Int, seg: Segment.Learn) {
-        val doc = doc(seg.bookId)
-        if (seg.paragraph == 0 && narrated[i] == null) memory.startBook(seg.bookId)
-        val r = doc.paragraphs[seg.paragraph]
+        val doc = findBook(seg.bookId)!!.document
+        if (seg.section == 0 && narrated[i] == null) memory.startBook(seg.bookId)
+        val r = doc.sections[seg.section]
         val parts = sentences(doc.text.substring(doc.words[r.first].start, doc.words[r.last].end))
-        _state.update { it.copy(title = findBook(seg.bookId)?.title ?: "", label = "Part ${seg.paragraph + 1} of ${doc.paragraphs.size}") }
-        for (k in (narrated[i] ?: 0) until parts.size) {
+        _state.update { it.copy(title = findBook(seg.bookId)?.title ?: "", label = "Section ${seg.section + 1} of ${doc.sections.size}") }
+        if (narrated[i] == null) {
+            doc.sectionTitles.getOrNull(seg.section)?.let { speak("Section ${seg.section + 1}: $it.") }
+            narrated[i] = 0
+        }
+        for (k in narrated.getValue(i) until parts.size) {
             _state.update { it.copy(phase = DrivePhase.NARRATING, line = parts[k]) }
             io.say(parts[k], VoiceRole.NARRATOR)
             narrated[i] = k + 1
         }
-        recapFor(seg.bookId, seg.paragraph)?.let { speak(it, label = "In short") }
-        memory.setParagraph(seg.bookId, seg.paragraph + 1)
+        recapFor(seg.bookId, seg.section)?.let { speak(it, label = "In short") }
+        memory.setSection(seg.bookId, seg.section + 1)
     }
 
     /** Ask, wait in silence while the listener answers in their head, then read the answer. */
     private suspend fun ask(card: Card, label: String) {
-        val q = spoken(card)
         _state.update { it.copy(title = findBook(card.bookId)?.title ?: "") }
         io.chime(Chime.QUESTION)
-        speak(q.prompt, DrivePhase.QUESTION, label)
+        speak(card.front, DrivePhase.QUESTION, label)
         _state.update { it.copy(phase = DrivePhase.THINKING) }
         if (waitButton(timings.thinkMs) == Button.PREVIOUS) { after = After.REPEAT; return }
-        val answer = when (card) {
-            is Mcq -> "The answer: ${q.answer.trimEnd('.')}. ${card.why}"
-            is Cloze -> "The answer: ${card.answer}. ${explanation(card)}"
-            is Recall -> "A strong answer: ${card.answer}"
-        }
+        val answer = card.back
         // From here on, next/back mean "knew it" / "didn't", even if pressed while the answer is still being read.
         awaitingButton = true
         val pressed = try {
@@ -144,8 +140,8 @@ class DriveEngine(
             awaitingButton = false
         }
         when (pressed) {
-            Button.NEXT -> { io.chime(Chime.RIGHT); record(card, Grade.GOOD, true) }
-            Button.PREVIOUS -> { io.chime(Chime.WRONG); record(card, Grade.AGAIN, false) }
+            Button.NEXT -> { io.chime(Chime.RIGHT); record(card, Grade.GOOD) }
+            Button.PREVIOUS -> { io.chime(Chime.WRONG); record(card, Grade.AGAIN) }
             null -> Unit
         }
     }
@@ -186,8 +182,8 @@ class DriveEngine(
         }
     }
 
-    private fun record(card: Card, grade: Grade, correct: Boolean) {
-        memory.record(card, grade, correct)
-        _state.update { it.copy(asked = it.asked + 1, right = it.right + if (correct) 1 else 0) }
+    private fun record(card: Card, grade: Grade) {
+        memory.record(card, grade)
+        _state.update { it.copy(asked = it.asked + 1, right = it.right + if (grade != Grade.AGAIN) 1 else 0) }
     }
 }

@@ -10,7 +10,6 @@ import kotlinx.coroutines.flow.update
 sealed class Route {
     data class Home(val tab: Int = 0) : Route()
     data class Intro(val bookId: String) : Route()
-    data class Pretest(val bookId: String, val index: Int = 0) : Route()
     data class Read(val bookId: String, val quiz: Boolean = true) : Route()
     data class Recall(val bookId: String) : Route()
     data class Summary(val bookId: String) : Route()
@@ -40,8 +39,8 @@ class StudyViewModel(app: Application) : AndroidViewModel(app) {
     private val _session = MutableStateFlow<ReviewSession?>(null)
     val session: StateFlow<ReviewSession?> = _session.asStateFlow()
 
-    /** Checkpoint results from the current reading of each book: paragraph → answered correctly. */
-    val checkpointResults = HashMap<String, MutableMap<Int, Boolean>>()
+    /** Checkpoint results from the current reading of each book: card id → known. */
+    val checkpointResults = HashMap<String, MutableMap<String, Boolean>>()
 
     fun go(r: Route) { _route.value = r }
 
@@ -50,7 +49,6 @@ class StudyViewModel(app: Application) : AndroidViewModel(app) {
         _route.value = when (val r = _route.value) {
             is Route.Home -> if (r.tab != 0) Route.Home(0) else return false
             is Route.Intro -> Route.Home(0)
-            is Route.Pretest -> Route.Intro(r.bookId)
             is Route.Read -> if (r.bookId == CUSTOM_BOOK_ID) Route.Home(0) else Route.Intro(r.bookId)
             is Route.Recall -> Route.Intro(r.bookId)
             is Route.Summary -> Route.Home(0)
@@ -62,26 +60,14 @@ class StudyViewModel(app: Application) : AndroidViewModel(app) {
     // ---- book flow -----------------------------------------------------------------------------------
 
     fun startBook(bookId: String) {
-        val study = studyFor(bookId)
-        val unanswered = study?.pretest?.indexOfFirst { StudyStore.pretestGuess(it.id) == null } ?: -1
-        _route.value = if (StudyStore.stage(bookId) == Stage.NEW && unanswered >= 0) Route.Pretest(bookId, unanswered) else Route.Read(bookId)
+        if (StudyStore.stage(bookId) == Stage.NEW) checkpointResults.remove(bookId)
+        StudyStore.advance(bookId, Stage.STARTED)
+        _route.value = Route.Read(bookId)
     }
 
-    fun answerPretest(bookId: String, index: Int, guess: String) {
-        val pre = studyFor(bookId)?.pretest ?: return
-        pre.getOrNull(index)?.let { StudyStore.setPretest(it.id, guess.trim()) }
-        if (index + 1 < pre.size) {
-            _route.value = Route.Pretest(bookId, index + 1)
-        } else {
-            StudyStore.advance(bookId, Stage.PRETESTED)
-            checkpointResults.remove(bookId)
-            _route.value = Route.Read(bookId)
-        }
-    }
-
-    fun recordCheckpoint(card: Mcq, correct: Boolean, confidence: Confidence) {
-        StudyStore.record(card, Scheduler.grade(correct, confidence), correct)
-        checkpointResults.getOrPut(card.bookId) { mutableMapOf() }[card.paragraph] = correct
+    fun recordCheckpoint(card: Card, grade: Grade) {
+        StudyStore.record(card, grade)
+        checkpointResults.getOrPut(card.bookId) { mutableMapOf() }[card.id] = grade != Grade.AGAIN
     }
 
     fun finishReading(bookId: String) {
@@ -109,8 +95,9 @@ class StudyViewModel(app: Application) : AndroidViewModel(app) {
         _route.value = Route.Review
     }
 
-    fun answerReview(card: Card, grade: Grade, correct: Boolean) {
-        StudyStore.record(card, grade, correct)
+    fun answerReview(card: Card, grade: Grade) {
+        StudyStore.record(card, grade)
+        val correct = grade != Grade.AGAIN
         _session.update { s ->
             if (s == null) return@update null
             var q = s.queue

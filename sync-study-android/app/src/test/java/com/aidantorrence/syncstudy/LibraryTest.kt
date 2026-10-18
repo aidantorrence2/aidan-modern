@@ -24,8 +24,10 @@ class LibraryTest {
     fun everySummaryIsSubstantialAndReadable() {
         for (book in LIBRARY) {
             val doc = Document(book.summary)
-            assertTrue("${book.title} is too short", doc.words.size >= 450)
-            assertTrue("${book.title} should have several paragraphs", doc.paragraphs.size >= 4)
+            assertTrue("${book.title} is too short", doc.words.size >= 3_300)
+            assertTrue("${book.title} should have several sections", doc.sections.size >= 6)
+            assertTrue("${book.title}: sections have several paragraphs", doc.paragraphs.size >= doc.sections.size * 3)
+            assertTrue("${book.title}: headings are never spoken", "##" !in doc.text)
             assertTrue("${book.title} should chunk", doc.chunks.isNotEmpty())
             assertTrue(book.blurb.isNotBlank())
         }

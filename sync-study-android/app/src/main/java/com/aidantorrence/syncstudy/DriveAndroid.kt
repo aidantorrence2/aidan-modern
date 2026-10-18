@@ -133,12 +133,12 @@ class AndroidDriveIO(
 /** Drive sessions read and write the same progress as the rest of the app. */
 class StoreMemory(context: Context) : DriveMemory {
     private val prefs = context.getSharedPreferences("drive", Context.MODE_PRIVATE)
-    override fun record(card: Card, grade: Grade, correct: Boolean) = StudyStore.record(card, grade, correct)
+    override fun record(card: Card, grade: Grade) = StudyStore.record(card, grade)
     override fun due(): List<Card> = StudyStore.due().sortedBy { StudyStore.state(it.id)?.due ?: 0L }
-    override fun paragraph(bookId: String) = prefs.getInt("para:$bookId", 0)
-    override fun setParagraph(bookId: String, p: Int) { prefs.edit().putInt("para:$bookId", p).apply() }
+    override fun section(bookId: String) = prefs.getInt("para:$bookId", 0)
+    override fun setSection(bookId: String, s: Int) { prefs.edit().putInt("para:$bookId", s).apply() }
     override fun isNew(bookId: String) = StudyStore.stage(bookId) == Stage.NEW
-    override fun startBook(bookId: String) = StudyStore.advance(bookId, Stage.PRETESTED)
+    override fun startBook(bookId: String) = StudyStore.advance(bookId, Stage.STARTED)
     override fun finishBook(bookId: String) { StudyStore.advance(bookId, Stage.DONE); StudyStore.introduce(bookId) }
     fun restart(bookId: String) { prefs.edit().putInt("para:$bookId", 0).apply() }
 }

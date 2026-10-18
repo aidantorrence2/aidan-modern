@@ -103,8 +103,8 @@ private fun DriveSetup(last: DriveState) {
                     BookVisual(BookArt(b.visual, b.color), clock, Modifier.fillMaxWidth().height(70.dp).clip(RoundedCornerShape(10.dp)))
                     Spacer(Modifier.height(6.dp))
                     Text(b.title, color = Color.White, fontSize = 12.sp, lineHeight = 15.sp, maxLines = 2, overflow = TextOverflow.Ellipsis)
-                    val p = memory.paragraph(b.id); val n = Document(b.summary).paragraphs.size
-                    Text(if (p == 0) "not started" else if (p >= n) "finished" else "part ${p + 1} of $n", color = TextMuted, fontSize = 10.sp)
+                    val p = memory.section(b.id); val n = b.document.sections.size
+                    Text(if (p == 0) "not started" else if (p >= n) "finished" else "section ${p + 1} of $n", color = TextMuted, fontSize = 10.sp)
                 }
             }
         }
@@ -123,8 +123,8 @@ private fun DriveSetup(last: DriveState) {
         Column(Modifier.fillMaxWidth().clip(RoundedCornerShape(16.dp)).background(Card2).padding(14.dp), verticalArrangement = Arrangement.spacedBy(4.dp)) {
             Text("This session, about ${(planSeconds(plan, settings) / 60f).toInt().coerceAtLeast(1)} min", color = Color.White, fontWeight = FontWeight.Bold, fontSize = 15.sp)
             val books = plan.filterIsInstance<Segment.Learn>().map { it.bookId }.distinct()
-            if (learn > 0) Text("• $learn ${if (learn == 1) "part" else "parts"} of ${books.joinToString(", then ") { findBook(it)?.title ?: it }}, each with a one-line takeaway", color = TextMuted, fontSize = 13.sp)
-            if (checks > 0) Text("• $checks check questions, each asked one part later so you really recall it", color = TextMuted, fontSize = 13.sp)
+            if (learn > 0) Text("• $learn ${if (learn == 1) "section" else "sections"} of ${books.joinToString(", then ") { findBook(it)?.title ?: it }}, each with a one-line takeaway", color = TextMuted, fontSize = 13.sp)
+            if (checks > 0) Text("• $checks flashcards on the key ideas, each asked one section later so you really recall it", color = TextMuted, fontSize = 13.sp)
             if (reviews > 0) Text("• $reviews review questions mixed in from your other books", color = TextMuted, fontSize = 13.sp)
             if (plan.any { it is Segment.Recall }) Text("• a 30-second brain dump to finish the book", color = TextMuted, fontSize = 13.sp)
             Text("Each question gets a 10-second pause to answer in your head, then the answer. No microphone.", color = TextMuted, fontSize = 12.sp, lineHeight = 16.sp, modifier = Modifier.padding(top = 4.dp))

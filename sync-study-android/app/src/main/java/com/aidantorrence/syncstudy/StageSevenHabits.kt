@@ -326,8 +326,8 @@ val SEVEN_HABITS_STAGE = listOf(
         add("minus", Tag("− drained", Pal.Coral), 200, 112)
         add("d1", Tag("kept a promise", Pal.Gold), 92, 52)
         add("d2", Tag("clear expectations", Pal.Gold), 92, 76)
-        add("d3", Tag("sincere apology", Pal.Gold), 92, 100)
-        add("d4", Tag("loyal when they're away", Pal.Gold), 300, 52)
+        add("d3", Tag("loyal when they're away", Pal.Gold), 92, 100)
+        add("d4", Tag("sincere apology", Pal.Gold), 300, 52)
         add("love", Heart(Pal.Rose), 310, 120, 0.5)
         add("cmp", Compass(), 600, 140)
         add("trick", Caption("not a trick…", 14f, Pal.White), 600, 56)
@@ -337,7 +337,7 @@ val SEVEN_HABITS_STAGE = listOf(
             show("plus"); set("jar", "level", 0.45, 900); hide("plus", delay = 1100)
             show("minus", delay = 1200); set("jar", "level", 0.12, 900, 1200); hide("minus", delay = 2300)
         }
-        val deposits = listOf("Keeping promises", "clarifying expectations", "apologizing sincerely", "loyalty to those who are absent")
+        val deposits = listOf("keeping commitments", "clarifying expectations", "loyalty to those who are absent", "apologizing sincerely")
         deposits.forEachIndexed { i, phrase ->
             beat(phrase) {
                 show("c$i"); move("c$i", 200, 146, 700, 100, Ease.In); hide("c$i", delay = 780, dur = 120)

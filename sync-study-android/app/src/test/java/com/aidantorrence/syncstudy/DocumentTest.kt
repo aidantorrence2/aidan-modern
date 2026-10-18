@@ -1,6 +1,7 @@
 package com.aidantorrence.syncstudy
 
 import org.junit.Assert.assertEquals
+import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue
 import org.junit.Test
 
@@ -88,5 +89,23 @@ class DocumentTest {
         assertEquals(2, orpIndex(8))
         assertEquals(3, orpIndex(12))
         assertEquals(4, orpIndex(20))
+    }
+
+    @Test
+    fun headingsStartSectionsAndAreNotSpoken() {
+        val doc = Document("## First part\n\nOne two three.\n\nFour five.\n\n## Second part\n\nSix seven eight.")
+        assertEquals(listOf("First part", "Second part"), doc.sectionTitles)
+        assertEquals(listOf(0..4, 5..7), doc.sections)
+        assertEquals(3, doc.paragraphs.size)
+        assertFalse("#" in doc.text)
+        assertEquals("Six", doc.words[doc.sections[1].first].text)
+        assertEquals(listOf(0, 0, 0, 0, 0, 1, 1, 1), doc.words.map { it.section })
+    }
+
+    @Test
+    fun withoutHeadingsEachParagraphIsASection() {
+        val doc = Document(text)
+        assertEquals(doc.paragraphs, doc.sections)
+        assertTrue(doc.sectionTitles.isEmpty())
     }
 }

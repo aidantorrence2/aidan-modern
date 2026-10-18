@@ -33,7 +33,7 @@ class StageRenderTest {
     private val out = File("build/stage").apply { mkdirs() }
     private val books = System.getProperty("stage.books")?.takeIf { it.isNotBlank() }?.split(',')?.toSet()
     private val frames = System.getProperty("stage.frames") == "true"
-    /** Optional "book-paragraph" keys (e.g. atomic-habits-0) to limit frame sequences to. */
+    /** Optional "book-section" keys (e.g. atomic-habits-0) to limit frame sequences to. */
     private val frameScenes = System.getProperty("stage.frameScenes")?.takeIf { it.isNotBlank() }?.split(',')?.toSet()
     private val scale = 2f
 
@@ -43,7 +43,7 @@ class StageRenderTest {
 
     /** Seconds at which each beat fires, from the voice's average speaking rate. */
     private fun beatTimes(doc: Document, scene: SyncedScene, paragraph: Int): FloatArray {
-        val start = doc.words[doc.paragraphs[paragraph].first].start
+        val start = doc.words[doc.sections[paragraph].first].start
         return FloatArray(scene.beatWords.size) { (doc.words[scene.beatWords[it]].start - start) / DEFAULT_CHARS_PER_SECOND }
     }
 
@@ -69,9 +69,9 @@ class StageRenderTest {
             val sync = syncScenes(doc, scenes)
             sync.scenes.forEachIndexed { p, scene ->
                 val times = beatTimes(doc, scene, p)
-                val end = doc.words[doc.paragraphs[p].last].end - doc.words[doc.paragraphs[p].first].start
+                val end = doc.words[doc.sections[p].last].end - doc.words[doc.sections[p].first].start
                 val duration = end / DEFAULT_CHARS_PER_SECOND
-                // Still: the end of the paragraph, everything settled.
+                // Still: the end of the section, everything settled.
                 save(render(scene, times, duration + 4f), File(out, "stills/$id-$p.png"))
                 // A frame just after each beat settles, to review each step.
                 times.forEachIndexed { i, tb -> save(render(scene, times, tb + 1.6f), File(out, "steps/$id-$p/step-${"%02d".format(i)}.png")) }
