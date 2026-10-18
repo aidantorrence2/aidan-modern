@@ -295,7 +295,9 @@
       "payload": {
         "to": "jamie@example.com",
         "subject": "Thank you for yesterday’s portrait shoot",
-        "body": "Jamie, thank you for yesterday’s portrait shoot—it was a pleasure working with you.\nI really appreciate your time and creativity. —Aidan"
+        "body": "Jamie, thank you for yesterday’s portrait shoot—it was a pleasure working with you.\nI really appreciate your time and creativity. —Aidan",
+        "result": "Sent the approved two-line thank-you to jamie@example.com via Gmail. Message ID: 1a150d001f1cba23; label: SENT.",
+        "result_at": "2026-10-18T20:59:46Z"
       },
       "created": "2026-10-18T20:58:14Z",
       "status": "approved",
