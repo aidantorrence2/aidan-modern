@@ -3172,6 +3172,453 @@
     }
   },
   {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-18",
+    "slug": "weekend-pause",
+    "name": "Weekend Pause",
+    "need": "Want to drink less without quitting forever?",
+    "headline": "Set a limit for each night out, check in while you're there, and see what it cost you the next morning. Plain pricing, a reminder before any trial ends, cancel in one tap.",
+    "buyer": "adults who want to cut back on drinking",
+    "bullets": [
+      "Plan a drink limit per event and check in live during the night.",
+      "A morning recap of what last night cost: money, sleep and mood.",
+      "Moderation streaks with no all-or-nothing pressure, and billing with no surprise charges."
+    ],
+    "price": "$6.99/month",
+    "priceUsd": 7,
+    "priceNote": "or $34.99 a year; reminder before any trial ends",
+    "reasonPrompt": "What would cutting back look like for you?",
+    "faq": [
+      {
+        "q": "Who is it for?",
+        "a": "Adults 18 and over. It is a habit tool, not medical treatment."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-18",
+      "summary": "Drink-less apps have around 100,000 paying subscribers at one company, while paying users complain about surprise and repeated charges.",
+      "wtp": "Reframe had about 100,000 paying subscribers averaging $14 a month (Fortune, 2022); I Am Sober sells $9.99/month and $29.99-$39.99/year plans with 189K ratings.",
+      "signals": [
+        {
+          "url": "https://fortune.com/2022/03/05/reframe-app-moderate-drinking-raises-venture-capital/",
+          "who": "Reframe (Fortune)",
+          "date": "2022-03-05",
+          "quote": "approximately 100,000 paying subscribers",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/app/id672904239",
+          "who": "I Am Sober (App Store)",
+          "date": "2026-10-18",
+          "quote": "4.9 stars from 189K ratings; $9.99/mo, $29.99-$39.99/yr",
+          "seen": "opened"
+        },
+        {
+          "url": "https://ca.trustpilot.com/review/reframeapp.com?page=4",
+          "who": "raynjuls KS (Reframe reviewer)",
+          "date": "2026-04-21",
+          "quote": "Charged $79 immediately. App isn't worth 79¢.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://ca.trustpilot.com/review/reframeapp.com?page=4",
+          "who": "SUSAN MORRIS (Reframe reviewer)",
+          "date": "2026-03-08",
+          "quote": "Charged me 3 times for a subscription I didn't ask for",
+          "seen": "opened"
+        },
+        {
+          "url": "https://trustmrr.com/startup/livesober",
+          "who": "LiveSober",
+          "date": "2026-04-20",
+          "quote": "$402 MRR, 96 subscriptions",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Reframe, Sunnyside, I Am Sober, LiveSober.",
+      "risks": "No treatment claims; 18+."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-18",
+    "slug": "puff-down",
+    "name": "Puff Down",
+    "need": "Tried quitting vaping cold turkey and it didn't stick?",
+    "headline": "Log your puffs and get a weekly taper target that brings them down step by step, with a running count of the money you're not spending on juice.",
+    "buyer": "adults who vape and want to quit by cutting down gradually",
+    "bullets": [
+      "Log puffs and nicotine strength; get an automatic weekly taper target.",
+      "See the money you've kept instead of spending it on pods and juice.",
+      "Check-ins when cravings spike, and an optional quit buddy."
+    ],
+    "price": "$29.99/year",
+    "priceUsd": 30,
+    "priceNote": "after a 3-day trial, no weekly billing",
+    "reasonPrompt": "How much do you vape a day now, and what have you tried before?",
+    "faq": [
+      {
+        "q": "Who is it for?",
+        "a": "Adults 18 and over. It is a habit tool, not medical treatment."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-18",
+      "summary": "Quit-vaping apps earn real subscription revenue and good reviews; the biggest sells a weekly plan.",
+      "wtp": "Puff Count listed $124,300 revenue over 12 months at $9/week after a trial; QuitSure sells programs from $9.99 to $49.99.",
+      "signals": [
+        {
+          "url": "https://flippa.com/11674898-puff-count",
+          "who": "Puff Count (Flippa listing)",
+          "date": "2026-10-18",
+          "quote": "$124,300 revenue over the trailing 12 months, 450K downloads, $9/week",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/quitsure-quit-smoking-vaping/id1523992725",
+          "who": "Kipton. (QuitSure reviewer)",
+          "date": "2024-02-20",
+          "quote": "It works! For vaping too!",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/quitsure-quit-smoking-vaping/id1523992725",
+          "who": "caekkkkk (QuitSure reviewer)",
+          "date": "2023-08-01",
+          "quote": "nothing worked until this app.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://app.acquire.com/startup/wsxxfbfz7f-portfolio-of-ios-subscription-apps-for-quitting-vaping-alcohol-and-smoking",
+          "who": "Quit-vaping app portfolio (Acquire listing)",
+          "date": "2026-10-18",
+          "quote": "$513 MRR, $5,074 revenue",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Puff Count, QuitSure, Smoke Free, Quittr.",
+      "risks": "Must keep minors out; no cessation claims."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-18",
+    "slug": "say-it-out-loud",
+    "name": "Say It Out Loud",
+    "need": "Done Duolingo for years and still can't hold a conversation?",
+    "headline": "Ten-minute voice conversations in real-life situations, with feedback on pronunciation and filler words, until you're ready for your first real conversation.",
+    "buyer": "adults learning a language who can read it but freeze when speaking",
+    "bullets": [
+      "Speak through real scenarios out loud: ordering, small talk, work, travel.",
+      "Pronunciation and filler-word feedback after every session.",
+      "A goal for your first real conversation, with a progress score."
+    ],
+    "price": "$12.99/month",
+    "priceUsd": 13,
+    "priceNote": "or $79.99 a year",
+    "reasonPrompt": "Which language, and what happens when you try to speak it?",
+    "demand": {
+      "checked": "2026-10-18",
+      "summary": "Speaking-practice apps earn large verified and reported revenue, and long-time learners say flashcard apps left them unable to speak.",
+      "wtp": "Verbi has $21,441 MRR from 4,659 subscriptions; Praktika reported $20M ARR; a confidential tutoring and AI speaking startup shows $151k MRR.",
+      "signals": [
+        {
+          "url": "https://trustmrr.com/startup/verbi",
+          "who": "Verbi",
+          "date": "2026-10-18",
+          "quote": "speaking, not endless flashcards. $21,441 MRR, 4,659 subscriptions",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.arr.club/praktika/praktika-arr-at-20m-in-1-year",
+          "who": "Praktika (ARR Club)",
+          "date": "2024-05-22",
+          "quote": "reported $20M ARR",
+          "seen": "opened"
+        },
+        {
+          "url": "https://frenchteachercarlito.substack.com/p/ftc-85-comment-duolingo-rend-lapprentissage/comments",
+          "who": "Gail L Hutchins",
+          "date": "2024-02-08",
+          "quote": "I still am not comfortable to speak in French",
+          "seen": "opened"
+        },
+        {
+          "url": "https://thedial.world/articles/news/issue-22/duolingo-language-learning-fluency",
+          "who": "Imogen West-Knights (The Dial)",
+          "date": "2024",
+          "quote": "left me more or less mute.",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Speak, Praktika, Verbi, Duolingo Max, italki.",
+      "risks": "AI voice costs; incumbents adding speaking."
+    },
+    "faq": [
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ]
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-18",
+    "slug": "oral-exam-coach",
+    "name": "Oral Exam Coach",
+    "need": "Need your French speaking score for Canada and can't afford a tutor every week?",
+    "headline": "Timed mock speaking tasks in the TCF and TEF Canada format, scored against the band descriptors, with a better version of each answer and a plan to your test date.",
+    "buyer": "people preparing the speaking section of TCF Canada or TEF Canada for immigration",
+    "bullets": [
+      "Mock speaking tasks in the real exam format, timed.",
+      "Feedback against the published band descriptors, with a rewrite of your answer.",
+      "A countdown plan to your test date."
+    ],
+    "price": "$29 for 30 days",
+    "priceUsd": 29,
+    "priceNote": "one-off pass",
+    "reasonPrompt": "When is your test, and which score do you need?",
+    "faq": [
+      {
+        "q": "Is this official?",
+        "a": "No. It is independent practice. Only the official exam gives a real score."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-18",
+      "summary": "A TCF Canada practice-test business earns tens of thousands a month, and learners say they can read but not speak.",
+      "wtp": "FreeTCF shows $24k MRR from TCF Canada practice tests; Verbi $21k MRR for speaking practice.",
+      "signals": [
+        {
+          "url": "https://trustmrr.com/category/education",
+          "who": "FreeTCF (TrustMRR education category)",
+          "date": "2026-10-18",
+          "quote": "FreeTCF $24k MRR",
+          "seen": "opened"
+        },
+        {
+          "url": "https://trustmrr.com/category/education",
+          "who": "Verbi (TrustMRR education category)",
+          "date": "2026-10-18",
+          "quote": "Verbi $21k MRR",
+          "seen": "opened"
+        },
+        {
+          "url": "https://frenchteachercarlito.substack.com/p/ftc-85-comment-duolingo-rend-lapprentissage/comments",
+          "who": "Gail L Hutchins",
+          "date": "2024-02-08",
+          "quote": "I still am not comfortable to speak in French",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "FreeTCF, exam tutors, AI raters for IELTS.",
+      "risks": "Thinner evidence; must not imply an official score."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-18",
+    "slug": "lights-down",
+    "name": "Lights Down",
+    "need": "Brain won't switch off, and you end up scrolling until 1am?",
+    "headline": "A bedtime set from your wake time, a nudge to put the phone down, and a twenty-minute wind-down that gets you to sleep instead of to the next video.",
+    "buyer": "adults who stay up later than they mean to",
+    "bullets": [
+      "A suggested bedtime from your wake time, with a phone-down nudge.",
+      "A twenty-minute wind-down: sounds, a brain-dump note, breathing.",
+      "A weekly consistency score. A wellness habit, not a treatment."
+    ],
+    "price": "$39.99/year",
+    "priceUsd": 40,
+    "priceNote": "one price, cancel any time",
+    "reasonPrompt": "What usually keeps you up?",
+    "faq": [
+      {
+        "q": "Who is it for?",
+        "a": "Adults 18 and over. It is a habit tool, not medical treatment."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-18",
+      "summary": "Sleep apps sell subscriptions at scale: one has 768k paying subscribers, others hundreds of thousands of ratings.",
+      "wtp": "Sleep Cycle reported 768k paying subscribers and SEK 247.9M net sales; Rise premium is $69.99; BetterSleep sells $11.99-$99.99 plans.",
+      "signals": [
+        {
+          "url": "https://www.inderes.fi/releases/sleep-cycle-year-end-report-a-year-of-deliberate-choices",
+          "who": "Sleep Cycle AB",
+          "date": "2026-02-04",
+          "quote": "768k paying subscribers; net sales SEK 247.9M",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/rise-sleep-tracker/id1453884781",
+          "who": "The Builder.... (Rise reviewer)",
+          "date": "2024-06-26",
+          "quote": "cheaper options are available to help with both Sleep Debt, and with waking",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/app/id314498713",
+          "who": "perez unicorn (BetterSleep reviewer)",
+          "date": "2021-04-18",
+          "quote": "it helps me fall asleep faster since I have a hard time anyways",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Sleep Cycle, Rise, BetterSleep, Calm.",
+      "risks": "Saturated; no insomnia treatment claims."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-18",
+    "slug": "pay-me-first",
+    "name": "Pay Me First",
+    "need": "You can afford to save on paper, but nothing's left at the end of the month?",
+    "headline": "On payday, it tells you what to move to savings first, keeps a buffer for surprise bills, and shows what you can safely spend each day after that.",
+    "buyer": "people who earn enough to save but never manage to",
+    "bullets": [
+      "On payday, a savings amount to move first, sized to your bills.",
+      "A buffer for surprise costs, so one bad month doesn't wipe out the plan.",
+      "A safe-to-spend number for each day; when a debt is paid off, the payment rolls into savings."
+    ],
+    "price": "$4.99/month",
+    "priceUsd": 5,
+    "priceNote": "or $39.99 a year",
+    "reasonPrompt": "What happens to your money between payday and the end of the month?",
+    "faq": [
+      {
+        "q": "Does it move my money?",
+        "a": "No. It tells you what to move and when. You stay in control of your bank."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-18",
+      "summary": "People in money forums say they earn enough to save but have nothing left, and budgeting apps charge for exactly this help.",
+      "wtp": "YNAB sells $14.99 and $109.00 plans with 62K ratings; Cleo reported $250M ARR (much of it from cash advances).",
+      "signals": [
+        {
+          "url": "https://www.mumsnet.com/talk/money-matters/3846763-Is-anyone-else-not-able-to-save-every-month",
+          "who": "leafygarden (Mumsnet)",
+          "date": "2020-03-13",
+          "quote": "the amount into savings looks like a big fat zero.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/money-matters/3846763-Is-anyone-else-not-able-to-save-every-month",
+          "who": "marblesgoing (Mumsnet)",
+          "date": "2020-03-14",
+          "quote": "every month there seems to be unexpected stuff.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/5282915/can-afford-to-save-on-paper-not-in-reality/p3",
+          "who": "Purplesky_2 (MoneySavingExpert)",
+          "date": "2015-07-31",
+          "quote": "there IS nothing left at the end of a month.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/ynab/id1010865877",
+          "who": "Michelledvm (YNAB reviewer)",
+          "date": "2024-02-16",
+          "quote": "Worth every penny!",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.arr.club/cleo/cleo-arr-hits-250m",
+          "who": "Cleo (ARR Club)",
+          "date": "2025-07-25",
+          "quote": "$250M ARR",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "YNAB, Cleo, Monarch, Rocket Money.",
+      "risks": "Bank data access if it links accounts."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-18",
+    "slug": "leak-finder",
+    "name": "Leak Finder",
+    "need": "Money keeps disappearing on snacks and subscriptions you don't notice?",
+    "headline": "Your small purchases grouped into weekly leaks with their yearly totals, every subscription listed with a cancel link, and the week's leftovers swept to savings.",
+    "buyer": "people who want to stop small spending from eating their savings",
+    "bullets": [
+      "Small purchases grouped into weekly leaks, with what each costs you in a year.",
+      "Every subscription in one list with a link to cancel it.",
+      "A weekly nudge to move what's left to savings."
+    ],
+    "price": "$3.99/month",
+    "priceUsd": 4,
+    "priceNote": "cancel any time",
+    "reasonPrompt": "Where do you think your money leaks?",
+    "demand": {
+      "checked": "2026-10-18",
+      "summary": "Savers in money forums name snacks and subscriptions as the leak, and budgeting apps charge for tracking it.",
+      "wtp": "YNAB sells $14.99 and $109.00 plans; Rocket Money and Cleo sell paid tiers (snippet only).",
+      "signals": [
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/5282915/can-afford-to-save-on-paper-not-in-reality/p3",
+          "who": "dcouponzzzz (MoneySavingExpert)",
+          "date": "2016-03-04",
+          "quote": "buying snacks and stupid purchases like game subscriptions.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/money-matters/3846763-Is-anyone-else-not-able-to-save-every-month",
+          "who": "leafygarden (Mumsnet)",
+          "date": "2020-03-13",
+          "quote": "the amount into savings looks like a big fat zero.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/ynab/id1010865877",
+          "who": "YNAB (App Store)",
+          "date": "2026-10-18",
+          "quote": "62K ratings; in-app purchases $14.99 and $109.00",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Rocket Money, Cleo, Emma, YNAB.",
+      "risks": "Commoditised; bank data costs."
+    },
+    "faq": [
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ]
+  },
+  {
     "slug": "pitch-pilot",
     "name": "Pitch Pilot",
     "headline": "Find the published press and booking contacts for any magazine, agency or talent, and get the cold pitch drafted, in minutes.",
