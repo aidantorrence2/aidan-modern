@@ -1850,5 +1850,40 @@
       "pitchSubject": "Guests get their event photos before they leave (pre-launch)",
       "pitch": "Hi {first},\n\nI'm Aidan, a photographer. I saw {specific reference}.\n\nI'm deciding whether to build a small tool for events: frames push to an event page through the night, guests scan a QR and take a selfie to get only the frames they're in with your credit on each, and the organiser gets the full set and a pickup count next morning, $9 per event or $15 a month.\n\nIf your galleries go unopened, the pre-launch page has an 'I'd pay' button: aidantorrence.com/offers/event-pickup?src=email\n\nIf not, one line on why is just as useful.\n\nBest,\nAidan"
     }
+  },
+  {
+    "slug": "price-guide",
+    "name": "Price Guide",
+    "headline": "Your packages in one place, and every pricing guide, web page and inquiry reply built from it, so a price change happens once instead of in six PDFs you forgot about.",
+    "buyer": "wedding, family and portrait photographers with three versions of their pricing guide in the wild and a website that still shows last year's prices",
+    "bullets": [
+      "Enter packages, add-ons and policies once. Pick a template; the PDF guide, a private web version and a plain-text block for inquiry replies are generated and kept in sync.",
+      "Change a price and every live link updates; old PDFs you sent show a quiet 'newer version' note so a client never books from a stale one.",
+      "Each guide link records opens and time on the pricing page, so you know who read it before the call and which package they lingered on."
+    ],
+    "price": "$5/month",
+    "priceUsd": 5,
+    "priceNote": "unlimited guides and links",
+    "status": "live",
+    "launched": "2026-10-18",
+    "reasonPrompt": "How many versions of your pricing guide exist right now, and when did a client last quote you a price you no longer charge?",
+    "faq": [
+      {
+        "q": "Can I use my own design?",
+        "a": "The first templates are clean and typographic with your logo, colours and photos. Uploading a fully custom layout comes later if people ask."
+      },
+      {
+        "q": "Does it take payments?",
+        "a": "No. It is the guide, kept current and tracked. Booking and deposits stay wherever you take them today."
+      }
+    ],
+    "kit": {
+      "hook": "Raised my prices in January. A client booked in April from the PDF I sent her sister in 2024.",
+      "script": "Open on a folder: 'pricing guide FINAL', 'FINAL v2', 'FINAL 2025 use this'. VO: 'Three finals. One website still on last year.' Cut to a phone: packages entered once, a template picked, a PDF, a web link and a text block appear. A price changes; every link updates; an old PDF shows 'newer version'. Cut to a guide link's opens and time on page. VO: 'Change it once. It changes everywhere. And you know who read it.' End card: 'Price Guide. $5 a month. Pre-launch, link in bio.'",
+      "caption": "Packages entered once; the PDF guide, web page and inquiry text stay in sync and tell you who read them. $5/month. Not built yet; tell me if you'd use it. aidantorrence.com/offers/price-guide",
+      "community": "Photographers: how many versions of your pricing guide are out there? I found a 2024 one still circulating. I'm deciding whether to build a small tool: enter packages once, generate the PDF, a private web version and an inquiry-reply block from a template, change a price and every link updates with old PDFs flagged, and see who opened the guide and where they lingered. $5/month. Pre-launch page, no charge, just an 'I'd pay' button: aidantorrence.com/offers/price-guide",
+      "pitchSubject": "One source of truth for your pricing guide (pre-launch)",
+      "pitch": "Hi {first},\n\nI'm Aidan, a photographer. I saw {specific reference}.\n\nI'm deciding whether to build a small tool for pricing guides: packages entered once, the PDF, a web version and an inquiry-reply block generated and kept in sync, old PDFs flagged when prices change, and opens tracked per link, $5 a month.\n\nIf you have more than one 'final' guide floating around, the pre-launch page has an 'I'd pay' button: aidantorrence.com/offers/price-guide?src=email\n\nIf not, one line on why is just as useful.\n\nBest,\nAidan"
+    }
   }
 ]
