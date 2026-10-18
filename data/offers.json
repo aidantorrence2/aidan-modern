@@ -1239,7 +1239,8 @@
       "community": "Photographers who invoice brands and magazines: how do you handle the chasing? Mine is a calendar reminder and a dread-filled 'just following up' email. I'm deciding whether to build a small tool: paste the invoice, pick reminder days, it sends short notes in your voice and cancels them the moment you mark it paid, with an overdue board on top. $4/month. Pre-launch page, no charge, just an 'I'd pay' button: aidantorrence.com/offers/invoice-nudge",
       "pitchSubject": "Invoices that chase themselves (pre-launch)",
       "pitch": "Hi {first},\n\nI'm Aidan, a photographer. I saw {specific reference}.\n\nI'm deciding whether to build a small tool for late invoices: paste the invoice, pick reminder days, it sends short follow-ups in your voice and stops the moment you mark it paid, $4 a month.\n\nIf that would save you the fourth 'just checking in', the pre-launch page has an 'I'd pay' button: aidantorrence.com/offers/invoice-nudge?src=email\n\nIf not, one line on why is just as useful.\n\nBest,\nAidan"
-    }
+    },
+    "artifactUrl": "https://claude.ai/artifact/Y1zHdaWnaLqZk9VfzRYcjW"
   },
   {
     "slug": "tether-share",
@@ -1346,6 +1347,41 @@
       "community": "Location photographers: how do you find out whether a spot needs a permit? Mine is a mix of forum posts, a call to parks and rec, and hoping. I'm deciding whether to build one page per city: every public location with its rule (none, free registration, paid permit, crews only), fee, lead time and a link to the issuing office's own form with a last-checked date. $6/month or $9 per city. Pre-launch page, no charge, just an 'I'd pay' button and a box for your city: aidantorrence.com/offers/permit-finder",
       "pitchSubject": "Which spots in {city} need a photo permit (pre-launch)",
       "pitch": "Hi {first},\n\nI'm Aidan, a photographer. I saw {specific reference}.\n\nI'm deciding whether to build one page per city listing every park, beach and street with its photo-permit rule, fee, lead time and the office's own form, $6 a month or $9 per city.\n\nIf a permit question has ever cost you a shoot, the pre-launch page has an 'I'd pay' button and a box for your city: aidantorrence.com/offers/permit-finder?src=email\n\nIf not, one line on why is just as useful.\n\nBest,\nAidan"
+    }
+  },
+  {
+    "slug": "rain-plan",
+    "name": "Rain Plan",
+    "headline": "Outdoor shoots that reschedule themselves: the forecast is checked 48 hours out, the client taps a backup date, the booking moves, and nobody writes the awkward text.",
+    "buyer": "family, engagement, senior and brand photographers who shoot outdoors and lose an evening to weather texts every week of the busy season",
+    "bullets": [
+      "Add a shoot with its location and your rain rule, such as over 60 percent chance or wind above 20 mph. The forecast is checked 48 and 24 hours out.",
+      "If the rule trips, the client gets one message with your two or three open backup slots and taps one; your calendar and theirs update, and your retainer stays attached.",
+      "A season view shows every outdoor shoot with its forecast, so you can see Saturday's trouble on Wednesday instead of Friday night."
+    ],
+    "price": "$5/month",
+    "priceUsd": 5,
+    "priceNote": "unlimited shoots",
+    "status": "live",
+    "launched": "2026-10-18",
+    "reasonPrompt": "How many outdoor shoots did weather move for you this season, and how did you handle the reschedule each time?",
+    "faq": [
+      {
+        "q": "Does it cancel shoots on its own?",
+        "a": "No. It only sends the backup-date message when your rule trips, and only if you have not turned that off for the shoot. You can always decide by hand."
+      },
+      {
+        "q": "Which forecast does it use?",
+        "a": "A standard hourly forecast for the shoot location. Forecasts are forecasts; the rule you set decides how cautious to be."
+      }
+    ],
+    "kit": {
+      "hook": "Friday 9pm, 70 percent rain for tomorrow's session, and I'm drafting the 'so about the weather' text for the fourth time this month.",
+      "script": "Open on a weather app: a rain icon over Saturday. Cut to a photographer typing a text, deleting it, typing again. VO: 'Fourth time this month.' Cut to a phone: a message with three backup dates, the client taps one, two calendars update, a 'retainer carried over' line. Cut to a season view: a row of shoots with small forecast icons. VO: 'The forecast is checked for you. The client picks the new date. Nobody writes the text.' End card: 'Rain Plan. $5 a month. Pre-launch, link in bio.'",
+      "caption": "Outdoor shoots that reschedule themselves when the forecast trips your rule. $5/month. Not built yet; tell me if you'd use it. aidantorrence.com/offers/rain-plan",
+      "community": "Outdoor portrait photographers: how do you handle weather reschedules? Mine is a 9pm text with a screenshot of the forecast and three days of back-and-forth. I'm deciding whether to build a small tool: add the shoot and your rain rule, it checks the forecast 48 and 24 hours out, and if the rule trips the client gets your open backup dates and taps one, with the retainer carried over and both calendars updated. $5/month. Pre-launch page, no charge, just an 'I'd pay' button: aidantorrence.com/offers/rain-plan",
+      "pitchSubject": "Weather reschedules without the 9pm text (pre-launch)",
+      "pitch": "Hi {first},\n\nI'm Aidan, a photographer. I saw {specific reference}.\n\nI'm deciding whether to build a small tool for outdoor shoots: you set a rain rule per shoot, the forecast is checked 48 and 24 hours out, and if it trips the client gets your open backup dates and taps one, with the retainer carried over and both calendars updated, $5 a month.\n\nIf that would save you the weather texts this season, the pre-launch page has an 'I'd pay' button: aidantorrence.com/offers/rain-plan?src=email\n\nIf not, one line on why is just as useful.\n\nBest,\nAidan"
     }
   }
 ]

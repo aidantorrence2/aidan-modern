@@ -5,6 +5,7 @@ Price: $4/month (unlimited invoices)
 Buyer: freelance photographers and small studios who invoice brands, agencies and magazines and wait 30 to 90 days to get paid
 Status: live since 2026-10-17
 Hosted page: https://aidantorrence.com/offers/invoice-nudge (live after merge to main + deploy)
+Artifact page: https://claude.ai/artifact/Y1zHdaWnaLqZk9VfzRYcjW
 
 ## Tracking links (one per channel)
 
