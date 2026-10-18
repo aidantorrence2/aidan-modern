@@ -5,6 +5,7 @@ Price: $4/month (unlimited jobs and lists)
 Buyer: wedding, event and commercial photographers who get a shot list by email, lose it on the day, and hear about the missed grandmother photo a month later
 Status: live since 2026-10-18
 Hosted page: https://aidantorrence.com/offers/shot-list-live (live after merge to main + deploy)
+Artifact page: https://claude.ai/artifact/Sev23UqSqYz8drNfNXiZh7
 
 ## Tracking links (one per channel)
 
