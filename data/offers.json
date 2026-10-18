@@ -363,7 +363,8 @@
       ],
       "competitors": "Nutria, TrackAI, Cal AI and many more.",
       "risks": "Crowded consumer app category; distribution through app stores and paid social."
-    }
+    },
+    "need": "Want to lose weight without weighing every bite?"
   },
   {
     "type": "software",
@@ -486,7 +487,8 @@
       ],
       "competitors": "Rezi, Teal, Jobscan, Kickresume.",
       "risks": "Crowded; the angle is one-click tailoring from the job page at a low price."
-    }
+    },
+    "need": "Applying for jobs and hearing nothing back?"
   },
   {
     "type": "software",

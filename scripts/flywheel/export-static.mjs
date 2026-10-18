@@ -13,7 +13,7 @@ const offers = JSON.parse(fs.readFileSync(path.join(root, 'data/offers.json'), '
 const out = path.join(root, 'static-offers')
 const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;')
 
-const css = fs.readFileSync(path.join(root, 'components/OfferPage.tsx'), 'utf8').split('const css = `')[1].split('`')[0]
+const css = fs.readFileSync(path.join(root, 'components/OfferPage.tsx'), 'utf8').split('const css = `')[1].split('`')[0] + '.offer-lead{font-size:20px;line-height:1.45;margin:0 0 14px;color:inherit;opacity:.92}'
 const labCss = fs.readFileSync(path.join(root, 'app/offers/page.tsx'), 'utf8').split('const css = `')[1].split('`')[0] + '.lab-sub{font-family:Georgia,serif;font-weight:400;font-size:22px;margin:40px 0 12px}'
 
 const js = `
@@ -47,7 +47,7 @@ function page(o) {
 <link rel="canonical" href="${cfg.publicBase}/${o.slug}/"><meta property="og:url" content="${cfg.publicBase}/${o.slug}/"><meta property="og:type" content="website"><meta name="twitter:card" content="summary"><style>${css}</style></head>
 <body data-offer="${esc(o.slug)}" data-price="${esc(o.price)}"><div class="offer"><main class="offer-main">
 <p class="offer-kicker">Pre-launch · from Aidan Torrence</p>
-<h1>${esc(o.headline)}</h1>
+${o.need ? `<h1>${esc(o.need)}</h1><p class="offer-lead">${esc(o.headline)}</p>` : `<h1>${esc(o.headline)}</h1>`}
 <p class="offer-buyer">For ${esc(o.buyer)}.</p>
 <ul class="offer-bullets">${o.bullets.map(b => `<li>${esc(b)}</li>`).join('')}</ul>
 <div class="offer-price"><span class="offer-price-main">${esc(o.price)}</span>${o.priceNote ? `<span class="offer-price-note">${esc(o.priceNote)}</span>` : ''}</div>
@@ -72,7 +72,7 @@ function index(list) {
 <body><div class="lab"><main class="lab-main"><p class="lab-kicker">Pre-launch</p><h1>Tools I want to exist.</h1>
 <p class="lab-lead">Each page below is a promise, not a product. If enough people leave an email or say they’d pay, I build it, in that order. Nothing here charges you.</p>
 ${list.length ? '' : '<p class="lab-lead">Nothing is open right now. New tools appear here once people have asked for them in public.</p>'}
-<ul class="lab-list">${list.map(o => `<li><a href="./${o.slug}/?src=lab"><span class="lab-name">${esc(o.name)}</span><span class="lab-head">${esc(o.headline)}</span><span class="lab-price">${esc(o.price)}</span></a></li>`).join('')}</ul>
+${[['For you', list.filter(o => o.need)], ['For businesses', list.filter(o => !o.need)]].filter(([, l]) => l.length).map(([h, l]) => `<h2 class="lab-sub">${h}</h2><ul class="lab-list">${l.map(o => `<li><a href="./${o.slug}/?src=lab"><span class="lab-name">${esc(o.name)}</span><span class="lab-head">${esc(o.need ? o.need + ' ' + o.headline : o.headline)}</span><span class="lab-price">${esc(o.price)}</span></a></li>`).join('')}</ul>`).join('')}
 ${resources.length ? `<h2 class="lab-sub">Free resources</h2><ul class="lab-list">${resources.map(r => `<li><a href="./resources/${r.slug}/"><span class="lab-name">Free</span><span class="lab-head">${esc(r.title)}</span><span class="lab-price">${esc(r.description)}</span></a></li>`).join('')}</ul>` : ''}
 </main></div></body></html>`
 }

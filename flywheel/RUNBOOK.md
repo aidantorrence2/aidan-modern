@@ -9,7 +9,14 @@ already visible in the market (step 0). Order:
 0. **Demand first, then leads (Aidan, 18 Oct 2026).** Offers come only from demand already
    visible in the market, and every offer is software. On 18 Oct all 60 earlier offers were
    retired because they were guesses. Each run, in this order:
-   a. **Find demand.** Any market, not only photographers. Strongest first:
+   a. **Start from a real need (Aidan, 18 Oct 2026).** Lead with the basic needs people feel and
+      say in their own words: "I can't get a date", "I need to lose weight", "I can't stop wasting
+      time on my phone", "I want to get big muscles", "I want to keep track of my goals and tasks",
+      "I want to make money online", "I want to get a job", and others of that kind (sleep, stress,
+      quitting a habit, debt, skin, loneliness, confidence, learning a language). Each offer is
+      software that answers one need, and its `need` field holds the need as the buyer would say
+      it; the page opens with it. Business tools are still allowed but come second.
+      **Find demand.** Any market. Strongest first:
       - Money already spent: products with verified revenue (Indie Hackers, TrustMRR,
         Acquire.com, Flippa listings), marketplace apps and extensions with large paid install
         or review counts (Shopify App Store, Chrome Web Store, WordPress.org, Google Workspace
