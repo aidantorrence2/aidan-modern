@@ -8,10 +8,9 @@ import android.speech.tts.TextToSpeech
 import android.speech.tts.Voice
 import java.util.Locale
 
-val SPEECH_AUDIO: AudioAttributes = AudioAttributes.Builder()
-    .setUsage(AudioAttributes.USAGE_MEDIA)
-    .setContentType(AudioAttributes.CONTENT_TYPE_SPEECH)
-    .build()
+val SPEECH_AUDIO: AudioAttributes by lazy {
+    AudioAttributes.Builder().setUsage(AudioAttributes.USAGE_MEDIA).setContentType(AudioAttributes.CONTENT_TYPE_SPEECH).build()
+}
 
 /**
  * Audio focus for narration. Taking it stops other media (music, podcasts) the way starting any player does;
@@ -48,10 +47,21 @@ class MediaFocus(
     }
 }
 
+/** Google's male voice codes (en-US iol/iom/tpd, en-GB gbb/gbd/rjs, en-AU aub/aud, en-IN end); other engines say "male". */
+private val MALE_CODES = setOf("iol", "iom", "tpd", "gbb", "gbd", "rjs", "aub", "aud", "end")
+
+/** Android doesn't expose a voice's gender, so this reads it from the voice name. */
+fun soundsMale(name: String): Boolean {
+    val n = name.lowercase()
+    if ("female" in n || "woman" in n) return false
+    if (Regex("(^|[^a-z])male").containsMatchIn(n)) return true
+    return n.split('-', '_', '#').any { it in MALE_CODES }
+}
+
 /**
- * The best-sounding voice installed for the device language: highest quality first, offline only (a voice that
- * needs the network can drop out mid-sentence in the car), then the device's own accent, then lowest latency.
- * Null keeps the engine's default.
+ * The voice used for narration: a male voice when one is installed (easier to listen to for long stretches),
+ * then the highest quality, offline only (a voice that needs the network can drop out mid-sentence in the car),
+ * then the device's own accent, then lowest latency. Null keeps the engine's default.
  */
 fun bestVoice(engine: TextToSpeech): Voice? {
     val here = Locale.getDefault()
@@ -60,7 +70,8 @@ fun bestVoice(engine: TextToSpeech): Voice? {
             v.locale.language == here.language
     }
     return voices.sortedWith(
-        compareByDescending<Voice> { it.quality }
+        compareByDescending<Voice> { soundsMale(it.name) && it.quality >= Voice.QUALITY_NORMAL }
+            .thenByDescending { it.quality }
             .thenByDescending { it.locale.country == here.country }
             .thenBy { it.latency }
             .thenBy { it.name },
