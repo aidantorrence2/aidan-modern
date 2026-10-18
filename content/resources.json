@@ -1,5 +1,55 @@
 [
   {
+    "slug": "google-merchant-center-misrepresentation-feed-check",
+    "offer": "feed-match",
+    "title": "Merchant Center misrepresentation: check your feed against your product pages before you appeal",
+    "description": "A step-by-step way to find the products where your feed and your live pages disagree, plus the store-wide pages reviewers look at, before you request a review.",
+    "intro": "Stores suspended for \"misrepresentation\" keep hiring freelancers for the same job: open every product page and compare it with the feed. You can do a first pass yourself with a spreadsheet. This page shows how, and what to look at.",
+    "sections": [
+      {
+        "h": "1. Get your feed into a spreadsheet",
+        "p": [
+          "Download your product list from Merchant Center, or open the feed file your store or app submits. Keep these columns: id, title, link, price, sale price, availability, and shipping if you set it per product.",
+          "Sort by your best sellers or highest prices first. Those are the pages a reviewer is most likely to open."
+        ]
+      },
+      {
+        "h": "2. Open each link and compare, field by field",
+        "list": [
+          "Price: the price on the page matches the feed price, in the same currency, with no extra charge added only at checkout.",
+          "Sale price: if the page shows a sale, the feed has the sale price and the sale is still running.",
+          "Availability: \"in stock\" in the feed means the product can actually be added to the cart on the page.",
+          "Link: the link opens that exact product, not the home page, a collection, a login wall or an error.",
+          "Variants: if the feed lists a size or colour, the page opens with that variant selected or shows its price.",
+          "Structured data: if your theme adds product markup, its price and availability match what the page shows."
+        ]
+      },
+      {
+        "h": "3. Check the pages every reviewer reads",
+        "list": [
+          "Contact details a customer can use: an email address or phone number, and a business address if you have one.",
+          "A returns and refunds policy with the actual window and who pays return shipping.",
+          "A shipping policy whose costs and times match what checkout charges.",
+          "Terms of service and a privacy policy, linked from the footer.",
+          "Checkout over https, with the payment methods you show actually working."
+        ]
+      },
+      {
+        "h": "4. Keep a record of what you fixed",
+        "p": [
+          "Add a column for what you changed on each row and the date. When you request a review, you know exactly what is different from the version that was suspended."
+        ],
+        "pre": "id | link | feed price | page price | feed availability | page availability | fixed? | note"
+      },
+      {
+        "h": "Why this takes so long by hand",
+        "p": [
+          "Every product is a separate page, and prices change. A store with a few hundred products means hours of opening tabs, and the check is out of date the next time prices change. That is the part Feed Match is meant to do for you, if enough stores ask for it."
+        ]
+      }
+    ]
+  },
+  {
     "slug": "wedding-family-formals-shot-list-template",
     "offer": "shot-list-live",
     "title": "Wedding family formals shot list template",
