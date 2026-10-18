@@ -260,8 +260,10 @@ final class ApprovalsStore: ObservableObject {
                 guard var root = fileRoot, let sha = fileSHA else { throw GitHubError.decode("no file loaded") }
                 let applied = apply(pendingDecisions, to: &root)
                 guard !applied.isEmpty else {
-                    // Items vanished from the file; nothing to write.
-                    pendingDecisions.removeAll(); persistDecisions(); rebuildItems(); return
+                    // Items vanished from the file or were already decided elsewhere; nothing to write.
+                    pendingDecisions.removeAll(); persistDecisions(); rebuildItems()
+                    if let (id, st) = alreadyDecided.first { showToast("\(id) was already \(st) elsewhere; left as is", ok: false) }
+                    return
                 }
                 let message = Self.commitMessage(for: applied)
                 do {
@@ -287,12 +289,22 @@ final class ApprovalsStore: ObservableObject {
         }
     }
 
+    /// Items skipped by the last apply because someone already decided them (id -> their status).
+    private var alreadyDecided: [String: String] = [:]
+
     /// Applies decisions to the JSON tree; returns the (id, decision) pairs that matched an item.
+    /// First decision wins: an item another device or person already decided is left untouched.
     private func apply(_ decisions: [String: LocalDecision], to root: inout JSONValue) -> [(String, LocalDecision)] {
         guard var list = root["items"]?.arrayValue else { return [] }
         var applied: [(String, LocalDecision)] = []
+        alreadyDecided = [:]
         for (idx, entry) in list.enumerated() {
             guard let id = entry["id"]?.stringValue, let d = decisions[id] else { continue }
+            let current = entry["status"]?.stringValue ?? "pending"
+            if current != "pending" && d.status != ApprovalStatus.pending.rawValue {
+                alreadyDecided[id] = current
+                continue
+            }
             var e = entry
             e["status"] = .string(d.status)
             e["decided"] = d.status == ApprovalStatus.pending.rawValue ? .null : .string(d.decided)

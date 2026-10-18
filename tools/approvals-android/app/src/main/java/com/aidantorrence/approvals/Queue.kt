@@ -114,23 +114,27 @@ class QueueClient(private val token: String) {
      * Applies decisions (id -> Decision) to the latest file and writes it. Re-reads and retries on
      * a concurrent write. Returns the commit message, or null when none of the ids exist any more.
      */
-    fun decide(decisions: Map<String, Decision>): String? {
+    fun decide(decisions: Map<String, Decision>): DecideResult {
         repeat(4) { attempt ->
             val (root, sha) = fetch()
             val items = (root["items"] as? JV.Arr)?.items ?: throw GitHubException(0, "no items array")
             val applied = mutableListOf<Pair<String, Decision>>()
+            val already = mutableMapOf<String, String>()
             for (entry in items) {
                 val obj = entry as? JV.Obj ?: continue
                 val id = obj["id"]?.str ?: continue
                 val d = decisions[id] ?: continue
+                // First decision wins: never flip an item another device (or person) already decided.
+                val current = obj["status"]?.str ?: "pending"
+                if (current != "pending" && d.status != "pending") { already[id] = current; continue }
                 obj["status"] = JV.Str(d.status)
                 obj["decided"] = if (d.status == "pending") JV.Null else JV.Str(d.decided)
                 obj["note"] = JV.Str(d.note)
                 applied.add(id to d)
             }
-            if (applied.isEmpty()) return null
+            if (applied.isEmpty()) return DecideResult(null, already)
             val msg = commitMessage(applied)
-            if (put(root, sha, msg)) return msg
+            if (put(root, sha, msg)) return DecideResult(msg, already)
             Thread.sleep(400L * (attempt + 1))
         }
         throw GitHubException(409, "the queue kept changing; will retry")
@@ -153,3 +157,6 @@ class QueueClient(private val token: String) {
 }
 
 data class Decision(val status: String, val decided: String, val note: String)
+
+/** message = the commit written (null if nothing to write); already = id -> status someone else set first. */
+data class DecideResult(val message: String?, val already: Map<String, String>)

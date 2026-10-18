@@ -103,13 +103,13 @@ class ApprovalService : Service(), Ui.CardActions {
     }
 
     /** Writes decisions made on this phone; on failure they stay queued for the next poll. */
-    private fun flush(client: QueueClient): String? {
+    private fun flush(client: QueueClient): DecideResult? {
         val pending = Store.pendingDecisions
         if (pending.isEmpty()) return null
-        val msg = client.decide(pending)
+        val res = client.decide(pending)
         val now = Store.pendingDecisions
         Store.pendingDecisions = now - pending.keys
-        return msg
+        return res
     }
 
     // ---------------- decisions ----------------
@@ -128,13 +128,16 @@ class ApprovalService : Service(), Ui.CardActions {
 
     fun decide(id: String, status: String, note: String) {
         Store.pendingDecisions = Store.pendingDecisions + (id to Decision(status, Iso.now(), note))
+        render()   // moves the foreground notification off this item first, so the cancel below sticks
         nm.cancel(notifId(id))
-        render()
         io.execute {
             try {
                 val token = TokenStore.load(this) ?: throw IllegalStateException("no token")
-                val msg = flush(QueueClient(token))
-                main.post { if (msg != null) Toast.makeText(this, "✓ $msg", Toast.LENGTH_SHORT).show() }
+                val res = flush(QueueClient(token))
+                main.post {
+                    res?.message?.let { Toast.makeText(this, "✓ $it", Toast.LENGTH_SHORT).show() }
+                    res?.already?.forEach { (_, st) -> Toast.makeText(this, "Already $st elsewhere; left as is", Toast.LENGTH_LONG).show() }
+                }
                 pollNow()
             } catch (e: Exception) {
                 Store.lastError = e.message
@@ -145,18 +148,30 @@ class ApprovalService : Service(), Ui.CardActions {
 
     // ---------------- rendering ----------------
 
+    /**
+     * One notification per waiting request. The oldest request IS the service's foreground
+     * notification, so there is no separate "inbox" line pushing it down (HyperOS collapsed the
+     * request under it). With nothing waiting, the quiet status notification takes that slot.
+     */
     private fun render() {
         val visible = Store.visible()
-        // persistent notifications: one per waiting item, re-posted every render (silently after the first)
+        val first = visible.firstOrNull()
+        if (first != null) {
+            startForeground(notifId(first.id), buildItem(first), ServiceInfo.FOREGROUND_SERVICE_TYPE_SPECIAL_USE)
+            nm.cancel(ID_SERVICE)
+        } else {
+            startForeground(ID_SERVICE, serviceNotification(), ServiceInfo.FOREGROUND_SERVICE_TYPE_SPECIAL_USE)
+        }
         val keep = visible.map { notifId(it.id) }.toSet()
         nm.activeNotifications.filter { it.id != ID_SERVICE && it.id !in keep }.forEach { nm.cancel(it.id) }
+        for (item in visible.drop(1)) postItem(item)
         val chimed = Store.chimed
-        for (item in visible) postItem(item, alert = item.id !in chimed)
         if (visible.any { it.id !in chimed }) Store.chimed = chimed + visible.map { it.id }
-        nm.notify(ID_SERVICE, serviceNotification())
     }
 
-    private fun postItem(item: Item, alert: Boolean) {
+    private fun postItem(item: Item) { nm.notify(notifId(item.id), buildItem(item)) }
+
+    private fun buildItem(item: Item): Notification {
         val pres = Presentation(item)
         val body = pres.cardText(item)
         // Alerting channel (heads-up the first time; updates don't re-alert thanks to onlyAlertOnce),
@@ -185,10 +200,10 @@ class ApprovalService : Service(), Ui.CardActions {
         } else {
             b.setStyle(Notification.BigTextStyle().bigText("${pres.displayTitle}\n$body"))
             pres.images.firstOrNull()?.second?.let { url ->
-                Images.load(url, IMG_PX) { bmp -> if (bmp != null && Store.visible().any { it.id == item.id }) postItem(item, false) }
+                Images.load(url, IMG_PX) { bmp -> if (bmp != null && Store.visible().any { it.id == item.id }) render() }
             }
         }
-        nm.notify(notifId(item.id), b.build())
+        return b.build()
     }
 
     /** Approve / Deny run in the background straight from the notification, no unlock or app needed. */
@@ -196,12 +211,7 @@ class ApprovalService : Service(), Ui.CardActions {
         Notification.Action.Builder(null, label, service(act, id)).build()
 
     private fun serviceNotification(): Notification {
-        val n = if (::nm.isInitialized) Store.visible().size else 0
-        val text = when {
-            Store.lastError != null -> "Problem: ${Store.lastError}"
-            n == 0 -> "Nothing waiting"
-            else -> "$n waiting for you"
-        }
+        val text = if (Store.lastError != null) "Problem: ${Store.lastError}" else "Nothing waiting"
         return Notification.Builder(this, CH_SERVICE)
             .setSmallIcon(R.drawable.ic_stat)
             .setContentTitle("Approvals inbox")

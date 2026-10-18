@@ -11,8 +11,11 @@ writes the same commit (`Approve <id>` / `Deny <id>`), and the other side drops 
   with **Approve**, **Deny** and **Later (4h)** right in the notification; tapping a button decides it
   in the background without opening the app (no unlock or fingerprint needed). The expanded
   notification shows the photo when the request has one.
-- **Persistent.** Each waiting request keeps an ongoing notification until it is decided. Updates
-  never re-alert; if you swipe one away it comes back on the next poll, but silently.
+- **Persistent.** Each waiting request keeps an ongoing notification until it is decided. The oldest
+  request is the app's foreground notification (no separate "inbox" line when something is
+  waiting). Updates never re-alert; if you swipe one away it comes back on the next poll, silently.
+- **First decision wins.** If a request was already decided on the Mac or by anyone else, a later
+  tap on the phone leaves it alone and says "Already approved/denied elsewhere".
 - **Tap for details.** Tapping the notification opens the review screen: what approving does in
   plain words, the full image (feed / story switch when there are two), the exact caption or email
   body, links, other fields, a note box for the agent, and Approve / Deny. Raw JSON is under
@@ -35,6 +38,11 @@ and starts the service. Nothing to set up on the phone. `DEVICE=<serial>` picks 
 `--no-build` reuses the last APK.
 
 ## Phone quirks (Redmi Note 15 Pro, HyperOS)
+
+- HyperOS files ongoing notifications in its own section below the dot divider and shows them
+  collapsed: the heads-up banner has the buttons; in the shade, tap the arrow (or the notification
+  for the full review screen). Installed and tested on the phone 2026-10-18 (request delivered in
+  ~40 s, review screen and Deny from the phone committed).
 
 - AppBlock blocks the Settings UI on this phone, so every grant is applied over adb.
 - HyperOS can revert adb-set background/autostart ops and freeze plain foreground services. If
