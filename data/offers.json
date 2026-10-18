@@ -1598,6 +1598,42 @@
       "community": "Photographers with an editing backlog: how do you handle the 'any update?' messages? I'm deciding whether to build a small tool: each job gets a private status link showing the stage (culled, editing, retouching, exporting, delivered) and the expected date; you move stages in one tap from your phone; falling behind pushes the date and sends a short honest note you wrote once; your side is a queue sorted by promised date with at-risk jobs first. $4/month. Pre-launch page, no charge, just an 'I'd pay' button: aidantorrence.com/offers/edit-tracker",
       "pitchSubject": "A status page for every gallery in progress (pre-launch)",
       "pitch": "Hi {first},\n\nI'm Aidan, a photographer. I saw {specific reference}.\n\nI'm deciding whether to build a small tool for the editing backlog: each job gets a private status link with its stage and expected date, you move stages in one tap, falling behind pushes the date with a short note you wrote once, and your side is a queue by promised date, $4 a month.\n\nIf the 'any update?' messages sound familiar, the pre-launch page has an 'I'd pay' button: aidantorrence.com/offers/edit-tracker?src=email\n\nIf not, one line on why is just as useful.\n\nBest,\nAidan"
+    },
+    "artifactUrl": "https://claude.ai/artifact/GX59qVQoQu9aLyTvReP141"
+  },
+  {
+    "slug": "studio-hours",
+    "name": "Studio Hours",
+    "headline": "Rent out your studio's empty hours without becoming a landlord: a booking page with your real availability, deposit, house rules, and a door code that arrives an hour before.",
+    "buyer": "photographers who lease a studio that sits empty most weekdays and field 'is your space available?' DMs they never quite answer",
+    "bullets": [
+      "Connect your calendar; the page shows only the hours you are not shooting, in the blocks and at the prices you set, with a cleaning buffer between bookings.",
+      "Renters pay the deposit to book, agree to your house rules and insurance line, and get the address, door code and parking note one hour before their slot.",
+      "A ledger shows hours rented, income per month, repeat renters, and the one who left the backdrop out, so you can decide who books again."
+    ],
+    "price": "$6/month",
+    "priceUsd": 6,
+    "priceNote": "no commission on bookings",
+    "status": "live",
+    "launched": "2026-10-18",
+    "reasonPrompt": "How many hours a week is your studio empty, and what has stopped you renting it out so far?",
+    "faq": [
+      {
+        "q": "Is this a studio marketplace?",
+        "a": "No. There is no directory. It is your own booking page, shared where you choose; renters come from your network and your posts."
+      },
+      {
+        "q": "What about damage and insurance?",
+        "a": "You set the deposit, the rules and the insurance requirement; renters agree before they can book. The tool records the agreement; it does not insure anyone."
+      }
+    ],
+    "kit": {
+      "hook": "My studio is empty 30 hours a week and I pay rent on all of them. The DMs asking to use it die in my inbox.",
+      "script": "Open on an empty studio, lights off, a rent invoice on screen. VO: 'Thirty empty hours a week. Rent on every one of them.' Cut to a phone: a booking page showing Tuesday 10 to 2 open, a renter pays a deposit, agrees to the rules. Cut to a text: 'Door code 4471, park in the back.' Cut to a ledger: hours rented, income, repeat renters. VO: 'Your hours, your rules, your deposit. The door code sends itself.' End card: 'Studio Hours. $6 a month. Pre-launch, link in bio.'",
+      "caption": "Rent your studio's empty hours from one page: availability from your calendar, deposit, rules, door code an hour before. $6/month, no commission. Not built yet; tell me if you'd use it. aidantorrence.com/offers/studio-hours",
+      "community": "Photographers who lease a studio: do you rent out the hours you're not using? I keep meaning to and never answer the DMs. I'm deciding whether to build a small tool: a booking page that shows only your free hours from your calendar, takes a deposit, gets the renter to agree to your rules and insurance line, sends the door code an hour before, and keeps a ledger of hours and income. $6/month, no commission. Pre-launch page, no charge, just an 'I'd pay' button: aidantorrence.com/offers/studio-hours",
+      "pitchSubject": "Your studio's empty hours, rented from one page (pre-launch)",
+      "pitch": "Hi {first},\n\nI'm Aidan, a photographer. I saw {specific reference}.\n\nI'm deciding whether to build a small tool for renting out studio hours: a booking page showing only the hours you are free, a deposit and your rules agreed before booking, the door code sent an hour before, and a ledger of hours and income, $6 a month with no commission.\n\nIf your space sits empty on weekdays, the pre-launch page has an 'I'd pay' button: aidantorrence.com/offers/studio-hours?src=email\n\nIf not, one line on why is just as useful.\n\nBest,\nAidan"
     }
   }
 ]

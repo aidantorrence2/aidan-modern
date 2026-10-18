@@ -5,6 +5,7 @@ Price: $4/month (unlimited jobs)
 Buyer: wedding, family and portrait photographers with a backlog of galleries and clients who check in by text, email and Instagram every few days
 Status: live since 2026-10-18
 Hosted page: https://aidantorrence.com/offers/edit-tracker (live after merge to main + deploy)
+Artifact page: https://claude.ai/artifact/GX59qVQoQu9aLyTvReP141
 
 ## Tracking links (one per channel)
 
