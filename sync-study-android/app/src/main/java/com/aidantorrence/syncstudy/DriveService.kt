@@ -46,7 +46,7 @@ object DriveController {
         val memory = StoreMemory(app)
         val plan = buildDrivePlan(settings, memory)
         val voice = AndroidDriveIO(app,
-            onFocusLost = { engine?.let { if (!it.isPaused) { autoPaused = true; it.pause() } } },
+            onFocusLost = { transient -> engine?.let { if (!it.isPaused) { autoPaused = transient; it.pause() } } },
             onFocusGained = { if (autoPaused) { autoPaused = false; engine?.resume() } })
         val e = DriveEngine(voice, memory, settings)
         io = voice

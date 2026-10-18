@@ -2,7 +2,6 @@ package com.aidantorrence.syncreader
 
 import android.app.Application
 import android.content.Context
-import android.media.AudioAttributes
 import android.os.Handler
 import android.os.Looper
 import android.os.SystemClock
@@ -94,6 +93,11 @@ class ReaderViewModel(app: Application) : AndroidViewModel(app) {
     val state: StateFlow<ReaderUiState> = _state.asStateFlow()
 
     private var tts: TextToSpeech? = null
+    /** Narration pauses other media; a navigation prompt or call pauses narration and resumes it afterwards. */
+    private val focus = MediaFocus(app,
+        onLost = { transient -> if (_state.value.playing) { resumeOnFocus = transient; halt() } },
+        onRegained = { if (resumeOnFocus) { resumeOnFocus = false; play() } })
+    private var resumeOnFocus = false
 
     // Playback bookkeeping. Only touched on the main thread.
     private var generation = 0          // bumped on every stop/restart so stale engine callbacks are ignored
@@ -132,12 +136,8 @@ class ReaderViewModel(app: Application) : AndroidViewModel(app) {
             _state.update { it.copy(ttsReady = false, error = "No text-to-speech engine found. Install Google Speech Services, or use silent mode.") }
             return
         }
-        engine.setAudioAttributes(
-            AudioAttributes.Builder()
-                .setUsage(AudioAttributes.USAGE_MEDIA)
-                .setContentType(AudioAttributes.CONTENT_TYPE_SPEECH)
-                .build()
-        )
+        engine.setAudioAttributes(SPEECH_AUDIO)
+        bestVoice(engine)?.let { v -> runCatching { engine.voice = v } }
         engine.setOnUtteranceProgressListener(progressListener)
         _state.update { it.copy(ttsReady = true, error = null) }
     }
@@ -217,6 +217,13 @@ class ReaderViewModel(app: Application) : AndroidViewModel(app) {
     }
 
     fun pause() {
+        resumeOnFocus = false
+        halt()
+        focus.release()
+    }
+
+    /** Stops narration but keeps audio focus, so it can resume after an interruption. */
+    private fun halt() {
         generation++
         tts?.stop()
         ticker?.cancel()
@@ -302,6 +309,7 @@ class ReaderViewModel(app: Application) : AndroidViewModel(app) {
         playingChunk = -1
 
         _state.update { it.copy(currentWord = from, playing = true, finished = false, error = null) }
+        if (!s.silent) focus.take()
 
         if (s.silent || !s.ttsReady) {
             silentStartWord = from
@@ -432,6 +440,7 @@ class ReaderViewModel(app: Application) : AndroidViewModel(app) {
         ticker?.cancel()
         playingChunk = -1
         _state.update { it.copy(playing = false, finished = true, currentWord = it.document.lastWord) }
+        focus.release()
         saveProgress()
     }
 
@@ -480,6 +489,7 @@ class ReaderViewModel(app: Application) : AndroidViewModel(app) {
         tts?.stop()
         tts?.shutdown()
         tts = null
+        focus.release()
         super.onCleared()
     }
 

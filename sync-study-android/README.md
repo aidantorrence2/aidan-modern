@@ -45,8 +45,8 @@ Pick a book, a length (10–45 min) and a speed (1x to 3x) before you set off. I
   answer now. Back repeats. While the answer is read, next = "I knew it" and back = "I didn't", which schedules
   the card in the same spaced-repetition queue as the rest of the app. No press, nothing recorded.
 - **Car-friendly audio:** a foreground media service keeps playing with the screen off, shows lock-screen and
-  notification controls, pauses for navigation prompts and calls, and uses a second voice for questions plus
-  chimes.
+  notification controls, pauses music and podcasts while it plays, pauses for navigation prompts and calls,
+  and reads everything in one voice (the best one installed), with a chime before each question.
 
 Code: `DriveModel.kt` (planning, questions, answer scoring), `DriveEngine.kt` (session engine),
 `DriveAndroid.kt` (voices, chimes, audio focus), `DriveService.kt` (foreground media service),

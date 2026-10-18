@@ -2,9 +2,7 @@ package com.aidantorrence.syncstudy
 
 import android.content.Context
 import android.media.AudioAttributes
-import android.media.AudioFocusRequest
 import android.media.AudioFormat
-import android.media.AudioManager
 import android.media.AudioTrack
 import android.speech.tts.TextToSpeech
 import android.speech.tts.UtteranceProgressListener
@@ -15,7 +13,6 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.suspendCancellableCoroutine
 import kotlinx.coroutines.withContext
-import java.util.Locale
 import java.util.UUID
 import java.util.concurrent.ConcurrentHashMap
 import kotlin.coroutines.resume
@@ -24,26 +21,20 @@ import kotlin.math.min
 import kotlin.math.sin
 
 /**
- * The phone's speaker and chimes for drive mode (it never uses the microphone).
- * Narration and questions use different voices (or a different pitch when only one voice is installed) so the
- * listener always knows whether they're hearing the book or being asked something.
+ * The phone's speaker and chimes for drive mode (it never uses the microphone). One voice reads everything, the
+ * best one installed; a chime marks each question.
  */
 class AndroidDriveIO(
     private val context: Context,
-    private val onFocusLost: () -> Unit,
+    private val onFocusLost: (transient: Boolean) -> Unit,
     private val onFocusGained: () -> Unit,
 ) : DriveIO {
     private var tts: TextToSpeech? = null
     private val ready = CompletableDeferred<Boolean>()
     private val pending = ConcurrentHashMap<String, CancellableContinuation<Unit>>()
-    private var narrator: Voice? = null
-    private var coach: Voice? = null
-    private var coachPitch = 1f
+    private var voice: Voice? = null
     @Volatile private var speed = 1f
-    private val audio = context.getSystemService(AudioManager::class.java)
-    private var focus: AudioFocusRequest? = null
-
-    private val speech = AudioAttributes.Builder().setUsage(AudioAttributes.USAGE_MEDIA).setContentType(AudioAttributes.CONTENT_TYPE_SPEECH).build()
+    private val focus = MediaFocus(context, onLost = { onFocusLost(it) }, onRegained = onFocusGained)
 
     fun start() {
         tts = TextToSpeech(context.applicationContext) { status ->
@@ -51,7 +42,7 @@ class AndroidDriveIO(
             if (ok) setupVoices()
             ready.complete(ok)
         }.apply {
-            setAudioAttributes(speech)
+            setAudioAttributes(SPEECH_AUDIO)
             setOnUtteranceProgressListener(object : UtteranceProgressListener() {
                 override fun onStart(id: String?) = Unit
                 override fun onDone(id: String?) { id?.let { pending.remove(it)?.let { c -> if (c.isActive) c.resume(Unit) } } }
@@ -61,27 +52,20 @@ class AndroidDriveIO(
                 override fun onStop(id: String?, interrupted: Boolean) { onDone(id) }
             })
         }
-        requestFocus()
+        focus.take()
     }
 
     fun shutdown() {
         pending.values.forEach { if (it.isActive) it.resume(Unit) }
         pending.clear()
         tts?.stop(); tts?.shutdown(); tts = null
-        focus?.let { audio.abandonAudioFocusRequest(it) }
+        focus.release()
     }
 
     private fun setupVoices() {
         val engine = tts ?: return
-        val base = runCatching { engine.voice }.getOrNull() ?: runCatching { engine.defaultVoice }.getOrNull()
-        narrator = base
-        val usable = runCatching { engine.voices }.getOrNull().orEmpty().filter { v ->
-            !v.isNetworkConnectionRequired && TextToSpeech.Engine.KEY_FEATURE_NOT_INSTALLED !in v.features &&
-                v.locale.language == (base?.locale?.language ?: Locale.getDefault().language)
-        }.sortedBy { it.name }
-        coach = usable.firstOrNull { it.name != base?.name && it.locale.country == base?.locale?.country }
-            ?: usable.firstOrNull { it.name != base?.name }
-        coachPitch = if (coach == null) 1.14f else 1f
+        voice = bestVoice(engine)
+        voice?.let { runCatching { engine.voice = it } }
     }
 
     override fun setSpeed(speed: Float) { this.speed = speed }
@@ -89,14 +73,13 @@ class AndroidDriveIO(
     override suspend fun say(text: String, role: VoiceRole) {
         if (!ready.await()) { delay(text.length * 45L); return }
         val engine = tts ?: return
+        focus.take() // after another app took over and the session was resumed, pause that app again
         val id = UUID.randomUUID().toString()
         suspendCancellableCoroutine { cont ->
             pending[id] = cont
             cont.invokeOnCancellation { pending.remove(id); engine.stop() }
-            when (role) {
-                VoiceRole.NARRATOR -> { narrator?.let { runCatching { engine.voice = it } }; engine.setPitch(1f); engine.setSpeechRate(speed) }
-                VoiceRole.COACH -> { (coach ?: narrator)?.let { runCatching { engine.voice = it } }; engine.setPitch(coachPitch); engine.setSpeechRate(speed) }
-            }
+            engine.setPitch(1f)
+            engine.setSpeechRate(speed)
             if (engine.speak(text, TextToSpeech.QUEUE_FLUSH, null, id) != TextToSpeech.SUCCESS) {
                 pending.remove(id); if (cont.isActive) cont.resume(Unit)
             }
@@ -142,24 +125,6 @@ class AndroidDriveIO(
             }
         }
         return out.toShortArray()
-    }
-
-    // ---- audio focus: pause for navigation prompts and calls --------------------------------------------
-
-    private fun requestFocus() {
-        val req = AudioFocusRequest.Builder(AudioManager.AUDIOFOCUS_GAIN)
-            .setAudioAttributes(speech)
-            .setWillPauseWhenDucked(true)
-            .setOnAudioFocusChangeListener { change ->
-                when (change) {
-                    AudioManager.AUDIOFOCUS_LOSS, AudioManager.AUDIOFOCUS_LOSS_TRANSIENT,
-                    AudioManager.AUDIOFOCUS_LOSS_TRANSIENT_CAN_DUCK -> onFocusLost()
-                    AudioManager.AUDIOFOCUS_GAIN -> onFocusGained()
-                }
-            }
-            .build()
-        focus = req
-        audio.requestAudioFocus(req)
     }
 
     companion object { private const val RATE = 44_100 }
