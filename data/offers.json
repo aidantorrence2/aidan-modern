@@ -1080,7 +1080,8 @@
       "community": "Bridal hair and makeup artists: where do your trial notes live? I'm deciding whether to build a per-bride record you fill in on your phone during the trial (products by shade, placement, timings, photos), a link the bride sees with her look and prep notes, and a wedding-morning timeline built from the trial. $4/month. Pre-launch page, no charge, just an 'I'd pay' button: aidantorrence.com/offers/trial-notes",
       "pitchSubject": "Trial notes the wedding morning can follow (pre-launch)",
       "pitch": "Hi {first},\n\nI'm Aidan, a photographer who works a lot of shoot days alongside hair and makeup artists. I saw {specific reference}.\n\nI'm deciding whether to build a per-bride trial record: products by shade, timings and photos logged on your phone during the trial, a link the bride sees with her look and prep notes, and a wedding-morning timeline built from it, $4 a month.\n\nIf that's useful, the pre-launch page has an 'I'd pay' button: aidantorrence.com/offers/trial-notes?src=email\n\nIf not, one line on why helps just as much.\n\nBest,\nAidan"
-    }
+    },
+    "artifactUrl": "https://claude.ai/artifact/5niKN2aHGHnyaa74K1znoH"
   },
   {
     "slug": "kit-stock",
@@ -1706,6 +1707,41 @@
       "community": "Photographers who lend gear to second shooters and assistants: how do you keep track? I've lost card readers, batteries and once a lens to 'I gave that back'. I'm deciding whether to build a small tool: pick the item, the borrower accepts on their phone with a condition photo and return date, due dates nudge the borrower, overdue items sit at the top of your kit list, and per-job mode checks a whole bag out and back in. $3/month. Pre-launch page, no charge, just an 'I'd pay' button: aidantorrence.com/offers/kit-checkout",
       "pitchSubject": "A checkout record for the gear you lend (pre-launch)",
       "pitch": "Hi {first},\n\nI'm Aidan, a photographer. I saw {specific reference}.\n\nI'm deciding whether to build a small tool for lent gear: the borrower accepts each item on their phone with a condition photo and return date, due dates nudge them, overdue items top your kit list, and per-job mode checks a whole bag out and back in, $3 a month.\n\nIf you've ever lost gear to 'I gave that back', the pre-launch page has an 'I'd pay' button: aidantorrence.com/offers/kit-checkout?src=email\n\nIf not, one line on why is just as useful.\n\nBest,\nAidan"
+    }
+  },
+  {
+    "slug": "first-reply",
+    "name": "First Reply",
+    "headline": "Every inquiry gets a real answer in two minutes, in your voice: date checked against your calendar, the right pricing guide attached, a call slot offered, before they email three other photographers.",
+    "buyer": "wedding, family and portrait photographers who answer inquiries hours later from a phone between shoots and lose bookings to whoever replied first",
+    "bullets": [
+      "Connect your inquiry form and calendar. When a lead lands, the date is checked, and a reply you wrote once goes out with 'yes, that date is open' or 'that one's booked, here are two nearby'.",
+      "The right guide for the session type goes with it, plus a link to pick a call slot; you get the lead on your phone with the reply already sent and a one-tap 'add a personal line'.",
+      "A board shows every lead by stage: replied, call booked, proposal sent, booked or lost, with the hours between inquiry and your first reply, so you can see the speed that wins."
+    ],
+    "price": "$6/month",
+    "priceUsd": 6,
+    "priceNote": "unlimited inquiries",
+    "status": "live",
+    "launched": "2026-10-18",
+    "reasonPrompt": "How long does your first reply to an inquiry take on an average shoot day, and how many leads did you hear 'we went with someone else' from last year?",
+    "faq": [
+      {
+        "q": "Is this an auto-responder?",
+        "a": "It is your reply, written once per session type, sent with the date actually checked and the right guide attached. A bare 'thanks, we'll be in touch' is what it replaces."
+      },
+      {
+        "q": "Will it book dates without me?",
+        "a": "No. It confirms availability and offers a call. You still quote, send the contract and take the retainer however you do now."
+      }
+    ],
+    "kit": {
+      "hook": "The inquiry came in at 2pm during a wedding. I replied at 11pm. She'd booked someone else at 4.",
+      "script": "Open on a phone face-down on a reception table, a notification glowing. VO: 'Inquiry at two. Replied at eleven.' Cut to a reply going out at 2:02: 'Yes, 14 June is open', a pricing guide attached, a call-slot link. Cut to the photographer's phone: the lead, the reply already sent, a 'add a personal line' tap. Cut to a board: replied, call booked, proposal, booked. VO: 'Date checked, guide attached, call offered. Two minutes, in your voice.' End card: 'First Reply. $6 a month. Pre-launch, link in bio.'",
+      "caption": "Inquiries answered in two minutes, in your voice, with the date checked and the right guide attached. $6/month. Not built yet; tell me if you'd use it. aidantorrence.com/offers/first-reply",
+      "community": "Photographers: how fast is your first reply to an inquiry on a shoot day? I've lost bookings replying at 11pm to a 2pm email. I'm deciding whether to build a small tool: connect your form and calendar, and each inquiry gets a reply you wrote once with the date actually checked, the right pricing guide for the session type, and a link to book a call, with the lead on your phone ready for a personal line. A board shows leads by stage and reply speed. $6/month. Pre-launch page, no charge, just an 'I'd pay' button: aidantorrence.com/offers/first-reply",
+      "pitchSubject": "Inquiries answered in two minutes, in your voice (pre-launch)",
+      "pitch": "Hi {first},\n\nI'm Aidan, a photographer. I saw {specific reference}.\n\nI'm deciding whether to build a small tool for inquiries: your form and calendar connected, each lead gets a reply you wrote once with the date actually checked, the right pricing guide attached and a call slot offered, and a board shows leads by stage and reply speed, $6 a month.\n\nIf you've lost a booking to a faster reply, the pre-launch page has an 'I'd pay' button: aidantorrence.com/offers/first-reply?src=email\n\nIf not, one line on why is just as useful.\n\nBest,\nAidan"
     }
   }
 ]

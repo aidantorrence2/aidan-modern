@@ -5,6 +5,7 @@ Price: $4/month (unlimited brides)
 Buyer: bridal hair and makeup artists who run trials months before the day and keep the details in a notebook, a camera roll and their memory
 Status: live since 2026-10-17
 Hosted page: https://aidantorrence.com/offers/trial-notes (live after merge to main + deploy)
+Artifact page: https://claude.ai/artifact/5niKN2aHGHnyaa74K1znoH
 
 ## Tracking links (one per channel)
 
