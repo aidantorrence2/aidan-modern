@@ -321,6 +321,24 @@
       "status": "approved",
       "decided": "2026-10-18T21:01:48Z",
       "note": ""
+    },
+    {
+      "id": "email:android-overlay-test-1",
+      "kind": "email",
+      "source": "claude:android-test",
+      "title": "Send email to Jamie Rivera: portrait shoot thank-you",
+      "summary": "Android test card from the Mac. Deny it; nothing is sent either way.",
+      "payload": {
+        "to": "jamie@example.com",
+        "subject": "Thank you for Saturday",
+        "body": "Hi Jamie, thank you for the portrait session on Saturday. Your gallery will be ready by Friday. Aidan",
+        "note_to_aidan": "test only, nothing will be sent"
+      },
+      "created": "2026-10-18T21:14:29Z",
+      "expires": "2026-10-18T22:14:29Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
     }
   ]
 }
