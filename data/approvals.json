@@ -270,6 +270,19 @@
       "status": "approved",
       "decided": "2026-10-18T20:52:04Z",
       "note": ""
+    },
+    {
+      "id": "other:request-approval-canary-git",
+      "kind": "other",
+      "source": "claude:aidan-modern",
+      "title": "Test: git path of request-approval",
+      "summary": "Second canary, written with plain git. Deny it.",
+      "payload": {},
+      "created": "2026-10-18T20:53:26Z",
+      "expires": "2026-10-18T21:23:26Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
     }
   ]
 }
