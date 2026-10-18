@@ -15,7 +15,7 @@ val CARNEGIE_SCENES = listOf(
     scene("3 rules for handling people") {
         beat("do not criticize") { box(105, 75, 180, 40, "1 · Don't criticize, condemn or complain", Ink.Muted, size = 11.5) }
         beat("on the defensive") { text("they defend themselves", 300, 66, 12, Ink.Bad) }
-        beat("rarely changes behavior") { text("nothing changes", 300, 86, 12, Ink.Bad) }
+        beat("rarely produces the change") { text("nothing changes", 300, 86, 12, Ink.Bad) }
         beat("honest and sincere appreciation") { box(105, 150, 180, 40, "2 · Give honest appreciation", size = 12) }
         beat("feel important") { text("they feel important", 300, 141, 12, Ink.Good) }
         beat("Flattery") { text("flattery is fake, and they can tell", 300, 161, 11, Ink.Muted) }
@@ -115,7 +115,7 @@ val ATOMIC_HABITS_SCENES = listOf(
     },
     scene("The habit loop") {
         beat("a cue triggers") { box(200, 62, 100, 32, "Cue", Ink.Blue) }
-        beat("triggers a craving") { arrow(250, 76, 296, 128); box(320, 150, 100, 32, "Craving", Ink.Purple) }
+        beat("Second comes a craving") { arrow(250, 76, 296, 128); box(320, 150, 100, 32, "Craving", Ink.Purple) }
         beat("motivates a response") { arrow(296, 172, 250, 222); box(200, 238, 100, 32, "Response", Ink.White) }
         beat("delivers a reward") { arrow(150, 222, 104, 172); box(80, 150, 100, 32, "Reward", Ink.Gold) }
         beat("repeat the loop") { arrow(104, 128, 150, 76, Ink.Gold, width = 2.5) }
@@ -259,7 +259,7 @@ val THINKING_SCENES = listOf(
         beat("Availability") { text("Availability", 295, 48, 13, Ink.Gold, bold = true) }
         beat("plane crashes") { text("vivid = feels common", 295, 70, 11.5, Ink.Muted) }
         beat("Representativeness") { text("Representativeness", 200, 104, 13, Ink.Gold, bold = true) }
-        beat("quiet, bookish person") {
+        beat("shy and withdrawn") {
             person(200, 146, 0.8)
             text("quiet, bookish → librarian?", 200, 180, 11.5)
         }
@@ -277,7 +277,7 @@ val THINKING_SCENES = listOf(
         beat("remain sure of themselves") { text("but feel sure", 100, 92, 12.5, Ink.Bad, bold = true) }
         beat("Hindsight") { text("hindsight: “I knew it”", 100, 236, 11.5, Ink.Muted) }
         beat("planning fallacy") { bar(270, 195, 44, 45, Ink.Gold, "planned", "3 mo") }
-        beat("turn out to be") { bar(330, 195, 44, 115, Ink.Bad, "actual", "8 mo") }
+        beat("close to the best case") { bar(330, 195, 44, 115, Ink.Bad, "actual", "8 mo") }
         beat("outside view") { text("outside view: how did similar projects go?", 200, 274, 12.5, Ink.Good) }
     },
     scene("Losses loom larger") {

@@ -1,33 +1,59 @@
 package com.aidantorrence.syncreader
 
 /** One whitespace-delimited token and where it sits in the full text. */
-class Word(val text: String, val start: Int, val end: Int, val paragraph: Int)
+class Word(val text: String, val start: Int, val end: Int, val paragraph: Int, val section: Int = 0)
 
 /** A run of words spoken as a single text-to-speech utterance. [endWord] is exclusive. */
 class Chunk(val index: Int, val firstWord: Int, val endWord: Int)
 
 /**
- * Immutable, pre-indexed view of the text being read: words with character offsets,
- * paragraph ranges, and the utterance chunks the speech engine will be fed.
+ * Immutable, pre-indexed view of the text being read: words with character offsets, paragraph and section ranges,
+ * and the utterance chunks the speech engine will be fed.
+ *
+ * A line "## Title" in [source] starts a section (a chapter-sized part with its own animated scene and flashcards).
+ * Headings are shown but not part of [text], so they are never spoken. Without headings, each paragraph is a section.
  */
-class Document(val text: String) {
+class Document(source: String) {
+    val text: String
     val words: List<Word>
     val paragraphs: List<IntRange>
+    val sections: List<IntRange>
+    val sectionTitles: List<String>
     val chunks: List<Chunk>
     private val chunkOfWord: IntArray
 
     init {
+        val titles = ArrayList<String>()
+        val starts = ArrayList<Int>()
+        val body = StringBuilder()
+        for (line in source.lines()) {
+            val h = HEADING.matchEntire(line)
+            if (h != null) {
+                titles += h.groupValues[1].trim()
+                starts += body.length
+            } else {
+                body.append(line).append('\n')
+            }
+        }
+        text = if (titles.isEmpty()) source else body.toString().trim('\n')
+        val trimmedLead = if (titles.isEmpty()) 0 else body.length - body.trimStart('\n').length
+
         val ws = ArrayList<Word>()
         var prevEnd = 0
         var para = 0
+        var sec = 0
         for (m in WORD.findAll(text)) {
             val s = m.range.first
             val e = m.range.last + 1
-            if (ws.isNotEmpty() && text.substring(prevEnd, s).contains('\n')) para++
-            ws.add(Word(m.value, s, e, para))
+            val newPara = ws.isNotEmpty() && text.substring(prevEnd, s).contains('\n')
+            if (newPara) para++
+            if (titles.isEmpty()) sec = para
+            else while (sec + 1 < starts.size && starts[sec + 1] - trimmedLead <= s) sec++
+            ws.add(Word(m.value, s, e, para, sec))
             prevEnd = e
         }
         words = ws
+        sectionTitles = if (titles.isEmpty()) emptyList() else titles
 
         val ps = ArrayList<IntRange>()
         var pStart = 0
@@ -39,6 +65,7 @@ class Document(val text: String) {
         }
         if (ws.isNotEmpty()) ps.add(pStart until ws.size)
         paragraphs = ps
+        sections = if (titles.isEmpty()) ps else ws.indices.groupBy { ws[it].section }.toSortedMap().values.map { it.first()..it.last() }
 
         // Chunk on sentence ends and paragraph breaks so utterance joins land on natural pauses.
         val cs = ArrayList<Chunk>()
@@ -89,6 +116,7 @@ class Document(val text: String) {
 
     companion object {
         private val WORD = Regex("\\S+")
+        private val HEADING = Regex("^##\\s+(.+)$")
         private val SENTENCE_END = Regex("[.!?…][\"'”’)\\]]*$")
         const val MIN_CHUNK_WORDS = 6
         const val MAX_CHUNK_WORDS = 40

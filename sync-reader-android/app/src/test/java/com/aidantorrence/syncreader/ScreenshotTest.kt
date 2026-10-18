@@ -117,8 +117,8 @@ class ScreenshotTest {
     fun everyExplainerScene() {
         for (book in LIBRARY) {
             val doc = Document(book.summary)
-            for (p in doc.paragraphs.indices) {
-                val last = doc.paragraphs[p].last
+            for (p in doc.sections.indices) {
+                val last = doc.sections[p].last
                 captureRoboImage("build/screenshots/explainer/${book.id}-$p.png") {
                     Still {
                         ExplainerStage(book.id, doc, last, 1f, false, mutableFloatStateOf(9f),

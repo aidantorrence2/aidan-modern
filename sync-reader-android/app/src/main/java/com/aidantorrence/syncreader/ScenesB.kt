@@ -35,7 +35,7 @@ val SAPIENS_SCENES = listOf(
             grid(295, 160, 16, 9, 7, 2.2, hi = first(144))
             text("one shared story = trust", 295, 236, 12.5, Ink.Gold, bold = true)
         }
-        beat("common myths") { text("history = myths growing bigger", 200, 274, 11.5, Ink.Muted) }
+        beat("shared beliefs") { text("history = myths growing bigger", 200, 274, 11.5, Ink.Muted) }
     },
     scene("The wheat bargain") {
         beat { text("forager", 110, 50, 13, Ink.Muted, bold = true); text("farmer", 290, 50, 13, Ink.Gold, bold = true) }
@@ -90,8 +90,8 @@ val SAPIENS_SCENES = listOf(
 val SEVEN_HABITS_SCENES = listOf(
     scene("Character over technique") {
         beat("personality ethic") { text("Personality ethic", 110, 52, 13, Ink.Muted, bold = true) }
-        beat("character ethic") { text("Character ethic", 290, 52, 13, Ink.Gold, bold = true) }
         beat("techniques, image") { text("techniques\nimage\nquick fixes", 110, 98, 12, Ink.Muted) }
+        beat("character ethic") { text("Character ethic", 290, 52, 13, Ink.Gold, bold = true) }
         beat("integrity, fairness") { text("integrity\nfairness\npatience", 290, 98, 12, Ink.Gold) }
         beat("comes from character") { text("short-lived", 110, 146, 11.5, Ink.Bad); check(290, 148) }
         beat("paradigms") { text("paradigm = your mental map", 200, 190, 13) }
@@ -207,9 +207,9 @@ val SEVEN_HABITS_SCENES = listOf(
         }
         beat("four dimensions") { text("4 ways to renew", 300, 58, 12.5, Ink.Gold, bold = true) }
         beat("physical") { box(252, 100, 90, 34, "body", Ink.Good, size = 12) }
-        beat("mental, through") { box(348, 100, 90, 34, "mind", Ink.Blue, size = 12) }
+        beat("The mental dimension") { box(348, 100, 90, 34, "mind", Ink.Blue, size = 12) }
         beat("social and emotional") { box(252, 144, 90, 34, "people", Ink.Purple, size = 12) }
-        beat("spiritual, through") { box(348, 144, 90, 34, "values", Ink.Gold, size = 12) }
+        beat("The spiritual dimension") { box(348, 144, 90, 34, "values", Ink.Gold, size = 12) }
         beat("other six habits decay") { text("skip renewal and the other six decay", 200, 232, 12.5, Ink.Bad) }
     },
     scene("The emotional bank account") {
@@ -217,10 +217,10 @@ val SEVEN_HABITS_SCENES = listOf(
             line(55, 252, 205, 252, Ink.Muted, width = 2)
             text("trust balance", 130, 268, 11, Ink.Muted)
         }
-        beat("Keeping promises") { box(130, 232, 140, 30, "keep promises", Ink.Good, size = 11.5) }
+        beat("keeping commitments") { box(130, 232, 140, 30, "keep promises", Ink.Good, size = 11.5) }
         beat("clarifying expectations") { box(130, 198, 140, 30, "clear expectations", Ink.Good, size = 11.5) }
-        beat("apologizing sincerely") { box(130, 164, 140, 30, "sincere apologies", Ink.Good, size = 11.5) }
-        beat("loyalty to those who are absent") { box(130, 130, 140, 30, "loyal to the absent", Ink.Good, size = 11.5) }
+        beat("loyalty to those who are absent") { box(130, 164, 140, 30, "loyal to the absent", Ink.Good, size = 11.5) }
+        beat("apologizing sincerely") { box(130, 130, 140, 30, "sincere apologies", Ink.Good, size = 11.5) }
         beat("make deposits") { counter(300, 140, 0, 4, prefix = "+", suffix = " deposits", size = 22, color = Ink.Good) }
         beat("principles that do not change") { text("built on principles that don't change", 300, 200, 12, Ink.Gold, maxWidth = 160) }
     },
@@ -259,7 +259,7 @@ val DEEP_WORK_SCENES = listOf(
         beat("distraction feels good") { text("distraction feels good, so you need structure", 200, 262, 12, Ink.Gold) }
     },
     scene("Rule 1 · Work deeply") {
-        beat("four scheduling philosophies") { text("your week  (● = deep work)", 255, 52, 10.5, Ink.Muted) }
+        beat("depth philosophy") { text("your week  (● = deep work)", 255, 52, 10.5, Ink.Muted) }
         beat("monastic approach") {
             text("monastic", 24, 82, 12.5, Ink.Gold, align = Align.START)
             grid(255, 82, 7, 1, 26, 7, hi = first(7))
@@ -296,10 +296,10 @@ val DEEP_WORK_SCENES = listOf(
         beat("productive meditation") { text("walk + hold one problem in mind", 200, 240, 12.5, Ink.Good) }
     },
     scene("Rule 3 · Quit social media") {
-        beat("stop using tools by default") { text("use tools by choice, not by default", 200, 52, 13) }
+        beat("using tools by default") { text("use tools by choice, not by default", 200, 52, 13) }
         beat("craftsman approach") { text("the craftsman test", 140, 86, 12, Ink.Gold, bold = true) }
-        beat("benefits") { bar(105, 200, 50, 50, Ink.Good, "benefits") }
-        beat("outweigh its costs") {
+        beat("positive impacts") { bar(105, 200, 50, 50, Ink.Good, "benefits") }
+        beat("outweigh its negative impacts") {
             bar(175, 200, 50, 90, Ink.Bad, "costs")
             text("keep it only if benefits win by a lot", 140, 236, 11, Ink.Muted, maxWidth = 200)
         }
@@ -311,7 +311,7 @@ val DEEP_WORK_SCENES = listOf(
         beat("life got worse") { text("was life worse?", 305, 218, 12, Ink.Gold) }
     },
     scene("Rule 4 · Drain the shallows") {
-        beat("every minute of your day in blocks") {
+        beat("schedule every minute of your workday") {
             box(70, 70, 90, 34, "deep", Ink.Gold, filled = true, size = 11)
             box(150, 70, 60, 34, "email", Ink.Muted, size = 10.5)
             box(230, 70, 90, 34, "deep", Ink.Gold, filled = true, size = 11)

@@ -179,15 +179,15 @@ class ResolvedScene(val scene: Scene, val beatWords: IntArray)
 class SceneResolution(val scenes: List<ResolvedScene>, val problems: List<String>)
 
 /**
- * Pins every beat to a word. Anchors are searched case-insensitively inside their own paragraph, each one after
+ * Pins every beat to a word. Anchors are searched case-insensitively inside their own section, each one after
  * the previous, so beats always fire in order. Missing anchors fall back to the previous beat and are reported.
  */
 fun resolveScenes(doc: Document, scenes: List<Scene>): SceneResolution {
     val problems = mutableListOf<String>()
-    if (scenes.size != doc.paragraphs.size) {
-        problems += "expected ${doc.paragraphs.size} scenes, found ${scenes.size}"
+    if (scenes.size != doc.sections.size) {
+        problems += "expected ${doc.sections.size} scenes, found ${scenes.size}"
     }
-    val resolved = doc.paragraphs.mapIndexed { p, range ->
+    val resolved = doc.sections.mapIndexed { p, range ->
         val scene = scenes.getOrNull(p) ?: Scene("", emptyList())
         val startChar = doc.words[range.first].start
         val text = doc.text.substring(startChar, doc.words[range.last].end).lowercase()
@@ -198,7 +198,7 @@ fun resolveScenes(doc: Document, scenes: List<Scene>): SceneResolution {
             if (at == null) return@IntArray lastWord
             val idx = text.indexOf(at.lowercase(), from)
             if (idx < 0) {
-                problems += "paragraph $p (${scene.title}): anchor not found in order: \"$at\""
+                problems += "section $p (${scene.title}): anchor not found in order: \"$at\""
                 return@IntArray lastWord
             }
             from = idx + 1
@@ -232,9 +232,9 @@ fun ExplainerStage(
         BookVisual(artFor(bookId), clock, Modifier.fillMaxSize().graphicsLayer { alpha = if (resolution == null) 0.9f else 0.06f })
         if (resolution == null || doc.isEmpty) return@Box
         val word = currentWord.coerceIn(0, doc.lastWord)
-        val paragraph = doc.words[word].paragraph
+        val section = doc.words[word].section
         val tempo = if (playing) max(1f, speed).pow(0.6f) else 1f
-        Crossfade(targetState = paragraph, animationSpec = tween(350), label = "scene") { p ->
+        Crossfade(targetState = section, animationSpec = tween(350), label = "scene") { p ->
             resolution.scenes.getOrNull(p)?.let { SceneCanvas(it, word, tempo, motion, clock) }
         }
     }

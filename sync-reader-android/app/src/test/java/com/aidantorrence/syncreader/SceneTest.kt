@@ -8,11 +8,11 @@ import org.junit.Test
 class SceneTest {
 
     @Test
-    fun everyBookHasOneScenePerParagraph() {
+    fun everyBookHasOneScenePerSection() {
         for (book in LIBRARY) {
             val scenes = SCENES[book.id]
             assertTrue("${book.id} has no scenes", scenes != null)
-            assertEquals("${book.id} scene count", Document(book.summary).paragraphs.size, scenes!!.size)
+            assertEquals("${book.id} scene count", Document(book.summary).sections.size, scenes!!.size)
         }
     }
 
@@ -35,7 +35,7 @@ class SceneTest {
                 for (i in 1 until scene.beatWords.size) {
                     assertTrue("${book.id} scene $p steps out of order", scene.beatWords[i] >= scene.beatWords[i - 1])
                 }
-                val range = doc.paragraphs[p]
+                val range = doc.sections[p]
                 assertTrue(scene.beatWords.all { it in range })
             }
         }

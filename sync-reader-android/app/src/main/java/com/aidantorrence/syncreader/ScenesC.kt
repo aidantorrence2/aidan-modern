@@ -6,7 +6,7 @@ import kotlin.math.pow
 val POWER_OF_HABIT_SCENES = listOf(
     scene("The habit loop") {
         beat("A cue triggers") { box(80, 82, 100, 34, "Cue", Ink.Blue) }
-        beat("triggers a routine") { arrow(132, 82, 148, 82); box(200, 82, 100, 34, "Routine", Ink.White) }
+        beat("Then comes a routine") { arrow(132, 82, 148, 82); box(200, 82, 100, 34, "Routine", Ink.White) }
         beat("produces a reward") { arrow(252, 82, 268, 82); box(320, 82, 100, 34, "Reward", Ink.Gold) }
         beat("anticipate the reward") {
             line(320, 100, 320, 128, Ink.Gold, dashed = true)
@@ -40,7 +40,7 @@ val POWER_OF_HABIT_SCENES = listOf(
         beat("worker safety") { box(80, 84, 120, 30, "safety first", Ink.Gold, filled = true, size = 11.5) }
         beat("investors panicked") { text("investors panic", 148, 84, 11, Ink.Bad, align = Align.START) }
         beat("fixing communication") { arrow(80, 100, 80, 118); box(80, 134, 120, 30, "communication", Ink.Blue, size = 11.5) }
-        beat("manufacturing processes") { arrow(80, 150, 80, 168); box(80, 184, 120, 30, "processes", Ink.Blue, size = 11.5) }
+        beat("fixing equipment and processes") { arrow(80, 150, 80, 168); box(80, 184, 120, 30, "processes", Ink.Blue, size = 11.5) }
         beat("profits followed") { arrow(80, 200, 80, 218); box(80, 234, 120, 30, "profits ↑", Ink.Good, filled = true, size = 11.5) }
         beat("Exercise is a keystone") { box(305, 100, 120, 30, "exercise", Ink.Gold, filled = true, size = 11.5) }
         beat("eating, spending, and sleeping") {
@@ -63,7 +63,7 @@ val POWER_OF_HABIT_SCENES = listOf(
         beat("lasts longer") { text("a sense of control makes willpower last", 200, 238, 12.5, Ink.Gold) }
     },
     scene("Habits nobody designed") {
-        beat("nobody designs") { text("every group has habits, designed or not", 200, 50, 12, Ink.Muted) }
+        beat("nobody questions them") { text("every group has habits, designed or not", 200, 50, 12, Ink.Muted) }
         beat("deference to surgeons") {
             person(85, 118, 1.1, Ink.Gold, label = "surgeon")
             person(155, 126, 0.75, Ink.Muted, label = "nurse")
@@ -209,7 +209,7 @@ val MINDSET_SCENES = listOf(
         beat("hiding mistakes") { text("· hides mistakes", 24, 128, 11.5, Ink.Muted, align = Align.START) }
         beat("giving up") { text("· gives up when it's hard", 24, 148, 11.5, Ink.Muted, align = Align.START) }
         beat("feeling threatened") { text("· threatened by others' success", 24, 168, 11.5, Ink.Muted, align = Align.START) }
-        beat("treating effort") { text("· effort = no talent", 24, 188, 11.5, Ink.Muted, align = Align.START) }
+        beat("strange attitude to effort") { text("· effort = no talent", 24, 188, 11.5, Ink.Muted, align = Align.START) }
         beat("praising them for being smart") { text("“You're so smart!”", 300, 108, 13, Ink.Gold, italic = true) }
         beat("chose easier puzzles") { bar(265, 240, 40, 70, Ink.Bad, "chose easy") }
         beat("enjoyed the hard ones less") { bar(335, 240, 40, 28, Ink.Muted, "enjoyed hard") }
@@ -276,7 +276,7 @@ val MINDSET_SCENES = listOf(
 
 val OUTLIERS_SCENES = listOf(
     scene("Look around, not just at") {
-        beat("low rates of heart disease") {
+        beat("rarely saw heart disease") {
             text("heart disease", 110, 48, 11, Ink.Muted)
             bar(80, 135, 42, 25, Ink.Good, "Roseto")
             bar(140, 135, 42, 72, Ink.Muted, "nearby")
@@ -301,7 +301,7 @@ val OUTLIERS_SCENES = listOf(
             bar(250, 155, 42, 24, Ink.Muted, "Oct–Dec")
         }
         beat("cutoff date") { text("cutoff: Jan 1", 338, 96, 12.5, Ink.Blue, bold = true) }
-        beat("bigger and more coordinated") { box(50, 208, 78, 30, "a bit bigger", Ink.Muted, size = 10.5) }
+        beat("size, strength and coordination") { box(50, 208, 78, 30, "a bit bigger", Ink.Muted, size = 10.5) }
         beat("better teams") { arrow(91, 208, 103, 208); box(144, 208, 78, 30, "better team", Ink.Muted, size = 10.5) }
         beat("more coaching") { arrow(185, 208, 197, 208); box(238, 208, 78, 30, "more coaching", Ink.Muted, size = 10.5) }
         beat("really are better") { arrow(279, 208, 291, 208); box(334, 208, 84, 30, "truly better", Ink.Gold, filled = true, size = 10.5) }
@@ -329,16 +329,16 @@ val OUTLIERS_SCENES = listOf(
             curve(30, 60, 170, 120, Ink.Blue, label = "levels off") { t -> if (t < 0.5f) t * 1.4f else 0.7f + (t - 0.5f) * 0.1f }
         }
         beat("practical intelligence") { text("practical intelligence:", 305, 66, 12, Ink.Gold, bold = true) }
-        beat("read situations") { text("read the room", 305, 90, 11.5) }
-        beat("talk to authority") { text("talk to authority", 305, 110, 11.5) }
-        beat("get what you want") { text("ask for what you want", 305, 130, 11.5) }
+        beat("what to say to whom") { text("read the room", 305, 90, 11.5) }
+        beat("when to say it") { text("talk to authority", 305, 110, 11.5) }
+        beat("for the greatest effect") { text("ask for what you want", 305, 130, 11.5) }
         beat("taught by class") { text("learned at home", 305, 160, 11.5, Ink.Muted) }
         beat("concerted cultivation") { person(120, 228, 0.85, Ink.Good, label = "taught to negotiate") }
         beat("taught deference") { person(290, 228, 0.85, Ink.Muted, label = "taught to defer") }
     },
     scene("Cultural legacy") {
         beat("culture of honor") { text("honor culture → feuds, generations later", 200, 50, 11.5, Ink.Muted) }
-        beat("high deference to authority") {
+        beat("deference to authority") {
             text("“…maybe check the weather?”", 105, 78, 10.5, italic = true, maxWidth = 180)
             person(70, 118, 0.85, Ink.Gold, label = "captain")
             person(140, 122, 0.7, Ink.Muted, label = "co-pilot")
