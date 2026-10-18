@@ -1635,5 +1635,40 @@
       "pitchSubject": "Your studio's empty hours, rented from one page (pre-launch)",
       "pitch": "Hi {first},\n\nI'm Aidan, a photographer. I saw {specific reference}.\n\nI'm deciding whether to build a small tool for renting out studio hours: a booking page showing only the hours you are free, a deposit and your rules agreed before booking, the door code sent an hour before, and a ledger of hours and income, $6 a month with no commission.\n\nIf your space sits empty on weekdays, the pre-launch page has an 'I'd pay' button: aidantorrence.com/offers/studio-hours?src=email\n\nIf not, one line on why is just as useful.\n\nBest,\nAidan"
     }
+  },
+  {
+    "slug": "shot-list-live",
+    "name": "Shot List Live",
+    "headline": "The must-have list, agreed with the client before the day and ticked off from your phone during it: family formals, product angles, sponsor shots, nothing missed, nothing argued about after.",
+    "buyer": "wedding, event and commercial photographers who get a shot list by email, lose it on the day, and hear about the missed grandmother photo a month later",
+    "bullets": [
+      "Build the list with the client on one link: they add names and must-haves, you add order and timing; both sides see the same final version, locked before the day.",
+      "On the day, tick each shot from your phone or watch as it's made; a second shooter or assistant can tick from theirs, and the list sorts remaining must-haves to the top.",
+      "Afterwards the ticked list goes into the delivery note, so 'you missed Aunt May' is answered with 'ticked at 4:12, frame 2231' or an honest 'she had left'."
+    ],
+    "price": "$4/month",
+    "priceUsd": 4,
+    "priceNote": "unlimited jobs and lists",
+    "status": "live",
+    "launched": "2026-10-18",
+    "reasonPrompt": "What does your shot list look like today, and when did a missed shot last cost you a conversation?",
+    "faq": [
+      {
+        "q": "Does it need signal at the venue?",
+        "a": "The list loads before you arrive and ticks are kept on the phone until signal returns, then sync."
+      },
+      {
+        "q": "Is it only for weddings?",
+        "a": "No. Product angles, event sponsor shots, real estate rooms and editorial must-gets work the same way; templates come for each."
+      }
+    ],
+    "kit": {
+      "hook": "The shot list was in an email from March. I remembered it in the car home. We missed the grandparents with the cake.",
+      "script": "Open on a phone searching an inbox for 'shot list'. VO: 'The list was in an email from March.' Cut to a shared list: the couple adds names, the photographer adds order, a lock icon. Cut to the day: a tick per shot from the phone, a second shooter ticking too, the remaining must-haves rising to the top. Cut to a delivery note with the ticked list. VO: 'Agreed before. Ticked during. Answered after.' End card: 'Shot List Live. $4 a month. Pre-launch, link in bio.'",
+      "caption": "A shot list agreed with the client, ticked from your phone on the day, attached to the delivery. $4/month. Not built yet; tell me if you'd use it. aidantorrence.com/offers/shot-list-live",
+      "community": "Wedding and event photographers: how do you manage the must-have shot list on the day? Mine was a screenshot of an email and a prayer. I'm deciding whether to build a small tool: build the list with the client on one link and lock it before the day, tick shots from your phone or watch as you make them (second shooter too), remaining must-haves float to the top, and the ticked list goes into the delivery note. $4/month. Pre-launch page, no charge, just an 'I'd pay' button: aidantorrence.com/offers/shot-list-live",
+      "pitchSubject": "The shot list, agreed before and ticked on the day (pre-launch)",
+      "pitch": "Hi {first},\n\nI'm Aidan, a photographer. I saw {specific reference}.\n\nI'm deciding whether to build a small tool for shot lists: build and lock it with the client on one link, tick shots from your phone on the day with a second shooter ticking too, must-haves float to the top, and the ticked list goes into the delivery note, $4 a month.\n\nIf a missed shot has ever cost you a conversation, the pre-launch page has an 'I'd pay' button: aidantorrence.com/offers/shot-list-live?src=email\n\nIf not, one line on why is just as useful.\n\nBest,\nAidan"
+    }
   }
 ]
