@@ -103,7 +103,7 @@ class StudyScreensTest {
 
     @Test fun driveListening() {
         DriveController.showForTest(DriveState(running = true, phase = DrivePhase.LISTENING, title = "Atomic Habits", label = "Check",
-            line = "Two runners have exactly the same goal. What separates the winner from the loser? Is it: their system of daily actions? Or: natural talent?",
+            line = "Two runners have exactly the same goal. What separates the winner from the loser?",
             heard = "", segment = 6, segments = 18, asked = 3, right = 2))
         study.go(Route.Home(3)); show { SyncStudyApp(reader, study) }; shot("14-drive-listening")
         DriveController.showForTest(DriveState())

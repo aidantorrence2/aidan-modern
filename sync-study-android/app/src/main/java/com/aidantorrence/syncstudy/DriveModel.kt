@@ -1,6 +1,5 @@
 package com.aidantorrence.syncstudy
 
-import kotlin.math.abs
 import kotlin.math.max
 import kotlin.math.min
 
@@ -180,17 +179,15 @@ fun planSeconds(plan: List<Segment>, s: DriveSettings): Float = plan.sumOf { seg
 
 // ---- questions rewritten for listening -------------------------------------------------------------
 
-class SpokenQuestion(val prompt: String, val answer: String, val options: List<String> = emptyList(), val correct: Int = -1)
+class SpokenQuestion(val prompt: String, val answer: String)
 
-/** Two-option version of a multiple-choice card: the right answer and one wrong one, in a varying order. */
-fun spoken(card: Card, salt: Int = 0): SpokenQuestion = when (card) {
-    is Mcq -> {
-        val wrong = card.options.indices.filter { it != card.answer }
-        val distractor = wrong[abs((card.id.hashCode() * 31 + salt) % wrong.size)]
-        val rightFirst = (card.id.hashCode() + salt) % 2 == 0
-        val opts = if (rightFirst) listOf(card.options[card.answer], card.options[distractor]) else listOf(card.options[distractor], card.options[card.answer])
-        SpokenQuestion("${card.question} Is it: ${opts[0].trimEnd('.')}? Or: ${opts[1].trimEnd('.')}?", card.options[card.answer], opts, if (rightFirst) 0 else 1)
-    }
+/**
+ * Multiple-choice cards are asked open-ended, with no options read out: recalling an answer builds stronger memory
+ * than recognising it in a list. Stems that only make sense with options use a rewritten open question.
+ */
+fun spoken(card: Card): SpokenQuestion = when (card) {
+    is Mcq -> DRIVE_OPEN[card.id]?.let { SpokenQuestion(it.prompt, it.answer) }
+        ?: SpokenQuestion(card.question, card.options[card.answer])
     is Cloze -> SpokenQuestion(card.text.replace("___", "blank") + " What's the missing ${if (card.answer.contains(' ')) "phrase" else "word"}?", card.answer)
     is Recall -> SpokenQuestion(card.prompt + " Answer out loud.", card.answer)
 }
@@ -303,26 +300,35 @@ fun yesNo(text: String): Boolean? {
 
 enum class Verdict { RIGHT, WRONG, UNCLEAR }
 
-/** Which of two spoken options was chosen ("the first one", "B", or words from an option). */
-fun judgeEitherOr(said: String, q: SpokenQuestion): Verdict {
-    val w = normalizeSpeech(said)
-    val s = " ${w.joinToString(" ")} "
-    val pick = when {
-        listOf(" first ", " option a ", " letter a ", " the a ").any { it in s } || w == listOf("a") || w == listOf("ay") -> 0
-        listOf(" second ", " option b ", " letter b ", " last ", " latter ").any { it in s } || w == listOf("b") || w == listOf("be") || w == listOf("bee") -> 1
-        else -> {
-            val scores = q.options.map { opt ->
-                val keys = contentWords(opt)
-                if (keys.isEmpty()) 0f else keys.count { k -> w.any { wordsMatch(it, k) } }.toFloat() / keys.size
-            }
-            when {
-                scores[0] >= 0.34f && scores[0] > scores[1] + 0.15f -> 0
-                scores[1] >= 0.34f && scores[1] > scores[0] + 0.15f -> 1
-                else -> -1
-            }
-        }
+private fun tokenMatch(heard: String, key: String) = wordsMatch(heard, key) || (key.length >= 4 && heard.startsWith(key))
+
+/** True when every word of [phrase] was heard (stems like "appreciat" match "appreciation"). */
+fun phraseHeard(said: String, phrase: String): Boolean {
+    val heard = normalizeSpeech(said)
+    val need = normalizeSpeech(phrase)
+    return need.isNotEmpty() && need.all { k -> heard.any { tokenMatch(it, k) } }
+}
+
+private fun optionCoverage(said: String, option: String): Float {
+    val keys = contentWords(option)
+    if (keys.isEmpty()) return 0f
+    val heard = normalizeSpeech(said)
+    return keys.count { k -> heard.any { tokenMatch(it, k) } }.toFloat() / keys.size
+}
+
+/**
+ * Judges an open spoken answer to a multiple-choice card. RIGHT when it clearly carries the right answer, WRONG
+ * when it clearly matches one of the wrong options instead, otherwise UNCLEAR (the listener self-checks).
+ */
+fun judgeOpen(said: String, card: Mcq): Verdict {
+    DRIVE_OPEN[card.id]?.let { o ->
+        if (o.keys.count { phraseHeard(said, it) } >= o.need) return Verdict.RIGHT
     }
-    return when (pick) { -1 -> Verdict.UNCLEAR; q.correct -> Verdict.RIGHT; else -> Verdict.WRONG }
+    val right = optionCoverage(said, card.options[card.answer])
+    if (right >= 0.5f) return Verdict.RIGHT
+    val wrong = card.options.indices.filter { it != card.answer }.maxOf { optionCoverage(said, card.options[it]) }
+    if (wrong >= 0.6f && right < 0.3f) return Verdict.WRONG
+    return Verdict.UNCLEAR
 }
 
 /** A fill-in-the-blank is right when every word of an accepted answer was said. */

@@ -128,7 +128,7 @@ class DriveEngine(
     }
 
     private suspend fun pretest(card: Mcq) {
-        val q = spoken(card, 7)
+        val q = spoken(card)
         _state.update { it.copy(title = findBook(card.bookId)?.title ?: "") }
         io.chime(Chime.QUESTION)
         speak("Guess first. No score, it just primes your memory. ${q.prompt}", DrivePhase.QUESTION, "Guess first")
@@ -144,7 +144,7 @@ class DriveEngine(
 
     private suspend fun ask(card: Card, label: String) {
         val book = findBook(card.bookId)?.title ?: ""
-        val q = spoken(card, _state.value.asked)
+        val q = spoken(card)
         _state.update { it.copy(title = book) }
         io.chime(Chime.QUESTION)
         speak(q.prompt, DrivePhase.QUESTION, label)
@@ -177,11 +177,8 @@ class DriveEngine(
                         else -> Unit
                     }
                     if (card is Recall) return explainCheck(card, heard)
-                    val verdict = judge(card, q, heard)
-                    if (verdict == Verdict.UNCLEAR && card is Mcq && tries++ < 1) {
-                        speak("Sorry, was it ${q.options[0]}, or ${q.options[1]}?", DrivePhase.QUESTION)
-                        continue
-                    }
+                    val verdict = judge(card, heard)
+                    if (verdict == Verdict.UNCLEAR && card is Mcq) return selfCheck(card, "The answer: ${q.answer.trimEnd('.')}. ${card.why}", "Is that what you said?")
                     if (verdict == Verdict.RIGHT) {
                         io.chime(Chime.RIGHT)
                         speak("Right. ${if (card is Mcq) card.why else explanation(card)}", DrivePhase.FEEDBACK)
@@ -207,8 +204,13 @@ class DriveEngine(
             record(card, Grade.GOOD, true)
             return
         }
-        speak("Here's a strong answer: ${card.answer}", DrivePhase.FEEDBACK)
-        speak("Did you get the main idea? Yes or no.", DrivePhase.QUESTION)
+        selfCheck(card, "Here's a strong answer: ${card.answer}", "Did you get the main idea?")
+    }
+
+    /** The answer couldn't be scored automatically: read the model answer, then ask whether theirs matched. */
+    private suspend fun selfCheck(card: Card, model: String, question: String) {
+        speak(model, DrivePhase.FEEDBACK)
+        speak("$question Yes or no.", DrivePhase.QUESTION)
         val h = listen(timings.yesNoMs)
         when (if (h is Heard.Words) yesNo(h.text) else null) {
             true -> { io.chime(Chime.RIGHT); speak("Great."); record(card, Grade.GOOD, true) }
@@ -322,8 +324,8 @@ class DriveEngine(
         _state.update { it.copy(speed = speed) }
     }
 
-    private fun judge(card: Card, q: SpokenQuestion, heard: Heard.Words): Verdict = when (card) {
-        is Mcq -> heard.alternatives.map { judgeEitherOr(it, q) }.let { v ->
+    private fun judge(card: Card, heard: Heard.Words): Verdict = when (card) {
+        is Mcq -> heard.alternatives.map { judgeOpen(it, card) }.let { v ->
             when { Verdict.RIGHT in v -> Verdict.RIGHT; Verdict.WRONG in v -> Verdict.WRONG; else -> Verdict.UNCLEAR }
         }
         is Cloze -> if (heard.alternatives.any { judgeCloze(it, card) }) Verdict.RIGHT else Verdict.WRONG

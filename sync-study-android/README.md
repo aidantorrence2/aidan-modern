@@ -37,8 +37,9 @@ Pick a book and a length (10–45 min) before you set off; everything after that
   Each part's check question is asked one part later (a short lag makes recall effortful), due reviews from
   other books are mixed in, a spoken brain dump closes a finished book, and spare time carries on into your
   next unfinished book.
-- **Questions rewritten for listening:** multiple choice becomes "is it X, or Y?"; fill-in-the-blanks are said
-  out loud; "explain why" answers are scored by key words, or you compare with a model answer and say yes/no.
+- **No hints, only recall:** questions are asked open-ended, with no answer options read out (stems that only work
+  with options are rewritten as open questions). Answers are scored by key words; when it can't tell, you hear the
+  model answer and say yes or no. Fill-in-the-blanks are said out loud.
 - **Answers by voice** after a chime (on-device recognition when available). Spoken numbers, near-misses and
   "the second one" are understood. Say "repeat", "skip", "I don't know", "slower", "faster", "pause", "done".
 - **Never blocks:** silence reveals the answer after a few seconds and schedules the card sooner.

@@ -59,15 +59,25 @@ class DriveTest {
         assertEquals(listOf("the", "first", "one"), normalizeSpeech("the first one"))
     }
 
-    @Test fun eitherOrUnderstandsWordsOrderAndLetters() {
-        val q = spoken(mcq(8))
-        val right = q.options[q.correct]
-        val wrong = q.options[1 - q.correct]
-        assertEquals(Verdict.RIGHT, judgeEitherOr(right, q))
-        assertEquals(Verdict.RIGHT, judgeEitherOr("I think it's $right", q))
-        assertEquals(Verdict.WRONG, judgeEitherOr(wrong, q))
-        assertEquals(Verdict.RIGHT, judgeEitherOr(if (q.correct == 0) "the first one" else "the second one", q))
-        assertEquals(Verdict.UNCLEAR, judgeEitherOr("banana", q))
+    @Test fun questionsAreAskedWithoutReadingOutOptions() {
+        for (s in STUDY.values) for (c in s.cards.filterIsInstance<Mcq>()) {
+            val prompt = spoken(c).prompt
+            c.options.forEach { o -> assertFalse("${c.id} reads out \"$o\"", prompt.contains(o.trimEnd('.'), ignoreCase = true) && o.length > 12) }
+            assertFalse("${c.id} needs an open rewrite: $prompt", Regex("(?i)which (of these|reply|opening|approach|action|task|response)").containsMatchIn(prompt))
+        }
+        for (s in STUDY.values) for (c in s.cards.filterIsInstance<Mcq>()) assertEquals("${c.id} model answer", Verdict.RIGHT, judgeOpen(spoken(c).answer, c))
+        DRIVE_OPEN.keys.forEach { id -> assertTrue("$id is not a card", STUDY.values.any { s -> s.cards.any { it.id == id && it is Mcq } }) }
+    }
+
+    @Test fun openAnswersAreJudgedAgainstTheRightOption() {
+        assertEquals(Verdict.RIGHT, judgeOpen("systems", mcq(8)))
+        assertEquals(Verdict.RIGHT, judgeOpen("I think it's your systems", mcq(8)))
+        assertEquals(Verdict.WRONG, judgeOpen("habits", mcq(8)))
+        assertEquals(Verdict.UNCLEAR, judgeOpen("banana", mcq(8)))
+        assertEquals(Verdict.RIGHT, judgeOpen("about thirty seven times better", mcq(0)))
+        val ii = atomic.cards.first { it.id == "atomic-habits:3:0" } as Mcq
+        assertEquals(Verdict.RIGHT, judgeOpen("it's a plan for exactly when and where you'll do it", ii))
+        assertEquals(Verdict.UNCLEAR, judgeOpen("trying harder", ii))
     }
 
     @Test fun clozeAcceptsNearMissesAndNumbers() {
@@ -138,16 +148,23 @@ class DriveTest {
     // ---- the engine ----
 
     @Test fun rightSpokenAnswerIsRecordedAsGood() {
-        val q = spoken(mcq(8), 0)
-        val mem = run(listOf(Segment.Ask(mcq(8), "Check")), FakeIO(Heard.Words(q.options[q.correct])))
+        val io = FakeIO(Heard.Words("systems"))
+        val mem = run(listOf(Segment.Ask(mcq(8), "Check")), io)
+        assertFalse(io.log.any { "habits?" in it || "Or:" in it })
         assertEquals(listOf(Triple(mcq(8).id, Grade.GOOD, true)), mem.records)
     }
 
     @Test fun wrongSilentAndDontKnowAreAllRelearned() {
-        val q = spoken(mcq(8), 0)
-        assertEquals(Grade.AGAIN, run(listOf(Segment.Ask(mcq(8), "Check")), FakeIO(Heard.Words(q.options[1 - q.correct]))).records.single().second)
+        assertEquals(Grade.AGAIN, run(listOf(Segment.Ask(mcq(8), "Check")), FakeIO(Heard.Words("habits"))).records.single().second)
         assertEquals(Grade.AGAIN, run(listOf(Segment.Ask(mcq(8), "Check")), FakeIO(Heard.Silence)).records.single().second)
         assertEquals(Grade.AGAIN, run(listOf(Segment.Ask(mcq(8), "Check")), FakeIO(Heard.Words("I don't know"))).records.single().second)
+    }
+
+    @Test fun unclearAnswerIsCheckedAgainstTheModelAnswer() {
+        val yes = FakeIO(Heard.Words("something about consistency"), Heard.Words("yes"))
+        assertEquals(Grade.GOOD, run(listOf(Segment.Ask(mcq(8), "Check")), yes).records.single().second)
+        assertTrue(yes.log.any { it.contains("The answer: systems") })
+        assertEquals(Grade.AGAIN, run(listOf(Segment.Ask(mcq(8), "Check")), FakeIO(Heard.Words("something about consistency"), Heard.Words("no"))).records.single().second)
     }
 
     @Test fun skipRecordsNothing() {
@@ -155,8 +172,7 @@ class DriveTest {
     }
 
     @Test fun repeatAsksAgainThenAccepts() {
-        val q = spoken(mcq(8), 0)
-        val io = FakeIO(Heard.Words("repeat"), Heard.Words(q.options[q.correct]))
+        val io = FakeIO(Heard.Words("repeat"), Heard.Words("systems"))
         val mem = run(listOf(Segment.Ask(mcq(8), "Check")), io)
         assertEquals(2, io.log.count { it.contains(mcq(8).question) })
         assertTrue(mem.records.single().third)

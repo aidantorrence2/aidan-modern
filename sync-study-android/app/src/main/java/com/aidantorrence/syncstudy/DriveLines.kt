@@ -100,3 +100,49 @@ val DRIVE_RECAPS: Map<String, List<String>> = mapOf(
 )
 
 fun recapFor(bookId: String, paragraph: Int): String? = DRIVE_RECAPS[bookId]?.getOrNull(paragraph)
+
+/**
+ * Open-ended spoken versions of the multiple-choice questions whose wording only works with the options in
+ * front of you. [keys] are phrases that show the answer was given (stems allowed, e.g. "appreciat");
+ * [need] of them must be heard to credit the answer automatically. [answer] is read back as the model answer.
+ */
+class OpenQuestion(val prompt: String, val answer: String, val keys: List<String>, val need: Int = 1)
+
+val DRIVE_OPEN: Map<String, OpenQuestion> = mapOf(
+    "carnegie:1:0" to OpenQuestion(
+        "Your roommate keeps leaving dishes in the sink. Using Carnegie's three rules, how would you handle it?",
+        "Don't criticize. Thank them sincerely for what they do well, then frame a clear sink as something they'd want too.",
+        listOf("appreciat", "thank", "praise", "want", "criticiz"), need = 2),
+    "carnegie:4:0" to OpenQuestion(
+        "When you need to correct someone, how does Carnegie say you should open?",
+        "Start with sincere praise and appreciation, then point to the mistake indirectly.",
+        listOf("praise", "appreciat", "compliment", "indirect")),
+    "atomic-habits:3:0" to OpenQuestion(
+        "What is an implementation intention? Give an example.",
+        "A plan that says exactly when and where you'll act. For example: I will read for ten minutes at nine p.m. in bed.",
+        listOf("when and where", "time and place", "where and when", "o'clock")),
+    "seven-habits:4:0" to OpenQuestion(
+        "Name something that belongs in the important but not urgent quadrant.",
+        "Things like planning, relationships, prevention and renewal: for example planning next quarter, or visiting a friend.",
+        listOf("plan", "relationship", "friend", "family", "exercis", "prevent", "learn", "renew", "health")),
+    "seven-habits:6:0" to OpenQuestion(
+        "Your friend says, I'm so stressed about this move. What would an empathic reply sound like?",
+        "Reflect their feeling back, like: it sounds like you're overwhelmed by everything at once.",
+        listOf("sounds like", "you feel", "feeling", "overwhelm")),
+    "seven-habits:9:0" to OpenQuestion(
+        "Name one thing that makes a deposit in the emotional bank account.",
+        "Keeping promises, clarifying expectations, apologizing sincerely, or staying loyal to people who aren't in the room.",
+        listOf("promise", "apolog", "loyal", "defend", "expectation", "kind", "courtes")),
+    "deep-work:0:0" to OpenQuestion(
+        "What makes work deep, in Newport's sense?",
+        "Distraction-free concentration that pushes your abilities to their limit, like two silent hours on a hard proof.",
+        listOf("focus", "concentrat", "distraction", "hard", "limit"), need = 2),
+    "deep-work:6:0" to OpenQuestion(
+        "What's Newport's test for how shallow a task is?",
+        "Ask how long it would take to train a smart recent graduate to do it. The quicker to teach, the shallower the task.",
+        listOf("train", "graduate", "how long", "teach")),
+    "mindset:3:0" to OpenQuestion(
+        "Your child brings home a bad maths grade. What would Dweck have you say?",
+        "Talk about the process, not their ability: let's look at how you studied and try a different strategy.",
+        listOf("strateg", "studied", "process", "effort", "practi", "how you")),
+)
