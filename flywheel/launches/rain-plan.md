@@ -5,6 +5,7 @@ Price: $5/month (unlimited shoots)
 Buyer: family, engagement, senior and brand photographers who shoot outdoors and lose an evening to weather texts every week of the busy season
 Status: live since 2026-10-18
 Hosted page: https://aidantorrence.com/offers/rain-plan (live after merge to main + deploy)
+Artifact page: https://claude.ai/artifact/1R1uWr2MvmVGMysF3JJsG3
 
 ## Tracking links (one per channel)
 
