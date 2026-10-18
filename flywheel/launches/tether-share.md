@@ -4,19 +4,19 @@ Offer: A live link for the people who can't crowd the monitor: every tethered fr
 Price: $6/month (unlimited jobs, proxies kept 30 days)
 Buyer: commercial, e-commerce and editorial photographers shooting tethered for a client, art director or brand team on set or remote
 Status: live since 2026-10-17
-Hosted page: https://aidantorrence.com/offers/tether-share (live after merge to main + deploy)
+Hosted page: https://aidantorrence2.github.io/aidan-modern/tether-share (live after merge to main + deploy)
 Artifact page: https://claude.ai/artifact/Y63SpVqDyRc5kv6eLAVeiX
 
 ## Tracking links (one per channel)
 
 | Channel | Link |
 |---|---|
-| TikTok / Reels bio | https://aidantorrence.com/offers/tether-share?src=tiktok |
-| Instagram story | https://aidantorrence.com/offers/tether-share?src=ig |
-| Cold email | https://aidantorrence.com/offers/tether-share?src=email |
-| Reddit | https://aidantorrence.com/offers/tether-share?src=reddit |
-| Facebook group | https://aidantorrence.com/offers/tether-share?src=fb |
-| Indie Hackers / forum | https://aidantorrence.com/offers/tether-share?src=forum |
+| TikTok / Reels bio | https://aidantorrence2.github.io/aidan-modern/tether-share?src=tiktok |
+| Instagram story | https://aidantorrence2.github.io/aidan-modern/tether-share?src=ig |
+| Cold email | https://aidantorrence2.github.io/aidan-modern/tether-share?src=email |
+| Reddit | https://aidantorrence2.github.io/aidan-modern/tether-share?src=reddit |
+| Facebook group | https://aidantorrence2.github.io/aidan-modern/tether-share?src=fb |
+| Indie Hackers / forum | https://aidantorrence2.github.io/aidan-modern/tether-share?src=forum |
 
 ## 15–30 second post
 
@@ -27,11 +27,11 @@ Script:
 Open on a cramped set: a laptop monitor, a semicircle of people leaning in, a phone propped up on a video call. VO: 'Everyone wants to see the frame. Nobody can.' Cut to a phone: a private link, frames appearing one by one seconds after the shutter, a thumb tapping a heart on two of them. Cut to the laptop: a list of hearted frames with a note. VO: 'Every frame on their phone, live. Picks back before the lights come down.' End card: 'Tether Share. $6 a month. Pre-launch, link in bio.'
 
 Caption:
-Tethered frames on the client's phone seconds after the shutter, with hearts for picks. $6/month. Not built yet; tell me if you'd use it. aidantorrence.com/offers/tether-share
+Tethered frames on the client's phone seconds after the shutter, with hearts for picks. $6/month. Not built yet; tell me if you'd use it. aidantorrence2.github.io/aidan-modern/tether-share
 
 ## Community post (paste as is)
 
-Photographers who shoot tethered with clients on set or remote: how do they see frames right now? Mine is a crowd behind the monitor and a laptop on a video call. I'm deciding whether to build a small watcher that pushes a proxy of each capture to one private link, where the client hearts picks and leaves short notes, with the picks coming back as one list. $6/month. Pre-launch page, no charge, just an 'I'd pay' button: aidantorrence.com/offers/tether-share
+Photographers who shoot tethered with clients on set or remote: how do they see frames right now? Mine is a crowd behind the monitor and a laptop on a video call. I'm deciding whether to build a small watcher that pushes a proxy of each capture to one private link, where the client hearts picks and leaves short notes, with the picks coming back as one list. $6/month. Pre-launch page, no charge, just an 'I'd pay' button: aidantorrence2.github.io/aidan-modern/tether-share
 
 ## Cold pitch (Gmail draft; {first} and {specific reference} must be filled per person)
 
@@ -43,7 +43,7 @@ I'm Aidan, a photographer. I saw {specific reference}.
 
 I'm deciding whether to build a small tool for tethered shoots: a watcher on the shooting laptop pushes a proxy of each capture to one private link, the client or art director hearts picks on their phone, and the picks come back as one list, $6 a month.
 
-If that would help on your sets, the pre-launch page has an 'I'd pay' button: aidantorrence.com/offers/tether-share?src=email
+If that would help on your sets, the pre-launch page has an 'I'd pay' button: aidantorrence2.github.io/aidan-modern/tether-share?src=email
 
 If not, one line on why is just as useful.
 

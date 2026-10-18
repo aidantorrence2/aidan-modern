@@ -4,19 +4,19 @@ Offer: Every form submission on your website arrives on your phone as a WhatsApp
 Price: $5/month (up to 300 leads a month)
 Buyer: freelancers and small studios who miss leads because they live in an inbox nobody checks
 Status: live since 2026-10-16
-Hosted page: https://aidantorrence.com/offers/form-to-whatsapp (live after merge to main + deploy)
+Hosted page: https://aidantorrence2.github.io/aidan-modern/form-to-whatsapp (live after merge to main + deploy)
 Artifact page: https://claude.ai/artifact/Nxugv6rYVeVzcxA4ZpiZRS
 
 ## Tracking links (one per channel)
 
 | Channel | Link |
 |---|---|
-| TikTok / Reels bio | https://aidantorrence.com/offers/form-to-whatsapp?src=tiktok |
-| Instagram story | https://aidantorrence.com/offers/form-to-whatsapp?src=ig |
-| Cold email | https://aidantorrence.com/offers/form-to-whatsapp?src=email |
-| Reddit | https://aidantorrence.com/offers/form-to-whatsapp?src=reddit |
-| Facebook group | https://aidantorrence.com/offers/form-to-whatsapp?src=fb |
-| Indie Hackers / forum | https://aidantorrence.com/offers/form-to-whatsapp?src=forum |
+| TikTok / Reels bio | https://aidantorrence2.github.io/aidan-modern/form-to-whatsapp?src=tiktok |
+| Instagram story | https://aidantorrence2.github.io/aidan-modern/form-to-whatsapp?src=ig |
+| Cold email | https://aidantorrence2.github.io/aidan-modern/form-to-whatsapp?src=email |
+| Reddit | https://aidantorrence2.github.io/aidan-modern/form-to-whatsapp?src=reddit |
+| Facebook group | https://aidantorrence2.github.io/aidan-modern/form-to-whatsapp?src=fb |
+| Indie Hackers / forum | https://aidantorrence2.github.io/aidan-modern/form-to-whatsapp?src=forum |
 
 ## 15–30 second post
 
@@ -27,11 +27,11 @@ Script:
 Open on an inbox with an unread 'New submission' from nine hours ago. VO: 'Nine hours. They'd booked someone else.' Cut to a phone: a WhatsApp message with the form fields and a reply button. VO: 'One line of code. Every lead on your phone in under a minute.' End card: 'Form to WhatsApp. $5 a month. Pre-launch, link in bio.'
 
 Caption:
-Website form submissions as WhatsApp messages, one line to install, $5/month. Not built yet; say if you'd use it and I build it first. aidantorrence.com/offers/form-to-whatsapp
+Website form submissions as WhatsApp messages, one line to install, $5/month. Not built yet; say if you'd use it and I build it first. aidantorrence2.github.io/aidan-modern/form-to-whatsapp
 
 ## Community post (paste as is)
 
-Freelancers / small studios: I get my own booking forms as WhatsApp messages within a minute and it changed my reply time. Thinking of making it a $5/month tool that works with any form builder (one line to paste). Pre-launch page, no charge, just an 'I'd pay' button: aidantorrence.com/offers/form-to-whatsapp
+Freelancers / small studios: I get my own booking forms as WhatsApp messages within a minute and it changed my reply time. Thinking of making it a $5/month tool that works with any form builder (one line to paste). Pre-launch page, no charge, just an 'I'd pay' button: aidantorrence2.github.io/aidan-modern/form-to-whatsapp
 
 ## Cold pitch (Gmail draft; {first} and {specific reference} must be filled per person)
 
@@ -43,7 +43,7 @@ I'm Aidan, a photographer. I saw {specific reference}.
 
 I route my own website forms to WhatsApp so I answer leads in minutes instead of hours, and I'm deciding whether to offer it as a $5 a month tool that works with any form builder.
 
-If you'd use it, the pre-launch page has an 'I'd pay' button: aidantorrence.com/offers/form-to-whatsapp?src=email
+If you'd use it, the pre-launch page has an 'I'd pay' button: aidantorrence2.github.io/aidan-modern/form-to-whatsapp?src=email
 
 If not, one line on why helps as much.
 

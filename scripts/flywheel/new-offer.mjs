@@ -42,10 +42,10 @@ const offer = {
   kit: {
     hook: 'TODO first line of the post',
     script: 'TODO 15–30 second script',
-    caption: `TODO caption. aidantorrence.com/offers/${slug}`,
-    community: `TODO community post. aidantorrence.com/offers/${slug}`,
+    caption: `TODO caption. aidantorrence2.github.io/aidan-modern/${slug}`,
+    community: `TODO community post. aidantorrence2.github.io/aidan-modern/${slug}`,
     pitchSubject: `${name} (pre-launch)`,
-    pitch: `Hi {first},\n\nI'm Aidan, a photographer. I saw {specific reference}.\n\nI'm deciding whether to build ${name}: TODO one sentence, ${get('price') || '$9/month'}.\n\nIf that's useful, the pre-launch page has an 'I'd pay' button: aidantorrence.com/offers/${slug}?src=email\n\nIf not, one line on why helps as much.\n\nBest,\nAidan`,
+    pitch: `Hi {first},\n\nI'm Aidan, a photographer. I saw {specific reference}.\n\nI'm deciding whether to build ${name}: TODO one sentence, ${get('price') || '$9/month'}.\n\nIf that's useful, the pre-launch page has an 'I'd pay' button: aidantorrence2.github.io/aidan-modern/${slug}?src=email\n\nIf not, one line on why helps as much.\n\nBest,\nAidan`,
   },
 }
 offers.push(offer)

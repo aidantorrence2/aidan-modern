@@ -4,19 +4,19 @@ Offer: A nightly check that every shoot folder exists in three places, with a Wh
 Price: $4/month (runs on your own computer; nothing uploaded)
 Buyer: photographers who have a backup plan and no idea whether it ran last night
 Status: live since 2026-10-17
-Hosted page: https://aidantorrence.com/offers/backup-check (live after merge to main + deploy)
+Hosted page: https://aidantorrence2.github.io/aidan-modern/backup-check (live after merge to main + deploy)
 Artifact page: https://claude.ai/artifact/4e63JQfaJU1Pfq3nYcUSE8
 
 ## Tracking links (one per channel)
 
 | Channel | Link |
 |---|---|
-| TikTok / Reels bio | https://aidantorrence.com/offers/backup-check?src=tiktok |
-| Instagram story | https://aidantorrence.com/offers/backup-check?src=ig |
-| Cold email | https://aidantorrence.com/offers/backup-check?src=email |
-| Reddit | https://aidantorrence.com/offers/backup-check?src=reddit |
-| Facebook group | https://aidantorrence.com/offers/backup-check?src=fb |
-| Indie Hackers / forum | https://aidantorrence.com/offers/backup-check?src=forum |
+| TikTok / Reels bio | https://aidantorrence2.github.io/aidan-modern/backup-check?src=tiktok |
+| Instagram story | https://aidantorrence2.github.io/aidan-modern/backup-check?src=ig |
+| Cold email | https://aidantorrence2.github.io/aidan-modern/backup-check?src=email |
+| Reddit | https://aidantorrence2.github.io/aidan-modern/backup-check?src=reddit |
+| Facebook group | https://aidantorrence2.github.io/aidan-modern/backup-check?src=fb |
+| Indie Hackers / forum | https://aidantorrence2.github.io/aidan-modern/backup-check?src=forum |
 
 ## 15–30 second post
 
@@ -27,11 +27,11 @@ Script:
 Open on a drive icon with a yellow triangle. VO: 'Three weeks of shoots, one copy, no alert.' Cut to a phone at 7am: a WhatsApp reads 'All 212 shoot folders in 3 places. Backup drive 88% full.' Then a red one: 'Shoot 2026-10-14 Bali: cloud copy missing 311 files.' VO: 'Every night it checks. Every morning you know.' End card: 'Backup Check. $4 a month. Pre-launch, link in bio.'
 
 Caption:
-A nightly check that each shoot exists in three places, with a WhatsApp the morning one is missing. $4/month. Not built yet; say if you'd use it. aidantorrence.com/offers/backup-check
+A nightly check that each shoot exists in three places, with a WhatsApp the morning one is missing. $4/month. Not built yet; say if you'd use it. aidantorrence2.github.io/aidan-modern/backup-check
 
 ## Community post (paste as is)
 
-Photographers: when did you last verify your backup actually ran? I'm deciding whether to build a small local tool: it compares shoot folders across your working drive, backup drive and cloud folder every night by file count and checksum, and sends one line each morning, or a WhatsApp when a shoot is missing or half-copied. $4/month, nothing uploaded. Pre-launch page, no charge, just an 'I'd pay' button: aidantorrence.com/offers/backup-check
+Photographers: when did you last verify your backup actually ran? I'm deciding whether to build a small local tool: it compares shoot folders across your working drive, backup drive and cloud folder every night by file count and checksum, and sends one line each morning, or a WhatsApp when a shoot is missing or half-copied. $4/month, nothing uploaded. Pre-launch page, no charge, just an 'I'd pay' button: aidantorrence2.github.io/aidan-modern/backup-check
 
 ## Cold pitch (Gmail draft; {first} and {specific reference} must be filled per person)
 
@@ -43,7 +43,7 @@ I'm Aidan, a photographer. I saw {specific reference}.
 
 I'm deciding whether to build a small local tool that verifies every shoot folder exists in three places each night, by file count and checksum, and messages you the morning one is missing, $4 a month.
 
-If that's useful, the pre-launch page has an 'I'd pay' button: aidantorrence.com/offers/backup-check?src=email
+If that's useful, the pre-launch page has an 'I'd pay' button: aidantorrence2.github.io/aidan-modern/backup-check?src=email
 
 If not, one line on why helps just as much.
 

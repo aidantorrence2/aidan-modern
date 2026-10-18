@@ -4,19 +4,19 @@ Offer: Ask a creator for permission to repost their video or photo with one link
 Price: $5/month (unlimited requests; team seats later)
 Buyer: small brands, venues and creators who repost other people's content and settle permission in a DM nobody can find later
 Status: live since 2026-10-17
-Hosted page: https://aidantorrence.com/offers/repost-permit (live after merge to main + deploy)
+Hosted page: https://aidantorrence2.github.io/aidan-modern/repost-permit (live after merge to main + deploy)
 Artifact page: https://claude.ai/artifact/QkE6z3fmeFZNY7boeCCiby
 
 ## Tracking links (one per channel)
 
 | Channel | Link |
 |---|---|
-| TikTok / Reels bio | https://aidantorrence.com/offers/repost-permit?src=tiktok |
-| Instagram story | https://aidantorrence.com/offers/repost-permit?src=ig |
-| Cold email | https://aidantorrence.com/offers/repost-permit?src=email |
-| Reddit | https://aidantorrence.com/offers/repost-permit?src=reddit |
-| Facebook group | https://aidantorrence.com/offers/repost-permit?src=fb |
-| Indie Hackers / forum | https://aidantorrence.com/offers/repost-permit?src=forum |
+| TikTok / Reels bio | https://aidantorrence2.github.io/aidan-modern/repost-permit?src=tiktok |
+| Instagram story | https://aidantorrence2.github.io/aidan-modern/repost-permit?src=ig |
+| Cold email | https://aidantorrence2.github.io/aidan-modern/repost-permit?src=email |
+| Reddit | https://aidantorrence2.github.io/aidan-modern/repost-permit?src=reddit |
+| Facebook group | https://aidantorrence2.github.io/aidan-modern/repost-permit?src=fb |
+| Indie Hackers / forum | https://aidantorrence2.github.io/aidan-modern/repost-permit?src=forum |
 
 ## 15–30 second post
 
@@ -27,11 +27,11 @@ Script:
 Open on a DM thread scrolled back for ages, 'can we repost?' 'sure'. VO: 'Permission by DM. Gone in a week.' Cut to a phone: a post link pasted, a request with use and credit, a creator taps Approve, a dated record appears. VO: 'One link to ask. One tap to approve. A record you can find.' End card: 'Repost Permit. $5 a month. Pre-launch, link in bio.'
 
 Caption:
-Ask to repost with one link, creator approves in a tap, dated record with the terms. $5/month. Not built yet; say if you'd use it. aidantorrence.com/offers/repost-permit
+Ask to repost with one link, creator approves in a tap, dated record with the terms. $5/month. Not built yet; say if you'd use it. aidantorrence2.github.io/aidan-modern/repost-permit
 
 ## Community post (paste as is)
 
-Brands, venues and creators who repost UGC: how do you keep proof of permission? I'm deciding whether to build a one-link request: paste the post, state the use and credit, the creator approves in a tap without an account, and every approval is logged with terms and timestamp. $5/month. Pre-launch page, no charge, just an 'I'd pay' button: aidantorrence.com/offers/repost-permit
+Brands, venues and creators who repost UGC: how do you keep proof of permission? I'm deciding whether to build a one-link request: paste the post, state the use and credit, the creator approves in a tap without an account, and every approval is logged with terms and timestamp. $5/month. Pre-launch page, no charge, just an 'I'd pay' button: aidantorrence2.github.io/aidan-modern/repost-permit
 
 ## Cold pitch (Gmail draft; {first} and {specific reference} must be filled per person)
 
@@ -43,7 +43,7 @@ I'm Aidan, a photographer and creator. I saw {specific reference}.
 
 I'm deciding whether to build a one-link repost permission tool: paste a post, state the use and credit, the creator approves in a tap, and every approval is logged with its terms, $5 a month.
 
-If that's useful, the pre-launch page has an 'I'd pay' button: aidantorrence.com/offers/repost-permit?src=email
+If that's useful, the pre-launch page has an 'I'd pay' button: aidantorrence2.github.io/aidan-modern/repost-permit?src=email
 
 If not, one line on why helps just as much.
 

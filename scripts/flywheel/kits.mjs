@@ -9,7 +9,7 @@ import { fileURLToPath } from 'node:url'
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..', '..')
 const offers = JSON.parse(readFileSync(resolve(root, 'data/offers.json'), 'utf8'))
 const only = process.argv[2]
-const BASE = 'https://aidantorrence.com/offers'
+const BASE = 'https://aidantorrence2.github.io/aidan-modern'
 
 mkdirSync(resolve(root, 'flywheel/launches'), { recursive: true })
 let n = 0

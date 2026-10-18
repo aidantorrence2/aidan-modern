@@ -4,19 +4,19 @@ Offer: One record per bride from the trial: the look, every product and shade, t
 Price: $4/month (unlimited brides)
 Buyer: bridal hair and makeup artists who run trials months before the day and keep the details in a notebook, a camera roll and their memory
 Status: live since 2026-10-17
-Hosted page: https://aidantorrence.com/offers/trial-notes (live after merge to main + deploy)
+Hosted page: https://aidantorrence2.github.io/aidan-modern/trial-notes (live after merge to main + deploy)
 Artifact page: https://claude.ai/artifact/5niKN2aHGHnyaa74K1znoH
 
 ## Tracking links (one per channel)
 
 | Channel | Link |
 |---|---|
-| TikTok / Reels bio | https://aidantorrence.com/offers/trial-notes?src=tiktok |
-| Instagram story | https://aidantorrence.com/offers/trial-notes?src=ig |
-| Cold email | https://aidantorrence.com/offers/trial-notes?src=email |
-| Reddit | https://aidantorrence.com/offers/trial-notes?src=reddit |
-| Facebook group | https://aidantorrence.com/offers/trial-notes?src=fb |
-| Indie Hackers / forum | https://aidantorrence.com/offers/trial-notes?src=forum |
+| TikTok / Reels bio | https://aidantorrence2.github.io/aidan-modern/trial-notes?src=tiktok |
+| Instagram story | https://aidantorrence2.github.io/aidan-modern/trial-notes?src=ig |
+| Cold email | https://aidantorrence2.github.io/aidan-modern/trial-notes?src=email |
+| Reddit | https://aidantorrence2.github.io/aidan-modern/trial-notes?src=reddit |
+| Facebook group | https://aidantorrence2.github.io/aidan-modern/trial-notes?src=fb |
+| Indie Hackers / forum | https://aidantorrence2.github.io/aidan-modern/trial-notes?src=forum |
 
 ## 15–30 second post
 
@@ -27,11 +27,11 @@ Script:
 Open on a notebook page with 'foundation 2.5? lashes: wispy' scrawled. VO: 'Six months later, that was all I had.' Cut to a phone: a bride's record with products by shade, timings per step, finished-look photos, a prep note the bride can see. VO: 'Log the trial as you work. The bride gets her link. The morning repeats the trial.' End card: 'Trial Notes. $4 a month. Pre-launch, link in bio.'
 
 Caption:
-One record per bride from the trial: products, shades, timings, photos, a link she can see. $4/month. Not built yet; say if you'd use it. aidantorrence.com/offers/trial-notes
+One record per bride from the trial: products, shades, timings, photos, a link she can see. $4/month. Not built yet; say if you'd use it. aidantorrence2.github.io/aidan-modern/trial-notes
 
 ## Community post (paste as is)
 
-Bridal hair and makeup artists: where do your trial notes live? I'm deciding whether to build a per-bride record you fill in on your phone during the trial (products by shade, placement, timings, photos), a link the bride sees with her look and prep notes, and a wedding-morning timeline built from the trial. $4/month. Pre-launch page, no charge, just an 'I'd pay' button: aidantorrence.com/offers/trial-notes
+Bridal hair and makeup artists: where do your trial notes live? I'm deciding whether to build a per-bride record you fill in on your phone during the trial (products by shade, placement, timings, photos), a link the bride sees with her look and prep notes, and a wedding-morning timeline built from the trial. $4/month. Pre-launch page, no charge, just an 'I'd pay' button: aidantorrence2.github.io/aidan-modern/trial-notes
 
 ## Cold pitch (Gmail draft; {first} and {specific reference} must be filled per person)
 
@@ -43,7 +43,7 @@ I'm Aidan, a photographer who works a lot of shoot days alongside hair and makeu
 
 I'm deciding whether to build a per-bride trial record: products by shade, timings and photos logged on your phone during the trial, a link the bride sees with her look and prep notes, and a wedding-morning timeline built from it, $4 a month.
 
-If that's useful, the pre-launch page has an 'I'd pay' button: aidantorrence.com/offers/trial-notes?src=email
+If that's useful, the pre-launch page has an 'I'd pay' button: aidantorrence2.github.io/aidan-modern/trial-notes?src=email
 
 If not, one line on why helps just as much.
 

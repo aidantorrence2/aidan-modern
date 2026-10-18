@@ -4,19 +4,19 @@ Offer: Client galleries that expire without the panic: reminders at 30, 7 and 1 
 Price: $4/month (unlimited galleries; extensions are paid to you directly)
 Buyer: wedding, family and portrait photographers whose galleries expire after 60 to 90 days and who still get resend requests long after
 Status: live since 2026-10-18
-Hosted page: https://aidantorrence.com/offers/expiry-nudge (live after merge to main + deploy)
+Hosted page: https://aidantorrence2.github.io/aidan-modern/expiry-nudge (live after merge to main + deploy)
 Artifact page: https://claude.ai/artifact/CG43uAqhZPnLUWYQV9iP7H
 
 ## Tracking links (one per channel)
 
 | Channel | Link |
 |---|---|
-| TikTok / Reels bio | https://aidantorrence.com/offers/expiry-nudge?src=tiktok |
-| Instagram story | https://aidantorrence.com/offers/expiry-nudge?src=ig |
-| Cold email | https://aidantorrence.com/offers/expiry-nudge?src=email |
-| Reddit | https://aidantorrence.com/offers/expiry-nudge?src=reddit |
-| Facebook group | https://aidantorrence.com/offers/expiry-nudge?src=fb |
-| Indie Hackers / forum | https://aidantorrence.com/offers/expiry-nudge?src=forum |
+| TikTok / Reels bio | https://aidantorrence2.github.io/aidan-modern/expiry-nudge?src=tiktok |
+| Instagram story | https://aidantorrence2.github.io/aidan-modern/expiry-nudge?src=ig |
+| Cold email | https://aidantorrence2.github.io/aidan-modern/expiry-nudge?src=email |
+| Reddit | https://aidantorrence2.github.io/aidan-modern/expiry-nudge?src=reddit |
+| Facebook group | https://aidantorrence2.github.io/aidan-modern/expiry-nudge?src=fb |
+| Indie Hackers / forum | https://aidantorrence2.github.io/aidan-modern/expiry-nudge?src=forum |
 
 ## 15–30 second post
 
@@ -27,11 +27,11 @@ Script:
 Open on an inbox: three emails with 'resend' in the subject. VO: 'Fourteen months later. Nobody downloaded.' Cut to a phone: a reminder, '7 days left, you haven't downloaded yet', then a final one with 'extend for a year, $25', a tap, paid. Cut to a board of galleries by expiry date, green for downloaded, blue for extended. VO: 'Three reminders in your voice. An extension they can pay for. No resend emails.' End card: 'Expiry Nudge. $4 a month. Pre-launch, link in bio.'
 
 Caption:
-Gallery expiry reminders with download status and a paid extension link, so the 'can you resend?' emails stop. $4/month. Not built yet; tell me if you'd use it. aidantorrence.com/offers/expiry-nudge
+Gallery expiry reminders with download status and a paid extension link, so the 'can you resend?' emails stop. $4/month. Not built yet; tell me if you'd use it. aidantorrence2.github.io/aidan-modern/expiry-nudge
 
 ## Community post (paste as is)
 
-Photographers whose galleries expire: how do you handle the resend requests a year later? Mine was free re-uploads and quiet resentment. I'm deciding whether to build a small tool: paste the gallery link and expiry, the client gets three reminders in your voice showing whether they've downloaded, the last one carries your paid extension or archive offer, and a board shows every gallery by expiry and download status. $4/month, extensions paid to you. Pre-launch page, no charge, just an 'I'd pay' button: aidantorrence.com/offers/expiry-nudge
+Photographers whose galleries expire: how do you handle the resend requests a year later? Mine was free re-uploads and quiet resentment. I'm deciding whether to build a small tool: paste the gallery link and expiry, the client gets three reminders in your voice showing whether they've downloaded, the last one carries your paid extension or archive offer, and a board shows every gallery by expiry and download status. $4/month, extensions paid to you. Pre-launch page, no charge, just an 'I'd pay' button: aidantorrence2.github.io/aidan-modern/expiry-nudge
 
 ## Cold pitch (Gmail draft; {first} and {specific reference} must be filled per person)
 
@@ -43,7 +43,7 @@ I'm Aidan, a photographer. I saw {specific reference}.
 
 I'm deciding whether to build a small tool for gallery expiries: three reminders in your voice that show whether the client has downloaded, a paid extension or archive offer in the last one, and a board of every gallery by expiry and download status, $4 a month.
 
-If you still get 'can you resend?' emails, the pre-launch page has an 'I'd pay' button: aidantorrence.com/offers/expiry-nudge?src=email
+If you still get 'can you resend?' emails, the pre-launch page has an 'I'd pay' button: aidantorrence2.github.io/aidan-modern/expiry-nudge?src=email
 
 If not, one line on why is just as useful.
 

@@ -4,19 +4,19 @@ Offer: A one-link shoot moodboard your model, stylist and client can react to be
 Price: $8/month (unlimited boards)
 Buyer: photographers who send Pinterest links and screenshots and hope everyone saw the same thing
 Status: live since 2026-10-16
-Hosted page: https://aidantorrence.com/offers/moodboard-maker (live after merge to main + deploy)
+Hosted page: https://aidantorrence2.github.io/aidan-modern/moodboard-maker (live after merge to main + deploy)
 Artifact page: https://claude.ai/artifact/NFodpDSxJKMufwiwsdT4ov
 
 ## Tracking links (one per channel)
 
 | Channel | Link |
 |---|---|
-| TikTok / Reels bio | https://aidantorrence.com/offers/moodboard-maker?src=tiktok |
-| Instagram story | https://aidantorrence.com/offers/moodboard-maker?src=ig |
-| Cold email | https://aidantorrence.com/offers/moodboard-maker?src=email |
-| Reddit | https://aidantorrence.com/offers/moodboard-maker?src=reddit |
-| Facebook group | https://aidantorrence.com/offers/moodboard-maker?src=fb |
-| Indie Hackers / forum | https://aidantorrence.com/offers/moodboard-maker?src=forum |
+| TikTok / Reels bio | https://aidantorrence2.github.io/aidan-modern/moodboard-maker?src=tiktok |
+| Instagram story | https://aidantorrence2.github.io/aidan-modern/moodboard-maker?src=ig |
+| Cold email | https://aidantorrence2.github.io/aidan-modern/moodboard-maker?src=email |
+| Reddit | https://aidantorrence2.github.io/aidan-modern/moodboard-maker?src=reddit |
+| Facebook group | https://aidantorrence2.github.io/aidan-modern/moodboard-maker?src=fb |
+| Indie Hackers / forum | https://aidantorrence2.github.io/aidan-modern/moodboard-maker?src=forum |
 
 ## 15–30 second post
 
@@ -27,11 +27,11 @@ Script:
 Open on three chat apps with three different screenshots of references. VO: 'Three people, three moodboards, one shoot.' Cut to a board with wardrobe, light and location rows; a model taps hearts and skips on her phone. VO: 'One link. Everyone reacts. You see it in one view.' End card: 'Moodboard Maker. $8 a month. Pre-launch, link in bio.'
 
 Caption:
-One moodboard link your model, stylist and client react to before the shoot. $8/month. Not built for others yet; say if you'd use it. aidantorrence.com/offers/moodboard-maker
+One moodboard link your model, stylist and client react to before the shoot. $8/month. Not built for others yet; say if you'd use it. aidantorrence2.github.io/aidan-modern/moodboard-maker
 
 ## Community post (paste as is)
 
-Photographers: how do you share shoot references with model + stylist + client? I'm considering opening up the moodboard builder behind my own sign-ups (theme sets, wardrobe/light/location rows, a link each person reacts to, PDF export) at $8/month. Pre-launch, no charge, just an 'I'd pay' button: aidantorrence.com/offers/moodboard-maker
+Photographers: how do you share shoot references with model + stylist + client? I'm considering opening up the moodboard builder behind my own sign-ups (theme sets, wardrobe/light/location rows, a link each person reacts to, PDF export) at $8/month. Pre-launch, no charge, just an 'I'd pay' button: aidantorrence2.github.io/aidan-modern/moodboard-maker
 
 ## Cold pitch (Gmail draft; {first} and {specific reference} must be filled per person)
 
@@ -43,7 +43,7 @@ I'm Aidan, a photographer. I saw {specific reference}.
 
 I'm deciding whether to offer the moodboard builder I use for my own shoots as a tool: one link, your model, stylist and client react before the day, PDF for the call sheet, $8 a month.
 
-If you'd use it, the pre-launch page has an 'I'd pay' button: aidantorrence.com/offers/moodboard-maker?src=email
+If you'd use it, the pre-launch page has an 'I'd pay' button: aidantorrence2.github.io/aidan-modern/moodboard-maker?src=email
 
 If not, one line on why is just as helpful.
 

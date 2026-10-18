@@ -36,3 +36,6 @@ marketing/**/*.heic
 marketing/**/*.tif
 marketing/**/*.tiff
 public/design-shots/
+
+# static export of offer pages (published to gh-pages by scripts/flywheel/publish-pages.sh)
+static-offers/

@@ -4,19 +4,19 @@ Offer: Unpaid photo invoices chase themselves: polite reminders on a schedule yo
 Price: $4/month (unlimited invoices)
 Buyer: freelance photographers and small studios who invoice brands, agencies and magazines and wait 30 to 90 days to get paid
 Status: live since 2026-10-17
-Hosted page: https://aidantorrence.com/offers/invoice-nudge (live after merge to main + deploy)
+Hosted page: https://aidantorrence2.github.io/aidan-modern/invoice-nudge (live after merge to main + deploy)
 Artifact page: https://claude.ai/artifact/Y1zHdaWnaLqZk9VfzRYcjW
 
 ## Tracking links (one per channel)
 
 | Channel | Link |
 |---|---|
-| TikTok / Reels bio | https://aidantorrence.com/offers/invoice-nudge?src=tiktok |
-| Instagram story | https://aidantorrence.com/offers/invoice-nudge?src=ig |
-| Cold email | https://aidantorrence.com/offers/invoice-nudge?src=email |
-| Reddit | https://aidantorrence.com/offers/invoice-nudge?src=reddit |
-| Facebook group | https://aidantorrence.com/offers/invoice-nudge?src=fb |
-| Indie Hackers / forum | https://aidantorrence.com/offers/invoice-nudge?src=forum |
+| TikTok / Reels bio | https://aidantorrence2.github.io/aidan-modern/invoice-nudge?src=tiktok |
+| Instagram story | https://aidantorrence2.github.io/aidan-modern/invoice-nudge?src=ig |
+| Cold email | https://aidantorrence2.github.io/aidan-modern/invoice-nudge?src=email |
+| Reddit | https://aidantorrence2.github.io/aidan-modern/invoice-nudge?src=reddit |
+| Facebook group | https://aidantorrence2.github.io/aidan-modern/invoice-nudge?src=fb |
+| Indie Hackers / forum | https://aidantorrence2.github.io/aidan-modern/invoice-nudge?src=forum |
 
 ## 15–30 second post
 
@@ -27,11 +27,11 @@ Script:
 Open on a sent folder: four emails to the same accounts-payable address, each starting 'Just following up'. VO: 'Day 74 on a net-30 invoice.' Cut to a phone: an invoice pasted in, three reminder dates picked, a preview that reads like a human wrote it. A 'paid' tap cancels the rest. VO: 'Reminders in your voice, on your schedule, stopping the second the money lands.' End card: 'Invoice Nudge. $4 a month. Pre-launch, link in bio.'
 
 Caption:
-Overdue photo invoices that chase themselves, in your voice, and stop when paid. $4/month. Not built yet; tell me if you'd use it. aidantorrence.com/offers/invoice-nudge
+Overdue photo invoices that chase themselves, in your voice, and stop when paid. $4/month. Not built yet; tell me if you'd use it. aidantorrence2.github.io/aidan-modern/invoice-nudge
 
 ## Community post (paste as is)
 
-Photographers who invoice brands and magazines: how do you handle the chasing? Mine is a calendar reminder and a dread-filled 'just following up' email. I'm deciding whether to build a small tool: paste the invoice, pick reminder days, it sends short notes in your voice and cancels them the moment you mark it paid, with an overdue board on top. $4/month. Pre-launch page, no charge, just an 'I'd pay' button: aidantorrence.com/offers/invoice-nudge
+Photographers who invoice brands and magazines: how do you handle the chasing? Mine is a calendar reminder and a dread-filled 'just following up' email. I'm deciding whether to build a small tool: paste the invoice, pick reminder days, it sends short notes in your voice and cancels them the moment you mark it paid, with an overdue board on top. $4/month. Pre-launch page, no charge, just an 'I'd pay' button: aidantorrence2.github.io/aidan-modern/invoice-nudge
 
 ## Cold pitch (Gmail draft; {first} and {specific reference} must be filled per person)
 
@@ -43,7 +43,7 @@ I'm Aidan, a photographer. I saw {specific reference}.
 
 I'm deciding whether to build a small tool for late invoices: paste the invoice, pick reminder days, it sends short follow-ups in your voice and stops the moment you mark it paid, $4 a month.
 
-If that would save you the fourth 'just checking in', the pre-launch page has an 'I'd pay' button: aidantorrence.com/offers/invoice-nudge?src=email
+If that would save you the fourth 'just checking in', the pre-launch page has an 'I'd pay' button: aidantorrence2.github.io/aidan-modern/invoice-nudge?src=email
 
 If not, one line on why is just as useful.
 

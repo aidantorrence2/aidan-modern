@@ -4,19 +4,19 @@ Offer: Call sheet, model release and usage agreement as one clean PDF, in two mi
 Price: $9 per shoot (or $7/month unlimited)
 Buyer: freelance photographers and small production teams who still type these up the night before
 Status: live since 2026-10-16
-Hosted page: https://aidantorrence.com/offers/shoot-kit (live after merge to main + deploy)
+Hosted page: https://aidantorrence2.github.io/aidan-modern/shoot-kit (live after merge to main + deploy)
 Artifact page: https://claude.ai/artifact/4oARQvjamPUxJtRSAcc8q9
 
 ## Tracking links (one per channel)
 
 | Channel | Link |
 |---|---|
-| TikTok / Reels bio | https://aidantorrence.com/offers/shoot-kit?src=tiktok |
-| Instagram story | https://aidantorrence.com/offers/shoot-kit?src=ig |
-| Cold email | https://aidantorrence.com/offers/shoot-kit?src=email |
-| Reddit | https://aidantorrence.com/offers/shoot-kit?src=reddit |
-| Facebook group | https://aidantorrence.com/offers/shoot-kit?src=fb |
-| Indie Hackers / forum | https://aidantorrence.com/offers/shoot-kit?src=forum |
+| TikTok / Reels bio | https://aidantorrence2.github.io/aidan-modern/shoot-kit?src=tiktok |
+| Instagram story | https://aidantorrence2.github.io/aidan-modern/shoot-kit?src=ig |
+| Cold email | https://aidantorrence2.github.io/aidan-modern/shoot-kit?src=email |
+| Reddit | https://aidantorrence2.github.io/aidan-modern/shoot-kit?src=reddit |
+| Facebook group | https://aidantorrence2.github.io/aidan-modern/shoot-kit?src=fb |
+| Indie Hackers / forum | https://aidantorrence2.github.io/aidan-modern/shoot-kit?src=forum |
 
 ## 15–30 second post
 
@@ -27,11 +27,11 @@ Script:
 Open on a phone, a cramped notes app with 'CALL SHEET' typed at the top. VO: 'Call sheet, model release, usage agreement. Every shoot, from scratch, the night before.' Cut to a form: date, location, crew. Tap generate. Three PDFs stack up. VO: 'One form. Three documents. Everyone signs on their phone.' End card: 'Shoot Kit. $9 a shoot. Pre-launch, link in bio.'
 
 Caption:
-Call sheet + release + usage terms in two minutes. Not built yet; I build it if enough photographers say they'd use it. $9 per shoot. aidantorrence.com/offers/shoot-kit
+Call sheet + release + usage terms in two minutes. Not built yet; I build it if enough photographers say they'd use it. $9 per shoot. aidantorrence2.github.io/aidan-modern/shoot-kit
 
 ## Community post (paste as is)
 
-Photographers: how do you do call sheets and model releases right now? I'm sketching a tool that generates the call sheet, release and usage agreement from one form and gets them signed on phones, $9 per shoot or $7/month. Pre-launch page, no charge, just an 'I'd pay' button so I know whether to build it: aidantorrence.com/offers/shoot-kit
+Photographers: how do you do call sheets and model releases right now? I'm sketching a tool that generates the call sheet, release and usage agreement from one form and gets them signed on phones, $9 per shoot or $7/month. Pre-launch page, no charge, just an 'I'd pay' button so I know whether to build it: aidantorrence2.github.io/aidan-modern/shoot-kit
 
 ## Cold pitch (Gmail draft; {first} and {specific reference} must be filled per person)
 
@@ -43,7 +43,7 @@ I'm Aidan, a photographer. I saw {specific reference}.
 
 I'm deciding whether to build a small tool that turns one form into a call sheet, model release and usage agreement, signed on phones, $9 per shoot.
 
-If you'd use it, the pre-launch page has an 'I'd pay' button and takes ten seconds: aidantorrence.com/offers/shoot-kit?src=email
+If you'd use it, the pre-launch page has an 'I'd pay' button and takes ten seconds: aidantorrence2.github.io/aidan-modern/shoot-kit?src=email
 
 If not, 'no, because' in one line is just as useful.
 

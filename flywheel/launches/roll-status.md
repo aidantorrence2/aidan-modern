@@ -4,19 +4,19 @@ Offer: A status link for every film order: check-in creates it, each roll moves 
 Price: $15/month (unlimited orders; one lab, any number of staff)
 Buyer: independent develop-and-scan film labs that answer 'is my film ready?' emails all day
 Status: live since 2026-10-18
-Hosted page: https://aidantorrence.com/offers/roll-status (live after merge to main + deploy)
+Hosted page: https://aidantorrence2.github.io/aidan-modern/roll-status (live after merge to main + deploy)
 Artifact page: https://claude.ai/artifact/VdLuisXhQMmL7GtNDY9mnc
 
 ## Tracking links (one per channel)
 
 | Channel | Link |
 |---|---|
-| TikTok / Reels bio | https://aidantorrence.com/offers/roll-status?src=tiktok |
-| Instagram story | https://aidantorrence.com/offers/roll-status?src=ig |
-| Cold email | https://aidantorrence.com/offers/roll-status?src=email |
-| Reddit | https://aidantorrence.com/offers/roll-status?src=reddit |
-| Facebook group | https://aidantorrence.com/offers/roll-status?src=fb |
-| Indie Hackers / forum | https://aidantorrence.com/offers/roll-status?src=forum |
+| TikTok / Reels bio | https://aidantorrence2.github.io/aidan-modern/roll-status?src=tiktok |
+| Instagram story | https://aidantorrence2.github.io/aidan-modern/roll-status?src=ig |
+| Cold email | https://aidantorrence2.github.io/aidan-modern/roll-status?src=email |
+| Reddit | https://aidantorrence2.github.io/aidan-modern/roll-status?src=reddit |
+| Facebook group | https://aidantorrence2.github.io/aidan-modern/roll-status?src=fb |
+| Indie Hackers / forum | https://aidantorrence2.github.io/aidan-modern/roll-status?src=forum |
 
 ## 15–30 second post
 
@@ -27,11 +27,11 @@ Script:
 Open on an inbox: 'any update on order 4471?' three times. VO: 'Every roll, every customer, the same question.' Cut to a lab bench: a bag scanned, a status link created; a tap moves it to developing, another to scanning, a note goes out each time; the download link lands. Cut to the lab's homepage: 'current turnaround: 9 days', updating itself. VO: 'One tap at the bench. One link for the customer. A turnaround line that tells the truth.' End card: 'Roll Status. $15 a month. Pre-launch, link in bio.'
 
 Caption:
-A status link for every roll in a film lab's queue, one tap per stage at the bench. $15/month. Not built yet; labs, tell me if you'd use it. aidantorrence.com/offers/roll-status
+A status link for every roll in a film lab's queue, one tap per stage at the bench. $15/month. Not built yet; labs, tell me if you'd use it. aidantorrence2.github.io/aidan-modern/roll-status
 
 ## Community post (paste as is)
 
-Film lab owners and staff: how much of the day goes to 'is my film ready?' I'm deciding whether to build a small tool: check-in creates a status link for the customer, one tap per stage at the bench (received, developing, scanning, ready) with a short note at each step, and your site's turnaround line computed from the real queue. $15/month. Pre-launch page, no charge, just an 'I'd pay' button: aidantorrence.com/offers/roll-status
+Film lab owners and staff: how much of the day goes to 'is my film ready?' I'm deciding whether to build a small tool: check-in creates a status link for the customer, one tap per stage at the bench (received, developing, scanning, ready) with a short note at each step, and your site's turnaround line computed from the real queue. $15/month. Pre-launch page, no charge, just an 'I'd pay' button: aidantorrence2.github.io/aidan-modern/roll-status
 
 ## Cold pitch (Gmail draft; {first} and {specific reference} must be filled per person)
 
@@ -43,7 +43,7 @@ I'm Aidan, a portrait photographer who shoots film. I saw {specific reference}.
 
 I'm deciding whether to build a small tool for labs: check-in creates a status link for the customer, one tap per stage at the bench with a short note at each step, and your site's turnaround line computed from the real queue, $15 a month.
 
-If 'is my film ready?' is a daily email for you, the pre-launch page has an 'I'd pay' button: aidantorrence.com/offers/roll-status?src=email
+If 'is my film ready?' is a daily email for you, the pre-launch page has an 'I'd pay' button: aidantorrence2.github.io/aidan-modern/roll-status?src=email
 
 If not, one line on why is just as useful.
 

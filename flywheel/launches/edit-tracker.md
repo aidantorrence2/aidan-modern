@@ -4,19 +4,19 @@ Offer: A status page for every gallery in progress: culled, editing, retouching,
 Price: $4/month (unlimited jobs)
 Buyer: wedding, family and portrait photographers with a backlog of galleries and clients who check in by text, email and Instagram every few days
 Status: live since 2026-10-18
-Hosted page: https://aidantorrence.com/offers/edit-tracker (live after merge to main + deploy)
+Hosted page: https://aidantorrence2.github.io/aidan-modern/edit-tracker (live after merge to main + deploy)
 Artifact page: https://claude.ai/artifact/GX59qVQoQu9aLyTvReP141
 
 ## Tracking links (one per channel)
 
 | Channel | Link |
 |---|---|
-| TikTok / Reels bio | https://aidantorrence.com/offers/edit-tracker?src=tiktok |
-| Instagram story | https://aidantorrence.com/offers/edit-tracker?src=ig |
-| Cold email | https://aidantorrence.com/offers/edit-tracker?src=email |
-| Reddit | https://aidantorrence.com/offers/edit-tracker?src=reddit |
-| Facebook group | https://aidantorrence.com/offers/edit-tracker?src=fb |
-| Indie Hackers / forum | https://aidantorrence.com/offers/edit-tracker?src=forum |
+| TikTok / Reels bio | https://aidantorrence2.github.io/aidan-modern/edit-tracker?src=tiktok |
+| Instagram story | https://aidantorrence2.github.io/aidan-modern/edit-tracker?src=ig |
+| Cold email | https://aidantorrence2.github.io/aidan-modern/edit-tracker?src=email |
+| Reddit | https://aidantorrence2.github.io/aidan-modern/edit-tracker?src=reddit |
+| Facebook group | https://aidantorrence2.github.io/aidan-modern/edit-tracker?src=fb |
+| Indie Hackers / forum | https://aidantorrence2.github.io/aidan-modern/edit-tracker?src=forum |
 
 ## 15–30 second post
 
@@ -27,11 +27,11 @@ Script:
 Open on a phone: three 'just checking in' messages stacking up. VO: 'Nine days before it's due.' Cut to a client's status page: culled, editing (current), retouching, exporting, delivered, with 'expected 2 November'. Cut to the photographer's queue: galleries by promised date, one flagged at risk, a tap moves the date and sends a short note. VO: 'They see the stage and the date. You see the queue. Nobody has to ask.' End card: 'Edit Tracker. $4 a month. Pre-launch, link in bio.'
 
 Caption:
-A status page per gallery in progress, with a date clients can trust, and a queue view for you. $4/month. Not built yet; tell me if you'd use it. aidantorrence.com/offers/edit-tracker
+A status page per gallery in progress, with a date clients can trust, and a queue view for you. $4/month. Not built yet; tell me if you'd use it. aidantorrence2.github.io/aidan-modern/edit-tracker
 
 ## Community post (paste as is)
 
-Photographers with an editing backlog: how do you handle the 'any update?' messages? I'm deciding whether to build a small tool: each job gets a private status link showing the stage (culled, editing, retouching, exporting, delivered) and the expected date; you move stages in one tap from your phone; falling behind pushes the date and sends a short honest note you wrote once; your side is a queue sorted by promised date with at-risk jobs first. $4/month. Pre-launch page, no charge, just an 'I'd pay' button: aidantorrence.com/offers/edit-tracker
+Photographers with an editing backlog: how do you handle the 'any update?' messages? I'm deciding whether to build a small tool: each job gets a private status link showing the stage (culled, editing, retouching, exporting, delivered) and the expected date; you move stages in one tap from your phone; falling behind pushes the date and sends a short honest note you wrote once; your side is a queue sorted by promised date with at-risk jobs first. $4/month. Pre-launch page, no charge, just an 'I'd pay' button: aidantorrence2.github.io/aidan-modern/edit-tracker
 
 ## Cold pitch (Gmail draft; {first} and {specific reference} must be filled per person)
 
@@ -43,7 +43,7 @@ I'm Aidan, a photographer. I saw {specific reference}.
 
 I'm deciding whether to build a small tool for the editing backlog: each job gets a private status link with its stage and expected date, you move stages in one tap, falling behind pushes the date with a short note you wrote once, and your side is a queue by promised date, $4 a month.
 
-If the 'any update?' messages sound familiar, the pre-launch page has an 'I'd pay' button: aidantorrence.com/offers/edit-tracker?src=email
+If the 'any update?' messages sound familiar, the pre-launch page has an 'I'd pay' button: aidantorrence2.github.io/aidan-modern/edit-tracker?src=email
 
 If not, one line on why is just as useful.
 

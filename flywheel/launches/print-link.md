@@ -4,19 +4,19 @@ Offer: One link per shoot where your subject or their family can order real prin
 Price: $6/month (plus lab cost at wholesale; you keep the margin)
 Buyer: portrait and family photographers who get asked 'can I get a print?' and answer with a Dropbox folder
 Status: live since 2026-10-17
-Hosted page: https://aidantorrence.com/offers/print-link (live after merge to main + deploy)
+Hosted page: https://aidantorrence2.github.io/aidan-modern/print-link (live after merge to main + deploy)
 Artifact page: https://claude.ai/artifact/7UVLd9vkCSv65U348oSyUE
 
 ## Tracking links (one per channel)
 
 | Channel | Link |
 |---|---|
-| TikTok / Reels bio | https://aidantorrence.com/offers/print-link?src=tiktok |
-| Instagram story | https://aidantorrence.com/offers/print-link?src=ig |
-| Cold email | https://aidantorrence.com/offers/print-link?src=email |
-| Reddit | https://aidantorrence.com/offers/print-link?src=reddit |
-| Facebook group | https://aidantorrence.com/offers/print-link?src=fb |
-| Indie Hackers / forum | https://aidantorrence.com/offers/print-link?src=forum |
+| TikTok / Reels bio | https://aidantorrence2.github.io/aidan-modern/print-link?src=tiktok |
+| Instagram story | https://aidantorrence2.github.io/aidan-modern/print-link?src=ig |
+| Cold email | https://aidantorrence2.github.io/aidan-modern/print-link?src=email |
+| Reddit | https://aidantorrence2.github.io/aidan-modern/print-link?src=reddit |
+| Facebook group | https://aidantorrence2.github.io/aidan-modern/print-link?src=fb |
+| Indie Hackers / forum | https://aidantorrence2.github.io/aidan-modern/print-link?src=forum |
 
 ## 15–30 second post
 
@@ -27,11 +27,11 @@ Script:
 Open on a WhatsApp: 'Can I order a print of the one on the stairs?' VO: 'The question I never had an answer for.' Cut to a phone: a shoot link, a photo at 30x40, paper choice, pay. A lab label prints. VO: 'They pick a size. A lab prints and ships. You set the margin. Nothing to pack.' End card: 'Print Link. $6 a month. Pre-launch, link in bio.'
 
 Caption:
-One link per shoot for real prints, lab-fulfilled, your margin, nothing to pack. $6/month. Not built yet; say if you'd use it. aidantorrence.com/offers/print-link
+One link per shoot for real prints, lab-fulfilled, your margin, nothing to pack. $6/month. Not built yet; say if you'd use it. aidantorrence2.github.io/aidan-modern/print-link
 
 ## Community post (paste as is)
 
-Portrait and family photographers: what happens when a client asks for a print? I'm deciding whether to build a one-link-per-shoot print order page (your edit locked, lab fulfils and ships in the buyer's region, you set the margin, weekly payout). $6/month plus wholesale lab cost. Pre-launch page, no charge, just an 'I'd pay' button: aidantorrence.com/offers/print-link
+Portrait and family photographers: what happens when a client asks for a print? I'm deciding whether to build a one-link-per-shoot print order page (your edit locked, lab fulfils and ships in the buyer's region, you set the margin, weekly payout). $6/month plus wholesale lab cost. Pre-launch page, no charge, just an 'I'd pay' button: aidantorrence2.github.io/aidan-modern/print-link
 
 ## Cold pitch (Gmail draft; {first} and {specific reference} must be filled per person)
 
@@ -43,7 +43,7 @@ I'm Aidan, a photographer. I saw {specific reference}.
 
 I'm deciding whether to build a one-link-per-shoot print order page: your edit locked, a lab prints and ships in the buyer's region, you set the margin, $6 a month plus wholesale lab cost.
 
-If that's useful, the pre-launch page has an 'I'd pay' button: aidantorrence.com/offers/print-link?src=email
+If that's useful, the pre-launch page has an 'I'd pay' button: aidantorrence2.github.io/aidan-modern/print-link?src=email
 
 If not, one line on why helps just as much.
 

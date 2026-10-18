@@ -28,7 +28,7 @@ for (const o of offers) {
       else if (/TODO/.test(o.kit[k]) && o.status !== 'draft') errors.push(`${at}: kit.${k} still has TODO`)
     }
     for (const k of ['caption', 'community', 'pitch']) {
-      if (o.kit[k] && !o.kit[k].includes(`aidantorrence.com/offers/${o.slug}`)) errors.push(`${at}: kit.${k} must link to its own page`)
+      if (o.kit[k] && !o.kit[k].includes(`aidantorrence2.github.io/aidan-modern/${o.slug}`)) errors.push(`${at}: kit.${k} must link to its own page`)
     }
     if (o.kit.pitch && /https?:\/\//.test(o.kit.pitch)) errors.push(`${at}: kit.pitch must not contain http links (plain-text offer link only)`)
     const banned = /(testimonial|customers love|trusted by|\d+ (happy )?customers|only \d+ left|limited spots)/i

@@ -5,18 +5,21 @@ The operating brain is the Claude Doc "Money Flywheel — Operating Plan"
 scheduled task ("Money flywheel (hourly)", fires at :11 UTC) runs the loop from
 that doc: launch an offer page as a Claude artifact, build the traffic kit, harvest
 interest, decide, build. This repo is the **code home** for that loop: the hosted
-offer pages on aidantorrence.com, the interest database, and the products that
-earn a build.
+offer pages (static export on GitHub Pages, never Vercel), the interest signal, and
+the products that earn a build.
 
 ## Why hosted pages as well as artifacts
 
-| | Claude artifact | aidantorrence.com/offers/<slug> |
+| | Claude artifact | GitHub Pages (`flywheel/config.json` → `publicBase`) |
 |---|---|---|
-| Live without a merge | yes | no (needs merge to `main` + `scripts/deploy.sh`) |
-| Real domain for link-in-bio, TikTok, Reddit | no | yes |
-| Meta Pixel + first-party funnel analytics | no | yes (`lib/track.ts`, Neon `analytics_events`) |
-| Slack alert on every sign-up | no | yes (`SLACK_BOOKING_WEBHOOK`) |
-| Pre-order button once a payment link exists | manual | per-offer `preorderUrl` or `NEXT_PUBLIC_PREORDER_BASE` |
+| Live without a merge | yes | yes (`scripts/flywheel/publish-pages.sh` pushes `gh-pages`) |
+| Real URL for link-in-bio, TikTok, Reddit | no | yes; custom domain later via a CNAME file + DNS |
+| Interest capture | artifact DB | `formEndpoint` if set, else mailto to `config.mail` with subject `[offer:<slug>] <intent>` counted from Gmail |
+| Analytics | no | none until a counter is added (no server); `?src=` still rides in the mailto/form payload |
+| Pre-order button once a payment link exists | manual | TODO: add `preorderUrl` support to `scripts/flywheel/export-static.mjs` |
+
+The Next.js pages under `app/offers` and the Neon-backed API routes stay in the repo as the
+richer version for whenever a server host is wanted, but nothing depends on them going live.
 
 Rule: an idea is launched first wherever it can go live fastest (artifact), and is
 **also** added to `data/offers.json` so the hosted page exists the moment the branch
@@ -46,5 +49,5 @@ Kill: 20+ pitches and a post with zero sign-ups, or 7 days under 3 sign-ups.
 ## What needs Aidan
 
 1. Merge this branch to `main` and run `scripts/deploy.sh` (or tell the session to open a PR). Until then the hosted pages are not live; artifact pages carry the traffic.
-2. Payment link base (Stripe Payment Link / Gumroad / Lemon Squeezy) in Vercel env `NEXT_PUBLIC_PREORDER_BASE`, or per offer in `data/offers.json`.
+2. Payment link base (Stripe Payment Link / Gumroad / Lemon Squeezy) per offer in `data/offers.json` (`preorderUrl`), rendered by the static exporter once added.
 3. Post the scripts in `flywheel/launches/`. Nothing is posted or sent automatically.

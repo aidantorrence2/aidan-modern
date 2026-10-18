@@ -4,18 +4,18 @@ Offer: Guests scan a QR, take a selfie, and get the photos they're in before the
 Price: $9 per event (or $15/month for unlimited events)
 Buyer: event, conference and party photographers who deliver a 900-image gallery three days later and watch nobody find themselves in it
 Status: live since 2026-10-18
-Hosted page: https://aidantorrence.com/offers/event-pickup (live after merge to main + deploy)
+Hosted page: https://aidantorrence2.github.io/aidan-modern/event-pickup (live after merge to main + deploy)
 
 ## Tracking links (one per channel)
 
 | Channel | Link |
 |---|---|
-| TikTok / Reels bio | https://aidantorrence.com/offers/event-pickup?src=tiktok |
-| Instagram story | https://aidantorrence.com/offers/event-pickup?src=ig |
-| Cold email | https://aidantorrence.com/offers/event-pickup?src=email |
-| Reddit | https://aidantorrence.com/offers/event-pickup?src=reddit |
-| Facebook group | https://aidantorrence.com/offers/event-pickup?src=fb |
-| Indie Hackers / forum | https://aidantorrence.com/offers/event-pickup?src=forum |
+| TikTok / Reels bio | https://aidantorrence2.github.io/aidan-modern/event-pickup?src=tiktok |
+| Instagram story | https://aidantorrence2.github.io/aidan-modern/event-pickup?src=ig |
+| Cold email | https://aidantorrence2.github.io/aidan-modern/event-pickup?src=email |
+| Reddit | https://aidantorrence2.github.io/aidan-modern/event-pickup?src=reddit |
+| Facebook group | https://aidantorrence2.github.io/aidan-modern/event-pickup?src=fb |
+| Indie Hackers / forum | https://aidantorrence2.github.io/aidan-modern/event-pickup?src=forum |
 
 ## 15–30 second post
 
@@ -26,11 +26,11 @@ Script:
 Open on a conference gallery scrolling endlessly. VO: 'Nine hundred photos. Three people found themselves.' Cut to an event: a QR on the welcome sign, a guest scans, takes a selfie, and four frames of them appear, your credit on each. Cut to the organiser's morning: full gallery, '212 guests picked up photos'. VO: 'Scan, selfie, your photos, tonight.' End card: 'Event Pickup. $9 an event. Pre-launch, link in bio.'
 
 Caption:
-Event guests scan a QR, take a selfie, and get the photos they're in before they leave. $9 per event. Not built yet; tell me if you'd use it. aidantorrence.com/offers/event-pickup
+Event guests scan a QR, take a selfie, and get the photos they're in before they leave. $9 per event. Not built yet; tell me if you'd use it. aidantorrence2.github.io/aidan-modern/event-pickup
 
 ## Community post (paste as is)
 
-Event and conference photographers: how do guests actually get their photos? My galleries go out days later and almost nobody finds themselves. I'm deciding whether to build a small tool: frames push to an event page through the night, guests scan a QR and take a selfie to get only the frames they're in (your credit on each, selfies deleted in 24 hours), and the organiser gets the full set plus a pickup count the next morning. $9 per event or $15/month. Pre-launch page, no charge, just an 'I'd pay' button: aidantorrence.com/offers/event-pickup
+Event and conference photographers: how do guests actually get their photos? My galleries go out days later and almost nobody finds themselves. I'm deciding whether to build a small tool: frames push to an event page through the night, guests scan a QR and take a selfie to get only the frames they're in (your credit on each, selfies deleted in 24 hours), and the organiser gets the full set plus a pickup count the next morning. $9 per event or $15/month. Pre-launch page, no charge, just an 'I'd pay' button: aidantorrence2.github.io/aidan-modern/event-pickup
 
 ## Cold pitch (Gmail draft; {first} and {specific reference} must be filled per person)
 
@@ -42,7 +42,7 @@ I'm Aidan, a photographer. I saw {specific reference}.
 
 I'm deciding whether to build a small tool for events: frames push to an event page through the night, guests scan a QR and take a selfie to get only the frames they're in with your credit on each, and the organiser gets the full set and a pickup count next morning, $9 per event or $15 a month.
 
-If your galleries go unopened, the pre-launch page has an 'I'd pay' button: aidantorrence.com/offers/event-pickup?src=email
+If your galleries go unopened, the pre-launch page has an 'I'd pay' button: aidantorrence2.github.io/aidan-modern/event-pickup?src=email
 
 If not, one line on why is just as useful.
 

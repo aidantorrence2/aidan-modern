@@ -4,19 +4,19 @@ Offer: A hundred first lines for your next short videos, scored against what's w
 Price: $9/month (cancel anytime)
 Buyer: short-form creators who know what to film and freeze on the first sentence
 Status: live since 2026-10-16
-Hosted page: https://aidantorrence.com/offers/hook-bank (live after merge to main + deploy)
+Hosted page: https://aidantorrence2.github.io/aidan-modern/hook-bank (live after merge to main + deploy)
 Artifact page: https://claude.ai/artifact/FfB9BHNnGmquSYrgv6mgZA
 
 ## Tracking links (one per channel)
 
 | Channel | Link |
 |---|---|
-| TikTok / Reels bio | https://aidantorrence.com/offers/hook-bank?src=tiktok |
-| Instagram story | https://aidantorrence.com/offers/hook-bank?src=ig |
-| Cold email | https://aidantorrence.com/offers/hook-bank?src=email |
-| Reddit | https://aidantorrence.com/offers/hook-bank?src=reddit |
-| Facebook group | https://aidantorrence.com/offers/hook-bank?src=fb |
-| Indie Hackers / forum | https://aidantorrence.com/offers/hook-bank?src=forum |
+| TikTok / Reels bio | https://aidantorrence2.github.io/aidan-modern/hook-bank?src=tiktok |
+| Instagram story | https://aidantorrence2.github.io/aidan-modern/hook-bank?src=ig |
+| Cold email | https://aidantorrence2.github.io/aidan-modern/hook-bank?src=email |
+| Reddit | https://aidantorrence2.github.io/aidan-modern/hook-bank?src=reddit |
+| Facebook group | https://aidantorrence2.github.io/aidan-modern/hook-bank?src=fb |
+| Indie Hackers / forum | https://aidantorrence2.github.io/aidan-modern/hook-bank?src=forum |
 
 ## 15–30 second post
 
@@ -27,11 +27,11 @@ Script:
 Open on a notes app with 30 crossed-out first lines. VO: 'Thirty first lines. One works.' Cut to a list: 100 hooks grouped by angle, each with a why. VO: 'A hundred every Monday, scored for your niche, rewritten in your voice.' End card: 'Hook Bank. $9 a month. Pre-launch, link in bio.'
 
 Caption:
-100 scored hooks for your niche every Monday, rewritten in your voice. $9/month. Not launched yet; your click decides whether it gets built. aidantorrence.com/offers/hook-bank
+100 scored hooks for your niche every Monday, rewritten in your voice. $9/month. Not launched yet; your click decides whether it gets built. aidantorrence2.github.io/aidan-modern/hook-bank
 
 ## Community post (paste as is)
 
-Short-form creators: would you pay $9/month for 100 hooks every Monday, scored for your niche, grouped by angle, each with a why and a rewrite in your voice? Generated, with a human spot-check. Pre-launch page with an 'I'd pay' button, no charge: aidantorrence.com/offers/hook-bank
+Short-form creators: would you pay $9/month for 100 hooks every Monday, scored for your niche, grouped by angle, each with a why and a rewrite in your voice? Generated, with a human spot-check. Pre-launch page with an 'I'd pay' button, no charge: aidantorrence2.github.io/aidan-modern/hook-bank
 
 ## Cold pitch (Gmail draft; {first} and {specific reference} must be filled per person)
 
@@ -43,7 +43,7 @@ I'm Aidan, a photographer and short-form creator. I saw {specific reference}.
 
 I'm deciding whether to build a weekly hook list: 100 first lines scored for your niche, grouped by angle, rewritten in your voice, $9 a month.
 
-If that's useful, the pre-launch page has an 'I'd pay' button: aidantorrence.com/offers/hook-bank?src=email
+If that's useful, the pre-launch page has an 'I'd pay' button: aidantorrence2.github.io/aidan-modern/hook-bank?src=email
 
 If not, a one-line 'no, because' helps just as much.
 

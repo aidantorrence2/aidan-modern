@@ -4,19 +4,19 @@ Offer: A photographer's portfolio site that loads in under a second, from a fold
 Price: $15/month (domain included)
 Buyer: photographers paying for a site builder they resent, or still sending a Google Drive link
 Status: live since 2026-10-16
-Hosted page: https://aidantorrence.com/offers/portfolio-globe (live after merge to main + deploy)
+Hosted page: https://aidantorrence2.github.io/aidan-modern/portfolio-globe (live after merge to main + deploy)
 Artifact page: https://claude.ai/artifact/N6uW3wUQTjZUUAPXhRHQEd
 
 ## Tracking links (one per channel)
 
 | Channel | Link |
 |---|---|
-| TikTok / Reels bio | https://aidantorrence.com/offers/portfolio-globe?src=tiktok |
-| Instagram story | https://aidantorrence.com/offers/portfolio-globe?src=ig |
-| Cold email | https://aidantorrence.com/offers/portfolio-globe?src=email |
-| Reddit | https://aidantorrence.com/offers/portfolio-globe?src=reddit |
-| Facebook group | https://aidantorrence.com/offers/portfolio-globe?src=fb |
-| Indie Hackers / forum | https://aidantorrence.com/offers/portfolio-globe?src=forum |
+| TikTok / Reels bio | https://aidantorrence2.github.io/aidan-modern/portfolio-globe?src=tiktok |
+| Instagram story | https://aidantorrence2.github.io/aidan-modern/portfolio-globe?src=ig |
+| Cold email | https://aidantorrence2.github.io/aidan-modern/portfolio-globe?src=email |
+| Reddit | https://aidantorrence2.github.io/aidan-modern/portfolio-globe?src=reddit |
+| Facebook group | https://aidantorrence2.github.io/aidan-modern/portfolio-globe?src=fb |
+| Indie Hackers / forum | https://aidantorrence2.github.io/aidan-modern/portfolio-globe?src=forum |
 
 ## 15–30 second post
 
@@ -27,11 +27,11 @@ Script:
 Open on a slow site builder spinning. VO: 'Forty minutes rearranging a grid. Again.' Cut to a terminal: a folder drops in, 'optimising 212 photos', then a portfolio opens instantly on a phone. VO: 'A folder in. A site out. Fast, on your domain, edited from your phone.' End card: 'Portfolio Globe. $15 a month. Pre-launch, link in bio.'
 
 Caption:
-The engine behind my portfolio as a product: folder in, fast site out, your domain, phone editor. $15/month. Not open to others yet; say if you'd use it. aidantorrence.com/offers/portfolio-globe
+The engine behind my portfolio as a product: folder in, fast site out, your domain, phone editor. $15/month. Not open to others yet; say if you'd use it. aidantorrence2.github.io/aidan-modern/portfolio-globe
 
 ## Community post (paste as is)
 
-Photographers: what do you pay for your portfolio site and what annoys you about it? I'm deciding whether to offer the engine behind my own site (folder in, auto-processed, tiered opening sequence, WhatsApp contact, shoot pages, your domain, phone editor) at $15/month. Pre-launch page, no charge: aidantorrence.com/offers/portfolio-globe
+Photographers: what do you pay for your portfolio site and what annoys you about it? I'm deciding whether to offer the engine behind my own site (folder in, auto-processed, tiered opening sequence, WhatsApp contact, shoot pages, your domain, phone editor) at $15/month. Pre-launch page, no charge: aidantorrence2.github.io/aidan-modern/portfolio-globe
 
 ## Cold pitch (Gmail draft; {first} and {specific reference} must be filled per person)
 
@@ -43,7 +43,7 @@ I'm Aidan, a photographer. I saw {specific reference}.
 
 I'm deciding whether to offer the engine behind my own portfolio site as a product: a folder of photos in, a fast site on your own domain out, edited from your phone, $15 a month.
 
-If you'd use it, the pre-launch page has an 'I'd pay' button: aidantorrence.com/offers/portfolio-globe?src=email
+If you'd use it, the pre-launch page has an 'I'd pay' button: aidantorrence2.github.io/aidan-modern/portfolio-globe?src=email
 
 If not, a one-line 'no, because' is just as useful.
 

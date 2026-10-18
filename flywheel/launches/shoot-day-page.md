@@ -4,19 +4,19 @@ Offer: One page per booking that tells your client everything about the day: tim
 Price: $4/month (unlimited bookings)
 Buyer: photographers who answer the same six 'what time, where exactly, what if it rains' messages before every session
 Status: live since 2026-10-17
-Hosted page: https://aidantorrence.com/offers/shoot-day-page (live after merge to main + deploy)
+Hosted page: https://aidantorrence2.github.io/aidan-modern/shoot-day-page (live after merge to main + deploy)
 Artifact page: https://claude.ai/artifact/LDqryoF4NBjNNUh7iqP8PS
 
 ## Tracking links (one per channel)
 
 | Channel | Link |
 |---|---|
-| TikTok / Reels bio | https://aidantorrence.com/offers/shoot-day-page?src=tiktok |
-| Instagram story | https://aidantorrence.com/offers/shoot-day-page?src=ig |
-| Cold email | https://aidantorrence.com/offers/shoot-day-page?src=email |
-| Reddit | https://aidantorrence.com/offers/shoot-day-page?src=reddit |
-| Facebook group | https://aidantorrence.com/offers/shoot-day-page?src=fb |
-| Indie Hackers / forum | https://aidantorrence.com/offers/shoot-day-page?src=forum |
+| TikTok / Reels bio | https://aidantorrence2.github.io/aidan-modern/shoot-day-page?src=tiktok |
+| Instagram story | https://aidantorrence2.github.io/aidan-modern/shoot-day-page?src=ig |
+| Cold email | https://aidantorrence2.github.io/aidan-modern/shoot-day-page?src=email |
+| Reddit | https://aidantorrence2.github.io/aidan-modern/shoot-day-page?src=reddit |
+| Facebook group | https://aidantorrence2.github.io/aidan-modern/shoot-day-page?src=fb |
+| Indie Hackers / forum | https://aidantorrence2.github.io/aidan-modern/shoot-day-page?src=forum |
 
 ## 15–30 second post
 
@@ -27,11 +27,11 @@ Script:
 Open on a WhatsApp thread: three clients asking the same three questions. VO: 'Every shoot. Same six questions.' Cut to a phone: a booking page with timeline, map pin, parking note, rain plan, wardrobe link, weather line, a tap-to-call button. VO: 'One page per booking. Updated when the day changes. Reminders sent for you.' End card: 'Shoot Day Page. $4 a month. Pre-launch, link in bio.'
 
 Caption:
-One page per booking with time, pin, parking, rain plan, wardrobe and reminders, so the questions stop. $4/month. Not built yet; say if you'd use it. aidantorrence.com/offers/shoot-day-page
+One page per booking with time, pin, parking, rain plan, wardrobe and reminders, so the questions stop. $4/month. Not built yet; say if you'd use it. aidantorrence2.github.io/aidan-modern/shoot-day-page
 
 ## Community post (paste as is)
 
-Photographers: which pre-shoot questions do you answer most? I'm deciding whether to build a per-booking client page: timeline, map pin with parking notes, what to expect, rain plan, wardrobe brief, weather line, deposit status, day-before and morning-of reminders, a tap-to-call number. $4/month. Pre-launch page, no charge, just an 'I'd pay' button: aidantorrence.com/offers/shoot-day-page
+Photographers: which pre-shoot questions do you answer most? I'm deciding whether to build a per-booking client page: timeline, map pin with parking notes, what to expect, rain plan, wardrobe brief, weather line, deposit status, day-before and morning-of reminders, a tap-to-call number. $4/month. Pre-launch page, no charge, just an 'I'd pay' button: aidantorrence2.github.io/aidan-modern/shoot-day-page
 
 ## Cold pitch (Gmail draft; {first} and {specific reference} must be filled per person)
 
@@ -43,7 +43,7 @@ I'm Aidan, a photographer. I saw {specific reference}.
 
 I'm deciding whether to build a per-booking client page: timeline, map pin with parking notes, rain plan, wardrobe brief, weather line and automatic reminders, so the pre-shoot questions stop, $4 a month.
 
-If that's useful, the pre-launch page has an 'I'd pay' button: aidantorrence.com/offers/shoot-day-page?src=email
+If that's useful, the pre-launch page has an 'I'd pay' button: aidantorrence2.github.io/aidan-modern/shoot-day-page?src=email
 
 If not, one line on why helps just as much.
 

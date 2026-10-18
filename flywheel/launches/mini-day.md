@@ -4,19 +4,19 @@ Offer: Run a mini-session day from one page: slots, price, deposit and waitlist,
 Price: $6/month (or $12 per mini day)
 Buyer: family, pet and seasonal photographers who fill a mini-session day through DMs and a spreadsheet
 Status: live since 2026-10-17
-Hosted page: https://aidantorrence.com/offers/mini-day (live after merge to main + deploy)
+Hosted page: https://aidantorrence2.github.io/aidan-modern/mini-day (live after merge to main + deploy)
 Artifact page: https://claude.ai/artifact/LYGYQqdXrhXSrLgBqeegAg
 
 ## Tracking links (one per channel)
 
 | Channel | Link |
 |---|---|
-| TikTok / Reels bio | https://aidantorrence.com/offers/mini-day?src=tiktok |
-| Instagram story | https://aidantorrence.com/offers/mini-day?src=ig |
-| Cold email | https://aidantorrence.com/offers/mini-day?src=email |
-| Reddit | https://aidantorrence.com/offers/mini-day?src=reddit |
-| Facebook group | https://aidantorrence.com/offers/mini-day?src=fb |
-| Indie Hackers / forum | https://aidantorrence.com/offers/mini-day?src=forum |
+| TikTok / Reels bio | https://aidantorrence2.github.io/aidan-modern/mini-day?src=tiktok |
+| Instagram story | https://aidantorrence2.github.io/aidan-modern/mini-day?src=ig |
+| Cold email | https://aidantorrence2.github.io/aidan-modern/mini-day?src=email |
+| Reddit | https://aidantorrence2.github.io/aidan-modern/mini-day?src=reddit |
+| Facebook group | https://aidantorrence2.github.io/aidan-modern/mini-day?src=fb |
+| Indie Hackers / forum | https://aidantorrence2.github.io/aidan-modern/mini-day?src=forum |
 
 ## 15–30 second post
 
@@ -27,11 +27,11 @@ Script:
 Open on a spreadsheet with crossed-out names and a DM thread. VO: 'Forty messages to fill twelve slots.' Cut to a phone: a mini-day page with slots, a deposit paid, a waitlist filling a cancelled slot, a client page with a map pin and what to wear. VO: 'Slots, deposits, waitlist, client pages. One page runs the day.' End card: 'Mini Day. $6 a month. Pre-launch, link in bio.'
 
 Caption:
-A mini-session day from one page: slots, deposits, waitlist, timeline and client pages. $6/month. Not built yet; say if you'd use it. aidantorrence.com/offers/mini-day
+A mini-session day from one page: slots, deposits, waitlist, timeline and client pages. $6/month. Not built yet; say if you'd use it. aidantorrence2.github.io/aidan-modern/mini-day
 
 ## Community post (paste as is)
 
-Photographers who run mini-session days: how do you fill and manage them? I'm deciding whether to build one page per mini day: open slots with a deposit to hold, a waitlist that fills cancellations, the day's timeline to your calendar, and a client page per slot with pin, what to wear, rain plan and reminders. $6/month or $12 per day. Pre-launch page, no charge, just an 'I'd pay' button: aidantorrence.com/offers/mini-day
+Photographers who run mini-session days: how do you fill and manage them? I'm deciding whether to build one page per mini day: open slots with a deposit to hold, a waitlist that fills cancellations, the day's timeline to your calendar, and a client page per slot with pin, what to wear, rain plan and reminders. $6/month or $12 per day. Pre-launch page, no charge, just an 'I'd pay' button: aidantorrence2.github.io/aidan-modern/mini-day
 
 ## Cold pitch (Gmail draft; {first} and {specific reference} must be filled per person)
 
@@ -43,7 +43,7 @@ I'm Aidan, a photographer. I saw {specific reference}.
 
 I'm deciding whether to build one page per mini-session day: open slots with a deposit to hold, a waitlist that fills cancellations, the timeline to your calendar, and a client page per slot with reminders, $6 a month or $12 per day.
 
-If that's useful, the pre-launch page has an 'I'd pay' button: aidantorrence.com/offers/mini-day?src=email
+If that's useful, the pre-launch page has an 'I'd pay' button: aidantorrence2.github.io/aidan-modern/mini-day?src=email
 
 If not, one line on why helps just as much.
 

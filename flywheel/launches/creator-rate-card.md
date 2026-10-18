@@ -4,19 +4,19 @@ Offer: A rate card page built from your real numbers, with a quote link brands f
 Price: $5/month (no cut of your deals)
 Buyer: short-form creators between 5k and 200k followers who get brand DMs and answer each one from scratch
 Status: live since 2026-10-17
-Hosted page: https://aidantorrence.com/offers/creator-rate-card (live after merge to main + deploy)
+Hosted page: https://aidantorrence2.github.io/aidan-modern/creator-rate-card (live after merge to main + deploy)
 Artifact page: https://claude.ai/artifact/FdtsuYzruDuQeqgVf4Faim
 
 ## Tracking links (one per channel)
 
 | Channel | Link |
 |---|---|
-| TikTok / Reels bio | https://aidantorrence.com/offers/creator-rate-card?src=tiktok |
-| Instagram story | https://aidantorrence.com/offers/creator-rate-card?src=ig |
-| Cold email | https://aidantorrence.com/offers/creator-rate-card?src=email |
-| Reddit | https://aidantorrence.com/offers/creator-rate-card?src=reddit |
-| Facebook group | https://aidantorrence.com/offers/creator-rate-card?src=fb |
-| Indie Hackers / forum | https://aidantorrence.com/offers/creator-rate-card?src=forum |
+| TikTok / Reels bio | https://aidantorrence2.github.io/aidan-modern/creator-rate-card?src=tiktok |
+| Instagram story | https://aidantorrence2.github.io/aidan-modern/creator-rate-card?src=ig |
+| Cold email | https://aidantorrence2.github.io/aidan-modern/creator-rate-card?src=email |
+| Reddit | https://aidantorrence2.github.io/aidan-modern/creator-rate-card?src=reddit |
+| Facebook group | https://aidantorrence2.github.io/aidan-modern/creator-rate-card?src=fb |
+| Indie Hackers / forum | https://aidantorrence2.github.io/aidan-modern/creator-rate-card?src=forum |
 
 ## 15–30 second post
 
@@ -27,11 +27,11 @@ Script:
 Open on a brand DM: 'Love your content! What are your rates?' A cursor blinks. VO: 'Every creator freezes here.' Cut to a phone: a rate card page, a brand picks one video plus usage, a quote appears, a request lands on WhatsApp. VO: 'Rates from your real numbers. A quote link brands fill in. No cut of your deals.' End card: 'Creator Rate Card. $5 a month. Pre-launch, link in bio.'
 
 Caption:
-A rate card page from your real numbers, with a quote link brands fill in. $5/month, no cut of deals. Not built yet; say if you'd use it. aidantorrence.com/offers/creator-rate-card
+A rate card page from your real numbers, with a quote link brands fill in. $5/month, no cut of deals. Not built yet; say if you'd use it. aidantorrence2.github.io/aidan-modern/creator-rate-card
 
 ## Community post (paste as is)
 
-Creators who get 'what are your rates?' DMs: how do you answer? I'm deciding whether to build a rate card page built from your last 30 days of numbers, with deliverables, usage and exclusivity priced, and a quote link brands fill in that lands on your WhatsApp with their brief. $5/month, no cut. Pre-launch page, no charge, just an 'I'd pay' button: aidantorrence.com/offers/creator-rate-card
+Creators who get 'what are your rates?' DMs: how do you answer? I'm deciding whether to build a rate card page built from your last 30 days of numbers, with deliverables, usage and exclusivity priced, and a quote link brands fill in that lands on your WhatsApp with their brief. $5/month, no cut. Pre-launch page, no charge, just an 'I'd pay' button: aidantorrence2.github.io/aidan-modern/creator-rate-card
 
 ## Cold pitch (Gmail draft; {first} and {specific reference} must be filled per person)
 
@@ -43,7 +43,7 @@ I'm Aidan, a photographer and short-form creator. I saw {specific reference}.
 
 I'm deciding whether to build a rate card page for creators: rates set from your real numbers, a quote link brands fill in with deliverables and usage, the request on your WhatsApp, $5 a month and no cut of your deals.
 
-If that's useful, the pre-launch page has an 'I'd pay' button: aidantorrence.com/offers/creator-rate-card?src=email
+If that's useful, the pre-launch page has an 'I'd pay' button: aidantorrence2.github.io/aidan-modern/creator-rate-card?src=email
 
 If not, one line on why helps just as much.
 
