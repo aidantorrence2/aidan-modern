@@ -35,11 +35,19 @@ answer once the catalogue is large; traffic is. Order:
    branch, then `bash scripts/flywheel/publish-pages.sh`: exports `static-offers/` and pushes
    it to the `gh-pages` branch. Public at `config.publicBase` once GitHub Pages is enabled
    for that branch (Settings → Pages → Deploy from branch → gh-pages, root). Never Vercel.
-7. **Approved actions.** `node scripts/flywheel/publish-approved.mjs` acts on every item in
-   `data/approvals.json` that Aidan approved (see `flywheel/APPROVALS.md`): Instagram posts go
-   through the Graph API when `IG_USER_ID` and `IG_ACCESS_TOKEN` are set in the environment;
-   other kinds are reported as waiting. New pending items (one per post card in
-   `data/post-queue.json`, three a day at most) are appended each run, newest offers first.
+7. **Approvals (Aidan, 18 Oct 20:00: nothing is sent or posted without his per-item approval).**
+   a. Mirror: every Gmail draft the doc-side run created for the flywheel (subjects in
+      `data/signals.json` or the doc's Run log) that is not yet in `data/approvals.json` becomes an
+      item of kind `email` (id `email:<draftId>`, title "Email: <recipient name>, <offer>", summary
+      = to + subject + first line, payload = draftId, to, subject). Post cards become items of
+      kind `post` (three a day at most, newest offers first).
+   b. Act: for every item Aidan set to `approved` that has no result yet: emails are sent with
+      the Gmail tool as `send_message(draftId)` after a `get_draft` check (no google.com/url, no
+      stray http), at most 40 a day, then `payload.result = sent:<messageId>`; Instagram posts go
+      through `node scripts/flywheel/publish-approved.mjs` once `IG_USER_ID` and
+      `IG_ACCESS_TOKEN` exist in the environment. Denied items: leave the draft alone; note it.
+   c. Approval arrives through the Mac approval app writing `status`, or Aidan's explicit words in
+      this chat or Slack naming the item or recipient. A bare "approve all" does not count.
 8. **Report.** One Slack DM to Aidan (U09KLN151B2) only when something changed: new
    offer links + hook line, counts, thresholds crossed, what needs him. No empty pings.
 
