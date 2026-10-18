@@ -14,7 +14,7 @@ const out = path.join(root, 'static-offers')
 const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;')
 
 const css = fs.readFileSync(path.join(root, 'components/OfferPage.tsx'), 'utf8').split('const css = `')[1].split('`')[0]
-const labCss = fs.readFileSync(path.join(root, 'app/offers/page.tsx'), 'utf8').split('const css = `')[1].split('`')[0]
+const labCss = fs.readFileSync(path.join(root, 'app/offers/page.tsx'), 'utf8').split('const css = `')[1].split('`')[0] + '.lab-sub{font-family:Georgia,serif;font-weight:400;font-size:22px;margin:40px 0 12px}'
 
 const js = `
 (function(){
@@ -44,7 +44,7 @@ function page(o) {
 <title>${esc(o.name)} — pre-launch — Aidan Torrence</title>
 <meta name="description" content="${esc(o.headline)}">
 <meta property="og:title" content="${esc(o.name)} — ${esc(o.price)}"><meta property="og:description" content="${esc(o.headline)}">
-<meta name="robots" content="noindex"><style>${css}</style></head>
+<link rel="canonical" href="${cfg.publicBase}/${o.slug}/"><meta property="og:url" content="${cfg.publicBase}/${o.slug}/"><meta property="og:type" content="website"><meta name="twitter:card" content="summary"><style>${css}</style></head>
 <body data-offer="${esc(o.slug)}" data-price="${esc(o.price)}"><div class="offer"><main class="offer-main">
 <p class="offer-kicker">Pre-launch · from Aidan Torrence</p>
 <h1>${esc(o.headline)}</h1>
@@ -66,11 +66,13 @@ ${faq ? `<section class="offer-faq">${faq}</section>` : ''}
 }
 
 function index(list) {
+  const resources = globalThis.__resources || []
   return `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Pre-launch offers — Aidan Torrence</title><meta name="description" content="Small tools for photographers and creators. Each one gets built only if enough people say they want it."><meta name="robots" content="noindex"><style>${labCss}</style></head>
+<title>Pre-launch offers — Aidan Torrence</title><meta name="description" content="Small tools for photographers and creators. Each one gets built only if enough people say they want it."><link rel="canonical" href="${cfg.publicBase}/"><meta property="og:title" content="Pre-launch tools for photographers — Aidan Torrence"><meta property="og:description" content="Small tools for photographers and creators. Each one gets built only if enough people say they want it."><style>${labCss}</style></head>
 <body><div class="lab"><main class="lab-main"><p class="lab-kicker">Pre-launch</p><h1>Tools I want to exist.</h1>
 <p class="lab-lead">Each page below is a promise, not a product. If enough people leave an email or say they’d pay, I build it, in that order. Nothing here charges you.</p>
 <ul class="lab-list">${list.map(o => `<li><a href="./${o.slug}/?src=lab"><span class="lab-name">${esc(o.name)}</span><span class="lab-head">${esc(o.headline)}</span><span class="lab-price">${esc(o.price)}</span></a></li>`).join('')}</ul>
+${resources.length ? `<h2 class="lab-sub">Free resources</h2><ul class="lab-list">${resources.map(r => `<li><a href="./resources/${r.slug}/"><span class="lab-name">Free</span><span class="lab-head">${esc(r.title)}</span><span class="lab-price">${esc(r.description)}</span></a></li>`).join('')}</ul>` : ''}
 </main></div></body></html>`
 }
 
@@ -81,7 +83,28 @@ for (const o of live) {
   fs.mkdirSync(path.join(out, o.slug), { recursive: true })
   fs.writeFileSync(path.join(out, o.slug, 'index.html'), page(o))
 }
-fs.writeFileSync(path.join(out, 'index.html'), index(live))
 fs.writeFileSync(path.join(out, '.nojekyll'), '')
 fs.writeFileSync(path.join(out, '404.html'), '<meta http-equiv="refresh" content="0;url=./">')
+// free resource pages (lead magnets): content/resources.json → /resources/<slug>/
+const resPath = path.join(root, 'content/resources.json')
+const resources = fs.existsSync(resPath) ? JSON.parse(fs.readFileSync(resPath, 'utf8')) : []
+globalThis.__resources = resources
+const bySlug = Object.fromEntries(live.map(o => [o.slug, o]))
+for (const r of resources) {
+  const o = bySlug[r.offer]
+  const body = r.sections.map(sec => `<h2>${esc(sec.h)}</h2>${(sec.p || []).map(x => `<p>${esc(x)}</p>`).join('')}${sec.list ? `<ul>${sec.list.map(x => `<li>${esc(x)}</li>`).join('')}</ul>` : ''}${sec.pre ? `<pre>${esc(sec.pre)}</pre>` : ''}`).join('')
+  const cta = o ? `<aside class="res-cta"><p class="offer-kicker">Related, not built yet</p><p class="res-cta-title">${esc(o.name)}: ${esc(o.headline)}</p><p><a class="res-btn" href="../../${o.slug}/?src=resource">See the pre-launch page</a> <span class="offer-muted">${esc(o.price)} · nothing is charged</span></p></aside>` : ''
+  fs.mkdirSync(path.join(out, 'resources', r.slug), { recursive: true })
+  fs.writeFileSync(path.join(out, 'resources', r.slug, 'index.html'), `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>${esc(r.title)} — Aidan Torrence</title><meta name="description" content="${esc(r.description)}"><link rel="canonical" href="${cfg.publicBase}/resources/${r.slug}/"><meta property="og:title" content="${esc(r.title)}"><meta property="og:description" content="${esc(r.description)}"><meta property="og:type" content="article">
+<style>${css}.res p,.res li{color:#d6d6d6;font-size:17px;line-height:1.55}.res h2{font-family:Georgia,serif;font-weight:400;font-size:24px;margin:34px 0 10px}.res ul{padding-left:20px}.res pre{white-space:pre-wrap;background:#161616;border:1px solid #2a2a2a;border-radius:10px;padding:14px;font-size:14.5px;line-height:1.5;color:#e6e6e6}.res-cta{margin-top:44px;border:1px solid #2c2c2c;border-radius:12px;padding:18px}.res-cta-title{font-family:Georgia,serif;font-size:19px;line-height:1.3;margin:0 0 12px}.res-btn{display:inline-block;background:#fff;color:#0c0c0c;padding:11px 16px;border-radius:8px;text-decoration:none;font-weight:600;margin-right:10px}</style></head>
+<body><div class="offer res"><main class="offer-main"><p class="offer-kicker">Free resource · from Aidan Torrence</p><h1>${esc(r.title)}</h1><p class="offer-buyer">${esc(r.intro)}</p>${body}${cta}
+<footer class="offer-foot"><a href="../../">All pre-launch offers</a><span>·</span><a href="https://aidantorrence.com">aidantorrence.com</a><span>·</span><a href="https://www.instagram.com/madebyaidan" rel="noopener">@madebyaidan</a></footer></main></div></body></html>`)
+}
+const urls = [`${cfg.publicBase}/`, ...live.map(o => `${cfg.publicBase}/${o.slug}/`), ...resources.map(r => `${cfg.publicBase}/resources/${r.slug}/`)]
+const today = new Date().toISOString().slice(0, 10)
+fs.writeFileSync(path.join(out, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map(u => `  <url><loc>${u}</loc><lastmod>${today}</lastmod></url>`).join('\n')}\n</urlset>\n`)
+fs.writeFileSync(path.join(out, 'robots.txt'), `User-agent: *\nAllow: /\nSitemap: ${cfg.publicBase}/sitemap.xml\n`)
+fs.writeFileSync(path.join(out, 'index.html'), index(live))
+console.log(`resources: ${resources.length}`)
 console.log(`exported ${live.length} offer pages to static-offers/ (base ${cfg.publicBase}, form ${cfg.formEndpoint ? 'endpoint' : 'mailto fallback'})`)

@@ -1,0 +1,143 @@
+[
+ {
+  "slug": "wedding-family-formals-shot-list-template",
+  "offer": "shot-list-live",
+  "title": "Wedding family formals shot list template",
+  "description": "A copy-paste list of family and group combinations, in the order that lets people leave as soon as theirs is done, plus the three questions to ask the couple a month out.",
+  "intro": "Family formals go wrong for one reason: nobody agreed the list before the day. This is the template I use. Copy it, fill the names, send it back to the couple to approve, and give a copy to one loud relative.",
+  "sections": [
+   {"h": "Ask the couple these three things a month before", "list": [
+    "Who must be in a photo, by name, including anyone elderly, unwell or with small children, so they go first.",
+    "Any two people who should not be posed together. Ask it plainly; it saves a scene.",
+    "Who is the helper: one relative or the planner who knows faces and will round people up while you shoot."
+   ]},
+   {"h": "The list, largest groups first, then peel off", "pre": "1. Couple + everyone (both families, whole wedding party)\n2. Couple + both families together\n3. Couple + Partner A's full family (parents, siblings, siblings' partners and kids, grandparents)\n4. Couple + Partner A's parents and siblings\n5. Couple + Partner A's parents\n6. Couple + Partner A's grandparents\n7. Couple + Partner B's full family\n8. Couple + Partner B's parents and siblings\n9. Couple + Partner B's parents\n10. Couple + Partner B's grandparents\n11. Couple + full wedding party\n12. Partner A + their side of the party\n13. Partner B + their side of the party\n14. Couple + flower children and ring bearers (do this one early; they will not last)\n15. Any named must-haves the couple added (godparents, chosen family, the friend who introduced them)"},
+   {"h": "Timing that holds", "p": [
+    "Allow about two minutes per combination with a helper calling names, three without one. Fifteen combinations is roughly half an hour, and that is before anyone wanders off to the bar.",
+    "Shoot the oldest and youngest first and release them. Shoot the largest group second while everyone is still gathered. Everything after that is subtraction, not assembly."
+   ]},
+   {"h": "On the day", "list": [
+    "Print it, and keep a second copy on your phone. Tick each line as you make it.",
+    "Say the next group's names out loud before you finish the current one, so the helper is already moving.",
+    "If someone on the list is missing, note it with the time. 'She had left by 4:10' is an answer; 'I don't know' is not."
+   ]}
+  ]
+ },
+ {
+  "slug": "late-invoice-reminder-email-templates-photographers",
+  "offer": "invoice-nudge",
+  "title": "Late invoice reminder emails for photographers: three templates",
+  "description": "Three short, non-awkward reminders for an unpaid photography invoice: before it is due, the day after, and two weeks late with your late-fee line.",
+  "intro": "Most brand and editorial invoices are paid late by accounts-payable departments that are not ignoring you, they are batching. The trick is to be in the batch. These three notes are short enough to send without dread. Replace the brackets and keep your own sign-off.",
+  "sections": [
+   {"h": "1. Three days before due (friendly heads-up)", "pre": "Subject: Invoice [number] for [project], due [date]\n\nHi [name],\n\nQuick note that invoice [number] for [project] is due on [date]. If it is already in your run, ignore this. If anything is missing on my end for processing (PO number, vendor form, W-9), tell me and I will send it today.\n\nThanks,\n[your name]"},
+   {"h": "2. The day after due (plain and specific)", "pre": "Subject: Invoice [number] is now past due\n\nHi [name],\n\nInvoice [number] for [amount] was due yesterday, [date]. Could you let me know when it is scheduled for payment? If it has been paid and is in transit, a remittance date is all I need.\n\nBest,\n[your name]"},
+   {"h": "3. Two weeks late (firm, with your terms)", "pre": "Subject: Invoice [number], 14 days overdue\n\nHi [name],\n\nInvoice [number] for [amount] is now 14 days past its due date of [date]. Per the terms on the invoice, a late fee of [fee or percentage] applies from [date]; I have attached an updated copy. Please confirm a payment date by [day], or let me know who else I should be speaking to.\n\nRegards,\n[your name]"},
+   {"h": "Rules that make these work", "list": [
+    "Send them from the same thread as the original invoice so the history is one click away.",
+    "Name a date in every message. 'Soon' gives them nothing to put in a system.",
+    "Ask who else to contact. Accounts payable often sits with a different person than your creative contact.",
+    "Stop the sequence the moment money lands, and say thank you. Clients remember how the end felt.",
+    "Only mention a late fee if it is on the invoice they already accepted."
+   ]}
+  ]
+ },
+ {
+  "slug": "photography-pricing-guide-checklist",
+  "offer": "price-guide",
+  "title": "What to put in a photography pricing guide: a checklist",
+  "description": "The sections a pricing guide needs so clients stop emailing questions, the order that sells the middle package, and the mistakes that make guides go stale.",
+  "intro": "A pricing guide is a sales document that happens to contain prices. Most leak bookings because they answer the wrong questions, or because three versions are floating around. Here is a checklist for the content, then for keeping it current.",
+  "sections": [
+   {"h": "Sections, in this order", "list": [
+    "One paragraph on who you are for and what the experience is like. Not a biography.",
+    "Packages, three at most, with the middle one holding the things most people actually want. Name them by outcome, not by hours.",
+    "What is included in every package, written once, so the package table stays short.",
+    "Add-ons with prices: second shooter, extra hour, albums, prints, travel beyond a radius, rush delivery.",
+    "How booking works: retainer amount, when the balance is due, how to hold a date.",
+    "Turnaround, gallery window, and what happens if it rains or someone is ill.",
+    "Three answers to the questions you get every single time. Pull them from your actual inbox.",
+    "How to take the next step, one way only: a link to a call or an inquiry form."
+   ]},
+   {"h": "Mistakes that cost bookings", "list": [
+    "A dated PDF. The moment prices change, every copy you ever sent becomes a quote you did not make. Keep one live link and let it update.",
+    "Hours as the headline. Clients do not know what eight hours of a wedding feels like. Lead with coverage of the moments.",
+    "Hiding the price range until the call. It filters out the wrong people only after they have cost you an hour.",
+    "Six packages. Choice overload reads as indecision. Three, with the middle one designed to win.",
+    "No expiry. State the guide's valid-until date so a 2024 version cannot be used in 2026."
+   ]},
+   {"h": "Keeping it current", "p": [
+    "Put the prices in one place you control and generate the guide from that, whether that is a spreadsheet and a template or a tool. Changing a price should be one edit, not a hunt through Dropbox.",
+    "Each time you send the guide, log who and when. Twice a year, email the people who received an old version and have not booked; a new version is a legitimate reason to reach out."
+   ]}
+  ]
+ },
+ {
+  "slug": "photo-permit-checklist-outdoor-sessions",
+  "offer": "permit-finder",
+  "title": "Do I need a permit to shoot here? A checklist for outdoor sessions",
+  "description": "How to find the permit rule for a park, beach or street before you book a client there, what to ask the issuing office, and what to tell the client.",
+  "intro": "Permit rules differ park by park, not city by city, and the fine or the eviction usually lands mid-session. This is the checklist to run before you confirm a location with a client. It is not legal advice; it is where to look and what to ask.",
+  "sections": [
+   {"h": "Find the owner first", "list": [
+    "City parks: the city's parks and recreation department. Search the park name plus 'photography permit' and the department's own site, not a forum.",
+    "County and state parks: the park's own page usually has a 'commercial photography' or 'special use' section with a fee and a lead time.",
+    "Botanic gardens, arboretums, historic houses: almost always a permit, often with a per-session fee and limited slots. Book early in autumn.",
+    "Beaches and waterfronts: may be city, county, state or a port authority. The lifeguard tower sign often names the agency.",
+    "Streets and plazas: usually fine for a small crew without equipment on the ground; tripods, lights and blocking the pavement change the answer. Private plazas that look public are private."
+   ]},
+   {"h": "Ask the office these questions", "list": [
+    "Does a single photographer with one client and no lights or tripod need a permit, or only crews?",
+    "What is the fee, and is it per session, per day or annual?",
+    "How many days' notice, and is there a form or an email?",
+    "Are there blackout dates, closed areas or hours when permits are not issued?",
+    "Does the permit need insurance, and what minimum?",
+    "Can the permit be transferred to a backup date if it rains?"
+   ]},
+   {"h": "Tell the client", "p": [
+    "Put the permit status and fee in the booking notes and the invoice. If the location needs one, say who pays and that the date depends on approval. If it does not need one, say that too, so there is no surprise if a ranger asks."
+   ]},
+   {"h": "Keep your own list", "p": [
+    "Every time you check a location, record the rule, fee, lead time, link and the date you checked. In two seasons you will have the only accurate permit list for your city, and you will stop re-checking the same park every spring."
+   ]}
+  ]
+ },
+ {
+  "slug": "gallery-expiry-reminder-email-templates",
+  "offer": "expiry-nudge",
+  "title": "Gallery expiry reminder emails: three templates with an extension offer",
+  "description": "Short reminders at 30, 7 and 1 days before a client gallery closes, written to get downloads, with a paid extension in the last one so the 'can you resend?' email never arrives.",
+  "intro": "Clients do not forget to download because they do not care. They forget because the gallery email arrived in a busy week. Three reminders, each with the download count if your host shows it, turn a resend request into a download or a small extension sale.",
+  "sections": [
+   {"h": "30 days before", "pre": "Subject: Your gallery closes on [date]\n\nHi [names],\n\nA gentle note that your gallery stays open until [date]. If you have not downloaded the full set yet, now is a good time: [link]. The download button is top right, and the files are full resolution.\n\n[your name]"},
+   {"h": "7 days before", "pre": "Subject: One week left on your gallery\n\nHi [names],\n\nYour gallery closes in a week, on [date]. I can see the full set has not been downloaded yet, so here is the link again: [link]. If you want it to stay open longer, a one-year extension is [price] and I can set it up in a minute.\n\n[your name]"},
+   {"h": "The day before", "pre": "Subject: Last day for your gallery\n\nHi [names],\n\nYour gallery closes tomorrow, [date]. Download the full set here: [link]. If you would rather keep it online, reply 'extend' and I will send a [price] link for another year, or [price] for a permanent archive.\n\nThank you again for having me,\n[your name]"},
+   {"h": "Notes", "list": [
+    "If your host shows download status, skip reminders for clients who already downloaded. A reminder to someone who has the files reads as noise.",
+    "Price the extension so it is a small yes, not a decision. Many photographers use the cost of a print or two.",
+    "Say what happens after expiry in plain words. 'Archived offline, retrievable for a fee' is honest; 'deleted' should only be said if it is true.",
+    "Keep every reminder in the same thread as the delivery email."
+   ]}
+  ]
+ },
+ {
+  "slug": "second-shooter-call-sheet-template",
+  "offer": "second-shooter-call",
+  "title": "Second shooter call sheet template for weddings",
+  "description": "A one-page call sheet for second shooters and assistants: times, locations, roles, shot list, gear, rate and payment, so nothing is agreed only in a text thread.",
+  "intro": "A second shooter who shows up with the right lens at the right door is the result of one page sent the week before, not a text at midnight. Copy this and fill it in for every job.",
+  "sections": [
+   {"h": "The call sheet", "pre": "JOB: [couple's names], [date]\nLEAD: [your name], [phone]\nSECOND: [name], [phone]\n\nCALL TIME: [time] at [address or pin]\nWRAP: [time, or 'after first dance']\n\nTIMELINE (second's role in brackets)\n[time]  Getting ready, Partner B's suite  [cover Partner B; details, flat lays]\n[time]  First look / ceremony arrivals    [guests arriving, wide of venue]\n[time]  Ceremony                           [opposite angle to lead; reactions, back rows]\n[time]  Family formals                     [gather next group from the list; grab candids]\n[time]  Couple portraits                   [reception room empty, details, cocktail hour candids]\n[time]  Reception                          [reactions during speeches; second angle on first dance]\n\nMUST-HAVES FOR THE SECOND\n- [e.g. grandmother arriving, groom's reaction, the band]\n\nGEAR\nBring: [bodies, lenses, flash]. Cards: shoot to two cards, do not format. Hand over all cards at wrap.\n\nFILES\nDeliver: [raw cards / card copy / upload link] by [date]. No sharing or posting of any image; credit terms: [e.g. may share after the couple's gallery goes live, with credit to lead].\n\nRATE AND PAYMENT\n[amount] for [hours], overtime [rate]. Paid by [method] within [days] of delivery. Travel: [included / per mile].\n\nDRESS: [dark, no logos]. PARKING: [note]. MEALS: [vendor meal confirmed / bring your own]."},
+   {"h": "Send it with", "list": [
+    "The approved family formals list, so they can gather the next group while you shoot.",
+    "A pin for every location, not just an address. Venues have the wrong front door.",
+    "Your phone number and the planner's, with a note on which one to call for what."
+   ]},
+   {"h": "After the job", "list": [
+    "Confirm the cards or files arrived the same day, in writing.",
+    "Pay on the day you said. Reliability is why the good ones answer your next message first.",
+    "Keep a note of who was free, who was great and what they charged. Next season's list builds itself."
+   ]}
+  ]
+ }
+]
