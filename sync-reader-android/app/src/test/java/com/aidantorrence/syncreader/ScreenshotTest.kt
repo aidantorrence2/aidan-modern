@@ -4,6 +4,10 @@ import android.app.Application
 import android.graphics.Bitmap
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
+import androidx.compose.runtime.mutableFloatStateOf
+import androidx.compose.foundation.layout.size
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.unit.dp
 import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.Canvas
 import androidx.compose.ui.graphics.Color
@@ -99,11 +103,43 @@ class ScreenshotTest {
     fun readerInEachMode() {
         for (mode in ViewMode.entries) {
             val vm = ReaderViewModel(ApplicationProvider.getApplicationContext<Application>())
-            vm.openBook("thinking-fast-slow")
+            vm.openBook("atomic-habits")
             vm.setMode(mode)
-            vm.seekToWord(120)
+            vm.seekToWord(vm.state.value.document.paragraphs[0].last - 3)
             captureRoboImage("build/screenshots/screen-reader-${mode.name.lowercase()}.png") {
                 Still { ReaderScreen(vm, vm.state.value) }
+            }
+        }
+    }
+
+    /** Every scene in its finished state, one PNG per scene. */
+    @Test
+    fun everyExplainerScene() {
+        for (book in LIBRARY) {
+            val doc = Document(book.summary)
+            for (p in doc.paragraphs.indices) {
+                val last = doc.paragraphs[p].last
+                captureRoboImage("build/screenshots/explainer/${book.id}-$p.png") {
+                    Still {
+                        ExplainerStage(book.id, doc, last, 1f, false, mutableFloatStateOf(9f),
+                            Modifier.size(400.dp, 300.dp))
+                    }
+                }
+            }
+        }
+    }
+
+    /** One scene captured at each step, to show how it builds up. */
+    @Test
+    fun explainerStepByStep() {
+        val book = LIBRARY.first { it.id == "atomic-habits" }
+        val doc = Document(book.summary)
+        val scene = resolveScenes(doc, SCENES.getValue(book.id)).scenes[0]
+        scene.beatWords.forEachIndexed { i, word ->
+            captureRoboImage("build/screenshots/steps/step-$i.png") {
+                Still {
+                    ExplainerStage(book.id, doc, word, 1f, false, mutableFloatStateOf(9f), Modifier.size(400.dp, 300.dp))
+                }
             }
         }
     }

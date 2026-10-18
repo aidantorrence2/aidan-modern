@@ -13,6 +13,7 @@ import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.WindowInsets
+import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -136,8 +137,11 @@ fun ReaderScreen(viewModel: ReaderViewModel, state: ReaderUiState) {
     )
 
     Box(modifier = Modifier.fillMaxSize().background(Background)) {
-        BookVisual(artFor(state.bookId), clock, Modifier.fillMaxSize().graphicsLayer { alpha = artAlpha })
-        ReadingScrim(state.mode, Modifier.fillMaxSize())
+        // Ambient artwork only behind Focus view; Visual and Flow show the explainer stage instead.
+        if (state.mode == ViewMode.FOCUS) {
+            BookVisual(artFor(state.bookId), clock, Modifier.fillMaxSize().graphicsLayer { alpha = artAlpha })
+            ReadingScrim(state.mode, Modifier.fillMaxSize())
+        }
 
         Column(
             modifier = Modifier
@@ -147,12 +151,25 @@ fun ReaderScreen(viewModel: ReaderViewModel, state: ReaderUiState) {
             TopBar(state, onBack = viewModel::closeReader, onMode = viewModel::setMode, onEdit = { editing = true })
             SpeedRow(state, onSpeed = viewModel::setSpeed, onStep = viewModel::stepSpeed)
 
-            Box(modifier = Modifier.weight(1f).fillMaxWidth()) {
-                when {
-                    state.document.isEmpty -> EmptyState(onEdit = { editing = true })
-                    state.mode == ViewMode.FLOW -> FlowView(state.document, state.currentWord, onTapWord = viewModel::seekToWord)
-                    else -> FocusView(state.document, state.currentWord, immersive = state.mode == ViewMode.VISUAL)
+            val stage: @Composable (Modifier) -> Unit = { m ->
+                ExplainerStage(state.bookId, state.document, state.currentWord, state.speed, state.playing, clock, m)
+            }
+            when {
+                state.document.isEmpty -> Box(Modifier.weight(1f).fillMaxWidth()) { EmptyState(onEdit = { editing = true }) }
+                state.mode == ViewMode.VISUAL -> {
+                    // The explainer builds up above; the word being spoken stays fixed below it.
+                    Column(Modifier.weight(1f).fillMaxWidth(), verticalArrangement = Arrangement.SpaceEvenly) {
+                        stage(Modifier.fillMaxWidth().padding(horizontal = 12.dp).aspectRatio(STAGE_W / STAGE_H))
+                        FocusView(state.document, state.currentWord, compact = true)
+                    }
                 }
+                state.mode == ViewMode.FLOW -> {
+                    stage(Modifier.fillMaxWidth().height(240.dp).padding(horizontal = 12.dp, vertical = 4.dp))
+                    Box(Modifier.weight(1f).fillMaxWidth()) {
+                        FlowView(state.document, state.currentWord, onTapWord = viewModel::seekToWord)
+                    }
+                }
+                else -> Box(Modifier.weight(1f).fillMaxWidth()) { FocusView(state.document, state.currentWord, compact = false) }
             }
 
             BottomBar(
@@ -265,7 +282,7 @@ private fun TopBar(state: ReaderUiState, onBack: () -> Unit, onMode: (ViewMode) 
                     val (icon, label) = when (mode) {
                         ViewMode.FLOW -> Icons.Rounded.ViewHeadline to "Flow: full text"
                         ViewMode.FOCUS -> Icons.Rounded.CenterFocusStrong to "Focus: one word at a time"
-                        ViewMode.VISUAL -> Icons.Rounded.AutoAwesome to "Visual: word over artwork"
+                        ViewMode.VISUAL -> Icons.Rounded.AutoAwesome to "Visual: explainer and word"
                     }
                     Icon(icon, contentDescription = label, modifier = Modifier.size(18.dp))
                 }
@@ -421,80 +438,70 @@ private fun ParagraphText(
 }
 
 /**
- * One word at a time, centered on its optimal recognition point. In [immersive] mode the word and its context
- * sit on dark glass panels so the artwork can play at full strength without costing contrast.
+ * One word at a time, centered on its optimal recognition point. [compact] is the strip under the explainer in
+ * Visual mode: same fixed position for every word so the eye never moves, plus a line of context.
  */
 @Composable
-private fun FocusView(doc: Document, current: Int, immersive: Boolean) {
+private fun FocusView(doc: Document, current: Int, compact: Boolean) {
     val idx = current.coerceIn(0, doc.lastWord)
     val word = doc.words[idx].text
     val orp = orpIndex(word.length).coerceAtMost(word.length - 1)
     val size = when {
-        word.length <= 8 -> 56.sp
-        word.length <= 12 -> 42.sp
-        else -> 30.sp
+        word.length <= 8 -> if (compact) 44.sp else 56.sp
+        word.length <= 12 -> if (compact) 36.sp else 42.sp
+        else -> if (compact) 26.sp else 30.sp
     }
     val big = TextStyle(fontFamily = FontFamily.Serif, fontSize = size, lineHeight = size * 1.2f)
+    val tick = if (compact) 10.dp else 22.dp
 
     Column(
-        modifier = Modifier.fillMaxSize().padding(horizontal = 16.dp),
+        modifier = if (compact) {
+            Modifier.fillMaxWidth().padding(horizontal = 16.dp, vertical = 6.dp)
+        } else {
+            Modifier.fillMaxSize().padding(horizontal = 16.dp)
+        },
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center,
     ) {
-        Column(
-            modifier = if (immersive) {
-                Modifier
-                    .fillMaxWidth()
-                    .clip(RoundedCornerShape(26.dp))
-                    .background(Color.Black.copy(alpha = 0.62f))
-                    .padding(vertical = 18.dp)
-            } else {
-                Modifier.fillMaxWidth()
-            },
-            horizontalAlignment = Alignment.CenterHorizontally,
+        Box(modifier = Modifier.width(1.dp).height(tick).background(Color(0xFF444444)))
+        Spacer(Modifier.height(if (compact) 4.dp else 14.dp))
+        Row(
+            // Fixed height in the strip so long and short words never shift the layout.
+            modifier = Modifier.fillMaxWidth().then(if (compact) Modifier.height(64.dp) else Modifier),
+            verticalAlignment = Alignment.CenterVertically,
         ) {
-            Box(modifier = Modifier.width(1.dp).height(22.dp).background(Color(0xFF444444)))
-            Spacer(Modifier.height(14.dp))
-            Row(modifier = Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
-                Text(
-                    word.substring(0, orp),
-                    modifier = Modifier.weight(1f),
-                    textAlign = TextAlign.End,
-                    style = big,
-                    color = Color.White,
-                    maxLines = 1,
-                    softWrap = false,
-                )
-                Text(word.substring(orp, orp + 1), style = big, color = Accent)
-                Text(
-                    word.substring(orp + 1),
-                    modifier = Modifier.weight(1f),
-                    textAlign = TextAlign.Start,
-                    style = big,
-                    color = Color.White,
-                    maxLines = 1,
-                    softWrap = false,
-                )
-            }
-            Spacer(Modifier.height(14.dp))
-            Box(modifier = Modifier.width(1.dp).height(22.dp).background(Color(0xFF444444)))
+            Text(
+                word.substring(0, orp),
+                modifier = Modifier.weight(1f),
+                textAlign = TextAlign.End,
+                style = big,
+                color = Color.White,
+                maxLines = 1,
+                softWrap = false,
+            )
+            Text(word.substring(orp, orp + 1), style = big, color = Accent)
+            Text(
+                word.substring(orp + 1),
+                modifier = Modifier.weight(1f),
+                textAlign = TextAlign.Start,
+                style = big,
+                color = Color.White,
+                maxLines = 1,
+                softWrap = false,
+            )
         }
-        Spacer(Modifier.height(if (immersive) 18.dp else 40.dp))
+        Spacer(Modifier.height(if (compact) 4.dp else 14.dp))
+        Box(modifier = Modifier.width(1.dp).height(tick).background(Color(0xFF444444)))
+        Spacer(Modifier.height(if (compact) 8.dp else 40.dp))
         Text(
             text = contextLine(doc, idx),
-            color = if (immersive) Color(0xFFBDBDBD) else TextMuted,
-            fontSize = 14.sp,
-            lineHeight = 22.sp,
+            color = TextMuted,
+            fontSize = if (compact) 13.sp else 14.sp,
+            lineHeight = 20.sp,
             textAlign = TextAlign.Center,
-            modifier = if (immersive) {
-                Modifier
-                    .fillMaxWidth()
-                    .clip(RoundedCornerShape(16.dp))
-                    .background(Color.Black.copy(alpha = 0.5f))
-                    .padding(horizontal = 16.dp, vertical = 12.dp)
-            } else {
-                Modifier.fillMaxWidth(0.85f)
-            },
+            maxLines = 2,
+            overflow = TextOverflow.Ellipsis,
+            modifier = Modifier.fillMaxWidth(if (compact) 1f else 0.85f),
         )
     }
 }
