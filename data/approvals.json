@@ -255,6 +255,21 @@
       "status": "denied",
       "decided": "2026-10-18T20:09:38Z",
       "note": "test"
+    },
+    {
+      "id": "other:request-approval-canary-api",
+      "kind": "other",
+      "source": "claude:aidan-modern",
+      "title": "Test: request-approval command works",
+      "summary": "Canary from the new shared command. Deny it; nothing happens either way.",
+      "payload": {
+        "action": "none"
+      },
+      "created": "2026-10-18T20:51:01Z",
+      "expires": "2026-10-18T21:21:01Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
     }
   ]
 }
