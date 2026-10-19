@@ -881,7 +881,9 @@
           "/Users/aidantorrence/outputs/offer-interest-tests-2026-10-18/phone-desktop.png",
           "/Users/aidantorrence/outputs/offer-interest-tests-2026-10-18/dating-mobile.png"
         ],
-        "no_spend_authorized": true
+        "no_spend_authorized": true,
+        "result": "Published approved version 1 publicly at https://real-change-pilots-aidan-2026.aidantorrence.chatgpt.site. Live browser signup, protected export, attribution and withdrawal passed; disposable signup deleted; all eight pages render.",
+        "result_at": "2026-10-19T01:15:31Z"
       },
       "created": "2026-10-19T01:12:55Z",
       "expires": "2026-10-22T01:12:55Z",
