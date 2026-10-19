@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Evening Phone Audit: see the hours your phone takes</title>
+<meta name="description" content="Enter your screen-time numbers and what you would rather do. See hours lost per month and year, plus a personal evening rule and a phone parking plan.">
+<link rel="canonical" href="https://aidantorrence2.github.io/aidan-modern/tools/evening-phone-audit/">
+<meta property="og:title" content="Evening Phone Audit: see the hours your phone takes">
+<meta property="og:description" content="Enter your screen-time numbers and what you would rather do. See hours lost per month and year, plus a personal evening rule and a phone parking plan.">
+<meta property="og:url" content="https://aidantorrence2.github.io/aidan-modern/tools/evening-phone-audit/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#0c0c0c">
+<meta name="color-scheme" content="dark">
+<link rel="icon" href="data:,">
+<style>
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+html,body{margin:0;background:#0c0c0c;color:#fff}
+body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;font-size:17px;line-height:1.55;overflow-x:hidden}
+main{max-width:700px;margin:0 auto;padding:36px 16px 48px}
+h1,h2,h3{font-family:Georgia,"Times New Roman",serif;font-weight:400;line-height:1.2;margin:0}
+h1{font-size:34px;margin:8px 0 14px}
+h2{font-size:25px;margin:38px 0 10px}
+h3{font-size:20px;margin:22px 0 8px}
+p{margin:0 0 12px}
+a{color:#fff}
+.kicker{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:#9a9a9a;margin:0}
+.lead{font-size:19px;color:#e2e2e2}
+.muted{color:#a0a0a0;font-size:15px}
+.small{font-size:14px}
+.privacy{font-size:14.5px;color:#a0a0a0;border-left:2px solid #333;padding-left:12px}
+.note{font-size:15px;color:#cfcfcf;background:#141414;border:1px solid #2a2a2a;border-radius:10px;padding:12px 14px;margin:16px 0}
+.linkish{background:none;border:0;color:#fff;text-decoration:underline;font:inherit;padding:0;cursor:pointer}
+fieldset{border:0;padding:0;margin:0;min-width:0}
+legend{padding:0}
+label,.label{display:block;font-size:15.5px;color:#dcdcdc;margin:16px 0 6px}
+.hint{display:block;font-size:13.5px;color:#9a9a9a;margin-top:2px}
+input[type=text],input[type=number],input[type=date],input[type=time],input[type=email],textarea,select{width:100%;max-width:100%;background:#161616;color:#fff;border:1px solid #363636;border-radius:8px;padding:11px 12px;font:inherit;font-size:16px;min-width:0}
+textarea{resize:vertical;line-height:1.45}
+select{appearance:none;-webkit-appearance:none;background-image:linear-gradient(45deg,transparent 50%,#bbb 50%),linear-gradient(135deg,#bbb 50%,transparent 50%);background-position:calc(100% - 18px) 50%,calc(100% - 13px) 50%;background-size:5px 5px;background-repeat:no-repeat;padding-right:32px}
+input:focus,textarea:focus,select:focus{outline:2px solid #fff;outline-offset:1px;border-color:#fff}
+::placeholder{color:#6f6f6f}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:0 12px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:0 10px}
+@media (max-width:380px){.grid3{grid-template-columns:1fr 1fr}}
+.btn{display:inline-block;background:#fff;color:#0c0c0c;border:1px solid #fff;border-radius:8px;padding:12px 18px;font:inherit;font-size:16px;font-weight:600;cursor:pointer;text-decoration:none;line-height:1.2;margin:4px 6px 4px 0}
+.btn.ghost{background:transparent;color:#fff;border-color:#4a4a4a}
+.btn.small{padding:8px 12px;font-size:14.5px}
+.btn:focus-visible,.linkish:focus-visible,a:focus-visible{outline:2px solid #fff;outline-offset:3px}
+.btn[disabled]{opacity:.45;cursor:not-allowed}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 4px}
+.chip{position:relative;display:inline-block;margin:0;font-size:15px}
+.chip input{position:absolute;opacity:0;width:1px;height:1px}
+.chip span{display:inline-block;border:1px solid #424242;border-radius:999px;padding:7px 13px;cursor:pointer;color:#e6e6e6;user-select:none}
+.chip input:checked+span{background:#fff;color:#0c0c0c;border-color:#fff}
+.chip input:focus-visible+span{outline:2px solid #fff;outline-offset:2px}
+.card{background:#141414;border:1px solid #2a2a2a;border-radius:12px;padding:18px 16px;margin:18px 0}
+.result{border-color:#4a4a4a}
+.big{font-family:Georgia,"Times New Roman",serif;font-size:30px;line-height:1.15;margin:4px 0 8px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin:12px 0}
+.stat{background:#0f0f0f;border:1px solid #2a2a2a;border-radius:10px;padding:12px}
+.stat b{display:block;font-family:Georgia,serif;font-weight:400;font-size:26px;line-height:1.1}
+.stat span{font-size:13.5px;color:#a8a8a8}
+ol.steps,ul.list{padding-left:22px;margin:8px 0 12px}
+ol.steps li,ul.list li{margin:0 0 8px}
+.bars{margin:12px 0}
+.bar{margin:0 0 10px}
+.bar-top{display:flex;justify-content:space-between;gap:10px;font-size:15px}
+.bar-track{height:14px;background:#1d1d1d;border-radius:7px;overflow:hidden;margin-top:4px}
+.bar-fill{height:100%;background:#fff;border-radius:7px;min-width:2px;transition:width .25s}
+.bar.weak .bar-fill{background:#e8b04a}
+.bar-conv{font-size:13.5px;color:#a8a8a8;margin:2px 0 0 0}
+.bar.weak .bar-conv{color:#e8b04a}
+.tag{display:inline-block;font-size:12.5px;letter-spacing:.04em;text-transform:uppercase;border:1px solid #555;border-radius:999px;padding:2px 9px;color:#ddd;vertical-align:middle}
+.share{margin:18px 0 0}
+.copy-fallback{margin-top:10px;font-size:14px}
+.cta{margin-top:48px;border:1px solid #3a3a3a;border-radius:12px;padding:20px 18px;background:#111}
+.cta h2{margin:0 0 10px}
+.foot{margin-top:40px;padding-top:18px;border-top:1px solid #222;color:#a0a0a0;font-size:14.5px}
+.foot p{margin:0 0 6px}
+.foot a{color:#d8d8d8}
+.empty{color:#9a9a9a;font-style:italic}
+.row-x{background:none;border:1px solid #3a3a3a;color:#ccc;border-radius:8px;width:40px;height:44px;font-size:20px;line-height:1;cursor:pointer;padding:0}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+table{width:100%;border-collapse:collapse;font-size:15px}
+th,td{text-align:left;padding:7px 6px;border-bottom:1px solid #262626;vertical-align:top}
+th{font-weight:600;color:#cfcfcf;font-size:13.5px}
+.tablewrap{overflow-x:auto;-webkit-overflow-scrolling:touch;max-width:100%}
+@media (min-width:640px){h1{font-size:42px}main{padding-top:56px}}
+@media print{
+  html,body{background:#fff!important;color:#000!important}
+  body{font-size:12pt}
+  *{color:#000!important;background:transparent!important;box-shadow:none!important}
+  main{max-width:none;padding:0}
+  .no-print,.pr-hide{display:none!important}
+  .card,.stat,.note{border:1px solid #999!important;break-inside:avoid}
+  .bar-track{border:1px solid #999}
+  .bar-fill{background:#555!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  a{text-decoration:none}
+  th,td{border-bottom:1px solid #bbb}
+}
+
+
+</style>
+</head>
+<body>
+<main>
+<p class="kicker no-print">Free tool · evenings back</p>
+<h1>Evening phone audit</h1>
+<p class="lead">Check your phone's own screen-time numbers, say what you would rather be doing, and see what your evenings are actually going to. Then get one evening rule and a printable phone parking plan.</p>
+<p class="privacy no-print">Runs entirely in your browser. Nothing you type is sent anywhere; your answers are saved only on this device. <button id="reset" class="linkish" type="button">Clear my answers</button></p>
+<details class="card no-print" id="how">
+<summary><b>Where to find your numbers</b> (30 seconds)</summary>
+<h3>iPhone</h3>
+<ol class="steps">
+<li>Open <b>Settings</b>, then <b>Screen Time</b>, then <b>See All App &amp; Website Activity</b>.</li>
+<li>Tap <b>Day</b>, then swipe the chart back to a recent ordinary weekday. The bar chart shows use hour by hour.</li>
+<li>Add up the bars from when you get home until bed. The apps list below the chart shows where the time went.</li>
+</ol>
+<h3>Android</h3>
+<ol class="steps">
+<li>Open <b>Settings</b>, then <b>Digital Wellbeing &amp; parental controls</b> (on Samsung: <b>Digital Wellbeing and parental controls</b>).</li>
+<li>Tap the chart or <b>Dashboard</b> to see screen time per day and per app. Tap a day to look back.</li>
+<li>If your phone does not show hours of the day, enter your daily total below and pick roughly how much of it happens in the evening.</li>
+</ol>
+</details>
+
+<form id="f" class="card no-print" autocomplete="off" onsubmit="return false">
+<div class="grid2">
+<div><label for="home">I usually get home at</label><input id="home" name="home" type="time" value="18:30"></div>
+<div><label for="bed">I usually go to bed at</label><input id="bed" name="bed" type="time" value="23:00"></div>
+</div>
+<label for="evening">Time on my phone in a typical evening<span class="hint">From the hourly bars. Leave blank if you only know your daily total.</span></label>
+<input id="evening" name="evening" type="text" maxlength="12" placeholder="e.g. 2h 20m, or 140">
+<div class="grid2">
+<div><label for="daily">Or: daily total</label><input id="daily" name="daily" type="text" maxlength="12" placeholder="e.g. 4h 20m"></div>
+<div><label for="share">Share in the evening</label>
+<select id="share" name="share"><option value="0.25">About a quarter</option><option value="0.33">About a third</option><option value="0.5" selected>About half</option><option value="0.75">Most of it</option></select></div>
+</div>
+<label for="keep">Evening phone time that would feel fine to keep (minutes)<span class="hint">Messages, a call, music. Be honest, not strict.</span></label>
+<input id="keep" name="keep" type="number" inputmode="numeric" min="0" value="30">
+<label for="apps">Top evening apps (optional)</label>
+<input id="apps" name="apps" type="text" maxlength="80" placeholder="e.g. Instagram, YouTube, Reddit">
+<span class="label" id="il">What did you want to do with those evenings instead?</span>
+<div class="chips" role="group" aria-labelledby="il" id="instead"></div>
+<div class="grid2">
+<div><label for="park">Park the phone at</label><input id="park" name="park" type="time" value="20:00"></div>
+<div><label for="spot">Where it parks</label>
+<select id="spot" name="spot">
+<option value="on the kitchen counter">Kitchen counter</option>
+<option value="in a drawer">A drawer</option>
+<option value="on a charger in another room">Charger in another room</option>
+<option value="by the front door">By the front door</option>
+<option value="in a box with a lid">A box with a lid</option>
+</select></div>
+</div>
+<label for="alarm">Do you use your phone as your alarm?</label>
+<select id="alarm" name="alarm"><option value="no">No</option><option value="yes">Yes</option></select>
+</form>
+
+<section id="out" aria-live="polite"><div class="card result"><p class="empty">Your audit appears here as you type.</p></div></section>
+<p class="no-print"><button class="btn ghost" id="print" type="button">Print the phone parking plan</button></p>
+<div class="share no-print"><button class="btn" id="copy" type="button">Copy my result</button> <span id="copy-status" class="muted" role="status" aria-live="polite"></span><textarea id="copy-fallback" class="copy-fallback" rows="5" readonly hidden aria-label="Your result, ready to copy"></textarea></div>
+
+<aside class="cta no-print">
+<h2>Want help actually changing this?</h2>
+<p>A 30-day attention reset: device restrictions, physical distance from the phone, accountability, and evenings planned around what you actually want to do.</p>
+<p class="muted">Honest note: this program is not built yet, and nothing is charged. The page explains the plan and lets you ask for early access, which helps decide what gets built first.</p>
+<a class="btn" href="../../losing-evenings-phone-want/?src=tool-evening-phone-audit">See the pre-launch page</a>
+</aside>
+<footer class="foot no-print">
+<p>A free tool from Aidan Torrence</p>
+<p><a href="../../">All pre-launch offers</a> · <a href="https://aidantorrence.com">aidantorrence.com</a></p>
+</footer>
+</main>
+<script>
+(function(){
+"use strict";
+var TOOL={slug:"evening-phone-audit",url:"https://aidantorrence2.github.io/aidan-modern/tools/evening-phone-audit/"};
+function $(s, r) { return (r || document).querySelector(s) }
+function $$(s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)) }
+function esc(s) { return String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;') }
+function num(v) { var n = parseFloat(String(v == null ? '' : v).replace(/,/g, '').replace(/[^0-9.\-]/g, '')); return isFinite(n) ? n : 0 }
+function round1(n) { return Math.round(n * 10) / 10 }
+function plural(n, one, many) { return n + ' ' + (n === 1 ? one : (many || one + 's')) }
+var KEY = 'tool:' + TOOL.slug
+var store = {
+  get: function (fallback) { try { var v = localStorage.getItem(KEY); return v ? JSON.parse(v) : fallback } catch (e) { return fallback } },
+  set: function (v) { try { localStorage.setItem(KEY, JSON.stringify(v)) } catch (e) {} },
+  clear: function () { try { localStorage.removeItem(KEY) } catch (e) {} }
+}
+// Form helpers: read and write every [name] field inside a root element.
+function readForm(root) {
+  var o = {}
+  $$('[name]', root).forEach(function (el) {
+    if (el.type === 'checkbox') { if (!o[el.name]) o[el.name] = []; if (el.checked) o[el.name].push(el.value) }
+    else if (el.type === 'radio') { if (el.checked) o[el.name] = el.value; else if (!(el.name in o)) o[el.name] = '' }
+    else o[el.name] = el.value
+  })
+  return o
+}
+function fillForm(root, o) {
+  if (!o) return
+  $$('[name]', root).forEach(function (el) {
+    if (!(el.name in o)) return
+    var v = o[el.name]
+    if (el.type === 'checkbox') el.checked = Array.isArray(v) && v.indexOf(el.value) !== -1
+    else if (el.type === 'radio') el.checked = v === el.value
+    else el.value = v
+  })
+}
+// Print only one element: hide everything that is not on the path from body to it.
+function printOnly(el) {
+  var hidden = []
+  var node = el
+  while (node && node !== document.body) {
+    var p = node.parentNode
+    if (!p) break
+    Array.prototype.forEach.call(p.children, function (sib) {
+      if (sib !== node && sib.tagName !== 'SCRIPT' && sib.tagName !== 'STYLE') { sib.classList.add('pr-hide'); hidden.push(sib) }
+    })
+    node = p
+  }
+  var done = function () { hidden.forEach(function (h) { h.classList.remove('pr-hide') }); window.removeEventListener('afterprint', done) }
+  window.addEventListener('afterprint', done)
+  try { window.print() } catch (e) {}
+  setTimeout(done, 1500)
+}
+function fmtDate(d, opts) { try { return d.toLocaleDateString(undefined, opts || { weekday: 'short', month: 'short', day: 'numeric' }) } catch (e) { return d.toDateString() } }
+
+var form = $('#f'), out = $('#out'), last = null
+var INSTEAD = [['read', 'read'], ['cook', 'cook a proper dinner'], ['move', 'walk or exercise'], ['friends', 'call or see friends'], ['family', 'spend time with my partner or family'], ['hobby', 'work on a hobby'], ['learn', 'learn something'], ['sleep', 'go to bed earlier'], ['project', 'work on a side project'], ['rest', 'rest without a screen']]
+var IMAP = {}; INSTEAD.forEach(function (x) { IMAP[x[0]] = x[1] })
+$('#instead').innerHTML = INSTEAD.map(function (x) { return '<label class="chip"><input type="checkbox" name="instead" value="' + x[0] + '"><span>' + esc(x[1].charAt(0).toUpperCase() + x[1].slice(1)) + '</span></label>' }).join('')
+
+function parseMins(s) {
+  s = String(s || '').trim().toLowerCase()
+  if (!s) return null
+  var m = s.match(/^(\d+):(\d{1,2})$/)
+  if (m) return +m[1] * 60 + +m[2]
+  var h = s.match(/(\d+(?:\.\d+)?)\s*h/), mm = s.match(/(\d+)\s*m/)
+  if (h && !mm) mm = s.match(/h\D*(\d+)\s*$/)
+  if (h || mm) return Math.round((h ? parseFloat(h[1]) * 60 : 0) + (mm ? +mm[1] : 0))
+  var n = parseFloat(s)
+  return isFinite(n) ? Math.round(n) : null
+}
+function toMin(t) { var m = String(t || '').match(/^(\d{1,2}):(\d{2})/); return m ? +m[1] * 60 + +m[2] : null }
+function fmtTime(t) {
+  var m = toMin(t); if (m == null) return t || ''
+  var d = new Date(2000, 0, 1, Math.floor(m / 60), m % 60)
+  try { return d.toLocaleTimeString(undefined, { hour: 'numeric', minute: '2-digit' }) } catch (e) { return t }
+}
+function hm(mins) { mins = Math.round(mins); var h = Math.floor(mins / 60), m = mins % 60; return h ? h + ' h' + (m ? ' ' + m + ' min' : '') : m + ' min' }
+function list(arr) { if (!arr.length) return ''; if (arr.length === 1) return arr[0]; return arr.slice(0, -1).join(', ') + ' or ' + arr[arr.length - 1] }
+
+function render() {
+  var v = readForm(form)
+  store.set(v)
+  var ev = parseMins(v.evening), daily = parseMins(v.daily)
+  var source = 'evening'
+  if (ev == null && daily != null) { ev = Math.round(daily * num(v.share)); source = 'daily' }
+  if (ev == null) { last = null; out.innerHTML = '<div class="card result"><p class="empty">Enter your evening time (or your daily total) to see your audit.</p></div>'; return }
+  var keep = Math.max(0, num(v.keep))
+  var home = toMin(v.home), bed = toMin(v.bed)
+  var evLen = (home != null && bed != null) ? ((bed - home + 1440) % 1440 || 1440) : null
+  var lost = Math.max(0, ev - keep)
+  var month = lost * 30.4 / 60, year = lost * 365 / 60
+  var evenings = evLen ? year / (evLen / 60) : 0
+  var share = evLen ? Math.min(100, Math.round(ev / evLen * 100)) : null
+  var inst = (v.instead || []).map(function (k) { return IMAP[k] }).filter(Boolean)
+  var first = inst[0] || 'do something I chose on purpose'
+  var morning = v.alarm === 'yes' ? 'my alarm goes off' : 'after breakfast'
+  var rule = 'From ' + fmtTime(v.park) + ', my phone parks ' + v.spot + ' until ' + morning + '. In that time I ' + first + ' instead.'
+  last = { ev: ev, lost: lost, month: month, year: year, rule: rule }
+  var apps = (v.apps || '').trim()
+  var parkMin = toMin(v.park)
+  var parkNote = ''
+  if (parkMin != null && home != null && bed != null) {
+    var fromHome = (parkMin - home + 1440) % 1440, toBed = (bed - parkMin + 1440) % 1440
+    if (fromHome > evLen) parkNote = 'Your parking time is outside your evening. Pick a time between ' + fmtTime(v.home) + ' and ' + fmtTime(v.bed) + '.'
+    else parkNote = 'That keeps ' + hm(toBed) + ' of your evening phone-free and leaves ' + hm(fromHome) + ' after you get home for messages and anything you need.'
+  }
+  var alarmTip = v.alarm === 'yes'
+    ? 'Because your phone is your alarm: set it before you park the phone, and if it has to be in the bedroom, put it across the room, face down. A basic alarm clock lets the phone stay out of the room entirely.'
+    : 'Charge it where it parks, not by the bed.'
+  var lostLine = lost > 0
+    ? 'That is about <b>' + hm(lost) + '</b> a night more than you want, which adds up to about <b>' + Math.round(month) + ' hours a month</b> and <b>' + Math.round(year) + ' hours a year</b>' + (evenings >= 1 ? ', or roughly ' + Math.round(evenings) + ' of your whole evenings' : '') + '.'
+    : 'You are already at or under the time you said feels fine. The rule below will help keep it that way.'
+  out.innerHTML = '<div class="card result">' +
+    '<p class="kicker">Your evenings</p><p class="big">' + (lost > 0 ? Math.round(year) + ' hours a year to the phone that you did not choose' : 'Your evenings are mostly yours') + '</p>' +
+    '<p>You spend about <b>' + hm(ev) + '</b> on your phone on a typical evening' + (source === 'daily' ? ' (estimated from your daily total)' : '') + (share != null ? ', about ' + share + '% of the ' + hm(evLen) + ' between getting home and bed' : '') + '. ' + lostLine + '</p>' +
+    (lost > 0 && inst.length ? '<p>Even half of that would give you about ' + Math.round(month / 2) + ' hours a month to ' + esc(list(inst)) + '.</p>' : '') +
+    '<div class="stats"><div class="stat"><b>' + hm(lost) + '</b><span>unwanted, per evening</span></div><div class="stat"><b>' + Math.round(month) + ' h</b><span>per month</span></div><div class="stat"><b>' + Math.round(year) + ' h</b><span>per year</span></div></div>' +
+    '</div>' +
+    '<div class="card" id="parkplan">' +
+    '<p class="kicker">My phone parking plan</p><h2 style="margin-top:6px">My evening rule</h2><p class="big" style="font-size:24px">' + esc(rule) + '</p>' +
+    (parkNote ? '<p class="muted">' + esc(parkNote) + '</p>' : '') +
+    '<h3>Before I park it</h3><ul class="list"><li>Reply to anyone who is waiting on me.</li><li>' + esc(alarmTip) + '</li><li>Turn on Do Not Disturb or a Focus mode that still lets calls from my favorites through, so nobody important is cut off.</li>' + (apps ? '<li>Log out of ' + esc(apps) + ' on the phone, or move them off the home screen, so picking it up takes a little effort.</li>' : '') + '</ul>' +
+    '<h3>Instead, I will</h3><ul class="list">' + (inst.length ? inst.map(function (x) { return '<li>' + esc(x.charAt(0).toUpperCase() + x.slice(1)) + '</li>' }).join('') : '<li>Decide one thing tonight, before ' + esc(fmtTime(v.park)) + '.</li>') + '</ul>' +
+    '<h3>If I slip</h3><p>I put it back where it parks. No guilt, no making up for it. The rule starts again tomorrow.</p>' +
+    '<h3>This week</h3><div class="tablewrap"><table><tr>' + ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'].map(function (d) { return '<th>' + d + '</th>' }).join('') + '</tr><tr>' + [0, 1, 2, 3, 4, 5, 6].map(function () { return '<td style="height:34px">☐</td>' }).join('') + '</tr></table></div>' +
+    '</div>'
+}
+TOOL.summary = function () {
+  if (!last) return ''
+  return 'My evening phone audit: about ' + hm(last.ev) + ' a night on my phone' + (last.lost > 0 ? ', ' + hm(last.lost) + ' more than I want. That is about ' + Math.round(last.month) + ' hours a month and ' + Math.round(last.year) + ' hours a year.' : ', which is about what I want.') + '\nMy rule: ' + last.rule
+}
+$('#print').addEventListener('click', function () { var p = $('#parkplan'); if (p) printOnly(p) })
+fillForm(form, store.get(null))
+form.addEventListener('input', render)
+form.addEventListener('change', render)
+render()
+
+// Shared: copy-my-result and clear-my-answers.
+;(function () {
+  var btn = $('#copy'), status = $('#copy-status'), fb = $('#copy-fallback')
+  function say(t) { if (status) status.textContent = t }
+  function fallback(text) {
+    var ok = false
+    try {
+      var ta = document.createElement('textarea')
+      ta.value = text; ta.setAttribute('readonly', ''); ta.style.position = 'fixed'; ta.style.top = '-1000px'; ta.style.opacity = '0'
+      document.body.appendChild(ta); ta.select(); ok = document.execCommand('copy'); document.body.removeChild(ta)
+    } catch (e) { ok = false }
+    if (ok) { say('Copied. Paste it anywhere.'); return }
+    if (fb) { fb.hidden = false; fb.value = text; try { fb.focus(); fb.select() } catch (e) {} }
+    say('Your browser blocked copying. Select the text below and copy it.')
+  }
+  if (btn) btn.addEventListener('click', function () {
+    var s = typeof TOOL.summary === 'function' ? TOOL.summary() : ''
+    if (!s) { say('Fill in the tool first, then copy.'); return }
+    var text = s + '\n\nMade with this free tool: ' + TOOL.url
+    try {
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(text).then(function () { say('Copied. Paste it anywhere.') }, function () { fallback(text) })
+        return
+      }
+    } catch (e) {}
+    fallback(text)
+  })
+  var reset = $('#reset')
+  if (reset) reset.addEventListener('click', function () {
+    if (!window.confirm('Clear everything you entered in this tool on this device?')) return
+    store.clear()
+    if (typeof TOOL.onReset === 'function') TOOL.onReset()
+    try { location.reload() } catch (e) {}
+  })
+})()
+
+})();
+</script>
+</body>
+</html>

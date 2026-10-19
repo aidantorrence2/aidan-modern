@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>New-City Friendship Planner: a 4-week plan for real friends</title>
+<meta name="description" content="Pick your interests, free evenings and neighborhood. Get a 4-week plan built on seeing the same people every week, plus a tracker for names you meet.">
+<link rel="canonical" href="https://aidantorrence2.github.io/aidan-modern/tools/new-city-friend-planner/">
+<meta property="og:title" content="New-City Friendship Planner: a 4-week plan for real friends">
+<meta property="og:description" content="Pick your interests, free evenings and neighborhood. Get a 4-week plan built on seeing the same people every week, plus a tracker for names you meet.">
+<meta property="og:url" content="https://aidantorrence2.github.io/aidan-modern/tools/new-city-friend-planner/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#0c0c0c">
+<meta name="color-scheme" content="dark">
+<link rel="icon" href="data:,">
+<style>
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+html,body{margin:0;background:#0c0c0c;color:#fff}
+body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;font-size:17px;line-height:1.55;overflow-x:hidden}
+main{max-width:700px;margin:0 auto;padding:36px 16px 48px}
+h1,h2,h3{font-family:Georgia,"Times New Roman",serif;font-weight:400;line-height:1.2;margin:0}
+h1{font-size:34px;margin:8px 0 14px}
+h2{font-size:25px;margin:38px 0 10px}
+h3{font-size:20px;margin:22px 0 8px}
+p{margin:0 0 12px}
+a{color:#fff}
+.kicker{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:#9a9a9a;margin:0}
+.lead{font-size:19px;color:#e2e2e2}
+.muted{color:#a0a0a0;font-size:15px}
+.small{font-size:14px}
+.privacy{font-size:14.5px;color:#a0a0a0;border-left:2px solid #333;padding-left:12px}
+.note{font-size:15px;color:#cfcfcf;background:#141414;border:1px solid #2a2a2a;border-radius:10px;padding:12px 14px;margin:16px 0}
+.linkish{background:none;border:0;color:#fff;text-decoration:underline;font:inherit;padding:0;cursor:pointer}
+fieldset{border:0;padding:0;margin:0;min-width:0}
+legend{padding:0}
+label,.label{display:block;font-size:15.5px;color:#dcdcdc;margin:16px 0 6px}
+.hint{display:block;font-size:13.5px;color:#9a9a9a;margin-top:2px}
+input[type=text],input[type=number],input[type=date],input[type=time],input[type=email],textarea,select{width:100%;max-width:100%;background:#161616;color:#fff;border:1px solid #363636;border-radius:8px;padding:11px 12px;font:inherit;font-size:16px;min-width:0}
+textarea{resize:vertical;line-height:1.45}
+select{appearance:none;-webkit-appearance:none;background-image:linear-gradient(45deg,transparent 50%,#bbb 50%),linear-gradient(135deg,#bbb 50%,transparent 50%);background-position:calc(100% - 18px) 50%,calc(100% - 13px) 50%;background-size:5px 5px;background-repeat:no-repeat;padding-right:32px}
+input:focus,textarea:focus,select:focus{outline:2px solid #fff;outline-offset:1px;border-color:#fff}
+::placeholder{color:#6f6f6f}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:0 12px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:0 10px}
+@media (max-width:380px){.grid3{grid-template-columns:1fr 1fr}}
+.btn{display:inline-block;background:#fff;color:#0c0c0c;border:1px solid #fff;border-radius:8px;padding:12px 18px;font:inherit;font-size:16px;font-weight:600;cursor:pointer;text-decoration:none;line-height:1.2;margin:4px 6px 4px 0}
+.btn.ghost{background:transparent;color:#fff;border-color:#4a4a4a}
+.btn.small{padding:8px 12px;font-size:14.5px}
+.btn:focus-visible,.linkish:focus-visible,a:focus-visible{outline:2px solid #fff;outline-offset:3px}
+.btn[disabled]{opacity:.45;cursor:not-allowed}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 4px}
+.chip{position:relative;display:inline-block;margin:0;font-size:15px}
+.chip input{position:absolute;opacity:0;width:1px;height:1px}
+.chip span{display:inline-block;border:1px solid #424242;border-radius:999px;padding:7px 13px;cursor:pointer;color:#e6e6e6;user-select:none}
+.chip input:checked+span{background:#fff;color:#0c0c0c;border-color:#fff}
+.chip input:focus-visible+span{outline:2px solid #fff;outline-offset:2px}
+.card{background:#141414;border:1px solid #2a2a2a;border-radius:12px;padding:18px 16px;margin:18px 0}
+.result{border-color:#4a4a4a}
+.big{font-family:Georgia,"Times New Roman",serif;font-size:30px;line-height:1.15;margin:4px 0 8px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin:12px 0}
+.stat{background:#0f0f0f;border:1px solid #2a2a2a;border-radius:10px;padding:12px}
+.stat b{display:block;font-family:Georgia,serif;font-weight:400;font-size:26px;line-height:1.1}
+.stat span{font-size:13.5px;color:#a8a8a8}
+ol.steps,ul.list{padding-left:22px;margin:8px 0 12px}
+ol.steps li,ul.list li{margin:0 0 8px}
+.bars{margin:12px 0}
+.bar{margin:0 0 10px}
+.bar-top{display:flex;justify-content:space-between;gap:10px;font-size:15px}
+.bar-track{height:14px;background:#1d1d1d;border-radius:7px;overflow:hidden;margin-top:4px}
+.bar-fill{height:100%;background:#fff;border-radius:7px;min-width:2px;transition:width .25s}
+.bar.weak .bar-fill{background:#e8b04a}
+.bar-conv{font-size:13.5px;color:#a8a8a8;margin:2px 0 0 0}
+.bar.weak .bar-conv{color:#e8b04a}
+.tag{display:inline-block;font-size:12.5px;letter-spacing:.04em;text-transform:uppercase;border:1px solid #555;border-radius:999px;padding:2px 9px;color:#ddd;vertical-align:middle}
+.share{margin:18px 0 0}
+.copy-fallback{margin-top:10px;font-size:14px}
+.cta{margin-top:48px;border:1px solid #3a3a3a;border-radius:12px;padding:20px 18px;background:#111}
+.cta h2{margin:0 0 10px}
+.foot{margin-top:40px;padding-top:18px;border-top:1px solid #222;color:#a0a0a0;font-size:14.5px}
+.foot p{margin:0 0 6px}
+.foot a{color:#d8d8d8}
+.empty{color:#9a9a9a;font-style:italic}
+.row-x{background:none;border:1px solid #3a3a3a;color:#ccc;border-radius:8px;width:40px;height:44px;font-size:20px;line-height:1;cursor:pointer;padding:0}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+table{width:100%;border-collapse:collapse;font-size:15px}
+th,td{text-align:left;padding:7px 6px;border-bottom:1px solid #262626;vertical-align:top}
+th{font-weight:600;color:#cfcfcf;font-size:13.5px}
+.tablewrap{overflow-x:auto;-webkit-overflow-scrolling:touch;max-width:100%}
+@media (min-width:640px){h1{font-size:42px}main{padding-top:56px}}
+@media print{
+  html,body{background:#fff!important;color:#000!important}
+  body{font-size:12pt}
+  *{color:#000!important;background:transparent!important;box-shadow:none!important}
+  main{max-width:none;padding:0}
+  .no-print,.pr-hide{display:none!important}
+  .card,.stat,.note{border:1px solid #999!important;break-inside:avoid}
+  .bar-track{border:1px solid #999}
+  .bar-fill{background:#555!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  a{text-decoration:none}
+  th,td{border-bottom:1px solid #bbb}
+}
+
+
+</style>
+</head>
+<body>
+<main>
+<p class="kicker no-print">Free tool · new in town</p>
+<h1>New-city friendship planner</h1>
+<p class="lead">One-off events with strangers rarely turn into friends. Seeing the same people again and again usually does. Tell the planner what you like and when you are free, and it builds a 4-week plan around one weekly thing, plus a place to keep the names you learn.</p>
+<p class="privacy no-print">Runs entirely in your browser. Nothing you type is sent anywhere; your answers are saved only on this device. <button id="reset" class="linkish" type="button">Clear my answers</button></p>
+<form id="f" class="card no-print" autocomplete="off" onsubmit="return false">
+<label for="hood">Your neighborhood or area</label>
+<input id="hood" name="hood" type="text" maxlength="60" placeholder="e.g. Mission District, Leith, Fitzroy">
+<span class="label" id="il">What do you enjoy? Pick up to three, favorite first.</span>
+<div class="chips" role="group" aria-labelledby="il" id="interests"></div>
+<span class="label" id="dl">Which evenings (or weekend afternoons) are usually free?</span>
+<div class="chips" role="group" aria-labelledby="dl" id="days"></div>
+<label for="energy">How many times a week can you realistically go out?</label>
+<select id="energy" name="energy">
+<option value="1">Once a week</option>
+<option value="2">Twice a week</option>
+<option value="3">Three times or more</option>
+</select>
+</form>
+
+<section id="plan" class="card result" aria-live="polite"><p class="empty">Pick an interest and a free day to see your plan.</p></section>
+<p class="no-print"><button class="btn ghost" id="print" type="button">Print or save the plan as PDF</button></p>
+<div class="share no-print"><button class="btn" id="copy" type="button">Copy my result</button> <span id="copy-status" class="muted" role="status" aria-live="polite"></span><textarea id="copy-fallback" class="copy-fallback" rows="5" readonly hidden aria-label="Your result, ready to copy"></textarea></div>
+
+<section class="no-print">
+<h2>Names I have met</h2>
+<p class="muted">Write each person down the same day you meet them. Next week, greet them by name and ask about the detail you saved.</p>
+<form id="pf" class="card" autocomplete="off">
+<div class="grid2">
+<div><label for="pname">Name</label><input id="pname" type="text" maxlength="40" placeholder="e.g. Priya" required></div>
+<div><label for="pwhere">Where we met</label><input id="pwhere" type="text" maxlength="60" placeholder="e.g. Tuesday run club"></div>
+</div>
+<label for="pdetail">One detail to remember</label>
+<input id="pdetail" type="text" maxlength="100" placeholder="e.g. training for a half marathon, has a dog called Bean">
+<p style="margin-top:12px"><button class="btn small" type="submit">Add person</button></p>
+</form>
+<div id="people"></div>
+</section>
+
+<aside class="cta no-print">
+<h2>Want help actually changing this?</h2>
+<p>An eight-week neighborhood group: the same small group of people near you, meeting repeatedly instead of reshuffling strangers every week.</p>
+<p class="muted">Honest note: this program is not built yet, and nothing is charged. The page explains the plan and lets you ask for early access, which helps decide what gets built first.</p>
+<a class="btn" href="../../moved-new-city-real/?src=tool-new-city-friend-planner">See the pre-launch page</a>
+</aside>
+<footer class="foot no-print">
+<p>A free tool from Aidan Torrence</p>
+<p><a href="../../">All pre-launch offers</a> · <a href="https://aidantorrence.com">aidantorrence.com</a></p>
+</footer>
+</main>
+<script>
+(function(){
+"use strict";
+var TOOL={slug:"new-city-friend-planner",url:"https://aidantorrence2.github.io/aidan-modern/tools/new-city-friend-planner/"};
+function $(s, r) { return (r || document).querySelector(s) }
+function $$(s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)) }
+function esc(s) { return String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;') }
+function num(v) { var n = parseFloat(String(v == null ? '' : v).replace(/,/g, '').replace(/[^0-9.\-]/g, '')); return isFinite(n) ? n : 0 }
+function round1(n) { return Math.round(n * 10) / 10 }
+function plural(n, one, many) { return n + ' ' + (n === 1 ? one : (many || one + 's')) }
+var KEY = 'tool:' + TOOL.slug
+var store = {
+  get: function (fallback) { try { var v = localStorage.getItem(KEY); return v ? JSON.parse(v) : fallback } catch (e) { return fallback } },
+  set: function (v) { try { localStorage.setItem(KEY, JSON.stringify(v)) } catch (e) {} },
+  clear: function () { try { localStorage.removeItem(KEY) } catch (e) {} }
+}
+// Form helpers: read and write every [name] field inside a root element.
+function readForm(root) {
+  var o = {}
+  $$('[name]', root).forEach(function (el) {
+    if (el.type === 'checkbox') { if (!o[el.name]) o[el.name] = []; if (el.checked) o[el.name].push(el.value) }
+    else if (el.type === 'radio') { if (el.checked) o[el.name] = el.value; else if (!(el.name in o)) o[el.name] = '' }
+    else o[el.name] = el.value
+  })
+  return o
+}
+function fillForm(root, o) {
+  if (!o) return
+  $$('[name]', root).forEach(function (el) {
+    if (!(el.name in o)) return
+    var v = o[el.name]
+    if (el.type === 'checkbox') el.checked = Array.isArray(v) && v.indexOf(el.value) !== -1
+    else if (el.type === 'radio') el.checked = v === el.value
+    else el.value = v
+  })
+}
+// Print only one element: hide everything that is not on the path from body to it.
+function printOnly(el) {
+  var hidden = []
+  var node = el
+  while (node && node !== document.body) {
+    var p = node.parentNode
+    if (!p) break
+    Array.prototype.forEach.call(p.children, function (sib) {
+      if (sib !== node && sib.tagName !== 'SCRIPT' && sib.tagName !== 'STYLE') { sib.classList.add('pr-hide'); hidden.push(sib) }
+    })
+    node = p
+  }
+  var done = function () { hidden.forEach(function (h) { h.classList.remove('pr-hide') }); window.removeEventListener('afterprint', done) }
+  window.addEventListener('afterprint', done)
+  try { window.print() } catch (e) {}
+  setTimeout(done, 1500)
+}
+function fmtDate(d, opts) { try { return d.toLocaleDateString(undefined, opts || { weekday: 'short', month: 'short', day: 'numeric' }) } catch (e) { return d.toDateString() } }
+
+var form = $('#f'), plan = $('#plan'), peopleBox = $('#people'), state = store.get({ form: null, people: [] }), lastPlan = null
+if (!Array.isArray(state.people)) state.people = []
+// interest: [label, weekly anchor, search phrase, tip, prefers weekend]
+var I = {
+  running: ['Running', 'a weekly run club', 'run club', 'If the group gets coffee or food afterwards, stay for it.', 0],
+  climbing: ['Climbing', 'the same weekly session at one climbing gym', 'climbing gym social night', 'Ask someone on the same problem how they would climb it.', 0],
+  games: ['Board games', 'a weekly board game night', 'board game night', 'Ask a table with an open seat if you can join. Being taught a game is a built-in conversation.', 0],
+  books: ['Books', 'a weekly silent book club or library reading group', 'silent book club', 'Bring the book you are reading; it gives people something to ask about.', 0],
+  cooking: ['Cooking', 'a multi-week cooking class or a regular community kitchen shift', 'cooking class series', 'Pick the class series over one-off classes, so it is the same group each week.', 0],
+  volunteering: ['Volunteering', 'a weekly volunteer shift with the same team', 'weekly volunteer shift', 'Ask for the same shift every week so you work with the same people.', 0],
+  livemusic: ['Live music', 'the same weekly open mic or jam night', 'open mic night', 'Go to the same venue each week. Regulars notice regulars.', 0],
+  choir: ['Singing or playing music', 'a community choir or band with weekly rehearsals', 'community choir', 'Rehearsal breaks are the easy moment to talk.', 0],
+  art: ['Art and crafts', 'a weekly drop-in drawing or craft night', 'drop-in drawing class', 'Ask someone about what they are making.', 0],
+  language: ['Languages', 'a weekly language exchange', 'language exchange', 'Swap contact details with your conversation partner to practice between sessions.', 0],
+  dogs: ['Dogs', 'the same dog park at the same time each evening', 'dog park', 'Learn the dogs’ names first. The owners’ names follow.', 0],
+  cycling: ['Cycling', 'a weekly group ride (look for a no-drop ride if you are newer)', 'no-drop group ride', 'Ride next to a different person for a few minutes each week.', 1],
+  hiking: ['Hiking and walks', 'a hiking or walking group’s regular weekly outing', 'hiking group', 'Walking side by side makes talking easier than sitting face to face.', 1],
+  trivia: ['Trivia', 'the same pub quiz every week', 'trivia night', 'Ask a team if they need an extra player.', 0],
+  dance: ['Dance', 'a beginner dance class that runs as a series', 'beginner dance class series', 'Partner rotation means you meet everyone. Learn two names per class.', 0],
+  tech: ['Tech or startups', 'a recurring tech meetup or coworking evening', 'tech meetup', 'Volunteer to help at the next one; organizers meet everyone.', 0],
+  sports: ['Team sports', 'a recreational league team (one game a week)', 'rec league free agent', 'Sign up as a free agent if you have no team. Go for a drink with the team after games.', 0],
+  yoga: ['Yoga', 'the same weekly class with the same teacher', 'yoga class', 'Arrive five minutes early and set up near the same people each week.', 0],
+  faith: ['Faith community', 'a weekly service plus the small group or volunteering attached to it', 'community small group', 'The small group, not the big service, is where people get to know you.', 1],
+  garden: ['Gardening', 'a community garden’s weekly workday', 'community garden volunteer', 'Ask what needs doing and do it next to someone.', 1],
+  photo: ['Photography', 'a regular photo walk group', 'photo walk', 'Offer to share your shots with people from the walk.', 1]
+}
+var DAYS = [['1', 'Mon'], ['2', 'Tue'], ['3', 'Wed'], ['4', 'Thu'], ['5', 'Fri'], ['6', 'Sat'], ['0', 'Sun']]
+var DAYNAME = { 0: 'Sunday', 1: 'Monday', 2: 'Tuesday', 3: 'Wednesday', 4: 'Thursday', 5: 'Friday', 6: 'Saturday' }
+$('#interests').innerHTML = Object.keys(I).map(function (k) { return '<label class="chip"><input type="checkbox" name="interests" value="' + k + '"><span>' + esc(I[k][0]) + '</span></label>' }).join('')
+$('#days').innerHTML = DAYS.map(function (d) { return '<label class="chip"><input type="checkbox" name="days" value="' + d[0] + '"><span>' + d[1] + '</span></label>' }).join('')
+
+var picked = (state.form && state.form._order) || []
+function save() { store.set(state) }
+function nextDate(dow, weeksAhead) {
+  var d = new Date(); d.setHours(12, 0, 0, 0)
+  var diff = (dow - d.getDay() + 7) % 7
+  d.setDate(d.getDate() + diff + 7 * (weeksAhead || 0))
+  return d
+}
+function chooseDay(days, weekend, avoid) {
+  var nums = days.map(Number).filter(function (x) { return x !== avoid })
+  if (!nums.length) return null
+  var pref = nums.filter(function (x) { return weekend ? (x === 0 || x === 6) : (x >= 1 && x <= 5) })
+  var pool = pref.length ? pref : nums
+  pool.sort(function (a, b) { return ((a + 6) % 7) - ((b + 6) % 7) })
+  return pool[0]
+}
+function render() {
+  var v = readForm(form)
+  // keep pick order and a max of three interests
+  var now = v.interests || []
+  picked = picked.filter(function (k) { return now.indexOf(k) !== -1 })
+  now.forEach(function (k) { if (picked.indexOf(k) === -1) picked.push(k) })
+  if (picked.length > 3) {
+    var drop = picked.splice(3)
+    drop.forEach(function (k) { var el = $('input[name=interests][value=' + k + ']'); if (el) el.checked = false })
+  }
+  v.interests = picked.slice(); v._order = picked.slice()
+  state.form = v; save()
+  var hood = (v.hood || '').trim()
+  var days = v.days || []
+  if (!picked.length || !days.length) { lastPlan = null; plan.innerHTML = '<p class="empty">Pick ' + (!picked.length ? 'at least one interest' : '') + (!picked.length && !days.length ? ' and ' : '') + (!days.length ? 'at least one free day' : '') + ' to see your plan.</p>'; return }
+  var a = I[picked[0]], aDay = chooseDay(days, a[4])
+  var energy = num(v.energy) || 1
+  var second = null
+  if (energy >= 2 && picked.length > 1 && days.length > 1) {
+    var b = I[picked[1]], bDay = chooseDay(days, b[4], aDay)
+    if (bDay != null) second = { i: b, day: bDay }
+  }
+  var inviteDay = days.map(Number).filter(function (x) { return x !== aDay && (!second || x !== second.day) })[0]
+  var inviteTxt = inviteDay != null ? 'on ' + DAYNAME[inviteDay] : 'another evening'
+  var w = [0, 1, 2, 3].map(function (n) { return fmtDate(nextDate(aDay, n), { month: 'short', day: 'numeric' }) })
+  var where = hood ? ' in ' + hood : ''
+  lastPlan = { anchor: a[1], day: DAYNAME[aDay], hood: hood }
+  var search = picked.map(function (k) { return '<li>“' + esc(I[k][2] + (hood ? ' ' + hood : '')) + '”</li>' }).join('')
+  plan.innerHTML = '<p class="kicker">Your 4-week plan</p>' +
+    '<p class="big">Every ' + esc(DAYNAME[aDay]) + ': ' + esc(a[1]) + esc(where) + '.</p>' +
+    '<p>The rule for the next four weeks: same thing, same day, same people. Skip anything that would change the group every week.</p>' +
+    (second ? '<p>Second regular, because you can go out more than once a week: <b>' + esc(DAYNAME[second.day]) + ', ' + esc(second.i[1]) + '</b>. Same rule.</p>' : '') +
+    '<h3>Find it this week</h3><p class="muted">Search these on Meetup, Eventbrite, Instagram, a local subreddit, or your library and community center calendars. Pick the option that meets weekly.</p><ul class="list">' + search + '</ul>' +
+    '<h3>Week by week</h3><ol class="steps">' +
+    '<li><b>Week 1 (' + esc(w[0]) + ').</b> Go. Your only goal is two names and one detail about each person. Add them to the list below before you sleep.</li>' +
+    '<li><b>Week 2 (' + esc(w[1]) + ').</b> Same thing, same day. Greet last week’s people by name and ask about the detail you saved.</li>' +
+    '<li><b>Week 3 (' + esc(w[2]) + ').</b> Same again. Arrive ten minutes early or stay ten minutes after: the edges of an event are the easiest time to talk. ' + esc(a[3]) + '</li>' +
+    '<li><b>Week 4 (' + esc(w[3]) + ').</b> Same again. Invite one or two people to something small and specific ' + esc(inviteTxt) + ': “A few of us are getting food after, want to come?” or “I am going to ___ on ' + esc(inviteDay != null ? DAYNAME[inviteDay] : '___') + ', want to join?”</li></ol>' +
+    '<h3>Every week, 5 minutes</h3><ul class="list"><li>Message one person from your list: a link they would like, a photo, or just “see you ' + esc(DAYNAME[aDay]) + '?”</li><li>If a week goes badly, go back the next week anyway. The plan works by repetition, not by any single night.</li></ul>'
+}
+function renderPeople() {
+  var ps = state.people
+  if (!ps.length) { peopleBox.innerHTML = '<p class="empty">No names yet.</p>'; return }
+  peopleBox.innerHTML = '<p class="muted">' + plural(ps.length, 'person', 'people') + ' so far, ' + ps.filter(function (p) { return p.seen > 0 }).length + ' seen more than once.</p>' +
+    ps.map(function (p, i) {
+      return '<div class="card" style="margin:10px 0;padding:14px"><div style="display:flex;justify-content:space-between;gap:10px;align-items:flex-start"><div style="min-width:0"><b>' + esc(p.name) + '</b>' + (p.where ? ' <span class="muted">· ' + esc(p.where) + '</span>' : '') +
+        (p.detail ? '<br><span class="muted">' + esc(p.detail) + '</span>' : '') + '<br><span class="small muted">Met ' + esc(p.date || '') + ' · seen again ' + plural(p.seen || 0, 'time') + '</span></div>' +
+        '<button class="row-x" type="button" data-del="' + i + '" aria-label="Remove ' + esc(p.name) + '">×</button></div>' +
+        '<button class="btn ghost small" type="button" data-seen="' + i + '" style="margin-top:8px">Saw them again</button></div>'
+    }).join('')
+}
+peopleBox.addEventListener('click', function (e) {
+  var t = e.target.closest('button'); if (!t) return
+  if (t.hasAttribute('data-del')) { state.people.splice(+t.getAttribute('data-del'), 1) }
+  else if (t.hasAttribute('data-seen')) { var p = state.people[+t.getAttribute('data-seen')]; p.seen = (p.seen || 0) + 1 }
+  save(); renderPeople()
+})
+$('#pf').addEventListener('submit', function (e) {
+  e.preventDefault()
+  var n = $('#pname').value.trim(); if (!n) return
+  state.people.push({ name: n, where: $('#pwhere').value.trim(), detail: $('#pdetail').value.trim(), date: fmtDate(new Date(), { month: 'short', day: 'numeric' }), seen: 0 })
+  save(); renderPeople()
+  $('#pname').value = ''; $('#pdetail').value = ''; $('#pname').focus()
+})
+TOOL.summary = function () {
+  if (!lastPlan) return ''
+  return 'My 4-week new-city plan: every ' + lastPlan.day + ', ' + lastPlan.anchor + (lastPlan.hood ? ' in ' + lastPlan.hood : '') + '. Same thing, same day, same people, four weeks running.\nNames learned so far: ' + state.people.length + '.'
+}
+$('#print').addEventListener('click', function () { if (lastPlan) printOnly(plan) })
+fillForm(form, state.form)
+form.addEventListener('change', render)
+form.addEventListener('input', render)
+render(); renderPeople()
+
+// Shared: copy-my-result and clear-my-answers.
+;(function () {
+  var btn = $('#copy'), status = $('#copy-status'), fb = $('#copy-fallback')
+  function say(t) { if (status) status.textContent = t }
+  function fallback(text) {
+    var ok = false
+    try {
+      var ta = document.createElement('textarea')
+      ta.value = text; ta.setAttribute('readonly', ''); ta.style.position = 'fixed'; ta.style.top = '-1000px'; ta.style.opacity = '0'
+      document.body.appendChild(ta); ta.select(); ok = document.execCommand('copy'); document.body.removeChild(ta)
+    } catch (e) { ok = false }
+    if (ok) { say('Copied. Paste it anywhere.'); return }
+    if (fb) { fb.hidden = false; fb.value = text; try { fb.focus(); fb.select() } catch (e) {} }
+    say('Your browser blocked copying. Select the text below and copy it.')
+  }
+  if (btn) btn.addEventListener('click', function () {
+    var s = typeof TOOL.summary === 'function' ? TOOL.summary() : ''
+    if (!s) { say('Fill in the tool first, then copy.'); return }
+    var text = s + '\n\nMade with this free tool: ' + TOOL.url
+    try {
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(text).then(function () { say('Copied. Paste it anywhere.') }, function () { fallback(text) })
+        return
+      }
+    } catch (e) {}
+    fallback(text)
+  })
+  var reset = $('#reset')
+  if (reset) reset.addEventListener('click', function () {
+    if (!window.confirm('Clear everything you entered in this tool on this device?')) return
+    store.clear()
+    if (typeof TOOL.onReset === 'function') TOOL.onReset()
+    try { location.reload() } catch (e) {}
+  })
+})()
+
+})();
+</script>
+</body>
+</html>

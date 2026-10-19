@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Tomorrow List: a 5-minute brain dump before bed</title>
+<meta name="description" content="A timed 5-minute brain dump that sorts each thought into tomorrow, someday or not mine to fix, then gives you a printable list to leave by the bed.">
+<link rel="canonical" href="https://aidantorrence2.github.io/aidan-modern/tools/tomorrow-list/">
+<meta property="og:title" content="Tomorrow List: a 5-minute brain dump before bed">
+<meta property="og:description" content="A timed 5-minute brain dump that sorts each thought into tomorrow, someday or not mine to fix, then gives you a printable list to leave by the bed.">
+<meta property="og:url" content="https://aidantorrence2.github.io/aidan-modern/tools/tomorrow-list/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#0c0c0c">
+<meta name="color-scheme" content="dark">
+<link rel="icon" href="data:,">
+<style>
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+html,body{margin:0;background:#0c0c0c;color:#fff}
+body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;font-size:17px;line-height:1.55;overflow-x:hidden}
+main{max-width:700px;margin:0 auto;padding:36px 16px 48px}
+h1,h2,h3{font-family:Georgia,"Times New Roman",serif;font-weight:400;line-height:1.2;margin:0}
+h1{font-size:34px;margin:8px 0 14px}
+h2{font-size:25px;margin:38px 0 10px}
+h3{font-size:20px;margin:22px 0 8px}
+p{margin:0 0 12px}
+a{color:#fff}
+.kicker{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:#9a9a9a;margin:0}
+.lead{font-size:19px;color:#e2e2e2}
+.muted{color:#a0a0a0;font-size:15px}
+.small{font-size:14px}
+.privacy{font-size:14.5px;color:#a0a0a0;border-left:2px solid #333;padding-left:12px}
+.note{font-size:15px;color:#cfcfcf;background:#141414;border:1px solid #2a2a2a;border-radius:10px;padding:12px 14px;margin:16px 0}
+.linkish{background:none;border:0;color:#fff;text-decoration:underline;font:inherit;padding:0;cursor:pointer}
+fieldset{border:0;padding:0;margin:0;min-width:0}
+legend{padding:0}
+label,.label{display:block;font-size:15.5px;color:#dcdcdc;margin:16px 0 6px}
+.hint{display:block;font-size:13.5px;color:#9a9a9a;margin-top:2px}
+input[type=text],input[type=number],input[type=date],input[type=time],input[type=email],textarea,select{width:100%;max-width:100%;background:#161616;color:#fff;border:1px solid #363636;border-radius:8px;padding:11px 12px;font:inherit;font-size:16px;min-width:0}
+textarea{resize:vertical;line-height:1.45}
+select{appearance:none;-webkit-appearance:none;background-image:linear-gradient(45deg,transparent 50%,#bbb 50%),linear-gradient(135deg,#bbb 50%,transparent 50%);background-position:calc(100% - 18px) 50%,calc(100% - 13px) 50%;background-size:5px 5px;background-repeat:no-repeat;padding-right:32px}
+input:focus,textarea:focus,select:focus{outline:2px solid #fff;outline-offset:1px;border-color:#fff}
+::placeholder{color:#6f6f6f}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:0 12px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:0 10px}
+@media (max-width:380px){.grid3{grid-template-columns:1fr 1fr}}
+.btn{display:inline-block;background:#fff;color:#0c0c0c;border:1px solid #fff;border-radius:8px;padding:12px 18px;font:inherit;font-size:16px;font-weight:600;cursor:pointer;text-decoration:none;line-height:1.2;margin:4px 6px 4px 0}
+.btn.ghost{background:transparent;color:#fff;border-color:#4a4a4a}
+.btn.small{padding:8px 12px;font-size:14.5px}
+.btn:focus-visible,.linkish:focus-visible,a:focus-visible{outline:2px solid #fff;outline-offset:3px}
+.btn[disabled]{opacity:.45;cursor:not-allowed}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 4px}
+.chip{position:relative;display:inline-block;margin:0;font-size:15px}
+.chip input{position:absolute;opacity:0;width:1px;height:1px}
+.chip span{display:inline-block;border:1px solid #424242;border-radius:999px;padding:7px 13px;cursor:pointer;color:#e6e6e6;user-select:none}
+.chip input:checked+span{background:#fff;color:#0c0c0c;border-color:#fff}
+.chip input:focus-visible+span{outline:2px solid #fff;outline-offset:2px}
+.card{background:#141414;border:1px solid #2a2a2a;border-radius:12px;padding:18px 16px;margin:18px 0}
+.result{border-color:#4a4a4a}
+.big{font-family:Georgia,"Times New Roman",serif;font-size:30px;line-height:1.15;margin:4px 0 8px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin:12px 0}
+.stat{background:#0f0f0f;border:1px solid #2a2a2a;border-radius:10px;padding:12px}
+.stat b{display:block;font-family:Georgia,serif;font-weight:400;font-size:26px;line-height:1.1}
+.stat span{font-size:13.5px;color:#a8a8a8}
+ol.steps,ul.list{padding-left:22px;margin:8px 0 12px}
+ol.steps li,ul.list li{margin:0 0 8px}
+.bars{margin:12px 0}
+.bar{margin:0 0 10px}
+.bar-top{display:flex;justify-content:space-between;gap:10px;font-size:15px}
+.bar-track{height:14px;background:#1d1d1d;border-radius:7px;overflow:hidden;margin-top:4px}
+.bar-fill{height:100%;background:#fff;border-radius:7px;min-width:2px;transition:width .25s}
+.bar.weak .bar-fill{background:#e8b04a}
+.bar-conv{font-size:13.5px;color:#a8a8a8;margin:2px 0 0 0}
+.bar.weak .bar-conv{color:#e8b04a}
+.tag{display:inline-block;font-size:12.5px;letter-spacing:.04em;text-transform:uppercase;border:1px solid #555;border-radius:999px;padding:2px 9px;color:#ddd;vertical-align:middle}
+.share{margin:18px 0 0}
+.copy-fallback{margin-top:10px;font-size:14px}
+.cta{margin-top:48px;border:1px solid #3a3a3a;border-radius:12px;padding:20px 18px;background:#111}
+.cta h2{margin:0 0 10px}
+.foot{margin-top:40px;padding-top:18px;border-top:1px solid #222;color:#a0a0a0;font-size:14.5px}
+.foot p{margin:0 0 6px}
+.foot a{color:#d8d8d8}
+.empty{color:#9a9a9a;font-style:italic}
+.row-x{background:none;border:1px solid #3a3a3a;color:#ccc;border-radius:8px;width:40px;height:44px;font-size:20px;line-height:1;cursor:pointer;padding:0}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+table{width:100%;border-collapse:collapse;font-size:15px}
+th,td{text-align:left;padding:7px 6px;border-bottom:1px solid #262626;vertical-align:top}
+th{font-weight:600;color:#cfcfcf;font-size:13.5px}
+.tablewrap{overflow-x:auto;-webkit-overflow-scrolling:touch;max-width:100%}
+@media (min-width:640px){h1{font-size:42px}main{padding-top:56px}}
+@media print{
+  html,body{background:#fff!important;color:#000!important}
+  body{font-size:12pt}
+  *{color:#000!important;background:transparent!important;box-shadow:none!important}
+  main{max-width:none;padding:0}
+  .no-print,.pr-hide{display:none!important}
+  .card,.stat,.note{border:1px solid #999!important;break-inside:avoid}
+  .bar-track{border:1px solid #999}
+  .bar-fill{background:#555!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  a{text-decoration:none}
+  th,td{border-bottom:1px solid #bbb}
+}
+
+.timer{font-family:Georgia,"Times New Roman",serif;font-size:64px;line-height:1;margin:6px 0 14px;font-variant-numeric:tabular-nums}
+.timer.low{color:#e8b04a}
+.addrow{display:flex;gap:8px}
+.addrow input{flex:1}
+.items{list-style:none;padding:0;margin:14px 0 0}
+.items li{border-top:1px solid #262626;padding:10px 0}
+.sortbtns{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.sortbtns button{background:transparent;color:#ddd;border:1px solid #444;border-radius:999px;padding:7px 12px;font:inherit;font-size:14.5px;cursor:pointer}
+.sortbtns button[aria-pressed=true]{background:#fff;color:#0c0c0c;border-color:#fff}
+.sortbtns button:focus-visible{outline:2px solid #fff;outline-offset:2px}
+.final ul{list-style:none;padding:0;margin:6px 0 14px}
+.final li{padding:6px 0;border-bottom:1px dotted #333}
+.final li::before{content:"\2610";margin-right:10px}
+.final .let li::before{content:"\2013"}
+@media print{.final li{border-bottom:1px dotted #999}.timer{display:none}}
+
+</style>
+</head>
+<body>
+<main>
+<p class="kicker no-print">Free tool · wind-down habit</p>
+<h1>The tomorrow list</h1>
+<p class="lead">Five minutes to get tomorrow out of your head and onto paper. Write everything down, sort each item into tomorrow, someday or not mine to fix, then print the list and leave it by the bed. It is a wind-down habit, not a treatment.</p>
+<p class="privacy no-print">Runs entirely in your browser. Nothing you type is sent anywhere; your answers are saved only on this device. <button id="reset" class="linkish" type="button">Clear my answers</button></p>
+<section id="stage" class="card result" aria-live="polite"></section>
+<div class="share no-print"><button class="btn" id="copy" type="button">Copy my result</button> <span id="copy-status" class="muted" role="status" aria-live="polite"></span><textarea id="copy-fallback" class="copy-fallback" rows="5" readonly hidden aria-label="Your result, ready to copy"></textarea></div>
+
+<div class="note">This is a habit for winding down, not a treatment for sleep problems or anxiety. If you have trouble sleeping most nights for weeks, or it is affecting your days, talk to a doctor or a qualified sleep professional. If you are in crisis, in the US call or text 988.</div>
+
+<aside class="cta no-print">
+<h2>Want help actually changing this?</h2>
+<p>A guided sleep program with qualified clinical input where appropriate, accountability, and progress review.</p>
+<p class="muted">Honest note: this program is not built yet, and nothing is charged. The page explains the plan and lets you ask for early access, which helps decide what gets built first.</p>
+<a class="btn" href="../../want-sleep-lie-awake/?src=tool-tomorrow-list">See the pre-launch page</a>
+</aside>
+<footer class="foot no-print">
+<p>A free tool from Aidan Torrence</p>
+<p><a href="../../">All pre-launch offers</a> · <a href="https://aidantorrence.com">aidantorrence.com</a></p>
+</footer>
+</main>
+<script>
+(function(){
+"use strict";
+var TOOL={slug:"tomorrow-list",url:"https://aidantorrence2.github.io/aidan-modern/tools/tomorrow-list/"};
+function $(s, r) { return (r || document).querySelector(s) }
+function $$(s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)) }
+function esc(s) { return String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;') }
+function num(v) { var n = parseFloat(String(v == null ? '' : v).replace(/,/g, '').replace(/[^0-9.\-]/g, '')); return isFinite(n) ? n : 0 }
+function round1(n) { return Math.round(n * 10) / 10 }
+function plural(n, one, many) { return n + ' ' + (n === 1 ? one : (many || one + 's')) }
+var KEY = 'tool:' + TOOL.slug
+var store = {
+  get: function (fallback) { try { var v = localStorage.getItem(KEY); return v ? JSON.parse(v) : fallback } catch (e) { return fallback } },
+  set: function (v) { try { localStorage.setItem(KEY, JSON.stringify(v)) } catch (e) {} },
+  clear: function () { try { localStorage.removeItem(KEY) } catch (e) {} }
+}
+// Form helpers: read and write every [name] field inside a root element.
+function readForm(root) {
+  var o = {}
+  $$('[name]', root).forEach(function (el) {
+    if (el.type === 'checkbox') { if (!o[el.name]) o[el.name] = []; if (el.checked) o[el.name].push(el.value) }
+    else if (el.type === 'radio') { if (el.checked) o[el.name] = el.value; else if (!(el.name in o)) o[el.name] = '' }
+    else o[el.name] = el.value
+  })
+  return o
+}
+function fillForm(root, o) {
+  if (!o) return
+  $$('[name]', root).forEach(function (el) {
+    if (!(el.name in o)) return
+    var v = o[el.name]
+    if (el.type === 'checkbox') el.checked = Array.isArray(v) && v.indexOf(el.value) !== -1
+    else if (el.type === 'radio') el.checked = v === el.value
+    else el.value = v
+  })
+}
+// Print only one element: hide everything that is not on the path from body to it.
+function printOnly(el) {
+  var hidden = []
+  var node = el
+  while (node && node !== document.body) {
+    var p = node.parentNode
+    if (!p) break
+    Array.prototype.forEach.call(p.children, function (sib) {
+      if (sib !== node && sib.tagName !== 'SCRIPT' && sib.tagName !== 'STYLE') { sib.classList.add('pr-hide'); hidden.push(sib) }
+    })
+    node = p
+  }
+  var done = function () { hidden.forEach(function (h) { h.classList.remove('pr-hide') }); window.removeEventListener('afterprint', done) }
+  window.addEventListener('afterprint', done)
+  try { window.print() } catch (e) {}
+  setTimeout(done, 1500)
+}
+function fmtDate(d, opts) { try { return d.toLocaleDateString(undefined, opts || { weekday: 'short', month: 'short', day: 'numeric' }) } catch (e) { return d.toDateString() } }
+
+var stage = $('#stage'), tick = null
+var DUR = 5 * 60 * 1000
+var S = store.get(null) || { phase: 'idle', items: [], endAt: 0 }
+if (!Array.isArray(S.items)) S.items = []
+var CATS = [['t', 'Tomorrow'], ['s', 'Someday'], ['n', 'Not mine to fix']]
+function save() { store.set(S) }
+function tomorrowName() { var d = new Date(); d.setDate(d.getDate() + 1); return fmtDate(d, { weekday: 'long', month: 'long', day: 'numeric' }) }
+function mmss(ms) { var s = Math.max(0, Math.ceil(ms / 1000)); return Math.floor(s / 60) + ':' + ('0' + (s % 60)).slice(-2) }
+function counts() { var c = { t: 0, s: 0, n: 0, u: 0 }; S.items.forEach(function (i) { c[i.cat || 'u']++ }); return c }
+
+function render() {
+  clearInterval(tick); tick = null
+  if (S.phase === 'running') return renderRunning()
+  if (S.phase === 'sort') return renderSort()
+  if (S.phase === 'done') return renderDone()
+  stage.innerHTML = '<p class="kicker">Step 1 of 3 · Dump</p><h2 style="margin-top:6px">Five minutes, everything out</h2>' +
+    '<p>When you press start, type every single thing on your mind about tomorrow, one per line: tasks, worries, things to remember, conversations you are dreading. Do not sort or solve anything yet.</p>' +
+    '<p class="muted">Tip: do this a little before bed, not in bed, and dim the screen.</p>' +
+    '<button class="btn" id="start" type="button">Start 5 minutes</button>' +
+    (S.items.length ? ' <button class="btn ghost" id="resume" type="button">Sort my last ' + plural(S.items.length, 'item') + '</button>' : '')
+  $('#start').addEventListener('click', function () { S = { phase: 'running', items: [], endAt: Date.now() + DUR }; save(); render() })
+  var r = $('#resume'); if (r) r.addEventListener('click', function () { S.phase = 'sort'; save(); render() })
+}
+
+function renderRunning() {
+  stage.innerHTML = '<p class="kicker">Step 1 of 3 · Dump</p><div class="timer" id="clock" role="timer" aria-live="off">5:00</div>' +
+    '<form id="add" class="addrow" autocomplete="off"><label class="sr" for="item">Something on your mind</label><input id="item" type="text" maxlength="140" placeholder="One thing, then Enter"><button class="btn" type="submit" style="margin:0">Add</button></form>' +
+    '<ul class="items" id="items"></ul>' +
+    '<p style="margin-top:14px"><button class="btn ghost small" id="more" type="button">+1 minute</button> <button class="btn ghost small" id="early" type="button">I am done, sort now</button></p>'
+  var input = $('#item'), clock = $('#clock')
+  function drawItems() { $('#items').innerHTML = S.items.map(function (i) { return '<li>' + esc(i.t) + '</li>' }).join('') || '<li class="empty">Nothing yet. Anything counts, even “buy milk”.</li>' }
+  function flush() { var t = input.value.trim(); if (t) { S.items.push({ t: t, cat: '' }); input.value = ''; save(); drawItems() } }
+  function finish() { flush(); S.phase = S.items.length ? 'sort' : 'idle'; save(); render() }
+  $('#add').addEventListener('submit', function (e) { e.preventDefault(); flush(); input.focus() })
+  $('#more').addEventListener('click', function () { S.endAt += 60000; save(); step() })
+  $('#early').addEventListener('click', finish)
+  function step() {
+    var left = S.endAt - Date.now()
+    clock.textContent = mmss(left)
+    clock.classList.toggle('low', left < 30000)
+    try { document.title = mmss(left) + ' · Tomorrow list' } catch (e) {}
+    if (left <= 0) { try { document.title = 'Tomorrow List: a 5-minute brain dump before bed' } catch (e) {} ; finish() }
+  }
+  drawItems(); step(); tick = setInterval(step, 250)
+  try { input.focus() } catch (e) {}
+}
+
+function renderSort() {
+  try { document.title = 'Tomorrow List: a 5-minute brain dump before bed' } catch (e) {}
+  var c = counts()
+  stage.innerHTML = '<p class="kicker">Step 2 of 3 · Sort</p><h2 style="margin-top:6px">Where does each one belong?</h2>' +
+    '<p class="muted"><b>Tomorrow</b>: you will actually do it tomorrow. <b>Someday</b>: real, but not tomorrow. <b>Not mine to fix</b>: someone else’s choice, the past, or something nobody can fix tonight.</p>' +
+    '<ul class="items">' + S.items.map(function (i, n) {
+      return '<li><div>' + esc(i.t) + '</div><div class="sortbtns" role="group" aria-label="Sort: ' + esc(i.t) + '">' + CATS.map(function (k) { return '<button type="button" data-i="' + n + '" data-c="' + k[0] + '" aria-pressed="' + (i.cat === k[0]) + '">' + k[1] + '</button>' }).join('') +
+        '<button type="button" data-i="' + n + '" data-c="x" aria-label="Delete this item">Delete</button></div></li>'
+    }).join('') + '</ul>' +
+    '<p style="margin-top:14px">' + (c.u ? '<span class="muted">' + plural(c.u, 'item') + ' left to sort. </span>' : '') + '<button class="btn" id="make" type="button"' + (c.u || !S.items.length ? ' disabled' : '') + '>Make my list</button> <button class="btn ghost small" id="addmore" type="button">Add more</button></p>'
+  stage.querySelector('.items').addEventListener('click', function (e) {
+    var b = e.target.closest('button[data-c]'); if (!b) return
+    var i = +b.getAttribute('data-i'), cat = b.getAttribute('data-c')
+    if (cat === 'x') S.items.splice(i, 1); else S.items[i].cat = cat
+    save(); renderSort()
+    var again = stage.querySelector('button[data-i="' + i + '"][data-c="' + cat + '"]'); if (again) again.focus()
+  })
+  $('#make').addEventListener('click', function () { S.phase = 'done'; save(); render() })
+  $('#addmore').addEventListener('click', function () { S.phase = 'running'; S.endAt = Date.now() + 2 * 60000; save(); render() })
+}
+
+function renderDone() {
+  var by = { t: [], s: [], n: [] }
+  S.items.forEach(function (i) { if (by[i.cat]) by[i.cat].push(i.t) })
+  function ul(a, cls) { return a.length ? '<ul' + (cls ? ' class="' + cls + '"' : '') + '>' + a.map(function (t) { return '<li>' + esc(t) + '</li>' }).join('') + '</ul>' : '<p class="muted">Nothing here tonight.</p>' }
+  stage.innerHTML = '<div class="final" id="final"><p class="kicker">Step 3 of 3 · Leave it by the bed</p><h2 style="margin-top:6px">For ' + esc(tomorrowName()) + '</h2>' +
+    '<h3>Tomorrow</h3>' + ul(by.t) +
+    (by.t.length > 3 ? '<p class="muted">That is a lot for one day. Circle the three that matter most; the rest can move.</p>' : '') +
+    '<h3>Someday (parked, not forgotten)</h3>' + ul(by.s) +
+    '<h3>Not mine to fix (noticed, and set down)</h3>' + ul(by.n, 'let') +
+    '<p style="margin-top:18px;font-family:Georgia,serif;font-size:19px">It is written down. It will still be here in the morning.</p></div>' +
+    '<p class="no-print" style="margin-top:16px"><button class="btn" id="print" type="button">Print or save as PDF</button> <button class="btn ghost small" id="back" type="button">Back to sorting</button> <button class="btn ghost small" id="new" type="button">Start a new night</button></p>'
+  $('#print').addEventListener('click', function () { printOnly($('#final')) })
+  $('#back').addEventListener('click', function () { S.phase = 'sort'; save(); render() })
+  $('#new').addEventListener('click', function () { if (!window.confirm('Clear tonight’s list and start again?')) return; S = { phase: 'idle', items: [], endAt: 0 }; save(); render() })
+}
+
+TOOL.summary = function () {
+  if (!S.items.length || S.phase === 'running' || S.phase === 'idle') return ''
+  var c = counts()
+  return 'Tonight’s brain dump: ' + plural(S.items.length, 'thing') + ' out of my head in five minutes. ' + c.t + ' for tomorrow, ' + c.s + ' parked for someday, ' + c.n + ' not mine to fix.' + (c.u ? ' (' + c.u + ' still to sort.)' : '')
+}
+render()
+
+// Shared: copy-my-result and clear-my-answers.
+;(function () {
+  var btn = $('#copy'), status = $('#copy-status'), fb = $('#copy-fallback')
+  function say(t) { if (status) status.textContent = t }
+  function fallback(text) {
+    var ok = false
+    try {
+      var ta = document.createElement('textarea')
+      ta.value = text; ta.setAttribute('readonly', ''); ta.style.position = 'fixed'; ta.style.top = '-1000px'; ta.style.opacity = '0'
+      document.body.appendChild(ta); ta.select(); ok = document.execCommand('copy'); document.body.removeChild(ta)
+    } catch (e) { ok = false }
+    if (ok) { say('Copied. Paste it anywhere.'); return }
+    if (fb) { fb.hidden = false; fb.value = text; try { fb.focus(); fb.select() } catch (e) {} }
+    say('Your browser blocked copying. Select the text below and copy it.')
+  }
+  if (btn) btn.addEventListener('click', function () {
+    var s = typeof TOOL.summary === 'function' ? TOOL.summary() : ''
+    if (!s) { say('Fill in the tool first, then copy.'); return }
+    var text = s + '\n\nMade with this free tool: ' + TOOL.url
+    try {
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(text).then(function () { say('Copied. Paste it anywhere.') }, function () { fallback(text) })
+        return
+      }
+    } catch (e) {}
+    fallback(text)
+  })
+  var reset = $('#reset')
+  if (reset) reset.addEventListener('click', function () {
+    if (!window.confirm('Clear everything you entered in this tool on this device?')) return
+    store.clear()
+    if (typeof TOOL.onReset === 'function') TOOL.onReset()
+    try { location.reload() } catch (e) {}
+  })
+})()
+
+})();
+</script>
+</body>
+</html>

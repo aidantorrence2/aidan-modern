@@ -1,0 +1,402 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Start-It Timer: a 2-minute first step, then 10 minutes of focus</title>
+<meta name="description" content="Type the task you keep avoiding. Turn it into a 2-minute first action, then run a 10-minute focus timer and keep a log of what you got done.">
+<link rel="canonical" href="https://aidantorrence2.github.io/aidan-modern/tools/start-it-timer/">
+<meta property="og:title" content="Start-It Timer: a 2-minute first step, then 10 minutes of focus">
+<meta property="og:description" content="Type the task you keep avoiding. Turn it into a 2-minute first action, then run a 10-minute focus timer and keep a log of what you got done.">
+<meta property="og:url" content="https://aidantorrence2.github.io/aidan-modern/tools/start-it-timer/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#0c0c0c">
+<meta name="color-scheme" content="dark">
+<link rel="icon" href="data:,">
+<style>
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+html,body{margin:0;background:#0c0c0c;color:#fff}
+body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;font-size:17px;line-height:1.55;overflow-x:hidden}
+main{max-width:700px;margin:0 auto;padding:36px 16px 48px}
+h1,h2,h3{font-family:Georgia,"Times New Roman",serif;font-weight:400;line-height:1.2;margin:0}
+h1{font-size:34px;margin:8px 0 14px}
+h2{font-size:25px;margin:38px 0 10px}
+h3{font-size:20px;margin:22px 0 8px}
+p{margin:0 0 12px}
+a{color:#fff}
+.kicker{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:#9a9a9a;margin:0}
+.lead{font-size:19px;color:#e2e2e2}
+.muted{color:#a0a0a0;font-size:15px}
+.small{font-size:14px}
+.privacy{font-size:14.5px;color:#a0a0a0;border-left:2px solid #333;padding-left:12px}
+.note{font-size:15px;color:#cfcfcf;background:#141414;border:1px solid #2a2a2a;border-radius:10px;padding:12px 14px;margin:16px 0}
+.linkish{background:none;border:0;color:#fff;text-decoration:underline;font:inherit;padding:0;cursor:pointer}
+fieldset{border:0;padding:0;margin:0;min-width:0}
+legend{padding:0}
+label,.label{display:block;font-size:15.5px;color:#dcdcdc;margin:16px 0 6px}
+.hint{display:block;font-size:13.5px;color:#9a9a9a;margin-top:2px}
+input[type=text],input[type=number],input[type=date],input[type=time],input[type=email],textarea,select{width:100%;max-width:100%;background:#161616;color:#fff;border:1px solid #363636;border-radius:8px;padding:11px 12px;font:inherit;font-size:16px;min-width:0}
+textarea{resize:vertical;line-height:1.45}
+select{appearance:none;-webkit-appearance:none;background-image:linear-gradient(45deg,transparent 50%,#bbb 50%),linear-gradient(135deg,#bbb 50%,transparent 50%);background-position:calc(100% - 18px) 50%,calc(100% - 13px) 50%;background-size:5px 5px;background-repeat:no-repeat;padding-right:32px}
+input:focus,textarea:focus,select:focus{outline:2px solid #fff;outline-offset:1px;border-color:#fff}
+::placeholder{color:#6f6f6f}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:0 12px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:0 10px}
+@media (max-width:380px){.grid3{grid-template-columns:1fr 1fr}}
+.btn{display:inline-block;background:#fff;color:#0c0c0c;border:1px solid #fff;border-radius:8px;padding:12px 18px;font:inherit;font-size:16px;font-weight:600;cursor:pointer;text-decoration:none;line-height:1.2;margin:4px 6px 4px 0}
+.btn.ghost{background:transparent;color:#fff;border-color:#4a4a4a}
+.btn.small{padding:8px 12px;font-size:14.5px}
+.btn:focus-visible,.linkish:focus-visible,a:focus-visible{outline:2px solid #fff;outline-offset:3px}
+.btn[disabled]{opacity:.45;cursor:not-allowed}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 4px}
+.chip{position:relative;display:inline-block;margin:0;font-size:15px}
+.chip input{position:absolute;opacity:0;width:1px;height:1px}
+.chip span{display:inline-block;border:1px solid #424242;border-radius:999px;padding:7px 13px;cursor:pointer;color:#e6e6e6;user-select:none}
+.chip input:checked+span{background:#fff;color:#0c0c0c;border-color:#fff}
+.chip input:focus-visible+span{outline:2px solid #fff;outline-offset:2px}
+.card{background:#141414;border:1px solid #2a2a2a;border-radius:12px;padding:18px 16px;margin:18px 0}
+.result{border-color:#4a4a4a}
+.big{font-family:Georgia,"Times New Roman",serif;font-size:30px;line-height:1.15;margin:4px 0 8px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin:12px 0}
+.stat{background:#0f0f0f;border:1px solid #2a2a2a;border-radius:10px;padding:12px}
+.stat b{display:block;font-family:Georgia,serif;font-weight:400;font-size:26px;line-height:1.1}
+.stat span{font-size:13.5px;color:#a8a8a8}
+ol.steps,ul.list{padding-left:22px;margin:8px 0 12px}
+ol.steps li,ul.list li{margin:0 0 8px}
+.bars{margin:12px 0}
+.bar{margin:0 0 10px}
+.bar-top{display:flex;justify-content:space-between;gap:10px;font-size:15px}
+.bar-track{height:14px;background:#1d1d1d;border-radius:7px;overflow:hidden;margin-top:4px}
+.bar-fill{height:100%;background:#fff;border-radius:7px;min-width:2px;transition:width .25s}
+.bar.weak .bar-fill{background:#e8b04a}
+.bar-conv{font-size:13.5px;color:#a8a8a8;margin:2px 0 0 0}
+.bar.weak .bar-conv{color:#e8b04a}
+.tag{display:inline-block;font-size:12.5px;letter-spacing:.04em;text-transform:uppercase;border:1px solid #555;border-radius:999px;padding:2px 9px;color:#ddd;vertical-align:middle}
+.share{margin:18px 0 0}
+.copy-fallback{margin-top:10px;font-size:14px}
+.cta{margin-top:48px;border:1px solid #3a3a3a;border-radius:12px;padding:20px 18px;background:#111}
+.cta h2{margin:0 0 10px}
+.foot{margin-top:40px;padding-top:18px;border-top:1px solid #222;color:#a0a0a0;font-size:14.5px}
+.foot p{margin:0 0 6px}
+.foot a{color:#d8d8d8}
+.empty{color:#9a9a9a;font-style:italic}
+.row-x{background:none;border:1px solid #3a3a3a;color:#ccc;border-radius:8px;width:40px;height:44px;font-size:20px;line-height:1;cursor:pointer;padding:0}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+table{width:100%;border-collapse:collapse;font-size:15px}
+th,td{text-align:left;padding:7px 6px;border-bottom:1px solid #262626;vertical-align:top}
+th{font-weight:600;color:#cfcfcf;font-size:13.5px}
+.tablewrap{overflow-x:auto;-webkit-overflow-scrolling:touch;max-width:100%}
+@media (min-width:640px){h1{font-size:42px}main{padding-top:56px}}
+@media print{
+  html,body{background:#fff!important;color:#000!important}
+  body{font-size:12pt}
+  *{color:#000!important;background:transparent!important;box-shadow:none!important}
+  main{max-width:none;padding:0}
+  .no-print,.pr-hide{display:none!important}
+  .card,.stat,.note{border:1px solid #999!important;break-inside:avoid}
+  .bar-track{border:1px solid #999}
+  .bar-fill{background:#555!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  a{text-decoration:none}
+  th,td{border-bottom:1px solid #bbb}
+}
+
+.timer{font-family:Georgia,"Times New Roman",serif;font-size:72px;line-height:1;margin:10px 0 14px;font-variant-numeric:tabular-nums}
+.opts{list-style:none;padding:0;margin:8px 0}
+.opts li{margin:0 0 8px}
+.opt{display:flex;gap:10px;align-items:flex-start;border:1px solid #333;border-radius:10px;padding:11px 12px;cursor:pointer;margin:0;color:#e8e8e8;font-size:16px}
+.opt input{margin-top:4px;flex:none;accent-color:#fff;width:18px;height:18px}
+.opt:has(input:checked){border-color:#fff;background:#1a1a1a}
+.action{font-family:Georgia,"Times New Roman",serif;font-size:22px;line-height:1.3;margin:6px 0 12px}
+.log{list-style:none;padding:0;margin:8px 0}
+.log li{border-top:1px solid #262626;padding:10px 0;font-size:15.5px}
+.progress{height:6px;background:#1d1d1d;border-radius:3px;overflow:hidden;margin:0 0 14px}
+.progress div{height:100%;background:#fff;width:0}
+
+</style>
+</head>
+<body>
+<main>
+<p class="kicker no-print">Free tool · getting started</p>
+<h1>Start-it timer</h1>
+<p class="lead">You do not need motivation for the whole task. You need the first two minutes. Name the task, pick a first action small enough to need no decisions, then run ten focused minutes and log what got done.</p>
+<p class="privacy no-print">Runs entirely in your browser. Nothing you type is sent anywhere; your answers are saved only on this device. <button id="reset" class="linkish" type="button">Clear my answers</button></p>
+<form id="f" class="card" autocomplete="off" onsubmit="return false">
+<p class="kicker">Step 1 · The task</p>
+<label for="task">What do you keep not starting?</label>
+<input id="task" name="task" type="text" maxlength="100" placeholder="e.g. do my tax return, reply to Sam, clean the kitchen">
+<label for="blocker">What gets in the way most?</label>
+<select id="blocker" name="blocker">
+<option value="where">I do not know where to start</option>
+<option value="big">It is too big</option>
+<option value="boring">It is boring</option>
+<option value="perfect">I am worried it will not be good enough</option>
+<option value="waiting">I am waiting on something or someone</option>
+<option value="tired">I am just tired</option>
+</select>
+
+<p class="kicker" style="margin-top:26px">Step 2 · The first two minutes</p>
+<p class="muted">Pick one. It should need no decisions and take about two minutes.</p>
+<ul class="opts" id="opts"></ul>
+<label for="custom">Or write your own first action</label>
+<input id="custom" name="custom" type="text" maxlength="120" placeholder="e.g. find last year's tax letter and put it on the desk">
+</form>
+
+<section id="timer" class="card result" aria-live="polite"></section>
+<div class="share no-print"><button class="btn" id="copy" type="button">Copy my result</button> <span id="copy-status" class="muted" role="status" aria-live="polite"></span><textarea id="copy-fallback" class="copy-fallback" rows="5" readonly hidden aria-label="Your result, ready to copy"></textarea></div>
+
+<section>
+<h2>Done log</h2>
+<p id="totals" class="muted"></p>
+<ul class="log" id="log"></ul>
+</section>
+
+<aside class="cta no-print">
+<h2>Want help actually changing this?</h2>
+<p>A task-initiation support service: live starts with another person, small next actions, and accountability that bends when your week does.</p>
+<p class="muted">Honest note: this program is not built yet, and nothing is charged. The page explains the plan and lets you ask for early access, which helps decide what gets built first.</p>
+<a class="btn" href="../../know-need-make-myself/?src=tool-start-it-timer">See the pre-launch page</a>
+</aside>
+<footer class="foot no-print">
+<p>A free tool from Aidan Torrence</p>
+<p><a href="../../">All pre-launch offers</a> · <a href="https://aidantorrence.com">aidantorrence.com</a></p>
+</footer>
+</main>
+<script>
+(function(){
+"use strict";
+var TOOL={slug:"start-it-timer",url:"https://aidantorrence2.github.io/aidan-modern/tools/start-it-timer/"};
+function $(s, r) { return (r || document).querySelector(s) }
+function $$(s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)) }
+function esc(s) { return String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;') }
+function num(v) { var n = parseFloat(String(v == null ? '' : v).replace(/,/g, '').replace(/[^0-9.\-]/g, '')); return isFinite(n) ? n : 0 }
+function round1(n) { return Math.round(n * 10) / 10 }
+function plural(n, one, many) { return n + ' ' + (n === 1 ? one : (many || one + 's')) }
+var KEY = 'tool:' + TOOL.slug
+var store = {
+  get: function (fallback) { try { var v = localStorage.getItem(KEY); return v ? JSON.parse(v) : fallback } catch (e) { return fallback } },
+  set: function (v) { try { localStorage.setItem(KEY, JSON.stringify(v)) } catch (e) {} },
+  clear: function () { try { localStorage.removeItem(KEY) } catch (e) {} }
+}
+// Form helpers: read and write every [name] field inside a root element.
+function readForm(root) {
+  var o = {}
+  $$('[name]', root).forEach(function (el) {
+    if (el.type === 'checkbox') { if (!o[el.name]) o[el.name] = []; if (el.checked) o[el.name].push(el.value) }
+    else if (el.type === 'radio') { if (el.checked) o[el.name] = el.value; else if (!(el.name in o)) o[el.name] = '' }
+    else o[el.name] = el.value
+  })
+  return o
+}
+function fillForm(root, o) {
+  if (!o) return
+  $$('[name]', root).forEach(function (el) {
+    if (!(el.name in o)) return
+    var v = o[el.name]
+    if (el.type === 'checkbox') el.checked = Array.isArray(v) && v.indexOf(el.value) !== -1
+    else if (el.type === 'radio') el.checked = v === el.value
+    else el.value = v
+  })
+}
+// Print only one element: hide everything that is not on the path from body to it.
+function printOnly(el) {
+  var hidden = []
+  var node = el
+  while (node && node !== document.body) {
+    var p = node.parentNode
+    if (!p) break
+    Array.prototype.forEach.call(p.children, function (sib) {
+      if (sib !== node && sib.tagName !== 'SCRIPT' && sib.tagName !== 'STYLE') { sib.classList.add('pr-hide'); hidden.push(sib) }
+    })
+    node = p
+  }
+  var done = function () { hidden.forEach(function (h) { h.classList.remove('pr-hide') }); window.removeEventListener('afterprint', done) }
+  window.addEventListener('afterprint', done)
+  try { window.print() } catch (e) {}
+  setTimeout(done, 1500)
+}
+function fmtDate(d, opts) { try { return d.toLocaleDateString(undefined, opts || { weekday: 'short', month: 'short', day: 'numeric' }) } catch (e) { return d.toDateString() } }
+
+var form = $('#f'), optsBox = $('#opts'), box = $('#timer'), tick = null, audio = null
+var S = store.get(null) || {}
+if (!Array.isArray(S.log)) S.log = []
+if (!S.t) S.t = { mode: 'idle' }
+if (typeof S.pick !== 'number') S.pick = 0
+var TITLE = document.title
+function save() { store.set(S) }
+function q(t) { return '“' + t + '”' }
+function options(task, blocker) {
+  var t = task ? q(task) : 'the task'
+  var O = {
+    where: ['Write down the very first physical step of ' + t + ', as if you were explaining it to a stranger.', 'Open or get out everything you need for ' + t + ' and put it in front of you. Stop there.'],
+    big: ['List every step of ' + t + ' in any order for two minutes. Do none of them yet.', 'Do the smallest single piece of ' + t + ': one email, one paragraph, one shelf.'],
+    boring: ['Put on one song and work on ' + t + ' only until it ends.', 'Do the dullest two minutes of ' + t + ' first, while you are fresh.'],
+    perfect: ['Write a deliberately rough first version of one small part of ' + t + '. Nobody will see it.', 'Write just the title and three bullet points for ' + t + '.'],
+    waiting: ['Write the message that unblocks ' + t + ': who you are waiting on and exactly what you need from them.', 'Find one part of ' + t + ' that does not depend on anyone else and do two minutes of it.'],
+    tired: ['Set up ' + t + ' for tomorrow: put what you need where you will see it first thing.', 'Do two minutes of ' + t + ', then decide honestly whether to stop. Stopping is allowed.']
+  }
+  return (O[blocker] || O.where).concat(['Set a two-minute timer and do anything at all on ' + t + '.'])
+}
+function action() {
+  var v = readForm(form)
+  if ((v.custom || '').trim()) return v.custom.trim()
+  var o = options((v.task || '').trim(), v.blocker)
+  return o[Math.min(S.pick, o.length - 1)]
+}
+function drawOpts() {
+  var v = readForm(form)
+  var o = options((v.task || '').trim(), v.blocker)
+  optsBox.innerHTML = o.map(function (t, i) { return '<li><label class="opt"><input type="radio" name="pickopt" value="' + i + '"' + (i === S.pick && !(v.custom || '').trim() ? ' checked' : '') + '><span>' + esc(t) + '</span></label></li>' }).join('')
+}
+optsBox.addEventListener('change', function (e) { if (e.target.name === 'pickopt') { S.pick = +e.target.value; $('#custom').value = ''; S.form = readForm(form); save(); drawTimer() } })
+
+function chime() {
+  try {
+    if (!audio) return
+    var now = audio.currentTime;
+    [660, 880].forEach(function (f, i) {
+      var o = audio.createOscillator(), g = audio.createGain()
+      o.type = 'sine'; o.frequency.value = f
+      g.gain.setValueAtTime(0.0001, now + i * 0.25); g.gain.exponentialRampToValueAtTime(0.2, now + i * 0.25 + 0.03); g.gain.exponentialRampToValueAtTime(0.0001, now + i * 0.25 + 0.9)
+      o.connect(g); g.connect(audio.destination); o.start(now + i * 0.25); o.stop(now + i * 0.25 + 1)
+    })
+  } catch (e) {}
+  try { if (navigator.vibrate) navigator.vibrate([150, 80, 150]) } catch (e) {}
+}
+function unlockAudio() { try { if (!audio) { var A = window.AudioContext || window.webkitAudioContext; if (A) audio = new A() } if (audio && audio.state === 'suspended') audio.resume() } catch (e) {} }
+function mmss(ms) { var s = Math.max(0, Math.ceil(ms / 1000)); return Math.floor(s / 60) + ':' + ('0' + (s % 60)).slice(-2) }
+function start(mode) { unlockAudio(); var dur = mode === 'two' ? 120000 : 600000; S.t = { mode: mode, total: dur, endAt: Date.now() + dur, paused: false, left: dur }; save(); drawTimer() }
+function leftMs() { return S.t.paused ? S.t.left : S.t.endAt - Date.now() }
+function toLog(mins) { S.t = { mode: 'logging', mins: Math.max(1, mins) }; save(); drawTimer() }
+
+function drawTimer() {
+  clearInterval(tick); tick = null
+  try { document.title = TITLE } catch (e) {}
+  var v = readForm(form), task = (v.task || '').trim(), act = action(), t = S.t
+  var mode = t.mode
+  if (mode === 'idle') {
+    box.innerHTML = '<p class="kicker">Step 3 · Start</p>' + (task ? '<p class="muted">Your first action for ' + esc(q(task)) + ':</p><p class="action">' + esc(act) + '</p>' : '<p class="empty">Name the task above, then start here.</p>') +
+      '<button class="btn" type="button" data-go="two"' + (task ? '' : ' disabled') + '>Start 2 minutes</button> <button class="btn ghost" type="button" data-go="ten"' + (task ? '' : ' disabled') + '>Skip to 10-minute focus</button>'
+    return
+  }
+  if (mode === 'two' || mode === 'ten') {
+    var isTwo = mode === 'two'
+    box.innerHTML = '<p class="kicker">' + (isTwo ? 'First two minutes' : '10-minute focus') + (task ? ' · ' + esc(task) : '') + '</p>' +
+      '<div class="timer" id="clock" role="timer" aria-live="off"></div>' + (isTwo ? '' : '<div class="progress" aria-hidden="true"><div id="bar"></div></div>') +
+      '<p class="action" style="font-size:19px">' + esc(isTwo ? act : 'Only ' + (task || 'this task') + '. If another thought shows up, write it on paper and come back.') + '</p>' +
+      (isTwo ? '<button class="btn" type="button" data-go="ten">Done. Start 10-minute focus</button> <button class="btn ghost small" type="button" data-stop="1">Stop</button>'
+        : '<button class="btn ghost" type="button" data-pause="1">' + (t.paused ? 'Resume' : 'Pause') + '</button> <button class="btn ghost small" type="button" data-early="1">Stop early and log it</button>')
+    var clock = $('#clock'), bar = $('#bar')
+    var step = function () {
+      var left = leftMs()
+      clock.textContent = mmss(left)
+      if (bar) bar.style.width = Math.min(100, (1 - left / t.total) * 100) + '%'
+      try { document.title = mmss(left) + ' · Start-it timer' } catch (e) {}
+      if (left <= 0) {
+        clearInterval(tick); tick = null; chime()
+        if (isTwo) { S.t = { mode: 'twodone' }; save(); drawTimer() } else toLog(10)
+      }
+    }
+    step(); if (!t.paused) tick = setInterval(step, 250)
+    return
+  }
+  if (mode === 'twodone') {
+    box.innerHTML = '<p class="kicker">Two minutes done</p><p class="action">You started. That was the hard part.</p><button class="btn" type="button" data-go="ten">Keep going: 10-minute focus</button> <button class="btn ghost small" type="button" data-log2="1">Stop here and log it</button>'
+    return
+  }
+  if (mode === 'logging') {
+    box.innerHTML = '<p class="kicker">' + plural(t.mins, 'minute') + ' done</p><form id="lf" autocomplete="off"><label for="note">What did you get done? A few words is plenty.</label><input id="note" type="text" maxlength="140" placeholder="e.g. found all the receipts, wrote the intro"><p style="margin-top:12px"><button class="btn" type="submit">Log it</button></p></form>'
+    $('#lf').addEventListener('submit', function (e) {
+      e.preventDefault()
+      S.log.unshift({ task: task || 'Untitled task', mins: t.mins, note: $('#note').value.trim(), at: Date.now() })
+      if (S.log.length > 200) S.log.length = 200
+      S.t = { mode: 'after' }; save(); drawTimer(); drawLog()
+    })
+    try { $('#note').focus() } catch (e) {}
+    return
+  }
+  box.innerHTML = '<p class="kicker">Logged</p><p class="action">Nice. Another round, or stop while it feels good?</p><button class="btn" type="button" data-go="ten">Another 10 minutes</button> <button class="btn ghost" type="button" data-stop="1">Done for now</button>'
+}
+box.addEventListener('click', function (e) {
+  var b = e.target.closest('button'); if (!b) return
+  if (b.hasAttribute('data-go')) start(b.getAttribute('data-go'))
+  else if (b.hasAttribute('data-stop')) { S.t = { mode: 'idle' }; save(); drawTimer() }
+  else if (b.hasAttribute('data-log2')) toLog(2)
+  else if (b.hasAttribute('data-early')) { var used = S.t.total - leftMs(); toLog(Math.round(used / 60000)) }
+  else if (b.hasAttribute('data-pause')) {
+    if (S.t.paused) { S.t.endAt = Date.now() + S.t.left; S.t.paused = false } else { S.t.left = S.t.endAt - Date.now(); S.t.paused = true }
+    save(); drawTimer()
+  }
+})
+function todayStats() {
+  var d0 = new Date(); d0.setHours(0, 0, 0, 0)
+  var today = S.log.filter(function (l) { return l.at >= d0.getTime() })
+  return { n: today.length, mins: today.reduce(function (s, l) { return s + l.mins }, 0) }
+}
+function drawLog() {
+  var t = todayStats(), all = S.log.reduce(function (s, l) { return s + l.mins }, 0)
+  $('#totals').textContent = S.log.length ? 'Today: ' + plural(t.n, 'session') + ', ' + plural(t.mins, 'minute') + '. All time: ' + plural(S.log.length, 'session') + ', ' + plural(all, 'minute') + '.' : 'Nothing logged yet. Your sessions show up here, saved on this device only.'
+  $('#log').innerHTML = S.log.slice(0, 50).map(function (l, i) {
+    var d = new Date(l.at), when = fmtDate(d, { month: 'short', day: 'numeric' })
+    try { when += ', ' + d.toLocaleTimeString(undefined, { hour: 'numeric', minute: '2-digit' }) } catch (e) {}
+    return '<li style="display:flex;justify-content:space-between;gap:10px"><div style="min-width:0"><b>' + esc(l.task) + '</b> <span class="muted">· ' + plural(l.mins, 'min') + '</span>' + (l.note ? '<br>' + esc(l.note) : '') + '<br><span class="small muted">' + esc(when) + '</span></div><button class="row-x" type="button" data-del="' + i + '" aria-label="Delete this entry">×</button></li>'
+  }).join('')
+}
+$('#log').addEventListener('click', function (e) { var b = e.target.closest('[data-del]'); if (!b) return; S.log.splice(+b.getAttribute('data-del'), 1); save(); drawLog() })
+TOOL.summary = function () {
+  var v = readForm(form), task = (v.task || '').trim(), t = todayStats()
+  if (!task && !S.log.length) return ''
+  return (task ? 'I started ' + q(task) + ' with a 2-minute first step: ' + action().replace(/\.$/, '') + '.\n' : '') + 'Focus sessions today: ' + t.n + ' (' + plural(t.mins, 'minute') + ').'
+}
+fillForm(form, S.form)
+drawOpts(); drawTimer(); drawLog()
+form.addEventListener('input', function (e) {
+  if (e.target.name === 'pickopt') return
+  S.form = readForm(form); delete S.form.pickopt; save()
+  if (e.target.id !== 'custom') drawOpts()
+  else if (e.target.value.trim()) $$('input[name=pickopt]').forEach(function (r) { r.checked = false })
+  if (S.t.mode === 'idle') drawTimer()
+})
+form.addEventListener('change', function (e) { if (e.target.id === 'blocker') { S.pick = 0; S.form = readForm(form); delete S.form.pickopt; save(); drawOpts(); if (S.t.mode === 'idle') drawTimer() } })
+
+// Shared: copy-my-result and clear-my-answers.
+;(function () {
+  var btn = $('#copy'), status = $('#copy-status'), fb = $('#copy-fallback')
+  function say(t) { if (status) status.textContent = t }
+  function fallback(text) {
+    var ok = false
+    try {
+      var ta = document.createElement('textarea')
+      ta.value = text; ta.setAttribute('readonly', ''); ta.style.position = 'fixed'; ta.style.top = '-1000px'; ta.style.opacity = '0'
+      document.body.appendChild(ta); ta.select(); ok = document.execCommand('copy'); document.body.removeChild(ta)
+    } catch (e) { ok = false }
+    if (ok) { say('Copied. Paste it anywhere.'); return }
+    if (fb) { fb.hidden = false; fb.value = text; try { fb.focus(); fb.select() } catch (e) {} }
+    say('Your browser blocked copying. Select the text below and copy it.')
+  }
+  if (btn) btn.addEventListener('click', function () {
+    var s = typeof TOOL.summary === 'function' ? TOOL.summary() : ''
+    if (!s) { say('Fill in the tool first, then copy.'); return }
+    var text = s + '\n\nMade with this free tool: ' + TOOL.url
+    try {
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(text).then(function () { say('Copied. Paste it anywhere.') }, function () { fallback(text) })
+        return
+      }
+    } catch (e) {}
+    fallback(text)
+  })
+  var reset = $('#reset')
+  if (reset) reset.addEventListener('click', function () {
+    if (!window.confirm('Clear everything you entered in this tool on this device?')) return
+    store.clear()
+    if (typeof TOOL.onReset === 'function') TOOL.onReset()
+    try { location.reload() } catch (e) {}
+  })
+})()
+
+})();
+</script>
+</body>
+</html>
