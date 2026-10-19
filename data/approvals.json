@@ -1214,6 +1214,80 @@
       "status": "approved",
       "decided": "2026-10-19T05:13:34Z",
       "note": ""
+    },
+    {
+      "id": "offers:short-wave2:2026-10-19:6-new-contacts",
+      "kind": "email",
+      "source": "codex:lead-generation",
+      "title": "Send six short invitations for phone, dating and friendship tests",
+      "summary": "Six new public business contacts; short first emails only. No prices, follow-ups or spending. None of the two completed emails is included.",
+      "preview_url": "https://real-change-pilots-aidan-2026.aidantorrence.chatgpt.site",
+      "payload": {
+        "action": "Send exactly these six short first-contact emails through connected Gmail after this request is approved. This also starts audience recruitment for the existing dating and friendship offers; it does not deploy any change.",
+        "messages": [
+          {
+            "prospect_id": "time_to_log_off",
+            "to": "info@itstimetologoff.com",
+            "subject": "Finding people who want to scroll less",
+            "body": "Hi Time to Log Off team,\n\nI'm Aidan. Your work helps people spend less time on their phones.\n\nI'm exploring an app for people who set phone limits, then turn them off and keep scrolling. The idea is to make those limits harder to turn off.\n\nIt isn't built yet. I'm checking interest first.\n\nWould you share this signup page with adults who might want to try it?\nhttps://real-change-pilots-aidan-2026.aidantorrence.chatgpt.site/phone-reset?utm_source=time_to_log_off&utm_medium=partner_email&utm_campaign=wave2\n\nThanks,\nAidan Torrence",
+            "contact_source": "https://www.itstimetologoff.com/get-in-touch/",
+            "offer": "phone-reset"
+          },
+          {
+            "prospect_id": "going_solo",
+            "to": "goingsolonetwork@gmail.com",
+            "subject": "Finding people who want fewer swipes and more dates",
+            "body": "Hi Cece,\n\nI'm Aidan. I found your community for singles who want to connect.\n\nI'm exploring a service that introduces a few compatible people and helps them arrange a real date, instead of endless swiping.\n\nIt isn't built yet. I'm checking interest first.\n\nWould you share this signup page with singles who might be interested?\nhttps://real-change-pilots-aidan-2026.aidantorrence.chatgpt.site/better-dates?utm_source=going_solo&utm_medium=partner_email&utm_campaign=wave2\n\nThanks,\nAidan Torrence",
+            "contact_source": "https://www.goingsolonetwork.com/",
+            "offer": "better-dates"
+          },
+          {
+            "prospect_id": "connecting_charlotte",
+            "to": "info@connectingcharlotte.com",
+            "subject": "Finding people who want fewer swipes and more dates",
+            "body": "Hi Connecting Charlotte team,\n\nI'm Aidan. I found your singles events in Charlotte.\n\nI'm exploring a service that introduces a few compatible people and helps them arrange a real date, instead of endless swiping.\n\nIt isn't built yet. I'm checking interest first.\n\nWould you share this signup page with singles who might be interested?\nhttps://real-change-pilots-aidan-2026.aidantorrence.chatgpt.site/better-dates?utm_source=connecting_charlotte&utm_medium=partner_email&utm_campaign=wave2\n\nThanks,\nAidan Torrence",
+            "contact_source": "https://www.connectingcharlotte.com/",
+            "offer": "better-dates"
+          },
+          {
+            "prospect_id": "screenlife_balance",
+            "to": "jpraeger@wmeagency.com",
+            "subject": "Finding people who want to scroll less",
+            "body": "Hi Jenna,\n\nI'm Aidan. Catherine's work helps people spend less time on their phones. Her website lists you for partnership questions.\n\nI'm exploring an app for people who set phone limits, then turn them off and keep scrolling. The idea is to make those limits harder to turn off.\n\nIt isn't built yet. I'm checking interest first.\n\nWould you share this signup page with adults who might want to try it?\nhttps://real-change-pilots-aidan-2026.aidantorrence.chatgpt.site/phone-reset?utm_source=screenlife_balance&utm_medium=partner_email&utm_campaign=wave2\n\nThanks,\nAidan Torrence",
+            "contact_source": "https://catherineprice.com/contact",
+            "offer": "phone-reset"
+          },
+          {
+            "prospect_id": "unplug_tribe",
+            "to": "hello@unplugtribe.com",
+            "subject": "Finding people who want to scroll less",
+            "body": "Hi Unplug Tribe team,\n\nI'm Aidan. I found your phone-free gatherings and retreats.\n\nI'm exploring an app for people who set phone limits, then turn them off and keep scrolling. The idea is to make those limits harder to turn off.\n\nIt isn't built yet. I'm checking interest first.\n\nWould you share this signup page with adults who might want to try it?\nhttps://real-change-pilots-aidan-2026.aidantorrence.chatgpt.site/phone-reset?utm_source=unplug_tribe&utm_medium=partner_email&utm_campaign=wave2\n\nThanks,\nAidan Torrence",
+            "contact_source": "https://unplugtribe.com/private-retreats/",
+            "offer": "phone-reset"
+          },
+          {
+            "prospect_id": "friending",
+            "to": "hello@friending.com",
+            "subject": "Finding people who want regular local friendships",
+            "body": "Hi Friending team,\n\nI'm Aidan. Your app helps people meet and make friends in real life.\n\nI'm exploring a small local group where the same people meet each week for six weeks, so they have time to become friends.\n\nIt isn't built yet. I'm checking interest first.\n\nWould you share this signup page with adults who might be interested?\nhttps://real-change-pilots-aidan-2026.aidantorrence.chatgpt.site/real-friendships?utm_source=friending&utm_medium=partner_email&utm_campaign=wave2\n\nThanks,\nAidan Torrence",
+            "contact_source": "https://friending.com/press-kit/",
+            "offer": "real-friendships"
+          }
+        ],
+        "limits": "Six messages only; no follow-ups, replies, form submissions, social posts, spending, payments, prices, promises of matches or claims of built products. Do not resend the two completed emails or revive denied batches. Recheck Gmail SENT and suppression list immediately before each send. Follow any approval note. Log receipt per message; never retry an uncertain send before reconciling Gmail.",
+        "readability": "Every email introduces Aidan, gives a specific reason for contacting this recipient, describes the idea in everyday words and makes one request.",
+        "site_verification": {
+          "project_id": "appgprj_6ad56c0398f4819187d2d7870ae70ac4",
+          "access_mode": "public",
+          "current_version": 2,
+          "notes": "Current Sites metadata confirms public host/version 2; package records previous form QA. This environment's direct HTTP check returned 403, so a fresh anonymous form check has not passed. Recheck public reachability before sending."
+        }
+      },
+      "created": "2026-10-19T05:16:55Z",
+      "expires": "2026-10-22T05:16:55Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
     }
   ]
 }
