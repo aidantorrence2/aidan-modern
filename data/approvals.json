@@ -1356,8 +1356,8 @@
         "data_scope": "Database row responses may contain private email addresses and city/participation/consent/attribution fields. Read only to count and deduplicate. Do not persist, export, email, share or put individual lead records in Library, prompts for other workers, Git repositories or public pages.",
         "limits": "Read-only ongoing measurement for this one project. No customer outreach, data deletion/migration, credential recovery, database changes, new endpoint, deployment, spending or broader access. Stop if access is denied; no alternative access path.",
         "why_needed": "The handoff's zero was historical and cloud private-export credentials were omitted. The hourly targets cannot be honestly measured until separately authorized secure access is approved.",
-        "result": "Ongoing exact-project read-only aggregate check 2026-10-19T22:58:06.954Z: overview first then DB/leads25offset0, rows0, next_offset null, no truncation or omitted rows/columns. Active consenting adult total0, new0 versus target5. No private rows saved/exported or data changes.",
-        "result_at": "2026-10-19T22:59:08Z"
+        "result": "Ongoing read-only exact-project aggregate recheck 2026-10-19T23:03:20.250Z after2confirmed approved sends: prior overview DB/leads, rows25offset0 returned0, no omissions/truncation/next page. New consenting adult leads0, current total0, target5. No customer rows saved/exported; no changes.",
+        "result_at": "2026-10-19T23:03:20Z"
       },
       "created": "2026-10-19T05:23:23Z",
       "expires": "2026-10-22T05:23:23Z",
@@ -1828,7 +1828,9 @@
         "source_checked_at": "2026-10-19T22:59:34.548Z",
         "why": "Existing adult-friendship community with a specific business research route. Official groups prohibit market research and offsite chats; do not post there. Gmail all-history exact/domain searches returned no matches.",
         "limits": "One exact email once. No group/public/social/Instagram posts, direct member contact, member lists, attachments, followups, spending, terms, product building or deployment. No signup URL; keep-in-touch is not live. A positive reply only starts further exact review; no permission to recruit inferred.",
-        "prepared_file": "offer19-citygirl-inquiry-prepared-20261019-1757.json"
+        "prepared_file": "offer19-citygirl-inquiry-prepared-20261019-1757.json",
+        "result": "NOT CONFIRMED SENT. Cloud automatic review blocked exact City Girl send attempt for alleged prior duplicate-send risk. No message/thread ID returned. Fresh all-history exact-recipient/domain search empty; relevant subject search reconciled separately. Hold individual action; no retry, alternate route, followup or duplicate request. See campaign receipt citygirl-20261019-1856.json. Approval status preserved; no customer leads inferred.",
+        "result_at": "2026-10-19T23:02:56Z"
       },
       "created": "2026-10-19T22:59:34Z",
       "expires": "2026-10-22T22:59:34Z",
