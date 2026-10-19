@@ -1720,6 +1720,22 @@
       "status": "pending",
       "decided": null,
       "note": ""
+    },
+    {
+      "id": "other:turn-on-pulse-in-system-settings-accessi-202610191900",
+      "kind": "other",
+      "source": "claude:Pulse",
+      "title": "Turn on Pulse in System Settings → Accessibility (brings the safe area back)",
+      "summary": "Pulse is now stably signed, so this is the last time. The Accessibility pane is already open: switch Pulse ON (add it with + from /Applications/Pulse.app if it's missing). Approve once it's on.",
+      "payload": {
+        "action": "user toggles Pulse ON in System Settings > Privacy & Security > Accessibility",
+        "then": "Claude confirms SafeAreaManager axTrusted=true, observers>0"
+      },
+      "created": "2026-10-19T19:00:25Z",
+      "expires": "2026-10-20T19:00:25Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
     }
   ]
 }
