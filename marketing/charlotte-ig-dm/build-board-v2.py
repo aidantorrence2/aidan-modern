@@ -16,7 +16,8 @@ R6 = sys.argv[8] if len(sys.argv) > 8 else None   # render-v6.mjs: CPC set — t
 R7 = sys.argv[9] if len(sys.argv) > 9 else None   # render-v7.mjs: design set
 R8 = sys.argv[10] if len(sys.argv) > 10 else None   # render-v8.mjs: art direction set
 R9 = sys.argv[11] if len(sys.argv) > 11 else None   # render-v9.mjs: format-breaking set
-R10 = sys.argv[12] if len(sys.argv) > 12 else None   # render-v10.mjs: 30 more formats   # render-v4.mjs: 10 carousels from new_top_tier_candidates   # render-v3.mjs output: photo-heavy still ads (top picks)
+R10 = sys.argv[12] if len(sys.argv) > 12 else None   # render-v10.mjs: 30 more formats
+LAUNCH = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'launch')   # render-v4.mjs: 10 carousels from new_top_tier_candidates   # render-v3.mjs output: photo-heavy still ads (top picks)
 PICKS = ['c00', 'n04', 'n11']   # Aidan liked these three (20 Oct)
 
 def thumb(path, w=300):
@@ -245,6 +246,21 @@ def card10(cid):
     return f'''<article class="card control"><header><span class="num">{cid.upper()}</span><h3>{html.escape(title)}</h3><span class="lever">looks like: {html.escape(lever)}</span></header>
   <p class="why">{html.escape(why)}</p><div class="strip">{frames}</div><p class="needs ok">ready · {len(names)} cards</p></article>'''
 car10 = ''.join(card10(c) for c in META10) if R10 else ''
+import csv
+def launch_html():
+    rows = list(csv.DictReader(open(os.path.join(LAUNCH, 'ads.csv'))))
+    out = []
+    for r in rows:
+        d = os.path.join(LAUNCH, r['round'].lower(), r['id'])
+        fl = r['files (in launch/<round>/<id>/)'].split(' | ')
+        if fl[0].endswith('.mp4'):
+            v = fl[0][:-4]
+            media = f'<video src="videos/{v}.mp4" poster="videos/{v}.jpg" controls playsinline muted loop preload="none"></video>'
+        else:
+            media = '<div class="strip">' + strip([os.path.join(d, f) for f in fl], fl) + '</div>'
+        out.append(f'<article class="card control"><header><span class="num">{r["id"].upper()}</span><h3>{html.escape(r["name"])}</h3><span class="lever">{r["round"]} · {html.escape(r["lever"])}</span></header><p class="why">{html.escape(r["hypothesis"])}</p>{media}</article>')
+    return ''.join(out)
+launch = launch_html() if os.path.exists(os.path.join(LAUNCH, 'ads.csv')) else ''
 picks = ''.join(card_html(c) for c in PICKS)
 rest = ''.join(card_html(c) for c in META if c not in PICKS)
 vids = ''.join(vcard(v) for v in sorted(VIDEOS, key=lambda v: not v.get('pick')))
@@ -315,6 +331,9 @@ video {{ width:min(100%,300px); aspect-ratio:9/16; background:#000; display:bloc
  <div class="box"><h4>Round 3</h4><p>Hero test on the winning layout (three different first frames), plus the real selfie clip if you film it.</p><p>Judge on CPC first, then cost per chat once each ad has 5+ chats.</p></div>
 </div>
 
+<h2>Launch set — what to run, in order</h2>
+<p class="lede">Round 1 (4 ads, women-only set): the control, the proof sheet, the receipt, the viewfinder without its shutter. Round 2: "just say hi", the ask list, the swipe-bait, four neighbourhoods. Round 3: three 5-second Reels plus the quiet print, the upside-down hook and a zero-design story. Dropped on purpose: anything that draws fake buttons, notifications or checkboxes (Meta's non-existent-functionality rule). Copy, ice breakers and the paused-campaign spec: <code>marketing/charlotte-ig-dm/launch/LAUNCH.md</code>. Nothing is published.</p>
+{launch}
 <h2>30 more: the same idea, thirty new formats</h2>
 <p class="lede">M01–M30. Same principle as the set below (card 1 stops the scroll by looking like something else), thirty new formats: message apps, a call, a player, a map, a forecast, a listing, an app page, a newspaper, a ticket, tarot, a trading card, a profile, a note, a stats card, fitness rings, a clapperboard, a search page, a post, an album, a marquee, neon, a chalkboard, a retro window, a CAPTCHA, a facts label, a postcard, a video call, a highway sign. Each has a hook and its own call-to-action card. No text on any face.</p>
 {car10}
