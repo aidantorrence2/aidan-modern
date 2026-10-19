@@ -435,5 +435,53 @@
         ]
       }
     ]
+  },
+  {
+    "slug": "how-to-stop-snacking-after-dinner",
+    "offer": "late-bite-brake",
+    "title": "How to stop snacking after dinner: a plan for the evening",
+    "description": "A plain plan for the hours after dinner: set a kitchen-closed time, plan the snack you will have, change what the evening looks like, and get through a craving without relying on willpower.",
+    "intro": "If you eat well all day and then lose it after 8pm, the problem is usually the evening, not your willpower. The hours after dinner come with tiredness, boredom, a screen and an open kitchen. This plan changes the evening so there is less to resist.",
+    "sections": [
+      {
+        "h": "Decide the rule before the evening starts",
+        "list": [
+          "Pick a kitchen-closed time, for example 30 to 60 minutes after dinner. Write it down. A rule you set at noon is easier to keep than a decision you make at 9pm.",
+          "Plan one evening snack if you want one, and decide what it is in advance. A planned snack is part of the day; an unplanned one is the slide.",
+          "Make the rule about time, not food. \"Nothing after 8:30 except tea\" is easier to follow than a list of banned foods."
+        ]
+      },
+      {
+        "h": "Change the setting, not just the snack",
+        "list": [
+          "Eat enough at dinner, including protein and vegetables. A light or skipped dinner makes the late-evening hunger real.",
+          "Close the kitchen visibly: lights off, dishes done, and snacks put out of sight or not bought at all.",
+          "Brush your teeth soon after the cutoff. Many people find it ends the eating part of the day.",
+          "Notice the trigger. If it starts with a show, a drink, or a partner opening the snacks, plan for that moment specifically."
+        ]
+      },
+      {
+        "h": "When a craving hits",
+        "list": [
+          "Wait ten minutes before deciding. Set a timer. Cravings usually rise and then fade within minutes.",
+          "While you wait, drink a glass of water or tea, step out of the kitchen, or do something with your hands.",
+          "After the timer, decide again. If you still want the planned snack, have it and enjoy it. The goal is a choice, not a ban."
+        ]
+      },
+      {
+        "h": "Keep score, kindly",
+        "list": [
+          "Track one thing: did I keep my evening rule tonight? Yes or no.",
+          "Count the streak, but a missed night is one night. Start again the next evening without making up for it.",
+          "Look at the misses after a week. They usually share a cause, such as late meetings, a skipped lunch or a certain show, and that cause is what to fix."
+        ]
+      },
+      {
+        "h": "When to get help",
+        "p": [
+          "This is a habit plan for everyday evening snacking. If eating often feels out of control, comes with distress, or you are worried about your weight or health, talk to a doctor or a registered dietitian."
+        ]
+      }
+    ]
   }
 ]
