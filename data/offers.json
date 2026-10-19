@@ -13105,6 +13105,108 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-19",
+    "slug": "five-minute-face",
+    "name": "Five Minute Face",
+    "need": "I reached my 40s without knowing how to do make-up, and I want a simple natural look but don't know what to use or how to apply it.",
+    "headline": "Learn one simple, everyday makeup look for your own face: what to buy, the order to apply it in, and short step-by-step practice, made for adult beginners.",
+    "buyer": "Adults, often 35 and over, who never learned to do makeup and want a natural, put-together look for work or everyday life without booking counter lessons or sorting through YouTube.",
+    "bullets": [
+      "Answer a few questions about your skin, the time you have and the look you want, and get a short list of basic products to start with",
+      "Step-by-step guides for one 'five minute face' routine, in order: base, brows, eyes, cheeks, lips",
+      "Practice checklists you can repeat until the routine feels automatic, then add a slightly longer look for events"
+    ],
+    "price": "$6.99 one-time",
+    "priceUsd": 7,
+    "priceNote": "Pay once, no subscription, and less than a single makeup lesson.",
+    "reasonPrompt": "What's stopped you from learning to do your own makeup so far: not knowing which products to buy, not knowing how to apply them, or not having the time?",
+    "faq": [
+      {
+        "q": "I've never worn makeup. Is this too advanced?",
+        "a": "No. It's for complete beginners and starts with one simple everyday look before anything else."
+      },
+      {
+        "q": "Does it tell me which brands to buy?",
+        "a": "It suggests product types (for example a tinted moisturiser or CC cream rather than heavy foundation). You choose the brands and the budget."
+      },
+      {
+        "q": "Is this skincare or medical advice?",
+        "a": "No. It's an independent tool for adults 18+ to learn how to apply cosmetics, and it isn't medical or dermatological advice. If you have a skin condition or a reaction to a product, ask a professional."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-19",
+      "summary": "Adults on Mumsnet repeatedly say in their own words that they reached middle age without knowing how to do makeup and want a simple, natural, put-together look. They ask where to learn it. Replies point them to YouTube, MAC or Boots counter lessons and private lessons, and one person who paid for lessons called them 'worth every penny'. I opened three separate Mumsnet threads (2022 and 2026) with evidence from 5+ named users. Willingness to pay shows in a paid App Store tutorial app with 185 ratings and premium purchases at $2.99 to $3.99, and a makeup practice app with 2.9K ratings and subscriptions of $9.99 a week.",
+      "wtp": "Makeup DIY: Eye, Face, Brows (App Store): 4.1 from 185 ratings, Premium Makeup in-app purchases $2.99 and $3.99. TheCatterall on Mumsnet paid for lessons: \"worth every penny\".",
+      "signals": [
+        {
+          "url": "https://www.mumsnet.com/talk/am_i_being_unreasonable/5485890-to-have-reached-45-without-knowing-how-to-do-make-up",
+          "who": "Aibusadandhormonal",
+          "date": "2026-02-04",
+          "quote": "How can I learn 1) what to use for a minimalist look but smart and 2) how ro apply it!",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/am_i_being_unreasonable/5485890-to-have-reached-45-without-knowing-how-to-do-make-up",
+          "who": "TheLovingReader",
+          "date": "2026-02-04",
+          "quote": "I can't do it either.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/am_i_being_unreasonable/5485890-to-have-reached-45-without-knowing-how-to-do-make-up",
+          "who": "purplecorkheart",
+          "date": "2026-02-04",
+          "quote": "I am watching some videos on youtube/social media but lesson was the best thing for me.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/style_and_beauty/4586538-how-to-learn-to-do-make-up-better",
+          "who": "AnotherLongDay",
+          "date": "2022-07-09",
+          "quote": "I'm 44 and I'd really like to learn to do good make-up for myself. How can I go about learning this in an easy way?",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/style_and_beauty/4586538-how-to-learn-to-do-make-up-better",
+          "who": "TheCatterall",
+          "date": "2022-07-09",
+          "quote": "had various lessons and worth every penny.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/style_and_beauty/4641740-where-can-i-get-make-up-help",
+          "who": "Flymyway",
+          "date": "2022-09-26",
+          "quote": "I just want natural look, basic makeup. Nothing fancy.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/-/id1532639467",
+          "who": "Makeup DIY: Eye, Face, Brows App Store listing (reviewer hiideyho)",
+          "date": "2022-05-11",
+          "quote": "This app is great except that there is only on free tutorial per section",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/-/id1532639467",
+          "who": "janLobban (App Store reviewer, Makeup DIY)",
+          "date": "2021-06-20",
+          "quote": "I do wish there were videos involved, sometimes pictures aren't enough to fully explain how to get the look.",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Free YouTube and Instagram tutorials (the most common suggestion in the threads); in-person counter lessons (MAC, Bobbi Brown, No7 at Boots) and private makeup artists; Makeup DIY: Eye, Face, Brows (4.1 stars, 185 ratings, $2.99 to $3.99 premium, picture-based, with reviewers asking for video); Makeup Studio: Pro Sketchbook (4.4 stars, 2.9K ratings, $9.99 a week, aimed at practicing on virtual face charts rather than your own face); YouCam Tutorial (Perfect Mobile Corp., only 2 ratings); and the virtual try-on apps from beauty brands.",
+      "risks": "Free YouTube content is plentiful and is what most people recommend. Counter lessons are often redeemable against products, which undercuts paid apps. People value hands-on, in-person help for their own face, which an app can only partly replace. The direct paid competitor's rating count is modest (185), so demand for paid self-application tutorial apps is shown but small. The evidence is mostly UK Mumsnet users. Results depend on individual skin, so the app must avoid any skin-health claims."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
