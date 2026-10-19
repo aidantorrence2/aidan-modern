@@ -12,7 +12,8 @@ VIDEOS = json.load(open(sys.argv[4])) if len(sys.argv) > 4 else []
 R3 = sys.argv[5] if len(sys.argv) > 5 else None
 R4 = sys.argv[6] if len(sys.argv) > 6 else None
 R5 = sys.argv[7] if len(sys.argv) > 7 else None   # render-v5.mjs: 10 new concepts
-R6 = sys.argv[8] if len(sys.argv) > 8 else None   # render-v6.mjs: CPC set — ten hooks   # render-v4.mjs: 10 carousels from new_top_tier_candidates   # render-v3.mjs output: photo-heavy still ads (top picks)
+R6 = sys.argv[8] if len(sys.argv) > 8 else None   # render-v6.mjs: CPC set — ten hooks
+R7 = sys.argv[9] if len(sys.argv) > 9 else None   # render-v7.mjs: design set   # render-v4.mjs: 10 carousels from new_top_tier_candidates   # render-v3.mjs output: photo-heavy still ads (top picks)
 PICKS = ['c00', 'n04', 'n11']   # Aidan liked these three (20 Oct)
 
 def thumb(path, w=300):
@@ -145,6 +146,25 @@ def card6(cid):
     return f'''<article class="card control"><header><span class="num">{cid.upper()}</span><h3>{html.escape(title)}</h3><span class="lever">{html.escape(lever)}</span></header>
   <p class="why">{html.escape(why)}</p><div class="strip">{frames}</div><p class="needs ok">ready · {len(names)} cards · same proven body behind each hook</p></article>'''
 car6 = ''.join(card6(c) for c in META6) if R6 else ''
+META7 = {
+ 'd01': ('Behind', 'design · masthead', 'CHARLOTTE set huge behind the subject (Vision cut-out), her head in front of the letters.'),
+ 'd02': ('Vertical', 'design · poster', 'The city runs up the left edge in 190px type; the portrait fills the rest.'),
+ 'd03': ('Poster band', 'design · flat colour', 'The photo stops on a clean edge; a band in the photo\'s own accent colour carries the type.'),
+ 'd04': ('Arch', 'design · print', 'Cream ground, the portrait inside a tall arch window, ink type above.'),
+ 'd05': ('Letterbox', 'design · film still', 'A band between black bars, the city as a subtitle, a mono slug in the top bar.'),
+ 'd06': ('Marked', 'design · contact sheet', 'A hand-drawn ring around the face, the city handwritten, nothing else.'),
+ 'd07': ('Silhouette', 'design · pure poster', 'The subject cut out on a flat colour field — no background at all.'),
+ 'd08': ('Label', 'design · gallery', 'Full-bleed portrait with a white gallery label pinned low.'),
+ 'd09': ('Detail', 'design · magazine', 'The portrait plus a tight detail of the same face inset like a call-out.'),
+ 'd10': ('Modular', 'design · grid', 'A strict grid: the photo in a 2×2 block, a colour module, a dark module with the city.'),
+}
+def card7(cid):
+    title, lever, why = META7[cid]
+    names = json.load(open(os.path.join(R7, 'index.json')))[cid]
+    frames = strip([os.path.join(R7, cid, n + '.jpg') for n in names], names)
+    return f'''<article class="card control"><header><span class="num">{cid.upper()}</span><h3>{html.escape(title)}</h3><span class="lever">{html.escape(lever)}</span></header>
+  <p class="why">{html.escape(why)}</p><div class="strip">{frames}</div><p class="needs ok">ready · {len(names)} cards · same proven body</p></article>'''
+car7 = ''.join(card7(c) for c in META7) if R7 else ''
 picks = ''.join(card_html(c) for c in PICKS)
 rest = ''.join(card_html(c) for c in META if c not in PICKS)
 vids = ''.join(vcard(v) for v in sorted(VIDEOS, key=lambda v: not v.get('pick')))
@@ -215,6 +235,9 @@ video {{ width:min(100%,300px); aspect-ratio:9/16; background:#000; display:bloc
  <div class="box"><h4>Round 3</h4><p>Hero test on the winning layout (three different first frames), plus the real selfie clip if you film it.</p><p>Judge on CPC first, then cost per chat once each ad has 5+ chats.</p></div>
 </div>
 
+<h2>The design set: ten visual languages</h2>
+<p class="lede">Same CPC rules as the set below (one portrait, face ≥300px, city huge, ≤2 lines, nothing on a face), but each hook is a different design language: type behind the subject, vertical type, a colour band, an arch, a letterbox, a hand-drawn mark, a cut-out on flat colour, a gallery label, a detail inset, a modular grid. Same proven body behind each.</p>
+{car7}
 <h2>The CPC set: ten hooks</h2>
 <p class="lede">CPC is decided by card 1. Each of these is one full-bleed portrait with the face framed big, the city huge and at most two lines, in clear space — the composition of your winning hook. Behind every hook is the same proven body (my recent work · never done this before? · CTA) with faces large enough to read on a phone. Run the ten hooks against each other; the body stays constant so the result is about the hook.</p>
 {car6}
