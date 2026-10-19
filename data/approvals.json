@@ -1581,7 +1581,9 @@
           "No checkout, product or price creation",
           "No charge, transfer or spending"
         ],
-        "preview_file": "/Users/aidantorrence/software-revenue-goal/artifacts/stripe-signin-handoff.jpg"
+        "preview_file": "/Users/aidantorrence/software-revenue-goal/artifacts/stripe-signin-handoff.jpg",
+        "result": "Owner completed Stripe sign-in in a separate Chrome tab. Read-only inspection of Epic Profile Picture confirmed Payments and Payouts Active and No active tasks to complete. All-products catalog and payment-links page were empty. Dashboard last 7 days gross volume USD 0; 2023 payout excluded. No credentials changed, product/price/link created, charge made, money moved, terms accepted or spend. Screenshot saved at software-revenue-goal/artifacts/stripe-account-status.jpg.",
+        "result_at": "2026-10-19T17:07:58Z"
       },
       "created": "2026-10-19T17:04:08Z",
       "expires": "2026-10-22T17:04:08Z",
