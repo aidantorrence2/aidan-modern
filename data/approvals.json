@@ -1364,6 +1364,72 @@
       "status": "approved",
       "decided": "2026-10-19T05:24:44Z",
       "note": ""
+    },
+    {
+      "id": "offers:short-wave3:2026-10-19:5-new-contacts",
+      "kind": "email",
+      "source": "codex:lead-generation",
+      "title": "Send five short invitations to new podcast and newsletter contacts",
+      "summary": "Five new contacts: Dateable, Dear Nina, Shari Leid, A Little Nudge and Your Digital Detox. Dating, friendship and phone-use interest tests. No follow-ups or spending.",
+      "payload": {
+        "action": "Send exactly these five short first-contact emails through connected Gmail after approval.",
+        "messages": [
+          {
+            "prospect_id": "dateable",
+            "organization": "Dateable podcast",
+            "to": "hello@dateablepodcast.com",
+            "subject": "Finding people who want fewer swipes and more dates",
+            "body": "Hi Yue and Julie,\n\nI'm Aidan. Your podcast helps people find a relationship that fits them.\n\nI'm exploring a service that introduces a few compatible people and helps them arrange a real date, instead of endless swiping.\n\nIt isn't built yet. I'm checking interest first.\n\nWould you share this signup page with singles who might be interested?\nhttps://real-change-pilots-aidan-2026.aidantorrence.chatgpt.site/better-dates?utm_source=dateable&utm_medium=partner_email&utm_campaign=wave3\n\nThanks,\nAidan Torrence",
+            "offer": "better-dates",
+            "contact_source": "https://www.yuexu.com/contact"
+          },
+          {
+            "prospect_id": "dear_nina",
+            "organization": "Dear Nina / Nina Badzin",
+            "to": "dearninapodcast@gmail.com",
+            "subject": "Finding people who want regular local friendships",
+            "body": "Hi Nina,\n\nI'm Aidan. I found your podcast and newsletter about adult friendship.\n\nI'm exploring a small local group where the same people meet each week for six weeks, so they have time to become friends.\n\nIt isn't built yet. I'm checking interest first.\n\nWould you share this signup page with adults who might be interested?\nhttps://real-change-pilots-aidan-2026.aidantorrence.chatgpt.site/real-friendships?utm_source=dear_nina&utm_medium=partner_email&utm_campaign=wave3\n\nThanks,\nAidan Torrence",
+            "offer": "real-friendships",
+            "contact_source": "https://ninabadzin.com/about/"
+          },
+          {
+            "prospect_id": "shari_leid",
+            "organization": "Shari Leid",
+            "to": "info@sharileid.com",
+            "subject": "Finding people who want regular local friendships",
+            "body": "Hi Shari,\n\nI'm Aidan. Your newsletter shares practical ways to build stronger connections.\n\nI'm exploring a small local group where the same people meet each week for six weeks, so they have time to become friends.\n\nIt isn't built yet. I'm checking interest first.\n\nWould you share this signup page with adults who might be interested?\nhttps://real-change-pilots-aidan-2026.aidantorrence.chatgpt.site/real-friendships?utm_source=shari_leid&utm_medium=partner_email&utm_campaign=wave3\n\nThanks,\nAidan Torrence",
+            "offer": "real-friendships",
+            "contact_source": "https://sharileid.com/"
+          },
+          {
+            "prospect_id": "a_little_nudge",
+            "organization": "A Little Nudge",
+            "to": "info@alittlenudge.com",
+            "subject": "Finding people who want fewer swipes and more dates",
+            "body": "Hi A Little Nudge team,\n\nI'm Aidan. Your dating advice helps people get from online dating to real connections.\n\nI'm exploring a service that introduces a few compatible people and helps them arrange a real date, instead of endless swiping.\n\nIt isn't built yet. I'm checking interest first.\n\nWould you share this signup page with singles who might be interested?\nhttps://real-change-pilots-aidan-2026.aidantorrence.chatgpt.site/better-dates?utm_source=a_little_nudge&utm_medium=partner_email&utm_campaign=wave3\n\nThanks,\nAidan Torrence",
+            "offer": "better-dates",
+            "contact_source": "https://www.alittlenudge.com/contact-us/"
+          },
+          {
+            "prospect_id": "your_digital_detox",
+            "organization": "Your Digital Detox",
+            "to": "contact@your-digitaldetox.com",
+            "subject": "Finding people who want to scroll less",
+            "body": "Hi Your Digital Detox team,\n\nI'm Aidan. Your directory helps people find places to take a break from screens.\n\nI'm exploring an app for people who set phone limits, then turn them off and keep scrolling. The idea is to make those limits harder to turn off.\n\nIt isn't built yet. I'm checking interest first.\n\nWould you share this signup page with adults who might want to try it?\nhttps://real-change-pilots-aidan-2026.aidantorrence.chatgpt.site/phone-reset?utm_source=your_digital_detox&utm_medium=partner_email&utm_campaign=wave3\n\nThanks,\nAidan Torrence",
+            "offer": "phone-reset",
+            "contact_source": "https://your-digitaldetox.com/"
+          }
+        ],
+        "limits": "Five emails only; no follow-ups or replies, form submissions, posts, spending, prices, payments, deployments or product availability claims. The eight completed emails must not be resent. No member-list requests or direct attendee/client contact. Reconcile Gmail SENT and any opt-outs before sending each; record per-message receipt; do not blindly retry uncertain sends.",
+        "why_these_recipients": "Published business/podcast contacts on current official pages; relevant adult dating, friendship or screen-break audiences. Five new organizations, no previous Gmail correspondence found. Prospects are distribution partners, not customer leads.",
+        "recipient_exclusions": "Dclic-coaching is researched but not included because English-language audience fit is not confirmed. Talia/Dating Intentionally is not included because the currently verified email is specifically for workshop support. Form-only channels are not included.",
+        "page_verification": "Existing approved phone, dating and friendship pages were public and consent forms rendered in preceding checkpoint; recheck public reachability before execution."
+      },
+      "created": "2026-10-19T05:59:51Z",
+      "expires": "2026-10-22T05:59:51Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
     }
   ]
 }
