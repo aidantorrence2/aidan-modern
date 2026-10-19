@@ -1048,6 +1048,19 @@
       "status": "pending",
       "decided": null,
       "note": ""
+    },
+    {
+      "id": "other:sync-test-2",
+      "kind": "other",
+      "source": "claude:sync-test",
+      "title": "Test: does the Mac card clear after a phone decision",
+      "summary": "Sync test 2. Claude decides this from another device; please don't touch it.",
+      "payload": {},
+      "created": "2026-10-19T01:18:38Z",
+      "expires": "2026-10-19T02:18:38Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
     }
   ]
 }
