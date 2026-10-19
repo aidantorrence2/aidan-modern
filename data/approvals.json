@@ -1356,8 +1356,8 @@
         "data_scope": "Database row responses may contain private email addresses and city/participation/consent/attribution fields. Read only to count and deduplicate. Do not persist, export, email, share or put individual lead records in Library, prompts for other workers, Git repositories or public pages.",
         "limits": "Read-only ongoing measurement for this one project. No customer outreach, data deletion/migration, credential recovery, database changes, new endpoint, deployment, spending or broader access. Stop if access is denied; no alternative access path.",
         "why_needed": "The handoff's zero was historical and cloud private-export credentials were omitted. The hourly targets cannot be honestly measured until separately authorized secure access is approved.",
-        "result": "Ongoing authorized read-only check 2026-10-19T21:06:32.627Z, exact project appgprj_6ad56c0398f4819187d2d7870ae70ac4. Overview first, then DB/leads 25 rows/page offset0: 0 rows, complete, next_offset null, no omitted/truncated data. Aggregate consenting adult leads 0; new since last complete check 0; target5. No private rows, export or changes.",
-        "result_at": "2026-10-19T21:08:46Z"
+        "result": "Ongoing read-only exact-project measurement at 2026-10-19T21:58:16.449Z: overview first; DB/leads limit25 offset0 returned0, next_offset null, no omissions/truncation. Active consenting adult total0, new0 versus target5. Aggregate only, no private row export or changes.",
+        "result_at": "2026-10-19T21:59:03Z"
       },
       "created": "2026-10-19T05:23:23Z",
       "expires": "2026-10-22T05:23:23Z",
