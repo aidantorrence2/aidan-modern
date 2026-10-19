@@ -1676,6 +1676,33 @@
       "status": "approved",
       "decided": "2026-10-19T17:38:37Z",
       "note": ""
+    },
+    {
+      "id": "sys:leak-guard-webfilter-20261019",
+      "kind": "other",
+      "source": "claude:perf-tuning",
+      "title": "Restart the leaking Screen Time web filter (17 GB) and install a guard that keeps it under 1 GB",
+      "summary": "webfilterproxyd (Screen Time 'Limit Adult Websites') leaked to 17 GB in 4.8 days and is why terminals hang. Approving pops one macOS password prompt; the filter stays ON, it's just restarted whenever it passes 1 GB (Activity Monitor quit past 2 GB).",
+      "payload": {
+        "command": "sudo ~/perf-tuning/leak-guard/install.sh (via macOS admin password dialog)",
+        "installs": [
+          "/Library/LaunchDaemons/com.aidan.leak-guard.plist",
+          "/usr/local/libexec/aidan-leak-guard.sh"
+        ],
+        "runs": "every 10 min as root",
+        "rules": {
+          "webfilterproxyd": "launchctl kickstart -k system/com.apple.webcontentfilter.proxy when footprint > 1024 MB",
+          "Activity Monitor": "kill when footprint > 2048 MB"
+        },
+        "log": "/Library/Logs/aidan-leak-guard.log",
+        "undo": "sudo ~/perf-tuning/leak-guard/uninstall.sh",
+        "source": "~/perf-tuning jj change kwqpruqq"
+      },
+      "created": "2026-10-19T18:06:14Z",
+      "expires": "2026-10-20T18:06:14Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
     }
   ]
 }
