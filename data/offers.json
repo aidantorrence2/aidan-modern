@@ -11075,6 +11075,112 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-19",
+    "slug": "pause-before-shout",
+    "name": "Pause Before the Shout",
+    "need": "I lose my temper with my kids, and I end up yelling at them for what feels like a lot of the time.",
+    "headline": "Catch the moment before you snap at your kids. A 90-second reset you tap mid-meltdown, scripts for repairing things afterwards, and a simple count of your calm days.",
+    "buyer": "Parents (18+) of toddlers to tweens who feel they shout at their kids more than they want to.",
+    "bullets": [
+      "One-tap 90-second reset for the hot moment: a breathing cue, a phrase to say out loud and a step-away timer.",
+      "Repair scripts suited to your child's age for after you lose your temper: what to say, how to apologise and how to explain.",
+      "Note your flashpoints (bedtime, the school run, after work) for a heads-up nudge before them, and keep a private count of calm days."
+    ],
+    "price": "$4.99/month",
+    "priceUsd": 5,
+    "priceNote": "Far below full parenting memberships on the App Store ($279 a year or $59.99 a year). It does one job: the moment before and after you shout.",
+    "reasonPrompt": "Think of the last time you shouted at your child. What was happening just before, and what would you have wanted in your hand right then?",
+    "faq": [
+      {
+        "q": "Is this therapy or medical advice?",
+        "a": "No. Pause Before the Shout is an independent self-help tool for adults 18+. It is not therapy, medical advice or a diagnosis, and it is not linked to any parenting brand or expert."
+      },
+      {
+        "q": "What if I'm worried I might hurt my child or myself?",
+        "a": "Put the phone down, make sure your child is safe, and step away. In the US you can call or text 988 (Suicide & Crisis Lifeline) at any time, or call 911 in an emergency. Please talk to a doctor or a qualified professional too."
+      },
+      {
+        "q": "I already shouted. Is it too late today?",
+        "a": "No. Open the repair scripts: they walk you through a short apology and an explanation your child can follow."
+      },
+      {
+        "q": "How much time does it take?",
+        "a": "The reset takes 90 seconds. Setting up your flashpoints takes about 3 minutes, and after that it's one tap a day to log a calm day or a tough day."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-19",
+      "summary": "Mumsnet threads from 2013, 2016 and 2023 show parents saying in their own words that they lose their temper and shout at their kids, and repliers pile in with 'me too'. All three threads were opened. Parents already pay a lot for broad parenting memberships, but nobody I read owns the narrow 'stop me shouting right now' moment at a low price.",
+      "wtp": "Good Inside: Parenting (App Store, opened): 4.9 stars from '14K Ratings', free to download, '3 Month Membership: $84.00' and 'Annual Membership: $279.00'. MamaZen: Calm Motherhood App (App Store, opened): 4.6 stars from '1.3K Ratings', 'Monthly Membership: $16.99', 'Annual Membership: $59.99', 'Lifetime: $199.00'.",
+      "signals": [
+        {
+          "url": "https://www.mumsnet.com/talk/parenting/1675039-I-think-I-have-an-anger-problem",
+          "who": "HankeringForSun",
+          "date": "2013-02-02",
+          "quote": "Am I the only one who loses it? Do you feel your temper on a daily basis with your kids?",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/parenting/1675039-I-think-I-have-an-anger-problem",
+          "who": "angel1976",
+          "date": "2013-02-02",
+          "quote": "Nope, you are not the only one! I'm sat here, it's 9pm and I just shouted at the kids to go to bed.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/parenting/1675039-I-think-I-have-an-anger-problem",
+          "who": "elportodelgato",
+          "date": "2013-02-02",
+          "quote": "I also lose my temper scarily often",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/parenting/2797381-Please-how-do-I-become-more-patient-and-mess-shouty-with-ds",
+          "who": "WeedlesHatOfDisappointment",
+          "date": "2016-12-05",
+          "quote": "He is just being a normal 4 year old, but I end up yelling at him for what feels like a lot of the time.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/parenting/2797381-Please-how-do-I-become-more-patient-and-mess-shouty-with-ds",
+          "who": "tiktok",
+          "date": "2016-12-05",
+          "quote": "I'm a naturally shouty person, or I was. I made the conscious decision not to shout.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/am_i_being_unreasonable/4868731-do-your-kids-see-you-get-angry",
+          "who": "soreheadedbear",
+          "date": "2023-08-10",
+          "quote": "Ds11 made a comment to dh about mum having 'anger issues' and it's upset me a bit.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/am_i_being_unreasonable/4868731-do-your-kids-see-you-get-angry",
+          "who": "Freshair1",
+          "date": "2023-08-10",
+          "quote": "I lost my temper with my four year old and I'm usually very patient.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/am_i_being_unreasonable/4868731-do-your-kids-see-you-get-angry",
+          "who": "Clefable",
+          "date": "2023-08-10",
+          "quote": "So if I get angry at DD1, I will take time after to apologise and explain why I was angry.",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Good Inside: Parenting (4.9 stars, 14K ratings, $84 for 3 months or $279 a year, App Store opened). MamaZen: Calm Motherhood App (4.6 stars, 1.3K ratings, $16.99/month or $59.99/year, App Store opened). Newer small apps showed up in search snippets only (not opened): Steady: Parenting SOS Now, Parenting Leader, KinStreak Parent Reset (snippet says $4.99/month) and KeepCool – Calm Parenting.",
+      "risks": "The low-price niche is filling up with small new apps, so the offer has to stand out on the in-the-moment reset and the repair scripts. The topic sits next to child safety, so the copy must not suggest it replaces professional help, and it needs clear crisis routing (988/911). The forum evidence is all from UK Mumsnet and some threads are old (2013, 2016). US demand is inferred from the 14K App Store ratings, not from US forum posts. Reddit could not be fetched."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
