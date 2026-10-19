@@ -3104,5 +3104,90 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "how-to-improve-spelling-as-an-adult",
+  "offer": "spell-sure",
+  "title": "How to improve your spelling as an adult (without going back to school)",
+  "description": "Embarrassed by your spelling? Collect the words you actually get wrong, learn the pattern behind each one, and practise a few minutes a day.",
+  "intro": "Adults who struggle with spelling usually get the same few dozen words wrong again and again. Working on those words, not a generic list, is the quickest way to improve.",
+  "sections": [
+   {
+    "h": "Collect your own words",
+    "list": [
+     "Every time a spell-checker corrects you, or you have to look a word up, add it to a list.",
+     "After two weeks you will have the words that matter for you."
+    ]
+   },
+   {
+    "h": "Learn the pattern, not just the word",
+    "list": [
+     "Group words that share a rule or a trap: double letters (accommodate, necessary), silent letters, -ible and -able, there/their/they're.",
+     "Learn one group at a time."
+    ]
+   },
+   {
+    "h": "Practise little and often",
+    "list": [
+     "Five minutes a day: look at the word, cover it, write it, check it.",
+     "Come back to the words you got wrong after a day, then a few days, then a week."
+    ]
+   },
+   {
+    "h": "Before you send",
+    "list": [
+     "Read important messages aloud slowly; you will catch more mistakes than by skimming.",
+     "Use a spell-checker, but check the word it suggests is the one you meant."
+    ]
+   },
+   {
+    "h": "If it feels like more than spelling",
+    "p": [
+     "If reading and writing have always been hard work, a dyslexia assessment can help. This guide is general information."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "how-to-finish-a-track-when-you-only-make-loops",
+  "offer": "loop-to-song",
+  "title": "How to finish a track when you only ever make loops",
+  "description": "Folders full of 8-bar loops and no finished songs? Pick one loop, copy an arrangement you like, give each session one job, and set an export date.",
+  "intro": "Most hobby producers can make a good loop. The hard part is turning it into a full track, because the blank timeline after the loop has no obvious next step.",
+  "sections": [
+   {
+    "h": "Pick one loop",
+    "list": [
+     "Choose one loop you still like after a few days, and commit to finishing that one before starting anything new."
+    ]
+   },
+   {
+    "h": "Borrow an arrangement",
+    "list": [
+     "Drop a finished track you like into your project and mark its sections: intro, build, drop or chorus, break, outro.",
+     "Lay your loop out to match those lengths. Now you are filling in blocks, not facing a blank page."
+    ]
+   },
+   {
+    "h": "Give each session one job",
+    "list": [
+     "Session one: rough arrangement. Session two: add one new part. Session three: transitions. Then a basic mix.",
+     "Twenty focused minutes beats a three-hour session that turns into a new loop."
+    ]
+   },
+   {
+    "h": "When you get stuck",
+    "list": [
+     "Take something away instead of adding: mute the drums for the break, or strip the intro to one element.",
+     "If a section still won't work after a session, leave it simple and move on."
+    ]
+   },
+   {
+    "h": "Set an export date",
+    "list": [
+     "Pick a date and export the track then, even if it isn't perfect. A finished, imperfect track teaches you more than ten perfect loops."
+    ]
+   }
+  ]
  }
 ]

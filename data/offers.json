@@ -11616,6 +11616,145 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-19",
+    "slug": "spell-sure",
+    "name": "Spell Sure",
+    "need": "My spelling is terrible, and I'm embarrassed every time I have to write something.",
+    "headline": "Collects the words you misspell in your own writing, drills them five minutes a day with the pattern behind each mistake, and shows progress month on month.",
+    "buyer": "Adults whose spelling never stuck and who feel embarrassed writing emails, forms and messages.",
+    "bullets": [
+      "Builds your list from the words you actually get wrong, not a school word list.",
+      "Five-minute spaced drills that show the pattern behind each mistake, so the fix sticks.",
+      "A quick check before you send something important, plus month-on-month progress."
+    ],
+    "price": "$4.99/month",
+    "priceUsd": 5,
+    "priceNote": "Below the adult spelling app we found ($49.99 a year).",
+    "reasonPrompt": "What do you most often have to write, and which words trip you up?",
+    "faq": [
+      {
+        "q": "Is this for dyslexia?",
+        "a": "Spell Sure is an independent practice tool, not a diagnosis or treatment. If you think you may have dyslexia, an assessment can help, and many people use tools like this alongside other support."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-19",
+      "summary": "Adults on two forum threads say they are horrible at spelling and sick of it, and paid adult spelling apps and courses exist.",
+      "wtp": "Spelling Games For Adults (App Store): Pro Access $4.99 a week, $49.99 a year, $99.99 lifetime. Thin signal: only 4 ratings.",
+      "signals": [
+        {
+          "url": "https://forums.anandtech.com/threads/spelling-lessons.372413/",
+          "who": "Shuxclams (AnandTech forums)",
+          "date": "2000-10-12",
+          "quote": "damnit, I am just sick of not being able to spell!",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.anandtech.com/threads/are-you-a-poor-speller.918124/",
+          "who": "TheOmegaCode (AnandTech forums)",
+          "date": "2002-11-04",
+          "quote": "I'm horrible when it comes to spelling",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.anandtech.com/threads/are-you-a-poor-speller.918124/",
+          "who": "Zebo (AnandTech forums)",
+          "date": "2002-11-04",
+          "quote": "Well spelling is a disablity for some including me.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/-/id6751136000",
+          "who": "Spelling Games For Adults App Store listing",
+          "date": "2026-10-19",
+          "quote": "Pro Access (Yearly) $49.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Spellzone adult course, spelling apps for adults, spell-checkers.",
+      "risks": "Willingness-to-pay evidence is thin (one small paid app), and the forum posts are from 2000 to 2002. Must stay clear of dyslexia claims."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-19",
+    "slug": "loop-to-song",
+    "name": "Loop to Song",
+    "need": "I make loops that I think are cool, but they never turn into anything, and I never finish a track.",
+    "headline": "A finishing coach for hobby producers: pick one loop, map an arrangement, then 20-minute sessions with one job each until you export a finished track by your own date.",
+    "buyer": "Hobby and bedroom music producers, on any DAW, with folders of unfinished loops.",
+    "bullets": [
+      "Pick one loop and get a simple arrangement map: intro, build, drop, break, outro.",
+      "20-minute daily sessions with one job each (arrange, add a part, mix), so you never stall on a blank timeline.",
+      "Stuck moves for when you can't decide what comes next, and an export date you set yourself."
+    ],
+    "price": "$6.99/month",
+    "priceUsd": 7,
+    "priceNote": "Less than most producer subscriptions, and works with any DAW.",
+    "reasonPrompt": "How many unfinished loops do you have, and where do you usually get stuck?",
+    "faq": [
+      {
+        "q": "Which DAW does it work with?",
+        "a": "Any: Ableton, FL Studio, Logic, GarageBand and others. Loop to Song is an independent app, not linked to any of them."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-19",
+      "summary": "Hobby producers on the Ableton and Loopy Pro forums say they make loops that never become tracks and have never finished one, and producers already pay for courses on finishing music.",
+      "wtp": "EDMProd's Project Extraction Masterclass sells for $27 to producers who want to turn unfinished projects into tracks.",
+      "signals": [
+        {
+          "url": "https://forum.ableton.com/viewtopic.php?p=1263372",
+          "who": "patrick.olson86 (Ableton forum)",
+          "date": "2011-03-06",
+          "quote": "I AM a musician, and I never finish anything in Ableton (or any Daw for that matter).",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forum.ableton.com/viewtopic.php?p=1263372",
+          "who": "Dr. Fluffenstein (Ableton forum)",
+          "date": "2011-03-05",
+          "quote": "I haven't actually completed any tracks in ableton for almost a year",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forum.loopypro.com/discussion/comment/451055/",
+          "who": "wim (Loopy Pro forum)",
+          "date": "2018-01",
+          "quote": "loops that I think are cool, but never turn into anything.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forum.loopypro.com/discussion/comment/451055/",
+          "who": "gusgranite (Loopy Pro forum)",
+          "date": "2018-01",
+          "quote": "I have never finished a track.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.edmprod.com/project-extraction/",
+          "who": "EDMProd Project Extraction Masterclass",
+          "date": "2026-10-19",
+          "quote": "Enroll in the Masterclass Today for $27",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "EDMProd courses, finishing-music courses on Udemy, Splice, YouTube tutorials.",
+      "risks": "Forum posts are from 2011 and 2018, and the paid product we confirmed is a one-off $27 course with no sales count."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
