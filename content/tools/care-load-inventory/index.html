@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Care Load Inventory: see every hour of caring for a parent</title>
+<meta name="description" content="List every care task, its hours per week and who does it. See your total care load, what could be shared, delegated or outsourced, and a printable list.">
+<link rel="canonical" href="https://aidantorrence2.github.io/aidan-modern/tools/care-load-inventory/">
+<meta property="og:title" content="Care Load Inventory: see every hour of caring for a parent">
+<meta property="og:description" content="List every care task, its hours per week and who does it. See your total care load, what could be shared, delegated or outsourced, and a printable list.">
+<meta property="og:url" content="https://aidantorrence2.github.io/aidan-modern/tools/care-load-inventory/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#0c0c0c">
+<meta name="color-scheme" content="dark">
+<link rel="icon" href="data:,">
+<style>
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+html,body{margin:0;background:#0c0c0c;color:#fff}
+body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;font-size:17px;line-height:1.55;overflow-x:hidden}
+main{max-width:700px;margin:0 auto;padding:36px 16px 48px}
+h1,h2,h3{font-family:Georgia,"Times New Roman",serif;font-weight:400;line-height:1.2;margin:0}
+h1{font-size:34px;margin:8px 0 14px}
+h2{font-size:25px;margin:38px 0 10px}
+h3{font-size:20px;margin:22px 0 8px}
+p{margin:0 0 12px}
+a{color:#fff}
+.kicker{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:#9a9a9a;margin:0}
+.lead{font-size:19px;color:#e2e2e2}
+.muted{color:#a0a0a0;font-size:15px}
+.small{font-size:14px}
+.privacy{font-size:14.5px;color:#a0a0a0;border-left:2px solid #333;padding-left:12px}
+.note{font-size:15px;color:#cfcfcf;background:#141414;border:1px solid #2a2a2a;border-radius:10px;padding:12px 14px;margin:16px 0}
+.linkish{background:none;border:0;color:#fff;text-decoration:underline;font:inherit;padding:0;cursor:pointer}
+fieldset{border:0;padding:0;margin:0;min-width:0}
+legend{padding:0}
+label,.label{display:block;font-size:15.5px;color:#dcdcdc;margin:16px 0 6px}
+.hint{display:block;font-size:13.5px;color:#9a9a9a;margin-top:2px}
+input[type=text],input[type=number],input[type=date],input[type=time],input[type=email],textarea,select{width:100%;max-width:100%;background:#161616;color:#fff;border:1px solid #363636;border-radius:8px;padding:11px 12px;font:inherit;font-size:16px;min-width:0}
+textarea{resize:vertical;line-height:1.45}
+select{appearance:none;-webkit-appearance:none;background-image:linear-gradient(45deg,transparent 50%,#bbb 50%),linear-gradient(135deg,#bbb 50%,transparent 50%);background-position:calc(100% - 18px) 50%,calc(100% - 13px) 50%;background-size:5px 5px;background-repeat:no-repeat;padding-right:32px}
+input:focus,textarea:focus,select:focus{outline:2px solid #fff;outline-offset:1px;border-color:#fff}
+::placeholder{color:#6f6f6f}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:0 12px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:0 10px}
+@media (max-width:380px){.grid3{grid-template-columns:1fr 1fr}}
+.btn{display:inline-block;background:#fff;color:#0c0c0c;border:1px solid #fff;border-radius:8px;padding:12px 18px;font:inherit;font-size:16px;font-weight:600;cursor:pointer;text-decoration:none;line-height:1.2;margin:4px 6px 4px 0}
+.btn.ghost{background:transparent;color:#fff;border-color:#4a4a4a}
+.btn.small{padding:8px 12px;font-size:14.5px}
+.btn:focus-visible,.linkish:focus-visible,a:focus-visible{outline:2px solid #fff;outline-offset:3px}
+.btn[disabled]{opacity:.45;cursor:not-allowed}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 4px}
+.chip{position:relative;display:inline-block;margin:0;font-size:15px}
+.chip input{position:absolute;opacity:0;width:1px;height:1px}
+.chip span{display:inline-block;border:1px solid #424242;border-radius:999px;padding:7px 13px;cursor:pointer;color:#e6e6e6;user-select:none}
+.chip input:checked+span{background:#fff;color:#0c0c0c;border-color:#fff}
+.chip input:focus-visible+span{outline:2px solid #fff;outline-offset:2px}
+.card{background:#141414;border:1px solid #2a2a2a;border-radius:12px;padding:18px 16px;margin:18px 0}
+.result{border-color:#4a4a4a}
+.big{font-family:Georgia,"Times New Roman",serif;font-size:30px;line-height:1.15;margin:4px 0 8px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin:12px 0}
+.stat{background:#0f0f0f;border:1px solid #2a2a2a;border-radius:10px;padding:12px}
+.stat b{display:block;font-family:Georgia,serif;font-weight:400;font-size:26px;line-height:1.1}
+.stat span{font-size:13.5px;color:#a8a8a8}
+ol.steps,ul.list{padding-left:22px;margin:8px 0 12px}
+ol.steps li,ul.list li{margin:0 0 8px}
+.bars{margin:12px 0}
+.bar{margin:0 0 10px}
+.bar-top{display:flex;justify-content:space-between;gap:10px;font-size:15px}
+.bar-track{height:14px;background:#1d1d1d;border-radius:7px;overflow:hidden;margin-top:4px}
+.bar-fill{height:100%;background:#fff;border-radius:7px;min-width:2px;transition:width .25s}
+.bar.weak .bar-fill{background:#e8b04a}
+.bar-conv{font-size:13.5px;color:#a8a8a8;margin:2px 0 0 0}
+.bar.weak .bar-conv{color:#e8b04a}
+.tag{display:inline-block;font-size:12.5px;letter-spacing:.04em;text-transform:uppercase;border:1px solid #555;border-radius:999px;padding:2px 9px;color:#ddd;vertical-align:middle}
+.share{margin:18px 0 0}
+.copy-fallback{margin-top:10px;font-size:14px}
+.cta{margin-top:48px;border:1px solid #3a3a3a;border-radius:12px;padding:20px 18px;background:#111}
+.cta h2{margin:0 0 10px}
+.foot{margin-top:40px;padding-top:18px;border-top:1px solid #222;color:#a0a0a0;font-size:14.5px}
+.foot p{margin:0 0 6px}
+.foot a{color:#d8d8d8}
+.empty{color:#9a9a9a;font-style:italic}
+.row-x{background:none;border:1px solid #3a3a3a;color:#ccc;border-radius:8px;width:40px;height:44px;font-size:20px;line-height:1;cursor:pointer;padding:0}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+table{width:100%;border-collapse:collapse;font-size:15px}
+th,td{text-align:left;padding:7px 6px;border-bottom:1px solid #262626;vertical-align:top}
+th{font-weight:600;color:#cfcfcf;font-size:13.5px}
+.tablewrap{overflow-x:auto;-webkit-overflow-scrolling:touch;max-width:100%}
+@media (min-width:640px){h1{font-size:42px}main{padding-top:56px}}
+@media print{
+  html,body{background:#fff!important;color:#000!important}
+  body{font-size:12pt}
+  *{color:#000!important;background:transparent!important;box-shadow:none!important}
+  main{max-width:none;padding:0}
+  .no-print,.pr-hide{display:none!important}
+  .card,.stat,.note{border:1px solid #999!important;break-inside:avoid}
+  .bar-track{border:1px solid #999}
+  .bar-fill{background:#555!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  a{text-decoration:none}
+  th,td{border-bottom:1px solid #bbb}
+}
+
+.task{border-top:1px solid #262626;padding:12px 0}
+.task-top{display:grid;grid-template-columns:minmax(0,1fr) 36px;gap:8px;align-items:center}
+.task-sel{display:grid;grid-template-columns:72px minmax(0,1fr) minmax(0,1fr);gap:8px;margin-top:8px}
+.task-sel label{margin:0;min-width:0}
+.task-sel select{padding-right:26px;background-position:calc(100% - 15px) 50%,calc(100% - 10px) 50%}
+.task-sel span{display:block;font-size:12.5px;color:#9a9a9a;margin-bottom:3px}
+.task input,.task select{padding-left:9px}
+.task-why{font-size:13.5px;color:#a8a8a8;margin:6px 0 0}
+.split{display:flex;height:16px;border-radius:8px;overflow:hidden;background:#1d1d1d;margin:8px 0 6px}
+.split div{height:100%}
+.legend{display:flex;flex-wrap:wrap;gap:12px;font-size:13.5px;color:#bbb}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:5px;vertical-align:middle}
+.blank{display:inline-block;min-width:90px;border-bottom:1px solid #666}
+@media print{.split{border:1px solid #999}.split div{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+
+</style>
+</head>
+<body>
+<main>
+<p class="kicker no-print">Free tool · family caregivers</p>
+<h1>Care load inventory</h1>
+<p class="lead">Caring for a parent while working is hard to talk about when nobody can see the whole load. List every task, roughly how long it takes and who does it. You get the total, what could come off your plate, and a printable list to bring to a family conversation.</p>
+<p class="privacy no-print">Runs entirely in your browser. Nothing you type is sent anywhere; your answers are saved only on this device. <button id="reset" class="linkish" type="button">Clear my answers</button></p>
+<form id="f" class="no-print" autocomplete="off" onsubmit="return false">
+<div class="card">
+<div class="grid2">
+<div><label for="parent" style="margin-top:0">What you call your parent</label><input id="parent" name="parent" type="text" maxlength="30" placeholder="e.g. Mum, Dad, Pop"></div>
+<div><label for="work" style="margin-top:0">Your paid work, hours a week</label><input id="work" name="work" type="number" inputmode="numeric" min="0" max="100" placeholder="e.g. 40"></div>
+</div>
+</div>
+<div class="card">
+<h3 style="margin-top:0">Tick everything that happens in a normal week</h3>
+<p class="muted small">Include the invisible work: calls, chasing, worrying on call. Then set rough hours and who does it.</p>
+<div class="chips" id="presets"></div>
+<div id="tasks"></div>
+<p style="margin-top:12px"><button class="btn ghost small" type="button" id="addTask">Add your own task</button></p>
+</div>
+</form>
+
+<section id="out" aria-live="polite"><div class="card result"><p class="empty">Tick a task and add hours to see your care load.</p></div></section>
+<p class="no-print"><button class="btn ghost" id="print" type="button">Print the family conversation list</button></p>
+<div class="share no-print"><button class="btn" id="copy" type="button">Copy my result</button> <span id="copy-status" class="muted" role="status" aria-live="polite"></span><textarea id="copy-fallback" class="copy-fallback" rows="5" readonly hidden aria-label="Your result, ready to copy"></textarea></div>
+
+<div class="note">This is a planning list, not medical, legal or financial advice. For decisions about your parent's health, safety or money, a doctor, a social worker or care manager, or your local agency on aging can help. In the US, the Eldercare Locator (1-800-677-1116, eldercare.acl.gov) can point you to local services. Looking after yourself counts too: if you are running on empty, tell your own doctor.</div>
+
+<aside class="cta no-print">
+<h2>Want help actually changing this?</h2>
+<p>A hands-on care concierge that takes over agreed administrative and practical care work, so hours actually come off your list instead of just being organized.</p>
+<p class="muted">Honest note: this program is not built yet, and nothing is charged. The page explains the plan and lets you ask for early access, which helps decide what gets built first.</p>
+<a class="btn" href="../../caring-parent-working-full/?src=tool-care-load-inventory">See the pre-launch page</a>
+</aside>
+<footer class="foot no-print">
+<p>A free tool from Aidan Torrence</p>
+<p><a href="../../">All pre-launch offers</a> · <a href="https://aidantorrence.com">aidantorrence.com</a></p>
+</footer>
+</main>
+<script>
+(function(){
+"use strict";
+var TOOL={slug:"care-load-inventory",url:"https://aidantorrence2.github.io/aidan-modern/tools/care-load-inventory/"};
+function $(s, r) { return (r || document).querySelector(s) }
+function $$(s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)) }
+function esc(s) { return String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;') }
+function num(v) { var n = parseFloat(String(v == null ? '' : v).replace(/,/g, '').replace(/[^0-9.\-]/g, '')); return isFinite(n) ? n : 0 }
+function round1(n) { return Math.round(n * 10) / 10 }
+function plural(n, one, many) { return n + ' ' + (n === 1 ? one : (many || one + 's')) }
+var KEY = 'tool:' + TOOL.slug
+var store = {
+  get: function (fallback) { try { var v = localStorage.getItem(KEY); return v ? JSON.parse(v) : fallback } catch (e) { return fallback } },
+  set: function (v) { try { localStorage.setItem(KEY, JSON.stringify(v)) } catch (e) {} },
+  clear: function () { try { localStorage.removeItem(KEY) } catch (e) {} }
+}
+// Form helpers: read and write every [name] field inside a root element.
+function readForm(root) {
+  var o = {}
+  $$('[name]', root).forEach(function (el) {
+    if (el.type === 'checkbox') { if (!o[el.name]) o[el.name] = []; if (el.checked) o[el.name].push(el.value) }
+    else if (el.type === 'radio') { if (el.checked) o[el.name] = el.value; else if (!(el.name in o)) o[el.name] = '' }
+    else o[el.name] = el.value
+  })
+  return o
+}
+function fillForm(root, o) {
+  if (!o) return
+  $$('[name]', root).forEach(function (el) {
+    if (!(el.name in o)) return
+    var v = o[el.name]
+    if (el.type === 'checkbox') el.checked = Array.isArray(v) && v.indexOf(el.value) !== -1
+    else if (el.type === 'radio') el.checked = v === el.value
+    else el.value = v
+  })
+}
+// Print only one element: hide everything that is not on the path from body to it.
+function printOnly(el) {
+  var hidden = []
+  var node = el
+  while (node && node !== document.body) {
+    var p = node.parentNode
+    if (!p) break
+    Array.prototype.forEach.call(p.children, function (sib) {
+      if (sib !== node && sib.tagName !== 'SCRIPT' && sib.tagName !== 'STYLE') { sib.classList.add('pr-hide'); hidden.push(sib) }
+    })
+    node = p
+  }
+  var done = function () { hidden.forEach(function (h) { h.classList.remove('pr-hide') }); window.removeEventListener('afterprint', done) }
+  window.addEventListener('afterprint', done)
+  try { window.print() } catch (e) {}
+  setTimeout(done, 1500)
+}
+function fmtDate(d, opts) { try { return d.toLocaleDateString(undefined, opts || { weekday: 'short', month: 'short', day: 'numeric' }) } catch (e) { return d.toDateString() } }
+
+var form = $('#f'), out = $('#out'), tBox = $('#tasks'), last = null
+// id: [name, default hours, suggestion, why, remote-friendly]
+var P = {
+  appts: ['Doctor appointments and driving', 3, 'share', 'Alternate with family. Ask locally about volunteer driver programs.', 0],
+  meds: ['Medication setup and refills', 1, 'outsource', 'Ask the pharmacy about automatic refills, delivery, or pre-sorted packs.', 0],
+  shop: ['Groceries and errands', 2, 'outsource', 'Grocery delivery or a regular online order takes most of this.', 1],
+  meals: ['Cooking meals', 4, 'share', 'Batch cooking on a family rota, or meal delivery for some days.', 0],
+  clean: ['Cleaning', 2, 'outsource', 'A cleaner every week or two.', 0],
+  laundry: ['Laundry', 1.5, 'outsource', 'A laundry service, or bundle it with cleaning help.', 0],
+  bills: ['Bills, paperwork and banking', 1.5, 'delegate', 'One person owns this. It can be done from anywhere.', 1],
+  calls: ['Insurance, benefits and phone calls', 1.5, 'delegate', 'Can be done from anywhere, by phone and online.', 1],
+  coord: ['Coordinating doctors and care staff', 1, 'delegate', 'Pick one point person so information does not get lost.', 1],
+  checkin: ['Daily check-in calls', 2, 'share', 'A family rota, one day each.', 1],
+  visits: ['Visits and company', 4, 'share', 'Spread across family and friends on a schedule.', 0],
+  personal: ['Personal care (bathing, dressing)', 3, 'keep', 'If this is heavy, a trained home care aide is an option to talk through with your parent.', 0],
+  home: ['Home repairs and yard', 1, 'outsource', 'A handyperson or yard service, booked on a schedule.', 0],
+  tech: ['Phone, TV and computer help', 1, 'delegate', 'Often fixable remotely by whoever is good with tech.', 1],
+  oncall: ['Being on call and worrying', 3, 'keep', 'It is real load even when nothing happens. Count it.', 0]
+}
+var WHO = [['me', 'Me'], ['sibling', 'A sibling'], ['family', 'Other family'], ['paid', 'Paid help'], ['parent', 'My parent'], ['none', 'No one yet']]
+var OPT = [['keep', 'Keep as is'], ['share', 'Share'], ['delegate', 'Delegate'], ['outsource', 'Outsource']]
+var S = store.get(null) || {}
+if (!Array.isArray(S.tasks)) S.tasks = []
+$('#presets').innerHTML = Object.keys(P).map(function (k) { return '<label class="chip"><input type="checkbox" value="' + k + '"' + (S.tasks.some(function (t) { return t.p === k }) ? ' checked' : '') + '><span>' + esc(P[k][0]) + '</span></label>' }).join('')
+function sel(arr, val, k, label) { return '<label><span>' + label + '</span><select data-k="' + k + '">' + arr.map(function (o) { return '<option value="' + o[0] + '"' + (val === o[0] ? ' selected' : '') + '>' + o[1] + '</option>' }).join('') + '</select></label>' }
+function drawTasks() {
+  tBox.innerHTML = S.tasks.map(function (t, i) {
+    var why = t.p && P[t.p] ? P[t.p][3] : ''
+    return '<div class="task" data-t="' + i + '"><div class="task-top"><input type="text" data-k="name" maxlength="60" aria-label="Task" placeholder="Task" value="' + esc(t.name) + '">' +
+      '<button class="row-x" type="button" data-del="' + i + '" aria-label="Remove ' + esc(t.name || 'task') + '">×</button></div>' +
+      '<div class="task-sel"><label><span>Hours a week</span><input type="number" inputmode="decimal" min="0" step="0.5" data-k="hrs" placeholder="0" value="' + esc(t.hrs) + '"></label>' + sel(WHO, t.who, 'who', 'Who does it now') + sel(OPT, t.opt, 'opt', 'Could be') + '</div>' + (why ? '<p class="task-why">' + esc(why) + '</p>' : '') + '</div>'
+  }).join('')
+}
+function readTasks() {
+  $$('[data-t]', tBox).forEach(function (row) {
+    var t = S.tasks[+row.getAttribute('data-t')]; if (!t) return
+    t.name = $('[data-k=name]', row).value; t.hrs = $('[data-k=hrs]', row).value; t.who = $('[data-k=who]', row).value; t.opt = $('[data-k=opt]', row).value
+  })
+}
+$('#presets').addEventListener('change', function (e) {
+  var k = e.target.value; readTasks()
+  if (e.target.checked) S.tasks.push({ p: k, name: P[k][0], hrs: String(P[k][1]), who: 'me', opt: P[k][2] })
+  else S.tasks = S.tasks.filter(function (t) { return t.p !== k })
+  drawTasks(); render()
+})
+tBox.addEventListener('click', function (e) {
+  var b = e.target.closest('[data-del]'); if (!b) return
+  readTasks(); var t = S.tasks.splice(+b.getAttribute('data-del'), 1)[0]
+  if (t && t.p) { var c = $('#presets input[value=' + t.p + ']'); if (c) c.checked = false }
+  drawTasks(); render()
+})
+$('#addTask').addEventListener('click', function () { readTasks(); S.tasks.push({ name: '', hrs: '', who: 'me', opt: 'share' }); drawTasks(); render(); var r = $$('[data-t]', tBox).pop(); if (r) $('input', r).focus() })
+function h(n) { return round1(n) + (round1(n) === 1 ? ' hour' : ' hours') }
+function render() {
+  readTasks()
+  S.form = readForm(form)
+  store.set(S)
+  var v = S.form, parent = (v.parent || '').trim(), work = Math.max(0, num(v.work))
+  var ts = S.tasks.filter(function (t) { return (t.name || '').trim() || num(t.hrs) }).map(function (t) { return { name: (t.name || '').trim() || 'Task', hrs: Math.max(0, num(t.hrs)), who: t.who, opt: t.opt, remote: t.p && P[t.p] ? P[t.p][4] : 0 } })
+  if (!ts.length) { last = null; out.innerHTML = '<div class="card result"><p class="empty">Tick a task and add hours to see your care load.</p></div>'; return }
+  var total = 0, by = { me: 0, sibling: 0, family: 0, paid: 0, parent: 0, none: 0 }
+  ts.forEach(function (t) { total += t.hrs; by[t.who] = (by[t.who] || 0) + t.hrs })
+  var mine = by.me, gap = by.none
+  var off = ts.filter(function (t) { return t.who === 'me' || t.who === 'none' }).reduce(function (s, t) { return s + (t.opt === 'share' ? t.hrs / 2 : (t.opt === 'delegate' || t.opt === 'outsource') ? t.hrs : 0) }, 0)
+  var groups = { share: [], delegate: [], outsource: [], keep: [] }
+  ts.forEach(function (t) { (groups[t.opt] || groups.keep).push(t) })
+  var whoName = {}; WHO.forEach(function (w) { whoName[w[0]] = w[1] })
+  var optName = {}; OPT.forEach(function (o) { optName[o[0]] = o[1] })
+  var col = { me: '#ffffff', sibling: '#9fb7d9', family: '#7fa889', paid: '#c9a86a', parent: '#b48ab8', none: '#e06c5a' }
+  var split = Object.keys(by).filter(function (k) { return by[k] > 0 }).map(function (k) { return '<div style="width:' + (by[k] / total * 100) + '%;background:' + col[k] + '" title="' + esc(whoName[k]) + '"></div>' }).join('')
+  var legend = Object.keys(by).filter(function (k) { return by[k] > 0 }).map(function (k) { return '<span><i style="background:' + col[k] + '"></i>' + esc(whoName[k]) + ': ' + h(by[k]) + '</span>' }).join('')
+  function glist(key, title, blurb) {
+    var g = groups[key]; if (!g.length) return ''
+    return '<h3>' + title + ' <span class="muted small">(' + h(g.reduce(function (s, t) { return s + t.hrs }, 0)) + ')</span></h3><p class="muted small">' + blurb + '</p><ul class="list">' + g.map(function (t) { return '<li>' + esc(t.name) + ' · ' + h(t.hrs) + ' · now: ' + esc(whoName[t.who].toLowerCase()) + (t.remote && key !== 'keep' ? ' <span class="tag">can be done remotely</span>' : '') + '</li>' }).join('') + '</ul>'
+  }
+  var pName = parent || 'your parent'
+  last = { total: total, mine: mine, off: off, parent: parent, work: work }
+  var rows = ts.map(function (t) { return '<tr><td>' + esc(t.name) + '</td><td>' + round1(t.hrs) + '</td><td>' + esc(whoName[t.who]) + '</td><td>' + esc(optName[t.opt]) + '</td><td><span class="blank">&nbsp;</span></td></tr>' }).join('')
+  out.innerHTML = '<div class="card result"><p class="kicker">Your weekly care load</p><p class="big">' + h(total) + ' a week of care' + (parent ? ' for ' + esc(parent) : '') + '</p>' +
+    '<p>' + h(mine) + ' of it ' + (mine === 1 ? 'is' : 'are') + ' yours' + (total ? ' (' + Math.round(mine / total * 100) + '%)' : '') + '.' + (work ? ' With ' + h(work) + ' of paid work, that is <b>' + h(work + mine) + '</b> a week committed before sleep, meals or any rest.' : '') + '</p>' +
+    (gap ? '<p>' + h(gap) + ' a week ' + (gap === 1 ? 'is' : 'are') + ' marked “no one yet”. Those are the first things to bring up.</p>' : '') +
+    '<div class="split" role="img" aria-label="Care hours by who does them">' + split + '</div><div class="legend">' + legend + '</div>' +
+    (off > 0 ? '<p style="margin-top:14px">If the family agrees to your “could be” choices, up to <b>' + h(off) + ' a week</b> could come off your plate (counting shared tasks as half).</p>' : '<p style="margin-top:14px" class="muted">Change “Could be” on any of your tasks to see what could come off your plate.</p>') +
+    glist('share', 'Could be shared', 'Split on a rota with family or friends.') +
+    glist('delegate', 'Could be delegated', 'One named person owns it completely, so you stop tracking it.') +
+    glist('outsource', 'Could be outsourced', 'Paid services or community programs. Cost is part of the family conversation.') +
+    glist('keep', 'Keeping as is', 'Fine to keep. It still counts toward your total.') +
+    '</div>' +
+    '<div class="card" id="family"><p class="kicker">For the family conversation</p><h2 style="margin-top:6px">Caring for ' + esc(pName) + ': the whole week</h2><p class="muted">Prepared ' + esc(fmtDate(new Date(), { month: 'long', day: 'numeric', year: 'numeric' })) + ' · ' + h(total) + ' of care a week, ' + h(mine) + ' currently done by me.</p>' +
+    '<div class="tablewrap"><table><tr><th>Task</th><th>Hrs/wk</th><th>Who now</th><th>Proposal</th><th>Who will take it</th></tr>' + rows + '</table></div>' +
+    '<h3>Questions to go through together</h3><ol class="steps"><li>Does this list match what everyone sees? What is missing?</li><li>What does ' + esc(pName) + ' want, and what would they rather keep doing themselves?</li><li>Which tasks can each person take, starting this month?</li><li>What should we pay for, and how do we split the cost?</li><li>Who is the point person for doctors and paperwork?</li><li>When do we look at this list again? Date: <span class="blank">&nbsp;</span></li></ol></div>'
+}
+TOOL.summary = function () {
+  if (!last) return ''
+  return 'My care load' + (last.parent ? ' for ' + last.parent : '') + ': ' + h(last.total) + ' a week, ' + h(last.mine) + ' of it mine' + (last.work ? ', on top of ' + h(last.work) + ' of paid work' : '') + '.\n' +
+    (last.off > 0 ? 'Up to ' + h(last.off) + ' a week could be shared, delegated or outsourced. ' : '') + 'Next: a family conversation with the full list.'
+}
+$('#print').addEventListener('click', function () { var f = $('#family'); if (f) printOnly(f) })
+drawTasks()
+fillForm(form, S.form)
+form.addEventListener('input', render)
+form.addEventListener('change', function (e) { if (!e.target.closest('#presets')) render() })
+render()
+
+// Shared: copy-my-result and clear-my-answers.
+;(function () {
+  var btn = $('#copy'), status = $('#copy-status'), fb = $('#copy-fallback')
+  function say(t) { if (status) status.textContent = t }
+  function fallback(text) {
+    var ok = false
+    try {
+      var ta = document.createElement('textarea')
+      ta.value = text; ta.setAttribute('readonly', ''); ta.style.position = 'fixed'; ta.style.top = '-1000px'; ta.style.opacity = '0'
+      document.body.appendChild(ta); ta.select(); ok = document.execCommand('copy'); document.body.removeChild(ta)
+    } catch (e) { ok = false }
+    if (ok) { say('Copied. Paste it anywhere.'); return }
+    if (fb) { fb.hidden = false; fb.value = text; try { fb.focus(); fb.select() } catch (e) {} }
+    say('Your browser blocked copying. Select the text below and copy it.')
+  }
+  if (btn) btn.addEventListener('click', function () {
+    var s = typeof TOOL.summary === 'function' ? TOOL.summary() : ''
+    if (!s) { say('Fill in the tool first, then copy.'); return }
+    var text = s + '\n\nMade with this free tool: ' + TOOL.url
+    try {
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(text).then(function () { say('Copied. Paste it anywhere.') }, function () { fallback(text) })
+        return
+      }
+    } catch (e) {}
+    fallback(text)
+  })
+  var reset = $('#reset')
+  if (reset) reset.addEventListener('click', function () {
+    if (!window.confirm('Clear everything you entered in this tool on this device?')) return
+    store.clear()
+    if (typeof TOOL.onReset === 'function') TOOL.onReset()
+    try { location.reload() } catch (e) {}
+  })
+})()
+
+})();
+</script>
+</body>
+</html>

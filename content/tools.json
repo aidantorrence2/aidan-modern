@@ -1,1 +1,62 @@
-[]
+[
+  {
+    "slug": "dating-app-reality-check",
+    "offer": "want-partner-dating-apps",
+    "title": "Dating App Reality Check: see where your month breaks",
+    "description": "Enter last month's app hours, matches, conversations and dates. See your own funnel, where it breaks, and three next steps for that stage. 18+."
+  },
+  {
+    "slug": "same-fight-map",
+    "offer": "partner-having-same-fight",
+    "title": "Same-Fight Map: a calm conversation plan for couples",
+    "description": "Map the fight you keep having: the trigger, what each of you says and needs, how it ends. Get a printable plan for one calm talk. Couples, 18+."
+  },
+  {
+    "slug": "new-city-friend-planner",
+    "offer": "moved-new-city-real",
+    "title": "New-City Friendship Planner: a 4-week plan for real friends",
+    "description": "Pick your interests, free evenings and neighborhood. Get a 4-week plan built on seeing the same people every week, plus a tracker for names you meet."
+  },
+  {
+    "slug": "evening-phone-audit",
+    "offer": "losing-evenings-phone-want",
+    "title": "Evening Phone Audit: see the hours your phone takes",
+    "description": "Enter your screen-time numbers and what you would rather do. See hours lost per month and year, plus a personal evening rule and a phone parking plan."
+  },
+  {
+    "slug": "tomorrow-list",
+    "offer": "want-sleep-lie-awake",
+    "title": "Tomorrow List: a 5-minute brain dump before bed",
+    "description": "A timed 5-minute brain dump that sorts each thought into tomorrow, someday or not mine to fix, then gives you a printable list to leave by the bed."
+  },
+  {
+    "slug": "why-i-quit-exercise",
+    "offer": "know-should-exercise-never",
+    "title": "Why I Quit: find your exercise pattern and a 2-week plan",
+    "description": "List the times you started exercising and why each one stopped. See your main pattern and get a minimum routine for the next 2 weeks that fits it."
+  },
+  {
+    "slug": "next-30-days-money-map",
+    "offer": "earn-money-still-feel",
+    "title": "Next 30 Days Money Map: find your lowest point",
+    "description": "Enter your balance, paydays, bills and everyday spending. See a day-by-day timeline, your lowest point, and what is truly free to spend. Not advice."
+  },
+  {
+    "slug": "job-application-funnel",
+    "offer": "need-job-applications-disappear",
+    "title": "Job Application Funnel Check: find where yours leaks",
+    "description": "Count your applications, responses, screens, interviews and offers, and how you applied. See which stage leaks and what to do next for that stage."
+  },
+  {
+    "slug": "start-it-timer",
+    "offer": "know-need-make-myself",
+    "title": "Start-It Timer: a 2-minute first step, then 10 minutes of focus",
+    "description": "Type the task you keep avoiding. Turn it into a 2-minute first action, then run a 10-minute focus timer and keep a log of what you got done."
+  },
+  {
+    "slug": "care-load-inventory",
+    "offer": "caring-parent-working-full",
+    "title": "Care Load Inventory: see every hour of caring for a parent",
+    "description": "List every care task, its hours per week and who does it. See your total care load, what could be shared, delegated or outsourced, and a printable list."
+  }
+]
