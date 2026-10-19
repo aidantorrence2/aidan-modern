@@ -1112,6 +1112,19 @@
       "status": "approved",
       "decided": "2026-10-19T01:24:33Z",
       "note": ""
+    },
+    {
+      "id": "other:nap-test-1",
+      "kind": "other",
+      "source": "claude:sync-test",
+      "title": "Test: Mac pickup after idling",
+      "summary": "Sync test after the App Nap fix. Claude decides it from another device in a moment; please leave it.",
+      "payload": {},
+      "created": "2026-10-19T01:28:29Z",
+      "expires": "2026-10-19T01:58:29Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
     }
   ]
 }
