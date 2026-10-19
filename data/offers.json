@@ -8747,11 +8747,11 @@
           "seen": "opened"
         },
         {
-          "url": "https://www.mumsnet.com/talk/general_health/1887515",
+          "url": "https://www.mumsnet.com/talk/general_health/1887515-I-quit-caffeine-today-Mother-of-all-headaches",
           "who": "BrightSunshineyDay (Mumsnet)",
-          "date": "not shown",
+          "date": "2013-10-22",
           "quote": "really want to give up again but can't face the withdrawals",
-          "seen": "snippet"
+          "seen": "opened"
         },
         {
           "url": "https://www.talkingsober.com/t/quitting-caffeine-is-hard/57141",
@@ -9084,11 +9084,11 @@
           "seen": "opened"
         },
         {
-          "url": "https://www.mumsnet.com/talk/the_doghouse/1340362",
+          "url": "https://www.mumsnet.com/talk/the_doghouse/1340362-Desperate-to-stop-18-mo-dog-from-pulling-on-the-lead",
           "who": "PamBeesly (Mumsnet)",
-          "date": "not shown",
+          "date": "2011-11-10",
           "quote": "he pulled so hard last week in the rain that I fell and really hurt myself.",
-          "seen": "snippet"
+          "seen": "opened"
         },
         {
           "url": "https://bobistheoilguy.com/forums/threads/dog-training-cost-expectations.345541/",
@@ -9261,6 +9261,184 @@
       ],
       "competitors": "Recipe and meal-planning apps: Paprika ($4.99 one-time), Plan to Eat, eMeals, and Mealime (shutting down Oct 21, 2026). Meal-kit services such as HelloFresh. Delivery apps themselves are the real competitor at 5–7pm. Most planners stop at the weekly plan and grocery list. Few step in at the moment someone is about to order.",
       "risks": "The core features (a backup meal plus a 5pm reminder) are easy for existing planners to copy. A reminder alone may not be strong enough to beat delivery-app convenience, so retention will depend on the 15-minute fallback meals being genuinely easy. Some of the signals are old (2011 blog comments). Turning away Mealime's departing users is a time-limited opportunity. The savings number must be shown as a rough estimate, not financial advice."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-19",
+    "slug": "pitch-steady",
+    "name": "Pitch Steady",
+    "need": "I can't sing in tune, and I'm too embarrassed to take lessons.",
+    "headline": "Private singing practice with a live pitch line against the target note: single notes, then phrases, then songs you choose. Five-minute sessions, and recordings stay on your phone.",
+    "buyer": "Adults who only sing alone and are too embarrassed to take lessons.",
+    "bullets": [
+      "See your pitch as a live line against the target note, so you can hear and see when you're sharp or flat.",
+      "Start with single notes, move to short phrases, then to songs you pick. Five minutes a day.",
+      "Practise privately: recordings stay on your phone unless you choose to share one."
+    ],
+    "price": "$29.99/year",
+    "priceUsd": 30,
+    "priceNote": "Below the leading singing apps' premium plans.",
+    "reasonPrompt": "Where do you sing now (car, shower, nowhere), and what would you love to be able to sing?",
+    "faq": [
+      {
+        "q": "Is this connected to another singing app?",
+        "a": "No. Pitch Steady is an independent app."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-19",
+      "summary": "Adults on forums say they can't sing but might be teachable, and only sing in the car because they're too embarrassed. Singing apps have hundreds of thousands of paid ratings.",
+      "wtp": "Simply Sing (App Store): 4.7 from 458K ratings, Premium $4.99 to $89.99.",
+      "signals": [
+        {
+          "url": "https://www.mumsnet.com/talk/am_i_being_unreasonable/4460561-Has-anyone-taken-singing-lessons",
+          "who": "KittyVonCatsworth (Mumsnet)",
+          "date": "2022-01-22",
+          "quote": "I don't think I can sing but I also don't think I'm totally beyond teaching.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/am_i_being_unreasonable/4460561-Has-anyone-taken-singing-lessons",
+          "who": "asnippersdream (Mumsnet)",
+          "date": "2022-01-22",
+          "quote": "But scared though as I only sing in my car.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/app/id1592900217",
+          "who": "Lissdan (App Store reviewer, Simply Sing)",
+          "date": "2024-12-09",
+          "quote": "my voice was just monotone flat because I wasn't able to feel the music.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.welltrainedmind.com/topic/535819-voice-lessons-question/",
+          "who": "heartosunshine (Well-Trained Mind forums)",
+          "date": "not shown",
+          "quote": "very self-conscious about my voice",
+          "seen": "snippet"
+        }
+      ]
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-19",
+    "slug": "page-a-day",
+    "name": "Page a Day",
+    "need": "I keep starting a journal and quitting after a few weeks.",
+    "headline": "One question a day, drawn from what you wrote recently. Two-minute text or voice entries, no streak to break, private and always exportable.",
+    "buyer": "Adults who keep starting journals and abandoning them.",
+    "bullets": [
+      "One short question each day, built from your recent entries so it never feels like a blank page.",
+      "Two-minute entries by typing or voice. Skip a week and you just answer today's question.",
+      "Private by default, and you can export everything any time."
+    ],
+    "price": "$19.99/year",
+    "priceUsd": 20,
+    "priceNote": "Below the leading journaling apps' yearly plans.",
+    "reasonPrompt": "How many times have you started a journal, and what made you stop last time?",
+    "faq": [
+      {
+        "q": "Is this therapy?",
+        "a": "No. Page a Day is an independent journaling app, not therapy. If you are struggling, talk to a doctor or therapist; if you are in crisis, in the US call or text 988."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-19",
+      "summary": "People describe starting journals and abandoning them within weeks, again and again, and journaling apps have tens of thousands of paid ratings.",
+      "wtp": "Day One (App Store): 4.8 from 119K ratings, $8.99 a month or $49.99 a year.",
+      "signals": [
+        {
+          "url": "https://www.autostraddle.com/i-desperately-want-to-be-person-who-journals-but-keep-failing-help/",
+          "who": "Letter writer, Autostraddle advice column",
+          "date": "2026-01-06",
+          "quote": "I end up stopping using the journal after the first few weeks of the year",
+          "seen": "opened"
+        },
+        {
+          "url": "https://youlookfab.com/welookfab/topic/do-you-keep-a-journal",
+          "who": "Irene (YouLookFab forum)",
+          "date": "about 2014",
+          "quote": "I've tried to keep a journal so many times, but always abandon them.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/app/id1044867788",
+          "who": "Day One (App Store listing)",
+          "date": "2026-10-19",
+          "quote": "Day One Silver (1 Month) $8.99; Silver Yearly $49.99; 119K Ratings",
+          "seen": "opened"
+        }
+      ]
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-19",
+    "slug": "first-sketch",
+    "name": "First Sketch",
+    "need": "I've always wanted to learn to draw, but I'm bad at it and I keep giving up.",
+    "headline": "Ten-minute freehand drawing lessons with no tracing, and each drawing photographed beside your day-one drawing so you can see you're improving.",
+    "buyer": "Adult beginners who have tried to learn drawing and quit.",
+    "bullets": [
+      "Ten-minute lessons that build basic skills freehand, without tracing.",
+      "Each drawing is photographed next to your first one, so progress is visible even when it doesn't feel like it.",
+      "Skip a week and you get a short refresher instead of jumping ahead."
+    ],
+    "price": "$24.99/year",
+    "priceUsd": 25,
+    "priceNote": "In line with drawing-lesson apps' paid plans, far below courses.",
+    "reasonPrompt": "What do you most want to be able to draw, and what made you give up last time?",
+    "faq": [
+      {
+        "q": "Do I need any talent or equipment?",
+        "a": "No. Paper and a pencil are enough. First Sketch is an independent app."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-19",
+      "summary": "Beginners on drawing forums describe feeling bad and intimidated and giving up, and drawing-lesson apps sell paid tiers.",
+      "wtp": "Learn How to Draw Tutorials (App Store): 4.4 from 1.5K ratings, PRO $6.99 to $39.99.",
+      "signals": [
+        {
+          "url": "https://www.proko.com/community/topics/lack-of-progress-makes-me-think-i-should-quit",
+          "who": "Michael G (Proko community)",
+          "date": "2026",
+          "quote": "drawing a head is still super intimidating and feels impossible",
+          "seen": "opened"
+        },
+        {
+          "url": "https://community.thevirtualinstructor.com/t/hello-joined-today-beginner/2724",
+          "who": "waynep (The Virtual Instructor community)",
+          "date": "2023-01-26",
+          "quote": "I have always wanted to learn to draw.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/app/id6444159896",
+          "who": "eeeeeeeeeeeeeeeeeeeeeeeeeva (App Store reviewer, Learn How to Draw Tutorials)",
+          "date": "2024-12-28",
+          "quote": "But I wish it could ACTUALLY teach you how to draw",
+          "seen": "opened"
+        }
+      ]
     }
   },
   {

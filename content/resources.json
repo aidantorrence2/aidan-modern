@@ -1696,5 +1696,135 @@
         ]
       }
     ]
+  },
+  {
+    "slug": "how-to-sing-in-tune-when-you-think-you-cant",
+    "offer": "pitch-steady",
+    "title": "How to sing in tune when you think you're tone deaf",
+    "description": "Most people who say they can't sing can learn to sing more in tune. A private, step-by-step way to practise: match one note, then short phrases, then songs.",
+    "intro": "Many adults who believe they cannot sing are simply untrained. Singing in tune is a skill of listening and matching, and it improves with short, regular practice, which you can do alone where nobody hears you.",
+    "sections": [
+      {
+        "h": "Start with one note",
+        "list": [
+          "Play a single comfortable note on a piano app or tuner and hum it back.",
+          "Slide your voice up and down slowly until it matches, and notice what matching feels like.",
+          "A tuner app that shows your pitch makes it easy to see whether you are above or below the note."
+        ]
+      },
+      {
+        "h": "Then short patterns",
+        "list": [
+          "Sing two or three notes in a row, such as do-re-mi, after hearing them.",
+          "Go slowly, and repeat each pattern until it feels easy before moving on."
+        ]
+      },
+      {
+        "h": "Then a song you like",
+        "list": [
+          "Pick a simple song in a comfortable range.",
+          "Sing one line at a time along with the recording, then without it.",
+          "Record yourself and listen back. It is uncomfortable at first, and it is the fastest feedback you will get."
+        ]
+      },
+      {
+        "h": "Make it a habit",
+        "p": [
+          "Five to ten minutes a day works better than an hour once a week. Warm up gently, stay in a comfortable range, and stop if your throat feels strained."
+        ]
+      },
+      {
+        "h": "When you are ready",
+        "p": [
+          "A few lessons with a patient teacher can speed things up, and many teachers work with nervous adult beginners. Practising privately first can make that first lesson feel much less scary."
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "how-to-keep-a-journal-when-you-always-quit",
+    "offer": "page-a-day",
+    "title": "How to keep a journal when you always quit after a few weeks",
+    "description": "You start a journal every January and stop by February. Why it happens, and a lighter approach that keeps going: tiny entries, one question, no streaks.",
+    "intro": "Most journals are abandoned for the same reasons: entries get too long, the blank page feels like homework, and one missed week turns into quitting. Making it smaller and easier to restart fixes most of that.",
+    "sections": [
+      {
+        "h": "Make entries tiny",
+        "list": [
+          "Aim for two minutes or three sentences. Longer is fine, but not required.",
+          "Bullet points count. So does a single line about the day."
+        ]
+      },
+      {
+        "h": "Answer one question",
+        "list": [
+          "Instead of a blank page, answer one question: What took up most of my energy today? What am I looking forward to? What do I want to remember?",
+          "Keep a short list of questions you like and rotate them."
+        ]
+      },
+      {
+        "h": "Attach it to something you already do",
+        "list": [
+          "Write right after something that happens every day: morning coffee, getting into bed, the commute home.",
+          "Keep the journal, or the app, exactly where that moment happens."
+        ]
+      },
+      {
+        "h": "Drop the streak",
+        "p": [
+          "Missing days is normal. When you come back, do not try to catch up on everything you missed; just write about today. A journal with gaps is still a journal."
+        ]
+      },
+      {
+        "h": "Look back sometimes",
+        "p": [
+          "Once a month, read a few old entries. Seeing what changed is the reward that keeps many people going. If journaling brings up difficult feelings, consider talking to a therapist; if you are in crisis, in the US call or text 988."
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "how-to-learn-to-draw-as-an-adult-when-you-keep-giving-up",
+    "offer": "first-sketch",
+    "title": "How to learn to draw as an adult when you keep giving up",
+    "description": "Feeling bad at drawing is how everyone starts. A realistic path for adult beginners: short daily practice, the basics in order, and a way to see progress.",
+    "intro": "Almost every adult who starts drawing hits the same wall: the drawings look bad, progress feels invisible, and it seems pointless. That stage is normal. Short practice on the basics, and a way to see your progress, gets most people through it.",
+    "sections": [
+      {
+        "h": "Practise the basics in order",
+        "list": [
+          "Lines and simple shapes: straight lines, circles, ellipses, boxes.",
+          "Then simple objects from life: a mug, a book, an apple, built from those shapes.",
+          "Then light and shadow on those objects. Faces and figures come later."
+        ]
+      },
+      {
+        "h": "Keep sessions short",
+        "list": [
+          "Ten to fifteen minutes a day beats a long session on the weekend.",
+          "Draw from real objects or photos rather than tracing; tracing feels good but teaches little."
+        ]
+      },
+      {
+        "h": "Make progress visible",
+        "list": [
+          "Date every drawing.",
+          "Redraw your very first drawing every few weeks and put the two side by side.",
+          "Keep a cheap sketchbook just for practice, so nothing has to be good."
+        ]
+      },
+      {
+        "h": "Handle the bad days",
+        "p": [
+          "Every artist makes far more bad drawings than good ones. When you feel like quitting, drop back to an easier exercise for a few days rather than stopping entirely."
+        ]
+      },
+      {
+        "h": "Get feedback",
+        "p": [
+          "Online drawing communities and beginner classes can point out one thing to fix at a time, which is often what unlocks progress."
+        ]
+      }
+    ]
   }
 ]
