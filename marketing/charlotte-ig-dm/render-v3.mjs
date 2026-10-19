@@ -9,7 +9,7 @@ import fs from 'fs'
 // text never sits on a face (--vision), all text above y=1440.
 //
 // Usage: node render-v3.mjs --photos=<dir of upright T<n>.jpg> --vision=<dir> --out=<dir> [--only=p01,p02]
-// Photos: ~/charlotte-video-ads/work/src (upright T<n>.jpg; stems in TOP below).
+// Photos: marketing/charlotte-video-ads/work/src (upright T<n>.jpg; stems in TOP below).
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const ARG = k => process.argv.find(a => a.startsWith(`--${k}=`))?.split('=')[1]

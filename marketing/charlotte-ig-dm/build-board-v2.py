@@ -10,7 +10,8 @@ from PIL import Image
 R, BASE, OUT = sys.argv[1:4]
 VIDEOS = json.load(open(sys.argv[4])) if len(sys.argv) > 4 else []
 R3 = sys.argv[5] if len(sys.argv) > 5 else None
-R4 = sys.argv[6] if len(sys.argv) > 6 else None   # render-v4.mjs: 10 carousels from new_top_tier_candidates   # render-v3.mjs output: photo-heavy still ads (top picks)
+R4 = sys.argv[6] if len(sys.argv) > 6 else None
+R5 = sys.argv[7] if len(sys.argv) > 7 else None   # render-v5.mjs: 10 new concepts   # render-v4.mjs: 10 carousels from new_top_tier_candidates   # render-v3.mjs output: photo-heavy still ads (top picks)
 PICKS = ['c00', 'n04', 'n11']   # Aidan liked these three (20 Oct)
 
 def thumb(path, w=300):
@@ -105,6 +106,25 @@ def card4(cid):
     return f'''<article class="card"><header><span class="num">{cid.upper()}</span><h3>{html.escape(title)}</h3><span class="lever">{html.escape(lever)}</span></header>
   <p class="why">{html.escape(why)}</p><div class="strip">{frames}</div><p class="needs ok">ready · {len(names)} cards · new_top_tier_candidates (all 106 used)</p></article>'''
 car4 = ''.join(card4(c) for c in META4) if R4 else ''
+META5 = {
+ 'x01': ('The name is the photo', 'CTR · thumb-stop', 'C-H-A-R-L-O-T-T-E set huge, each letter filled with a different portrait; card 2 shows the nine people.'),
+ 'x02': ('One shoot, many frames', 'CTR + click→chat · what you get', 'Each card is one person and four frames from the same session: what one hour gives you.'),
+ 'x03': ('Panorama table', 'CTR · swipe continuity', 'One long table of prints laid across five cards; prints cross the card edges so the swipe feels continuous.'),
+ 'x04': ('Zoom out', 'CTR · curiosity', 'Card 1 is only her eyes, then her face, then the whole portrait, then everyone else.'),
+ 'x05': ('Covers', 'CTR · editorial', 'Five magazine covers: CHARLOTTE masthead above the head, cover lines in the clear space.'),
+ 'x06': ('The exhibition', 'CTR · credibility', 'Framed prints of different sizes hung on a gallery wall with a wall label.'),
+ 'x07': ('Colour chapters', 'CTR · taste', 'The work sorted by light: golden, blue, black & white — one chapter per card.'),
+ 'x08': ('The fan', 'CTR · proof density', 'Prints fanned out like a hand of cards, seven a card.'),
+ 'x09': ('The magazine page', 'CTR · editorial', 'Each card laid out like an editorial page: headline, one big picture, two smaller ones.'),
+ 'x10': ('Torn collage', 'CTR · native/zine', 'Portraits torn out and layered like a zine; the headline on a torn paper strip.'),
+}
+def card5(cid):
+    title, lever, why = META5[cid]
+    names = json.load(open(os.path.join(R5, 'index.json')))[cid]
+    frames = strip([os.path.join(R5, cid, n + '.jpg') for n in names], names)
+    return f'''<article class="card"><header><span class="num">{cid.upper()}</span><h3>{html.escape(title)}</h3><span class="lever">{html.escape(lever)}</span></header>
+  <p class="why">{html.escape(why)}</p><div class="strip">{frames}</div><p class="needs ok">ready · {len(names)} cards</p></article>'''
+car5 = ''.join(card5(c) for c in META5) if R5 else ''
 picks = ''.join(card_html(c) for c in PICKS)
 rest = ''.join(card_html(c) for c in META if c not in PICKS)
 vids = ''.join(vcard(v) for v in sorted(VIDEOS, key=lambda v: not v.get('pick')))
@@ -175,7 +195,10 @@ video {{ width:min(100%,300px); aspect-ratio:9/16; background:#000; display:bloc
  <div class="box"><h4>Round 3</h4><p>Hero test on the winning layout (three different first frames), plus the real selfie clip if you film it.</p><p>Judge on CPC first, then cost per chat once each ad has 5+ chats.</p></div>
 </div>
 
-<h2>New carousels (new_top_tier_candidates)</h2>
+<h2>10 new concepts (new_top_tier_candidates)</h2>
+<p class="lede">Ten concepts that don't reuse any earlier layout. All 106 photos from your new folder appear across them; copy only from your decks; no text on any face.</p>
+{car5}
+<h2>Earlier carousels from the same folder (old layouts, new photos)</h2>
 <p class="lede">Ten carousel variations from your new folder: all 106 photos are used, women and men, copy only from your decks. No text on any face.</p>
 {car4}
 <h2>Photo ads, more photos</h2>
