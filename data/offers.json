@@ -8701,6 +8701,286 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-19",
+    "slug": "taper-cup",
+    "name": "Taper Cup",
+    "need": "Every time I try to cut down on coffee I get the headaches, crack, and I'm back on it.",
+    "headline": "A step-down planner for people who quit caffeine cold turkey and went back: you pick how slowly to cut, and it plans each day's amount so the drop is small.",
+    "buyer": "Adults who have tried to quit or cut caffeine and relapsed.",
+    "bullets": [
+      "Log what you drink now in cups, cans or shots; it turns that into milligrams so you can see where you start.",
+      "Choose a pace, from a few weeks to a few months. Each day's target is only a little lower than the day before.",
+      "Mark rough days and hold at the current level instead of starting over. Half-caf and decaf swaps count."
+    ],
+    "price": "$19.99/year",
+    "priceUsd": 20,
+    "priceNote": "In the range of existing caffeine-tracking apps' paid plans.",
+    "reasonPrompt": "How much caffeine do you have on a normal day, and what happened the last time you tried to cut down?",
+    "faq": [
+      {
+        "q": "Is this medical advice?",
+        "a": "No. Taper Cup is an independent planning and logging tool. If you are pregnant, take medication or have a health condition, ask a doctor before changing your caffeine."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-19",
+      "summary": "People on several forums describe withdrawal headaches derailing every attempt to cut caffeine, and caffeine-tracking apps sell paid plans.",
+      "wtp": "HiCoffee - Caffeine Tracker (App Store): 4.8 from 843 ratings, Permanent Unlock $8.99 or $6.99 a year.",
+      "signals": [
+        {
+          "url": "https://www.singletrackworld.com/forum/off-topic/cutting-out-caffeine/",
+          "who": "funkmasterp (Singletrack forum)",
+          "date": "2024-02-27",
+          "quote": "I've given up twice and had headaches both times.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/app/id1507361706",
+          "who": "HiCoffee - Caffeine Tracker (App Store listing)",
+          "date": "2026-10-19",
+          "quote": "Permanent Unlock $8.99; Annual Subscription $6.99; 843 Ratings",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/general_health/1887515",
+          "who": "BrightSunshineyDay (Mumsnet)",
+          "date": "not shown",
+          "quote": "really want to give up again but can't face the withdrawals",
+          "seen": "snippet"
+        },
+        {
+          "url": "https://www.talkingsober.com/t/quitting-caffeine-is-hard/57141",
+          "who": "VSue (Talking Sober)",
+          "date": "not shown",
+          "quote": "mid afternoon the headache was so awful I broke down and made a coffee.",
+          "seen": "snippet"
+        }
+      ]
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-19",
+    "slug": "two-minute-sit",
+    "name": "Two Minute Sit",
+    "need": "I want to meditate every day, but I can never stick with it and my mind won't stop wandering.",
+    "headline": "A meditation app for people who have started and stopped many times: sessions start at two minutes, and a wandering mind is part of the practice, not a failure.",
+    "buyer": "Adults who have started meditating several times and stopped.",
+    "bullets": [
+      "Start at two minutes. The time grows only when you choose to make it longer.",
+      "Tap each time you notice your mind has wandered. Noticing is the skill, so every tap counts.",
+      "Miss a day and you just sit again: no streaks, no guilt messages. Walking, counted-breath and single-bell options too."
+    ],
+    "price": "$29.99/year",
+    "priceUsd": 30,
+    "priceNote": "Well below the leading meditation apps' yearly plans.",
+    "reasonPrompt": "How many times have you started meditating, and what made you stop last time?",
+    "faq": [
+      {
+        "q": "Is this therapy?",
+        "a": "No. Two Minute Sit is an independent app and is not therapy or a treatment for any condition. If you are struggling with your mental health, talk to a doctor or therapist; if you are in crisis, in the US call or text 988."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-19",
+      "summary": "People asking meditation teachers for help describe being unable to stick to a routine, and the biggest meditation apps have millions of paid ratings.",
+      "wtp": "Headspace (App Store): 4.8 from 974K ratings, $12.99 a month or $69.99 a year. Calm (App Store): 4.8 from 2M ratings.",
+      "signals": [
+        {
+          "url": "https://www.mikelittle.com/?p=7245",
+          "who": "Mike Little, blog post 'Restarting Regular meditation'",
+          "date": "2025",
+          "quote": "But petered out with some changes in my home life.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/app/id493145008",
+          "who": "Headspace (App Store listing)",
+          "date": "2026-10-19",
+          "quote": "Subscription options: $12.99/month, $69.99/year. 974K Ratings",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.ananda.org/ask/sticking-to-a-meditation-routine/",
+          "who": "Nancy (Ananda 'Ask' question)",
+          "date": "not shown",
+          "quote": "when it comes time to meditate, I can't seem to stick to a routine.",
+          "seen": "snippet"
+        },
+        {
+          "url": "https://www.ananda.org/ask/sticking-with-my-meditation-practice/",
+          "who": "R. Nandini (Ananda 'Ask' question)",
+          "date": "not shown",
+          "quote": "How do I firmly stick to the practice?",
+          "seen": "snippet"
+        }
+      ]
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-19",
+    "slug": "read-the-notes",
+    "name": "Read The Notes",
+    "need": "I'm an adult learning piano, I can't read sheet music, and I keep giving up.",
+    "headline": "Short daily drills that teach adults to read piano sheet music. The song doesn't stop or flash red at every missed note; the aim is reading a real page yourself.",
+    "buyer": "Adult piano beginners who stalled on reading notation.",
+    "bullets": [
+      "Ten-minute drills on a few notes at a time, starting from middle C and moving out in both hands.",
+      "Miss a note and the music keeps going; you see what you missed when the piece ends.",
+      "Each week ends with a short real piece read from the page. Works with any keyboard; a MIDI cable helps."
+    ],
+    "price": "$9.99/month",
+    "priceUsd": 10,
+    "priceNote": "Below the leading piano-learning apps' plans.",
+    "reasonPrompt": "How far did you get with piano before, and what made you stop?",
+    "faq": [
+      {
+        "q": "Is this connected to another piano app?",
+        "a": "No. Read The Notes is an independent app."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-19",
+      "summary": "Adult learners on a piano forum describe sight-reading distress and early quitting, and piano-learning apps have hundreds of thousands of paid ratings.",
+      "wtp": "Simply Piano (App Store): 4.7 from 858K ratings, plans $19.99 to $179.99. flowkey: 4.7 from 66K ratings; a reviewer cites about $120 a year.",
+      "signals": [
+        {
+          "url": "https://hn.svelte.dev/item/18440091",
+          "who": "itnAAnti (Ask HN: How to learn to play piano?)",
+          "date": "about 2018",
+          "quote": "Learning to read music from a human teacher is frustrating.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/app/id1020357408",
+          "who": "凰萧 (App Store reviewer, flowkey)",
+          "date": "2020-12-28",
+          "quote": "this app keep yelling at you for one note and will not show the rest of the sheets before you correct it.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/app/id1020357408",
+          "who": "c@ts74 (App Store reviewer, flowkey)",
+          "date": "2020-07-07",
+          "quote": "Price wise seems to be expensive @$120 yearly but if you think of how much you're paying for private tutor, this is actually cheap.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.pianoworld.com/topics/3328619",
+          "who": "Andre Magnus (Piano World forums)",
+          "date": "not shown",
+          "quote": "sight-reading brings me immense psychological distress.",
+          "seen": "snippet"
+        }
+      ]
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-19",
+    "slug": "stay-close",
+    "name": "Stay Close",
+    "need": "I keep forgetting birthdays and losing touch with people I care about.",
+    "headline": "Stop forgetting birthdays and drifting from people you love. Stay Close reminds you a few days early and nudges you to check in, with a one-tap message ready to send.",
+    "buyer": "Busy adults (25-55) with family and friends spread across cities who feel guilty when they miss a birthday or notice months have passed since they last called someone",
+    "bullets": [
+      "Birthday and anniversary alerts 3 days ahead and on the day, imported from your contacts, with a home-screen widget so upcoming dates stay in view",
+      "Pick a check-in rhythm per person (weekly, monthly, quarterly) and get a gentle nudge when it has been too long",
+      "Log a call or text in one tap, keep short notes (kids' names, their new job), and send a ready-to-edit message without leaving the app"
+    ],
+    "price": "$19/year",
+    "priceUsd": 19,
+    "priceNote": "Free for up to 10 people with birthday alerts. Yearly plan unlocks unlimited people, check-in rhythms, notes and message drafts. Comparable apps charge $9.99-$14.99/year, $1.99-$4.99/month, or $14.99-$34.99 lifetime.",
+    "reasonPrompt": "Who is one person you've been meaning to reach out to, and how long has it been?",
+    "faq": [
+      {
+        "q": "Is this a contacts app or a CRM?",
+        "a": "No. It's a small habit tool. It reads birthdays and names from your contacts and then reminds you to reach out. It does not replace your address book or sell anything to your contacts."
+      },
+      {
+        "q": "Does it send messages for me?",
+        "a": "No. It drafts a message for you to edit and send from your own Messages, WhatsApp or email. Nothing goes out unless you tap send."
+      },
+      {
+        "q": "I feel isolated and staying in touch feels hard. Can this help?",
+        "a": "Stay Close is a reminder and habit tool. It is not therapy or treatment. If loneliness or low mood is weighing on you, a licensed therapist or counselor can help. If you are in crisis, in the US call or text 988."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-19",
+      "summary": "Birthday-reminder and stay-in-touch apps on the App Store have thousands of ratings, and reviewers describe the need in their own words: they are forgetful about birthdays and bad at staying in touch. One leading birthday app has about 10K ratings at 4.7 stars and sells $4.99/month, $9.99/year and $14.99 lifetime plans. Users of the smaller stay-in-touch apps ask for check-in reminders, and one of those apps sells a $14.99/year plan. Keepwarm combines both jobs in a single habit tool.",
+      "wtp": "Birthday Reminder & Countdown (New Marketing Lab, Inc): 4.7 stars from 10K ratings. In-app purchases: Pro Version lifetime $14.99, annual $9.99, monthly $4.99. Birthday Calendar Elite (FunPokes Inc.): 4.7 stars from 863 ratings. In-app purchases: Pro Upgrade $8.99, Unlimited Access $3.99. Amato: Friendship Tracker CRM: 4.6 stars from 75 ratings. In-app purchases: Pro Lifetime $34.99, Yearly $14.99, Monthly $1.99. All prices are from apps.apple.com US listings opened on 2026-10-19.",
+      "signals": [
+        {
+          "url": "https://apps.apple.com/us/app/birthday-reminder-countdown/id1453656360",
+          "who": "App Store reviewer xel1s.s",
+          "date": "2025-11-04",
+          "quote": "I'm very forgetful when it comes to remembering birthdays, this app has really came in clutch",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/birthday-reminder-countdown/id1453656360",
+          "who": "App Store reviewer CLily131415",
+          "date": "2023-07-19",
+          "quote": "I've always wanted to be someone who remembers everyone's birthday",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id797758928",
+          "who": "App Store reviewer Louie2317",
+          "date": "2019-10-07",
+          "quote": "Keeps me on up coming birthdays, I have so many to keep up with.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1230466454",
+          "who": "App Store reviewer CrowRay",
+          "date": "2019-07-08",
+          "quote": "If you’re bad at staying in touch, this will help.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1230466454",
+          "who": "App Store reviewer Bsmoove12345",
+          "date": "2019-07-15",
+          "quote": "I love getting reminders to check in with people I don’t see as much anymore.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/-/id1614085893",
+          "who": "App Store reviewer Yowzoe",
+          "date": "2023-01-06",
+          "quote": "I really find it helpful for staying close to far-flung people in my life",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Birthday Reminder & Countdown (10K ratings, subscription and lifetime plans) and Birthday Calendar Elite (863 ratings, which recently added a Stay in Touch check-in feature) cover birthdays. Garden: Stay in Touch (free, 3.9 stars, 50 ratings), Amato (4.6 stars, 75 ratings), Contact Journal and Henlo cover check-ins. Birthday apps are large but stop at dates. Check-in apps are small, and some reviewers say they are too CRM-like. The opening is a single, warm habit tool that does both. Birthday Calendar Elite's new Stay in Touch feature shows incumbents moving the same way.",
+      "risks": "Low barrier to entry. Phone OS contacts and calendars already show birthdays for free, and incumbents can add check-in nudges, as Birthday Calendar Elite just did. The pure stay-in-touch apps have small rating counts, so demand for paid check-ins is less proven than demand for birthday reminders. Notification fatigue can drive churn. Contact access raises privacy concerns, so on-device storage needs to be clearly communicated. Some review dates are old (2017-2019), but the 2025 review and the current IAP prices show the market is still active."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

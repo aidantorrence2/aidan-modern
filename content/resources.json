@@ -1396,5 +1396,137 @@
         ]
       }
     ]
+  },
+  {
+    "slug": "how-to-cut-down-on-caffeine-without-headaches",
+    "offer": "taper-cup",
+    "title": "How to cut down on caffeine without the headaches derailing you",
+    "description": "Quitting caffeine cold turkey often ends with a headache and a coffee. A slower step-down plan, what to expect, and how to handle rough days.",
+    "intro": "If every attempt to quit caffeine ends with a pounding headache and a cup of coffee by mid-afternoon, the problem is usually the speed, not your willpower. Cutting down gradually gives your body time to adjust.",
+    "sections": [
+      {
+        "h": "Find your starting point",
+        "list": [
+          "For a few days, write down everything with caffeine: coffee, tea, energy drinks, cola, pre-workout, some painkillers.",
+          "Note the size of each drink and the time. Most people have more than they think, often late in the day."
+        ]
+      },
+      {
+        "h": "Step down slowly",
+        "list": [
+          "Cut a small amount every few days rather than all at once, for example a quarter of a cup or one drink.",
+          "Mix regular with decaf or half-caf so the ritual stays the same while the dose drops.",
+          "Cut the latest drink of the day first; it tends to affect sleep the most."
+        ]
+      },
+      {
+        "h": "On rough days",
+        "list": [
+          "Hold at the current level for a few days instead of going back to where you started.",
+          "Drink water, eat regular meals and get some daylight and movement in the morning.",
+          "Plan the hard part: many people feel worst in the first days after a cut."
+        ]
+      },
+      {
+        "h": "Keep the ritual",
+        "p": [
+          "Much of the habit is the cup, the break and the warmth. Keep the morning ritual with decaf, tea or hot water with lemon, so you are not losing the pleasant part along with the caffeine."
+        ]
+      },
+      {
+        "h": "When to talk to a doctor",
+        "p": [
+          "If you are pregnant, take medication, have a heart condition or have headaches that are severe or unusual, talk to a doctor before changing your caffeine. This guide is not medical advice."
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "how-to-meditate-when-you-keep-quitting",
+    "offer": "two-minute-sit",
+    "title": "How to meditate when you keep quitting: start with two minutes",
+    "description": "You have started meditating many times and stopped. A smaller way to begin, why a wandering mind is normal, and how to keep going after a missed day.",
+    "intro": "Most people who try meditation stop at some point, often because the sessions are too long, the mind wanders and it feels like failing. Starting much smaller, and changing what counts as success, makes it far easier to keep going.",
+    "sections": [
+      {
+        "h": "Start with two minutes",
+        "list": [
+          "Sit for two minutes a day, at the same time and place, such as after brushing your teeth.",
+          "Only make it longer when two minutes feels easy, and only by a minute or two.",
+          "A short sit you do beats a long one you skip."
+        ]
+      },
+      {
+        "h": "A wandering mind is the practice",
+        "list": [
+          "Your mind will wander, often within seconds. That is normal for everyone.",
+          "The moment you notice and come back to the breath is the skill you are building.",
+          "Count each time you notice. More noticing is progress, not failure."
+        ]
+      },
+      {
+        "h": "Pick a simple method",
+        "list": [
+          "Count breaths from one to ten, then start again.",
+          "Or notice sounds around you without naming them.",
+          "If sitting still is hard, try a slow walk paying attention to each step."
+        ]
+      },
+      {
+        "h": "After a missed day",
+        "p": [
+          "Skip the streak and the guilt. Sit for two minutes the next day as if nothing happened. The habit is built by returning, not by never missing."
+        ]
+      },
+      {
+        "h": "When to get help",
+        "p": [
+          "Meditation is not a treatment for anxiety, depression or trauma. If you are struggling with your mental health, talk to a doctor or therapist. If you are in crisis, in the US call or text 988."
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "how-adults-learn-to-read-piano-sheet-music",
+    "offer": "read-the-notes",
+    "title": "How adults learn to read piano sheet music, a few notes at a time",
+    "description": "Reading sheet music is where many adult piano learners give up. A gentle path from middle C outward, with short daily drills and real pieces.",
+    "intro": "Many adults learning piano can play by ear or by following colored bars, but freeze in front of real sheet music. Reading is a separate skill, and it builds quickly with a few minutes a day on a few notes at a time.",
+    "sections": [
+      {
+        "h": "Learn landmark notes first",
+        "list": [
+          "Start with middle C, then treble G and bass F. These landmarks let you work out nearby notes by counting steps.",
+          "Learn notes as lines and spaces near those landmarks rather than memorising the whole staff at once."
+        ]
+      },
+      {
+        "h": "Read by steps and skips",
+        "list": [
+          "Notice whether the next note moves up or down, and by a step (next line or space) or a skip.",
+          "Reading the shape of the melody is faster than naming every note."
+        ]
+      },
+      {
+        "h": "Drill a little every day",
+        "list": [
+          "Ten minutes a day on a small group of notes beats a long session once a week.",
+          "Use very easy music, well below your playing level, so you can read without stopping.",
+          "Keep going when you miss a note. Stopping to fix every mistake trains hesitation."
+        ]
+      },
+      {
+        "h": "Play a real piece each week",
+        "p": [
+          "End each week with a short, simple piece read from the page. Beginner method books and easy classical pieces are ideal. Finishing a real page is what keeps adults going."
+        ]
+      },
+      {
+        "h": "If you are stuck",
+        "p": [
+          "A few lessons with a teacher focused only on reading can unlock a lot. So can playing easy duets with someone, which forces you to keep going."
+        ]
+      }
+    ]
   }
 ]
