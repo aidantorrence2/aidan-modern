@@ -1337,6 +1337,31 @@
       "status": "denied",
       "decided": "2026-10-19T05:22:05Z",
       "note": "pickpack is a shit product"
+    },
+    {
+      "id": "offers:secure-metrics:2026-10-19",
+      "kind": "other",
+      "source": "codex:lead-generation",
+      "title": "Allow read-only signup counts for the hourly lead campaign",
+      "summary": "Use connected Sites to count consented signups for this campaign only. Private row fields may be read briefly to deduplicate; save aggregate counts only. No exports, sends or database changes.",
+      "payload": {
+        "action": "Authorize ongoing read-only lead measurement for this offer campaign through the connected Sites tools, so the hourly worker can report real signup totals without export credentials.",
+        "project_id": "appgprj_6ad56c0398f4819187d2d7870ae70ac4",
+        "allowed_operations": [
+          "Use read_database_overview to identify only this project's exact live D1 binding/table names.",
+          "Read only relevant signup/consent/withdrawal rows through read_database_table_rows in bounded pages of 25, stopping at the returned end. No arbitrary SQL.",
+          "Compute aggregate active consenting adult signups by offer, source and time; distinguish early-version interest, research conversation and updates-only. Deduplicate using identifiers only transiently in memory.",
+          "Save only aggregate counts, time, coverage/truncation limits and nonpersonal measurement metadata to the handoff."
+        ],
+        "data_scope": "Database row responses may contain private email addresses and city/participation/consent/attribution fields. Read only to count and deduplicate. Do not persist, export, email, share or put individual lead records in Library, prompts for other workers, Git repositories or public pages.",
+        "limits": "Read-only ongoing measurement for this one project. No customer outreach, data deletion/migration, credential recovery, database changes, new endpoint, deployment, spending or broader access. Stop if access is denied; no alternative access path.",
+        "why_needed": "The handoff's zero was historical and cloud private-export credentials were omitted. The hourly targets cannot be honestly measured until separately authorized secure access is approved."
+      },
+      "created": "2026-10-19T05:23:23Z",
+      "expires": "2026-10-22T05:23:23Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
     }
   ]
 }
