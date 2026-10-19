@@ -1636,6 +1636,44 @@
       "status": "approved",
       "decided": "2026-10-19T17:06:17Z",
       "note": ""
+    },
+    {
+      "id": "software100:agency-price-test-2026-10-19",
+      "kind": "email",
+      "source": "codex:aidantorrence",
+      "title": "Send Town Press Media one $100 software price-test email",
+      "summary": "Ask whether comparing client report activity across months is a recurring manual task, and whether a working local tool would merit a $100 one-time licence. Explicitly unbuilt; no payment request, follow-up, deployment or spend.",
+      "payload": {
+        "action": "Send one exact, explicitly hypothetical software price-test email to a new agency prospect. No payment requested or checkout published.",
+        "messages": [
+          {
+            "to": "hello@townpressmedia.com",
+            "subject": "A $100 tool for checking client report engagement?",
+            "body": "Hi Town Press Media team,\n\nI saw that you provide custom dashboards and monthly strategy calls.\n\nI'm testing a software idea before building it: a local tool that compares report-activity exports across months and flags clients whose recorded activity has dropped. It would use your current reporting data, without moving clients to another platform.\n\nWould that replace a recurring manual check for you, and would a $100 one-time licence be worth considering if a demo worked on a redacted sample of your actual export?\n\nNothing is built or available to buy yet. I'd confirm the export is usable and demonstrate the results before asking for payment.\n\nIf this isn't a gap, no need to reply. I won't follow up.\n\nThanks,\nAidan Torrence"
+          }
+        ],
+        "evidence": {
+          "contact": "https://townpressmedia.com/contact/ publishes hello@townpressmedia.com",
+          "service_fit": "https://townpressmedia.com/services/ offers custom dashboards, reporting and monthly strategy calls",
+          "problem_source": "https://www.reddit.com/r/agency/comments/1vkvnhu/how_does_client_reporting_actually_work_at_your/ contains an operator describing manual checks of report opens across months. The prospect is not asserted to have that pain.",
+          "incumbent_check": "https://help.agencyanalytics.com/en/articles/14012200-share-and-download-reports already supports per-report engagement. Cross-month comparison, export availability and willingness to pay remain unvalidated.",
+          "prior_contact_check": "Gmail sender/recipient domain search found no prior messages on 2026-10-19."
+        },
+        "limits": [
+          "Only this recipient and exact text",
+          "Fresh duplicate/decline check before sending",
+          "No follow-up",
+          "No claim that the product exists or works with their platform",
+          "No customer data or activity exported by the agent",
+          "No charge, price creation, checkout publication, deployment or spend",
+          "No social or Instagram posts"
+        ]
+      },
+      "created": "2026-10-19T17:37:56Z",
+      "expires": "2026-10-22T17:37:56Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
     }
   ]
 }
