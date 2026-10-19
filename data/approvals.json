@@ -1177,7 +1177,9 @@
           "No charges or money transfers",
           "No publication",
           "Stop if identity verification or new permissions are required"
-        ]
+        ],
+        "result": "Opened Google sign-in and selected the existing Aidan account. Stopped at the identity-sharing consent screen; no Stripe dashboard access yet, account changes, charges, or publication.",
+        "result_at": "2026-10-19T05:12:14Z"
       },
       "created": "2026-10-19T05:09:01Z",
       "expires": "2026-10-22T05:09:01Z",
