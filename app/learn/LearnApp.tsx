@@ -32,11 +32,19 @@ const GRADES: { g: Grade; label: string }[] = [
 
 // ---------- speech ----------
 
+/** Exposed by the Android app wrapper (android-learn/): WebView has no speechSynthesis or downloads. */
+type NativeBridge = {
+  speak(text: string, lang: string, rate: number): void
+  saveFile(name: string, content: string): void
+}
+const nativeBridge = () => (window as unknown as { LearnNative?: NativeBridge }).LearnNative
+
 function useSpeech(lang: string, rate: number, voiceURI: string) {
   const [voices, setVoices] = useState<SpeechSynthesisVoice[]>([])
   const [supported, setSupported] = useState(false)
 
   useEffect(() => {
+    if (nativeBridge()) return setSupported(true)
     if (!('speechSynthesis' in window)) return
     setSupported(true)
     const base = lang.split('-')[0].toLowerCase()
@@ -54,9 +62,12 @@ function useSpeech(lang: string, rate: number, voiceURI: string) {
 
   const speak = useCallback(
     (text: string) => {
+      const spoken = text.replace(/\s\/\s/g, ', ').replace(/…/g, '')
+      const native = nativeBridge()
+      if (native) return native.speak(spoken, lang, rate)
       if (!('speechSynthesis' in window)) return
       speechSynthesis.cancel()
-      const u = new SpeechSynthesisUtterance(text.replace(/\s\/\s/g, ', ').replace(/…/g, ''))
+      const u = new SpeechSynthesisUtterance(spoken)
       u.lang = lang
       u.rate = rate
       const v = voices.find((x) => x.voiceURI === voiceURI) ?? voices[0]
@@ -128,7 +139,8 @@ function cardBadge(p: CardProgress | undefined, now: number) {
 
 // ---------- app ----------
 
-export default function LearnApp({ deck }: { deck: Deck }) {
+/** `embedded`: running inside the Android app, where there's no language index to go back to. */
+export default function LearnApp({ deck, embedded = false }: { deck: Deck; embedded?: boolean }) {
   const [store, setStore] = useState<Store | null>(null)
   const [view, setView] = useState<View>('home')
   const [now, setNow] = useState(() => Date.now())
@@ -265,6 +277,16 @@ export default function LearnApp({ deck }: { deck: Deck }) {
     window.addEventListener('keydown', onKey)
     return () => window.removeEventListener('keydown', onKey)
   })
+
+  // Lets the Android back button close a sub-screen before exiting the app.
+  useEffect(() => {
+    const w = window as unknown as { learnBack?: () => boolean }
+    w.learnBack = () => {
+      if (view === 'home') return false
+      setView('home')
+      return true
+    }
+  }, [view])
 
   if (!store || !queue || !settings) {
     return (
@@ -470,10 +492,14 @@ export default function LearnApp({ deck }: { deck: Deck }) {
   // ---------- settings ----------
   if (view === 'settings') {
     const exportData = () => {
-      const blob = new Blob([JSON.stringify(store, null, 1)], { type: 'application/json' })
+      const json = JSON.stringify(store, null, 1)
+      const name = `learn-${deck.code}-${new Date().toISOString().slice(0, 10)}.json`
+      const native = nativeBridge()
+      if (native) return native.saveFile(name, json)
+      const blob = new Blob([json], { type: 'application/json' })
       const a = document.createElement('a')
       a.href = URL.createObjectURL(blob)
-      a.download = `learn-${deck.code}-${new Date().toISOString().slice(0, 10)}.json`
+      a.download = name
       a.click()
       URL.revokeObjectURL(a.href)
     }
@@ -622,9 +648,13 @@ export default function LearnApp({ deck }: { deck: Deck }) {
       <style dangerouslySetInnerHTML={{ __html: CSS }} />
       <div className="lx-wrap">
         <div className="lx-top">
-          <Link className="lx-link" href={'/learn' as any}>
-            ← Languages
-          </Link>
+          {embedded ? (
+            <span />
+          ) : (
+            <Link className="lx-link" href={'/learn' as any}>
+              ← Languages
+            </Link>
+          )}
           <button className="lx-link" onClick={() => setView('settings')}>
             Settings
           </button>
