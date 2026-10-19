@@ -208,6 +208,8 @@ approval and never posted without it.
 
 | Candidate | Evidence found | What is missing |
 |---|---|---|
+| Better Shots: phone photos still not good (doc side, 19 Oct) | Patch post (Jason Brooks, 2013) opened; CamGuru 3.3 from 90 ratings, courses $39 to $99, opened. Samsung Community (WajjuM) 403, Google Play review page empty, Blind blocks fetches. | A second opened page with two more people. |
+| Quiet Kit: learning drums without a kit or in an apartment (doc side, 19 Oct) | Melodics 4.7 from 630 ratings, $34.99/mo or $179.99/yr, opened. Both The Fretboard threads (stickyfiddlestickyfiddle, ChrisRG, octatonic, Haych, Lodious) and DrumChat (BlueSky) return 403 to our fetch. | Two forum pages that open, in people's own words. |
 | Sign Keep: learning sign language with no one to practise with (doc side, 19 Oct) | Lifeprint (Jessica Goodrich, 2007) opened; Lingvano 4.9 from 120K ratings, ASL Premium $119.99/yr, opened. Mayo Clinic Connect comments (mickey5909, judiv, imallears) return 403 to our fetch. | A second opened forum page in people's own words. |
 | Class and workshop rosters for Square sellers | Eight sellers across four Square Community threads, 2020-2025, opened. | A willingness-to-pay signal; they copy by hand. |
 | Exam prep for one licensing or citizenship exam (e.g. Life in the UK test) | Flippa listing of a UK citizenship test app at USD $20,242/month profit; Tree Nerd Academy (arborist exam) $31,008 in 30 days on TrustMRR. Both opened. | A third business or buyer. |
