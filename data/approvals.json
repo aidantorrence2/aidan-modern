@@ -996,7 +996,9 @@
         ],
         "validation": "Local browser signup, storage, attribution, withdrawal, eight forms, mobile display, and unauthorized export checks passed. Typecheck and production build passed.",
         "verification": "After deployment check one disposable live browser signup and delete it.",
-        "no_emails_or_spend": true
+        "no_emails_or_spend": true,
+        "result": "Published corrected version 2 at https://real-change-pilots-aidan-2026.aidantorrence.chatgpt.site/phone-reset. Removed all preset prices. Live browser signup, participation choice, attribution, withdrawal, mobile layout and eight pages passed. Disposable record deleted. Original six emails were not sent.",
+        "result_at": "2026-10-19T01:20:11Z"
       },
       "created": "2026-10-19T01:17:55Z",
       "expires": "2026-10-22T01:17:55Z",
