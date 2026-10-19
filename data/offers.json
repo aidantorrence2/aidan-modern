@@ -600,6 +600,309 @@
     }
   },
   {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-19",
+    "slug": "pile-pricer",
+    "name": "Pile Pricer",
+    "need": "Which of my stuff is actually worth selling, and how do I list it everywhere without spending all weekend?",
+    "headline": "Photograph the whole pile. Find out what's worth selling. List it everywhere at once.",
+    "buyer": "People clearing out a closet, garage or move-out pile who want to resell on eBay, Poshmark, Mercari, Depop or Facebook Marketplace, not full-time resellers.",
+    "bullets": [
+      "Take one photo of a pile or shelf. It picks out each item and estimates a price from recent sold listings, after platform fees",
+      "Sorts items into sell, bundle or donate, so you don't spend time listing things worth $3",
+      "Writes each listing once, posts it to several marketplaces, and takes it down everywhere when it sells"
+    ],
+    "price": "$12/month, cancel anytime",
+    "priceUsd": 12,
+    "priceNote": "Cheaper than reseller crosslisters ($14.99 to $59.99/mo per Crosslist's comparison) because it is built for a one-off clear-out, not a business. Price estimates come from sold comps and aren't guaranteed.",
+    "reasonPrompt": "What are you clearing out, and roughly how many items?",
+    "faq": [
+      {
+        "q": "How much will I make?",
+        "a": "That depends on what you own and on demand. We show recent sold prices for similar items so you can decide. We don't promise any amount."
+      },
+      {
+        "q": "Which marketplaces does it post to?",
+        "a": "The big resale marketplaces such as eBay, Poshmark, Mercari, Depop and Facebook Marketplace. You still ship each item yourself."
+      },
+      {
+        "q": "Is this for professional resellers?",
+        "a": "No. It is for one-off clear-outs. Tools like Vendoo and Crosslist suit high-volume sellers better."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-19",
+      "summary": "Crosslisting and photo-pricing apps already have thousands of App Store ratings and hundreds of Trustpilot reviews from sellers who pay to save listing time. The gap is the casual seller who first needs to know what is worth listing, and then wants posting done in one step.",
+      "wtp": "Vendoo's iOS app is rated 4.5 from 2.9K ratings. One reviewer cites subscriptions of '$30+ a month'. Vendoo has 247 Trustpilot reviews with a 4.2 TrustScore. Hero's AI reseller app is rated 4.7 from 2.1K ratings and lists in-app purchases from $9.99 to $49.99. Crosslist's own comparison gives Vendoo plans at $14.99, $29.99 and $59.99/mo and Crosslist plans at $29.99 to $44.99/mo.",
+      "signals": [
+        {
+          "url": "https://www.trustpilot.com/review/vendoo.co",
+          "who": "Melissa Kimball, Vendoo user (Trustpilot)",
+          "date": "2026-10-09",
+          "quote": "Vendoo Has Been a Time Saver, and a Life Saver!",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.trustpilot.com/review/vendoo.co",
+          "who": "Jody Swierk, Vendoo user (Trustpilot)",
+          "date": "2026-10-03",
+          "quote": "I've been using Vendoo for over five years, and after trying several other cross-listing apps,",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/app/id1612168777",
+          "who": "Brilliant.girl, Vendoo iOS reviewer (app rated 4.5, 2.9K ratings)",
+          "date": "2024-09-29",
+          "quote": "The best crosslisting tool by far and always getting even better!",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/-/id6479718293",
+          "who": "molliwater, Hero: AI Reseller Listing App reviewer (Hero Stuff, Inc; 4.7, 2.1K ratings)",
+          "date": "2025-06-17",
+          "quote": "Otherwise I see a ton of potential and would definitely consider becoming a customer once a few updates are deployed.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://crosslist.com/blog/vendoo-pricing",
+          "who": "Crosslist (competitor pricing comparison)",
+          "date": "2026-07-13 (last updated)",
+          "quote": "Vendoo now offers 3 plans: Starter ($14.99/mo), Growth ($29.99/mo), and Pro ($59.99/mo)",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Vendoo, Crosslist, List Perfectly, Hero (AI reseller listing app), Underpriced AI (photo pricing), Flyp, and eBay's own Terapeak.",
+      "risks": "Crowded category. Marketplace sync breaks often: the Vendoo App Store review from Calvin H. S says the 'app needs to be deleted and reinstalled often to work properly.' Billing complaints appear too: a Hero reviewer said 'I paid them 50 bucks and now they want another 50.' Photo price estimates are unreliable for unique or worn items. Casual sellers stop paying once the pile is gone, so expect high churn."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-19",
+    "slug": "porchlight-preview",
+    "name": "Porchlight Preview",
+    "need": "How do I find paying website clients without bidding against hundreds of people on freelance sites?",
+    "headline": "Find local businesses with no website, build them a free preview, and pitch with the real thing.",
+    "buyer": "Freelance web designers and beginners who can build simple sites and want local small-business clients.",
+    "bullets": [
+      "Search a city and trade to list businesses whose Google listing has no website or a weak one",
+      "Builds a private preview site from their public listing (name, hours, photos, reviews) so your pitch is a link they can click",
+      "Sends a short, honest outreach note with an easy opt-out, and logs who opened the preview"
+    ],
+    "price": "$29/month",
+    "priceUsd": 29,
+    "priceNote": "Within the range of existing no-website lead tools ($15 to $149/mo for LeadsByLocation; €19.95 one-time for businesseswithoutwebsite.com). You still do the client work and set your own price.",
+    "reasonPrompt": "What city and kinds of businesses would you like to build sites for?",
+    "faq": [
+      {
+        "q": "Is this a guaranteed way to make money?",
+        "a": "No. It finds businesses and helps you pitch them. Whether they buy depends on your work, your price and your follow-up."
+      },
+      {
+        "q": "Is it okay to build a preview for a business that didn't ask?",
+        "a": "The preview stays private, uses only their public listing details, and is deleted if they say no. Outreach includes an opt-out, and we cap send volume."
+      },
+      {
+        "q": "Do I need to code?",
+        "a": "No. The preview is generated for you. You'll need basic web-building skills to deliver the final site."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-19",
+      "summary": "Several small, Stripe-verified tools already sell lists of local businesses with no website to freelancers. One has 33 paying subscriptions. Freelancers are also replacing portfolios with custom demo sites as the pitch. Combining the lead list with an auto-built preview is the new step.",
+      "wtp": "LeadsByLocation on TrustMRR (Stripe-verified): $561 MRR from 33 active subscriptions, $5,231 all-time revenue, plans $15 to $149/mo, as of Oct 18, 2026. businesseswithoutwebsite.com on TrustMRR: $266 all-time revenue from a €19.95 one-time price, no active subscriptions.",
+      "signals": [
+        {
+          "url": "https://trustmrr.com/startup/leadsbylocation",
+          "who": "LeadsByLocation (founder TaeCodes), TrustMRR listing",
+          "date": "2026-10-18 (last updated)",
+          "quote": "Find local businesses that need a better or has no website.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://trustmrr.com/startup/businesseswithoutwebsite-com",
+          "who": "businesseswithoutwebsite.com (founder Erwin Edink), TrustMRR listing",
+          "date": "2026-10-18 (revenue last updated)",
+          "quote": "finds local businesses that don't have a website yet",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.skool.com/learn-ai/built-a-demo-site-where-the-house-constructs-itself-as-you-scroll-my-cold-outreach-weapon-for-local-home-builders",
+          "who": "Mirza Baig (Apex Digital), Skool community post",
+          "date": "Jul 9 (year not shown)",
+          "quote": "instead of sending a portfolio, I built a full concept demo to pitch with",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "LeadsByLocation, businesseswithoutwebsite.com, NoSite Search and Fludi Leads (TrustMRR listings, not opened), general scrapers like Outscraper, and AI site builders like Durable.",
+      "risks": "Revenue across this niche is small, and most listings show few or no subscriptions. The Skool demo-pitch post reports no results. Cold outreach must follow CAN-SPAM/GDPR rules or it reads as spam. Lead lists go stale and are shared by many sellers, so the same businesses get pitched repeatedly."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-19",
+    "slug": "straight-to-desk",
+    "name": "Straight-to-Desk",
+    "need": "How do I get a real person to look at my application instead of it vanishing into the pile?",
+    "headline": "Skip the stack of 2,000 applications. Send one good note to the person who would actually manage you.",
+    "buyer": "Job seekers who apply online, never hear back, and want a careful, low-volume way to reach a human.",
+    "bullets": [
+      "Paste a job link. It identifies the likely hiring manager (or a team member who can pass your note along) and their work email",
+      "Drafts a short note tied to that team's public work, plus a one-page plan for your first 30 days in the role",
+      "Limits you to a few notes a day and one polite follow-up, so it never becomes spam"
+    ],
+    "price": "$15/month",
+    "priceUsd": 15,
+    "priceNote": "Below the $19 to $49/mo that existing hiring-manager finders charge (PitchMe $19/mo or $1 per find; Frontrunners.io $29/mo). The difference is a capped, quality-first note and work plan rather than bulk email lookups.",
+    "reasonPrompt": "Paste a job you applied to (or want to apply to) and tell us why you'd be good at it.",
+    "faq": [
+      {
+        "q": "Will this get me hired?",
+        "a": "No tool can promise that. It raises the chance a person actually reads your application. You should still apply through the official channel."
+      },
+      {
+        "q": "Won't hiring managers be annoyed?",
+        "a": "Some will. Notes are short, relevant and capped at one follow-up, and we tell you when a company says it doesn't want direct contact."
+      },
+      {
+        "q": "What if no email is found?",
+        "a": "We suggest a team member or a mutual connection who could forward your note instead."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-19",
+      "summary": "Job seekers already pay for hiring-manager email finders. Recruiters and career writers describe getting past the online pile by reaching a person directly. Current tools stop at the email address, and this offer covers what to actually say.",
+      "wtp": "PitchMe pricing page: $1 per find or $19/month unlimited, 'Trusted by 120,000+ job seekers', 4.7 stars on the Chrome Web Store. Frontrunners.io: Hiring Manager Finder in a $29/mo Basic plan and a $49/mo Pro plan. Kaspr: free tier, paid plans from $49/month per license.",
+      "signals": [
+        {
+          "url": "https://www.themuse.com/advice/how-to-cold-call-for-a-job",
+          "who": "Lisa Barrow, CEO of Kada Recruiting, quoted by The Muse Editors",
+          "date": "2024-10-17 (updated)",
+          "quote": "I got the job, and later learned they had over 2,000 applicants for that particular position.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://pitchmeai.com/pricing",
+          "who": "PitchMe (competitor pricing page)",
+          "date": "not shown",
+          "quote": "Trusted by 120,000+ job seekers",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.stork.ai/en/frontrunners-io",
+          "who": "Frontrunners.io (competitor, via Stork.ai listing)",
+          "date": "2026-08-18 (shipped)",
+          "quote": "Automates research to find and verify contact information for hiring managers within target companies.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://kaspr.io/blog/hiring-manager-email",
+          "who": "Monika Kisielewska, Kaspr blog",
+          "date": "2024-08-07",
+          "quote": "can demonstrate initiative and enthusiasm for the role",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "PitchMe ($1/find, $19/mo), Frontrunners.io ($29 to $49/mo), Kaspr, Hunter, Apollo, SignalHire, and LinkedIn InMail.",
+      "risks": "Some hiring experts disagree. Ask a Manager's Alison Green answered 'No, absolutely not' to whether direct outreach beats applying (search snippet only, not opened). Email finders can be inaccurate. Mass outreach would hurt both users and our reputation, which is why volume is capped. The category is crowded and cheap, at $1 per find."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-19",
+    "slug": "quiet-beacon",
+    "name": "Quiet Beacon",
+    "need": "How do I get recruiters to come to me without posting #OpenToWork for my boss to see?",
+    "headline": "Get found by recruiters without the badge. Your profile does the job search while you sleep.",
+    "buyer": "People who are employed but quietly looking, plus anyone who has stopped hearing from recruiters, who want inbound messages instead of more cold applying.",
+    "bullets": [
+      "Name the role you want. It shows which search terms recruiters for that role use, and where your profile is missing them",
+      "Rewrites your headline, About section and skills so you show up in those searches, using only things you've actually done",
+      "Checks every few weeks which searches you appear in and suggests one small fix at a time"
+    ],
+    "price": "$19 one-time, includes 3 months of check-ins",
+    "priceUsd": 19,
+    "priceNote": "One-time price, unlike the $12 to $49/mo subscriptions in this category (Careerflow from $12/mo; Resume Worded $49/mo per Careerflow's comparison). Inbound messages aren't guaranteed.",
+    "reasonPrompt": "What job title do you want recruiters to find you for?",
+    "faq": [
+      {
+        "q": "Will my employer see that I'm looking?",
+        "a": "No. Quiet Beacon doesn't post anything or turn on the public #OpenToWork frame. It only helps you edit your own profile."
+      },
+      {
+        "q": "Does it invent experience?",
+        "a": "No. It only rephrases what you tell it you've done, so recruiters see accurate keywords."
+      },
+      {
+        "q": "How soon will recruiters message me?",
+        "a": "It varies by field and market. Some roles get searched daily and others rarely. We show you which searches you appear in, not a promised number of messages."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-19",
+      "summary": "Millions of people signal they're looking on LinkedIn, and LinkedIn says the public frame increases recruiter InMails. But recruiters say the badge can look desperate, and current employers can see it. Paid profile optimizers have thousands of reviews. The new angle is inbound-only and discreet.",
+      "wtp": "Resume Worded has 3,007 Trustpilot reviews and a 4.8 TrustScore, including reviewers who subscribed to Pro for their LinkedIn profile. Careerflow's Oct 2026 comparison lists paid LinkedIn optimizers: Careerflow from $12/mo, Jobscan $39.96/mo, Resume Worded $49/mo, Teal $36/mo, Hiration $20/mo.",
+      "signals": [
+        {
+          "url": "https://www.fortune.com/2024/09/05/linkedin-opentowork-badge-recruiters-job-search",
+          "who": "LinkedIn, as told to Fortune (Orianna Rosa Royle)",
+          "date": "2024-09-05",
+          "quote": "The company told Fortune that those who use the #OpenToWork photo frame are, on average, 40% more likely to receive InMails",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.fortune.com/2024/09/05/linkedin-opentowork-badge-recruiters-job-search",
+          "who": "Victoria McLean, founder of City CV, quoted in Fortune",
+          "date": "2024-09-05",
+          "quote": "It can look desperate, amateurish, and recruiters won't bite,",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.trustpilot.com/review/resumeworded.com",
+          "who": "Koflan D, Resume Worded reviewer (Trustpilot, 5 stars)",
+          "date": "2026-07-30",
+          "quote": "helps structure executive experience so recruiters actually notice it.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.trustpilot.com/review/resumeworded.com",
+          "who": "Hasan Nadeem, Resume Worded reviewer (Trustpilot, 1 star)",
+          "date": "2026-10-12",
+          "quote": "I subscribed to Resume Worded Pro after reading positive Trustpilot reviews, specifically to improve my LinkedIn profile.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://careerflow.ai/blog/linkedin-optimization-tools",
+          "who": "Careerflow Team (competitor comparison)",
+          "date": "2026-10-01",
+          "quote": "so it ranks higher in recruiter searches and makes a stronger impression.",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Careerflow LinkedIn Optimization, Resume Worded LinkedIn Review, Jobscan, Teal, Hiration, Taplio, and LinkedIn's own private Open to Work setting.",
+      "risks": "Close to resume-tool territory, so it must stay focused on getting found, not on tailoring applications. The keyword-to-message link is mostly claimed by vendors. LinkedIn's 40% figure is about the public frame, not profile wording. LinkedIn can change how search works at any time. The 1-star Resume Worded review shows buyers get angry when profile tools don't produce results."
+    }
+  },
+  {
     "slug": "shelf-date",
     "name": "Shelf Date",
     "type": "software",
