@@ -3269,5 +3269,48 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "how-to-get-better-at-mental-maths-as-an-adult",
+  "offer": "head-sums",
+  "title": "How to get better at mental maths as an adult",
+  "description": "Slow at sums in your head and always reaching for the calculator? Learn a few everyday tricks (round and adjust, split numbers, 10% first) and practise five minutes a day.",
+  "intro": "Most adults who feel bad at mental maths were never shown the shortcuts that quick people use. A handful of methods covers nearly every everyday sum.",
+  "sections": [
+   {
+    "h": "Round, then adjust",
+    "list": [
+     "To work out 49 × 6, do 50 × 6 = 300, then take away 6: 294.",
+     "For prices like £3.99, think £4 and adjust at the end."
+    ]
+   },
+   {
+    "h": "Split numbers apart",
+    "list": [
+     "To add 38 + 47, add the tens (30 + 40 = 70) then the ones (8 + 7 = 15): 85.",
+     "To multiply 7 × 14, do 7 × 10 = 70 plus 7 × 4 = 28: 98."
+    ]
+   },
+   {
+    "h": "Percentages and tips: start from 10%",
+    "list": [
+     "10% is the number with the decimal point moved one place: 10% of 64 is 6.40.",
+     "20% is double that, 5% is half of it, and 15% is 10% plus 5%."
+    ]
+   },
+   {
+    "h": "Count change up",
+    "list": [
+     "For £20 paying £13.60, count up: 40p to £14, then £6 to £20, so £6.40."
+    ]
+   },
+   {
+    "h": "Practise little and often",
+    "list": [
+     "Five minutes a day on everyday sums beats an hour once a week.",
+     "Say the steps out loud at first; speed comes later."
+    ]
+   }
+  ]
  }
 ]
