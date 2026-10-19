@@ -1186,6 +1186,32 @@
       "status": "approved",
       "decided": "2026-10-19T05:10:38Z",
       "note": ""
+    },
+    {
+      "id": "other:finish-stripe-sign-in-with-your-google-n-202610190512",
+      "kind": "other",
+      "source": "codex:aidantorrence",
+      "title": "Finish Stripe sign-in with your Google name and email",
+      "summary": "Google asks to share your name, profile picture and aidan.torrence@gmail.com with Stripe for sign-in. Approve Continue, then inspect your seller account; no new account, terms, checkout publication or money movement.",
+      "payload": {
+        "action": "On the existing Sign in to Stripe Google consent screen, click Continue to share only name, profile picture and email with Stripe, then inspect seller activation and existing payment links read-only.",
+        "data": [
+          "Aidan Torrence name",
+          "Google profile picture",
+          "aidan.torrence@gmail.com"
+        ],
+        "destination": "Stripe via Google Sign in",
+        "limits": [
+          "No additional permission scopes",
+          "No account creation or terms acceptance",
+          "No charges, transfers or publication"
+        ]
+      },
+      "created": "2026-10-19T05:12:15Z",
+      "expires": "2026-10-22T05:12:15Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
     }
   ]
 }
