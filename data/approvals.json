@@ -1667,7 +1667,9 @@
           "No customer data or activity exported by the agent",
           "No charge, price creation, checkout publication, deployment or spend",
           "No social or Instagram posts"
-        ]
+        ],
+        "result": "Sent the exact approved USD 100 software-licence price-test email to hello@townpressmedia.com after a fresh domain-wide Gmail check returned no prior contact. Gmail confirmed SENT; message/thread ID 1a1553eeb5da9ad9. Current contact email and quoted reporting services were verified in the live browser. No follow-up, checkout, charge, product claim, deployment, spend or social post.",
+        "result_at": "2026-10-19T17:39:30Z"
       },
       "created": "2026-10-19T17:37:56Z",
       "expires": "2026-10-22T17:37:56Z",
