@@ -12040,6 +12040,152 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-19",
+    "slug": "rank-climb",
+    "name": "Rank Climb",
+    "need": "I've been stuck at the same rank for ages, and it's been impossible to get out of no matter how hard I try.",
+    "headline": "For ranked players stuck at one rank: upload a lost match, see the three moments that cost you most, and work on one habit a week with a drill.",
+    "buyer": "Adult (18+) ranked players in Valorant, Overwatch, League of Legends and similar games who are stuck at one rank.",
+    "bullets": [
+      "Upload a lost ranked match and see the three moments that cost you most.",
+      "One habit a week to fix, with a short drill for it, instead of a list of fifty tips.",
+      "A simple progress log across matches, so you see whether the habit is sticking."
+    ],
+    "price": "$6.99/month",
+    "priceUsd": 7,
+    "priceNote": "Less than a single hour of paid coaching.",
+    "reasonPrompt": "Which game and rank are you stuck at, and for how long?",
+    "faq": [
+      {
+        "q": "Is this linked to Riot, Blizzard or any game publisher?",
+        "a": "No. Rank Climb is an independent tool for adults 18+, not linked to any game or publisher."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-19",
+      "summary": "Players on the VLR.gg and official Overwatch forums say they have been hardstuck at one rank for a year or more, and one says they would rather pay a coach a fixed rate.",
+      "wtp": "RAMTRUCKMONTH on VLR.gg: \"I'd honestly prefer to pay someone a fixed rate\" for regular coaching. Paid coaching and stats subscriptions (Metafy sessions, Mobalytics Plus) already sell to the same players.",
+      "signals": [
+        {
+          "url": "https://www.vlr.gg/post/4783418/im-so-sick-of-being-hardstuck-bronze",
+          "who": "joicie (VLR.gg)",
+          "date": "2025",
+          "quote": "I've been stuck b3 for all of 2025 basically, its been impossible to get out of no matter how hard I try.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.vlr.gg/post/4783418/im-so-sick-of-being-hardstuck-bronze",
+          "who": "cameran (VLR.gg)",
+          "date": "2025",
+          "quote": "i was hardstuck bronze for a year and a half",
+          "seen": "opened"
+        },
+        {
+          "url": "https://us.forums.blizzard.com/en/overwatch/t/im-hard-stuck-plat-and-need-help/553270",
+          "who": "ShadowGoemon-1918 (Overwatch forums)",
+          "date": "2020-09-29",
+          "quote": "I'm an Ana/Lucio main in 2700 platinum on support and it's extremely difficult to climb.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://us.forums.blizzard.com/en/overwatch/t/hardstuck-bronze/826257",
+          "who": "sumi-21141 (Overwatch forums)",
+          "date": "2023-06-14",
+          "quote": "I feel like I can't climb out of bronze.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.vlr.gg/post/3141392",
+          "who": "RAMTRUCKMONTH (VLR.gg)",
+          "date": "2024",
+          "quote": "I'd honestly prefer to pay someone a fixed rate that can work with my schedule",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Metafy and other paid coaching, Mobalytics, Aim Lab, YouTube guides.",
+      "risks": "VLR.gg shows only relative dates (about one and two years ago). Match analysis needs game data or video, which varies by game."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-19",
+    "slug": "pass-keep",
+    "name": "Pass Keep",
+    "need": "I end up forgetting which password I used for which account, and I can't remember them all.",
+    "headline": "A plain-English password helper for non-technical adults: simple setup, one place to look up a forgotten password, and a weekly nudge to replace one reused password.",
+    "buyer": "Non-technical adults, including older parents, who forget or reuse passwords.",
+    "bullets": [
+      "A simple guided setup in plain English, with no jargon.",
+      "One place to look up a forgotten password, and it fills in logins for you.",
+      "A weekly nudge to replace one reused password, plus an optional trusted family helper."
+    ],
+    "price": "$2.99/month",
+    "priceUsd": 3,
+    "priceNote": "Below the leading password managers ($4.99 a month or $47.99 a year).",
+    "reasonPrompt": "How do you keep track of your passwords today, and what goes wrong?",
+    "faq": [
+      {
+        "q": "Is this linked to any password-manager company?",
+        "a": "No. Pass Keep is an independent app."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-19",
+      "summary": "People on a parenting forum and on Mac Power Users (about their parents) say they forget which password goes with which account and get confused, and password managers already sell subscriptions at scale.",
+      "wtp": "1Password (App Store): 4.7 from 43K ratings, Individual $4.99 a month or $47.99 a year, Family $71.99 a year.",
+      "signals": [
+        {
+          "url": "https://boards.hellobee.com/topic/are-you-good-at-remembering-your-passwords",
+          "who": "banana (HelloBee)",
+          "date": "2013-03-28",
+          "quote": "I end up forgetting which one I used for which account!",
+          "seen": "opened"
+        },
+        {
+          "url": "https://boards.hellobee.com/topic/are-you-good-at-remembering-your-passwords",
+          "who": "mrskc (HelloBee)",
+          "date": "2013-03-28",
+          "quote": "I can't remember them all!",
+          "seen": "opened"
+        },
+        {
+          "url": "https://talk.macpowerusers.com/t/getting-my-mom-to-use-a-password-manager/36507",
+          "who": "Rob_Polding (Mac Power Users)",
+          "date": "2024-03-06",
+          "quote": "She was using a book and got completely confused about which password to use.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://talk.macpowerusers.com/t/getting-my-mom-to-use-a-password-manager/36507",
+          "who": "Ben_Wah (Mac Power Users)",
+          "date": "2024-03-06",
+          "quote": "They don't even know which version of most of their passwords is correct.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/1password-password-manager/id1511601750",
+          "who": "1Password App Store listing",
+          "date": "2026-10-19",
+          "quote": "43K Ratings ... Individual Annual $47.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "1Password, Bitwarden, the password managers built into phones and browsers.",
+      "risks": "Large, well-funded competitors and free built-in password managers. Handling passwords demands strong security."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

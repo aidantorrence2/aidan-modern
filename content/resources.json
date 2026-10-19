@@ -3312,5 +3312,88 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "how-to-get-out-of-hardstuck",
+  "offer": "rank-climb",
+  "title": "How to get out of hardstuck: the habits to fix first",
+  "description": "Stuck at the same rank for months? Review your losses, pick one habit to fix each week, and stop judging progress by a single night of games.",
+  "intro": "Players stuck at one rank usually know plenty of tips. What keeps them stuck is a few repeated habits they cannot see while playing.",
+  "sections": [
+   {
+    "h": "Review your losses, not your wins",
+    "list": [
+     "Rewatch one lost match a week and note the three moments that cost the most: a death that lost a round, a fight taken alone, a missed rotation.",
+     "Look for the one that keeps coming back."
+    ]
+   },
+   {
+    "h": "Fix one habit at a time",
+    "list": [
+     "Pick that one habit and focus on it for a week of matches, even if you play worse at other things.",
+     "Common ones: positioning after a kill, checking the minimap, not taking fights while outnumbered."
+    ]
+   },
+   {
+    "h": "Warm up with purpose",
+    "list": [
+     "Ten minutes of aim or mechanics practice before ranked matches beats jumping straight in cold."
+    ]
+   },
+   {
+    "h": "Judge progress over weeks",
+    "list": [
+     "Your rank swings night to night. Track how often your one habit goes right across a week instead.",
+     "Stop after two losses in a row; tilt costs more rank than any single habit."
+    ]
+   },
+   {
+    "h": "Get another pair of eyes",
+    "p": [
+     "A friend who is a rank or two higher, or a coach, can spot in minutes what you miss for months. Look for one who reviews your own matches."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "how-to-stop-forgetting-passwords",
+  "offer": "pass-keep",
+  "title": "How to stop forgetting passwords (without becoming a tech expert)",
+  "description": "Can't remember which password goes with which account? Use the password saver already on your phone, fix your most important accounts first, and replace one reused password a week.",
+  "intro": "Nobody can remember dozens of different passwords. The fix is not a better memory but letting a trusted tool remember them for you, starting with the accounts that matter most.",
+  "sections": [
+   {
+    "h": "Use what you already have",
+    "list": [
+     "iPhones, Android phones and most web browsers have a built-in password saver. When it offers to save a password, say yes.",
+     "Learn the one place on your phone where saved passwords are listed."
+    ]
+   },
+   {
+    "h": "Start with the important accounts",
+    "list": [
+     "Email, bank and anything with your money or ID come first. Your email matters most, because it is used to reset everything else.",
+     "Give each of these its own password, saved in your phone."
+    ]
+   },
+   {
+    "h": "Replace one reused password a week",
+    "list": [
+     "If you use the same password on several sites, change one site a week. Slow and steady is fine."
+    ]
+   },
+   {
+    "h": "Turn on two-step login",
+    "list": [
+     "For email and banking, switch on two-step verification (a code by text or app). It protects you even if a password leaks."
+    ]
+   },
+   {
+    "h": "If you keep a paper book",
+    "p": [
+     "A written list kept safely at home is better than one password everywhere. Keep it out of sight, and never write passwords on sticky notes by the computer."
+    ]
+   }
+  ]
  }
 ]
