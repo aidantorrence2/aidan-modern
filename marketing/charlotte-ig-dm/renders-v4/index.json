@@ -1,0 +1,71 @@
+{
+ "k01": [
+  "01-hook",
+  "02-work",
+  "03-about",
+  "04-nervous",
+  "05-now",
+  "06-how",
+  "07-cta"
+ ],
+ "k02": [
+  "01-pair",
+  "02-pair",
+  "03-pair",
+  "04-pair",
+  "05-pair",
+  "06-pair"
+ ],
+ "k03": [
+  "01-hi",
+  "02-women",
+  "03-men",
+  "04-cta"
+ ],
+ "k04": [
+  "01-note",
+  "02-more",
+  "03-cta"
+ ],
+ "k05": [
+  "01-trio",
+  "02-trio",
+  "03-trio",
+  "04-trio",
+  "05-trio"
+ ],
+ "k06": [
+  "01-hook",
+  "02-photo",
+  "03-photo",
+  "04-photo",
+  "05-photo",
+  "06-photo",
+  "07-photo",
+  "08-photo",
+  "09-photo",
+  "10-cta"
+ ],
+ "k07": [
+  "01-grid",
+  "02-hero",
+  "03-cta"
+ ],
+ "k08": [
+  "01-table",
+  "02-table",
+  "03-cta"
+ ],
+ "k09": [
+  "01-inset",
+  "02-inset",
+  "03-inset",
+  "04-inset",
+  "05-cta"
+ ],
+ "k10": [
+  "01-strips",
+  "02-strips",
+  "03-cta"
+ ]
+}
