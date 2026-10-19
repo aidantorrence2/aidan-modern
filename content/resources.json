@@ -2892,5 +2892,47 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "how-to-become-a-morning-person",
+  "offer": "owl-to-lark",
+  "title": "How to become a morning person when you have always been a night owl",
+  "description": "Tried early alarms and failed? Move your wake time earlier in small steps, get light first thing, and stop the weekend from undoing it.",
+  "intro": "Jumping straight to a 6am alarm rarely works for a night owl: you are still awake at midnight and the alarm just gets snoozed. Moving earlier in small steps works better.",
+  "sections": [
+   {
+    "h": "Move in small steps",
+    "list": [
+     "Pick your target wake time, then move your alarm and your bedtime earlier by about 15 minutes every few days.",
+     "Only take the next step once the current time feels manageable."
+    ]
+   },
+   {
+    "h": "Light in the morning, dim in the evening",
+    "list": [
+     "Get daylight soon after you wake: open the curtains, step outside, or have breakfast by a window.",
+     "Dim screens and lights in the last hour before bed."
+    ]
+   },
+   {
+    "h": "Protect the weekend",
+    "list": [
+     "Keep your wake time within about an hour on days off. Long lie-ins pull you straight back to late nights.",
+     "If you do slip, return to your schedule on Monday rather than starting over."
+    ]
+   },
+   {
+    "h": "Make the morning worth getting up for",
+    "list": [
+     "Put something you enjoy first: a good coffee, a walk, quiet time to yourself."
+    ]
+   },
+   {
+    "h": "When to get help",
+    "p": [
+     "If you are always exhausted, or your body clock seems hours out of step however hard you try, talk to a doctor. This guide is general information, not medical advice."
+    ]
+   }
+  ]
  }
 ]

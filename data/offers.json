@@ -11181,6 +11181,101 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-19",
+    "slug": "owl-to-lark",
+    "name": "Owl to Lark",
+    "need": "I have never been a morning person and I'd dearly love to be an early riser, but nothing I've ever tried has worked.",
+    "headline": "A 21-day plan for night owls: bedtime and wake time move earlier in small steps, a guard stops the weekend slide back, and a daily check-in shows mornings getting easier.",
+    "buyer": "Adults who call themselves night owls. They can't fall asleep before midnight, snooze until late, and want to get up earlier for work, kids or their own time, but jumping straight to an early alarm keeps failing.",
+    "bullets": [
+      "Gradual schedule: you enter your current and target wake times, and the plan moves bedtime and wake time earlier in small daily steps instead of one big jump",
+      "Weekend and holiday drift guard: a Friday reminder and a Monday re-entry step stop days off from pulling you back to late nights",
+      "Evening wind-down and morning-light prompts, plus a 10-second daily check-in, so you can see which nights work and adjust the pace"
+    ],
+    "price": "$12 one-time",
+    "priceUsd": 12,
+    "priceNote": "Pay once, no subscription. A leading sleep app that promises to make you a morning person sells memberships of up to $69.99.",
+    "reasonPrompt": "What do you want your mornings to look like, and what has pulled you back to late nights when you tried before?",
+    "faq": [
+      {
+        "q": "Is this medical advice or a sleep treatment?",
+        "a": "No. It is an independent scheduling and habit tool for adults 18+ and is not medical advice. If you think you have a sleep disorder, or you are always exhausted, talk to a qualified professional."
+      },
+      {
+        "q": "Is this just an alarm app?",
+        "a": "No. It does not replace your alarm. It plans how your bedtime and wake time move earlier over 21 days and helps you hold the new schedule through weekends."
+      },
+      {
+        "q": "Do I need a wearable or sleep tracker?",
+        "a": "No. You enter your times and answer one short check-in each day."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-19",
+      "summary": "People describe the need in their own words across three opened pages. In a Mumsnet thread titled \"How to train myself to be an early riser ? Tips needed for a night owl.\" (29 Dec 2025), the opening poster and several repliers describe years of failed attempts. A 2022 Mumsnet thread on morning grogginess and a 2024 Substack comment thread add more named people who say they are not morning people and want to be.",
+      "wtp": "RISE: Sleep Tracker (Rise Science Inc) uses the App Store tagline \"Become a morning person\". It is rated 4.7 out of 5 from 72K ratings, and its listed in-app purchases include Sleep & Energy Premium at $69.99, Sleep Improvement Membership options from $9.99 to $69.99, and AI Expert Access at $29.99.",
+      "signals": [
+        {
+          "url": "https://www.mumsnet.com/talk/_chat/5467255-how-to-train-myself-to-be-an-early-riser-tips-needed-for-a-night-owl",
+          "who": "bushproblems",
+          "date": "2025-12-29",
+          "quote": "I have never been a morning person, and as I've gotten older, it seems to be worse than ever.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/_chat/5467255-how-to-train-myself-to-be-an-early-riser-tips-needed-for-a-night-owl",
+          "who": "TinyHousemouse",
+          "date": "2025-12-29",
+          "quote": "I'd dearly love to be an early riser but nothing I've ever tried has \"worked\"",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/_chat/5467255-how-to-train-myself-to-be-an-early-riser-tips-needed-for-a-night-owl",
+          "who": "HedyPrism",
+          "date": "2025-12-29",
+          "quote": "I've tried so hard to do this and not succeeded.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/_chat/4689777-tips-for-morning-grogginess",
+          "who": "Psychgrad",
+          "date": "2022-12-02",
+          "quote": "now I press snooze far too many times and drag myself out of bed at 7.30 if I'm lucky",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/_chat/4689777-tips-for-morning-grogginess",
+          "who": "Gruffling",
+          "date": "2022-12-02",
+          "quote": "I've never been a morning person.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://readingthisworld.substack.com/p/early-bird/comments",
+          "who": "Not The Wife Material",
+          "date": "2024-06-09",
+          "quote": "Your essay wants the night owl in me to become a morning person",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/rise-sleep-tracker/id1453884781",
+          "who": "RISE: Sleep Tracker (App Store listing)",
+          "date": "2026-10-19",
+          "quote": "Become a morning person",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "RISE: Sleep Tracker is a subscription sleep and energy app that markets itself with \"Become a morning person\". Others are general sleep trackers, sunrise alarm clocks (one Mumsnet poster mentions a \"cheap lumie alarm clock\") and free advice articles. This offer is narrower: a one-time, no-wearable 21-day plan focused only on moving the schedule earlier and stopping the weekend slide back.",
+      "risks": "Some night owls may have a delayed sleep phase (one Mumsnet poster, cranberryhaddock, says theirs is \"about 3 hours out of sync\"), and a habit tool will not fix that, so the copy must avoid medical claims and point those people to a professional. Several posters say that days off pull them straight back (\"Every holiday I naturally go back to late nights and late starts\"), so people may drop out. RISE is a large, well-rated competitor, and people may see the offer as close to the alarm apps already covered. Free advice on this topic is everywhere."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
