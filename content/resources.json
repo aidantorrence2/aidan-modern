@@ -1871,5 +1871,136 @@
         ]
       }
     ]
+  },
+  {
+    "slug": "how-to-finish-couch-to-5k-when-you-quit-before",
+    "offer": "run-again",
+    "title": "How to finish Couch to 5K when you've quit it before",
+    "description": "Started a beginner running plan several times and never finished? Why people stall, how to restart without going back to week one, and how to keep going.",
+    "intro": "Many people start a beginner running plan more than once before they finish one. That is normal. The usual reasons are going too fast, a missed week that turns into quitting, and runs that feel too hard. Each one has a fix.",
+    "sections": [
+      {
+        "h": "Go slower than you think",
+        "list": [
+          "Run at a pace where you could still talk in short sentences. Most beginners run too fast.",
+          "Repeat any week that felt hard. There is no prize for finishing in nine weeks exactly."
+        ]
+      },
+      {
+        "h": "After a break, do not restart from week one",
+        "list": [
+          "Missed a week or two? Go back one week from where you stopped, not to the beginning.",
+          "After a longer break, repeat a week you found comfortable, then carry on."
+        ]
+      },
+      {
+        "h": "Make it easy to get out the door",
+        "list": [
+          "Pick three set days and times, and put them in your calendar.",
+          "Lay out your kit the night before.",
+          "On a bad day, do a shorter version rather than skipping: even a walk counts."
+        ]
+      },
+      {
+        "h": "Look after your body",
+        "list": [
+          "Wear comfortable running shoes that fit well.",
+          "Rest days are part of the plan; they are when you get fitter.",
+          "Some soreness is normal, but sharp pain is a signal to stop and rest."
+        ]
+      },
+      {
+        "h": "When to check with a doctor",
+        "p": [
+          "If you have a heart condition, high blood pressure, an injury or another health concern, or you feel chest pain, dizziness or unusual breathlessness, stop and talk to a doctor. This guide is not medical advice."
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "how-to-remember-what-you-read",
+    "offer": "kept-pages",
+    "title": "How to remember what you read (without highlighting everything)",
+    "description": "Forget most of a book within weeks? Simple ways to remember more: pause to recall, write a few lines, and revisit at spaced intervals.",
+    "intro": "Forgetting most of what you read is completely normal; memory fades quickly unless you revisit things. The good news is that a few minutes of the right kind of effort makes a big difference, and it is not highlighting.",
+    "sections": [
+      {
+        "h": "Recall, do not reread",
+        "list": [
+          "After a chapter, close the book and try to say or write the main point in a sentence or two.",
+          "Trying to remember is what strengthens memory; rereading feels productive but helps much less."
+        ]
+      },
+      {
+        "h": "Write a few lines",
+        "list": [
+          "Keep a short note for each book: the main idea, one thing that surprised you, one thing you want to try.",
+          "Three lines you wrote yourself beat pages of highlights."
+        ]
+      },
+      {
+        "h": "Revisit at spaced intervals",
+        "list": [
+          "Look at your note again after a few days, then after a couple of weeks, then after a month or two.",
+          "Each time, try to recall before you look."
+        ]
+      },
+      {
+        "h": "Connect it to your life",
+        "p": [
+          "Tell someone about the book, or link an idea to something you already know or a decision you are making. Ideas you use are ideas you keep."
+        ]
+      },
+      {
+        "h": "Read fewer books more deeply",
+        "p": [
+          "If you want to remember, it can help to read a little slower and pause more often. Not every book needs this; save it for the ones you care about."
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "stuck-at-the-same-chess-rating",
+    "offer": "plateau-plan",
+    "title": "Stuck at the same chess rating? How to find what to study",
+    "description": "Doing puzzles every day and still stuck at the same rating? How to find the mistakes that actually cost you games and build a short study plan around them.",
+    "intro": "A rating plateau usually means you are practising things that are not what is costing you games. The fastest way off a plateau is to look honestly at your own losses, find the repeated mistakes, and study those.",
+    "sections": [
+      {
+        "h": "Review your own losses",
+        "list": [
+          "Go through your last 20 lost games, ideally slower ones.",
+          "For each, find the move where things went wrong, before using an engine if you can.",
+          "Write down what kind of mistake it was: missed tactic, hung piece, time trouble, bad plan, endgame."
+        ]
+      },
+      {
+        "h": "Find the pattern",
+        "list": [
+          "Count the mistake types. Most players find two or three that account for most losses.",
+          "Those are your study priorities, not whatever is popular."
+        ]
+      },
+      {
+        "h": "Build a short daily plan",
+        "list": [
+          "Twenty minutes a day aimed at your top mistake type beats an hour of random puzzles.",
+          "Use positions from your own games when you can.",
+          "Play slower games so you have time to think and to apply what you are learning."
+        ]
+      },
+      {
+        "h": "Check in monthly",
+        "p": [
+          "After a month, review another batch of losses. If the top mistake has shrunk, move on to the next one."
+        ]
+      },
+      {
+        "h": "Consider a coach for a session or two",
+        "p": [
+          "A coach reviewing a handful of your games can often spot the pattern quickly. Even one session can make your own study far more focused."
+        ]
+      }
+    ]
   }
 ]

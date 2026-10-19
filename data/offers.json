@@ -9542,6 +9542,177 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-19",
+    "slug": "run-again",
+    "name": "Run Again",
+    "need": "I keep trying to start running, and I always give up after a week or two.",
+    "headline": "A beginner running plan that bridges missed days instead of sending you back to week one: 25-minute sessions, with a lighter version on hard days.",
+    "buyer": "Adults who have restarted a beginner running plan more than once.",
+    "bullets": [
+      "Miss a few days and the plan bridges you back in, instead of restarting at week one.",
+      "Every session is about 25 minutes, with run and walk intervals that build slowly.",
+      "A lighter version of each session for tired or busy days, so a bad day still counts."
+    ],
+    "price": "$19.99/year",
+    "priceUsd": 20,
+    "priceNote": "Below the leading running-plan apps' yearly plans.",
+    "reasonPrompt": "How many times have you started a running plan, and where did you stop last time?",
+    "faq": [
+      {
+        "q": "Is this medical advice?",
+        "a": "No. Run Again is an independent app for adults. If you have a heart condition, an injury or another health concern, check with a doctor before starting to run."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-19",
+      "summary": "People on several forums describe starting a beginner running plan many times and never finishing, and running-plan apps have tens of thousands of paid ratings.",
+      "wtp": "Runna: Running Plans & Coach (App Store): 4.8 from 35K ratings, Premium $19.99 and $119.99.",
+      "signals": [
+        {
+          "url": "https://www.mumsnet.com/talk/exercise/5419356-couch-to-5k",
+          "who": "JG24 (Mumsnet)",
+          "date": "2025-10-07",
+          "quote": "I've probably started the programme 10 times over the years but only completed it once",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/exercise/5419356-couch-to-5k",
+          "who": "TracyBeakerSoYeah (Mumsnet)",
+          "date": "2025-10-07",
+          "quote": "I've stopped & started C25K due to various reasons so many times since December 2021",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.singletrackworld.com/forum/off-topic/couch-to-5k/",
+          "who": "theotherjonv (Singletrack forum)",
+          "date": "2010-11-19",
+          "quote": "I've started and stopped a few times with my own C25K program.",
+          "seen": "opened"
+        }
+      ]
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-19",
+    "slug": "kept-pages",
+    "name": "Kept Pages",
+    "need": "I read a lot, but a few weeks later I can't remember anything from the books.",
+    "headline": "One recall question after each reading session, then spaced re-asks days and weeks later, so what you read actually sticks. Works with paper books.",
+    "buyer": "Regular readers who forget what they read.",
+    "bullets": [
+      "After each reading session, answer one short question about what you just read.",
+      "It asks again a few days and a few weeks later, which is what makes memories stick.",
+      "Works with paper books and ebooks alike, and your notes export as plain text for free."
+    ],
+    "price": "$24.99/year",
+    "priceUsd": 25,
+    "priceNote": "Below reading-notes and book-summary subscriptions.",
+    "reasonPrompt": "What's a book you loved but can barely remember now?",
+    "faq": [
+      {
+        "q": "Is this connected to another reading app?",
+        "a": "No. Kept Pages is an independent app."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-19",
+      "summary": "Readers on several forums say they forget almost everything they read, and reading-notes and book-summary apps sell paid plans.",
+      "wtp": "Blinkist (App Store): 4.8 from 157K ratings, Premium $12.99-$15.99 a month and $79.99-$119.99 a year.",
+      "signals": [
+        {
+          "url": "https://www.mumsnet.com/talk/what_were_reading/4631616-do-you-remember-all-the-books-youve-read",
+          "who": "TheSleeperandTheSpindle (Mumsnet)",
+          "date": "2022-09-11",
+          "quote": "I'm exactly the same and have often wondered whether there's something wrong with me.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/what_were_reading/4631616-do-you-remember-all-the-books-youve-read",
+          "who": "Closedlips (Mumsnet)",
+          "date": "2022-09-11",
+          "quote": "I'm useless at remembering unless it was quite a \"life-changing\" type book.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.goodreads.com/topic/show/530773-do-you-have-trouble-remembering-what-you-read?page=2",
+          "who": "Maggie (Goodreads group)",
+          "date": "2011-10-10",
+          "quote": "I can remember whether I've read a book or not, but the details often slip by me",
+          "seen": "opened"
+        }
+      ]
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-19",
+    "slug": "plateau-plan",
+    "name": "Plateau Plan",
+    "need": "I've been stuck at the same chess rating for months and I don't know what to study.",
+    "headline": "Imports your recent online games, names your three costliest repeated mistakes, and builds a 20-minute daily study plan from positions in your own games.",
+    "buyer": "Adult online chess players stuck at one rating.",
+    "bullets": [
+      "Import your recent online games in one step.",
+      "See the three mistakes that cost you the most points, with examples from your own games.",
+      "Get a 20-minute daily plan built from positions you actually reached, not generic puzzles."
+    ],
+    "price": "$7.99/month",
+    "priceUsd": 8,
+    "priceNote": "Below existing chess-improvement apps and far below coaching.",
+    "reasonPrompt": "What's your rating, how long have you been stuck there, and what have you tried?",
+    "faq": [
+      {
+        "q": "Is this connected to a chess site?",
+        "a": "No. Plateau Plan is an independent app; it would import games you choose to share."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-19",
+      "summary": "Players on chess forums describe being stuck at the same rating for months despite daily puzzles, and chess-improvement apps and coaches charge for help.",
+      "wtp": "Aimchess (App Store, by Chess.com): 3.9 from 196 ratings, Premium $9.99 a month or $71.99 a year. Chess coaches charge by the hour.",
+      "signals": [
+        {
+          "url": "https://www.chess.com/forum/view/general/cant-improve-rating",
+          "who": "dcgreens (Chess.com forum)",
+          "date": "2015-08-10",
+          "quote": "But I still seem to be stuck at about the 1250 to 1300 rating.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://lichess.org/forum/general-chess-discussion/overcoming-a-rating-plateau",
+          "who": "DestineGrigsby (Lichess forum)",
+          "date": "not shown",
+          "quote": "I have been stuck around 1900 Elo for roughly six months.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/app/id1524941307",
+          "who": "Aimchess (App Store listing)",
+          "date": "2026-10-19",
+          "quote": "Premium Membership $9.99; Annual Premium Membership $71.99; 196 Ratings",
+          "seen": "opened"
+        }
+      ]
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
