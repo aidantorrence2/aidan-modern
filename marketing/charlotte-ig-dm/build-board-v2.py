@@ -252,13 +252,13 @@ def launch_html():
     out = []
     for r in rows:
         d = os.path.join(LAUNCH, r['round'].lower(), r['id'])
-        fl = r['files (in launch/<round>/<id>/)'].split(' | ')
+        fl = r['files (in launch/<round>/<id>/)'].split(' | ')[:8]
         if fl[0].endswith('.mp4'):
             v = fl[0][:-4]
             media = f'<video src="videos/{v}.mp4" poster="videos/{v}.jpg" controls playsinline muted loop preload="none"></video>'
         else:
             media = '<div class="strip">' + strip([os.path.join(d, f) for f in fl], fl) + '</div>'
-        out.append(f'<article class="card control"><header><span class="num">{r["id"].upper()}</span><h3>{html.escape(r["name"])}</h3><span class="lever">{r["round"]} · {html.escape(r["lever"])}</span></header><p class="why">{html.escape(r["hypothesis"])}</p>{media}</article>')
+        out.append(f'<article class="card control"><header><span class="num">{r["id"].upper()}</span><h3>{html.escape(r["name"])}</h3><span class="lever">{r["round"]} · {html.escape(r["hypothesis"])}</span></header><p class="why">{html.escape(r["hypothesis"])}</p>{media}</article>')
     return ''.join(out)
 launch = launch_html() if os.path.exists(os.path.join(LAUNCH, 'ads.csv')) else ''
 picks = ''.join(card_html(c) for c in PICKS)
@@ -331,8 +331,8 @@ video {{ width:min(100%,300px); aspect-ratio:9/16; background:#000; display:bloc
  <div class="box"><h4>Round 3</h4><p>Hero test on the winning layout (three different first frames), plus the real selfie clip if you film it.</p><p>Judge on CPC first, then cost per chat once each ad has 5+ chats.</p></div>
 </div>
 
-<h2>Launch set — what to run, in order</h2>
-<p class="lede">Round 1 (4 ads, women-only set): the control, the proof sheet, the receipt, the viewfinder without its shutter. Round 2: "just say hi", the ask list, the swipe-bait, four neighbourhoods. Round 3: three 5-second Reels plus the quiet print, the upside-down hook and a zero-design story. Dropped on purpose: anything that draws fake buttons, notifications or checkboxes (Meta's non-existent-functionality rule). Copy, ice breakers and the paused-campaign spec: <code>marketing/charlotte-ig-dm/launch/LAUNCH.md</code>. Nothing is published.</p>
+<h2>Launch set — 40 ads in six rounds, the creative formats first</h2>
+<p class="lede">R1: control, proof sheet, receipt, viewfinder. R2: the phone formats with their fake controls removed (FaceTime, lock screen, iMessage, now playing, weather, memories). R3: the objects (ticket, tarot, trading card, newspaper, marquee, neon, highway sign, postcard). R4: text portrait, stickers, lineup, double exposure, glitch, $0, chalkboard, facts label. R5: six Reels. R6: the plain copy/structure tests. Only the drawn buttons, notifications and checkboxes were removed (Meta's rule); the formats stayed. Copy, ice breakers and the paused-campaign spec: <code>marketing/charlotte-ig-dm/launch/LAUNCH.md</code>. Nothing is published.</p>
 {launch}
 <h2>30 more: the same idea, thirty new formats</h2>
 <p class="lede">M01–M30. Same principle as the set below (card 1 stops the scroll by looking like something else), thirty new formats: message apps, a call, a player, a map, a forecast, a listing, an app page, a newspaper, a ticket, tarot, a trading card, a profile, a note, a stats card, fitness rings, a clapperboard, a search page, a post, an album, a marquee, neon, a chalkboard, a retro window, a CAPTCHA, a facts label, a postcard, a video call, a highway sign. Each has a hook and its own call-to-action card. No text on any face.</p>

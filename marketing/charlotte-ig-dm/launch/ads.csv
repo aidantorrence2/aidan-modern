@@ -1,18 +1,41 @@
-id,round,name,source,lever,hypothesis,files (in launch/<round>/<id>/)
-r1a,R1,control — eye contact (winner composition),renders-v6/h01,stop,The baseline every other ad is judged against.,01-hook.jpg | 02-work.jpg | 03-nervous.jpg | 04-cta.jpg
-r1b,R1,"proof sheet ""you?""",renders-v9/g07,stop+intent,"The empty frame is the viewer; swipe to ""this one.""",01-proof.jpg | 02-pick.jpg | 03-cta.jpg
-r1c,R1,receipt $0.00,renders-v9/g06,intent,"Itemised $0.00 answers ""what's the catch"" with no reassurance copy.",01-receipt.jpg | 02-receipt.jpg | 03-cta.jpg | 03-receipt.jpg
-r1d,R1,"viewfinder, no shutter",renders-v11/g01n,stop,Eye-AF boxes on the pupils read as something happening; shutter button removed for the Meta fake-control rule.,01-viewfinder.jpg | 02-viewfinder.jpg | 03-shutter.jpg
-r2a,R2,just say hi,renders-v11/i1,intent,"Naming the tiny action beats ""Interested? Let's chat.""",01-hook.jpg | 02-hi.jpg | 03-cta.jpg
-r2b,R2,ask list (ice breakers as handwriting),renders-v11/i2,intent,Shows the DM is one tap with an answer waiting.,01-hook.jpg | 02-ask.jpg | 03-cta.jpg
-r2c,R2,swipe-bait: what's the catch → receipt,renders-v11/c5,cpm+intent,Question→answer swipes are engagement.,01-catch.jpg | 02-receipt.jpg | 03-cta.jpg
-r2d,R2,NoDa,renders-v11/s4a,stop,Micro-local word as the hero; also a neighbourhood read.,01-hook.jpg | 02-cta.jpg
-r2e,R2,South End,renders-v11/s4b,stop,Same.,01-hook.jpg | 02-cta.jpg
-r2f,R2,Plaza Midwood,renders-v11/s4c,stop,Same.,01-hook.jpg | 02-cta.jpg
-r2g,R2,Uptown,renders-v11/s4d,stop,Same.,01-hook.jpg | 02-cta.jpg
-r3a,R3,develop (5s Reel),mp4:charlotte-j-develop-v1.mp4,cpm,Motion in frame 1 for the Reels auction; loops clean.,charlotte-j-develop-v1.mp4
-r3b,R3,eyes first (5s Reel),mp4:charlotte-k-eyesopen-v1.mp4,stop,Shortest path from scroll to a face.,charlotte-k-eyesopen-v1.mp4
-r3c,R3,flash loop (5s Reel),mp4:charlotte-l-flash5-v1.mp4,cpm,Watch-through feeds ranking; eyes locked so it reads smooth.,charlotte-l-flash5-v1.mp4
-r3d,R3,nothing (quiet print),renders-v11/s1,stop,A silent frame in a loud feed.,01-quiet.jpg | 02-quiet.jpg | 03-cta.jpg
-r3e,R3,upside down,renders-v11/s2,stop,People stop for broken things.,01-upside.jpg | 02-cta.jpg
-r3f,R3,zero-design story,renders-v11/c2,cpm,Looks like a friend's story.,01-story.jpg | 02-story.jpg
+id,round,name,source,hypothesis,files (in launch/<round>/<id>/)
+r1a,R1,control (winner composition),renders-v6/h01,baseline,01-hook.jpg | 02-work.jpg | 03-nervous.jpg | 04-cta.jpg
+r1b,R1,"proof sheet ""you?""",renders-v9/g07,"the empty frame is the viewer; swipe to ""this one.""",01-proof.jpg | 02-pick.jpg | 03-cta.jpg
+r1c,R1,receipt $0.00,renders-v9/g06,itemised $0.00 answers the catch,01-receipt.jpg | 02-receipt.jpg | 03-cta.jpg | 03-receipt.jpg
+r1d,R1,viewfinder (no shutter),renders-v11/g01n,eye-AF boxes on the pupils,01-viewfinder.jpg | 02-viewfinder.jpg | 03-shutter.jpg
+r2a,R2,FaceTime: Charlotte is calling,renders-v10-safe/m04,an incoming call stops a thumb,01-call.jpg | 02-call.jpg
+r2b,R2,lock screen,renders-v9-safe/g02s,"her portrait as your wallpaper, the city in the clock slot",01-lock.jpg | 02-lock.jpg | 03-lock.jpg
+r2c,R2,iMessage thread,renders-v10/m01,your portrait arrives as a text,01-imessage.jpg | 02-imessage.jpg
+r2d,R2,now playing,renders-v10-safe/m05,album art; the city is the track,01-playing.jpg | 02-playing.jpg
+r2e,R2,weather: FREE,renders-v10/m07,the forecast says FREE,01-weather.jpg | 02-weather.jpg
+r2f,R2,memories,renders-v10-safe/m03,a Photos memory titled Charlotte,01-memory.jpg | 02-memory.jpg
+r3a,R3,admit-one ticket,renders-v10/m11,a perforated ticket with the portrait,01-ticket.jpg | 02-ticket.jpg
+r3b,R3,tarot: the portrait / the hour / the call,renders-v10/m12,three cards,01-tarot.jpg | 02-tarot.jpg | 03-tarot.jpg
+r3c,R3,trading card FREE ★,renders-v10/m13,holo collector card,01-card.jpg | 02-card.jpg
+r3d,R3,newspaper,renders-v10/m10,halftone front page,01-gazette.jpg | 02-gazette.jpg
+r3e,R3,marquee,renders-v10/m22,CHARLOTTE in bulbs,01-marquee.jpg | 02-marquee.jpg
+r3f,R3,neon,renders-v10/m23,neon script,01-neon.jpg | 02-neon.jpg
+r3g,R3,highway exit sign,renders-v10/m30,CHARLOTTE ↗ FREE PHOTO SHOOT,01-sign.jpg | 02-sign.jpg
+r3h,R3,postcard,renders-v10/m28,"greetings from Charlotte, FREE stamp",01-front.jpg | 02-back.jpg
+r4a,R4,text portrait,renders-v9/g04,the photo made of the word,01-text.jpg | 02-reveal.jpg | 03-cta.jpg
+r4b,R4,die-cut stickers,renders-v9/g05,sticker pack,01-sticker.jpg | 02-sheet.jpg | 03-sticker.jpg
+r4c,R4,eye lineup,renders-v9/g08,three pairs of eyes,01-lineup.jpg | 02-lineup.jpg | 03-cta.jpg | 03-lineup.jpg
+r4d,R4,double exposure,renders-v9/g09,"two faces, eyes locked",01-double.jpg | 02-double.jpg | 03-cta.jpg | 03-double.jpg
+r4e,R4,glitch,renders-v9/g10,RGB split,01-glitch.jpg | 02-glitch.jpg | 03-cta.jpg | 03-glitch.jpg
+r4f,R4,$0 / 1 hr,renders-v10/m16,giant numerals behind a cut-out,01-zero.jpg | 02-hour.jpg
+r4g,R4,chalkboard,renders-v10/m24,today's special,01-chalk.jpg | 02-chalk.jpg
+r4h,R4,facts label,renders-v10/m27,Photo Shoot Facts: cost $0,01-facts.jpg | 02-facts.jpg
+r5a,R5,develop (5s Reel),mp4:charlotte-j-develop-v1.mp4,fade-up from black,charlotte-j-develop-v1.mp4
+r5b,R5,eyes first (5s Reel),mp4:charlotte-k-eyesopen-v1.mp4,one second of eyes,charlotte-k-eyesopen-v1.mp4
+r5c,R5,flash loop (5s Reel),mp4:charlotte-l-flash5-v1.mp4,eye-locked flashes,charlotte-l-flash5-v1.mp4
+r5d,R5,wall + flashes (top picks),mp4:charlotte-g-wall-flash-top-v1.mp4,the one you liked,charlotte-g-wall-flash-top-v1.mp4
+r5e,R5,"hi, i'm aidan (top picks)",mp4:charlotte-b-hi-aidan-top-v1.mp4,the one you liked,charlotte-b-hi-aidan-top-v1.mp4
+r5f,R5,notes (top picks),mp4:charlotte-a-notes-top-v1.mp4,the one you liked,charlotte-a-notes-top-v1.mp4
+r6a,R6,just say hi,renders-v11/i1,copy test,01-hook.jpg | 02-hi.jpg | 03-cta.jpg
+r6b,R6,ask list,renders-v11/i2,copy test,01-hook.jpg | 02-ask.jpg | 03-cta.jpg
+r6c,R6,NoDa / South End / Plaza Midwood / Uptown,renders-v11/s4a,four ads; neighbourhood test,s4a-01-hook.jpg | s4a-02-cta.jpg | s4b-01-hook.jpg | s4b-02-cta.jpg | s4c-01-hook.jpg | s4c-02-cta.jpg | s4d-01-hook.jpg | s4d-02-cta.jpg
+r6d,R6,zero-design story,renders-v11/c2,native story,01-story.jpg | 02-story.jpg
+r6e,R6,quiet print,renders-v11/s1,pattern interrupt,01-quiet.jpg | 02-quiet.jpg | 03-cta.jpg
+r6f,R6,upside down,renders-v11/s2,pattern interrupt,01-upside.jpg | 02-cta.jpg
+r6g,R6,story with location pill,renders-v9-safe/g03s,use Meta's real poll sticker on top,01-story.jpg | 02-story.jpg | 03-story.jpg
+r6h,R6,profile / post / listing / map / message request / video call (controls removed),renders-v10-safe/m14,"the remaining UI formats, test last",m14-01-profile.jpg | m14-02-profile.jpg | m20-01-post.jpg | m20-02-post.jpg | m08-01-listing.jpg | m08-02-listing.jpg | m06-01-map.jpg | m06-02-map.jpg | m02-01-request.jpg | m02-02-thread.jpg | m29-01-gallery.jpg | m29-02-speaker.jpg
