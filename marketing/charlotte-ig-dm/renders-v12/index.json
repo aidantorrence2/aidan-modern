@@ -1,0 +1,79 @@
+{
+ "g01n": [
+  "01-viewfinder",
+  "02-viewfinder",
+  "03-shutter"
+ ],
+ "z08": [
+  "01-pass",
+  "02-pass"
+ ],
+ "z09": [
+  "01-page",
+  "02-visa"
+ ],
+ "z10": [
+  "01-ticket",
+  "02-paid"
+ ],
+ "z11": [
+  "01-scratch",
+  "02-scratch"
+ ],
+ "z12": [
+  "01-bill",
+  "02-reverse"
+ ],
+ "z13": [
+  "01-hanger",
+  "02-hanger"
+ ],
+ "z14": [
+  "01-machine",
+  "02-dispensed"
+ ],
+ "z15": [
+  "01-slip",
+  "02-slip"
+ ],
+ "z17": [
+  "01-board",
+  "02-board"
+ ],
+ "z18": [
+  "01-grid",
+  "02-grid"
+ ],
+ "z19": [
+  "01-diff",
+  "02-found"
+ ],
+ "z21": [
+  "01-hole",
+  "02-hole"
+ ],
+ "z22": [
+  "01-thumb",
+  "02-thumb"
+ ],
+ "z23": [
+  "01-comic",
+  "02-comic"
+ ],
+ "z24": [
+  "01-third",
+  "02-third"
+ ],
+ "z25": [
+  "01-stars",
+  "02-stars"
+ ],
+ "z26": [
+  "01-back",
+  "02-back"
+ ],
+ "z27": [
+  "01-watermark",
+  "02-watermark"
+ ]
+}

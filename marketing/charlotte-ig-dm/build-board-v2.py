@@ -17,7 +17,8 @@ R7 = sys.argv[9] if len(sys.argv) > 9 else None   # render-v7.mjs: design set
 R8 = sys.argv[10] if len(sys.argv) > 10 else None   # render-v8.mjs: art direction set
 R9 = sys.argv[11] if len(sys.argv) > 11 else None   # render-v9.mjs: format-breaking set
 R10 = sys.argv[12] if len(sys.argv) > 12 else None   # render-v10.mjs: 30 more formats
-LAUNCH = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'launch')   # render-v4.mjs: 10 carousels from new_top_tier_candidates   # render-v3.mjs output: photo-heavy still ads (top picks)
+LAUNCH = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'launch')
+R12 = sys.argv[13] if len(sys.argv) > 13 else None   # render-v12.mjs: built from CONCEPTS-NEW   # render-v4.mjs: 10 carousels from new_top_tier_candidates   # render-v3.mjs output: photo-heavy still ads (top picks)
 PICKS = ['c00', 'n04', 'n11']   # Aidan liked these three (20 Oct)
 
 def thumb(path, w=300):
@@ -246,6 +247,12 @@ def card10(cid):
     return f'''<article class="card control"><header><span class="num">{cid.upper()}</span><h3>{html.escape(title)}</h3><span class="lever">looks like: {html.escape(lever)}</span></header>
   <p class="why">{html.escape(why)}</p><div class="strip">{frames}</div><p class="needs ok">ready · {len(names)} cards</p></article>'''
 car10 = ''.join(card10(c) for c in META10) if R10 else ''
+META12 = {'z08':'Boarding pass (CLT)','z09':'Passport','z10':'Parking ticket','z11':'Scratch card','z12':'$0 bill','z13':'Door hanger','z14':'Vending machine','z15':'Fortune cookie','z17':'Red-string board','z18':'Crossword','z19':'Spot the difference','z21':'The hole','z22':'YouTube thumbnail','z23':'Comic panel','z24':'Lower third','z25':'Horoscope','z26':'Retro camera back','z27':'Stock watermark'}
+def card12(cid):
+    names = json.load(open(os.path.join(R12, 'index.json')))[cid]
+    frames = strip([os.path.join(R12, cid, n + '.jpg') for n in names], names)
+    return f'''<article class="card control"><header><span class="num">{cid.upper()}</span><h3>{html.escape(META12[cid])}</h3><span class="lever">from CONCEPTS-NEW.md</span></header><div class="strip">{frames}</div></article>'''
+car12 = ''.join(card12(c) for c in META12) if R12 else ''
 import csv
 def launch_html():
     rows = list(csv.DictReader(open(os.path.join(LAUNCH, 'ads.csv'))))
@@ -331,6 +338,9 @@ video {{ width:min(100%,300px); aspect-ratio:9/16; background:#000; display:bloc
  <div class="box"><h4>Round 3</h4><p>Hero test on the winning layout (three different first frames), plus the real selfie clip if you film it.</p><p>Judge on CPC first, then cost per chat once each ad has 5+ chats.</p></div>
 </div>
 
+<h2>Built from CONCEPTS-NEW.md (18 of 32)</h2>
+<p class="lede">The concepts that need only the portraits. Not built because they need a shoot, footage, real Charlotte imagery or your dates: can-I-take-your-photo, the A-frame, billboard, Lynx, graffiti, skyline, held print, calendar, letters-as-bodies, projected type, the walk-off, one-hour time-lapse, the reaction, camera-roll-vs-this.</p>
+{car12}
 <h2>Launch set — 40 ads in six rounds, the creative formats first</h2>
 <p class="lede">R1: control, proof sheet, receipt, viewfinder. R2: the phone formats with their fake controls removed (FaceTime, lock screen, iMessage, now playing, weather, memories). R3: the objects (ticket, tarot, trading card, newspaper, marquee, neon, highway sign, postcard). R4: text portrait, stickers, lineup, double exposure, glitch, $0, chalkboard, facts label. R5: six Reels. R6: the plain copy/structure tests. Only the drawn buttons, notifications and checkboxes were removed (Meta's rule); the formats stayed. Copy, ice breakers and the paused-campaign spec: <code>marketing/charlotte-ig-dm/launch/LAUNCH.md</code>. Nothing is published.</p>
 {launch}
