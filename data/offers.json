@@ -317,7 +317,7 @@
   },
   {
     "type": "software",
-    "status": "live",
+    "status": "killed",
     "launched": "2026-10-18",
     "slug": "plate-snap",
     "name": "Plate Snap",
@@ -372,7 +372,9 @@
       "competitors": "Nutria, TrackAI, Cal AI and many more.",
       "risks": "Crowded consumer app category; distribution through app stores and paid social."
     },
-    "need": "Want to lose weight without weighing every bite?"
+    "need": "Want to lose weight without weighing every bite?",
+    "killed": "2026-10-19",
+    "killedReason": "Scrapped by Aidan on 19 Oct 2026; replaced by a new set of need offers."
   },
   {
     "type": "software",
@@ -436,7 +438,7 @@
   },
   {
     "type": "software",
-    "status": "live",
+    "status": "killed",
     "launched": "2026-10-18",
     "slug": "fit-resume",
     "name": "Fit Resume",
@@ -498,7 +500,9 @@
       "competitors": "Rezi, Teal, Jobscan, Kickresume.",
       "risks": "Crowded; the angle is one-click tailoring from the job page at a low price."
     },
-    "need": "Applying for jobs and hearing nothing back?"
+    "need": "Applying for jobs and hearing nothing back?",
+    "killed": "2026-10-19",
+    "killedReason": "Scrapped by Aidan on 19 Oct 2026; replaced by a new set of need offers."
   },
   {
     "type": "software",
@@ -2782,7 +2786,7 @@
   },
   {
     "type": "software",
-    "status": "live",
+    "status": "killed",
     "launched": "2026-10-18",
     "slug": "shot-check",
     "name": "Shot Check",
@@ -2866,11 +2870,13 @@
       ],
       "competitors": "Photofeeler, ROAST, Picker AI, Standout AI, RARE, local dating photographers.",
       "risks": "Crowded and cheap; ratings must never shame people about how they look."
-    }
+    },
+    "killed": "2026-10-19",
+    "killedReason": "Scrapped by Aidan on 19 Oct 2026; replaced by a new set of need offers."
   },
   {
     "type": "software",
-    "status": "live",
+    "status": "killed",
     "launched": "2026-10-18",
     "slug": "first-line",
     "name": "First Line",
@@ -2936,11 +2942,13 @@
       ],
       "competitors": "RIZZ, RARE, YourMove, Keys AI, Winggg.",
       "risks": "Must never deceive matches; free chatbots are a substitute; strict 18+."
-    }
+    },
+    "killed": "2026-10-19",
+    "killedReason": "Scrapped by Aidan on 19 Oct 2026; replaced by a new set of need offers."
   },
   {
     "type": "software",
-    "status": "live",
+    "status": "killed",
     "launched": "2026-10-18",
     "slug": "apply-track",
     "name": "Apply Track",
@@ -2991,11 +2999,13 @@
         "q": "Does it exist yet?",
         "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
       }
-    ]
+    ],
+    "killed": "2026-10-19",
+    "killedReason": "Scrapped by Aidan on 19 Oct 2026; replaced by a new set of need offers."
   },
   {
     "type": "software",
-    "status": "live",
+    "status": "killed",
     "launched": "2026-10-18",
     "slug": "practice-round",
     "name": "Practice Round",
@@ -3053,11 +3063,13 @@
         "q": "Does it exist yet?",
         "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
       }
-    ]
+    ],
+    "killed": "2026-10-19",
+    "killedReason": "Scrapped by Aidan on 19 Oct 2026; replaced by a new set of need offers."
   },
   {
     "type": "software",
-    "status": "live",
+    "status": "killed",
     "launched": "2026-10-18",
     "slug": "fit-jobs",
     "name": "Fit Jobs",
@@ -3115,11 +3127,13 @@
         "q": "Does it exist yet?",
         "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
       }
-    ]
+    ],
+    "killed": "2026-10-19",
+    "killedReason": "Scrapped by Aidan on 19 Oct 2026; replaced by a new set of need offers."
   },
   {
     "type": "software",
-    "status": "live",
+    "status": "killed",
     "launched": "2026-10-18",
     "slug": "bid-check",
     "name": "Bid Check",
@@ -3181,11 +3195,13 @@
       ],
       "competitors": "GigRadar, Vollna, Upwork's Uma assistant, Copalat.",
       "risks": "Upwork bans automated bidding; a person must send every proposal."
-    }
+    },
+    "killed": "2026-10-19",
+    "killedReason": "Scrapped by Aidan on 19 Oct 2026; replaced by a new set of need offers."
   },
   {
     "type": "software",
-    "status": "live",
+    "status": "killed",
     "launched": "2026-10-18",
     "slug": "first-product",
     "name": "First Product",
@@ -3247,11 +3263,13 @@
       ],
       "competitors": "Stan, Gumroad, Payhip, EverBee, eRank.",
       "risks": "Must avoid passive-income hype; marketplace rules on AI-made items."
-    }
+    },
+    "killed": "2026-10-19",
+    "killedReason": "Scrapped by Aidan on 19 Oct 2026; replaced by a new set of need offers."
   },
   {
     "type": "software",
-    "status": "live",
+    "status": "killed",
     "launched": "2026-10-18",
     "slug": "weekend-pause",
     "name": "Weekend Pause",
@@ -3320,11 +3338,13 @@
       ],
       "competitors": "Reframe, Sunnyside, I Am Sober, LiveSober.",
       "risks": "No treatment claims; 18+."
-    }
+    },
+    "killed": "2026-10-19",
+    "killedReason": "Scrapped by Aidan on 19 Oct 2026; replaced by a new set of need offers."
   },
   {
     "type": "software",
-    "status": "live",
+    "status": "killed",
     "launched": "2026-10-18",
     "slug": "puff-down",
     "name": "Puff Down",
@@ -3386,11 +3406,13 @@
       ],
       "competitors": "Puff Count, QuitSure, Smoke Free, Quittr.",
       "risks": "Must keep minors out; no cessation claims."
-    }
+    },
+    "killed": "2026-10-19",
+    "killedReason": "Scrapped by Aidan on 19 Oct 2026; replaced by a new set of need offers."
   },
   {
     "type": "software",
-    "status": "live",
+    "status": "killed",
     "launched": "2026-10-18",
     "slug": "say-it-out-loud",
     "name": "Say It Out Loud",
@@ -3448,11 +3470,13 @@
         "q": "Does it exist yet?",
         "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
       }
-    ]
+    ],
+    "killed": "2026-10-19",
+    "killedReason": "Scrapped by Aidan on 19 Oct 2026; replaced by a new set of need offers."
   },
   {
     "type": "software",
-    "status": "live",
+    "status": "killed",
     "launched": "2026-10-18",
     "slug": "oral-exam-coach",
     "name": "Oral Exam Coach",
@@ -3507,11 +3531,13 @@
       ],
       "competitors": "FreeTCF, exam tutors, AI raters for IELTS.",
       "risks": "Thinner evidence; must not imply an official score."
-    }
+    },
+    "killed": "2026-10-19",
+    "killedReason": "Scrapped by Aidan on 19 Oct 2026; replaced by a new set of need offers."
   },
   {
     "type": "software",
-    "status": "live",
+    "status": "killed",
     "launched": "2026-10-18",
     "slug": "lights-down",
     "name": "Lights Down",
@@ -3566,11 +3592,13 @@
       ],
       "competitors": "Sleep Cycle, Rise, BetterSleep, Calm.",
       "risks": "Saturated; no insomnia treatment claims."
-    }
+    },
+    "killed": "2026-10-19",
+    "killedReason": "Scrapped by Aidan on 19 Oct 2026; replaced by a new set of need offers."
   },
   {
     "type": "software",
-    "status": "live",
+    "status": "killed",
     "launched": "2026-10-18",
     "slug": "pay-me-first",
     "name": "Pay Me First",
@@ -3639,11 +3667,13 @@
       ],
       "competitors": "YNAB, Cleo, Monarch, Rocket Money.",
       "risks": "Bank data access if it links accounts."
-    }
+    },
+    "killed": "2026-10-19",
+    "killedReason": "Scrapped by Aidan on 19 Oct 2026; replaced by a new set of need offers."
   },
   {
     "type": "software",
-    "status": "live",
+    "status": "killed",
     "launched": "2026-10-18",
     "slug": "leak-finder",
     "name": "Leak Finder",
@@ -3694,11 +3724,13 @@
         "q": "Does it exist yet?",
         "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
       }
-    ]
+    ],
+    "killed": "2026-10-19",
+    "killedReason": "Scrapped by Aidan on 19 Oct 2026; replaced by a new set of need offers."
   },
   {
     "type": "software",
-    "status": "live",
+    "status": "killed",
     "launched": "2026-10-18",
     "slug": "hard-lock",
     "name": "Hard Lock",
@@ -3763,11 +3795,13 @@
         "q": "Does it exist yet?",
         "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
       }
-    ]
+    ],
+    "killed": "2026-10-19",
+    "killedReason": "Scrapped by Aidan on 19 Oct 2026; replaced by a new set of need offers."
   },
   {
     "type": "software",
-    "status": "live",
+    "status": "killed",
     "launched": "2026-10-18",
     "slug": "one-pause",
     "name": "One Pause",
@@ -3825,11 +3859,13 @@
         "q": "Does it exist yet?",
         "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
       }
-    ]
+    ],
+    "killed": "2026-10-19",
+    "killedReason": "Scrapped by Aidan on 19 Oct 2026; replaced by a new set of need offers."
   },
   {
     "type": "software",
-    "status": "live",
+    "status": "killed",
     "launched": "2026-10-18",
     "slug": "every-device-lock",
     "name": "Every Device Lock",
@@ -3880,11 +3916,13 @@
         "q": "Does it exist yet?",
         "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
       }
-    ]
+    ],
+    "killed": "2026-10-19",
+    "killedReason": "Scrapped by Aidan on 19 Oct 2026; replaced by a new set of need offers."
   },
   {
     "type": "software",
-    "status": "live",
+    "status": "killed",
     "launched": "2026-10-18",
     "slug": "day-reflow",
     "name": "Day Reflow",
@@ -3942,11 +3980,13 @@
         "q": "Does it exist yet?",
         "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
       }
-    ]
+    ],
+    "killed": "2026-10-19",
+    "killedReason": "Scrapped by Aidan on 19 Oct 2026; replaced by a new set of need offers."
   },
   {
     "type": "software",
-    "status": "live",
+    "status": "killed",
     "launched": "2026-10-18",
     "slug": "goal-stake",
     "name": "Goal Stake",
@@ -3997,11 +4037,13 @@
         "q": "Does it exist yet?",
         "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
       }
-    ]
+    ],
+    "killed": "2026-10-19",
+    "killedReason": "Scrapped by Aidan on 19 Oct 2026; replaced by a new set of need offers."
   },
   {
     "type": "software",
-    "status": "live",
+    "status": "killed",
     "launched": "2026-10-18",
     "slug": "mostly-habits",
     "name": "Mostly Habits",
@@ -4052,11 +4094,13 @@
         "q": "Does it exist yet?",
         "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
       }
-    ]
+    ],
+    "killed": "2026-10-19",
+    "killedReason": "Scrapped by Aidan on 19 Oct 2026; replaced by a new set of need offers."
   },
   {
     "type": "software",
-    "status": "live",
+    "status": "killed",
     "launched": "2026-10-18",
     "slug": "next-lift",
     "name": "Next Lift",
@@ -4125,11 +4169,13 @@
       ],
       "competitors": "Fitbod, Alpha Progression, Hevy, Strong.",
       "risks": "Crowded; no injury or medical claims."
-    }
+    },
+    "killed": "2026-10-19",
+    "killedReason": "Scrapped by Aidan on 19 Oct 2026; replaced by a new set of need offers."
   },
   {
     "type": "software",
-    "status": "live",
+    "status": "killed",
     "launched": "2026-10-18",
     "slug": "physique-check",
     "name": "Physique Check",
@@ -4191,11 +4237,13 @@
       ],
       "competitors": "GainFrame, AbMaxx, Progress Body Tracker, PicProgress.",
       "risks": "Must be 18+; privacy of photos."
-    }
+    },
+    "killed": "2026-10-19",
+    "killedReason": "Scrapped by Aidan on 19 Oct 2026; replaced by a new set of need offers."
   },
   {
     "type": "software",
-    "status": "live",
+    "status": "killed",
     "launched": "2026-10-18",
     "slug": "trend-scale",
     "name": "Trend Scale",
@@ -4257,11 +4305,13 @@
       ],
       "competitors": "Happy Scale, MacroFactor, Libra.",
       "risks": "Neutral language; no rate-of-loss targets."
-    }
+    },
+    "killed": "2026-10-19",
+    "killedReason": "Scrapped by Aidan on 19 Oct 2026; replaced by a new set of need offers."
   },
   {
     "type": "software",
-    "status": "live",
+    "status": "killed",
     "launched": "2026-10-18",
     "slug": "week-plate",
     "name": "Week Plate",
@@ -4316,11 +4366,13 @@
       ],
       "competitors": "Eat This Much, Mealime, PlateJoy.",
       "risks": "Calorie floors; allergies."
-    }
+    },
+    "killed": "2026-10-19",
+    "killedReason": "Scrapped by Aidan on 19 Oct 2026; replaced by a new set of need offers."
   },
   {
     "type": "software",
-    "status": "live",
+    "status": "killed",
     "launched": "2026-10-18",
     "slug": "check-in-buddy",
     "name": "Check-In Buddy",
@@ -4382,7 +4434,9 @@
       ],
       "competitors": "Noom, WW, Beeminder, coaching apps.",
       "risks": "Moderation; coach costs; no GLP-1 or medical claims."
-    }
+    },
+    "killed": "2026-10-19",
+    "killedReason": "Scrapped by Aidan on 19 Oct 2026; replaced by a new set of need offers."
   },
   {
     "slug": "image-match",
