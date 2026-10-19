@@ -1,0 +1,26 @@
+{
+ "g01n": [
+  "01-viewfinder",
+  "02-viewfinder",
+  "03-shutter"
+ ],
+ "v1": [
+  "01-hi",
+  "02-work",
+  "03-hour",
+  "04-cta"
+ ],
+ "v2": [
+  "01-phone",
+  "02-camera",
+  "03-cta"
+ ],
+ "v3": [
+  "01-hook",
+  "02-cta"
+ ],
+ "v3b": [
+  "01-hook",
+  "02-cta"
+ ]
+}
