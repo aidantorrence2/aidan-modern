@@ -3,7 +3,7 @@
 Offer: Every published credit you have, turned into clean tear sheets and one submissions-ready PDF, kept current as you add credits.
 Price: $5/month (or $29 one-off for a fixed PDF)
 Buyer: editorial photographers and stylists whose published work lives as screenshots in a camera roll
-Status: live since 2026-10-17
+Status: killed since 2026-10-17
 Hosted page: https://aidantorrence2.github.io/aidan-modern/tear-sheets (live after merge to main + deploy)
 Artifact page: https://claude.ai/artifact/RotDpjJz8Ets1hn4axWhJL
 

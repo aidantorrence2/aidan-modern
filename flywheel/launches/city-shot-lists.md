@@ -3,7 +3,7 @@
 Offer: Shot lists, golden-hour timings and permit notes for Asian cities, from someone who shot them.
 Price: $12 per city pack (or $39 for all cities)
 Buyer: travel content creators landing in Bangkok, Manila, Bali, Chiang Mai, Singapore, Busan or Ulaanbaatar with two days to shoot
-Status: live since 2026-10-16
+Status: killed since 2026-10-16
 Hosted page: https://aidantorrence2.github.io/aidan-modern/city-shot-lists (live after merge to main + deploy)
 
 ## Tracking links (one per channel)

@@ -10710,6 +10710,305 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-19",
+    "slug": "quiet-night",
+    "name": "Quiet Night",
+    "need": "My partner can't sleep because I snore, and nothing I've tried seems to make a difference.",
+    "headline": "Bedside snore recording with a morning loudness score, tags for each remedy you try, nights compared side by side, and a one-tap rating from your partner.",
+    "buyer": "Adults (18+) who snore and keep trying remedies blind, and their partners.",
+    "bullets": [
+      "Record the night by your bed and get a simple loudness score in the morning.",
+      "Tag each remedy you try (nasal strips, sleeping position, no alcohol) and compare nights side by side.",
+      "Your partner rates the night in one tap, so you know what actually helped."
+    ],
+    "price": "$24.99/year",
+    "priceUsd": 25,
+    "priceNote": "Below the leading snore-tracking app's yearly plans.",
+    "reasonPrompt": "What have you tried for snoring so far, and what happened?",
+    "faq": [
+      {
+        "q": "Is this a medical device?",
+        "a": "No. Quiet Night is an independent habit tool for adults 18+, not a medical device. Loud snoring with pauses in breathing, gasping or daytime sleepiness can be a sign of sleep apnea, so please see a doctor."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-19",
+      "summary": "Snorers and their partners describe trying remedy after remedy with no change, and a leading snore-tracking app has tens of thousands of paid ratings.",
+      "wtp": "SnoreLab (App Store): 4.7 from 58K ratings, Premium $5.99 to $9.99 a month or $17.99 to $59.99 a year.",
+      "signals": [
+        {
+          "url": "https://mumsnet.com/talk/general_health/5525949-my-snoring-is-ruining-my-marriage",
+          "who": "CGH93 (Mumsnet)",
+          "date": "2026-05-05",
+          "quote": "ive had nose strips before and they didn’t help.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/sleep/5235801-anti-snoring-aid",
+          "who": "SHAW82 (Mumsnet)",
+          "date": "2024-12-22",
+          "quote": "My husband snores and it's killing my sleep.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/relationships/5563701-the-snoring",
+          "who": "jackstini (Mumsnet)",
+          "date": "2026-08-07",
+          "quote": "Tried earplugs for him, nasal inserts, mouth tape and chin strap for me - nothing has worked",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/app/id529443604",
+          "who": "SnoreLab App Store listing",
+          "date": "2026-10-19",
+          "quote": "4.7 · 58K Ratings",
+          "seen": "opened"
+        }
+      ]
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-19",
+    "slug": "neat-again",
+    "name": "Neat Again",
+    "need": "My handwriting is terrible, and even I have trouble reading it. Every time I practise, it slips back.",
+    "headline": "Five minutes of daily pen-and-paper practice: photograph what you wrote, get one letter shape or spacing habit to fix next, and see day one next to today.",
+    "buyer": "Adults whose handwriting is hard to read and who have tried books or practice and slipped back.",
+    "bullets": [
+      "Write a few lines, take a photo, and get one specific thing to fix next: a letter shape, spacing or slant.",
+      "Practice lines come from things you actually write: lists, notes, cards.",
+      "Day one next to today, plus a light weekly check-in so it doesn't drift back."
+    ],
+    "price": "$19.99/year",
+    "priceUsd": 20,
+    "priceNote": "Below the leading handwriting-practice app's yearly plan.",
+    "reasonPrompt": "What do you most need to write neatly, and what have you tried before?",
+    "faq": [
+      {
+        "q": "Do I need special pens or paper?",
+        "a": "No. Any pen and paper works. Neat Again is an independent app."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-19",
+      "summary": "Adults on several forums say their handwriting is so bad they can't read it, and that practice slips back. Handwriting apps and courses already sell to adults.",
+      "wtp": "Writey Cursive Handwriting (App Store, Writey B.V.): 4.5 from 12K ratings, Monthly Subscription $3.99, Yearly Subscription $24.99, Lifetime Access $39.99.",
+      "signals": [
+        {
+          "url": "https://www.mumsnet.com/talk/_chat/3727120-Improving-handwriting-as-an-adult",
+          "who": "DeadAliveDead (Mumsnet)",
+          "date": "2019-10-25",
+          "quote": "My handwriting is terrible, absolutely shocking to the point that even I have trouble reading it sometimes.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://singletrackworld.com/forum/off-topic/handwriting-illegible/",
+          "who": "lunge (Singletrack)",
+          "date": "2020-06-19",
+          "quote": "Mine is terrible, truly awful, and the less I write, the worse it gets.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/_chat/4739046-hate-my-handwriting?page=1",
+          "who": "BigBunkers (Mumsnet)",
+          "date": "2023-02-09",
+          "quote": "I have no advice, I just wanted to say my handwriting is terrible too. It always has been.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/writey-practice-handwriting/id1512640380",
+          "who": "Writey App Store listing",
+          "date": "2026-10-19",
+          "quote": "12K Ratings ... Yearly Subscription $24.99",
+          "seen": "opened"
+        }
+      ]
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-19",
+    "slug": "open-question",
+    "name": "Open Question",
+    "need": "I'm terrible at small talk, and I can never think of a question to ask.",
+    "headline": "Private spoken practice for everyday chats (work kitchen, neighbour, party): your own set of open questions and follow-ups, drilled until they come naturally.",
+    "buyer": "Adults (18+) who freeze or go quiet in casual conversation at work and socially.",
+    "bullets": [
+      "Practise everyday chats out loud in private: the work kitchen, a neighbour, a party.",
+      "Build your own set of open questions and follow-ups, drilled until they come naturally.",
+      "A one-minute warm-up before an event, and a quick note afterwards on what worked."
+    ],
+    "price": "$29.99/year",
+    "priceUsd": 30,
+    "priceNote": "Below the yearly plan of a paid social-skills app.",
+    "reasonPrompt": "Where does small talk feel hardest for you: work, parties, school gates, or somewhere else?",
+    "faq": [
+      {
+        "q": "Is this therapy?",
+        "a": "No. Open Question is an independent practice tool for adults 18+, not therapy. If social anxiety is affecting your life, a doctor or therapist can help; if you are in crisis, in the US call or text 988."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-19",
+      "summary": "People on several forums say they are terrible at small talk and can never think of a question, and paid conversation-skills apps already sell subscriptions for it.",
+      "wtp": "Socializer - Social Skills (App Store): Yearly Subscription $39.99, Monthly Subscription $14.99; it lists small talk among the skills it teaches. Thin signal: only 3 ratings.",
+      "signals": [
+        {
+          "url": "https://www.mumsnet.com/talk/_chat/5543973-small-talk",
+          "who": "CaptBirdsEar (Mumsnet)",
+          "date": "2026-06-18",
+          "quote": "Trouble is I can never think of an open question to ask.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/_chat/4572675-small-talk-help",
+          "who": "Oohhaveabanana (Mumsnet)",
+          "date": "2022-06-19",
+          "quote": "I am terrible at small talk.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.anandtech.com/threads/small-talk.620614/",
+          "who": "RSI (AnandTech forums)",
+          "date": "2001-09-25",
+          "quote": "I always find it hard to think of something to talk about, cause of my inability to produce small talk. How is it done!?",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/app/id6748224879",
+          "who": "Socializer App Store listing",
+          "date": "2026-10-19",
+          "quote": "Socializer is designed to improve body language, tone of voice, empathy, small talk, and other key communication skills.",
+          "seen": "opened"
+        }
+      ],
+      "risks": "Willingness-to-pay evidence is thin (one small paid app); interest on the page has to carry it."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-19",
+    "slug": "short-loop",
+    "name": "Short Loop",
+    "need": "I have my licence, but I'm too scared to drive, so I only do short local journeys I already know.",
+    "headline": "Got your licence but too scared to drive? Short Loop builds you a ladder of tiny practice drives, from a 5-minute loop you know to the roads you avoid, one small step at a time.",
+    "buyer": "Adults (18+) with a full driving licence who drive rarely or have stopped, often after years away from the wheel, and who now feel they are missing out on school runs, house moves, visits and independence.",
+    "bullets": [
+      "Build your own ladder: list the drives you avoid, from easiest to hardest (an empty car park, your road at quiet times, the school run, a dual carriageway, the motorway), and start with the smallest one.",
+      "Log each practice drive in under a minute: where you went, how long it took, and a 1-to-5 rating for how it felt. Then see a plain progress line build up week by week.",
+      "Gentle repeat rules: you move up a rung only after you have done the same drive a few times. There is a 'passenger mode' for planning a drive with a calm friend in the car, and reminders to book a refresher lesson with an instructor when you get to a new kind of road."
+    ],
+    "price": "$9 one-time",
+    "priceUsd": 9,
+    "priceNote": "Pay once, no subscription. Use it alongside refresher lessons with an instructor, not instead of them.",
+    "reasonPrompt": "Which drive do you avoid most right now, and what is the smallest version of it you could try this week?",
+    "faq": [
+      {
+        "q": "Is this therapy or treatment for anxiety?",
+        "a": "No. Short Loop is a habit and practice-log tool for getting back behind the wheel in small, regular steps. It does not diagnose or treat anything. If fear of driving is affecting your health or daily life, talk to a doctor or a qualified professional. If you are in crisis, in the US call or text 988."
+      },
+      {
+        "q": "Does it teach me to drive?",
+        "a": "No. It is for people who already hold a full licence. It doesn't replace a qualified driving instructor, and it suggests booking refresher lessons for new or harder roads. Always follow local traffic laws and never use your phone while driving. You log each drive after you have parked."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Adults aged 18 and over who hold a valid licence: people who passed years ago and never kept it up, people who only drive routes they already know, and people who stopped after a scare."
+      },
+      {
+        "q": "I haven't driven in years. Where do I start?",
+        "a": "Start with the smallest rung you can manage, such as a few minutes in a quiet car park or around your own block at a quiet time. If you're out of practice, book a refresher lesson first, and repeat that rung until it feels boring before you move up."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-19",
+      "summary": "Adults who hold a licence but are afraid to drive describe the same pattern again and again in Mumsnet threads from 2018 to 2026. They passed years ago, stopped driving, and now stick to routes they know or avoid driving altogether. They feel they are missing out on house choices, school runs and independence. Replies keep recommending the same fix: refresher lessons and repeated small practice drives. People already pay for that through instructors and online courses.",
+      "wtp": "People pay for help with this today: Confident Drivers (UK), which sells driving-confidence courses and in-car training days, has a 4.8 TrustScore from 101 Trustpilot reviews; RobWDriving, a driving school whose reviewers often mention nerves and refresher lessons, has 88 Trustpilot reviews (4.9). Replies on Mumsnet keep recommending paid refresher lessons.",
+      "signals": [
+        {
+          "url": "https://www.mumsnet.com/talk/am_i_being_unreasonable/4900414-to-be-missing-out-on-stuff-because-im-scared-of-driving",
+          "who": "AfterTheRainComesSun (Mumsnet user)",
+          "date": "2023-09-19",
+          "quote": "I have a licence but haven't driven for many years and I was never a confident driver.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/am_i_being_unreasonable/4900414-to-be-missing-out-on-stuff-because-im-scared-of-driving",
+          "who": "Desperatetime (Mumsnet user)",
+          "date": "2023-09-19",
+          "quote": "I'm struggling with this and I only do local journeys that I know",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/am_i_being_unreasonable/4900414-to-be-missing-out-on-stuff-because-im-scared-of-driving",
+          "who": "SallyWD (Mumsnet user)",
+          "date": "2023-10-15",
+          "quote": "I'm terrified of driving through our city which is just so confusing, lots of lanes, bad signage and aggressive driving.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/_chat/5497323-if-you-used-to-be-scared-of-driving-how-did-you-overcome-that",
+          "who": "Idratherbewithmycat (Mumsnet user)",
+          "date": "2026-02-28",
+          "quote": "I don't want to send DD the message that driving is dangerous and that I had given up because I was scared",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/_chat/5497323-if-you-used-to-be-scared-of-driving-how-did-you-overcome-that",
+          "who": "Droppit (Mumsnet user)",
+          "date": "2026-02-28",
+          "quote": "The only way to get over the anxiety is to build confidence by driving - the more you do it, the more confident you become.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/am_i_being_unreasonable/3359909-Anyone-overcome-driving-anxiety",
+          "who": "Gabilan (Mumsnet user)",
+          "date": "2018-09-08",
+          "quote": "So I'm going to have a couple of refresher lessons and see how it goes.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.trustpilot.com/review/robwdriving.com",
+          "who": "Montse Abella (Trustpilot reviewer of RobWDriving)",
+          "date": "2026-10-02",
+          "quote": "I already have my driving license from Spain but didn't drive since I got it, so I was scared and unconfident.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.trustpilot.com/review/www.confidentdrivers.co.uk",
+          "who": "Rebecca (Trustpilot reviewer of Confident Drivers)",
+          "date": "2026-04-23",
+          "quote": "my levels of stress and anxiety about it are completely different now.",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Driving instructors' refresher and nervous-driver lessons, paid per hour or as 6-hour courses (for example RobWDriving, and the Learner Driving Confidence Builder in the UK). Confident Drivers (UK) sells online and in-car confidence courses. NavBuddy is a GPS app for nervous drivers with reassurance prompts, at GBP 4.99 or 9.99 per month and with very few ratings. There are general anxiety and hypnosis apps, but they have little content specific to driving. None of these offers a cheap, one-time self-paced log for working up through practice drives.",
+      "risks": "Most of the evidence is from the UK (Mumsnet, UK driving schools), so demand in the US is less proven. No App Store app specific to this need shows a large rating count, so it is unproven that people will pay for an app rather than a human instructor. There are safety and liability concerns: the app must never encourage phone use while driving or pushing past what is safe, and it must keep pointing users to qualified instructors. The anxiety framing needs careful habit-tool wording, with a pointer to a doctor and the 988 line, and no claims to treat anything. Users who are very fearful may prefer in-person help."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

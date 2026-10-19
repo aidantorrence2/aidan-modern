@@ -3,7 +3,7 @@
 Offer: Every inquiry gets a real answer in two minutes, in your voice: date checked against your calendar, the right pricing guide attached, a call slot offered, before they email three other photographers.
 Price: $6/month (unlimited inquiries)
 Buyer: wedding, family and portrait photographers who answer inquiries hours later from a phone between shoots and lose bookings to whoever replied first
-Status: live since 2026-10-18
+Status: killed since 2026-10-18
 Hosted page: https://aidantorrence2.github.io/aidan-modern/first-reply (live after merge to main + deploy)
 
 ## Tracking links (one per channel)

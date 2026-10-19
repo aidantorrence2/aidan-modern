@@ -3,7 +3,7 @@
 Offer: Send a deposit request with your terms in one tap, hold the date only once it's paid, and let the reminders chase instead of you.
 Price: $5/month (plus the card processor's fee, nothing else)
 Buyer: photographers who block dates on a promise and lose them to no-shows
-Status: live since 2026-10-17
+Status: killed since 2026-10-17
 Hosted page: https://aidantorrence2.github.io/aidan-modern/deposit-link (live after merge to main + deploy)
 Artifact page: https://claude.ai/artifact/JgaFSr1RBsXo3DKMUB6zeL
 

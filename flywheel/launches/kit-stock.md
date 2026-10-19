@@ -3,7 +3,7 @@
 Offer: Your whole makeup and hair kit in one list with open dates and expiry, a restock reminder before a wedding, and a packing list per look.
 Price: $3/month (unlimited products)
 Buyer: bridal hair and makeup artists who find the dried-out mascara and the empty setting spray on the morning of the wedding
-Status: live since 2026-10-17
+Status: killed since 2026-10-17
 Hosted page: https://aidantorrence2.github.io/aidan-modern/kit-stock (live after merge to main + deploy)
 
 ## Tracking links (one per channel)

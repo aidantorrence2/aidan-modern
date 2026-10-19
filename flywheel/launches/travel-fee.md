@@ -3,7 +3,7 @@
 Offer: Paste the venue address and get the travel line for your quote in seconds: miles, drive time, your per-mile rate, and the hotel night when the day runs past your limit.
 Price: $3/month (unlimited quotes)
 Buyer: wedding, event and portrait photographers who guess travel fees in the inquiry reply and eat the difference on the day
-Status: live since 2026-10-18
+Status: killed since 2026-10-18
 Hosted page: https://aidantorrence2.github.io/aidan-modern/travel-fee (live after merge to main + deploy)
 
 ## Tracking links (one per channel)

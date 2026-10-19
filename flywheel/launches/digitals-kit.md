@@ -3,7 +3,7 @@
 Offer: Turn one set of phone photos into agency-ready digitals, cropped and sized to each agency's own submission spec, with a tracker for who you sent them to.
 Price: $7 one-off (unlimited agencies for 90 days)
 Buyer: aspiring models applying to agencies who keep getting 'please resend in the right format'
-Status: live since 2026-10-17
+Status: killed since 2026-10-17
 Hosted page: https://aidantorrence2.github.io/aidan-modern/digitals-kit (live after merge to main + deploy)
 
 ## Tracking links (one per channel)

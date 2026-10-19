@@ -3,7 +3,7 @@
 Offer: Unpaid photo invoices chase themselves: polite reminders on a schedule you set, in your voice, stopping the moment the money lands.
 Price: $4/month (unlimited invoices)
 Buyer: freelance photographers and small studios who invoice brands, agencies and magazines and wait 30 to 90 days to get paid
-Status: live since 2026-10-17
+Status: killed since 2026-10-17
 Hosted page: https://aidantorrence2.github.io/aidan-modern/invoice-nudge (live after merge to main + deploy)
 Artifact page: https://claude.ai/artifact/Y1zHdaWnaLqZk9VfzRYcjW
 

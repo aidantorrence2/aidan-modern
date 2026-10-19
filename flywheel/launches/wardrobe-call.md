@@ -3,7 +3,7 @@
 Offer: Pick a shoot concept, get a wardrobe brief the model can actually follow: outfits, fabrics, colours, what to avoid, as one link with a checklist.
 Price: $4/month (unlimited briefs)
 Buyer: photographers who type 'bring a few options' and then lose the first hour of the shoot to the wrong clothes
-Status: live since 2026-10-17
+Status: killed since 2026-10-17
 Hosted page: https://aidantorrence2.github.io/aidan-modern/wardrobe-call (live after merge to main + deploy)
 Artifact page: https://claude.ai/artifact/1J8J1ywxvphSc5aZttCFcB
 

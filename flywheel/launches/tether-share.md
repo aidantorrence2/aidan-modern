@@ -3,7 +3,7 @@
 Offer: A live link for the people who can't crowd the monitor: every tethered frame lands on their phone seconds after the shutter, with a heart to mark picks.
 Price: $6/month (unlimited jobs, proxies kept 30 days)
 Buyer: commercial, e-commerce and editorial photographers shooting tethered for a client, art director or brand team on set or remote
-Status: live since 2026-10-17
+Status: killed since 2026-10-17
 Hosted page: https://aidantorrence2.github.io/aidan-modern/tether-share (live after merge to main + deploy)
 Artifact page: https://claude.ai/artifact/Y63SpVqDyRc5kv6eLAVeiX
 

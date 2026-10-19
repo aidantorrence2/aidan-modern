@@ -3,7 +3,7 @@
 Offer: Every image license you've sold, with its end date, on one page: you get a heads-up 60 days out, the client gets a renewal note in your voice, and lapsed usage stops being free.
 Price: $5/month (unlimited licenses)
 Buyer: commercial, editorial and brand photographers who license images for a term and know some clients keep using them after it ends
-Status: live since 2026-10-18
+Status: killed since 2026-10-18
 Hosted page: https://aidantorrence2.github.io/aidan-modern/renewal-watch (live after merge to main + deploy)
 Artifact page: https://claude.ai/artifact/KcwFcpdjBL3TuT6Yj3FH7n
 

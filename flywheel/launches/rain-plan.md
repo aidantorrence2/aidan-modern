@@ -3,7 +3,7 @@
 Offer: Outdoor shoots that reschedule themselves: the forecast is checked 48 hours out, the client taps a backup date, the booking moves, and nobody writes the awkward text.
 Price: $5/month (unlimited shoots)
 Buyer: family, engagement, senior and brand photographers who shoot outdoors and lose an evening to weather texts every week of the busy season
-Status: live since 2026-10-18
+Status: killed since 2026-10-18
 Hosted page: https://aidantorrence2.github.io/aidan-modern/rain-plan (live after merge to main + deploy)
 Artifact page: https://claude.ai/artifact/1R1uWr2MvmVGMysF3JJsG3
 

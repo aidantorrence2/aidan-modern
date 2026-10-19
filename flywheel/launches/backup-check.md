@@ -3,7 +3,7 @@
 Offer: A nightly check that every shoot folder exists in three places, with a WhatsApp message the morning one is missing.
 Price: $4/month (runs on your own computer; nothing uploaded)
 Buyer: photographers who have a backup plan and no idea whether it ran last night
-Status: live since 2026-10-17
+Status: killed since 2026-10-17
 Hosted page: https://aidantorrence2.github.io/aidan-modern/backup-check (live after merge to main + deploy)
 Artifact page: https://claude.ai/artifact/4e63JQfaJU1Pfq3nYcUSE8
 

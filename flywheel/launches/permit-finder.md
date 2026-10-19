@@ -3,7 +3,7 @@
 Offer: Which parks, beaches and streets in your city need a photo permit, what it costs, how long it takes, and the exact form, on one page per city.
 Price: $6/month (or $9 per city, one-off)
 Buyer: portrait, wedding, engagement and small-crew commercial photographers who shoot on location and have been moved along or fined for not having a permit
-Status: live since 2026-10-18
+Status: killed since 2026-10-18
 Hosted page: https://aidantorrence2.github.io/aidan-modern/permit-finder (live after merge to main + deploy)
 Artifact page: https://claude.ai/artifact/QFXoZS5SeKuiQttVxQLMqc
 

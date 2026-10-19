@@ -3,7 +3,7 @@
 Offer: One vertical video in, five language versions out, each with burned-in subtitles that keep your timing, line breaks and slang.
 Price: $7/month (20 videos a month, 5 languages each)
 Buyer: creators whose audience is split across languages and who post the same video once, in English, and hope
-Status: live since 2026-10-17
+Status: killed since 2026-10-17
 Hosted page: https://aidantorrence2.github.io/aidan-modern/subtitle-pack (live after merge to main + deploy)
 Artifact page: https://claude.ai/artifact/7Dvg8cjUYRLohUSmJGdvHB
 

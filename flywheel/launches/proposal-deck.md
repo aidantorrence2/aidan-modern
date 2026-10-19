@@ -3,7 +3,7 @@
 Offer: Turn a concept, a moodboard and a team list into a magazine-ready editorial proposal PDF in ten minutes.
 Price: $19 per proposal (or $12/month unlimited)
 Buyer: fashion and editorial photographers and stylists pitching magazines for placements and pull letters
-Status: live since 2026-10-16
+Status: killed since 2026-10-16
 Hosted page: https://aidantorrence2.github.io/aidan-modern/proposal-deck (live after merge to main + deploy)
 
 ## Tracking links (one per channel)

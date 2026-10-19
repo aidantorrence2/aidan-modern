@@ -3,7 +3,7 @@
 Offer: Word-level captions burned into your vertical video in your font and colours, from a file drop, in under two minutes.
 Price: $6/month (60 minutes of video a month)
 Buyer: short-form creators who post daily and still caption by hand or pay per minute for it
-Status: live since 2026-10-16
+Status: killed since 2026-10-16
 Hosted page: https://aidantorrence2.github.io/aidan-modern/caption-burner (live after merge to main + deploy)
 
 ## Tracking links (one per channel)

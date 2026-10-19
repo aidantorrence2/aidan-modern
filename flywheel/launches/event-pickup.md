@@ -3,7 +3,7 @@
 Offer: Guests scan a QR, take a selfie, and get the photos they're in before they leave the room, with your credit on every file and the organiser's branding on the page.
 Price: $9 per event (or $15/month for unlimited events)
 Buyer: event, conference and party photographers who deliver a 900-image gallery three days later and watch nobody find themselves in it
-Status: live since 2026-10-18
+Status: killed since 2026-10-18
 Hosted page: https://aidantorrence2.github.io/aidan-modern/event-pickup (live after merge to main + deploy)
 
 ## Tracking links (one per channel)

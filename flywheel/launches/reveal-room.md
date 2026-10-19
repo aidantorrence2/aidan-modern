@@ -3,7 +3,7 @@
 Offer: A timed online reveal where the client sees the finished gallery for the first time, picks wall art at your prices, and orders before the link closes.
 Price: $6/month (unlimited reveals)
 Buyer: portrait, pet and equine photographers who sell wall art and albums but can't always get clients into the studio for a reveal
-Status: live since 2026-10-17
+Status: killed since 2026-10-17
 Hosted page: https://aidantorrence2.github.io/aidan-modern/reveal-room (live after merge to main + deploy)
 Artifact page: https://claude.ai/artifact/AsVUyxd64esRD6Gi25du3T
 

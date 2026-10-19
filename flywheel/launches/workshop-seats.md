@@ -3,7 +3,7 @@
 Offer: Sell the seats for your workshop or styled shoot from one page: deposit holds a seat, the waitlist fills a dropout, and every attendee gets the prep page and the model release before the day.
 Price: $6/month (or $15 per event; no commission on seats)
 Buyer: photographers who teach workshops, run styled shoots or host mentoring days and fill them through DMs and a spreadsheet
-Status: live since 2026-10-18
+Status: killed since 2026-10-18
 Hosted page: https://aidantorrence2.github.io/aidan-modern/workshop-seats (live after merge to main + deploy)
 
 ## Tracking links (one per channel)

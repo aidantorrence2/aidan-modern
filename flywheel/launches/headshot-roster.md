@@ -3,7 +3,7 @@
 Offer: Company headshot days without the spreadsheet: staff pick a slot, get reminders and a pick page, and HR sees one roster from booked to delivered.
 Price: $8/month (or $15 per headshot day)
 Buyer: corporate and headshot photographers who shoot 20 to 200 staff in a day and coordinate it through an HR contact
-Status: live since 2026-10-18
+Status: killed since 2026-10-18
 Hosted page: https://aidantorrence2.github.io/aidan-modern/headshot-roster (live after merge to main + deploy)
 Artifact page: https://claude.ai/artifact/DDVSU3meSUUYN5Gf9FrFFa
 

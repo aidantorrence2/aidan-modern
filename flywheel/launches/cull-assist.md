@@ -3,7 +3,7 @@
 Offer: Turn 2,000 frames into a 60-frame edit in a minute, ranked by a model that learned your taste from your past selects.
 Price: $12/month (runs on your own computer)
 Buyer: photographers who spend the evening after a shoot clicking through near-duplicates
-Status: live since 2026-10-16
+Status: killed since 2026-10-16
 Hosted page: https://aidantorrence2.github.io/aidan-modern/cull-assist (live after merge to main + deploy)
 Artifact page: https://claude.ai/artifact/5ekgwxVEfxdX3k1kb1FqiD
 

@@ -3,7 +3,7 @@
 Offer: Every lens, body and light that leaves your hands gets a checkout: who has it, since when, a photo of its condition, and a reminder when it should be back.
 Price: $3/month (unlimited items and borrowers)
 Buyer: photographers who lend gear to second shooters, assistants and friends and have lost at least one card reader, one battery and one friendship to 'I thought I gave that back'
-Status: live since 2026-10-18
+Status: killed since 2026-10-18
 Hosted page: https://aidantorrence2.github.io/aidan-modern/kit-checkout (live after merge to main + deploy)
 
 ## Tracking links (one per channel)

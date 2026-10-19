@@ -3,7 +3,7 @@
 Offer: A photographer's portfolio site that loads in under a second, from a folder of photos, with no template to fight.
 Price: $15/month (domain included)
 Buyer: photographers paying for a site builder they resent, or still sending a Google Drive link
-Status: live since 2026-10-16
+Status: killed since 2026-10-16
 Hosted page: https://aidantorrence2.github.io/aidan-modern/portfolio-globe (live after merge to main + deploy)
 Artifact page: https://claude.ai/artifact/N6uW3wUQTjZUUAPXhRHQEd
 

@@ -3,7 +3,7 @@
 Offer: Every drive to a shoot logged for you: the calendar event becomes a trip with miles, date, client and purpose, and the year ends with one file your accountant accepts.
 Price: $3/month (unlimited trips; export any time)
 Buyer: photographers who drive to venues, clients and locations every week and reconstruct a year of mileage from memory each spring
-Status: live since 2026-10-18
+Status: killed since 2026-10-18
 Hosted page: https://aidantorrence2.github.io/aidan-modern/shoot-miles (live after merge to main + deploy)
 
 ## Tracking links (one per channel)

@@ -3,7 +3,7 @@
 Offer: Ask a creator for permission to repost their video or photo with one link; they approve in a tap; you keep a dated record with the terms.
 Price: $5/month (unlimited requests; team seats later)
 Buyer: small brands, venues and creators who repost other people's content and settle permission in a DM nobody can find later
-Status: live since 2026-10-17
+Status: killed since 2026-10-17
 Hosted page: https://aidantorrence2.github.io/aidan-modern/repost-permit (live after merge to main + deploy)
 Artifact page: https://claude.ai/artifact/QkE6z3fmeFZNY7boeCCiby
 

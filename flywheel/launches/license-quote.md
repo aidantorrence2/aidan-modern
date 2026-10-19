@@ -3,7 +3,7 @@
 Offer: Answer six questions about how a brand will use your photos and get a usage-rights quote and a one-page licence to send back, in two minutes.
 Price: $5/month (or free for your first three quotes)
 Buyer: photographers who get asked 'how much for the rights?' and answer from a gut feeling
-Status: live since 2026-10-17
+Status: killed since 2026-10-17
 Hosted page: https://aidantorrence2.github.io/aidan-modern/license-quote (live after merge to main + deploy)
 Artifact page: https://claude.ai/artifact/4SM2JXoLDPuLPb58aKYVhS
 

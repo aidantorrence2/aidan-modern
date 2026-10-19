@@ -3,7 +3,7 @@
 Offer: A sign-up page for your next city that fills your model-test calendar before you land.
 Price: $19/month (pause between trips)
 Buyer: traveling photographers who book model tests and collabs city by city
-Status: live since 2026-10-16
+Status: killed since 2026-10-16
 Hosted page: https://aidantorrence2.github.io/aidan-modern/city-pages (live after merge to main + deploy)
 Artifact page: https://claude.ai/artifact/7VbdFK81CMsTq1NWgNYdms
 

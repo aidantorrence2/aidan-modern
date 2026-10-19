@@ -3,7 +3,7 @@
 Offer: Every magazine taking fashion and editorial submissions, with their rules, published contacts and what they actually run.
 Price: $39 one-off (includes 12 months of updates)
 Buyer: emerging fashion photographers and stylists submitting stories
-Status: live since 2026-10-16
+Status: killed since 2026-10-16
 Hosted page: https://aidantorrence2.github.io/aidan-modern/submission-atlas (live after merge to main + deploy)
 Artifact page: https://claude.ai/artifact/StsFNWV1biVBa4XJmRwkDr
 

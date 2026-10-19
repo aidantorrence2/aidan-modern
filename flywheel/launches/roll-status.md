@@ -3,7 +3,7 @@
 Offer: A status link for every film order: check-in creates it, each roll moves received, developing, scanning, ready with one tap at the bench, and your site's turnaround line updates from the real queue.
 Price: $15/month (unlimited orders; one lab, any number of staff)
 Buyer: independent develop-and-scan film labs that answer 'is my film ready?' emails all day
-Status: live since 2026-10-18
+Status: killed since 2026-10-18
 Hosted page: https://aidantorrence2.github.io/aidan-modern/roll-status (live after merge to main + deploy)
 Artifact page: https://claude.ai/artifact/VdLuisXhQMmL7GtNDY9mnc
 

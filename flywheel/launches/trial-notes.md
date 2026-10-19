@@ -3,7 +3,7 @@
 Offer: One record per bride from the trial: the look, every product and shade, timings, photos and notes, so the wedding morning is a repeat, not a reinvention.
 Price: $4/month (unlimited brides)
 Buyer: bridal hair and makeup artists who run trials months before the day and keep the details in a notebook, a camera roll and their memory
-Status: live since 2026-10-17
+Status: killed since 2026-10-17
 Hosted page: https://aidantorrence2.github.io/aidan-modern/trial-notes (live after merge to main + deploy)
 Artifact page: https://claude.ai/artifact/5niKN2aHGHnyaa74K1znoH
 

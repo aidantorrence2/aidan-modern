@@ -3,7 +3,7 @@
 Offer: A client proofing link that loads fast on a phone, takes selects and one-line notes, and tells you on WhatsApp when they're done.
 Price: $8/month (unlimited galleries, 90-day retention)
 Buyer: photographers who send a Drive folder and then chase selects over chat
-Status: live since 2026-10-16
+Status: killed since 2026-10-16
 Hosted page: https://aidantorrence2.github.io/aidan-modern/proof-link (live after merge to main + deploy)
 Artifact page: https://claude.ai/artifact/WXrKuumFUrMYZP16EG963W
 

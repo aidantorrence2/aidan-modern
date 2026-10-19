@@ -3,7 +3,7 @@
 Offer: Every Monday, your last week of comments turned into the ten questions people keep asking, with a next-video idea and a reply you can paste for each.
 Price: $5/month (one account; add a second for $2)
 Buyer: short-form creators with hundreds of comments a week and no idea which ones are telling them what to film next
-Status: live since 2026-10-17
+Status: killed since 2026-10-17
 Hosted page: https://aidantorrence2.github.io/aidan-modern/comment-miner (live after merge to main + deploy)
 
 ## Tracking links (one per channel)

@@ -3,7 +3,7 @@
 Offer: A hundred first lines for your next short videos, scored against what's working in your niche this week, every Monday.
 Price: $9/month (cancel anytime)
 Buyer: short-form creators who know what to film and freeze on the first sentence
-Status: live since 2026-10-16
+Status: killed since 2026-10-16
 Hosted page: https://aidantorrence2.github.io/aidan-modern/hook-bank (live after merge to main + deploy)
 Artifact page: https://claude.ai/artifact/FfB9BHNnGmquSYrgv6mgZA
 

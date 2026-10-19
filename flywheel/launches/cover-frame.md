@@ -3,7 +3,7 @@
 Offer: Drop a vertical video, get the three best cover frames with your title overlaid in your style, sized for TikTok, Reels and Shorts.
 Price: $5/month (60 videos a month)
 Buyer: short-form creators who post with whatever frame the app picked and lose the profile-grid click
-Status: live since 2026-10-17
+Status: killed since 2026-10-17
 Hosted page: https://aidantorrence2.github.io/aidan-modern/cover-frame (live after merge to main + deploy)
 
 ## Tracking links (one per channel)

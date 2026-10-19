@@ -3,7 +3,7 @@
 Offer: Find the published press and booking contacts for any magazine, agency or talent, and get the cold pitch drafted, in minutes.
 Price: $29/month (or $99 one-time setup for your own Gmail)
 Buyer: editorial and portrait photographers who chase magazines, agencies and talent by email
-Status: live since 2026-10-16
+Status: killed since 2026-10-16
 Hosted page: https://aidantorrence2.github.io/aidan-modern/pitch-pilot (live after merge to main + deploy)
 Artifact page: https://claude.ai/artifact/4dMR9mWrMFQEJfo71pWjT4
 

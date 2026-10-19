@@ -3,7 +3,7 @@
 Offer: A model call that doesn't live in your DMs: one page per casting, applicants submit photos, sizes and dates, you shortlist in a grid, and the booked few get details and a release.
 Price: $5/month (unlimited castings and applicants)
 Buyer: portrait, fashion and brand photographers who run model calls, test shoots and small castings through Instagram comments and a notes app
-Status: live since 2026-10-18
+Status: killed since 2026-10-18
 Hosted page: https://aidantorrence2.github.io/aidan-modern/casting-call (live after merge to main + deploy)
 Artifact page: https://claude.ai/artifact/FrEUEx8ydbcqLekwDBBAHZ
 

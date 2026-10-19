@@ -3,7 +3,7 @@
 Offer: One link per shoot where your subject or their family can order real prints, fulfilled by a lab, with your margin set by you and nothing to pack.
 Price: $6/month (plus lab cost at wholesale; you keep the margin)
 Buyer: portrait and family photographers who get asked 'can I get a print?' and answer with a Dropbox folder
-Status: live since 2026-10-17
+Status: killed since 2026-10-17
 Hosted page: https://aidantorrence2.github.io/aidan-modern/print-link (live after merge to main + deploy)
 Artifact page: https://claude.ai/artifact/7UVLd9vkCSv65U348oSyUE
 

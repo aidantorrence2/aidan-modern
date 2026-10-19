@@ -3,7 +3,7 @@
 Offer: One vendor list per wedding, typed once: every caption gets the right tags, every vendor gets their gallery with your credit terms, and the referrals come back to you.
 Price: $4/month (unlimited weddings)
 Buyer: wedding and event photographers who retype planner, florist, venue and dress handles into every post and still miss someone
-Status: live since 2026-10-18
+Status: killed since 2026-10-18
 Hosted page: https://aidantorrence2.github.io/aidan-modern/vendor-credits (live after merge to main + deploy)
 
 ## Tracking links (one per channel)

@@ -3,7 +3,7 @@
 Offer: Call sheet, model release and usage agreement as one clean PDF, in two minutes, from your phone.
 Price: $9 per shoot (or $7/month unlimited)
 Buyer: freelance photographers and small production teams who still type these up the night before
-Status: live since 2026-10-16
+Status: killed since 2026-10-16
 Hosted page: https://aidantorrence2.github.io/aidan-modern/shoot-kit (live after merge to main + deploy)
 Artifact page: https://claude.ai/artifact/4oARQvjamPUxJtRSAcc8q9
 

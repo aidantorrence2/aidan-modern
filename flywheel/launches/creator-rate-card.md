@@ -3,7 +3,7 @@
 Offer: A rate card page built from your real numbers, with a quote link brands fill in, so 'what are your rates?' gets a page instead of a panicked DM.
 Price: $5/month (no cut of your deals)
 Buyer: short-form creators between 5k and 200k followers who get brand DMs and answer each one from scratch
-Status: live since 2026-10-17
+Status: killed since 2026-10-17
 Hosted page: https://aidantorrence2.github.io/aidan-modern/creator-rate-card (live after merge to main + deploy)
 Artifact page: https://claude.ai/artifact/FdtsuYzruDuQeqgVf4Faim
 

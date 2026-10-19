@@ -3,7 +3,7 @@
 Offer: A one-link shoot moodboard your model, stylist and client can react to before the day, built in five minutes.
 Price: $8/month (unlimited boards)
 Buyer: photographers who send Pinterest links and screenshots and hope everyone saw the same thing
-Status: live since 2026-10-16
+Status: killed since 2026-10-16
 Hosted page: https://aidantorrence2.github.io/aidan-modern/moodboard-maker (live after merge to main + deploy)
 Artifact page: https://claude.ai/artifact/NFodpDSxJKMufwiwsdT4ov
 

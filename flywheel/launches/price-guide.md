@@ -3,7 +3,7 @@
 Offer: Your packages in one place, and every pricing guide, web page and inquiry reply built from it, so a price change happens once instead of in six PDFs you forgot about.
 Price: $5/month (unlimited guides and links)
 Buyer: wedding, family and portrait photographers with three versions of their pricing guide in the wild and a website that still shows last year's prices
-Status: live since 2026-10-18
+Status: killed since 2026-10-18
 Hosted page: https://aidantorrence2.github.io/aidan-modern/price-guide (live after merge to main + deploy)
 
 ## Tracking links (one per channel)

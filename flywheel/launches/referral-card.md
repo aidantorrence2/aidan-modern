@@ -3,7 +3,7 @@
 Offer: Every client gets a personal referral link worth a real credit; you see who sent whom, what they booked, and what each client has earned, without a spreadsheet.
 Price: $5/month (unlimited clients and links)
 Buyer: family, newborn, senior and wedding photographers whose bookings mostly come from word of mouth and who track thank-you credits by memory
-Status: live since 2026-10-18
+Status: killed since 2026-10-18
 Hosted page: https://aidantorrence2.github.io/aidan-modern/referral-card (live after merge to main + deploy)
 
 ## Tracking links (one per channel)

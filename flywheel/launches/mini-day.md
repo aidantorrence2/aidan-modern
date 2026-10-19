@@ -3,7 +3,7 @@
 Offer: Run a mini-session day from one page: slots, price, deposit and waitlist, with the whole day's timeline and client pages built for you.
 Price: $6/month (or $12 per mini day)
 Buyer: family, pet and seasonal photographers who fill a mini-session day through DMs and a spreadsheet
-Status: live since 2026-10-17
+Status: killed since 2026-10-17
 Hosted page: https://aidantorrence2.github.io/aidan-modern/mini-day (live after merge to main + deploy)
 Artifact page: https://claude.ai/artifact/LYGYQqdXrhXSrLgBqeegAg
 

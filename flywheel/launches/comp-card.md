@@ -3,7 +3,7 @@
 Offer: An agency-standard comp card, print-ready and web-ready, from five photos and your stats, in two minutes, no designer.
 Price: $5 one-off (or $3/month for unlimited updates)
 Buyer: models and new faces who need a comp card for castings and open calls and keep paying for a template they fight with
-Status: live since 2026-10-17
+Status: killed since 2026-10-17
 Hosted page: https://aidantorrence2.github.io/aidan-modern/comp-card (live after merge to main + deploy)
 
 ## Tracking links (one per channel)

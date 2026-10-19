@@ -3,7 +3,7 @@
 Offer: Rent out your studio's empty hours without becoming a landlord: a booking page with your real availability, deposit, house rules, and a door code that arrives an hour before.
 Price: $6/month (no commission on bookings)
 Buyer: photographers who lease a studio that sits empty most weekdays and field 'is your space available?' DMs they never quite answer
-Status: live since 2026-10-18
+Status: killed since 2026-10-18
 Hosted page: https://aidantorrence2.github.io/aidan-modern/studio-hours (live after merge to main + deploy)
 Artifact page: https://claude.ai/artifact/LmMcvJUGA7SkiwcBK1VYqJ
 

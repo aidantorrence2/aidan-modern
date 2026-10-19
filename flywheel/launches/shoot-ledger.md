@@ -3,7 +3,7 @@
 Offer: Every shoot's money in one line: deposit, balance, lab, travel, assistant, what you kept. Receipts by WhatsApp photo, tax export at year end.
 Price: $5/month (unlimited shoots; multi-currency)
 Buyer: freelance photographers who know their day rate and have no idea what a shoot actually earns them
-Status: live since 2026-10-17
+Status: killed since 2026-10-17
 Hosted page: https://aidantorrence2.github.io/aidan-modern/shoot-ledger (live after merge to main + deploy)
 Artifact page: https://claude.ai/artifact/Mi3taCfxCtYimzVW7k346V
 

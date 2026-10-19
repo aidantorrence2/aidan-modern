@@ -3,7 +3,7 @@
 Offer: A booking widget for photographers that shows your open dates in the visitor's own time zone and sends the request to your phone.
 Price: $7/month (unlimited slots)
 Buyer: photographers who book across time zones and lose sessions to 'wait, which Tuesday?'
-Status: live since 2026-10-16
+Status: killed since 2026-10-16
 Hosted page: https://aidantorrence2.github.io/aidan-modern/open-slots (live after merge to main + deploy)
 Artifact page: https://claude.ai/artifact/1BHSZGEvcv3JYw5W3aP2sp
 

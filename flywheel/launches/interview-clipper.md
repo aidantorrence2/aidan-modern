@@ -3,7 +3,7 @@
 Offer: Drop in a long interview, get captioned vertical cuts with three hook variants each, ready to post.
 Price: $15/month (10 interviews a month)
 Buyer: small creators doing people-first video who lose a day to cutting clips
-Status: live since 2026-10-16
+Status: killed since 2026-10-16
 Hosted page: https://aidantorrence2.github.io/aidan-modern/interview-clipper (live after merge to main + deploy)
 Artifact page: https://claude.ai/artifact/LyAUvKj1eiTKN1opKoZcUm
 

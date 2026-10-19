@@ -3,7 +3,7 @@
 Offer: One page per booking that tells your client everything about the day: time, pin, parking, what to expect, weather, wardrobe, who to call, updated as it changes.
 Price: $4/month (unlimited bookings)
 Buyer: photographers who answer the same six 'what time, where exactly, what if it rains' messages before every session
-Status: live since 2026-10-17
+Status: killed since 2026-10-17
 Hosted page: https://aidantorrence2.github.io/aidan-modern/shoot-day-page (live after merge to main + deploy)
 Artifact page: https://claude.ai/artifact/LDqryoF4NBjNNUh7iqP8PS
 

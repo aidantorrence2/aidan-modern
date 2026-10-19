@@ -3,7 +3,7 @@
 Offer: Twelve photos in, a finished 9:16 reel out, with captions, pacing and crop points set for you, in one minute.
 Price: $10/month (30 renders a month)
 Buyer: photographers who have the photos but never post the reel
-Status: live since 2026-10-16
+Status: killed since 2026-10-16
 Hosted page: https://aidantorrence2.github.io/aidan-modern/reel-renderer (live after merge to main + deploy)
 
 ## Tracking links (one per channel)
