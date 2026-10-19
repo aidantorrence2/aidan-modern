@@ -11276,6 +11276,79 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-19",
+    "slug": "steady-gain",
+    "name": "Steady Gain",
+    "need": "No matter how much I eat, I just can't gain weight.",
+    "headline": "For naturally skinny adults: a one-minute daily food log against a steady surplus, one easy add-on at a time, a weekly weigh-in trend and a simple strength routine.",
+    "buyer": "Naturally skinny adults (18+) who eat a lot and still can't put on weight or muscle.",
+    "bullets": [
+      "A one-minute daily log that shows whether you actually ate more than you burn, not just whether you felt full.",
+      "One easy add-on at a time (a snack, a bigger breakfast, a calorie-dense shake), so eating more never feels like a second job.",
+      "A weekly weigh-in trend and a short strength routine, so the weight you gain comes with muscle."
+    ],
+    "price": "$4.99/month",
+    "priceUsd": 5,
+    "priceNote": "About half the monthly price of the leading weight-gain app.",
+    "reasonPrompt": "What have you tried to gain weight so far, and where did it stall?",
+    "faq": [
+      {
+        "q": "Is this medical or nutrition advice?",
+        "a": "No. Steady Gain is an independent habit and tracking tool for adults 18+, not medical advice. If you are losing weight without trying, or have a medical condition or a history of eating disorders, talk to a doctor first."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-19",
+      "summary": "Naturally thin people on several forum threads say they eat huge amounts and still cannot gain weight, some after buying weight-gainer products, and weight-gain apps already sell subscriptions.",
+      "wtp": "The Weight Gain App (App Store): 4.8 from 738 ratings, Monthly Pro Plan $9.99, Annual Pro Plan $49.99, Pro Annual $79.99. mitmot on AnandTech had already bought weight-gainer shakes.",
+      "signals": [
+        {
+          "url": "https://forums.anandtech.com/threads/why-the-hel-couldnt-i-get-fat.459568/",
+          "who": "Wedesdo (AnandTech forums)",
+          "date": "2001-02-04",
+          "quote": "I love food and love eating. but, no matter how much I eat, I just can't gain a little backup fat.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.anandtech.com/threads/why-the-hel-couldnt-i-get-fat.459568/",
+          "who": "bigd480 (AnandTech forums)",
+          "date": "2001-02-04",
+          "quote": "Hey i'm same way - i was 6'1'' and 140 when i got to college",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.anandtech.com/threads/no-matter-what-i-do-i-cant-gain-weight.1699892",
+          "who": "vshah (AnandTech forums)",
+          "date": "2005-09-19",
+          "quote": "once i ate 2 big macs for lunch every day for 6 weeks and nothing happened",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.anandtech.com/threads/no-matter-what-i-do-i-cant-gain-weight.1699892",
+          "who": "mitmot (AnandTech forums)",
+          "date": "2005-09-19",
+          "quote": "even tried taking weight gainer for a week (that 2200 calorie per day stuff) and to no avail",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/app/id6475798461",
+          "who": "The Weight Gain App App Store listing",
+          "date": "2026-10-19",
+          "quote": "4.8 · 738 Ratings ... Monthly Pro Plan $9.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "The Weight Gain App, Gaintrain, Bony to Beastly program, general calorie counters.",
+      "risks": "The forum posts are from 2001 to 2005, and the largest dedicated app has 738 ratings. The copy must stay clear of medical claims."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
