@@ -26,6 +26,7 @@ for (const o of offers) {
   // market already asked for it. Evidence is public posts by different people, each cited.
   if (['live', 'threshold_met', 'building', 'shipped'].includes(o.status)) {
     if (o.type !== 'software') errors.push(`${at}: type must be "software" to go live`)
+    if (typeof o.need !== 'string' || !o.need.trim()) errors.push(`${at}: need is required (Aidan, 19 Oct: every offer answers a personal need in the buyer's words)`)
     const d = o.demand || {}
     const sig = Array.isArray(d.signals) ? d.signals : []
     const urls = new Set(sig.map(x => x && x.url))

@@ -10,6 +10,7 @@ Aidan Torrence (photographer, @madebyaidan) asked for an hourly "money flywheel"
 
 ## 2. Standing orders (all in force)
 
+0. **Need-first offers only (Aidan, 19 Oct 2026, strict).** Every live offer is new software for one personal need people say in their own words: can't get a date, lose weight, phone time, muscle, goals and tasks, money online, a job, and needs of that kind. Business tools are never offers; all were retired on 19 Oct. `npm run test:offers` refuses a live offer without a `need` field. These offers are never cold-emailed.
 1. **Demand first, software only.** An offer goes live only with evidence from 3+ distinct sources by different people or businesses, at least 2 opened, plus a willingness-to-pay signal. The strongest evidence is money already spent: products with verified revenue, paid apps with many installs, repeated paid freelance work. Competitors and build size never disqualify an offer (Aidan, 18 Oct). Any market is fine. `npm run test:offers` refuses a live offer without a `type: "software"` field and a cited `demand` block. See `flywheel/RUNBOOK.md` step 0.
 2. **Nothing is emailed or posted to anyone without Aidan's per-item approval.** A bare "approve all" does not count. Approval arrives through the approvals queue (section 5), or by Aidan naming the specific item or recipient.
 3. **Free hosting only. Never Vercel.** Offer pages are a static export on GitHub Pages. No deploy scripts, no paid tiers, no card on file.

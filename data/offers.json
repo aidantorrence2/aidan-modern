@@ -13,7 +13,7 @@
     "price": "$9/month",
     "priceUsd": 9,
     "priceNote": "one Square account, all locations",
-    "status": "live",
+    "status": "killed",
     "launched": "2026-10-18",
     "reasonPrompt": "How do you track expiry dates today, and how many items do you check by hand each week?",
     "faq": [
@@ -71,7 +71,9 @@
       ],
       "competitors": "A seller-built paid tracker linked in the second thread; Thrive (described as expensive); FEFO (no Square sync per the research pass). Square itself has not shipped the feature.",
       "risks": "Square is reported not to be taking new App Marketplace listings; OAuth apps still work unlisted. Small competitors exist."
-    }
+    },
+    "killed": "2026-10-19",
+    "killedReason": "Retired by Aidan on 19 Oct 2026: offers must answer a personal need (dating, weight, phone time, muscle, goals, money online, a job), not business tools."
   },
   {
     "slug": "feed-match",
@@ -87,7 +89,7 @@
     "price": "$29 per audit",
     "priceUsd": 29,
     "priceNote": "re-runs on the same store free for 14 days",
-    "status": "live",
+    "status": "killed",
     "launched": "2026-10-18",
     "reasonPrompt": "Was your account suspended, and what did you try before appealing?",
     "faq": [
@@ -140,7 +142,9 @@
       ],
       "competitors": "AdNabu misrepresentation checker (free, site-level checks only), GMCSuspension.com (free preview, $79 fix, site-level), GMC Scout (EUR 29/month, Shopify only, policy pages and product data, feed comparison not described). DataFeedWatch checks the feed itself, not live pages. None of the pages read describe a per-SKU feed-vs-page comparison.",
       "risks": "Some stores block crawlers; prices rendered by JavaScript need a headless browser. Not verified: ClearCheck, Channable, FeedOps, Google diagnostics."
-    }
+    },
+    "killed": "2026-10-19",
+    "killedReason": "Retired by Aidan on 19 Oct 2026: offers must answer a personal need (dating, weight, phone time, muscle, goals, money online, a job), not business tools."
   },
   {
     "slug": "pick-print",
@@ -156,7 +160,7 @@
     "price": "$5/month",
     "priceUsd": 5,
     "priceNote": "flat, no order limits, no price jumps",
-    "status": "live",
+    "status": "killed",
     "launched": "2026-10-18",
     "reasonPrompt": "What do you print orders with today, and what does it cost you?",
     "faq": [
@@ -219,7 +223,9 @@
       ],
       "competitors": "BR Pick List Pro ($19.99/month, 4.2 from 31 reviews); Shopify Order Printer (free, 3.6 from 381 reviews, 172 one-star); Pickify ($1.99/month, named by a reviewer). Order Printer Pro and others not checked.",
       "risks": "Crowded, low-priced category. The angle is no-code templates plus order search at a flat price."
-    }
+    },
+    "killed": "2026-10-19",
+    "killedReason": "Retired by Aidan on 19 Oct 2026: offers must answer a personal need (dating, weight, phone time, muscle, goals, money online, a job), not business tools."
   },
   {
     "slug": "flat-files",
@@ -235,7 +241,7 @@
     "price": "$9/month",
     "priceUsd": 9,
     "priceNote": "flat, no bandwidth charges",
-    "status": "live",
+    "status": "killed",
     "launched": "2026-10-18",
     "reasonPrompt": "What do you use to deliver digital files today, and what has gone wrong with it?",
     "faq": [
@@ -305,7 +311,9 @@
       ],
       "competitors": "Shopify Digital Products (free, 4.8 from 1,378 reviews, 74 one-star); Sky Pilot ($9-$54.99/month plus overage, 4.8 from 422 reviews). Others not checked.",
       "risks": "The free app satisfies most sellers. The angle is flat pricing and reliability for sellers who outgrow it."
-    }
+    },
+    "killed": "2026-10-19",
+    "killedReason": "Retired by Aidan on 19 Oct 2026: offers must answer a personal need (dating, weight, phone time, muscle, goals, money online, a job), not business tools."
   },
   {
     "type": "software",
@@ -368,7 +376,7 @@
   },
   {
     "type": "software",
-    "status": "live",
+    "status": "killed",
     "launched": "2026-10-18",
     "slug": "post-once",
     "name": "Post Once",
@@ -422,7 +430,9 @@
       ],
       "competitors": "Postiz, POST BRIDGE, Buffer, Hootsuite, Later, Marky.",
       "risks": "Platform API access and review for each network."
-    }
+    },
+    "killed": "2026-10-19",
+    "killedReason": "Retired by Aidan on 19 Oct 2026: offers must answer a personal need (dating, weight, phone time, muscle, goals, money online, a job), not business tools."
   },
   {
     "type": "software",
@@ -492,7 +502,7 @@
   },
   {
     "type": "software",
-    "status": "live",
+    "status": "killed",
     "launched": "2026-10-18",
     "slug": "answer-check",
     "name": "Answer Check",
@@ -542,11 +552,13 @@
         "q": "Does it exist yet?",
         "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
       }
-    ]
+    ],
+    "killed": "2026-10-19",
+    "killedReason": "Retired by Aidan on 19 Oct 2026: offers must answer a personal need (dating, weight, phone time, muscle, goals, money online, a job), not business tools."
   },
   {
     "type": "software",
-    "status": "live",
+    "status": "killed",
     "launched": "2026-10-18",
     "slug": "weekly-post",
     "name": "Weekly Post",
@@ -601,11 +613,13 @@
       ],
       "competitors": "Supergrow, Taplio, Podawaa, PROSP.",
       "risks": "LinkedIn API limits on scheduling; crowded."
-    }
+    },
+    "killed": "2026-10-19",
+    "killedReason": "Retired by Aidan on 19 Oct 2026: offers must answer a personal need (dating, weight, phone time, muscle, goals, money online, a job), not business tools."
   },
   {
     "type": "software",
-    "status": "live",
+    "status": "killed",
     "launched": "2026-10-18",
     "slug": "story-shorts",
     "name": "Story Shorts",
@@ -655,11 +669,13 @@
         "q": "Does it exist yet?",
         "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
       }
-    ]
+    ],
+    "killed": "2026-10-19",
+    "killedReason": "Retired by Aidan on 19 Oct 2026: offers must answer a personal need (dating, weight, phone time, muscle, goals, money online, a job), not business tools."
   },
   {
     "type": "software",
-    "status": "live",
+    "status": "killed",
     "launched": "2026-10-18",
     "slug": "stage-shot",
     "name": "Stage Shot",
@@ -709,11 +725,13 @@
         "q": "Does it exist yet?",
         "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
       }
-    ]
+    ],
+    "killed": "2026-10-19",
+    "killedReason": "Retired by Aidan on 19 Oct 2026: offers must answer a personal need (dating, weight, phone time, muscle, goals, money online, a job), not business tools."
   },
   {
     "type": "software",
-    "status": "live",
+    "status": "killed",
     "launched": "2026-10-18",
     "slug": "practice-book",
     "name": "Practice Book",
@@ -768,11 +786,13 @@
       ],
       "competitors": "Calendesk, SimplePractice, Jane, Acuity, Calendly.",
       "risks": "Crowded; health data rules if it grows beyond bookings."
-    }
+    },
+    "killed": "2026-10-19",
+    "killedReason": "Retired by Aidan on 19 Oct 2026: offers must answer a personal need (dating, weight, phone time, muscle, goals, money online, a job), not business tools."
   },
   {
     "type": "software",
-    "status": "live",
+    "status": "killed",
     "launched": "2026-10-18",
     "slug": "ledger-link",
     "name": "Ledger Link",
@@ -840,11 +860,13 @@
       ],
       "competitors": "QuickBooks Online by Intuit (4.6, 3,341 reviews), Webgility, Synder, A2X, Parex Bridge, MyWorks.",
       "risks": "Accounting sync errors are costly; needs careful testing."
-    }
+    },
+    "killed": "2026-10-19",
+    "killedReason": "Retired by Aidan on 19 Oct 2026: offers must answer a personal need (dating, weight, phone time, muscle, goals, money online, a job), not business tools."
   },
   {
     "type": "software",
-    "status": "live",
+    "status": "killed",
     "launched": "2026-10-18",
     "slug": "bay-sync",
     "name": "Bay Sync",
@@ -912,11 +934,13 @@
       ],
       "competitors": "Shopify Marketplace Connect (4.1, 2,128 reviews), LitCommerce, Lionz, Salestio.",
       "risks": "eBay API limits for large catalogs."
-    }
+    },
+    "killed": "2026-10-19",
+    "killedReason": "Retired by Aidan on 19 Oct 2026: offers must answer a personal need (dating, weight, phone time, muscle, goals, money online, a job), not business tools."
   },
   {
     "type": "software",
-    "status": "live",
+    "status": "killed",
     "launched": "2026-10-18",
     "slug": "own-label",
     "name": "Own Label",
@@ -984,11 +1008,13 @@
       ],
       "competitors": "ShipStation (4.2, 707 reviews), Sendcloud (4.5, 516), Easyship (4.2, 412), Shippo (4.2, 317).",
       "risks": "Carrier API integrations per carrier."
-    }
+    },
+    "killed": "2026-10-19",
+    "killedReason": "Retired by Aidan on 19 Oct 2026: offers must answer a personal need (dating, weight, phone time, muscle, goals, money online, a job), not business tools."
   },
   {
     "type": "software",
-    "status": "live",
+    "status": "killed",
     "launched": "2026-10-18",
     "slug": "zone-date",
     "name": "Zone Date",
@@ -1049,11 +1075,13 @@
       ],
       "competitors": "Zapiet Pickup + Delivery (4.9, 1,887 reviews) and others.",
       "risks": "Peak days like Valentine's Day need it to be reliable."
-    }
+    },
+    "killed": "2026-10-19",
+    "killedReason": "Retired by Aidan on 19 Oct 2026: offers must answer a personal need (dating, weight, phone time, muscle, goals, money online, a job), not business tools."
   },
   {
     "type": "software",
-    "status": "live",
+    "status": "killed",
     "launched": "2026-10-18",
     "slug": "store-vault",
     "name": "Store Vault",
@@ -1121,11 +1149,13 @@
       ],
       "competitors": "Rewind Backups (4.3, 631 reviews), StoreVault and others.",
       "risks": "Restores must be reliable."
-    }
+    },
+    "killed": "2026-10-19",
+    "killedReason": "Retired by Aidan on 19 Oct 2026: offers must answer a personal need (dating, weight, phone time, muscle, goals, money online, a job), not business tools."
   },
   {
     "type": "software",
-    "status": "live",
+    "status": "killed",
     "launched": "2026-10-18",
     "slug": "rent-slot",
     "name": "Rent Slot",
@@ -1186,11 +1216,13 @@
       ],
       "competitors": "BookThatApp (4.7, 417 reviews), Sesami and others.",
       "risks": "Many booking apps exist."
-    }
+    },
+    "killed": "2026-10-19",
+    "killedReason": "Retired by Aidan on 19 Oct 2026: offers must answer a personal need (dating, weight, phone time, muscle, goals, money online, a job), not business tools."
   },
   {
     "type": "software",
-    "status": "live",
+    "status": "killed",
     "launched": "2026-10-18",
     "slug": "custom-print",
     "name": "Custom Print",
@@ -1251,11 +1283,13 @@
       ],
       "competitors": "Teeinblue (4.9, 381 reviews), Customily (4.9, 277).",
       "risks": "Strong, well-rated incumbents."
-    }
+    },
+    "killed": "2026-10-19",
+    "killedReason": "Retired by Aidan on 19 Oct 2026: offers must answer a personal need (dating, weight, phone time, muscle, goals, money online, a job), not business tools."
   },
   {
     "type": "software",
-    "status": "live",
+    "status": "killed",
     "launched": "2026-10-18",
     "slug": "flat-translate",
     "name": "Flat Translate",
@@ -1316,11 +1350,13 @@
       ],
       "competitors": "Weglot (4.5, 827 reviews), Shopify Translate & Adapt (free), LangShop and others.",
       "risks": "Free native option exists."
-    }
+    },
+    "killed": "2026-10-19",
+    "killedReason": "Retired by Aidan on 19 Oct 2026: offers must answer a personal need (dating, weight, phone time, muscle, goals, money online, a job), not business tools."
   },
   {
     "type": "software",
-    "status": "live",
+    "status": "killed",
     "launched": "2026-10-18",
     "slug": "tab-vault",
     "name": "Tab Vault",
@@ -1384,11 +1420,13 @@
       ],
       "competitors": "OneTab (about 2M Chrome users, 3.8 stars), Toby (300,000 users, 3.5), others.",
       "risks": "Browser extension store review."
-    }
+    },
+    "killed": "2026-10-19",
+    "killedReason": "Retired by Aidan on 19 Oct 2026: offers must answer a personal need (dating, weight, phone time, muscle, goals, money online, a job), not business tools."
   },
   {
     "type": "software",
-    "status": "live",
+    "status": "killed",
     "launched": "2026-10-18",
     "slug": "free-restore",
     "name": "Free Restore",
@@ -1438,11 +1476,13 @@
       ],
       "competitors": "All-in-One WP Migration (5M+ installs, 4.5 from 7,672 reviews, 868 one-star), Duplicator, WPvivid, UpdraftPlus.",
       "risks": "Crowded; trust matters."
-    }
+    },
+    "killed": "2026-10-19",
+    "killedReason": "Retired by Aidan on 19 Oct 2026: offers must answer a personal need (dating, weight, phone time, muscle, goals, money online, a job), not business tools."
   },
   {
     "type": "software",
-    "status": "live",
+    "status": "killed",
     "launched": "2026-10-18",
     "slug": "dual-subs",
     "name": "Dual Subs",
@@ -1503,11 +1543,13 @@
       ],
       "competitors": "Language Reactor (about 2M users, 3.7 stars), Trancy and others.",
       "risks": "Streaming sites change often; needs constant maintenance."
-    }
+    },
+    "killed": "2026-10-19",
+    "killedReason": "Retired by Aidan on 19 Oct 2026: offers must answer a personal need (dating, weight, phone time, muscle, goals, money online, a job), not business tools."
   },
   {
     "type": "software",
-    "status": "live",
+    "status": "killed",
     "launched": "2026-10-18",
     "slug": "outlook-merge",
     "name": "Outlook Merge",
@@ -1561,11 +1603,13 @@
       ],
       "competitors": "MAPILab Mail Merge Toolkit, SecureMailMerge, Word mail merge.",
       "risks": "Microsoft's roadmap lists an advanced mail merge preview for the new Outlook."
-    }
+    },
+    "killed": "2026-10-19",
+    "killedReason": "Retired by Aidan on 19 Oct 2026: offers must answer a personal need (dating, weight, phone time, muscle, goals, money online, a job), not business tools."
   },
   {
     "type": "software",
-    "status": "live",
+    "status": "killed",
     "launched": "2026-10-18",
     "slug": "auto-statements",
     "name": "Auto Statements",
@@ -1640,11 +1684,13 @@
       ],
       "competitors": "AutoStatements, Paid Nice, ZeroAIMailer, Statey.",
       "risks": "Xero is in discovery on a native version."
-    }
+    },
+    "killed": "2026-10-19",
+    "killedReason": "Retired by Aidan on 19 Oct 2026: offers must answer a personal need (dating, weight, phone time, muscle, goals, money online, a job), not business tools."
   },
   {
     "type": "software",
-    "status": "live",
+    "status": "killed",
     "launched": "2026-10-18",
     "slug": "repeat-book",
     "name": "Repeat Book",
@@ -1705,11 +1751,13 @@
       ],
       "competitors": "Calendly, Acuity, HoneyBook.",
       "risks": "Calendly may ship it."
-    }
+    },
+    "killed": "2026-10-19",
+    "killedReason": "Retired by Aidan on 19 Oct 2026: offers must answer a personal need (dating, weight, phone time, muscle, goals, money online, a job), not business tools."
   },
   {
     "type": "software",
-    "status": "live",
+    "status": "killed",
     "launched": "2026-10-18",
     "slug": "bulk-books",
     "name": "Bulk Books",
@@ -1770,11 +1818,13 @@
       ],
       "competitors": "SaasAnt, Transaction Pro (snippet only).",
       "risks": "Crowded; Intuit app review."
-    }
+    },
+    "killed": "2026-10-19",
+    "killedReason": "Retired by Aidan on 19 Oct 2026: offers must answer a personal need (dating, weight, phone time, muscle, goals, money online, a job), not business tools."
   },
   {
     "type": "software",
-    "status": "live",
+    "status": "killed",
     "launched": "2026-10-18",
     "slug": "exempt-ledger",
     "name": "Exempt Ledger",
@@ -1842,11 +1892,13 @@
       ],
       "competitors": "Avalara exemption certificate tools, Shopify POS, Lightspeed.",
       "risks": "The checkout-level exempt flag is inside Square; the add-on covers certificates and reporting."
-    }
+    },
+    "killed": "2026-10-19",
+    "killedReason": "Retired by Aidan on 19 Oct 2026: offers must answer a personal need (dating, weight, phone time, muscle, goals, money online, a job), not business tools."
   },
   {
     "type": "software",
-    "status": "live",
+    "status": "killed",
     "launched": "2026-10-18",
     "slug": "drawer-count",
     "name": "Drawer Count",
@@ -1907,11 +1959,13 @@
       ],
       "competitors": "Toast's built-in drawer count, Tilly Tally, paper forms.",
       "risks": "Uses Square's Cash Drawer Shifts API."
-    }
+    },
+    "killed": "2026-10-19",
+    "killedReason": "Retired by Aidan on 19 Oct 2026: offers must answer a personal need (dating, weight, phone time, muscle, goals, money online, a job), not business tools."
   },
   {
     "type": "software",
-    "status": "live",
+    "status": "killed",
     "launched": "2026-10-18",
     "slug": "lay-away",
     "name": "Lay Away",
@@ -1972,11 +2026,13 @@
       ],
       "competitors": "Lightspeed, Shopify layaway apps.",
       "risks": "Willingness to pay is indirect."
-    }
+    },
+    "killed": "2026-10-19",
+    "killedReason": "Retired by Aidan on 19 Oct 2026: offers must answer a personal need (dating, weight, phone time, muscle, goals, money online, a job), not business tools."
   },
   {
     "type": "software",
-    "status": "live",
+    "status": "killed",
     "launched": "2026-10-18",
     "slug": "count-scan",
     "name": "Count Scan",
@@ -2037,11 +2093,13 @@
       ],
       "competitors": "Shopventory, Orca Scan, a free open-source tool by a seller.",
       "risks": "Uses Square's inventory API."
-    }
+    },
+    "killed": "2026-10-19",
+    "killedReason": "Retired by Aidan on 19 Oct 2026: offers must answer a personal need (dating, weight, phone time, muscle, goals, money online, a job), not business tools."
   },
   {
     "type": "software",
-    "status": "live",
+    "status": "killed",
     "launched": "2026-10-18",
     "slug": "reorder-smart",
     "name": "Reorder Smart",
@@ -2102,11 +2160,13 @@
       ],
       "competitors": "Inventory Planner-type tools, a seller's Google Sheet planner, Square's own auto POs in some regions.",
       "risks": "Square may ship it in the US."
-    }
+    },
+    "killed": "2026-10-19",
+    "killedReason": "Retired by Aidan on 19 Oct 2026: offers must answer a personal need (dating, weight, phone time, muscle, goals, money online, a job), not business tools."
   },
   {
     "type": "software",
-    "status": "live",
+    "status": "killed",
     "launched": "2026-10-18",
     "slug": "square-woo-sync",
     "name": "Square Woo Sync",
@@ -2167,11 +2227,13 @@
       ],
       "competitors": "WooCommerce Square (official), Square Sync for WooCommerce PRO, SKU IQ, Trunk.",
       "risks": "Two APIs to keep in step."
-    }
+    },
+    "killed": "2026-10-19",
+    "killedReason": "Retired by Aidan on 19 Oct 2026: offers must answer a personal need (dating, weight, phone time, muscle, goals, money online, a job), not business tools."
   },
   {
     "type": "software",
-    "status": "live",
+    "status": "killed",
     "launched": "2026-10-18",
     "slug": "profile-back",
     "name": "Profile Back",
@@ -2239,11 +2301,13 @@
       ],
       "competitors": "Freelancers and agencies doing reinstatements.",
       "risks": "No tool can guarantee reinstatement; Google decides."
-    }
+    },
+    "killed": "2026-10-19",
+    "killedReason": "Retired by Aidan on 19 Oct 2026: offers must answer a personal need (dating, weight, phone time, muscle, goals, money online, a job), not business tools."
   },
   {
     "type": "software",
-    "status": "live",
+    "status": "killed",
     "launched": "2026-10-18",
     "slug": "vector-logo",
     "name": "Vector Logo",
@@ -2300,11 +2364,13 @@
       ],
       "competitors": "vectorizer.ai, Vector Magic, freelance tracers.",
       "risks": "Auto-tracing quality is the whole product."
-    }
+    },
+    "killed": "2026-10-19",
+    "killedReason": "Retired by Aidan on 19 Oct 2026: offers must answer a personal need (dating, weight, phone time, muscle, goals, money online, a job), not business tools."
   },
   {
     "type": "software",
-    "status": "live",
+    "status": "killed",
     "launched": "2026-10-18",
     "slug": "kdp-ready",
     "name": "KDP Ready",
@@ -2365,11 +2431,13 @@
       ],
       "competitors": "Vellum, Atticus, Kindle Create (free).",
       "risks": "Free Kindle Create exists; the angle is both files, done for you."
-    }
+    },
+    "killed": "2026-10-19",
+    "killedReason": "Retired by Aidan on 19 Oct 2026: offers must answer a personal need (dating, weight, phone time, muscle, goals, money online, a job), not business tools."
   },
   {
     "type": "software",
-    "status": "live",
+    "status": "killed",
     "launched": "2026-10-18",
     "slug": "inbox-fix",
     "name": "Inbox Fix",
@@ -2426,11 +2494,13 @@
       ],
       "competitors": "MXToolbox, dmarcian, EasyDMARC, Valimail.",
       "risks": "Crowded; the angle is fix-it records written for you."
-    }
+    },
+    "killed": "2026-10-19",
+    "killedReason": "Retired by Aidan on 19 Oct 2026: offers must answer a personal need (dating, weight, phone time, muscle, goals, money online, a job), not business tools."
   },
   {
     "type": "software",
-    "status": "live",
+    "status": "killed",
     "launched": "2026-10-18",
     "slug": "tally-import",
     "name": "Tally Import",
@@ -2491,11 +2561,13 @@
       ],
       "competitors": "Tally's own Excel import, paid templates and TDL add-ons.",
       "risks": "TallyPrime's native Excel import improves each release."
-    }
+    },
+    "killed": "2026-10-19",
+    "killedReason": "Retired by Aidan on 19 Oct 2026: offers must answer a personal need (dating, weight, phone time, muscle, goals, money online, a job), not business tools."
   },
   {
     "type": "software",
-    "status": "live",
+    "status": "killed",
     "launched": "2026-10-18",
     "slug": "team-requests",
     "name": "Team Requests",
@@ -2563,11 +2635,13 @@
       ],
       "competitors": "Bruno, Insomnia, Hoppscotch, Apidog.",
       "risks": "Free open-source alternatives exist."
-    }
+    },
+    "killed": "2026-10-19",
+    "killedReason": "Retired by Aidan on 19 Oct 2026: offers must answer a personal need (dating, weight, phone time, muscle, goals, money online, a job), not business tools."
   },
   {
     "type": "software",
-    "status": "live",
+    "status": "killed",
     "launched": "2026-10-18",
     "slug": "receipt-export",
     "name": "Receipt Export",
@@ -2635,11 +2709,13 @@
       ],
       "competitors": "BoxKite, BulkOps, Control-C, instaClaim.",
       "risks": "Low barrier; some users script it themselves."
-    }
+    },
+    "killed": "2026-10-19",
+    "killedReason": "Retired by Aidan on 19 Oct 2026: offers must answer a personal need (dating, weight, phone time, muscle, goals, money online, a job), not business tools."
   },
   {
     "type": "software",
-    "status": "live",
+    "status": "killed",
     "launched": "2026-10-18",
     "slug": "billable-hours",
     "name": "Billable Hours",
@@ -2700,7 +2776,9 @@
       ],
       "competitors": "Everhour, Toggl, Harvest.",
       "risks": "ClickUp shows the native improvement as building now."
-    }
+    },
+    "killed": "2026-10-19",
+    "killedReason": "Retired by Aidan on 19 Oct 2026: offers must answer a personal need (dating, weight, phone time, muscle, goals, money online, a job), not business tools."
   },
   {
     "type": "software",
@@ -4310,7 +4388,7 @@
     "slug": "image-match",
     "name": "Image Match",
     "type": "software",
-    "status": "live",
+    "status": "killed",
     "launched": "2026-10-18",
     "headline": "Attach thousands of images to your Square items by SKU or barcode, list every item still missing a picture, and export your whole image library named by SKU.",
     "buyer": "Square sellers with large catalogs: bookstores, parts, collectibles, and shops moving platforms",
@@ -4363,7 +4441,9 @@
       ],
       "competitors": "None named in the threads.",
       "risks": "Square API image limits."
-    }
+    },
+    "killed": "2026-10-19",
+    "killedReason": "Retired by Aidan on 19 Oct 2026: offers must answer a personal need (dating, weight, phone time, muscle, goals, money online, a job), not business tools."
   },
   {
     "slug": "pitch-pilot",

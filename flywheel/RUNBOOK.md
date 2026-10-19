@@ -15,7 +15,8 @@ already visible in the market (step 0). Order:
       "I want to make money online", "I want to get a job", and others of that kind (sleep, stress,
       quitting a habit, debt, skin, loneliness, confidence, learning a language). Each offer is
       software that answers one need, and its `need` field holds the need as the buyer would say
-      it; the page opens with it. Business tools are still allowed but come second.
+      it; the page opens with it. Business tools are not offers (Aidan, 19 Oct): every live offer
+      answers a personal need, and anything without a `need` field is retired.
       **Find demand.** Any market. Strongest first:
       - Money already spent: products with verified revenue (Indie Hackers, TrustMRR,
         Acquire.com, Flippa listings), marketplace apps and extensions with large paid install
