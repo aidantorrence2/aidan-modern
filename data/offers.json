@@ -12313,6 +12313,218 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-19",
+    "slug": "heard-first",
+    "name": "Heard First",
+    "need": "English is not my first language, I have a thick accent, and people keep asking me to repeat myself.",
+    "headline": "A speaking coach for adults with English as a second language: say your own work sentences, see the few sounds listeners miss most, and drill them five minutes a day.",
+    "buyer": "Adults who speak English as a second language and are often asked to repeat themselves at work.",
+    "bullets": [
+      "Say sentences you actually use at work and see the few sounds listeners most often miss.",
+      "Five-minute daily drills on just those sounds, not a whole accent course.",
+      "Before and after recordings, and a one-minute warm-up before an important call."
+    ],
+    "price": "$9.99/month",
+    "priceUsd": 10,
+    "priceNote": "Half the monthly price of the leading English pronunciation app.",
+    "reasonPrompt": "In which situations do people most often ask you to repeat yourself?",
+    "faq": [
+      {
+        "q": "Is the goal to lose my accent?",
+        "a": "No. The goal is being understood the first time. Heard First is an independent app, not linked to any language school."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-19",
+      "summary": "Non-native English speakers writing on a product-management Substack and an engineering blog say they felt embarrassed or ashamed of their accent and unsure whether they spoke clearly, and pronunciation apps already sell to them at scale.",
+      "wtp": "ELSA Speak (App Store): 4.8 from 114K ratings, Monthly $19.99, yearly plans $71.00 to $129.99.",
+      "signals": [
+        {
+          "url": "https://twocentspm.substack.com/p/when-english-is-not-your-native-language",
+          "who": "Yana (Two Cents PM)",
+          "date": "2024-05-01",
+          "quote": "I felt embarrassed due to my accent",
+          "seen": "opened"
+        },
+        {
+          "url": "https://twocentspm.substack.com/p/when-english-is-not-your-native-language/comments",
+          "who": "Vanessa (Two Cents PM comments)",
+          "date": "2024-05-01",
+          "quote": "I wasn't sure if I was able to speak clearly sometimes",
+          "seen": "opened"
+        },
+        {
+          "url": "https://thoughtbot.com/blog/i-have-a-bad-english-accent",
+          "who": "Rémy Hannequin (thoughtbot blog)",
+          "date": "2023-10-03",
+          "quote": "I used to feel ashamed of my native accent.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/-/id1083804886",
+          "who": "ELSA Speak App Store listing",
+          "date": "2026-10-19",
+          "quote": "114K Ratings ... Monthly $19.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "ELSA Speak, BoldVoice, accent coaches and courses.",
+      "risks": "Large, well-rated competitors. Must avoid any suggestion that an accent is a defect."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-19",
+    "slug": "free-stand",
+    "name": "Free Stand",
+    "need": "I've been practising handstands against the wall for ages, but unsupported I can only hold one for a few seconds, and I'm scared of falling.",
+    "headline": "A handstand coach for adults stuck at the wall: film three attempts, get the likely reason you fall one fix at a time, practise bailing out first, and log your hold time.",
+    "buyer": "Adults (18+) who can kick up to a wall but can't hold a freestanding handstand.",
+    "bullets": [
+      "Film three attempts and get the most likely reason you tip over, one fix at a time.",
+      "Practise safe bail-outs first, so the fear of falling stops holding you back.",
+      "A ten-minute daily session, a hold-time log, and week-one clips next to this week's."
+    ],
+    "price": "$6.99/month",
+    "priceUsd": 7,
+    "priceNote": "Under half the monthly price of the leading handstand-coaching app.",
+    "reasonPrompt": "How long can you hold a handstand away from the wall right now, and what stops you?",
+    "faq": [
+      {
+        "q": "Is this safe for everyone?",
+        "a": "Free Stand is an independent training tool for adults 18+, not medical advice. Practise on a soft surface with space around you, and if you have wrist, shoulder or neck problems or high blood pressure, ask a qualified professional before starting."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-19",
+      "summary": "Adults on AnandTech, the Freeletics forum and a hand-balancing blog say they can only hold a handstand for seconds without the wall, or are scared of hurting themselves, and handstand coaching apps and courses already sell.",
+      "wtp": "Handstand Coach Kyle Weiger (App Store): 4.7 from 283 ratings, monthly plans $4.99 to $19.99, yearly $99.99 to $149.99, 6 Weeks To Handstand course $199.99.",
+      "signals": [
+        {
+          "url": "https://forums.anandtech.com/threads/handstand.2096976/",
+          "who": "Chrono (AnandTech forums)",
+          "date": "2010-08-11",
+          "quote": "I've been practicing the handstand against a wall for the past month",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.anandtech.com/threads/handstand.2096976/",
+          "who": "brikis98 (AnandTech forums)",
+          "date": "2010-08-11",
+          "quote": "Unsupported, I can only stay in a handstand for a few seconds.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forum.freeletics.com/t/overcoming-the-fear-of-the-handstand-hold/10458",
+          "who": "Liverputlian (Freeletics forum)",
+          "date": "2023-11-25",
+          "quote": "I am also very reluctant towards handstands, as i always fear, i might hurt my shoulders.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://lostartofhandbalancing.com/how-to-get-over-your-fear-of-doing-a-handstand",
+          "who": "Andrew Crout (Lost Art of Handbalancing comments)",
+          "date": "2017-10-20",
+          "quote": "I am scared about my arms giving out and then I face plant.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/app/id1498021669",
+          "who": "Handstand Coach App Store listing",
+          "date": "2026-10-19",
+          "quote": "283 Ratings ... Yearly Subscription $99.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Handstand Coach, online hand-balancing courses, gymnastics classes.",
+      "risks": "The leading handstand app has only 283 ratings. ChalkBucket returns 403 to our fetch, so it is not used. Injury risk needs careful wording."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-19",
+    "slug": "first-seam",
+    "name": "First Seam",
+    "need": "I've had a sewing machine for over a year and it's still in the box, because I haven't got a clue what to do next.",
+    "headline": "A learn-to-sew coach: plain setup steps for your machine, ten-minute one-skill sessions on scrap fabric, and a path from first stitches to something you can wear.",
+    "buyer": "Adults with a sewing machine they've barely used, or never taken out of the box.",
+    "bullets": [
+      "Plain, step-by-step setup for your machine model: threading, bobbin, first stitches.",
+      "Ten-minute sessions that teach one skill at a time on scrap fabric.",
+      "A first-projects path to a wearable piece, with photo check-ins and one fix to try next."
+    ],
+    "price": "$4.99/month",
+    "priceUsd": 5,
+    "priceNote": "Less than a single beginners' sewing class.",
+    "reasonPrompt": "What stops you using your sewing machine right now?",
+    "faq": [
+      {
+        "q": "Do I need a particular machine?",
+        "a": "No. First Seam works with most home sewing machines. It is an independent app, not linked to any machine brand."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-19",
+      "summary": "People on Substack, HelloBee and Mumsnet say their sewing machine has sat unused or in its box for months, and that they don't know what to do next. Sewing apps and courses already sell to beginners.",
+      "wtp": "Sewpal: Sewing Pattern & Guide (App Store): 4.8 from 12K ratings, Premium $3.99 to $39.99. Kendall Frisbee later joined a paid beginners' class.",
+      "signals": [
+        {
+          "url": "https://garbie.substack.com/p/girl-get-your-sewing-machine-out/comments",
+          "who": "Hermione (Substack comments)",
+          "date": "2025-04-11",
+          "quote": "been looking at my (boxed) machine for over a year!",
+          "seen": "opened"
+        },
+        {
+          "url": "https://garbie.substack.com/p/girl-get-your-sewing-machine-out/comments",
+          "who": "Kendall Frisbee (Substack comments)",
+          "date": "2025-04-12",
+          "quote": "It sat gathering dust for months.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://boards.hellobee.com/topic/do-you-know-how-to-use-a-sewing-machine",
+          "who": "spaniellove (HelloBee)",
+          "date": "2013-01-17",
+          "quote": "I have a sewing machine and still haven't taken it out of the box!",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/housekeeping/2036438-Sewing",
+          "who": "mandbaby (Mumsnet)",
+          "date": "2014-03-26",
+          "quote": "I've just bought my first sewing maching and haven't got a clue what to do next!",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/6754315885",
+          "who": "Sewpal App Store listing",
+          "date": "2026-10-19",
+          "quote": "12K Ratings ... Sewpal Premium $39.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Sewpal, Domestika and other online sewing courses, local classes, YouTube.",
+      "risks": "Free video tutorials are everywhere; the value has to be the step-by-step path and feedback."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
