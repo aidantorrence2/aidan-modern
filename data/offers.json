@@ -903,6 +903,358 @@
     }
   },
   {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-19",
+    "slug": "late-bite-brake",
+    "name": "LateBite Brake",
+    "need": "How do I stop wrecking my day by snacking after dinner?",
+    "headline": "On track all day, gone after 8pm? Set a kitchen-closed time, and when a craving hits, LateBite Brake walks you through a 10-minute delay.",
+    "buyer": "Adults losing weight who stay on track all day but go over their calories at night, mostly from boredom, unwinding, or a partner's snack run.",
+    "bullets": [
+      "You pick a kitchen-closed time and a small planned snack allowance. Your phone moves into night mode at that time, so 'should I?' has already been decided.",
+      "Press SOS when a craving hits. You get a 10-minute guided delay (water, teeth, a short urge-surfing script), then you decide again. You still choose, it doesn't take the choice away.",
+      "A nightly 'Me vs Late-Night Snacks' scoreboard and streak, plus an optional partner link that sends them a heads-up instead of the ice-cream run."
+    ],
+    "price": "$9/month or $59/year",
+    "priceUsd": 9,
+    "priceNote": "Priced below Eat Right Now ($24.99/mo, $129.99/yr), a craving-focused app with 4.6K ratings, because this one only covers the evening window.",
+    "reasonPrompt": "What usually happens on a night when the snacks win, and what time does it start?",
+    "faq": [
+      {
+        "q": "Is this a diet?",
+        "a": "No. It doesn't restrict any foods or set calorie targets. It only helps you stick to a cutoff and a snack allowance you choose yourself."
+      },
+      {
+        "q": "Is this treatment for binge eating?",
+        "a": "No. It's a habit tool for everyday evening snacking. If your eating feels out of control or upsetting, please talk to a qualified professional."
+      },
+      {
+        "q": "Does it need a calorie tracker?",
+        "a": "No. It works by itself. A 'win' just means you stuck to your own evening rule."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-19",
+      "summary": "A MyFitnessPal community challenge thread is made up entirely of people tallying nightly 'Me vs LNS (late-night snacks)' scores and streaks, which is exactly the loop this product automates. Several posters say they eat well during the day and blow it at night. Eat Right Now, a paid craving app, has 4.6K ratings and reviewers who describe habit and boredom eating.",
+      "wtp": "Eat Right Now (Sharecare) App Store in-app purchases: $24.99/month, $99.99 for 6 months, $129.99/year, rated 4.8 from 4.6K ratings. One reviewer titled their review 'The investment you should make for yourself.'",
+      "signals": [
+        {
+          "url": "https://community.myfitnesspal.com/en/discussion/comment/42138426",
+          "who": "lamlamsmakeover (MyFitnessPal community, thread starter)",
+          "date": "June 2018",
+          "quote": "Tired of self-sabotaging by munching after dinner? Upset that you double your in-calories at night?",
+          "seen": "snippet"
+        },
+        {
+          "url": "https://community.myfitnesspal.com/en/discussion/comment/42138426",
+          "who": "davert123 (MyFitnessPal community)",
+          "date": "June 2018",
+          "quote": "I've only just found this and it is just what I need. I do great all day and then blow it at night",
+          "seen": "snippet"
+        },
+        {
+          "url": "https://community.myfitnesspal.com/en/discussion/comment/42138426",
+          "who": "shauntayf (MyFitnessPal community)",
+          "date": "June 2018",
+          "quote": "All my calorie surplus is destroyed by snacking after 8pm.",
+          "seen": "snippet"
+        },
+        {
+          "url": "https://community.myfitnesspal.com/en/discussion/comment/42138426",
+          "who": "stinabean83 (MyFitnessPal community)",
+          "date": "June 2018",
+          "quote": "I typically do well during the day then have an evening beer with the hubby which starts the snack engine",
+          "seen": "snippet"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/-/id1052785076",
+          "who": "kpasket (App Store reviewer, Eat Right Now)",
+          "date": "2021-07-19",
+          "quote": "always felt like I couldn't 'control' my cravings or I didn't have the willpower",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/-/id1052785076",
+          "who": "Matt Dittsworth (App Store reviewer, Eat Right Now)",
+          "date": "2020-01-12",
+          "quote": "mindlessly eating out of habit or boredom or stress",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Eat Right Now by Sharecare (paid mindful-eating and cravings program, $24.99/mo). Noom and other general weight-loss coaching apps. Free tactics people already use, like brushing teeth after dinner or chewing gum.",
+      "risks": "Eat Right Now makes clinical claims, and we must not make any. Keep this framed as a habit tool, not treatment, and point people with signs of disordered eating to professionals. The MyFitnessPal evidence is from 2018. Free DIY tallies already work for some people, so retention depends on the SOS moment being genuinely helpful."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-19",
+    "slug": "lean-order-card",
+    "name": "Lean Order Card",
+    "need": "What should I order tonight so eating out doesn't ruin my diet?",
+    "headline": "An hour before you eat out, get the three best orders on that menu for your goal, plus exactly what to say to the server.",
+    "buyer": "Adults losing weight who eat out or get takeout several times a week, for work dinners, dates, or fast food on the go, and freeze at the menu.",
+    "bullets": [
+      "It reads tonight's restaurant from your calendar or a pasted menu link and sends a short 'order card' 60 minutes before. There's no in-the-moment menu scrolling.",
+      "Three ranked picks for your calorie and protein goal, each with a ready-to-read modification script, like 'dressing on the side, swap fries for salad'.",
+      "Every estimate is labeled 'published' or 'estimated', and a one-tap 'I ordered #2' saves the choice for next time at that spot."
+    ],
+    "price": "$5/month or $35/year",
+    "priceUsd": 5,
+    "priceNote": "Sits inside the range of existing paid menu helpers: What2Eat Premium tiers run $3.99 to $49.99 (417 ratings), and Menu Scanner Pro is $7.99/mo or $49.99/yr.",
+    "reasonPrompt": "How many times a week do you eat out or get takeout, and where do you usually go?",
+    "faq": [
+      {
+        "q": "How accurate are the calories?",
+        "a": "For chains we use published nutrition info where it exists. Anything else is labeled as an estimate, so you always know which is which."
+      },
+      {
+        "q": "Do I have to scan the menu at the table?",
+        "a": "No. The point is to decide before you arrive. You can still paste a menu link at the last minute."
+      },
+      {
+        "q": "Is this a diet plan?",
+        "a": "No. It only suggests options from the menu you're eating from, based on goals you set. No foods are banned."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-19",
+      "summary": "People pay for and rate restaurant-ordering helpers. A free restaurant food-score app has 2.4K ratings, with reviewers tying it directly to managing weight. A newer paid app, What2Eat, has 417 ratings across several premium tiers. Reviewers ask for it to work with their daily calorie budget, and some push back on paying, which points to an opening for a proactive, plan-ahead approach rather than another lookup tool.",
+      "wtp": "What2Eat - Eat Out Healthier sells 'What2Eat Premium' in-app purchases priced $3.99 to $49.99, rated 4.8 from 417 ratings. Menu Scanner - Eat Healthy sells Pro Monthly at $7.99 and Pro Yearly at $49.99, but has only 3 ratings.",
+      "signals": [
+        {
+          "url": "https://apps.apple.com/us/app/-/id6752793894",
+          "who": "WJK37 (App Store reviewer, What2Eat)",
+          "date": "Feb 19 (year not shown)",
+          "quote": "So far so good it would be ten times better if you had an option to set daily calories",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/-/id6752793894",
+          "who": "Random4728 (App Store reviewer, What2Eat) - negative WTP signal",
+          "date": "Feb 22 (year not shown)",
+          "quote": "This shouldn’t have a trial or cost anything I can easily look up what to eat.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/-/id1451707092",
+          "who": "JeffLovesTacos (App Store reviewer, Smart - Food Score Calculator)",
+          "date": "2019-09-11",
+          "quote": "If you can stay focused, you can manage your weight.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/-/id1451707092",
+          "who": "Taz76 (App Store reviewer, Smart - Food Score Calculator)",
+          "date": "2019-05-17",
+          "quote": "It has all the calculations for you for all the most popular restaurants.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id6758664227",
+          "who": "Brievo LLC (seller of Menu Scanner - Eat Healthy)",
+          "date": "not shown",
+          "quote": "Eat out smarter. Scan menus. Eat healthy.",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "What2Eat, Menu Scanner - Eat Healthy, Smart - Food Score Calculator (free), CalFit Menu Analyzer, TasteScan, Ordermaxx, VolumeMax Diet Coach AI, and MyFitnessPal's chain database. All of them work at the table. None, as far as I saw, sends a pre-arrival order card.",
+      "risks": "The category is crowded with small AI menu scanners, and some users resent paywalls because 'I can look it up'. Calorie estimates for non-chain restaurants are uncertain and must be labeled clearly. Calendar-reading needs a clean privacy story."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-19",
+    "slug": "clip-coach",
+    "name": "ClipCoach Relay",
+    "need": "Can a real coach just check my squat video without me paying for monthly coaching?",
+    "headline": "Upload one lifting clip and a vetted strength coach sends written and voice-over form feedback within 24 hours. Pay per clip, not for monthly coaching.",
+    "buyer": "Adults lifting to build muscle who follow their own program but want an expert to check a lift now and then, especially before going heavier.",
+    "bullets": [
+      "Upload one set (front and side angle tips are built in). A coach from the pool is matched to you, Uber-style, by lift and availability.",
+      "Feedback comes back as a timestamped voice-over on your clip, the top 2 fixes, and 1 to 2 cue words to use on your next set.",
+      "Re-check credits let you submit the same lift after a week and see whether the fix stuck. No subscription and no program lock-in."
+    ],
+    "price": "$12 per clip review (3-pack $30)",
+    "priceUsd": 12,
+    "priceNote": "A coaching package on Kahunas charges $75/month for 'up to 2 form-check video reviews per week'. Barbell Medicine sold a one-lift-per-purchase form check and later paused it for non-clients.",
+    "reasonPrompt": "Which lift do you most want checked, and what feels off about it right now?",
+    "faq": [
+      {
+        "q": "Who reviews my video?",
+        "a": "Vetted strength coaches in our pool. You see their credentials before they're assigned to you."
+      },
+      {
+        "q": "Is this physical therapy or injury advice?",
+        "a": "No. It's technique coaching only. If you're in pain or injured, see a qualified medical professional."
+      },
+      {
+        "q": "Do I need to change my program?",
+        "a": "No. Keep your own plan. Coaches only comment on how you move."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-19",
+      "summary": "On the Barbell Medicine forum, lifters have asked to pay for one-off video reviews again and again over seven years (2019, 2020, 2026). The business launched a paid single-lift form check, buyers said they'd 'definitely buy one', and then staff said they lacked capacity to keep offering it to non-clients. That is unmet supply, which a marketplace can fill. Coaches already charge for form checks inside monthly packages.",
+      "wtp": "A Kahunas coaching listing charges $75/month for 'Up to 2 form-check video reviews per week' and $125/month for up to 4. On the Barbell Medicine forum, victor222 wrote 'I'll definitely buy one' about a paid single-lift form check, and crye088 asked for payment details for a video review.",
+      "signals": [
+        {
+          "url": "https://forum.barbellmedicine.com/t/video-review/5983",
+          "who": "crye088 (Barbell Medicine forum user)",
+          "date": "2019-06-01",
+          "quote": "How could I go about sending you guys some video of my squat, bench, deadlift, & press?",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forum.barbellmedicine.com/t/video-review/5983",
+          "who": "LeahBBM (Barbell Medicine staff)",
+          "date": "2019-06-01",
+          "quote": "single video review is not a service we provide.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forum.barbellmedicine.com/t/barbell-medicine-form-check-a-service-with-feedback-and-direction/9694",
+          "who": "victor222 (Barbell Medicine forum user)",
+          "date": "2020-10-14",
+          "quote": "Awesome! I'll definitely buy one. I have a question tho: is the form check for one exercise only?",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forum.barbellmedicine.com/t/barbell-medicine-form-check-a-service-with-feedback-and-direction/9694",
+          "who": "Bass (Barbell Medicine forum user)",
+          "date": "2020-10-14",
+          "quote": "Is this for one exercise? Or can you submit multiple? Like Squat, deadlift and bench?",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forum.barbellmedicine.com/t/deadlift-form-check-service/19636",
+          "who": "robbie.miller (Barbell Medicine forum user)",
+          "date": "2026-04-03",
+          "quote": "I’ve used the form check service in the past, but it doesn’t seem to be available at the moment",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forum.barbellmedicine.com/t/deadlift-form-check-service/19636",
+          "who": "Jordan_Feigenbaum (Barbell Medicine)",
+          "date": "2026-04-03",
+          "quote": "not something we currently have the capacity to do for free at this time.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://kahunas.io/coach/packages/list/e89b1a20-3eac-4b79-9596-a20b6fb2b23a",
+          "who": "Online coach on Kahunas (Camp 60 app; coach not named)",
+          "date": "not shown",
+          "quote": "Up to 2 form-check video reviews per week",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Monthly online coaching that includes form checks (Kahunas-hosted coaches, Barbell Logic, Starting Strength coaches, Barbell Medicine). AI form-check apps such as FormCheck AI (Purestrength, $19.99/mo, only 2 ratings), formcheck ai and SquatEye. Free form-check threads on forums.",
+      "risks": "Turnaround depends on keeping enough supply of quality coaches, and per-clip pricing has to cover coach pay. Free forum critiques and AI apps compete on price. Avoid any injury or rehab claims."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-19",
+    "slug": "gym-pathfinder",
+    "name": "Packed-Gym Pathfinder",
+    "need": "How do I still get my full muscle-building workout when every rack at my gym is taken?",
+    "headline": "Every rack taken? Tap what's busy and Pathfinder reorders today's session and swaps in same-muscle lifts, so you get the full workout without waiting.",
+    "buyer": "Adults training for muscle size at busy commercial gyms during peak hours (after work, January) who lose time waiting for racks, benches and machines.",
+    "bullets": [
+      "Mark taken stations in one tap (barbell racks, bench, cable stack). The rest of the session is reordered, so you lift what's free now and come back for the rack later.",
+      "Swaps keep the same muscle and movement pattern, and your planned sets and reps carry over. Changes apply to today only, so your program stays the same.",
+      "Import a routine from your existing log or paste it in. A post-workout summary shows that the target muscles still got their sets."
+    ],
+    "price": "$6/month or $39/year",
+    "priceUsd": 6,
+    "priceNote": "An add-on price well under full planner apps. Freeletics' Training Coach in-app purchases run $34.99 to $79.99 (22K ratings), and it lacks a smooth busy-equipment switch, which users asked for.",
+    "reasonPrompt": "When do you usually train, and which piece of equipment are you always waiting for?",
+    "faq": [
+      {
+        "q": "Does it replace my program?",
+        "a": "No. Keep your own plan. Pathfinder only reorders and swaps exercises for today, so busy equipment doesn't wreck the session."
+      },
+      {
+        "q": "How does it know what's busy?",
+        "a": "You tell it with one tap per station. No cameras or gym integration needed."
+      },
+      {
+        "q": "Will the swaps still build muscle?",
+        "a": "Swaps are matched to the same target muscle and movement pattern, and your planned sets and reps carry over."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-19",
+      "summary": "Users of paid training apps keep asking for a quick way to adapt a session when equipment is taken. One idea on the Trainerize ideas board ('Provide alternate exercises...') collected 11,655 votes before it shipped in 2026. Freeletics users asked to switch to dumbbells when barbell spots are busy, and an indie maker launched a crowded-gym swap app. The gap is re-routing the whole session in order, not a one-off exercise swap.",
+      "wtp": "Freeletics (4.6 from 22K ratings) sells Training Coach in-app purchases at $34.99 to $79.99, and its paying users asked for this feature. Trainerize is a paid coaching platform whose request got 11,655 votes. SpotterFuel offers an optional lifetime Pro unlock for its full reroute list (price not shown).",
+      "signals": [
+        {
+          "url": "https://forum.freeletics.com/t/equipment-selection-adaptation-improvements/16786",
+          "who": "andrey.yampolskiy (Freeletics forum user)",
+          "date": "2024-09-16",
+          "quote": "Very often usecase when I come to a gym and notice that all barebells spots are busy",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forum.freeletics.com/t/adapt-session-for-equipment/6095",
+          "who": "AOhReallyUh (Freeletics forum user)",
+          "date": "2023-02-15",
+          "quote": "I second this request! It would be great to be able to temporarily adapt my session with the exact equipment",
+          "seen": "opened"
+        },
+        {
+          "url": "https://ideas.abcfitness.com/forums/940789-client-gym-members-trainerize/suggestions/6187686-provide-alternate-exercises-when-searching-to-subs?page=2",
+          "who": "Kelly Adams (Trainerize client, ideas board)",
+          "date": "2022-01-04",
+          "quote": "So many wasted minutes searching for exercises or machines we don’t have at Biltmore AZ",
+          "seen": "opened"
+        },
+        {
+          "url": "https://ideas.abcfitness.com/forums/940789-client-gym-members-trainerize/suggestions/6187686-provide-alternate-exercises-when-searching-to-subs?page=2",
+          "who": "Nana (Trainerize client, ideas board)",
+          "date": "2020-11-07",
+          "quote": "I would suggest that you limit this function to only display exercises that would work the same general muscle group.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://hunted.space/product/spotterfuel",
+          "who": "SpotterFuel maker (indie iPhone app)",
+          "date": "not stated",
+          "quote": "the exercise you planned often depends on equipment someone else is already using",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/freeletics-workouts-fitness/id654810212",
+          "who": "Freeletics GmbH (App Store listing)",
+          "date": "not shown",
+          "quote": "Training Coach: $34.99 ... $79.99; 4.6 out of 5, 22K ratings",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Exercise swap features in Gymkee ('The exercise is busy' button), OWNU (June 2026 release), Trainerize (substitutions shipped Apr 2026), Boostcamp swap exercises, Fitbod Refresh Workout (before the session starts only), and SpotterFuel (indie, 2 upvotes).",
+      "risks": "Big apps are adding single-exercise swaps, so the edge has to be whole-session re-ordering and keeping volume intact. Users may expect it inside their existing logger, so import and export matter. SpotterFuel's small traction suggests a standalone app could be a hard sell."
+    }
+  },
+  {
     "slug": "shelf-date",
     "name": "Shelf Date",
     "type": "software",
