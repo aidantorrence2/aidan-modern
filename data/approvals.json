@@ -888,6 +888,77 @@
       "status": "approved",
       "decided": "2026-10-19T01:13:34Z",
       "note": ""
+    },
+    {
+      "id": "offers:outreach:2026-10-18",
+      "kind": "email",
+      "source": "codex:aidantorrence",
+      "title": "Send six audience-owner invitations for the offer tests",
+      "summary": "Six individual Gmail drafts to public business contacts about phone habits, friendship, dating and task-starting pilots. Send only after the signup pages are public and verified. No spend or follow-up sequence.",
+      "payload": {
+        "action": "Send exactly these six individual outreach emails from Aidan's connected Gmail account",
+        "dependency": {
+          "approval_id": "offers:publish:2026-10-18",
+          "condition": "Only send after the public interest pages have been approved, deployed, and verified working."
+        },
+        "messages": [
+          {
+            "to": "info@thedigitaldetoxcoach.co.uk",
+            "subject": "Could a small phone-reset pilot fit your audience?",
+            "body": "Hi Colin,\n\nI’m Aidan Torrence. Your work on digital wellbeing seems closely related to something I’m testing.\n\nIt’s a proposed 30-day phone reset: practical phone boundaries, a plan for recovered time, and weekly check-ins. The proposed price is $49; the interest stage takes no payment.\n\nWould you consider sharing an optional invitation with adults who might find it useful, if the idea fits your work?\n\nThe concept and interest form: https://real-change-pilots-aidan-2026.aidantorrence.chatgpt.site/phone-reset?utm_source=digital_detox_coach&utm_medium=partner_email&utm_campaign=wave1\n\nI’m not requesting any member lists or implying an endorsement. If it isn’t a fit, no problem.\n\nAidan",
+            "draft_id": "r1849007518316320883",
+            "contact_source": "https://thedigitaldetoxcoach.com/contact",
+            "campaign_url": "https://real-change-pilots-aidan-2026.aidantorrence.chatgpt.site/phone-reset?utm_source=digital_detox_coach&utm_medium=partner_email&utm_campaign=wave1"
+          },
+          {
+            "to": "london@theoffline-club.com",
+            "subject": "An optional phone-reset invitation for your community?",
+            "body": "Hi Laura and Megan,\n\nI’m Aidan Torrence. Your phone-free hangouts made me think your community could give useful feedback on a small idea.\n\nI’m testing interest in a 30-day phone reset with practical boundaries, plans for offline time, and weekly check-ins. The proposed price is $49, with no payment at this stage.\n\nWould an optional invitation for interested adults fit your community? I’d only want it shared with your permission.\n\nThe concept and interest form: https://real-change-pilots-aidan-2026.aidantorrence.chatgpt.site/phone-reset?utm_source=offline_club_london&utm_medium=partner_email&utm_campaign=wave1\n\nI’m not requesting any member lists or implying an endorsement. If it isn’t a fit, no problem.\n\nAidan",
+            "draft_id": "r-8616083318046502566",
+            "contact_source": "https://www.theoffline-club.com/contact",
+            "campaign_url": "https://real-change-pilots-aidan-2026.aidantorrence.chatgpt.site/phone-reset?utm_source=offline_club_london&utm_medium=partner_email&utm_campaign=wave1"
+          },
+          {
+            "to": "hello@readingrhythms.co",
+            "subject": "Could a small friendship pilot complement your reading parties?",
+            "body": "Hi Reading Rhythms team,\n\nI’m Aidan Torrence. I’m exploring how to help adults turn one enjoyable social event into regular friendships.\n\nThe early concept is a six-week group with the same people meeting repeatedly, rather than a series of one-off introductions. The proposed price is $49; nothing is charged for registering interest.\n\nWould you be open to reviewing an optional invitation for your adult audience, or directing me to the right person?\n\nThe concept and interest form: https://real-change-pilots-aidan-2026.aidantorrence.chatgpt.site/real-friendships?utm_source=reading_rhythms&utm_medium=partner_email&utm_campaign=wave1\n\nI’m not requesting any member lists or implying an endorsement. If it isn’t a fit, no problem.\n\nAidan",
+            "draft_id": "r3356955627848939451",
+            "contact_source": "https://readingrhythms.co/terms/",
+            "campaign_url": "https://real-change-pilots-aidan-2026.aidantorrence.chatgpt.site/real-friendships?utm_source=reading_rhythms&utm_medium=partner_email&utm_campaign=wave1"
+          },
+          {
+            "to": "ashley@skipthesmalltalk.com",
+            "subject": "Permission to explore a small dating-pilot invitation",
+            "body": "Hi Ashley,\n\nI’m Aidan Torrence. I read about the structure and care behind your separate dating events.\n\nI’m testing interest in a different early concept: a few considered introductions, clear mutual intent, and help getting to an actual date. The proposed first package is $49. There’s no established matching pool or payment at this stage.\n\nWould you be the right person to review a possible opt-in invitation for adults interested in dating? I wouldn’t recruit at your events or contact attendees directly.\n\nThe concept and interest form: https://real-change-pilots-aidan-2026.aidantorrence.chatgpt.site/better-dates?utm_source=skip_small_talk&utm_medium=partner_email&utm_campaign=wave1\n\nI’m not requesting any member lists or implying an endorsement. If it isn’t a fit, no problem.\n\nAidan",
+            "draft_id": "r420519558814735411",
+            "contact_source": "https://www.skipthesmalltalk.com/faq",
+            "campaign_url": "https://real-change-pilots-aidan-2026.aidantorrence.chatgpt.site/better-dates?utm_source=skip_small_talk&utm_medium=partner_email&utm_campaign=wave1"
+          },
+          {
+            "to": "psycoach.tp@gmail.com",
+            "subject": "An adult phone-reset concept: appropriate community invitation?",
+            "body": "Hi Teodora,\n\nI’m Aidan Torrence. Your digital-wellness work led me to your professional contact page.\n\nI’m testing interest in an adult-only, 30-day phone reset focused on practical boundaries, offline plans, and weekly check-ins. It’s an early habit-support concept, with a proposed $49 price and no payment at the interest stage.\n\nIs there an appropriate professional community where I could seek permission to share an optional invitation? I’m not asking for client referrals or unpaid consulting.\n\nThe concept and interest form: https://real-change-pilots-aidan-2026.aidantorrence.chatgpt.site/phone-reset?utm_source=teop_coaching&utm_medium=partner_email&utm_campaign=wave1\n\nI’m not requesting any member lists or implying an endorsement. If it isn’t a fit, no problem.\n\nAidan",
+            "draft_id": "r-1372655492938912309",
+            "contact_source": "https://www.teopcoaching.com/",
+            "campaign_url": "https://real-change-pilots-aidan-2026.aidantorrence.chatgpt.site/phone-reset?utm_source=teop_coaching&utm_medium=partner_email&utm_campaign=wave1"
+          },
+          {
+            "to": "hello@flown.com",
+            "subject": "Who handles community collaboration inquiries at FLOWN?",
+            "body": "Hi FLOWN team,\n\nI’m Aidan Torrence. I’m testing a small task-starting support concept and wanted to ask the team before approaching any community.\n\nThe proposed two-week pilot combines short scheduled work sessions with help choosing a concrete first step. The proposed price is $29; registering interest is free and creates no commitment.\n\nCould you point me to whoever considers community collaborations, if this could be relevant? I wouldn’t promote it inside sessions without permission.\n\nThe concept and interest form: https://real-change-pilots-aidan-2026.aidantorrence.chatgpt.site/start-the-task?utm_source=flown&utm_medium=partner_email&utm_campaign=wave1\n\nI’m not requesting any member lists or implying an endorsement. If it isn’t a fit, no problem.\n\nAidan",
+            "draft_id": "r2840877035483092755",
+            "contact_source": "https://help.flown.com/en/articles/8178572-can-i-get-support-from-flown-while-hosting-a-session",
+            "campaign_url": "https://real-change-pilots-aidan-2026.aidantorrence.chatgpt.site/start-the-task?utm_source=flown&utm_medium=partner_email&utm_campaign=wave1"
+          }
+        ],
+        "limits": "Six emails only. No follow-ups, member-list requests, payments, advertising bookings, social posts, or claims of partnership. Replies require review before further messages.",
+        "no_spend_authorized": true
+      },
+      "created": "2026-10-19T01:13:42Z",
+      "expires": "2026-10-22T01:13:42Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
     }
   ]
 }
