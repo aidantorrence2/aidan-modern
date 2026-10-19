@@ -49,5 +49,7 @@ node scripts/approvals/request-approval.mjs result <id> "sent:<messageId>"   # a
 ```
 
 On Aidan's Mac the same command is installed as `request-approval`. The title must say plainly
-what happens if he approves; the payload must hold exactly what will be done. Act only on
-`approved`, follow his `note`, and treat denied or expired as no.
+what happens if he approves; the payload must hold exactly what will be done. Before ending your
+turn, block on `wait <id>` (up to 30 min): a run that ends while the request is pending never hears
+the answer. Do what the output's `instruction` says: act only on `approved` (following his `note`),
+treat denied or expired as no, and treat a denial note as feedback: revise and queue a NEW request.
