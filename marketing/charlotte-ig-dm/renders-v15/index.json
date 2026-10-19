@@ -1,0 +1,37 @@
+{
+ "g01n": [
+  "01-viewfinder",
+  "02-viewfinder",
+  "03-shutter"
+ ],
+ "a": [
+  "01-columns",
+  "02-photo",
+  "03-cta"
+ ],
+ "b": [
+  "01-two-up",
+  "02-equals"
+ ],
+ "c": [
+  "01-wall",
+  "02-offer",
+  "03-cta"
+ ],
+ "d": [
+  "01-equation",
+  "02-where",
+  "03-cta"
+ ],
+ "e": [
+  "01-wall",
+  "02-work",
+  "03-cta"
+ ],
+ "f": [
+  "01-me",
+  "02-my",
+  "03-your",
+  "04-cta"
+ ]
+}

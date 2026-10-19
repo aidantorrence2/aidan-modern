@@ -20,7 +20,8 @@ R10 = sys.argv[12] if len(sys.argv) > 12 else None   # render-v10.mjs: 30 more f
 LAUNCH = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'launch')
 R12 = sys.argv[13] if len(sys.argv) > 13 else None   # render-v12.mjs: built from CONCEPTS-NEW
 R13 = sys.argv[14] if len(sys.argv) > 14 else None   # render-v13.mjs: plain engagement set
-R14 = sys.argv[15] if len(sys.argv) > 15 else None   # render-v14.mjs: ten variations of V1   # render-v4.mjs: 10 carousels from new_top_tier_candidates   # render-v3.mjs output: photo-heavy still ads (top picks)
+R14 = sys.argv[15] if len(sys.argv) > 15 else None   # render-v14.mjs: ten variations of V1
+R15 = sys.argv[16] if len(sys.argv) > 16 else None   # render-v15.mjs: me + photo(s)   # render-v4.mjs: 10 carousels from new_top_tier_candidates   # render-v3.mjs output: photo-heavy still ads (top picks)
 PICKS = ['c00', 'n04', 'n11']   # Aidan liked these three (20 Oct)
 
 def thumb(path, w=300):
@@ -276,6 +277,15 @@ def card14(cid):
     frames = strip([os.path.join(R14, cid, n + '.jpg') for n in names], names)
     return f'''<article class="card control"><header><span class="num">V1{cid.upper()}</span><h3>{html.escape(t)}</h3></header><p class="why">{html.escape(why)}</p><div class="strip">{frames}</div></article>'''
 car14 = ''.join(card14(c) for c in META14) if R14 else ''
+META15 = {'a':('me | my photos','You on the left, two photos on the right; card 2 "my photo".'),'b':('me + photos → me = your photo','A plus, then an equals between your selfie and a portrait.'),
+ 'c':('me over my photos','Your selfie on top, "my photos ↓", a wall of eight underneath.'),'d':('me + photos = FREE','An equation in two circles, no props.'),
+ 'e':('me + my photos (the wall)','Twelve portraits and you in the middle, labelled "me".'),'f':('me. → my photos. → your photos.','Three words, three cards.')}
+def card15(cid):
+    t, why = META15[cid]
+    names = json.load(open(os.path.join(R15, 'index.json')))[cid]
+    frames = strip([os.path.join(R15, cid, n + '.jpg') for n in names], names)
+    return f'''<article class="card control"><header><span class="num">ME+{cid.upper()}</span><h3>{html.escape(t)}</h3></header><p class="why">{html.escape(why)}</p><div class="strip">{frames}</div></article>'''
+car15 = ''.join(card15(c) for c in META15) if R15 else ''
 import csv
 def launch_html():
     rows = list(csv.DictReader(open(os.path.join(LAUNCH, 'ads.csv'))))
@@ -361,6 +371,8 @@ video {{ width:min(100%,300px); aspect-ratio:9/16; background:#000; display:bloc
  <div class="box"><h4>Round 3</h4><p>Hero test on the winning layout (three different first frames), plus the real selfie clip if you film it.</p><p>Judge on CPC first, then cost per chat once each ad has 5+ chats.</p></div>
 </div>
 
+<h2>"me" + "photo(s)" (6 variations)</h2>
+{car15}
 <h2>Ten variations off V1 (hi, i'm aidan)</h2>
 {car14}
 <h2>Plain and human — built for engagement, not novelty</h2>
