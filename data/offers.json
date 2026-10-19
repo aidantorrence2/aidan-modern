@@ -12671,6 +12671,108 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-19",
+    "slug": "chair-ready",
+    "name": "Chair Ready",
+    "need": "I am terrified of the dentist and keep putting off appointments I know I need.",
+    "headline": "A step-by-step prep kit for adults who dread the dentist: a script for telling the practice, a sound-and-step practice ladder, and an appointment-day plan.",
+    "buyer": "Adults who put off dental visits because of fear and want a private, structured way to prepare and to tell the practice how they feel.",
+    "bullets": [
+      "Ready-to-send wording so you can tell the practice you are nervous before you arrive, and a list of questions to ask about breaks, stop signals and numbing",
+      "A gradual practice ladder of short daily steps (photos, clinic sounds at rising volume, sitting reclined, booking the call) that you move up at your own pace",
+      "An appointment-day card with a breathing timer, an agreed stop-hand-signal reminder and a short note to show the dentist"
+    ],
+    "price": "$19 one-time",
+    "priceUsd": 19,
+    "priceNote": "Pay once, no subscription. Below the full plan of a hypnosis app that covers dentist phobia ($44.99 to $119.99).",
+    "reasonPrompt": "What is the part of a dental visit you dread most, and what has stopped you booking so far?",
+    "faq": [
+      {
+        "q": "Is this treatment for dental phobia?",
+        "a": "No. Chair Ready is an independent preparation tool for adults 18+. It is not medical or psychological advice and does not replace your dentist, doctor or a therapist. If your fear is severe, ask your GP or dentist about specialist options."
+      },
+      {
+        "q": "Does it work with my dentist?",
+        "a": "It is not linked to any practice. It gives you wording and notes you can share with whichever dentist you choose."
+      },
+      {
+        "q": "Do I have to do the steps in order?",
+        "a": "No. The ladder is a suggested order; you can repeat, skip or stay on a step for as long as you like."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-19",
+      "summary": "Mumsnet threads from 2025 show many separate adults stating the fear in their own words and swapping coping tactics (telling the practice in advance, asking for sedation, phobia-friendly dentists). One poster wrote that explaining her fear helped. Two Mumsnet threads were opened with WebFetch, and seven named posters are quoted below.",
+      "wtp": "HelloMind - Hypnosis & Therapy (App Store) lists dentist phobia among its uses: 4.1 from 157 ratings, in-app purchases $12.99, $44.99 and $119.99. Thin signal: no dental-fear product with a large rating count was confirmed.",
+      "signals": [
+        {
+          "url": "https://www.mumsnet.com/talk/_chat/5262493-terrified-of-dentist",
+          "who": "Zssn",
+          "date": "2025-01-28",
+          "quote": "I am terrified of seeing a new dentist",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/_chat/5262493-terrified-of-dentist",
+          "who": "NessaSmith",
+          "date": "2025-01-28",
+          "quote": "I also have a horrible dental phobia",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/_chat/5262493-terrified-of-dentist",
+          "who": "Copernicus321",
+          "date": "2025-01-28",
+          "quote": "the fear of not going and worrying about what was happening to my teeth became greater than the fear of going to the dentist",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/_chat/5287063-fear-of-dentist",
+          "who": "RunningJo",
+          "date": "2025-03-04",
+          "quote": "I have always played down my fear to the Dentist.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/_chat/5287063-fear-of-dentist",
+          "who": "XxSideshowAuntSallyx",
+          "date": "2025-03-04",
+          "quote": "The dentist is my worst fear",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/_chat/5287063-fear-of-dentist",
+          "who": "FinallyHere",
+          "date": "2025-03-04",
+          "quote": "I always explain that I find it really difficult",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/_chat/5287063-fear-of-dentist",
+          "who": "EmiliaRuusuvuori",
+          "date": "2025-03-04",
+          "quote": "I've got this phobia as well.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/hellomind-hypnosis-therapy/id327538172",
+          "who": "HelloMind App Store listing",
+          "date": "2026-10-19",
+          "quote": "Or get rid of your phobia eg.: - Spiders - Dentists - Enclosed spaces",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "HelloMind (general hypnosis app; dentist phobia is one use; 157 ratings, IAP up to $119.99); SelfHypnosis.com 'Overcome Fear of Dentists' audio ($15.99); Overcome Dental Anxiety - 21d (subscription, no ratings yet); Dental FearLess (free CBT-based research app from NYU/Penn, 2 ratings); free forums such as Dental Fear Central; plus in-person options such as sedation and specialist phobia dentists.",
+      "risks": "This is a health-adjacent topic, so copy must avoid any promise of curing a phobia and must point severe cases to professionals. The evidence is UK-heavy (Mumsnet), and the only dental-specific paid app found has no ratings, so proven willingness to pay comes from general hypnosis products. Free options (Dental Fear Central, the free Dental FearLess research app, and dentists who are used to nervous patients) compete directly. Buyers may avoid even reading about dentistry, which makes engagement and marketing harder. The SelfHypnosis.com page returned an empty response to our fetch, so it is not used."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
