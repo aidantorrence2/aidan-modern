@@ -12186,6 +12186,133 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-19",
+    "slug": "first-push-up",
+    "name": "First Push-Up",
+    "need": "I cannot and never have been able to do a push-up, not even on my knees.",
+    "headline": "Never managed a single push-up? A step-by-step plan that starts at the wall and the kitchen counter and works down to the floor, for your first real push-up.",
+    "buyer": "Adults who have never done a full push-up or can only do them on their knees, and who find that 100-push-up apps start too high.",
+    "bullets": [
+      "Starts below knee push-ups: wall, then counter, then low step, then floor, so you start at whatever level you can do today",
+      "A short test each week moves you to the next step only once you can do the current one with steady form",
+      "Tracks how close you are to your first full floor push-up, not how far you are from 100"
+    ],
+    "price": "$12 one-time",
+    "priceUsd": 12,
+    "priceNote": "Pay once, no subscription. The leading push-up trainer charges $4.99 a month or $74.99 a year.",
+    "reasonPrompt": "What stops you doing a push-up right now: you can't lift off the floor, your arms collapse, or you've never known how to progress?",
+    "faq": [
+      {
+        "q": "Is this medical or physiotherapy advice?",
+        "a": "No. It is an independent training tool for adults 18+ and not medical advice. If you have an injury, such as a past elbow or shoulder injury, or any health condition, ask a qualified professional before you start."
+      },
+      {
+        "q": "I can't even do one on my knees. Is this for me?",
+        "a": "Yes. The plan starts with push-ups against a wall, which is easier than knee push-ups, and only moves you lower once you can do the current step."
+      },
+      {
+        "q": "Does it aim for 100 push-ups?",
+        "a": "No. The goal is your first full floor push-up. After that you can carry on with any general push-up program."
+      },
+      {
+        "q": "Do I need equipment?",
+        "a": "No. It uses a wall, a counter or sturdy table, a step and the floor."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-19",
+      "summary": "Three separate Mumsnet threads (2024 and 2026) have many named posters saying, in their own words, that they have never managed one push-up, can only do knee push-ups, or have tried for years without success. Several ask how to progress. One original poster said she can't yet do one even on her knees.",
+      "wtp": "People already pay for push-up training apps. Push Ups Trainer Challenge (Zen Labs) shows 4.7 stars from 3.4K ratings, with in-app purchases of Zen Unlimited Pass Monthly $4.99 and Annual $74.99. Pushups Coach Pro costs $0.99 upfront, with Premium at $0.99 a month or $9.99 a year (4.5 stars, 32 ratings). Push-ups Trainer offers Unlimited for $8.99 (4.5 stars, 10 ratings). One Zen Labs reviewer said they were doing every workout on their knees, which suggests these apps start above true beginners.",
+      "signals": [
+        {
+          "url": "https://www.mumsnet.com/talk/_chat/5549580-can-you-do-a-push-up",
+          "who": "GreenCaterpillarOnALeaf",
+          "date": "2026-07-02",
+          "quote": "I am 26 and I cannot and never have been able to do a push up.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/_chat/5549580-can-you-do-a-push-up",
+          "who": "GreenCaterpillarOnALeaf",
+          "date": "2026-07-02",
+          "quote": "Right now I can’t even do one on my knees so I guess I’ve got a bit of a way to go..",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/_chat/5549580-can-you-do-a-push-up",
+          "who": "AmIrightAmIright",
+          "date": "2026-07-02",
+          "quote": "I cannot do even one.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/_chat/5549580-can-you-do-a-push-up",
+          "who": "neleh87",
+          "date": "2026-07-02",
+          "quote": "I can do the ones on my knees but I can't do the normal ones.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/_chat/5000134-can-you-do-a-press-up-and-how-old-are-you",
+          "who": "BarrelOfOtters",
+          "date": "2024-02-03",
+          "quote": "But my press-up is an apologetic little dip you'd hardly notice. I don't know hoe you get better at it…",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/_chat/5000134-can-you-do-a-press-up-and-how-old-are-you",
+          "who": "ConcertaFirstTimer",
+          "date": "2024-02-03",
+          "quote": "I have tried this method for years and still can't do a single proper one.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/_chat/5000134-can-you-do-a-press-up-and-how-old-are-you",
+          "who": "notknowledgeable",
+          "date": "2024-02-03",
+          "quote": "60s, and never in my life have i been able to do a single pressup",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/exercise/5080978-push-ups",
+          "who": "AnnaMagnani",
+          "date": "2024-05-23",
+          "quote": "Real push ups also remain a distant dream.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/exercise/5080978-push-ups",
+          "who": "Thegreatgiginthesky",
+          "date": "2024-05-23",
+          "quote": "When I started a year ago I couldn't do a single push up but now can manage around 8.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id690401205",
+          "who": "Push Ups Trainer Challenge App Store listing (reviewer Nickmrbl18)",
+          "date": "2023-06-14",
+          "quote": "I am not that strong atm so I am choosing to do each workout from my knees",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id484488156",
+          "who": "Pushups Coach Pro listing (4.5 stars, 32 ratings; $0.99 upfront, Premium 1 month $0.99, 1 year $9.99)",
+          "date": "2026-10-19",
+          "quote": "Premium - 1 year $9.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Push Ups Trainer Challenge (Zen Labs): 4.7 stars from 3.4K ratings, $4.99 a month or $74.99 a year, aimed at 0 to 100 push-ups; Pushups Coach Pro: $0.99 upfront plus Premium subscriptions; Push-ups Trainer (Berbie Software): Unlimited $8.99; Free 100-push-up challenge apps, and free YouTube and forum advice to start against a wall or on your knees",
+      "risks": "Free advice on progressing from wall to knee to floor push-ups is easy to find, so a paid version has to be clearly easier to stick with; Established apps with thousands of ratings could add a 'first push-up' beginner track; Some of the demand comes from casual 'can you do one?' chat threads rather than people actively looking to buy; Fitness content needs careful wording: no health or body-change claims, and a note for people with injuries (one poster mentioned a broken elbow)"
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

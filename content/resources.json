@@ -3395,5 +3395,47 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "how-to-do-your-first-push-up",
+  "offer": "first-push-up",
+  "title": "How to do your first push-up when you have never managed one",
+  "description": "Can't do a single push-up, even on your knees? Start against a wall, move down to a counter, then a step, then the floor, and test yourself once a week.",
+  "intro": "Most people who can't do a push-up start at a level that is too hard and give up. Starting higher, against a wall, and lowering the angle step by step works far better.",
+  "sections": [
+   {
+    "h": "Start at the wall",
+    "list": [
+     "Stand an arm's length from a wall, hands at chest height, and bend your elbows until your nose nearly touches it, then push back.",
+     "Keep your body in one straight line from head to heels."
+    ]
+   },
+   {
+    "h": "Lower the angle step by step",
+    "list": [
+     "Once you can do about three sets of ten with good form, move to a kitchen counter or sturdy table, then a low step or bench, then the floor.",
+     "Each lower step is harder. Only move down when the current step feels steady."
+    ]
+   },
+   {
+    "h": "Practise the lowering",
+    "list": [
+     "From the top of a floor push-up, lower yourself as slowly as you can. Kneel to get back up.",
+     "Slow lowering builds the strength for the pushing part."
+    ]
+   },
+   {
+    "h": "Test once a week",
+    "list": [
+     "Try one full floor push-up once a week, not every day. Rest days are when you get stronger."
+    ]
+   },
+   {
+    "h": "Look after your joints",
+    "p": [
+     "Stop if you feel pain in your wrists, elbows or shoulders. If you have an injury or health condition, ask a qualified professional before starting. This guide is general information, not medical advice."
+    ]
+   }
+  ]
  }
 ]
