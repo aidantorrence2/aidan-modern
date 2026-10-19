@@ -1,0 +1,18 @@
+id,round,name,source,lever,hypothesis,files (in launch/<round>/<id>/)
+r1a,R1,control — eye contact (winner composition),renders-v6/h01,stop,The baseline every other ad is judged against.,01-hook.jpg | 02-work.jpg | 03-nervous.jpg | 04-cta.jpg
+r1b,R1,"proof sheet ""you?""",renders-v9/g07,stop+intent,"The empty frame is the viewer; swipe to ""this one.""",01-proof.jpg | 02-pick.jpg | 03-cta.jpg
+r1c,R1,receipt $0.00,renders-v9/g06,intent,"Itemised $0.00 answers ""what's the catch"" with no reassurance copy.",01-receipt.jpg | 02-receipt.jpg | 03-cta.jpg | 03-receipt.jpg
+r1d,R1,"viewfinder, no shutter",renders-v11/g01n,stop,Eye-AF boxes on the pupils read as something happening; shutter button removed for the Meta fake-control rule.,01-viewfinder.jpg | 02-viewfinder.jpg | 03-shutter.jpg
+r2a,R2,just say hi,renders-v11/i1,intent,"Naming the tiny action beats ""Interested? Let's chat.""",01-hook.jpg | 02-hi.jpg | 03-cta.jpg
+r2b,R2,ask list (ice breakers as handwriting),renders-v11/i2,intent,Shows the DM is one tap with an answer waiting.,01-hook.jpg | 02-ask.jpg | 03-cta.jpg
+r2c,R2,swipe-bait: what's the catch → receipt,renders-v11/c5,cpm+intent,Question→answer swipes are engagement.,01-catch.jpg | 02-receipt.jpg | 03-cta.jpg
+r2d,R2,NoDa,renders-v11/s4a,stop,Micro-local word as the hero; also a neighbourhood read.,01-hook.jpg | 02-cta.jpg
+r2e,R2,South End,renders-v11/s4b,stop,Same.,01-hook.jpg | 02-cta.jpg
+r2f,R2,Plaza Midwood,renders-v11/s4c,stop,Same.,01-hook.jpg | 02-cta.jpg
+r2g,R2,Uptown,renders-v11/s4d,stop,Same.,01-hook.jpg | 02-cta.jpg
+r3a,R3,develop (5s Reel),mp4:charlotte-j-develop-v1.mp4,cpm,Motion in frame 1 for the Reels auction; loops clean.,charlotte-j-develop-v1.mp4
+r3b,R3,eyes first (5s Reel),mp4:charlotte-k-eyesopen-v1.mp4,stop,Shortest path from scroll to a face.,charlotte-k-eyesopen-v1.mp4
+r3c,R3,flash loop (5s Reel),mp4:charlotte-l-flash5-v1.mp4,cpm,Watch-through feeds ranking; eyes locked so it reads smooth.,charlotte-l-flash5-v1.mp4
+r3d,R3,nothing (quiet print),renders-v11/s1,stop,A silent frame in a loud feed.,01-quiet.jpg | 02-quiet.jpg | 03-cta.jpg
+r3e,R3,upside down,renders-v11/s2,stop,People stop for broken things.,01-upside.jpg | 02-cta.jpg
+r3f,R3,zero-design story,renders-v11/c2,cpm,Looks like a friend's story.,01-story.jpg | 02-story.jpg

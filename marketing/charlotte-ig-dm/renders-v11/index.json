@@ -1,0 +1,51 @@
+{
+ "g01n": [
+  "01-viewfinder",
+  "02-viewfinder",
+  "03-shutter"
+ ],
+ "s1": [
+  "01-quiet",
+  "02-quiet",
+  "03-cta"
+ ],
+ "s2": [
+  "01-upside",
+  "02-cta"
+ ],
+ "s4a": [
+  "01-hook",
+  "02-cta"
+ ],
+ "s4b": [
+  "01-hook",
+  "02-cta"
+ ],
+ "s4c": [
+  "01-hook",
+  "02-cta"
+ ],
+ "s4d": [
+  "01-hook",
+  "02-cta"
+ ],
+ "i1": [
+  "01-hook",
+  "02-hi",
+  "03-cta"
+ ],
+ "i2": [
+  "01-hook",
+  "02-ask",
+  "03-cta"
+ ],
+ "c2": [
+  "01-story",
+  "02-story"
+ ],
+ "c5": [
+  "01-catch",
+  "02-receipt",
+  "03-cta"
+ ]
+}
