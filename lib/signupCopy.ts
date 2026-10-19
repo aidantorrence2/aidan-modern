@@ -34,6 +34,8 @@ export type SignupCopy = {
   optional: string
   photosOfYou: string
   upTo3: string
+  photoGuide: string
+  photoExamples: { good: string; bad: string; headshot: string; fullLength: string; glam: string; far: string }
   yourPhoto: (n: number) => string
   removePhoto: (n: number) => string
   addingPhotos: string
@@ -76,8 +78,10 @@ export const SIGNUP_COPY: Record<Lang, SignupCopy> = {
     followHint: { before: 'Please follow ', after: ' or I won’t be able to message you.' },
     notes: 'Notes',
     optional: 'optional',
-    photosOfYou: 'Photos of you',
+    photosOfYou: 'Photos of yourself',
     upTo3: 'up to 3',
+    photoGuide: 'One headshot with your hair back, and one full-length (or 3/4) photo. Not smiling, no makeup or just light makeup. Mirror selfies are fine.',
+    photoExamples: { good: 'Good', bad: 'Not this', headshot: 'Headshot, hair back', fullLength: 'Full-length, mirror selfie ok', glam: 'Smiling, heavy makeup', far: 'Too far, sunglasses' },
     yourPhoto: n => `Your photo ${n}`,
     removePhoto: n => `Remove your photo ${n}`,
     addingPhotos: 'Adding your photos…',
@@ -118,8 +122,10 @@ export const SIGNUP_COPY: Record<Lang, SignupCopy> = {
     followHint: { before: 'Lütfen ', after: ' hesabını takip et, yoksa sana mesaj atamam.' },
     notes: 'Notlar',
     optional: 'isteğe bağlı',
-    photosOfYou: 'Senin fotoğrafların',
+    photosOfYou: 'Kendi fotoğrafların',
     upTo3: 'en fazla 3',
+    photoGuide: 'Saçların arkada bir vesikalık ve bir boy (ya da 3/4) fotoğrafı. Gülümseme yok, makyajsız ya da çok hafif makyaj. Ayna selfiesi olur.',
+    photoExamples: { good: 'Böyle', bad: 'Böyle değil', headshot: 'Yüz, saçlar arkada', fullLength: 'Boy fotoğrafı, ayna selfiesi olur', glam: 'Gülümseme, yoğun makyaj', far: 'Çok uzak, güneş gözlüğü' },
     yourPhoto: n => `Fotoğrafın ${n}`,
     removePhoto: n => `${n}. fotoğrafı kaldır`,
     addingPhotos: 'Fotoğrafların ekleniyor…',
@@ -162,6 +168,8 @@ export const SIGNUP_COPY: Record<Lang, SignupCopy> = {
     optional: 'необязательно',
     photosOfYou: 'Твои фото',
     upTo3: 'до 3',
+    photoGuide: 'Одно фото лица с убранными назад волосами и одно в полный рост (или по колено). Без улыбки, без макияжа или с лёгким макияжем. Селфи в зеркале — подходит.',
+    photoExamples: { good: 'Так', bad: 'Не так', headshot: 'Лицо, волосы убраны', fullLength: 'В полный рост, селфи в зеркале ок', glam: 'Улыбка, яркий макияж', far: 'Слишком далеко, очки' },
     yourPhoto: n => `Твоё фото ${n}`,
     removePhoto: n => `Удалить фото ${n}`,
     addingPhotos: 'Добавляю фото…',
