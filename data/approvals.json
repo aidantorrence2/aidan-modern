@@ -1281,7 +1281,9 @@
           "access_mode": "public",
           "current_version": 2,
           "notes": "Current Sites metadata confirms public host/version 2; package records previous form QA. This environment's direct HTTP check returned 403, so a fresh anonymous form check has not passed. Recheck public reachability before sending."
-        }
+        },
+        "result": "Sent exactly six approved emails via connected Gmail on 2026-10-19 05:22 UTC. All six returned SENT. IDs: 1a1529c39d77048b, 1a1529c46744fe91, 1a1529c57a5636a8, 1a1529c65fdc8ea9, 1a1529c71ea64cd8, 1a1529c7f4335219. Two previous emails were not resent. No follow-ups, spending or deployments. Public phone, dating and friendship forms rendered with no preset price before sending.",
+        "result_at": "2026-10-19T05:22:49Z"
       },
       "created": "2026-10-19T05:16:55Z",
       "expires": "2026-10-22T05:16:55Z",
