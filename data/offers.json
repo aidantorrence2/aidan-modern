@@ -11349,6 +11349,101 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-19",
+    "slug": "one-tooth",
+    "name": "One Tooth",
+    "need": "I never floss. I'm not in the habit of doing it every time I brush, so I forget a lot.",
+    "headline": "For people who never floss: start with one tooth tonight, tie it to brushing, and build a streak you will keep.",
+    "buyer": "Adults who brush every day but rarely or never floss, and who find it boring, awkward or easy to forget.",
+    "bullets": [
+      "Starts very small: floss one tooth straight after brushing, then add more teeth only once that sticks",
+      "Bedtime nudge set to your own brushing time, plus a one-tap log and a streak view",
+      "Short technique cards on string floss, tape, picks and interdental brushes, so you can pick the one you can actually do"
+    ],
+    "price": "$9 one-time",
+    "priceUsd": 9,
+    "priceNote": "Pay once, no subscription. Oral-care routine apps on the App Store charge $11.99 to $23.99 a year.",
+    "reasonPrompt": "What usually stops you flossing: forgetting, finding it awkward, not having the time, or not liking how it feels?",
+    "faq": [
+      {
+        "q": "Is this dental or medical advice?",
+        "a": "No. One Tooth is an independent habit tool for adults 18+. It is not medical or dental advice and does not replace your dentist or hygienist. If something worries you, such as bleeding or pain, ask a dental professional."
+      },
+      {
+        "q": "Do I need a particular floss?",
+        "a": "No. The app works with string floss, tape, floss picks or interdental brushes. Use whichever you will actually stick with."
+      },
+      {
+        "q": "Why start with one tooth?",
+        "a": "A tiny step done right after brushing is easy to repeat every night. Once that is automatic, you add more teeth."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-19",
+      "summary": "People say in their own words that they never floss, forget to, hate it or can't get the knack of it. Five named people across two opened pages say this (one Mumsnet thread from 2026 and one AnandTech thread), and a second Mumsnet thread adds another adult who has never flossed. The pain points they name are forgetting, the time it takes, awkwardness and dislike, which suits a small habit-building tool.",
+      "wtp": "Toothbrush Timer: Toothy (App Store, 4.6 stars from 588 ratings) is free with in-app purchases. Its paid Premium tier includes 'Floss & Rinse Timers'. Prices I read: monthly $2.99 or $4.99; yearly $11.99, $17.99 or $23.99; lifetime $35.99. This shows people pay for oral-care routine apps.",
+      "signals": [
+        {
+          "url": "https://www.mumsnet.com/talk/general_health/5549244-best-floss",
+          "who": "Firefly1987",
+          "date": "2026-07-02",
+          "quote": "Yes I hate it.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/general_health/5549244-best-floss",
+          "who": "Blanketpolicy",
+          "date": "2026-07-01",
+          "quote": "I could never get the knack of flossing!",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.anandtech.com/threads/do-you-floss.1950963",
+          "who": "dawnbug",
+          "date": "2006-10-17",
+          "quote": "I'm not in the habit of doing it every time I brush, though, which means I forget a lot.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.anandtech.com/threads/do-you-floss.1950963",
+          "who": "iamaelephant",
+          "date": "2006-10-17",
+          "quote": "I don't think I've ever flossed :Q I probably should.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.anandtech.com/threads/do-you-floss.1950963",
+          "who": "Aztech",
+          "date": "2006-10-17",
+          "quote": "I'm just too lazy to.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/parenting/4116482-When-to-floss-toddlers-teeth",
+          "who": "2pinkginsplease",
+          "date": "2020-12-26",
+          "quote": "I'm 44 and never flossed my teeth!",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1453139747",
+          "who": "Toothbrush Timer: Toothy (App Store listing, 588 ratings, 4.6 stars)",
+          "date": "2026-10-19",
+          "quote": "Floss & Rinse Timers",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Toothbrush Timer: Toothy (free with paid tiers, $2.99/month up to $35.99 lifetime, 4.6 stars from 588 ratings) covers brushing, flossing and rinsing timers. Two other apps turned up only in search results; I did not open their pages: FlossBros (free with in-app purchases, too few ratings to show a score) and BrushMint (brushing timer with floss reminders). General habit trackers and free phone reminders are also substitutes, as are easier tools such as interdental brushes and water flossers.",
+      "risks": "Free reminders and habit apps are close substitutes, and habit apps lose users quickly. Some of the forum evidence is old (AnandTech, 2006). Some people who don't floss say brushing is enough, so they may not want to change. Some people cite bleeding as a reason they stop, and that is a dental question the app must refer to a professional rather than address. The paid comparison is a broader oral-care app, not a floss-only product."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
