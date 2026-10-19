@@ -1356,8 +1356,8 @@
         "data_scope": "Database row responses may contain private email addresses and city/participation/consent/attribution fields. Read only to count and deduplicate. Do not persist, export, email, share or put individual lead records in Library, prompts for other workers, Git repositories or public pages.",
         "limits": "Read-only ongoing measurement for this one project. No customer outreach, data deletion/migration, credential recovery, database changes, new endpoint, deployment, spending or broader access. Stop if access is denied; no alternative access path.",
         "why_needed": "The handoff's zero was historical and cloud private-export credentials were omitted. The hourly targets cannot be honestly measured until separately authorized secure access is approved.",
-        "result": "Read-only measurement 2026-10-19T18:58:55.781Z under ongoing exact-project scope. Read database overview first, then DB/leads 25 rows/page; complete response empty, next_offset null, no truncation. Active consenting adult signups total 0, new since previous complete check 0 against run target 5. Aggregate only; no private rows exported or persisted. No customer messages or database changes.",
-        "result_at": "2026-10-19T19:01:29Z"
+        "result": "Read-only measurement 2026-10-19T20:01:39.485Z: exact approved project overview then DB/leads limit25. Empty complete response, next_offset null/no truncation. Active consented adult signups total0, new0 against target5; aggregate only, no private rows saved, no database changes or messaging.",
+        "result_at": "2026-10-19T20:04:34Z"
       },
       "created": "2026-10-19T05:23:23Z",
       "expires": "2026-10-22T05:23:23Z",
@@ -1424,8 +1424,8 @@
         "why_these_recipients": "Published business/podcast contacts on current official pages; relevant adult dating, friendship or screen-break audiences. Five new organizations, no previous Gmail correspondence found. Prospects are distribution partners, not customer leads.",
         "recipient_exclusions": "Dclic-coaching is researched but not included because English-language audience fit is not confirmed. Talia/Dating Intentionally is not included because the currently verified email is specifically for workshop support. Form-only channels are not included.",
         "page_verification": "Existing approved phone, dating and friendship pages were public and consent forms rendered in preceding checkpoint; recheck public reachability before execution.",
-        "result": "Execution blocked 2026-10-19. Zero confirmed sends. Dateable attempt returned no confirmed message/thread ID; two subsequent recipient searches returned no matches, but retain UNCERTAIN and do not retry until reconciled. Dear Nina explicitly rejected by sending safety check requiring user-authored exact approval; not sent. Shari Leid, A Little Nudge and Your Digital Detox not attempted after rejection. Exact approval remains approved, not completed; no alternative sending route, no resends or follow-ups. Durable claim and per-attempt receipts in handoff.",
-        "result_at": "2026-10-19T13:15:18Z"
+        "result": "2026-10-19: Three exact approved wave3 first-contact emails sent and Gmail returned SENT: info@sharileid.com message/thread 1a155c298c10fd9f; info@alittlenudge.com 1a155c2d615c504b; contact@your-digitaldetox.com 1a155c310b65e81e. All official contacts and public signup pages freshly verified, no prior Gmail history or opt-outs found. Original Dateable action remains UNCERTAIN, never retried. Dear Nina previous auto-review rejection preserved and not retried. Total confirmed wave3 sends3/5; no followups/resends. Audience-owner requests, no verified partner sharing/customer leads.",
+        "result_at": "2026-10-19T20:03:54Z"
       },
       "created": "2026-10-19T05:59:51Z",
       "expires": "2026-10-22T05:59:51Z",
