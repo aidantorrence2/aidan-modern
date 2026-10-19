@@ -3602,5 +3602,45 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "stuck-at-one-bouldering-grade",
+  "offer": "send-next",
+  "title": "Stuck at one bouldering grade? The technique fixes to try before you train harder",
+  "description": "Plateaued at V3 or V4? Film yourself, work on footwork and hip position, repeat problems you have already sent, and climb a wider range of styles.",
+  "intro": "Most recreational boulderers who plateau are limited by technique, not strength. A few focused changes usually move a grade faster than extra pull-ups.",
+  "sections": [
+   {
+    "h": "Film yourself",
+    "list": [
+     "Film a few attempts from the side and the back. Watch for feet slipping, straight arms, and hips far from the wall."
+    ]
+   },
+   {
+    "h": "Quiet, precise feet",
+    "list": [
+     "Practise placing each foot silently and exactly where you look. Many plateaus are footwork plateaus."
+    ]
+   },
+   {
+    "h": "Hips to the wall",
+    "list": [
+     "Turn your hip into the wall on side-pulls and reaches. It extends your reach without extra strength."
+    ]
+   },
+   {
+    "h": "Climb more styles",
+    "list": [
+     "If you always climb overhangs, try slabs and vertical walls, and the other way round.",
+     "Repeat problems you have already sent, smoother each time."
+    ]
+   },
+   {
+    "h": "Rest and recover",
+    "p": [
+     "Fingers and elbows take longer to adapt than muscles. Leave rest days between hard sessions, and get any pain checked. This guide is general information, not medical advice."
+    ]
+   }
+  ]
  }
 ]

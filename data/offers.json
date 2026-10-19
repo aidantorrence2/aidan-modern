@@ -12598,6 +12598,79 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-19",
+    "slug": "send-next",
+    "name": "Send Next",
+    "need": "I'm stuck at the same bouldering grade, it feels like a technique thing, and I'm unsure what steps to take to fix it.",
+    "headline": "For boulderers stuck at one grade: film a few attempts, get the likely limiter, work on one technique focus with drills, and keep a simple session log.",
+    "buyer": "Adult (18+) recreational boulderers stuck at one grade, roughly V2 to V5.",
+    "bullets": [
+      "Film a few attempts and get the most likely limiter: footwork, body position, hips or grip.",
+      "One technique focus at a time, with drills you can do at your wall.",
+      "A short session log, so you can see whether the focus is working before you change it."
+    ],
+    "price": "$7.99/month",
+    "priceUsd": 8,
+    "priceNote": "Around a third of the price of a monthly climbing training plan.",
+    "reasonPrompt": "What grade are you stuck at, and how long have you been there?",
+    "faq": [
+      {
+        "q": "Is this safe?",
+        "a": "Send Next is an independent coaching tool for adults 18+, not medical advice. Climb within your limits, warm up, and get injuries checked by a qualified professional."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-19",
+      "summary": "Boulderers on two Mountain Project threads say they are stuck at the same grade, think it is technique but don't know how to fix it, and one says they could afford a coach. Paid climbing training plans already sell.",
+      "wtp": "LatticePlan sells online climbing training at £22.99 a month, and a 12-week training plan for £150. John RB on Mountain Project: \"I could definitely afford a coach.\"",
+      "signals": [
+        {
+          "url": "https://www.mountainproject.com/forum/message/111696217",
+          "who": "Sends McGee (Mountain Project)",
+          "date": "2016-03-13",
+          "quote": "It feels like it's probably a technique thing but I'm unsure what steps to take from here to fix it.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mountainproject.com/forum/message/111696217",
+          "who": "Jan Tarculas (Mountain Project)",
+          "date": "2016-03-13",
+          "quote": "I was stuck in the same boat when I first started.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mountainproject.com/forum/message/122423565",
+          "who": "John RB (Mountain Project)",
+          "date": "2022-05-19",
+          "quote": "I could definitely afford a coach.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mountainproject.com/forum/message/122423565",
+          "who": "Jason Kim (Mountain Project)",
+          "date": "2022-05-18",
+          "quote": "I (at age 46) have also plateaued",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.latticetraining.com/blog/which-lattice-plan",
+          "who": "Lattice Training",
+          "date": "2023-03-30",
+          "quote": "£22.99/month, with a 14-day free trial",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Lattice Training, Crimpd, climbing coaches, gym technique classes.",
+      "risks": "Evidence is from one forum (two threads, 2016 and 2022). Codidact Outdoors returns 403 to our fetch, so it is not used."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
