@@ -789,6 +789,24 @@
       "status": "denied",
       "decided": "2026-10-19T00:01:01Z",
       "note": ""
+    },
+    {
+      "id": "other:phone-e2e-test-1",
+      "kind": "other",
+      "source": "claude:phone-test",
+      "title": "Test: your phone's Approvals notification",
+      "summary": "Phone end-to-end test. Claude will tap Deny on the phone in a moment; nothing happens either way.",
+      "preview_url": "https://www.aidantorrence.com/images/large/000001-11.jpg",
+      "payload": {
+        "image": "https://www.aidantorrence.com/images/large/000001-11.jpg",
+        "description": "TEST ONLY: nothing happens either way.",
+        "link": "https://www.aidantorrence.com/"
+      },
+      "created": "2026-10-19T00:22:20Z",
+      "expires": "2026-10-19T01:22:20Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
     }
   ]
 }
