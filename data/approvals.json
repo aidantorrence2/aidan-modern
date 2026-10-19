@@ -1717,9 +1717,9 @@
       },
       "created": "2026-10-19T18:53:45Z",
       "expires": "2026-10-22T18:53:45Z",
-      "status": "pending",
-      "decided": null,
-      "note": ""
+      "status": "denied",
+      "decided": "2026-10-19T22:46:06Z",
+      "note": "where'd this request come from..."
     },
     {
       "id": "other:turn-on-pulse-in-system-settings-accessi-202610191900",
