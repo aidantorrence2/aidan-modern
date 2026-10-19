@@ -12773,6 +12773,152 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-19",
+    "slug": "calm-climb",
+    "name": "Calm Climb",
+    "need": "For as long as I can remember I have been terrified of flying, and I have a flight booked.",
+    "headline": "For adults who dread flying: plain explainers for turbulence and plane noises, a 7-day pre-flight plan, and an offline guide for each stage of the flight.",
+    "buyer": "Adults (18+) who dread or avoid flying and have a trip coming up.",
+    "bullets": [
+      "Plain explanations of turbulence, engine noises and bumps, so the sounds stop being a surprise.",
+      "A 7-day plan before your flight, with a short practice each day.",
+      "An offline guide for each stage, from check-in through take-off and cruise to landing, with breathing prompts and a flight log."
+    ],
+    "price": "$9.99/month",
+    "priceUsd": 10,
+    "priceNote": "Far less than a fear-of-flying course ($119 to $197 online).",
+    "reasonPrompt": "Which part of flying worries you most, and when is your next flight?",
+    "faq": [
+      {
+        "q": "Is this therapy?",
+        "a": "No. Calm Climb is an independent self-help tool for adults 18+, not therapy or medical advice, and it is not linked to any airline. If fear of flying is seriously affecting your life, a doctor or therapist can help."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-19",
+      "summary": "Adults in two 2025 Mumsnet threads say they are terrified of flying, avoided it for years or were a sobbing wreck before a holiday, and one did an airline fear-of-flying course. Online fear-of-flying courses already sell.",
+      "wtp": "The easyJet Fearless Flyer online course sells at $119 (Basic) and $197 (Premium). Screwyoukeithyoutwat on Mumsnet did the Virgin flying-without-fear course.",
+      "signals": [
+        {
+          "url": "https://www.mumsnet.com/talk/holidays/5296134-terrified-of-flying",
+          "who": "Chazzalazza (Mumsnet)",
+          "date": "2025-03-17",
+          "quote": "we ve booked our first holiday with a flight as a family and I am absolutely bricking it",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/holidays/5296134-terrified-of-flying",
+          "who": "Screwyoukeithyoutwat (Mumsnet)",
+          "date": "2025-03-17",
+          "quote": "I did not fly for ten years",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/am_i_being_unreasonable/5404289-to-be-so-scared-of-flying",
+          "who": "TheBeaTgoeson1 (Mumsnet)",
+          "date": "2025-09-04",
+          "quote": "For as long as I can remember I have been terrified of flying",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/am_i_being_unreasonable/5404289-to-be-so-scared-of-flying",
+          "who": "Nsws2015 (Mumsnet)",
+          "date": "2025-09-04",
+          "quote": "I was a sobbing wreck and begging my husband to go on our holiday without me!",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.fearless-flyer.com/",
+          "who": "easyJet Fearless Flyer course page",
+          "date": "2026-10-19",
+          "quote": "Premium $197 ... Basic $119",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "easyJet Fearless Flyer, Virgin Flying Without Fear, SOAR, Sky Guru, therapy.",
+      "risks": "Evidence is UK-heavy (Mumsnet). Fear-of-flying apps have small rating counts; courses are the main money signal."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-19",
+    "slug": "first-serve",
+    "name": "First Serve",
+    "need": "I've been up 40-0 or 40-15 and then reeled off two or three double faults in a row.",
+    "headline": "A serve coach for club and social tennis players: film ten serves, get the one fault to fix first, follow a 15-minute basket drill, and log double faults in matches.",
+    "buyer": "Adult (18+) recreational and club tennis players whose serve breaks down under pressure.",
+    "bullets": [
+      "Film ten serves and get the one fault to fix first: toss, rhythm or contact.",
+      "A 15-minute basket drill for that fault, including second serves under pressure.",
+      "A match log of first-serve percentage and double faults, so you can see the fix holding."
+    ],
+    "price": "$7.99/month",
+    "priceUsd": 8,
+    "priceNote": "Around half the monthly price of the leading tennis video-analysis app.",
+    "reasonPrompt": "When does your serve fall apart: big points, second serves, or windy days?",
+    "faq": [
+      {
+        "q": "Does this replace a coach?",
+        "a": "No. First Serve is an independent practice tool that works alongside lessons with a qualified coach."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-19",
+      "summary": "Club players on Feel Tennis and Mumsnet say their serve falls apart on big points, their toss is inconsistent, and their service is weak. Tennis video-analysis apps already sell subscriptions.",
+      "wtp": "SwingVision (App Store): 4.7 from 5K ratings, Plus $14.99 a month or $95.99 a year, Pro $179.99 a year, Max $299.99 a year.",
+      "signals": [
+        {
+          "url": "https://feeltennis.net/second-serves-under-pressure/",
+          "who": "Ed (Feel Tennis comments)",
+          "date": "2022-11-22",
+          "quote": "The number of times I've been up 40-0 or 40-15 and then reeled off 2 or 3 double faults in a row is insane and demoralising.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://feeltennis.net/second-serves-under-pressure/",
+          "who": "Rick (Feel Tennis comments)",
+          "date": "2022-08-09",
+          "quote": "have occasional lapses on high pressure points",
+          "seen": "opened"
+        },
+        {
+          "url": "https://feeltennis.net/serve-higher-toss/",
+          "who": "Miguel (Feel Tennis comments)",
+          "date": "2018-06-07",
+          "quote": "An inconsistent toss has always been a problem for me.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/am_i_being_unreasonable/5329526-learning-tennis-as-an-adult",
+          "who": "massistar (Mumsnet)",
+          "date": "2025-05-06",
+          "quote": "I can play a passable game of doubles now although my service is a bit shit.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/swingvision-tennis-pickleball/id989461317",
+          "who": "SwingVision App Store listing",
+          "date": "2026-10-19",
+          "quote": "5K Ratings ... Plus Yearly $95.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "SwingVision, tennis coaches, Feel Tennis and other online courses.",
+      "risks": "Only one poster names double faults directly. Talk Tennis did not open to our fetch."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
