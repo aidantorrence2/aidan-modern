@@ -1255,6 +1255,192 @@
     }
   },
   {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-19",
+    "slug": "payoff-date",
+    "name": "Payoff Date",
+    "need": "Drowning in credit card debt and can't see how you'll ever pay it off?",
+    "headline": "Payoff Date turns every card and loan into one plan with a real date you'll be debt-free, and shows that date move closer every time you pay.",
+    "buyer": "Adults paying down several credit cards or loans who feel lost about where to start and want one clear plan.",
+    "bullets": [
+      "Add each debt once: balance, rate, minimum. Pick snowball (smallest first) or avalanche (highest rate first) and see both dates side by side.",
+      "Made an extra payment? Tap it in, and the plan and your debt-free date update instantly.",
+      "A progress view of total owed coming down. No bank login needed, and your data is never sold."
+    ],
+    "price": "$14.99/year",
+    "priceUsd": 15,
+    "priceNote": "Below the leading debt payoff app's $41.99/year, because it does one job: the plan and the date.",
+    "reasonPrompt": "Which debts are you paying off right now (cards, car, student loans)?",
+    "faq": [
+      {
+        "q": "Is this financial advice?",
+        "a": "No. It's a planning tool. It doesn't connect to any bank or lender and doesn't recommend financial products."
+      },
+      {
+        "q": "Do I need to link my bank?",
+        "a": "No. You type in your balances once and update them when you pay."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-19",
+      "summary": "Debt payoff planners have thousands of paid ratings, and their reviewers ask for simpler ways to add extra payments and see every debt in one place. People in debt forums say they don't know where to start.",
+      "wtp": "Debt Payoff Planner & Tracker: 4.7 from 7.4K App Store ratings, subscriptions $6.99/month to $41.99/year. Debt Snowball - Payoff Planner: 4.7 from 1.4K ratings, $6.99 unlock.",
+      "signals": [
+        {
+          "url": "https://apps.apple.com/us/app/debt-payoff-planner-tracker/id1009323715",
+          "who": "MySuri19 (App Store reviewer, Debt Payoff Planner)",
+          "date": "2022-10-07",
+          "quote": "My biggest complaint is that there is not a easy way to add an additional payment.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/debt-snowball-payoff-planner/id1478622759",
+          "who": "dda6133 (App Store reviewer, Debt Snowball)",
+          "date": "2025-08-14",
+          "quote": "I just need to see all my debts in one place and monitor/track my progress.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://reddit.sentinel-team.org/posts/1rs38ea",
+          "who": "u/FriendElegant2688 (r/personalfinance, mirror)",
+          "date": "2026",
+          "quote": "i don't even know where to get started",
+          "seen": "snippet"
+        }
+      ]
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-19",
+    "slug": "same-table",
+    "name": "Same Table",
+    "need": "Moved to a new city and don't have any friends here yet?",
+    "headline": "Same Table puts you in a small group of 4 to 6 people near you who like the same things, picks a time and a place, and helps you actually meet up.",
+    "buyer": "Adults (18+) who moved to a new city for work or school and haven't built a circle of friends there yet.",
+    "bullets": [
+      "Tell it what you're into (climbing, board games, running, cooking, live music) and when you're free.",
+      "Get matched into a small group in your neighborhood, not a giant event or an endless swipe feed.",
+      "It suggests a plan and a place, so the chat turns into a meetup instead of fizzling out. Pay per meetup, no subscription."
+    ],
+    "price": "$8 per meetup",
+    "priceUsd": 8,
+    "priceNote": "About half of a $16 Timeleft dinner ticket, and only for meetups you join.",
+    "reasonPrompt": "Which city did you move to, and what would you want to do with new friends?",
+    "faq": [
+      {
+        "q": "Who can join?",
+        "a": "Adults 18+ only. Same Table is an independent project and isn't connected to any other friend-finding app."
+      },
+      {
+        "q": "Is this for dating?",
+        "a": "No. Groups are for making friends."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-19",
+      "summary": "People who move alone say they have no friends in the new city, and friend-finding app users say nobody suggested actually meeting up. Paid dinners with strangers already prove people pay to meet new people in person.",
+      "wtp": "Timeleft: diners pay the app $16 for one dinner or up to $86 for monthly subscriptions (News Tribune, 2024); €18M ARR and 150,000 monthly participants by August 2025 (Timothe Frin's Timeleft profile).",
+      "signals": [
+        {
+          "url": "https://www.refinery29.com/en-us/making-new-friends-bumble-bff",
+          "who": "Hannah Salberg, Refinery29",
+          "date": "2016-11-08",
+          "quote": "After I moved to New York City, I felt extremely lonely.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.newstribune.com/news/2024/nov/03/is-dining-with-strangers-the-cure-for-loneliness/",
+          "who": "Morgan Steffy, Timeleft diner (News Tribune)",
+          "date": "2024-11-03",
+          "quote": "I was so excited to find a way to meet people organically that wasn't a sports league or kickball,",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.teamblind.com/post/can-one-move-to-nyc-alone-without-having-any-friends-ym3kuozb",
+          "who": "Googleasdfg0 (Blind user)",
+          "date": "not shown",
+          "quote": "I don't have any friends there",
+          "seen": "snippet"
+        },
+        {
+          "url": "https://www.whistleout.com/CellPhones/Apps/bumble-bff-fails-at-making-friends",
+          "who": "Jessica Santero, WhistleOut",
+          "date": "not shown",
+          "quote": "Nobody suggested actually meeting up",
+          "seen": "snippet"
+        }
+      ]
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-19",
+    "slug": "slip-day",
+    "name": "Slip Day",
+    "need": "Keep trying to quit smoking, and every slip sends you back to day one?",
+    "headline": "A quit-smoking app built for the craving and for the day after a slip: you log the slip, keep your progress, and get straight back on track.",
+    "buyer": "Adults (18+) who have tried to quit smoking several times and lose heart when a single cigarette resets their counter to zero.",
+    "bullets": [
+      "A craving button that walks you through the next 10 minutes, one small step at a time.",
+      "Had a cigarette? Log it as a slip. Your smoke-free days, money saved and streak history stay, instead of resetting to zero.",
+      "See your patterns: which times, places and moods bring cravings, so you can plan for them."
+    ],
+    "price": "$24.99 one-time",
+    "priceUsd": 25,
+    "priceNote": "One price, paid once, with no surprise renewals.",
+    "reasonPrompt": "How many times have you tried to quit, and what usually makes you slip?",
+    "faq": [
+      {
+        "q": "Is this medical treatment?",
+        "a": "No. Slip Day is a habit tool, not medical advice or treatment. Adults 18+ only. In the US, free quit coaching is available at 1-800-QUIT-NOW, and your doctor or pharmacist can talk you through quit aids."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-19",
+      "summary": "Paying users of quit-smoking apps describe relapsing again and again and starting over. Quit apps already earn verified revenue.",
+      "wtp": "Smokify on TrustMRR: $751 MRR, 191 active subscriptions, $12,039 all-time revenue (Oct 18, 2026). QuitSure: TrustScore 4.7 from 124 Trustpilot reviews.",
+      "signals": [
+        {
+          "url": "https://at.trustpilot.com/review/quitsure.app",
+          "who": "Abhijeet Dalli (Trustpilot reviewer, QuitSure)",
+          "date": "2026-10-07",
+          "quote": "2 months later after I relapsed 5th time in past 15 years attempt to stop smoking",
+          "seen": "opened"
+        },
+        {
+          "url": "https://at.trustpilot.com/review/quitsure.app",
+          "who": "Lauren (Trustpilot reviewer, QuitSure)",
+          "date": "2026-10-11",
+          "quote": "Every other attempt I've not gotten passed day 2",
+          "seen": "opened"
+        },
+        {
+          "url": "https://trustmrr.com/startup/smokify",
+          "who": "Smokify, TrustMRR listing",
+          "date": "2026-10-18",
+          "quote": "Track your smoke-free days, calculate your savings and stay motivated.",
+          "seen": "opened"
+        }
+      ]
+    }
+  },
+  {
     "slug": "shelf-date",
     "name": "Shelf Date",
     "type": "software",
