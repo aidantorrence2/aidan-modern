@@ -2620,5 +2620,48 @@
         ]
       }
     ]
+  },
+  {
+    "slug": "how-to-stop-overpacking-and-forgetting-things",
+    "offer": "pack-recall",
+    "title": "How to stop overpacking and still forgetting things",
+    "description": "Come home with half the bag unworn and one thing you had to buy? Build your packing list from your last trip, cap outfits, and check twice.",
+    "intro": "Overpacking and forgetting things usually happen together: you pack for every \"just in case\" and still miss the charger. The fix is a personal list built from real trips, plus two quick checks.",
+    "sections": [
+      {
+        "h": "Learn from your last trip",
+        "list": [
+          "When you unpack, note what you never used, what you used every day, and what you wish you had brought.",
+          "Start your next list from that, not from a generic list off the internet."
+        ]
+      },
+      {
+        "h": "Cap the clothes",
+        "list": [
+          "Pick a number of outfits for the nights away, plus one spare.",
+          "Choose clothes that mix and match, and wear the bulkiest items on the journey."
+        ]
+      },
+      {
+        "h": "Keep a small always-packed kit",
+        "list": [
+          "Spare charger and cable, basic toiletries and a few medicines that live in your bag.",
+          "It removes the most commonly forgotten items from the list entirely."
+        ]
+      },
+      {
+        "h": "Check twice",
+        "list": [
+          "Tick items off as they go into the bag.",
+          "Before you leave the hotel or house, check the same list again: chargers, toiletries and anything you unpacked."
+        ]
+      },
+      {
+        "h": "Medication",
+        "p": [
+          "Keep prescriptions in your hand luggage and pack a little extra in case of delays. For questions about your medication while travelling, ask your doctor or pharmacist."
+        ]
+      }
+    ]
   }
 ]
