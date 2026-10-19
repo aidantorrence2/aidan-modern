@@ -1736,6 +1736,39 @@
       "status": "pending",
       "decided": null,
       "note": ""
+    },
+    {
+      "id": "offers:video-review:2026-10-19:luvvly",
+      "kind": "email",
+      "source": "codex:19a72895a8f3",
+      "title": "Send Luvvly one short video-review permission inquiry",
+      "summary": "Ask Luvvly to review the existing 15-second dating concept preview for possible community sharing. One email only; no publication, attachments, spend or follow-ups.",
+      "payload": {
+        "action": "Send this one exact first-contact video-review permission email, only after approval.",
+        "message": {
+          "to": "hi@luvvlydating.com",
+          "subject": "A short dating-concept video for your team to review",
+          "body": "Hi Luvvly team,\n\nI'm Aidan. Your in-person singles events seem a good fit for a short video I've prepared.\n\nI'm exploring a service that introduces a few compatible people and helps arrange a real date. It isn't built yet. The 15-second preview uses clearly labeled fictional adult AI characters, without suggesting they're available matches.\n\nWould your team be open to reviewing it for possible sharing with your singles community?\n\nThe idea and free, nonbinding signup are here:\nhttps://real-change-pilots-aidan-2026.aidantorrence.chatgpt.site/better-dates?utm_source=luvvly&utm_medium=partner_video_review&utm_campaign=pov_test1&utm_content=dating_v1\n\nThanks,\nAidan Torrence"
+        },
+        "offer": "better-dates",
+        "contact_source": "https://www.luvvlydating.com/join-our-community",
+        "identity": "Luvvly business team; public site footer email. No prior exact-recipient Gmail correspondence.",
+        "limits": "One email only. No followup/reply, attachments, participant contact/list request, public video posting, account creation, spending, fees, terms, deployment or changes to assets. No implication of available matching pool. Recheck current decision/note, Gmail and URL before sending.",
+        "prepared_asset": {
+          "file": "creative/pov-test-20261019/renders/dating-pov-v1.mp4",
+          "sha256": "dd983eda06731348c31dbf610d9e04c4ba518930d3f9b773ca3c3b8f42fec057",
+          "format": "15s silent vertical 1080x1920 H264; AI still plus zoom/captions, no character motion",
+          "labels": "AI CHARACTERS | ILLUSTRATIVE SCENE; service not available yet; no existing matching pool; free nonbinding interest",
+          "handoff_library_id": "libfile_f93f194878548191ac69119a7b619213"
+        },
+        "stages": "This approval sends only permission inquiry; interested reply would trigger a separately approved exact asset-delivery/sharing action. No launch until actual distribution/exposure is evidenced.",
+        "signup_url": "https://real-change-pilots-aidan-2026.aidantorrence.chatgpt.site/better-dates?utm_source=luvvly&utm_medium=partner_video_review&utm_campaign=pov_test1&utm_content=dating_v1"
+      },
+      "created": "2026-10-19T20:06:47Z",
+      "expires": "2026-10-22T20:06:47Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
     }
   ]
 }
