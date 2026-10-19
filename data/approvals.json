@@ -1355,7 +1355,9 @@
         ],
         "data_scope": "Database row responses may contain private email addresses and city/participation/consent/attribution fields. Read only to count and deduplicate. Do not persist, export, email, share or put individual lead records in Library, prompts for other workers, Git repositories or public pages.",
         "limits": "Read-only ongoing measurement for this one project. No customer outreach, data deletion/migration, credential recovery, database changes, new endpoint, deployment, spending or broader access. Stop if access is denied; no alternative access path.",
-        "why_needed": "The handoff's zero was historical and cloud private-export credentials were omitted. The hourly targets cannot be honestly measured until separately authorized secure access is approved."
+        "why_needed": "The handoff's zero was historical and cloud private-export credentials were omitted. The hourly targets cannot be honestly measured until separately authorized secure access is approved.",
+        "result": "Approved read-only measurement performed through connected Sites for the exact campaign project. DB/leads returned zero rows with no truncation and no further page. Current consenting customer signup total is 0. Saved aggregate counts only; no private rows, exports, credentials or database changes. Ongoing scoped hourly measurement permission retained.",
+        "result_at": "2026-10-19T05:26:29Z"
       },
       "created": "2026-10-19T05:23:23Z",
       "expires": "2026-10-22T05:23:23Z",
