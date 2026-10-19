@@ -1076,6 +1076,42 @@
       "status": "denied",
       "decided": "2026-10-19T01:22:53Z",
       "note": ""
+    },
+    {
+      "id": "offers:readable-outreach:2026-10-18",
+      "kind": "email",
+      "source": "codex:aidantorrence",
+      "title": "Send two short, rewritten cold emails about phone use",
+      "summary": "Plain-language emails to Colin Corby and The Offline Club London. Each explains the app idea in under 90 words and asks whether they would share the signup page. Exact text is in the preview.",
+      "preview_url": "file:///Users/aidantorrence/outputs/offer-interest-tests-2026-10-18/readable-emails.html",
+      "payload": {
+        "action": "Send exactly these two rewritten cold emails",
+        "messages": [
+          {
+            "to": "info@thedigitaldetoxcoach.co.uk",
+            "subject": "Finding people who want to scroll less",
+            "body": "Hi Colin,\n\nI'm Aidan. I found your work helping people spend less time on their phones.\n\nI'm exploring an app for people who set screen-time limits, then ignore them and keep scrolling. The idea is to make those limits harder to turn off.\n\nBefore building it, I want to find people who would try it.\n\nWould you be open to sharing this signup page with your audience?\nhttps://real-change-pilots-aidan-2026.aidantorrence.chatgpt.site/phone-reset?utm_source=digital_detox_coach&utm_medium=partner_email&utm_campaign=wave1\n\nThanks,\nAidan Torrence",
+            "html": "<p>Hi Colin,</p><p>I'm Aidan. I found your work helping people spend less time on their phones.</p><p>I'm exploring an app for people who set screen-time limits, then ignore them and keep scrolling. The idea is to make those limits harder to turn off.</p><p>Before building it, I want to find people who would try it.</p><p>Would you be open to sharing <a href=\"https://real-change-pilots-aidan-2026.aidantorrence.chatgpt.site/phone-reset?utm_source=digital_detox_coach&amp;utm_medium=partner_email&amp;utm_campaign=wave1\">this signup page</a> with your audience?</p><p>Thanks,<br>Aidan Torrence</p>",
+            "draft_id": "r3597979020906387051"
+          },
+          {
+            "to": "london@theoffline-club.com",
+            "subject": "Finding people who want to scroll less",
+            "body": "Hi Laura and Megan,\n\nI'm Aidan. I found your phone-free meetups through The Offline Club.\n\nI'm exploring an app for people who set screen-time limits, then ignore them and keep scrolling. The idea is to make those limits harder to turn off.\n\nBefore building it, I want to find people who would try it.\n\nWould you be open to sharing this signup page with your community?\nhttps://real-change-pilots-aidan-2026.aidantorrence.chatgpt.site/phone-reset?utm_source=offline_club_london&utm_medium=partner_email&utm_campaign=wave1\n\nThanks,\nAidan Torrence",
+            "html": "<p>Hi Laura and Megan,</p><p>I'm Aidan. I found your phone-free meetups through The Offline Club.</p><p>I'm exploring an app for people who set screen-time limits, then ignore them and keep scrolling. The idea is to make those limits harder to turn off.</p><p>Before building it, I want to find people who would try it.</p><p>Would you be open to sharing <a href=\"https://real-change-pilots-aidan-2026.aidantorrence.chatgpt.site/phone-reset?utm_source=offline_club_london&amp;utm_medium=partner_email&amp;utm_campaign=wave1\">this signup page</a> with your community?</p><p>Thanks,<br>Aidan Torrence</p>",
+            "draft_id": "r8020061972357736905"
+          }
+        ],
+        "why_rewritten": "The prior batch was denied with the note: Have to make any outreach super readable and understandable. Each replacement now explains who Aidan is, why this recipient is relevant, the phone problem in everyday language, and one clear request.",
+        "limits": "Two emails only. No follow-ups or spend. The earlier denied versions must not be sent.",
+        "page": "https://real-change-pilots-aidan-2026.aidantorrence.chatgpt.site/phone-reset",
+        "page_status": "Corrected page is live and verified; no preset price."
+      },
+      "created": "2026-10-19T01:23:27Z",
+      "expires": "2026-10-22T01:23:27Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
     }
   ]
 }
