@@ -8,7 +8,7 @@ import fs from 'fs'
 // (see memory feedback_ad_copy_his_words). Same face audit as v2/v3: text never on a face, all text above y=1440.
 //
 // Usage: node render-v4.mjs --photos=<dir of <stem>.jpg> --vision=<dir> --out=<dir> [--only=k01,k02]
-// Photos: ~/charlotte-video-ads/work/src2 (1440px copies of new_top_tier_candidates; already upright).
+// Photos: marketing/charlotte-video-ads/work/src2 (1440px copies of new_top_tier_candidates; already upright).
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const ARG = k => process.argv.find(a => a.startsWith(`--${k}=`))?.split('=')[1]
