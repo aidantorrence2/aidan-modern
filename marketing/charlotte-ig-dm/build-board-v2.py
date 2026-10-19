@@ -18,7 +18,8 @@ R8 = sys.argv[10] if len(sys.argv) > 10 else None   # render-v8.mjs: art directi
 R9 = sys.argv[11] if len(sys.argv) > 11 else None   # render-v9.mjs: format-breaking set
 R10 = sys.argv[12] if len(sys.argv) > 12 else None   # render-v10.mjs: 30 more formats
 LAUNCH = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'launch')
-R12 = sys.argv[13] if len(sys.argv) > 13 else None   # render-v12.mjs: built from CONCEPTS-NEW   # render-v4.mjs: 10 carousels from new_top_tier_candidates   # render-v3.mjs output: photo-heavy still ads (top picks)
+R12 = sys.argv[13] if len(sys.argv) > 13 else None   # render-v12.mjs: built from CONCEPTS-NEW
+R13 = sys.argv[14] if len(sys.argv) > 14 else None   # render-v13.mjs: plain engagement set   # render-v4.mjs: 10 carousels from new_top_tier_candidates   # render-v3.mjs output: photo-heavy still ads (top picks)
 PICKS = ['c00', 'n04', 'n11']   # Aidan liked these three (20 Oct)
 
 def thumb(path, w=300):
@@ -253,6 +254,16 @@ def card12(cid):
     frames = strip([os.path.join(R12, cid, n + '.jpg') for n in names], names)
     return f'''<article class="card control"><header><span class="num">{cid.upper()}</span><h3>{html.escape(META12[cid])}</h3><span class="lever">from CONCEPTS-NEW.md</span></header><div class="strip">{frames}</div></article>'''
 car12 = ''.join(card12(c) for c in META12) if R12 else ''
+META13 = {'v1': ('Hi, I\'m Aidan (your real selfie)', 'Your own mirror selfie, then the work, then the hour, then the call. The honest, human one — trust is the engagement lever.'),
+ 'v2': ('This is my phone / this is my camera', 'Your phone selfie, then what the camera does. A plain contrast, no props.'),
+ 'v3': ('Control, one honest line', 'The winning composition: face, the city huge, "Free Photo Shoot." and "message me". Nothing else. Women hero.'),
+ 'v3b': ('Control, one honest line (man)', 'Same, with a man as the hero, for the mixed ad set.')}
+def card13(cid):
+    t, why = META13[cid]
+    names = json.load(open(os.path.join(R13, 'index.json')))[cid]
+    frames = strip([os.path.join(R13, cid, n + '.jpg') for n in names], names)
+    return f'''<article class="card control"><header><span class="num">{cid.upper()}</span><h3>{html.escape(t)}</h3></header><p class="why">{html.escape(why)}</p><div class="strip">{frames}</div></article>'''
+car13 = ''.join(card13(c) for c in META13) if R13 else ''
 import csv
 def launch_html():
     rows = list(csv.DictReader(open(os.path.join(LAUNCH, 'ads.csv'))))
@@ -338,7 +349,10 @@ video {{ width:min(100%,300px); aspect-ratio:9/16; background:#000; display:bloc
  <div class="box"><h4>Round 3</h4><p>Hero test on the winning layout (three different first frames), plus the real selfie clip if you film it.</p><p>Judge on CPC first, then cost per chat once each ad has 5+ chats.</p></div>
 </div>
 
-<h2>Built from CONCEPTS-NEW.md (18 of 32)</h2>
+<h2>Plain and human — built for engagement, not novelty</h2>
+<p class="lede">The gimmick formats below were novelty; high engagement comes from a real face, a real person and an honest line. These use your actual mirror selfie. Still needs from you: a real reaction clip, past-subject quotes, real Charlotte locations, the 10-second on-camera clip, and your photo count/dates.</p>
+{car13}
+<h2>Built from CONCEPTS-NEW.md (18 of 32) — novelty formats, test last</h2>
 <p class="lede">The concepts that need only the portraits. Not built because they need a shoot, footage, real Charlotte imagery or your dates: can-I-take-your-photo, the A-frame, billboard, Lynx, graffiti, skyline, held print, calendar, letters-as-bodies, projected type, the walk-off, one-hour time-lapse, the reaction, camera-roll-vs-this.</p>
 {car12}
 <h2>Launch set — 40 ads in six rounds, the creative formats first</h2>
