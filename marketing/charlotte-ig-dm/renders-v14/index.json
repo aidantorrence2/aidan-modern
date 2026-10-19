@@ -1,0 +1,58 @@
+{
+ "g01n": [
+  "01-viewfinder",
+  "02-viewfinder",
+  "03-shutter"
+ ],
+ "a": [
+  "01-hey",
+  "02-work",
+  "03-cta"
+ ],
+ "b": [
+  "01-pills",
+  "02-hour",
+  "03-cta"
+ ],
+ "c": [
+  "01-split",
+  "02-work",
+  "03-cta"
+ ],
+ "d": [
+  "01-avatar",
+  "02-hour",
+  "03-cta"
+ ],
+ "e": [
+  "01-city",
+  "02-work",
+  "03-cta"
+ ],
+ "f": [
+  "01-want",
+  "02-these",
+  "03-cta"
+ ],
+ "g": [
+  "01-hook",
+  "02-me",
+  "03-cta"
+ ],
+ "h": [
+  "01-who",
+  "02-what",
+  "03-how",
+  "04-cta"
+ ],
+ "i": [
+  "01-nerves",
+  "02-hour",
+  "03-cta"
+ ],
+ "j": [
+  "01-hi",
+  "02-work",
+  "03-hi"
+ ]
+}

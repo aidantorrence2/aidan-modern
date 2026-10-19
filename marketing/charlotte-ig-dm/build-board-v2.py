@@ -19,7 +19,8 @@ R9 = sys.argv[11] if len(sys.argv) > 11 else None   # render-v9.mjs: format-brea
 R10 = sys.argv[12] if len(sys.argv) > 12 else None   # render-v10.mjs: 30 more formats
 LAUNCH = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'launch')
 R12 = sys.argv[13] if len(sys.argv) > 13 else None   # render-v12.mjs: built from CONCEPTS-NEW
-R13 = sys.argv[14] if len(sys.argv) > 14 else None   # render-v13.mjs: plain engagement set   # render-v4.mjs: 10 carousels from new_top_tier_candidates   # render-v3.mjs output: photo-heavy still ads (top picks)
+R13 = sys.argv[14] if len(sys.argv) > 14 else None   # render-v13.mjs: plain engagement set
+R14 = sys.argv[15] if len(sys.argv) > 15 else None   # render-v14.mjs: ten variations of V1   # render-v4.mjs: 10 carousels from new_top_tier_candidates   # render-v3.mjs output: photo-heavy still ads (top picks)
 PICKS = ['c00', 'n04', 'n11']   # Aidan liked these three (20 Oct)
 
 def thumb(path, w=300):
@@ -264,6 +265,17 @@ def card13(cid):
     frames = strip([os.path.join(R13, cid, n + '.jpg') for n in names], names)
     return f'''<article class="card control"><header><span class="num">{cid.upper()}</span><h3>{html.escape(t)}</h3></header><p class="why">{html.escape(why)}</p><div class="strip">{frames}</div></article>'''
 car13 = ''.join(card13(c) for c in META13) if R13 else ''
+META14 = {'a':('hey charlotte 👋','Greets the city first; same selfie, same trust.'),'b':('story-native pills','The selfie with Instagram-style highlight pills: "hi, i\'m aidan" / "free photo shoot in charlotte".'),
+ 'c':('me → what i shoot','Split: your selfie above, a portrait below, "this is me." / "this is what i shoot →".'),'d':('avatar over a portrait','Your face as a profile avatar on the portrait: "aidan · photographer · in charlotte for a few weeks / i\'ll shoot you for free."'),
+ 'e':('CHARLOTTE big + hi','City as the big headline over your selfie, "hi, i\'m aidan 👋" below.'),'f':('want photos like these?','Your selfie asks the deck\'s own question, the next card answers it: "i took this".'),
+ 'g':('portrait first, then me','Control hook first; card 2 is you: "i\'m aidan. i took this."'),'h':('who / what / how','Three plain labelled cards: who: aidan, what: free photo shoot, how: about an hour.'),
+ 'i':('never done this before?','Your selfie says the deck\'s reassurance line: "don\'t worry — i\'ll direct you through every frame."'),'j':('hi 👋 → just say hi','Biggest-possible hello, ending on "just say hi 👋".')}
+def card14(cid):
+    t, why = META14[cid]
+    names = json.load(open(os.path.join(R14, 'index.json')))[cid]
+    frames = strip([os.path.join(R14, cid, n + '.jpg') for n in names], names)
+    return f'''<article class="card control"><header><span class="num">V1{cid.upper()}</span><h3>{html.escape(t)}</h3></header><p class="why">{html.escape(why)}</p><div class="strip">{frames}</div></article>'''
+car14 = ''.join(card14(c) for c in META14) if R14 else ''
 import csv
 def launch_html():
     rows = list(csv.DictReader(open(os.path.join(LAUNCH, 'ads.csv'))))
@@ -349,6 +361,8 @@ video {{ width:min(100%,300px); aspect-ratio:9/16; background:#000; display:bloc
  <div class="box"><h4>Round 3</h4><p>Hero test on the winning layout (three different first frames), plus the real selfie clip if you film it.</p><p>Judge on CPC first, then cost per chat once each ad has 5+ chats.</p></div>
 </div>
 
+<h2>Ten variations off V1 (hi, i'm aidan)</h2>
+{car14}
 <h2>Plain and human — built for engagement, not novelty</h2>
 <p class="lede">The gimmick formats below were novelty; high engagement comes from a real face, a real person and an honest line. These use your actual mirror selfie. Still needs from you: a real reaction clip, past-subject quotes, real Charlotte locations, the 10-second on-camera clip, and your photo count/dates.</p>
 {car13}
