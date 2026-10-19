@@ -837,6 +837,57 @@
       "status": "approved",
       "decided": "2026-10-19T00:29:29Z",
       "note": ""
+    },
+    {
+      "id": "offers:publish:2026-10-18",
+      "kind": "build",
+      "source": "codex:aidantorrence",
+      "title": "Publish eight offer-interest pages and enable signups",
+      "summary": "Make the tested Real Change pilot pages public. People can leave an email, timeframe and price interest; no payments or ads. Includes one disposable signup check that will be deleted.",
+      "preview_url": "file:///Users/aidantorrence/outputs/offer-interest-tests-2026-10-18/phone-desktop.png",
+      "payload": {
+        "action": "Publish the prepared eight-offer interest test so prospective customers can sign up",
+        "project_id": "appgprj_6ad56c0398f4819187d2d7870ae70ac4",
+        "version_id": "appgprj_6ad56c0398f4819187d2d7870ae70ac4~appgver_11b16b50c07c8191aa52a00c4d0932e8",
+        "commit_sha": "f2d915304aae90c5b27ceccd50bfda5bfd55ad97",
+        "url": "https://real-change-pilots-aidan-2026.aidantorrence.chatgpt.site",
+        "steps": [
+          "Change site access from private to public",
+          "Deploy exactly the saved version above",
+          "Check the public page and create then delete one disposable signup to verify storage and withdrawal"
+        ],
+        "offers": {
+          "phone-reset": "$49 / 30 days",
+          "better-dates": "$49 / first introduction package",
+          "real-friendships": "$49 / six weeks",
+          "job-search-reset": "$99 / two weeks",
+          "money-clarity": "$49 / session and follow-up",
+          "start-the-task": "$29 / two weeks",
+          "exercise-consistency": "$49 / four weeks",
+          "care-coordination": "$79 / session and follow-up"
+        },
+        "data_collected": [
+          "Email",
+          "Offer",
+          "City for dating/friendship only",
+          "Start timeframe",
+          "Stated willingness to consider proposed price",
+          "Adult and follow-up consent",
+          "Campaign attribution"
+        ],
+        "limits": "Early concepts clearly labeled. No payments, ads, emails, endorsements, or service guarantees. Export requires a secret token. Signup withdrawal is available. No health history or financial records collected.",
+        "validation": "Browser signup persisted, campaign and price intent checked, withdrawal deleted it. Eight pages rendered, mobile overflow absent, invalid submissions and unauthorized exports rejected. Typecheck and production build passed.",
+        "preview_files": [
+          "/Users/aidantorrence/outputs/offer-interest-tests-2026-10-18/phone-desktop.png",
+          "/Users/aidantorrence/outputs/offer-interest-tests-2026-10-18/dating-mobile.png"
+        ],
+        "no_spend_authorized": true
+      },
+      "created": "2026-10-19T01:12:55Z",
+      "expires": "2026-10-22T01:12:55Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
     }
   ]
 }
