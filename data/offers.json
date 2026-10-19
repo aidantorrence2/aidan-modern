@@ -11444,6 +11444,72 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-19",
+    "slug": "bow-steady",
+    "name": "Bow Steady",
+    "need": "I'm learning violin as an adult, I sound scratchy, I can't tell if I'm in tune, and I keep wanting to give up.",
+    "headline": "For adult violin beginners: your phone shows sharp or flat on every note, flags scratchy bow strokes one fix at a time, and compares week one with this week.",
+    "buyer": "Adult violin beginners practising alone between lessons, or teaching themselves.",
+    "bullets": [
+      "Your phone listens and shows whether each note is sharp, flat or in tune, so you are not guessing.",
+      "Flags scratchy bow strokes and gives one fix at a time: bow speed, weight or contact point.",
+      "Ten-minute sessions built from the pieces you are learning, with a week-one recording next to this week's."
+    ],
+    "price": "$7.99/month",
+    "priceUsd": 8,
+    "priceNote": "Well under half the monthly price of the leading violin-learning app. Use it alongside lessons, not instead of them.",
+    "reasonPrompt": "What is hardest about practising violin on your own right now?",
+    "faq": [
+      {
+        "q": "Does this replace a violin teacher?",
+        "a": "No. Bow Steady is an independent practice tool that works alongside lessons with a qualified teacher."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-19",
+      "summary": "Adult violin beginners on Fiddlerman and Mumsnet say they sound terrible, cannot tell whether they are in tune, and find it hard going. Violin-learning apps already sell subscriptions to adult learners.",
+      "wtp": "Trala: Learn Violin (App Store): 4.7 from 4.9K ratings, Premium Monthly $19.99, Premium Yearly $119.99.",
+      "signals": [
+        {
+          "url": "https://fiddlerman.com/forum/learning-to-play/some-questions-and-some-apprehension/",
+          "who": "AmandaKulp (Fiddlerman forum)",
+          "date": "2018-03-21",
+          "quote": "I sound so terrible right now I cannot distinguish if I am getting the right placement just yet.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/am_i_being_unreasonable/4179173-AIBU-to-think-I-could-learn-the-violin",
+          "who": "talkingdeadscot (Mumsnet)",
+          "date": "2021-02-28",
+          "quote": "it's hard and I feel like I'm a bit rubbish",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/am_i_being_unreasonable/4179173-AIBU-to-think-I-could-learn-the-violin",
+          "who": "SomeRandomerOnBumsnet (Mumsnet)",
+          "date": "2021-02-28",
+          "quote": "I have real problems with tuning",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/-/id1143205265",
+          "who": "Trala App Store listing",
+          "date": "2026-10-19",
+          "quote": "4.9K Ratings ... Premium Yearly Subscription $119.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Trala, tonestro, private lessons, YouTube courses.",
+      "risks": "Forum posts are from 2018 and 2021. violinist.com threads return 403 to our fetch, so they are not used."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
