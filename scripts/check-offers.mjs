@@ -18,13 +18,24 @@ for (const o of offers) {
   seen.add(o.slug)
   for (const k of ['name', 'headline', 'buyer', 'price']) if (typeof o[k] !== 'string' || !o[k].trim()) errors.push(`${at}: missing ${k}`)
   if (!Array.isArray(o.bullets) || o.bullets.length < 2 || o.bullets.length > 5) errors.push(`${at}: 2–5 bullets required`)
-  if (!Number.isInteger(o.priceUsd) || o.priceUsd <= 0) errors.push(`${at}: priceUsd must be a positive integer`)
+  const freeTest = o.demand?.catalog && /^Free/.test(o.price || '') && o.priceUsd === 0
+  if (!freeTest && (!Number.isInteger(o.priceUsd) || o.priceUsd <= 0)) errors.push(`${at}: priceUsd must be a positive integer`)
   if (!STATUS.has(o.status)) errors.push(`${at}: bad status ${o.status}`)
   if (o.launched && !/^\d{4}-\d{2}-\d{2}$/.test(o.launched)) errors.push(`${at}: launched must be YYYY-MM-DD`)
   if (o.headline && o.headline.length > 200) errors.push(`${at}: headline over 200 chars`)
   // Demand gate (Aidan, 18 Oct 2026): an offer goes live only if it is software and the
   // market already asked for it. Evidence is public posts by different people, each cited.
-  if (['live', 'threshold_met', 'building', 'shipped'].includes(o.status)) {
+  // Catalog exception (Aidan, 19 Oct 2026): he chose to launch all 120 offers from the research
+  // catalog he supplied, business tools included, each with its one observed source (verified
+  // revenue, a paid listing with reviews, free-tool adoption, or a platform change).
+  const d0 = o.demand || {}
+  if (d0.catalog && ['live', 'threshold_met', 'building', 'shipped'].includes(o.status)) {
+    if (o.type !== 'software') errors.push(`${at}: type must be "software" to go live`)
+    const s = Array.isArray(d0.signals) ? d0.signals : []
+    if (!s.length || !s.every(x => /^https:\/\//.test(x.url || '') && (x.quote || '').trim() && ['opened', 'snippet', 'catalog'].includes(x.seen))) errors.push(`${at}: catalog offer needs its cited source (https url, observed evidence)`)
+    if (typeof d0.wtp !== 'string' || !d0.wtp.trim()) errors.push(`${at}: demand.wtp missing`)
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(d0.checked || '')) errors.push(`${at}: demand.checked must be YYYY-MM-DD`)
+  } else if (['live', 'threshold_met', 'building', 'shipped'].includes(o.status)) {
     if (o.type !== 'software') errors.push(`${at}: type must be "software" to go live`)
     if (typeof o.need !== 'string' || !o.need.trim()) errors.push(`${at}: need is required (Aidan, 19 Oct: every offer answers a personal need in the buyer's words)`)
     const d = o.demand || {}

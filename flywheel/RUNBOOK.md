@@ -19,6 +19,12 @@ already visible in the market (step 0). Order:
       answers a personal need, and anything without a `need` field is retired. The 27 need offers
       launched on 18 Oct were also scrapped on 19 Oct: every offer must be new, so never relaunch
       an idea that is already in `data/offers.json` with `status: killed`.
+      **Exception, the research catalog (Aidan, 19 Oct 2026).** Aidan chose to launch all 120
+      offers from the research catalog he supplied, business tools included. They carry
+      `demand.catalog: "aidan-2026-10-19"` and one cited source each, and `npm run test:offers`
+      checks them on that basis. Keep them live, never retire them for lacking a `need`, and
+      judge them by interest like any other offer. New offers still follow the need-first rule
+      above.
       **Find demand.** Any market. Strongest first:
       - Money already spent: products with verified revenue (Indie Hackers, TrustMRR,
         Acquire.com, Flippa listings), marketplace apps and extensions with large paid install

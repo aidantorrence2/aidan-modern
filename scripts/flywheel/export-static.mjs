@@ -72,7 +72,7 @@ function index(list) {
 <body><div class="lab"><main class="lab-main"><p class="lab-kicker">Pre-launch</p><h1>Tools I want to exist.</h1>
 <p class="lab-lead">Each page below is a promise, not a product. If enough people leave an email or say they’d pay, I build it, in that order. Nothing here charges you.</p>
 ${list.length ? '' : '<p class="lab-lead">Nothing is open right now. New tools appear here once people have asked for them in public.</p>'}
-${[['For you', list.filter(o => o.need)], ['For businesses', list.filter(o => !o.need)]].filter(([, l]) => l.length).map(([h, l]) => `<h2 class="lab-sub">${h}</h2><ul class="lab-list">${l.map(o => `<li><a href="./${o.slug}/?src=lab"><span class="lab-name">${esc(o.name)}</span><span class="lab-head">${esc(o.need ? o.need + ' ' + o.headline : o.headline)}</span><span class="lab-price">${esc(o.price)}</span></a></li>`).join('')}</ul>`).join('')}
+${[['For you', list.filter(o => o.need)], ['More offers', list.filter(o => !o.need)]].filter(([, l]) => l.length).map(([h, l]) => `<h2 class="lab-sub">${h}</h2><ul class="lab-list">${l.map(o => `<li><a href="./${o.slug}/?src=lab"><span class="lab-name">${esc(o.name)}</span><span class="lab-head">${esc(o.need ? o.need + ' ' + o.headline : o.headline)}</span><span class="lab-price">${esc(o.price)}</span></a></li>`).join('')}</ul>`).join('')}
 ${resources.length ? `<h2 class="lab-sub">Free resources</h2><ul class="lab-list">${resources.map(r => `<li><a href="./resources/${r.slug}/"><span class="lab-name">Free</span><span class="lab-head">${esc(r.title)}</span><span class="lab-price">${esc(r.description)}</span></a></li>`).join('')}</ul>` : ''}
 </main></div></body></html>`
 }
