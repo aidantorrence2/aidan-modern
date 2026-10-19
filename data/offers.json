@@ -13032,6 +13032,79 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-19",
+    "slug": "kanji-stays",
+    "name": "Kanji Stays",
+    "need": "I am forgetting a lot of kanji after I've learned them, and I forget meanings and readings all the time.",
+    "headline": "A kanji memory coach: a list of the kanji you keep failing, fresh memory hooks and real words for each, and separate practice for reading, meaning and writing.",
+    "buyer": "Adult Japanese learners who keep forgetting kanji they already studied.",
+    "bullets": [
+      "A leech list of the kanji you keep failing, each with a fresh memory hook and real words that use it.",
+      "Separate recall for reading, meaning and writing, so you know which part is slipping.",
+      "Save kanji from sentences you actually read, so practice comes from real Japanese."
+    ],
+    "price": "$5.99/month",
+    "priceUsd": 6,
+    "priceNote": "Below the leading kanji-learning subscription ($9 a month). It works alongside it rather than replacing it.",
+    "reasonPrompt": "How many kanji have you learned so far, and which ones keep slipping?",
+    "faq": [
+      {
+        "q": "Is this linked to WaniKani or any other app?",
+        "a": "No. Kanji Stays is an independent app, and it works alongside whatever you already use."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-19",
+      "summary": "Learners on three WaniKani Community threads say they forget kanji they already learned, and their meanings and readings. A leading kanji-learning service sells subscriptions to these learners.",
+      "wtp": "WaniKani Premium: $9 a month, $89 a year or $299 lifetime.",
+      "signals": [
+        {
+          "url": "https://community.wanikani.com/t/struggling-with-kanji-retention-%E2%80%93-looking-for-advice/67581",
+          "who": "jifido9346 (WaniKani Community)",
+          "date": "2024-10-20",
+          "quote": "I am finding that I am forgetting a lot of kanji after I've",
+          "seen": "opened"
+        },
+        {
+          "url": "https://community.wanikani.com/t/is-it-ok-to-forget/19503",
+          "who": "Zeriel (WaniKani Community)",
+          "date": "2017-08-27",
+          "quote": "every time I tried going past 500 I would keep forgetting earlier ones.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://community.wanikani.com/t/is-it-ok-to-forget/19503",
+          "who": "Luviex (WaniKani Community)",
+          "date": "2017-08-26",
+          "quote": "I forget meanings and readings all the time.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://community.wanikani.com/t/did-i-do-it-all-wrong/34507",
+          "who": "Sezme (WaniKani Community)",
+          "date": "2019-01-08",
+          "quote": "I'd love to think that I'll never forget the kanji I learned 20 levels ago, but it happens.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://knowledge.wanikani.com/getting-started/account-and-membership/payment-and-billing/wanikani-premium-membership/",
+          "who": "WaniKani Premium membership page",
+          "date": "2026-10-19",
+          "quote": "Monthly ($9/month ... Annual ($89/year ... Lifetime ($299/once",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "WaniKani, Anki, Bunpro, Jpdb, kanji books.",
+      "risks": "All the forum evidence is on one community (three threads, 2017 to 2024), and learners may see it as an add-on to tools they already pay for."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

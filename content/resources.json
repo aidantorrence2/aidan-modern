@@ -3806,5 +3806,44 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "forgetting-kanji-you-already-learned",
+  "offer": "kanji-stays",
+  "title": "Forgetting kanji you already learned? Fix your leeches in 10 minutes a day",
+  "description": "Keep forgetting kanji meanings and readings? Find your leeches, give each a new memory hook, learn them through real words, and test reading and meaning separately.",
+  "intro": "Every kanji learner forgets some of what they learned. A small set of leeches (kanji you keep failing) usually causes most of the trouble, and they need different treatment from the rest.",
+  "sections": [
+   {
+    "h": "Find your leeches",
+    "list": [
+     "List the kanji you have got wrong three or more times in your reviews. That list is where your effort should go."
+    ]
+   },
+   {
+    "h": "Make a new memory hook",
+    "list": [
+     "If a mnemonic is not working, replace it. Make it personal, vivid or silly; that is what makes it stick."
+    ]
+   },
+   {
+    "h": "Learn kanji through words",
+    "list": [
+     "Learn two or three common words for each leech. Readings stick far better in words than on their own."
+    ]
+   },
+   {
+    "h": "Test reading and meaning separately",
+    "list": [
+     "Many learners know the meaning but not the reading, or the other way round. Practise each on its own."
+    ]
+   },
+   {
+    "h": "Read real Japanese",
+    "p": [
+     "Ten minutes a day of graded readers, manga or news with furigana turns recognised kanji into kanji you actually know."
+    ]
+   }
+  ]
  }
 ]
