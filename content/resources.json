@@ -2049,5 +2049,140 @@
         ]
       }
     ]
+  },
+  {
+    "slug": "how-to-do-your-first-pull-up",
+    "offer": "first-pull-up",
+    "title": "How to do your first pull-up when you can't do one",
+    "description": "Can't do a single pull-up? A step-by-step plan from zero: hangs, scapula pulls, negatives and rows, three times a week.",
+    "intro": "Most adults cannot do a pull-up when they start, and almost everyone can get there with a few weeks to a few months of steady practice. The trick is to train the pieces of the movement, not to keep failing at the whole thing.",
+    "sections": [
+      {
+        "h": "The building blocks",
+        "list": [
+          "Dead hang: hang from the bar with straight arms. Work up to 30 seconds.",
+          "Scapula pulls: from a hang, pull your shoulder blades down without bending your arms.",
+          "Rows: lean back under a sturdy table or bar and pull your chest up to it.",
+          "Negatives: jump or step up to the top position, then lower yourself as slowly as you can."
+        ]
+      },
+      {
+        "h": "A simple weekly plan",
+        "list": [
+          "Train three times a week, with a rest day in between.",
+          "Each session: 3 hangs, 3 sets of scapula pulls, 3 sets of rows, then 3 to 5 slow negatives.",
+          "When negatives take five seconds or more, try a full pull-up at the start of each session."
+        ]
+      },
+      {
+        "h": "Helpful extras",
+        "list": [
+          "Resistance bands looped over the bar can take some of your weight.",
+          "Losing even a little body fat makes pull-ups easier.",
+          "Strong grip helps: hangs build it."
+        ]
+      },
+      {
+        "h": "Track your progress",
+        "p": [
+          "Write down your longest hang and slowest negative each week. Watching those numbers grow keeps you going between the first session and the first pull-up."
+        ]
+      },
+      {
+        "h": "Look after your shoulders",
+        "p": [
+          "Warm up first, stop if you feel sharp pain, and give yourself rest days. If you have shoulder, elbow or back problems, check with a doctor or physiotherapist first. This guide is not medical advice."
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "how-to-switch-from-two-finger-typing-to-touch-typing",
+    "offer": "ten-fingers",
+    "title": "How to switch from two-finger typing to touch typing without slipping back",
+    "description": "Typed with two fingers for years? Why people slip back, and a practical way to switch: short daily practice and a no-peeking window.",
+    "intro": "Most people who try to learn touch typing slip back because they are slower at first, and slow feels worse than the old way. The way through is to accept a short slow phase, and make the new way a habit in small daily doses.",
+    "sections": [
+      {
+        "h": "Learn the home position",
+        "list": [
+          "Rest your fingers on A S D F and J K L ;. The small bumps on F and J help you find them without looking.",
+          "Each finger covers its own column of keys. Thumbs handle the space bar."
+        ]
+      },
+      {
+        "h": "Practise a little every day",
+        "list": [
+          "Ten to fifteen minutes a day beats an hour once a week.",
+          "Use a free typing tutor to learn a few keys at a time.",
+          "Focus on accuracy first; speed follows."
+        ]
+      },
+      {
+        "h": "Set a no-peeking window",
+        "list": [
+          "Choose one short daily task, such as answering a few messages, and type only the new way, without looking.",
+          "Expand the window as you get faster."
+        ]
+      },
+      {
+        "h": "Expect a slow phase",
+        "p": [
+          "Your speed will drop for a few weeks before it passes your old speed. Measure both: seeing the new speed creep up is what stops most people slipping back."
+        ]
+      },
+      {
+        "h": "Practise on real words",
+        "p": [
+          "Once you know the keys, practise on things you actually type: emails, names, work terms. It makes the new skill useful sooner."
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "how-to-dance-at-a-wedding-when-you-cant-dance",
+    "offer": "floor-ready",
+    "title": "How to dance at a wedding when you think you can't dance",
+    "description": "Avoid the dance floor at weddings? Simple moves anyone can learn at home, how to find the beat, and how to get past the nerves.",
+    "intro": "Most people at a wedding are not good dancers either. What makes someone look comfortable is moving with the beat and looking like they are enjoying it, and both can be learned at home in a few short sessions.",
+    "sections": [
+      {
+        "h": "Find the beat",
+        "list": [
+          "Put on a song you like and tap your foot or nod to the beat.",
+          "Count along: one, two, three, four. Most pop songs repeat in groups of four."
+        ]
+      },
+      {
+        "h": "Learn three simple moves",
+        "list": [
+          "The step touch: step to one side, bring the other foot to meet it, repeat the other way.",
+          "The bounce: small knee bends on the beat, with relaxed arms.",
+          "The sway: shift your weight from foot to foot, adding small arm movements."
+        ]
+      },
+      {
+        "h": "Practise at home",
+        "list": [
+          "Ten minutes, a few times a week, to songs that will likely be played.",
+          "Practise in front of a mirror once you feel ready, or record yourself.",
+          "For a slow dance, learn a simple side-to-side step with a partner."
+        ]
+      },
+      {
+        "h": "On the night",
+        "list": [
+          "Join the floor during a busy, upbeat song, when nobody is watching any one person.",
+          "Dance near friends and keep moves small and relaxed.",
+          "Smiling and enjoying it matters far more than the moves."
+        ]
+      },
+      {
+        "h": "Want more?",
+        "p": [
+          "A beginner class or a couple of private lessons before a big event can build a lot of confidence quickly."
+        ]
+      }
+    ]
   }
 ]

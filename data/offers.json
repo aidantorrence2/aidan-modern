@@ -9798,6 +9798,191 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-19",
+    "slug": "first-pull-up",
+    "name": "First Pull-Up",
+    "need": "I can't do a single pull-up.",
+    "headline": "A zero-start plan to your first pull-up, with hangs, scapula pulls and slow negatives, that adjusts to how your last session went.",
+    "buyer": "Adults (18+) who can't do one pull-up yet.",
+    "bullets": [
+      "Starts from zero: dead hangs, scapula pulls and slow negatives you can do today.",
+      "Each session adjusts to how the last one went, so you never jump ahead too fast.",
+      "Three short sessions a week, and a simple test every two weeks to see how close you are."
+    ],
+    "price": "$19.99/year",
+    "priceUsd": 20,
+    "priceNote": "In line with existing pull-up training apps.",
+    "reasonPrompt": "What happens when you try a pull-up now, and what have you tried before?",
+    "faq": [
+      {
+        "q": "Is this medical advice?",
+        "a": "No. First Pull-Up is an independent app for adults 18+. If you have shoulder, elbow or back pain or a health condition, check with a doctor or physiotherapist first."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-19",
+      "summary": "People on lifting forums say they can't do a single pull-up, and pull-up training apps sell paid plans.",
+      "wtp": "20 Pull Ups Trainer Challenge (Zen Labs, App Store): 4.6 from 892 ratings, sold with in-app subscriptions.",
+      "signals": [
+        {
+          "url": "https://forums.anandtech.com/threads/cant-do-pull-ups.175888/post-25678922",
+          "who": "gramboh (AnandTech forums)",
+          "date": "2008-05-11",
+          "quote": "I couldn't do a single pull-up/chin-up",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.anandtech.com/threads/cant-do-pull-ups.175888/post-25678922",
+          "who": "spamsk8r (AnandTech forums)",
+          "date": "2008-05-12",
+          "quote": "I could not do any pullups.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/app/id848897098",
+          "who": "20 Pull Ups Trainer Challenge (App Store listing)",
+          "date": "2026-10-19",
+          "quote": "In-App Purchases: Yes; 892 Ratings",
+          "seen": "opened"
+        },
+        {
+          "url": "https://startingstrength.com/resources/forum/general-programming/49580-pullups-cant.html",
+          "who": "BellyDownArmbar (Starting Strength forum)",
+          "date": "not shown",
+          "quote": "I want to do the chins/pulls in SS but I can't do any.",
+          "seen": "snippet"
+        }
+      ]
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-19",
+    "slug": "ten-fingers",
+    "name": "Ten Fingers",
+    "need": "I've typed with two fingers for years, and every time I try to learn touch typing I slip back.",
+    "headline": "Short touch-typing practice on your own words, a daily no-peeking window, and your old and new speed side by side, so you stop slipping back to two fingers.",
+    "buyer": "Adults who type with two fingers and keep abandoning touch typing.",
+    "bullets": [
+      "Practise on words you actually type, not random drills.",
+      "A short daily no-peeking window where you type the new way only, so the habit sticks.",
+      "Your old two-finger speed and new touch-typing speed side by side, so you can see when the new way wins."
+    ],
+    "price": "$14.99/year",
+    "priceUsd": 15,
+    "priceNote": "In line with typing-tutor apps and courses.",
+    "reasonPrompt": "How long have you typed with two fingers, and what made you slip back last time?",
+    "faq": [
+      {
+        "q": "Is this connected to another typing program?",
+        "a": "No. Ten Fingers is an independent app."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-19",
+      "summary": "Long-time two-finger typists describe slipping back to old habits, and some already subscribe to typing programmes.",
+      "wtp": "Typesy - Touch Typing (App Store): 4.5 from 188 ratings, $8.99 to $14.99. A Mumsnet poster subscribes to a typing programme.",
+      "signals": [
+        {
+          "url": "https://www.mumsnet.com/talk/_chat/5363366-touch-typing",
+          "who": "Embarrassingstories (Mumsnet)",
+          "date": "2025-06-28",
+          "quote": "I do a bit then revert back to my old habits because I worry I'm taking too long.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/_chat/5363366-touch-typing",
+          "who": "SconeWithTheWind (Mumsnet)",
+          "date": "2025-06-28",
+          "quote": "I'm just starting (in my 50s!) with a typing programme I've subscribed to.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1055541079",
+          "who": "Typesy (App Store listing)",
+          "date": "2026-10-19",
+          "quote": "Typesy VIP $8.99; Typesy Premium Account $14.99; 188 Ratings",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.macrumors.com/threads/anyone-from-2-fingers-to-touch-type-typing.2155862/",
+          "who": "Borddeleau54 (MacRumors forums)",
+          "date": "not shown",
+          "quote": "I have been typing with 2 fingers for more than 30 years",
+          "seen": "snippet"
+        }
+      ]
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-19",
+    "slug": "floor-ready",
+    "name": "Floor Ready",
+    "need": "I just can't dance, so I avoid the dance floor at all costs.",
+    "headline": "Private ten-minute dance lessons at home for wedding and party basics, with a plan that gets you ready by the date you choose.",
+    "buyer": "Adults who avoid dancing at weddings and parties.",
+    "bullets": [
+      "Ten-minute lessons at home, where nobody's watching.",
+      "Wedding and party basics: stepping to the beat, simple moves, a slow dance.",
+      "Pick the date of your next event and get a plan that has you ready by then."
+    ],
+    "price": "$29.99/year",
+    "priceUsd": 30,
+    "priceNote": "Below the leading dance-lesson apps' yearly plans.",
+    "reasonPrompt": "What's the next event where you'd like to dance, and what stops you now?",
+    "faq": [
+      {
+        "q": "Is this connected to another dance app?",
+        "a": "No. Floor Ready is an independent app."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-19",
+      "summary": "People say they avoid the dance floor at weddings, and beginner dance apps have thousands of paid ratings.",
+      "wtp": "STEEZY (App Store): 4.7 from 13K ratings, $9.99-$29.99 a month and $59.99-$99.99 a year.",
+      "signals": [
+        {
+          "url": "https://www.mumsnet.com/talk/am_i_being_unreasonable/5399887-aibu-about-dancing-at-weddings",
+          "who": "Baddigood (Mumsnet)",
+          "date": "2025-08-27",
+          "quote": "I just can't dance so avoid the dance floor at all costs",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/steezy-learn-dance-faster/id1296001664",
+          "who": "OG Audrizzle (App Store reviewer, STEEZY)",
+          "date": "2022-09-26",
+          "quote": "I am a complete beginner and have always wanted to dance.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/steezy-learn-dance-faster/id1296001664",
+          "who": "STEEZY (App Store listing)",
+          "date": "2026-10-19",
+          "quote": "Basic Monthly $9.99; Basic Yearly $59.99; 13K Ratings",
+          "seen": "opened"
+        }
+      ]
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
