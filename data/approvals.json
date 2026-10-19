@@ -1588,6 +1588,50 @@
       "status": "pending",
       "decided": null,
       "note": ""
+    },
+    {
+      "id": "software100:agency-discovery-batch-2026-10-19",
+      "kind": "email",
+      "source": "codex:aidantorrence",
+      "title": "Send three website-agency discovery emails",
+      "summary": "Ask Cascade Valley Designs, WebAnts and WitsCode for one recurring manual problem their tools leave unsolved. Exact text in card; one email each, no follow-ups, product claims or spending.",
+      "payload": {
+        "action": "Send these three exact individual buyer-discovery emails, only after a fresh duplicate/decline check.",
+        "messages": [
+          {
+            "to": "websites@cascadevalleydesigns.com",
+            "subject": "A question about your website care work",
+            "body": "Hi Cascade Valley Designs team,\n\nI'm Aidan. I saw your website care plan includes daily backups, WordPress updates and monthly reports.\n\nI'm researching software for agencies that maintain client websites. What's one recurring problem your current tools still make you handle by hand?\n\nI'd use a real example to decide what to build and test as a paid pilot. Nothing is built or for sale yet.\n\nIf there's no gap, no need to reply. I won't follow up.\n\nThanks,\nAidan Torrence",
+            "evidence_url": "https://cascadevalleydesigns.com/website-care-plan/"
+          },
+          {
+            "to": "hello@webants.io",
+            "subject": "A question about your website care work",
+            "body": "Hi WebAnts team,\n\nI'm Aidan. I saw your care plans include staging checks, backup verification and monthly maintenance reports.\n\nI'm researching software for agencies that maintain client websites. What's one recurring problem your current tools still make you handle by hand?\n\nI'd use a real example to decide what to build and test as a paid pilot. Nothing is built or for sale yet.\n\nIf there's no gap, no need to reply. I won't follow up.\n\nThanks,\nAidan Torrence",
+            "evidence_url": "https://webants.io/website-maintenance-london"
+          },
+          {
+            "to": "info@witscode.com",
+            "subject": "A question about your website care work",
+            "body": "Hi WitsCode team,\n\nI'm Aidan. I saw your care plans cover updates, backups and monthly reporting across WordPress, Shopify and custom sites.\n\nI'm researching software for agencies that maintain client websites. What's one recurring problem your current tools still make you handle by hand?\n\nI'd use a real example to decide what to build and test as a paid pilot. Nothing is built or for sale yet.\n\nIf there's no gap, no need to reply. I won't follow up.\n\nThanks,\nAidan Torrence",
+            "evidence_url": "https://witscode.com/care-plans"
+          }
+        ],
+        "evidence": "Published business emails and service claims verified on official care-plan pages 2026-10-19. Exact Gmail sender/recipient search found no previous messages.",
+        "limits": [
+          "Only these three recipients and exact messages",
+          "Skip recipients with an existing message or decline",
+          "No follow-up",
+          "No promised product, price or results",
+          "No deployment, payment or spend",
+          "No social or Instagram posts"
+        ]
+      },
+      "created": "2026-10-19T17:04:10Z",
+      "expires": "2026-10-22T17:04:10Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
     }
   ]
 }
