@@ -16,7 +16,9 @@ already visible in the market (step 0). Order:
       quitting a habit, debt, skin, loneliness, confidence, learning a language). Each offer is
       software that answers one need, and its `need` field holds the need as the buyer would say
       it; the page opens with it. Business tools are not offers (Aidan, 19 Oct): every live offer
-      answers a personal need, and anything without a `need` field is retired.
+      answers a personal need, and anything without a `need` field is retired. The 27 need offers
+      launched on 18 Oct were also scrapped on 19 Oct: every offer must be new, so never relaunch
+      an idea that is already in `data/offers.json` with `status: killed`.
       **Find demand.** Any market. Strongest first:
       - Money already spent: products with verified revenue (Indie Hackers, TrustMRR,
         Acquire.com, Flippa listings), marketplace apps and extensions with large paid install
