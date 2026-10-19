@@ -1105,7 +1105,9 @@
         "why_rewritten": "The prior batch was denied with the note: Have to make any outreach super readable and understandable. Each replacement now explains who Aidan is, why this recipient is relevant, the phone problem in everyday language, and one clear request.",
         "limits": "Two emails only. No follow-ups or spend. The earlier denied versions must not be sent.",
         "page": "https://real-change-pilots-aidan-2026.aidantorrence.chatgpt.site/phone-reset",
-        "page_status": "Corrected page is live and verified; no preset price."
+        "page_status": "Corrected page is live and verified; no preset price.",
+        "result": "Sent exactly the two approved readable cold emails: Colin Corby at info@thedigitaldetoxcoach.co.uk and Laura/Megan at london@theoffline-club.com. Gmail confirmed SENT for both. No other emails or follow-ups sent.",
+        "result_at": "2026-10-19T01:33:02Z"
       },
       "created": "2026-10-19T01:23:27Z",
       "expires": "2026-10-22T01:23:27Z",
