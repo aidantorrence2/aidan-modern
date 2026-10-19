@@ -13,7 +13,8 @@ R3 = sys.argv[5] if len(sys.argv) > 5 else None
 R4 = sys.argv[6] if len(sys.argv) > 6 else None
 R5 = sys.argv[7] if len(sys.argv) > 7 else None   # render-v5.mjs: 10 new concepts
 R6 = sys.argv[8] if len(sys.argv) > 8 else None   # render-v6.mjs: CPC set — ten hooks
-R7 = sys.argv[9] if len(sys.argv) > 9 else None   # render-v7.mjs: design set   # render-v4.mjs: 10 carousels from new_top_tier_candidates   # render-v3.mjs output: photo-heavy still ads (top picks)
+R7 = sys.argv[9] if len(sys.argv) > 9 else None   # render-v7.mjs: design set
+R8 = sys.argv[10] if len(sys.argv) > 10 else None   # render-v8.mjs: art direction set   # render-v4.mjs: 10 carousels from new_top_tier_candidates   # render-v3.mjs output: photo-heavy still ads (top picks)
 PICKS = ['c00', 'n04', 'n11']   # Aidan liked these three (20 Oct)
 
 def thumb(path, w=300):
@@ -165,6 +166,25 @@ def card7(cid):
     return f'''<article class="card control"><header><span class="num">{cid.upper()}</span><h3>{html.escape(title)}</h3><span class="lever">{html.escape(lever)}</span></header>
   <p class="why">{html.escape(why)}</p><div class="strip">{frames}</div><p class="needs ok">ready · {len(names)} cards · same proven body</p></article>'''
 car7 = ''.join(card7(c) for c in META7) if R7 else ''
+META8 = {
+ 'e01': ('Comp card', 'Futura + Helvetica · white card', 'A model\'s comp card: the portrait, the city as the agency line, the offer as the stats rows.'),
+ 'e02': ('Interleaved masthead', 'Fraunces 330px', 'CHAR behind the head, LOTTE in front across the chest — the word threads through her.'),
+ 'e03': ('Seal', 'Futura on a circle + Didot', 'The offer set on a ring around the face like a stamp; the city once, big, beneath.'),
+ 'e04': ('Riso poster', 'two-ink duotone + Helvetica Bold', 'Shadows in ink blue, highlights in paper, the city in red. The one treated photo in the set.'),
+ 'e05': ('Ticker', 'Didot + mono strips', 'Campaign-style running strips at the safe edges; the city once, flush left.'),
+ 'e06': ('Loupe', 'Baskerville italic', 'A photographer\'s loupe magnifying the eyes.'),
+ 'e07': ('Diagonal fields', 'Avenir Condensed Heavy', 'Two flat colours split on a diagonal, the subject cut out across the seam.'),
+ 'e08': ('Outline / solid', 'Bodoni 72', 'The city straddles the photo\'s bottom edge: hollow letters over the photo, solid over the dark.'),
+ 'e09': ('Stacked grotesque', 'Helvetica Bold 330px', 'CHAR / LOTTE stacked flush left under the face. Poster, not deck.'),
+ 'e10': ('Polaroid on linen', 'handwriting', 'One thick-bordered instant print on dark linen, the city handwritten on its margin.'),
+}
+def card8(cid):
+    title, lever, why = META8[cid]
+    names = json.load(open(os.path.join(R8, 'index.json')))[cid]
+    frames = strip([os.path.join(R8, cid, n + '.jpg') for n in names], names)
+    return f'''<article class="card control"><header><span class="num">{cid.upper()}</span><h3>{html.escape(title)}</h3><span class="lever">{html.escape(lever)}</span></header>
+  <p class="why">{html.escape(why)}</p><div class="strip">{frames}</div><p class="needs ok">ready · {len(names)} cards · same proven body</p></article>'''
+car8 = ''.join(card8(c) for c in META8) if R8 else ''
 picks = ''.join(card_html(c) for c in PICKS)
 rest = ''.join(card_html(c) for c in META if c not in PICKS)
 vids = ''.join(vcard(v) for v in sorted(VIDEOS, key=lambda v: not v.get('pick')))
@@ -235,6 +255,9 @@ video {{ width:min(100%,300px); aspect-ratio:9/16; background:#000; display:bloc
  <div class="box"><h4>Round 3</h4><p>Hero test on the winning layout (three different first frames), plus the real selfie clip if you film it.</p><p>Judge on CPC first, then cost per chat once each ad has 5+ chats.</p></div>
 </div>
 
+<h2>The art-direction set: ten voices</h2>
+<p class="lede">Each hook has its own typeface, layout logic, colour and idea — not the same serif moved around. Same CPC gates (one portrait, face ≥300px, city huge, nothing on a face), same proven body behind each. Fonts: Didot, Futura, Helvetica Neue, Bodoni 72, Baskerville, Avenir Condensed, Menlo, Fraunces.</p>
+{car8}
 <h2>The design set: ten visual languages</h2>
 <p class="lede">Same CPC rules as the set below (one portrait, face ≥300px, city huge, ≤2 lines, nothing on a face), but each hook is a different design language: type behind the subject, vertical type, a colour band, an arch, a letterbox, a hand-drawn mark, a cut-out on flat colour, a gallery label, a detail inset, a modular grid. Same proven body behind each.</p>
 {car7}
