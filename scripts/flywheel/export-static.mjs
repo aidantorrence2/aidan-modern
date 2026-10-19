@@ -74,6 +74,7 @@ function index(list) {
 ${list.length ? '' : '<p class="lab-lead">Nothing is open right now. New tools appear here once people have asked for them in public.</p>'}
 ${[['For you', list.filter(o => o.need)], ['More offers', list.filter(o => !o.need)]].filter(([, l]) => l.length).map(([h, l]) => `<h2 class="lab-sub">${h}</h2><ul class="lab-list">${l.map(o => `<li><a href="./${o.slug}/?src=lab"><span class="lab-name">${esc(o.name)}</span><span class="lab-head">${esc(o.need ? o.need + ' ' + o.headline : o.headline)}</span><span class="lab-price">${esc(o.price)}</span></a></li>`).join('')}</ul>`).join('')}
 ${resources.length ? `<h2 class="lab-sub">Free resources</h2><ul class="lab-list">${resources.map(r => `<li><a href="./resources/${r.slug}/"><span class="lab-name">Free</span><span class="lab-head">${esc(r.title)}</span><span class="lab-price">${esc(r.description)}</span></a></li>`).join('')}</ul>` : ''}
+${(globalThis.__tools || []).length ? `<h2 class="lab-sub">Free tools</h2><ul class="lab-list">${globalThis.__tools.map(t => `<li><a href="./tools/${t.slug}/"><span class="lab-name">Free tool</span><span class="lab-head">${esc(t.title)}</span><span class="lab-price">${esc(t.description)}</span></a></li>`).join('')}</ul>` : ''}
 </main></div></body></html>`
 }
 
@@ -112,7 +113,14 @@ for (const r of resources) {
 <body><div class="offer res"><main class="offer-main"><p class="offer-kicker">Free resource · from Aidan Torrence</p><h1>${esc(r.title)}</h1><p class="offer-buyer">${esc(r.intro)}</p>${body}${cta}
 <footer class="offer-foot"><a href="../../">All pre-launch offers</a><span>·</span><a href="https://aidantorrence.com">aidantorrence.com</a><span>·</span><a href="https://www.instagram.com/madebyaidan" rel="noopener">@madebyaidan</a></footer></main></div></body></html>`)
 }
-const urls = [`${cfg.publicBase}/`, ...live.map(o => `${cfg.publicBase}/${o.slug}/`), ...resources.map(r => `${cfg.publicBase}/resources/${r.slug}/`)]
+// free tools and quizzes (content/tools/<slug>/index.html, listed in content/tools.json) ship while their offer is live
+const toolsPath = path.join(root, 'content', 'tools.json')
+const tools = (fs.existsSync(toolsPath) ? JSON.parse(fs.readFileSync(toolsPath, 'utf8')) : []).filter(t => bySlug[t.offer] && fs.existsSync(path.join(root, 'content', 'tools', t.slug, 'index.html')))
+for (const t of tools) fs.cpSync(path.join(root, 'content', 'tools', t.slug), path.join(out, 'tools', t.slug), { recursive: true })
+globalThis.__tools = tools
+// IndexNow: a public key file lets Bing, Yandex and others index new pages the day they ship
+if (cfg.indexNowKey) fs.writeFileSync(path.join(out, `${cfg.indexNowKey}.txt`), cfg.indexNowKey)
+const urls = [`${cfg.publicBase}/`, ...live.map(o => `${cfg.publicBase}/${o.slug}/`), ...resources.map(r => `${cfg.publicBase}/resources/${r.slug}/`), ...tools.map(t => `${cfg.publicBase}/tools/${t.slug}/`)]
 const today = new Date().toISOString().slice(0, 10)
 fs.writeFileSync(path.join(out, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map(u => `  <url><loc>${u}</loc><lastmod>${today}</lastmod></url>`).join('\n')}\n</urlset>\n`)
 fs.writeFileSync(path.join(out, 'robots.txt'), `User-agent: *\nAllow: /\nSitemap: ${cfg.publicBase}/sitemap.xml\n`)
