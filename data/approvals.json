@@ -824,6 +824,19 @@
       "status": "denied",
       "decided": "2026-10-19T00:27:47Z",
       "note": ""
+    },
+    {
+      "id": "other:phone-e2e-test-3",
+      "kind": "other",
+      "source": "claude:phone-test",
+      "title": "Test 3: Deny button inside the notification",
+      "summary": "Phone test. Claude taps Deny inside this notification; please don't touch it for a minute.",
+      "payload": {},
+      "created": "2026-10-19T00:28:33Z",
+      "expires": "2026-10-19T01:28:33Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
     }
   ]
 }
