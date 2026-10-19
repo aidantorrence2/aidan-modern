@@ -12919,6 +12919,119 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-19",
+    "slug": "cube-by-heart",
+    "name": "Cube by Heart",
+    "need": "I have never been able to solve a Rubik's cube, and when I learned some of it I forgot the algorithms.",
+    "headline": "Learn to solve the 3x3 puzzle cube from memory: one layer at a time, with short drills so the last-layer moves stick and you can solve it with no app open.",
+    "buyer": "Adults who have never solved a cube, or who once learned and forgot the algorithms, and who want to solve it from memory instead of following a solver step by step.",
+    "bullets": [
+      "Beginner layer-by-layer method in short lessons: cross, first layer, middle layer, last layer",
+      "Spaced recall drills for the few last-layer algorithms people forget, so you can solve without looking",
+      "A 'no hints' practice mode that checks your progress once you have learned each stage"
+    ],
+    "price": "$6 one-time",
+    "priceUsd": 6,
+    "priceNote": "Pay once, no subscription. The most-rated cube-solver apps sell unlimited access for up to $74.99.",
+    "reasonPrompt": "What has stopped you solving the cube so far: getting stuck on the last layer, forgetting the moves, or not knowing where to start?",
+    "faq": [
+      {
+        "q": "Is this a camera solver that tells me every move?",
+        "a": "No. The goal is for you to solve the cube from memory, so it teaches a beginner method and drills it until you no longer need hints."
+      },
+      {
+        "q": "I learned it once and forgot. Is this for me?",
+        "a": "Yes. The recall drills are aimed at the last-layer algorithms people say they forget after a break."
+      },
+      {
+        "q": "Which puzzles does it cover?",
+        "a": "The standard 3x3 cube. Other shapes and 3-colour variants are not covered."
+      },
+      {
+        "q": "Is this affiliated with the Rubik's brand?",
+        "a": "No. It is an independent learning tool and is not affiliated with or endorsed by any puzzle-cube brand."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-19",
+      "summary": "Adults on several forums say in their own words that they have never been able to solve the cube, want to learn, or have forgotten the algorithms. These posts cover 2004 to 2023 on AnandTech, Mumsnet and Ultra Combo, and App Store reviewers describe months of stress before they solved it. Several of these posts point to the same gap. People either get stuck on the last layer or forget the algorithms. Existing apps mostly scan the cube and dictate moves, so they do not build recall.",
+      "wtp": "21Moves | Cube Puzzle Solver (App Store): 4.7 from 60K ratings, Unlimited Access in-app purchases from $1.99 to $74.99.",
+      "signals": [
+        {
+          "url": "https://www.mumsnet.com/talk/_chat/4971042-solve-this-cube-for-me-please?page=1",
+          "who": "MarchHareInTheRain",
+          "date": "2023-12-27",
+          "quote": "I cannot solve it AT ALL.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/_chat/4971042-solve-this-cube-for-me-please?page=1",
+          "who": "FilippityFiloppity",
+          "date": "2023-12-27",
+          "quote": "I have never solved a Rubik’s cube (of any sort) in my life",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.anandtech.com/threads/best-way-to-learn-how-to-solve-rubix-cube.2172587/",
+          "who": "nanette1985",
+          "date": "2011-06-17",
+          "quote": "I want to impress someone with my amazing skills, but i don't actually HAVE amazing skills.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.anandtech.com/threads/best-way-to-learn-how-to-solve-rubix-cube.2172587/",
+          "who": "fatpat268",
+          "date": "2011-06-18",
+          "quote": "I haven't touched a rubiks cube in at least two years, so I've forgotten the algorithms",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.anandtech.com/threads/have-you-ever-solved-the-rubix-cube.1483858",
+          "who": "blodhi74",
+          "date": "2004-12-27",
+          "quote": "have never been able to solve rubix cube",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.anandtech.com/threads/have-you-ever-solved-the-rubix-cube.1483858",
+          "who": "FoBoT",
+          "date": "2004-12-27",
+          "quote": "i learned some of the patterns to get a side, but not the whole thing",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.ultra-combo.com/t/the-rubiks-cube/14275",
+          "who": "KIFANATIC8488",
+          "date": "2016-09-06",
+          "quote": "I didn’t EVEN come close to and overall didn’t succeed in solving the Rubik’s Cube in my case.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/-/id1462586503",
+          "who": "nfhxjhshsjdbfjfjfgdjfjf (App Store reviewer, Rubik's Cube Solver & Tutorial)",
+          "date": "2024-06-06",
+          "quote": "I've been stressing about solving my Rubiks cube for at least five months now",
+          "seen": "snippet"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/21moves-puzzle-cube-solver/id1533263247",
+          "who": "21Moves App Store listing",
+          "date": "2026-10-19",
+          "quote": "60K Ratings ... Unlimited Access $74.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "21Moves | Cube Puzzle Solver (4.7, 60K Ratings, IAPs $1.99 to $74.99) and Rubik's Cube Solver & Tutorial (4.6, 3.3K Ratings, $4.99 lifetime) are the main paid apps. Others include camera-scan solvers with Pro subscriptions, free websites such as ruwix.com beginner guides, and YouTube tutorials. Most paid apps centre on scanning and dictating moves rather than memorisation.",
+      "risks": "Free tutorials and YouTube are abundant, and one forum poster says anyone interested can learn 'in one evening', so the need may be short-lived and one-off. Much of the forum evidence is old (2004 to 2016), though the Mumsnet thread (2023) and App Store reviews (2024) are recent. Incumbents with tens of thousands of ratings already hold this category, and a 'learn by heart' angle has to be clearly different from a scanner to win. Brand names cannot be used in the product name or marketing beyond describing the puzzle."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

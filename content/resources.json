@@ -3769,5 +3769,42 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "how-to-solve-a-puzzle-cube-from-memory",
+  "offer": "cube-by-heart",
+  "title": "How to solve a 3x3 puzzle cube from memory (and stop forgetting the moves)",
+  "description": "Never solved the cube, or forgot the algorithms? Learn the beginner layer-by-layer method one stage at a time and practise each stage until you can do it without looking.",
+  "intro": "The beginner method solves the cube in layers, using a handful of short move sequences. Most people get stuck on the last layer or forget those sequences after a break. Learning one stage at a time, and practising it until it is automatic, fixes both.",
+  "sections": [
+   {
+    "h": "Learn the notation",
+    "list": [
+     "Each face has a letter: F (front), R (right), U (up), L, D and B. A letter alone means turn that face clockwise; with an apostrophe (R') it means anticlockwise."
+    ]
+   },
+   {
+    "h": "Solve in layers",
+    "list": [
+     "1. Make a cross on one face, matching the edge colours to the centres.",
+     "2. Finish the first layer by putting the corners in.",
+     "3. Solve the middle layer edges.",
+     "4. Solve the last layer: make a cross on top, then position and turn the corners."
+    ]
+   },
+   {
+    "h": "One stage at a time",
+    "list": [
+     "Practise a single stage until you can do it ten times without looking anything up, then move on."
+    ]
+   },
+   {
+    "h": "Make the moves stick",
+    "list": [
+     "Say each sequence out loud as you do it, and practise the last-layer sequences for a few minutes a day.",
+     "Come back after a day, then a few days, then a week. That spacing is what stops you forgetting."
+    ]
+   }
+  ]
  }
 ]
