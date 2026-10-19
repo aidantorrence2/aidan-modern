@@ -8456,6 +8456,251 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-19",
+    "slug": "pages-again",
+    "name": "Pages Again",
+    "need": "I used to read all the time, and now I can't put my phone down and pick up a book.",
+    "headline": "A reading app for adults who lost the habit: it starts with ten minutes, not a 52-book challenge, and puts your book in front of you at the hour you usually scroll.",
+    "buyer": "Adults who used to read for pleasure and lost the habit to their phone.",
+    "bullets": [
+      "Start with ten minutes or five pages, whichever comes first. The goal grows only when the last one felt easy.",
+      "Pick the time you usually lose to your phone; that's when it opens your current book and starts a quiet timer.",
+      "It counts minutes and pages, not finished books. No book limit, and your reading log always exports for free."
+    ],
+    "price": "$19.99/year",
+    "priceUsd": 20,
+    "priceNote": "Below the leading reading trackers' yearly plans.",
+    "reasonPrompt": "When did you last read regularly, and what gets in the way now?",
+    "faq": [
+      {
+        "q": "Is this connected to another reading app?",
+        "a": "No. Pages Again is an independent app."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-19",
+      "summary": "Former readers describe losing books to their phone and their attention span, and reading trackers already sell paid plans.",
+      "wtp": "Basmo (App Store): 4.6 from 1.5K ratings, Premium $4.99 a month or $39.99 a year.",
+      "signals": [
+        {
+          "url": "https://www.mumsnet.com/talk/_chat/4015971-Why-can-t-I-put-my-phone-down-and-pick-up-a-book-instead",
+          "who": "MislaidMyBrain (Mumsnet)",
+          "date": "2020-09-06",
+          "quote": "I really want to but just can't seem to spend my down time away from my phone.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/_chat/4015971-Why-can-t-I-put-my-phone-down-and-pick-up-a-book-instead",
+          "who": "tornadoalley (Mumsnet)",
+          "date": "2020-09-06",
+          "quote": "Haven't read a book in months and I used to read all the time.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/basmo-book-tracker-reading-log/id1542456934",
+          "who": "Basmo reading tracker (App Store listing)",
+          "date": "2026-10-19",
+          "quote": "Basmo Premium Monthly Pack $4.99; Basmo Premium Yearly Pack $39.99; 1.5K Ratings",
+          "seen": "opened"
+        }
+      ]
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-19",
+    "slug": "steady-voice",
+    "name": "Steady Voice",
+    "need": "My voice shakes and I go blank when I have to speak in front of people.",
+    "headline": "A private practice app for presentations, toasts and meetings: rehearse out loud alone first, step up gradually, and drill the moment you lose your place.",
+    "buyer": "Adults who dread presentations, toasts and speaking up in meetings.",
+    "bullets": [
+      "Practise in small steps: say it alone, record it, play it back, then send a practice link to one person you trust. You choose when to step up.",
+      "Blank-out drills: the app stops you mid-talk and you practise finding your next point from a three-word cue card.",
+      "Cue cards on your phone built from your outline, and a two-minute routine to run before you speak."
+    ],
+    "price": "$7.99/month",
+    "priceUsd": 8,
+    "priceNote": "Below the leading speaking-practice apps' monthly plans.",
+    "reasonPrompt": "What's the next time you have to speak, and what happens to you when you do?",
+    "faq": [
+      {
+        "q": "Is this therapy?",
+        "a": "No. Steady Voice is a practice tool, not therapy or medical treatment. If fear of speaking is affecting your daily life, a doctor or therapist can help. It is an independent app."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-19",
+      "summary": "People describe their voice shaking and going blank when speaking, and speaking-practice apps already have thousands of paid ratings.",
+      "wtp": "Speeko: AI for Public Speaking (App Store): 4.7 from 4.7K ratings, $24.99 a month, $79.99-$99.99 a year.",
+      "signals": [
+        {
+          "url": "https://boards.straightdope.com/t/toastmasters/569403",
+          "who": "Spice_Weasel (Straight Dope forums)",
+          "date": "2011-01-29",
+          "quote": "my voice was shaking all over the place",
+          "seen": "opened"
+        },
+        {
+          "url": "https://boards.straightdope.com/t/toastmasters/569403",
+          "who": "VarlosZ (Straight Dope forums)",
+          "date": "2011-01-29",
+          "quote": "I was about as anxious and awful a speaker as a person can be.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/-/id1071468459",
+          "who": "Speeko (App Store listing)",
+          "date": "2026-10-19",
+          "quote": "Speeko Full Access Monthly $24.99; Speeko Full Access Annual $99.99; 4.7K Ratings",
+          "seen": "opened"
+        }
+      ]
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-19",
+    "slug": "sugar-pause",
+    "name": "Sugar Pause",
+    "need": "I go a few days without sugar, then crack under stress and binge.",
+    "headline": "For adults who keep trying to cut back on sweets and keep sliding back: help at the moment a craving hits, and a clear view of what sets cravings off. Not a diet.",
+    "buyer": "Adults (18+) who keep trying to cut sugar and keep relapsing.",
+    "bullets": [
+      "A craving button: tap it for a ten-minute plan for right now (drink, move, wait it out), then a check-in when the ten minutes are up.",
+      "One-tap notes on what was going on (stress, tiredness, time, place), so after a couple of weeks you see your own patterns.",
+      "No streak that resets to zero. You set your own limits; cutting back is fine, and so is quitting."
+    ],
+    "price": "$24.99/year",
+    "priceUsd": 25,
+    "priceNote": "In line with existing quit-sugar apps' yearly plans.",
+    "reasonPrompt": "When do your sugar cravings usually win, and what have you tried?",
+    "faq": [
+      {
+        "q": "Is this medical or nutrition advice?",
+        "a": "No. For adults 18+. Sugar Pause makes no health claims. If you have diabetes, an eating disorder or a health condition, talk to your doctor before changing how you eat."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-19",
+      "summary": "Endurance-forum members describe sugar addiction and cracking under stress, and quit-sugar apps already sell paid plans.",
+      "wtp": "Sugarfree Quit Sugar Addiction (App Store): 4.5 from 821 ratings, $6.49 a month or $26.99 a year.",
+      "signals": [
+        {
+          "url": "https://forum.slowtwitch.com/t/quitting-sugar-addition-need-help/780659",
+          "who": "wintershade (Slowtwitch forum)",
+          "date": "2019-07-18",
+          "quote": "Sometimes I'll go a few days and clean things up, but then I'll crack one day (usually under stress) and binge.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forum.slowtwitch.com/t/any-tips-for-a-sugar-addict/619510",
+          "who": "TimeIsUp (Slowtwitch forum)",
+          "date": "2013-03-29",
+          "quote": "There is no question I am addicted to sugar.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/app/id1557550593",
+          "who": "Sugarfree Quit Sugar Addiction (App Store listing)",
+          "date": "2026-10-19",
+          "quote": "Annual Subscription $26.99; Monthly subscription $6.49; 821 Ratings",
+          "seen": "opened"
+        }
+      ]
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-19",
+    "slug": "reset-ten",
+    "name": "Reset Ten",
+    "need": "I procrastinate on chores and my place is always a mess.",
+    "headline": "One 10-minute room reset at a time, picked for how much energy you have today. No marathon cleans and no guilt.",
+    "buyer": "Adults who live alone or with a roommate, often busy or easily overwhelmed, who put chores off until the mess feels too big to start",
+    "bullets": [
+      "Tell it your energy (low, okay, good) and get one 10-minute reset for the room that needs it most, with a live countdown and short step-by-step cards",
+      "A 'messy room rescue' mode: snap or pick a room and get a 5-step order (trash, dishes, laundry, surfaces, floor) so you're never stuck on where to start",
+      "Gentle streaks that don't punish missed days, plus a weekly 'home score' that goes up as rooms get looked after"
+    ],
+    "price": "$29/year or $4.99/month",
+    "priceUsd": 29,
+    "priceNote": "In the range of the leading chore apps' paid plans (Sweepy $19.99 a year; Tody Premium tiers $9.99 to $79.99).",
+    "reasonPrompt": "What chore do you put off the most, and what usually stops you from starting it?",
+    "faq": [
+      {
+        "q": "Is this for ADHD?",
+        "a": "Many people who get easily overwhelmed by housework use short, guided resets like these. Reset Ten is a home organizing tool, not a medical or ADHD treatment. If focus or motivation problems are affecting your life, talk with a doctor or licensed professional."
+      },
+      {
+        "q": "What if I skip a few days?",
+        "a": "Nothing resets to zero. You pick back up with the room that needs it most and one 10-minute task."
+      },
+      {
+        "q": "Can I share it with a roommate or partner?",
+        "a": "Yes. You can add one other person to the home and each of you gets your own daily reset."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-19",
+      "summary": "App Store reviewers of chore-scheduling apps describe the same pattern in their own words: they put chores off, get overwhelmed, then either do nothing or marathon clean. Both leading apps have about 11K ratings each and sell paid tiers.",
+      "wtp": "Sweepy (apps.apple.com/us/app/id1498897320): 4.7 stars from 11K ratings, in-app purchases Monthly $3.99 and Yearly $19.99. Tody (apps.apple.com/us/app/tody-smarter-cleaning/id595339588): 4.8 stars from 11K ratings, in-app purchases Premium Solo $9.99, Premium+ Duo $24.99, Premium+ Family $39.99, Premium+ Team $79.99.",
+      "signals": [
+        {
+          "url": "https://apps.apple.com/us/app/id1498897320",
+          "who": "JenCo10 (App Store reviewer, Sweepy)",
+          "date": "2022-12-29",
+          "quote": "before I'd be so overwhelmed I'd either do nothing or marathon clean for hours to try to get things done.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1498897320",
+          "who": "Carrica01 (App Store reviewer, Sweepy)",
+          "date": "2023-03-28",
+          "quote": "ADHD causes me to get easily overwhelmed by many things, especially housework.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/tody-smarter-cleaning/id595339588",
+          "who": "Chribistibi (App Store reviewer, Tody)",
+          "date": "2021-02-11",
+          "quote": "It has helped me to just get it done with the tasks I tend to put off.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/tody-smarter-cleaning/id595339588",
+          "who": "sweetee288 (App Store reviewer, Tody)",
+          "date": "2016-05-16",
+          "quote": "It is amazing how many times I get busy and time slips by",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Sweepy (room cleanliness tracking, auto daily lists behind a $3.99/mo or $19.99/yr subscription), Tody (condition-based task tracking, $9.99 to $79.99 premium tiers), Unf*ck Your Habitat (timed decluttering challenges), plus general to-do and habit apps. Most are built around schedules and lists. Reset Ten's angle is starting by energy level, with one 10-minute task at a time, for people who freeze when the mess looks too big.",
+      "risks": "Crowded category with entrenched, well-rated apps. Free to-do apps and timers cover part of this. Retention for cleaning apps can drop after the first week. Reviews often mention ADHD, so the copy must avoid sounding like treatment. Data on willingness to pay comes from rating counts and IAP price lists, not from verified revenue. One possible source (Common Sense Media) had no usable quotes."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

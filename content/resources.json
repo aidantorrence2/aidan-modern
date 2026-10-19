@@ -1259,5 +1259,142 @@
         ]
       }
     ]
+  },
+  {
+    "slug": "how-to-get-back-into-reading",
+    "offer": "pages-again",
+    "title": "How to get back into reading when your phone ate your attention",
+    "description": "You used to read all the time and now you can barely manage a page. A gentle way back: tiny sessions, the right book, and a set time.",
+    "intro": "If you used to love reading and now reach for your phone instead, you have not lost the ability. Reading is a habit, and habits come back with small, regular practice. Start smaller than feels worthwhile.",
+    "sections": [
+      {
+        "h": "Start tiny",
+        "list": [
+          "Aim for ten minutes or five pages a day, whichever comes first.",
+          "Stop while it still feels easy. Wanting to read more tomorrow is the point.",
+          "Count minutes or pages, not finished books."
+        ]
+      },
+      {
+        "h": "Pick an easy book on purpose",
+        "list": [
+          "Choose something you will enjoy, not something you think you should read: a favourite genre, a reread, a short novel, a gripping memoir.",
+          "Give yourself permission to drop a book that is not working after 30 pages.",
+          "Audiobooks and graphic novels count. They rebuild the habit too."
+        ]
+      },
+      {
+        "h": "Give reading a time and a place",
+        "list": [
+          "Pick the time you usually scroll, such as after dinner or in bed, and put the book there instead.",
+          "Leave the book where your phone usually sits.",
+          "Put the phone in another room for those ten minutes, or on a charger across the room."
+        ]
+      },
+      {
+        "h": "Expect a slow restart",
+        "p": [
+          "The first week can feel restless; your mind will wander. That fades for most people as the sessions become routine. Read a paragraph again if you need to and keep going."
+        ]
+      },
+      {
+        "h": "Keep a simple log",
+        "p": [
+          "Write the date and minutes read. Seeing a week of small sessions is more motivating than an empty goal of 52 books."
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "what-to-do-when-you-go-blank-presenting",
+    "offer": "steady-voice",
+    "title": "What to do when you go blank mid-presentation",
+    "description": "Going blank or hearing your voice shake while speaking is common. Practical ways to prepare, recover in the moment, and get calmer with practice.",
+    "intro": "Almost everyone who speaks in front of people has felt their voice shake or their mind go empty. It feels huge from the inside, and it is usually much less obvious to the audience. A few habits make it less likely and much easier to recover from.",
+    "sections": [
+      {
+        "h": "Before you speak",
+        "list": [
+          "Rehearse out loud, not in your head. Say it at least three times, standing up.",
+          "Know your first two sentences by heart. Starting well calms the rest.",
+          "Write your talk as a short list of points, three words each, rather than a script you have to remember word for word."
+        ]
+      },
+      {
+        "h": "If you go blank",
+        "list": [
+          "Pause. A few seconds of silence feels long to you and normal to listeners.",
+          "Look at your three-word cue for the next point, and say it.",
+          "It is fine to say \"Let me check my notes\" or to repeat your last point in one sentence while you find the next one."
+        ]
+      },
+      {
+        "h": "If your voice shakes",
+        "list": [
+          "Slow down and lower your pace; shaking eases as your breathing slows.",
+          "Breathe out slowly before you start, longer than you breathe in.",
+          "Keep water nearby and take a sip between points."
+        ]
+      },
+      {
+        "h": "Build up in steps",
+        "p": [
+          "Practise alone, then record yourself, then speak to one person you trust, then a small group. Each step makes the next one feel smaller."
+        ]
+      },
+      {
+        "h": "When to get help",
+        "p": [
+          "If fear of speaking is stopping you from work, study or things you want to do, a doctor or therapist can help; there are effective approaches. Groups like local speaking clubs also offer friendly practice."
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "why-you-binge-on-sugar-after-a-few-good-days",
+    "offer": "sugar-pause",
+    "title": "Why you crack and binge on sugar after a few good days",
+    "description": "A few days off sugar, then a stressful day and a binge. Why the pattern happens and what to do in the ten minutes when a craving hits.",
+    "intro": "Many people who try to cut sugar go a few days strong, then crack on a stressful or tired day and eat far more than they meant to. That pattern is common, and it usually comes from a few predictable things you can plan for.",
+    "sections": [
+      {
+        "h": "Why the pattern happens",
+        "list": [
+          "Very strict rules make one slip feel like total failure, so it turns into a binge.",
+          "Stress and tiredness make cravings stronger and willpower weaker.",
+          "Skipped meals or very small meals leave you hungry later in the day.",
+          "Sweets are often a habit tied to a time or place, like the afternoon slump or the sofa at night."
+        ]
+      },
+      {
+        "h": "In the ten minutes when a craving hits",
+        "list": [
+          "Wait ten minutes before deciding. Set a timer.",
+          "Drink a glass of water, step outside or move for a few minutes.",
+          "Ask what you actually need: food, rest, a break or comfort.",
+          "If you still want something sweet afterwards, have a planned portion, sitting down, and enjoy it."
+        ]
+      },
+      {
+        "h": "Set the day up to win",
+        "list": [
+          "Eat regular meals with some protein and fibre so you are not starving at 4pm.",
+          "Keep sweets out of easy reach, and keep alternatives you like nearby.",
+          "Decide your own rule: cutting back is a valid goal, not only quitting."
+        ]
+      },
+      {
+        "h": "After a slip",
+        "p": [
+          "One binge is one day. Skip the guilt and the punishing restriction the next day; that tends to set up the next binge. Note what was going on and go back to normal meals."
+        ]
+      },
+      {
+        "h": "When to get help",
+        "p": [
+          "If you have diabetes or another health condition, or eating often feels out of control or distressing, talk to a doctor or a registered dietitian before changing how you eat. This guide is not medical or nutrition advice."
+        ]
+      }
+    ]
   }
 ]
