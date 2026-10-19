@@ -1047,9 +1047,9 @@
       },
       "created": "2026-10-19T01:18:21Z",
       "expires": "2026-10-22T01:18:21Z",
-      "status": "pending",
-      "decided": null,
-      "note": ""
+      "status": "denied",
+      "decided": "2026-10-19T01:20:46Z",
+      "note": "Have to make any outreach super readable and understandable."
     },
     {
       "id": "other:sync-test-2",
