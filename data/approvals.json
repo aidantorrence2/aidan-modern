@@ -1003,6 +1003,51 @@
       "status": "approved",
       "decided": "2026-10-19T01:18:15Z",
       "note": ""
+    },
+    {
+      "id": "offers:phone-research:2026-10-18",
+      "kind": "email",
+      "source": "codex:aidantorrence",
+      "title": "Send two revised phone-product research invitations",
+      "summary": "Ask Colin Corby and The Offline Club London whether they would share an opt-in invitation. Product research only; no invented price or paid guide. Old six-email batch remains stopped.",
+      "payload": {
+        "action": "Send these two revised phone-product research invitations only",
+        "dependency": {
+          "approval_id": "offers:correct-pricing:2026-10-18",
+          "condition": "Corrected price-free phone page must be deployed and verified first"
+        },
+        "messages": [
+          {
+            "id": "digital_detox_coach",
+            "organization": "The Digital Detox Coach",
+            "to": "info@thedigitaldetoxcoach.co.uk",
+            "subject": "Optional invitation: help shape a phone-control product",
+            "body": "Hi Colin,\n\nI’m Aidan Torrence. I’m researching a phone-control product for adults who keep bypassing app limits and falling back into scrolling.\n\nThe idea is to set boundaries in advance and add a deliberate pause before overriding them. It isn’t built yet, and pricing is undecided. I’m looking for people who would discuss what they’ve already tried or want to test an early version.\n\nWould you consider sharing an optional invitation if it fits your community?\n\nhttps://real-change-pilots-aidan-2026.aidantorrence.chatgpt.site/phone-reset?utm_source=digital_detox_coach&utm_medium=partner_email&utm_campaign=wave1\n\nI’m not asking for member lists or an endorsement. If it isn’t a fit, no problem.\n\nAidan",
+            "source": "https://thedigitaldetoxcoach.com/contact",
+            "url": "https://real-change-pilots-aidan-2026.aidantorrence.chatgpt.site/phone-reset?utm_source=digital_detox_coach&utm_medium=partner_email&utm_campaign=wave1",
+            "draft_id": "r3597979020906387051",
+            "status": "draft_not_sent"
+          },
+          {
+            "id": "offline_club_london",
+            "organization": "The Offline Club — London",
+            "to": "london@theoffline-club.com",
+            "subject": "Optional invitation: help shape a phone-control product",
+            "body": "Hi Laura and Megan,\n\nI’m Aidan Torrence. I’m researching a phone-control product for adults who keep bypassing app limits and falling back into scrolling.\n\nThe idea is to set boundaries in advance and add a deliberate pause before overriding them. It isn’t built yet, and pricing is undecided. I’m looking for people who would discuss what they’ve already tried or want to test an early version.\n\nWould you consider sharing an optional invitation if it fits your community?\n\nhttps://real-change-pilots-aidan-2026.aidantorrence.chatgpt.site/phone-reset?utm_source=offline_club_london&utm_medium=partner_email&utm_campaign=wave1\n\nI’m not asking for member lists or an endorsement. If it isn’t a fit, no problem.\n\nAidan",
+            "source": "https://www.theoffline-club.com/contact",
+            "url": "https://real-change-pilots-aidan-2026.aidantorrence.chatgpt.site/phone-reset?utm_source=offline_club_london&utm_medium=partner_email&utm_campaign=wave1",
+            "draft_id": "r8020061972357736905",
+            "status": "draft_not_sent"
+          }
+        ],
+        "limits": "No preset price, paid guide, coaching package, audience lists, follow-ups, endorsement claims, ads, or spending. Two public business contacts only.",
+        "supersedes": "The denied six-message paid-pilot batch will not be sent."
+      },
+      "created": "2026-10-19T01:18:21Z",
+      "expires": "2026-10-22T01:18:21Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
     }
   ]
 }
