@@ -2228,5 +2228,95 @@
         ]
       }
     ]
+  },
+  {
+    "slug": "how-to-fix-desk-posture-when-you-keep-slipping-back",
+    "offer": "slouch-catch",
+    "title": "How to fix desk posture when you keep slipping back",
+    "description": "You sit up straight, then slump again the moment you stop thinking about it. Practical fixes: set up the desk, take short breaks, and build reminders that stick.",
+    "intro": "Almost everyone who works at a desk slumps. Good posture is less about holding yourself rigid and more about a setup that supports you, regular movement, and small cues that bring you back.",
+    "sections": [
+      {
+        "h": "Set up your desk first",
+        "list": [
+          "Screen at eye level, about an arm's length away. A stack of books under a laptop helps.",
+          "Feet flat on the floor, knees roughly level with hips.",
+          "Elbows close to your sides and keyboard at elbow height.",
+          "Sit back in the chair so your lower back is supported; a cushion or rolled towel can help."
+        ]
+      },
+      {
+        "h": "Move often",
+        "list": [
+          "Posture problems come from staying still. Change position or stand up every 30 to 45 minutes.",
+          "Tie breaks to natural moments: after a call, after sending an email, when you refill your drink."
+        ]
+      },
+      {
+        "h": "Two-minute resets",
+        "list": [
+          "Roll your shoulders back and down a few times.",
+          "Gently tuck your chin and lengthen the back of your neck.",
+          "Stand up, reach your arms overhead and take a few slow breaths."
+        ]
+      },
+      {
+        "h": "Build reminders that stick",
+        "p": [
+          "Reminders at random times get ignored. Link them to things you already do, and note each time you catch yourself slumping; noticing is the habit you are building."
+        ]
+      },
+      {
+        "h": "When to get help",
+        "p": [
+          "If you have ongoing back, neck or shoulder pain, numbness or tingling, see a doctor or physiotherapist. This guide is not medical advice."
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "how-to-stop-looking-stiff-in-photos",
+    "offer": "camera-calm",
+    "title": "How to stop looking stiff and awkward in photos",
+    "description": "Freeze and fake-smile when a camera comes out? Simple posing basics, how to get a natural smile, and how to practise privately.",
+    "intro": "Most people who think they are not photogenic simply tense up when the camera appears. A few basics and a little private practice make a big difference.",
+    "sections": [
+      {
+        "h": "Relax before the shot",
+        "list": [
+          "Breathe out slowly just before the photo; it drops your shoulders.",
+          "Shake out your hands and let your arms hang loosely.",
+          "Think of something or someone that genuinely makes you smile."
+        ]
+      },
+      {
+        "h": "Simple posing basics",
+        "list": [
+          "Turn your body slightly to one side rather than facing the camera square on.",
+          "Put your weight on your back foot.",
+          "Push your chin slightly forward and down to define your jawline.",
+          "Give your hands something to do: hold a drink, rest one on a hip, or hold a partner's arm."
+        ]
+      },
+      {
+        "h": "A more natural smile",
+        "list": [
+          "A real smile reaches your eyes. Try smiling slightly with your eyes before your mouth.",
+          "Laughing just before the shot often gives the most natural result."
+        ]
+      },
+      {
+        "h": "Practise privately",
+        "p": [
+          "Use your phone's front camera at home. Try a few angles and expressions, take photos, and compare. Keep a day-one photo to see how much you improve. Nobody needs to see your practice shots."
+        ]
+      },
+      {
+        "h": "On the day",
+        "p": [
+          "Ask the photographer for a few shots in a row, and move slightly between them. The more relaxed and the more photos, the better the odds of one you love."
+        ]
+      }
+    ]
   }
 ]

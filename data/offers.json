@@ -9983,6 +9983,127 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-19",
+    "slug": "slouch-catch",
+    "name": "Slouch Catch",
+    "need": "I have terrible posture, especially sitting at my desk, and as soon as I stop thinking about it I'm back to slouching.",
+    "headline": "A desktop posture habit: nudges at natural work breaks, a one-tap 'caught myself' log, and rotating two-minute chair resets. No camera, no wearable.",
+    "buyer": "Desk workers with bad posture who keep slipping back.",
+    "bullets": [
+      "Gentle nudges at natural breaks in your work, not random buzzes that you learn to ignore.",
+      "Tap 'caught myself' when you notice slouching, and see your patterns over the week.",
+      "Rotating two-minute chair resets you can do without getting up."
+    ],
+    "price": "$19.99/year",
+    "priceUsd": 20,
+    "priceNote": "In line with existing posture-reminder apps' yearly plans.",
+    "reasonPrompt": "When do you notice yourself slouching most, and what have you tried?",
+    "faq": [
+      {
+        "q": "Is this medical advice?",
+        "a": "No. Slouch Catch is an independent habit tool. If you have back or neck pain, see a doctor or physiotherapist."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-19",
+      "summary": "Desk workers describe terrible posture that comes back the moment they stop thinking about it, and posture apps and gadgets sell to them.",
+      "wtp": "Posture Reminder: Stand Up (App Store): 4.3 from 251 ratings, $7.99 a month or $19.99 a year.",
+      "signals": [
+        {
+          "url": "https://www.tigerdroppings.com/rant/o-t-lounge/how-to-fix-terrible-posture/107160643/",
+          "who": "brickyard (TigerDroppings forum)",
+          "date": "2023-03-06",
+          "quote": "I have terrible posture. Especially while sitting at my desk.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/app/id1493102391",
+          "who": "Posture Reminder: Stand Up (App Store listing)",
+          "date": "2026-10-19",
+          "quote": "Monthly Plan $7.99; Annual Plan $19.99; 251 Ratings",
+          "seen": "opened"
+        },
+        {
+          "url": "https://cloud.mumsnet.com/talk/_chat/4025873-how-can-i-fix-my-posture-without-buying-a-new-chair",
+          "who": "ButterFox (Mumsnet)",
+          "date": "not shown",
+          "quote": "I'm an awful slumper when sitting",
+          "seen": "snippet"
+        },
+        {
+          "url": "https://cloud.mumsnet.com/talk/_chat/4025873-how-can-i-fix-my-posture-without-buying-a-new-chair",
+          "who": "Doingitaloneandproud (Mumsnet)",
+          "date": "not shown",
+          "quote": "my posture has got so much worse since working from home",
+          "seen": "snippet"
+        }
+      ]
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-19",
+    "slug": "camera-calm",
+    "name": "Camera Calm",
+    "need": "I hate how I look in photos. As soon as a camera comes out I freeze, fake-smile and go tense.",
+    "headline": "Private practice with your front camera, one pose prompt at a time, with day-one and today shots side by side and quick resets. Photos stay on your phone.",
+    "buyer": "Adults who freeze and look stiff in photos.",
+    "bullets": [
+      "One simple prompt at a time: chin, angle, a real smile, where to put your hands.",
+      "Day-one and today photos side by side, so you can see the difference practice makes.",
+      "Quick two-second resets for the moment a camera comes out. Your practice photos never leave your phone."
+    ],
+    "price": "$14.99/year",
+    "priceUsd": 15,
+    "priceNote": "In line with existing posing-guide apps.",
+    "reasonPrompt": "What happens to you when a camera comes out, and is there an event coming up?",
+    "faq": [
+      {
+        "q": "Is this connected to another photo app?",
+        "a": "No. Camera Calm is an independent app."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-19",
+      "summary": "People on several forums say they freeze, fake-smile and look stiff in photos, and posing-guide apps and courses sell to them.",
+      "wtp": "Photo Poses: Pose Ideas Guide (App Store): $2.99 a month or $14.99 a year (12 ratings). Posing courses sell for $15-$27.",
+      "signals": [
+        {
+          "url": "https://www.berkeleyparentsnetwork.org/node/22154",
+          "who": "'Say Cheese!' (Berkeley Parents Network)",
+          "date": "2016-06-21",
+          "quote": "When the camera points at me, I always seem to freeze, fake smile, and look dreadful.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/-/id1551293657",
+          "who": "Photo Poses: Pose Ideas Guide (App Store listing)",
+          "date": "2026-10-19",
+          "quote": "Monthly Subscription $2.99; Annual Subscription $14.99",
+          "seen": "opened"
+        },
+        {
+          "url": "https://bulbagarden.net/threads/do-you-like-having-your-picture-taken.294209/",
+          "who": "Insanish Danish (Bulbagarden forums)",
+          "date": "not shown",
+          "quote": "the least photogenic person on the planet",
+          "seen": "snippet"
+        }
+      ]
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
