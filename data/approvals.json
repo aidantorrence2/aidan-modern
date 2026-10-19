@@ -1467,6 +1467,37 @@
       "status": "pending",
       "decided": null,
       "note": ""
+    },
+    {
+      "id": "software100:stripe-recovery-2026-10-19",
+      "kind": "other",
+      "source": "codex:software-revenue-goal",
+      "title": "Restore your Stripe sign-in for software payments",
+      "summary": "Stripe emailed its two-step reset link. Complete recovery yourself, then approve once your dashboard is open. I will only inspect checkout readiness; no credential changes, charges, terms or publication.",
+      "preview_url": "https://mail.google.com/mail/u/?authuser=aidan.torrence%40gmail.com#all/1a152e494d072e9c",
+      "payload": {
+        "action": "After Aidan has completed his own Stripe recovery and approved this card, inspect the authenticated Stripe seller account and existing payment links read-only.",
+        "required_user_action": {
+          "reason": "Stripe requires recovery of existing two-step authentication. Browser safety requires authentication-credential changes to be completed by the user.",
+          "email_subject": "[Expires in 48h] Reset your two-step authentication settings",
+          "email_received": "2026-10-19T06:41:13+00:00",
+          "gmail_url": "https://mail.google.com/mail/u/?authuser=aidan.torrence%40gmail.com#all/1a152e494d072e9c",
+          "steps": "Open the Stripe recovery email, complete its recovery steps yourself, and approve this card once normally signed in to your existing Stripe dashboard. Do not put passwords or backup codes in the approval note."
+        },
+        "agent_limits": [
+          "Do not follow the authentication reset link or change credentials",
+          "Do not remove or weaken two-factor authentication",
+          "Do not open a new account or accept terms",
+          "Do not move money, make charges, create prices, publish checkout or publish software",
+          "Only inspect seller readiness and existing product/payment links once authenticated"
+        ],
+        "goal": "Unblock payment collection for the $100 software-product revenue goal; revenue remains USD 0."
+      },
+      "created": "2026-10-19T07:10:57Z",
+      "expires": "2026-10-21T07:10:57Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
     }
   ]
 }
