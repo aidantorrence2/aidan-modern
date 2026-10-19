@@ -1826,5 +1826,50 @@
         ]
       }
     ]
+  },
+  {
+    "slug": "how-to-stop-being-late-all-the-time",
+    "offer": "on-time",
+    "title": "How to stop being late all the time",
+    "description": "Chronic lateness usually comes from underestimating how long things take. A practical fix: time yourself, plan backwards, and set a leave-now alarm.",
+    "intro": "Most people who are always late are not careless. They usually underestimate how long getting ready and getting there take, and they plan around the arrival time instead of the leaving time. A few changes fix most of it.",
+    "sections": [
+      {
+        "h": "Find out how long things really take",
+        "list": [
+          "For a week, write down how long getting ready actually takes, from starting to walking out the door.",
+          "Do the same for regular trips. Most people find their guesses are short by a consistent amount."
+        ]
+      },
+      {
+        "h": "Plan backwards from the leave time",
+        "list": [
+          "Start from the time you need to arrive, subtract the real travel time, then a buffer of 10 to 15 minutes.",
+          "That is your leave time. Then subtract your real getting-ready time: that is your start time.",
+          "Put both times in your calendar, not just the event."
+        ]
+      },
+      {
+        "h": "Set the right alarms",
+        "list": [
+          "Set an alarm for \"start getting ready\" and another for \"leave now\".",
+          "When the leave-now alarm goes off, leave, even if one more small task is tempting."
+        ]
+      },
+      {
+        "h": "Remove the last-minute traps",
+        "list": [
+          "Put keys, wallet, bag and shoes by the door the night before.",
+          "Avoid starting \"just one quick thing\" in the last fifteen minutes.",
+          "Plan to arrive early and bring something to do while you wait."
+        ]
+      },
+      {
+        "h": "Track your progress",
+        "p": [
+          "Note when you left and when you arrived. Seeing the minutes-late number shrink over a few weeks is motivating, and it shows you which step still needs work. If time management problems affect many parts of your life, talking to a doctor or other professional can help."
+        ]
+      }
+    ]
   }
 ]

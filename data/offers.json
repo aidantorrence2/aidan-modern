@@ -9443,6 +9443,105 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-19",
+    "slug": "on-time",
+    "name": "Out the Door",
+    "need": "I'm always late.",
+    "headline": "A 'start getting ready' nudge timed to how long you actually take, not how long you hope you take, so you walk out the door on time.",
+    "buyer": "Adults who run late to work, appointments and plans because they misjudge how long getting ready and travel take, and who feel guilty about it.",
+    "bullets": [
+      "Plans backward from your arrival time and nudges you at 'start getting ready', 'shoes on' and 'leave now', not only at the event time",
+      "Learns your real buffer: log 'left at' and 'arrived at' with one tap, and it pads your next plan by how far off your guesses usually are",
+      "A weekly on-time streak and a 'minutes late' trend so you can see the habit improving without any lecture"
+    ],
+    "price": "$29/year or $4/month",
+    "priceUsd": 29,
+    "priceNote": "In the range of the existing be-on-time apps ($19.99 a year to $39.99 lifetime).",
+    "reasonPrompt": "What's the last thing you were late to, and what made you leave late: getting ready, travel time, or losing track of time?",
+    "faq": [
+      {
+        "q": "Is this a treatment for ADHD or time blindness?",
+        "a": "No. It's a habit and planning tool that helps you leave on time. It doesn't diagnose or treat anything. If you think something more is going on, talk to a qualified professional."
+      },
+      {
+        "q": "How does it know how long I really take?",
+        "a": "After each outing you tap when you left and when you arrived. Over a few weeks it compares those times with your plan and adds your typical gap to future 'start getting ready' nudges."
+      },
+      {
+        "q": "Does it need my location?",
+        "a": "No. Location-based travel estimates are optional. You can type in travel times yourself instead."
+      },
+      {
+        "q": "Being late is stressing me out a lot. Can this help?",
+        "a": "It can take some guesswork out of leaving, but it isn't a mental health service. If you are in crisis, in the US call or text 988."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-19",
+      "summary": "People describe chronic lateness in their own words on app listings and blog comment threads, saying they misjudge time and feel guilty about it. Several small developers have shipped 'leave on time' apps for exactly this need, and people say they pay for them.",
+      "wtp": "Lately: Be On Time (apps.apple.com, opened) has 4.6 stars from 47 ratings and charges Monthly $4.99, Yearly $19.99 and Lifetime $24.99. Shark In Time (opened) sells Premium Lifetime at $39.99. Tiimo, a related time-planning app (opened), has 4.6 stars from 21K ratings and Pro in-app purchases from $7.00 to $54.00. That shows broad willingness to pay for time-management help, but no large-scale app focused only on lateness was found.",
+      "signals": [
+        {
+          "url": "https://apps.apple.com/us/app/lately-be-on-time/id6740748815",
+          "who": "Apple.Enjoyer (App Store reviewer)",
+          "date": "Feb 4 (year not shown on page; viewed 2026-10-19)",
+          "quote": "I'm the kind of person who is often an HOUR — yes, 60+ MINUTES — late to everything — but not for lack of trying!",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.producthunt.com/products/adhd-planner-by-lately",
+          "who": "Erik MacInnis (maker of Lately)",
+          "date": "2025 (page says 'Launched in 2025', comment '1yr ago')",
+          "quote": "I've determined that for me, this is a result of poor travel time estimations and losing track of time.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/app/id6778839881",
+          "who": "Univi Group sp. z o.o. (developer of Shark In Time)",
+          "date": "v1.0 Jun 26, v1.0.3 Sep 11 (year not shown; viewed 2026-10-19)",
+          "quote": "Shark In Time helps you be on time, leave on time, and stop feeling always late.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.onegoodthingbyjillee.com/tips-for-people-who-are-always-late/",
+          "who": "Constance Muzzy (blog commenter)",
+          "date": "2020-10-24",
+          "quote": "I have the problem of being late often and I do tend to blame it on anything but my own planning",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.onegoodthingbyjillee.com/tips-for-people-who-are-always-late/",
+          "who": "Terry (blog commenter)",
+          "date": "2020-05-15",
+          "quote": "I appreciate this article as someone who has always struggled to arrive at events on time.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.onegoodthingbyjillee.com/tips-for-people-who-are-always-late/",
+          "who": "Jane (blog commenter)",
+          "date": "2020-05-15",
+          "quote": "I have struggled with this problem for years.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/tiimo-visual-planner-for-adhd/id1480220328",
+          "who": "CalvinationStation (App Store reviewer, Tiimo)",
+          "date": "2021-10-28",
+          "quote": "I don’t realize until more time than I had intended to spend on an activity has passed",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Lately: Be On Time (iOS, $19.99/yr), Shark In Time (iOS, $39.99 lifetime), AnchorTime (iOS, free, traffic-based leave time), and OutOnTime and NLtimer (Android routine timers). Broader planners such as Tiimo also compete. Most of these compute a leave time. Few learn the gap between the time you planned and the time you really took.",
+      "risks": "The dedicated lateness apps are small (Lately has 47 ratings; Shark In Time has too few to display), so the niche may be thin and crowded with indie apps. Calendar and maps apps already offer free 'time to leave' alerts. People who are often late may not log their arrival times, which the learning feature depends on. The tool must not drift into ADHD treatment claims. Ask a Manager reader threads on chronic lateness exist but returned HTTP 403 and are not used as evidence."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
