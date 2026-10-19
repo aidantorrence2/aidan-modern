@@ -8179,6 +8179,283 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-19",
+    "slug": "bedtime-taper",
+    "name": "Bedtime Taper",
+    "need": "I can't stop smoking weed every night.",
+    "headline": "A plan for adults who want to cut down or stop the nightly smoke: a gradual step-down you set yourself, and a wind-down routine for the hour you'd normally light up.",
+    "buyer": "Adults (18+) who smoke cannabis nightly and want to cut down or stop.",
+    "bullets": [
+      "You pick the pace: fewer nights, smaller amounts, a later start, then the last nightly one. The app holds you to your plan, not a streak that resets to zero.",
+      "A 20-minute evening routine for the time you'd normally smoke, built from what you pick (a shower, a show, a walk, a call, a book), with a check-in when it ends.",
+      "A craving button for bad nights, plus a note of what set it off, so you can see your patterns. No photos of weed and no ads."
+    ],
+    "price": "$24.99/year",
+    "priceUsd": 25,
+    "priceNote": "Below the leading quit-weed app's yearly plan.",
+    "reasonPrompt": "What happens at night when you try to cut down or stop? What have you tried?",
+    "faq": [
+      {
+        "q": "Is this medical treatment?",
+        "a": "No. You must be 18 or older. Bedtime Taper is an independent habit tool, not medical advice or treatment. If you're struggling with withdrawal, sleep or your mood, talk to a doctor; in the US, the SAMHSA helpline is free at 1-800-662-4357."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-19",
+      "summary": "Nightly smokers describe how hard the last step-down is, and paying users of quit-weed apps describe the hardest weeks and want something less bare-bones.",
+      "wtp": "Grounded: Quit Weed Smoking (App Store): 4.8 from 5.8K ratings, Grounded Plus $3.99, $9.99 a month, $39.99 a year.",
+      "signals": [
+        {
+          "url": "https://apps.apple.com/app/id1463294846",
+          "who": "hwnsnz (App Store reviewer, Grounded)",
+          "date": "2025-05-19",
+          "quote": "I'm on day 29 and honestly the fourth week is the most difficult for me due to the on and off withdrawals.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://justuseapp.com/en/app/1644552753/quit-weed/reviews",
+          "who": "4JessDun (Quit Weed reviewer, via JustUseApp)",
+          "date": "not shown",
+          "quote": "Why would I want to see a pic of a fresh bowl when I'm trying so hard to not have one?",
+          "seen": "opened"
+        },
+        {
+          "url": "https://justuseapp.com/en/app/1644552753/quit-weed/reviews",
+          "who": "Shobijin (Quit Weed reviewer, via JustUseApp)",
+          "date": "not shown",
+          "quote": "I'm on Day 10 and not feeling the best.",
+          "seen": "opened"
+        }
+      ]
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-19",
+    "slug": "one-change-skin",
+    "name": "One Change Skin",
+    "need": "My skin won't clear up and I can't tell which products are actually working.",
+    "headline": "A routine log that tracks every product with a start and stop date, plus a same-light photo each week, so you can see what changed after each switch.",
+    "buyer": "Adults with acne or breakouts who keep cycling through skincare products.",
+    "bullets": [
+      "Add each product the day you start it and mark the day you stop. It nudges you to change one thing at a time, so you know what made the difference.",
+      "A weekly photo with the same framing and light, and a timeline you can show your dermatologist next to what you were using.",
+      "Your photos and history stay yours: export everything any time, never locked behind a subscription."
+    ],
+    "price": "$19.99/year",
+    "priceUsd": 20,
+    "priceNote": "Below skin-tracker subscriptions such as Clear's GBP 64.99 a year.",
+    "reasonPrompt": "What are you using on your skin now, and how do you decide if something is working?",
+    "faq": [
+      {
+        "q": "Is this medical advice?",
+        "a": "No. One Change Skin is an independent log, not connected to any skincare brand. It does not diagnose or treat anything. For persistent or painful acne, see a doctor or dermatologist."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-19",
+      "summary": "People with breakouts describe trying routine after routine without knowing what helps, and paying skin-tracker users complain that their history is locked behind a subscription.",
+      "wtp": "Clear: Social Skincare Tracker (App Store UK): 4.8 from 54 ratings, subscriptions GBP 4.49-8.99 a month and GBP 64.99 a year. Skin-tracking apps sell paid plans; the larger TroveSkin listing could not be re-opened.",
+      "signals": [
+        {
+          "url": "https://apps.apple.com/gb/app/clear/id1551189203",
+          "who": "annamain01 (App Store reviewer, Clear)",
+          "date": "2021-06-29",
+          "quote": "I am new to the world of skincare but have suffered with Acne in the past.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/gb/app/clear/id1551189203",
+          "who": "Aidouda1 (App Store reviewer, Clear)",
+          "date": "2021-08-08",
+          "quote": "An app which helps you track your skincare, the results you get with each product, and enables you to share experiences with other users.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/am_i_being_unreasonable/3065587",
+          "who": "coconutdonut (Mumsnet)",
+          "date": "not shown",
+          "quote": "I've tried lots of different skincare routines from cheap to expensive",
+          "seen": "snippet"
+        },
+        {
+          "url": "https://apps.apple.com/app/id1435184918",
+          "who": "Rylieeeee (App Store reviewer, TroveSkin)",
+          "date": "not shown",
+          "quote": "I tracked my skin for the past almost two years",
+          "seen": "snippet"
+        }
+      ]
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-19",
+    "slug": "stick-with-guitar",
+    "name": "Stick With Guitar",
+    "need": "I keep trying to learn guitar and keep quitting.",
+    "headline": "A 10-minute-a-day plan for adults who have started guitar before and stalled: songs you like from week one, and the F chord in small steps instead of one wall.",
+    "buyer": "Adult beginners who have started guitar before and stalled.",
+    "bullets": [
+      "Pick songs you actually want to play. The plan finds easy versions you can play now, then swaps in the real chords as your hands get there.",
+      "The barre chord is spread over several weeks of short daily drills, instead of one wall where most people quit.",
+      "Ten minutes a day. Miss a week and you pick up where you left off; nothing resets. Record a chord change to hear what's buzzing."
+    ],
+    "price": "$7.99/month",
+    "priceUsd": 8,
+    "priceNote": "Well below the leading guitar-learning app's monthly plan.",
+    "reasonPrompt": "How far did you get last time, and what made you stop?",
+    "faq": [
+      {
+        "q": "Is this connected to a guitar brand or lesson app?",
+        "a": "No. Stick With Guitar is an independent app."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-19",
+      "summary": "Adult learners on a guitar community forum describe nearly quitting and spending months on the F barre chord, and paying users of the biggest guitar app say they always gave up before.",
+      "wtp": "Yousician (App Store): 4.6 from 139K ratings, plans $19.99 a month to $179.99 a year. Fender Play: 4.8 from 61K ratings, plans $7.99 to $19.99 a month and $44.99 to $149.99 a year.",
+      "signals": [
+        {
+          "url": "https://apps.apple.com/app/id959883039",
+          "who": "Reagan2448 (App Store reviewer, Yousician)",
+          "date": "2021-01-19",
+          "quote": "I have tried learning guitar on my own multiple different times and always ended up giving up on it",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/app/id1226057939",
+          "who": "StuckInJapan (App Store reviewer, Fender Play)",
+          "date": "2021-03-25",
+          "quote": "This is my second 'self taught' app I've used",
+          "seen": "opened"
+        },
+        {
+          "url": "https://community.justinguitar.com/t/what-makes-you-quit/64605?page=2",
+          "who": "JROB623 (JustinGuitar community)",
+          "date": "not shown",
+          "quote": "I am on the borderline of giving it up currently.",
+          "seen": "snippet"
+        },
+        {
+          "url": "https://community.justinguitar.com/t/what-makes-you-quit/64605?page=2",
+          "who": "Jamolay (JustinGuitar community)",
+          "date": "not shown",
+          "quote": "I took 6 months to feel barely able to manage the F barre cord.",
+          "seen": "snippet"
+        }
+      ]
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-19",
+    "slug": "water-and-vitamins",
+    "name": "Two-Tap Daily",
+    "need": "I keep forgetting to drink water or take my vitamins.",
+    "headline": "Keep forgetting water and vitamins? Two-Tap Daily ties both to things you already do, like coffee or lunch, and one tap logs them. No guessing whether you took them today.",
+    "buyer": "Adults 18+ with busy desk or school days who buy vitamins or keep a water bottle, then forget both by mid-afternoon and can't remember if they took this morning's vitamin.",
+    "bullets": [
+      "One check-in for water and vitamins: tie each to a habit you already have (after coffee, at lunch, before bed) instead of separate timers you learn to ignore",
+      "A one-tap home-screen widget and a 'did I already take it?' history, so you stop guessing and never double up by accident",
+      "Bottle count and a low-supply heads-up, plus a weekly streak view that shows which time of day you usually slip"
+    ],
+    "price": "$19/year or $2.99/month",
+    "priceUsd": 19,
+    "priceNote": "This is at the low end of similar apps. WaterMinder charges $2.99/month or $14.99 to $29.99/year, Waterllama $0.99 to $19.99, and Medisafe $2.99 to $9.99/month or $27.99 to $39.99/year. One subscription covers both water and vitamins, so people don't pay for two apps.",
+    "reasonPrompt": "What do you forget more often, water or vitamins? What have you already tried to remember them, like alarms, a pill box, or another app?",
+    "faq": [
+      {
+        "q": "Is this a medical or medication app?",
+        "a": "No. Two-Tap Daily is a reminder and log for everyday water and over-the-counter vitamins. It doesn't give dosing or health advice. For questions about what or how much to take, or about prescription medicines, ask a pharmacist or doctor."
+      },
+      {
+        "q": "I missed my vitamin this morning. Should I take two later?",
+        "a": "Two-Tap Daily won't tell you to double up. It just shows whether you already logged today's. Check the product label or ask a pharmacist."
+      },
+      {
+        "q": "How is this different from setting a phone alarm?",
+        "a": "Alarms go off at fixed times and are easy to swipe away. Two-Tap Daily links reminders to your routine moments, keeps a record you can check, and tells you when a bottle is running low."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Adults 18 and over."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-19",
+      "summary": "People say plainly that they forget to drink water or take supplements, and plain timers and alarms don't work for them. Brands write how-to posts about remembering vitamins. Separate water and pill reminder apps have very large rating counts and paid tiers. Nothing ties water and vitamins together with routine-based cues in one simple app.",
+      "wtp": "Water Tracker by WaterMinder: 4.7 stars from 35K ratings, IAPs $2.99/month and $14.99 to $29.99/year. Waterllama: 4.9 stars from 163K ratings, IAPs $0.99 to $19.99. Medisafe: 4.7 stars from 101K ratings, $2.99 to $9.99/month and $27.99 to $39.99/year. All of these are App Store listings I opened.",
+      "signals": [
+        {
+          "url": "https://apps.apple.com/us/app/waterminder-water-tracker/id653031147",
+          "who": "App Store reviewer Octobers Own '83",
+          "date": "2017-11-30",
+          "quote": "I normally forget about drinking water or to engrossed in my work.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/waterllama-water-tracker/id1454778585",
+          "who": "App Store reviewer ferociousfrogs",
+          "date": "2022-12-14",
+          "quote": "I already was using just a plain timer to remind me to drink enough water each day",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/waterllama-water-tracker/id1454778585",
+          "who": "App Store reviewer Tho sapsuckers",
+          "date": "2022-05-10",
+          "quote": "I never really paid any attention to how much water I was drinking",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/medisafe-medication-management/id573916946",
+          "who": "App Store reviewer JBJ0507",
+          "date": "2022-06-18",
+          "quote": "when I go down to just my supplements",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/medisafe-medication-management/id573916946",
+          "who": "App Store reviewer GeekyDragonfly",
+          "date": "2022-05-04",
+          "quote": "no more guessing whether I took a medicine or not",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.vegansociety.com/node/129528",
+          "who": "The Vegan Society (blog by Hayley Kinnear)",
+          "date": "2021-02-22",
+          "quote": "We have every intention of taking our daily supplement, but sometimes it slips our minds.",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Water-only trackers: WaterMinder and Waterllama. Medication-first reminders like Medisafe, which feel clinical if you only take vitamins. Many new single-purpose supplement trackers (VitUp, VitaPal, SuppleTrack, Suppvio) have few or no ratings yet. Built-in options are phone alarms, the Health app, and pill organizers.",
+      "risks": "The market is crowded and many free options exist. Getting people to switch from an app they already use will be hard, and people also tune out reminders, so the routine-based cues must actually work better than alarms. Wording must stay non-medical: no dosing advice and no health-outcome claims. Some users may expect prescription-medication features, which would add regulatory and liability risk if added later."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
