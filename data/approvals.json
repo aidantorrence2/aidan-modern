@@ -1356,8 +1356,8 @@
         "data_scope": "Database row responses may contain private email addresses and city/participation/consent/attribution fields. Read only to count and deduplicate. Do not persist, export, email, share or put individual lead records in Library, prompts for other workers, Git repositories or public pages.",
         "limits": "Read-only ongoing measurement for this one project. No customer outreach, data deletion/migration, credential recovery, database changes, new endpoint, deployment, spending or broader access. Stop if access is denied; no alternative access path.",
         "why_needed": "The handoff's zero was historical and cloud private-export credentials were omitted. The hourly targets cannot be honestly measured until separately authorized secure access is approved.",
-        "result": "Ongoing read-only exact-project measurement at 2026-10-19T21:58:16.449Z: overview first; DB/leads limit25 offset0 returned0, next_offset null, no omissions/truncation. Active consenting adult total0, new0 versus target5. Aggregate only, no private row export or changes.",
-        "result_at": "2026-10-19T21:59:03Z"
+        "result": "Ongoing exact-project read-only aggregate check 2026-10-19T22:58:06.954Z: overview first then DB/leads25offset0, rows0, next_offset null, no truncation or omitted rows/columns. Active consenting adult total0, new0 versus target5. No private rows saved/exported or data changes.",
+        "result_at": "2026-10-19T22:59:08Z"
       },
       "created": "2026-10-19T05:23:23Z",
       "expires": "2026-10-22T05:23:23Z",
@@ -1799,12 +1799,41 @@
         "limits": "Two first-contact emails only. No followups/replies, attachments, posts/social/Instagram, participant/member/patient lists, direct client contact, spending, terms, push or deployment. Meico asks an audience owner to share free unbuilt-app interest page; Miriam asks a business team for permission to share a future adult research invitation. The proposed keep-in-touch page is not live and no signup URL is sent for it. Never resend any12 completed campaign emails. Keep Dateable uncertain and prior Dear Nina rejection held; this is not a retry/workaround.",
         "why": "Meico publishes this business contact for working together and runs an adult professional wellbeing community. Miriam explicitly accepts business collaboration questions and has an adult friendship course/podcast. Both current official contacts match; exact-recipient Gmail searches empty and no suppression found.",
         "classification": "Audience-owner permission/distribution requests, not customer leads or verified sharing",
-        "approval_scope": "Read each exact to/subject/body; approval authorizes only these messages once after fresh Gmail/scope/optout checks. Revisions require newID."
+        "approval_scope": "Read each exact to/subject/body; approval authorizes only these messages once after fresh Gmail/scope/optout checks. Revisions require newID.",
+        "result": "Completed exactly2approved first-contact emails on2026-10-19: Meico meico@mindfultechie.com message/thread1a156637734f3433; Miriam miriam@miriamkirmayer.com message/thread1a156639c29d4140. Both Gmail readbacks SENT and exact approved bodies. No resends, followups, attachments, posts, spending, terms or deployment. No partner sharing or customer leads inferred.",
+        "result_at": "2026-10-19T22:59:08Z"
       },
       "created": "2026-10-19T20:59:50Z",
       "expires": "2026-10-22T20:59:50Z",
       "status": "approved",
       "decided": "2026-10-19T22:32:45Z",
+      "note": ""
+    },
+    {
+      "id": "offers:keep-in-touch:2026-10-19:citygirl-research-route",
+      "kind": "email",
+      "source": "codex:19a72895a8f3",
+      "title": "Send one research inquiry to City Girl Network",
+      "summary": "One91-word email to their published research inbox about sharing friend-group planning. No group posts, member contact, followup or cost.",
+      "payload": {
+        "action": "Send one exact first-contact business research inquiry after approval.",
+        "message": {
+          "to": "hello@citygirlnetwork.com",
+          "subject": "Research on sharing the work of seeing friends",
+          "body": "Hi City Girl Network team,\n\nI'm Aidan. Your local friendship communities seem a good fit for a question I'm researching. Your group rules direct research enquiries to this address, so I won't post in the groups.\n\nI'm exploring an app for friends who want to meet regularly but leave one person doing the planning. The idea is to share who organizes each meetup. It isn't built yet.\n\nWould your research team consider a short invitation for adults who usually organize their friend group's plans?\n\nTaking part would be free and nonbinding.\n\nThanks,\nAidan Torrence"
+        },
+        "offer": "keep-in-touch",
+        "recipient_identity": "City Girl Network business research inbox, explicitly published for market-research enquiries. Not a local group admin or individual member.",
+        "source": "https://citygirlnetwork.com/facebook-guidelines",
+        "source_checked_at": "2026-10-19T22:59:34.548Z",
+        "why": "Existing adult-friendship community with a specific business research route. Official groups prohibit market research and offsite chats; do not post there. Gmail all-history exact/domain searches returned no matches.",
+        "limits": "One exact email once. No group/public/social/Instagram posts, direct member contact, member lists, attachments, followups, spending, terms, product building or deployment. No signup URL; keep-in-touch is not live. A positive reply only starts further exact review; no permission to recruit inferred.",
+        "prepared_file": "offer19-citygirl-inquiry-prepared-20261019-1757.json"
+      },
+      "created": "2026-10-19T22:59:34Z",
+      "expires": "2026-10-22T22:59:34Z",
+      "status": "pending",
+      "decided": null,
       "note": ""
     }
   ]
