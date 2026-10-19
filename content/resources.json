@@ -2813,5 +2813,42 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "why-your-slice-keeps-coming-back",
+  "offer": "slice-stop",
+  "title": "Why your slice keeps coming back after you fix it at the range",
+  "description": "Fixed your slice at the range, then it came back on the course? Work on one cause at a time, check it every bucket, and track when it returns.",
+  "intro": "A slice usually comes back because the fix was a feeling you lost, not a change you kept. Working on one cause at a time and checking it often makes a fix stick.",
+  "sections": [
+   {
+    "h": "Find your one main cause",
+    "list": [
+     "A slice comes from the club face being open to the path you swing on. The usual causes are grip, an out-to-in path, or the face at impact.",
+     "Film a few swings from behind and face-on with your phone, or ask a pro, and pick one cause to work on."
+    ]
+   },
+   {
+    "h": "Practise one fix, with checks",
+    "list": [
+     "Hit a small bucket with only that fix in mind.",
+     "After each bucket, hit five balls at normal speed and count how many slice. That number tells you if the fix is holding."
+    ]
+   },
+   {
+    "h": "Why it returns on the course",
+    "list": [
+     "On the course you swing harder and think about the target, so old habits come back.",
+     "Finish each range session with a few shots in your on-course routine, at full speed."
+    ]
+   },
+   {
+    "h": "Track it",
+    "list": [
+     "Note the slices per round, and which club. If the number climbs, go back to your one fix before trying something new.",
+     "A lesson with a qualified teacher is the fastest way to confirm the cause."
+    ]
+   }
+  ]
  }
 ]

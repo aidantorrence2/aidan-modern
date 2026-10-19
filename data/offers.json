@@ -11009,6 +11009,72 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-19",
+    "slug": "slice-stop",
+    "name": "Slice Stop",
+    "need": "I can't stop slicing the ball. I fix it at the range, and then my slice comes back.",
+    "headline": "Film a few swings, get one likely cause of your slice at a time, follow a 15-minute range plan, and log your shots so you see when the slice creeps back.",
+    "buyer": "Amateur golfers whose slice keeps coming back after tips, lessons or a new driver.",
+    "bullets": [
+      "Film a few swings on your phone and get one likely cause to work on at a time (grip, path or face), not ten tips at once.",
+      "A 15-minute range plan with a quick check after each bucket, so you know whether the fix is holding.",
+      "A simple slice log across range sessions and rounds that flags when the slice starts creeping back."
+    ],
+    "price": "$4.99/month",
+    "priceUsd": 5,
+    "priceNote": "Well below the leading AI swing-analysis apps. Use it alongside lessons, not instead of them.",
+    "reasonPrompt": "When does your slice come back: on the course, with the driver, or after a few weeks?",
+    "faq": [
+      {
+        "q": "Does this replace a golf pro?",
+        "a": "No. Slice Stop is an independent practice tool. It works alongside lessons with a qualified teacher."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-19",
+      "summary": "Golfers on several forum threads say they fix their slice and it comes back, after grip changes, new clubs and range sessions. AI swing-analysis apps already sell subscriptions for this.",
+      "wtp": "GolfFix AI Golf Swing Analyzer (App Store): 4.8 from 815 ratings, sold through in-app subscriptions (the doc side read $14.99 a month and $99.99 a year). Greenside AI and Performance Golf also sell paid swing-fix plans.",
+      "signals": [
+        {
+          "url": "https://thesandtrap.com/forums/topic/75665-help-with-slice/",
+          "who": "VikingHammer (TheSandTrap)",
+          "date": "2014-07-07",
+          "quote": "I can't stop slicing the ball and it doesn't seem to me that I'm doing any of the obvious things wrong",
+          "seen": "opened"
+        },
+        {
+          "url": "https://thesandtrap.com/forums/topic/56811-question-about-my-slice/",
+          "who": "Grooch6 (TheSandTrap)",
+          "date": "2012-04-07",
+          "quote": "I went to the range once again today, and my slice came back.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://thesandtrap.com/forums/topic/52697-slicing-driver/",
+          "who": "oO J4M3S Oo (TheSandTrap)",
+          "date": "2011-08-22",
+          "quote": "I've tried changing my grip, different ball positions, different stances and different club paths but I still seem to slice 100% of my drives.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/-/id1586120680",
+          "who": "GolfFix App Store listing",
+          "date": "2026-10-19",
+          "quote": "4.8 · 815 Ratings",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "GolfFix, Greenside AI, Performance Golf AI Swing Fix, V1 Golf, lessons with a golf pro.",
+      "risks": "The forum threads are from 2011 to 2014, and the swing-app rating counts are modest."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
