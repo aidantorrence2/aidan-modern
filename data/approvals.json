@@ -1356,8 +1356,8 @@
         "data_scope": "Database row responses may contain private email addresses and city/participation/consent/attribution fields. Read only to count and deduplicate. Do not persist, export, email, share or put individual lead records in Library, prompts for other workers, Git repositories or public pages.",
         "limits": "Read-only ongoing measurement for this one project. No customer outreach, data deletion/migration, credential recovery, database changes, new endpoint, deployment, spending or broader access. Stop if access is denied; no alternative access path.",
         "why_needed": "The handoff's zero was historical and cloud private-export credentials were omitted. The hourly targets cannot be honestly measured until separately authorized secure access is approved.",
-        "result": "Ongoing read-only exact-project aggregate recheck 2026-10-19T23:03:20.250Z after2confirmed approved sends: prior overview DB/leads, rows25offset0 returned0, no omissions/truncation/next page. New consenting adult leads0, current total0, target5. No customer rows saved/exported; no changes.",
-        "result_at": "2026-10-19T23:03:20Z"
+        "result": "Fresh ongoing read-only complete check2026-10-19T23:58Z, exact project DB/leads after overview: 0rows, limit25offset0, next_offsetnull, no omissions or truncation. Current total0/new0 vs5target. Aggregate only; no private rows saved and no database changes.",
+        "result_at": "2026-10-19T23:58:16Z"
       },
       "created": "2026-10-19T05:23:23Z",
       "expires": "2026-10-22T05:23:23Z",
@@ -1836,6 +1836,51 @@
       "expires": "2026-10-22T22:59:34Z",
       "status": "approved",
       "decided": "2026-10-19T23:01:02Z",
+      "note": ""
+    },
+    {
+      "id": "offers:small-wave5:2026-10-19:dating-and-friendships",
+      "kind": "email",
+      "source": "codex:real-change-pilots",
+      "title": "Send two short dating and friendship inquiries",
+      "summary": "Ask Original Dating and The Joy List whether they would share the free, nonbinding interest pages. Two exact first emails; no followups, fees or posts.",
+      "payload": {
+        "action": "Send exactly two first-contact business emails, once each, from Aidan's connected Gmail after current approval, history and public-page checks.",
+        "project_id": "appgprj_6ad56c0398f4819187d2d7870ae70ac4",
+        "messages": [
+          {
+            "to": "info@originaldating.com",
+            "subject": "A dating idea for people tired of endless swiping",
+            "body": "Hi Andrew,\n\nI'm Aidan. Your partnership page invites ideas for people interested in dating, so I'm getting in touch.\n\nI'm exploring a service that introduces a few compatible people and helps them arrange a real date, instead of endless swiping. It isn't built yet, and there isn't an existing pool of matches.\n\nWould you consider sharing this signup page with adults who might help shape it?\n\nSignup is free and nonbinding.\nhttps://real-change-pilots-aidan-2026.aidantorrence.chatgpt.site/better-dates?utm_source=original_dating&utm_medium=partner_email&utm_campaign=wave5\n\nThanks,\nAidan Torrence",
+            "offer": "better-dates",
+            "organization": "Original Dating / The Business Refinery Ltd",
+            "source": "https://www.originaldating.com/partners/",
+            "recipient_identity": "Andrew via the official marketing-partnership inbox; no affiliation assumed."
+          },
+          {
+            "to": "hey@joylist.nyc",
+            "subject": "A small group where people see the same faces again",
+            "body": "Hi Jillian,\n\nI'm Aidan. The Joy List helps people find events where they can make friends. Your contact page welcomes collaboration ideas.\n\nI'm exploring a small local group where the same people meet each week for six weeks, giving friendships time to grow beyond a single event. It isn't running yet; the city and schedule would depend on interest.\n\nWould you consider sharing this signup page with adults who might be interested?\n\nSignup is free and nonbinding.\nhttps://real-change-pilots-aidan-2026.aidantorrence.chatgpt.site/real-friendships?utm_source=joy_list&utm_medium=partner_email&utm_campaign=wave5\n\nThanks,\nAidan Torrence",
+            "offer": "real-friendships",
+            "organization": "The Joy List / Jillian Richardson",
+            "source": "https://www.thatjillian.com/contact",
+            "fit_source": "https://joylist.nyc/",
+            "recipient_identity": "Jillian Richardson's directly published business/collaboration inbox."
+          }
+        ],
+        "limits": "Two emails only, no attachments, followups, replies, public/community/social/Instagram posts, recipient list requests, sponsorship purchases, fees, terms, spending or deployment. Positive replies do not authorize subsequent recruitment. No available matches, customer proof or product features claimed. Denied and held prior actions untouched.",
+        "reason": "Previous approved wave4 is completed, no pending outreach batch remains. Use two existing qualified reserves with explicit official collaboration routes to seek distribution for the live dating and recurring-friendship concepts, without expanding the queue.",
+        "preflight": {
+          "official_routes_checked_on": "2026-10-19",
+          "gmail_exact_and_domain_all_history": "Both empty, no next page.",
+          "previous_contacts": "Dedupe against 14 completed sends and individual Dateable/Dear Nina/City Girl holds; no collisions.",
+          "public_pages": "Exact attributed URLs returned HTTP200 with truthful planned-pilot/free-nonbinding/adult consent content. No production signup test or record."
+        }
+      },
+      "created": "2026-10-19T23:58:16Z",
+      "expires": "2026-10-22T23:58:16Z",
+      "status": "pending",
+      "decided": null,
       "note": ""
     }
   ]
