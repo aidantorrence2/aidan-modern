@@ -1205,7 +1205,9 @@
           "No additional permission scopes",
           "No account creation or terms acceptance",
           "No charges, transfers or publication"
-        ]
+        ],
+        "result": "Completed the approved basic Google identity consent. Stripe found the existing email account but requires its password to link Google, so stopped before linking or changing authentication. No dashboard access, charges, money movement, or publication.",
+        "result_at": "2026-10-19T05:14:21Z"
       },
       "created": "2026-10-19T05:12:15Z",
       "expires": "2026-10-22T05:12:15Z",
