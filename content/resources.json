@@ -2002,5 +2002,52 @@
         ]
       }
     ]
+  },
+  {
+    "slug": "how-to-learn-to-swim-as-an-adult",
+    "offer": "shallow-end",
+    "title": "How to learn to swim as an adult when you're nervous",
+    "description": "Many adults never learned to swim and feel embarrassed about it. A gentle, step-by-step way to start, and how to find the right lessons.",
+    "intro": "Lots of adults cannot swim, and many feel embarrassed or nervous about it. It is never too late. Adults learn well when they go slowly, start in shallow water, and get support from a qualified instructor.",
+    "sections": [
+      {
+        "h": "Always start safely",
+        "list": [
+          "Practise only in a pool with a lifeguard on duty, or with a qualified instructor.",
+          "Stay in water where you can stand comfortably.",
+          "Never practise alone in open water such as lakes, rivers or the sea."
+        ]
+      },
+      {
+        "h": "Get comfortable before you swim",
+        "list": [
+          "Stand in the shallow end and walk around until it feels normal.",
+          "Put your face in the water and blow bubbles out through your nose and mouth.",
+          "Hold the side and let your legs float up behind you."
+        ]
+      },
+      {
+        "h": "Small steps, one at a time",
+        "list": [
+          "Push off from the wall into a short glide, then stand up.",
+          "Practise floating on your front and your back, with a float or noodle if it helps.",
+          "Add a gentle kick, then arms, only when the step before feels easy."
+        ]
+      },
+      {
+        "h": "Find the right lessons",
+        "list": [
+          "Ask your local pool about adult beginner classes or one-to-one lessons; many have them.",
+          "One-to-one lessons can feel much less exposed if you are nervous.",
+          "Tell the instructor how you feel about the water. Good instructors go at your pace."
+        ]
+      },
+      {
+        "h": "If fear is the main barrier",
+        "p": [
+          "Feeling scared is common, especially after a bad experience. Go slowly, celebrate small steps, and consider a teacher who specialises in nervous adults. If you have a heart, breathing or other health condition, check with a doctor before starting."
+        ]
+      }
+    ]
   }
 ]

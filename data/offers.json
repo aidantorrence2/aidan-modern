@@ -9713,6 +9713,91 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-19",
+    "slug": "shallow-end",
+    "name": "Shallow End",
+    "need": "I want to learn to swim as an adult, but I'm embarrassed to start.",
+    "headline": "Small, private steps for the shallow end, from standing in the water to your first full length, at your own pace.",
+    "buyer": "Adults 18+ who can't swim, or can't swim well, and feel embarrassed or nervous about it. Often parents who want to be able to swim with their kids or get them out of the water.",
+    "bullets": [
+      "A ladder of 40 tiny pool goals you can do by yourself (stand, breathe out underwater, push-off glide, float, kick), each one ticked off privately so nobody watches you learn",
+      "A 'nerves check' before and after every session that tracks how comfortable you feel over time, plus a plan for the next visit that never moves on faster than you want",
+      "Short how-to clips you can watch on land before you go, a checklist of questions to ask your local pool about adult or one-to-one lessons, and a reminder to swim only where a lifeguard or instructor is present"
+    ],
+    "price": "$8/month or $49/year",
+    "priceUsd": 8,
+    "priceNote": "Below the paid plans of existing swim apps.",
+    "reasonPrompt": "What is the main thing that has stopped you learning to swim so far?",
+    "faq": [
+      {
+        "q": "Does this replace swimming lessons?",
+        "a": "No. It's a practice and habit tool to use alongside lessons or supervised pool time. Always practise in a lifeguarded pool or with a qualified instructor, never alone in open water."
+      },
+      {
+        "q": "I'm really scared of the water. Will this fix that?",
+        "a": "It makes no promises about fear. It breaks pool time into very small steps that you choose, and it tracks how comfortable you feel. If water anxiety feels overwhelming, talk to a doctor or a qualified professional."
+      },
+      {
+        "q": "Is it for kids?",
+        "a": "No. It's built for adults 18+. Check with your doctor before starting if you have a heart, breathing or other health condition."
+      },
+      {
+        "q": "Do I need to be able to float already?",
+        "a": "No. Step one is just standing in the shallow end and getting used to the water."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-19",
+      "summary": "Adults say they are embarrassed that they can't swim, don't want to learn with people watching, and want to learn so they can help their own children. Mumsnet replies keep pointing to the same thing: start small in the shallow end and learn privately or one-to-one. A UK cycling forum has the same story. Neither thread mentions a structured, private practice tool built for adult beginners.",
+      "wtp": "MySwimPro: #1 Swim Workout App (apps.apple.com/us/app/myswimpro-1-swim-workout-app/id994386450), opened 2026-10-19: 4.5 stars from 5.9K Ratings, with in-app purchases including SWIM $19.99, $29.99, $39.99, $99.00 and $179.99, and MySwimPro Coach $29.99 and $179.99. This shows people already pay real money for swim apps, though that app targets people who can already swim.",
+      "signals": [
+        {
+          "url": "https://www.mumsnet.com/talk/am_i_being_unreasonable/4110723-To-try-learning-to-swim-as-an-adult-despite-fear-of-water",
+          "who": "Heavymetaldetector (Mumsnet user)",
+          "date": "2020-12-19",
+          "quote": "I would like to learn in case I need to jump in to save my own children",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/am_i_being_unreasonable/4110723-To-try-learning-to-swim-as-an-adult-despite-fear-of-water",
+          "who": "CaptainMyCaptain (Mumsnet user)",
+          "date": "2020-12-19",
+          "quote": "I went to swimming lessons in my 40s and did get to swim a length.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/am_i_being_unreasonable/4110723-To-try-learning-to-swim-as-an-adult-despite-fear-of-water",
+          "who": "Loughrigg77 (Mumsnet user)",
+          "date": "2020-12-19",
+          "quote": "I remember the terror I felt going to the first lesson but I ended up really enjoying it.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://cyclechat.net/threads/learning-to-swim-as-an-adult.287051/",
+          "who": "GlamorganGuy (CycleChat forum user)",
+          "date": "2022-08-12",
+          "quote": "I'm embarrassed about my inability to swim but I know there are classes for adult learners.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/myswimpro-1-swim-workout-app/id994386450",
+          "who": "MySwimPro (swim app business)",
+          "date": "2026-10-19",
+          "quote": "5.9K Ratings",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "MySwimPro (workouts for people who already swim; 5.9K ratings and IAPs up to $179.99), Udemy-style video courses for adults afraid of water, leisure-centre adult group and one-to-one lessons, and occasional brand-sponsored free adult lesson schemes in the UK. None of these is a private, step-by-step shallow-end practice tracker for adults who are nervous beginners.",
+      "risks": "Water safety and liability: the app must never suggest swimming unsupervised and must point users to lifeguarded pools and qualified instructors. The forum signals are older (2020 and 2022) and Reddit couldn't be checked. The proven willingness to pay comes from an app for people who can already swim, not from beginner tools. Some users may leave once they've had a few lessons. No medical or anxiety-treatment claims can be made."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
