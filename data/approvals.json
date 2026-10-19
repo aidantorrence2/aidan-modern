@@ -1560,6 +1560,34 @@
       "status": "approved",
       "decided": "2026-10-19T13:09:17Z",
       "note": ""
+    },
+    {
+      "id": "software100:stripe-signin-handoff-2026-10-19",
+      "kind": "other",
+      "source": "codex:aidantorrence",
+      "title": "Complete Stripe sign-in so software payments can be checked",
+      "summary": "Stripe still asks for its password after approved Google sign-in. Complete sign-in yourself in Chrome, then approve for a read-only account check. No credential changes, checkout publication or charges by the agent.",
+      "preview_url": "https://dashboard.stripe.com/login",
+      "payload": {
+        "action": "Aidan personally completes normal Stripe sign-in in the open Chrome tab. Once signed in, agent inspects seller readiness and existing products/payment links read-only.",
+        "url": "https://dashboard.stripe.com/login",
+        "observed_blocker": "Approved Google sign-in still ends at Confirm your Stripe credentials to link your Google account; no seller dashboard is authenticated.",
+        "user_only_step": "Enter existing Stripe credentials yourself. If any recovery or security changes are necessary, complete them yourself. Approve only once normally signed in.",
+        "after_approval": "Agent verifies authenticated dashboard, checks account readiness and existing products/payment links, then records findings.",
+        "limits": [
+          "Agent does not enter new credentials or follow reset links",
+          "No credential changes or weakened 2FA",
+          "No new financial account or terms acceptance",
+          "No checkout, product or price creation",
+          "No charge, transfer or spending"
+        ],
+        "preview_file": "/Users/aidantorrence/software-revenue-goal/artifacts/stripe-signin-handoff.jpg"
+      },
+      "created": "2026-10-19T17:04:08Z",
+      "expires": "2026-10-22T17:04:08Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
     }
   ]
 }
