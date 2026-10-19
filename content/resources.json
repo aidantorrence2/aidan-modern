@@ -3226,5 +3226,48 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "why-your-vegetables-keep-failing",
+  "offer": "first-harvest",
+  "title": "Why your vegetables keep failing (and what to change next season)",
+  "description": "A handful of measly veg every year? Check sun, soil, water and timing, start with easy crops, and keep notes so you know what to change.",
+  "intro": "When a vegetable plot keeps failing, the cause is usually one of a few things: too little sun, poor soil, uneven watering, sowing at the wrong time, or slugs. Finding which one matters more than trying harder.",
+  "sections": [
+   {
+    "h": "Check the sun",
+    "list": [
+     "Most vegetables need at least six hours of direct sun a day. Watch your plot through one day and note when it is in shade.",
+     "In a shady spot, stick to leafy crops such as lettuce, chard and herbs."
+    ]
+   },
+   {
+    "h": "Feed the soil",
+    "list": [
+     "Dig in compost or well-rotted manure before planting, or use raised beds or containers filled with good compost.",
+     "Heavy, cold or compacted soil is a common reason seeds fail to come up."
+    ]
+   },
+   {
+    "h": "Water evenly",
+    "list": [
+     "Water deeply and regularly rather than a little every day, and more often in pots and hot spells."
+    ]
+   },
+   {
+    "h": "Sow at the right time",
+    "list": [
+     "Seed packets list sowing months for your region. Sowing too early in cold soil is a common reason for failure.",
+     "Carrots and other direct-sown crops need fine, stone-free soil and must not dry out while they germinate."
+    ]
+   },
+   {
+    "h": "Start easy and keep notes",
+    "list": [
+     "Start with forgiving crops: courgettes, runner or French beans, salad leaves, potatoes and radishes.",
+     "Write down what you sowed, when, and what happened. Next year you will know what to change."
+    ]
+   }
+  ]
  }
 ]

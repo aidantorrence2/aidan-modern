@@ -11868,6 +11868,79 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-19",
+    "slug": "first-harvest",
+    "name": "First Harvest",
+    "need": "Every year I get a handful of measly veggies and more for the compost bin, and I have no idea why things won't grow for me.",
+    "headline": "A vegetable-growing coach: crops that suit your space and sun, week-by-week jobs, and when something fails, a photo and a note for the likely cause and one change to try.",
+    "buyer": "Home gardeners whose vegetable plots keep failing, year after year.",
+    "bullets": [
+      "Picks crops that suit your space, sun and season, so you start with ones likely to work.",
+      "Week-by-week jobs: what to sow, plant, feed and pick, with nothing to work out yourself.",
+      "When something fails, add a photo and a note and get the likely cause and one change to try, plus a season-by-season diary."
+    ],
+    "price": "$3.99/month",
+    "priceUsd": 4,
+    "priceNote": "Below the leading garden-planner apps ($4.99 a month or $46.99 a year).",
+    "reasonPrompt": "What did you try to grow last season, and what went wrong?",
+    "faq": [
+      {
+        "q": "Do I need a big garden?",
+        "a": "No. It works for raised beds, small plots and containers on a balcony. First Harvest is an independent app."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-19",
+      "summary": "Home growers on a self-sufficiency forum and Mumsnet say their vegetables keep failing and they don't know why, and garden-planner apps already sell subscriptions.",
+      "wtp": "Seed to Spoon - Garden Planner (App Store): 4.8 from 9.3K ratings, Premium $4.99 a month, $24.99 for six months or $46.99 a year.",
+      "signals": [
+        {
+          "url": "https://www.sufficientself.com/threads/anyone-else-have-a-black-thumb.13510/",
+          "who": "raro (Sufficient Self forum)",
+          "date": "2013-07-28",
+          "quote": "And every year I get a handful of measley veggies and more fodder for the compost bin.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.sufficientself.com/threads/anyone-else-have-a-black-thumb.13510/",
+          "who": "mrscoyote (Sufficient Self forum)",
+          "date": "2013-07-28",
+          "quote": "I am right there with ya, I have no idea why things won't grow for me.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/gardening/5567711-advice-for-a-newbie-veg-grower",
+          "who": "wannabeCali (Mumsnet)",
+          "date": "2026-08-17",
+          "quote": "Ive tried planting carrots many times but it doesnt seem to work",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/gardening/5567711-advice-for-a-newbie-veg-grower",
+          "who": "lcakethereforeIam (Mumsnet)",
+          "date": "2026-08-24",
+          "quote": "I'm rubbish at growing veg.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1312538762",
+          "who": "Seed to Spoon App Store listing",
+          "date": "2026-10-19",
+          "quote": "9.3K Ratings ... Premium (Yearly) $46.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Seed to Spoon, Planter, GrowVeg, gardening books and forums.",
+      "risks": "The growfruitandveg.co.uk thread returns 403 to our fetch, so it is not used. Advice has to fit local climate."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
