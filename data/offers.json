@@ -12525,6 +12525,79 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-19",
+    "slug": "first-row",
+    "name": "First Row",
+    "need": "I can chain stitch for miles, but I can't get my brain and hands to coordinate on the next row, and I keep wanting to give up on crochet.",
+    "headline": "Get past the chain: a short daily crochet plan for the parts beginners stall on, from holding the yarn and tension to the turning chain and counting stitches.",
+    "buyer": "Adult beginners who can make a foundation chain from a video or book, then get stuck on the first rows of real stitches.",
+    "bullets": [
+      "Short daily lessons in order: yarn hold (left, right or knitting-style), a loose foundation chain, the first row, the turning chain, then simple squares.",
+      "A guide to common beginner faults (lost stitches, a tight chain, wonky edges) showing what each looks like and how to fix it.",
+      "One set of stitch terms (UK or US, your choice) throughout, so instructions never get mixed up."
+    ],
+    "price": "$19 one-time",
+    "priceUsd": 19,
+    "priceNote": "Pay once, no subscription. Crochet-learning apps on the App Store charge $39.99 a year.",
+    "reasonPrompt": "Where do you get stuck when you crochet: holding the yarn, the first row after the chain, tension, or keeping your stitch count?",
+    "faq": [
+      {
+        "q": "I'm left-handed, or I already knit. Will it work for me?",
+        "a": "Yes. The yarn-hold lesson covers right-hand, left-hand and knitting-style holds. First Row is an independent app, not linked to any yarn brand."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-19",
+      "summary": "Beginners on Mumsnet and the Ribblr forum say they can make a chain but can't get the next row to work, struggle to hold the yarn, and find it frustrating. Paid crochet-learning apps already sell subscriptions.",
+      "wtp": "CraftBook: Crochet Made Easy (App Store): 4.7 from 943 ratings, Pro subscriptions $19.99 to $59.99, yearly Pro $39.99.",
+      "signals": [
+        {
+          "url": "https://www.mumsnet.com/talk/arts_and_crafts/1971482-Can-i-teach-myself-to-crochet",
+          "who": "MrsPnut (Mumsnet)",
+          "date": "2014-01-19",
+          "quote": "I can chain stitch for miles but my single crochet looks like the cat's mangled it.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/arts_and_crafts/3058544-crochet-for-a-beginner?page=1",
+          "who": "iamdivergent (Mumsnet)",
+          "date": "2017-10-14",
+          "quote": "I cannot get my brain and hands to coordinate when making the next row though argh",
+          "seen": "opened"
+        },
+        {
+          "url": "https://meet.ribblr.com/t/beginning-to-learn-crochet/63148",
+          "who": "angiea (Ribblr forum)",
+          "date": "2022-03-24",
+          "quote": "I'm struggling with certain things though, like how to hold the yarn",
+          "seen": "opened"
+        },
+        {
+          "url": "https://meet.ribblr.com/t/beginning-to-learn-crochet/63148",
+          "who": "amit2677 (Ribblr forum)",
+          "date": "2022-03-24",
+          "quote": "I struggled so much at the beginning.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/6759407166",
+          "who": "CraftBook App Store listing",
+          "date": "2026-10-19",
+          "quote": "943 Ratings ... Yearly pro subscription $39.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "CraftBook, Loopy and other crochet apps, free YouTube tutorials, crochet books and classes.",
+      "risks": "Free video tutorials are everywhere. It sits close to Knit Unstuck, so it has to stay crochet-specific."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

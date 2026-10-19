@@ -3561,5 +3561,46 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "crochet-stuck-after-the-chain",
+  "offer": "first-row",
+  "title": "Learning to crochet and stuck after the chain? How to get through the first rows",
+  "description": "Can make a chain but the first row falls apart? Loosen the chain, find a yarn hold that works for you, use a turning chain, and count every row.",
+  "intro": "Almost every crochet beginner can make a chain, then struggles with the first real row. The usual culprits are a tight chain, an awkward yarn hold and lost stitches at the ends.",
+  "sections": [
+   {
+    "h": "Loosen the chain",
+    "list": [
+     "A tight foundation chain makes the first row a fight. Make the chain with a hook one size bigger, or deliberately loosely."
+    ]
+   },
+   {
+    "h": "Find a yarn hold that works",
+    "list": [
+     "There is no single right way. Try wrapping the yarn round your little finger and over your index finger, or holding it like a knitter.",
+     "Tension comes with practice; a hold that feels comfortable matters more than one that looks correct."
+    ]
+   },
+   {
+    "h": "Use a turning chain and count",
+    "list": [
+     "At the end of each row, chain one (for double crochet in UK terms, or single crochet in US terms) before turning.",
+     "Count your stitches every row and put a stitch marker or safety pin in the first and last stitch, so edges stay straight."
+    ]
+   },
+   {
+    "h": "Stick to one set of terms",
+    "list": [
+     "UK and US patterns use the same names for different stitches. Pick one and check every pattern says which it uses."
+    ]
+   },
+   {
+    "h": "Start with simple squares",
+    "p": [
+     "Practise rows on a small square with smooth, light-coloured DK yarn, so you can see each stitch."
+    ]
+   }
+  ]
  }
 ]
