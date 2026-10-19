@@ -10501,6 +10501,120 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-19",
+    "slug": "fewer-ums",
+    "name": "Fewer Ums",
+    "need": "I say \"like\" and \"um\" too much when I talk.",
+    "headline": "One-minute talks on your own prompts with a filler-word count, a pause cue, swap drills for your top fillers, and a weekly count against week one.",
+    "buyer": "Adults who fill pauses with 'like' and 'um' at work, in interviews or on dates.",
+    "bullets": [
+      "Talk for one minute on a prompt you pick, and see how many fillers you used.",
+      "A gentle pause cue that teaches you to pause instead of saying 'um'.",
+      "Short drills for your top fillers, and a weekly count compared with week one."
+    ],
+    "price": "$4.99/month",
+    "priceUsd": 5,
+    "priceNote": "Well below the leading speaking-coach apps.",
+    "reasonPrompt": "Where do the ums and likes bother you most: work, interviews, or everyday talk?",
+    "faq": [
+      {
+        "q": "Is this connected to another speaking app?",
+        "a": "No. Fewer Ums is an independent app."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-19",
+      "summary": "People on several forums say they use 'like' and 'um' too much and are trying to cut back, and speech-coaching apps sell paid plans.",
+      "wtp": "Orai - Improve Public Speaking (App Store): 4.6 from 3.7K ratings, $12.99 a month, $49.99 a year or $99.99 lifetime.",
+      "signals": [
+        {
+          "url": "https://forums.anandtech.com/threads/like-really.310254/",
+          "who": "GodlessAstronomer (AnandTech forums)",
+          "date": "2009-07-22",
+          "quote": "I'm guilty of this. I'm trying to cut back on it.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/-/id1203178170",
+          "who": "Orai (App Store listing)",
+          "date": "2026-10-19",
+          "quote": "Public Speaking App (Monthly) $12.99; Public Speaking App (Yearly) $49.99; 3.7K Ratings",
+          "seen": "opened"
+        },
+        {
+          "url": "https://ask.metafilter.com/285023",
+          "who": "chesty_a_arthur (Ask MetaFilter)",
+          "date": "not shown",
+          "quote": "I say it more when I'm anxious and my speech gets a little pressured.",
+          "seen": "snippet"
+        }
+      ]
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-19",
+    "slug": "name-first",
+    "name": "Name First",
+    "need": "I stammer, and I always struggle saying my own name, especially on the phone.",
+    "headline": "Five-minute practice of your own everyday lines (your name, phone openers, your usual order), rehearsed calls with a pretend caller, and a quick note after each real call.",
+    "buyer": "Adults (18+) who stammer and dread saying their name, phone calls and ordering.",
+    "bullets": [
+      "Practise the lines you actually use: your name, how you open a call, your usual coffee order.",
+      "Rehearse calls with a pretend caller before the real one.",
+      "Jot a quick note after each real call to see what's getting easier."
+    ],
+    "price": "$9.99/month",
+    "priceUsd": 10,
+    "priceNote": "Well below stammering apps' premium tiers and private therapy sessions.",
+    "reasonPrompt": "Which everyday situations are hardest for you: your name, phone calls, ordering, or something else?",
+    "faq": [
+      {
+        "q": "Is this speech therapy?",
+        "a": "No. Name First is an independent practice tool for adults 18+, used alongside speech therapy if you have it. It makes no fluency promises. A qualified speech and language therapist can help."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-19",
+      "summary": "People who stammer describe dreading phone calls and struggling to say their own name, and stammering apps sell paid subscriptions.",
+      "wtp": "Stamurai (App Store): 4.7 from 813 ratings, Gold $19.99 a week, $29.99 a month or $99.99 a year; a reviewer calls it 'worth the subscription'.",
+      "signals": [
+        {
+          "url": "https://stamma.org/your-voice/why-every-phone-call-feels-challenge",
+          "who": "Martin Radvan (STAMMA)",
+          "date": "2026-07-16",
+          "quote": "I used to dread calling restaurants, though happily most reservations are now online.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://stamma.org/your-voice/they-put-phone-down-i-was-able-speak",
+          "who": "Sam Bagshaw (STAMMA)",
+          "date": "2025-11-26",
+          "quote": "I always struggle when saying my name and this makes me panic a bit because I can't say it quick enough.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/app/id1488071175",
+          "who": "KyleMcCoy1230 (App Store reviewer, Stamurai)",
+          "date": "Jun 18",
+          "quote": "Really good app and worth the subscription",
+          "seen": "opened"
+        }
+      ]
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

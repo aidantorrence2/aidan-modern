@@ -2535,5 +2535,90 @@
         ]
       }
     ]
+  },
+  {
+    "slug": "how-to-stop-saying-um-and-like",
+    "offer": "fewer-ums",
+    "title": "How to stop saying um and like when you talk",
+    "description": "Filler words creep in when you are thinking or nervous. A practical way to cut them: notice them, replace them with a pause, and practise in short daily bursts.",
+    "intro": "Everyone uses filler words like \"um\", \"uh\" and \"like\". They fill silence while your brain finds the next thought. You can cut them a lot by learning to pause instead, and it takes only a few minutes of practice a day.",
+    "sections": [
+      {
+        "h": "Notice your fillers",
+        "list": [
+          "Record yourself talking for one minute about anything, then count the fillers.",
+          "Most people have one or two favourites. Those are the ones to work on."
+        ]
+      },
+      {
+        "h": "Replace them with a pause",
+        "list": [
+          "When you feel a filler coming, close your mouth and pause instead.",
+          "A short pause sounds thoughtful to listeners, not awkward."
+        ]
+      },
+      {
+        "h": "Practise in short bursts",
+        "list": [
+          "Once a day, talk for one minute on a simple prompt: your weekend, your job, a film.",
+          "Count again and compare with your first recording."
+        ]
+      },
+      {
+        "h": "Slow down and plan the start",
+        "list": [
+          "Fillers increase when you rush. Speaking a little slower helps.",
+          "Before an important talk or call, plan your first sentence so you start cleanly."
+        ]
+      },
+      {
+        "h": "Be patient",
+        "p": [
+          "Fillers often rise under pressure. Expect a few to remain; the goal is fewer, not zero. Regular practice for a few weeks usually makes a clear difference."
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "phone-calls-and-saying-your-name-when-you-stammer",
+    "offer": "name-first",
+    "title": "How to practise saying your name and making phone calls when you stammer",
+    "description": "Phone calls and saying your own name can be the hardest moments for people who stammer. Gentle ways to prepare, practise and make calls feel more manageable.",
+    "intro": "For many people who stammer, the hardest moments are short and everyday: saying your name, opening a phone call, ordering food. Preparing for those specific moments can make them feel more manageable. This guide is not a fluency promise; it is about feeling more in control.",
+    "sections": [
+      {
+        "h": "Practise your own lines",
+        "list": [
+          "Write down the lines you say most: your name, how you start a call, your usual order.",
+          "Practise them out loud when you are relaxed, using whatever techniques work for you."
+        ]
+      },
+      {
+        "h": "Rehearse calls first",
+        "list": [
+          "Practise a call with a friend, or say it aloud to yourself before you dial.",
+          "Have a short note in front of you with what you need to say."
+        ]
+      },
+      {
+        "h": "Make calls on your terms",
+        "list": [
+          "Choose a quiet place and a time when you feel less rushed.",
+          "It is fine to tell the other person you stammer and need a moment. Many people find this takes the pressure off."
+        ]
+      },
+      {
+        "h": "Notice progress",
+        "p": [
+          "After each call, note one thing that went well. Over time, you may notice which calls are getting easier."
+        ]
+      },
+      {
+        "h": "Get support",
+        "p": [
+          "A qualified speech and language therapist can help with techniques that suit you. Stammering organisations such as STAMMA in the UK offer support, information and community."
+        ]
+      }
+    ]
   }
 ]
