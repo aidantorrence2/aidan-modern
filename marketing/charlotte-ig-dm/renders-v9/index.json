@@ -1,0 +1,52 @@
+{
+ "g01": [
+  "01-viewfinder",
+  "02-viewfinder",
+  "03-shutter"
+ ],
+ "g02": [
+  "01-lock",
+  "02-lock",
+  "03-lock"
+ ],
+ "g03": [
+  "01-story",
+  "02-story",
+  "03-story"
+ ],
+ "g04": [
+  "01-text",
+  "02-reveal",
+  "03-cta"
+ ],
+ "g05": [
+  "01-sticker",
+  "02-sheet",
+  "03-sticker"
+ ],
+ "g06": [
+  "01-receipt",
+  "02-receipt",
+  "03-receipt"
+ ],
+ "g07": [
+  "01-proof",
+  "02-pick",
+  "03-cta"
+ ],
+ "g08": [
+  "01-lineup",
+  "02-lineup",
+  "03-lineup"
+ ],
+ "g09": [
+  "01-double",
+  "02-double",
+  "03-double"
+ ],
+ "g10": [
+  "01-glitch",
+  "02-glitch",
+  "03-glitch"
+ ]
+}

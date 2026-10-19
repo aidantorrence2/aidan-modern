@@ -14,7 +14,8 @@ R4 = sys.argv[6] if len(sys.argv) > 6 else None
 R5 = sys.argv[7] if len(sys.argv) > 7 else None   # render-v5.mjs: 10 new concepts
 R6 = sys.argv[8] if len(sys.argv) > 8 else None   # render-v6.mjs: CPC set — ten hooks
 R7 = sys.argv[9] if len(sys.argv) > 9 else None   # render-v7.mjs: design set
-R8 = sys.argv[10] if len(sys.argv) > 10 else None   # render-v8.mjs: art direction set   # render-v4.mjs: 10 carousels from new_top_tier_candidates   # render-v3.mjs output: photo-heavy still ads (top picks)
+R8 = sys.argv[10] if len(sys.argv) > 10 else None   # render-v8.mjs: art direction set
+R9 = sys.argv[11] if len(sys.argv) > 11 else None   # render-v9.mjs: format-breaking set   # render-v4.mjs: 10 carousels from new_top_tier_candidates   # render-v3.mjs output: photo-heavy still ads (top picks)
 PICKS = ['c00', 'n04', 'n11']   # Aidan liked these three (20 Oct)
 
 def thumb(path, w=300):
@@ -185,6 +186,25 @@ def card8(cid):
     return f'''<article class="card control"><header><span class="num">{cid.upper()}</span><h3>{html.escape(title)}</h3><span class="lever">{html.escape(lever)}</span></header>
   <p class="why">{html.escape(why)}</p><div class="strip">{frames}</div><p class="needs ok">ready · {len(names)} cards · same proven body</p></article>'''
 car8 = ''.join(card8(c) for c in META8) if R8 else ''
+META9 = {
+ 'g01': ('Viewfinder', 'looks like: the photographer\'s camera', 'The ad is a camera\'s live view: AF square on the face, eye-AF boxes on the pupils (from the face landmarks), exposure readout, the city as the frame label, a shutter ring. Cards: take the shot → about an hour → shutter pressed.'),
+ 'g02': ('Lock screen', 'looks like: your own phone', 'The portrait is the wallpaper; "Charlotte" is set in the clock\'s slot; Messages notifications from Aidan carry the offer. It looks like something already on your phone.'),
+ 'g03': ('Instagram story', 'looks like: a friend\'s story', 'Highlight-pill text, a location sticker, a poll ("Want photos like these? yes / yes 👀"), a question sticker with "yes" typed in, a Send-message sticker. Native to where it runs.'),
+ 'g04': ('Text portrait', 'looks like: nothing else on the feed', 'The portrait is built entirely out of the word CHARLOTTE (letter size and colour follow the photo). Swipe → the real photo → the call.'),
+ 'g05': ('Die-cut stickers', 'looks like: a sticker pack', 'Cut-out stickers with a white edge on flat colour, marker type with a sticker stroke; card 2 is a sticker sheet of six.'),
+ 'g06': ('Receipt', 'looks like: a receipt', 'A thermal receipt lying on the portrait: about an hour, I direct every frame, edited photos — total $0.00. Cards 2–3 are receipts with a thermal-printed portrait.'),
+ 'g07': ('Proof sheet', 'looks like: a photographer\'s contact sheet', 'A contact sheet with grease-pencil marks and one empty frame circled in red: "you?". Next card: "this one." Then the call in red handwriting.'),
+ 'g08': ('Eye lineup', 'looks like: a line-up', 'Three pairs of eyes stacked at one scale, the city underneath. Cards 2–3: more eyes, then "INTERESTED? LET\'S CHAT."'),
+ 'g09': ('Double exposure', 'looks like: a photograph', 'A woman and a man superimposed with their eyes locked on the same two points; the type in Futura.'),
+ 'g10': ('Glitch', 'looks like: a corrupted file', 'The portrait split into red/green/blue channels, torn slices, scanlines, type with the same split.'),
+}
+def card9(cid):
+    title, lever, why = META9[cid]
+    names = json.load(open(os.path.join(R9, 'index.json')))[cid]
+    frames = strip([os.path.join(R9, cid, n + '.jpg') for n in names], names)
+    return f'''<article class="card control"><header><span class="num">{cid.upper()}</span><h3>{html.escape(title)}</h3><span class="lever">{html.escape(lever)}</span></header>
+  <p class="why">{html.escape(why)}</p><div class="strip">{frames}</div><p class="needs ok">ready · {len(names)} cards</p></article>'''
+car9 = ''.join(card9(c) for c in META9) if R9 else ''
 picks = ''.join(card_html(c) for c in PICKS)
 rest = ''.join(card_html(c) for c in META if c not in PICKS)
 vids = ''.join(vcard(v) for v in sorted(VIDEOS, key=lambda v: not v.get('pick')))
@@ -255,7 +275,10 @@ video {{ width:min(100%,300px); aspect-ratio:9/16; background:#000; display:bloc
  <div class="box"><h4>Round 3</h4><p>Hero test on the winning layout (three different first frames), plus the real selfie clip if you film it.</p><p>Judge on CPC first, then cost per chat once each ad has 5+ chats.</p></div>
 </div>
 
-<h2>The art-direction set: ten voices</h2>
+<h2>The format-breaking set: ten things that don't look like ads</h2>
+<p class="lede">The earlier sets were all "a poster with a face and the city". These break that template: each concept is a different format that borrows the look of something else — a camera, a lock screen, an Instagram story, a sticker pack, a receipt, a contact sheet with an empty frame for you, a portrait made of the word, an eye lineup, a double exposure, a glitch. CPC logic: card 1 stops the scroll by not looking like an ad. Face-size and type-over-face rules are relaxed only where the format needs it (proof sheet, lineup); no text sits on a face in any of them.</p>
+{car9}
+<h2>The art-direction set: ten voices (earlier)</h2>
 <p class="lede">Each hook has its own typeface, layout logic, colour and idea — not the same serif moved around. Same CPC gates (one portrait, face ≥300px, city huge, nothing on a face), same proven body behind each. Fonts: Didot, Futura, Helvetica Neue, Bodoni 72, Baskerville, Avenir Condensed, Menlo, Fraunces.</p>
 {car8}
 <h2>The design set: ten visual languages</h2>
