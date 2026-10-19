@@ -1125,6 +1125,23 @@
       "status": "denied",
       "decided": "2026-10-19T01:29:29Z",
       "note": ""
+    },
+    {
+      "id": "email:codex-note-test-20261018-01",
+      "kind": "email",
+      "source": "codex:codex-note",
+      "title": "Send email to Jamie: free test portrait shoot",
+      "summary": "To jamie@example.com; subject: Free test portrait shoot. Message: Hi Jamie, would you be interested in a free test portrait shoot with me? — Aidan",
+      "payload": {
+        "to": "jamie@example.com",
+        "subject": "Free test portrait shoot",
+        "body": "Hi Jamie, would you be interested in a free test portrait shoot with me? — Aidan"
+      },
+      "created": "2026-10-19T01:30:15Z",
+      "expires": "2026-10-22T01:30:15Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
     }
   ]
 }
