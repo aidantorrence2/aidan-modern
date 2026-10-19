@@ -11,7 +11,8 @@ R, BASE, OUT = sys.argv[1:4]
 VIDEOS = json.load(open(sys.argv[4])) if len(sys.argv) > 4 else []
 R3 = sys.argv[5] if len(sys.argv) > 5 else None
 R4 = sys.argv[6] if len(sys.argv) > 6 else None
-R5 = sys.argv[7] if len(sys.argv) > 7 else None   # render-v5.mjs: 10 new concepts   # render-v4.mjs: 10 carousels from new_top_tier_candidates   # render-v3.mjs output: photo-heavy still ads (top picks)
+R5 = sys.argv[7] if len(sys.argv) > 7 else None   # render-v5.mjs: 10 new concepts
+R6 = sys.argv[8] if len(sys.argv) > 8 else None   # render-v6.mjs: CPC set — ten hooks   # render-v4.mjs: 10 carousels from new_top_tier_candidates   # render-v3.mjs output: photo-heavy still ads (top picks)
 PICKS = ['c00', 'n04', 'n11']   # Aidan liked these three (20 Oct)
 
 def thumb(path, w=300):
@@ -125,6 +126,25 @@ def card5(cid):
     return f'''<article class="card"><header><span class="num">{cid.upper()}</span><h3>{html.escape(title)}</h3><span class="lever">{html.escape(lever)}</span></header>
   <p class="why">{html.escape(why)}</p><div class="strip">{frames}</div><p class="needs ok">ready · {len(names)} cards</p></article>'''
 car5 = ''.join(card5(c) for c in META5) if R5 else ''
+META6 = {
+ 'h01': ('Eye contact', 'card-1 CTR', 'The closest clean portrait, face filling the frame. The control for the hook test.'),
+ 'h02': ('Golden light', 'card-1 CTR', 'The Seine portrait in warm late light. Same type, different mood.'),
+ 'h03': ('Colour', 'card-1 CTR', 'White dress on the orange wall: one loud colour in a dark feed.'),
+ 'h04': ('A man first', 'card-1 CTR · mixed set', 'The curly black-and-white close portrait. Tests a male hero.'),
+ 'h05': ('Two-up', 'card-1 CTR · women & men', 'A woman and a man full height, faces big, city above both heads.'),
+ 'h06': ('The street', 'card-1 CTR · scene', 'A full-length street frame; the scene sells the shoot, the face is smaller.'),
+ 'h07': ('One big print', 'card-1 CTR · premium', 'A single matted print on the black table, nearly full width.'),
+ 'h08': ('The question', 'card-1 CTR · copy test', '"Want photos like these?" as the headline, city underneath.'),
+ 'h09': ('The callout', 'card-1 CTR · proven structure', 'City huge plus one line of intent — the shape of your best English ad.'),
+ 'h10': ('Notes, one photo', 'CPM · native look', 'The Notes look with three lines and one big portrait, no grid.'),
+}
+def card6(cid):
+    title, lever, why = META6[cid]
+    names = json.load(open(os.path.join(R6, 'index.json')))[cid]
+    frames = strip([os.path.join(R6, cid, n + '.jpg') for n in names], names)
+    return f'''<article class="card control"><header><span class="num">{cid.upper()}</span><h3>{html.escape(title)}</h3><span class="lever">{html.escape(lever)}</span></header>
+  <p class="why">{html.escape(why)}</p><div class="strip">{frames}</div><p class="needs ok">ready · {len(names)} cards · same proven body behind each hook</p></article>'''
+car6 = ''.join(card6(c) for c in META6) if R6 else ''
 picks = ''.join(card_html(c) for c in PICKS)
 rest = ''.join(card_html(c) for c in META if c not in PICKS)
 vids = ''.join(vcard(v) for v in sorted(VIDEOS, key=lambda v: not v.get('pick')))
@@ -195,7 +215,10 @@ video {{ width:min(100%,300px); aspect-ratio:9/16; background:#000; display:bloc
  <div class="box"><h4>Round 3</h4><p>Hero test on the winning layout (three different first frames), plus the real selfie clip if you film it.</p><p>Judge on CPC first, then cost per chat once each ad has 5+ chats.</p></div>
 </div>
 
-<h2>10 new concepts (new_top_tier_candidates)</h2>
+<h2>The CPC set: ten hooks</h2>
+<p class="lede">CPC is decided by card 1. Each of these is one full-bleed portrait with the face framed big, the city huge and at most two lines, in clear space — the composition of your winning hook. Behind every hook is the same proven body (my recent work · never done this before? · CTA) with faces large enough to read on a phone. Run the ten hooks against each other; the body stays constant so the result is about the hook.</p>
+{car6}
+<h2>Earlier: 10 layout concepts (superseded)</h2>
 <p class="lede">Ten concepts that don't reuse any earlier layout. All 106 photos from your new folder appear across them; copy only from your decks; no text on any face.</p>
 {car5}
 <h2>Earlier carousels from the same folder (old layouts, new photos)</h2>
