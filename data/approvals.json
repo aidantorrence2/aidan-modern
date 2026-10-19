@@ -1627,7 +1627,9 @@
           "No promised product, price or results",
           "No deployment, payment or spend",
           "No social or Instagram posts"
-        ]
+        ],
+        "result": "Sent all three exact approved discovery emails after fresh sender/recipient Gmail search found no prior contacts. Gmail confirmed SENT for websites@cascadevalleydesigns.com (1a155229625df356), hello@webants.io (1a15522ac78e442a), info@witscode.com (1a15522ae55ec096). No follow-ups, product/price claims, publication, charges or spend.",
+        "result_at": "2026-10-19T17:08:44Z"
       },
       "created": "2026-10-19T17:04:10Z",
       "expires": "2026-10-22T17:04:10Z",
