@@ -1356,8 +1356,8 @@
         "data_scope": "Database row responses may contain private email addresses and city/participation/consent/attribution fields. Read only to count and deduplicate. Do not persist, export, email, share or put individual lead records in Library, prompts for other workers, Git repositories or public pages.",
         "limits": "Read-only ongoing measurement for this one project. No customer outreach, data deletion/migration, credential recovery, database changes, new endpoint, deployment, spending or broader access. Stop if access is denied; no alternative access path.",
         "why_needed": "The handoff's zero was historical and cloud private-export credentials were omitted. The hourly targets cannot be honestly measured until separately authorized secure access is approved.",
-        "result": "Read-only measurement 2026-10-19T20:01:39.485Z: exact approved project overview then DB/leads limit25. Empty complete response, next_offset null/no truncation. Active consented adult signups total0, new0 against target5; aggregate only, no private rows saved, no database changes or messaging.",
-        "result_at": "2026-10-19T20:04:34Z"
+        "result": "Ongoing approved read-only measurement 2026-10-19T20:58:47.057Z: overview first, exact DB/leads limit25, complete empty response with next_offset null and no truncation. Active adult consented signups total0, new0 since last complete read, run target5. Aggregate counts only, no private rows or credentials persisted; no data changes/customer messages.",
+        "result_at": "2026-10-19T20:59:51Z"
       },
       "created": "2026-10-19T05:23:23Z",
       "expires": "2026-10-22T05:23:23Z",
@@ -1766,6 +1766,43 @@
       },
       "created": "2026-10-19T20:06:47Z",
       "expires": "2026-10-22T20:06:47Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
+    },
+    {
+      "id": "offers:small-wave4:2026-10-19:phone-and-friends-research",
+      "kind": "email",
+      "source": "codex:19a72895a8f3",
+      "title": "Send two short first-contact emails to Meico and Miriam",
+      "summary": "Meico: ask to share free interest in the unbuilt phone-boundaries app. Miriam: ask permission for adult keep-in-touch research. Two emails only; no follow-ups, posts, spend or deployment.",
+      "payload": {
+        "action": "Send only these two exact short first-contact emails through connected Gmail after approval.",
+        "messages": [
+          {
+            "to": "meico@mindfultechie.com",
+            "subject": "Finding adults who want stronger phone boundaries",
+            "body": "Hi Meico,\n\nI'm Aidan. Your work helping professionals balance life, work and technology seems a good fit for an idea I'm testing.\n\nI'm exploring an app for adults who set phone limits, then turn them off and keep scrolling. The idea is to make those limits harder to ignore. It isn't built yet.\n\nWould you share this signup page with adults who might want to help shape it?\n\nSignup is free and nonbinding.\nhttps://real-change-pilots-aidan-2026.aidantorrence.chatgpt.site/phone-reset?utm_source=mindful_techie&utm_medium=partner_email&utm_campaign=wave4\n\nThanks,\nAidan Torrence",
+            "offer": "phone-reset",
+            "organization": "Mindful Techie / Meico Marquette Whitlock",
+            "contact_source": "https://mindfultechie.com/contact"
+          },
+          {
+            "to": "miriam@miriamkirmayer.com",
+            "subject": "Research on sharing the work of seeing friends",
+            "body": "Hi Miriam,\n\nI'm Aidan. Your work on adult friendship seems a good fit for a question I'm researching.\n\nI'm exploring an app idea for friends who want to meet regularly but leave one person doing the planning. The idea is to share who organizes each meetup. It isn't built yet.\n\nWould you be open to sharing a short research invitation with adults who usually organize plans for their friend group?\n\nTaking part would be free and nonbinding.\n\nThanks,\nAidan Torrence",
+            "offer": "keep-in-touch",
+            "organization": "Dr Miriam Kirmayer business team",
+            "contact_source": "https://www.miriamkirmayer.com/contact/"
+          }
+        ],
+        "limits": "Two first-contact emails only. No followups/replies, attachments, posts/social/Instagram, participant/member/patient lists, direct client contact, spending, terms, push or deployment. Meico asks an audience owner to share free unbuilt-app interest page; Miriam asks a business team for permission to share a future adult research invitation. The proposed keep-in-touch page is not live and no signup URL is sent for it. Never resend any12 completed campaign emails. Keep Dateable uncertain and prior Dear Nina rejection held; this is not a retry/workaround.",
+        "why": "Meico publishes this business contact for working together and runs an adult professional wellbeing community. Miriam explicitly accepts business collaboration questions and has an adult friendship course/podcast. Both current official contacts match; exact-recipient Gmail searches empty and no suppression found.",
+        "classification": "Audience-owner permission/distribution requests, not customer leads or verified sharing",
+        "approval_scope": "Read each exact to/subject/body; approval authorizes only these messages once after fresh Gmail/scope/optout checks. Revisions require newID."
+      },
+      "created": "2026-10-19T20:59:50Z",
+      "expires": "2026-10-22T20:59:50Z",
       "status": "pending",
       "decided": null,
       "note": ""
