@@ -21,7 +21,8 @@ LAUNCH = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'launch')
 R12 = sys.argv[13] if len(sys.argv) > 13 else None   # render-v12.mjs: built from CONCEPTS-NEW
 R13 = sys.argv[14] if len(sys.argv) > 14 else None   # render-v13.mjs: plain engagement set
 R14 = sys.argv[15] if len(sys.argv) > 15 else None   # render-v14.mjs: ten variations of V1
-R15 = sys.argv[16] if len(sys.argv) > 16 else None   # render-v15.mjs: me + photo(s)   # render-v4.mjs: 10 carousels from new_top_tier_candidates   # render-v3.mjs output: photo-heavy still ads (top picks)
+R15 = sys.argv[16] if len(sys.argv) > 16 else None   # render-v15.mjs: me + photo(s)
+R16 = sys.argv[17] if len(sys.argv) > 17 else None   # render-v16.mjs: title cards with me + examples   # render-v4.mjs: 10 carousels from new_top_tier_candidates   # render-v3.mjs output: photo-heavy still ads (top picks)
 PICKS = ['c00', 'n04', 'n11']   # Aidan liked these three (20 Oct)
 
 def thumb(path, w=300):
@@ -286,6 +287,16 @@ def card15(cid):
     frames = strip([os.path.join(R15, cid, n + '.jpg') for n in names], names)
     return f'''<article class="card control"><header><span class="num">ME+{cid.upper()}</span><h3>{html.escape(t)}</h3></header><p class="why">{html.escape(why)}</p><div class="strip">{frames}</div></article>'''
 car15 = ''.join(card15(c) for c in META15) if R15 else ''
+META16 = {'a':('selfie hero + four example photos','Your selfie big, the headline over it, four example portraits along the bottom.'),'b':('two-up: me | example','Your selfie beside an example portrait, headline across the bottom.'),
+ 'c':('three-up: example · me · example','You in the middle between two examples.'),'d':('example hero + my picture-in-picture','An example portrait with your selfie as a small inset, "i took this photo".'),
+ 'f':('stacked: me / headline / example','Your selfie on top, headline in the middle, an example photo underneath.'),'g':('example hero + my avatar line','"hi, i\'m aidan — photographer · in charlotte for a few weeks" with your face as an avatar.'),
+ 'h':('headline, then a 2×2','Headline on top, then you + three examples filling the frame.'),'i':('me hero + one example print','Your selfie with one example photo as a plain print in the corner.')}
+def card16(cid):
+    t, why = META16[cid]
+    names = json.load(open(os.path.join(R16, 'index.json')))[cid]
+    frames = strip([os.path.join(R16, cid, n + '.jpg') for n in names], names)
+    return f'''<article class="card control"><header><span class="num">T-{cid.upper()}</span><h3>{html.escape(t)}</h3></header><p class="why">{html.escape(why)}</p><div class="strip">{frames}</div></article>'''
+car16 = ''.join(card16(c) for c in META16) if R16 else ''
 import csv
 def launch_html():
     rows = list(csv.DictReader(open(os.path.join(LAUNCH, 'ads.csv'))))
@@ -371,7 +382,10 @@ video {{ width:min(100%,300px); aspect-ratio:9/16; background:#000; display:bloc
  <div class="box"><h4>Round 3</h4><p>Hero test on the winning layout (three different first frames), plus the real selfie clip if you film it.</p><p>Judge on CPC first, then cost per chat once each ad has 5+ chats.</p></div>
 </div>
 
-<h2>"me" + "photo(s)" (6 variations)</h2>
+<h2>Title cards: me + example photos (8)</h2>
+<p class="lede">Card 1 is the normal headline (Charlotte huge, Free Photo Shoot.) with your selfie and example photos in the same frame.</p>
+{car16}
+<h2>"me" + "photo(s)" (earlier, word-limited)</h2>
 {car15}
 <h2>Ten variations off V1 (hi, i'm aidan)</h2>
 {car14}
