@@ -26,8 +26,8 @@ for (const o of offers) {
   // Demand gate (Aidan, 18 Oct 2026): an offer goes live only if it is software and the
   // market already asked for it. Evidence is public posts by different people, each cited.
   // Catalog exception (Aidan, 19 Oct 2026): he chose to launch all 120 offers from the research
-  // catalog he supplied, business tools included, each with its one observed source (verified
-  // revenue, a paid listing with reviews, free-tool adoption, or a platform change).
+  // catalog of human problems he supplied. Each carries the catalog's cited sources (paid
+  // alternatives, reported revenue or usage) instead of three posts by different people.
   const d0 = o.demand || {}
   if (d0.catalog && ['live', 'threshold_met', 'building', 'shipped'].includes(o.status)) {
     if (o.type !== 'software') errors.push(`${at}: type must be "software" to go live`)
