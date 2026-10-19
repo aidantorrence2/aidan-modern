@@ -1142,6 +1142,23 @@
       "status": "denied",
       "decided": "2026-10-19T01:30:28Z",
       "note": "Make it two short sentences and mention Saturday morning"
+    },
+    {
+      "id": "email:codex-note-test-20261018-02",
+      "kind": "email",
+      "source": "codex:codex-note",
+      "title": "Send email to Jamie: Saturday morning portrait shoot",
+      "summary": "To jamie@example.com; subject: Free test portrait shoot. Hi Jamie, I’d love to invite you to a free test portrait shoot. Would Saturday morning work for you? — Aidan",
+      "payload": {
+        "to": "jamie@example.com",
+        "subject": "Free test portrait shoot",
+        "body": "Hi Jamie, I’d love to invite you to a free test portrait shoot. Would Saturday morning work for you? — Aidan"
+      },
+      "created": "2026-10-19T01:30:57Z",
+      "expires": "2026-10-22T01:30:57Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
     }
   ]
 }
