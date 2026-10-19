@@ -11755,6 +11755,119 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-19",
+    "slug": "tomorrows-bag",
+    "name": "Tomorrow's Bag",
+    "need": "I can't keep up with what my kids need for school each day: PE kit, costume days, forms, money, all buried in emails and app messages.",
+    "headline": "Paste in the school emails and app messages. Every evening you get one short checklist per child of what goes in the bag tomorrow: kit, forms, money, costumes.",
+    "buyer": "Working parents with one or more children at primary school who get several school emails, texts and class-app messages a week and keep missing things.",
+    "bullets": [
+      "Paste or forward school emails, letters and class-app messages, and it pulls out the dated items: PE days, non-uniform and dress-up days, trips, forms and money due",
+      "Get one checklist per child each evening ('tomorrow: PE kit, signed trip form, £2 for cake sale') so you're not finding out from the book bag at 8pm",
+      "Repeating items like weekly PE or swimming are set once, and one-off asks are flagged as soon as you add them so there's time to find a costume"
+    ],
+    "price": "$4/month",
+    "priceUsd": 4,
+    "priceNote": "One price covers every child in the household. Far less than general family-organiser plans ($29.99 to $79.99 a year).",
+    "reasonPrompt": "What did your child last turn up to school without, and where had the reminder been buried?",
+    "faq": [
+      {
+        "q": "Does it connect to my school's app or email automatically?",
+        "a": "No. You paste in or forward the messages yourself, so it works with any school no matter which app or email system it uses."
+      },
+      {
+        "q": "Can I use it for children at different schools?",
+        "a": "Yes. Each child has their own list, so families split across two schools get a separate checklist for each child."
+      },
+      {
+        "q": "Will it catch everything?",
+        "a": "It only knows what you give it. If a request comes home on paper, type or photograph it in and it goes on the list like everything else."
+      },
+      {
+        "q": "Who makes Tomorrow's Bag?",
+        "a": "It is an independent app, not linked to any school, school app or family-organiser brand."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-19",
+      "summary": "Two Mumsnet AIBU threads I opened, from 2021 and 2022, have more than 20 named parents describing the same problem: too many school emails and class-app messages, and items like PE kit, costumes and forms slipping through. Three separate posters say, in nearly the same words, that they need a personal assistant just to manage it. One estimates about 4 hours of school admin a week, and another found out at 8pm that their child had to go in dressed as a canoe the next day.",
+      "wtp": "Parents already pay for general family organisers. Cozi Family Organizer has 401K ratings on the US App Store (4.8 out of 5). Its listed in-app purchases include a 1-year Cozi Gold subscription at $29.99, other Cozi Gold options at $39.00, $42.00, $49.99 and $59.99, and Cozi Max at $79.99. Cozi is a shared calendar, though, and does not turn school messages into a checklist for each day.",
+      "signals": [
+        {
+          "url": "https://www.mumsnet.com/talk/am_i_being_unreasonable/4343855-To-be-completely-overwhelmed-by-primary-school-already",
+          "who": "FGSWhatNow",
+          "date": "2021-09-08",
+          "quote": "We need a bloody PA just to keep up with it",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/am_i_being_unreasonable/4343855-To-be-completely-overwhelmed-by-primary-school-already",
+          "who": "longue",
+          "date": "2021-09-08",
+          "quote": "life admin for my dc is breaking me",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/am_i_being_unreasonable/4343855-To-be-completely-overwhelmed-by-primary-school-already",
+          "who": "Peace43",
+          "date": "2021-09-08",
+          "quote": "All bets are off on anything else",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/am_i_being_unreasonable/4510832-Aibu-to-think-school-stuff-is-now-excessive",
+          "who": "Comedycook",
+          "date": "2022-03-21",
+          "quote": "it's a full time job just getting your kids to school on time with everything they need!",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/am_i_being_unreasonable/4510832-Aibu-to-think-school-stuff-is-now-excessive",
+          "who": "IamSamantha",
+          "date": "2022-03-21",
+          "quote": "I need a PA for my kids. The admin associated with the schools is ridiculous",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/am_i_being_unreasonable/4510832-Aibu-to-think-school-stuff-is-now-excessive",
+          "who": "Squidlydoo",
+          "date": "2022-03-21",
+          "quote": "I need a PA to manage school and their demands!",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/am_i_being_unreasonable/4510832-Aibu-to-think-school-stuff-is-now-excessive",
+          "who": "Twinkletowedelephant",
+          "date": "2022-03-21",
+          "quote": "Still have things slip through.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/am_i_being_unreasonable/4510832-Aibu-to-think-school-stuff-is-now-excessive",
+          "who": "arethereanyleftatall",
+          "date": "2022-03-21",
+          "quote": "on average it involves about 4 hours per week admin time to organise",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/cozi-family-organizer/id407108860",
+          "who": "Cozi Family Organizer (App Store listing)",
+          "date": "2026-10-19",
+          "quote": "401K Ratings; 4.8 out of 5; 1-year subscription to Cozi Gold $29.99; Cozi Max $79.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Cozi Family Organizer is a paid shared family calendar and lists app with 401K App Store ratings, but you have to enter everything yourself. Search results also turned up SchoolDigest and Schoolcase, which take forwarded school emails and produce summaries, action items, calendar feeds and a daily digest. I could not confirm their pricing, and SchoolDigest's Product Hunt listing showed only 3 upvotes. Many schools also send reminders through their own free apps (Class Dojo, ParentMail, Remind and others), which adds to the number of channels parents have to watch.",
+      "risks": "Parents already complain about having to download yet another app ('download an app I don't want', Thewindwhispers), so the pitch needs to be one checklist that replaces several channels, not another inbox. Because parents have to paste or forward the messages themselves, they may stop bothering. Forwarding-based tools (SchoolDigest, Schoolcase) are close substitutes, and Cozi already earns money from the same buyers. Both threads I opened are from UK primary-school parents and from 2021-2022, so demand elsewhere and in later years is not confirmed. Children's school information is personal data, so privacy handling has to be clear."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

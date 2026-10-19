@@ -3189,5 +3189,42 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "keep-track-of-what-kids-need-for-school",
+  "offer": "tomorrows-bag",
+  "title": "How to keep track of what your kids need for school each day",
+  "description": "PE kit, dress-up days, forms and money buried in school emails and apps? Pull everything into one list, set the weekly things once, and check it every evening.",
+  "intro": "School requests arrive through emails, letters, texts and class apps, often with a day's notice. Things slip through because there is no single place to look, not because parents are disorganised.",
+  "sections": [
+   {
+    "h": "One place for everything",
+    "list": [
+     "Pick one list (a notes app, a calendar, or paper on the fridge) and move every school request into it as soon as you see it.",
+     "Include the date it is needed and which child it is for."
+    ]
+   },
+   {
+    "h": "Set the weekly things once",
+    "list": [
+     "PE days, swimming, library books and clubs repeat every week. Add them as repeating reminders the evening before.",
+     "Then only one-off asks need attention."
+    ]
+   },
+   {
+    "h": "A five-minute evening check",
+    "list": [
+     "Each evening, look at tomorrow's items for each child and put them by the door or in the bag.",
+     "Check the next few days too, so a costume or a cake has time to happen."
+    ]
+   },
+   {
+    "h": "Share the load",
+    "list": [
+     "If there are two parents or carers, share the same list so either of you can check it.",
+     "Ask the school which channel it uses for urgent requests, and turn on notifications for that one only."
+    ]
+   }
+  ]
  }
 ]
