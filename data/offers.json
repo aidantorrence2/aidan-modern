@@ -10104,6 +10104,105 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-19",
+    "slug": "teeth-apart",
+    "name": "Teeth Apart",
+    "need": "I clench my jaw all day and don't even notice until it aches.",
+    "headline": "Quiet check-ins during the hours you clench most (desk time, driving, screens) to help you catch it and build a 'lips together, teeth apart' habit.",
+    "buyer": "Adults (18+) who notice they clench their jaw while concentrating at a computer, driving or scrolling, and want a simple daytime habit tool. It is meant to go alongside whatever their dentist suggests.",
+    "bullets": [
+      "Gentle check-ins at random times inside the windows you pick, like work hours or your commute, so they don't become background noise",
+      "One tap answers each one: 'clenched' or 'relaxed'. Over a week you see which times and activities trigger it",
+      "A 10-second jaw-release routine after every 'clenched' tap, plus a weekly summary you can bring to your dentist"
+    ],
+    "price": "$3/month",
+    "priceUsd": 3,
+    "priceNote": "In line with existing awake-clenching apps.",
+    "reasonPrompt": "When do you catch yourself clenching your jaw most: at the computer, driving, on your phone, or somewhere else?",
+    "faq": [
+      {
+        "q": "Will this stop me grinding my teeth at night?",
+        "a": "No. Teeth Apart is a daytime habit tool for noticing when you clench while you're awake. It doesn't diagnose or treat bruxism. For night grinding, jaw pain, headaches or worn teeth, see a dentist or doctor."
+      },
+      {
+        "q": "Is this a replacement for a night guard?",
+        "a": "No. It doesn't replace anything your dentist recommends. Many people use a guard at night and still clench during the day. This just helps you notice the daytime part."
+      },
+      {
+        "q": "Won't the reminders get annoying?",
+        "a": "You choose the hours and how many check-ins you get. They land at random times within those hours so you don't tune them out, and you can pause them anytime."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Adults 18+."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-19",
+      "summary": "People in separate forum threads years apart say the same thing. They clench during the day without realising, it's worst while concentrating at the computer, and the hard part is just noticing. One poster found it helped to remind themselves to stop clenching during the day. Small paid apps for awake clenching already exist, but they have very few ratings, so nobody has clearly won this space.",
+      "wtp": "People already pay to deal with clenching and grinding. TeethNightGuard.com, which sells custom night guards, has 108 Trustpilot reviews (TrustScore 4.7, page opened), and reviewers describe themselves as 'heavy grinder' and 'grinder/clencher'. In-app purchases for awake-clenching apps: Tolpie (Stop clenching your teeth) charges $1.99/month, $4.99/3 months and $14.99/year (App Store page opened, 4 ratings). BRUXISM + Fix Teeth Grinding sells Premium for $3.99 and $12.99 (opened, 10 ratings). BruxApp is a $1.99 paid app (opened, 5 ratings). Do I Snore or Grind, from SleepScore Labs, has 205 ratings (opened, free). Rating counts for apps aimed squarely at clenching are small, so evidence that people will pay for a software-only clenching tool is weaker than evidence that they pay for physical guards.",
+      "signals": [
+        {
+          "url": "https://www.mumsnet.com/talk/general_health/1808952-Grinding-Teeth-Bruxism",
+          "who": "Mishtabel (Mumsnet)",
+          "date": "2013-07-24",
+          "quote": "I had no idea how much I was clenching until I consciously started trying not to do it.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/general_health/1808952-Grinding-Teeth-Bruxism",
+          "who": "lizzypuffs (Mumsnet)",
+          "date": "2013-11-03",
+          "quote": "I find the computer the worst place that I clench - often because I'm concentrating.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/_chat/4487488-Calling-reformed-jaw-clenchers?page=1",
+          "who": "toastfiend (Mumsnet)",
+          "date": "2022-02-21",
+          "quote": "I realised that I do clench my jaw a lot during the day.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/_chat/4487488-Calling-reformed-jaw-clenchers?page=1",
+          "who": "3teens2cats (Mumsnet)",
+          "date": "2022-02-21",
+          "quote": "I catch myself doing it in the day too.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forum.mssociety.org.uk/t/grinding-clenching-teeth/34459",
+          "who": "Inactive_User (MS Society forum)",
+          "date": "2012-04-08",
+          "quote": "For the last few months I have noticed that I am clenching my jaw most of the time.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.trustpilot.com/review/teethnightguard.com",
+          "who": "Kara (Trustpilot reviewer, TeethNightGuard.com)",
+          "date": "2026-10-03",
+          "quote": "I'm a heavy grinder and they hold up well.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/tolpie-control-bruxism/id6730124151",
+          "who": "Tolpie ∙ Control Bruxism (Alex Fernandes, App Store)",
+          "date": "2026-10-19",
+          "quote": "Stop clenching your teeth",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "These apps are free to download unless noted. Tolpie ∙ Control Bruxism has awake-clenching alarms ($1.99/month or $14.99/year, 4 ratings, 3.3 stars). BRUXISM + Fix Teeth Grinding offers jaw exercises ($3.99 and $12.99 premium tiers, 10 ratings). BruxApp is a research-based awake-bruxism app ($1.99, 5 ratings, 2.6 stars). BruxControl offers check-ins plus an Apple Watch app (no ratings yet). Night sleep recorders include Do I Snore or Grind (205 ratings) and Bruxa (the snippet showed a $59.99/year premium plan, but I didn't open that page). Physical night guards include TeethNightGuard.com (108 Trustpilot reviews). There are also generic random-reminder apps people can repurpose.",
+      "risks": "No app aimed squarely at clenching has a large rating count, so the market for software alone may be small, and people tend to reach for a physical guard or a dentist first. A cheap random-reminder app or a Watch shortcut could do much the same job. The topic is close to a health claim, so copy has to stay as habit awareness, with no promises to cure bruxism, TMJ or headaches, and it should point people to a dentist or doctor. Mumsnet and Trustpilot returned content to WebFetch but blocked plain curl with 403. The MS Society forum returned a confirmed HTTP 200 to curl."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
