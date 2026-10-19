@@ -10388,6 +10388,119 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-19",
+    "slug": "landing-spot",
+    "name": "Landing Spot",
+    "need": "I'm always losing my keys, wallet or phone, and I waste ages every day looking for them.",
+    "headline": "Give your keys, wallet and phone one home each, get a quick 'got everything?' check as you head out, and snap a note when you put them somewhere odd.",
+    "buyer": "Adults (18+) who keep misplacing the same few everyday things, mostly at home, and want a simple habit tool that helps them put things in the same place without buying a tracker for every item.",
+    "bullets": [
+      "Pick one landing spot for each item (bowl by the door, coat hook, bag pocket). Coming home triggers a gentle 'keys in the bowl?' nudge until putting them there becomes automatic",
+      "A one-screen 'phone, keys, wallet?' check when you leave home or get out of the car, so things don't get left behind",
+      "Put something in an unusual place? Snap a photo or tap a quick 'left it in…' note. Your last few drop-offs are one tap away when you're hunting"
+    ],
+    "price": "$3/month",
+    "priceUsd": 3,
+    "priceNote": "About the price of a tracker subscription, with no tracker hardware to buy.",
+    "reasonPrompt": "What do you lose most often, and where does it usually turn up: keys, wallet, phone, glasses, or something else?",
+    "faq": [
+      {
+        "q": "Is this a tracker like an AirTag or Tile?",
+        "a": "No. Landing Spot can't locate anything by Bluetooth or GPS. It's a habit tool that helps you put things in the same place and remember where you left them. You can use it alongside a tracker."
+      },
+      {
+        "q": "How does it know I'm coming home or leaving?",
+        "a": "If you allow location, it uses your phone's built-in arrive/leave alerts for places you choose. Without location, you can set time-based check-ins instead."
+      },
+      {
+        "q": "I lose things constantly. Is something wrong with me?",
+        "a": "Landing Spot doesn't diagnose or treat anything. Plenty of people misplace keys and phones. If forgetfulness is new, getting worse or worrying you, talk to a doctor."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Adults 18+."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-19",
+      "summary": "Across forum threads spanning 2001 to 2025, people describe losing the same things: keys, wallet, phone. Most of it happens at home, and searching eats real time. The advice that keeps coming up is a habit, not a gadget: give each thing one fixed place and repeat until it's automatic. Even some tracker owners still get caught out, and one poster called trackers too expensive unless you lose things every day. That leaves room for a cheap, software-only habit tool.",
+      "wtp": "People pay to stop losing keys, wallets and phones. Tile - Find lost keys & phone (Tile, Inc.) has 1M ratings at 4.8 on the US App Store (page opened, HTTP 200). Its in-app purchases are Tile Premium at $2.99 and $29.99, Premium Protect 500 at $59.99 and Premium Protect 1000 at $99.99, on top of buying the tracker hardware. Chipolo, which sells key and wallet trackers, has 554 Trustpilot reviews with a 4.4 TrustScore (page opened). These payments are for hardware-backed tracking. There's no direct proof yet that people will pay for a software-only habit tool.",
+      "signals": [
+        {
+          "url": "https://www.mumsnet.com/talk/_chat/5031647-tips-to-stop-losing-my-keys",
+          "who": "ViveLaOeuf (Mumsnet)",
+          "date": "2024-03-19",
+          "quote": "How do I stop losing my keys? So far they've always turned up, but I feel like I spend so much of my time looking for them.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/_chat/5031647-tips-to-stop-losing-my-keys",
+          "who": "FlabMonsterIsDietingAgain (Mumsnet)",
+          "date": "2024-03-19",
+          "quote": "You need to build a habit, once you've repeated it a few times it becomes automatic.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/_chat/5031647-tips-to-stop-losing-my-keys",
+          "who": "CleftChin (Mumsnet)",
+          "date": "2024-03-19",
+          "quote": "I have an airtag on mine, and keep them clipped to my trousers, but still managed to lock myself out.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/am_i_being_unreasonable/5295855-regarding-keys",
+          "who": "LittleGreenDragons (Mumsnet)",
+          "date": "2025-03-17",
+          "quote": "H keeps them separate and has lost umpteen house keys over the years.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://singletrackworld.com/forum/off-topic/keywallet-trackers/",
+          "who": "kevin1911 (Singletrack forum)",
+          "date": "2016-11-29",
+          "quote": "I'm getting quite fed up with misplacing my wallet, phone and/or keys, usually in the house",
+          "seen": "opened"
+        },
+        {
+          "url": "https://singletrackworld.com/forum/off-topic/keywallet-trackers/",
+          "who": "footflaps (Singletrack forum)",
+          "date": "2016-11-29",
+          "quote": "Effing expensive those Tiles... Nice idea, but I'd need to be losing stuff every day to justify that cost!",
+          "seen": "opened"
+        },
+        {
+          "url": "https://boards.straightdope.com/t/everyday-stuff-you-constantly-lose-or-misplace/83458",
+          "who": "tygre (Straight Dope Message Board)",
+          "date": "2001-09-24",
+          "quote": "My keys. On average, I lose them once a day.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://boards.straightdope.com/t/everyday-stuff-you-constantly-lose-or-misplace/83458",
+          "who": "Amazing_Tiki_God (Straight Dope Message Board)",
+          "date": "2001-09-24",
+          "quote": "I am always mis-placing my keys in my apartment.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.trustpilot.com/review/chipolo.net",
+          "who": "Graz D (Chipolo Trustpilot reviewer)",
+          "date": "2026-09-18",
+          "quote": "Many times I've found my keys thanks to the little tune you can get it to play if it is lost.",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Bluetooth trackers and their apps: Tile (Premium $2.99/month or $29.99/year), Chipolo, and Apple AirTag with Find My. Phones also have free location-based reminders (for example in iOS Reminders), and a plain bowl or hook by the door costs nothing. None of these is a dedicated, low-cost routine for 'one home per item, a door check, and a where-I-left-it log'.",
+      "risks": "Free alternatives are close: built-in location reminders, plus the 'just use a bowl by the door' advice. Many people who lose things will buy a tracker instead, so it's unproven that they'll pay for software alone. Arrive/leave detection needs location permission and may be unreliable or drain the battery. The app can't find something already lost, so expectations need to be set clearly. Some of the forum evidence is old (2001, 2016). The Mumsnet threads are recent (2024-2025)."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

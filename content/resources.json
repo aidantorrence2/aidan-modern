@@ -2491,5 +2491,49 @@
         ]
       }
     ]
+  },
+  {
+    "slug": "how-to-stop-losing-your-keys-wallet-and-phone",
+    "offer": "landing-spot",
+    "title": "How to stop losing your keys, wallet and phone",
+    "description": "Always hunting for your keys? The habit that fixes it: one home for each item, a quick check at the door, and a note when you put things somewhere unusual.",
+    "intro": "Most lost keys, wallets and phones are not lost at all; they are somewhere in the house, put down without thinking. The fix is a habit, not a gadget: give each thing one place and make returning it automatic.",
+    "sections": [
+      {
+        "h": "Give each item one home",
+        "list": [
+          "A bowl or hook right by the door for keys.",
+          "One pocket of your bag for your wallet.",
+          "One charging spot for your phone at home."
+        ]
+      },
+      {
+        "h": "Make returning automatic",
+        "list": [
+          "Put things in their home the moment you walk in, before you do anything else.",
+          "For the first couple of weeks, notice each time you skip it and go back.",
+          "Repetition is what makes it automatic."
+        ]
+      },
+      {
+        "h": "Check at the door",
+        "list": [
+          "Before leaving, say or tap \"phone, keys, wallet\".",
+          "Do the same when getting out of a car or taxi."
+        ]
+      },
+      {
+        "h": "When you put something somewhere odd",
+        "p": [
+          "Say it out loud (\"keys on the bookshelf\") or take a quick photo. It takes two seconds and saves the hunt later."
+        ]
+      },
+      {
+        "h": "Trackers can help, too",
+        "p": [
+          "Bluetooth trackers help find things you have lost, especially outside the house. A habit stops most losses from happening at home in the first place. If forgetfulness is new, getting worse or worrying you, talk to a doctor."
+        ]
+      }
+    ]
   }
 ]
