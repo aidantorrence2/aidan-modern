@@ -807,6 +807,23 @@
       "status": "denied",
       "decided": "2026-10-19T00:23:35Z",
       "note": ""
+    },
+    {
+      "id": "other:phone-e2e-test-2",
+      "kind": "other",
+      "source": "claude:phone-test",
+      "title": "Test 2: phone notification buttons",
+      "summary": "Phone test. Claude will tap Deny in this notification; nothing happens either way.",
+      "preview_url": "https://www.aidantorrence.com/images/large/000001-11.jpg",
+      "payload": {
+        "image": "https://www.aidantorrence.com/images/large/000001-11.jpg",
+        "description": "TEST ONLY: nothing happens either way."
+      },
+      "created": "2026-10-19T00:26:32Z",
+      "expires": "2026-10-19T01:26:32Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
     }
   ]
 }
