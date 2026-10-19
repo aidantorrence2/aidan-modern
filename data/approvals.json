@@ -1356,8 +1356,8 @@
         "data_scope": "Database row responses may contain private email addresses and city/participation/consent/attribution fields. Read only to count and deduplicate. Do not persist, export, email, share or put individual lead records in Library, prompts for other workers, Git repositories or public pages.",
         "limits": "Read-only ongoing measurement for this one project. No customer outreach, data deletion/migration, credential recovery, database changes, new endpoint, deployment, spending or broader access. Stop if access is denied; no alternative access path.",
         "why_needed": "The handoff's zero was historical and cloud private-export credentials were omitted. The hourly targets cannot be honestly measured until separately authorized secure access is approved.",
-        "result": "Read-only exact-project check at 2026-10-19 08:57 UTC: DB/leads returned zero rows, complete with no truncation or next page. Current consented signup total 0; new since previous complete zero baseline 0; target 5, shortfall 5. Aggregate-only receipt saved. No private lead rows, exports, credentials or database changes. Ongoing scoped permission retained.",
-        "result_at": "2026-10-19T08:59:08Z"
+        "result": "Read-only exact-project measurement at 2026-10-19 10:05 UTC: DB/leads returned zero rows, complete with no truncation or next page. Current consenting signup total 0; new since previous complete zero check 0; target 5, shortfall 5. Aggregate-only receipt saved; no private rows, exports, credentials or database changes. Ongoing scoped permission retained.",
+        "result_at": "2026-10-19T10:06:02Z"
       },
       "created": "2026-10-19T05:23:23Z",
       "expires": "2026-10-22T05:23:23Z",
@@ -1495,6 +1495,60 @@
       },
       "created": "2026-10-19T07:10:57Z",
       "expires": "2026-10-21T07:10:57Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
+    },
+    {
+      "id": "offers:keep-in-touch-research:2026-10-19:katie",
+      "kind": "email",
+      "source": "codex:lead-generation",
+      "title": "Ask Team Priya about friendship-organizer research",
+      "summary": "One short email to Katie Dulka asking whether she would consider sharing a research invitation for the unbuilt keep-in-touch idea. No recruitment, follow-up, spending or deployment.",
+      "payload": {
+        "action": "Send exactly one first-contact permission inquiry to Katie Dulka at Team Priya through connected Gmail after approval.",
+        "messages": [
+          {
+            "to": "katie@priyaparker.com",
+            "recipient": "Katie Dulka, Team Priya",
+            "subject": "Research on sharing the work of seeing friends",
+            "body": "Hi Katie,\n\nI'm Aidan. Priya's work on meaningful gatherings seems a good fit for a question I'm researching.\n\nI'm exploring an app idea for friends who want to meet regularly but leave one person doing all the planning. The idea is to share who organizes each meetup. It isn't built yet.\n\nWould you be open to sharing a short research invitation with adults who usually organize plans for their friend group?\n\nTaking part would be free and nonbinding.\n\nThanks,\nAidan Torrence",
+            "offer": "keep-in-touch",
+            "catalog_id": 19,
+            "contact_source": "https://www.priyaparker.com/contact",
+            "recipient_verification": "Official contact page checked 2026-10-19 lists Katie Dulka / Team Priya for ALL OTHER REQUESTS, distinct from speaking and media contacts.",
+            "history_check": "Current all-history Gmail domain search returned no messages and no next page. Current authoritative approval queue had no matching recipient."
+          }
+        ],
+        "limits": [
+          "One email only; exact to/subject/body above. No follow-up or reply preauthorized.",
+          "This asks only whether the audience owner would consider sharing a future research invitation. It does not authorize recruiting customers, accepting a partnership, sending a second message or contacting their audience.",
+          "No member-list request, participant/client contact, posts, forms, spending, price, payment or endorsement claims.",
+          "No build, source push, deployment, terms acceptance, database changes or access expansion.",
+          "The keep-in-touch app is not built and its proposed page is NOT live. No broken signup URL is included; do not substitute /real-friendships or another offer.",
+          "Reconcile Gmail SENT, opt-outs and current approval note before execution; append per-message receipt; reconcile any uncertain send before retry."
+        ],
+        "why_now": "Advance the user-prioritized distinct keep-in-touch offer with one bounded permission inquiry, rather than adding more near-duplicate phone/dating/friendship partner batches. Existing wave3 remains unchanged and separate.",
+        "stages": {
+          "current": "research_packet_prepared",
+          "after_this_email_if_approved": "permission_inquiry_sent_only",
+          "not_established": [
+            "distribution permission",
+            "customer exposure",
+            "customer lead",
+            "customer validation",
+            "paid demand",
+            "launch"
+          ]
+        },
+        "related_files": [
+          "offer19-research-packet-20261019-0403.json",
+          "offer19-channel-readiness-20261019-0456.json"
+        ],
+        "queue_bound": "One additional card and one email only. Do not queue the two alternative forms or all reserves automatically. All future actions remain separately gated."
+      },
+      "created": "2026-10-19T10:06:02Z",
+      "expires": "2026-10-22T10:06:02Z",
       "status": "pending",
       "decided": null,
       "note": ""
