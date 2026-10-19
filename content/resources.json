@@ -3061,5 +3061,48 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "learning-to-knit-keep-unravelling",
+  "offer": "knit-unstuck",
+  "title": "Learning to knit and keep unravelling after two rows? Start here",
+  "description": "Extra stitches, holes, or giving up after a few rows? Pick the right needles and yarn, count every row, and fix mistakes instead of starting over.",
+  "intro": "Most beginners who give up on knitting hit the same few problems: the wrong needles for the yarn, a stitch count that keeps changing, and pulling everything out at the first mistake.",
+  "sections": [
+   {
+    "h": "Start with the right supplies",
+    "list": [
+     "Choose a smooth, light-coloured medium (worsted or DK) yarn, so you can see each stitch.",
+     "Check the yarn label for the needle size it recommends, and use that size."
+    ]
+   },
+   {
+    "h": "Count every row",
+    "list": [
+     "Cast on a small number of stitches, say 15, and count them at the end of every row.",
+     "If the count grows, you are usually wrapping the yarn over the needle by accident, or knitting into the first stitch twice."
+    ]
+   },
+   {
+    "h": "Fix it, don't restart",
+    "list": [
+     "A dropped stitch can be picked back up with a crochet hook. A stitch marker or safety pin keeps it from running further.",
+     "Unknit (stitch by stitch) back to the mistake instead of pulling the whole piece off the needles."
+    ]
+   },
+   {
+    "h": "Finish something small first",
+    "list": [
+     "Make a practice square, then cast off. Finishing one piece is the step most beginners never reach.",
+     "A simple scarf in plain knit stitch is a good second project."
+    ]
+   },
+   {
+    "h": "Get help",
+    "p": [
+     "A local yarn shop or library knitting group can look at your knitting and spot the problem in seconds."
+    ]
+   }
+  ]
  }
 ]

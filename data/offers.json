@@ -11510,6 +11510,112 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-19",
+    "slug": "knit-unstuck",
+    "name": "Knit Unstuck",
+    "need": "I keep trying to learn to knit, I unravel after two rows, and I keep giving up.",
+    "headline": "Stuck unravelling after two rows? Describe what your knitting looks like and get a plain fix, then a short daily plan that gets you to a finished first square and scarf.",
+    "buyer": "Adult beginners who have tried to teach themselves knitting from videos one or more times, got frustrated with mistakes like extra stitches, dropped stitches or a bad cast-off, and quit.",
+    "bullets": [
+      "Mistake finder: answer a few questions about what you see (stitch count growing, holes, loose loops, twisted rows) and get a step-by-step fix for that exact problem, so you don't have to start over",
+      "A 15-minutes-a-day path from slip knot to cast-off: practice square first, then a simple scarf, with one new skill per session",
+      "Needle and yarn checker: tells you whether your needles suit your yarn before you start, so you're not stuck with one pair too thick and the other too thin"
+    ],
+    "price": "$12 one-time",
+    "priceUsd": 12,
+    "priceNote": "Pay once, no subscription. A beginner knitting-lesson app on the App Store charges $34.99 a year.",
+    "reasonPrompt": "What happened the last time you tried to learn to knit and gave up? (for example, you kept unravelling, the stitch count kept changing, you couldn't cast off)",
+    "faq": [
+      {
+        "q": "Do I need any knitting experience?",
+        "a": "No. It starts at the slip knot and cast-on and assumes you've never finished a piece."
+      },
+      {
+        "q": "Does it teach crochet?",
+        "a": "No, only knitting: knit stitch, purl, casting on and casting off."
+      },
+      {
+        "q": "Do I need special supplies?",
+        "a": "Just one pair of needles and a ball of yarn. The needle and yarn checker helps you see whether the two suit each other."
+      },
+      {
+        "q": "Who makes Knit Unstuck?",
+        "a": "Knit Unstuck is an independent app, not linked to any yarn brand or knitting school."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-19",
+      "summary": "Adult beginners describe the same loop over and over: they try to teach themselves, can't get past the first rows, get frustrated and give up, sometimes for years. We found posts from six named people on three pages, all opened. The posts span 2005 to 2017.",
+      "wtp": "Knit Pro - Pattern Maker, a knitting lesson app for beginners, shows 4.5 stars from 149 ratings on the US App Store. Its in-app purchases we read were Knitting Monthly at $11.49, Knitting - Yearly at $34.99, Knitting half yearly at $39.99 and 7 days premium at $2.99. Reviewer southcarolina2018 (01/25/2025) wrote: \"The instructions are so simple and they show you exactly what to do.\"",
+      "signals": [
+        {
+          "url": "https://www.mumsnet.com/talk/arts_and_crafts/3088975-help-i-really-can-t-knit",
+          "who": "Evilstepmum01",
+          "date": "2017-11-16",
+          "quote": "I've been at this a week and still end up unravelling after 2 rows!",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/arts_and_crafts/3088975-help-i-really-can-t-knit",
+          "who": "Evilstepmum01",
+          "date": "2017-11-16",
+          "quote": "Picked up needles, found one pair too thick, the other too thin!",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forum.knittinghelp.com/t/is-it-possible-i-cant-learn-to-knit/6947",
+          "who": "pinkish",
+          "date": "2005-12-31",
+          "quote": "For the past two years I have attempted to learn to knit on and off",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forum.knittinghelp.com/t/is-it-possible-i-cant-learn-to-knit/6947",
+          "who": "Cristy",
+          "date": "2005-12-31",
+          "quote": "I'm tired of starting things that I can't finish.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forum.knittinghelp.com/t/is-it-possible-i-cant-learn-to-knit/6947",
+          "who": "WynnieG",
+          "date": "2005-12-31",
+          "quote": "had no confidence in my knitting (I was self-taught, and frustrated).",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forum.knittinghelp.com/t/whats-another-word-for-discouraged/71462",
+          "who": "Antares",
+          "date": "2011-01-11",
+          "quote": "For YEARS I would pick up my knitting needles and try to knit a little something (and get frustrated).",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forum.knittinghelp.com/t/whats-another-word-for-discouraged/71462",
+          "who": "HSRCampbell",
+          "date": "2011-01-11",
+          "quote": "everything I start, I criticize and frog or the kids mess it up",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/app/1601194384",
+          "who": "Knit Pro - Pattern Maker (App Store listing; reviewer southcarolina2018)",
+          "date": "2025-01-25",
+          "quote": "The instructions are so simple and they show you exactly what to do",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Free YouTube tutorials, which the Mumsnet replies recommended, plus library classes and local wool shops. Subscription apps on the App Store: Knit Pro - Pattern Maker ($11.49 a month or $34.99 a year, 149 ratings), Knitting: Tutorials & Patterns, Woolio and CoKnit. We found those last three in search results only and did not open or verify their listings.",
+      "risks": "Free video tutorials are everywhere, so the paid value has to come from fixing the buyer's specific mistake, not from more lessons. Most of the forum evidence is old (2005 to 2017). Diagnosing a problem from a text description is harder than seeing the knitting itself. Only one paid competitor's rating count was checked, and it is modest (149). Beginners who are put off by having to buy supplies may never reach the app."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
