@@ -974,6 +974,35 @@
       "status": "denied",
       "decided": "2026-10-19T01:15:18Z",
       "note": ""
+    },
+    {
+      "id": "offers:correct-pricing:2026-10-18",
+      "kind": "build",
+      "source": "codex:aidantorrence",
+      "title": "Remove invented prices and replace the phone-guide pitch",
+      "summary": "Publish the corrected pages: no preset prices anywhere. Phone offer becomes an unbuilt phone-control product concept, with free interest registration and optional research participation. No emails or charges.",
+      "preview_url": "file:///Users/aidantorrence/outputs/offer-interest-tests-2026-10-18/phone-desktop.png",
+      "payload": {
+        "action": "Replace the public interest pages with the corrected version: no preset prices; phone-control product concept instead of a paid guide or coaching package.",
+        "project_id": "appgprj_6ad56c0398f4819187d2d7870ae70ac4",
+        "version_id": "appgprj_6ad56c0398f4819187d2d7870ae70ac4~appgver_63563fadc1ec8191ac1174c800efc9fa",
+        "commit_sha": "b429dca52d44a5eedc8acddcc4da512d793fbc07",
+        "url": "https://real-change-pilots-aidan-2026.aidantorrence.chatgpt.site/phone-reset",
+        "changes": [
+          "Remove every invented price from all eight offer pages",
+          "Reframe phone offer as a product concept for app boundaries and deliberate override friction",
+          "Ask whether people want early access, a research conversation, or updates; no price question",
+          "State the product is not built and pricing is undecided"
+        ],
+        "validation": "Local browser signup, storage, attribution, withdrawal, eight forms, mobile display, and unauthorized export checks passed. Typecheck and production build passed.",
+        "verification": "After deployment check one disposable live browser signup and delete it.",
+        "no_emails_or_spend": true
+      },
+      "created": "2026-10-19T01:17:55Z",
+      "expires": "2026-10-22T01:17:55Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
     }
   ]
 }
