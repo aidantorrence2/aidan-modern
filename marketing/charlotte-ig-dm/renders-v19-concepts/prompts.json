@@ -1,0 +1,174 @@
+{
+  "mode": "built-in image_gen",
+  "reference": "/Users/aidantorrence/Documents/aidan-modern/marketing/charlotte-ig-dm/renders-v17/k6/01-title.jpg",
+  "variants": [
+    {
+      "n": "01",
+      "slug": "not-photogenic",
+      "angle": "Overcome camera shyness",
+      "copy": [
+        "“I’m not photogenic.”",
+        "Let’s test that theory.",
+        "Free portrait shoot in Charlotte.",
+        "DM me “TRY”"
+      ],
+      "brief": "CONCEPT: CHALLENGE THE INNER CRITIC. A sophisticated magazine opinion page that overturns an objection. Soft pale buttery yellow full page. In the top 38%, huge dark oxblood high-contrast serif quote “I’m not photogenic.” stacked on three beautifully spaced lines. A vivid red loose ink strike-through crosses only the word \"not\" while leaving it readable. Immediately below the quote \"Let’s test that theory.\" in bold red italic serif, punchy and large. The lower middle has ONE large clean edge-to-edge rectangular source portrait of the black-haired woman, retaining its moody grain and color, no Polaroid border, no tape, no red circles. Small black sans-serif offer in the footer \"Free portrait shoot in Charlotte.\" and large dark-oxblood \"DM me “TRY”\". Restrained art direction, human warmth, striking contrast between self-critical thought and a confident beautiful portrait. No four-frame collage, no \"you?\" placeholder, no Charlotte masthead.",
+      "source": "/Users/aidantorrence/.codex/generated_images/01a160f8-beff-7a61-aa20-11d6b420c223/exec-1cb27111-cb59-45f0-a35e-e8aff3c9f77a.png",
+      "filename": "01-not-photogenic.png",
+      "prompt": "Use case: ads-marketing. Create one finished 9:16 vertical Instagram story advertising a free portrait photo shoot in Charlotte. This is a creative concept exploration: invent the visual composition described below, NOT a restyle of the attached four-photo poster. Render exactly the supplied concept copy, with excellent spelling and readable typographic hierarchy on a small phone. Do not add headlines from the reference. No watermarks, logos, invented dates, scarcity, testimonials, or unprovided deliverables. Input image role: source photographs ONLY, never a layout reference. Where requested use the actual face and photograph of the long straight black-haired woman in black, the wavy-haired young man in black, or the curly-haired photographer in pink holding his phone. Preserve their identities, expressions and photographic character closely. Use only the specifically requested source subjects for this concept; do not force all three people into every design. No invented people. The selfie man is the photographer, never a before/after example. CONCEPT: CHALLENGE THE INNER CRITIC. A sophisticated magazine opinion page that overturns an objection. Soft pale buttery yellow full page. In the top 38%, huge dark oxblood high-contrast serif quote “I’m not photogenic.” stacked on three beautifully spaced lines. A vivid red loose ink strike-through crosses only the word \"not\" while leaving it readable. Immediately below the quote \"Let’s test that theory.\" in bold red italic serif, punchy and large. The lower middle has ONE large clean edge-to-edge rectangular source portrait of the black-haired woman, retaining its moody grain and color, no Polaroid border, no tape, no red circles. Small black sans-serif offer in the footer \"Free portrait shoot in Charlotte.\" and large dark-oxblood \"DM me “TRY”\". Restrained art direction, human warmth, striking contrast between self-critical thought and a confident beautiful portrait. No four-frame collage, no \"you?\" placeholder, no Charlotte masthead.\nExact visible copy, verbatim (no other text):\n\"“I’m not photogenic.”\"\n\"Let’s test that theory.\"\n\"Free portrait shoot in Charlotte.\"\n\"DM me “TRY”\"",
+      "dimensions": [
+        941,
+        1672
+      ],
+      "saved_path": "/Users/aidantorrence/Documents/aidan-modern/marketing/charlotte-ig-dm/renders-v19-concepts/01-not-photogenic.png"
+    },
+    {
+      "n": "02",
+      "slug": "camera-roll",
+      "angle": "A practical reason to want photos",
+      "copy": [
+        "Your camera roll called.",
+        "It wants you in it.",
+        "Free photo shoot. Charlotte.",
+        "DM me “CAMERA”"
+      ],
+      "brief": "CONCEPT: CAMERA ROLL INTERVENTION. A crisp cobalt blue and white graphic poster with a playful digital-memory visual metaphor, no scrapbook aesthetic. The top third has enormous white rounded grotesk \"Your camera roll called.\" with generous line spacing; second line \"It wants you in it.\" is handwritten electric-lime, bold and legible. In the middle a large white rounded rectangular photo-library card floats in perspective, holding the actual male and female source portfolio portraits as two large adjacent borderless image tiles. A third small outlined tile is a simple white camera symbol on blue, not another portrait or human silhouette. Include a small solid lime notification dot on the library card as a graphic accent; no fake app branding or unreadable tiny UI. The lower fifth has very readable white \"Free photo shoot. Charlotte.\" and an oversized lime rounded button-shaped graphic \"DM me “CAMERA”\". Modern bright digital visual language, very little texture, no film, tape, arrows, Polaroids, handwritten me/you labels or giant Charlotte heading.",
+      "source": "/Users/aidantorrence/.codex/generated_images/01a160f8-beff-7a61-aa20-11d6b420c223/exec-a054a08e-ff63-42a2-9109-6cab2f147fdc.png",
+      "filename": "02-camera-roll.png",
+      "prompt": "Use case: ads-marketing. Create one finished 9:16 vertical Instagram story advertising a free portrait photo shoot in Charlotte. This is a creative concept exploration: invent the visual composition described below, NOT a restyle of the attached four-photo poster. Render exactly the supplied concept copy, with excellent spelling and readable typographic hierarchy on a small phone. Do not add headlines from the reference. No watermarks, logos, invented dates, scarcity, testimonials, or unprovided deliverables. Input image role: source photographs ONLY, never a layout reference. Where requested use the actual face and photograph of the long straight black-haired woman in black, the wavy-haired young man in black, or the curly-haired photographer in pink holding his phone. Preserve their identities, expressions and photographic character closely. Use only the specifically requested source subjects for this concept; do not force all three people into every design. No invented people. The selfie man is the photographer, never a before/after example. CONCEPT: CAMERA ROLL INTERVENTION. A crisp cobalt blue and white graphic poster with a playful digital-memory visual metaphor, no scrapbook aesthetic. The top third has enormous white rounded grotesk \"Your camera roll called.\" with generous line spacing; second line \"It wants you in it.\" is handwritten electric-lime, bold and legible. In the middle a large white rounded rectangular photo-library card floats in perspective, holding the actual male and female source portfolio portraits as two large adjacent borderless image tiles. A third small outlined tile is a simple white camera symbol on blue, not another portrait or human silhouette. Include a small solid lime notification dot on the library card as a graphic accent; no fake app branding or unreadable tiny UI. The lower fifth has very readable white \"Free photo shoot. Charlotte.\" and an oversized lime rounded button-shaped graphic \"DM me “CAMERA”\". Modern bright digital visual language, very little texture, no film, tape, arrows, Polaroids, handwritten me/you labels or giant Charlotte heading.\nExact visible copy, verbatim (no other text):\n\"Your camera roll called.\"\n\"It wants you in it.\"\n\"Free photo shoot. Charlotte.\"\n\"DM me “CAMERA”\"",
+      "dimensions": [
+        941,
+        1672
+      ],
+      "saved_path": "/Users/aidantorrence/Documents/aidan-modern/marketing/charlotte-ig-dm/renders-v19-concepts/02-camera-roll.png"
+    },
+    {
+      "n": "03",
+      "slug": "face-with-a-story",
+      "angle": "Individuality rather than model looks",
+      "copy": [
+        "WANTED",
+        "A FACE WITH A STORY.",
+        "Yours counts.",
+        "Free portraits in Charlotte.",
+        "DM me “STORY”"
+      ],
+      "brief": "CONCEPT: AN INCLUSIVE CASTING NOTICE. An audacious modern wanted-poster reimagined as fashion editorial, soft lilac paper and near-black condensed typography with one acid-yellow sticker. Top \"WANTED\" enormous condensed black capitals across almost full width, then smaller but substantial \"A FACE WITH A STORY.\" Center is ONE very large close crop of the actual wavy-haired male portfolio portrait, converted to black-and-white coarse photographic halftone, eyes and face clearly recognizable. A slightly tilted acid-yellow rectangular sticker over an empty corner of the portrait reads \"Yours counts.\" in black handwritten lettering; never obscure eyes or mouth. Footer large compact black type reads \"Free portraits in Charlotte.\" then \"DM me “STORY”\". This should look like a provocative independent magazine casting page, not an actual police/crime notice. No police insignia, measurements, mugshot grid, crime or reward language, no other photos, no empty you frame.",
+      "source": "/Users/aidantorrence/.codex/generated_images/01a160f8-beff-7a61-aa20-11d6b420c223/exec-fde6adce-7bb4-4616-bd4d-a089eb60923e.png",
+      "filename": "03-face-with-a-story.png",
+      "prompt": "Use case: ads-marketing. Create one finished 9:16 vertical Instagram story advertising a free portrait photo shoot in Charlotte. This is a creative concept exploration: invent the visual composition described below, NOT a restyle of the attached four-photo poster. Render exactly the supplied concept copy, with excellent spelling and readable typographic hierarchy on a small phone. Do not add headlines from the reference. No watermarks, logos, invented dates, scarcity, testimonials, or unprovided deliverables. Input image role: source photographs ONLY, never a layout reference. Where requested use the actual face and photograph of the long straight black-haired woman in black, the wavy-haired young man in black, or the curly-haired photographer in pink holding his phone. Preserve their identities, expressions and photographic character closely. Use only the specifically requested source subjects for this concept; do not force all three people into every design. No invented people. The selfie man is the photographer, never a before/after example. CONCEPT: AN INCLUSIVE CASTING NOTICE. An audacious modern wanted-poster reimagined as fashion editorial, soft lilac paper and near-black condensed typography with one acid-yellow sticker. Top \"WANTED\" enormous condensed black capitals across almost full width, then smaller but substantial \"A FACE WITH A STORY.\" Center is ONE very large close crop of the actual wavy-haired male portfolio portrait, converted to black-and-white coarse photographic halftone, eyes and face clearly recognizable. A slightly tilted acid-yellow rectangular sticker over an empty corner of the portrait reads \"Yours counts.\" in black handwritten lettering; never obscure eyes or mouth. Footer large compact black type reads \"Free portraits in Charlotte.\" then \"DM me “STORY”\". This should look like a provocative independent magazine casting page, not an actual police/crime notice. No police insignia, measurements, mugshot grid, crime or reward language, no other photos, no empty you frame.\nExact visible copy, verbatim (no other text):\n\"WANTED\"\n\"A FACE WITH A STORY.\"\n\"Yours counts.\"\n\"Free portraits in Charlotte.\"\n\"DM me “STORY”\"",
+      "dimensions": [
+        941,
+        1672
+      ],
+      "saved_path": "/Users/aidantorrence/Documents/aidan-modern/marketing/charlotte-ig-dm/renders-v19-concepts/03-face-with-a-story.png"
+    },
+    {
+      "n": "04",
+      "slug": "zero-dollar-receipt",
+      "angle": "Make free tangible and surprising",
+      "copy": [
+        "GOOD PHOTOS.",
+        "ZERO DOLLARS.",
+        "CHARLOTTE PORTRAIT SESSION",
+        "TOTAL",
+        "$0.00",
+        "Not a typo.",
+        "DM me “ZERO”"
+      ],
+      "brief": "CONCEPT: THE ZERO-DOLLAR RECEIPT. Deep bottle-green background, a single oversized narrow ivory thermal receipt centered vertically, beautifully lit with a curled top corner, fine paper fibers and a rough serrated lower edge. This is a designed ad, not a real transaction. On the receipt, huge elegant black grotesk headline \"GOOD PHOTOS.\" and \"ZERO DOLLARS.\" at the top. Below a small bold monospaced line \"CHARLOTTE PORTRAIT SESSION\". A black-and-white dithered print of the actual female source portrait takes the middle third, deliberately rendered as plausible high quality thermal printing, identity recognizable. At bottom a thin rule, black monospaced \"TOTAL\" then extremely large \"$0.00\". A vivid orange rubber-stamp-style annotation reads \"Not a typo.\" crossing the lower receipt margin without obscuring the price. Outside receipt at very bottom, large ivory sans serif \"DM me “ZERO”\". Spare, witty product/receipt art direction. No invented fees, balances, fake order numbers, QR code, barcode, payment logos or transaction claims. No contact sheet.",
+      "source": "/Users/aidantorrence/.codex/generated_images/01a160f8-beff-7a61-aa20-11d6b420c223/exec-7aa71d66-d6fc-41de-a479-7e080b9070a7.png",
+      "filename": "04-zero-dollar-receipt.png",
+      "prompt": "Use case: ads-marketing. Create one finished 9:16 vertical Instagram story advertising a free portrait photo shoot in Charlotte. This is a creative concept exploration: invent the visual composition described below, NOT a restyle of the attached four-photo poster. Render exactly the supplied concept copy, with excellent spelling and readable typographic hierarchy on a small phone. Do not add headlines from the reference. No watermarks, logos, invented dates, scarcity, testimonials, or unprovided deliverables. Input image role: source photographs ONLY, never a layout reference. Where requested use the actual face and photograph of the long straight black-haired woman in black, the wavy-haired young man in black, or the curly-haired photographer in pink holding his phone. Preserve their identities, expressions and photographic character closely. Use only the specifically requested source subjects for this concept; do not force all three people into every design. No invented people. The selfie man is the photographer, never a before/after example. CONCEPT: THE ZERO-DOLLAR RECEIPT. Deep bottle-green background, a single oversized narrow ivory thermal receipt centered vertically, beautifully lit with a curled top corner, fine paper fibers and a rough serrated lower edge. This is a designed ad, not a real transaction. On the receipt, huge elegant black grotesk headline \"GOOD PHOTOS.\" and \"ZERO DOLLARS.\" at the top. Below a small bold monospaced line \"CHARLOTTE PORTRAIT SESSION\". A black-and-white dithered print of the actual female source portrait takes the middle third, deliberately rendered as plausible high quality thermal printing, identity recognizable. At bottom a thin rule, black monospaced \"TOTAL\" then extremely large \"$0.00\". A vivid orange rubber-stamp-style annotation reads \"Not a typo.\" crossing the lower receipt margin without obscuring the price. Outside receipt at very bottom, large ivory sans serif \"DM me “ZERO”\". Spare, witty product/receipt art direction. No invented fees, balances, fake order numbers, QR code, barcode, payment logos or transaction claims. No contact sheet.\nExact visible copy, verbatim (no other text):\n\"GOOD PHOTOS.\"\n\"ZERO DOLLARS.\"\n\"CHARLOTTE PORTRAIT SESSION\"\n\"TOTAL\"\n\"$0.00\"\n\"Not a typo.\"\n\"DM me “ZERO”\"",
+      "dimensions": [
+        941,
+        1672
+      ],
+      "saved_path": "/Users/aidantorrence/Documents/aidan-modern/marketing/charlotte-ig-dm/renders-v19-concepts/04-zero-dollar-receipt.png"
+    },
+    {
+      "n": "05",
+      "slug": "next-era",
+      "angle": "Self-expression through an album-cover metaphor",
+      "copy": [
+        "Your next era",
+        "needs a cover.",
+        "Free portrait shoot • Charlotte",
+        "DM me “COVER”"
+      ],
+      "brief": "CONCEPT: YOUR PERSONAL ALBUM COVER. An atmospheric modern music-poster visual on deep wine/burgundy background. Huge pale acid-yellow elegant italic display serif \"Your next era\" in the upper fifth, then \"needs a cover.\" almost as large. In the center a single large SQUARE album-cover-like image is the actual female source portrait, faithfully preserved, with just a tiny abstract acid-yellow line at its edge; no record label or artist name, this is the metaphor of a portrait as someone's new era. Behind this square offset a little is an unprinted dark vinyl disc with subtle realistic grooves catching the light; no additional human images. Minimal glossy light, romantic midnight energy, high-end music-editorial art direction, sharp edges and deliberate negative space. Bottom \"Free portrait shoot • Charlotte\" in clean pale-yellow sans serif and \"DM me “COVER”\" in larger sans serif. No movie or musician branding, fake album title, additional slogans, red marker, tape or photo grid.",
+      "source": "/Users/aidantorrence/.codex/generated_images/01a160f8-beff-7a61-aa20-11d6b420c223/exec-d525f611-ee30-4474-8f20-e4431b4b1631.png",
+      "filename": "05-next-era.png",
+      "prompt": "Use case: ads-marketing. Create one finished 9:16 vertical Instagram story advertising a free portrait photo shoot in Charlotte. This is a creative concept exploration: invent the visual composition described below, NOT a restyle of the attached four-photo poster. Render exactly the supplied concept copy, with excellent spelling and readable typographic hierarchy on a small phone. Do not add headlines from the reference. No watermarks, logos, invented dates, scarcity, testimonials, or unprovided deliverables. Input image role: source photographs ONLY, never a layout reference. Where requested use the actual face and photograph of the long straight black-haired woman in black, the wavy-haired young man in black, or the curly-haired photographer in pink holding his phone. Preserve their identities, expressions and photographic character closely. Use only the specifically requested source subjects for this concept; do not force all three people into every design. No invented people. The selfie man is the photographer, never a before/after example. CONCEPT: YOUR PERSONAL ALBUM COVER. An atmospheric modern music-poster visual on deep wine/burgundy background. Huge pale acid-yellow elegant italic display serif \"Your next era\" in the upper fifth, then \"needs a cover.\" almost as large. In the center a single large SQUARE album-cover-like image is the actual female source portrait, faithfully preserved, with just a tiny abstract acid-yellow line at its edge; no record label or artist name, this is the metaphor of a portrait as someone's new era. Behind this square offset a little is an unprinted dark vinyl disc with subtle realistic grooves catching the light; no additional human images. Minimal glossy light, romantic midnight energy, high-end music-editorial art direction, sharp edges and deliberate negative space. Bottom \"Free portrait shoot • Charlotte\" in clean pale-yellow sans serif and \"DM me “COVER”\" in larger sans serif. No movie or musician branding, fake album title, additional slogans, red marker, tape or photo grid.\nExact visible copy, verbatim (no other text):\n\"Your next era\"\n\"needs a cover.\"\n\"Free portrait shoot • Charlotte\"\n\"DM me “COVER”\"",
+      "dimensions": [
+        941,
+        1672
+      ],
+      "saved_path": "/Users/aidantorrence/Documents/aidan-modern/marketing/charlotte-ig-dm/renders-v19-concepts/05-next-era.png"
+    },
+    {
+      "n": "06",
+      "slug": "get-in-the-frame",
+      "angle": "A direct invitation with no model comparison",
+      "copy": [
+        "THIS IS YOUR SIGN",
+        "TO GET IN",
+        "THE FRAME.",
+        "Free photo shoot in Charlotte.",
+        "DM me “FRAME”"
+      ],
+      "brief": "CONCEPT: THE POSTER IS THE FRAME. Type-led Swiss/punk art direction, vivid orange background with electric cobalt lettering. Absolutely NO human photographs. Enormous heavy geometric sans serif \"THIS IS YOUR SIGN\" at top in cobalt, then \"TO GET IN\" centered, playful tight typesetting. The center 40% of the canvas is a large deep black vertically oriented rectangular aperture with convincing cut paper edge and a cobalt inner outline, an inviting actual empty frame in the poster. Across the lower edge of that aperture, very large warm ivory \"THE FRAME.\" Use thoughtful layering so letters don't lose legibility. Bottom cobalt smaller but bold \"Free photo shoot in Charlotte.\" and large \"DM me “FRAME”\". High-impact contemporary graphic design with no extra icons or objects; optional tiny solid orange star inside the black opening as an intentional single accent. No face, silhouette, camera, photo grid, you-question text or Polaroid. The black frame and bold invitation are the whole concept.",
+      "source": "/Users/aidantorrence/.codex/generated_images/01a160f8-beff-7a61-aa20-11d6b420c223/exec-465878b6-1023-487a-a864-681c9f8b62ee.png",
+      "filename": "06-get-in-the-frame.png",
+      "prompt": "Use case: ads-marketing. Create one finished 9:16 vertical Instagram story advertising a free portrait photo shoot in Charlotte. This is a creative concept exploration: invent the visual composition described below, NOT a restyle of the attached four-photo poster. Render exactly the supplied concept copy, with excellent spelling and readable typographic hierarchy on a small phone. Do not add headlines from the reference. No watermarks, logos, invented dates, scarcity, testimonials, or unprovided deliverables. Input image role: source photographs ONLY, never a layout reference. Where requested use the actual face and photograph of the long straight black-haired woman in black, the wavy-haired young man in black, or the curly-haired photographer in pink holding his phone. Preserve their identities, expressions and photographic character closely. Use only the specifically requested source subjects for this concept; do not force all three people into every design. No invented people. The selfie man is the photographer, never a before/after example. CONCEPT: THE POSTER IS THE FRAME. Type-led Swiss/punk art direction, vivid orange background with electric cobalt lettering. Absolutely NO human photographs. Enormous heavy geometric sans serif \"THIS IS YOUR SIGN\" at top in cobalt, then \"TO GET IN\" centered, playful tight typesetting. The center 40% of the canvas is a large deep black vertically oriented rectangular aperture with convincing cut paper edge and a cobalt inner outline, an inviting actual empty frame in the poster. Across the lower edge of that aperture, very large warm ivory \"THE FRAME.\" Use thoughtful layering so letters don't lose legibility. Bottom cobalt smaller but bold \"Free photo shoot in Charlotte.\" and large \"DM me “FRAME”\". High-impact contemporary graphic design with no extra icons or objects; optional tiny solid orange star inside the black opening as an intentional single accent. No face, silhouette, camera, photo grid, you-question text or Polaroid. The black frame and bold invitation are the whole concept.\nExact visible copy, verbatim (no other text):\n\"THIS IS YOUR SIGN\"\n\"TO GET IN\"\n\"THE FRAME.\"\n\"Free photo shoot in Charlotte.\"\n\"DM me “FRAME”\"",
+      "dimensions": [
+        941,
+        1672
+      ],
+      "saved_path": "/Users/aidantorrence/Documents/aidan-modern/marketing/charlotte-ig-dm/renders-v19-concepts/06-get-in-the-frame.png"
+    },
+    {
+      "n": "07",
+      "slug": "personal-note",
+      "angle": "An approachable invitation from the photographer",
+      "copy": [
+        "Charlotte,",
+        "I make portraits.",
+        "You bring a face.",
+        "I’ll bring the camera.",
+        "Free photo shoot.",
+        "DM me."
+      ],
+      "brief": "CONCEPT: A NOTE FROM THE PHOTOGRAPHER. Intimate, charming, lightly funny personal note on fresh warm ivory stationery, written in confident deep-blue real-looking felt-tip handwriting, large and easy to read. It should feel like a personable photographer's introduction, not an ad template. \"Charlotte,\" at top, then \"I make portraits.\" large underlined once in blue. Middle-left one simple small rectangular source selfie of the actual curly-haired man in pink holding his phone, straight and clean with no distressed border. To its right and below the handwritten lines \"You bring a face.\" and \"I’ll bring the camera.\" in a warm casual rhythm. One hand-drawn blue outline of a small camera, clearly a doodle, in an empty area. Bottom line \"Free photo shoot.\" bold, then \"DM me.\" at large scale. LOTS of intentional breathing room, understated paper texture, the real selfie is the only photograph. No model portfolios, no blank you square, no red palette, no film strips, no clutter, no invented signature or photographer name.",
+      "source": "/Users/aidantorrence/.codex/generated_images/01a160f8-beff-7a61-aa20-11d6b420c223/exec-c377c9ce-4748-4a4b-ba33-34b6101df328.png",
+      "filename": "07-personal-note.png",
+      "prompt": "Use case: ads-marketing. Create one finished 9:16 vertical Instagram story advertising a free portrait photo shoot in Charlotte. This is a creative concept exploration: invent the visual composition described below, NOT a restyle of the attached four-photo poster. Render exactly the supplied concept copy, with excellent spelling and readable typographic hierarchy on a small phone. Do not add headlines from the reference. No watermarks, logos, invented dates, scarcity, testimonials, or unprovided deliverables. Input image role: source photographs ONLY, never a layout reference. Where requested use the actual face and photograph of the long straight black-haired woman in black, the wavy-haired young man in black, or the curly-haired photographer in pink holding his phone. Preserve their identities, expressions and photographic character closely. Use only the specifically requested source subjects for this concept; do not force all three people into every design. No invented people. The selfie man is the photographer, never a before/after example. CONCEPT: A NOTE FROM THE PHOTOGRAPHER. Intimate, charming, lightly funny personal note on fresh warm ivory stationery, written in confident deep-blue real-looking felt-tip handwriting, large and easy to read. It should feel like a personable photographer's introduction, not an ad template. \"Charlotte,\" at top, then \"I make portraits.\" large underlined once in blue. Middle-left one simple small rectangular source selfie of the actual curly-haired man in pink holding his phone, straight and clean with no distressed border. To its right and below the handwritten lines \"You bring a face.\" and \"I’ll bring the camera.\" in a warm casual rhythm. One hand-drawn blue outline of a small camera, clearly a doodle, in an empty area. Bottom line \"Free photo shoot.\" bold, then \"DM me.\" at large scale. LOTS of intentional breathing room, understated paper texture, the real selfie is the only photograph. No model portfolios, no blank you square, no red palette, no film strips, no clutter, no invented signature or photographer name.\nExact visible copy, verbatim (no other text):\n\"Charlotte,\"\n\"I make portraits.\"\n\"You bring a face.\"\n\"I’ll bring the camera.\"\n\"Free photo shoot.\"\n\"DM me.\"",
+      "dimensions": [
+        941,
+        1672
+      ],
+      "saved_path": "/Users/aidantorrence/Documents/aidan-modern/marketing/charlotte-ig-dm/renders-v19-concepts/07-personal-note.png"
+    },
+    {
+      "n": "08",
+      "slug": "lets-call-it-even",
+      "angle": "A creative exchange rather than a giveaway",
+      "copy": [
+        "You need new photos.",
+        "I need new faces.",
+        "Let’s call it even.",
+        "Free photo shoot • Charlotte",
+        "DM me “EVEN”"
+      ],
+      "brief": "CONCEPT: THE CREATIVE TRADE. A bold two-part conversation poster with blush-pink upper half and dark aubergine lower half, vivid vermilion accent. Top third enormous aubergine contemporary sans serif \"You need new photos.\" Center transition has two large offset cropped photographic rectangles: actual female source portfolio portrait upper right, actual male source portfolio portrait lower left, clean borderless editorial crops; preserve color and character. Within lower aubergine section large blush text \"I need new faces.\" A very large vermilion handwritten \"Let’s call it even.\" bridges the seam as the central payoff; keep every word readable and separate from faces. Footer clean blush \"Free photo shoot • Charlotte\" and \"DM me “EVEN”\". Convey a fair creative collaboration with expressive typesetting and clean print-design geometry. No money icons, arrows, red circles, tape, film borders, selfie, fourth empty frame, me/you labels or giant standalone Charlotte masthead.",
+      "source": "/Users/aidantorrence/.codex/generated_images/01a160f8-beff-7a61-aa20-11d6b420c223/exec-d110e5f8-8743-4d0f-bf28-02494ff571dc.png",
+      "filename": "08-lets-call-it-even.png",
+      "prompt": "Use case: ads-marketing. Create one finished 9:16 vertical Instagram story advertising a free portrait photo shoot in Charlotte. This is a creative concept exploration: invent the visual composition described below, NOT a restyle of the attached four-photo poster. Render exactly the supplied concept copy, with excellent spelling and readable typographic hierarchy on a small phone. Do not add headlines from the reference. No watermarks, logos, invented dates, scarcity, testimonials, or unprovided deliverables. Input image role: source photographs ONLY, never a layout reference. Where requested use the actual face and photograph of the long straight black-haired woman in black, the wavy-haired young man in black, or the curly-haired photographer in pink holding his phone. Preserve their identities, expressions and photographic character closely. Use only the specifically requested source subjects for this concept; do not force all three people into every design. No invented people. The selfie man is the photographer, never a before/after example. CONCEPT: THE CREATIVE TRADE. A bold two-part conversation poster with blush-pink upper half and dark aubergine lower half, vivid vermilion accent. Top third enormous aubergine contemporary sans serif \"You need new photos.\" Center transition has two large offset cropped photographic rectangles: actual female source portfolio portrait upper right, actual male source portfolio portrait lower left, clean borderless editorial crops; preserve color and character. Within lower aubergine section large blush text \"I need new faces.\" A very large vermilion handwritten \"Let’s call it even.\" bridges the seam as the central payoff; keep every word readable and separate from faces. Footer clean blush \"Free photo shoot • Charlotte\" and \"DM me “EVEN”\". Convey a fair creative collaboration with expressive typesetting and clean print-design geometry. No money icons, arrows, red circles, tape, film borders, selfie, fourth empty frame, me/you labels or giant standalone Charlotte masthead.\nExact visible copy, verbatim (no other text):\n\"You need new photos.\"\n\"I need new faces.\"\n\"Let’s call it even.\"\n\"Free photo shoot • Charlotte\"\n\"DM me “EVEN”\"",
+      "dimensions": [
+        941,
+        1672
+      ],
+      "saved_path": "/Users/aidantorrence/Documents/aidan-modern/marketing/charlotte-ig-dm/renders-v19-concepts/08-lets-call-it-even.png"
+    }
+  ]
+}
