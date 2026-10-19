@@ -1,5 +1,605 @@
 [
   {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-19",
+    "slug": "concierge-setups",
+    "name": "Setwell Blind Dates",
+    "need": "Can someone just set me up on a real date so I don't have to swipe?",
+    "headline": "No swiping, no chatting. We pick one compatible person, book the time and place, and you both just show up.",
+    "buyer": "Single adults (18+, ID-verified) in a metro area, usually 25-45, who have tried the apps and are worn out by them. They want a few good dates and won't pay $4,000+ for a human matchmaker.",
+    "bullets": [
+      "A 15-minute intake (values, dealbreakers, schedule), then a human-reviewed match suggestion each week, sent with a short explanation of why the two of you might fit",
+      "Both people opt in before anything is booked. We pick a public venue and a time that suits both calendars, and nobody has to send a single message",
+      "After each date both people give private feedback, which tunes the next match. Every profile is ID- and age-verified, and both sides see the same information"
+    ],
+    "price": "$79 for 3 booked setups",
+    "priceUsd": 79,
+    "priceNote": "You only pay for dates that actually get booked. A setup comes back as a credit if the match doesn't confirm. This sits between Sitch ($89.99 for 3 setups) and Tawkify client packages (thousands of dollars).",
+    "reasonPrompt": "What usually goes wrong for you between matching with someone and actually sitting across from them on a date?",
+    "faq": [
+      {
+        "q": "Is the other person real and actually interested?",
+        "a": "Yes. Every member is ID-verified and 18+. Nothing is booked until both people have seen the match and said yes, and we never write messages for anyone or pose as anyone."
+      },
+      {
+        "q": "What if the date is a no-show?",
+        "a": "If the other person doesn't show, the setup comes back as a credit. Repeat no-shows are removed from the service."
+      },
+      {
+        "q": "How is this different from a dating app?",
+        "a": "There's no feed, no swiping and no chatting. You get one considered match at a time and a booked plan."
+      },
+      {
+        "q": "Which cities?",
+        "a": "We launch one metro at a time, and only once there are enough verified members on both sides to make good matches."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-19",
+      "summary": "Pay-per-introduction matchmaking that skips the swiping already has paying customers at several price levels: Sitch sells setup packs and was funded by a16z speedrun and M13, Swoony has verified recurring revenue, and Tawkify has 8,000+ Trustpilot reviews. Users who say they had 'been on all the apps' describe weekly introductions they look forward to and blind dates that work.",
+      "wtp": "Sitch's in-app purchases: 3 setups $89.99, 5 for $124.99, 8 for $159.99, plus Sitch Monthly at $29.99 (App Pricing Lab, checked 2026-08-10). Swoony on TrustMRR: $45,639 all-time revenue, $1,434 MRR, 49 active subscriptions. Tawkify: TrustScore 4.6 from 8,044 Trustpilot reviews, with client packages that run into the thousands.",
+      "signals": [
+        {
+          "url": "https://getcoai.com/news/sitch-dating-app-uses-ai-matchmaker-to-set-up-160-blind-dates-in-nyc-sf-and-la/",
+          "who": "Karishma Tawani, 35, Sitch user (via CO/AI/Futurism)",
+          "date": "2025-08-11",
+          "quote": "I feel special when I get an introduction every week. I wait for it.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://getcoai.com/news/sitch-dating-app-uses-ai-matchmaker-to-set-up-160-blind-dates-in-nyc-sf-and-la/",
+          "who": "James Harter, 31, Sitch user",
+          "date": "2025-08-11",
+          "quote": "I think every date I went on, there was a second date.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://techcrunch.com/2025/06/25/sitch-wants-to-fuse-human-personality-and-ai-for-matchmaking",
+          "who": "Anna Barber, partner at M13 (Sitch investor), TechCrunch",
+          "date": "2025-06-25",
+          "quote": "A lot of the dating apps behave similarly to mobile games",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apppricinglab.com/iap/apple/6478976426",
+          "who": "Sitch iOS in-app purchase listing",
+          "date": "2026-08-10",
+          "quote": "3 Setups: $89.99 ... 5 setups: $124.99 ... Sitch Monthly: $29.99 ... 8 Setups: $159.99",
+          "seen": "opened"
+        },
+        {
+          "url": "https://trustmrr.com/startup/swoony-matchmaking",
+          "who": "Swoony (founder Oskar), AI matchmaking startup",
+          "date": "2026-10-18",
+          "quote": "All-time revenue: $45,639 ... MRR: $1,434 ... Active subscriptions: 49",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.trustpilot.com/review/www.tawkify.com?page=8",
+          "who": "Jennifer Lieber, Tawkify reviewer",
+          "date": "2026-08-26",
+          "quote": "I had been on all the apps and tried everything.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.trustpilot.com/review/www.tawkify.com?page=8",
+          "who": "Debra Stelnik, Tawkify reviewer",
+          "date": "2026-08-27",
+          "quote": "It was a perfect blind date.",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Sitch (AI and human, pay per setup, NYC/SF/LA), Swoony (AI match suggestions on subscription), Keeper (AI matchmaker, high-end bounty model, per press coverage), Tawkify (human matchmakers, packages in the thousands), Hinge and other swipe apps.",
+      "risks": "Two-sided supply in each city, and the gender balance inside it. No-shows and safety at first meetings (fix with public venues and ID checks). Sitch already holds this exact position in its cities, so we need a sharper price or more cities. The Swoony revenue on TrustMRR is small, which suggests subscriptions alone convert slowly."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-19",
+    "slug": "friend-vouched-setups",
+    "name": "Vouchring",
+    "need": "All my friends are coupled up. How do I get them to actually set me up with someone?",
+    "headline": "Let the people who know you play matchmaker. Friends vouch for you and suggest you to their single friends, and setups happen only with everyone's consent.",
+    "buyer": "Single adults (18+) in their late 20s to 40s whose friends are mostly married. Those friends would happily set them up, but they never think of it and have no easy way to do it.",
+    "bullets": [
+      "Invite 3-5 friends to write a short, honest vouch for you, so a potential date sees what your people say about you instead of a cold profile",
+      "Your friends (single or coupled) get a private board of single friends-of-friends and can suggest a pairing with one tap. Both singles see who suggested it and why, and each one opts in",
+      "Turn an agreed setup into a double date or a group hang with the matchmaker friend, so the first meeting feels low-pressure"
+    ],
+    "price": "$12/month for singles; free for matchmaker friends",
+    "priceUsd": 12,
+    "priceNote": "Matchmaking friends never pay, which keeps them suggesting. That's below Loop Premium ($29.99/month) because the network comes from friends instead of strangers.",
+    "reasonPrompt": "Who are the people in your life who'd set you up if it were easy? What's stopped them so far?",
+    "faq": [
+      {
+        "q": "Can a friend set me up without my knowing?",
+        "a": "No. Your profile appears only after you approve each vouch, and a setup happens only when both singles say yes. Every member is ID- and age-verified (18+)."
+      },
+      {
+        "q": "Can friends write things about me I don't approve?",
+        "a": "You see every vouch and choose which ones show. Nothing goes live without your OK."
+      },
+      {
+        "q": "Do my friends need to be single?",
+        "a": "No. Married and coupled friends are the best matchmakers, and they use it for free."
+      },
+      {
+        "q": "Is this another swipe app?",
+        "a": "No. There's no feed of strangers. Every suggestion comes from a real person who knows at least one of you."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-19",
+      "summary": "People who are tired of the apps say they want to be set up, and that their coupled-up friends don't think to do it. Set-up dates appeal because the other person has 'been vetted already'. Loop, which matches through friends, has 1K ratings and charges for Premium and intro requests, which shows people pay for this.",
+      "wtp": "Loop Premium, iOS: $29.99 per month, $74.99 for 3 months, $179.99 per year. Premium Intro Requests cost $9.99-$19.99. Rated 4.6 from 1K ratings on the App Store.",
+      "signals": [
+        {
+          "url": "https://apps.apple.com/us/app/loop-the-matchmaking-app/id6446096597",
+          "who": "Sophi89022, Loop App Store reviewer",
+          "date": "01/08/2024",
+          "quote": "most of my single friends are tired of the top dating apps and looking to be set up",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/loop-the-matchmaking-app/id6446096597",
+          "who": "Loop: The Matchmaking App (App Store listing)",
+          "date": "2026-10-19",
+          "quote": "1 Month: $29.99 ... 1 Year: $179.99 (Loop Premium); 4.6 out of 5, 1K ratings",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.boston.com/love-letters/dating/dating-apps-are-tedious/",
+          "who": "31-year-old Love Letters writer, Boston.com",
+          "date": "2024-02-16",
+          "quote": "So being set up with someone through them feels like it's not even on their radar.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://fashionjournal.com.au/life/setting-up-friends-again/",
+          "who": "Saskia, set up by a mutual friend (Fashion Journal, Cait Emma Burke)",
+          "date": "08.04.2024",
+          "quote": "I was pretty over the dating scene and really wanted love.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://fashionjournal.com.au/life/setting-up-friends-again/",
+          "who": "Eloise O'Sullivan, dating facilitator",
+          "date": "08.04.2024",
+          "quote": "The comfortability you get from going on a set up date is knowing that the person has been vetted already.",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Loop (matchmaking through friends and groups, paid Premium), Hinge and Bumble (no friend-vouch layer), Facebook setup groups (informal), and older attempts like Spritzr and YouShouldTotallyMeet that seem to have shut down (snippet only, status not checked).",
+      "risks": "Cold start: each single has to recruit friends to vouch, and many earlier friend-matchmaking apps faded. Friends' interest may drop after the first week, so prompts and small rewards matter. Privacy, because friends see other people's single friends (mitigate with opt-in visibility). Loop already exists, so the vouch and double-date angle has to set this apart."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-19",
+    "slug": "singles-supper-six",
+    "name": "Tablefor6 Singles",
+    "need": "Is there a way to meet single people in person without the apps or awkward bar nights?",
+    "headline": "Dinner for six single strangers, matched by age range and interests, with equal numbers of women and men guaranteed before any table is confirmed.",
+    "buyer": "Single adults (18+, ID-verified), mostly 25-45, who are 'sick of online dating' and want to meet people face to face. They find speed dating too intense and friendship dinners not aimed at singles.",
+    "bullets": [
+      "Answer a short questionnaire, pick your nights, and get placed at a table of six singles in your age range at a local restaurant",
+      "Tables are confirmed only when the gender mix (or same-gender mix for queer tables) is balanced, so you never pay for a lopsided night",
+      "Afterward you privately mark who you'd like to see again. Contact details are shared only when it's mutual"
+    ],
+    "price": "$29 per month (up to 3 dinners); food and drinks paid at the restaurant",
+    "priceUsd": 29,
+    "priceNote": "In line with Timeleft's US pricing (about $16 per dinner, $26 per month for unlimited) but only for singles, with a guaranteed balance at the table. If your table doesn't confirm, the seat is refunded as a credit.",
+    "reasonPrompt": "When did you last meet someone you were interested in face to face, and what made it happen?",
+    "faq": [
+      {
+        "q": "Is this a dating event or a friendship dinner?",
+        "a": "Everyone at the table is single and open to dating. Whether anything comes of it is up to you. Mutual matches are revealed only after the dinner."
+      },
+      {
+        "q": "What if the ratio is off?",
+        "a": "A table is confirmed only once it's balanced. Otherwise your seat moves to the next night or comes back as a credit."
+      },
+      {
+        "q": "Is it safe?",
+        "a": "Every attendee is ID-verified and 18+. Dinners happen at partner restaurants, and you can report anyone after the night."
+      },
+      {
+        "q": "Who pays for food?",
+        "a": "Everyone orders and pays for their own meal at the restaurant. The subscription covers matching and the reservation."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-19",
+      "summary": "Dinners with strangers are a proven paid habit: Timeleft reports €18M ARR and 150k participants a month, but it's positioned as friendship. Attendees say they joined because they were tired of dating apps, and in-person singles events sell out, with women's tickets often selling out first. That points to a singles-only format that guarantees balanced tables.",
+      "wtp": "Timeleft: about $16 per dinner and $26 per month unlimited (Alta, 2025). Up to $86 per month for subscriptions (News Tribune, 2024). €19.99 per month in Paris (Le Bonbon). €18M ARR and 150,000 monthly participants by August 2025 (Timeleft's CEO, via How They Build).",
+      "signals": [
+        {
+          "url": "https://www.altaonline.com/dispatches/a63924701/strangers-in-the-night/",
+          "who": "Mariana, Timeleft attendee (Alta, Jennifer Lewis)",
+          "date": "2025-02-27",
+          "quote": "I joined Timeleft because I was tired of dating apps.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.altaonline.com/dispatches/a63924701/strangers-in-the-night/",
+          "who": "Jennifer Lewis, Alta writer",
+          "date": "2025-02-27",
+          "quote": "the monthly subscription of unlimited dinner tickets at $26.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://saratogaliving.substack.com/p/vibe-check-single-in-saratoga-speed",
+          "who": "Natalie, Saratoga Living speed-dating event organizer/writer",
+          "date": "2024-02-10",
+          "quote": "Everyone, it seems, is sick of online dating.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://saratogaliving.substack.com/p/vibe-check-single-in-saratoga-speed",
+          "who": "Natalie, Saratoga Living",
+          "date": "2024-02-10",
+          "quote": "The female tickets sold out in a matter of days",
+          "seen": "opened"
+        },
+        {
+          "url": "https://timfrin.substack.com/p/inside-timelefts-journey-to-connecting",
+          "who": "Maxime Barbier, Timeleft CEO (interview by Timothe Frin)",
+          "date": "2025-10-09",
+          "quote": "hit €18M ARR & 150k monthly participants in August",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.newstribune.com/news/2024/nov/03/is-dining-with-strangers-the-cure-for-loneliness/",
+          "who": "Morgan Steffy, Timeleft diner (News Tribune)",
+          "date": "2024-11-03",
+          "quote": "I was so excited to find a way to meet people organically that wasn't a sports league or kickball,",
+          "seen": "opened"
+        },
+        {
+          "url": "https://en.lebonbon.fr/paris/society/a-crazy-concept-of-dinners-between-strangers-for-singles-is-coming-to-paris",
+          "who": "Le Bonbon Paris (on Timeleft)",
+          "date": "2024-01-08",
+          "quote": "a monthly subscription of €19.99 that allows you to have up to 4-5 dinners in a month.",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Timeleft (dinners with strangers, positioned as friendship, plus women-only tables), local speed-dating organizers on Meetup and Eventbrite, the 222 and Pie apps (in-person social events, snippet only), and singles mixers.",
+      "risks": "Keeping tables gender-balanced: men's tickets tend to sell more slowly, so this may need men's waitlists or a price difference. It only works in dense cities. Timeleft could easily add a singles mode. Restaurant partnerships and no-shows need deposits or credits. Safety and moderation at in-person events."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-19",
+    "slug": "reptoll",
+    "name": "Reptoll",
+    "need": "How do I stop scrolling without forcing myself to quit cold turkey?",
+    "headline": "Pay for your scroll time in push-ups, not willpower.",
+    "buyer": "People in their 20s and 30s who doomscroll Instagram or TikTok and also want to get fitter",
+    "bullets": [
+      "Your distracting apps stay locked until you earn minutes, with 1 rep buying 1 minute (you set the rate)",
+      "The phone camera counts push-ups, squats and planks, so reps have to be real",
+      "An emergency pass covers times you can't work out, like when you're at the mall"
+    ],
+    "price": "$3.99/month or $24/year",
+    "priceUsd": 4,
+    "priceNote": "Priced at the low end of the category: Fit to Scroll charges $2.99/mo or $19.99/yr, PushLock $9.99/mo or $39.99/yr. One PushLock reviewer called $39.99 'insane'.",
+    "reasonPrompt": "What's the one app you'd make yourself earn with push-ups?",
+    "faq": [
+      {
+        "q": "What if I physically can't exercise right now?",
+        "a": "You get a limited number of emergency passes for 1-30 minutes. A Fit to Scroll reviewer asked for exactly this."
+      },
+      {
+        "q": "Can I fake the reps?",
+        "a": "No. On-device pose detection counts a rep only when your form is right, and no video is saved."
+      },
+      {
+        "q": "Is it a blocker that a friend unlocks?",
+        "a": "No. Nobody else is involved. Your own movement is the only key."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-19",
+      "summary": "At least six App Store apps already sell exercise-to-unlock. Reviewers on two listings say it fixed their scrolling and got them exercising, so one habit pays for the other.",
+      "wtp": "PushLock: 4.7 stars from 325 ratings, with IAPs at $3.99/wk, $9.99/mo, $39.99/yr and a $24.99 annual offer. Fit to Scroll: 4.4 stars from 83 ratings, with IAPs at $2.99/mo and $19.99/yr. A reviewer says they pay '$10/year'.",
+      "signals": [
+        {
+          "url": "https://apps.apple.com/us/app/-/id6740492660",
+          "who": "IKGil (App Store reviewer, Fit to Scroll)",
+          "date": "2026-07-24",
+          "quote": "Like many, doom scrolling has been a barrier to productivity.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/-/id6740492660",
+          "who": "TeraCrownsJesus (App Store reviewer, Fit to Scroll)",
+          "date": "2026-03-27",
+          "quote": "helped me out a lot with trying to cure my instagram scrolling addiction haha.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/-/id6740492660",
+          "who": "RGS8480 (App Store reviewer, Fit to Scroll)",
+          "date": "2025-11-29",
+          "quote": "I am very impressed with this app…$10/year (as of writing this)",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id6759091105",
+          "who": "ExpandingMind (App Store reviewer, PushLock)",
+          "date": "2026-04-04",
+          "quote": "it helps me get jacked while i disconnect from my phone. best combo",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id6759091105",
+          "who": "Shizzy2wicked (App Store reviewer, PushLock)",
+          "date": "2026-06-29",
+          "quote": "$39.99 to do push up is insane",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "PushLock (Nisar Ahmad Khan), Fit to Scroll (Shannon Bolick), SquatPass, EarnScroll, RepLock, PushPass, Tacet, LOCKIN, Push Up Time",
+      "risks": "The category is crowded and young, with many 2025-2026 clones. PushLock reviewers complain about rep detection failing and about subscription pricing. Apple's Screen Time API can be bypassed. You need a twist (fair pricing, an emergency pass, reliable counting) to stand out."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-19",
+    "slug": "feedgone",
+    "name": "Feedgone",
+    "need": "Can I keep Instagram and YouTube for messages and search but lose the Reels and Shorts that eat my day?",
+    "headline": "Keep the parts of social media you use. Lose the endless feed.",
+    "buyer": "Students and professionals who can't delete social apps (for DMs, groups, posting for work) but lose hours to Reels, Shorts and suggested posts",
+    "bullets": [
+      "Opens Instagram, YouTube, Facebook and X with no feed, Reels, Shorts or suggested posts. DMs, search and your own profile still work",
+      "Per-site switches set once and sync across your devices and browser profiles",
+      "Pairs with the real apps: offload the native app and Feedgone becomes how you visit"
+    ],
+    "price": "$4.99/month, $29/year or $59 lifetime",
+    "priceUsd": 5,
+    "priceNote": "The leading Safari extensions show $4.99 up front plus $3.99/mo, $35.99/yr or $79.99 lifetime. UnTrap reviewers ask for a single one-time price, so offer lifetime clearly.",
+    "reasonPrompt": "Which feed do you most want gone while keeping the app?",
+    "faq": [
+      {
+        "q": "Does it change the Instagram app itself?",
+        "a": "No, because iOS doesn't allow that. You use the sites through Feedgone's clean view and remove the native app from your home screen."
+      },
+      {
+        "q": "Will I miss messages?",
+        "a": "No. DMs, notifications, search and your own posts stay. Only the endless feeds are gone."
+      },
+      {
+        "q": "How is this different from a blocker?",
+        "a": "Nothing gets locked. You still go to the place, but the feed that hooks you isn't there."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-19",
+      "summary": "Paid Safari extensions that strip feeds out of social sites chart in the App Store's top 40 Productivity apps. Reviewers say these fixed problems that willpower and blockers didn't, but complain that they only work in Safari and that syncing settings is a pain.",
+      "wtp": "SocialFocus: $4.99 paid app plus IAPs at $3.99/mo, $35.99/yr and $79.99 lifetime. It has 325 ratings and ranks #36 in Productivity. UnTrap for YouTube: $4.99, 510 ratings, #32 in Productivity, with IAPs at $3.99/mo and $35.99/yr. A reviewer calls UnTrap 'worth the price'.",
+      "signals": [
+        {
+          "url": "https://apps.apple.com/app/id1661093205",
+          "who": "Panjabi Man (App Store reviewer, SocialFocus)",
+          "date": "2026-04-19",
+          "quote": "I have a big screen time issue with instagram especially and going through university with it isn’t super easy.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/app/id1661093205",
+          "who": "uzanaym (App Store reviewer, SocialFocus)",
+          "date": "2025-01-14",
+          "quote": "I also have so many goals that I don’t engage with because of scrolling on FB and Twitter in particular.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1637438059",
+          "who": "Big Fwank (App Store reviewer, UnTrap for YouTube)",
+          "date": "2023-06-24",
+          "quote": "This will stop me from wasting so much time.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1637438059",
+          "who": "gardner#123 (App Store reviewer, UnTrap for YouTube)",
+          "date": "2023-08-08",
+          "quote": "Best App I've Ever Purchased",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "SocialFocus and UnTrap (both by Yevhen Tretiakov), Short Video Hider ($0.99), Block YT Shorts for Safari ($2.99), ShortsKiller, End Doomscroll",
+      "risks": "This only works on the web. iOS won't let anyone modify the native apps, and both leaders say so on their listings. Sites change their layouts often, and one reviewer calls it 'a cat-and-mouse type solution'. Both top players come from one strong indie developer."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-19",
+    "slug": "thumbtask",
+    "name": "Thumbtask",
+    "need": "Can I just text my tasks somewhere and have them tracked, without opening yet another app?",
+    "headline": "Your to-do list lives in WhatsApp, where you already are.",
+    "buyer": "Busy people juggling several jobs or side projects who live in WhatsApp or Telegram and abandon task apps after a week",
+    "bullets": [
+      "Text or forward any message to add a task. A voice note works too",
+      "It messages you at the right time and asks 'done?' Reply with one word to close the task",
+      "A Sunday message checks how your 3 goals for the week went and shows your list"
+    ],
+    "price": "$6/month",
+    "priceUsd": 6,
+    "priceNote": "Coco charges $4 and $12/mo tiers (230 active subscriptions). Any.do keeps its WhatsApp integration on paid plans. $6 sits between the two.",
+    "reasonPrompt": "What's a task you lost track of because it was buried in a chat?",
+    "faq": [
+      {
+        "q": "Do I need to install anything?",
+        "a": "No. You save a contact in WhatsApp or Telegram and start texting."
+      },
+      {
+        "q": "Does it plan or reschedule my day?",
+        "a": "No. It records what you tell it and reminds you. You stay in charge of the plan."
+      },
+      {
+        "q": "Can I see everything in one place?",
+        "a": "Yes. Text 'list' for today's tasks, or open a read-only web page with all your tasks and goals."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-19",
+      "summary": "Paying task-app users say the WhatsApp integration is the feature that keeps them using the app. A chat-only assistant already has verified Stripe revenue, which shows people pay for task tracking that needs no app.",
+      "wtp": "Coco (WhatsApp/Telegram assistant) on TrustMRR: $1,604 MRR, 230 active subscriptions and $26,906 all-time revenue, verified via Stripe. Tiers are Free, $4/mo and $12/mo. Note: a search snippet claimed $184k MRR, but the page as opened shows $1,604, so use $1,604.",
+      "signals": [
+        {
+          "url": "https://trustmrr.com/startup/coco",
+          "who": "Coco (founder Radu), TrustMRR listing",
+          "date": "2026-10-18",
+          "quote": "Personal chatbot assistant that lives on WhatsApp & Telegram. Helps users with reminders (+ to friends), note-taking, calendar management, and more.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.capterra.com/p/173614/Any-do/reviews/?page=7",
+          "who": "malluri A., Admin Manager (Capterra review of Any.do)",
+          "date": "2026-02-03",
+          "quote": "being able to turn a quick message into a tracked task saves us from losing ideas in chat threads.",
+          "seen": "snippet"
+        },
+        {
+          "url": "https://www.capterra.com/p/173614/Any-do/reviews/?page=7",
+          "who": "Verified Reviewer, CEO, IT services (Capterra review of Any.do)",
+          "date": "2025-10-26",
+          "quote": "It works through WhatsApp, and both the mobile app and browser experience are solid.",
+          "seen": "snippet"
+        },
+        {
+          "url": "https://www.capterra.com/p/173614/Any-do/reviews/?page=4",
+          "who": "Animesh T., Manager, Banking (Capterra review of Any.do)",
+          "date": "2026-06-09",
+          "quote": "Over time, features like whatsapp notifications have only made it the best.",
+          "seen": "snippet"
+        },
+        {
+          "url": "https://trustmrr.com/startup/memosyne",
+          "who": "MEMOSYNE (founder Shafayet Hossain), TrustMRR listing",
+          "date": "2026-10-18",
+          "quote": "it helps you stay organized without needing another app.",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Coco (textcoco.com), Any.do WhatsApp integration, NudgeBell, MEMOSYNE, Kyro, WappGPT, RecordAi, NagMeLater",
+      "risks": "Most WhatsApp bots on TrustMRR earn almost nothing (NudgeBell $25 all-time, MEMOSYNE $32), so the format alone doesn't sell. Meta's WhatsApp Business API charges per message and its rules can change. Any.do can bundle the same feature."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-19",
+    "slug": "wallgoal",
+    "name": "Wallgoal",
+    "need": "How do I stop forgetting my goals and to-dos the moment I close the app?",
+    "headline": "Your goals and today's top 3 tasks, on the screen you check 100 times a day.",
+    "buyer": "Forgetful and ADHD-leaning people who keep starting task apps and stop opening them",
+    "bullets": [
+      "Turns your goals, progress and today's top 3 tasks into a lock-screen wallpaper that updates itself each morning",
+      "Check off tasks from a widget and the wallpaper redraws",
+      "Goal progress shows as a dot grid, so you see it without opening anything"
+    ],
+    "price": "$9 one-time",
+    "priceUsd": 9,
+    "priceNote": "NoteWall sells weekly, monthly and yearly subscriptions, and one reviewer said the app is 'worth 5 bucks one time purchase at most'. ViewDo sells lifetime for $5.99. A clear one-time price is the angle.",
+    "reasonPrompt": "What's the one goal you'd want staring at you every time you pick up your phone?",
+    "faq": [
+      {
+        "q": "Do I have to open the app every day?",
+        "a": "No. A Shortcut refreshes the wallpaper every morning, and you check things off from the widget."
+      },
+      {
+        "q": "Is it a subscription?",
+        "a": "No. You pay $9 once and get no weekly charges."
+      },
+      {
+        "q": "Does it work with my existing task app?",
+        "a": "It can pull today's items from Apple Reminders, or you can type them in Wallgoal."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-19",
+      "summary": "Lock-screen to-do apps have paying users. One reviewer missed a discontinued app so much that they went looking for a replacement. Users like seeing tasks without opening an app, but they hate being hit with a subscription after a long setup.",
+      "wtp": "NoteWall: 4.4 stars from 109 ratings, with in-app purchases listed from $1.99 to $17.99, including a $5.99 lifetime. ViewDo: 4.7 stars from 12 ratings, with $0.99/mo, $3.99/yr and $5.99 lifetime.",
+      "signals": [
+        {
+          "url": "https://apps.apple.com/app/id6755601996",
+          "who": "Jason R (App Store reviewer, NoteWall)",
+          "date": "2026-04-24",
+          "quote": "I used to rely on an app called Goldfish List that let me turn my notes into a wallpaper",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/app/id6755601996",
+          "who": "Aspen Dolly Jo (App Store reviewer, NoteWall)",
+          "date": "2026-04-16",
+          "quote": "As someone who has ADHD I 10/10 recommend!",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/app/id6755601996",
+          "who": "Al3jet (App Store reviewer, NoteWall)",
+          "date": "2026-07-11",
+          "quote": "this is worth 5 bucks one time purchase at most.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/%E5%B1%8F%E8%A8%98-viewdo-%E9%8E%96%E5%AE%9A%E7%95%AB%E9%9D%A2-%E5%BE%85%E8%BE%A6%E4%BA%8B%E9%A0%85-%E4%BB%BB%E5%8B%99%E6%8F%90%E9%86%92/id6748600977?l=en-US",
+          "who": "lost fav list (App Store reviewer, ViewDo)",
+          "date": "2025-11-11",
+          "quote": "It is very convenient to pin important matters to the lock screen interface. I like it.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/-/id6760971853",
+          "who": "TaskWall (developer listing)",
+          "date": "2026-03-26",
+          "quote": "Make your lock screen useful.",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "NoteWall (Karol Billik), ViewDo, TaskWall, GoalGrid: Progress Wallpaper, LockToDo, Yondo, TodoWallpaper, the discontinued Goldfish List",
+      "risks": "Rating counts are small, with NoteWall the largest at 109, so demand is real but niche. A one-time price caps revenue per user. Apple could add native lock-screen tasks. Many cheap clones appeared in 2026. Shortcut-based setup frustrated some reviewers ('Overly complex setup')."
+    }
+  },
+  {
     "slug": "shelf-date",
     "name": "Shelf Date",
     "type": "software",
