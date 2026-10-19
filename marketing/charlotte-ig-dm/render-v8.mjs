@@ -374,7 +374,7 @@ const hang = (s, hangY, { fx = 0.5, minFace = 300 } = {}) => { const a = S2(s), 
   const s = 'R1-00009-0002', A = ACCENT(s), B = '#111'
   const H_ = hang(s, 330, { fx: 0.5 })
   C.e07 = [['01-hook', frame(`<div style="position:absolute;inset:0;background:${A};"></div><div style="position:absolute;inset:0;background:${B};clip-path:polygon(0 62%, 100% 38%, 100% 100%, 0 100%);"></div>
-    ${TX('FREE PHOTO SHOOT', { f: COND, px: 54, w: 700, c: B, ls: 0.1, x: 48, y: 262, wd: 984 })}${H_.html}${TX(CITY.toUpperCase(), { f: COND, px: 236, w: 700, c: '#fff', ls: -0.01, lh: 0.85, x: 48, y: Math.round(Math.min(1440 - 205, H_.face.bottom + 40)), wd: 984, extra: SH })}`, A, false)]]
+    ${TX('FREE PHOTO SHOOT', { f: COND, px: 54, w: 700, c: B, ls: 0.1, x: 48, y: 262, wd: 984 })}${H_.html}${TX(CITY.toUpperCase(), { f: COND, px: 200, w: 700, c: '#fff', ls: -0.01, lh: 0.85, x: 48, y: Math.round(Math.min(1440 - 175, H_.face.bottom + 70)), wd: 984, extra: SH })}`, A, false)]]
   BODIES.push(['e07', 'R1-09995-0010'])
 }
 
