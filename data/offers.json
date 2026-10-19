@@ -8981,6 +8981,290 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-19",
+    "slug": "keep-it-green",
+    "name": "Keep It Green",
+    "need": "I keep killing my houseplants and I never remember to water them.",
+    "headline": "Watering reminders that follow a quick soil check instead of a fixed calendar, so you stop both forgetting and overwatering.",
+    "buyer": "Adults with houseplants who forget to water or overwater.",
+    "bullets": [
+      "A ten-second soil check when the reminder comes: dry, damp or wet. The next reminder moves to match, instead of firing on a fixed schedule.",
+      "Snooze reschedules the plant properly, so a busy week doesn't throw the whole plan off.",
+      "Share a home's plants with a partner or roommate, so nobody waters twice and nobody forgets."
+    ],
+    "price": "$14.99/year",
+    "priceUsd": 15,
+    "priceNote": "Below the leading plant-care apps' yearly plans.",
+    "reasonPrompt": "Which plant did you lose most recently, and what do you think happened?",
+    "faq": [
+      {
+        "q": "Is this connected to another plant app?",
+        "a": "No. Keep It Green is an independent app."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-19",
+      "summary": "Plant owners on forums say they can't keep houseplants alive, and plant-care app reviewers say they could never remember to water. Plant apps have very large paid user bases.",
+      "wtp": "Planta (App Store): 4.8 from 114K ratings, Premium $7.99-$9.99 a month and $17.99-$47.99 a year. Greg: 4.6 from 21K ratings, $29.99 a year.",
+      "signals": [
+        {
+          "url": "https://www.monsterfishkeepers.com/forums/threads/any-other-house-plant-murders-here.748417/",
+          "who": "Friller2009 (MonsterFishKeepers forum)",
+          "date": "2022-06-01",
+          "quote": "I can't really keep houseplants alive",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.monsterfishkeepers.com/forums/threads/any-other-house-plant-murders-here.748417/",
+          "who": "wednesday13 (MonsterFishKeepers forum)",
+          "date": "2022-06-01",
+          "quote": "Just killed a peace lily",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/app/id1410126781",
+          "who": "thehowlingwool (App Store reviewer, Planta)",
+          "date": "2021-06-01",
+          "quote": "I had a few houseplants for awhile but could never remember to water them",
+          "seen": "opened"
+        }
+      ]
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-19",
+    "slug": "loose-leash",
+    "name": "Loose Leash",
+    "need": "My dog pulls on the leash and won't listen to me, and a trainer costs more than I can pay.",
+    "headline": "Five-minute home sessions that step from the house to a quiet street to a real walk, with a two-tap walk log that slows the plan when a step isn't working.",
+    "buyer": "Dog owners with a dog that pulls who can't afford a trainer.",
+    "bullets": [
+      "Short sessions that start indoors and move outside only when your dog is ready.",
+      "Log each walk in two taps. If a step fails, the plan slows down instead of pushing on.",
+      "One set of rules and cues for everyone in the household, so the dog hears the same thing from each person."
+    ],
+    "price": "$39.99/year",
+    "priceUsd": 40,
+    "priceNote": "A fraction of private trainer quotes, and in line with dog-training apps' yearly plans.",
+    "reasonPrompt": "What does your dog do on walks, and what have you already tried?",
+    "faq": [
+      {
+        "q": "What if my dog is aggressive or fearful?",
+        "a": "Loose Leash is for everyday pulling. For aggression, fear or reactivity, please work with a qualified trainer or behaviourist. It is an independent app."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-19",
+      "summary": "Dog owners describe being pulled over and ignored on walks, and quotes for trainers in the thousands. Dog-training apps have tens of thousands of paid ratings.",
+      "wtp": "Dogo (App Store): 4.8 from 17K ratings, subscriptions $3.99 to $99.99. Puppr: 4.8 from 27K ratings, $13.99 a month or $99.99 a year.",
+      "signals": [
+        {
+          "url": "https://www.mumsnet.com/talk/the_doghouse/4135682-pulling-dog",
+          "who": "drinkingwineoutofamug (Mumsnet)",
+          "date": "2021-01-14",
+          "quote": "She's actually pulled my shoulder that bad I needed physio.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/app/id1153294767",
+          "who": "Out of coins (App Store reviewer, Dogo)",
+          "date": "2025-02-24",
+          "quote": "My super stubborn beagle wouldn't listen to anything, especially outside, and I was getting so frustrated.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/the_doghouse/1340362",
+          "who": "PamBeesly (Mumsnet)",
+          "date": "not shown",
+          "quote": "he pulled so hard last week in the rain that I fell and really hurt myself.",
+          "seen": "snippet"
+        },
+        {
+          "url": "https://bobistheoilguy.com/forums/threads/dog-training-cost-expectations.345541/",
+          "who": "Crash Bandicoot (Bob Is The Oil Guy forum)",
+          "date": "not shown",
+          "quote": "Cheapest I've been presented with is $3000",
+          "seen": "snippet"
+        }
+      ]
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-19",
+    "slug": "toe-touch",
+    "name": "Toe Touch",
+    "need": "I'm so stiff I can't even touch my toes, and I never stick with stretching.",
+    "headline": "Ten-minute beginner stretching routines with slow transitions, a reach test you retake every two weeks to see progress, and no streaks to lose.",
+    "buyer": "Stiff adult beginners (18+) who have tried stretching and quit.",
+    "bullets": [
+      "Ten-minute routines built for stiff beginners, with time to get into each stretch.",
+      "A simple reach test every two weeks, so you see progress you can't feel day to day.",
+      "No streaks or nagging. Miss a few days and you just pick up the next routine."
+    ],
+    "price": "$19.99/year",
+    "priceUsd": 20,
+    "priceNote": "Below the leading stretching apps' yearly plans.",
+    "reasonPrompt": "How far can you reach right now, and what made you stop stretching last time?",
+    "faq": [
+      {
+        "q": "Is this medical advice?",
+        "a": "No. Toe Touch is for adults 18+ and is not medical or physiotherapy advice. If you have pain, an injury or a health condition, check with a doctor or physiotherapist first. It is an independent app."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-19",
+      "summary": "Stiff adults on forums say they can barely reach past their knees and that daily stretching hasn't helped, and stretching-app reviewers complain about streak nagging. Stretching apps sell paid plans.",
+      "wtp": "Bend: Stretching & Flexibility (App Store): 4.8 from 174K ratings, $4.99-$13.99 a month and $19.99-$39.99 a year.",
+      "signals": [
+        {
+          "url": "https://www.singletrackworld.com/forum/off-topic/anyone-else-struggle-to-touch-their-toes/",
+          "who": "richmtb (Singletrack forum)",
+          "date": "2013-01-29",
+          "quote": "I can barely get past my knees.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.singletrackworld.com/forum/off-topic/anyone-else-struggle-to-touch-their-toes/",
+          "who": "stumpy01 (Singletrack forum)",
+          "date": "2013-01-29",
+          "quote": "I am mega inflexible.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.anandtech.com/threads/i-cant-touch-my-toes.709867/",
+          "who": "Keego (AnandTech forums)",
+          "date": "2002-01-21",
+          "quote": "I have long legs, and I can't touch my toes.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/app/id1513988468",
+          "who": "milkipedia (App Store reviewer, Bend)",
+          "date": "2024-06-29",
+          "quote": "Streak nagging is why I quit Duolingo and I don't want this app to turn into that.",
+          "seen": "opened"
+        }
+      ]
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-19",
+    "slug": "fallback-dinner",
+    "name": "Fallback Dinner",
+    "need": "I want to cook at home but always end up ordering takeout.",
+    "headline": "Pick tonight's backup dinner in the morning, and get one tap to a 15-minute meal right when the takeout urge hits at 5pm.",
+    "buyer": "Busy adults and couples who buy groceries with good intentions, then open a delivery app at 6pm because they're tired and nothing is decided. This includes people who used a meal planner that is shutting down and want something to replace it.",
+    "bullets": [
+      "Morning pick: a 10-second check-in at breakfast locks in tonight's dinner, plus a backup meal made from pantry staples you always have.",
+      "The 'about to order' button: tap it when you feel the takeout pull. It shows your backup meal, a step-by-step 15-minute version, and the dishes you already have ingredients for.",
+      "Track home-cooked nights against takeout nights, with no calorie or diet tracking."
+    ],
+    "price": "$4.99/month or $29/year",
+    "priceUsd": 5,
+    "priceNote": "Above the $2.99 a month Mealime Pro charged, because this adds the 5pm nudge, not just recipes.",
+    "reasonPrompt": "What usually happens between getting home and opening a delivery app? What time is it, how tired are you, and what's in the fridge?",
+    "faq": [
+      {
+        "q": "Is this a diet or nutrition app?",
+        "a": "No. It's a habit tool that helps you follow through on cooking at home. It doesn't count calories or give nutrition or medical advice. If you have dietary needs, talk to a doctor or registered dietitian."
+      },
+      {
+        "q": "What if I still order takeout some nights?",
+        "a": "That's fine. Mark it as a takeout night and move on. The goal is more home-cooked nights over time, not a perfect record."
+      },
+      {
+        "q": "I was using a meal planner that's shutting down. Can I bring my recipes?",
+        "a": "You can paste recipe links or text into your backup list. Start with the 3 to 5 meals you actually cook most."
+      },
+      {
+        "q": "Sometimes ordering food is how I cope with a rough day. Can this help?",
+        "a": "The app can make a simple dinner the easier choice, but it isn't a substitute for professional support. If stress or eating patterns feel hard to manage, a licensed therapist can help. If you are in crisis, in the US call or text 988."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-19",
+      "summary": "People describe the same pattern again and again: tired after work, no dinner decided, so they order takeout. Two App Store meal-planning apps have about 54K ratings each, and reviewers praise them specifically for getting them to cook more. One of them, Mealime (54K ratings, $2.99/month Pro), is shutting down on October 21, 2026, so a large group of paying users will be looking for a replacement right now.",
+      "wtp": "Mealime Meal Planner Pro charged $2.99 USD/month with 54K ratings (4.8 stars) on the App Store; it is now shutting down on October 21, 2026. Paprika Recipe Manager 3 sells for $4.99 paid up front with 54K ratings (4.9 stars). Both pages were opened on apps.apple.com.",
+      "signals": [
+        {
+          "url": "https://apps.apple.com/us/app/mealime-meal-plans-recipes/id1079999103",
+          "who": "Mealime (developer, version history notes)",
+          "date": "2026-09-02",
+          "quote": "Mealime is shutting down on October 21st, 2026.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/mealime-meal-plans-recipes/id1079999103",
+          "who": "aeverson12 (App Store reviewer)",
+          "date": "2022-06-17",
+          "quote": "This app completely eliminates the mental load of deciding what’s for dinner",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/mealime-meal-plans-recipes/id1079999103",
+          "who": "ArchieShares (App Store reviewer)",
+          "date": "2025-08-11",
+          "quote": "We eat a better variety of foods that sometimes we don’t even envy going out to eat.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/paprika-recipe-manager-3/id1303222868",
+          "who": "Teebizzoo (App Store reviewer)",
+          "date": "2021-03-23",
+          "quote": "I've only been using the app for a few weeks, and already I have been cooking more often",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.thefrugalgirl.com/?p=11299",
+          "who": "Vanessa (blog commenter)",
+          "date": "2011-09-22",
+          "quote": "and yes, my husband wins and we order pizza. a lot.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.thefrugalgirl.com/?p=11299",
+          "who": "lunaKM (blog commenter)",
+          "date": "2011-09-22",
+          "quote": "Don't thaw the meat. Who wants to mess with quick thaw methods, just order out!",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.phillyvoice.com/tips-transitioning-take-out-home-cooked-meals-059991/",
+          "who": "Julia Aspen, PhillyVoice (sponsored by Independence Blue Cross)",
+          "date": "2022-07-06",
+          "quote": "When you finish with a long day at work, ordering takeout can feel like the path of least resistance.",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Recipe and meal-planning apps: Paprika ($4.99 one-time), Plan to Eat, eMeals, and Mealime (shutting down Oct 21, 2026). Meal-kit services such as HelloFresh. Delivery apps themselves are the real competitor at 5–7pm. Most planners stop at the weekly plan and grocery list. Few step in at the moment someone is about to order.",
+      "risks": "The core features (a backup meal plus a 5pm reminder) are easy for existing planners to copy. A reminder alone may not be strong enough to beat delivery-app convenience, so retention will depend on the 15-minute fallback meals being genuinely easy. Some of the signals are old (2011 blog comments). Turning away Mealime's departing users is a time-limited opportunity. The savings number must be shown as a rough estimate, not financial advice."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

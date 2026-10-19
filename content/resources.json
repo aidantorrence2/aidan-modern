@@ -1528,5 +1528,173 @@
         ]
       }
     ]
+  },
+  {
+    "slug": "mealime-shutting-down-what-to-do",
+    "offer": "fallback-dinner",
+    "title": "Mealime is shutting down on October 21: what to do next",
+    "description": "Mealime says it shuts down on October 21, 2026. Save the meals you actually cook, pick a replacement, and keep cooking at home instead of ordering in.",
+    "intro": "Mealime's App Store release notes say the app is shutting down on October 21, 2026, and that Pro is free for everyone until then. If it was how you decided what to cook, here is how to keep the habit going without losing your favourite meals.",
+    "sections": [
+      {
+        "h": "Before October 21: save your meals",
+        "list": [
+          "Open the app and go through the recipes you actually cook. For most people that is five to ten meals.",
+          "Copy each one into a note, a document or another recipe app: ingredients, quantities and steps.",
+          "Screenshot your usual grocery list too; it is a ready-made shopping template."
+        ]
+      },
+      {
+        "h": "Pick what replaces it",
+        "list": [
+          "If you mainly need somewhere to keep recipes and make shopping lists, a recipe manager will do. For example, Paprika Recipe Manager 3 is a one-time purchase on the App Store.",
+          "If what you really needed was the decision made for you, keep a short rotation of meals and a plan for the evening, not just a recipe library.",
+          "Whatever you choose, start with the meals you saved rather than browsing hundreds of new recipes."
+        ]
+      },
+      {
+        "h": "Keep the habit, not just the recipes",
+        "list": [
+          "Decide tonight's dinner in the morning, while you have energy.",
+          "Keep one backup meal from pantry staples for nights when the plan falls apart.",
+          "The takeout urge usually hits when you get home tired. Have the 15-minute version of your backup ready for exactly that moment."
+        ]
+      },
+      {
+        "h": "A simple weekly rhythm",
+        "p": [
+          "Pick three dinners for the week, shop once, and leave the other nights flexible. Three home-cooked nights is a realistic start, and easier to keep than seven."
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "how-to-stop-killing-houseplants",
+    "offer": "keep-it-green",
+    "title": "How to stop killing your houseplants: check the soil, not the calendar",
+    "description": "Most houseplants die from overwatering or forgetting. A simple routine: check the soil, water when it is dry, and set reminders that adapt.",
+    "intro": "Most houseplants are lost to two things: forgetting to water, and watering too much on a fixed schedule. Both have the same fix: check the soil before you water, and let the plant tell you when.",
+    "sections": [
+      {
+        "h": "Check before you water",
+        "list": [
+          "Push a finger into the soil up to the first knuckle. If it is dry, water. If it is damp, wait.",
+          "Lift the pot: a dry pot feels noticeably lighter than a freshly watered one.",
+          "Succulents and cacti like to dry out fully; ferns and many tropicals like soil that stays slightly moist."
+        ]
+      },
+      {
+        "h": "Water properly",
+        "list": [
+          "Water until it runs out of the drainage holes, then empty the saucer.",
+          "Pots without drainage holes are a common cause of rot. Use a plastic nursery pot inside a decorative one.",
+          "Water less in winter, when growth slows."
+        ]
+      },
+      {
+        "h": "Set reminders that adapt",
+        "list": [
+          "Use a reminder to check the soil, not to water. That way you never water a plant that does not need it.",
+          "Group plants with similar needs together so one check covers several.",
+          "If you share the home, agree who waters, so plants are not watered twice or forgotten."
+        ]
+      },
+      {
+        "h": "Match the plant to your light",
+        "p": [
+          "Many problems blamed on watering are really light. Check the plant's label for light needs, and move it closer to a window if it is leggy or pale."
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "how-to-stop-your-dog-pulling-on-the-leash",
+    "offer": "loose-leash",
+    "title": "How to stop your dog pulling on the leash, five minutes at a time",
+    "description": "A gentle step-by-step way to teach loose-leash walking: practise indoors first, reward the right position, and keep sessions short.",
+    "intro": "Dogs pull because pulling works: it gets them where they want to go. Loose-leash walking is taught by making a slack leash the thing that pays off, in short sessions, starting somewhere boring before moving to real walks.",
+    "sections": [
+      {
+        "h": "Start indoors",
+        "list": [
+          "Practise in a hallway or garden with few distractions, five minutes at a time.",
+          "Reward your dog with a small treat for being at your side with a loose leash.",
+          "Say a short cue such as \"with me\" and reward often at first."
+        ]
+      },
+      {
+        "h": "When the leash goes tight, stop",
+        "list": [
+          "The moment the leash tightens, stop walking and wait.",
+          "When the leash goes slack, or your dog looks back at you, reward and move on.",
+          "You can also turn and walk the other way, rewarding when your dog catches up beside you."
+        ]
+      },
+      {
+        "h": "Move outside in steps",
+        "list": [
+          "Go from indoors to a quiet street, then to a busier route, only when the previous step is easy.",
+          "Keep early outdoor walks short, and go back a step if pulling returns.",
+          "Let your dog sniff on cue as a reward, which is often worth more than food."
+        ]
+      },
+      {
+        "h": "Everyone uses the same rules",
+        "p": [
+          "If one person lets the dog pull and another does not, progress stalls. Agree on the same cue and the same stop-when-tight rule for everyone who walks the dog."
+        ]
+      },
+      {
+        "h": "When to get help",
+        "p": [
+          "If your dog is reactive, fearful or aggressive, or pulling is causing injury, work with a qualified trainer or behaviourist. A well-fitted harness can make walks safer while you train."
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "how-to-touch-your-toes-when-you-are-stiff",
+    "offer": "toe-touch",
+    "title": "How to touch your toes when you're stiff: a ten-minute beginner routine",
+    "description": "A gentle ten-minute routine for stiff beginners who want to touch their toes, how often to do it, and how to measure progress you can't feel.",
+    "intro": "If you can barely reach past your knees, you are not alone, and it is usually improvable with short, regular stretching. The key is gentle, consistent practice rather than forcing it.",
+    "sections": [
+      {
+        "h": "The ten-minute routine",
+        "list": [
+          "Warm up for two minutes: march on the spot or walk around.",
+          "Seated hamstring stretch: sit with one leg straight, reach toward the foot with a long back. Hold 30 seconds each side, twice.",
+          "Lying hamstring stretch: on your back, raise one straight leg with a strap or towel around the foot. Hold 30 seconds each side.",
+          "Standing forward fold with soft knees: let your upper body hang and breathe. Hold 30 seconds.",
+          "Calf stretch against a wall, 30 seconds each side."
+        ]
+      },
+      {
+        "h": "How to stretch safely",
+        "list": [
+          "Stretch to mild tension, never pain.",
+          "Breathe slowly and relax into the stretch rather than bouncing.",
+          "Bend your knees as much as you need; a straight back matters more than straight legs."
+        ]
+      },
+      {
+        "h": "How often",
+        "p": [
+          "Most days, for ten minutes, works better than a long session once a week. Progress usually shows over weeks, not days."
+        ]
+      },
+      {
+        "h": "Measure progress",
+        "p": [
+          "Every two weeks, do a standing reach and note where your fingertips land: knee, mid-shin, ankle, toes. Seeing the change keeps you going when you cannot feel it."
+        ]
+      },
+      {
+        "h": "When to check with a professional",
+        "p": [
+          "If you have back pain, an injury, or a health condition, or a stretch causes sharp or shooting pain, check with a doctor or physiotherapist first. This guide is not medical advice."
+        ]
+      }
+    ]
   }
 ]
