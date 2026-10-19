@@ -393,7 +393,7 @@ const follow = (k) => [['02-hour', hk(rot(MP11, 2 + k), 'about an hour.', 'i dir
 C.b = [['01-title', frame(`<div style="position:absolute;inset:0;background:#000;"></div>${SFb(0, 250, 538, 1670)}${PX(WH[3], 542, 250, 538, 1670, { fh: 0.2 })}${dim16(1120)}${head1(1120, "hi, i'm aidan. i'll take photos like this of you")}`, '#000', false)], ...follow(1)]
 
 // C: three-up: example · me · example
-C.c = [['01-title', frame(`<div style="position:absolute;inset:0;background:#000;"></div>${PX(WH[6], 0, 250, 358, 1670, { fh: 0.14 })}${SFb(361, 250, 358, 1670, { faceH: 230 })}${PX(MH[2], 722, 250, 358, 1670, { fh: 0.14 })}${dim16(1120)}${head1(1120, 'photos by aidan — me, in the middle')}`, '#000', false)], ...follow(2)]
+C.c = [['01-title', frame(`<div style="position:absolute;inset:0;background:#000;"></div>${PX(WH[6], 0, 250, 358, 1670, { fh: 0.14 })}${SFb(361, 250, 358, 1670, { faceH: 230 })}${PX(MH[2], 722, 250, 358, 1670, { fh: 0.14 })}${dim16(1230)}${block(1240, CITY, 'Free Photo Shoot.', '', { bigPx: 130, smallPx: 68 })}`, '#000', false)], ...follow(2)]
 
 // D: example hero with my picture-in-picture, top-right
 C.d = [['01-title', first(rot(WP11, 3), s => { const Pl = fits(s, 300, { fy: 0.4 }); if (!Pl || !Pl.face || Pl.mode !== 'below' || Pl.face.bottom > 1000 || !(Pl.face.top >= 650 || Pl.face.right <= 740)) return null
