@@ -1288,6 +1288,53 @@
       "status": "approved",
       "decided": "2026-10-19T05:20:17Z",
       "note": ""
+    },
+    {
+      "id": "software100:pickpack-canary-2026-10-19",
+      "kind": "build",
+      "source": "codex:software-revenue-goal",
+      "title": "Publish PickPack preview and email Chris Seetaram",
+      "summary": "Make the free preview public and send one short buyer-test email to Abiding Light. Proposed offline-copy price: $39; no checkout or spend. A close free competitor exists, so willingness to pay is unvalidated.",
+      "preview_url": "http://127.0.0.1:4389",
+      "payload": {
+        "action": "Publish the prepared PickPack preview publicly and send exactly one buyer-test email after the live URL is verified.",
+        "publication": {
+          "project_id": "appgprj_6ad5a7f54f1881919ec0044ddbe8058c",
+          "version_id": "appgprj_6ad5a7f54f1881919ec0044ddbe8058c~appgver_16bc8a7f310881918e9b77b287cb3742",
+          "commit_sha": "d4890dbc0ca07cf9da6ca59ee01a8224bd518b78",
+          "audience": "public",
+          "url": "https://pickpack-aidan-2026.aidantorrence.chatgpt.site",
+          "local_preview": "http://127.0.0.1:4389",
+          "screenshot": "/Users/aidantorrence/software-revenue-goal/artifacts/pickpack-preview.jpg",
+          "price": "Proposed USD 39 once for downloadable offline copy, setup help, and version 1 updates; no checkout, orders, charges, or subscriptions yet."
+        },
+        "messages": [
+          {
+            "to": "abidinglightphotography@gmail.com",
+            "subject": "Finding the originals for your clients' picks",
+            "body": "Hi Chris,\n\nI'm Aidan, a portrait photographer. Your pageant page asks clients to send the filenames they want retouched.\n\nI built PickPack to take that list, find the matching originals, and copy them into a new folder. It flags missing or duplicate names first. Photos stay on your computer.\n\nHere's an early preview for desktop Chrome or Edge:\nhttps://pickpack-aidan-2026.aidantorrence.chatgpt.site\n\nI'm testing whether a downloadable copy with setup help is worth $39 once. Would this help on a recent shoot, or is finding those files already easy?\n\nNo problem if it isn't useful. I won't follow up.\n\nAidan Torrence\nhttps://www.aidantorrence.com",
+            "relevance_source": "https://abidinglight.smugmug.com/Pageant-Fashion",
+            "prior_contact_check": "Gmail search of exact sender/recipient address returned no messages on 2026-10-19."
+          }
+        ],
+        "validation": {
+          "canary": "Disk-backed adapter copied selected RAW + XMP byte-for-byte and preserved originals. Ten focused checks pass; interactive sample states verified.",
+          "limits": "Actual Chrome native folder-picker and full browser copy, Windows compatibility, paid checkout and willingness to pay are not verified. A close free competitor exists at https://deshkit.com/photo-selection-matcher/."
+        },
+        "limits": [
+          "One email only, after successful public publication",
+          "No follow-ups",
+          "No social posts",
+          "No ad spend or other spending",
+          "No payment activation, charges, accepting terms or authentication changes",
+          "No private photos or client data published"
+        ]
+      },
+      "created": "2026-10-19T05:20:45Z",
+      "expires": "2026-10-22T05:20:45Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
     }
   ]
 }
