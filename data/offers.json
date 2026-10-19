@@ -10203,6 +10203,191 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-19",
+    "slug": "name-hold",
+    "name": "Name Hold",
+    "need": "I forget people's names a few minutes after meeting them.",
+    "headline": "Save a new name in five seconds with one memory hook, then get quick same-evening and spaced quizzes, plus a review before your next event.",
+    "buyer": "Adults who meet lots of new people at work, school gates, church or parties.",
+    "bullets": [
+      "Capture a name in five seconds, with one detail to hook it to.",
+      "A same-evening quiz, then spaced quizzes over the next weeks, so names stick.",
+      "A quick review of who you'll see before an event. Everything stays on your phone."
+    ],
+    "price": "$14.99/year",
+    "priceUsd": 15,
+    "priceNote": "In line with existing name-memory apps.",
+    "reasonPrompt": "Where do you meet people whose names you forget, and how often does it happen?",
+    "faq": [
+      {
+        "q": "Is my contacts data shared?",
+        "a": "No. Name Hold is an independent app, and the names you save stay on your phone."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-19",
+      "summary": "People on several forums say they forget names minutes after meeting someone, and name-memory apps sell paid plans.",
+      "wtp": "Name Reminder: Remember Names (App Store): Pro $5.99 a month or $34.99 a year (8 ratings); a reviewer says they ditched a spreadsheet for it.",
+      "signals": [
+        {
+          "url": "https://forums.anandtech.com/threads/i-have-a-problem.1776158/post-18676350",
+          "who": "Plasdom (AnandTech forums)",
+          "date": "2005-12-30",
+          "quote": "I can forget a person's name a few minutes after meeting them.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/_chat/3790464-Would-you-be-offended-if-I-kept-forgetting-your-name",
+          "who": "MaddeningtheUnhelpful (Mumsnet)",
+          "date": "2020-01-08",
+          "quote": "I'm awful with names too OP.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/-/id6450018987",
+          "who": "SamC-LG (App Store reviewer, Name Reminder)",
+          "date": "2023-08-02",
+          "quote": "I can finally ditch my clunky spreadsheet or notes app",
+          "seen": "opened"
+        }
+      ]
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-19",
+    "slug": "right-word",
+    "name": "Right Word",
+    "need": "I find it hard to put my thoughts into words. I never know what words to use.",
+    "headline": "Spoken vocabulary practice: five words a day chosen for speaking, say each one in a sentence about your own life, and a weekly one-minute 'explain it' prompt. No streaks, no ads.",
+    "buyer": "Adults who lose words mid-sentence and want to sound as clear as they think.",
+    "bullets": [
+      "Five useful words a day, chosen for everyday speaking rather than tests.",
+      "Say each word out loud in a sentence about your own life, so it is ready when you need it.",
+      "A weekly one-minute 'explain it' prompt to practise putting thoughts into words."
+    ],
+    "price": "$24.99/year",
+    "priceUsd": 25,
+    "priceNote": "Below the leading vocabulary apps' yearly plans.",
+    "reasonPrompt": "When do you most often lose the word you want: at work, in arguments, or explaining things?",
+    "faq": [
+      {
+        "q": "Is this connected to another vocabulary app?",
+        "a": "No. Right Word is an independent app."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-19",
+      "summary": "People on several forums say they can't find the word they need and wish they were more articulate, and vocabulary apps have hundreds of thousands of paid ratings.",
+      "wtp": "Vocabulary - Learn words daily (App Store): 4.8 from 220K ratings, Premium $9.99 to $149.99 lifetime.",
+      "signals": [
+        {
+          "url": "https://forums.anandtech.com/threads/when-you-are-talking.1713239/post-17689046",
+          "who": "JohnPaul (AnandTech forums)",
+          "date": "2005-10-06",
+          "quote": "in mid sentence I'll get a brain fart and can't think of the word I need.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.anandtech.com/threads/poll-are-you-an-articulate-person.1255306/post-10423352",
+          "who": "rh71 (AnandTech forums)",
+          "date": "2004-02-09",
+          "quote": "I wish I could be more articulate.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.anandtech.com/threads/poll-are-you-an-articulate-person.1255306/post-10423352",
+          "who": "SWScorch (AnandTech forums)",
+          "date": "2004-02",
+          "quote": "I can hardly talk worth a damn.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.lesswrong.com/posts/qwTZxjaBRrQucPmyJ/how-to-become-more-articulate",
+          "who": "just_browsing (LessWrong)",
+          "date": "2022-10-26",
+          "quote": "\"Being articulate\" is a skill I feel like I do not have, and I would like to practice this skill.",
+          "seen": "opened"
+        }
+      ]
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-19",
+    "slug": "pouch-step-down",
+    "name": "Pouch Step-Down",
+    "need": "I wake up, I put a pouch in. I've tried cold turkey and didn't make a week.",
+    "headline": "An 18+ taper planner for nicotine pouches: log each pouch's trigger, step down strength and count at your pace, and grow pouch-free blocks. A slip pauses the plan instead of resetting it.",
+    "buyer": "Adults (18+) who use nicotine pouches all day and keep relapsing.",
+    "bullets": [
+      "Log each pouch with one tap and what triggered it, so you see your real pattern.",
+      "Step down strength and count at a pace you choose, with growing pouch-free blocks.",
+      "A slip pauses the plan for a day instead of sending you back to zero."
+    ],
+    "price": "$24.99/year",
+    "priceUsd": 25,
+    "priceNote": "In line with existing pouch-quitting apps' yearly plans.",
+    "reasonPrompt": "How many pouches a day do you use, and what happened the last time you tried to stop?",
+    "faq": [
+      {
+        "q": "Is this medical treatment?",
+        "a": "No. Adults 18+ only. Pouch Step-Down is an independent habit tool, not medical advice. A doctor or pharmacist can talk you through quit aids, and in the US free quit coaching is available at 1-800-QUIT-NOW."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-19",
+      "summary": "People quitting nicotine pouches describe failed cold-turkey attempts and stepping down strength gradually, and pouch-quitting apps sell paid plans.",
+      "wtp": "Pouch-quitting apps sell paid plans: Pouchless Pro $5.99 a week or $39.99 a year; Quit Snus & Nicotine Pouches $9.79 a month or $19.99-$28.99 a year. Rating counts are small.",
+      "signals": [
+        {
+          "url": "https://futurism.com/health-medicine/zyn-nicotine-cold-turkey",
+          "who": "Rosecrans Baldwin, quoted by Joe Wilkins (Futurism)",
+          "date": "2026-01-09",
+          "quote": "I was afraid I'd lost my mind,",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/app/id6758862844",
+          "who": "Pouchless: Quit Nicotine & Zyn (App Store listing)",
+          "date": "2026-10-19",
+          "quote": "Pro Weekly $5.99; Pro Annual $39.99",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id6502235418",
+          "who": "Quit Snus & Nicotine Pouches (App Store listing)",
+          "date": "2026-10-19",
+          "quote": "Quit Snus Monthly Premium $9.79; Quit Snus Annual Subscription $28.99",
+          "seen": "opened"
+        },
+        {
+          "url": "https://community.becomeanex.org/t5/Support/ZYN-Nicotine-Withdrawal/td-p/281414/page/2",
+          "who": "anelson1843 (EX Community)",
+          "date": "not shown",
+          "quote": "on day 2 of kicking ZYN to the curb(again)",
+          "seen": "snippet"
+        }
+      ]
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

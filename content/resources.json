@@ -2362,5 +2362,134 @@
         ]
       }
     ]
+  },
+  {
+    "slug": "how-to-remember-names-after-meeting-someone",
+    "offer": "name-hold",
+    "title": "How to remember someone's name right after you meet them",
+    "description": "Forget names seconds after an introduction? Simple techniques that work: repeat it, link it to something, and review it later the same day.",
+    "intro": "Forgetting a name moments after hearing it is extremely common. Usually you were not really listening, because you were busy thinking about what to say. A few small habits fix most of it.",
+    "sections": [
+      {
+        "h": "In the moment",
+        "list": [
+          "Focus on hearing the name; pause before you answer.",
+          "Say it back: \"Nice to meet you, Priya.\"",
+          "If you did not catch it, ask again straight away. It is much less awkward now than later."
+        ]
+      },
+      {
+        "h": "Make it stick",
+        "list": [
+          "Link the name to one detail: where you met, what they do, someone you know with the same name.",
+          "Use the name once more before you part."
+        ]
+      },
+      {
+        "h": "Review it later",
+        "list": [
+          "Write the name and your detail in your phone the same day.",
+          "Look at the list again a few days later, then before you next see them."
+        ]
+      },
+      {
+        "h": "Before events",
+        "p": [
+          "Before a meeting, party or school event, glance over the names of people you are likely to see. A one-minute review makes greetings far easier."
+        ]
+      },
+      {
+        "h": "If you forget anyway",
+        "p": [
+          "Be honest and warm: \"I'm so sorry, remind me of your name?\" Most people forget names too and will not mind."
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "how-to-stop-losing-words-mid-sentence",
+    "offer": "right-word",
+    "title": "How to stop losing words mid-sentence",
+    "description": "Know what you mean but can't find the word? Practical ways to speak more clearly: practise words out loud, slow down, and rehearse explanations.",
+    "intro": "Many people think clearly but lose words when they speak, especially under pressure. Speaking is a skill separate from reading and writing, and it improves with practice out loud.",
+    "sections": [
+      {
+        "h": "Practise words out loud",
+        "list": [
+          "Learn a few useful words at a time and say each one in a sentence about your own life.",
+          "Words you have said aloud come to mind faster than words you have only read."
+        ]
+      },
+      {
+        "h": "Slow down",
+        "list": [
+          "Speaking slightly slower gives your brain time to find the next word.",
+          "A short pause is fine. Listeners notice it far less than you do."
+        ]
+      },
+      {
+        "h": "Have a fallback",
+        "list": [
+          "If the exact word will not come, describe it in simpler words and keep going.",
+          "\"The thing that…\" is a perfectly good bridge."
+        ]
+      },
+      {
+        "h": "Rehearse explanations",
+        "p": [
+          "Once a week, explain something out loud for one minute: a news story, a film, your job. Recording yourself and listening back shows quickly where you stumble."
+        ]
+      },
+      {
+        "h": "When to check with a doctor",
+        "p": [
+          "Occasional word-finding trouble is normal, especially when tired or stressed. If it is sudden, getting worse, or comes with other changes, talk to a doctor."
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "how-to-taper-off-nicotine-pouches",
+    "offer": "pouch-step-down",
+    "title": "How to taper off nicotine pouches when cold turkey fails",
+    "description": "Tried quitting nicotine pouches cold turkey and failed? A step-down approach: track your use, cut strength and count gradually, and plan for cravings.",
+    "intro": "If you have tried quitting nicotine pouches all at once and gone back within days, a gradual step-down may be easier. This guide is for adults 18 and over.",
+    "sections": [
+      {
+        "h": "Track first",
+        "list": [
+          "For a few days, note each pouch: the time, the strength and what was happening.",
+          "Most people find a pattern: waking up, after meals, while working, while driving."
+        ]
+      },
+      {
+        "h": "Step down in stages",
+        "list": [
+          "Drop to a lower strength before cutting the number of pouches.",
+          "Then remove one pouch a day at a time, starting with the easiest one to skip.",
+          "Hold each step until it feels manageable before moving on."
+        ]
+      },
+      {
+        "h": "Build pouch-free blocks",
+        "list": [
+          "Pick one daily situation, such as the first hour after waking, and keep it pouch-free.",
+          "Gradually add more blocks."
+        ]
+      },
+      {
+        "h": "Handle cravings",
+        "list": [
+          "Cravings usually pass in a few minutes. Have a plan: water, gum, a short walk, a call.",
+          "Expect irritability or poor sleep for a while; it usually eases."
+        ]
+      },
+      {
+        "h": "Get support",
+        "p": [
+          "A doctor or pharmacist can talk you through options such as nicotine replacement. In the US, free quit coaching is available at 1-800-QUIT-NOW. If you feel very low or anxious while quitting, talk to a doctor; if you are in crisis, call or text 988."
+        ]
+      }
+    ]
   }
 ]
