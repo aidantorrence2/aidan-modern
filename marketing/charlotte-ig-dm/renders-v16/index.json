@@ -1,0 +1,47 @@
+{
+ "g01n": [
+  "01-viewfinder",
+  "02-viewfinder",
+  "03-shutter"
+ ],
+ "a": [
+  "01-title",
+  "02-hour",
+  "03-cta"
+ ],
+ "b": [
+  "01-title",
+  "02-hour",
+  "03-cta"
+ ],
+ "c": [
+  "01-title",
+  "02-hour",
+  "03-cta"
+ ],
+ "d": [
+  "01-title",
+  "02-hour",
+  "03-cta"
+ ],
+ "f": [
+  "01-title",
+  "02-hour",
+  "03-cta"
+ ],
+ "g": [
+  "01-title",
+  "02-hour",
+  "03-cta"
+ ],
+ "h": [
+  "01-title",
+  "02-hour",
+  "03-cta"
+ ],
+ "i": [
+  "01-title",
+  "02-hour",
+  "03-cta"
+ ]
+}
