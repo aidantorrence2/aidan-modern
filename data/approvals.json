@@ -1161,6 +1161,29 @@
       "status": "denied",
       "decided": "2026-10-19T01:31:11Z",
       "note": ""
+    },
+    {
+      "id": "other:sign-in-to-stripe-to-prepare-software-sa-202610190509",
+      "kind": "other",
+      "source": "codex:aidantorrence",
+      "title": "Sign in to Stripe to prepare software sales checkout",
+      "summary": "Use Google sign-in in your existing Chrome session to inspect your Stripe seller account and checkout availability. No account creation, terms acceptance, charges, payouts, or checkout publication.",
+      "payload": {
+        "action": "Sign in to https://dashboard.stripe.com/ using the visible Google sign-in option and an existing Aidan account, if available; inspect seller activation state and existing products/payment links only.",
+        "browser": "Chrome",
+        "limits": [
+          "No new account",
+          "No terms acceptance",
+          "No charges or money transfers",
+          "No publication",
+          "Stop if identity verification or new permissions are required"
+        ]
+      },
+      "created": "2026-10-19T05:09:01Z",
+      "expires": "2026-10-22T05:09:01Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
     }
   ]
 }
