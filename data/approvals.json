@@ -1430,6 +1430,43 @@
       "status": "pending",
       "decided": null,
       "note": ""
+    },
+    {
+      "id": "software100:agency-discovery-2026-10-19",
+      "kind": "email",
+      "source": "codex:software-revenue-goal",
+      "title": "Ask SiteDrop which client-site problem their tools miss",
+      "summary": "One short research email to a website-care agency, asking for a recurring manual problem before choosing another product. No invented product, price, follow-up, publishing, social posts or spend.",
+      "payload": {
+        "action": "Send exactly one short discovery email to identify a real recurring software need before selecting or building the replacement product.",
+        "messages": [
+          {
+            "to": "hello@sitedropsolutions.com",
+            "subject": "A question about your website care work",
+            "body": "Hi SiteDrop team,\n\nI'm Aidan. I saw your care plans include hosting, backups, SSL and uptime monitoring.\n\nI'm researching software for agencies that maintain client websites. What's one recurring problem your current tools still make you handle by hand?\n\nI'd use a real example to decide what to build and test as a paid pilot. Nothing is built or for sale yet.\n\nIf there's no gap, no need to reply. I won't follow up.\n\nThanks,\nAidan Torrence"
+          }
+        ],
+        "evidence": {
+          "recipient": "Public business email and care-plan scope verified in the live page at https://sitedropsolutions.com/services on 2026-10-19. Prices are CAD, not USD; no service-price figures used in the email.",
+          "prior_contact_check": "Exact Gmail sender/recipient search returned zero messages on 2026-10-19.",
+          "market": "https://trustmrr.com/startup/trackssl shows 220 active subscriptions, USD 5,197 MRR and Stripe verification. This establishes spending in the category, not demand for our future product."
+        },
+        "limits": [
+          "One email only",
+          "No follow-up",
+          "No product or price claims",
+          "No deployment",
+          "No payments or spend",
+          "No Instagram or social posts",
+          "Do not contact anyone who has declined previous outreach"
+        ],
+        "revision": "PickPack was rejected. Its publication and email remain cancelled. This replaces building first with one concrete buyer discovery question."
+      },
+      "created": "2026-10-19T06:57:36Z",
+      "expires": "2026-10-22T06:57:36Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
     }
   ]
 }
