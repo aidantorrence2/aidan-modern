@@ -1462,7 +1462,9 @@
           "No Instagram or social posts",
           "Do not contact anyone who has declined previous outreach"
         ],
-        "revision": "PickPack was rejected. Its publication and email remain cancelled. This replaces building first with one concrete buyer discovery question."
+        "revision": "PickPack was rejected. Its publication and email remain cancelled. This replaces building first with one concrete buyer discovery question.",
+        "result": "Sent exactly the approved discovery email to hello@sitedropsolutions.com. Gmail confirmed SENT; message and thread ID 1a1551be20a55636. No follow-up, other outreach, publication, payment action or spend.",
+        "result_at": "2026-10-19T17:00:57Z"
       },
       "created": "2026-10-19T06:57:36Z",
       "expires": "2026-10-22T06:57:36Z",
