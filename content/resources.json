@@ -2184,5 +2184,49 @@
         ]
       }
     ]
+  },
+  {
+    "slug": "how-to-stop-impulse-buying-online",
+    "offer": "buy-things-change-mood",
+    "title": "How to stop impulse buying online",
+    "description": "Late-night shopping you regret? Simple ways to put a pause between wanting and buying: a waiting list, fewer saved cards, and knowing your triggers.",
+    "intro": "Most online impulse buys happen fast: a scroll, a tap, a saved card. Putting even a short pause between wanting something and buying it is the single most effective fix, because many urges fade on their own.",
+    "sections": [
+      {
+        "h": "Use a waiting list",
+        "list": [
+          "When you want something, add it to a list with today's date instead of buying it.",
+          "Wait a set time: three days for small things, a week or a month for bigger ones.",
+          "When the time is up, decide again. Many items will no longer feel necessary."
+        ]
+      },
+      {
+        "h": "Add friction to checkout",
+        "list": [
+          "Turn off one-click ordering and remove saved cards from the stores you use most.",
+          "Log out of shopping apps, or move them off your home screen.",
+          "Unsubscribe from sale emails and turn off shopping notifications."
+        ]
+      },
+      {
+        "h": "Know your triggers",
+        "list": [
+          "Notice when you buy: late at night, when bored, stressed, lonely or after a hard day.",
+          "Plan something else for those moments: a walk, a call, a shower, a show."
+        ]
+      },
+      {
+        "h": "Track what you skipped",
+        "p": [
+          "Keep a simple note of the things you decided not to buy. Seeing the list grow is satisfying, and it shows how many urges passed on their own."
+        ]
+      },
+      {
+        "h": "When to get help",
+        "p": [
+          "If shopping feels out of control, is causing debt, or you shop to cope with difficult feelings, talking to a doctor, a therapist or a free debt advice service can help. This guide is not financial advice."
+        ]
+      }
+    ]
   }
 ]
