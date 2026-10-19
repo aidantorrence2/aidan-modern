@@ -15,7 +15,8 @@ R5 = sys.argv[7] if len(sys.argv) > 7 else None   # render-v5.mjs: 10 new concep
 R6 = sys.argv[8] if len(sys.argv) > 8 else None   # render-v6.mjs: CPC set — ten hooks
 R7 = sys.argv[9] if len(sys.argv) > 9 else None   # render-v7.mjs: design set
 R8 = sys.argv[10] if len(sys.argv) > 10 else None   # render-v8.mjs: art direction set
-R9 = sys.argv[11] if len(sys.argv) > 11 else None   # render-v9.mjs: format-breaking set   # render-v4.mjs: 10 carousels from new_top_tier_candidates   # render-v3.mjs output: photo-heavy still ads (top picks)
+R9 = sys.argv[11] if len(sys.argv) > 11 else None   # render-v9.mjs: format-breaking set
+R10 = sys.argv[12] if len(sys.argv) > 12 else None   # render-v10.mjs: 30 more formats   # render-v4.mjs: 10 carousels from new_top_tier_candidates   # render-v3.mjs output: photo-heavy still ads (top picks)
 PICKS = ['c00', 'n04', 'n11']   # Aidan liked these three (20 Oct)
 
 def thumb(path, w=300):
@@ -205,6 +206,45 @@ def card9(cid):
     return f'''<article class="card control"><header><span class="num">{cid.upper()}</span><h3>{html.escape(title)}</h3><span class="lever">{html.escape(lever)}</span></header>
   <p class="why">{html.escape(why)}</p><div class="strip">{frames}</div><p class="needs ok">ready · {len(names)} cards</p></article>'''
 car9 = ''.join(card9(c) for c in META9) if R9 else ''
+META10 = {
+ 'm01': ('iMessage', 'a text from Aidan', 'A text thread: your portrait arrives as a photo message, "interested?" underneath.'),
+ 'm02': ('Instagram message request', 'a DM request', 'A request from @madebyaidan with an Accept button, then the thread.'),
+ 'm03': ('Memories', 'a Photos memory', 'A "memory" tile: story bars, "Charlotte / free photo shoot", a Play pill.'),
+ 'm04': ('FaceTime call', 'an incoming call', '"Charlotte" is calling: Decline / Accept. Card 2: the live call.'),
+ 'm05': ('Now playing', 'a music player', 'The portrait is the album art; the city is the track; "Interested? Let\'s chat." is the next song.'),
+ 'm06': ('Map pin', 'a map', 'A map whose pin has her portrait as its head; the place card says Charlotte; a Directions-style sheet with the button.'),
+ 'm07': ('Weather', 'a forecast', 'The forecast says FREE. H: about an hour, L: $0. Card 2: "Tonight — Interested? Let\'s chat."'),
+ 'm08': ('Listing', 'a stay listing', 'A photo carousel with dots, "Free photo shoot in Charlotte", $0, a Message button.'),
+ 'm09': ('App Store', 'an app page', 'The app is "Charlotte — Free Photo Shoot": GET, price/time/place, screenshots.'),
+ 'm10': ('Newspaper', 'a front page', 'A halftone portrait under "Free photo shoot comes to Charlotte". Card 2 is page two with the boxed call.'),
+ 'm11': ('Admit-one ticket', 'a ticket', 'A perforated ticket: the portrait on it, CHARLOTTE, a barcode stub.'),
+ 'm12': ('Tarot', 'a tarot card', 'Three cards: THE PORTRAIT (Charlotte), THE HOUR, THE CALL.'),
+ 'm13': ('Trading card', 'a holo collector card', 'FREE in the corner; abilities: About an hour / I direct every frame / Interested? Let\'s chat.'),
+ 'm14': ('Instagram profile', 'a profile page', 'Bio from your deck, highlights, and Message as the main button.'),
+ 'm15': ('Instagram note', 'a friend\'s note', 'A note bubble over the avatar: "free photo shoot in Charlotte 📸".'),
+ 'm16': ('$0 / 1 hr', 'a stats card', 'Giant numerals behind a cut-out subject.'),
+ 'm17': ('Activity rings', 'a fitness ring', 'Three closed rings around her portrait, a 01:00:00 timer.'),
+ 'm18': ('Clapperboard', 'a film slate', 'PROD. free photo shoot · SCENE Charlotte · DIRECTOR Aidan.'),
+ 'm19': ('Search result', 'a search page', 'The first result is the offer; card 2 is "People also ask".'),
+ 'm20': ('Post', 'a social post', 'A text post with the portrait as its attached photo.'),
+ 'm21': ('Album cover', 'a record sleeve', 'A FREE sticker on the sleeve; the back is the track list.'),
+ 'm22': ('Marquee', 'a theatre marquee', 'CHARLOTTE in bulbs, the portrait in a bulb frame; "NOW SHOWING".'),
+ 'm23': ('Neon', 'a neon sign', 'Neon script over a dark portrait.'),
+ 'm24': ('Chalkboard', 'a menu board', '"today\'s special: Free Photo Shoot — Charlotte · about an hour · $0" with a taped polaroid.'),
+ 'm25': ('Retro window', 'a 90s dialog', 'Charlotte.exe with the portrait and a default button "Interested? Let\'s chat."'),
+ 'm26': ('CAPTCHA', 'a verification grid', '"Select all squares with a free photo shoot in Charlotte"; card 2 is "Verified ✓".'),
+ 'm27': ('Facts label', 'a nutrition label', 'Photo Shoot Facts: servings 1, time about an hour, cost $0.'),
+ 'm28': ('Postcard', 'a postcard', 'Greetings from Charlotte, with a FREE stamp; the back has the message.'),
+ 'm29': ('Video call', 'a meeting gallery', 'Three tiles and a fourth that says "You — tap to join".'),
+ 'm30': ('Highway sign', 'an exit sign', 'A green exit sign over the portrait: CHARLOTTE ↗ FREE PHOTO SHOOT, EXIT 1 HR.'),
+}
+def card10(cid):
+    title, lever, why = META10[cid]
+    names = json.load(open(os.path.join(R10, 'index.json')))[cid]
+    frames = strip([os.path.join(R10, cid, n + '.jpg') for n in names], names)
+    return f'''<article class="card control"><header><span class="num">{cid.upper()}</span><h3>{html.escape(title)}</h3><span class="lever">looks like: {html.escape(lever)}</span></header>
+  <p class="why">{html.escape(why)}</p><div class="strip">{frames}</div><p class="needs ok">ready · {len(names)} cards</p></article>'''
+car10 = ''.join(card10(c) for c in META10) if R10 else ''
 picks = ''.join(card_html(c) for c in PICKS)
 rest = ''.join(card_html(c) for c in META if c not in PICKS)
 vids = ''.join(vcard(v) for v in sorted(VIDEOS, key=lambda v: not v.get('pick')))
@@ -275,6 +315,9 @@ video {{ width:min(100%,300px); aspect-ratio:9/16; background:#000; display:bloc
  <div class="box"><h4>Round 3</h4><p>Hero test on the winning layout (three different first frames), plus the real selfie clip if you film it.</p><p>Judge on CPC first, then cost per chat once each ad has 5+ chats.</p></div>
 </div>
 
+<h2>30 more: the same idea, thirty new formats</h2>
+<p class="lede">M01–M30. Same principle as the set below (card 1 stops the scroll by looking like something else), thirty new formats: message apps, a call, a player, a map, a forecast, a listing, an app page, a newspaper, a ticket, tarot, a trading card, a profile, a note, a stats card, fitness rings, a clapperboard, a search page, a post, an album, a marquee, neon, a chalkboard, a retro window, a CAPTCHA, a facts label, a postcard, a video call, a highway sign. Each has a hook and its own call-to-action card. No text on any face.</p>
+{car10}
 <h2>The format-breaking set: ten things that don't look like ads</h2>
 <p class="lede">The earlier sets were all "a poster with a face and the city". These break that template: each concept is a different format that borrows the look of something else — a camera, a lock screen, an Instagram story, a sticker pack, a receipt, a contact sheet with an empty frame for you, a portrait made of the word, an eye lineup, a double exposure, a glitch. CPC logic: card 1 stops the scroll by not looking like an ad. Face-size and type-over-face rules are relaxed only where the format needs it (proof sheet, lineup); no text sits on a face in any of them.</p>
 {car9}
