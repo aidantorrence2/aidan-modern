@@ -1703,6 +1703,23 @@
       "status": "pending",
       "decided": null,
       "note": ""
+    },
+    {
+      "id": "heroku-mfa-reopen-1019",
+      "kind": "email",
+      "source": "claude:aidantorrence",
+      "title": "Reply to Heroku Support ticket #1699534: close account or send new MFA code",
+      "summary": "Locked out again. Billing already looks stopped (no Heroku invoice since June's $5). This asks Heroku to close the account, or send a new 24h code so you can. Reuses the verification info they accepted in June.",
+      "payload": {
+        "to": "support+e8cd408b-8fe6-4561-aefc-2fd85e3bfaf4@mail.support.heroku.com",
+        "thread": "[Heroku Support] RE: Cancel my plan (ticket 1699534)",
+        "body": "Hi,\n\nI'm locked out by MFA again on aidan.torrence@gmail.com. Please close my account and cancel all billing, or send me a new temporary recovery code so I can close it myself.\n\nVerification (same as I sent on June 17 on this ticket):\n- Account created Nov 19, 2021\n- Billing zip 28270\n- Invoice #112588725, June 2026, $5.00\n- Invoice #112121374, May 2026, $9.00\n\nThanks,\nAidan"
+      },
+      "created": "2026-10-19T18:53:45Z",
+      "expires": "2026-10-22T18:53:45Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
     }
   ]
 }
