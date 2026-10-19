@@ -6,7 +6,7 @@
 //       --summary "Follow-up to Ana Diaz about the 24 Oct test shoot" \
 //       --payload '{"to":"ana@x.com","subject":"...","body":"..."}' [--preview-url URL] [--expires-hours 72] [--id email:ana-followup]
 //   request-approval status <id>                 # {"id","status","decided","note"}
-//   request-approval wait <id> [--timeout 900]   # exit 0 approved, 3 denied, 4 still pending at timeout
+//   request-approval wait <id> [--timeout 1800]  # blocks until decided; exit 0 approved, 3 denied/expired, 4 still pending
 //   request-approval list [--pending]
 //   request-approval result <id> "<what you did>" # record the outcome after acting on an approved item
 //
@@ -134,7 +134,20 @@ async function update(mutate) {
 }
 
 const slug = s => s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 40)
-const view = i => ({ id: i.id, status: i.status, decided: i.decided ?? null, note: i.note ?? '' })
+// What the agent must do next, spelled out so a decision and its note are never missed.
+function instruction(i) {
+  const expired = i.status === 'pending' && i.expires && Date.parse(i.expires) < Date.now()
+  const note = (i.note || '').trim()
+  if (expired) return 'Expired without a decision: treat it as denied and do not do it.'
+  if (i.status === 'approved') return note
+    ? `Approved. Do what the request said, following Aidan's note: "${note}". Then record it: request-approval result ${i.id} "<what you did>".`
+    : `Approved. Do exactly what the request said, then record it: request-approval result ${i.id} "<what you did>".`
+  if (i.status === 'denied') return note
+    ? `Denied with a note. Do NOT do the original action. Aidan's note is your instructions: "${note}". Revise the work accordingly and queue a NEW request (new --id) with the revised version.`
+    : 'Denied. Do not do it.'
+  return `Still waiting for Aidan. Keep working on anything that does not depend on it, then block on: request-approval wait ${i.id}`
+}
+const view = i => ({ id: i.id, status: i.status, decided: i.decided ?? null, note: i.note ?? '', instruction: instruction(i) })
 
 // ---------- commands ----------
 
@@ -169,7 +182,8 @@ if (cmd === 'add') {
     return `Request ${id} (${item.source})`
   })
   if (existed) { console.log(JSON.stringify({ ...view(existed), already: true })); process.exit(0) }
-  console.log(JSON.stringify({ id, status: 'pending' }))
+  console.log(JSON.stringify({ id, status: 'pending',
+    instruction: `Queued as a card on Aidan's Mac and phone. Before ending your turn, block on: request-approval wait ${id} (his decision and any note only reach you while you wait).` }))
 } else if (cmd === 'status') {
   const id = pos[1] || die('usage: status <id>')
   const { db } = await store.read()
@@ -177,7 +191,7 @@ if (cmd === 'add') {
   console.log(JSON.stringify(view(it)))
 } else if (cmd === 'wait') {
   const id = pos[1] || die('usage: wait <id> [--timeout seconds] [--interval seconds]')
-  const deadline = Date.now() + Number(opt.timeout || 900) * 1000
+  const deadline = Date.now() + Number(opt.timeout || 1800) * 1000
   const interval = Math.max(10, Number(opt.interval || 30)) * 1000
   while (true) {
     const { db } = await store.read()

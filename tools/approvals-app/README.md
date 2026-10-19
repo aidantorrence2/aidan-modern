@@ -33,7 +33,10 @@ and **Contents: Read and write**, then paste it in Settings → Save token.
   The ✕ hides a card; the item stays in the menu-bar list ("Show cards" brings them back).
 - Up to three cards show at once with a "+N more waiting" row; the next slides in as you decide.
   A soft sound plays when a new request arrives (Settings to turn off).
-- New items appear within one poll (default 60 s).
+- New items appear within one poll (default 60 s); while a card is on screen the app checks every
+  15 s, so a decision made on the phone clears it quickly. App Nap is disabled for the app (it had
+  throttled polling for minutes while no window was visible).
+- First decision wins: a later Approve/Deny on another device never flips an item already decided.
 - The menu-bar icon shows the pending count. Its panel groups items by `kind`, with Approve, Deny,
   Snooze 4h per item and "Approve all <kind>" per group.
 - A decision writes `status`, `decided` (ISO 8601 UTC) and `note` back with a commit such as
@@ -76,10 +79,16 @@ is in `~/.claude/CLAUDE.md` and `~/.codex/AGENTS.md`.
 request-approval add --kind email --title "Send email to Ana Diaz: NY test shoot" \
   --summary "Follow-up about the 24 Oct shoot" \
   --payload '{"to":"ana@x.com","subject":"...","body":"..."}' --expires-hours 72
-request-approval status <id>            # or: wait <id> --timeout 900 (exit 0 approved, 3 denied/expired, 4 pending)
+request-approval wait <id>              # blocks until decided (default 30 min); exit 0 approved, 3 denied/expired, 4 pending
+request-approval status <id>            # one-off check
 request-approval result <id> "sent:<messageId>"   # after acting; refused unless approved
 request-approval list --pending
 ```
+
+Every answer carries an `instruction` field telling the agent what to do next. A denial with a
+note says: don't do it, treat the note as instructions, revise and queue a new request. Agents must
+block on `wait` before ending their turn; a turn that ends while a request is pending never hears
+the decision or the note (that is how a denial note once failed to reach Codex).
 
 It writes through the GitHub API (token from `GH_TOKEN`/`GITHUB_TOKEN` or `gh auth token`) and falls
 back to a sparse git clone + push when no token exists. After editing `bin/request-approval.mjs`,

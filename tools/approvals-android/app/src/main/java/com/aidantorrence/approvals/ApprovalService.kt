@@ -30,7 +30,8 @@ class ApprovalService : Service(), Ui.CardActions {
     private lateinit var nm: NotificationManager
     private val listener: () -> Unit = { render() }
     private val pollTick = object : Runnable {
-        override fun run() { pollNow(); main.postDelayed(this, POLL_MS) }
+        // Every 15 s while a request is waiting (so a Mac decision clears the phone fast), else 60 s.
+        override fun run() { pollNow(); main.postDelayed(this, if (Store.visible().isEmpty()) POLL_MS else POLL_FAST_MS) }
     }
     private val screenOn = object : BroadcastReceiver() {
         override fun onReceive(c: Context, i: Intent) { pollNow() }
@@ -236,6 +237,7 @@ class ApprovalService : Service(), Ui.CardActions {
         const val CH_SERVICE = "service"
         const val ID_SERVICE = 1
         const val POLL_MS = 60_000L
+        const val POLL_FAST_MS = 15_000L
         const val EXTRA_ID = "id"
         const val EXTRA_STATUS = "status"
         const val EXTRA_NOTE = "note"

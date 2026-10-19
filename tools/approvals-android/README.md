@@ -20,8 +20,8 @@ writes the same commit (`Approve <id>` / `Deny <id>`), and the other side drops 
   plain words, the full image (feed / story switch when there are two), the exact caption or email
   body, links, other fields, a note box for the agent, and Approve / Deny. Raw JSON is under
   "Technical details".
-- **Polling.** A foreground service checks the queue every 60 s, on screen-on, and whenever the app
-  is opened. Decisions are written through the GitHub Contents API with the file's sha (re-read and
+- **Polling.** A foreground service checks the queue every 60 s (every 15 s while a request is
+  waiting, so a Mac decision clears the phone quickly), on screen-on, and whenever the app is opened. Decisions are written through the GitHub Contents API with the file's sha (re-read and
   retried on a conflict) and are kept on the phone and retried if the network is down.
 
 ## Install (one command, from the Mac, phone on USB)

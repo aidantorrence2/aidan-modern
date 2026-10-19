@@ -44,12 +44,18 @@ struct ApprovalsApp: App {
 }
 
 final class AppDelegate: NSObject, NSApplicationDelegate {
+    /// Opts out of App Nap: with no window on screen macOS throttled the poll timer for minutes,
+    /// so decisions made on the phone left stale cards up and new requests showed up late.
+    private var pollActivity: NSObjectProtocol?
+
     func applicationWillFinishLaunching(_ notification: Notification) {
         ApprovalsStore.shared.bootstrap()
     }
 
     func applicationDidFinishLaunching(_ notification: Notification) {
         NSApp.setActivationPolicy(.accessory)
+        pollActivity = ProcessInfo.processInfo.beginActivity(
+            options: [.userInitiatedAllowingIdleSystemSleep], reason: "Polling the approvals queue")
         let store = ApprovalsStore.shared
         CardPanelController.shared.start(store: store)
         store.startPolling()

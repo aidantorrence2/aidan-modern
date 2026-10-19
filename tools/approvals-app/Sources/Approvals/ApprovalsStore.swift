@@ -64,10 +64,13 @@ final class ApprovalsStore: ObservableObject {
 
     func startPolling() {
         pollTask?.cancel()
-        let interval = max(10, settings.pollInterval)
         pollTask = Task { [weak self] in
             while !Task.isCancelled {
                 await self?.refresh()
+                // While a card is on screen, check every 15 s so a decision made on the phone
+                // (or by anyone else) clears it quickly; otherwise use the configured interval.
+                let base = max(10, self?.settings.pollInterval ?? 60)
+                let interval = (self?.cardItems.isEmpty ?? true) ? base : min(15, base)
                 try? await Task.sleep(nanoseconds: UInt64(interval * 1_000_000_000))
             }
         }
