@@ -1031,5 +1031,97 @@
         ]
       }
     ]
+  },
+  {
+    "slug": "how-to-wake-up-when-you-sleep-through-every-alarm",
+    "offer": "actually-up",
+    "title": "How to wake up when you sleep through every alarm",
+    "description": "Practical steps for heavy sleepers: where to put the alarm, how to stop turning it off half-asleep, and what to change the night before.",
+    "intro": "If you sleep through alarms or switch them off without remembering, more alarms rarely fix it. What works is making the alarm impossible to dismiss half-asleep, and giving your body a fair chance to wake.",
+    "sections": [
+      {
+        "h": "Make the alarm hard to turn off asleep",
+        "list": [
+          "Put the phone or clock across the room, so you have to stand up to reach it.",
+          "Use an alarm that needs a small awake task to stop it, such as typing a phrase or solving a sum, instead of a single tap.",
+          "Turn off snooze, or limit it to one. Every snooze is another chance to drift off.",
+          "Set one backup alarm 5 to 10 minutes later, not five alarms a few minutes apart."
+        ]
+      },
+      {
+        "h": "Make the first five minutes easier",
+        "list": [
+          "Open the curtains or switch on a bright light as soon as you stand up.",
+          "Keep a glass of water by the alarm and drink it before you go back near the bed.",
+          "Decide the night before what you do first: shower, coffee, a walk. A plan beats a negotiation at 7am."
+        ]
+      },
+      {
+        "h": "Fix the night before",
+        "list": [
+          "Keep the same wake time every day, weekends included, for two weeks. A steady wake time makes waking easier.",
+          "Count back from your wake time and aim to be in bed with enough time to sleep.",
+          "Put the phone away a while before bed; late scrolling pushes sleep later.",
+          "Go easy on caffeine late in the day and on alcohol close to bedtime."
+        ]
+      },
+      {
+        "h": "Check whether it worked",
+        "p": [
+          "Write down each morning when the alarm went off and when you actually got up. After a week you will see which changes helped and which bedtimes make mornings hard."
+        ]
+      },
+      {
+        "h": "When to get help",
+        "p": [
+          "If you sleep a full night and still cannot wake, feel exhausted all day, or nod off in the daytime, talk to a doctor. Persistent sleepiness can have medical causes worth checking."
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "how-to-stop-biting-your-nails",
+    "offer": "nail-pause",
+    "title": "How to stop biting your nails: what actually helps",
+    "description": "A plain guide to nail biting and skin picking: notice when it happens, change what your hands do, and handle slips without starting over.",
+    "intro": "Nail biting and skin picking are habits many people carry for years. Willpower alone rarely ends them. What helps is noticing the moments it happens, giving your hands something else to do, and treating slips as information.",
+    "sections": [
+      {
+        "h": "Notice when it happens",
+        "list": [
+          "For a week, jot down each time you catch yourself: the time, where you were and what you were doing.",
+          "Most people find a pattern: screens, reading, driving, stress, boredom or tiredness.",
+          "Pay attention to the moment just before, such as feeling a rough edge or a bump. That is the moment to act on."
+        ]
+      },
+      {
+        "h": "Give your hands another job",
+        "list": [
+          "Keep something to hold in the usual spots: a fidget toy, a smooth stone, a stress ball, a pen.",
+          "Sit on your hands or clasp them for a minute when the urge hits; it usually fades.",
+          "Keep nails short and filed smooth, and moisturise cuticles, so there is less to catch on."
+        ]
+      },
+      {
+        "h": "Make it harder to start",
+        "list": [
+          "Wear a plaster or a thin glove on the fingers you bite most during screen time.",
+          "Some people use a bitter-tasting nail coating as a reminder.",
+          "Change the setting: if it happens while reading on the couch, read at the table for a while."
+        ]
+      },
+      {
+        "h": "Handle slips well",
+        "p": [
+          "A slip is not a reset to zero. Note what was happening and go back to your plan. Counting good days, rather than an unbroken streak, keeps you going."
+        ]
+      },
+      {
+        "h": "When to get help",
+        "p": [
+          "If biting, picking or pulling causes injury, infection or real distress, or you cannot stop despite trying, talk to a doctor or a therapist. There are effective approaches, and you do not have to manage it alone."
+        ]
+      }
+    ]
   }
 ]

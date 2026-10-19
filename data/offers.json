@@ -7959,6 +7959,226 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-19",
+    "slug": "actually-up",
+    "name": "Actually Up",
+    "need": "Sleep through every alarm, or switch it off without even remembering?",
+    "headline": "An alarm app built for heavy sleepers: it won't let a half-asleep you turn it off, and it checks that you're still up a few minutes later.",
+    "buyer": "Heavy sleepers who sleep through, snooze or half-asleep dismiss their alarms.",
+    "bullets": [
+      "To stop the alarm you finish a short task that needs you awake: type a phrase, walk to a spot you chose, or solve a quick sum.",
+      "A wake-check a few minutes after you dismiss it. No answer and the alarm rings again, so drifting back to sleep doesn't win.",
+      "A morning log of when you actually got up. No ads, no morning news feed, no upsell screens."
+    ],
+    "price": "$19.99/year",
+    "priceUsd": 20,
+    "priceNote": "Below the leading wake-up alarm app's top plans.",
+    "reasonPrompt": "How do you sleep through alarms now (snooze, turn it off in your sleep, don't hear it)? What have you tried?",
+    "faq": [
+      {
+        "q": "Is this medical advice?",
+        "a": "No. Actually Up is an independent alarm app, not connected to any other alarm app. If you're exhausted all the time, talk to a doctor."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-19",
+      "summary": "Heavy sleepers on forums describe sleeping through every alarm and switching alarms off without remembering. The leading mission-to-dismiss alarm app has a very large paid user base.",
+      "wtp": "Alarmy - Loud alarm clock (App Store): 4.8 from 250K ratings, Premium and Pro in-app purchases from $4.99 to $69.99.",
+      "signals": [
+        {
+          "url": "https://forums.anandtech.com/threads/why-cant-i-wake-up-when-my-alarms-go-off.727012/",
+          "who": "aphex (AnandTech forums)",
+          "date": "2002-02-07",
+          "quote": "I sleep through EVERY alarm.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.anandtech.com/threads/why-cant-i-wake-up-when-my-alarms-go-off.727012/",
+          "who": "Rallispec (AnandTech forums)",
+          "date": "2002-02-07",
+          "quote": "lately i've even started to turn my alarm off in my sleep",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.anandtech.com/threads/why-cant-i-wake-up-when-my-alarms-go-off.727012/",
+          "who": "her209 (AnandTech forums)",
+          "date": "2002-02-08",
+          "quote": "I sleep through my alarm clock every morning",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1163786766",
+          "who": "ellie_speaks (App Store reviewer, Alarmy)",
+          "date": "2022-01-26",
+          "quote": "I cannot remember a time in my life where I would actually wake up and stay up.",
+          "seen": "opened"
+        }
+      ]
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-19",
+    "slug": "nail-pause",
+    "name": "Nail Pause",
+    "need": "Can't stop biting your nails or picking your skin, even when you really try?",
+    "headline": "Catch the habit in the moment: while you're at your phone or laptop it notices your hand moving to your mouth or face and gives you a quiet nudge.",
+    "buyer": "Adults (18+) who bite their nails or pick their skin or cuticles.",
+    "bullets": [
+      "On-device camera check while you work or scroll: a gentle buzz or chime when your hand goes to your mouth, face or scalp. Video never leaves your device.",
+      "One tap to log an urge you resisted or a slip, with no streak reset and no guilt screens.",
+      "See your patterns: the apps, times and moods when it happens most, so you can plan around them."
+    ],
+    "price": "$19.99/year",
+    "priceUsd": 20,
+    "priceNote": "In the range of existing nail-biting apps' paid plans.",
+    "reasonPrompt": "Which habit is it (nails, skin, cuticles, something else), and what have you already tried?",
+    "faq": [
+      {
+        "q": "Is this medical treatment?",
+        "a": "No. Adults 18+. Nail Pause is an independent habit tool, not medical advice or treatment. If picking or pulling is causing injury or distress, a doctor or therapist can help."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-19",
+      "summary": "People who have bitten their nails or picked their skin for 10+ years describe it on Product Hunt and Indie Hackers, and nail-biting apps and wearables already sell paid plans.",
+      "wtp": "NailKeeper - Stop Biting Nails (App Store): 4.5 from 274 ratings, in-app purchases $4.99, $9.99 a year and $19.99 Pro.",
+      "signals": [
+        {
+          "url": "https://www.producthunt.com/products/hands-off",
+          "who": "Teagan Sincock (Product Hunt, Hands Off)",
+          "date": "2025",
+          "quote": "I've struggled with skin picking for 10+ years",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.producthunt.com/products/hands-off",
+          "who": "Evy Liu (Product Hunt, Hands Off)",
+          "date": "2025",
+          "quote": "I've been pulling my own hair for 10+ year",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1579004361",
+          "who": "NailKeeper - Stop Biting Nails (App Store listing)",
+          "date": "2026-10-19",
+          "quote": "NailKeeper Pro $19.99; NailKeeper Pro Annual $9.99; 274 Ratings",
+          "seen": "opened"
+        }
+      ]
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-19",
+    "slug": "diary-loop",
+    "name": "DiaryLoop",
+    "need": "How do I actually learn a language when apps like Duolingo feel like they're not getting me anywhere?",
+    "headline": "Write 3 sentences a day about your real life in the language you're learning. Get gentle corrections, and the words you had to look up become tomorrow's review.",
+    "buyer": "Adult self-learners at beginner-to-intermediate level who have a streak in a gamified app but can't yet write or say anything about their own lives",
+    "bullets": [
+      "Daily 5-minute diary prompt about your actual day (work, kids, what you ate), written in your target language, with a native-language fallback for words you don't know yet",
+      "Corrections that show the natural phrasing next to yours, with a one-line why, instead of a full rewrite",
+      "Every word you looked up or got wrong goes into a spaced review deck built only from sentences you wrote, so you study your own life's vocabulary"
+    ],
+    "price": "$7.99/month or $59.99/year",
+    "priceUsd": 8,
+    "priceNote": "Free tier: 3 entries a week. Priced below Super Duolingo's App Store plans and near LangJournal's Premium and Pro tiers ($4.99-$8.99 a month).",
+    "reasonPrompt": "Which language are you learning, why, and what have you tried so far that hasn't stuck?",
+    "faq": [
+      {
+        "q": "Is this a speaking or exam coach?",
+        "a": "No. DiaryLoop is writing and vocabulary only: a short daily diary, corrections and a review deck built from your own entries."
+      },
+      {
+        "q": "How accurate are the corrections?",
+        "a": "Corrections are AI-generated and usually right for everyday writing, but they can miss nuance. You can flag a correction, and for important text (visas, legal or work documents) use a qualified human translator or teacher."
+      },
+      {
+        "q": "What level do I need?",
+        "a": "You can start once you know some basic words. Beginners can mix in their native language and the app suggests how to say those parts."
+      },
+      {
+        "q": "Which languages?",
+        "a": "Launch: Spanish, French, German, Italian, Portuguese and Japanese."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-19",
+      "summary": "Learners say gamified apps feel slow or like a 'placebo' and look for more personalised, practical methods. Indie builders keep making target-language journaling tools for themselves, which suggests the need is real and the market isn't settled. The sharper angle is a review deck made only from words the learner needed for their own diary entries.",
+      "wtp": "Duolingo (App Store): 4.7 from 5.5M ratings, Super Duolingo in-app purchases from $9.99 to $119.99. Language Diary: LangJournal (App Store): 4.4 from 27 ratings, subscriptions $4.99-$8.99 a month and $49.99-$89.99 a year.",
+      "signals": [
+        {
+          "url": "https://tmsullivan.substack.com/p/gis-revido-duolingo",
+          "who": "T. M. Sullivan's Substack, post 'Ĝis Revido, Duolingo' (author anonymised)",
+          "date": "2023-10-01",
+          "quote": "Duolingo acted as a placebo",
+          "seen": "opened"
+        },
+        {
+          "url": "https://tmsullivan.substack.com/p/gis-revido-duolingo",
+          "who": "T. M. Sullivan's Substack, post 'Ĝis Revido, Duolingo' (author anonymised)",
+          "date": "2023-10-01",
+          "quote": "reliable, practical, more lenient and more personalised language learning methods",
+          "seen": "opened"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=45395428",
+          "who": "est (HN commenter)",
+          "date": "2025-09-27",
+          "quote": "I find the duolingo course very slow paced, gems and gamifications are just bad.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=45395428",
+          "who": "dalejh (HN commenter, builder of lingolog.app)",
+          "date": "2025-09-27",
+          "quote": "I built it for myself as I wanted to practice writing in my target languages",
+          "seen": "opened"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=43531876",
+          "who": "kiruio (HN commenter, indie builder)",
+          "date": "2025-03-31",
+          "quote": "I am working on journaling app targeted at language learners",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/app/id6448331480",
+          "who": "Kfvg65 (App Store reviewer of Language Diary: LangJournal, paid subscription app)",
+          "date": "2025-11-16",
+          "quote": "This is the only app I found with tips so your phraseologysound authentic.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/duolingo-language-lessons/id570060128",
+          "who": "yhgchggchht (App Store reviewer of Duolingo)",
+          "date": "2024-05-24",
+          "quote": "I needed to learn some French to go there.",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Duolingo (gamified lessons), LingQ and LibroAI (reading-based), Language Diary: LangJournal (journal with corrections, small rating base), Bonjournal and lingolog.app (indie AI journaling), the legacy Lang-8 model (native-speaker corrections). The new angle: a 5-minute daily diary about your own life, with a review deck built only from words you needed.",
+      "risks": "Free general chatbots can correct diary entries, so the product has to win on daily habit loop and the auto-built deck. Several small indie competitors already exist. AI correction errors could mislead learners. TrustMRR listings for language apps checked (Verbalane $8 MRR, LibroAI $2 MRR, Writeso $1 all-time) show that indie language apps often earn very little, so distribution is the main challenge."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
