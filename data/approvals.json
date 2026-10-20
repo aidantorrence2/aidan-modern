@@ -2319,6 +2319,43 @@
       "status": "pending",
       "decided": null,
       "note": ""
+    },
+    {
+      "id": "offers:start-task-writers:2026-10-20:wow-buzz",
+      "kind": "email",
+      "source": "codex:real-change-pilots",
+      "title": "Send one writer-audience inquiry to WOW! Buzz",
+      "summary": "Ask WOW! Buzz to consider sharing the free, nonbinding task-start interest page with adults. One exact email; no running pilot, fees, posts or followups.",
+      "payload": {
+        "project_id": "appgprj_6ad56c0398f4819187d2d7870ae70ac4",
+        "catalog_id": 81,
+        "action": "Send exactly this one plain-text first-contact business email once after approval and fresh preflight.",
+        "messages": [
+          {
+            "to": "buzz@wow-womenonwriting.com",
+            "subject": "For Buzz: an idea for adults who want help starting a project",
+            "source": "https://www.wow-womenonwriting.com/contact.php/",
+            "body": "Hi WOW! Buzz team,\n\nI'm Aidan. Your Buzz contact invites items that may interest writers, so I'm sending a small idea for your consideration.\n\nI'm exploring a two-week group for adults who keep putting off a task, including a writing project. The idea is to pick one small next step and begin during scheduled work sessions with other people. The group isn't running yet.\n\nWould you consider sharing this page with adults aged 18 or over who might be interested?\n\nSignup is free and nonbinding.\nhttps://real-change-pilots-aidan-2026.aidantorrence.chatgpt.site/start-the-task?utm_source=wow_women_on_writing&utm_medium=partner_email&utm_campaign=start_task_writer_test_1\n\nThanks,\nAidan Torrence",
+            "words_excluding_url_and_signature": 80,
+            "offer": "start-the-task",
+            "organization": "WOW! Women On Writing / The Muffin"
+          }
+        ],
+        "limits": "No followups/replies, attachments, article/subscriber essay/class proposal, sponsored placement, public/social/Instagram posts, lists or direct member contact, fees, spending, terms, signup testing or deployment. Ask consideration only; no guaranteed placement or running pilot.",
+        "preflight": {
+          "official_source": "https://www.wow-womenonwriting.com/contact.php/",
+          "checked_at": "2026-10-20T10:11:00Z",
+          "identity": "Official BUZZ department publishes this exact obfuscated email and invites promotional items for audience-fit consideration. Separate paid-ad and article-submission channels not used.",
+          "gmail": "Fresh all-history exact domain and organization names returned0/no nextpage. Prior draft is local-only; no prior ledger send/hold/denial or approval for this organization.",
+          "why_this_one": "One bounded, distinct writer-audience channel explicitly accepting promotional items; moves an existing draft to review, not a duplicate or revision of held actions. Other writer draft remains unqueued.",
+          "execute_only_after": "Fresh decision/note/exact payload, Gmail/receipt/suppression/public page checks and durable sameZIP execution claim."
+        }
+      },
+      "created": "2026-10-20T10:07:40Z",
+      "expires": "2026-10-23T10:07:40Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
     }
   ]
 }
