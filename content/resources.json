@@ -4955,5 +4955,44 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "stop-buying-books-unread-pile",
+  "offer": "unread-first",
+  "title": "Can't stop buying books? A simple rule for the unread pile",
+  "description": "Own a pile of books you haven't read but keep buying more? Count the pile, set a read-before-you-buy rule, and check what you own before you pay.",
+  "intro": "Buying bans tend to fail because they are all or nothing. A small rule you can see at the moment of buying works better.",
+  "sections": [
+   {
+    "h": "Count the pile",
+    "list": [
+     "Write down every book you own and haven't read. Seeing the number is often enough to slow down."
+    ]
+   },
+   {
+    "h": "Set a ratio, not a ban",
+    "list": [
+     "For example, read two books you already own before you buy one new one."
+    ]
+   },
+   {
+    "h": "Check before you pay",
+    "list": [
+     "Keep your unread list on your phone and look at it in the shop, so you don't buy duplicates or a Book 1 you already have."
+    ]
+   },
+   {
+    "h": "Read the oldest first",
+    "list": [
+     "Pick from the books that have waited longest, before the newest arrival."
+    ]
+   },
+   {
+    "h": "Use the library for the urge",
+    "p": [
+     "When you want something new right now, borrow it. It costs nothing and doesn't add to the pile."
+    ]
+   }
+  ]
  }
 ]

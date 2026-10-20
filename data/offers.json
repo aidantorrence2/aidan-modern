@@ -15134,6 +15134,97 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-20",
+    "slug": "unread-first",
+    "name": "Unread First",
+    "need": "I can't stop buying books, and I already own a pile I've never read.",
+    "headline": "Scan a book in the shop and see straight away whether you already own it and how many unread books are waiting at home, before you pay.",
+    "buyer": "Adult readers who keep buying books faster than they read them and want to stop without giving up bookshops",
+    "bullets": [
+      "Barcode-scan any book in a shop to check whether it is already on your shelf, so you stop buying duplicates and forgotten first-in-series books",
+      "Set your own rule, such as reading two books you own before buying a new one, and see your progress against it when you scan",
+      "A live count of the unread books you own, sorted by how long each has waited, so you pick from the pile first"
+    ],
+    "price": "$4.99",
+    "priceUsd": 5,
+    "priceNote": "One-time purchase.",
+    "reasonPrompt": "How many books do you own but haven't read, and what usually makes you buy another one anyway: a deal, a bookshop visit, or the next book in a series?",
+    "faq": [
+      {
+        "q": "Do I have to catalogue my whole library first?",
+        "a": "No. You can start by scanning only your unread books, which is the pile the app is built around."
+      },
+      {
+        "q": "Does it stop me buying books?",
+        "a": "No. It shows you your own rule and your unread count when you scan. The decision stays with you."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-20",
+      "summary": "Readers on Goodreads say, across a decade, that they can't stop buying books, own hundreds they haven't read, and keep breaking their own buying bans.",
+      "wtp": "BookBuddy Pro: Book Tracker (App Store): $9.99, 4.8 from 6K ratings; it catalogues owned books and detects duplicates.",
+      "signals": [
+        {
+          "url": "https://www.goodreads.com/topic/show/60466-i-have-to-stop-buying-books?page=2",
+          "who": "Lori (tnbbc)",
+          "date": "2008-09-24",
+          "quote": "I cant stop. Its like books hold some kinda power over me.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.goodreads.com/topic/show/60466-i-have-to-stop-buying-books?page=2",
+          "who": "Krista (findyourshimmy)",
+          "date": "2008-09-24",
+          "quote": "I have close to 300 books that I own and haven't even read!",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.goodreads.com/topic/show/60466-i-have-to-stop-buying-books?page=2",
+          "who": "Donna (dfiggz)",
+          "date": "2008-09-25",
+          "quote": "I too get stressed when I buy too many books but I just can't help it.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.goodreads.com/blog/show/1370-shelf-discipline-how-to-read-more-before-your-next-book-spree?page=2",
+          "who": "Forrest",
+          "date": "2018-08-31",
+          "quote": "I always end up buying books at a faster rate than I can read them",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.goodreads.com/blog/show/1370-shelf-discipline-how-to-read-more-before-your-next-book-spree?page=2",
+          "who": "Hope",
+          "date": "2018-08-31",
+          "quote": "I'll buy books at a used book sale or with a gift card, but then never read them",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.goodreads.com/blog/show/1370-shelf-discipline-how-to-read-more-before-your-next-book-spree?page=2",
+          "who": "Matthew",
+          "date": "2018-08-31",
+          "quote": "I have a lot of unread Book 1's on my shelf and my kindle.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id395149950",
+          "who": "BookBuddy Pro: Book Tracker, App Store listing",
+          "date": "2026-10-20",
+          "quote": "$9.99 · 4.8 · 6K Ratings",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "BookBuddy Pro ($9.99) and other catalogue apps detect duplicates; Goodreads and similar free trackers handle to-read lists; self-imposed buying bans.",
+      "risks": "Evidence is from one site (Goodreads) and mostly 2008–2009 and 2018. Free catalogue apps cover scanning; the paid hook is the buy-moment rule check."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
