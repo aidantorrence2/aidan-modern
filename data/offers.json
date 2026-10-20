@@ -15632,6 +15632,111 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-20",
+    "slug": "dry-morning",
+    "name": "Dry Morning",
+    "need": "My 7.5 year old wets the bed every night.",
+    "headline": "A night log for parents of children who still wet the bed: a 10-second morning check-in, an alarm-training tracker, and a summary to bring to your GP or school nurse.",
+    "buyer": "Parents (18+) of school-age children, about 6 to 10, who still wet the bed most nights.",
+    "bullets": [
+      "A 10-second morning log: dry, damp or wet, bedtime, last drink, and toilet before bed.",
+      "An alarm-training tracker, if you're using a bedwetting alarm.",
+      "A reward chart for steps your child controls, never for being dry, and a printable summary for the GP or school nurse."
+    ],
+    "price": "$4.99/month",
+    "priceUsd": 5,
+    "priceNote": "Or $24 a year.",
+    "reasonPrompt": "How old is your child, how many nights a week are wet, and what have you tried so far?",
+    "faq": [
+      {
+        "q": "Is this medical advice?",
+        "a": "No. It's a log and a tracker. Talk to your GP or school nurse about bedwetting, especially if it starts again after a dry spell."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Parents and carers, 18+. It is an independent app, not linked to any charity, clinic or alarm maker."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-20",
+      "summary": "Parents on Mumsnet and the Berkeley Parents Network describe children of 7 to 9 who soak through pull-ups most nights, and say they have bought alarms or paid for appointments.",
+      "wtp": "Parents report buying bedwetting alarms (one from the ERIC shop) and paying for specialist appointments (\"The appointments were expensive\").",
+      "signals": [
+        {
+          "url": "https://www.mumsnet.com/talk/parenting/2762277-7-yr-old-still-wets-the-bed",
+          "who": "HalfShellHero (Mumsnet)",
+          "date": "2016-10-22",
+          "quote": "he doesn't stir at all if he is wet",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/parenting/2762277-7-yr-old-still-wets-the-bed",
+          "who": "FranklyMeDeer (Mumsnet)",
+          "date": "2016-10-22",
+          "quote": "My 7yo is still in pull ups. Soaked through most nights.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/parenting/2762277-7-yr-old-still-wets-the-bed",
+          "who": "FlapsTie (Mumsnet)",
+          "date": "2016-10-22",
+          "quote": "DD was seven, and soaked through pull ups every night.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/parenting/5245774-bedwetting-i-dont-understand",
+          "who": "SundayNightBluesAreHere (Mumsnet)",
+          "date": "2025-01-05",
+          "quote": "I've bought a bedwetting alarm and tonight is the first night trying it.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/parenting/5245774-bedwetting-i-dont-understand",
+          "who": "nookmiles (Mumsnet)",
+          "date": "2025-01-05",
+          "quote": "still wasn't dry at night at age 7",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/behaviour_development/5589112-my-9-year-old-still-wears-nappies-every-night",
+          "who": "Mumof3goingloca (Mumsnet)",
+          "date": "2026-10-14",
+          "quote": "My 9 year old son still wears nappies every night.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/behaviour_development/5589112-my-9-year-old-still-wears-nappies-every-night",
+          "who": "MunsteadWood (Mumsnet)",
+          "date": "2026-10-14",
+          "quote": "I bought one from the ERIC shop. Really recommend.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.berkeleyparentsnetwork.org/node/356836",
+          "who": "Parent asking (Berkeley Parents Network)",
+          "date": "2022-11-27",
+          "quote": "My 7.5 year old wets the bed every night.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.berkeleyparentsnetwork.org/node/356836",
+          "who": "Parent replying (Berkeley Parents Network)",
+          "date": "2022-11-30",
+          "quote": "The appointments were expensive and didn't ultimately work for us",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Bedwetting alarms and their apps, paper charts, GP and continence clinics, charity resources (ERIC).",
+      "risks": "Many children grow out of it; families may rely on free charts. Nobody wrote \"I'd pay\" for software."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

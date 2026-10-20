@@ -5189,5 +5189,122 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "forget-to-drink-water-take-vitamins",
+  "offer": "water-and-vitamins",
+  "title": "Keep forgetting to drink water or take your vitamins? Tie them to things you already do",
+  "description": "Forget water and vitamins every day? Attach each one to a habit you never skip, keep them where you will see them, and tick them off in two taps.",
+  "intro": "Most people forget water and vitamins because there is nothing to remind them at the right moment. Linking them to things you already do every day is the simplest fix.",
+  "sections": [
+   {
+    "h": "Attach them to an existing habit",
+    "list": [
+     "Take vitamins with breakfast or after brushing your teeth. Drink a glass of water each time you make a coffee or sit down at your desk."
+    ]
+   },
+   {
+    "h": "Keep them in sight",
+    "list": [
+     "Put the vitamins next to the kettle or your toothbrush, and keep a filled bottle on your desk."
+    ]
+   },
+   {
+    "h": "Make it a tick, not a number",
+    "list": [
+     "Tick off \"vitamins taken\" and each bottle finished. Ticking is quicker than counting glasses."
+    ]
+   },
+   {
+    "h": "Check at one set time",
+    "list": [
+     "Pick a time, such as lunch, to look back at the morning. Catch a missed dose the same day instead of finding out a week later."
+    ]
+   },
+   {
+    "h": "Follow your own advice",
+    "p": [
+     "Follow the dose on the label or what your doctor or pharmacist told you."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "stop-forgetting-birthdays-keep-in-touch",
+  "offer": "stay-close",
+  "title": "Keep forgetting birthdays and losing touch? A simple keep-in-touch list",
+  "description": "Missing birthdays and drifting from friends? Put every birthday in one place, get a reminder a few days early, and set a gentle check-in rhythm for the people who matter.",
+  "intro": "Losing touch usually isn't about caring less. Nothing reminds you until it's too late. A short list and early reminders fix most of it.",
+  "sections": [
+   {
+    "h": "Write a short list",
+    "list": [
+     "List the 10–20 people you most want to stay close to. Don't try to cover everyone."
+    ]
+   },
+   {
+    "h": "Put every birthday in one place",
+    "list": [
+     "Add birthdays to one calendar or app, with a reminder three days before so you have time to send something."
+    ]
+   },
+   {
+    "h": "Set a rhythm for each person",
+    "list": [
+     "Close friends every few weeks, others every few months. A short message counts."
+    ]
+   },
+   {
+    "h": "Keep a note of what's going on",
+    "list": [
+     "Jot down a new job, a move or a baby, so your next message can ask about it."
+    ]
+   },
+   {
+    "h": "Start small",
+    "p": [
+     "Send one message today to someone you haven't spoken to in a while."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "still-wetting-the-bed-at-7",
+  "offer": "dry-morning",
+  "title": "Still wetting the bed at 7? A two-week night log to bring to your doctor",
+  "description": "Child still wet most mornings? Keep a simple two-week log of drinks, bedtime and wet or dry nights, and take it to your GP or school nurse.",
+  "intro": "Bedwetting at 7 or older is common and isn't anyone's fault. A short, simple log helps you and your doctor see what's happening.",
+  "sections": [
+   {
+    "h": "Log for two weeks",
+    "list": [
+     "Each morning note dry, damp or wet. Each evening note bedtime, the time of the last drink, and whether they went to the toilet before bed."
+    ]
+   },
+   {
+    "h": "Note drinks through the day",
+    "list": [
+     "Write down roughly what they drank and when. It helps the doctor more than cutting drinks."
+    ]
+   },
+   {
+    "h": "Reward steps, not dry nights",
+    "list": [
+     "Praise things your child controls, like going to the toilet before bed. Dry nights aren't in their control."
+    ]
+   },
+   {
+    "h": "Take the log to your GP or school nurse",
+    "list": [
+     "They can talk you through options, including alarms."
+    ]
+   },
+   {
+    "h": "See a doctor sooner if",
+    "p": [
+     "your child was dry for months and starts wetting again, or has pain, daytime accidents or other worries."
+    ]
+   }
+  ]
  }
 ]
