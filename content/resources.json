@@ -6476,5 +6476,44 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "cant-get-out-of-bunkers",
+  "offer": "sand-out",
+  "title": "Can't get out of greenside bunkers? One checkpoint at a time",
+  "description": "Taking two or three swings to escape the sand? Open the face, hit the sand behind the ball, and swing through, working on one checkpoint per session.",
+  "intro": "Most bunker trouble comes from trying to hit the ball, not the sand. Working on one checkpoint at a time makes the splash shot simpler.",
+  "sections": [
+   {
+    "h": "Open the face first",
+    "list": [
+     "Open the clubface, then take your grip, so the club bounces off the sand instead of digging."
+    ]
+   },
+   {
+    "h": "Aim for the sand behind the ball",
+    "list": [
+     "Pick a spot a couple of inches behind the ball and hit the sand there."
+    ]
+   },
+   {
+    "h": "Swing through",
+    "list": [
+     "Keep the club moving through the sand to a full finish. Stopping at the ball causes chunks."
+    ]
+   },
+   {
+    "h": "Note the sand",
+    "list": [
+     "Firm or wet sand needs less face opening than soft sand. Note what you played in and what happened."
+    ]
+   },
+   {
+    "h": "Practise without a bunker",
+    "p": [
+     "Brushing a line on grass or a practice mat helps you learn to hit the ground at the same spot every time."
+    ]
+   }
+  ]
  }
 ]

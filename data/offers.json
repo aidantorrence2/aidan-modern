@@ -18415,6 +18415,122 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-20",
+    "slug": "sand-out",
+    "name": "Sand Out",
+    "need": "I am having problems getting out of a bunker. It takes two or three shots to get out.",
+    "headline": "Stop taking two or three swings to escape a greenside bunker. Work on one splash-shot checkpoint per session and log what the sand did, until one swing gets you out.",
+    "buyer": "Adult recreational golfers who chunk or blade greenside bunker shots, lose several strokes a round in the sand, and can't afford regular lessons or practise often at a course bunker.",
+    "bullets": [
+      "One bunker checkpoint per session (open face and stance, where the club enters the sand, committing to the swing), so you aren't juggling every tip at once",
+      "Log each bunker you play as soft, firm or wet and whether you got out in one, so you can see which conditions cost you strokes",
+      "Short drills you can do between rounds when you can't get to a practice bunker, plus a pre-shot reminder for the course"
+    ],
+    "price": "$4.99/month",
+    "priceUsd": 5,
+    "priceNote": "",
+    "reasonPrompt": "What usually happens when you're in a greenside bunker (chunk it and leave it in, blade it into the lip or over the green, or something else)?",
+    "faq": [
+      {
+        "q": "Who makes Sand Out?",
+        "a": "Sand Out is an independent app for adults 18+. It has no affiliation with any golf brand, tour, coach or course."
+      },
+      {
+        "q": "Will this replace a lesson with a PGA pro?",
+        "a": "No. It gives you a structured way to practise and track your bunker play between rounds. If you can get to a pro, a lesson on sand shots is still worth having."
+      },
+      {
+        "q": "Do I need a practice bunker?",
+        "a": "No. Some drills are meant for times when you can't get to one. Practice in real sand is still the best test."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-20",
+      "summary": "Golfers on The Sand Trap forum describe in their own words being unable to get out of greenside bunkers: chunking the ball so it stays in the sand, blading it into the lip, taking several shots to get out, and losing whole strokes per round. Several also say they can't easily get to a bunker to practise. The threads were opened and read with curl; posts span 2010 to 2017.",
+      "wtp": "One golfer says a lesson just on sand shots was the best money they spent on golf that year. V1 Golf (App Store): 1.9K ratings, a $14.99 wedge-game series and $59.99 online lessons.",
+      "signals": [
+        {
+          "url": "https://thesandtrap.com/forums/topic/94867-sand-issues",
+          "who": "Brickman (The Sand Trap)",
+          "date": "2017-08-10",
+          "quote": "I am having problems getting out of a bunker.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://thesandtrap.com/forums/topic/94867-sand-issues",
+          "who": "Brickman (The Sand Trap)",
+          "date": "2017-08-10",
+          "quote": "I am frustrated as hell.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://thesandtrap.com/forums/topic/39708-i-need-bunker-help",
+          "who": "rhodes81 (The Sand Trap)",
+          "date": "2010-08-30",
+          "quote": "All of a sudden I cannot hit out of greenside bunkers.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://thesandtrap.com/forums/topic/39708-i-need-bunker-help",
+          "who": "rhodes81 (The Sand Trap)",
+          "date": "2010-08-31",
+          "quote": "Is there anyway to practice without hitting bunker shots?",
+          "seen": "opened"
+        },
+        {
+          "url": "https://thesandtrap.com/forums/topic/39708-i-need-bunker-help",
+          "who": "Ash1974 (The Sand Trap)",
+          "date": "2010-08-30",
+          "quote": "dropped about 6 shots yesterday in bunkers that had wet firm sand in them",
+          "seen": "opened"
+        },
+        {
+          "url": "https://thesandtrap.com/forums/topic/95338-greenside-bunker-question",
+          "who": "Brickman (The Sand Trap)",
+          "date": "2017-09-19",
+          "quote": "I am experiencing this bladed shot and don't know why so I'm open to suggestions.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://thesandtrap.com/forums/topic/95338-greenside-bunker-question",
+          "who": "scotth (The Sand Trap)",
+          "date": "2017-09-20",
+          "quote": "I used to be horrible at bunker shots",
+          "seen": "opened"
+        },
+        {
+          "url": "https://thesandtrap.com/forums/topic/95338-greenside-bunker-question",
+          "who": "Moxley (The Sand Trap)",
+          "date": "2017-09-21",
+          "quote": "I still tend to overhit bunker shots , but prioritise just getting out at the moment.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://thesandtrap.com/forums/topic/95338-greenside-bunker-question",
+          "who": "inthecup (The Sand Trap)",
+          "date": "2017-10-05",
+          "quote": "I recently took a lesson just on sand shots, it was the best money I spent on golf this year.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id349715369",
+          "who": "V1 Golf: Golf Swing Analyzer (App Store)",
+          "date": "2026-10-20",
+          "quote": "1.9K Ratings ... Master your Golf wedge game! $14.99 ... V1 Golf Online lesson $59.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Golfers already use general coaching and swing-analysis apps: V1 Golf (1.9K ratings, with wedge-game series and paid lessons), Me and My Golf (subscription coaching videos), Paul Foston My Golf Masterclass (a one-off payment that includes a bunker module) and The Scoring Club (free videos, too few ratings to show). They also take in-person lessons and watch free YouTube videos. None of the apps I saw is focused only on the greenside bunker shot.",
+      "risks": "This is a narrow niche inside golf, and free YouTube bunker tips are everywhere. The forum posts are old (2010 to 2017). Real practice needs a bunker, and many golfers can't get to one. Results depend on sand conditions the app can't control. Live offers already cover slice-stop and two-putt, so this has to be positioned clearly as the bunker shot only. Rating counts on the bunker-specific apps are low; the willingness-to-pay case rests mainly on V1 Golf."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
