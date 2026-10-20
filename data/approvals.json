@@ -1356,8 +1356,8 @@
         "data_scope": "Database row responses may contain private email addresses and city/participation/consent/attribution fields. Read only to count and deduplicate. Do not persist, export, email, share or put individual lead records in Library, prompts for other workers, Git repositories or public pages.",
         "limits": "Read-only ongoing measurement for this one project. No customer outreach, data deletion/migration, credential recovery, database changes, new endpoint, deployment, spending or broader access. Stop if access is denied; no alternative access path.",
         "why_needed": "The handoff's zero was historical and cloud private-export credentials were omitted. The hourly targets cannot be honestly measured until separately authorized secure access is approved.",
-        "result": "2026-10-20T12:02:43Z: Ongoing approved read-only aggregate measurement for exact Real Change Pilots project. Read overview first: DB tables events/leads. Read only DB/leads, limit25 offset0; zero rows, next_offset null, no omissions or truncation. Verified new consenting leads0/target5, current cumulative0. No private rows exported or saved; ongoing measurement scope unchanged. No customer messaging or data changes.",
-        "result_at": "2026-10-20T12:04:52Z"
+        "result": "2026-10-20T13:03:53Z: Ongoing approved read-only aggregate measurement of exact Real Change Pilots project. Overview first returned DB tables events/leads; only DB/leads read limit25 offset0, zero rows and next_offset null, no omissions/truncation. New0/5 target, currenttotal0. No private rows saved/exported, customer message or data change. Ongoing measurement scope unchanged.",
+        "result_at": "2026-10-20T13:06:28Z"
       },
       "created": "2026-10-19T05:23:23Z",
       "expires": "2026-10-22T05:23:23Z",
@@ -2274,7 +2274,9 @@
           "official": "SpeedDatingSocial contact publishes exact email and invites event ideas/partnerships; explicitly18+. OC Social Club root targets20s/30s and invites partnerships; partnership page publishes exact email. No form/member channel used.",
           "tracked_pages": "Fresh exact wave11 tracked pages reachable, better-datesHTTP200; real-friendships adult/followup consent/free/nonbinding form markup observed. No test form submission.",
           "execute_only_after": "Refresh decision/note/exact payload, Gmail/suppression/receipts and public page; durable claim persisted in same handoff before send."
-        }
+        },
+        "result": "Partial execution only: approved exact Speed Dating Social email SENT and exact recipient/subject/body/SENT readback verified, message/thread1a1596a9e2214829. OC Social Club attempt returned HTTP403 Gmail project per-minute query quota RATE_LIMIT_EXCEEDED Retryable:no, no ID; later successful exact recipient/all-history searches found no evidence, but recipient remains on hold/no retry this run. Do not mark entire batch complete or resend first email. No followups/posts/spend.",
+        "result_at": "2026-10-20T13:09:41Z"
       },
       "created": "2026-10-20T06:07:27Z",
       "expires": "2026-10-23T06:07:27Z",
@@ -2312,7 +2314,9 @@
           "execute_only_after": "Refresh exact decision/note/payload, recipient/organization Gmail and all receipts, tracked page and suppression. Persist durable sameZIP claim before any approved send."
         },
         "why_now": "Activate a distinct existing prepared offer via one prior research reserve while dating/friendship batch remains pending; bounded single inquiry rather than another near-duplicate phone/friendship batch. Does not bypass any held/denied action.",
-        "capture_and_delivery": "Existing approved page only, no copy/source changes. No need to build software to assess interest. No actual session slots/capacity are promised; real delivery requires review before participant enrollment."
+        "capture_and_delivery": "Existing approved page only, no copy/source changes. No need to build software to assess interest. No actual session slots/capacity are promised; real delivery requires review before participant enrollment.",
+        "result": "Attempt returned HTTP403 Gmail project per-minute query quota RATE_LIMIT_EXCEEDED Retryable:no, no message/thread ID. Successful later recipient history search returned no match; hold Josh Hinds individually and reconcile before any retry. Not a confirmed send or permanent authorization denial. No alternate route or resend attempted.",
+        "result_at": "2026-10-20T13:09:41Z"
       },
       "created": "2026-10-20T07:01:03Z",
       "expires": "2026-10-23T07:01:03Z",
@@ -2349,7 +2353,9 @@
           "gmail": "Fresh all-history exact domain and organization names returned0/no nextpage. Prior draft is local-only; no prior ledger send/hold/denial or approval for this organization.",
           "why_this_one": "One bounded, distinct writer-audience channel explicitly accepting promotional items; moves an existing draft to review, not a duplicate or revision of held actions. Other writer draft remains unqueued.",
           "execute_only_after": "Fresh decision/note/exact payload, Gmail/receipt/suppression/public page checks and durable sameZIP execution claim."
-        }
+        },
+        "result": "Sent exactly the approved WOW Buzz first-contact plain-text email after fresh authoritative approval/no note, official BUZZ identity/channel, all-history Gmail0, tracked pageHTTP200/adult/followup/free/nonbinding checks and durable sameZIP claim version44. Message/thread1a1596cdb83ae98c; exact recipient/subject/body and SENT readback verified. This activates audience-owner outreach for start-the-task only; not verified customer sharing, consenting lead or running pilot. No followups/posts/attachments/spend/deployment.",
+        "result_at": "2026-10-20T13:09:41Z"
       },
       "created": "2026-10-20T10:07:40Z",
       "expires": "2026-10-23T10:07:40Z",
