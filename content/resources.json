@@ -6164,5 +6164,83 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "child-still-sucking-thumb",
+  "offer": "thumb-break",
+  "title": "Child still sucking their thumb at 6? A trigger-moment swap plan",
+  "description": "Thumb sucking that won't stop? Find the moments it happens, give your child something else for each one, and praise thumb-free stretches.",
+  "intro": "Most thumb sucking happens at the same few moments each day. Working on those moments, gently, tends to work better than nagging.",
+  "sections": [
+   {
+    "h": "Find the trigger moments",
+    "list": [
+     "Notice when it happens: TV, the car, bedtime, when tired or worried."
+    ]
+   },
+   {
+    "h": "Swap in something else",
+    "list": [
+     "A fidget toy in the car, a soft toy to hold at story time, busy hands during TV."
+    ]
+   },
+   {
+    "h": "Praise, don't nag",
+    "list": [
+     "Notice and praise thumb-free stretches. Constant reminders can make it worse."
+    ]
+   },
+   {
+    "h": "Make it a team effort",
+    "list": [
+     "Let your child choose a reward and fill in the chart with you."
+    ]
+   },
+   {
+    "h": "Ask your dentist",
+    "p": [
+     "If you're worried about your child's teeth, ask your dentist for advice."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "toddler-wont-let-me-brush-teeth",
+  "offer": "brush-truce",
+  "title": "Toddler won't let you brush their teeth? A two-minute routine without the wrestle",
+  "description": "Screaming and clamping down every night? Let them have a turn, use a song or timer, try one change at a time, and keep it short and calm.",
+  "intro": "Lots of toddlers fight toothbrushing. A short, predictable routine and a sense of control usually help.",
+  "sections": [
+   {
+    "h": "Let them go first",
+    "list": [
+     "Give your toddler their own brush for a turn, then it's your turn."
+    ]
+   },
+   {
+    "h": "Use a song or timer",
+    "list": [
+     "Two minutes feels shorter with a song or a timer they can watch."
+    ]
+   },
+   {
+    "h": "Try one change at a time",
+    "list": [
+     "A different brush, a milder toothpaste, or a new position, like lying on your lap or in front of a mirror."
+    ]
+   },
+   {
+    "h": "Keep it calm and short",
+    "list": [
+     "Stay calm and keep it quick. Praise them as soon as you've finished."
+    ]
+   },
+   {
+    "h": "Ask your dentist or health visitor",
+    "p": [
+     "They can give advice on toothpaste and on brushing a child's teeth."
+    ]
+   }
+  ]
  }
 ]

@@ -17725,6 +17725,167 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-20",
+    "slug": "thumb-break",
+    "name": "Thumb Break",
+    "need": "We have tried many different things to stop the thumb sucking, so far without success.",
+    "headline": "Child still sucking their thumb at 5, 6 or older? Spot the trigger moments, swap in something else for each one, and track the thumb-free days together.",
+    "buyer": "Parents (18+) of children aged about 4 to 10 who still suck their thumb or fingers.",
+    "bullets": [
+      "Find the trigger moments: TV, car journeys, bedtime, tiredness.",
+      "A swap for each one, like a fidget toy for the car or a hand to hold at story time.",
+      "A thumb-free day tracker and a reward chart you fill in together."
+    ],
+    "price": "$4.99/month",
+    "priceUsd": 5,
+    "priceNote": "Or $24 one-time.",
+    "reasonPrompt": "How old is your child, and when do they suck their thumb most?",
+    "faq": [
+      {
+        "q": "Is this dental or medical advice?",
+        "a": "No. If you're worried about your child's teeth, talk to your dentist."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Parents and carers, 18+. It is an independent app, not linked to any dentist, orthodontist or product brand."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-20",
+      "summary": "Parents on Mumsnet, the Berkeley Parents Network and HelloBee describe children of 5 to 9 who still suck their thumb, and say they've tried plasters, thumb guards and bitter nail polish.",
+      "wtp": "Parents report using a thumb guard and Mavala Stop bitter nail polish, and worry about orthodontist bills.",
+      "signals": [
+        {
+          "url": "https://www.mumsnet.com/talk/parenting/1977120-How-to-stop",
+          "who": "hemel07 (Mumsnet)",
+          "date": "2014-01-24",
+          "quote": "Where do I get a thumb guard?",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/parenting/1977120-How-to-stop",
+          "who": "stoopstofolly (Mumsnet)",
+          "date": "2014-01-24",
+          "quote": "We used one for DS (3) and it was amazing",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/parenting/1679428-thumb-sucking",
+          "who": "chocolatespiders (Mumsnet)",
+          "date": "2013-02-08",
+          "quote": "dd 9 and still sucks hers.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.berkeleyparentsnetwork.org/advice/worries/thumbsucking",
+          "who": "Parent of a 5.5 year old (Berkeley Parents Network)",
+          "date": "2020-11-15",
+          "quote": "We have tried *many* different things, so far without success.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://boards.hellobee.com/rss/topic/how-to-stop-fin-gee-sucking",
+          "who": "matador84 (HelloBee)",
+          "date": "2016-03-19",
+          "quote": "We used mavala stop here too! It was the only thing that worked",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Thumb guards, bitter nail polish, sticker charts, dentists.",
+      "risks": "No thumb-sucking app with ratings found; posts mostly 2013-2020."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-20",
+    "slug": "brush-truce",
+    "name": "Brush Truce",
+    "need": "My toddler screams and clamps down on the toothbrush every night.",
+    "headline": "Toddler fights toothbrushing every night? A two-minute routine without the wrestle: let them have a go, a song or timer, then your turn, and a sticker chart.",
+    "buyer": "Parents (18+) of toddlers and young children who refuse toothbrushing.",
+    "bullets": [
+      "A short routine: their turn, then your turn, with a two-minute song or timer.",
+      "Ideas to try one at a time, like a different brush, toothpaste flavour or position, with a note of what worked.",
+      "A sticker chart and a log so you can see the nights getting easier."
+    ],
+    "price": "$3.99/month",
+    "priceUsd": 4,
+    "priceNote": "Or $19 one-time.",
+    "reasonPrompt": "How old is your child, and what happens when you try to brush their teeth?",
+    "faq": [
+      {
+        "q": "Is this dental advice?",
+        "a": "No. Ask your dentist or health visitor for advice on your child's teeth."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Parents and carers, 18+. It is an independent app, not linked to any dentist or toothbrush or toothpaste brand."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-20",
+      "summary": "Parents on Mumsnet describe toddlers who scream, clamp down and fight every night, and say they've bought books, electric and vibrating toothbrushes.",
+      "wtp": "Parents report buying books and electric toothbrushes. Disney Magic Timer (App Store): 16K ratings, packs from $0.99.",
+      "signals": [
+        {
+          "url": "https://www.mumsnet.com/talk/am_i_being_unreasonable/5580988-to-stop-brushing-18-month-olds-teeth",
+          "who": "notaurewhatusername (Mumsnet)",
+          "date": "2026-09-21",
+          "quote": "my DC will not let me brush his teeth every night",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/am_i_being_unreasonable/5580988-to-stop-brushing-18-month-olds-teeth",
+          "who": "Martymcfly24 (Mumsnet)",
+          "date": "2026-09-21",
+          "quote": "Oranurse flavorless toothpaste and a vibrating toothbrush was a game changer for mine",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/am_i_being_unreasonable/5580988-to-stop-brushing-18-month-olds-teeth",
+          "who": "Chamallo (Mumsnet)",
+          "date": "2026-09-21",
+          "quote": "We gave DD (3) an electric toothbrush for Christmas and this has helped",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/am_i_being_unreasonable/3907163-haven-t-brushed-my-son-s-teeth-in-a-week-and-am-struggling",
+          "who": "ShambalaHambala (Mumsnet)",
+          "date": "2020-05-12",
+          "quote": "he screams and clamps down on the toothbrush.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/am_i_being_unreasonable/3907163-haven-t-brushed-my-son-s-teeth-in-a-week-and-am-struggling",
+          "who": "Wilkolampshade (Mumsnet)",
+          "date": "2020-05-12",
+          "quote": "my goodness teethbrushing was a battle.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/-/id747541884",
+          "who": "Disney Magic Timer App Store listing",
+          "date": "2026-10-20",
+          "quote": "16K Ratings ... $0.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Brushing timer apps, electric toothbrushes, videos, books.",
+      "risks": "Free videos compete; many children grow out of it by 2 to 3."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
