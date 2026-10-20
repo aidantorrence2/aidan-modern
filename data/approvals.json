@@ -1983,6 +1983,54 @@
       "status": "approved",
       "decided": "2026-10-20T02:08:22Z",
       "note": ""
+    },
+    {
+      "id": "offers:small-wave8:2026-10-19:phone-and-friendships",
+      "kind": "email",
+      "source": "codex:real-change-pilots",
+      "title": "Two short emails: phone boundaries and recurring friendships",
+      "summary": "Ask Harriet at Mind over Tech and Hype Girl Social Club to consider sharing free, nonbinding signup pages. Unbuilt/pilot ideas; two exact business emails, no followups or posts.",
+      "payload": {
+        "action": "Send exactly two first-contact business emails once each following exact approval and final preflight.",
+        "project_id": "appgprj_6ad56c0398f4819187d2d7870ae70ac4",
+        "messages": [
+          {
+            "to": "harriet@mindovertech.com",
+            "subject": "Finding adults who want stronger phone boundaries",
+            "body": "Hi Harriet,\n\nI'm Aidan. Mind over Tech helps people build healthier digital habits, which seems a good fit for an idea I'm testing.\n\nI'm exploring an app for adults who set phone limits, then turn them off and keep scrolling. The idea is to make those limits harder to ignore. It isn't built yet.\n\nWould you consider sharing this signup page with adults aged 18 or over who might help shape it?\n\nSignup is free and nonbinding.\nhttps://real-change-pilots-aidan-2026.aidantorrence.chatgpt.site/phone-reset?utm_source=mind_over_tech&utm_medium=partner_email&utm_campaign=wave8\n\nThanks,\nAidan Torrence",
+            "offer": "phone-reset",
+            "organization": "Mind over Tech",
+            "recipient_identity": "Harriet Pellereau, CEO, listed under Reach out directly in current official embedded contact form.",
+            "source": "https://www.mindovertech.com/pages/contact",
+            "embedded_source": "https://tally.so/embed/nW10Ev?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1",
+            "fit_source": "https://www.mindovertech.com/pages/digital-wellbeing"
+          },
+          {
+            "to": "squad@hypegirlsocialclub.com",
+            "subject": "A small group where people see the same faces again",
+            "body": "Hi Hype Girl Social Club team,\n\nI'm Aidan. Your weekly walks and other events help adults make friends, and your partnership page welcomes collaboration ideas.\n\nI'm exploring a small local group where the same people meet each week for six weeks, giving friendships time to grow beyond a single event. It isn't running yet; the city and schedule would depend on interest.\n\nWould you consider sharing this signup page with adults who might be interested?\n\nSignup is free and nonbinding.\nhttps://real-change-pilots-aidan-2026.aidantorrence.chatgpt.site/real-friendships?utm_source=hype_girl_social_club&utm_medium=partner_email&utm_campaign=wave8\n\nThanks,\nAidan Torrence",
+            "offer": "real-friendships",
+            "organization": "Hype Girl Social Club",
+            "recipient_identity": "Official media/partnerships team inbox; no attendees or support/safety contacts.",
+            "source": "https://www.hypegirlsocialclub.com/media",
+            "rules_source": "https://www.hypegirlsocialclub.com/frequentlyaskedquestions",
+            "channel_limit": "FAQ events strictly18+. Email collaboration request only, not event attendance, Facebook group entry, Instagram promotion or any participant contact."
+          }
+        ],
+        "limits": "Two exact emails only; no followups/replies, attachments, member/client/attendee lists, social/Instagram/community/public posts, purchases, spending, sponsorship commitment, terms, building or deployment. Existing uncertain/blocked/denied actions remain untouched.",
+        "why": "Wave7 complete and no pending campaign cards. Use two already-qualified reserves, freshly reverified, for adult phone and recurring-friendship interest distribution; they are not newly obtained customer leads.",
+        "preflight": {
+          "checked_at": "2026-10-20T03:03:02Z",
+          "gmail": "All-history exact addresses and domains returned0 messages, no nextpage. No ledger collisions with20completed or held/denied actions.",
+          "official_identity": "Mind over Tech current page embeds Tally nW10Ev; HTTP200 form names Harriet Pellereau CEO and publishes exact address. Hype Girl current media page and FAQ publish exact partnerships inbox.",
+          "tracked_pages": "Fresh exact tracked page HTTP200/forms/adult/followup consent required before execution; no production test signup."
+        }
+      },
+      "created": "2026-10-20T03:03:02Z",
+      "expires": "2026-10-23T03:03:02Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
     }
   ]
 }
