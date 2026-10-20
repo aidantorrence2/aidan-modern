@@ -2951,7 +2951,9 @@
           "Approved data-handling arrangement",
           "Explicit buyer agreement and exact invoice/payment-request approval"
         ],
-        "measurement": "Only verified paid active monthly agreements count as MRR. Unpaid invoices, replies, one-off payments or interest do not. Current campaign recorded paid agreements0/cash0; no claim about other business accounts."
+        "measurement": "Only verified paid active monthly agreements count as MRR. Unpaid invoices, replies, one-off payments or interest do not. Current campaign recorded paid agreements0/cash0; no claim about other business accounts.",
+        "result": "Owner approved proposed commercial wording at2026-10-20T19:06:09Z/no note. Integrated the exact approved wording into local first-buyer-close-pack.html for later buyer-specific agreement preparation only. No external contact, contract acceptance, enrollment, invoice, charge, spending, real-data processing or start/capacity claim. Paid20 first-contact batch still pending; working Aidan-owned billing and exact buyer-specific gates unresolved.",
+        "result_at": "2026-10-20T19:07:08Z"
       },
       "created": "2026-10-20T19:04:35Z",
       "expires": "2026-10-23T19:04:35Z",
