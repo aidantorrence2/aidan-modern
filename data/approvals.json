@@ -2056,6 +2056,35 @@
       "status": "pending",
       "decided": null,
       "note": ""
+    },
+    {
+      "id": "other:approve-charlotte-round-1-control-3-chal-202610200402",
+      "kind": "other",
+      "source": "claude:aidan-modern",
+      "title": "Approve Charlotte round 1: control + 3 challengers, then build final ads",
+      "summary": "Round 1 at $5/day: C00 control (Istanbul winner re-cast), N01a one frame, N09 callout 5, N02 face wall. On approval I finish these 4 for upload. Nothing goes to Meta or spends money without a separate card.",
+      "payload": {
+        "board": "https://claude.ai/artifact/RHB5FnfTiSZdL8EJjGc4uA",
+        "branch": "claude/wizardly-shannon-dt47kn",
+        "commit": "32807a1",
+        "round1": [
+          "c00",
+          "n01a",
+          "n09",
+          "n02"
+        ],
+        "on_approve": "final 1080x1920 exports + Meta copy/ice breakers for these 4; no API calls, no spend",
+        "open_questions": [
+          "duo sessions ok (N08)?",
+          "Charlotte dates (N12)",
+          "about card says back in the States — true?"
+        ]
+      },
+      "created": "2026-10-20T04:02:21Z",
+      "expires": "2026-10-23T04:02:21Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
     }
   ]
 }
