@@ -13906,6 +13906,91 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-20",
+    "slug": "strokefix",
+    "name": "StrokeFix",
+    "need": "I concentrate on my freestyle faults and don't improve at all, and my gains in the pool have been utterly pathetic.",
+    "headline": "Film one length of freestyle on your phone and get a checklist of your stroke faults (breathing, head position, arm entry) plus a short drill plan for your next swims.",
+    "buyer": "Adult lap swimmers and triathletes who can already swim freestyle but are stuck at a slow pace, have no regular coach, and can only get to the pool a few times a week.",
+    "bullets": [
+      "Upload a phone clip of one length and tag what you see: head lift on the breath, breath timing, early leading arm, rotation",
+      "Get a focused 2-3 drill set for each fault you tagged, sized for 30-45 minute sessions",
+      "Log pace per 100 after each swim so you can see whether a change is actually making you faster"
+    ],
+    "price": "$9.99/month",
+    "priceUsd": 10,
+    "priceNote": "Below the leading swim-workout app's plans ($19.99 and up).",
+    "reasonPrompt": "What is the one thing about your freestyle you have tried to fix and still can't, and how often can you get to a pool?",
+    "faq": [
+      {
+        "q": "Is this a substitute for a swim coach or lifeguard?",
+        "a": "No. StrokeFix is an independent self-coaching tool for adults 18+. It is not medical advice, not swim-safety instruction, and does not replace a qualified coach or lifeguard. Only swim where it is supervised and safe."
+      },
+      {
+        "q": "Do I need special equipment?",
+        "a": "A phone to film a length (or a friend to film it) is enough. Drills may suggest common pool kit such as a pull buoy or fins."
+      },
+      {
+        "q": "Will this teach me to swim from scratch?",
+        "a": "No. It is for people who can already swim freestyle and want to fix their stroke, not for complete beginners."
+      },
+      {
+        "q": "Does it work for triathlon or open water?",
+        "a": "The drills target freestyle technique in the pool. Many triathletes train their stroke this way, but StrokeFix does not cover open-water skills."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-20",
+      "summary": "Adult freestyle swimmers on the Slowtwitch triathlon forum repeatedly say their stroke is stuck. They know their faults (head lift, breath timing, early arm) but practising alone doesn't make them faster, and they can't get to a pool or coach often. Evidence comes from 4 named people across 3 Slowtwitch threads, all opened with WebFetch, plus a paid app with 5.9K ratings.",
+      "wtp": "MySwimPro: #1 Swim Workout App (MySwimPro, Inc.) on the US App Store: 4.5 stars from 5.9K ratings (the page shows a rounded count). Free download with in-app purchases listed at $19.99, $29.99, $39.99, $99.00 and $179.99 (SWIM), and $29.99 and $179.99 (MySwimPro Coach). Reviewer BlehBlihBluh (08/29/2023): \"It has helped me begin to learn a new stroke (I'm leaning breaststroke).\" Slowtwitch posters also ask for paid adult swim coaches to fix their freestyle form.",
+      "signals": [
+        {
+          "url": "https://forum.slowtwitch.com/t/swim-not-improving/816492",
+          "who": "Island",
+          "date": "2022-06-21",
+          "quote": "I concentrate on these things and don't improve at all.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forum.slowtwitch.com/t/swim-not-improving/816492",
+          "who": "lightheir",
+          "date": "2022-06-21",
+          "quote": "my gains have been utterly pathetic.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forum.slowtwitch.com/t/slow-moving-in-the-water/558738",
+          "who": "pwickman",
+          "date": "2011-11-09",
+          "quote": "I just can't be competitive with my swim",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forum.slowtwitch.com/t/poor-swimmer/596923",
+          "who": "SharkFM",
+          "date": "2012-09-16",
+          "quote": "my freestyle was horrible for any sort of distance.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id994386450",
+          "who": "MySwimPro App Store listing",
+          "date": "2026-10-20",
+          "quote": "5.9K Ratings ... SWIM $179.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "MySwimPro (workout plans, AI workout generator, technique videos; subscription $19.99-$179.99), in-person masters swim groups and private adult swim coaches, technique books and video courses, and smart swim goggles and watches that track pace but don't diagnose stroke faults. Posters already film themselves, so the gap is turning a clip into a specific fault-to-drill plan.",
+      "risks": "Poster quotes are partly old (2011-2012), and the strongest ones date from 2022. Forum advice often says that consistent volume or a masters group matters more than technique tools, so some buyers may not credit an app. Without automated video analysis, self-tagged faults depend on the swimmer seeing their own errors. Filming in public pools may be restricted. MySwimPro is a well-rated incumbent. Swimming carries safety implications, so copy must avoid any safety or health claims. The USMS forum requires a login and could not be used as evidence."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

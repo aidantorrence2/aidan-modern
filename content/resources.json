@@ -4325,5 +4325,46 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "freestyle-not-getting-faster",
+  "offer": "strokefix",
+  "title": "Swimming more but your freestyle isn't getting faster? Fix one fault at a time",
+  "description": "Stuck at the same pace per 100? Get filmed, pick the one fault that costs you most (head lift, breath timing, arm entry), drill it, and track your pace.",
+  "intro": "Many adult swimmers add more lengths and see almost no change in pace. Usually one or two stroke faults are holding them back, and swimming more just repeats them.",
+  "sections": [
+   {
+    "h": "Get filmed",
+    "list": [
+     "Ask a friend or the pool staff (where filming is allowed) to film one length from the side and from above.",
+     "Look for your head lifting to breathe, a late or short breath, a crossing arm entry and sinking hips."
+    ]
+   },
+   {
+    "h": "Pick one fault",
+    "list": [
+     "Choose the fault you see most and work on only that for a couple of weeks."
+    ]
+   },
+   {
+    "h": "Drill it",
+    "list": [
+     "Use a short drill for that fault in each session, for example side-kicking with one goggle in the water to keep the head low when breathing.",
+     "Keep drills to 10 or 15 minutes, then swim normally while thinking about the fix."
+    ]
+   },
+   {
+    "h": "Track your pace",
+    "list": [
+     "Time a few 100s at a steady effort once a week. If the time is dropping, the fix is working."
+    ]
+   },
+   {
+    "h": "Swim safely",
+    "p": [
+     "Swim where there is a lifeguard, and get advice from a qualified coach if you can. This guide is general information."
+    ]
+   }
+  ]
  }
 ]
