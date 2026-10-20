@@ -249,6 +249,7 @@ approval and never posted without it.
 
 | Candidate | Evidence found | What is missing |
 |---|---|---|
+| Home-game poker coach: keep losing at poker night (code side, 20 Oct) | Two AnandTech threads, 2007-2008 (Special K, Vehemence, Baked, richardycc, necine); Poker Skill app 388 ratings, $9.99/mo. Passes the evidence gate. | Not launched: it's gambling-adjacent and the pitch implies winning money, which conflicts with the no-income-claims rule. Needs Aidan's call. |
 | Ask Ready: never negotiated pay or asked for a raise (doc side, 20 Oct) | Mumsnet (HoggyDunlop, 2023) and Singletrack (twohats, 2009) opened; Levels.fyi negotiation coaching $1,250 to $5,000, opened. Ask a Manager returns 403 to our fetch. | A third person on an opened page. |
 | First Batch Brew Coach: first-time homebrewers (code side, 20 Oct) | AHA forum threads, 2013-2026: only Wheezy states a problem ("Where is square 1 for learning to brew beer?"); the other posts are new-member hellos, not needs. Brewfather 755 ratings, Premium $29.99. | Not launched: needs two more people stating a problem in their own words, and it involves alcohol (21+ in the US). |
 | Fair Quote: fear of being overcharged on car repairs (doc side, 20 Oct) | AnandTech (Crusty, DrPizza, 2008) opened; FIXD 4.6 from 26K ratings, $12.99/mo or $99.99/yr, opened. Bob Is the Oil Guy returns 403 to our fetch. | A second opened page with a third person. |
