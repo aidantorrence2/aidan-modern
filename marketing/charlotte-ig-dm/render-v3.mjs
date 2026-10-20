@@ -243,6 +243,19 @@ const grid = (stems, x0, y0, cols, w, h, gap = 0, pos = 'center 28%') => stems.m
     <div style="position:absolute;left:0;right:0;top:1180px;bottom:0;background:#0a0a0a;"></div>${band(1185, 250, `<p style="font-family:${font};font-size:${s1}px;font-weight:700;font-style:${font === HW ? 'normal' : 'italic'};color:#fff;margin:0;line-height:1.02;">${l1}</p><p style="font-family:${font};font-size:${s2}px;font-weight:${font === HW ? 700 : 400};font-style:${font === HW ? 'normal' : 'italic'};color:rgba(255,255,255,.9);margin:12px 0 0;line-height:1.1;">${l2}</p>`)}`, '#000', false)])
 }
 
+// P10c PAIRS (Aidan, 20 Oct: "come alone or bring a friend? ..." / "never posed before? ... this sucks too"): cards 3–4
+// now use only lines from his own winning deck ("my recent work", "About an hour. I direct every frame."); no invented
+// reassurance, nothing about coming alone.
+{
+  const story = [['T31', 'T39', CITY, 'free photo shoot.', 120, 70, SE],
+    ['T14', 'T91', "i'm aidan, a portrait photographer.", "i'm in charlotte for a few weeks.", 60, 40, SE],
+    ['T73', 'T16', 'my recent work', '', 80, 0, SE],
+    ['T58', 'T89', 'about an hour.', 'i direct every frame.', 80, 48, SE],
+    ['T10', 'T20', 'Interested?', "Let's chat.", 110, 110, HW]]
+  C.p10c = story.map(([a, b, l1, l2, s1, s2, font], i) => [`${String(i + 1).padStart(2, '0')}-pair`, frame(`${tile(P(a), 0, 0, 538, 1180, 'center 30%')}${tile(P(b), 542, 0, 538, 1180, 'center 30%')}
+    <div style="position:absolute;left:0;right:0;top:1180px;bottom:0;background:#0a0a0a;"></div>${band(1185, 250, `<p style="font-family:${font};font-size:${s1}px;font-weight:700;font-style:${font === HW ? 'normal' : 'italic'};color:#fff;margin:0;line-height:1.02;">${l1}</p>${l2 ? `<p style="font-family:${font};font-size:${s2}px;font-weight:${font === HW ? 700 : 400};font-style:${font === HW ? 'normal' : 'italic'};color:rgba(255,255,255,.9);margin:12px 0 0;line-height:1.1;">${l2}</p>` : ''}`)}`, '#000', false)])
+}
+
 async function render() {
   const browser = await chromium.launch()
   const ctx = await browser.newContext({ viewport: { width: 1080, height: 1920 }, deviceScaleFactor: 1 })
