@@ -14,6 +14,8 @@ import fs from 'fs'
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const ARG = k => process.argv.find(a => a.startsWith(`--${k}=`))?.split('=')[1]
 const PHOTOS = ARG('photos'), OUT = ARG('out'), ONLY = ARG('only')?.split(',')
+// --vision=<dir of <stem>.face.json> (Apple Vision, ~/charlotte-video-ads/lib/vision.swift): enables the face audit
+const VISION = ARG('vision')
 if (!PHOTOS || !OUT) throw new Error('need --photos=<dir> --out=<dir>')
 const ROOT = path.resolve(__dirname, '../..')
 const FDIR = path.join(ROOT, 'marketing/carousel/fonts')
@@ -30,7 +32,32 @@ function dim(p) {
   throw new Error(`no SOF in ${p}`)
 }
 const cache = new Map()
-const load = p => { if (!cache.has(p)) cache.set(p, { src: enc(p), ...dim(p) }); return cache.get(p) }
+const facesOf = p => {
+  const f = VISION && path.join(VISION, path.basename(p).replace(/\.jpe?g$/i, '.face.json'))
+  if (!f || !fs.existsSync(f)) return []
+  const j = JSON.parse(fs.readFileSync(f, 'utf8')), d = dim(p), k = d.w / j.w
+  return j.faces.map(g => g.box.map(v => v * k))
+}
+const load = p => { if (!cache.has(p)) cache.set(p, { src: enc(p), ...dim(p), faces: facesOf(p) }); return cache.get(p) }
+// top y for a text block of height h on a full-bleed photo so it clears every face: below the faces if it fits above
+// the 1440 line (the deck's look), else above them (under the 270 story bar), else the lowest legal spot (audit flags it)
+const clearTop = (ph, pos, h, { gap = 44, below = true } = {}) => {
+  const c = coverAt(ph, 1080, 1920, pos), fs_ = ph.faces.map(b => [c.y + b[1] * c.k, c.y + (b[1] + b[3]) * c.k]).filter(f => f[1] > 0 && f[0] < 1920)
+  if (!fs_.length) return 1440 - h
+  const lo = Math.max(...fs_.map(f => f[1])) + gap, hi = Math.min(...fs_.map(f => f[0])) - gap
+  if (below && lo + h <= 1440) return Math.round(Math.max(lo, 1440 - h - 120))
+  if (hi - h >= 270) return Math.round(Math.min(hi - h, 420))
+  if (!below && lo + h <= 1440) return Math.round(lo)
+  return 1440 - h
+}
+// invisible face markers for a photo drawn at scale k with its top-left at (x, y); the audit fails text over them
+const fb = (ph, k, x, y) => ph.faces.map(b => `<div class="fbox" style="position:absolute;left:${(x + b[0] * k).toFixed(0)}px;top:${(y + b[1] * k).toFixed(0)}px;width:${(b[2] * k).toFixed(0)}px;height:${(b[3] * k).toFixed(0)}px;pointer-events:none"></div>`).join('')
+// object-fit:cover geometry for a W×H box and a CSS object-position like 'center 30%'
+const coverAt = (ph, W, H, pos = 'center 30%') => {
+  const [px, py] = pos.split(' ').map(v => v === 'center' ? 0.5 : v === 'top' ? 0 : v === 'bottom' ? 1 : parseFloat(v) / 100)
+  const k = Math.max(W / ph.w, H / ph.h)
+  return { k, x: (W - ph.w * k) * px, y: (H - ph.h * k) * (py ?? 0.5) }
+}
 const T = n => load(path.join(PHOTOS, `T${n}.jpg`))
 const S = f => load(path.join(SELF, f))
 
@@ -57,13 +84,13 @@ const shadow = 'box-shadow:0 16px 44px rgba(0,0,0,0.55),0 3px 10px rgba(0,0,0,0.
 const TITLE = (txt, size = 64) => `<p style="font-family:${SE};font-style:italic;font-size:${size}px;font-weight:700;color:#fff;margin:0;line-height:1.0;">${txt}</p>`
 const SUB = (txt, size = 35, top = 20) => `<p style="font-family:${SE};font-size:${size}px;font-style:italic;color:rgba(255,255,255,0.85);margin:${top}px 0 0;line-height:1.3;">${txt}</p>`
 const frame = (inner, bg = '#000', badge = true) => `<div style="width:1080px;height:1920px;position:relative;overflow:hidden;background:${bg};">${inner}${badge ? BADGE_BG + BADGE : ''}</div>`
-const img = (ph, pos = 'center 30%', extra = '') => `<img src="${ph.src}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:${pos};display:block;${extra}"/>`
+const img = (ph, pos = 'center 30%', extra = '') => { const c = coverAt(ph, 1080, 1920, pos); return `<img src="${ph.src}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:${pos};display:block;${extra}"/>${fb(ph, c.k, c.x, c.y)}` }
 const TOPBOT = 'linear-gradient(180deg,rgba(0,0,0,0.45) 0%,transparent 28%,transparent 50%,rgba(0,0,0,0.88) 100%)'
 const LOW = 'linear-gradient(180deg,transparent 0%,transparent 40%,rgba(0,0,0,0.5) 60%,rgba(0,0,0,0.92) 100%)'
 const bleed = (ph, overlay, { pos, scrim = TOPBOT, badge = true } = {}) => frame(`${img(ph, pos)}<div style="position:absolute;inset:0;background:${scrim};"></div>${overlay}${grain(0.07)}`, '#000', badge)
 const dark = (inner, badge = true) => frame(inner + grain(), '#0a0a0a', badge)
-const pr = (ph, l, t, w, rot) => { const h = Math.round(w * ph.h / ph.w); return `<div style="position:absolute;left:${l}px;top:${t}px;width:${w + 24}px;height:${h + 26}px;background:#fafafa;padding:12px 12px 14px;transform:rotate(${rot}deg);${shadow}"><img src="${ph.src}" style="width:${w}px;height:${h}px;object-fit:cover;display:block;"/></div>` }
-const tile = (ph, l, t, w, h, pos = 'center 30%') => `<img src="${ph.src}" style="position:absolute;left:${l}px;top:${t}px;width:${w}px;height:${h}px;object-fit:cover;object-position:${pos};display:block;"/>`
+const pr = (ph, l, t, w, rot) => { const h = Math.round(w * ph.h / ph.w); return `<div style="position:absolute;left:${l}px;top:${t}px;width:${w + 24}px;height:${h + 26}px;background:#fafafa;padding:12px 12px 14px;transform:rotate(${rot}deg);${shadow}"><img src="${ph.src}" style="width:${w}px;height:${h}px;object-fit:cover;display:block;"/>${fb(ph, w / ph.w, 12, 12)}</div>` }
+const tile = (ph, l, t, w, h, pos = 'center 30%') => { const c = coverAt(ph, w, h, pos); return `<img src="${ph.src}" style="position:absolute;left:${l}px;top:${t}px;width:${w}px;height:${h}px;object-fit:cover;object-position:${pos};display:block;"/>${fb(ph, c.k, l + c.x, t + c.y)}` }
 const hook = (top, big, small, sub) => `<div style="position:absolute;top:${top}px;left:56px;right:56px;text-align:center;">
    <p style="font-family:${SE};font-size:150px;font-weight:700;font-style:italic;color:#fff;margin:0;line-height:0.88;${SH}">${big}</p>
    <p style="font-family:${SE};font-size:80px;font-weight:700;font-style:italic;color:#fff;margin:12px 0 0;line-height:0.98;${SH}">${small}</p>
@@ -76,7 +103,8 @@ const cap = (top, big, small) => `<div style="position:absolute;top:${top}px;lef
    <p style="font-family:${SE};font-style:italic;font-size:66px;font-weight:700;color:#fff;margin:0;line-height:1.02;${SH}">${big}</p>
    ${small ? `<p style="font-family:${SE};font-size:36px;font-style:italic;color:rgba(255,255,255,0.92);margin:18px 0 0;line-height:1.3;${SH}">${small}</p>` : ''}</div>`
 const CHAT = ['Interested?', "Let's chat."]
-const ctaCard = (ph, pos) => bleed(ph, hand(980, ...CHAT, `I'm only in ${CITY} for a short time — let's shoot.`), { pos, scrim: LOW })
+const ctaCard = (ph, pos) => bleed(ph, hand(clearTop(ph, pos, 345), ...CHAT, `I'm only in ${CITY} for a short time — let's shoot.`), { pos, scrim: LOW })
+const HOOK_H = 300, hookOn = (ph, pos, small, sub) => hook(clearTop(ph, pos, sub ? HOOK_H : 240), CITY, small, sub)
 
 const ABOUT = dark(`
   <div style="position:absolute;top:240px;left:60px;right:60px;text-align:center;">${TITLE('about me')}</div>
@@ -96,7 +124,7 @@ const C = {}
 
 // CONTROL: the winning deck, photo-swapped. 7 cards (film card dropped).
 C.c00 = [
-  ['01-hook', bleed(T(62), hook(1180, CITY, 'Free Photo Shoot.', 'Want photos like these? →'), { badge: false })],
+  ['01-hook', bleed(T(62), hookOn(T(62), 'center 30%', 'Free Photo Shoot.', 'Want photos like these? →'), { badge: false })],
   ['02-work', dark(`<div style="position:absolute;top:200px;left:60px;right:60px;text-align:center;">${TITLE('my recent work')}</div>
      ${pr(T(54), 45, 470, 350, -5)}${pr(T(37), 615, 430, 370, 4)}${pr(T(25), 100, 1060, 360, 3)}${pr(T(70), 605, 1075, 370, -4)}${pr(T(47), 360, 745, 340, 2)}`)],
   ['03-about', ABOUT],
@@ -108,21 +136,21 @@ C.c00 = [
 ]
 
 // N1 ONE FRAME: the whole ad on card 1 (no swipe decay). Three heroes = three ads; Meta picks the winner.
-const one = (ph, pos) => [['01-only', bleed(ph, hook(980, CITY, 'Free Photo Shoot.') + hand(1290, "Interested? Let's chat.", '', '', 84), { pos, badge: false })]]
+const one = (ph, pos) => { const top = clearTop(ph, pos, 330); return [['01-only', bleed(ph, hook(top, CITY, 'Free Photo Shoot.') + hand(top + 250, "Interested? Let's chat.", '', '', 76), { pos, badge: false })]] }
 C.n01a = one(T(62), 'center 25%')
 C.n01b = one(T(54), 'center 30%')
 C.n01c = one(T(6), 'center 25%')
 
-// N2 FACE WALL: twelve faces fill the screen; the city band runs across the middle.
+// N2 FACE WALL: twelve faces fill the screen in two blocks; the city band sits in the gap between them, over no face.
 {
   const faces = [37, 62, 54, 6, 12, 70, 76, 25, 47, 61, 14, 88]
-  const w = 360, h = 480
-  const grid = faces.map((n, i) => tile(T(n), (i % 3) * w, Math.floor(i / 3) * h, w, h, 'center 28%')).join('')
-  C.n02 = [['01-wall', frame(`${grid}<div style="position:absolute;left:0;right:0;top:700px;height:420px;background:rgba(10,10,10,0.82);"></div>
-    <div style="position:absolute;top:735px;left:40px;right:40px;text-align:center;">
+  const w = 360, rows = [[0, 425], [425, 425], [1180, 370], [1550, 370]]
+  const grid = faces.map((n, i) => { const [y, h] = rows[Math.floor(i / 3)]; return tile(T(n), (i % 3) * w, y, w, h, 'center 28%') }).join('')
+  C.n02 = [['01-wall', frame(`${grid}<div style="position:absolute;left:0;right:0;top:850px;height:330px;background:#0a0a0a;"></div>
+    <div style="position:absolute;top:868px;left:40px;right:40px;text-align:center;">
       <p style="font-family:${SE};font-size:132px;font-weight:700;font-style:italic;color:#fff;margin:0;line-height:0.95;">${CITY}</p>
       <p style="font-family:${SE};font-size:72px;font-weight:700;font-style:italic;color:#fff;margin:6px 0 0;">Free Photo Shoot.</p>
-      <p style="font-family:${SE};font-size:32px;font-style:italic;color:rgba(255,255,255,0.85);margin:18px 0 0;">you could be the next frame →</p></div>`, '#000', false)],
+      <p style="font-family:${SE};font-size:32px;font-style:italic;color:rgba(255,255,255,0.85);margin:14px 0 0;">you could be the next frame →</p></div>`, '#000', false)],
     ['02-cta', ctaCard(T(61), 'center 22%')]]
 }
 
@@ -154,8 +182,8 @@ C.n04 = [
   const spots = ['NoDa', 'South End', 'Freedom Park', 'Uptown']
   C.n05 = [['01-pick', bleed(T(47), `<div style="position:absolute;top:290px;left:90px;right:90px;text-align:center;">
       <p style="font-family:${SE};font-size:96px;font-weight:700;font-style:italic;color:#fff;margin:0;line-height:1.0;${SH}">${CITY},<br>where should we shoot?</p></div>
-      <div style="position:absolute;top:720px;left:170px;right:170px;">${spots.map(s => `<div style="background:rgba(255,255,255,0.94);border-radius:60px;padding:28px 0;margin:0 0 26px;text-align:center;font-family:${RD};font-size:42px;font-weight:700;color:#111;">${s}</div>`).join('')}</div>
-      <div style="position:absolute;top:1340px;left:60px;right:60px;text-align:center;"><p style="font-family:${SE};font-size:38px;font-style:italic;color:#fff;margin:0;${SH}">free photo shoot · message me your pick</p></div>`, { pos: 'center 30%', scrim: 'linear-gradient(180deg,rgba(0,0,0,0.65) 0%,rgba(0,0,0,0.35) 50%,rgba(0,0,0,0.75) 100%)', badge: false })]]
+      <div style="position:absolute;top:${clearTop(T(47), 'center 30%', 300)}px;left:80px;right:80px;display:grid;grid-template-columns:1fr 1fr;gap:22px;">${spots.map(s => `<div data-text style="background:rgba(255,255,255,0.94);border-radius:60px;padding:24px 0;text-align:center;font-family:${RD};font-size:38px;font-weight:700;color:#111;">${s}</div>`).join('')}</div>
+      <div style="position:absolute;top:${clearTop(T(47), 'center 30%', 300) + 240}px;left:60px;right:60px;text-align:center;"><p style="font-family:${SE};font-size:38px;font-style:italic;color:#fff;margin:0;${SH}">free photo shoot · message me your pick</p></div>`, { pos: 'center 30%', scrim: 'linear-gradient(180deg,rgba(0,0,0,0.65) 0%,rgba(0,0,0,0.35) 50%,rgba(0,0,0,0.75) 100%)', badge: false })]]
 }
 
 // N6 THE DM: shows exactly what happens after the tap.
@@ -190,7 +218,7 @@ C.n08 = [['01-duo', dark(`<div style="position:absolute;top:230px;left:56px;righ
 
 // N9 CALLOUT 5: the structure of the one English ad that worked (antalya - dm, 4.17% CTR), no "models" wording.
 C.n09 = [
-  ['01-callout', bleed(T(37), `<div style="position:absolute;top:1000px;left:60px;right:60px;text-align:center;">
+  ['01-callout', bleed(T(37), `<div style="position:absolute;top:${clearTop(T(37), 'center 25%', 300)}px;left:60px;right:60px;text-align:center;">
      <p style="font-family:${SE};font-size:150px;font-weight:700;font-style:italic;color:#fff;margin:0;line-height:0.88;${SH}">${CITY}</p>
      <p style="font-family:${SE};font-size:62px;font-weight:700;font-style:italic;color:#fff;margin:22px 0 0;line-height:1.05;${SH}">I'm looking for people<br>to photograph.</p></div>`, { pos: 'center 25%', badge: false })],
   ['02-a', bleed(T(54), cap(1140, 'no experience needed', 'i direct every frame'), { pos: 'center 30%', scrim: LOW })],
@@ -202,29 +230,30 @@ C.n09 = [
 // N10 EYE-CONTACT REEL (stills = keyframes): one face per beat, the type never moves.
 {
   const beats = [[62, '0.0s'], [37, '0.6s'], [76, '1.2s'], [54, '1.8s'], [12, '2.4s'], [6, '3.0s']]
-  C.n10 = beats.map(([n, t], i) => [`${String(i + 1).padStart(2, '0')}-${t}`, bleed(T(n), hook(1000, CITY, 'Free Photo Shoot.', i === beats.length - 1 ? "interested? let's chat →" : ''), { pos: 'center 25%', badge: false })])
+  C.n10 = beats.map(([n, t], i) => [`${String(i + 1).padStart(2, '0')}-${t}`, bleed(T(n), hookOn(T(n), 'center 25%', 'Free Photo Shoot.', i === beats.length - 1 ? "interested? let's chat →" : ''), { pos: 'center 25%', badge: false })])
 }
 
 // N11 HI, I'M AIDAN (needs a 10s selfie video; stills show the beats).
 C.n11 = [
-  ['01-hi', bleed(S('aidan-udaipur-mirror-01.jpg'), `<div style="position:absolute;top:300px;left:70px;right:70px;text-align:center;">
+  ['01-hi', bleed(S('aidan-udaipur-mirror-01.jpg'), `<div style="position:absolute;top:${clearTop(S('aidan-udaipur-mirror-01.jpg'), 'center 30%', 270)}px;left:70px;right:70px;text-align:center;">
      <p style="font-family:${HW};font-size:120px;font-weight:700;color:#fff;margin:0;line-height:1;${SH}">hi, i'm aidan 👋</p>
-     <p style="font-family:${SE};font-size:44px;font-style:italic;color:#fff;margin:26px 0 0;line-height:1.3;${SH}">i take portraits, and i'm in ${CITY} for a few weeks.</p></div>`, { pos: 'center 30%', scrim: 'linear-gradient(180deg,rgba(0,0,0,0.6) 0%,transparent 45%)', badge: false })],
-  ['02-work', bleed(T(62), cap(1100, "here's what i shoot", 'and i want to photograph you, for free'), { pos: 'center 22%', scrim: LOW })],
+     <p style="font-family:${SE};font-size:44px;font-style:italic;color:#fff;margin:26px 0 0;line-height:1.3;${SH}">i take portraits, and i'm in ${CITY} for a few weeks.</p></div>`, { pos: 'center 30%', scrim: LOW, badge: false })],
+  ['02-work', bleed(T(59), cap(clearTop(T(59), 'center 22%', 160), "here's what i shoot", 'and i want to photograph you, for free'), { pos: 'center 22%', scrim: LOW })],
   ['03-cta', ctaCard(T(54), 'center 30%')],
 ]
 
 // N12 BEFORE THE LEAVES DROP: an honest seasonal deadline (needs real dates before launch).
-C.n12 = [['01-fall', bleed(T(32), `<div style="position:absolute;top:1010px;left:60px;right:60px;text-align:center;">
+C.n12 = [['01-fall', bleed(T(32), `<div style="position:absolute;top:${clearTop(T(32), 'center 40%', 300)}px;left:60px;right:60px;text-align:center;">
     <p style="font-family:${SE};font-size:150px;font-weight:700;font-style:italic;color:#fff;margin:0;line-height:0.88;${SH}">${CITY}</p>
     <p style="font-family:${SE};font-size:70px;font-weight:700;font-style:italic;color:#fff;margin:14px 0 0;line-height:1.02;${SH}">free photo shoots,<br>before the leaves drop.</p></div>`, { pos: 'center 40%', scrim: TOPBOT, badge: false })],
-  ['02-cta', ctaCard(T(31), 'center 25%')]]
+  ['02-cta', ctaCard(T(64), 'center 25%')]]
 
 async function render() {
   const browser = await chromium.launch()
   const ctx = await browser.newContext({ viewport: { width: 1080, height: 1920 }, deviceScaleFactor: 1 })
   // --only re-renders merge into the existing index instead of replacing it
   const IDX = path.join(OUT, 'index.json')
+  const faceFails = []
   const report = fs.existsSync(IDX) ? JSON.parse(fs.readFileSync(IDX, 'utf8')) : {}
   for (const [id, slides] of Object.entries(C)) {
     if (ONLY && !ONLY.includes(id)) continue
@@ -238,6 +267,13 @@ async function render() {
       // the control keeps the winner's own layout, so it is reported, not failed
       const bad = await page.evaluate(() => [...document.querySelectorAll('p')].filter(p => { const r = p.getBoundingClientRect(); return r.right > 1081 || r.left < -1 || r.bottom > 1440 }).map(p => `${p.textContent.slice(0, 30)}@${Math.round(p.getBoundingClientRect().bottom)}`))
       if (bad.length) console.warn(`  ! ${id}/${name} text below 1440 or off-canvas:`, bad.join(' | '))
+      const onFace = await page.evaluate(() => {
+        const R = (a, b) => Math.max(0, Math.min(a.right, b.right) - Math.max(a.left, b.left)) * Math.max(0, Math.min(a.bottom, b.bottom) - Math.max(a.top, b.top))
+        const faces = [...document.querySelectorAll('.fbox')].map(e => e.getBoundingClientRect()).filter(f => f.right > 0 && f.left < 1080 && f.bottom > 0 && f.top < 1920)
+        return [...document.querySelectorAll('p,[data-text]')].filter(p => !p.closest('[data-card]')).flatMap(p => { const rg = document.createRange(); rg.selectNodeContents(p); const b = rg.getBoundingClientRect()
+          return faces.filter(f => R(b, f) > 0.04 * f.width * f.height).map(() => p.textContent.slice(0, 30)) })
+      })
+      if (onFace.length) { faceFails.push(`${id}/${name}: ${[...new Set(onFace)].join(' | ')}`); console.error(`  ✗ ${id}/${name} text over a face:`, [...new Set(onFace)].join(' | ')) }
       await page.screenshot({ path: path.join(dir, `${name}.jpg`), type: 'jpeg', quality: 90 })
       await page.close()
       report[id].push(name)
@@ -246,5 +282,7 @@ async function render() {
   }
   await browser.close()
   fs.writeFileSync(IDX, JSON.stringify(report, null, 1))
+  if (!VISION) console.warn('  (no --vision: face audit skipped)')
+  if (faceFails.length) { console.error(`${faceFails.length} slide(s) put text over a face`); process.exitCode = 1 }
 }
 render()

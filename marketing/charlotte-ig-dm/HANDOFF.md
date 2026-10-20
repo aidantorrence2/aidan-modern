@@ -36,3 +36,11 @@ better on CPC, not variations of it, using tier_candidates. Built:
 Rules applied: no film wording (Aidan, 23 Sept), no "models"/job words (US Employment category), city big on hooks,
 women-only ad set, 3–4 ads per round at $5/day. The v1 board (80 concepts, incl. a FILM family) is superseded by v2.
 Open: duo sessions (N08), dates (N12), selfie video (N11), the about-card claim "back in the States".
+
+## v2b: Aidan's picks + videos (20 Oct 2026)
+Aidan liked C00 (winner), N04 (Notes) and N11 (Hi, I'm Aidan); rule: text never covers a face. render-v2.mjs now takes
+`--vision=<dir>` (Apple Vision face boxes, from ~/charlotte-video-ads/work/vision), places hook/CTA type in the clear band
+above/below faces (`clearTop`) and fails any slide with text over a face. Videos live in ~/charlotte-video-ads (jj repo,
+engine from ~/paris-video-ads with the same face audit per frame): a-notes (v3), b-hi-aidan, c-winner, d-eyes, e-behind,
+f-wall → out/charlotte-*.mp4. Board (same URL) shows picks, the six reels, then other stills. Round 1 proposal:
+C00 still deck + winner reel + notes reel + hi-aidan reel. Known: e-behind last cover hides part of "Charlotte".

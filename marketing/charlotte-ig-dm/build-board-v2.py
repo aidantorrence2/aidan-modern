@@ -1,12 +1,15 @@
 #!/usr/bin/env python3
 """Builds the v2 board: the current winning ad as the benchmark, then CPC-first challengers rendered by render-v2.mjs.
 
-Usage: python3 build-board-v2.py <renders dir from render-v2.mjs> <baseline screenshots dir> <out.html>
+Usage: python3 build-board-v2.py <renders dir from render-v2.mjs> <baseline screenshots dir> <out.html> [videos.json]
+videos.json: [{"src": published mp4 path, "poster": published jpg path, "title", "lever", "why", "pick": bool}]
 """
 import base64, html, io, json, os, sys
 from PIL import Image
 
 R, BASE, OUT = sys.argv[1:4]
+VIDEOS = json.load(open(sys.argv[4])) if len(sys.argv) > 4 else []
+PICKS = ['c00', 'n04', 'n11']   # Aidan liked these three (20 Oct)
 
 def thumb(path, w=300):
     im = Image.open(path).convert('RGB'); im.thumbnail((w, int(w * 16 / 9) + 2))
@@ -27,7 +30,7 @@ META = {
  'n07': ('Camera roll vs one hour', 'CTR · contrast', 'Puts the viewer\'s own camera roll next to a portrait. Everyone recognises the top half; the bottom half is the offer.', 'ready'),
  'n08': ('Bring a friend', 'CTR + reach', 'Two people side by side, "free shoot for two". Coming with a friend removes the biggest safety worry, and each yes brings a second person. Needs your OK that duo sessions are on offer.', 'confirm duo sessions'),
  'n09': ('Callout 5', 'CTR · proven English structure', 'The structure of the only English ad that has worked for you (antalya - dm, 5-card callout: 4.17% CTR, $0.40 a chat), without the word "models" so the US ad can\'t be classed as a job ad. One idea per card, one short line each.', 'ready'),
- 'n10': ('Eye-contact reel', 'CPM · Reels placement', 'A 4-second reel: one face per beat, all looking into the lens, the city and offer never move. Reels is often one of the cheaper placements, and motion in the first second stops the scroll. Stills here are the keyframes.', 'render as video after OK'),
+ 'n10': ('Eye-contact reel', 'CPM · Reels placement', 'A 4-second reel: one face per beat, all looking into the lens, the city and offer never move. Reels is often one of the cheaper placements, and motion in the first second stops the scroll. Stills here are the keyframes.', 'rendered as a reel below (Eyes)'),
  'n11': ('Hi, I\'m Aidan', 'CTR · trust', 'A real person on camera answers "who is this?" before it is asked. Talking-to-camera creative often gets cheaper clicks. Needs a 10-second selfie video from you; stills show the beats.', 'needs a selfie video'),
  'n12': ('Before the leaves drop', 'CTR · honest deadline', 'Peak leaves in Charlotte (late Oct to mid-Nov) give a real reason to message now instead of later. Needs your dates so the deadline is true.', 'needs your dates'),
 }
@@ -38,17 +41,28 @@ base = sorted(f for f in os.listdir(BASE) if f.lower().endswith(('.jpg', '.png')
 def strip(paths, labels):
     return ''.join(f'<figure><img src="{thumb(p)}" alt=""><figcaption>{html.escape(l)}</figcaption></figure>' for p, l in zip(paths, labels))
 
-cards = []
-for cid, (title, lever, why, needs) in META.items():
+def card_html(cid):
+    title, lever, why, needs = META[cid]
     names = idx.get(cid, [])
     frames = strip([os.path.join(R, cid, n + '.jpg') for n in names], names)
     ok = needs.startswith('ready') or needs == 'needs nothing'
-    cards.append(f'''<article class="card{' control' if cid == 'c00' else ''}" id="{cid}">
+    return (f'''<article class="card{' control' if cid == 'c00' else ''}" id="{cid}">
   <header><span class="num">{cid.upper()}</span><h3>{html.escape(title)}</h3><span class="lever">{html.escape(lever)}</span></header>
   <p class="why">{html.escape(why)}</p>
   <div class="strip">{frames}</div>
   <p class="needs {'ok' if ok else 'warn'}">{html.escape(needs)} · {len(names)} card{'s' if len(names) != 1 else ''}</p>
 </article>''')
+
+def vcard(v):
+    return f'''<article class="card{' control' if v.get('pick') else ''}">
+  <header><span class="num">REEL</span><h3>{html.escape(v['title'])}</h3><span class="lever">{html.escape(v['lever'])}</span></header>
+  <p class="why">{html.escape(v['why'])}</p>
+  <video src="{v['src']}" poster="{v['poster']}" controls playsinline muted loop preload="none"></video>
+  <p class="needs ok">{html.escape(v.get('meta', ''))}</p></article>'''
+
+picks = ''.join(card_html(c) for c in PICKS)
+rest = ''.join(card_html(c) for c in META if c not in PICKS)
+vids = ''.join(vcard(v) for v in sorted(VIDEOS, key=lambda v: not v.get('pick')))
 
 page = f'''<!doctype html><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Charlotte Ads v2</title>
@@ -70,6 +84,7 @@ h2 {{ font:400 34px/1.1 var(--display); margin:48px 0 14px; }}
 .math {{ font:500 15px/1.6 var(--mono); }}
 .card {{ background:var(--panel); border:1px solid var(--line); padding:20px; margin:0 0 18px; }}
 .card.control {{ border-color:var(--amber); }}
+video {{ width:min(100%,300px); aspect-ratio:9/16; background:#000; display:block; border:1px solid var(--line); }}
 .card header {{ display:flex; gap:14px; align-items:baseline; flex-wrap:wrap; }}
 .num {{ font:500 13px var(--mono); color:var(--amber); }}
 .card h3 {{ font:400 30px/1.1 var(--display); margin:0; }}
@@ -85,7 +100,7 @@ h2 {{ font:400 34px/1.1 var(--display); margin:48px 0 14px; }}
 <div class="wrap">
 <div class="edge"><span>Charlotte · Instagram DM ads · v2 · 19 Oct 2026</span></div>
 <h1>Beat the <em>winner</em>, cut the cost per click</h1>
-<p class="lede">The Istanbul deck below is the benchmark. Everything after it is a different structure, not a re-skin, and each one names the part of the cost it attacks. All photos come from tier_candidates. None of this is live and nothing has been spent.</p>
+<p class="lede">The Istanbul deck below is the benchmark. Everything after it is a different structure, not a re-skin, and each one names the part of the cost it attacks. All photos come from tier_candidates. No text sits on a face: every still and every video frame is checked against Apple Vision face boxes and fails the render if it does. None of this is live and nothing has been spent.</p>
 
 <h2>The benchmark</h2>
 <p class="lede">Your current successful ad, as you sent it. In Charlotte it runs as C00 below: same layout, new photos, no film card, last card "Interested? Let's chat."</p>
@@ -110,13 +125,18 @@ h2 {{ font:400 34px/1.1 var(--display); margin:48px 0 14px; }}
 
 <h2>Test plan at $5/day</h2>
 <div class="grid">
- <div class="box"><h4>Round 1 · 4 ads · days 1–4</h4><p>C00 control · N01a one frame · N09 callout 5 · N02 face wall</p><p>One of each kind: the winner, the shortest possible ad, the proven English structure, the densest thumb-stop.</p></div>
- <div class="box"><h4>Round 2 · days 5–8</h4><p>Keep the round-1 winner. Swap in N04 notes · N05 where should we shoot · N03 question.</p><p>Pause anything above 1.5× the control's CPC once it has 1,000 impressions.</p></div>
- <div class="box"><h4>Round 3</h4><p>Hero test on the winning layout (N01a/b/c faces), plus N10 reel and N11 selfie once the video exists.</p><p>Judge on CPC first, then cost per chat once each ad has 5+ chats.</p></div>
+ <div class="box"><h4>Round 1 · 4 ads · days 1–4</h4><p>C00 control (still deck) · Winner reel · Notes reel · Hi, I'm Aidan reel</p><p>Your three picks, with the winner run both as stills and as a reel, so the first read says whether motion alone lowers CPC.</p></div>
+ <div class="box"><h4>Round 2 · days 5–8</h4><p>Keep the two cheapest. Add the best of Eyes / Behind / Wall and the Notes still.</p><p>Pause anything above 1.5× the control's CPC once it has 1,000 impressions.</p></div>
+ <div class="box"><h4>Round 3</h4><p>Hero test on the winning layout (three different first frames), plus the real selfie clip if you film it.</p><p>Judge on CPC first, then cost per chat once each ad has 5+ chats.</p></div>
 </div>
 
-<h2>Control + 12 challengers</h2>
-{''.join(cards)}
+<h2>Your picks</h2>
+{picks}
+<h2>Video ideas</h2>
+<p class="lede">Reels at 1080×1920 with music, built from the same photos. Tap to play. Picks first.</p>
+{vids}
+<h2>Other stills</h2>
+{rest}
 </div>'''
 open(OUT, 'w').write(page)
 print(OUT, f'{len(page) / 1e6:.2f} MB')
