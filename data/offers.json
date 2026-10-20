@@ -15533,6 +15533,105 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-20",
+    "slug": "tie-ready",
+    "name": "Tie Ready",
+    "need": "I only wear a tie a few times a year, and every time I've forgotten how to tie it.",
+    "headline": "Forgot how to tie a tie again? Relearn one knot, shown the way you see it in the mirror, before the wedding, funeral or interview.",
+    "buyer": "Adults who wear a tie only for weddings, funerals, interviews or the odd formal event, and who have to relearn the knot each time from a front-facing video.",
+    "bullets": [
+      "Learn one knot, a four-in-hand or a half-Windsor, instead of scrolling through 30 you'll never use",
+      "Every step is drawn from your side of the mirror, so you don't have to flip a front-facing diagram in your head",
+      "A two-minute practice run a few days before your event, so the knot is back in your hands when the day comes"
+    ],
+    "price": "$2.99 one-time",
+    "priceUsd": 3,
+    "priceNote": "One-time purchase.",
+    "reasonPrompt": "What's the next event you need to wear a tie for, and how did tying it go last time?",
+    "faq": [
+      {
+        "q": "Which knots does it teach?",
+        "a": "It starts you on one simple everyday knot, the four-in-hand or the half-Windsor, so you learn one well rather than many badly."
+      },
+      {
+        "q": "Why are the steps drawn from my point of view?",
+        "a": "Most guides show the tie from the front, so you have to reverse every move in your head. Tie Ready shows each step the way it looks to you in the mirror."
+      },
+      {
+        "q": "Do I need to wear ties often for this to work?",
+        "a": "No. It's made for people who wear one a few times a year and forget the knot in between."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Adults who wear a tie now and then. It is an independent app, not linked to any tie maker or retailer."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-20",
+      "summary": "People who rarely wear a tie say in their own words that they've forgotten how to tie one, have never managed it, or can only do it on themselves. I opened and checked 6 named people on 4 pages across 3 sites: Straight Dope (two pages of one thread), Tildes and a personal MIT page. Quotes were taken from the raw page text.",
+      "wtp": "I opened Knots 3D on the US App Store. It sells for $5.99, is rated 4.9 from 13K ratings, and lists 'Neckties' among its categories. Paid tie-only apps exist but have few ratings: How to Tie a Tie Advanced Pro at $4.99 (no rating count shown) and vTie Premium at $0.99 (3 ratings, 4.7). TieCam is free with in-app purchases and has 65 ratings (4.4). People do pay for knot-tying help, but tie-only apps show weak volume.",
+      "signals": [
+        {
+          "url": "https://boards.straightdope.com/t/the-tie-poll/579689?page=2",
+          "who": "Harmonious_Discord (Straight Dope)",
+          "date": "2011-04-25",
+          "quote": "I’ve forgotten how to tie a tie in the last 20 years since I haven’t worn a single one.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://boards.straightdope.com/t/the-tie-poll/579689?page=2",
+          "who": "Sunspace (Straight Dope)",
+          "date": "2011-04-26",
+          "quote": "I no longer remember how to tie a tie.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://boards.straightdope.com/t/the-tie-poll/579689",
+          "who": "Joey_P (Straight Dope)",
+          "date": "2011-04-25",
+          "quote": "Never been able too. If I have to do it myself, I can usually figure it out with a mirror and the internet, but it probably won’t look so good.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://tildes.net/~life.style/1us6/how_to_tie_a_tie_animated",
+          "who": "SamusAu (Tildes)",
+          "date": "2026-06-22",
+          "quote": "I can't tie a tie unless I'm wearing it, for whatever reason my brain just can't handle switching things around if I try and help someone else.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://tildes.net/~life.style/1us6/how_to_tie_a_tie_animated",
+          "who": "Hobofarmer (Tildes)",
+          "date": "2026-06-22",
+          "quote": "I wear a tie so infrequently that it's not automatic though",
+          "seen": "opened"
+        },
+        {
+          "url": "https://people.csail.mit.edu/maddog/Ties/neckties.html",
+          "who": "Matthew J. Marjanovic (personal page, MIT CSAIL)",
+          "date": "1997-01-02",
+          "quote": "I don't wear neckties very often, and unlike cut-offs, they don't just zip and button in the front. So I tend to forget what to do with them.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/knots-3d/id453571750",
+          "who": "Knots 3D by Nynix (App Store)",
+          "date": "2026-10-20",
+          "quote": "Knots 3D Learn 240+ ties & hitches $5.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Knots 3D ($5.99, 4.9 from 13K ratings, includes neckties among 240+ knots). TieCam (free with in-app purchases, 4.4 from 65 ratings), which uses the front camera to show the knot over your reflection and is the closest to the mirror-view idea. Tie Right (free, 4.8 from 114 ratings), which has a first-person top-down view. How to Tie a Tie Advanced Pro ($4.99). vTie Premium ($0.99, 3 ratings). Free YouTube videos and printed charts are the default fallback.",
+      "risks": "Free alternatives are good enough for most people: YouTube, Tie Right, and TieCam's free tier. Tie-only apps have low rating counts, so paid demand looks thin. Need comes in bursts tied to events, which suits a one-time price rather than a subscription and limits revenue per user. TieCam already covers the mirror and point-of-view angle, so the difference would come down to focusing on one knot and the pre-event practice run. Tie-wearing is declining. The Straight Dope evidence is old (2011); the Tildes comments are recent (June 2026)."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

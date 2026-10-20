@@ -5150,5 +5150,44 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "forgot-how-to-tie-a-tie",
+  "offer": "tie-ready",
+  "title": "Forgot how to tie a tie? The four-in-hand, step by step in the mirror",
+  "description": "Only wear a tie a few times a year? Learn one simple knot, the four-in-hand, and practise it a few days before the event.",
+  "intro": "If you wear a tie rarely, learn one knot well rather than many. The four-in-hand is the simplest and suits most occasions.",
+  "sections": [
+   {
+    "h": "Set the length",
+    "list": [
+     "Drape the tie round your neck with the wide end on your right, hanging about a hand-length lower than the narrow end."
+    ]
+   },
+   {
+    "h": "Cross and wrap",
+    "list": [
+     "Cross the wide end over the narrow end, then wrap it behind and back across the front."
+    ]
+   },
+   {
+    "h": "Up and through",
+    "list": [
+     "Bring the wide end up through the loop at your neck, then down through the front knot you just made."
+    ]
+   },
+   {
+    "h": "Tighten",
+    "list": [
+     "Hold the narrow end and slide the knot up to your collar. The tip should reach about your belt buckle."
+    ]
+   },
+   {
+    "h": "Practise before the day",
+    "p": [
+     "Tie it two or three times a few days before the wedding or interview, so it comes back to your hands."
+    ]
+   }
+  ]
  }
 ]
