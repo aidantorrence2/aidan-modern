@@ -6242,5 +6242,44 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "stuck-at-same-morse-code-speed",
+  "offer": "code-climb",
+  "title": "Stuck at the same Morse code speed? How to get past a CW plateau",
+  "description": "Copy speed not moving for weeks or months? Find the characters you hesitate on, drill those, add short faster bursts, and practise on real words and contacts.",
+  "intro": "Most CW plateaus come from a few characters that still need a moment's thought. Finding and fixing those usually gets you moving again.",
+  "sections": [
+   {
+    "h": "Find your slow characters",
+    "list": [
+     "Note which letters, numbers and pairs you miss or hesitate on during a session."
+    ]
+   },
+   {
+    "h": "Drill only those",
+    "list": [
+     "Spend most of your practice on the slow ones, not on the letters you already know instantly."
+    ]
+   },
+   {
+    "h": "Add short fast bursts",
+    "list": [
+     "A minute or two above your comfortable speed makes your normal speed feel easier."
+    ]
+   },
+   {
+    "h": "Move to words and contacts",
+    "list": [
+     "Copy common words, call signs and typical exchanges, not just random letter groups."
+    ]
+   },
+   {
+    "h": "Little and often",
+    "p": [
+     "Ten to fifteen minutes a day beats a long session once a week. Be patient: plateaus are common."
+    ]
+   }
+  ]
  }
 ]

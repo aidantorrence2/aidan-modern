@@ -17886,6 +17886,108 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-20",
+    "slug": "code-climb",
+    "name": "Code Climb",
+    "need": "I've been stuck at the same Morse speed for months, and I still can't copy a real on-air contact.",
+    "headline": "Stuck at the same Morse speed for months? Short daily drills that find the letters slowing you down and raise your copy speed a little at a time.",
+    "buyer": "Adult amateur radio operators and Morse hobbyists, often licensed hams, who have gone through the alphabet, practise on free trainers, and have stalled at one speed (commonly 10 to 20 wpm) without being able to follow a real CW contact.",
+    "bullets": [
+      "A ten-minute daily session that finds the characters and letter pairs you hesitate on and works on those, instead of repeating what you already know",
+      "Speed steps that move up only when your accuracy holds, plus faster bursts that make your normal speed feel slow",
+      "Practice with words and realistic contact exchanges so you get used to the rhythm of a real contact, not just random letter groups"
+    ],
+    "price": "$4.99/month",
+    "priceUsd": 5,
+    "priceNote": "",
+    "reasonPrompt": "What speed are you stuck at right now, how long have you been there, and what goes wrong when you try to copy a real contact?",
+    "faq": [
+      {
+        "q": "Who makes Code Climb?",
+        "a": "Code Climb is an independent app for adults 18+. It is not affiliated with, endorsed by or connected to any radio club, licensing body, Morse training website or other Morse code app."
+      },
+      {
+        "q": "Do I need to already know the Morse alphabet?",
+        "a": "It is built for people who have already learned the characters and are now stuck at one speed. If you are still learning the alphabet, a beginner course will probably suit you better for now."
+      },
+      {
+        "q": "Will this get me through a licensing or telegraphy test?",
+        "a": "No app can promise that. Code Climb is a practice tool to help you build copying speed and accuracy. How fast you improve depends on how much you practise and how your own learning goes."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-20",
+      "summary": "On the Learn CW Online (lcwo.net) forum, adult Morse learners describe the same problem in their own words. They have spent weeks to years at one speed, characters still don't come to them instantly, and they can't copy real contacts. One veteran on the forum says this question 'gets asked a couple of times a week.' Four different named posters on four threads, all opened and read, with the quotes checked word for word against the saved pages.",
+      "wtp": "Morse Mania (App Store): 8.3K ratings, paid bundles up to $8.99 and a monthly premium. Morse-It: $0.99 with an $8.99 learning add-on. One learner took an eight-week CW course at a radio society.",
+      "signals": [
+        {
+          "url": "https://lcwo.net/forum/3462/Plateau-at-3024",
+          "who": "mumpsimus (LCWO forum)",
+          "date": "2026-01-28",
+          "quote": "I've been stuck in the 80%-90% range for about 7 weeks.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://lcwo.net/forum/3462/Plateau-at-3024",
+          "who": "oc - M0*** (LCWO forum)",
+          "date": "2026-01-28",
+          "quote": "I've been stuck at 20/20 wpm for 4 years.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://lcwo.net/forum/2637/Slower-speed-or-stick-with-early-lessons",
+          "who": "natevw (LCWO forum)",
+          "date": "2022-08-24",
+          "quote": "it still sometimes takes a whole second or two or more to remember what a letter is",
+          "seen": "opened"
+        },
+        {
+          "url": "https://lcwo.net/forum/2637/Slower-speed-or-stick-with-early-lessons",
+          "who": "oc - M0*** (LCWO forum)",
+          "date": "2022-08-24",
+          "quote": "I am on 17 wpm effective, yet I can't copy real life QSO yet.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://lcwo.net/forum/1640/Im-getting-there",
+          "who": "M0RSF - Chris (LCWO forum)",
+          "date": "2018-03-27",
+          "quote": "In the past I have tried several times to learn CW but I have given up or lost interest due to wanting to run before I could walk.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://lcwo.net/forum/2704",
+          "who": "jwkingsman / K9JWK (LCWO forum)",
+          "date": "2022-12-20",
+          "quote": "I can copy with 100% accuracy consistently if I bring my eff speed down to about 8wpm",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/morse-mania-learn-morse-code/id1511042196",
+          "who": "Morse Mania: Learn Morse Code (App Store listing)",
+          "date": "2026-10-20",
+          "quote": "8.3K Ratings ... Pro Bundle $8.99",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/morse-it/id284942940",
+          "who": "Morse-It (App Store listing)",
+          "date": "2026-10-20",
+          "quote": "Learning features $8.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Free options: LCWO.net (a free web trainer with Koch lessons and Morse Machine), the G4FON Koch trainer, and free CW courses run by clubs. Paid or freemium apps: Morse Mania (8.3K ratings, mostly for beginners learning the alphabet), Morse-It ($0.99, 1.1K ratings), Morse Code: Train & Compete, Morse Code Complete, and iMorsix ($3.99). Most of these focus on learning the alphabet. Few focus on getting past a speed plateau once you know it, so that is the gap.",
+      "risks": "The market is a niche (licensed hams and Morse hobbyists, many of them older) and it is used to strong free tools like LCWO, so a $4.99 monthly subscription may meet resistance. The paid apps' bigger purchases are one-off or lifetime, which suggests buyers may prefer a single purchase. Forum advice disagrees on method (Farnsworth spacing, effective speed, copying in your head), so the app must not promise results or a set speed gain. The forum quotes are from screen-name users on one site, though across four threads and eight years. Some App Store rating counts are small. The dates on the App Store signals are the day the listings were viewed, not post dates."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
