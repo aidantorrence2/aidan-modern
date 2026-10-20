@@ -4285,5 +4285,45 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "how-to-bend-notes-on-harmonica",
+  "offer": "bendpath",
+  "title": "Can't bend notes on the harmonica? How to get your first clean draw bends",
+  "description": "Only hole 1 bends, or you just get an awful sound? Start on hole 4, change the shape inside your mouth rather than sucking harder, and check the pitch with a tuner.",
+  "intro": "Bending is the harmonica skill most beginners get stuck on. It comes from changing the shape inside your mouth, not from drawing harder, and some holes are much easier to start on than others.",
+  "sections": [
+   {
+    "h": "Start on hole 4",
+    "list": [
+     "Holes 4 and 1 are usually the easiest to bend. Hole 3, which has the deepest bends, is hardest; leave it until later."
+    ]
+   },
+   {
+    "h": "Change the shape, not the force",
+    "list": [
+     "Play a clean single draw note, then slowly say \"eee-oooo\" silently while you keep drawing. The pitch should drop as your tongue moves back.",
+     "Drawing harder usually makes the note choke or squeal."
+    ]
+   },
+   {
+    "h": "Check the pitch",
+    "list": [
+     "Use a tuner app or a keyboard to hear the target note, so you know what a half-step bend sounds like."
+    ]
+   },
+   {
+    "h": "Short, daily practice",
+    "list": [
+     "Five minutes a day is plenty. Bending can strain the reeds, so play gently."
+    ]
+   },
+   {
+    "h": "Rule out the harmonica",
+    "p": [
+     "If a hole won't bend at all even when the others do, try another harmonica. Some cheap or worn harps are much harder to bend."
+    ]
+   }
+  ]
  }
 ]

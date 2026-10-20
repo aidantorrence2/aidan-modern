@@ -13772,6 +13772,140 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-20",
+    "slug": "bendpath",
+    "name": "BendPath",
+    "need": "I'm really struggling with bending on the harmonica: I can only bend on the 1st hole, even after watching lots of videos.",
+    "headline": "Learn to bend notes on a 10-hole harmonica with a live pitch meter that shows how deep each draw bend goes, hole by hole, plus a short daily drill plan.",
+    "buyer": "Adult beginner and returning players of the 10-hole diatonic harmonica who can play single notes but can't get bends to happen on demand or land them in tune.",
+    "bullets": [
+      "Live pitch meter in the browser: play a draw note and watch the needle drop toward the target half-step or whole-step bend for your harp's key",
+      "Hole-by-hole drills for holes 1 to 6, starting with the easier shallow bends and working toward the 3-hole whole-step bend",
+      "Practice log that records which holes and bend depths you have hit, so you can see where you are stuck"
+    ],
+    "price": "$9 one-time",
+    "priceUsd": 9,
+    "priceNote": "Pay once. Paid harmonica bending trainers and courses on the App Store sell for $4.99 to $9.99 and up.",
+    "reasonPrompt": "Which holes can you bend now, which won't bend at all, and what have you already tried (videos, apps, a keyboard for reference pitch)?",
+    "faq": [
+      {
+        "q": "What harmonica do I need?",
+        "a": "A standard 10-hole diatonic harmonica in any key. You pick the key in the app so the target pitches match your harp."
+      },
+      {
+        "q": "Does it need a microphone?",
+        "a": "Yes. The pitch meter listens through your device's microphone while you play."
+      },
+      {
+        "q": "Is this a full harmonica course?",
+        "a": "No. It covers bending only: hearing, finding and holding draw bends. It assumes you can already play single notes."
+      },
+      {
+        "q": "What if a hole on my harp won't bend at all?",
+        "a": "The meter shows whether the pitch moves at all, which helps you tell technique apart from a harp issue. Some harps are harder to bend than others, so trying a second harp is worth it."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-20",
+      "summary": "Beginners on two harmonica forums say in their own words that they can't bend notes. On bluesharmonica.com, chopin13009 (2020) can only bend hole 1, neghittoso (2024) gets 'that awful sound or nothing', and UnityCZ (2014) can't bend past a half step. On modernbluesharmonica.com, 4Draw (2020) is 'really struggling with bending' and other members discuss using bending apps or a keyboard as a pitch reference. Reviewers of a niche bending-trainer app say they tried for weeks before the app helped, and they say they would pay or already paid for the $4.99 upgrade. All 4 forum pages and 4 App Store pages were opened with WebFetch.",
+      "wtp": "Harmonica Bending Trainer+ (Blowbend.jp) sells for $4.99, and its free version has 4.5 from 38 ratings, with reviewers urging others to pay for the upgrade. Harmonica University sells course packs from $9.99. Thin signal: small rating counts.",
+      "signals": [
+        {
+          "url": "https://www.bluesharmonica.com/can_only_bend_1st_note_my_blues_harp_honher_harmonica",
+          "who": "chopin13009",
+          "date": "2020-07-05",
+          "quote": "can only bend on 1st hole of the harmonica",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.modernbluesharmonica.com/board/board_topic/8987845/5505970.htm",
+          "who": "4Draw",
+          "date": "2020-02-06",
+          "quote": "Boy, I'm really struggling with bending.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.modernbluesharmonica.com/board/board_topic/8987845/5505970.htm",
+          "who": "4Draw",
+          "date": "2020-02-08",
+          "quote": "I looked at some videos but haven't succeeded in a clear bend.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.modernbluesharmonica.com/board/board_topic/8987845/5505970.htm",
+          "who": "SuperBee",
+          "date": "2020-02-07",
+          "quote": "Controlling pitch though was a whole other story and really I'm still working on it.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.modernbluesharmonica.com/board/board_topic/8987845/5505970.htm",
+          "who": "Fil",
+          "date": "2020-02-08",
+          "quote": "I've been using a keyboard (small and cheap) in place of a couple of bending apps for a little while now.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.bluesharmonica.com/holes_do_not_bend",
+          "who": "neghittoso",
+          "date": "2024-01-05",
+          "quote": "I cannot modulate it at all, regardless of the tongue movements, it's either that awful sound or nothing.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.bluesharmonica.com/wont_bend_more_half_step",
+          "who": "UnityCZ",
+          "date": "2014-11-24",
+          "quote": "I just can't seem to get past that.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/harmonica-bending-trainer/id1479803169?see-all=reviews",
+          "who": "Bonk4210 (App Store reviewer)",
+          "date": "2025-07-01",
+          "quote": "I tried for weeks with no consistent results.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/harmonica-bending-trainer/id1479803169?see-all=reviews",
+          "who": "EdMetzler (App Store reviewer)",
+          "date": "2025-12-08",
+          "quote": "I strongly encourage you to pay the $4.99 for the plus upgrade.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/harmonica-bending-trainer/id1479803169?see-all=reviews",
+          "who": "Blendieofindie (App Store reviewer)",
+          "date": "2021-02-09",
+          "quote": "Happy to pay 5$ not to see ads and support maintenance of the app.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/app/id6742537721",
+          "who": "Harmonica Bending Trainer+ App Store listing ($4.99)",
+          "date": "2026-10-20",
+          "quote": "Harmonica Bending Trainer+ supports your bending practice for 10-hole diatonic harmonicas.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/app/id1479803169",
+          "who": "Harmonica Bending Trainer App Store listing (4.5, 38 ratings)",
+          "date": "2026-10-20",
+          "quote": "Takes the guess work and wasted time out of learning to bend.",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Harmonica Bending Trainer by Blowbend.jp (free, 4.5 from 38 ratings) and its paid Harmonica Bending Trainer+ ($4.99), which is the closest direct competitor and is well liked. Harmonica University / BENDR (course in-app purchases from $9.99 to $299.00, 3.4 from 5 ratings). Harmonica Tab Pro (song and lesson packs, $4.99 to $49.99). Free YouTube teachers, plus general chromatic tuner apps or a cheap keyboard used as a pitch reference.",
+      "risks": "Niche market with small rating counts: the best-rated direct competitor has only 38 ratings, and the paid version has 1. A good, cheap direct competitor already exists, so this offer needs a clear edge, such as working in the browser on any device or a structured drill plan. Mic pitch detection on draw bends can be noisy, and out-of-tune or hard-to-bend harps can make feedback confusing. Forum experts push oral-cavity technique over gadgets, and some players say a keyboard reference works better than apps. Several forum posts are from 2014 to 2020, though the 2024 forum post and the 2025 app reviews show the problem is still current."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
