@@ -2031,6 +2031,31 @@
       "status": "approved",
       "decided": "2026-10-20T03:16:20Z",
       "note": ""
+    },
+    {
+      "id": "other:approve-charlotte-dm-ad-storyboards-and--202610200344",
+      "kind": "other",
+      "source": "claude:aidan-modern",
+      "title": "Approve Charlotte DM ad storyboards and render the 10-ad launch set",
+      "summary": "80 storyboards now use tier_candidates photos (Almaty + Paris). On approval I render ads 01 05 14 17 30 31 49 54 59 67 locally. Nothing is published or spent. Note any swaps, plus offer details: dates, spot count, photos delivered.",
+      "payload": {
+        "board": "https://claude.ai/artifact/5NLvEqbRpkRv87Y1hLxSPv",
+        "branch": "claude/wizardly-shannon-dt47kn",
+        "commit": "37b891f",
+        "on_approve": "render launch set: Reels 1080x1920, carousels 1080x1350; no Meta API calls",
+        "open_questions": [
+          "dates in Charlotte",
+          "number of spots (boards assume 10)",
+          "photos delivered + turnaround (~10, ~1 week assumed)",
+          "shot on film?",
+          "duo/couple sessions?"
+        ]
+      },
+      "created": "2026-10-20T03:44:47Z",
+      "expires": "2026-10-23T03:44:47Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
     }
   ]
 }
