@@ -6905,5 +6905,44 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "toddler-tantrums-every-day",
+  "offer": "storm-log",
+  "title": "Toddler tantrums every day? Log a week to find the trigger",
+  "description": "Daily meltdowns wearing you down? Note when each one happens and what came before, find the top trigger, and plan for that one first.",
+  "intro": "Tantrums are a normal part of being a toddler, but they often follow a pattern. A week of quick notes can show what sets them off.",
+  "sections": [
+   {
+    "h": "Log for a week",
+    "list": [
+     "After each tantrum, note the time, what happened just before, and how long it lasted."
+    ]
+   },
+   {
+    "h": "Look for the pattern",
+    "list": [
+     "Common triggers are tiredness, hunger, transitions and being told no."
+    ]
+   },
+   {
+    "h": "Plan for the top trigger",
+    "list": [
+     "For tiredness, move nap or bedtime earlier. For transitions, give a warning first."
+    ]
+   },
+   {
+    "h": "Stay calm and consistent",
+    "list": [
+     "Keep your child safe, stay nearby and keep your response the same each time."
+    ]
+   },
+   {
+    "h": "When to ask for help",
+    "p": [
+     "If you're worried about how often or how intense the tantrums are, or about speech or development, talk to your health visitor or doctor."
+    ]
+   }
+  ]
  }
 ]

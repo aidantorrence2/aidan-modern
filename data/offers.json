@@ -19364,6 +19364,97 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-20",
+    "slug": "storm-log",
+    "name": "Storm Log",
+    "need": "I know every toddler has meltdowns but I really don't know what's normal.",
+    "headline": "Toddler tantrums every day? Log each meltdown in ten seconds, see the triggers that keep coming up, and agree one plan for the biggest one.",
+    "buyer": "Parents (18+) of children about 2 to 4 with daily tantrums.",
+    "bullets": [
+      "A ten-second log for each meltdown: time, what happened before, how long it lasted.",
+      "A weekly view of the triggers that come up most, like tiredness, hunger or transitions.",
+      "One shared plan for the top trigger, and a summary to show your health visitor."
+    ],
+    "price": "$4.99/month",
+    "priceUsd": 5,
+    "priceNote": "Or $24 one-time.",
+    "reasonPrompt": "How old is your child, and when do the meltdowns usually happen?",
+    "faq": [
+      {
+        "q": "Is this medical or behaviour advice?",
+        "a": "No. It's a log and a plan. If you're worried about your child's behaviour or development, talk to your health visitor or doctor."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Parents and carers, 18+. It is an independent app, not linked to any parenting brand or course."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-20",
+      "summary": "Parents on Mumsnet describe toddlers who go wild and can't be distracted, say their patience is wearing thin, and aren't sure what's normal.",
+      "wtp": "Good Inside parenting app (App Store): 14K ratings, $84 for 3 months or $279 a year. A toddler-behaviour course sells for $99.",
+      "signals": [
+        {
+          "url": "https://www.mumsnet.com/talk/parenting/4791469-2-year-old-constant-meltdowns-im-drained",
+          "who": "Sam478 (Mumsnet)",
+          "date": "2023-04-23",
+          "quote": "I know every toddler has meltdowns but I really don’t know what’s normal.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/parenting/4791469-2-year-old-constant-meltdowns-im-drained",
+          "who": "insomniac1 (Mumsnet)",
+          "date": "2023-04-23",
+          "quote": "I'm currently in the same position and my patience is wearing thin.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/parenting/4791469-2-year-old-constant-meltdowns-im-drained",
+          "who": "Alitlebitsleepy (Mumsnet)",
+          "date": "2023-04-23",
+          "quote": "DD’s screaming can be so intense that I’ve actually bought DS some baby ear defenders for when it’s really bad.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/parenting/4994745-tantrum-hell",
+          "who": "TinyManHugeTantrums (Mumsnet)",
+          "date": "2024-01-27",
+          "quote": "when he doesn't get it he goes wild and can't be distracted.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/parenting/4994745-tantrum-hell",
+          "who": "Welshfiver (Mumsnet)",
+          "date": "2024-01-27",
+          "quote": "Yep we are here at the moment with 2.3 year old.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/parenting/3418190-Toddler-Hell",
+          "who": "Grumblepants (Mumsnet)",
+          "date": "2018-11-08",
+          "quote": "I need some advice as I'm going crazy and feel like like completely failing at being a parent.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/app/id6463803046",
+          "who": "Good Inside App Store listing",
+          "date": "2026-10-20",
+          "quote": "14K Ratings ... $84 ... $279",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Good Inside, parenting courses, books, health visitors.",
+      "risks": "All forum evidence on Mumsnet; tantrums ease with age."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
