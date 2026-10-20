@@ -17381,6 +17381,174 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-20",
+    "slug": "ride-at-last",
+    "name": "Ride At Last",
+    "need": "I have never ridden a bike before, and I want to learn before I'm 50.",
+    "headline": "Never learned to ride a bike? Learn as an adult, step by step: glide first, then balance, then pedal, at your own pace and somewhere quiet.",
+    "buyer": "Adults who never learned to ride a bike, or are scared to.",
+    "bullets": [
+      "A step-by-step plan: scoot and glide with the pedals off, then balance, then pedal.",
+      "Short sessions you can do in a quiet car park or park, with a log of each step you've done.",
+      "Tips for the fear of falling or losing control, and when a lesson with an instructor would help."
+    ],
+    "price": "$4.99/month",
+    "priceUsd": 5,
+    "priceNote": "Or $19 one-time.",
+    "reasonPrompt": "Have you ever tried to ride, and what worries you most about learning now?",
+    "faq": [
+      {
+        "q": "Is it safe to learn as an adult?",
+        "a": "Many adults learn. Wear a helmet, start somewhere flat and away from traffic, and consider a lesson with a qualified instructor."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Adults 18+. It is an independent app, not linked to any cycling brand, club, council scheme or instructor."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-20",
+      "summary": "Adults on Mumsnet and RoadBikeRider say they never learned to ride as children and want to learn now, and some are scared of losing control. Adult learn-to-ride lessons are sold.",
+      "wtp": "Wenzel Coaching sells a 90-minute adult learn-to-ride lesson for $119.",
+      "signals": [
+        {
+          "url": "https://www.mumsnet.com/talk/_chat/5579452-learning-to-ride-a-bike-for-the-first-time-in-my-forties",
+          "who": "IHaveAFeelingWeAreNotInKansasAnymore (Mumsnet)",
+          "date": "2026-09-17",
+          "quote": "I have never ridden a bike before.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/_chat/5579452-learning-to-ride-a-bike-for-the-first-time-in-my-forties",
+          "who": "IHaveAFeelingWeAreNotInKansasAnymore (Mumsnet)",
+          "date": "2026-09-17",
+          "quote": "So I want to learn before I'm 50.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/_chat/5579452-learning-to-ride-a-bike-for-the-first-time-in-my-forties",
+          "who": "Fiddlesticks1 (Mumsnet)",
+          "date": "2026-09-17",
+          "quote": "honestly I was terrified of being out of control",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/_chat/5579452-learning-to-ride-a-bike-for-the-first-time-in-my-forties",
+          "who": "Emoemu (Mumsnet)",
+          "date": "2026-09-18",
+          "quote": "I learned as an adult! It's different from learning as a child.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.roadbikerider.com/?p=79779",
+          "who": "M.C. (RoadBikeRider reader question)",
+          "date": "undated",
+          "quote": "I never learned how to ride a bike when I was a child",
+          "seen": "opened"
+        },
+        {
+          "url": "https://wenzelcoaching.com/our-services/consultation/learn-to-ride-a-bike-bicycling-lessons-for-adults/",
+          "who": "Wenzel Coaching adult lessons page",
+          "date": "2026-10-20",
+          "quote": "$119",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Adult cycling lessons, free council courses, YouTube videos.",
+      "risks": "Paid demand is for in-person lessons; free council courses exist; no dedicated app found."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-20",
+    "slug": "own-bed-back",
+    "name": "Own Bed Back",
+    "need": "We love him, but we need our bed back and a decent night's sleep.",
+    "headline": "Toddler keeps coming into your bed? A gradual plan to help them stay in their own bed, night by night, with a simple log so you can see progress.",
+    "buyer": "Parents (18+) of children about 2 to 8 who won't stay in their own bed.",
+    "bullets": [
+      "A gradual step-out plan: sit by the bed, then the door, then outside, night by night.",
+      "A quick log of wake-ups and where your child ended up, with a weekly view.",
+      "One plan both parents follow, so nights are consistent."
+    ],
+    "price": "$4.99/month",
+    "priceUsd": 5,
+    "priceNote": "Or $24 one-time.",
+    "reasonPrompt": "How old is your child, and what happens at night now?",
+    "faq": [
+      {
+        "q": "Is this medical advice?",
+        "a": "No. If you're worried about your child's sleep, breathing or health, talk to your doctor or health visitor."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Adults 18+. It is an independent app, not linked to any sleep consultant, clinic or product brand."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-20",
+      "summary": "Parents on Mumsnet and Singletrack describe toddlers who come into their bed every night or need a parent beside them to fall asleep. Some have bought sleep clocks.",
+      "wtp": "A parent bought a Gro clock. Bella Luna sells toddler sleep consulting packages from $397.",
+      "signals": [
+        {
+          "url": "https://www.mumsnet.com/talk/sleep/5001768-3-year-old-sleep",
+          "who": "KLC1705 (Mumsnet)",
+          "date": "2024-02-06",
+          "quote": "We love him, but we need our bed back and a decent night's sleep.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/sleep/5001768-3-year-old-sleep",
+          "who": "gk35 (Mumsnet)",
+          "date": "2024-03-01",
+          "quote": "I'm going to his room to settle him six times a night",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/sleep/5001768-3-year-old-sleep",
+          "who": "Maaofatoddler (Mumsnet)",
+          "date": "2024-08-02",
+          "quote": "I've given up and my DC just ends up in our bed.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/sleep/3881630-2-year-old-coming-into-our-bed",
+          "who": "eatthepineapple (Mumsnet)",
+          "date": "2020-04-15",
+          "quote": "I bought a gro clock from recommendations",
+          "seen": "opened"
+        },
+        {
+          "url": "https://singletrackworld.com/forum/off-topic/q-for-the-parents-3-year-old-sneaking-into-bed/",
+          "who": "ex-pat (Singletrack)",
+          "date": "2010-02-17",
+          "quote": "Our three year old keeps sneaking into our bed, pretty much every night now.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://bellalunafamily.com/sleep-consulting/toddlers-and-big-kid-sleep/",
+          "who": "Bella Luna toddler sleep consulting page",
+          "date": "2026-10-20",
+          "quote": "$397 ... $597",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Sleep consultants, sleep clocks, sticker charts, parenting courses.",
+      "risks": "Free remedies are common; evidence is mostly UK (Mumsnet)."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

@@ -6008,5 +6008,83 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "learn-to-ride-a-bike-as-an-adult",
+  "offer": "ride-at-last",
+  "title": "Learning to ride a bike as an adult: the glide-first method, step by step",
+  "description": "Never learned to ride? Lower the saddle, take the pedals off, glide until you can balance, then add pedalling. Start somewhere flat and quiet.",
+  "intro": "Plenty of adults learn to ride. Learning to balance first, before pedalling, makes it much less scary.",
+  "sections": [
+   {
+    "h": "Set the bike up",
+    "list": [
+     "Lower the saddle so both feet reach the ground flat. If you can, take the pedals off."
+    ]
+   },
+   {
+    "h": "Scoot and glide",
+    "list": [
+     "Push along with your feet, then lift them and glide. Do this until you can glide a few metres."
+    ]
+   },
+   {
+    "h": "Practise steering and braking",
+    "list": [
+     "Glide in gentle curves and practise stopping with the brakes."
+    ]
+   },
+   {
+    "h": "Add the pedals",
+    "list": [
+     "Put the pedals back on, start with one pedal up, push off and pedal."
+    ]
+   },
+   {
+    "h": "Stay safe",
+    "p": [
+     "Wear a helmet, choose a flat traffic-free space, and think about a lesson with a qualified instructor if you're nervous."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "toddler-keeps-coming-into-our-bed",
+  "offer": "own-bed-back",
+  "title": "Toddler keeps coming into your bed? A gradual step-out plan, night by night",
+  "description": "Child won't stay in their own bed? Keep bedtime the same, walk them back calmly every time, and move a little further away each few nights.",
+  "intro": "Lots of toddlers come into their parents' bed. A calm, consistent plan usually works better than a sudden change.",
+  "sections": [
+   {
+    "h": "Keep bedtime the same",
+    "list": [
+     "The same short routine every night: bath, story, lights out."
+    ]
+   },
+   {
+    "h": "Walk them back calmly",
+    "list": [
+     "Each time they come in, take them back to their bed with as little talk as possible."
+    ]
+   },
+   {
+    "h": "Step out gradually",
+    "list": [
+     "If they need you there to fall asleep, sit by the bed, then nearer the door, then outside, moving every few nights."
+    ]
+   },
+   {
+    "h": "Agree a plan together",
+    "list": [
+     "Both parents doing the same thing makes a big difference."
+    ]
+   },
+   {
+    "h": "Talk to your health visitor or doctor",
+    "p": [
+     "If you're worried about your child's sleep, snoring or health, ask for advice."
+    ]
+   }
+  ]
  }
 ]
