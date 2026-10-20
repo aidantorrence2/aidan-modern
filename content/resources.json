@@ -4760,5 +4760,44 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "forget-what-you-studied-before-exam",
+  "offer": "recall-ladder",
+  "title": "Forget what you studied a week later? How to make it stick for the exam",
+  "description": "Study something and a week later it's gone? Test yourself instead of rereading, space your reviews back from the exam date, and focus on what you keep missing.",
+  "intro": "Forgetting most of what you studied within a week is normal. What changes it is how you review: testing yourself, spacing reviews out, and spending time on the topics you keep getting wrong.",
+  "sections": [
+   {
+    "h": "Test, don't reread",
+    "list": [
+     "Close your notes and write or say what you remember, then check. Recalling from memory is what makes material stick; rereading mostly feels productive."
+    ]
+   },
+   {
+    "h": "Turn notes into questions",
+    "list": [
+     "For each topic, write a few questions you could be asked. Answer them from memory on later days."
+    ]
+   },
+   {
+    "h": "Space it out",
+    "list": [
+     "Review a topic after a day, then a few days, then a week. Count back from your exam date so each topic comes round several times."
+    ]
+   },
+   {
+    "h": "Find your weak spots",
+    "list": [
+     "Keep a list of the questions you get wrong and review those more often."
+    ]
+   },
+   {
+    "h": "Work through problems",
+    "p": [
+     "For maths and physics, redo derivations and problems from a blank page rather than reading worked solutions."
+    ]
+   }
+  ]
  }
 ]

@@ -14724,6 +14724,91 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-20",
+    "slug": "recall-ladder",
+    "name": "Recall Ladder",
+    "need": "I study for an exam, and a week later it's as if I never studied it at all. I've forgotten the derivations, the proofs and even basic things.",
+    "headline": "Paste your notes and set your exam date. Recall Ladder gives you short daily self-test questions so what you studied is still there on the day of the exam.",
+    "buyer": "University and exam-prep students who keep forgetting material they already studied in the days or weeks before the exam",
+    "bullets": [
+      "Turn your own notes into question-and-answer recall prompts in a few minutes",
+      "A daily schedule spaced back from your exam date, so every topic comes back several times before the day",
+      "A weak-spots list that shows which topics you keep missing, so revision goes where it is needed"
+    ],
+    "price": "$12 one-time",
+    "priceUsd": 12,
+    "priceNote": "Pay once per exam season, about half the price of the leading paid flashcard app.",
+    "reasonPrompt": "What happened the last time you studied something and couldn't remember it a week later?",
+    "faq": [
+      {
+        "q": "How is this different from just rereading my notes?",
+        "a": "Rereading only shows you the material again. Recall Ladder asks you to answer from memory first and then check, and it schedules those prompts at intervals leading up to your exam date."
+      },
+      {
+        "q": "Do I have to write all the questions myself?",
+        "a": "You paste in your own notes and turn them into prompts. You can edit any prompt so it matches how your course asks questions."
+      },
+      {
+        "q": "What if my exam is only a few days away?",
+        "a": "The schedule fits whatever time is left before the date you set, so the gaps between reviews are shorter."
+      },
+      {
+        "q": "Who makes Recall Ladder?",
+        "a": "It is an independent app, not linked to any university or flashcard app."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-20",
+      "summary": "Three named students on three separate Physics Forums threads (all opened) describe forgetting what they studied shortly afterwards, often right after an exam. The problem shows up across years (2012, 2018, 2019) and comes in the students' own words as a frustration, not a passing remark.",
+      "wtp": "People already pay for spaced-repetition study apps. The AnkiMobile Flashcards App Store page (opened) shows a price of $24.99, a 4.0 rating and 2.4K ratings.",
+      "signals": [
+        {
+          "url": "https://www.physicsforums.com/threads/how-can-i-improve-my-physics-study-methods-at-university.937458/",
+          "who": "bolzano95",
+          "date": "2018-01-19",
+          "quote": "it was just like I didn't study them at all. Forgot all derivations, proofs.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.physicsforums.com/threads/how-can-i-improve-my-physics-study-methods-at-university.937458/",
+          "who": "bolzano95",
+          "date": "2018-01-19",
+          "quote": "It really frustrates me that I don't remember basic things.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.physicsforums.com/threads/struggling-to-learn-and-remember.975969/",
+          "who": "Mulz",
+          "date": "2019-08-12",
+          "quote": "I'm slow, I forget what I'm learning and I get stuck often.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.physicsforums.com/threads/is-it-normal-to-forget-most-previously-learned-material.607507/",
+          "who": "PhizKid",
+          "date": "2012-05-20",
+          "quote": "I forget a lot of the stuff I learned in the previous class",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/ankimobile-flashcards/id373493387",
+          "who": "AnkiMobile Flashcards App Store listing",
+          "date": "2026-10-20",
+          "quote": "$24.99 ... 2.4K Ratings",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "AnkiMobile Flashcards ($24.99 on iOS, 4.0 from 2.4K ratings, page opened) is the established spaced-repetition tool. One reviewer, zachm99 (2022-05-02), wrote: \"The app can be buggy, but it redeems itself with features that are better than Quizlet\". Quizlet is another well-known flashcard alternative, but I did not check its pricing. Recall Ladder's angle is a schedule counted back from an exam date and built from the student's own notes, without having to set up decks.",
+      "risks": "Free and well-known options (desktop Anki, Quizlet's free tier) set a low price expectation, and students are price-sensitive. The forum evidence comes from one site, Physics Forums, and the posts are a few years old. Reply dates were not visible, so the dates given are the thread start dates of each original post. Demand is seasonal around exam periods. The value depends on students actually doing the daily prompts."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
