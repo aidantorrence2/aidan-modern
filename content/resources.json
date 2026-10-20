@@ -4484,5 +4484,46 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "how-to-start-cryptic-crosswords",
+  "offer": "cryptic-clue-coach",
+  "title": "Stumped by cryptic crosswords? How the clues actually work",
+  "description": "Cryptic clues look like nonsense? Every clue has a definition at one end and wordplay in the rest. Learn the common clue types and their indicator words, one at a time.",
+  "intro": "Cryptic clues follow rules. Once you know that every clue is a definition plus wordplay, and learn a handful of clue types, they stop looking random.",
+  "sections": [
+   {
+    "h": "Definition plus wordplay",
+    "list": [
+     "Almost every clue has a straight definition of the answer at the start or the end. The rest of the clue is wordplay that builds the same answer another way."
+    ]
+   },
+   {
+    "h": "Learn the common types",
+    "list": [
+     "Anagrams: the letters of some words are rearranged. Indicators include \"mixed\", \"broken\" and \"wild\".",
+     "Hidden words: the answer sits inside the clue. Indicators include \"in\", \"some\" and \"held by\".",
+     "Charades: the answer is built from pieces joined together."
+    ]
+   },
+   {
+    "h": "Learn the abbreviations",
+    "list": [
+     "Setters use standard short forms, such as \"note\" for a letter from A to G, or \"sailor\" for AB. Keep a list as you meet them."
+    ]
+   },
+   {
+    "h": "Start with quick cryptics",
+    "list": [
+     "Quick cryptic and beginner puzzles use easier clues. Read the answers and explanations the next day for any you missed."
+    ]
+   },
+   {
+    "h": "One type at a time",
+    "p": [
+     "Spend a week spotting just anagrams, then hidden words, then charades. Solving gets much easier once you recognise the type."
+    ]
+   }
+  ]
  }
 ]

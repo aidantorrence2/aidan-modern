@@ -14203,6 +14203,98 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-20",
+    "slug": "cryptic-clue-coach",
+    "name": "Clue by Clue",
+    "need": "I'm stumped by cryptic crosswords. How do you learn this stuff?",
+    "headline": "Stop staring at cryptic clues. Learn to split each one into definition and wordplay, one clue type at a time, until you can solve the quick cryptic by yourself.",
+    "buyer": "Adults who already do regular crosswords or Minute Cryptic-style single clues but stall on a full newspaper quick cryptic, plus lapsed solvers coming back after years away.",
+    "bullets": [
+      "Every clue broken into its two parts, the definition and the wordplay, with the indicator words that point to anagrams, hidden words and other clue types highlighted",
+      "Practice sets built around the clue types you keep missing, so you're not just revealing answers",
+      "A step up from single daily clues to full quick-cryptic grids, with a hint at each step before the answer"
+    ],
+    "price": "$5 one-time",
+    "priceUsd": 5,
+    "priceNote": "Pay once, about the price of the leading cryptic-tutorial app's full unlock.",
+    "reasonPrompt": "Which part of a cryptic crossword stops you most often: spotting the definition, recognising the clue type, or knowing the abbreviations setters use?",
+    "faq": [
+      {
+        "q": "I can do a normal crossword. Is this for me?",
+        "a": "Yes. It is aimed at people who know how crosswords work but find cryptic clues unreadable. It starts with how a clue splits into definition and wordplay."
+      },
+      {
+        "q": "Does it come with puzzles from a particular newspaper?",
+        "a": "No. It teaches the general conventions that cryptic setters use, so you can bring those skills to whichever paper's puzzle you like."
+      },
+      {
+        "q": "How is this different from a daily single-clue app?",
+        "a": "Daily single-clue apps give you one clue at a time. This tool is about the step from single clues to finishing a full quick-cryptic grid, with practice aimed at the clue types you miss most."
+      },
+      {
+        "q": "Who makes Clue by Clue?",
+        "a": "It is an independent app, not linked to any newspaper or puzzle publisher."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-20",
+      "summary": "People say in their own words that they can't make progress with cryptic crosswords. On a Singletrack thread opened 15/08/2026, the topic starter asks how anyone learns them and later says they are stuck moving from Minute Cryptic to the Times quick cryptic. A returning solver in the same thread says they have forgotten everything. A Substack writer calls herself 'really bad at cryptic crosswords still'. App Store reviewers say they had tried for years, or were unable to do puzzles, before a paid tutorial app helped. Both forum pages and the app listing were opened with WebFetch.",
+      "wtp": "Learn Cryptic Crosswords by Teazel (App Store): 4.8 from 456 ratings, Access to every chapter $4.99 or $3.99, Discount price $2.99. Reviewer rmr172 had bought several books before it.",
+      "signals": [
+        {
+          "url": "https://singletrackworld.com/forum/off-topic/cryptic-crosswords/",
+          "who": "lesgrandepotato",
+          "date": "2026-08-15",
+          "quote": "I'm stumped, how do you learn this stuff?",
+          "seen": "opened"
+        },
+        {
+          "url": "https://singletrackworld.com/forum/off-topic/cryptic-crosswords/",
+          "who": "lesgrandepotato",
+          "date": "2026-08-15",
+          "quote": "It's getting into the times quick cryptic that we are struggling to make progress on.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://singletrackworld.com/forum/off-topic/cryptic-crosswords/",
+          "who": "BigJohn",
+          "date": "2026-08-16",
+          "quote": "I'm a recent returnee to cryptic and have forgotten everything I knew.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://thetinynarrative.substack.com/p/i-want-to-understand-cryptic-crosswords",
+          "who": "Elizabeth Lovatt",
+          "date": "2023-05-24",
+          "quote": "But I need to because I'm really bad at cryptic crosswords still.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/learn-cryptic-crosswords/id1281120570",
+          "who": "rmr172 (App Store reviewer, Learn Cryptic Crosswords)",
+          "date": "2018-04-12",
+          "quote": "I have tried off and on for years to learn to solve cryptic crosswords and have bought several books",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/learn-cryptic-crosswords/id1281120570",
+          "who": "Learn Cryptic Crosswords App Store listing",
+          "date": "2026-10-20 (date viewed)",
+          "quote": "456 Ratings ... Access to every chapter $4.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Teazel's Learn Cryptic Crosswords (iOS, 4.8 stars, 456 US ratings and 2.5k UK ratings, chapter-unlock in-app purchases). Minute Cryptic (one clue a day with video explanations; its US App Store page returned 404 when fetched, and a paid archive is mentioned on Singletrack). Crossword Genius (in search results, not opened). Free options: the Cracking the Cryptic and Robwords YouTube channels, fifteensquared clue explanations, the Guardian Quick Cryptic and Quiptic, and the Observer Everyman.",
+      "risks": "Teazel's app is well rated and cheap, so a new product needs a clear angle, such as bridging single clues to full grids and adaptive practice on missed clue types. Free YouTube channels and blogs cover a lot of the teaching. Real newspaper puzzles cannot be used without licensing, so clues must be original. The audience is UK and Commonwealth heavy, which may limit the US market. Some App Store review dates are ambiguous between DD/MM and MM/DD and are given as shown on the page."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
