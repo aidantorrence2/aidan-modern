@@ -18871,6 +18871,86 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-20",
+    "slug": "two-spins",
+    "name": "Two Spins",
+    "need": "I can get one double-under but cannot connect them.",
+    "headline": "Can get one double-under but can't link them? Log your longest string and why it broke, then do one short daily drill for the fault that keeps stopping you.",
+    "buyer": "Adults (18+) in CrossFit or home fitness who can't link double-unders.",
+    "bullets": [
+      "A one-minute log: your longest string and what broke it (timing, jumping too high, arms too wide).",
+      "One short daily drill for your most common fault.",
+      "A weekly chart of your longest string."
+    ],
+    "price": "$3.99/month",
+    "priceUsd": 4,
+    "priceNote": "Or $19 one-time.",
+    "reasonPrompt": "How many double-unders can you link now, and what usually breaks the string?",
+    "faq": [
+      {
+        "q": "Who is it for?",
+        "a": "Adults 18+. It is an independent app, not linked to any gym, fitness brand or rope maker. If you have a health condition or pain, check with a doctor first."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-20",
+      "summary": "CrossFit athletes and bloggers say they can do one double-under but can't connect them, even after a year of training, and that it bugs them.",
+      "wtp": "Crossrope (App Store): 14K ratings, memberships from $9.99 a month or $79.99 a year.",
+      "signals": [
+        {
+          "url": "https://crossfitroots.com/?p=6549",
+          "who": "Nisha (CrossFit Roots)",
+          "date": "2011-02-19",
+          "quote": "I can get one but cannot connect them.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://crossfitroots.com/?p=6549",
+          "who": "Chrisbhansen (CrossFit Roots)",
+          "date": "2011-02",
+          "quote": "I’d consider donating a testicle to be able to do them consistently",
+          "seen": "opened"
+        },
+        {
+          "url": "https://crossfitroots.com/?p=6549",
+          "who": "Tracy Emmanuel (CrossFit Roots)",
+          "date": "2011-02",
+          "quote": "i still struggle greatly with them.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://terilynadams.com/how-i-finally-got-double-unders/",
+          "who": "TeriLyn Adams (personal blog)",
+          "date": "2015-11",
+          "quote": "it has annoyed the heck out of me that I haven’t been able to do double unders.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://fitisafeministissue.com/2014/02/22/skipping-in-the-school-yard-or-why-im-so-grumpy-about-double-unders/",
+          "who": "Sam B (Fit Is a Feminist Issue)",
+          "date": "2014-02-22",
+          "quote": "it bugs the heck out of me that I can’t do it.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/app/id996680141",
+          "who": "Crossrope App Store listing",
+          "date": "2026-10-20",
+          "quote": "14K Ratings ... $9.99 ... $79.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Crossrope, double-under programs, coaches, YouTube.",
+      "risks": "Posts date from 2011 to 2015; free videos are common."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

@@ -6671,5 +6671,44 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "cant-link-double-unders",
+  "offer": "two-spins",
+  "title": "Can get one double-under but can't link them? Find the fault that breaks your string",
+  "description": "Single double-unders but no strings? Keep your jumps low, hands by your hips, and practise single-single-double before linking.",
+  "intro": "Most people who can do one double-under lose the string to the same fault each time. Spot it, then drill just that.",
+  "sections": [
+   {
+    "h": "Film a few attempts",
+    "list": [
+     "Watch for jumping too high, piking your legs, or arms swinging wide."
+    ]
+   },
+   {
+    "h": "Keep the jump low and steady",
+    "list": [
+     "The rope, not the jump, does the work. Aim for the same small bounce every time."
+    ]
+   },
+   {
+    "h": "Hands by your hips",
+    "list": [
+     "Turn the rope from the wrists, with elbows close to your sides."
+    ]
+   },
+   {
+    "h": "Build up the rhythm",
+    "list": [
+     "Practise single-single-double, then single-double, then two doubles in a row."
+    ]
+   },
+   {
+    "h": "Practise little and often",
+    "p": [
+     "A few minutes before or after training most days works better than long sessions. Stop if you have pain."
+    ]
+   }
+  ]
  }
 ]
