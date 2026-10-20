@@ -5618,5 +5618,83 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "failed-driving-test-again",
+  "offer": "next-test-pass",
+  "title": "Failed your driving test again? Find your repeat faults from your test sheets",
+  "description": "Failed more than once? Put your test sheets side by side, find the faults that repeat, and plan your lessons around them before the next test.",
+  "intro": "After a few fails, it's easy to feel you're bad at everything. Usually the same few faults keep coming up, and they can be practised.",
+  "sections": [
+   {
+    "h": "Put your test sheets side by side",
+    "list": [
+     "List every serious and driving fault from each test."
+    ]
+   },
+   {
+    "h": "Find the repeats",
+    "list": [
+     "Faults that show up on two or more sheets are your priority."
+    ]
+   },
+   {
+    "h": "Plan lessons around them",
+    "list": [
+     "Ask your instructor to spend each lesson on one repeat fault, on the kinds of road where it happened."
+    ]
+   },
+   {
+    "h": "Do a mock test",
+    "list": [
+     "Take a full mock test with your instructor, so test conditions feel familiar."
+    ]
+   },
+   {
+    "h": "Plan the test morning",
+    "p": [
+     "Eat, arrive early, and have a short warm-up drive if you can. Nerves are common, and a routine helps."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "how-to-learn-lines-for-a-play",
+  "offer": "cue-lines",
+  "title": "How to learn your lines for a play: a cue-first 15-minute daily routine",
+  "description": "Struggling to learn lines, or forgetting them later? Learn from the cue, test yourself before you check, use first-letter hints, and review daily.",
+  "intro": "Lines stick better when you practise remembering them, not rereading them, and when you learn them from the cue that comes before.",
+  "sections": [
+   {
+    "h": "Learn from the cue",
+    "list": [
+     "Cover your lines, read the cue, and say your line before you look."
+    ]
+   },
+   {
+    "h": "Use first letters",
+    "list": [
+     "Write the first letter of each word. Glance at the letters when you're stuck, not the full line."
+    ]
+   },
+   {
+    "h": "Short daily sessions",
+    "list": [
+     "15 minutes a day beats a long session the night before."
+    ]
+   },
+   {
+    "h": "Review old scenes too",
+    "list": [
+     "Go back over earlier scenes every few days so they don't fade."
+    ]
+   },
+   {
+    "h": "Say them out loud, with movement",
+    "p": [
+     "Rehearse with your blocking. Linking lines to movement helps them stick."
+    ]
+   }
+  ]
  }
 ]

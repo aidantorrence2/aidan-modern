@@ -16463,6 +16463,163 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-20",
+    "slug": "next-test-pass",
+    "name": "Next Test",
+    "need": "I keep failing my driving test, and I'm just so frustrated with myself.",
+    "headline": "Failed your driving test again? Log your test sheets and lessons, see the faults that keep coming back, and go into the next test with a plan.",
+    "buyer": "Adult learner drivers who have failed the practical driving test two or more times.",
+    "bullets": [
+      "Log each test sheet and lesson, so you can see the faults that keep coming back.",
+      "A plan for each lesson before your next test, aimed at those faults.",
+      "A test-morning routine to help with nerves."
+    ],
+    "price": "$4.99/month",
+    "priceUsd": 5,
+    "priceNote": "Or $19 for 3 months.",
+    "reasonPrompt": "How many tests have you taken, and what went wrong last time?",
+    "faq": [
+      {
+        "q": "Does it replace my instructor?",
+        "a": "No. It helps you and your instructor see your repeat faults and plan lessons around them."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Adults 18+. It is an independent app, not linked to any driving school, instructor, test centre or licensing agency."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-20",
+      "summary": "Learner drivers on Mumsnet and AnandTech describe failing four, five or more tests, nerves on the day, and hundreds of lessons.",
+      "wtp": "One learner had about 250 driving lessons. Driving Theory Test 4 in 1 Kit (App Store, UK): 394k ratings, £5.99, with Learn to Drive subscriptions from £3.99.",
+      "signals": [
+        {
+          "url": "https://www.mumsnet.com/talk/general_health/4952240-failed-driving-test-again-feel-so-down",
+          "who": "strawberryblue (Mumsnet)",
+          "date": "2023-11-28",
+          "quote": "4th test (over a few years) in just so frustrated with myself",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/general_health/4952240-failed-driving-test-again-feel-so-down",
+          "who": "TruthRevolution (Mumsnet)",
+          "date": "2023-11-28",
+          "quote": "I got so nervous that my brain wouldn't connect with my body",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/general_health/4952240-failed-driving-test-again-feel-so-down",
+          "who": "TooShortToReachThatShelf (Mumsnet)",
+          "date": "2023-11-28",
+          "quote": "I failed 5!  I passed on the 6th test, aged 37",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/general_health/4952240-failed-driving-test-again-feel-so-down",
+          "who": "MyopicBunny (Mumsnet)",
+          "date": "2023-11-28",
+          "quote": "I took mine 4 times and I had about 250 driving lessons",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.anandtech.com/threads/i-failed-my-driving-test-for-the-4th-f-ing-time.1997319/post-22300356",
+          "who": "Maximilian (AnandTech)",
+          "date": "2007-01-17",
+          "quote": "i think its my nerve on test days. I just forget what i learned and bomb it",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/gb/app/id829581836",
+          "who": "Driving Theory Test 4 in 1 Kit App Store listing",
+          "date": "2026-10-20",
+          "quote": "394k Ratings ... £5.99 ... £3.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Driving instructors, theory and hazard-perception apps, mock tests.",
+      "risks": "Most app ratings come from theory prep; the practical side is served by instructors."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-20",
+    "slug": "cue-lines",
+    "name": "Cue Lines",
+    "need": "I'm having trouble learning my lines for a show I'm in.",
+    "headline": "Learn your lines for the play: hear the cue, say your line, use fading first-letter hints, and review on a schedule until you're off book.",
+    "buyer": "Adults in amateur, community or student theatre who struggle to learn their lines.",
+    "bullets": [
+      "Cue-then-line drills: see or hear the cue, then say your line before you check.",
+      "First-letter hints that fade as you get it.",
+      "Spaced reviews, a score for each scene, and a countdown to off-book day."
+    ],
+    "price": "$4.99/month",
+    "priceUsd": 5,
+    "priceNote": "Or $12 per show.",
+    "reasonPrompt": "What show are you in, how big is the part, and when do you need to be off book?",
+    "faq": [
+      {
+        "q": "Who is it for?",
+        "a": "Adults 18+. It is an independent app, not linked to any theatre, school, licensing house or publisher."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-20",
+      "summary": "Actors on BroadwayWorld and an amateur performer's blog say they're struggling to memorise lines, or learn them and then forget them.",
+      "wtp": "LineLearner (App Store): $3.99, 140 ratings. Script Rehearser Pro (App Store): 132 ratings, $7.99 a year or $29.99. Thin signal.",
+      "signals": [
+        {
+          "url": "https://forum.broadwayworld.com/thread/Tips-for-Memorizing-Lines",
+          "who": "Sumofallthings (BroadwayWorld)",
+          "date": "2006-04-19",
+          "quote": "I'm having more difficult than usual memorizing lines for a show I'm in.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forum.broadwayworld.com/thread/Tips-for-Memorizing-Lines",
+          "who": "boatsintheghetto (BroadwayWorld)",
+          "date": "2006-04-19",
+          "quote": "but then I dont remember it later",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forum.broadwayworld.com/thread/Tips-for-Memorizing-Lines",
+          "who": "Dollypop (BroadwayWorld)",
+          "date": "2006-04-19",
+          "quote": "whenever I have trouble memorizing lines it's because I'm wrong for the part",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.kith.org/vardibidian/?p=20513",
+          "who": "Vardibidian (personal blog)",
+          "date": "2021-06-06",
+          "quote": "I'm having trouble buckling down and learning lines.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/app/id1441908800",
+          "who": "Script Rehearser Pro App Store listing",
+          "date": "2026-10-20",
+          "quote": "132 Ratings ... $7.99 ... $29.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "LineLearner, Script Rehearser, Rehearsal Pro, reading with a friend, recording cues.",
+      "risks": "Small rating counts; BroadwayWorld posts date from 2006."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
