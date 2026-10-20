@@ -9,6 +9,7 @@ from PIL import Image
 
 R, BASE, OUT = sys.argv[1:4]
 VIDEOS = json.load(open(sys.argv[4])) if len(sys.argv) > 4 else []
+R3 = sys.argv[5] if len(sys.argv) > 5 else None   # render-v3.mjs output: photo-heavy still ads (top picks)
 PICKS = ['c00', 'n04', 'n11']   # Aidan liked these three (20 Oct)
 
 def thumb(path, w=300):
@@ -60,6 +61,25 @@ def vcard(v):
   <video src="{v['src']}" poster="{v['poster']}" controls playsinline muted loop preload="none"></video>
   <p class="needs ok">{html.escape(v.get('meta', ''))}</p></article>'''
 
+META3 = {
+ 'p07': ('Winner deck, nine prints a card', 'CTR · proof density', 'Your winning deck with your top picks: nine prints on "my recent work" and on "never done this before?", two on "now in Charlotte".'),
+ 'p08': ('Hi, I\'m Aidan carousel', 'CTR · trust', 'Your hello, then twelve portraits on one card ("here\'s what i shoot"), then the CTA.'),
+ 'p06': ('Notes app + nine-photo gallery', 'CPM + CTR · native look', 'The note, with a 3×3 grid of portraits under it.'),
+ 'p02': ('Ten-card carousel', 'CTR · one face per card', 'A hook card, then eight full portraits, each with one short line under the face, then the CTA.'),
+ 'p01': ('Grid of 16', 'CTR · thumb-stop', 'Sixteen portraits, women and men, with the city band across the middle.'),
+ 'p03': ('Photo-booth strips', 'CTR · native look', 'Three strips of four portraits (twelve in all) under the headline.'),
+ 'p04': ('The table', 'CTR · proof', 'Nine prints scattered on the table: "portraits from my last trip, next stop Charlotte".'),
+ 'p05': ('Hero + rail', 'CTR · thumb-stop', 'One big portrait with the city band under it and a rail of ten more below.'),
+ 'p09': ('Portfolio grid', 'CTR · credibility', 'Fifteen portraits in a portfolio grid under a plain "aidan · portraits" header.'),
+ 'p10': ('Pairs', 'CTR · women & men', 'Five cards, each a woman and a man side by side with one line underneath.'),
+}
+def card3(cid):
+    title, lever, why = META3[cid]
+    names = json.load(open(os.path.join(R3, 'index.json')))[cid]
+    frames = strip([os.path.join(R3, cid, n + '.jpg') for n in names], names)
+    return f'''<article class="card"><header><span class="num">{cid.upper()}</span><h3>{html.escape(title)}</h3><span class="lever">{html.escape(lever)}</span></header>
+  <p class="why">{html.escape(why)}</p><div class="strip">{frames}</div><p class="needs ok">ready · {len(names)} card{'s' if len(names) != 1 else ''} · top picks only</p></article>'''
+photo_ads = ''.join(card3(c) for c in META3) if R3 else ''
 picks = ''.join(card_html(c) for c in PICKS)
 rest = ''.join(card_html(c) for c in META if c not in PICKS)
 vids = ''.join(vcard(v) for v in sorted(VIDEOS, key=lambda v: not v.get('pick')))
@@ -130,7 +150,10 @@ video {{ width:min(100%,300px); aspect-ratio:9/16; background:#000; display:bloc
  <div class="box"><h4>Round 3</h4><p>Hero test on the winning layout (three different first frames), plus the real selfie clip if you film it.</p><p>Judge on CPC first, then cost per chat once each ad has 5+ chats.</p></div>
 </div>
 
-<h2>Your picks</h2>
+<h2>Photo ads, more photos</h2>
+<p class="lede">Still ads built only from your top_tier_candidates picks (women and men), each showing many portraits at once. No text on any face.</p>
+{photo_ads}
+<h2>Your picks (earlier stills)</h2>
 {picks}
 <h2>Video ideas</h2>
 <p class="lede">Reels at 1080×1920 with music. Tap to play. Top: the versions built only from your top_tier_candidates picks; then the women-only and mixed versions.</p>
