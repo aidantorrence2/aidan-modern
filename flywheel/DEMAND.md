@@ -238,6 +238,7 @@ approval and never posted without it.
 
 | Candidate | Evidence found | What is missing |
 |---|---|---|
+| Fair Quote: fear of being overcharged on car repairs (doc side, 20 Oct) | AnandTech (Crusty, DrPizza, 2008) opened; FIXD 4.6 from 26K ratings, $12.99/mo or $99.99/yr, opened. Bob Is the Oil Guy returns 403 to our fetch. | A second opened page with a third person. |
 | Score Steps: low credit score (doc side, 20 Oct) | Mumsnet (Clappingforjoy, 2021) opened. myFICO forums return 403 to our fetch, and the Kikoff app page was not fetched. | Two opened pages with more people, and a paid product we can open. |
 | Learn to code restarts (doc side, 19 Oct) | freeCodeCamp forum (Jakesjay, 2022); Mimo 111K ratings, Sololearn 82K. Passes the evidence gate. | Not launched: too close to the killed practical-first-coding-project and the live feel-locked-out-math. |
 | Rise Check: sourdough that keeps failing (doc side, 19 Oct) | Three Fresh Loaf threads opened (Pasc, Shana, lucas_t, 2020-2025). The King Arthur class pages returned 404, and Udemy blocks fetches. | A paid product we can open (app with ratings, or class with a price). |
