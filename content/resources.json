@@ -4122,5 +4122,126 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "how-to-see-when-your-credit-card-debt-will-be-paid-off",
+  "offer": "payoff-date",
+  "title": "How to see when your credit card debt will actually be paid off",
+  "description": "Drowning in credit card debt? List every card, pick an order (highest interest or smallest balance first), set one extra payment, and work out your payoff date.",
+  "intro": "Credit card debt feels endless when you can't see an end date. Writing everything down and choosing one plan usually turns it into a date you can work towards.",
+  "sections": [
+   {
+    "h": "List every card",
+    "list": [
+     "For each card write the balance, the interest rate (APR) and the minimum payment.",
+     "Seeing the total in one place is hard, but it is the first step."
+    ]
+   },
+   {
+    "h": "Pick an order",
+    "list": [
+     "Highest interest first (the avalanche method) costs the least in interest.",
+     "Smallest balance first (the snowball method) gives quicker wins, which helps some people keep going.",
+     "Either works if you stick to it. Pay the minimum on every card and put anything extra on the one at the top of your list."
+    ]
+   },
+   {
+    "h": "Find one extra payment",
+    "list": [
+     "Even a small fixed extra amount each month brings the date forward. When one card is paid off, add its payment to the next one."
+    ]
+   },
+   {
+    "h": "Work out the date",
+    "list": [
+     "Your card statement shows how long the minimum payments would take. Use a payoff calculator with your extra payment to see the new date, and check it each month."
+    ]
+   },
+   {
+    "h": "Get free help if it is too much",
+    "p": [
+     "If you can't make the minimum payments, contact your card provider early, or a free non-profit credit counselling service (in the US, look for an NFCC member agency). This guide is general information, not financial advice."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "quit-smoking-after-a-slip",
+  "offer": "slip-day",
+  "title": "Slipped after quitting smoking? Why one cigarette doesn't send you back to day one",
+  "description": "Had a cigarette after quitting? Treat it as a slip, not a relapse: note what triggered it, plan for that moment next time, and count your smoke-free days, not your streak.",
+  "intro": "Most people who quit smoking for good slip at least once along the way. What matters is what you do next. Treating one cigarette as a failure is often what turns a slip into a full relapse.",
+  "sections": [
+   {
+    "h": "A slip is not a relapse",
+    "list": [
+     "One cigarette doesn't undo the days you didn't smoke. Your body still benefited from them."
+    ]
+   },
+   {
+    "h": "Note the trigger",
+    "list": [
+     "Write down where you were, who you were with and how you felt. Stress, alcohol and other smokers are common triggers."
+    ]
+   },
+   {
+    "h": "Plan for that moment",
+    "list": [
+     "Decide what you will do instead next time: a walk, a drink of water, chewing gum, calling someone.",
+     "Avoid the trigger for a while if you can."
+    ]
+   },
+   {
+    "h": "Count smoke-free days",
+    "list": [
+     "Track how many days this month you didn't smoke, not just your current streak. The number keeps growing even after a slip."
+    ]
+   },
+   {
+    "h": "Get support",
+    "p": [
+     "Stop-smoking services, nicotine replacement and prescription medicines all raise the chance of quitting for good. Talk to a doctor or pharmacist; in the US, the free quitline is 1-800-QUIT-NOW. This guide is general information, not medical advice."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "how-to-stop-procrastinating-on-chores",
+  "offer": "reset-ten",
+  "title": "How to stop procrastinating on chores when your place is always a mess",
+  "description": "Always putting off the housework? Use a ten-minute timer, start with one small area, tie chores to things you already do, and stop aiming for a perfect clean.",
+  "intro": "Chores pile up because the whole mess looks too big to start. Breaking it into ten-minute pieces makes starting easy, and starting is the hard part.",
+  "sections": [
+   {
+    "h": "Ten minutes, then stop",
+    "list": [
+     "Set a timer for ten minutes and tidy one area. When it rings you are allowed to stop. Often you will keep going."
+    ]
+   },
+   {
+    "h": "Start small and visible",
+    "list": [
+     "Pick the spot you see most: the kitchen counter, the sofa or the doorway. A visible win makes the next one easier."
+    ]
+   },
+   {
+    "h": "Tie chores to habits",
+    "list": [
+     "Wipe the sink after brushing your teeth, load the dishwasher while the kettle boils, put a wash on before you leave for work."
+    ]
+   },
+   {
+    "h": "Good enough beats perfect",
+    "list": [
+     "Waiting until you have time for a full clean is what lets the mess build up. A quick reset every day is enough."
+    ]
+   },
+   {
+    "h": "Make it easier to start",
+    "p": [
+     "Keep cleaning things where you use them, play music or a podcast, and give each item a home so putting things away is quick."
+    ]
+   }
+  ]
  }
 ]
