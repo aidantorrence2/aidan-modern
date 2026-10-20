@@ -2921,6 +2921,43 @@
         "sample_file": "revenue-reset-20261020/sample-delivery.html",
         "no_free_signup_claims": true
       }
+    },
+    {
+      "id": "offers:paid-pilot-terms:2026-10-20:monthly-scope",
+      "kind": "other",
+      "source": "codex:real-change-pilots",
+      "title": "Review Studio Follow-up Desk monthly/cancellation/refund wording; no charges",
+      "summary": "Proposed $250/mo, four weekly lists and up to20 drafts. Cancel before next period; full refund before work, then $62.50 per undelivered weekly delivery. Wording only: no sending, enrollment, invoice, charge or real customer data. Exact20-email batch remains separate.",
+      "payload": {
+        "project_id": "appgprj_6ad56c0398f4819187d2d7870ae70ac4",
+        "offer": "studio-followup-desk",
+        "action": "Approve only the proposed commercial wording below for preparation of later buyer-specific agreements. This does not send or accept a contract, enroll a buyer, create/send an invoice, authorize a charge, spending, terms acceptance, or real-data processing. Those require exact separate approval after the account/recipient/start/data arrangement is known.",
+        "relationship_to_existing_request": "The exact20 first-contact emails/price remain separately pending under offers:paid-pilot:2026-10-20:20-photo-studios; no revision or extra recipients here.",
+        "exact_proposed_terms": {
+          "price": "$250 USD per calendar-month service period beginning on an explicitly agreed start date. No setup fee or minimum multi-month term. Test price; not validated demand.",
+          "delivery": "Four agreed weekly prioritized action lists and weekly status summaries; up to20 AI-assisted follow-up drafts for up to20 existing open enquiries per service month. Initial voice/pricing/policy setup. Studio reviews, edits, approves and sends every message.",
+          "exclusions": "No autonomous client messaging, inbox credentials, CRM migration, new prospects, booking/revenue guarantees, or identifiable private enquiries.",
+          "renewal": "Month-to-month recurring service invoiced monthly through a verified Aidan-owned account. No automatic card charging or payment-method storage without separate exact authority and customer authorization. No unagreed overage charges. Billing method/taxes unresolved before collection.",
+          "cancellation": "Buyer can request cancellation in the agreed business email thread before the next service period starts. No next-period renewal invoice or charge after cancellation. No cancellation fee. Effective date confirmed only through an exact approved reply.",
+          "refund": "Full refund before any delivery starts; after start, $62.50 for each of the four scheduled weekly deliveries that will not be provided, without double-refunding. Actual refunds require exact approval/provider receipt. Final jurisdiction-specific review remains necessary; this wording does not limit mandatory rights.",
+          "start_and_capacity": "No start date or available seat promised. Identify delivery operator and verify four dates and capacity before buyer agreement or collection. Two-hours-per-client delivery estimate remains untested.",
+          "data": "Fictional sample only until a separately approved handling/storage/access/retention/transfer arrangement. Customer identities stay in studio systems. No real enquiry summaries accepted under this approval."
+        },
+        "review_file": "revenue-reset-20261020/first-buyer-close-pack.html",
+        "missing_before_money": [
+          "Verified Aidan-owned billing/invoice path and provider terms/fees",
+          "Named delivery operator, dates and feasible capacity",
+          "Final exact buyer-specific agreement and recipient authorization",
+          "Approved data-handling arrangement",
+          "Explicit buyer agreement and exact invoice/payment-request approval"
+        ],
+        "measurement": "Only verified paid active monthly agreements count as MRR. Unpaid invoices, replies, one-off payments or interest do not. Current campaign recorded paid agreements0/cash0; no claim about other business accounts."
+      },
+      "created": "2026-10-20T19:04:35Z",
+      "expires": "2026-10-23T19:04:35Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
     }
   ]
 }
