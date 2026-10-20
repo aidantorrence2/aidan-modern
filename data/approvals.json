@@ -1356,8 +1356,8 @@
         "data_scope": "Database row responses may contain private email addresses and city/participation/consent/attribution fields. Read only to count and deduplicate. Do not persist, export, email, share or put individual lead records in Library, prompts for other workers, Git repositories or public pages.",
         "limits": "Read-only ongoing measurement for this one project. No customer outreach, data deletion/migration, credential recovery, database changes, new endpoint, deployment, spending or broader access. Stop if access is denied; no alternative access path.",
         "why_needed": "The handoff's zero was historical and cloud private-export credentials were omitted. The hourly targets cannot be honestly measured until separately authorized secure access is approved.",
-        "result": "Ongoing read-only scope preserved. Fresh overview DB events/leads, only leads read at2026-10-20T03:08:22Z, limit25offset0. Complete empty table, next_offset null; no omissions or truncation. Current consenting total0/new0 vs5target. Aggregates only persisted, no private rows saved. No customer messaging, export or data changes authorized.",
-        "result_at": "2026-10-20T03:08:47Z"
+        "result": "Ongoing approved read-only measurement, completed before 2026-10-20T04:02:03Z: exact project appgprj_6ad56c0398f4819187d2d7870ae70ac4; overview first DB/leads; one 25-row page, rows0, next_offset null, no truncation/omissions. New consenting leads0 of target5; current total0. Persisted aggregates only. Ongoing read-only scope unchanged; no customer messaging/data changes.",
+        "result_at": "2026-10-20T04:04:15Z"
       },
       "created": "2026-10-19T05:23:23Z",
       "expires": "2026-10-22T05:23:23Z",
@@ -2024,7 +2024,9 @@
           "gmail": "All-history exact addresses and domains returned0 messages, no nextpage. No ledger collisions with20completed or held/denied actions.",
           "official_identity": "Mind over Tech current page embeds Tally nW10Ev; HTTP200 form names Harriet Pellereau CEO and publishes exact address. Hype Girl current media page and FAQ publish exact partnerships inbox.",
           "tracked_pages": "Fresh exact tracked page HTTP200/forms/adult/followup consent required before execution; no production test signup."
-        }
+        },
+        "result": "Sent exactly two approved emails; Gmail SENT readback verified exact to/subject/body. Mind over Tech message/thread 1a1577a39515012d; Hype Girl Social Club message/thread 1a1577a5ab203522. No followups, posts, spend, participant contact or deployment. These are audience-owner sends, not consenting customer leads.",
+        "result_at": "2026-10-20T04:04:15Z"
       },
       "created": "2026-10-20T03:03:02Z",
       "expires": "2026-10-23T03:03:02Z",
