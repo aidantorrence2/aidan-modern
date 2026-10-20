@@ -1356,8 +1356,8 @@
         "data_scope": "Database row responses may contain private email addresses and city/participation/consent/attribution fields. Read only to count and deduplicate. Do not persist, export, email, share or put individual lead records in Library, prompts for other workers, Git repositories or public pages.",
         "limits": "Read-only ongoing measurement for this one project. No customer outreach, data deletion/migration, credential recovery, database changes, new endpoint, deployment, spending or broader access. Stop if access is denied; no alternative access path.",
         "why_needed": "The handoff's zero was historical and cloud private-export credentials were omitted. The hourly targets cannot be honestly measured until separately authorized secure access is approved.",
-        "result": "2026-10-20T13:03:53Z: Ongoing approved read-only aggregate measurement of exact Real Change Pilots project. Overview first returned DB tables events/leads; only DB/leads read limit25 offset0, zero rows and next_offset null, no omissions/truncation. New0/5 target, currenttotal0. No private rows saved/exported, customer message or data change. Ongoing measurement scope unchanged.",
-        "result_at": "2026-10-20T13:06:28Z"
+        "result": "2026-10-20T13:10:17Z: Ongoing approved aggregate read-only measurement of exact Real Change Pilots project. Overview first returned DB tables events/leads, then only DB/leads limit25 offset0; zero rows, next_offset null, no omissions/truncation. New consenting leads0/target5, currenttotal0. No private rows saved/exported, data changes or customer messaging. Ongoing approved measurement scope unchanged.",
+        "result_at": "2026-10-20T13:11:49Z"
       },
       "created": "2026-10-19T05:23:23Z",
       "expires": "2026-10-22T05:23:23Z",
