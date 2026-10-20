@@ -19455,6 +19455,105 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-20",
+    "slug": "swear-less",
+    "name": "Swear Less",
+    "need": "I swear far too much. It's crept into almost every sentence when I'm stressed, I hate hearing myself, and I can't stop.",
+    "headline": "Swearing crept into every sentence? Log each slip in one tap, fill a virtual swear jar, and cut down using swap-words you actually like saying.",
+    "buyer": "Adults who swear more than they want to, at work, around family or when stressed, and want to cut down without making a big deal of it.",
+    "bullets": [
+      "One tap logs each slip, so you finally see how often it really happens and when (stress, driving, work)",
+      "A virtual swear jar adds up a fine you set yourself, so you get the accountability without having to carry a jar around",
+      "Pick your own swap-words and get a daily count and trend, so cutting down feels like progress, not a ban"
+    ],
+    "price": "$2.99/month",
+    "priceUsd": 3,
+    "priceNote": "",
+    "reasonPrompt": "When do you swear most, and what would make you happy to have cut it down to?",
+    "faq": [
+      {
+        "q": "Who is this for?",
+        "a": "It's an independent app for adults 18+ who want to swear less in their everyday speech. It isn't connected to any forum, brand or other app."
+      },
+      {
+        "q": "Does it listen to me or record what I say?",
+        "a": "No. You log each slip yourself with one tap. The app doesn't use your microphone."
+      },
+      {
+        "q": "Do I have to quit completely?",
+        "a": "No. You pick your own target. Lots of people only want to cut down at work, around family, or when they're stressed."
+      },
+      {
+        "q": "Is the swear jar real money?",
+        "a": "No. The jar is a running total of the fine you set yourself. What you do with that total, such as giving it to charity, is up to you."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-20",
+      "summary": "Adults say in their own words that swearing has turned into a habit they can't shake, especially when stressed, and that they dislike hearing themselves. I found this on two Mumsnet threads (2018 and 2022) and an LDS Faith Journeys support thread (2010). The fixes people suggest to each other are a swear jar, fining yourself, and swap-words. Those fit a simple tracker app well. All three pages were opened. Mumsnet was read via WebFetch, which blocks curl; I re-checked each exact quote string on those pages. LDS Faith Journeys was read via curl.",
+      "wtp": "Swear Jar Pro (App Store): $1.99, 59 ratings; its free version has 174 ratings and sells the Pro upgrade. One Mumsnet poster says a swear jar is helping. Thin signal.",
+      "signals": [
+        {
+          "url": "https://www.mumsnet.com/talk/am_i_being_unreasonable/3179162-To-ask-you-to-help-me-stop-swearing",
+          "who": "starlightafar (Mumsnet)",
+          "date": "2018-02-26",
+          "quote": "I hate it. Please help me to stop.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/am_i_being_unreasonable/3179162-To-ask-you-to-help-me-stop-swearing",
+          "who": "bimbobaggins (Mumsnet)",
+          "date": "2018-02-26",
+          "quote": "I have been making a big effort to stop and have introduced a swear jar and that really is helping.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/am_i_being_unreasonable/3179162-To-ask-you-to-help-me-stop-swearing",
+          "who": "Jassmells (Mumsnet)",
+          "date": "2018-02-26",
+          "quote": "I know, I can't stop either.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/ethical_dilemmas/4540371-how-did-you-stop-swearing",
+          "who": "Bawoon (Mumsnet)",
+          "date": "2022-04-30",
+          "quote": "It's crept into almost every sentence when I'm stressed",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/ethical_dilemmas/4540371-how-did-you-stop-swearing",
+          "who": "TrivialSoul (Mumsnet)",
+          "date": "2022-04-30",
+          "quote": "I realised that I was swearing more and more when someone unexpectedly commented on it.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://ldsfaithjourneys.org/forums/topic/i-need-to-stop-swearing/",
+          "who": "SamBee (LDS Faith Journeys)",
+          "date": "2010-06-19",
+          "quote": "But I’m trying to give it up. I haven’t sworn in church, but I still find myself driven to swearing, and some how flip, sugar and so on don’t work very well.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1455430659",
+          "who": "Swear Jar Pro App Store listing",
+          "date": "2026-10-20",
+          "quote": "$1.99 ... 59 Ratings",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Swear Jar Pro ($1.99, 59 ratings) and Swear Jar Lite (free with a Pro upgrade, 174 ratings) from Trendwell Analytics. Both are group or household tallies of who swore, not tools for one person cutting down. 'Swear Jar | Stop Cussing' (free, 3 ratings, 2.3 average) and 'Swear Tracker' (free, 2 ratings) have barely any traction. A physical swear jar or an elastic band on the wrist costs nothing.",
+      "risks": "The market is small. The best-selling competitor has only 59 paid ratings, and people may balk at a monthly fee when one-off apps cost $1.99. Some posters like swearing and see no need to change, so many people won't care. Much of the Mumsnet discussion is about swearing in front of children, so the ad copy should stick to the adult's own habit (work, stress, wanting to sound how you want). Logging is manual, so it depends on people noticing their own slips."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

@@ -6944,5 +6944,44 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "how-to-stop-swearing-so-much",
+  "offer": "swear-less",
+  "title": "Swearing in every sentence? How to cut down without a big ban",
+  "description": "Swearing more than you want to? Count your slips for a week, pick swap-words you like, set a small fine, and aim to cut down, not quit.",
+  "intro": "Swearing often creeps up when we're stressed or tired. Noticing it is the first step, and small swaps work better than a total ban.",
+  "sections": [
+   {
+    "h": "Count for a week",
+    "list": [
+     "Keep a tally of each slip and when it happened: driving, work, stress."
+    ]
+   },
+   {
+    "h": "Pick swap-words you like",
+    "list": [
+     "Choose a couple of replacement words you'd actually enjoy saying."
+    ]
+   },
+   {
+    "h": "Try a swear jar",
+    "list": [
+     "Set yourself a small fine per slip and give the total to charity."
+    ]
+   },
+   {
+    "h": "Aim to cut down",
+    "list": [
+     "Pick where it matters most, like at work or around family, and start there."
+    ]
+   },
+   {
+    "h": "Watch the stress",
+    "p": [
+     "If swearing spikes when you're stressed, a short pause or a slow breath before speaking can help."
+    ]
+   }
+  ]
  }
 ]
