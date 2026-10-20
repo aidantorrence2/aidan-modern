@@ -1884,6 +1884,53 @@
       "status": "approved",
       "decided": "2026-10-19T23:59:12Z",
       "note": ""
+    },
+    {
+      "id": "offers:small-wave6:2026-10-19:phone-and-keep-in-touch",
+      "kind": "email",
+      "source": "codex:real-change-pilots",
+      "title": "Send two short phone and keep-in-touch inquiries",
+      "summary": "Ask Laura at The Digital Detox Club to share the adult phone-app signup page; ask Social Club Collective about adult research for shared meetup planning. Two exact emails; no followups, posts or fees.",
+      "payload": {
+        "action": "Send exactly two first-contact business emails once each after current exact approval and final preflight.",
+        "project_id": "appgprj_6ad56c0398f4819187d2d7870ae70ac4",
+        "messages": [
+          {
+            "to": "hello@digitaldetoxclub.co.uk",
+            "subject": "Finding adults who want stronger phone boundaries",
+            "body": "Hi Laura,\n\nI'm Aidan. Your phone-free gatherings help people make time for life away from screens, which seems a good fit for an idea I'm testing.\n\nI'm exploring an app for adults who set phone limits, then turn them off and keep scrolling. The idea is to make those limits harder to ignore. It isn't built yet.\n\nWould you consider sharing this signup page with adults aged 18 or over who might help shape it?\n\nSignup is free and nonbinding.\nhttps://real-change-pilots-aidan-2026.aidantorrence.chatgpt.site/phone-reset?utm_source=digital_detox_club&utm_medium=partner_email&utm_campaign=wave6\n\nThanks,\nAidan Torrence",
+            "offer": "phone-reset",
+            "organization": "The Digital Detox Club",
+            "recipient_identity": "Founder Laura through the published general business inbox.",
+            "source": "https://www.digitaldetoxclub.co.uk/aboutus",
+            "rules_source": "https://www.digitaldetoxclub.co.uk/faqs",
+            "channel_limit": "Events allow some accompanied minors. This inquiry and any proposed signup invitation are explicitly adults18+ only; no attendee contact or recruitment at events."
+          },
+          {
+            "to": "info@socialclubcollectivellc.com",
+            "subject": "Research on sharing the work of seeing friends",
+            "body": "Hi Social Club Collective team,\n\nI'm Aidan. Your monthly meetups help adults make friends, so your team may know whether this idea fits.\n\nI'm exploring an app for friends who want to meet regularly but leave one person doing the planning. The idea is to share who organizes each meetup. It isn't built yet.\n\nWould you consider a short research invitation for adults who usually organize their friend group's plans?\n\nTaking part would be free and nonbinding.\n\nThanks,\nAidan Torrence",
+            "offer": "keep-in-touch",
+            "organization": "Social Club Collective",
+            "recipient_identity": "Central general business inbox; no city/member contacts.",
+            "source": "https://www.socialclubcollectivellc.com/",
+            "prepared_file": "offer19-channel-experiment-20261019-1956.json"
+          }
+        ],
+        "limits": "Two exact business emails only; no followups, replies, lists, attachments, public/community/social/Instagram posts, event registration, membership, spend, terms, building or deployment. Keep-in-touch is not live: no signup URL substituted and no permission to recruit inferred from sending. All earlier individual holds and denied requests stay untouched.",
+        "why": "Wave5 completed and no campaign outreach pending. Use two existing qualified, freshly reverified independent business contacts for phone distribution and one focused next-offer permission check.",
+        "preflight": {
+          "official_sources_checked_on": "2026-10-19 America/New_York",
+          "gmail_all_history": "Exact addresses and organization domains returned no messages, no next page.",
+          "dedupe": "No collision with16confirmed sends, held Dateable/Dear Nina/City Girl, or denied Luvvly.",
+          "public_phone_page": "Fresh tracked URL reachability check required before any approved send."
+        }
+      },
+      "created": "2026-10-20T01:05:17Z",
+      "expires": "2026-10-23T01:05:17Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
     }
   ]
 }
