@@ -1875,7 +1875,9 @@
           "gmail_exact_and_domain_all_history": "Both empty, no next page.",
           "previous_contacts": "Dedupe against 14 completed sends and individual Dateable/Dear Nina/City Girl holds; no collisions.",
           "public_pages": "Exact attributed URLs returned HTTP200 with truthful planned-pilot/free-nonbinding/adult consent content. No production signup test or record."
-        }
+        },
+        "result": "Completed exactly2approved first-contact emails, read back SENT and exact bodies: Original Dating info@originaldating.com message/thread1a1569bf64102c3f at2026-10-20T00:00:24Z; Joy List hey@joylist.nyc message/thread1a1569c12f2b2516 at00:00:31Z. No resends, followups, public posts, costs, terms or deployment. Cumulative confirmed campaign sends16; no partner sharing or consenting customer leads inferred.",
+        "result_at": "2026-10-20T00:00:53Z"
       },
       "created": "2026-10-19T23:58:16Z",
       "expires": "2026-10-22T23:58:16Z",
