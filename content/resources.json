@@ -4916,5 +4916,44 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "keep-bible-verses-in-memory",
+  "offer": "verse-keep",
+  "title": "Can't keep Bible verses in your head? A 5-minute recall-first routine",
+  "description": "Memorise verses but forget the wording or the reference? Recall before you reread, use first-letter hints, review on a spaced schedule, and always say the reference with the words.",
+  "intro": "Verses fade quickly when we only reread them. Recalling them from memory, on a spaced schedule, is what keeps the wording and the reference.",
+  "sections": [
+   {
+    "h": "Recall before you reread",
+    "list": [
+     "Try to say the verse from memory first, then check. The effort of recalling is what makes it stick."
+    ]
+   },
+   {
+    "h": "Use first-letter hints",
+    "list": [
+     "Write the first letter of each word. When you're stuck, glance at the letters instead of the full verse."
+    ]
+   },
+   {
+    "h": "Space your reviews",
+    "list": [
+     "Review a new verse the next day, then in a few days, then a week later, then monthly."
+    ]
+   },
+   {
+    "h": "Say the reference every time",
+    "list": [
+     "Say the book, chapter and verse before and after the words, so they travel together."
+    ]
+   },
+   {
+    "h": "Five minutes a day",
+    "p": [
+     "A short daily review keeps more verses than a long session once a week."
+    ]
+   }
+  ]
  }
 ]

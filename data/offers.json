@@ -15068,6 +15068,72 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-20",
+    "slug": "verse-keep",
+    "name": "Verse Keep",
+    "need": "I memorise scripture but end up forgetting the exact wording, and I'm lousy at recalling the book, chapter and verse.",
+    "headline": "Scripture-memory practice: recall before you reveal, first-letter hints when you're stuck, spaced reviews, and the reference practised together with the words.",
+    "buyer": "Adults who memorise Bible verses and lose the wording or the reference within days.",
+    "bullets": [
+      "Say or type the verse from memory first, then reveal and check.",
+      "First-letter hints when you're stuck, instead of showing the whole verse.",
+      "Spaced reviews that bring each verse back before you forget it, with the reference practised alongside the words."
+    ],
+    "price": "$4.99/month",
+    "priceUsd": 5,
+    "priceNote": "Or $29 a year.",
+    "reasonPrompt": "How many verses are you trying to keep, and what slips first: the words or the reference?",
+    "faq": [
+      {
+        "q": "Which Bible translation does it use?",
+        "a": "You choose the translation you memorise from and enter your verses. Verse Keep is an independent app, not linked to any church or publisher."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-20",
+      "summary": "Christians on Christianity Haven and in App Store reviews say they forget the exact wording of verses they've memorised, struggle to recall the reference, and find memorising harder with age. Bible-memory apps already have large paid user bases.",
+      "wtp": "The Bible Memory App (App Store): 4.8 from 33K ratings, sold with in-app purchases (Pro and yearly plans).",
+      "signals": [
+        {
+          "url": "https://christianityhaven.com/threads/do-you-memorize-scripture.9162/post-191620",
+          "who": "NewCreation435 (Christianity Haven)",
+          "date": "2020-07-02",
+          "quote": "I have done that some, but end up forgetting exact wording.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://christianityhaven.com/threads/do-you-memorize-scripture.9162/post-191620",
+          "who": "Lazy Suesun (Christianity Haven)",
+          "date": "2020-07-02",
+          "quote": "am lousy in being consistent in also recalling book, chapter, verse.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/bible-memory-verselocker/id1544933853?see-all=reviews",
+          "who": "MargMO657 (App Store reviewer, VerseLocker)",
+          "date": "2024-08-20",
+          "quote": "I'm an older person and memorizing is a lot more difficult than it used to be.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/app/id496790833",
+          "who": "The Bible Memory App App Store listing",
+          "date": "2026-10-20",
+          "quote": "33K Ratings ... Free · In-App Purchases",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "The Bible Memory App, Verses, VerseLocker (free), memory cards.",
+      "risks": "Established apps with large followings; one strong free competitor. Exact in-app prices were not readable on the page."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
