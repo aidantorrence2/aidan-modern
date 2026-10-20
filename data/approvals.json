@@ -2239,6 +2239,48 @@
       "status": "approved",
       "decided": "2026-10-20T05:06:09Z",
       "note": ""
+    },
+    {
+      "id": "offers:small-wave11:2026-10-20:dating-and-friendships",
+      "kind": "email",
+      "source": "codex:real-change-pilots",
+      "title": "Two emails: Speed Dating Social and OC Social Club",
+      "summary": "Ask two verified adult audience owners to consider sharing free, nonbinding interest pages. Exact two first-contact emails; no followups, posts, spend or deployment.",
+      "payload": {
+        "project_id": "appgprj_6ad56c0398f4819187d2d7870ae70ac4",
+        "action": "Send exactly these two first-contact business emails once each only after approval and fresh preflight.",
+        "messages": [
+          {
+            "to": "matches@speeddatingsocial.com",
+            "subject": "An idea for adults who want fewer swipes and more dates",
+            "offer": "better-dates",
+            "organization": "Speed Dating Social / Australia Speed Dating Pty Ltd",
+            "source": "https://speeddatingsocial.au/contact",
+            "body": "Hi Speed Dating Social team,\n\nI'm Aidan. Your adult speed-dating events and invitation for new singles-event ideas seem a good fit for something I'm testing.\n\nI'm exploring a small local introductions pilot for adults who spend lots of time browsing and texting but rarely get to a date. It isn't running yet, and I don't have a pool of matches.\n\nWould you consider sharing this signup page with adults aged 18 or over who might be interested?\n\nSignup is free and nonbinding.\nhttps://real-change-pilots-aidan-2026.aidantorrence.chatgpt.site/better-dates?utm_source=speed_dating_social&utm_medium=partner_email&utm_campaign=wave11\n\nThanks,\nAidan Torrence"
+          },
+          {
+            "to": "hello@ocsocial.club",
+            "subject": "A small group where people see the same faces again",
+            "offer": "real-friendships",
+            "organization": "OC Social Club / Orange County Social Club",
+            "source": "https://www.ocsocial.club/partnerships",
+            "fit_source": "https://www.ocsocial.club/",
+            "body": "Hi OC Social Club team,\n\nI'm Aidan. Your meetups for people in their twenties and thirties seem a good fit for an idea I'm testing.\n\nI'm exploring small local friendship groups where the same people meet regularly, instead of starting over at every event. It would be for adults who want friendships to grow through repeated, low-pressure time together. The pilot isn't running yet.\n\nWould you consider sharing this signup page with adults aged 18 or over who might be interested?\n\nSignup is free and nonbinding.\nhttps://real-change-pilots-aidan-2026.aidantorrence.chatgpt.site/real-friendships?utm_source=oc_social_club&utm_medium=partner_email&utm_campaign=wave11\n\nThanks,\nAidan Torrence"
+          }
+        ],
+        "limits": "Exactly two plain-text first emails. No followups/replies, attachments, public/social/Instagram posts, forms, lists or direct participants, spending, memberships, event bookings, terms, build or deployment. Ask owners to consider sharing, not claim distribution or customer leads.",
+        "preflight": {
+          "gmail": "Fresh all-history exact recipients and organization domains returned0/no nextpage. Both existing research reserves, not newly qualified this run. No ledger sends/holds/denials for either organization.",
+          "official": "SpeedDatingSocial contact publishes exact email and invites event ideas/partnerships; explicitly18+. OC Social Club root targets20s/30s and invites partnerships; partnership page publishes exact email. No form/member channel used.",
+          "tracked_pages": "Fresh exact wave11 tracked pages reachable, better-datesHTTP200; real-friendships adult/followup consent/free/nonbinding form markup observed. No test form submission.",
+          "execute_only_after": "Refresh decision/note/exact payload, Gmail/suppression/receipts and public page; durable claim persisted in same handoff before send."
+        }
+      },
+      "created": "2026-10-20T06:07:27Z",
+      "expires": "2026-10-23T06:07:27Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
     }
   ]
 }
