@@ -5345,5 +5345,83 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "darts-average-stuck",
+  "offer": "average-up",
+  "title": "Darts average stuck? Find where the points go missing",
+  "description": "Average flat for months? Track trebles, drift into the 5s and 1s, and checkouts separately, then practise only the weakest one.",
+  "intro": "A flat average usually hides one or two weak spots. Measuring them separately shows you what to practise.",
+  "sections": [
+   {
+    "h": "Split your average up",
+    "list": [
+     "Track how often you hit the treble 20, how many darts drift into the 5s or 1s, and your checkout percentage."
+    ]
+   },
+   {
+    "h": "Find the biggest leak",
+    "list": [
+     "The one costing you most points is what to practise first."
+    ]
+   },
+   {
+    "h": "Practise one thing for 15 minutes",
+    "list": [
+     "A short daily session on one target beats an hour of random throwing."
+    ]
+   },
+   {
+    "h": "Film your throw",
+    "list": [
+     "A phone video from the side shows changes in your stance, release and follow-through that you can't feel."
+    ]
+   },
+   {
+    "h": "Change your darts last",
+    "p": [
+     "New darts feel better for a few days. Check your stats before you buy another set."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "stop-three-putting",
+  "offer": "two-putt",
+  "title": "Stop three-putting: a 20-minute putting-green routine",
+  "description": "Three-putting too often? Find out whether long lag putts or short putts cost you, then practise distance control and three-footers.",
+  "intro": "Most three-putts come from poor distance on the first putt or a missed short one. Knowing which helps you practise the right thing.",
+  "sections": [
+   {
+    "h": "Log every putt for three rounds",
+    "list": [
+     "Note the length of your first putt and how many it took."
+    ]
+   },
+   {
+    "h": "Distance ladder (10 minutes)",
+    "list": [
+     "Putt to 20, 30 and 40 feet, aiming to stop within a club-length of the hole."
+    ]
+   },
+   {
+    "h": "Three-foot circle (5 minutes)",
+    "list": [
+     "Place balls round the hole at three feet and hole them in a row."
+    ]
+   },
+   {
+    "h": "Pressure game (5 minutes)",
+    "list": [
+     "Hole ten in a row from three feet. Start again if you miss."
+    ]
+   },
+   {
+    "h": "Check your putter fits",
+    "p": [
+     "If you keep missing on one side, a fitting or a lesson may help."
+    ]
+   }
+  ]
  }
 ]
