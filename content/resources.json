@@ -4994,5 +4994,161 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "potty-training-going-backwards",
+  "offer": "potty-steps",
+  "title": "Potty training going backwards? A 3-day log to find the pattern",
+  "description": "Accidents every day, refusals, or progress then three steps back? Log three days, look for the times, and make one plan everyone follows.",
+  "intro": "When potty training stalls, it's hard to see a pattern from memory. A few days of simple notes usually shows one.",
+  "sections": [
+   {
+    "h": "Log three days",
+    "list": [
+     "Note the time of every wee, poo, accident and refusal. Nothing else."
+    ]
+   },
+   {
+    "h": "Look for the times",
+    "list": [
+     "Accidents often cluster after meals, drinks or naps, or while your child is busy playing."
+    ]
+   },
+   {
+    "h": "Offer the potty just before those times",
+    "list": [
+     "Use the times from your log, not a fixed timer."
+    ]
+   },
+   {
+    "h": "One plan for everyone",
+    "list": [
+     "Partner, grandparents and nursery should use the same words and the same routine."
+    ]
+   },
+   {
+    "h": "When to ask for help",
+    "p": [
+     "If you're worried about pain, constipation or development, talk to your doctor or health visitor."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "puppy-wont-stop-biting",
+  "offer": "soft-mouth",
+  "title": "Puppy won't stop biting? A day plan, and rules for kids",
+  "description": "Puppy nipping hands, ankles and clothes? Give chew outlets, build in calm-down breaks, and make sure everyone at home responds the same way.",
+  "intro": "Puppy biting is common and usually eases with age, but it's easier to live with when everyone at home follows the same plan.",
+  "sections": [
+   {
+    "h": "Give the teeth somewhere to go",
+    "list": [
+     "Keep a chew toy within reach and offer it the moment teeth touch skin."
+    ]
+   },
+   {
+    "h": "Plan calm-down breaks",
+    "list": [
+     "Overtired puppies bite more. Build short rests into the day."
+    ]
+   },
+   {
+    "h": "Rules for children",
+    "list": [
+     "Stand still, fold arms, and walk away calmly if the puppy nips. No running games while biting is bad."
+    ]
+   },
+   {
+    "h": "Note when it happens",
+    "list": [
+     "A simple log of times often shows the biting peaks, such as evenings."
+    ]
+   },
+   {
+    "h": "When to ask for help",
+    "p": [
+     "If biting is aggressive, sudden or getting worse, speak to your vet or a qualified behaviourist."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "picky-eater-food-chaining",
+  "offer": "one-new-bite",
+  "title": "Picky eater? Small steps from the foods they already eat",
+  "description": "Child eating only a few foods? Start from their safe foods, take small steps to similar ones, and always put a safe food on the plate.",
+  "intro": "Pressure tends to make picky eating worse. Small steps from foods your child already accepts are gentler.",
+  "sections": [
+   {
+    "h": "List the safe foods",
+    "list": [
+     "Write down every food your child eats reliably."
+    ]
+   },
+   {
+    "h": "Take small steps",
+    "list": [
+     "Move to something very close: a different shape, brand or flavour of a safe food."
+    ]
+   },
+   {
+    "h": "Always include a safe food",
+    "list": [
+     "Every meal should have at least one food your child will eat."
+    ]
+   },
+   {
+    "h": "Count small wins",
+    "list": [
+     "Touching, smelling or tasting a new food counts as progress."
+    ]
+   },
+   {
+    "h": "When to ask for help",
+    "p": [
+     "If you're worried about growth, weight or how few foods your child eats, talk to your doctor."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "phone-call-anxiety-script",
+  "offer": "call-ready",
+  "title": "Dread making phone calls? A script for the calls you keep putting off",
+  "description": "Avoiding calls, even to book appointments? Write a three-line script, have your details ready, practise once out loud, then dial.",
+  "intro": "Many people hate phone calls. A short script and a practice run make the call you've been avoiding much easier to start.",
+  "sections": [
+   {
+    "h": "Write three lines",
+    "list": [
+     "Who you are, why you're calling, and what you need."
+    ]
+   },
+   {
+    "h": "Have the details ready",
+    "list": [
+     "Dates, reference numbers and your calendar, so unexpected questions are easy."
+    ]
+   },
+   {
+    "h": "Practise once out loud",
+    "list": [
+     "Say the script before you dial."
+    ]
+   },
+   {
+    "h": "Make the easiest call first",
+    "list": [
+     "Each call you get through makes the next one easier."
+    ]
+   },
+   {
+    "h": "Check for another route",
+    "p": [
+     "Many surgeries and services now let you book online or by message."
+    ]
+   }
+  ]
  }
 ]

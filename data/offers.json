@@ -15225,6 +15225,314 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-20",
+    "slug": "potty-steps",
+    "name": "Potty Steps",
+    "need": "I am desperately struggling with potty training and honestly I just want to give up now.",
+    "headline": "A potty-training log and plan for parents: two-tap logging of wees, accidents and refusals, reminders timed from your child's own log, and one plan everyone shares.",
+    "buyer": "Parents (18+) of toddlers mid potty training with daily accidents or refusals.",
+    "bullets": [
+      "Two taps to log a wee, poo, accident or refusal, so you can see the pattern instead of guessing.",
+      "Reminder times suggested from your child's own log.",
+      "One shared plan for partner, grandparents and nursery, plus a weekly view of dry days."
+    ],
+    "price": "$3.99/month",
+    "priceUsd": 4,
+    "priceNote": "Or $19 one-time.",
+    "reasonPrompt": "How long have you been potty training, and what goes wrong most: accidents, refusing the potty, or going backwards?",
+    "faq": [
+      {
+        "q": "Is this medical advice?",
+        "a": "No. It is a log and a plan. If you are worried about your child's health or development, talk to your doctor or health visitor."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Adults 18+. It is an independent app, not linked to any brand, course or professional body."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-20",
+      "summary": "Parents on Mumsnet describe potty training that keeps going backwards, daily accidents and sudden refusals, and say they want to give up.",
+      "wtp": "Potty Whiz (App Store): 4.6 from 1.9K ratings, Premium from $3.99/month. ",
+      "signals": [
+        {
+          "url": "https://www.mumsnet.com/talk/potty_training/4701799-potty-training-hell-help",
+          "who": "Bizziee (Mumsnet)",
+          "date": "2022-12-20",
+          "quote": "honestly I just want to give up now.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/potty_training/4701799-potty-training-hell-help",
+          "who": "Bizziee (Mumsnet)",
+          "date": "2022-12-20",
+          "quote": "He just pees himself and then tells me he needs to go.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/potty_training/4701799-potty-training-hell-help",
+          "who": "MillieA4 (Mumsnet)",
+          "date": "2023-01-01",
+          "quote": "It was a lot of cleaning and smelled terrible.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/am_i_being_unreasonable/3972306-to-be-absolutely-at-my-wits-end-with-potty-training",
+          "who": "YukoandHiro (Mumsnet)",
+          "date": "2020-07-19",
+          "quote": "We seem to make progress and then go three steps back.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/am_i_being_unreasonable/3972306-to-be-absolutely-at-my-wits-end-with-potty-training",
+          "who": "EndlessUserName (Mumsnet)",
+          "date": "2020-07-19",
+          "quote": "My first was a nightmare to train because he just didn't 'get it' for years.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/-/id1493987452",
+          "who": "Potty Whiz App Store listing",
+          "date": "2026-10-20",
+          "quote": "1.9K Ratings ... $3.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Potty Whiz, PottyPurr, the Oh Crap! method book, sticker charts.",
+      "risks": "Training is a short phase, so customers churn quickly. Nobody wrote \"I'd pay\"."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-20",
+    "slug": "soft-mouth",
+    "name": "Soft Mouth",
+    "need": "I am at my wits end with my puppy's biting.",
+    "headline": "A daily coach for puppy biting: a plan for your puppy's age, simple rules for children in the house, a one-tap bite log and a weekly chart to see it easing.",
+    "buyer": "Adult owners (18+) of puppies that nip hands, ankles, clothes and children.",
+    "bullets": [
+      "A daily plan by puppy age: chew outlets, calm-down breaks, and what to do the moment teeth come out.",
+      "Simple house rules for children, so everyone responds the same way.",
+      "One-tap bite log with times, and a weekly chart so you can see whether it's easing."
+    ],
+    "price": "$7.99/month",
+    "priceUsd": 8,
+    "priceNote": "",
+    "reasonPrompt": "How old is your puppy, and when does the biting happen most?",
+    "faq": [
+      {
+        "q": "Is this vet or behaviourist advice?",
+        "a": "No. If biting is aggressive, sudden or getting worse, speak to your vet or a qualified behaviourist."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Adults 18+. It is an independent app, not linked to any brand, course or professional body."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-20",
+      "summary": "Puppy owners on The Labrador Forum and Mumsnet describe constant nipping, bruises, and children kept apart from the dog, and some already pay for classes and sprays.",
+      "wtp": "Puppr (App Store): 4.8 from 27K ratings, $13.99/month.",
+      "signals": [
+        {
+          "url": "https://www.thelabradorforum.com/threads/the-biting-continues-any-tips-please-at-my-wits-end.21489/",
+          "who": "Katrina Johnston (The Labrador Forum)",
+          "date": "2017-10-31",
+          "quote": "He is constantly attacking me! nipping my ankles, biting my hands, jumping and snapping at my clothes.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.thelabradorforum.com/threads/the-biting-continues-any-tips-please-at-my-wits-end.21489/",
+          "who": "Jet's Mum (The Labrador Forum)",
+          "date": "2017-11-01",
+          "quote": "I can't show my legs in public at the moment due to the quite large bruises from her nips",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/the_doghouse/4327536-Puppy-biting-mostly-me",
+          "who": "adviceatthislatestage (Mumsnet)",
+          "date": "2021-08-20",
+          "quote": "It seems to be DD and myself who get the brunt of this.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/the_doghouse/4327536-Puppy-biting-mostly-me",
+          "who": "Pupster01 (Mumsnet)",
+          "date": "2021-08-20",
+          "quote": "I've got some bitter apple spray coming today",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/puppr-dog-training-tricks/id1199338956",
+          "who": "Puppr App Store listing",
+          "date": "2026-10-20",
+          "quote": "27K Ratings ... $13.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Puppr, Zigzag, puppy classes, online biting courses.",
+      "risks": "Biting usually eases with age, so the need is time-limited."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-20",
+    "slug": "one-new-bite",
+    "name": "One New Bite",
+    "need": "My child has always been a picky eater, and it is getting worse with age.",
+    "headline": "Small steps for picky eaters: start from your child's safe foods, move toward similar new ones, and track what they tried, touched, tasted and ate each week.",
+    "buyer": "Parents (18+) of toddlers and children who eat only a handful of foods.",
+    "bullets": [
+      "A list of your child's safe foods, and small steps from each toward similar new foods.",
+      "Weekly meals that always include a safe food.",
+      "One tap to log tried, touched, tasted or eaten, with a weekly count of accepted foods."
+    ],
+    "price": "$5.99/month",
+    "priceUsd": 6,
+    "priceNote": "Or $39 a year.",
+    "reasonPrompt": "How many foods does your child eat reliably, and which meal is the hardest?",
+    "faq": [
+      {
+        "q": "Is this medical or nutrition advice?",
+        "a": "No. If you are worried about your child's growth, weight or how few foods they eat, talk to your doctor."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Adults 18+. It is an independent app, not linked to any brand, course or professional body."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-20",
+      "summary": "Parents on Mumsnet describe picky eating that gets worse with age, children who would rather go hungry, and dinner-time battles that end in tears. Paid picky-eating courses already sell.",
+      "wtp": "Feeding Littles toddler course: $69. Kids Eat in Color and Solid Starts also sell paid plans.",
+      "signals": [
+        {
+          "url": "https://www.mumsnet.com/talk/preteens/3978803-Picky-resistant-eater-10yo-DS",
+          "who": "Brunionfire (Mumsnet)",
+          "date": "2020-07-26",
+          "quote": "has always been a picky eater but it’s getting worse with age.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/preteens/3978803-Picky-resistant-eater-10yo-DS",
+          "who": "BlusteryLake (Mumsnet)",
+          "date": "2020-07-26",
+          "quote": "he would rather be hungry than eat something he doesn't want to.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/parenting/131222-constant-dinner-time-battle-ends-in-tears",
+          "who": "bagpussinbootsmice (Mumsnet)",
+          "date": "2005-12-18",
+          "quote": "I get so frustrated having cooked then she won't eat.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.feedinglittles.com/toddler-course",
+          "who": "Feeding Littles toddler course page",
+          "date": "2026-10-20",
+          "quote": "$69",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Feeding Littles, Kids Eat in Color, Solid Starts, feeding therapists.",
+      "risks": "Some extreme cases need medical help; the page points parents to their doctor. Nobody wrote \"I'd pay\"."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-20",
+    "slug": "call-ready",
+    "name": "Call Ready",
+    "need": "Making phone calls makes me so anxious that I avoid them, even to make appointments.",
+    "headline": "Get through the phone calls you keep putting off: a short script for each call, practice runs, and a list of calls you've made so it gets easier.",
+    "buyer": "Adults who dread phone calls and put off appointments and errands because of them.",
+    "bullets": [
+      "A short script for the call you need to make: what to say first, what they'll ask, what to have ready.",
+      "Practice the call out loud before you dial.",
+      "A list of the calls you've made, so you can see them adding up."
+    ],
+    "price": "$4.99/month",
+    "priceUsd": 5,
+    "priceNote": "",
+    "reasonPrompt": "Which call have you been putting off, and what's the hardest part: dialling, what to say, or being asked something you don't expect?",
+    "faq": [
+      {
+        "q": "Is this therapy?",
+        "a": "No. It's a practice and script tool. If anxiety is affecting your life a lot, talk to your doctor."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Adults 18+. It is an independent app, not linked to any brand, course or professional body."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-20",
+      "summary": "People on Mumsnet say they hate phone calls so much they avoid booking appointments; one has paid someone online to make a call for them.",
+      "wtp": "A Mumsnet poster has paid someone online to make a call for them. murmur AI practice calls (App Store): 32 ratings, $14.99/month (thin).",
+      "signals": [
+        {
+          "url": "https://www.mumsnet.com/talk/am_i_being_unreasonable/4666923-to-hate-making-phone-calls",
+          "who": "familyissues12345 (Mumsnet)",
+          "date": "2022-10-31",
+          "quote": "It's so bad I have avoided making doctors appointments",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/am_i_being_unreasonable/4666923-to-hate-making-phone-calls",
+          "who": "asblindasabat (Mumsnet)",
+          "date": "2022-10-31",
+          "quote": "I’m even so nervous whilst on the phone that my voice starts to go all shaky!",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/am_i_being_unreasonable/4666923-to-hate-making-phone-calls",
+          "who": "Tired2tired (Mumsnet)",
+          "date": "2022-10-31",
+          "quote": "Most get outsourced to dh but I've paid a random woman online to ring up and pretend to be me before",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/_chat/4631779-hate-hate-hate-making-phone-calls",
+          "who": "ALongHardWinter (Mumsnet)",
+          "date": "2022-09-15",
+          "quote": "I absolutely hate phoning to make appointments.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/-/id6755495030",
+          "who": "murmur: ai practice calls App Store listing",
+          "date": "2026-10-20",
+          "quote": "32 Ratings ... Communication Skills Pro Monthly $14.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Practice-call apps, booking online where possible, asking someone else to call.",
+      "risks": "Online booking removes some calls; paid signal is thin."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
