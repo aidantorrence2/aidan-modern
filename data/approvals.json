@@ -2281,6 +2281,44 @@
       "status": "pending",
       "decided": null,
       "note": ""
+    },
+    {
+      "id": "offers:start-task:2026-10-20:josh-hinds",
+      "kind": "email",
+      "source": "codex:real-change-pilots",
+      "title": "One email to Josh Hinds: task-start interest test",
+      "summary": "Ask the GetMotivation founder to consider sharing the existing free, nonbinding task-start interest page with adults. Exact email attached; no live pilot promised, followup, spend or post.",
+      "payload": {
+        "project_id": "appgprj_6ad56c0398f4819187d2d7870ae70ac4",
+        "catalog_id": 81,
+        "action": "Send exactly one first-contact business email to Josh Hinds once, only after approval and fresh preflight. This requests consideration of sharing a live interest page, not a booking or promise of delivery.",
+        "messages": [
+          {
+            "to": "jhinds@getmotivation.com",
+            "subject": "Finding adults who want help starting a task",
+            "offer": "start-the-task",
+            "organization": "GetMotivation / Josh Hinds / Motivation Point",
+            "source": "https://www.getmotivation.com/contact.html",
+            "fit_source": "https://www.getmotivation.com/",
+            "body": "Hi Josh,\n\nI'm Aidan. Your site and newsletter help people turn goals into action, which seems a good fit for an idea I'm testing.\n\nI'm exploring a two-week group for adults who keep putting off a task. The idea is to choose one small next step and start it during scheduled work sessions with other people. The group isn't running yet.\n\nWould you consider sharing this page with adults aged 18 or over who might be interested?\n\nSignup is free and nonbinding.\nhttps://real-change-pilots-aidan-2026.aidantorrence.chatgpt.site/start-the-task?utm_source=getmotivation&utm_medium=partner_email&utm_campaign=start_task_interest_1\n\nThanks,\nAidan Torrence"
+          }
+        ],
+        "limits": "One exact plain-text email only. No followup/reply, article/guest-post submission, newsletter subscription, public/social/Instagram post, participant/client/member lists or direct contact, paid placement, facilitation booking/seats/start-date promise/payment, deployment/build or terms acceptance. Not ADHD treatment or medical recruitment. All actual pilot delivery/participant scheduling needs separate scope review.",
+        "preflight": {
+          "checked_at": "2026-10-20T07:00:13Z",
+          "identity": "Official contact page names Josh Hinds as founder and publishes jhinds(at)getmotivation.com for general inquiries; site currently publishes goal/action material and newsletter. sayhi is an alternate sameorganization, not another prospect.",
+          "gmail": "All-history exact address/domain/name search0/no nextpage; combined sent-history search0. No existing campaign ledger action, suppression/denial/uncertainty or direct correspondence found.",
+          "public_page": "Live start-the-task page checked read-only: proposed two-week group, early concept, no preset price/payment, free nonbinding signup, required adult and offer-specific followup consent, timing/readiness, privacy/withdrawal. No form submitted; backend end-to-end persistence not tested.",
+          "execute_only_after": "Refresh exact decision/note/payload, recipient/organization Gmail and all receipts, tracked page and suppression. Persist durable sameZIP claim before any approved send."
+        },
+        "why_now": "Activate a distinct existing prepared offer via one prior research reserve while dating/friendship batch remains pending; bounded single inquiry rather than another near-duplicate phone/friendship batch. Does not bypass any held/denied action.",
+        "capture_and_delivery": "Existing approved page only, no copy/source changes. No need to build software to assess interest. No actual session slots/capacity are promised; real delivery requires review before participant enrollment."
+      },
+      "created": "2026-10-20T07:01:03Z",
+      "expires": "2026-10-23T07:01:03Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
     }
   ]
 }
