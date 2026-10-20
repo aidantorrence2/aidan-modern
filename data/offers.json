@@ -18531,6 +18531,251 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-20",
+    "slug": "keep-up",
+    "name": "Keep Up",
+    "need": "I'm tired of being dropped on group rides.",
+    "headline": "Keep getting dropped on group rides? Log where you lose the wheel (hills, surges, the flat) and follow a short weekly plan aimed at that spot.",
+    "buyer": "Adult recreational cyclists (18+) who ride group rides.",
+    "bullets": [
+      "A quick ride log: where you got dropped and why (a climb, a surge, a long flat pull).",
+      "A short weekly plan aimed at that weakness, around the rides you already do.",
+      "Group-ride tips: where to sit, when to save energy, how to get back on."
+    ],
+    "price": "$3.99/month",
+    "priceUsd": 4,
+    "priceNote": "Or $24 a year.",
+    "reasonPrompt": "Where do you usually get dropped, and how many times a week do you ride?",
+    "faq": [
+      {
+        "q": "Is this a training plan for racing?",
+        "a": "No. It's for recreational riders who want to keep up on group rides. If you have a health condition, check with a doctor before training harder."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Adults 18+. It is an independent app, not linked to any club, brand or training platform."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-20",
+      "summary": "Cyclists on road.cc and the TrainerRoad forum say they keep getting dropped on club and group rides, and some have quit group rides because of it.",
+      "wtp": "TrainerRoad (App Store): 21K ratings, $21.99 a month.",
+      "signals": [
+        {
+          "url": "https://road.cc/forums/topic/75514-getting-dropped-club-runs",
+          "who": "joeegg (road.cc)",
+          "date": "2013-02",
+          "quote": "Lasted about 6 months as i was tired of being dropped.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://road.cc/forums/topic/75514-getting-dropped-club-runs",
+          "who": "Gary rb (road.cc)",
+          "date": "2013-02",
+          "quote": "Has any one experinced being dropped on club runs",
+          "seen": "opened"
+        },
+        {
+          "url": "https://road.cc/forums/topic/75514-getting-dropped-club-runs",
+          "who": "Adey (road.cc)",
+          "date": "2013-02-02",
+          "quote": "the 'faster' guys will tend to pull away and leave us 'slower' ones behind",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.trainerroad.com/forum/t/getting-dropped-on-group-rides/95369?page=2",
+          "who": "Deleteme (TrainerRoad forum)",
+          "date": "2024-08",
+          "quote": "And I had a mechanical, and everyone still dropped me.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.trainerroad.com/forum/t/getting-dropped-on-group-rides/95369?page=2",
+          "who": "eddie (TrainerRoad forum)",
+          "date": "2024-08",
+          "quote": "I know the feeling of being the little guy out on group rides.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/-/id934224107",
+          "who": "TrainerRoad App Store listing",
+          "date": "2026-10-20",
+          "quote": "21K Ratings ... $21.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "TrainerRoad, Zwift, coaches, club beginner rides.",
+      "risks": "Crowded training-app market; road.cc thread is from 2013."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-20",
+    "slug": "door-calm",
+    "name": "Door Calm",
+    "need": "We could never get him to stop barking when someone knocked at the door.",
+    "headline": "Dog goes wild at the doorbell? Five minutes of daily doorbell practice, a calm spot to send them to, and a log of each knock so you can see it easing.",
+    "buyer": "Adult dog owners whose dog barks at the doorbell, knocks and visitors.",
+    "bullets": [
+      "Five-minute daily practice with a recorded doorbell or knock, starting quiet.",
+      "Teach a 'go to your spot' routine for when someone arrives.",
+      "A one-tap log of each knock and how long the barking lasted."
+    ],
+    "price": "$3.99/month",
+    "priceUsd": 4,
+    "priceNote": "Or $19 one-time.",
+    "reasonPrompt": "What does your dog do when the doorbell goes, and what have you tried?",
+    "faq": [
+      {
+        "q": "Does it replace a trainer?",
+        "a": "No. It's a practice plan and log. If your dog is aggressive with visitors, see a qualified trainer or behaviourist."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Adults 18+. It is an independent app, not linked to any trainer, behaviourist or pet brand."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-20",
+      "summary": "Dog owners on Mumsnet describe dogs that bark every time someone knocks, even after sessions with trainers and behaviourists.",
+      "wtp": "Owners have paid trainers and a qualified behaviourist. Dogo (App Store): 17K ratings, subscriptions from $3.99.",
+      "signals": [
+        {
+          "url": "https://www.mumsnet.com/talk/the_doghouse/5142323-tips-to-get-a-middle-aged-dog-to-stop-barking-when-the-door-goes",
+          "who": "C0rdeliaChase (Mumsnet)",
+          "date": "2024-08-14",
+          "quote": "the one thing we could never get him to stop doing was to stop him barking when someone knocked at the door.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/the_doghouse/5142323-tips-to-get-a-middle-aged-dog-to-stop-barking-when-the-door-goes",
+          "who": "Womblesgash (Mumsnet)",
+          "date": "2024-08-14",
+          "quote": "I had a trainer do some sessions but she still barks",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/the_doghouse/5142323-tips-to-get-a-middle-aged-dog-to-stop-barking-when-the-door-goes",
+          "who": "MontyDonsBlueScarf (Mumsnet)",
+          "date": "2024-08-14",
+          "quote": "despite input from a qualified behaviourist",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/the_doghouse/2106632-Need-help-with-my-dog-barking-threats-from-housing-over-it",
+          "who": "LithaR (Mumsnet)",
+          "date": "2014-06-14",
+          "quote": "She only barks now when strangers come to the door.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/the_doghouse/2106632-Need-help-with-my-dog-barking-threats-from-housing-over-it",
+          "who": "brittanyfairies (Mumsnet)",
+          "date": "2014-06-14",
+          "quote": "it drives me crazy when someone knocks at the door and he barks.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/app/id1153294767",
+          "who": "Dogo App Store listing",
+          "date": "2026-10-20",
+          "quote": "17K Ratings ... $3.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Trainers, behaviourists, general dog apps, bark deterrents.",
+      "risks": "Strong evidence all on Mumsnet; general dog apps include bark lessons."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-20",
+    "slug": "speech-start",
+    "name": "Speech Start",
+    "need": "I'm getting married soon and have no idea what I'm meant to say in my speech.",
+    "headline": "Writing a wedding speech and don't know where to start? Answer a few questions, get a simple structure, and build your speech one section at a time.",
+    "buyer": "Adults (18+) giving a wedding speech: best man, maid of honour, groom or parent.",
+    "bullets": [
+      "A few questions about the couple and your stories, to get you started.",
+      "A simple structure for your role, with a length guide.",
+      "Build it one section at a time, then read it aloud with a timer."
+    ],
+    "price": "$14",
+    "priceUsd": 14,
+    "priceNote": "Per speech.",
+    "reasonPrompt": "Whose wedding is it, what's your role, and when is the day?",
+    "faq": [
+      {
+        "q": "Does it write the speech for me?",
+        "a": "It helps you write your own, in your own words, with a structure and prompts."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Adults 18+. It is an independent app, not linked to any wedding venue, planner or speechwriting service."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-20",
+      "summary": "Grooms and best men on Singletrack say they have no idea what to say, or keep putting off writing, and a best-man speechwriting gig on Fiverr has over 1,100 orders.",
+      "wtp": "A Fiverr best-man speech gig from $30 shows 1,100 orders and 100+ reviews.",
+      "signals": [
+        {
+          "url": "https://singletrackworld.com/forum/off-topic/groom-speech/",
+          "who": "firestarter (Singletrack)",
+          "date": "2009-10-02",
+          "quote": "christ im getting wed in 25 days and have no idea what im meant to say",
+          "seen": "opened"
+        },
+        {
+          "url": "https://singletrackworld.com/forum/off-topic/groom-speech/",
+          "who": "kimbers (Singletrack)",
+          "date": "2009-10-02",
+          "quote": "gettin married in 8 days i have no idea",
+          "seen": "opened"
+        },
+        {
+          "url": "https://singletrackworld.com/forum/off-topic/groom-speech/",
+          "who": "ollie (Singletrack)",
+          "date": "2009-10-02",
+          "quote": "I tried writing one for weeks but everytime I sat down and started the nerves got to me",
+          "seen": "opened"
+        },
+        {
+          "url": "https://singletrackworld.com/forum/off-topic/best-mans-speech-inspire-me/",
+          "who": "Dancake (Singletrack)",
+          "date": "2012-08-21",
+          "quote": "What makes a good speech and what makes a Howler? What do people really want to hear?",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.fiverr.com/lindsay_pc/write-an-awesome-best-man-speech",
+          "who": "Fiverr best man speech gig",
+          "date": "2026-10-20",
+          "quote": "1,100 orders ... $30",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Speechwriters, Fiverr gigs, templates, free articles.",
+      "risks": "One-off need; free templates are everywhere; forum posts are old."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

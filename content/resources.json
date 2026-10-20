@@ -6515,5 +6515,122 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "keep-getting-dropped-on-group-rides",
+  "offer": "keep-up",
+  "title": "Keep getting dropped on group rides? Find where you lose the wheel",
+  "description": "Dropped on hills, surges or the flat? Note where it happens, ride smarter in the group, and train that one weakness each week.",
+  "intro": "Most riders get dropped at the same kind of moment each ride. Knowing which one tells you what to work on.",
+  "sections": [
+   {
+    "h": "Note where you get dropped",
+    "list": [
+     "A climb, a sudden surge, or a long fast stretch on the flat. Write it down after each ride."
+    ]
+   },
+   {
+    "h": "Sit in, don't pull",
+    "list": [
+     "Stay near the back third of the group and take short turns on the front, if any."
+    ]
+   },
+   {
+    "h": "Train the weak spot",
+    "list": [
+     "For climbs, add hill repeats. For surges, short hard efforts. For the flat, longer steady efforts."
+    ]
+   },
+   {
+    "h": "Eat and drink",
+    "list": [
+     "Running out of energy late in a ride is a common reason for getting dropped."
+    ]
+   },
+   {
+    "h": "Ask about the pace",
+    "p": [
+     "Many clubs run a slower group. There's no shame in starting there and moving up."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "dog-barks-at-the-doorbell",
+  "offer": "door-calm",
+  "title": "Dog goes wild at the doorbell? A five-minute daily doorbell practice",
+  "description": "Barking every time someone knocks? Practise with a recorded doorbell, teach a go-to-your-spot routine, and reward calm.",
+  "intro": "Doorbell barking is common and often gets worse because visitors come in while the dog is still barking. Short daily practice helps.",
+  "sections": [
+   {
+    "h": "Start quiet",
+    "list": [
+     "Play a recording of your doorbell at low volume and reward your dog for staying calm."
+    ]
+   },
+   {
+    "h": "Teach a spot",
+    "list": [
+     "Teach your dog to go to a bed or mat when the bell rings, and reward them there."
+    ]
+   },
+   {
+    "h": "Turn it up slowly",
+    "list": [
+     "Raise the volume, then try real knocks from family members."
+    ]
+   },
+   {
+    "h": "Practise with visitors",
+    "list": [
+     "Ask friends to help: ring, wait for calm, then come in."
+    ]
+   },
+   {
+    "h": "Get help if needed",
+    "p": [
+     "If your dog is aggressive with visitors, see a qualified trainer or behaviourist."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "how-to-write-a-wedding-speech",
+  "offer": "speech-start",
+  "title": "How to write a wedding speech when you don't know where to start",
+  "description": "No idea what to say? Use a simple five-part structure, pick one or two stories, keep it to five minutes, and practise it aloud.",
+  "intro": "Most wedding speeches work with the same simple shape. Once you have it, the writing gets much easier.",
+  "sections": [
+   {
+    "h": "Use a simple structure",
+    "list": [
+     "Thank people, say who you are, tell one or two stories, say something kind about the couple, then raise a toast."
+    ]
+   },
+   {
+    "h": "Pick one or two stories",
+    "list": [
+     "One good story beats a list of jokes. Keep it kind: avoid anything that embarrasses the couple."
+    ]
+   },
+   {
+    "h": "Keep it short",
+    "list": [
+     "Around five minutes is plenty, roughly 600 to 700 words."
+    ]
+   },
+   {
+    "h": "Write it, then cut it",
+    "list": [
+     "Write a first draft quickly, then cut anything that isn't needed."
+    ]
+   },
+   {
+    "h": "Practise out loud",
+    "p": [
+     "Read it aloud a few times with a timer. Print it in large type for the day."
+    ]
+   }
+  ]
  }
 ]
