@@ -14578,6 +14578,152 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-20",
+    "slug": "spider-ease",
+    "name": "Spider Ease",
+    "need": "I'm a bit embarrassed, but I just can't deal with spiders. I can't even be in the same room as one.",
+    "headline": "A practice app for adults afraid of spiders: a self-paced ladder from the word to drawings, photos, videos and a spider under a glass, with a fear rating at each step.",
+    "buyer": "Adults (18+) whose fear of spiders stops them using rooms, gardens or going on trips.",
+    "bullets": [
+      "A self-paced ladder: the word, then drawings, photos, short videos, and finally a real spider under a glass.",
+      "Rate your fear from 0 to 10 at each step and move on only when it drops.",
+      "A spider-season plan for the autumn months when they come indoors."
+    ],
+    "price": "$9.99 one-time",
+    "priceUsd": 10,
+    "priceNote": "Pay once, the same price as the spider-fear apps on the App Store.",
+    "reasonPrompt": "What does your fear of spiders stop you doing?",
+    "faq": [
+      {
+        "q": "Is this therapy?",
+        "a": "No. Spider Ease is an independent self-help tool for adults 18+, not therapy or medical advice. If your fear seriously affects your life, a doctor or therapist can help."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-20",
+      "summary": "Adults on two Mumsnet threads say they can't deal with spiders, can't stay in a room with one, or check their bedroom walls every night, and one says a spider-fear course completely changed their life. Spider-fear apps already sell.",
+      "wtp": "ZeroPhobia - Fear of Spiders (App Store) sells for $9.99. Thin signal: it shows no rating count.",
+      "signals": [
+        {
+          "url": "https://www.mumsnet.com/talk/_chat/4881043-spider-panic",
+          "who": "Cinai (Mumsnet)",
+          "date": "2023-08-26",
+          "quote": "I just can't deal with spiders.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/_chat/4881043-spider-panic",
+          "who": "Blueglazzier (Mumsnet)",
+          "date": "2023-08-26",
+          "quote": "I'm paranoid I scan my bedroom walls each night",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/other_subjects/1307540-Curing-fear-of-spiders",
+          "who": "soymama (Mumsnet)",
+          "date": "2011-09-24",
+          "quote": "But I can't even be in the same room as a house spider!",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/other_subjects/1307540-Curing-fear-of-spiders",
+          "who": "Marrick (Mumsnet)",
+          "date": "2011-09-25",
+          "quote": "I did the same course 3 years ago and it completely changed my life",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/-/id1498749494",
+          "who": "ZeroPhobia - Fear of Spiders App Store listing",
+          "date": "2026-10-20",
+          "quote": "$9.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "ZeroPhobia, spider-fear courses at zoos, therapy for phobias.",
+      "risks": "The paid app shows no ratings, so the WTP is thin. All forum evidence is on Mumsnet."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-20",
+    "slug": "dream-recall",
+    "name": "Dream Recall",
+    "need": "I just can't seem to remember my dreams, even after trying for weeks.",
+    "headline": "Capture dreams in 30 seconds when you wake, keep a weekly recall log, spot dream signs in your own entries, and test one technique at a time for two weeks.",
+    "buyer": "Adults (18+) who can't remember their dreams, or who have tried lucid dreaming for weeks without success.",
+    "bullets": [
+      "Capture a dream in 30 seconds on waking, by voice or a few words, before it fades.",
+      "A weekly recall log, so you can see whether you are remembering more.",
+      "Dream signs drawn from your own entries, and one technique at a time, tracked for two weeks."
+    ],
+    "price": "$4.99/month",
+    "priceUsd": 5,
+    "priceNote": "Or $29 a year. Below the dream-journal apps' plans ($49.99 a year).",
+    "reasonPrompt": "How often do you remember a dream now, and what have you tried?",
+    "faq": [
+      {
+        "q": "Will this make me lucid dream?",
+        "a": "No promises. Dream Recall is an independent journaling tool for adults 18+, not medical or sleep advice. If you have trouble sleeping, talk to a doctor."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-20",
+      "summary": "Members of the LD4all dream forum say they can't remember their dreams, have trouble recalling them, or find lucid dreaming frustrating after years of trying. Dream-journal apps already sell subscriptions.",
+      "wtp": "Dream Journal & Lucid Dreaming (App Store): 4.7 from 64 ratings, $14.99 to $19.99 a month or $49.99 a year. Thin signal: small rating count.",
+      "signals": [
+        {
+          "url": "https://community.ld4all.com/t/i-just-cant-remember-my-dreams-and-ive-done-so-much-im-so/33198",
+          "who": "defylogic (LD4all)",
+          "date": "2010-08-10",
+          "quote": "FRUSTRATED!! i just cant seem to remember my dreams",
+          "seen": "opened"
+        },
+        {
+          "url": "https://community.ld4all.com/t/i-just-cant-remember-my-dreams-and-ive-done-so-much-im-so/33198",
+          "who": "Vampirism45 (LD4all)",
+          "date": "2010-08-10",
+          "quote": "I hadn't recalled a dream in over a year",
+          "seen": "opened"
+        },
+        {
+          "url": "https://community.ld4all.com/t/my-frustrating-quest-for-lucid-dreams/13867",
+          "who": "Cygnus (LD4all)",
+          "date": "2005-05-29",
+          "quote": "True lucid dreams seem far away for me",
+          "seen": "opened"
+        },
+        {
+          "url": "https://community.ld4all.com/t/my-frustrating-quest-for-lucid-dreams/13867",
+          "who": "Xetrov (LD4all)",
+          "date": "2005-05-30",
+          "quote": "I have trouble recalling dreams.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/-/id1571288163",
+          "who": "Dream Journal & Lucid Dreaming App Store listing",
+          "date": "2026-10-20",
+          "quote": "64 Ratings ... Yearly subscription $49.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Dream journal apps, paper journals, lucid-dreaming books.",
+      "risks": "Posts are from 2005 and 2010 on one forum; the paid apps have small rating counts."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
