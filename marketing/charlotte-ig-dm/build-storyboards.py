@@ -2,8 +2,8 @@
 """Builds storyboards.html (80 ad concepts) for the Charlotte free-shoot IG DM campaign.
 
 Usage: python3 marketing/charlotte-ig-dm/build-storyboards.py [out.html]
-Photos come only from the portfolio tiers (data/portfolio-tiers.json):
-A = tier-2, B = tier-1, C = tier0. S0 = Aidan's mirror selfie.
+Photos come only from public/images/tier_candidates (keys T<n>, see TC in concepts.py).
+That folder is local and untracked; set TIER_DIR to point elsewhere. S0 = Aidan's mirror selfie.
 """
 import base64, html, json, os, re, sys
 
@@ -12,8 +12,7 @@ ROOT = os.path.abspath(os.path.join(HERE, '..', '..'))
 exec(open(os.path.join(HERE, 'concepts.py')).read())  # defines FAM, C
 PLAN = open(os.path.join(HERE, 'plan.html')).read() if os.path.exists(os.path.join(HERE, 'plan.html')) else ''
 
-tiers = json.load(open(os.path.join(ROOT, 'data/portfolio-tiers.json')))
-POOL = {'A': [x[0] for x in tiers['tier-2']], 'B': [x[0] for x in tiers['tier-1']], 'C': [x[0] for x in tiers['tier0']]}
+TIER_DIR = os.environ.get('TIER_DIR', os.path.join(ROOT, 'public/images/tier_candidates'))
 
 # The first test: 10 ads in one ad set.
 LAUNCH = ['01', '05', '14', '17', '30', '31', '49', '54', '59', '67']
@@ -23,27 +22,30 @@ _cache = {}
 def img(key):
     if key in _cache:
         return _cache[key]
+    from PIL import Image, ImageOps
+    import io
     if key == 'S0':
-        from PIL import Image
-        import io
-        im = Image.open(os.path.join(ROOT, 'public/images/self/aidan-udaipur-mirror-01.jpg')).convert('RGB')
-        im.thumbnail((256, 384))
-        buf = io.BytesIO(); im.save(buf, 'WEBP', quality=70)
-        data = buf.getvalue()
+        im = Image.open(os.path.join(ROOT, 'public/images/self/aidan-udaipur-mirror-01.jpg'))
     else:
-        name = POOL[key[0]][int(key[1:])]
-        data = open(os.path.join(ROOT, f'public/images/opt/256/{name}.webp'), 'rb').read()
+        stem, rot = TC[key]
+        im = ImageOps.exif_transpose(Image.open(os.path.join(TIER_DIR, stem + '.JPG')))
+        im.draft('RGB', (1200, 1200))
+        im = im.rotate(rot, expand=True)
+    im = im.convert('RGB')
+    im.thumbnail((256, 384))
+    buf = io.BytesIO(); im.save(buf, 'WEBP', quality=72)
+    data = buf.getvalue()
     _cache[key] = 'data:image/webp;base64,' + base64.b64encode(data).decode()
     return _cache[key]
 
 def keys_in(spec):
     # 'A0…A46' → a few frames from the range; 'A7,A26' → list; 'T' → text card
-    m = re.match(r'([ABC])(\d+)…[ABC](\d+)', spec)
+    m = re.match(r'(T)(\d+)…T(\d+)', spec)
     if m:
         lo, hi = int(m.group(2)), int(m.group(3))
         step = max(1, (hi - lo) // 3)
         return [f'{m.group(1)}{i}' for i in range(lo, hi + 1, step)][:4]
-    return re.findall(r'\b([ABC]\d+|S0)\b', spec)
+    return re.findall(r'\b(T\d+|S0)\b', spec)
 
 def frame(slot, spec, overlay, ratio):
     ks = keys_in(spec)
@@ -90,7 +92,8 @@ fam_chips = ''.join(f'<button class="f" data-k="fam" data-v="{k}">{html.escape(v
 fam_list = ''.join(f'<li><b>{html.escape(v[0])}</b> {html.escape(v[1])}</li>' for v in FAM.values())
 n_ready = sum(1 for c in C if c[8] == 'ready')
 
-page = f'''<title>Charlotte Free-Shoot Ads</title>
+page = f'''<meta charset="utf-8">
+<title>Charlotte Free-Shoot Ads</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
@@ -172,7 +175,7 @@ dd.warn {{ color: var(--warn); }}
 <div class="wrap">
   <div class="edge"><span>Charlotte, NC</span><span>Instagram DM · $5/day</span><span>80 concepts · {n_ready} ready to render</span></div>
   <h1>Free portrait sessions,<br><em>Charlotte</em> casting</h1>
-  <p class="lede">Storyboards for a click-to-Instagram-Direct campaign offering free portrait sessions in Charlotte. Every frame uses photos from the portfolio tiers (A = tier −2, B = tier −1, C = tier 0). Text cards are dark frames. Nothing renders or goes live until you pick from this board.</p>
+  <p class="lede">Storyboards for a click-to-Instagram-Direct campaign offering free portrait sessions in Charlotte. Every frame uses photos from your tier_candidates folder (shot in Almaty and Paris). Grey labels under each frame name the photo key. Text cards are dark frames. Nothing renders or goes live until you pick from this board.</p>
   {PLAN}
   <section class="plan"><div><h2>13 creative families</h2><ul class="fams">{fam_list}</ul></div></section>
   <nav class="filters" aria-label="Filter concepts">
