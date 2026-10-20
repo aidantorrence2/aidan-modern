@@ -16179,6 +16179,104 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-20",
+    "slug": "spare-maker",
+    "name": "Spare Maker",
+    "need": "Sometimes I just can't pick up a spare to save my life.",
+    "headline": "For bowlers who keep leaving spares open: log each frame in two taps, see your conversion rate for every leave, and practise the line for the ones you miss.",
+    "buyer": "League and casual ten-pin bowlers who miss spares and whose average is stuck.",
+    "bullets": [
+      "Two-tap frame log by leave: 10 pin, 7 pin, splits and more.",
+      "Your conversion rate for every leave, so you know which spares cost you.",
+      "A target line for each leave, a 15-minute spare session, and a weekly chart of open frames and average."
+    ],
+    "price": "$3.99/month",
+    "priceUsd": 4,
+    "priceNote": "Or $24 a year.",
+    "reasonPrompt": "Which spare do you miss most, and what's your average now?",
+    "faq": [
+      {
+        "q": "Will it raise my average?",
+        "a": "It can't promise that. It shows which spares you miss and gives you a plan to practise them."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Adults 18+. It is an independent app, not linked to any bowling centre, league, brand or coach."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-20",
+      "summary": "Bowlers on Walter Ray Williams Jr.'s Q&A pages, AnandTech and TheSandTrap say they keep leaving 7s and 10s, are lost on the ten pin and can't convert spares.",
+      "wtp": "Thin: two AnandTech bowlers say they took bowling classes to improve. Bowling coaching and scoring apps with paid plans exist, but we could not open a rated listing.",
+      "signals": [
+        {
+          "url": "https://www.walterray.com/oldwebsite/answers2/technic17.shtml",
+          "who": "Greg (Walter Ray Williams Jr. Q&A)",
+          "date": "2007-03-29",
+          "quote": "im leaving many many 7's and 10's",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.walterray.com/oldwebsite/answers2/technic17.shtml",
+          "who": "Bret (Walter Ray Williams Jr. Q&A)",
+          "date": "2007-01-10",
+          "quote": "I'm totally lost when it comes to the infamous ten pin.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.walterray.com/oldwebsite/answers2/technic17.shtml",
+          "who": "Ron (Walter Ray Williams Jr. Q&A)",
+          "date": "2007-04-04",
+          "quote": "I suddenly seem to be missing a lot of spares",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.anandtech.com/threads/anyone-care-about-bowling-10-pin-obviously.2240009/page-2",
+          "who": "Possessed Freak (AnandTech)",
+          "date": "2012-04-19",
+          "quote": "sometimes I just can't pick up a spare to save my life",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.anandtech.com/threads/anyone-care-about-bowling-10-pin-obviously.2240009/page-2",
+          "who": "ImpulsE69 (AnandTech)",
+          "date": "2012-04-18",
+          "quote": "for the most part still suck",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.anandtech.com/threads/anyone-care-about-bowling-10-pin-obviously.2240009/",
+          "who": "OVerLoRDI (AnandTech)",
+          "date": "2012-04-18",
+          "quote": "My final year at college has afforded me time to take bowling classes.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://thesandtrap.com/forums/topic/20869-anybody-bowl/?page=2",
+          "who": "TCCcaddie (TheSandTrap)",
+          "date": "2009-02",
+          "quote": "i don't think i've broke 150 in a good long while.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://thesandtrap.com/forums/topic/20869-anybody-bowl/?page=2",
+          "who": "ERC7.5 (TheSandTrap)",
+          "date": "2009-02",
+          "quote": "Missed a 10 pin and chopped a 3-6-10 in the first game.",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Bowling scoring apps with paid tiers, coaching, league practice.",
+      "risks": "Evidence is from 2007–2012, and the paid signal is thin."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

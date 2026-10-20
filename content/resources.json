@@ -5501,5 +5501,44 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "cant-pick-up-the-10-pin",
+  "offer": "spare-maker",
+  "title": "Can't pick up the 10 pin? A simple spare system for league bowlers",
+  "description": "Leaving 7s and 10s open? Track which spares you miss, use a cross-lane line for corner pins, and practise the leaves that cost you most.",
+  "intro": "Most open frames come from a few leaves. A simple system and focused practice convert more of them.",
+  "sections": [
+   {
+    "h": "Track your leaves",
+    "list": [
+     "Note each spare leave and whether you made it. After a few games you'll see which ones cost you."
+    ]
+   },
+   {
+    "h": "Shoot corner pins cross-lane",
+    "list": [
+     "For the 10 pin, a right-hander stands left and throws across the lane, and the reverse for the 7 pin. That gives you the widest angle."
+    ]
+   },
+   {
+    "h": "Throw straighter at spares",
+    "list": [
+     "Many bowlers use a plastic spare ball, or a straighter release, so the lane oil affects the ball less."
+    ]
+   },
+   {
+    "h": "Practise the leaves you miss",
+    "list": [
+     "Spend 15 minutes of practice on your two worst leaves only."
+    ]
+   },
+   {
+    "h": "Watch your open frames",
+    "p": [
+     "Counting open frames per game is a simple way to see whether your spares are improving."
+    ]
+   }
+  ]
  }
 ]
