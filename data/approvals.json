@@ -1974,7 +1974,9 @@
           "gmail": "Combined address/domain/name all-history search returned only unrelated 2024 newsletter phrase match; no campaign/history collision. Exact-recipient search repeated before execution.",
           "dedupe": "No collision with18 completed, Dateable uncertain, Dear Nina blocked, CityGirl held or denied Luvvly.",
           "landing_pages": "Both exact tracked URLs HTTP200; correct offer heading, form,18+ and followup consent, early-interest availability; no test signup submitted."
-        }
+        },
+        "result": "Completed exactly2 approved first-contact emails. We Met IRL: SENT message/thread1a157127601aaeba. Lonely Girls Club: SENT message/thread1a15712a668c8305. Read back both exact to/subject/body with SENT label. No followups, attachments, posts, spending, terms or deployment. Customer leads are not inferred from sends.",
+        "result_at": "2026-10-20T02:10:18Z"
       },
       "created": "2026-10-20T02:07:38Z",
       "expires": "2026-10-23T02:07:38Z",
