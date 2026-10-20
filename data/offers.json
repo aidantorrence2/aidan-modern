@@ -16620,6 +16620,126 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-20",
+    "slug": "nose-up",
+    "name": "Nose Up",
+    "need": "My dog's scavenging is getting out of control. We've tried lots of things over the years but nothing seems to work.",
+    "headline": "Your dog hoovers up everything on walks and 'leave it' only works at home? Five-minute daily drills that build a leave-it and drop that hold up outside.",
+    "buyer": "Adult owners of food-obsessed dogs (often Labradors and retrievers) who eat rubbish, poo, apples or stones on walks, who've tried treats and training cues, and who are tired of keeping the dog on lead or prising things out of its mouth.",
+    "bullets": [
+      "A step-by-step ladder that starts with 'leave it' in the kitchen and moves it outdoors, one small step at a time, so the cue still works on a real walk.",
+      "A 'swap' and 'drop' routine for the times your dog grabs something before you spot it, so you're not chasing them or prying their jaws open.",
+      "A quick walk log: note what your dog went for and where, so you can see which routes and times of day are the problem."
+    ],
+    "price": "$4.99/month",
+    "priceUsd": 5,
+    "priceNote": "",
+    "reasonPrompt": "What does your dog most often grab or eat on walks, and what have you already tried to stop it?",
+    "faq": [
+      {
+        "q": "Who makes Nose Up?",
+        "a": "Nose Up is an independent app for adults 18+. It isn't affiliated with or endorsed by any dog-training brand, breed club, forum or muzzle maker."
+      },
+      {
+        "q": "Is this veterinary advice?",
+        "a": "No. Nose Up is a training and habit tool, not veterinary care. If your dog has swallowed something worrying or seems unwell, contact your vet."
+      },
+      {
+        "q": "Do I need a clicker or special equipment?",
+        "a": "No. You need your dog, some treats they love and a few minutes a day. A lead is useful for the outdoor steps."
+      },
+      {
+        "q": "My dog only ignores me with food outside. Is that what this is for?",
+        "a": "Yes. Nose Up is built around taking a cue your dog already knows indoors and practising it step by step in harder, more tempting places."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-20",
+      "summary": "On the My Labrador Friends forum (opened with plain curl), several named owners in different threads between 2018 and 2022 describe the same thing: scavenging on walks that years of treats and training cues haven't fixed. Some have given up and moved to on-lead walks or muzzles.",
+      "wtp": "Owners bought anti-scavenging muzzles (one about €25). Dogo dog-training app (App Store): 17K ratings, subscriptions from $3.99 to $99.99.",
+      "signals": [
+        {
+          "url": "https://mylabradorfriends.com/threads/extreme-scavenging.1763/",
+          "who": "Hollysdad (My Labrador Friends)",
+          "date": "2019-02-25",
+          "quote": "Holly's scavenging is getting out of control.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://mylabradorfriends.com/threads/extreme-scavenging.1763/",
+          "who": "Hollysdad (My Labrador Friends)",
+          "date": "2019-02-25",
+          "quote": "We've tried just about everything else over the last 6 years.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://mylabradorfriends.com/threads/extreme-scavenging.1763/",
+          "who": "Granca (My Labrador Friends)",
+          "date": "2019-02-25",
+          "quote": "I haven’t found the answer yet, despite training cues, treats, etc.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://mylabradorfriends.com/threads/extreme-scavenging.1763/",
+          "who": "SteffiS (My Labrador Friends)",
+          "date": "2019-02-25",
+          "quote": "Ripple seems to spend his entire walk desperately hunting for poo or dead things",
+          "seen": "opened"
+        },
+        {
+          "url": "https://mylabradorfriends.com/threads/extreme-scavenging.1763/page-2",
+          "who": "Emily_Babbelhund (My Labrador Friends)",
+          "date": "2019-02-25",
+          "quote": "Getting them to stop is still a total puzzle to me.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://mylabradorfriends.com/threads/muzzles.453/",
+          "who": "Selina27 (My Labrador Friends)",
+          "date": "2018-08-03",
+          "quote": "Oh how I wish I'd taught her not to eat off the ground!",
+          "seen": "opened"
+        },
+        {
+          "url": "https://mylabradorfriends.com/threads/muzzles.453/",
+          "who": "Selina27 (My Labrador Friends)",
+          "date": "2018-08-02",
+          "quote": "I've decided to train Cassie to accept a muzzle and have bought the Baskerville one",
+          "seen": "opened"
+        },
+        {
+          "url": "https://mylabradorfriends.com/threads/muzzle.4876/",
+          "who": "SwampDonkey (My Labrador Friends)",
+          "date": "2022-01-07",
+          "quote": "his eating weird stuff on walks is going to kill him",
+          "seen": "opened"
+        },
+        {
+          "url": "https://mylabradorfriends.com/threads/muzzle.4876/",
+          "who": "snowbunny (My Labrador Friends)",
+          "date": "2022-01-08",
+          "quote": "It cost about €25",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/dogo-dog-training-clicker/id1153294767",
+          "who": "Dogo App Store listing",
+          "date": "2026-10-20",
+          "quote": "17K Ratings ... $3.99 ... $99.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "General dog-training apps: Dogo (17K ratings, broad obedience programmes including impulse control) and Train My Dog ($14.99/month, includes 'leave it' among many commands). Neither is built specifically around scavenging on walks. Physical management: anti-scavenge basket muzzles, from cheap pet-store ones (about EUR 25) to custom-fit ones. Free advice articles and 1:1 trainers or behaviourists also compete.",
+      "risks": "All forum evidence comes from one UK Labrador forum. The threads are 2018-2022 and skew toward Labradors. Many owners settle on muzzles or on-lead walks rather than training, and a general app like Dogo already covers 'leave it'. Some cases are driven by tummy problems (forum members suggest seeing a gastro vet or behaviourist), and an app must not imply it treats those. The copy must avoid any claim that it keeps dogs from getting ill."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

@@ -5696,5 +5696,44 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "dog-eats-everything-on-walks",
+  "offer": "nose-up",
+  "title": "Dog eats everything on walks? Take 'leave it' from the kitchen to the park",
+  "description": "Dog hoovering up rubbish, poo and dropped food outside? Build leave it and drop at home, move them outdoors in small steps, and manage the walks in between.",
+  "intro": "Many dogs know \"leave it\" in the kitchen but ignore it outside, where everything smells better. Small steps take the cue from home to the walk.",
+  "sections": [
+   {
+    "h": "Make leave it easy at home",
+    "list": [
+     "Practise with boring food under your hand, then reward with something better from your other hand."
+    ]
+   },
+   {
+    "h": "Teach a swap",
+    "list": [
+     "Trade whatever is in your dog's mouth for a high-value treat, so letting go pays off and you don't end up chasing them."
+    ]
+   },
+   {
+    "h": "Move outside slowly",
+    "list": [
+     "Garden first, then a quiet street, then the park. Go back a step if it stops working."
+    ]
+   },
+   {
+    "h": "Manage the walk while you train",
+    "list": [
+     "Keep your dog on a lead on known problem routes, and watch for the spots where they go for things."
+    ]
+   },
+   {
+    "h": "When to get help",
+    "p": [
+     "If your dog has swallowed something worrying or seems unwell, call your vet. For constant scavenging, a qualified trainer can help."
+    ]
+   }
+  ]
  }
 ]
