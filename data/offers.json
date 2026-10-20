@@ -19294,6 +19294,76 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-20",
+    "slug": "tank-clear",
+    "name": "Tank Clear",
+    "need": "My water went cloudy and my fish started to die, even though I followed the instructions.",
+    "headline": "Fish keep dying or the water keeps clouding? Log tests, feeds, water changes and new fish on one timeline, then work through the usual causes in order.",
+    "buyer": "Adults (18+) new to fishkeeping whose fish keep dying or water keeps clouding.",
+    "bullets": [
+      "One timeline for water tests, feeds, water changes and new fish.",
+      "A checklist of the usual causes to work through in order, one change at a time.",
+      "Reminders for water changes and tests."
+    ],
+    "price": "$3.99/month",
+    "priceUsd": 4,
+    "priceNote": "Or $19 one-time.",
+    "reasonPrompt": "What's happening in your tank, and how long has it been set up?",
+    "faq": [
+      {
+        "q": "Is this vet advice?",
+        "a": "No. It's a log and a checklist. For sick fish, ask an aquatic vet or an experienced fish shop."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Adults 18+. It is an independent app, not linked to any fish shop, brand or test-kit maker."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-20",
+      "summary": "Fishkeepers on FishProfiles and MonsterFishKeepers describe cloudy or green water and fish dying even when tests look fine, after trying treatments that didn't work.",
+      "wtp": "One keeper bought green-water conditioners that didn't help. Aquarimate (App Store): 625 ratings, $9.99.",
+      "signals": [
+        {
+          "url": "https://fishprofiles.com/forums/The_Hospital/my_watter_turned_cloudy_and_my/8727",
+          "who": "Anthonym (FishProfiles)",
+          "date": "2005",
+          "quote": "my watter turned all cloudy after one day, and one of my fish just died",
+          "seen": "opened"
+        },
+        {
+          "url": "https://fishprofiles.com/forums/Water_Quality/green_water_won_t_go_away____/1369",
+          "who": "TrpngBile (FishProfiles)",
+          "date": "2004",
+          "quote": "adding \"supposed\" green water conditioners that have not even alleviated this problem at all.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.monsterfishkeepers.com/forums/goto/post?id=8084406",
+          "who": "AKKADIAN (MonsterFishKeepers)",
+          "date": "2019-04-01",
+          "quote": "all water levels were and still are fine (amonia was 0, nitrite was 0, etc, etc) and now my large Americans seem to be dying.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/app/id587215055",
+          "who": "Aquarimate App Store listing",
+          "date": "2026-10-20",
+          "quote": "625 Ratings ... $9.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Aquarium log apps, test kits, fish shops, forums.",
+      "risks": "Forum posts are old (2004 to 2019); modest app rating counts."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

@@ -6866,5 +6866,44 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "fish-keep-dying-water-tests-fine",
+  "offer": "tank-clear",
+  "title": "Fish keep dying but the water tests are fine? What to check next",
+  "description": "Cloudy water or fish dying? Log everything on one timeline, test nitrate too, check new fish and overfeeding, and change one thing at a time.",
+  "intro": "When fish keep dying, the cause is often something that changed recently. A simple timeline makes it easier to spot.",
+  "sections": [
+   {
+    "h": "Write a timeline",
+    "list": [
+     "Note tests, feeds, water changes, new fish, plants and decorations, with dates."
+    ]
+   },
+   {
+    "h": "Test more than ammonia",
+    "list": [
+     "Test nitrite, nitrate and pH as well. High nitrate is often missed."
+    ]
+   },
+   {
+    "h": "Check recent changes",
+    "list": [
+     "New fish, a new decoration, a filter clean or a big water change can all upset a tank."
+    ]
+   },
+   {
+    "h": "Feed less",
+    "list": [
+     "Overfeeding is a common cause of cloudy water. Feed only what's eaten in a couple of minutes."
+    ]
+   },
+   {
+    "h": "One change at a time",
+    "p": [
+     "Change one thing, then wait and watch. For sick fish, ask an aquatic vet or an experienced fish shop."
+    ]
+   }
+  ]
  }
 ]
