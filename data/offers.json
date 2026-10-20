@@ -17648,6 +17648,83 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-20",
+    "slug": "sleep-past-five",
+    "name": "Sleep Past Five",
+    "need": "My cat used to wake me at 6:30, but now it's 4:30 in the morning.",
+    "headline": "Cat waking you at 4 or 5am for food? A three-week plan to move breakfast later, with a simple log of wake-up times so you can see it working.",
+    "buyer": "Adult cat owners woken by their cat at 4 or 5am.",
+    "bullets": [
+      "A three-week plan that moves breakfast later in small steps.",
+      "An evening play and feeding routine that helps your cat settle for the night.",
+      "A two-tap log of wake-up times, with a weekly chart."
+    ],
+    "price": "$3.99/month",
+    "priceUsd": 4,
+    "priceNote": "Or $19 one-time.",
+    "reasonPrompt": "What time does your cat wake you, and what do they do?",
+    "faq": [
+      {
+        "q": "Is this vet advice?",
+        "a": "No. If your cat's behaviour changes suddenly, or they seem hungrier than usual, check with your vet."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Adults 18+. It is an independent app, not linked to any vet, behaviourist or pet-product brand."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-20",
+      "summary": "Cat owners on Wamiz and Offbeat Home describe cats meowing, scratching at doors and waking them at 3:30 to 5:30am, and some have bought automatic feeders.",
+      "wtp": "One owner bought an automatic feeder. Meowz cat training app (App Store): 992 ratings, $29.99 a year.",
+      "signals": [
+        {
+          "url": "https://www.wamiz.co.uk/cat/european-shorthair-463/forum/my-cat-is-waking-me-up-at-4-30-am-52687.html",
+          "who": "Timangue974 (Wamiz)",
+          "date": "2016-04-12",
+          "quote": "now it’s not 6:30 or 5:30, but 4:30 in the morning.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.wamiz.co.uk/cat/european-shorthair-463/forum/my-cat-is-waking-me-up-at-4-30-am-52687.html",
+          "who": "Justine_sdk (Wamiz)",
+          "date": "2020-02-14",
+          "quote": "he’s started scratching at my bedroom door during the night.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://offbeathome.com/cat-wakes-me-up-too-early/comment-page-2/",
+          "who": "Sarah Allegra (Offbeat Home)",
+          "date": "2015-02-20",
+          "quote": "After wanting to kill him for a few weeks, I finally bought an auto feeder.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://offbeathome.com/cat-wakes-me-up-too-early/comment-page-2/",
+          "who": "Ruby (Offbeat Home)",
+          "date": "2017-11-21",
+          "quote": "as soon as its 5:30 am or around that time he just starts meowing non-stop.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/app/id6503908960",
+          "who": "Meowz App Store listing",
+          "date": "2026-10-20",
+          "quote": "992 Ratings ... $29.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Automatic feeders, cat behaviour consults, general cat apps.",
+      "risks": "Several posts are about kittens; feeders alone don't always fix it."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

@@ -6125,5 +6125,44 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "cat-waking-me-up-at-5am",
+  "offer": "sleep-past-five",
+  "title": "Cat waking you at 5am? A three-week plan to move breakfast later",
+  "description": "Cat meowing or pouncing at 4 or 5am? Play before bed, feed a late meal, don't respond to early waking, and move breakfast later in small steps.",
+  "intro": "Many cats wake their owners early because it gets them fed. Changing the routine slowly, and not rewarding early wake-ups, usually helps.",
+  "sections": [
+   {
+    "h": "Play before bed",
+    "list": [
+     "10 to 15 minutes of active play in the evening helps your cat settle."
+    ]
+   },
+   {
+    "h": "Feed a late meal",
+    "list": [
+     "Give part of the daily food just before you go to sleep."
+    ]
+   },
+   {
+    "h": "Don't reward early wake-ups",
+    "list": [
+     "Getting up to feed your cat at 5am teaches them that waking you works. Stay still if you can."
+    ]
+   },
+   {
+    "h": "Move breakfast later slowly",
+    "list": [
+     "Shift breakfast 10 to 15 minutes later every few days, until it's at a time that suits you."
+    ]
+   },
+   {
+    "h": "Consider a timed feeder, and see the vet if",
+    "p": [
+     "your cat seems much hungrier than usual or their behaviour changes suddenly."
+    ]
+   }
+  ]
  }
 ]
