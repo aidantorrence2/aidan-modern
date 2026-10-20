@@ -13991,6 +13991,138 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-20",
+    "slug": "same-light",
+    "name": "Same Light",
+    "need": "I can't tell whether my hair is actually getting thinner, because it looks different in every light.",
+    "headline": "Take the same hair photos every month: outline guides for hairline, temples and crown, a lighting check, side-by-side months, and a timeline of what you changed.",
+    "buyer": "Adults (18+) worried about thinning hair or a receding hairline who can't tell from the mirror whether it is changing.",
+    "bullets": [
+      "Outline guides so your hairline, temple and crown photos line up from month to month.",
+      "A lighting check before each photo, so a bright bathroom bulb doesn't fool you.",
+      "Months side by side, and a timeline of anything you changed, to show your doctor if you choose."
+    ],
+    "price": "$3.99/month",
+    "priceUsd": 4,
+    "priceNote": "Or $29 a year. Far below the hair-loss tracker apps' weekly and monthly plans.",
+    "reasonPrompt": "Which area are you watching (hairline, temples or crown), and how long have you been unsure?",
+    "faq": [
+      {
+        "q": "Is this medical advice or a diagnosis?",
+        "a": "No. Same Light is an independent photo tool for adults 18+. It does not diagnose hair loss or recommend treatments. For questions about hair loss or any treatment, talk to a doctor or dermatologist."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-20",
+      "summary": "People on the HairLossTalk forum say they can't tell whether their hair is thinning or whether a treatment is working, because it looks different in every light and every mirror. Paid hair-loss tracker apps already sell subscriptions.",
+      "wtp": "HairLoss AI: Beat Balding (App Store): 4.4 from 238 ratings, Full Access $9.99 a week, $9.99 to $19.99 a month, $44.99 a year. Reviewer sbgunther: \"I'd pay for it if it were better at taking photos of the top of the head\".",
+      "signals": [
+        {
+          "url": "https://www.hairlosstalk.com/interact/threads/is-my-hair-still-thinning-or-am-i-crazy.105813",
+          "who": "ZombiesOMG (HairLossTalk)",
+          "date": "2017-05-25",
+          "quote": "how it looks seems to depend a lot on the lighting",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.hairlosstalk.com/interact/threads/losing-hope-and-feeling-confused-is-my-regime-working-or-not.129513/",
+          "who": "slimeballbob (HairLossTalk)",
+          "date": "2020-10-05",
+          "quote": "so far i have a hard time telling if it actually working",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.hairlosstalk.com/interact/threads/does-anyone-else-have-any-zones-in-your-home-where-your-hair-looks-especially-bad.131057",
+          "who": "arnob (HairLossTalk)",
+          "date": "2021-01-28",
+          "quote": "dont get me started on the bathroom mirror",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/app/id6563141135",
+          "who": "HairLoss AI App Store listing (reviewer sbgunther)",
+          "date": "2026-10-20",
+          "quote": "I'd pay for it if it were better at taking photos of the top of the head",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "HairLoss AI and other hair-tracking apps, dermatologist visits, phone camera alone.",
+      "risks": "All forum evidence is from one site. Hair loss is health-adjacent, so the copy must never diagnose or recommend treatment."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-20",
+    "slug": "calm-alone",
+    "name": "Calm Alone",
+    "need": "Whenever my dog is left alone she barks and howls the entire time, and I can only leave her for a few minutes.",
+    "headline": "A practice coach for dog separation anxiety: a starting-point test, daily graded absences kept under the panic point, a two-tap log and a weekly calm-minutes chart.",
+    "buyer": "Dog owners whose dog barks, howls, chews or panics when left alone.",
+    "bullets": [
+      "A starting-point test to find how long your dog stays calm before the panic starts.",
+      "Daily graded absences that stay under that point and build up slowly.",
+      "A two-tap log after each practice, and a weekly chart of calm minutes."
+    ],
+    "price": "$9.99/month",
+    "priceUsd": 10,
+    "priceNote": "Far less than a single consultation with a separation-anxiety trainer.",
+    "reasonPrompt": "How long can your dog be left now before the barking or chewing starts?",
+    "faq": [
+      {
+        "q": "Is this a substitute for a vet or a trainer?",
+        "a": "No. Calm Alone is an independent practice tool. If your dog is hurting itself, not eating, or you are worried about its health, talk to your vet, and consider a qualified separation-anxiety trainer."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-20",
+      "summary": "Dog owners on three Mumsnet Doghouse threads say their dog barks, howls or chews whenever it is left, and some can only leave it for minutes. A dog-training app with a large paid base already sells subscriptions.",
+      "wtp": "Dogo - Dog Training & Clicker (App Store): 4.8 from 17K ratings, subscriptions from $3.99 to $99.99 and Premium Lifetime $299.99.",
+      "signals": [
+        {
+          "url": "https://www.mumsnet.com/talk/the_doghouse/3535472-What-on-earth-to-do-with-my-dog",
+          "who": "JoinTheMicrodots (Mumsnet)",
+          "date": "2019-03-17",
+          "quote": "whenever she's left alone she barks/howls the entire time",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/the_doghouse/3708506-Rehomed-dog-separation-anxiety",
+          "who": "LoveUsed (Mumsnet)",
+          "date": "2019-10-03",
+          "quote": "So far I have only been able to leave him for 3 mins in total",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/the_doghouse/3062010-Separation-anxiety",
+          "who": "BubblesPip (Mumsnet)",
+          "date": "2017-10-16",
+          "quote": "virtually impossible to leave her without my dc toys being chewed",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/app/id1153294767",
+          "who": "Dogo App Store listing",
+          "date": "2026-10-20",
+          "quote": "17K Ratings ... Premium Lifetime $299.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Dogo, pet cameras with alerts, separation-anxiety trainers, vets.",
+      "risks": "All forum evidence is from one site. Severe cases need a vet or a specialist trainer."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
