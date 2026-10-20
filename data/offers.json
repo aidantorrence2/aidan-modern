@@ -16922,6 +16922,104 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-20",
+    "slug": "paws-down",
+    "name": "Paws Down",
+    "need": "My dog jumps up at everyone we meet, and I can't stop her doing it.",
+    "headline": "Your dog jumps up at every visitor and every stranger who says hi? Practise calm greetings in a few minutes a day and track every four-paws-on-the-floor hello.",
+    "buyer": "Adult owners of young, excitable dogs (often Labradors and other big, friendly breeds aged roughly 6-18 months) whose dog jumps up at guests and at people on walks, who have tried 'sit' and turning their back, and who are embarrassed or worried someone will get hurt.",
+    "bullets": [
+      "A short daily greeting drill: one small step at a time, from you at the door, to a friend visiting, to a stranger on the pavement",
+      "Log each greeting as 'four paws' or 'jumped' in one tap, so you can see whether it is getting better instead of guessing",
+      "A ready-made line to say to visitors and strangers ('She's in training, please wait until she sits') so everyone responds the same way"
+    ],
+    "price": "$4.99/month",
+    "priceUsd": 5,
+    "priceNote": "",
+    "reasonPrompt": "Who does your dog jump up at most (visitors at home, strangers on walks, people she knows), and what have you already tried?",
+    "faq": [
+      {
+        "q": "Who is this for?",
+        "a": "Paws Down is an independent app for adults 18+ who want help practising calm greetings with their own dog. It is not affiliated with any dog training brand, club or forum."
+      },
+      {
+        "q": "Is this a replacement for a trainer or a class?",
+        "a": "No. It is a practice and tracking tool for the time between sessions. If your dog's jumping comes with biting, growling or fear, or you are worried someone could be hurt, speak to a qualified force-free trainer or behaviourist."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-20",
+      "summary": "Owners on The Labrador Forum describe young dogs that jump up into people's faces, muddy their coats and bash visitors, and say it's been the most frustrating thing.",
+      "wtp": "Owners on The Labrador Forum paid for training classes that helped. Puppr (App Store): 27K ratings, Premium $13.99 a month.",
+      "signals": [
+        {
+          "url": "https://thelabradorforum.com/threads/please-please-can-anyone-help-me-stop-my-9-month-choc-lab-jumping-up-in-peoples-faces.17285/",
+          "who": "vicvegas (The Labrador Forum)",
+          "date": "2016-12-09",
+          "quote": "As usual the owner bends down slightly and she repeatedly jumps up in their face.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://thelabradorforum.com/threads/please-please-can-anyone-help-me-stop-my-9-month-choc-lab-jumping-up-in-peoples-faces.17285/",
+          "who": "Jude (The Labrador Forum)",
+          "date": "2016-12-19",
+          "quote": "She jumps right into peoples' faces and yesterday really bashed a woman we see regularly who was understandably upset.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://thelabradorforum.com/threads/jumping-up-at-people.23165/",
+          "who": "Atemas (The Labrador Forum)",
+          "date": "2018-03-11",
+          "quote": "DH said it was embarrassing as she put mud on the person’s coat.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://thelabradorforum.com/threads/jumping-up-at-people.23165/",
+          "who": "selina27 (The Labrador Forum)",
+          "date": "2018-03-11",
+          "quote": "she wants to get right up to their face and love them back. It's been the most frustrating thing",
+          "seen": "opened"
+        },
+        {
+          "url": "https://thelabradorforum.com/threads/puppy-jumping-on-strangers.26506/",
+          "who": "John424242 (The Labrador Forum)",
+          "date": "2019-03-07",
+          "quote": "Avalon is 9 months old now and she will still jump up on people.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://thelabradorforum.com/threads/puppy-jumping-on-strangers.26506/",
+          "who": "John424242 (The Labrador Forum)",
+          "date": "2019-03-07",
+          "quote": "Our puppy just came out of a training class which really helped(sadly, there are only six classes per section).",
+          "seen": "opened"
+        },
+        {
+          "url": "https://thelabradorforum.com/threads/14-month-old-female-choc-lab-jumping-up-in-peoples-faces-biting.19120/",
+          "who": "selina27 (The Labrador Forum)",
+          "date": "2017-04-28",
+          "quote": "I took Cassie to older puppy classes at 6.5 months which really helped",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/puppr-dog-training-tricks/id1199338956",
+          "who": "Puppr App Store listing",
+          "date": "2026-10-20",
+          "quote": "27K Ratings ... $13.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "General dog-training apps cover jumping as one lesson among many: Puppr (27K ratings, 4.8, Premium $13.99/month or $99.99/year, page opened), and, from App Store search results only (pages not opened), Woofz, Dogo, Pupford, Zigzag and PawChamp. Local group training classes and private trainers are the other option. None of these is built around one behaviour with greeting-by-greeting tracking and a script for visitors.",
+      "risks": "It is a narrow problem that many owners expect the dog to grow out of (forum posters say 'a lot of it is her age'), so people may cancel quickly. Results depend on visitors and strangers cooperating, which an app cannot control. Big general training apps already list 'jumping on people', so the narrow focus has to be clearly better. The forum evidence is from 2016-2019 and from one site, so current demand should be checked again. Jumping that comes with biting needs a professional, so the copy has to avoid any behavioural or safety claims. This offer is close to but different from the live loose-leash, soft-mouth (puppy biting) and whistle-back (recall) offers, so the messaging has to stay on greetings and jumping up."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
