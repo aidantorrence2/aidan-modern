@@ -16088,6 +16088,97 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-20",
+    "slug": "easy-ball",
+    "name": "Easy Ball",
+    "need": "I can make any shot, get any shape. But I miss; usually easy shots.",
+    "headline": "For pool players who've stopped improving: log your misses by shot type, see your three most-missed shots, and follow a 30-minute drill plan for them.",
+    "buyer": "Amateur pool players who have stopped improving and keep missing easy shots.",
+    "bullets": [
+      "A quick miss log by shot type: cuts, straight-ins, long shots, rail shots.",
+      "Your three most-missed shots, with a 30-minute drill plan for them.",
+      "A weekly make-rate chart, so you can see whether it's working."
+    ],
+    "price": "$4.99/month",
+    "priceUsd": 5,
+    "priceNote": "Or $29 a year.",
+    "reasonPrompt": "Which shots do you miss most, and how long have you felt stuck?",
+    "faq": [
+      {
+        "q": "Will it make me a better player?",
+        "a": "It can't promise that. It shows which shots you miss and gives you focused drills for them."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Adults 18+. It is an independent app, not linked to any league, brand or coach."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-20",
+      "summary": "Pool players on AZBilliards say they stopped improving after the first year, have hit a plateau, and keep missing easy shots, despite lessons, videos and books.",
+      "wtp": "DrillRoom AI Pool Trainer (App Store): 258 ratings, $14.99/month or $89.99/year. One player has taken lessons and another is saving for a pool school.",
+      "signals": [
+        {
+          "url": "https://forums.azbilliards.com/threads/hit-a-wall-not-improving-any-more.23619/",
+          "who": "pinkisntwell (AZBilliards)",
+          "date": "2006-01-01",
+          "quote": "The thing is, after the first year I stopped improving.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.azbilliards.com/threads/hit-a-wall-not-improving-any-more.23619/",
+          "who": "seiyaryu55 (AZBilliards)",
+          "date": "2006-01-01",
+          "quote": "The past few months i thought i hit a wall as well.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.azbilliards.com/threads/my-game-has-hit-a-plateau.28249/",
+          "who": "mnShooter (AZBilliards)",
+          "date": "2006-03-14",
+          "quote": "My game has hit a plateau and I just don't think it will get any better.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.azbilliards.com/threads/my-game-has-hit-a-plateau.28249/",
+          "who": "mnShooter (AZBilliards)",
+          "date": "2006-03-14",
+          "quote": "I've taken a few lessons, watched years worth of pro videos, and read plenty of books.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.azbilliards.com/goto/post?id=6997267",
+          "who": "ldl01031 (AZBilliards)",
+          "date": "2021-07-07",
+          "quote": "I can make any shot, get any shape. But I miss; usually easy shots.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.azbilliards.com/goto/post?id=6997267",
+          "who": "SSDiver2112 (AZBilliards)",
+          "date": "2021-07-08",
+          "quote": "I had an easy shot and I saw the runout after. I shot and missed.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/app/id1539827505",
+          "who": "DrillRoom App Store listing",
+          "date": "2026-10-20",
+          "quote": "258 Ratings ... $14.99 ... $89.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "DrillRoom, pool schools, lessons, books and videos.",
+      "risks": "Two threads date from 2006 (possibly import dates). DrillRoom's rating count is modest."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

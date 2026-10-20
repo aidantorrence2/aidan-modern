@@ -5462,5 +5462,44 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "missing-easy-pool-shots",
+  "offer": "easy-ball",
+  "title": "Missing easy pool shots? A 30-minute drill plan that finds why",
+  "description": "Stuck at the same level and missing shots you should make? Log your misses for a week, find the three you miss most, and drill only those.",
+  "intro": "Players who stop improving often miss the same few shots. Finding out which ones beats practising everything.",
+  "sections": [
+   {
+    "h": "Log a week of misses",
+    "list": [
+     "After each miss, note the shot type: cut, straight-in, long, on the rail, or with the bridge."
+    ]
+   },
+   {
+    "h": "Find your top three",
+    "list": [
+     "The three shots you miss most are your practice plan."
+    ]
+   },
+   {
+    "h": "Drill each for ten minutes",
+    "list": [
+     "Set the same shot up again and again, and count makes out of ten."
+    ]
+   },
+   {
+    "h": "Finish your stroke",
+    "list": [
+     "On every shot, stay down until the cue ball has stopped. Getting up early is a common cause of missing easy shots."
+    ]
+   },
+   {
+    "h": "Track your make rate",
+    "p": [
+     "Count makes out of ten each week, so you can see what's improving."
+    ]
+   }
+  ]
  }
 ]
