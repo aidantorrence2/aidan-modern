@@ -1356,8 +1356,8 @@
         "data_scope": "Database row responses may contain private email addresses and city/participation/consent/attribution fields. Read only to count and deduplicate. Do not persist, export, email, share or put individual lead records in Library, prompts for other workers, Git repositories or public pages.",
         "limits": "Read-only ongoing measurement for this one project. No customer outreach, data deletion/migration, credential recovery, database changes, new endpoint, deployment, spending or broader access. Stop if access is denied; no alternative access path.",
         "why_needed": "The handoff's zero was historical and cloud private-export credentials were omitted. The hourly targets cannot be honestly measured until separately authorized secure access is approved.",
-        "result": "Ongoing read-only scope preserved. Fresh overview DB tables events/leads; only leads read at2026-10-20T02:12:49Z, limit25offset0. Complete empty table, next_offset null, no truncation/omitted rows. Current consenting total0, new0 vs5target. Aggregates only persisted, no private rows exported or saved. No data changes or messaging authority inferred.",
-        "result_at": "2026-10-20T02:13:03Z"
+        "result": "Ongoing read-only scope preserved. Fresh overview DB events/leads, only leads read at2026-10-20T03:08:22Z, limit25offset0. Complete empty table, next_offset null; no omissions or truncation. Current consenting total0/new0 vs5target. Aggregates only persisted, no private rows saved. No customer messaging, export or data changes authorized.",
+        "result_at": "2026-10-20T03:08:47Z"
       },
       "created": "2026-10-19T05:23:23Z",
       "expires": "2026-10-22T05:23:23Z",
