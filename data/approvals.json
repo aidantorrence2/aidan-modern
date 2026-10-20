@@ -1924,7 +1924,9 @@
           "gmail_all_history": "Exact addresses and organization domains returned no messages, no next page.",
           "dedupe": "No collision with16confirmed sends, held Dateable/Dear Nina/City Girl, or denied Luvvly.",
           "public_phone_page": "Fresh tracked URL reachability check required before any approved send."
-        }
+        },
+        "result": "Completed exactly2approved first-contact emails, Gmail read back SENT with exact bodies: hello@digitaldetoxclub.co.uk message/thread1a156d8d7fdccc9f at2026-10-20T01:06:53Z; info@socialclubcollectivellc.com message/thread1a156d8f5cad0a40 at01:07:01Z. Cumulative confirmed campaign sends18. No resends, followups, public posts, fees, terms, spending, building or deployment. No partner sharing or customer lead inferred; keep-in-touch remains research permission only.",
+        "result_at": "2026-10-20T01:07:28Z"
       },
       "created": "2026-10-20T01:05:17Z",
       "expires": "2026-10-23T01:05:17Z",
