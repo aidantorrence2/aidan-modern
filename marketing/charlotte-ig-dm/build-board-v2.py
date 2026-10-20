@@ -133,7 +133,7 @@ video {{ width:min(100%,300px); aspect-ratio:9/16; background:#000; display:bloc
 <h2>Your picks</h2>
 {picks}
 <h2>Video ideas</h2>
-<p class="lede">Reels at 1080×1920 with music, built from the same photos. Tap to play. Picks first.</p>
+<p class="lede">Reels at 1080×1920 with music. Tap to play. Top: the versions built only from your top_tier_candidates picks; then the women-only and mixed versions.</p>
 {vids}
 <h2>Other stills</h2>
 {rest}
