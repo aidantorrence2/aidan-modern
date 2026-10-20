@@ -13692,6 +13692,86 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-20",
+    "slug": "curb-ready",
+    "name": "Curb Ready",
+    "need": "I can't park. Not 'oh I'm crap at parking ha ha' but I can't park.",
+    "headline": "A parking coach for licensed drivers who avoid parallel parking and bays: reference points for your own car, a cone practice ladder, and a 30-second attempt log.",
+    "buyer": "Licensed adult (18+) drivers who avoid parallel parking or reversing into bays.",
+    "bullets": [
+      "Set up reference points for your own car: where to line up a mirror, a window edge or a pillar.",
+      "A practice ladder with cones in an empty car park, from wide gaps to real spaces.",
+      "A 30-second log after each attempt (once parked), and a plan for nervous trips."
+    ],
+    "price": "$12 one-time",
+    "priceUsd": 12,
+    "priceNote": "Pay once. Less than a single parking lesson with an instructor.",
+    "reasonPrompt": "Which kind of parking do you avoid most: parallel, reversing into a bay, or tight car parks?",
+    "faq": [
+      {
+        "q": "Does this replace a driving instructor?",
+        "a": "No. Curb Ready is an independent practice tool for licensed drivers 18+. Practise only in safe, legal places, never use your phone while driving, and book a lesson with a qualified instructor if you need one."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-20",
+      "summary": "Drivers on two Mumsnet threads and AnandTech say they can't park, are terrible at parallel parking, or have avoided it for decades, and one paid for three sessions with a driving instructor.",
+      "wtp": "TorkTorkBam on Mumsnet paid for three sessions with a driving instructor to learn to park. Driving instructors sell parking and manoeuvre lessons.",
+      "signals": [
+        {
+          "url": "https://www.mumsnet.com/talk/am_i_being_unreasonable/3839810-i-can-t-park",
+          "who": "Jocasta2018 (Mumsnet)",
+          "date": "2020-03-05",
+          "quote": "I can't park. Not 'oh I'm crap at parking ha ha' but I can't park.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/am_i_being_unreasonable/3839810-i-can-t-park",
+          "who": "SoupDragon (Mumsnet)",
+          "date": "2020-03-05",
+          "quote": "Parallel parking I am absolutely shit at.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/am_i_being_unreasonable/3839810-i-can-t-park",
+          "who": "TorkTorkBam (Mumsnet)",
+          "date": "2020-03-05",
+          "quote": "I had 3 sessions with a driving instructor.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/_chat/3440556-Driving-tips",
+          "who": "mistermagpie (Mumsnet)",
+          "date": "2018-12-02",
+          "quote": "I'm currently avoiding parallel parking for the most part",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/_chat/3440556-Driving-tips",
+          "who": "MiddlingMum (Mumsnet)",
+          "date": "2018-12-02",
+          "quote": "I've driven for nearly 40 years and have never parallel parked since my test.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.anandtech.com/threads/cant-parallel-park.1994347/",
+          "who": "GeekDrew (AnandTech forums)",
+          "date": "2007-01-11",
+          "quote": "I suck at parallel parking",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Driving instructors' manoeuvre lessons, YouTube parking guides, car parking sensors and cameras.",
+      "risks": "Willingness to pay for an app is unproven: the evidence is one paid instructor, and no parking app with meaningful ratings was confirmed. Safety wording must stay strict."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

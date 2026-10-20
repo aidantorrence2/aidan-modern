@@ -4243,5 +4243,47 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "parallel-parking-practice-plan",
+  "offer": "curb-ready",
+  "title": "Scared of parallel parking? A step-by-step practice plan for an empty car park",
+  "description": "Avoided parallel parking since your test? Find reference points on your own car, practise with cones in an empty car park, and build up to real streets.",
+  "intro": "Many drivers avoid parallel parking for years after their test. It is a learnable sequence of steps, and practising it somewhere quiet, without other cars waiting, makes it far less stressful.",
+  "sections": [
+   {
+    "h": "Find your reference points",
+    "list": [
+     "With a helper, work out where things line up on your own car: for example, when the rear of the car in front appears in a particular part of your side window.",
+     "These points are what instructors teach, and they differ for every car."
+    ]
+   },
+   {
+    "h": "Practise in an empty car park",
+    "list": [
+     "Use two cones or bags to mark a space much longer than your car. Practise slowly until you get in smoothly three times in a row.",
+     "Gradually shorten the gap."
+    ]
+   },
+   {
+    "h": "Go slowly",
+    "list": [
+     "Use the slowest speed you can, steer while the car is moving, and stop to check whenever you are unsure. Nobody is timing you."
+    ]
+   },
+   {
+    "h": "Move to quiet streets",
+    "list": [
+     "Try quiet residential streets at quiet times before busy roads.",
+     "Choose bigger gaps at first; it is fine to drive on and find another."
+    ]
+   },
+   {
+    "h": "Stay safe",
+    "p": [
+     "Practise only where it is safe and legal, never use your phone while driving, and book a lesson with a qualified instructor if you would like help. This guide is general information."
+    ]
+   }
+  ]
  }
 ]
