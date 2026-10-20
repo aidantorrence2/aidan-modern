@@ -17549,6 +17549,105 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-20",
+    "slug": "straight-back",
+    "name": "Straight Back",
+    "need": "I can't back up a trailer. If I have to use my mirrors I'm toast.",
+    "headline": "Can't back up a trailer without it jackknifing? Practise the backwards steering on your phone, then run short parking-lot drills until it clicks before ramp day.",
+    "buyer": "Adults who tow now and then (a small boat, jet ski, utility trailer, camper or 5th wheel) and freeze, over-correct or hand the keys to someone else when it's time to reverse.",
+    "bullets": [
+      "Short top-down practice rounds on your phone for the part that feels backwards: small steering inputs, catching the trailer early, and pulling forward to reset",
+      "Step-by-step drills for an empty parking lot (straight back, then a bend, then into a 'slot') so the practice carries over to the real trailer",
+      "A simple pre-reverse checklist for the ramp or campsite: set up straight, slow down, get out and look"
+    ],
+    "price": "$4.99/month",
+    "priceUsd": 5,
+    "priceNote": "",
+    "reasonPrompt": "What do you tow, and where does reversing go wrong for you: the ramp, your driveway, or a campsite?",
+    "faq": [
+      {
+        "q": "Who makes this app?",
+        "a": "It's an independent app for adults 18+. It isn't affiliated with any vehicle, trailer, camper or boat maker, or with any driving school or club."
+      },
+      {
+        "q": "Does it replace a towing course or real practice?",
+        "a": "No. It gives you a structured way to practise the steering logic and a plan for real practice in an empty lot. You still need to practise with your own vehicle and trailer, and follow local rules."
+      },
+      {
+        "q": "Is it a backup camera or sensor?",
+        "a": "No. There's no hardware. It's practice and drills on your phone."
+      },
+      {
+        "q": "Does it work for small and short trailers?",
+        "a": "Short trailers react faster, which is why many people find them the hardest to back up. The drills stress slow speed and small, early corrections, which apply to any trailer length."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-20",
+      "summary": "People who tow on TractorByNet and iboats say they can't reverse a trailer, especially short ones or using mirrors, and walk it in by hand instead. App Store reviewers say a simulator helped.",
+      "wtp": "My RV Parking Skills (App Store): 40 ratings, Unlock All $4.99; one reviewer also bought a steering wheel to practise. A TractorByNet poster bought an adapter so they could push the trailer instead of reversing it.",
+      "signals": [
+        {
+          "url": "https://www.tractorbynet.com/forums/threads/trying-to-back-a-trailer-is-no-fun.138946/",
+          "who": "Ridgewalker (TractorByNet)",
+          "date": "2009-03-10",
+          "quote": "Add me to the list of those who can't back a trailer. I can do fine IF I can look over my right shoulder and see the trailer but if I have to use my mirrors I am toast.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.tractorbynet.com/forums/threads/trying-to-back-a-trailer-is-no-fun.138946/",
+          "who": "qni51 (TractorByNet)",
+          "date": "2009-03-08",
+          "quote": "Sure can push a trailer into a tight spot much easier than backing it in behind the tractor.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.iboats.com/threads/advice-for-backing-up-with-small-trailer.619635/",
+          "who": "acdc96 (iboats Boating Forums)",
+          "date": "2014-04-01",
+          "quote": "I have a hard time backing up because it's so short and light. The slightest turn of the steering wheel dramatically affects the trailer.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.iboats.com/threads/advice-for-backing-up-with-small-trailer.619635/",
+          "who": "agallant80 (iboats Boating Forums)",
+          "date": "2014-04-01",
+          "quote": "last weekend I was making a fool out of myself trying to back a 8 foot utility trailer in our rental houses driveway.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.iboats.com/threads/advice-for-backing-up-with-small-trailer.619635/",
+          "who": "oldjeep (iboats Boating Forums)",
+          "date": "2014-04-02",
+          "quote": "I get so frustrated with my parents jetski trailer that I just un hitch it and walk it in.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id6450197691",
+          "who": "MarkHPierce (App Store review, My RV Parking Skills)",
+          "date": "2025-02-28",
+          "quote": "I just couldn’t figure out the physics of backing up the trailer.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id6450197691",
+          "who": "mtt484 (App Store review, My RV Parking Skills)",
+          "date": "2024-12-03",
+          "quote": "I have a 43’ 5th wheel and need all the help I can get to back it in. I also purchased a steering wheel.",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "My RV Parking Skills (App Store, free with in-app purchases up to $4.99 Unlock All, 4.4 stars from 40 ratings). My U.S. Trucking Skills (App Store, free with in-app purchases up to $7.99, 4.5 stars from 589 ratings, aimed at semi/CDL backing). TowGo (sensor hardware plus an app, 1 rating). Also backup and hitch cameras, factory trailer-reverse assist features on some trucks, club or RV dealer towing courses, and free YouTube tutorials. The existing apps are mostly game-style levels, with no plan for real-world practice.",
+      "risks": "Most of the forum evidence is old (2009-2016). The recent first-person evidence comes from App Store reviews. Reversing is a physical skill, so how well phone practice carries over is unproven, and reviewers complain about simulator controls. Free YouTube videos and one-time-purchase apps make a monthly price hard to sell, and demand is seasonal (spring boating, summer camping). The copy must not make safety or accident-prevention claims. Possible overlap with the live parking offer (curb-ready), although towing a trailer is a different skill."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
