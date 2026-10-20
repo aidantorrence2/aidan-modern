@@ -3890,5 +3890,42 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "never-learned-to-dress-find-what-suits-you",
+  "offer": "suits-me",
+  "title": "Never learned to dress? Find what suits you with the clothes you already own",
+  "description": "Don't know what suits you or what to wear? Find your best-fitting pieces, notice which colours work, build a few outfits, and buy only the gaps.",
+  "intro": "Most people who feel they have no style already own clothes that suit them; they just don't know which ones or why. Starting from your own wardrobe is quicker and cheaper than starting again.",
+  "sections": [
+   {
+    "h": "Find your best pieces",
+    "list": [
+     "Pull out the five things you feel best in. Look at what they share: the fit, the length, the neckline, the fabric or the colour.",
+     "Those shared features are a strong clue to what suits you."
+    ]
+   },
+   {
+    "h": "Notice your colours",
+    "list": [
+     "Hold different coloured tops up to your face in daylight. Some make your skin look brighter, others make you look tired.",
+     "Note which colours you get compliments in."
+    ]
+   },
+   {
+    "h": "Build a few outfits",
+    "list": [
+     "Make three or four outfits from what you have for the things you do most: work, weekends, going out.",
+     "Take a photo of each so getting dressed is easy on busy mornings."
+    ]
+   },
+   {
+    "h": "Buy only the gaps",
+    "list": [
+     "Write down what is missing (a pair of trousers that fit, a jacket that goes with everything) and buy those first.",
+     "Fit matters more than price. Alterations are often worth it."
+    ]
+   }
+  ]
  }
 ]

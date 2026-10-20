@@ -13207,6 +13207,79 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-20",
+    "slug": "suits-me",
+    "name": "Suits Me",
+    "need": "I just don't know how to dress myself well or where to go to find suitable clothes.",
+    "headline": "A personal style coach: a short check-in on your shape, colouring, budget and day, outfits from clothes you already own, and a short list of gaps to buy.",
+    "buyer": "Adults (18+) who feel they never learned how to dress or what suits them.",
+    "bullets": [
+      "A short photo-and-questions check-in on your shape, colouring, budget and daily life.",
+      "Outfits built from clothes you already own, so you start with what is in your wardrobe.",
+      "A short, prioritised list of gaps to buy at high-street prices, and a one-tap 'what do I wear today'."
+    ],
+    "price": "$5.99/month",
+    "priceUsd": 6,
+    "priceNote": "Below the leading AI stylist app's monthly plans, and far less than a personal shopper.",
+    "reasonPrompt": "What do you find hardest about getting dressed: knowing what suits you, putting outfits together, or shopping?",
+    "faq": [
+      {
+        "q": "Do I have to buy new clothes?",
+        "a": "No. Suits Me starts with clothes you already own and only suggests gaps when you want them. It is an independent app for adults 18+, not linked to any retailer."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-20",
+      "summary": "Adults on four Mumsnet Style & Beauty threads (2016 to 2026) say they don't know how to dress, what suits them, or what to wear any more, and one is prepared to pay for help. AI styling apps already sell subscriptions.",
+      "wtp": "Style DNA: AI Stylist & Closet (App Store): 4.3 from 7.5K ratings, subscriptions $7.99 to $19.99 a month or $29.99 to $39.99 a year, palette and body-type guide $12.99. NaughtyElephants: \"I'm prepared to throw money at the situation\".",
+      "signals": [
+        {
+          "url": "https://www.mumsnet.com/talk/style_and_beauty/3035751-Style-makeover-help-needed",
+          "who": "NaughtyElephants (Mumsnet)",
+          "date": "2017-09-17",
+          "quote": "I just don't know how to dress myself well or where to go to find suitable clothes.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/style_and_beauty/3132748-I-have-no-sense-of-style-help",
+          "who": "Braceface (Mumsnet)",
+          "date": "2018-01-07",
+          "quote": "Wish I had that inner understanding of what suits me.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/style_and_beauty/5569610-help-lost-my-style",
+          "who": "WannabeMamaM (Mumsnet)",
+          "date": "2026-08-22",
+          "quote": "I seem to have completely lost my style and have no clue what to wear any longer.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/style_and_beauty/5569610-help-lost-my-style",
+          "who": "Gettingbysomehow (Mumsnet)",
+          "date": "2026-08-22",
+          "quote": "I dont think I ever had any style tbh.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/-/id1358319821",
+          "who": "Style DNA App Store listing",
+          "date": "2026-10-20",
+          "quote": "7.5K Ratings ... Annual subscription $39.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Style DNA, personal shoppers, colour analysis services, style blogs and YouTube.",
+      "risks": "All forum evidence is from one site (four threads). Style advice depends on photos and taste, which is hard to automate well."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
