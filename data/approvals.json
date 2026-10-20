@@ -2192,6 +2192,51 @@
       "status": "pending",
       "decided": null,
       "note": ""
+    },
+    {
+      "id": "offers:small-wave10:2026-10-20:dating-and-phone",
+      "kind": "email",
+      "source": "codex:real-change-pilots",
+      "title": "Two short emails: Lock and Key Events and UnPlug HQ",
+      "summary": "Ask two adult audience owners to consider sharing free, nonbinding interest pages for a proposed dating pilot and unbuilt phone-boundaries app. Exact to/subject/body attached; no followups, posts, spending or deployment.",
+      "payload": {
+        "project_id": "appgprj_6ad56c0398f4819187d2d7870ae70ac4",
+        "action": "Send exactly these two first-contact business emails once each only after approval and final preflight.",
+        "messages": [
+          {
+            "to": "eventmanager@lockandkeyevents.com",
+            "subject": "Finding adults who want less browsing and more real dates",
+            "offer": "better-dates",
+            "organization": "Lock & Key Events / Pre-Dating",
+            "source": "https://www.lockandkeyevents.com/contact",
+            "rules_source": "https://www.lockandkeyevents.com/frequently-asked-questions/",
+            "body": "Hi Lock & Key Events team,\n\nI'm Aidan. Your events help single adults meet in person, which seems a good fit for an idea I'm testing.\n\nI'm exploring a small local introductions pilot for adults who spend lots of time browsing and texting but rarely get to a date. It isn't running yet, and I don't have a pool of matches.\n\nWould you consider sharing this signup page with adults aged 18 or over who might be interested?\n\nSignup is free and nonbinding.\nhttps://real-change-pilots-aidan-2026.aidantorrence.chatgpt.site/better-dates?utm_source=lock_key_events&utm_medium=partner_email&utm_campaign=wave10\n\nThanks,\nAidan Torrence"
+          },
+          {
+            "to": "hello@unplughq.com",
+            "subject": "An idea for people who keep turning off phone limits",
+            "offer": "phone-reset",
+            "organization": "UnPlug HQ",
+            "source": "https://unplughq.com/contact-us/",
+            "fit_source": "https://unplughq.com/solutions/",
+            "body": "Hi UnPlug team,\n\nI'm Aidan. Your work on sustainable digital habits and switching off seems a good fit for an idea I'm testing.\n\nI'm exploring an app for adults who set phone limits, then switch them off and keep scrolling. The idea is to make those limits harder to ignore while keeping essential access possible. It isn't built yet.\n\nWould you consider sharing this signup page with adults aged 18 or over who might help shape it?\n\nSignup is free and nonbinding.\nhttps://real-change-pilots-aidan-2026.aidantorrence.chatgpt.site/phone-reset?utm_source=unplug_hq&utm_medium=partner_email&utm_campaign=wave10\n\nThanks,\nAidan Torrence"
+          }
+        ],
+        "limits": "Only two exact plain-text emails, no followups/replies, attachments, member/client/attendee/employee lists or direct participant contacts. No mailing-list subscription, event booking, sponsorship/affiliate agreement, money, terms, public/social/Instagram posts, build or deployment. Audience-owner outreach only, not customer leads or verified sharing.",
+        "reason": "No email pending; wave8/9 complete. Reverified distinct adult audience owners: face-to-face singles events and digital-habits consultancy. This is independent of pending signup hardening deployment; current JS capture path read-only audited, no normal-path failure demonstrated.",
+        "preflight": {
+          "checked_at": "2026-10-20T05:03:34Z",
+          "gmail": "All-history exact addresses and related organization domains returned0 and no nextpage. Lock&Key and Pre-Dating treated as one organization. UnPlug HQ Dublin is distinct from completed Unplug Tribe, Nature Unplugged and Mind over Tech.",
+          "official_contacts": "Current official Lock&Key contact publishes exact event manager inbox; FAQ describes adult age ranges and private mailing list. Current UnPlug HQ contact publishes exact inbox/Dublin identity and solutions page describes digital habits.",
+          "tracked_pages": "Exact wave10 tracked better-dates and phone-reset returnedHTTP200 with working form markup, adult and followup-consent copy, free/no-commitment disclosure. No form submitted or test record.",
+          "execute_only_after": "Fresh decision/note/payload match, per-recipient receipts/Gmail, official contact/page check, no suppression and durable execution claim in sameZIP."
+        }
+      },
+      "created": "2026-10-20T05:04:41Z",
+      "expires": "2026-10-23T05:04:41Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
     }
   ]
 }
