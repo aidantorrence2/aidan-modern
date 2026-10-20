@@ -2399,6 +2399,62 @@
       "status": "pending",
       "decided": null,
       "note": ""
+    },
+    {
+      "id": "offers:small-wave12:2026-10-20:phone-and-friendships",
+      "kind": "email",
+      "source": "codex:real-change-pilots",
+      "title": "Two emails: Ctrl Your Scroll and Same Place Events",
+      "summary": "Ask two verified business owners to consider sharing adult-only free interest pages for an unbuilt phone app and a proposed recurring friendship group. Exact emails; no followups, posts, participant contact, spending or deployment.",
+      "payload": {
+        "project_id": "appgprj_6ad56c0398f4819187d2d7870ae70ac4",
+        "action": "Send exactly these two plain-text first-contact business emails once each, only after approval and fresh per-recipient preflight.",
+        "messages": [
+          {
+            "to": "tom@ctrlyourscroll.com.au",
+            "subject": "An idea for adults who keep turning off phone limits",
+            "offer": "phone-reset",
+            "organization": "Ctrl Your Scroll Pty Ltd / Tom Clark",
+            "source": "https://www.ctrlyourscroll.com.au/contact-us",
+            "fit_source": "https://www.ctrlyourscroll.com.au/",
+            "body": "Hi Tom,\n\nI'm Aidan. Your digital wellbeing work with employees seems a good fit for an idea I'm testing.\n\nI'm exploring an app for adults who set phone limits but keep turning them off. The idea is to set boundaries in advance and make impulsive overrides harder. The app isn't built yet.\n\nWould you consider sharing this signup page with adults aged 18 or over who might be interested?\n\nSignup is free and nonbinding.\nhttps://real-change-pilots-aidan-2026.aidantorrence.chatgpt.site/phone-reset?utm_source=ctrl_your_scroll&utm_medium=partner_email&utm_campaign=wave12\n\nThanks,\nAidan Torrence"
+          },
+          {
+            "to": "info@sameplaceevents.com",
+            "subject": "An idea for adults who want to see the same people again",
+            "offer": "real-friendships",
+            "organization": "Same Place Events",
+            "source": "https://sameplaceevents.com/contact",
+            "fit_source": "https://sameplaceevents.com/",
+            "body": "Hi Same Place Events team,\n\nI'm Aidan. Your small-group friendship gatherings, including a three-meetup series, caught my eye.\n\nI'm exploring a six-week neighborhood group where the same adults meet repeatedly, giving friendships time to grow. It isn't running yet. I realise this overlaps with your work, so I'm asking your team rather than approaching your participants.\n\nWould you consider sharing this signup page with adults aged 18 or over who might be interested?\n\nSignup is free and nonbinding.\nhttps://real-change-pilots-aidan-2026.aidantorrence.chatgpt.site/real-friendships?utm_source=same_place_events&utm_medium=partner_email&utm_campaign=wave12\n\nThanks,\nAidan Torrence"
+          }
+        ],
+        "limits": "No followup/reply, attachments, posts/social/Instagram, forms, participants/employee/client/member lists or direct contact, school/minor recruitment, workshop booking, membership, sponsorship/spend/fees/terms, product build or deployment. Audience-owner consideration only, not permission to post or proof of sharing/consenting leads.",
+        "preflight": {
+          "checked_at": "2026-10-20 15:02:13 UTC",
+          "recipient_identity": "Official Ctrl contact publishes tom@ctrlyourscroll.com.au; root names TomClark cofounder and shows employee digitalwellbeing programs. School/youth programs excluded. Official SamePlace contact publishesinfo@sameplaceevents.com and welcomes aligned collaborations; root explicitlyadultplatonic/three-meetupseries. SamePlacealreadyoffersadjacentservice; no unmetneed/endorsement assumed.",
+          "gmail": "Fresh all-history address/domain/organization searches0/no nextpage for both. No prior ledger/campaign send/uncertain/reviewhold/denial/suppression. Two prior research reserves, NOT newlyqualified thisrun.",
+          "execute_only_after": "Refresh exact decision/note/payload/receipts/Gmail/suppression and exact tracked page; durable sameZIPclaim before send. Hold individually if uncertain or rejected; no alternate route or blindresend.",
+          "capture": "Exact tracked destinations must be checked before queue and send; adult/followup uncheckedrequired consent, free/no commitment/no price and earlyconcept truthful. No test record or backend persistence assertion.",
+          "tracked_pages_results": {
+            "checked_at": "2026-10-20 15:02:47 UTC",
+            "exact_destinations": 2,
+            "http200": 2,
+            "adult_18_or_older": 2,
+            "specific_followup_permission": 2,
+            "free_no_commitment": 2,
+            "early_pilot_concept": 2,
+            "production_test_records": 0,
+            "backend_persistence_tested": false
+          }
+        },
+        "why_small_batch": "No currently eligible approved new email remains. Two distinct appropriate adult owner inquiries, not expansion of held/denied actions or repeatcatalog19cards. ExistingRebelform/capturepatchpending stayseparate."
+      },
+      "created": "2026-10-20T15:02:48Z",
+      "expires": "2026-10-23T15:02:48Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
     }
   ]
 }
