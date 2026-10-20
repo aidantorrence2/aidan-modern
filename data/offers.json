@@ -14295,6 +14295,289 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-20",
+    "slug": "steady-arm",
+    "name": "Steady Arm",
+    "need": "I'm so terrified of needles that I put off blood tests and jabs, and I'd run out of the surgery if they offered me one.",
+    "headline": "A needle-fear practice app: a self-paced ladder from pictures to videos, a fear log, a plan for your appointment and a countdown to the day.",
+    "buyer": "Adults (18+) frightened of needles who put off blood tests, vaccinations and other appointments.",
+    "bullets": [
+      "A self-paced practice ladder, from drawings to photos to short videos, that you climb only when you are ready.",
+      "A quick fear log after each step, so you can see it getting easier.",
+      "An appointment plan (what to tell the nurse, lying down, breathing) and a countdown to the day."
+    ],
+    "price": "$5.99/month",
+    "priceUsd": 6,
+    "priceNote": "Or $12.99 for a single appointment pack. Far below VR exposure-therapy app plans ($28.99 a month).",
+    "reasonPrompt": "Which appointment are you putting off, and what part frightens you most?",
+    "faq": [
+      {
+        "q": "Is this therapy or medical advice?",
+        "a": "No. Steady Arm is an independent self-help tool for adults 18+, not therapy or medical advice. If you faint at needles or your fear stops you getting care you need, tell your doctor or nurse; they can help and can arrange support. If you are in crisis, in the US call or text 988."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-20",
+      "summary": "Adults on Mumsnet and the MS Society forum say their fear of needles makes them faint, refuse injections, or get no further than sitting in the chair for a blood test. Paid exposure-therapy apps and hypnotherapy already sell to people with this fear.",
+      "wtp": "oVRcome VR Exposure Therapy (App Store): 3.5 from 22 ratings, $28.99 a month or $199.99 a year. Thin signal: small rating count.",
+      "signals": [
+        {
+          "url": "https://www.mumsnet.com/talk/general_health/5583330-has-anyone-managed-to-overcome-severe-needle-phobia",
+          "who": "Taytocrisps101 (Mumsnet)",
+          "date": "2026-10-02",
+          "quote": "It got to the stage that I would be so terrified I'd run out of the Drs surgery if they offered me a flu jab :(",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/general_health/5583330-has-anyone-managed-to-overcome-severe-needle-phobia",
+          "who": "momager22 (Mumsnet)",
+          "date": "2026-10-02",
+          "quote": "I was pretty needle phobic (sweaty palms, racing heart, frequently pass out)",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/general_health/5583330-has-anyone-managed-to-overcome-severe-needle-phobia",
+          "who": "Ladamesansmerci (Mumsnet)",
+          "date": "2026-10-02",
+          "quote": "I'm needle phobic. I used to pass out, sweat, feeling sick, refuse injections, burst into tears, etc.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forum.mssociety.org.uk/t/phobia-of-blood-tests/66760",
+          "who": "clutter (MS Society forum)",
+          "date": "2022-02-20",
+          "quote": "im deathly afraid of needles, the furthest i can get in an appt for bloods is sitting in the chair",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/app/id1545526126",
+          "who": "oVRcome App Store listing",
+          "date": "2026-10-20",
+          "quote": "22 Ratings ... Annually $199.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "oVRcome, hypnotherapy, therapy for phobias, numbing cream and nurse support.",
+      "risks": "Health-adjacent: the copy must never promise to cure a phobia. The paid app has a small rating count. Beyond Blue returns 403 to our fetch."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-20",
+    "slug": "quick-wit",
+    "name": "Quick Wit",
+    "need": "I'm not witty, I never think of the right thing to say in the moment, and I feel like the boring one nobody remembers.",
+    "headline": "Five minutes of daily spoken practice for adults who feel bland in conversation: prompts you answer out loud, one-line feedback, and a story bank from your own week.",
+    "buyer": "Adults (18+) who feel boring or unfunny in conversation and think of the line hours later.",
+    "bullets": [
+      "Short prompts you answer out loud, with one line of feedback on each.",
+      "A story bank built from your own week, so you have something to say.",
+      "It coaches you to find your own words; it never writes lines for you."
+    ],
+    "price": "$9.99/month",
+    "priceUsd": 10,
+    "priceNote": "Or $49.99 a year. Similar to AI conversation-help apps, but focused on practice.",
+    "reasonPrompt": "When do you most feel stuck for something to say: with friends, at work, or on dates?",
+    "faq": [
+      {
+        "q": "Will this make me funny or get me dates?",
+        "a": "No promises. Quick Wit is an independent practice tool for adults 18+ that helps you get more comfortable speaking up. It is not linked to any dating app."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-20",
+      "summary": "Adults on the Straight Dope and AnandTech forums say they have become bland, are not witty and never think of the right line, and are considered unfunny even by close friends. AI conversation-help apps already sell subscriptions at scale.",
+      "wtp": "WingAI: Your AI Wingman (App Store): 4.8 from 24K ratings, monthly plans $3.99 to $19.99 and yearly $29.99 to $79.99. It writes replies rather than coaching, so it is an adjacent signal.",
+      "signals": [
+        {
+          "url": "https://boards.straightdope.com/t/ive-become-boring-liven-me-up/593500",
+          "who": "Elret (Straight Dope)",
+          "date": "2011-08-21",
+          "quote": "I really dislike being this lame, bland person, but don't have any idea how to get back the person I used to be!",
+          "seen": "opened"
+        },
+        {
+          "url": "https://boards.straightdope.com/t/could-you-love-or-be-friends-with-someone-with-no-apparent-sense-of-humor/596967",
+          "who": "gallows_fodder (Straight Dope)",
+          "date": "2011-09-20",
+          "quote": "I'm not witty, I never think of just the right zinger in the right moment",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.anandtech.com/threads/i-have-a-crappy-sense-of-humor.880929/",
+          "who": "Comp625 (AnandTech forums)",
+          "date": "2002-09-05",
+          "quote": "even around my close friends, I am considered unfunny.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/app/id6448704223",
+          "who": "WingAI App Store listing",
+          "date": "2026-10-20",
+          "quote": "24K Ratings ... UNLIMITED WING AI - ONE YEAR $79.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "WingAI and other reply-writing apps, improv classes, social-skills courses.",
+      "risks": "Posts are 2002 to 2011. The large paid app writes replies for you, which is a different job from practice."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-20",
+    "slug": "quiet-kit",
+    "name": "Quiet Kit",
+    "need": "I want to learn drums, but I'm in an apartment and can't make noise on a real kit.",
+    "headline": "Learn drums at home without a full kit: ten-minute sessions on a practice pad or a cushion, your phone listening for timing, and a plan for getting hands and feet working together.",
+    "buyer": "Adults learning drums at home with no room for a kit, or neighbours who would hear it.",
+    "bullets": [
+      "Ten-minute sessions on a practice pad, a cushion or your knees: no kit, nothing loud enough to come through the walls.",
+      "Your phone listens and tells you whether you are on the beat, so quiet practice still gets feedback.",
+      "A step-by-step hand and foot coordination plan, with a streak and a simple practice log."
+    ],
+    "price": "$9.99/month",
+    "priceUsd": 10,
+    "priceNote": "Well below the leading drum-lesson apps and memberships.",
+    "reasonPrompt": "What stops you practising drums now: space, noise, neighbours, or coordination?",
+    "faq": [
+      {
+        "q": "Do I need an electronic kit?",
+        "a": "No. A practice pad, a cushion or even your knees is enough to start. Quiet Kit is an independent app."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-20",
+      "summary": "Adults learning drums say they can't practise on a loud kit at home, struggle to keep time with a metronome, and drift away when life gets busy. Drum-lesson apps already sell subscriptions.",
+      "wtp": "Melodics: Drum Lessons App (App Store): 4.7 from 630 ratings, Monthly Subscription $34.99, Annual Subscription $179.99.",
+      "signals": [
+        {
+          "url": "https://homerecording.com/bbs/threads/i-want-to-learn-drums.389644/",
+          "who": "Nola (HomeRecording)",
+          "date": "2016-05-12",
+          "quote": "Is there any way to severely mute a real kit for apartment practice?",
+          "seen": "opened"
+        },
+        {
+          "url": "https://homerecording.com/bbs/threads/i-want-to-learn-drums.389644/",
+          "who": "bruiser1964 (HomeRecording)",
+          "date": "2016-05-12",
+          "quote": "the wife thought the constant tappity tap tap was the most annoying thing she had ever heard.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forum.freecodecamp.org/t/beginner-drummer-struggling-with-metronome/792682",
+          "who": "miya (freeCodeCamp forum)",
+          "date": "2026-06-30",
+          "quote": "I find it really hard to listen to the metronome and read drum notation at the same time.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.hamerfanclub.com/forums/topic/81333-is-it-possible-to-learn-the-drums-at-48/",
+          "who": "Steve Haynie (Hamer Fan Club)",
+          "date": "2018-01-07",
+          "quote": "Life got busy.  Goodbye drums.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/app/id6504540940",
+          "who": "Melodics App Store listing",
+          "date": "2026-10-19",
+          "quote": "630 Ratings ... Annual Subscription $179.99",
+          "seen": "opened"
+        }
+      ]
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-20",
+    "slug": "first-dunk",
+    "name": "First Dunk",
+    "need": "Of course I want to dunk a basketball, but my vertical is still the same after all the training.",
+    "headline": "For adult players who want to dunk: a phone-camera jump test, three short sessions a week, a plan that adjusts to your last test, and net, rim and dunk milestones.",
+    "buyer": "Adult (18+) recreational basketball players who want a higher vertical jump.",
+    "bullets": [
+      "Measure your jump with your phone camera, no gadgets needed.",
+      "Three short sessions a week, with a plan that adjusts to your last test.",
+      "Milestones from touching the net to the rim to your first dunk."
+    ],
+    "price": "$5.99/month",
+    "priceUsd": 6,
+    "priceNote": "A fraction of the price of jump-training programmes ($67 to $138).",
+    "reasonPrompt": "How high can you reach now, and what have you tried to jump higher?",
+    "faq": [
+      {
+        "q": "Is this safe?",
+        "a": "First Dunk is an independent training tool for adults 18+, not medical advice. Jump training is demanding on knees and shins: build up slowly, rest between sessions, and see a professional about any pain."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-20",
+      "summary": "Adults on two Substack journals, a jump-training review site and Slowtwitch say they want to dunk, that their vertical hasn't improved after a paid programme, or that they can barely leave the ground. Jump-training programmes and apps already sell.",
+      "wtp": "Vert Shock sells for $67 (list price $138), per The Hoops Geek. Vertical Jump for Basketball (App Store): 4.3 from 321 ratings, Vertical Jump Annual $19.99.",
+      "signals": [
+        {
+          "url": "https://dunkday.substack.com/p/four-months-to-dunk-day",
+          "who": "Tim Cable (Dunk Day Substack)",
+          "date": "2023-08-10",
+          "quote": "Well of course I want to dunk a basketball!",
+          "seen": "opened"
+        },
+        {
+          "url": "https://vertproblems.substack.com/p/jump-journey",
+          "who": "Cameron Lambert (Vert Problems Substack)",
+          "date": "2024-03-18",
+          "quote": "maybe I can find myself dunking on someone",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.thehoopsgeek.com/does-vert-shock-work/",
+          "who": "Claude (The Hoops Geek comments)",
+          "date": "2022",
+          "quote": "Now i just completed Vert Shock Week 4 and my vert is still the same.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forum.slowtwitch.com/t/how-hard-is-it-to-dunk-a-basketball/829610",
+          "who": "stevie_g (Slowtwitch)",
+          "date": "2024-03-27",
+          "quote": "now at 50 can barely leave the ground",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/app/id1632125411",
+          "who": "Vertical Jump for Basketball App Store listing",
+          "date": "2026-10-20",
+          "quote": "321 Ratings ... Vertical Jump Annual $19.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Vert Shock, Jump Manual, vertical-jump apps, strength coaches.",
+      "risks": "The Hoops Geek comment has no date (the page was updated in 2022). Jump training carries injury risk."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
