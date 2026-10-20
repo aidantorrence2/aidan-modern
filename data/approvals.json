@@ -1357,7 +1357,7 @@
         "limits": "Read-only ongoing measurement for this one project. No customer outreach, data deletion/migration, credential recovery, database changes, new endpoint, deployment, spending or broader access. Stop if access is denied; no alternative access path.",
         "why_needed": "The handoff's zero was historical and cloud private-export credentials were omitted. The hourly targets cannot be honestly measured until separately authorized secure access is approved.",
         "result": "Ongoing approved aggregate measurement at 2026-10-20T08:59:19Z: exact project overview first DB/events,leads, then only DB/leads limit25 offset0; empty complete, next_offset null, no truncation/omissions. New consenting adult signups0/5; current total0. Aggregate counts only persisted, no private rows/export. Ongoing read-only scope preserved; no customer messaging or data-change authority.",
-        "result_at": "2026-10-20T09:05:00Z"
+        "result_at": "2026-10-20T09:09:21Z"
       },
       "created": "2026-10-19T05:23:23Z",
       "expires": "2026-10-22T05:23:23Z",
