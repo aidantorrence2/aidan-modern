@@ -6710,5 +6710,122 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "dog-wont-let-me-cut-nails",
+  "offer": "paw-ready",
+  "title": "Dog won't let you cut their nails? A two-minute-a-day paw handling ladder",
+  "description": "Dog panics at nail trims? Build up slowly: touch, hold, show the clippers, trim one nail, rewarding every step.",
+  "intro": "Many dogs dislike having their paws handled. Breaking nail trims into tiny steps, and rewarding each one, usually helps.",
+  "sections": [
+   {
+    "h": "Touch a paw",
+    "list": [
+     "Touch a paw for a second, then treat. Repeat a few times a day."
+    ]
+   },
+   {
+    "h": "Hold a paw",
+    "list": [
+     "Build up to holding a paw for a few seconds."
+    ]
+   },
+   {
+    "h": "Show the clippers",
+    "list": [
+     "Let your dog see and sniff the clippers or grinder, then treat."
+    ]
+   },
+   {
+    "h": "Trim one nail",
+    "list": [
+     "Trim one nail, then stop and reward. Do another tomorrow."
+    ]
+   },
+   {
+    "h": "Check for pain",
+    "p": [
+     "If your dog suddenly won't let you touch a paw, see your vet. A groomer or vet can trim nails while you practise."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "stop-nagging-kids-about-chores",
+  "offer": "ask-once",
+  "title": "Stop nagging about chores: one list, one check-in time",
+  "description": "Asking three or four times every day? Give each child a short list, pick one check-in time, and let them tick things off.",
+  "intro": "Constant reminders tend to make children wait to be told. A list they can see and one check-in time shift the job to them.",
+  "sections": [
+   {
+    "h": "One short list each",
+    "list": [
+     "Two or three daily jobs per child, written where they can see them."
+    ]
+   },
+   {
+    "h": "One check-in time",
+    "list": [
+     "Pick one time, like before screens or dinner, and check then, not all day."
+    ]
+   },
+   {
+    "h": "Let them tick it off",
+    "list": [
+     "Children ticking off their own list builds the habit."
+    ]
+   },
+   {
+    "h": "Link it to something they want",
+    "list": [
+     "Some families link chores to pocket money or screen time."
+    ]
+   },
+   {
+    "h": "Review weekly",
+    "p": [
+     "Look at the week together and adjust the list if it isn't working."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "tablet-meltdown-when-screen-time-ends",
+  "offer": "off-switch",
+  "title": "Tablet meltdowns when screen time ends: a countdown and handover routine",
+  "description": "Child loses it when the screen goes off? Give two warnings, agree the next activity in advance, and keep the routine the same every day.",
+  "intro": "Screens are hard to stop because they're absorbing. A predictable ending, with warnings and something to move to, usually makes it easier.",
+  "sections": [
+   {
+    "h": "Agree the time first",
+    "list": [
+     "Tell your child how long they have before they start."
+    ]
+   },
+   {
+    "h": "Give two warnings",
+    "list": [
+     "For example, ten minutes and two minutes before the end. A visual timer helps younger children."
+    ]
+   },
+   {
+    "h": "Plan the next thing",
+    "list": [
+     "Agree in advance what happens next, like a snack, a game or going outside."
+    ]
+   },
+   {
+    "h": "Stay calm and consistent",
+    "list": [
+     "Use the same routine every day, even when there's protest."
+    ]
+   },
+   {
+    "h": "Note what makes it harder",
+    "p": [
+     "Tiredness, hunger or certain games can make endings harder. If you're worried, talk to your health visitor or doctor."
+    ]
+   }
+  ]
  }
 ]

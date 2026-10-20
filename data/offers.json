@@ -18951,6 +18951,247 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-20",
+    "slug": "paw-ready",
+    "name": "Paw Ready",
+    "need": "My dog won't let me near his claws to trim them.",
+    "headline": "Dog won't let you near their nails? A step-by-step ladder from touching paws to trimming one nail, in ten-second sessions, with a log of each step.",
+    "buyer": "Adult dog owners whose dog panics, pulls away or snaps at nail trims.",
+    "bullets": [
+      "A step ladder: touch a paw, hold a paw, show the clippers, trim one nail.",
+      "Ten-second daily sessions with a log, so you only move on when your dog is relaxed.",
+      "A scratch-board option, and a note to share with your groomer or vet."
+    ],
+    "price": "$3.99/month",
+    "priceUsd": 4,
+    "priceNote": "Or $19 one-time.",
+    "reasonPrompt": "What does your dog do when you try to trim their nails, and how do you manage now?",
+    "faq": [
+      {
+        "q": "Is this vet advice?",
+        "a": "No. If your dog suddenly won't let you touch a paw, check with your vet in case of pain or injury."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Adults 18+. It is an independent app, not linked to any vet, groomer, trainer or pet brand."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-20",
+      "summary": "Dog owners on Mumsnet and Canine Journal say their dog goes ballistic at nail trims or suddenly refuses, and some pay for vet trims or sedation.",
+      "wtp": "Owners pay for vet nail trims (£10 to £15) and sedation (about £40 a time). A cooperative-care nail course costs $49 to $149.",
+      "signals": [
+        {
+          "url": "https://www.mumsnet.com/talk/the_doghouse/4709418-anyone-taken-dog-to-vet-for-nail-clipping",
+          "who": "Pinkandpurplehairedlady (Mumsnet)",
+          "date": "2022-12-31",
+          "quote": "My dog won’t let me near his claws to trim them",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/the_doghouse/4709418-anyone-taken-dog-to-vet-for-nail-clipping",
+          "who": "KronkeyCroc (Mumsnet)",
+          "date": "2022-12-31",
+          "quote": "if I try to clip her nails she goes ballistic.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/the_doghouse/4709418-anyone-taken-dog-to-vet-for-nail-clipping",
+          "who": "RoseMadderAsHell (Mumsnet)",
+          "date": "2023-01-01",
+          "quote": "Vet said it took 4 people to hold him down",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/the_doghouse/4709418-anyone-taken-dog-to-vet-for-nail-clipping",
+          "who": "anotherusernamethiswerk (Mumsnet)",
+          "date": "2023-01-01",
+          "quote": "Always had to get my pug sedated to do his nails. Was about £40 a time I remember.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.caninejournal.com/forums/topic/my-dog-wont-let-me-clip-her-nails-anymore",
+          "who": "walter_white_rules (Canine Journal forum)",
+          "date": "2025-01-16",
+          "quote": "I just tried to yesterday, and she’s having none of it.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.fenzidogsportsacademy.com/index.php/courses/53015",
+          "who": "Fenzi 'Tackling the Toes' course page",
+          "date": "2026-10-20",
+          "quote": "$49 ... $149",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Groomers, vets, nail courses, scratch boards.",
+      "risks": "No app found; many owners just pay the groomer."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-20",
+    "slug": "ask-once",
+    "name": "Ask Once",
+    "need": "I have to ask my teenager three or four times before she does her chores.",
+    "headline": "Tired of nagging the kids about chores? One daily list each, one check-in time for you, and a weekly view of what got done, so you can ask once.",
+    "buyer": "Parents (18+) of children and teens who won't do chores without repeated reminders.",
+    "bullets": [
+      "A daily list for each child that they tick off themselves.",
+      "One check-in time for you, instead of reminding all day.",
+      "An optional pocket-money link, and a weekly view of what slipped."
+    ],
+    "price": "$4.99/month",
+    "priceUsd": 5,
+    "priceNote": "Or $29 a year per family.",
+    "reasonPrompt": "How old are your children, and which chores cause the most nagging?",
+    "faq": [
+      {
+        "q": "Who is it for?",
+        "a": "Adults 18+. It is an independent app, not linked to any school, bank or parenting brand."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-20",
+      "summary": "Parents on Mumsnet say they have to ask three or four times, remind constantly, or would rather live in mess than keep nagging.",
+      "wtp": "Homey chores app (App Store): 2.8K ratings, $4.99 a month. One parent already ties chores to pocket money.",
+      "signals": [
+        {
+          "url": "https://www.mumsnet.com/talk/parenting/5267371-lazy-teenager-constant-nagging",
+          "who": "mumsrthebest (Mumsnet)",
+          "date": "2025-02-03",
+          "quote": "I have to ask her about 3 to 4 times sometimes more before she does it.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/parenting/5267371-lazy-teenager-constant-nagging",
+          "who": "mumsrthebest (Mumsnet)",
+          "date": "2025-02-03",
+          "quote": "We have introduced small chores that they need to do in order to get their pocket money.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/parenting/5267371-lazy-teenager-constant-nagging",
+          "who": "LondonernotinLondon (Mumsnet)",
+          "date": "2025-02-03",
+          "quote": "I find it very annoying when I have to constantly remind her",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/_chat/3976966-Is-it-possible-to-keep-the-house-tidy-without-nagging-constantly",
+          "who": "DreamingOfMrsG (Mumsnet)",
+          "date": "2020-07-24",
+          "quote": "I’m forever telling my kids to bring their dishes down",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/_chat/3976966-Is-it-possible-to-keep-the-house-tidy-without-nagging-constantly",
+          "who": "GracieLane (Mumsnet)",
+          "date": "2020-07-25",
+          "quote": "I would rather live in mess than nag constantly",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1033286805",
+          "who": "Homey App Store listing",
+          "date": "2026-10-20",
+          "quote": "2.8K Ratings ... $4.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Homey, S'moresUp, BusyKid, chore charts.",
+      "risks": "Several established chore apps; habit apps have high churn."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-20",
+    "slug": "off-switch",
+    "name": "Off Switch",
+    "need": "My child completely loses it every time tablet time comes to an end.",
+    "headline": "Child melts down when the tablet goes off? A visual countdown with two warnings, a pre-picked next activity, and a quick log to spot the hardest endings.",
+    "buyer": "Parents (18+) of children about 3 to 10 who melt down when screen time ends.",
+    "bullets": [
+      "A visual countdown with two warnings before time is up.",
+      "A next activity your child picks in advance, so there's something to move to.",
+      "A ten-second log after each switch-off, and a weekly view of which endings are hardest."
+    ],
+    "price": "$3.99/month",
+    "priceUsd": 4,
+    "priceNote": "Or $19 one-time.",
+    "reasonPrompt": "How old is your child, and what happens when screen time ends?",
+    "faq": [
+      {
+        "q": "Is this medical or behaviour advice?",
+        "a": "No. If you're worried about your child's behaviour, talk to your health visitor, school or doctor."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Adults 18+. It is an independent app, not linked to any device maker, app store or parenting brand."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-20",
+      "summary": "Parents on Mumsnet describe children who completely lose it when the TV or tablet goes off, and struggle with transitions.",
+      "wtp": "Kidslox parental controls (App Store): 40K ratings, from $3.99 a month.",
+      "signals": [
+        {
+          "url": "https://www.mumsnet.com/talk/am_i_being_unreasonable/5551604-6yo-completely-loses-the-plot-after-tvtablet-use-what-do-i-do?page=6",
+          "who": "TheJuryIsOut (Mumsnet)",
+          "date": "2026-07-07",
+          "quote": "she just completely lost it, it was like she was completely out of control of her body/brain.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/am_i_being_unreasonable/5551604-6yo-completely-loses-the-plot-after-tvtablet-use-what-do-i-do?page=6",
+          "who": "jolota (Mumsnet)",
+          "date": "2026-07-08",
+          "quote": "We just felt she was getting obsessive and overly upset about it being taken away.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/am_i_being_unreasonable/5551604-6yo-completely-loses-the-plot-after-tvtablet-use-what-do-i-do?page=6",
+          "who": "MusicAM (Mumsnet)",
+          "date": "2026-07-08",
+          "quote": "We have had similar with our 3yo.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/am_i_being_unreasonable/3690119-to-worry-about-my-dr-jekyll-and-mr-hyde-4-year-old",
+          "who": "kiltedsheep (Mumsnet)",
+          "date": "2019-09-12",
+          "quote": "He can't seem to cope with transitions - be it switching off the telly",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/app/id914825567",
+          "who": "Kidslox App Store listing",
+          "date": "2026-10-20",
+          "quote": "40K Ratings ... $3.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Parental-control apps, visual timers, kitchen timers.",
+      "risks": "Paid apps are for controlling screen time, not the meltdown itself."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
