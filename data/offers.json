@@ -13386,6 +13386,224 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-20",
+    "slug": "sign-keep",
+    "name": "Sign Keep",
+    "need": "I want to learn sign language in my own time, but I have no one to practise with and I keep forgetting the signs.",
+    "headline": "Five minutes of daily sign practice: sign to your front camera, get spaced repeats of the signs you forget, start with your own word list, and find practice partners.",
+    "buyer": "Adults learning ASL or BSL on their own, often for a deaf or hard-of-hearing relative or their own hearing loss, with no one to practise with.",
+    "bullets": [
+      "Five-minute daily sign recall to your front camera, with spaced repeats of the signs you keep forgetting.",
+      "Start with your own word list: family names, home, work, the signs you need first.",
+      "Weekly matched practice partners, so you actually get to sign with someone. Works alongside a class."
+    ],
+    "price": "$29.99/year",
+    "priceUsd": 30,
+    "priceNote": "A quarter of the yearly price of the leading sign-language app.",
+    "reasonPrompt": "Why are you learning sign language, and who would you most like to sign with?",
+    "faq": [
+      {
+        "q": "ASL or BSL?",
+        "a": "Both are planned; you choose your sign language at the start. Sign Keep is an independent app and works alongside a class or a Deaf-led course."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-20",
+      "summary": "Adults on two Mumsnet threads and a sign-language teaching site say they want to learn sign in their own time, have no one to practise with, or gave up partway, and a sign-language app sells subscriptions at scale.",
+      "wtp": "Lingvano - Learn Sign Language (App Store): 4.9 from 120K ratings, ASL Premium $17.99 a month or $119.99 a year.",
+      "signals": [
+        {
+          "url": "https://www.mumsnet.com/talk/_chat/3497681-sign-language",
+          "who": "TC07 (Mumsnet)",
+          "date": "2019-02-03",
+          "quote": "I can't commit to evening classes but want to learn in my own time.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/_chat/3497681-sign-language",
+          "who": "OneWildNightWithJBJ (Mumsnet)",
+          "date": "2019-02-03",
+          "quote": "obviously you don't get to practise with other people.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/work/3322607-Sign-language",
+          "who": "HilaryBriss (Mumsnet)",
+          "date": "2018-08-09",
+          "quote": "I've done BSL L1 and part of BSL L2 (gave up part-way through).",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.lifeprint.com/asl101/topics/latedeafenedadult2.htm",
+          "who": "Jessica Goodrich (Lifeprint)",
+          "date": "2007-01-16",
+          "quote": "I had just recently decided to learn ASL and teach my children due to the fact that I have gradually been experiencing hearing loss.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/app/id1547252782",
+          "who": "Lingvano App Store listing",
+          "date": "2026-10-19",
+          "quote": "120K Ratings ... ASL Premium yearly $119.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Lingvano, SignSchool, local classes and Deaf-led courses.",
+      "risks": "Matching practice partners needs a community. Mayo Clinic Connect returns 403 to our fetch, so it is not used."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-20",
+    "slug": "past-plateau",
+    "name": "Past Plateau",
+    "need": "I've been a perpetual intermediate skier for years, and I feel like I'm getting worse, not better.",
+    "headline": "A phone coach for skiers stuck at intermediate: a friend films one run, you get one habit to fix, and two or three drills for the terrain you ski that day.",
+    "buyer": "Adult (18+) recreational skiers stuck at intermediate who can't afford frequent lessons.",
+    "bullets": [
+      "A friend films one run on your phone and you get the one habit to fix first.",
+      "Two or three drills per ski day, chosen for the terrain you are actually skiing.",
+      "First-week clips next to this week's, so you can see the change."
+    ],
+    "price": "$29.99/season",
+    "priceUsd": 30,
+    "priceNote": "Less than a single hour of private ski lessons.",
+    "reasonPrompt": "What kind of terrain do you get stuck on: steeper blues, bumps, trees or ice?",
+    "faq": [
+      {
+        "q": "Is this safe?",
+        "a": "Past Plateau is an independent coaching tool for adults 18+, not a substitute for lessons with a qualified instructor. Ski within your ability and follow the resort's rules."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-20",
+      "summary": "Skiers on SkiTalk, DC Ski and Mumsnet say they have been stuck at intermediate for years or feel they are getting worse, and a paid digital ski coach already sells to them.",
+      "wtp": "Carv Digital Ski Coach (App Store): 4.8 from 2.8K ratings, sold through in-app purchases (prices not shown to our fetch). Skiers on DC Ski say lessons are necessary to progress.",
+      "signals": [
+        {
+          "url": "https://www.skitalk.com/threads/where-do-you-see-most-performance-plateaus-occur.24493/",
+          "who": "Fuller (SkiTalk)",
+          "date": "2021-09-24",
+          "quote": "found myself stuck in an intermediate Ground Hog Day existence for quite a while.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.skitalk.com/threads/where-do-you-see-most-performance-plateaus-occur.24493/",
+          "who": "MissySki (SkiTalk)",
+          "date": "2021-09-24",
+          "quote": "I feel I've been on a plateau in bumps and trees for awhile now.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.dcski.com/forum/92490",
+          "who": "skiobsessed (DC Ski)",
+          "date": "2018-02-07",
+          "quote": "I can attest to the necessity for lessons being a perpetual intermediate skier for the past couple of years!",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/ski-snowboarding/2329796-My-skiing-is-gting-worse-not-better-what-should-I-do",
+          "who": "rookiemere (Mumsnet)",
+          "date": "2015-03-12",
+          "quote": "I just seem to be regressing Benjamin Button like every holiday.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/ski-snowboarding/2329796-My-skiing-is-gting-worse-not-better-what-should-I-do",
+          "who": "angelcake20 (Mumsnet)",
+          "date": "2015-03-14",
+          "quote": "I don't feel like I'm improving",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/carv-digital-ski-coach/id1238683093",
+          "who": "Carv App Store listing",
+          "date": "2026-10-19",
+          "quote": "2.8K Ratings",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Carv, Slopes, ski schools and private lessons.",
+      "risks": "The paid competitor's prices were not visible to our fetch. Skiing is seasonal (November to April)."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-20",
+    "slug": "better-shots",
+    "name": "Better Shots",
+    "need": "Problem is, I still don't take great pictures.",
+    "headline": "A phone-photography coach from a working portrait photographer: pick ten recent photos, get the one fix that helps most, then a two-minute daily challenge with before and after pairs.",
+    "buyer": "Ordinary phone users unhappy with their own photos of people, food and trips.",
+    "bullets": [
+      "Pick ten recent photos and get the one fix that would help most: light, framing, or holding still.",
+      "A two-minute daily challenge you can do wherever you are, built around that fix.",
+      "Before and after pairs from your own camera roll, so you can see it working."
+    ],
+    "price": "$19.99/year",
+    "priceUsd": 20,
+    "priceNote": "Less than a single phone-photography course.",
+    "reasonPrompt": "What do you photograph most, and what goes wrong with the pictures?",
+    "faq": [
+      {
+        "q": "Do I need a better phone?",
+        "a": "No. Better Shots works with the phone you already have. It is built by Aidan Torrence, a portrait photographer, and is independent of any phone maker."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-20",
+      "summary": "Phone users on several forums and app reviews say their photos still are not good, even after courses or a new phone, and phone-photography courses and apps already sell.",
+      "wtp": "CamGuru - Photography Courses (App Store): 3.3 from 90 ratings, phone photography courses sold in-app at $39 to $99. Thin signal: small rating count.",
+      "signals": [
+        {
+          "url": "https://patch.com/georgia/loganville/iphone--iphotographernot-so-much",
+          "who": "Jason Brooks (Patch)",
+          "date": "2013-06-18",
+          "quote": "Problem is, I still don't take great pictures.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://discussions.apple.com/thread/254438267",
+          "who": "DeeZines (Apple Support Community)",
+          "date": "2022-12-04",
+          "quote": "Can’t take a decent photo with iPhone 12. Fuzzy, light glairs, poor quality, color flat.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://discussions.apple.com/thread/254136359",
+          "who": "cindydako (Apple Support Community)",
+          "date": "2022-08-23",
+          "quote": "My phone has taken terrible pictures since I got it.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/app/id1528976296",
+          "who": "CamGuru App Store listing",
+          "date": "2026-10-19",
+          "quote": "90 Ratings ... iPhone Photo Academy $49.00",
+          "seen": "opened"
+        }
+      ],
+      "risks": "The Apple Support posts may partly reflect camera faults rather than technique, and the course app has only 90 ratings. Samsung Community returns 403 to our fetch."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

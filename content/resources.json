@@ -3967,5 +3967,119 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "learning-sign-language-with-no-one-to-practise-with",
+  "offer": "sign-keep",
+  "title": "How to keep learning sign language when you have no one to practise with",
+  "description": "Learning ASL or BSL on your own and forgetting signs? Practise little and often, sign to a mirror or camera, start with the signs you need, and find people to sign with.",
+  "intro": "Sign language fades quickly without use. When there is no one to sign with every day, short daily practice and a few deliberate chances to sign with others keep it alive.",
+  "sections": [
+   {
+    "h": "Little and often",
+    "list": [
+     "Five minutes a day keeps signs fresher than one long session a week.",
+     "Review the signs you got wrong yesterday first."
+    ]
+   },
+   {
+    "h": "Sign to a mirror or camera",
+    "list": [
+     "Signing out loud, not just watching videos, is what builds memory. Record yourself and compare with the dictionary video."
+    ]
+   },
+   {
+    "h": "Start with the signs you need",
+    "list": [
+     "Learn names, family, home and the phrases you will use with the person you are learning for, before general vocabulary."
+    ]
+   },
+   {
+    "h": "Find people to sign with",
+    "list": [
+     "Look for local Deaf clubs, signing cafés or online practice groups. Classes led by Deaf teachers are the best way to progress."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "stuck-as-an-intermediate-skier",
+  "offer": "past-plateau",
+  "title": "Stuck as an intermediate skier? How to get off the plateau without endless lessons",
+  "description": "Been an intermediate skier for years? Get filmed, fix one habit at a time, use drills on easy terrain, and book a lesson for the things you can't see yourself.",
+  "intro": "Many skiers plateau at intermediate because they ski the same runs the same way every holiday. Small, focused changes on easier terrain usually unlock the next level.",
+  "sections": [
+   {
+    "h": "Get filmed",
+    "list": [
+     "Ask a friend to film one run from behind. Look for leaning back, a stiff upper body and skis wide apart; they are the most common intermediate habits."
+    ]
+   },
+   {
+    "h": "Fix one habit at a time",
+    "list": [
+     "Pick one thing, for example pressure on the front of the boots, and work on it for a whole day."
+    ]
+   },
+   {
+    "h": "Drill on easy terrain",
+    "list": [
+     "Practise new movements on a run below your level, then take them to harder slopes.",
+     "Short drills, such as linking turns with your hands on your knees, make the habit automatic."
+    ]
+   },
+   {
+    "h": "Lessons where they count",
+    "list": [
+     "A single lesson focused on your one habit is often worth more than a week of general group lessons."
+    ]
+   },
+   {
+    "h": "Stay safe",
+    "p": [
+     "Ski within your ability, especially when trying new technique, and follow the resort's rules. This guide is general information."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "why-your-phone-photos-look-flat",
+  "offer": "better-shots",
+  "title": "Why your phone photos look flat, and the one fix to try first",
+  "description": "Phone photos fuzzy, flat or dull? Clean the lens, find better light, tap to focus, hold still, and get closer before you reach for filters.",
+  "intro": "Most disappointing phone photos come from a handful of things that have nothing to do with the phone: a dirty lens, poor light, a missed focus point or a shaky hand.",
+  "sections": [
+   {
+    "h": "Clean the lens",
+    "list": [
+     "A fingerprint on the lens makes photos hazy and causes flare. Wipe it with a soft cloth before shooting."
+    ]
+   },
+   {
+    "h": "Find better light",
+    "list": [
+     "Face your subject towards a window or soft daylight. Avoid harsh overhead light and shooting into the sun."
+    ]
+   },
+   {
+    "h": "Tap to focus",
+    "list": [
+     "Tap the screen on your subject, then slide the brightness down a little if the picture looks washed out."
+    ]
+   },
+   {
+    "h": "Hold still and get closer",
+    "list": [
+     "Brace your elbows against your body and take the photo as you breathe out.",
+     "Walk closer instead of zooming in; digital zoom loses detail."
+    ]
+   },
+   {
+    "h": "If photos are always blurry",
+    "p": [
+     "If every photo is fuzzy even in good light, the camera may have a fault. Check for a scratched lens or contact the maker."
+    ]
+   }
+  ]
  }
 ]
