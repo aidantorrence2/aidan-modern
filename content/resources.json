@@ -6827,5 +6827,44 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "too-many-photos-on-phone",
+  "offer": "roll-down",
+  "title": "Thousands of photos on your phone? Sort them ten minutes at a time",
+  "description": "Camera roll too big to face? Back up first, clear screenshots and duplicates, then go through one month at a time in short sessions.",
+  "intro": "A camera roll of thousands of photos feels impossible to sort in one go. Small, safe steps make it manageable.",
+  "sections": [
+   {
+    "h": "Back up first",
+    "list": [
+     "Make sure your photos are backed up before you delete anything, so mistakes can be undone."
+    ]
+   },
+   {
+    "h": "Start with the easy wins",
+    "list": [
+     "Delete screenshots, blurry shots and obvious duplicates first. Your phone's built-in tools can find many of these."
+    ]
+   },
+   {
+    "h": "One month at a time",
+    "list": [
+     "Go through one month per session. Ten minutes is enough."
+    ]
+   },
+   {
+    "h": "Keep the best, not all",
+    "list": [
+     "From a burst or a set of similar shots, keep one or two favourites."
+    ]
+   },
+   {
+    "h": "Check the recently deleted folder",
+    "p": [
+     "Most phones keep deleted photos for a while. Check it before it empties, in case you removed one by mistake."
+    ]
+   }
+  ]
  }
 ]

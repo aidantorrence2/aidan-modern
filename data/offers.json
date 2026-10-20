@@ -19192,6 +19192,108 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-20",
+    "slug": "roll-down",
+    "name": "Roll Down",
+    "need": "I have thousands of photos on my phone and can't face sorting them, but I'm scared I'll lose them if I delete anything.",
+    "headline": "Thousands of photos on your phone and no idea where to start? Clear your camera roll ten minutes at a time, one day's photos at a time, without the fear of deleting the wrong one.",
+    "buyer": "An adult with a camera roll that has grown to 5,000–100,000 photos over years of holidays, pets, screenshots and recipes. They're paying for extra cloud storage, they keep meaning to go through it all, and every time they open the gallery the job looks too big to start.",
+    "bullets": [
+      "Short daily sessions: you see one small batch at a time, grouped by date, so you never face the whole library at once",
+      "Swipe to keep or remove, and anything you remove waits in a holding pile you review before it's cleared",
+      "A running count shows how far down your camera roll you've got, so the pile visibly shrinks week by week"
+    ],
+    "price": "$3.99/month",
+    "priceUsd": 4,
+    "priceNote": "",
+    "reasonPrompt": "Roughly how many photos are on your phone right now, and what has stopped you sorting them so far?",
+    "faq": [
+      {
+        "q": "Who makes Roll Down?",
+        "a": "Roll Down is an independent app for adults 18+. It isn't affiliated with Apple, Google or any photo-storage company."
+      },
+      {
+        "q": "Do I have to sort everything in one go?",
+        "a": "No. The point is small batches. You work through a few days' photos per session and pick up where you left off next time."
+      },
+      {
+        "q": "Is this a backup service?",
+        "a": "No. Roll Down helps you decide what to keep. It doesn't replace your own backup, so keep using whatever backup you already have."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-20",
+      "summary": "On Mumsnet, named adults describe camera rolls far too big to handle (95k, 6,000, 52k and 45,836 photos), say they're afraid of losing them, and ask for a safe way to whittle them down. Some already pay for an app or for extra cloud storage just to cope.",
+      "wtp": "Mumsnet posters paid £3.99 for a photo-sorting app, pay 99p a month for extra Apple storage, and pay for Google One. Slidebox (App Store): 17K ratings, $4.99 a month or $49.99 a year.",
+      "signals": [
+        {
+          "url": "https://www.mumsnet.com/talk/_chat/5277361-photo-deleting-app-that-works-and-doesnt-lose-photos",
+          "who": "ginmcginface (Mumsnet)",
+          "date": "2025-02-18",
+          "quote": "Ok, the quantity of photos on my phone is ridiculous (95k!)",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/_chat/5277361-photo-deleting-app-that-works-and-doesnt-lose-photos",
+          "who": "ginmcginface (Mumsnet)",
+          "date": "2025-02-18",
+          "quote": "I have a fear I will lose them all.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/_chat/5277361-photo-deleting-app-that-works-and-doesnt-lose-photos",
+          "who": "BlunderMifflin (Mumsnet)",
+          "date": "2025-02-18",
+          "quote": "I also just checked my purchase history and saw I actually paid a one-off £3.99 several years ago, it wasn't free, my mistake.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/_chat/5277361-photo-deleting-app-that-works-and-doesnt-lose-photos",
+          "who": "SnowflakeSmasher86 (Mumsnet)",
+          "date": "2025-02-18",
+          "quote": "I just looked at that app, but its £20 a year.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/_chat/5543299-6000-photos",
+          "who": "Callmeback (Mumsnet)",
+          "date": "2026-06-16",
+          "quote": "What are the storage options if you have 6000 ish photos on your phone.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/_chat/5543299-6000-photos",
+          "who": "Turtlestarfish (Mumsnet)",
+          "date": "2026-06-16",
+          "quote": "I also pay 99p a month for extra Apple storage, as I currently have 52k photos on my phone",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/_chat/5543299-6000-photos",
+          "who": "Haribosweets (Mumsnet)",
+          "date": "2026-06-16",
+          "quote": "I have Google one subscription as over the GB for free version",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id984305203",
+          "who": "Slidebox App Store listing",
+          "date": "2026-10-20",
+          "quote": "17K Ratings ... $4.99 ... $49.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Slidebox: Photo Cleaner App: 17K ratings, 4.8, Editors' Choice, $4.99/month or $49.99/year. GetSorted: Clean Up Photos: 1K ratings, 4.9, Plus in-app purchases at $5.99 and $24.99. The GetSorted App Store page also lists Utiful, Flic, Mylio Photos and Photo Cleaner: Daily Delete under 'You Might Also Like'. Apple Photos and Google Photos have free built-in tools, such as duplicate merging. Paid cloud storage (iCloud+, Google One) is the default fallback: people pay to keep everything rather than sort it.",
+      "risks": "The category is crowded with highly rated swipe-to-clean apps, so we need a clear angle: small daily sessions, done by date, with a review step before anything is removed. Some buyers are price-sensitive: ginmcginface reacted to £20/year with 'Gosh, that expensive.' Cheap cloud storage lets people put the problem off. The app would need full photo-library permission, and fear of losing photos is the main barrier, so any deletion bug would be very damaging. All the forum evidence comes from one site (Mumsnet, two threads, mostly UK users). Mumsnet quotes were read and checked via WebFetch only, because direct curl is blocked."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
