@@ -71,7 +71,8 @@ META3 = {
  'p04': ('The table', 'CTR · proof', 'Nine prints scattered on the table: "portraits from my last trip, next stop Charlotte".'),
  'p05': ('Hero + rail', 'CTR · thumb-stop', 'One big portrait with the city band under it and a rail of ten more below.'),
  'p09': ('Portfolio grid', 'CTR · credibility', 'Fifteen portraits in a portfolio grid under a plain "aidan · portraits" header.'),
- 'p10': ('Pairs', 'CTR · women & men', 'Five cards, each a woman and a man side by side with one line underneath.'),
+ 'p10b': ('Pairs, new copy', 'CTR · women & men', 'Same five pairs, rewritten as one short story in your voice: Charlotte, free photo shoot → i\'m aidan, a portrait photographer → never posed before? perfect, i\'ll guide you → come alone or bring a friend → Interested? Let\'s chat.'),
+ 'p10': ('Pairs (first copy)', 'CTR · women & men', 'Five cards, each a woman and a man side by side with one line underneath.'),
 }
 def card3(cid):
     title, lever, why = META3[cid]
