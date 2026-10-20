@@ -256,6 +256,26 @@ const grid = (stems, x0, y0, cols, w, h, gap = 0, pos = 'center 28%') => stems.m
     <div style="position:absolute;left:0;right:0;top:1180px;bottom:0;background:#0a0a0a;"></div>${band(1185, 250, `<p style="font-family:${font};font-size:${s1}px;font-weight:700;font-style:${font === HW ? 'normal' : 'italic'};color:#fff;margin:0;line-height:1.02;">${l1}</p>${l2 ? `<p style="font-family:${font};font-size:${s2}px;font-weight:${font === HW ? 700 : 400};font-style:${font === HW ? 'normal' : 'italic'};color:rgba(255,255,255,.9);margin:12px 0 0;line-height:1.1;">${l2}</p>` : ''}`)}`, '#000', false)])
 }
 
+// P10d STAGGERED PAIRS (Aidan, 20 Oct: "why not make the pairs staggered cards or something"): each card is two matted
+// prints, one high-left and one low-right, slightly rotated and overlapping, on the dark table; p10c's copy on top.
+{
+  const story = [['T31', 'T39', CITY, 'free photo shoot.', 120, 66, SE],
+    ['T14', 'T91', "i'm aidan, a portrait photographer.", "i'm in charlotte for a few weeks.", 54, 36, SE],
+    ['T73', 'T16', 'my recent work', '', 76, 0, SE],
+    ['T58', 'T89', 'about an hour.', 'i direct every frame.', 76, 44, SE],
+    ['T10', 'T20', 'Interested?', "Let's chat.", 104, 104, HW]]
+  // alternate which side sits high so the swipe zig-zags
+  C.p10d = story.map(([a, b, l1, l2, s1, s2, font], i) => {
+    const hiLeft = i % 2 === 0, A = hiLeft ? a : b, B = hiLeft ? b : a
+    const t1 = i === 0 ? 300 : 280
+    const text = `<div style="position:absolute;top:${t1}px;left:56px;right:56px;text-align:center;">
+      <p style="font-family:${font};font-size:${s1}px;font-weight:700;font-style:${font === HW ? 'normal' : 'italic'};color:#fff;margin:0;line-height:${font === HW ? 0.95 : 1.02};">${l1}</p>
+      ${l2 ? `<p style="font-family:${font};font-size:${s2}px;font-weight:${font === HW ? 700 : 400};font-style:${font === HW ? 'normal' : 'italic'};color:rgba(255,255,255,.88);margin:${font === HW ? 0 : 12}px 0 0;line-height:${font === HW ? 0.95 : 1.1};">${l2}</p>` : ''}</div>`
+    const y0 = font === HW || i === 0 ? 540 : 490
+    return [`${String(i + 1).padStart(2, '0')}-stagger`, dark(`${text}${pr(P(A), hiLeft ? 40 : 500, y0, 520, hiLeft ? -4 : 3)}${pr(P(B), hiLeft ? 500 : 40, y0 + 470, 520, hiLeft ? 3 : -4)}`, false)]
+  })
+}
+
 async function render() {
   const browser = await chromium.launch()
   const ctx = await browser.newContext({ viewport: { width: 1080, height: 1920 }, deviceScaleFactor: 1 })

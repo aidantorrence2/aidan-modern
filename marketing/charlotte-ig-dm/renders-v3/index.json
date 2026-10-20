@@ -69,5 +69,12 @@
   "03-pair",
   "04-pair",
   "05-pair"
+ ],
+ "p10d": [
+  "01-stagger",
+  "02-stagger",
+  "03-stagger",
+  "04-stagger",
+  "05-stagger"
  ]
 }

@@ -62,6 +62,7 @@ def vcard(v):
   <p class="needs ok">{html.escape(v.get('meta', ''))}</p></article>'''
 
 META3 = {
+ 'p10d': ('Staggered pairs', 'CTR · women & men', 'Each card is two matted prints, a woman and a man, one high and one low, overlapping and zig-zagging card to card. Copy from your winning deck (same as P10C).'),
  'p07': ('Winner deck, nine prints a card', 'CTR · proof density', 'Your winning deck with your top picks: nine prints on "my recent work" and on "never done this before?", two on "now in Charlotte".'),
  'p08': ('Hi, I\'m Aidan carousel', 'CTR · trust', 'Your hello, then twelve portraits on one card ("here\'s what i shoot"), then the CTA.'),
  'p06': ('Notes app + nine-photo gallery', 'CPM + CTR · native look', 'The note, with a 3×3 grid of portraits under it.'),
