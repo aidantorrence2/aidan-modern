@@ -3,6 +3,8 @@
 # TC maps each key to (file stem, rotation in degrees counter-clockwise): the scans are sideways.
 # The photos are from Almaty and Paris (T51–T66 are Paris), not Charlotte.
 TC = {
+ 'T12': ('R1-00007-025A', -90),
+ 'T32': ('R1-09793-0021', -90),
  'T2': ('R1-00005-0005', 90),
  'T3': ('R1-00005-0012', 90),
  'T4': ('R1-00005-0013', 90),

@@ -23,3 +23,16 @@ The board went to the user for review: https://claude.ai/artifact/5NLvEqbRpkRv87
 ## Offer details still to confirm with the user
 Dates in Charlotte · number of spots (boards assume 10) · photos delivered and turnaround (~10, ~1 week assumed) ·
 shot on film? · duo/couple sessions? · whether the tier-2 photos are from Paris (concept 18)
+
+## v2: CPC-first concepts against the current winner (20 Oct 2026)
+The user sent the Istanbul DM story deck (8 cards) as "the defined current successful ad" and asked for concepts that do much
+better on CPC, not variations of it, using tier_candidates. Built:
+- `render-v2.mjs`: control C00 (the winner re-cast: no film card, CTA "Interested? Let's chat.") + 12 challengers N01–N12
+  (one frame ×3 heroes, face wall, question hook, Notes app, where-should-we-shoot, the DM, camera roll vs one hour,
+  bring a friend, callout 5, eye-contact reel, hi I'm Aidan, before the leaves drop). Text is kept above y=1440.
+  `python3 prep-photos.py <tier_candidates> /tmp/x && node render-v2.mjs --photos=/tmp/x --out=<dir>`
+- `build-board-v2.py`: board with the CPC equation, past campaign numbers, $5/day test plan. Frames are gitignored (marketing/**/*.jpg): re-render them, or use the local copy in ~/Documents/aidan-modern-charlotte-ws/marketing/charlotte-ig-dm/renders-v2/.
+- Board: https://claude.ai/artifact/RHB5FnfTiSZdL8EJjGc4uA
+Rules applied: no film wording (Aidan, 23 Sept), no "models"/job words (US Employment category), city big on hooks,
+women-only ad set, 3–4 ads per round at $5/day. The v1 board (80 concepts, incl. a FILM family) is superseded by v2.
+Open: duo sessions (N08), dates (N12), selfie video (N11), the about-card claim "back in the States".
