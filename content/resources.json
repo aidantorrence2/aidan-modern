@@ -5423,5 +5423,44 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "stop-throwing-away-food-you-forgot",
+  "offer": "use-it-first",
+  "title": "Keep throwing away food you forgot about? An eat-first shelf and a 2-minute fridge check",
+  "description": "Binning the same half-used veg, packs and leftovers every week? Keep an eat-first shelf, check the fridge before you shop, and plan one meal around what needs using.",
+  "intro": "Most food waste at home comes from forgetting what is there. Small habits that keep it in sight cut most of it.",
+  "sections": [
+   {
+    "h": "Make an eat-first shelf",
+    "list": [
+     "Put opened packs, leftovers and anything close to its date on one shelf at eye level."
+    ]
+   },
+   {
+    "h": "Check the fridge before you shop",
+    "list": [
+     "Take two minutes, or a photo, so you don't buy what you already have."
+    ]
+   },
+   {
+    "h": "Plan one meal a week around what needs using",
+    "list": [
+     "A stir-fry, soup, omelette or traybake can use up most odds and ends."
+    ]
+   },
+   {
+    "h": "Buy fresh food for the next few days only",
+    "list": [
+     "Smaller, more frequent top-ups waste less than one big shop."
+    ]
+   },
+   {
+    "h": "Freeze before it's too late",
+    "p": [
+     "Bread, meat and many leftovers freeze well. Freeze them before the date, and check the label first."
+    ]
+   }
+  ]
  }
 ]

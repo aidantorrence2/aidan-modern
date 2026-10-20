@@ -16007,6 +16007,87 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-20",
+    "slug": "use-it-first",
+    "name": "Use First",
+    "need": "I keep throwing away food I forgot about, often the same half-used items every week.",
+    "headline": "Stop binning food you forgot you bought. Use First shows what to eat tonight before it goes off, so the veg, salad and leftovers get eaten, not thrown out.",
+    "buyer": "An adult who does a weekly shop with good intentions and then finds slimy veg, half-used packs and defrosted meat that missed its chance. Usually a busy household cook, often in a small household where portions and pack sizes don't match.",
+    "bullets": [
+      "Log a shop in under a minute: tap the fresh items you bought, with no barcode scanning needed",
+      "Every evening you get a short 'eat these first' list of what's closest to going off, plus a simple meal idea that uses them",
+      "A weekly tally of what you binned and roughly what it cost, so you can see whether you're getting better"
+    ],
+    "price": "$3.99/month",
+    "priceUsd": 4,
+    "priceNote": "One flat monthly price. Cheaper food-inventory apps exist; the selling point is the nightly use-first nudge rather than a full pantry database.",
+    "reasonPrompt": "What did you last throw away because you forgot it was there?",
+    "faq": [
+      {
+        "q": "Who makes Use First?",
+        "a": "Use First is an independent app for adults 18+. It is not affiliated with any supermarket, food brand or other food-tracking app."
+      },
+      {
+        "q": "Do I have to scan barcodes or log everything in my kitchen?",
+        "a": "No. You only add the fresh, perishable things you're likely to forget, like veg, fruit, dairy, bread, meat and leftovers. Cupboard staples can stay off the list."
+      },
+      {
+        "q": "Does it tell me whether food is safe to eat?",
+        "a": "No. Use First is a reminder and planning tool. It doesn't judge food safety, so always check the label and use your own judgement."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-20",
+      "summary": "People on MoneySavingExpert and Mumsnet say they bin food every week: meat defrosted and never cooked, the same half-used items, half a bag of food in one week.",
+      "wtp": "NoWaste (App Store): 753 ratings, Pro $6.99 a year or $29.99 lifetime. FridgeBuddy (App Store): 209 ratings, plans from $1.99 a month.",
+      "signals": [
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/210262/what-food-have-you-thrown-out-this-week/p5",
+          "who": "shazzer22 (MoneySavingExpert Forum)",
+          "date": "2006-06-11",
+          "quote": "My biggest failure is taking meat out of the freezer to defrost and then forgetting to cook it in time!",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/210262/what-food-have-you-thrown-out-this-week/p5",
+          "who": "cookiesncream (MoneySavingExpert Forum)",
+          "date": "2006-06-11",
+          "quote": "Every week, I end up throwing potato and carrots out.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/3573873",
+          "who": "rachbc (MoneySavingExpert Forum)",
+          "date": "2011-10-27",
+          "quote": "I noticed that I was regularly throwing away the same items half used",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/am_i_being_unreasonable/3156759-To-ask-if-you-waste-a-lot-of-food",
+          "who": "IsItSummerYet2018 (Mumsnet)",
+          "date": "2018-02-02",
+          "quote": "But I swear this week alone I've probably binned half a black bag of food.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/nowaste-food-inventory-list/id926211004",
+          "who": "NoWaste App Store listing",
+          "date": "2026-10-20",
+          "quote": "753 Ratings ... NoWaste Pro Annual $6.99 ... Lifetime $29.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "NoWaste ($6.99/yr or $29.99 lifetime, 4.2 stars from 753 ratings) and FridgeBuddy (in-app purchases $1.99/mo to $69.99 lifetime, 4.6 stars from 209 ratings) are full inventory trackers with barcode or receipt scanning. Other paid trackers on the App Store include FridgeTrack, Fridgely and Food Expiry AI. Free alternatives are a whiteboard on the fridge, a 'use this week' box, meal planning, and council or Love Food Hate Waste advice. Use First would compete on low-effort logging and a nightly use-first list rather than full inventory.",
+      "risks": "Several crowded, cheap competitors with lifetime deals make $3.99/month a hard sell. The logging habit tends to fade after a few weeks. In a 2026 Mumsnet thread (5509184) most posters said they waste very little, so heavy wasters may be a minority or embarrassed to say so. Part of the forum evidence is old (2006 and 2011, from MoneySavingExpert). Some waste is blamed on poor supermarket produce, which an app can't fix. Never imply food-safety judgements."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
