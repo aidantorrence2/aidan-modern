@@ -15737,6 +15737,108 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-20",
+    "slug": "stuck-facts",
+    "name": "Stuck Facts",
+    "need": "My child passed the times tables check but still doesn't know them, even the easy ones, and drilling them every night isn't working.",
+    "headline": "Your child still doesn't know their times tables? Five minutes a night on only the facts they keep getting wrong, so you stop drilling all twelve tables again and again.",
+    "buyer": "Parents of children around ages 7 to 10 (UK Year 3 to 5, US grades 2 to 4) whose child is behind on times tables or has forgotten them, and who are tired of whiteboards and nightly recitals that end in arguments.",
+    "bullets": [
+      "A short check finds the exact facts your child gets wrong or answers slowly, like 7x8 or 6x9, rather than whole tables",
+      "Each night is a five-minute round that goes back over those stuck facts and drops the ones they now know",
+      "A simple parent view shows which facts are still stuck and which are sorted, so you know what to practise in the car or at dinner"
+    ],
+    "price": "$3.99/month",
+    "priceUsd": 4,
+    "priceNote": "One family subscription, paid by the parent.",
+    "reasonPrompt": "Which times tables or facts does your child keep getting stuck on, and what have you already tried at home?",
+    "faq": [
+      {
+        "q": "Who is this for?",
+        "a": "Stuck Facts is an independent app. A parent or guardian aged 18 or over buys it and sets it up for their child. Children don't buy anything or make accounts themselves."
+      },
+      {
+        "q": "Is this connected to my child's school or Times Tables Rock Stars?",
+        "a": "No. It's an independent app and isn't affiliated with, endorsed by or connected to any school, exam body or other times tables product. Your child can keep using whatever their school sets."
+      },
+      {
+        "q": "Will this diagnose a learning difficulty?",
+        "a": "No. It's a practice tool, not an assessment or a medical or educational diagnosis. If you're worried about dyscalculia or another learning difference, talk to your child's teacher or school SENCO."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-20",
+      "summary": "Parents on Mumsnet keep starting threads because their child can't remember times tables, even after passing the school check or after months of drilling. Four different named parents across two Mumsnet threads that I opened (2021 and 2025) say this in their own words. A third Mumsnet thread I opened (2017) has another parent saying the same. Replies are full of homemade workarounds (car CDs, singing, whiteboards, writing tables out, YouTube videos), and the advice amounts to 'you've just got to learn them'. That points to a real gap for something that targets the specific facts a child keeps missing.",
+      "wtp": "Parents on Mumsnet say they bought flashcards, a times-tables board game and a £15-a-year online subscription. Times Tables Rock Stars (App Store): 139k ratings, requires a paid subscription.",
+      "signals": [
+        {
+          "url": "https://www.mumsnet.com/talk/primary/5412405-embedding-times-tables?page=1",
+          "who": "TimesTablesConumdrum (Mumsnet)",
+          "date": "2025-09-17",
+          "quote": "She passed her year 3 tables but doesn’t seem to know them despite this. Even easy ones.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/primary/5412405-embedding-times-tables?page=1",
+          "who": "Tintarella (Mumsnet)",
+          "date": "2025-09-19",
+          "quote": "We're ploughing on with TT Rockstars and I've bought some flashcards.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/primary/4139739-Times-tables-the-basics?page=1",
+          "who": "IamBitzyVonMuffling (Mumsnet)",
+          "date": "2021-01-18",
+          "quote": "My DS in Y3 is really struggling with Maths this year.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/primary/4139739-Times-tables-the-basics?page=1",
+          "who": "littlepeaegg (Mumsnet)",
+          "date": "2021-01-18",
+          "quote": "My son is yr4 and we are struggling with his timetables too",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/primary/4139739-Times-tables-the-basics?page=1",
+          "who": "DoraChance (Mumsnet)",
+          "date": "2021-01-18",
+          "quote": "I bought a times tables Orchard game today for my year 3 boy.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/primary/3103500-Times-tables",
+          "who": "ShovellerDuck (Mumsnet)",
+          "date": "2017-12-03",
+          "quote": "I found he doesn’t know any of his tables.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/primary/3103500-Times-tables",
+          "who": "AdultHumanFemale (Mumsnet)",
+          "date": "2017-12-03",
+          "quote": "is using the computer program Nessy Numbers (online subscription  £15 year) to learn her tables.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/gb/app/id973811326",
+          "who": "Times Tables Rock Stars App Store listing",
+          "date": "2026-10-20",
+          "quote": "139k Ratings ... Requires a low-cost subscription",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Times Tables Rock Stars (often paid for by the school; 139k App Store ratings), Squeebles Times Tables Connect (free with family in-app purchases), Multiplication Tables! by 3Mb Solutions (free, 4.8 from 5.8K ratings), Math-E Premium ($1.99), Hit the Button and timestables.co.uk (free web tools), KoolKids YouTube videos, and times tables CDs and songs. The gap: most of these drill whole tables or run as speed games, and none has a parent view centred on the few facts a child is stuck on.",
+      "risks": "This is a crowded market with strong free options, and many UK children already get Times Tables Rock Stars through school, so a monthly fee has to be justified by focus and the parent view. The buyer is the parent but the user is a child, so app store children's-category rules and child data and privacy obligations apply; don't claim privacy terms until they exist. Don't promise results, test scores or help with a learning difficulty. Don't use the Times Tables Rock Stars name or branding in marketing beyond a factual comparison. Most of the evidence is from UK parents (Mumsnet), so US demand is less well evidenced."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

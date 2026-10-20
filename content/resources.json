@@ -5306,5 +5306,44 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "child-still-doesnt-know-times-tables",
+  "offer": "stuck-facts",
+  "title": "Child still doesn't know their times tables? Practise only the facts they get wrong",
+  "description": "Drilling every table every night not working? Find the handful of facts your child keeps getting wrong, practise just those for five minutes, and drop each one once it sticks.",
+  "intro": "Most children know more of their tables than it seems. Usually a handful of facts, like 7×8 or 6×9, keep tripping them up. Practising just those works better than reciting every table.",
+  "sections": [
+   {
+    "h": "Find the stuck facts",
+    "list": [
+     "Ask the facts out of order. Write down any your child gets wrong or answers slowly."
+    ]
+   },
+   {
+    "h": "Cross off what they already know",
+    "list": [
+     "Facts like 1s, 2s, 5s and 10s, and the turnarounds (3×7 is the same as 7×3), shrink the list a lot."
+    ]
+   },
+   {
+    "h": "Five minutes, not fifty",
+    "list": [
+     "Practise only the stuck facts, out of order, for a few minutes a day."
+    ]
+   },
+   {
+    "h": "Drop a fact once it sticks",
+    "list": [
+     "When a fact comes quickly on three different days, take it off the list."
+    ]
+   },
+   {
+    "h": "Talk to the teacher if you're worried",
+    "p": [
+     "If your child struggles with numbers more widely, have a word with their teacher or the school SENCO."
+    ]
+   }
+  ]
  }
 ]
