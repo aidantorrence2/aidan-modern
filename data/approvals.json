@@ -1356,8 +1356,8 @@
         "data_scope": "Database row responses may contain private email addresses and city/participation/consent/attribution fields. Read only to count and deduplicate. Do not persist, export, email, share or put individual lead records in Library, prompts for other workers, Git repositories or public pages.",
         "limits": "Read-only ongoing measurement for this one project. No customer outreach, data deletion/migration, credential recovery, database changes, new endpoint, deployment, spending or broader access. Stop if access is denied; no alternative access path.",
         "why_needed": "The handoff's zero was historical and cloud private-export credentials were omitted. The hourly targets cannot be honestly measured until separately authorized secure access is approved.",
-        "result": "Ongoing approved read-only count at2026-10-20T05:03:34Z: overview first DB/events,leads; then only DB/leads25offset0 returned0rows, next_offsetnull, no truncation. Newconsenting leads0/5; currenttotal0. Aggregates only saved, no private customer row fields or credentials persisted. Original ongoing scope unchanged; no customer messaging or database changes.",
-        "result_at": "2026-10-20T05:08:35Z"
+        "result": "Ongoing approved aggregate measurement at2026-10-20T05:10:07Z: current exact project overview first DB/events,leads; then only DB/leads25 offset0, empty complete, next_offsetnull, no truncation/omissions. New consenting adult signups0/5; currenttotal0. Aggregates only persisted, no private customer rows or export. Ongoing read-only scope unchanged; no customer messaging/data-change authority.",
+        "result_at": "2026-10-20T05:10:07Z"
       },
       "created": "2026-10-19T05:23:23Z",
       "expires": "2026-10-22T05:23:23Z",
@@ -2230,7 +2230,9 @@
           "official_contacts": "Current official Lock&Key contact publishes exact event manager inbox; FAQ describes adult age ranges and private mailing list. Current UnPlug HQ contact publishes exact inbox/Dublin identity and solutions page describes digital habits.",
           "tracked_pages": "Exact wave10 tracked better-dates and phone-reset returnedHTTP200 with working form markup, adult and followup-consent copy, free/no-commitment disclosure. No form submitted or test record.",
           "execute_only_after": "Fresh decision/note/payload match, per-recipient receipts/Gmail, official contact/page check, no suppression and durable execution claim in sameZIP."
-        }
+        },
+        "result": "Sent exactly two approved wave10 first-contact plain-text emails after fresh official identity/rules/tracked page/Gmail checks and durable claim. Lock and Key Events message/thread1a157b6e080608a9; UnPlugHQ1a157b710f354277. Exact recipient/subject/body/SENT readback verified.26completed sends total; no followups, participants, forms, social posts, spend or deployment. These audience-owner sends are not customer leads or proof of sharing.",
+        "result_at": "2026-10-20T05:10:06Z"
       },
       "created": "2026-10-20T05:04:41Z",
       "expires": "2026-10-23T05:04:41Z",
