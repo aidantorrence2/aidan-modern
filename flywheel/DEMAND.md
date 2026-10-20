@@ -240,6 +240,7 @@ approval and never posted without it.
 
 | Candidate | Evidence found | What is missing |
 |---|---|---|
+| Ask Ready: never negotiated pay or asked for a raise (doc side, 20 Oct) | Mumsnet (HoggyDunlop, 2023) and Singletrack (twohats, 2009) opened; Levels.fyi negotiation coaching $1,250 to $5,000, opened. Ask a Manager returns 403 to our fetch. | A third person on an opened page. |
 | First Batch Brew Coach: first-time homebrewers (code side, 20 Oct) | AHA forum threads, 2013-2026: only Wheezy states a problem ("Where is square 1 for learning to brew beer?"); the other posts are new-member hellos, not needs. Brewfather 755 ratings, Premium $29.99. | Not launched: needs two more people stating a problem in their own words, and it involves alcohol (21+ in the US). |
 | Fair Quote: fear of being overcharged on car repairs (doc side, 20 Oct) | AnandTech (Crusty, DrPizza, 2008) opened; FIXD 4.6 from 26K ratings, $12.99/mo or $99.99/yr, opened. Bob Is the Oil Guy returns 403 to our fetch. | A second opened page with a third person. |
 | Score Steps: low credit score (doc side, 20 Oct) | Mumsnet (Clappingforjoy, 2021) opened. myFICO forums return 403 to our fetch, and the Kikoff app page was not fetched. | Two opened pages with more people, and a paid product we can open. |
