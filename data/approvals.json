@@ -2392,7 +2392,9 @@
         },
         "why_one_new_request": "New evidence is member-run spin-off social groups, closer to existing friend coordination than professional workspace administration or expert audiences in prior3unanswered research inquiries. One central permission inquiry only; do not add a whole new batch or contact their cities. This does not show demand or justify building.",
         "measures": "Owner permission/reply is qualified research interest, never a consenting customer lead. Participant invitation/capture/delivery exact wording and approvals separate; aggregate-only measurement.",
-        "status": "prepared_for_exact_review_not_sent"
+        "status": "prepared_for_exact_review_not_sent",
+        "result": "2026-10-20T18:12Z: Approved exact scope rechecked. Live general form at https://rebelbook.club/contact now shows reCAPTCHA checkbox and disabled Send Message. Per approved before_submit instruction, held at CAPTCHA. No fields filled, no submission or other route, no terms accepted. No message/thread ID. Approval remains approved; unexecuted action held pending allowed human resolution or separately reviewed suitable next action.",
+        "result_at": "2026-10-20T18:15:01Z"
       },
       "created": "2026-10-20T14:17:00Z",
       "expires": "2026-10-23T14:17:00Z",
@@ -2448,12 +2450,51 @@
             "backend_persistence_tested": false
           }
         },
-        "why_small_batch": "No currently eligible approved new email remains. Two distinct appropriate adult owner inquiries, not expansion of held/denied actions or repeatcatalog19cards. ExistingRebelform/capturepatchpending stayseparate."
+        "why_small_batch": "No currently eligible approved new email remains. Two distinct appropriate adult owner inquiries, not expansion of held/denied actions or repeatcatalog19cards. ExistingRebelform/capturepatchpending stayseparate.",
+        "result": "2026-10-20T18:14Z: Sent exact approved plain-text emails once after fresh official identity, Gmail dedupe, live tracked landing-page consent preflight and durable Library52 claim. tom@ctrlyourscroll.com.au message/thread1a15a84904ceee62; info@sameplaceevents.com message/thread1a15a84e270930b5. Both Gmail readbacks SENT and exact to/subject/body match. No followups/attachments/posts/spend/deployment. 2 audience-owner inquiries, not consenting leads or confirmed sharing.",
+        "result_at": "2026-10-20T18:15:01Z"
       },
       "created": "2026-10-20T15:02:48Z",
       "expires": "2026-10-23T15:02:48Z",
       "status": "approved",
       "decided": "2026-10-20T18:10:16Z",
+      "note": ""
+    },
+    {
+      "id": "offers:video-review:2026-10-20:sahm-friendship",
+      "kind": "email",
+      "source": "codex:real-change-pilots",
+      "title": "One email: offer SAHM team the existing friendship video for review",
+      "summary": "Ask Jillian at the published partnership address whether she would review the existing adult AI still-motion preview; exact email, no asset attachment or public posting.",
+      "payload": {
+        "project_id": "appgprj_6ad56c0398f4819187d2d7870ae70ac4",
+        "action": "Send exactly one plain-text first-contact business email once; no attachment. Ask whether the central team is willing to review the existing friendship preview.",
+        "to": "SahmSocial@gmail.com",
+        "subject": "A short friendship-group preview for your team to review",
+        "body": "Hi Jillian,\n\nI'm Aidan. SAHM Social Club's moms' nights out and friendship focus caught my eye.\n\nI'm exploring a six-week local group where the same adults meet regularly. It isn't running yet. I've prepared a 15-second preview using labeled fictional adult AI characters, still images, camera movement and captions.\n\nWould you be open to reviewing it for possible sharing with adults aged 18 or over?\n\nThe idea and free, nonbinding signup are here:\nhttps://real-change-pilots-aidan-2026.aidantorrence.chatgpt.site/real-friendships?utm_source=sahm_social_club&utm_medium=partner_video_review&utm_campaign=pov_test1&utm_content=friendship_v1\n\nThanks,\nAidan Torrence",
+        "offer": "real-friendships",
+        "organization": "SAHM Social Club / founder Jillian Urie / all chapters treated as one organization",
+        "source": "https://www.sahmsocialclub.com/partnerships",
+        "identity_source": "https://www.sahmsocialclub.com/",
+        "preview_asset": {
+          "file": "creative/pov-test-20261019/renders/friendship-pov-v1.mp4",
+          "sha256": "868c2e67548d5384e238de3069a38f24d0f8214af42702009bc0bfebee23ca66",
+          "description": "Existing 15-second silent 1080x1920 H264 still-image/camera-motion/caption preview with fictional adult AI characters; no voice or full character animation",
+          "attached_or_uploaded": false
+        },
+        "limits": "One central business email only. No attachment/asset delivery/public upload/post/Instagram/social placement, followup/reply/member contact or lists, child recruitment/playgroups, chapter signup, newsletter/membership, sponsorship/spend/fees/terms, deployment or product build. Sharing permission, exact asset delivery, caption/channel/account and any costs require separate approval after response. No free placement or endorsement assumed.",
+        "preflight": {
+          "verified_at": "2026-10-20T18:15:01.008Z",
+          "identity": "Official root identifies founder Jillian Urie and moms nights out/friendship; official partnerships page invites collaborations and publishes SahmSocial@gmail.com.",
+          "dedupe": "Fresh complete all-history Gmail address/domain check empty/no nextpage; no address/domain/org action in current complete handoff. All chapters coalesced. No private members/children read.",
+          "before_send": "Refresh exact approval/notes/scope and current ledger/Gmail, reach exact tracked signup page and verify adult/followup unchecked consent/truthful availability/free nonbinding text; persist sameZIP claim. Hold uncertainty individually, never resend."
+        },
+        "why_one": "Reuse one existing finished preview in a suitable explicit public partnership route, replacing no denied recipient action; no extra variants or broad batch. Only review inquiry is authorized by this request."
+      },
+      "created": "2026-10-20T18:15:02Z",
+      "expires": "2026-10-23T18:15:02Z",
+      "status": "pending",
+      "decided": null,
       "note": ""
     }
   ]
