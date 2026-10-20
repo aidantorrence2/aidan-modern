@@ -4445,5 +4445,44 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "stopped-posting-on-youtube",
+  "offer": "upload-again",
+  "title": "Stopped posting on YouTube? A pace you can keep, and one fix per video",
+  "description": "Got no views and lost the will to upload? Set a posting pace you can actually hold, split each video into small jobs, and change one thing per video.",
+  "intro": "Most hobby channels stop not because the videos are bad but because the pace was too ambitious and early views were low. A slower, steady pace and small improvements keep a channel going.",
+  "sections": [
+   {
+    "h": "Pick a pace you can keep",
+    "list": [
+     "One video every two weeks that you actually post beats a weekly plan you abandon. Choose a pace that fits a busy week, not a free one."
+    ]
+   },
+   {
+    "h": "Split each video into jobs",
+    "list": [
+     "Idea, script or outline, film, edit, thumbnail and title, upload. Do one job per session so a video never feels like a whole weekend."
+    ]
+   },
+   {
+    "h": "Change one thing per video",
+    "list": [
+     "After each upload, look at one number (for example how long people watched) and change one thing next time: a shorter intro, a clearer title."
+    ]
+   },
+   {
+    "h": "Expect slow early views",
+    "list": [
+     "Most new channels get few views at first. Judge yourself on whether you posted, not on the view count."
+    ]
+   },
+   {
+    "h": "Restart after a gap",
+    "p": [
+     "If you miss a week, post something small to get going again rather than waiting for a perfect comeback video. This guide makes no promise of views or income."
+    ]
+   }
+  ]
  }
 ]

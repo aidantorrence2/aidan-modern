@@ -14123,6 +14123,86 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-20",
+    "slug": "upload-again",
+    "name": "Upload Again",
+    "need": "I want to keep posting videos on YouTube, but when I upload and get no response at all I feel like stopping altogether.",
+    "headline": "A coach for hobby YouTubers who keep stalling: a posting pace you can hold, small weekly jobs, a pre-upload check, and one change to try from your own numbers.",
+    "buyer": "Adults (18+) who post videos on YouTube as a side project but keep stalling or quitting after low views.",
+    "bullets": [
+      "A posting pace you can actually hold, broken into small weekly jobs: idea, film, edit, upload.",
+      "A quick pre-upload check of title, thumbnail and opening, and one change to try next time based on your own numbers.",
+      "A gentle restart after a missed week, so one gap doesn't end the channel."
+    ],
+    "price": "$7.99/month",
+    "priceUsd": 8,
+    "priceNote": "Below the leading creator-tool subscriptions. No promise of views, subscribers or income.",
+    "reasonPrompt": "How many videos have you posted, and what usually makes you stop?",
+    "faq": [
+      {
+        "q": "Will this grow my channel or make me money?",
+        "a": "No promise. Upload Again helps you keep posting consistently and learn from your own videos. It is an independent tool for adults 18+, not linked to YouTube or Google."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-20",
+      "summary": "Hobby YouTubers on YTtalk and HackerNoon say they get no response, feel discouraged, and give up for a while, and one would pay for consulting if they could afford it. Creator tools already sell subscriptions at scale.",
+      "wtp": "vidIQ for YouTube & Instagram (App Store): 4.8 from 20K ratings, plans from $8.99 a month to $149 a year, and 1-on-1 coaching at $199. GooberVlogs on YTtalk on paid consulting: \"if I had they money I would\".",
+      "signals": [
+        {
+          "url": "https://www.yttalk.com/threads/do-you-ever-feel-like-quitting-youtube.280891/post-2294307",
+          "who": "Peekop (YTtalk)",
+          "date": "2018-06-23",
+          "quote": "When you upload a video at this level and get no response what so ever it sucks.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.yttalk.com/threads/do-you-ever-feel-like-quitting-youtube.280891/post-2294307",
+          "who": "Justine (YTtalk)",
+          "date": "2018-07-01",
+          "quote": "when I'm not uploading I feel lazy and feel like I should just stop making videos all together",
+          "seen": "opened"
+        },
+        {
+          "url": "https://yttalk.com/threads/before-you-give-up.277406/",
+          "who": "Kylie (YTtalk)",
+          "date": "2018-04-12",
+          "quote": "I was beginning to feel silly and discouraged",
+          "seen": "opened"
+        },
+        {
+          "url": "https://hackernoon.com/12-lessons-from-my-half-assed-youtube-channel",
+          "who": "Faz Forward (HackerNoon)",
+          "date": "2025-07-18",
+          "quote": "Then I just gave up for a while",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.yttalk.com/threads/wanted-mentor.197338/",
+          "who": "GooberVlogs (YTtalk)",
+          "date": "2016-01-06",
+          "quote": "I have not done it yet but if I had they money I would",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/vidiq-for-youtube-instagram/id1458235345",
+          "who": "vidIQ App Store listing",
+          "date": "2026-10-20",
+          "quote": "20K Ratings ... 1-on-1 coaching $199.00",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "vidIQ, TubeBuddy, creator courses, YouTube Studio analytics.",
+      "risks": "Most forum posts are from 2018. Must make no promise of views or income."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
