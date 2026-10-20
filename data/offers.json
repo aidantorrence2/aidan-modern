@@ -17020,6 +17020,258 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-20",
+    "slug": "quiet-den",
+    "name": "Quiet Den",
+    "need": "My dog gets so upset with fireworks.",
+    "headline": "Dog terrified of fireworks? Plan for the loud nights ahead: a fireworks calendar, slow sound practice, a night-of checklist and a fear log to show your vet.",
+    "buyer": "Adult dog owners whose dog panics at fireworks.",
+    "bullets": [
+      "A calendar of the loud nights coming up, so you can plan ahead.",
+      "A slow sound-practice ladder that only moves on when your dog's log says they're ready.",
+      "A night-of checklist (walk early, safe den, windows and curtains closed), and a two-tap fear log with a summary for your vet."
+    ],
+    "price": "$4.99/month",
+    "priceUsd": 5,
+    "priceNote": "Or $14.99 a season.",
+    "reasonPrompt": "How does your dog react to fireworks, and what have you tried so far?",
+    "faq": [
+      {
+        "q": "Does it recommend medicines?",
+        "a": "No. It never suggests medicines or doses. If your dog is very frightened, talk to your vet."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Adults 18+. It is an independent app, not linked to any vet, charity or pet brand."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-20",
+      "summary": "Dog owners on Mumsnet, Singletrack and Whole Dog Journal describe dogs shaking, panting and refusing to go outside after fireworks, and say they've bought diffusers, calming shirts and remedies that didn't work.",
+      "wtp": "Owners report buying Adaptil diffusers and plug-ins, ThunderShirts and remedies. One says: \"I've spent a lot of money on various remedies for her\".",
+      "signals": [
+        {
+          "url": "https://www.mumsnet.com/talk/the_doghouse/5197267-fireworks-night-recommend-your-best-tranquilizer-for-my-dog",
+          "who": "stirrupleathers (Mumsnet)",
+          "date": "2024-10-28",
+          "quote": "my dog gets so upset with fireworks",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/the_doghouse/5197267-fireworks-night-recommend-your-best-tranquilizer-for-my-dog",
+          "who": "Miley1967 (Mumsnet)",
+          "date": "2024-10-28",
+          "quote": "he was in a terrible state clawing my legs, shaking, panting.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/the_doghouse/5197267-fireworks-night-recommend-your-best-tranquilizer-for-my-dog",
+          "who": "Caaarrrl (Mumsnet)",
+          "date": "2024-10-28",
+          "quote": "It breaks my heart to see him so terrified.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/the_doghouse/4558875-flipping-fireworks",
+          "who": "Cmx (Mumsnet)",
+          "date": "2022-05-31",
+          "quote": "we have bought all the adaptils and pills etc but nothing works!",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/the_doghouse/4558875-flipping-fireworks",
+          "who": "QuietLifeNC (Mumsnet)",
+          "date": "2022-05-29",
+          "quote": "I bought an adaptil today actually.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://singletrackworld.com/forum/off-topic/bloody-fireworks-traumatised-dog-now/",
+          "who": "carbon337 (Singletrack)",
+          "date": "2010-01-01",
+          "quote": "he wont go outside this morning so all the hard work we have had to do since 5th Nov needs to be redone.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.whole-dog-journal.com/blog/how-did-your-dogs-handle-the-july-4th-fireworks/",
+          "who": "Eileen Dudley (Whole Dog Journal)",
+          "date": "2020-07-05",
+          "quote": "I’ve spent a lot of money on various remedies for her",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Calming shirts, diffusers, free sound programmes from charities, vets.",
+      "risks": "Free sound-desensitisation programmes exist; demand is seasonal."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-20",
+    "slug": "homework-truce",
+    "name": "Homework Truce",
+    "need": "I feel like the worst mum in the world being unable to take the nightly battles over homework.",
+    "headline": "Homework a battle every night? One set routine with short timed blocks, a 20-second evening log to spot patterns, and calm scripts for meltdown moments.",
+    "buyer": "Parents (18+) of 6 to 13 year olds with nightly homework battles.",
+    "bullets": [
+      "One set routine with short timed blocks and breaks.",
+      "A 20-second evening log, and a weekly view of what makes nights better or worse.",
+      "Calm scripts for meltdown moments, and a short note template for the teacher."
+    ],
+    "price": "$4.99/month",
+    "priceUsd": 5,
+    "priceNote": "Or $29 a year.",
+    "reasonPrompt": "How old is your child, and what happens when it's homework time?",
+    "faq": [
+      {
+        "q": "Is it for my child to use?",
+        "a": "No. It's for parents. It isn't a diagnosis tool. If you're worried about learning or attention, talk to the school or your doctor."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Adults 18+. It is an independent app, not linked to any school, tutoring company or education publisher."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-20",
+      "summary": "Parents on Mumsnet and the Berkeley Parents Network describe nightly homework battles that colour the whole week, and some have paid for tutors.",
+      "wtp": "Parents report getting tutors (one weekly, paid for by grandparents). Joon (App Store): 6.6K ratings, plans from $12.99.",
+      "signals": [
+        {
+          "url": "https://www.mumsnet.com/talk/_chat/4249312-Anyone-else-struggle-to-get-their-primary-aged-child-to-do-homework",
+          "who": "StrawberryLovingChild (Mumsnet)",
+          "date": "2021-05-19",
+          "quote": "I feel like the worst mum in the world being unable to take the nightly battles over homework",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/_chat/4249312-Anyone-else-struggle-to-get-their-primary-aged-child-to-do-homework",
+          "who": "septemberismyfavouritemonth (Mumsnet)",
+          "date": "2021-05-20",
+          "quote": "even getting that done is a battle",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/adoptions/3050436-Homework",
+          "who": "Jellycatspyjamas (Mumsnet)",
+          "date": "2017-10-03",
+          "quote": "Getting her to do homework however is a living nightmare.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/adoptions/3050436-Homework",
+          "who": "JustHappy3 (Mumsnet)",
+          "date": "2017-10-10",
+          "quote": "Ended up getting a tutor once a week (which my lovely parents paid for) and that worked really well.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.berkeleyparentsnetwork.org/advice/school/homework",
+          "who": "On the brink (Berkeley Parents Network)",
+          "date": "2005",
+          "quote": "He gets a weekly homework packet and it colors the entire week culminating in a tantrum the night before he turns it in.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/joon-kids-adhd-chore-tracker/id1482225056",
+          "who": "Joon App Store listing",
+          "date": "2026-10-20",
+          "quote": "6.6K Ratings ... $12.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Routine and chore apps, tutors, homework clubs.",
+      "risks": "Some posts are old; routine apps are only a partial match."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-20",
+    "slug": "out-first",
+    "name": "Out First",
+    "need": "It's the puddles on the floor that are driving me to distraction.",
+    "headline": "Puppy or dog still peeing indoors? Log wees and poos in two taps, get next-trip reminders from your dog's own pattern, and share one schedule with the household.",
+    "buyer": "Adult dog owners whose puppy or dog still toilets indoors.",
+    "bullets": [
+      "Two-tap wee and poo log, with what happened just before.",
+      "Reminders for the next trip outside, based on your dog's own pattern.",
+      "One shared schedule for the household, a weekly accident chart, and a vet prompt if an adult dog starts having accidents."
+    ],
+    "price": "$3.99/month",
+    "priceUsd": 4,
+    "priceNote": "Or $19 one-time.",
+    "reasonPrompt": "How old is your dog, and how many accidents a day or week?",
+    "faq": [
+      {
+        "q": "Is this vet advice?",
+        "a": "No. If an adult dog suddenly starts having accidents, see your vet first."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Adults 18+. It is an independent app, not linked to any vet, trainer or pet brand."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-20",
+      "summary": "Dog owners on Mumsnet and My Labrador Friends describe puppies and older dogs still toileting indoors, a house that stinks, and paid training sessions.",
+      "wtp": "One owner has paid for a block of trainer sessions. Pupford (App Store): 3.7K ratings, Potty Training course $19.99.",
+      "signals": [
+        {
+          "url": "https://mylabradorfriends.com/threads/house-training-woes.2908/post-133529",
+          "who": "Peartree (My Labrador Friends)",
+          "date": "2019-11-24",
+          "quote": "it’s the puddles on the floor that are driving me to distraction",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/the_doghouse/4305126-toileting?page=2",
+          "who": "GinPink (Mumsnet)",
+          "date": "2021-07-24",
+          "quote": "Trainer wise I have already paid for the block of sessions",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/the_doghouse/4305126-toileting?page=2",
+          "who": "MollysMum09 (Mumsnet)",
+          "date": "2021-07-24",
+          "quote": "Puppy just isn't getting it.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/the_doghouse/4008255-Dog-still-not-potty-trained-at-4",
+          "who": "workshy44 (Mumsnet)",
+          "date": "2020-08-28",
+          "quote": "The house stinks.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/app/id1476456602",
+          "who": "Pupford App Store listing",
+          "date": "2026-10-20",
+          "quote": "3.7K Ratings ... $19.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Puppr, Dogo, Pupford, trainers, puppy pads.",
+      "risks": "Potty-log apps are small; much spending goes on cheap pads and cleaners."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

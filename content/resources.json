@@ -5852,5 +5852,122 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "dog-scared-of-fireworks",
+  "offer": "quiet-den",
+  "title": "Dog scared of fireworks? A two-week plan before Bonfire Night",
+  "description": "Dog panics at fireworks? Start now: set up a safe den, walk early on loud nights, mask the noise, and talk to your vet early if your dog is very frightened.",
+  "intro": "Fireworks season is hard for many dogs. A bit of planning in the two weeks before makes the loud nights easier.",
+  "sections": [
+   {
+    "h": "Set up a den now",
+    "list": [
+     "Pick a quiet room and make a covered, cosy space your dog can choose to go to. Let them get used to it before the loud nights."
+    ]
+   },
+   {
+    "h": "Walk early",
+    "list": [
+     "On loud nights, walk your dog before dark and keep them on a lead in case of sudden bangs."
+    ]
+   },
+   {
+    "h": "Mask the noise",
+    "list": [
+     "Close windows and curtains and put on the TV or music."
+    ]
+   },
+   {
+    "h": "Stay calm and let them hide",
+    "list": [
+     "Let your dog hide if they want to. Comforting them is fine. Never punish fear."
+    ]
+   },
+   {
+    "h": "Talk to your vet early",
+    "p": [
+     "If your dog is very frightened, speak to your vet well before the dates. Don't give any medicine without their advice."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "homework-battles-every-night",
+  "offer": "homework-truce",
+  "title": "Homework battles every night? A 20-minute routine that ends the standoff",
+  "description": "Nightly homework fights? Set one time and place, work in short blocks with breaks, and keep notes so you can talk to the teacher calmly.",
+  "intro": "When homework turns into a fight every night, a predictable routine usually helps more than more pressure.",
+  "sections": [
+   {
+    "h": "Same time, same place",
+    "list": [
+     "Pick one slot after a snack and a break, and stick to it."
+    ]
+   },
+   {
+    "h": "Short blocks",
+    "list": [
+     "Ten minutes of work, then a short break. Younger children may need shorter blocks."
+    ]
+   },
+   {
+    "h": "Agree the finish line",
+    "list": [
+     "Agree what \"done\" means before starting, so it doesn't drag on."
+    ]
+   },
+   {
+    "h": "Keep a quick log",
+    "list": [
+     "Note how long it took and how it went. Patterns, like tired days, show up within a week or two."
+    ]
+   },
+   {
+    "h": "Talk to the teacher",
+    "p": [
+     "If homework regularly takes much longer than expected, a calm note to the teacher with your log can help."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "puppy-still-peeing-inside",
+  "offer": "out-first",
+  "title": "Puppy still peeing inside? A three-day log that shows when to go out",
+  "description": "Accidents indoors? Log every wee and poo for three days, find your puppy's pattern, and take them out just before the usual times.",
+  "intro": "Most toilet accidents follow a pattern: after waking, eating, playing or drinking. A short log shows you when to go out.",
+  "sections": [
+   {
+    "h": "Log three days",
+    "list": [
+     "Note the time of every wee and poo, indoors or out, and what happened just before."
+    ]
+   },
+   {
+    "h": "Find the pattern",
+    "list": [
+     "Look for clusters after sleep, meals, play or drinks."
+    ]
+   },
+   {
+    "h": "Go out just before",
+    "list": [
+     "Take your puppy out just before those times, and reward the moment they go outside."
+    ]
+   },
+   {
+    "h": "Clean with an enzyme cleaner",
+    "list": [
+     "It removes the smell that draws your puppy back to the same spot."
+    ]
+   },
+   {
+    "h": "See the vet if",
+    "p": [
+     "an adult dog that was clean starts having accidents, or your dog seems to need to go much more often."
+    ]
+   }
+  ]
  }
 ]
