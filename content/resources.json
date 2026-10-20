@@ -5735,5 +5735,83 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "dog-lunges-at-other-dogs",
+  "offer": "calm-pass",
+  "title": "Dog lunges at other dogs on walks? Find your dog's working distance",
+  "description": "Dog barks and lunges on the lead? Keep a one-week walk log, find the distance where your dog stays calm, and close the gap slowly.",
+  "intro": "Many dogs react to other dogs when they're on the lead and too close. Working at a distance your dog can cope with, then closing it slowly, is a common starting point.",
+  "sections": [
+   {
+    "h": "Log a week of walks",
+    "list": [
+     "Note each dog you see, roughly how far away, and how your dog reacted."
+    ]
+   },
+   {
+    "h": "Find the working distance",
+    "list": [
+     "The distance where your dog notices the other dog but stays calm is where to practise."
+    ]
+   },
+   {
+    "h": "Reward calm looks",
+    "list": [
+     "When your dog looks at another dog and stays calm, reward straight away."
+    ]
+   },
+   {
+    "h": "Make space",
+    "list": [
+     "Cross the road, turn round, or step behind a car to keep the distance. Choose quieter times and routes."
+    ]
+   },
+   {
+    "h": "Get qualified help",
+    "p": [
+     "A qualified trainer or behaviourist can help, especially if your dog has bitten or you're worried about safety."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "child-cant-blend-sounds",
+  "offer": "blend-up",
+  "title": "Child can't blend sounds yet? A five-minute daily blending routine",
+  "description": "Knows the letter sounds but can't read cat or dog? Practise blending out loud, use three-letter words, and keep sessions short and fun.",
+  "intro": "Lots of children know their sounds before they can blend them into words. Short, regular practice usually helps it click.",
+  "sections": [
+   {
+    "h": "Blend out loud first",
+    "list": [
+     "Say the sounds, c-a-t, and ask your child what word you said. No letters yet."
+    ]
+   },
+   {
+    "h": "Then use three-letter words",
+    "list": [
+     "Use simple words with sounds they know. Point to each letter as they say the sound."
+    ]
+   },
+   {
+    "h": "Try saying the first two sounds together",
+    "list": [
+     "Say \"ca\", then add \"t\". Building up gradually helps some children."
+    ]
+   },
+   {
+    "h": "Keep it to five minutes",
+    "list": [
+     "Stop while it's still fun. Little and often works best."
+    ]
+   },
+   {
+    "h": "Talk to the teacher",
+    "p": [
+     "The school can tell you which sounds they're learning. If you're worried about hearing, speech or progress, ask the teacher or your doctor."
+    ]
+   }
+  ]
  }
 ]

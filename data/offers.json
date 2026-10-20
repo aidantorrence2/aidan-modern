@@ -16740,6 +16740,188 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-20",
+    "slug": "calm-pass",
+    "name": "Calm Pass",
+    "need": "My dog growls and lunges at other dogs on the lead if they get too close.",
+    "headline": "Dog barks and lunges at other dogs on walks? Log each walk, find the distance your dog copes at, and follow a step plan that closes the gap slowly.",
+    "buyer": "Adult dog owners whose dog is reactive to other dogs on walks.",
+    "bullets": [
+      "A quick walk log: where you saw another dog, how close, and how your dog reacted.",
+      "Find your dog's working distance, the distance where they notice but stay calm.",
+      "A step plan that closes the gap slowly, with a weekly chart of calm passes."
+    ],
+    "price": "$4.99/month",
+    "priceUsd": 5,
+    "priceNote": "Or $29 a year.",
+    "reasonPrompt": "How close can another dog get before yours reacts, and what have you tried?",
+    "faq": [
+      {
+        "q": "Does it replace a behaviourist?",
+        "a": "No. It's a log and a practice plan you can share with a qualified trainer or behaviourist. If your dog has bitten or you're worried about safety, see one in person."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Adults 18+. It is an independent app, not linked to any trainer, behaviourist, method or pet brand."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-20",
+      "summary": "Dog owners on Mumsnet describe dogs that growl and lunge at other dogs on the lead, several behaviourists that didn't fully fix it, and rented secure fields.",
+      "wtp": "One owner paid for a behaviourist to visit. Dogo (App Store): 17K ratings; Puppr (App Store): 27K ratings; both sell paid plans.",
+      "signals": [
+        {
+          "url": "https://www.mumsnet.com/talk/the_doghouse/3746489-reactive-aggressive-dog",
+          "who": "borderterrierist (Mumsnet)",
+          "date": "2019-11-18",
+          "quote": "she growls and lunges at other dogs even if she was previously ok with them if they get too close.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/the_doghouse/3746489-reactive-aggressive-dog",
+          "who": "Ohffs66 (Mumsnet)",
+          "date": "2019-11-18",
+          "quote": "we've had 3 behaviourists and not yet cracked it 100%",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/the_doghouse/3746489-reactive-aggressive-dog",
+          "who": "Booboostwo (Mumsnet)",
+          "date": "2019-11-18",
+          "quote": "It is possible for a dog to be fine socializing off lead but to be reactive on lead.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/am_i_being_unreasonable/3553672-to-ask-how-you-walk-an-extremely-reactive-dog",
+          "who": "meepmoop (Mumsnet)",
+          "date": "2019-04-07",
+          "quote": "I've paid to have a dog behaviourist come out",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/am_i_being_unreasonable/3553672-to-ask-how-you-walk-an-extremely-reactive-dog",
+          "who": "RuggyPeg (Mumsnet)",
+          "date": "2019-04-07",
+          "quote": "Rented secure fields every week and spent loads of time doing games and puzzles at home.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/am_i_being_unreasonable/3553672-to-ask-how-you-walk-an-extremely-reactive-dog",
+          "who": "Squickety (Mumsnet)",
+          "date": "2019-04-07",
+          "quote": "so all we can do is learn to handle it.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/app/id1153294767",
+          "who": "Dogo App Store listing",
+          "date": "2026-10-20",
+          "quote": "17K Ratings ... $3.99 ... $59.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Behaviourists, reactivity courses, general dog-training apps.",
+      "risks": "All named quotes on Mumsnet; general dog apps cover some of this."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-20",
+    "slug": "blend-up",
+    "name": "Blend Up",
+    "need": "My child still can't read short 3 letter words like cat, dog, hat.",
+    "headline": "Child can hear the sounds but can't blend them into words yet? Five minutes of blending practice a day, with a tracker of the words they can read.",
+    "buyer": "Parents (18+) of 4 to 7 year olds struggling to learn to read.",
+    "bullets": [
+      "Five-minute daily blending practice with simple three-letter words.",
+      "A tracker of the sounds and words your child can now read.",
+      "A simple summary to share with your child's teacher."
+    ],
+    "price": "$4.99/month",
+    "priceUsd": 5,
+    "priceNote": "Or $29 a year.",
+    "reasonPrompt": "How old is your child, and what happens when they try to read a short word?",
+    "faq": [
+      {
+        "q": "Is this a diagnosis tool?",
+        "a": "No. It's practice and a tracker. If you're worried about your child's reading, speech or hearing, talk to their teacher or your doctor."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Adults 18+. It is an independent app, not linked to any school, phonics scheme or publisher."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-20",
+      "summary": "Parents on Mumsnet describe children who know their sounds but can't blend them into words, and say they've signed up to reading apps or gone for private help.",
+      "wtp": "One parent signed up to Reading Eggs. Hooked on Phonics (App Store): 18K ratings, $7.99 to $14.99 a month. HOMER (App Store): 25K ratings, $59.99 a year.",
+      "signals": [
+        {
+          "url": "https://www.mumsnet.com/talk/_chat/4518565-5-year-old-can-t-read?page=1",
+          "who": "Jammydodged (Mumsnet)",
+          "date": "2022-03-31",
+          "quote": "She still can’t read short 3 letter words like cat, dog, hat etc",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/_chat/4518565-5-year-old-can-t-read?page=1",
+          "who": "Jammydodged (Mumsnet)",
+          "date": "2022-03-31",
+          "quote": "I signed up to reading eggs already.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/_chat/4518565-5-year-old-can-t-read?page=1",
+          "who": "Cockerdileteeth (Mumsnet)",
+          "date": "2022-04-02",
+          "quote": "My DS struggled with learning to read in Year R too.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/_chat/4518565-5-year-old-can-t-read?page=1",
+          "who": "ApplePippa (Mumsnet)",
+          "date": "2022-03-31",
+          "quote": "Speech therapy and lots of phonics practice helped my DS, but it was slow progress.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/primary/2521685-Child-can-hear-sounds-in-words-but-cant-blend-to-read-help",
+          "who": "Shinyandnew1 (Mumsnet)",
+          "date": "2015-12-03",
+          "quote": "he can't put this into practice and blend the word when he sees it written down.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/primary/2521685-Child-can-hear-sounds-in-words-but-cant-blend-to-read-help",
+          "who": "Wolfiefan (Mumsnet)",
+          "date": "2015-12-03",
+          "quote": "My DS took ages to blend sounds.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/US/app/id588868907",
+          "who": "Hooked on Phonics App Store listing",
+          "date": "2026-10-20",
+          "quote": "18K Ratings ... $7.99 ... $14.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Hooked on Phonics, HOMER, Reading Eggs, Nessy, tutors, school phonics.",
+      "risks": "All forum evidence on Mumsnet (UK). Strong, well-rated competitors."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
