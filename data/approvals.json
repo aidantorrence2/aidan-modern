@@ -2362,6 +2362,43 @@
       "status": "approved",
       "decided": "2026-10-20T12:54:35Z",
       "note": ""
+    },
+    {
+      "id": "offers:keep-in-touch-research:2026-10-20:rebelbook",
+      "kind": "other",
+      "source": "codex:real-change-pilots",
+      "title": "One form inquiry to Rebel Book Club: adult group research",
+      "summary": "Ask the central team whether a voluntary adult research invitation could suit member-run groups. Exact form fields attached; no member details, signup URL, posts, payments or running app.",
+      "payload": {
+        "project_id": "appgprj_6ad56c0398f4819187d2d7870ae70ac4",
+        "catalog_id": 19,
+        "offer": "keep-in-touch",
+        "action": "Submit exactly one first-contact message through the first general-inquiry form at https://rebelbook.club/contact, not the separate newsletter form. Only after approval and fresh preflight, once.",
+        "recipient": "Rebel Book Club Ltd central organizing team / all city chapters treated as one organization",
+        "channel": "Official public general inquiry form",
+        "url": "https://rebelbook.club/contact",
+        "fields": {
+          "Name": "Aidan Torrence",
+          "Email": "aidan.torrence@gmail.com",
+          "Message": "Hi Rebel Book Club team,\n\nI'm Aidan. Your site describes member-run city and shared-interest groups, which is why I'm asking you.\n\nI'm researching why existing adult friend groups struggle to make their next plan, and whether sharing the organizing work would help. A keep-in-touch app is only an idea; nothing is built.\n\nWould you be open to discussing whether an optional research invitation would suit any of your groups for adults aged 18 or over?\n\nParticipation would be free and nonbinding. I'm not asking for member lists or introductions at this stage.\n\nThanks,\nAidan Torrence"
+        },
+        "submit_control": "Get in Touch general-contact form submit only; do not submit the separate FNAME/EMAIL newsletter form.",
+        "limits": "No member lists/introductions/direct members, followup/reply, publication, membership/subscription, spend/sponsorship/cost/terms acceptance, Instagram/social post, build or deployment. No current app or pilot availability, testimonials or problems claimed as observed. No signup URL because keep-in-touch is not live; no substitute real-friendships page.",
+        "preflight": {
+          "official": "Current official root describes city/shared-interest spin-off groups and current Oct2026 reading; contact offers general questions. First form read-onlyGET200 hasName/Email/Message. Separate second newsletter formFNAME/EMAIL excluded. Visible labels starred; HTMLrequired flagsfalse, no assumption of backend validity.",
+          "gmail": "Fresh organization/alias broad allhistory1match is a2020thirdpartyIndieHackers newsletter, not prior owner communication. Exactfrom/to root/UK/Substack domains0,no nextpage. No prior campaign org/address/domain/offer action, suppression or review rejection.",
+          "sender": "Exact name/email verified from current campaign SENT headers. No invented company/phone/location.",
+          "before_submit": "Refresh exact approval/note, current receipt/claim/Gmail history and official first-formfields/rules. Persist sameZIP claim. If new mandatory field, terms/consent, payment/login or CAPTCHA gate occurs, hold; no bypass or guessed value."
+        },
+        "why_one_new_request": "New evidence is member-run spin-off social groups, closer to existing friend coordination than professional workspace administration or expert audiences in prior3unanswered research inquiries. One central permission inquiry only; do not add a whole new batch or contact their cities. This does not show demand or justify building.",
+        "measures": "Owner permission/reply is qualified research interest, never a consenting customer lead. Participant invitation/capture/delivery exact wording and approvals separate; aggregate-only measurement.",
+        "status": "prepared_for_exact_review_not_sent"
+      },
+      "created": "2026-10-20T14:17:00Z",
+      "expires": "2026-10-23T14:17:00Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
     }
   ]
 }
