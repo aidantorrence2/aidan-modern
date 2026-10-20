@@ -2496,6 +2496,429 @@
       "status": "approved",
       "decided": "2026-10-20T18:15:48Z",
       "note": ""
+    },
+    {
+      "id": "offers:paid-pilot:2026-10-20:20-photo-studios",
+      "kind": "email",
+      "source": "codex:real-change-pilots",
+      "title": "Revenue reset:20studio buyer pitches for proposed$250/month pilot",
+      "summary": "One batch,20verified business recipients. Sell a narrow AI-assisted follow-up drafting service;4retained monthly clients=$1000MRR goal. Exact paid offer and emails; no charges, onboarding or website deployment.",
+      "created": "2026-10-20T18:24:20Z",
+      "expires": "2026-10-23T18:24:20Z",
+      "status": "pending",
+      "decided": null,
+      "note": "",
+      "payload": {
+        "project_id": "appgprj_6ad56c0398f4819187d2d7870ae70ac4",
+        "action": "Approve the exact proposed paid offer/price below and send all20 listed first-contact plain-text emails once each, after fresh per-recipient preflight. This is one reviewable batch, not20separate cards.",
+        "commercial_scope": {
+          "slug": "studio-followup-desk",
+          "status": "proposed_paid_validation_not_live",
+          "commercial_model": "Recurring service first; automate repeatable work after paid validation. No claim of existing software, customers, results or bookings.",
+          "price": {
+            "amount": 250,
+            "currency": "USD",
+            "period": "month",
+            "kind": "proposed test price requiring this exact approval; no validated willingness-to-pay",
+            "rationale": "A narrow done-for-you drafting/triage service, not a replacement CRM. First delivery budget at most2operatorhours/client/month is a planning assumption, not yet measured with actual client cases. Competing CRM software is much cheaper; only sell if a buyer values completed work rather than another tool."
+          },
+          "goal": {
+            "active_paying_monthly_customers": 4,
+            "MRR": 1000,
+            "formula": "4 x $250/month = $1,000/month before fees, taxes, refunds, expenses and churn; target arithmetic, not a forecast."
+          },
+          "deliverables": [
+            "Four weekly prioritized follow-up action lists per paid month",
+            "Up to20 AI-assisted, studio-approved follow-up drafts per month across up to20 open enquiries",
+            "One setup of voice/pricing/policy facts and one weekly status summary"
+          ],
+          "exclusions": [
+            "No messages sent on client behalf",
+            "No new prospect generation, guaranteed bookings or income",
+            "No CRM migration, credentials/inbox access, customer names/email addresses or identifiable private enquiries",
+            "No 24/7 responsiveness, invoices/contracts sent, legal/financial advice or sensitive customer targeting"
+          ],
+          "availability": "Founding pilot proposed. Start date, capacity, monthly agreement, data handling and billing must be agreed and approved before taking payment or onboarding; no customer is enrolled by replying.",
+          "billing": "No connected checkout/invoicing capability was found. Aidan-owned working payment/invoice link, approved cancellation/refund terms and actual transaction receipts are required before collection. No token/secret recovery or invented checkout. Do not count verbal interest/one-off setup fee as MRR.",
+          "delivery_format": "Client-controlled anonymised IDs/summaries; customer keeps identifying data in own system, reviews/edits/sends drafts. Synthetic sample only exists now; no real client data accepted or processed.",
+          "MRR_definition": "Only verified paid active month-to-month service agreements net of known cancellations/refunds; keep one-off cash, stated willingness, demos and free signups separate."
+        },
+        "messages": [
+          {
+            "to": "info@whitneyphoto.com",
+            "subject": "A $250/month follow-up pilot for your studio",
+            "body": "Hi Whitney team,\n\nI'm Aidan, a photographer. Your wedding photography and film services caught my eye.\n\nI'm testing a $250/month follow-up service for photographers: four weekly action lists and up to 20 AI-assisted follow-up drafts for existing enquiries. You approve and send everything, with no new CRM to learn. The pilot would use anonymised enquiry summaries and your approved pricing and policies.\n\nWould you consider a paid monthly pilot after reviewing a sample made with fictional enquiries?\n\nThanks,\nAidan Torrence",
+            "organization": "Whitney Photo & Video",
+            "domain": "whitneyphoto.com",
+            "aliases": [
+              "Whitney Photo & Video"
+            ],
+            "source": "https://whitneyphoto.com/contact/",
+            "offer": "studio-followup-desk",
+            "attribution": {
+              "campaign": "paid-pilot1",
+              "source": "whitneyphoto.com",
+              "channel": "direct_buyer_email"
+            },
+            "action_key": "offers:paid-pilot:2026-10-20:20-photo-studios|info@whitneyphoto.com|studio-followup-desk"
+          },
+          {
+            "to": "ashevilleweddingvideo@gmail.com",
+            "subject": "A $250/month follow-up pilot for your studio",
+            "body": "Hi Nathan,\n\nI'm Aidan, a photographer. Your combined wedding photography and highlight films caught my eye.\n\nI'm testing a $250/month follow-up service for photographers: four weekly action lists and up to 20 AI-assisted follow-up drafts for existing enquiries. You approve and send everything, with no new CRM to learn. The pilot would use anonymised enquiry summaries and your approved pricing and policies.\n\nWould you consider a paid monthly pilot after reviewing a sample made with fictional enquiries?\n\nThanks,\nAidan Torrence",
+            "organization": "Nathan Rivers Chesky Photography & Film",
+            "domain": "nathanchesky.com",
+            "aliases": [
+              "Nathan Rivers Chesky"
+            ],
+            "source": "https://nathanchesky.com/asheville-photographer",
+            "offer": "studio-followup-desk",
+            "attribution": {
+              "campaign": "paid-pilot1",
+              "source": "nathanchesky.com",
+              "channel": "direct_buyer_email"
+            },
+            "action_key": "offers:paid-pilot:2026-10-20:20-photo-studios|ashevilleweddingvideo@gmail.com|studio-followup-desk"
+          },
+          {
+            "to": "Chris@nietophotography.com",
+            "subject": "A $250/month follow-up pilot for your studio",
+            "body": "Hi Chris,\n\nI'm Aidan, a photographer. Your Raleigh wedding and portrait photography caught my eye.\n\nI'm testing a $250/month follow-up service for photographers: four weekly action lists and up to 20 AI-assisted follow-up drafts for existing enquiries. You approve and send everything, with no new CRM to learn. The pilot would use anonymised enquiry summaries and your approved pricing and policies.\n\nWould you consider a paid monthly pilot after reviewing a sample made with fictional enquiries?\n\nThanks,\nAidan Torrence",
+            "organization": "Nieto Photography / Chris Nieto",
+            "domain": "nietophotography.com",
+            "aliases": [
+              "Chris Nieto"
+            ],
+            "source": "https://nietophotography.com/contact-raleigh-wedding-photographer/",
+            "offer": "studio-followup-desk",
+            "attribution": {
+              "campaign": "paid-pilot1",
+              "source": "nietophotography.com",
+              "channel": "direct_buyer_email"
+            },
+            "action_key": "offers:paid-pilot:2026-10-20:20-photo-studios|chris@nietophotography.com|studio-followup-desk"
+          },
+          {
+            "to": "info@yourjcmphotography.com",
+            "subject": "A $250/month follow-up pilot for your studio",
+            "body": "Hi Jennifer and Joe,\n\nI'm Aidan, a photographer. Your Asheville wedding and portrait studio caught my eye.\n\nI'm testing a $250/month follow-up service for photographers: four weekly action lists and up to 20 AI-assisted follow-up drafts for existing enquiries. You approve and send everything, with no new CRM to learn. The pilot would use anonymised enquiry summaries and your approved pricing and policies.\n\nWould you consider a paid monthly pilot after reviewing a sample made with fictional enquiries?\n\nThanks,\nAidan Torrence",
+            "organization": "JCM Photography / Jennifer and Joe",
+            "domain": "yourjcmphotography.com",
+            "aliases": [
+              "JCM Photography"
+            ],
+            "source": "https://www.yourjcmphotography.com/contact-us",
+            "offer": "studio-followup-desk",
+            "attribution": {
+              "campaign": "paid-pilot1",
+              "source": "yourjcmphotography.com",
+              "channel": "direct_buyer_email"
+            },
+            "action_key": "offers:paid-pilot:2026-10-20:20-photo-studios|info@yourjcmphotography.com|studio-followup-desk"
+          },
+          {
+            "to": "hello@tracywaldropphoto.com",
+            "subject": "A $250/month follow-up pilot for your studio",
+            "body": "Hi Tracy,\n\nI'm Aidan, a photographer. Your wedding, senior and portrait photography caught my eye.\n\nI'm testing a $250/month follow-up service for photographers: four weekly action lists and up to 20 AI-assisted follow-up drafts for existing enquiries. You approve and send everything, with no new CRM to learn. The pilot would use anonymised enquiry summaries and your approved pricing and policies.\n\nWould you consider a paid monthly pilot after reviewing a sample made with fictional enquiries?\n\nThanks,\nAidan Torrence",
+            "organization": "Tracy Waldrop Photography",
+            "domain": "tracywaldropphoto.com",
+            "aliases": [
+              "tracywaldrop.com",
+              "tracywaldropphotography@gmail.com"
+            ],
+            "source": "https://tracywaldrop.com/contact",
+            "offer": "studio-followup-desk",
+            "attribution": {
+              "campaign": "paid-pilot1",
+              "source": "tracywaldropphoto.com",
+              "channel": "direct_buyer_email"
+            },
+            "action_key": "offers:paid-pilot:2026-10-20:20-photo-studios|hello@tracywaldropphoto.com|studio-followup-desk"
+          },
+          {
+            "to": "info@raemarshall.com",
+            "subject": "A $250/month follow-up pilot for your studio",
+            "body": "Hi Rae,\n\nI'm Aidan, a photographer. Your editorial wedding photography across the East Coast caught my eye.\n\nI'm testing a $250/month follow-up service for photographers: four weekly action lists and up to 20 AI-assisted follow-up drafts for existing enquiries. You approve and send everything, with no new CRM to learn. The pilot would use anonymised enquiry summaries and your approved pricing and policies.\n\nWould you consider a paid monthly pilot after reviewing a sample made with fictional enquiries?\n\nThanks,\nAidan Torrence",
+            "organization": "Rae Marshall Photography",
+            "domain": "raemarshall.com",
+            "aliases": [
+              "Rae Marshall"
+            ],
+            "source": "https://www.raemarshall.com/contact",
+            "offer": "studio-followup-desk",
+            "attribution": {
+              "campaign": "paid-pilot1",
+              "source": "raemarshall.com",
+              "channel": "direct_buyer_email"
+            },
+            "action_key": "offers:paid-pilot:2026-10-20:20-photo-studios|info@raemarshall.com|studio-followup-desk"
+          },
+          {
+            "to": "images@peterfinger.com",
+            "subject": "A $250/month follow-up pilot for your studio",
+            "body": "Hi Peter,\n\nI'm Aidan, a photographer. Your Charleston wedding photography caught my eye.\n\nI'm testing a $250/month follow-up service for photographers: four weekly action lists and up to 20 AI-assisted follow-up drafts for existing enquiries. You approve and send everything, with no new CRM to learn. The pilot would use anonymised enquiry summaries and your approved pricing and policies.\n\nWould you consider a paid monthly pilot after reviewing a sample made with fictional enquiries?\n\nThanks,\nAidan Torrence",
+            "organization": "Peter Finger Weddings",
+            "domain": "peterfinger.com",
+            "aliases": [
+              "peterfingerweddings.com"
+            ],
+            "source": "https://www.peterfingerweddings.com/contact-us/",
+            "offer": "studio-followup-desk",
+            "attribution": {
+              "campaign": "paid-pilot1",
+              "source": "peterfinger.com",
+              "channel": "direct_buyer_email"
+            },
+            "action_key": "offers:paid-pilot:2026-10-20:20-photo-studios|images@peterfinger.com|studio-followup-desk"
+          },
+          {
+            "to": "carolinarainphotography@gmail.com",
+            "subject": "A $250/month follow-up pilot for your studio",
+            "body": "Hi Angela,\n\nI'm Aidan, a photographer. Your Charleston wedding and family photography caught my eye.\n\nI'm testing a $250/month follow-up service for photographers: four weekly action lists and up to 20 AI-assisted follow-up drafts for existing enquiries. You approve and send everything, with no new CRM to learn. The pilot would use anonymised enquiry summaries and your approved pricing and policies.\n\nWould you consider a paid monthly pilot after reviewing a sample made with fictional enquiries?\n\nThanks,\nAidan Torrence",
+            "organization": "Carolina Rain Photography / Angela",
+            "domain": "carolinarainphotography.com",
+            "aliases": [
+              "Carolina Rain Photography"
+            ],
+            "source": "https://www.carolinarainphotography.com/contact",
+            "offer": "studio-followup-desk",
+            "attribution": {
+              "campaign": "paid-pilot1",
+              "source": "carolinarainphotography.com",
+              "channel": "direct_buyer_email"
+            },
+            "action_key": "offers:paid-pilot:2026-10-20:20-photo-studios|carolinarainphotography@gmail.com|studio-followup-desk"
+          },
+          {
+            "to": "robertburnsii@gmail.com",
+            "subject": "A $250/month follow-up pilot for your studio",
+            "body": "Hi Robert,\n\nI'm Aidan, a photographer. Your combined wedding photography and video collections caught my eye.\n\nI'm testing a $250/month follow-up service for photographers: four weekly action lists and up to 20 AI-assisted follow-up drafts for existing enquiries. You approve and send everything, with no new CRM to learn. The pilot would use anonymised enquiry summaries and your approved pricing and policies.\n\nWould you consider a paid monthly pilot after reviewing a sample made with fictional enquiries?\n\nThanks,\nAidan Torrence",
+            "organization": "Robert Burns II Photography & Videography LLC",
+            "domain": "robertburnsiiwedding.com",
+            "aliases": [
+              "Robert Burns II"
+            ],
+            "source": "https://www.robertburnsiiwedding.com/contact",
+            "offer": "studio-followup-desk",
+            "attribution": {
+              "campaign": "paid-pilot1",
+              "source": "robertburnsiiwedding.com",
+              "channel": "direct_buyer_email"
+            },
+            "action_key": "offers:paid-pilot:2026-10-20:20-photo-studios|robertburnsii@gmail.com|studio-followup-desk"
+          },
+          {
+            "to": "HELLO@ASHEVILLEWEDDINGPHOTO.com",
+            "subject": "A $250/month follow-up pilot for your studio",
+            "body": "Hi Brittany,\n\nI'm Aidan, a photographer. Your micro-wedding and elopement photography caught my eye.\n\nI'm testing a $250/month follow-up service for photographers: four weekly action lists and up to 20 AI-assisted follow-up drafts for existing enquiries. You approve and send everything, with no new CRM to learn. The pilot would use anonymised enquiry summaries and your approved pricing and policies.\n\nWould you consider a paid monthly pilot after reviewing a sample made with fictional enquiries?\n\nThanks,\nAidan Torrence",
+            "organization": "Asheville Wedding Photo / Asheville Portrait Company / Brittany",
+            "domain": "ashevilleweddingphoto.com",
+            "aliases": [
+              "Asheville Portrait Company",
+              "ashevilleportraitcompany.com",
+              "ashevilleportraitco.com"
+            ],
+            "source": "https://ashevilleweddingphoto.com/contact",
+            "offer": "studio-followup-desk",
+            "attribution": {
+              "campaign": "paid-pilot1",
+              "source": "ashevilleweddingphoto.com",
+              "channel": "direct_buyer_email"
+            },
+            "action_key": "offers:paid-pilot:2026-10-20:20-photo-studios|hello@ashevilleweddingphoto.com|studio-followup-desk"
+          },
+          {
+            "to": "hello@sheilanoltphotography.com",
+            "subject": "A $250/month follow-up pilot for your studio",
+            "body": "Hi Sheila,\n\nI'm Aidan, a photographer. Your Asheville wedding photography caught my eye.\n\nI'm testing a $250/month follow-up service for photographers: four weekly action lists and up to 20 AI-assisted follow-up drafts for existing enquiries. You approve and send everything, with no new CRM to learn. The pilot would use anonymised enquiry summaries and your approved pricing and policies.\n\nWould you consider a paid monthly pilot after reviewing a sample made with fictional enquiries?\n\nThanks,\nAidan Torrence",
+            "organization": "Sheila Nolt Photography",
+            "domain": "sheilanoltphotography.com",
+            "aliases": [
+              "Sheila Nolt"
+            ],
+            "source": "https://sheilanoltphotography.com/contact",
+            "offer": "studio-followup-desk",
+            "attribution": {
+              "campaign": "paid-pilot1",
+              "source": "sheilanoltphotography.com",
+              "channel": "direct_buyer_email"
+            },
+            "action_key": "offers:paid-pilot:2026-10-20:20-photo-studios|hello@sheilanoltphotography.com|studio-followup-desk"
+          },
+          {
+            "to": "hello@rachelabi.com",
+            "subject": "A $250/month follow-up pilot for your studio",
+            "body": "Hi Rachel,\n\nI'm Aidan, a photographer. Your Raleigh wedding photography caught my eye.\n\nI'm testing a $250/month follow-up service for photographers: four weekly action lists and up to 20 AI-assisted follow-up drafts for existing enquiries. You approve and send everything, with no new CRM to learn. The pilot would use anonymised enquiry summaries and your approved pricing and policies.\n\nWould you consider a paid monthly pilot after reviewing a sample made with fictional enquiries?\n\nThanks,\nAidan Torrence",
+            "organization": "Rachel Abi Photography",
+            "domain": "rachelabi.com",
+            "aliases": [
+              "Rachel Abi"
+            ],
+            "source": "https://rachelabi.com/contact",
+            "offer": "studio-followup-desk",
+            "attribution": {
+              "campaign": "paid-pilot1",
+              "source": "rachelabi.com",
+              "channel": "direct_buyer_email"
+            },
+            "action_key": "offers:paid-pilot:2026-10-20:20-photo-studios|hello@rachelabi.com|studio-followup-desk"
+          },
+          {
+            "to": "kate@mkm.photos",
+            "subject": "A $250/month follow-up pilot for your studio",
+            "body": "Hi Kate,\n\nI'm Aidan, a photographer. Your Triangle wedding and portrait photography caught my eye.\n\nI'm testing a $250/month follow-up service for photographers: four weekly action lists and up to 20 AI-assisted follow-up drafts for existing enquiries. You approve and send everything, with no new CRM to learn. The pilot would use anonymised enquiry summaries and your approved pricing and policies.\n\nWould you consider a paid monthly pilot after reviewing a sample made with fictional enquiries?\n\nThanks,\nAidan Torrence",
+            "organization": "MKM Photography / Kate",
+            "domain": "mkm.photos",
+            "aliases": [
+              "MKM Photography"
+            ],
+            "source": "https://www.mkm.photos/Pricing",
+            "offer": "studio-followup-desk",
+            "attribution": {
+              "campaign": "paid-pilot1",
+              "source": "mkm.photos",
+              "channel": "direct_buyer_email"
+            },
+            "action_key": "offers:paid-pilot:2026-10-20:20-photo-studios|kate@mkm.photos|studio-followup-desk"
+          },
+          {
+            "to": "INFO@JEANNEMARIEPHOTO.COM",
+            "subject": "A $250/month follow-up pilot for your studio",
+            "body": "Hi Jeannemarie,\n\nI'm Aidan, a photographer. Your destination wedding photography caught my eye.\n\nI'm testing a $250/month follow-up service for photographers: four weekly action lists and up to 20 AI-assisted follow-up drafts for existing enquiries. You approve and send everything, with no new CRM to learn. The pilot would use anonymised enquiry summaries and your approved pricing and policies.\n\nWould you consider a paid monthly pilot after reviewing a sample made with fictional enquiries?\n\nThanks,\nAidan Torrence",
+            "organization": "Jeannemarie Photography",
+            "domain": "jeannemariephoto.com",
+            "aliases": [
+              "Jeannemarie Photography"
+            ],
+            "source": "https://jeannemariephoto.com/contact",
+            "offer": "studio-followup-desk",
+            "attribution": {
+              "campaign": "paid-pilot1",
+              "source": "jeannemariephoto.com",
+              "channel": "direct_buyer_email"
+            },
+            "action_key": "offers:paid-pilot:2026-10-20:20-photo-studios|info@jeannemariephoto.com|studio-followup-desk"
+          },
+          {
+            "to": "haley@haleyfosterphotography.com",
+            "subject": "A $250/month follow-up pilot for your studio",
+            "body": "Hi Haley,\n\nI'm Aidan, a photographer. Your Charleston wedding and event photography caught my eye.\n\nI'm testing a $250/month follow-up service for photographers: four weekly action lists and up to 20 AI-assisted follow-up drafts for existing enquiries. You approve and send everything, with no new CRM to learn. The pilot would use anonymised enquiry summaries and your approved pricing and policies.\n\nWould you consider a paid monthly pilot after reviewing a sample made with fictional enquiries?\n\nThanks,\nAidan Torrence",
+            "organization": "Haley Foster Photography",
+            "domain": "haleyfosterphotography.com",
+            "aliases": [
+              "Haley Foster Photography"
+            ],
+            "source": "https://haleyfosterphotography.com/contact-weddings",
+            "offer": "studio-followup-desk",
+            "attribution": {
+              "campaign": "paid-pilot1",
+              "source": "haleyfosterphotography.com",
+              "channel": "direct_buyer_email"
+            },
+            "action_key": "offers:paid-pilot:2026-10-20:20-photo-studios|haley@haleyfosterphotography.com|studio-followup-desk"
+          },
+          {
+            "to": "riverrosephotography@outlook.com",
+            "subject": "A $250/month follow-up pilot for your studio",
+            "body": "Hi River Rose team,\n\nI'm Aidan, a photographer. Your Charlotte wedding and portrait photography caught my eye.\n\nI'm testing a $250/month follow-up service for photographers: four weekly action lists and up to 20 AI-assisted follow-up drafts for existing enquiries. You approve and send everything, with no new CRM to learn. The pilot would use anonymised enquiry summaries and your approved pricing and policies.\n\nWould you consider a paid monthly pilot after reviewing a sample made with fictional enquiries?\n\nThanks,\nAidan Torrence",
+            "organization": "River Rose Photography",
+            "domain": "riverrosephotography.com",
+            "aliases": [
+              "River Rose Photography"
+            ],
+            "source": "https://riverrosephotography.com/contact",
+            "offer": "studio-followup-desk",
+            "attribution": {
+              "campaign": "paid-pilot1",
+              "source": "riverrosephotography.com",
+              "channel": "direct_buyer_email"
+            },
+            "action_key": "offers:paid-pilot:2026-10-20:20-photo-studios|riverrosephotography@outlook.com|studio-followup-desk"
+          },
+          {
+            "to": "hello@stevensonloretta.com",
+            "subject": "A $250/month follow-up pilot for your studio",
+            "body": "Hi Eryn,\n\nI'm Aidan, a photographer. Your Charlotte wedding and atmospheric portrait photography caught my eye.\n\nI'm testing a $250/month follow-up service for photographers: four weekly action lists and up to 20 AI-assisted follow-up drafts for existing enquiries. You approve and send everything, with no new CRM to learn. The pilot would use anonymised enquiry summaries and your approved pricing and policies.\n\nWould you consider a paid monthly pilot after reviewing a sample made with fictional enquiries?\n\nThanks,\nAidan Torrence",
+            "organization": "Stevenson Loretta / Eryn Marie",
+            "domain": "stevensonloretta.com",
+            "aliases": [
+              "Stevenson Loretta"
+            ],
+            "source": "https://stevensonloretta.com/contact",
+            "offer": "studio-followup-desk",
+            "attribution": {
+              "campaign": "paid-pilot1",
+              "source": "stevensonloretta.com",
+              "channel": "direct_buyer_email"
+            },
+            "action_key": "offers:paid-pilot:2026-10-20:20-photo-studios|hello@stevensonloretta.com|studio-followup-desk"
+          },
+          {
+            "to": "info@demimabry.com",
+            "subject": "A $250/month follow-up pilot for your studio",
+            "body": "Hi Demi,\n\nI'm Aidan, a photographer. Your wedding-weekend photography caught my eye.\n\nI'm testing a $250/month follow-up service for photographers: four weekly action lists and up to 20 AI-assisted follow-up drafts for existing enquiries. You approve and send everything, with no new CRM to learn. The pilot would use anonymised enquiry summaries and your approved pricing and policies.\n\nWould you consider a paid monthly pilot after reviewing a sample made with fictional enquiries?\n\nThanks,\nAidan Torrence",
+            "organization": "Demi Mabry Photography",
+            "domain": "demimabry.com",
+            "aliases": [
+              "Demi Mabry"
+            ],
+            "source": "https://demimabry.com/inquire",
+            "offer": "studio-followup-desk",
+            "attribution": {
+              "campaign": "paid-pilot1",
+              "source": "demimabry.com",
+              "channel": "direct_buyer_email"
+            },
+            "action_key": "offers:paid-pilot:2026-10-20:20-photo-studios|info@demimabry.com|studio-followup-desk"
+          },
+          {
+            "to": "Info@NodaMedia.com",
+            "subject": "A $250/month follow-up pilot for your studio",
+            "body": "Hi Noda Media team,\n\nI'm Aidan, a photographer. Your wedding, headshot and portrait services caught my eye.\n\nI'm testing a $250/month follow-up service for photographers: four weekly action lists and up to 20 AI-assisted follow-up drafts for existing enquiries. You approve and send everything, with no new CRM to learn. The pilot would use anonymised enquiry summaries and your approved pricing and policies.\n\nWould you consider a paid monthly pilot after reviewing a sample made with fictional enquiries?\n\nThanks,\nAidan Torrence",
+            "organization": "Noda Media / Abrar Altaay Photography",
+            "domain": "nodamedia.com",
+            "aliases": [
+              "Abrar Altaay Photography"
+            ],
+            "source": "https://www.nodamedia.com/contact/",
+            "offer": "studio-followup-desk",
+            "attribution": {
+              "campaign": "paid-pilot1",
+              "source": "nodamedia.com",
+              "channel": "direct_buyer_email"
+            },
+            "action_key": "offers:paid-pilot:2026-10-20:20-photo-studios|info@nodamedia.com|studio-followup-desk"
+          },
+          {
+            "to": "clay@clayaustinphotography.com",
+            "subject": "A $250/month follow-up pilot for your studio",
+            "body": "Hi Clay,\n\nI'm Aidan, a photographer. Your destination wedding photography caught my eye.\n\nI'm testing a $250/month follow-up service for photographers: four weekly action lists and up to 20 AI-assisted follow-up drafts for existing enquiries. You approve and send everything, with no new CRM to learn. The pilot would use anonymised enquiry summaries and your approved pricing and policies.\n\nWould you consider a paid monthly pilot after reviewing a sample made with fictional enquiries?\n\nThanks,\nAidan Torrence",
+            "organization": "Clay Austin Photography",
+            "domain": "clayaustinphotography.com",
+            "aliases": [
+              "Clay Austin Photography"
+            ],
+            "source": "https://clayaustinphotography.com/contact",
+            "offer": "studio-followup-desk",
+            "attribution": {
+              "campaign": "paid-pilot1",
+              "source": "clayaustinphotography.com",
+              "channel": "direct_buyer_email"
+            },
+            "action_key": "offers:paid-pilot:2026-10-20:20-photo-studios|clay@clayaustinphotography.com|studio-followup-desk"
+          }
+        ],
+        "preflight": {
+          "checked_at": "2026-10-20T18:23:46.910Z",
+          "identity": "All20 exact email addresses are published on official photographer business/contact pages with matching identity and active service offerings; no broker list, inferred address or private contact export.",
+          "gmail": "All20 fresh address/domain/organization/alias all-history Gmail checks returned0/no nextpage. No existing campaign match. No prior relationship or pain/volume/CRM deficiency assumed.",
+          "before_each_send": "Recheck exact approval, notes, payload/receipts and current sameZIP ledger/claims, exact public recipient route and Gmail suppression/history. Persist batch claim before any send; reconcile uncertainty individually, never blindresend or reroute. No public signup link: specific priced pilot reply is the CTA and per-recipient campaign attribution is in ledger."
+        },
+        "limits": "Only20 exact buyer emails, one each. No followups/replies, attachments/asset delivery, forms, Instagram/social/public posting, payments/payment requests/charges/contracts or onboarding, CRM/client account changes, private data access/export, spending, terms acceptance or site push/deploy. Inbound replies, any actual monthly agreement/refund policy, payment setup and pilot start require appropriate exact approval. This does not authorize acting on other photography/model/celebrity campaigns or registers.",
+        "why": "User changed primary goal to meaningful recurring revenue quickly. Direct potential payers with a clear paid monthly scope replace more free-interest audience-owner pitches. Existing consumer pilot pages stay truthful and no price is applied to them.",
+        "sample_file": "revenue-reset-20261020/sample-delivery.html",
+        "no_free_signup_claims": true
+      }
     }
   ]
 }
