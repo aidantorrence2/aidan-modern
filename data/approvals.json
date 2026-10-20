@@ -2165,6 +2165,33 @@
       "status": "approved",
       "decided": "2026-10-20T04:10:26Z",
       "note": ""
+    },
+    {
+      "id": "other:approve-charlotte-round-1-winner-stills--202610200427",
+      "kind": "other",
+      "source": "claude:aidan-modern",
+      "title": "Approve Charlotte round 1: winner stills + 3 reels, then prep uploads",
+      "summary": "Round 1 at $5/day: C00 winner still deck, Winner reel, Notes reel, Hi I'm Aidan reel (your picks; no text on faces). On approval I prep final files + Meta copy and ice breakers. Nothing goes live or spends without a separate card. Replaces the earlier round-1 card.",
+      "payload": {
+        "board": "https://claude.ai/artifact/RHB5FnfTiSZdL8EJjGc4uA",
+        "videos_dir": "~/charlotte-video-ads/out",
+        "round1": [
+          "c00 (stills)",
+          "charlotte-c-winner-v1.mp4",
+          "charlotte-a-notes-v3.mp4",
+          "charlotte-b-hi-aidan-v1.mp4"
+        ],
+        "on_approve": "final exports + primary text/headline/welcome message/ice breakers; no API calls, no spend",
+        "open_questions": [
+          "film a real 10s selfie for hi-aidan? (shot list in ~/charlotte-video-ads/HI-AIDAN-SHOTLIST.md)",
+          "about card: right now i am in Charlotte — true?"
+        ]
+      },
+      "created": "2026-10-20T04:27:45Z",
+      "expires": "2026-10-23T04:27:45Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
     }
   ]
 }
