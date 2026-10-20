@@ -5579,5 +5579,44 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "cat-peeing-outside-litter-box",
+  "offer": "tray-again",
+  "title": "Cat peeing outside the litter box? A one-week log and the checks to do in order",
+  "description": "Cat weeing on the carpet or outside the tray? See the vet first, then check the tray, litter, location and stress, changing one thing at a time.",
+  "intro": "Cats usually stop using the tray for a reason. Working through the checks in order, one change at a time, makes the cause easier to find.",
+  "sections": [
+   {
+    "h": "See the vet first",
+    "list": [
+     "Peeing outside the tray can be a sign of a medical problem, so rule that out first."
+    ]
+   },
+   {
+    "h": "Log a week of accidents",
+    "list": [
+     "Note where, when, and anything that changed recently, such as a new pet, visitors, a move or new litter."
+    ]
+   },
+   {
+    "h": "Check the tray",
+    "list": [
+     "A common rule of thumb is one tray per cat plus one, kept clean, in a quiet spot away from food."
+    ]
+   },
+   {
+    "h": "Clean with an enzyme cleaner",
+    "list": [
+     "Ordinary cleaners can leave a smell that draws your cat back to the same spot."
+    ]
+   },
+   {
+    "h": "Change one thing at a time",
+    "p": [
+     "Give each change a week, so you know what helped. If it continues, ask your vet about a behaviourist."
+    ]
+   }
+  ]
  }
 ]

@@ -16372,6 +16372,97 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-20",
+    "slug": "tray-again",
+    "name": "Tray Again",
+    "need": "One cat in particular is weeing outside of the tray, and I'm going mad with this.",
+    "headline": "Cat peeing outside the litter box? Log each accident in one tap, work through the checks in order, change one thing at a time, and see what's working.",
+    "buyer": "Adult cat owners whose cat has started peeing or pooping outside the litter box.",
+    "bullets": [
+      "One-tap accident log: where, when, and what changed recently.",
+      "A checklist in order, starting with a vet visit, then the tray, the litter, the location and stress, with one change at a time.",
+      "A weekly chart, and a summary to show your vet or a behaviourist."
+    ],
+    "price": "$3.99/month",
+    "priceUsd": 4,
+    "priceNote": "Or $24 a year.",
+    "reasonPrompt": "How long has it been happening, where does your cat go, and what have you tried so far?",
+    "faq": [
+      {
+        "q": "Is this vet advice?",
+        "a": "No. Peeing outside the tray can have a medical cause, so the checklist starts with a vet visit. It's a log and a plan, not a diagnosis."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Adults 18+. It is an independent app, not linked to any vet, behaviourist or pet-product brand."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-20",
+      "summary": "Cat owners on Mumsnet describe cats weeing on carpets, in laundry bins and outside the tray, and say they've tried plug-in diffusers, enzyme cleaners and extra trays.",
+      "wtp": "Owners report buying Feliway and Pet Remedy plug-ins, enzyme cleaners and an extra litter tray. Cat behaviour consultations for house soiling start at $299 (Class Act Cats).",
+      "signals": [
+        {
+          "url": "https://www.mumsnet.com/talk/the_litter_tray/5173813-cat-weeing-in-house-losing-my-mind",
+          "who": "Hernamewaslola22 (Mumsnet)",
+          "date": "2024-09-25",
+          "quote": "has started weeing in the carpet in the house.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/the_litter_tray/5173813-cat-weeing-in-house-losing-my-mind",
+          "who": "Hernamewaslola22 (Mumsnet)",
+          "date": "2024-09-25",
+          "quote": "feliway plug ins and pet remedy plug ins",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/the_litter_tray/5173813-cat-weeing-in-house-losing-my-mind",
+          "who": "rosydreams (Mumsnet)",
+          "date": "2024-09-25",
+          "quote": "once they choose something they like to pee on its impossible to stop",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/the_litter_tray/5229858-husband-or-cat",
+          "who": "Wedonttalkaboutboris (Mumsnet)",
+          "date": "2024-12-13",
+          "quote": "One cat in particular is weeing outside of the tray",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/the_litter_tray/5229858-husband-or-cat",
+          "who": "Canthave2manycats (Mumsnet)",
+          "date": "2024-12-13",
+          "quote": "I had one that peed everywhere.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/the_litter_tray/5229858-husband-or-cat",
+          "who": "Beamur (Mumsnet)",
+          "date": "2024-12-13",
+          "quote": "My sibling cats regularly pee in the laundry bin",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.classactcats.com/behavior-consultations",
+          "who": "Class Act Cats behaviour consultations page",
+          "date": "2026-10-20",
+          "quote": "house soiling ... $299",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Vets, cat behaviourists, plug-in diffusers, enzyme cleaners, general pet-care apps.",
+      "risks": "Evidence is from one forum (Mumsnet). No rated app found for this need."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
