@@ -62,6 +62,7 @@ def vcard(v):
   <p class="needs ok">{html.escape(v.get('meta', ''))}</p></article>'''
 
 META3 = {
+ 'p10f': ('Staggered pairs (pair 2 swapped again)', 'CTR · women & men', 'Same as P10D with the woman in pair 2 swapped for T21.'),
  'p10e': ('Staggered pairs (pair 2 swapped)', 'CTR · women & men', 'Same as P10D with the woman in pair 2 swapped for T49.'),
  'p10d': ('Staggered pairs', 'CTR · women & men', 'Each card is two matted prints, a woman and a man, one high and one low, overlapping and zig-zagging card to card. Copy from your winning deck (same as P10C).'),
  'p07': ('Winner deck, nine prints a card', 'CTR · proof density', 'Your winning deck with your top picks: nine prints on "my recent work" and on "never done this before?", two on "now in Charlotte".'),
