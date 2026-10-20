@@ -13604,6 +13604,94 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-20",
+    "slug": "leafwise",
+    "name": "Leafwise",
+    "need": "I want to be able to identify the plants around me, but there is so much to take in and I don't know where to start.",
+    "headline": "Learn to name the 50 most common wild plants near you. Short daily drills teach the one or two features that tell each plant apart from its look-alikes.",
+    "buyer": "Adult beginner naturalists, hikers and iNaturalist users who want to recognize local plants themselves instead of relying on a photo-ID app every time",
+    "bullets": [
+      "Builds a starter deck of the commonly observed plants in your region, beginning with easy species that have few look-alikes",
+      "Spaced-repetition flashcards and look-alike quizzes that focus on key features like leaves, flowers and growth habit",
+      "A field checklist that reminds you which close-up photos to take so you can confirm an ID later"
+    ],
+    "price": "$24 one-time",
+    "priceUsd": 24,
+    "priceNote": "Pay once, no subscription. The leading plant-ID app sells Pro plans for up to $39.99.",
+    "reasonPrompt": "What made you want to learn to identify plants yourself instead of only using a photo-ID app?",
+    "faq": [
+      {
+        "q": "Is this a plant identification app?",
+        "a": "No, it is a learning tool. It trains you to recognize common local plants and their look-alikes so you can name them yourself. You can still use any ID app or community site to check what you see."
+      },
+      {
+        "q": "Can I use it to decide whether a plant or mushroom is safe to eat or touch?",
+        "a": "No. It is an independent learning tool for adults 18+ and is not medical, safety or foraging advice. Never eat or handle a wild plant based on this app."
+      },
+      {
+        "q": "Do I need botanical experience?",
+        "a": "No. Decks start with common, easy species and build up to harder groups."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-20",
+      "summary": "Beginners on the iNaturalist Forum say in their own words that they want to learn to identify plants but feel overwhelmed and don't know where to start. Experienced users still struggle with particular genera or with regions that lack guidebooks. Four named people across two opened pages, plus a third opened beginner-tips page that echoes the same pain.",
+      "wtp": "PictureThis - Plant Identifier (US App Store) shows 4.8 stars from 1.1M Ratings. Its in-app purchases include PictureThis Pro at $39.99, $7.99 and $3.99, and a PictureThis Family Plan at $49.99. This shows people pay for plant identification help.",
+      "signals": [
+        {
+          "url": "https://forum.inaturalist.org/t/where-do-i-start/19270",
+          "who": "Mink_River",
+          "date": "2021-01-06",
+          "quote": "I want to be able to identify plants, animals, etc but there is just so much to take in.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forum.inaturalist.org/t/where-do-i-start/19270",
+          "who": "ivek32",
+          "date": "2021-01-20",
+          "quote": "Thank, as a newbie I am quite intimidated by the app.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forum.inaturalist.org/t/using-inaturalist-to-educate-yourself-what-are-your-tricks/39595",
+          "who": "erikamitchell",
+          "date": "2023-02-26",
+          "quote": "I’m trying to learn plant species in a place with no available guidebooks in English.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forum.inaturalist.org/t/using-inaturalist-to-educate-yourself-what-are-your-tricks/39595",
+          "who": "rinaturalist",
+          "date": "2023-02-27",
+          "quote": "there are still certain genera I have trouble with.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forum.inaturalist.org/t/helpful-tips-and-resources-for-beginner-plant-inatters-and-common-beginner-mistakes/28824",
+          "who": "0x4372616967",
+          "date": "2022-01-05",
+          "quote": "I’ve lost count of how many times I’ve looked at my photos and realised that I’ve not photographed a key character",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/picturethis-plant-identifier/id1252497129",
+          "who": "PictureThis App Store listing",
+          "date": "2026-10-20",
+          "quote": "1.1M Ratings ... PictureThis Pro $39.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "PictureThis (paid photo-ID subscription, 4.8 stars, 1.1M ratings), iNaturalist and Seek (free community and photo ID), Pl@ntNet and Flora Incognita (free photo ID), plus regional field guides. Most competitors identify a plant for you instead of teaching you to recognize it, which leaves room for a learning and spaced-repetition product.",
+      "risks": "Free ID apps are strong, and many users may be satisfied with instant photo ID. Building accurate, region-specific decks and look-alike content takes ongoing botanical curation, and images need proper licensing (do not reuse iNaturalist photos without checking their licenses). Users may try to use it for foraging or toxicity decisions, so the product must clearly exclude edibility and safety guidance; mushrooms are left out on purpose for this reason. The evidence comes mostly from one forum (iNaturalist), and the posts date from 2021 to 2023."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

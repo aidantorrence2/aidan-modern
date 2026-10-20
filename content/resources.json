@@ -4081,5 +4081,46 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "how-to-learn-to-identify-wild-plants",
+  "offer": "leafwise",
+  "title": "How to learn to identify the wild plants around you (without being overwhelmed)",
+  "description": "Want to name the plants you walk past? Start with the 20 most common near you, learn the one feature that separates each from its look-alikes, and photograph the key parts.",
+  "intro": "Plant identification feels overwhelming because there are thousands of species. In practice, a few dozen common plants make up most of what you see on a local walk.",
+  "sections": [
+   {
+    "h": "Start with the common ones",
+    "list": [
+     "Pick 20 plants you see often near home: a few trees, common flowers and the weeds by the path.",
+     "Learn those well before adding more."
+    ]
+   },
+   {
+    "h": "Learn the deciding feature",
+    "list": [
+     "For each plant, learn the one or two features that tell it apart from its look-alikes: leaf arrangement, flower shape, stem or smell."
+    ]
+   },
+   {
+    "h": "Photograph the key parts",
+    "list": [
+     "Take close-ups of the flower, the top and underside of a leaf, the stem and the whole plant. Missing one of these is the most common reason an ID stalls."
+    ]
+   },
+   {
+    "h": "Test yourself",
+    "list": [
+     "Name a plant before you check it with a guide or app. Guessing first is what builds memory.",
+     "Revisit the same walk each season to see plants change."
+    ]
+   },
+   {
+    "h": "Never eat on an ID",
+    "p": [
+     "Do not eat or handle a wild plant based on identification alone. Many edible plants have toxic look-alikes. This guide is general information, not foraging or safety advice."
+    ]
+   }
+  ]
  }
 ]
