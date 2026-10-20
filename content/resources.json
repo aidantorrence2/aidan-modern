@@ -5540,5 +5540,44 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "dog-wont-come-back-when-called",
+  "offer": "whistle-back",
+  "title": "Dog won't come back when called? Rebuild recall step by step",
+  "description": "Recall gone, especially in adolescence? Go back to easy places, use a long line, make coming back worth it every time, and add distractions slowly.",
+  "intro": "Recall often falls apart around adolescence, even in dogs who were good at it. Going back a few steps and building up again usually works better than calling louder.",
+  "sections": [
+   {
+    "h": "Go back to easy places",
+    "list": [
+     "Practise in the house and garden, where your dog almost always comes, before trying the park again."
+    ]
+   },
+   {
+    "h": "Use a long line outdoors",
+    "list": [
+     "A long line lets your dog explore while you stop recall failures from turning into a habit."
+    ]
+   },
+   {
+    "h": "Make coming back the best thing",
+    "list": [
+     "Use a reward your dog really wants, like special treats or a favourite toy, and never call them to something unpleasant."
+    ]
+   },
+   {
+    "h": "Add distractions slowly",
+    "list": [
+     "Practise near other dogs or smells only once recall is solid without them."
+    ]
+   },
+   {
+    "h": "Call once",
+    "p": [
+     "Repeating the cue while being ignored teaches your dog it's optional. If they won't come, go back a step. If you have safety worries, see a qualified trainer."
+    ]
+   }
+  ]
  }
 ]

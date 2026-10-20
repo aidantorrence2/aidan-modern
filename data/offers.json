@@ -16277,6 +16277,101 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-20",
+    "slug": "whistle-back",
+    "name": "Whistle Back",
+    "need": "My dog won't come back when I call him. Out in the park he's just not coming back at all, so I can't trust him off the lead.",
+    "headline": "Your dog bolts across the park and ignores you when you call? Rebuild a recall you can trust, one short daily session at a time.",
+    "buyer": "Adult dog owners, often with an adolescent dog (around 6-18 months), whose recall was good and then fell apart, or never held up around distractions. Many have already paid for puppy classes or a trainer and want something to work on between sessions.",
+    "bullets": [
+      "Short daily recall sessions that go step by step, from the garden to the long line to the open park",
+      "A log of each call (came straight away, came slowly, ignored me) so you can see where recall breaks down",
+      "Reminders to practise in the moments that matter: when other dogs, scents or a thrown ball pull your dog away"
+    ],
+    "price": "$4.99/month",
+    "priceUsd": 5,
+    "priceNote": "",
+    "reasonPrompt": "What happens when you call your dog off the lead right now, and where does it go wrong?",
+    "faq": [
+      {
+        "q": "Who makes Whistle Back?",
+        "a": "Whistle Back is an independent app for adults 18+. It is not affiliated with any dog trainer, training method, book author or other dog-training app."
+      },
+      {
+        "q": "Does it replace a dog trainer?",
+        "a": "No. It gives you a structured way to practise recall between sessions and keep track of how it's going. If your dog shows aggression or you have safety concerns, see a qualified trainer or behaviourist in person."
+      },
+      {
+        "q": "My dog's recall used to be good. Is this for me?",
+        "a": "Yes. Owners often say recall vanished when their dog hit adolescence. Whistle Back is built around getting back to basics and rebuilding recall step by step."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-20",
+      "summary": "Dog owners describe, in their own words, dogs that ignore recall entirely, especially during adolescence. They are back to long lines, treats and squeaky balls, and some are paying for trainers again. This need is distinct from the live leash-pulling (loose-leash), separation (calm-alone) and puppy-biting (soft-mouth) offers.",
+      "wtp": "Puppr (App Store): 4.8 from 27K ratings, with paid Premium plans; it lists recall among its training levels. One Mumsnet owner is paying for a trainer again after one-to-one training and puppy classes.",
+      "signals": [
+        {
+          "url": "https://www.mumsnet.com/talk/the_doghouse/3186014-Recall-has-disappeared",
+          "who": "monkeywithacowface (Mumsnet)",
+          "date": "2018-03-05",
+          "quote": "Previously excellent recall but now adolescence has really hit (9 months) and it has literally disappeared.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/the_doghouse/3186014-Recall-has-disappeared",
+          "who": "monkeywithacowface (Mumsnet)",
+          "date": "2018-03-05",
+          "quote": "my previously greedy, highly food motivated pup takes one look at the treat and runs off or just ignores me completely.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/the_doghouse/3186014-Recall-has-disappeared",
+          "who": "FoxesAreFabulous (Mumsnet)",
+          "date": "2018-03-06",
+          "quote": "he was off across the park at top speed and completely deaf to anyone calling him back.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/the_doghouse/3256492-Recall-just-gone",
+          "who": "MyKingdomForACaramel (Mumsnet)",
+          "date": "2018-05-22",
+          "quote": "out in the park the last two days he’s just not coming back at all",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/the_doghouse/3256492-Recall-just-gone",
+          "who": "MyKingdomForACaramel (Mumsnet)",
+          "date": "2018-05-22",
+          "quote": "Am going to get a trainer back in (he had one to one training from the moment I had him and did puppy classes).",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/the_doghouse/3256492-Recall-just-gone",
+          "who": "CMOTDibbler (Mumsnet)",
+          "date": "2018-05-23",
+          "quote": "Get the Pippa Mattison Total Recall book, and use her techniques as I find it very effectibe",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/puppr-dog-training-tricks/id1199338956",
+          "who": "Puppr - Dog Training & Tricks (App Store listing)",
+          "date": "2026-10-20",
+          "quote": "27K Ratings ... New skills and training levels for important basics like recall, stay, and leave it",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "General dog-training apps with paid tiers, such as Puppr (27K ratings, IAP $12.99-$99.99), which covers recall among many other skills. Also the Total Recall book (Pippa Mattinson), private trainers and puppy classes, and free YouTube videos. Whistle Back's angle is focusing only on recall and logging every call.",
+      "risks": "The Mumsnet threads date from 2018, so demand evidence is older. The Mumsnet quotes were checked with WebFetch only, because Mumsnet returns 403 to curl. The App Store listing was checked with curl. Broad dog apps already include recall lessons, so a recall-only app has to justify a separate subscription. Many owners say adolescent recall comes back with age, which may limit how long people stay subscribed. Avoid any safety guarantees about off-lead dogs."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
