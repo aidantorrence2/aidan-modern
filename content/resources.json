@@ -4799,5 +4799,83 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "read-slowly-never-finish-books",
+  "offer": "through-line",
+  "title": "Read slowly and never finish books? A 10-minute daily pacing practice",
+  "description": "Shelf full of half-read books? Read in short daily sessions, use a finger or card as a pacer, cut down rereading, and check you still understand.",
+  "intro": "Many slow readers lose time rereading lines and stopping mid-page. Short daily practice with a simple pacer helps keep momentum without losing understanding.",
+  "sections": [
+   {
+    "h": "Short daily sessions",
+    "list": [
+     "Ten minutes a day is enough. Pick a book you actually want to read, not a hard one you feel you should."
+    ]
+   },
+   {
+    "h": "Use a pacer",
+    "list": [
+     "Run a finger or a card under the line you are reading, at a steady pace slightly faster than comfortable."
+    ]
+   },
+   {
+    "h": "Cut rereading",
+    "list": [
+     "Try not to go back unless you have truly lost the meaning. Often the next sentence makes it clear."
+    ]
+   },
+   {
+    "h": "Check understanding",
+    "list": [
+     "At the end of each session, say in one sentence what happened. If you can't, slow down a little next time."
+    ]
+   },
+   {
+    "h": "Track pages, not speed",
+    "p": [
+     "Note how many pages you read in ten minutes each week. If reading has always been hard work, an assessment for dyslexia or other conditions can help. This guide is general information."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "fear-of-heights-step-by-step",
+  "offer": "level-head",
+  "title": "Scared of heights? A step-by-step ladder for balconies, bridges and viewpoints",
+  "description": "Fear of heights stopping you doing things? Make a list of situations from easy to hard, visit each safely for a short time, and move up only when it feels manageable.",
+  "intro": "Fear of heights is very common. Facing heights gradually, in safe places, and staying until the unease drops is the approach most often recommended.",
+  "sections": [
+   {
+    "h": "Make a ladder",
+    "list": [
+     "List situations from easiest to hardest: looking out of an upstairs window, standing on a ground-floor balcony, a low footbridge, a higher viewpoint."
+    ]
+   },
+   {
+    "h": "Short, safe visits",
+    "list": [
+     "Visit the first step for a few minutes. Only use places with railings or barriers, and stand back from the edge."
+    ]
+   },
+   {
+    "h": "Rate before and after",
+    "list": [
+     "Rate your unease from 0 to 10 at the start and end. Move up a step only when the number has dropped on a few visits."
+    ]
+   },
+   {
+    "h": "Slow your breathing",
+    "list": [
+     "Breathe in for four and out for six while you are there. If it gets too much, step back and try again later."
+    ]
+   },
+   {
+    "h": "Get help if it is severe",
+    "p": [
+     "If the fear seriously affects your life, a doctor or therapist can help. Never put yourself somewhere unsafe to practise. This guide is general information, not medical advice."
+    ]
+   }
+  ]
  }
 ]

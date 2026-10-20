@@ -14809,6 +14809,145 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-20",
+    "slug": "through-line",
+    "name": "Through Line",
+    "need": "I have a shelf full of 20% read books, and it takes me weeks to finish one because I'm so slow.",
+    "headline": "Reading-pace practice for slow readers: a line pacer that speeds up only when you keep up, 10-minute sessions with two quick comprehension checks, and progress on your own books.",
+    "buyer": "Adults (18+) who read slowly, reread lines and rarely finish books.",
+    "bullets": [
+      "A line pacer that moves at your own speed and steps up only when you keep up.",
+      "Ten-minute sessions with two quick comprehension checks, so speed never costs understanding.",
+      "Pages-per-ten-minutes progress, measured on the books you actually want to read."
+    ],
+    "price": "$4.99/month",
+    "priceUsd": 5,
+    "priceNote": "Or $29 a year, about the same as the leading speed-reading app's annual plan.",
+    "reasonPrompt": "How long does a book usually take you, and what slows you down most?",
+    "faq": [
+      {
+        "q": "Is this a test or treatment for dyslexia or ADHD?",
+        "a": "No. Through Line is an independent reading-practice tool for adults 18+. It does not test, diagnose or treat anything. If you think a condition affects your reading, an assessment can help."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-20",
+      "summary": "Readers on AnandTech and Goodreads say they read very slowly, have shelves of half-finished books, and take weeks to get through one. Speed-reading apps already sell subscriptions.",
+      "wtp": "Outread: Speed Reading (App Store): 4.7 from 1.4K ratings, Outread+ $29.99 to $49.99 a year, Lifetime $119.99.",
+      "signals": [
+        {
+          "url": "https://forums.anandtech.com/threads/why-cant-i-read.1935121",
+          "who": "imported_Rat (AnandTech forums)",
+          "date": "2006-09-18",
+          "quote": "I have a shelf full of 20% read books. It takes weeks to finish one.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.anandtech.com/threads/why-cant-i-read.1935121",
+          "who": "Rip the Jacker (AnandTech forums)",
+          "date": "2006-09-17",
+          "quote": "I can't read that fast",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.goodreads.com/topic/show/719454-slow-reader-or-fast?page=5",
+          "who": "Nancy (Goodreads)",
+          "date": "2013-12-08",
+          "quote": "I am so slow. My 12 year old daughter reads faster than me.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/outread-speed-reading/id778846279",
+          "who": "Outread App Store listing",
+          "date": "2026-10-20",
+          "quote": "1.4K Ratings ... Lifetime $119.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Outread, Reading Trainer, Spreeder, audiobooks.",
+      "risks": "Posts are from 2006 and 2013. Speed-reading claims are contested, so the product aims at steady pace without losing comprehension, not at miracle speeds."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-20",
+    "slug": "level-head",
+    "name": "Level Head",
+    "need": "I have a debilitating fear of heights that stops me doing things I'd love to do.",
+    "headline": "A self-paced plan for everyday heights: your own ladder of real places (window, balcony, bridge, viewpoint), short visits with unease ratings, and a step-back plan.",
+    "buyer": "Adults (18+) whose fear of heights keeps them off balconies, bridges, ladders, glass lifts and hikes.",
+    "bullets": [
+      "Build your own ladder of real situations, from an upstairs window to a balcony, a bridge and a viewpoint.",
+      "Short visits with an unease rating before and after; move up only when a step feels manageable.",
+      "A breathing timer, a step-back plan, and a weekly log."
+    ],
+    "price": "$12 one-time",
+    "priceUsd": 12,
+    "priceNote": "Pay once. Far less than a fear-of-heights course.",
+    "reasonPrompt": "What does your fear of heights stop you doing?",
+    "faq": [
+      {
+        "q": "Is this therapy, and is it safe?",
+        "a": "Level Head is an independent self-help tool for adults 18+, not therapy or medical advice. Only practise in safe places with railings or barriers, never climb or lean anywhere unsafe, and if your fear seriously affects your life, talk to a doctor or therapist."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-20",
+      "summary": "Adults on Singletrack and Mumsnet say their fear of heights is debilitating, that they are terrified on bridges and tall buildings, and that one tried hypnosis that didn't fully work. Fear-of-heights apps and courses already sell.",
+      "wtp": "ZeroPhobia - Fear of Heights (App Store): Pro Licence $9.99, 3.8 from 13 ratings. Thin signal: small rating count.",
+      "signals": [
+        {
+          "url": "https://singletrackworld.com/forum/off-topic/conquering-fear-of-heights/",
+          "who": "Shibboleth (Singletrack)",
+          "date": "2012-10-31",
+          "quote": "I have a debilitating fear of heights that really hacks me off",
+          "seen": "opened"
+        },
+        {
+          "url": "https://singletrackworld.com/forum/off-topic/conquering-fear-of-heights/",
+          "who": "wwaswas (Singletrack)",
+          "date": "2012-10-31",
+          "quote": "I force myself to do stuff up ladders 'cos I know it needs to be done but I never feel comfortable.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://singletrackworld.com/forum/off-topic/conquering-fear-of-heights/",
+          "who": "transapp (Singletrack)",
+          "date": "2012-10-31",
+          "quote": "Fear is still very much with me.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/_chat/4532324-Why-do-I-feel-fear-danger-especially-of-heights-in-my-legs",
+          "who": "ToooOldForThis (Mumsnet)",
+          "date": "2022-04-17",
+          "quote": "I am not good with heights, especially on man made things like tall buildings or bridges.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/zerophobia-fear-of-heights/id1373747479",
+          "who": "ZeroPhobia - Fear of Heights App Store listing",
+          "date": "2026-10-20",
+          "quote": "13 Ratings ... Fear of Heights - Pro Licence $9.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "ZeroPhobia, oVRcome, fear-of-heights courses, therapy.",
+      "risks": "Paid apps have small rating counts. Safety wording must be strict: practise only in safe places."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
