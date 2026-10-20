@@ -14948,6 +14948,126 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-20",
+    "slug": "plank-from-zero",
+    "name": "Plank From Zero",
+    "need": "I just can't do a plank: my shoulders give out and I can't even make it to 30 seconds.",
+    "headline": "Can't hold a plank yet? Start with holds of a few seconds, on your knees or forearms, and move up one small step at a time until you reach a full plank.",
+    "buyer": "Adults who struggle to hold a basic plank, or whose shoulders give out first, and want a simple step-by-step way to build up to one at home.",
+    "bullets": [
+      "A ladder of plank stages (forearms and knees, then toes, then straight arms), each with a short hold to aim for",
+      "Interval timer for holding a few seconds, pausing, then holding again, so you can build up instead of collapsing on one long hold",
+      "Simple log of each session's holds so you can see your times creep up over the weeks"
+    ],
+    "price": "$9 one-time",
+    "priceUsd": 9,
+    "priceNote": "Pay once. Plank challenge apps charge $19.99 a year or $49.99 for lifetime access.",
+    "reasonPrompt": "What happens when you try to hold a plank right now: does your back, your shoulders or your core give out first, and how many seconds can you hold?",
+    "faq": [
+      {
+        "q": "Is this medical or physiotherapy advice?",
+        "a": "No. Plank From Zero is an independent exercise-tracking tool for adults 18+. It is not medical advice. If you have pain, an injury or a health condition, talk to a qualified professional before you start."
+      },
+      {
+        "q": "I can't hold a plank for even a few seconds. Is this still for me?",
+        "a": "Yes. The ladder starts with short holds on your forearms and knees, then pauses and holds again, before it moves to longer holds or harder positions."
+      },
+      {
+        "q": "What if my shoulders hurt before my abs do?",
+        "a": "You can stay on the forearm stages for as long as you like. Stop any hold that causes pain. The app tracks your holds; it does not diagnose why something hurts."
+      },
+      {
+        "q": "Do I need equipment?",
+        "a": "No. You need a floor and a phone for the timer."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-20",
+      "summary": "On three Cathe.com forum threads and one Singletrack thread, all opened, at least seven named people describe failing at planks in their own words. They say they 'just can't do them', ask 'does anyone else have a hard time doing these?', and admit they can't make it to 30 seconds. Shoulders giving out first comes up again and again. The advice people give each other is a graded build-up: forearms and knees first, a few seconds at a time, then longer holds. That is the product. All the threads are old (2001 to 2017), but the same complaint shows up across 16 years and on two unrelated communities.",
+      "wtp": "People already pay for this in dedicated plank apps. 'Plank Challenge at Home 30 day' by WSFU (App Store, opened) has 4.5 stars from 82 ratings and sells Plank Pro Weekly at $0.99, Monthly at $3.99, Annual at $19.99 and Lifetime at $49.99. 'Plank Workout Challenge' by ohealth apps studio (App Store, opened) has 4.8 stars from 129 ratings, with in-app purchases at $3.99, $4.99, $9.99 and $29.99.",
+      "signals": [
+        {
+          "url": "https://www.cathe.com/forum/threads/planks.169168",
+          "who": "samanthac",
+          "date": "2002-11-05",
+          "quote": "I just can't do them. No matter how I adjust I cannot seem to find the right position for planks",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.cathe.com/forum/threads/planks.169168",
+          "who": "wutherhi",
+          "date": "2002-11-05",
+          "quote": "I couldn't do them at first, either.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://cathe.com/forum/threads/planks-yikes.210221/",
+          "who": "Chrissysu",
+          "date": "2005-10-19",
+          "quote": "Does anyone else have a hard time doing these?",
+          "seen": "opened"
+        },
+        {
+          "url": "https://cathe.com/forum/threads/planks-yikes.210221/",
+          "who": "Fitnessfreak366",
+          "date": "2005-10-19",
+          "quote": "My shoulders always give out before my abs do.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.cathe.com/forum/threads/plank-work-very-frustrating.167869",
+          "who": "balancedmom",
+          "date": "2001-12-08",
+          "quote": "I am getting very frustrated with plank work.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.cathe.com/forum/threads/plank-work-very-frustrating.167869",
+          "who": "horseshowmom",
+          "date": "2001-12-08",
+          "quote": "I am so glad I'm not the only one who struggles with this!",
+          "seen": "opened"
+        },
+        {
+          "url": "https://singletrackworld.com/forum/off-topic/how-long-can-you-hold-a-plank/",
+          "who": "singletrackmind",
+          "date": "2017-02-09",
+          "quote": "I cant even make it to 30 seconds. Thats abit rubbish isnt it?",
+          "seen": "opened"
+        },
+        {
+          "url": "https://singletrackworld.com/forum/off-topic/how-long-can-you-hold-a-plank/",
+          "who": "fifeandy",
+          "date": "2017-02-09",
+          "quote": "Wasn't expecting much as i know my core is a useless floppy mess.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/-/id6544792840",
+          "who": "Plank Challenge at Home 30 day App Store listing",
+          "date": "2026-10-20",
+          "quote": "82 Ratings ... Plank Pro Annual $19.99",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1536575452",
+          "who": "Plank Workout Challenge App Store listing",
+          "date": "2026-10-20",
+          "quote": "4.8 out of 5, 129 ratings; Free with In-App Purchases: Premium Features $29.99, $3.99, $9.99; Premium Workout $4.99",
+          "seen": "snippet"
+        }
+      ],
+      "competitors": "Generic 30-day plank challenge apps such as Plank Challenge at Home 30 day (WSFU) and Plank Workout Challenge (ohealth apps studio), sold by subscription or lifetime purchase. Most assume you can already hold a plank and simply add seconds each day. Broader fitness apps and free YouTube videos also include planks. Free advice from forums and articles (knee planks, a few seconds at a time) is easy to find, so we have to win on structure for complete beginners who are starting from zero.",
+      "risks": "The forum evidence is old (2001 to 2017), and the dates on the App Store listings are review dates, not purchase dates. Cheap or free plank apps already exist, so a $9 one-time price has to compete with $0.99 weekly plans. This is a physical-exercise product: people with back pain, diastasis or shoulder injuries post in these threads, so the copy must not make health claims and should point people with pain to a professional. Planks are a narrow need inside general fitness, so the market may be small and people may stop using it once they can hold a plank."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

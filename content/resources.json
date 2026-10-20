@@ -4877,5 +4877,44 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "cant-hold-a-plank",
+  "offer": "plank-from-zero",
+  "title": "Can't hold a plank yet? How to build up from a few seconds",
+  "description": "Shoulders give out and you can't reach 30 seconds? Start on your knees and forearms, hold for a few seconds at a time, and add a little each week.",
+  "intro": "Most people who can't hold a plank try one long hold and collapse. Short holds in an easier position, repeated, build the strength faster.",
+  "sections": [
+   {
+    "h": "Start easier",
+    "list": [
+     "Begin on your forearms and knees, with a straight line from head to knees. This takes much of the load off your shoulders."
+    ]
+   },
+   {
+    "h": "Short holds, repeated",
+    "list": [
+     "Hold for 5 to 10 seconds, rest for the same time, and repeat five times. That is a whole session."
+    ]
+   },
+   {
+    "h": "Add a little each week",
+    "list": [
+     "Add a few seconds to each hold, or one more round. When knee planks feel easy, move to your toes."
+    ]
+   },
+   {
+    "h": "Form over time",
+    "list": [
+     "Keep your hips level, not sagging or piked up, and breathe normally. A good short plank beats a long saggy one."
+    ]
+   },
+   {
+    "h": "Look after yourself",
+    "p": [
+     "Stop if you feel pain, especially in your back or shoulders. If you have an injury, back pain or have recently had a baby, ask a qualified professional before starting. This guide is general information, not medical advice."
+    ]
+   }
+  ]
  }
 ]
