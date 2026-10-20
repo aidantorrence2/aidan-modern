@@ -1933,6 +1933,54 @@
       "status": "approved",
       "decided": "2026-10-20T01:06:02Z",
       "note": ""
+    },
+    {
+      "id": "offers:small-wave7:2026-10-19:dating-and-friendships",
+      "kind": "email",
+      "source": "codex:real-change-pilots",
+      "title": "Two short emails: dating and recurring friendships",
+      "summary": "Ask We Met IRL and Lonely Girls Club to consider sharing free, nonbinding signup pages. Unbuilt services; no matches, fees or followups. Two exact emails only.",
+      "payload": {
+        "action": "Send exactly two first-contact business emails once each after current exact approval and final preflight.",
+        "project_id": "appgprj_6ad56c0398f4819187d2d7870ae70ac4",
+        "messages": [
+          {
+            "to": "wemetirl@gmail.com",
+            "subject": "A dating idea for people tired of endless swiping",
+            "body": "Hi We Met IRL team,\n\nI'm Aidan. Your speed dating events help people meet offline, which seems a good fit for an idea I'm testing.\n\nI'm exploring a service that introduces a few compatible people and helps them arrange a real date, instead of endless swiping. It isn't built yet, and there isn't an existing pool of matches.\n\nWould you consider sharing this signup page with adults aged 18 or over who might help shape it?\n\nSignup is free and nonbinding.\nhttps://real-change-pilots-aidan-2026.aidantorrence.chatgpt.site/better-dates?utm_source=we_met_irl&utm_medium=partner_email&utm_campaign=wave7\n\nThanks,\nAidan Torrence",
+            "offer": "better-dates",
+            "organization": "We Met IRL",
+            "recipient_identity": "The organization's published business partnership inbox, not attendees or personal contacts.",
+            "source": "https://www.wemetirl.com/blog/our-first-event-of-2025",
+            "rules_source": "https://www.wemetirl.com/",
+            "channel_limit": "Homepage invites business collaboration; blog publishes exact inbox for partnerships. No claim to own a venue, purchase sponsorship, organize a paid event, or have matches. No Instagram posting."
+          },
+          {
+            "to": "londonlonelygirlsclub@gmail.com",
+            "subject": "A small group where people see the same faces again",
+            "body": "Hi Lonely Girls Club team,\n\nI'm Aidan. Your events help women meet and make friends, and your contact page welcomes collaboration ideas.\n\nI'm exploring a small local group where the same people meet each week for six weeks, giving friendships time to grow beyond a single event. It isn't running yet; the city and schedule would depend on interest.\n\nWould you consider sharing this signup page with adults who might be interested?\n\nSignup is free and nonbinding.\nhttps://real-change-pilots-aidan-2026.aidantorrence.chatgpt.site/real-friendships?utm_source=lonely_girls_club&utm_medium=partner_email&utm_campaign=wave7\n\nThanks,\nAidan Torrence",
+            "offer": "real-friendships",
+            "organization": "Lonely Girls Club",
+            "recipient_identity": "Central business collaboration inbox across all branches, published on official contact page.",
+            "source": "https://www.llgc.co.uk/pages/contact",
+            "rules_source": "https://www.llgc.co.uk/pages/faqs",
+            "channel_limit": "Official FAQ adult18+ community. Business email only; no membership, newsletter subscription, Facebook group access, passwords, attendee/member contact or lists."
+          }
+        ],
+        "limits": "Two exact emails only. No followups, replies, attachments, social/Instagram posts, public/community posts, attendee/member lists, memberships, spending, sponsorship purchase, terms, product building or deployment. All prior recipient holds/denials unchanged.",
+        "why": "No pending campaign cards and wave6 completed. Two existing qualified reserves freshly reverified for live dating and friendship signup distribution; not counted as newly qualified prospects.",
+        "preflight": {
+          "checked_at": "2026-10-20T02:08:00Z",
+          "gmail": "Combined address/domain/name all-history search returned only unrelated 2024 newsletter phrase match; no campaign/history collision. Exact-recipient search repeated before execution.",
+          "dedupe": "No collision with18 completed, Dateable uncertain, Dear Nina blocked, CityGirl held or denied Luvvly.",
+          "landing_pages": "Both exact tracked URLs HTTP200; correct offer heading, form,18+ and followup consent, early-interest availability; no test signup submitted."
+        }
+      },
+      "created": "2026-10-20T02:07:38Z",
+      "expires": "2026-10-23T02:07:38Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
     }
   ]
 }
