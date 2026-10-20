@@ -13280,6 +13280,112 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-20",
+    "slug": "songpatch",
+    "name": "Songpatch",
+    "need": "I have a serious problem remembering bird calls, and I have to re-learn many songs each spring.",
+    "headline": "Learn the bird songs around you 5 at a time, then get them back each spring with a short refresher, so a song you hear stays a song you know.",
+    "buyer": "Adult backyard birders and hikers who can spot birds but can't name what they hear, and who forget songs they learned once they've gone a winter without hearing them.",
+    "bullets": [
+      "Small weekly sets: a few local species at a time, the pacing experienced birders recommend over working through a whole list",
+      "Recall drills: hear a short clip and name the singer before the answer shows, with confusable species played next to each other",
+      "Spring refresher: a short review of the songs you learned last year, timed for when the birds start singing again"
+    ],
+    "price": "$12 one-time",
+    "priceUsd": 12,
+    "priceNote": "Pay once, no subscription. Bird-song course apps charge $9.99 per course or $44.99 a year for everything.",
+    "reasonPrompt": "Which birds do you hear near home but can't name, and when do you usually forget the ones you learned?",
+    "faq": [
+      {
+        "q": "Isn't Merlin or BirdNET enough?",
+        "a": "Those apps suggest an ID for a recording you make. This tool is for remembering the song yourself, so you know the bird without reaching for your phone. Many birders use both."
+      },
+      {
+        "q": "How many songs will I learn at once?",
+        "a": "A few species each week. Forum birders say adding no more than about 5 per week worked better for them than taking on a whole group at once."
+      },
+      {
+        "q": "Why a spring refresher?",
+        "a": "Birders often say they forget many songs over the winter and have to learn them again each spring. The refresher goes back over the songs you already studied, so you aren't starting over."
+      },
+      {
+        "q": "Who makes Songpatch?",
+        "a": "Songpatch is an independent app, not linked to any birding organisation or app."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-20",
+      "summary": "Two iNaturalist Forum threads, from 2021 and 2024, show several named birders saying in their own words that they struggle to remember bird songs, forget them over winter, or have stalled at a skill level. That includes one who already pays for Larkwire and says she isn't making progress. Both pages were opened with WebFetch, and the quotes were checked word for word against the forum's JSON post text.",
+      "wtp": "Learn Bird Watching (Larkwire LLC) on the US App Store is rated 4.8 out of 5 from 1.3K ratings. It is free to download, and the in-app purchases include Bird Songs Core East (N. Am) at $9.99, Bird Songs Pro East (N. Am) at $24.99, Single Course Annual at $24.99, All Courses Annual at $44.99 and All Courses Annual (Family) at $64.99. One reviewer, Shopetastic (04/16/2020), wrote: \"Best thing I've ever bought on the App Store.\"",
+      "signals": [
+        {
+          "url": "https://forum.inaturalist.org/t/learning-bird-songs/23825",
+          "who": "judyk45",
+          "date": "2021-06-10",
+          "quote": "I have a serious problem remembering calls to compare them with recordings online.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forum.inaturalist.org/t/learning-bird-songs/23825",
+          "who": "mamestraconfigurata",
+          "date": "2021-06-10",
+          "quote": "It's taken me years to remember vocalizations. It doesn't help that we have such a long winter, and I have to re-learn many songs each spring!",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forum.inaturalist.org/t/learning-bird-songs/23825",
+          "who": "taitsougstad",
+          "date": "2021-06-10",
+          "quote": "I can relate about the sound forgetfulness. I try to recall songs I think I'm familiar with, and it's gone.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forum.inaturalist.org/t/learning-bird-songs/23825",
+          "who": "mmmiller",
+          "date": "2021-06-10",
+          "quote": "But I was kind of stalled at a certain skill level",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forum.inaturalist.org/t/learning-bird-songs/23825",
+          "who": "ken_ohio",
+          "date": "2021-06-10",
+          "quote": "Some very experienced birders told me to slow down and try to learn no more than 5 per week.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forum.inaturalist.org/t/how-to-learn-to-recognize-bird-songs/55228",
+          "who": "onefishyboi",
+          "date": "2024-09-08",
+          "quote": "Are there any apps/websites I should use to help practice?",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forum.inaturalist.org/t/how-to-learn-to-recognize-bird-songs/55228",
+          "who": "bobmcd",
+          "date": "2024-09-09",
+          "quote": "I found on bird counts that if I did not know the songs and calls I was missing ~90% of what was around me.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/larkwire-learn-bird-songs-1/id544499991",
+          "who": "Learn Bird Watching (Larkwire) App Store listing",
+          "date": "2026-10-20",
+          "quote": "1.3K Ratings ... All Courses Annual $44.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Learn Bird Watching (Larkwire): a paid, game-style song course, rated 4.8 from 1.3K ratings, with in-app purchases from $9.99 to $64.99. Free ID tools come up again and again in the threads: Merlin, BirdNET, the Audubon app, All About Birds, xeno-canto and eBird. The iBird app and Stokes bird song CDs are also mentioned.",
+      "risks": "Free ID apps such as Merlin and BirdNET are widely used and may be seen as good enough, so the offer has to sell remembering a song, not identifying one. One forum user already pays for Larkwire and says she isn't making progress, which shows the need but also that a paid course on its own doesn't solve it. Bird song recordings need proper licensing for each species and region. Song dialects differ by locality, as forum users note with Carolina Wrens and chickadees, so generic recordings may not match local birds. Demand is seasonal and peaks in spring. The evidence is from one forum community, iNaturalist, across two threads; the BirdForum and Art of Memory threads returned 403 and were not used."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

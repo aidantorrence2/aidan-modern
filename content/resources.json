@@ -3927,5 +3927,45 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "how-to-learn-bird-songs-and-remember-them",
+  "offer": "songpatch",
+  "title": "How to learn bird songs by ear (and still remember them next spring)",
+  "description": "Can spot birds but can't name what you hear? Learn a few local songs a week, use memory phrases, test yourself before checking, and refresh each spring.",
+  "intro": "Learning bird songs is hard because there are so many and they fade over winter. Small batches, active recall and a spring refresher make them stick.",
+  "sections": [
+   {
+    "h": "Start with your local birds",
+    "list": [
+     "Pick the five or so birds you hear most around home. Learn those before anything else."
+    ]
+   },
+   {
+    "h": "A few a week",
+    "list": [
+     "Add no more than about five new songs a week. Experienced birders recommend this over working through a whole list."
+    ]
+   },
+   {
+    "h": "Use memory phrases",
+    "list": [
+     "Many songs have well-known phrases that match their rhythm. Make up your own if none fits; personal ones stick best."
+    ]
+   },
+   {
+    "h": "Test before you check",
+    "list": [
+     "When you hear a song, guess first, then confirm with a recording or an ID app. Guessing is what builds memory.",
+     "Compare similar-sounding species side by side."
+    ]
+   },
+   {
+    "h": "Refresh each spring",
+    "p": [
+     "Before the birds start singing again, spend a week going back over last year's songs. You will relearn them much faster than the first time."
+    ]
+   }
+  ]
  }
 ]
