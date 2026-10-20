@@ -18776,6 +18776,101 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-20",
+    "slug": "table-pace",
+    "name": "Table Pace",
+    "need": "I eat too fast and can't break the habit. I've finished my plate before anyone else has taken more than a bite or two.",
+    "headline": "Always the first one done eating? Get a quiet nudge between bites, so you can taste your dinner and finish when everyone else at the table does.",
+    "buyer": "Adults who have eaten fast for years, often a habit from short school, army or work lunch breaks. They're tired of clearing their plate in minutes while everyone else is still eating, and they've tried to slow down and slipped straight back.",
+    "bullets": [
+      "Set the pace for this meal and get a quiet phone buzz when it's time for the next bite, so you don't have to keep watching the clock.",
+      "A simple meal goal: see how long the meal lasted, and stretch it a little at a time instead of trying to change overnight.",
+      "Made for real life: eating out, family dinners, and the lunch at your desk where you eat it in five minutes."
+    ],
+    "price": "$3.99/month",
+    "priceUsd": 4,
+    "priceNote": "",
+    "reasonPrompt": "When do you eat fastest: alone, at work, or with other people? And how long does a meal usually take you?",
+    "faq": [
+      {
+        "q": "Who makes Table Pace?",
+        "a": "Table Pace is an independent app for adults 18+. It isn't affiliated with any other app, brand or company."
+      },
+      {
+        "q": "Is this a diet or weight-loss program?",
+        "a": "No. Table Pace is a pacing habit tool for people who want to slow down and enjoy their meals. It doesn't give medical, nutrition or weight-loss advice. If you have a health concern about eating or swallowing, speak to a qualified professional."
+      },
+      {
+        "q": "Do I have to stare at my phone while I eat?",
+        "a": "No. The idea is that you set the pace, put the phone down, and let a buzz tell you when to take the next bite."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-20",
+      "summary": "People on Straight Dope and Singletrack say they finish their plate in minutes, call it a habit they can't break, and find it almost impossible to change.",
+      "wtp": "Slow Eats (App Store): 126 ratings, $1.99 a month or $14.99 a year; one reviewer still uses it almost every day. Thin signal.",
+      "signals": [
+        {
+          "url": "https://boards.straightdope.com/t/how-fast-do-you-eat/518271",
+          "who": "wolfman (Straight Dope)",
+          "date": "2009-11-20",
+          "quote": "Even today sometimes at a good restaurant I look down and realize I’ve eaten 90% of my plate in three minutes and nobody else has taken more than a bite or two.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://boards.straightdope.com/t/how-fast-do-you-eat/518271",
+          "who": "LawMonkey (Straight Dope)",
+          "date": "2009-11-21",
+          "quote": "It’s an unfortunate habit now, especially as I’m a sort of foodie-wannabe, but I’m not sure how to break it.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://boards.straightdope.com/t/how-fast-do-you-eat/518271",
+          "who": "TreacherousCretin (Straight Dope)",
+          "date": "2009-11-21",
+          "quote": "It’s possible for me to eat like “normal people”, but only with tremendous effort, awkwardness, and self-consciousness.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://singletrackworld.com/forum/off-topic/how-fast-do-you-eat/",
+          "who": "xherbivorex (Singletrack World)",
+          "date": "2017-09-25",
+          "quote": "despite knowing this, i find it almost impossible to change.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://singletrackworld.com/forum/off-topic/how-fast-do-you-eat/",
+          "who": "doris5000 (Singletrack World)",
+          "date": "2017-09-25",
+          "quote": "I try to eat more slowly - I know it's better for you, and it seems silly to go to all the trouble of cooking a nice meal, pouring a glass of wine to enjoy with it - and then hoovering the lot up in about 3 minutes with 98% of the wine still in the glass...",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/slow-eats/id1645476380",
+          "who": "Tgifisher (App Store review of Slow Eats)",
+          "date": "2022-12-17",
+          "quote": "Still use this app almost everyday.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/slow-eats/id1645476380",
+          "who": "Slow Eats App Store listing",
+          "date": "2026-10-20",
+          "quote": "126 Ratings ... Unlock All Timers - Monthly $1.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Slow Eats for Weight Loss (Shannon Bolick): bite, meal and seconds timers for iPhone and Apple Watch, Free with In-App Purchases ($1.99/month or $14.99/year), 126 ratings, 5.0. Chew Coach (MRB Consulting): $1.99 meal timer, 3 ratings. SlowEat-Mindful Eating Tracker: free, with a $4.99 lifetime in-app purchase, 2 ratings. Free alternatives are a kitchen timer and the usual advice to put your fork down between bites. The main competitor positions itself on weight loss; Table Pace would position on enjoying meals and keeping pace with the table, with no weight or health claims.",
+      "risks": "The forum evidence is old (Straight Dope 2009, Singletrack 2017), and the main paid competitor has only 126 ratings, so the market may be small. A free phone timer is a close substitute. The topic sits next to health and weight, so copy must avoid claims about digestion, fullness or weight loss, even though competitors make them. The existing live offer 'eating-habits-undermining-health' is broad; this offer is specifically about eating speed, so marketing should keep that distinction. Several posters were joking or proud of eating fast, so not everyone who eats fast wants to change."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

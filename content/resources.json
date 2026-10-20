@@ -6632,5 +6632,44 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "how-to-stop-eating-so-fast",
+  "offer": "table-pace",
+  "title": "Always the first one finished? How to stop eating so fast",
+  "description": "Clearing your plate in minutes? Put your fork down between bites, time your meals, and stretch them a minute or two at a time.",
+  "intro": "Eating fast is often a habit from rushed school or work lunches. Small, gradual changes are easier to keep than trying to slow right down at once.",
+  "sections": [
+   {
+    "h": "Time one meal",
+    "list": [
+     "Note how long a normal meal takes you. That's your starting point."
+    ]
+   },
+   {
+    "h": "Fork down between bites",
+    "list": [
+     "Put your fork or spoon down after each bite and pick it up only when your mouth is empty."
+    ]
+   },
+   {
+    "h": "Stretch it slowly",
+    "list": [
+     "Aim for one or two extra minutes per meal each week, not double straight away."
+    ]
+   },
+   {
+    "h": "Match the slowest eater",
+    "list": [
+     "At the table, watch someone who eats slowly and try to keep pace with them."
+    ]
+   },
+   {
+    "h": "Sit down to eat",
+    "p": [
+     "Eating standing up or at your desk tends to be faster. Sit at a table when you can."
+    ]
+   }
+  ]
  }
 ]
