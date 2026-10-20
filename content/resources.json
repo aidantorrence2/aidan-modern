@@ -6281,5 +6281,122 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "baby-wont-take-a-bottle",
+  "offer": "bottle-yes",
+  "title": "Baby won't take a bottle and you're back at work soon? A day-by-day plan",
+  "description": "Breastfed baby refusing every bottle? Start early, let someone else offer it, try when baby is calm, change one thing at a time, and consider a cup.",
+  "intro": "Many breastfed babies refuse a bottle at first. Starting a few weeks before you go back, and changing one thing at a time, gives you the best chance.",
+  "sections": [
+   {
+    "h": "Start a few weeks early",
+    "list": [
+     "Offer a bottle once a day, so it isn't a rush in the last week."
+    ]
+   },
+   {
+    "h": "Let someone else offer it",
+    "list": [
+     "Babies often refuse a bottle from the person who breastfeeds them. Try leaving the room."
+    ]
+   },
+   {
+    "h": "Pick a calm moment",
+    "list": [
+     "Try when your baby is a little hungry but not upset."
+    ]
+   },
+   {
+    "h": "Change one thing at a time",
+    "list": [
+     "Try a different teat, temperature, position or time of day, and note what happens."
+    ]
+   },
+   {
+    "h": "Consider a cup",
+    "p": [
+     "Older babies may take milk from an open or straw cup instead. Ask your health visitor for advice."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "stuck-at-pickleball-level",
+  "offer": "third-drop",
+  "title": "Stuck at 3.0 or 3.5 in pickleball? Log your lost points before you drill",
+  "description": "Not improving despite lessons and open play? Track how you lose points for a few sessions, then drill the shots that cost you most.",
+  "intro": "Playing more open play often doesn't break a plateau. Knowing which shots lose you points shows you what to practise.",
+  "sections": [
+   {
+    "h": "Log your lost points",
+    "list": [
+     "For a few sessions, note how each point was lost: a missed dink, a third shot into the net, a return out."
+    ]
+   },
+   {
+    "h": "Find your top two",
+    "list": [
+     "The two shots that cost you most are your practice plan."
+    ]
+   },
+   {
+    "h": "Drill with fewer players",
+    "list": [
+     "Drills and games with three or four players give you far more reps than open play."
+    ]
+   },
+   {
+    "h": "Watch for fatigue",
+    "list": [
+     "If errors pile up late in a session, take more breaks between games."
+    ]
+   },
+   {
+    "h": "Recheck in a month",
+    "p": [
+     "Log your lost points again after a month to see what's changed."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "why-is-my-sourdough-flat-or-gummy",
+  "offer": "rise-check",
+  "title": "Why is my sourdough flat or gummy? A one-change-at-a-time bake log",
+  "description": "Sourdough dense, flat or gummy? Keep a simple bake log, check your starter and dough temperature, and change only one thing per bake.",
+  "intro": "Sourdough problems are hard to fix when everything changes at once. A simple log and one change per bake show you the cause.",
+  "sections": [
+   {
+    "h": "Log every bake",
+    "list": [
+     "Write down flour, hydration, starter timing, dough temperature, proof times and a photo of the crumb."
+    ]
+   },
+   {
+    "h": "Check your starter",
+    "list": [
+     "Make sure it rises reliably and predictably before you bake with it."
+    ]
+   },
+   {
+    "h": "Watch dough temperature",
+    "list": [
+     "Fermentation speeds up and slows down a lot with temperature. Note the room and dough temperature."
+    ]
+   },
+   {
+    "h": "Change one thing per bake",
+    "list": [
+     "Change proof time, hydration or flour, but only one per bake."
+    ]
+   },
+   {
+    "h": "Let it cool",
+    "p": [
+     "Cutting too soon can make the crumb seem gummy. Let the loaf cool fully first."
+    ]
+   }
+  ]
  }
 ]

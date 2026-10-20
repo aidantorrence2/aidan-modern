@@ -17988,6 +17988,250 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-20",
+    "slug": "bottle-yes",
+    "name": "Bottle Yes",
+    "need": "My baby is exclusively breastfed and won't take a bottle, and I'm going back to work soon.",
+    "headline": "Breastfed baby won't take a bottle, and you're back at work soon? A day-by-day plan, one change at a time, with a log of every try so you can see what helps.",
+    "buyer": "Parents (18+) of breastfed babies who refuse a bottle, usually weeks before a return to work or nursery.",
+    "bullets": [
+      "A day-by-day plan counting down to your return date.",
+      "One change at a time (who offers it, when, which bottle or cup), with a two-tap log of each try.",
+      "A note of what worked, to share with your partner, nursery or childminder."
+    ],
+    "price": "$4.99/month",
+    "priceUsd": 5,
+    "priceNote": "Or $19 one-time.",
+    "reasonPrompt": "How old is your baby, when do you go back to work, and what have you tried?",
+    "faq": [
+      {
+        "q": "Is this medical or feeding advice?",
+        "a": "No. Talk to your health visitor, midwife or a lactation consultant about feeding, especially if you're worried about weight or health."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Adults 18+. It is an independent app, not linked to any hospital, health service, feeding consultant or bottle brand."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-20",
+      "summary": "Parents on Mumsnet describe breastfed babies who refuse every bottle in the weeks before going back to work, after trying 15 bottles and several cups.",
+      "wtp": "A paid bottle-refusal video course by a midwife sells for £47. One parent tried about 15 different bottles.",
+      "signals": [
+        {
+          "url": "https://www.mumsnet.com/talk/breast_and_bottle_feeding/5536995-returning-to-work-with-a-10-month-old-who-will-not-take-a-bottle",
+          "who": "jmrpinkie (Mumsnet)",
+          "date": "2026-06-01",
+          "quote": "She is currently exclusively breast fed and won’t take a bottle.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/breast_and_bottle_feeding/5536995-returning-to-work-with-a-10-month-old-who-will-not-take-a-bottle",
+          "who": "jmrpinkie (Mumsnet)",
+          "date": "2026-06-01",
+          "quote": "I am going to be returning to work at the end of October.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/breast_and_bottle_feeding/5536995-returning-to-work-with-a-10-month-old-who-will-not-take-a-bottle",
+          "who": "StinkerTroll (Mumsnet)",
+          "date": "2026-06-01",
+          "quote": "My stubborn wee beast point blank refused a bottle",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/breast_and_bottle_feeding/5536995-returning-to-work-with-a-10-month-old-who-will-not-take-a-bottle",
+          "who": "mrsbowes (Mumsnet)",
+          "date": "2026-06-01",
+          "quote": "I'm a childminder and have had loads of babies who wouldn't take a bottle",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/work/4648565-bottle-refusal",
+          "who": "jey91 (Mumsnet)",
+          "date": "2022-10-05",
+          "quote": "my dd has a severe case of bottle refusal",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/work/4648565-bottle-refusal",
+          "who": "jey91 (Mumsnet)",
+          "date": "2022-10-05",
+          "quote": "about 15 different bottles, sippy cup, open cup, straw cup",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/work/4648565-bottle-refusal",
+          "who": "Eastmeetswest1 (Mumsnet)",
+          "date": "2022-10-05",
+          "quote": "2 of ours flat refused the bottle",
+          "seen": "opened"
+        },
+        {
+          "url": "https://stan.store/midwifemeghan/p/overcome-bottle-refusal",
+          "who": "Overcome Bottle Refusal course page",
+          "date": "2026-10-20",
+          "quote": "£47",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Bottle-refusal courses, lactation consultants, different bottles and cups.",
+      "risks": "Short window of need; many babies move to cups at 10 to 12 months."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-20",
+    "slug": "third-drop",
+    "name": "Third Drop",
+    "need": "I've had lessons, but I haven't been able to improve at pickleball.",
+    "headline": "Stuck at 3.0 or 3.5 in pickleball? Log the points you lose, see which shots cost you, and drill those, instead of just playing more open play.",
+    "buyer": "Recreational pickleball players (18+) stuck at the same level or rating.",
+    "bullets": [
+      "A quick log of how you lost each point: unforced errors, dinks, third shots, returns.",
+      "See which shots cost you most.",
+      "A short drill plan for those shots, and a weekly chart."
+    ],
+    "price": "$3.99/month",
+    "priceUsd": 4,
+    "priceNote": "Or $24 a year.",
+    "reasonPrompt": "What level do you play at, and what usually loses you points?",
+    "faq": [
+      {
+        "q": "Who is it for?",
+        "a": "Adults 18+. It is an independent app, not linked to any pickleball association, rating system, club or coach."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-20",
+      "summary": "Players on Pickleball Kitchen and Better Pickleball say they've had lessons but haven't improved, are stuck at 3.0, and start making unforced errors.",
+      "wtp": "One player had paid for lessons. DUPR (App Store): 3.9K ratings, with DUPR+ purchases up to $29.99.",
+      "signals": [
+        {
+          "url": "https://pickleballkitchen.com/tired-of-being-a-beginner-already-these-5-tips-will-help/",
+          "who": "Claude (Pickleball Kitchen)",
+          "date": "2022-08-30",
+          "quote": "although I have had lessons, I haven’t been to improve. I still make many mistakes and rarely win a game.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://betterpickleball.com/the-pickleball-plateau-moving-beyond/",
+          "who": "Larry (Better Pickleball)",
+          "date": "2026-02-14",
+          "quote": "I’m a 3.0 on a good day",
+          "seen": "opened"
+        },
+        {
+          "url": "https://betterpickleball.com/the-pickleball-plateau-moving-beyond/",
+          "who": "Dave Edwards (Better Pickleball)",
+          "date": "2026-02-14",
+          "quote": "Just start making unforced errors. Is this a plateau?",
+          "seen": "opened"
+        },
+        {
+          "url": "https://betterpickleball.com/the-pickleball-plateau-moving-beyond/",
+          "who": "Esther Ganz (Better Pickleball)",
+          "date": "2026-02-14",
+          "quote": "I recently came out of a plateau and am so relieved.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/-/id1567932355",
+          "who": "DUPR App Store listing",
+          "date": "2026-10-20",
+          "quote": "3.9K Ratings ... $29.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Coaches, clinics, video courses, rating apps.",
+      "risks": "DUPR ratings show interest in ratings, not paying to fix a plateau."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-20",
+    "slug": "rise-check",
+    "name": "Rise Check",
+    "need": "My sourdough keeps coming out flat, dense or gummy.",
+    "headline": "Sourdough keeps coming out flat, dense or gummy? Log each bake, change one thing at a time, and see which change made the difference.",
+    "buyer": "Home bakers (18+) whose sourdough keeps failing.",
+    "bullets": [
+      "A bake log: starter, flour, hydration, temperatures, proof times and a photo of the crumb.",
+      "Change one thing at a time, with a suggestion for what to try next.",
+      "A side-by-side view of your bakes, so you can see what changed."
+    ],
+    "price": "$3.99/month",
+    "priceUsd": 4,
+    "priceNote": "Or $19 one-time.",
+    "reasonPrompt": "What goes wrong with your sourdough: flat, dense, gummy or something else?",
+    "faq": [
+      {
+        "q": "Who is it for?",
+        "a": "Adults 18+. It is an independent app, not linked to any flour brand, bakery, school or baking site."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-20",
+      "summary": "Bakers on The Fresh Loaf describe sourdough that stays gummy, dense or flat, and aren't sure whether fermentation is the cause.",
+      "wtp": "Thin: an in-person sourdough class sells for $125 (CourseHorse); a small sourdough app sells subscriptions.",
+      "signals": [
+        {
+          "url": "https://www.thefreshloaf.com/comment/467843",
+          "who": "lucas_t (The Fresh Loaf)",
+          "date": "2020-09-01",
+          "quote": "ALL my breads stays with a gummy crumb, even the ones that I underproofed",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.thefreshloaf.com/node/75084/flat-dense-sourdough",
+          "who": "Shana (The Fresh Loaf)",
+          "date": "2025-01-19",
+          "quote": "I'm still unsure if it was the fermentation process",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.thefreshloaf.com/node/75084/flat-dense-sourdough",
+          "who": "Richard Lemieux (The Fresh Loaf)",
+          "date": "2025-01-20",
+          "quote": "I got a similar result this Saturday: a flat loaf",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.thefreshloaf.com/node/69674/sourdough-still-too-dense-crumb-too-crumbly",
+          "who": "samthesourdough (The Fresh Loaf)",
+          "date": "2022-01-11",
+          "quote": "They have mostly been too dense :(",
+          "seen": "opened"
+        },
+        {
+          "url": "https://coursehorse.com/nyc/classes/cooking/baking/bread/sourdough-bread1",
+          "who": "NY Cake Academy sourdough class (CourseHorse)",
+          "date": "2026-10-20",
+          "quote": "$125",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Classes, books, free forum help.",
+      "risks": "All people from one forum; experts help for free; money signal thin."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
