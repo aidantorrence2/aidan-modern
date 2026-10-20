@@ -17272,6 +17272,115 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-20",
+    "slug": "quarter-past",
+    "name": "Quarter Past",
+    "need": "My child still can't tell the time on a clock with hands, and worksheets and explaining it again haven't worked.",
+    "headline": "Your child still can't read a clock with hands? Short daily games that start with o'clock and build up to the exact minute, at your child's own pace.",
+    "buyer": "Parents of children aged roughly 7 to 14 who still can't read an analogue clock, and adults who never learned it at school and quietly rely on digital clocks.",
+    "bullets": [
+      "Starts with o'clock and half past, and only moves on to quarters, five minutes and single minutes once the earlier step is solid",
+      "Drag the hands yourself, then read the time aloud, so a clock face becomes something you work out rather than a pattern you memorise",
+      "Practise turning 2:45 into 'quarter to three', and switching between analogue, digital and 24-hour time, in five-minute daily sessions"
+    ],
+    "price": "$4.99/month",
+    "priceUsd": 5,
+    "priceNote": "",
+    "reasonPrompt": "Who is this for, and where do they get stuck right now: the hours, quarter past and quarter to, the minutes, or switching between analogue and digital?",
+    "faq": [
+      {
+        "q": "Who runs this app?",
+        "a": "Quarter Past is an independent app. It is not connected to any school, exam board, clock or watch maker, or other learning app. Accounts are for adults 18 and over. A parent sets it up and uses it with their child, or an adult uses it to learn for themselves."
+      },
+      {
+        "q": "My child is 14. Is it too late?",
+        "a": "No. Parents on Mumsnet describe teenagers and adults who never picked it up at school. The app starts from the very first step, whatever the learner's age, and doesn't assume anything from earlier school years."
+      },
+      {
+        "q": "Is this a diagnosis or a therapy?",
+        "a": "No. It is a practice tool for one everyday skill. If you are worried about your child's learning more broadly, speak to their school or a qualified professional."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-20",
+      "summary": "Parents on Mumsnet describe children aged 9 and 14 who still can't read a clock with hands, despite worksheets, diagrams, teaching clocks and videos. Other parents and adults reply that it is common, especially with analogue clocks, and some say they never learned it themselves. This is a recurring thread topic from 2011 to 2026. The most recent thread is from September 2026 and got 12 replies in about 23 minutes.",
+      "wtp": "Parents bought talking and time-teacher watches (about £10). Telling Time For Kids - Clock (App Store): 88 ratings, Pro $7.99 or $39.99 a year. Thin signal.",
+      "signals": [
+        {
+          "url": "https://www.mumsnet.com/talk/parenting/5580749-teenager-cant-tell-the-time",
+          "who": "KindBeaker (Mumsnet)",
+          "date": "2026-09-21",
+          "quote": "My 14 year old son still can’t tell the time properly.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/parenting/5580749-teenager-cant-tell-the-time",
+          "who": "Octavia64 (Mumsnet)",
+          "date": "2026-09-21",
+          "quote": "Lots of teens are like this, loads particularly with analogue clocks.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/parenting/5580749-teenager-cant-tell-the-time",
+          "who": "TheeNotoriousPIG (Mumsnet)",
+          "date": "2026-09-21",
+          "quote": "I never got the grasp of analogue time at school.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/special_needs/1970573-How-to-teach-telling-the-time",
+          "who": "claw2 (Mumsnet)",
+          "date": "2014-01-18",
+          "quote": "Ds has no concept of telling the time.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/special_needs/1970573-How-to-teach-telling-the-time",
+          "who": "ISeeYouShiverWithAntici (Mumsnet)",
+          "date": "2014-01-18",
+          "quote": "I bought a watch that has both a digital and analogue display and a button on the side of it that speaks the time.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/special_needs/1970573-How-to-teach-telling-the-time",
+          "who": "claw2 (Mumsnet)",
+          "date": "2014-01-18",
+          "quote": "Its only a tenner isn't it Iseeyou, so worth a try, I will order one.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/primary/1242776-Telling-the-time",
+          "who": "mummytime (Mumsnet)",
+          "date": "2011-06-22",
+          "quote": "Some children have huge problems learning to tell the time.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/primary/1242776-Telling-the-time",
+          "who": "JustCallMeMummyPig (Mumsnet)",
+          "date": "2011-06-21",
+          "quote": "Looking at buying dd a time teacher watch.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1005958411",
+          "who": "Telling Time For Kids - Clock, Burleigh Creative (App Store listing)",
+          "date": "2026-10-20",
+          "quote": "88 Ratings ... Pro access $7.99 ... Annual Pro access $39.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Free YouTube tutorials. Teaching clocks with movable hands and talking or 'time teacher' watches (about £10). Nessy's Clock Island game. App Store apps: Telling Time For Kids - Clock (Burleigh Creative, 4.6 from 88 ratings, $7.99 or $39.99/yr Pro), Kids Tell Time! (ZurApps, $1.99), Kids Learn to Tell Time (Intellijoy, $1.99, 2 ratings), Telling Time For Kids + Clock (13 ratings, in-app purchases). Most are aimed at ages 5 to 8. Few target older children, teens or adults who are still stuck.",
+      "risks": "The market is crowded with cheap one-off-purchase apps, so a monthly subscription may meet resistance; a one-off or short-term price may convert better. The end users are children, while accounts must be held by adults 18+, which affects onboarding and the children's-privacy design. Several Mumsnet posters connect the struggle to dyslexia, dyscalculia or autism, so copy must avoid any diagnostic or therapeutic claims. Two of the three threads date from 2011 and 2014; the recent evidence comes from one September 2026 thread. Mumsnet quotes were read through WebFetch (the site blocks curl), and the short opening sentences shown here were confirmed exact in a second fetch."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

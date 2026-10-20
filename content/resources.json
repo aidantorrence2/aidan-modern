@@ -5969,5 +5969,44 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "child-cant-tell-the-time",
+  "offer": "quarter-past",
+  "title": "Child still can't tell the time on a clock? Teach it in small steps",
+  "description": "Can't read a clock with hands, even at 9 or 14? Start with o'clock and half past, add quarters, then fives, and practise a few minutes a day with a real clock.",
+  "intro": "Lots of children, and some adults, struggle with clocks that have hands. Taking it one step at a time usually works better than explaining the whole clock at once.",
+  "sections": [
+   {
+    "h": "Start with o'clock and half past",
+    "list": [
+     "Only move on once these are easy, even if it takes a while."
+    ]
+   },
+   {
+    "h": "Add quarter past and quarter to",
+    "list": [
+     "Show how the minute hand makes a quarter of the circle."
+    ]
+   },
+   {
+    "h": "Then count in fives",
+    "list": [
+     "Count round the numbers in fives: 5, 10, 15... so each number on the clock means five minutes."
+    ]
+   },
+   {
+    "h": "Use a real clock every day",
+    "list": [
+     "Ask \"what time is it?\" at a few set moments, like breakfast and bedtime."
+    ]
+   },
+   {
+    "h": "Link it to digital",
+    "p": [
+     "Once they can read the clock, show how 2:45 is the same as quarter to three. If you're worried about wider learning, talk to the school."
+    ]
+   }
+  ]
  }
 ]
