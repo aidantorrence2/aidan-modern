@@ -6437,5 +6437,44 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "stuck-at-same-5k-time",
+  "offer": "next-pb",
+  "title": "Stuck at the same 5K time? Why running the same 5K stops working",
+  "description": "5K time flat for months? Mix easy runs, one speed session and one longer run each week for six weeks, then time-trial.",
+  "intro": "Running the same 5K at the same effort every time usually stops making you faster. Varying your runs is what moves the time.",
+  "sections": [
+   {
+    "h": "Slow most runs down",
+    "list": [
+     "Most of your runs should feel easy enough to chat."
+    ]
+   },
+   {
+    "h": "Add one speed session",
+    "list": [
+     "For example, 6 x 400m a little faster than your 5K pace, with easy jogs between."
+    ]
+   },
+   {
+    "h": "Add one longer run",
+    "list": [
+     "One run a week a bit longer than you usually go, at an easy pace."
+    ]
+   },
+   {
+    "h": "Give it six weeks",
+    "list": [
+     "Stick with it for six weeks before judging."
+    ]
+   },
+   {
+    "h": "Time-trial, then adjust",
+    "p": [
+     "Run a 5K time trial at the end and set your new paces from it. If anything hurts, rest and get it checked."
+    ]
+   }
+  ]
  }
 ]

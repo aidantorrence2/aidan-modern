@@ -18324,6 +18324,97 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-20",
+    "slug": "next-pb",
+    "name": "Next PB",
+    "need": "I run 5km three or four times a week but can't seem to break my target time.",
+    "headline": "5K time stuck for months? Stop running the same 5K over and over: a six-week block mixing easy runs, one speed session and one longer run, with a weekly time check.",
+    "buyer": "Adult runners (18+) who run 5Ks regularly and whose time has been flat for months.",
+    "bullets": [
+      "A six-week block: easy runs, one speed session and one longer run each week.",
+      "Paces worked out from your current 5K time.",
+      "A short time trial every couple of weeks, with a chart of your progress."
+    ],
+    "price": "$3.99/month",
+    "priceUsd": 4,
+    "priceNote": "Or $24 a year.",
+    "reasonPrompt": "What's your 5K time now, what's your target, and how do you train at the moment?",
+    "faq": [
+      {
+        "q": "Will it get me a PB?",
+        "a": "It can't promise that. It gives you a structured plan instead of running the same 5K every time. If you have pain or a health condition, check with a doctor first."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Adults 18+. It is an independent app, not linked to any race series, running club or brand."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-20",
+      "summary": "Runners on Mumsnet and RunningAhead say their 5K time has been stuck for months or years, and some say they've just been running the same 5K over and over.",
+      "wtp": "Runna (App Store): 35K ratings, Premium $19.99 a month or $119.99 a year.",
+      "signals": [
+        {
+          "url": "https://www.mumsnet.com/talk/exercise/3164548-Sub-30-min-5km",
+          "who": "RunningOnMusic (Mumsnet)",
+          "date": "2018-02-10",
+          "quote": "I run 5km-10km 3-4x a week but can't seem to break the sub 30min 5km.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/exercise/3164548-Sub-30-min-5km",
+          "who": "RainbowCookie (Mumsnet)",
+          "date": "2018-02-10",
+          "quote": "My current training consists of just running 5km over and over again which is clearly not working!",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/exercise/3164548-Sub-30-min-5km",
+          "who": "ShowOfHands (Mumsnet)",
+          "date": "2018-02-10",
+          "quote": "I struggled to get sub 25 and quickly realised that you can't do it in isolation.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.runningahead.com/forums/post/f9821fc8e31d42b6b612695665f20a92",
+          "who": "MJ5 (RunningAhead)",
+          "date": "2013-05-27",
+          "quote": "I feel like I've plateaued (again, after some minor gains earlier this spring).",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.runningahead.com/forums/post/f9821fc8e31d42b6b612695665f20a92",
+          "who": "spaniel (RunningAhead)",
+          "date": "2013-05-27",
+          "quote": "I spend several years stuck with a 15:37 5K PR.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.runningahead.com/forums/post/f9821fc8e31d42b6b612695665f20a92",
+          "who": "eluker (RunningAhead)",
+          "date": "2013-05-28",
+          "quote": "running lots of 5ks in the 20:00-21:00 range with the goal of breaking 20.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/app/id1594204443",
+          "who": "Runna App Store listing",
+          "date": "2026-10-20",
+          "quote": "35K Ratings ... $19.99 ... $119.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Runna, free plans in Garmin and Strava, running clubs, coaches.",
+      "risks": "Crowded space with strong apps; forum posts date from 2013 and 2018."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
