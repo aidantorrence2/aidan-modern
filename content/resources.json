@@ -6398,5 +6398,44 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "new-telescope-cant-see-anything",
+  "offer": "first-light",
+  "title": "New telescope and you can't see anything? A first-night checklist",
+  "description": "Seeing only black or a blur through a new telescope? Take every cap off, start with the lowest-power eyepiece, focus on something far away in daylight, and line up the finder.",
+  "intro": "Most first-night telescope problems come down to a few setup steps. Do them once in daylight and the first clear night is much easier.",
+  "sections": [
+   {
+    "h": "Take every cap off",
+    "list": [
+     "Check the main tube, the finder and the eyepiece. Some scopes have a small cap inside a larger one."
+    ]
+   },
+   {
+    "h": "Start with the lowest power",
+    "list": [
+     "Use the eyepiece with the biggest number in mm. It shows the widest view and is easiest to aim."
+    ]
+   },
+   {
+    "h": "Focus in daylight",
+    "list": [
+     "Point at a distant tree or lamppost and turn the focuser slowly until it's sharp. Never point it at the Sun."
+    ]
+   },
+   {
+    "h": "Line up the finder",
+    "list": [
+     "With the tree centred in the main view, adjust the finder until it points at the same spot."
+    ]
+   },
+   {
+    "h": "Start with the Moon",
+    "p": [
+     "On your first night, try the Moon or a bright planet before fainter targets."
+    ]
+   }
+  ]
  }
 ]

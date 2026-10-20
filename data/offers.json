@@ -18232,6 +18232,98 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-20",
+    "slug": "first-light",
+    "name": "First Light",
+    "need": "I just bought my first telescope and I can't find or see anything through it.",
+    "headline": "Got a telescope and can't find anything through it? Get a step-by-step first-night plan and a short list of easy targets you can actually find tonight.",
+    "buyer": "Adults who recently bought, or were given, a beginner telescope (often a reflector or small refractor) and have looked through it and seen black, a blur, or a star they can't name, so it is starting to gather dust.",
+    "bullets": [
+      "A daylight setup checklist you work through once: caps off, lowest-power eyepiece first, focus on a distant tree or lamppost, then line the finder up with the main view.",
+      "Tonight's short list: a few bright, easy targets for your location, each with plain-language 'start at this bright star, then move here' directions.",
+      "A simple log of what you found, so every clear night builds on the last one and you can see yourself learning the sky."
+    ],
+    "price": "$4.99/month",
+    "priceUsd": 5,
+    "priceNote": "",
+    "reasonPrompt": "What telescope do you have, and what happened the last time you tried to use it?",
+    "faq": [
+      {
+        "q": "Who makes this app?",
+        "a": "First Light is an independent app for adults 18+. It is not affiliated with any telescope maker, retailer, or other astronomy app."
+      },
+      {
+        "q": "Will it work with my telescope?",
+        "a": "It is built for ordinary beginner telescopes that you point by hand. It does not control motorized or GoTo mounts."
+      },
+      {
+        "q": "Is it safe to point my telescope at the Sun to practise?",
+        "a": "No. Never point a telescope or its finder at the Sun. Daytime practice in First Light always uses a distant object on the ground, such as a tree or lamppost."
+      },
+      {
+        "q": "What if it's cloudy?",
+        "a": "You can do the daylight setup checklist on any day. The target list is for clear nights."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-20",
+      "summary": "New telescope owners keep saying the same thing in their own words: they set the scope up, point it at something, and see nothing, or they see something and can't tell what it is. The fixes forum veterans give are repetitive (take the caps off, use the low-power eyepiece, focus and align the finder in daylight, use a star chart to find bright targets), which suits a guided app. Evidence comes from 6 named people on 4 pages that were opened and read: IceInSpace, Physics Forums, and two Straight Dope threads, plus a third Straight Dope thread.",
+      "wtp": "Every poster had already bought a telescope (one set a $600 budget). Star Walk 2 Pro (App Store): $2.99, 67K ratings.",
+      "signals": [
+        {
+          "url": "https://www.iceinspace.com.au/forum/showthread.php?p=1198783",
+          "who": "emzeyy / Emma (IceInSpace)",
+          "date": "2015-08-26",
+          "quote": "I just brought my first telescope, a SkyWatcher 114/900 EQ Reflector Telescope, and after spending a bit of time setting it up, I was unable to view anything.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://boards.straightdope.com/t/telescope-question/195855",
+          "who": "zipper (Straight Dope)",
+          "date": "2003-08-18",
+          "quote": "I recently bought a 3-inch refractor telescope from a friend last week. When I look through the finder on the top of the scope. I can see the object of what I want to see (M6), but when I look through the telescope all I see is dark.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://boards.straightdope.com/t/first-telescope-advice-need-advice-fast/943770",
+          "who": "Tired_and_Cranky (Straight Dope)",
+          "date": "2021-06-08",
+          "quote": "Part of the issue with binoculars is seeing something but not knowing what it is.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://boards.straightdope.com/t/first-telescope-advice-need-advice-fast/943770",
+          "who": "gnarator (Straight Dope)",
+          "date": "2021-06-08",
+          "quote": "Plus searching for some objects can be difficult.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.physicsforums.com/threads/cant-see-anything-through-levenhuk-strike-120-reflector-telescope.806378/",
+          "who": "rodentraiser (Physics Forums)",
+          "date": "2015-06-03",
+          "quote": "We had a very hard time doing that and when I was finally able to examine the scope at home, I realized we had opened the stop down, but had not taken the lens cover off.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/star-walk-2-pro-sky-map-live/id892279069",
+          "who": "Star Walk 2 Pro App Store listing",
+          "date": "2026-10-20",
+          "quote": "67K Ratings ... $2.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Star Walk 2 Pro ($2.99 with in-app purchases, 67K ratings) and SkySafari 7 Pro ($17.99 with in-app purchases, 5.5K ratings; the page says SkySafari 8 Pro now replaces it) are sky-map and planetarium apps. Stellarium and Sky Guide have free versions. Local astronomy clubs and printed planispheres also help beginners. Most of these show you what is in the sky. Fewer walk a first-time owner through getting a hand-pointed scope to show anything at all, then give a short nightly list. That gap is the angle here.",
+      "risks": "Free tools (Stellarium, free sky maps, club advice) cover much of this, so a subscription may be hard to justify once the first-night problems are solved. Expect early churn. Demand is seasonal and driven by gifts, peaking after the holidays. Usage depends on clear skies and how bad local light pollution is. Some failures are hardware problems (a cheap scope or a bad mount) that an app can't fix. All copy must carry a never-point-at-the-Sun warning. Some forum posters are young people whose parents bought the scope, but the offer is limited to adults 18+. Two forum signals are older (2003, 2015), but the 2021 and 2025 posts show the same problem today."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
