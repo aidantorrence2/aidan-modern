@@ -1356,8 +1356,8 @@
         "data_scope": "Database row responses may contain private email addresses and city/participation/consent/attribution fields. Read only to count and deduplicate. Do not persist, export, email, share or put individual lead records in Library, prompts for other workers, Git repositories or public pages.",
         "limits": "Read-only ongoing measurement for this one project. No customer outreach, data deletion/migration, credential recovery, database changes, new endpoint, deployment, spending or broader access. Stop if access is denied; no alternative access path.",
         "why_needed": "The handoff's zero was historical and cloud private-export credentials were omitted. The hourly targets cannot be honestly measured until separately authorized secure access is approved.",
-        "result": "Ongoing approved read-only measurement, completed before 2026-10-20T04:02:03Z: exact project appgprj_6ad56c0398f4819187d2d7870ae70ac4; overview first DB/leads; one 25-row page, rows0, next_offset null, no truncation/omissions. New consenting leads0 of target5; current total0. Persisted aggregates only. Ongoing read-only scope unchanged; no customer messaging/data changes.",
-        "result_at": "2026-10-20T04:04:15Z"
+        "result": "Ongoing authorized read-only count at 2026-10-20T04:12:20Z: overview DB/events,leads first then only DB/leads25 offset0; empty complete, next_offset null, no truncation/omissions. New consenting leads0/5; current total0. Only aggregate counts retained; no private customer rows/export. Approved ongoing scope unchanged; not messaging/data-change permission.",
+        "result_at": "2026-10-20T04:12:20Z"
       },
       "created": "2026-10-19T05:23:23Z",
       "expires": "2026-10-22T05:23:23Z",
@@ -2156,7 +2156,9 @@
           "prior_receipts": "No collision with22completed or individually held/denied recipients.",
           "identity": "Nature Unplugged official employee-wellness page publishes exact inbox and adult workplace boundary content. Connection Collective official page names Maggie Hildebrand, explains 20s/30s recurring events and explicitly invites aligned brand/business collaboration at exact inbox.",
           "require_before_execution": "Current approval note/scope, per-recipient ledger, all Gmail history, suppression and exact tracked page HTTP200/consent checks. Durable execution claim in same ZIP. An owner email is not a consenting lead or proof of customer exposure."
-        }
+        },
+        "result": "Sent exactly two approved first-contact emails after fresh official/contact/tracked-page/Gmail preflight and durable claim. Nature Unplugged message/thread1a1578208f180ecd; Connection Collective message/thread1a1578232eea052c. Gmail readback verified exact recipient/subject/body and SENT. No followups, participants, posts, spend or deployment. Audience-owner sends only; no consenting leads implied.",
+        "result_at": "2026-10-20T04:12:18Z"
       },
       "created": "2026-10-20T04:09:34Z",
       "expires": "2026-10-23T04:09:34Z",
