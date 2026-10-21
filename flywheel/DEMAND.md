@@ -317,6 +317,7 @@ approval and never posted without it.
 
 | Candidate | Evidence found | What is missing |
 |---|---|---|
+| Leave Sure: did I lock the door or leave the hob on? (code side, 21 Oct) | Passes: 8 people on 3 opened pages (Singletrack 2023 x4, Mumsnet 2019 x4); money = timer plugs, a doorbell camera, LockCheck $1.99. Held for Aidan: many posters frame it as OCD, and a photo-proof checking tool could reinforce compulsive checking for some users. | Aidan's decision. |
 | Second Thought: relationship jealousy, checking a partner's phone (doc side, 21 Oct) | mc21 on Mindline (2024) confirmed, plus an anonymous advice letter. Both Beyond Blue threads return 403 to our fetch. Paid: a $397-497 course; the app has 2 ratings. | Two more named people on pages we can open. |
 | Dealer Ready: scared of being ripped off buying a car (doc side, 21 Oct) | CarEdge price page confirmed ($29-49/mo, $99+ per vehicle). Well-Trained Mind, StangNet, Fuelly and Trustpilot all return 403 to our fetch. | Two opened forum pages we can fetch, with named posters. |
 | Dry Hold: breath-hold training stalled (doc side, 21 Oct) | 6 people on 3 DeeperBlue threads; STAmina 5.4K ratings at $4.99/mo. Held for Aidan: breath-hold training carries a blackout risk, so launching it is his safety call. | Aidan's decision. |
