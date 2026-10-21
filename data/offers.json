@@ -23159,6 +23159,108 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-21",
+    "slug": "uk-test-recall",
+    "name": "Handbook Recall",
+    "need": "I'm studying for my Life in the UK test and I can't keep all the dates, names and obscure facts in my head.",
+    "headline": "Studying for the Life in the UK test? Short daily drills bring back the dates, names and devolution facts you keep forgetting, so you walk in knowing you're ready.",
+    "buyer": "Adults 18+ in the UK preparing for the Life in the UK test who find the handbook's dates, names and government details won't stick.",
+    "bullets": [
+      "10-minute daily sessions that repeat the facts you missed and space out the ones you know, so you remember dates and names on test day as well as on the night you read them",
+      "Weak-spot map by handbook chapter (history, government, devolved nations, sport and culture) so you stop rereading what you already know",
+      "Timed practice mocks in the same format as the real test, plus a readiness view of how you're scoring over time."
+    ],
+    "price": "$4.99/month",
+    "priceUsd": 5,
+    "priceNote": "Most people study for a few weeks. Questions are written independently from the public handbook topics.",
+    "reasonPrompt": "What's the hardest part of the Life in the UK handbook for you to remember: dates, people, government, or something else?",
+    "faq": [
+      {
+        "q": "Is this an official Home Office or GOV.UK app?",
+        "a": "No. It's an independent study app for adults 18+. It has no affiliation with, and no endorsement from, the Home Office, GOV.UK, TSO or any government body. Always check the current official handbook and test rules on GOV.UK."
+      },
+      {
+        "q": "Does it guarantee I'll pass?",
+        "a": "No. It helps you practise and remember the material, and it shows you which topics are still weak. How you do on the day depends on your own preparation."
+      },
+      {
+        "q": "Do I still need the official handbook?",
+        "a": "Yes. The test is based on the official handbook, and we recommend reading it. This app is for remembering what you read and testing yourself on it."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-21",
+      "summary": "Test takers keep describing the same problem: the official handbook mixes the obvious with minutiae (dates, sports winners, devolved-government details) that even born-and-raised Brits can't answer, and the facts don't stick. They say the only way to pass is memorising the whole book and doing lots of practice tests. Recent Goodreads reviews from 2025 and 2026 show people are studying for it right now.",
+      "wtp": "Life in the UK 2026 Test Prep (App Store UK): £4.99, 6.1K ratings. On MSE, keerasam's friends pay for practice-test websites.",
+      "signals": [
+        {
+          "url": "https://www.goodreads.com/book/show/23833514",
+          "who": "Beth Bonini (Goodreads)",
+          "date": "2017-06-15",
+          "quote": "It also feels like you have to commit lots of dates to memory; I did have a few on my test",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.goodreads.com/book/show/23833514",
+          "who": "Samuel Civilla (Goodreads)",
+          "date": "2026-04-27",
+          "quote": "I have read the 2026 edition for my citizenship test and I cannot wait to be done with the exam.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.goodreads.com/book/show/23833514",
+          "who": "Nadine Baier (Goodreads)",
+          "date": "2026-01-23",
+          "quote": "I have actually learnt loads of interesting facts about the history of the UK. now let's see if I can remember it",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.goodreads.com/book/show/23833514",
+          "who": "Shiny Ruins (Goodreads)",
+          "date": "2025-10-20",
+          "quote": "I got a question about Coronation Street wrong on one of the practice tests",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.goodreads.com/book/show/23833514",
+          "who": "Derek (Goodreads)",
+          "date": "2025-02-23",
+          "quote": "it was difficult to get through the government and lifestyle information",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/4781628/life-in-the-uk-test-how-to-pass-the-test-without-spending-amount",
+          "who": "keerasam (MoneySavingExpert Forum)",
+          "date": "2013-10-02",
+          "quote": "My friends who are also preparing for British citizenship taking practice tests from paid service offering websites.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/4781628/life-in-the-uk-test-how-to-pass-the-test-without-spending-amount",
+          "who": "Voyager2002 (MoneySavingExpert Forum)",
+          "date": "2013-10-02",
+          "quote": "what is crucial is that you memorise all the answers in the official book.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/gb/app/id1113930361",
+          "who": "Life in the UK 2026 Test Prep App Store listing",
+          "date": "2026-10-21",
+          "quote": "£4.99 ... 6.1K Ratings",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Spurry Inc. 'Life in the UK 2026 Test Prep' (£4.99, 6.1k ratings), TSO 'Official Life in the UK Test' (£5.99 + IAP, 1.5k ratings), Wei Zhang 'Life in the UK - 2026' (free + IAP, 20k ratings), Learnify 'Life in the UK Test: 2026' (free + IAP, 6.6k ratings), plus Henry Dillon study guides and free question websites. Most are question banks. Few are built around spaced recall of weak topics and a readiness score.",
+      "risks": "A crowded, cheap category where one-off £4.99 apps are the norm, so a monthly price may meet resistance and people churn once they pass. The handbook is Crown copyright, so questions must be written originally, not copied. Content must track handbook edition changes. Avoid any 'official' wording or GOV.UK look-alike branding. Make no pass guarantees."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
