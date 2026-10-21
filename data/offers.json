@@ -21134,6 +21134,188 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-21",
+    "slug": "night-hum",
+    "name": "Night Hum",
+    "need": "My tinnitus is worst at night when I go to bed. It's so annoying and intrusive, and I want quiet again.",
+    "headline": "Tinnitus loudest when you try to sleep? Tune a soft sound just under your own ringing, set a bedtime timer, and log your nights to see what makes them easier.",
+    "buyer": "Adults 18+ with ongoing tinnitus who notice it most at night.",
+    "bullets": [
+      "Tune a background sound to sit just under your own ringing.",
+      "Bedtime sound mixes on a timer.",
+      "A 30-second morning log (loudness, sleep, stress) so you can spot what makes nights better or worse."
+    ],
+    "price": "$3.99/month",
+    "priceUsd": 4,
+    "priceNote": "Or $24.99 a year.",
+    "reasonPrompt": "When is your tinnitus worst, and what do you use at night now?",
+    "faq": [
+      {
+        "q": "Is it a treatment or cure?",
+        "a": "No. It's a sound and logging tool to make quiet moments easier. It doesn't treat tinnitus. If your tinnitus is sudden, in one ear, or pulses with your heartbeat, see a GP or audiologist."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Adults 18+. It is an independent app, not linked to any hearing-aid maker, clinic or charity."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-21",
+      "summary": "People on two Mumsnet threads (2021) say their tinnitus is worst at night or in quiet rooms, and use podcasts or white-noise apps to get to sleep.",
+      "wtp": "ReSound Tinnitus Relief (App Store, Switzerland): 326 ratings, CHF 7.50 a month or CHF 75 a year. CortisolandCaffeine already uses a white-noise app.",
+      "signals": [
+        {
+          "url": "https://www.mumsnet.com/talk/_chat/4276570-Tinnitus-how-long-did-it-take-you-to-stop-being-annoyed-by-it",
+          "who": "Pinkpowderpuff (Mumsnet)",
+          "date": "2021-06-21",
+          "quote": "It's just so bloody annoying and intrusive. I want quiet again!",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/_chat/4276570-Tinnitus-how-long-did-it-take-you-to-stop-being-annoyed-by-it",
+          "who": "Gerwurtztraminer (Mumsnet)",
+          "date": "2021-06-21",
+          "quote": "Worst at nights when I go to bed",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/_chat/4276570-Tinnitus-how-long-did-it-take-you-to-stop-being-annoyed-by-it",
+          "who": "InDubiousBattle (Mumsnet)",
+          "date": "2021-06-21",
+          "quote": "I've had it for three and a half years now",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/_chat/4200509-Tinnitus-advice",
+          "who": "profilechange (Mumsnet)",
+          "date": "2021-03-23",
+          "quote": "It's louder at night so I just pop a podcast on to fall asleep to.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/_chat/4200509-Tinnitus-advice",
+          "who": "9ofpentangles (Mumsnet)",
+          "date": "2021-03-23",
+          "quote": "It's worse when I am tired or it's quiet.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/_chat/4200509-Tinnitus-advice",
+          "who": "CortisolandCaffeine (Mumsnet)",
+          "date": "2021-03-23",
+          "quote": "It lets you mix your own white noise.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/ch/app/resound-tinnitus-relief/id928432517",
+          "who": "ReSound Tinnitus Relief App Store listing",
+          "date": "2026-10-21",
+          "quote": "326 Bewertungen ... CHF 7.50 ... CHF 75.00",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "ReSound Tinnitus Relief, white-noise apps, fans, podcasts.",
+      "risks": "All posters on one site. Free maskers substitute. Health topic: no treatment claims."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-21",
+    "slug": "cool-cheeks",
+    "name": "Cool Cheeks",
+    "need": "I've been a blusher all my life. It's horrendous, and I dread going red when people look at me.",
+    "headline": "Dread going red when you're asked a question or praised? Practise the moments that set it off, use a 60-second routine when it starts, and watch the dread shrink.",
+    "buyer": "Adults 18+ who blush when spoken to, praised or put on the spot, and dread it.",
+    "bullets": [
+      "Small practice steps for the moments that set it off.",
+      "A 60-second routine for when you feel it starting.",
+      "A short log so you can see the dread getting smaller."
+    ],
+    "price": "$2.99/month",
+    "priceUsd": 3,
+    "priceNote": "Or $19.99 a year.",
+    "reasonPrompt": "When do you blush most, and what have you tried?",
+    "faq": [
+      {
+        "q": "Is it therapy?",
+        "a": "No. It's a self-help practice tool. If blushing or worry about it is affecting your daily life, talk to a GP or therapist."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Adults 18+. It is an independent app, not linked to any clinic, therapist or cosmetics brand."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-21",
+      "summary": "People on Mumsnet (2020) and the Straight Dope (2006) say they have blushed all their lives, hate it, and have tried hypnotherapy, CBT and cover creams.",
+      "wtp": "Hypnotic World sells a Stop Blushing download for $12.95. On Mumsnet, Sojo88 started using a cover cream and PerfectionistProcrastinator tried hypnotherapy.",
+      "signals": [
+        {
+          "url": "https://www.mumsnet.com/talk/_chat/4019753-Blushing",
+          "who": "kevinn (Mumsnet)",
+          "date": "2020-09-10",
+          "quote": "I've been a blusher all my life. It's horrendous.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/_chat/4019753-Blushing",
+          "who": "PerfectionistProcrastinator (Mumsnet)",
+          "date": "2020-09-10",
+          "quote": "I really REALLY struggled with it too.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/_chat/4019753-Blushing",
+          "who": "spiderlight (Mumsnet)",
+          "date": "2020-09-11",
+          "quote": "going bright scarlet at the drop of a hat",
+          "seen": "opened"
+        },
+        {
+          "url": "https://boards.straightdope.com/t/are-you-a-blusher/374315",
+          "who": "Lionne (Straight Dope)",
+          "date": "2006-09-27",
+          "quote": "It’s awful. Fix me, please!",
+          "seen": "opened"
+        },
+        {
+          "url": "https://boards.straightdope.com/t/are-you-a-blusher/374315",
+          "who": "Clockwork_And_Candy (Straight Dope)",
+          "date": "2006-09-27",
+          "quote": "Yes. I hate it. I blush at the drop of a hat",
+          "seen": "opened"
+        },
+        {
+          "url": "https://boards.straightdope.com/t/are-you-a-blusher/374315",
+          "who": "Mangetout (Straight Dope)",
+          "date": "2006-09-27",
+          "quote": "it is itself a cause of massive embarrasment and inconvenience",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.hypnoticworld.com/downloads/confidence/blushing",
+          "who": "Hypnotic World Stop Blushing download",
+          "date": "2026-10-21",
+          "quote": "$12.95",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Hypnosis downloads, hypnotherapy, CBT, cover creams.",
+      "risks": "No rated app for blushing; money signals are small. Some people grow out of it. Not therapy."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
