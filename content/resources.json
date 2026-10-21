@@ -7613,5 +7613,44 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "condensation-mould-keeps-coming-back",
+  "offer": "dry-sill",
+  "title": "Condensation and mould that keep coming back: a two-week log to find the cause",
+  "description": "Wiping windows every morning and the mould still returns? Note each room, each morning, against drying washing, ventilation, heating and showers for two weeks.",
+  "intro": "Cleaning mould treats the patch, not the moisture behind it. A short daily log helps you see what makes your mornings wetter. If patches keep growing whatever you change, get the building checked for a leak or damp.",
+  "sections": [
+   {
+    "h": "Rate each room every morning",
+    "list": [
+     "Dry, misted, wet or streaming. It takes seconds."
+    ]
+   },
+   {
+    "h": "Note what happened yesterday",
+    "list": [
+     "Washing dried indoors, showers, cooking, windows on vent, heating times, dehumidifier on."
+    ]
+   },
+   {
+    "h": "Photograph the patches",
+    "list": [
+     "Same spot, same angle, once a week, so you can see if it's spreading."
+    ]
+   },
+   {
+    "h": "Change one thing at a time",
+    "list": [
+     "For example, dry washing elsewhere for a week, then compare your mornings."
+    ]
+   },
+   {
+    "h": "Know when to get help",
+    "p": [
+     "If it gets worse whatever you change, or you rent, keep your dated notes and photos and contact your landlord or a surveyor."
+    ]
+   }
+  ]
  }
 ]

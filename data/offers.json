@@ -20838,6 +20838,105 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-21",
+    "slug": "dry-sill",
+    "name": "Dry Sill",
+    "need": "I keep wiping the condensation and mould off my bedroom windows and walls, and it keeps coming back.",
+    "headline": "Wiping the windows every morning and the black mould still comes back? Log each room in 30 seconds a day and see which habits make your mornings wetter or drier.",
+    "buyer": "Adults in damp-prone homes, often UK renters or owners of older double-glazed houses, who wipe condensation every morning, have already tried bleach, mould spray or a dehumidifier, and still find the black patches returning.",
+    "bullets": [
+      "A 30-second morning check-in for each room: rate the windows from dry to streaming and tick what happened yesterday (washing dried indoors, window on vent, dehumidifier on, heating times, showers).",
+      "After a couple of weeks it shows which of your own habits line up with your worst mornings, so you stop guessing between ventilation, heating and drying clothes.",
+      "A dated photo timeline of each patch, plus any hygrometer readings you type in, so you can see whether it is really improving and have a clear record to show a landlord or a builder."
+    ],
+    "price": "$4.99/month",
+    "priceUsd": 5,
+    "priceNote": "One monthly subscription covering every room you add. It works with nothing but your phone, and any hygrometer or dehumidifier you already own is optional.",
+    "reasonPrompt": "Which room gets the worst condensation or mould, and what have you already tried to stop it coming back?",
+    "faq": [
+      {
+        "q": "Who makes Dry Sill?",
+        "a": "Dry Sill is an independent app for adults 18+. It is not affiliated with any dehumidifier, paint or cleaning-product brand, or with any landlord, council or housing association."
+      },
+      {
+        "q": "Will it get rid of my mould?",
+        "a": "No app can remove mould. Dry Sill helps you keep a simple daily record, so you can see which everyday habits make condensation better or worse in your home. It is not a damp survey and gives no health or medical advice."
+      },
+      {
+        "q": "Do I need a hygrometer or a dehumidifier?",
+        "a": "No. You can rate each morning by eye. If you own a hygrometer you can type its readings in, and if you run a dehumidifier you can log when it was on."
+      },
+      {
+        "q": "What if the problem is a leak or rising damp?",
+        "a": "If your log shows patches getting worse whatever you change, that is a sign to get the building looked at. Your dated photos and notes give whoever inspects it a clear history."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-21",
+      "summary": "On MoneySavingExpert, people say they wipe condensation and clean black mould with bleach or mould spray, and it keeps coming back. They also disagree about the cause.",
+      "wtp": "On the same MSE pages, newnhak bought a dehumidifier and MR_G was quoted £400 for air bricks. Hygrometer - Humidity Check (App Store): 6.1K ratings, Pro $1.99.",
+      "signals": [
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/763095/condensation-mould-or-damp",
+          "who": "KTJ_2 (MoneySavingExpert Forum)",
+          "date": "2008-02-25",
+          "quote": "We have black mould patches appearing in the top and bottom corner of our bedroom",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/6236857/solved-what-039-s-the-likely-cause-and-fix-for-this-window-mould-please",
+          "who": "ninjaef (MoneySavingExpert Forum)",
+          "date": "2021-01-30",
+          "quote": "Cleaned it many many times with bleach, mould spray, tea tree oil. keeps coming back",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/1209125/black-mould-in-bedroom",
+          "who": "mintymoneysaver (MoneySavingExpert Forum)",
+          "date": "2008-10-09",
+          "quote": "I keep washing them down and it does fade slightly, but comes back",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/1209125/black-mould-in-bedroom",
+          "who": "DisneyPrincess_2 (MoneySavingExpert Forum)",
+          "date": "2008-10-09",
+          "quote": "Every day we had the black stuff even in summer months and it really gets you down",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/1209125/black-mould-in-bedroom",
+          "who": "newnhak (MoneySavingExpert Forum)",
+          "date": "2008-10-09",
+          "quote": "I also bought a dehumidifier that seems to make a difference",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/1209125/black-mould-in-bedroom",
+          "who": "MR_G (MoneySavingExpert Forum)",
+          "date": "2008-11-22",
+          "quote": "they want to charge me £400 to put in a few air bricks",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/hygrometer-check-the-humidity/id515673004",
+          "who": "Hygrometer - Humidity Check by MORETHAN APPS (App Store)",
+          "date": "2026-10-21",
+          "quote": "6.1K Ratings ... Pro $1.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Hygrometer - Humidity Check (MORETHAN APPS): free with in-app purchases (Pro $1.99), 6.1K ratings at 4.7. It shows outdoor humidity only. Humidity Window - Stoßlüften (Tiago Mendes): free with tip in-app purchases, 17 ratings. It gives ventilation timing from outdoor humidity. Smart-hygrometer apps that come with hardware also compete, and so does doing nothing: dehumidifiers, window vacuums, mould sprays, damp-proof paint, and free council leaflets advising people to wipe and ventilate every morning. None of these offers a per-room habit log with a photo timeline.",
+      "risks": "The demand is seasonal (winter) and mostly UK and northern Europe. Many people treat it as a hardware or building problem and will buy a dehumidifier rather than an app. If the real cause is a leak or rising damp, a log alone will not fix it. Health worries about mould must not lead to medical claims. The app's value depends on users logging daily, and several MSE threads are old (2008), though the 2021 threads show the problem persists."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
