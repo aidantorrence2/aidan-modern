@@ -21415,6 +21415,97 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-21",
+    "slug": "steady-play",
+    "name": "Steady Play",
+    "need": "When I play for anyone, my hands start to tremble and my mind goes blank, even though I'm fine practising alone.",
+    "headline": "Hands shake or mind goes blank when someone's listening? Climb a ladder of small 'being heard' steps, practise one-take runs at home, and log each performance.",
+    "buyer": "Adult amateur musicians 18+ who shake or go blank when playing for a teacher, a recital, a jam or friends.",
+    "bullets": [
+      "A ladder of 'being heard' steps you set, from recording yourself to playing for a friend.",
+      "One-take pressure runs at home, plus a two-minute routine before you play.",
+      "A one-minute log after each performance, with a trend over time."
+    ],
+    "price": "$3.99/month",
+    "priceUsd": 4,
+    "priceNote": "Or $24.99 a year.",
+    "reasonPrompt": "What do you play, and when do your nerves take over?",
+    "faq": [
+      {
+        "q": "Is it therapy or music lessons?",
+        "a": "No. It's a practice and logging tool. If nerves are affecting your daily life, talk to a GP or therapist, and keep working with your teacher."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Adults 18+. It is an independent app, not linked to any teacher, course or forum."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-21",
+      "summary": "Amateur harpists and fiddlers on Harp Column (2013) and the Fiddlerman forum say their hands shake or their mind goes blank when they play for others, and one avoided playing with friends for years.",
+      "wtp": "The Bulletproof Musician 'Beyond Practicing' course, with a 'Beating Anxiety' part, is sold as 12 monthly payments of $29 or $39. Sid Humphreys on Harp Column is working through a book on it.",
+      "signals": [
+        {
+          "url": "https://harpcolumn.com/forums/topic/trembling-hands",
+          "who": "susan-ash (Harp Column)",
+          "date": "2013-06-14",
+          "quote": "my hands started to tremble uncontrollably and made it very, very difficult to play",
+          "seen": "opened"
+        },
+        {
+          "url": "https://harpcolumn.com/forums/topic/trembling-hands",
+          "who": "Sid Humphreys (Harp Column)",
+          "date": "2013-06-15",
+          "quote": "put me on the harp and nerves will kick",
+          "seen": "opened"
+        },
+        {
+          "url": "https://harpcolumn.com/forums/topic/trembling-hands",
+          "who": "katie-buckley (Harp Column)",
+          "date": "2013-06-16",
+          "quote": "For me, I had the shaking, and sometimes I still do.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://fiddlerman.com/forum/playing-the-violin/performance-anxiety/",
+          "who": "Tucson1 (Fiddlerman forum)",
+          "date": "2012-2014 thread",
+          "quote": "brain going blank unable to remember the tune",
+          "seen": "opened"
+        },
+        {
+          "url": "https://fiddlerman.com/forum/playing-the-violin/performance-anxiety/",
+          "who": "Schaick (Fiddlerman forum)",
+          "date": "2012-2014 thread",
+          "quote": "My mind is going completely blank at times during jamming",
+          "seen": "opened"
+        },
+        {
+          "url": "https://fiddlerman.com/forum/playing-the-violin/performance-anxiety/",
+          "who": "DanielB (Fiddlerman forum)",
+          "date": "2012-2014 thread",
+          "quote": "I realized I was avoiding getting together with folks",
+          "seen": "opened"
+        },
+        {
+          "url": "https://members.bulletproofmusician.com/bp3",
+          "who": "Bulletproof Musician course page",
+          "date": "2026-10-21",
+          "quote": "$29 ... $39 ... Beating Anxiety",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Bulletproof Musician course, performance books, teachers.",
+      "risks": "No rated app found; posts are 2012 to 2014. Not therapy."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
