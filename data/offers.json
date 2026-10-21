@@ -22645,6 +22645,133 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-21",
+    "slug": "pile-sorted",
+    "name": "Pile Sorted",
+    "need": "My paperwork piles up all over the house, and every time I sort it, the piles grow back.",
+    "headline": "Letters, bills and statements stacked on every surface? Deal with each one in seconds as it arrives, and know where it is when you need it.",
+    "buyer": "Adults 18+ who run their own household paperwork and keep ending up with piles that grow back.",
+    "bullets": [
+      "Snap a letter when it arrives and put it in one of three plain choices: keep, act on, or shred, so it never joins the pile",
+      "Kept papers go into a few simple folders like Home, Money, Car and Insurance, with the date in the name so you can find them later",
+      "A short weekly sort session works through whatever came in that week, so you never face a once-a-year mountain again"
+    ],
+    "price": "$4.99/month",
+    "priceUsd": 5,
+    "priceNote": "One plan, every feature.",
+    "reasonPrompt": "Where does your paperwork pile up right now, and what was the last document you couldn't find when you needed it?",
+    "faq": [
+      {
+        "q": "Who makes this?",
+        "a": "Pile Sorted is an independent app for adults 18+. It is not affiliated with any bank, scanner maker, or document-scanning app."
+      },
+      {
+        "q": "Will it tell me exactly how long I have to keep each document?",
+        "a": "No. It can show common rules of thumb people use, but it is not legal, tax, or financial advice. Check with the organisation that sent the document, or with a professional, for anything important."
+      },
+      {
+        "q": "Do I need a scanner?",
+        "a": "No. The idea is to use your phone's camera as each letter arrives, so you don't need extra hardware."
+      },
+      {
+        "q": "I already have a scanner app. What's different?",
+        "a": "Scanner apps capture pages. This app is built around the habit: deciding what each piece of paper is for as it comes in, and a short regular sort, so the piles don't build up again."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-21",
+      "summary": "People across UK and US personal-finance and general forums describe the same cycle in their own words: paper piles up on desks, kitchens and 'any flat surface', they do a big sort or scanning session once in a while, and then the piles creep back. This isn't the same as general home clutter, email overload, or a death or emergency file. It is about the steady flow of household letters and statements and the habit of dealing with them.",
+      "wtp": "Scanner Pro (App Store): 337K ratings, Scanner Pro Plus in-app purchases up to $59.99. Genius Scan (App Store): 1.4M ratings, paid tiers up to $49.99. On MSE, noalibi recommends buying a decent scanner to get on top of paper.",
+      "signals": [
+        {
+          "url": "https://www.savingadvice.com/forums/forum/financial-chit-chat/general-discussion/68377-how-do-other-people-deal-with-all-the-paperwork-clutter-in-our-lives",
+          "who": "HappySaver (SavingAdvice)",
+          "date": "2014-10-04",
+          "quote": "my office has piles of paper everywhere! Every so often I go through and shred a ton of stuff, but I never quite finish, and then the piles keep growing until next time.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.savingadvice.com/forums/forum/financial-chit-chat/general-discussion/68377-how-do-other-people-deal-with-all-the-paperwork-clutter-in-our-lives",
+          "who": "QuarterMillionMan (SavingAdvice)",
+          "date": "2014-10-04",
+          "quote": "I'm starting to get overridden with paperwork myself.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://singletrackworld.com/forum/off-topic/how-do-you-organisemanage-your-paperwork/",
+          "who": "stavaigan (Singletrack)",
+          "date": "2011-12-05",
+          "quote": "I currently store mine on any flat surface throughout the house.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://singletrackworld.com/forum/off-topic/how-do-you-organisemanage-your-paperwork/",
+          "who": "Duggan (Singletrack)",
+          "date": "2011-12-05",
+          "quote": "I'm terrible when it comes to organising my own life. I don't really manage my paperwork in any way, shape or form.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://singletrackworld.com/forum/off-topic/how-do-you-organisemanage-your-paperwork/",
+          "who": "Cougar (Singletrack)",
+          "date": "2011-12-05",
+          "quote": "pile up paperwork in a large stack on top of a cupboard until it risks collapsing in on itself under its own gravitational mass.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/6677851/life-admin-going-paper-free-ish",
+          "who": "Sea_Shell (MoneySavingExpert)",
+          "date": "2026-07-28",
+          "quote": "We had a good clear out a few years ago, scanning what might be useful...but it's gradually creeping back.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/6677851/life-admin-going-paper-free-ish",
+          "who": "Brie (MoneySavingExpert)",
+          "date": "2026-07-28",
+          "quote": "Every few months I go through the paperwork and file new stuff and chuck/shred old. It's tedious.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/6677851/life-admin-going-paper-free-ish/p2",
+          "who": "Exodi (MoneySavingExpert)",
+          "date": "2026-07-30",
+          "quote": "I generally build a pile of paperwork then do a mass scanning session once or twice a year then shred the original.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/6677851/life-admin-going-paper-free-ish/p2",
+          "who": "noalibi (MoneySavingExpert)",
+          "date": "2026-08-03",
+          "quote": "The first thing I’d recommend is investing in a decent scanner or MFP.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/scanner-pro-pdf-scanner-app/id333710667",
+          "who": "Scanner Pro listing (App Store)",
+          "date": "2026-10-21",
+          "quote": "Free · In‑App Purchases Share 337K Ratings 4.9",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/genius-scan-pdf-scanner/id377672876",
+          "who": "Genius Scan listing (App Store)",
+          "date": "2026-10-21",
+          "quote": "Free · In‑App Purchases Share 1.4M Ratings 4.9",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "General scanner apps (Scanner Pro, Genius Scan, Adobe Scan), desktop document scanners, filing cabinets and box files, and going paperless with each provider. Scanners capture pages but don't build the keep, act or shred decision or the regular sort. Existing live offers cover general home clutter (home-become-cluttered-avoid), email overload (inbox-digout), and an emergency or death file (if-something-happened-family), but none covers the ongoing flow of household paper.",
+      "risks": "Strong free competition from scanner apps and from just going paperless. Many posters are relaxed or joking about their piles (the Singletrack thread is light-hearted), so the urgency may be low. Two of the three forum pages are old (2011, 2014), and only the MoneySavingExpert thread is recent (July to August 2026). People may not trust an app with photos of sensitive financial documents. Retention guidance must stay general, never legal or tax advice. The App Store pages are in the Business category, so the willingness-to-pay evidence is indirect for a consumer habit app."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

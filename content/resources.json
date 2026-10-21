@@ -8354,5 +8354,44 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "stop-paperwork-piling-up",
+  "offer": "pile-sorted",
+  "title": "Paperwork piling up again? A keep, act or shred habit that stops the piles growing back",
+  "description": "Decide what each letter is for the day it arrives (keep, act on, or shred), file kept papers in a few plain folders, and do a ten-minute sort once a week.",
+  "intro": "Big once-a-year sorts don't stop piles coming back. A tiny decision as each letter arrives, plus a short weekly sort, does. This isn't legal or tax advice.",
+  "sections": [
+   {
+    "h": "Open post at one spot",
+    "list": [
+     "Same place every day, with a bin and a shredder or shred bag nearby."
+    ]
+   },
+   {
+    "h": "Keep, act or shred",
+    "list": [
+     "Decide straight away. Junk and envelopes go immediately."
+    ]
+   },
+   {
+    "h": "An 'act on' tray",
+    "list": [
+     "Bills to pay, forms to send. Check it at your weekly sort."
+    ]
+   },
+   {
+    "h": "A few plain folders",
+    "list": [
+     "Home, Money, Car, Insurance, Health. Put the date on anything you scan."
+    ]
+   },
+   {
+    "h": "Ten minutes a week",
+    "p": [
+     "Clear the 'act on' tray and file what's left. Check with the sender or a professional for how long to keep important documents."
+    ]
+   }
+  ]
  }
 ]
