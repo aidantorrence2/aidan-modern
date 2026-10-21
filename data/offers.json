@@ -22543,6 +22543,108 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-21",
+    "slug": "spend-before",
+    "name": "Spend Before",
+    "need": "I keep forgetting about gift cards and vouchers until they've expired and the money is gone.",
+    "headline": "Stop finding gift cards in your wallet after they've expired. Log each card's balance and expiry date once, and get a reminder while there's still time to spend it.",
+    "buyer": "Adults 18+ who get gift cards and vouchers, put them away, forget them, and find they've expired.",
+    "bullets": [
+      "Add a gift card or voucher in under a minute: the shop, the balance left and the expiry date",
+      "Get reminders before a card expires, while you still have time to use it",
+      "One list of what you still have to spend, sorted by which card runs out first"
+    ],
+    "price": "$2.99/month",
+    "priceUsd": 3,
+    "priceNote": "One plan, every feature.",
+    "reasonPrompt": "Have you ever lost money on a gift card or voucher that expired before you used it? Roughly how much?",
+    "faq": [
+      {
+        "q": "Who is this for?",
+        "a": "Spend Before is an independent app for adults 18+ who want to keep track of their own gift cards and vouchers. It is not affiliated with any retailer or gift card issuer."
+      },
+      {
+        "q": "Does it check my card balances automatically?",
+        "a": "No. You enter the balance and expiry date yourself, and you update the balance after you spend some. That way it works with any shop's card or voucher."
+      },
+      {
+        "q": "Can it get an expired card reinstated?",
+        "a": "No. It is a reminder tool so you can spend cards before they expire. Whether an expired card can be extended is up to the shop or issuer that sold it."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-21",
+      "summary": "People on consumer and shopping forums describe the same thing: a gift card or voucher sits forgotten in a wallet or drawer, and by the time they remember it, it has expired and the shop won't honour it. The amounts range from £6 to £100. Several people say it has happened to friends too, or that shops rely on people forgetting.",
+      "wtp": "Posters lost real money to expired cards: mr.nobby £100 of Ticketmaster cards, securespark £60 of WHSmith cards. Card Manager: Digital Wallet (App Store): 2K ratings, Pro Annual $19.99.",
+      "signals": [
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/3876963/lost-money-on-expired-gift-card",
+          "who": "ardeche8 (MoneySavingExpert Forum)",
+          "date": "2012-03-29",
+          "quote": "I urge you to check your cards, many of my friends have just found themselves in the position.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/3876963/lost-money-on-expired-gift-card",
+          "who": "mr.nobby (MoneySavingExpert Forum)",
+          "date": "2012-04-03",
+          "quote": "I have jsut been told that my £100 of ticketmaster gift cards have expired!",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/3876963/lost-money-on-expired-gift-card",
+          "who": "Deru (MoneySavingExpert Forum)",
+          "date": "2012-04-03",
+          "quote": "voucher in my wallet for a year and by the time I wanted to use it, noticed it had expired",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/3876963/lost-money-on-expired-gift-card/p2",
+          "who": "securespark (MoneySavingExpert Forum)",
+          "date": "2016-06-02",
+          "quote": "I recently tried to redeem some WHS gift cards to the value of £60.00 and they had expired.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.australianfrequentflyer.com.au/community/threads/expired-woolworths-gift-card.76805/",
+          "who": "ellen10 (Australian Frequent Flyer)",
+          "date": "2016-06-28",
+          "quote": "I don't usually have gift cards so forgot all about it, dam!",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.australianfrequentflyer.com.au/community/threads/expired-woolworths-gift-card.76805/",
+          "who": "Dr Ralph (Australian Frequent Flyer)",
+          "date": "2016-06-28",
+          "quote": "they know a significant percentage forget to use them",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.australianfrequentflyer.com.au/community/threads/expired-woolworths-gift-card.76805/",
+          "who": "serfty (Australian Frequent Flyer)",
+          "date": "2017-04-09",
+          "quote": "the recipient suddenly remembered it's existence",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/card-manager-digital-wallet/id1210150248",
+          "who": "Card Manager: Digital Wallet App Store listing",
+          "date": "2026-10-21",
+          "quote": "2K Ratings ... Pro - Annual $19.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Card Manager: Digital Wallet (2K ratings, paid Pro tiers), MyCardWallet by Blackhawk Network (96K ratings, free, checks balances for its own network's cards), Pass2U Wallet, Apple Wallet, and many small new gift-card wallet apps with almost no ratings. Most of them focus on storing barcodes and loyalty cards rather than reminding you before a card expires.",
+      "risks": "Free wallet apps and Apple Wallet may seem good enough to many people, so a subscription is a hard sell when the amounts lost are often small (£6 to £60). The forum threads are from 2012 to 2017, and in the US some state laws limit gift card expiry, which may weaken the pain there. Without automatic balance checks, people have to enter cards and update balances by hand."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

@@ -8315,5 +8315,44 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "stop-gift-cards-expiring",
+  "offer": "spend-before",
+  "title": "Stop gift cards and vouchers expiring before you use them",
+  "description": "Keep every gift card and voucher in one place, note its balance and expiry date, set a reminder a month before, and spend the soonest-to-expire first.",
+  "intro": "Gift cards often expire quietly in a drawer. A two-minute habit when you receive one saves the money.",
+  "sections": [
+   {
+    "h": "Note it the day you get it",
+    "list": [
+     "Shop, balance and expiry date. Photograph the card and any PIN."
+    ]
+   },
+   {
+    "h": "Keep them together",
+    "list": [
+     "One wallet slot or envelope, not scattered across bags and drawers."
+    ]
+   },
+   {
+    "h": "Set a reminder",
+    "list": [
+     "A month before expiry, with the balance in the reminder."
+    ]
+   },
+   {
+    "h": "Spend the soonest first",
+    "list": [
+     "When you shop, check the list for the card that runs out next."
+    ]
+   },
+   {
+    "h": "Check the terms",
+    "p": [
+     "Expiry rules differ by shop and country. If one has just expired, ask the shop politely; some will extend it."
+    ]
+   }
+  ]
  }
 ]
