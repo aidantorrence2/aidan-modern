@@ -307,6 +307,7 @@ approval and never posted without it.
 
 | Candidate | Evidence found | What is missing |
 |---|---|---|
+| Land Awake: jet lag ruins the first days of a trip (doc side, 21 Oct) | Rick Steves forum opened (3 travellers, 2016); Timeshifter 2.7K ratings, $9.99 and $24.99 plans. Fodor's returns 403 to our fetch. | A second opened page with named posters. |
 | Teen learner-driver hours log (doc side, 21 Oct) | Only App Store bug complaints; paid log apps have 160 and 6 ratings. | Forum pages with named parents describing the need. |
 | Dummy weaning (doc side, 21 Oct) | 3 Mumsnet threads; money only $9.99-$15 books. | A paid app or a clear purchase. |
 | Even House: housemates don't pay their share (doc side, 21 Oct) | MoneySavingExpert thread opened; Splitwise 29K ratings with Pro. The Hexus thread returns 404. | A second opened page with named posters. |
