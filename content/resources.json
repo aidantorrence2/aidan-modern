@@ -7178,5 +7178,44 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "christmas-budget-one-number",
+  "offer": "gift-ceiling",
+  "title": "Go over budget every Christmas? Set one number and split it before you shop",
+  "description": "Overspending on gifts, food and travel every year? Set one total for the season, split it by person and category, and log each purchase as you go.",
+  "intro": "Christmas overspending usually comes from lots of small decisions with no overall limit. One number, split up in advance, keeps it in view.",
+  "sections": [
+   {
+    "h": "Set one total",
+    "list": [
+     "Decide what you can afford for the whole season, including food, travel, wrapping and cards, not just gifts."
+    ]
+   },
+   {
+    "h": "Split it up",
+    "list": [
+     "Give each person and each category its own amount before you buy anything."
+    ]
+   },
+   {
+    "h": "Log as you go",
+    "list": [
+     "Note each purchase straight away so you always know what's left."
+    ]
+   },
+   {
+    "h": "Watch the food shop",
+    "list": [
+     "Food and drink often cost more than planned. Plan the main meals and shop with a list."
+    ]
+   },
+   {
+    "h": "Keep this year's list",
+    "p": [
+     "Next year, look back at where the money actually went and set a better number."
+    ]
+   }
+  ]
  }
 ]

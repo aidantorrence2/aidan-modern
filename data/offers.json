@@ -19890,6 +19890,98 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-21",
+    "slug": "gift-ceiling",
+    "name": "Gift Ceiling",
+    "need": "I go way over budget at Christmas again every year: gifts, food, travel. I end up dipping into savings or putting it on the card.",
+    "headline": "Set one Christmas number and split it across gifts, food and travel. Before you buy anything, see what's left for each person and each category, so January doesn't bring a bill shock.",
+    "buyer": "Adults who pay for most of the household's Christmas (gifts for family and friends, the food shop, travel to see relatives) and who keep ending the season over budget, in their overdraft, or with their savings run down.",
+    "bullets": [
+      "Pick one total for the whole season, then split it across people, the food shop, travel and extras like wrapping and cards",
+      "Log each purchase as you make it and see straight away how much is left for that person and for the season overall",
+      "Keep this year's list to look back on next year, so you can see where the money actually went and plan a better number"
+    ],
+    "price": "$3.99/month",
+    "priceUsd": 4,
+    "priceNote": "Or $12 for the season.",
+    "reasonPrompt": "Last Christmas, where did your spending get away from you: gifts, food, travel, or something else?",
+    "faq": [
+      {
+        "q": "Who makes Gift Ceiling?",
+        "a": "Gift Ceiling is an independent app for adults 18+. It isn't affiliated with any retailer, bank, or other gift-list app."
+      },
+      {
+        "q": "Is this just another gift list?",
+        "a": "No. A gift list tracks presents. Gift Ceiling starts from one total for the whole season and counts the food shop, travel and extras against it too, because that's often where the overspending happens."
+      },
+      {
+        "q": "Does it connect to my bank?",
+        "a": "No. You type in what you spend. Nothing is pulled from your bank accounts."
+      },
+      {
+        "q": "Is this financial advice?",
+        "a": "No. It's a budgeting and tracking tool. It doesn't give financial or debt advice."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-21",
+      "summary": "People on SavingAdvice and MoneySavingExpert say they go way over budget at Christmas year after year, even after saving, often on food as well as gifts.",
+      "wtp": "The Christmas List (App Store): $2.99, 5.1K ratings; a reviewer says it forces them to look at the budget in advance.",
+      "signals": [
+        {
+          "url": "https://www.savingadvice.com/forums/forum/financial-chit-chat/debt/40998-?p=409308",
+          "who": "wincrasher (SavingAdvice)",
+          "date": "2010-01-04",
+          "quote": "Another great Christmas season without accumulating debt. I did go WAY over budget again.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.savingadvice.com/forums/forum/financial-chit-chat/debt/40998-?p=409308",
+          "who": "EconoMutt (SavingAdvice)",
+          "date": "2010-01-09",
+          "quote": "Definitely went over budget, but was able to get some good deals.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/6570346/saving-for-christmas-2025-1-a-day/p3",
+          "who": "kdalwayskint (MoneySavingExpert Forum)",
+          "date": "2025-01-03",
+          "quote": "Although I did my savings, I still overspent, but I think it was more on food as prices were much higher this year.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/1981821/christmas-crisis",
+          "who": "YORKSHIRELASS (MoneySavingExpert Forum)",
+          "date": "2009-10-01",
+          "quote": "I know Christmas should be about a lot more than presents but there is just so much pressure to spend.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/the-christmas-list/id340779800",
+          "who": "QueenBee273848696 (App Store review, The Christmas List)",
+          "date": "2018-12-10",
+          "quote": "So useful to force me to look at budget in advance, and then track progress as we go.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/the-christmas-list/id340779800",
+          "who": "The Christmas List App Store listing",
+          "date": "2026-10-21",
+          "quote": "$2.99 ... 5.1K Ratings",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "The Christmas List ($2.99, 4.8 stars, 5.1K ratings, per-person budgets and gift status). Christmas Gift List Tracker (free with in-app purchases, Pro at $2.99/year, 4.9 stars, 27K ratings, per-recipient budgets and spending graphs). Christmas Organizer ($1.99; its App Store page didn't load, so not verified). Also general budgeting apps and spreadsheets. The established apps are built around a gift list. Gift Ceiling's angle is one cap for the whole season that also covers food, travel and extras.",
+      "risks": "Demand is seasonal: about October to January, with heavy churn after Christmas. A monthly price looks steep next to established apps that cost $2.99 once or $2.99 a year. Several signals are old (2009–2010) or from UK forums. Manual entry means people may stop logging partway through the season. Avoid any debt-advice or savings-outcome claims."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
