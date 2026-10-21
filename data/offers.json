@@ -23619,6 +23619,119 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-21",
+    "slug": "lyric-spark",
+    "name": "Lyric Spark",
+    "need": "I can write the music, the chords and even the melody, but I can't come up with lyrics, so my songs never get finished.",
+    "headline": "Got the chords and the tune but no words? Lyric Spark walks you line by line from a blank page to lyrics that fit your melody, written by you.",
+    "buyer": "Adult hobby songwriters 18+ who find the music easy but stall on the words.",
+    "bullets": [
+      "Tap out or count the syllables of your melody line, and get prompts and rhymes that fit that exact rhythm",
+      "A short daily lyric exercise built from your own song's mood and subject, so you collect usable lines instead of staring at a blank page",
+      "Keep every scrap line and phrase in one place, tagged by song, so you can come back to them when you're stuck"
+    ],
+    "price": "$4.99/month",
+    "priceUsd": 5,
+    "priceNote": "One plan, every feature.",
+    "reasonPrompt": "What's the song you've got music for but no words yet, and where do you get stuck: the first line, the rhymes, or making the words fit the tune?",
+    "faq": [
+      {
+        "q": "Who makes Lyric Spark?",
+        "a": "Lyric Spark is an independent app for adults 18+. It is not affiliated with any songwriting app, rhyme dictionary, publisher or record label."
+      },
+      {
+        "q": "Does it write the song for me?",
+        "a": "No. It gives you prompts, rhymes and structure that fit your melody, and you write the lines yourself. The idea is to get the words out of you, not to generate a song for you."
+      },
+      {
+        "q": "Do I need to read music or know theory?",
+        "a": "No. If you can hum or play the line and count its syllables, you can use it."
+      },
+      {
+        "q": "Is it only for one genre?",
+        "a": "No. The exercises are built from the mood and subject you give it, so they work for rock, folk, pop, rap or anything else with words."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-21",
+      "summary": "Across 4 pages on 2 forums (HomeRecording.com and the Meta Community Forums musician thread), at least 8 named posters say the same thing: the music comes easily but the lyrics don't, and their songs stall because of it. Several have tried free-writing and similar workarounds, and some ended up looking for a co-writer just to get words. Grepping the live/killed list for lyric, song, rhyme and songwrit found only loop-to-song (unfinished beats/tracks) and songpatch (bird calls). No live or killed entry covers writing lyrics.",
+      "wtp": "Rhymer's Block (App Store): 35K ratings, Pro Yearly up to $39.99. RhymeZone by Merriam-Webster: $2.99. BerndPodhradsky went looking for a lyric writer to finish his songs.",
+      "signals": [
+        {
+          "url": "https://homerecording.com/bbs/threads/songwriting-creativity-and-lyrics.165698/",
+          "who": "hoursonend (HomeRecording.com forum)",
+          "date": "2005-08-07",
+          "quote": "I find it very easy to come up with an interesting chords progression, but then the hard thing steps in: lyrics and melody.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://homerecording.com/bbs/threads/songwriting-creativity-and-lyrics.165698/",
+          "who": "cliff richard (HomeRecording.com forum)",
+          "date": "2005-08-07",
+          "quote": "as for lyrics, i struggle with them too.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://homerecording.com/bbs/threads/i-cannot-write-song-lyrics.184083/",
+          "who": "Zaphod B (HomeRecording.com forum)",
+          "date": "2006-01-10",
+          "quote": "I can compose music in my head, but there are never any words there. It's like I have a big hole in my brain where the \"lyricist\" function belongs.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://homerecording.com/bbs/threads/i-cannot-write-song-lyrics.184083/",
+          "who": "HomeMadeHitShow (HomeRecording.com forum)",
+          "date": "2006-01-10",
+          "quote": "I have the same problem. I mentally force all my lyrics to make sense as sentences and to flow from one line to the next.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://homerecording.com/bbs/threads/i-hate-lyrics.251239/",
+          "who": "Greg_L (HomeRecording.com forum)",
+          "date": "2007-10-09",
+          "quote": "I think my riffs and arrangements are okay, but my lyrics suck. I have nothing to say and don't feel anything. Everything I come up with is dumb.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://homerecording.com/bbs/threads/looking-for-lyrics-writer.263802/",
+          "who": "BerndPodhradsky (HomeRecording.com forum)",
+          "date": "2008-05-13",
+          "quote": "I am composing Pop / Rock songs (melody is the most important part for me) but what I'm not got at is writing lyrics.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://communityforums.atmeta.com/off-topic-15/musician-s-thread-56868/index14.html",
+          "who": "lordofshred (Meta Community Forums)",
+          "date": "2018-04-12",
+          "quote": "I envy you guys. I can write music all the time...but lyrics. I suck that much at creating good lyrics...I'm always too much in my head what I want to say or what concept I want to follow.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://communityforums.atmeta.com/off-topic-15/musician-s-thread-56868/index14.html",
+          "who": "JohnnyDioxin (Meta Community Forums)",
+          "date": "2018-04-12",
+          "quote": "I must admit, these days I often really struggle with lyrics. If I sit and try and think of lyrics, I often do really badly.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id796584182",
+          "who": "Rhymer's Block App Store listing",
+          "date": "2026-10-21",
+          "quote": "35K Ratings ... Pro Yearly $39.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Rhymer's Block (rhyme/flow writing pad, 35K ratings, Pro yearly IAP), RhymeZone ($2.99 rhyme dictionary), Demo: Songwriting Studio (about 6K ratings), Lyric Notepad and The Lyrics App (notepads). There are also AI song generators such as Suno that write lyrics for you. Most of these are a rhyme lookup or a blank notepad. None found coaches the user to write their own words to fit an existing melody's syllable rhythm.",
+      "risks": "The forum evidence is real but old (2005-2018), and most of it comes from one forum (HomeRecording.com), with only the Meta thread from another site. Hobbyist songwriters may stick with free rhyme sites or AI lyric generators. Some will never pay a monthly fee for a hobby, which argues for a lower price or a one-off purchase. The 'you write it yourself' angle has to stay clearly different from AI generators to justify itself."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

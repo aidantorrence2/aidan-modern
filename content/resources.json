@@ -8744,5 +8744,44 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "write-lyrics-when-the-music-comes-easy",
+  "offer": "lyric-spark",
+  "title": "Got the music but no words? A step-by-step way to write lyrics that fit your melody",
+  "description": "Count the syllables in your melody line, pick one specific image or moment, and write rough lines that fit the rhythm before worrying about rhymes.",
+  "intro": "Many songwriters find the music easy and the words hard. Starting from the melody's rhythm and one concrete idea makes the blank page smaller.",
+  "sections": [
+   {
+    "h": "Count the melody",
+    "list": [
+     "Hum each line and count the syllables. That's the shape your words need to fill."
+    ]
+   },
+   {
+    "h": "Pick one moment",
+    "list": [
+     "A place, an object or a conversation, not a big theme like 'love'."
+    ]
+   },
+   {
+    "h": "Write rough lines first",
+    "list": [
+     "Fill the syllables with anything true about that moment. Rhymes can come later."
+    ]
+   },
+   {
+    "h": "Keep every scrap",
+    "list": [
+     "Save lines you like in one place, even if they don't fit this song."
+    ]
+   },
+   {
+    "h": "Rhyme last",
+    "p": [
+     "Swap words at the end of lines for near-rhymes once the meaning works."
+    ]
+   }
+  ]
  }
 ]
