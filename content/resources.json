@@ -7295,5 +7295,44 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "rental-move-in-photo-walkthrough",
+  "offer": "move-in-proof",
+  "title": "Moving into a rental? The 20-minute photo walk-through that protects your deposit",
+  "description": "Worried about losing your deposit? On move-in day, photograph every room, note existing damage in writing, send it to your landlord, and repeat at move-out.",
+  "intro": "Deposit disputes often come down to what condition the place was in on day one. A dated record made at move-in is your best evidence.",
+  "sections": [
+   {
+    "h": "Photograph every room",
+    "list": [
+     "Walls, floors, windows, appliances, inside cupboards and the bathroom. Take close-ups of any marks or damage."
+    ]
+   },
+   {
+    "h": "Note it in writing",
+    "list": [
+     "List anything broken, stained or worn, room by room."
+    ]
+   },
+   {
+    "h": "Send it the same week",
+    "list": [
+     "Email your photos and notes to your landlord or agent, so there's a dated copy they've received."
+    ]
+   },
+   {
+    "h": "Repeat at move-out",
+    "list": [
+     "Take the same photos from the same spots when you leave."
+    ]
+   },
+   {
+    "h": "Check your deposit is protected",
+    "p": [
+     "In many places deposits must be held in a protection scheme. If there's a dispute, check the scheme's free resolution service."
+    ]
+   }
+  ]
  }
 ]

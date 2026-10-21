@@ -20172,6 +20172,76 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-21",
+    "slug": "move-in-proof",
+    "name": "Move-In Proof",
+    "need": "The landlord is refusing to return the deposit, and there was no written inventory when we moved in.",
+    "headline": "Renting and want your deposit back? Record the place room by room when you move in, with dated photos, then match them photo for photo when you move out.",
+    "buyer": "Adult renters (18+) moving in or out who want their deposit back.",
+    "bullets": [
+      "A room-by-room move-in checklist with dated photos and notes for each item.",
+      "A move-out walk-through that lines up each photo with the move-in one.",
+      "One shareable report to send your landlord or agent."
+    ],
+    "price": "$7 per move",
+    "priceUsd": 7,
+    "priceNote": "Or $19 one-time.",
+    "reasonPrompt": "Are you moving in or out soon, and what happened with your last deposit?",
+    "faq": [
+      {
+        "q": "Is this legal advice?",
+        "a": "No. It's a record of the property's condition. For deposit disputes, check your local deposit protection scheme or a free advice service."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Adults 18+. It is an independent app, not linked to any landlord, letting agent or deposit scheme."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-21",
+      "summary": "Renters on BiggerPockets and MoneySavingExpert describe landlords refusing to return deposits, with no written inventory at move-in or check-out.",
+      "wtp": "Thin: Tenant Inspect, a paid renter's inspection app, sells for $19.99 (11 ratings).",
+      "signals": [
+        {
+          "url": "https://www.biggerpockets.com/posts/61336",
+          "who": "gwillen (BiggerPockets)",
+          "date": "2007",
+          "quote": "The landlord is now refusing to return the deposit",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/1820055",
+          "who": "polkadot (MoneySavingExpert Forum)",
+          "date": "2009",
+          "quote": "He came by, did a walk through...no written inventory or signed contract.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/1503425",
+          "who": "blaise802001 (MoneySavingExpert Forum)",
+          "date": "2009-02-19",
+          "quote": "no there was no inventory either moving in or checkout inspection moving out",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/app/id6450515110",
+          "who": "Tenant Inspect App Store listing",
+          "date": "2026-10-21",
+          "quote": "$19.99 ... 11 Ratings",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Free inventory apps, landlord-provided inventories, phone photos.",
+      "risks": "Paid tenant-side apps have few ratings; posts date from 2007 to 2009."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
