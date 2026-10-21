@@ -8276,5 +8276,44 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "share-housework-fairly-without-nagging",
+  "offer": "chore-tally",
+  "title": "Doing most of the housework? How to agree a fairer split without nagging",
+  "description": "Write down every chore for a week, see the real split together, then give each job a clear owner so nobody has to keep asking.",
+  "intro": "Couples often remember the housework split very differently. Writing it down for a week gives you the same numbers to talk about.",
+  "sections": [
+   {
+    "h": "List every job",
+    "list": [
+     "Include the unseen ones: bins, bills, birthday cards, booking repairs, the food shop."
+    ]
+   },
+   {
+    "h": "Log a normal week",
+    "list": [
+     "Each of you notes what you did. No judging yet."
+    ]
+   },
+   {
+    "h": "Look at it together",
+    "list": [
+     "Pick a calm time. Talk about the list, not about each other."
+    ]
+   },
+   {
+    "h": "Give each job an owner",
+    "list": [
+     "Owning a job means noticing it needs doing, not waiting to be asked."
+    ]
+   },
+   {
+    "h": "Check in monthly",
+    "p": [
+     "Swap jobs that nobody likes, and adjust when work or life changes."
+    ]
+   }
+  ]
  }
 ]

@@ -22451,6 +22451,98 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-21",
+    "slug": "chore-tally",
+    "name": "Chore Tally",
+    "need": "I do most of the housework, and I don't know how to get my partner to share it without nagging.",
+    "headline": "Doing most of the housework and tired of asking? Log chores in one tap, see the real split, and agree a fairer one with your partner without the nagging.",
+    "buyer": "Adults 18+ living with a partner who carry most of the housework and want a fairer split without rows or nagging.",
+    "bullets": [
+      "One-tap log for each chore either of you does, so the split is written down, not guessed",
+      "A weekly view of who did what, so you talk about the same numbers instead of two different memories",
+      "A shared list of the chores nobody notices, so you can agree who owns each one and stop asking"
+    ],
+    "price": "$2.99/month",
+    "priceUsd": 3,
+    "priceNote": "One plan covers both partners in one household.",
+    "reasonPrompt": "What happens now when the housework isn't shared fairly in your home?",
+    "faq": [
+      {
+        "q": "Who is Chore Tally for?",
+        "a": "Adults 18+ who share a home with a partner and want to see and agree a fairer split of the housework."
+      },
+      {
+        "q": "Is this connected to any book, card game or other chore app?",
+        "a": "No. Chore Tally is an independent app and is not affiliated with any other brand, book or method."
+      },
+      {
+        "q": "Does my partner have to join?",
+        "a": "It works best when you both log chores, but you can start on your own to see your share written down before you talk."
+      },
+      {
+        "q": "Is this relationship counselling?",
+        "a": "No. It is a simple tool for tracking and dividing household chores. It does not give therapy or professional advice."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-21",
+      "summary": "Adults on Offbeat Home (2011) and MoneySavingExpert (2014) say they do most of the housework, their partner doesn't see the mess, and asking feels like nagging. One couple disagreed on whether the split was 90/10 or 75/25.",
+      "wtp": "Nipto: Split Chores (App Store): 897 ratings, Premium $1.99 a month or $12.99 a year; a reviewer says 'I probably will get the subscription at some point, it’s only 1.99 a month'.",
+      "signals": [
+        {
+          "url": "https://offbeathome.com/dividing-chores/comment-page-2/",
+          "who": "Annie (Offbeat Home)",
+          "date": "2011-04-16",
+          "quote": "I have no idea how to interest him in or get him to do any thing else around the house if I don’t nag. I do like cleaning, but I don’t want to be the only one doing it all of the time.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://offbeathome.com/dividing-chores/comment-page-2/",
+          "who": "Danielle (Offbeat Home)",
+          "date": "2011-04-28",
+          "quote": "Apparently he just didn’t *see* the mess.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://offbeathome.com/dividing-chores/",
+          "who": "Jessica_Iowa (Offbeat Home)",
+          "date": "2011-04-14",
+          "quote": "I’m looking forward to having that talk and getting away from the nagging.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/5036348/how-to-motivate-a-diy-housework-allergic-husband",
+          "who": "usignuolo (MoneySavingExpert forum)",
+          "date": "2014-08-11",
+          "quote": "My OH hates, and has always hated, DIY jobs and housework.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/5026390/household-chores-curious-about-opinions/p2",
+          "who": "Annisele (MoneySavingExpert forum)",
+          "date": "2014-07-28",
+          "quote": "When I told my partner that, he reckoned we had a 90%/10% split (with me doing most), and I thought it was more like 75%/25%.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1504877473",
+          "who": "Nipto: Split Chores App Store listing",
+          "date": "2026-10-21",
+          "quote": "897 Ratings ... Premium Monthly $1.99 ... only 1.99 a month",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Nipto: Split Chores (opened: 4.7 stars, 897 ratings, IAP from $1.99/month). Also several small chore-split apps that showed up in App Store search results but that I did not open (Equal Partners, Pairwork, Burrow, Chore Wars: For Couples). Then there are general chore planners, the chorewars.com game an Offbeat Home commenter mentioned, the Fair Play book and card deck (a brand we must not imitate), and home-made spreadsheets or sign-up chore lists.",
+      "risks": "Crowded category with cheap or free rivals, so the angle has to be making the split visible and agreeing it, not points or games. Usually only one partner wants it, so the other may not sign up or log chores. Tracking can feel like keeping score and cause more arguments. Mumsnet quotes came through WebFetch's summariser and cannot be re-checked with curl. The Offbeat Home and MSE posts date from 2011 and 2014. Some posters frame it as a gender or relationship problem an app can't fix. Must avoid any counselling claims."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
