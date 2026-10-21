@@ -7451,5 +7451,128 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "stop-paying-bills-late",
+  "offer": "bill-lookout",
+  "title": "Stop paying bills late when you can afford them: a due-date list against your payday",
+  "description": "Forgetting bills you could pay? List every due date against your paydays, set reminders that repeat, and use autopay or direct debit where it's safe to.",
+  "intro": "Late fees often come from forgetting, not from a lack of money. A simple list and repeating reminders catch most of them.",
+  "sections": [
+   {
+    "h": "List every bill once",
+    "list": [
+     "Name, amount, due date and how you pay it."
+    ]
+   },
+   {
+    "h": "Put your paydays next to them",
+    "list": [
+     "Mark any bill that's due before the money arrives, and plan for it."
+    ]
+   },
+   {
+    "h": "Use autopay where it's safe",
+    "list": [
+     "Set the minimum payment at least, so a card is never missed. Keep a buffer for days your balance is low."
+    ]
+   },
+   {
+    "h": "Reminders that repeat",
+    "list": [
+     "One alert is easy to swipe away. Set a reminder that comes back until you've paid."
+    ]
+   },
+   {
+    "h": "Check once a week",
+    "p": [
+     "Five minutes on the same day each week to tick off what's paid and see what's next."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "self-assessment-before-january",
+  "offer": "return-early",
+  "title": "Self assessment in October: the six things to gather before January",
+  "description": "Stop leaving your self assessment to late January. Gather your UTR, P60s, income, expenses and receipts a little at a time from October.",
+  "intro": "Most of the work in a self assessment return is gathering figures. Doing a little each week makes January much calmer. This is a checklist, not tax advice.",
+  "sections": [
+   {
+    "h": "Find your UTR and log-in",
+    "list": [
+     "Make sure you can sign in to your HMRC account well before the deadline."
+    ]
+   },
+   {
+    "h": "Gather employment figures",
+    "list": [
+     "P60s and P11Ds from any jobs."
+    ]
+   },
+   {
+    "h": "List other income",
+    "list": [
+     "Self-employment, rental, savings interest and dividends."
+    ]
+   },
+   {
+    "h": "Sort expenses and receipts",
+    "list": [
+     "Put them in one folder or spreadsheet as you go."
+    ]
+   },
+   {
+    "h": "Note payments already made",
+    "list": [
+     "Payments on account and anything else you've paid HMRC."
+    ]
+   },
+   {
+    "h": "Pick a date in December",
+    "p": [
+     "Book an evening to fill in the return. If anything is unclear, ask HMRC or an accountant."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "getting-off-auto-camera",
+  "offer": "off-auto",
+  "title": "Getting off Auto: aperture priority in one ten-minute walk",
+  "description": "Stuck on Auto with a good camera? Switch to aperture priority, try three apertures on one subject, and see what changes.",
+  "intro": "Aperture priority (A or Av) is the easiest step off Auto. You choose one setting and the camera handles the rest.",
+  "sections": [
+   {
+    "h": "Set the dial to A or Av",
+    "list": [
+     "You pick the aperture; the camera picks the shutter speed."
+    ]
+   },
+   {
+    "h": "Pick one subject",
+    "list": [
+     "A flower, a face or a bench, with some background behind it."
+    ]
+   },
+   {
+    "h": "Shoot it three ways",
+    "list": [
+     "Lowest f-number, around f/8, and the highest. Compare how blurred the background is."
+    ]
+   },
+   {
+    "h": "Watch the shutter speed",
+    "list": [
+     "If it drops very low indoors, raise the ISO a step to avoid blur."
+    ]
+   },
+   {
+    "h": "Next walk: shutter priority",
+    "p": [
+     "Once aperture feels natural, try S or Tv with something moving."
+    ]
+   }
+  ]
  }
 ]

@@ -20484,6 +20484,283 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-21",
+    "slug": "bill-lookout",
+    "name": "Bill Lookout",
+    "need": "I can afford my bills but I keep forgetting to pay them on time, and the late fees and credit marks pile up.",
+    "headline": "Stop paying late fees on bills you could afford. See every due date next to your payday, and get reminded again and again until you mark it paid.",
+    "buyer": "Adults 18+ who have the money for their bills but miss due dates because they forget, or set a bill aside until payday and lose track.",
+    "bullets": [
+      "One list of every bill and its due date, set out against your paydays.",
+      "Reminders that keep coming back until you tap 'paid'.",
+      "You add bills yourself, with no bank connection, and get a warning before any bill due before your next payday."
+    ],
+    "price": "$2.99/month",
+    "priceUsd": 3,
+    "priceNote": "Less than one late fee a year.",
+    "reasonPrompt": "Which bill did you last pay late, and what happened?",
+    "faq": [
+      {
+        "q": "Does it pay my bills for me?",
+        "a": "No. It tracks due dates and reminds you. You still pay each bill through your own bank or provider."
+      },
+      {
+        "q": "Is this financial advice?",
+        "a": "No. It's a reminder and organising tool. It doesn't give financial or credit advice and can't promise any effect on your credit score."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Adults 18+. It is an independent app, not linked to any bank, card issuer or credit reference agency."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-21",
+      "summary": "People on SavingAdvice, MoneySavingExpert and the Remember The Milk forum say they can afford their bills but forget to pay them, set them aside and lose track, or have a direct debit bounce on a low day, and pay late fees for it.",
+      "wtp": "Posters were charged $35 to $40 per missed card payment. Bills Organizer & Reminder (App Store): 25K ratings, in-app purchases $5.99 and $3.99. Chronicle - Bill Organizer (App Store): 3.9K ratings, Pro $14.99.",
+      "signals": [
+        {
+          "url": "https://www.savingadvice.com/forums/forum/financial-chit-chat/personal-finance/40862-",
+          "who": "Forgets (SavingAdvice)",
+          "date": "2009-12-26",
+          "quote": "I can afford to pay my bills but often forget to do so, resulting in late payments.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.savingadvice.com/forums/forum/financial-chit-chat/personal-finance/40862-",
+          "who": "Forgets (SavingAdvice)",
+          "date": "2009-12-26",
+          "quote": "My current main card costs me at least $40 every time I miss one",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.savingadvice.com/forums/forum/financial-chit-chat/frugal-questions-and-answers/608-bill-paying-and-timing",
+          "who": "marla (SavingAdvice)",
+          "date": "2004-08-04",
+          "quote": "Then I put it aside and sometime accidently forget about it.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.savingadvice.com/forums/forum/financial-chit-chat/frugal-questions-and-answers/608-bill-paying-and-timing",
+          "who": "gotalkmoney (SavingAdvice)",
+          "date": "2006-08-14",
+          "quote": "it will go off until I pay it, this really helps since I tend to forget a lot",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.savingadvice.com/forums/forum/financial-chit-chat/general-discussion/47262-",
+          "who": "KTP (SavingAdvice)",
+          "date": "2010-12-15",
+          "quote": "Now I will probably get charged $35 plus the interest",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/2736625/stupid-mistake",
+          "who": "izzieuk (MoneySavingExpert)",
+          "date": "2010-09-18",
+          "quote": "I had to set up a direct debit cos I was such a goon and forgot once",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/6678735/perfect-credit-history-with-1-missed-payment",
+          "who": "sultanoflondon (MoneySavingExpert)",
+          "date": "2026-08-04",
+          "quote": "one of my credit card DDs was rejected as my account didn’t have sufficient funds on that specific day.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.rememberthemilk.com/forums/tips/15970",
+          "who": "ramandv (Remember The Milk forum)",
+          "date": "2012-08-01",
+          "quote": "I forget to pay my credit card / mobile bills sometimes.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/bills-organizer-reminder/id1352782733",
+          "who": "Bills Organizer & Reminder App Store listing",
+          "date": "2026-10-21",
+          "quote": "25K Ratings ... $5.99",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/chronicle-bill-organizer/id572561420",
+          "who": "Chronicle - Bill Organizer App Store listing",
+          "date": "2026-10-21",
+          "quote": "3.9K Ratings ... $14.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Bills Organizer & Reminder, Chronicle, Rocket Money, card-issuer autopay and alerts, direct debits, calendar reminders.",
+      "risks": "Strong free substitutes (autopay, direct debits). Most forum posts are 2004 to 2012, one from 2026. No claims about credit scores."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-21",
+    "slug": "return-early",
+    "name": "Return Early",
+    "need": "I keep saying I'll do my self assessment earlier than January but never seem to get round to it.",
+    "headline": "Self assessment left to late January again? Gather your figures a little at a time from October, with a checklist and reminders, so the return isn't a last-minute scramble.",
+    "buyer": "UK adults 18+ who file a self assessment return and keep leaving it to late January.",
+    "bullets": [
+      "A checklist of what you'll need: UTR, P60s, income, expenses and receipts.",
+      "Small weekly steps from October, so the work is spread out.",
+      "Reminders before the 31 January deadline. Organiser only: no filing and no tax advice."
+    ],
+    "price": "£19 per tax season",
+    "priceUsd": 24,
+    "priceNote": "One payment covers one tax season.",
+    "reasonPrompt": "When did you file last year, and what held you up?",
+    "faq": [
+      {
+        "q": "Does it file my return or give tax advice?",
+        "a": "No. It helps you gather your figures and reminds you. You file through HMRC or your accountant, and for tax advice speak to a qualified adviser."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Adults 18+. It is an independent app, not linked to HMRC or any accountancy firm."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-21",
+      "summary": "People on Singletrack and Mumsnet say they mean to do their self assessment early but leave it to January, put off the figures, or find the form confusing.",
+      "wtp": "Coconut (App Store): SA Annual £129.99. Taxfix charges £99 to £349 per return. One Singletrack poster pays an accountant; a Mumsnet reply says 'Pay an accountant.'",
+      "signals": [
+        {
+          "url": "https://singletrackworld.com/forum/off-topic/self-assessment/",
+          "who": "sharkbait (Singletrack)",
+          "date": "2015-01-12",
+          "quote": "I keep saying I'll do my SA earlier than January but never seem to get round to it",
+          "seen": "opened"
+        },
+        {
+          "url": "https://singletrackworld.com/forum/off-topic/self-assessment/",
+          "who": "Blazin-saddles (Singletrack)",
+          "date": "2015-01-12",
+          "quote": "Figures have been ready for months, just never seem to have got around to doing them before.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://singletrackworld.com/forum/off-topic/self-assessment/",
+          "who": "Onzadog (Singletrack)",
+          "date": "2015-01-12",
+          "quote": "Then left it really late to do it online in January.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://singletrackworld.com/forum/off-topic/self-assessment/",
+          "who": "jonba (Singletrack)",
+          "date": "2015-01-12",
+          "quote": "chances of me submitting on time are slim to none.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/money-matters/2412184-HMRC-have-registered-DH-for-self-assessment",
+          "who": "SweetAndFullOfGrace (Mumsnet)",
+          "date": "2015-06-26",
+          "quote": "the self assessment form is so bloody confusing it's ridiculous.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/gb/app/coconut-tax-for-self-employed/id1318768066",
+          "who": "Coconut App Store listing",
+          "date": "2026-10-21",
+          "quote": "£129.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Coconut, Taxfix, untied, accountants, HMRC reminders.",
+      "risks": "Posts are from 2015. Must stay an organiser and never give tax advice."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-21",
+    "slug": "off-auto",
+    "name": "Off Auto",
+    "need": "I don't want to get stuck using Auto all the time, so I'd like to learn how to use my camera properly.",
+    "headline": "Bought a proper camera but still shoot on Auto? Learn aperture, shutter speed and ISO one setting at a time, with a short practice walk for each.",
+    "buyer": "Adults 18+ who own a DSLR, mirrorless or advanced compact camera but only shoot on Auto or scene modes.",
+    "bullets": [
+      "One setting at a time: aperture priority first, then shutter priority, then ISO and manual.",
+      "A ten-minute practice walk for each step, with what to look for.",
+      "A log of your settings and shots so you can see what worked."
+    ],
+    "price": "$3.99/month",
+    "priceUsd": 4,
+    "priceNote": "Or $24.99 a year.",
+    "reasonPrompt": "What camera do you have, and what do you want to photograph?",
+    "faq": [
+      {
+        "q": "Does it work with my camera?",
+        "a": "It teaches the settings most cameras share (aperture, shutter speed, ISO). Your camera's manual shows where each one is."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Adults 18+. It is an independent app, not linked to any camera brand."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-21",
+      "summary": "New camera owners on TalkPhotography and ThePhotoForum say they don't want to be stuck on Auto, but end up on scene modes when it's time to take the shot.",
+      "wtp": "Fotoji: Learn DSLR Photography (App Store): 1.1K ratings, Full Access $11.99. TMG bought a Nikon D5000 and a Dummies guide.",
+      "signals": [
+        {
+          "url": "https://www.talkphotography.co.uk/threads/dslr-help.249117/",
+          "who": "Koolpc (TalkPhotography)",
+          "date": "2010-08-04",
+          "quote": "I don't want to get stuck using Auto all",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.thephotoforum.com/threads/how-bad-is-auto.257729/",
+          "who": "TMG (ThePhotoForum)",
+          "date": "2011-09-25",
+          "quote": "I end up turning the dial to a pre made scene mode rather than fumbling with A mode or S mode and missing the shot.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.thephotoforum.com/threads/how-bad-is-auto.257729/",
+          "who": "TMG (ThePhotoForum)",
+          "date": "2011-09-25",
+          "quote": "Im reading \"Nikon D5000 for Dummies\"",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.thephotoforum.com/threads/new-camera-confusion-manual-mode-av-mode.222835",
+          "who": "MarcGonsalves (ThePhotoForum)",
+          "date": "2010-10-31",
+          "quote": "I recently got a Canon SX210 IS.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/-/id1237503683",
+          "who": "Fotoji App Store listing",
+          "date": "2026-10-21",
+          "quote": "1.1K Ratings ... $11.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Fotoji, photography courses, YouTube, camera manuals.",
+      "risks": "Posts are 2010 to 2011. The top paid app has 1.1K ratings."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
