@@ -8432,5 +8432,44 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "eating-out-alone-without-feeling-awkward",
+  "offer": "solo-seat",
+  "title": "Eating out alone without feeling awkward: start small and build up",
+  "description": "Hate dining or going to the cinema alone? Start with a coffee at the counter, go at quieter times, sit at the bar, and bring something to do.",
+  "intro": "Lots of people feel self-conscious eating alone, and most say it gets easier with practice. Starting small makes the first few times much easier.",
+  "sections": [
+   {
+    "h": "Start with a coffee",
+    "list": [
+     "A café counter or a window seat, with a drink and something to read."
+    ]
+   },
+   {
+    "h": "Then lunch",
+    "list": [
+     "Lunch is quieter and more people eat alone. Go a little before the rush."
+    ]
+   },
+   {
+    "h": "Sit at the bar or counter",
+    "list": [
+     "It feels natural to be one, and staff often chat."
+    ]
+   },
+   {
+    "h": "Ask simply",
+    "list": [
+     "'Table for one, please.' Nothing more is needed."
+    ]
+   },
+   {
+    "h": "Bring something, or nothing",
+    "p": [
+     "A book, a notebook, or just watching the room. Most people are busy with their own table, not yours."
+    ]
+   }
+  ]
  }
 ]

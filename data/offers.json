@@ -22863,6 +22863,126 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-21",
+    "slug": "solo-seat",
+    "name": "Solo Seat",
+    "need": "I hate eating out or going to a film on my own. I feel like everyone is looking at me and thinking I have no friends, so I end up getting takeaway or staying home.",
+    "headline": "Hate eating out or going to a film alone? Build up to it step by step, from a coffee at the counter to a relaxed dinner for one, with no one watching over your shoulder.",
+    "buyer": "Adults 18+ who travel alone, live alone or have plans fall through, and avoid eating out or going to a film by themselves.",
+    "bullets": [
+      "A ladder of solo outings, from a coffee at the counter to lunch to an evening dinner or a film. Each one is a bit harder than the last, and you choose when to move up.",
+      "Things to say and do so the moment feels normal: asking for a table for one, picking your seat, timing your visit, and a few small things to do at the table besides staring at your phone.",
+      "Before and after each outing, rate how awkward you expect it to feel and how awkward it really felt, so you can see the gap shrink."
+    ],
+    "price": "$4.99/month",
+    "priceUsd": 5,
+    "priceNote": "One plan, every feature. Meals and tickets are paid by you.",
+    "reasonPrompt": "What's the one thing you'd like to do alone but keep avoiding: a dinner, a film, a show, or something else?",
+    "faq": [
+      {
+        "q": "Who is Solo Seat for?",
+        "a": "Solo Seat is an independent app for adults 18+. It is not made by, or connected with, any restaurant, cinema, travel company or social app."
+      },
+      {
+        "q": "Is this therapy or treatment for anxiety?",
+        "a": "No. Solo Seat is a self-guided confidence and habit tool for ordinary awkwardness about doing things alone. It does not diagnose or treat any condition. If fear is seriously limiting your life, please talk to a qualified professional."
+      },
+      {
+        "q": "Does it match me with strangers to eat with?",
+        "a": "No. Solo Seat helps you get comfortable going out alone. It doesn't set up group dinners or meetups."
+      },
+      {
+        "q": "Does it work when I'm travelling as well as at home?",
+        "a": "Yes. The outing ladder and scripts work in your own town or on a trip. You pick the places yourself."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-21",
+      "summary": "Adults say in their own words that eating out or going to a film alone makes them uncomfortable or self-conscious. Some skip it, some only eat at lunchtime or pick up takeaway, and some only push through when they have no choice. We found this on at least five separate Rick Steves Travel Forum threads, from 2017 to 2023, and on a Straight Dope thread about going to films and restaurants alone. Several posters say it got easier with practice, which is the gradual step-by-step approach this app offers.",
+      "wtp": "Timeleft (App Store), a paid group-dinner app: 8.8K ratings, in-app purchases $19.99 to $62.99. On the Rick Steves forum, Patricia books paid group food or history tours when she wants company.",
+      "signals": [
+        {
+          "url": "https://community.ricksteves.com/travel-forum/general-europe/sitting-at-the-bar-for-dinner",
+          "who": "Hank (Rick Steves Travel Forum)",
+          "date": "2023-06-28",
+          "quote": "When I travel solo I'm someone uncomfortable dining at dinner alone.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://community.ricksteves.com/travel-forum/general-europe/dining-solo-in-europe",
+          "who": "Jean (Rick Steves Travel Forum)",
+          "date": "2022-08-02",
+          "quote": "I’ll admit that eating dinner alone is my least favorite part about traveling solo.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://community.ricksteves.com/travel-forum/general-europe/dining-solo-in-europe",
+          "who": "Hank (Rick Steves Travel Forum)",
+          "date": "2022-08-01",
+          "quote": "how to eat restaurant food without being the uncomfortable person sitting alone at a four tops surrounded by families",
+          "seen": "opened"
+        },
+        {
+          "url": "https://community.ricksteves.com/travel-forum/france/solo-dining-in-paris",
+          "who": "Susan (Rick Steves Travel Forum)",
+          "date": "2018-04-02",
+          "quote": "I won’t go out by myself at home, I know too many people and would feel self-conscious.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://community.ricksteves.com/travel-forum/italy/solo-dining-tips",
+          "who": "rwreads (Rick Steves Travel Forum)",
+          "date": "2022-06-22",
+          "quote": "it was more me panicking (and being self-conscious) than the waitstaff being willing to seat me",
+          "seen": "opened"
+        },
+        {
+          "url": "https://community.ricksteves.com/travel-forum/general-europe/traveling-solo-a-skill-to-develop",
+          "who": "Zoe (Rick Steves Travel Forum)",
+          "date": "2017-08-24",
+          "quote": "I still don't love dining alone at dinner, so I make the midday meal the main one",
+          "seen": "opened"
+        },
+        {
+          "url": "https://community.ricksteves.com/travel-forum/general-europe/traveling-solo-a-skill-to-develop",
+          "who": "Patricia (Rick Steves Travel Forum)",
+          "date": "2017-08-30",
+          "quote": "learned that I could always book a short group food or historical tour with a local guide for the times I needed more company",
+          "seen": "opened"
+        },
+        {
+          "url": "https://boards.straightdope.com/t/why-dont-people-like-to-be-entertained-with-strangers/49948",
+          "who": "Welfy (Straight Dope Message Board)",
+          "date": "2001-01-14",
+          "quote": "I would keep thinking that the people around me think I have no friends, that I’m a loser, etc.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://boards.straightdope.com/t/why-dont-people-like-to-be-entertained-with-strangers/49948",
+          "who": "Fretful_Porpentine (Straight Dope Message Board)",
+          "date": "2001-01-14",
+          "quote": "Used to hate going to restaurants alone, then spent two months backpacking on my own and had no choice.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/timeleft-make-new-friends-irl/id6466442949",
+          "who": "Timeleft App Store listing",
+          "date": "2026-10-21",
+          "quote": "8.8K Ratings ... $19.99 ... $62.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Timeleft and similar group-dinner apps (paid, 8.8K ratings on the App Store) take away the 'alone' part by seating you with strangers. Bookable group food tours do the same while you travel. Free articles and forum threads give tips like eating at the bar, going early or bringing a book. As far as we found, no well-known paid app focuses on building comfort with going out on your own step by step.",
+      "risks": "Most evidence comes from travel forums and from older posts (the Straight Dope thread is from 2001), so the need may be strongest for people travelling alone and weaker at home. Many forum replies say solo dining is no big deal, which suggests the discomfort fades with practice and people may not stay subscribed for long. People with serious social anxiety should be pointed to professional help. The product must stay a confidence and habit tool and make no therapy claims. It also needs to stay clearly different from the live friend-making offers (same-table, singles-supper-six) by never offering meetups."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
