@@ -23436,6 +23436,112 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-21",
+    "slug": "which-tote",
+    "name": "Which Tote",
+    "need": "I have a garage, loft or shed full of storage totes and boxes, I forget what's in each one, and I end up digging through all of them or buying something again that I already own.",
+    "headline": "Forgot which tote the extension cords went in? Number your boxes, say or snap what goes in, then search from your phone and get the box number and shelf.",
+    "buyer": "Adults 18+ with a garage, loft, shed or storage unit full of totes and boxes who keep losing time searching or re-buying.",
+    "bullets": [
+      "Print simple numbered labels, then add a box's contents by typing, speaking a quick list, or taking one photo of the open box",
+      "Type 'tile saw' or 'tree lights' and see the box number, where it sits (garage, shelf 3, loft) and the photo of what's inside",
+      "Move an item from one box to another in two taps, so the list stays right after you dig something out"
+    ],
+    "price": "$3.99/month",
+    "priceUsd": 4,
+    "priceNote": "Or $29.99 a year.",
+    "reasonPrompt": "What do you keep in storage boxes, and what did you last spend ages hunting for (or buy again) because you couldn't remember which box it was in?",
+    "faq": [
+      {
+        "q": "Who makes Which Tote?",
+        "a": "Which Tote is an independent app for adults 18+. It is not affiliated with any storage company, label maker or other inventory app."
+      },
+      {
+        "q": "Do I need special labels or a label printer?",
+        "a": "No. You can print numbered labels on ordinary paper or just write the box number with a marker. The number is what links the box to its list."
+      },
+      {
+        "q": "Do I have to list every single item?",
+        "a": "No. A rough list or one photo of the open box is enough for most people. Search works on whatever words and photos you add."
+      },
+      {
+        "q": "Is this for running a business stockroom?",
+        "a": "No. It is built for personal storage at home: garages, lofts, sheds, closets and storage units. It doesn't do stock counts, pricing or reorders."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-21",
+      "summary": "On Garage Journal, home and hobby users keep describing the same problem across threads from 2017 to 2024. They have numbered or labelled totes but forget what is in each one, so they spend hours digging or re-buy things they already own. Their workarounds are hand-made: Sharpie and tape, phone photo folders, Word files, Excel and Google Sheets. One poster says outright that the existing apps feel 'way to sophisticated' for just finding which box an item is in.",
+      "wtp": "SmartLabels: Storage Organizer (App Store): 2.7K ratings, subscriptions from $11.95. Boxes: Storage made simple: 960 ratings, in-app purchases $4.99 to $59.99. On Garage Journal, Com_VC says they 'go out and re buy it'.",
+      "signals": [
+        {
+          "url": "https://www.garagejournal.com/forum/threads/very-simple-home-or-business-inventory-program.540527/",
+          "who": "BillK (Garage Journal)",
+          "date": "2024-11-27",
+          "quote": "What I would like is to have numbers on the boxes and be able to list items with a box number in the inventory program so I will know later which box something is in.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.garagejournal.com/forum/threads/storage-tote-labeling.379269/",
+          "who": "mjchamp (Garage Journal)",
+          "date": "2017-12-29",
+          "quote": "I have about 14 totes in my shop and from time-to-time I forget what I have in all of them.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.garagejournal.com/forum/threads/storage-tote-labeling.379269/",
+          "who": "Justind97 (Garage Journal)",
+          "date": "2017-12-29",
+          "quote": "Still doesn't help that I don't believe myself and have to look in the box anyways.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.garagejournal.com/forum/threads/anyone-here-using-inventory-management-software.371782/",
+          "who": "Com_VC (Garage Journal)",
+          "date": "2017-10-03",
+          "quote": "we either spends hours looking for it or go out and re buy it",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.garagejournal.com/forum/threads/storage-bin-wonder-if-others-have-better-solution.458143/",
+          "who": "Elbert C. (Garage Journal)",
+          "date": "2020-07-07",
+          "quote": "I'm wanting to put labels on the ends, to remind me whats in there.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.garagejournal.com/forum/threads/concept-for-simple-whats-in-that-box-inventory-tracker.474871/",
+          "who": "truckin-on (Garage Journal)",
+          "date": "2021-02-06",
+          "quote": "I just want some help to remember what the heck I have and where it is",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.garagejournal.com/forum/threads/concept-for-simple-whats-in-that-box-inventory-tracker.474871/",
+          "who": "Angelfire (Garage Journal)",
+          "date": "2021-02-07",
+          "quote": "it has a search feature so you can find exactly which box that lost doohickey is in",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1555535491",
+          "who": "SmartLabels: Storage Organizer App Store listing",
+          "date": "2026-10-21",
+          "quote": "2.7K Ratings ... $11.95",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "SmartLabels (QR sticker companion app, subscriptions $11.95 to $29.95), Boxes: Storage made simple ($4.99 to $59.99 in-app purchases), ToteScan, ElephantTrax (399 ratings), Sortly (9.5K ratings, business-leaning), Asset Tiger, plus free workarounds such as Excel or Google Sheets, OneNote, phone photo folders and Sharpie labels. The gap is simplicity: the 2024 poster said apps he found were 'way to sophisticated' and that he didn't need prices or pictures.",
+      "risks": "The space is crowded and many free options exist, so it has to win on speed of setup (voice or one photo per box). Setup effort puts some people off: BoostedOne (Garage Journal, 2017-10-04) wrote 'I figure tracking would take me longer in the long run.' Lists go stale when items move. All the forum evidence comes from one site (Garage Journal), with some posters skewed toward tools and parts. MetaFilter was blocked to curl by Cloudflare, and no MoneySavingExpert thread matched. The live list has nearby entries (home-become-cluttered-avoid, landing-spot for keys and wallet, who-has-it for lent items, roll-down for photos), but none covers finding things inside stored boxes."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

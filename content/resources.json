@@ -8666,5 +8666,44 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "find-things-in-storage-boxes",
+  "offer": "which-tote",
+  "title": "Can't remember which storage box things are in? Number the boxes and keep one searchable list",
+  "description": "Give every tote a number, note where it lives, list or photograph what goes in, and update the list when you take something out.",
+  "intro": "Labels on the box help, but a numbered list you can search from your phone saves the most digging, and stops you buying things twice.",
+  "sections": [
+   {
+    "h": "Number every box",
+    "list": [
+     "Big numbers on two sides. The number links the box to its list."
+    ]
+   },
+   {
+    "h": "Note where it lives",
+    "list": [
+     "Garage shelf 3, loft left side, shed back wall."
+    ]
+   },
+   {
+    "h": "List or photograph contents",
+    "list": [
+     "A rough list or one photo of the open box is enough."
+    ]
+   },
+   {
+    "h": "Keep it in one place",
+    "list": [
+     "A notes app or a single sheet you can search on your phone."
+    ]
+   },
+   {
+    "h": "Update when things move",
+    "p": [
+     "When you take something out for good, delete it from the list straight away."
+    ]
+   }
+  ]
  }
 ]
