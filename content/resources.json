@@ -6983,5 +6983,44 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "siblings-fighting-all-day",
+  "offer": "referee-off",
+  "title": "Siblings fighting all day? Log a week to find the flashpoints",
+  "description": "Stuck refereeing all day? Note when each fight starts and what set it off, find the top two flashpoints, and plan for those.",
+  "intro": "Sibling fights often cluster around the same few moments. A week of quick notes can show where to focus.",
+  "sections": [
+   {
+    "h": "Log a week",
+    "list": [
+     "After each fight, note the time, who, and what started it."
+    ]
+   },
+   {
+    "h": "Find the flashpoints",
+    "list": [
+     "Common ones are screens, sharing toys, car journeys and the hour before dinner."
+    ]
+   },
+   {
+    "h": "Plan for the top two",
+    "list": [
+     "For example, a turn-taking timer for the tablet, or separate seats in the car."
+    ]
+   },
+   {
+    "h": "Step back when it's safe",
+    "list": [
+     "If no one is getting hurt, give them a chance to sort small disagreements themselves."
+    ]
+   },
+   {
+    "h": "Praise the good moments",
+    "p": [
+     "Notice and praise times they play well together. If you're worried about safety or wellbeing, talk to your health visitor, school or doctor."
+    ]
+   }
+  ]
  }
 ]

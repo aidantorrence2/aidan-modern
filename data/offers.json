@@ -19554,6 +19554,97 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-21",
+    "slug": "referee-off",
+    "name": "Referee Off",
+    "need": "It's so draining constantly being referee and waiting for the next fight to start.",
+    "headline": "Kids fighting all day and you're stuck as referee? Log each fight in ten seconds, see the flashpoints, and agree one plan for the biggest one.",
+    "buyer": "Parents and carers (18+) of children who fight all day.",
+    "bullets": [
+      "A ten-second log for each fight: who, when, and what started it.",
+      "A weekly view of the flashpoints, like screens, the car or just before dinner.",
+      "One shared plan for the top flashpoint, and a weekly chart to see if it's working."
+    ],
+    "price": "$3.99/month",
+    "priceUsd": 4,
+    "priceNote": "Or $24 one-time.",
+    "reasonPrompt": "How old are your children, and when do the fights usually start?",
+    "faq": [
+      {
+        "q": "Is this behaviour advice?",
+        "a": "No. It's a log and a plan. If you're worried about safety or a child's wellbeing, talk to your health visitor, school or doctor."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Parents and carers, 18+. It is an independent app, not linked to any parenting brand or course."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-21",
+      "summary": "Parents on Mumsnet say their children fight constantly, it's exhausting, and they feel stuck as referee.",
+      "wtp": "A paid sibling-rivalry course sells for $54.99 (Hand in Hand Parenting).",
+      "signals": [
+        {
+          "url": "https://www.mumsnet.com/talk/_chat/5448180-dc-fighting-im-absolutely-done-in",
+          "who": "Bluebluetuesday (Mumsnet)",
+          "date": "2025-11-22",
+          "quote": "But when they are together the fighting is constant.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/_chat/5448180-dc-fighting-im-absolutely-done-in",
+          "who": "Pandolly (Mumsnet)",
+          "date": "2025-11-22",
+          "quote": "It's so draining constantly being referee and waiting for the next fight to start.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/_chat/5448180-dc-fighting-im-absolutely-done-in",
+          "who": "fishtank12345 (Mumsnet)",
+          "date": "2025-11-22",
+          "quote": "they shout at each other all the time and its exhausting.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/parenting/4391589-Siblings-fighting-all-the-time",
+          "who": "Sarah62 (Mumsnet)",
+          "date": "2021-11-02",
+          "quote": "Help! I'm at my wits end",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/parenting/4391589-Siblings-fighting-all-the-time",
+          "who": "Plutonium7000 (Mumsnet)",
+          "date": "2021-11-02",
+          "quote": "I have the same issue with my boys and drives me up the wall.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/parenting/4391589-Siblings-fighting-all-the-time",
+          "who": "wonderbegone (Mumsnet)",
+          "date": "2021-11-03",
+          "quote": "Mine argue all the time and have to be separated into different rooms if I'm not in the same room as them.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://store.handinhandparenting.org/product/taming-sibling-rivalry/",
+          "who": "Hand in Hand 'Taming Sibling Rivalry' course page",
+          "date": "2026-10-21",
+          "quote": "$54.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Parenting courses, books, family therapists.",
+      "risks": "All forum evidence on Mumsnet; one paid course; no sibling app with big ratings."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
