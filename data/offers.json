@@ -23074,6 +23074,91 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-21",
+    "slug": "knot-keep",
+    "name": "Knot Keeper",
+    "need": "I learn a few useful knots, then forget them by the time I actually need one for a tarp, a load or a line.",
+    "headline": "Stop forgetting the knots you learned. Pick the five you actually use, practise each for two minutes with a bit of string, and get the right one up offline when you need it.",
+    "buyer": "Adults 18+ who camp, sail, move furniture or tie things down a few times a year and forget the knots between trips.",
+    "bullets": [
+      "Pick the jobs you really do (tarp line, tying down a load, hammock, washing line, mooring) and get a short kit of five or six knots, not 200",
+      "Two-minute practice sessions with any piece of string, timed to come back just before you would forget, plus a 'which knot for this job?' quiz",
+      "Offline job lookup with slow step-by-step animation, for the moment you are standing there in the rain holding the rope"
+    ],
+    "price": "$2.99/month",
+    "priceUsd": 3,
+    "priceNote": "Or $14.99 a year.",
+    "reasonPrompt": "Which knot do you always forget, and what were you trying to tie down the last time it caught you out?",
+    "faq": [
+      {
+        "q": "Who makes Knot Keeper?",
+        "a": "Knot Keeper is an independent app for adults 18+. It is not affiliated with any knot guild, scouting organisation, rope maker or other knot app."
+      },
+      {
+        "q": "Can I use it for climbing, rescue or safety lines?",
+        "a": "No. Knot Keeper covers everyday knots for camping, tarps, loads, laundry lines and light boating. It is not for climbing, rescue, fall protection, lifting people or any line where a failure could hurt someone. Learn those from a qualified instructor."
+      },
+      {
+        "q": "Do I need special rope?",
+        "a": "No. Any shoelace, cord or bit of string works for the practice sessions."
+      },
+      {
+        "q": "Does it work without signal?",
+        "a": "Yes. Your knot kit and its animations are stored on your phone, so the lookup works at a campsite or on the water."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-21",
+      "summary": "Adults keep saying in their own words that they learn knots and then lose them because they use them only a few times a year. People have said this on an angling forum (2007), a backpacking forum (2008), MetaFilter (2012) and a personal blog (2025). Some of them already bought a fix (a laminated knot card, a paid app) and still had the problem, because a reference tells you how to tie a knot but does not make you remember it. No entry in live-needs.txt mentions knots, rope or tarps. tie-ready is about neckties, which is a different need.",
+      "wtp": "Knots 3D (App Store): $5.99, 13K ratings. Allen Pike bought Knots 3D and Joe Geib carries a paid Pro-Knot card, and both still describe forgetting knots.",
+      "signals": [
+        {
+          "url": "https://allenpike.com/2025/getting-tied-up-knots",
+          "who": "Allen Pike (allenpike.com)",
+          "date": "2025-07-31",
+          "quote": "I downloaded the Knots 3D app, hoping it would give me some guidance.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.metafilter.com/119595/Knots-in-Spaaaaace",
+          "who": "DU (MetaFilter)",
+          "date": "2012-09-04",
+          "quote": "I keep learning them and then forgetting because I never use. I even spent like a week researching, drawing, formatting and printing up a wallet card with some basics on it but then I forget I even have it when I need it.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://backpackinglight.com/forums/topic/12156",
+          "who": "Joe Geib (Backpacking Light forum)",
+          "date": "2008-02-26",
+          "quote": "I forget all the time. I carry a Pro-Knot card in my safety kit.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://sea-angling-ireland.org/forum/viewtopic.php?p=92513",
+          "who": "slowarm (Sea Angling Ireland forum)",
+          "date": "2007-07-13",
+          "quote": "I sometimes have trouble remembering knots - how to tie them. which ones work best for a given situation, etc.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/knots-3d/id453571750",
+          "who": "Knots 3D App Store listing",
+          "date": "2026-10-21",
+          "quote": "$5.99 ... 13K Ratings",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Knots 3D ($5.99, 12.9K ratings), Animated Knots by Grog ($4.99 app plus a free website), Knot Guide ($2.99), the free Army Knots app, Pro-Knot waterproof cards, and YouTube. All of these are reference libraries you look things up in. None of them picks a small personal kit or schedules practice so the knots stick between trips. That gap is what the posters describe: they had the reference and still forgot.",
+      "risks": "Most people need knots only now and then, so many will settle for a free video or a one-off paid app, and a subscription may be hard to sell. A one-off or annual price may convert better. The signals are spread over years and some are old (2007, 2008, 2012), though Pike's is from 2025. Safety: the app has to clearly exclude climbing, rescue and life-safety uses, and should avoid claims about load ratings. The animations must be original, not copied from Grog or Knots 3D."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

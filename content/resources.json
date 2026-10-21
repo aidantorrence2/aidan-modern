@@ -8510,5 +8510,44 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "five-knots-worth-remembering",
+  "offer": "knot-keep",
+  "title": "Five everyday knots worth remembering, and how to make them stick",
+  "description": "Learn a small kit of knots for tarps, loads and lines, practise each with a shoelace for two minutes, and revisit them before your next trip.",
+  "intro": "Most people forget knots because they use them a few times a year. Learning only the few you need, and practising them briefly, makes them stick. Not for climbing or safety lines.",
+  "sections": [
+   {
+    "h": "Pick your jobs",
+    "list": [
+     "Tarp or washing line, tying down a load, hanging something, joining two ropes."
+    ]
+   },
+   {
+    "h": "A small kit",
+    "list": [
+     "Bowline (fixed loop), clove hitch, taut-line hitch, trucker's hitch, sheet bend."
+    ]
+   },
+   {
+    "h": "Two minutes with a shoelace",
+    "list": [
+     "Tie each one three times without looking at instructions."
+    ]
+   },
+   {
+    "h": "Come back to them",
+    "list": [
+     "A day later, a week later, and the week before a trip."
+    ]
+   },
+   {
+    "h": "Know the limits",
+    "p": [
+     "These knots are for everyday jobs. For climbing, rescue or anything that holds a person, learn from a qualified instructor."
+    ]
+   }
+  ]
  }
 ]
