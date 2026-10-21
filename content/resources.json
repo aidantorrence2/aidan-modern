@@ -8588,5 +8588,83 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "ukulele-chord-changes-one-minute-drill",
+  "offer": "uke-unstuck",
+  "title": "Ukulele chord changes too slow? A one-minute daily drill",
+  "description": "Pick the one chord change that trips you up, count how many clean changes you make in a minute, and do it every day before playing songs.",
+  "intro": "Most beginners get stuck on one or two chord changes. Drilling just those, for a minute a day, speeds them up faster than playing whole songs.",
+  "sections": [
+   {
+    "h": "Pick one pair",
+    "list": [
+     "For example C to Am, or G to C. Just the one that slows you down."
+    ]
+   },
+   {
+    "h": "Count for a minute",
+    "list": [
+     "Change back and forth without strumming. Count clean changes and write the number down."
+    ]
+   },
+   {
+    "h": "Move fingers together",
+    "list": [
+     "Lift and place your fingers as a group, keeping them close to the strings."
+    ]
+   },
+   {
+    "h": "Strum slowly",
+    "list": [
+     "Use a simple down strum at a slow beat before trying patterns like the island strum."
+    ]
+   },
+   {
+    "h": "Short sessions",
+    "p": [
+     "Ten minutes is plenty while your fingertips toughen up. Stop if anything hurts."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "cut-down-energy-drinks-one-can-at-a-time",
+  "offer": "can-down",
+  "title": "How to cut down on energy drinks one can at a time",
+  "description": "Log every can for a week, then drop one can, swap to a smaller size or push your first can later. Track the money you keep.",
+  "intro": "Stopping energy drinks all at once is hard for many people. Cutting down step by step is often easier to stick with. This isn't medical advice.",
+  "sections": [
+   {
+    "h": "Log a normal week",
+    "list": [
+     "Every can, the time, and why: tired, habit, stress, or a long shift."
+    ]
+   },
+   {
+    "h": "Drop one can",
+    "list": [
+     "Start with the easiest one to skip, often the afternoon can."
+    ]
+   },
+   {
+    "h": "Swap or delay",
+    "list": [
+     "Try a smaller can, or have your first one later in the day."
+    ]
+   },
+   {
+    "h": "Have a swap ready",
+    "list": [
+     "Water, sparkling water or a walk when the usual craving time comes."
+    ]
+   },
+   {
+    "h": "Count the money",
+    "p": [
+     "Add up what you don't spend each week. If you have health concerns or strong symptoms, talk to a GP or pharmacist."
+    ]
+   }
+  ]
  }
 ]

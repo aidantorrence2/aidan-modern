@@ -23261,6 +23261,181 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-21",
+    "slug": "uke-unstuck",
+    "name": "Uke Unstuck",
+    "need": "I've been learning the ukulele for months and I'm having a rough time with chord changes and strumming. Should I just give up?",
+    "headline": "Stuck on ukulele chord changes or strumming? One-minute drills for the exact change you're stuck on, a slow strum trainer, and short sessions sized for sore fingers.",
+    "buyer": "Adults 18+ learning the ukulele who are stuck on chord changes, strumming or sore fingertips.",
+    "bullets": [
+      "One-minute change drills for the exact chord pair you're stuck on, with a daily count chart.",
+      "A slow strum trainer with a visible beat that speeds up only after clean runs.",
+      "10-minute sessions sized for sore fingertips, and a song ladder that unlocks as your changes speed up."
+    ],
+    "price": "$3.99/month",
+    "priceUsd": 4,
+    "priceNote": "Or $24.99 a year.",
+    "reasonPrompt": "How long have you been playing, and which chord change or strum trips you up?",
+    "faq": [
+      {
+        "q": "Do I need lessons too?",
+        "a": "No, but it works well alongside a class or teacher. It gives you short, focused practice between sessions."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Adults 18+. It is an independent app, not linked to any ukulele maker, school or other music app."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-21",
+      "summary": "Adult beginners on Mumsnet (2017) and the Rockclass101 forum (2022) say chord changes, pressing the strings and strumming patterns are hard, and some wonder whether to give up.",
+      "wtp": "Ukulele by Yousician (App Store): 12K ratings, Premium from $13.99 a month up to $139.99 a year. WhynothaveaKidsDay attends a paid village uke class.",
+      "signals": [
+        {
+          "url": "https://www.mumsnet.com/talk/am_i_being_unreasonable/2875202-To-think-that-learning-the-Ukelele-is-incredibly-difficult",
+          "who": "WhynothaveaKidsDay (Mumsnet)",
+          "date": "2017-03-11",
+          "quote": "I have attended a uke class in our village for about 3 months and am having a rough time trying to bend my fingers",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/am_i_being_unreasonable/2875202-To-think-that-learning-the-Ukelele-is-incredibly-difficult",
+          "who": "PickAChew (Mumsnet)",
+          "date": "2017-03-11",
+          "quote": "I just couldn't press the strings enough against the fretboard",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/am_i_being_unreasonable/2875202-To-think-that-learning-the-Ukelele-is-incredibly-difficult",
+          "who": "Dixiestamp (Mumsnet)",
+          "date": "2017-03-11",
+          "quote": "have found the ukulele the hardest to pick up!",
+          "seen": "opened"
+        },
+        {
+          "url": "https://rockclass101.com/forums/topic/i-am-feeling-a-bit-frustrated-with-myself/",
+          "who": "xerxes (Rockclass101 forum)",
+          "date": "2022-02",
+          "quote": "I am feeling a bit frustrated.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://rockclass101.com/forums/topic/i-am-feeling-a-bit-frustrated-with-myself/",
+          "who": "robinboyd (Rockclass101 forum)",
+          "date": "2022-02",
+          "quote": "I can’t even DO the island strum!",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1585618286",
+          "who": "Ukulele by Yousician App Store listing",
+          "date": "2026-10-21",
+          "quote": "12K Ratings ... $13.99 ... $139.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Yousician, Kala app, YouTube, local uke groups.",
+      "risks": "Yousician is strong. Mumsnet thread is 2017. Distinct from live stick-with-guitar."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-21",
+    "slug": "can-down",
+    "name": "Can Down",
+    "need": "I'm addicted to energy drinks. I drink several cans a day, it's costing me a fortune, and I wish I could stop but I can't.",
+    "headline": "Several energy drinks a day and wish you could stop? Log each can in one tap, cut down at your own pace, and see the money you keep.",
+    "buyer": "Adults 18+ who drink energy drinks every day and want to cut down or stop.",
+    "bullets": [
+      "One-tap can log with what set it off and what it cost.",
+      "A step-down plan you set: drop a can, swap to a smaller one, or push the first one later.",
+      "A craving button, slips that don't reset your progress, and a money-kept total."
+    ],
+    "price": "$3.99/month",
+    "priceUsd": 4,
+    "priceNote": "Or $24.99 a year.",
+    "reasonPrompt": "How many cans a day do you drink now, and when is the hardest time to skip one?",
+    "faq": [
+      {
+        "q": "Is it medical advice?",
+        "a": "No. It's a habit and spending tracker. If you have heart, sleep or other health concerns, or you get strong symptoms when cutting down, talk to a GP or pharmacist."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Adults 18+. It is an independent app, not linked to any drinks brand or other app."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-21",
+      "summary": "People on AnandTech (2008) and Mumsnet (2021, 2024) say they drink several energy drinks a day, still crave them after stopping, and that the habit costs them a lot.",
+      "wtp": "Posters spend real money on the habit: Addictedtoeverything buys 'x3 boxes a day', wishes1111 says 'It's also costing me a fortune.' Several paid quit-energy-drink apps exist on the App Store, though with few ratings.",
+      "signals": [
+        {
+          "url": "https://forums.anandtech.com/threads/energy-drinks-are-evil.225636/",
+          "who": "joesmoke (AnandTech)",
+          "date": "2008-10-09",
+          "quote": "ive been battling with the energy drink addiction for years",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.anandtech.com/threads/energy-drinks-are-evil.225636/",
+          "who": "Eli (AnandTech)",
+          "date": "2008-10-09",
+          "quote": "I still have cravings.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.anandtech.com/threads/energy-drinks-are-evil.225636/",
+          "who": "rivan (AnandTech)",
+          "date": "2008-10-09",
+          "quote": "It's an expensive (and mostly pointless) habit.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/substance_addiction_/5036874-red-bull-12-cans-daily",
+          "who": "Addictedtoeverything (Mumsnet)",
+          "date": "2024-03-26",
+          "quote": "I desperately want to stop.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/substance_addiction_/5036874-red-bull-12-cans-daily",
+          "who": "PossumintheHouse (Mumsnet)",
+          "date": "2024-03-26",
+          "quote": "at one point I was drinking 3-4 of them a day to get through a job with long working hours",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/calorie_counting/4186857-i-m-addicted-to-redbull-help",
+          "who": "wishes1111 (Mumsnet)",
+          "date": "2021-03-08",
+          "quote": "It's also costing me a fortune.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/am_i_being_unreasonable/5092418-i-love-monster-the-drink",
+          "who": "ElleBelleLou (Mumsnet)",
+          "date": "2024-06-08",
+          "quote": "I am shamefully addicted to them and wish I could stop but I can't!",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Small quit-energy-drink apps, general habit trackers.",
+      "risks": "Paid apps have few ratings. Close to live taper-cup (coffee); this one is about energy drinks and their cost. No health claims."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
