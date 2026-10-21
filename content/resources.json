@@ -7691,5 +7691,44 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "wear-more-of-your-wardrobe",
+  "offer": "wardrobe-rota",
+  "title": "Wearing the same few clothes? A month-long hanger test to wear more of your wardrobe",
+  "description": "Full wardrobe, same outfits every day? Turn your hangers round, note what you wear for a month, and build outfits around what you've ignored.",
+  "intro": "Many people wear a small part of their wardrobe most of the time. A simple month of noticing what you wear shows what's being ignored, and why.",
+  "sections": [
+   {
+    "h": "Turn every hanger round",
+    "list": [
+     "When you wear something, hang it back the normal way. After a month you can see what you never touched."
+    ]
+   },
+   {
+    "h": "Ask why",
+    "list": [
+     "Doesn't fit, doesn't go with anything, wrong for your days, or just forgotten?"
+    ]
+   },
+   {
+    "h": "Pair one ignored piece a week",
+    "list": [
+     "Put it with two things you already wear often, and try it on a normal day."
+    ]
+   },
+   {
+    "h": "Check before you buy",
+    "list": [
+     "Before buying something new, count how many similar pieces you already own."
+    ]
+   },
+   {
+    "h": "Decide what to let go",
+    "p": [
+     "After a few months, alter, sell or donate anything you still never reach for. It's your call."
+    ]
+   }
+  ]
  }
 ]

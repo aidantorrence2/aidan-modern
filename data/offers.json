@@ -21014,6 +21014,126 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-21",
+    "slug": "wardrobe-rota",
+    "name": "Wardrobe Rota",
+    "need": "I tend to wear the same few bits over and over again, and I don't wear most of the clothes I own.",
+    "headline": "A full wardrobe and you still wear the same few things? Log what you wear in one tap and get outfits built around the clothes you've ignored for months.",
+    "buyer": "Adults 18+ with a full wardrobe who wear the same few things and want to use what they already own before buying more.",
+    "bullets": [
+      "Snap your clothes once, then log each day's outfit with one tap so you can see what you actually wear and what you never do",
+      "A 'not worn lately' list puts forgotten pieces in front of you, each with outfit ideas that pair it with things you already wear",
+      "Before you buy something new, check what similar pieces you already have and how often you've worn them"
+    ],
+    "price": "$3.99/month",
+    "priceUsd": 4,
+    "priceNote": "One plan for everything in the app.",
+    "reasonPrompt": "Which pieces in your wardrobe do you keep meaning to wear but never do, and what stops you?",
+    "faq": [
+      {
+        "q": "Who is Wardrobe Rota for?",
+        "a": "It's an independent app for adults 18+ who own plenty of clothes but keep wearing the same few things. It isn't affiliated with any clothing brand, retailer or other wardrobe app."
+      },
+      {
+        "q": "Do I have to photograph my whole wardrobe on day one?",
+        "a": "No. You can start with the items you wear most and the ones you never reach for, then add more over time."
+      },
+      {
+        "q": "Will it tell me to throw clothes away or buy new ones?",
+        "a": "Neither. The aim is to help you wear what you already have. If something still never gets worn, you decide whether to keep, alter, sell or donate it."
+      },
+      {
+        "q": "Is this styling advice from a professional?",
+        "a": "No. Outfit ideas are built from your own items and what you've logged. It's a planning tool, not a personal stylist."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-21",
+      "summary": "On MoneySavingExpert's money-saving clothes threads, posters say in their own words that they wear the same few items over and over and leave most of their wardrobe untouched. One 'wear the same few bits over and over again and I'm sure I could do better', another 'live[s] in the same clothes' and wants to get 'out of the rut', another doesn't 'wear most of them', and a fourth wears 'less than half of it on a regular basis'. Some are already trying it by hand: sorting clothes into 'always wear' and 'hardly ever wear' piles, or planning to make outfit lists in a notebook. That points to a need for a simple tool that tracks what gets worn and brings neglected pieces back into outfits.",
+      "wtp": "Stylebook (App Store): 8.9K ratings, $4.99 up front; a reviewer calls it 'the best $5 I have ever spent'. Cladwell (App Store): 1K ratings, in-app purchases up to $59.99 a year.",
+      "signals": [
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/6322521/2022-fashion-on-the-ration-challenge/p29",
+          "who": "nannygladys (MoneySavingExpert Forum)",
+          "date": "2022-01-23",
+          "quote": "I tend to wear the same few bits over and over again and I'm sure I could do better.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/6322521/2022-fashion-on-the-ration-challenge/p29",
+          "who": "MoneysavingmadGem (MoneySavingExpert Forum)",
+          "date": "2022-01-23",
+          "quote": "no need to dress up where I work so I live in the same clothes .... jeans, tshirt, wool jumper in winter! Why I'm trying to make a couple pieces to bring me out of the rut I am in.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/6322521/2022-fashion-on-the-ration-challenge/p29",
+          "who": "nannygladys (MoneySavingExpert Forum)",
+          "date": "2022-01-22",
+          "quote": "I know there's tops, jumpers and other bits that don't go with anything",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/3629199/a-few-months-and-several-questions/p40",
+          "who": "RosaBernicia (MoneySavingExpert Forum)",
+          "date": "2012-02-18",
+          "quote": "What's even more worrying is that I don't wear most of them.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/3629199/a-few-months-and-several-questions/p40",
+          "who": "vasseur (MoneySavingExpert Forum)",
+          "date": "2012-02-18",
+          "quote": "It's the 20:80 effect - we wear 20% of our wardrobe 80% of the time",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/5302256/does-everyone-have-this-amount-of-clothes",
+          "who": "ripplyuk (MoneySavingExpert Forum)",
+          "date": "2015-08-07",
+          "quote": "I wear less than half of it on a regular basis",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/5302256/does-everyone-have-this-amount-of-clothes",
+          "who": "Person_one (MoneySavingExpert Forum)",
+          "date": "2015-08-07",
+          "quote": "Its really easy to hoard clothes and convince yourself they'll all be worn, but in reality I bet most of us wear the same few favourites over and over!",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/4855412/the-completely-crazy-2014-clothes-challenge/p31",
+          "who": "skintygerlinky (MoneySavingExpert Forum)",
+          "date": "2014-02-09",
+          "quote": "asked self honestly: 'what do I always wear?' and 'what do I hardly ever wear?'.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id335709058",
+          "who": "Hannahjane136 (App Store review, Stylebook)",
+          "date": "2022-09-18",
+          "quote": "Suddenly now I am able to come up with all new outfits with clothes that have been sitting in my drawers, unused!",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1140550878",
+          "who": "Cladwell App Store listing",
+          "date": "2026-10-21",
+          "quote": "1K Ratings ... $59.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Stylebook ($4.99 paid, 4.7 from 8,859 ratings: closet catalogue, outfit canvas, calendar, cost-per-wear). Cladwell (free with in-app purchases, $2.99 to $59.99, 4.3 from 1,030 ratings: digital closet, daily outfit ideas, capsules). Also Whering, Acloset and Indyx, plus free methods like notebooks and the hanger-reversal trick. The angle here is narrower: track what you actually wear and push neglected items back into rotation, at a lower monthly price than Cladwell's top plans.",
+      "risks": "A crowded category with an established one-time-purchase leader (Stylebook), so a subscription has to be justified by ongoing nudges. Photographing a wardrobe takes effort; reviewers mention days of setup, so drop-off during onboarding is likely. The evidence comes mostly from one UK forum (MoneySavingExpert) and from women posting on clothes-challenge threads. Several of those posts are years old (2012 to 2015), and the newest forum posts are from 2022. Adjacent to the live 'suits-me' offer (how to dress well and where to find clothes), but this one is about using clothes you already own rather than style advice or shopping, so the copy should keep that distinction clear."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
