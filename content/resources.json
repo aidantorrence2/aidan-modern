@@ -8471,5 +8471,44 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "fix-patchy-weedy-lawn-month-by-month",
+  "offer": "lawn-back",
+  "title": "Fix a patchy, weedy lawn: what to do each month",
+  "description": "Work out whether it's moss, weeds, bare patches or hard ground, then follow a simple seasonal plan: rake and aerate in autumn, feed in spring, mow higher in summer.",
+  "intro": "Most tired lawns have one or two main problems. Fixing those in the right season does more than any single product.",
+  "sections": [
+   {
+    "h": "Find the main problem",
+    "list": [
+     "Spongy and green-brown: moss. Lots of broad leaves: weeds. Brown gaps: bare patches. Puddles: compacted ground."
+    ]
+   },
+   {
+    "h": "Autumn",
+    "list": [
+     "Rake out moss and dead grass, spike or aerate, and overseed bare patches."
+    ]
+   },
+   {
+    "h": "Spring",
+    "list": [
+     "Feed once the grass is growing. Treat weeds or dig out the big ones."
+    ]
+   },
+   {
+    "h": "Summer",
+    "list": [
+     "Mow higher and less often, and leave clippings in dry spells."
+    ]
+   },
+   {
+    "h": "Every few weeks",
+    "p": [
+     "Take a photo from the same spot so you can see it improve. Follow the label on any product you use."
+    ]
+   }
+  ]
  }
 ]

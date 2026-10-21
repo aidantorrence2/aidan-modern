@@ -22983,6 +22983,97 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-21",
+    "slug": "lawn-back",
+    "name": "Lawn Back",
+    "need": "My lawn looks patchy, it's more weeds and moss than grass, and I don't know where to start.",
+    "headline": "Patchy, weedy or mossy lawn and no idea where to start? Answer a few questions with a photo, get a plan for the year, and short weekend jobs as reminders.",
+    "buyer": "Adults 18+ with a patchy, weedy or mossy lawn who don't know where to start.",
+    "bullets": [
+      "A photo and a few questions to name your lawn's main problems: moss, weeds, bare patches or hard ground.",
+      "A year plan built around your local weather.",
+      "20 to 40 minute weekend jobs sent as reminders, and a monthly photo log."
+    ],
+    "price": "$2.99/month",
+    "priceUsd": 3,
+    "priceNote": "Or $19.99 a year.",
+    "reasonPrompt": "What's wrong with your lawn right now, and what have you tried?",
+    "faq": [
+      {
+        "q": "Do I need to buy products?",
+        "a": "No. The plan tells you what each job needs; you choose what to buy, if anything. Always follow the label on any lawn product."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Adults 18+. It is an independent app, not linked to any garden centre, lawn company or product brand."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-21",
+      "summary": "Beginners on Mumsnet (2020, 2026) and MoneySavingExpert (2017) say their lawn is patchy, weedy or mossy, they feel overwhelmed and they don't know what they're doing.",
+      "wtp": "On Mumsnet, NanTheWiser pays a lawn-care company twice a year for weed and feed, and 1forsorrow bought a weed, feed and moss treatment. Sunday Yard & Lawn Care (App Store): 4.7K ratings.",
+      "signals": [
+        {
+          "url": "https://www.mumsnet.com/talk/gardening/5543653-how-to-improve-my-patchy-weed-infested-lawns-beginner-gardener",
+          "who": "Seasidecatlady (Mumsnet)",
+          "date": "2026-06-17",
+          "quote": "my front and back garden lawns still look patchy when cut, seem to be made of more weeds than grass and generally look rather sad.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/gardening/5543653-how-to-improve-my-patchy-weed-infested-lawns-beginner-gardener",
+          "who": "ChasingCatsNotCars (Mumsnet)",
+          "date": "2026-06-17",
+          "quote": "I'm quite overwhelmed by bad weeds so grateful for any advice and tips.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/5674283/taking-on-the-lawn-but-clueless",
+          "who": "NurseMoneySaver1122 (MoneySavingExpert)",
+          "date": "2017-07-04",
+          "quote": "I'm more than clueless about what I'm doing!",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/5674283/taking-on-the-lawn-but-clueless",
+          "who": "moxter (MoneySavingExpert)",
+          "date": "2017-07-17",
+          "quote": "my lawn was looking hopeless",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/gardening/3923354-Help-Ive-killed-my-lawn",
+          "who": "1forsorrow (Mumsnet)",
+          "date": "2020-05-29",
+          "quote": "I bought a tub of stuff to kill weeds, feed the grass and kill the moss.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/gardening/3923354-Help-Ive-killed-my-lawn",
+          "who": "NanTheWiser (Mumsnet)",
+          "date": "2020-05-29",
+          "quote": "I have Green Thumb in twice a year to do a spring and autumn weed and feed treatment",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/sunday-lawn-yard-care/id6752791763",
+          "who": "Sunday Yard & Lawn Care App Store listing",
+          "date": "2026-10-21",
+          "quote": "4.7K Ratings",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Lawn-care treatment companies, Sunday, garden centres, YouTube.",
+      "risks": "Seasonal; most evidence from UK forums. Lawn companies already sell the service."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
