@@ -7574,5 +7574,44 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "golf-score-stuck-in-the-90s",
+  "offer": "stroke-leak",
+  "title": "Stuck in the 90s: the four numbers to write down after every round",
+  "description": "Golf score not moving? Write down putts, penalty shots, greens hit and up-and-downs after each round, then practise whatever costs you most.",
+  "intro": "Many golfers stuck in the 90s practise what they enjoy, not what costs them strokes. Four numbers per round show the difference.",
+  "sections": [
+   {
+    "h": "Putts",
+    "list": [
+     "Count every putt. More than 36 a round points to putting and lag distance."
+    ]
+   },
+   {
+    "h": "Penalty shots",
+    "list": [
+     "Out of bounds, water and lost balls. Cutting these is often the quickest gain."
+    ]
+   },
+   {
+    "h": "Greens hit",
+    "list": [
+     "How many greens you reach in regulation, or within one shot of it."
+    ]
+   },
+   {
+    "h": "Up-and-downs",
+    "list": [
+     "When you miss a green, how often you get down in two."
+    ]
+   },
+   {
+    "h": "Practise the biggest leak",
+    "p": [
+     "After five rounds, see which number is worst and give it most of next week's practice."
+    ]
+   }
+  ]
  }
 ]

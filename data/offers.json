@@ -20761,6 +20761,83 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-21",
+    "slug": "stroke-leak",
+    "name": "Stroke Leak",
+    "need": "I was stuck in the low 90s for what seemed like ages, and I can't see where I'm losing the strokes.",
+    "headline": "Golf score stuck for years? Log four numbers after each round, see which one costs you the most strokes, and aim next week's practice at that leak.",
+    "buyer": "Adult amateur golfers 18+ whose score or handicap has stalled.",
+    "bullets": [
+      "A two-minute after-round log: putts, penalty shots, greens hit and up-and-downs.",
+      "A plain chart of where your strokes go, round after round.",
+      "Next week's practice split toward your biggest leak, with one drill per area."
+    ],
+    "price": "$3.99/month",
+    "priceUsd": 4,
+    "priceNote": "Or $24.99 a year.",
+    "reasonPrompt": "What's your usual score, and what do you practise now?",
+    "faq": [
+      {
+        "q": "Will it lower my score?",
+        "a": "It can't promise that. It shows where your strokes go so you can choose what to practise."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Adults 18+. It is an independent app, not linked to any golf app, club maker, course or governing body."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-21",
+      "summary": "Golfers on TheSandTrap say their score has sat in the 90s for years. Repliers keep telling them to track basic stats to see where the strokes go.",
+      "wtp": "18Birdies (App Store): 306K ratings, paid plans up to $99.99. Repliers recommend paying for lessons.",
+      "signals": [
+        {
+          "url": "https://thesandtrap.com/forums/topic/65322-cant-get-out-of-the-mid-90s",
+          "who": "Travis Frost (TheSandTrap)",
+          "date": "2013-03-06",
+          "quote": "95 is a score im always stuck with",
+          "seen": "opened"
+        },
+        {
+          "url": "https://thesandtrap.com/forums/topic/65322-cant-get-out-of-the-mid-90s",
+          "who": "bradsul (TheSandTrap)",
+          "date": "2013-03-07",
+          "quote": "I was stuck in low 90's for what seemed like ages.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://thesandtrap.com/forums/topic/38876-stuck-in-the-90s/",
+          "who": "folker (TheSandTrap)",
+          "date": "2010-08-10",
+          "quote": "I'm stuck in the 90s. Been playing about 3 years or so.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://thesandtrap.com/forums/topic/44781-advice-breaking-90-i-cant-seem-to-do-it/",
+          "who": "bmartin461 (TheSandTrap)",
+          "date": "2011-03-14",
+          "quote": "I can't seem to get much lower than the mid-90's",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/-/id892700751",
+          "who": "18Birdies App Store listing",
+          "date": "2026-10-21",
+          "quote": "306K Ratings ... $99.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "18Birdies, Golfshot, Arccos, lessons, paper stat cards.",
+      "risks": "Posts are 2010 to 2013; big golf apps already offer stats. No promise about score or handicap."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
