@@ -20330,6 +20330,160 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-21",
+    "slug": "first-ollie",
+    "name": "First Ollie",
+    "need": "I've decided it's time I learnt to ollie, but I'm an adult and I'm starting almost from scratch.",
+    "headline": "Learning to skateboard as an adult? Flat-ground steps before the skatepark, one trick at a time, with a log of each session so you can see yourself getting there.",
+    "buyer": "Adults 18+ (mostly 25+) learning to skateboard who are stuck on the basics or embarrassed at the park.",
+    "bullets": [
+      "Flat-ground steps: stance, pushing, turning, stopping, then the ollie.",
+      "One trick at a time, broken into small stages you can tick off.",
+      "A short session log, and tips for quiet times and safety gear."
+    ],
+    "price": "$3.99/month",
+    "priceUsd": 4,
+    "priceNote": "Or $19 one-time.",
+    "reasonPrompt": "How old are you, and what's the first thing you want to learn on a skateboard?",
+    "faq": [
+      {
+        "q": "Is it safe to learn as an adult?",
+        "a": "Wear a helmet and wrist guards, start on flat ground, and go at your own pace. If you have health concerns, check with a doctor first."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Adults 18+. It is an independent app, not linked to any skateboard brand, skatepark or coach."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-21",
+      "summary": "Adults on Singletrack and AnandTech say they want to learn to skateboard in their 20s to 40s, and some wonder what's least embarrassing at the skatepark.",
+      "wtp": "One poster ordered a new deck, trucks and wheels. Skate Tricks (App Store): 566 ratings, Premium $17.99.",
+      "signals": [
+        {
+          "url": "https://singletrackworld.com/forum/off-topic/getting-into-skateboarding-at-45/",
+          "who": "kimbers (Singletrack)",
+          "date": "2022-03-21",
+          "quote": "As my mid life crisis gathers pace I've decided it's time I learnt to olie",
+          "seen": "opened"
+        },
+        {
+          "url": "https://singletrackworld.com/forum/off-topic/getting-into-skateboarding-at-45/",
+          "who": "kimbers (Singletrack)",
+          "date": "2022-03-22",
+          "quote": "I've ordered an enjoi deck with trucks and wheels",
+          "seen": "opened"
+        },
+        {
+          "url": "https://singletrackworld.com/forum/off-topic/getting-into-skateboarding-at-45/",
+          "who": "HoratioHufnagel (Singletrack)",
+          "date": "2022-03-22",
+          "quote": "What's the least embarrassing option?",
+          "seen": "opened"
+        },
+        {
+          "url": "https://singletrackworld.com/forum/off-topic/getting-into-skateboarding-at-45/",
+          "who": "easily (Singletrack)",
+          "date": "2022-03-26",
+          "quote": "These days I can ollie about 2cm",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.anandtech.com/threads/at-24-too-old-to-take-up-skateboarding.15159",
+          "who": "Paddington (AnandTech)",
+          "date": "2007-03-25",
+          "quote": "I have a strange desire to take up skateboarding.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/skate-tricks-learn-ride/id1478881964",
+          "who": "Skate Tricks App Store listing",
+          "date": "2026-10-21",
+          "quote": "566 Ratings ... $17.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Skate Tricks, lessons, YouTube tutorials.",
+      "risks": "Evidence mostly one 2022 thread; injury risk means copy must stress safety gear."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-21",
+    "slug": "bag-rounds",
+    "name": "Bag Rounds",
+    "need": "I box on a bag at home, but there's no form or routine to it and I don't feel like I'm working towards a goal.",
+    "headline": "Boxing at home with no coach? Structured bag rounds with a goal for each week, a 30-second video form check, and a log so you can see yourself improving.",
+    "buyer": "Adults 18+ who box at home on a bag or shadowbox with no coach.",
+    "bullets": [
+      "Structured rounds with a goal for each week.",
+      "A 30-second video check of your guard, feet and form.",
+      "A round log and weekly progress view."
+    ],
+    "price": "$4.99/month",
+    "priceUsd": 5,
+    "priceNote": "Or $29 one-time.",
+    "reasonPrompt": "What do you train with at home, and what are you working towards?",
+    "faq": [
+      {
+        "q": "Does it replace a coach?",
+        "a": "No. It gives you structure and a way to check your form. If you have pain or a health condition, check with a doctor before training."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Adults 18+. It is an independent app, not linked to any gym, boxing brand or governing body."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-21",
+      "summary": "People training alone on AnandTech and MartialTalk say their bag work has no structure or goal, and that training without a coach gives very little feedback.",
+      "wtp": "FightCamp (App Store): 24K ratings. Heavy Bag Pro (App Store): 753 ratings, $9.99 a month to $129.99.",
+      "signals": [
+        {
+          "url": "https://forums.anandtech.com/threads/boxing-routines.120592",
+          "who": "brikis98 (AnandTech)",
+          "date": "2007-12-14",
+          "quote": "there is no form or routine to it and I don't feel like I'm working towards a goal.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.anandtech.com/threads/anyone-have-any-heavy-bag-techniques.1448369/post-13364301",
+          "who": "beer (AnandTech)",
+          "date": "2004-11-12",
+          "quote": "I think that heavy bag drills might at least be able to help.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.martialtalk.com/threads/how-to-be-self-taught.117739/page-8",
+          "who": "Orange Lightning (MartialTalk)",
+          "date": "2015-03-23",
+          "quote": "The essential problem is that you have very little feedback for what you're doing.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/app/id1523407500",
+          "who": "Heavy Bag Pro App Store listing",
+          "date": "2026-10-21",
+          "quote": "753 Ratings ... $9.99 ... $129.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "FightCamp, Heavy Bag Pro, boxing classes, YouTube.",
+      "risks": "Forum posts are old (2004 to 2015); strong paid competitors."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

@@ -7373,5 +7373,83 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "learning-to-ollie-as-an-adult",
+  "offer": "first-ollie",
+  "title": "Learning to ollie as an adult: the flat-ground steps before the skatepark",
+  "description": "Starting skateboarding later in life? Get comfortable pushing and stopping, practise the ollie on grass or carpet first, then on flat ground, with pads on.",
+  "intro": "Plenty of adults learn to skateboard. Building up on flat ground first makes the skatepark much less daunting.",
+  "sections": [
+   {
+    "h": "Gear up",
+    "list": [
+     "A helmet and wrist guards at least. Knee and elbow pads help a lot when you're starting."
+    ]
+   },
+   {
+    "h": "Push, turn and stop",
+    "list": [
+     "Get comfortable riding, turning and stopping on flat ground before trying tricks."
+    ]
+   },
+   {
+    "h": "Practise the ollie standing still",
+    "list": [
+     "Try it on grass or carpet first, where the board won't roll."
+    ]
+   },
+   {
+    "h": "Then try it rolling slowly",
+    "list": [
+     "Pop the tail, slide your front foot up, and lift your knees."
+    ]
+   },
+   {
+    "h": "Go when it's quiet",
+    "p": [
+     "Early mornings are usually quieter at skateparks. Short, regular sessions beat long ones."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "boxing-at-home-no-coach",
+  "offer": "bag-rounds",
+  "title": "Boxing at home with no coach? Give your bag work a routine and a check",
+  "description": "Hitting the bag with no structure? Plan rounds with one focus each, film 30 seconds to check your form, and log your rounds weekly.",
+  "intro": "Training alone, it's easy to hit the bag without a plan. A simple routine and a quick form check make each session count.",
+  "sections": [
+   {
+    "h": "Warm up",
+    "list": [
+     "Skip or shadowbox for a few minutes first."
+    ]
+   },
+   {
+    "h": "One focus per round",
+    "list": [
+     "For example: jab only, then combinations, then footwork and angles."
+    ]
+   },
+   {
+    "h": "Film 30 seconds",
+    "list": [
+     "Check your guard, chin and feet. Are your hands coming back to your face?"
+    ]
+   },
+   {
+    "h": "Log your rounds",
+    "list": [
+     "Note rounds, round length and focus, so you can build up week by week."
+    ]
+   },
+   {
+    "h": "Protect your hands",
+    "p": [
+     "Wrap your hands and use proper gloves. Stop if anything hurts."
+    ]
+   }
+  ]
  }
 ]
