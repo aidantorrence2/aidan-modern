@@ -20937,6 +20937,83 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-21",
+    "slug": "nerve-back",
+    "name": "Nerve Back",
+    "need": "I've lost my nerve riding. I've never been so scared on a horse, and I want my confidence back.",
+    "headline": "Lost your nerve on a horse? Break the scary ride into small steps, rate your nerves before and after each ride, and see your confidence come back over a season.",
+    "buyer": "Adult riders 18+ who lost their confidence after a fall, a difficult horse or a long break.",
+    "bullets": [
+      "A confidence ladder: the ride that scares you, split into small steps you choose.",
+      "A one-minute log after each ride: nerves 0 to 10 before and after, and what went well.",
+      "A plan for your next ride and a season view of your progress."
+    ],
+    "price": "$3.99/month",
+    "priceUsd": 4,
+    "priceNote": "Or $24.99 a year.",
+    "reasonPrompt": "What happened to your confidence, and what's the ride you'd like to get back to?",
+    "faq": [
+      {
+        "q": "Is it riding instruction or therapy?",
+        "a": "No. It's a planning and logging tool. Ride with a qualified instructor, wear safety gear, and if fear is affecting your daily life, talk to a professional."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Adults 18+. It is an independent app, not linked to any riding school, equestrian body or app."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-21",
+      "summary": "Adult riders on the NewRider forum, in 1999 and 2025, describe losing their nerve, fear of cantering and confidence slowly declining.",
+      "wtp": "stephen fisher paid a yard manager for confidence lessons. Ride iQ (App Store): 129 ratings, plans from $29.99 a month to $299 a year.",
+      "signals": [
+        {
+          "url": "https://www.newrider.com/threads/no-confidence.101/",
+          "who": "Gail May (NewRider)",
+          "date": "1999-04-13",
+          "quote": "paralysed with fear and sobbing",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.newrider.com/threads/no-confidence.101/",
+          "who": "KathyC (NewRider)",
+          "date": "1999-04-15",
+          "quote": "I was always scared of cantering.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.newrider.com/threads/no-confidence.101/",
+          "who": "stephen fisher (NewRider)",
+          "date": "1999-04-13",
+          "quote": "paid to have the Yard Manager instruct me",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.newrider.com/threads/lack-of-confidence.263962/",
+          "who": "Panagiota (NewRider)",
+          "date": "2025-03-08",
+          "quote": "my confidence has slowly declined.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/app/id1569618925",
+          "who": "Ride iQ App Store listing",
+          "date": "2026-10-21",
+          "quote": "129 Ratings ... $29.99 ... $299",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Ride iQ, confidence lessons, riding sports psychologists.",
+      "risks": "Main paid app has only 129 ratings and sells lessons. One thread is from 1999. Riding carries real injury risk, so the app must never push riders past what their instructor advises."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
