@@ -9,7 +9,8 @@ from PIL import Image
 
 R, BASE, OUT = sys.argv[1:4]
 VIDEOS = json.load(open(sys.argv[4])) if len(sys.argv) > 4 else []
-R3 = sys.argv[5] if len(sys.argv) > 5 else None   # render-v3.mjs output: photo-heavy still ads (top picks)
+R3 = sys.argv[5] if len(sys.argv) > 5 else None
+R4 = sys.argv[6] if len(sys.argv) > 6 else None   # render-v4.mjs: 10 carousels from new_top_tier_candidates   # render-v3.mjs output: photo-heavy still ads (top picks)
 PICKS = ['c00', 'n04', 'n11']   # Aidan liked these three (20 Oct)
 
 def thumb(path, w=300):
@@ -85,6 +86,25 @@ def card3(cid):
     return f'''<article class="card"><header><span class="num">{cid.upper()}</span><h3>{html.escape(title)}</h3><span class="lever">{html.escape(lever)}</span></header>
   <p class="why">{html.escape(why)}</p><div class="strip">{frames}</div><p class="needs ok">ready · {len(names)} card{'s' if len(names) != 1 else ''} · top picks only</p></article>'''
 photo_ads = ''.join(card3(c) for c in META3) if R3 else ''
+META4 = {
+ 'k01': ('Winner deck, nine prints a card', 'CTR · proof density', 'Your winning deck, 7 cards, with nine prints on "my recent work" and "never done this before?".'),
+ 'k02': ('Staggered pairs, six cards', 'CTR · women & men', 'A woman and a man per card, one high, one low, zig-zagging; copy from your deck.'),
+ 'k03': ('Hi, I\'m Aidan + 24 portraits', 'CTR · trust', 'Your hello, then twelve women, then twelve men, then the CTA.'),
+ 'k04': ('Notes app, two pages of photos', 'CPM + CTR · native look', 'The note with nine portraits, a second page with nine more, then the CTA.'),
+ 'k05': ('Staggered trios', 'CTR · proof density', 'Three prints cascading down each card, five cards, fifteen people.'),
+ 'k06': ('Portrait carousel, no words', 'CTR · let the photos talk', 'Hook, eight full-frame portraits with no text at all, then the CTA.'),
+ 'k07': ('Grid of 20 → hero', 'CTR · thumb-stop', 'Twenty faces on the hook, one big portrait, then the CTA.'),
+ 'k08': ('The table of twelve', 'CTR · proof', 'Twelve prints over two cards, then the CTA.'),
+ 'k09': ('Big + inset', 'CTR · two per card', 'Each card a full-frame portrait with a second print laid over the corner.'),
+ 'k10': ('Photo-booth strips ×2', 'CTR · native look', 'Two cards of three strips (24 portraits), then the CTA.'),
+}
+def card4(cid):
+    title, lever, why = META4[cid]
+    names = json.load(open(os.path.join(R4, 'index.json')))[cid]
+    frames = strip([os.path.join(R4, cid, n + '.jpg') for n in names], names)
+    return f'''<article class="card"><header><span class="num">{cid.upper()}</span><h3>{html.escape(title)}</h3><span class="lever">{html.escape(lever)}</span></header>
+  <p class="why">{html.escape(why)}</p><div class="strip">{frames}</div><p class="needs ok">ready · {len(names)} cards · new_top_tier_candidates</p></article>'''
+car4 = ''.join(card4(c) for c in META4) if R4 else ''
 picks = ''.join(card_html(c) for c in PICKS)
 rest = ''.join(card_html(c) for c in META if c not in PICKS)
 vids = ''.join(vcard(v) for v in sorted(VIDEOS, key=lambda v: not v.get('pick')))
@@ -155,6 +175,9 @@ video {{ width:min(100%,300px); aspect-ratio:9/16; background:#000; display:bloc
  <div class="box"><h4>Round 3</h4><p>Hero test on the winning layout (three different first frames), plus the real selfie clip if you film it.</p><p>Judge on CPC first, then cost per chat once each ad has 5+ chats.</p></div>
 </div>
 
+<h2>New carousels (new_top_tier_candidates)</h2>
+<p class="lede">Ten carousel variations from your new folder, women and men, copy only from your decks. No text on any face.</p>
+{car4}
 <h2>Photo ads, more photos</h2>
 <p class="lede">Still ads built only from your top_tier_candidates picks (women and men), each showing many portraits at once. No text on any face.</p>
 {photo_ads}
