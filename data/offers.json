@@ -19740,6 +19740,83 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-21",
+    "slug": "room-ledger",
+    "name": "Room Ledger",
+    "need": "I don't have a lot of pictures or a video of what I own. I need to get on that.",
+    "headline": "Never listed what you own in case of a fire, flood or burglary? Build a home contents inventory room by room: a photo, rough value and receipt for each item.",
+    "buyer": "Adult renters and homeowners with contents insurance who have never listed what they own.",
+    "bullets": [
+      "Go room by room: photo, rough value and receipt for each item.",
+      "Per-room totals to compare with your policy limit.",
+      "One export ready for a claim, and a yearly reminder to refresh it."
+    ],
+    "price": "$3.99/month",
+    "priceUsd": 4,
+    "priceNote": "Or $24 a year.",
+    "reasonPrompt": "Do you have contents insurance, and have you ever listed what you own?",
+    "faq": [
+      {
+        "q": "Is this insurance advice?",
+        "a": "No. It's a list of what you own. Check your policy or ask your insurer what they need for a claim."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Adults 18+. It is an independent app, not linked to any insurer or comparison site."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-21",
+      "summary": "Homeowners on SavingAdvice say they haven't documented what they own, and App Store reviewers describe insurers asking for a detailed inventory before paying out after a loss.",
+      "wtp": "Under My Roof (App Store): 531 ratings, $4.99 a month or $34.99 a year.",
+      "signals": [
+        {
+          "url": "https://www.savingadvice.com/forums/forum/financial-chit-chat/general-discussion/12805-inventory-for-homeowners-insurance?p=184414",
+          "who": "JanH (SavingAdvice)",
+          "date": "2006-11-04",
+          "quote": "But I don't have a lot of pictures or a video. Need to get on that",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.savingadvice.com/forums/forum/financial-chit-chat/general-discussion/12805-inventory-for-homeowners-insurance?p=184414",
+          "who": "sweeps (SavingAdvice)",
+          "date": "2006-11-04",
+          "quote": "I've done this, but haven't done it for a while -- need to do it again.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.savingadvice.com/forums/forum/financial-chit-chat/general-discussion/12805-inventory-for-homeowners-insurance?p=184414",
+          "who": "creditcardfree (SavingAdvice)",
+          "date": "2006-11-05",
+          "quote": "They now have to inventory everything that was damaged",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/under-my-roof-home-inventory/id1524335878?see-all=reviews",
+          "who": "MrsYack (App Store review, Under My Roof)",
+          "date": "2026-01-16",
+          "quote": "After losing a small cabin to wildfire, my insurance company wanted a detailed inventory list before paying out on the contents portion of the policy.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/under-my-roof-home-inventory/id1524335878",
+          "who": "Under My Roof App Store listing",
+          "date": "2026-10-21",
+          "quote": "531 Ratings ... $4.99 ... $34.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Home inventory apps, spreadsheets, phone videos.",
+      "risks": "Low-urgency chore; free inventory apps exist; forum posts from 2006."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

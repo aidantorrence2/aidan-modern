@@ -7061,5 +7061,44 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "home-contents-inventory-one-evening",
+  "offer": "room-ledger",
+  "title": "Home contents inventory in one evening, room by room",
+  "description": "Never listed what you own? Walk room by room with your phone, photograph or film everything, note rough values, and keep a copy somewhere else.",
+  "intro": "After a fire, flood or burglary, insurers often ask for a list of what was lost. Making one now takes an evening and saves a lot of stress later.",
+  "sections": [
+   {
+    "h": "Start with a video",
+    "list": [
+     "Walk through each room filming slowly, opening cupboards and drawers. Say what things are as you go."
+    ]
+   },
+   {
+    "h": "Photograph valuables",
+    "list": [
+     "Take close-up photos of expensive items, with serial and model numbers."
+    ]
+   },
+   {
+    "h": "Note rough values",
+    "list": [
+     "Write down what bigger items would cost to replace, and keep receipts where you have them."
+    ]
+   },
+   {
+    "h": "Keep a copy elsewhere",
+    "list": [
+     "Store the files in cloud storage or with a relative, not only at home."
+    ]
+   },
+   {
+    "h": "Check your cover",
+    "p": [
+     "Add up the totals and compare them with your policy limit. Ask your insurer if you're not sure what they need."
+    ]
+   }
+  ]
  }
 ]
