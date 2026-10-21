@@ -23809,6 +23809,105 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-21",
+    "slug": "room-fit",
+    "name": "Room Fit",
+    "need": "I can't work out how to arrange the furniture in my room. It never feels right, and I don't want to drag the sofa around ten times to find out.",
+    "headline": "Enter your room and the furniture you already own, and get three layouts that fit, with walkways, doors and outlets checked, before you lift a single thing.",
+    "buyer": "Adults 18+ moving into a new place or living with a room that feels cramped or awkward, who want a layout plan without a designer or 3D software.",
+    "bullets": [
+      "Type or photograph your room's measurements, doors, windows and outlets once, then add the pieces you own by their sizes",
+      "Get three ranked layouts that keep walkways clear and doors free to swing, with a short reason for each one",
+      "Mark pieces that can't move (a heavy bed, a desk setup) and the layouts plan around them, so you can tell the movers exactly where things go"
+    ],
+    "price": "$4.99/month",
+    "priceUsd": 5,
+    "priceNote": "Or $14.99 for one room plan with no subscription.",
+    "reasonPrompt": "What room are you trying to arrange, and what isn't working about it right now?",
+    "faq": [
+      {
+        "q": "Who makes this?",
+        "a": "Room Fit is an independent app for adults 18+. It has no connection to any furniture retailer, design-software company or interior design firm."
+      },
+      {
+        "q": "Do I need to buy new furniture?",
+        "a": "No. It starts with the pieces you already own. You can add a planned purchase by its measurements to see whether it fits first."
+      },
+      {
+        "q": "Do I need design or CAD skills?",
+        "a": "No. You enter lengths and widths and pick from the suggested layouts. There is no 3D modelling to learn."
+      },
+      {
+        "q": "How accurate is it?",
+        "a": "It is only as accurate as the measurements you enter. Measure twice before you move anything heavy."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-21",
+      "summary": "People keep asking, in their own words, for a way to work out a furniture layout without trial-and-error lifting. Examples: a 2026 Tildes poster planning an apartment around a daybed they can't move, a Straight Dope poster asking for software that places the furniture for them, a couple who called themselves 'complete interior design tools', a poster in a 'shoe box' trying to maximize space, and a homeowner who 'tries and tries' and is now thinking about paying a designer.",
+      "wtp": "Home Design 3D (App Store): 105K ratings, Monthly $12.99, Annual $44.99. On Straight Dope, PunditLisa bought interior design software, and saje is weighing up paying an interior designer.",
+      "signals": [
+        {
+          "url": "https://tildes.net/~life.home_improvement/1s7q/help_with_1bed_wfh_apartment_layout",
+          "who": "Aran (Tildes)",
+          "date": "2026-01-16",
+          "quote": "I'd really like to work on laying out my potential future apartment with those two items in mind",
+          "seen": "opened"
+        },
+        {
+          "url": "https://boards.straightdope.com/t/please-help-this-cheapskate-re-arrange-furniture/469900",
+          "who": "kaylasdad99 (Straight Dope)",
+          "date": "2008-10-28",
+          "quote": "I want to have the software place the furniture for me",
+          "seen": "opened"
+        },
+        {
+          "url": "https://boards.straightdope.com/t/living-room-rearranging-software-or-help/333670",
+          "who": "inkleberry (Straight Dope)",
+          "date": "2005-12-02",
+          "quote": "Is there a site online where we can plan out a furniture design? How does one figure out to arrange stuff anyway?",
+          "seen": "opened"
+        },
+        {
+          "url": "https://boards.straightdope.com/t/i-need-an-interior-designer-i-think-do-i/946708",
+          "who": "saje (Straight Dope)",
+          "date": "2021-07-17",
+          "quote": "I try and try and it just doesn’t work",
+          "seen": "opened"
+        },
+        {
+          "url": "https://boards.straightdope.com/t/room-planning-software/371283",
+          "who": "Harmonix (Straight Dope)",
+          "date": "2006-09-03",
+          "quote": "I need to maximize my space",
+          "seen": "opened"
+        },
+        {
+          "url": "https://boards.straightdope.com/t/living-room-rearranging-software-or-help/333670",
+          "who": "PunditLisa (Straight Dope)",
+          "date": "2005-12-02",
+          "quote": "I bought one of those interior design software programs when I designed my kitchen a few years back",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/home-design-3d-draw-plan/id463768717",
+          "who": "Home Design 3D: Draw & Plan (App Store)",
+          "date": "2026-10-21",
+          "quote": "Weekly premium $4.99 Monthly Plan $12.99 Annual Plan $44.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Home Design 3D, Home Planner AI, Roomle, Planner 5D and magicplan are full 3D or floor-plan editors where you place everything yourself. Free retailer planners (IKEA and furniture-store tools) push their own catalogues. Graph paper and paper cut-outs are the common DIY fallback. None of these focuses on 'here is my existing furniture, suggest layouts that fit'.",
+      "risks": "The paid apps in this space are crowded and well rated, and AI room-design apps are adding auto-layout. Measurement errors could produce layouts that don't fit. Several of the forum posts are old (2005-2008), and one poster said they did not want to pay for software. People often need a room plan only once, so monthly retention may be weak, which is why there is a one-off price."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

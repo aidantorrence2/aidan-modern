@@ -8822,5 +8822,44 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "arrange-furniture-without-moving-it-ten-times",
+  "offer": "room-fit",
+  "title": "How to arrange furniture in a room without dragging the sofa around ten times",
+  "description": "Measure the room and your furniture once, mark doors, windows and sockets, then try layouts on paper with walkways kept clear before lifting anything.",
+  "intro": "Most layout problems come from walkways, doors and the one piece that won't move. Planning on paper first saves your back.",
+  "sections": [
+   {
+    "h": "Measure once",
+    "list": [
+     "Room walls, door swings, windows, radiators and sockets. Then each big piece of furniture."
+    ]
+   },
+   {
+    "h": "Draw it to scale",
+    "list": [
+     "Graph paper with one square per 10 cm, or a simple app. Cut out the furniture shapes."
+    ]
+   },
+   {
+    "h": "Fix the anchor",
+    "list": [
+     "Place the piece that can't move first: the bed, the sofa facing the TV, or the desk by the socket."
+    ]
+   },
+   {
+    "h": "Keep walkways clear",
+    "list": [
+     "Leave roughly 75-90 cm for main paths and room for doors to open fully."
+    ]
+   },
+   {
+    "h": "Try three layouts",
+    "p": [
+     "Compare them on paper, pick one, then measure twice before moving anything heavy."
+    ]
+   }
+  ]
  }
 ]
