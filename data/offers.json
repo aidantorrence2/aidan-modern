@@ -22363,6 +22363,94 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-21",
+    "slug": "both-clocks",
+    "name": "Both Clocks",
+    "need": "We're in a long-distance relationship, and between the time difference and our schedules we barely get a decent call, so it's really hard being away from each other.",
+    "headline": "Long distance, different clocks? See when you're both actually free, get a prompt for every call, and count down to the next visit together.",
+    "buyer": "Adults 18+ in a long-distance relationship who struggle to fit calls around time zones, work and sleep.",
+    "bullets": [
+      "Shows both of your local times side by side and highlights the windows when you're both awake and free, so calls stop landing at 11pm for one of you",
+      "A short conversation prompt for each call, so tired evening calls don't fall back to 'so... how was your day?'",
+      "A shared countdown to the next visit, plus a simple plan for who travels when, so the effort feels fair"
+    ],
+    "price": "$4.99/month",
+    "priceUsd": 5,
+    "priceNote": "One subscription covers both partners.",
+    "reasonPrompt": "What's the hardest part of your long-distance relationship right now: the time difference, finding things to talk about, or the gap between visits?",
+    "faq": [
+      {
+        "q": "Who is Both Clocks for?",
+        "a": "Both Clocks is an independent app for adults 18+ in a long-distance relationship. It isn't affiliated with any other relationship app or brand."
+      },
+      {
+        "q": "Is this relationship counselling?",
+        "a": "No. It's a practical tool for planning calls and visits and giving you things to talk about. It isn't therapy or professional advice."
+      },
+      {
+        "q": "Do we both need it?",
+        "a": "It's designed for two partners to use together, so you can both see the shared times, prompts and countdown."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-21",
+      "summary": "People in long-distance relationships describe the same practical pain in their own words: time differences and work schedules squeeze out good calls, being apart is hard, and travelling to see each other wears them out. Posts on Straight Dope (2003 and 2018) and Singletrack (2013) show the problem across distances from a 2.5-hour drive to transatlantic.",
+      "wtp": "Paired (App Store), a couples app that markets long-distance games: 209K ratings, Premium $14.99 a month or $74.99 a year. A long-distance reviewer writes 'It may seem like a lot to spend $70 for the year for it'.",
+      "signals": [
+        {
+          "url": "https://boards.straightdope.com/t/long-distance-relationships/166334",
+          "who": "flairgun (Straight Dope)",
+          "date": "2003-04-04",
+          "quote": "which is 11pm here, so I’m often tired and ready to hit the sack by then.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://boards.straightdope.com/t/long-distance-relationship-disaster-or-can-it-work/819545",
+          "who": "Sir_T-Cups (Straight Dope)",
+          "date": "2018-08-13",
+          "quote": "it was really hard being away from her, but breaking up wouldn’t have accomplished anything either",
+          "seen": "opened"
+        },
+        {
+          "url": "https://singletrackworld.com/forum/off-topic/any-long-distance-relationships-out-there/",
+          "who": "aelliott (Singletrack)",
+          "date": "2013-11-03",
+          "quote": "after a long time being apart we were both really hoping things would click and she'd find something nearby",
+          "seen": "opened"
+        },
+        {
+          "url": "https://singletrackworld.com/forum/off-topic/any-long-distance-relationships-out-there/",
+          "who": "McHamish (Singletrack)",
+          "date": "2013-11-03",
+          "quote": "We found it quite difficult, I would travel up every weekend and end up falling asleep all the time when we were together. We argued a lot and almost split up.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1469609343",
+          "who": "Evajan_bieber (App Store review of Paired)",
+          "date": "2022-10-14",
+          "quote": "It may seem like a lot to spend $70 for the year for it",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1469609343",
+          "who": "Paired App Store listing",
+          "date": "2026-10-21",
+          "quote": "209K Ratings ... $14.99 ... $74.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Paired (209K ratings, IAP $14.99/month and $74.99/year on its App Store page) is a general couples question app that markets long-distance games. Free tools people already use include WhatsApp, FaceTime, Skype and shared calendars. There are also paid hardware gifts like Lovebox and Bond Touch. None of these is built mainly around finding shared free time across time zones and planning visits.",
+      "risks": "The forum evidence is older (2003, 2013 and 2018), and the posters mostly describe coping rather than asking for an app. Free messaging and calendar tools are good enough for many couples. Churn is built in, because the need ends when the couple moves in together or breaks up. Paired already holds the 'long distance' App Store search space. A 2-3 hour drive and a different continent are very different problems, and the time-zone feature only matters for the second."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
