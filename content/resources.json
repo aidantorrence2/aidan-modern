@@ -7139,5 +7139,44 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "stop-scrolling-without-cold-turkey",
+  "offer": "reptoll",
+  "title": "How to stop scrolling without quitting cold turkey",
+  "description": "Want to scroll less but not delete everything? Count your sessions, add friction to the apps you overuse, and cut down a little each week.",
+  "intro": "Cold turkey rarely lasts. Making scrolling slightly harder, and cutting down gradually, tends to stick better.",
+  "sections": [
+   {
+    "h": "Count first",
+    "list": [
+     "Check your phone's screen-time report for a few days to see which apps take the most time."
+    ]
+   },
+   {
+    "h": "Add friction",
+    "list": [
+     "Move those apps off your home screen, log out after each use, or turn off their notifications."
+    ]
+   },
+   {
+    "h": "Set a small daily limit",
+    "list": [
+     "Pick a limit a bit lower than your current average and lower it a little each week."
+    ]
+   },
+   {
+    "h": "Swap the habit",
+    "list": [
+     "Decide what you'll do instead in the moments you usually scroll, like in bed or on the sofa."
+    ]
+   },
+   {
+    "h": "Phone out of the bedroom",
+    "p": [
+     "Charging your phone outside the bedroom removes the late-night and first-thing scroll."
+    ]
+   }
+  ]
  }
 ]
