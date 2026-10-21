@@ -103,7 +103,7 @@ def card4(cid):
     names = json.load(open(os.path.join(R4, 'index.json')))[cid]
     frames = strip([os.path.join(R4, cid, n + '.jpg') for n in names], names)
     return f'''<article class="card"><header><span class="num">{cid.upper()}</span><h3>{html.escape(title)}</h3><span class="lever">{html.escape(lever)}</span></header>
-  <p class="why">{html.escape(why)}</p><div class="strip">{frames}</div><p class="needs ok">ready · {len(names)} cards · new_top_tier_candidates</p></article>'''
+  <p class="why">{html.escape(why)}</p><div class="strip">{frames}</div><p class="needs ok">ready · {len(names)} cards · new_top_tier_candidates (all 106 used)</p></article>'''
 car4 = ''.join(card4(c) for c in META4) if R4 else ''
 picks = ''.join(card_html(c) for c in PICKS)
 rest = ''.join(card_html(c) for c in META if c not in PICKS)
@@ -176,7 +176,7 @@ video {{ width:min(100%,300px); aspect-ratio:9/16; background:#000; display:bloc
 </div>
 
 <h2>New carousels (new_top_tier_candidates)</h2>
-<p class="lede">Ten carousel variations from your new folder, women and men, copy only from your decks. No text on any face.</p>
+<p class="lede">Ten carousel variations from your new folder: all 106 photos are used, women and men, copy only from your decks. No text on any face.</p>
 {car4}
 <h2>Photo ads, more photos</h2>
 <p class="lede">Still ads built only from your top_tier_candidates picks (women and men), each showing many portraits at once. No text on any face.</p>

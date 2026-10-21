@@ -120,8 +120,9 @@ const HOW = dark(`
 
 
 
-// ---- photo pools (file stems in new_top_tier_candidates). Left out on purpose: 000008-7, 000014, 000031-3, 000036-2
-// (nude/underwear — not for ads); Cyrillic shop signs (R1-00005-0001/-0013/-0027/-0028, R1-09009-0004) only as small tiles.
+// ---- photo pools: ALL 106 frames in new_top_tier_candidates (Aidan, 20 Oct: "i didn't ask you to leave any out").
+// An allocator hands out unused frames first, so the ten carousels together use every photo; landscape frames only go
+// into print slots (native aspect, never cropped to portrait).
 const S2 = s => load(path.join(PHOTOS, `${s}.jpg`))
 const WOMEN = ['000013', '000040-3', '000042', '000086', '11954-12', '11954-34', 'R1-00005-0014', 'R1-00005-0017', 'R1-00005-0025',
   'R1-00005-0031', 'R1-00005-0032', 'R1-00006-001A', 'R1-00006-008A', 'R1-00006-013A', 'R1-00006-015A', 'R1-00006-017A', 'R1-00006-031A',
@@ -130,14 +131,29 @@ const WOMEN = ['000013', '000040-3', '000042', '000086', '11954-12', '11954-34',
   'R1-09797-0005', 'R1-09797-0009', 'R1-09797-0011', 'R1-09797-0016', 'R1-09797-0018', 'R1-09797-0021', 'R1-09797-0026', 'R1-09797-0027',
   'R1-09798-030A', 'R1-09798-032A', 'R1-09798-035A', 'R1-09799-0007', 'R1-09799-0025', 'R1-09799-0034', 'R1-09799-0037', 'R1-09952-0003',
   'R1-09952-0007', 'R1-09952-0012', 'R1-09952-0013', 'R1-09952-0019', 'R1-09952-0021', 'R1-09952-0026', 'R1-09953-010A', 'R1-09953-011A',
-  'R1-09953-013A', 'R1-09953-021A', 'R1-09996-0002', 'R1-09996-0026', 'R1-09996-0028', 'R1-09996-0029']
+  'R1-09953-013A', 'R1-09953-021A', 'R1-09996-0002', 'R1-09996-0026', 'R1-09996-0028', 'R1-09996-0029',
+  '000008-7', '000014', '000031-3', '000036-2', '000089', 'R1-00005-0001', 'R1-00005-0013', 'R1-00005-0027', 'R1-00005-0028']
+const LAND = ['000040-2', 'R1-00005-0024', 'R1-09793-0029', 'R1-09793-030A', 'R1-09797-0031']   // landscape: prints only
 const MEN = ['R1-00009-0002', 'R1-00009-0021', 'R1-09794-021A', 'R1-09794-022A', 'R1-09794-031A', 'R1-09794-034A', 'R1-09794-035A',
   'R1-09794-036A', 'R1-09795-0012', 'R1-09995-0010', 'R1-09995-0016', 'R1-09995-0019', 'R1-09997-0000', 'R1-09997-0003', 'R1-09997-0005',
   'R1-09997-0006', 'R1-09997-0009', 'R1-09997-0011', 'R1-09997-0012', 'img0006', 'img0007', 'img0013', 'img0015-2', 'img0020-3',
-  'img0022-5-2', 'img0027-3', 'img0030-3']
-const P = s => { if (!WOMEN.includes(s) && !MEN.includes(s)) throw new Error(`not in the pool: ${s}`); return S2(s) }
+  'img0022-5-2', 'img0027-3', 'img0030-3', 'R1-00009-0004', 'R1-00009-0007']
+const USED = new Set()
+const P = s => { if (!WOMEN.includes(s) && !MEN.includes(s) && !LAND.includes(s)) throw new Error(`not in the pool: ${s}`); USED.add(s); return S2(s) }
 // deterministic picks: take n from a pool starting at offset k, so every carousel uses different photos
-const take = (pool, k, n) => Array.from({ length: n }, (_, i) => pool[(k + i * 3) % pool.length])
+// allocator: next n frames from this pool that no carousel has used yet (then cycles); k is kept for call-site readability
+const cursor = new Map()
+const take = (pool, k, n) => {
+  const out = []
+  let c = cursor.get(pool) || 0
+  for (let tries = 0; out.length < n && tries < pool.length * 3; tries++, c++) {
+    const s = pool[c % pool.length]
+    if (out.includes(s)) continue
+    if (USED.has(s) && pool.some(x => !USED.has(x) && !out.includes(x))) continue
+    out.push(s); USED.add(s)
+  }
+  cursor.set(pool, c); return out
+}
 const mix = (ws, ms) => { const o = []; for (let i = 0; i < Math.max(ws.length, ms.length); i++) { if (ws[i]) o.push(ws[i]); if (ms[i]) o.push(ms[i]) } return o }
 const C = {}
 const band = (top, h, inner, bg = '#0a0a0a') => `<div style="position:absolute;left:0;right:0;top:${top}px;height:${h}px;background:${bg};"></div><div style="position:absolute;top:${top}px;left:40px;right:40px;height:${h}px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;">${inner}</div>`
@@ -231,7 +247,7 @@ const L = { work: 'my recent work', nerv: 'never done this before?', nervSub: "d
   const t1 = mix(take(WOMEN, 30, 3), take(MEN, 30, 3)), t2 = mix(take(WOMEN, 34, 3), take(MEN, 34, 3))
   const spB = sp.map(([x, y, w, r]) => [x, y + 380, w, -r])
   C.k08 = [['01-table', dark(`<div style="position:absolute;top:250px;left:60px;right:60px;text-align:center;">${cityBig(110, 'Free Photo Shoot.', 60)}</div>${t1.map((s, i) => pr(P(s), ...spB[i])).join('')}`, false)],
-    ['02-table', dark(`<div style="position:absolute;top:250px;left:60px;right:60px;text-align:center;">${TITLE(L.work)}</div>${t2.map((s, i) => pr(P(s), ...sp[i])).join('')}${pr(P(take(WOMEN, 40, 1)[0]), 380, 1290, 320, 2)}`)],
+    ['02-table', dark(`<div style="position:absolute;top:250px;left:60px;right:60px;text-align:center;">${TITLE(L.work)}</div>${t2.map((s, i) => pr(P(s), ...sp[i])).join('')}${LAND.map((s, i) => pr(P(s), [40, 560, 300, 40, 560][i], [1300, 1300, 1560, 1640, 1640][i], 420, [-3, 3, 1, 2, -2][i])).join('')}`)],
     ['03-cta', ctaP('R1-09798-032A')]]
 }
 
@@ -289,6 +305,7 @@ async function render() {
   await browser.close()
   fs.writeFileSync(IDX, JSON.stringify(report, null, 1))
   if (!VISION) console.warn('  (no --vision: face audit skipped)')
+  if (!ONLY) { const all = [...WOMEN, ...MEN, ...LAND], miss = all.filter(x => !USED.has(x)); console.log(`photos used: ${all.length - miss.length}/${all.length}${miss.length ? ' — unused: ' + miss.join(' ') : ''}`) }
   if (faceFails.length) { console.error(`${faceFails.length} slide(s) put text over a face`); process.exitCode = 1 }
 }
 render()
