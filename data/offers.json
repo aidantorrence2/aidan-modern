@@ -21959,6 +21959,126 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-21",
+    "slug": "renew-ahead",
+    "name": "Renew Ahead",
+    "need": "I keep forgetting when my passport and driving licence expire, and I only find out when a trip is days away (or I'm already at the airport).",
+    "headline": "Stop finding out at the check-in desk. Log every passport, licence and ID in your household once, and get a nudge months before each one needs renewing.",
+    "buyer": "Adults 18+ who travel and keep documents for themselves or family, and have had, or nearly had, a trip derailed by an expiring passport or licence.",
+    "bullets": [
+      "Add each person's passport, driving licence, ID card and travel registrations with their expiry dates in a couple of minutes",
+      "Choose how far ahead you want warning, e.g. 9 months out for a passport, so there's time to renew without paying to rush it",
+      "Add an upcoming trip and see at a glance whose documents expire around it, so you can check them against the airline's and destination's own rules"
+    ],
+    "price": "$2.99/month",
+    "priceUsd": 3,
+    "priceNote": "One plan covers your whole household's documents.",
+    "reasonPrompt": "Tell us about the last time a passport, licence or ID expiry caught you (or someone you travel with) by surprise. What happened?",
+    "faq": [
+      {
+        "q": "Who makes Renew Ahead?",
+        "a": "Renew Ahead is an independent app for adults 18+. It is not affiliated with, endorsed by or connected to any government, passport office, licensing agency or airline."
+      },
+      {
+        "q": "Does it renew my passport or licence for me?",
+        "a": "No. It reminds you when renewal is coming up so you have time to apply through the official channels yourself."
+      },
+      {
+        "q": "Will it tell me whether my passport is valid enough to enter a country?",
+        "a": "No. Entry and airline rules vary and change, so always check with your airline and the official government source for your destination. Renew Ahead helps you see the dates early enough to do that."
+      },
+      {
+        "q": "Can I keep my partner's and family members' documents in it?",
+        "a": "Yes, that's the idea: one place for the expiry dates of everyone you travel with, so nobody's document slips through the cracks."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-21",
+      "summary": "On the Rick Steves Travel Forum the same story keeps coming back: someone finds out at online check-in or at the airport counter that a passport or driving licence is about to expire or fall short of the validity rules, and the trip is cancelled, split up or saved only by a rushed renewal. One regular says the topic 'comes up on the forum 3-4 times a year'. Posters say in their own words that they let it slip, and several now work around it with calendar reminders or a desktop file of expiry dates. That is a clear need for a simple household expiry tracker built for this.",
+      "wtp": "On the Rick Steves forum, phred paid an expediter to renew in a week ('it ain't cheap') and riverain paid for expedited processing ('it cost quite a bit!'). jennymom678 cancelled a trip at the airport.",
+      "signals": [
+        {
+          "url": "https://community.ricksteves.com/travel-forum/general-europe/passport-expiration-warning",
+          "who": "jennymom678 (Rick Steves Travel Forum)",
+          "date": "2022-12-12",
+          "quote": "Recently had to cancel our trip to Italy after arriving at the airport on the day we were to leave, only to discover my daughter’s passport expired within 90 days.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://community.ricksteves.com/travel-forum/general-europe/passport-expiration-warning",
+          "who": "Carol now retired (Rick Steves Travel Forum)",
+          "date": "2022-12-12",
+          "quote": "This comes up on the forum 3-4 times a year",
+          "seen": "opened"
+        },
+        {
+          "url": "https://community.ricksteves.com/travel-forum/general-europe/passport-expiration-warning",
+          "who": "Kirstin (Rick Steves Travel Forum)",
+          "date": "2022-12-13",
+          "quote": "I set up an annual reminder in my Outlook calendar with the expiration dates of the family passports, Global Entry, TSA Precheck, and driver’s licenses.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://community.ricksteves.com/travel-forum/france/two-months-left-on-passport",
+          "who": "chictoria (Rick Steves Travel Forum)",
+          "date": "2022-04-01",
+          "quote": "I don’t know why I let this slip through the cracks.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://community.ricksteves.com/travel-forum/france/two-months-left-on-passport",
+          "who": "heather (Rick Steves Travel Forum)",
+          "date": "2022-04-03",
+          "quote": "forgot to look at passport expirations until the last minute",
+          "seen": "opened"
+        },
+        {
+          "url": "https://community.ricksteves.com/travel-forum/general-europe/did-you-check-your-driver-s-license-expiration-date",
+          "who": "Mardee (Rick Steves Travel Forum)",
+          "date": "2023-12-26",
+          "quote": "it turns out that it expires on my upcoming birthday in March of 2024, which happens to be when I am in London! Yikes!",
+          "seen": "opened"
+        },
+        {
+          "url": "https://community.ricksteves.com/travel-forum/general-europe/did-you-check-your-driver-s-license-expiration-date",
+          "who": "travelergirl (Rick Steves Travel Forum)",
+          "date": "2023-12-26",
+          "quote": "He was not able to rent a car as his driver's license had expired.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://community.ricksteves.com/travel-forum/general-europe/did-you-check-your-driver-s-license-expiration-date",
+          "who": "Gail (Rick Steves Travel Forum)",
+          "date": "2023-12-26",
+          "quote": "I have learned my lesson the hard way!!",
+          "seen": "opened"
+        },
+        {
+          "url": "https://community.ricksteves.com/travel-forum/transportation/soon-to-expire-passport",
+          "who": "phred (Rick Steves Travel Forum)",
+          "date": "2015-03-06",
+          "quote": "So I paid an expediter to do my renewal in a week. Worked like a charm, but yes it ain't cheap.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://community.ricksteves.com/travel-forum/transportation/soon-to-expire-passport",
+          "who": "riverain (Rick Steves Travel Forum)",
+          "date": "2015-03-01",
+          "quote": "I recently renewed mine using the expedited processing. It didn't take long at all, but it cost quite a bit!",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Folio: Digital Wallet App (free on the App Store, 6.9K ratings, 4.7; stores IDs and has expiry alerts as one feature of a general document wallet). Small dedicated expiry apps: Expiro: Renewal Calendar ($9.99 in-app purchases, no ratings shown), Document Expiration RemindMe ($0.99 in-app purchases, 3 ratings), Document Expiry Reminder ($1.99 in-app purchases, 1 rating). People also improvise with calendar reminders, a desktop file, or a New Year's check (all mentioned on the forum). Some governments send their own renewal notices (one poster says the Netherlands does; another says California sends a licence notice about two months ahead).",
+      "risks": "The need comes up only every few years per document, so a monthly subscription may feel like too much; a one-off or annual price may convert better. Free substitutes (phone calendar, Folio) are good enough for organised people. The evidence is mostly from US travellers on one forum, and some threads are old (2015). Entry-validity rules differ by country and airline, so the app must not suggest a document is 'valid to travel'. It should only surface dates and point people to official sources. Users may hesitate to store ID details, so the product should work with expiry dates alone."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

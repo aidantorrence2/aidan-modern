@@ -8081,5 +8081,44 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "check-passport-and-licence-expiry-before-a-trip",
+  "offer": "renew-ahead",
+  "title": "Check passport and licence expiry dates before you book: a ten-minute household check",
+  "description": "Write down every passport, driving licence and ID expiry date in your household, set reminders months ahead, and check entry rules before you book.",
+  "intro": "Expired or nearly expired documents ruin trips every year, often found at check-in. A ten-minute check once a year catches most of them.",
+  "sections": [
+   {
+    "h": "Gather every document",
+    "list": [
+     "Passports, driving licences, ID cards and trusted-traveller cards for everyone you travel with."
+    ]
+   },
+   {
+    "h": "Write down the expiry dates",
+    "list": [
+     "Put them in one list or note you can find again."
+    ]
+   },
+   {
+    "h": "Set early reminders",
+    "list": [
+     "Several months before each expiry, so you can renew without paying to rush it."
+    ]
+   },
+   {
+    "h": "Check before you book",
+    "list": [
+     "Some countries and airlines need months of validity left. Check the official rules for your destination."
+    ]
+   },
+   {
+    "h": "Repeat once a year",
+    "p": [
+     "Pick a date, like New Year, to look at the list again."
+    ]
+   }
+  ]
  }
 ]
