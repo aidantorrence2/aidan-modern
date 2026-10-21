@@ -8198,5 +8198,44 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "jet-lag-first-three-days-plan",
+  "offer": "land-awake",
+  "title": "Jet lag after a long-haul flight: a day-by-day plan for the first three days",
+  "description": "Landing in the morning and wrecked for days? Shift your sleep a little before you fly, get daylight at the right times, and eat on local time.",
+  "intro": "Jet lag usually eases faster when you line up light, sleep and meals with your new time zone. This is general information, not medical advice.",
+  "sections": [
+   {
+    "h": "Before you fly",
+    "list": [
+     "Move bedtime an hour or so towards your destination's time for a couple of nights, if you can."
+    ]
+   },
+   {
+    "h": "On the plane",
+    "list": [
+     "Set your watch to local time and sleep or stay awake to match it as best you can."
+    ]
+   },
+   {
+    "h": "Day one",
+    "list": [
+     "Get outdoor daylight, stay up until a normal local bedtime, and keep any nap short."
+    ]
+   },
+   {
+    "h": "Eat and drink on local time",
+    "list": [
+     "Have meals at local times and stop caffeine in the afternoon."
+    ]
+   },
+   {
+    "h": "Days two and three",
+    "p": [
+     "Keep the same wake time each morning. If you have a health condition or take medication, ask a pharmacist before using sleep aids."
+    ]
+   }
+  ]
  }
 ]

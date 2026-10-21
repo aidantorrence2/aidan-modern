@@ -22265,6 +22265,104 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-21",
+    "slug": "land-awake",
+    "name": "Land Awake",
+    "need": "Jet lag ruins the first days of every trip. If I arrive in Europe in the morning, I'm doomed for days.",
+    "headline": "Jet lag eating the first days of your trip? Enter your flights and get a day-by-day plan for sleep, daylight, meals and caffeine, with reminders and a ten-second morning check-in.",
+    "buyer": "Adults 18+ who fly across time zones and lose the first days of a trip, or the days after getting home, to jet lag.",
+    "bullets": [
+      "A day-by-day plan built from your own flight times: when to sleep, seek daylight, eat and stop caffeine.",
+      "Reminders on the day, in the local time where you are.",
+      "A ten-second morning check-in so the plan can adjust."
+    ],
+    "price": "$3.99/month",
+    "priceUsd": 4,
+    "priceNote": "Or $9.99 per trip.",
+    "reasonPrompt": "Where do you usually fly, and how many days does jet lag take from you?",
+    "faq": [
+      {
+        "q": "Is it medical advice?",
+        "a": "No. It's a planning tool based on sleep, light and meal timing. It doesn't recommend medicines. If you have a health condition or take medication, check with a doctor or pharmacist."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Adults 18+. It is an independent app, not linked to any airline, travel company or other jet lag app."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-21",
+      "summary": "Travellers on the Rick Steves forum (2016) and Mumsnet (2024, 2025) say jet lag costs them days at the start of a trip or after coming home.",
+      "wtp": "Timeshifter (App Store): 2.7K ratings, jet lag plans $9.99 and $24.99. On Mumsnet, posters buy over-the-counter sleep aids to get through it.",
+      "signals": [
+        {
+          "url": "https://community.ricksteves.com/travel-forum/france/jet-lag",
+          "who": "Diane (Rick Steves forum)",
+          "date": "2016-02-13",
+          "quote": "If I arrive in Europe at 7:30 AM, I am doomed for 4-5 days.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://community.ricksteves.com/travel-forum/france/jet-lag",
+          "who": "Carolyn (Rick Steves forum)",
+          "date": "2016-02-08",
+          "quote": "it took three days to get over the jetlag.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://community.ricksteves.com/travel-forum/france/jet-lag",
+          "who": "Ken (Rick Steves forum)",
+          "date": "2016-02-08",
+          "quote": "It sometimes takes me a week to get back to normal after returning home.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/holidays/5009645-jet-lag-help",
+          "who": "Patsykenning (Mumsnet)",
+          "date": "2024-02-17",
+          "quote": "The jet lag whilst here has been worse than expected",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/holidays/5009645-jet-lag-help",
+          "who": "CJ4713 (Mumsnet)",
+          "date": "2024-02-17",
+          "quote": "I was getting knackered in the evenings by 7pm and waking at 4am!",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/holidays/5009645-jet-lag-help",
+          "who": "surfacedeamon (Mumsnet)",
+          "date": "2024-02-18",
+          "quote": "Jet lag coming back fro the states was awful for us last year.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/_chat/5393978-jet-lag-help",
+          "who": "sparklytoothbrush (Mumsnet)",
+          "date": "2025-08-18",
+          "quote": "have had a sleepless night again and feel terrible!",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/app/id1380684374",
+          "who": "Timeshifter App Store listing",
+          "date": "2026-10-21",
+          "quote": "2.7K Ratings ... $9.99 ... $24.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Timeshifter, sleep aids, airline tips.",
+      "risks": "Timeshifter is established. Health-adjacent: no medicine advice."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
