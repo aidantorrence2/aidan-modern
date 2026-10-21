@@ -7256,5 +7256,44 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "thousands-of-unread-emails",
+  "offer": "inbox-digout",
+  "title": "Thousands of unread emails? Dig out by sender, not one email at a time",
+  "description": "Personal inbox buried in marketing mail? Search by sender, unsubscribe from the biggest offenders, clear their backlog in one go, and filter the rest.",
+  "intro": "Most inbox overload comes from a handful of senders. Dealing with them sender by sender clears most of the pile quickly.",
+  "sections": [
+   {
+    "h": "Find the top senders",
+    "list": [
+     "Search your inbox for common senders or words like \"unsubscribe\" to see who sends the most."
+    ]
+   },
+   {
+    "h": "Unsubscribe from the worst ten",
+    "list": [
+     "Start with the ten senders you never read. Use the unsubscribe link in one of their emails."
+    ]
+   },
+   {
+    "h": "Clear each sender's backlog",
+    "list": [
+     "Select all mail from that sender and archive or delete it in one go."
+    ]
+   },
+   {
+    "h": "Filter the ones you keep",
+    "list": [
+     "Send newsletters and shop emails you still want to a separate folder or label."
+    ]
+   },
+   {
+    "h": "A five-minute daily tidy",
+    "p": [
+     "A quick daily check stops new marketing mail building up again."
+    ]
+   }
+  ]
  }
 ]

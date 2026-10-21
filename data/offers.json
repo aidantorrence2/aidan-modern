@@ -20070,6 +20070,108 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-21",
+    "slug": "inbox-digout",
+    "name": "Inbox Digout",
+    "need": "My personal email is drowning in thousands of unread marketing emails and newsletters, and unsubscribing feels like a full-time job.",
+    "headline": "Thousands of unread emails in your personal inbox? Dig out by sender: see who's flooding you, unsubscribe or clear them in batches, and keep the emails that matter.",
+    "buyer": "An adult with a personal Gmail, Hotmail or iCloud inbox holding thousands of unread shop, newsletter and alert emails, who has given up checking it and worries about missing something important.",
+    "bullets": [
+      "Groups your unread pile by sender, so the brands sending you the most mail are listed first",
+      "Lets you unsubscribe from, archive or delete a whole sender's backlog in one batch instead of one email at a time",
+      "A short daily tidy-up keeps new marketing mail from piling back up"
+    ],
+    "price": "$4.99/month",
+    "priceUsd": 5,
+    "priceNote": "One personal inbox per plan.",
+    "reasonPrompt": "Roughly how many unread emails are in your personal inbox right now, and what's filling it up?",
+    "faq": [
+      {
+        "q": "Who makes Inbox Digout?",
+        "a": "Inbox Digout is an independent app for adults 18+. It is not made by, affiliated with or endorsed by Google, Microsoft, Apple or any email provider."
+      },
+      {
+        "q": "Will it delete anything without asking me?",
+        "a": "No. You choose which senders to unsubscribe from, archive or clear, and nothing happens to a sender's mail until you confirm it."
+      },
+      {
+        "q": "Is it for work email?",
+        "a": "No. It's built for the personal inbox where shop, newsletter and sign-up emails pile up."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-21",
+      "summary": "People say in their own words that marketing mail has made their personal inbox unusable and that unsubscribing can't keep up. On a Mumsnet thread (Dec 2024) the opening poster calls their personal email 'almost completely unusable', and replies describe unsubscribing as 'pretty much a full time job'. On a 2021 Mumsnet thread, posters report 43,000 and 51,642 unread emails, with one saying it's 'too late to deal with them now'. On a Singletrack thread (2021) posters list Gmail and Hotmail backlogs of 11,926 to 100,540 unread, and one had to delete mail to stay under a storage limit. That's 7 named people on 3 pages, all opened.",
+      "wtp": "Clean Email (App Store): 3.8K ratings, subscriptions from $9.99 a month. A Mumsnet poster pays for a newsletter digest service.",
+      "signals": [
+        {
+          "url": "https://www.mumsnet.com/talk/am_i_being_unreasonable/5222130-overwhelmed-by-email-marketing",
+          "who": "MidnightPatrol (Mumsnet)",
+          "date": "2024-12-02",
+          "quote": "my personal email is becoming almost completely unusable",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/am_i_being_unreasonable/5222130-overwhelmed-by-email-marketing",
+          "who": "Gettingbysomehow (Mumsnet)",
+          "date": "2024-12-02",
+          "quote": "Its outrageous, I unsuscribe as quickly as I can but its pretty much a full time job.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/am_i_being_unreasonable/5222130-overwhelmed-by-email-marketing",
+          "who": "Catza (Mumsnet)",
+          "date": "2024-12-02",
+          "quote": "I use Mailbrew and I can't function without it.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/am_i_being_unreasonable/4302436-About-inbox-zero",
+          "who": "Florabella (Mumsnet)",
+          "date": "2021-07-21",
+          "quote": "I have just over 43,000 unread emails!!! I think it is too late to deal with them now!",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/am_i_being_unreasonable/4302436-About-inbox-zero",
+          "who": "Katefoster (Mumsnet)",
+          "date": "2021-07-21",
+          "quote": "I have 51,642 unread emails in my account. I check it daily but it's mostly full of junk.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://singletrackworld.com/forum/off-topic/how-many-unread-emails-in-your-inbox/",
+          "who": "DezB (Singletrack)",
+          "date": "2021-08-23",
+          "quote": "please don't judge me, I'll catch up with them one day",
+          "seen": "opened"
+        },
+        {
+          "url": "https://singletrackworld.com/forum/off-topic/how-many-unread-emails-in-your-inbox/",
+          "who": "fooman (Singletrack)",
+          "date": "2021-08-23",
+          "quote": "Currently 32K unread on my Hotmail, was iro 100K after years of neglect but I clicked 'mark all as read' by accident. Had to delete a load recently to stay under 10Gb space limit.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/clean-email-inbox-cleaner/id1219660920",
+          "who": "Clean Email App Store listing",
+          "date": "2026-10-21",
+          "quote": "3.8K Ratings ... $9.99 ... $99.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Clean Email ($9.99/month and up, 4.5 out of 5 from 3.8K ratings on the US App Store), Mailbrew (a paid newsletter digest, named by a Mumsnet poster), Unroll.me (free bulk unsubscribe, which has faced privacy criticism), Leave Me Alone and Inbox Zero (bulk unsubscribers), plus the filters and unsubscribe links already built into Gmail and Outlook.",
+      "risks": "Gmail and Apple Mail keep adding their own one-tap unsubscribe and sender tools, which could make a paid app look unnecessary. Reading Gmail needs Google's restricted-scope verification and a security assessment, which costs time and money. Users have to trust the app with their inbox, and Unroll.me's past data-selling controversy makes people wary. Some people with huge unread counts don't mind (several Singletrack posters just use search), so the paying segment is the stressed minority. Clean Email is already established at a higher price, so the case for us rests on being cheaper and simpler."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
