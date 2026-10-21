@@ -7100,5 +7100,44 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "cant-play-by-ear-start-with-three-notes",
+  "offer": "ear-first",
+  "title": "Can't play a song by ear? Start with three notes",
+  "description": "Read music but can't play by ear? Pick a simple tune you know, find its first three notes, sing before you play, and build up a phrase at a time.",
+  "intro": "Playing by ear is a skill you can practise, even if you've always read music. Starting very small makes it much less frustrating.",
+  "sections": [
+   {
+    "h": "Pick a tune you know well",
+    "list": [
+     "Nursery rhymes, a TV theme or a simple chorus. Something you can hum."
+    ]
+   },
+   {
+    "h": "Find the first note",
+    "list": [
+     "Hum the first note, then play notes until you match it. It gets quicker with practice."
+    ]
+   },
+   {
+    "h": "Then three notes",
+    "list": [
+     "Find the next two notes. Ask yourself: does it go up or down, a small step or a big jump?"
+    ]
+   },
+   {
+    "h": "Sing before you play",
+    "list": [
+     "Singing or humming each phrase first links what you hear to what you play."
+    ]
+   },
+   {
+    "h": "Five minutes a day",
+    "p": [
+     "Short daily practice works better than long sessions. Write down how long the first note took you, and watch it drop."
+    ]
+   }
+  ]
  }
 ]

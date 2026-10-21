@@ -19817,6 +19817,79 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-21",
+    "slug": "ear-first",
+    "name": "Ear First",
+    "need": "I've played for years, but I still can't play anything by ear.",
+    "headline": "Can read music or tabs but can't play by ear? Short daily drills that take you from hearing a tune to finding it on your instrument, one phrase at a time.",
+    "buyer": "Adults who read music or tabs, or play competently, but can't play a tune by ear.",
+    "bullets": [
+      "Hear a short phrase, find it on your instrument, then check.",
+      "Start with two or three notes and add more as you get them right.",
+      "Daily five-minute drills, and a log of how long it takes you to find the first note."
+    ],
+    "price": "$3.99/month",
+    "priceUsd": 4,
+    "priceNote": "Or $24 one-time.",
+    "reasonPrompt": "What instrument do you play, and what happens when you try to play something you've only heard?",
+    "faq": [
+      {
+        "q": "Who is it for?",
+        "a": "Adults 18+. It is an independent app, not linked to any music school, exam board or instrument brand."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-21",
+      "summary": "Players on the Seymour Duncan forum and Mumsnet, including a grade 8 pianist and a competent sight reader, say they can't play by ear and it takes minutes to find each note.",
+      "wtp": "Perfect Ear (App Store): 1.9K ratings, Premium $14.99.",
+      "signals": [
+        {
+          "url": "https://forum.seymourduncan.com/threads/i-am-awful-at-playing-songs-by-ear.190535",
+          "who": "LukeGilmour (Seymour Duncan forum)",
+          "date": "2010-03-03",
+          "quote": "taking maybe 2 minutes to find the first note",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forum.seymourduncan.com/threads/i-am-awful-at-playing-songs-by-ear.190535",
+          "who": "DankStar (Seymour Duncan forum)",
+          "date": "2010-03-04",
+          "quote": "I can't pick up stuff by ear.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/am_i_being_unreasonable/5569813-aibu-to-wonder-if-my-15-year-old-has-an-unusual-ear-for-music",
+          "who": "Selfseedpoppies (Mumsnet)",
+          "date": "2026-08-22",
+          "quote": "I took grade 8 piano but no way I could hear something and then play it",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/am_i_being_unreasonable/5569813-aibu-to-wonder-if-my-15-year-old-has-an-unusual-ear-for-music",
+          "who": "GhostOrchid (Mumsnet)",
+          "date": "2026-08-22",
+          "quote": "I’m a competent sight reader but struggle to play by ear.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/perfect-ear-music-rhythm/id1440768353",
+          "who": "Perfect Ear App Store listing",
+          "date": "2026-10-21",
+          "quote": "1.9K Ratings ... $14.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Perfect Ear, EarMaster, ear-training courses, teachers.",
+      "risks": "Many ear-training apps exist; the hook is going from hearing to playing on your own instrument."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
