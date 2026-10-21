@@ -8120,5 +8120,44 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "waking-at-3am-cant-get-back-to-sleep",
+  "offer": "back-under",
+  "title": "Waking at 3am and can't get back to sleep: what to try in the night",
+  "description": "Wide awake in the small hours? Keep the lights low, skip the clock and phone, try slow breathing or a quiet audio, and get up for a while if you're still awake.",
+  "intro": "Waking in the night is common. What you do in the first few minutes often decides whether you drift off again. This isn't medical advice.",
+  "sections": [
+   {
+    "h": "Don't check the time",
+    "list": [
+     "Clock-watching tends to wind you up. Turn the clock away."
+    ]
+   },
+   {
+    "h": "Keep light low",
+    "list": [
+     "Avoid bright screens. If you use your phone, use a dark screen and low brightness."
+    ]
+   },
+   {
+    "h": "Slow your breathing",
+    "list": [
+     "Breathe out for longer than you breathe in, for a few minutes."
+    ]
+   },
+   {
+    "h": "Try quiet audio",
+    "list": [
+     "A familiar audiobook or podcast at low volume gives your mind something gentle to follow."
+    ]
+   },
+   {
+    "h": "Get up if it's not working",
+    "p": [
+     "If you're still awake after a while, sit somewhere dim and calm, then go back to bed when sleepy. If it goes on for weeks, talk to a GP."
+    ]
+   }
+  ]
  }
 ]

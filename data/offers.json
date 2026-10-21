@@ -22079,6 +22079,97 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-21",
+    "slug": "back-under",
+    "name": "Back Under",
+    "need": "I fall asleep fine, but I wake in the night around 3am and can't go back to sleep.",
+    "headline": "Wide awake at 3am? A calm, dark-screen routine for when you wake in the night, and a 10-second morning log to see what makes your nights better or worse.",
+    "buyer": "Adults 18+ who fall asleep fine but wake at 2 to 4am and lie awake.",
+    "bullets": [
+      "A dark-screen routine for night waking: slow breathing, a wind-down audio, no bright light.",
+      "A 10-second morning log: when you woke, how long you were up, and what happened the day before.",
+      "A weekly view that shows what lines up with better and worse nights."
+    ],
+    "price": "$3.99/month",
+    "priceUsd": 4,
+    "priceNote": "Or $24.99 a year.",
+    "reasonPrompt": "What time do you usually wake, and what do you do when you can't get back to sleep?",
+    "faq": [
+      {
+        "q": "Is it a treatment for insomnia?",
+        "a": "No. It's a routine and logging tool. If poor sleep is affecting your health or daily life, talk to a GP or doctor."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Adults 18+. It is an independent app, not linked to any sleep clinic, charity or other sleep app."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-21",
+      "summary": "People on two Mumsnet threads (2019, 2023) and the Sleep Foundation community (2026) say they fall asleep but wake around 3am and can't get back to sleep.",
+      "wtp": "Stellar Sleep (App Store): 2.8K ratings, paid subscription; reviewer Muttly14 writes 'before I paid for the subscription'. On Mumsnet, Zaphodsotherhead has an Audible subscription to get through the night, and Wonderingwhyme put off a weighted blanket 'because of the money'.",
+      "signals": [
+        {
+          "url": "https://www.mumsnet.com/talk/_chat/3737775-How-can-I-stop-waking-In-the-night",
+          "who": "Wonderingwhyme (Mumsnet)",
+          "date": "2019-11-07",
+          "quote": "Trouble is I wake in the night and can’t go back to sleep.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/_chat/3737775-How-can-I-stop-waking-In-the-night",
+          "who": "SureTry (Mumsnet)",
+          "date": "2019-11-07",
+          "quote": "waking throughout the night until 3am",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/_chat/3737775-How-can-I-stop-waking-In-the-night",
+          "who": "Zaphodsotherhead (Mumsnet)",
+          "date": "2019-11-07",
+          "quote": "So now I have an Audible subscription and run audible books through the night.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/_chat/4896929-waking-at-night",
+          "who": "SquashPenguin (Mumsnet)",
+          "date": "2023-09-15",
+          "quote": "I’m wide awake at 3am for a couple of hours",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/_chat/4896929-waking-at-night",
+          "who": "TeeBee (Mumsnet)",
+          "date": "2023-09-15",
+          "quote": "I'm 4am and usually don't manage to get back to sleep.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://community.sleepfoundation.org/t/cant-stay-asleep/3892",
+          "who": "Chloe_Bennett (Sleep Foundation community)",
+          "date": "2026-07-31",
+          "quote": "I have been waking up around 3-4am. every night and can not get back to sleep.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1602312365",
+          "who": "Stellar Sleep App Store listing",
+          "date": "2026-10-21",
+          "quote": "2.8K Ratings ... before I paid for the subscription",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Stellar Sleep, sleep-sound apps, audiobooks, CBT-I courses.",
+      "risks": "Health-adjacent: no treatment claims. Strong free substitutes (audiobooks, podcasts)."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
