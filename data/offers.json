@@ -21506,6 +21506,108 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-21",
+    "slug": "gripe-less",
+    "name": "Gripe Less",
+    "need": "I complain all the time. I'm a complainer, I can't get through a single day without moaning, and I want to stop.",
+    "headline": "Complain far more than you mean to? Tap once each time you catch a gripe, see your real daily count, and work up to 21 days in a row without one.",
+    "buyer": "Adults 18+ who complain or moan out of habit, have tried a wristband or rubber-band challenge, and keep slipping back to day one.",
+    "bullets": [
+      "One tap logs each complaint you catch yourself making, so you see how many times a day it really happens instead of guessing",
+      "A day counter that goes back to day one when you slip, with a 21-days-in-a-row goal",
+      "After each tap, an optional prompt to turn the gripe into a request or a next step, so you change what you say instead of just holding it in"
+    ],
+    "price": "$4.99/month",
+    "priceUsd": 5,
+    "priceNote": "One plan, every feature.",
+    "reasonPrompt": "When do you catch yourself complaining most, and who usually hears it?",
+    "faq": [
+      {
+        "q": "Who makes this app?",
+        "a": "Gripe Less is an independent app for adults 18+. It is not connected to, endorsed by or affiliated with any book, author, wristband programme or other app."
+      },
+      {
+        "q": "Is this therapy or treatment?",
+        "a": "No. It is a simple habit tool for counting and cutting everyday complaining. It is not medical or mental-health advice. If low mood or stress is behind your complaining, please talk to a qualified professional."
+      },
+      {
+        "q": "Do I have to stop venting completely?",
+        "a": "No. You choose what counts as a complaint for you. Many people only count moaning that doesn't lead anywhere, and the rephrase prompt helps you say what you actually want instead."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-21",
+      "summary": "Adults describe their complaining as a habit they want to break, in their own words: 'unfortunately I'm a complainer', 'It is pretty amazing the number of times a day that I complain, criticize or gossip', 'I've yet to make it through a day'. Reviews on two Goodreads pages for A Complaint Free World (the original has 4,103 ratings; the revised edition has 97) show the same steps again and again: realising how often you complain, starting a 21-day no-complaining challenge, buying a wristband or making do with a rubber band, and slipping back to day one. Moving a physical band from wrist to wrist is a fiddly way to count. A one-tap counter that resets your streak does the same job on a phone.",
+      "wtp": "Goodreads reviewers of a stop-complaining book ordered wristbands for its 21-day challenge, and one reviewer's aunt bought copies for the whole family. The original book page shows 4,103 ratings. The 21 Days Challenge (App Store): 567 ratings, in-app purchases $2.99 a month or $24.99 a year.",
+      "signals": [
+        {
+          "url": "https://www.goodreads.com/book/show/1469401.A_Complaint_Free_World",
+          "who": "Heather (Goodreads)",
+          "date": "2008-08-24",
+          "quote": "unfortunately I'm a complainer - but is that me complaining about being a complainer?",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.goodreads.com/book/show/1469401.A_Complaint_Free_World",
+          "who": "Rachel Kopel (Goodreads)",
+          "date": "2008-06-27",
+          "quote": "It is pretty amazing the number of times a day that I complain, criticize or gossip.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.goodreads.com/book/show/1469401.A_Complaint_Free_World",
+          "who": "Bookscmc (Goodreads)",
+          "date": "2009-06-30",
+          "quote": "I've ordered my own purple wrist band to give it a shot. I, too, need improvement in this area.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.goodreads.com/book/show/1469401.A_Complaint_Free_World",
+          "who": "Jenny (Goodreads)",
+          "date": "2013-08-02",
+          "quote": "Let's just say I've yet to make it through a day",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.goodreads.com/book/show/174164619-a-complaint-free-world-revised-and-updated",
+          "who": "V. (Goodreads)",
+          "date": "2025-03-16",
+          "quote": "I have a purple bracelet and it's been four days, honestly back on day 1.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.goodreads.com/book/show/174164619-a-complaint-free-world-revised-and-updated",
+          "who": "Mindy (Goodreads)",
+          "date": "2025-07-12",
+          "quote": "It made me reflect a lot on how much complaining I do.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.goodreads.com/book/show/174164619-a-complaint-free-world-revised-and-updated",
+          "who": "Michelle (Goodreads)",
+          "date": "2026-02-16",
+          "quote": "they spend a lot of time advertising all of the things that you can purchase to help you join this challenge",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1485458184",
+          "who": "The 21 Days Challenge App Store listing",
+          "date": "2026-10-21",
+          "quote": "567 Ratings ... $2.99 ... $24.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "A Complaint Free World (book by Will Bowen) and its paid wristbands and programme; physical rubber bands; general habit trackers and 21-day challenge apps such as The 21 Days Challenge (App Store id1485458184: free with in-app purchases, 567 ratings, 4.7), which cover gratitude and positivity but don't count complaints. I found no dedicated complaint-counting app with a verified App Store listing; one result pointed to an app called '21 A World Without Complaints', but its App Store page returned 404 and I did not use it.",
+      "risks": "All the named signals come from Goodreads reviews of one book (two editions), and many of them are from 2008 to 2013, so the demand may be tied to a fad around that book. The wristband is cheap and physical, so people may not pay monthly for software that does the same job. Some reviewers push back on the idea itself (one says holding complaints in makes her feel worse), so the copy should frame the app as rephrasing complaints, not suppressing them. I found no app that proves 500+ ratings for this exact need. The app must avoid the book's brand, the 'Complaint Free' name and purple-bracelet imagery, and must not claim mood or health benefits."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
