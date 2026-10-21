@@ -23732,6 +23732,83 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-21",
+    "slug": "tight-turn",
+    "name": "Tight Turn",
+    "need": "I hate doing U-turns on my motorbike and avoid them at all costs. I'm afraid of dropping the bike in tight, slow turns.",
+    "headline": "Dread U-turns and slow, tight turns on your motorbike? Practise to-scale cone drills in a car park, log each session, and watch your turning box shrink.",
+    "buyer": "Licensed adult riders 18+ who avoid U-turns and slow-speed manoeuvres or fear dropping the bike.",
+    "bullets": [
+      "To-scale cone layouts (U-turn box, figure-eight, slow weave, stop-and-turn) that shrink as your clean runs add up.",
+      "A session timer and run log, and your turning box width over time.",
+      "Reminder cards on technique, and an optional video of each run."
+    ],
+    "price": "$3.99/month",
+    "priceUsd": 4,
+    "priceNote": "Or $24.99 a year.",
+    "reasonPrompt": "What bike do you ride, and which slow-speed move do you avoid?",
+    "faq": [
+      {
+        "q": "Does it replace rider training?",
+        "a": "No. It helps you practise between courses. Practise only in a safe, empty space with full protective gear, and take a professional slow-speed course if you can."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Licensed adult riders 18+. It is an independent app, not linked to any training school, manufacturer or rider organisation."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-21",
+      "summary": "Riders on GTAMotorcycle (2011) and Women Riders Now (2020) say they hate and avoid U-turns, find them terrifying, have dropped bikes mid-turn, and fear dropping heavy bikes in tight turns.",
+      "wtp": "Ride Like A Pro low-speed class: '$175 for a four-hour class' (Rider Magazine). Lori Vaile took a paid rider course to work on her turns.",
+      "signals": [
+        {
+          "url": "https://www.gtamotorcycle.com/xf/threads/u-turn-on-ss.147661/page-2",
+          "who": "stormcat (GTAMotorcycle)",
+          "date": "2011-09-27",
+          "quote": "I hate doing U-turns on my bike and avoid doing them at all costs.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.gtamotorcycle.com/xf/threads/u-turn-on-ss.147661/page-2",
+          "who": "Flashmonkey (GTAMotorcycle)",
+          "date": "2011-09-27",
+          "quote": "It's terrifying and I hate doing it.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.gtamotorcycle.com/xf/threads/u-turn-on-ss.147661/page-2",
+          "who": "Salos Dafee (GTAMotorcycle)",
+          "date": "2011-09-27",
+          "quote": "whoops, over we go",
+          "seen": "opened"
+        },
+        {
+          "url": "https://womenridersnow.com/reader-question-im-afraid-of-dropping-my-motorcycle-in-a-turn/",
+          "who": "Lori Vaile (Women Riders Now)",
+          "date": "2020-08-09",
+          "quote": "Can anyone give me some words of wisdom to help me get over the fear of dropping this heavy bike while turning?",
+          "seen": "opened"
+        },
+        {
+          "url": "https://ridermagazine.com/learn-to-confidently-manage-your-bike-at-low-speeds-with-ride-like-a-pro/",
+          "who": "Rider Magazine on Ride Like A Pro",
+          "date": "2017",
+          "quote": "At $175 for a four-hour class, Ride Like A Pro is not expensive.",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Ride Like A Pro and other low-speed courses, rider training schools, YouTube.",
+      "risks": "Old posts; only 2 rider pages; no rated app. Physical risk: copy stresses gear, empty space and professional training."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
