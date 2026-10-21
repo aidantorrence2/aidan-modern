@@ -7217,5 +7217,44 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "bad-credit-want-a-mortgage",
+  "offer": "score-steps",
+  "title": "Bad credit and want a mortgage? What to check on your report first",
+  "description": "Old defaults or late payments in the way? Get your own report, note when each mark drops off, pay everything on time, and keep balances low before applying.",
+  "intro": "Old marks on a credit file don't last forever. Knowing what's there and when it drops off helps you plan when to apply.",
+  "sections": [
+   {
+    "h": "Get your own report",
+    "list": [
+     "Check your report with the main credit reference agencies. Many offer a free version."
+    ]
+   },
+   {
+    "h": "Note when marks drop off",
+    "list": [
+     "In the UK, most defaults and late payments stay on your file for six years. Write down each date."
+    ]
+   },
+   {
+    "h": "Fix mistakes",
+    "list": [
+     "If something is wrong, you can ask the agency to correct it."
+    ]
+   },
+   {
+    "h": "Pay everything on time",
+    "list": [
+     "Set up reminders or direct debits so new late payments don't appear."
+    ]
+   },
+   {
+    "h": "Get free advice",
+    "p": [
+     "This isn't financial advice. For debt problems, free debt advice services can help, and a mortgage broker can tell you what lenders look for."
+    ]
+   }
+  ]
  }
 ]

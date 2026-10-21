@@ -19982,6 +19982,94 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-21",
+    "slug": "score-steps",
+    "name": "Score Steps",
+    "need": "I can't get a mortgage because of my bad credit score from mistakes made years ago.",
+    "headline": "Bad credit history blocking a mortgage or loan? Track the marks on your own report and when they drop off, tick off on-time payments, and prepare before you apply.",
+    "buyer": "Adults (18+) whose credit history is blocking a mortgage, loan or rental.",
+    "bullets": [
+      "List the marks from your own credit report, with the date each one drops off.",
+      "Payment reminders and an on-time tick for every bill.",
+      "A balance-to-limit view, and a checklist to work through before you apply."
+    ],
+    "price": "$3.99/month",
+    "priceUsd": 4,
+    "priceNote": "Or $29 a year.",
+    "reasonPrompt": "What's on your credit file, and what are you hoping to apply for?",
+    "faq": [
+      {
+        "q": "Will it raise my credit score?",
+        "a": "It can't promise that, and it isn't financial or credit advice. It helps you keep track of your own report and payments. For debt problems, free advice services can help."
+      },
+      {
+        "q": "Does it connect to my bank or credit file?",
+        "a": "No. You enter details from your own report."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Adults 18+. It is an independent app, not linked to any credit agency, lender or bank."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-21",
+      "summary": "People on Mumsnet say old defaults and late payments are stopping them getting a mortgage, and they don't know where to start.",
+      "wtp": "Kikoff credit-building app (App Store): 278K ratings, from $5 a month.",
+      "signals": [
+        {
+          "url": "https://www.mumsnet.com/talk/am_i_being_unreasonable/4160286-bad-credit",
+          "who": "Clappingforjoy (Mumsnet)",
+          "date": "2021-02-08",
+          "quote": "I cant get a mortgage due to my bad credit score",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/am_i_being_unreasonable/4160286-bad-credit",
+          "who": "Clappingforjoy (Mumsnet)",
+          "date": "2021-02-08",
+          "quote": "Anybody been in this situation and have any ideas.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/am_i_being_unreasonable/4160286-bad-credit",
+          "who": "SuperMutha (Mumsnet)",
+          "date": "2021-02-08",
+          "quote": "I assumed I would never be able to get a mortgage as I'd made bad choices in the past",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/am_i_being_unreasonable/4160286-bad-credit",
+          "who": "lee12345 (Mumsnet)",
+          "date": "2021-02-09",
+          "quote": "My partner has defaults & bad credit.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/money-matters/2171736-Mortgage-with-bad-credit",
+          "who": "Whoknowsjack (Mumsnet)",
+          "date": "2014-08-30",
+          "quote": "couple of late payments on credit cards over the last year",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/app/id1525159784",
+          "who": "Kikoff App Store listing",
+          "date": "2026-10-21",
+          "quote": "278K Ratings ... $5",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Credit-building apps, credit report services, free debt advice.",
+      "risks": "All forum evidence on Mumsnet; must make no score or approval claims."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
