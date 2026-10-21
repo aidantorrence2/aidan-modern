@@ -310,6 +310,7 @@ approval and never posted without it.
 
 | Candidate | Evidence found | What is missing |
 |---|---|---|
+| Puff Ladder: quit vaping (code side, 21 Oct) | Rejected: same idea as puff-down, which was killed on 19 Oct; the runbook says never relaunch a killed idea. | Aidan's decision only. |
 | Service Mile: losing track of car maintenance (doc side, 21 Oct) | Drivvo ($49.90 plan) confirmed. Classic Motorsports and Toyota Owners Club return 403 to our fetch. | Two opened forum pages we can fetch. |
 | Rack Notes: pool plateau (doc side, 21 Oct) | Rejected as a duplicate of the live Easy Ball offer (same AZBilliards threads). | None; covered by Easy Ball. |
 | Land Awake: jet lag ruins the first days of a trip (doc side, 21 Oct) | Rick Steves forum opened (3 travellers, 2016); Timeshifter 2.7K ratings, $9.99 and $24.99 plans. Fodor's returns 403 to our fetch. | A second opened page with named posters. |
