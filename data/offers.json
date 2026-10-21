@@ -21776,6 +21776,105 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-21",
+    "slug": "hush-log",
+    "name": "Hush Log",
+    "need": "My upstairs neighbours' noise keeps waking me up at night, I've talked to them and nothing changed, and I don't know what to do next.",
+    "headline": "Neighbours' noise keeping you up? Log every bang and thud in one tap, build a dated noise diary, and get calm wording for the talk you've been dreading.",
+    "buyer": "Adults 18+ in flats and apartments whose sleep is disrupted by neighbour noise, who've tried a word with the neighbour and need a clear record and a next step.",
+    "bullets": [
+      "Log a disturbance in one tap from your bedside, with the time, how long it lasted and an approximate sound level from your phone's microphone",
+      "Keep a dated, tidy incident diary you can export and share with your landlord, managing agent, building or council",
+      "Get calm, non-confrontational message drafts for a first approach and a follow-up, so it doesn't turn into ceiling-banging"
+    ],
+    "price": "$4.99/month",
+    "priceUsd": 5,
+    "priceNote": "One plan, every feature.",
+    "reasonPrompt": "What noise is bothering you most, and what have you already tried?",
+    "faq": [
+      {
+        "q": "Who is this for?",
+        "a": "Hush Log is an independent app for adults 18+. It is not affiliated with any council, landlord, housing association, management company or other noise app."
+      },
+      {
+        "q": "Will this make the council or my landlord take action?",
+        "a": "No app can guarantee that. Hush Log helps you keep a clear, dated record and plan your next step; what happens with it is up to whoever you share it with."
+      },
+      {
+        "q": "Are the sound level readings exact?",
+        "a": "No. Phone microphones are not calibrated professional meters, so readings are approximate and best used to compare one night with another."
+      },
+      {
+        "q": "Is this legal advice?",
+        "a": "No. It is a personal record-keeping and communication tool. Rules on recording and on noise complaints vary by place, so check what applies where you live."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-21",
+      "summary": "People living below or beside noisy neighbours describe years of broken sleep, failed conversations and council processes that ask them to record noise at the moment it happens, which is hard to do at 3am. Advice they receive centres on keeping a diary of incidents, and the existing council-linked recording app was criticised for needing a button press while the noise is happening.",
+      "wtp": "Decibel X: dB Sound Level Meter (App Store): 163K ratings, Monthly Membership $5.99, Annual $49.99. On MSE, Jimmy_Boy stayed with friends for a month while still paying rent, then used over-ear headphones and white noise.",
+      "signals": [
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/5792297/noisy-neighbour-not-sure-of-next-steps",
+          "who": "Jimmy_Boy (MoneySavingExpert Forum)",
+          "date": "2018-02-11",
+          "quote": "My main issue is impact noise (heavy walking) throughout the night. I have exhausted all options with the council to resolve the issue, and now don't know what to do.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/5792297/noisy-neighbour-not-sure-of-next-steps",
+          "who": "Jimmy_Boy (MoneySavingExpert Forum)",
+          "date": "2018-02-11",
+          "quote": "it makes it difficult to get the iPad, open the app, and hit record while the sound is active",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/5792297/noisy-neighbour-not-sure-of-next-steps",
+          "who": "Jimmy_Boy (MoneySavingExpert Forum)",
+          "date": "2018-02-11",
+          "quote": "About 1 year ago I discovered wearing over-ear headphones and playing white noise at a reasonable volume blocks out the noise.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/6676675/noisy-upstairs-renter",
+          "who": "Marky4040 (MoneySavingExpert Forum)",
+          "date": "2026-07-18",
+          "quote": "he's always clattering about at 1am 2am 3am most nights which often wakes me up.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/6676675/noisy-upstairs-renter",
+          "who": "Sam_666 (MoneySavingExpert Forum)",
+          "date": "2026-07-18",
+          "quote": "Best they can do, is to tell you to keep diary of incidents!",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/5850981/recently-purchased-flat-noisey-neighbours",
+          "who": "Penelop26 (MoneySavingExpert Forum)",
+          "date": "2018-06-03",
+          "quote": "I've spoken to her and she said she try to be more considerate (nothing changed).",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/decibel-x-db-sound-level-meter/id448155923",
+          "who": "Decibel X: dB Sound Level Meter (App Store listing)",
+          "date": "2026-10-21",
+          "quote": "Monthly Membership $5.99 Annual Membership $49.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "The Noise App (UK, used through councils; criticised on the MSE thread for needing a button press during the noise and for missing quiet sounds); general sound meters such as Decibel X (163K ratings, IAP subscriptions), NIOSH Sound Level Meter (free) and other dB apps that measure but don't keep a neighbour-specific diary; white-noise apps, earplugs, noise-cancelling headphones and soundproofing, which mask the noise rather than help resolve it.",
+      "risks": "Phone mic readings are approximate and may not capture low-frequency impact noise, so the app must not imply official evidence or guaranteed council or landlord action. Rules on recording audio vary by place, so the core product should log times and levels and leave any recording to the user's own judgement. Neighbour disputes can escalate, so wording must stay calm and non-threatening. Free sound meters and council-provided tools set a low price anchor, and the problem often ends when someone moves, so subscriptions may be short."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

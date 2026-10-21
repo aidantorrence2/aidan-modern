@@ -8003,5 +8003,44 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "noisy-upstairs-neighbours-what-to-do",
+  "offer": "hush-log",
+  "title": "Noisy upstairs neighbours keeping you awake: keep a noise diary, then take the next step",
+  "description": "Talked to your neighbour and nothing changed? Keep a dated noise diary, send a calm written note, then take your record to your landlord, managing agent or council.",
+  "intro": "Most landlords and councils ask for a record of when noise happens. A simple diary, kept calmly, makes every next step easier. This isn't legal advice.",
+  "sections": [
+   {
+    "h": "Write it down each time",
+    "list": [
+     "Date, start and end time, what you heard, and how it affected you (woke you, kept you up)."
+    ]
+   },
+   {
+    "h": "A calm written note",
+    "list": [
+     "Keep it friendly: what you hear, when, and one simple ask, like 'could you take shoes off after 11pm?'"
+    ]
+   },
+   {
+    "h": "Keep it up for a few weeks",
+    "list": [
+     "A pattern over two to four weeks is more useful than one bad night."
+    ]
+   },
+   {
+    "h": "Take it to the right person",
+    "list": [
+     "Your landlord or managing agent if you rent or own a leasehold flat; your local council for ongoing night-time noise."
+    ]
+   },
+   {
+    "h": "Look after your sleep meanwhile",
+    "p": [
+     "Earplugs, white noise or moving your bed to another wall can help while it's sorted. Check local rules before recording audio."
+    ]
+   }
+  ]
  }
 ]
