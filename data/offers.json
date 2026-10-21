@@ -22772,6 +22772,97 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-21",
+    "slug": "first-mat",
+    "name": "First Mat",
+    "need": "Every beginner yoga video confuses me and gives little to no instruction for absolute beginners. I can't tell if I'm doing a pose right.",
+    "headline": "Starting yoga at home and lost in beginner videos? Spoken cues so you don't need the screen, an easier version of every pose, and notes on how each one should feel.",
+    "buyer": "Adults 18+ starting yoga at home who find beginner videos too fast and can't tell whether a pose is right.",
+    "bullets": [
+      "Spoken cues, so you don't have to look at the screen mid-pose.",
+      "An easier version of every pose, and what it should feel like.",
+      "10 to 15 minute sessions, with an optional photo to compare your pose side by side."
+    ],
+    "price": "$4.99/month",
+    "priceUsd": 5,
+    "priceNote": "Or $29.99 a year.",
+    "reasonPrompt": "What's put you off yoga videos so far, and which pose do you find hardest?",
+    "faq": [
+      {
+        "q": "Is it safe for complete beginners?",
+        "a": "It's built for beginners, with easier versions of every pose. Go gently, stop if anything hurts, and check with a doctor first if you have an injury or health condition."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Adults 18+. It is an independent app, not linked to any yoga studio, teacher or other yoga app."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-21",
+      "summary": "Beginners on two Mumsnet threads (2021, 2022) say yoga videos go too fast, assume basic knowledge, and leave them unsure whether they're doing a pose right. Down Dog reviewers want to know when they're not in a pose correctly.",
+      "wtp": "Down Dog (App Store): 327K ratings, All Access $12.99 and $99.99; reviewer myincomparable: 'I paid for the subscription'.",
+      "signals": [
+        {
+          "url": "https://www.mumsnet.com/talk/exercise/4590662-doing-yoga-at-home",
+          "who": "OnenessWithAllStrife (Mumsnet)",
+          "date": "2022-07-15",
+          "quote": "Youtube is awful, every single beginner video confuses me and gives little to no instruction for absolute beginners.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/exercise/4590662-doing-yoga-at-home",
+          "who": "FinallyHere (Mumsnet)",
+          "date": "2022-07-16",
+          "quote": "It's very easy to hurt yourself if you don't know what you are doing.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/exercise/4590662-doing-yoga-at-home",
+          "who": "queenrollo (Mumsnet)",
+          "date": "2022-07-16",
+          "quote": "I can't plank, I do it on my knees and then move into snake much sooner than the video flow.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/exercise/4297459-Want-to-do-yoga-but-Im-not-bendy-enough",
+          "who": "Niconacotaco (Mumsnet)",
+          "date": "2021-07-15",
+          "quote": "you can’t see the screen while in the postures and even the beginner ones assume some sort of basic knowledge or go too quickly.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/exercise/4297459-Want-to-do-yoga-but-Im-not-bendy-enough",
+          "who": "FairyAtTheBottomOfTheGarden (Mumsnet)",
+          "date": "2021-07-15",
+          "quote": "They all seem to think that it's 'simple' to go from downward dog and 'simply' step one foot forward between your hands - I just can't!",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/yoga-down-dog/id983693694",
+          "who": "sherryCT (App Store review of Down Dog)",
+          "date": "2026-10-21",
+          "quote": "tell you when you are not in a pose correctly",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/yoga-down-dog/id983693694",
+          "who": "Down Dog App Store listing",
+          "date": "2026-10-21",
+          "quote": "327K Ratings ... $12.99 ... $99.99 ... I paid for the subscription",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Down Dog, YouTube, studio classes.",
+      "risks": "Forum posts all from one site; Down Dog is cheap and strong. Injury risk: copy stresses going gently."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
