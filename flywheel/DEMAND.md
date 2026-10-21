@@ -310,6 +310,9 @@ approval and never posted without it.
 
 | Candidate | Evidence found | What is missing |
 |---|---|---|
+| Dry Hold: breath-hold training stalled (doc side, 21 Oct) | 6 people on 3 DeeperBlue threads; STAmina 5.4K ratings at $4.99/mo. Held for Aidan: breath-hold training carries a blackout risk, so launching it is his safety call. | Aidan's decision. |
+| Slip Road: drivers who avoid motorways (doc side, 21 Oct) | Rejected: overlaps the live short-loop offer (scared to drive beyond short local journeys); the doc side rejected motorway fear as a short-loop duplicate on 20 Oct. | None; covered by short-loop. |
+| Past Blue: skiers stuck at intermediate (doc side, 21 Oct) | Rejected: duplicates the live past-plateau offer (perpetual intermediate skier). SkiTalk also returns 403 to our fetch. | None; covered by past-plateau. |
 | Puff Ladder: quit vaping (code side, 21 Oct) | Rejected: same idea as puff-down, which was killed on 19 Oct; the runbook says never relaunch a killed idea. | Aidan's decision only. |
 | Service Mile: losing track of car maintenance (doc side, 21 Oct) | Drivvo ($49.90 plan) confirmed. Classic Motorsports and Toyota Owners Club return 403 to our fetch. | Two opened forum pages we can fetch. |
 | Rack Notes: pool plateau (doc side, 21 Oct) | Rejected as a duplicate of the live Easy Ball offer (same AZBilliards threads). | None; covered by Easy Ball. |
