@@ -22170,6 +22170,101 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-21",
+    "slug": "every-recipe",
+    "name": "Every Recipe",
+    "need": "I have recipes in a box, some bookmarked, and some floating around my kitchen, and I can never find the one I want when I want to cook it.",
+    "headline": "Recipes scattered across screenshots, bookmarks, cookbooks and scraps of paper? Keep every one in a single box you can search by dish or ingredient, so the one you loved turns up again.",
+    "buyer": "Adults 18+ who cook at home and save recipes from websites, magazines, cookbooks and family cards, then lose track of them.",
+    "bullets": [
+      "Save a recipe from a link, a screenshot, or a photo of a cookbook page or handwritten card, all into one place",
+      "Search your own collection by dish name or by an ingredient you have on hand",
+      "Mark recipes as 'to try' or 'keeper' and add your own tweaks, so the version you liked is the one you find next time"
+    ],
+    "price": "$2.99/month",
+    "priceUsd": 3,
+    "priceNote": "One plan, every feature.",
+    "reasonPrompt": "Where do your recipes live right now, and which one did you last lose track of?",
+    "faq": [
+      {
+        "q": "Who makes this?",
+        "a": "Every Recipe is an independent app for adults 18+. It is not affiliated with any recipe website, magazine, cookbook publisher or other recipe app."
+      },
+      {
+        "q": "Does it come with its own recipes?",
+        "a": "No. It is a place to keep and find the recipes you already collect, from wherever you found them."
+      },
+      {
+        "q": "Can I add handwritten family recipes?",
+        "a": "That is part of the plan: you would photograph or type them in so they sit alongside everything else you have saved."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-21",
+      "summary": "Home cooks describe the same problem in their own words over many years: recipes end up split across boxes, bookmarks, printouts, browser history and loose paper, and they can't find the one they want. Five named people on four opened pages (three Straight Dope threads, from 2014, 2017 and June 2026, and one MoneySavingExpert thread) describe losing recipes or failing to keep them in one place.",
+      "wtp": "Paprika Recipe Manager 3 is a paid iPhone app at $4.99 with a 4.9 rating from 54K ratings (54,093 in the page data), seen on its US App Store page (https://apps.apple.com/us/app/paprika-recipe-manager-3/id1303222868). On Straight Dope, Athena (2014-05-20) says she uses the 'Cook’s Illustrated app (with subscription) and Eat Your Books so I can search my cookbooks.'",
+      "signals": [
+        {
+          "url": "https://boards.straightdope.com/t/waaahhh-i-can-t-find-the-recipe-i-like-help/1030769",
+          "who": "kaylasdad99 (Straight Dope)",
+          "date": "2026-06-09",
+          "quote": "I stupidly neglected to bookmark the URL or copy it to my notes.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://boards.straightdope.com/t/how-to-organize-my-recipes/796495",
+          "who": "Patx2 (Straight Dope)",
+          "date": "2017-09-16",
+          "quote": "I have some in a small box, some bookmarked, and some just floating around my kitchen. I’m a fairly organized person, but it seems like I can’t keep them all together.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://boards.straightdope.com/t/collecting-making-recipes-from-various-sources/688791",
+          "who": "TriPolar (Straight Dope)",
+          "date": "2014-05-20",
+          "quote": "Then when I want to use that recipe I wander around the house wondering what I did with it.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://boards.straightdope.com/t/collecting-making-recipes-from-various-sources/688791",
+          "who": "ThelmaLou (Straight Dope)",
+          "date": "2014-05-20",
+          "quote": "I’m organized in many ways, but severely challenged in this particular way…",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/589408/online-recipe-storage",
+          "who": "LadyinBlack_2 (MoneySavingExpert)",
+          "date": "2009-02-02",
+          "quote": "I have loads of pieces of paper with recipes on",
+          "seen": "opened"
+        },
+        {
+          "url": "https://boards.straightdope.com/t/collecting-making-recipes-from-various-sources/688791",
+          "who": "Athena (Straight Dope)",
+          "date": "2014-05-20",
+          "quote": "Cook’s Illustrated app (with subscription) and Eat Your Books so I can search my cookbooks.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/paprika-recipe-manager-3/id1303222868",
+          "who": "Paprika Recipe Manager 3 App Store listing",
+          "date": "2026-10-21",
+          "quote": "54K Ratings ... $4.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Paprika Recipe Manager 3 ($4.99, 54K ratings on the US App Store), plus other recipe keepers such as Recipe Keeper, AnyList, Mela and ReciMe, and general tools people already use for this (Evernote, Word documents, Google Sheets, browser bookmarks, binders with plastic sleeves).",
+      "risks": "Crowded category with an entrenched, well-rated paid leader and many free options; a monthly price may struggle against Paprika's one-time price. Several forum signals are years old (2009-2017), though the June 2026 thread shows the problem persists. Importing from screenshots, photos and handwriting must work reliably or the core promise fails. Some cooks prefer paper in the kitchen. Post dates are taken from the forum's UTC timestamps."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

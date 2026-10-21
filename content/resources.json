@@ -8159,5 +8159,44 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "organise-recipes-in-one-place",
+  "offer": "every-recipe",
+  "title": "Recipes everywhere? How to get them all in one place you can actually search",
+  "description": "Recipes split across bookmarks, screenshots, cookbooks and scraps of paper? Pick one home for them, gather them in one go, and tag by dish and main ingredient.",
+  "intro": "Most people save recipes in four or five places and can't find the one they want. One home and a simple naming habit fix most of it.",
+  "sections": [
+   {
+    "h": "Pick one home",
+    "list": [
+     "One app, one document or one binder. The key is one."
+    ]
+   },
+   {
+    "h": "Gather in one sitting",
+    "list": [
+     "Bookmarks, screenshots, magazine pages and family cards. Photograph paper ones."
+    ]
+   },
+   {
+    "h": "Name them the way you'd search",
+    "list": [
+     "Dish name plus main ingredient, like 'chicken traybake, lemon'."
+    ]
+   },
+   {
+    "h": "Mark keepers",
+    "list": [
+     "After you cook something, mark it 'keeper' or 'not again', and note your tweaks."
+    ]
+   },
+   {
+    "h": "Save new ones straight away",
+    "p": [
+     "When you find a recipe you want, put it in your one home before you close the page."
+    ]
+   }
+  ]
  }
 ]
