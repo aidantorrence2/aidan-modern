@@ -23542,6 +23542,83 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-21",
+    "slug": "clear-wash",
+    "name": "Clear Wash",
+    "need": "I'm learning watercolour and my paintings keep going muddy. I keep adding colour over colour until I have a mess.",
+    "headline": "Watercolours keep going muddy or overworked? Ten-minute exercises on one habit at a time, a layer counter and drying timer, and a photo log that shows where it went wrong.",
+    "buyer": "Adults 18+ learning watercolour whose paintings keep turning muddy or overworked.",
+    "bullets": [
+      "Ten-minute exercises on one habit at a time: clean mixes, wet-in-wet, waiting for it to dry, knowing when to stop.",
+      "A layer counter and drying timer while you paint.",
+      "A stage-by-stage photo log so you can see where a painting started to go muddy."
+    ],
+    "price": "$3.99/month",
+    "priceUsd": 4,
+    "priceNote": "Or $24.99 a year.",
+    "reasonPrompt": "What happens when your paintings go wrong: muddy colours, too many layers, or something else?",
+    "faq": [
+      {
+        "q": "Do I need special paints?",
+        "a": "No. It works with any watercolour set. It helps you use what you have more cleanly."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Adults 18+. It is an independent app, not linked to any paint brand, course or artist."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-21",
+      "summary": "Watercolour beginners on WetCanvas (2005-2018) say their paintings go muddy and overworked and they get frustrated. Students on a watercolour course page say the same about earlier attempts.",
+      "wtp": "Watercolor Affair sells a paid Watercolor Masterclass ('Join over 2,000 artists'); its student Justin Joyner says he had done 'endless watercolor classes on Udemy'.",
+      "signals": [
+        {
+          "url": "https://www.wetcanvas.com/forums/topic/muddy-watercolor",
+          "who": "Pappyspop (WetCanvas)",
+          "date": "2015-06-14",
+          "quote": "I keep adding color over color, paint over paint, until I have a mess.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.wetcanvas.com/forums/topic/mixing-watercolor-not-mud",
+          "who": "allisonsteinart (WetCanvas)",
+          "date": "2005-01-23",
+          "quote": "I've been making mud a lot, too, and was getting really frustrated.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.wetcanvas.com/forums/topic/tips-on-avoiding-that-overworked-muddy-look",
+          "who": "briantmeyer (WetCanvas)",
+          "date": "2018",
+          "quote": "mine looks muddy and dull in comparison.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://watercoloraffair.com/student-success/",
+          "who": "Justin Joyner (Watercolor Affair student page)",
+          "date": "undated",
+          "quote": "I've done endless watercolor classes on Udemy, all of which have been dissapointing.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://watercoloraffair.com/student-success/",
+          "who": "Fiona Inch (Watercolor Affair student page)",
+          "date": "undated",
+          "quote": "I used to feel frustrated with my ad hoc attempts",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Paid watercolour courses, Skillshare and Domestika classes, YouTube, books.",
+      "risks": "Forum posts are old; two quotes are testimonials on a seller's page; no rated watercolour app."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

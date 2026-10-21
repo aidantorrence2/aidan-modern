@@ -8705,5 +8705,44 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "why-watercolours-go-muddy",
+  "offer": "clear-wash",
+  "title": "Why your watercolours go muddy, and five ten-minute fixes",
+  "description": "Muddy watercolours usually come from too many pigments in one mix, too many layers, or painting into damp paint. Fix one habit at a time.",
+  "intro": "Mud is one of the most common beginner problems in watercolour. It usually has a few simple causes you can practise away.",
+  "sections": [
+   {
+    "h": "Mix two colours, not four",
+    "list": [
+     "The more pigments in one mix, the greyer it gets."
+    ]
+   },
+   {
+    "h": "Count your layers",
+    "list": [
+     "Two or three glazes is often enough. Stop before you think you're finished."
+    ]
+   },
+   {
+    "h": "Let it dry fully",
+    "list": [
+     "Painting into a half-dry wash lifts and muddies it. Touch the back of your hand to check."
+    ]
+   },
+   {
+    "h": "Clean water, clean brush",
+    "list": [
+     "Use two water jars: one to rinse, one for clean water."
+    ]
+   },
+   {
+    "h": "Photograph each stage",
+    "p": [
+     "A photo after every layer shows exactly when it started to go muddy."
+    ]
+   }
+  ]
  }
 ]
