@@ -7334,5 +7334,44 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "lent-things-never-get-them-back",
+  "offer": "who-has-it",
+  "title": "Lend things and never get them back? A simple lending list",
+  "description": "Can't remember who has your books, DVDs or tools? Write down every loan with a date, put your name on things, and agree a return date when you lend.",
+  "intro": "Most lent things don't come back because both people forget. A simple record and a return date fix most of it.",
+  "sections": [
+   {
+    "h": "Write every loan down",
+    "list": [
+     "Note the item, who has it and the date. A note on your phone is enough."
+    ]
+   },
+   {
+    "h": "Agree a return date",
+    "list": [
+     "Say when you'd like it back as you hand it over. It makes asking later much easier."
+    ]
+   },
+   {
+    "h": "Put your name on things",
+    "list": [
+     "A name label inside books and on tools helps them find their way home."
+    ]
+   },
+   {
+    "h": "Check the list monthly",
+    "list": [
+     "Look over what's out once a month and send a friendly reminder for anything overdue."
+    ]
+   },
+   {
+    "h": "Keep a no-lend shelf",
+    "p": [
+     "Some things are too precious to lend. Decide which, and say so kindly."
+    ]
+   }
+  ]
  }
 ]

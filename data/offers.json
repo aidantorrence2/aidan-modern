@@ -20242,6 +20242,94 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-21",
+    "slug": "who-has-it",
+    "name": "Who Has It",
+    "need": "I lend my things to friends and family, I can't remember who has what, and I never get them back.",
+    "headline": "Lent something and can't remember who has it? Log each loan in seconds (what, who, when) and get a friendly nudge before it's gone for good.",
+    "buyer": "Adults who often lend books, DVDs, tools and other belongings to friends, family and neighbours, and keep losing track of who has them",
+    "bullets": [
+      "Log a loan in a few taps: the item, the person, the date, plus a photo if you want one",
+      "See everything you've lent out on one list, sorted by who has it and how long it's been gone",
+      "Set a return date and get a reminder, with a polite message ready to send so you're not the one who has to bring it up awkwardly"
+    ],
+    "price": "$2.99/month",
+    "priceUsd": 3,
+    "priceNote": "",
+    "reasonPrompt": "What have you lent out and never got back, and who do you think has it?",
+    "faq": [
+      {
+        "q": "Who makes this app?",
+        "a": "Who Has It is an independent app for adults 18+. It isn't affiliated with any bookstore, tool brand or other lending app."
+      },
+      {
+        "q": "Does it track money loans?",
+        "a": "It's built for physical things you lend out, like books, DVDs, tools and gear. It isn't a debt collection or money-lending service."
+      },
+      {
+        "q": "Will it message my friends for me?",
+        "a": "No. You choose when to send a reminder and what it says. The app only helps you remember and gives you wording to use."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-21",
+      "summary": "People on Goodreads book groups and Garage Journal forum threads describe the same problem in their own words: they lend books, DVDs and tools, forget who has them, and the items don't come back. Some have started keeping their own lists or spreadsheets, or have stopped lending altogether.",
+      "wtp": "People spend money replacing lent items: one Goodreads couple spent about $200 rebuying books and DVDs they couldn't trace. A paid lending tracker (Borrow) sells add-ons from $1.99 but has only 12 ratings. Thin signal for an app.",
+      "signals": [
+        {
+          "url": "https://www.goodreads.com/topic/show/516464-lending-out-books-why-i-just-can-t-do-it?page=1",
+          "who": "Louise (Goodreads, Book Buying Addicts Anonymous)",
+          "date": "2011-03-21",
+          "quote": "My husband and I recently spent about 200 dollars, buying books and dvds that we'd borrowed to people, but couldn't remember who to, and had not gotten back.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.goodreads.com/topic/show/1013119-do-u-lend-books-easily-or-not-at-all-and-why",
+          "who": "Abhijith (Goodreads, Indian Readers)",
+          "date": "2012-09-04",
+          "quote": "the worse thing is that I don't remember whom i lent those book to",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.goodreads.com/topic/show/1013119-do-u-lend-books-easily-or-not-at-all-and-why",
+          "who": "Caroline (Goodreads, Indian Readers)",
+          "date": "2013-10-29",
+          "quote": "as people tend not to give back",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.goodreads.com/topic/show/1765510-being-selective-about-lending-books?page=1",
+          "who": "Melissa (Goodreads, Book Buying Addicts Anonymous)",
+          "date": "2014-04-01",
+          "quote": "I used to lend books but spent a lot of time and money replacing them as well.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.garagejournal.com/forum/threads/lending-tools-yes-or-no.496911/",
+          "who": "Death Row Dave (The Garage Journal)",
+          "date": "2022-04-19",
+          "quote": "I write down the date , what and who has my stuff .",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id885644065",
+          "who": "Borrow - Track lent and borrowed items, by Tobias Totzek (App Store)",
+          "date": "2026-10-21",
+          "quote": "12 Ratings ... $1.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Borrow (Tobias Totzek, free with in-app purchases from $1.99, 12 ratings, 4.3), LendPal (Codemotion, free, 656 ratings, 4.1), Who Owes Me (money-focused, free, about 810 ratings), and many new lending trackers with no ratings. People also use spreadsheets, notebooks, Goodreads shelves, or write their name inside their books.",
+      "risks": "The evidence that people will pay for an app is weak. Most competitors are free or tip-based and have few ratings, so a subscription may be hard to sell. Many people respond by not lending at all rather than tracking loans. Several of the posts are 2011-2014. Reminders could feel socially awkward. The positioning has to stay about personal belongings, so it doesn't drift into money lending (close to the held 'housemates not paying' topic) or workplace tool cribs."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
