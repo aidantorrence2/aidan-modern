@@ -7925,5 +7925,83 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "how-to-say-no-without-guilt",
+  "offer": "kind-no",
+  "title": "How to say no without feeling guilty: short scripts and a two-week practice plan",
+  "description": "Always saying yes? Buy time before you answer, use a short polite no, and practise on small requests first.",
+  "intro": "Saying no gets easier with practice. Start with small, low-stakes requests and a few phrases you're comfortable with.",
+  "sections": [
+   {
+    "h": "Buy time",
+    "list": [
+     "'Let me check and get back to you' gives you room to decide."
+    ]
+   },
+   {
+    "h": "Keep it short",
+    "list": [
+     "'Thanks for asking, but I can't this time.' You don't need a long reason."
+    ]
+   },
+   {
+    "h": "Offer an alternative if you want to",
+    "list": [
+     "'I can't do Saturday, but I could help for an hour on Sunday.'"
+    ]
+   },
+   {
+    "h": "Practise on small things",
+    "list": [
+     "Turn down one small request a day for two weeks."
+    ]
+   },
+   {
+    "h": "Notice the guilt, then let it pass",
+    "p": [
+     "Feeling guilty doesn't mean you did something wrong. If it's affecting your wellbeing, a counsellor can help."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "scared-of-falling-on-skates",
+  "offer": "glide-start",
+  "title": "Scared of falling on skates as an adult: a step-by-step first month",
+  "description": "Clinging to the wall? Learn how to fall and stop first, then build from marching to gliding in short sessions, with pads on.",
+  "intro": "Lots of adults learn or return to skating. Knowing how to fall and stop takes much of the fear away.",
+  "sections": [
+   {
+    "h": "Gear up",
+    "list": [
+     "Helmet, wrist guards, knee and elbow pads."
+    ]
+   },
+   {
+    "h": "Learn to fall",
+    "list": [
+     "Bend your knees, go down forwards onto your pads, and practise getting up."
+    ]
+   },
+   {
+    "h": "Learn to stop",
+    "list": [
+     "A simple stop first: plough stop on ice, or a T-stop or heel brake on roller skates."
+    ]
+   },
+   {
+    "h": "March, then glide",
+    "list": [
+     "Small marching steps, then push and glide a short distance with knees bent."
+    ]
+   },
+   {
+    "h": "Short, regular sessions",
+    "p": [
+     "Twenty minutes a few times a week beats one long session. Consider a beginner lesson."
+    ]
+   }
+  ]
  }
 ]

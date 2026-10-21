@@ -21608,6 +21608,174 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-21",
+    "slug": "kind-no",
+    "name": "Kind No",
+    "need": "I find it really difficult to say no. I say yes to things I don't want, then feel guilty or resentful.",
+    "headline": "Say yes when you mean no, then resent it? Pause before you answer, practise polite ways to say no out loud, and see who gets the yeses you didn't want to give.",
+    "buyer": "Adults 18+ who say yes to favours, extra work and plans they don't want, then feel guilty or resentful.",
+    "bullets": [
+      "A pause button for requests, so you don't answer on the spot.",
+      "Polite ways to say no you can edit and practise out loud.",
+      "A ten-second log per request, and a weekly view of who gets your unwanted yeses."
+    ],
+    "price": "$3.99/month",
+    "priceUsd": 4,
+    "priceNote": "Or $24.99 a year.",
+    "reasonPrompt": "What did you last say yes to when you wanted to say no?",
+    "faq": [
+      {
+        "q": "Is it therapy?",
+        "a": "No. It's a practice and logging tool. If people-pleasing is linked to how you feel day to day, a GP, counsellor or therapist can help."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Adults 18+. It is an independent app, not linked to any therapist, author or course."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-21",
+      "summary": "People on two Mumsnet threads (2023 and 2025) call themselves pushovers and people-pleasers, find it hard to say no, and feel guilty when they do. Several went to counselling or therapy for it.",
+      "wtp": "Bounds: Set Boundaries (App Store) sells 'Stop People Pleasing & Say No' at $14.99 a month up to $149 lifetime (3 ratings). On Mumsnet, MargoLivebetter had several years of therapy and ApathyMartha went for counselling.",
+      "signals": [
+        {
+          "url": "https://www.mumsnet.com/talk/relationships/4850005-chronic-people-pleaser",
+          "who": "justlass (Mumsnet)",
+          "date": "2023-07-15",
+          "quote": "I find it really difficult to say no.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/relationships/4850005-chronic-people-pleaser",
+          "who": "WaterBaby9 (Mumsnet)",
+          "date": "2023-07-15",
+          "quote": "I am an absolute pushover and people pleaser.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/am_i_being_unreasonable/5357804-to-stop-being-a-people-pleaser",
+          "who": "Heronious (Mumsnet)",
+          "date": "2025-06-19",
+          "quote": "when i say no, even if im totally justified, i feel guilty",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/am_i_being_unreasonable/5357804-to-stop-being-a-people-pleaser",
+          "who": "Bringonthesun1 (Mumsnet)",
+          "date": "2025-06-19",
+          "quote": "years of putting my own feelings last, and everyone elses feelings first",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/am_i_being_unreasonable/5357804-to-stop-being-a-people-pleaser",
+          "who": "MargoLivebetter (Mumsnet)",
+          "date": "2025-06-24",
+          "quote": "It took several years of therapy",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/bounds-set-boundaries/id6760728776",
+          "who": "Bounds: Set Boundaries App Store listing",
+          "date": "2026-10-21",
+          "quote": "$14.99 ... $149 ... 3 Ratings",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Bounds, assertiveness courses, books, counselling.",
+      "risks": "The paid app has only 3 ratings; therapy cost not stated. All posters on one site."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-21",
+    "slug": "glide-start",
+    "name": "Glide Start",
+    "need": "I'm an adult learning to skate again and I'm terrified of falling. I can barely let go of the side.",
+    "headline": "Stuck at the wall on skates, scared of falling? Move from standing to gliding in small steps, learn to fall and stop first, and log your nerves each session.",
+    "buyer": "Adults 18+ learning or returning to roller or ice skating who are scared of falling.",
+    "bullets": [
+      "A small-step ladder from standing to gliding, stopping and turning.",
+      "Falling and stopping drills first, so you know what to do.",
+      "A two-minute session log with nerves before and after, and a progress chart."
+    ],
+    "price": "$3.99/month",
+    "priceUsd": 4,
+    "priceNote": "Or $19.99 a year.",
+    "reasonPrompt": "Roller or ice, and what's the thing that scares you most?",
+    "faq": [
+      {
+        "q": "Is it safe?",
+        "a": "Wear a helmet and wrist, knee and elbow pads, start somewhere flat and quiet, and consider a lesson. If you have health concerns, check with a doctor first."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Adults 18+. It is an independent app, not linked to any rink, skate school or brand."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-21",
+      "summary": "Adults on Mumsnet (2014) say they've lost their balance and nerve on the ice and can barely let go of the side. App Store reviewers of a skating app say they were nervous about falling.",
+      "wtp": "Skatebase sells a '10 Step Beginners Programme' for £19 (full price £29). My Skate Pro (App Store, 42 ratings) lists Monthly $9.99 and Yearly $89.99 in-app purchases.",
+      "signals": [
+        {
+          "url": "https://www.mumsnet.com/talk/am_i_being_unreasonable/2248315-To-be-gutted-that-Ive-forgotten-how-to-ice-skate",
+          "who": "JellyDiamonds (Mumsnet)",
+          "date": "2014-11-30",
+          "quote": "I was terrified and could barely manage to let go of the side!",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/am_i_being_unreasonable/2248315-To-be-gutted-that-Ive-forgotten-how-to-ice-skate",
+          "who": "Ilovehamabeads (Mumsnet)",
+          "date": "2014-11-30",
+          "quote": "Thoroughly peeved that I appear to have lost my balance and my nerve.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/am_i_being_unreasonable/2248315-To-be-gutted-that-Ive-forgotten-how-to-ice-skate",
+          "who": "Fluffyears (Mumsnet)",
+          "date": "2014-11-30",
+          "quote": "just sort of wobbled along feeling terrified",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/am_i_being_unreasonable/2248315-To-be-gutted-that-Ive-forgotten-how-to-ice-skate",
+          "who": "Hatespiders (Mumsnet)",
+          "date": "2014-11-30",
+          "quote": "I'd be terrified of having a fall and breaking a femur.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/my-skate-pro/id1570572776",
+          "who": "reclaimingmysunday (App Store review)",
+          "date": "2022",
+          "quote": "I was really nervous about falling and correct form",
+          "seen": "opened"
+        },
+        {
+          "url": "https://skatebase.samcart.com/courses/directory",
+          "who": "Skatebase course directory",
+          "date": "2026-10-21",
+          "quote": "£19 ... £29",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Skatebase, My Skate Pro, rink lessons, YouTube.",
+      "risks": "Main thread is 2014 and mostly returners. Injury risk: copy stresses pads and lessons."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
