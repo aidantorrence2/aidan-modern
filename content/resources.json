@@ -8042,5 +8042,44 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "learning-bridge-bidding-as-an-adult",
+  "offer": "bridge-basics",
+  "title": "Learning bridge as an adult: how to stop feeling lost at bidding",
+  "description": "Bidding is the hardest part of bridge for most learners. Start with point counting and simple natural openings, then practise one idea at a time.",
+  "intro": "Most new players follow the play but get lost in the bidding. Learning it in small pieces, with lots of practice hands, makes it manageable.",
+  "sections": [
+   {
+    "h": "Count your points",
+    "list": [
+     "Ace 4, king 3, queen 2, jack 1. Count every hand before you bid."
+    ]
+   },
+   {
+    "h": "Learn simple openings first",
+    "list": [
+     "When to open, and which suit to open with. Leave conventions for later."
+    ]
+   },
+   {
+    "h": "One idea per session",
+    "list": [
+     "For example, just responses to a one-of-a-suit opening, until they feel easy."
+    ]
+   },
+   {
+    "h": "Bid practice hands on your own",
+    "list": [
+     "Deal hands, bid both sides, then check against a book or teacher."
+    ]
+   },
+   {
+    "h": "Play with patient people",
+    "p": [
+     "A beginners' class or friendly table, where you can ask what a bid means, helps a lot."
+    ]
+   }
+  ]
  }
 ]

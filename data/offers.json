@@ -21875,6 +21875,90 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-21",
+    "slug": "bridge-basics",
+    "name": "Bridge Basics",
+    "need": "I'm learning bridge as an adult and I find bidding pretty hard. I'm confused about how to keep learning.",
+    "headline": "Learning bridge and lost at bidding? Ten-minute lessons on one idea each, practice hands you bid on your own, and every answer checked with the reason.",
+    "buyer": "Adults 18+ learning the card game bridge who feel lost, especially at bidding.",
+    "bullets": [
+      "Ten-minute lessons, one bidding idea each.",
+      "Practice hands you bid on your own, with each answer checked and explained.",
+      "Spots you miss come back until they stick."
+    ],
+    "price": "$3.99/month",
+    "priceUsd": 4,
+    "priceNote": "Or $24.99 a year.",
+    "reasonPrompt": "How long have you been learning bridge, and what part of bidding trips you up?",
+    "faq": [
+      {
+        "q": "Who is it for?",
+        "a": "Adults 18+. It is an independent app, not linked to any bridge club, federation, publisher or other bridge app."
+      },
+      {
+        "q": "Which bidding system does it teach?",
+        "a": "It starts with simple natural bidding. If your club plays a particular system, check with your teacher too."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-21",
+      "summary": "Adult learners in Substack comments (2024) and on the BBO forum (2021) say bidding is hard, they don't really understand the game yet, and they're confused about how to keep learning.",
+      "wtp": "suzienewbi bought Bridge for Dummies. Fun Bridge (App Store): 14K ratings, Premium+ $27.99.",
+      "signals": [
+        {
+          "url": "https://franklantz.substack.com/p/bridge/comments",
+          "who": "Charlene Putney (Substack comment)",
+          "date": "2024-06-25",
+          "quote": "I find bidding pretty hard still!",
+          "seen": "opened"
+        },
+        {
+          "url": "https://franklantz.substack.com/p/bridge/comments",
+          "who": "Lynn Cherny (Substack comment)",
+          "date": "2024-06-24",
+          "quote": "i still don’t really understand Bridge but i think that’s to be expected",
+          "seen": "opened"
+        },
+        {
+          "url": "https://franklantz.substack.com/p/bridge/comments",
+          "who": "Matthew Budman (Substack comment)",
+          "date": "2024-06-24",
+          "quote": "I wish I could envision personally investing the mental energy and discipline in learning how to play bridge competently!",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.bridgebase.com/forums/topic/85930-what-card-do-you-play/page__view__new",
+          "who": "suzienewbi (BBO forum)",
+          "date": "2021-07-11",
+          "quote": "Now quite confused about how to continue learning.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.bridgebase.com/forums/topic/85930-what-card-do-you-play/page__view__new",
+          "who": "suzienewbi (BBO forum)",
+          "date": "2021-07-11",
+          "quote": "I have the Bridge for Dummies book.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/fun-bridge/id408841149",
+          "who": "Fun Bridge App Store listing",
+          "date": "2026-10-21",
+          "quote": "14K Ratings ... Premium+ $27.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Fun Bridge, BBO, LearnBridge, books, club lessons.",
+      "risks": "Learner posts are blog comments and one forum thread. Fun Bridge sells play more than lessons."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
