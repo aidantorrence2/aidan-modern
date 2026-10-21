@@ -7022,5 +7022,44 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "what-is-using-all-my-electricity",
+  "offer": "watt-hunt",
+  "title": "What's using all my electricity? A week of readings and a one-switch-at-a-time test",
+  "description": "Shock electricity bill? Take daily meter readings, check the bill isn't estimated, then switch things off one at a time and watch the meter.",
+  "intro": "A big jump in electricity use usually has a findable cause: an estimated reading, one hungry appliance, or something left on. A simple routine helps you find it.",
+  "sections": [
+   {
+    "h": "Check for estimated readings",
+    "list": [
+     "Look at your bill. If the reading is marked estimated, send your supplier a real one."
+    ]
+   },
+   {
+    "h": "Read the meter daily",
+    "list": [
+     "Take a reading at the same time each day for a week to see your real daily use."
+    ]
+   },
+   {
+    "h": "Find your baseline",
+    "list": [
+     "Before bed, note the reading; switch off what you can, and read again in the morning. That shows what's running overnight."
+    ]
+   },
+   {
+    "h": "One switch at a time",
+    "list": [
+     "Switch appliances off at the plug one by one and watch how the meter or display changes. Don't open the fuse box or touch wiring."
+    ]
+   },
+   {
+    "h": "Usual suspects",
+    "p": [
+     "Heaters, immersion heaters, tumble dryers, old fridges and freezers. If you suspect a fault, call a qualified electrician or your supplier."
+    ]
+   }
+  ]
  }
 ]

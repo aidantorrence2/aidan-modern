@@ -19645,6 +19645,101 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-21",
+    "slug": "watt-hunt",
+    "name": "Watt Hunt",
+    "need": "I can't work out what's using all my electricity. The bill is huge and I can't see where it's come from.",
+    "headline": "Bill gone through the roof and you can't see why? Log a few meter readings and test your home room by room until you find what's really using your electricity.",
+    "buyer": "Adults who pay their own household energy bill, got a shock bill or a big jump in usage, and can't tell which appliance, circuit or estimated reading is behind it",
+    "bullets": [
+      "A guided daily meter-reading log that you fill in at the same time each day, so you see your real use per day and not the supplier's estimate",
+      "A step-by-step 'one switch at a time' test: switch things off at the plug or fuse box, watch the meter, and write down what each one does",
+      "An appliance checklist that adds up what your home should be using and shows how far that is from what the meter says, so you know where to look first"
+    ],
+    "price": "$2.99/month",
+    "priceUsd": 3,
+    "priceNote": "No smart meter or extra hardware needed.",
+    "reasonPrompt": "What happened with your electricity bill or usage that made you want to find out what's using it?",
+    "faq": [
+      {
+        "q": "Who makes Watt Hunt?",
+        "a": "Watt Hunt is an independent app for adults 18+. It is not made by, affiliated with or endorsed by any energy supplier, meter maker or comparison site."
+      },
+      {
+        "q": "Do I need a smart meter or an energy monitor?",
+        "a": "No. You type in readings from the meter you already have. If you own a plug-in energy monitor, you can add its readings too."
+      },
+      {
+        "q": "Is this electrical advice?",
+        "a": "No. Watt Hunt only asks you to read your meter and use ordinary plugs and switches. Never open your fuse box or touch wiring. If you think there's a fault, call a qualified electrician or your supplier."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-21",
+      "summary": "On MoneySavingExpert's Energy board, people keep posting the same problem in their own words: a bill or meter total far above what their home should use, and no idea which appliance or circuit is causing it. Replies give the same manual fixes every time: take daily readings at the same time, switch circuits off one by one, check for estimated readings, and plug appliances into a monitor. Nobody walks them through it as one guided process.",
+      "wtp": "Two MoneySavingExpert posters bought plug-in power monitors. Meter Readings (App Store UK): £0.99 with a £4.99 Pro upgrade, 117 ratings.",
+      "signals": [
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/5388333/huge-electricity-consumption-in-a-brand-new-house",
+          "who": "hellesangel (MoneySavingExpert Forum)",
+          "date": "2016-01-06",
+          "quote": "My question is this - what can possibly be using 20kWh per day?",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/5388333/huge-electricity-consumption-in-a-brand-new-house",
+          "who": "hellesangel (MoneySavingExpert Forum)",
+          "date": "2016-01-06",
+          "quote": "fitted power meters to the fridge and washing machine",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/4605851/energy-monitors-advice",
+          "who": "mumlady1 (MoneySavingExpert Forum)",
+          "date": "2013-05-17",
+          "quote": "I just can't see where this bill has come from",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/6323940/at-minimum-electrify-switched-on-still-high-bills/p1",
+          "who": "Koolerking (MoneySavingExpert Forum)",
+          "date": "2022-01-04",
+          "quote": "The readings seems to be right, but the use is high when im on minimal use of electricity.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/5995618/is-it-possible-to-use-850kwh-electricity-in-a-month",
+          "who": "mac.d (MoneySavingExpert Forum)",
+          "date": "2019-04-28",
+          "quote": "can't understand how they've used so much electric in the past month",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/4605851/energy-monitors-advice",
+          "who": "Norman_Castle (MoneySavingExpert Forum)",
+          "date": "2013-05-21",
+          "quote": "I've used a short extension lead to site my plug in monitor in a more convenient place. I've had two.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/gb/app/id320551309",
+          "who": "Meter Readings – Home energy tracker (App Store UK)",
+          "date": "2026-10-21",
+          "quote": "£0.99 · In-App Purchases ... 117 Ratings ... Pro User £4.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Supplier apps and smart-meter in-home displays (free, but they show totals, not causes). Plug-in energy monitors and whole-house clamp monitors (hardware; councils and libraries sometimes lend them). Meter-log apps: Meter Readings (£0.99 plus IAP, 117 UK ratings), MeterStats (£0.99/month), Utility Meter Log, eTracker (few ratings). Free forum advice on MSE. None of these turns 'find what's using it' into one guided step-by-step process.",
+      "risks": "The need comes in episodes (a shock bill), so people may cancel quickly once they find the cause. Smart meters with half-hourly data in free supplier apps cover part of the job. The evidence is mostly UK and mostly from one forum (MSE), with posts from 2013 to 2022. Fuse-box testing must stay limited to normal switches, with clear 'don't touch wiring' wording. Often the cause is a billing estimate or a faulty meter, which needs the supplier, not an app. Don't claim any savings amounts."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
