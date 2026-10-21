@@ -21316,6 +21316,105 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-21",
+    "slug": "trip-pacer",
+    "name": "Trip Pacer",
+    "need": "I'm overwhelmed planning my trip and can't tell if my itinerary is realistic or if I'm trying to fit too much in.",
+    "headline": "Paste in your trip plan and see, day by day, how many hours you'll really spend sightseeing versus packing, checking out and sitting on trains, before you book anything you can't change.",
+    "buyer": "Adults 18+ planning their own multi-stop holiday who feel overwhelmed and can't tell if the plan is too packed.",
+    "bullets": [
+      "List your stops and nights per stop, and get a day-by-day picture of how much time is lost to checkouts, transfers and travel between places",
+      "See one-night stays, back-to-back travel days and doubled-back routes flagged, so you can spot what would make the trip feel rushed",
+      "Get plain suggestions of what to cut, merge into a day trip, or give an extra night, so you can stop rewriting the plan and get on with booking"
+    ],
+    "price": "$9.99/trip",
+    "priceUsd": 10,
+    "priceNote": "One payment per trip plan, no subscription.",
+    "reasonPrompt": "Where are you going, for how many days, and what part of planning it is overwhelming you right now?",
+    "faq": [
+      {
+        "q": "Who is Trip Pacer for?",
+        "a": "Trip Pacer is an independent app for adults 18+ planning their own holidays. It is not affiliated with any travel company, guidebook, tour operator or forum."
+      },
+      {
+        "q": "Does it book trains, hotels or tours?",
+        "a": "No. It helps you judge whether your plan is realistic before you book. You make all bookings yourself, wherever you choose."
+      },
+      {
+        "q": "Are the travel times exact?",
+        "a": "No. They are estimates to help you compare options. Always check timetables and opening hours with the operator before you travel."
+      },
+      {
+        "q": "Will it tell me the one right itinerary?",
+        "a": "No. It shows the trade-offs in your own plan, such as how much time goes on getting between places, so you can decide what matters most to you."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-21",
+      "summary": "On the Rick Steves Travel Forum, a large share of new threads are people asking strangers to check whether their itinerary is realistic. Posters say in their own words that planning feels overwhelming, that there is 'so much to see in far too little time', and that they can't tell if they are 'overshooting or undershooting'. Some turn to ChatGPT and then don't trust what it gives them, and others give up and look at a tour or a travel agent.",
+      "wtp": "Wanderlog - Travel Planner (App Store): 36K ratings, Pro $5.99 a month or $39.99 to $49.99 a year. On the forum, one poster is consulting a travel agent and another is open to a tour because planning feels overwhelming.",
+      "signals": [
+        {
+          "url": "https://community.ricksteves.com/travel-forum/general-europe/solo-travel-at-christmas-mature-woman",
+          "who": "l.marie.loomis (Rick Steves Travel Forum)",
+          "date": "2026-08-08",
+          "quote": "I am open to a tour, mainly because it has been so long since I have been able to travel anywhere and it feels a little overwhelming now to have to plan everything",
+          "seen": "opened"
+        },
+        {
+          "url": "https://community.ricksteves.com/travel-forum/general-europe/3-country-trip-in-scandinavia",
+          "who": "lisajford22 (Rick Steves Travel Forum)",
+          "date": "2026-07-20",
+          "quote": "truly I have no idea what a week will offer us in each of these countries, sort of why I would love some thoughts on the logistics and if we are overshooting or undershooting.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://community.ricksteves.com/travel-forum/italy/9-day-itinerary-for-sicily",
+          "who": "brian (Rick Steves Travel Forum)",
+          "date": "2026-09-22",
+          "quote": "This is difficult for us because we are normally slow travelers and there is so much to see in far too little time.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://community.ricksteves.com/travel-forum/general-europe/seek-your-opinions-and-knowledge-about-my-planned-itinerary-for-april-2027",
+          "who": "Brigitte07 (Rick Steves Travel Forum)",
+          "date": "2026-08-12",
+          "quote": "I still first need to work out the route of different cities of different countries by trains and time so that it won't waste precious time.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://community.ricksteves.com/travel-forum/france/biking-and-swimming",
+          "who": "kellyotis4 (Rick Steves Travel Forum)",
+          "date": "2026-10-02",
+          "quote": "I’m just starting to explore ideas and was feeling a little overwhelmed",
+          "seen": "opened"
+        },
+        {
+          "url": "https://community.ricksteves.com/travel-forum/italy/dolomites-visit-with-minimal-hiking-plus-easy-via-ferrata",
+          "who": "Diane Falconer (Rick Steves Travel Forum)",
+          "date": "2026-09-28",
+          "quote": "Consulting a travel agent too.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/wanderlog-travel-planner/id1476732439",
+          "who": "Wanderlog - Travel Planner (App Store)",
+          "date": "2026-10-21",
+          "quote": "Wanderlog Pro: Monthly Plan $5.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Wanderlog (36K ratings, Pro subscription) and similar trip organisers mostly store and map a plan, but don't judge whether it's realistic. ChatGPT and other general AI tools will draft itineraries, but posters say they don't trust them. Other options are free advice on forums like Rick Steves (helpful but slow, and opinions conflict), guidebooks, travel agents and organised tours.",
+      "risks": "Travel planning is occasional, so people may only buy once a year or less. Free forums and AI chatbots are strong substitutes. Travel-time estimates have to be clearly labelled as approximate or people will lose trust. The evidence comes from one forum, whose users skew older, American and Europe-bound. Avoid any wording that implies a link to Rick Steves or any travel brand."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

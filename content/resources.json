@@ -7808,5 +7808,44 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "is-my-itinerary-too-packed",
+  "offer": "trip-pacer",
+  "title": "Is my itinerary too packed? A five-minute check before you book",
+  "description": "Count travel days, one-night stops and hours lost to checkouts and transfers, then cut or merge stops until each place gets real time.",
+  "intro": "Most first drafts of a multi-city trip try to fit in too much. A quick count of the time lost between places shows whether yours is realistic.",
+  "sections": [
+   {
+    "h": "List stops and nights",
+    "list": [
+     "Write each place and how many nights you'll sleep there."
+    ]
+   },
+   {
+    "h": "Count moving days",
+    "list": [
+     "Each change of base usually costs half a day: checkout, getting to the station, the journey and check-in."
+    ]
+   },
+   {
+    "h": "Flag one-night stops",
+    "list": [
+     "One night often means less than a day to see anything. Merge it or make it a day trip."
+    ]
+   },
+   {
+    "h": "Check the route",
+    "list": [
+     "Look for doubling back. A line or loop wastes less time than zigzagging."
+    ]
+   },
+   {
+    "h": "Leave slack",
+    "p": [
+     "Add a free half-day every few days for rest, weather or something you find on the way. Check real timetables before booking."
+    ]
+   }
+  ]
  }
 ]
