@@ -9792,5 +9792,46 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "split-costs-after-group-trip",
+  "offer": "trip-kitty",
+  "title": "How to split costs fairly after a group trip",
+  "description": "Agree the rules before you go, log every cost as it happens, handle uneven splits openly, and settle with the fewest payments.",
+  "intro": "Most arguments about trip money come from costs nobody wrote down, or rules nobody agreed. A little setup avoids both.",
+  "sections": [
+   {
+    "h": "Agree the rules first",
+    "list": [
+     "Decide what's shared (accommodation, car, groceries) and what isn't (drinks, souvenirs).",
+     "Agree how couples and children count."
+    ]
+   },
+   {
+    "h": "Log costs as they happen",
+    "list": [
+     "Write down who paid, how much, and who it was for, the same day. Photos of receipts help.",
+     "For costs in another currency, note the amount in that currency and use one agreed exchange rate."
+    ]
+   },
+   {
+    "h": "Handle uneven splits openly",
+    "list": [
+     "If someone skipped a dinner or activity, leave them out of that cost rather than averaging it away."
+    ]
+   },
+   {
+    "h": "Settle with as few payments as possible",
+    "list": [
+     "Work out each person's balance (what they paid minus their share). People who owe pay people who are owed; you rarely need everyone to pay everyone."
+    ]
+   },
+   {
+    "h": "Settle soon",
+    "p": [
+     "Settle within a week or two of getting home, while everyone still remembers the trip."
+    ]
+   }
+  ]
  }
 ]

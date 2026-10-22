@@ -25784,6 +25784,90 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-22",
+    "slug": "trip-kitty",
+    "name": "Trip Kitty",
+    "need": "Every time I go away with friends I end up with a big spreadsheet working out who owes who, and I won't pay a monthly subscription for something I use once or twice a year.",
+    "headline": "Settle up after the group trip without the spreadsheet or a subscription: everyone logs what they paid, and you get the fewest transfers that square everyone up.",
+    "buyer": "Adults 18+ who go on group holidays, weekends away or ski trips with friends or family a few times a year.",
+    "bullets": [
+      "Anyone in the group adds costs from a shared link, no account needed, and there's no daily limit on expenses.",
+      "Uneven splits: skip the bar bill, count a couple as two, and lock the exchange rate on the day.",
+      "The fewest transfers to settle up, plus a spreadsheet export."
+    ],
+    "price": "$9.99/year",
+    "priceUsd": 10,
+    "priceNote": "One yearly price, no monthly subscription.",
+    "reasonPrompt": "What's your next group trip, and how many people are going?",
+    "faq": [
+      {
+        "q": "Does it move money?",
+        "a": "No. It works out who owes whom. You pay each other however you normally do."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Adults 18+. It is an independent app, not linked to any bank or other bill-splitting app."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-22",
+      "summary": "People say every trip ends in a big spreadsheet of who owes what, that a monthly subscription isn't worth it for a few trips a year, and that they still end up exporting to a spreadsheet.",
+      "wtp": "Splitwise sells Pro from $2.99 to $39.99 (29K App Store ratings), and Splid sells $2.99 to $3.99 one-time upgrades (4.2K ratings). Splitwise reviewer P13nsa wrote they 'would gladly purchase as a one off for say up to 5 eur'.",
+      "signals": [
+        {
+          "url": "https://news.ycombinator.com/item?id=41468132",
+          "who": "mNovak (Hacker News)",
+          "date": "2024-09-06",
+          "quote": "Paying a monthly subscription isn't worthwhile if I only use it in bursts a couple times a year, so its back to spreadsheets.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=3/id=991473495/sortby=mostrecent/json",
+          "who": "Mitch1234 (App Store review, Splid)",
+          "date": "2026-02-11",
+          "quote": "Every time we have a trip, there’s always a big spreadsheet to figure out who owes what.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=3/id=991473495/sortby=mostrecent/json",
+          "who": "Gillorai (App Store review, Splid)",
+          "date": "2026-02-01",
+          "quote": "I used to use Splitwise, but I didn’t want to have to pay to use all the features (especially since we only come across reconciliation situations like this maybe once a year)",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/gb/rss/customerreviews/page=1/id=458023433/sortby=mostrecent/json",
+          "who": "Man Like I (App Store UK review, Splitwise)",
+          "date": "2026-09-27",
+          "quote": "I've used apps like this before after group holidays but never had so much stress trying to work out who owes who and what.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=737534985/sortby=mostrecent/json",
+          "who": "Reviews By Some Guy (App Store review, Settle Up)",
+          "date": "2024-10-20",
+          "quote": "I ended up having to take all the expenses out of the app and put them in a spreadsheet to figure out who really owed whom.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/gb/rss/customerreviews/page=8/id=458023433/sortby=mostrecent/json",
+          "who": "P13nsa (App Store UK review, Splitwise)",
+          "date": "2025-01-19",
+          "quote": "I would gladly purchase as a one off for say up to 5 eur for non-professional use",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Splitwise, Splid, Tricount (free), Settle Up, Tab, spreadsheets.",
+      "risks": "Crowded market with free and one-time options. Most people quoted already use a splitting app. Distinct from the held Even House (ongoing housemate bills)."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
