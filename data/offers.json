@@ -25059,6 +25059,76 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-22",
+    "slug": "particle-click",
+    "name": "Particle Click",
+    "need": "I'm learning Korean and I'm really confused about when to use 은/는 and when to use 이/가; I can't work it out and no one has explained it to me.",
+    "headline": "Stop guessing 은/는 or 이/가. Short daily sets of real sentences, one clear question that decides each one, and a plain reason every time you get it wrong.",
+    "buyer": "Adults learning Korean, beginner to intermediate, who keep guessing between the topic and subject particles.",
+    "bullets": [
+      "Daily 5-minute sets: pick the particle in real sentences, with a one-line reason for each answer.",
+      "The patterns that decide most cases: new vs known information, contrast, question words, 있다/없다.",
+      "Your weak patterns come back until you get them right, plus a 저는 vs 제가 drill."
+    ],
+    "price": "$3.99/month",
+    "priceUsd": 4,
+    "priceNote": "Or $24.99 a year.",
+    "reasonPrompt": "Which kind of sentence makes you hesitate between 은/는 and 이/가?",
+    "faq": [
+      {
+        "q": "Do I need to read Hangul?",
+        "a": "Yes, basic Hangul reading is enough. Every sentence comes with a translation."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Adult learners. It is an independent app, not linked to any other language app, school or course."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-22",
+      "summary": "Korean learners on KoreanClass101's forum and italki say they are confused about 은/는 and 이/가, that something isn't clicking, and that no one has explained it.",
+      "wtp": "Learners pay for Korean apps and courses: LingoDeer (28K App Store ratings) charges from $14.99/month up to $159.99 lifetime, and Talk To Me In Korean sells a paid particles course.",
+      "signals": [
+        {
+          "url": "https://www.koreanclass101.com/forum/viewtopic.php?p=9642",
+          "who": "franjae (KoreanClass101 forum)",
+          "date": "2009-10-19",
+          "quote": "I am really confused with the above particles (?).  I understand that it refers to subject, object or topic but I can't seem to work it out and no-one has been able to explain to me.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.koreanclass101.com/forum/viewtopic.php?p=11682",
+          "who": "bardofages7604 (KoreanClass101 forum)",
+          "date": "2010-08-11",
+          "quote": "I can see their uses, I've read about them and listened but something isn't clicking.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.koreanclass101.com/forum/viewtopic.php?p=2983",
+          "who": "bakaeigo (KoreanClass101 forum)",
+          "date": "2008-05-03",
+          "quote": "This is something that has confused me for a while.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.italki.com/pt/post/question-250570",
+          "who": "루루슈 (italki)",
+          "date": "2014-06-14",
+          "quote": "Still confused about when to use 이/가 and 은/는",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "LingoDeer, Duolingo, Talk To Me In Korean, How to Study Korean, tutors on italki.",
+      "risks": "Posts are old (2008-2014). Money is for general Korean apps and one course, not a particle-only app. Distinct from tone-ear, article-lock and kanji-stays."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

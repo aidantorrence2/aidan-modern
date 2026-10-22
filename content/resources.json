@@ -9379,5 +9379,48 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "korean-eun-neun-vs-i-ga",
+  "offer": "particle-click",
+  "title": "은/는 vs 이/가 in Korean: the questions that decide most sentences",
+  "description": "Which form to use after a consonant or vowel, what each particle points at, and the common patterns that almost always take one or the other.",
+  "intro": "은/는 marks the topic: what the sentence is about. 이/가 marks the subject: who or what does or is something. They often overlap, which is why it feels confusing.",
+  "sections": [
+   {
+    "h": "Which form",
+    "list": [
+     "After a consonant: 은 or 이 (책은, 책이).",
+     "After a vowel: 는 or 가 (저는, 제가: 저 + 가 becomes 제가)."
+    ]
+   },
+   {
+    "h": "Ask: is it new or already known?",
+    "list": [
+     "New information, or answering 'who?' or 'what?': usually 이/가. 누가 왔어요? 민수가 왔어요.",
+     "Something already in the conversation, or a general statement about it: usually 은/는. 민수는 학생이에요."
+    ]
+   },
+   {
+    "h": "Ask: am I contrasting?",
+    "list": [
+     "은/는 can mean 'as for X' in contrast to something else: 커피는 좋아해요 (coffee I like, unlike something else)."
+    ]
+   },
+   {
+    "h": "Patterns that usually take 이/가",
+    "list": [
+     "Question words as the subject: 누가, 뭐가, 어디가.",
+     "있다 and 없다: 시간이 있어요.",
+     "되다 and 아니다: 의사가 되고 싶어요, 학생이 아니에요."
+    ]
+   },
+   {
+    "h": "Practise with real sentences",
+    "p": [
+     "Rules get you most of the way; the rest comes from seeing many examples. Read short dialogues, guess the particle before you look, and note the cases that surprise you."
+    ]
+   }
+  ]
  }
 ]
