@@ -2992,7 +2992,9 @@
           "No factory reset, rooting, bootloader unlocking, deletion of source data or existing new-phone files, payment, message sending, or posting.",
           "Do not copy an entire old phone secure-settings database to the new phone or activate a new strict lockout without matching the old configuration."
         ],
-        "after_access": "Approve after enabling access; I will verify device identity, audit first, then perform the additive restores and record what passed or remains blocked."
+        "after_access": "Approve after enabling access; I will verify device identity, audit first, then perform the additive restores and record what passed or remains blocked.",
+        "result": "Authorized Motorola ZD222RQ6F4; audited device and saved private report at /Users/aidantorrence/outputs/phone-transfer-2026-10-21/transfer-status.json. Completed Play restore: 140 user apps, no queued installs. Restored signed IG Instant Blocker, Guardian, Helm, Pulse Mobile and Approvals; re-enabled blocker services and background permissions. Verified IG countdown overlay, Helm unlock launch, live Pulse task list and Mac/tunnel APIs, Approvals service, Photos Backup complete, existing validated NextDNS, 904 SMS and 317 calls. Enabled account auto-sync. Exact old-to-new file/rule comparison and app-specific chat restoration remain blocked because old phone is not accessible.",
+        "result_at": "2026-10-22T00:32:38Z"
       },
       "created": "2026-10-22T00:14:13Z",
       "expires": "2026-10-23T00:14:13Z",
