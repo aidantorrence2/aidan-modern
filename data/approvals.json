@@ -3088,7 +3088,9 @@
           "Mac is unlocked",
           "Mac accessory policy is Ask for new accessories; no approval dialog visible",
           "Old Redmi remains reachable at 192.168.1.27:5555"
-        ]
+        ],
+        "result": "Approved without a pairing code, so no Wi-Fi pairing was attempted. The Motorola subsequently appeared on USB as serial ZD222RQ6F4, currently awaiting Android USB-debugging authorization. Continuing over the existing authorized USB route; no new Motorola network debugging endpoint or broad Mac accessory-policy change was created.",
+        "result_at": "2026-10-22T00:54:47Z"
       },
       "created": "2026-10-22T00:52:45Z",
       "expires": "2026-10-22T02:52:45Z",
