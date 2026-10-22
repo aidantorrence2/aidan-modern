@@ -26078,6 +26078,167 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-22",
+    "slug": "shot-dial",
+    "name": "Shot Dial",
+    "need": "I keep wasting bags of beans trying to dial in my home espresso, and every new bag puts me back to sour or bitter shots.",
+    "headline": "Stop pouring half a bag of beans down the sink to get one good espresso: say how the shot tasted and how long it ran, and get the one change to make next.",
+    "buyer": "New and returning home espresso makers with an entry or mid-range machine and grinder who aren't yet getting shots they like.",
+    "bullets": [
+      "Taste-first next step: sour, bitter or weak gets one clear change (grind, dose or yield), not ten.",
+      "A shot timer and in/out weight log with no typing.",
+      "A saved dialled-in recipe for each bag, with a reminder when an older bag is likely to need re-dialling."
+    ],
+    "price": "$3.99/month",
+    "priceUsd": 4,
+    "priceNote": "Or $29 a year.",
+    "reasonPrompt": "What machine and grinder do you use, and how do your shots usually taste?",
+    "faq": [
+      {
+        "q": "Does it work with my machine?",
+        "a": "It works with any espresso machine and grinder. You enter your own settings; nothing connects to the machine."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Home espresso makers. It is an independent app, not linked to any machine, grinder, roaster or other coffee app."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-22",
+      "summary": "Home espresso makers on Home-Barista say they used half a bag of coffee trying to dial in, can't get consistency from the grinder, and feel they're learning all over again with sour shots.",
+      "wtp": "Filtru (3.8K App Store ratings) sells Pro at $3.49 a month or $32.99 a year. Beanconqueror reviewer Tiredofbuggyapps wrote 'I would gladly pay money for this.'",
+      "signals": [
+        {
+          "url": "https://www.home-barista.com/tips/trying-to-dial-in-first-espresso-not-happy-t99448.html",
+          "who": "Hans1980 (Home-Barista)",
+          "date": "2025-05-16",
+          "quote": "i used half a bag of coffee yesterday, didn't sleep and basically can't see coffee today",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.home-barista.com/tips/gaggia-df54-consistency-confusion-t98131.html",
+          "who": "sonvolt22 (Home-Barista)",
+          "date": "2025-02-11",
+          "quote": "So, I am having great difficulty getting any consistency from the grinder (and its settings) and/or the Gaggia.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.home-barista.com/tips/new-vetrano-and-sour-shots-t99879.html",
+          "who": "Mushie (Home-Barista)",
+          "date": "2025-06-20",
+          "quote": "After over 20 years I feel like I am needing to learn all over. And we don't like sour shots!",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.home-barista.com/tips/espresso-frustration-bad-news-bears-t99991.html",
+          "who": "dhaas66 (Home-Barista)",
+          "date": "2025-06-30",
+          "quote": "I did not know if I was just clumsy with the process or the machine was lacking or it was alot easier to have someone else make me espresso.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1445297158/sortby=mostrecent/json",
+          "who": "Pgsoccer11 (App Store review, Beanconqueror)",
+          "date": "2023-12-27",
+          "quote": "I am just getting into the world of making espresso at home. I had started a journal to record all of my brewing and grinding parameters that quickly became cumbersome.",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Beanconqueror (free), Filtru, Burrfect, many new shot-log apps, paper notes.",
+      "risks": "Crowded category with a well-loved free app. Espresso-only paid apps have few ratings. The angle is a taste-to-next-step coach, not just a log."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-22",
+    "slug": "mahj-night",
+    "name": "Mahj Night",
+    "need": "All my friends play American mahjong now, and I want to learn the card well enough to join their game without slowing the table down or embarrassing myself.",
+    "headline": "Join your friends' mahjong table without being the slow one: short daily card practice, then practice hands with a coach that explains each move.",
+    "buyer": "Adults learning American mahjong because friends, family or a local club have started playing.",
+    "bullets": [
+      "A turn-by-turn coach: which hand to aim for, what to pass in the Charleston and what to throw, with a one-line reason.",
+      "Five-minute drills to learn the card section by section.",
+      "Table-speed mode that times your discards, and a 'ready for my group' checklist."
+    ],
+    "price": "$4.99/month",
+    "priceUsd": 5,
+    "priceNote": "Or $29 a year.",
+    "reasonPrompt": "How long have you been playing, and what slows you down most at the table?",
+    "faq": [
+      {
+        "q": "Do I need this year's card?",
+        "a": "Yes. Buy the official card each year; the app works alongside it and does not reproduce it."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Adult players. It is an independent app, not affiliated with the National Mah Jongg League or any other mahjong app or club."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-22",
+      "summary": "New American mahjong players say they felt left out when friends got hooked, were intimidated by experienced players, and that people got annoyed at how slow they were.",
+      "wtp": "American Mahjong Practice (22.9K App Store ratings) charges $3.99 a month or $17.99 for this year's hands. Mahj Parlour charges $6.99 a month (1.2K ratings). KKC0502 already took lessons.",
+      "signals": [
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=6762031478/sortby=mostrecent/json",
+          "who": "dekeldoesdallas (App Store review, MAHJ)",
+          "date": "2026-07-01",
+          "quote": "I felt a bit left out when all my friends got hooked on Mahjong and I didn’t.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=6762031478/sortby=mostrecent/json",
+          "who": "Leahhhhhh10 (App Store review, MAHJ)",
+          "date": "2026-06-06",
+          "quote": "I wanted to be a part of that fun, but was intimidated a bit since people around me seemed so experienced.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=6762031478/sortby=mostrecent/json",
+          "who": "Zmusiclady (App Store review, MAHJ)",
+          "date": "2026-09-12",
+          "quote": "It was kind of frustrating because people were getting annoyed with how slow we were",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=6762031478/sortby=mostrecent/json",
+          "who": "stjhvhj (App Store review, MAHJ)",
+          "date": "2026-09-26",
+          "quote": "I’ve played only a couple of times and this app is incredibly helpful in reviewing basics so I don’t embarrass myself.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=6758261607/sortby=mostrecent/json",
+          "who": "JMOREY1 (App Store review, Maylee)",
+          "date": "2026-03-15",
+          "quote": "I think something that would be HUGE is having help during the game almost like here’s what you should or could do at each turn.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=6758261607/sortby=mostrecent/json",
+          "who": "KKC0502 (App Store review, Maylee)",
+          "date": "2026-07-13",
+          "quote": "I took lessons to learn Mahjong and use this app to keep up and help learn the card.",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "American Mahjong Practice, Real Mah Jongg, Mahj Parlour, Maylee, MAHJ, local lessons.",
+      "risks": "All evidence is App Store reviews. Fast-moving, crowded market. The official card is sold each year and must not be copied."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

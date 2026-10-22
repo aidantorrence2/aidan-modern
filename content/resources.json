@@ -9956,5 +9956,85 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "dial-in-espresso-at-home",
+  "offer": "shot-dial",
+  "title": "How to dial in espresso at home without wasting a bag of beans",
+  "description": "Start from a standard recipe, change one thing at a time, taste for sour or bitter, and write down what worked for each bag.",
+  "intro": "Dialling in means adjusting grind, dose and yield until the shot tastes right. Changing one thing at a time saves a lot of coffee.",
+  "sections": [
+   {
+    "h": "Start from a standard recipe",
+    "list": [
+     "A common starting point is about 18 g of ground coffee in, about 36 g of espresso out, in roughly 25 to 30 seconds.",
+     "Weigh both. Scales make every other step easier."
+    ]
+   },
+   {
+    "h": "Taste, then change one thing",
+    "list": [
+     "Sour, sharp or thin: usually under-extracted. Grind a little finer, or let it run to a slightly higher yield.",
+     "Bitter, harsh or drying: usually over-extracted. Grind a little coarser, or stop at a slightly lower yield."
+    ]
+   },
+   {
+    "h": "Make small changes",
+    "list": [
+     "Move the grinder one small step at a time, and pull a shot after each change."
+    ]
+   },
+   {
+    "h": "Keep the rest the same",
+    "list": [
+     "Same dose, same tamping, same basket. If several things change at once, you can't tell what helped."
+    ]
+   },
+   {
+    "h": "Write it down",
+    "p": [
+     "Note the bag, roast date, grind setting, dose, yield, time and taste. Next time you open a similar bag, start from there. Beans change as they age, so expect small tweaks over a bag's life."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "learn-american-mahjong-to-join-friends",
+  "offer": "mahj-night",
+  "title": "Learning American mahjong so you can join your friends' game",
+  "description": "Get this year's card, learn the tiles and the Charleston, practise a few hands slowly, and pick two or three target hands before each game.",
+  "intro": "American mahjong looks complicated at first, mostly because of the card. A few weeks of short practice gets most people ready for a friendly table.",
+  "sections": [
+   {
+    "h": "Get the card",
+    "list": [
+     "American mahjong uses a new card of winning hands each year, sold by the National Mah Jongg League. Everyone at the table uses the same year's card."
+    ]
+   },
+   {
+    "h": "Learn the tiles",
+    "list": [
+     "Suits (dots, bams, craks), winds, dragons, flowers and jokers. Know these by sight before your first game."
+    ]
+   },
+   {
+    "h": "Learn the Charleston",
+    "list": [
+     "The passing of tiles before play begins. Practise the order of passes until it feels automatic."
+    ]
+   },
+   {
+    "h": "Pick target hands early",
+    "list": [
+     "After the Charleston, choose two or three hands from the card that fit your tiles, and keep your options open as you draw."
+    ]
+   },
+   {
+    "h": "Practise, then play",
+    "p": [
+     "Play practice hands at your own pace, then ask your group for a slower 'learning game'. Most groups are happy to help a new player who's done some practice."
+    ]
+   }
+  ]
  }
 ]
