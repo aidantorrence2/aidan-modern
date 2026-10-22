@@ -24814,6 +24814,97 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-22",
+    "slug": "tone-ear",
+    "name": "Tone Ear",
+    "need": "I'm learning Mandarin and can't hear or say the tones right, so native speakers don't understand me.",
+    "headline": "Train your ear to hear Mandarin tones in real, fast speech, then see your own pitch next to a native speaker's on the same words.",
+    "buyer": "Adult Mandarin learners, beginner to intermediate, whose tones fall apart in real conversation.",
+    "bullets": [
+      "Hearing drills on tone pairs (3rd + 2nd, 4th + 1st) from real-speed audio, not slow single syllables.",
+      "Record yourself and see your pitch line drawn over a native speaker's.",
+      "Your personal problem pairs, retested until you get them right, in a 5-minute daily set built from words you already study."
+    ],
+    "price": "$7.99/month",
+    "priceUsd": 8,
+    "priceNote": "Or $49 a year.",
+    "reasonPrompt": "Which tones or tone pairs trip you up most?",
+    "faq": [
+      {
+        "q": "Do I need to know pinyin?",
+        "a": "It helps. Drills show pinyin with tone marks, and you can turn them off once you're hearing the tones."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Adult learners. It is an independent app, not linked to any other language app, school or forum."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-22",
+      "summary": "Learners on Chinese-Forums say they can hear tones on single syllables but not in real speech, mix up tones when they talk, and that people can't understand them even after years of study.",
+      "wtp": "Ka: Learn Chinese Tones sells Ka Unlimited at $6.99 or $47.90 a year (661 ratings). ChineseSkill charges $14.99/month or $79.99/year (15K ratings) and sells tone correction.",
+      "signals": [
+        {
+          "url": "https://www.chinese-forums.com/forums/topic/6539-how-could-i-get-better-at-tones/",
+          "who": "Ferno (Chinese-Forums)",
+          "date": "2005-11-08",
+          "quote": "If you play me a demonstration audio file of one syllable then I can usually get the tone, but in actual speech where you have word after word after word",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.chinese-forums.com/forums/topic/6539-how-could-i-get-better-at-tones/",
+          "who": "maxham (Chinese-Forums)",
+          "date": "2005-11-06",
+          "quote": "found that noone could understand a word I said - literally!!",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.chinese-forums.com/forums/topic/4293-arghhh-tones-ranting-and-questions/",
+          "who": "LiLiKe (Chinese-Forums)",
+          "date": "2005-03-31",
+          "quote": "My tones are apparently completly messed.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.chinese-forums.com/forums/topic/4293-arghhh-tones-ranting-and-questions/",
+          "who": "JoH (Chinese-Forums)",
+          "date": "2005-03-31",
+          "quote": "I can't say, even after five years of learning, that my tones are great",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.chinese-forums.com/forums/topic/47262-3rd-tone-2nd-tone-trouble/",
+          "who": "ChTTay (Chinese-Forums)",
+          "date": "2014-12-24",
+          "quote": "The worst thing is I can't hear why It's wrong",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.chinese-forums.com/forums/topic/52482-mixing-up-tones-1-4-in-spoken-speech-exercises-to-remedy/",
+          "who": "calibre2001 (Chinese-Forums)",
+          "date": "2016-09-20",
+          "quote": "I have this problem of mixing up first and fourth tones in my actual spoken speech.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.chinese-forums.com/forums/topic/52482-mixing-up-tones-1-4-in-spoken-speech-exercises-to-remedy/",
+          "who": "js6426 (Chinese-Forums)",
+          "date": "2021-02-01",
+          "quote": "I really struggle getting from that low pitch back up to the high pitch for the first tone",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Ka: Learn Chinese Tones, ChineseSkill, HelloChinese, Pleco add-ons, about ten newer tone apps with few ratings, and tutors.",
+      "risks": "All posters are on one site (four threads), and four posts are from 2005. Crowded app space. Distinct from heard-first (English accent) and kanji-stays (Japanese characters)."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

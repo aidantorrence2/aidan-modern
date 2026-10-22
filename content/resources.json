@@ -9255,5 +9255,49 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "hear-and-say-mandarin-tones",
+  "offer": "tone-ear",
+  "title": "How to hear and say Mandarin tones in real speech, not just single syllables",
+  "description": "Practise tones in pairs, use your own voice as a check, shadow short sentences, and know the tone changes that trip most learners up.",
+  "intro": "Many learners can tell the four tones apart on a single syllable and then lose them in normal speech. The fix is mostly practice in context, little and often.",
+  "sections": [
+   {
+    "h": "Practise in pairs",
+    "list": [
+     "Most words have two syllables, so drill tone pairs (for example 3rd + 2nd, 4th + 1st) rather than single tones.",
+     "Pick the pairs you mix up most and give them extra time."
+    ]
+   },
+   {
+    "h": "Know the tone changes",
+    "list": [
+     "Two 3rd tones in a row: the first is said like a 2nd tone (nǐ hǎo sounds like ní hǎo).",
+     "In normal speech a 3rd tone is often just low, without the rise at the end.",
+     "不 (bù) and 一 (yī) change tone depending on the next syllable."
+    ]
+   },
+   {
+    "h": "Record yourself",
+    "list": [
+     "Record a phrase, then play it next to a native recording. Hearing the gap is the first step to closing it.",
+     "A free pitch-tracking app or audio editor can show your pitch line if you can't hear the difference yet."
+    ]
+   },
+   {
+    "h": "Shadow short sentences",
+    "list": [
+     "Play a short sentence, then say it right after, copying the melody as well as the sounds.",
+     "Start slow, then try it at normal speed."
+    ]
+   },
+   {
+    "h": "Ask for tone feedback",
+    "p": [
+     "When you practise with a tutor or language partner, ask them to stop you on tone mistakes, not just words. A few minutes of focused correction goes a long way."
+    ]
+   }
+  ]
  }
 ]
