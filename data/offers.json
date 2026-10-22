@@ -27181,6 +27181,76 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-22",
+    "slug": "counter-calm",
+    "name": "Counter Calm",
+    "need": "I have a job offer, I'm nervous about negotiating, and I have no idea what to say or how far to push.",
+    "headline": "Counter your job offer without the dread: lay out the whole offer, set your ask and walk-away, and rehearse the exact words before the call.",
+    "buyer": "Adults 18+ with a job offer in hand who are afraid to counter.",
+    "bullets": [
+      "An offer sheet: base, bonus, equity, start date, leave and remote work, side by side.",
+      "A number worksheet from pay figures you look up, giving your ask and your walk-away.",
+      "A wording builder for a call or email, rehearsal against common replies, and a tone check that flags ultimatums."
+    ],
+    "price": "$14.99 per offer",
+    "priceUsd": 15,
+    "priceNote": "Or $4.99 a month if you're weighing several offers.",
+    "reasonPrompt": "What kind of role is the offer for, and what part of negotiating worries you most?",
+    "faq": [
+      {
+        "q": "Can it guarantee a higher offer?",
+        "a": "No. It helps you prepare and choose your words. Employers decide, and it gives no legal or financial advice."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Adults 18+. It is an independent app, not linked to any employer, recruiter, pay-data site or negotiation service."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-22",
+      "summary": "People who hired a negotiation coach say they were nervous, had no idea what to say or how far to push, and had always been scared of negotiating.",
+      "wtp": "People pay a lot for this: Levels.fyi's negotiation packages cost $1,250 to $5,000, and Trustpilot reviewer Swaroop wrote 'Definitely worth the high fee'.",
+      "signals": [
+        {
+          "url": "https://www.trustpilot.com/review/levels.fyi",
+          "who": "Lucky Chowdhury (Trustpilot review of Levels.fyi)",
+          "date": "2025-10-02",
+          "quote": "I was nervous about negotiating and had no idea what to say or how far to push.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.trustpilot.com/review/levels.fyi",
+          "who": "AS (Trustpilot review of Levels.fyi)",
+          "date": "2025-08-04",
+          "quote": "have always been scared of the negotiating process in general.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.trustpilot.com/review/levels.fyi",
+          "who": "JP (Trustpilot review of Levels.fyi)",
+          "date": "2025-02-26",
+          "quote": "I would highly recommend the Levels.FYI negotiation service to anyone who feels anxious, stressed and unsure",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.teamblind.com/post/levels-fyi-negotiation-support-xwhgmgb6",
+          "who": "Anonymous commenter (Blind)",
+          "date": "2022-01-25",
+          "quote": "It was helpful for me because I knew what to say but I wasn't sure HOW to say it.",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Levels.fyi negotiation service, other negotiation coaches, career coaches, books and free guides.",
+      "risks": "Buyers skew to tech jobs. People who paid chose a human coach, not an app. Distinct from raise-ready (asking a current employer for a raise)."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

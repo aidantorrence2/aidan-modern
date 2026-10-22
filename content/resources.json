@@ -10523,5 +10523,45 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "counter-job-offer-without-losing-it",
+  "offer": "counter-calm",
+  "title": "How to counter a job offer without losing it",
+  "description": "Get the whole offer in writing, research pay for the role, decide your ask and walk-away, and ask politely with reasons.",
+  "intro": "Most employers expect some negotiation, and a polite, well-reasoned counter rarely costs an offer. Preparation makes it far less stressful.",
+  "sections": [
+   {
+    "h": "Get the whole offer",
+    "list": [
+     "Ask for the full offer in writing: base pay, bonus, equity, benefits, start date and leave."
+    ]
+   },
+   {
+    "h": "Research the pay range",
+    "list": [
+     "Look up pay for the same role, level and location from several sources. Note a realistic range."
+    ]
+   },
+   {
+    "h": "Decide two numbers",
+    "list": [
+     "Your ask (a bit above what you'd happily accept) and your walk-away (below which you'd decline)."
+    ]
+   },
+   {
+    "h": "Ask politely, with reasons",
+    "list": [
+     "Start with thanks and enthusiasm, then your number and why: experience, skills, or market data. Keep it short.",
+     "Then pause and let them respond."
+    ]
+   },
+   {
+    "h": "Look beyond salary",
+    "p": [
+     "If they can't move on pay, ask about a signing bonus, extra leave, a review after six months, remote days or a later start. Avoid ultimatums unless you really mean them."
+    ]
+   }
+  ]
  }
 ]
