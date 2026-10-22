@@ -11005,5 +11005,45 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "bond-two-rabbits-that-fight",
+  "offer": "bun-bond",
+  "title": "How to bond two rabbits that keep fighting",
+  "description": "Neuter both, start side by side, swap scents, meet in a neutral space, keep sessions short, and separate at the first real fight.",
+  "intro": "Bonding can take days or months. Going slowly and stopping before fights escalate usually works better than pushing on.",
+  "sections": [
+   {
+    "h": "Before you start",
+    "list": [
+     "Both rabbits should be neutered and fully healed, usually several weeks after surgery.",
+     "Have a vet check if either has injuries or health problems."
+    ]
+   },
+   {
+    "h": "Side by side first",
+    "list": [
+     "Keep them in pens next to each other so they can see and smell each other without contact."
+    ]
+   },
+   {
+    "h": "Swap scents",
+    "list": [
+     "Swap litter trays, toys or bedding between them every day or two."
+    ]
+   },
+   {
+    "h": "Meet on neutral ground",
+    "list": [
+     "Use a space neither rabbit thinks of as theirs. Keep the first sessions short, and end on a calm note."
+    ]
+   },
+   {
+    "h": "Know when to stop",
+    "p": [
+     "Mounting and chasing can be normal. A tight ball of fighting is not: separate them straight away, with a towel or thick gloves to protect your hands, and go back a step. See an exotics vet after any injury. Many rescues and rabbit charities offer bonding help."
+    ]
+   }
+  ]
  }
 ]

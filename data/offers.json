@@ -28069,6 +28069,83 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-22",
+    "slug": "bun-bond",
+    "name": "Bun Bond",
+    "need": "I'm trying to bond two rabbits (or guinea pigs), and every time I put them together they fight.",
+    "headline": "Bond your rabbits without starting over after every fight: a step-by-step plan with a session log that tells you when to move up, stay put or stop.",
+    "buyer": "Adult rabbit and guinea pig owners bonding a new companion with a resident animal, especially for the first time.",
+    "bullets": [
+      "A staged plan: settling in, side-by-side pens, scent swaps, neutral-space dates and a first sleepover.",
+      "A two-minute session log: grooming, mounting, chasing, nipping, fur pulled.",
+      "Clear stop-and-separate signals, a reset plan after a fight, and pre-checks before you start."
+    ],
+    "price": "$4.99/month",
+    "priceUsd": 5,
+    "priceNote": "Or $24 a year.",
+    "reasonPrompt": "How long have you been trying to bond them, and what happens when they meet?",
+    "faq": [
+      {
+        "q": "Should I let them fight it out?",
+        "a": "No. Separate them straight away if a real fight starts. Both animals should be neutered and fully healed first, and see an exotics vet after any injury."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Rabbit and guinea pig owners. It is an independent app, not linked to any rescue, vet or forum."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-22",
+      "summary": "Owners on BinkyBunny say their rabbits keep fighting and drawing blood, things went well until a fight started, and they've been trying for a month or more.",
+      "wtp": "Owners pay for bonding help: the House Rabbit Network's bonding service starts at $50 a day with a 7-day minimum, and the Georgia House Rabbit Society charges a $75 bonding fee.",
+      "signals": [
+        {
+          "url": "https://binkybunny.com/forums/topic/help-with-bonding-9/",
+          "who": "Maria Louise (BinkyBunny)",
+          "date": "2023-12-21",
+          "quote": "It’s so stressful trying to bond them the just keep fighting and draw blood everytime!",
+          "seen": "opened"
+        },
+        {
+          "url": "https://binkybunny.com/forums/topic/bunnies-seem-equally-matched-and-neither-submits-yet-it-turned-into-2-fights/",
+          "who": "Ellie from The Netherlands (BinkyBunny)",
+          "date": "2022-04-07",
+          "quote": "now they are fighting almost immediately!",
+          "seen": "opened"
+        },
+        {
+          "url": "https://binkybunny.com/forums/topic/do-i-let-them-fightae/",
+          "who": "Kayla (BinkyBunny)",
+          "date": "2018-05-18",
+          "quote": "When I first started bonding about a month ago they would fight.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://binkybunny.com/forums/topic/so-confused-seem-bonded-and-yet-not/",
+          "who": "Mrs. Bob Loblaw (BinkyBunny)",
+          "date": "2013-04-11",
+          "quote": "This morning, we put them together and they immediately got into a huge fight.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://boards.straightdope.com/t/teach-rabbits-to-play-nice/524518",
+          "who": "Shoeless (Straight Dope)",
+          "date": "2010-01-11",
+          "quote": "I’ve been trying to do the same thing with guinea pigs recently and not having much success.",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Rescue bonding services, rabbit charities' guides, forums, exotics vets.",
+      "risks": "Most people are on one forum. No paid app exists; money is bonding services. Fights can injure animals, so the app always says separate and see a vet."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
