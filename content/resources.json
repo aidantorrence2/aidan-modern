@@ -9833,5 +9833,46 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "stuck-inches-off-floor-splits",
+  "offer": "split-steps",
+  "title": "Stuck a few inches off the floor in your splits? What to change",
+  "description": "Measure the gap, warm up properly, work out which muscles are limiting you, and change the plan when progress stalls.",
+  "intro": "Getting the last few inches of a split often takes longer than the first foot. Plateaus usually mean the plan needs changing, not more of the same.",
+  "sections": [
+   {
+    "h": "Measure the gap",
+    "list": [
+     "Photograph or measure the gap between your hips and the floor once a week, in the same spot and at the same time of day.",
+     "Small, steady changes are easy to miss without a record."
+    ]
+   },
+   {
+    "h": "Warm up first",
+    "list": [
+     "A few minutes of light movement, then gentle dynamic stretches, before you go deep. Cold muscles resist."
+    ]
+   },
+   {
+    "h": "Find what's holding you back",
+    "list": [
+     "In a front split: the front leg's hamstring and the back leg's hip flexor both matter. Notice which one feels like the limit.",
+     "Work the limiting side specifically with lunges and hamstring stretches."
+    ]
+   },
+   {
+    "h": "Change it up when you stall",
+    "list": [
+     "If nothing has changed for a few weeks, try a different method: active flexibility (lifting the leg under control), loaded stretches, or more frequent short sessions."
+    ]
+   },
+   {
+    "h": "Stay safe",
+    "p": [
+     "Stretch to mild discomfort, never sharp pain, and don't bounce. Rest days help. If something hurts, stop and get it checked."
+    ]
+   }
+  ]
  }
 ]

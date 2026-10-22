@@ -25868,6 +25868,76 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-22",
+    "slug": "split-steps",
+    "name": "Split Steps",
+    "need": "I've been stretching for more than a year and a half and I'm still a good 4 inches off the floor in my front split.",
+    "headline": "Stuck a few inches off the floor in your splits? Measure the gap, find what's holding you back, and change the plan when progress stalls.",
+    "buyer": "Adults 18+ working on front or middle splits (for pole, dance, martial arts or yoga) who have stalled.",
+    "bullets": [
+      "A floor-gap photo log, so you can see real progress week to week.",
+      "A quick check of what limits you: hamstrings, hip flexors or hips.",
+      "A plateau switch: when the gap hasn't moved for 3 weeks, the plan changes."
+    ],
+    "price": "$2.99/month",
+    "priceUsd": 3,
+    "priceNote": "Or $19.99 a year.",
+    "reasonPrompt": "Which split are you working on, and how far off the floor are you?",
+    "faq": [
+      {
+        "q": "Is it safe?",
+        "a": "Warm up first, never bounce, and stretch to mild discomfort, not pain. Stop if you feel sharp pain, and see a qualified professional for any injury."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Adults 18+. It is an independent app, not linked to any studio, school or other stretching app."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-22",
+      "summary": "Adults say they have stretched for a year and a half or several years with little gain, are still inches off the floor, and are frustrated.",
+      "wtp": "Splits Training (Leap Health) charges $19.99 a year and has 3.7K App Store ratings.",
+      "signals": [
+        {
+          "url": "https://www.studioveena.com/discuss/discussion/Splits__How_long_did_it_take_you_20120227121202/page/2",
+          "who": "DedeJoy (StudioVeena forum)",
+          "date": "2012-03-14",
+          "quote": "I've been stretching 2-4 days a week for more than a year and a half and I'm still a good 4\" off the floor in my front split.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.studioveena.com/discuss/discussion/Splits__How_long_did_it_take_you_20120227121202/page/2",
+          "who": "Dottie Von Boone (StudioVeena forum)",
+          "date": "2012-03-13",
+          "quote": "It is slowly coming along, my hamstrings are so stubborn .. sigh",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.martialtalk.com/threads/practical-approach-to-achieving-splits.117857/",
+          "who": "Scotty P (MartialTalk)",
+          "date": "2015-04-03",
+          "quote": "I've been stretching regularly, pretty much every other day for a few years now with little gain and I'm frustrated.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.martialtalk.com/threads/practical-approach-to-achieving-splits.117857/",
+          "who": "Tez3 (MartialTalk)",
+          "date": "2015-04-03",
+          "quote": "I couldn't do the splits as a child never mind as an adult",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Splits Training (Leap Health), 30 Day Splits Training, Bend, YouTube flexibility programs, classes.",
+      "risks": "Posts are old (2012, 2015). Nobody wrote 'I'd pay'. Distinct from toe-touch (general stiffness and sticking with stretching)."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
