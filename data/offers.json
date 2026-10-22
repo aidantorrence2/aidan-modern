@@ -24747,6 +24747,73 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-22",
+    "slug": "second-thought",
+    "name": "Second Thought",
+    "need": "I get jealous and insecure in my relationship, I check and spiral and start fights, and I really want to stop feeling this way.",
+    "headline": "When jealousy hits, take a second before you check, accuse or spiral: sort the story from the facts, log what set it off, and find calm words for the talk.",
+    "buyer": "Adults 18+ in a relationship who get jealous or insecure and want to stop checking, spiralling and starting fights.",
+    "bullets": [
+      "A pause button for the moment it hits: a 2-minute wait-and-breathe before you check a phone or send the angry text.",
+      "Story vs facts: write the thought, then what you actually know, so you can see the gap.",
+      "A trigger log and a weekly look back, plus plain words to start a calm talk with your partner."
+    ],
+    "price": "$3.99/month",
+    "priceUsd": 4,
+    "priceNote": "Or $24.99 a year.",
+    "reasonPrompt": "What usually sets your jealousy off?",
+    "faq": [
+      {
+        "q": "Is this therapy?",
+        "a": "No. It is a self-help tool for everyday jealousy, not counselling or treatment. If jealousy is taking over your life, a counsellor can help, and you can use both."
+      },
+      {
+        "q": "What if my partner is controlling or I feel unsafe?",
+        "a": "This app is not for that. If someone checks, controls or threatens you, contact a domestic abuse helpline in your country."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Adults 18+. It is an independent app, not linked to any other app, forum or organisation."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-22",
+      "summary": "People write that they are jealous and insecure in their relationship, that it hurts them most, and that they want to stop but don't know how.",
+      "wtp": "Jealousy Helper charges $2.99/month on the App Store. Jealousy CBT Tools Self-Help has 50K+ downloads on Google Play. One poster was already in counselling for it.",
+      "signals": [
+        {
+          "url": "https://www.mumsnet.com/talk/relationships/1274813-Jealousy-how-do-you-stop-it",
+          "who": "flyingspaghettimonster (Mumsnet)",
+          "date": "2011-08-07",
+          "quote": "How do I stop it, when it is only really me it hurts",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/relationships/3767328-jealous",
+          "who": "jamdhanihash (Mumsnet, writing after a counselling session)",
+          "date": "2019-12-12",
+          "quote": "I want to not be this person.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://letstalk.mindline.sg/t/jealous-and-insecure/13185",
+          "who": "mc21 (Mindline Let's Talk)",
+          "date": "2024-06-23",
+          "quote": "I dont know what else I can do to stop feeling this way.",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Jealousy Helper (App Store, $2.99/month, few ratings), Jealousy CBT Tools Self-Help (Google Play, free with ads), counselling, general CBT apps.",
+      "risks": "Posts are old (2011 to 2024). Nobody wrote 'I'd pay'. The paid app has few ratings. Must never be used to monitor a partner. Distinct from the held retroactive-jealousy idea (Past Quiet)."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
