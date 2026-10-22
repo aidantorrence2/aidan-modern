@@ -3097,6 +3097,73 @@
       "status": "approved",
       "decided": "2026-10-22T00:53:43Z",
       "note": ""
+    },
+    {
+      "id": "offers:paid-pilot-channel:2026-10-21:click-community-vendor-pass",
+      "kind": "spend",
+      "source": "codex:approval-mirror",
+      "title": "Spend USD 200/month for Click Community vendor access and publish one exact pilot post",
+      "summary": "Buy one auto-renewing USD 200/month Vendor Pass (cancel anytime; no refunds) for Studio Follow-up Desk, then publish the exact single approved post in Click Community's Vendor Offers forum. No DMs, cross-posts, extra posts, or additional spend.",
+      "preview_url": "https://www.theclickcommunity.com/amember/signup/vendor-pass-signup",
+      "payload": {
+        "project_id": "appgprj_6ad56c0398f4819187d2d7870ae70ac4",
+        "approval_id": "offers:paid-pilot-channel:2026-10-21:click-community-vendor-pass",
+        "offer": "Studio Follow-up Desk",
+        "status": "exact_permissioned_distribution_action_pending_approval",
+        "action": "Purchase one Click Community Vendor Pass for Studio Follow-up Desk at $200 USD per month and publish the one exact post below once in the Product Recommendations, Reviews, and Vendor Offers forum. Do not cross-post, send private messages, bump the post, or contact members individually.",
+        "spend_and_terms": {
+          "vendor": "Click Community / Click & Company",
+          "product": "Vendor Pass",
+          "amount_usd": 200,
+          "billing_period": "monthly",
+          "auto_renews": true,
+          "cancellation": "May be canceled at any time; access continues only while the vendor pass remains active.",
+          "refunds": "No refunds for payments already made.",
+          "price_lock": "The signup page states no fee increases over the published rate at registration while uninterrupted access continues.",
+          "application_review": "Click Community says it does not pre-screen vendor applications, but may refuse an application or revoke membership at any time.",
+          "scope": "One vendor pass covers one business only and permits promotion only of that business's own products or services.",
+          "terms_url": "https://www.theclickcommunity.com/tos/",
+          "signup_url": "https://www.theclickcommunity.com/amember/signup/vendor-pass-signup",
+          "terms_checked_at": "2026-10-22T04:08:00Z",
+          "terms_last_updated_on_page": "2025-06-10"
+        },
+        "forum": {
+          "name": "Product Recommendations, Reviews, and Vendor Offers",
+          "forum_index_url": "https://theclickcommunity.com/forums/",
+          "eligibility": "Click Community states that authorized vendors may share special deals and product offers here.",
+          "posting_constraints": [
+            "Use the approved Vendor Badge and post only in the designated vendor forum unless a response is clearly relevant to a member's question.",
+            "No duplicate or cross-posted content.",
+            "No private-message solicitation, email-address solicitation, affiliate links, member-list requests, or off-board use of member content.",
+            "Do not post private or proprietary client data.",
+            "Post only the exact text below; any revision or additional post needs a new approval."
+          ]
+        },
+        "exact_post": {
+          "subject": "A $250/month follow-up desk for open enquiries (founding pilot)",
+          "body": "I'm Aidan, a photographer testing Studio Follow-up Desk for photography studios that have open enquiries but not enough time to follow up consistently. The proposed founding pilot is $250/month: four weekly prioritized action lists plus up to 20 AI-assisted follow-up drafts across up to 20 existing enquiries. The studio reviews, edits, and sends every message; this is not a CRM, inbox integration, or promise of bookings. I have a fictional-enquiry sample ready. Would one studio owner here be willing to review the sample and consider the paid monthly pilot?",
+          "single_request": "Would one studio owner review the fictional sample and consider the paid monthly pilot?",
+          "claims_guardrail": "Proposed founding pilot only; no claim of software, customers, results, bookings, or validated demand."
+        },
+        "execution_gates": [
+          "Approval covers exactly one $200 monthly vendor pass and one exact forum post; it does not approve any additional spend, renewal beyond the first paid month without the user leaving auto-renew enabled, private messages, replies, follow-ups, or other posts.",
+          "Use only Aidan-owned account and payment details. If those are unavailable, do not recover or invent credentials and do not complete the purchase.",
+          "Before purchase, recheck the live price and terms. If any material term or amount differs, stop and queue a new approval.",
+          "Before posting, recheck the forum-specific sticky rules. If they conflict with the exact post, do not post and record the blocker.",
+          "Do not collect payment or onboard a pilot until the separate payment, agreement, capacity, and data-handling gates are resolved."
+        ],
+        "unit_economics_note": "$200 monthly channel cost equals 80% of one $250 monthly pilot's gross MRR before fees, taxes, delivery cost, refunds, or churn. Approval is a distribution test, not a forecast of positive return.",
+        "sources": [
+          "https://www.theclickcommunity.com/amember/signup/vendor-pass-signup",
+          "https://theclickcommunity.com/forums/",
+          "https://www.theclickcommunity.com/tos/"
+        ]
+      },
+      "created": "2026-10-22T04:03:51Z",
+      "expires": "2026-10-25T04:03:51Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
     }
   ]
 }
