@@ -25423,6 +25423,157 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-22",
+    "slug": "first-brisket",
+    "name": "First Brisket",
+    "need": "I'm smoking my first brisket and I don't want it to come out dry, tough, or late.",
+    "headline": "Your first brisket, done on time and not dry: a cook plan that works back from when you want to eat and talks you through the stall, the wrap and the rest.",
+    "buyer": "Adults 18+ who have just got a smoker (pellet, offset, kettle or gas) and are cooking their first briskets, pork butts or ribs.",
+    "bullets": [
+      "A plan that works back from serve time: when to light, when to wrap, and how long to rest.",
+      "A stall coach: what's happening, how long it can last, and your options.",
+      "A cook log with photos that tells you what to change next time."
+    ],
+    "price": "$2.99/month",
+    "priceUsd": 3,
+    "priceNote": "Or $19.99 a year.",
+    "reasonPrompt": "What are you smoking next, and on what kind of smoker?",
+    "faq": [
+      {
+        "q": "Is it safe to rest brisket for hours?",
+        "a": "Only if it stays hot. Keep cooked meat above 140°F (60°C) while it rests or holds, and follow your local food safety guidance."
+      },
+      {
+        "q": "Can I use my smoker in the garage?",
+        "a": "No. Smokers and charcoal give off carbon monoxide. Use them outdoors only, away from doors and windows."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Adults 18+. It is an independent app, not linked to any smoker brand, pitmaster or other BBQ app."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-22",
+      "summary": "New smoker owners say their brisket came out very dry, worry it'll be done too early and go cold, and are just starting to learn their smoker.",
+      "wtp": "Hey Grill Hey sells a $1.99 monthly or $19.99 yearly subscription and has 2.6K App Store ratings.",
+      "signals": [
+        {
+          "url": "https://boards.straightdope.com/t/dry-brisket-what-went-wrong/955156",
+          "who": "Raza (Straight Dope)",
+          "date": "2021-11-29",
+          "quote": "The flavor was excellent - everything I’d want in smoked brisket - but it was very, very dry.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://boards.straightdope.com/t/iso-bbq-grill-master-advice-smoking-2x-small-briskets-on-a-gas-grill/985307",
+          "who": "robardin (Straight Dope)",
+          "date": "2023-06-10",
+          "quote": "what I don’t want is to have the meat done at like 11:30-12 noon and be cold when we get there",
+          "seen": "opened"
+        },
+        {
+          "url": "https://boards.straightdope.com/t/dumb-question-about-buying-a-brisket/973076",
+          "who": "HeyHomie (Straight Dope)",
+          "date": "2022-10-11",
+          "quote": "I plan to break it in by smoking my first-ever homemade brisket",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=2/id=1556158169/sortby=mostrecent/json",
+          "who": "Ewjs (App Store review, Hey Grill Hey)",
+          "date": "2022-11-18",
+          "quote": "Just started learning to use my smoker.",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Hey Grill Hey, HowToBBQRight, smoker brand apps with probe control, YouTube pitmasters.",
+      "risks": "Most posters are on one forum. Paid apps are recipe libraries, not cook planners. Food safety and carbon monoxide need clear warnings."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-22",
+    "slug": "bonsai-rescue",
+    "name": "Bonsai Rescue",
+    "need": "My bonsai is turning brown and drying out, I really want it to survive, and I don't know what I'm doing wrong.",
+    "headline": "Keep your first bonsai alive: a care calendar for your species and climate, a quick check when it browns or drops leaves, and what to leave alone this season.",
+    "buyer": "Adults new to bonsai, including people given one as a gift, whose first junipers, elms, ficus or maples are browning or drying out.",
+    "bullets": [
+      "A species and climate profile: indoor or outdoor, light, and winter dormancy.",
+      "A watering check that has you test the soil, instead of a fixed schedule.",
+      "Browning and leaf-drop triage, a season-aware 'don't touch yet' list, and per-tree reminders."
+    ],
+    "price": "$4.99/month",
+    "priceUsd": 5,
+    "priceNote": "Or $39.99 a year.",
+    "reasonPrompt": "What species is your bonsai, and is it kept indoors or outside?",
+    "faq": [
+      {
+        "q": "Is this the same as a houseplant app?",
+        "a": "No. Many bonsai, like junipers and pines, are outdoor trees that need winter dormancy, and repotting, pruning and wiring have their own seasons."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Beginners of any background. It is an independent app, not linked to any bonsai nursery, forum or other app."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-22",
+      "summary": "New bonsai owners on the Bonsai Empire forum and Hacker News say their tree is turning brown or drying out, that they don't know what to do, and that they really want it to survive.",
+      "wtp": "Mirai Mobile, a bonsai education app with 393 App Store ratings, sells plans at $8.99, $15.99 and $29.99.",
+      "signals": [
+        {
+          "url": "https://www.bonsaiempire.com/forum/help-me/22950-dying-juniper-bonsai",
+          "who": "Joostontheplanter (Bonsai Empire forum)",
+          "date": "2026-07-13",
+          "quote": "My Juniper Bonsai is turning brown, and I really want it to survive",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.bonsaiempire.com/forum/help-me/22976-my-black-pine-bonsai-is-drying-out",
+          "who": "Azzruge (Bonsai Empire forum)",
+          "date": "2026-08-11",
+          "quote": "my bonsai tree is drying out and I don’t know what to do.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.bonsaiempire.com/forum/help-me/22899-new-to-the-hobby-bonsai-maple-what-to-do",
+          "who": "Myrdhin (Bonsai Empire forum)",
+          "date": "2026-05-20",
+          "quote": "I am extremely new to the hobby, having just bought my first Bonsai tree, and am a bit at a loss",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.bonsaiempire.com/forum/help-me/22974-serissa-is-in-very-bad-condition",
+          "who": "Sari (Bonsai Empire forum)",
+          "date": "2026-08-09",
+          "quote": "I really need some help with my Serissa foetida (Snow Rose) bonsai, which is in a very bad state right now.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=47845191",
+          "who": "Malcolmlisk (Hacker News)",
+          "date": "2026-04-21",
+          "quote": "the bonsai felt it and started to dry out. I could not stop it",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Mirai Mobile, Bonsai by Zoom, plant care apps, nursery advice, local clubs.",
+      "risks": "Close to keep-it-green (houseplant watering), but bonsai care differs by species and season. Mirai's price is for a broad education plan."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

@@ -9587,5 +9587,89 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "first-brisket-timing-and-not-dry",
+  "offer": "first-brisket",
+  "title": "Your first smoked brisket: timing it and keeping it from drying out",
+  "description": "Start earlier than you think, expect the stall, cook to tenderness rather than a single number, and rest it hot.",
+  "intro": "Brisket is one of the hardest cuts to get right first time, mostly because timing is unpredictable. Plan for that and most problems go away.",
+  "sections": [
+   {
+    "h": "Start early",
+    "list": [
+     "A whole brisket can take many hours, and every one cooks differently. Plan to finish early and hold it, rather than finish late.",
+     "Work back from when you want to eat, and add time for resting."
+    ]
+   },
+   {
+    "h": "Expect the stall",
+    "list": [
+     "The internal temperature can stop rising for hours partway through. This is normal.",
+     "Wrapping in butcher paper or foil helps push through it and keeps moisture in."
+    ]
+   },
+   {
+    "h": "Cook to tender, not a number",
+    "list": [
+     "Many cooks finish somewhere around 195-205°F (90-96°C), but the real test is a probe that slides in with little resistance in the thickest part of the flat."
+    ]
+   },
+   {
+    "h": "Rest it hot",
+    "list": [
+     "Rest at least an hour, wrapped. A clean dry cooler with towels can hold it longer.",
+     "Keep it above 140°F (60°C) while holding."
+    ]
+   },
+   {
+    "h": "Slice against the grain",
+    "p": [
+     "Slice across the grain, and note the grain changes direction between the flat and the point. Always use smokers and charcoal outdoors, away from doors and windows."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "bonsai-turning-brown-what-to-check",
+  "offer": "bonsai-rescue",
+  "title": "Bonsai turning brown or drying out? What to check first",
+  "description": "Check whether it should live indoors or outside, test the soil before watering, look at light, and avoid big changes while it recovers.",
+  "intro": "Browning has a few common causes, and most can be checked in a few minutes. Start with the basics before trying fixes.",
+  "sections": [
+   {
+    "h": "Indoor or outdoor tree?",
+    "list": [
+     "Junipers, pines and most maples are outdoor trees and usually struggle indoors.",
+     "Ficus, Serissa and some others are kept indoors in cold climates. Check your species."
+    ]
+   },
+   {
+    "h": "Test the soil",
+    "list": [
+     "Water when the top of the soil just starts to feel dry, then water until it runs from the drainage holes.",
+     "Small pots dry out fast in summer; in winter they can stay wet for days."
+    ]
+   },
+   {
+    "h": "Light and placement",
+    "list": [
+     "Most bonsai need a lot of light. Indoors, a bright window is the minimum; outdoors, follow the needs of your species.",
+     "Keep indoor trees away from radiators and heating vents."
+    ]
+   },
+   {
+    "h": "Don't make big changes now",
+    "list": [
+     "Avoid repotting, heavy pruning or fertilising a stressed tree. Let it recover first."
+    ]
+   },
+   {
+    "h": "Ask with photos",
+    "p": [
+     "A local bonsai club or nursery can often tell from photos what's wrong. Note the species, where it lives, how you water, and when the browning started."
+    ]
+   }
+  ]
  }
 ]
