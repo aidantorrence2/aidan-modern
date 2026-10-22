@@ -27777,6 +27777,77 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-22",
+    "slug": "kind-farewell",
+    "name": "Kind Farewell",
+    "need": "I want to write a eulogy for someone I loved, but I don't know where to start, and I'm daunted by reading it.",
+    "headline": "Write a eulogy in your own words when you don't know where to start: gentle memory prompts, family memories in one place, and a reading copy you can manage on the day.",
+    "buyer": "Adults asked to write or give a eulogy for a parent, partner or friend.",
+    "bullets": [
+      "Gentle memory prompts, and a link so family can add their memories.",
+      "A simple shape with a read-time you choose (3, 5 or 8 minutes), written in your own words.",
+      "A large-print reading copy with pause marks, a practice timer, and a copy to hand to a celebrant if you can't read it yourself."
+    ],
+    "price": "$14.99 once",
+    "priceUsd": 15,
+    "priceNote": "A one-off price per eulogy. No subscription.",
+    "reasonPrompt": "Who is the eulogy for, and when is the service?",
+    "faq": [
+      {
+        "q": "Will it write the eulogy for me?",
+        "a": "No. It helps you gather memories and shape your own words. It's your tribute."
+      },
+      {
+        "q": "What if I can't read it on the day?",
+        "a": "That's very common. You can hand the reading copy to a celebrant, friend or family member to read for you."
+      },
+      {
+        "q": "Where can I get support with grief?",
+        "a": "If grief feels overwhelming, bereavement services such as Cruse Bereavement Support (UK) or a local support line can help."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Adults. It is an independent app, not linked to any funeral director, charity or forum."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-22",
+      "summary": "People on the Sue Ryder community say they can't see through the tears to do their loved one justice, find it hard to capture everything they want to say, and feel daunted at giving the eulogy alone.",
+      "wtp": "People pay for help: Dignity Bereavement Support sells tribute drafts from $75 to $185 and fully written tributes from $129 to $365.",
+      "signals": [
+        {
+          "url": "https://community.sueryder.org/t/eulogy/112722",
+          "who": "DM58 (Sue Ryder Online Community)",
+          "date": "2025-12-19",
+          "quote": "I can’t concentrate or see through the tears to do her justice",
+          "seen": "opened"
+        },
+        {
+          "url": "https://community.sueryder.org/t/eulogy/112722",
+          "who": "GrievingDaughter (Sue Ryder Online Community)",
+          "date": "2025",
+          "quote": "found it difficult to capture all the important things I wanted to say about her",
+          "seen": "opened"
+        },
+        {
+          "url": "https://community.sueryder.org/t/talking-at-a-funeral/65529",
+          "who": "rebekahdaphne (Sue Ryder Online Community)",
+          "date": "2023",
+          "quote": "I’m feeling very daunted at the thought of giving the eulogy by myself.",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Paid tribute writers (Dignity Bereavement Support, everloved), celebrants, free templates and guides.",
+      "risks": "People currently pay humans, not apps. A one-off need. Grief needs a very gentle tone. Distinct from speech-start (wedding speeches)."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
