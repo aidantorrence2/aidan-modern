@@ -1,0 +1,111 @@
+{
+  "id": "05-next-idea-b",
+  "concept": "Your face. My next idea.",
+  "photo": {
+    "left": 140,
+    "top": 665,
+    "right": 940,
+    "bottom": 1470,
+    "width": 800,
+    "height": 805
+  },
+  "source_sha256": "76abb374106a589418b787c086e843cfee212babbded98dcd6e35915c2575847",
+  "checks": [
+    "complete original JPEG copied byte-for-byte",
+    "face fully within photo crop",
+    "no type/face overlap",
+    "glyph width and canvas margins checked",
+    "no overlapping type blocks",
+    "112px original profile-photo bubble present"
+  ],
+  "errors": [],
+  "type": [
+    {
+      "text": "CHARLOTTE",
+      "fontSize": "34px",
+      "inkLeft": 98,
+      "inkRight": 297.51194763183594,
+      "left": 98,
+      "top": 108,
+      "right": 982,
+      "bottom": 179.59375,
+      "width": 884,
+      "height": 71.59375
+    },
+    {
+      "text": "Let's make",
+      "fontSize": "117.121px",
+      "inkLeft": 149,
+      "inkRight": 568.8751220703125,
+      "left": 145,
+      "top": 218,
+      "right": 972,
+      "bottom": 353.171875,
+      "width": 827,
+      "height": 135.171875
+    },
+    {
+      "text": "something together.",
+      "fontSize": "117.121px",
+      "inkLeft": 149,
+      "inkRight": 947.9924926757812,
+      "left": 145,
+      "top": 353.171875,
+      "right": 972,
+      "bottom": 488.34375,
+      "width": 827,
+      "height": 135.171875
+    },
+    {
+      "text": "free collab photo shoots",
+      "fontSize": "45px",
+      "inkLeft": 145,
+      "inkRight": 513.5498962402344,
+      "left": 145,
+      "top": 521.34375,
+      "right": 982,
+      "bottom": 601.84375,
+      "width": 837,
+      "height": 80.5
+    },
+    {
+      "text": "hi, i'm aidan",
+      "fontSize": "58px",
+      "inkLeft": 236,
+      "inkRight": 477.8599548339844,
+      "left": 236,
+      "top": 1555,
+      "right": 980,
+      "bottom": 1638.59375,
+      "width": 744,
+      "height": 83.59375
+    },
+    {
+      "text": "DM me. Let's make a portrait.",
+      "fontSize": "32px",
+      "inkLeft": 236,
+      "inkRight": 710.591796875,
+      "left": 236,
+      "top": 1638.59375,
+      "right": 980,
+      "bottom": 1693.390625,
+      "width": 744,
+      "height": 54.796875
+    }
+  ],
+  "face": {
+    "left": 322.4597765719709,
+    "top": 809.75,
+    "right": 757.5402234280291,
+    "bottom": 1244.75
+  },
+  "profile": {
+    "left": 98,
+    "top": 1555,
+    "right": 210,
+    "bottom": 1667,
+    "width": 112,
+    "height": 112
+  },
+  "headerSize": "117.121px"
+}

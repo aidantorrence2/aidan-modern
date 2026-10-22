@@ -1,0 +1,111 @@
+{
+  "id": "07-come-as-you-are-c",
+  "concept": "Camera shy? Come as you are.",
+  "photo": {
+    "left": 168,
+    "top": 673,
+    "right": 912,
+    "bottom": 1472,
+    "width": 744,
+    "height": 799
+  },
+  "source_sha256": "c501a5cb4e78b53e29c8ff40e4b829facc37a9ac2cb37a80a44bdfe38bb98660",
+  "checks": [
+    "complete original JPEG copied byte-for-byte",
+    "face fully within photo crop",
+    "no type/face overlap",
+    "glyph width and canvas margins checked",
+    "no overlapping type blocks",
+    "112px original profile-photo bubble present"
+  ],
+  "errors": [],
+  "type": [
+    {
+      "text": "CHARLOTTE",
+      "fontSize": "34px",
+      "inkLeft": 440.24402618408203,
+      "inkRight": 639.755973815918,
+      "left": 98,
+      "top": 108,
+      "right": 982,
+      "bottom": 179.59375,
+      "width": 884,
+      "height": 71.59375
+    },
+    {
+      "text": "No perfect pose",
+      "fontSize": "129.475px",
+      "inkLeft": 192.5518798828125,
+      "inkRight": 885.4752197265625,
+      "left": 98,
+      "top": 218,
+      "right": 972,
+      "bottom": 367,
+      "width": 874,
+      "height": 149
+    },
+    {
+      "text": "required.",
+      "fontSize": "129.475px",
+      "inkLeft": 345.26173400878906,
+      "inkRight": 726.2919158935547,
+      "left": 98,
+      "top": 367,
+      "right": 972,
+      "bottom": 516,
+      "width": 874,
+      "height": 149
+    },
+    {
+      "text": "free collab photo shoots",
+      "fontSize": "45px",
+      "inkLeft": 357.66004943847656,
+      "inkRight": 726.2099456787109,
+      "left": 98,
+      "top": 549,
+      "right": 982,
+      "bottom": 629.5,
+      "width": 884,
+      "height": 80.5
+    },
+    {
+      "text": "hi, i'm aidan",
+      "fontSize": "58px",
+      "inkLeft": 236,
+      "inkRight": 477.8599548339844,
+      "left": 236,
+      "top": 1555,
+      "right": 980,
+      "bottom": 1638.59375,
+      "width": 744,
+      "height": 83.59375
+    },
+    {
+      "text": "DM me. Let's make a portrait.",
+      "fontSize": "32px",
+      "inkLeft": 236,
+      "inkRight": 710.591796875,
+      "left": 236,
+      "top": 1638.59375,
+      "right": 980,
+      "bottom": 1693.390625,
+      "width": 744,
+      "height": 54.796875
+    }
+  ],
+  "face": {
+    "left": 352.4653193522847,
+    "top": 877.01,
+    "right": 727.5346806477153,
+    "bottom": 1252.01
+  },
+  "profile": {
+    "left": 98,
+    "top": 1555,
+    "right": 210,
+    "bottom": 1667,
+    "width": 112,
+    "height": 112
+  },
+  "headerSize": "129.475px"
+}

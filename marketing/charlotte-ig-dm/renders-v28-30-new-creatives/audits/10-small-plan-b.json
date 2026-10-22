@@ -1,0 +1,111 @@
+{
+  "id": "10-small-plan-b",
+  "concept": "A small plan. A good story.",
+  "photo": {
+    "left": 166,
+    "top": 686,
+    "right": 914,
+    "bottom": 1464,
+    "width": 748,
+    "height": 778
+  },
+  "source_sha256": "f77b522929a9ce5da41327801161778bf1ecf5db7ce65d17755c9fb488bab167",
+  "checks": [
+    "complete original JPEG copied byte-for-byte",
+    "face fully within photo crop",
+    "no type/face overlap",
+    "glyph width and canvas margins checked",
+    "no overlapping type blocks",
+    "112px original profile-photo bubble present"
+  ],
+  "errors": [],
+  "type": [
+    {
+      "text": "CHARLOTTE",
+      "fontSize": "34px",
+      "inkLeft": 98,
+      "inkRight": 297.51194763183594,
+      "left": 98,
+      "top": 108,
+      "right": 982,
+      "bottom": 179.59375,
+      "width": 884,
+      "height": 71.59375
+    },
+    {
+      "text": "Your next",
+      "fontSize": "129.478px",
+      "inkLeft": 154,
+      "inkRight": 631.2034912109375,
+      "left": 150,
+      "top": 218,
+      "right": 972,
+      "bottom": 367.015625,
+      "width": 822,
+      "height": 149.015625
+    },
+    {
+      "text": "good plan.",
+      "fontSize": "129.478px",
+      "inkLeft": 145.09185695648193,
+      "inkRight": 652.1666870117188,
+      "left": 150,
+      "top": 367.015625,
+      "right": 972,
+      "bottom": 516.03125,
+      "width": 822,
+      "height": 149.015625
+    },
+    {
+      "text": "free collab photo shoots",
+      "fontSize": "45px",
+      "inkLeft": 150,
+      "inkRight": 518.5498962402344,
+      "left": 150,
+      "top": 549.03125,
+      "right": 982,
+      "bottom": 629.53125,
+      "width": 832,
+      "height": 80.5
+    },
+    {
+      "text": "hi, i'm aidan",
+      "fontSize": "58px",
+      "inkLeft": 236,
+      "inkRight": 477.8599548339844,
+      "left": 236,
+      "top": 1555,
+      "right": 980,
+      "bottom": 1638.59375,
+      "width": 744,
+      "height": 83.59375
+    },
+    {
+      "text": "DM me. Let's make a portrait.",
+      "fontSize": "32px",
+      "inkLeft": 236,
+      "inkRight": 710.591796875,
+      "left": 236,
+      "top": 1638.59375,
+      "right": 980,
+      "bottom": 1693.390625,
+      "width": 744,
+      "height": 54.796875
+    }
+  ],
+  "face": {
+    "left": 322.48927748808796,
+    "top": 818.6,
+    "right": 757.5107225119119,
+    "bottom": 1253.6000000000001
+  },
+  "profile": {
+    "left": 98,
+    "top": 1555,
+    "right": 210,
+    "bottom": 1667,
+    "width": 112,
+    "height": 112
+  },
+  "headerSize": "129.478px"
+}

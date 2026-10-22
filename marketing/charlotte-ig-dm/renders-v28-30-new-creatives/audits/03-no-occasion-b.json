@@ -1,0 +1,111 @@
+{
+  "id": "03-no-occasion-b",
+  "concept": "No occasion required",
+  "photo": {
+    "left": 159,
+    "top": 689,
+    "right": 921,
+    "bottom": 1471,
+    "width": 762,
+    "height": 782
+  },
+  "source_sha256": "88639dcabe379ba365b3cf4d7eb372d031b2c0d4c74a4dd3ae6c5a9ac0c0be9e",
+  "checks": [
+    "complete original JPEG copied byte-for-byte",
+    "face fully within photo crop",
+    "no type/face overlap",
+    "glyph width and canvas margins checked",
+    "no overlapping type blocks",
+    "112px original profile-photo bubble present"
+  ],
+  "errors": [],
+  "type": [
+    {
+      "text": "CHARLOTTE",
+      "fontSize": "34px",
+      "inkLeft": 440.24402618408203,
+      "inkRight": 639.755973815918,
+      "left": 98,
+      "top": 108,
+      "right": 982,
+      "bottom": 179.59375,
+      "width": 884,
+      "height": 71.59375
+    },
+    {
+      "text": "Just because",
+      "fontSize": "123.414px",
+      "inkLeft": 112.01223754882812,
+      "inkRight": 957.9877624511719,
+      "left": 98,
+      "top": 218,
+      "right": 972,
+      "bottom": 360.203125,
+      "width": 874,
+      "height": 142.203125
+    },
+    {
+      "text": "counts.",
+      "fontSize": "123.414px",
+      "inkLeft": 298.29962158203125,
+      "inkRight": 771.7003784179688,
+      "left": 98,
+      "top": 360.203125,
+      "right": 972,
+      "bottom": 502.40625,
+      "width": 874,
+      "height": 142.203125
+    },
+    {
+      "text": "free collab photo shoots",
+      "fontSize": "45px",
+      "inkLeft": 357.66004943847656,
+      "inkRight": 726.2099456787109,
+      "left": 98,
+      "top": 535.40625,
+      "right": 982,
+      "bottom": 615.90625,
+      "width": 884,
+      "height": 80.5
+    },
+    {
+      "text": "hi, i'm aidan",
+      "fontSize": "58px",
+      "inkLeft": 236,
+      "inkRight": 477.8599548339844,
+      "left": 236,
+      "top": 1555,
+      "right": 980,
+      "bottom": 1638.59375,
+      "width": 744,
+      "height": 83.59375
+    },
+    {
+      "text": "DM me. Let's make a portrait.",
+      "fontSize": "32px",
+      "inkLeft": 236,
+      "inkRight": 710.591796875,
+      "left": 236,
+      "top": 1638.59375,
+      "right": 980,
+      "bottom": 1693.390625,
+      "width": 744,
+      "height": 54.796875
+    }
+  ],
+  "face": {
+    "left": 322.48928562049326,
+    "top": 823.4,
+    "right": 757.5107143795067,
+    "bottom": 1258.4
+  },
+  "profile": {
+    "left": 98,
+    "top": 1555,
+    "right": 210,
+    "bottom": 1667,
+    "width": 112,
+    "height": 112
+  },
+  "headerSize": "123.414px"
+}

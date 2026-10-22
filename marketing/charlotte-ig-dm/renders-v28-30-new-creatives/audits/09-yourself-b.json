@@ -1,0 +1,111 @@
+{
+  "id": "09-yourself-b",
+  "concept": "Look like yourself",
+  "photo": {
+    "left": 90,
+    "top": 640,
+    "right": 990,
+    "bottom": 1490,
+    "width": 900,
+    "height": 850
+  },
+  "source_sha256": "3d63d97b916a3ae556aa7473d5c4c0a43ed6afecaabccb82331de31d33489e1c",
+  "checks": [
+    "complete original JPEG copied byte-for-byte",
+    "face fully within photo crop",
+    "no type/face overlap",
+    "glyph width and canvas margins checked",
+    "no overlapping type blocks",
+    "112px original profile-photo bubble present"
+  ],
+  "errors": [],
+  "type": [
+    {
+      "text": "CHARLOTTE",
+      "fontSize": "34px",
+      "inkLeft": 98,
+      "inkRight": 297.51194763183594,
+      "left": 98,
+      "top": 108,
+      "right": 982,
+      "bottom": 179.59375,
+      "width": 884,
+      "height": 71.59375
+    },
+    {
+      "text": "SAME YOU.",
+      "fontSize": "84.8512px",
+      "inkLeft": 222,
+      "inkRight": 568.5674438476562,
+      "left": 218,
+      "top": 218,
+      "right": 972,
+      "bottom": 317.015625,
+      "width": 754,
+      "height": 99.015625
+    },
+    {
+      "text": "NEW FAVORITE PHOTO.",
+      "fontSize": "84.8512px",
+      "inkLeft": 222,
+      "inkRight": 947.9894409179688,
+      "left": 218,
+      "top": 317.015625,
+      "right": 972,
+      "bottom": 416.03125,
+      "width": 754,
+      "height": 99.015625
+    },
+    {
+      "text": "free collab photo shoots",
+      "fontSize": "45px",
+      "inkLeft": 218,
+      "inkRight": 586.5498962402344,
+      "left": 218,
+      "top": 449.03125,
+      "right": 982,
+      "bottom": 529.53125,
+      "width": 764,
+      "height": 80.5
+    },
+    {
+      "text": "hi, i'm aidan",
+      "fontSize": "58px",
+      "inkLeft": 236,
+      "inkRight": 477.8599548339844,
+      "left": 236,
+      "top": 1555,
+      "right": 980,
+      "bottom": 1638.59375,
+      "width": 744,
+      "height": 83.59375
+    },
+    {
+      "text": "DM me. Let's make a portrait.",
+      "fontSize": "32px",
+      "inkLeft": 236,
+      "inkRight": 710.591796875,
+      "left": 236,
+      "top": 1638.59375,
+      "right": 980,
+      "bottom": 1693.390625,
+      "width": 744,
+      "height": 54.796875
+    }
+  ],
+  "face": {
+    "left": 322.45977213050287,
+    "top": 805,
+    "right": 757.5402278694972,
+    "bottom": 1240
+  },
+  "profile": {
+    "left": 98,
+    "top": 1555,
+    "right": 210,
+    "bottom": 1667,
+    "width": 112,
+    "height": 112
+  },
+  "headerSize": "84.8512px"
+}

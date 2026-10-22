@@ -1,0 +1,111 @@
+{
+  "id": "06-hello-charlotte-b",
+  "concept": "Good to meet you, Charlotte",
+  "photo": {
+    "left": 138,
+    "top": 677,
+    "right": 942,
+    "bottom": 1472,
+    "width": 804,
+    "height": 795
+  },
+  "source_sha256": "8631ad21bb7545b32d3edcaa782041fb0979301987ba107cf5c412a074ffb3b8",
+  "checks": [
+    "complete original JPEG copied byte-for-byte",
+    "face fully within photo crop",
+    "no type/face overlap",
+    "glyph width and canvas margins checked",
+    "no overlapping type blocks",
+    "112px original profile-photo bubble present"
+  ],
+  "errors": [],
+  "type": [
+    {
+      "text": "CHARLOTTE",
+      "fontSize": "34px",
+      "inkLeft": 98,
+      "inkRight": 297.51194763183594,
+      "left": 98,
+      "top": 108,
+      "right": 982,
+      "bottom": 179.59375,
+      "width": 884,
+      "height": 71.59375
+    },
+    {
+      "text": "In town.",
+      "fontSize": "126.817px",
+      "inkLeft": 100.6902904510498,
+      "inkRight": 493.4629821777344,
+      "left": 98,
+      "top": 218,
+      "right": 972,
+      "bottom": 364.015625,
+      "width": 874,
+      "height": 146.015625
+    },
+    {
+      "text": "Making portraits.",
+      "fontSize": "126.817px",
+      "inkLeft": 96.6531753540039,
+      "inkRight": 942.6563720703125,
+      "left": 98,
+      "top": 364.015625,
+      "right": 972,
+      "bottom": 510.03125,
+      "width": 874,
+      "height": 146.015625
+    },
+    {
+      "text": "free collab photo shoots",
+      "fontSize": "45px",
+      "inkLeft": 98,
+      "inkRight": 466.5498962402344,
+      "left": 98,
+      "top": 543.03125,
+      "right": 982,
+      "bottom": 623.53125,
+      "width": 884,
+      "height": 80.5
+    },
+    {
+      "text": "hi, i'm aidan",
+      "fontSize": "58px",
+      "inkLeft": 236,
+      "inkRight": 477.8599548339844,
+      "left": 236,
+      "top": 1555,
+      "right": 980,
+      "bottom": 1638.59375,
+      "width": 744,
+      "height": 83.59375
+    },
+    {
+      "text": "DM me. Let's make a portrait.",
+      "fontSize": "32px",
+      "inkLeft": 236,
+      "inkRight": 710.591796875,
+      "left": 236,
+      "top": 1638.59375,
+      "right": 980,
+      "bottom": 1693.390625,
+      "width": 744,
+      "height": 54.796875
+    }
+  ],
+  "face": {
+    "left": 322.45976808058344,
+    "top": 817.2499999999999,
+    "right": 757.5402319194166,
+    "bottom": 1252.25
+  },
+  "profile": {
+    "left": 98,
+    "top": 1555,
+    "right": 210,
+    "bottom": 1667,
+    "width": 112,
+    "height": 112
+  },
+  "headerSize": "126.817px"
+}

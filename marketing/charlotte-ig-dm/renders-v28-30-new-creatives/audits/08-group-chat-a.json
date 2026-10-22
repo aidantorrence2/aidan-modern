@@ -1,0 +1,111 @@
+{
+  "id": "08-group-chat-a",
+  "concept": "The group chat needs an update",
+  "photo": {
+    "left": 166,
+    "top": 691,
+    "right": 914,
+    "bottom": 1464,
+    "width": 748,
+    "height": 773
+  },
+  "source_sha256": "69870106207bc5d5a80b5970be59267ac1d6c842ca50fb757a31bf44bf85ded4",
+  "checks": [
+    "complete original JPEG copied byte-for-byte",
+    "face fully within photo crop",
+    "no type/face overlap",
+    "glyph width and canvas margins checked",
+    "no overlapping type blocks",
+    "112px original profile-photo bubble present"
+  ],
+  "errors": [],
+  "type": [
+    {
+      "text": "CHARLOTTE",
+      "fontSize": "34px",
+      "inkLeft": 440.24402618408203,
+      "inkRight": 639.755973815918,
+      "left": 98,
+      "top": 108,
+      "right": 982,
+      "bottom": 179.59375,
+      "width": 884,
+      "height": 71.59375
+    },
+    {
+      "text": "The group chat",
+      "fontSize": "94.6838px",
+      "inkLeft": 167.35760498046875,
+      "inkRight": 902.6423950195312,
+      "left": 98,
+      "top": 218,
+      "right": 972,
+      "bottom": 328.046875,
+      "width": 874,
+      "height": 110.046875
+    },
+    {
+      "text": "needs an update.",
+      "fontSize": "94.6838px",
+      "inkLeft": 112.01712036132812,
+      "inkRight": 957.9828796386719,
+      "left": 98,
+      "top": 328.046875,
+      "right": 972,
+      "bottom": 438.09375,
+      "width": 874,
+      "height": 110.046875
+    },
+    {
+      "text": "free collab photo shoots",
+      "fontSize": "45px",
+      "inkLeft": 357.66004943847656,
+      "inkRight": 726.2099456787109,
+      "left": 98,
+      "top": 471.09375,
+      "right": 982,
+      "bottom": 551.59375,
+      "width": 884,
+      "height": 80.5
+    },
+    {
+      "text": "hi, i'm aidan",
+      "fontSize": "58px",
+      "inkLeft": 236,
+      "inkRight": 477.8599548339844,
+      "left": 236,
+      "top": 1555,
+      "right": 980,
+      "bottom": 1638.59375,
+      "width": 744,
+      "height": 83.59375
+    },
+    {
+      "text": "DM me. Let's make a portrait.",
+      "fontSize": "32px",
+      "inkLeft": 236,
+      "inkRight": 710.591796875,
+      "left": 236,
+      "top": 1638.59375,
+      "right": 980,
+      "bottom": 1693.390625,
+      "width": 744,
+      "height": 54.796875
+    }
+  ],
+  "face": {
+    "left": 178.81611189246178,
+    "top": 703,
+    "right": 894.7552481591702,
+    "bottom": 1419.0084038097611
+  },
+  "profile": {
+    "left": 98,
+    "top": 1555,
+    "right": 210,
+    "bottom": 1667,
+    "width": 112,
+    "height": 112
+  },
+  "headerSize": "94.6838px"
+}
