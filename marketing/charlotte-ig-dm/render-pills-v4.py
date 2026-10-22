@@ -57,9 +57,9 @@ ADS = [
         ("charlotte", 170, *W_, 0, 0),
         ("free photo shoot", 80, *B_, 0, 0),
         ("dm me “collab”", 64, *W_, 0, 0)]),
-    # 4. men + women explicit — b&w guy
-    ("04-models-mf", "p8", 0.15, "center", [
-        ("models (m/f) wanted", 92, *W_, -2, 0),
+    # 4. plain casting line — b&w guy
+    ("04-models-wanted", "p8", 0.15, "center", [
+        ("models wanted", 110, *W_, -2, 0),
         ("charlotte · free photo shoot", 60, *B_, -2, 20)]),
     # 5. new faces / no experience — close-up smile
     ("05-new-faces", "p2", 0.15, "left", [
