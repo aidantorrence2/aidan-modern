@@ -10642,5 +10642,47 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "stop-repeating-grammar-mistakes",
+  "offer": "mistake-map",
+  "title": "The grammar mistakes adults repeat most, and how to stop",
+  "description": "Most people make the same few mistakes again and again. Find yours, learn a simple test for each, and check for them before you send.",
+  "intro": "You don't need to relearn all of grammar. Fixing your own three or four repeat mistakes makes the biggest difference.",
+  "sections": [
+   {
+    "h": "Find your patterns",
+    "list": [
+     "Look back at a few emails or posts, or feedback you've had, and note the mistakes that come up more than once."
+    ]
+   },
+   {
+    "h": "Common ones and quick tests",
+    "list": [
+     "its / it's: if you can say 'it is' or 'it has', use it's.",
+     "your / you're: if you can say 'you are', use you're.",
+     "their / there / they're: they're = they are; their = belongs to them; there = a place.",
+     "then / than: than compares (bigger than); then is about time (and then)."
+    ]
+   },
+   {
+    "h": "Watch run-on sentences",
+    "list": [
+     "If a sentence has two complete thoughts joined only by a comma, split it with a full stop or join it with 'and', 'but' or 'so'."
+    ]
+   },
+   {
+    "h": "Check before you send",
+    "list": [
+     "Read important messages out loud, or search them for the words you usually get wrong."
+    ]
+   },
+   {
+    "h": "Learn, don't just correct",
+    "p": [
+     "Auto-correct tools help, but read each suggestion and ask why. Understanding the rule means you'll stop making the mistake."
+    ]
+   }
+  ]
  }
 ]

@@ -27409,6 +27409,76 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-22",
+    "slug": "mistake-map",
+    "name": "Mistake Map",
+    "need": "Whenever I write something, someone points out my grammar mistakes, and some of them I didn't even realise were mistakes.",
+    "headline": "Stop making the same grammar mistakes: find your own top few patterns, learn each rule with your own sentences, and check before you send.",
+    "buyer": "Adults 18+ whose grammar mistakes keep getting pointed out in emails, messages and posts.",
+    "bullets": [
+      "A personal mistake map from writing you paste in: your top 3 to 5 repeat patterns.",
+      "Plain-English rules shown with your own sentences, and 2-minute daily drills built from your mistakes.",
+      "A before-you-send check that flags only your known patterns, so you fix them yourself and learn."
+    ],
+    "price": "$4.99/month",
+    "priceUsd": 5,
+    "priceNote": "Or $29.99 a year.",
+    "reasonPrompt": "What kind of writing do you do most: work emails, messages, posts or stories?",
+    "faq": [
+      {
+        "q": "Is this just another auto-correct?",
+        "a": "No. It shows you your own repeat mistakes and helps you learn the rule, so you make them less often."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Adults. It is an independent app, not linked to any grammar checker, course or forum."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-22",
+      "summary": "Writers say their grammar holds them back, that people keep pointing out mistakes they didn't know were mistakes, and that they cringe re-reading their posts.",
+      "wtp": "People pay for grammar help: English Grammar Practice: TOP (700 App Store ratings) charges $1.99 to $6.99 a month or $39.99 lifetime, and Grammarly (227K ratings) sells Premium.",
+      "signals": [
+        {
+          "url": "https://www.writingforums.com/threads/books-or-sites-to-help-with-grammar.138009/",
+          "who": "jayelle_cochran (Writing Forums)",
+          "date": "2013-04",
+          "quote": "whenever I write something someone will always point out my grammar mistakes. Some of them I didn't even realize were mistakes.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.writingforums.com/threads/instead-of-going-back-to-school-to-relearn-writing-grammar-and-style.205556/",
+          "who": "NorfolknChance (Writing Forums)",
+          "date": "2023-08-18",
+          "quote": "My SPaG is weak, but as improved.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/creative_writing/3759510-People-like-my-writing-style-but-not-my-grammar",
+          "who": "darkriver19886 (Mumsnet)",
+          "date": "2019-12-03",
+          "quote": "General feedback on my writing says that I have decent writing style but, grammar tends to be whats holding me back.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/creative_writing/3759510-People-like-my-writing-style-but-not-my-grammar",
+          "who": "morningmarigold (Mumsnet)",
+          "date": "2019-12-04",
+          "quote": "I have exactly the same issue darkriver.",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Grammarly, English Grammar Practice: TOP, ProWritingAid, grammar courses and books.",
+      "risks": "Grammarly's free tier already fixes much of this; the angle is learning your own patterns. Posts are 2013-2023. Distinct from spell-sure (spelling) and right-word (finding words)."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
