@@ -25129,6 +25129,69 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-22",
+    "slug": "mat-recall",
+    "name": "Mat Recall",
+    "need": "I'm new to Brazilian jiu-jitsu and I can't remember the moves I learn in class once the week is over or a roll starts.",
+    "headline": "Keep the techniques from class: a 60-second note after training, short spaced reviews, and one move to try in your next roll.",
+    "buyer": "Adults 18+ new to Brazilian jiu-jitsu who forget techniques from class by the next session or once live rolling starts.",
+    "bullets": [
+      "A 60-second after-class note: the position, the move, and 2 or 3 key details.",
+      "Spaced review cards so each technique comes back before you forget it.",
+      "A position map, a one-tap roll log, and one move picked for your next roll."
+    ],
+    "price": "$3.99/month",
+    "priceUsd": 4,
+    "priceNote": "Or $24.99 a year.",
+    "reasonPrompt": "Which position or move do you keep forgetting?",
+    "faq": [
+      {
+        "q": "Does it replace my coach?",
+        "a": "No. It helps you remember what your coach teaches. Train under a qualified instructor and tap early."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Adults 18+. It is an independent app, not linked to any academy, federation or other BJJ app."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-22",
+      "summary": "New BJJ students say they can't remember new moves a week later, forgot almost everything as white belts, and lose what they drilled once live rolling starts.",
+      "wtp": "BJJ Notes charges $4.99/month, $39/year or $149 lifetime (178 App Store ratings). Gracie University online costs $20/month, and academy fees run around $155/month.",
+      "signals": [
+        {
+          "url": "https://forums.sherdog.com/threads/problem-with-forgetting-moves.2020033/",
+          "who": "Swiftmayhem (Sherdog)",
+          "date": "2012-02-25",
+          "quote": "I can't remember any new moves I learn after the week of doing them.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.sherdog.com/threads/problem-with-forgetting-moves.2020033/",
+          "who": "MyBodyHurts (Sherdog)",
+          "date": "2012-02-25",
+          "quote": "I can honestly say when I was a white belt I forgot at least 95% of what I was taught week in and week out.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://martialtalk.com/threads/first-bjj-lesson.132978/page-2",
+          "who": "day1 (MartialTalk)",
+          "date": "2021-08-11",
+          "quote": "I cant remember much of what we learnt when things go live",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "BJJ Notes, paper training journals, Gracie University and other online instructionals, coaches' class recaps.",
+      "risks": "Posts are old (2012, 2021). A paid journal app already exists. Nobody wrote 'I'd pay'."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

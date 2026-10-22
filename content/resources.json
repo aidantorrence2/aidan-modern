@@ -9422,5 +9422,45 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "remember-bjj-techniques-after-class",
+  "offer": "mat-recall",
+  "title": "How to remember BJJ techniques after class",
+  "description": "Write a short note straight after training, review it before the next class, connect moves to positions, and try one thing in live rolling.",
+  "intro": "Forgetting most of what you're shown is normal early on. A few small habits make a lot more of it stick.",
+  "sections": [
+   {
+    "h": "Write it down within the hour",
+    "list": [
+     "Note the position, the technique, and the 2 or 3 details your coach stressed.",
+     "Short is fine. A few lines you actually write beat a perfect journal you don't."
+    ]
+   },
+   {
+    "h": "Review before the next class",
+    "list": [
+     "Read your notes the day after, then again before you train. Spacing reviews out helps them stick."
+    ]
+   },
+   {
+    "h": "Think in positions",
+    "list": [
+     "Group techniques by where you are: closed guard, side control, mount, back. It's easier to recall a move when you know where it lives."
+    ]
+   },
+   {
+    "h": "Pick one thing for live rolling",
+    "list": [
+     "Choose one technique to try during rolls. It's fine if it doesn't work yet; trying it is the practice."
+    ]
+   },
+   {
+    "h": "Ask and drill",
+    "p": [
+     "Ask your coach or a training partner to go over a move again, and stay for a few extra reps after class if your gym allows it. Train safely, under a qualified instructor."
+    ]
+   }
+  ]
  }
 ]
