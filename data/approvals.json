@@ -3027,6 +3027,38 @@
       "status": "approved",
       "decided": "2026-10-22T00:26:02Z",
       "note": ""
+    },
+    {
+      "id": "other:keep-the-old-phone-connected-over-wi-fi--202610220034",
+      "kind": "other",
+      "source": "codex:aidan-modern",
+      "title": "Keep the old phone connected over Wi-Fi for the transfer",
+      "summary": "Temporarily enable authenticated Android debugging on the old Redmi over your home Wi-Fi. This lets me stream missing data to the Motorola when it is reconnected by USB, then turn wireless debugging off afterward.",
+      "payload": {
+        "source": {
+          "model": "Redmi Note 15 Pro 5G",
+          "serial": "twjfuwg6nnfqnrwg",
+          "wifi_address": "192.168.1.27"
+        },
+        "destination": {
+          "model": "moto g power 5G - 2024",
+          "serial": "ZD222RQ6F4"
+        },
+        "change": "Temporarily enable Android debugging over TCP port 5555 on the old Redmi, using its existing Android debugging authorization for this Mac; connect this Mac to 192.168.1.27:5555. This exposes an authenticated debugging endpoint on the local network until turned off or rebooted.",
+        "commands": [
+          "adb -s twjfuwg6nnfqnrwg tcpip 5555",
+          "adb connect 192.168.1.27:5555"
+        ],
+        "transfer": "After the Motorola is reconnected to USB, compare both phones and stream missing files and APKs directly through the Mac with bounded buffers, without staging the old phone storage on the nearly-full Mac. Preserve existing destination files on collisions; verify restored files; use supported app export/import paths for private app data.",
+        "cleanup": "Disable the old Redmi TCP debugging endpoint with adb -s 192.168.1.27:5555 usb after the transfer. Never authorize any additional computers.",
+        "next_physical_step": "Leave the old phone on and connected to home Wi-Fi. Reconnect the Motorola to this Mac only after the agent confirms old-phone wireless access is working.",
+        "reason": "Only the old phone is on USB now, and the Mac has about 2 GB free; temporary wireless access allows both phones to remain accessible without copying the old phone storage onto the Mac."
+      },
+      "created": "2026-10-22T00:34:15Z",
+      "expires": "2026-10-23T00:34:15Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
     }
   ]
 }
