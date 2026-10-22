@@ -26239,6 +26239,83 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-22",
+    "slug": "trill-ready",
+    "name": "Trill Ready",
+    "need": "I'm learning Spanish and I just can't roll my R, no matter how many hours I try.",
+    "headline": "Roll your R at last: a step ladder from sounds you can already make, a mic check on every try, and two minutes a day.",
+    "buyer": "Adults learning Spanish, Italian, Portuguese or another language with a trilled R who have tried for months or years.",
+    "bullets": [
+      "A step ladder from sounds you already make (like the quick 'tt' in 'butter') to a full trill.",
+      "A mic check of each try: tap, buzz, growl or trill.",
+      "Two-minute daily sessions and a weekly recording log so you can hear progress."
+    ],
+    "price": "$2.99/month",
+    "priceUsd": 3,
+    "priceNote": "Or $19.99 a year.",
+    "reasonPrompt": "Which language are you learning, and what comes out when you try to roll your R?",
+    "faq": [
+      {
+        "q": "What if I still can't do it?",
+        "a": "Many adults learn it with steady practice, but not everyone can. A single tap R is understood everywhere, and the app helps with that too. If you have a speech difficulty, a speech therapist can help."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Adult learners. It is an independent app, not linked to any language course, school or other app."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-22",
+      "summary": "Learners say they've spent hours trying and can't roll their R at all, that none of the tricks work after decades of speaking the language, and that they've tried for 12 years.",
+      "wtp": "Learners pay for pronunciation courses: StoryLearning sells Spanish Pronunciation Mastery at $297, and Notes in Spanish sells a paid pronunciation course with a lesson on rolling your R's.",
+      "signals": [
+        {
+          "url": "https://www.spanishdict.com/answers/263251/i-cannot-roll-my-rs-at-all",
+          "who": "OraBrush (SpanishDict Answers)",
+          "date": "2014-05",
+          "quote": "I've spent hours trying to blow air over my tongue while pushing it behind my teeth and I just can't do it at all.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.spanishdict.com/answers/263251/i-cannot-roll-my-rs-at-all",
+          "who": "NikkiLR (SpanishDict Answers)",
+          "date": "2014-05-20",
+          "quote": "Yo tampoco puedo hacerlo, y tengo unos 12 años intentando.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.tomisimo.org/archive/index.php/t-18848.html",
+          "who": "hilaland87 (Tomisimo forum)",
+          "date": "2014-09-30",
+          "quote": "Ive never rolled an r in my life.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.notesinspanish.com/2024/06/03/master-spanish-pronunciation/",
+          "who": "Montanista (Notes in Spanish comments)",
+          "date": "2024-06-12",
+          "quote": "None of the tricks work for me re rolling the Rs",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.notesinspanish.com/2024/06/03/master-spanish-pronunciation/",
+          "who": "Roy Stevens (Notes in Spanish comments)",
+          "date": "2024-06-03",
+          "quote": "I can't pronounce my r's in English let alone roll them in Spanish.",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "General pronunciation courses (StoryLearning, Notes in Spanish), Spanish Articulation app, YouTube tutorials, tutors.",
+      "risks": "No rated paid trill-specific app. Money is for general pronunciation courses. Some posts are old. Distinct from heard-first (English accent) and tone-ear (Mandarin tones)."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
