@@ -2960,6 +2960,45 @@
       "status": "approved",
       "decided": "2026-10-20T19:06:09Z",
       "note": ""
+    },
+    {
+      "id": "other:enable-usb-access-and-finish-transferrin-202610220014",
+      "kind": "other",
+      "source": "codex:aidan-modern",
+      "title": "Enable USB access and finish transferring your phones",
+      "summary": "The Motorola is connected, but USB debugging is off. Enable it and accept this Mac on the phone, connect the old phone too, then approve so I can compare both and restore missing apps, settings and files. Exact steps are in this card.",
+      "payload": {
+        "device_detected": {
+          "model": "moto g power 5G - 2024",
+          "serial": "ZD222RQ6F4",
+          "connection": "USB detected; no ADB device"
+        },
+        "required_on_new_phone": [
+          "Keep the Motorola connected to this Mac and unlock it.",
+          "Settings > About phone > Build number: tap 7 times and enter your phone PIN on the phone if prompted.",
+          "Settings > System > Developer options > USB debugging: turn on.",
+          "Accept Allow USB debugging on the phone for this Mac; Always allow from this computer is optional."
+        ],
+        "required_for_complete_comparison": "Connect the old phone to this Mac as well, keep it powered on and unlocked, and accept this Mac if an Android debugging prompt appears. The most recent recorded old phone is a Redmi Note 15 Pro; a July Note 14 snapshot is only a historical fallback.",
+        "approved_actions": [
+          "Read installed-app inventories, relevant permission states, file manifests and phone setup state from both connected phones; keep audit output private on this Mac.",
+          "Restore missing user files additively after comparing both phones, preserving existing files on name collisions and checking copied file hashes.",
+          "Restore IG Instant Blocker from the existing signed local APK, retaining any current data, and re-enable its accessibility service, self-heal grant and background operation.",
+          "Restore AppBlock rules through the app backup/import flow where available, compare schedules and QuickBlock settings, and restore required permissions.",
+          "Compare other existing custom apps and accessibility/background services, including Guardian, ScreenZen, Helm, Pulse and Approvals; restore missing apps and matching settings using available local artifacts and old-phone state.",
+          "Audit messages, contacts, call history, photos, Downloads, recordings, notes, authenticator migration, WhatsApp and WhatsApp Business, account sign-ins and NextDNS; report any app-managed steps that cannot be completed through authorized access."
+        ],
+        "limits": [
+          "No factory reset, rooting, bootloader unlocking, deletion of source data or existing new-phone files, payment, message sending, or posting.",
+          "Do not copy an entire old phone secure-settings database to the new phone or activate a new strict lockout without matching the old configuration."
+        ],
+        "after_access": "Approve after enabling access; I will verify device identity, audit first, then perform the additive restores and record what passed or remains blocked."
+      },
+      "created": "2026-10-22T00:14:13Z",
+      "expires": "2026-10-23T00:14:13Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
     }
   ]
 }
