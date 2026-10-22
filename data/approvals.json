@@ -3018,7 +3018,9 @@
           "Do not invent schedules or strict-mode lockout rules.",
           "If no backup is available, leave existing data intact and report that the old phone is needed."
         ],
-        "reason": "Your AGENTS.md routes acceptance of terms and data migrations through the Approvals app."
+        "reason": "Your AGENTS.md routes acceptance of terms and data migrations through the Approvals app.",
+        "result": "Restored AppBlock backup Redmi Obsidian dated 7/22/26 07:50; app confirmed Backup restored and warned that 15 apps referenced by the backup are not installed, so their block entries were skipped. Restored AppBlock permissions and verified accessibility service bound. Observed user completing setup on phone and Strict Mode Active for two schedules; did not change that strict configuration. A newer Redmi Lapis cloud backup appeared during concurrent user setup; its origin was not established and it was not restored over the active configuration. No subscription, trial, payment, account creation, or support message initiated. Current rules still need comparison with old phone.",
+        "result_at": "2026-10-22T00:32:40Z"
       },
       "created": "2026-10-22T00:24:32Z",
       "expires": "2026-10-23T00:24:32Z",
