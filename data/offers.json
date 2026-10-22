@@ -24586,6 +24586,83 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-22",
+    "slug": "raise-ready",
+    "name": "Raise Ready",
+    "need": "I think I'm underpaid, but I find it so hard to have these conversations at work, and I don't know how to ask for a pay rise.",
+    "headline": "Think you're underpaid but dread asking? Log your wins as they happen, check your pay against ranges you find, build a short script and rehearse the pushback before the meeting.",
+    "buyer": "Adults 18+ in a job who think they're underpaid and keep putting off asking for a raise.",
+    "bullets": [
+      "A one-tap wins log, so the evidence is ready when you need it.",
+      "A pay worksheet comparing your pay with public ranges you enter.",
+      "A short script (opening, ask, close), rehearsal cards for common pushback, and a timing plan back from your review date."
+    ],
+    "price": "$4.99/month",
+    "priceUsd": 5,
+    "priceNote": "Or $29 a year.",
+    "reasonPrompt": "What's stopping you asking for a raise, and when is your next review?",
+    "faq": [
+      {
+        "q": "Will it get me a raise?",
+        "a": "No one can promise that. It helps you prepare your case and practise the conversation. It isn't legal, financial or careers advice."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Adults 18+. It is an independent app, not linked to any employer, recruiter, salary site or coaching service."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-22",
+      "summary": "People on four Mumsnet threads (2015-2023) say they find pay conversations hard, don't know how to raise it, worry about seeming cheeky, or found a newer colleague earns more.",
+      "wtp": "Levels.fyi sells negotiation coaching from '$1,250' (Standard) to '$5,000' (Leadership), with '4.9/5 from 490+ reviews'.",
+      "signals": [
+        {
+          "url": "https://www.mumsnet.com/talk/am_i_being_unreasonable/4931651-to-ask-for-a-pay-rise",
+          "who": "HoggyDunlop (Mumsnet)",
+          "date": "2023-10-30",
+          "quote": "I find it so hard to have these conversations at work",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/am_i_being_unreasonable/3214135-to-ask-for-a-pay-rise-under-these-circumstances",
+          "who": "thursnc (Mumsnet)",
+          "date": "2018-04-05",
+          "quote": "I'm really conscious of what my bosses think of me and don't want to appear cheeky!",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/work/2452839-Asking-for-a-payrise",
+          "who": "curriegirl (Mumsnet)",
+          "date": "2015-08-20",
+          "quote": "The most recent member of staff taken on with my input is earning £9K more than me.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/work/3453260-Pay-rise",
+          "who": "MadHouseUpNorth (Mumsnet)",
+          "date": "2018-12-16",
+          "quote": "I really hate the idea of having to ask but as they say 'no ask no get'",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.levels.fyi/services/",
+          "who": "Levels.fyi negotiation services page",
+          "date": "2026-10-22",
+          "quote": "$1,250 ... $2,450 ... $5,000 ... 4.9/5 from 490+ reviews",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Negotiation coaching services, salary sites, small AI negotiation apps.",
+      "risks": "All people on one site; coaching is mostly for job offers. No income or outcome claims."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

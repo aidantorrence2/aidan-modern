@@ -9134,5 +9134,44 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "ask-for-a-raise-when-nervous",
+  "offer": "raise-ready",
+  "title": "How to ask for a raise when you're nervous: wins log, pay ranges and a short script",
+  "description": "Collect your wins, check what similar roles pay, write a three-line script, and practise the likely pushback before you book the meeting.",
+  "intro": "Asking for more money feels awkward for most people. Preparing the evidence and the words in advance makes the conversation much easier. This isn't careers or legal advice.",
+  "sections": [
+   {
+    "h": "Keep a wins log",
+    "list": [
+     "Note results, praise and extra responsibilities as they happen, with dates."
+    ]
+   },
+   {
+    "h": "Check pay ranges",
+    "list": [
+     "Look at job adverts and salary surveys for similar roles in your area."
+    ]
+   },
+   {
+    "h": "Write a short script",
+    "list": [
+     "What you've delivered, what you're asking for, and a clear question at the end."
+    ]
+   },
+   {
+    "h": "Practise the pushback",
+    "list": [
+     "'There's no budget' or 'not right now': ask what would need to happen and when to revisit."
+    ]
+   },
+   {
+    "h": "Time it well",
+    "p": [
+     "Ask before budgets are set or at your review, and follow up in writing afterwards."
+    ]
+   }
+  ]
  }
 ]
