@@ -26008,6 +26008,76 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-22",
+    "slug": "steep-ready",
+    "name": "Steep Ready",
+    "need": "As soon as a mountain bike trail gets steep, or there's a drop bigger than a kerb, I get off and walk.",
+    "headline": "Ride the steep bits you walk today, one smaller step at a time: a feature list, a step ladder that unlocks only after calm runs, and body-position drills.",
+    "buyer": "Adult mountain bikers 18+ who walk or brake hard through steep rolls, drops and rock gardens.",
+    "bullets": [
+      "A list of the features you walk now, each with a ladder of smaller versions to ride first.",
+      "Body-position drills you can do in a car park: attack position, heels down, eyes up.",
+      "A rode, braked or walked log (walking counts as a fair choice) and a 10-second clip check."
+    ],
+    "price": "$3.99/month",
+    "priceUsd": 4,
+    "priceNote": "Or $24.99 a year.",
+    "reasonPrompt": "What's the feature on your local trail that you always walk?",
+    "faq": [
+      {
+        "q": "Will it push me to ride things I'm not ready for?",
+        "a": "No. Walking is always a fair choice. Wear a helmet and suitable protection, ride within your limits, and consider an in-person skills coach for bigger features."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Adults 18+. It is an independent app, not linked to any coach, bike brand, trail app or forum."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-22",
+      "summary": "Riders on Singletrack World say anything bigger than a kerb has them off walking, that they battle a fear of steep things, and that they walk what most others ride.",
+      "wtp": "Riders in the same thread pay for in-person skills coaching: toppers3933 has 'been on one of his courses', and IHN is 'off to see' a skills coach.",
+      "signals": [
+        {
+          "url": "https://singletrackworld.com/forum/bike-forum/help-i-appear-to-be-a-useless-mincer/",
+          "who": "mrbelowski (Singletrack World)",
+          "date": "2012-08-23",
+          "quote": "As for drop offs - anything bigger than a kerb has me off walking. Steep descents are the same.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://singletrackworld.com/forum/bike-forum/help-i-appear-to-be-a-useless-mincer/",
+          "who": "spawnofyorkshire (Singletrack World)",
+          "date": "2012-08-23",
+          "quote": "I'm constantly battling vertigo and a fear of steep things whilst out riding.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://singletrackworld.com/forum/bike-forum/help-i-appear-to-be-a-useless-mincer/",
+          "who": "IHN (Singletrack World)",
+          "date": "2012-08-23",
+          "quote": "If it helps, I've always been a useless mincer.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://singletrackworld.com/forum/bike-forum/riding-stuff-that-scares-you-confidence-vs-risk/",
+          "who": "slackboy (Singletrack World)",
+          "date": "2016-07-16",
+          "quote": "I'll walk stuff most people on here would ride.",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "In-person skills coaching, online MTB skills courses, YouTube tutorials.",
+      "risks": "All posters are on one site (two threads), from 2012 and 2016. No rated paid app was confirmed; money is skills courses. Mountain biking carries injury risk, so the app never pushes riders past their limits."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
