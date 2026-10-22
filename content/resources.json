@@ -9017,5 +9017,44 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "learn-where-countries-are-as-an-adult",
+  "offer": "headline-atlas",
+  "title": "Learn where the world's countries are as an adult: five minutes a day",
+  "description": "Start with countries you hear about in the news, learn each one next to its neighbours, and test yourself on a blank map a little every day.",
+  "intro": "Plenty of adults never learned world geography properly. A few minutes a day, building out from places you already know, works well.",
+  "sections": [
+   {
+    "h": "Start with the news",
+    "list": [
+     "Pick three countries you've heard about this week and find them on a map."
+    ]
+   },
+   {
+    "h": "Learn neighbours together",
+    "list": [
+     "Each new country goes next to one you already know."
+    ]
+   },
+   {
+    "h": "Test on a blank map",
+    "list": [
+     "Point to it without labels. Recall beats rereading."
+    ]
+   },
+   {
+    "h": "Bring back the misses",
+    "list": [
+     "Revisit the ones you got wrong the next day, then a few days later."
+    ]
+   },
+   {
+    "h": "Go continent by continent",
+    "p": [
+     "Finish one region before starting the next, so it doesn't feel overwhelming."
+    ]
+   }
+  ]
  }
 ]

@@ -24281,6 +24281,105 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-22",
+    "slug": "headline-atlas",
+    "name": "Headline Atlas",
+    "need": "I'm embarrassed that I don't know where most countries are on a world map, and when a place comes up in the news or in conversation I just nod along.",
+    "headline": "Embarrassed you can't place half the world's countries on a map? Learn them in five minutes a day, starting with the places in this week's news.",
+    "buyer": "Curious adults 18+ who feel embarrassed about gaps in their geography and want to follow the news and conversations with real context.",
+    "bullets": [
+      "Daily 5-minute map drill that starts with the countries in this week's headlines, then adds their neighbours so each new place sticks to one you already know",
+      "Spaced review brings back the countries you keep missing until you can place them on a blank map with no hints",
+      "Progress map shows your world filling in, continent by continent, from 'no clue' to 'can label it blank'"
+    ],
+    "price": "$3.99/month",
+    "priceUsd": 4,
+    "priceNote": "Or $24.99 a year.",
+    "reasonPrompt": "What made you want to finally learn where countries are? For example, a moment in conversation, following the news, travel plans, or just curiosity.",
+    "faq": [
+      {
+        "q": "Who makes Headline Atlas?",
+        "a": "Headline Atlas is an independent app for adults 18+. It is not affiliated with, endorsed by, or connected to any news outlet, map provider or other geography app."
+      },
+      {
+        "q": "I know almost nothing. Is this too advanced?",
+        "a": "No. You start from zero with a handful of countries, and new ones are added only once the earlier ones stick. Each new country is shown next to neighbours you already know."
+      },
+      {
+        "q": "Where do the 'in the news' countries come from?",
+        "a": "Each week we choose a short list of countries that are widely in the headlines and add them to your drills. We show the place on the map, not the news stories themselves, and we take no political position."
+      },
+      {
+        "q": "How long does it take each day?",
+        "a": "About five minutes. You can do more if you like, but the daily drill is built to fit a commute or a coffee break."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-22",
+      "summary": "Adults say in their own words that they are embarrassed not to know where countries are, often despite being well educated, and that learning them gives context to the news. Paid geography quiz apps hold tens of thousands of App Store ratings, and reviewers say they paid to unlock them.",
+      "wtp": "World Quiz (App Store): 21K ratings, No Ads $4.99. Geotrainer: Supporter subscription $10.99; reviewer Wafflesthewolf bought it and calls it 'COMPLETELY worth it'. Seterra (full) is a paid app with 17K ratings.",
+      "signals": [
+        {
+          "url": "https://apps.apple.com/us/app/world-quiz-learn-geography/id628052020",
+          "who": "4221959 (App Store review, World Quiz)",
+          "date": "2024-01-14",
+          "quote": "I’m 64 and have been embarrassed for years I don’t have a clue where most countries are on a world map. I tried out several apps before finding this one.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/world-quiz-learn-geography/id628052020",
+          "who": "mckenzijolene (App Store review, World Quiz)",
+          "date": "2024-08-13",
+          "quote": "Someone asked me if I knew where Turkey was & I chuckled & said “nope.” Afterward I got to thinking",
+          "seen": "opened"
+        },
+        {
+          "url": "https://emnudge.dev/notes/learning-geography",
+          "who": "EmNudge (emnudge.dev blog)",
+          "date": "2025-02-24",
+          "quote": "This is something I’m a bit ashamed to admit, but I don’t know where many countries are.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=3232989",
+          "who": "jerryr (Hacker News)",
+          "date": "2011-11-14",
+          "quote": "I'm embarrassed by my ignorance of geography",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/seterra-geography-full/id1093460065",
+          "who": "prolly71 (App Store review, Seterra)",
+          "date": "2018-12-15",
+          "quote": "I started out with the paid version because I’d already played enough to know it was worth it for me.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/geotrainer-geography-map-quiz/id527868789",
+          "who": "Wafflesthewolf (App Store review, Geotrainer)",
+          "date": "2023-02-21",
+          "quote": "I have already bought the 11 dollar supporter fee to unlock everything. It is COMPLETELY worth it.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/geotrainer-geography-map-quiz/id527868789",
+          "who": "LeafArrow (App Store review, Geotrainer)",
+          "date": "2023-10-23",
+          "quote": "I feel I have a more comprehensive understand of the news",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "World Quiz (21K ratings, $4.99 to remove ads), Seterra (17K ratings, owned by GeoGuessr), StudyGe (5.3K ratings, $3.99-$6.99/month subscriptions), Geotrainer (4.7K ratings, $10.99 supporter tier), Maps of our World (20.9K ratings), free Anki 'nations of the world' decks, Sporcle and JetPunk quizzes. None of them builds the daily drill around the places currently in the news. That is the angle here.",
+      "risks": "A crowded category with strong free and ad-supported options, and much of the willingness to pay is a one-time unlock rather than a subscription. Retention may fall once a learner has 'finished' the world map, so the weekly news-country list has to keep giving people a reason to come back. Some users of these apps are teens, so marketing and the app itself must stay aimed at adults 18+. The news-country picks must stay neutral and must not reproduce news content."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
