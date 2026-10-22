@@ -26848,6 +26848,94 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-22",
+    "slug": "delay-chaser",
+    "name": "Delay Chaser",
+    "need": "My flight was delayed or cancelled, I claimed compensation, and the airline is rejecting it or ignoring me, and I don't want to hand over a big cut to a claims company.",
+    "headline": "Your flight was late and the airline is ignoring your claim: keep track of every deadline, and get the next letter ready when they go quiet or say no.",
+    "buyer": "UK and EU travellers whose flight delay or cancellation claim has been ignored, delayed or rejected, and who want to handle it themselves.",
+    "bullets": [
+      "An eligibility check from your flight number and date, with the usual amount per passenger.",
+      "A deadline clock: reminders to chase, then when you can escalate to an ADR scheme.",
+      "Ready-to-edit replies for 'extraordinary circumstances', and an escalation pack with your timeline and evidence."
+    ],
+    "price": "$4.99/month",
+    "priceUsd": 5,
+    "priceNote": "Or $24 a year.",
+    "reasonPrompt": "Which airline and route was it, and where has your claim got to?",
+    "faq": [
+      {
+        "q": "Is this legal advice?",
+        "a": "No. It's general information and letter templates to help you claim yourself. It can't promise a payout; for complex cases, get independent advice."
+      },
+      {
+        "q": "Does it send anything for me?",
+        "a": "No. It prepares letters and reminders. You decide what to send and send it yourself."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Adult travellers. It is an independent app, not linked to any airline, claims company or regulator."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-22",
+      "summary": "Travellers on MoneySavingExpert say their compensation claims were rejected or ignored for months, and app reviewers say they waited months or paid a service so they wouldn't have to fight the airline.",
+      "wtp": "People pay a large share of their compensation: AirHelp takes a 35% service fee from each successful claim. Reviewer Mariano6462 wrote 'I paid this service to not have to fight with airline’s support'.",
+      "signals": [
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/6663141/airline-compensation-claim-loganair-3-months-waiting",
+          "who": "Jlt1980 (MoneySavingExpert)",
+          "date": "2026-04-07",
+          "quote": "I have tried to contact LOGANAIR for an update multiple times through different platforms",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/6673028/lufthansa-cancellation-claim-rejected",
+          "who": "Punjabputer (MoneySavingExpert)",
+          "date": "2026-06-18",
+          "quote": "I submitted a compensation claim but it was rejected.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/6677711/pula-to-bristol-14th-july-conpension-claim-rejected",
+          "who": "FuffyCat (MoneySavingExpert)",
+          "date": "2026-07-27",
+          "quote": "our compensation claim was rejected for a ~3:15 hr delay on a flight from Pula to Bristol from EasyJet",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/6682480/wizz-air-compensation-payout-fustration-any-advice-welcome",
+          "who": "Drive4itElite (MoneySavingExpert)",
+          "date": "2026-09-07",
+          "quote": "I filled my claim for compenstion, no payment as yet. I allowed 30 days, still nothing.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=6736442533/sortby=mostrecent/json",
+          "who": "MikeS2! (App Store review, AirHelp)",
+          "date": "2026-02-06",
+          "quote": "My flight was delayed by 15 hours, and I waited 4 months for a response",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=6736442533/sortby=mostrecent/json",
+          "who": "Mariano6462 (App Store review, AirHelp)",
+          "date": "2025-12-12",
+          "quote": "I paid this service to not have to fight with airline’s support",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "MoneySavingExpert's free claim tools, AirHelp and other claims companies, ADR schemes, small claims courts.",
+      "risks": "MSE launched a free claim tool in Sept 2026, so the value is what comes after the first letter. Legal rules vary by route; not legal advice."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

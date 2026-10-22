@@ -10365,5 +10365,46 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "flight-delay-compensation-claim-ignored",
+  "offer": "delay-chaser",
+  "title": "Flight delay compensation claim rejected or ignored? What to do next",
+  "description": "Check whether your flight qualifies, keep a clear record, challenge vague 'extraordinary circumstances' replies, and escalate after 8 weeks.",
+  "intro": "Under the UK and EU flight rules (UK261 and EU261), many delays of 3 hours or more at arrival, and many cancellations, can qualify for fixed compensation. Airlines don't always pay at the first ask. This is general information, not legal advice.",
+  "sections": [
+   {
+    "h": "Check it qualifies",
+    "list": [
+     "The rules usually cover flights departing the UK or EU, and flights arriving there on a UK or EU airline.",
+     "Amounts depend on flight distance; under UK261 they are £220, £350 or £520 per passenger, and under EU261 €250, €400 or €600.",
+     "Delays caused by 'extraordinary circumstances' (such as severe weather or air traffic control restrictions) usually don't qualify."
+    ]
+   },
+   {
+    "h": "Keep a clear record",
+    "list": [
+     "Booking reference, flight number, scheduled and actual arrival times, and every message to and from the airline, with dates."
+    ]
+   },
+   {
+    "h": "If they say 'extraordinary circumstances'",
+    "list": [
+     "Ask the airline politely, in writing, for the specific cause and evidence. A technical fault with the aircraft is often not extraordinary."
+    ]
+   },
+   {
+    "h": "If they ignore you",
+    "list": [
+     "Send a short, dated chaser. If 8 weeks pass without a final answer, or they reject it, you can usually take it to the airline's ADR scheme or the regulator."
+    ]
+   },
+   {
+    "h": "Before paying a claims company",
+    "p": [
+     "Many people claim directly for free. Claims companies can help, but often keep a large share of the payout. Free claim letter tools are also available from consumer sites."
+    ]
+   }
+  ]
  }
 ]
