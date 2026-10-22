@@ -26316,6 +26316,160 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-22",
+    "slug": "dealer-ready",
+    "name": "Dealer Ready",
+    "need": "I need to buy a used car but I know next to nothing about cars, and I'm scared of getting ripped off.",
+    "headline": "Buy your next used car without getting taken for a ride: what to check, what to ask, what it's worth, and when to walk away.",
+    "buyer": "Adults 18+ buying a used car privately or from a dealer who don't know much about cars, including first cars and parents helping a new driver.",
+    "bullets": [
+      "A viewing checklist to tick off on your phone at the car: bodywork, tyres, under the bonnet, paperwork.",
+      "Questions to ask the seller, with the answers that should worry you, and a polite walk-away script.",
+      "A dealer quote decoder that lists each add-on and which ones you can refuse, plus when to pay for a history check or inspection."
+    ],
+    "price": "$9/month",
+    "priceUsd": 9,
+    "priceNote": "Or $29 a year, since most people buy a car only every few years.",
+    "reasonPrompt": "What kind of car are you looking for, and are you buying privately or from a dealer?",
+    "faq": [
+      {
+        "q": "Can it tell me a car is safe?",
+        "a": "No. It helps you check and ask the right questions. Always get an independent mechanic's inspection before you buy, and check your local consumer rights."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Adults 18+. It is an independent app, not linked to any dealer, marketplace or vehicle-history service."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-22",
+      "summary": "Buyers on MoneySavingExpert and the Straight Dope say they know next to nothing about cars, find buying stressful, don't know where to start, and hear horror stories about dealers.",
+      "wtp": "People pay for peace of mind: carVertical sells vehicle history reports from £36.99 (1.7K UK App Store ratings).",
+      "signals": [
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/465761/used-car-buying-what-to-look-out-for",
+          "who": "socks_uk (MoneySavingExpert)",
+          "date": "2007-05-30",
+          "quote": "because my husband and I know next to nothing about things to look at",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/4751852/buying-first-car",
+          "who": "Just_Like_Honey (MoneySavingExpert)",
+          "date": "2013-08-27",
+          "quote": "Just wondering if anybody can give me advice on buying my first car. I just don't really know where to start!",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/5604352/3000-on-a-used-car-for-15k-a-year",
+          "who": "jehangir (MoneySavingExpert)",
+          "date": "2017-02-16",
+          "quote": "As I know little to nothing about cars buying one is quite stressful so any help would be much appreciated",
+          "seen": "opened"
+        },
+        {
+          "url": "https://boards.straightdope.com/t/trying-to-buy-a-used-car-from-a-dealer-are-they-insane-or-off-or-just-me/1002536",
+          "who": "Mama_Zappa (Straight Dope)",
+          "date": "2024-06-06",
+          "quote": "But I definitely have the impression that used car dealers look upon purchasers as their rightful prey.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://boards.straightdope.com/t/what-is-the-most-bulletproof-way-to-buy-a-decent-used-car/1014996",
+          "who": "HeyHomie (Straight Dope)",
+          "date": "2025-03-01",
+          "quote": "I hear horror stories about dealers, and apparently a national clearinghouse like Carvana is scarcely better.",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "CarEdge, carVertical, HPI and Carfax history checks, independent inspections, motoring guides.",
+      "risks": "Several posts are old. The need comes once every few years, so people may cancel after one purchase. Consumer rights differ by country."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-22",
+    "slug": "laying-log",
+    "name": "Laying Log",
+    "need": "My hens have stopped laying and, as a new chicken keeper, I can't work out why or whether something is wrong.",
+    "headline": "Find out why your hens stopped laying: a one-tap egg log that spots a drop early and walks you through the usual reasons, one at a time.",
+    "buyer": "New and hobby backyard chicken keepers with a small flock.",
+    "bullets": [
+      "A one-tap daily egg count per hen or for the whole flock, with an alert when laying drops.",
+      "A why-did-she-stop checklist: age, daylight, moult, heat, feed and treats, stress, hidden nests, egg-eating and mites.",
+      "Daily notes (weather, moves, frights, new birds) shown next to the laying chart, and clear signs to call a vet."
+    ],
+    "price": "$3.99/month",
+    "priceUsd": 4,
+    "priceNote": "Or $24 a year.",
+    "reasonPrompt": "How many hens do you keep, and when did the laying drop?",
+    "faq": [
+      {
+        "q": "Does it give medical advice for my hens?",
+        "a": "No. It covers the everyday reasons laying stops. If a hen looks ill, isn't eating, or seems to be straining, call a vet."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Backyard chicken keepers. It is an independent app, not linked to any coop maker, feed brand, forum or other flock app."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-22",
+      "summary": "New chicken keepers on the Omlet Club forum say their hens have stopped laying, ask whether it's normal, and can't work out what's wrong.",
+      "wtp": "Flockstar sells flock-tracking plans at $5.99 a month or $49.99 a year (141 ratings). Mother Hen reviewer Pengiblue wrote 'I would pay more tor all this does!'",
+      "signals": [
+        {
+          "url": "https://club.omlet.co.uk/forum/topic/75643-help-hens-not-laying/",
+          "who": "Catwoman (Omlet Club forum)",
+          "date": "2015-08-16",
+          "quote": "Problem is the 2 older girls have now stopped laying.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://club.omlet.co.uk/forum/topic/58206-hens-were-laying-now-they-arent/",
+          "who": "susie16 (Omlet Club forum)",
+          "date": "2011-05-31",
+          "quote": "2 appear to have stopped laying this last week? Is this normal? please advise a novice!!",
+          "seen": "opened"
+        },
+        {
+          "url": "https://club.omlet.co.uk/forum/topic/33887-help-no-eggs/",
+          "who": "Sal119 (Omlet Club forum)",
+          "date": "2009-06-20",
+          "quote": "As chicken keeping is new to me, am wondering is this just normal?",
+          "seen": "opened"
+        },
+        {
+          "url": "https://club.omlet.co.uk/forum/topic/65593-not-laying/",
+          "who": "claire-b (Omlet Club forum)",
+          "date": "2012-05-28",
+          "quote": "I can't work out what's wrong with Bramble.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1039650803/sortby=mostrecent/json",
+          "who": "Pengiblue (App Store review, Mother Hen)",
+          "date": "2023-04-18",
+          "quote": "I would pay more tor all this does!",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Flockstar, Mother Hen, small egg-tracker apps, forums and keeper books.",
+      "risks": "Forum posts are old (2009-2015) and from one UK community. Many tiny tracker apps exist, so the hook is working out why laying stopped. Seasonal need. No medication advice."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

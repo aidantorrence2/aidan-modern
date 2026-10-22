@@ -10077,5 +10077,93 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "buying-used-car-when-you-know-nothing",
+  "offer": "dealer-ready",
+  "title": "Buying a used car when you know nothing about cars",
+  "description": "Set a budget including running costs, research the model, view in daylight with a checklist, check the paperwork, and get an independent inspection.",
+  "intro": "You don't need to be a mechanic to avoid most bad used cars. A checklist, some patience and a willingness to walk away do most of the work.",
+  "sections": [
+   {
+    "h": "Before you look",
+    "list": [
+     "Set a total budget, including insurance, tax, fuel and a buffer for repairs.",
+     "Pick two or three models known for reliability and read owner reviews of common faults."
+    ]
+   },
+   {
+    "h": "At the viewing",
+    "list": [
+     "View in daylight and in dry weather. Check the tyres, look for mismatched paint or panel gaps, and look under the car for leaks.",
+     "Start the engine from cold if you can, and take a test drive that includes some faster roads."
+    ]
+   },
+   {
+    "h": "Check the paperwork",
+    "list": [
+     "Service history, ownership documents and past test or inspection records. Mileage should fit the age and records.",
+     "A vehicle history check can show outstanding finance, write-offs or mileage problems."
+    ]
+   },
+   {
+    "h": "Get an inspection",
+    "list": [
+     "For anything beyond a cheap runaround, pay an independent mechanic or inspection service to look at it before you buy."
+    ]
+   },
+   {
+    "h": "Be ready to walk away",
+    "p": [
+     "There's always another car. If the seller rushes you, won't let you inspect it, or the story doesn't add up, say thanks and leave. Check your consumer rights where you live, which differ for dealers and private sellers."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "why-have-my-hens-stopped-laying",
+  "offer": "laying-log",
+  "title": "Why have my hens stopped laying? The usual reasons to check",
+  "description": "Short days, moulting, age, heat, diet and treats, stress, hidden nests and pests are the common causes. Check them in order.",
+  "intro": "Hens stop laying for lots of normal reasons. Working through them one at a time usually finds the answer.",
+  "sections": [
+   {
+    "h": "Daylight",
+    "list": [
+     "Hens need long days to lay well. Laying often drops in autumn and winter as days shorten."
+    ]
+   },
+   {
+    "h": "Moulting",
+    "list": [
+     "Most hens moult every year, usually in autumn, losing and regrowing feathers. They often stop laying until it's over."
+    ]
+   },
+   {
+    "h": "Age",
+    "list": [
+     "Laying slows as hens get older, usually after their first two or three years."
+    ]
+   },
+   {
+    "h": "Diet, heat and stress",
+    "list": [
+     "Too many treats or scraps instead of a proper layer feed can reduce laying. Make sure they always have fresh water.",
+     "Heat waves, a new bird, a move, or a fright from a predator can pause laying for a while."
+    ]
+   },
+   {
+    "h": "Hidden eggs and pests",
+    "list": [
+     "Look for a secret nest in the garden, or signs of egg-eating. Check for mites around the perch ends and under the wings."
+    ]
+   },
+   {
+    "h": "When to call a vet",
+    "p": [
+     "If a hen looks unwell, stops eating, sits hunched, or seems to be straining, call a vet rather than waiting."
+    ]
+   }
+  ]
  }
 ]
