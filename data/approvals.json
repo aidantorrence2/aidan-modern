@@ -2999,6 +2999,30 @@
       "status": "approved",
       "decided": "2026-10-22T00:14:32Z",
       "note": ""
+    },
+    {
+      "id": "other:sign-in-to-appblock-and-restore-your-blo-202610220024",
+      "kind": "other",
+      "source": "codex:aidan-modern",
+      "title": "Sign in to AppBlock and restore your blocking backup",
+      "summary": "AppBlock installed, but opens at its welcome screen. Proceeding accepts its displayed Privacy Policy and Conditions of Use; I will use your existing account and restore its latest matching backup without starting a trial or paying.",
+      "payload": {
+        "app": "AppBlock (cz.mobilesoft.appblock) on Motorola ZD222RQ6F4",
+        "observed_state": "Installed through original Google Play restore, but opens at Welcome to AppBlock with no restored session or rules visible.",
+        "exact_consent_text": "By proceeding, you agree to our Privacy Policy and Conditions of Use",
+        "action": "Proceed through Already a member, accept the displayed AppBlock privacy policy and conditions of use as required for existing-account sign-in, use your existing saved AppBlock account or an existing Google sign-in, inspect its backups, and restore the latest backup matching the old phone. Restore required accessibility, usage access, notification and background permissions.",
+        "limits": [
+          "No new AppBlock subscription, trial, payment, account creation, or support message.",
+          "Do not invent schedules or strict-mode lockout rules.",
+          "If no backup is available, leave existing data intact and report that the old phone is needed."
+        ],
+        "reason": "Your AGENTS.md routes acceptance of terms and data migrations through the Approvals app."
+      },
+      "created": "2026-10-22T00:24:32Z",
+      "expires": "2026-10-23T00:24:32Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
     }
   ]
 }
