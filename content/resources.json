@@ -8900,5 +8900,44 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "never-know-what-gift-to-get",
+  "offer": "hint-jar",
+  "title": "Never know what to get people? Keep a hint list all year",
+  "description": "Write down the things people mention wanting, file them under each person, and check the list two weeks before each birthday or holiday.",
+  "intro": "Good gift-givers usually aren't more creative; they just remember what people say. A simple hint list does that for you.",
+  "sections": [
+   {
+    "h": "One list per person",
+    "list": [
+     "Partner, parents, in-laws, close friends."
+    ]
+   },
+   {
+    "h": "Write it down when you hear it",
+    "list": [
+     "'I'd love one of those', a hobby they mention, something that just broke."
+    ]
+   },
+   {
+    "h": "Note sizes and favourites",
+    "list": [
+     "Clothes sizes, colours, authors, foods they love or avoid."
+    ]
+   },
+   {
+    "h": "Set a reminder",
+    "list": [
+     "Two weeks before each birthday or holiday, so there's time to order."
+    ]
+   },
+   {
+    "h": "Record what you gave",
+    "p": [
+     "So you don't repeat yourself, and can build on gifts that went down well."
+    ]
+   }
+  ]
  }
 ]

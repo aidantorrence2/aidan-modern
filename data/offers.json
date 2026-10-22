@@ -24007,6 +24007,112 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-22",
+    "slug": "hint-jar",
+    "name": "Hint Jar",
+    "need": "I never know what to get people, so I end up panic-buying something generic or another gift card at the last minute.",
+    "headline": "Stop panic-buying gift cards. Save the hints people drop all year, and when a birthday comes round you'll already have three ideas that suit them.",
+    "buyer": "Adults 18+ who dread birthdays and holidays because they can't think what to get people, and forget the hints they hear.",
+    "bullets": [
+      "Save a hint in seconds when someone says 'I'd love one of those' (type it, paste a link, or snap a photo), filed under that person",
+      "Two weeks before each birthday, anniversary or holiday you get a nudge with that person's saved hints and a shortlist of ideas based on what they like",
+      "Keeps a record of what you gave each person and when, so you never repeat a gift and can build on the ones that worked"
+    ],
+    "price": "$3.99/month",
+    "priceUsd": 4,
+    "priceNote": "One plan, every feature.",
+    "reasonPrompt": "Who is the hardest person on your list to buy for, and what did you end up getting them last time?",
+    "faq": [
+      {
+        "q": "Who is this for?",
+        "a": "Hint Jar is an independent app for adults 18+ who want to give more thoughtful gifts without the last-minute scramble. It isn't connected to any shop, wishlist service or retailer."
+      },
+      {
+        "q": "Do the people I'm buying for need the app?",
+        "a": "No. It's private to you. Nobody gets a list request or a notification, so your gifts stay surprises."
+      },
+      {
+        "q": "Does it buy things for me?",
+        "a": "No. It keeps your hints, ideas and dates in order and reminds you in good time. You choose and buy the gift wherever you like."
+      },
+      {
+        "q": "How is this different from a wishlist app?",
+        "a": "Wishlist apps rely on the other person writing a list. Hint Jar is for the many people who never will. It captures what you notice about them, so you can pick something yourself."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-22",
+      "summary": "Adults say plainly that choosing gifts is the part they dread: they don't know what people like, they freeze, and they fall back on a gift card. The people described as good at it are the ones who 'pay attention to little cues', and that is the habit this app supports. Grep of live-needs.txt for gift/present/idea/birthday turned up only 'gift-ceiling' (overspending at Christmas), 'spend-before' (expiring gift cards) and 'stay-close' (forgetting birthdays). None of them is about deciding what to give.",
+      "wtp": "Christmas Gift List Tracker (App Store): 27K ratings, Pro yearly $2.99. The Christmas Gift List: 6.1K ratings, Pro $4.99.",
+      "signals": [
+        {
+          "url": "https://boards.straightdope.com/t/giving-gifts-fun-or-chore-of-dread/954622",
+          "who": "FairyChatMom (Straight Dope)",
+          "date": "2021-11-19",
+          "quote": "I do so hate occasions when I need to give a gift - I’m not very good at it.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://boards.straightdope.com/t/giving-gifts-fun-or-chore-of-dread/954622/8",
+          "who": "solost (Straight Dope)",
+          "date": "2021-11-19",
+          "quote": "it’s figuring out what to buy for people and doing the shopping that I used to dread for sure",
+          "seen": "opened"
+        },
+        {
+          "url": "https://boards.straightdope.com/t/giving-gifts-fun-or-chore-of-dread/954622/35",
+          "who": "Chronos (Straight Dope)",
+          "date": "2021-11-20",
+          "quote": "It’s finding gifts that’s a chore. Or, more often, trying and failing to find gifts, before ultimately settling on just another gift card.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://boards.straightdope.com/t/desperate-for-gift-ideas/944697",
+          "who": "Sigmagirl (Straight Dope)",
+          "date": "2021-06-20",
+          "quote": "I fear this is going to be one of those threads in which everything everybody suggests is going to be shot down. It’s not my intention, but I’ve lost hope.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=41881386",
+          "who": "teekert (Hacker News)",
+          "date": "2024-10-18",
+          "quote": "I hate buying them even more because I just don't know what people like.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=32440024",
+          "who": "Eddy_Viscosity2 (Hacker News)",
+          "date": "2022-08-12",
+          "quote": "buying gifts stresses me the hell out",
+          "seen": "opened"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=25269121",
+          "who": "everythingswan (Hacker News)",
+          "date": "2020-12-01",
+          "quote": "A little listening and preparation turns you into a thoughtful gift giver.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/christmas-gift-list-tracker/id1444504033",
+          "who": "Christmas Gift List Tracker App Store listing",
+          "date": "2026-10-22",
+          "quote": "27K Ratings ... Pro Subscription (Yearly) $2.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Wishlist apps that need the recipient to write a list: GoWish (195K ratings), Giftful (98K), Giftster (19K), Elfster (332K, Secret Santa). Holiday gift budget trackers: Christmas Gift List Tracker (27K, $2.99/yr Pro), The Christmas Gift List (6.1K, $4.99 Pro). AI gift-idea generators have almost no ratings (Gift Suggester 42, Gift Idea Tracker & Organizer 21, most under 5). Plain notes apps are the free substitute.",
+      "risks": "The free substitute (Notes app, wishlists) is strong, and demand is seasonal, peaking in November and December, so monthly retention could be weak. Some unhappy gift-givers want to opt out of gifting altogether rather than improve at it (hogarth, teekert). Most forum evidence is from 2020-2024. The proven paid apps sell holiday budgeting, not year-round idea capture, so willingness to pay for this exact angle is inferred."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
