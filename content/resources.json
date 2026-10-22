@@ -9299,5 +9299,85 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "genealogy-brick-wall-next-steps",
+  "offer": "wall-breaker",
+  "title": "Stuck on an ancestor? Next steps for a genealogy brick wall",
+  "description": "Write down what you actually know, list the records for that place and decade, search the people around your ancestor, and log every search.",
+  "intro": "Most brick walls are not missing records. They are records we haven't looked at yet, or looked at under the wrong name or place.",
+  "sections": [
+   {
+    "h": "Start from what you know",
+    "list": [
+     "Write a short timeline with a source for every fact. Mark anything that came from someone else's tree without a source.",
+     "Note where facts conflict, such as two birth years. Conflicts are often clues."
+    ]
+   },
+   {
+    "h": "List records by place and decade",
+    "list": [
+     "Census, church registers, civil registration, land and tax records, wills and probate, newspapers, military and ship lists.",
+     "Check which of these survive for that place and time, and where they are held. Many are not online yet."
+    ]
+   },
+   {
+    "h": "Search the people around them",
+    "list": [
+     "Siblings, neighbours, witnesses at weddings and baptisms, and godparents often lead back to the family.",
+     "This is sometimes called cluster or FAN research (friends, associates, neighbours)."
+    ]
+   },
+   {
+    "h": "Try other spellings",
+    "list": [
+     "Clerks wrote what they heard. Search sound-alike spellings, initials, and first names in other languages."
+    ]
+   },
+   {
+    "h": "Log every search",
+    "p": [
+     "Note what you searched, where, and what you found or didn't. It stops you repeating searches and makes it easy to ask for help on a forum or from a local family history society."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "first-hive-inspection-what-to-look-for",
+  "offer": "hive-read",
+  "title": "Your first hive inspections: what to look for and what to write down",
+  "description": "A simple order for each inspection, the main things to check, and when to ask your local association or bee inspector for help.",
+  "intro": "Early inspections can feel confusing. A steady routine and short notes each time make it much easier to see what is changing.",
+  "sections": [
+   {
+    "h": "Before you open",
+    "list": [
+     "Pick a warm, calm part of the day, wear your protective kit, and light your smoker if you use one.",
+     "Know what you want to check, so the hive is open for as short a time as needed."
+    ]
+   },
+   {
+    "h": "The main things to check",
+    "list": [
+     "Is there a laying queen? Eggs or young larvae are the usual sign, even if you don't see her.",
+     "Brood: a fairly solid pattern, and capped brood that looks healthy.",
+     "Stores: enough honey and pollen for the season.",
+     "Space: room for the colony to grow, and whether there are queen cells."
+    ]
+   },
+   {
+    "h": "Write it down",
+    "list": [
+     "Date, weather, temper, eggs seen or not, brood, stores, queen cells, and what you did.",
+     "Comparing notes between inspections shows trends a single look won't."
+    ]
+   },
+   {
+    "h": "When to ask for help",
+    "p": [
+     "If you see something you suspect is disease, such as sunken, discoloured or perforated cappings, contact your bee inspector or local beekeeping association. Some bee diseases must be reported by law in many countries. Follow the label and local rules for any treatment."
+    ]
+   }
+  ]
  }
 ]

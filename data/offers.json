@@ -24905,6 +24905,160 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-22",
+    "slug": "wall-breaker",
+    "name": "Wall Breaker",
+    "need": "I've been stuck on one ancestor for years and don't know which records to try next.",
+    "headline": "Stuck on the same ancestor for years? Get a plain list of records you haven't tried yet, and a log so you never repeat the same search.",
+    "buyer": "Adult family historians using FamilySearch, Ancestry or MyHeritage who have hit a brick wall on one ancestor.",
+    "bullets": [
+      "One page per stuck ancestor: what you know, your sources, and the open questions.",
+      "A next-records checklist by place and decade: census, church, land, probate, ship lists.",
+      "A search log, a flag for dates and names that conflict, and a summary to share on a forum or with a helper."
+    ],
+    "price": "$5.99/month",
+    "priceUsd": 6,
+    "priceNote": "Or $39 a year.",
+    "reasonPrompt": "Which ancestor are you stuck on, and where and when did they live?",
+    "faq": [
+      {
+        "q": "Does it find records for me?",
+        "a": "No. It suggests places to search and keeps track of what you've tried. It never invents records or relationships; you decide what the evidence shows."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Adults. It is an independent app, not linked to FamilySearch, Ancestry, MyHeritage or any other genealogy service."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-22",
+      "summary": "Family historians on the FamilySearch Community say they have tried everything, spent years or decades on one ancestor, and don't know where to turn next.",
+      "wtp": "People pay for family history: Ancestry (656K App Store ratings) sells subscriptions from $19.99 to $39.99, and MyHeritage (66K ratings) sells plans from $119.99.",
+      "signals": [
+        {
+          "url": "https://community.familysearch.org/en/discussion/129381/brick-walls",
+          "who": "betsyemhuff1960 (FamilySearch Community)",
+          "date": "2022-08-15",
+          "quote": "is there anyone out there who helps with brick walls?",
+          "seen": "opened"
+        },
+        {
+          "url": "https://community.familysearch.org/en/discussion/87603/brick-wall",
+          "who": "Angela B Bryant (FamilySearch Community)",
+          "date": "2021-06-25",
+          "quote": "I did everything under the sun, still no luck?",
+          "seen": "opened"
+        },
+        {
+          "url": "https://community.familysearch.org/en/discussion/145560/are-there-guidelines-to-resolving-brick-walls",
+          "who": "chormy1 (FamilySearch Community)",
+          "date": "2023-05-19",
+          "quote": "No one, including professionals, can locate his parents.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://community.familysearch.org/discussion/1918/irish-brick-wall",
+          "who": "Colin Ramsbottom (FamilySearch Community)",
+          "date": "2018-09-10",
+          "quote": "I have struggled for over 40 years to find my Great Grandfather",
+          "seen": "opened"
+        },
+        {
+          "url": "https://community.familysearch.org/en/discussion/178533/pennsylvania-brick-wall",
+          "who": "HMidwesterner (FamilySearch Community)",
+          "date": "2025-06-21",
+          "quote": "breaking down the brick wall in my family tree (I've been trying to for years)",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "FamilySearch (free), Ancestry and MyHeritage hints, research logs in spreadsheets, paid professional genealogists.",
+      "risks": "All evidence is on one site. Money is spent on record access, not on planning tools. Living relatives' data and DNA surprises need care."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-22",
+    "slug": "hive-read",
+    "name": "Hive Read",
+    "need": "I open my beehive and can't tell what I'm looking at or what to do next.",
+    "headline": "Opened the hive and not sure what you're seeing? Tap through what you saw and get the common explanations and what experienced keepers would check next.",
+    "buyer": "Adult hobby beekeepers in their first few seasons, with one to a few hives, often without a mentor nearby.",
+    "bullets": [
+      "A guided inspection checklist you can tap through with gloves on.",
+      "'What does this mean?' cards for common sights: bearding, brood breaks, queen cells, comb in the wrong place.",
+      "Seasonal to-dos by region, and an inspection history per hive to share with a mentor or club."
+    ],
+    "price": "$4.99/month",
+    "priceUsd": 5,
+    "priceNote": "Or $39 a year.",
+    "reasonPrompt": "What did you see at your last inspection that you weren't sure about?",
+    "faq": [
+      {
+        "q": "Can it diagnose bee diseases?",
+        "a": "No. If you suspect a notifiable disease such as foulbrood, contact your bee inspector or local beekeeping association. Follow the label and local rules for any varroa treatment."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Adult beekeepers. It is an independent app, not linked to any other beekeeping app, forum or association."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-22",
+      "summary": "New and inherited-hive beekeepers post that their bees are acting strangely, that they need help, and that they don't know what to do next.",
+      "wtp": "HiveTracks (1.1K App Store ratings) charges $7.99 or $59.99 to $69.99 a year. HiveBloom reviewer IzzyHoot wrote they were 'willing to pay the 2.99/ month'.",
+      "signals": [
+        {
+          "url": "https://www.beekeepingforum.co.uk/threads/unsure-what%E2%80%99s-happening.59420/",
+          "who": "Beekeeper Jason (The Beekeeping Forum)",
+          "date": "2026-07-12",
+          "quote": "My bees seem to be acting really strangely to normal.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.beekeepingforum.co.uk/threads/inherited-a-bit-of-a-mess.59631/",
+          "who": "DomB (The Beekeeping Forum)",
+          "date": "2026-09-25",
+          "quote": "this is where i really need some help",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.beekeepingforum.co.uk/threads/what-to-do-with-this-colony.59592/",
+          "who": "Paul_Ward1 (The Beekeeping Forum)",
+          "date": "2026-09-06",
+          "quote": "No evidence of disease. Not sure what to do?",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/hivetracks/id1667408004?see-all=reviews",
+          "who": "nocknamestupid (App Store review, HiveTracks)",
+          "date": "2026-06-14",
+          "quote": "there are times when I really need guidance",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/hivebloom/id1490920620?see-all=reviews",
+          "who": "IzzyHoot (App Store review, HiveBloom)",
+          "date": "2021-02-08",
+          "quote": "willing to pay the 2.99/ month",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "HiveTracks, HiveBloom, HiveHelp.AI, Apiarist, local clubs and mentors.",
+      "risks": "UK forum mixes beginners and experienced keepers. Paid apps are mostly record-keepers; HiveHelp.AI already sells guidance. Stings and treatments are safety matters: the app points people to inspectors and labels."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
