@@ -26778,6 +26778,76 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-22",
+    "slug": "first-pistol",
+    "name": "First Pistol",
+    "need": "I can't do a pistol squat: I can't get all the way down with no weight without falling backwards.",
+    "headline": "Get your first pistol squat: a 5-minute check finds what's holding you back, then a measured box-height ladder takes you down to the floor.",
+    "buyer": "Adults 18+ who want their first pistol squat and fall backwards, get stuck at the bottom, or can only do it on one leg.",
+    "bullets": [
+      "A 5-minute weak-link check: ankle range, balance at the bottom, strength out of the hole, and your weaker side.",
+      "A step ladder of measured box heights down to the floor, with left and right tracked separately.",
+      "A side-video check for heel lift and tipping back, and three short sessions a week with a rep log."
+    ],
+    "price": "$3.99/month",
+    "priceUsd": 4,
+    "priceNote": "Or $24.99 a year.",
+    "reasonPrompt": "What happens when you try: fall backwards, stuck at the bottom, or one side weaker?",
+    "faq": [
+      {
+        "q": "Is it safe for my knees?",
+        "a": "Progress gradually, stop if you feel sharp pain, and see a qualified professional if you have a knee injury or pain that doesn't go away."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Adults 18+. It is an independent app, not linked to any gym, coach, program or forum."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-22",
+      "summary": "People on the StrongFirst forum say they have stalled and can't get into a deep pistol, fall backwards or onto their backside at the bottom, or can only do it with their heel raised.",
+      "wtp": "People pay for pistol squat programs: the Pistol Squat Jackpot Program costs $49.99 or $34.99 a month, and the Prehab app (1.7K App Store ratings, $9.99 to $49.99 a month) runs a pistol squat challenge.",
+      "signals": [
+        {
+          "url": "https://www.strongfirst.com/community/threads/not-progressing-with-pistols.5255/",
+          "who": "bing3r (StrongFirst forum)",
+          "date": "2015-05",
+          "quote": "I've stalled and can't get into a deep pistol (outside of performing negatives only).",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.strongfirst.com/community/goto/post?id=342059",
+          "who": "BJJ Shawn (StrongFirst forum)",
+          "date": "2021-03",
+          "quote": "I simply can't get all the way down with no weight without falling backwards.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.strongfirst.com/community/goto/post?id=68314",
+          "who": "Harry Westgate (StrongFirst forum)",
+          "date": "2016-07",
+          "quote": "I end up falling on my backside at the very bottom.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.strongfirst.com/community/threads/pistol-squat-on-toes-ball-of-foot.25670/",
+          "who": "lais817 (StrongFirst forum)",
+          "date": "2024-03",
+          "quote": "FWIW, I can't do a pistol without having my heel elevated, or rising onto the balls of my feet",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Pistol Squat Jackpot Program, the Prehab app, other paid programs, YouTube progressions, coaches.",
+      "risks": "All people are on one site (four threads). The paid items are programs, not a rated pistol-only app. Distinct from over-the-bar (muscle-ups)."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
