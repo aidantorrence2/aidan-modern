@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""About-me card v8: stair layout; card 1 (cow) = the four sent prints, cards 2+3 = new_top_tier_candidates picks, surrounded by prints of his work, pills with his copy.
+"""About-me card v8: stair layout; card 1 (cow) = the four sent prints, card 2 = new_top_tier_headliners picks, card 3 = new_top_tier_candidates picks, surrounded by prints of his work, pills with his copy.
 Usage: python3 render-about-v8.py <out_dir>
 """
 import sys, os
@@ -17,10 +17,11 @@ MES = [("mirror", "src-self/aidan-udaipur-mirror-03.jpg", 0.5, (420, 560), (540,
        ("horse", "src-self/aidan-horse.jpg", 1.0, (420, 560), (540, 720))]
 ME = None; ME_FOCUS = 0.15; ME_SZ1 = (500, 670); ME_SZ2 = (540, 720)
 TTC = os.path.join(HERE, "../../public/images/new_top_tier_candidates")
-def work(*names): return [os.path.join(HERE, "src-work", n) if n.startswith("w") else os.path.join(TTC, n) for n in names]
+TTH = os.path.join(HERE, "../../public/images/new_top_tier_headliners")
+def work(*names, d=None): return [os.path.join(HERE, "src-work", n) if n.startswith("w") else os.path.join(d or TTC, n) for n in names]
 SETS = {
     "cow":    work("w15.jpg", "w16.jpg", "w17.jpg", "w18.jpg"),
-    "horse":  work("000042.jpg", "R1-09794-031A.jpg", "R1-09952-0003.jpg", "img0007.jpg"),
+    "horse":  work("R1-00007-025A.jpg", "R1-09997-0005.jpg", "R1-09952-0019.jpg", "R1-00009-0021.jpg", d=TTH),  # headliners
     "mirror": work("R1-09797-0005.jpg", "R1-09995-0010.jpg", "R1-09952-0013.jpg", "R1-09797-0026.jpg"),
 }
 WORK = None
