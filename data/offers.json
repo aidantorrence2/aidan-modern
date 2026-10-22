@@ -26554,6 +26554,153 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-22",
+    "slug": "stone-steady",
+    "name": "Stone Steady",
+    "need": "I've been practising sharpening my kitchen knives on a whetstone for months, I can't hold the same angle, and they still won't cut paper.",
+    "headline": "Get your kitchen knives sharp on a whetstone, and know why when they aren't: an angle check with your phone, burr checks, and a log of every session.",
+    "buyer": "Home cooks who bought whetstones and can't get a consistent, sharp edge, or are afraid of ruining good knives while they learn.",
+    "bullets": [
+      "A phone-tilt angle check with a live readout while you practise strokes.",
+      "A marker-pen photo check to see whether you're reaching the edge, plus burr and deburr steps for each grit.",
+      "A session log for each knife and a troubleshooter: no burr, uneven bevel, still dull."
+    ],
+    "price": "$4.99/month",
+    "priceUsd": 5,
+    "priceNote": "Or $29 a year.",
+    "reasonPrompt": "What knives and stones do you use, and what goes wrong?",
+    "faq": [
+      {
+        "q": "Is it safe?",
+        "a": "Work slowly, keep your fingers clear of the edge, and use a stable, non-slip base. Test sharpness on paper, never on skin or hair."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Home cooks. It is an independent app, not linked to any knife or sharpener brand or forum."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-22",
+      "summary": "Home sharpeners on Kitchen Knife Forums say they can't get the same angle every time, have practised for months and are puzzled what they're doing wrong, and don't know what angle they're at.",
+      "wtp": "People buy tools to hold the angle: the Work Sharp Precision Adjust guided sharpener costs $87.95 (137 reviews).",
+      "signals": [
+        {
+          "url": "https://www.kitchenknifeforums.com/threads/it-helps-control-angles-when-sharpening.84858/",
+          "who": "camiloro (Kitchen Knife Forums)",
+          "date": "2026-03-04",
+          "quote": "I've had trouble getting the same angle every time I go over the stone",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.kitchenknifeforums.com/threads/need-help-troubleshooting-every-step-to-find-out-why-my-victorinox-chef-knife-cant-cut-paper.71948/",
+          "who": "Cifer (Kitchen Knife Forums)",
+          "date": "2024-05-19",
+          "quote": "I've been practicing sharpening for a few months on and off, and am completely puzzled as to what I am doing wrong.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.kitchenknifeforums.com/threads/how-do-you-maintain-a-fixed-angle-on-your-favorite-whetstone.75264/",
+          "who": "wormite (Kitchen Knife Forums)",
+          "date": "2024-11-25",
+          "quote": "But how can I know what angle I'm sharpening at?",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Guided sharpeners (Work Sharp, KME), angle guides, sharpening services, YouTube tutorials, free angle apps.",
+      "risks": "All posters are on one enthusiast forum. Money is a physical sharpener, not an app. Sharp blades need clear safety notes."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-22",
+    "slug": "stitch-place",
+    "name": "Stitch Place",
+    "need": "My cross-stitch charts run to dozens of pages and I keep losing where I left off.",
+    "headline": "Never lose your place on a big cross-stitch chart again: load a PDF or photo of your pattern, tap off stitches as you go, and see exactly where you stopped.",
+    "buyer": "Hobby cross-stitchers working from big PDF or paper charts.",
+    "bullets": [
+      "Import a PDF or a photo of a paper chart.",
+      "Tap or drag to mark stitches done, highlight one symbol at a time, and zoom to large high-contrast symbols.",
+      "Progress backed up and versioned so it's never lost, with stitches left by colour and time spent."
+    ],
+    "price": "$2.99/month",
+    "priceUsd": 3,
+    "priceNote": "Or $14.99 a year.",
+    "reasonPrompt": "How big is the chart you're working on, and how do you keep your place now?",
+    "faq": [
+      {
+        "q": "Can I use patterns I've bought?",
+        "a": "Yes, for your own personal stitching. Please respect each designer's terms; the app doesn't share or sell patterns."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Cross-stitchers. It is an independent app, not linked to any pattern designer, shop or other stitching app."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-22",
+      "summary": "Stitchers reviewing pattern-keeper apps say their printed patterns ran to dozens of sheets, they're completely lost on where they left off, they struggle to see patterns, and they want to track their progress.",
+      "wtp": "Markup R-XP (3.1K App Store ratings) sells yearly access at $19.99, and Stitchly (2.3K ratings) sells a full version at $75. Several reviewers say they cancelled and want another app.",
+      "signals": [
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=2/id=1559524491/sortby=mostrecent/json",
+          "who": "StitcherHS115 (App Store review, Markup R-XP)",
+          "date": "2026-05-24",
+          "quote": "When I printed out the pattern there were 37 sheets. So confusing.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1559524491/sortby=mostrecent/json",
+          "who": "Shannonclare (App Store review, Markup R-XP)",
+          "date": "2026-09-13",
+          "quote": "I’m completely lost on where I had left off.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1559524491/sortby=mostrecent/json",
+          "who": "Bear loves Mac (App Store review, Markup R-XP)",
+          "date": "2026-10-10",
+          "quote": "I want an app that makes my cross stitching experience fun and simple, not something that stresses me out and makes it not fun.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/gb/rss/customerreviews/page=1/id=1559524491/sortby=mostrecent/json",
+          "who": "Jooliepoolie (App Store UK review, Markup R-XP)",
+          "date": "2026-09-18",
+          "quote": "was worried that I’d struggle seeing a pattern these days",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1467867656/sortby=mostrecent/json",
+          "who": "JustBrooklee (App Store review, Stitchly)",
+          "date": "2026-08-17",
+          "quote": "I want to be able to track my progress",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1559524491/sortby=mostrecent/json",
+          "who": "MrsBBurg (App Store review, Markup R-XP)",
+          "date": "2026-09-23",
+          "quote": "Canceled my subscription.",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Markup R-XP, Stitchly, Pattern Keeper (Android), paper charts and highlighters.",
+      "risks": "All evidence is App Store reviews. Some stitchers resist subscriptions. Reading grids and symbols from PDFs is the hard part to build."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

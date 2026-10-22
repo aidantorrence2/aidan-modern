@@ -10206,5 +10206,85 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "whetstone-sharpening-consistent-angle",
+  "offer": "stone-steady",
+  "title": "Whetstone sharpening: how to hold a consistent angle and get a sharp edge",
+  "description": "Pick an angle, mark the edge with a marker, raise a burr along the whole edge, then remove it. Check your work at each step.",
+  "intro": "Most dull results come from not reaching the very edge, or from not removing the burr. A few checks make it much easier to see what's happening.",
+  "sections": [
+   {
+    "h": "Pick your angle",
+    "list": [
+     "Many kitchen knives are sharpened at roughly 15 to 20 degrees per side. Consistency matters more than the exact number.",
+     "Coins or an angle guide can help you learn the feel at first."
+    ]
+   },
+   {
+    "h": "Use the marker trick",
+    "list": [
+     "Colour the edge bevel with a permanent marker, take a few strokes, and look. Where the ink is gone, you're hitting it; where it remains, adjust your angle."
+    ]
+   },
+   {
+    "h": "Raise a burr",
+    "list": [
+     "Keep sharpening one side until you can feel a tiny burr along the whole length of the opposite side. No burr means you haven't reached the edge yet."
+    ]
+   },
+   {
+    "h": "Remove the burr",
+    "list": [
+     "Switch sides and use lighter strokes, then finish with very light alternating strokes or a strop."
+    ]
+   },
+   {
+    "h": "Test safely",
+    "p": [
+     "Test on a sheet of paper, never on skin or hair. Work slowly, keep fingers clear of the edge, and use a stable, non-slip base for the stone."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "keep-your-place-on-cross-stitch-chart",
+  "offer": "stitch-place",
+  "title": "How to keep your place on a big cross-stitch chart",
+  "description": "Grid your fabric, work one page and one colour at a time, mark off stitches as you go, and keep a backup of your progress.",
+  "intro": "Large charts are easy to get lost in. A few habits make it much easier to pick up exactly where you left off.",
+  "sections": [
+   {
+    "h": "Grid your fabric",
+    "list": [
+     "Run a removable gridding line every 10 stitches so it matches the chart's grid. It makes counting much easier."
+    ]
+   },
+   {
+    "h": "Work one page at a time",
+    "list": [
+     "Finish one chart page (or a 10 by 10 block) before moving on, and note which page you're on."
+    ]
+   },
+   {
+    "h": "Mark off as you go",
+    "list": [
+     "Highlight or tick finished stitches on a working copy of the chart, or use a digital chart where you tap off stitches.",
+     "Mark each colour when it's done in that area."
+    ]
+   },
+   {
+    "h": "Enlarge for comfort",
+    "list": [
+     "Print or zoom the chart larger, and use good light, if the symbols are hard to see."
+    ]
+   },
+   {
+    "h": "Back up your progress",
+    "p": [
+     "If you mark a digital chart, keep a backup copy now and then. On paper, a photo of your marked page at the end of each session does the same job."
+    ]
+   }
+  ]
  }
 ]
