@@ -66,11 +66,11 @@ ADS = [
         ("shooting in charlotte", 92, *W_, 2, 0),
         ("free photo shoot", 72, *B_, 2, 20),
         ("want to collab?", 64, *W_, 2, 40)]),
-    # 6. the intro — dark portrait
-    ("06-hi-im-aidan", "p4", 0.15, "left", [
-        ("hi, i’m aidan", 120, *W_, 3, 0),
-        ("i shoot in charlotte", 66, *B_, 3, 30),
-        ("free photo shoot, want in?", 56, *W_, 3, 10)]),
+    # 6. offer-first — dark portrait
+    ("06-free-photo-shoot", "p4", 0.62, "center", [
+        ("free photo shoot", 118, *W_, 2, 0),
+        ("charlotte", 84, *B_, 2, 30),
+        ("want to collab?", 64, *W_, 2, -20)]),
     # 7. this-could-be-you — green wall
     ("07-this-could-be-you", "p6", 0.15, "left", [
         ("this could be you", 104, *W_, -3, 0),
