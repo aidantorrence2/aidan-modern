@@ -27848,6 +27848,150 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-22",
+    "slug": "quilt-yardage",
+    "name": "Quilt Yardage",
+    "need": "I never know how much fabric to buy for a quilt, so I either run short mid-project or come home with yards I can't use.",
+    "headline": "Know exactly how much fabric to buy for your quilt, at the shop counter, before you cut: backing, borders, binding, sashing and blocks in one place.",
+    "buyer": "Hobby quilters, especially beginners resizing patterns and people buying fabric on the spot at a quilt shop.",
+    "bullets": [
+      "Yardage for backing, borders, binding and sashing in one place, including wide backing fabric.",
+      "Resize a pattern and recalculate every fabric; standard quilt sizes when you don't know yours.",
+      "A cutting plan with strip counts and expected leftovers, and a shopping list for each project."
+    ],
+    "price": "$3.99/month",
+    "priceUsd": 4,
+    "priceNote": "Or $24 a year.",
+    "reasonPrompt": "What size quilt are you making, and are you resizing a pattern?",
+    "faq": [
+      {
+        "q": "Does it work in metres?",
+        "a": "Yes. Switch between yards and metres, and inches and centimetres."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Quilters of any level. It is an independent app, not linked to any fabric shop, pattern designer or other quilting app."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-22",
+      "summary": "Quilters reviewing calculator apps say they just want to know how many yards to buy, found backing and binding yardage hard when resizing, and spent too much on fabric they can't use.",
+      "wtp": "Quilt Geek sells Premium at $7.99 a month or $49.99 a year (130 App Store ratings), and reviewers of free calculators describe money lost to over-buying.",
+      "signals": [
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=390366459/sortby=mostrecent/json",
+          "who": "BusyA**Mom (App Store review, QuiltingCalc)",
+          "date": "2017-05-02",
+          "quote": "I just want to know how many yards of fabric I need to buy to make a quilt.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=390366459/sortby=mostrecent/json",
+          "who": "Seattle NAM (App Store review, QuiltingCalc)",
+          "date": "2020-02-08",
+          "quote": "I am fairly new to quilting and found trying to calculate yardage needed for backing and bindings challenging when I first made a quilt smaller than the pattern I used.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=390366459/sortby=mostrecent/json",
+          "who": "TAW in CO (App Store review, QuiltingCalc)",
+          "date": "2018-09-05",
+          "quote": "Not happy that I spent so much more than I had to and have so much fabric left over that I can’t use for anything else.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=6499062474/sortby=mostrecent/json",
+          "who": "Pepper058 (App Store review, Quilt Geek)",
+          "date": "2025-06-01",
+          "quote": "No more guessing on my part about how much yardage I need.",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "QuiltingCalc (free), Quilt Geek, QuiltSandwich, online yardage charts.",
+      "risks": "All evidence is App Store reviews. Crowded with free calculators; the angle is accuracy and resizing. Distinct from first-seam (learning to sew)."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-22",
+    "slug": "prayer-promise",
+    "name": "Prayer Promise",
+    "need": "When I tell someone I'll pray for them, I mean it, but I forget, and I feel bad about it the next time I see them.",
+    "headline": "Keep every 'I'll pray for you', from a hallway chat or a text, until the moment you pray, and follow up so they know you remembered.",
+    "buyer": "People of faith who are often asked to pray for others and keep forgetting requests.",
+    "bullets": [
+      "Two-tap capture from a text, email or conversation.",
+      "Gentle reminders at times you choose, with a short list for today so a long list never feels overwhelming.",
+      "Mark answered prayers, look back on them, and get a nudge to check in with the person."
+    ],
+    "price": "$2.99/month",
+    "priceUsd": 3,
+    "priceNote": "Or $19.99 a year.",
+    "reasonPrompt": "Roughly how many people do you usually pray for?",
+    "faq": [
+      {
+        "q": "Is it for a particular church?",
+        "a": "No. It's a simple tool for remembering the people you've promised to pray for, whatever your tradition."
+      },
+      {
+        "q": "Is my list private?",
+        "a": "Yes. Your list stays private unless you choose to share an item."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Anyone who prays for others. It is an independent app, not linked to any church, ministry or other prayer app."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-22",
+      "summary": "Reviewers of prayer apps say they tell people they'll pray for them and then forget, constantly forget requests they hear, and nearly always forget an item.",
+      "wtp": "People pay for prayer-list apps: Prayer Notes (3.8K App Store ratings) sells upgrades at $4.99 to $79.99, and Echo Prayer (21.7K ratings) sells Echo Plus+ from $2.99.",
+      "signals": [
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=880759027/sortby=mostrecent/json",
+          "who": "Redhot797 (App Store review, Echo Prayer)",
+          "date": "2024-07-21",
+          "quote": "When I tell someone I’ll pray for them, I mean it. But sometimes when I sit down to pray I can forget someone or something.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=3/id=1309466339/sortby=mostrecent/json",
+          "who": "Jnicole82 (App Store review, Prayminder)",
+          "date": "2025-05-12",
+          "quote": "This app has helped me organize the many people I need to pray for so that I don’t just say that I will pray for them and then forget.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=3/id=1309466339/sortby=mostrecent/json",
+          "who": "April VanD (App Store review, Prayminder)",
+          "date": "2025-03-04",
+          "quote": "I am constantly forgetting to pray for people and situations",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=522373829/sortby=mostrecent/json",
+          "who": "4Frlcd2jv (App Store review, Prayer Notebook)",
+          "date": "2026-08-29",
+          "quote": "I hear constantly of people that need prayer and I always forget",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Echo Prayer, Prayer Notes, Prayminder, Prayer Notebook, larger faith apps.",
+      "risks": "Well served, including by free apps; the angle is capture-in-the-moment and follow-up. All evidence is App Store reviews. No claims about prayer outcomes. Distinct from verse-keep and stay-close."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

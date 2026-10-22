@@ -10886,5 +10886,84 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "how-much-fabric-for-a-quilt",
+  "offer": "quilt-yardage",
+  "title": "How much fabric do I need for a quilt? Backing, binding and borders",
+  "description": "Measure the finished size, add for backing overhang, work out binding from the perimeter, and buy a little extra for shrinkage and mistakes.",
+  "intro": "Most fabric mistakes happen on the backing and binding, especially when you resize a pattern. A few simple calculations prevent them.",
+  "sections": [
+   {
+    "h": "Start with the finished size",
+    "list": [
+     "Decide the finished quilt width and length. Common sizes: baby, lap or throw, twin, queen and king; check a size chart if you're unsure."
+    ]
+   },
+   {
+    "h": "Backing",
+    "list": [
+     "Add about 4 inches (10 cm) to each side for quilting overhang.",
+     "If the quilt is wider than your fabric, you'll need to join widths, or use extra-wide backing fabric."
+    ]
+   },
+   {
+    "h": "Binding",
+    "list": [
+     "Measure the perimeter (2 × width + 2 × length), add about 10 to 15 inches for corners and joining, and divide by your usable fabric width to find how many strips to cut."
+    ]
+   },
+   {
+    "h": "Borders and sashing",
+    "list": [
+     "Add up the length of every border and sashing strip, including corners, before you buy."
+    ]
+   },
+   {
+    "h": "Buy a little extra",
+    "p": [
+     "Fabric can shrink when washed, and cutting mistakes happen. Many quilters add around 10% or a quarter-yard to each fabric. Write the numbers down before you go to the shop."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "remember-to-pray-for-people",
+  "offer": "prayer-promise",
+  "title": "How to remember to pray for people after you've promised",
+  "description": "Write it down the moment you promise, keep one simple list, pray through a few names each day, and follow up with the person.",
+  "intro": "'I'll pray for you' is easy to say and easy to forget. A small routine helps you keep the promise.",
+  "sections": [
+   {
+    "h": "Capture it straight away",
+    "list": [
+     "Write the name and request down the moment you say you'll pray: a note on your phone or a small notebook."
+    ]
+   },
+   {
+    "h": "Keep one list",
+    "list": [
+     "Keep all requests in one place, so nothing gets lost in texts and scraps of paper."
+    ]
+   },
+   {
+    "h": "A few names each day",
+    "list": [
+     "If the list is long, split it across the days of the week, so each person is remembered regularly."
+    ]
+   },
+   {
+    "h": "Note answers",
+    "list": [
+     "Mark when a situation changes or a request is answered. Looking back can be encouraging."
+    ]
+   },
+   {
+    "h": "Follow up",
+    "p": [
+     "A short message to say you've been thinking of them, and to ask how things are, means a lot."
+    ]
+   }
+  ]
  }
 ]
