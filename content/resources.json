@@ -10563,5 +10563,84 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "ham-radio-technician-exam-no-tech-background",
+  "offer": "ham-ticket",
+  "title": "Studying for the ham radio Technician exam without a technical background",
+  "description": "Learn the ideas behind the questions, practise the few formulas you need, study little and often, and take practice tests until you pass them comfortably.",
+  "intro": "The US Technician exam draws its questions from a published pool. You don't need an electronics background, but understanding why each answer is right makes it stick.",
+  "sections": [
+   {
+    "h": "Know the format",
+    "list": [
+     "The Technician exam has 35 multiple-choice questions taken from the public question pool; you need 26 correct to pass.",
+     "Exams are run by volunteer examiner teams, in person or online."
+    ]
+   },
+   {
+    "h": "Learn the why, not just the answer",
+    "list": [
+     "For each topic, read a short plain explanation before drilling questions. Understanding beats memorising."
+    ]
+   },
+   {
+    "h": "Tackle the maths gently",
+    "list": [
+     "Most of it is Ohm's law (voltage = current × resistance), power (power = voltage × current) and a few unit conversions. Practise those with simple numbers."
+    ]
+   },
+   {
+    "h": "Study little and often",
+    "list": [
+     "Ten or fifteen minutes a day keeps you going better than long weekend sessions. Revisit questions you got wrong."
+    ]
+   },
+   {
+    "h": "Use practice tests",
+    "p": [
+     "When you score comfortably above the pass mark several times in a row, book your exam. A local radio club can help and often runs exam sessions."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "part-107-charts-and-weather",
+  "offer": "chart-ready",
+  "title": "Part 107 test: how to study sectional charts and weather reports",
+  "description": "Learn chart symbols a few at a time, practise with the official supplement figures, decode METARs and TAFs line by line, and drill airspace.",
+  "intro": "Many people find charts and weather reports the hardest part of the Part 107 knowledge test. They're learnable with short, focused practice. This guide is for test study only, not flight planning.",
+  "sections": [
+   {
+    "h": "Use the official figures",
+    "list": [
+     "The test uses figures from the FAA's testing supplement. Practise with the same supplement so the layout feels familiar on the day."
+    ]
+   },
+   {
+    "h": "Learn chart symbols in small groups",
+    "list": [
+     "Airports, airspace boundaries, obstacles and altitude labels. Learn a few at a time and find each one on a real chart."
+    ]
+   },
+   {
+    "h": "Decode METARs and TAFs line by line",
+    "list": [
+     "Work through each group: station, time, wind, visibility, weather, cloud, temperature and pressure. Then the forecast change groups in a TAF."
+    ]
+   },
+   {
+    "h": "Drill airspace",
+    "list": [
+     "Know which airspace classes need authorisation and how to read the floor and ceiling of each on the chart."
+    ]
+   },
+   {
+    "h": "Know the test",
+    "p": [
+     "The Part 107 initial knowledge test is taken at an approved testing centre. Check the FAA's current rules and requirements before you book, and keep studying the topics you score lowest on."
+    ]
+   }
+  ]
  }
 ]

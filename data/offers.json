@@ -27251,6 +27251,164 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-22",
+    "slug": "ham-ticket",
+    "name": "Ham Ticket",
+    "need": "I want my ham radio licence, but the study manual is too technical for me and I keep losing interest before the exam.",
+    "headline": "Get your ham radio licence without a technical background: every exam question explained in plain English, the maths worked step by step, and drills on the ones you miss.",
+    "buyer": "Adults with no electronics background studying for the US amateur radio Technician or General exam.",
+    "bullets": [
+      "A plain-English 'why' for every question in the pool.",
+      "Ohm's law and power maths worked step by step, with no algebra assumed.",
+      "Spaced drills on the questions you keep missing, 10-minute daily sessions, and a readiness score."
+    ],
+    "price": "$4.99/month",
+    "priceUsd": 5,
+    "priceNote": "Or $24.99 a year.",
+    "reasonPrompt": "Which exam are you studying for, and what part feels hardest?",
+    "faq": [
+      {
+        "q": "Is this official?",
+        "a": "No. It is an independent study app, not linked to the FCC, the ARRL, any exam team or other study app. Book your exam with a volunteer examiner team."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Adults 18+ studying for an amateur radio licence."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-22",
+      "summary": "Exam-prep reviewers say they struggled to read the study manual, lost interest in the books, found it too technical, and felt intimidated knowing nothing about radio.",
+      "wtp": "People pay for ham exam prep: HamStudy.org's app costs $3.99 (2.7K App Store ratings), and Ham Radio Prep sells a paid video course (2.2K ratings).",
+      "signals": [
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1525090989/sortby=mostrecent/json",
+          "who": "ShoozieToo (App Store review, Ham Radio Prep)",
+          "date": "2026-05-14",
+          "quote": "I was struggling with reading and interpreting the study manual.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=2/id=1371288324/sortby=mostrecent/json",
+          "who": "selectanothername (App Store review, HamStudy.org)",
+          "date": "2025-03-27",
+          "quote": "Struggled with the books a few years back until I lost interest.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=2/id=1525090989/sortby=mostrecent/json",
+          "who": "RealNickF (App Store review, Ham Radio Prep)",
+          "date": "2025-03-02",
+          "quote": "Not really knowing anything about amateur radio I was super intimidated",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=3/id=1525090989/sortby=mostrecent/json",
+          "who": "DirigoElectric (App Store review, Ham Radio Prep)",
+          "date": "2024-11-18",
+          "quote": "I had tried reading only, and struggled a bit because it seemed a bit too tech for me.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=2/id=601991935/sortby=mostrecent/json",
+          "who": "k6drs (App Store review, Ham Radio Exam - Tech)",
+          "date": "2019-10-02",
+          "quote": "It was difficult to study with just a book, hard to focus and I lost interest at first.",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "HamStudy.org (free on the web, paid app), Ham Radio Prep, HAM Test Prep, ARRL manuals, local club classes.",
+      "risks": "Crowded, cheap category with a free web option. All evidence is App Store reviews. Many reviewers have already passed."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-22",
+    "slug": "chart-ready",
+    "name": "Chart Ready",
+    "need": "I'm studying for the FAA Part 107 drone test and I'm lost on sectional charts and weather reports, and practice-question apps don't actually teach them.",
+    "headline": "Practice tests say you're ready, then the real Part 107 hits you with charts and TAFs? Learn to read sectional charts, airspace and weather reports, one step at a time.",
+    "buyer": "Adults preparing for the FAA Part 107 Remote Pilot knowledge test with no aviation background.",
+    "bullets": [
+      "Sectional chart drills that read one symbol at a time.",
+      "METAR and TAF decoding practice, line by line, plus an airspace and altitude trainer.",
+      "Topic-only modes (weather, charts, rules) and a test-booklet view like the one in the exam room."
+    ],
+    "price": "$6.99/month",
+    "priceUsd": 7,
+    "priceNote": "Or $29.99 a year.",
+    "reasonPrompt": "Which part of the Part 107 test worries you most: charts, weather or rules?",
+    "faq": [
+      {
+        "q": "Can I use it to plan flights?",
+        "a": "No. It is for knowledge-test study only. Use official FAA charts, current rules and approved authorisation tools when you fly."
+      },
+      {
+        "q": "Is this official?",
+        "a": "No. It is an independent study app, not linked to the FAA or any test centre or other app, and it can't guarantee a pass."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Adults 18+ preparing for the Part 107 knowledge test."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-22",
+      "summary": "Part 107 test takers say their weak spots were charts, METARs and TAFs, that they were sweating over aeronautical charts in the real exam, and that they were lost and confused studying alone.",
+      "wtp": "Test takers pay for prep: Remote Pilot Test Prep costs $49.99 (793 App Store ratings), and Hypochandrea wrote 'I paid $10 to access all practice exams'.",
+      "signals": [
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=4/id=1636316022/sortby=mostrecent/json",
+          "who": "zergtomato (App Store review, FAA Part 107 Practice Test)",
+          "date": "2024-07-17",
+          "quote": "My weak spots ended up being reading charts, METAR, and TAFs",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1527940259/sortby=mostrecent/json",
+          "who": "Hypochandrea (App Store review, Part 107 Exam Center)",
+          "date": "2023-09-21",
+          "quote": "I just took the official exam and was sweating trying to figure out aeronautical charts, TAFs and questions never posted on any of these practice tests.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1527940259/sortby=mostrecent/json",
+          "who": "D4 shooter (App Store review, Part 107 Exam Center)",
+          "date": "2025-05-14",
+          "quote": "I just failed my 107 exam and I used this app for most of my study work.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1126603111/sortby=mostrecent/json",
+          "who": "Whoobuddie (App Store review, Remote Pilot Test Prep)",
+          "date": "2020-09-18",
+          "quote": "I tried to study on my own, I found myself lost and confused.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1636316022/sortby=mostrecent/json",
+          "who": "MPsan (App Store review, FAA Part 107 Practice Test)",
+          "date": "2026-04-06",
+          "quote": "I wanted to specifically focus on Weather related content but that doesn’t seem to be possible",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Remote Pilot Test Prep, FAA Part 107 Practice Test, Part 107 Exam Center, Prepware, online ground schools.",
+      "risks": "All evidence is App Store reviews. Crowded market. Aviation content must follow current FAA rules and is for study only."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
