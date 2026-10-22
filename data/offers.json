@@ -27992,6 +27992,83 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-22",
+    "slug": "balance-point",
+    "name": "Balance Point",
+    "need": "I've tried for months to ride a wheelie on my bike, and that front wheel just won't stay up for more than a couple of pedal strokes.",
+    "headline": "Ride your first real wheelie: a 10-second side-video check finds what's going wrong, then a step ladder takes you from lift-and-drop to 10 pedal strokes.",
+    "buyer": "Adult riders 18+ who have tried for months to wheelie and can't get past a couple of pedal strokes.",
+    "bullets": [
+      "A 10-second side-video check: front height, arm pull versus straight-arm lean, and whether you reach the balance point.",
+      "A cause finder: gear, seat height, rear-brake cover, and fear of looping out.",
+      "A step ladder from lift-and-drop to brake catches to 2, 5 and 10 pedal strokes, in 10-minute sessions with a longest-wheelie log."
+    ],
+    "price": "$3.99/month",
+    "priceUsd": 4,
+    "priceNote": "Or $24.99 a year.",
+    "reasonPrompt": "How many pedal strokes can you manage now, and what usually happens?",
+    "faq": [
+      {
+        "q": "Is it safe?",
+        "a": "Wear a helmet, practise on grass or a quiet flat area away from traffic, and always keep a finger on the rear brake so you can bring the front down. Stop if you're hurt."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Adults 18+. It is an independent app, not linked to any bike brand, coach or forum."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-22",
+      "summary": "Riders on Singletrack World say the front wheel won't stay up, they can't get past a couple of pedal strokes after months of practice, and one wrote they would pay money to learn.",
+      "wtp": "Sui wrote 'i will pay money to be able wheelie and manual well..', and riders pay for online skills courses and coaching.",
+      "signals": [
+        {
+          "url": "https://singletrackworld.com/forum/bike-forum/before-i-die-can-someone-please-teach-me-how-to-wheelie/",
+          "who": "ski (Singletrack World)",
+          "date": "2013-06-05",
+          "quote": "That front wheel will not stay up for me.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://singletrackworld.com/forum/bike-forum/before-i-die-can-someone-please-teach-me-how-to-wheelie/",
+          "who": "samuri (Singletrack World)",
+          "date": "2013-06",
+          "quote": "Now I cant wheelie for more than a couple of pedal strokes.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://singletrackworld.com/forum/bike-forum/seriously-how-long-to-pedal-wheelie/",
+          "who": "coolhandluke (Singletrack World)",
+          "date": "2014-12-20",
+          "quote": "I tried for about three months. 30 mins a day, I progressed to no pedal turns to probably 2 or 3 if I was lucky",
+          "seen": "opened"
+        },
+        {
+          "url": "https://singletrackworld.com/forum/bike-forum/seriously-how-long-to-pedal-wheelie/",
+          "who": "Sui (Singletrack World)",
+          "date": "2014-12",
+          "quote": "i will pay money to be able wheelie and manual well..",
+          "seen": "opened"
+        },
+        {
+          "url": "https://singletrackworld.com/forum/bike-forum/how-long-did-it-take-to-learn-how-to-pull-a-wheelie/",
+          "who": "addicted2tailwind (Singletrack World)",
+          "date": "2009",
+          "quote": "Been trying to learn how to pull wheelies and am not gettin anywhere fast!",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Online skills courses, coaching, YouTube tutorials, skills clinics.",
+      "risks": "All posters are on one site, and posts are old (2009-2014). No rated paid wheelie app. Falls are a risk; the app keeps safety front and centre. Distinct from steep-ready (steep descents)."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
