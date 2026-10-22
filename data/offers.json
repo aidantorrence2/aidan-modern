@@ -25721,6 +25721,69 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-22",
+    "slug": "over-the-bar",
+    "name": "Over the Bar",
+    "need": "I can do pull-ups and dips, but I keep failing the muscle-up, or I'm stuck on the same number.",
+    "headline": "Get your first muscle-up, or past your plateau: a 5-minute check finds your weak link, then a 3-day plan works on just that.",
+    "buyer": "Adults 18+ who can do pull-ups and dips but can't get the muscle-up, or are stuck on a number.",
+    "bullets": [
+      "A 5-minute weak-link check: high pull, transition, or dip out.",
+      "A 3-day-a-week plan aimed at the weak link, with negatives and transition drills.",
+      "A side-video check of chest height at the bar, a rep log, and a rest guard so you don't overdo it."
+    ],
+    "price": "$3.99/month",
+    "priceUsd": 4,
+    "priceNote": "Or $24.99 a year.",
+    "reasonPrompt": "Where does your muscle-up fail: the pull, the transition, or the dip out?",
+    "faq": [
+      {
+        "q": "Is it safe for my shoulders and elbows?",
+        "a": "Build up gradually and rest between hard sessions. Stop if you feel sharp pain, and see a qualified professional for any injury."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Adults 18+ who can already do several strict pull-ups and dips. It is an independent app, not linked to any gym, coach or other fitness app."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-22",
+      "summary": "People who can already do pull-ups say they fail every muscle-up attempt, can't get past the transition, or are stuck on the same max for months.",
+      "wtp": "Thenx: Calisthenics Training (12K App Store ratings) charges $9.99 to $19.99 a month or $89.99 to $119.99 a year and lists muscle-up skill challenges.",
+      "signals": [
+        {
+          "url": "https://www.strongfirst.com/community/threads/muscle-up.19014/",
+          "who": "PigCrusader (StrongFirst forum)",
+          "date": "2021-02-25",
+          "quote": "Recently i have been trying to do muscle ups, but i failed every time.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.strongfirst.com/community/threads/muscle-up-plateau.26246/",
+          "who": "Pubamoto (StrongFirst forum)",
+          "date": "2024-06-29",
+          "quote": "I've been stuck with an 11 max for 2 months.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.gymnasticbodies.com/forum/topic/6888-muscle-up-help-trouble-with-bar-transition",
+          "who": "Tyler Phillips (GymnasticBodies forum)",
+          "date": "2011-12-12",
+          "quote": "I'm having trouble completing muscle-ups on a straight bar due to not being able to make it past that pesky transition.",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Thenx, Calisthenics apps, GymnasticBodies courses, YouTube tutorials, coaches.",
+      "risks": "Posts are spread over 2011-2024. The paid app is general calisthenics. Distinct from first-pull-up (can't do one pull-up)."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
