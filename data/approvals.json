@@ -3164,6 +3164,47 @@
       "status": "denied",
       "decided": "2026-10-22T12:22:45Z",
       "note": ""
+    },
+    {
+      "id": "offers:paid-pilot-channel-inquiry:2026-10-22:tcppa-eligibility",
+      "kind": "email",
+      "source": "codex:approval-add-mirror",
+      "title": "Ask TCPPA whether the paid pilot qualifies",
+      "summary": "Send one exact no-spend eligibility inquiry to vendor@tcppa.org before considering any $149 sponsorship or members-only post.",
+      "preview_url": "https://www.tcppa.org/vendors",
+      "payload": {
+        "schema_version": 1,
+        "prepared_at": "2026-10-22T15:04:00Z",
+        "approval_id": "offers:paid-pilot-channel-inquiry:2026-10-22:tcppa-eligibility",
+        "offer": "Studio Follow-up Desk",
+        "action": "Send one eligibility inquiry to the official Twin Cities Professional Photographers Association Vendor Partner address. No purchase, application, account creation, terms acceptance, member contact, group post, or spend.",
+        "evidence": {
+          "official_document": "https://storage.googleapis.com/msgsndr/MYL5iY1UfERUtbHjy96X/media/697d06aba413e88025edd7e0.pdf",
+          "document_revision": "1/2026",
+          "recipient": "vendor@tcppa.org",
+          "audience": "Average 110 annual TCPPA members; professional photography entrepreneurs",
+          "lowest_tier": "Friends of TCPPA — $149/year, not prorated, paid in full",
+          "eligible_route": "Open to current-year professional members or small business owners; includes logo/link, members-only Facebook group access subject to restrictions, event table, and recognition in quarterly vendor emails",
+          "restrictions": "Posting up to three times per month in the members-only group; exact group restrictions require confirmation before any post. No member list is provided."
+        },
+        "exact_email": {
+          "to": "vendor@tcppa.org",
+          "subject": "Does Studio Follow-up Desk fit Friends of TCPPA?",
+          "body": "Hi TCPPA team,\n\nI'm Aidan, a photographer testing Studio Follow-up Desk: a $250/month service that turns up to 20 existing studio enquiries into four weekly action lists and up to 20 AI-assisted drafts. The studio reviews and sends every message; it isn't a CRM or booking guarantee.\n\nYour 2026 Vendor Partner Network says Friends of TCPPA is open to small business owners and includes member-group offer access. Before considering the $149 annual fee, would you confirm whether this service is eligible and whether one exact, non-DM pilot post is permitted?\n\nAidan"
+        },
+        "guardrails": [
+          "This approval would cover only the exact email above.",
+          "No spending, application, terms acceptance, login, post, reply, follow-up, private message, or member contact.",
+          "Any response requires review; any reply or channel action requires a new exact approval.",
+          "Do not infer approval of the $149 sponsorship or any Facebook activity."
+        ],
+        "relationship_to_denied_click_action": "Materially different no-spend eligibility inquiry to a separate association. It does not requeue, revise, or bypass the denied Click Community purchase/post; it seeks factual eligibility before any new channel proposal."
+      },
+      "created": "2026-10-22T15:03:58Z",
+      "expires": "2026-10-25T15:03:58Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
     }
   ]
 }
