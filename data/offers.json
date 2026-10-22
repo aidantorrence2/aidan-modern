@@ -26470,6 +26470,90 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-22",
+    "slug": "vibrato-find",
+    "name": "Vibrato Find",
+    "need": "I can't naturally produce a vibrato when I sing; my sound comes out straight and flat.",
+    "headline": "Find your natural vibrato: a live pitch line that shows straight tone versus a vibrato wave, and a step ladder from controlled pitch swings to free vibrato.",
+    "buyer": "Adult singers with no vibrato, vibrato only at the very end of long notes, or a forced throat wobble.",
+    "bullets": [
+      "A live pitch line so you can see straight tone versus a vibrato wave as you sing.",
+      "A step ladder from slow, controlled pitch swings to free, relaxed vibrato.",
+      "A forced-or-free check, a late-vibrato drill, and 5-minute sessions with a recording log."
+    ],
+    "price": "$3.99/month",
+    "priceUsd": 4,
+    "priceNote": "Or $24.99 a year.",
+    "reasonPrompt": "What happens now: no vibrato at all, only at the end of notes, or a wobble that feels forced?",
+    "faq": [
+      {
+        "q": "Will it hurt my voice?",
+        "a": "The drills are gentle and short. Stop if singing hurts or you go hoarse, and see a voice teacher or a doctor if it keeps happening."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Adult singers. It is an independent app, not linked to any singing course, teacher or other app."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-22",
+      "summary": "Singers say they can't naturally produce a vibrato, that their sound comes out solid and flat, that their vibrato only arrives at the end of notes, or that it cracks when they go for it.",
+      "wtp": "Singing Lessons: Learn to Sing (194 App Store ratings) charges $7.99 a week up to $39.99 lifetime and has a vibrato course. 30DaySinger Full Access costs $10.75 a month billed yearly, including 'How To Master Vibrato'.",
+      "signals": [
+        {
+          "url": "https://new.30daysinger.com/forums/discussion/technique-and-style/vibrato-and-search-function",
+          "who": "Well W (30DaySinger community)",
+          "date": "undated (about 6 years old)",
+          "quote": "I can't naturally produce a vibrato.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.30daysinger.com/forums/discussion/singing-basics/i-cant-find-my-vibrato",
+          "who": "Kay (30DaySinger community)",
+          "date": "undated",
+          "quote": "i still have an extremely late vibrato at the end of my notes only",
+          "seen": "opened"
+        },
+        {
+          "url": "https://homerecording.com/bbs/threads/how-does-improve-vibrato.355315/",
+          "who": "ido1957 (HomeRecording)",
+          "date": "2013-03-19",
+          "quote": "Vibrato is something I hardly ever achieve. And when I deliberately go for it I crack.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://homerecording.com/bbs/threads/how-does-improve-vibrato.355315/",
+          "who": "amk326 (HomeRecording)",
+          "date": "2013-03-18",
+          "quote": "I find that I sometimes struggle with vibrato when singing certain notes.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://boards.straightdope.com/t/fixing-my-vibrato/536622",
+          "who": "panache45 (Straight Dope)",
+          "date": "2010-04-19",
+          "quote": "I've been singing in my chorus for 15 years, and the one complaint about my voice has been that I don't have vibrato.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.youngcomposers.com/t15852/new-voice-major-tips-on-vibrato/",
+          "who": "Muzic (YoungComposers)",
+          "date": "2008-09-22",
+          "quote": "I am really struggling on developing my vibrato without forcing it.",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Singing Lessons: Learn to Sing, 30DaySinger, Vocalizer, Yousician, voice teachers.",
+      "risks": "Posts are old or undated. The rated paid app is a general singing course. Nobody wrote 'I'd pay'. Distinct from Pitch Steady (singing in tune)."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
