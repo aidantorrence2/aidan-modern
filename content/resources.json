@@ -9173,5 +9173,44 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "learn-the-night-sky-by-eye",
+  "offer": "star-names",
+  "title": "Learning the night sky by eye: one constellation a week, starting from Orion",
+  "description": "Start with a few bright patterns, learn them by shape, find each one again on the next clear night, and add one more pattern a week.",
+  "intro": "You don't need a telescope to learn the sky. A few minutes on clear nights, starting with the brightest patterns, is enough.",
+  "sections": [
+   {
+    "h": "Start bright",
+    "list": [
+     "In winter, Orion; in summer, the Summer Triangle; all year in the north, the Plough (Big Dipper)."
+    ]
+   },
+   {
+    "h": "Learn by shape",
+    "list": [
+     "A belt of three stars, a big triangle, a saucepan. Simple shapes stick better than pictures."
+    ]
+   },
+   {
+    "h": "Use them as signposts",
+    "list": [
+     "Orion's belt points to Sirius; the Plough's pointer stars lead to the Pole Star."
+    ]
+   },
+   {
+    "h": "Phone down",
+    "list": [
+     "Check with an app, then put it away and find the pattern again with your eyes."
+    ]
+   },
+   {
+    "h": "One more each week",
+    "p": [
+     "Add a neighbouring pattern each week, and revisit the old ones as the seasons turn."
+    ]
+   }
+  ]
  }
 ]

@@ -24663,6 +24663,90 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-22",
+    "slug": "star-names",
+    "name": "Star Names",
+    "need": "I've always loved the night sky, but when I look up I can't tell which stars or constellations I'm seeing, and I've never actually learned them.",
+    "headline": "Learn to name the stars and constellations over your own house, a few minutes a night, until you can look up and know them without holding up your phone.",
+    "buyer": "Adults 18+ who enjoy the night sky and use point-your-phone apps but still can't recognise the patterns on their own.",
+    "bullets": [
+      "Tonight's lesson: 3 to 5 patterns actually above you right now, brightest star first, with simple shapes.",
+      "Spaced quizzes on patterns and names, plus a phone-down 'find it' drill in red night mode.",
+      "A season-by-season path, so winter's patterns come back for review before they set."
+    ],
+    "price": "$2.99/month",
+    "priceUsd": 3,
+    "priceNote": "Or $19.99 a year.",
+    "reasonPrompt": "Which constellation or bright star would you most like to point out on your own?",
+    "faq": [
+      {
+        "q": "Do I need a telescope?",
+        "a": "No. It's built around what you can see with your own eyes, even from towns with some light pollution."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Adults 18+. It is an independent app, not linked to any other astronomy app, observatory or organisation."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-22",
+      "summary": "Reviewers of stargazing apps say they love the night sky but never knew what they were looking at, guessed for decades, or forgot the sky they knew as children.",
+      "wtp": "People pay for sky apps: Star Rover $1.99, SkySafari 7 Pro $17.99, Star Walk 2 Pro (67K ratings), whose reviewer Bailey1177 says it was 'well worth every cent'.",
+      "signals": [
+        {
+          "url": "https://apps.apple.com/us/app/id386628906",
+          "who": "Maziepbs (App Store review, Star Rover)",
+          "date": "2016-07-10",
+          "quote": "I've always been a big fan of the universe and star gazing but never knew what I was looking at when I went outside to star gaze.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id386628906",
+          "who": "smihalovich (App Store review, Star Rover)",
+          "date": "2018-09-23",
+          "quote": "I’ve always had an interest in the night sky but never been able to look up and point and identify the celestial body.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1137455038",
+          "who": "Omeomi7 (App Store review, Classic Sky Map 2)",
+          "date": "2019-05-10",
+          "quote": "For 50 years i would guess which star, constellation, etc, was which",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1567658979",
+          "who": "Clean of bells (App Store review, SkySafari 7 Pro)",
+          "date": "2021-12-09",
+          "quote": "I thought it would be fun to learn which stars and planets were actually showing",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1112481571",
+          "who": "Khatn (App Store review, Star Walk 2 Plus)",
+          "date": "2022-10-12",
+          "quote": "have forgotten most of my childhood’s rural skies.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id892279069",
+          "who": "Bailey1177 (App Store review, Star Walk 2 Pro)",
+          "date": "2021-10-20",
+          "quote": "One of the few I’ve spent my money on, and well worth every cent.",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Sky Guide, Night Sky, Star Walk 2, SkyView, SkySafari, Stellarium: they label the sky for you. Few teach you to recognise it yourself.",
+      "risks": "Free AR apps are good enough for many. Clear skies needed. Distinct from live first-light (telescope owners)."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
