@@ -9671,5 +9671,86 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "keep-track-of-flea-and-worming",
+  "offer": "flea-day",
+  "title": "How to keep track of your pet's flea and worming treatments",
+  "description": "Write down the date and product each time, set the next reminder straight away, share the log at home, and ask your vet about missed doses.",
+  "intro": "Flea, tick and worming treatments are easy to lose track of, especially with more than one pet or more than one person doing it.",
+  "sections": [
+   {
+    "h": "Log it the moment you give it",
+    "list": [
+     "Note the pet, the product and the date as soon as you've given it, before you forget.",
+     "Keep the log where everyone in the house can see it."
+    ]
+   },
+   {
+    "h": "Set the next reminder straight away",
+    "list": [
+     "Use the interval on the product label or the one your vet gave you.",
+     "Different products often have different intervals; give each its own reminder."
+    ]
+   },
+   {
+    "h": "One log for the household",
+    "list": [
+     "If two people treat the pets, agree who does it, or tick it off in one shared place, so nobody doubles up or skips."
+    ]
+   },
+   {
+    "h": "Missed or unsure?",
+    "list": [
+     "Don't give an extra dose to catch up unless your vet says so. Call your vet and tell them the product and the last date."
+    ]
+   },
+   {
+    "h": "Bring it to the vet",
+    "p": [
+     "A simple list of products and dates helps your vet at check-ups and when you change products."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "pocket-money-without-cash",
+  "offer": "pocket-tab",
+  "title": "Paying pocket money when you never carry cash",
+  "description": "Keep a simple running balance for each child, add pocket money on a set day, note what they spend, and cash out on a regular day.",
+  "intro": "Plenty of parents want to give pocket money but rarely have coins on them. A simple written balance solves most of it.",
+  "sections": [
+   {
+    "h": "Keep a running balance",
+    "list": [
+     "One line per child: what they've been given, what they've spent, and what's left.",
+     "Paper, a notes app or a spreadsheet all work. What matters is that it's kept up to date."
+    ]
+   },
+   {
+    "h": "Pick a set day",
+    "list": [
+     "Add pocket money on the same day each week. It's easier to remember and children learn to wait for it."
+    ]
+   },
+   {
+    "h": "Note gifts and IOUs",
+    "list": [
+     "Add birthday money and gifts, and note any money you lend or borrow, so nothing is forgotten."
+    ]
+   },
+   {
+    "h": "Let them see it",
+    "list": [
+     "Children learn more about money when they can check their own balance and watch it grow or shrink."
+    ]
+   },
+   {
+    "h": "Cash out regularly",
+    "p": [
+     "Hand over real money from time to time, or when they want to buy something, and take it off the balance. Seeing cash change hands keeps it real."
+    ]
+   }
+  ]
  }
 ]

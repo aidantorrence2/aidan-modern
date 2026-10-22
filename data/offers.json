@@ -25574,6 +25574,153 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-22",
+    "slug": "flea-day",
+    "name": "Flea Day",
+    "need": "I can never remember when my dog or cat last had its flea and worming treatment, or when the next one is due.",
+    "headline": "Never lose track of flea and worming day again: log each treatment in two taps and get a nudge on the day the next one is due, for every pet in the house.",
+    "buyer": "Adult dog and cat owners, especially households with more than one pet, who give flea, tick and worming treatments at home.",
+    "bullets": [
+      "A one-tap 'treated today' log for each pet and product.",
+      "A reminder on the due date, at the interval you set from the pack or your vet.",
+      "A shared household log so nobody doubles up or skips, with last-treated dates ready for the vet."
+    ],
+    "price": "$3.99/month",
+    "priceUsd": 4,
+    "priceNote": "Or $29.99 a year.",
+    "reasonPrompt": "How many pets do you treat, and which treatments do you lose track of?",
+    "faq": [
+      {
+        "q": "Does it tell me which treatment or dose to use?",
+        "a": "No. It only logs and reminds, at the interval you enter from the product label or your vet. If you missed a dose or aren't sure, ask your vet; don't double up."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Adult pet owners. It is an independent app, not linked to any vet, pet brand or other pet app."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-22",
+      "summary": "Pet owners say they tried to keep track of flea and tick meds in a journal, forgot worming tablets, and asked pet apps for worming reminders.",
+      "wtp": "Pet Care Tracker (DogCat) sells DogCat Plus at $4.49 a month or $39.99 a year (953 ratings). DogNote Premium costs $4.99 a month or $44.99 a year (919 ratings).",
+      "signals": [
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=3/id=1551003273/sortby=mostrecent/json",
+          "who": "LindyLopez<3 (App Store review, Pet Care Tracker)",
+          "date": "2023-11-28",
+          "quote": "I tried to keep track of my dogs monthly flea/tick meds, baths, and grooming by writing it down. But I didn’t have the journal on hand all of the time.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=3/id=1551003273/sortby=mostrecent/json",
+          "who": "ElisaT-B (App Store review, Pet Care Tracker)",
+          "date": "2023-12-28",
+          "quote": "Add worm medication to the list of vaccines. I do it but I have to customize and create a reminder.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/gb/rss/customerreviews/page=1/id=1527756855/sortby=mostrecent/json",
+          "who": "Tiztub (App Store UK review, DogNote)",
+          "date": "2022-05-24",
+          "quote": "It needs a section for worming pills with option for monthly reminder for puppies then 6 months for older dogs.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://wamiz.co.uk/cat/european-shorthair-463/forum/i-ve-forgotten-to-give-her-the-worming-tablets-what-should-i-do-84423.html",
+          "who": "Virginievg (Wamiz UK forum)",
+          "date": "2018-11-07",
+          "quote": "I completely forgot to give my kitten her worming tablets!",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Pet Care Tracker (DogCat), DogNote, 11pets, phone calendar reminders, vet reminder texts.",
+      "risks": "Most people are app reviewers. Pet medication needs care: the app never advises doses and points missed doses to the vet. Review page numbers shift as new reviews arrive."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-22",
+    "slug": "pocket-tab",
+    "name": "Pocket Tab",
+    "need": "I never have cash on me for my kids' pocket money, and I lose track of how much I owe them.",
+    "headline": "Pocket money without the cash: a simple balance for each child, so you always know what you owe and nobody hunts for coins.",
+    "buyer": "Parents of children about 5 to 14 who pay pocket money or an allowance but rarely carry cash and don't want a kids' bank card.",
+    "bullets": [
+      "A running balance for each child, with weekly pocket money added automatically.",
+      "A note on every entry (birthday money from Grandma, ice cream) and IOUs both ways.",
+      "A read-only balance your child can check, and a log for when you hand over real money."
+    ],
+    "price": "$2.99/month",
+    "priceUsd": 3,
+    "priceNote": "Or $19.99 a year.",
+    "reasonPrompt": "How many children do you pay pocket money to, and how often?",
+    "faq": [
+      {
+        "q": "Is this a bank account or card?",
+        "a": "No. It's a ledger: it keeps track of what you owe your children. No money is held, moved or invested."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Parents and carers. It is an independent app, not linked to any bank, kids' card or other allowance app."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-22",
+      "summary": "Parents reviewing allowance apps say they always failed at allowance because they never kept cash at home, don't always carry cash, and need to stay on top of how much they owe their kids.",
+      "wtp": "Chores & Allowance Bot (11K App Store ratings) sells Premium at $9.99 a month or $24.99 a year, and Allowance Tracker sells a $14.99 subscription.",
+      "signals": [
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=10/id=629797415/sortby=mostrecent/json",
+          "who": "Caribvet13 (App Store review, Chores & Allowance Bot)",
+          "date": "2021-09-28",
+          "quote": "We always failed at allowance because I never kept cash in the house.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=10/id=629797415/sortby=mostrecent/json",
+          "who": "Kcmama1980 (App Store review, Chores & Allowance Bot)",
+          "date": "2021-08-19",
+          "quote": "It helps me stay on top of how much I owe them",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=2/id=629797415/sortby=mostrecent/json",
+          "who": "LuvTinyTunes (App Store review, Chores & Allowance Bot)",
+          "date": "2025-05-27",
+          "quote": "I also use the note feature to track short term loans I give them and if they paid me back or not.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=6448274881/sortby=mostrecent/json",
+          "who": "Amorton1437 (App Store review, Allowance Tracker)",
+          "date": "2023-05-25",
+          "quote": "I don’t always carry cash, so I wanted to track what they earned, what they spend etc.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=6448274881/sortby=mostrecent/json",
+          "who": "ASFW9 (App Store review, Allowance Tracker)",
+          "date": "2023-11-27",
+          "quote": "I wanted an app that was simple and easy to use to make keeping up with allowance easier than carrying around cash all the time.",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Chores & Allowance Bot, Allowance Tracker, GoHenry, Greenlight, BusyKid, spreadsheets.",
+      "risks": "All evidence is App Store reviews. Kids' debit cards are a strong alternative. Kept to cash and balances only, so it doesn't overlap ask-once (chores)."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
