@@ -9462,5 +9462,89 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "clawhammer-banjo-basic-stroke",
+  "offer": "frail-click",
+  "title": "Learning the clawhammer banjo stroke on your own: bum-ditty, step by step",
+  "description": "Break the stroke into its parts, play it slowly against a metronome, keep the hand loose, and add the thumb only when the strike is steady.",
+  "intro": "The basic clawhammer pattern, often called 'bum-ditty', takes most people weeks to feel natural. Slow, short and regular practice gets there.",
+  "sections": [
+   {
+    "h": "The three parts",
+    "list": [
+     "Bum: strike down on one string with the back of your fingernail.",
+     "Ditty: brush down across the strings, then catch the 5th string with your thumb.",
+     "The thumb doesn't pluck so much as rest on the 5th string and release it as the hand comes up."
+    ]
+   },
+   {
+    "h": "Go slow with a metronome",
+    "list": [
+     "Set a slow tempo and play only the pattern on open strings.",
+     "Raise the tempo a little only when it feels even several times in a row."
+    ]
+   },
+   {
+    "h": "Stay loose",
+    "list": [
+     "Let the motion come from a loose wrist and forearm, like shaking water off your hand.",
+     "If you tense up, stop, shake out the hand, and start again slower."
+    ]
+   },
+   {
+    "h": "Record yourself",
+    "list": [
+     "A quick phone recording shows whether the beats are even. It's easier to hear on playback than while playing."
+    ]
+   },
+   {
+    "h": "Move to a tune",
+    "p": [
+     "Once the stroke holds, pick a simple tune and play its melody notes with the same motion. Little and often (10 to 15 minutes a day) beats one long weekly session."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "flute-clear-tone-self-taught",
+  "offer": "clear-tone",
+  "title": "Getting a clear flute tone when you're teaching yourself",
+  "description": "Use long tones, keep the lips relaxed and the air focused, adjust one thing at a time, and write down what worked.",
+  "intro": "A breathy or wobbly tone is the most common early flute problem. It usually comes from small details of lip shape, aim and how the flute sits, not from blowing harder.",
+  "sections": [
+   {
+    "h": "Start with long tones",
+    "list": [
+     "Hold one comfortable low note for a few seconds, rest, and repeat. Listen for when it sounds clearest."
+    ]
+   },
+   {
+    "h": "Change one thing at a time",
+    "list": [
+     "Try a slightly different angle of the flute, or covering a little more or less of the embouchure hole, or aiming the air a little higher or lower.",
+     "Change only one thing per try, so you know what made the difference."
+    ]
+   },
+   {
+    "h": "Relax, don't force",
+    "list": [
+     "Keep your lips and face relaxed and the opening small. Blowing harder usually makes the tone worse.",
+     "Take breaks; if you feel light-headed, stop and breathe normally."
+    ]
+   },
+   {
+    "h": "Use a mirror and a recording",
+    "list": [
+     "A mirror shows your lip shape and where the air goes. A recording lets you hear your tone as others do."
+    ]
+   },
+   {
+    "h": "Keep notes",
+    "p": [
+     "Write down what you changed on the days your tone was good. If you can, a single lesson with a teacher to check your embouchure can save months."
+    ]
+   }
+  ]
  }
 ]

@@ -25192,6 +25192,153 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-22",
+    "slug": "frail-click",
+    "name": "Frail Click",
+    "need": "I'm teaching myself clawhammer banjo, I can't get the basic stroke and thumb timing to click, and there's no teacher near me.",
+    "headline": "Make the clawhammer stroke finally click: short daily drills that listen to your bum-ditty timing and move you on only when it holds steady.",
+    "buyer": "Adults teaching themselves clawhammer (frailing) banjo from books and videos, with no teacher nearby.",
+    "bullets": [
+      "A phone-mic check of your bum-ditty timing and evenness, at a slow tempo first.",
+      "Thumb-on-the-5th-string drills on a slow-to-steady tempo ladder.",
+      "A step-by-step bridge from the bare stroke into your first tune, plus a practice log."
+    ],
+    "price": "$7.99/month",
+    "priceUsd": 8,
+    "priceNote": "Or $59 a year.",
+    "reasonPrompt": "What part of the clawhammer stroke keeps slipping for you?",
+    "faq": [
+      {
+        "q": "Do I need a special banjo?",
+        "a": "No. Any 5-string banjo works, and the drills start at a slow tempo."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Adult learners. It is an independent app, not linked to any banjo forum, course or other app."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-22",
+      "summary": "Self-taught clawhammer players on Banjo Hangout say the stroke is elusive, the thumb won't learn its role, they can't find a teacher, and they put the banjo down frustrated.",
+      "wtp": "Tunefox, which lists clawhammer lessons for starters, charges $14.99 a month or $99.99 a year (855 ratings). nealsotn wrote that they had already 'subscribed to (and given up on) several online courses advertised here on BHO'.",
+      "signals": [
+        {
+          "url": "https://www.banjohangout.org/archive/388973",
+          "who": "Thrasher (Banjo Hangout)",
+          "date": "2023-02-24",
+          "quote": "The thumb is being stubborn in learning its role.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.banjohangout.org/archive/407405",
+          "who": "rifflewader (Banjo Hangout)",
+          "date": "2026-02-19",
+          "quote": "I’ve searched far and wide and cannot find a Clawhammer instructor near me.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.banjohangout.org/archive/404989",
+          "who": "boatymacboat (Banjo Hangout)",
+          "date": "2025-09-06",
+          "quote": "it is a struggle now after 3 weeks, to say the least!!",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.banjohangout.org/topic/409535",
+          "who": "nealsotn (Banjo Hangout)",
+          "date": "2026-07-20",
+          "quote": "I become frustrated, put the banjo down, and walk-away just as I did again this morning...",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.banjohangout.org/archive/393768",
+          "who": "banjobard92 (Banjo Hangout)",
+          "date": "2023-11-03",
+          "quote": "Does anybody have any recommendations on how to move forward without resetting my progress?",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Tunefox, Pocket Lick: Banjo, Banjo Rolls Trainer, online courses, books and video lessons.",
+      "risks": "All evidence is on one site (five threads). No clawhammer-only paid app exists, which may mean a small market. Distinct from uke-unstuck (ukulele)."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-22",
+    "slug": "clear-tone",
+    "name": "Clear Tone",
+    "need": "I'm teaching myself the flute and I can't get a clear, steady tone; my embouchure won't settle and I have no teacher to check it.",
+    "headline": "Stop guessing at your flute embouchure: a tone coach that scores how clear and steady each long note is and remembers what worked on your good days.",
+    "buyer": "Adult self-taught flute players, including Irish wooden and concert flute, in their first months or coming back after a break.",
+    "bullets": [
+      "A clarity and breathiness meter for each held note.",
+      "Short daily long-tone and octave drills with a tone score.",
+      "A mirror mode and a log of which small changes gave you a good-tone day."
+    ],
+    "price": "$6.99/month",
+    "priceUsd": 7,
+    "priceNote": "Or $49 a year.",
+    "reasonPrompt": "What happens to your tone when it goes wrong: breathy, flat, or no sound at all?",
+    "faq": [
+      {
+        "q": "How long are the drills?",
+        "a": "Short. Rest whenever you feel light-headed, and don't force your breath; a clear tone comes from small changes, not blowing harder."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Adult learners. It is an independent app, not linked to any flute maker, forum or other app."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-22",
+      "summary": "Self-taught flute players on Chiff and Fipple say they can't get a clean, consistent sound after weeks of trying, have struggled for years, and can only make soft breathy notes.",
+      "wtp": "tonestro, a flute learning app with 1,089 ratings, sells premium from $17.49 a month and full courses at $103.99 to $149.99.",
+      "signals": [
+        {
+          "url": "https://www.chiffandfipple.com/t/embouchure-question-teeth-placement/106975",
+          "who": "Cyberknight (Chiff and Fipple)",
+          "date": "2024-12-17",
+          "quote": "I simply cannot understand how to get a clean, consistent sound, even after hours and hours of watching videos and trying to imitate people, weeks of daily experimentation, etc.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.chiffandfipple.com/t/introducing-myself/104793",
+          "who": "PB_J (Chiff and Fipple)",
+          "date": "2022-03-22",
+          "quote": "I’ve been struggling seriously with the flute for maybe four years now",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.chiffandfipple.com/t/usa-new-york-new-york-city-teacher-wanted-flute/150046",
+          "who": "mikebramson (Chiff and Fipple)",
+          "date": "2026-05-02",
+          "quote": "the flute is a tricky beast and I want to make sure I’m not reinforcing any bad habits around embouchure, posture, etc.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.chiffandfipple.com/t/finishing-around-embouchure-uncomfortably-rough/150825",
+          "who": "Lou_Ann_Tanner-Jones (Chiff and Fipple)",
+          "date": "2026-10-08",
+          "quote": "I can get very soft breathy notes but nothing very clear/strong.",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "tonestro, Yousician-style apps, video lessons, in-person teachers.",
+      "risks": "All evidence is on one site. The paid app teaches concert flute while most posters play Irish flute. No health claims about breathing."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
