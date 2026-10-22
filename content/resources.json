@@ -8939,5 +8939,83 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "stop-stalling-a-manual-car",
+  "offer": "clutch-calm",
+  "title": "How to stop stalling a manual car: find the bite point, then hill starts in four steps",
+  "description": "Find the bite point on the flat, add a little gas before lifting the clutch, and practise hill starts with the handbrake. Practise only with a qualified supervisor if you're a learner.",
+  "intro": "Most stalls come from lifting the clutch too fast or with too little gas. Practising the bite point slowly makes it automatic.",
+  "sections": [
+   {
+    "h": "Find the bite point",
+    "list": [
+     "On the flat, lift the clutch slowly until the car hums and wants to creep. That's the bite."
+    ]
+   },
+   {
+    "h": "Add a little gas",
+    "list": [
+     "Hold the bite, add gentle gas, then keep lifting the clutch smoothly."
+    ]
+   },
+   {
+    "h": "Hill starts with the handbrake",
+    "list": [
+     "Handbrake on, find the bite, add gas, release the handbrake as the car pulls."
+    ]
+   },
+   {
+    "h": "If you stall",
+    "list": [
+     "Clutch down, neutral, handbrake, restart. Take a breath first."
+    ]
+   },
+   {
+    "h": "Practise in short sessions",
+    "p": [
+     "Quiet roads, a supervisor if you're a learner, and keep taking lessons."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "beat-target-panic-archery",
+  "offer": "pin-settle",
+  "title": "Beat target panic: blank bale, let-downs and a shot process in four steps",
+  "description": "Go back to a blank bale, write a simple shot process, practise letting down when the shot feels wrong, and move closer to the spot only after calm shots.",
+  "intro": "Target panic is common, even among good archers. Taking the target away for a while and rebuilding a calm process usually helps.",
+  "sections": [
+   {
+    "h": "Shoot a blank bale",
+    "list": [
+     "Close range, no aiming spot. Focus only on your process."
+    ]
+   },
+   {
+    "h": "Write your shot process",
+    "list": [
+     "Five or six steps from stance to follow-through, in your own words."
+    ]
+   },
+   {
+    "h": "Let down on purpose",
+    "list": [
+     "If the pin won't settle, let down. Count it as a good rep, not a failure."
+    ]
+   },
+   {
+    "h": "Add the target back slowly",
+    "list": [
+     "Big target first, then the spot, then more distance, only after calm ends."
+    ]
+   },
+   {
+    "h": "Safety first",
+    "p": [
+     "Follow your range's rules, and consider a coach to check your form."
+    ]
+   }
+  ]
  }
 ]

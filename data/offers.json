@@ -24113,6 +24113,174 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-22",
+    "slug": "clutch-calm",
+    "name": "Clutch Calm",
+    "need": "I'm learning to drive a manual car and I keep stalling, especially at roundabouts, junctions and on hills.",
+    "headline": "Keep stalling a manual car at junctions and on hills? Log each stall, practise the bite point in small steps, and follow a hill-start ladder until it's calm.",
+    "buyer": "Adults 18+ learning to drive a manual car who keep stalling, especially on hills and at junctions.",
+    "bullets": [
+      "A one-tap stall log by situation: pulling away, hill, roundabout, junction, reversing.",
+      "Bite-point drills in small steps and a hill-start ladder with cue cards.",
+      "A 20-second calm-down routine after a stall, and 15-minute practice plans."
+    ],
+    "price": "$3.99/month",
+    "priceUsd": 4,
+    "priceNote": "Or $24.99 a year.",
+    "reasonPrompt": "Where do you stall most, and how many lessons have you had so far?",
+    "faq": [
+      {
+        "q": "Does it replace driving lessons?",
+        "a": "No. Practise only where it's legal and safe, with a qualified supervisor if you're a learner, and keep taking lessons."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Adults 18+. It is an independent app, not linked to any driving school, testing body or car maker."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-22",
+      "summary": "Learners on Mumsnet (2019) and AnandTech (2002) say they keep stalling at roundabouts, junctions and on hills, especially when flustered.",
+      "wtp": "Cuppa12345 took 60 hours of lessons. Coastline Academy sells stick-shift lessons at $219 for 2 hours and $629 for 6.",
+      "signals": [
+        {
+          "url": "https://www.mumsnet.com/talk/_chat/3590636-Why-oh-why-do-I-keep-flipping-stalling-my-car",
+          "who": "Cuppa12345 (Mumsnet)",
+          "date": "2019-05-20",
+          "quote": "keep stalling the thing at massive roundabouts, at junctions, at lights on hills",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/_chat/3590636-Why-oh-why-do-I-keep-flipping-stalling-my-car",
+          "who": "Cuppa12345 (Mumsnet)",
+          "date": "2019-05-20",
+          "quote": "took 60 hours or lessons in all",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/_chat/3590636-Why-oh-why-do-I-keep-flipping-stalling-my-car",
+          "who": "VaselineOnToast (Mumsnet)",
+          "date": "2019-05-20",
+          "quote": "I stall sometimes when I feel flustered",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/_chat/3590636-Why-oh-why-do-I-keep-flipping-stalling-my-car",
+          "who": "ReleaseTheBats (Mumsnet)",
+          "date": "2019-05-20",
+          "quote": "I did this for months stalling all round the place until I realised.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.anandtech.com/threads/learning-to-drive-a-standard.787570/",
+          "who": "Spooner (AnandTech)",
+          "date": "2002-04-22",
+          "quote": "I know I've stalled on hills a bunch already",
+          "seen": "opened"
+        },
+        {
+          "url": "https://coastlineacademy.com/ca/stick-shift-driving-lessons-in-los-angeles",
+          "who": "Coastline Academy stick-shift lessons page",
+          "date": "2026-10-22",
+          "quote": "1 Lesson – 2 Hours – $219 ... 3 Lessons – 6 Hours – $629",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Driving lessons, YouTube, stall-practice games.",
+      "risks": "Old posts; no rated paid app. Must not encourage unsupervised driving."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-22",
+    "slug": "pin-settle",
+    "name": "Pin Settle",
+    "need": "I have target panic. When I draw back I can't keep my pin on the bullseye, it floats around, and I punch or freeze on the shot.",
+    "headline": "Target panic wrecking your archery? Build a shot process in your own steps, climb from blank bale to the spot, and count every calm let-down as a win.",
+    "buyer": "Adult archers 18+ (target or hunting) with target panic: punching, flinching or freezing as the pin nears the spot.",
+    "bullets": [
+      "A shot-process card written in your own steps.",
+      "A step ladder (blank bale, big target, spot, distance) that moves up only after calm shots.",
+      "A one-tap log per end (settled, punched, froze, let down) with a weekly trend by distance."
+    ],
+    "price": "$4.99/month",
+    "priceUsd": 5,
+    "priceNote": "Or $34.99 a year.",
+    "reasonPrompt": "What does your target panic look like, and at what distance is it worst?",
+    "faq": [
+      {
+        "q": "Is it coaching?",
+        "a": "It's a practice plan and log to use alongside a coach or club. Always follow your range's safety rules."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Adults 18+. It is an independent app, not linked to any archery coach, course, club or equipment brand."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-22",
+      "summary": "Archers on HuntTalk (2015) and Bowhunting.com (2011) describe target panic: the pin floats around the bullseye, they freeze, and close distances are worst.",
+      "wtp": "Controlled Process Shooting, an online target-panic course: 'Enroll in Course for $247'. 07Tiger was about to buy a thumb-trigger release to fix it.",
+      "signals": [
+        {
+          "url": "https://www.hunttalk.com/threads/target-panic.262990/",
+          "who": "kad1429 (HuntTalk)",
+          "date": "2015-03-25",
+          "quote": "20 yards is killing me but 40-80 yards I'm shooting as good as ever",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.hunttalk.com/threads/target-panic.262990/",
+          "who": "kad1429 (HuntTalk)",
+          "date": "2015-03-25",
+          "quote": "I just can't seem to keep my pin on the bulls eye it floats all around it",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.hunttalk.com/threads/target-panic.262990/",
+          "who": "TimeOnTarget (HuntTalk)",
+          "date": "2015-03-25",
+          "quote": "I've got the same issue.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.bowhunting.com/threads/shooting-help.22832/",
+          "who": "07Tiger (Bowhunting.com)",
+          "date": "2011-07-14",
+          "quote": "I seem to have what everyone on here calls target panic.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.bowhunting.com/threads/shooting-help.22832/",
+          "who": "07Tiger (Bowhunting.com)",
+          "date": "2011-07-14",
+          "quote": "I'm looking at buying a thumb trigger release and trying that.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://thepusharchery.teachable.com/p/controlled-process-shooting1",
+          "who": "Controlled Process Shooting course page",
+          "date": "2026-10-22",
+          "quote": "Enroll in Course for $247",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Target-panic courses and clinics, coaches, back-tension releases.",
+      "risks": "Older posts; no rated paid app."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
