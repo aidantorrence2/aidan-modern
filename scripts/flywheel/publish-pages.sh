@@ -17,7 +17,7 @@ cd "$WT"
 git add -A
 if git commit -q -m "Publish offer pages $(date -u +%Y-%m-%dT%H:%MZ)
 
-Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>
+Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
 Claude-Session: https://claude.ai/code/session_01BE2vZDoxcNhjCqKZNiesJS"; then
   git push -q -u origin gh-pages
   echo "published to gh-pages"
