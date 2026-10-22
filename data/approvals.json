@@ -2507,8 +2507,8 @@
       "summary": "One batch,20verified business recipients. Sell a narrow AI-assisted follow-up drafting service;4retained monthly clients=$1000MRR goal. Exact paid offer and emails; no charges, onboarding or website deployment.",
       "created": "2026-10-20T18:24:20Z",
       "expires": "2026-10-23T18:24:20Z",
-      "status": "pending",
-      "decided": null,
+      "status": "denied",
+      "decided": "2026-10-22T00:26:09Z",
       "note": "",
       "payload": {
         "project_id": "appgprj_6ad56c0398f4819187d2d7870ae70ac4",
