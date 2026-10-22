@@ -54,8 +54,7 @@ def print_(base, path, cx, cy, w, h, rot=0, border=14, focus=0.35):
     base.alpha_composite(sh, (cx - sh.width // 2, cy - sh.height // 2))
     base.alpha_composite(ph, (cx - ph.width // 2, cy - ph.height // 2))
 
-COPY = [("about me", 50, *B_, 0, 0),
-        ("hi, i’m aidan", 112, *W_, 0, 0),
+COPY = [("hi, i’m aidan", 112, *W_, 0, 0),
         ("for the past 3 years i’ve been", 46, *B_, 0, 0),
         ("traveling and taking portraits.", 46, *B_, 0, 0),
         ("now i’m in charlotte.", 62, *W_, 0, 0)]
@@ -83,7 +82,7 @@ def v03(base):
     print_(base, ME, 290, 420, *ME_SZ1, rot=-3, focus=ME_FOCUS)
     print_(base, WORK["w15"], 860, 300, 260, 350, rot=5, focus=0.3)
     print_(base, WORK["w16"], 880, 720, 260, 350, rot=-4, focus=0.35)
-    stack(base, tilt(COPY, [2] * 5, [0, 0, 0, 0, 0]), 800, align="left", x0=70)
+    stack(base, tilt(COPY, [2] * 4, [0, 0, 0, 0]), 840, align="left", x0=70)
     print_(base, WORK["w17"], 300, 1630, 380, 480, rot=3, focus=0.3)
     print_(base, WORK["w18"], 750, 1640, 380, 480, rot=-3, focus=0.3)
 
