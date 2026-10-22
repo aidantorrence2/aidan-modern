@@ -3061,6 +3061,40 @@
       "status": "approved",
       "decided": "2026-10-22T00:34:41Z",
       "note": ""
+    },
+    {
+      "id": "other:pair-the-motorola-with-this-mac-over-wi--202610220052",
+      "kind": "other",
+      "source": "codex:aidan-modern",
+      "title": "Pair the Motorola with this Mac over Wi-Fi",
+      "summary": "USB is still not detected. On Motorola, enable Wireless debugging and open Pair device with pairing code. Enter its IP:port and six-digit code in this card’s note, keep the dialog open, then approve. Exact steps are inside.",
+      "payload": {
+        "device": "New Motorola moto g power 5G - 2024, serial ZD222RQ6F4",
+        "purpose": "Restore an authorized connection to the new phone without the USB cable, so the previously approved phone transfer can continue.",
+        "security_change": "Enable Android Wireless debugging on the existing home Wi-Fi, and pair only this Mac using Android authenticated TLS debugging. No new third-party service, app install, or global Mac accessory-policy change.",
+        "steps_on_motorola": [
+          "Keep the Motorola unlocked and connected to the same home Wi-Fi as this Mac.",
+          "Open Settings > System > Developer options > Wireless debugging.",
+          "Turn Wireless debugging on. Allow the current Wi-Fi network if prompted.",
+          "Tap Pair device with pairing code.",
+          "In this approval card note, enter the IP address:port and six-digit pairing code displayed on the phone, for example 192.168.1.60:37123 code 123456. Use the actual values on your phone.",
+          "Keep that pairing-code dialog open and approve this card. The code is temporary and expires when the dialog closes."
+        ],
+        "agent_action": "Discover the Motorola pairing endpoint, run adb pair using only the supplied code, verify the serial is ZD222RQ6F4, then continue the approved additive transfer and blocker restoration.",
+        "cleanup": "After the transfer, disable Wireless debugging on the Motorola and disable the old Redmi temporary TCP debugging endpoint.",
+        "usb_troubleshooting_completed": [
+          "macOS USB hardware inventory shows no connected USB device",
+          "ADB server restarted with SDK build 37.0.1",
+          "Mac is unlocked",
+          "Mac accessory policy is Ask for new accessories; no approval dialog visible",
+          "Old Redmi remains reachable at 192.168.1.27:5555"
+        ]
+      },
+      "created": "2026-10-22T00:52:45Z",
+      "expires": "2026-10-22T02:52:45Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
     }
   ]
 }
