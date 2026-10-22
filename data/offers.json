@@ -25339,6 +25339,90 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-22",
+    "slug": "steady-hairline",
+    "name": "Steady Hairline",
+    "need": "I'm learning calligraphy and my thin upstrokes and hairlines come out shaky and wobbly.",
+    "headline": "Steadier upstrokes in a few minutes a day: short warm-ups, speed and pressure drills, and a weekly side-by-side of your hairlines.",
+    "buyer": "Adults learning pointed-pen or brush calligraphy whose upstrokes and hairlines wobble.",
+    "bullets": [
+      "A 5-minute warm-up before you letter: loose ovals, entrance strokes and long hairlines.",
+      "Speed and pressure drills: find the pace where your upstroke is smooth, not crawling or rushed.",
+      "Photo your practice sheet each week and see your hairlines side by side, with grip and posture checks."
+    ],
+    "price": "$3.99/month",
+    "priceUsd": 4,
+    "priceNote": "Or $24.99 a year.",
+    "reasonPrompt": "Which strokes wobble most for you: upstrokes, ovals, or long hairlines?",
+    "faq": [
+      {
+        "q": "What if my hands shake in daily life too?",
+        "a": "This app is for the common wobble of learning calligraphy. If your hands shake at other times, or it's new or getting worse, talk to a doctor."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Adult learners. It is an independent app, not linked to any calligraphy forum, teacher, pen maker or other app."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-22",
+      "summary": "Calligraphy learners on The Flourish Forum say their hands shake on upstrokes and their lines go wobbly when they write slowly, and an experienced brush letterer says she still gets shaky after a year.",
+      "wtp": "Calligraphy: Cursive Writing sells subscriptions from $1.99 a week to $7.99 a month on the App Store, and Writey, a handwriting practice app with 12K ratings, charges $3.99 a month to $39.99 lifetime.",
+      "signals": [
+        {
+          "url": "https://theflourishforum.com/forum/index.php?topic=2882.0",
+          "who": "quietsara (The Flourish Forum)",
+          "date": "2015-05-15",
+          "quote": "I have rather shaky hands in general and as such I get wobbly lines when I write.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://theflourishforum.com/forum/index.php?topic=2882.0",
+          "who": "aliceedang (The Flourish Forum)",
+          "date": "2015-05-15",
+          "quote": "I still have shaky hands when doing upstrokes.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://theflourishforum.com/forum/index.php?topic=2882.0",
+          "who": "garyn (The Flourish Forum)",
+          "date": "2015-05-15",
+          "quote": "I find that when I write S-L-O-W, my lines are wobbly.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://theflourishforum.com/forum/index.php?topic=2882.0",
+          "who": "Sandeeee (The Flourish Forum)",
+          "date": "2015-05-15",
+          "quote": "I have the same problem! I have really shaky hands",
+          "seen": "opened"
+        },
+        {
+          "url": "https://theflourishforum.com/forum/index.php?topic=2882.0",
+          "who": "Starlee (The Flourish Forum)",
+          "date": "2015-05-16",
+          "quote": "When I first started, shakiness plagued me like, well, the plague.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://piecescalligraphy.com/2016/01/31/how-to-improve-thin-upstrokes/",
+          "who": "Pieces Calligraphy (blog author)",
+          "date": "2016-01-31",
+          "quote": "To this day (after over a year of brush calligraphy experience), I still find myself shaky every so often.",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Practice worksheets, online calligraphy courses, Calligraphy: Cursive Writing, handwriting apps, local workshops.",
+      "risks": "Posts are old (2015-2016), and most are from one thread. The paid apps have few ratings or are about handwriting. Distinct from neat-again (messy everyday handwriting)."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

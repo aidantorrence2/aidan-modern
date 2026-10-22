@@ -9546,5 +9546,46 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "steady-shaky-calligraphy-upstrokes",
+  "offer": "steady-hairline",
+  "title": "Why your calligraphy upstrokes are shaky, and how to steady them",
+  "description": "Loosen your grip, find the right speed, warm up first, use smoother paper, and let practice do the rest.",
+  "intro": "Shaky thin strokes are one of the most common problems for new calligraphers. Most of the fixes are about tension, speed and setup.",
+  "sections": [
+   {
+    "h": "Loosen your grip",
+    "list": [
+     "A tight grip passes every small tremor into the line. Hold the pen just firmly enough to control it.",
+     "Shake out your hand every few minutes."
+    ]
+   },
+   {
+    "h": "Find your speed",
+    "list": [
+     "Rushing makes strokes wobble, but crawling does too. Try a few speeds and see where the line is smoothest."
+    ]
+   },
+   {
+    "h": "Warm up first",
+    "list": [
+     "Spend 5 to 10 minutes on ovals, loops and long thin strokes before you write words."
+    ]
+   },
+   {
+    "h": "Check your setup",
+    "list": [
+     "Smooth paper, a firmer or smaller brush pen, and a steady arm resting on the table all help.",
+     "Move from the arm and shoulder for long strokes, not just the fingers."
+    ]
+   },
+   {
+    "h": "Give it time",
+    "p": [
+     "Steadiness improves with regular short practice. A slightly thicker smooth upstroke looks better than a very thin shaky one. If your hands shake at other times too, or it's getting worse, talk to a doctor."
+    ]
+   }
+  ]
  }
 ]
