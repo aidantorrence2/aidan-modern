@@ -27020,6 +27020,167 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-22",
+    "slug": "name-truce",
+    "name": "Name Truce",
+    "need": "My partner and I can't agree on a name for our baby, and every list we make ends in a stalemate.",
+    "headline": "Find the baby name you both say yes to: private rankings, fair vetoes and short head-to-head rounds turn two different lists into one.",
+    "buyer": "Expecting couples and adoptive parents who disagree on baby names.",
+    "bullets": [
+      "Each partner ranks names privately, so nobody is swayed.",
+      "A fixed number of no-questions-asked vetoes each, then head-to-head rounds down to one.",
+      "Hear the full name with your surname and siblings' names, and get new names in the style you both like."
+    ],
+    "price": "$4.99/month",
+    "priceUsd": 5,
+    "priceNote": "Or a one-off $19.99, since most couples only need it for a few months.",
+    "reasonPrompt": "How far apart are your lists right now?",
+    "faq": [
+      {
+        "q": "Can my partner see my rankings?",
+        "a": "No. Rankings stay private; you only see the names you both rate highly."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Parents-to-be. It is an independent app, not linked to any baby-name site or other app."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-22",
+      "summary": "Parents-to-be on Hellobee and in baby-name app reviews say they can't agree, have stalled, are at a standstill, and have very different name tastes.",
+      "wtp": "Couples pay for help: BabyName - find it together (21K App Store ratings) sells upgrades from $2.99 to $7.99, and Kinder (2K ratings) sells name sets up to $4.99.",
+      "signals": [
+        {
+          "url": "https://boards.hellobee.com/topic/did-you-have-trouble-coming-up-with-names",
+          "who": "looch (Hellobee)",
+          "date": "2011-10-10",
+          "quote": "We had no problem coming up with names, but we had a difficult time agreeing on which ones we liked.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://boards.hellobee.com/topic/did-you-have-trouble-coming-up-with-names",
+          "who": "MegWag (Hellobee)",
+          "date": "2012-01-08",
+          "quote": "We've stalled out and can't seem to find a boy name that we both go",
+          "seen": "opened"
+        },
+        {
+          "url": "https://boards.hellobee.com/topic/did-you-have-trouble-coming-up-with-names",
+          "who": "pastemoo (Hellobee)",
+          "date": "2012-01-08",
+          "quote": "hubby has only one name he likes and I don't like it,so--we're at a standstill.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=6/id=950562312/sortby=mostrecent/json",
+          "who": "Uknowimt3llingthetruth (App Store review, BabyName)",
+          "date": "2025-04-17",
+          "quote": "My husband and I have been trying hard to find a name for our little one but just can’t agree",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=7/id=950562312/sortby=mostrecent/json",
+          "who": "Kicking abs (App Store review, BabyName)",
+          "date": "2024-11-14",
+          "quote": "My husband and I really struggled to agree on names.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=6/id=950562312/sortby=mostrecent/json",
+          "who": "Ren7211 (App Store review, BabyName)",
+          "date": "2025-08-01",
+          "quote": "my husband and I had vastly different name tastes",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "BabyName - find it together, Kinder, Baby Names by BabyCenter, Nameberry, name books.",
+      "risks": "Crowded market of cheap swipe apps; the angle is settling a disagreement. Low willingness to pay per purchase. The need lasts months."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-22",
+    "slug": "firsts-kept",
+    "name": "Firsts Kept",
+    "need": "I want to record my baby's firsts and little moments, but I never fill in the baby book and I'm already behind.",
+    "headline": "Your child's baby book, kept in 30 seconds a day: one small prompt, reply with a sentence or a photo, and never have to catch up.",
+    "buyer": "Parents of babies and young children who feel guilty about the empty baby book.",
+    "bullets": [
+      "One short daily prompt matched to your child's age.",
+      "Reply with a sentence, voice note or photo; dates fill in from photo timestamps when you fall behind.",
+      "Partners and grandparents can add memories, and you can export a print-ready year book."
+    ],
+    "price": "$4.99/month",
+    "priceUsd": 5,
+    "priceNote": "Or $39.99 a year.",
+    "reasonPrompt": "How old is your child, and how far behind is the baby book?",
+    "faq": [
+      {
+        "q": "Who can see my child's photos?",
+        "a": "Only the people you invite. Nothing is public, and you can export or delete everything at any time."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Parents and carers. It is an independent app, not linked to any baby-book brand or other app."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-22",
+      "summary": "Parents say they were given a baby book but haven't written anything in it, feel guilty about not documenting their kids, and have had it on their to-do list for years.",
+      "wtp": "Parents pay for this: Qeepsake (15K App Store ratings) charges $4.99 to $9.99 a month or up to $95.99 a year.",
+      "signals": [
+        {
+          "url": "https://boards.hellobee.com/topic/make-your-own-baby-book",
+          "who": "MaisyMay (Hellobee)",
+          "date": "2013-01-03",
+          "quote": "We have a baby book we were given, but haven't written anything in it.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.hellobee.com/2013/03/18/making-a-homemade-baby-book/",
+          "who": "LaurelMae (Hellobee blog comment)",
+          "date": "2013-03-25",
+          "quote": "I have a scrapbook too, instead of a typical baby book, but I have yet to begin filling it out and LO is 4.5 months old.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=3/id=1332312787/sortby=mostrecent/json",
+          "who": "Bassy 3 (App Store review, Qeepsake)",
+          "date": "2024-02-14",
+          "quote": "I’ve never been great at making time and space for baby books and scrap booking.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=4/id=1332312787/sortby=mostrecent/json",
+          "who": "E-Strobes (App Store review, Qeepsake)",
+          "date": "2022-02-22",
+          "quote": "I had so much guilt and anxiety with not having time to document my kids",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=2/id=1332312787/sortby=mostrecent/json",
+          "who": "Happyparenter (App Store review, Qeepsake)",
+          "date": "2025-08-30",
+          "quote": "It’s been on my to-do list for years, but I never got around to it",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Qeepsake, The Short Years, BabyPage, photo-book services, paper baby books.",
+      "risks": "Crowded, well-funded market; Qeepsake already sends text prompts. Children's photos and data need careful privacy handling."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

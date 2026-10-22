@@ -10445,5 +10445,83 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "agree-on-baby-name-with-partner",
+  "offer": "name-truce",
+  "title": "How to agree on a baby name when you and your partner can't",
+  "description": "Make separate lists, give each other a few vetoes, find the style you share, and say the full name out loud before you decide.",
+  "intro": "Disagreeing on names is very common. A simple, fair process usually gets you to a name you both like.",
+  "sections": [
+   {
+    "h": "Make separate lists first",
+    "list": [
+     "Each write a list on your own, so neither of you is swayed. Then compare."
+    ]
+   },
+   {
+    "h": "Give each other vetoes",
+    "list": [
+     "Agree that either of you can veto a few names without explaining. It takes the heat out of the conversation."
+    ]
+   },
+   {
+    "h": "Find your shared style",
+    "list": [
+     "Look at the names you each like: classic, short, unusual, family names? Search for more names in the style you overlap on."
+    ]
+   },
+   {
+    "h": "Say it out loud",
+    "list": [
+     "Try the full name with your surname, any middle name and siblings' names. Check the initials too."
+    ]
+   },
+   {
+    "h": "Live with the shortlist",
+    "p": [
+     "Pick two or three favourites and use them for a week or two. Often one starts to feel right. Many couples also wait to meet the baby before deciding."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "keep-a-baby-book-when-behind",
+  "offer": "firsts-kept",
+  "title": "Keeping a baby book when you're already behind",
+  "description": "Start from today, write one line at a time, use your phone's photos to fill gaps, and share the job.",
+  "intro": "Most baby books stay half empty. You don't need to catch up perfectly; small, regular notes add up.",
+  "sections": [
+   {
+    "h": "Start from today",
+    "list": [
+     "Don't try to fill in everything you missed first. Write today's line and go back later if you want."
+    ]
+   },
+   {
+    "h": "One line is enough",
+    "list": [
+     "A sentence about something they did or said is more valuable than a blank page waiting for a perfect entry."
+    ]
+   },
+   {
+    "h": "Use your photos",
+    "list": [
+     "Your phone's photos have dates. Scroll back by month and note the firsts you can see."
+    ]
+   },
+   {
+    "h": "Share the job",
+    "list": [
+     "Let a partner or grandparent add memories too. They'll remember things you don't."
+    ]
+   },
+   {
+    "h": "Keep it safe",
+    "p": [
+     "Back up what you write and the photos you choose, and be careful about posting children's photos publicly."
+    ]
+   }
+  ]
  }
 ]
