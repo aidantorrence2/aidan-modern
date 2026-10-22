@@ -27479,6 +27479,157 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-22",
+    "slug": "refund-route",
+    "name": "Refund Route",
+    "need": "I bought something that turned out faulty, and the shop or maker keeps refusing, stalling or passing me around, and I don't know what I'm entitled to.",
+    "headline": "Faulty product and the shop keeps refusing? Get a plain read on your likely rights, a dated letter, and a plan for when they stall.",
+    "buyer": "Adults (UK first, with a general guide elsewhere) who bought a faulty product and are being refused, passed around or offered less than a refund.",
+    "bullets": [
+      "A rights check by purchase date and fault, based on the UK Consumer Rights Act timelines.",
+      "Ready-to-edit complaint and final-response letters with your details, and an evidence log for receipts, photos and chats.",
+      "Deadline reminders to chase or escalate, and a next-step guide to chargebacks, ombudsmen or small claims."
+    ],
+    "price": "$4.99/month",
+    "priceUsd": 5,
+    "priceNote": "Or $29 a year.",
+    "reasonPrompt": "What broke, how long after you bought it, and what has the shop said?",
+    "faq": [
+      {
+        "q": "Is this legal advice?",
+        "a": "No. It's general information and letter templates to help you claim yourself. It can't promise a refund; for complex cases, get independent advice."
+      },
+      {
+        "q": "Does it contact the shop for me?",
+        "a": "No. It prepares letters and reminders. You decide what to send and send it yourself."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Adult consumers. It is an independent app, not linked to any retailer, manufacturer or legal service."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-22",
+      "summary": "Shoppers on MoneySavingExpert and the Straight Dope say they keep getting passed between departments, were told nothing could be done after the warranty, and don't know how to insist on a refund.",
+      "wtp": "People pay for help with this: DoNotPay sells a $35.99 subscription (7.6K App Store ratings), and Which? Legal charges £9 a month or £99 a year for consumer law advice including faulty goods.",
+      "signals": [
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/6687545/refund-not-repair",
+          "who": "kaffmac (MoneySavingExpert)",
+          "date": "2026-10-21",
+          "quote": "With the change in the law how do I go about stating I want a refund not another repair on the furniture.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/6687687/apple-refusing-consumer-rights-act-claim-refurbished-iphone-13-failed-after-2-5-years-any-advice",
+          "who": "florance (MoneySavingExpert)",
+          "date": "2026-10-22",
+          "quote": "keep getting passed between departments",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/6684559/return-of-faulty-speaker",
+          "who": "NeillB (MoneySavingExpert)",
+          "date": "2026-09-25",
+          "quote": "how hard it would be to go via the small claims court if needs be?",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/6686816/consumer-rights-post-warranty-design-flaw-ninja-airfryer-multicooker",
+          "who": "monochrome_mum (MoneySavingExpert)",
+          "date": "2026-10-15",
+          "quote": "basically said as warranty expired they could do nothing",
+          "seen": "opened"
+        },
+        {
+          "url": "https://boards.straightdope.com/t/handling-an-amazon-refund-issue/1020749/36",
+          "who": "MacDoc (Straight Dope)",
+          "date": "2025-07-22",
+          "quote": "Flat out refusal and somewhat rudely",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Which? Legal, DoNotPay, Citizens Advice (free), resolution sites, small claims courts.",
+      "risks": "Most evidence is UK. Some quotes are short fragments. Legal rules differ by country; not legal advice."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-22",
+    "slug": "coin-ledger",
+    "name": "Coin Ledger",
+    "need": "I've inherited or built up a pile of coins and can't sort, count or catalogue them, or see what's missing from a set.",
+    "headline": "Turn a jar of coins into a collection you can see: log them in bulk, see which sets are complete and what's missing, and keep your own grades and notes.",
+    "buyer": "Adults who inherited a parent's or grandparent's coins, and casual collectors with hundreds or thousands of coins.",
+    "bullets": [
+      "Bulk entry: one coin type with a quantity, so you don't scan every coin.",
+      "Set checklists by year and mint that show the gaps, including UK sets.",
+      "Your own grades, certificates and notes, totals by country, metal or box, and a sort-a-jar mode for inherited lots."
+    ],
+    "price": "$3.99/month",
+    "priceUsd": 4,
+    "priceNote": "Or $24 a year.",
+    "reasonPrompt": "Roughly how many coins do you have, and where are they from?",
+    "faq": [
+      {
+        "q": "Will it tell me what my coins are worth?",
+        "a": "No. It helps you sort and catalogue. For values, ask a reputable dealer or grading service."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Collectors and families sorting inherited coins. It is an independent app, not linked to any coin identifier, grading service or dealer."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-22",
+      "summary": "Collectors and families say they have thousands of coins they don't want to scan one by one, can't sort or classify them, see gaps in the collection, and are sorting jar after jar.",
+      "wtp": "CoinSnap (308K App Store ratings) sells Premium up to $39.99, and reviewer BobbieDF wrote 'I’m gonna have no problem paying for it.'",
+      "signals": [
+        {
+          "url": "https://boards.straightdope.com/t/1012063/3",
+          "who": "aceplace57 (Straight Dope)",
+          "date": "2024-12-23",
+          "quote": "I look at the gaps in the collection now and shake my head.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/gb/rss/customerreviews/page=3/id=1634551626/sortby=mostrecent/json",
+          "who": "Kïly (App Store UK review, CoinSnap)",
+          "date": "2023-08-07",
+          "quote": "I’ve got about 3000 different coins and I don’t want to scan every single one on to this app one by",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/gb/rss/customerreviews/page=4/id=1634551626/sortby=mostrecent/json",
+          "who": "Ashdowners (App Store UK review, CoinSnap)",
+          "date": "2023-02-19",
+          "quote": "I can’t sort them, classify them, value them (as a collection or by type) or manage them in any meaningful way.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=4/id=1634551626/sortby=mostrecent/json",
+          "who": "BJES99 (App Store review, CoinSnap)",
+          "date": "2026-08-14",
+          "quote": "I found jar after jar after jar of coins that my cousin and I are sorting through now.",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "CoinSnap, PCGS CoinFacts, Numista, spreadsheets.",
+      "risks": "Very strong competition. Hobby-adjacent. No value or selling promises, to stay distinct from pile-pricer."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

@@ -10684,5 +10684,86 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "faulty-product-refund-uk",
+  "offer": "refund-route",
+  "title": "Faulty product and the shop won't help? Your next steps (UK)",
+  "description": "Know the Consumer Rights Act timelines, complain to the retailer in writing, keep evidence, and escalate if they stall.",
+  "intro": "In the UK, your contract for goods is with the retailer, not the manufacturer. This is general information, not legal advice.",
+  "sections": [
+   {
+    "h": "Know the timelines",
+    "list": [
+     "Within 30 days of getting the item, you can usually reject a faulty item for a full refund.",
+     "Within 6 months, a fault is generally assumed to have been there from the start; the retailer usually gets one chance to repair or replace, and if that fails you can ask for a refund.",
+     "After 6 months you may still have a claim, but you may need to show the fault was there from the start. Claims can be made up to 6 years later in England, Wales and Northern Ireland (5 in Scotland)."
+    ]
+   },
+   {
+    "h": "Complain to the retailer in writing",
+    "list": [
+     "Say what's wrong, when you bought it, what you want (refund, repair or replacement), and give a deadline to reply."
+    ]
+   },
+   {
+    "h": "Keep evidence",
+    "list": [
+     "Receipts, photos or videos of the fault, and a dated record of every call and message."
+    ]
+   },
+   {
+    "h": "Escalate if they stall",
+    "list": [
+     "If you paid by card, ask your card provider about a chargeback. For credit card purchases between £100 and £30,000, Section 75 may apply.",
+     "Some sectors have an ombudsman or dispute scheme. Small claims court is the last step."
+    ]
+   },
+   {
+    "h": "Get free advice",
+    "p": [
+     "Citizens Advice can help with consumer problems for free."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "sort-inherited-coin-collection",
+  "offer": "coin-ledger",
+  "title": "How to sort an inherited coin collection",
+  "description": "Don't clean anything, sort by country and denomination first, then by year, record what you have, and look up sets before thinking about value.",
+  "intro": "A jar or box of inherited coins can feel overwhelming. A simple order of work makes it manageable.",
+  "sections": [
+   {
+    "h": "Don't clean them",
+    "list": [
+     "Cleaning can damage coins and reduce their value. Handle them by the edges."
+    ]
+   },
+   {
+    "h": "Sort in rough piles first",
+    "list": [
+     "Country first, then denomination. Set aside anything in holders, folders or with paperwork."
+    ]
+   },
+   {
+    "h": "Then sort by year and mint",
+    "list": [
+     "Within each denomination, sort by date and any mint mark."
+    ]
+   },
+   {
+    "h": "Record what you have",
+    "list": [
+     "A simple list of type, year, mint, quantity and any notes or certificates. Count in bulk where coins are the same."
+    ]
+   },
+   {
+    "h": "Check sets, then value",
+    "p": [
+     "Compare against a set checklist to see what's complete. For anything that might be valuable, ask a reputable dealer or grading service before selling."
+    ]
+   }
+  ]
  }
 ]
