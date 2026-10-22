@@ -23908,6 +23908,105 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-22",
+    "slug": "article-lock",
+    "name": "Article Lock",
+    "need": "I'm learning German and I cannot remember whether a noun is der, die or das, no matter how many times I drill it.",
+    "headline": "Stop guessing der, die or das. Five minutes a day on the German nouns you personally keep getting wrong, plus the ending patterns that let you guess the rest right.",
+    "buyer": "Adult German learners 18+ who know plenty of vocabulary but keep getting der, die and das wrong.",
+    "bullets": [
+      "Learns which nouns you personally get wrong and brings only those back, spaced out until they stick",
+      "Teaches the ending patterns (-ung, -heit, -keit, -chen and more) so you can guess unseen nouns correctly most of the time",
+      "Add nouns from your own course, emails or reading in one tap, and see the article, plural and an example sentence for each"
+    ],
+    "price": "$3.99/month",
+    "priceUsd": 4,
+    "priceNote": "One plan, every feature.",
+    "reasonPrompt": "What was the last German noun whose gender tripped you up, and where did it happen (class, an email, a conversation)?",
+    "faq": [
+      {
+        "q": "Who is Article Lock for?",
+        "a": "Adults 18+ learning German who keep mixing up der, die and das. It is an independent app and is not affiliated with any language school, exam board or other app."
+      },
+      {
+        "q": "Is this a full German course?",
+        "a": "No. It does one job: getting noun genders (and the plurals that go with them) to stick. Use it alongside whatever course or teacher you already have."
+      },
+      {
+        "q": "Will it guarantee I pass a German exam?",
+        "a": "No. It helps with one common weak spot, noun gender, but it makes no promise about exam results."
+      },
+      {
+        "q": "Can I add my own words?",
+        "a": "Yes. Type or paste a noun from your course book, a work email or something you read, and it joins your practice set with its article, plural and an example sentence."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-22",
+      "summary": "Adults learning German say in their own words that they cannot make noun genders stick even after years of classes: on Straight Dope, three posters in a thread about what made them give up on a language name German noun genders, and on Hacker News two different commenters, one in August 2026, say they could never memorize or get der/die/das to stick.",
+      "wtp": "Der Die Das Deutsch Lernen (App Store): $2.99, 987 ratings. Der Die Das by Lubos Mikusiak: 1.5K ratings with a paid in-app purchase.",
+      "signals": [
+        {
+          "url": "https://news.ycombinator.com/item?id=49480238",
+          "who": "cj (Hacker News)",
+          "date": "2026-08-28",
+          "quote": "Learning German, I could not memorize correct usage of der/die/das for the life of me",
+          "seen": "opened"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=13413157",
+          "who": "PaulHoule (Hacker News)",
+          "date": "2017-01-16",
+          "quote": "I took three years of German in high school and a semester in college. I could never get the der/die/das stuff to stick.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://boards.straightdope.com/t/foreign-languages-the-wtf-moment-that-made-you-throw-in-the-towel/754312/4",
+          "who": "spamforbrains (Straight Dope Message Board)",
+          "date": "2016-05-08",
+          "quote": "The fact that all nouns have gender in German drove me out of mind. The gender of the nouns doesn’t even make sense.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://boards.straightdope.com/t/foreign-languages-the-wtf-moment-that-made-you-throw-in-the-towel/754312/11",
+          "who": "ekedolphin (Straight Dope Message Board)",
+          "date": "2016-05-08",
+          "quote": "Chalk up another point for gendered nouns in German! GOD, those drove me insane.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://boards.straightdope.com/t/foreign-languages-the-wtf-moment-that-made-you-throw-in-the-towel/754312/84",
+          "who": "robby (Straight Dope Message Board)",
+          "date": "2016-05-10",
+          "quote": "I took two years of German in high school, and a third year in college, and I completely agree. It’s not just the gender of the nouns that drove me nuts",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/der-die-das-deutsch-lernen/id1256519382",
+          "who": "Der Die Das Deutsch Lernen by Erik Wegener (App Store)",
+          "date": "2026-10-22",
+          "quote": "$2.99 ... 987 Ratings",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/der-die-das/id548055880",
+          "who": "Der Die Das by Lubos Mikusiak (App Store)",
+          "date": "2026-10-22",
+          "quote": "Game with Favorites $0.99 ... 1.5K Ratings",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Many cheap or free article apps on the App Store (Der Die Das by Lubos Mikusiak, 1.5K US ratings, free + $0.99 IAP; Der Die Das Deutsch Lernen by Erik Wegener, $2.99, 987 US ratings; German Articles Buster, Der Die Das: German Articles by Konstantin Meinhardt, Artikelly), plus general courses (Duolingo, Grammatisch) and Anki decks. Most are fixed word lists or games; few build the drill set from the learner's own errors and own vocabulary.",
+      "risks": "Crowded niche with free and $0.99-$2.99 one-off rivals, so a monthly price must be justified by personalization; the need is narrow (German only, though French, Spanish and Italian learners have a similar problem); several forum signals are older (2016-2017), with only one from 2026; dictionary-quality gender and plural data must be accurate or trust collapses."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

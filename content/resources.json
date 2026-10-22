@@ -8861,5 +8861,44 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "remember-der-die-das",
+  "offer": "article-lock",
+  "title": "How to remember der, die or das: ending patterns and a five-minute daily habit",
+  "description": "Learn every German noun with its article, use the ending patterns that predict gender, and drill only the nouns you keep getting wrong.",
+  "intro": "German noun gender trips up almost every learner. A few ending rules cover many nouns, and short daily practice on your own mistakes handles the rest.",
+  "sections": [
+   {
+    "h": "Never learn a noun alone",
+    "list": [
+     "Always learn it as 'die Zeitung', not just 'Zeitung'."
+    ]
+   },
+   {
+    "h": "Feminine endings",
+    "list": [
+     "-ung, -heit, -keit, -schaft, -ion and -tät are almost always die."
+    ]
+   },
+   {
+    "h": "Neuter endings",
+    "list": [
+     "-chen and -lein are always das. Many -ment and -um nouns are das too."
+    ]
+   },
+   {
+    "h": "Masculine clues",
+    "list": [
+     "Days, months, seasons and many -ling and -ismus nouns are der."
+    ]
+   },
+   {
+    "h": "Drill your own mistakes",
+    "p": [
+     "Keep a list of nouns you got wrong this week and review them for five minutes a day."
+    ]
+   }
+  ]
  }
 ]
