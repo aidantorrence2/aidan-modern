@@ -24380,6 +24380,123 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-22",
+    "slug": "verb-reflex",
+    "name": "Verb Reflex",
+    "need": "I've studied Spanish for years, but I still mess up verb conjugations and end up guessing the endings.",
+    "headline": "Years of Spanish and still guessing the verb endings? Five spoken minutes a day on the exact verb, tense and person you keep getting wrong.",
+    "buyer": "Adult Spanish learners 18+ with decent vocabulary who keep botching verb conjugations when they speak or write.",
+    "bullets": [
+      "Say the verb form out loud from a quick prompt, so you build the reflex for speaking and not only for tapping answers",
+      "Tracks every verb, tense and person you get wrong, and keeps bringing back just those until they stick",
+      "A simple grid shows which tenses and irregulars are solid and which still trip you up"
+    ],
+    "price": "$4.99/month",
+    "priceUsd": 5,
+    "priceNote": "One plan, every feature.",
+    "reasonPrompt": "What happens when you try to use Spanish verbs: which tenses or irregular verbs do you keep getting wrong, and what have you already tried?",
+    "faq": [
+      {
+        "q": "Who is Verb Reflex for?",
+        "a": "Verb Reflex is an independent app for adults 18+ who are learning Spanish and keep making mistakes with verb conjugations. It is not affiliated with any other language-learning app or company."
+      },
+      {
+        "q": "Do I need to be a beginner?",
+        "a": "No. It is designed for learners who already know some vocabulary and basic grammar but keep guessing or mixing up verb endings, including people who have studied for years."
+      },
+      {
+        "q": "Which tenses does it cover?",
+        "a": "Present, preterite, imperfect, future, conditional, the subjunctive and common compound tenses, with regular and irregular verbs. You pick which tenses and verbs to practise."
+      },
+      {
+        "q": "Do I have to speak out loud?",
+        "a": "Speaking is the main mode because it builds the reflex you need in conversation, but you can type answers when you're somewhere quiet."
+      },
+      {
+        "q": "Will it make me fluent?",
+        "a": "No app can promise that. Verb Reflex focuses on one thing, getting verb forms right quickly, as a supplement to whatever else you use to learn."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-22",
+      "summary": "Adult Spanish learners say in their own words that verb conjugation is the part they can't get right, even after years of study or hundreds of Duolingo days. They describe messing up conjugations, guessing endings, and 'flubbing the verbs' despite good vocabulary. Dedicated conjugation apps have thousands of ratings, and reviewers mention paying for them.",
+      "wtp": "ConjuGato (App Store): 4.2K ratings, Pro $9.99; reviewer Sgt.Doaks: 'I paid the $7.99 in a heartbeat.' Ella Verbs: 5.5K ratings, Pro from $9.99 a month to $179.99 lifetime.",
+      "signals": [
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=2/id=1405230721/sortby=mostrecent/json",
+          "who": "Primrose95032 (App Store review, Ella Verbs)",
+          "date": "2025-12-07",
+          "quote": "I’ve been using Duolingo for 880 days and still struggling with conjugating verbs.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=2/id=1405230721/sortby=mostrecent/json",
+          "who": "Joyful servant (App Store review, Ella Verbs)",
+          "date": "2025-12-22",
+          "quote": "I have been learning Spanish for four years, but kept messing up the conjugations.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=3/id=1405230721/sortby=mostrecent/json",
+          "who": "Polalie (App Store review, Ella Verbs)",
+          "date": "2025-05-04",
+          "quote": "conjugating verbs is stressful and often I’m just guessing",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1405230721/sortby=mostrecent/json",
+          "who": "Jeanmck (App Store review, Ella Verbs)",
+          "date": "2026-07-18",
+          "quote": "learning lots of vocabulary but still flubbing the verbs, which Duolingo just glosses over",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1405230721/sortby=mostrecent/json",
+          "who": "lshunk (App Store review, Ella Verbs)",
+          "date": "2026-07-05",
+          "quote": "I find that the conjugations of Spanish verbs is one of the most difficult things for me.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1388189747/sortby=mostrecent/json",
+          "who": "JocelynWatersmnbvcxz (App Store review, ConjuGato)",
+          "date": "2026-09-25",
+          "quote": "I have used Duolingo for 4 1/2 years and I have completed Spanish but the hardest part about Spanish is verbs",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=3/id=1388189747/sortby=mostrecent/json",
+          "who": "Heydw (App Store review, ConjuGato)",
+          "date": "2026-04-10",
+          "quote": "I am finally remembering the irregulars I’ve always struggled with.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1388189747/sortby=mostrecent/json",
+          "who": "Sgt.Doaks (App Store review, ConjuGato)",
+          "date": "2026-09-16",
+          "quote": "I paid the $7.99 in a heartbeat.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/ella-verbs-learn-spanish/id1405230721",
+          "who": "Ella Verbs App Store listing",
+          "date": "2026-10-22",
+          "quote": "5.5K Ratings ... Pro Annual $59.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "ConjuGato (one-time Pro, 4.2K ratings), Ella Verbs (subscription, 5.5K ratings), Spanish Verb Conjugator (1.2K ratings), Conjuu, SpanishDictionary.com, and free Anki conjugation decks. Most are tap or type flashcards; Verb Reflex's angle is spoken, timed recall that targets each learner's weakest verb, tense and person cells.",
+      "risks": "Crowded, well-rated niche with cheap one-time-purchase rivals (ConjuGato), so a $4.99/month subscription has to justify itself through the speaking and weak-spot focus. Speech recognition of single conjugated forms can be unreliable with accents. Close to the live 'diary-loop' and 'studied-language-years-freeze' offers, which are general language learning and conversation freezing; this one is only about Spanish verb conjugation accuracy."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

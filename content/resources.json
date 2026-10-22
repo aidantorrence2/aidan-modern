@@ -9056,5 +9056,44 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "stop-guessing-spanish-verb-endings",
+  "offer": "verb-reflex",
+  "title": "Still guessing Spanish verb endings? Drill the forms you get wrong, out loud",
+  "description": "Find the tenses and irregulars that trip you up, say each form out loud from a quick prompt, and bring back only your mistakes until they stick.",
+  "intro": "Many learners know plenty of words but still guess verb endings. Short spoken drills on your own mistakes build the reflex faster than rereading tables.",
+  "sections": [
+   {
+    "h": "Find your weak spots",
+    "list": [
+     "Which tenses and which irregular verbs do you guess at most?"
+    ]
+   },
+   {
+    "h": "Say it, don't just tap it",
+    "list": [
+     "Read the prompt ('ir, preterite, nosotros') and say the form aloud: 'fuimos'."
+    ]
+   },
+   {
+    "h": "Keep a mistake list",
+    "list": [
+     "Every form you get wrong goes on it. Drill only that list."
+    ]
+   },
+   {
+    "h": "Learn the patterns",
+    "list": [
+     "Group irregulars that change the same way, like the preterite 'u' stem verbs: tuve, estuve, pude."
+    ]
+   },
+   {
+    "h": "Five minutes a day",
+    "p": [
+     "A short daily drill beats a long weekly session."
+    ]
+   }
+  ]
  }
 ]
