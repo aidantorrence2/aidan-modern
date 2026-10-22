@@ -3052,7 +3052,9 @@
         "transfer": "After the Motorola is reconnected to USB, compare both phones and stream missing files and APKs directly through the Mac with bounded buffers, without staging the old phone storage on the nearly-full Mac. Preserve existing destination files on collisions; verify restored files; use supported app export/import paths for private app data.",
         "cleanup": "Disable the old Redmi TCP debugging endpoint with adb -s 192.168.1.27:5555 usb after the transfer. Never authorize any additional computers.",
         "next_physical_step": "Leave the old phone on and connected to home Wi-Fi. Reconnect the Motorola to this Mac only after the agent confirms old-phone wireless access is working.",
-        "reason": "Only the old phone is on USB now, and the Mac has about 2 GB free; temporary wireless access allows both phones to remain accessible without copying the old phone storage onto the Mac."
+        "reason": "Only the old phone is on USB now, and the Mac has about 2 GB free; temporary wireless access allows both phones to remain accessible without copying the old phone storage onto the Mac.",
+        "result": "Enabled temporary authenticated ADB on old Redmi 192.168.1.27:5555 and verified serial twjfuwg6nnfqnrwg matches. Old phone inventoried: 154 user apps and 32,238 accessible files, about 51 GB. Confirmed current AppBlock cloud backup Redmi Lapis dated 10/21/26 20:28, and IG Reels blocking enabled. Prepared bounded-memory streaming transfer and passed binary/Unicode/quoted-filename canary with SHA-256 verification. Motorola is not connected: hardware inventory still shows only Redmi on USB. No bulk files copied yet. Endpoint remains temporarily active for continuation; disable with adb -s 192.168.1.27:5555 usb when transfer is completed or abandoned. User narrowed custom apps to IG Instant Blocker and Guardian and requested skipping ScreenZen.",
+        "result_at": "2026-10-22T00:46:24Z"
       },
       "created": "2026-10-22T00:34:15Z",
       "expires": "2026-10-23T00:34:15Z",
