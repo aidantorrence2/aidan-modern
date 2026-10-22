@@ -26701,6 +26701,83 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-22",
+    "slug": "last-chapter",
+    "name": "Last Chapter",
+    "need": "I keep starting new stories and never finish my novel's first draft.",
+    "headline": "Finish the draft you already started: park shiny new ideas, open every session on the next scene, and see a finish date worked back from your real pace.",
+    "buyer": "Adult hobby and aspiring novelists with one or more abandoned drafts who keep jumping to new ideas or stall partway through.",
+    "bullets": [
+      "An idea parking lot that saves new ideas without letting you switch projects.",
+      "A next-scene card, so every session opens on one concrete thing to write.",
+      "A finish date from your actual words per session, a draft map, and a 15-minute restart sprint when you skip a week."
+    ],
+    "price": "$5.99/month",
+    "priceUsd": 6,
+    "priceNote": "Or $39 a year.",
+    "reasonPrompt": "How far into your draft are you, and what usually pulls you away?",
+    "faq": [
+      {
+        "q": "Does it write for me?",
+        "a": "No. It helps you keep going and finish your own draft. Your words stay yours."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Adult writers. It is an independent app, not linked to any writing software, workshop or forum."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-22",
+      "summary": "Writers on Writing Forums, SFF Chronicles and Absolute Write say they start drafts and never finish them, keep jumping from story to story, and feel they will never finish.",
+      "wtp": "Writers pay for tools and help: Scrivener costs $23.99 (2.6K App Store ratings), Werdsmith sells memberships from $4.99 to $49.99 (8K ratings), and Yozh is enrolled in a paid 'Novel in a Year' workshop.",
+      "signals": [
+        {
+          "url": "https://www.writingforums.com/threads/hey-everyone.215556/",
+          "who": "GuyInAGasmask (Writing Forums)",
+          "date": "2025-08-31",
+          "quote": "The problem of course, is that I start drafts and never finish them.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.writingforums.com/threads/how-to-avoid-shiny-new-idea-syndrome.216402/",
+          "who": "Mulled Cider (Writing Forums)",
+          "date": "2025-11-10",
+          "quote": "I wish I knew how to stop winging from story to story; if I did, my works-in-progress queue would be half the size it is now.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.writingforums.com/threads/why-are-you-writing.214422/post-2631231",
+          "who": "Infernal scribbler (Writing Forums)",
+          "date": "2025-06-04",
+          "quote": "I am terrible about starting and not finishing projects.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.sffchronicles.com/threads/547172/post-2817193",
+          "who": "Yozh (SFF Chronicles)",
+          "date": "2025-12-31",
+          "quote": "Really trying to make the most of my week off work to get my novel on the page. I did some 2000 words today, but it does feel like I will never finish.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.writingforums.com/threads/am-i-doomed-to-never-complete-a-novel.150456/",
+          "who": "theoddone (Writing Forums)",
+          "date": "2014-09-10",
+          "quote": "I have no idea why I just can't finish a novel.",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Scrivener, Werdsmith, Ulysses, Dabble, writing challenges, workshops and courses.",
+      "risks": "Crowded writing-app market, so the pitch is finishing one draft. Many writers say discipline is the answer. Distinct from lyric-spark (song lyrics)."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

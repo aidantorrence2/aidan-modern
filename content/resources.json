@@ -10286,5 +10286,44 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "finish-your-novel-first-draft",
+  "offer": "last-chapter",
+  "title": "How to finish your novel's first draft instead of starting another",
+  "description": "Park new ideas, decide the next scene before you stop, set a small regular target, and let the first draft be rough.",
+  "intro": "Almost every writer gets pulled toward a new idea partway through a draft. A few habits keep you on the one you started.",
+  "sections": [
+   {
+    "h": "Park new ideas",
+    "list": [
+     "Keep a single 'later' file. When a shiny idea arrives, write a paragraph about it there, then go back to your draft."
+    ]
+   },
+   {
+    "h": "End each session on the next step",
+    "list": [
+     "Before you stop, write one line about what happens next. Tomorrow you start there instead of a blank page."
+    ]
+   },
+   {
+    "h": "Small, regular targets",
+    "list": [
+     "A modest daily or weekly word count you can actually keep beats big bursts. Track it so you can see the draft grow."
+    ]
+   },
+   {
+    "h": "Let it be rough",
+    "list": [
+     "A first draft is supposed to be messy. Leave notes like [fix later] and keep moving; editing comes after you finish."
+    ]
+   },
+   {
+    "h": "Know your finish line",
+    "p": [
+     "Estimate your draft's length, divide by your usual pace, and put a rough finish date on the calendar. Revisit it monthly rather than daily."
+    ]
+   }
+  ]
  }
 ]
