@@ -1356,8 +1356,8 @@
         "data_scope": "Database row responses may contain private email addresses and city/participation/consent/attribution fields. Read only to count and deduplicate. Do not persist, export, email, share or put individual lead records in Library, prompts for other workers, Git repositories or public pages.",
         "limits": "Read-only ongoing measurement for this one project. No customer outreach, data deletion/migration, credential recovery, database changes, new endpoint, deployment, spending or broader access. Stop if access is denied; no alternative access path.",
         "why_needed": "The handoff's zero was historical and cloud private-export credentials were omitted. The hourly targets cannot be honestly measured until separately authorized secure access is approved.",
-        "result": "DB/leads complete and empty at 2026-10-22T17:58:23Z: current0/new0 versus target10; no private rows persisted.",
-        "result_at": "2026-10-22T18:04:07Z"
+        "result": "2026-10-22 14:59 America/New_York read-only Sites measurement for appgprj_6ad56c0398f4819187d2d7870ae70ac4: read database overview first, then DB/leads at limit 25 offset 0. Complete table was empty. Aggregate consenting leads total 0; new since 2026-10-22 13:58 America/New_York 0; withdrawals 0. No private row fields persisted.",
+        "result_at": "2026-10-22T19:05:02Z"
       },
       "created": "2026-10-19T05:23:23Z",
       "expires": "2026-10-22T05:23:23Z",
