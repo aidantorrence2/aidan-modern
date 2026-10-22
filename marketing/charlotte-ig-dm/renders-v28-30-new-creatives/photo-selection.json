@@ -1,0 +1,306 @@
+{
+  "basis": "Editorial visual shortlist after reviewing all 106 candidate photographs. No per-photo engagement measurements were found; these are prospective creative tests, not measured engagement winners.",
+  "reviewed_candidates": 106,
+  "selected": [
+    {
+      "photo": "R1-09952-0012",
+      "reason": "Clear direct gaze, a large readable face, and pink/green contrast; strong cold-scroll candidate.",
+      "face": [
+        0.3541213870048523,
+        0.42695653438568115,
+        0.4705501198768616,
+        0.3147200047969818
+      ]
+    },
+    {
+      "photo": "R1-09794-031A",
+      "reason": "Close direct gaze and sculptural hair; the eyes remain clear at phone size.",
+      "face": [
+        0.20385032892227173,
+        0.38969886302948,
+        0.48938679695129395,
+        0.32731860876083374
+      ]
+    },
+    {
+      "photo": "000013",
+      "reason": "A warm, intimate expression framed by dark clothing against a simple lighter background.",
+      "face": [
+        0.3844016194343567,
+        0.3533007651567459,
+        0.3131710886955261,
+        0.20984940230846405
+      ]
+    },
+    {
+      "photo": "R1-09997-0009",
+      "reason": "High-contrast black-and-white portrait with clean direct eye contact.",
+      "face": [
+        0.09445037692785263,
+        0.3830738216638565,
+        0.6197158098220825,
+        0.4144871234893799
+      ]
+    },
+    {
+      "photo": "R1-09797-0016",
+      "reason": "Wind and a band of light create a distinctive, expressive face-led image.",
+      "face": [
+        0.1265462189912796,
+        0.3578995168209076,
+        0.5072924494743347,
+        0.33929452300071716
+      ]
+    },
+    {
+      "photo": "R1-09996-0029",
+      "reason": "Quiet monochrome close-up with clear eyes and strong window geometry.",
+      "face": [
+        0.24060624837875366,
+        0.4078916013240814,
+        0.358349472284317,
+        0.23967638611793518
+      ]
+    },
+    {
+      "photo": "000086",
+      "reason": "Broad natural smile, close framing and a playful cyan accent create a different emotional signal.",
+      "face": [
+        0.10169470310211182,
+        0.32801754772663116,
+        0.7746023535728455,
+        0.5180805325508118
+      ]
+    },
+    {
+      "photo": "000042",
+      "reason": "Bright pastel color and direct eye contact with a simple background.",
+      "face": [
+        0.25436267256736755,
+        0.3424273431301117,
+        0.5371310114860535,
+        0.35992029309272766
+      ]
+    },
+    {
+      "photo": "R1-00007-025A",
+      "reason": "Light background, clear eyes and an expressive raised-arm pose.",
+      "face": [
+        0.21313226222991943,
+        0.3453954756259918,
+        0.4031047523021698,
+        0.2696102261543274
+      ]
+    },
+    {
+      "photo": "R1-09952-0003",
+      "reason": "Direct gaze with strong dark-hair/pink-background separation.",
+      "face": [
+        0.3190595805644989,
+        0.3712669610977173,
+        0.45354944467544556,
+        0.3033493757247925
+      ]
+    },
+    {
+      "photo": "R1-09794-021A",
+      "reason": "Warm sunlight, visible eyes and an approachable three-quarter portrait.",
+      "face": [
+        0.21212366223335266,
+        0.2848585844039917,
+        0.40520942211151123,
+        0.2710179090499878
+      ]
+    },
+    {
+      "photo": "R1-09793-0013",
+      "reason": "A clearly readable face, tactile styling and complementary pink/green tones.",
+      "face": [
+        0.20170292258262634,
+        0.28270938992500305,
+        0.5513510704040527,
+        0.36876246333122253
+      ]
+    },
+    {
+      "photo": "R1-00006-013A",
+      "reason": "Bold orange background and direct gaze give immediate visual separation.",
+      "face": [
+        0.34990614652633667,
+        0.36868108808994293,
+        0.3586060702800751,
+        0.23984800279140472
+      ]
+    },
+    {
+      "photo": "R1-00009-0021",
+      "reason": "Strong male close-up, rich warm light and distinctive long hair.",
+      "face": [
+        0.2823282778263092,
+        0.33907148241996765,
+        0.3946053683757782,
+        0.26392558217048645
+      ]
+    },
+    {
+      "photo": "R1-09953-021A",
+      "reason": "Graphic bob haircut, leather texture and a striking shadow pattern around a readable face.",
+      "face": [
+        0.3707409203052521,
+        0.33476054668426514,
+        0.4279613494873047,
+        0.28623518347740173
+      ]
+    },
+    {
+      "photo": "R1-09798-032A",
+      "reason": "The reflection adds a second look without losing the primary face.",
+      "face": [
+        0.31587857007980347,
+        0.3315313160419464,
+        0.253650963306427,
+        0.16965043544769287
+      ]
+    },
+    {
+      "photo": "R1-09797-0005",
+      "reason": "A strong centered expression in a recognizable street-photography setting.",
+      "face": [
+        0.41858452558517456,
+        0.38787946105003357,
+        0.26147085428237915,
+        0.17488065361976624
+      ]
+    },
+    {
+      "photo": "img0006",
+      "reason": "Close male portrait with direct gaze and colorful architectural texture.",
+      "face": [
+        0.33083376288414,
+        0.42615360021591187,
+        0.34079495072364807,
+        0.22719663381576538
+      ]
+    },
+    {
+      "photo": "R1-00008-0005",
+      "reason": "A clean, calm close portrait with a simple background and readable eyes.",
+      "face": [
+        0.27855193614959717,
+        0.26488828659057617,
+        0.4687715172767639,
+        0.31353041529655457
+      ]
+    },
+    {
+      "photo": "R1-09997-0003",
+      "reason": "Direct monochrome gaze with bright outdoor separation.",
+      "face": [
+        0.36251160502433777,
+        0.4325084388256073,
+        0.3813980221748352,
+        0.2550920248031616
+      ]
+    },
+    {
+      "photo": "R1-00009-0034",
+      "reason": "Centered face and dark clothing with a restrained background; easy to read in a crop.",
+      "face": [
+        0.2429570108652115,
+        0.25410109758377075,
+        0.4379144310951233,
+        0.2928921580314636
+      ]
+    },
+    {
+      "photo": "11954-12",
+      "reason": "An informal moment, visible eyes and the ice-cream detail provide an accessible everyday feeling.",
+      "face": [
+        0.017133839428424835,
+        0.20106638967990875,
+        0.9571378827095032,
+        0.6416566967964172
+      ]
+    },
+    {
+      "photo": "R1-00006-008A",
+      "reason": "An expressive hand/arm pose frames a clear face against a simple background.",
+      "face": [
+        0.3042433559894562,
+        0.17196278274059296,
+        0.2937242388725281,
+        0.1964528113603592
+      ]
+    },
+    {
+      "photo": "img0015-2",
+      "reason": "Direct eye contact and sharp dark clothing against saturated background detail.",
+      "face": [
+        0.30369120836257935,
+        0.3672281503677368,
+        0.35861387848854065,
+        0.2390759289264679
+      ]
+    },
+    {
+      "photo": "R1-09995-0010",
+      "reason": "Dramatic split lighting creates contrast while the visible eye anchors attention.",
+      "face": [
+        0.2298380732536316,
+        0.3494817316532135,
+        0.42136451601982117,
+        0.28182297945022583
+      ]
+    },
+    {
+      "photo": "R1-09997-0006",
+      "reason": "Sculptural high-contrast monochrome close-up with a clearly visible gaze.",
+      "face": [
+        0.27781614661216736,
+        0.3614732623100281,
+        0.3759317994117737,
+        0.2514360547065735
+      ]
+    },
+    {
+      "photo": "R1-09952-0019",
+      "reason": "Dynamic pose, direct gaze and strong diagonal composition.",
+      "face": [
+        0.22399486601352692,
+        0.27401116490364075,
+        0.4507964253425598,
+        0.3015080690383911
+      ]
+    },
+    {
+      "photo": "R1-09793-0028",
+      "reason": "Directional light and a close three-quarter expression create an intimate portrait.",
+      "face": [
+        0.2004607766866684,
+        0.2972088158130646,
+        0.4838501811027527,
+        0.32361555099487305
+      ]
+    },
+    {
+      "photo": "000014",
+      "reason": "The coat and hands give a strong silhouette; a face-led crop keeps the eyes readable.",
+      "face": [
+        0.4508928060531616,
+        0.22943267226219177,
+        0.2355480194091797,
+        0.15783581137657166
+      ]
+    },
+    {
+      "photo": "R1-09794-035A",
+      "reason": "A clean mid-length portrait with visible eyes and an uncluttered cool-colored backdrop.",
+      "face": [
+        0.32927626371383667,
+        0.2617915868759155,
+        0.29281085729599,
+        0.19584190845489502
+      ]
+    }
+  ]
+}

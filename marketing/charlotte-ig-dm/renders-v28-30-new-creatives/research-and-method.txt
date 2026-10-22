@@ -1,0 +1,12 @@
+Thirty cards: ten distinct concepts, three copy/photo variations per concept.
+All thirty use distinct original JPEGs and the same small original profile-photo bubble.
+Photo selection is editorial judgment, not observed engagement ranking.
+All 106 candidates were reviewed in contact sheets.
+Existing campaign notes give campaign-level CTR, not per-file results.
+
+Background artwork: built-in image_gen, no user photographs supplied.
+Original portfolio photographs: embedded directly; no generative editing, retouching or color filters.
+Typography: editable HTML/CSS.
+
+Primary source: Meta Blueprint, https://www.facebookblueprint.com/student/path/253130-increase-campaign-performance-with-diversified-creative
+Supports diversification by concept, motivator, and format; it does not prove any specific photograph will win.

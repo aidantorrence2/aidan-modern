@@ -1,0 +1,448 @@
+{
+  "method": "Editable HTML/CSS. Original JPEG bytes directly embedded. One ordinary selfie crop. No image generation.",
+  "sources": {
+    "selfie": {
+      "file": "/Users/aidantorrence/Documents/aidan-modern/marketing/charlotte-video-ads/work/src2/aidan-real-selfie.jpg",
+      "sha256": "d69adec1937201df76beb8481456010ce9577e3f88fe47dc9455b60e769bbe98"
+    },
+    "male": {
+      "file": "/Users/aidantorrence/Documents/aidan-modern/public/images/new_top_tier_candidates/R1-09794-021A.jpg",
+      "sha256": "962245dc1fb89720784cad6100556592dfdaebd29ecfddf42d4466eb1cd3a861"
+    },
+    "female": {
+      "file": "/Users/aidantorrence/Documents/aidan-modern/public/images/new_top_tier_candidates/000014.jpg",
+      "sha256": "f77b522929a9ce5da41327801161778bf1ecf5db7ce65d17755c9fb488bab167"
+    }
+  },
+  "results": [
+    {
+      "id": "00-handwritten-rebuilt",
+      "title": "Handwritten card — clean rebuild",
+      "lines": [
+        {
+          "id": "city",
+          "text": "Charlotte,",
+          "size": 192,
+          "left": 74,
+          "right": 744.0799560546875,
+          "top": 70,
+          "bottom": 300.390625
+        },
+        {
+          "id": "intro",
+          "text": "i'm aidan.",
+          "size": 92,
+          "left": 398,
+          "right": 697.5519714355469,
+          "top": 333,
+          "bottom": 443.390625
+        },
+        {
+          "id": "intro",
+          "text": "i make portraits.",
+          "size": 92,
+          "left": 398,
+          "right": 921.5718994140625,
+          "top": 443.390625,
+          "bottom": 553.78125
+        },
+        {
+          "id": "offer",
+          "text": "i'm doing a few free",
+          "size": 68,
+          "left": 398,
+          "right": 848.1598510742188,
+          "top": 576,
+          "bottom": 657.59375
+        },
+        {
+          "id": "offer",
+          "text": "collabs while i'm",
+          "size": 68,
+          "left": 398,
+          "right": 766.4238586425781,
+          "top": 657.59375,
+          "bottom": 739.1875
+        },
+        {
+          "id": "offer",
+          "text": "in town!",
+          "size": 68,
+          "left": 398,
+          "right": 600.095947265625,
+          "top": 739.1875,
+          "bottom": 820.78125
+        },
+        {
+          "id": "work",
+          "text": "my work",
+          "size": 80,
+          "left": 74,
+          "right": 301.1199645996094,
+          "top": 904,
+          "bottom": 1012
+        }
+      ]
+    },
+    {
+      "id": "01-hi-aidan",
+      "title": "hi, i'm aidan",
+      "lines": [
+        {
+          "id": "hi",
+          "text": "hi, i'm aidan 👋",
+          "size": 132,
+          "left": 64,
+          "right": 778.4039306640625,
+          "top": 678,
+          "bottom": 836.390625
+        },
+        {
+          "id": "offer",
+          "text": "i'm doing a few free collabs",
+          "size": 58,
+          "left": 64,
+          "right": 596.0919189453125,
+          "top": 858,
+          "bottom": 927.59375
+        },
+        {
+          "id": "offer",
+          "text": "while i'm in charlotte.",
+          "size": 58,
+          "left": 64,
+          "right": 489.139892578125,
+          "top": 927.59375,
+          "bottom": 997.1875
+        },
+        {
+          "id": "work",
+          "text": "here's my work",
+          "size": 68,
+          "left": 64,
+          "right": 407.3319091796875,
+          "top": 1040,
+          "bottom": 1121.59375
+        }
+      ]
+    },
+    {
+      "id": "02-hello-charlotte",
+      "title": "A little hello from Charlotte",
+      "lines": [
+        {
+          "id": "hook",
+          "text": "a little hello",
+          "size": 138,
+          "left": 74,
+          "right": 637.7299194335938,
+          "top": 82,
+          "bottom": 247.59375
+        },
+        {
+          "id": "hook",
+          "text": "from charlotte.",
+          "size": 138,
+          "left": 74,
+          "right": 793.2559814453125,
+          "top": 247.59375,
+          "bottom": 413.1875
+        },
+        {
+          "id": "intro",
+          "text": "i'm aidan.",
+          "size": 66.0155,
+          "left": 74,
+          "right": 288.92852783203125,
+          "top": 446,
+          "bottom": 525.21875
+        },
+        {
+          "id": "intro",
+          "text": "i'm in town and",
+          "size": 66.0155,
+          "left": 74,
+          "right": 430.3879089355469,
+          "top": 525.21875,
+          "bottom": 604.4375
+        },
+        {
+          "id": "intro",
+          "text": "making portraits.",
+          "size": 66.0155,
+          "left": 74,
+          "right": 465.96728515625,
+          "top": 604.4375,
+          "bottom": 683.65625
+        },
+        {
+          "id": "offer",
+          "text": "a few free collabs.",
+          "size": 63,
+          "left": 74,
+          "right": 461.2608642578125,
+          "top": 790,
+          "bottom": 865.59375
+        },
+        {
+          "id": "offer",
+          "text": "let's make one.",
+          "size": 63,
+          "left": 74,
+          "right": 381.5658874511719,
+          "top": 865.59375,
+          "bottom": 941.1875
+        },
+        {
+          "id": "work",
+          "text": "a little of my work ↓",
+          "size": 67,
+          "left": 74,
+          "right": 550.4808349609375,
+          "top": 1008,
+          "bottom": 1088.390625
+        }
+      ]
+    },
+    {
+      "id": "03-new-faces",
+      "title": "Looking for new faces",
+      "lines": [
+        {
+          "id": "hook",
+          "text": "i'm looking for",
+          "size": 150,
+          "left": 64,
+          "right": 780.2498779296875,
+          "top": 74,
+          "bottom": 254
+        },
+        {
+          "id": "hook",
+          "text": "new faces.",
+          "size": 150,
+          "left": 64,
+          "right": 595.2999267578125,
+          "top": 254,
+          "bottom": 434
+        },
+        {
+          "id": "offer",
+          "text": "free portrait collabs • charlotte",
+          "size": 52,
+          "left": 64,
+          "right": 622.01171875,
+          "top": 478,
+          "bottom": 540.390625
+        },
+        {
+          "id": "intro",
+          "text": "i'm aidan.",
+          "size": 94,
+          "left": 64,
+          "right": 370.06396484375,
+          "top": 1430,
+          "bottom": 1542.796875
+        },
+        {
+          "id": "intro",
+          "text": "say hi.",
+          "size": 94,
+          "left": 64,
+          "right": 276.25196838378906,
+          "top": 1542.796875,
+          "bottom": 1655.59375
+        }
+      ]
+    },
+    {
+      "id": "04-first-shoot",
+      "title": "Never done a photo shoot?",
+      "lines": [
+        {
+          "id": "hook",
+          "text": "never done",
+          "size": 142,
+          "left": 74,
+          "right": 596.41796875,
+          "top": 74,
+          "bottom": 244.390625
+        },
+        {
+          "id": "hook",
+          "text": "a photo shoot?",
+          "size": 142,
+          "left": 74,
+          "right": 818.64794921875,
+          "top": 244.390625,
+          "bottom": 414.78125
+        },
+        {
+          "id": "intro",
+          "text": "i'm aidan. let's start here.",
+          "size": 78,
+          "left": 74,
+          "right": 761.1016845703125,
+          "top": 1506,
+          "bottom": 1599.59375
+        },
+        {
+          "id": "offer",
+          "text": "free collabs in charlotte.",
+          "size": 72,
+          "left": 74,
+          "right": 676.9278564453125,
+          "top": 1648,
+          "bottom": 1734.390625
+        },
+        {
+          "id": "cta",
+          "text": "message me.",
+          "size": 64,
+          "left": 74,
+          "right": 334.22393798828125,
+          "top": 1778,
+          "bottom": 1854.796875
+        }
+      ]
+    },
+    {
+      "id": "05-camera-roll",
+      "title": "From my camera to your camera roll",
+      "lines": [
+        {
+          "id": "hook",
+          "text": "from my camera",
+          "size": 128,
+          "left": 64,
+          "right": 780.031982421875,
+          "top": 82,
+          "bottom": 235.59375
+        },
+        {
+          "id": "hook",
+          "text": "to your camera roll.",
+          "size": 128,
+          "left": 64,
+          "right": 918.4000244140625,
+          "top": 235.59375,
+          "bottom": 389.1875
+        },
+        {
+          "id": "hi",
+          "text": "hi, i'm aidan 👋",
+          "size": 80,
+          "left": 484,
+          "right": 917.7598876953125,
+          "top": 508,
+          "bottom": 604
+        },
+        {
+          "id": "offer",
+          "text": "i'm making portraits",
+          "size": 66,
+          "left": 484,
+          "right": 941.973876953125,
+          "top": 654,
+          "bottom": 733.1875
+        },
+        {
+          "id": "offer",
+          "text": "in charlotte.",
+          "size": 66,
+          "left": 484,
+          "right": 766.2159118652344,
+          "top": 733.1875,
+          "bottom": 812.375
+        },
+        {
+          "id": "offer",
+          "text": "a few free collabs.",
+          "size": 66,
+          "left": 484,
+          "right": 889.7018737792969,
+          "top": 812.375,
+          "bottom": 891.5625
+        },
+        {
+          "id": "work",
+          "text": "some of my work ↓",
+          "size": 68,
+          "left": 64,
+          "right": 508.28851318359375,
+          "top": 1034,
+          "bottom": 1115.59375
+        }
+      ]
+    },
+    {
+      "id": "06-make-something",
+      "title": "Charlotte, let's make something",
+      "lines": [
+        {
+          "id": "city",
+          "text": "charlotte,",
+          "size": 172,
+          "left": 64,
+          "right": 643.1239624023438,
+          "top": 78,
+          "bottom": 284.390625
+        },
+        {
+          "id": "hook",
+          "text": "let's make something.",
+          "size": 98,
+          "left": 64,
+          "right": 770.3837890625,
+          "top": 334,
+          "bottom": 451.59375
+        },
+        {
+          "id": "intro",
+          "text": "i'm aidan.",
+          "size": 75,
+          "left": 480,
+          "right": 724.1999359130859,
+          "top": 508,
+          "bottom": 598
+        },
+        {
+          "id": "intro",
+          "text": "i'm in town with",
+          "size": 75,
+          "left": 480,
+          "right": 889.9499206542969,
+          "top": 598,
+          "bottom": 688
+        },
+        {
+          "id": "intro",
+          "text": "my camera.",
+          "size": 75,
+          "left": 480,
+          "right": 772.2749328613281,
+          "top": 688,
+          "bottom": 778
+        },
+        {
+          "id": "offer",
+          "text": "free portrait collabs.",
+          "size": 58,
+          "left": 480,
+          "right": 888.087890625,
+          "top": 824,
+          "bottom": 893.59375
+        },
+        {
+          "id": "cta",
+          "text": "you could be next.",
+          "size": 61,
+          "left": 59.6080002784729,
+          "right": 425.7298583984375,
+          "top": 1798,
+          "bottom": 1871.1875
+        }
+      ]
+    }
+  ]
+}

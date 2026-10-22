@@ -1,0 +1,1018 @@
+{
+  "created": "2026-10-22",
+  "count": 30,
+  "concept_count": 10,
+  "variant_count": 3,
+  "selection_basis": "Editorial visual shortlist after reviewing all 106 candidate photographs. No per-photo engagement measurements were found; these are prospective creative tests, not measured engagement winners.",
+  "profile": "assets/profile-bubble.png",
+  "profile_source": "assets/profile-source-original.jpg",
+  "research": [
+    {
+      "title": "Meta Blueprint: Increase campaign performance with diversified creative",
+      "url": "https://www.facebookblueprint.com/student/path/253130-increase-campaign-performance-with-diversified-creative",
+      "note": "Primary guidance to diversify by concept, motivator, and format. Does not establish a winner for any individual photo."
+    }
+  ],
+  "concepts": [
+    {
+      "id": "01-framing",
+      "title": "A face worth framing",
+      "angle": "A portrait as something worth keeping",
+      "photos": [
+        "R1-09952-0012",
+        "R1-09794-031A",
+        "000013"
+      ],
+      "heads": [
+        [
+          "A face worth",
+          "framing."
+        ],
+        [
+          "More than",
+          "a selfie."
+        ],
+        [
+          "Make room",
+          "for yourself."
+        ]
+      ],
+      "bg": "#f2e9da",
+      "ink": "#4a2018",
+      "accent": "#e14b32",
+      "font": "Fraunces",
+      "brief": "A stark contemporary art-gallery invitation: warm ivory cotton paper, just one confident vermilion dry-brush sweep along the extreme lower left edge and a fine deep-brown irregular ink line along the far right edge. Subtle tactile print grain, lots of calm blank paper. Sophisticated independent photographic zine energy, beautifully minimal. No outlined rectangle, central frame, gold, metallic foil, leaves, branches, botanical elements, ornamental flourishes, wedding stationery, cream-on-cream torn-paper layers or bohemian decoration.",
+      "background_source": "/Users/aidantorrence/.codex/generated_images/01a160f8-beff-7a61-aa20-11d6b420c223/exec-17d26500-8197-412c-9d08-4efbb42cdd12.png",
+      "background_path": "assets/01-framing-background.png",
+      "background_prompt": "Use case: ads-marketing. Create ONE original graphic BACKGROUND ART PLATE for a vertical 9:16 portrait-photography invitation. This is only the abstract paper-and-ink design layer; actual photographs and readable type will be composited separately with deterministic layout. Absolutely NO photographs, people, human figures, faces, letters, words, numbers, logos, watermark, app interface, fake controls, or typography of any kind.\nComposition must be flat graphic art filling the entire canvas, not a photograph of a poster in a room. Preserve a generous relatively calm TOP BAND (y=8% to 29%) for two large headline lines; a generous clean CENTRAL RECTANGULAR SPACE (x=9% to 91%, y=33% to 78%) for one portrait; a calm LOWER BAND (y=80% to 91%) for a small profile-photo bubble and invitation. Decoration should primarily live in the outer 8% of the canvas, so the original portrait will remain the focal point. Don't draw a placeholder icon or a human silhouette. Every blank zone should be the same attractive background paper; no checkerboard or transparency. Original, confidently art-directed, tactile materials, controlled shapes and strong color, polished independent editorial design.  Never draw an outlined rectangle or a visible central frame; the portrait frame will be added in code. No lettering in any form.A stark contemporary art-gallery invitation: warm ivory cotton paper, just one confident vermilion dry-brush sweep along the extreme lower left edge and a fine deep-brown irregular ink line along the far right edge. Subtle tactile print grain, lots of calm blank paper. Sophisticated independent photographic zine energy, beautifully minimal. No outlined rectangle, central frame, gold, metallic foil, leaves, branches, botanical elements, ornamental flourishes, wedding stationery, cream-on-cream torn-paper layers or bohemian decoration.",
+      "variants": [
+        {
+          "id": "01-framing-a",
+          "letter": "A",
+          "photo_stem": "R1-09952-0012",
+          "headline": [
+            "A face worth",
+            "framing."
+          ],
+          "rationale": "Clear direct gaze, a large readable face, and pink/green contrast; strong cold-scroll candidate.",
+          "width": 2433,
+          "height": 3637,
+          "exif_orientation": 1,
+          "photo_path": "/Users/aidantorrence/Documents/aidan-modern/public/images/new_top_tier_candidates/R1-09952-0012.jpg",
+          "source_sha256": "117f6cd3c9d066a3d026613a2fc0cb2961adb614e361c87d1e483981a00462cc",
+          "face": [
+            0.3541213870048523,
+            0.42695653438568115,
+            0.4705501198768616,
+            0.3147200047969818
+          ],
+          "face_source": "Existing Apple Vision detection; normalized to original image dimensions"
+        },
+        {
+          "id": "01-framing-b",
+          "letter": "B",
+          "photo_stem": "R1-09794-031A",
+          "headline": [
+            "More than",
+            "a selfie."
+          ],
+          "rationale": "Close direct gaze and sculptural hair; the eyes remain clear at phone size.",
+          "width": 2433,
+          "height": 3637,
+          "exif_orientation": 1,
+          "photo_path": "/Users/aidantorrence/Documents/aidan-modern/public/images/new_top_tier_candidates/R1-09794-031A.jpg",
+          "source_sha256": "de2e35a832d1c6232ab848dac704afb7e48f8a4e0e9720106e34cbe4c16099e6",
+          "face": [
+            0.20385032892227173,
+            0.38969886302948,
+            0.48938679695129395,
+            0.32731860876083374
+          ],
+          "face_source": "Existing Apple Vision detection; normalized to original image dimensions"
+        },
+        {
+          "id": "01-framing-c",
+          "letter": "C",
+          "photo_stem": "000013",
+          "headline": [
+            "Make room",
+            "for yourself."
+          ],
+          "rationale": "A warm, intimate expression framed by dark clothing against a simple lighter background.",
+          "width": 3047,
+          "height": 4547,
+          "exif_orientation": 1,
+          "photo_path": "/Users/aidantorrence/Documents/aidan-modern/public/images/new_top_tier_candidates/000013.jpg",
+          "source_sha256": "9292774aa6336cd515151a5da391357103adb230f10445360f3ab86b59b58257",
+          "face": [
+            0.3844016194343567,
+            0.3533007651567459,
+            0.3131710886955261,
+            0.20984940230846405
+          ],
+          "face_source": "Existing Apple Vision detection; normalized to original image dimensions"
+        }
+      ]
+    },
+    {
+      "id": "02-future-you",
+      "title": "For future you",
+      "angle": "A photo for your future self",
+      "photos": [
+        "R1-09997-0009",
+        "R1-09797-0016",
+        "R1-09996-0029"
+      ],
+      "heads": [
+        [
+          "For future",
+          "you."
+        ],
+        [
+          "Keep a little",
+          "of now."
+        ],
+        [
+          "You'll want",
+          "this one."
+        ]
+      ],
+      "bg": "#163a78",
+      "ink": "#f7efd8",
+      "accent": "#d7e6fa",
+      "font": "Hand",
+      "brief": "A photographic time-capsule visual world: deep indigo cyanotype paper, delicate pale cyan hand-drawn orbital arcs and archival corner marks around a large central blank photographic area, tiny abstract star-shaped ink marks only at outer edges, rich irregular paper fibers, a small torn pale-blue tab at lower right. Quietly sentimental, luminous, graphic, no space photography or celestial scene.",
+      "background_source": "/Users/aidantorrence/.codex/generated_images/01a160f8-beff-7a61-aa20-11d6b420c223/exec-fa36cf7e-e4ec-4e02-b3fa-75855f536eb0.png",
+      "background_path": "assets/02-future-you-background.png",
+      "background_prompt": "Use case: ads-marketing. Create ONE original graphic BACKGROUND ART PLATE for a vertical 9:16 portrait-photography invitation. This is only the abstract paper-and-ink design layer; actual photographs and readable type will be composited separately with deterministic layout. Absolutely NO photographs, people, human figures, faces, letters, words, numbers, logos, watermark, app interface, fake controls, or typography of any kind.\nComposition must be flat graphic art filling the entire canvas, not a photograph of a poster in a room. Preserve a generous relatively calm TOP BAND (y=8% to 29%) for two large headline lines; a generous clean CENTRAL RECTANGULAR SPACE (x=9% to 91%, y=33% to 78%) for one portrait; a calm LOWER BAND (y=80% to 91%) for a small profile-photo bubble and invitation. Decoration should primarily live in the outer 8% of the canvas, so the original portrait will remain the focal point. Don't draw a placeholder icon or a human silhouette. Every blank zone should be the same attractive background paper; no checkerboard or transparency. Original, confidently art-directed, tactile materials, controlled shapes and strong color, polished independent editorial design.  Never draw an outlined rectangle or a visible central frame; the portrait frame will be added in code. No lettering in any form.A photographic time-capsule visual world: deep indigo cyanotype paper, delicate pale cyan hand-drawn orbital arcs and archival corner marks around a large central blank photographic area, tiny abstract star-shaped ink marks only at outer edges, rich irregular paper fibers, a small torn pale-blue tab at lower right. Quietly sentimental, luminous, graphic, no space photography or celestial scene.",
+      "variants": [
+        {
+          "id": "02-future-you-a",
+          "letter": "A",
+          "photo_stem": "R1-09997-0009",
+          "headline": [
+            "For future",
+            "you."
+          ],
+          "rationale": "High-contrast black-and-white portrait with clean direct eye contact.",
+          "width": 2433,
+          "height": 3637,
+          "exif_orientation": 1,
+          "photo_path": "/Users/aidantorrence/Documents/aidan-modern/public/images/new_top_tier_candidates/R1-09997-0009.jpg",
+          "source_sha256": "c17acf1ca443245a89a0f776b8ea63de0b02d07c32a754082e49cc36a2a23eda",
+          "face": [
+            0.09445037692785263,
+            0.3830738216638565,
+            0.6197158098220825,
+            0.4144871234893799
+          ],
+          "face_source": "Existing Apple Vision detection; normalized to original image dimensions"
+        },
+        {
+          "id": "02-future-you-b",
+          "letter": "B",
+          "photo_stem": "R1-09797-0016",
+          "headline": [
+            "Keep a little",
+            "of now."
+          ],
+          "rationale": "Wind and a band of light create a distinctive, expressive face-led image.",
+          "width": 2433,
+          "height": 3637,
+          "exif_orientation": 1,
+          "photo_path": "/Users/aidantorrence/Documents/aidan-modern/public/images/new_top_tier_candidates/R1-09797-0016.jpg",
+          "source_sha256": "5423bc60a416c57819292d49d08a28e4eae86c8ce29a8a60835b3549afd8c6c6",
+          "face": [
+            0.1265462189912796,
+            0.3578995168209076,
+            0.5072924494743347,
+            0.33929452300071716
+          ],
+          "face_source": "Existing Apple Vision detection; normalized to original image dimensions"
+        },
+        {
+          "id": "02-future-you-c",
+          "letter": "C",
+          "photo_stem": "R1-09996-0029",
+          "headline": [
+            "You'll want",
+            "this one."
+          ],
+          "rationale": "Quiet monochrome close-up with clear eyes and strong window geometry.",
+          "width": 2433,
+          "height": 3637,
+          "exif_orientation": 1,
+          "photo_path": "/Users/aidantorrence/Documents/aidan-modern/public/images/new_top_tier_candidates/R1-09996-0029.jpg",
+          "source_sha256": "005b557545abd450b0a7bd7bbfb0aeaccd363bbc856cf1c39e3b6431d237436a",
+          "face": [
+            0.24060624837875366,
+            0.4078916013240814,
+            0.358349472284317,
+            0.23967638611793518
+          ],
+          "face_source": "Existing Apple Vision detection; normalized to original image dimensions"
+        }
+      ]
+    },
+    {
+      "id": "03-no-occasion",
+      "title": "No occasion required",
+      "angle": "An everyday reason to get portraits",
+      "photos": [
+        "000086",
+        "000042",
+        "R1-00007-025A"
+      ],
+      "heads": [
+        [
+          "No occasion",
+          "required."
+        ],
+        [
+          "Just because",
+          "counts."
+        ],
+        [
+          "An ordinary day.",
+          "A good portrait."
+        ]
+      ],
+      "bg": "#f1ed72",
+      "ink": "#22291c",
+      "accent": "#e96435",
+      "font": "Grotesk",
+      "brief": "Joyful independent print poster, pale acid-yellow paper, oversized loose orange and dark-green hand-painted flower-outline bursts cropped decisively at the left and right canvas margins, irregular ink coverage with a crisp contemporary finish. The flowers are abstract 5-petal brush doodles, not realistic blooms. Huge clear central blank photographic area. Playful but visually sophisticated, no scrapbook tape or photo grid.",
+      "background_source": "/Users/aidantorrence/.codex/generated_images/01a160f8-beff-7a61-aa20-11d6b420c223/exec-04c13fbf-33b2-413e-a363-05edd3cd1181.png",
+      "background_path": "assets/03-no-occasion-background.png",
+      "background_prompt": "Use case: ads-marketing. Create ONE original graphic BACKGROUND ART PLATE for a vertical 9:16 portrait-photography invitation. This is only the abstract paper-and-ink design layer; actual photographs and readable type will be composited separately with deterministic layout. Absolutely NO photographs, people, human figures, faces, letters, words, numbers, logos, watermark, app interface, fake controls, or typography of any kind.\nComposition must be flat graphic art filling the entire canvas, not a photograph of a poster in a room. Preserve a generous relatively calm TOP BAND (y=8% to 29%) for two large headline lines; a generous clean CENTRAL RECTANGULAR SPACE (x=9% to 91%, y=33% to 78%) for one portrait; a calm LOWER BAND (y=80% to 91%) for a small profile-photo bubble and invitation. Decoration should primarily live in the outer 8% of the canvas, so the original portrait will remain the focal point. Don't draw a placeholder icon or a human silhouette. Every blank zone should be the same attractive background paper; no checkerboard or transparency. Original, confidently art-directed, tactile materials, controlled shapes and strong color, polished independent editorial design.  Never draw an outlined rectangle or a visible central frame; the portrait frame will be added in code. No lettering in any form.Joyful independent print poster, pale acid-yellow paper, oversized loose orange and dark-green hand-painted flower-outline bursts cropped decisively at the left and right canvas margins, irregular ink coverage with a crisp contemporary finish. The flowers are abstract 5-petal brush doodles, not realistic blooms. Huge clear central blank photographic area. Playful but visually sophisticated, no scrapbook tape or photo grid.",
+      "variants": [
+        {
+          "id": "03-no-occasion-a",
+          "letter": "A",
+          "photo_stem": "000086",
+          "headline": [
+            "No occasion",
+            "required."
+          ],
+          "rationale": "Broad natural smile, close framing and a playful cyan accent create a different emotional signal.",
+          "width": 2392,
+          "height": 3576,
+          "exif_orientation": 1,
+          "photo_path": "/Users/aidantorrence/Documents/aidan-modern/public/images/new_top_tier_candidates/000086.jpg",
+          "source_sha256": "b6d287de6b6b07ad92c80a3317f9dd7f09f42848d7f1c9a48b0db91b45977fb4",
+          "face": [
+            0.10169470310211182,
+            0.32801754772663116,
+            0.7746023535728455,
+            0.5180805325508118
+          ],
+          "face_source": "Existing Apple Vision detection; normalized to original image dimensions"
+        },
+        {
+          "id": "03-no-occasion-b",
+          "letter": "B",
+          "photo_stem": "000042",
+          "headline": [
+            "Just because",
+            "counts."
+          ],
+          "rationale": "Bright pastel color and direct eye contact with a simple background.",
+          "width": 3047,
+          "height": 4547,
+          "exif_orientation": 1,
+          "photo_path": "/Users/aidantorrence/Documents/aidan-modern/public/images/new_top_tier_candidates/000042.jpg",
+          "source_sha256": "88639dcabe379ba365b3cf4d7eb372d031b2c0d4c74a4dd3ae6c5a9ac0c0be9e",
+          "face": [
+            0.25436267256736755,
+            0.3424273431301117,
+            0.5371310114860535,
+            0.35992029309272766
+          ],
+          "face_source": "Existing Apple Vision detection; normalized to original image dimensions"
+        },
+        {
+          "id": "03-no-occasion-c",
+          "letter": "C",
+          "photo_stem": "R1-00007-025A",
+          "headline": [
+            "An ordinary day.",
+            "A good portrait."
+          ],
+          "rationale": "Light background, clear eyes and an expressive raised-arm pose.",
+          "width": 2433,
+          "height": 3637,
+          "exif_orientation": 1,
+          "photo_path": "/Users/aidantorrence/Documents/aidan-modern/public/images/new_top_tier_candidates/R1-00007-025A.jpg",
+          "source_sha256": "35a753482f2e8dd43896c4b1e1b759a7b648d5948cdba20cd0288a0f8c8d3f95",
+          "face": [
+            0.21313226222991943,
+            0.3453954756259918,
+            0.4031047523021698,
+            0.2696102261543274
+          ],
+          "face_source": "Existing Apple Vision detection; normalized to original image dimensions"
+        }
+      ]
+    },
+    {
+      "id": "04-more-you",
+      "title": "A little more you",
+      "angle": "Personality and self-expression",
+      "photos": [
+        "R1-09952-0003",
+        "R1-09794-021A",
+        "R1-09793-0013"
+      ],
+      "heads": [
+        [
+          "A little",
+          "more you."
+        ],
+        [
+          "Bring your",
+          "own character."
+        ],
+        [
+          "A face.",
+          "A whole story."
+        ]
+      ],
+      "bg": "#34243d",
+      "ink": "#f2c8d2",
+      "accent": "#f15a45",
+      "font": "Fraunces",
+      "brief": "Expressive cut-paper fashion editorial. Deep aubergine matte paper, broad imperfect peach-pink and vermilion wavy paper ribbons entering only from the outer left and right edges, restrained tactile cut edges with real shadow, an expansive clean central blank photographic area. Mood is intimate, artistic and confidently unconventional, not a scrapbook or party decoration.",
+      "background_source": "/Users/aidantorrence/.codex/generated_images/01a160f8-beff-7a61-aa20-11d6b420c223/exec-b628e1b9-f7c5-4c3e-94d3-9bcf405c4303.png",
+      "background_path": "assets/04-more-you-background.png",
+      "background_prompt": "Use case: ads-marketing. Create ONE original graphic BACKGROUND ART PLATE for a vertical 9:16 portrait-photography invitation. This is only the abstract paper-and-ink design layer; actual photographs and readable type will be composited separately with deterministic layout. Absolutely NO photographs, people, human figures, faces, letters, words, numbers, logos, watermark, app interface, fake controls, or typography of any kind.\nComposition must be flat graphic art filling the entire canvas, not a photograph of a poster in a room. Preserve a generous relatively calm TOP BAND (y=8% to 29%) for two large headline lines; a generous clean CENTRAL RECTANGULAR SPACE (x=9% to 91%, y=33% to 78%) for one portrait; a calm LOWER BAND (y=80% to 91%) for a small profile-photo bubble and invitation. Decoration should primarily live in the outer 8% of the canvas, so the original portrait will remain the focal point. Don't draw a placeholder icon or a human silhouette. Every blank zone should be the same attractive background paper; no checkerboard or transparency. Original, confidently art-directed, tactile materials, controlled shapes and strong color, polished independent editorial design.  Never draw an outlined rectangle or a visible central frame; the portrait frame will be added in code. No lettering in any form.Expressive cut-paper fashion editorial. Deep aubergine matte paper, broad imperfect peach-pink and vermilion wavy paper ribbons entering only from the outer left and right edges, restrained tactile cut edges with real shadow, an expansive clean central blank photographic area. Mood is intimate, artistic and confidently unconventional, not a scrapbook or party decoration.",
+      "variants": [
+        {
+          "id": "04-more-you-a",
+          "letter": "A",
+          "photo_stem": "R1-09952-0003",
+          "headline": [
+            "A little",
+            "more you."
+          ],
+          "rationale": "Direct gaze with strong dark-hair/pink-background separation.",
+          "width": 2433,
+          "height": 3637,
+          "exif_orientation": 1,
+          "photo_path": "/Users/aidantorrence/Documents/aidan-modern/public/images/new_top_tier_candidates/R1-09952-0003.jpg",
+          "source_sha256": "a7839b4af137d5a4e8255bd355d839be5deeacc2c6afa255c3635329b21cab61",
+          "face": [
+            0.3190595805644989,
+            0.3712669610977173,
+            0.45354944467544556,
+            0.3033493757247925
+          ],
+          "face_source": "Existing Apple Vision detection; normalized to original image dimensions"
+        },
+        {
+          "id": "04-more-you-b",
+          "letter": "B",
+          "photo_stem": "R1-09794-021A",
+          "headline": [
+            "Bring your",
+            "own character."
+          ],
+          "rationale": "Warm sunlight, visible eyes and an approachable three-quarter portrait.",
+          "width": 2433,
+          "height": 3637,
+          "exif_orientation": 1,
+          "photo_path": "/Users/aidantorrence/Documents/aidan-modern/public/images/new_top_tier_candidates/R1-09794-021A.jpg",
+          "source_sha256": "962245dc1fb89720784cad6100556592dfdaebd29ecfddf42d4466eb1cd3a861",
+          "face": [
+            0.21212366223335266,
+            0.2848585844039917,
+            0.40520942211151123,
+            0.2710179090499878
+          ],
+          "face_source": "Existing Apple Vision detection; normalized to original image dimensions"
+        },
+        {
+          "id": "04-more-you-c",
+          "letter": "C",
+          "photo_stem": "R1-09793-0013",
+          "headline": [
+            "A face.",
+            "A whole story."
+          ],
+          "rationale": "A clearly readable face, tactile styling and complementary pink/green tones.",
+          "width": 2433,
+          "height": 3637,
+          "exif_orientation": 1,
+          "photo_path": "/Users/aidantorrence/Documents/aidan-modern/public/images/new_top_tier_candidates/R1-09793-0013.jpg",
+          "source_sha256": "e3b4597dbddf44a43b729d19eff4bd54b8703d098fffaf9508325ee3877ec7ca",
+          "face": [
+            0.20170292258262634,
+            0.28270938992500305,
+            0.5513510704040527,
+            0.36876246333122253
+          ],
+          "face_source": "Existing Apple Vision detection; normalized to original image dimensions"
+        }
+      ]
+    },
+    {
+      "id": "05-next-idea",
+      "title": "Your face. My next idea.",
+      "angle": "A personal creative collaboration",
+      "photos": [
+        "R1-00006-013A",
+        "R1-00009-0021",
+        "R1-09953-021A"
+      ],
+      "heads": [
+        [
+          "Your face.",
+          "My next idea."
+        ],
+        [
+          "Let's make",
+          "something together."
+        ],
+        [
+          "An idea needs",
+          "a person."
+        ]
+      ],
+      "bg": "#eee9df",
+      "ink": "#c93226",
+      "accent": "#c93226",
+      "font": "Hand",
+      "brief": "An artist's studio working sheet: warm off-white faint red graph paper, exuberant red grease-pencil looping gestures and one graphic arrow confined to the margins, the feeling of an exciting idea being sketched out. Large central blank photographic area. A tiny soft red ink thumbprint-like abstract smudge at one outer corner, only paper and gestural ink, no hands, people, cameras, text, or actual fingerprint detail.",
+      "background_source": "/Users/aidantorrence/.codex/generated_images/01a160f8-beff-7a61-aa20-11d6b420c223/exec-d3011eba-16cc-4b00-aace-e4f314349efc.png",
+      "background_path": "assets/05-next-idea-background.png",
+      "background_prompt": "Use case: ads-marketing. Create ONE original graphic BACKGROUND ART PLATE for a vertical 9:16 portrait-photography invitation. This is only the abstract paper-and-ink design layer; actual photographs and readable type will be composited separately with deterministic layout. Absolutely NO photographs, people, human figures, faces, letters, words, numbers, logos, watermark, app interface, fake controls, or typography of any kind.\nComposition must be flat graphic art filling the entire canvas, not a photograph of a poster in a room. Preserve a generous relatively calm TOP BAND (y=8% to 29%) for two large headline lines; a generous clean CENTRAL RECTANGULAR SPACE (x=9% to 91%, y=33% to 78%) for one portrait; a calm LOWER BAND (y=80% to 91%) for a small profile-photo bubble and invitation. Decoration should primarily live in the outer 8% of the canvas, so the original portrait will remain the focal point. Don't draw a placeholder icon or a human silhouette. Every blank zone should be the same attractive background paper; no checkerboard or transparency. Original, confidently art-directed, tactile materials, controlled shapes and strong color, polished independent editorial design.  Never draw an outlined rectangle or a visible central frame; the portrait frame will be added in code. No lettering in any form.An artist's studio working sheet: warm off-white faint red graph paper, exuberant red grease-pencil looping gestures and one graphic arrow confined to the margins, the feeling of an exciting idea being sketched out. Large central blank photographic area. A tiny soft red ink thumbprint-like abstract smudge at one outer corner, only paper and gestural ink, no hands, people, cameras, text, or actual fingerprint detail.",
+      "variants": [
+        {
+          "id": "05-next-idea-a",
+          "letter": "A",
+          "photo_stem": "R1-00006-013A",
+          "headline": [
+            "Your face.",
+            "My next idea."
+          ],
+          "rationale": "Bold orange background and direct gaze give immediate visual separation.",
+          "width": 2433,
+          "height": 3637,
+          "exif_orientation": 1,
+          "photo_path": "/Users/aidantorrence/Documents/aidan-modern/public/images/new_top_tier_candidates/R1-00006-013A.jpg",
+          "source_sha256": "c0ff284d4d9186161ee70926685c74cf14a618f0cb8ec17e6f5eaea6ef1c766f",
+          "face": [
+            0.34990614652633667,
+            0.36868108808994293,
+            0.3586060702800751,
+            0.23984800279140472
+          ],
+          "face_source": "Existing Apple Vision detection; normalized to original image dimensions"
+        },
+        {
+          "id": "05-next-idea-b",
+          "letter": "B",
+          "photo_stem": "R1-00009-0021",
+          "headline": [
+            "Let's make",
+            "something together."
+          ],
+          "rationale": "Strong male close-up, rich warm light and distinctive long hair.",
+          "width": 2433,
+          "height": 3637,
+          "exif_orientation": 1,
+          "photo_path": "/Users/aidantorrence/Documents/aidan-modern/public/images/new_top_tier_candidates/R1-00009-0021.jpg",
+          "source_sha256": "76abb374106a589418b787c086e843cfee212babbded98dcd6e35915c2575847",
+          "face": [
+            0.2823282778263092,
+            0.33907148241996765,
+            0.3946053683757782,
+            0.26392558217048645
+          ],
+          "face_source": "Existing Apple Vision detection; normalized to original image dimensions"
+        },
+        {
+          "id": "05-next-idea-c",
+          "letter": "C",
+          "photo_stem": "R1-09953-021A",
+          "headline": [
+            "An idea needs",
+            "a person."
+          ],
+          "rationale": "Graphic bob haircut, leather texture and a striking shadow pattern around a readable face.",
+          "width": 2433,
+          "height": 3637,
+          "exif_orientation": 1,
+          "photo_path": "/Users/aidantorrence/Documents/aidan-modern/public/images/new_top_tier_candidates/R1-09953-021A.jpg",
+          "source_sha256": "b208abd799e2e127a362b790086d920839d0c3715954cd5380feac569555a361",
+          "face": [
+            0.3707409203052521,
+            0.33476054668426514,
+            0.4279613494873047,
+            0.28623518347740173
+          ],
+          "face_source": "Existing Apple Vision detection; normalized to original image dimensions"
+        }
+      ]
+    },
+    {
+      "id": "06-hello-charlotte",
+      "title": "Good to meet you, Charlotte",
+      "angle": "Meeting a photographer who is in town",
+      "photos": [
+        "R1-09798-032A",
+        "R1-09797-0005",
+        "img0006"
+      ],
+      "heads": [
+        [
+          "Good to meet you,",
+          "Charlotte."
+        ],
+        [
+          "In town.",
+          "Making portraits."
+        ],
+        [
+          "Charlotte, got",
+          "a little time?"
+        ]
+      ],
+      "bg": "#b9d5e4",
+      "ink": "#173e69",
+      "accent": "#f06742",
+      "font": "Fraunces",
+      "brief": "A charming personal travel-dispatch print design. Muted sky-blue textured stationery, loose cobalt-blue pen doodles of simple postage cancellation curves and wandering paths at the very edges, one small vermilion abstract four-point compass-like star at upper right. Large clean central blank photographic area. No real stamps, map labels, landmarks, postal text, logos or symbols of actual organizations. Warm, airy, editorial.",
+      "background_source": "/Users/aidantorrence/.codex/generated_images/01a160f8-beff-7a61-aa20-11d6b420c223/exec-42a6f7ea-49d1-4d65-867d-bebf62447b65.png",
+      "background_path": "assets/06-hello-charlotte-background.png",
+      "background_prompt": "Use case: ads-marketing. Create ONE original graphic BACKGROUND ART PLATE for a vertical 9:16 portrait-photography invitation. This is only the abstract paper-and-ink design layer; actual photographs and readable type will be composited separately with deterministic layout. Absolutely NO photographs, people, human figures, faces, letters, words, numbers, logos, watermark, app interface, fake controls, or typography of any kind.\nComposition must be flat graphic art filling the entire canvas, not a photograph of a poster in a room. Preserve a generous relatively calm TOP BAND (y=8% to 29%) for two large headline lines; a generous clean CENTRAL RECTANGULAR SPACE (x=9% to 91%, y=33% to 78%) for one portrait; a calm LOWER BAND (y=80% to 91%) for a small profile-photo bubble and invitation. Decoration should primarily live in the outer 8% of the canvas, so the original portrait will remain the focal point. Don't draw a placeholder icon or a human silhouette. Every blank zone should be the same attractive background paper; no checkerboard or transparency. Original, confidently art-directed, tactile materials, controlled shapes and strong color, polished independent editorial design.  Never draw an outlined rectangle or a visible central frame; the portrait frame will be added in code. No lettering in any form.A charming personal travel-dispatch print design. Muted sky-blue textured stationery, loose cobalt-blue pen doodles of simple postage cancellation curves and wandering paths at the very edges, one small vermilion abstract four-point compass-like star at upper right. Large clean central blank photographic area. No real stamps, map labels, landmarks, postal text, logos or symbols of actual organizations. Warm, airy, editorial.",
+      "variants": [
+        {
+          "id": "06-hello-charlotte-a",
+          "letter": "A",
+          "photo_stem": "R1-09798-032A",
+          "headline": [
+            "Good to meet you,",
+            "Charlotte."
+          ],
+          "rationale": "The reflection adds a second look without losing the primary face.",
+          "width": 2433,
+          "height": 3637,
+          "exif_orientation": 1,
+          "photo_path": "/Users/aidantorrence/Documents/aidan-modern/public/images/new_top_tier_candidates/R1-09798-032A.jpg",
+          "source_sha256": "9abf39e936e9fda1979e48eb7058d041666f112b31efa5f10e57bfaebb2c6a88",
+          "face": [
+            0.31587857007980347,
+            0.3315313160419464,
+            0.253650963306427,
+            0.16965043544769287
+          ],
+          "face_source": "Existing Apple Vision detection; normalized to original image dimensions"
+        },
+        {
+          "id": "06-hello-charlotte-b",
+          "letter": "B",
+          "photo_stem": "R1-09797-0005",
+          "headline": [
+            "In town.",
+            "Making portraits."
+          ],
+          "rationale": "A strong centered expression in a recognizable street-photography setting.",
+          "width": 2433,
+          "height": 3637,
+          "exif_orientation": 1,
+          "photo_path": "/Users/aidantorrence/Documents/aidan-modern/public/images/new_top_tier_candidates/R1-09797-0005.jpg",
+          "source_sha256": "8631ad21bb7545b32d3edcaa782041fb0979301987ba107cf5c412a074ffb3b8",
+          "face": [
+            0.41858452558517456,
+            0.38787946105003357,
+            0.26147085428237915,
+            0.17488065361976624
+          ],
+          "face_source": "Existing Apple Vision detection; normalized to original image dimensions"
+        },
+        {
+          "id": "06-hello-charlotte-c",
+          "letter": "C",
+          "photo_stem": "img0006",
+          "headline": [
+            "Charlotte, got",
+            "a little time?"
+          ],
+          "rationale": "Close male portrait with direct gaze and colorful architectural texture.",
+          "width": 2624,
+          "height": 3936,
+          "exif_orientation": 1,
+          "photo_path": "/Users/aidantorrence/Documents/aidan-modern/public/images/new_top_tier_candidates/img0006.jpg",
+          "source_sha256": "91c812e3996062f5fd95296459605a7f3aadf40bd8da0831817185bfbed8110a",
+          "face": [
+            0.33083376288414,
+            0.42615360021591187,
+            0.34079495072364807,
+            0.22719663381576538
+          ],
+          "face_source": "Existing Apple Vision detection; normalized to original image dimensions"
+        }
+      ]
+    },
+    {
+      "id": "07-come-as-you-are",
+      "title": "Camera shy? Come as you are.",
+      "angle": "Lower the barrier to a first photo shoot",
+      "photos": [
+        "R1-00008-0005",
+        "R1-09997-0003",
+        "R1-00009-0034"
+      ],
+      "heads": [
+        [
+          "Camera shy?",
+          "Come as you are."
+        ],
+        [
+          "Never done this?",
+          "Let's start here."
+        ],
+        [
+          "No perfect pose",
+          "required."
+        ]
+      ],
+      "bg": "#eed5c8",
+      "ink": "#633d50",
+      "accent": "#9c708e",
+      "font": "Hand",
+      "brief": "An intimate soft art-book page. Warm peach handmade paper, gentle mauve curved paper shapes sweeping along the outer edges as if opening a little stage, one subtle lilac double-arc above the lower right margin, sophisticated analog ink texture. Large central blank photographic area. Calm and inviting, no people, curtains made of fabric, silhouettes, hearts, or motivational typography.",
+      "background_source": "/Users/aidantorrence/.codex/generated_images/01a160f8-beff-7a61-aa20-11d6b420c223/exec-0d3cd01e-5578-403e-90de-e653b3698aab.png",
+      "background_path": "assets/07-come-as-you-are-background.png",
+      "background_prompt": "Use case: ads-marketing. Create ONE original graphic BACKGROUND ART PLATE for a vertical 9:16 portrait-photography invitation. This is only the abstract paper-and-ink design layer; actual photographs and readable type will be composited separately with deterministic layout. Absolutely NO photographs, people, human figures, faces, letters, words, numbers, logos, watermark, app interface, fake controls, or typography of any kind.\nComposition must be flat graphic art filling the entire canvas, not a photograph of a poster in a room. Preserve a generous relatively calm TOP BAND (y=8% to 29%) for two large headline lines; a generous clean CENTRAL RECTANGULAR SPACE (x=9% to 91%, y=33% to 78%) for one portrait; a calm LOWER BAND (y=80% to 91%) for a small profile-photo bubble and invitation. Decoration should primarily live in the outer 8% of the canvas, so the original portrait will remain the focal point. Don't draw a placeholder icon or a human silhouette. Every blank zone should be the same attractive background paper; no checkerboard or transparency. Original, confidently art-directed, tactile materials, controlled shapes and strong color, polished independent editorial design.  Never draw an outlined rectangle or a visible central frame; the portrait frame will be added in code. No lettering in any form.An intimate soft art-book page. Warm peach handmade paper, gentle mauve curved paper shapes sweeping along the outer edges as if opening a little stage, one subtle lilac double-arc above the lower right margin, sophisticated analog ink texture. Large central blank photographic area. Calm and inviting, no people, curtains made of fabric, silhouettes, hearts, or motivational typography.",
+      "variants": [
+        {
+          "id": "07-come-as-you-are-a",
+          "letter": "A",
+          "photo_stem": "R1-00008-0005",
+          "headline": [
+            "Camera shy?",
+            "Come as you are."
+          ],
+          "rationale": "A clean, calm close portrait with a simple background and readable eyes.",
+          "width": 2433,
+          "height": 3637,
+          "exif_orientation": 1,
+          "photo_path": "/Users/aidantorrence/Documents/aidan-modern/public/images/new_top_tier_candidates/R1-00008-0005.jpg",
+          "source_sha256": "a90d062880a9de5f7be8ce729a5aa25df497a5339c5f06a081fc088f530b3fdc",
+          "face": [
+            0.27855193614959717,
+            0.26488828659057617,
+            0.4687715172767639,
+            0.31353041529655457
+          ],
+          "face_source": "Existing Apple Vision detection; normalized to original image dimensions"
+        },
+        {
+          "id": "07-come-as-you-are-b",
+          "letter": "B",
+          "photo_stem": "R1-09997-0003",
+          "headline": [
+            "Never done this?",
+            "Let's start here."
+          ],
+          "rationale": "Direct monochrome gaze with bright outdoor separation.",
+          "width": 2433,
+          "height": 3637,
+          "exif_orientation": 1,
+          "photo_path": "/Users/aidantorrence/Documents/aidan-modern/public/images/new_top_tier_candidates/R1-09997-0003.jpg",
+          "source_sha256": "a5617da2a36755a122bb4ac013103f53e97c0d1bf512ae9874f845c2bb5f619b",
+          "face": [
+            0.36251160502433777,
+            0.4325084388256073,
+            0.3813980221748352,
+            0.2550920248031616
+          ],
+          "face_source": "Existing Apple Vision detection; normalized to original image dimensions"
+        },
+        {
+          "id": "07-come-as-you-are-c",
+          "letter": "C",
+          "photo_stem": "R1-00009-0034",
+          "headline": [
+            "No perfect pose",
+            "required."
+          ],
+          "rationale": "Centered face and dark clothing with a restrained background; easy to read in a crop.",
+          "width": 2433,
+          "height": 3637,
+          "exif_orientation": 1,
+          "photo_path": "/Users/aidantorrence/Documents/aidan-modern/public/images/new_top_tier_candidates/R1-00009-0034.jpg",
+          "source_sha256": "c501a5cb4e78b53e29c8ff40e4b829facc37a9ac2cb37a80a44bdfe38bb98660",
+          "face": [
+            0.2429570108652115,
+            0.25410109758377075,
+            0.4379144310951233,
+            0.2928921580314636
+          ],
+          "face_source": "Existing Apple Vision detection; normalized to original image dimensions"
+        }
+      ]
+    },
+    {
+      "id": "08-group-chat",
+      "title": "The group chat needs an update",
+      "angle": "A useful photo to share with people you know",
+      "photos": [
+        "11954-12",
+        "R1-00006-008A",
+        "img0015-2"
+      ],
+      "heads": [
+        [
+          "The group chat",
+          "needs an update."
+        ],
+        [
+          "Give your friends",
+          "a new favorite."
+        ],
+        [
+          "A photo",
+          "worth sending."
+        ]
+      ],
+      "bg": "#e5b3d0",
+      "ink": "#3e2462",
+      "accent": "#cbea80",
+      "font": "Grotesk",
+      "brief": "A bright graphic conversation collage in dusty hot pink, rich purple and acid-lime. Two very large imperfect abstract speech-bubble paper outlines cropped at the extreme margins, one lime block of paper peeking from lower right, a clean large central blank photographic area. Screen-printed texture and sharp playful composition. No messages, interface elements, notifications, app designs, icons, controls, or words.",
+      "background_source": "/Users/aidantorrence/.codex/generated_images/01a160f8-beff-7a61-aa20-11d6b420c223/exec-127b554d-2396-496d-a0a6-e1346bf2f5ed.png",
+      "background_path": "assets/08-group-chat-background.png",
+      "background_prompt": "Use case: ads-marketing. Create ONE original graphic BACKGROUND ART PLATE for a vertical 9:16 portrait-photography invitation. This is only the abstract paper-and-ink design layer; actual photographs and readable type will be composited separately with deterministic layout. Absolutely NO photographs, people, human figures, faces, letters, words, numbers, logos, watermark, app interface, fake controls, or typography of any kind.\nComposition must be flat graphic art filling the entire canvas, not a photograph of a poster in a room. Preserve a generous relatively calm TOP BAND (y=8% to 29%) for two large headline lines; a generous clean CENTRAL RECTANGULAR SPACE (x=9% to 91%, y=33% to 78%) for one portrait; a calm LOWER BAND (y=80% to 91%) for a small profile-photo bubble and invitation. Decoration should primarily live in the outer 8% of the canvas, so the original portrait will remain the focal point. Don't draw a placeholder icon or a human silhouette. Every blank zone should be the same attractive background paper; no checkerboard or transparency. Original, confidently art-directed, tactile materials, controlled shapes and strong color, polished independent editorial design.  Never draw an outlined rectangle or a visible central frame; the portrait frame will be added in code. No lettering in any form.A bright graphic conversation collage in dusty hot pink, rich purple and acid-lime. Two very large imperfect abstract speech-bubble paper outlines cropped at the extreme margins, one lime block of paper peeking from lower right, a clean large central blank photographic area. Screen-printed texture and sharp playful composition. No messages, interface elements, notifications, app designs, icons, controls, or words.",
+      "variants": [
+        {
+          "id": "08-group-chat-a",
+          "letter": "A",
+          "photo_stem": "11954-12",
+          "headline": [
+            "The group chat",
+            "needs an update."
+          ],
+          "rationale": "An informal moment, visible eyes and the ice-cream detail provide an accessible everyday feeling.",
+          "width": 2137,
+          "height": 3188,
+          "exif_orientation": 1,
+          "photo_path": "/Users/aidantorrence/Documents/aidan-modern/public/images/new_top_tier_candidates/11954-12.jpg",
+          "source_sha256": "69870106207bc5d5a80b5970be59267ac1d6c842ca50fb757a31bf44bf85ded4",
+          "face": [
+            0.017133839428424835,
+            0.20106638967990875,
+            0.9571378827095032,
+            0.6416566967964172
+          ],
+          "face_source": "Existing Apple Vision detection; normalized to original image dimensions"
+        },
+        {
+          "id": "08-group-chat-b",
+          "letter": "B",
+          "photo_stem": "R1-00006-008A",
+          "headline": [
+            "Give your friends",
+            "a new favorite."
+          ],
+          "rationale": "An expressive hand/arm pose frames a clear face against a simple background.",
+          "width": 2433,
+          "height": 3637,
+          "exif_orientation": 1,
+          "photo_path": "/Users/aidantorrence/Documents/aidan-modern/public/images/new_top_tier_candidates/R1-00006-008A.jpg",
+          "source_sha256": "c63fc2b2c6bcc94ae5115d3011b23f2817d3d45cf8cc78692798c5d4eca6387a",
+          "face": [
+            0.3042433559894562,
+            0.17196278274059296,
+            0.2937242388725281,
+            0.1964528113603592
+          ],
+          "face_source": "Existing Apple Vision detection; normalized to original image dimensions"
+        },
+        {
+          "id": "08-group-chat-c",
+          "letter": "C",
+          "photo_stem": "img0015-2",
+          "headline": [
+            "A photo",
+            "worth sending."
+          ],
+          "rationale": "Direct eye contact and sharp dark clothing against saturated background detail.",
+          "width": 2624,
+          "height": 3936,
+          "exif_orientation": 1,
+          "photo_path": "/Users/aidantorrence/Documents/aidan-modern/public/images/new_top_tier_candidates/img0015-2.jpg",
+          "source_sha256": "2a3d83059e772c3fddb2c35a6fda461fb927a6bb09d6ffee5e195f0a58d1bda1",
+          "face": [
+            0.30369120836257935,
+            0.3672281503677368,
+            0.35861387848854065,
+            0.2390759289264679
+          ],
+          "face_source": "Existing Apple Vision detection; normalized to original image dimensions"
+        }
+      ]
+    },
+    {
+      "id": "09-yourself",
+      "title": "Look like yourself",
+      "angle": "The person matters more than the pose",
+      "photos": [
+        "R1-09995-0010",
+        "R1-09997-0006",
+        "R1-09952-0019"
+      ],
+      "heads": [
+        [
+          "Look like",
+          "yourself."
+        ],
+        [
+          "Same you.",
+          "New favorite photo."
+        ],
+        [
+          "Keep the personality.",
+          "Change the photo."
+        ]
+      ],
+      "bg": "#eeebe1",
+      "ink": "#181b1b",
+      "accent": "#264fbc",
+      "font": "Condensed",
+      "brief": "A very refined independent photography zine cover background: soft ivory uncoated paper, a large cobalt-blue dry-brush crescent mostly cropped along the left edge, a few short near-black screen-print registration-like ticks along the outside margins, sharp restrained editorial geometry around a large central blank photographic area. Lots of clear space. Bold and premium, no lettering, fake magazine branding or barcode.",
+      "background_source": "/Users/aidantorrence/.codex/generated_images/01a160f8-beff-7a61-aa20-11d6b420c223/exec-59b5758d-09c7-4176-837e-f9624b7d9fcd.png",
+      "background_path": "assets/09-yourself-background.png",
+      "background_prompt": "Use case: ads-marketing. Create ONE original graphic BACKGROUND ART PLATE for a vertical 9:16 portrait-photography invitation. This is only the abstract paper-and-ink design layer; actual photographs and readable type will be composited separately with deterministic layout. Absolutely NO photographs, people, human figures, faces, letters, words, numbers, logos, watermark, app interface, fake controls, or typography of any kind.\nComposition must be flat graphic art filling the entire canvas, not a photograph of a poster in a room. Preserve a generous relatively calm TOP BAND (y=8% to 29%) for two large headline lines; a generous clean CENTRAL RECTANGULAR SPACE (x=9% to 91%, y=33% to 78%) for one portrait; a calm LOWER BAND (y=80% to 91%) for a small profile-photo bubble and invitation. Decoration should primarily live in the outer 8% of the canvas, so the original portrait will remain the focal point. Don't draw a placeholder icon or a human silhouette. Every blank zone should be the same attractive background paper; no checkerboard or transparency. Original, confidently art-directed, tactile materials, controlled shapes and strong color, polished independent editorial design.  Never draw an outlined rectangle or a visible central frame; the portrait frame will be added in code. No lettering in any form.A very refined independent photography zine cover background: soft ivory uncoated paper, a large cobalt-blue dry-brush crescent mostly cropped along the left edge, a few short near-black screen-print registration-like ticks along the outside margins, sharp restrained editorial geometry around a large central blank photographic area. Lots of clear space. Bold and premium, no lettering, fake magazine branding or barcode.",
+      "variants": [
+        {
+          "id": "09-yourself-a",
+          "letter": "A",
+          "photo_stem": "R1-09995-0010",
+          "headline": [
+            "Look like",
+            "yourself."
+          ],
+          "rationale": "Dramatic split lighting creates contrast while the visible eye anchors attention.",
+          "width": 2433,
+          "height": 3637,
+          "exif_orientation": 1,
+          "photo_path": "/Users/aidantorrence/Documents/aidan-modern/public/images/new_top_tier_candidates/R1-09995-0010.jpg",
+          "source_sha256": "cad70e423e5362c3bd3966c25f6630cf68282bfa3f80d060dd87b8fa539d2afe",
+          "face": [
+            0.2298380732536316,
+            0.3494817316532135,
+            0.42136451601982117,
+            0.28182297945022583
+          ],
+          "face_source": "Existing Apple Vision detection; normalized to original image dimensions"
+        },
+        {
+          "id": "09-yourself-b",
+          "letter": "B",
+          "photo_stem": "R1-09997-0006",
+          "headline": [
+            "Same you.",
+            "New favorite photo."
+          ],
+          "rationale": "Sculptural high-contrast monochrome close-up with a clearly visible gaze.",
+          "width": 2433,
+          "height": 3637,
+          "exif_orientation": 1,
+          "photo_path": "/Users/aidantorrence/Documents/aidan-modern/public/images/new_top_tier_candidates/R1-09997-0006.jpg",
+          "source_sha256": "3d63d97b916a3ae556aa7473d5c4c0a43ed6afecaabccb82331de31d33489e1c",
+          "face": [
+            0.27781614661216736,
+            0.3614732623100281,
+            0.3759317994117737,
+            0.2514360547065735
+          ],
+          "face_source": "Existing Apple Vision detection; normalized to original image dimensions"
+        },
+        {
+          "id": "09-yourself-c",
+          "letter": "C",
+          "photo_stem": "R1-09952-0019",
+          "headline": [
+            "Keep the personality.",
+            "Change the photo."
+          ],
+          "rationale": "Dynamic pose, direct gaze and strong diagonal composition.",
+          "width": 2433,
+          "height": 3637,
+          "exif_orientation": 1,
+          "photo_path": "/Users/aidantorrence/Documents/aidan-modern/public/images/new_top_tier_candidates/R1-09952-0019.jpg",
+          "source_sha256": "988e6ef594c84bfbcaa360774e4aa0765e569e823f2cc8f31e179a30aa2bd252",
+          "face": [
+            0.22399486601352692,
+            0.27401116490364075,
+            0.4507964253425598,
+            0.3015080690383911
+          ],
+          "face_source": "Existing Apple Vision detection; normalized to original image dimensions"
+        }
+      ]
+    },
+    {
+      "id": "10-small-plan",
+      "title": "A small plan. A good story.",
+      "angle": "An easy spontaneous creative plan",
+      "photos": [
+        "R1-09793-0028",
+        "000014",
+        "R1-09794-035A"
+      ],
+      "heads": [
+        [
+          "A small plan.",
+          "A good story."
+        ],
+        [
+          "Your next",
+          "good plan."
+        ],
+        [
+          "Let's make",
+          "a little memory."
+        ]
+      ],
+      "bg": "#dfd2b9",
+      "ink": "#284438",
+      "accent": "#bf573c",
+      "font": "Fraunces",
+      "brief": "A literary keepsake invitation on warm oatmeal deckled paper, layered cream book-page edges peeking from the right and bottom, one graceful forest-green pen loop running around the outside margin, small rust-orange printed square near lower left. Expansive clean central blank photographic area, tactile and warmly personal, real paper folds very subtle, no book lettering, binding text, people or objects.",
+      "background_source": "/Users/aidantorrence/.codex/generated_images/01a160f8-beff-7a61-aa20-11d6b420c223/exec-e8053a4b-a7df-4bb3-aa4a-15c3bcb5cbfb.png",
+      "background_path": "assets/10-small-plan-background.png",
+      "background_prompt": "Use case: ads-marketing. Create ONE original graphic BACKGROUND ART PLATE for a vertical 9:16 portrait-photography invitation. This is only the abstract paper-and-ink design layer; actual photographs and readable type will be composited separately with deterministic layout. Absolutely NO photographs, people, human figures, faces, letters, words, numbers, logos, watermark, app interface, fake controls, or typography of any kind.\nComposition must be flat graphic art filling the entire canvas, not a photograph of a poster in a room. Preserve a generous relatively calm TOP BAND (y=8% to 29%) for two large headline lines; a generous clean CENTRAL RECTANGULAR SPACE (x=9% to 91%, y=33% to 78%) for one portrait; a calm LOWER BAND (y=80% to 91%) for a small profile-photo bubble and invitation. Decoration should primarily live in the outer 8% of the canvas, so the original portrait will remain the focal point. Don't draw a placeholder icon or a human silhouette. Every blank zone should be the same attractive background paper; no checkerboard or transparency. Original, confidently art-directed, tactile materials, controlled shapes and strong color, polished independent editorial design.  Never draw an outlined rectangle or a visible central frame; the portrait frame will be added in code. No lettering in any form.A literary keepsake invitation on warm oatmeal deckled paper, layered cream book-page edges peeking from the right and bottom, one graceful forest-green pen loop running around the outside margin, small rust-orange printed square near lower left. Expansive clean central blank photographic area, tactile and warmly personal, real paper folds very subtle, no book lettering, binding text, people or objects.",
+      "variants": [
+        {
+          "id": "10-small-plan-a",
+          "letter": "A",
+          "photo_stem": "R1-09793-0028",
+          "headline": [
+            "A small plan.",
+            "A good story."
+          ],
+          "rationale": "Directional light and a close three-quarter expression create an intimate portrait.",
+          "width": 2433,
+          "height": 3637,
+          "exif_orientation": 1,
+          "photo_path": "/Users/aidantorrence/Documents/aidan-modern/public/images/new_top_tier_candidates/R1-09793-0028.jpg",
+          "source_sha256": "d7715f2708250338312c81c4c50d0e3f68757310ec2c8f03465e37ab08378f57",
+          "face": [
+            0.2004607766866684,
+            0.2972088158130646,
+            0.4838501811027527,
+            0.32361555099487305
+          ],
+          "face_source": "Existing Apple Vision detection; normalized to original image dimensions"
+        },
+        {
+          "id": "10-small-plan-b",
+          "letter": "B",
+          "photo_stem": "000014",
+          "headline": [
+            "Your next",
+            "good plan."
+          ],
+          "rationale": "The coat and hands give a strong silhouette; a face-led crop keeps the eyes readable.",
+          "width": 3047,
+          "height": 4547,
+          "exif_orientation": 1,
+          "photo_path": "/Users/aidantorrence/Documents/aidan-modern/public/images/new_top_tier_candidates/000014.jpg",
+          "source_sha256": "f77b522929a9ce5da41327801161778bf1ecf5db7ce65d17755c9fb488bab167",
+          "face": [
+            0.4508928060531616,
+            0.22943267226219177,
+            0.2355480194091797,
+            0.15783581137657166
+          ],
+          "face_source": "Existing Apple Vision detection; normalized to original image dimensions"
+        },
+        {
+          "id": "10-small-plan-c",
+          "letter": "C",
+          "photo_stem": "R1-09794-035A",
+          "headline": [
+            "Let's make",
+            "a little memory."
+          ],
+          "rationale": "A clean mid-length portrait with visible eyes and an uncluttered cool-colored backdrop.",
+          "width": 2433,
+          "height": 3637,
+          "exif_orientation": 1,
+          "photo_path": "/Users/aidantorrence/Documents/aidan-modern/public/images/new_top_tier_candidates/R1-09794-035A.jpg",
+          "source_sha256": "703eafdecb27921616a353986134c5a456b3205695c07bb7cd80a849e5f241c9",
+          "face": [
+            0.32927626371383667,
+            0.2617915868759155,
+            0.29281085729599,
+            0.19584190845489502
+          ],
+          "face_source": "Existing Apple Vision detection; normalized to original image dimensions"
+        }
+      ]
+    }
+  ]
+}

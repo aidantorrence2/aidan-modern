@@ -1,8 +1,0 @@
-work/
-out/*-vtest*
-out/*-vnosfx*
-audio/out/
-audio/cache/
-node_modules/
-.DS_Store
-out/*.mp4

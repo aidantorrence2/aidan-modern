@@ -1,0 +1,145 @@
+{
+  "method": "Pillow compositing only; no image generation or photographic retouching",
+  "design_template": "/Users/aidantorrence/Documents/aidan-modern/marketing/charlotte-ig-dm/renders-v20-personal-story/01-personal-note-with-work.png",
+  "preserved_design": "Existing blue lettering, paper and illustration from the approved draft",
+  "photo_operations": [
+    "crop to fit",
+    "resize",
+    "perspective placement"
+  ],
+  "photos": [
+    {
+      "name": "male-portfolio",
+      "source": "/Users/aidantorrence/Documents/aidan-modern/public/images/new_top_tier_candidates/R1-09794-021A.jpg",
+      "outer": [
+        [
+          35,
+          628
+        ],
+        [
+          451,
+          599
+        ],
+        [
+          483,
+          1163
+        ],
+        [
+          56,
+          1188
+        ]
+      ],
+      "inner": [
+        [
+          46,
+          640
+        ],
+        [
+          441,
+          612
+        ],
+        [
+          470,
+          1150
+        ],
+        [
+          67,
+          1176
+        ]
+      ],
+      "source_sha256": "962245dc1fb89720784cad6100556592dfdaebd29ecfddf42d4466eb1cd3a861"
+    },
+    {
+      "name": "female-portfolio",
+      "source": "/Users/aidantorrence/Documents/aidan-modern/public/images/new_top_tier_candidates/000014.jpg",
+      "outer": [
+        [
+          462,
+          591
+        ],
+        [
+          897,
+          580
+        ],
+        [
+          915,
+          1158
+        ],
+        [
+          477,
+          1167
+        ]
+      ],
+      "inner": [
+        [
+          474,
+          604
+        ],
+        [
+          885,
+          592
+        ],
+        [
+          902,
+          1146
+        ],
+        [
+          490,
+          1154
+        ]
+      ],
+      "source_sha256": "f77b522929a9ce5da41327801161778bf1ecf5db7ce65d17755c9fb488bab167"
+    },
+    {
+      "name": "photographer-selfie",
+      "source": "/Users/aidantorrence/Documents/aidan-modern/marketing/charlotte-video-ads/work/src2/aidan-real-selfie.jpg",
+      "outer": [
+        [
+          57,
+          256
+        ],
+        [
+          315,
+          239
+        ],
+        [
+          330,
+          541
+        ],
+        [
+          72,
+          555
+        ]
+      ],
+      "inner": [
+        [
+          57,
+          256
+        ],
+        [
+          315,
+          239
+        ],
+        [
+          330,
+          541
+        ],
+        [
+          72,
+          555
+        ]
+      ],
+      "crop": [
+        125,
+        30,
+        725,
+        740
+      ],
+      "source_sha256": "d69adec1937201df76beb8481456010ce9577e3f88fe47dc9455b60e769bbe98"
+    }
+  ],
+  "checks": [
+    "all photo slot pixels equal direct source-photo render",
+    "all pixels outside photo slots unchanged"
+  ]
+}
