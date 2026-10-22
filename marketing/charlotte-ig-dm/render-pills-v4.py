@@ -61,11 +61,11 @@ ADS = [
     ("04-models-wanted", "p8", 0.15, "center", [
         ("models wanted", 110, *W_, -2, 0),
         ("charlotte · free photo shoot", 60, *B_, -2, 20)]),
-    # 5. new faces / no experience — close-up smile
-    ("05-new-faces", "p2", 0.15, "left", [
-        ("new faces", 130, *W_, 2, 0),
-        ("no experience needed", 64, *B_, 2, 20),
-        ("charlotte free photo shoot", 56, *W_, 2, 40)]),
+    # 5. in-town hook — close-up smile
+    ("05-shooting-in-charlotte", "p2", 0.15, "left", [
+        ("shooting in charlotte", 92, *W_, 2, 0),
+        ("free photo shoot", 72, *B_, 2, 20),
+        ("want to collab?", 64, *W_, 2, 40)]),
     # 6. the intro — dark portrait
     ("06-hi-im-aidan", "p4", 0.15, "left", [
         ("hi, i’m aidan", 120, *W_, 3, 0),
