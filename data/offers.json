@@ -25938,6 +25938,76 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-22",
+    "slug": "first-session",
+    "name": "First Session",
+    "need": "I want to run a tabletop RPG game for my friends for the first time, but I'm so nervous I'll freeze or disappoint them.",
+    "headline": "Run your first tabletop RPG session without the nerves: prep one short adventure step by step, rehearse the opening alone, and sit down at the table ready.",
+    "buyer": "Adults 18+ about to run their first few tabletop RPG sessions (5e-compatible games and similar) for friends, family or a new group.",
+    "bullets": [
+      "Guided prep for a first one-shot, ending in a one-page session cheat sheet.",
+      "A solo rehearsal of the opening scene, so the first five minutes feel familiar.",
+      "Improv prompts for when players go off-script, and a short after-session check-in."
+    ],
+    "price": "$3.99/month",
+    "priceUsd": 4,
+    "priceNote": "Or $24.99 a year.",
+    "reasonPrompt": "When is your first session, and how many players will you have?",
+    "faq": [
+      {
+        "q": "Which games does it work with?",
+        "a": "Any tabletop RPG. Examples use 5e-compatible rules, but the prep and rehearsal steps work for any system."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Adults 18+. It is an independent app, not affiliated with or endorsed by any game publisher, store or forum."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-22",
+      "summary": "New game masters say they want to run a game for the first time but are so nervous, worry about disappointing their friends, and want to get past the fear of being new.",
+      "wtp": "People pay for game-master tools: D&D Beyond's Master tier is $5.99 a month or $54.99 a year (92K App Store ratings), and Game Master 5th Edition sells a $2.99 premium version (1.6K ratings).",
+      "signals": [
+        {
+          "url": "https://www.dndbeyond.com/forums/dungeons-dragons-discussion/dungeon-masters-only/194293-new-nervous-dm-seeks-advice",
+          "who": "DGAFawkes (D&D Beyond forums)",
+          "date": "2024-03-30",
+          "quote": "I want to DM for the first time, but I am so nervous.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.dndbeyond.com/forums/dungeons-dragons-discussion/tips-tactics/44646-first-time-dm-nerves-advice",
+          "who": "SebbyRavencroft (D&D Beyond forums)",
+          "date": "2019-08-10",
+          "quote": "I am so worried about disappointing them.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.dndbeyond.com/forums/dungeons-dragons-discussion/dungeon-masters-only/30989-how-do-you-overcome-the-new-gm-and-new-players",
+          "who": "Tuskgarr (D&D Beyond forums)",
+          "date": "2019-01-06",
+          "quote": "how to get past the fears of being new to DMing",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.enworld.org/threads/wannabe-dm-requesting-help.354199/",
+          "who": "Nemio (EN World)",
+          "date": "2014-04-07",
+          "quote": "I guess that also depends on my DM performance so I'm a bit nervous about that.",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "D&D Beyond, Game Master 5th Edition, Fight Club 5th Edition, starter sets, YouTube advice channels.",
+      "risks": "Money is for game tools and rulebooks, not for nerves. No mental-health claims. Copy avoids publisher trademarks and says 'tabletop RPG'."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

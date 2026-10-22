@@ -9874,5 +9874,46 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "first-time-game-master-nerves",
+  "offer": "first-session",
+  "title": "Running your first tabletop RPG session: how to prep and calm the nerves",
+  "description": "Start small with a short one-shot, prep the opening and a few key moments, keep a one-page cheat sheet, and remember your players want it to go well too.",
+  "intro": "Almost every game master is nervous the first time. A small, well-prepared first session goes a long way.",
+  "sections": [
+   {
+    "h": "Start small",
+    "list": [
+     "Run a short one-shot of two to three hours, not a whole campaign.",
+     "A published starter adventure saves a lot of prep."
+    ]
+   },
+   {
+    "h": "Prep the parts that matter",
+    "list": [
+     "Know the opening scene well: where the characters are and what happens first.",
+     "Prepare a few key moments and characters; you don't need to script everything."
+    ]
+   },
+   {
+    "h": "Make a one-page cheat sheet",
+    "list": [
+     "Names, a few rules you'll need often, and what the main characters want. One page is easier to use than a full book."
+    ]
+   },
+   {
+    "h": "Rehearse the opening",
+    "list": [
+     "Say the first few minutes out loud on your own. It makes starting much easier."
+    ]
+   },
+   {
+    "h": "It's a shared game",
+    "p": [
+     "Your players want the session to go well too. It's fine to look up a rule, make a call and move on, or say 'let me think about that'. Ask them afterwards what they enjoyed."
+    ]
+   }
+  ]
  }
 ]
