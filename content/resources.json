@@ -10406,5 +10406,44 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "stop-talking-too-much",
+  "offer": "turn-share",
+  "title": "How to stop talking too much in conversations, without going quiet",
+  "description": "Go in with a couple of questions, keep stories short, pause before adding more, and check in with yourself afterwards.",
+  "intro": "Talking a lot often comes from enthusiasm or nerves. Small habits help you share the conversation without losing your personality.",
+  "sections": [
+   {
+    "h": "Go in with questions",
+    "list": [
+     "Before a chat, think of two things to ask the other person and listen for the answer."
+    ]
+   },
+   {
+    "h": "Keep stories short",
+    "list": [
+     "Aim for the point in about three sentences. If they want more, they'll ask."
+    ]
+   },
+   {
+    "h": "Pause before adding",
+    "list": [
+     "When you finish a thought, pause for a breath. It gives the other person a chance to speak."
+    ]
+   },
+   {
+    "h": "Notice the signs",
+    "list": [
+     "Glancing away, short replies, or trying to speak are signs it's their turn. Ask them a question."
+    ]
+   },
+   {
+    "h": "Check in afterwards",
+    "p": [
+     "After a conversation, ask yourself: did I ask questions? Did I learn something about them? Be kind to yourself; it's a habit you change gradually."
+    ]
+   }
+  ]
  }
 ]

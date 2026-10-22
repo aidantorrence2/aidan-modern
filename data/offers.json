@@ -26936,6 +26936,90 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-22",
+    "slug": "turn-share",
+    "name": "Turn Share",
+    "need": "I talk too much: I ramble, cut in and overshare, I hear myself but can't stop, and I cringe afterwards.",
+    "headline": "Talk a bit less and listen a bit more, without going quiet: a question card before you go, a private talk-time buzz, and a 30-second check afterwards.",
+    "buyer": "Adults who talk too much in conversations and want to stop rambling, interrupting and oversharing.",
+    "bullets": [
+      "A before-you-go card: two questions to ask and one thing to listen for.",
+      "A self-set talk-time buzz that only counts time and never records anything.",
+      "A 30-second after-chat log, three-sentence story drills and a pause habit."
+    ],
+    "price": "$2.99/month",
+    "priceUsd": 3,
+    "priceNote": "Or $19.99 a year.",
+    "reasonPrompt": "When does it happen most: with friends, at work, or when you're nervous?",
+    "faq": [
+      {
+        "q": "Does it record my conversations?",
+        "a": "No. Nothing is recorded or listened to. The buzz is a simple timer you start yourself."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Adults. It is an independent app, not linked to any author, book, course or forum."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-22",
+      "summary": "People on Mumsnet say they talk too much and tell people too much, hear themselves but can't stop, and worry it makes them look self-obsessed or annoying.",
+      "wtp": "People buy help with this: Dan Lyons' STFU: The Power of Keeping Your Mouth Shut sells in hardcover at $26.99.",
+      "signals": [
+        {
+          "url": "https://www.mumsnet.com/talk/relationships/978914-Does-anyone-else-talk-too-much-how-to-stop",
+          "who": "HousewifeOfOrangeCounty (Mumsnet)",
+          "date": "2010-06-07",
+          "quote": "Does anyone have any ideas of how I can stop myself rabbiting on?",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/relationships/978914-Does-anyone-else-talk-too-much-how-to-stop",
+          "who": "FluffyDonkey (Mumsnet)",
+          "date": "2010-06-07",
+          "quote": "I talk too much and I tell people too much.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/relationships/978914-Does-anyone-else-talk-too-much-how-to-stop",
+          "who": "posieparker (Mumsnet)",
+          "date": "2010-06-07",
+          "quote": "I hear myself but can't stop.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/relationships/978914-Does-anyone-else-talk-too-much-how-to-stop?page=2",
+          "who": "Bumperlicious (Mumsnet)",
+          "date": "2010-06-08",
+          "quote": "I just can't stop myself though, and I do worry it makes me look self-obsessed.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/_chat/4943757-i-talk-too-much",
+          "who": "Talktooomuch (Mumsnet)",
+          "date": "2023-11-15",
+          "quote": "I don't want to be that annoying person, help!!",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mumsnet.com/talk/_chat/4943757-i-talk-too-much?page=2",
+          "who": "settlingsusan (Mumsnet)",
+          "date": "2023-11-19",
+          "quote": "I've worried about it too, as a chatty person.",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Books such as STFU, social-skills courses, therapy, a couple of tiny speaking-time apps.",
+      "risks": "All people are on one forum. Money is a book, not a rated app. Nobody wrote 'I'd pay'. Distinct from fewer-ums (filler words) and quick-wit."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
