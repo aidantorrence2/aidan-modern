@@ -9095,5 +9095,44 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "fill-general-knowledge-gaps-as-an-adult",
+  "offer": "gap-filler",
+  "title": "Missed a lot in school? How to fill your general knowledge gaps as an adult",
+  "description": "Find which topics you're shaky on, learn a little each day at adult level, and test yourself so it sticks. Five minutes a day is enough.",
+  "intro": "Plenty of adults feel they missed things in school. Short, regular learning on the topics you're weakest in works better than starting from the beginning.",
+  "sections": [
+   {
+    "h": "Find your gaps",
+    "list": [
+     "Jot down topics that come up in conversation or the news that you can't follow."
+    ]
+   },
+   {
+    "h": "Pick one area a week",
+    "list": [
+     "For example: the World Wars, how the body works, major artists, how elections work."
+    ]
+   },
+   {
+    "h": "Five minutes a day",
+    "list": [
+     "One short read or video, then explain it to yourself in one sentence."
+    ]
+   },
+   {
+    "h": "Test yourself",
+    "list": [
+     "Quiz yourself a day later and a week later. Recall is what makes it stick."
+    ]
+   },
+   {
+    "h": "Use good sources",
+    "p": [
+     "Prefer encyclopedias, museums and reputable publishers, and check facts that surprise you."
+    ]
+   }
+  ]
  }
 ]

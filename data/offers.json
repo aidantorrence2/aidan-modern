@@ -24497,6 +24497,95 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-22",
+    "slug": "gap-filler",
+    "name": "Gap Filler",
+    "need": "I feel like I'm lacking general knowledge and missed a lot in school, and I want to fill those gaps as an adult without being talked down to.",
+    "headline": "Missed a lot in school? A 3-minute quiz finds the history, science and culture basics you're shaky on, then fills only those gaps in 5-minute adult-level lessons that stick.",
+    "buyer": "Adults 18+ who feel embarrassed by gaps in their general knowledge and want to catch up privately, a few minutes a day.",
+    "bullets": [
+      "A short placement quiz maps what you already know, so you never sit through stuff you've got down or lessons pitched at a fifth-grader",
+      "5-minute daily lessons covering only your weak spots, with world history and culture as well as US topics, and harder material once you ace a topic",
+      "Spaced review brings back each fact just before you'd forget it, plus a plain-English 'say it in one sentence' recap you can actually use in conversation"
+    ],
+    "price": "$4.99/month",
+    "priceUsd": 5,
+    "priceNote": "One plan, every feature.",
+    "reasonPrompt": "Which topics do you feel you should know more about (for example history, science, art, politics or literature), and when did a gap last embarrass you or leave you lost in a conversation?",
+    "faq": [
+      {
+        "q": "Who is this for?",
+        "a": "Adults who want to brush up on the general knowledge they missed or forgot since school. It is an independent app for adults 18+ and is not affiliated with any other learning app or publisher."
+      },
+      {
+        "q": "Is it pitched at kids' level?",
+        "a": "No. The placement quiz skips what you already know, and topics get harder once you get answers right every time."
+      },
+      {
+        "q": "Is it all US-focused?",
+        "a": "No. World history and culture are covered alongside US topics, and you choose which areas to focus on."
+      },
+      {
+        "q": "How much time does it take?",
+        "a": "About five minutes a day: one short lesson and a quick review of earlier facts."
+      },
+      {
+        "q": "Do I need any background?",
+        "a": "No. Lessons start from where the placement quiz puts you, and every term is explained in plain English."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-22",
+      "summary": "Adults say in their own words that they lack general knowledge or missed things in school and want to fill the gaps. Some use micro-learning apps for this, and one uses ChatGPT. Yuno's reviewers also complain the material is too basic, too US-focused and too limited, which leaves room for adult-level, gap-targeted lessons.",
+      "wtp": "Yuno: Daily Micro Learning (App Store): 14K ratings, Yuno Plus $12.99 a month or $79.99 a year. A Yuno reviewer who signed up 'to refresh my general knowledge' was charged $47; another said $80 a year was too much, which points to a lower price.",
+      "signals": [
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=2/id=1625333066/sortby=mostrecent/json",
+          "who": "TheOptimalMale (App Store, Kinnu)",
+          "date": "2024-11-21",
+          "quote": "this is perfect for me because I feel like I’m lacking general knowledge wise",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1500143611/sortby=mostrecent/json",
+          "who": "Freezebaby39 (App Store, Yuno)",
+          "date": "2026-08-17",
+          "quote": "I’m really liking this app because I feel like I missed a lot while in school.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=5/id=1500143611/sortby=mostrecent/json",
+          "who": "The Emerpaardts (App Store, Yuno)",
+          "date": "2024-10-20",
+          "quote": "It is helping me fill gaps of knowledge that I have lost.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=38050030",
+          "who": "tkgally (Hacker News)",
+          "date": "2023-10-28",
+          "quote": "I’ve been talking with ChatGPT to fill in gaps in my general knowledge.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/yuno-daily-micro-learning/id1500143611",
+          "who": "Yuno: Daily Micro Learning listing (App Store)",
+          "date": "2026-10-22",
+          "quote": "Yuno Plus (1 year) $79.99 Yuno Plus (1 Month) $12.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Yuno (paid subscription, 14K ratings, 4.8 average; reviewers call it too basic, about 80% US content and limited in topics), Kinnu (free, 511 ratings), Nerdish (2,665 ratings), QuizzLand and other trivia games (quizzes without targeted teaching), and ChatGPT used ad hoc. None of these clearly starts with a placement test of your gaps and then teaches only those at adult level with spaced review.",
+      "risks": "Free alternatives (Kinnu, ChatGPT, Wikipedia) and the low cost of making content; some users resist subscriptions (Joejonct turned down $80 a year); keeping adult-level content accurate and well sourced (a Kinnu reviewer complained of missing citations); world geography must stay a minor topic so this doesn't overlap the existing geography idea; this need is about general learning, distinct from right-word (vocabulary) and kept-pages (remembering books)."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
