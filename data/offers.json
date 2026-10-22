@@ -27630,6 +27630,153 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-22",
+    "slug": "first-cut",
+    "name": "First Cut",
+    "need": "I want to get into woodworking, but every plan assumes a garage full of power saws, and I don't know where to start.",
+    "headline": "Your first woodworking projects, built only with the tools you already own: small, cheap projects with a board-by-board buy list and cuts in order.",
+    "buyer": "Adult beginners who want to build things from wood, often in a flat or with only a drill and a handsaw.",
+    "bullets": [
+      "A tool filter that only shows projects your own tools can build.",
+      "A buy list down to the board ('two 2x4s, 8 ft') and a cut sequence with each length marked.",
+      "Numbered assembly steps with a picture each, and a ladder of projects that adds one new tool or joint at a time."
+    ],
+    "price": "$5/month",
+    "priceUsd": 5,
+    "priceNote": "Or $39 a year.",
+    "reasonPrompt": "What tools do you have now, and what would you like to build first?",
+    "faq": [
+      {
+        "q": "Is it safe for a complete beginner?",
+        "a": "Each project lists the safety steps for the tools it uses. Wear eye protection, keep blades sharp and hands clear, and follow each tool's manual."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Adult beginners. It is an independent app, not linked to any tool brand, store or other woodworking app."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-22",
+      "summary": "Would-be woodworkers say every easy tutorial assumes several power saws, that they don't know how to start in an apartment, and that plans don't say which boards to buy.",
+      "wtp": "WoodSense (19K App Store ratings) sells Premium at $3.99 to $39.99, and beginner reviewer Beachbum8538 plans to buy a subscription after the trial.",
+      "signals": [
+        {
+          "url": "https://news.ycombinator.com/item?id=31529465",
+          "who": "lolinder (Hacker News)",
+          "date": "2022-05-27",
+          "quote": "basically every easy-to-find woodworking tutorial assumes you have 3-4 different power saws already ready to go in your garage",
+          "seen": "opened"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=2545365",
+          "who": "shade (Hacker News)",
+          "date": "2011-05-13",
+          "quote": "kind of wanted to get into woodworking (although it's hard right now since I have an apartment, not a house), but I'm not sure how to best start",
+          "seen": "opened"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=31691450",
+          "who": "deanc (Hacker News)",
+          "date": "2022-06-10",
+          "quote": "I would love to get into woodworking. Unfortunately there are no classes available outside of working hours",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=6754165620/sortby=mostrecent/json",
+          "who": "Jhuic (App Store review, WoodSense)",
+          "date": "2026-10-20",
+          "quote": "It would be nice to input what tools you currently have and possibly filter projects by",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "WoodSense, YouTube woodworking channels, plan sites, community workshop classes.",
+      "risks": "WoodSense's ratings may reflect ad-driven installs. Power tools need clear safety steps. Distinct from room-fit (arranging furniture)."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-22",
+    "slug": "both-plates",
+    "name": "Both Plates",
+    "need": "I'm the only vegetarian in a house of meat eaters, and I struggle to find dinners that work for all of us without cooking two meals.",
+    "headline": "One dinner for the vegetarian and the meat eaters at the same table: a shared base that splits at the end, from one pan and one shopping list.",
+    "buyer": "Vegetarians, and people going vegetarian, who live with a partner or family who eat meat.",
+    "bullets": [
+      "Split-at-the-end recipes: one base, two finishes.",
+      "A weekly plan sized to how many veggie and meat plates you need, with one shopping list.",
+      "Veggie versions of the household's usual dinners, and a simple protein check for the vegetarian plate."
+    ],
+    "price": "$4/month",
+    "priceUsd": 4,
+    "priceNote": "Or $29 a year.",
+    "reasonPrompt": "How many people are vegetarian in your house, and what dinners do you usually cook?",
+    "faq": [
+      {
+        "q": "Is this nutrition advice?",
+        "a": "No. It offers general food ideas. For specific dietary needs, speak to a doctor or registered dietitian."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Households with mixed diets. It is an independent app, not linked to any food brand or other meal-planning app."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-22",
+      "summary": "Vegetarians in meat-eating households say it can be difficult, they struggle to find recipes that satisfy both, and they struggle to find meals for themselves.",
+      "wtp": "Plateful, a vegetarian meal-plan app (1K US and 2.4K UK App Store ratings), sells Premium from $9.99 a month to $59.99 a year.",
+      "signals": [
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/1726351/want-to-be-vegetarian",
+          "who": "Pauper1 (MoneySavingExpert)",
+          "date": "2009-06-02",
+          "quote": "my OH is a meat-eater and it can be difficult sometimes",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/1726351/want-to-be-vegetarian",
+          "who": "foxybabe (MoneySavingExpert)",
+          "date": "2009-06-02",
+          "quote": "I want to be a vegetarian but have concerns about getting the diet right",
+          "seen": "opened"
+        },
+        {
+          "url": "https://offbeathome.com/meat-eaters-and-vegetarians/",
+          "who": "Tracy (Offbeat Home)",
+          "date": "2017-07-28",
+          "quote": "The only thing I ever struggle with is finding recipes that satisfy us both",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/gb/rss/customerreviews/page=4/id=1145744773/sortby=mostrecent/json",
+          "who": "naomixoxoxoxoix (App Store UK review, Plateful)",
+          "date": "2019-11-20",
+          "quote": "the only vegetarian in the house and I struggle to find meals for me to eat",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/gb/rss/customerreviews/page=5/id=1145744773/sortby=mostrecent/json",
+          "who": "VegMeg2001 (App Store UK review, Plateful)",
+          "date": "2018-12-27",
+          "quote": "living in a family who appreciates meat",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Plateful, general meal planners, recipe sites, vegetarian cookbooks.",
+      "risks": "Forum posts are old (2009, 2017). No paid product is specific to mixed households. No nutrition claims. Distinct from fallback-dinner and one-new-bite."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

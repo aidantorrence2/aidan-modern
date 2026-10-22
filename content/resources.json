@@ -10765,5 +10765,86 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "woodworking-without-power-saws",
+  "offer": "first-cut",
+  "title": "Starting woodworking without a garage full of power tools",
+  "description": "Start with a few hand tools and a drill, buy pre-cut or easy boards, build small projects first, and add one tool or joint at a time.",
+  "intro": "You don't need a workshop to start. Many good first projects need only a saw, a drill, clamps and some sandpaper.",
+  "sections": [
+   {
+    "h": "A small starter kit",
+    "list": [
+     "A handsaw, a cordless drill with bits, a tape measure, a square, two clamps, sandpaper and wood glue.",
+     "Add eye protection from day one."
+    ]
+   },
+   {
+    "h": "Make buying easy",
+    "list": [
+     "Many timber yards and DIY stores will cut boards to length for you, often for little or nothing.",
+     "Write your cut list before you go, so you know how many boards to buy."
+    ]
+   },
+   {
+    "h": "Pick small first projects",
+    "list": [
+     "A box, a simple shelf, a plant stand or a step stool. Each teaches measuring, cutting square and joining."
+    ]
+   },
+   {
+    "h": "Learn one new thing per project",
+    "list": [
+     "A new joint, a new tool or a new finish. It keeps progress steady without being overwhelming."
+    ]
+   },
+   {
+    "h": "Work safely in a small space",
+    "p": [
+     "Clamp your work, cut away from your body, keep blades sharp, and sweep up as you go. Ask about community workshops or classes nearby if you'd like hands-on help."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "vegetarian-in-meat-eating-house",
+  "offer": "both-plates",
+  "title": "The only vegetarian in a meat-eating house: one dinner for everyone",
+  "description": "Cook a shared base and split it at the end, keep a few dishes everyone likes, and add protein to the vegetarian plate.",
+  "intro": "Cooking two separate meals every night is tiring. Most dinners can share most of their ingredients.",
+  "sections": [
+   {
+    "h": "Cook a shared base",
+    "list": [
+     "Pasta sauces, curries, chilli, stir-fries, tacos and tray bakes can all be made with a shared base.",
+     "Split the pan before adding the meat, or cook the meat separately and let people add it at the table."
+    ]
+   },
+   {
+    "h": "Keep a list of dishes everyone likes",
+    "list": [
+     "Build up a short list of dinners that work for everyone, and rotate them."
+    ]
+   },
+   {
+    "h": "Make the vegetarian plate a proper main",
+    "list": [
+     "Add beans, lentils, chickpeas, tofu, eggs, cheese or nuts so it isn't just the sides."
+    ]
+   },
+   {
+    "h": "Plan the week together",
+    "list": [
+     "Write a simple weekly plan and one shopping list. It saves arguments at 6pm."
+    ]
+   },
+   {
+    "h": "Talk about it",
+    "p": [
+     "Agree what's shared and what's separate. If you have specific dietary needs, a registered dietitian can help."
+    ]
+   }
+  ]
  }
 ]
