@@ -12508,5 +12508,45 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "fix-a-bike-puncture-step-by-step",
+  "offer": "pedal-mended",
+  "title": "How to fix a bike puncture: step by step for beginners",
+  "description": "Take the wheel off, lever the tyre off one side, find the cause, patch or replace the tube, and refit, then check the tyre is seated before inflating fully.",
+  "intro": "Fixing a puncture takes 15 to 20 minutes once you've done it a couple of times. Practise once at home so it isn't your first try at the roadside.",
+  "sections": [
+   {
+    "h": "What to carry",
+    "list": [
+     "Two or three tyre levers, a spare inner tube (or a patch kit), a mini pump that fits your valve type (Presta or Schrader), and a multi-tool if your wheels aren't quick-release."
+    ]
+   },
+   {
+    "h": "Get the wheel off",
+    "list": [
+     "Shift to the smallest rear cog if it's the back wheel, open the brake if needed, then open the quick-release or undo the axle nuts and lift the wheel out."
+    ]
+   },
+   {
+    "h": "Remove the tube and find the cause",
+    "list": [
+     "Let all the air out, hook a tyre lever under the tyre bead and lever one side off, then pull the tube out.",
+     "Carefully run your fingers around the inside of the tyre to find the thorn or glass, and remove it, or the new tube will puncture too."
+    ]
+   },
+   {
+    "h": "Fit the new tube",
+    "list": [
+     "Put a little air in the tube to give it shape, push the valve through the rim, tuck the tube in, then roll the tyre bead back on by hand, finishing at the valve. Avoid pinching the tube with levers."
+    ]
+   },
+   {
+    "h": "Inflate and check",
+    "p": [
+     "Pump it up partly, check the tyre bead sits evenly all round, then inflate to the pressure printed on the tyre wall. Refit the wheel, close the brake and spin it to check. Take anything to do with brakes or the frame to a bike mechanic."
+    ]
+   }
+  ]
  }
 ]

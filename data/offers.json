@@ -30866,6 +30866,90 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-23",
+    "slug": "pedal-mended",
+    "name": "Pedal Mended",
+    "need": "I'm useless at fixing my own bike. I can't sort out a puncture or slipping gears, so every small problem means walking home or paying the shop.",
+    "headline": "Can't fix a puncture or slipping gears? Practise the basic bike repairs at home with photo steps, so a small fault doesn't mean a long walk or a shop bill.",
+    "buyer": "Adult commuters and casual riders who rely on a bike shop or a partner for basic repairs and want to handle simple ones themselves.",
+    "bullets": [
+      "A puncture drill you practise at home on an old tube, timed, until you can do it at the roadside.",
+      "Step-by-step photo guides for taking wheels off and on (including derailleur bikes), the chain, and fixing slipping gears with the barrel adjuster.",
+      "A checklist of what to carry, and clear 'take it to the shop' flags for brakes and anything structural."
+    ],
+    "price": "$4.99/month",
+    "priceUsd": 5,
+    "priceNote": "Or $29 a year.",
+    "reasonPrompt": "What kind of bike do you ride, and which repair do you dread most?",
+    "faq": [
+      {
+        "q": "Does it cover brakes?",
+        "a": "Only basic checks. Brakes, forks, headsets and anything structural are safety-critical: take them to a qualified bike mechanic."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Everyday riders. It is an independent app, not linked to any bike brand, shop or other repair app."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-23",
+      "summary": "Riders say they're useless with their bikes and want to change, don't know how to fix punctures, are pretty crap at fixing things when they go wrong, and take every problem to the shop and pay.",
+      "wtp": "Bike Repair is a $3.99 paid app with 418 US ratings. Mattk50 (CycleChat): 'Everytime something goes wrong I just take it to the bike shop and they charge me.'",
+      "signals": [
+        {
+          "url": "https://www.cyclechat.net/threads/bike-maintenance-learning.253370/",
+          "who": "Mattk50 (CycleChat)",
+          "date": "2019-09-17",
+          "quote": "I have to admit to being useless with my bike and I want to change.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.cyclechat.net/threads/adjusting-gears.147488/",
+          "who": "Rustybucket (CycleChat)",
+          "date": "2014-01-15",
+          "quote": "I am generally useless at bike maintenance",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.cyclechat.net/threads/how-easy-is-it-to-fix-a-bike-puncture.266268/",
+          "who": "Anonymous1502 (CycleChat)",
+          "date": "2020-08-28",
+          "quote": "know how to fix punctures",
+          "seen": "opened"
+        },
+        {
+          "url": "https://singletrackworld.com/forum/off-topic/technically-inept/",
+          "who": "Teetosugars (Singletrack World)",
+          "date": "2014-12-23",
+          "quote": "pretty crap at fixing things when they go wrong on my bike",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=382006079/sortby=mostrecent/json",
+          "who": "manju3t (App Store review, Bike Repair)",
+          "date": "2014-10-20",
+          "quote": "only recently decided I have to learn to take care of my bike myself",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=382006079/sortby=mostrecent/json",
+          "who": "Emmachette (App Store review, Bike Repair)",
+          "date": "2014-06-07",
+          "quote": "have no idea which bike parts are which.",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Bike Repair app, Park Tool and YouTube guides, bike shop maintenance classes.",
+      "risks": "The posts are old (2008 to 2020), and free video guides are strong substitutes, so the value is guided practice. Brakes and structural work are out of scope."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
