@@ -12176,5 +12176,85 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "parcel-marked-delivered-not-received",
+  "offer": "doorstep-dossier",
+  "title": "Parcel marked delivered but not received: what to do",
+  "description": "Check around and with neighbours, gather evidence, contact the seller (not just the courier), put it in writing, and know your dispute options if they refuse.",
+  "intro": "A 'delivered' status isn't the end of the story. Collect evidence quickly and go to the right company first.",
+  "sections": [
+   {
+    "h": "Check first",
+    "list": [
+     "Look around the property, in safe places and bins, and ask neighbours. Check the tracking for a photo, a GPS location or a 'left with' note."
+    ]
+   },
+   {
+    "h": "Gather evidence",
+    "list": [
+     "Screenshot the tracking and any delivery photo, save doorbell footage, and note dates and who you spoke to."
+    ]
+   },
+   {
+    "h": "Contact the seller",
+    "list": [
+     "In the UK, under the Consumer Rights Act 2015, goods are usually the seller's responsibility until they are in your possession (or someone you nominated), so your claim is with the retailer, not the courier. In the US, also start with the seller and check its policy."
+    ]
+   },
+   {
+    "h": "Put it in writing",
+    "list": [
+     "Email the seller with your order number, the facts and your evidence, and ask for a replacement or refund by a clear date."
+    ]
+   },
+   {
+    "h": "If they refuse",
+    "p": [
+     "Consider a card chargeback, a PayPal or Klarna dispute, or small claims. Dispute windows are limited, so act promptly. For advice on your situation, contact Citizens Advice (UK) or your local consumer protection office (US). This guide is general information, not legal advice."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "how-to-go-grey-grow-out-hair-dye",
+  "offer": "silver-season",
+  "title": "How to go grey: growing out hair dye without the awkward line",
+  "description": "Work out how long it will take, choose a blending route with your hairdresser, consider a shorter cut, use temporary root cover for events, and track progress in photos.",
+  "intro": "Hair grows roughly a centimetre (about half an inch) a month, so growing out dye takes patience. A plan makes the in-between stage much easier.",
+  "sections": [
+   {
+    "h": "Estimate the timeline",
+    "list": [
+     "Measure from your roots to where you'd cut; at about a centimetre a month, that's roughly how many months it will take."
+    ]
+   },
+   {
+    "h": "Choose a route",
+    "list": [
+     "Cold turkey: stop dyeing and let it grow. The simplest option, but the line is most visible.",
+     "Blending: highlights or lowlights soften the line. Ask your hairdresser about 'grey blending'.",
+     "Shorter cut: removes coloured length faster."
+    ]
+   },
+   {
+    "h": "Get through events",
+    "list": [
+     "Root sprays, powders and wash-out colour can cover the line for a day without restarting permanent dye."
+    ]
+   },
+   {
+    "h": "Track it",
+    "list": [
+     "Take a photo in the same light each month. It's easy to forget how far you've come."
+    ]
+   },
+   {
+    "h": "Look after your hair",
+    "p": [
+     "Grey hair can feel different. A gentle shampoo and conditioner, and a purple shampoo if it turns yellowish, help many people. For scalp irritation, see a pharmacist or GP."
+    ]
+   }
+  ]
  }
 ]

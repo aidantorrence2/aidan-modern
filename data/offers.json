@@ -30263,6 +30263,164 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-23",
+    "slug": "doorstep-dossier",
+    "name": "Doorstep Dossier",
+    "need": "My parcel was marked as delivered but it never reached me, and the shop and the courier keep telling me to talk to each other. I don't know what I'm entitled to or how to get my money back.",
+    "headline": "Parcel marked 'delivered' but never arrived? Build your evidence file in minutes, see who to claim from, and send a firm, dated claim to the right company.",
+    "buyer": "Adults 18+ in the UK and US who shop online and have a parcel missing, misdelivered, or wrongly marked delivered.",
+    "bullets": [
+      "An evidence timeline: tracking screenshots, the courier's photo, doorbell footage and neighbour checks, all dated.",
+      "A plain-English 'who's responsible' explainer (in the UK, start with the seller, not the courier), plus claim letters you send yourself with reply-by dates.",
+      "An escalation tracker for card chargebacks, PayPal or Klarna disputes and small claims, with reminders before dispute windows close."
+    ],
+    "price": "$3.99/month",
+    "priceUsd": 4,
+    "priceNote": "Or $19.99 a year.",
+    "reasonPrompt": "Where did you order from, which courier, and what does the tracking say?",
+    "faq": [
+      {
+        "q": "Is this legal advice?",
+        "a": "No. It's consumer-rights information and an organiser for your claim. It can't promise a refund. For advice on your case, contact Citizens Advice (UK) or your local consumer protection office (US)."
+      },
+      {
+        "q": "Does it send anything for me?",
+        "a": "No. It drafts letters and messages for you to review and send yourself."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Adults 18+. It is an independent app, not linked to any retailer, courier, bank or payment provider."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-23",
+      "summary": "Shoppers say couriers sent a photo of their parcel behind the bin, that items marked delivered never were, that sellers refuse to go further because the courier says it was delivered, and that the courier tells them to contact the supplier.",
+      "wtp": "Parcel - Delivery Tracking (23K ratings) sells Premium at $6.99 a year. Shoppers already pay for parcel protection: FluffySocksRule (MSE) says 'I paid almost £50 for this unknowingly'.",
+      "signals": [
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/6651497/courier-dumped-item-took-photo-apparently-this-is-proof-whats-legal-status",
+          "who": "paul2foel (MoneySavingExpert)",
+          "date": "2026-01-21",
+          "quote": "they sent me a photo of the parcel behind my bin.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/6676304/amazon-refusing-refund-for-undelivered-item",
+          "who": "askew_recriminat (MoneySavingExpert)",
+          "date": "2026-07-15",
+          "quote": "I have no reason to believe a delivery was ever even attempted at my building.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/6166132/zara-hermes-dispute-parcel-not-delivered-by-hermes",
+          "who": "Drrachey (MoneySavingExpert)",
+          "date": "2020-07-07",
+          "quote": "Hermes said it was delivered so we cant go any further with this",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/gb/rss/customerreviews/page=4/id=1064977107/sortby=mostrecent/json",
+          "who": "huuhbytvytvtrd (App Store UK review, DPD)",
+          "date": "2026-09-23",
+          "quote": "the pickup point confirmed that they never received it",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/gb/rss/customerreviews/page=4/id=1064977107/sortby=mostrecent/json",
+          "who": "Fanta:Coke (App Store UK review, DPD)",
+          "date": "2026-09-26",
+          "quote": "I need to contact the supplier.",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Citizens Advice, Resolver, MSE guides, bank chargeback teams, parcel-protection add-ons.",
+      "risks": "Free help exists. The money evidence is next to the need (tracking apps and parcel insurance), not for a claims tool. Review-feed page numbers can shift. Information only; no refund promises."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-23",
+    "slug": "silver-season",
+    "name": "Silver Season",
+    "need": "I'm fed up with dyeing my hair every few weeks and I want to go grey, but I dread the grow-out line and I don't know how to get through it.",
+    "headline": "Done with dyeing every four weeks? Plan your grow-out to grey: see your timeline, pick a blending route to show your hairdresser, and track the line month by month.",
+    "buyer": "Adults, mostly 45+, who colour their greys at home or in a salon and want to stop.",
+    "bullets": [
+      "A grow-out timeline based on your hair length and cut.",
+      "Compare blending routes (highlights, lowlights, toner, a shorter cut or going cold turkey), with a note to show your hairdresser.",
+      "A same-light monthly photo diary of the line, a cover-up plan for events, and a counter of the money and hours you no longer spend on colour."
+    ],
+    "price": "$4.99/month",
+    "priceUsd": 5,
+    "priceNote": "Or $29.99 a year.",
+    "reasonPrompt": "How long is your hair, how often do you colour it, and what worries you most about growing it out?",
+    "faq": [
+      {
+        "q": "Can it tell me what my grey will look like?",
+        "a": "No one can predict your final shade exactly. It helps you plan the grow-out and track it honestly. For scalp irritation or other concerns, talk to a pharmacist or GP."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Anyone giving up hair dye. It is an independent app, not linked to any hair-colour brand or salon."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-23",
+      "summary": "People say they're fed up with dyeing every four weeks, have decided to stop but struggle with grey roots, tried going grey once and weren't ready, and find the grey shows within a couple of weeks; many pay for regular colour.",
+      "wtp": "Gransnet poster Parpetta: 'I pay £50 every four weeks for a colour and cut.' Hair try-on apps such as Glowify sell $16.99 a month or $39.99 a year.",
+      "signals": [
+        {
+          "url": "https://www.gransnet.com/forums/style_and_beauty/1318760-Anyone-decided-to-go-fully-grey-from-brunette",
+          "who": "HeavenLeigh (Gransnet)",
+          "date": "2022-12-08",
+          "quote": "so fed up of dying my hair every 4 weeks",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.gransnet.com/forums/style_and_beauty/1307163-Advice-needed-to-help-with-grey-roots",
+          "who": "DanniRae (Gransnet)",
+          "date": "2022-02-23",
+          "quote": "now have decided to stop. The problem is dealing with grey roots.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.gransnet.com/forums/style_and_beauty/1328820-Beautiful-grey-hair",
+          "who": "spabbygirl (Gransnet)",
+          "date": "2023-10-18",
+          "quote": "I'm going to let mine grow out now",
+          "seen": "opened"
+        },
+        {
+          "url": "https://ninageehome.substack.com/p/this-week-in-thoughts-going-grey/comments",
+          "who": "Denise Mancieri (Substack comment)",
+          "date": "2025-03-24",
+          "quote": "told everyone and then wasn't ready.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://ninageehome.substack.com/p/this-week-in-thoughts-going-grey/comments",
+          "who": "Kim Keen (Substack comment)",
+          "date": "2025-03-12",
+          "quote": "the grey shows after a couple of weeks.",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Hairdressers, going-grey communities and blogs, hair try-on apps.",
+      "risks": "The money evidence is spending on dye and try-on apps, not on a grow-out planner. Going-grey apps are tiny. No health claims about dye."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
