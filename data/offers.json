@@ -29356,7 +29356,7 @@
     "slug": "clear-pool",
     "name": "Clear Pool",
     "need": "I just got a pool or hot tub with the house, I have no idea how the water chemistry works, and I don't know what to add or how much.",
-    "headline": "Got a pool or hot tub with the house and no idea what to put in it? Enter your test readings and get plain-English steps for what to add and in what order, with no store pushing a cart full of chemicals.",
+    "headline": "Got a pool or hot tub with the house and no idea what to add? Enter your test readings and get plain-English steps in the right order, with no store upselling you.",
     "buyer": "First-time pool and hot tub owners, especially people who got one with a house or just let their pool service go.",
     "bullets": [
       "A plain-English starter plan for your pool or tub size and sanitiser type.",
@@ -29387,30 +29387,9 @@
     ],
     "demand": {
       "checked": "2026-10-23",
-      "summary": "New pool and hot tub owners say they're overwhelmed with where to start, know very little about pools, have algae and no idea what to do, and struggle to balance the water; several say brand apps push products.",
+      "summary": "New pool and hot tub owners say they had no idea what they were doing, knew absolutely nothing about maintaining a pool, got one with the house, and struggle to balance the water; several say brand apps push products.",
       "wtp": "Pool Doctor is a $19.99 paid app (134 ratings), Pool Water Calculator is $4.99 (95 ratings), and Pooli and Pool Math sell subscriptions, with reviewers saying 'I signed up for the monthly subscription' and 'Worth the subscription.'",
       "signals": [
-        {
-          "url": "http://www.poolhelpforum.com/viewtopic.php?t=44526",
-          "who": "taylorkautzman (Pool Help Forum)",
-          "date": "2020-05-04",
-          "quote": "I am a first time pool owner and absolutely overwhelmed with where to start",
-          "seen": "opened"
-        },
-        {
-          "url": "http://www.poolhelpforum.com/viewtopic.php?t=49474",
-          "who": "JimW (Pool Help Forum)",
-          "date": "2024-03-19",
-          "quote": "I know very little about pools and I'm learning as I go.",
-          "seen": "opened"
-        },
-        {
-          "url": "http://www.poolhelpforum.com/viewtopic.php?t=49700",
-          "who": "anatolewilson (Pool Help Forum)",
-          "date": "2024-06-20",
-          "quote": "Now it has a thick layer of algae on top and I have no idea what to do.",
-          "seen": "opened"
-        },
         {
           "url": "https://apps.apple.com/us/app/id1228819359?see-all=reviews",
           "who": "Mystic1492 (App Store review, Pool Math)",
@@ -29438,10 +29417,17 @@
           "date": "2018-09-10",
           "quote": "First time pool owner, got the pool with the house",
           "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1491565847?see-all=reviews",
+          "who": "Runner1979a (App Store review, Pooli)",
+          "date": "2021-06-15",
+          "quote": "struggled to get the balance of water correct",
+          "seen": "opened"
         }
       ],
       "competitors": "Free brand apps (Clorox Pool, Leslie's, Pentair, HTH), Pool Math and Trouble Free Pool, Swim University, pool stores and services.",
-      "risks": "Crowded with free brand apps; the angle is brand-neutral help for beginners. Seasonal demand. Chemicals are hazardous: label-first, conservative guidance and no water-safety health claims."
+      "risks": "Crowded with free brand apps; the angle is brand-neutral help for beginners. Seasonal demand. Chemicals are hazardous: label-first, conservative guidance and no water-safety health claims. Pool Help Forum posts (taylorkautzman, JimW, anatolewilson) were verified over http only; its https certificate fails, so they are left out."
     }
   },
   {
