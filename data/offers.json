@@ -31469,6 +31469,69 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-23",
+    "slug": "even-house",
+    "name": "Even House",
+    "need": "My housemates keep not paying their share of the bills, and I'm the one who covers the gap and then has to chase them.",
+    "headline": "Housemates not paying their share and you keep covering it? One shared bill ledger: everyone's amount and due date, reminders sent by the app, and a running balance.",
+    "buyer": "Adults 18+ sharing a rented house or flat, especially whoever holds the bill accounts and keeps covering others' shares.",
+    "bullets": [
+      "The house's regular bills with who holds each one, the due dates and each person's share.",
+      "Reminders sent to each housemate by the app, not by you, with late shares flagged before the direct debit goes out.",
+      "A running who-covered-whom balance and a settle-up statement when someone moves out."
+    ],
+    "price": "$2.99/month",
+    "priceUsd": 3,
+    "priceNote": "Per house, or $19.99 a year.",
+    "reasonPrompt": "How many people share your house, and which bills keep going unpaid?",
+    "faq": [
+      {
+        "q": "Does it move money or collect debts?",
+        "a": "No. It keeps a clear record and sends reminders; it doesn't take payments or collect debts. It isn't legal advice: for disputes, Citizens Advice or your local housing advice service can help."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Housemates aged 18+. It is an independent app, not linked to any landlord, letting agent, utility or other bill-splitting app."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-23",
+      "summary": "Housemates describe a direct debit bouncing because one person underpaid and another didn't pay at all, a housemate refusing to pay rent so the others would have to cover it, and being left owed money and a higher share of the bills.",
+      "wtp": "Splitwise (29K ratings) sells Pro from $2.99 to $39.99; reviewers say 'Paying for premium is 100% worth it since my roommates and I need to split a lot of group purchases' and 'We would happily pay for Pro'.",
+      "signals": [
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/4856822/housemates-not-paying-council-tax",
+          "who": "PatrickStar (MoneySavingExpert)",
+          "date": "2014-01-01",
+          "quote": "so the direct debit has bounced.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/6165502/housemate-is-refusing-to-pay-rent-am-i-liable-to-pay-it",
+          "who": "cait1966 (MoneySavingExpert)",
+          "date": "2020-07-06",
+          "quote": "he refuses to pay the rent meaning the rest of us",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/1299765/getting-bills-of-disappeared-flatmate",
+          "who": "asteroid (MoneySavingExpert)",
+          "date": "2008-11-20",
+          "quote": "and also got higher share of the bills for Dec and onwards",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Splitwise, Tricount, shared spreadsheets, bill-splitting services.",
+      "risks": "All quotes are from one site (2008 to 2020) and UK-centred. The money evidence is for general expense splitting rather than recurring house bills. No legal advice or debt collection."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

@@ -12821,5 +12821,44 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "housemate-wont-pay-bills",
+  "offer": "even-house",
+  "title": "Housemate won't pay their share of the bills: what to do",
+  "description": "Write down who owes what, agree due dates before bills are taken, send clear reminders, and check your tenancy and bill accounts so you know who's actually responsible.",
+  "intro": "Chasing housemates is awkward, and covering their share gets expensive fast. A clear record and agreed dates take most of the arguments out of it.",
+  "sections": [
+   {
+    "h": "Get it in writing",
+    "list": [
+     "List each bill, who holds the account, the amount, the due date and each person's share. Share it with everyone in the house."
+    ]
+   },
+   {
+    "h": "Set a pay-in date before the bill date",
+    "list": [
+     "Ask everyone to pay their share a few days before each direct debit is taken, so there's time to chase before it bounces."
+    ]
+   },
+   {
+    "h": "Remind clearly, not angrily",
+    "list": [
+     "Send a short, factual message with the amount and date. Keep a record of what's owed and when you paid on someone's behalf."
+    ]
+   },
+   {
+    "h": "Know who's responsible",
+    "list": [
+     "Check your tenancy agreement and whose name is on each bill. On a joint tenancy, everyone may be jointly responsible for the rent, and in some cases council tax, which is why one person not paying affects everyone."
+    ]
+   },
+   {
+    "h": "If it keeps happening",
+    "p": [
+     "Talk as a house about moving bills into the name of the person who doesn't pay, or asking for shares up front. For disputes over rent, deposits or money owed, contact Citizens Advice or your local housing advice service. This guide isn't legal advice."
+    ]
+   }
+  ]
  }
 ]
