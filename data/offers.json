@@ -28283,6 +28283,157 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-23",
+    "slug": "bin-builds",
+    "name": "Bin Builds",
+    "need": "We have a huge mixed tub of loose building bricks and nobody builds anything from it, because every idea needs pieces we don't have.",
+    "headline": "A giant tub of loose bricks and nothing to build? Log what's really in your bin, a tray at a time, and get only builds you can finish.",
+    "buyer": "Parents and adult fans with a large mixed bin of loose building bricks from old sets.",
+    "bullets": [
+      "Tray-by-tray piece logging, with quick fixes when a piece is misread.",
+      "Only builds you can finish, checked against your log, with a missing-piece warning before step 1.",
+      "A finder for rebuilding old sets you once owned, and a light 20-minute sorting plan."
+    ],
+    "price": "$3.99/month",
+    "priceUsd": 4,
+    "priceNote": "Or $24.99 a year.",
+    "reasonPrompt": "Roughly how big is your brick bin, and who builds from it?",
+    "faq": [
+      {
+        "q": "Is this an official LEGO app?",
+        "a": "No. It is an independent app, not affiliated with or endorsed by LEGO or any toy brand. It works with compatible building bricks."
+      },
+      {
+        "q": "Is it suitable for young children?",
+        "a": "Small pieces are a choking hazard; follow the age guidance on the original boxes and supervise young children."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Families and adult builders."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-23",
+      "summary": "Parents reviewing brick-scanning apps say they want to get some use out of their loose bricks, couldn't find a single build with all the pieces, and have an overwhelming number of pieces.",
+      "wtp": "Brickit Pro costs $6.99 a month or up to $64.99 a year (23K App Store ratings), and reviewers who paid were let down by builds that needed pieces they didn't have.",
+      "signals": [
+        {
+          "url": "https://itunes.apple.com/gb/rss/customerreviews/page=5/id=1477221636/sortby=mostrecent/json",
+          "who": "deejay000169 (App Store UK review, Brickit)",
+          "date": "2021-07-01",
+          "quote": "My kids have a load of Lego so I thought this would be a great app to get some use out of all those loose bricks.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=10/id=1477221636/sortby=mostrecent/json",
+          "who": "cysoxoff (App Store review, Brickit)",
+          "date": "2024-06-19",
+          "quote": "I thought this was supposed to tell you what you can make with what you HAVE, not give you a build with missing pieces.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=9/id=1477221636/sortby=mostrecent/json",
+          "who": "l3en777 (App Store review, Brickit)",
+          "date": "2024-11-11",
+          "quote": "with over a thousand legos, we couldn’t find a single build where we had all the necessary pieces.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=4/id=1477221636/sortby=mostrecent/json",
+          "who": "Hard to share with your family (App Store review, Brickit)",
+          "date": "2025-12-13",
+          "quote": "We have an overwhelming number of pieces and this in theory is a great app.",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Brickit, Rebrickable (free), official building apps, printed idea books.",
+      "risks": "All need quotes come from reviews of one app. Piece recognition is hard to build well. No brand names in the product; independent and not affiliated."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-23",
+    "slug": "sudoku-step",
+    "name": "Sudoku Step",
+    "need": "I can do easy and medium sudoku, but the hard ones defeat me, and I end up guessing because I don't know which technique I'm missing.",
+    "headline": "Hard sudokus end in a guess? Snap the puzzle you're stuck on and get a hint that names the technique to look for, not the answer.",
+    "buyer": "Adults who do sudoku in newspapers, books or apps and get stuck or start guessing on hard and expert puzzles.",
+    "bullets": [
+      "Snap a paper puzzle from a newspaper or book, even half filled in.",
+      "Graded hints: first the technique's name, then the area, then the cells.",
+      "A find-my-mistake check, short drills on the technique you keep missing, and a log of puzzles solved without guessing."
+    ],
+    "price": "$2.99/month",
+    "priceUsd": 3,
+    "priceNote": "Or $19.99 a year.",
+    "reasonPrompt": "Where do you usually get stuck: hard, expert, or a particular technique?",
+    "faq": [
+      {
+        "q": "Will it just solve the puzzle for me?",
+        "a": "Only if you ask. By default it gives the smallest hint that lets you keep going yourself."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Sudoku players of any age. It is an independent app, not linked to any newspaper, puzzle book or other sudoku app."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-23",
+      "summary": "Players on the Straight Dope say the hardest sudokus defeat them, end in a wild guess, or leave them unable to find a mistake, and app reviewers want help with newspaper puzzles and named techniques.",
+      "wtp": "Good Sudoku sells a $4.99 full unlock (1.3K App Store ratings), and reviewer Rk1234567kk wrote 'Would happily pay for that feature.' about help with newspaper puzzles.",
+      "signals": [
+        {
+          "url": "https://boards.straightdope.com/t/need-logic-tools-for-solving-sudoku-puzzles/323579",
+          "who": "Lumpy (Straight Dope)",
+          "date": "2005-09-26",
+          "quote": "I can solve most of them eventually, but the very hardest ones defeat me.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://boards.straightdope.com/t/tough-sudoku-solvable-through-logic/662832",
+          "who": "The_Controvert (Straight Dope)",
+          "date": "2013-07-07",
+          "quote": "But hard Sudoku sometimes devolves to a point where I have to make a wild guess that either works out or forces me to backtrack.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://boards.straightdope.com/t/fixing-sudoku-mistakes/544477",
+          "who": "panache45 (Straight Dope)",
+          "date": "2010-06-25",
+          "quote": "how can I backtrack and find the mistake, short of erasing everything and starting over?",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=9/id=1489118195/sortby=mostrecent/json",
+          "who": "Rk1234567kk (App Store review, Good Sudoku)",
+          "date": "2020-07-26",
+          "quote": "I hoped to use it as a helper to solve the puzzles in the daily newspapers I read, especially the hard ones.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=6/id=1489118195/sortby=mostrecent/json",
+          "who": "calbearfan (App Store review, Good Sudoku)",
+          "date": "2020-11-03",
+          "quote": "Just knowing that there is an XYZ wing to find would help me learn to find them.",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Good Sudoku, free online solvers, technique websites, puzzle books with solutions.",
+      "risks": "Posts are old. Only a one-off $4.99 unlock as price evidence. No brain-health claims. Distinct from plateau-plan (chess) and cryptic crossword offers."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

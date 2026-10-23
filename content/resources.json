@@ -11123,5 +11123,83 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "what-to-build-from-mixed-brick-bin",
+  "offer": "bin-builds",
+  "title": "What to build from a big mixed bin of bricks",
+  "description": "Sort lightly by type, pick builds that use common pieces, rebuild an old set, or set a simple challenge.",
+  "intro": "A big mixed tub can feel useless because you can never find the right piece. A little light sorting and a few simple ideas make it fun again.",
+  "sections": [
+   {
+    "h": "Sort by type, not colour",
+    "list": [
+     "Split into a few trays: plates, bricks, slopes, wheels, people and odd bits. Twenty minutes is enough to start."
+    ]
+   },
+   {
+    "h": "Pick builds that use common pieces",
+    "list": [
+     "Houses, vehicles, towers, animals and robots can all be made from basic bricks and plates."
+    ]
+   },
+   {
+    "h": "Rebuild an old set",
+    "list": [
+     "If you still have the instructions (or can find them online), rebuilding an old set is a good way to find out what's there."
+    ]
+   },
+   {
+    "h": "Set a challenge",
+    "list": [
+     "'Build something that rolls', 'build the tallest tower with 50 pieces', or 'build your bedroom'. Limits spark ideas."
+    ]
+   },
+   {
+    "h": "Keep it safe",
+    "p": [
+     "Small pieces are a choking hazard for young children; follow the age guidance on the original boxes."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "hard-sudoku-without-guessing",
+  "offer": "sudoku-step",
+  "title": "How to solve hard sudoku without guessing",
+  "description": "Use pencil marks for every cell, then look for pairs, pointing pairs and X-wings before you ever guess.",
+  "intro": "Hard puzzles usually need one or two techniques beyond the basics. Once you know what to look for, guessing is rarely needed.",
+  "sections": [
+   {
+    "h": "Pencil-mark every cell",
+    "list": [
+     "Write every possible number in each empty cell. Many techniques only show up once all candidates are written."
+    ]
+   },
+   {
+    "h": "Look for naked and hidden pairs",
+    "list": [
+     "Two cells in a row, column or box that can only be the same two numbers: remove those numbers from the rest of that unit."
+    ]
+   },
+   {
+    "h": "Pointing pairs",
+    "list": [
+     "If a number in a box can only go in one row or column, remove it from that row or column outside the box."
+    ]
+   },
+   {
+    "h": "X-wing",
+    "list": [
+     "If a number can only go in the same two columns in two different rows, it can be removed from those columns elsewhere."
+    ]
+   },
+   {
+    "h": "Finding mistakes",
+    "p": [
+     "If you hit a contradiction, check recent entries first and confirm each against its row, column and box. Working in pencil makes mistakes easier to undo."
+    ]
+   }
+  ]
  }
 ]
