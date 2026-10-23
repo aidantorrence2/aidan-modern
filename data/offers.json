@@ -28960,6 +28960,91 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-23",
+    "slug": "moth-trace",
+    "name": "Moth Trace",
+    "need": "Moths or carpet beetles keep eating holes in my clothes, carpets and furniture, they come back after every treatment, and I can't work out where they're nesting.",
+    "headline": "Holes in your wool and the moths or carpet beetles keep coming back? Find where they're breeding, track every treated item, and see whether the numbers are actually falling.",
+    "buyer": "Renters and homeowners who keep finding clothes moths, carpet beetles or their larvae and have already tried sprays, traps or a pest-control visit.",
+    "bullets": [
+      "Photo checklist to tell clothes moths from carpet beetles, larvae and cast skins, plus a room-by-room hotspot check (carpet edges, under furniture, wardrobes, vents, stored wool).",
+      "Trap and sighting log with a trend chart, and a tracker for items you've frozen, hot-washed or sealed.",
+      "Reminders timed to the pest's life cycle to re-check and replace traps, and a clear point at which to call a licensed professional."
+    ],
+    "price": "$3.99/month",
+    "priceUsd": 4,
+    "priceNote": "Or $24.99 a year.",
+    "reasonPrompt": "Which pest do you think you have, and what have you tried so far?",
+    "faq": [
+      {
+        "q": "Does it tell me which spray to use?",
+        "a": "No. It never gives pesticide or dosing advice. For chemical treatments, follow the product label or use a licensed pest-control professional, especially around pets, birds and children."
+      },
+      {
+        "q": "Will it get rid of them?",
+        "a": "It can't promise that. It helps you find the source, keep track of what you've treated and see whether things are improving."
+      },
+      {
+        "q": "Is it for bed bugs?",
+        "a": "No. Bed bugs need a professional."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Anyone dealing with fabric pests at home. It is an independent app, not linked to any pest-control company, trap brand or identifier app."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-23",
+      "summary": "People say carpet beetles and clothes moths are eating their furniture and woollens, come back after professional spraying or fumigation, and they can't work out where they're nesting or whether to act.",
+      "wtp": "People already pay for pest control that didn't last: albelmel (MSE) had 'a professional pest control man to spray the whole house', and aidenn0 (HN) says 'they are back within a year of fumigation'. Picture Insect: Bug Identifier (45K App Store ratings) sells Premium at $5.99 a month or $39.99 a year.",
+      "signals": [
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/6388178/carpet-beetles/p1",
+          "who": "albelmel (MoneySavingExpert)",
+          "date": "2022-09-20",
+          "quote": "We have a carpet beetle problem in our house.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.parrotforums.com/threads/experience-with-pesticides-and-birds-help.74048/",
+          "who": "Loz (Parrot Forums)",
+          "date": "2018-03-12",
+          "quote": "trying to figure out where they could be nesting",
+          "seen": "opened"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=44629807",
+          "who": "pedalpete (Hacker News)",
+          "date": "2025-07-20",
+          "quote": "dealing with a carpet beetle infestation at my house which is eating my furniture",
+          "seen": "opened"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=31115472",
+          "who": "aidenn0 (Hacker News)",
+          "date": "2022-04-21",
+          "quote": "Essentially all of my woolen clothing has holes in it now.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=35696794",
+          "who": "syntheweave (Hacker News)",
+          "date": "2023-04-25",
+          "quote": "been dealing not with bedbugs, but clothesmoths. Similarly persistent and difficult to entirely eliminate.",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Pest-control companies, pheromone traps, general insect-ID apps, free guides.",
+      "risks": "Most posts are about carpet beetles, and only one is about clothes moths. The paid app is a general insect identifier. No pesticide advice or eradication claims."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
