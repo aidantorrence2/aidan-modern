@@ -11045,5 +11045,44 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "get-campsite-at-sold-out-park",
+  "offer": "camp-catch",
+  "title": "How to get a campsite at a park that's always sold out",
+  "description": "Know when sites are released, be ready at that moment, watch for cancellations, try weekdays and shoulder seasons, and keep a backup campground.",
+  "intro": "Popular campgrounds often fill within minutes of release. A bit of planning improves your chances a lot.",
+  "sections": [
+   {
+    "h": "Know the release window",
+    "list": [
+     "Many US federal campgrounds release sites on a rolling basis, often about six months ahead. Check the campground's own page for its exact rule and time zone."
+    ]
+   },
+   {
+    "h": "Be ready at the moment of release",
+    "list": [
+     "Log in early, have your dates, site choices and payment ready, and know your second and third choices."
+    ]
+   },
+   {
+    "h": "Watch for cancellations",
+    "list": [
+     "Lots of people cancel in the last week or two before their trip. Check often, or use a cancellation alert."
+    ]
+   },
+   {
+    "h": "Be flexible",
+    "list": [
+     "Weekdays and the shoulder seasons (spring and autumn) are much easier than summer weekends. Shorter stays can also fit gaps."
+    ]
+   },
+   {
+    "h": "Have a backup",
+    "p": [
+     "Nearby national forest, state park or first-come, first-served campgrounds can save the trip. Always book through the official site, and check the rules before you go."
+    ]
+   }
+  ]
  }
 ]

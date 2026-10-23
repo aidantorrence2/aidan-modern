@@ -28139,6 +28139,83 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-23",
+    "slug": "camp-catch",
+    "name": "Camp Catch",
+    "need": "I can never get a campsite at the popular parks: they're booked the moment they open, so I miss out unless I plan six months ahead.",
+    "headline": "Get a campsite at the parks everyone says are sold out: cancellation alerts for the dates you want, and a calendar of when sites are released.",
+    "buyer": "US campers who want sites at high-demand national park, state park and forest campgrounds.",
+    "bullets": [
+      "Cancellation alerts for the campgrounds and dates you choose.",
+      "A release-window calendar with reminders for 6-month and rolling openings.",
+      "Backup nearby campgrounds with space, and a quick-book checklist. Alerts only: you book it yourself on the official site."
+    ],
+    "price": "$4.99/month",
+    "priceUsd": 5,
+    "priceNote": "Or $29.99 a year.",
+    "reasonPrompt": "Which park and dates are you trying to camp?",
+    "faq": [
+      {
+        "q": "Does it book sites for me?",
+        "a": "No. It only alerts you; you book it yourself on the official reservation site. It doesn't use bots and can't guarantee a site."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Campers. It is an independent app, not linked to Recreation.gov, any park service or other camping app."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-23",
+      "summary": "Campers say it feels almost impossible to get a site without planning 6 months to a year ahead, that sites are gone at the exact moment they're released, and that lots of people cancel in the last week or two.",
+      "wtp": "Campers pay for this: The Dyrt PRO (124K App Store ratings) sells sold-out campground alerts in plans from $35.99 a year, and reviewer CamperT24 wrote 'I’ve paid for campground monitoring services before and paid the 30 bucks'.",
+      "signals": [
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1670055811/sortby=mostrecent/json",
+          "who": "CamperT24 (App Store review, Campflare)",
+          "date": "2024-07-01",
+          "quote": "it feels almost impossible to get anything without planning a full 6 months to year in advance",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1670055811/sortby=mostrecent/json",
+          "who": "davweb12 (App Store review, Campflare)",
+          "date": "2026-01-05",
+          "quote": "I really wanted to camp inside the park. Everywhere was booked up.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=9/id=1440487780/sortby=mostrecent/json",
+          "who": "G if u was (App Store review, Recreation.gov)",
+          "date": "2026-03-29",
+          "quote": "I have been ready many times at the exact moment they are released and they are already gone",
+          "seen": "opened"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=36730248",
+          "who": "kylechadha (Hacker News)",
+          "date": "2023-07-14",
+          "quote": "I find the campgrounds I want are often booked up, but lots of people cancel in the week or two prior to the booking.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=36483705",
+          "who": "lacker (Hacker News)",
+          "date": "2023-06-26",
+          "quote": "The problem that most bugs me is how often reservations for popular campsites fill up the moment they become available.",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Campflare (free alerts), The Dyrt PRO, Campnab, checking Recreation.gov by hand.",
+      "risks": "Crowded market with a free alert app. US-only and seasonal. Alert-only so it stays within booking-site rules; no promise of a site."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
