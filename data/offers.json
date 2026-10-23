@@ -29579,6 +29579,150 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-23",
+    "slug": "snip-season",
+    "name": "Snip Season",
+    "need": "I've inherited shrubs, hedges and fruit trees and I don't know when or how to prune them without killing them or losing a year of flowers.",
+    "headline": "Inherited shrubs, hedges and fruit trees and scared to cut the wrong thing at the wrong time? Get a month-by-month pruning plan for what you actually have.",
+    "buyer": "Adults (UK and other temperate climates first) who moved into a home with an established or overgrown garden, or have shrubs, roses, hedges or fruit trees they're nervous to prune.",
+    "bullets": [
+      "Add each plant once by name or photo, with help when you're not sure what it is.",
+      "A safe pruning window for each plant, a 'too late now, wait until…' warning, and a step-by-step cut guide by plant type.",
+      "Reminders when each window opens, and 2-3 year rescue plans for overgrown plants, with a before and after photo log."
+    ],
+    "price": "$2.99/month",
+    "priceUsd": 3,
+    "priceNote": "Or $19.99 a year.",
+    "reasonPrompt": "What plants do you have, and which ones are you nervous about cutting?",
+    "faq": [
+      {
+        "q": "Does it cover big trees?",
+        "a": "No. For tall trees, chainsaws, ladder work or anything near power lines, hire a qualified tree surgeon. Wear gloves, and watch out for plants with irritant sap such as euphorbia."
+      },
+      {
+        "q": "What about nesting birds?",
+        "a": "It reminds you to check hedges and shrubs for active nests before cutting, especially in spring and summer. In the UK, active nests are protected by law."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Home gardeners. It is an independent app, not linked to the RHS, any garden designer or any nursery."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-23",
+      "summary": "New and amateur gardeners say they have little experience pruning an established or out-of-control tree, are wary of touching shrubs because of pruning times, ask when to cut hedges so they don't kill them, and worry it's too risky to prune while plants are still flowering.",
+      "wtp": "RHS Grow (6.8K UK App Store ratings) sells subscriptions from £5.99 to £39.99. Garden Ninja sells a £69 New Garden Starter Kit for 'inherited or established gardens'.",
+      "signals": [
+        {
+          "url": "https://www.gardenninja.co.uk/forum/topic/apple-tree-pruning-help-2/",
+          "who": "eoinkmcc (Garden Ninja forum)",
+          "date": "2025-11-27",
+          "quote": "have little experience on how to prune let alone prune an established and out of control tree.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.gardenninja.co.uk/forum/topic/my-philadelphus-is-a-frankenshrub/",
+          "who": "Ellie Moore (Garden Ninja forum)",
+          "date": "2026-06-18",
+          "quote": "wary of touching it since I know there are certain times of year to prune",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/6383592/cutting-back-hedges",
+          "who": "paperclap (MoneySavingExpert)",
+          "date": "2022-08-31",
+          "quote": "so I don't kill the hedges?",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/6639518/pruning-time-or-is-it",
+          "who": "moneysaver1978 (MoneySavingExpert)",
+          "date": "2025-11-11",
+          "quote": "Is it too risky to prune now?",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "RHS Grow, the RHS website, gardening books, Garden Ninja courses, local gardeners.",
+      "risks": "Mostly a UK need. There's no pruning-specific paid app, and RHS Grow covers general plant care. No safety-critical tree work."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-23",
+    "slug": "border-brief",
+    "name": "Border Brief",
+    "need": "I've got a bare, blank-canvas garden and I don't know what to plant where, or how to plan it before I start digging.",
+    "headline": "Blank-canvas garden and no idea what to plant where? Map your sun, soil and space, and get a simple planting plan you can buy and dig this season.",
+    "buyer": "Adults (UK first) who've moved into a home with a bare, paved-over or neglected garden, or have just dug a new border, and aren't confident gardeners.",
+    "bullets": [
+      "Sketch each border on your phone with its size and facing, and tap morning, midday and evening to log sun and shade.",
+      "Plant picks filtered by light, soil, maximum height and spread, and how much upkeep you want.",
+      "A printable planting layout, a shopping list with spacing and quantities, and a check that it still looks good in winter."
+    ],
+    "price": "$3.99/month",
+    "priceUsd": 4,
+    "priceNote": "Or $24.99 a year.",
+    "reasonPrompt": "How big is the space, which way does it face, and how much time do you want to spend on it?",
+    "faq": [
+      {
+        "q": "Are the plants safe for children and pets?",
+        "a": "It flags plants that are commonly toxic to children, cats or dogs, such as foxglove, so you can leave them out. Always check plant labels."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Beginner gardeners. It is an independent app, not linked to the RHS, iScape, any garden designer or any garden centre."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-23",
+      "summary": "New home owners say they're not sure how to approach planning a garden, are still working out which plants are shrubs, evergreens and perennials, have a large blank canvas but aren't much of a gardener, and ask for help designing it.",
+      "wtp": "iScape (29K US ratings) sells Plus at $14.99 a month and Pro at $299.99 a year. Garden Ninja sells beginner garden design courses from £29 to £199. RHS Grow (6.8K UK App Store ratings) sells subscriptions from £5.99 to £39.99.",
+      "signals": [
+        {
+          "url": "https://www.gardenninja.co.uk/forum/topic/garden-planning-app-or-program-needed/",
+          "who": "Corneliy (Garden Ninja forum)",
+          "date": "2026-04-06",
+          "quote": "not really sure how to approach the planning stage.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.gardenninja.co.uk/forum/topic/some-tips-for-my-blank-canvas/",
+          "who": "Tim82 (Garden Ninja forum)",
+          "date": "2023-09-14",
+          "quote": "still trying to work out which ones are shrubs, evergreens and perennials!",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/6685622/large-blank-canvas-garden-and-tulips",
+          "who": "strawb_shortcake (MoneySavingExpert)",
+          "date": "2026-10-04",
+          "quote": "our garden is quite large and a blank canvas at the moment.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/6519739/help-with-garden-design",
+          "who": "sagedan (MoneySavingExpert)",
+          "date": "2024-04-09",
+          "quote": "get some help and ideas on how to design my garden.",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "iScape, Yarda, AI garden design apps, RHS Grow, garden designers and courses.",
+      "risks": "Crowded with free and AI landscaping apps; the angle is beginner-friendly plant choice, not 3D renders. Mostly a UK need."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
