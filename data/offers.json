@@ -29432,6 +29432,90 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-23",
+    "slug": "care-tag",
+    "name": "Care Tag",
+    "need": "I never know what the symbols on my clothes labels mean, so I keep shrinking or ruining clothes in the wash.",
+    "headline": "Can't read the symbols on your clothes labels? Snap the tag once, get plain-English washing, drying and ironing steps, and stop shrinking clothes you love.",
+    "buyer": "Adults who do their own laundry and can't read care symbols, from students living alone for the first time to anyone who has shrunk a favourite jumper.",
+    "bullets": [
+      "Decode a care label from a still photo, with no need to hold the camera steady, into plain-English steps with °C and °F.",
+      "Save each garment with its photo and care steps, so you never scan it twice.",
+      "Sort tonight's laundry into loads that are safe to wash together, with a warning before you wash wool, silk or dry-clean-only items."
+    ],
+    "price": "$1.99/month",
+    "priceUsd": 2,
+    "priceNote": "Or $12 a year.",
+    "reasonPrompt": "What have you shrunk or ruined, and which symbols confuse you most?",
+    "faq": [
+      {
+        "q": "Does it give stain or bleach advice?",
+        "a": "It only decodes care labels and sorts loads. For stain removers and bleach, follow the product label and never mix cleaning products."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Anyone who does their own washing. It is an independent app, not linked to any clothing brand, detergent maker, laundry service or other label-reader app."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-23",
+      "summary": "People say they've mistreated garments because they couldn't understand the care symbols, have washed and dried things incorrectly their whole lives, have ruined many clothes, and can never figure out the little symbols.",
+      "wtp": "Laundry Day - Care Symbol Reader is a $0.99 paid app (60 US ratings), and reviewer Chammmee says 'I bought it immediately'. Free Laundry Lens has 281 ratings, and reviewer mididoc09 titled their review 'This app should not be free!'.",
+      "signals": [
+        {
+          "url": "https://apps.apple.com/us/app/id1513767864?see-all=reviews",
+          "who": "mididoc09 (App Store review, Laundry Lens)",
+          "date": "2020-06-29",
+          "quote": "mistreated several garments by not being able to understand the care symbols",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1513767864?see-all=reviews",
+          "who": "JenniferT2003 (App Store review, Laundry Lens)",
+          "date": "2021-01-09",
+          "quote": "I honestly had no idea how to decode them",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id974530923?see-all=reviews",
+          "who": "Raantuva (App Store review, Laundry Day)",
+          "date": "2016-03-02",
+          "quote": "I have been washing and drying things incorrectly my entire life.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id974530923?see-all=reviews",
+          "who": "Chammmee (App Store review, Laundry Day)",
+          "date": "2016-01-10",
+          "quote": "No more ruining brand new shirts",
+          "seen": "opened"
+        },
+        {
+          "url": "https://boards.straightdope.com/t/do-you-follow-the-care-instructions-on-your-clothes/821489",
+          "who": "Beckdawrek (Straight Dope)",
+          "date": "2018-09-17",
+          "quote": "I have ruined so many clothes that I do try to follow instructions, now.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://boards.straightdope.com/t/home-maintenance-question-i-how-strictly-should-laundry-tags-be-interpreted/369240",
+          "who": "matt_mcl (Straight Dope)",
+          "date": "2006-08-18",
+          "quote": "cute little symbols that I can never figure out",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Laundry Lens (free), Laundry Day ($0.99), symbol charts online, laundry services.",
+      "risks": "The paid comparison is small (60 ratings), and most demand sits in free apps. The quotes date from 2006 to 2021. Scope is limited to decoding labels and sorting loads, with no chemical advice."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

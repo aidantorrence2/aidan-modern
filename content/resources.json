@@ -11724,5 +11724,47 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "clothing-care-label-symbols-explained",
+  "offer": "care-tag",
+  "title": "What the symbols on clothing care labels mean",
+  "description": "Five basic shapes cover almost every label: a tub for washing, a triangle for bleach, a square for drying, an iron for ironing and a circle for professional cleaning.",
+  "intro": "Care labels use the same five shapes almost everywhere. Dots usually mean heat (more dots, hotter), lines under a symbol mean gentler, and a cross means don't.",
+  "sections": [
+   {
+    "h": "Washing (tub)",
+    "list": [
+     "A tub with a number or dots shows the maximum temperature: one dot is about 30°C (86°F), two about 40°C (104°F), three about 50°C (122°F), four about 60°C (140°F).",
+     "One line under the tub means a gentler (synthetic or permanent press) cycle; two lines mean a very gentle or wool cycle.",
+     "A hand in the tub means hand wash only. A crossed-out tub means don't wash in water."
+    ]
+   },
+   {
+    "h": "Bleach (triangle)",
+    "list": [
+     "An empty triangle means any bleach is OK. A triangle with two diagonal lines means non-chlorine bleach only. A crossed-out triangle means no bleach."
+    ]
+   },
+   {
+    "h": "Drying (square)",
+    "list": [
+     "A circle in a square means tumble dry; dots show the heat (one low, two normal). A crossed-out one means don't tumble dry.",
+     "A square with a curved line at the top means line dry, one horizontal line means dry flat, and three vertical lines mean drip dry."
+    ]
+   },
+   {
+    "h": "Ironing (iron)",
+    "list": [
+     "One dot means a cool iron (about 110°C), two dots medium (about 150°C), three dots hot (about 200°C). A crossed-out iron means don't iron."
+    ]
+   },
+   {
+    "h": "Professional cleaning (circle)",
+    "p": [
+     "A circle means dry cleaning or professional wet cleaning; the letter inside tells the cleaner which process to use. A crossed-out circle means don't dry clean. When you're unsure, wash cooler and gentler, and air dry. For stain removers and bleach, follow the product label and never mix cleaning products."
+    ]
+   }
+  ]
  }
 ]
