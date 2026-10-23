@@ -12137,5 +12137,44 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "get-permission-to-metal-detect",
+  "offer": "knock-ready",
+  "title": "How to get permission to metal detect (and where to check the rules)",
+  "description": "Check the official rules for public land, ask private landowners politely in person or by letter, offer a simple agreement, and always fill your holes.",
+  "intro": "Most detecting trouble comes from guessing. Checking the rules and asking properly takes a little effort, but it gets you more places to search, and more yeses.",
+  "sections": [
+   {
+    "h": "Public land: ask the right office",
+    "list": [
+     "Rules for parks, beaches and public land vary by city, county, state and country. Look up the local ordinance or call the parks department and ask directly; get the answer in writing if you can."
+    ]
+   },
+   {
+    "h": "Private land: always ask first",
+    "list": [
+     "Never detect on private land without the owner's permission. Farmers, older homes and churches are common places detectorists ask."
+    ]
+   },
+   {
+    "h": "Make asking easier",
+    "list": [
+     "Introduce yourself briefly, explain what you'd do (small, neat holes, filled straight away), and offer to share or show what you find. A short letter or a card with your contact details works if knocking feels awkward."
+    ]
+   },
+   {
+    "h": "Agree the basics",
+    "list": [
+     "Agree how finds are shared, which areas are off-limits, and that you'll fill every hole. Some detectorists use a short written agreement; adapt any template to local law."
+    ]
+   },
+   {
+    "h": "Follow the law on finds",
+    "p": [
+     "Some finds must be reported by law (for example, under the Treasure Act in England, Wales and Northern Ireland), and archaeological sites are protected in many places. This guide isn't legal advice: check the rules where you live. Go in daylight and tell someone where you'll be."
+    ]
+   }
+  ]
  }
 ]

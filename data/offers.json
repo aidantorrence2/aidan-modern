@@ -30182,6 +30182,87 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-23",
+    "slug": "knock-ready",
+    "name": "Knock Ready",
+    "need": "I want to go metal detecting, but I don't know where I'm actually allowed to dig, and asking landowners for permission feels awkward and mostly gets ignored.",
+    "headline": "Got a metal detector but nowhere you're sure you can use it? Find out who to ask, knock with a polite script, and track every landowner's answer.",
+    "buyer": "New and returning hobby metal detectorists (US first, then UK) with a detector and nowhere they're sure they may use it.",
+    "bullets": [
+      "A checklist for finding the official rules for parks and public land near you, with a call script for the parks office.",
+      "Door-knock and letter scripts, a printable leave-behind card and a simple landowner agreement template (finds, filling holes, liability) to adapt locally.",
+      "A permission log with gentle follow-up reminders, and a research checklist for choosing which doors to knock on."
+    ],
+    "price": "$5/month",
+    "priceUsd": 5,
+    "priceNote": "Or $39 a year.",
+    "reasonPrompt": "Where do you live, and where have you tried to get permission so far?",
+    "faq": [
+      {
+        "q": "Will it tell me where digging is legal?",
+        "a": "No. Rules differ by city, state and country, so it points you to the official rules and the office to ask. It is not legal advice. Always get permission first, never trespass, and report finds as the law requires (in the UK, under the Treasure Act)."
+      },
+      {
+        "q": "Is knocking on doors safe?",
+        "a": "Go in daylight, tell someone where you're going, and leave if you're not welcome. A letter or card is a good alternative to knocking."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Hobby detectorists. It is an independent app, not linked to any detector brand, club or mapping app."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-23",
+      "summary": "Detectorists say they mostly get ignored when asking for permission, are still trying to figure out what's public land, find knocking on strangers' doors awkward, and get no clear answer from parks departments about whether detecting is allowed.",
+      "wtp": "Detector Maps (262 ratings), which says 'Plan permissions with confidence before you knock', sells $7.99 a month or $59.99 a year (Pro $99.99 a year). Forum user Cpackjr asks 'Is there such a thing as paying for access to private land?'",
+      "signals": [
+        {
+          "url": "https://www.metaldetectingforum.com/index.php?threads/is-there-a-secret-to-getting-permissions.307830/",
+          "who": "Brucem (Friendly Metal Detecting Forum)",
+          "date": "2024-05-31",
+          "quote": "mostly I just get ignored",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.metaldetectingforum.com/index.php?threads/just-what-is-public-and-available-to-detect.309054/",
+          "who": "rcornell (Friendly Metal Detecting Forum)",
+          "date": "2024-09-12",
+          "quote": "still trying to figure out what is public land for sure.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.metaldetectingforum.com/index.php?threads/how-do-you-get-permission.311549/",
+          "who": "Kansashunter (Friendly Metal Detecting Forum)",
+          "date": "2025-03-28",
+          "quote": "It is very awkward to knock and unexpectedly talk to someone",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.treasurenet.com/threads/is-it-worth-it.708659/",
+          "who": "GoJo7205 (TreasureNet)",
+          "date": "2025-03-18",
+          "quote": "I am finding it very discouraging with respect to where you can actually go to search.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.treasurenet.com/threads/parks-near-wellington-fl.664788/",
+          "who": "n4cqd (TreasureNet)",
+          "date": "2022-02-03",
+          "quote": "no one seems to know.",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Detector Maps, club group hunts, local detecting clubs, permission letter templates online.",
+      "risks": "The paid comparison sells maps and only mentions permissions. Legal rules vary widely, so the app points to official sources and gives no legal advice. US-heavy quotes."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
