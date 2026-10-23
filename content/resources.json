@@ -12665,5 +12665,44 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "mechanical-watch-accuracy-resting-position",
+  "offer": "crown-down",
+  "title": "How to make an automatic watch keep better time without opening it",
+  "description": "Measure how much your watch drifts on the wrist, test how it behaves in each resting position overnight, then rest it in the position that cancels the drift.",
+  "intro": "Most mechanical watches run a few seconds a day fast or slow, and the rate changes with position. You can often use that to keep time without resetting.",
+  "sections": [
+   {
+    "h": "Measure first",
+    "list": [
+     "Set the watch to an accurate time source, then check it at the same times each morning and evening for several days. Note the gain or loss on the wrist and overnight separately."
+    ]
+   },
+   {
+    "h": "Test the resting positions",
+    "list": [
+     "Spend a night or two in each position: dial up, dial down, crown up and crown down. Note the overnight gain or loss each time. Every watch is different, so test yours rather than relying on general rules."
+    ]
+   },
+   {
+    "h": "Balance it out",
+    "list": [
+     "If your watch gains during the day, rest it overnight in a position where it loses, and the other way round. Adjust as you learn how it behaves."
+    ]
+   },
+   {
+    "h": "Keep it wound and away from magnets",
+    "list": [
+     "A watch that's nearly unwound may run less steadily. Keep it away from strong magnets (speakers, phone cases with magnets, laptop lids); magnetism is a common cause of a watch suddenly gaining a lot."
+    ]
+   },
+   {
+    "h": "When to see a watchmaker",
+    "p": [
+     "If your watch gains or loses minutes a day, stops, or suddenly changes rate, have it checked by a qualified watchmaker rather than opening it yourself."
+    ]
+   }
+  ]
  }
 ]

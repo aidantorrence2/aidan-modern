@@ -31164,6 +31164,94 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-23",
+    "slug": "crown-down",
+    "name": "Crown Down",
+    "need": "My mechanical watch gains or loses a few seconds every day, and I'm tired of resetting it. I want to know which way to leave it overnight so the drift cancels out.",
+    "headline": "Automatic watch gaining or losing a few seconds a day? Log it for a week, and Crown Down tells you which way to rest it overnight so it stays on time without resets.",
+    "buyer": "Adult owners of mechanical and automatic watches whose watch runs a little fast or slow and who don't want to open the case or pay a watchmaker for a few seconds a day.",
+    "bullets": [
+      "A two-tap morning and evening check against atomic time, with a rate history for each watch.",
+      "A guided test of each resting position (dial up, dial down, crown up, crown down) over a week of nights.",
+      "Tonight's suggested position, worked out from today's drift on the wrist, and a flag when the rate is too far off for resting to fix."
+    ],
+    "price": "$2.99/month",
+    "priceUsd": 3,
+    "priceNote": "Or $14 a year.",
+    "reasonPrompt": "Which watch do you have, and roughly how many seconds a day does it gain or lose?",
+    "faq": [
+      {
+        "q": "Will it tell me to adjust the movement?",
+        "a": "No. It never suggests opening the case or moving the regulator. If your watch is minutes off a day, it suggests a service by a qualified watchmaker."
+      },
+      {
+        "q": "Does it use the microphone?",
+        "a": "No. It uses simple visual time checks, so there's no need to hold the watch against your phone."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Mechanical watch owners. It is an independent app, not linked to any watch brand, retailer or other timing app."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-23",
+      "summary": "Owners say their watches run seconds a day fast or slow, that years of weekly resets finally pushed them to open the case, ask why resting position changes accuracy, and want to keep watches accurate without adjusting the time; some already work out resting positions by hand.",
+      "wtp": "Watch Tracker is a $4.99 paid app (324 ratings), and reviewer apdb90 says 'the paid version was worth every penny'. tickIQ (805 ratings) sells a subscription.",
+      "signals": [
+        {
+          "url": "https://www.watchrepairtalk.com/topic/29562-regulating-an-f6922-without-a-timegrapher/",
+          "who": "WpgRob (Watch Repair Talk)",
+          "date": "2024-05-19",
+          "quote": "after 3 years of resets more than weekly",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forum.iwc.com/t/positional-error-accuracy-or-correction/29206/",
+          "who": "Cinq (IWC Collectors Forum)",
+          "date": "2010-02-08",
+          "quote": "losing a second or two per day since I bought it",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forum.iwc.com/t/advice-please-on-time-gain/29265/",
+          "who": "thomas bonass (IWC Collectors Forum)",
+          "date": "2010-02-25",
+          "quote": "gaining about 8 secs per day or so",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forum.iwc.com/t/advice-please-on-time-gain/29265/",
+          "who": "Gary Milavetz (IWC Collectors Forum)",
+          "date": "2010-03-01",
+          "quote": "why resting position it makes a difference to the accuracy",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=610666926/sortby=mostrecent/json",
+          "who": "dgray98008 (App Store review, Watch Tracker)",
+          "date": "2022-09-17",
+          "quote": "without having to adjust the time",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/gb/rss/customerreviews/page=1/id=610666926/sortby=mostrecent/json",
+          "who": "Stu6853 (App Store UK review, Watch Tracker)",
+          "date": "2020-01-16",
+          "quote": "work out the best position to put your watch in when off the wrist",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Watch Tracker, tickIQ, Toolwatch, ChronoLog, timegrapher apps, watchmakers.",
+      "risks": "A crowded app market; the difference is the overnight resting-position plan. A small hobbyist niche, and most forum quotes date from 2010."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
