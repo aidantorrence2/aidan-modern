@@ -31252,6 +31252,76 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-23",
+    "slug": "script-key",
+    "name": "Script Key",
+    "need": "I've finally found the record I need, but the handwriting is faded and old-fashioned and I simply can't read it.",
+    "headline": "Found the record but can't read the old handwriting? Build a letter key from words you can read, drill the shapes you misread, and decode parish registers yourself.",
+    "buyer": "Adults tracing their family history who find old parish registers, census pages, wills or letters and can't read the handwriting.",
+    "bullets": [
+      "Build a letter key from words you can already read in the same hand, then use it on the words you can't.",
+      "Daily drills on the shapes people commonly misread: the long s, u/n/m, e/o, abbreviations, and dates like 7ber and Xber.",
+      "A stuck-word log, plus contrast and zoom tools for faded ink."
+    ],
+    "price": "$3.99/month",
+    "priceUsd": 4,
+    "priceNote": "Or $24.99 a year.",
+    "reasonPrompt": "What kind of records are you reading, and roughly which century?",
+    "faq": [
+      {
+        "q": "Does it transcribe documents for me?",
+        "a": "No. It's a learning tool to help you read old handwriting yourself, and it can't promise every reading is right. For difficult words, ask an experienced volunteer or a professional."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Family historians of any level. It is an independent app, not linked to FamilySearch, Ancestry, MyHeritage, Transkribus or any archive."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-23",
+      "summary": "Family historians say they cannot read faded, small writing in the records they've found, that others can't read it either, ask how to work out a word that's unreadable, and describe finding the record only to be unable to read it.",
+      "wtp": "Transkribus, a handwriting-recognition service with a page for genealogists, sells Scholar at €19.99 a month or €99 a year, and MyHeritage requires a paid subscription for its transcription tool beyond a few images.",
+      "signals": [
+        {
+          "url": "https://community.familysearch.org/en/discussion/30691/help-reading-faded-small-text",
+          "who": "Barton David Dean (FamilySearch Community)",
+          "date": "2020-12-10",
+          "quote": "too faded and small for me to read well.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://community.familysearch.org/en/discussion/30691/help-reading-faded-small-text",
+          "who": "Anitra Whittle (FamilySearch Community)",
+          "date": "2020-12-10",
+          "quote": "read that either.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://community.familysearch.org/en/discussion/129757",
+          "who": "Nathaniel Simon Notheisen (FamilySearch Community)",
+          "date": "2022-08-23",
+          "quote": "when it is elligible or unreadable.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://genealogybyaryn.substack.com/p/i-cant-read-this",
+          "who": "Aryn (Genealogy by Aryn, Substack)",
+          "date": "undated",
+          "quote": "And now you can",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Transkribus, MyHeritage Scribe, palaeography courses and guides, volunteer forums.",
+      "risks": "The forum quotes are from one site (2020 to 2022), and the money evidence is for AI transcription rather than learning. Nobody said they'd pay for a trainer. No promise of correct readings."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

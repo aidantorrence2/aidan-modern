@@ -12704,5 +12704,44 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "read-old-handwriting-parish-registers",
+  "offer": "script-key",
+  "title": "How to read old handwriting in parish registers and family records",
+  "description": "Use the words you can read to decode the ones you can't, learn the common old letter shapes and abbreviations, and know how old dates were written.",
+  "intro": "Old handwriting looks impossible at first, but most of it follows patterns. The trick is to learn the writer's hand from the words you already know.",
+  "sections": [
+   {
+    "h": "Start with what you can read",
+    "list": [
+     "Find names, places and common words you're sure of in the same document. Copy how this writer forms each letter, and use that as a key for the hard words."
+    ]
+   },
+   {
+    "h": "Watch for the long s",
+    "list": [
+     "In older English writing, a long s (ſ) that looks like an f without the full crossbar was often used at the start or in the middle of words, as in 'Bleſſed'. A short s was used at the end."
+    ]
+   },
+   {
+    "h": "Count the strokes",
+    "list": [
+     "Letters like u, n, m, i and w can look like a row of identical strokes (minims). Count them and use the dots on any i's to split the word."
+    ]
+   },
+   {
+    "h": "Old dates",
+    "list": [
+     "7ber, 8ber, 9ber and Xber mean September, October, November and December (from the Latin for seven, eight, nine and ten). Before 1752 in England and Wales, the year began on 25 March, so dates from January to March may be written with two years, like 1720/1."
+    ]
+   },
+   {
+    "h": "Improve the image",
+    "p": [
+     "Zoom in, increase the contrast or invert the colours to bring out faded ink. If you're still stuck, compare the same word elsewhere in the register, or ask on a family-history forum. Experienced volunteers are often happy to help."
+    ]
+   }
+  ]
  }
 ]
