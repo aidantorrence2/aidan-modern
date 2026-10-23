@@ -31013,6 +31013,157 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-23",
+    "slug": "card-round",
+    "name": "Card Round",
+    "need": "Every December I lose track of who I sent Christmas cards to, who sent me one, and whose address or family has changed, and I dread writing all the envelopes again.",
+    "headline": "Christmas card list a mess every year? Carry it over from last year: who you sent to, who sent to you, new babies and addresses, and labels that print in one go.",
+    "buyer": "Adults who send 20 to 150 paper Christmas or holiday cards a year and keep the list in a notebook, spreadsheet or contacts group.",
+    "bullets": [
+      "Tick cards off as you send and receive them, year by year, with a 'they sent, you didn't' catch-up list.",
+      "Notes for partners', children's and pets' names, and prompts to update addresses when cards come back.",
+      "Address labels and envelopes that print in one go, and next year's list ready with the gaps marked."
+    ],
+    "price": "$1.99/month",
+    "priceUsd": 2,
+    "priceNote": "Or $9.99 a year.",
+    "reasonPrompt": "Roughly how many cards do you send, and how do you keep your list now?",
+    "faq": [
+      {
+        "q": "Where are my addresses kept?",
+        "a": "Privately, for you only. They're never shared, sold or used for marketing, and you can export or delete them at any time."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Anyone who sends paper cards. It is an independent app, not linked to any card shop, printer or other address app."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-23",
+      "summary": "Card senders say it's easy to lose track of who they've sent to with 100+ cards, dread writing envelopes, struggle to remember who got which card, and wish their address book tracked cards sent and received year after year.",
+      "wtp": "Address Labels & Envelopes is a $2.99 paid app (2.1K ratings); Louisa108 (UK) says purchasing it 'was a must', and The Christmas Card List (1.7K ratings) sells a $1.99 upgrade.",
+      "signals": [
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=3/id=407375789/sortby=mostrecent/json",
+          "who": "Mryterry01 (App Store review, Address Labels & Envelopes)",
+          "date": "2020-12-27",
+          "quote": "easy to lose track of who I",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/gb/rss/customerreviews/page=2/id=407375789/sortby=mostrecent/json",
+          "who": "Louisa108 (App Store UK review, Address Labels & Envelopes)",
+          "date": "2020-12-02",
+          "quote": "I dread writing envelopes for Christmas cards so purchasing this app was a must",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1179159324/sortby=mostrecent/json",
+          "who": "Africa66 (App Store review, The Christmas Card List)",
+          "date": "2019-12-02",
+          "quote": "always have a hard time remembering who got which one",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=3/id=1534180105/sortby=mostrecent/json",
+          "who": "Kwalter11 (App Store review, Minted address book)",
+          "date": "2021-12-27",
+          "quote": "I wish that you could add whose cards you",
+          "seen": "opened"
+        },
+        {
+          "url": "https://talk.macpowerusers.com/t/christmas-card-management/26780",
+          "who": "beck (Mac Power Users forum)",
+          "date": "2021-12-14",
+          "quote": "this year it's just not working",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Address Labels & Envelopes, The Christmas Card List, Minted, spreadsheets and notebooks.",
+      "risks": "Seasonal (October to December), and existing apps are cheap one-off buys, so the price is kept low. Review-feed page numbers shift."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-23",
+    "slug": "passenger-paws",
+    "name": "Passenger Paws",
+    "need": "My dog shakes, pants, drools or is sick every time we get in the car, so I either feel awful taking her or have to leave her at home.",
+    "headline": "Dog shakes, drools or gets sick in the car? A step-by-step plan from sitting in a parked car to short trips to longer drives, at your dog's pace.",
+    "buyer": "Adult dog owners whose dog is anxious or travel-sick in the car and who need to take it to the vet, on school runs or on holiday.",
+    "bullets": [
+      "Graded steps: sitting in the parked car, engine on, around the block, then longer drives.",
+      "A ten-second log of stress signs after each session; the plan moves on, holds or steps back automatically.",
+      "A checklist for safe restraint and comfortable setup (seat, crate or boot), with a clear prompt to see a vet if sickness continues."
+    ],
+    "price": "$4.99/month",
+    "priceUsd": 5,
+    "priceNote": "Or $29 a year.",
+    "reasonPrompt": "What does your dog do in the car, and how far do you need to travel?",
+    "faq": [
+      {
+        "q": "Does it suggest medicine or supplements?",
+        "a": "No. It never suggests medication or supplements. If your dog vomits or is very distressed, talk to your vet, who can check for travel sickness and advise you."
+      },
+      {
+        "q": "Is it safe to train in the car?",
+        "a": "Always restrain your dog safely with a crate, harness or boot guard, and never leave a dog alone in a car, especially in warm weather."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Dog owners. It is an independent app, not linked to any vet, trainer or product brand."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-23",
+      "summary": "Owners say their dog is a nervous wreck in the car, shaking and panting, that they tried numerous methods and gave up, feel bad taking the dog and bad leaving it, and that the dog whines and is stressed on every trip; they already buy calming products and courses.",
+      "wtp": "ThunderShirt (5.2K reviews) sells from $39.99 and owners on these threads mention using it; Whole Dog Journal sells a $19.95 Travel Anxiety course; specialist trainers charge far more.",
+      "signals": [
+        {
+          "url": "https://singletrackworld.com/forum/off-topic/anxiety-in-my-dog/",
+          "who": "trout (Singletrack World)",
+          "date": "2017-11-25",
+          "quote": "now he is a nervous wreck in the van shaking and panting",
+          "seen": "opened"
+        },
+        {
+          "url": "https://singletrackworld.com/forum/off-topic/anxiety-in-my-dog/",
+          "who": "amplebrew (Singletrack World)",
+          "date": "2017-11-25",
+          "quote": "I tried numerous methods and had pretty much given up",
+          "seen": "opened"
+        },
+        {
+          "url": "https://sheltieforums.com/threads/car-anxiety-leads-to-vomiting.26338/",
+          "who": "k9kreationz (Sheltie Forums)",
+          "date": "2017-08-14",
+          "quote": "I feel bad taking her and I feel bad leaving her home",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.tractorbynet.com/forums/threads/carsick-dogs.75341/",
+          "who": "Jagmandave (TractorByNet)",
+          "date": "2006-03-14",
+          "quote": "hangs her head, whines, whimpers and is generally stressed out",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "ThunderShirt, travel-anxiety courses, dog trainers, vets.",
+      "risks": "No paid app for this exact need. The posts date from 2006 to 2017. Medical: vomiting goes to a vet; no medication or supplement advice; safe restraint always."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

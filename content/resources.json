@@ -12587,5 +12587,83 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "keep-christmas-card-list",
+  "offer": "card-round",
+  "title": "How to keep a Christmas card list that carries over every year",
+  "description": "Keep one list with addresses, family names, and columns for sent and received each year. Update it as cards arrive, and next December is half done.",
+  "intro": "The hard part of Christmas cards isn't writing them; it's remembering who, where and what changed. One well-kept list fixes that.",
+  "sections": [
+   {
+    "h": "One list, not three",
+    "list": [
+     "Keep names, addresses and notes in one place (a notebook, a spreadsheet or an app), not spread across old envelopes and phone contacts."
+    ]
+   },
+   {
+    "h": "Track sent and received",
+    "list": [
+     "Add a column for each year: sent, and received. In December, tick as you go. It shows who you can stop sending to and who you missed."
+    ]
+   },
+   {
+    "h": "Note family changes",
+    "list": [
+     "Write partners', children's and pets' names, new babies and anyone who has died, so the card is right."
+    ]
+   },
+   {
+    "h": "Update addresses as you go",
+    "list": [
+     "When a card arrives with a new address, or one comes back undelivered, update the list straight away."
+    ]
+   },
+   {
+    "h": "Make envelopes easy",
+    "p": [
+     "Print address labels from your list instead of writing every envelope, and buy stamps early. Keep the list private and only share it with your household."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "help-dog-who-hates-the-car",
+  "offer": "passenger-paws",
+  "title": "How to help a dog who hates the car",
+  "description": "Take it slowly: build good feelings around the parked car first, then very short trips, keep the dog safely restrained and comfortable, and see a vet if they're sick.",
+  "intro": "Many dogs learn to dread the car because most trips end somewhere scary, or because they feel sick. Small, positive steps help most dogs.",
+  "sections": [
+   {
+    "h": "Start with a parked car",
+    "list": [
+     "Sit in the parked car with your dog for a minute or two with treats, praise or a chew, then get out. Repeat until your dog is relaxed."
+    ]
+   },
+   {
+    "h": "Add the engine, then movement",
+    "list": [
+     "Next, turn the engine on and off. Then drive to the end of the road and back. Increase slowly, and go back a step if your dog starts panting, drooling or shaking."
+    ]
+   },
+   {
+    "h": "Make trips lead somewhere good",
+    "list": [
+     "Drive to a favourite walk or park, not only to the vet."
+    ]
+   },
+   {
+    "h": "Comfort and safety",
+    "list": [
+     "Restrain your dog safely in a crate, a harness clipped to a seatbelt point, or behind a boot guard. Keep the car cool and ventilated; a cover over a crate can help some dogs. Never leave a dog alone in a car."
+    ]
+   },
+   {
+    "h": "If your dog is sick",
+    "p": [
+     "Vomiting or heavy drooling can be travel sickness. Talk to your vet, who can check your dog and advise on options. Don't give human medicines or supplements without veterinary advice."
+    ]
+   }
+  ]
  }
 ]
