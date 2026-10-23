@@ -31749,6 +31749,90 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-23",
+    "slug": "single-skillet",
+    "name": "Single Skillet",
+    "need": "I live alone and cooking for one feels pointless. Recipes make four portions, food comes in family packs, and I end up on microwave meals or eating the same leftovers all week.",
+    "headline": "Cooking for one feels pointless? Recipes sized to one plate, shopping in single-person amounts, and no week of eating the same leftovers.",
+    "buyer": "Adults 18+ who cook for one: people living alone, whose partner is away or works shifts, or who used to cook for a family.",
+    "bullets": [
+      "Every recipe written for one plate, not cut down from four.",
+      "A week's shopping that uses each pack up across different meals, so nothing sits in the fridge.",
+      "A 'can't be bothered' button for a 10-minute dinner from what you already have, and optional 'cook once, eat twice' on different days."
+    ],
+    "price": "$3.99/month",
+    "priceUsd": 4,
+    "priceNote": "Or $24.99 a year.",
+    "reasonPrompt": "What do you usually end up eating, and what would you like to cook more often?",
+    "faq": [
+      {
+        "q": "Is it a diet or nutrition plan?",
+        "a": "No. It's about making cooking for one easy and worth doing. It makes no health or nutrition claims; for dietary needs, talk to a doctor or dietitian."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Anyone cooking for one. It is an independent app, not linked to any supermarket, food brand or meal-kit service."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-23",
+      "summary": "People cooking for one say they can't live on microwave meals, can't be bothered and stick to beans or the chippy, find cooking for one depressing and not worth the work for one meal, cook too much and get sick of it, and have lost their cooking mojo.",
+      "wtp": "People already pay for meal planners that don't fit one person: MealPrepPro (12K ratings) sells $9.99 to $229.99, and its reviewer FiddlesPlay lives alone and tires of the same meal; eMeals (53K ratings) sells plans from $37.49.",
+      "signals": [
+        {
+          "url": "https://community.sueryder.org/t/cooking-for-one/17457",
+          "who": "Jill (Sue Ryder Community)",
+          "date": "2019-11-24",
+          "quote": "spend the rest of my life on microwave meals!Help",
+          "seen": "opened"
+        },
+        {
+          "url": "https://community.sueryder.org/t/cooking-for-one/17457",
+          "who": "Jianye (Sue Ryder Community)",
+          "date": "2019-11-24",
+          "quote": "I really cant be bothered I stick to beans or the chippy",
+          "seen": "opened"
+        },
+        {
+          "url": "https://community.sueryder.org/t/cooking-for-one/17457",
+          "who": "Cj13 (Sue Ryder Community)",
+          "date": "2019-11-26",
+          "quote": "Yes this cooking for one well that is the worst",
+          "seen": "opened"
+        },
+        {
+          "url": "https://boards.straightdope.com/t/i-wish-i-had-someone-to-cook-for/423586",
+          "who": "wonky (Straight Dope)",
+          "date": "2007-10-22",
+          "quote": "be the only one who finds cooking for one depressing.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://boards.straightdope.com/t/i-wish-i-had-someone-to-cook-for/423586",
+          "who": "amarinth (Straight Dope)",
+          "date": "2007-10-22",
+          "quote": "go through all the work involved and just come out with one meal.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://healthunlocked.com/healthyeating/posts/140348840/cooking-or-feeding-for-one",
+          "who": "Maur33n (HealthUnlocked)",
+          "date": "2019-03-24",
+          "quote": "I usually cook too much food and sick of it after a second helping.",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "MealPrepPro, eMeals, Eat This Much, cookbooks for one, ready meals.",
+      "risks": "No paid solo-cooking app exists; the money is in general meal planners. Some evidence is old (2007) or from a bereavement forum, so the copy doesn't lean on grief. No nutrition claims."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

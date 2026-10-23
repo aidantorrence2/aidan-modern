@@ -12979,5 +12979,44 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "cooking-for-one-tips",
+  "offer": "single-skillet",
+  "title": "Cooking for one: how to make it easy and worth doing",
+  "description": "Cook one-plate recipes rather than shrinking family ones, buy ingredients you can use across several different meals, and keep a few 10-minute standbys.",
+  "intro": "Cooking for one isn't just cooking for four divided by four. A slightly different approach makes it much easier, and less wasteful.",
+  "sections": [
+   {
+    "h": "Choose recipes made for one",
+    "list": [
+     "Look for one-pan and one-plate meals (omelettes, stir-fries, pasta, rice bowls) that work at single size, rather than stews and bakes that only work in big batches."
+    ]
+   },
+   {
+    "h": "Shop for overlap",
+    "list": [
+     "Pick ingredients that work in several different dishes: a bag of spinach can go into eggs, pasta and a curry over the week. Buy loose veg rather than big packs where you can."
+    ]
+   },
+   {
+    "h": "Cook once, eat twice, differently",
+    "list": [
+     "Make two portions and turn the second into something different: roast chicken one night, a wrap or fried rice two days later. That avoids the same dish all week."
+    ]
+   },
+   {
+    "h": "Keep a few standbys",
+    "list": [
+     "Eggs, tinned beans and tomatoes, frozen veg, rice and pasta mean there's always a 10-minute option when you can't be bothered."
+    ]
+   },
+   {
+    "h": "Make it worth sitting down for",
+    "p": [
+     "Put it on a proper plate, sit at the table and enjoy it. Many people find that once cooking for themselves becomes a small routine, it stops feeling pointless. Follow food-safety guidance for storing and reheating leftovers."
+    ]
+   }
+  ]
  }
 ]
