@@ -30575,6 +30575,76 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-23",
+    "slug": "curl-log",
+    "name": "Curl Log",
+    "need": "I really don't know how to care for my curly hair. I keep buying products and can't tell which ones actually work for me.",
+    "headline": "Bought every curl product and still can't tell what works? Log each wash day, rate day-two curls, change one thing at a time, and see which products show up on good days.",
+    "buyer": "Adults with curly or wavy hair who keep buying products and can't tell what works.",
+    "bullets": [
+      "A wash-day log: the products, amounts and method you used, plus a day-two photo with a frizz and definition rating.",
+      "One change per wash, so you can see what actually made the difference.",
+      "A 'good days' view showing which of the products you already own turn up when your curls behave."
+    ],
+    "price": "$2.99/month",
+    "priceUsd": 3,
+    "priceNote": "Or $19.99 a year.",
+    "reasonPrompt": "What's your hair like, and which products have you tried?",
+    "faq": [
+      {
+        "q": "Will it tell me my curl type or sell me products?",
+        "a": "No. It doesn't sell or rank brands; it helps you learn from your own results. For scalp problems or hair loss, see a pharmacist, GP or dermatologist."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Anyone with curly or wavy hair. It is an independent app, not linked to any hair brand, salon or other hair app."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-23",
+      "summary": "People with curly hair say they really don't know how to care for it, that it gets frizzy fast and they've tried almost everything, that they don't know which styles keep curls, and that finding products that work is an experiment.",
+      "wtp": "Curly Hair Scanner & Care Plan sells Pro at $7.99 a month or $29.99 a year, and reviewer Kenna June complains 'you can't even reach your care routine because you have to pay for it'.",
+      "signals": [
+        {
+          "url": "https://www.beautylish.com/t/ipjwsu/curly-n-unruly",
+          "who": "Lauren T. (Beautylish)",
+          "date": "2015-05-21",
+          "quote": "I really don't know how to care for my curly hair",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.beautylish.com/t/arjiy/really-curly-hair-help",
+          "who": "Iya S. (Beautylish)",
+          "date": "2013-01-31",
+          "quote": "I don't know what to do I've tried everything, well almost.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.beautylish.com/t/yprvvc/curly-hair-problems-",
+          "who": "Anissa J. (Beautylish)",
+          "date": "2014-01-26",
+          "quote": "I don't know which hairstyles to do when I wanna keep them curly",
+          "seen": "opened"
+        },
+        {
+          "url": "https://dorothea12.substack.com/p/a-lesson-on-curly-hair-care",
+          "who": "dorothea (Substack)",
+          "date": "2024-11-05",
+          "quote": "a bit of an experimental process to find products that work for you.",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Curly Hair Scanner and other curl apps, curly-hair communities, stylists, product brands' quizzes.",
+      "risks": "The Beautylish posts date from 2013 to 2015 and were verified with the fetch tool (curl gets 403). Paid apps have small rating counts, and nobody said they'd pay. No scalp or hair-loss health claims."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
