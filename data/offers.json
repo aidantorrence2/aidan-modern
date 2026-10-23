@@ -28216,6 +28216,73 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-23",
+    "slug": "quarter-ready",
+    "name": "Quarter Ready",
+    "need": "I earn money from a side gig or freelancing, I never set enough aside for tax, and I keep getting surprised by what I owe.",
+    "headline": "Never get surprised by a tax bill on side-gig income: set aside a share of every payout, see what you might owe, and get reminded before each quarterly date.",
+    "buyer": "US adults 18+ with side-gig or freelance income (delivery and rideshare drivers, online sellers, freelancers).",
+    "bullets": [
+      "A set-aside amount for every payout, at a rate you choose.",
+      "A quarterly estimated-payment calendar with reminders, and a set-aside versus might-owe view.",
+      "A mileage and expense log, and a year-end pack for you or your tax preparer."
+    ],
+    "price": "$4.99/month",
+    "priceUsd": 5,
+    "priceNote": "Or $34.99 a year.",
+    "reasonPrompt": "What kind of side income do you have, and roughly how much a month?",
+    "faq": [
+      {
+        "q": "Is this tax advice?",
+        "a": "No. It helps you track and set aside money. Your actual tax depends on your whole situation; check with a tax professional or the IRS for your case."
+      },
+      {
+        "q": "Does it pay my taxes for me?",
+        "a": "No. It reminds you and shows your numbers. You make payments yourself through the official channels."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "US adults 18+ with side or freelance income. It is an independent app, not linked to any tax software, gig platform or the IRS."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-23",
+      "summary": "Side-gig earners on the TurboTax Community say they hadn't made any quarterly payments, later found they owed a lot for not filing quarterly, and aren't sure if what they set aside is enough.",
+      "wtp": "People pay for help with this: Keeper costs $199 to $399 a year, with quarterly taxes in its Premium plan, and has more than 13,000 App Store reviews.",
+      "signals": [
+        {
+          "url": "https://ttlc.intuit.com/community/self-employed-27/didn-t-make-any-quarterly-payments-997862",
+          "who": "David7771 (TurboTax Community)",
+          "date": "2024-11-01",
+          "quote": "I haven't made any for last year or this year.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://ttlc.intuit.com/community/business-taxes/discussion/1099-work/00/3383747/amp",
+          "who": "Kbraxton2 (TurboTax Community)",
+          "date": "2024-08-28",
+          "quote": "who later determined I owed alot of taxes for not filing quarterly.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://ttlc.intuit.com/community/get-your-taxes-done-using-turbotax-6/i-just-started-doordash-374437",
+          "who": "Acgreatmemories (TurboTax Community)",
+          "date": "2021-09-30",
+          "quote": "I am putting back 10 to 20% out of my door dashing money to help with taxes is that good enough?",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Keeper, FlyFin, QuickBooks Self-Employed, spreadsheets, tax preparers.",
+      "risks": "All people are on one forum. Nobody wrote 'I'd pay'. Not tax advice. Distinct from income-changes-month-ordinary (irregular-income budgeting)."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

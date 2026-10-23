@@ -11084,5 +11084,44 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "set-aside-tax-side-gig-income",
+  "offer": "quarter-ready",
+  "title": "How much to set aside for taxes from side-gig income (US)",
+  "description": "Set aside a share of every payout in a separate account, track expenses and mileage, and know the quarterly estimated-tax dates.",
+  "intro": "Gig and freelance income usually has no tax taken out, so the bill can be a shock. This is general information, not tax advice.",
+  "sections": [
+   {
+    "h": "Set aside from every payout",
+    "list": [
+     "Move a share of each payout into a separate savings account as soon as it arrives. Many people start somewhere around 25 to 30%, then adjust once they know their real tax picture."
+    ]
+   },
+   {
+    "h": "Remember self-employment tax",
+    "list": [
+     "On top of income tax, self-employed people generally pay self-employment tax (Social Security and Medicare). That's often what catches people out."
+    ]
+   },
+   {
+    "h": "Track expenses and mileage",
+    "list": [
+     "Keep records of business expenses and business miles. They can reduce the income you're taxed on."
+    ]
+   },
+   {
+    "h": "Know the quarterly dates",
+    "list": [
+     "The IRS generally expects estimated payments if you'll owe $1,000 or more for the year. Payments are usually due around 15 April, 15 June, 15 September and 15 January (dates shift for weekends and holidays)."
+    ]
+   },
+   {
+    "h": "Get help if unsure",
+    "p": [
+     "Check IRS guidance on estimated taxes, or ask a tax professional, especially in your first year of side income."
+    ]
+   }
+  ]
  }
 ]
