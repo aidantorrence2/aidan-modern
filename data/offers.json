@@ -29793,6 +29793,164 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-23",
+    "slug": "grand-turns",
+    "name": "Grand Turns",
+    "need": "My grandchildren live hours or a continent away, video calls feel like they're watching me on TV, and the time difference makes it hard to find a time to just play together.",
+    "headline": "Grandchildren far away? Take turns on games, stories and drawings whenever you each have time, even across time zones, with no live call to line up.",
+    "buyer": "Grandparents (and aunts, uncles and godparents) whose grandchildren aged 3 to 10 live in another city or country, and the parents who set it up.",
+    "bullets": [
+      "Turn-based family games (words, drawing, matching) that wait for the other side: you play when you wake up, they play after school.",
+      "Record a bedtime story once and the children replay it on their own clock; swap photos and drawings each week into a printable keepsake album.",
+      "A time-zone helper that suggests the one good live-call window each week."
+    ],
+    "price": "$5.99/month",
+    "priceUsd": 6,
+    "priceNote": "Or $49 a year per family.",
+    "reasonPrompt": "Where do your grandchildren live, and how old are they?",
+    "faq": [
+      {
+        "q": "Is it safe for children?",
+        "a": "Yes. Family circles are invite-only and set up and controlled by a parent. There are no public profiles, no strangers and no ads."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Families who live apart. It is an independent app, not linked to Caribu, Together or any video-calling service."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-23",
+      "summary": "Grandparents say video calls feel like watching TV for the grandchildren, are lovely but not the same, find it hard to get a time to chat across time zones, and want turn-based games so the time difference stops mattering; families already pay for call-and-play apps.",
+      "wtp": "Caribu by Mattel (8.8K ratings) sells $9.99 a month or $79.99 a year; Together: Family Video Calling (4.7K ratings) sells $59.99 a year, and reviewer danitrish says 'We just bought a subscription'.",
+      "signals": [
+        {
+          "url": "https://www.gransnet.com/forums/grandparenting/1350391-Online-games-to-play-with-GC",
+          "who": "GrandmaKT (Gransnet)",
+          "date": "2025-08-03",
+          "quote": "We find it really difficult getting a time to chat with their UK cousins",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.gransnet.com/forums/grandparenting/1350391-Online-games-to-play-with-GC",
+          "who": "65KL (Gransnet)",
+          "date": "2025-09-05",
+          "quote": "This eliminates the time issue",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.gransnet.com/forums/grandparenting/1330914-Support-for-grandparents-who-have-children-and-grandchildren-living-abroad",
+          "who": "Bella23 (Gransnet)",
+          "date": "2023-12-30",
+          "quote": "You see grandchildren on facetime but it is like watching the TV for them.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.gransnet.com/forums/grandparenting/1330914-Support-for-grandparents-who-have-children-and-grandchildren-living-abroad",
+          "who": "Smileless2012 (Gransnet)",
+          "date": "2023-12-30",
+          "quote": "it's not the same",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=2/id=1405515604/sortby=mostrecent/json",
+          "who": "dOTt1e732 (App Store review, Together)",
+          "date": "2020-10-10",
+          "quote": "play games with my grandsons who are 3000 miles away!",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1405515604/sortby=mostrecent/json",
+          "who": "Ringerlady (App Store review, Together)",
+          "date": "2023-07-01",
+          "quote": "two sets of grandkids that live out of state",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Caribu, Together, FaceTime and WhatsApp, Words With Friends-style games.",
+      "risks": "Paid incumbents exist, and much of their praise dates from the lockdowns. Children's data needs parent-controlled accounts and child-privacy compliance."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-23",
+    "slug": "hometown-awards",
+    "name": "Hometown Awards",
+    "need": "I need money for college but can't find scholarships that fit me, and the big national ones feel like a lottery I keep losing.",
+    "headline": "Find the small local and niche scholarships you can actually win, track every deadline, and reuse your essays so applying stops eating every weekend.",
+    "buyer": "US high-school juniors and seniors, undergraduates and community-college transfer students, and the parents helping them pay for college.",
+    "bullets": [
+      "A local-first shortlist: town, employer, club, faith and major-specific awards that match one student.",
+      "A deadline calendar with reminders for each school year.",
+      "An essay library that tags past essays to adapt for new prompts, and a parent view to share the to-do list."
+    ],
+    "price": "$4.99/month",
+    "priceUsd": 5,
+    "priceNote": "Or $29 a year.",
+    "reasonPrompt": "What grade or year are you in, and what are you planning to study?",
+    "faq": [
+      {
+        "q": "Will I win money?",
+        "a": "No one can promise that. It helps you find and apply for awards that fit you. Legitimate scholarships never charge an application fee, so be wary of any that do."
+      },
+      {
+        "q": "Can under-18s use it?",
+        "a": "Yes, with a parent or guardian setting up the account."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Students and parents. It is an independent app, not linked to any college, scholarship provider or other scholarship app."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-23",
+      "summary": "Students ask when to start applying and where to find scholarships, say they're struggling to find any for current undergraduates, and say dozens of applications brought no success.",
+      "wtp": "Scholarly - Swipe and Apply (4.2K ratings) sells Pro in-app purchases from $9.99 to $59.99. Free apps like Going Merry, Bold.org and RaiseMe have large user bases.",
+      "signals": [
+        {
+          "url": "https://talk.collegeconfidential.com/t/when-to-start-applying-for-scholarships-and-where-to-find-them/3670423",
+          "who": "Charlie.Strotger (College Confidential)",
+          "date": "2024-07-21",
+          "quote": "would like to know when I should start applying for scholarships.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://talk.collegeconfidential.com/t/scholarships-for-college-underclassmen/3675542",
+          "who": "angel737 (College Confidential)",
+          "date": "2024-10-17",
+          "quote": "struggling to find scholarships that aren",
+          "seen": "opened"
+        },
+        {
+          "url": "https://talk.collegeconfidential.com/t/scholarships-for-architecture-design-major/3688647",
+          "who": "ssilvia9697 (College Confidential)",
+          "date": "2025-04-27",
+          "quote": "Where can I find scholarships?",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1483037600/sortby=mostrecent/json",
+          "who": "roo.k.night (App Store review, Going Merry)",
+          "date": "2025-06-10",
+          "quote": "40+ applications, with no success.",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Going Merry, Bold.org, RaiseMe, Scholarships.com, Scholarly, school counsellors.",
+      "risks": "Crowded with free apps, and experienced posters say outside scholarships are a lot of work for little payback. Minors need parental consent. No promises of winnings and no per-application fees."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
