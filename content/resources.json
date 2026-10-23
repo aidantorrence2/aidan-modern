@@ -11440,5 +11440,45 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "learn-excel-fast-before-new-job",
+  "offer": "cell-ready",
+  "title": "How to learn Excel fast before a new job starts",
+  "description": "Find out what the job actually uses, learn the handful of everyday skills first, practise on realistic sheets for 15 to 20 minutes a day, and keep a cheat sheet.",
+  "intro": "You don't need to know all of Excel. Most jobs use the same small set of skills, and a few days of focused practice covers a lot of it.",
+  "sections": [
+   {
+    "h": "Find out what the job uses",
+    "list": [
+     "Ask your manager or recruiter what you'll do in spreadsheets: entering data, reports, rotas, budgets? It's a normal question to ask."
+    ]
+   },
+   {
+    "h": "Learn the everyday basics first",
+    "list": [
+     "Moving around and selecting cells, simple formulas (SUM, AVERAGE), sorting and filtering, and formatting a table so it's readable.",
+     "Next: relative versus fixed references ($A$1), IF, a lookup (XLOOKUP or VLOOKUP), a simple pivot table and a chart."
+    ]
+   },
+   {
+    "h": "Practise on realistic sheets",
+    "list": [
+     "Make or download a small sales list, a rota or a household budget, and do real tasks on it. Fifteen to twenty minutes a day beats one long cram."
+    ]
+   },
+   {
+    "h": "Keep a cheat sheet",
+    "list": [
+     "Write down the steps and shortcuts you use most (Ctrl+Z, Ctrl+Arrow, F2 to edit a cell) and keep it next to you for your first weeks."
+    ]
+   },
+   {
+    "h": "When you freeze",
+    "p": [
+     "Break the task into small steps, try it on a copy so nothing can go wrong, and search for the exact thing you want to do. Experienced users look things up all the time too."
+    ]
+   }
+  ]
  }
 ]
