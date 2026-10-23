@@ -12548,5 +12548,44 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "arabic-letter-shapes-joining",
+  "offer": "letter-join",
+  "title": "Arabic letter shapes: how letters join, and the six that never join forward",
+  "description": "Most Arabic letters have up to four shapes depending on position. Six letters never connect to the letter after them. Learn those two facts and words become much easier to read.",
+  "intro": "The alphabet chart shows each letter alone, but in real words letters join and change shape. Here is the pattern.",
+  "sections": [
+   {
+    "h": "Four positions",
+    "list": [
+     "Most letters have an isolated, initial, medial and final form. The core shape stays recognisable; the connecting strokes change."
+    ]
+   },
+   {
+    "h": "The six non-connectors",
+    "list": [
+     "Alif (ا), dal (د), dhal (ذ), ra (ر), zay (ز) and waw (و) connect to the letter before them but never to the letter after. The next letter starts fresh, which is why words seem to have gaps in them."
+    ]
+   },
+   {
+    "h": "Watch the dots",
+    "list": [
+     "Many letters share a base shape and differ only by dots: ب ت ث (ba, ta, tha), ج ح خ (jim, ha, kha). In the middle of a word, look at the dots first."
+    ]
+   },
+   {
+    "h": "Read with vowels first",
+    "list": [
+     "Short vowels are small marks above or below letters. Start with fully marked texts (children's books, many learner materials), then move to texts with fewer marks as you recognise words."
+    ]
+   },
+   {
+    "h": "Practise little and often",
+    "p": [
+     "Read a few real words every day rather than drilling the chart. Note the letters you misread and practise those words again the next day."
+    ]
+   }
+  ]
  }
 ]

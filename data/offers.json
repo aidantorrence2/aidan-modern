@@ -30950,6 +30950,69 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-23",
+    "slug": "letter-join",
+    "name": "Letter Join",
+    "need": "I know the Arabic alphabet chart, but I can't read real words: letters change shape in the middle and at the end, and without vowel marks I'm lost.",
+    "headline": "Know the Arabic alphabet but can't read real words? Drill joined letter shapes in real words, let the vowel marks fade, and track the letters you misread.",
+    "buyer": "Adults 18+ learning to read Arabic script who know the alphabet chart but misread joined letters and unvowelled words.",
+    "bullets": [
+      "Every letter in all its shapes (alone, start, middle, end), practised inside real words rather than charts.",
+      "Vowel marks that fade step by step as you get faster, from fully marked text to plain text.",
+      "Tracking of the letters and joins you misread most, with short daily drills on those."
+    ],
+    "price": "$3.99/month",
+    "priceUsd": 4,
+    "priceNote": "Or $24.99 a year.",
+    "reasonPrompt": "Why are you learning Arabic, and where do you get stuck reading?",
+    "faq": [
+      {
+        "q": "Is it a full Arabic course?",
+        "a": "No. It focuses on reading the script fluently, alongside any course, teacher or app you use."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Adult learners of any background. It is an independent app, not linked to any school, mosque, course or other language app."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-23",
+      "summary": "Learners say apps don't teach how letters look in the middle and at the end of a word, give no information on vowels, that letters sound different in words, and value help putting letters together into syllables and words.",
+      "wtp": "Arabic Alphabet is a $0.99 paid app with 2.8K ratings; Arabic Unlocked sells $9.99 a month to $64.99 a year. On Google Play, Ginger Devaney says a full unlock of about $5 is 'completely reasonable'.",
+      "signals": [
+        {
+          "url": "https://apps.apple.com/us/app/arabic-alphabet/id361336962?see-all=reviews",
+          "who": "ladystine (App Store review, Arabic Alphabet)",
+          "date": "2019-03-30",
+          "quote": "You are not taught how letters look in the middle of a word and at the end of a word.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id673710080?see-all=reviews",
+          "who": "LaurenVL (App Store review)",
+          "date": "2015-02-16",
+          "quote": "the letters sound different in words",
+          "seen": "opened"
+        },
+        {
+          "url": "https://play.google.com/store/apps/details?id=com.forkids.forkids.arabicalphabet&hl=en_US&gl=US",
+          "who": "Ginger Devaney (Google Play review)",
+          "date": "2025-07-14",
+          "quote": "helps you with putting letters together into syllables and words",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Arabic alphabet apps, Arabic Unlocked, Quran reading apps, teachers and courses.",
+      "risks": "Two of the reviews are old (2015 and 2019); the Google Play app is aimed at children; the WordReference source is blocked to curl. No exam or fluency promises."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
