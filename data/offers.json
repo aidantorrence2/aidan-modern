@@ -30645,6 +30645,87 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-23",
+    "slug": "year-binder",
+    "name": "Year Binder",
+    "need": "I homeschool my kids, and keeping track of what each child actually did (lessons, hours, attendance, grades) and pulling it together when it's needed is a mess I never keep up with.",
+    "headline": "Homeschool records a mess? Log each day in 20 seconds per child, and hours, subjects, grades and photos build your attendance record, portfolio and transcript.",
+    "buyer": "Parents homeschooling one or more children (US first, any curriculum), especially in states that ask for hours, attendance or a portfolio, and parents of high schoolers who need a transcript.",
+    "bullets": [
+      "A one-tap daily log per child (subject, minutes, a note and a photo), with running totals of days and hours against the target you set.",
+      "Sick days, trips and skipped days that move your finish date automatically.",
+      "Export an end-of-year portfolio and attendance record as a PDF, plus a high-school course list with credits, grades and GPA for a transcript draft."
+    ],
+    "price": "$3.99/month",
+    "priceUsd": 4,
+    "priceNote": "Or $24.99 a year.",
+    "reasonPrompt": "How many children do you homeschool, and what records do you need to keep?",
+    "faq": [
+      {
+        "q": "Will it make me compliant with my state's rules?",
+        "a": "It keeps your records organised, but rules differ by state and country and it isn't legal advice. Check your state's or local authority's requirements."
+      },
+      {
+        "q": "What about my children's data?",
+        "a": "Your records are private to your family and never shared or sold. You can export or delete them at any time."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Homeschooling parents. It is an independent app, not linked to any curriculum, school, umbrella programme or other homeschool app."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-23",
+      "summary": "Homeschooling parents say they struggle to keep track of several children's curriculum, have searched for weeks for a simple way to log hours, spend hours each quarter gathering everything, and start the year with a binder that lasts two days.",
+      "wtp": "Homeschool Planner AI: Uschool sells $4.99 to $12.99 a month, and reviewer HolguinValadezr says tracking attendance for the state is 'legitimately worth so much more than $10 a month.' Homeschool Moments reviewer Sage2531 says 'I would pay $20 -$30 annually'.",
+      "signals": [
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=6469048740/sortby=mostrecent/json",
+          "who": "TickledSanta (App Store review, Uschool)",
+          "date": "2025-08-27",
+          "quote": "been struggling to keep track of my multiple kids",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=6751783700/sortby=mostrecent/json",
+          "who": "Blueyestu (App Store review, WiseTrack)",
+          "date": "2026-03-19",
+          "quote": "Have been searching for weeks for a paperless method of keeping track of school hours without all the fluff.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=6476961667/sortby=mostrecent/json",
+          "who": "QueenMeowStids (App Store review, HomeTrail)",
+          "date": "2024-11-16",
+          "quote": "always end up spending so much time each quarter trying to gather everything.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=6757193565/sortby=mostrecent/json",
+          "who": "JennDavis (App Store review, Homeschool Moments)",
+          "date": "2026-01-20",
+          "quote": "track everything in a binder and it lasts like two days.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://talk.collegeconfidential.com/t/homeschooled-ish-no-gpa/3647155",
+          "who": "MAmomto4 (College Confidential)",
+          "date": "2023-09-28",
+          "quote": "it is a ton of work.",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Uschool, HomeTrail, Homeschool Planet, spreadsheets and paper planners.",
+      "risks": "Crowded with small apps (118 ratings at most), and one reviewer balks at $99 a year, so the price is kept low. Rules vary by state; it keeps records only. Children's data needs care."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
