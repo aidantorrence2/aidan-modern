@@ -25606,7 +25606,7 @@
     ],
     "demand": {
       "checked": "2026-10-22",
-      "summary": "Pet owners say they tried to keep track of flea and tick meds in a journal, forgot worming tablets, and asked pet apps for worming reminders.",
+      "summary": "Pet owners reviewing pet-care apps say they tried to keep track of flea and tick meds in a journal and had to build their own worming reminders.",
       "wtp": "Pet Care Tracker (DogCat) sells DogCat Plus at $4.49 a month or $39.99 a year (953 ratings). DogNote Premium costs $4.99 a month or $44.99 a year (919 ratings).",
       "signals": [
         {
@@ -25629,17 +25629,10 @@
           "date": "2022-05-24",
           "quote": "It needs a section for worming pills with option for monthly reminder for puppies then 6 months for older dogs.",
           "seen": "opened"
-        },
-        {
-          "url": "https://wamiz.co.uk/cat/european-shorthair-463/forum/i-ve-forgotten-to-give-her-the-worming-tablets-what-should-i-do-84423.html",
-          "who": "Virginievg (Wamiz UK forum)",
-          "date": "2018-11-07",
-          "quote": "I completely forgot to give my kitten her worming tablets!",
-          "seen": "opened"
         }
       ],
       "competitors": "Pet Care Tracker (DogCat), DogNote, 11pets, phone calendar reminders, vet reminder texts.",
-      "risks": "Most people are app reviewers. Pet medication needs care: the app never advises doses and points missed doses to the vet. Review page numbers shift as new reviews arrive."
+      "risks": "Most people are app reviewers. Pet medication needs care: the app never advises doses and points missed doses to the vet. Review page numbers shift as new reviews arrive. A Wamiz forum quote was removed because the post is machine-translated from French."
     }
   },
   {
