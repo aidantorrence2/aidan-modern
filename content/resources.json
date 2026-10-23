@@ -12412,5 +12412,46 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "why-saxophone-squeaks",
+  "offer": "clear-reed",
+  "title": "Why your saxophone squeaks: things to check, one at a time",
+  "description": "Most beginner squeaks come from the reed, the mouthpiece position, biting or a leak. Check them one at a time, starting with the reed.",
+  "intro": "Squeaks, airy notes and gurgles are normal when you start. Change one thing at a time so you can tell what fixed it.",
+  "sections": [
+   {
+    "h": "The reed",
+    "list": [
+     "Wet the reed for a minute before playing. A dry reed often squeaks.",
+     "Check it isn't chipped or warped, and try another reed: individual reeds vary a lot.",
+     "Many beginners do better on a softer reed (for example, a 2 instead of a 3)."
+    ]
+   },
+   {
+    "h": "Reed and ligature position",
+    "list": [
+     "Line up the tip of the reed with the tip of the mouthpiece, centred, and tighten the ligature just enough to hold it."
+    ]
+   },
+   {
+    "h": "How much mouthpiece",
+    "list": [
+     "Too little mouthpiece in your mouth sounds thin or airy; too much can squeak. Experiment in small steps."
+    ]
+   },
+   {
+    "h": "Don't bite",
+    "list": [
+     "Support the reed with your lower lip over your bottom teeth, with gentle, even pressure from all sides rather than clamping."
+    ]
+   },
+   {
+    "h": "Gurgles and leaks",
+    "p": [
+     "Gurgling usually means water in the neck or mouthpiece: swab after playing and tip out water during breaks. If certain notes always squeak whatever you do, a pad may be leaking, so ask a repair technician to check."
+    ]
+   }
+  ]
  }
 ]

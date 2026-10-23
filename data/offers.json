@@ -30726,6 +30726,83 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-23",
+    "slug": "clear-reed",
+    "name": "Clear Reed",
+    "need": "I'm learning the saxophone as an adult and all I get is squeaks, air and gurgles, and I can't tell what I'm doing wrong.",
+    "headline": "Saxophone squeaking, airy or gurgling? Record a long tone, tag the sound, and check one likely cause at a time until your notes come out clean.",
+    "buyer": "Adults 18+ learning or returning to the saxophone who keep getting squeaks, airy notes or gurgles.",
+    "bullets": [
+      "Record a long tone and tag what you hear (squeak, airy, thin or gurgle) to get a short list of likely causes.",
+      "Check one cause at a time (reed strength and wetness, mouthpiece depth, biting, ligature, a leaky pad), with a reed log so you know which reeds work.",
+      "Short drills for low notes and register jumps, and side-by-side recordings of this week versus last month."
+    ],
+    "price": "$3.99/month",
+    "priceUsd": 4,
+    "priceNote": "Or $24.99 a year.",
+    "reasonPrompt": "Which saxophone and reed strength do you play, and what sound keeps happening?",
+    "faq": [
+      {
+        "q": "Can it fix a broken instrument?",
+        "a": "No. If a check points to a leaking pad or a mechanical problem, take the saxophone to a repair technician."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Adult learners. It is an independent app, not linked to any instrument maker, reed brand, teacher, school or other music app."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-23",
+      "summary": "Adult beginners say squeaking was severe for weeks, their reed wasn't moist enough, a gurgling sound is prominent, more saliva than air goes into the sax, and other newbies have the same problem.",
+      "wtp": "Learn Saxophone - tonestro (1.1K ratings) sells $17.49 a month and Premium up to $224.99, and reviewer Tunerer says 'I loved this app from the start and paid for a subscription.'",
+      "signals": [
+        {
+          "url": "https://www.saxophone.org/forum/thread/id/43570",
+          "who": "bjroosevelt (saxophone.org forum)",
+          "date": "undated",
+          "quote": "Squeaking was severe for a week or two.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.saxophone.org/forum/thread/id/43570",
+          "who": "RobertD (saxophone.org forum)",
+          "date": "undated",
+          "quote": "the reed was not as moist as it should be.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.cafesaxophone.com/threads/gurgling-sound.1627/",
+          "who": "kicker (Cafe Saxophone)",
+          "date": "2010-01-02",
+          "quote": "it appears a gurgling sound is prominent",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.cafesaxophone.com/threads/gurgling-sound.1627/",
+          "who": "DaveC (Cafe Saxophone)",
+          "date": "2010-01-02",
+          "quote": "more saliva than air going into the sax at times",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.cafesaxophone.com/threads/gurgling-sound.1627/",
+          "who": "Rory_Thomas (Cafe Saxophone)",
+          "date": "2010-08-31",
+          "quote": "I have the same problem as im only a newbie.",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "tonestro, Yousician-style apps, Sax School Online, private teachers.",
+      "risks": "The posts are old (2010, plus undated ones), and nobody said they'd pay for a squeak checker. Mechanical faults go to a technician."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
