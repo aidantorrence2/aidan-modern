@@ -12256,5 +12256,83 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "why-3d-prints-fail-halfway",
+  "offer": "layer-sleuth",
+  "title": "Why your 3D prints fail halfway through (and what to check first)",
+  "description": "Most mid-print failures come down to adhesion, clogs or filament, or a print shape that needs supports. Check one thing at a time and note what changed.",
+  "intro": "A failed print is frustrating, but the cause is usually one of a handful of common problems. Change one thing at a time so you know what fixed it.",
+  "sections": [
+   {
+    "h": "Print came loose from the plate",
+    "list": [
+     "Clean the build plate (many makers recommend washing with dish soap and water), check the first layer is squashed slightly, and use a brim on tall or small-footprint parts."
+    ]
+   },
+   {
+    "h": "Extrusion stopped or went thin",
+    "list": [
+     "Check for a tangled spool, a clogged nozzle or damp filament. Many filaments absorb moisture; drying them often helps."
+    ]
+   },
+   {
+    "h": "Spaghetti or collapsed sections",
+    "list": [
+     "Overhangs and bridges may need supports or a different orientation. Lower the speed for tall, thin parts."
+    ]
+   },
+   {
+    "h": "Layer shifts",
+    "list": [
+     "Check belts are tensioned, nothing is in the way of the print head, and the printer is on a stable surface."
+    ]
+   },
+   {
+    "h": "Stay safe",
+    "p": [
+     "Watch the first layers of every print, keep a smoke alarm near the printer, and don't leave printers running unattended unless the maker says it's safe. For heater, wiring or electrical faults, stop and contact the maker's support."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "choose-tattoo-design-placement-without-regret",
+  "offer": "ink-rehearsal",
+  "title": "How to choose a tattoo design and placement without regretting it",
+  "description": "Live with the idea for a while, test placement at real size, think about visibility and how it will age, and bring a clear brief to a licensed artist.",
+  "intro": "Most tattoo regret comes from rushing. A little time and testing before the appointment helps you choose something you'll still love. For adults 18+.",
+  "sections": [
+   {
+    "h": "Give it time",
+    "list": [
+     "Keep the design somewhere you'll see it every day for a few weeks. If you still love it, that's a good sign."
+    ]
+   },
+   {
+    "h": "Test the placement",
+    "list": [
+     "Print the design at the real size and tape it on, or draw it on with a skin-safe marker. Look at it standing, sitting and moving, and in photos."
+    ]
+   },
+   {
+    "h": "Think about visibility",
+    "list": [
+     "Consider work, swimwear and sleeves. Some spots are easy to cover; others are always on show."
+    ]
+   },
+   {
+    "h": "Size and detail",
+    "list": [
+     "Fine detail in a small tattoo can blur over the years. Ask your artist how big a design needs to be to stay clear."
+    ]
+   },
+   {
+    "h": "Talk to a licensed artist",
+    "p": [
+     "Bring your references, size and placement ideas, and listen to their advice. Choose a licensed, reputable studio, and ask a doctor about any skin concerns. This guide gives no health or aftercare advice."
+    ]
+   }
+  ]
  }
 ]

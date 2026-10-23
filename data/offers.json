@@ -30421,6 +30421,160 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-23",
+    "slug": "layer-sleuth",
+    "name": "Layer Sleuth",
+    "need": "I'm new to 3D printing, my prints keep failing halfway through, and I can't work out why.",
+    "headline": "3D prints keep failing halfway? Snap the failure, answer five questions, and get the most likely cause and one fix to try next, in plain words.",
+    "buyer": "Adult hobbyists in their first year with a consumer 3D printer (Bambu, Prusa, Creality and similar).",
+    "bullets": [
+      "A photo plus five quick questions gives a ranked list of likely causes, with one change to try at a time so you learn what actually fixed it.",
+      "A log for each printer of filament, settings and results, plus a first-layer and build-plate checklist before long prints.",
+      "Plain-English explanations of slicer settings, and a clear 'contact the maker' point for hardware faults."
+    ],
+    "price": "$4.99/month",
+    "priceUsd": 5,
+    "priceNote": "Or $39 a year.",
+    "reasonPrompt": "Which printer and filament do you use, and how do your prints fail?",
+    "faq": [
+      {
+        "q": "Is it safe?",
+        "a": "Don't leave a printer running unattended unless the maker says it's safe and you have a smoke alarm nearby. For heater, wiring or electrical faults, stop printing and contact the maker or your warranty support. The app never suggests editing firmware."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Hobby 3D printer owners. It is an independent app, not linked to Bambu Lab, Prusa, Creality, Obico or any filament brand."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-23",
+      "summary": "New 3D printer owners say multiple prints keep failing a quarter of the way through, that one object keeps failing whatever they move, that 8 of their last 10 prints failed, and that it has had problems on most prints from the beginning.",
+      "wtp": "Obico (1.1K ratings), which detects failing prints, sells in-app plans at $49.99, $99.99 and $199.99. Bambu Handy has about 39K ratings, which shows how many people own consumer printers.",
+      "signals": [
+        {
+          "url": "https://forum.bambulab.com/t/prints-keep-failing/257865",
+          "who": "Nicofiend (Bambu Lab forum)",
+          "date": "2026-08-09",
+          "quote": "Multiple Prints keep failing about a quarter of the way through",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forum.bambulab.com/t/left-object-keeps-failing/257085",
+          "who": "nickholl (Bambu Lab forum)",
+          "date": "2026-07-24",
+          "quote": "but the left one keeps failing",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forum.bambulab.com/t/a1-may-have-broken-itself/240733",
+          "who": "user_923710196 (Bambu Lab forum)",
+          "date": "2026-03-11",
+          "quote": "8 out of my last 10 prints have failed",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forum.prusa3d.com/forum/prusa-core-one-l-general-discussion-announcements-and-releases/general-frustration-please-help/",
+          "who": "Djh 117 (Prusa forum)",
+          "date": "2026-03-07",
+          "quote": "it's been a bit discouraging",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forum.prusa3d.com/forum/original-prusa-i3-mk3s-mk3-assembly-and-first-prints-troubleshooting/prints-failing-often/",
+          "who": "Peter (Prusa forum)",
+          "date": "2018-12-17",
+          "quote": "From the beginning it has had problems on most of the prints",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Maker forums and support, Obico, YouTube troubleshooting guides, slicer documentation.",
+      "risks": "Obico watches prints rather than diagnosing them, so nobody has been shown paying for diagnosis. Many failures are hardware faults for the maker's support. Fire safety: never encourage unattended printing."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-23",
+    "slug": "ink-rehearsal",
+    "name": "Ink Rehearsal",
+    "need": "I want a tattoo but I can't decide what or where, and I'm scared I'll regret it.",
+    "headline": "Want a tattoo but can't decide what or where? Try your own design at real size on each spot, wait it out, and see if you still love it weeks later.",
+    "buyer": "Adults 18+ planning a first or next tattoo who are unsure about the design, placement or size.",
+    "bullets": [
+      "Upload your own sketch or flash (no AI-only library) and compare two or three placements and sizes side by side on your photos.",
+      "A cooling-off timer with weekly 'still love it?' check-ins, and a visibility check for work, swimwear and long sleeves.",
+      "A one-page brief with your references, size and placement to take to your artist."
+    ],
+    "price": "$3.99/month",
+    "priceUsd": 4,
+    "priceNote": "Or $24.99 a year.",
+    "reasonPrompt": "What design are you thinking of, and which spots are you torn between?",
+    "faq": [
+      {
+        "q": "Who is it for?",
+        "a": "Adults 18+ only. It helps you decide, but it gives no skin, health, aftercare or removal advice. Talk to a licensed tattoo artist about design and placement, and to a doctor about any skin concerns."
+      },
+      {
+        "q": "Is it linked to any app or studio?",
+        "a": "No. It is an independent app, not linked to INKHUNTER, any tattoo studio or any artist."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-23",
+      "summary": "People say they have two spots in mind and can't choose, can't make an easy decision, have wanted a tattoo for 15+ years but decide slowly, and can't decide what or where; try-on app reviewers complain they can no longer upload their own designs.",
+      "wtp": "INKHUNTER (about 25K ratings) sells Premium in-app purchases from $6.99 to $59.99; INKHUNTER PRO is a $0.99 paid app.",
+      "signals": [
+        {
+          "url": "https://www.lastsparrowtattoo.com/forum/t/7166-new-here/",
+          "who": "Rhythm (Last Sparrow Tattoo forum)",
+          "date": "2016-07-16",
+          "quote": "two spots in mind and am not sure which to go with.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.lastsparrowtattoo.com/forum/t/8458-regards/",
+          "who": "suhanalp (Last Sparrow Tattoo forum)",
+          "date": "2019-06-17",
+          "quote": "I am a person who cannot make an easy decision.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.lastsparrowtattoo.com/forum/t/6451-hello-from-a-plainskin/",
+          "who": "Blaue (Last Sparrow Tattoo forum)",
+          "date": "2015-08-08",
+          "quote": "but I am a slow decision maker.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/gb/rss/customerreviews/page=4/id=991558368/sortby=mostrecent/json",
+          "who": "Leahlolly2k10 (App Store UK review, INKHUNTER)",
+          "date": "2016-04-17",
+          "quote": "I can't decide what or where so this really helps!!",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/gb/rss/customerreviews/page=1/id=991558368/sortby=mostrecent/json",
+          "who": "SophBoulton (App Store UK review, INKHUNTER)",
+          "date": "2025-07-18",
+          "quote": "now you only appear to be able to use their AI model",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "INKHUNTER, Tattoo AI and other try-on apps, tattoo artists' consultations.",
+      "risks": "A crowded try-on market; the angle is own-design upload plus a cooling-off period and an artist brief. The forum quotes date from 2015 to 2019, and review-feed page numbers shift. Adults only; no skin or health advice."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
