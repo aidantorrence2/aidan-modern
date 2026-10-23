@@ -31532,6 +31532,76 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-23",
+    "slug": "handover-ready",
+    "name": "Handover Ready",
+    "need": "I've just got the keys to a new build, it's full of snags, I don't know which ones really count or what the proper process is, and the developer keeps dragging its feet on fixing them.",
+    "headline": "New build full of snags and the developer dragging its feet? Log them room by room with photos, send a proper dated list, and chase every fix by date.",
+    "buyer": "UK buyers of new-build houses and flats, mostly first-timers, from handover through the developer's two-year warranty period.",
+    "bullets": [
+      "A room-by-room snag walk with photo capture and a plain guide to how serious each issue is.",
+      "A numbered, dated snag list you can send to customer care, with a tracker that flags missed appointments and broken promises.",
+      "Escalation letters in the right order (customer care, then warranty provider, then the New Homes Ombudsman where it applies), and a reminder to re-check before your two-year period ends."
+    ],
+    "price": "$5.99/month",
+    "priceUsd": 6,
+    "priceNote": "Or $29 a year.",
+    "reasonPrompt": "When did you complete, and how many snags are still open?",
+    "faq": [
+      {
+        "q": "Is it legal advice or a professional inspection?",
+        "a": "No. It organises your snags and complaints, and explains the standard complaint routes. Gas, electrical and structural issues need a qualified professional; never try to fix those yourself. For legal advice, speak to a solicitor or Citizens Advice."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "New-build buyers aged 18+. It is an independent app, not linked to any developer, warranty provider or snagging company."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-23",
+      "summary": "New-build buyers say they've struggled for months to get builders to do their snagging, aren't sure of the correct process as first-time buyers, want guidance on what counts as a real problem, and find developers ignore their letters and emails; many pay professional snaggers.",
+      "wtp": "Professional snagging inspections cost from £350 for a studio flat to £469 or more for a 3-bed house; PistonHeads user Matt Cup said a snagger was 'well worth the money'.",
+      "signals": [
+        {
+          "url": "https://www.pistonheads.com/gassing/topic.asp?h=0&f=207&t=1135124",
+          "who": "Cogcog (PistonHeads)",
+          "date": "2012-04-09",
+          "quote": "I have struggled day in and day out to get the builders to do my snagging",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.pistonheads.com/gassing/topic.asp?h=0&f=207&t=1780832",
+          "who": "Hammy98 (PistonHeads)",
+          "date": "2018-12-03",
+          "quote": "not 100% sure on the correct processes to deal with issues.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.pistonheads.com/gassing/topic.asp?h=0&f=207&t=2069067",
+          "who": "newbster (PistonHeads)",
+          "date": "2024-03-20",
+          "quote": "looking for some guidance on what constitutes a real problem",
+          "seen": "opened"
+        },
+        {
+          "url": "https://singletrackworld.com/forum/off-topic/new-build-house-snagging-question/",
+          "who": "duckman (Singletrack World)",
+          "date": "2012-08-10",
+          "quote": "they ignore both the letters and emails that I send",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Professional snagging inspectors, trade snagging apps, developer customer-care portals, consumer guides.",
+      "risks": "UK-specific. Some posts are old (2012 to 2018). Homeowner snag apps have tiny rating counts; the money evidence is professional inspections. No legal or structural advice."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

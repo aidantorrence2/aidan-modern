@@ -12860,5 +12860,44 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "new-build-snagging-list-uk",
+  "offer": "handover-ready",
+  "title": "New-build snagging: how to log defects and get your developer to fix them",
+  "description": "Walk every room systematically, photograph and number each snag, send one dated list in writing, keep a record of every promise, and escalate in order if fixes stall.",
+  "intro": "Almost every new build has snags. What makes the difference is a clear written list and a record of every promise.",
+  "sections": [
+   {
+    "h": "Walk the home systematically",
+    "list": [
+     "Go room by room, top to bottom: ceilings, walls, windows, doors, floors, sockets, taps and sealant. Check outside too: brickwork, gutters, paths and fences."
+    ]
+   },
+   {
+    "h": "Photograph and number everything",
+    "list": [
+     "Take a photo of each snag with something for scale, give it a number, and note the room and a short description."
+    ]
+   },
+   {
+    "h": "Send one list, in writing",
+    "list": [
+     "Email your full numbered list to the developer's customer care team and ask for written confirmation and dates for each fix. Keep everything in writing."
+    ]
+   },
+   {
+    "h": "Track every promise",
+    "list": [
+     "Log every appointment and promised date, and what happened. Missed visits and repeated delays are much easier to escalate with a record."
+    ]
+   },
+   {
+    "h": "Escalate in order",
+    "p": [
+     "If fixes stall, follow the developer's complaints process first, then your new-home warranty provider. If your developer is registered under the New Homes Quality Code, you may be able to go to the New Homes Ombudsman. Have gas, electrical and structural concerns checked by a qualified professional. This guide is general information, not legal advice."
+    ]
+   }
+  ]
  }
 ]
