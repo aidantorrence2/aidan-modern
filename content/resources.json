@@ -12097,5 +12097,45 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "catch-up-bible-reading-plan",
+  "offer": "pick-up-plan",
+  "title": "Fell behind on your Bible reading plan? How to catch up without starting over",
+  "description": "Don't try to read every missed day at once. Pick up at the next chapter, spread the backlog or move the finish date, and plan for the hard books.",
+  "intro": "Most people who try a one-year plan fall behind at some point, often around Leviticus or Numbers. Falling behind doesn't mean failing; it means adjusting the plan.",
+  "sections": [
+   {
+    "h": "Don't binge the backlog",
+    "list": [
+     "Trying to read two weeks of chapters in a weekend usually ends in giving up. Pick up at the next unread chapter instead."
+    ]
+   },
+   {
+    "h": "Choose: spread it or stretch it",
+    "list": [
+     "Spread: add one extra chapter a day until you're caught up.",
+     "Stretch: move your finish date back. Reading the whole Bible in 18 months or two years is still reading the whole Bible."
+    ]
+   },
+   {
+    "h": "Plan by minutes, not chapters",
+    "list": [
+     "Chapters vary a lot in length. Decide how many minutes you have each day and read for that long."
+    ]
+   },
+   {
+    "h": "Prepare for the hard books",
+    "list": [
+     "Before long law or genealogy sections, read a short summary of what the section is about and why it matters. Some people alternate them with a Psalm or a Gospel chapter."
+    ]
+   },
+   {
+    "h": "Mark progress, not streaks",
+    "p": [
+     "Tick off books and chapters rather than counting days in a row. Seeing how much you've read is more encouraging than a broken streak."
+    ]
+   }
+  ]
  }
 ]

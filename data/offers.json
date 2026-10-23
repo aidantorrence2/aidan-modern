@@ -30119,6 +30119,69 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-23",
+    "slug": "pick-up-plan",
+    "name": "Pick Up Plan",
+    "need": "Every year I start a plan to read the whole Bible, fall so far behind that catching up feels impossible, and quietly give up.",
+    "headline": "Fallen behind on your Bible reading plan again? A plan that bends instead of breaking: spread missed chapters, move your finish date, and pick up where you are.",
+    "buyer": "Adults who want to read the whole Bible and keep falling behind on reading plans.",
+    "bullets": [
+      "When you miss days, choose to spread the missed chapters over the coming weeks or move your finish date, with no starting over.",
+      "Plans built around the minutes you actually have each day, and you always pick up at your next unread chapter.",
+      "Two lines of context before long law and genealogy chapters (Leviticus, Numbers, Chronicles), and no streaks or guilt."
+    ],
+    "price": "$2.99/month",
+    "priceUsd": 3,
+    "priceNote": "Or $19.99 a year.",
+    "reasonPrompt": "Which plan have you tried, and where do you usually fall behind?",
+    "faq": [
+      {
+        "q": "Which Bible translation does it use?",
+        "a": "Use whichever translation you like. The plan tracks books and chapters, so you read in your own Bible or app."
+      },
+      {
+        "q": "Is it linked to a church or publisher?",
+        "a": "No. It is an independent app, not linked to any church, denomination, publisher or other Bible app."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-23",
+      "summary": "Readers say they quietly abandon whole-Bible plans in February or March because they've fallen too far behind to catch up, never get to the end, and start crumbling at Leviticus or Numbers.",
+      "wtp": "Dwell: Audio Bible (88K App Store ratings) sells $9.99 a month or $59.99 a year, and a Lifetime subscriber reviewer says its reading-plan integration 'is what stuck for me'.",
+      "signals": [
+        {
+          "url": "https://fishersofmen1.substack.com/p/breaking-news-local-man-defeats-bible",
+          "who": "Ed Stych (Substack)",
+          "date": "2026-02-17",
+          "quote": "fallen so far behind that catching up felt impossible",
+          "seen": "opened"
+        },
+        {
+          "url": "https://fishersofmen1.substack.com/p/breaking-news-local-man-defeats-bible",
+          "who": "Tom (Substack comment)",
+          "date": "2026-02-17",
+          "quote": "I have also had this difficulty",
+          "seen": "opened"
+        },
+        {
+          "url": "https://stacker.news/items/1193991",
+          "who": "felipe (Stacker News)",
+          "date": "2025-08-25",
+          "quote": "started crumbling as soon as I got to Leviticus or Numbers.",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "YouVersion plans (free), Dwell, Bible Recap, printed reading plans.",
+      "risks": "Free plans dominate, and the money evidence is an audio Bible with plans, not catch-up itself. Only 3 people; the Logos forum is blocked to our fetch."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
