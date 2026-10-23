@@ -31602,6 +31602,83 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-23",
+    "slug": "dusty-bell",
+    "name": "Dusty Bell",
+    "need": "I bought a kettlebell to work out at home, but I'm new to it: I don't know what workout to do or how heavy it should be, and I can't tell whether my swing form is right.",
+    "headline": "Bought a kettlebell and it's gathering dust? Get a simple plan for the bell you actually own, with form checks so you know your swing is right.",
+    "buyer": "Adult beginners (18+) who have bought, or are about to buy, one or two kettlebells for home and don't know what to do with them.",
+    "bullets": [
+      "A plan built around the bells you own (one is fine), progressing week by week in 10 to 25 minutes a session.",
+      "Form checklists for the hinge, swing and goblet squat, including common faults like squatting the swing.",
+      "A guide to when to move up a bell size, and a log of sets, reps and weight over time."
+    ],
+    "price": "$5.99/month",
+    "priceUsd": 6,
+    "priceNote": "Or $39.99 a year.",
+    "reasonPrompt": "Which kettlebell weight do you have, and how much time can you train each week?",
+    "faq": [
+      {
+        "q": "Is it safe for my back?",
+        "a": "Good technique matters, especially for swings. Start light, progress slowly, and stop if anything hurts. If you have back problems or a health condition, check with a doctor or a qualified trainer first. The app makes no medical claims."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Adult beginners. It is an independent app, not linked to any kettlebell brand, gym or certification body."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-23",
+      "summary": "New kettlebell owners say they don't know how to put a workout together, want video guidance and tracking, aren't sure what to do as beginners, worry about technique and their backs, and ask whether people get instruction before training at home.",
+      "wtp": "Stark Kettlebell is a $4.99 paid app (544 ratings); Kettlebell Home Workout (1.7K ratings) sells a full version up to $9.99, and UK reviewer mattw12 says '£9.99 for lifetime gladly paid'.",
+      "signals": [
+        {
+          "url": "https://itunes.apple.com/gb/rss/customerreviews/page=1/id=474762013/sortby=mostrecent/json",
+          "who": "GLT1980 (App Store UK review, Stark Kettlebell)",
+          "date": "2014-07-02",
+          "quote": "new to kettlebells and don",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/gb/rss/customerreviews/page=1/id=474762013/sortby=mostrecent/json",
+          "who": "Deebouye (App Store UK review, Stark Kettlebell)",
+          "date": "2017-01-28",
+          "quote": "just started using kettlebells and wanted to get some video guidance",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/gb/rss/customerreviews/page=1/id=1574827419/sortby=mostrecent/json",
+          "who": "Tired Ma! (App Store UK review, Kettlebell Home Workout)",
+          "date": "2024-04-01",
+          "quote": "I am brand new to kettlebell & this app has a allowed me to create a beginners workout",
+          "seen": "opened"
+        },
+        {
+          "url": "https://singletrackworld.com/forum/off-topic/kettlebell-selection/",
+          "who": "schrickvr6 (Singletrack World)",
+          "date": "2011-11-24",
+          "quote": "I knew I was bending my knees too much",
+          "seen": "opened"
+        },
+        {
+          "url": "https://cathe.com/forum/threads/kettlebells-where-to-start.255551/",
+          "who": "EricaH (Cathe forum)",
+          "date": "2008-12-12",
+          "quote": "Do most people get some kind of instruction before doing kettlebells at home?",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Fitify, Stark Kettlebell, Kettlebell Home Workout, YouTube, StrongFirst courses, personal trainers.",
+      "risks": "Crowded with workout apps, so the angle is a plan for the bells you own plus form checks. The forum posts are old (2008 to 2011). Back safety: beginner technique, conservative progression, no injury claims."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
