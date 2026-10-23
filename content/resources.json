@@ -11766,5 +11766,44 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "how-not-to-get-lost-hiking",
+  "offer": "north-habit",
+  "title": "How not to get lost hiking: five habits for people with no sense of direction",
+  "description": "Plan the route's key turns, use handrails like rivers and ridges, check in with the map often, look back regularly, and know what to do if you think you've gone wrong.",
+  "intro": "Getting lost usually starts with a few minutes of not checking. A handful of simple habits keeps you on track, even if you have a poor sense of direction.",
+  "sections": [
+   {
+    "h": "Brief the route before you go",
+    "list": [
+     "Look at the map at home. Note the key turns, the 'handrails' you'll follow (paths, rivers, walls, ridges) and a 'too far' marker that tells you you've overshot."
+    ]
+   },
+   {
+    "h": "Check in often",
+    "list": [
+     "At every junction and every 15 to 20 minutes, find yourself on the map and name the last thing you passed. Small checks are easier than big corrections."
+    ]
+   },
+   {
+    "h": "Know where north is",
+    "list": [
+     "Set the map so north on the map points north on the ground (use a compass or your phone). Then what's ahead of you on the map is ahead of you for real."
+    ]
+   },
+   {
+    "h": "Look back",
+    "list": [
+     "Turn around now and then, especially at junctions. The way back looks different, and you'll recognise it if you need to retrace your steps."
+    ]
+   },
+   {
+    "h": "If you think you've gone wrong",
+    "p": [
+     "Stop. Don't keep walking in hope. Go back to the last place you were sure of, or use the map, compass or GPS to work out where you are. Always carry a proper map, check the weather, tell someone your route and when you'll be back, and call the emergency services if you're in danger."
+    ]
+   }
+  ]
  }
 ]

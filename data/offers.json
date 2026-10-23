@@ -29516,6 +29516,69 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-23",
+    "slug": "north-habit",
+    "name": "North Habit",
+    "need": "I have a poor sense of direction, and the main thing I worry about when I go hiking is getting lost.",
+    "headline": "Worried about getting lost on a hike? Build simple navigation habits: a route brief before you go, quick 'where's north?' check-ins, and short map drills.",
+    "buyer": "Hikers and hillwalkers with a poor sense of direction, especially those who are new or walk alone.",
+    "bullets": [
+      "A two-minute route brief before each walk: key turns, handrails like rivers and ridges, and a 'too far' marker.",
+      "Timed check-in prompts on the trail: point to north, name your last landmark, and look back at the way you came.",
+      "Five-minute map and compass drills at home, and a calm 'I think I've gone wrong' card for what to do next."
+    ],
+    "price": "$2.99/month",
+    "priceUsd": 3,
+    "priceNote": "Or $19.99 a year.",
+    "reasonPrompt": "Where do you usually walk, and what worries you most about finding your way?",
+    "faq": [
+      {
+        "q": "Is it a safety device or a map?",
+        "a": "No. It's a practice tool for building navigation habits. Always carry a proper map (and compass or GPS you know how to use), check the weather, and tell someone your route and when you'll be back. In an emergency, call the emergency services."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Walkers and hikers of any level. It is an independent app, not linked to AllTrails, OS Maps or any outdoor organisation."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-23",
+      "summary": "Hikers say they find it really hard to keep directions straight in their heads, think they'd get lost quickly away from a trail, and have a very poor sense of direction; they already pay for map apps.",
+      "wtp": "AllTrails Plus sells $35.99 a year and Peak $79.99; OS Maps (102K UK ratings) sells £7.49 a month or £35.99 a year.",
+      "signals": [
+        {
+          "url": "https://backpackinglight.com/forums/topic/help-for-navigationally-challenged/",
+          "who": "Adam G (Backpacking Light)",
+          "date": "2018-07-07",
+          "quote": "I find it really hard to keep directions straight in my head.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://backpackinglight.com/forums/topic/help-for-navigationally-challenged/",
+          "who": "MJ H (Backpacking Light)",
+          "date": "2018-07-07",
+          "quote": "get lost pretty quickly if I got too far from a trail",
+          "seen": "opened"
+        },
+        {
+          "url": "https://backpackinglight.com/forums/topic/lost-found/",
+          "who": "Dena Kelley (Backpacking Light)",
+          "date": "2016-06-08",
+          "quote": "Personally I have a very poor sense of direction.",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "AllTrails, OS Maps, Gaia GPS, navigation courses, walking clubs.",
+      "risks": "Map apps cover part of this already. All the opened quotes are from one site (2016 to 2018). The doc side's Mumsnet and Walkhighlands sources are blocked to our fetch. Nobody says they'd pay for a practice tool. Close to the held 'sense of direction' idea, but hiking-specific."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
