@@ -29284,6 +29284,73 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-23",
+    "slug": "clean-pass",
+    "name": "Clean Pass",
+    "need": "I practise card magic a lot but I'm not getting better, and I can't tell what gives my moves away.",
+    "headline": "Practising card magic but not getting better? Film your moves from the audience's angle, compare them frame by frame, and know when a trick is ready to show.",
+    "buyer": "Adults and teens learning card magic and sleight of hand who practise but still look clumsy.",
+    "bullets": [
+      "Film any move from the audience's angle and review it slowed down, side by side with your best take.",
+      "A giveaway checklist for each move (flashing, finger tension, pauses, eye line) and 10-minute daily drills.",
+      "A ready-to-show tracker per trick, and a routine builder for when you perform for friends."
+    ],
+    "price": "$3.99/month",
+    "priceUsd": 4,
+    "priceNote": "Or $24.99 a year.",
+    "reasonPrompt": "Which moves or tricks are you working on, and what feels clumsy?",
+    "faq": [
+      {
+        "q": "Does it teach tricks?",
+        "a": "It helps you practise and polish the moves you're learning from books, videos or courses. It doesn't expose or sell trick methods."
+      },
+      {
+        "q": "Are my videos shared?",
+        "a": "No. Practice clips stay private to you unless you choose to export them."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Hobby magicians of any level. It is an independent app, not linked to any magic shop, publisher or other magic app."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-23",
+      "summary": "App reviewers say they practised magic a lot but weren't getting better, want an app that would help with their magic, and have always been fascinated but never had it accessible; magic-learning apps sell subscriptions.",
+      "wtp": "Magic Tricks - Learn & Master (267 ratings) sells $11.49 a month or $39.99 half-yearly; Master Magic Tricks sells $12.99 and $99.99 subscriptions.",
+      "signals": [
+        {
+          "url": "https://apps.apple.com/us/app/magic-tricks-learn-master/id1592175271?see-all=reviews",
+          "who": "Rubin cube dude (App Store review, Magic Tricks - Learn & Master)",
+          "date": "2023-11-17",
+          "quote": "I used to practice magic a lot and i was not getting better",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/magic-tricks-learn-master/id1592175271?see-all=reviews",
+          "who": "!EmEmEm! (App Store review, Magic Tricks - Learn & Master)",
+          "date": "2024-09-08",
+          "quote": "So this app looks really fun and would help me with my magic",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/master-magic-tricks/id1479607028?see-all=reviews",
+          "who": "BreezeByeBye (App Store review, Master Magic Tricks)",
+          "date": "2020-11-16",
+          "quote": "As someone who has always been fascinated with Magic, but never had it accessible to me",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Magic-learning apps, video courses, magic shops' tutorials, local magic clubs.",
+      "risks": "Only 3 reviewers, all on the App Store; the quotes are mild and nobody says 'I'd pay'. Magic forums block our fetch."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

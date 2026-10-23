@@ -11640,5 +11640,47 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "practise-sleight-of-hand-so-it-doesnt-look-obvious",
+  "offer": "clean-pass",
+  "title": "How to practise sleight of hand so it doesn't look obvious",
+  "description": "Practise slowly, film yourself from the audience's angle, watch for the common giveaways, and only perform a move once it passes on camera.",
+  "intro": "Most moves look obvious not because the method is wrong but because of small tells: tension, pauses, angles and where you look. Filming yourself shows them.",
+  "sections": [
+   {
+    "h": "Go slow first",
+    "list": [
+     "Learn the move slowly and smoothly before trying to speed up. Speed hides nothing if the move is jerky."
+    ]
+   },
+   {
+    "h": "Film from the audience's angle",
+    "list": [
+     "Prop your phone where a spectator's eyes would be, at a table and standing. A mirror helps, but a recording shows what you actually do."
+    ]
+   },
+   {
+    "h": "Check for the common giveaways",
+    "list": [
+     "Flashing: the audience glimpses a hidden card.",
+     "Tension: stiff fingers or a cramped grip.",
+     "Pauses: a hitch right at the moment of the move.",
+     "Eye line: looking at your hands when you should look at the audience."
+    ]
+   },
+   {
+    "h": "Practise little and often",
+    "list": [
+     "Ten focused minutes a day beats an hour once a week. Do a few slow reps, then a few at performance speed, and film the last one."
+    ]
+   },
+   {
+    "h": "Only perform what passes",
+    "p": [
+     "When a move looks clean on camera from every angle you'll be seen from, try it on a friend. Keep notes of what they noticed and go back to the camera."
+    ]
+   }
+  ]
  }
 ]
