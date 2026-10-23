@@ -29723,6 +29723,76 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-23",
+    "slug": "fair-quote",
+    "name": "Fair Quote",
+    "need": "I know very little about cars, and when the garage gives me a repair quote I have no idea whether it's a fair price or I'm being ripped off.",
+    "headline": "Got a car repair quote and no idea if it's fair? Break it into parts, labour and fees, know what to ask, and compare a second quote side by side before you say yes.",
+    "buyer": "Drivers who know little about cars and worry that a garage quote is too high.",
+    "bullets": [
+      "Turn any quote or invoice into parts, labour hours, hourly rate and fees, so you can see where the money goes.",
+      "A plain-English list of questions to ask the garage, and notes of 'what they told me' so nothing gets lost.",
+      "A side-by-side view of a second quote, plus a history of every repair and service on your car."
+    ],
+    "price": "$2.99/month",
+    "priceUsd": 3,
+    "priceNote": "Or $19.99 a year.",
+    "reasonPrompt": "What's the repair, and what were you quoted?",
+    "faq": [
+      {
+        "q": "Is it a mechanic?",
+        "a": "No. It doesn't diagnose faults or promise a saving. It helps you understand and compare quotes and ask better questions. For safety-critical problems such as brakes or steering, don't drive the car until it's checked."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Any driver. It is an independent app, not linked to any garage, parts supplier, diagnostic device or insurer."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-23",
+      "summary": "Drivers ask how they can know what a fair price would be for a repair, whether a garage mark-up is normal, say they hate feeling like a blank cheque every time they go near a garage, and feel garages try to rip them off.",
+      "wtp": "FIXD Premium (26K App Store ratings) sells $12.99 a month or $99.99 a year, and reviewers cite its repair-cost estimates. Fillet (Straight Dope) says they are 'happy to pay a reasonable price for services'.",
+      "signals": [
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/1170891/how-do-i-know-if-im-paying-a-fair-price-for-car-repairs",
+          "who": "f1982 (MoneySavingExpert)",
+          "date": "2008-09-21",
+          "quote": "But how do I know what a fair price would be for the repair?",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/3249384/big-markup-on-mot",
+          "who": "amacs (MoneySavingExpert)",
+          "date": "2011-05-23",
+          "quote": "Am I being completely ripped off here or is this a normal garage mark-up?",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/5378920/over-charged-by-garage-what-are-my-rights/p2",
+          "who": "apeshape (MoneySavingExpert)",
+          "date": "2015-12-15",
+          "quote": "I hate feeling like a blank cheque on legs every time I go near a garage.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://boards.straightdope.com/t/are-there-any-honest-auto-mechanics-dammit/26187",
+          "who": "Fillet (Straight Dope)",
+          "date": "2000-07-20",
+          "quote": "rip me off because I'm a woman",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "FIXD, RepairPal-style estimate sites, second garage quotes, motoring forums.",
+      "risks": "FIXD sells a diagnostic plug-in, not quote checking. The posts date from 2000 to 2015, and the doc side's 2024 Mumsnet source is blocked to our fetch. Nobody said they'd pay for this exact tool."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

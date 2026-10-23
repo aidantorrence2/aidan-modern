@@ -11884,5 +11884,56 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "is-my-car-repair-quote-fair",
+  "offer": "fair-quote",
+  "title": "How to tell if a car repair quote is fair: 7 questions to ask the garage",
+  "description": "Get the quote in writing, split parts from labour, ask about the hourly rate and labour time, check whether parts are genuine or aftermarket, and get a second quote for big jobs.",
+  "intro": "You don't need to know how a car works to judge a quote. You need it broken down, and a few plain questions answered.",
+  "sections": [
+   {
+    "h": "1. Can I have it in writing?",
+    "list": [
+     "Ask for an itemised written quote before any work starts, and ask the garage to call you before doing anything extra."
+    ]
+   },
+   {
+    "h": "2. What's parts and what's labour?",
+    "list": [
+     "A fair quote separates the cost of parts from the cost of labour, plus any fees (diagnostics, disposal, VAT or tax)."
+    ]
+   },
+   {
+    "h": "3. What's your hourly rate, and how many hours?",
+    "list": [
+     "Labour is usually an hourly rate times a standard time for the job. Ask for both. Rates vary a lot between main dealers and independent garages."
+    ]
+   },
+   {
+    "h": "4. Genuine, original-equipment or aftermarket parts?",
+    "list": [
+     "Different parts have different prices and warranties. Ask which they're quoting and whether there's a cheaper option that's still suitable."
+    ]
+   },
+   {
+    "h": "5. Is it urgent?",
+    "list": [
+     "Ask what must be done now for safety and what can wait. Get the reason in plain words."
+    ]
+   },
+   {
+    "h": "6. What's the warranty?",
+    "list": [
+     "Ask how long the parts and labour are guaranteed."
+    ]
+   },
+   {
+    "h": "7. Can I compare?",
+    "p": [
+     "For bigger jobs, get a second quote for the same work and compare line by line. Keep every quote and invoice. If something is safety-critical, such as brakes or steering, don't drive the car until it's fixed."
+    ]
+   }
+  ]
  }
 ]
