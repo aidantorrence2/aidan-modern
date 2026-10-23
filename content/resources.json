@@ -11241,5 +11241,44 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "prove-broadband-keeps-dropping",
+  "offer": "dropout-diary",
+  "title": "How to prove your broadband keeps dropping out",
+  "description": "Log every drop with times, test with a cable, check the router, keep a call diary, and escalate in writing.",
+  "intro": "Intermittent drops are hard to prove because the line often looks fine when the provider tests it. A clear record makes your case much stronger.",
+  "sections": [
+   {
+    "h": "Log every drop",
+    "list": [
+     "Note the date, the time it went off, the time it came back, and what you were doing. A connection monitor running on a spare device can do this automatically."
+    ]
+   },
+   {
+    "h": "Rule out your Wi-Fi",
+    "list": [
+     "If you can, connect a computer to the router with a cable. If the cable connection drops too, the problem is more likely the line or the provider."
+    ]
+   },
+   {
+    "h": "Check the router",
+    "list": [
+     "Note the router's lights when it drops. Many routers also keep a log of disconnections in their settings page."
+    ]
+   },
+   {
+    "h": "Keep a call diary",
+    "list": [
+     "For each call or chat: date, agent name, reference number, what they tested and what they promised."
+    ]
+   },
+   {
+    "h": "Escalate in writing",
+    "p": [
+     "If it isn't fixed, make a formal complaint in writing with your log attached. If it stays unresolved, check your regulator's guidance on complaints and dispute schemes (in the UK, Ofcom)."
+    ]
+   }
+  ]
  }
 ]

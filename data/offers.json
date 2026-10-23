@@ -28511,6 +28511,83 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-23",
+    "slug": "dropout-diary",
+    "name": "Dropout Diary",
+    "need": "My broadband keeps dropping out, and I can't prove it to my provider, because by the time I call it's working again.",
+    "headline": "Proof your broadband keeps dropping, with the times attached: a minute-by-minute log of every outage, turned into a dated fault report.",
+    "buyer": "Home broadband customers (UK first, also US) whose connection drops now and then and who've been told 'no fault found'.",
+    "bullets": [
+      "Checks your connection every minute on a spare phone or laptop, and records each outage's start, end and length.",
+      "Separate router and internet checks, to show whether the problem is your Wi-Fi or the line.",
+      "A one-tap dated fault report for your provider, and a call diary: agent name, reference number and what was promised."
+    ],
+    "price": "$4.99/month",
+    "priceUsd": 5,
+    "priceNote": "Or $39 a year.",
+    "reasonPrompt": "How often does your connection drop, and what has your provider said so far?",
+    "faq": [
+      {
+        "q": "Will it get me compensation?",
+        "a": "It can't promise that. It gives you a clear, dated record to share with your provider. Rules on compensation and leaving a contract depend on your country, provider and fault."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Home broadband customers. It is an independent app, not linked to any broadband provider, regulator or speed-test service."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-23",
+      "summary": "Broadband customers reviewing speed-test and network apps say they want evidence to give their provider, can't prove when there's no connection, and want a log of when and how long drops last.",
+      "wtp": "Fing (117K App Store ratings) sells Premium at $7.99 a month or $69.99 a year, including outage reports, and PingPlotter's connection monitor starts at $6.99 a month.",
+      "signals": [
+        {
+          "url": "https://itunes.apple.com/gb/rss/customerreviews/page=7/id=300704847/sortby=mostrecent/json",
+          "who": "labrat96 (App Store UK review, Speedtest)",
+          "date": "2020-09-09",
+          "quote": "I use this app frequently to check my speed because am having problems with my broadband at the moment and I want the evidence to give my provider.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/gb/rss/customerreviews/page=8/id=300704847/sortby=mostrecent/json",
+          "who": "StitcherPen (App Store UK review, Speedtest)",
+          "date": "2020-01-09",
+          "quote": "I cannot at the moment prove to my supplier when there is no connection.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=10/id=430921107/sortby=mostrecent/json",
+          "who": "finguser (App Store review, Fing)",
+          "date": "2021-10-07",
+          "quote": "I’d love a tool that logged network drops, their timespan, and any diagnostic info I could use in talking to my ISP",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=7/id=430921107/sortby=mostrecent/json",
+          "who": "cantlikethat (App Store review, Fing)",
+          "date": "2023-04-17",
+          "quote": "Need to know when and how long wi- fi is OUT.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/5184492/broadband-dropping-out",
+          "who": "trollopscarletwoman (MoneySavingExpert)",
+          "date": "2015-02-25",
+          "quote": "Last 3 days or so broadband is dropping out.",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Fing, PingPlotter, router logs, Speedtest history, provider line tests.",
+      "risks": "Most evidence is App Store reviews. Crowded with technical tools; the angle is a plain evidence pack. No compensation promises."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
