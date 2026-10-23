@@ -31679,6 +31679,76 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-23",
+    "slug": "roll-keep",
+    "name": "Roll Keep",
+    "need": "My kayak roll works in the pool but fails when I need it, or I'm stuck learning it, and I can't work out which part is going wrong.",
+    "headline": "Kayak roll keeps failing? Log every practice session, find the exact step that breaks, and keep your roll reliable through the winter.",
+    "buyer": "Adult kayakers (sea, whitewater or touring) learning to roll or with an unreliable roll.",
+    "bullets": [
+      "A ladder of roll steps, from hip flicks to full rolls on both sides, so you practise the part that's failing.",
+      "A quick log after each session: side, type of roll, how many tries worked and what went wrong.",
+      "A conditions checklist (cold water, loaded boat, rough water) and winter reminders to keep your roll fresh."
+    ],
+    "price": "$3.99/month",
+    "priceUsd": 4,
+    "priceNote": "Or $19.99 a year.",
+    "reasonPrompt": "What kind of kayaking do you do, and where does your roll fail?",
+    "faq": [
+      {
+        "q": "Is it safe to practise rolling?",
+        "a": "Learn a confident wet exit first, and always practise with a spotter or a qualified coach, ideally in a pool or calm, warm water. Never practise alone. Roll Keep is a practice log, not a lesson or a substitute for coaching."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Adult paddlers. It is an independent app, not linked to any club, coaching body or kayak brand."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-23",
+      "summary": "Kayakers say they're sometimes completely upside down with no amount of pulling on the blade helping, can't re-roll a boat they've had for years, have seen video of themselves failing to find the surface, and simply lost their roll; they pay for pool classes, coaching and DVDs.",
+      "wtp": "Paddlers report paying about $90 for a two-hour pool rolling class or $50 an hour for one-to-one coaching (paddling.com), and 'This is the Roll' sells as a $29.95 DVD.",
+      "signals": [
+        {
+          "url": "https://www.ukriversguidebook.co.uk/forum/viewtopic.php?p=792117",
+          "who": "kayakbiker (UK Rivers Guidebook)",
+          "date": "2016-11-19",
+          "quote": "no amount of pulling on the blade seems to help.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.ukriversguidebook.co.uk/forum/viewtopic.php?p=792117",
+          "who": "paddleing home (UK Rivers Guidebook)",
+          "date": "2016-11-24",
+          "quote": "I have not been able to re-roll this Kayak",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.ukriversguidebook.co.uk/forum/viewtopic.php?p=792117",
+          "who": "Robert Craig (UK Rivers Guidebook)",
+          "date": "2016-11-21",
+          "quote": "failing to find the surface",
+          "seen": "opened"
+        },
+        {
+          "url": "https://community.nrs.com/duct-tape/2020/04/15/my-roll-broke/",
+          "who": "Kira Tenney (NRS Duct Tape Diaries)",
+          "date": "2020-04-15",
+          "quote": "I simply lost my roll.",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Pool rolling classes, coaches, instructional DVDs and videos, club sessions.",
+      "risks": "Water safety: always with a spotter or coach, wet exit first. The posts date from 2016 to 2020, and the money is for lessons and DVDs rather than an app."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

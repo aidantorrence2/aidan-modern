@@ -12940,5 +12940,44 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "why-kayak-roll-fails",
+  "offer": "roll-keep",
+  "title": "Why your kayak roll fails, and how to make it reliable",
+  "description": "Most failed rolls come from lifting the head too early, pulling on the paddle instead of hip-snapping, or a poor setup. Practise in steps with a spotter.",
+  "intro": "A roll that works in the pool and fails in real water is very common. Breaking it into steps and practising each one helps it stick.",
+  "sections": [
+   {
+    "h": "Safety first",
+    "list": [
+     "Be confident with your wet exit before you learn to roll. Always practise with a spotter or a coach, in a pool or calm water, and never alone."
+    ]
+   },
+   {
+    "h": "Head last",
+    "list": [
+     "The most common fault is lifting your head too early. Keep your head down near the water until the boat is upright; your head comes up last."
+    ]
+   },
+   {
+    "h": "Hips, not arms",
+    "list": [
+     "The boat is righted by a hip snap (rotating the boat with your knees and hips), not by pulling down hard on the paddle. Practise hip flicks holding the side of the pool or a partner's hands."
+    ]
+   },
+   {
+    "h": "Check your setup",
+    "list": [
+     "Tuck forward against the deck with the paddle parallel to the boat before you start. A rushed or shallow setup often means the blade dives instead of sweeping."
+    ]
+   },
+   {
+    "h": "Practise both sides and real conditions",
+    "p": [
+     "Once your roll is reliable, practise on your other side, with a loaded boat, and, with a coach or experienced paddler, in colder or moving water. A few rolls at every session keep it fresh through the winter."
+    ]
+   }
+  ]
  }
 ]
