@@ -11280,5 +11280,85 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "first-model-railway-track-plan",
+  "offer": "track-fit",
+  "title": "Planning your first model railway track plan for the space you have",
+  "description": "Measure the space, decide what you enjoy, respect minimum curve radius and reach, start simple, and test with the track you own.",
+  "intro": "Most first layouts go wrong on curves that are too tight and benchwork that's too deep to reach. Planning for those first saves a lot of rework.",
+  "sections": [
+   {
+    "h": "Measure everything",
+    "list": [
+     "Room size, doors, windows, sockets and anything you need to walk around. Draw it to scale on paper first."
+    ]
+   },
+   {
+    "h": "Decide what you enjoy",
+    "list": [
+     "Watching trains run (a loop) or shunting and operating (switching). It shapes the whole plan."
+    ]
+   },
+   {
+    "h": "Mind the curves and the reach",
+    "list": [
+     "Check the minimum curve radius your locomotives and stock can handle in your scale; wider is smoother.",
+     "Keep any area you'll need to reach within about an arm's length, roughly 60 to 75 cm (2 to 2.5 ft), or add access."
+    ]
+   },
+   {
+    "h": "Watch the grades",
+    "list": [
+     "Keep slopes gentle; steep grades limit how many wagons a locomotive can pull."
+    ]
+   },
+   {
+    "h": "Start simple and test",
+    "p": [
+     "Lay the track you already own on the floor or board before fixing anything. Run trains, see what works, then build. A small finished layout beats a big unfinished one."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "stuck-on-origami-step",
+  "offer": "fold-guide",
+  "title": "Stuck on an origami step? How to read the diagram",
+  "description": "Learn the basic symbols, look ahead to the next picture, check your paper is the right way up, and practise the base folds.",
+  "intro": "Most origami frustration comes from a handful of symbols and a few tricky moves. Once you know them, diagrams make much more sense.",
+  "sections": [
+   {
+    "h": "Learn the basic symbols",
+    "list": [
+     "Dashed line: valley fold (fold towards you). Dash-dot line: mountain fold (fold away).",
+     "Arrows show the direction of the fold; a looped arrow often means turn the paper over."
+    ]
+   },
+   {
+    "h": "Look at the next picture",
+    "list": [
+     "The next diagram shows what the result should look like. Working backwards from it often makes the step clear."
+    ]
+   },
+   {
+    "h": "Check the orientation",
+    "list": [
+     "Many mistakes come from the paper being turned or flipped. Match your paper to the diagram before folding."
+    ]
+   },
+   {
+    "h": "Practise the bases",
+    "list": [
+     "Square base, waterbomb base, bird base and fish base appear in hundreds of models. Learning them first makes harder models easier."
+    ]
+   },
+   {
+    "h": "Pre-crease and go slow",
+    "p": [
+     "Make firm creases, and pre-crease difficult folds before collapsing them. If you're stuck, try the same step on a bigger sheet of paper."
+    ]
+   }
+  ]
  }
 ]

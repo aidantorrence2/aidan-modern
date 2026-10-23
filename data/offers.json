@@ -28588,6 +28588,153 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-23",
+    "slug": "track-fit",
+    "name": "Track Fit",
+    "need": "I know roughly what model railway I want, but I can't turn my room, my space and the track I already own into a plan that works.",
+    "headline": "A model railway track plan that fits your room and your track: draw your space, pick your scale, and get editable plans with curve and grade checks.",
+    "buyer": "Model railroaders starting a first layout, or returning with a new room, garage or basement (HO, N, O; US and UK).",
+    "bullets": [
+      "Draw your room or benchwork shape in minutes, with doors and obstacles.",
+      "Starter plans that fit your footprint and scale, planned with the track you already own.",
+      "Warnings for curves that are too tight and grades that are too steep, plus printable templates and a shopping list."
+    ],
+    "price": "$6/month",
+    "priceUsd": 6,
+    "priceNote": "Or $39 a year.",
+    "reasonPrompt": "What scale do you model in, and how big is your space?",
+    "faq": [
+      {
+        "q": "Does it replace desktop planning software?",
+        "a": "It's aimed at beginners who want a workable first plan quickly. You can export your plan if you later move to a full desktop tool."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Model railroaders of any age. It is an independent app, not linked to any track maker, magazine or forum."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-23",
+      "summary": "Model railroaders on the Trains.com forum say they know what they want but can't get it on paper, need help fitting a plan to their space, and find track planning a weak point; app reviewers say they paid for an app that can't design with the track they own.",
+      "wtp": "People pay for planning help: RailModeller Pro costs $44.99, and Train Layouts: Track Plans costs $2.99, with reviewer 1323TT writing 'Waste of $2.00. I want my money back.' because it couldn't design their own plan.",
+      "signals": [
+        {
+          "url": "https://forum.trains.com/t/beginner-layout-design-help/324678",
+          "who": "Squirmy1970 (Trains.com forum)",
+          "date": "2022-09-13",
+          "quote": "I know pretty much what I want to do, but am having issues getting my idea on paper.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forum.trains.com/t/seeking-guidance-on-steam-era-4x8-model-railroad-layout-for-beginner/411833",
+          "who": "Elliott (Trains.com forum)",
+          "date": "2025-04-02",
+          "quote": "I’m in the process of planning a 4x8 model railroad layout, and I could really use some advice and ideas.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forum.trains.com/t/benchwork-is-up-but-need-help-with-track-plan-to-fit-on-it/306131",
+          "who": "emdmike (Trains.com forum)",
+          "date": "2018-12-30",
+          "quote": "Looking for help with track plan and industry selection, both being very weak points for me in the hobby.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forum.trains.com/t/new-layout-help/301319",
+          "who": "bugman9317 (Trains.com forum)",
+          "date": "2018-03-11",
+          "quote": "I am starting a new layout and wanted to see if anyone could give me the best design type for my space.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1388339618/sortby=mostrecent/json",
+          "who": "yourfriendlyfive (App Store review, Train Layouts)",
+          "date": "2022-10-19",
+          "quote": "The app is useless to design your own layout using the track that you already own.",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "AnyRail, SCARM, XTrackCAD (free), RailModeller Pro, plan books and magazines.",
+      "risks": "Niche hobby. Established desktop tools exist; the angle is beginner-first and mobile or web."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-23",
+    "slug": "fold-guide",
+    "name": "Fold Guide",
+    "need": "I get stuck on one step of an origami diagram, can't tell what the fold means, and give up on the model.",
+    "headline": "Never get stuck on an origami step again: folds you can rotate in 3D and replay, with a slow-motion button for the step where flat diagrams lose you.",
+    "buyer": "Teen and adult origami hobbyists, beginners and returners who find flat diagrams and long videos hard to follow.",
+    "bullets": [
+      "3D fold animations you can rotate and scrub, step by step.",
+      "A 'stuck here' slow replay for the tricky step, and tap-to-explain diagram symbols.",
+      "A beginner-to-advanced path with base folds first, and a one-time unlock option with no ads."
+    ],
+    "price": "$3/month",
+    "priceUsd": 3,
+    "priceNote": "Or $19 a year, or a one-off $24.",
+    "reasonPrompt": "Which models do you like folding, and where do you usually get stuck?",
+    "faq": [
+      {
+        "q": "Is it suitable for children?",
+        "a": "It's designed for teens and adults. Younger children should use it with a parent; we don't collect data from children under 13."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Origami folders. It is an independent app, not linked to any origami author, book or other app."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-23",
+      "summary": "Folders say they get frustrated when only videos are available, hit folding bottlenecks when learning from books, and find app instructions so confusing they go back to old books.",
+      "wtp": "Origami - Fold & Learn (1.2K App Store ratings) sells Premium from $2.99 to $34.99, and reviewer AudioWade wrote 'I would be happy to pay a one-time fee for' a premium version.",
+      "signals": [
+        {
+          "url": "https://news.ycombinator.com/item?id=29166761",
+          "who": "WhyCause (Hacker News)",
+          "date": "2021-11-09",
+          "quote": "I get so frustrated nowadays looking for origami instructions; everything seems to be a video when all I want are the diagrams that used to get posted.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1463736645/sortby=mostrecent/json",
+          "who": "noah8612 (App Store review, Origami Master)",
+          "date": "2022-08-14",
+          "quote": "the instructions are so bad I was confused and ended up having to find my old origami book to make my butterfly",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1256478184/sortby=mostrecent/json",
+          "who": "Fun mahalo (App Store review, Origami - Fold & Learn)",
+          "date": "2026-05-29",
+          "quote": "It’s just hard to follow the instructions",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/gb/rss/customerreviews/page=1/id=1256478184/sortby=mostrecent/json",
+          "who": "AudioWade (App Store UK review, Origami - Fold & Learn)",
+          "date": "2026-02-16",
+          "quote": "I would be happy to pay a one-time fee for",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Origami - Fold & Learn, Origami Master, Origami Creator, books, YouTube.",
+      "risks": "A hobby frustration rather than a pressing need. Crowded app market. Many existing reviewers are children, so the app targets teens and adults."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
