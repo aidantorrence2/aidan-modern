@@ -11682,5 +11682,47 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "pool-chemistry-for-beginners",
+  "offer": "clear-pool",
+  "title": "Pool chemistry for beginners: what to test and what to add",
+  "description": "Know your pool's volume, test regularly, fix one thing at a time (usually alkalinity, then pH, then sanitiser), follow the label and retest before adding more.",
+  "intro": "Pool water comes down to a few numbers. Test them, change one at a time, and give each change time to work.",
+  "sections": [
+   {
+    "h": "Know your volume",
+    "list": [
+     "Every dose depends on how many litres or gallons your pool or tub holds. Work it out once (length x width x average depth for a rectangle) and write it down."
+    ]
+   },
+   {
+    "h": "Test regularly",
+    "list": [
+     "Test at least weekly, more in hot weather or heavy use. Strips are quick; drop kits are usually more accurate. Test before adding anything."
+    ]
+   },
+   {
+    "h": "The main numbers",
+    "list": [
+     "Sanitiser (free chlorine or bromine): kills germs and algae.",
+     "pH: how acidic the water is. It affects comfort and how well chlorine works.",
+     "Total alkalinity: helps keep pH steady.",
+     "Cyanuric acid (outdoor chlorine pools): protects chlorine from sunlight."
+    ]
+   },
+   {
+    "h": "Fix one thing at a time",
+    "list": [
+     "A common order is alkalinity first, then pH, then sanitiser. Circulate, wait for the time on the label, and retest before adding more."
+    ]
+   },
+   {
+    "h": "Stay safe",
+    "p": [
+     "Always read and follow the product label. Never mix pool chemicals with each other, add chemicals to water and never water to chemicals, store them apart in a cool, dry place away from children, and keep everyone out of the water until levels are back in range. For green water you can't clear, equipment problems or leaks, call a pool professional."
+    ]
+   }
+  ]
  }
 ]

@@ -29351,6 +29351,101 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-23",
+    "slug": "clear-pool",
+    "name": "Clear Pool",
+    "need": "I just got a pool or hot tub with the house, I have no idea how the water chemistry works, and I don't know what to add or how much.",
+    "headline": "Got a pool or hot tub with the house and no idea what to put in it? Enter your test readings and get plain-English steps for what to add and in what order, with no store pushing a cart full of chemicals.",
+    "buyer": "First-time pool and hot tub owners, especially people who got one with a house or just let their pool service go.",
+    "bullets": [
+      "A plain-English starter plan for your pool or tub size and sanitiser type.",
+      "Enter strip or drop-kit readings and get brand-neutral steps in the order to add things, always checked against the product label.",
+      "Weekly reminders for testing, skimmer baskets and filters, plus a green or cloudy water checklist with a log of what you tried."
+    ],
+    "price": "$4.99/month",
+    "priceUsd": 5,
+    "priceNote": "Or $29.99 a year.",
+    "reasonPrompt": "Pool or hot tub, roughly what size, and what's the water doing right now?",
+    "faq": [
+      {
+        "q": "Is it safe to follow?",
+        "a": "It always tells you to read and follow the product label, to retest before adding more, and to keep everyone out of the water until levels are back in range. Never mix pool chemicals with each other, add chemicals to water (never water to chemicals), and store them apart, away from children."
+      },
+      {
+        "q": "Does it sell chemicals?",
+        "a": "No. It is brand-neutral and independent, not linked to any pool store, chemical brand or test-kit maker."
+      },
+      {
+        "q": "Can it replace a pool professional?",
+        "a": "Not for equipment faults, leaks or very neglected pools. It tells you when to call one."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-23",
+      "summary": "New pool and hot tub owners say they're overwhelmed with where to start, know very little about pools, have algae and no idea what to do, and struggle to balance the water; several say brand apps push products.",
+      "wtp": "Pool Doctor is a $19.99 paid app (134 ratings), Pool Water Calculator is $4.99 (95 ratings), and Pooli and Pool Math sell subscriptions, with reviewers saying 'I signed up for the monthly subscription' and 'Worth the subscription.'",
+      "signals": [
+        {
+          "url": "http://www.poolhelpforum.com/viewtopic.php?t=44526",
+          "who": "taylorkautzman (Pool Help Forum)",
+          "date": "2020-05-04",
+          "quote": "I am a first time pool owner and absolutely overwhelmed with where to start",
+          "seen": "opened"
+        },
+        {
+          "url": "http://www.poolhelpforum.com/viewtopic.php?t=49474",
+          "who": "JimW (Pool Help Forum)",
+          "date": "2024-03-19",
+          "quote": "I know very little about pools and I'm learning as I go.",
+          "seen": "opened"
+        },
+        {
+          "url": "http://www.poolhelpforum.com/viewtopic.php?t=49700",
+          "who": "anatolewilson (Pool Help Forum)",
+          "date": "2024-06-20",
+          "quote": "Now it has a thick layer of algae on top and I have no idea what to do.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1228819359?see-all=reviews",
+          "who": "Mystic1492 (App Store review, Pool Math)",
+          "date": "2020-07-14",
+          "quote": "We just installed our first pool, and had no idea what we were doing.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1491565847?see-all=reviews",
+          "who": "amyjeanette (App Store review, Pooli)",
+          "date": "2022-12-07",
+          "quote": "I knew absolutely nothing about maintaining my pool.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id375459618?see-all=reviews",
+          "who": "Gilvey (App Store review, Pool Doctor)",
+          "date": "2020-04-21",
+          "quote": "neophyte pool maintainer (we let our pool guy go last week)",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1066930911?see-all=reviews",
+          "who": "Tempeshark (App Store review, Pool Time)",
+          "date": "2018-09-10",
+          "quote": "First time pool owner, got the pool with the house",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Free brand apps (Clorox Pool, Leslie's, Pentair, HTH), Pool Math and Trouble Free Pool, Swim University, pool stores and services.",
+      "risks": "Crowded with free brand apps; the angle is brand-neutral help for beginners. Seasonal demand. Chemicals are hazardous: label-first, conservative guidance and no water-safety health claims."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
