@@ -11520,5 +11520,47 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "order-wine-at-a-restaurant-knowing-nothing",
+  "offer": "pour-pick",
+  "title": "How to order wine at a restaurant when you know nothing about wine",
+  "description": "Decide your budget, say what you usually like in plain words, use a few wine-list terms, and ask the staff. It's what they're there for.",
+  "intro": "You don't need to know grape names or regions. A budget, a rough idea of what you like, and a couple of plain questions get you a good bottle or glass.",
+  "sections": [
+   {
+    "h": "Set your budget first",
+    "list": [
+     "Pick a price range on the list before you read anything else. Many people choose the second-cheapest wine; anything in your range is fine."
+    ]
+   },
+   {
+    "h": "Know a few words",
+    "list": [
+     "Dry: not sweet. Most red and many white wines are dry.",
+     "Light- or full-bodied: how heavy and rich it feels in your mouth, like skimmed milk versus cream.",
+     "Oaked: aged in oak, often tasting of vanilla or toast. Unoaked tastes fresher.",
+     "Tannic: the drying feeling some reds leave, like strong tea."
+    ]
+   },
+   {
+    "h": "Describe what you like",
+    "list": [
+     "Use plain words: 'something light and fresh', 'a fruity red that isn't too heavy', 'not sweet'. Mention a wine you liked if you remember it."
+    ]
+   },
+   {
+    "h": "Ask the staff",
+    "p": [
+     "Point to a price on the list and say 'something like this'. It tells them your budget without saying it out loud. Then ask what they'd suggest with your food."
+    ]
+   },
+   {
+    "h": "Keep a note",
+    "p": [
+     "Take a photo of the label of anything you enjoy, with a word or two about why. Next time you'll know where to start. Always drink responsibly and only if you're of legal drinking age."
+    ]
+   }
+  ]
  }
 ]

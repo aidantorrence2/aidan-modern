@@ -29045,6 +29045,80 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-23",
+    "slug": "pour-pick",
+    "name": "Pour Pick",
+    "need": "I haven't a clue what wine I like, wine lists mean nothing to me, and I always let someone else choose.",
+    "headline": "Never sure what wine you like? Rate what you try, build your own taste profile, and pick confidently from any wine list or shelf at your price.",
+    "buyer": "Adults 18+ (21+ in the US) who let others pick the wine and want to know what they actually like.",
+    "bullets": [
+      "A quick log of the wines you try, with your own simple ratings, that grows into a plain-English taste profile.",
+      "A decoder for wine-list words (dry, full-bodied, oaked, tannic) and a helper that matches a list or shelf to your profile and budget.",
+      "A short side-by-side starter path for trying styles, never a push to drink more."
+    ],
+    "price": "$2.99/month",
+    "priceUsd": 3,
+    "priceNote": "Or $19.99 a year.",
+    "reasonPrompt": "When do you usually have to choose wine, and what have you liked so far?",
+    "faq": [
+      {
+        "q": "Who is it for?",
+        "a": "Adults of legal drinking age only (18+, 21+ in the US). It is about choosing better, not drinking more, and never suggests more or more often."
+      },
+      {
+        "q": "Is it linked to any wine app or shop?",
+        "a": "No. It is an independent app, not linked to Vivino, Wine Folly or any retailer, and it doesn't sell wine."
+      },
+      {
+        "q": "Do I need to know anything first?",
+        "a": "No. You start by rating what you already drink."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-23",
+      "summary": "Wine newcomers say they don't know anything about wine, don't know the names or styles, have no clue where to start, and can't tell what they like on a wine list.",
+      "wtp": "The True Wine learning app sells $9.99 a month or $59.99 a year, with 477 ratings (Adapty paywall library). Wine Folly sells beginner kits and courses.",
+      "signals": [
+        {
+          "url": "https://www.wines.com/wineboard/showthread.php?tid=18236",
+          "who": "Wine in a Can (wines.com WineBoard)",
+          "date": "2007-03-21",
+          "quote": "I don't know anything about wine!",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.wines.com/wineboard/showthread.php?tid=16346",
+          "who": "Kindergarten Winer (wines.com WineBoard)",
+          "date": "2002-01-15",
+          "quote": "I absolutely don't know a thing about wine.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.wines.com/wineboard/showthread.php?tid=19337",
+          "who": "jl55378008 (wines.com WineBoard)",
+          "date": "2004-07-19",
+          "quote": "i don't know any of the names or styles.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.wines.com/wineboard/showthread.php?tid=13419",
+          "who": "AmericanDream (wines.com WineBoard)",
+          "date": "2004-03-17",
+          "quote": "I have no clue where to start with wine tasting.",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Vivino, True Wine, Wine Folly, shop staff and sommeliers.",
+      "risks": "Every opened quote is from one forum and dates from 2002 to 2007. The doc side's 2023 Mumsnet quotes are blocked to our fetch and left out. Alcohol topic: adults only, no encouragement to drink more."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
