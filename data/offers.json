@@ -30803,6 +30803,69 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-23",
+    "slug": "case-ready",
+    "name": "Case Ready",
+    "need": "I'm learning Russian and I know the words, but the case system defeats me. I keep getting the endings wrong and think I'll never get it.",
+    "headline": "Know your Russian words but freeze on case endings? Five minutes a day on the cases and endings you personally miss, with the trigger shown first.",
+    "buyer": "Adult Russian learners (18+) who know vocabulary but freeze on case endings.",
+    "bullets": [
+      "Short daily drills built from the endings you actually get wrong, not a fixed course.",
+      "Every drill shows the trigger first (a preposition, a verb or a number) so you learn why the case changes.",
+      "Number practice (одна книга, две книги, пять книг) and a weekly view of which cases you've mastered."
+    ],
+    "price": "$3.99/month",
+    "priceUsd": 4,
+    "priceNote": "Or $24.99 a year.",
+    "reasonPrompt": "How long have you been learning Russian, and which cases trip you up most?",
+    "faq": [
+      {
+        "q": "Is it a full Russian course?",
+        "a": "No. It focuses on cases and endings, alongside whatever course, teacher or app you already use."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Adult learners. It is an independent app, not linked to any school, course, exam board or other language app."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-23",
+      "summary": "Russian learners say they think they'll never learn Russian because of the case system, find the cases frustrating, and say most language apps explain them poorly; small paid case apps sell.",
+      "wtp": "LearnRussianCases is a $2.99 paid app, and reviewer jade225 calls it 'an absolute hidden gem' at that price. Laite Russian sells $4.99 a month up to $59.99 lifetime.",
+      "signals": [
+        {
+          "url": "https://www.rocketlanguages.com/forum/russian-grammar/case-system-jitters",
+          "who": "MichaelW157 (Rocket Languages forum)",
+          "date": "undated",
+          "quote": "I will never be able to learn the Russian language, especially about the case system.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id6450753430?see-all=reviews",
+          "who": "Ddhix2002 (App Store review, LearnRussianCases)",
+          "date": "2023-08-08",
+          "quote": "Cases in Russian can be frustrating",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id6450753430?see-all=reviews",
+          "who": "jade225 (App Store review, LearnRussianCases)",
+          "date": "2024-03-03",
+          "quote": "do a very poor job of explaining the Russian cases.",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "LearnRussianCases, Laite, Duolingo, Babbel, textbooks and tutors.",
+      "risks": "The paid apps have only 23 to 60 ratings, the Rocket post is undated, and nobody said they'd pay for this exact tool. Close in shape to article-lock (German) and particle-click (Korean), but Russian-specific."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

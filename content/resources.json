@@ -12453,5 +12453,60 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "russian-cases-one-page",
+  "offer": "case-ready",
+  "title": "Russian cases on one page: what triggers each case",
+  "description": "Russian has six cases. Most of the time a preposition, a verb or a number tells you which one to use. Learn the triggers and the endings follow.",
+  "intro": "Instead of memorising tables first, learn what makes each case appear. Here are the most common triggers.",
+  "sections": [
+   {
+    "h": "Nominative",
+    "list": [
+     "The subject of the sentence, and the dictionary form: Книга на столе (The book is on the table)."
+    ]
+   },
+   {
+    "h": "Accusative",
+    "list": [
+     "The direct object: Я читаю книгу (I'm reading a book).",
+     "Movement towards a place with в or на: Я иду в школу (I'm going to school)."
+    ]
+   },
+   {
+    "h": "Genitive",
+    "list": [
+     "Possession ('of'), and absence with нет: У меня нет времени (I don't have time).",
+     "After у, из, от, до, без, для and after quantity words like много."
+    ]
+   },
+   {
+    "h": "Dative",
+    "list": [
+     "The indirect object ('to' or 'for' someone): Я дал книгу брату (I gave the book to my brother).",
+     "With нравиться and in age expressions: Мне нравится, Мне двадцать лет. After к and по."
+    ]
+   },
+   {
+    "h": "Instrumental",
+    "list": [
+     "'With' (с), and 'by means of': писать ручкой (to write with a pen).",
+     "After за, под, над, перед and между when they describe position."
+    ]
+   },
+   {
+    "h": "Prepositional",
+    "list": [
+     "Location with в or на: Я в школе (I'm at school). 'About' with о: о книге."
+    ]
+   },
+   {
+    "h": "Numbers",
+    "p": [
+     "After 1 use the nominative singular (одна книга), after 2, 3 and 4 the genitive singular (две книги), and after 5 to 20 the genitive plural (пять книг). Practise a few each day using the sentences you get wrong."
+    ]
+   }
+  ]
  }
 ]
