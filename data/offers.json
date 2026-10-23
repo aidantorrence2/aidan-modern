@@ -30028,6 +30028,97 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-23",
+    "slug": "plain-taps",
+    "name": "Plain Taps",
+    "need": "I'm older, technology feels beyond me, and every time I get a new phone or forget how I did something, I'm lost again and have to ask my family.",
+    "headline": "Your phone, explained slowly. Ask in plain words, get big step-by-step cards for your exact phone, and keep them for next time you forget.",
+    "buyer": "Adults 60+ with an iPhone or Android phone who call themselves technophobes, are upgrading from an old phone, or keep forgetting things they were shown once.",
+    "bullets": [
+      "Ask in your own words ('how do I send a photo on WhatsApp?') and get large-print step cards with pictures for your phone.",
+      "Every answer is saved in 'My How-Tos', so when you forget you open it again instead of asking again, plus a step-by-step new-phone move guide.",
+      "Practice screens where you can tap safely without sending anything, and gentle warnings about likely scam messages."
+    ],
+    "price": "$5.99/month",
+    "priceUsd": 6,
+    "priceNote": "Or $49 a year.",
+    "reasonPrompt": "Which phone do you have, and what would you most like to be able to do on it?",
+    "faq": [
+      {
+        "q": "Will it ask for my passwords or bank details?",
+        "a": "Never. It will never ask for passwords, bank details, security codes or remote access to your phone. Anyone who does is likely a scammer."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Older adults, and the family members who help them. It is an independent app, not linked to Apple, Google, any phone network or Age UK."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-23",
+      "summary": "Older adults say technology is beyond them, has got away from them since retiring, that their mind switches off when someone explains it, that they were totally lost upgrading phones, and need to refresh themselves on tips they forget.",
+      "wtp": "Tips & Tricks Pro is a $2.99 paid app (3.4K ratings), and reviewer Gessina says she upgraded to the Pro version. Candoo Tech sells tech help for older adults at $80 an hour or from $240 a year.",
+      "signals": [
+        {
+          "url": "https://www.gransnet.com/forums/technology/1256001-Any-other-technophobes",
+          "who": "Honey1958 (Gransnet)",
+          "date": "2018-12-26",
+          "quote": "who feels technology is beyond them??",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.gransnet.com/forums/technology/1256001-Any-other-technophobes",
+          "who": "Oldwoman70 (Gransnet)",
+          "date": "2018-12-27",
+          "quote": "Since retiring I find technology has got away from me.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.gransnet.com/forums/technology/1256001-Any-other-technophobes",
+          "who": "MissAdventure (Gransnet)",
+          "date": "2018-12-27",
+          "quote": "my mind switches off.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.gransnet.com/forums/technology/1317903-Upgrading-my-iPhone-and-stressed",
+          "who": "Georgesgran (Gransnet)",
+          "date": "2022-11-16",
+          "quote": "totally lost when I upgraded from my beloved Nokia 3310",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=317014828/sortby=mostrecent/json",
+          "who": "Mrs. EEW (App Store review, Tips & Tricks)",
+          "date": "2021-06-24",
+          "quote": "I don't know some of the little things that make using my phone easier.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=4/id=311349103/sortby=mostrecent/json",
+          "who": "The Sr. (App Store review, Tips & Tricks Pro)",
+          "date": "2017-01-20",
+          "quote": "I am 73 years old and sometimes need to refresh myself on useful tips.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=4/id=311349103/sortby=mostrecent/json",
+          "who": "Gessina (App Store review, Tips & Tricks Pro)",
+          "date": "2016-12-27",
+          "quote": "When I got my first iPhone I was really lost.",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Family help, Age UK and library digital-skills sessions, Apple's Tips app, Tips & Tricks apps, Candoo Tech.",
+      "risks": "Strong free help exists, and the Gransnet threads date from 2018 to 2022. The audience is a frequent scam target, so the app must never ask for credentials or remote access."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

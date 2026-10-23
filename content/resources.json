@@ -12058,5 +12058,44 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "smartphone-help-for-older-adults",
+  "offer": "plain-taps",
+  "title": "Smartphone help for older adults: how to learn it and remember it",
+  "description": "Learn one thing at a time, write the steps down in your own words, make text bigger, practise little and often, and know the warning signs of phone scams.",
+  "intro": "Nobody finds a new phone easy at first. The trick is going slowly, keeping your own notes, and not being afraid to tap around.",
+  "sections": [
+   {
+    "h": "Make it easier to see",
+    "list": [
+     "Turn up the text size and turn on bold text in the phone's Settings (look under Display or Accessibility). It makes everything easier to read."
+    ]
+   },
+   {
+    "h": "One thing at a time",
+    "list": [
+     "Pick the one thing you most want to do (calls, photos, WhatsApp) and learn just that until it feels easy, then move on."
+    ]
+   },
+   {
+    "h": "Write the steps down",
+    "list": [
+     "When someone shows you something, write the steps in your own words, or ask them to write them, and keep them in a notebook or a note on the phone."
+    ]
+   },
+   {
+    "h": "Practise little and often",
+    "list": [
+     "A few minutes a day helps you remember. Most things can be undone, so it's fine to explore."
+    ]
+   },
+   {
+    "h": "Know the scam signs",
+    "p": [
+     "Banks, delivery firms and tech companies will never ask for your password, PIN or security code by text, email or phone, and won't ask you to install an app so they can 'help'. If in doubt, hang up and call the number on the back of your bank card. Free digital-skills help is often available from libraries and charities such as Age UK."
+    ]
+   }
+  ]
  }
 ]
