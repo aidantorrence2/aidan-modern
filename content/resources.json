@@ -11201,5 +11201,45 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "how-to-beatmatch-by-ear",
+  "offer": "beat-lock",
+  "title": "How to beatmatch by ear: hear which track is rushing",
+  "description": "Start on the first beat, listen to the kick drums, decide which track is ahead, nudge it, then adjust the tempo, one small step at a time.",
+  "intro": "Beatmatching by ear is a listening skill. Short, regular practice with two simple tracks gets most people there.",
+  "sections": [
+   {
+    "h": "Start with simple tracks",
+    "list": [
+     "Use two tracks with clear, steady kick drums and similar tempos. Avoid busy intros at first."
+    ]
+   },
+   {
+    "h": "Find the first beat",
+    "list": [
+     "Cue the incoming track on the first beat of a bar, often where the music starts or a big change happens. Count 1-2-3-4 along with it."
+    ]
+   },
+   {
+    "h": "Start it on time",
+    "list": [
+     "Release the incoming track on the '1' of the playing track. Listen in your headphones with one ear on the room."
+    ]
+   },
+   {
+    "h": "Rushing or dragging?",
+    "list": [
+     "If the kicks start to 'gallop' (two hits close together), they've drifted. Nudge the incoming track back or forward to line them up, then decide whether it's faster or slower.",
+     "Move the tempo slider a tiny amount in that direction, and check again."
+    ]
+   },
+   {
+    "h": "Practise little and often",
+    "p": [
+     "Ten minutes a day beats a long weekend session. Once the kicks stay locked, practise phrasing: starting the new track at the start of a musical phrase, often 16 or 32 beats."
+    ]
+   }
+  ]
  }
 ]

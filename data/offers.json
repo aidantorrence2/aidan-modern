@@ -28434,6 +28434,83 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-23",
+    "slug": "beat-lock",
+    "name": "Beat Lock",
+    "need": "I'm learning to DJ and I can't beatmatch by ear: my mixes drift out of sync even at the same BPM.",
+    "headline": "Learn to beatmatch by ear, not the sync button: hear which track is rushing, nudge it back, and find the first beat before you mix.",
+    "buyer": "New and returning DJs who want to mix by ear.",
+    "bullets": [
+      "Ear drills: which track is rushing, and by how much.",
+      "A pitch-and-nudge trainer, plus find-the-downbeat and phrase drills.",
+      "Adaptive 10-minute sessions and a progress log."
+    ],
+    "price": "$3.99/month",
+    "priceUsd": 4,
+    "priceNote": "Or $24.99 a year.",
+    "reasonPrompt": "What gear do you mix on, and what goes wrong when you try to beatmatch?",
+    "faq": [
+      {
+        "q": "Do I need DJ equipment?",
+        "a": "No. The drills work with headphones on your phone. Practise on your own decks or controller when you're ready."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "DJs of any age. It is an independent app, not linked to any DJ software, hardware brand, course or forum."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-23",
+      "summary": "Beginner DJs on VirtualDJ and DJ TechTools forums say they can't get two tracks properly beatmatched, mixes drift even at the same BPM, and they don't know where to start or which beat is the downbeat.",
+      "wtp": "People pay to learn: Digital DJ Tips sells its Pro DJ Course at $497 (or 3 payments of $179).",
+      "signals": [
+        {
+          "url": "https://virtualdj.com/forums/135821/Music_discussion/Beatmatching_by_ear.html",
+          "who": "seanmorgan (VirtualDJ forum)",
+          "date": "2010",
+          "quote": "I can't seem to get the two tracks properly beatmatched.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://virtualdj.com/forums/121577/General_Discussion/Match_beat_beginner.html",
+          "who": "sahvy (VirtualDJ forum)",
+          "date": "2010",
+          "quote": "the beats are getting out of sync in short time eventho they're at the same bpm.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://virtualdj.com/forums/121577/General_Discussion/Match_beat_beginner.html",
+          "who": "Blulite (VirtualDJ forum)",
+          "date": "2010",
+          "quote": "i used to struggle to get them in sync myself",
+          "seen": "opened"
+        },
+        {
+          "url": "https://virtualdj.com/forums/183957/General_Discussion/Awful_problem_syncing_songs_with_same_BPM.html",
+          "who": "TheVtlDJ (VirtualDJ forum)",
+          "date": "2013",
+          "quote": "Looked on Google for lessons or something like that how I can learn beatmatching, but I don't know where to start from",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forum.djtechtools.com/t/beginner-dj-needs-help-with-beatmatching/32849",
+          "who": "startupdj (DJ TechTools forum)",
+          "date": "2011",
+          "quote": "what I am mainly having trouble with is knowing sometimes which beat is the downbeat or first beat in a song",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Digital DJ Tips courses, DJ software sync and tutorials, YouTube lessons, local DJ schools.",
+      "risks": "Posts are old (2010-2013). Sync buttons make beatmatching optional for many. The paid product is a broad course. Nobody wrote 'I'd pay'."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
