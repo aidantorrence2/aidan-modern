@@ -28735,6 +28735,164 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-23",
+    "slug": "stamp-sift",
+    "name": "Stamp Sift",
+    "need": "I've inherited a box of stamp albums, I know nothing about stamps, and I want to find out whether anything is worth a closer look before I sell or give it away.",
+    "headline": "Inherited a stamp collection and don't know where to start? Sort the albums in an evening, spot the few stamps worth a closer look, and know where to get them valued.",
+    "buyer": "Adults 18+ who have inherited, been given or bought a stamp collection and know nothing about stamps.",
+    "bullets": [
+      "A guided sort by country, era, and mint or used.",
+      "Flags the few stamps worth checking with an expert first.",
+      "A where-to-sell-or-value guide (dealer, auction, society, sets) and a printable inventory for family or the estate."
+    ],
+    "price": "$7.99/month",
+    "priceUsd": 8,
+    "priceNote": "Or $29.99 a year.",
+    "reasonPrompt": "Roughly how many albums or stamps do you have, and where are they from?",
+    "faq": [
+      {
+        "q": "Will it tell me what my stamps are worth?",
+        "a": "No. It helps you sort and spot what deserves a closer look. For valuations, use a reputable dealer, auction house or stamp society."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Adults 18+. It is an independent app, not linked to any dealer, auction house, catalogue or other stamp app."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-23",
+      "summary": "People who inherited or bought stamp collections say they know nothing about stamps, don't know how to get an idea of value or how to grade them, and wonder if anything in a family album is worth anything.",
+      "wtp": "Stamp Value Stamp Identifier (3.6K App Store ratings) sells Pro at $9.99 a month or $39.99 a year.",
+      "signals": [
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/3250708/selling-stamps-on-ebay-advice-please",
+          "who": "virgil_tracy (MoneySavingExpert)",
+          "date": "2011-05-24",
+          "quote": "I want to sell them but don't really know how to get an idea of value etc.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.collectors.com/discussion/547874/inherited-over-1-000-000-stamps-help",
+          "who": "JDinMissouri (Collectors Universe)",
+          "date": "2006-10-25",
+          "quote": "I know nothing about stamps",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.collectors.com/discussion/1027645/is-the-market-really-dead",
+          "who": "coinnut86 (Collectors Universe)",
+          "date": "2019-11-01",
+          "quote": "I know nothing of stamps and nor does he.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.treasurenet.com/threads/grandfathers-stamp-book-is-this-worth-anything.679768/",
+          "who": "bmcgawain (TreasureNet)",
+          "date": "2023-02-04",
+          "quote": "Is there any value to a book like this?",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.treasurenet.com/threads/bought-someones-collection-i-know-nothing-about-stamps.636454/",
+          "who": "Customx_12 (TreasureNet)",
+          "date": "2020-06-27",
+          "quote": "I don’t know how accurate the prices are, how to grade them, etc.",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "AI stamp identifier apps, stamp catalogues, dealers, auction houses, stamp societies.",
+      "risks": "Several posts are old. Close to coin-ledger and pile-pricer, but stamp-specific. No valuation claims; valuable items go to experts."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-23",
+    "slug": "rock-log",
+    "name": "Rock Log",
+    "need": "I keep picking up rocks and fossils on beaches, creeks and walks, and I have no idea what they are or how to work it out.",
+    "headline": "Found a rock and have no idea what it is? Take a photo, run a few simple guided checks, and keep every find with where you found it.",
+    "buyer": "Beachcombers, creek walkers, families and hobby rock and fossil collectors.",
+    "bullets": [
+      "A photo plus guided streak, scratch and magnet checks.",
+      "A shortlist of likely matches, not one guess.",
+      "A find log with place, date and photos, export or print of your collection, and a reminder of local collecting rules."
+    ],
+    "price": "$2.99/month",
+    "priceUsd": 3,
+    "priceNote": "Or $19.99 a year.",
+    "reasonPrompt": "Where do you usually find rocks, and what kind do you have most?",
+    "faq": [
+      {
+        "q": "Can I keep what I find?",
+        "a": "Collecting rules differ between beaches, parks, private land and public land. Check the local rules before you take anything home."
+      },
+      {
+        "q": "Is it safe for children?",
+        "a": "Yes, with an adult for any tests. The app never suggests acid tests or anything risky."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Collectors of any age. It is an independent app, not linked to any museum, club or other identifier app."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-23",
+      "summary": "Rock hunters on TreasureNet say they know nothing about rocks, have no idea what they found, and can't find similar pictures; app reviewers want exportable inventories and a one-time price.",
+      "wtp": "Rock Identifier: Stone ID (82K App Store ratings) sells Premium at $39.99 a year, and reviewer specialappssk would have bought a reasonable one-time lifetime purchase 'years ago'.",
+      "signals": [
+        {
+          "url": "https://www.treasurenet.com/threads/help-with-rocks-minerals-and-gems.715172/",
+          "who": "lisam72 (TreasureNet)",
+          "date": "2025-10-20",
+          "quote": "I know nothing about them and was hoping to find some help.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.treasurenet.com/threads/odd-clear-rock-found-in-georgia.715948/",
+          "who": "Mason Jarr (TreasureNet)",
+          "date": "2025-11-12",
+          "quote": "I have no idea what it is. Any help?",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.treasurenet.com/threads/i-feel-like-this-should-be-an-easier-id.718245/",
+          "who": "Older The Better (TreasureNet)",
+          "date": "2026-02-17",
+          "quote": "so far I can’t find any similar pictures",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.treasurenet.com/threads/help-identify-rock.721137/",
+          "who": "rockcollect (TreasureNet)",
+          "date": "2026-06-28",
+          "quote": "Please help me identify this rock.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1546796934",
+          "who": "IMT gal (App Store review, Rock Identifier)",
+          "date": "2023-09-22",
+          "quote": "I am worried that something could happen and I would lose my entire inventory.",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Rock Identifier: Stone ID, field guides, local rock clubs and museums.",
+      "risks": "Crowded market with a big incumbent. Most quotes are short 'what is this?' posts on one site. No value or gem claims."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

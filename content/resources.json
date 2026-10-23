@@ -11360,5 +11360,85 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "inherited-stamp-collection-where-to-start",
+  "offer": "stamp-sift",
+  "title": "Inherited a stamp collection? Where to start",
+  "description": "Don't remove stamps from albums, sort by country and era, look for the few that stand out, and get anything promising looked at by an expert.",
+  "intro": "Most inherited collections are mostly common stamps, with a few that deserve a closer look. A calm, careful sort helps you find them.",
+  "sections": [
+   {
+    "h": "Handle with care",
+    "list": [
+     "Don't peel stamps off album pages or covers, and don't clean them. Handle them by the edges, ideally with stamp tongs."
+    ]
+   },
+   {
+    "h": "Sort roughly first",
+    "list": [
+     "Group albums and loose stamps by country, then by rough era (Victorian, early 1900s, modern)."
+    ]
+   },
+   {
+    "h": "Note what stands out",
+    "list": [
+     "Older stamps in good condition, full sheets, unused stamps with gum, covers (envelopes) with interesting postmarks, and anything with certificates."
+    ]
+   },
+   {
+    "h": "Make an inventory",
+    "list": [
+     "List what's in each album, with photos. It helps family decide, and helps any expert you ask."
+    ]
+   },
+   {
+    "h": "Get an expert view",
+    "p": [
+     "A local stamp society, a reputable dealer or an auction house can tell you what's worth more attention. Catalogue prices are often much higher than what stamps sell for, so get a realistic opinion before selling."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "identify-a-rock-you-found",
+  "offer": "rock-log",
+  "title": "How to identify a rock you found",
+  "description": "Note where you found it, look at colour, grain and lustre, try simple streak, scratch and magnet tests, and compare with local guides.",
+  "intro": "You can narrow down most finds with a few safe, simple checks. Where you found it is often the biggest clue.",
+  "sections": [
+   {
+    "h": "Note where you found it",
+    "list": [
+     "Beach, river, quarry or field, and the area. Local geology narrows things down a lot."
+    ]
+   },
+   {
+    "h": "Look closely",
+    "list": [
+     "Colour, whether it's grainy or smooth, any layers or crystals, and whether it's shiny (metallic) or dull. A cheap hand lens helps."
+    ]
+   },
+   {
+    "h": "Try simple tests",
+    "list": [
+     "Streak: rub it on the back of an unglazed tile and note the colour of the powder.",
+     "Scratch: does a steel nail scratch it? Does it scratch glass?",
+     "Magnet: does a magnet stick to it?"
+    ]
+   },
+   {
+    "h": "Compare and ask",
+    "list": [
+     "Use a local field guide or a museum's online collection, or ask a local rock club. Photograph it in daylight next to a coin for scale."
+    ]
+   },
+   {
+    "h": "Collect responsibly",
+    "p": [
+     "Check the rules before keeping finds, especially in parks, on protected beaches and on public land. Never use acid tests without proper safety gear."
+    ]
+   }
+  ]
  }
 ]
