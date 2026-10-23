@@ -29119,6 +29119,171 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-23",
+    "slug": "scent-match",
+    "name": "Scent Match",
+    "need": "I want to find a perfume that actually suits me, without wasting money on full bottles I end up not liking.",
+    "headline": "Can't find a perfume that suits you? Log every tester and sample, see how each one wears on your skin through the day, and know what to try next before you buy a bottle.",
+    "buyer": "Adults who wear perfume or aftershave and keep trying testers at random or buying bottles that don't work on them.",
+    "bullets": [
+      "A sample diary: rate each scent at first spray, after 1 hour and after 4 hours, on your own skin.",
+      "A 'smells like' map linking the scents you liked by their shared notes (woody, vanilla, citrus, fresh), plus the notes you dislike.",
+      "A shortlist of what to sample next, cheaper alternatives to scents you love, and a price watch before you commit to a full bottle."
+    ],
+    "price": "$3.99/month",
+    "priceUsd": 4,
+    "priceNote": "Or $29 a year.",
+    "reasonPrompt": "What scents have you liked or disliked, and what are you looking for?",
+    "faq": [
+      {
+        "q": "Does it sell perfume or samples?",
+        "a": "No. It's a diary and matching tool. Get samples and testers wherever you like. It is independent and not linked to any perfume brand, retailer or sample service."
+      },
+      {
+        "q": "Can it tell me what will suit my skin?",
+        "a": "Not before you try it. That's why it logs how each sample wears on you over the day. If a scent irritates your skin or gives you headaches, stop using it."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-23",
+      "summary": "People say they want a new perfume but don't know how to find one they like, randomly try testers, have tested for weeks without finding one that smells right, and pay for samples to avoid buying full bottles they don't enjoy.",
+      "wtp": "Scentbird Perfume Box (89K App Store ratings) charges $16.95 a month for samples. MicroPerfumes reviewer DoubleN27 says sampling was 'a way for me to have not spent $600 on a bottle I did not enjoy'.",
+      "signals": [
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/1912023/how-to-find-the-right-perfume",
+          "who": "Snuggles (MoneySavingExpert)",
+          "date": "2009-08-28",
+          "quote": "I really want to find a nice new perfume, but don't know how to go about finding something I like.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/635305/why-cant-i-find-a-perfume",
+          "who": "cuffie (MoneySavingExpert)",
+          "date": "2007-12-14",
+          "quote": "I cannot find anything that smells right.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/3617809/perfume-suggestions-please",
+          "who": "glowgirl_2 (MoneySavingExpert)",
+          "date": "2011-11-17",
+          "quote": "I fancy a new perfume and I would like one that doesnt smell girly",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/4084451/how-do-you-decide-which-perfume-is-right-for-you",
+          "who": "bluebeary (MoneySavingExpert)",
+          "date": "2012-07-21",
+          "quote": "most of them smell the same to me anyway",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/microperfumes/id6754002628?see-all=reviews",
+          "who": "DoubleN27 (App Store review, MicroPerfumes)",
+          "date": "2026-01-22",
+          "quote": "a way for me to have not spent $600 on a bottle I did not enjoy",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/scentbird-perfume-box/id1444093439?see-all=reviews",
+          "who": "Sara*C (App Store review, Scentbird)",
+          "date": "2020-07-16",
+          "quote": "without being stuck with a big bottle",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Scentbird, MicroPerfumes, Fragrantica, Parfumo, Fragram, shop testers.",
+      "risks": "The forum posts are from 2007 to 2012. Free tools like Fragrantica overlap. No skin or health claims."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-23",
+    "slug": "card-sense",
+    "name": "Card Sense",
+    "need": "I've owned tarot cards for years and still have to look up what every card means; I want to actually learn them myself.",
+    "headline": "Still reaching for the little book? Learn what all 78 tarot cards mean in five-minute daily drills, practise reading them together, and keep notes that never vanish.",
+    "buyer": "Adult beginners and returners who own a tarot deck but still check the guidebook for every card.",
+    "bullets": [
+      "Daily five-minute flashcards, one suit at a time, with spaced repetition and classic Rider-Waite-style imagery first.",
+      "Three-card spread practice: write your reading, then compare it with traditional meanings.",
+      "A backed-up journal of your own interpretations, and a progress map of the cards you still look up."
+    ],
+    "price": "$4.99/month",
+    "priceUsd": 5,
+    "priceNote": "Or $34.99 a year.",
+    "reasonPrompt": "Which deck do you have, and how many cards do you know without looking?",
+    "faq": [
+      {
+        "q": "Does it tell the future?",
+        "a": "No. It teaches traditional card symbolism and meanings so you can read your own deck. It makes no claims about predicting anything and gives no advice on health, money or legal decisions."
+      },
+      {
+        "q": "Do I need a particular deck?",
+        "a": "No. It starts with classic Rider-Waite-style imagery, which most decks follow, and works alongside your own physical cards."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Adults learning tarot as a hobby. It is an independent app, not linked to any deck publisher or other tarot app."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-23",
+      "summary": "App reviewers say they've owned tarot cards for years without getting familiar with them, found tarot intimidating to understand, want classic imagery to learn what the cards mean, and have paid for several apps while learning.",
+      "wtp": "Tarot! is a $3.99 paid app (1.7K ratings). Labyrinthos Tarot Reading (23K ratings) sells $9.99 in-app purchases. Learn Tarot reviewer Mmira1967 says 'I have downloaded and even paid for other apps.'",
+      "signals": [
+        {
+          "url": "https://apps.apple.com/us/app/labyrinthos-tarot-reading/id1155180220?see-all=reviews",
+          "who": "Rheynauldeaux (App Store review, Labyrinthos)",
+          "date": "2022-04-25",
+          "quote": "I have owned Tarot cards for years, but never really got the chance to study or get familiar with them.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/gb/app/labyrinthos-tarot-reading/id1155180220?see-all=reviews",
+          "who": "Tuition fruity (App Store UK review, Labyrinthos)",
+          "date": "2024-05-22",
+          "quote": "it had seemed rather intimidating to understand.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/gb/app/labyrinthos-tarot-reading/id1155180220?see-all=reviews",
+          "who": "~JKP (App Store UK review, Labyrinthos)",
+          "date": "2025-02-02",
+          "quote": "help when learning what the cards mean",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/tarot/id543929148?see-all=reviews",
+          "who": "Anthony_Harlow2000 (App Store review, Tarot!)",
+          "date": "2026-02-27",
+          "quote": "I am new to tarot and its uses and users but have been intrigued for years.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/learn-tarot-rider-waite-cards/id6452754512?see-all=reviews",
+          "who": "Mmira1967 (App Store review, Learn Tarot)",
+          "date": "2024-07-10",
+          "quote": "I have downloaded and even paid for other apps.",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Labyrinthos (free, strong), Tarot!, Golden Thread, deck guidebooks and courses.",
+      "risks": "Every quote is an App Store review (4 pages, 3 apps). Divination topic: framed only as learning symbolism, with no predictive, health or money claims."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

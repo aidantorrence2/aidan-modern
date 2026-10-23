@@ -11562,5 +11562,83 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "find-a-perfume-that-suits-you",
+  "offer": "scent-match",
+  "title": "How to find a perfume that suits you without wasting money",
+  "description": "Work out which notes you like, test on skin rather than paper, wait a few hours before deciding, and sample before buying a full bottle.",
+  "intro": "Perfume changes on your skin over a few hours, so the first sniff of a tester rarely tells you enough. A bit of method saves a lot of money.",
+  "sections": [
+   {
+    "h": "Start from what you already like",
+    "list": [
+     "Think of scents you've enjoyed: a friend's perfume, a candle, a shower gel. Note words like woody, vanilla, citrus, floral, fresh or spicy, and what you dislike."
+    ]
+   },
+   {
+    "h": "Test on skin, not paper",
+    "list": [
+     "Paper strips are fine for narrowing down, but try your top one or two on your wrist or inner elbow. Don't rub, and test no more than two or three a day."
+    ]
+   },
+   {
+    "h": "Wait before deciding",
+    "list": [
+     "Smell it again after an hour and after four hours. The scent you'll live with is the later stage, not the first spray."
+    ]
+   },
+   {
+    "h": "Sample before you buy",
+    "list": [
+     "Ask for a sample, buy a small decant or travel spray, and wear it for a few days in different situations before committing to a full bottle."
+    ]
+   },
+   {
+    "h": "Keep notes",
+    "p": [
+     "Write down the name, the notes, and how it smelled at each stage. Patterns soon appear, and they help you find similar scents and cheaper alternatives. Stop using anything that irritates your skin."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "learn-tarot-card-meanings",
+  "offer": "card-sense",
+  "title": "How to learn tarot card meanings without the guidebook",
+  "description": "Learn the structure first (Major Arcana and four suits), study one suit at a time, read the pictures, practise three-card spreads, and keep a journal.",
+  "intro": "78 cards sounds like a lot, but the deck has a clear structure. Learn the pattern and most meanings follow from it.",
+  "sections": [
+   {
+    "h": "Learn the structure",
+    "list": [
+     "22 Major Arcana cards for big themes, and 56 Minor Arcana in four suits: Wands, Cups, Swords and Pentacles, each running Ace to Ten plus four court cards."
+    ]
+   },
+   {
+    "h": "One suit at a time",
+    "list": [
+     "Learn each suit's theme first (Cups for feelings and relationships, Pentacles for work and material things, and so on), then how the numbers build from Ace to Ten."
+    ]
+   },
+   {
+    "h": "Read the pictures",
+    "list": [
+     "In Rider-Waite-style decks the imagery tells the story. Describe what's happening in the card in your own words before checking the book."
+    ]
+   },
+   {
+    "h": "Practise small spreads",
+    "list": [
+     "Draw three cards and write a few lines on how they connect. Then compare with the traditional meanings."
+    ]
+   },
+   {
+    "h": "Keep a journal",
+    "p": [
+     "Note each card you draw and what it meant to you. Reviewing your notes is what makes meanings stick. Treat tarot as reflection and symbolism, not as a basis for health, money or legal decisions."
+    ]
+   }
+  ]
  }
 ]
