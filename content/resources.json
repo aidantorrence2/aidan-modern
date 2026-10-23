@@ -12743,5 +12743,83 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "first-ev-public-charging-guide",
+  "offer": "plug-primer",
+  "title": "Public charging for your first electric car: a plain-English starter guide",
+  "description": "Know your car's connectors, set up a couple of payment options before you need them, plan stops with a backup, and practise at a local charger first.",
+  "intro": "Public charging looks confusing because there are many networks, apps and charger types. A little setup before your first long trip makes it much easier.",
+  "sections": [
+   {
+    "h": "Know your connectors",
+    "list": [
+     "Most newer cars in the UK and Europe use a Type 2 socket for slower AC charging and CCS for rapid DC charging. Some older cars use CHAdeMO. Check your car's manual."
+    ]
+   },
+   {
+    "h": "Set up payment once",
+    "list": [
+     "Many rapid chargers now take contactless bank cards. It's still worth setting up one or two network apps or a multi-network card or app before you travel, in case a charger doesn't."
+    ]
+   },
+   {
+    "h": "Understand charging speed",
+    "list": [
+     "Rapid charging is fastest at lower battery levels and slows a lot above about 80%, so on trips it's usually quicker to charge to around 80% and move on."
+    ]
+   },
+   {
+    "h": "Plan a main and a backup stop",
+    "list": [
+     "Pick a charging stop with several chargers and a backup nearby, and check live status in a map app before you leave the motorway."
+    ]
+   },
+   {
+    "h": "Practise locally",
+    "p": [
+     "Try a public charger near home on a quiet day, so your first public charge isn't at a busy services. Note overstay fees, which some networks charge if you stay plugged in after charging finishes."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "run-new-heat-pump-efficiently",
+  "offer": "warm-curve",
+  "title": "How to run a new heat pump: warm house, sensible bills",
+  "description": "Heat pumps work best running steadily at a low flow temperature with weather compensation on. Change one user setting at a time and check the results weekly.",
+  "intro": "A heat pump isn't run like a gas boiler. Low and steady usually beats short bursts of high heat. These are the user-level settings worth understanding.",
+  "sections": [
+   {
+    "h": "Flow temperature",
+    "list": [
+     "This is how hot the water going to your radiators or underfloor heating is. Lower flow temperatures are usually more efficient, as long as the house stays warm enough."
+    ]
+   },
+   {
+    "h": "Weather compensation",
+    "list": [
+     "Many heat pumps can raise the flow temperature automatically when it's colder outside and lower it when it's milder, using a 'heat curve'. If it's available and set up, it usually saves energy."
+    ]
+   },
+   {
+    "h": "Steady rather than on and off",
+    "list": [
+     "Big temperature setbacks at night can mean the pump works hard to catch up in the morning. Many owners find a small setback, or none, works better. Test it on your house."
+    ]
+   },
+   {
+    "h": "Hot water timing",
+    "list": [
+     "Heat hot water at a time that suits your tariff and routine. Don't turn off the scheduled high-temperature legionella cycle without your installer's advice."
+    ]
+   },
+   {
+    "h": "Change one thing at a time",
+    "p": [
+     "Make one change a week, note your meter readings and comfort, and keep what helps. Anything involving refrigerant, electrics, water pressure or installer menus is for your installer."
+    ]
+   }
+  ]
  }
 ]

@@ -31322,6 +31322,153 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-23",
+    "slug": "plug-primer",
+    "name": "Plug Primer",
+    "need": "I've just bought my first electric car and public charging is a minefield: which apps, how to pay, which charger, and where to stop on a long trip.",
+    "headline": "First electric car and public charging feels like a minefield? Set up the right apps and cards once, learn the chargers, and plan your first long trip with a backup stop.",
+    "buyer": "Adults 18+ (UK first) who have just bought, or are about to buy, their first electric car and mostly charge at home but sometimes need public chargers.",
+    "bullets": [
+      "A one-week setup plan: the payment cards and apps worth setting up for your car and area, done once.",
+      "A plain-English charger guide: slow, fast and rapid, connector types, overstay fees, and why charging slows above 80%.",
+      "A first-trip planner with a main and a backup stop, a practice charge at a quiet local charger, and a log of which sites worked."
+    ],
+    "price": "$3.99/month",
+    "priceUsd": 4,
+    "priceNote": "Or $29 a year.",
+    "reasonPrompt": "Which car do you have, and what's your first long trip going to be?",
+    "faq": [
+      {
+        "q": "Does it cover home chargers?",
+        "a": "No. For a home charger, use a qualified, registered installer. Plug Primer is about public charging."
+      },
+      {
+        "q": "Is it linked to a charging network?",
+        "a": "No. It is independent and not linked to any car maker, charging network, energy supplier or map app."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-23",
+      "summary": "New EV drivers call public charging a minefield, spend ages planning their first long journey, don't understand how to pay with so many charging companies, worry about the number of logins, and are anxious that chargers won't work.",
+      "wtp": "Zapmap (about 47K ratings) sells Premium at £2.99 a month or £29.99 a year, and A Better Routeplanner sells Premium at £4.99 a month or £39.99 a year.",
+      "signals": [
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/6686926/ev-public-chargers",
+          "who": "littleredhen (MoneySavingExpert)",
+          "date": "2026-10-16",
+          "quote": "Just bought my first EV and wow what a minefield the public chargers set up is",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/6675994/new-ev-driver-basic-question-re-public-charging",
+          "who": "rarees1 (MoneySavingExpert)",
+          "date": "2026-07-12",
+          "quote": "understand how to pay for public charging",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/gb/rss/customerreviews/page=6/id=1535444463/sortby=mostrecent/json",
+          "who": "Rachael-7 (App Store UK review, Octopus Electroverse)",
+          "date": "2024-08-10",
+          "quote": "As a new EV driver I was worried about the volume of registrations",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/gb/rss/customerreviews/page=1/id=1535444463/sortby=mostrecent/json",
+          "who": "Barneymac0 (App Store UK review, Octopus Electroverse)",
+          "date": "2026-09-16",
+          "quote": "New EV driver just getting to grips with working out routes for charging",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Zapmap, A Better Routeplanner, Octopus Electroverse, car makers' apps, network apps.",
+      "risks": "Strong paid map and route apps exist, so the angle is onboarding and confidence. Mostly UK. Review-feed page numbers shift."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-23",
+    "slug": "warm-curve",
+    "name": "Warm Curve",
+    "need": "We've had a heat pump installed and I don't understand how to set it so the house is warm without huge bills.",
+    "headline": "New heat pump and no idea how to run it? A plain-English plan for your controller (flow temperature, weather curve, schedules, hot water) so you're warm without huge bills.",
+    "buyer": "UK adults 18+ who've just had an air-source heat pump fitted, or bought a home with one, got little or no handover, and feel lost with the controller.",
+    "bullets": [
+      "Pick your make and controller for a plain guide to what each user setting does.",
+      "One change a week (weather compensation, heat curve, setback, hot water timing), with a weekly check-in on energy used and comfort.",
+      "A 'questions for your installer' sheet for anything that's installer-only, and tariff timing tips with no supplier tie-in."
+    ],
+    "price": "$4.99/month",
+    "priceUsd": 5,
+    "priceNote": "Or $39 a year.",
+    "reasonPrompt": "Which heat pump and controller do you have, and what's bothering you most?",
+    "faq": [
+      {
+        "q": "Will it change installer settings?",
+        "a": "No. It only covers settings users are meant to change. Anything involving refrigerant, electrics, pressure or installer menus, and any change to hot-water legionella cycles, is for your installer."
+      },
+      {
+        "q": "Is it linked to a manufacturer or supplier?",
+        "a": "No. It is independent and not linked to any heat pump maker, installer or energy supplier."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-23",
+      "summary": "New heat pump owners say they're panicking and can't work out how to set the temperature, have no clue how to operate it, don't understand how the controls relate, that the installer left without going through the settings, and are confused about what's right; some face big electricity bills.",
+      "wtp": "Havenwise, a heat pump optimisation app, charges £7 a month after a free month. An MSE poster paid for a £250 heat pump design consultation that replies called 'worth every penny'.",
+      "signals": [
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/6586358/help-me-configure-my-new-heat-pump",
+          "who": "cathyem1 (MoneySavingExpert)",
+          "date": "2025-02-07",
+          "quote": "the ASHP is in and I",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/6685089/new-grant-hp-r290-65-operating-advice",
+          "who": "Paulste71 (MoneySavingExpert)",
+          "date": "2026-09-30",
+          "quote": "I have no clue how to operate them and so a total numpty on the tech side",
+          "seen": "opened"
+        },
+        {
+          "url": "https://renewableheatinghub.co.uk/forums/renewable-heating-air-source-heap-pumps-ashps/mitsubishi-ecodan-settings/",
+          "who": "hotheat (Renewable Heating Hub)",
+          "date": "2022-12-11",
+          "quote": "installer is long gone without ever really going through the settings",
+          "seen": "opened"
+        },
+        {
+          "url": "https://renewableheatinghub.co.uk/forums/renewable-heating-air-source-heap-pumps-ashps/is-the-grant-controller-a-thermostat/",
+          "who": "Dodgyknee (Renewable Heating Hub)",
+          "date": "2023-06-03",
+          "quote": "feeling a bit confused about what is right",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/gb/rss/customerreviews/page=1/id=1526453011/sortby=mostrecent/json",
+          "who": "KeefDu (App Store UK review, myVAILLANT)",
+          "date": "2026-08-21",
+          "quote": "As a novice user of a new ASHP",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Havenwise, manufacturers' apps, installers' handovers, Heat Geek and other advice sites.",
+      "risks": "The direct paid competitor has only 22 ratings, so the money signal is thin. UK-focused. Kept to user-level settings only."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
