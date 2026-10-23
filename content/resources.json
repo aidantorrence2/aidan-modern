@@ -12013,5 +12013,50 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "cocktails-with-what-you-have",
+  "offer": "shelf-mix",
+  "title": "What cocktails can I make with what I have? 5 templates that cover most bottles",
+  "description": "Most classic cocktails follow a handful of patterns. Learn five templates and you can make something good from almost any shelf.",
+  "intro": "You don't need a recipe for every bottle. Five basic patterns cover a huge range of drinks; swap in what you have. For adults of legal drinking age only.",
+  "sections": [
+   {
+    "h": "1. Sour",
+    "list": [
+     "Spirit + citrus + sweet. A common starting ratio is 2 parts spirit, 3/4 part fresh lemon or lime and 3/4 part sugar syrup, shaken with ice. Works with gin, whisky, rum, tequila or brandy."
+    ]
+   },
+   {
+    "h": "2. Highball",
+    "list": [
+     "Spirit + a tall mixer over ice: gin and tonic, whisky and soda, rum and ginger beer. Roughly 1 part spirit to 3 parts mixer."
+    ]
+   },
+   {
+    "h": "3. Old fashioned",
+    "list": [
+     "Spirit + a little sugar + bitters, stirred over ice. Classic with whisky, but rum, brandy or aged tequila work too."
+    ]
+   },
+   {
+    "h": "4. Equal parts",
+    "list": [
+     "Three ingredients in equal measures, stirred or shaken, like the Negroni (gin, bitter aperitif, sweet vermouth). Swap one ingredient for another of the same kind."
+    ]
+   },
+   {
+    "h": "5. Spritz",
+    "list": [
+     "Sparkling wine + a bitter or fruity aperitif + soda, over ice. A common ratio is 3 parts prosecco, 2 parts aperitif and 1 part soda. Lighter and lower in alcohol."
+    ]
+   },
+   {
+    "h": "Drink responsibly",
+    "p": [
+     "Measure rather than free-pour, so you know how strong a drink is. Alternate with water, offer alcohol-free versions (most sours and highballs work without spirit), and never drink and drive."
+    ]
+   }
+  ]
  }
 ]

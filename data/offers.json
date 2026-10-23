@@ -29951,6 +29951,83 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-23",
+    "slug": "shelf-mix",
+    "name": "Shelf Mix",
+    "need": "I've got a shelf of bottles at home and never know what drinks I can actually make with what I have.",
+    "headline": "A shelf of bottles and no idea what to make? Enter what you have and see the drinks you can make now, the ones a single ingredient away, and which next bottle opens up the most.",
+    "buyer": "Adults of legal drinking age (18+, 21+ in the US) with a few bottles at home who don't know what to make.",
+    "bullets": [
+      "Add your bottles, mixers and fresh things once, including flavoured spirits and liqueurs, and see every drink you can make right now.",
+      "'One ingredient away' suggestions, and which next bottle would open up the most new drinks.",
+      "Five classic templates (sour, highball, old fashioned, equal parts, spritz), plus your own taste ratings and each drink's strength."
+    ],
+    "price": "$2.99/month",
+    "priceUsd": 3,
+    "priceNote": "Or $19.99 a year.",
+    "reasonPrompt": "Roughly what's on your shelf, and what kind of drinks do you like?",
+    "faq": [
+      {
+        "q": "Who is it for?",
+        "a": "Adults of legal drinking age only (18+, 21+ in the US). It shows each drink's strength, suggests alcohol-free versions, and never encourages drinking more or more often. Never drink and drive."
+      },
+      {
+        "q": "Is it linked to any brand?",
+        "a": "No. It is an independent app, not linked to any drinks brand, retailer, Cocktail Flow or Mixel."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-23",
+      "summary": "Home drinkers with 30 to 40 bottles say they downloaded apps hoping to see what they could make with what they have, want a full list of drinks from their own cabinet, and complain that apps don't cover their bottles or suggest drinks they can't make.",
+      "wtp": "Cocktail Flow (21K ratings) sells $4.99 a month or $24.99 a year; Mixel (1.5K ratings) sells Premium from $1.99 to $49.99, and reviewers say 'I bought the whole package' and 'It was an easy choice to subscribe'.",
+      "signals": [
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=3/id=486811622/sortby=mostrecent/json",
+          "who": "ffsquirrel (App Store review, Cocktail Flow)",
+          "date": "2022-03-15",
+          "quote": "was hoping this would be useful to see what I could make with what I have. I have about 30-40 different bottles of liquor.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=4/id=486811622/sortby=mostrecent/json",
+          "who": "Nettedavid (App Store review, Cocktail Flow)",
+          "date": "2020-06-22",
+          "quote": "I wanted to find an exhaustive list of drink we could make with what we have.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=486811622/sortby=mostrecent/json",
+          "who": "Pickachair (App Store review, Cocktail Flow)",
+          "date": "2024-07-14",
+          "quote": "I am looking for an app that can list the drinks I can make from the supplies have.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=2/id=1280464759/sortby=mostrecent/json",
+          "who": "huntmaster33 (App Store review, Mixel)",
+          "date": "2019-11-30",
+          "quote": "give you recipes based on what you already have",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1280464759?see-all=reviews",
+          "who": "DingusReinhardt (App Store review, Mixel)",
+          "date": "2022-01-01",
+          "quote": "this app will tell you what you can make and how to make it with what you have on hand.",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Cocktail Flow, Mixel, free recipe sites.",
+      "risks": "Paid incumbents exist, so the angle is fuller bottle coverage and 'next bottle' advice. Every quote is an App Store review. The doc side's eGullet, AnandTech and Mumsnet sources are blocked to our fetch. Alcohol topic: adults only, never encourages drinking more."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
