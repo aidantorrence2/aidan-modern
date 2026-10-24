@@ -33500,6 +33500,83 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-24",
+    "slug": "dry-hours",
+    "name": "Dry Hours",
+    "need": "I sweat a lot and very easily, it shows through my tops and ruins my shirts, and I'm embarrassed and plan my day around hiding it.",
+    "headline": "Sweating through your tops and planning your day around hiding it? Log where and when, find your triggers, see which clothes show it least, and plan big days with a spare-top kit.",
+    "buyer": "Adults who sweat heavily, often through their tops, are embarrassed by it, and want to understand their triggers and manage day to day.",
+    "bullets": [
+      "A two-tap log (where, how bad 0-3, the situation) and a trigger chart after two weeks: heat, stress, fabrics, food, time of day.",
+      "A wardrobe check of which tops and colours show it least, and a big-day plan with a spare-top checklist.",
+      "Reminders for the routine a pharmacist or GP suggested, and a one-page summary to take to an appointment."
+    ],
+    "price": "$2.99/month",
+    "priceUsd": 3,
+    "priceNote": "Or $14.99 a year.",
+    "reasonPrompt": "Where do you sweat most, and when does it bother you most?",
+    "faq": [
+      {
+        "q": "Is it medical advice?",
+        "a": "No. It's a diary and planner. See a GP if you've sweated heavily for a long time, if it's sudden, happens at night or comes with other symptoms, or if it disrupts your daily life. A pharmacist can advise on stronger antiperspirants."
+      },
+      {
+        "q": "Is it linked to a brand?",
+        "a": "No. It's independent and recommends no products."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-24",
+      "summary": "People say they hate that they sweat badly and have tried every antiperspirant, can't wear light colours or single layers, are losing £50 shirts because they get so manky, and sweat through a light-blue work shirt even when doing nothing.",
+      "wtp": "People already spend on the problem: highrisklowreturn is 'losing £50 shirts every so often', gwni buys a stronger antiperspirant 'from the Chemist from behind the counter', and carolpinkdreamer has 'tried every antiperspirant known to woman'.",
+      "signals": [
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/2389155/im-a-sweaty-betty",
+          "who": "carolpinkdreamer (MoneySavingExpert)",
+          "date": "2010-04-07",
+          "quote": "I HATE the fact that I sweat badly",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/2389155/im-a-sweaty-betty",
+          "who": "carolpinkdreamer (MoneySavingExpert)",
+          "date": "2010-04-07",
+          "quote": "tried every antiperspirant known to woman",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/3448117/anyway-to-stop-sweat-ruining-shirts",
+          "who": "highrisklowreturn (MoneySavingExpert)",
+          "date": "2011-08-26",
+          "quote": "losing £50 shirts every so often as they get so manky",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/3448117/anyway-to-stop-sweat-ruining-shirts",
+          "who": "gwni (MoneySavingExpert)",
+          "date": "2011-08-27",
+          "quote": "Had the same problems",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.overclockers.co.uk/threads/an-embarrassing-ask.18516230/",
+          "who": "Kavalree (Overclockers UK)",
+          "date": "2013-05-30",
+          "quote": "I sweat a fair bit under-arm and my light-blue work shirt picks up",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Clinical-strength antiperspirants, sweat-proof undershirts, GP and dermatologist treatment.",
+      "risks": "Checked posts are 2010-2013. The doc side's Mumsnet and Beautylish voices couldn't be checked from the code side. Money is spent on products and ruined clothes, not an app. Health-adjacent: no medical claims; heavy or sudden sweating goes to a GP."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
