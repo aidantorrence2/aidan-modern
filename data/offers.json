@@ -32036,6 +32036,94 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-24",
+    "slug": "wear-tally",
+    "name": "Wear Tally",
+    "need": "I keep forgetting to log when I take my aligners out to eat, so I never know if I've really hit my wear time, and I keep falling behind on my trays.",
+    "headline": "Forget to start the timer when your aligners come out? Tap your case, or log it later in one line, and always know whether you hit your daily wear time.",
+    "buyer": "People in clear-aligner or retainer treatment who eat out, have busy days and lose track of how long their trays have been out.",
+    "bullets": [
+      "Tap an NFC sticker on your aligner case to log trays out and back in, without opening the app.",
+      "Log it later in one line ('out 12:10, back 12:45') and fix any past day, with nudges until your trays are back in after a meal.",
+      "Tray-change dates that shift for you when low-wear days put you behind, and a weekly wear summary to show your orthodontist."
+    ],
+    "price": "$2.99/month",
+    "priceUsd": 3,
+    "priceNote": "Or $19.99 a year.",
+    "reasonPrompt": "How many hours a day were you told to wear your aligners, and when do you usually forget?",
+    "faq": [
+      {
+        "q": "Does it give dental advice?",
+        "a": "No. Your daily wear target and tray-change schedule come from your orthodontist or dentist; the app just helps you track them. Ask them about any pain or fit problems."
+      },
+      {
+        "q": "Is it linked to my aligner brand?",
+        "a": "No. It is an independent app, not linked to Invisalign, Align Technology, any aligner company or any dental practice."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Anyone wearing clear aligners or removable retainers. Under-18s should use it with a parent or guardian."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-24",
+      "summary": "Aligner wearers say they constantly forget to start the timer at the exact moment, lose track of their time out, can't remember the next day how long their trays were out, can't edit missed logs, forget to put trays back in after eating, and fall further behind.",
+      "wtp": "TrayMinder (5.3K ratings) sells TrayMinder+ from $4.99 to $39.99, or $69.99 for a lifetime, and reviewers say they've subscribed.",
+      "signals": [
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=2/id=1325633853/sortby=mostrecent/json",
+          "who": "mochoaaa (App Store review, My Invisalign)",
+          "date": "2026-05-20",
+          "quote": "constantly forgetting to input it at the exact moment",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1325633853/sortby=mostrecent/json",
+          "who": "Felicoraptor (App Store review, My Invisalign)",
+          "date": "2026-10-09",
+          "quote": "I lose track of how much non wear time I have",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1325633853/sortby=mostrecent/json",
+          "who": "CkY NicK254 (App Store review, My Invisalign)",
+          "date": "2026-08-27",
+          "quote": "no longer remember how long I had the Invisalign out",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/gb/rss/customerreviews/page=1/id=1320684802/sortby=mostrecent/json",
+          "who": "paula13mg (App Store UK review, TrayMinder)",
+          "date": "2025-03-14",
+          "quote": "I cannot edit this later so results are unreliable",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/gb/rss/customerreviews/page=1/id=1320684802/sortby=mostrecent/json",
+          "who": "chloe81012 (App Store UK review, TrayMinder)",
+          "date": "2023-03-26",
+          "quote": "I keep forgetting to put my trays back in",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=2/id=1320684802/sortby=mostrecent/json",
+          "who": "ZerepYdnew (App Store review, TrayMinder)",
+          "date": "2025-09-23",
+          "quote": "found myself falling further and further behind",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "TrayMinder, My Invisalign, TrayBuddy, Wearclock and other free aligner timers.",
+      "risks": "A crowded market of free trackers; the angle is logging without remembering at the moment (an NFC case tap and late logging). All quotes are App Store reviews, and review-feed page numbers shift. No dental advice."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
