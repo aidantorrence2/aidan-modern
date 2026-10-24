@@ -14673,5 +14673,47 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "restless-legs-night-diary",
+  "offer": "still-legs",
+  "title": "How to keep a restless legs diary that shows what makes nights worse",
+  "description": "What to note each evening and morning, how to spot patterns over three weeks, and what to tell your GP. Not medical advice.",
+  "intro": "Restless legs often vary from night to night, which makes patterns hard to see from memory. A short, easy diary helps you and your GP. This is general information, not medical advice.",
+  "sections": [
+   {
+    "h": "See a GP",
+    "p": [
+     "If restless legs are affecting your sleep, talk to a GP. They may check for things that can make it worse, such as low iron levels, and review any medicines you take. Don't change prescribed medicines without advice."
+    ]
+   },
+   {
+    "h": "Each evening, note",
+    "list": [
+     "Caffeine (including tea, cola and chocolate), alcohol and smoking.",
+     "Late or heavy meals, long periods of sitting, exercise, a hot bath and stress.",
+     "Anything new you've started taking."
+    ]
+   },
+   {
+    "h": "Each morning, note",
+    "list": [
+     "How bad it was (0 to 3), how long it kept you awake, and whether you had to get up and walk.",
+     "Anything that helped, such as stretching, walking or massage."
+    ]
+   },
+   {
+    "h": "Keep it easy",
+    "p": [
+     "One tap in the morning and a few in the evening is enough. A diary you can keep up for three weeks beats a detailed one you abandon after three days."
+    ]
+   },
+   {
+    "h": "Look for patterns",
+    "p": [
+     "After three weeks, compare the evenings before bad nights with the ones before calmer nights, then try changing one thing at a time for two weeks."
+    ]
+   }
+  ]
  }
 ]

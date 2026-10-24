@@ -35019,6 +35019,97 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-24",
+    "slug": "still-legs",
+    "name": "Still Legs",
+    "need": "Restless legs keep me awake at night, and I can't work out what makes some nights worse than others.",
+    "headline": "Restless legs keeping you up? A one-tap morning check, a quick evening factor check, and a three-week view of what came before your worst nights.",
+    "buyer": "Adults with restless legs who lose sleep and can't work out what makes some nights worse.",
+    "bullets": [
+      "A one-tap dark-screen morning check (0-3, how long it kept you up, whether you got up to walk) and an evening check of the factors you choose: caffeine, alcohol, a late or heavy meal, long sitting, exercise, a hot bath, stress.",
+      "A three-week view of what came before worse nights versus calmer ones, and a two-week test of one change at a time.",
+      "Episode notes on what helped, and a one-page summary for your GP or sleep doctor."
+    ],
+    "price": "$2.99/month",
+    "priceUsd": 3,
+    "priceNote": "Or $19.99 a year.",
+    "reasonPrompt": "How many nights a week do restless legs keep you up, and what have you noticed so far?",
+    "faq": [
+      {
+        "q": "Is it medical advice?",
+        "a": "No. It's a diary. It doesn't diagnose, recommend treatments or supplements, or tell you to start, stop or change any medicine. See a GP about restless legs; they may check things like your iron levels."
+      },
+      {
+        "q": "Is it linked to a brand?",
+        "a": "No. It's independent and recommends no products or devices."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-24",
+      "summary": "People with restless legs say they want to track severity, triggers, movement, diet, emotions and sleep, use an app as a food, sleep and symptoms diary, keep an old paper notebook they don't carry, find it hard to connect symptoms to triggers, find diaries exhausting, and say it has ruined their life.",
+      "wtp": "Guitarpickin on HealthUnlocked mentions an RLS diary app at $5.99; Moonwalker1967 already uses an app as a symptom diary.",
+      "signals": [
+        {
+          "url": "https://healthunlocked.com/rlsuk/posts/148621224",
+          "who": "twistoffate (HealthUnlocked RLS-UK)",
+          "date": "undated",
+          "quote": "I want to track its severity, triggers",
+          "seen": "opened"
+        },
+        {
+          "url": "https://healthunlocked.com/rlsuk/posts/148621224",
+          "who": "Moonwalker1967 (HealthUnlocked RLS-UK)",
+          "date": "undated",
+          "quote": "food, sleep and symptoms diary",
+          "seen": "opened"
+        },
+        {
+          "url": "https://healthunlocked.com/rlsuk/posts/148621224",
+          "who": "Guitarpickin (HealthUnlocked RLS-UK)",
+          "date": "undated",
+          "quote": "old paper notebook",
+          "seen": "opened"
+        },
+        {
+          "url": "https://healthunlocked.com/rlsuk/posts/148621224",
+          "who": "Katie2288 (HealthUnlocked RLS-UK)",
+          "date": "undated",
+          "quote": "It has ruined my life",
+          "seen": "opened"
+        },
+        {
+          "url": "https://healthunlocked.com/rlsuk/posts/140204826/sharing-and-learning",
+          "who": "kika82 (HealthUnlocked RLS-UK)",
+          "date": "undated",
+          "quote": "I try to connect to triggers",
+          "seen": "opened"
+        },
+        {
+          "url": "https://healthunlocked.com/rlsuk/posts/140204826/sharing-and-learning",
+          "who": "kika82 (HealthUnlocked RLS-UK)",
+          "date": "undated",
+          "quote": "I find a diary a bit exhausting",
+          "seen": "opened"
+        },
+        {
+          "url": "https://healthunlocked.com/rlsuk/posts/150823701/triggers",
+          "who": "Original poster (HealthUnlocked RLS-UK, unnamed)",
+          "date": "undated",
+          "quote": "figure out my triggers well enough",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "RLS Coach (free with ads), general sleep and symptom diaries, paper notebooks.",
+      "risks": "All checked evidence is on HealthUnlocked (posts undated). The doc side's Mayo Clinic Connect money figures couldn't be checked from the code side. Money evidence is thin: one $5.99 diary app. Not medical."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
