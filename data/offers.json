@@ -33920,6 +33920,97 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-24",
+    "slug": "roof-yield",
+    "name": "Roof Yield",
+    "need": "I have solar panels and I can't tell whether they're actually working properly or producing what they should, and the installer's app is broken, paywalled or gone.",
+    "headline": "Can't tell if your solar panels are really working? Check each day's output against what your roof should make, and find out the day it drops.",
+    "buyer": "Homeowners with rooftop solar, especially people whose installer went bust or changed hands, or whose monitoring app is broken or now costs extra.",
+    "bullets": [
+      "Expected versus actual output for your roof's size, tilt and direction, adjusted for that day's weather.",
+      "An alert when generation drops or stops, with a plain list of likely causes and when to call an accredited installer.",
+      "Works from inverter data or a weekly photo of the generation meter, and keeps a year-on-year record for warranty claims."
+    ],
+    "price": "$3/month",
+    "priceUsd": 3,
+    "priceNote": "Or $24 a year.",
+    "reasonPrompt": "How big is your system, and what makes you think it isn't producing what it should?",
+    "faq": [
+      {
+        "q": "Will it tell me how to fix my panels?",
+        "a": "No. It only reads your figures. Panels, inverters and isolators carry high voltages, so faults go to an accredited installer, never DIY."
+      },
+      {
+        "q": "Is it linked to an installer or manufacturer?",
+        "a": "No. It's independent of any installer, inverter brand or energy supplier, and makes no promises about savings."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-24",
+      "summary": "Solar owners say they want the right to know if the panels they paid for are working, can't tell how their panels are working, suspected their system was down with no way to monitor it, just want to monitor their production, see 1-1.3kWh from a 4kW system in full sun, and have days with no generation.",
+      "wtp": "SunStrong Connect (about 15K ratings) users report being charged about $99 a year for monitoring (BudEDogg: 'they charge $99/year'); x16forest says they'd pay $24 a year. Sunflower: Solar Monitor sells premium from $11.99 a year.",
+      "signals": [
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1504718150/sortby=mostrecent/json",
+          "who": "Job Ang (App Store review, SunStrong Connect)",
+          "date": "2026-06-22",
+          "quote": "for right to know if my solar panels, which i purchased and paid for, are working properly",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1504718150/sortby=mostrecent/json",
+          "who": "aurgh!!! (App Store review, SunStrong Connect)",
+          "date": "2026-09-02",
+          "quote": "Cant tell how my panels are working.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1504718150/sortby=mostrecent/json",
+          "who": "tigermountainatx (App Store review, SunStrong Connect)",
+          "date": "2026-06-03",
+          "quote": "I suspected our 2 year old system was down but no way to monitor it",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1504718150/sortby=mostrecent/json",
+          "who": "Hjoice255 (App Store review, SunStrong Connect)",
+          "date": "2026-10-11",
+          "quote": "I just want the app to work correctly so I can monitor my solar production",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/5093750/low-solar-readings",
+          "who": "Yoshii (MoneySavingExpert)",
+          "date": "2014-10-19",
+          "quote": "my 4kwh solar system has been giving readings of 1-1.3kwh even in full direct sunshine",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/5832476",
+          "who": "annet01 (MoneySavingExpert)",
+          "date": "2018-04-20",
+          "quote": "there are days when it does not generate",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/5832476",
+          "who": "Wobblydeb (MoneySavingExpert)",
+          "date": "2018-04-20",
+          "quote": "We are experiencing intermittent generation at the moment due to an inverter problem",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Installer and inverter apps (often free), SunStrong Connect, Sunflower, third-party monitors.",
+      "risks": "Much of the recent demand is from one app's reviews (owners angry at a new paywall); MSE posts are older. Free inverter apps cover many owners. Data collection needs integrations or a manual meter fallback. No electrical advice."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

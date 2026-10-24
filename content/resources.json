@@ -14097,5 +14097,49 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "are-my-solar-panels-working",
+  "offer": "roof-yield",
+  "title": "Are my solar panels working properly? How to check without climbing on the roof",
+  "description": "Simple checks from the ground: read your generation meter, compare with what your system should make, watch for zero days, and know when to call an installer.",
+  "intro": "Solar panels can underperform for months before anyone notices. A few minutes a week with your meter or app will tell you. Never go on the roof or open electrical equipment; call an accredited installer for faults.",
+  "sections": [
+   {
+    "h": "Read the generation meter",
+    "list": [
+     "Find your generation meter (often near the inverter or consumer unit) and note the total once a week on the same day.",
+     "The difference between readings is what your panels made that week."
+    ]
+   },
+   {
+    "h": "Compare with what it should make",
+    "list": [
+     "Your installation paperwork usually includes an estimate of yearly generation; divide by 12 for a rough monthly figure, remembering summer is much higher than winter.",
+     "Compare with the same month last year. A big drop in similar weather is worth investigating."
+    ]
+   },
+   {
+    "h": "Check the inverter",
+    "list": [
+     "Look at the inverter's display or lights. A red or orange light or an error code often means it has stopped. Note the code and check the manual.",
+     "A zero day in good weather usually means the inverter or a connection has a problem."
+    ]
+   },
+   {
+    "h": "Common causes of low output",
+    "list": [
+     "Inverter faults, which are the most common cause of a sudden stop.",
+     "New shading from trees or buildings, or heavy dirt in areas with little rain.",
+     "A tripped isolator or breaker. Only reset what the manual says is safe; otherwise call an installer."
+    ]
+   },
+   {
+    "h": "Get help",
+    "p": [
+     "Contact your installer or an accredited installer (MCS-certified in the UK). Keep your weekly readings, since they help with warranty claims."
+    ]
+   }
+  ]
  }
 ]
