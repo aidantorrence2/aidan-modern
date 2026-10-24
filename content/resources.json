@@ -13674,5 +13674,47 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "find-lost-pension-old-job-uk",
+  "offer": "old-pots",
+  "title": "How to find a pension from an old job (even if the company has closed)",
+  "description": "Rebuild your job list, use the free government Pension Tracing Service, write to providers, and keep every pot on one page. UK guide.",
+  "intro": "Many people have several workplace pensions from old jobs and have lost track of some. Finding them is free; it mostly takes a list and a few letters. This is general information, not financial advice.",
+  "sections": [
+   {
+    "h": "Make a list of every job",
+    "list": [
+     "Write down each employer, roughly when you worked there, and the town. Old payslips, P60s, CVs and emails help.",
+     "Note any pension paperwork or provider names you remember."
+    ]
+   },
+   {
+    "h": "Use the free tracing service",
+    "list": [
+     "The government's Pension Tracing Service (on GOV.UK) gives you contact details for a workplace or personal pension scheme, even if the employer has closed or changed its name.",
+     "It doesn't tell you whether you have a pension or how much it's worth. You then contact the scheme."
+    ]
+   },
+   {
+    "h": "Contact each scheme",
+    "list": [
+     "Give your full name, any previous names and addresses, your National Insurance number, date of birth and dates of employment.",
+     "Ask whether you have benefits, their current value, and to update your address."
+    ]
+   },
+   {
+    "h": "Keep one list",
+    "p": [
+     "Record each pot's provider, reference number, latest value and the address they hold for you. Update it whenever you move house."
+    ]
+   },
+   {
+    "h": "Before you move or combine pensions",
+    "p": [
+     "Check for exit fees, guarantees and valuable benefits you could lose. If a defined benefit (final salary) pension is worth more than £30,000, you must take regulated financial advice before transferring it. MoneyHelper offers free, impartial guidance."
+    ]
+   }
+  ]
  }
 ]

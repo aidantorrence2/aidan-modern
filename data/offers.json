@@ -33087,6 +33087,83 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-24",
+    "slug": "old-pots",
+    "name": "Old Pots",
+    "need": "I've had so many jobs that I've lost track of my old workplace pensions, I can't remember all the employers, and I don't know where to start finding them.",
+    "headline": "Lost track of pensions from old jobs? Rebuild your job list, trace each pot through the free official routes, and keep every provider and reference on one page.",
+    "buyer": "UK adults who have changed jobs several times and have workplace or personal pensions scattered across employers and providers they can't name.",
+    "bullets": [
+      "A guided job-history rebuild (employer, dates, town), with prompts from payslips, P60s and old emails.",
+      "A step-by-step trace per job through the free official routes, with letter and email wording for providers and chase reminders.",
+      "One list of every pot (provider, reference, last value, address on file), a moving-house checklist, and a one-page summary to take to an adviser."
+    ],
+    "price": "$2.99/month",
+    "priceUsd": 3,
+    "priceNote": "Or $14.99 a year.",
+    "reasonPrompt": "Roughly how many employers have you had, and how many pensions do you think you've lost track of?",
+    "faq": [
+      {
+        "q": "Is it financial advice?",
+        "a": "No. It helps you find and organise your pensions; it doesn't recommend whether to move or combine them. For that, use a regulated financial adviser or the free government guidance service, MoneyHelper."
+      },
+      {
+        "q": "Is it linked to a pension provider?",
+        "a": "No. It's independent, takes no commission, and points you to the free official tracing routes."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-24",
+      "summary": "People say they've had so many jobs they have no hope of finding all their pensions, have spent a morning chasing pension pots and found nothing, lost track of pensions after moving house, aren't sure where to go next, and forgot about a large pot until a pensions event.",
+      "wtp": "PensionBee, which finds and combines old pensions, has 11,012 ratings (4.8 stars) on the UK App Store and charges annual plan fees from 0.35% to 0.95%. The MSE news thread reports the government's free pension finder had been used 1.2 million times.",
+      "signals": [
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/5923609/tracing-old-pension",
+          "who": "thecornflake (MoneySavingExpert)",
+          "date": "2018-11-13",
+          "quote": "not keeping up to date with address changes",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/5923609/tracing-old-pension",
+          "who": "thecornflake (MoneySavingExpert)",
+          "date": "2018-11-13",
+          "quote": "Not sure where to go from here",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/5913930/pension-finding-tool-used-1-2m-times-mse-news",
+          "who": "rtho782 (MoneySavingExpert)",
+          "date": "2018-10-24",
+          "quote": "I have had so many jobs that I have no hope of ever finding all these pensions or even remembering the exact company I worked for.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/5913930/pension-finding-tool-used-1-2m-times-mse-news",
+          "who": "rtho782 (MoneySavingExpert)",
+          "date": "2018-10-24",
+          "quote": "I have spent most of the morning trying to chase pension pots.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/5913930/pension-finding-tool-used-1-2m-times-mse-news",
+          "who": "cfw1994 (MoneySavingExpert)",
+          "date": "2018-10-24",
+          "quote": "forgotten about a 6-figure pot",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "The government's free Pension Tracing Service, PensionBee and other consolidators, financial advisers.",
+      "risks": "All checked voices are on MSE (2018); the doc side's Trustpilot review (Roland Brooks, PensionBee) couldn't be checked from the code side. UK only. The official tracing route is free, so the value is the organising and chasing."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
