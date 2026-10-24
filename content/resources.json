@@ -13971,5 +13971,48 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "travel-sickness-adult-passenger-tips",
+  "offer": "easy-miles",
+  "title": "Travel sick as a passenger? Seat, food and screen habits that help adults",
+  "description": "Practical ways to reduce car, coach and sea sickness as an adult: where to sit, what to look at, what to eat, and when to ask a pharmacist.",
+  "intro": "Travel sickness happens when what your eyes see doesn't match the motion your body feels. Plenty of adults still get it. This is general information, not medical advice.",
+  "sections": [
+   {
+    "h": "Where to sit",
+    "list": [
+     "In a car, sit in the front passenger seat; on a coach, near the front; on a boat, in the middle and on a lower deck.",
+     "Face forwards, and keep your head still against the headrest."
+    ]
+   },
+   {
+    "h": "What to look at",
+    "list": [
+     "Look out of the front window at the horizon or a fixed point in the distance.",
+     "Avoid reading or looking at your phone. If you must, keep it brief and hold the screen up near eye level.",
+     "Closing your eyes, or listening to music or an audiobook, can help."
+    ]
+   },
+   {
+    "h": "Food, drink and air",
+    "list": [
+     "Eat a light meal before you go, and avoid heavy, greasy food and alcohol.",
+     "Open a window or turn on the air for cool, fresh air."
+    ]
+   },
+   {
+    "h": "Ask a pharmacist",
+    "p": [
+     "A pharmacist can recommend travel sickness medicines and explain when to take them, since many work best taken before the journey. See a GP if sickness is severe, new, or comes with other symptoms."
+    ]
+   },
+   {
+    "h": "Learn your limits",
+    "p": [
+     "Note each trip: seat, vehicle, what you were doing and how soon you felt sick. After a few trips you'll know what helps you most."
+    ]
+   }
+  ]
  }
 ]

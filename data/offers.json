@@ -33668,6 +33668,83 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-24",
+    "slug": "easy-miles",
+    "name": "Easy Miles",
+    "need": "I get car, coach or sea sick as a passenger. I can't read or look at my phone, and I plan every trip around not being sick.",
+    "headline": "Car, coach or sea sick as a passenger? Log each trip, find the seat, food and screen habits that keep you well, and take a ready plan for the first queasy minute.",
+    "buyer": "Adults who get travel sick as passengers in cars, coaches, trains or boats and plan trips around it.",
+    "bullets": [
+      "A two-tap trip log (vehicle, seat, what you were doing, how bad 0-3, minutes until it started) and a pattern list after five trips.",
+      "A per-trip checklist built from what worked for you, and a phone-time budget per trip.",
+      "Reminders for whatever a pharmacist suggested, and a first-queasy-minute plan: eyes on the horizon, fresh air, stop reading."
+    ],
+    "price": "$2.99/month",
+    "priceUsd": 3,
+    "priceNote": "Or $14.99 a year.",
+    "reasonPrompt": "Which kind of travel makes you sick, and how soon does it start?",
+    "faq": [
+      {
+        "q": "Is it medical advice?",
+        "a": "No. It's a trip log and planner. A pharmacist can advise on travel sickness medicines, and you should see a GP if it's severe, new, or comes with other symptoms."
+      },
+      {
+        "q": "Is it linked to a brand?",
+        "a": "No. It's independent and recommends no products."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-24",
+      "summary": "Adult passengers say they still find even map-reading a trial, that a glance at the paper starts the sickness, that they're only OK in a car when driving, and that they've been long-term sufferers who have tried many things.",
+      "wtp": "People already spend on remedies: debbiet has tried tablets that 'make me feel sick', Mrs_Imp has tried pressure bands, and Savvy_Sue notes acupressure bands are not cheap. Carsick.App sells $2.99 a month, $14.99 a year or $39.99 lifetime (14 ratings).",
+      "signals": [
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/475/travel-sickness-tip",
+          "who": "Savvy_Sue (MoneySavingExpert)",
+          "date": "2004-06-11",
+          "quote": "even map-reading is a bit of a trial",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/475/travel-sickness-tip",
+          "who": "debbiet (MoneySavingExpert)",
+          "date": "2004-06-16",
+          "quote": "even a glance at the paper starts the sickness",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/475/travel-sickness-tip",
+          "who": "Fran (MoneySavingExpert)",
+          "date": "2004-06-16",
+          "quote": "I get travel sick - ok in car as usually driving, but boats",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/2646833/travel-sickness-remedy-recommendations-please",
+          "who": "Mrs_Imp (MoneySavingExpert)",
+          "date": "2010-08-07",
+          "quote": "As a long-term sufferer of travel sickness",
+          "seen": "opened"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=18703202",
+          "who": "hinkley (Hacker News)",
+          "date": "2018-12-17",
+          "quote": "I was a miserable vomitous mass as a child",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Acupressure bands, pharmacy travel sickness tablets, Carsick.App, the free iPhone Vehicle Motion Cues setting.",
+      "risks": "Checked posts are old (2004-2018). The doc side's Online Book Club and Mumsnet voices couldn't be checked from the code side. No large paid app; money is spent on remedies. Not medical."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
