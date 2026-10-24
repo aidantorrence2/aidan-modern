@@ -34354,6 +34354,174 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-24",
+    "slug": "seen-speech",
+    "name": "Seen Speech",
+    "need": "My hearing is getting worse and I want to learn to lip read, but I can't find a class near me and I don't know where to start.",
+    "headline": "Losing your hearing and want to lip read? Ten minutes a day of practice clips, from mouth shapes to real sentences, at your own pace, from home.",
+    "buyer": "Adults with gradual or recently acquired hearing loss, often hearing-aid users, who find group speech, noise and masks hard and have no lipreading class nearby.",
+    "bullets": [
+      "Ten-minute daily drills that build from lip shapes to words to sentences, with a slow-to-normal speed slider.",
+      "Practice sets for the situations you find hardest (restaurants, appointments, family meals, TV), and exercises in using topic and key words to fill gaps.",
+      "A variety of faces, accents and lighting, a progress score, and a tracker of the look-alike sounds you confuse most."
+    ],
+    "price": "$9.99/month",
+    "priceUsd": 10,
+    "priceNote": "Or $59 a year.",
+    "reasonPrompt": "Where do you struggle most to follow speech, and have you tried lipreading before?",
+    "faq": [
+      {
+        "q": "Does it treat hearing loss?",
+        "a": "No. It's lipreading practice and makes no hearing or medical claims. If your hearing drops suddenly, get medical help urgently; for gradual changes, see a GP or audiologist."
+      },
+      {
+        "q": "Is it a replacement for a class?",
+        "a": "No. Classes with a qualified tutor are great if you can get to one. This is for practice at home, alongside or instead of a class."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-24",
+      "summary": "People with hearing loss say they're thinking of taking lipreading lessons, wish they could learn, would love online courses, have decided to learn lipreading, want to explore classes, and want to learn because they keep losing their hearing.",
+      "wtp": "Lipreading.org sells an online lipreading course at $20 a month or $100 for six months; kh77 on HearingTracker points others to it, and ikchulum asks for 'course materials (DVDs) that I can purchase for self training'.",
+      "signals": [
+        {
+          "url": "https://forum.hearingtracker.com/t/how-many-here-have-learned-to-read-lips/44467",
+          "who": "anita4ross (HearingTracker)",
+          "date": "2019-06-04",
+          "quote": "I am thinking of taking lessons",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forum.hearingtracker.com/t/how-many-here-have-learned-to-read-lips/44467",
+          "who": "WebGuy1 (HearingTracker)",
+          "date": "2019-06-05",
+          "quote": "I wish I could learn",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forum.hearingtracker.com/t/how-many-here-have-learned-to-read-lips/44467",
+          "who": "grantb5 (HearingTracker)",
+          "date": "2019-06-06",
+          "quote": "I would love to hear about courses too, maybe even online.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forum.hearingtracker.com/t/how-many-here-have-learned-to-read-lips/44467?page=3",
+          "who": "ikchulum (HearingTracker)",
+          "date": "2019-08-09",
+          "quote": "And I come to a conclusion that I will learn lip reading.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forum.hearingtracker.com/t/lip-reading-resources-is-online-or-in-class-better/88352",
+          "who": "Deaflogs (HearingTracker)",
+          "date": "2024-04-30",
+          "quote": "I would like to explore lipreading classes.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forum.scope.org.uk/discussion/comment/545038",
+          "who": "Octavia8 (Scope community)",
+          "date": "2022-08-14",
+          "quote": "I have lost and continue to lose my hearing. I want to learn to lip read",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Lipreading.org, local lipreading classes, free YouTube videos.",
+      "risks": "Most HearingTracker quotes are from 2019. No paid lipreading app with a large rating count; UK classes are often cheap. No hearing or medical claims; expectations should be modest."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-24",
+    "slug": "friday-words",
+    "name": "Friday Words",
+    "need": "My child struggles to learn their weekly spellings for the school test, writing them out over and over doesn't stick, and practising every night ends in battles.",
+    "headline": "Snap this week's spelling list. Your child gets five minutes a night on only the words they keep missing, read aloud in a UK or US voice, and a practice test before Friday.",
+    "buyer": "Parents and grandparents of primary-school children, aged about 5 to 11, who bring home a weekly spelling list and test.",
+    "bullets": [
+      "Photo or paste the list to import it, with read-aloud in a UK or US voice, or record your own.",
+      "Nightly five-minute sessions that repeat only the missed words, then a mock test the night before, with past tricky words mixed back in.",
+      "Share the week's list with grandparents or the other parent in one tap."
+    ],
+    "price": "$3.99/month",
+    "priceUsd": 4,
+    "priceNote": "Or $24.99 a year.",
+    "reasonPrompt": "How old is your child, and what happens when you practise spellings now?",
+    "faq": [
+      {
+        "q": "What do you store about my child?",
+        "a": "Only a first name or nickname and their practice results. A parent sets it up and can delete everything at any time."
+      },
+      {
+        "q": "Does it replace the school's method?",
+        "a": "No. It practises the list the school sends home, in short sessions."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-24",
+      "summary": "Parents say their daughter struggles to retain spellings by writing them out over and over, that they bought an app to help with weekly spellings from school, that they just want to load a grandchild's list to practise through the week, that they lack patience practising spellings, and that a child hated learning spellings.",
+      "wtp": "Spelling Shed sells for £2.99 with about 27K UK ratings; Toni_m92 'Purchased this' for weekly spellings. Spelling Notebook (792 UK ratings) has a paid unlock.",
+      "signals": [
+        {
+          "url": "https://itunes.apple.com/gb/rss/customerreviews/page=5/id=1264568098/sortby=mostrecent/json",
+          "who": "Ginger demon (App Store review, Spelling Shed)",
+          "date": "2022-06-29",
+          "quote": "My youngest daughter struggles to retain her spelling by just writing them out over and over",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/gb/rss/customerreviews/page=5/id=1264568098/sortby=mostrecent/json",
+          "who": "Toni_m92 (App Store review, Spelling Shed)",
+          "date": "2022-09-09",
+          "quote": "help with learning his weekly spellings from school",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1264568098/sortby=mostrecent/json",
+          "who": "hi gkxitxti (App Store review, Spelling Shed)",
+          "date": "2025-04-21",
+          "quote": "spelling list so that he could practice through the week",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/gb/rss/customerreviews/page=1/id=461225509/sortby=mostrecent/json",
+          "who": "Ukmisssy (App Store review, Spelling Notebook)",
+          "date": "2019-01-16",
+          "quote": "do not have patience when learning spellings with child",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=461225509/sortby=mostrecent/json",
+          "who": "BaldwinC32 (App Store review, Spelling Notebook)",
+          "date": "2026-01-12",
+          "quote": "so I can add in words they are struggling with",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/gb/rss/customerreviews/page=3/id=461225509/sortby=mostrecent/json",
+          "who": "Naj65 (App Store review, Spelling Notebook)",
+          "date": "2013-04-23",
+          "quote": "hated learning her spellings until I got this app",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Spelling Shed, Spelling Notebook, Squeebles, school platforms.",
+      "risks": "All evidence is App Store reviews of two rival apps; review page numbers drift. Crowded market; the angle is fast list import, a UK voice and sharing with family. Users are parents; minimal child data."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

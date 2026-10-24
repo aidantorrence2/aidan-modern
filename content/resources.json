@@ -14317,5 +14317,94 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "learn-to-lip-read-at-home",
+  "offer": "seen-speech",
+  "title": "Learning to lip read with hearing loss: how to start at home",
+  "description": "What lipreading can and can't do, how to practise at home, tips for everyday conversations, and where to find classes.",
+  "intro": "Lipreading won't catch every word, because many sounds look the same on the lips. But combined with hearing aids, context and good conditions, it can make conversations much easier. This is general information, not medical advice.",
+  "sections": [
+   {
+    "h": "See a professional first",
+    "p": [
+     "If your hearing has dropped suddenly, get medical help urgently. For gradual changes, see a GP or audiologist; hearing aids and lipreading work well together."
+    ]
+   },
+   {
+    "h": "What lipreading involves",
+    "list": [
+     "Watching lip shapes, the jaw, the tongue and facial expressions.",
+     "Using the topic and key words to fill in gaps; context does a lot of the work.",
+     "Many sounds look alike (for example p, b and m), so expect to guess and check."
+    ]
+   },
+   {
+    "h": "Practise at home",
+    "list": [
+     "Watch TV or videos with subtitles, then try a short clip with the sound low and subtitles off.",
+     "Practise with a patient friend or relative: start with single words on a known topic, then short sentences.",
+     "Little and often (10 to 15 minutes a day) works better than long sessions."
+    ]
+   },
+   {
+    "h": "Make conversations easier",
+    "list": [
+     "Sit facing the light, with the speaker's face well lit and not in shadow.",
+     "Ask people to face you, not cover their mouth, and speak clearly without exaggerating.",
+     "Choose quieter places, and tell people what helps you."
+    ]
+   },
+   {
+    "h": "Find a class",
+    "p": [
+     "Lipreading classes are run by some councils, adult education services and hearing loss charities. Ask your audiologist or search for local classes; some are online."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "help-child-learn-weekly-spellings",
+  "offer": "friday-words",
+  "title": "How to help your child learn their weekly spellings (without nightly battles)",
+  "description": "Short, daily practice that focuses on the words your child gets wrong, simple techniques that work better than copying, and how to keep it calm.",
+  "intro": "Copying words out over and over is one of the least effective ways to learn spellings. Short, varied practice focused on the tricky words works better and causes fewer battles.",
+  "sections": [
+   {
+    "h": "Little and often",
+    "p": [
+     "Five minutes a day beats one long session the night before the test. Pick a regular time, such as after a snack."
+    ]
+   },
+   {
+    "h": "Test first, then practise the misses",
+    "list": [
+     "Start each session with a quick test of the list.",
+     "Only practise the words they got wrong, and leave the ones they know."
+    ]
+   },
+   {
+    "h": "Techniques that work better than copying",
+    "list": [
+     "Look, say, cover, write, check: look at the word, say it, cover it, write it from memory, then check.",
+     "Spot the tricky part of the word and say it in an exaggerated way (for example 'Wed-nes-day').",
+     "Make up a silly sentence or picture for a hard word."
+    ]
+   },
+   {
+    "h": "Keep it calm",
+    "list": [
+     "Praise effort, not just right answers.",
+     "Stop on a success, and keep sessions short so they don't become a fight.",
+     "Mix last week's tricky words back in now and then."
+    ]
+   },
+   {
+    "h": "The night before",
+    "p": [
+     "Do one relaxed practice test of the whole list, then stop. A good night's sleep helps more than extra drilling."
+    ]
+   }
+  ]
  }
 ]
