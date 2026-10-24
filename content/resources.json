@@ -13371,5 +13371,49 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "food-symptom-diary-bloating",
+  "offer": "bloat-ledger",
+  "title": "Bloated every day? How to keep a food and symptom diary that finds the trigger",
+  "description": "A simple diary method: log meals, score bloating two hours later, note sleep and stress, and test one food at a time instead of cutting out everything.",
+  "intro": "Cutting out several foods at once often leaves you no wiser. A short, consistent diary usually tells you more. See a GP first if bloating is new, persistent or comes with other symptoms.",
+  "sections": [
+   {
+    "h": "See a doctor first if",
+    "list": [
+     "Bloating won't go away or keeps coming back most days for weeks.",
+     "You've lost weight without trying, see blood in your stools, or your bowel habits have changed.",
+     "You have ongoing tummy pain, a lump, or feel unusually tired."
+    ]
+   },
+   {
+    "h": "What to log",
+    "list": [
+     "What you ate and drank, and when.",
+     "A bloat score from 0 (none) to 3 (severe) about two hours after each meal and at bedtime.",
+     "Sleep, stress, alcohol, exercise and, if relevant, where you are in your cycle."
+    ]
+   },
+   {
+    "h": "Look for patterns after two weeks",
+    "list": [
+     "Count how often each food comes before a 2 or 3 score, and how often it doesn't.",
+     "Check whether bad days follow poor sleep or stress rather than a particular food."
+    ]
+   },
+   {
+    "h": "Test one suspect at a time",
+    "p": [
+     "Drop one suspect for a week or two while everything else stays the same, then bring it back and watch the scores. Changing several things at once makes the result impossible to read. For bigger changes such as low FODMAP, work with a dietitian."
+    ]
+   },
+   {
+    "h": "Take it to your appointment",
+    "p": [
+     "A one-page summary of meals, scores and suspects makes a GP or dietitian appointment more useful."
+    ]
+   }
+  ]
  }
 ]

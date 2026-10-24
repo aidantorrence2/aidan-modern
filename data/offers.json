@@ -32506,6 +32506,69 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-24",
+    "slug": "bloat-ledger",
+    "name": "Bloat Ledger",
+    "need": "I'm bloated most days and I can't work out which food is causing it, even after cutting things out.",
+    "headline": "Bloated most days and can't find the trigger? Log meals in a few taps, score bloating two hours later, and test one suspect food at a time instead of cutting out everything.",
+    "buyer": "Adults who feel bloated most days, have tried cutting foods out, and still can't tell what sets it off.",
+    "bullets": [
+      "Meals logged in a few taps, with a 0-3 bloat score two hours after eating and again at bedtime.",
+      "Non-food factors alongside (sleep, stress, work days, alcohol, cycle) and a suspects list showing how often each food comes before a bad score.",
+      "A one-suspect-at-a-time drop-and-reintroduce plan, and a one-page summary to take to a GP or dietitian."
+    ],
+    "price": "$3.99/month",
+    "priceUsd": 4,
+    "priceNote": "Or $24.99 a year.",
+    "reasonPrompt": "How long have you been bloated most days, and what have you already tried cutting out?",
+    "faq": [
+      {
+        "q": "Is it medical advice?",
+        "a": "No. It's a diary that helps you spot patterns and talk to a professional. See a GP first, and promptly for weight loss, blood in stools, ongoing changes in bowel habit, persistent pain or bloating that won't go away."
+      },
+      {
+        "q": "Is it a diet?",
+        "a": "No. It doesn't prescribe a diet or promise a result. If you want to try something like low FODMAP, do it with a dietitian."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-24",
+      "summary": "People say a food diary is how they identified a couple of foods causing them issues, that they use an app to track and take note of trigger foods, and that tracking symptoms against meal times is hard without one.",
+      "wtp": "mySymptoms (4.6, about 4.1K ratings) sells $9.99 a month, $39.99 for six months or $59.99 a year; Cara Care (4.8, about 4.7K ratings) sells a $89.99 premium. Ktugrif says 'if it weren't free I would gladly pay for it'.",
+      "signals": [
+        {
+          "url": "https://apps.apple.com/us/app/id405231632",
+          "who": "celiacceline (App Store review, mySymptoms)",
+          "date": "2017-10-21",
+          "quote": "I have identified a couple of foods that are causing me issues",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1133687886",
+          "who": "Flayel (App Store review, Cara Care)",
+          "date": "2018-02-06",
+          "quote": "track and take note of my trigger foods",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1133687886",
+          "who": "Ktugrif (App Store review, Cara Care)",
+          "date": "2019-04-02",
+          "quote": "if it weren’t free I would gladly pay for it",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "mySymptoms, Cara Care, paper food diaries, dietitians.",
+      "risks": "Verified evidence comes from App Store reviews on two apps. The doc side also opened Mumsnet threads, but Mumsnet blocks our checks so those aren't counted here. Health-adjacent: copy is not medical, and red-flag symptoms go to a doctor."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
