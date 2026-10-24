@@ -13254,5 +13254,44 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "20-20-20-rule-desk-job",
+  "offer": "twenty-feet",
+  "title": "The 20-20-20 rule, and how to actually stick to it at a desk job",
+  "description": "Every 20 minutes, look at something about 20 feet (6 metres) away for 20 seconds. Here's how to make it a habit, plus simple screen set-up tips.",
+  "intro": "Long stretches of close-up screen work can leave your eyes tired and sore. Short, regular breaks to look into the distance help many people feel more comfortable.",
+  "sections": [
+   {
+    "h": "The rule",
+    "list": [
+     "Every 20 minutes, look at something about 20 feet (6 metres) away for 20 seconds. Out of a window works well."
+    ]
+   },
+   {
+    "h": "Make it stick",
+    "list": [
+     "Tie breaks to things that already happen, like sending an email or finishing a task, or use a gentle reminder that won't interrupt calls."
+    ]
+   },
+   {
+    "h": "Remember to blink",
+    "list": [
+     "People tend to blink less when concentrating on a screen. A few slow, full blinks during each break can help your eyes feel less dry."
+    ]
+   },
+   {
+    "h": "Set up your screen",
+    "list": [
+     "Put the screen about an arm's length away with the top at or slightly below eye level. Reduce glare from windows and lights, and match screen brightness to the room."
+    ]
+   },
+   {
+    "h": "Get your eyes checked",
+    "p": [
+     "If you have eye pain, frequent headaches or blurred vision, see an optometrist or doctor. In the UK, employers must arrange an eye test for regular screen users who ask for one."
+    ]
+   }
+  ]
  }
 ]

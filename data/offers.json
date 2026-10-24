@@ -32282,6 +32282,76 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-24",
+    "slug": "twenty-feet",
+    "name": "Twenty Feet",
+    "need": "My eyes hurt and I get headaches from staring at a screen all day, and I always forget or dismiss the breaks I know I should take.",
+    "headline": "Eyes sore from screens all day? A gentle 20-second look-away every 20 minutes that fades in softly, waits during calls, and tracks the breaks you actually take.",
+    "buyer": "Desk workers at a screen most of the day who forget or dismiss eye breaks.",
+    "bullets": [
+      "A soft screen fade every 20 minutes prompting you to look at something far away for 20 seconds, on laptop and phone.",
+      "Holds automatically during video calls and full-screen work, with a blink cue and an hourly stand-up reminder.",
+      "An evening tally of breaks taken, held and skipped, so you can see the habit building."
+    ],
+    "price": "$2.99/month",
+    "priceUsd": 3,
+    "priceNote": "Or $14.99 a year.",
+    "reasonPrompt": "How many hours a day are you at a screen, and when do you usually skip breaks?",
+    "faq": [
+      {
+        "q": "Is it medical advice?",
+        "a": "No. It helps you take regular screen breaks. If you have eye pain, frequent headaches or changes in your vision, see an optometrist or doctor."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Anyone who works at a screen. It is an independent app, not linked to Apple, Google, Microsoft or any eye-care brand."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-24",
+      "summary": "Screen workers ask how to relieve eye strain, say they've struggled greatly with it, that remembering to take breaks is important to keep using their vision at work, and that headaches in particular are a problem; many already pay for break-reminder apps.",
+      "wtp": "Eye Care 20 20 20 (385 ratings) sells $2.99 a week up to $49.99 a year; Relax Eyes-Pro (186 ratings) sells VIP for $3.99; LookAway for Mac sells $4.99 a month, $14.99 a year or $49.99 lifetime.",
+      "signals": [
+        {
+          "url": "https://community.typesy.com/t/i-have-eye-strain/3403",
+          "who": "humairaamair (Typesy community)",
+          "date": "2020-04-24",
+          "quote": "Please give some advice how to relieve eye strain.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://community.typesy.com/t/i-have-eye-strain/3403",
+          "who": "AGM (Typesy community)",
+          "date": "2020-04-24",
+          "quote": "struggled greatly with eye strain",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id967901219?see-all=reviews",
+          "who": "SteelSeraph90 (App Store review, Eye Care 20 20 20)",
+          "date": "2025-03-22",
+          "quote": "remembering to take breaks is important for me",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id6747192301?see-all=reviews",
+          "who": "zakah123 (App Store review, LookAway)",
+          "date": "2026-05-28",
+          "quote": "Vision and headaches in particular.",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Eye Care 20 20 20, LookAway, Relax Eyes, built-in screen-time and break apps.",
+      "risks": "A crowded market of break apps; the angle is breaks that don't interrupt calls and a tally that shows the habit. Not medical: symptoms go to an optometrist or doctor."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
