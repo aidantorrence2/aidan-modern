@@ -34606,6 +34606,90 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-24",
+    "slug": "migraine-notes",
+    "name": "Migraine Notes",
+    "need": "I get migraines and can't work out what triggers them, and I want a clear record to take to my doctor.",
+    "headline": "Migraines and no idea what sets them off? A few-tap attack log in dark mode, a ten-second daily factor check, and a four-week view of what came before each attack.",
+    "buyer": "Adults with migraines who can't work out their triggers and want a clear record for a GP or neurologist.",
+    "bullets": [
+      "A dark-screen attack log in a few taps: start, severity 0-3, where, aura, what you took and whether it helped.",
+      "A ten-second daily check of the factors you choose (sleep, skipped meals, caffeine, alcohol, screen time, stress, cycle, weather) and a four-week view of what came before attacks versus clear days.",
+      "Monthly headache-day and painkiller-day counts, and a one-page summary for your GP or neurologist."
+    ],
+    "price": "$2.99/month",
+    "priceUsd": 3,
+    "priceNote": "Or $19.99 a year.",
+    "reasonPrompt": "How often do you get migraines, and what have you already noticed about them?",
+    "faq": [
+      {
+        "q": "Is it medical advice?",
+        "a": "No. It's a diary and doesn't diagnose or recommend treatment. Get urgent help for a sudden, very severe headache, or a headache with a stiff neck, fever, confusion, weakness, numbness, speech problems, or after a head injury."
+      },
+      {
+        "q": "Is it linked to a brand?",
+        "a": "No. It's independent and recommends no products."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-24",
+      "summary": "People with migraines say they can't seem to figure out the trigger, wonder whether something is a real trigger or part of the migraine itself, can't wait to find all their triggers, and needed a reliable way to track attacks for their doctor.",
+      "wtp": "Migraine Buddy (about 42K ratings) sells plans at $9.99 a month or $69.99 a year. Reviewers say 'Migraine Buddy is worth every penny', 'The plus subscription is absolutely worth it in seeing what triggers you', and that it helped so much they decided to buy it.",
+      "signals": [
+        {
+          "url": "https://migraine.com/forums/pinpointing-my-triggers",
+          "who": "ig95 (Migraine.com forum)",
+          "date": "undated",
+          "quote": "figure out the trigger",
+          "seen": "opened"
+        },
+        {
+          "url": "https://migraine.com/forums/confused-about-triggers",
+          "who": "whovian (Migraine.com forum)",
+          "date": "undated",
+          "quote": "caught in the loop of the initial migraine",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=975074413/sortby=mostrecent/json",
+          "who": "KDub23_Talks (App Store review, Migraine Buddy)",
+          "date": "2026-10-13",
+          "quote": "needed a convenient and reliable way to track them for my doctor",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=2/id=975074413/sortby=mostrecent/json",
+          "who": "Rustlor (App Store review, Migraine Buddy)",
+          "date": "2026-05-23",
+          "quote": "find all my triggers and get these under control",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=2/id=975074413/sortby=mostrecent/json",
+          "who": "Capefear_girl85 (App Store review, Migraine Buddy)",
+          "date": "2026-04-24",
+          "quote": "The plus subscription is absolutely worth it in seeing what triggers you",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=2/id=975074413/sortby=mostrecent/json",
+          "who": "lepcrna (App Store review, Migraine Buddy)",
+          "date": "2026-03-28",
+          "quote": "Migraine Buddy is worth every penny",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Migraine Buddy, other headache diaries, paper diaries.",
+      "risks": "Migraine Buddy is large and established; the angle is a simpler, cheaper trigger diary. Forum posts are undated; the doc side's Mumsnet voices couldn't be checked. Not medical."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

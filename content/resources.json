@@ -14453,5 +14453,48 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "migraine-diary-find-triggers",
+  "offer": "migraine-notes",
+  "title": "How to keep a migraine diary that actually finds your triggers",
+  "description": "What to record for each attack and each day, how long to keep it, how to spot patterns, and what to take to your GP.",
+  "intro": "Migraine triggers are personal and often combine, which makes them hard to spot from memory. A simple diary kept for a few weeks shows much more. This is general information, not medical advice.",
+  "sections": [
+   {
+    "h": "Get urgent help if",
+    "list": [
+     "You have a sudden, very severe headache unlike any before.",
+     "A headache comes with a stiff neck, fever, confusion, weakness, numbness, slurred speech or vision loss, or follows a head injury."
+    ]
+   },
+   {
+    "h": "For each attack, record",
+    "list": [
+     "When it started and ended, how bad it was (0 to 3), and where the pain was.",
+     "Any aura or warning signs, and what you took and whether it helped."
+    ]
+   },
+   {
+    "h": "Each day, record",
+    "list": [
+     "Sleep, meals (including skipped ones), caffeine, alcohol and water.",
+     "Stress, screen time, exercise, and where you are in your cycle if relevant.",
+     "Weather changes you notice."
+    ]
+   },
+   {
+    "h": "Look for patterns",
+    "p": [
+     "After four to eight weeks, compare the 24 hours before attacks with clear days. Triggers often combine, such as poor sleep plus a skipped meal."
+    ]
+   },
+   {
+    "h": "Painkillers and your GP",
+    "p": [
+     "Count the days each month you take painkillers. Taking them on many days can itself cause more headaches, so mention it to your GP or pharmacist. Take your diary to appointments; it helps a doctor see frequency and patterns quickly."
+    ]
+   }
+  ]
  }
 ]
