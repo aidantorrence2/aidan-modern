@@ -14273,5 +14273,49 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "find-eczema-triggers-diary",
+  "offer": "flare-notes",
+  "title": "How to find your eczema triggers with a two-week diary",
+  "description": "Common eczema triggers, a simple daily diary, testing one change at a time, and when to see a GP or pharmacist.",
+  "intro": "Eczema triggers vary from person to person, which is why advice often conflicts. A short, consistent diary helps you see your own pattern. This is general information, not medical advice.",
+  "sections": [
+   {
+    "h": "Common triggers",
+    "list": [
+     "Irritants: soaps, shower gels, washing-up liquid, detergents and frequent hand washing.",
+     "Weather: cold, dry air, heat and sweating.",
+     "Fabrics such as wool and some synthetics.",
+     "Stress, and for some people dust mites, pets, pollen or certain foods."
+    ]
+   },
+   {
+    "h": "What to log each day",
+    "list": [
+     "How your skin is (calm, itchy or flaring) and where.",
+     "What you washed with, any new products, the weather, stress, sleep and anything unusual.",
+     "Which creams you used and when."
+    ]
+   },
+   {
+    "h": "Test one change at a time",
+    "p": [
+     "After two weeks, pick one likely trigger, such as a new shower gel, and change only that for two weeks. Changing several things at once makes it impossible to tell what helped."
+    ]
+   },
+   {
+    "h": "Photos help",
+    "p": [
+     "Take a photo of the same patch, in the same light and angle, every few days. It's easier to see real change than to rely on memory."
+    ]
+   },
+   {
+    "h": "When to get help",
+    "p": [
+     "Talk to a pharmacist or GP if your eczema isn't improving, is affecting sleep or daily life, or you're unsure about treatments. Get urgent help if skin is hot, swollen, weeping or crusted, or you feel unwell."
+    ]
+   }
+  ]
  }
 ]

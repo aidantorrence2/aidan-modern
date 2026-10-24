@@ -34263,6 +34263,97 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-24",
+    "slug": "flare-notes",
+    "name": "Flare Notes",
+    "need": "My eczema keeps flaring, I've tried so many creams, and I can't work out what sets it off.",
+    "headline": "Eczema keeps flaring and you can't work out why? A ten-second daily skin check, quick notes on what was going on, and a two-week one-change test to find your triggers.",
+    "buyer": "Adults whose eczema keeps flaring, who've tried many creams and products, and who can't work out what triggers it.",
+    "bullets": [
+      "A ten-second daily skin check (calm, itchy or flaring; where; sleep lost to itching) and one-tap notes: hand washing, washing-up liquid, a new product, sweat, heat or cold, stress.",
+      "Your creams and routine with your own reminders and what each seemed to do, plus a two-week test of one change at a time.",
+      "Same-angle patch photos kept on your phone, and a one-page summary for a GP, dermatologist or pharmacist."
+    ],
+    "price": "$2.99/month",
+    "priceUsd": 3,
+    "priceNote": "Or $19.99 a year.",
+    "reasonPrompt": "Where does your eczema flare, and what have you tried so far?",
+    "faq": [
+      {
+        "q": "Is it medical advice?",
+        "a": "No. It's a diary. It doesn't recommend treatments or promise fewer flares. See a GP or pharmacist about treatment, and get urgent help if skin is hot, weeping, crusted or very painful, or you feel unwell."
+      },
+      {
+        "q": "Is it linked to a brand?",
+        "a": "No. It's independent and recommends no products."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-24",
+      "summary": "Adults say their eczema itches like crazy, flares up when they least expect it or when they're stressed, is set off by water, flares on their scalp whenever they're particularly stressed, and that they've tried so many emollients and don't know how long to persevere.",
+      "wtp": "People already spend on the problem: lollipopsarah has 'done all the steroids/PUVA/chinese treatment etc', Lum buys Dermol 500 for hand washing, and Budgie5 has tried 'so many' emollients. Paid eczema-tracker apps exist (for example Skinote, from $2.99 a month), though with few ratings.",
+      "signals": [
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/3760449/eczema",
+          "who": "Patronus (MoneySavingExpert)",
+          "date": "2012-01-28",
+          "quote": "it itches like crazy",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/3760449/eczema",
+          "who": "lollipopsarah (MoneySavingExpert)",
+          "date": "2012-01-28",
+          "quote": "flares up when you least expect it",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/3760449/eczema",
+          "who": "Tiddlywinks (MoneySavingExpert)",
+          "date": "2012-01-28",
+          "quote": "mine flares up when I get really stressed",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/3760449/eczema/p2",
+          "who": "Lum (MoneySavingExpert)",
+          "date": "2012-01-31",
+          "quote": "Water also sets off my skin",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/3760449/eczema/p2",
+          "who": "faerie~spangles (MoneySavingExpert)",
+          "date": "2012-01-31",
+          "quote": "I too have eczema on my hands",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/3874679/eczema-on-scalp",
+          "who": "Hezzawithkids (MoneySavingExpert)",
+          "date": "2012-03-28",
+          "quote": "particularly stressed I have had a patch of eczema flare up on my scalp",
+          "seen": "opened"
+        },
+        {
+          "url": "https://healthunlocked.com/my-skin/posts/143818038/should-emollients-make-your-eczema-worse-before-better-how-long-to-persevere-with-new-emollient",
+          "who": "Budgie5 (HealthUnlocked)",
+          "date": "undated",
+          "quote": "How long should you persevere before accepting an emollient does not suit you",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "EczemaWise and other tracker apps, paper diaries, dermatology clinics.",
+      "risks": "Checked MSE posts are from 2012; the doc side's Mumsnet voices couldn't be checked from the code side. Tracker apps have few ratings, so the money evidence is spending on treatments, not apps. Not medical."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
