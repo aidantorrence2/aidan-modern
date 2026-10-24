@@ -31833,6 +31833,146 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-24",
+    "slug": "peg-ready",
+    "name": "Peg Ready",
+    "need": "I'm learning, or relearning, cribbage and I can't count my hands fast or accurately, and the apps count for me too fast to see what I missed.",
+    "headline": "Can't count your cribbage hands quickly? Count first at your own pace, check every point, and see the discard and play you should have made.",
+    "buyer": "Adults learning or returning to cribbage to play with a partner, family, pub or local league.",
+    "bullets": [
+      "Count-it-yourself drills, then a slow, step-by-step check of fifteens, runs, pairs, flushes and nobs.",
+      "Discard-to-crib advice with the reason in plain words.",
+      "Replays showing what you could have played for more points, plus pegging drills and a muggins mode."
+    ],
+    "price": "$3.99/month",
+    "priceUsd": 4,
+    "priceNote": "Or $24.99 a year.",
+    "reasonPrompt": "Who do you play cribbage with, and what trips you up most?",
+    "faq": [
+      {
+        "q": "Is it a cribbage game?",
+        "a": "It's a trainer for counting, discarding and pegging, so you play better at a real table."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Anyone learning cribbage. It is an independent app, not linked to any cribbage app, league or publisher."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-24",
+      "summary": "Players say apps don't give them time to see how points were counted, that they're just learning to score, wish an app showed what they could have played for more, take a while to count, and lean on scoring cheat sheets.",
+      "wtp": "Cribbage Pro (about 60K ratings) sells an ad-free upgrade for $4.99, and reviewer PFinlay1986 says 'I paid the $5 to be done with the ads'.",
+      "signals": [
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1564455593/sortby=mostrecent/json",
+          "who": "PFinlay1986 (App Store review, Cribbage)",
+          "date": "2026-01-25",
+          "quote": "just learning how to score and liked being able to check my choices",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=3/id=301154120/sortby=mostrecent/json",
+          "who": "Gram2pink (App Store review, Cribbage Premium)",
+          "date": "2026-03-28",
+          "quote": "it takes me a while to count my points.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=4/id=1116791611/sortby=mostrecent/json",
+          "who": "App Store reviewer (Ultimate Cribbage)",
+          "date": "2026-01-12",
+          "quote": "I wish it had a way to show you what you COULD have played for more points",
+          "seen": "opened"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=46940215",
+          "who": "linsomniac (Hacker News)",
+          "date": "2026-02-09",
+          "quote": "leaning hard on cribbage scoring cheat sheets",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Cribbage Pro, Cribbage Classic, Cribbage Premium, scoring cheat sheets.",
+      "risks": "The money is ad removal in game apps, not paid training. Incumbents already have count-it-yourself modes, so the angle is learning to count and discard."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-24",
+    "slug": "meld-ready",
+    "name": "Meld Ready",
+    "need": "I've been invited to join a canasta group and I need to learn their exact rules and some real strategy so I don't embarrass myself at the table.",
+    "headline": "Joining a canasta group? Practise their exact house rules with every move explained and real strategy hints, so you don't slow the table.",
+    "buyer": "Adults learning or returning to canasta for a club, family or friends' card group.",
+    "bullets": [
+      "A house-rules builder: classic, modern American or Hand and Foot, with custom going-out rules.",
+      "A 'why this move' explanation on every pick-up, meld and discard, at a pace you choose.",
+      "Strategy drills (when to freeze the pile, when to go out) and a cheat sheet of your group's rules for the table."
+    ],
+    "price": "$4.99/month",
+    "priceUsd": 5,
+    "priceNote": "Or $29.99 a year.",
+    "reasonPrompt": "Which version does your group play, and when is your first game?",
+    "faq": [
+      {
+        "q": "Is it a canasta game?",
+        "a": "It's a practice and learning tool, so you can play confidently with real people."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Anyone learning canasta. It is an independent app, not linked to any canasta app, club or publisher."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-24",
+      "summary": "New players say they've been invited to join a regular canasta group, want to learn because a parent loves the game, would love to understand the strategy, and find group rules differ from what they read.",
+      "wtp": "Canasta - Online & offline (10.6K ratings) sells ad removal for $9.99, and reviewer mkp1151 says it was 'well worth the 10 dollars'; Canasta. (25K ratings) sells Advanced Features for $9.99.",
+      "signals": [
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=3/id=911258778/sortby=mostrecent/json",
+          "who": "TheOtherJan (App Store review, Canasta.)",
+          "date": "2025-04-12",
+          "quote": "I have been invited by 3 others ladies to join them in playing Canasta",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=3/id=911258778/sortby=mostrecent/json",
+          "who": "catcat1997 (App Store review, Canasta.)",
+          "date": "2025-01-10",
+          "quote": "my 86 year-old mother loves the game",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=3/id=1643871097/sortby=mostrecent/json",
+          "who": "DBandRAmom (App Store review, Canasta Classic)",
+          "date": "2024-03-20",
+          "quote": "I would love to understand more about the strategy",
+          "seen": "opened"
+        },
+        {
+          "url": "https://boards.straightdope.com/t/talk-to-me-about-canasta/1005180",
+          "who": "Monty (Straight Dope)",
+          "date": "2024-08-03",
+          "quote": "I learned to play Canasta, but only the classic rules.",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Canasta game apps, rule books, club lessons.",
+      "risks": "The money is ad removal and feature unlocks in game apps, not paid tuition. Many apps already offer rule options; the angle is your group's exact rules plus explanations."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

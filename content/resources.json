@@ -13018,5 +13018,83 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "how-to-count-cribbage-hand",
+  "offer": "peg-ready",
+  "title": "How to count a cribbage hand: a simple order that never misses points",
+  "description": "Count your four cards plus the starter in the same order every time: fifteens, pairs, runs, flush, then nobs.",
+  "intro": "Counting gets fast once you always count in the same order. Use your four cards plus the starter card.",
+  "sections": [
+   {
+    "h": "1. Fifteens (2 points each)",
+    "list": [
+     "Find every combination of cards that adds up to 15. Face cards count 10, aces count 1. Say them as you go: 'fifteen two, fifteen four…'"
+    ]
+   },
+   {
+    "h": "2. Pairs (2 points each)",
+    "list": [
+     "Every pair of same-rank cards scores 2. Three of a kind is three pairs (6); four of a kind is six pairs (12)."
+    ]
+   },
+   {
+    "h": "3. Runs (1 point per card)",
+    "list": [
+     "Three or more cards in sequence score one per card. Count double and triple runs: 3-4-4-5 is two runs of three (6 points), plus the pair."
+    ]
+   },
+   {
+    "h": "4. Flush",
+    "list": [
+     "Four cards of the same suit in your hand score 4, or 5 if the starter matches too. In the crib, only a five-card flush counts."
+    ]
+   },
+   {
+    "h": "5. Nobs (1 point)",
+    "p": [
+     "A jack in your hand of the same suit as the starter card scores 1. Practise by counting slowly, then checking, and note which kinds of combinations you missed."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "joining-a-canasta-group",
+  "offer": "meld-ready",
+  "title": "Joining a canasta group: what to learn first",
+  "description": "Canasta rules vary a lot between groups. Learn the basic idea, then ask your group a few key house-rule questions before your first game.",
+  "intro": "Most of the worry about joining a canasta group comes from not knowing their house rules. A few questions in advance make it much easier.",
+  "sections": [
+   {
+    "h": "The basic idea",
+    "list": [
+     "You make melds of three or more cards of the same rank, and a canasta is a meld of seven. Teams score for melds, canastas and going out."
+    ]
+   },
+   {
+    "h": "Ask which version they play",
+    "list": [
+     "Classic canasta, modern American canasta and Hand and Foot all differ in the number of decks, wild cards and how you go out. Ask before you practise."
+    ]
+   },
+   {
+    "h": "Ask the key house rules",
+    "list": [
+     "What's the minimum count for your first meld? When is the discard pile frozen, and how do you pick it up? What do red threes and black threes do? What do you need before you can go out?"
+    ]
+   },
+   {
+    "h": "Learn a little strategy",
+    "list": [
+     "Watch what others discard and pick up, avoid feeding the pile cards your opponents are collecting, and don't rush to go out if your partner still has a strong hand."
+    ]
+   },
+   {
+    "h": "Bring a cheat sheet",
+    "p": [
+     "Write your group's rules on one card and keep it with you for the first few games. Most groups are happy to help a new player who's made the effort to learn."
+    ]
+   }
+  ]
  }
 ]
