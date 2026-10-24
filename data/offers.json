@@ -32569,6 +32569,90 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-24",
+    "slug": "ride-order",
+    "name": "Ride Order",
+    "need": "I'm confused by the paid skip-the-line passes and virtual queues at Walt Disney World, and I don't know which rides to book, in what order, or when my booking window opens.",
+    "headline": "Confused by paid line-skip passes and virtual queues on a Florida theme-park trip? Enter your park days and rides; get what to book, when to tap, and in what order.",
+    "buyer": "Adults planning a Walt Disney World trip, especially first-timers, people returning after years away and parents with small kids, who find the paid line-skip and virtual queue rules confusing.",
+    "bullets": [
+      "A booking-window calculator for on-site or off-site stays, with phone alarms for each window.",
+      "A per-park list of which rides are worth paying to skip and which rarely have a queue, plus a tap order for booking morning built from your must-dos.",
+      "Group setup for kids under height limits and riders who skip some rides, and a one-tap re-plan when a time changes or a virtual queue is called."
+    ],
+    "price": "$3.99/month",
+    "priceUsd": 4,
+    "priceNote": "Or $14.99 a year.",
+    "reasonPrompt": "When is your trip, how many park days, and which part of the booking is confusing you?",
+    "faq": [
+      {
+        "q": "Is it official?",
+        "a": "No. It's an independent, unofficial planner, not affiliated with or endorsed by Disney, and it doesn't book anything for you. You still book in the official app; rules change, so always check there."
+      },
+      {
+        "q": "Does it show live wait times?",
+        "a": "No. It plans what to book and when; it isn't a wait-time tracker."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-24",
+      "summary": "Visitors say they're confused about how the paid multi-ride pass works for a group, worry about getting booking day wrong, have no idea what to do at one park, are confused about virtual queues, and find it all overwhelming as first-timers.",
+      "wtp": "Disney World Lines (TP) by TouringPlans has 4,938 ratings (4.78) and sells a $24.99 one-year subscription; reviewer Kikiee887 says the book and subscription are 'STILL worth the money'. Visitors already pay per day for line-skip passes.",
+      "signals": [
+        {
+          "url": "https://forums.wdwmagic.com/threads/need-help-how-does-lightning-lane-multi-pass-work-for-a-group-of-7.986988/",
+          "who": "LittleMerman (WDWMagic)",
+          "date": "2025-10-24",
+          "quote": "I’m a little confused about how the Lightning Lane Multi Pass works for a group of 7 people",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.wdwmagic.com/threads/ll-booking-day-strategy.987625/",
+          "who": "Jenniferlt (WDWMagic)",
+          "date": "2026-02-14",
+          "quote": "I am probably overthinking this",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.wdwmagic.com/threads/hollywood-studios-help-us.988665/",
+          "who": "hannavaldez (WDWMagic)",
+          "date": "2026-09-11",
+          "quote": "I have no idea what we should do",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.wdwmagic.com/threads/can-someone-explain-to-me-like-im-an-idiot-how-virtual-queues-work-with-multipass.984260/",
+          "who": "GigglesMcSnort (WDWMagic)",
+          "date": "2024-07-16",
+          "quote": "kind of confused, as you can tell by the title",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.wdwmagic.com/threads/1st-time-visitor-genie-plus-requesting-advice.977975/",
+          "who": "utcreed (WDWMagic)",
+          "date": "2022-07-03",
+          "quote": "As a first timer all of this is overwhelming and any advice is greatly appreciated.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=7/id=411091283/sortby=mostrecent/json",
+          "who": "Clutter free wannabe (App Store review, Disney World Lines)",
+          "date": "2018-04-11",
+          "quote": "Knowing from prior experience how overwhelming planning a Disney trip is",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "TouringPlans Lines, the official park app, planning guidebooks, travel agents.",
+      "risks": "Forum evidence is all from WDWMagic (6 threads); App Store quotes are older. Pass rules change often, so content needs upkeep. Must stay clearly unofficial and use no Disney branding."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

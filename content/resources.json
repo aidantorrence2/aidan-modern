@@ -13415,5 +13415,47 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "theme-park-booking-day-plan",
+  "offer": "ride-order",
+  "title": "Paid ride passes and virtual queues: a simple booking-day plan for a Florida theme-park trip",
+  "description": "Work out when your booking window opens, which rides are worth paying to skip, and what to tap first, without overthinking it.",
+  "intro": "Paid line-skip passes and virtual queues confuse a lot of first-timers. A short plan made before booking day takes most of the stress out. Rules change, so always check the official park app.",
+  "sections": [
+   {
+    "h": "Find your booking window",
+    "list": [
+     "Check in the official app when bookings open for your stay type (on-site hotel guests often get an earlier window) and set an alarm for a few minutes before.",
+     "Link everyone's tickets in one party first, so you book for the whole group at once."
+    ]
+   },
+   {
+    "h": "Decide what's worth paying to skip",
+    "list": [
+     "List each park day's must-do rides. Rides with long queues all day are the best value; rides that rarely queue aren't worth a booking.",
+     "Check height limits so you don't book a ride someone in your group can't go on."
+    ]
+   },
+   {
+    "h": "Choose a tap order",
+    "list": [
+     "Book the hardest-to-get ride first, then fill in the rest around your day.",
+     "Keep a short backup list in case your first choice has gone."
+    ]
+   },
+   {
+    "h": "Virtual queues",
+    "p": [
+     "Some rides use a virtual queue that opens at set times. Note the times, be ready on the app, and know that a joined queue is called later in the day."
+    ]
+   },
+   {
+    "h": "Keep it calm",
+    "p": [
+     "You don't need every ride booked. A plan with two or three priorities a day, plus early starts, usually beats a packed schedule."
+    ]
+   }
+  ]
  }
 ]
