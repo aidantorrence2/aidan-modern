@@ -14931,5 +14931,47 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "overpay-mortgage-or-save",
+  "offer": "deed-day",
+  "title": "Overpay your mortgage or save? How to compare, and avoid early repayment charges (UK)",
+  "description": "How to compare your mortgage rate with savings after tax, check your penalty-free overpayment allowance, and plan around the end of a fixed deal. Not advice.",
+  "intro": "Overpaying a mortgage can save a lot of interest, but it isn't always the best use of spare money. A few numbers make the comparison clearer. This is general information, not financial advice.",
+  "sections": [
+   {
+    "h": "Compare the rates",
+    "list": [
+     "Overpaying saves you roughly your mortgage interest rate on the amount you overpay.",
+     "Saving earns the savings rate, minus any tax on the interest.",
+     "If your mortgage rate is higher than what you'd earn after tax, overpaying usually saves more; if it's lower, saving may come out ahead."
+    ]
+   },
+   {
+    "h": "Check your allowance",
+    "list": [
+     "Many lenders let you overpay up to a set amount each year (often 10% of the balance) without an early repayment charge during a fixed or discounted deal. Check your own lender's terms.",
+     "Overpaying more than the allowance during a deal can trigger a charge."
+    ]
+   },
+   {
+    "h": "Keep money you might need",
+    "p": [
+     "Once you overpay, it's usually hard to get the money back. Keep an emergency fund in easy-access savings first."
+    ]
+   },
+   {
+    "h": "Plan around your fix ending",
+    "p": [
+     "When a fix ends you can usually pay off a larger lump sum without a charge. Some people save during the fix and pay down the balance at remortgage, which can also help with the rate you get."
+    ]
+   },
+   {
+    "h": "Shorter term or lower payments",
+    "p": [
+     "Ask your lender whether overpayments shorten your term or reduce your monthly payment, and choose what suits you."
+    ]
+   }
+  ]
  }
 ]

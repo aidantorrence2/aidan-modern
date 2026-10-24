@@ -35544,6 +35544,104 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-24",
+    "slug": "deed-day",
+    "name": "Deed Day",
+    "need": "I want to pay off my mortgage early, but I can't tell whether overpaying or saving is better for me, or how much I can overpay before my lender charges a penalty.",
+    "headline": "Overpay or save? See what each extra pound does to your mortgage-free date, and stay inside your lender's penalty-free allowance before your fix ends.",
+    "buyer": "UK adults with a repayment mortgage who want to clear it early, especially people within a year or two of remortgaging.",
+    "bullets": [
+      "An overpay-versus-save comparison using your mortgage rate and a savings rate you enter, after tax.",
+      "A penalty-free allowance tracker with a warning before you go over, and a log of lump sums and monthly overpayments with a live mortgage-free date and interest saved.",
+      "A fix-end planner for building a pot to put down at remortgage, and 'shorten term' versus 'lower payment' side by side."
+    ],
+    "price": "$4.99/month",
+    "priceUsd": 5,
+    "priceNote": "Or $29.99 a year.",
+    "reasonPrompt": "When does your current fix end, and roughly how much could you overpay each month?",
+    "faq": [
+      {
+        "q": "Is it financial advice?",
+        "a": "No. It shows calculations from the numbers you enter. It isn't regulated advice and doesn't tell you whether to overpay. Check your lender's terms, and keep an emergency fund."
+      },
+      {
+        "q": "Is it linked to a lender?",
+        "a": "No. It's independent and takes no commission."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-24",
+      "summary": "Homeowners ask whether to focus on overpaying in the final year of a fix, say now is the time to buckle down and clear it, hope to bring their balance down by overpaying, wonder whether to move their savings into the mortgage, and ask how anyone pays a mortgage off early.",
+      "wtp": "Mortgage Mentor, an overpayment calculator, sells for £1.99 (134 ratings), and MonsterVoyage calls it 'worth every penny'. Sprive, which helps people overpay, has about 8.9K UK ratings.",
+      "signals": [
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/6661469/should-i-overpay",
+          "who": "fc320 (MoneySavingExpert)",
+          "date": "2026-03-26",
+          "quote": "should I focus on overpaying this final year",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/6665851/frosty-melts-the-mortgage",
+          "who": "FrostyFrosty (MoneySavingExpert)",
+          "date": "2026-04-27",
+          "quote": "now is the time to buckle down and clear it",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/6602715/misstaras-mortgage-free-diary",
+          "who": "misstara (MoneySavingExpert)",
+          "date": "2025-04-21",
+          "quote": "hoping to bring that down by overpaying",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/6396634/overpaying-vs-saving",
+          "who": "Quixoticity11 (MoneySavingExpert)",
+          "date": "2022-10-22",
+          "quote": "with the intention of overpaying my mortgage by this amount",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/6367728/solo-mf-wannabe-as-soon-as-i-can-be-at-least-by-2032",
+          "who": "CasualMFW (MoneySavingExpert)",
+          "date": "2022-06-25",
+          "quote": "my aim is to be MF as soon as possible",
+          "seen": "opened"
+        },
+        {
+          "url": "https://singletrackworld.com/forum/off-topic/paying-off-the-mortgage-early/",
+          "who": "andybrad (Singletrack World)",
+          "date": "2016-02-10",
+          "quote": "how the hell can you pay your mortgage off early",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/gb/rss/customerreviews/page=1/id=1504836142/sortby=mostrecent/json",
+          "who": "Runderwood_ (App Store review, Sprive)",
+          "date": "2026-10-11",
+          "quote": "chip away at our mortgage",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/gb/rss/customerreviews/page=1/id=409695797/sortby=mostrecent/json",
+          "who": "MonsterVoyage (App Store review, Mortgage Mentor)",
+          "date": "2021-01-16",
+          "quote": "reduce my mortgage term significantly",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Sprive, Mortgage Mentor, free online overpayment calculators, spreadsheets.",
+      "risks": "Paid proof is small (a £1.99 app); free calculators exist. UK-centric. Must show calculations only, never personalised advice."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
