@@ -13716,5 +13716,92 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "how-much-spending-money-holiday",
+  "offer": "holiday-pot",
+  "title": "How much spending money should you take on holiday? A simple way to work it out",
+  "description": "Estimate a daily amount from meals, drinks, trips and treats, add a buffer, and keep track as you go so the money lasts the whole trip.",
+  "intro": "There's no single right figure, because it depends on where you go and how you like to holiday. A simple daily estimate gets you close, and tracking it as you go stops nasty surprises at home.",
+  "sections": [
+   {
+    "h": "Work out a daily amount",
+    "list": [
+     "Meals: how many you'll eat out each day, times a typical local price for each person.",
+     "Drinks, snacks and coffee.",
+     "Local transport, such as taxis, buses and car parking.",
+     "Extras: souvenirs, tips and the odd treat."
+    ]
+   },
+   {
+    "h": "Add trips and a buffer",
+    "list": [
+     "Price any excursions or attractions separately, and pre-book them if that's cheaper.",
+     "Add 10-20% on top for things you didn't plan for."
+    ]
+   },
+   {
+    "h": "Cash or card",
+    "p": [
+     "Check what your card charges abroad. Many people use a fee-free travel card and carry a small amount of local cash for places that don't take cards. Always pay in the local currency when a card machine asks."
+    ]
+   },
+   {
+    "h": "Track as you go",
+    "p": [
+     "Divide what's left by the days remaining each evening. If you overspend one day, you'll see it early and can have a cheaper day tomorrow, rather than running short at the end."
+    ]
+   },
+   {
+    "h": "Learn for next time",
+    "p": [
+     "Note what you actually spent and on what. Next year's estimate will be much more accurate."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "avoid-hire-car-damage-charges",
+  "offer": "handback-proof",
+  "title": "How to avoid being charged for hire-car damage you didn't cause",
+  "description": "What to photograph at pick-up and drop-off, what to ask for at the desk, and what to do if a damage bill arrives weeks later.",
+  "intro": "Disputes over hire-car damage usually come down to evidence. A few minutes with your phone at both ends of the hire makes a big difference. This is general information, not legal advice.",
+  "sections": [
+   {
+    "h": "At pick-up",
+    "list": [
+     "Walk round the car before you drive off and photograph every panel, the wheels and tyres, the windscreen, the roof and the interior.",
+     "Take a slow video too, and capture the fuel gauge and mileage.",
+     "Make sure every existing mark is on the damage sheet, and ask staff to sign it if anything is missing."
+    ]
+   },
+   {
+    "h": "Light matters",
+    "p": [
+     "Dark car parks and rain hide scratches. If you can't see properly, ask to move the car into better light, and note the conditions."
+    ]
+   },
+   {
+    "h": "At drop-off",
+    "list": [
+     "Take the same photos and video in the same order, in daylight if you can.",
+     "Ask for the car to be checked with you and for a signed return report. If nobody is there, photograph the car where you left it and the key drop."
+    ]
+   },
+   {
+    "h": "If a bill arrives later",
+    "list": [
+     "Ask the hire firm for its photos, the repair invoice and the check-out and return reports.",
+     "Reply in writing with your dated photos and video.",
+     "If you paid by credit or debit card and the charge isn't justified, ask your card provider about a chargeback, and check whether your excess insurance covers it."
+    ]
+   },
+   {
+    "h": "Keep it all together",
+    "p": [
+     "Keep your booking, damage sheet, photos and any messages in one place for a few months after each hire, since some charges arrive weeks later."
+    ]
+   }
+  ]
  }
 ]

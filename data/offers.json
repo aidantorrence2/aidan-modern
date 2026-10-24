@@ -33164,6 +33164,174 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-24",
+    "slug": "holiday-pot",
+    "name": "Holiday Pot",
+    "need": "I never know how much spending money to take on holiday, and I worry we'll run out or come home having spent far more than planned.",
+    "headline": "Not sure how much spending money to take, or worried it won't last? Set one holiday pot and see what's safe to spend each day until the flight home.",
+    "buyer": "Adults, often couples and families, going on a one- or two-week holiday who budget spending money for food, drinks, trips and treats, and either run short or only find out at home what they spent.",
+    "bullets": [
+      "A spending-money estimate before you go, from the number of days and people and how often you'll eat out.",
+      "A safe-to-spend-today figure that rebalances after every splurge or quiet day, with separate pots for pre-booked trips.",
+      "Two-tap logging in local currency, cash or card, shown in your home currency, and an end-of-trip note to plan the next holiday."
+    ],
+    "price": "$3.99/month",
+    "priceUsd": 4,
+    "priceNote": "Or $14.99 a year.",
+    "reasonPrompt": "Where are you going, for how long, and how much spending money are you thinking of taking?",
+    "faq": [
+      {
+        "q": "Does it connect to my bank?",
+        "a": "No. You log spends yourself in a couple of taps, so nothing is shared with your bank."
+      },
+      {
+        "q": "Is it financial advice?",
+        "a": "No. It's a simple budgeting tool for your trip, and it's independent of any travel company or card provider."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-24",
+      "summary": "Holidaymakers say they plan to take a set amount but worry it isn't enough and what if they run out, ask how much spending money they need for a week or 10 days, keep a budget spreadsheet so they know if they're overspending, and track expenses to make sure they're not overspending their means.",
+      "wtp": "TravelSpend, a travel budget app with about 2K US ratings, sells premium options up to a $59.99 lifetime licence. Tripcoin, another travel budget app, also has a paid tier.",
+      "signals": [
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/516572/how-much-do-you-spend-on-holiday-im-back-and-i-did-it",
+          "who": "in_debt_again_but_dealing_with_it (MoneySavingExpert)",
+          "date": "2007-07-31",
+          "quote": "what if we run out",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/3223392/how-much-spending-money-for-a-weeks-holiday",
+          "who": "smartpicture (MoneySavingExpert)",
+          "date": "2011-05-11",
+          "quote": "How much do I need to take for spending money for a week in Rhodes (Euro-zone)?",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/6509934/10-day-turkey-holiday-spending-money-per-day-for-2-people",
+          "who": "williewonder (MoneySavingExpert)",
+          "date": "2024-03-01",
+          "quote": "How much money will we need for 10 days?",
+          "seen": "opened"
+        },
+        {
+          "url": "https://community.ricksteves.com/travel-forum/italy/how-much-should-i-plan-on-spending-for-a-12-day-vacation",
+          "who": "lo6jxm (Rick Steves Travel Forum)",
+          "date": "2014-04-21",
+          "quote": "trying for decide how much money I will need for my 12 day trip not including plane fare",
+          "seen": "opened"
+        },
+        {
+          "url": "https://community.ricksteves.com/travel-forum/italy/how-much-should-i-plan-on-spending-for-a-12-day-vacation",
+          "who": "Laurel (Rick Steves Travel Forum)",
+          "date": "2014-04-22",
+          "quote": "I always do a budget in a spreadsheet then track my progress so I know if we are over-spending.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://community.ricksteves.com/travel-forum/general-europe/tracking-expenses-on-our-trips",
+          "who": "CWsocial (Rick Steves Travel Forum)",
+          "date": "2019-06-12",
+          "quote": "secondarily to make sure I am not overspending my means",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "TravelSpend, Tripcoin, banking apps, spreadsheets.",
+      "risks": "Most forum posts are old (2007-2019). Several voices ask how much they need rather than saying they overspend. Travel budget apps already exist; the angle is a short holiday with a daily safe-to-spend figure."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-24",
+    "slug": "handback-proof",
+    "name": "Handback Proof",
+    "need": "When I hire a car I'm scared of being charged weeks later for scratches I didn't cause, and I never have proper photos to prove it.",
+    "headline": "Charged weeks later for a hire-car scratch you didn't cause? A guided walk-round at pick-up and drop-off gives you dated photos and a ready-made reply.",
+    "buyer": "Adults who hire cars or vans a few times a year, for holidays, house moves or as courtesy cars, who've been hit with a damage claim or worry about one.",
+    "bullets": [
+      "A panel-by-panel walk-round at pick-up (bumpers, wheels, tyres, windscreen, interior, fuel and mileage), with time-stamped photos and video kept together for each hire.",
+      "A return walk-round with a side-by-side comparison against pick-up, and a reminder to ask for the return report.",
+      "If a damage bill arrives, an evidence pack and a dispute-letter draft to send to the hire firm or your card provider."
+    ],
+    "price": "$2.99/month",
+    "priceUsd": 3,
+    "priceNote": "Or $14.99 a year.",
+    "reasonPrompt": "How often do you hire a car, and have you ever been charged for damage you didn't cause?",
+    "faq": [
+      {
+        "q": "Is it legal advice?",
+        "a": "No. It helps you keep clear evidence and set out your case; it can't promise a dispute will succeed."
+      },
+      {
+        "q": "Is it linked to a hire firm or insurer?",
+        "a": "No. It's independent and isn't linked to any hire company, broker or excess insurer."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-24",
+      "summary": "Drivers say they should have taken photos when they picked the car up, stupidly took no photos at collection, got an invoice three weeks after return for a gouged tyre, videoed damage for their own records, have no photographic proof, and are now wary of hiring again.",
+      "wtp": "People already pay to protect themselves: standalone car hire excess cover costs from £3.49 a day or £41.99 a year (iCarhireinsurance), iainscomputer on MSE says an annual policy for Europe costs about £40, and dontlookdown on PistonHeads says 'I have excess insurance'.",
+      "signals": [
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/6327285/sixt-car-hire-charging-for-damages-i-didn-t-incur",
+          "who": "Pops27 (MoneySavingExpert)",
+          "date": "2022-01-17",
+          "quote": "We should have taken photos when we picked it up.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/6252963/car-rental-damage-dispute",
+          "who": "allesklar (MoneySavingExpert)",
+          "date": "2021-03-22",
+          "quote": "stupidly I did not take any photos at the time of collection",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/6443019/wwyd-enterprise-car-rental",
+          "who": "SatsumaCod (MoneySavingExpert)",
+          "date": "2023-04-28",
+          "quote": "3 weeks after return we receive an invoice saying we had gouged a tyre and they were charging us for replacement.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/6558287/rental-car-charges-france-europcar-charged-for-damage-not-caused",
+          "who": "TroyMcClure85 (MoneySavingExpert)",
+          "date": "2024-10-03",
+          "quote": "Videoed damage for my own records.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.pistonheads.com/gassing/topic.asp?h=0&f=209&t=2150885",
+          "who": "dontlookdown (PistonHeads)",
+          "date": "2026-09-28",
+          "quote": "But as above I have no photographic proof.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.pistonheads.com/gassing/topic.asp?h=0&f=209&t=2150885",
+          "who": "Trevor555 (PistonHeads)",
+          "date": "2026-09-28",
+          "quote": "will make me wary of hiring ever again",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Excess insurance, phone cameras, hire firms' own apps.",
+      "risks": "Money evidence is excess insurance rather than an inspection app; a phone camera is a free substitute, so the value is the guided checklist, the sealed timeline and the dispute pack. Not legal advice."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
