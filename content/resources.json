@@ -14014,5 +14014,88 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "who-can-look-after-my-dog-holiday",
+  "offer": "minding-circle",
+  "title": "No one to look after your dog when you go away? Your options compared",
+  "description": "Kennels, home boarders, house-sitters, paid sitters and swapping with other owners: costs, what to check, and how to settle a nervous dog.",
+  "intro": "Leaving a dog is one of the main reasons people skip holidays. There are more options than kennels, and a little planning makes any of them easier on you and your dog.",
+  "sections": [
+   {
+    "h": "Your main options",
+    "list": [
+     "Boarding kennels: licensed, with staff on site. Visit first and ask about exercise, staff numbers and vet cover.",
+     "Home boarding: your dog stays in someone's home. Check they're licensed by your local council (in England, home boarders need a licence).",
+     "House-sitters: someone stays in your home, often through a membership site.",
+     "Paid dog-sitters or walkers who visit, for short trips.",
+     "Swapping with other dog owners you know and trust."
+    ]
+   },
+   {
+    "h": "What to check",
+    "list": [
+     "Licence or membership, insurance, references and reviews.",
+     "Where your dog sleeps, how often it's walked, and who has it if something goes wrong.",
+     "Vaccinations: many kennels and boarders require them, including kennel cough."
+    ]
+   },
+   {
+    "h": "Try it first",
+    "p": [
+     "Book a short trial stay or a day visit before your holiday, especially for a nervous or rescue dog."
+    ]
+   },
+   {
+    "h": "Leave a care sheet",
+    "list": [
+     "Food amounts and times, walk routine, quirks and fears, and any medication instructions from your vet.",
+     "Your vet's details, an emergency contact, and how to reach you."
+    ]
+   },
+   {
+    "h": "Stay in touch",
+    "p": [
+     "Ask for a daily photo or message. Knowing your dog is fine lets you enjoy the trip."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "kids-party-rsvp-no-replies",
+  "offer": "party-headcount",
+  "title": "Parents not replying to your child's party invite? How to get a headcount",
+  "description": "Simple ways to get replies to class party invites: clear deadlines, easy ways to reply, polite reminders, and planning around a venue's minimum numbers.",
+  "intro": "Chasing replies is one of the most stressful parts of a class party, especially when you're paying per head. A few small changes get far more replies.",
+  "sections": [
+   {
+    "h": "Make replying easy",
+    "list": [
+     "Put a clear reply-by date on the invite, at least a week before the venue's deadline.",
+     "Give more than one way to reply: a phone number, an email address and a link or QR code.",
+     "Include the time, the place, and whether parents need to stay."
+    ]
+   },
+   {
+    "h": "Remind politely",
+    "list": [
+     "Send one friendly reminder a few days before the deadline, through the class group, the school bag or the teacher if allowed.",
+     "Keep a list of who has replied, so you only chase the ones who haven't."
+    ]
+   },
+   {
+    "h": "Plan around the venue",
+    "list": [
+     "Check the venue's minimum numbers, final-numbers date and payment terms before sending invites.",
+     "Assume a few children won't come, even if their parents said yes."
+    ]
+   },
+   {
+    "h": "On the day",
+    "p": [
+     "Have a list of who said yes for the door, and a couple of spare party bags for late additions."
+    ]
+   }
+  ]
  }
 ]

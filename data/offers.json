@@ -33745,6 +33745,181 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-24",
+    "slug": "minding-circle",
+    "name": "Minding Circle",
+    "need": "I want to go away, but I have nobody I trust to look after my dog, kennels would break my heart, and sitters cost a fortune.",
+    "headline": "No one to mind your dog when you go away? Swap dog-sitting with local owners you've met first, earn nights by minding theirs, and get daily photo check-ins.",
+    "buyer": "Adult dog owners, often retired or with nervous or rescue dogs, who skip or dread holidays because family can't help and kennels or paid sitters feel wrong or cost too much.",
+    "bullets": [
+      "Find dog owners nearby and arrange a meet-and-greet walk and a trial overnight before any real trip.",
+      "Earn a night of credit for every night you mind someone's dog, and spend it when you go away: no nightly fee.",
+      "A shared care sheet (feeding, walks, quirks, vet and emergency contacts) and daily photo and walk check-ins while you're away."
+    ],
+    "price": "$4/month",
+    "priceUsd": 4,
+    "priceNote": "Or $29 a year.",
+    "reasonPrompt": "Where do you live, and what's stopped you going away with your dog cared for?",
+    "faq": [
+      {
+        "q": "Are hosts checked professionals?",
+        "a": "No. Hosts are fellow dog owners, not insured professionals. That's why you meet first and do a trial overnight, and you decide who minds your dog."
+      },
+      {
+        "q": "Is it linked to a sitting company?",
+        "a": "No. It's independent and charges no booking fees."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-24",
+      "summary": "Dog owners say they don't have anyone they know to look after their dog, are unable to holiday as a result, feel sick with worry about leaving their dog, have no one else who could look after her, are desperate to do something different, and find kennels heartbreaking.",
+      "wtp": "TrustedHousesitters (about 16K ratings, 4.8 stars) sells an annual membership for owners; Smurf52 on Gransnet says it 'costs £99 a year'. PistonHeads owners say sitters charge around £25 to £60 a day. Rover (about 516K ratings) takes payment per booking.",
+      "signals": [
+        {
+          "url": "https://www.pistonheads.com/gassing/topic.asp?h=0&f=208&t=2061960",
+          "who": "cliffords (PistonHeads)",
+          "date": "2024-01-22",
+          "quote": "dog look after person",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.pistonheads.com/gassing/topic.asp?h=0&f=208&t=2061960",
+          "who": "Jasandjules (PistonHeads)",
+          "date": "2024-01-22",
+          "quote": "We are unable to holiday as a result",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.gransnet.com/forums/chat/1311250-Worried-about-going-abroad-because-of-leaving-my-dog",
+          "who": "Secretsquirrel1 (Gransnet)",
+          "date": "2022-06-04",
+          "quote": "the thought of leaving my best furry friend behind is making me feel sick with worry",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.gransnet.com/forums/ask_a_gran/1301249-Dog-boarding-kennels-and-holidays",
+          "who": "bytheway (Gransnet)",
+          "date": "2021-09-23",
+          "quote": "I have no one else who could look after her",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.gransnet.com/forums/pets/1244112-Has-anyone-used-a-live-in-pet-sitting-service",
+          "who": "Tegan2 (Gransnet)",
+          "date": "2018-01-11",
+          "quote": "desperate to do something different",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/2052451/home-boarding-for-dogs",
+          "who": "foxy-roxy (MoneySavingExpert)",
+          "date": "2009-11-03",
+          "quote": "it is breaking my heart",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/1782413/leaving-dogs-at-home-and-going-on-holiday",
+          "who": "YorkiePud_3 (MoneySavingExpert)",
+          "date": "2009-06-29",
+          "quote": "unless I can take my dog",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "TrustedHousesitters, Rover, Pawshake, kennels, friends and family.",
+      "risks": "A swap needs enough owners nearby (a cold start). Hosts aren't professionals, so meet-first and a trial stay are essential. Some posters' real block is anxiety or a nervous dog."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-24",
+    "slug": "party-headcount",
+    "name": "Party Headcount",
+    "need": "I've invited my child's whole class to a party I'm paying for per head, and half the parents never reply, so I'm chasing replies right up to the night before.",
+    "headline": "Paid for 20 places and only 4 parents have replied? Invites with a scan-to-reply code, polite automatic nudges, and a live headcount against your venue's minimum.",
+    "buyer": "Parents, mostly of 4 to 9 year olds, throwing school-class birthday parties at paid venues, who often don't have the other parents' phone numbers.",
+    "bullets": [
+      "Printable invites with a reply code for each child, so replies arrive even when you have no phone numbers.",
+      "A two-tap yes or no reply for parents, with no app or account, and polite automatic reminders before your deadline.",
+      "A live headcount against the venue's minimum and payment date, a party-bag and food count, and a who-said-yes list for the door."
+    ],
+    "price": "$5/party",
+    "priceUsd": 5,
+    "priceNote": "Or $19 a year.",
+    "reasonPrompt": "When is the party, how many children are invited, and how many have replied?",
+    "faq": [
+      {
+        "q": "What do you collect about children?",
+        "a": "Only a first name on the guest list. Replies come from parents, and you can delete everything after the party."
+      },
+      {
+        "q": "Do parents need an app?",
+        "a": "No. They scan or tap a link and reply in two taps."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-24",
+      "summary": "Parents say they don't know if 14 invited children can come, have stopped paying for parties because nobody replies, chase replies up to the night before, want a way to gently encourage replies, and have had to write five reminder notes.",
+      "wtp": "Evite (about 517K ratings) sells paid invitation packs, such as $32.99 for up to 40 guests. fraz_babe on MSE is paying £11 a head for 20 children at a play area with a minimum booking of 10.",
+      "signals": [
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/5754394/parents-not-replying-to-party-invites",
+          "who": "fraz_babe (MoneySavingExpert)",
+          "date": "2017-12-03",
+          "quote": "So that leaves me not knowing if the other 14 can make it or not",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/5754394/parents-not-replying-to-party-invites",
+          "who": "Spendless (MoneySavingExpert)",
+          "date": "2017-12-03",
+          "quote": "I stopped paying for parties like this",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/3479459/do-people-not-reply-to-party-invites-these-days",
+          "who": "Bumpmakesfour (MoneySavingExpert)",
+          "date": "2011-09-11",
+          "quote": "chasing replies right up till the night before",
+          "seen": "opened"
+        },
+        {
+          "url": "https://boards.hellobee.com/topic/why-do-people-wait-so-long-to-rsvp",
+          "who": "cat620 (Hellobee)",
+          "date": "2017-03-03",
+          "quote": "Is there a way to gently encourage RSVPs",
+          "seen": "opened"
+        },
+        {
+          "url": "https://boards.hellobee.com/topic/why-do-people-wait-so-long-to-rsvp",
+          "who": "erinbaderin (Hellobee)",
+          "date": "2017-03-03",
+          "quote": "I had to write 5 reminder notes",
+          "seen": "opened"
+        },
+        {
+          "url": "https://boards.hellobee.com/topic/why-do-people-wait-so-long-to-rsvp",
+          "who": "Smurfette (Hellobee)",
+          "date": "2017-03-03",
+          "quote": "I am waiting on like 8 for",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Evite, Partiful, Punchbowl, Paperless Post, class WhatsApp groups.",
+      "risks": "Free RSVP tools exist; the angle is paper invites in book bags when you have no contact details. Quotes are 2011-2017. Keep children's data to a first name."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
