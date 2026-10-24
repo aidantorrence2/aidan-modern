@@ -35299,6 +35299,83 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-24",
+    "slug": "dock-calm",
+    "name": "Dock Calm",
+    "need": "I get nervous every time I bring my boat into the marina slip, especially with people watching, and docking is the part of boating I dread.",
+    "headline": "Dread bringing the boat into the slip? A one-page approach card for your berth, a 30-second crew briefing, and a quick docking log that shows what to practise.",
+    "buyer": "Adult recreational boat owners who get nervous docking at a slip or marina.",
+    "bullets": [
+      "Your boat and berth set up once, then an approach card for each docking: wind, current, which side the finger pier is on, and your plan.",
+      "A 30-second crew briefing (who handles which line and fender) and a two-tap docking log after each arrival.",
+      "A pattern view after about ten dockings, one open-water drill to practise, and questions to bring to a lesson."
+    ],
+    "price": "$4.99/month",
+    "priceUsd": 5,
+    "priceNote": "Or $29.99 a year.",
+    "reasonPrompt": "What kind of boat do you have, and what makes docking hardest for you?",
+    "faq": [
+      {
+        "q": "Is it boating instruction?",
+        "a": "No. It's a planning and practice log. Take lessons from a qualified instructor, wear a lifejacket, and never put hands or feet between the boat and the dock."
+      },
+      {
+        "q": "Is it linked to a marina or school?",
+        "a": "No. It's independent."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-24",
+      "summary": "Boat owners ask whether anyone else was nervous docking in a marina for the first time, say learning to back into the slip gave them the willies, that docking is the hardest thing to get used to, that they're always nervous coming into the slip each season, and that docking is stressful with onlookers.",
+      "wtp": "CanBoat sells a 'Docking with Confidence' online mini-course for $44.95, and boaters pay for docking lessons and training captains.",
+      "signals": [
+        {
+          "url": "https://forums.iboats.com/threads/first-wet-slip-nerves.519897/",
+          "who": "ericp501 (iBoats)",
+          "date": "2012-03-12",
+          "quote": "Was anyone else nervous the first time they docked their boat in a marina?",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.iboats.com/threads/first-wet-slip-nerves.519897/",
+          "who": "r.j.dawg (iBoats)",
+          "date": "2012-03-12",
+          "quote": "It was learning to back it into the slip that gave me the willies.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.iboats.com/threads/first-wet-slip-nerves.519897/",
+          "who": "JoLin (iBoats)",
+          "date": "2012-03-12",
+          "quote": "Docking is the hardest thing to get used to",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.tugnuts.com/threads/first-season-outing-nerves.21876",
+          "who": "Todd_D (Tugnuts)",
+          "date": "2023-05-11",
+          "quote": "I am always a bit nervous about coming into the marina slip for the first time each season",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.tugnuts.com/threads/first-season-outing-nerves.21876",
+          "who": "RThorn (Tugnuts)",
+          "date": "2023-07-06",
+          "quote": "Docking is always stressful enough but hard to tune out the on lookers",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Docking courses and lessons, training captains, YouTube.",
+      "risks": "Checked evidence is 5 people on 2 pages (2012 and 2023); the doc side's Trawler Forum and Winnipesaukee pages return 403 to the code side. No paid docking app with ratings. Safety: not instruction; recommend lessons."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

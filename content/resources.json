@@ -14801,5 +14801,49 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "boat-docking-nerves-checklist",
+  "offer": "dock-calm",
+  "title": "Nervous about docking your boat? A calm pre-approach checklist",
+  "description": "How to plan an approach to your slip, brief your crew in 30 seconds, and practise in open water so docking stops being the part you dread.",
+  "intro": "Most boaters find docking the hardest part, especially with wind, current or people watching. A plan made before you arrive makes a big difference. This is general information, not boating instruction; take lessons from a qualified instructor.",
+  "sections": [
+   {
+    "h": "Before you arrive",
+    "list": [
+     "Check the wind and current at your berth, and decide which side you'll come in on.",
+     "Rig fenders and lines on the right side before you enter the marina.",
+     "Decide your abort plan: where you'll go round again if the approach isn't working."
+    ]
+   },
+   {
+    "h": "Brief your crew",
+    "list": [
+     "Who handles the bow line, who handles the stern line, and who fends off.",
+     "Tell everyone to step, not jump, onto the dock, and never put hands or feet between the boat and the dock.",
+     "Everyone wears a lifejacket."
+    ]
+   },
+   {
+    "h": "On the approach",
+    "list": [
+     "Go slowly: only as fast as you need for control. Short bursts of power work better than steady throttle.",
+     "If it's going wrong, back out and try again; there's no prize for getting it first time."
+    ]
+   },
+   {
+    "h": "Practise",
+    "p": [
+     "Practise in open water using a buoy or a fender as a target, and practise at quiet times of day. Lessons with an instructor on your own boat are often the quickest way to build confidence."
+    ]
+   },
+   {
+    "h": "Learn from each docking",
+    "p": [
+     "Afterwards, note the conditions and what went well or wrong. Patterns, such as always drifting one way, tell you exactly what to practise."
+    ]
+   }
+  ]
  }
 ]
