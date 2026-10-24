@@ -13499,5 +13499,51 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "learn-to-cook-from-scratch-adults",
+  "offer": "stove-steps",
+  "title": "Never learned to cook? Where to start as an adult (and why recipes go wrong)",
+  "description": "A simple order to learn the basics in, the kit you actually need, and the most common reasons a recipe fails for beginners.",
+  "intro": "Plenty of adults never learned to cook at home. You don't need talent, just a sensible order and a few repeat dinners.",
+  "sections": [
+   {
+    "h": "The kit you need",
+    "list": [
+     "A large frying pan, a saucepan with a lid, a baking tray, a sharp knife, a chopping board, a wooden spoon and a timer. That's enough for months."
+    ]
+   },
+   {
+    "h": "Learn in this order",
+    "list": [
+     "Eggs (boiled, scrambled, fried), then rice and pasta, so you learn heat and timing.",
+     "Roasting vegetables on a tray, then a simple pasta sauce.",
+     "A stir fry, then a one-pot stew or chilli, then a roast chicken."
+    ]
+   },
+   {
+    "h": "Why recipes go wrong",
+    "list": [
+     "The pan is too hot or not hot enough: medium heat suits most beginner cooking.",
+     "Everything is crowded into one pan, so food steams instead of browning.",
+     "Ingredients aren't prepared before you start; chop and measure first.",
+     "Seasoning only at the end: add a little salt as you go and taste."
+    ]
+   },
+   {
+    "h": "Food safety basics",
+    "list": [
+     "Keep raw meat away from ready-to-eat food, and wash hands and boards after handling it.",
+     "Cook chicken until it's steaming hot all the way through, with no pink meat and clear juices.",
+     "Cool leftover rice quickly, keep it in the fridge, and reheat it only once."
+    ]
+   },
+   {
+    "h": "Repeat before you move on",
+    "p": [
+     "Cook each dish two or three times before trying the next. After each attempt, note one thing that went wrong and one thing to change."
+    ]
+   }
+  ]
  }
 ]

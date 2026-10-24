@@ -32737,6 +32737,90 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-24",
+    "slug": "stove-steps",
+    "name": "Stove Steps",
+    "need": "I never learned to cook. I follow recipes and they still go wrong, and I don't know where to start.",
+    "headline": "Never learned to cook? Go from eggs and rice to a proper roast one real dinner at a time, and see what went wrong each time so it doesn't happen twice.",
+    "buyer": "Adults who never learned to cook at home, or whose recipes keep failing, and who live on ready meals, takeaways or the same two dishes.",
+    "bullets": [
+      "A 12-week ladder from eggs and rice to a full roast, with one core skill (knife, heat, timing, seasoning) taught through one real dinner.",
+      "A shopping list for each lesson, sized for 1 to 4 people.",
+      "A photo and a quick rating after each cook, a fix-it guide for raw-in-the-middle, too salty, stuck to the pan and watery, and a next lesson that goes back over what went wrong."
+    ],
+    "price": "$4.99/month",
+    "priceUsd": 5,
+    "priceNote": "Or $34.99 a year.",
+    "reasonPrompt": "What can you cook now, and what do you most want to be able to make?",
+    "faq": [
+      {
+        "q": "Do I need any equipment?",
+        "a": "Only basics: a pan, a pot, a baking tray, a sharp knife and a board. Each lesson lists what you need."
+      },
+      {
+        "q": "Is it a diet plan?",
+        "a": "No. It teaches cooking skills, and makes no nutrition or weight claims. Lessons follow standard food-safety guidance on raw meat, reheating rice and hot oil."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-24",
+      "summary": "Adults say they try hard to follow recipes but things never come out as they should, have been trying to learn to cook without getting very far, don't know where to start or what to buy, aren't confident cooking or shopping for food, and never learned to cook meat growing up.",
+      "wtp": "Parsnip: Learn to Cook (420 ratings) sells $6.99 a month or $49.99 a year; America's Test Kitchen (about 18.3K ratings) sells cooking classes from $9.99 a month. rtfeldman on Hacker News says of something that would make his first salmon turn out right: 'I will eagerly pay money for that.'",
+      "signals": [
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/443853/i-cant-cook-can-you-help-please",
+          "who": "Miss_Scarlett (MoneySavingExpert)",
+          "date": "2007-05-03",
+          "quote": "I try really hard to follow recipes, but things never come out as they should.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/2193187/i-need-to-learn-to-cook",
+          "who": "want2bmortgage3 (MoneySavingExpert)",
+          "date": "2009-05-31",
+          "quote": "been trying to learn to cook for a while",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/906123/simple-recipes-for-someone-who-can-039-t-really-cook",
+          "who": "jay_mi (MoneySavingExpert)",
+          "date": "2007-11-02",
+          "quote": "i dont actually know where to start what to buy or how to do it",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/6374783/learn-to-cook-frugal-style",
+          "who": "HelenaPinky (MoneySavingExpert)",
+          "date": "2022-07-27",
+          "quote": "not confident with cooking or shopping for food to cook",
+          "seen": "opened"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=9688500",
+          "who": "rtfeldman (Hacker News)",
+          "date": "2015-06-09",
+          "quote": "I never learned how to cook meat growing up",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/parsnip-learn-to-cook/id1592325213?see-all=reviews",
+          "who": "Gwyn M. (App Store review, Parsnip)",
+          "date": "2022-11-20",
+          "quote": "I started as someone who never cooks so it started me off with all of the basics",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Parsnip, America's Test Kitchen, YouTube, cookery classes, recipe apps.",
+      "risks": "Most forum posts are old (2007-2015); the App Store voices already use a rival. A crowded space; the angle is a fix-what-went-wrong ladder for complete beginners."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
