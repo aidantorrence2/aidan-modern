@@ -13176,5 +13176,44 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "reply-to-text-ignored-for-weeks",
+  "offer": "reply-pile",
+  "title": "How to reply to a text you ignored for weeks (without making it weird)",
+  "description": "Keep it short, acknowledge the delay without over-apologising, answer the main thing, and ask a question to restart the conversation.",
+  "intro": "The longer you leave a message, the harder it feels to reply. Most people are just glad to hear from you, so a short, warm reply is usually enough.",
+  "sections": [
+   {
+    "h": "Keep it short",
+    "list": [
+     "You don't need a long explanation. One line acknowledging the delay is plenty: 'Sorry for the slow reply!'"
+    ]
+   },
+   {
+    "h": "Answer the main thing",
+    "list": [
+     "Reply to the question or news they shared, even briefly. That shows you read it and care."
+    ]
+   },
+   {
+    "h": "Restart the conversation",
+    "list": [
+     "End with a question or suggestion: 'How did the interview go?' or 'Coffee next week?'"
+    ]
+   },
+   {
+    "h": "Make replying easier next time",
+    "list": [
+     "When you read a message you can't answer straight away, mark it unread or pin it, or send a quick 'Saw this, will reply properly tonight!'"
+    ]
+   },
+   {
+    "h": "Set a small daily habit",
+    "p": [
+     "Reply to two or three people at the same time each day, such as on your lunch break. Small and regular beats a big catch-up you never get round to. If anxiety makes replying very hard, talking to a GP or counsellor can help."
+    ]
+   }
+  ]
  }
 ]

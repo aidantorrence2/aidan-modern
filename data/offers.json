@@ -32124,6 +32124,80 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-24",
+    "slug": "reply-pile",
+    "name": "Reply Pile",
+    "need": "I read messages from friends and family, mean to reply, and then leave them for weeks, and it's starting to hurt my friendships.",
+    "headline": "Read it, meant to reply, forgot for weeks? Add a message to your reply pile in one tap, see who's waiting, and clear three a day with a gentle nudge.",
+    "buyer": "Adults who read texts from friends and family, mean to reply, and leave them for days or weeks.",
+    "bullets": [
+      "One tap from the share sheet or a widget adds 'I owe this person a reply' to your pile.",
+      "A list of who's waiting and for how long, and one daily nudge to reply to three people.",
+      "Easy openers for late replies, and a quick 'saw this, will reply properly soon' note when you're short of time."
+    ],
+    "price": "$2.99/month",
+    "priceUsd": 3,
+    "priceNote": "Or $14.99 a year.",
+    "reasonPrompt": "Roughly how many messages are you behind on, and who do you most want to reply to?",
+    "faq": [
+      {
+        "q": "Does it read or send my messages?",
+        "a": "No. It never reads, stores or sends your messages. You choose what to add to your pile and you reply in your usual app."
+      },
+      {
+        "q": "Is it therapy?",
+        "a": "No. If anxiety or low mood is making it hard to talk to people, talking to a GP or counsellor can help."
+      },
+      {
+        "q": "Is it linked to any messaging app?",
+        "a": "No. It is independent and not linked to Apple, Google, WhatsApp or Meta."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-24",
+      "summary": "People say they always end up replying weeks or months late and it causes problems with friends, reply in their heads but never send anything, have a reputation for being a rubbish replier, and forget to reply once a message falls off their radar.",
+      "wtp": "RPLY, a Mac app for forgotten iMessages, launched at $30 a month after a trial (9to5Mac, February 2025); TxtBck, a reply-reminder app, sells for $0.99.",
+      "signals": [
+        {
+          "url": "https://www.alike.health/posts/struggling-to-keep-up-with-online-communication-by-kid/",
+          "who": "Kid (Alike)",
+          "date": "undated",
+          "quote": "replying weeks or months late",
+          "seen": "opened"
+        },
+        {
+          "url": "https://stylist.co.uk/life/whatsapp-social-media-messages-bad-replier-anxiety-psychology/419957",
+          "who": "Kayleigh Dray (Stylist)",
+          "date": "2024-03-15",
+          "quote": "replying in my brain, and then never actually sending anything",
+          "seen": "opened"
+        },
+        {
+          "url": "https://stylist.co.uk/life/whatsapp-social-media-messages-bad-replier-anxiety-psychology/419957",
+          "who": "Lucy Robson (Stylist)",
+          "date": "2024-03-15",
+          "quote": "such a reputation for being a really rubbish replier",
+          "seen": "opened"
+        },
+        {
+          "url": "https://talk.tidbits.com/t/messages-app-mark-as-unread/13268",
+          "who": "jiclark (TidBITS Talk)",
+          "date": "2020-08-20",
+          "quote": "and I forget to reply.",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Mark-as-unread and pin features in messaging apps, reminder apps, RPLY, TxtBck.",
+      "risks": "The money evidence is thin: RPLY may no longer be running and TxtBck has 5 ratings. Two quotes come from writers in an article. No mental-health claims."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
