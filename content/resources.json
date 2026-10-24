@@ -15102,5 +15102,90 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "baby-hates-tummy-time",
+  "offer": "little-lifts",
+  "title": "Baby hates tummy time? Gentle ways to make it easier",
+  "description": "Short sessions, easier positions, the best times to try, and how to keep it safe. For parents of young babies.",
+  "intro": "Lots of babies cry during tummy time at first. Short, frequent tries in comfortable positions usually work better than long sessions. Always supervise tummy time, only while your baby is awake, and always put your baby to sleep on their back.",
+  "sections": [
+   {
+    "h": "Start small",
+    "list": [
+     "Try a minute or two, a few times a day, and build up slowly as your baby copes.",
+     "Stop before your baby gets really upset, and try again later."
+    ]
+   },
+   {
+    "h": "Easier positions",
+    "list": [
+     "Lying on your chest while you recline, face to face.",
+     "Across your lap, with a gentle hand on their back.",
+     "On the floor over a rolled towel under their chest, with you down at their level."
+    ]
+   },
+   {
+    "h": "Pick the right moment",
+    "list": [
+     "When your baby is awake and content, not hungry or very tired.",
+     "Not straight after a feed."
+    ]
+   },
+   {
+    "h": "Make it interesting",
+    "p": [
+     "Get down on the floor face to face, sing, talk, or use a baby-safe mirror or a favourite toy."
+    ]
+   },
+   {
+    "h": "Ask for advice",
+    "p": [
+     "Talk to your health visitor or doctor if you're worried about your baby's development, head shape, or if they always turn their head one way."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "toddler-screams-hair-washing",
+  "offer": "calm-rinse",
+  "title": "Toddler screams at hair washing? Small steps that make bath time calmer",
+  "description": "Why hair washing upsets young children, step-by-step practice, simple tricks to try one at a time, and bath safety.",
+  "intro": "Water on the face and head scares many young children. Making it predictable, and practising in small steps, often helps more than doing it quickly. Never leave a child alone in the bath, even for a moment, and check the water is warm, not hot.",
+  "sections": [
+   {
+    "h": "Make it predictable",
+    "list": [
+     "Use the same order every time, and count down before the water comes.",
+     "Let your child hold a dry flannel over their eyes, or wear a bath visor."
+    ]
+   },
+   {
+    "h": "Practise in small steps",
+    "list": [
+     "Play with cups and water outside bath time, or pour water on a toy's head first.",
+     "Try a wet flannel on the hair, then a little water at the back, then a quick rinse."
+    ]
+   },
+   {
+    "h": "Try one trick at a time",
+    "list": [
+     "Tipping back while looking at the ceiling, a handheld shower on low, or washing hair on a different night from the bath.",
+     "Keep each trick for a few baths before switching, so you can tell what helps."
+    ]
+   },
+   {
+    "h": "Keep it short",
+    "p": [
+     "Hair doesn't need washing every bath for most young children. Fewer, calmer washes beat nightly battles."
+    ]
+   },
+   {
+    "h": "If you're worried",
+    "p": [
+     "If your child suddenly starts refusing baths, or it comes with other changes, talk to your health visitor or doctor."
+    ]
+   }
+  ]
  }
 ]

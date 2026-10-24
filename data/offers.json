@@ -35873,6 +35873,174 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-24",
+    "slug": "little-lifts",
+    "name": "Little Lifts",
+    "need": "My baby hates tummy time and screams every time I put them down, and I can't tell if we're doing enough or how to make it less of a battle.",
+    "headline": "Baby hates tummy time? Start with one-minute tries, rotate easier positions like your chest, your lap or a rolled towel, and watch the minutes add up.",
+    "buyer": "Parents and carers of babies from newborn to about six months, especially first-time parents whose baby protests tummy time.",
+    "bullets": [
+      "A start-small ladder of one-minute tries that grow as your baby copes, and a rotation of positions: on your chest, across your lap, a rolled towel, a mirror, the floor.",
+      "A one-tap timer and log with a daily total, plus a week view of the positions your baby protests least.",
+      "A shared log and gentle reminders for partners, grandparents and childminders."
+    ],
+    "price": "$4.99/month",
+    "priceUsd": 5,
+    "priceNote": "Or $29.99 a year.",
+    "reasonPrompt": "How old is your baby, and what happens when you try tummy time?",
+    "faq": [
+      {
+        "q": "Is it medical advice?",
+        "a": "No. Tummy time is always supervised and while your baby is awake; babies should always sleep on their backs. Talk to your health visitor or doctor if you're worried about your baby's development or head shape."
+      },
+      {
+        "q": "What does it store about my baby?",
+        "a": "Only a first name or nickname and the times you log. A parent sets it up and can delete everything."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-24",
+      "summary": "Parents say their baby hates tummy time with a capital H and nothing works, were told 10 minutes twice a day but their babies hated it, assumed a baby would grow to like it, thought theirs was the only one who hated it, and that grandparents forget to do it.",
+      "wtp": "BabySparks (about 13K ratings), a baby development app that includes tummy time activities, sells premium at $119.99 a year; Kinedu and Lovevery sell similar subscriptions.",
+      "signals": [
+        {
+          "url": "https://boards.hellobee.com/topic/tummy-time-3",
+          "who": "rnmcdonnell (Hellobee)",
+          "date": "2013-03-25",
+          "quote": "She hates tummy time with a capital H.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://boards.hellobee.com/topic/tummy-time-3",
+          "who": "kml636 (Hellobee)",
+          "date": "2013-03-25",
+          "quote": "My LO also hates tummy time",
+          "seen": "opened"
+        },
+        {
+          "url": "https://boards.hellobee.com/topic/tummy-time-guilt",
+          "who": "CatchAFallingStar (Hellobee)",
+          "date": "2018-05-14",
+          "quote": "Doctors recommended 10 minutes, twice a day",
+          "seen": "opened"
+        },
+        {
+          "url": "https://boards.hellobee.com/topic/65-mo-old-hates-tummy-time-not-rolling-over",
+          "who": "mrsquincy (Hellobee)",
+          "date": "2016-06-22",
+          "quote": "has never liked tummy time",
+          "seen": "opened"
+        },
+        {
+          "url": "https://boards.hellobee.com/topic/tummy-time",
+          "who": "heffalump (Hellobee)",
+          "date": "2011-11-26",
+          "quote": "the only one who hates tummy time",
+          "seen": "opened"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=3674032",
+          "who": "unfocused (Hacker News)",
+          "date": "2012-03-07",
+          "quote": "my son just drools and hates tummy time",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "BabySparks, Kinedu, Lovevery, free tummy time timers.",
+      "risks": "Posts are 2011-2018, mostly on Hellobee. Money is broader baby-development subscriptions. Infant safety: supervised and awake only; no claims about head shape or development."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-24",
+    "slug": "calm-rinse",
+    "name": "Calm Rinse",
+    "need": "My toddler screams every time I wash or rinse their hair, and bath time has turned into a nightly battle.",
+    "headline": "Toddler screams at hair washing? A step-by-step plan from dry practice to a full rinse, with play scripts and a quick log of what helped each bath.",
+    "buyer": "Parents of babies, toddlers and preschoolers (about 9 months to 6 years) who fight baths, showers or hair rinsing.",
+    "bullets": [
+      "Graded steps: a dry run with a cup, a wet washcloth, tip-back practice, then a quick rinse.",
+      "Countdown and song cues so your child knows when the water is coming, and ideas to try one at a time (a visor, a cloth over the eyes, a handheld shower, bathing together).",
+      "A ten-second after-bath log (tears, calm or fine) and a pattern view of which steps lead to calmer baths."
+    ],
+    "price": "$3.99/month",
+    "priceUsd": 4,
+    "priceNote": "Or $24.99 a year.",
+    "reasonPrompt": "How old is your child, and what part of bath time is the hardest?",
+    "faq": [
+      {
+        "q": "Is it safe to use during the bath?",
+        "a": "Never leave a child alone in the bath, even for a moment. Check the water is warm, not hot, before they get in. Keep your phone out of the way and your hands on your child."
+      },
+      {
+        "q": "Is it medical advice?",
+        "a": "No. If refusal is sudden or comes with other changes that worry you, talk to your health visitor or doctor."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-24",
+      "summary": "Parents say their toddler hates having water on their head and it ends in tears almost every time, bath time always evokes tears, they want ideas to make bath time less painful, their child suddenly started refusing baths, and the problem is washing hair.",
+      "wtp": "Parents already buy rinsers, visors and shampoo hats that only half work (Jennibenni: 'We have a skip hop moby rinser'; CrankyAsAnOldMan bought 'little shampoo hats'). Pepi Bath, a kids' bath and hygiene app, sells a $3.99 full version (69 ratings).",
+      "signals": [
+        {
+          "url": "https://boards.hellobee.com/topic/does-your-lo-get-upset-when-you-wash-their-hair",
+          "who": "oskarsmommy (Hellobee)",
+          "date": "2016-09-20",
+          "quote": "HATES having water on his head",
+          "seen": "opened"
+        },
+        {
+          "url": "https://boards.hellobee.com/topic/does-your-lo-get-upset-when-you-wash-their-hair",
+          "who": "delight (Hellobee)",
+          "date": "2016-09-17",
+          "quote": "Bath time always evokes tears",
+          "seen": "opened"
+        },
+        {
+          "url": "https://boards.hellobee.com/topic/lo-hates-baths",
+          "who": "kce56 (Hellobee)",
+          "date": "2016-05-04",
+          "quote": "make bathtime a less painful process",
+          "seen": "opened"
+        },
+        {
+          "url": "https://boards.hellobee.com/topic/toddler-hates-baths-all-of-a-sudden",
+          "who": "elljay (Hellobee)",
+          "date": "2017-06-07",
+          "quote": "has started refusing baths out of nowhere",
+          "seen": "opened"
+        },
+        {
+          "url": "https://boards.hellobee.com/topic/when-your-lo-absolutely-refuses-to-take-a-bath-but-they-desperately-need-one",
+          "who": "mrbee (Hellobee)",
+          "date": "2016-01-24",
+          "quote": "bathtime battles have been becoming pretty painful",
+          "seen": "opened"
+        },
+        {
+          "url": "https://boards.straightdope.com/t/how-do-you-give-a-two-year-old-a-bath/134046",
+          "who": "Leifsmama (Straight Dope)",
+          "date": "2002-10-27",
+          "quote": "The problem is washing his hair.",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Rinse cups, visors, shampoo hats, kids' bath apps.",
+      "risks": "Money is gadgets and small kids' apps, not a large paid app. Posts are 2002-2017. Water safety: never leave a child alone in the bath."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
