@@ -32352,6 +32352,160 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-24",
+    "slug": "wall-verdict",
+    "name": "Wall Verdict",
+    "need": "I can't decide what colour to paint my room, every tester looks different on the wall, and I keep wasting money on sample pots.",
+    "headline": "Can't settle on a paint colour? Photograph each tester patch morning, noon and night in your own room, narrow it to two, and buy one tin, not ten pots.",
+    "buyer": "Adults redecorating a room or hallway who are stuck choosing a wall colour and buying pot after pot of tester paint.",
+    "bullets": [
+      "A room profile: which way the windows face, and the carpet, sofa and woodwork you're keeping.",
+      "A tester log that prompts you to photograph each patch at morning, midday and evening, with side-by-side comparisons in the same light.",
+      "A shortlist that drops one colour each round until two are left, and a running total of what you've spent on tester pots."
+    ],
+    "price": "$4.99/month",
+    "priceUsd": 5,
+    "priceNote": "Or $24.99 a year.",
+    "reasonPrompt": "Which room are you painting, and how many testers have you tried so far?",
+    "faq": [
+      {
+        "q": "Does it recolour photos of my room?",
+        "a": "No. It works from photos of real tester patches in your own light, because paint looks different on a screen than on your wall."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Anyone choosing a paint colour. It is an independent app, not linked to any paint brand or retailer."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-24",
+      "summary": "People say they can't believe how hard it is to choose a paint colour, can't decide on wall colours, waste so much money on tester pots (one household tried 14 before choosing), are hopeless at deciding colours, and are struggling with colour for a lounge.",
+      "wtp": "Paint my Room (679 ratings) sells premium from $4.99 a month or $9.99 lifetime; Repaint (798 ratings) sells $9.99 to $39.99. Gransnet posters already spend on tester pots: anneey says 'I waste so much money, buying Tester Paint Pots.'",
+      "signals": [
+        {
+          "url": "https://www.gransnet.com/forums/house_and_home/1299783-Paint-colours-for-kitchen",
+          "who": "susytish (Gransnet)",
+          "date": "2021-08-18",
+          "quote": "such a problem choosing a paint colour!",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.gransnet.com/forums/aibu/1208456-Tester-Paint-Pots",
+          "who": "anneey (Gransnet)",
+          "date": "2014-07-01",
+          "quote": "I waste so much money, buying Tester Paint Pots.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.gransnet.com/forums/aibu/1208456-Tester-Paint-Pots",
+          "who": "kittylester (Gransnet)",
+          "date": "2014-07-01",
+          "quote": "We once tried 14 pots before we chose one!",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.gransnet.com/forums/house_and_home/1204654-HELP-need-colour-advice",
+          "who": "Flowerofthewest (Gransnet)",
+          "date": "2014-02-09",
+          "quote": "I am truly hopeless at deciding colours etc.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/6611521/paint-colour-suggestions-please",
+          "who": "swingaloo (MoneySavingExpert)",
+          "date": "2025-06-07",
+          "quote": "struggling with colour.",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Paint-visualiser apps, paint brands' sample services, interior designers.",
+      "risks": "Most quotes are on Gransnet and some are from 2014. The money evidence is for visualiser apps rather than a tester diary."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-24",
+    "slug": "score-window",
+    "name": "Score Window",
+    "need": "I keep failing the hazard perception part of my theory test: I see the hazard, but my clicks land outside the scoring window or get flagged, and I don't understand why.",
+    "headline": "Failed hazard perception again? See where each click landed against the scoring window, learn when a hazard is 'developing', and stop scoring zero for click patterns.",
+    "buyer": "UK learners (car, motorcycle, LGV and PCV) who have failed or are nervous about the hazard perception test, including experienced drivers who click too early.",
+    "bullets": [
+      "Practice clips that draw your clicks on a timeline against each clip's scoring window.",
+      "Warnings when your clicking would be flagged as a pattern, and an early-click log by hazard type (pedestrians, junctions, cyclists, brake lights).",
+      "Short drills on when a potential hazard becomes a developing one, and full mock-test score checks."
+    ],
+    "price": "$3.99/month",
+    "priceUsd": 4,
+    "priceNote": "Or $14.99 a year.",
+    "reasonPrompt": "Which test are you taking, and how did your last hazard perception attempt go?",
+    "faq": [
+      {
+        "q": "Is it the official test?",
+        "a": "No. It is independent practice, not linked to the DVSA, and it can't promise a pass. It uses licensed or original clips, and follows the Highway Code and DVSA guidance."
+      },
+      {
+        "q": "Does it teach driving?",
+        "a": "No. It's practice for the hazard perception part of the theory test. Learn to drive with a qualified instructor."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-24",
+      "summary": "Learners say they've failed the hazard perception twice, think they failed for spotting hazards too early, scored zero for improper clicking, failed the LGV hazard perception twice, and were confused about what the test requires.",
+      "wtp": "Driving Theory Test 4 in 1 Kit sells for £5.99 with about 395K UK ratings; the official DVSA Hazard Perception app sells for £2.99. Failed candidates pay again to resit.",
+      "signals": [
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/4938674/failed-hazard-perception",
+          "who": "Handsome90 (MoneySavingExpert)",
+          "date": "2014-04-03",
+          "quote": "failed my driving theory test again",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/4938674/failed-hazard-perception",
+          "who": "matttye (MoneySavingExpert)",
+          "date": "2014-04-03",
+          "quote": "I failed the hazard perception twice.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/gb/rss/customerreviews/page=1/id=1164276317/sortby=mostrecent/json",
+          "who": "G L0ck (App Store UK review)",
+          "date": "2025-04-09",
+          "quote": "scoring 0 for improper clicking",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/gb/rss/customerreviews/page=1/id=535111579/sortby=mostrecent/json",
+          "who": "AK1892 (App Store UK review)",
+          "date": "2022-02-09",
+          "quote": "had attempted and failed my LGV hazard perception twice.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/gb/rss/customerreviews/page=3/id=1019610471/sortby=mostrecent/json",
+          "who": "Bungers2 (App Store UK review, DVSA Hazard Perception)",
+          "date": "2021-04-26",
+          "quote": "confused as to what exactly is required in the hazard perception test.",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Driving Theory Test 4 in 1 Kit, the official DVSA apps, driving instructors.",
+      "risks": "A crowded market with a huge incumbent. Official clips are Crown copyright, so licensed or original clips are needed. UK-specific; no pass promises."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

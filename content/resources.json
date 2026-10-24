@@ -13293,5 +13293,83 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "choose-paint-colour-tester-pots",
+  "offer": "wall-verdict",
+  "title": "How to choose a paint colour without buying ten tester pots",
+  "description": "Narrow it down before you buy testers, paint big patches, look at them in morning, midday and evening light, and compare only two at a time.",
+  "intro": "Paint looks different on a card, on a screen and on your own wall. A little method saves money and indecision.",
+  "sections": [
+   {
+    "h": "Start with what's staying",
+    "list": [
+     "Look at the carpet, sofa, curtains and woodwork you're keeping. Choose colours that work with them, and narrow your list to three or four before buying any testers."
+    ]
+   },
+   {
+    "h": "Know your light",
+    "list": [
+     "North-facing rooms get cooler light, so colours can look greyer; south-facing rooms get warmer light. Expect testers to look different from the card."
+    ]
+   },
+   {
+    "h": "Paint big patches",
+    "list": [
+     "Paint large patches (or sample boards) on more than one wall, ideally two coats, away from the old colour's edges."
+    ]
+   },
+   {
+    "h": "Look at different times",
+    "list": [
+     "Check each patch in the morning, at midday and in the evening with lamps on. Take a photo each time from the same spot."
+    ]
+   },
+   {
+    "h": "Compare two at a time",
+    "p": [
+     "Rule out one colour each round until two are left, then choose. Keep a note of what you've spent on testers, so it's easier to stop."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "hazard-perception-test-scoring",
+  "offer": "score-window",
+  "title": "How the hazard perception test is scored (and why clicking too early fails)",
+  "description": "You score by clicking when a hazard starts to develop. Click too early and you score nothing for it; click in a pattern and the clip scores zero.",
+  "intro": "Many people fail hazard perception not because they miss hazards, but because of when and how they click.",
+  "sections": [
+   {
+    "h": "How scoring works",
+    "list": [
+     "For the car test there are 14 clips with 15 developing hazards (one clip has two). Each hazard scores up to 5 points depending on how early you respond once it starts to develop. The car pass mark is 44 out of 75."
+    ]
+   },
+   {
+    "h": "Potential versus developing",
+    "list": [
+     "A parked car is a potential hazard. It becomes a developing hazard when it does something that makes you change speed or direction, such as indicating to pull out or a door opening. That's the moment to click."
+    ]
+   },
+   {
+    "h": "Clicking too early",
+    "list": [
+     "If you click before the scoring window starts, that click doesn't count. Click again as the hazard develops; a couple of well-timed clicks is fine."
+    ]
+   },
+   {
+    "h": "Avoid patterns",
+    "list": [
+     "Clicking continuously or in a rhythm is flagged, and that clip scores zero."
+    ]
+   },
+   {
+    "h": "Practise well",
+    "p": [
+     "Practise with mock clips, notice where your clicks land, and learn which hazards you tend to click too early on. Check the latest rules on GOV.UK, and learn to drive with a qualified instructor."
+    ]
+   }
+  ]
  }
 ]
