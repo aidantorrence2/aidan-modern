@@ -13096,5 +13096,46 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "read-spin-table-tennis-serve",
+  "offer": "spin-read",
+  "title": "How to read spin on a table tennis serve (and return it safely)",
+  "description": "Watch the server's bat angle and contact, and the ball's flight, to tell backspin, topspin and sidespin, then use a safe default return for each.",
+  "intro": "Most missed returns come from misreading the spin. You don't need to read it perfectly, just well enough to pick a safe return.",
+  "sections": [
+   {
+    "h": "Watch the bat, not just the ball",
+    "list": [
+     "Brushing under the ball usually means backspin; brushing over the top means topspin; brushing across the side means sidespin. Fast, fine contact usually means more spin."
+    ]
+   },
+   {
+    "h": "Watch the flight",
+    "list": [
+     "A backspin serve tends to float and stay short; topspin dips and kicks forward; sidespin curves and bounces sideways."
+    ]
+   },
+   {
+    "h": "Safe default returns",
+    "list": [
+     "Backspin: open the bat face and push or lift slightly upwards, so it doesn't go into the net.",
+     "Topspin: close the bat face and block, so it doesn't fly long.",
+     "Sidespin: angle the bat to counter the spin, or aim towards the side the spin is carrying the ball from."
+    ]
+   },
+   {
+    "h": "Keep a simple log",
+    "list": [
+     "After a match, note which serves you missed and whether the ball went in the net, long, high or off the side. Patterns tell you what to practise."
+    ]
+   },
+   {
+    "h": "Practise one thing at a time",
+    "p": [
+     "Pick one serve type per session and work on a single cue, such as bat angle on backspin. With no partner, practise reading spin from videos and shadow the return."
+    ]
+   }
+  ]
  }
 ]

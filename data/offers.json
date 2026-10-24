@@ -31973,6 +31973,69 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-24",
+    "slug": "spin-read",
+    "name": "Spin Read",
+    "need": "I lose many of my table tennis games on the serve return. I can't read the spin, so I either put it in the net or miss the table.",
+    "headline": "Losing table tennis points on the serve return? Learn to read the spin, use a safe default return for each serve, and log what's going wrong.",
+    "buyer": "Adult (18+) club and recreational table tennis players who lose points returning serves.",
+    "bullets": [
+      "A spin-reading guide (bat angle, contact point and ball flight) with a safe default return for each type of serve.",
+      "A two-tap log after each match of missed returns: serve type, and whether it went in the net, long, high or off the side.",
+      "One cue and one change per session, solo drills for players without a partner, and pre-match notes on each regular opponent."
+    ],
+    "price": "$3.99/month",
+    "priceUsd": 4,
+    "priceNote": "Or $24.99 a year.",
+    "reasonPrompt": "What level do you play at, and which serves give you the most trouble?",
+    "faq": [
+      {
+        "q": "Is it a coaching course?",
+        "a": "No. It's a practice and match log with a spin-reading guide, to use alongside coaching or club play."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Adult players. It is an independent app, not linked to any federation, coaching site or bat brand."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-24",
+      "summary": "Players say the serve return is their biggest weakness and loses them many games, that their chops go into the net and their blocks go off the table, and that backspin serves end up in the net however they angle the bat.",
+      "wtp": "PingSkills sells Premium coaching at $30 a month or $270 a year.",
+      "signals": [
+        {
+          "url": "https://www.pingskills.com/table-tennis-forum/service-return-help",
+          "who": "Matt M (PingSkills forum)",
+          "date": "2015-03-07",
+          "quote": "I lose many of my games because of this 1 problem",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.pingskills.com/table-tennis-forum/returning-side-spin-serves",
+          "who": "Camilo Patiño (PingSkills forum)",
+          "date": "2012-08-30",
+          "quote": "When I try chopping the ball goes to the net",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.pingskills.com/table-tennis-forum/returning-heavy-backspin-serve",
+          "who": "vivek unni (PingSkills forum)",
+          "date": "2013-07-09",
+          "quote": "i find difficulty while he does a backspin serve",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "PingSkills, club coaching, YouTube tutorials, table tennis training apps.",
+      "risks": "All verified quotes are on one site and 11 to 14 years old; TableTennisDaily returns 403 to our fetch. Table tennis apps have tiny rating counts, so the money evidence is a coaching subscription."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
