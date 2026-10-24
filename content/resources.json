@@ -14973,5 +14973,49 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "find-rosacea-triggers-diary",
+  "offer": "flush-notes",
+  "title": "How to find your rosacea triggers: a three-week diary",
+  "description": "Common rosacea triggers, what to log each day, how to test one change at a time, and when to see a GP or dermatologist.",
+  "intro": "Rosacea triggers vary from person to person, so general lists only go so far. A short daily diary helps you find your own. This is general information, not medical advice.",
+  "sections": [
+   {
+    "h": "Common triggers",
+    "list": [
+     "Sun, heat, cold and wind.",
+     "Hot drinks, spicy food and alcohol.",
+     "Exercise, stress and hot baths or showers.",
+     "Some skincare and make-up products."
+    ]
+   },
+   {
+    "h": "What to log each day",
+    "list": [
+     "How your face looked and felt (calm, pink, flushed or flaring), and where.",
+     "What you ate and drank, the weather, exercise and stress.",
+     "Any products you used, especially new ones."
+    ]
+   },
+   {
+    "h": "Take photos the same way",
+    "p": [
+     "Photograph your face in the same light and angle every few days. It's easier to see real change than to rely on memory."
+    ]
+   },
+   {
+    "h": "Test one change at a time",
+    "p": [
+     "After three weeks, pick the likeliest trigger and change only that for two weeks. Changing several things at once makes it impossible to tell what helped."
+    ]
+   },
+   {
+    "h": "When to get help",
+    "p": [
+     "See a GP or dermatologist if rosacea is affecting your confidence or daily life, or if treatments aren't working. Get help promptly if your eyes are sore, gritty or red."
+    ]
+   }
+  ]
  }
 ]

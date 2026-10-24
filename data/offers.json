@@ -35642,6 +35642,83 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-24",
+    "slug": "flush-notes",
+    "name": "Flush Notes",
+    "need": "I have rosacea and my face keeps flushing and flaring, and I can't work out what's setting it off.",
+    "headline": "Rosacea flaring and you can't find the trigger? A ten-second daily face check, taps for what you want to watch, and a three-week view of what came before red days.",
+    "buyer": "Adults with rosacea who flush or flare and can't work out their triggers.",
+    "bullets": [
+      "A ten-second daily face check (calm, pink, flushed or flaring; where; burning) and taps for what you choose to watch: hot drinks, spicy food, alcohol, sun, wind, heat, exercise, stress, new products.",
+      "A product list with notes, same-angle photos kept on your phone, and a three-week view of what came before red days.",
+      "A two-week test of one change at a time, and a one-page summary for your GP or dermatologist."
+    ],
+    "price": "$2.99/month",
+    "priceUsd": 3,
+    "priceNote": "Or $19.99 a year.",
+    "reasonPrompt": "Where on your face does it flare, and what have you already tried?",
+    "faq": [
+      {
+        "q": "Is it medical advice?",
+        "a": "No. It's a diary and doesn't diagnose or recommend treatments. See a GP or dermatologist about rosacea, and get help promptly if your eyes become sore or red."
+      },
+      {
+        "q": "Is it linked to a brand?",
+        "a": "No. It's independent and recommends no products."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-24",
+      "summary": "People with rosacea say it's been a nightmare and is stressing them out, have eliminated all sorts of things from their food and beauty routine to find the trigger, have a constant flare by their nose despite medication, have found only a few things that set theirs off, and are struggling to find a trigger pattern.",
+      "wtp": "People already spend on the problem: mllgnc has been on medication and buys premium foundation, and RoseyRobin 'would be willing to spend the money' on a private dermatologist. Paid rosacea diary apps exist (premium from $1.99 a month), though with few ratings.",
+      "signals": [
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/1788111/rosacea-help-please",
+          "who": "LoubyLoo (MoneySavingExpert)",
+          "date": "2009-07-01",
+          "quote": "It has been a nightmare and is really stressing me out.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/2359147/question-for-others-with-rosacea",
+          "who": "Isklar (MoneySavingExpert)",
+          "date": "2010-03-24",
+          "quote": "eliminating allsorts of stuff from both my food and my beauty routine",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/4914097/rosacea-foundation",
+          "who": "mllgnc (MoneySavingExpert)",
+          "date": "2014-03-06",
+          "quote": "pretty much constant flare on either side of my nose",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/4914097/rosacea-foundation",
+          "who": "donnac2558 (MoneySavingExpert)",
+          "date": "2014-03-06",
+          "quote": "only found things that cause mine to go nuts",
+          "seen": "opened"
+        },
+        {
+          "url": "https://healthunlocked.com/changingfaces/posts/147945663",
+          "who": "RoseyRobin (HealthUnlocked)",
+          "date": "undated",
+          "quote": "struggling to find a trigger pattern",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Rosacea diary apps, dermatologists, paper diaries.",
+      "risks": "Checked MSE posts are 2009-2014; the doc side's Well-Trained Mind and Mumsnet pages couldn't be checked from the code side. Paid rosacea apps have few ratings. Not medical."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
