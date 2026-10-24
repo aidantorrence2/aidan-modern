@@ -34522,6 +34522,90 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-24",
+    "slug": "peri-notes",
+    "name": "Peri Notes",
+    "need": "I'm not sure if my symptoms are perimenopause or something else, and I want a clear record to take to my GP so I'm listened to.",
+    "headline": "Think it might be perimenopause? A twenty-second daily symptom check, your periods alongside, and a one-page summary to take to your GP.",
+    "buyer": "Women who suspect perimenopause and want a clear record of symptoms and periods before seeing a GP.",
+    "bullets": [
+      "A twenty-second daily check (sleep, night sweats, hot flushes, mood, anxiety, brain fog, aches, headaches, or your own) and a period log.",
+      "A monthly view that lines symptoms up against your cycle, and reminders for anything a doctor or pharmacist started.",
+      "A one-page GP summary (symptoms, how often, how long, the impact on work and sleep, what you've tried, your questions) and appointment notes."
+    ],
+    "price": "$2.99/month",
+    "priceUsd": 3,
+    "priceNote": "Or $19.99 a year.",
+    "reasonPrompt": "What symptoms have you noticed, and have you talked to a GP yet?",
+    "faq": [
+      {
+        "q": "Does it diagnose perimenopause?",
+        "a": "No. It records your symptoms so you can talk to a GP. It gives no treatment advice. See a doctor promptly for very heavy or unusual bleeding, bleeding after sex or between periods, chest pain, or thoughts of self-harm."
+      },
+      {
+        "q": "Is it linked to a clinic or brand?",
+        "a": "No. It's independent and recommends no products."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-24",
+      "summary": "Women say they used an app to find information to take to their GP, value reports they can email to their GP, gained confidence to challenge their doctor, track symptoms and periods, find it a very confusing up and down time, and didn't realise how many symptoms there were.",
+      "wtp": "Balance (about 27K UK ratings) sells paid plans including £4.99 and £49.99 options, and PotteryK calls its GP report download 'an absolute godsend'.",
+      "signals": [
+        {
+          "url": "https://itunes.apple.com/gb/rss/customerreviews/page=3/id=1503345959/sortby=mostrecent/json",
+          "who": "Depths of hell 2011 (App Store review, Balance)",
+          "date": "2022-01-29",
+          "quote": "I used it as research to find information to take to my GP",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/gb/rss/customerreviews/page=3/id=1503345959/sortby=mostrecent/json",
+          "who": "Emma Wholly Healing (App Store review, Balance)",
+          "date": "2022-06-30",
+          "quote": "what is a very confusing up and down time",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/gb/rss/customerreviews/page=4/id=1503345959/sortby=mostrecent/json",
+          "who": "PotteryK (App Store review, Balance)",
+          "date": "2021-12-29",
+          "quote": "reports can be emailed direct to GP",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/gb/rss/customerreviews/page=4/id=1503345959/sortby=mostrecent/json",
+          "who": "cokersa (App Store review, Balance)",
+          "date": "2021-12-18",
+          "quote": "gave me the confidence to challenge my doctor",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/gb/rss/customerreviews/page=5/id=1503345959/sortby=mostrecent/json",
+          "who": "Mandycham (App Store review, Balance)",
+          "date": "2021-08-07",
+          "quote": "mainly to track symptoms and periods",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/gb/rss/customerreviews/page=5/id=1503345959/sortby=mostrecent/json",
+          "who": "Wonder woman😆 (App Store review, Balance)",
+          "date": "2021-08-06",
+          "quote": "there were so many different symptoms for the menopause and I have more than half of them",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Balance, Caria, Health & Her, paper diaries.",
+      "risks": "All checked evidence is reviews of one strong rival (Balance), mostly 2021-2022; the doc side's Mumsnet voices couldn't be checked from the code side. Not medical; no diagnosis or treatment advice."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

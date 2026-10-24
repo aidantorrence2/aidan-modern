@@ -14406,5 +14406,52 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "track-perimenopause-symptoms-gp",
+  "offer": "peri-notes",
+  "title": "How to track perimenopause symptoms before a GP appointment",
+  "description": "What to record, how long for, and how to present it, so a short appointment covers what matters. UK-focused.",
+  "intro": "Perimenopause symptoms can be varied and come and go, which makes them easy to forget in a ten-minute appointment. A simple record helps. This is general information, not medical advice.",
+  "sections": [
+   {
+    "h": "Common symptoms",
+    "list": [
+     "Changes to periods (more or less often, heavier or lighter).",
+     "Hot flushes, night sweats and poor sleep.",
+     "Low mood, anxiety, irritability, brain fog and poor concentration.",
+     "Aches, headaches, tiredness, vaginal dryness and lower sex drive."
+    ]
+   },
+   {
+    "h": "What to record",
+    "list": [
+     "Each day: which symptoms, how bad (0 to 3), and when your period started and stopped.",
+     "The impact: missed sleep, time off work, things you've stopped doing.",
+     "Anything you've tried and whether it helped."
+    ]
+   },
+   {
+    "h": "How long",
+    "p": [
+     "Two to three months gives a clear picture, but even a few weeks is useful. Don't wait to book if symptoms are affecting your life."
+    ]
+   },
+   {
+    "h": "At the appointment",
+    "list": [
+     "Bring a one-page summary: main symptoms, how often, how long, and the impact.",
+     "Write down your questions first, and say what you'd like to discuss.",
+     "In the UK, NICE guidance says women over 45 with typical symptoms can usually be diagnosed without a blood test."
+    ]
+   },
+   {
+    "h": "See a doctor promptly if",
+    "list": [
+     "Bleeding is very heavy or unusual, or happens after sex, between periods or after your periods have stopped.",
+     "You have thoughts of self-harm, or symptoms that worry you."
+    ]
+   }
+  ]
  }
 ]
