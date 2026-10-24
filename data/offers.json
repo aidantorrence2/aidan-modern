@@ -35803,6 +35803,76 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-24",
+    "slug": "deposit-date",
+    "name": "Deposit Date",
+    "need": "I'm saving for a first-home deposit, but prices keep rising and I can't tell when, or whether, I'll ever get there.",
+    "headline": "Saving for a first-home deposit and can't tell when you'll get there? Get a deposit date from your own numbers, see what-ifs, and keep it honest month by month.",
+    "buyer": "Adults saving for a first-home deposit, alone or as a couple, who can't tell when they'll reach their target.",
+    "bullets": [
+      "A five-minute start (area and price range, deposit target, saved so far, monthly amount) and a deposit date from those numbers, with a yearly price change you choose.",
+      "What-if sliders: an extra £50 a month, a pay rise, a cheaper area, a smaller deposit, a bonus, or an interest rate you enter.",
+      "A monthly two-tap check-in, a couple view, and a one-page summary to take to a mortgage broker."
+    ],
+    "price": "$2.99/month",
+    "priceUsd": 3,
+    "priceNote": "Or $19.99 a year.",
+    "reasonPrompt": "How much is your deposit target, and how much have you saved so far?",
+    "faq": [
+      {
+        "q": "Is it financial advice?",
+        "a": "No. It's a calculator using the numbers and assumptions you choose. It doesn't recommend accounts or products, and house prices can't be predicted."
+      },
+      {
+        "q": "Is it linked to a bank or broker?",
+        "a": "No. It's independent and takes no commission."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-24",
+      "summary": "People saving for a first home say it's a long way away and they're not sure it'll ever happen, don't have a set goal, find saving £200 a month each hard, ask for tips on beginning their deposit journey, and (per the doc side's research) feel prices are rising faster than they can save.",
+      "wtp": "Moneybox (about 79K UK ratings) charges a monthly subscription to help people save and invest, including for a first home; Plum sells paid saving plans from £2.99 to £9.99 a month (doc side).",
+      "signals": [
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/789675/the-were-saving-for-a-deposit-thread/p469",
+          "who": "Buttoon (MoneySavingExpert)",
+          "date": "2016",
+          "quote": "a long way away, and not even sure it",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/789675/the-were-saving-for-a-deposit-thread/p469",
+          "who": "lol_omg_wtf (MoneySavingExpert)",
+          "date": "2015",
+          "quote": "have a set amount as a goal",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/789675/the-were-saving-for-a-deposit-thread/p465",
+          "who": "Madglover (MoneySavingExpert)",
+          "date": "2015",
+          "quote": "saving £200 a month",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/789675/the-were-saving-for-a-deposit-thread/p465",
+          "who": "Jacko_amz (MoneySavingExpert)",
+          "date": "2015",
+          "quote": "any tips in beginning your deposit journey",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Moneybox, Plum, bank savings goals, spreadsheets.",
+      "risks": "Checked evidence is 4 people on 2 pages of one MSE thread (2015-2016); the doc side's Mumsnet voices couldn't be checked from the code side. UK-centric. The money is on general saving apps, not a deposit-date tool. Calculator only, not advice."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

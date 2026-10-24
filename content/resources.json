@@ -15060,5 +15060,47 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "how-long-to-save-house-deposit",
+  "offer": "deposit-date",
+  "title": "How long will it take to save a house deposit? A simple way to work it out",
+  "description": "Work out your deposit target, a realistic monthly amount and a target date, allow for rising prices, and keep the plan honest. Not financial advice.",
+  "intro": "A deposit target can feel impossible when prices move. Putting your own numbers on paper usually makes it clearer, and shows which levers make the biggest difference. This is general information, not financial advice.",
+  "sections": [
+   {
+    "h": "Set the target",
+    "list": [
+     "Pick a realistic price range for the area you want.",
+     "Decide your deposit percentage (a bigger deposit can mean better mortgage rates), and add costs such as fees, surveys and moving."
+    ]
+   },
+   {
+    "h": "Work out the date",
+    "list": [
+     "Subtract what you've saved from the target, then divide by what you can save each month.",
+     "Allow for prices changing: try a few assumptions (for example 0%, 3% and 5% a year) rather than one."
+    ]
+   },
+   {
+    "h": "Find the biggest levers",
+    "list": [
+     "Saving a little more each month, a cheaper area or property type, or a slightly smaller deposit can each move the date a lot.",
+     "Look into government schemes or tax-free accounts for first-time buyers that you may be eligible for, and check their rules and limits."
+    ]
+   },
+   {
+    "h": "Keep it honest",
+    "p": [
+     "Check in once a month: update what you've saved and whether you hit your amount. Missed months are normal; the date just moves."
+    ]
+   },
+   {
+    "h": "Talk to a broker",
+    "p": [
+     "When you're getting close, a mortgage broker can tell you what you could borrow and what deposit you really need."
+    ]
+   }
+  ]
  }
 ]
