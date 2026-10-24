@@ -34858,6 +34858,167 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-24",
+    "slug": "someday-sort",
+    "name": "Someday Sort",
+    "need": "I save articles to read later and never actually read them, and the pile keeps growing until I give up and start again.",
+    "headline": "Hundreds of saved articles you'll never read? Clear your read-later pile ten a day: read it, skim it or let it go, and the best ones come back to you.",
+    "buyer": "Adults who save articles, newsletters and links for later and now have hundreds or thousands unread.",
+    "bullets": [
+      "Import a Pocket export, Instapaper, Safari Reading List or browser bookmarks, and see your backlog in hours, with dead links flagged.",
+      "A ten-a-day round: read it, skim a summary, keep it or let it go, with saves that expire unless you mark them keep.",
+      "A weekly digest of the five best things you saved."
+    ],
+    "price": "$3.99/month",
+    "priceUsd": 4,
+    "priceNote": "Or $29 a year.",
+    "reasonPrompt": "Roughly how many saved articles are waiting, and where are they saved?",
+    "faq": [
+      {
+        "q": "Does it delete anything?",
+        "a": "Only what you choose to let go, and you can export everything first. Your original read-later app isn't changed."
+      },
+      {
+        "q": "Is it linked to Pocket or Instapaper?",
+        "a": "No. It's independent and imports the exports those services give you."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-24",
+      "summary": "People say they rarely got around to reading what they saved and the backlog kept growing, would never read any of the hundreds they'd added, are back at 2,000 unread articles, have over 1,000 saved URLs, save far too many articles and never read them, and add links they may never get back to.",
+      "wtp": "Instapaper (about 3.5K ratings) sells Premium at $5.99 a month or $59.99 a year; Readwise Reader sells from $8.99 a month; GoodLinks sells for $9.99. MasterScrat on Hacker News: 'I would pay money to have my Pocket backlog printed as a softcover book.'",
+      "signals": [
+        {
+          "url": "https://news.ycombinator.com/item?id=44066646",
+          "who": "rossant (Hacker News)",
+          "date": "2025-05-22",
+          "quote": "the backlog kept growing",
+          "seen": "opened"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=47555936",
+          "who": "al_borland (Hacker News)",
+          "date": "2026-03-28",
+          "quote": "I would never actually read any of it",
+          "seen": "opened"
+        },
+        {
+          "url": "https://talk.macpowerusers.com/t/digital-minimalism-vs-all-the-good-podcasts-courses-books-articles-etc/15343",
+          "who": "leo (Mac Power Users)",
+          "date": "2020-01-15",
+          "quote": "again at 2000 unread articles",
+          "seen": "opened"
+        },
+        {
+          "url": "https://talk.macpowerusers.com/t/digital-minimalism-vs-all-the-good-podcasts-courses-books-articles-etc/15343",
+          "who": "andrew.j.pfeiffer (Mac Power Users)",
+          "date": "2020-01-15",
+          "quote": "Over 1000 URLs saved in a text file",
+          "seen": "opened"
+        },
+        {
+          "url": "https://talk.macpowerusers.com/t/help-me-figure-out-a-read-it-later-workflow/31010",
+          "who": "MitchWagner (Mac Power Users)",
+          "date": "2022-10-08",
+          "quote": "and then never actually read them later",
+          "seen": "opened"
+        },
+        {
+          "url": "https://talk.macpowerusers.com/t/looking-for-a-read-it-later-service/3834",
+          "who": "JoePreiser (Mac Power Users)",
+          "date": "2018-07-03",
+          "quote": "links that I may never get back to",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Instapaper, Readwise Reader, GoodLinks, Safari Reading List.",
+      "risks": "Voices are tech-leaning (Hacker News, Mac Power Users), some from 2018-2020. A crowded read-later market; the pitch is clearing the pile, not saving more."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-24",
+    "slug": "practice-tonight",
+    "name": "Practice Tonight",
+    "need": "I volunteered to coach my kid's team, I've never coached before, and I don't know what to do with them at practice, or I run out of ideas after the first couple of weeks.",
+    "headline": "Volunteered to coach your kid's team? Get tonight's practice in a minute, sized to the age group, the time you have and how many kids turned up.",
+    "buyer": "Parent volunteers coaching young children's soccer, t-ball, baseball, basketball or similar teams for the first time.",
+    "bullets": [
+      "A plan from the age group, the minutes you have and how many children showed up, with game-based activities and short explainers.",
+      "A season plan that moves on week by week, and a two-line note after each practice to steer the next one.",
+      "Jobs for parent helpers and a pre-season checklist."
+    ],
+    "price": "$4.99/month",
+    "priceUsd": 5,
+    "priceNote": "Or $24 a season.",
+    "reasonPrompt": "Which sport and age group are you coaching, and how long are practices?",
+    "faq": [
+      {
+        "q": "Does it store children's details?",
+        "a": "No. It only needs the age group and headcount. Follow your league's safeguarding and background-check rules."
+      },
+      {
+        "q": "Is it linked to a league?",
+        "a": "No. It's independent, and works alongside your league's own guidance."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-24",
+      "summary": "Parents say they volunteered to coach their child's team with no experience, spent hours on YouTube and still lacked confidence, had solid first practices then ran out of ideas, found it very intimidating at first, and wondered what they were going to do with the kids.",
+      "wtp": "MOJO Sports (about 2.2K ratings) sells MOJO+ options up to $59.99; Coach Tactic Board sells Pro at $2.99 a month; Tom Sullivan made 'three expensive trips' for training aids before his first season.",
+      "signals": [
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=5/id=1509108036/sortby=mostrecent/json",
+          "who": "Nyrakeel (App Store review, MOJO Sports)",
+          "date": "2021-05-25",
+          "quote": "I took a leap and volunteered to coach my U6 son’s soccer team.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=5/id=1509108036/sortby=mostrecent/json",
+          "who": "Dawn7678 (App Store review, MOJO Sports)",
+          "date": "2021-08-28",
+          "quote": "First time coaching soccer.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1509108036/sortby=mosthelpful/json",
+          "who": "DC's Papa Bear (App Store review, MOJO Sports)",
+          "date": "2023-10-14",
+          "quote": "Even a soccer enthusiast like me had a solid first two practices, but then I ran out of ideas.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1509108036/sortby=mosthelpful/json",
+          "who": "Tracker01 (App Store review, MOJO Sports)",
+          "date": "2021-09-02",
+          "quote": "very intimidating at first",
+          "seen": "opened"
+        },
+        {
+          "url": "https://carrotcake.substack.com/p/coach-pitch",
+          "who": "Tom Sullivan (Substack, Carrot Cake)",
+          "date": "2023-06-27",
+          "quote": "What am I going to do with these kids?",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "MOJO Sports (free for coaches with a paid tier), league resources, YouTube drills.",
+      "risks": "Most voices are reviews of one strong rival that solved their problem; reviews are 2021-2023. Children are involved, so no child data and safeguarding rules apply."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

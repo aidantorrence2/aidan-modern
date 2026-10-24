@@ -14586,5 +14586,92 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "clear-read-later-backlog",
+  "offer": "someday-sort",
+  "title": "How to clear a read-later backlog of hundreds of saved articles",
+  "description": "A guilt-free way to work through saved articles: count it, set a daily round, let most go, and stop the pile growing back.",
+  "intro": "Most read-later piles grow faster than anyone can read them. The goal isn't to read everything; it's to read the few that matter and let the rest go.",
+  "sections": [
+   {
+    "h": "Export and count",
+    "list": [
+     "Export everything from your read-later app or bookmarks first, so nothing is lost.",
+     "Count it and estimate the hours: at five to ten minutes an article, a thousand saves is days of reading."
+    ]
+   },
+   {
+    "h": "Let most of it go",
+    "list": [
+     "Anything older than a year that you can't remember saving can usually go.",
+     "News and time-sensitive pieces are often out of date; drop them."
+    ]
+   },
+   {
+    "h": "A daily round",
+    "p": [
+     "Take ten items a day. For each: read it now, skim it, keep it for a set time, or let it go. Ten decisions take a few minutes."
+    ]
+   },
+   {
+    "h": "Stop the pile growing",
+    "list": [
+     "Before saving, ask whether you'd read it this week.",
+     "Give saves an expiry date, so unread ones disappear on their own.",
+     "Unsubscribe from newsletters you always save but never read."
+    ]
+   },
+   {
+    "h": "Keep the best",
+    "p": [
+     "Keep a short list of the pieces that were genuinely worth it, and revisit them. That small list is the real value of reading later."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "first-time-youth-coach-practice-plan",
+  "offer": "practice-tonight",
+  "title": "Coaching your child's team for the first time: a simple practice plan",
+  "description": "How to structure a practice for young children, games that keep everyone moving, and how to avoid running out of ideas mid-season.",
+  "intro": "Young children learn best through short, active games, not lines and lectures. A simple, repeatable structure takes most of the stress out of volunteer coaching.",
+  "sections": [
+   {
+    "h": "A simple structure",
+    "list": [
+     "Warm-up game (5-10 minutes) that gets everyone moving straight away.",
+     "One skill game (10-15 minutes), such as dribbling, throwing or catching.",
+     "A small-sided game (10-15 minutes) with lots of touches for everyone.",
+     "A short cool-down and a high five for each child."
+    ]
+   },
+   {
+    "h": "Keep it moving",
+    "list": [
+     "Avoid lines: give every child a ball where you can.",
+     "Explain in under 30 seconds, then let them play; correct as you go.",
+     "Small teams (3 vs 3, 4 vs 4) mean more turns for everyone."
+    ]
+   },
+   {
+    "h": "Plan the season",
+    "p": [
+     "Pick one theme a week and build on it, repeating favourite games. Children love repetition, and you don't need new ideas every week."
+    ]
+   },
+   {
+    "h": "Get help from parents",
+    "p": [
+     "Ask one or two parents to run a station or a small game. Give them a clear, simple job."
+    ]
+   },
+   {
+    "h": "Safety and safeguarding",
+    "p": [
+     "Follow your league's safeguarding and background-check rules, keep water and first-aid nearby, and never be alone with one child."
+    ]
+   }
+  ]
  }
 ]
