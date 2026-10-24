@@ -32821,6 +32821,90 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-24",
+    "slug": "renew-low",
+    "name": "Renew Low",
+    "need": "My broadband, mobile and insurance bills go up every time they renew. I miss the date or dread the haggle call, so I end up paying the higher price.",
+    "headline": "Bills jump at every renewal? Keep every renewal date in one place, get a warning weeks ahead, compare the new quote with last year's, and go into the call with a script.",
+    "buyer": "UK adults whose car, home or pet insurance, broadband and mobile bills rise at each renewal, and who miss the date or put off the haggle call.",
+    "bullets": [
+      "Every renewal in one list (insurance, broadband, mobile, breakdown cover), with warnings 4 weeks and 1 week before each date.",
+      "The renewal quote beside last year's price and a like-for-like new-customer quote, so you can see the jump.",
+      "A short haggle-or-switch script and checklist, plus a running tally of what you've saved."
+    ],
+    "price": "$2.99/month",
+    "priceUsd": 3,
+    "priceNote": "Or $14.99 a year.",
+    "reasonPrompt": "Which bill went up most at its last renewal, and by how much?",
+    "faq": [
+      {
+        "q": "Does it switch or negotiate for me?",
+        "a": "No. It reminds you, shows the numbers and gives you a script; you make the call or switch. It takes no commission and isn't linked to any provider or comparison site."
+      },
+      {
+        "q": "Is it financial advice?",
+        "a": "No, and it can't promise a saving. Always check that cover is like for like before switching."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-24",
+      "summary": "People say a renewal quote rose 65% with no change in their circumstances, that their quote to renew is higher than last year's, that they renewed without checking and paid far more than a new customer, and that providers only lower the price once they ring to cancel.",
+      "wtp": "People already overpay at renewal: KittenChops renewed pet insurance for £272.15 without checking, then got a £357.10 renewal quote against a £160.10 like-for-like new-customer price. Rocket Money (4.5 stars, 402K ratings) sells paid options from $2.99 to $9.99 to help people cut bills.",
+      "signals": [
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/6464485/car-insurance-renewal-quote-up-65",
+          "who": "musty (MoneySavingExpert)",
+          "date": "2023-08-03",
+          "quote": "Still how can 65% be justified",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/5603443/car-insurance-goes-up-annually",
+          "who": "Adly812 (MoneySavingExpert)",
+          "date": "2017-02-15",
+          "quote": "my quote to renew is greater than last years",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/5603443/car-insurance-goes-up-annually",
+          "who": "tho_2 (MoneySavingExpert)",
+          "date": "2017-02-15",
+          "quote": "bothered to even ring them up to get cheaper",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/6425493/more-than-pet-insurance-renewal-quote-versus-new-customer-quote-50-difference",
+          "who": "KittenChops (MoneySavingExpert)",
+          "date": "2023-02-15",
+          "quote": "which I renewed without checking for a cheaper policy",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.pistonheads.com/gassing/topic.asp?h=0&f=23&t=1904624",
+          "who": "Short Grain (PistonHeads)",
+          "date": "2020-12-08",
+          "quote": "Not liking the price",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/6649902/renewal-haggling",
+          "who": "jackieblack (MoneySavingExpert)",
+          "date": "2026-01-11",
+          "quote": "they only then start lowering their price",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Rocket Money, comparison sites, calendar reminders, spreadsheets.",
+      "risks": "Mostly MSE voices, UK-centric. The doc side's Sky Community, Fetcheveryone and Lemmy pages return 403 to the code side, so they aren't counted. Since 2022 UK home and motor insurers can't charge renewing customers more than new ones through the same channel, so the gap there is smaller than it was."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

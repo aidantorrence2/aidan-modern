@@ -13545,5 +13545,47 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "renewal-price-went-up-what-to-do",
+  "offer": "renew-low",
+  "title": "Your renewal price went up? How to get it down (UK insurance, broadband and mobile)",
+  "description": "What to check, what to say on the call, and when to switch instead, plus the UK rules on renewal pricing and end-of-contract notices.",
+  "intro": "Renewal quotes often arrive higher than last year's. A few minutes of checking before the date usually pays off. This is general information, not financial advice.",
+  "sections": [
+   {
+    "h": "Before you call",
+    "list": [
+     "Find the renewal date and last year's price, and note what's changed in the cover or excess.",
+     "Get a like-for-like quote from a comparison site and, for insurance, a new-customer quote from your own insurer for the same cover and excess."
+    ]
+   },
+   {
+    "h": "Know the rules",
+    "list": [
+     "Since January 2022, UK home and motor insurers can't charge a renewing customer more than they'd charge an equivalent new customer through the same channel (online, phone and so on).",
+     "Broadband, mobile and pay-TV providers must tell you 10 to 40 days before your contract ends what you pay now, what you'll pay after, and their best deals."
+    ]
+   },
+   {
+    "h": "What to say",
+    "list": [
+     "\"My renewal is £X, up from £Y last year. I've been quoted £Z for the same cover elsewhere. Can you match it, or I'll switch?\"",
+     "Be polite, have the quote reference ready, and ask whether the price includes any add-ons you don't need."
+    ]
+   },
+   {
+    "h": "When to switch instead",
+    "p": [
+     "If they won't match, switching is often simpler than haggling. Check cover, excess and any cancellation fees first, and set the new policy to start the day the old one ends."
+    ]
+   },
+   {
+    "h": "Make it a habit",
+    "p": [
+     "Keep one list of every renewal date and set a reminder about four weeks before each one, so you're never rushed into auto-renewing."
+    ]
+   }
+  ]
  }
 ]
