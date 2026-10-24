@@ -34690,6 +34690,104 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-24",
+    "slug": "ninety-window",
+    "name": "Ninety Window",
+    "need": "I spend long stretches in Europe on the 90/180-day rule, and however many times I read it I can't work out how many days I have left, or when I can safely go back without overstaying.",
+    "headline": "Spending months in Europe on the 90/180 rule? Log each trip once, see how many days you'll have left on any future date, and get warned before you book an overstay.",
+    "buyer": "Adults on non-EU passports (often UK retirees, second-home owners, motorhomers and frequent travellers) who spend long or repeated stays in the Schengen area.",
+    "bullets": [
+      "Log trips by entry and exit dates, with the rolling 180-day window drawn on a calendar.",
+      "A look-ahead planner showing the latest safe exit date for any planned trip and when used days come back, with a warning if a plan would break the limit.",
+      "A separate count for each traveller in your household, and a summary of every stay to show at passport control."
+    ],
+    "price": "$2.99/month",
+    "priceUsd": 3,
+    "priceNote": "Or $14.99 a year.",
+    "reasonPrompt": "Where do you spend time in Europe, and how do you keep count of your days now?",
+    "faq": [
+      {
+        "q": "Is it legal or immigration advice?",
+        "a": "No. It's a planning aid. Always check your count with the EU's official short-stay calculator and the rules for your passport; special cases (residence permits, long-stay visas, family of EU citizens) need official advice."
+      },
+      {
+        "q": "Is it linked to any government?",
+        "a": "No. It's independent and unofficial."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-24",
+      "summary": "Travellers say they get more and more confused by the 90/180 rule, find it so confusing, are at a loss even using the online calculator, aren't sure how the limit applies, were thoroughly confused about the days spent in France, and found their spreadsheet didn't work because of the rolling window.",
+      "wtp": "Schengen Simple (about 2.6K UK ratings) sells full access for £7.99. 858cop paid about £24 a year for another day tracker ('So I paid the fee'), and Tig1957 says a subscription is 'much better than being a day over and getting fined'.",
+      "signals": [
+        {
+          "url": "https://www.frenchentree.com/brexit/eu-90-180-day-rule-heres-how-it-works/",
+          "who": "Tony Cook (French Entree comments)",
+          "date": "2023-07-27",
+          "quote": "despite looking on line regarding the 90/180 rule I get more and more confused.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.frenchentree.com/brexit/eu-90-180-day-rule-heres-how-it-works/",
+          "who": "Amanda Webb (French Entree comments)",
+          "date": "2023-03-25",
+          "quote": "The 90/180 days rule is so confusing.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.frenchentree.com/brexit/eu-90-180-day-rule-heres-how-it-works/",
+          "who": "Eric Carter (French Entree comments)",
+          "date": "2023-06-14",
+          "quote": "I am at a loss in fully understanding the 90 day rule even using the online calculator.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.frenchentree.com/brexit/eu-90-180-day-rule-heres-how-it-works/",
+          "who": "steve hubbard (French Entree comments)",
+          "date": "2025-04-30",
+          "quote": "Not sure how the 90 or 180 day limit applies.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/gb/rss/customerreviews/page=1/id=1635268679/sortby=mostrecent/json",
+          "who": "858cop (App Store review, Country Days Tracker)",
+          "date": "2025-09-10",
+          "quote": "thoroughly confused about the number of days my wife and I spend in France",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/gb/rss/customerreviews/page=2/id=1637045933/sortby=mostrecent/json",
+          "who": "HD.Studio (App Store review, Schengen Simple)",
+          "date": "2025-06-08",
+          "quote": "I have always struggled with keeping track of the days in schengen",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/gb/rss/customerreviews/page=2/id=1637045933/sortby=mostrecent/json",
+          "who": "Mark4Travel (App Store review, Schengen Simple)",
+          "date": "2025-08-12",
+          "quote": "my spreadsheet does not work properly",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/gb/rss/customerreviews/page=1/id=1637045933/sortby=mostrecent/json",
+          "who": "Karen656 (App Store review, Schengen Simple)",
+          "date": "2026-09-22",
+          "quote": "overly complicated 90/180-day rule since Brexit",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Schengen Simple, Schengen Calculator 90/180, the EU's official short-stay calculator (free), spreadsheets.",
+      "risks": "A crowded, well-served market; the angle is per-person household counts and plain explanations. A wrong count has real consequences, so the calculation must match the official calculator and copy must say it's a planning aid."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

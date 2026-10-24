@@ -14496,5 +14496,48 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "schengen-90-180-rule-explained",
+  "offer": "ninety-window",
+  "title": "The Schengen 90/180-day rule explained, with a simple way to count your days",
+  "description": "How the rolling 180-day window works, why simple calendar counting goes wrong, and how to plan your next trip safely. Not legal advice.",
+  "intro": "Visitors on many non-EU passports, including UK passports, can stay in the Schengen area for up to 90 days in any 180-day period. The rolling window is what confuses most people. This is general information, not legal or immigration advice; check the official rules for your passport.",
+  "sections": [
+   {
+    "h": "How the rule works",
+    "list": [
+     "On any given day, look back over the previous 180 days (including today).",
+     "Count every day you were in the Schengen area in that window. The total must be 90 or less.",
+     "Days in any Schengen country all count together, and your entry and exit days both count as days in."
+    ]
+   },
+   {
+    "h": "Why calendar counting goes wrong",
+    "list": [
+     "It isn't 90 days per half-year or per calendar year: the window moves forward every day.",
+     "Days 'come back' only when they drop out of the back of the 180-day window."
+    ]
+   },
+   {
+    "h": "Planning your next trip",
+    "list": [
+     "Before booking, check how many days you'll have on the planned entry date and on each day of the trip.",
+     "Use the EU's official short-stay calculator to check your plan."
+    ]
+   },
+   {
+    "h": "Special cases",
+    "p": [
+     "Residence permits, long-stay visas, family members of EU citizens and some national arrangements can change what applies to you. Check which countries are in the Schengen area, and get official advice if your situation is unusual."
+    ]
+   },
+   {
+    "h": "Keep records",
+    "p": [
+     "Keep a list of every entry and exit date, and boarding passes or tickets, in case you're asked at the border."
+    ]
+   }
+  ]
  }
 ]
