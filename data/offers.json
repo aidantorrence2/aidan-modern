@@ -35719,6 +35719,90 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-24",
+    "slug": "crisp-base",
+    "name": "Crisp Base",
+    "need": "My homemade pizza never comes out right: the dough tears when I stretch it, and the base ends up soggy or raw in the middle.",
+    "headline": "Homemade pizza dough tearing, or the base soggy and raw in the middle? Log each bake and get one change to try next time, for your own oven.",
+    "buyer": "Adult home cooks making pizza in an ordinary kitchen oven, or a new pizza oven, whose dough tears or springs back and whose bases stay pale, soggy or doughy.",
+    "bullets": [
+      "A bake log (flour, water, yeast, proving time, oven temperature and photos) for every pizza night.",
+      "A symptom picker (tears, springs back, soggy middle, raw edge, burnt base) that suggests one change for the next bake.",
+      "A dough timer that works back from when you want to eat, stretching prompts that tell you when to rest and retry, and a home-oven setup guide."
+    ],
+    "price": "$2.99/month",
+    "priceUsd": 3,
+    "priceNote": "Or $19.99 a year.",
+    "reasonPrompt": "What kind of oven do you use, and what goes wrong with your pizza?",
+    "faq": [
+      {
+        "q": "Do I need a pizza oven?",
+        "a": "No. It works with an ordinary kitchen oven, a baking steel or stone, or a pizza oven. Take care with very hot stones, trays and ovens."
+      },
+      {
+        "q": "Is it linked to a brand?",
+        "a": "No. It's independent and works with whatever flour and kit you have."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-24",
+      "summary": "Home cooks say their pizza dough tears and feels dry, they've been struggling to make a decent dough, they've tried many recipes and can't get the base they want, early attempts were soggy and raw on the sides, they're wasting money on inedible pizzas, and they nearly always get a soggy, uncooked middle.",
+      "wtp": "PizzApp+ (186 ratings) reviewers say they 'Would pay $5 to support the developer' and are 'willing to pay a one time fee'; Pizza Pro (116 ratings) sells a $2.99 upgrade. People also buy pizza ovens, stones and steels.",
+      "signals": [
+        {
+          "url": "https://www.thefreshloaf.com/node/62554/pizza-dough-tears",
+          "who": "Sweet_Vee (The Fresh Loaf)",
+          "date": "2020-03-06",
+          "quote": "My dough tears and is not smooth at all and feels dry",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.thefreshloaf.com/node/41380/pizza-dough-wont-stretch-and-will-tear-what-do-plz-newbie",
+          "who": "herbeapuce (The Fresh Loaf)",
+          "date": "2015-01-19",
+          "quote": "I have been struggling at making a decent pizza dough",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.thefreshloaf.com/node/23937/how-keep-bread-crust-crusty-and-softish-pizza-dough",
+          "who": "Jmarten (The Fresh Loaf)",
+          "date": "2011-06-14",
+          "quote": "I have tried many pizza base recipes",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forum.breadtopia.com/t/need-tips-for-homemade-pizza/10513",
+          "who": "Ces (Breadtopia Forum)",
+          "date": "2019-08-29",
+          "quote": "usually soggy and once raw dough on the sides",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/267148/homemade-pizza-does-not-cook-probably-all-doughy-can-you-help",
+          "who": "Cat72 (MoneySavingExpert)",
+          "date": "2006-09-19",
+          "quote": "I am just wasting money making unedable pizzas",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/207188/soggy-bottom-pizza-help-required-please",
+          "who": "dorsetmiss_2 (MoneySavingExpert)",
+          "date": "2006-06-03",
+          "quote": "inedible soggy base of uncooked dough in the middle",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Dough calculator apps (PizzApp+, Pizza Pro), recipe sites, YouTube.",
+      "risks": "Forum posts are old (2006-2020). The money evidence is small (ad removal, 'would pay'). Close to the live rise-check (sourdough), but a different problem."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
