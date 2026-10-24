@@ -13457,5 +13457,47 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "home-insurance-claim-stuck-what-to-do",
+  "offer": "steady-claim",
+  "title": "Home insurance claim stuck or underpaid? What to record and when you can complain (UK)",
+  "description": "How to keep a claim moving after a leak, storm or fire: one dated record, your own quotes, a formal complaint, and the Financial Ombudsman Service if needed.",
+  "intro": "Slow or low home insurance claims are common after escape of water, storm and fire damage. Good records and the formal complaint route are usually what move them. This is general information, not legal advice.",
+  "sections": [
+   {
+    "h": "Keep one dated record",
+    "list": [
+     "Log every call (date, time, name, what was promised), and follow up important calls with an email so there's a written trail.",
+     "Keep photos and videos of the damage before anything is stripped out, plus receipts for emergency costs."
+    ]
+   },
+   {
+    "h": "Get your own quotes",
+    "list": [
+     "If you're offered a cash settlement, get written quotes from local tradespeople for the same work, item by item.",
+     "Put the quotes beside the offer so the gap is clear, and ask the insurer to explain how it calculated its figure."
+    ]
+   },
+   {
+    "h": "Make a formal complaint",
+    "list": [
+     "Tell the insurer in writing that you're making a complaint, and say what you want to happen.",
+     "An insurer normally has 8 weeks to send a final response. If it doesn't, or you're unhappy with the answer, you can usually take it to the Financial Ombudsman Service, which is free. Check the time limits in the final response letter."
+    ]
+   },
+   {
+    "h": "Loss adjusters and loss assessors",
+    "p": [
+     "A loss adjuster works for the insurer. A loss assessor works for you, usually for a percentage of the payout, so weigh the fee against the help you need."
+    ]
+   },
+   {
+    "h": "Free help",
+    "p": [
+     "Citizens Advice and the Financial Ombudsman Service websites explain the steps. For large or complex disputes, consider a solicitor; check whether your policy includes legal expenses cover."
+    ]
+   }
+  ]
  }
 ]

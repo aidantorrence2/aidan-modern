@@ -32653,6 +32653,90 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-24",
+    "slug": "steady-claim",
+    "name": "Steady Claim",
+    "need": "My home insurance claim after a leak, storm or fire has dragged on for months, I'm being ignored or offered far too little, and I don't know how to push it forward.",
+    "headline": "Home insurance claim dragging on? Keep every call, photo, quote and offer in one dated timeline, see the gap to what you're owed, and know when you can complain.",
+    "buyer": "UK adults with an open home buildings or contents claim (escape of water, storm, fire) that is slow, disputed or underpaid.",
+    "bullets": [
+      "A dated log of every call, email, visit and promise: who said what, and when.",
+      "A room-by-room damage list with photos and your quotes beside the insurer's offer, so the gap is clear item by item.",
+      "Complaint reminders (an insurer normally has 8 weeks to send a final response before you can go to the Financial Ombudsman Service) and a clean timeline export."
+    ],
+    "price": "$5.99/month",
+    "priceUsd": 6,
+    "priceNote": "Or $39 a year.",
+    "reasonPrompt": "What happened to your home, and where is your claim stuck right now?",
+    "faq": [
+      {
+        "q": "Is it legal or insurance advice?",
+        "a": "No. It's an organiser for your own records. It doesn't negotiate for you or promise a bigger settlement. For advice, see Citizens Advice or the Financial Ombudsman Service, or a solicitor."
+      },
+      {
+        "q": "Is it linked to any insurer or loss assessor?",
+        "a": "No. It's independent and takes no commission."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-24",
+      "summary": "Homeowners say they're having an awful time with their insurer and loss adjusters, are left with an unsafe kitchen and a cash offer nowhere near enough, find it hard to make progress, have emails and calls ignored, and feel lost after a house fire.",
+      "wtp": "People already pay loss assessors a share of their payout (whizzkid001 on MSE: 'The fees agreed at the start were 10% of the eventual payout + expenses'; HCM2007: 'you have to pay them quite a bit'). Which? Legal membership is £9 a month or £99 a year plus a joining fee.",
+      "signals": [
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/6579939/help-escape-of-water-insurance-claim",
+          "who": "Kelsbelsrose23 (MoneySavingExpert)",
+          "date": "2025-01-11",
+          "quote": "absolutely awful time",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/6646389/aviva-home-insurance-kitchen-still-a-mess-2-years-on",
+          "who": "MSADMA (MoneySavingExpert)",
+          "date": "2025-12-15",
+          "quote": "a cash offer that is nowhere near enough to put it right",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/6612036/advice-on-dealing-with-home-insurance-and-loss-adjusters",
+          "who": "CakeOrDeath (MoneySavingExpert)",
+          "date": "2025-06-09",
+          "quote": "I am finding it difficult to make progress with it",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/6616679/unpaid-insurance-settlement-should-i-pursue-court-action-or-the-ombudsman",
+          "who": "knowledgeseeker365 (MoneySavingExpert)",
+          "date": "2025-07-06",
+          "quote": "All further emails and calls from me were ignored",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/6459678/house-fire-loss-assessor-or-not",
+          "who": "Dizziej7003 (MoneySavingExpert)",
+          "date": "2023-07-13",
+          "quote": "I feel so lost already",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.pistonheads.com/gassing/topic.asp?h=0&f=207&t=2040531",
+          "who": "RSVR101 (PistonHeads)",
+          "date": "2023-07-01",
+          "quote": "There is absolutely no way the work can be carried out for anywhere near the cash settlement offer amount",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Loss assessors (a share of the payout), Which? Legal, solicitors, spreadsheets and email folders.",
+      "risks": "Two sites only (MSE and PistonHeads). The money evidence is assessor fees and legal membership, not a rated app. UK-specific complaint rules; must not promise a bigger payout or give legal advice."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
