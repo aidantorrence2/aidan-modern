@@ -34102,6 +34102,167 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-24",
+    "slug": "lift-steady",
+    "name": "Lift Steady",
+    "need": "I'm claustrophobic and terrified of lifts. I've avoided them for years, and I plan my days out and holidays around never getting in one.",
+    "headline": "Terrified of lifts and small spaces? Build your own ladder of small steps, from standing by the doors to riding a few floors, at your pace, with a calm-down plan.",
+    "buyer": "Adults who avoid lifts, small rooms or packed spaces because of claustrophobia, and plan trips, hotels and workdays around it.",
+    "bullets": [
+      "Your own ladder of steps, from watching a lift to riding several floors alone, with an unease rating before and after each step.",
+      "A breathing timer and a pocket calm-down card for use in the lift, and you only move up when a step feels manageable.",
+      "Trip prep for hotels, car parks and offices (including asking for a low floor) and a weekly log of every step taken."
+    ],
+    "price": "$12 one-time",
+    "priceUsd": 12,
+    "priceNote": "One payment, no subscription.",
+    "reasonPrompt": "What do you avoid because of lifts or small spaces, and what would you most like to be able to do?",
+    "faq": [
+      {
+        "q": "Is it therapy?",
+        "a": "No. It's a self-help practice tool for adults. If your fear is severe, or you have panic attacks, talk to a GP or therapist; CBT is an effective treatment for phobias."
+      },
+      {
+        "q": "Is it safe to practise?",
+        "a": "Only practise in normal, working public lifts. Never force doors or use a lift that's out of order."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-24",
+      "summary": "People say they're terrified of getting into a lift and have avoided them for 35 years, plan whole days out and holidays around not using lifts, have had a phobia about elevators as long as they can remember, and climb twenty flights of stairs to avoid one.",
+      "wtp": "People already pay for help: Mercedes55 on Omlet has had 'hypnotherapy by 3 different hypnotists', and Margalot is looking for a hypnotherapist. oVRcome's phobia programme, which includes enclosed spaces, sells for $28.99 a month or $199.99 a year.",
+      "signals": [
+        {
+          "url": "https://club.omlet.co.uk/forum/topic/66002-hypnotherapy-for-claustraphobia/",
+          "who": "Margalot (Omlet Club)",
+          "date": "2012-06-22",
+          "quote": "I am terrified of getting into a lift and have managed to avoid them for the past 35 odd years",
+          "seen": "opened"
+        },
+        {
+          "url": "https://club.omlet.co.uk/forum/topic/66002-hypnotherapy-for-claustraphobia/",
+          "who": "Margalot (Omlet Club)",
+          "date": "2012-06-22",
+          "quote": "My whole days out holidays are planned around not getting into lifts",
+          "seen": "opened"
+        },
+        {
+          "url": "https://boards.straightdope.com/t/welcome-to-twenty-twenty-sucks-january-mini-rants/1026231?page=7",
+          "who": "wolfpup (Straight Dope)",
+          "date": "2026-01-10",
+          "quote": "I admit to an irrational fear of elevators, mostly due to a touch of claustrophobia.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://boards.straightdope.com/t/elevators-and-death/530769",
+          "who": "HotSmoke (Straight Dope)",
+          "date": "2010-02-28",
+          "quote": "I have had a phobia about elevators as long as I can remember",
+          "seen": "opened"
+        },
+        {
+          "url": "https://boards.straightdope.com/t/what-is-the-safest-form-of-human-transportation/166112",
+          "who": "bjohn13 (Straight Dope)",
+          "date": "2003-04-03",
+          "quote": "I have been known to take twenty or more flights of stairs just to avoid the elevator",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.rvforum.net/threads/heights-claustraphobia.786095/",
+          "who": "Wendy (RV Forum)",
+          "date": "2006-05-12",
+          "quote": "Stratosphere elevators....claustrophobia.",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "CBT therapists, hypnotherapy, oVRcome and other phobia apps.",
+      "risks": "Most posts are old (2003-2012). The money signal is thin (oVRcome has few ratings; hypnosis prices without ratings). Health-adjacent: self-help only, severe fear goes to a GP; not for MRI preparation."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-24",
+    "slug": "hidden-reps",
+    "name": "Hidden Reps",
+    "need": "I know I should do my pelvic floor exercises every day, but I never stay consistent, they slip my mind, and I'm embarrassed when the reminder pops up in front of people.",
+    "headline": "Pelvic floor reminders nobody else can read: a plain icon and neutral alerts, tied to things you already do, with a log that counts every set.",
+    "buyer": "Adults, mostly women after pregnancy, birth or surgery, or around menopause, who've been told to do pelvic floor exercises and keep forgetting or giving up.",
+    "bullets": [
+      "Discreet by default: a neutral app icon, and alert text and a name you choose yourself.",
+      "Each set hung on something you already do (the kettle, brushing teeth, red lights), with a quiet vibration-only timer for squeeze-and-hold sets.",
+      "Log sets done away from the app so your record stays honest, and a weekly summary for your physio, using the routine they set."
+    ],
+    "price": "$3.99/month",
+    "priceUsd": 4,
+    "priceNote": "Or $24 a year.",
+    "reasonPrompt": "Who suggested pelvic floor exercises, and what usually stops you doing them?",
+    "faq": [
+      {
+        "q": "Is it a treatment programme?",
+        "a": "No. It reminds you and logs the routine your physio, GP or NHS leaflet gave you. It doesn't prescribe exercises or promise to fix symptoms. Pelvic floor exercises aren't right for everyone; see a pelvic health physio if symptoms continue."
+      },
+      {
+        "q": "Will anyone know what it is?",
+        "a": "Not from your phone: the icon, name and alerts are neutral, and you choose the wording."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-24",
+      "summary": "People say they knew they should do pelvic floor exercises regularly but could never be consistent, that it slips their mind, that they're forever embarrassed when notifications pop up at work and with friends, that they don't want everyone to see what they're doing, and that they keep forgetting.",
+      "wtp": "Squeezy, the NHS physio-designed pelvic floor app, sells for £3.99 with about 9.4K UK ratings. Chestermel, a paying user, says 'I can't believe I paid for a glorified reminder system', so paid reminders are the product people already buy.",
+      "signals": [
+        {
+          "url": "https://itunes.apple.com/gb/rss/customerreviews/page=1/id=700740791/sortby=mostrecent/json",
+          "who": "VJ75519 (App Store review, Squeezy)",
+          "date": "2025-09-19",
+          "quote": "could never manage to be consistent with",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/gb/rss/customerreviews/page=1/id=700740791/sortby=mostrecent/json",
+          "who": "Jessicasaa_xxx (App Store review, Squeezy)",
+          "date": "2025-08-20",
+          "quote": "as it does slip your mind",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/gb/rss/customerreviews/page=2/id=700740791/sortby=mostrecent/json",
+          "who": "Ffswhat?! (App Store review, Squeezy)",
+          "date": "2025-01-14",
+          "quote": "am forever embarrassed at work and with friends when the notifications pop up on my phone",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/gb/rss/customerreviews/page=2/id=700740791/sortby=mostrecent/json",
+          "who": "Lagoonablue44 (App Store review, Squeezy)",
+          "date": "2025-01-17",
+          "quote": "doing Kegel exercises",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/gb/rss/customerreviews/page=10/id=700740791/sortby=mostrecent/json",
+          "who": "Cre5986 (App Store review, Squeezy)",
+          "date": "2015-11-09",
+          "quote": "forgetting to do my pelvic floor exercises",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Squeezy, Elvie and many Kegel apps, NHS leaflets.",
+      "risks": "Evidence is all app reviews of one rival (no forum quotes). Crowded market; the angle is discretion and habit-linking. Health-sensitive: no medical claims, no prescribed programme."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
