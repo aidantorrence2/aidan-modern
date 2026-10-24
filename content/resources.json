@@ -13215,5 +13215,44 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "empty-nest-first-weeks",
+  "offer": "chapter-after",
+  "title": "Empty nest: getting through the first weeks after your child leaves home",
+  "description": "Expect the hardest moments, agree how you'll keep in touch, fill a few gaps in your week on purpose, and talk to someone if low mood lasts.",
+  "intro": "Feeling lost when a child leaves home is very common, even when you're proud of them. It usually eases, especially with a little planning.",
+  "sections": [
+   {
+    "h": "Expect the hard moments",
+    "list": [
+     "The drive home, walking past their room, and meal times or Sunday evenings are often the hardest. Plan one small thing for each, like a call with a friend or a walk."
+    ]
+   },
+   {
+    "h": "Agree how you'll keep in touch",
+    "list": [
+     "Talk with your child about what feels right: a weekly call, a few messages, a family chat. A rhythm you both agree on is easier than wondering whether to text."
+    ]
+   },
+   {
+    "h": "Fill a few gaps on purpose",
+    "list": [
+     "Make a list of things you put off while the children were at home. Pick one and give it a regular slot in your week: a class, a club, volunteering or exercise."
+    ]
+   },
+   {
+    "h": "Look after the relationships at home",
+    "list": [
+     "If you have a partner, this is a change for both of you. Plan something new together. If you live alone now, build in regular time with friends."
+    ]
+   },
+   {
+    "h": "Talk to someone",
+    "p": [
+     "If low mood, poor sleep or loss of appetite last for more than a couple of weeks, talk to your GP. Talking to a counsellor, or to other parents going through the same thing, can help a lot."
+    ]
+   }
+  ]
  }
 ]

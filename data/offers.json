@@ -32198,6 +32198,90 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-24",
+    "slug": "chapter-after",
+    "name": "Chapter After",
+    "need": "My youngest has left home, the house is silent, and I feel lost and don't know what to do with myself now.",
+    "headline": "Kids flown and the house too quiet? Get through the hardest evenings, stay close without hovering, and build a week that's yours again.",
+    "buyer": "Parents (roughly 40 to 65) whose last or eldest child has just left for university, work or a home of their own.",
+    "bullets": [
+      "A plan for the moments that hurt most (the drive home, the empty room, Sunday evenings), with one small thing to do in each.",
+      "A contact rhythm you agree with your child, so you stay close without messaging every hour.",
+      "A 'things I put off' list that becomes one new weekly slot (a class, a club, volunteering), with weekly check-ins so you can see it easing."
+    ],
+    "price": "$5.99/month",
+    "priceUsd": 6,
+    "priceNote": "Or $39 a year.",
+    "reasonPrompt": "When did your child leave, and which part of the week feels hardest?",
+    "faq": [
+      {
+        "q": "Is it therapy?",
+        "a": "No. It's a practical plan for a big change. If low mood, poor sleep or loss of appetite last for weeks, please talk to your GP or a counsellor."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Parents adjusting to children leaving home. It is an independent app, not linked to any university, charity or counselling service."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-24",
+      "summary": "Parents say their heart is breaking without their child at home, felt bereft when they left for university, that empty nest hit them like a tonne of bricks, suffered terribly with it, and took years to get over it; some book therapists or buy courses and books.",
+      "wtp": "Arizona State University offers a $500 four-week course for empty-nest parents (NBC Boston); 'Empty Nest, Full Life' sells for $10.99 with 358 Goodreads ratings; Gransnet poster Nightrose has booked a therapist.",
+      "signals": [
+        {
+          "url": "https://www.gransnet.com/forums/aibu/1319466-The-empty-nest-syndrome",
+          "who": "Nightrose (Gransnet)",
+          "date": "2022-12-27",
+          "quote": "my heart is breaking for not having her at home",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.gransnet.com/forums/aibu/1319466-The-empty-nest-syndrome",
+          "who": "NanKate (Gransnet)",
+          "date": "2022-12-27",
+          "quote": "when he left for university I felt bereft",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.gransnet.com/forums/aibu/1319466-The-empty-nest-syndrome",
+          "who": "Redhead56 (Gransnet)",
+          "date": "2022-12-28",
+          "quote": "I suffered terribly with empty nest",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.gransnet.com/forums/ask_a_gran/1293070-Feeling-lost-young-Gran-empty-nest-lonely",
+          "who": "alltheglitterglue (Gransnet)",
+          "date": "2021-03-13",
+          "quote": "suddenly our empty nest has hit me like a tonne of bricks",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.gransnet.com/forums/ask_a_gran/1293070-Feeling-lost-young-Gran-empty-nest-lonely",
+          "who": "Juliet27 (Gransnet)",
+          "date": "2021-03-13",
+          "quote": "empty nest syndrome hit me really hard",
+          "seen": "opened"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=43309625",
+          "who": "JKCalhoun (Hacker News)",
+          "date": "2025-03-09",
+          "quote": "the empty nest is a trying time",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Books, university and online courses, counselling, parent communities.",
+      "risks": "Almost all quotes are on one site (2021 to 2022). No rated paid app exists, so paying for software is unproven. Mental-health sensitive: no treatment claims; signposts a GP or counsellor."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
