@@ -35467,6 +35467,83 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-24",
+    "slug": "aisle-steps",
+    "name": "Aisle Steps",
+    "need": "We've just got engaged and I'm overwhelmed by wedding planning. I don't know where to start, how to start, or whether our budget is even achievable.",
+    "headline": "Just engaged and already overwhelmed? Set your date, guest count, total budget and top three priorities in ten minutes, then see only this week's two or three steps.",
+    "buyer": "Engaged adults planning their own wedding who feel overwhelmed and don't know where to start.",
+    "bullets": [
+      "A ten-minute start: date, guest count, total budget and your top three priorities, with a budget split by what you care about that updates as quotes come in.",
+      "Only this week's two or three steps, not a 200-item checklist.",
+      "A guest list with RSVPs, a vendor log with payment due dates, an inbox for other people's ideas, and sharing between both partners."
+    ],
+    "price": "$24.99 one-time",
+    "priceUsd": 25,
+    "priceNote": "One payment, no subscription.",
+    "reasonPrompt": "When is the wedding, roughly how many guests, and what feels most overwhelming right now?",
+    "faq": [
+      {
+        "q": "Is it linked to venues or vendors?",
+        "a": "No. It's independent, shows no vendor ads, and takes no commission."
+      },
+      {
+        "q": "Can my partner use it too?",
+        "a": "Yes. You both see the same plan, list and budget."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-24",
+      "summary": "Newly engaged people say they had so much anxiety after getting engaged, were afraid and overwhelmed by the thought of wedding planning, don't know where to start, have been so overwhelmed, and were beginning to feel overwhelmed.",
+      "wtp": "Wedding Planner by Wedsly (207 ratings) sells premium options from $3.99 to $49.99; Wedding Planner (about 3.7K ratings) has a paid upgrade. The doc side also found posters paying for planners and planner books.",
+      "signals": [
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1236966921/sortby=mostrecent/json",
+          "who": "S.t.e.p.h._.a.n.i.e (App Store review, Wedding Planner)",
+          "date": "2021-01-18",
+          "quote": "I had so much anxiety after jumping into my engagement",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1236966921/sortby=mostrecent/json",
+          "who": "16Sunshine (App Store review, Wedding Planner)",
+          "date": "2020-05-19",
+          "quote": "I was afraid and overwhelmed with the thought of wedding planning",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=2/id=1236966921/sortby=mostrecent/json",
+          "who": "Nat-Bry (App Store review, Wedding Planner)",
+          "date": "2019-08-09",
+          "quote": "Where do I start and what am I supposed to do",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=3/id=1236966921/sortby=mostrecent/json",
+          "who": "Fern1212 (App Store review, Wedding Planner)",
+          "date": "2018-06-27",
+          "quote": "We have been so overwhelmed",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1236966921?see-all=reviews",
+          "who": "anakcornelio (App Store review, Wedding Planner)",
+          "date": "2019-07-16",
+          "quote": "I was beginning to feel overwhelmed",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "The Knot, Zola, WeddingWire and other planner apps, wedding planners, planner books.",
+      "risks": "Checked evidence is App Store reviews of one app (2018-2021); the doc side's WeddingWire.ca threads return 403 to the code side. A crowded, well-funded market; the angle is fewer steps and a priority-based budget."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

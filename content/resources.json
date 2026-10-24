@@ -14886,5 +14886,50 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "wedding-planning-where-to-start",
+  "offer": "aisle-steps",
+  "title": "Wedding planning when you don't know where to start: the first five decisions",
+  "description": "The handful of decisions that unlock everything else, how to split a budget by what you care about, and how to stop feeling overwhelmed.",
+  "intro": "Wedding planning feels huge because everything seems urgent at once. In reality, a few early decisions shape all the rest, and most things can wait.",
+  "sections": [
+   {
+    "h": "The first five decisions",
+    "list": [
+     "Your total budget, and who is contributing.",
+     "Roughly how many guests.",
+     "The season or rough date.",
+     "Your top three priorities (for example food, photos and music).",
+     "The general area or type of venue."
+    ]
+   },
+   {
+    "h": "Split the budget by priorities",
+    "list": [
+     "Put more of the budget into your top three priorities, and less into the things you care least about.",
+     "Keep a buffer of around 10% for surprises.",
+     "Update the budget as real quotes come in."
+    ]
+   },
+   {
+    "h": "Book the big things first",
+    "p": [
+     "Venue and date usually come first, then the suppliers who get booked up early in your area. Everything else can follow later."
+    ]
+   },
+   {
+    "h": "Take it a few steps at a time",
+    "p": [
+     "Choose two or three tasks a week and ignore the rest until next week. A long checklist is useful to keep, but not to look at every day."
+    ]
+   },
+   {
+    "h": "Share the load",
+    "p": [
+     "Decide together who handles what, and keep one shared list so nothing gets lost in messages."
+    ]
+   }
+  ]
  }
 ]
