@@ -35376,6 +35376,97 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-24",
+    "slug": "together-seats",
+    "name": "Together Seats",
+    "need": "I've saved up a big pile of airline points, but I can never find reward seats for my whole family on the same flight in the school holidays, which are the only dates we can travel.",
+    "headline": "Got a big stash of airline points but never find reward seats for the whole family in the school holidays? Find out the moment enough seats open on one flight.",
+    "buyer": "Parents who collect airline points and can only travel in school holidays with three to five people.",
+    "bullets": [
+      "Alerts that fire only when enough reward seats for your whole party open on one flight.",
+      "A calendar of seat-release days for your school holiday dates, with a reminder to book or call.",
+      "Split-booking ideas when only some seats appear (2+2 on back-to-back flights, mixed cabins, nearby airports) and a value check of points plus fees against the cash fare."
+    ],
+    "price": "$9/month",
+    "priceUsd": 9,
+    "priceNote": "Or $59 a year.",
+    "reasonPrompt": "How many of you travel, which points do you collect, and where would you go?",
+    "faq": [
+      {
+        "q": "Does it book flights for me?",
+        "a": "No. It alerts you and suggests options; you book with your airline. Seat availability changes quickly and isn't guaranteed."
+      },
+      {
+        "q": "Is it linked to an airline?",
+        "a": "No. It's independent and not affiliated with any airline or loyalty programme."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-24",
+      "summary": "Parents say they've collected hundreds of thousands of points but struggle to use them, can only get four seats when they need five, ask whether points are worth it if they must fly in school holidays, find nothing available on routes that used to be easy, and can't book four seats on reward tickets.",
+      "wtp": "seats.aero (about 5.9K ratings) sells award-alert Pro for $20; SeatSpy sells reward-seat alerts from £2.49 to £7.99 a month, and TelboyMrT says 'I subscribe to seatspy'.",
+      "signals": [
+        {
+          "url": "https://www.headforpoints.com/forums/topic/inspire-me-family-travel",
+          "who": "Fife Flyer (Head for Points)",
+          "date": "2022-09-10",
+          "quote": "managed to acquire about 320k Avios",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.headforpoints.com/forums/topic/avios-strategy-for-a-family-of-5",
+          "who": "eshaq786 (Head for Points)",
+          "date": "2025-11-28",
+          "quote": "only 4 seats are released at 355 days out",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.headforpoints.com/forums/topic/avios-strategy-for-a-family-of-5",
+          "who": "dadbod (Head for Points)",
+          "date": "2024-06-07",
+          "quote": "can you still extract good value from Avios",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.headforpoints.com/forums/topic/no-virgin-reward-seats-to-vegas-for-april-2023",
+          "who": "FREEFLIGHTS (Head for Points)",
+          "date": "2022-05-19",
+          "quote": "there appears to be nothing to be had this time round",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.headforpoints.com/forums/topic/no-virgin-reward-seats-to-vegas-for-april-2023",
+          "who": "TelboyMrT (Head for Points)",
+          "date": "2022-05-14",
+          "quote": "I subscribe to seatspy",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.australianfrequentflyer.com.au/community/threads/classic-reward-seats-a-thing-of-the-past.107756/",
+          "who": "robolb (Australian Frequent Flyer)",
+          "date": "2023-01-07",
+          "quote": "shed load of Qantas FF points",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.australianfrequentflyer.com.au/community/threads/qantas-melbourne-to-perth-return-economy-classic-rewards-booking-trouble.105128/",
+          "who": "AISC (Australian Frequent Flyer)",
+          "date": "2022-06-29",
+          "quote": "I have just tried booking 4 Melbourne to Perth",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "seats.aero, Roame, SeatSpy, Reward Flight Finder.",
+      "risks": "Strong paid incumbents; the angle is party-size-first alerts and school-holiday planning. Live availability needs data access with technical and terms risk. Posters are points hobbyists; airline names only describe the need."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
