@@ -33332,6 +33332,174 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-24",
+    "slug": "awl-line",
+    "name": "Awl Line",
+    "need": "My hand-stitched leather comes out crooked and uneven, the back never matches the front, and I can't work out what I'm doing wrong.",
+    "headline": "Saddle stitches crooked, or slanted on one side and flat on the other? Photograph both sides, name the fault, and practise one fix at a time.",
+    "buyer": "Adults learning hand leatherwork (wallets, watch straps, bags, belts) whose saddle stitching looks uneven, wanders, or doesn't match front to back.",
+    "bullets": [
+      "Front and back seam photos side by side every session, and a pick-the-fault list (one-side slant, wandering line, uneven spacing, loose stitches) with one fix to try.",
+      "Ten-minute scrap-leather drills: iron and awl angle, the same needle first every hole, consistent casting, even pull.",
+      "A settings log (leather weight, thread size, iron spacing) and a before-and-after gallery from your first seam to your latest project."
+    ],
+    "price": "$3.99/month",
+    "priceUsd": 4,
+    "priceNote": "Or $29 a year.",
+    "reasonPrompt": "What are you making, and what looks wrong with your stitching?",
+    "faq": [
+      {
+        "q": "Does it teach cutting or tooling?",
+        "a": "No. It focuses on hand stitching only. Use sharp tools carefully and cut away from your body."
+      },
+      {
+        "q": "Is it linked to a tool brand?",
+        "a": "No. It's independent and works with whatever irons, needles and thread you already have."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-24",
+      "summary": "Leatherworkers say their stitches are not completely straight looking or uniform, change from project to project, come out sharply diagonal on one side and not the other, look just straight on the back, and slant on the back while the front is straight.",
+      "wtp": "Domestika sells 'Create Custom Hand-Sewn Leather Bags', a saddle-stitch course for beginners, at a regular price of $34.99, with 75 reviews.",
+      "signals": [
+        {
+          "url": "https://leatherworker.net/forum/topic/19926-saddle-stitching-crooked-and-uneven-please-advise-on-how-to-make-stitching-more-uniform-and-nicer/",
+          "who": "NewYorkerInSydney (Leatherworker.net)",
+          "date": "2009-10-29",
+          "quote": "They are not completely straight looking or uniform",
+          "seen": "opened"
+        },
+        {
+          "url": "https://leatherworker.net/forum/topic/54618-backside-of-saddle-stitch-comes-out-different-on-every-project/",
+          "who": "DavidL (Leatherworker.net)",
+          "date": "2014-03-29",
+          "quote": "Im not sure what is making the stitches change from project to project",
+          "seen": "opened"
+        },
+        {
+          "url": "https://leatherworker.net/forum/topic/64435-another-saddle-stitching-help-thread/",
+          "who": "jaeiger (Leatherworker.net)",
+          "date": "2015-06-26",
+          "quote": "is at least not as sharply diagonal as the other side",
+          "seen": "opened"
+        },
+        {
+          "url": "https://leatherworker.net/forum/topic/89072-hand-stitching-front-and-back/",
+          "who": "KarlProsek (Leatherworker.net)",
+          "date": "2020-03-03",
+          "quote": "The back side seems just straight, instead of the front one that is much better.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://leatherworker.net/forum/topic/93695-getting-slanted-stitches-only-on-back-side/",
+          "who": "allenayres83 (Leatherworker.net)",
+          "date": "2021-01-24",
+          "quote": "While I am stitching I am getting slanted stitches on the back and straight stitches on the front.",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Domestika and YouTube courses, leathercraft books, local classes.",
+      "risks": "All voices are on one site (Leatherworker.net), across five threads, mostly 2009-2021. Money is a paid course, not an app."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-24",
+    "slug": "fair-account",
+    "name": "Fair Account",
+    "need": "I've got the PIP form and I don't know where to start or how to put what I struggle with into words, and I have no one to help me fill it in.",
+    "headline": "PIP form and no idea what to write? Note what you struggle with each day, then turn it into clear, honest examples for each activity before the deadline.",
+    "buyer": "UK adults applying for, or being moved onto, Personal Independence Payment, and partners, relatives or friends who help fill in the form.",
+    "bullets": [
+      "Quick daily notes tagged to the form's daily-living and mobility activities, turned into plain examples in your own words: what happened, how long it took, who helped.",
+      "A deadline countdown with a reminder to ask for more time, and an evidence checklist (letters, reports, medication list, who supports you).",
+      "A helper mode for a partner or carer, and a saved copy of everything you sent."
+    ],
+    "price": "$4.99/month",
+    "priceUsd": 5,
+    "priceNote": "Or $24 a year.",
+    "reasonPrompt": "Where are you with your claim, and which part of the form is hardest to write?",
+    "faq": [
+      {
+        "q": "Is it advice, and can it get me an award?",
+        "a": "No. It helps you organise honest examples in your own words. It can't promise an award or an amount, and it isn't legal or medical advice. Citizens Advice and local welfare rights services give free help."
+      },
+      {
+        "q": "Is it linked to the DWP?",
+        "a": "No. It's independent and doesn't submit anything for you. Your notes stay private to you."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-24",
+      "summary": "Claimants say they know very little about applying for PIP and are overwhelmed, want an example of how best to fill in the form, are looking for a reliable source to understand it, are struggling with the form because of complex conditions, have no one to help them fill it in, and find it really hard to put into words how they cope.",
+      "wtp": "Benefits and Work sells PIP claim guides for £19.95 a year, or £39.95 with structured online PIP training. Sleepyhead says 'Have just subscribed to this site' before asking how to fill in the form.",
+      "signals": [
+        {
+          "url": "https://benefitsandwork.co.uk/forum/10-dla-esa-queries-results/120971-where-to-start",
+          "who": "Roger (Benefits and Work forum)",
+          "date": "2018-02-13",
+          "quote": "I know very little about applying for PIP and am slightly overwhelmed by the process.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://benefitsandwork.co.uk/forum/10-dla-esa-queries-results/122422-pip2-form",
+          "who": "Eve (Benefits and Work forum)",
+          "date": "2018-05-08",
+          "quote": "is there an example or explanation on this site of how best to fill in this form",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forum.scope.org.uk/discussion/62610/where-to-find-the-most-accurate-help-filling-in-pips-form-not-cab-pls",
+          "who": "Opus (Scope Online Community)",
+          "date": "2019-08-09",
+          "quote": "Does anyone know a reliable source to understand and fill in the PIPS form?",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forum.scope.org.uk/discussion/90036/help-completing-my-pip-form",
+          "who": "Mumto3 (Scope Online Community)",
+          "date": "2022-03-25",
+          "quote": "I am struggling filling in my pip claim form as I have a lot of complex medical issues",
+          "seen": "opened"
+        },
+        {
+          "url": "https://benefitsandwork.co.uk/forum/10-dla-esa-queries-results/141527-claiming-pip-for-the-first-time",
+          "who": "Cee Cee (Benefits and Work forum)",
+          "date": "2023-02-20",
+          "quote": "I have limited support network and no one to help me fillinf out the online form",
+          "seen": "opened"
+        },
+        {
+          "url": "https://benefitsandwork.co.uk/forum/10-dla-esa-queries-results/142950-new-to-benefit-and-work",
+          "who": "Sleepyhead (Benefits and Work forum)",
+          "date": "2023-07-04",
+          "quote": "Have just subscribed to this site. Where do I start for guidance on filling in a PIP application form.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forum.scope.org.uk/discussion/114391/pip-and-help",
+          "who": "townygyp (Scope Online Community)",
+          "date": "2024-02-01",
+          "quote": "having spent my whole life managing with coping strategies I am finding it really hard to unpick what",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Benefits and Work guides, Citizens Advice and welfare rights services (free), Scope's helpline.",
+      "risks": "Sensitive: users are disabled or chronically ill and often distressed. No promise of awards or amounts, no legal or medical advice. UK only (Scotland now uses Adult Disability Payment). Free help exists, so the price must stay low."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

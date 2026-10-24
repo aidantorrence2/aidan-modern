@@ -13803,5 +13803,87 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "saddle-stitch-uneven-back-side-fix",
+  "offer": "awl-line",
+  "title": "Saddle stitching uneven or slanted only on one side? Common causes and fixes",
+  "description": "Why hand-stitched leather looks crooked or different front to back, and simple habits that make every stitch match.",
+  "intro": "Uneven saddle stitching usually comes from small inconsistencies repeated hundreds of times. Fix one habit at a time on scrap leather and compare both sides.",
+  "sections": [
+   {
+    "h": "Same needle first, every hole",
+    "p": [
+     "Decide which needle goes through each hole first (for example, always the back needle) and keep it the same for the whole seam. Switching changes the slant."
+    ]
+   },
+   {
+    "h": "Cast the same way each time",
+    "p": [
+     "Before pulling the second needle through, loop (cast) the thread the same way around the first needle on every stitch. Inconsistent casting makes some stitches lie flat and others slant."
+    ]
+   },
+   {
+    "h": "Keep your irons and holes straight",
+    "list": [
+     "Mark a stitch line with a groover or wing divider, and keep the irons upright and in line with it.",
+     "If you widen holes with an awl, hold it at the same angle every time."
+    ]
+   },
+   {
+    "h": "Even tension",
+    "p": [
+     "Pull both threads with the same force after every stitch, and set each stitch the same way. Too tight on one side pulls the line crooked."
+    ]
+   },
+   {
+    "h": "Check both sides as you go",
+    "p": [
+     "Look at the back every few stitches. Photographing both sides of a practice seam makes patterns easy to spot."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "pip-form-how-to-describe-difficulties",
+  "offer": "fair-account",
+  "title": "Filling in the PIP form: how to describe what you struggle with",
+  "description": "Plain tips for the PIP 'How your disability affects you' form: honest examples, the reliability questions, evidence, deadlines and free help.",
+  "intro": "The PIP form asks how your condition affects everyday activities. Clear, honest examples from real life help the assessor understand. This is general information, not advice; free help is available from Citizens Advice and local welfare rights services.",
+  "sections": [
+   {
+    "h": "Think about most days, not just your best",
+    "p": [
+     "Describe how you manage most of the time, including bad days and how often they happen. Don't describe only your best day."
+    ]
+   },
+   {
+    "h": "Can you do it reliably?",
+    "list": [
+     "For each activity, ask yourself whether you can do it safely, to an acceptable standard, as often as you need to, and in a reasonable time.",
+     "If you need help, an aid, prompting or much longer than most people, say so, and say what happens if you try anyway (pain, tiredness, falls, anxiety)."
+    ]
+   },
+   {
+    "h": "Give real examples",
+    "list": [
+     "Write what happened, when, how long it took, and who helped or saw it.",
+     "Keeping a short diary for a week or two before you fill in the form makes this much easier."
+    ]
+   },
+   {
+    "h": "Evidence and deadlines",
+    "list": [
+     "Send copies of letters, reports, prescription lists and anything from people who support you. Keep copies of everything.",
+     "The form has a return deadline. If you need more time, contact the DWP before it passes."
+    ]
+   },
+   {
+    "h": "Get free help",
+    "p": [
+     "Citizens Advice, local welfare rights services and disability charities can help you fill in the form for free. In Scotland, new claims are for Adult Disability Payment instead of PIP."
+    ]
+   }
+  ]
  }
 ]
