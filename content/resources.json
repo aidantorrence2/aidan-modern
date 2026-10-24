@@ -14141,5 +14141,52 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "worried-about-bad-breath-what-helps",
+  "offer": "breath-note",
+  "title": "Worried you have bad breath? How to tell, and what usually helps",
+  "description": "Simple ways to check your own breath, the everyday causes, a routine that helps most people, and when to see a dentist or GP.",
+  "intro": "Most bad breath starts in the mouth and improves with a good routine. It's hard to judge your own breath, so a few simple checks and notes help. This is general information, not dental or medical advice.",
+  "sections": [
+   {
+    "h": "How to check",
+    "list": [
+     "Lick the inside of your wrist, let it dry for a few seconds, then smell it.",
+     "Gently scrape the back of your tongue with a clean spoon and smell it.",
+     "Ask one trusted person to tell you honestly."
+    ]
+   },
+   {
+    "h": "Common causes",
+    "list": [
+     "Food and bacteria left on teeth, gums and the tongue.",
+     "Dry mouth, which can come from not drinking enough water, breathing through your mouth, or some medicines.",
+     "Strong foods (garlic, onions, spices), coffee, alcohol and smoking.",
+     "Gum disease or other dental problems."
+    ]
+   },
+   {
+    "h": "A routine that helps",
+    "list": [
+     "Brush twice a day for two minutes, and clean between your teeth once a day.",
+     "Clean your tongue gently, from back to front.",
+     "Drink water through the day, and chew sugar-free gum after meals.",
+     "See a dentist and hygienist regularly."
+    ]
+   },
+   {
+    "h": "When to get help",
+    "p": [
+     "See a dentist if it doesn't improve with a good routine, or if your gums bleed or are sore. See a GP if your dentist finds no cause in your mouth."
+    ]
+   },
+   {
+    "h": "Find your pattern",
+    "p": [
+     "For two weeks, note days that seemed worse and what came before: food, drink, sleep, a cold or stress. It helps you and your dentist spot the cause."
+    ]
+   }
+  ]
  }
 ]

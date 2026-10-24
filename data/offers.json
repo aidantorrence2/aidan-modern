@@ -34011,6 +34011,97 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-24",
+    "slug": "breath-note",
+    "name": "Breath Note",
+    "need": "I worry I have bad breath, I can't tell when it's bad, and I keep buying mouthwash without knowing what actually helps.",
+    "headline": "Worried about bad breath but can't tell when it's bad? Log a quick daily check, find what comes before worse days, and keep a routine that actually helps.",
+    "buyer": "Adults who worry about bad breath, can't tell when it's bad, and keep buying mouthwashes without knowing what works.",
+    "bullets": [
+      "A two-tap daily check (how it seemed, or what someone said) with likely factors: coffee, skipped meals, garlic, dry mouth, sleep, a cold.",
+      "A routine you set yourself (brushing, tongue cleaning, flossing, water, and anything your dentist suggested), with no streaks.",
+      "A two-week pattern view of what comes before worse and better days, a big-day plan, and a one-page summary for a dentist or GP."
+    ],
+    "price": "$2.99/month",
+    "priceUsd": 3,
+    "priceNote": "Or $14.99 a year.",
+    "reasonPrompt": "What makes you think your breath might be bad, and what have you tried so far?",
+    "faq": [
+      {
+        "q": "Can it measure my breath?",
+        "a": "No. It's a diary and routine planner, not a test or medical advice. A dentist can check for gum disease and other causes; see a GP if it continues despite good oral hygiene."
+      },
+      {
+        "q": "Is it linked to a brand?",
+        "a": "No. It's independent and recommends no products."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-24",
+      "summary": "People ask how you know you have bad breath if no one tells you, wish there were a dip-stick test, assume they always have it, have tried to get rid of it with no success, and ask how to combat it.",
+      "wtp": "People already spend on the problem: kah22 'bought a product called CB12', ajnasir says CB12 'did not work for me', mogwai pays about £8 for a 500ml bottle of a dry-mouth rinse, and arkenstone swishes with Biotene every night.",
+      "signals": [
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/3461555/bad-breath",
+          "who": "suki1964 (MoneySavingExpert)",
+          "date": "2011-09-02",
+          "quote": "How do you know you have bad breath if no one tells you?",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/3461555/bad-breath",
+          "who": "suki1964 (MoneySavingExpert)",
+          "date": "2011-09-02",
+          "quote": "Shame you cant get a dip stick test or something",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/3461555/bad-breath",
+          "who": "lostinrates (MoneySavingExpert)",
+          "date": "2011-09-02",
+          "quote": "which I assume I always have",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/4284833/cb12-costly-but-does-it-kill-bad-breath-cant-find-independent-review",
+          "who": "kah22 (MoneySavingExpert)",
+          "date": "2012-11-12",
+          "quote": "to get rid of mine but to date no success",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/4284833/cb12-costly-but-does-it-kill-bad-breath-cant-find-independent-review",
+          "who": "ajnasir (MoneySavingExpert)",
+          "date": "2012-11-14",
+          "quote": "CB12 is useless and did not work for me",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.studentdoctor.net/threads/bad-breath.1113430/",
+          "who": "Aamiya (Student Doctor Network)",
+          "date": "2014-12-25",
+          "quote": "How to Combat Bad Breath?",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.studentdoctor.net/threads/bad-breath.1113430/",
+          "who": "arkenstone (Student Doctor Network)",
+          "date": "2015-01-02",
+          "quote": "I used to have some breath issues.",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Specialist mouthwashes, tongue scrapers, dentists and hygienists.",
+      "risks": "Posts are 2011-2015. The doc side's Mumsnet voices couldn't be checked from the code side. Money goes on products, not apps. It can't measure breath; not dental or medical advice."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
