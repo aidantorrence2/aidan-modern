@@ -14539,5 +14539,52 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "heartburn-reflux-food-diary",
+  "offer": "reflux-notes",
+  "title": "How to keep a heartburn and reflux diary that shows your triggers",
+  "description": "Common reflux triggers, what to log for meals and flares, everyday changes that help many people, and when to see a GP.",
+  "intro": "Reflux triggers differ from person to person, and timing matters as much as food. A few weeks of simple notes usually shows a pattern. This is general information, not medical advice.",
+  "sections": [
+   {
+    "h": "See a doctor if",
+    "list": [
+     "You have chest pain that spreads to your arm, jaw or back, or with breathlessness: get urgent help.",
+     "You have trouble swallowing, keep vomiting, have black stools, or lose weight without trying.",
+     "You've had heartburn most days for three weeks or more, or remedies aren't helping."
+    ]
+   },
+   {
+    "h": "Common triggers",
+    "list": [
+     "Large or late meals, and lying down soon after eating.",
+     "Fatty or spicy food, chocolate, coffee, alcohol, citrus and tomatoes.",
+     "Smoking, tight clothing and stress."
+    ]
+   },
+   {
+    "h": "What to log",
+    "list": [
+     "What you ate and drank, how much, and when.",
+     "Each flare: time, how bad (0 to 3), and what you took.",
+     "When you went to bed, and anything else unusual that day."
+    ]
+   },
+   {
+    "h": "Everyday changes that help many people",
+    "list": [
+     "Eat smaller meals, and leave three to four hours between your last meal and bed.",
+     "Raise the head of your bed slightly.",
+     "Try changing one thing at a time for two weeks, so you can tell what helped."
+    ]
+   },
+   {
+    "h": "Medicines",
+    "p": [
+     "A pharmacist can advise on remedies. Don't stop or change prescribed medicines without talking to your GP."
+    ]
+   }
+  ]
  }
 ]

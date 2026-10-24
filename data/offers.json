@@ -34788,6 +34788,76 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-24",
+    "slug": "reflux-notes",
+    "name": "Reflux Notes",
+    "need": "I get heartburn and acid reflux and I can't work out what sets it off, and I want a clear record to take to my GP or pharmacist.",
+    "headline": "Heartburn and reflux and no idea what sets it off? Log meals and flares in a few taps, see what came before bad nights, and test one change at a time.",
+    "buyer": "Adults with heartburn or acid reflux who can't work out their triggers and want a clear record for a GP or pharmacist.",
+    "bullets": [
+      "A quick meal log of the foods and drinks you choose (coffee, chocolate, spicy, fatty, citrus, alcohol) with size and time, plus a two-tap flare log.",
+      "A context check (late meals, lying down after eating, sleep, stress, raised pillow) and a three-week view of what came before flares versus calm days.",
+      "A two-week one-change test with before and after, and a one-page summary for your GP or pharmacist."
+    ],
+    "price": "$2.99/month",
+    "priceUsd": 3,
+    "priceNote": "Or $19.99 a year.",
+    "reasonPrompt": "When does your heartburn usually start, and what have you tried so far?",
+    "faq": [
+      {
+        "q": "Is it medical advice?",
+        "a": "No. It's a diary. It doesn't diagnose or tell you to start or stop any medicine. Get urgent help for chest pain that spreads to your arm, jaw or back, or with breathlessness. See a GP for trouble swallowing, vomiting, black stools, weight loss, or heartburn most days for three weeks or more."
+      },
+      {
+        "q": "Is it linked to a brand?",
+        "a": "No. It's independent and recommends no products."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-24",
+      "summary": "People say heartburn and reflux have been their biggest problem, that they've suffered with acid reflux for around six years, had a miserable night waking up with it, take so many pills, and are struggling with what to eat.",
+      "wtp": "People already spend on the problem: Mac-beats has been on 'all the various PPI at different dosages', TorchonKId66 is 'taking so many pills', and Bell7 takes daily omeprazole. Paid reflux tracker apps exist (for example, $2.99 a month premium tiers), though with few ratings.",
+      "signals": [
+        {
+          "url": "https://healthunlocked.com/bhf/posts/146845108/reflux-heartburn-hell.",
+          "who": "Mac-beats (HealthUnlocked)",
+          "date": "undated",
+          "quote": "my biggest problem has been with Heartburn/Reflux",
+          "seen": "opened"
+        },
+        {
+          "url": "https://healthunlocked.com/bhf/posts/148297708/%EF%BB%BFacid-reflux",
+          "who": "Bell7 (HealthUnlocked)",
+          "date": "undated",
+          "quote": "have suffered with acid reflux for around 6years",
+          "seen": "opened"
+        },
+        {
+          "url": "https://healthunlocked.com/bhf/posts/152268570/lansoprazol-acid-reflux",
+          "who": "TorchonKId66 (HealthUnlocked)",
+          "date": "undated",
+          "quote": "a miserable night waking up with acid reflux",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/5047147/meal-ideas-for-acid-reflux",
+          "who": "bigmaz (MoneySavingExpert)",
+          "date": "2014-08-26",
+          "quote": "I am really struggling with meal ideas",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Paid reflux tracker apps, paper food diaries, pharmacists and GPs.",
+      "risks": "Code-side evidence is 4 people on 4 pages; the doc side's Mumsnet voices couldn't be checked. Paid apps have few ratings, so the money evidence is spending on medicines. Not medical."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
