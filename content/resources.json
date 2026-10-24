@@ -13929,5 +13929,47 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "stop-junk-mail-previous-occupants",
+  "offer": "quiet-doormat",
+  "title": "How to stop junk mail and post for previous occupants (UK)",
+  "description": "The free opt-outs for addressed junk mail, leaflets and charity mail, plus what to do with post for people who no longer live at your address.",
+  "intro": "You can cut most junk mail with a few free opt-outs, though some takes a few months to stop. This guide covers the UK; other countries have similar registers.",
+  "sections": [
+   {
+    "h": "Addressed junk mail",
+    "list": [
+     "Register with the Mailing Preference Service (MPS). It's free and reduces addressed advertising mail from companies that use it. It can take up to four months to take full effect.",
+     "Contact companies directly and ask them to remove you from their mailing list."
+    ]
+   },
+   {
+    "h": "Unaddressed leaflets",
+    "list": [
+     "Royal Mail delivers some unaddressed leaflets ('door to door'). You can opt out by contacting Royal Mail; the opt-out lasts two years.",
+     "A polite 'no junk mail or leaflets' sign on your door helps with other distributors, though not everyone follows it."
+    ]
+   },
+   {
+    "h": "Charity mail",
+    "p": [
+     "The Fundraising Preference Service lets you stop contact from specific charities."
+    ]
+   },
+   {
+    "h": "Post for previous occupants",
+    "list": [
+     "Write 'Not known at this address' or 'Return to sender' on the envelope, without opening it, and put it back in a post box.",
+     "For repeat senders, contact them directly and ask them to update their records. Don't open someone else's post."
+    ]
+   },
+   {
+    "h": "Keep track",
+    "p": [
+     "Note which senders you've contacted and when. If something still arrives after a few months, chase that sender again."
+    ]
+   }
+  ]
  }
 ]

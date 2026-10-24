@@ -33577,6 +33577,97 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-24",
+    "slug": "quiet-doormat",
+    "name": "Quiet Doormat",
+    "need": "I'm fed up with junk mail, leaflets and post for previous occupants pouring through my door, and nothing I try makes it stop.",
+    "headline": "Junk mail and post for people who moved out years ago still landing on your doormat? Snap each piece, get the right opt-out, and track which senders actually stop.",
+    "buyer": "Householders and renters, especially people who've just moved in and get post for previous occupants, or who handle a late relative's mail.",
+    "bullets": [
+      "Snap a mailer to identify the sender and get the matching opt-out: preference registers, the sender's own list, or 'not at this address'.",
+      "A one-time walkthrough of the national preference and door-to-door opt-outs, plus a previous-occupant and late-relative mode.",
+      "A sender log (requested, stopped, still arriving) and a weekly tally so you can see the pile shrink."
+    ],
+    "price": "$3.99/month",
+    "priceUsd": 4,
+    "priceNote": "Or $24.99 a year.",
+    "reasonPrompt": "What arrives most: leaflets, catalogues, charity mail, or post for someone who's moved out?",
+    "faq": [
+      {
+        "q": "Does it send anything in my name?",
+        "a": "Only when you confirm each request. It prepares the opt-out and you choose to send it."
+      },
+      {
+        "q": "Is it linked to the post office or a register?",
+        "a": "No. It's independent and points you to the official free opt-outs wherever they exist."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-24",
+      "summary": "People say they were so sick of getting junk mail, are fed up having to recycle it all, still get hefty lumps of promotional material, can't stop junk mail addressed to a previous resident, still get mail for former residents after a year and a half, and send almost all their post straight to recycling.",
+      "wtp": "PaperKarma, a junk-mail opt-out app (4.4 stars, 1.1K ratings), sells unsubscribe plans up to a $59.99 lifetime plan; reviewer Cathy GK calls it 'the best $25 I ever spent'. On Hacker News, Svetlitski pays a small fee for a mail opt-out register: 'Well worth it IMO'.",
+      "signals": [
+        {
+          "url": "https://apps.apple.com/us/app/id1231098843?see-all=reviews",
+          "who": "Cathy GK (App Store review, PaperKarma)",
+          "date": "2025-07-13",
+          "quote": "I was so sick of getting junk mail",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/474575/door-sticker-to-stop-fliers-menus-free-papers-etc",
+          "who": "redcar_2 (MoneySavingExpert)",
+          "date": "2007-06-10",
+          "quote": "so fed up not just with having to recycle all these",
+          "seen": "opened"
+        },
+        {
+          "url": "https://singletrackworld.com/forum/off-topic/how-do-you-stop-junk-mail/",
+          "who": "shermer75 (Singletrack World)",
+          "date": "2013-05-02",
+          "quote": "still getting hefty lumps of promotional material on a regular basis",
+          "seen": "opened"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=27135677",
+          "who": "schemescape (Hacker News)",
+          "date": "2021-05-12",
+          "quote": "how do I stop junk mail that is addressed to a previous resident?",
+          "seen": "opened"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=1418331",
+          "who": "frossie (Hacker News)",
+          "date": "2010-06-09",
+          "quote": "99% of my snail mail (by weight) goes straight into the recycling bin",
+          "seen": "opened"
+        },
+        {
+          "url": "https://boards.straightdope.com/t/any-way-to-stop-mail-for-previous-residents-from-getting-delivered/381244",
+          "who": "bouv (Straight Dope)",
+          "date": "2006-11-21",
+          "quote": "Is there any way we can get the post office to stop delivering it?",
+          "seen": "opened"
+        },
+        {
+          "url": "https://boards.straightdope.com/t/any-way-to-stop-mail-for-previous-residents-from-getting-delivered/381244",
+          "who": "Rigamarole (Straight Dope)",
+          "date": "2006-11-21",
+          "quote": "I have been at my apartment a year and a half and I still get mail for former residents",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "PaperKarma, national preference registers (often free), door stickers.",
+      "risks": "Many forum posts are old (2006-2013). PaperKarma is an established US competitor; the angle is UK and international opt-outs plus previous-occupant post. Some free official routes exist."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
