@@ -13587,5 +13587,92 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "write-your-life-story-for-grandchildren",
+  "offer": "told-forward",
+  "title": "How to write your life story for your grandchildren (and actually finish it)",
+  "description": "Small weekly prompts, a simple chapter plan and a few tricks to get unstuck, so your memories become a book the family can keep.",
+  "intro": "Many people start a memoir for the family and stall after a few pages. Small, regular pieces get further than waiting for a free week.",
+  "sections": [
+   {
+    "h": "Start small",
+    "list": [
+     "Answer one question a week in a few paragraphs, such as your first school, your first job, or the house you grew up in.",
+     "Write as you'd talk to a grandchild. Plain words are best; you can tidy up later."
+    ]
+   },
+   {
+    "h": "A simple chapter plan",
+    "list": [
+     "Early childhood and family.",
+     "School days and friends.",
+     "Work, moving away and early adulthood.",
+     "Love, family and the places you've lived.",
+     "Things you'd like them to know."
+    ]
+   },
+   {
+    "h": "Capture stray memories",
+    "p": [
+     "Keep one notebook or phone note for memories as they pop up, and file them into a chapter once a week so the pile never becomes a jumble."
+    ]
+   },
+   {
+    "h": "Add photos and details",
+    "p": [
+     "A photo next to a story brings it to life. Name the people and places, and give a rough year."
+    ]
+   },
+   {
+    "h": "Finish it",
+    "p": [
+     "Set a finish date, such as a birthday. When each chapter has a few stories, put it together as a simple book or PDF. A finished short book is worth more than a perfect one that never gets done."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "digitise-old-family-photos-plan",
+  "offer": "loose-prints",
+  "title": "Boxes of old family photos? A simple plan to sort and digitise them",
+  "description": "Tackle one envelope at a time, scan prints with your phone or a service, label faces while someone still knows them, and share the results.",
+  "intro": "Old prints feel overwhelming because there are so many. Breaking them into small batches, and labelling as you go, is what gets the job finished.",
+  "sections": [
+   {
+    "h": "Sort before you scan",
+    "list": [
+     "Work one box or envelope at a time, at a table you can leave set up.",
+     "Make three piles: keep and scan, keep but don't scan, and give to a relative. Skip blurry shots and scenery nobody can place."
+    ]
+   },
+   {
+    "h": "Choose how to scan",
+    "list": [
+     "Phone scanning apps work well for prints: use soft, even light and avoid glare.",
+     "A flatbed scanner gives better results for precious photos; 600 dpi is a common choice for small prints.",
+     "Slides and negatives need a film scanner or a scanning service. Services charge per photo, so sort first to keep the cost down."
+    ]
+   },
+   {
+    "h": "Label while you still can",
+    "p": [
+     "Add who, where and roughly when to each photo. Send a 'who is this?' list to older relatives now; that knowledge is the hardest thing to replace."
+    ]
+   },
+   {
+    "h": "Store and share safely",
+    "list": [
+     "Keep at least two copies of the scans in different places, such as a cloud service and an external drive.",
+     "Share a family album so everyone can see the results and add names."
+    ]
+   },
+   {
+    "h": "Keep it moving",
+    "p": [
+     "Fifteen minutes a few times a week adds up. Track how many boxes are done, so you can see the end."
+    ]
+   }
+  ]
  }
 ]

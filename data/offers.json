@@ -32905,6 +32905,188 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-24",
+    "slug": "told-forward",
+    "name": "Told Forward",
+    "need": "I want to write down my life story so my children and grandchildren know about my early life, but I can't get started, my notes are a jumble, and I never finish.",
+    "headline": "Your life story for the grandchildren, finished at last: one small memory prompt a week, typed or spoken, sorted into chapters, and exported as a book when you're done.",
+    "buyer": "Adults, often 55 and over, who want to leave their own life story for children and grandchildren and have stalled or never started, and adult children who give it as a gift.",
+    "bullets": [
+      "One gentle prompt a week, from your first school to how you met, answered in ten minutes by typing or talking.",
+      "Stray memories dropped in any time and filed into the right chapter and decade, with old photos beside each story.",
+      "Progress by chapter, so you can see the book filling up, and a print-ready PDF to share with the family."
+    ],
+    "price": "$5.99/month",
+    "priceUsd": 6,
+    "priceNote": "Or $49 a year.",
+    "reasonPrompt": "Who are you writing your story for, and what's stopped you so far?",
+    "faq": [
+      {
+        "q": "Do I need to be a good writer?",
+        "a": "No. Short, plain answers are enough; your own voice is what the family wants. You can talk instead of typing."
+      },
+      {
+        "q": "Who owns the stories?",
+        "a": "You do. Export everything at any time. It's independent and not linked to any printing company."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-24",
+      "summary": "Grandparents say they have a problem getting started and can't think what to write, realise how little their grandchildren know about their early life, will do it if they ever get round to it, have just got lots of notes as things jump into their head, and wonder if they'll ever finish.",
+      "wtp": "Storyworth sells weekly life-story questions and a printed book starting at $69. Forevermore, a guided life-story voice app (691 ratings, 4.6 stars), sells plans from $9.99 a month to $69.99 a year. Gransnet posters already buy paper prompt books, then leave them unfinished.",
+      "signals": [
+        {
+          "url": "https://www.gransnet.com/forums/chat/1344151-I-found-this-a-unique-gift",
+          "who": "Indigo8 (Gransnet)",
+          "date": "2025-01-05",
+          "quote": "I have a problem getting started",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.gransnet.com/forums/chat/1344151-I-found-this-a-unique-gift",
+          "who": "Grannytomany (Gransnet)",
+          "date": "2025-01-05",
+          "quote": "how little my grandchildren know about my early life",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.gransnet.com/forums/chat/1344151-I-found-this-a-unique-gift",
+          "who": "Calendargirl (Gransnet)",
+          "date": "2025-01-05",
+          "quote": "It took me ages to start filling it in.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.gransnet.com/forums/genealogy_memories/1204754-Recording-my-family-memories",
+          "who": "NanKate (Gransnet)",
+          "date": "2014-02-11",
+          "quote": "At present I have just got lots of computer notes as things jump into my head.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.gransnet.com/forums/genealogy_memories/1204754-Recording-my-family-memories",
+          "who": "mrsmopp (Gransnet)",
+          "date": "2014-02-12",
+          "quote": "trying to think the best way to organise all these random memories",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.gransnet.com/forums/genealogy_memories/1204754-Recording-my-family-memories",
+          "who": "goldengirl (Gransnet)",
+          "date": "2014-02-13",
+          "quote": "Will I ever finish it I wonder?",
+          "seen": "opened"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=31223001",
+          "who": "Brajeshwar (Hacker News)",
+          "date": "2022-05-01",
+          "quote": "still looking for a way to collect and continue to write a memoir-ish journey of my life for them to read",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Storyworth, Forevermore, paper prompt books, ghostwriters.",
+      "risks": "Most voices are on Gransnet (two threads); one Hacker News comment. Storyworth is a strong rival; the angle is finishing and organising scattered notes. Keep copy gentle; no health claims."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-24",
+    "slug": "loose-prints",
+    "name": "Loose Prints",
+    "need": "I have boxes of old family photos, some of them my parents', and sorting and scanning them has been on my to-do list for years, but it's so overwhelming that I start and give up.",
+    "headline": "Boxes of old family photos you keep meaning to sort? Scan them with your phone one envelope at a time, name the faces as you go, and share each finished box with family.",
+    "buyer": "Adults, often retired or newly holding a late parent's albums, with hundreds or thousands of loose prints to digitise and pass on.",
+    "bullets": [
+      "Every box and album listed, with one 15-minute batch at a time and progress across the whole collection.",
+      "Phone capture with glare and crop clean-up (or import from a scanner or scanning service), plus quick who, where and roughly-when tags and a 'who is this?' list to send relatives.",
+      "Keep or skip choices so you don't scan scenery nobody can place, a shared family album, and a full export of the originals."
+    ],
+    "price": "$4.99/month",
+    "priceUsd": 5,
+    "priceNote": "Or $39 a year.",
+    "reasonPrompt": "Roughly how many photos do you have, and where did you get stuck last time?",
+    "faq": [
+      {
+        "q": "Do I need a scanner?",
+        "a": "No. A phone works well for prints. Slides and negatives need a scanner or a lab, and you can import those scans."
+      },
+      {
+        "q": "Are my photos locked in?",
+        "a": "No. Export every original and its labels at any time. It's independent and not linked to any scanning service."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-24",
+      "summary": "People say sorting old photos is all a bit overwhelming and they don't know where to start, that they make a start then put them back on the shelf because it's so daunting, that they started sorting and gave up, that it was meant to be their retirement task, and that their photos are still sitting in cardboard boxes.",
+      "wtp": "Photo Scan App by Photomyne (about 97K ratings, 4.7 stars) sells memberships up to $59.99 a year. On Mac Power Users, iPersuade cites a local scanning service at $0.49 to $0.69 a photo.",
+      "signals": [
+        {
+          "url": "https://www.gransnet.com/forums/ask_a_gran/1329038-What-to-do-with-old-photos",
+          "who": "CoolCoco (Gransnet)",
+          "date": "2023-10-27",
+          "quote": "It’s all a bit overwhelming and I don’t know where to start.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.gransnet.com/forums/chat/1296732-Have-you-got-a-daunting-mountain-of-old-family-photos-Its-hard-to-know-where-to-start-but-here-is-an-idea-which-works",
+          "who": "mrsba (Gransnet)",
+          "date": "2021-06-05",
+          "quote": "so daunting",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.gransnet.com/forums/chat/1296732-Have-you-got-a-daunting-mountain-of-old-family-photos-Its-hard-to-know-where-to-start-but-here-is-an-idea-which-works",
+          "who": "Kate1949 (Gransnet)",
+          "date": "2021-06-05",
+          "quote": "It was to be my task on retirement.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.gransnet.com/forums/chat/1296732-Have-you-got-a-daunting-mountain-of-old-family-photos-Its-hard-to-know-where-to-start-but-here-is-an-idea-which-works",
+          "who": "Marydoll (Gransnet)",
+          "date": "2021-06-05",
+          "quote": "I started sorting yesterday and gave up!",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.gransnet.com/forums/chat/1296732-Have-you-got-a-daunting-mountain-of-old-family-photos-Its-hard-to-know-where-to-start-but-here-is-an-idea-which-works",
+          "who": "Shandy57 (Gransnet)",
+          "date": "2021-06-05",
+          "quote": "I have about eight huge boxes of loose photos",
+          "seen": "opened"
+        },
+        {
+          "url": "https://talk.macpowerusers.com/t/photo-scanner-for-old-family-photos/9885",
+          "who": "Chughes619 (Mac Power Users)",
+          "date": "2018-12-11",
+          "quote": "but photos are still sitting in cardboard boxes",
+          "seen": "opened"
+        },
+        {
+          "url": "https://talk.macpowerusers.com/t/help-with-photo-scanning-workflow/8403",
+          "who": "masonworld (Mac Power Users)",
+          "date": "2018-10-11",
+          "quote": "I want to scan them, index them with machine learning and then share them with family.",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Photomyne, Google PhotoScan (free), scanning services, flatbed scanners.",
+      "risks": "Phone-scanning apps already exist, so the angle is finishing the whole project and labelling faces. Slides and negatives need hardware. Keep copy about preserving and sharing, not decluttering."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
