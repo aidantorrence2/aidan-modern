@@ -35110,6 +35110,195 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-24",
+    "slug": "outline-pace",
+    "name": "Outline Pace",
+    "need": "I've always wanted to learn shorthand, but all I can find are old manuals, nothing checks whether the outlines I write are right, and I don't know how to build speed on my own.",
+    "headline": "Teach yourself Gregg or Teeline shorthand: ten-minute lessons, write on paper, snap a photo to check your outlines, then build speed with timed dictation.",
+    "buyer": "Adults teaching themselves a pen shorthand (Gregg or Teeline) for notes, journaling, lectures, meetings or journalism, often from an old manual or a free PDF.",
+    "bullets": [
+      "Gregg or Teeline theory in ten-minute lessons, with spaced review of the outlines you keep missing.",
+      "Write on paper, snap a photo, and see your outlines beside the model ones.",
+      "Dictation from 40 to 100+ words per minute with transcripts, and a weekly speed and accuracy log."
+    ],
+    "price": "$5.99/month",
+    "priceUsd": 6,
+    "priceNote": "Or $39 a year.",
+    "reasonPrompt": "Which shorthand are you learning, and what do you want to use it for?",
+    "faq": [
+      {
+        "q": "Is it an accredited course?",
+        "a": "No. It's self-study practice. If you need a qualification (for example for journalism training), check what your course or employer requires."
+      },
+      {
+        "q": "Does it work with my old textbook?",
+        "a": "Yes: lessons follow the standard theory, so you can use it alongside a manual."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-24",
+      "summary": "People say they've always wanted to learn shorthand, want an app or resource to learn it, are learning from a 1929 Gregg manual, are thinking of learning it in their spare time or taking a class, were desperate for something to teach them Gregg, and want to practise writing, not just reading.",
+      "wtp": "Let's Love Teeline Together sells an online Teeline course at £350 for six months or £599 a year. Shorthanded Gregg sells for $2.99, and reviewer mmstahlman says 'buy the app'.",
+      "signals": [
+        {
+          "url": "https://news.ycombinator.com/item?id=8511653",
+          "who": "RevRal (Hacker News)",
+          "date": "2014-10-26",
+          "quote": "always wanted to learn shorthand because my thoughts sometimes escape me",
+          "seen": "opened"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=17449146",
+          "who": "happyvalley (Hacker News)",
+          "date": "2018-07-03",
+          "quote": "I want to learn it, for quite some time now",
+          "seen": "opened"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=17450490",
+          "who": "delinka (Hacker News)",
+          "date": "2018-07-03",
+          "quote": "wanted to learn shorthand for writing into my tablet",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.fountainpennetwork.com/forum/topic/266110-does-anyone-here-do-shorthand/",
+          "who": "KBeezie (Fountain Pen Network)",
+          "date": "2014-05-14",
+          "quote": "trying to learn it off of a 1929 book for Gregg",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.fountainpennetwork.com/forum/topic/266110-does-anyone-here-do-shorthand/",
+          "who": "discopig (Fountain Pen Network)",
+          "date": "2014-05-08",
+          "quote": "thinking about learning Gregg shorthand in my spare time",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.fountainpennetwork.com/forum/topic/266110-does-anyone-here-do-shorthand/",
+          "who": "arthurconan (Fountain Pen Network)",
+          "date": "2014-05-06",
+          "quote": "thinking about taking a shorthand class",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/shorthanded-gregg/id6755334673?see-all=reviews",
+          "who": "trailwhim (App Store review, Shorthanded Gregg)",
+          "date": "2026-01-12",
+          "quote": "desperate for something like this",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/shorthanded-gregg/id6755334673?see-all=reviews",
+          "who": "Tokyn5 (App Store review, Shorthanded Gregg)",
+          "date": "2026-08-07",
+          "quote": "practice writing the letters/words",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Shorthanded Gregg, free Teeline flash cards and challenge sites, paid Teeline courses, old manuals.",
+      "risks": "A niche hobby; forum posts are 2014-2018. The paid app has few ratings. Checking handwriting from photos is the hard part; fall back to side-by-side comparison."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-24",
+    "slug": "dot-ladder",
+    "name": "Dot Ladder",
+    "need": "I've always wanted to learn braille, and now I need it to help someone I love or for my job, but it feels intimidating, and the apps only get me as far as spotting letters on a screen.",
+    "headline": "Learn braille as a sighted adult, past the alphabet: ten-minute steps through contractions, six-key writing drills, and real sentences to read with the letters hidden.",
+    "buyer": "Sighted adults learning Unified English Braille to help a blind child, partner or friend, or training to teach visually impaired students.",
+    "bullets": [
+      "The alphabet to Grade 2 contractions in ten-minute steps, with spaced review of the contractions you keep missing.",
+      "Six-key writing drills laid out like a braille writer.",
+      "A dots-only mode with print letters hidden, and short sentences and passages to read."
+    ],
+    "price": "$3.99/month",
+    "priceUsd": 4,
+    "priceNote": "Or $24.99 a year.",
+    "reasonPrompt": "Who are you learning braille for, and how far have you got?",
+    "faq": [
+      {
+        "q": "Does it teach reading by touch?",
+        "a": "No. It teaches visual and six-key braille, which is how many sighted parents and teachers start. Reading by touch takes practice with real braille."
+      },
+      {
+        "q": "Is it linked to a charity?",
+        "a": "No. It's independent. Sight-loss charities and qualified teachers of the visually impaired are great sources of support."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-24",
+      "summary": "Adults say they've always wanted to learn braille but found it intimidating, decided to learn instead of using a translator, want to learn it with no experience, are teachers learning braille to teach visually impaired students, wish there were writing practice, and want to read without the print letters shown.",
+      "wtp": "Braille Academy (about 1.7K ratings) sells lifetime premium for $3.99, and EmilDpn bought it. UPSY42q paid about $10 for Brailliance Pro.",
+      "signals": [
+        {
+          "url": "https://apps.apple.com/us/app/id1561530189?see-all=reviews",
+          "who": "Gorungo (App Store review, Braille Academy)",
+          "date": "2022-12-19",
+          "quote": "always wanted to learn braille",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1561530189?see-all=reviews",
+          "who": "Paige782 (App Store review, Braille Academy)",
+          "date": "2023-10-12",
+          "quote": "figured I would try to learn",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1561530189?see-all=reviews",
+          "who": "FastingBookworm (App Store review, Braille Academy)",
+          "date": "2023-10-18",
+          "quote": "decided I want to learn it",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1561530189?see-all=reviews",
+          "who": "smk20124356 (App Store review, Braille Academy)",
+          "date": "2024-02-25",
+          "quote": "teacher learning braille",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1561530189?see-all=reviews",
+          "who": "EmilDpn (App Store review, Braille Academy)",
+          "date": "2025-07-11",
+          "quote": "I wish there was writing practice",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/brailliance-learn-braille/id6478794947?see-all=reviews",
+          "who": "UPSY42q (App Store review, Brailliance)",
+          "date": "2026-04-27",
+          "quote": "to get rid of the ads",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/brailliance-learn-braille/id6478794947?see-all=reviews",
+          "who": "Nytetears (App Store review, Brailliance)",
+          "date": "2024-07-25",
+          "quote": "without the letters printed",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Braille Academy, Brailliance, courses from sight-loss charities and schools.",
+      "risks": "All evidence is App Store reviews of two apps. The main rival is cheap ($3.99 lifetime). It can't teach reading by touch; make no medical claims and market to sighted family and trainee teachers."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

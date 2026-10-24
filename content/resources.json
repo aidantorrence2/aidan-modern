@@ -14715,5 +14715,91 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "teach-yourself-shorthand",
+  "offer": "outline-pace",
+  "title": "How to teach yourself shorthand (Gregg or Teeline) and build speed",
+  "description": "Choosing a system, a simple daily routine, how to check your outlines, and how to build speed with dictation.",
+  "intro": "Shorthand can still be learned at home with a manual and steady practice. Little and often, plus dictation, is what builds real speed.",
+  "sections": [
+   {
+    "h": "Choose a system",
+    "list": [
+     "Gregg is widely used in the US, with many old manuals freely available.",
+     "Teeline is common in the UK, especially in journalism training.",
+     "Pick one and stick with it; mixing systems slows you down."
+    ]
+   },
+   {
+    "h": "A daily routine",
+    "list": [
+     "15-20 minutes a day: learn a few new outlines, then review older ones.",
+     "Write each new outline several times, saying the word as you write."
+    ]
+   },
+   {
+    "h": "Check your outlines",
+    "p": [
+     "Compare what you write with the model outlines in your manual. Proportion and direction matter, so check size and angle, not just shape."
+    ]
+   },
+   {
+    "h": "Build speed",
+    "list": [
+     "Once you know the theory, take dictation: start slowly (about 40 words per minute) and raise the speed gradually.",
+     "Always read back what you wrote, and note outlines you couldn't read."
+    ]
+   },
+   {
+    "h": "Keep a log",
+    "p": [
+     "Record your speed and accuracy each week. Steady gains come from regular short sessions, not occasional long ones."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "learn-braille-sighted-adult",
+  "offer": "dot-ladder",
+  "title": "Learning braille as a sighted adult: where to start",
+  "description": "How braille works, the order to learn it in, writing practice, and where to find support, for parents, partners and trainee teachers.",
+  "intro": "Many sighted adults learn braille to support a child, partner or friend, or for work. Starting visually and building up step by step makes it far less intimidating.",
+  "sections": [
+   {
+    "h": "How braille works",
+    "list": [
+     "Each braille cell has six dot positions in two columns of three.",
+     "Letters, numbers and punctuation are made from different dot patterns.",
+     "Unified English Braille (UEB) is the standard used in the UK, the US and many other English-speaking countries."
+    ]
+   },
+   {
+    "h": "Learn in stages",
+    "list": [
+     "The alphabet first (letters a to j form the pattern for the rest).",
+     "Punctuation and numbers.",
+     "Contractions (Grade 2), which shorten common words and letter groups and are used in most books."
+    ]
+   },
+   {
+    "h": "Practise writing",
+    "p": [
+     "Braille is often written on a six-key braille writer, with one key per dot. Practising the six-key layout helps you remember the dot patterns."
+    ]
+   },
+   {
+    "h": "Read real text",
+    "p": [
+     "Once you know the letters, practise reading words and sentences with the print hidden, so you rely on the dots."
+    ]
+   },
+   {
+    "h": "Get support",
+    "p": [
+     "Sight-loss charities, schools and qualified teachers of the visually impaired often offer courses and resources for families and learners."
+    ]
+   }
+  ]
  }
 ]
