@@ -38379,6 +38379,90 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-25",
+    "slug": "plaque-notes",
+    "name": "Plaque Notes",
+    "need": "My psoriasis keeps flaring, the creams stop working after a while, and I can't tell what sets it off or what actually helped.",
+    "headline": "Psoriasis keeps flaring and creams stop working? A weekly check, a treatment timeline and a look-back before each flare, with a summary for your GP or dermatologist.",
+    "buyer": "Adults 18+ whose psoriasis keeps flaring and whose creams or treatments stop working.",
+    "bullets": [
+      "A weekly check: patches, itch and soreness 0-10, and an optional photo of the same spot.",
+      "A treatment timeline (creams, ointments, shampoos, light sessions: when started, how often, when stopped), plus things you choose to watch such as stress, cold weather, illness, sleep and drinks.",
+      "A look-back view before each flare, a cost list, and a one-page summary for your GP, nurse or dermatologist."
+    ],
+    "price": "$3/month",
+    "priceUsd": 3,
+    "priceNote": "Or $20 a year.",
+    "reasonPrompt": "How long have you had psoriasis, and what have you tried?",
+    "faq": [
+      {
+        "q": "Will it tell me which treatment to use?",
+        "a": "No. Plaque Notes is a self-help log, not medical advice, diagnosis or treatment, and it never tells you to start or stop a medicine. See your GP if your psoriasis is spreading, very painful, or affecting your joints, and get urgent help if your skin becomes red and inflamed all over or you feel unwell with a fever."
+      },
+      {
+        "q": "Is it linked to a charity, pharmacy or brand?",
+        "a": "No. It's independent and recommends no products."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-25",
+      "summary": "Adults with psoriasis describe trying everything, creams that stop working, and flares that keep coming back.",
+      "wtp": "amani spent 'almost thousand' on supplements and creams in a couple of months; another Psoriasis UK poster self-funded light therapy.",
+      "signals": [
+        {
+          "url": "https://www.psoriasisuk.org.uk/forums/topic.aspx?ID=1196",
+          "who": "Jules (Psoriasis UK forum)",
+          "date": "2016-12-17",
+          "quote": "I've tried everything, nothing ever works",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.psoriasisuk.org.uk/forums/topic.aspx?ID=1196",
+          "who": "Beldy (Psoriasis UK forum)",
+          "date": "2016-12-21",
+          "quote": "No creams work.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.psoriasisuk.org.uk/forums/topic.aspx?ID=1196",
+          "who": "amani (Psoriasis UK forum)",
+          "date": "2017-01-15",
+          "quote": "I spent almost thousand this couple of month for supplement",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.psoriasisuk.org.uk/forums/topic.aspx?ID=3944",
+          "who": "MyaAshley (Psoriasis UK forum)",
+          "date": "2021-04-29",
+          "quote": "I’ve had many different types of topical creams and steroids yet continuously flare up.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.psoriasisuk.org.uk/forums/topic.aspx?ID=2002",
+          "who": "MichellePR (Psoriasis UK forum)",
+          "date": "2018-03-08",
+          "quote": "I tried literally everything throughout my life to manage it",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forum.caithness.org/archive/index.php/t-74849.html",
+          "who": "dragonfly (Caithness.org)",
+          "date": "2009-04-29",
+          "quote": "everything works for a short time before it stops being effective",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Sorea, Psoriasis Monitor, Psoriasis Manager (free, few ratings), paper diaries.",
+      "risks": "Psoriasis tracker apps are free with very few ratings, so there's no proven software spend; money is on creams, supplements and light therapy. Most posts are on one UK charity forum."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

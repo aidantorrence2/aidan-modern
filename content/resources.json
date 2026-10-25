@@ -16476,5 +16476,50 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "psoriasis-flare-diary-what-to-track",
+  "offer": "plaque-notes",
+  "title": "Psoriasis keeps flaring? How to track flares and treatments for your next appointment",
+  "description": "A simple psoriasis diary: what to note each week, how to keep a treatment timeline, and when to see a doctor. Not medical advice.",
+  "intro": "When psoriasis flares again and creams seem to stop working, it's hard to remember what you used, for how long, and what came before the flare. A short weekly record helps you and your GP or dermatologist decide what to try next. This is general information, not medical advice.",
+  "sections": [
+   {
+    "h": "See a doctor if",
+    "list": [
+     "Your psoriasis is spreading, very painful, or not responding to treatment.",
+     "Your joints are painful, stiff or swollen.",
+     "Get urgent help if your skin becomes red and inflamed over most of your body, or you feel unwell with a fever."
+    ]
+   },
+   {
+    "h": "Each week",
+    "list": [
+     "Score your patches, itch and soreness from 0 to 10.",
+     "Take a photo of the same spot in the same light.",
+     "Note anything unusual: stress, illness, cold weather, poor sleep, alcohol, a new soap or product."
+    ]
+   },
+   {
+    "h": "Keep a treatment timeline",
+    "list": [
+     "For each cream, ointment, shampoo or light session, note when you started, how often you used it and when you stopped.",
+     "Note how your skin changed in the weeks after.",
+     "Bring the timeline to appointments so nothing gets missed."
+    ]
+   },
+   {
+    "h": "Look back before each flare",
+    "p": [
+     "When a flare starts, look back at the few weeks before. Patterns are often easier to see on paper than in memory."
+    ]
+   },
+   {
+    "h": "Don't change medicines on your own",
+    "p": [
+     "Talk to your GP, pharmacist or dermatologist before stopping or changing any prescribed treatment."
+    ]
+   }
+  ]
  }
 ]
