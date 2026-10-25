@@ -39212,6 +39212,83 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-25",
+    "slug": "settle-in",
+    "name": "Settle In",
+    "need": "I've moved away, to a new city or a new country, and I'm so homesick that I keep thinking about going back.",
+    "headline": "Moved away and homesick? Log the waves and what sets them off, plan calls home across time zones, and take one small step a week to put down roots.",
+    "buyer": "Adults 18+ who moved for university, work or a new country and are struggling with homesickness.",
+    "bullets": [
+      "A one-tap log of each wave of homesickness: when, how strong and what set it off.",
+      "A call rhythm planner across time zones, a comfort kit of things from home, and plans for hard dates like birthdays and holidays.",
+      "One small roots step a week in your new place, and a weekly look-back so you can see the waves getting smaller."
+    ],
+    "price": "$3/month",
+    "priceUsd": 3,
+    "priceNote": "Or $15 a year.",
+    "reasonPrompt": "Where did you move from and to, and when does homesickness hit hardest?",
+    "faq": [
+      {
+        "q": "Is it therapy?",
+        "a": "No. Settle In is a self-help planner, not therapy or medical advice. If low mood lasts for weeks, affects your sleep or eating, or you feel hopeless, talk to a doctor, your university's student services, or a local support line."
+      },
+      {
+        "q": "Is it linked to a university or relocation company?",
+        "a": "No. It's independent."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-25",
+      "summary": "Expats describe feeling so homesick they doubted they could make it abroad, homesickness that never fully goes away, and waves around holidays.",
+      "wtp": "denmarker pays for home food from abroad: 'expensive shipping, but it really helps with the homesickness'. Homesick, a brand built on homesickness-themed candles, sells online.",
+      "signals": [
+        {
+          "url": "https://www.expat.com/en/forum/747-expat-blues.html",
+          "who": "LeonardoP (Expat.com)",
+          "date": "2012-03-16",
+          "quote": "Felt very homesick and thought I wasn't gonna be able to make it abroad.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.expat.com/en/forum/asia/japan/609547-dealing-with-homesickness-in-japan.html",
+          "who": "curioussam (Expat.com)",
+          "date": "2016-09-19",
+          "quote": "I have suffered from homesickness, but I try to focus on the good points of living in Japan.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.expat.com/en/forum/asia/japan/609547-dealing-with-homesickness-in-japan.html",
+          "who": "reywatwrite (Expat.com)",
+          "date": "2016-09-20",
+          "quote": "My homesickness is mainly for my family.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.expat.com/en/forum/europe/italy/609544-dealing-with-homesickness-in-italy.html",
+          "who": "reginadow1 (Expat.com)",
+          "date": "2016-10-03",
+          "quote": "Having lived in the past in Florence, the homesickness really hit during Thanksgiving.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.expat.com/en/forum/europe/italy/609544-dealing-with-homesickness-in-italy.html",
+          "who": "denmarker (Expat.com)",
+          "date": "2016-12-20",
+          "quote": "expensive shipping, but it really helps with the homesickness",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Video calls, expat groups, university student services, homesickness-themed gifts.",
+      "risks": "All evidence is on one site (expat.com), 2012-2016. No paid homesickness app found; money is on food shipping and gifts. Must signpost doctors or student services for lasting low mood."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
