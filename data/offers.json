@@ -38708,6 +38708,97 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-25",
+    "slug": "hall-steady",
+    "name": "Hall Steady",
+    "need": "I study hard and know the material, but as soon as I sit down in the exam I panic, go blank and can't think straight.",
+    "headline": "Know it at your desk but lose it in the exam hall? Rehearse the real exam until it feels ordinary, and have a 60-second reset ready for when your mind goes blank.",
+    "buyer": "Adults 18+ (university, mature and returning students, people sitting professional exams) who do well in practice but freeze, panic or go blank in the real exam.",
+    "bullets": [
+      "Mock sittings that copy exam day: the same start time, the same timer, and a strict no-notes mode.",
+      "A 60-second reset (pen down, slow breaths, one cue line) practised until it's automatic, plus a skip-and-return plan so one stuck question can't take over the paper.",
+      "A short log after each exam (where you froze, what came back, what to practise next) and a routine for the last 14 days and the morning itself."
+    ],
+    "price": "$5/month",
+    "priceUsd": 5,
+    "priceNote": "Or $29 a year.",
+    "reasonPrompt": "What kind of exam do you have coming up, and what happens when you freeze?",
+    "faq": [
+      {
+        "q": "Is it treatment for anxiety?",
+        "a": "No. Hall Steady is a practice routine, not medical advice or therapy, and it never suggests medication. If you have panic attacks or anxiety affecting your daily life, talk to your GP, doctor or a counsellor, and ask your college or exam body about support and access arrangements."
+      },
+      {
+        "q": "Is it linked to an exam board or prep company?",
+        "a": "No. It's independent and works alongside any course or question bank."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-25",
+      "summary": "Students describe knowing the material but panicking and going blank as soon as the exam starts, and freezing on unfamiliar questions.",
+      "wtp": "Happy_days (Student Doctor Network) paid for one-to-one coaching because of test anxiety; Exam Support with AJ, an exam anxiety app, sells for $2.99.",
+      "signals": [
+        {
+          "url": "https://forums.studentdoctor.net/threads/any-study-suggestion-i-keep-failing-quiz-exam-even-though-i-understand.699509/",
+          "who": "bensupport (Student Doctor Network)",
+          "date": "2010-02-04",
+          "quote": "I understand materials take good class notes able to recall but bam during exam everything goes out the windows",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.studentdoctor.net/threads/hypnosis-and-test-anxiety.1039532/",
+          "who": "Knicks8989 (Student Doctor Network)",
+          "date": "2013-10-29",
+          "quote": "I actually freaked out during my MCAT, which resulted in a horrific score",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.studentdoctor.net/threads/how-to-not-panic-while-taking-a-test.953398/",
+          "who": "xoxx (Student Doctor Network)",
+          "date": "2012-09-26",
+          "quote": "I always get to the test and PANIC and forget things",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.studentdoctor.net/threads/eppp-practice-test-scores-for-those-who-passed.892453/page-22",
+          "who": "Happy_days (Student Doctor Network)",
+          "date": "2019-11-11",
+          "quote": "I purchased the option where I could have 1-1 coaching",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.physicsforums.com/threads/why-cant-i-think-straight-during-exams.836684/",
+          "who": "vancouver_water (Physics Forums)",
+          "date": "2015-10-08",
+          "quote": "as soon as I sit down to write the exam it seems like a totally different world",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.physicsforums.com/threads/why-do-i-freeze-on-exams-when-i-can-solve-practice-problems.947610/",
+          "who": "jamalkoiyess (Physics Forums)",
+          "date": "2018-05-17",
+          "quote": "whenever I enter an exam I can always solve the familiar type of questions but struggle to focus on the others",
+          "seen": "opened"
+        },
+        {
+          "url": "https://talk.collegeconfidential.com/t/overwhelmed-when-it-comes-to-exams/757829",
+          "who": "biologynerd (College Confidential)",
+          "date": "2009-09-17",
+          "quote": "I FREAK OUT when it comes to testing",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Exam anxiety apps (mostly free), university counselling, coaching add-ons from exam-prep companies.",
+      "risks": "Money is thin: one $2.99 app with 5 ratings and one unpriced coaching purchase. Most posts 2009-2019. Must stay a practice routine with no medical or medication advice."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
