@@ -36293,6 +36293,83 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-25",
+    "slug": "cramp-notes",
+    "name": "Cramp Notes",
+    "need": "My period pain takes over days at a time, painkillers barely touch it, and doctors keep brushing me off.",
+    "headline": "Period pain taking over and doctors brushing you off? Log pain days in seconds, what you took and whether it helped, and take a clear three-cycle record to your GP.",
+    "buyer": "Adults with painful periods who feel dismissed by doctors and want a clear record to take to an appointment.",
+    "bullets": [
+      "A pain-day check (0-10, where it hurt, what it stopped you doing) and a two-tap log of what you took and whether it helped.",
+      "Cycle dates and flow, with a cycle-by-cycle view of how the pain changes.",
+      "A one-page summary for your GP or gynaecologist, plus your questions for the appointment."
+    ],
+    "price": "$2.99/month",
+    "priceUsd": 3,
+    "priceNote": "Or $19.99 a year.",
+    "reasonPrompt": "How many days each cycle does the pain affect you, and what have doctors said so far?",
+    "faq": [
+      {
+        "q": "Is it medical advice?",
+        "a": "No. It's a record and doesn't diagnose or recommend treatment. See a GP if period pain stops you doing everyday things or painkillers don't help. Get urgent help for sudden severe pain, fainting, or very heavy bleeding."
+      },
+      {
+        "q": "Is it linked to a brand?",
+        "a": "No. It's independent and recommends no products."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-25",
+      "summary": "People with severe period pain say they're seeing their sixth doctor about it, were passed from pillar to post, were told to keep going back and annoy the doctors, have been fobbed off for over 20 years, and suffered cramps so excruciating they passed out.",
+      "wtp": "Flo (about 2M ratings) sells premium cycle tracking with in-app purchases up to $59.99. Posters already pay for painkillers, TENS machines and private consultants (doc side).",
+      "signals": [
+        {
+          "url": "https://healthunlocked.com/endometriosis-uk/posts/130836769",
+          "who": "Lyz1224 (HealthUnlocked Endometriosis UK)",
+          "date": "undated",
+          "quote": "this will be the sixth doctor I have seen about my condition",
+          "seen": "opened"
+        },
+        {
+          "url": "https://healthunlocked.com/endometriosis-uk/posts/130836769",
+          "who": "PandoraPenguin (HealthUnlocked Endometriosis UK)",
+          "date": "undated",
+          "quote": "passed from pillar to post",
+          "seen": "opened"
+        },
+        {
+          "url": "https://healthunlocked.com/endometriosis-uk/posts/130836769",
+          "who": "princessk09 (HealthUnlocked Endometriosis UK)",
+          "date": "undated",
+          "quote": "you just have to keep going back and basically annoy the doctors",
+          "seen": "opened"
+        },
+        {
+          "url": "https://healthunlocked.com/endometriosis-uk/posts/141496708",
+          "who": "Alex9 (HealthUnlocked Endometriosis UK)",
+          "date": "undated",
+          "quote": "Doctors have been fobbing me off for over 20 years",
+          "seen": "opened"
+        },
+        {
+          "url": "https://healthunlocked.com/endometriosis-uk/posts/141496708",
+          "who": "Zippy1603 (HealthUnlocked Endometriosis UK)",
+          "date": "undated",
+          "quote": "I too suffered terrible cramps which latterly were excruciating",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Flo, Clue and other period trackers, paper diaries.",
+      "risks": "Checked evidence is one site (2 threads, undated); the doc side's Mumsnet threads couldn't be checked from the code side. Flo money is general cycle tracking. Not medical."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

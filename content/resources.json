@@ -15318,5 +15318,50 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "period-pain-record-for-gp",
+  "offer": "cramp-notes",
+  "title": "Period pain and painkillers not working? What to write down before you see your GP",
+  "description": "How to keep a simple three-cycle record of period pain, what to bring to an appointment, and when to get help.",
+  "intro": "Severe period pain isn't something you just have to put up with. A clear record helps a GP understand how much it affects you. This is general information, not medical advice.",
+  "sections": [
+   {
+    "h": "See a GP if",
+    "list": [
+     "Period pain stops you working, studying or doing everyday things.",
+     "Painkillers from the pharmacy don't help.",
+     "You have pain between periods, during or after sex, or very heavy bleeding."
+    ]
+   },
+   {
+    "h": "Get urgent help if",
+    "p": [
+     "You have sudden, severe pain, you faint, or you're bleeding very heavily."
+    ]
+   },
+   {
+    "h": "What to record each cycle",
+    "list": [
+     "The days with pain, how bad (0-10), and where it hurt.",
+     "What you took, when, and whether it helped.",
+     "What the pain stopped you doing, and how heavy the bleeding was."
+    ]
+   },
+   {
+    "h": "Bring a summary",
+    "list": [
+     "Three cycles of records, summarised on one page.",
+     "What you've already tried, and your questions.",
+     "Say clearly how it affects your life; that's what helps a doctor decide on next steps."
+    ]
+   },
+   {
+    "h": "If you feel dismissed",
+    "p": [
+     "You can ask for a second opinion, or to see a GP with an interest in women's health. A clear written record makes it easier to explain."
+    ]
+   }
+  ]
  }
 ]
