@@ -15407,5 +15407,50 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "home-blood-pressure-readings-week-for-gp",
+  "offer": "cuff-week",
+  "title": "How to record a week of home blood pressure readings for your GP",
+  "description": "A calm, consistent way to take and write down home blood pressure readings when your GP or nurse asks for a week of them. A record, not medical advice.",
+  "intro": "If your GP or nurse has asked you to check your blood pressure at home, the most useful thing you can hand back is a consistent record. Always follow the instructions you were given and the leaflet that came with your monitor; this guide is about keeping the record, not about what the numbers mean.",
+  "sections": [
+   {
+    "h": "Before each sitting",
+    "list": [
+     "Avoid caffeine, smoking and exercise for about 30 minutes beforehand, if your instructions say so.",
+     "Empty your bladder, then sit quietly for about 5 minutes with your back supported and feet flat on the floor.",
+     "Rest your arm on a table at about chest height, with the cuff on bare skin, and don't talk during the reading."
+    ]
+   },
+   {
+    "h": "Taking the readings",
+    "list": [
+     "Take the number of readings you were asked for, usually 2, about a minute apart.",
+     "Do it at the same times each day, often once in the morning and once in the evening.",
+     "Use the same arm each time, unless you were told otherwise."
+    ]
+   },
+   {
+    "h": "What to write down",
+    "list": [
+     "The date and time, and every reading (top number, bottom number and pulse), not just the lowest.",
+     "A short note on anything unusual: a bad night, rushing, pain, feeling anxious, or a missed dose.",
+     "Keep going for the number of days you were asked, even if some readings look odd."
+    ]
+   },
+   {
+    "h": "Readings that jump around",
+    "p": [
+     "It's common for readings taken minutes apart to differ, and many people read higher at the surgery than at home. Write every reading down and let your GP or nurse look at the pattern. Don't change any medication on the strength of home readings unless your GP tells you to."
+    ]
+   },
+   {
+    "h": "When to get help",
+    "p": [
+     "If you get a very high reading and also have symptoms such as chest pain, a severe headache, breathlessness, weakness, confusion or changes in your vision, call 999. If you're worried about your readings, contact your GP or NHS 111."
+    ]
+   }
+  ]
  }
 ]

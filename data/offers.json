@@ -36454,6 +36454,90 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-25",
+    "slug": "cuff-week",
+    "name": "Cuff Week",
+    "need": "My GP asked me to check my blood pressure at home for a week, but my readings jump all over the place and I don't know how to take them properly or what to hand back.",
+    "headline": "Asked to check your blood pressure at home for a week? Take each sitting the same way, log readings from your own monitor, and hand your GP a clear one-page record.",
+    "buyer": "Adults 18+ asked by a GP or nurse to take a week of home blood pressure readings, or who get high readings at the surgery and want a calm record from home.",
+    "bullets": [
+      "A guided sitting each time: a rest timer, the same steps, then 2-3 readings typed in from your own monitor.",
+      "Two-tap notes for things like caffeine, exercise, a bad night or feeling anxious, so odd readings make sense later.",
+      "Morning, evening and overall averages, plus a one-page summary to show your GP or nurse, with reminders for a repeat week."
+    ],
+    "price": "$3/month",
+    "priceUsd": 3,
+    "priceNote": "Or $15 a year.",
+    "reasonPrompt": "Who asked you to check your blood pressure at home, and what's been hard about it so far?",
+    "faq": [
+      {
+        "q": "Will it tell me if my blood pressure is too high?",
+        "a": "No. It's a record, not medical advice, and it doesn't judge or diagnose any reading or tell you to change medication. Your GP or nurse reads the results. If you get a very high reading with symptoms such as chest pain, severe headache, breathlessness, weakness or confusion, call 999 or NHS 111 straight away."
+      },
+      {
+        "q": "Does it connect to my monitor?",
+        "a": "No. You type the numbers in from your own monitor, so it works with any brand. It isn't linked to any monitor maker or health service."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-25",
+      "summary": "People asked to take home readings describe high numbers at the surgery, readings that jump within minutes, and the job of averaging several days to hand back to a GP or nurse.",
+      "wtp": "SmartBP is rated 4.5 with 61K App Store ratings, and its in-app subscriptions include SmartBP Premium Annual at $39.99 (apps.apple.com). Posters have also bought their own home monitors (Perfect10: 'I have a home kit').",
+      "signals": [
+        {
+          "url": "https://singletrackworld.com/forum/off-topic/so-i-got-a-blood-pressure-tester/",
+          "who": "allan23 (Singletrack)",
+          "date": "2016-02-29",
+          "quote": "I get sky high readings whenever I go to the docs",
+          "seen": "opened"
+        },
+        {
+          "url": "https://singletrackworld.com/forum/off-topic/so-i-got-a-blood-pressure-tester/",
+          "who": "footflaps (Singletrack)",
+          "date": "2016-02-29",
+          "quote": "it seemed more like a random number generator",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forum.diabetes.org.uk/boards/threads/blood-pressure.89210/",
+          "who": "bakebeans (Diabetes UK forum)",
+          "date": "2020-10-02",
+          "quote": "I got 3 different readings",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forum.diabetes.org.uk/boards/threads/blood-pressure.89210/",
+          "who": "DaveB (Diabetes UK forum)",
+          "date": "2020-10-02",
+          "quote": "I always do my tests at home and give them and the average over several days",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forum.diabetes.org.uk/boards/threads/blood-pressure.89210/",
+          "who": "ianf0ster (Diabetes UK forum)",
+          "date": "2020-10-02",
+          "quote": "I always test high upon arrival at GPP surgery",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/smartbp/id519076558",
+          "who": "SmartBP (App Store)",
+          "date": "2026-10-25",
+          "quote": "SmartBP Premium Annual $39.99, 61K Ratings",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "SmartBP, apps built into home monitors, paper diaries from the GP surgery.",
+      "risks": "Posts are UK-heavy and from 2016-2020. Many monitors already log to a phone app. No one says they'd pay for an app for this. It's a record only, not medical advice."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
