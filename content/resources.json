@@ -16173,5 +16173,44 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "heel-pain-first-steps-morning-what-to-track",
+  "offer": "heel-notes",
+  "title": "Heel pain on your first steps in the morning? What to track, and when to see a GP",
+  "description": "A simple way to keep track of heel pain and what you've tried, so you and your GP or physio can see what's helping. Not medical advice.",
+  "intro": "Heel pain that's worst on the first steps in the morning is common, especially in people who run, stand a lot or have changed their footwear. It often takes time to settle, and it's hard to tell what's helping. A short daily record makes that much clearer. This is general information, not medical advice.",
+  "sections": [
+   {
+    "h": "Get help if",
+    "list": [
+     "The pain started after a fall or injury, or you can't put weight on your foot: get urgent advice.",
+     "You have swelling, numbness, tingling or a high temperature.",
+     "It hasn't improved after a few weeks of looking after it at home: see a GP or physio."
+    ]
+   },
+   {
+    "h": "What to note each day",
+    "list": [
+     "A 0-10 score for your first steps in the morning.",
+     "A 0-10 score in the evening, and roughly how long you were on your feet.",
+     "Any runs, long walks, hard floors or barefoot time."
+    ]
+   },
+   {
+    "h": "What you're trying",
+    "list": [
+     "List what you use: shoes, insoles, a night splint, stretches, ice.",
+     "Tick each one off on the days you do it, and note what it cost.",
+     "Try to change one thing at a time, and give each change a couple of weeks before judging it."
+    ]
+   },
+   {
+    "h": "Take it to your appointment",
+    "p": [
+     "A few weeks of scores, what you did and what you tried gives your GP, physio or podiatrist a much clearer picture than memory alone."
+    ]
+   }
+  ]
  }
 ]
