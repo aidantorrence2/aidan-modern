@@ -37959,6 +37959,83 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-25",
+    "slug": "flare-window",
+    "name": "Flare Window",
+    "need": "My gout keeps coming back, and I can't tell what sets off each attack.",
+    "headline": "Gout attacks keep coming back? Log each flare in a tap, note your days in between, and look back at what came before each attack, with a summary for your GP.",
+    "buyer": "Adults 18+ with gout that keeps coming back who can't tell what sets off each attack.",
+    "bullets": [
+      "A flare button (which joint, pain 0-10) with a daily tick until it settles.",
+      "A ten-second evening check on the days in between (drinks, big meals, water, hours on your feet, sleep, anything new) and a look-back at the 3 days before each flare.",
+      "Your blood test results noted beside your flares, and a one-page summary for your GP or rheumatologist."
+    ],
+    "price": "$3/month",
+    "priceUsd": 3,
+    "priceNote": "Or $20 a year.",
+    "reasonPrompt": "How often do you get gout attacks, and what do you think sets them off?",
+    "faq": [
+      {
+        "q": "Will it tell me what to eat or which medicine to take?",
+        "a": "No. Flare Window is a self-help log, not medical or diet advice, and it never tells you to start or stop a medicine. Talk to your GP about treatment. Get urgent help if a joint is hot, swollen and very painful and you also have a high temperature or feel unwell."
+      },
+      {
+        "q": "Is it linked to a supplement or app brand?",
+        "a": "No. It's independent and recommends no products. You note what you used in your own words."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-25",
+      "summary": "People with gout describe repeat attacks, a second attack within weeks, and trying to work out what triggers them.",
+      "wtp": "Gout Buddy has 443 App Store ratings and sells Unlimited from $9.99 to $29.99; OxiPur, a purine diary, has 511 ratings and sells a low-purine diet plan at $9.99. Posters buy cherry juice and cherry pills.",
+      "signals": [
+        {
+          "url": "https://singletrackworld.com/forum/off-topic/anybody-with-reucrring-gout-how-do-you-manage-yours/",
+          "who": "squattingmouse (Singletrack)",
+          "date": "2011-05-27",
+          "quote": "So two weeks after the inital attack it's started again.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://singletrackworld.com/forum/off-topic/anybody-with-reucrring-gout-how-do-you-manage-yours/",
+          "who": "john_drummer (Singletrack)",
+          "date": "2011-05-28",
+          "quote": "the attacks would occasionally come back",
+          "seen": "opened"
+        },
+        {
+          "url": "https://singletrackworld.com/forum/off-topic/gout/",
+          "who": "lobby_dosser (Singletrack)",
+          "date": "2010-08-04",
+          "quote": "i've had a couple of bouts of it.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://singletrackworld.com/forum/off-topic/gout/",
+          "who": "Gee-Jay (Singletrack)",
+          "date": "2010-08-04",
+          "quote": "Neurofen doesnt touch it",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id6739938161",
+          "who": "Gout Buddy (App Store)",
+          "date": "2026-10-25",
+          "quote": "443 Ratings; Unlimited $9.99 to $29.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Gout Buddy, OxiPur, Goutly, GoutSnap, Urica, paper diaries.",
+      "risks": "Posts are from 2010-2011 on one site (Singletrack); the doc side's Mumsnet and BassResource sources are blocked for us. Nobody says they'd pay for a log. Must stay a log with no diet or medicine advice."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

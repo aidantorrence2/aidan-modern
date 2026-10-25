@@ -16258,5 +16258,49 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "gout-flare-diary-what-to-track-between-attacks",
+  "offer": "flare-window",
+  "title": "Gout keeps coming back? What to track between attacks",
+  "description": "A simple gout diary: what to note during a flare and on the days in between, so you and your GP can spot patterns. Not medical advice.",
+  "intro": "If you get repeat gout attacks, it can be hard to remember what came before each one. A short diary helps you and your GP see patterns and decide on treatment. This is general information, not medical or diet advice.",
+  "sections": [
+   {
+    "h": "Get urgent help if",
+    "list": [
+     "A joint is hot, swollen and very painful and you have a high temperature or feel unwell.",
+     "You've never had gout before and a joint suddenly becomes very painful and swollen.",
+     "Contact your GP if attacks are happening more often, or before changing any medicine."
+    ]
+   },
+   {
+    "h": "During a flare",
+    "list": [
+     "Note which joint, the date it started, and pain on a 0-10 scale each day until it settles.",
+     "Note what you used to manage it and when, in your own words."
+    ]
+   },
+   {
+    "h": "On the days in between",
+    "list": [
+     "Alcohol, large or rich meals, and how much water you drank.",
+     "Hours on your feet, long journeys, sleep and illness.",
+     "Anything new: a new medicine, diet change or injury."
+    ]
+   },
+   {
+    "h": "Look back before each attack",
+    "p": [
+     "When a flare starts, look back at the three days before it. Over several attacks, patterns often become clearer than they feel from memory."
+    ]
+   },
+   {
+    "h": "Take it to your GP",
+    "p": [
+     "Bring your diary and any blood test results to your appointment. Ask your GP whether longer-term treatment is right for you."
+    ]
+   }
+  ]
  }
 ]
