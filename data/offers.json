@@ -37112,6 +37112,90 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-25",
+    "slug": "caller-tally",
+    "name": "Caller Tally",
+    "need": "I'm plagued with nuisance and spam calls every day, blocking numbers one by one doesn't stop them, and I don't know how to make them stop for good.",
+    "headline": "Nuisance calls every day? Log each one in a tap, see who keeps ringing, and turn your log into opt-outs and complaints, with a weekly count of whether they're falling.",
+    "buyer": "Adults with a mobile or landline (UK and US) who get several unwanted sales, spoofed or robo calls a day and are fed up with blocking numbers one at a time.",
+    "bullets": [
+      "A one-tap call log: number, time, company and what they said, with repeat callers grouped by company even when the number changes.",
+      "Opt-out and data-deletion request templates for named companies, and a complaint pack for the TPS and ICO (UK) or the FTC (US), filled in from your log.",
+      "A weekly count so you can see whether the calls are actually falling."
+    ],
+    "price": "$3/month",
+    "priceUsd": 3,
+    "priceNote": "Or $24 a year.",
+    "reasonPrompt": "Roughly how many unwanted calls do you get a week, and on which phone?",
+    "faq": [
+      {
+        "q": "Does it block calls?",
+        "a": "No. It's a log and a set of request and complaint templates, and it works alongside your phone's own blocking. It can't block landline calls, and it can't promise that complaints or opt-outs will stop every call."
+      },
+      {
+        "q": "Is it linked to a phone company or regulator?",
+        "a": "No. It's independent and isn't connected to any phone network, call-blocking app, the TPS, the ICO or the FTC. You send any request or complaint yourself."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-25",
+      "summary": "People describe several nuisance or spam calls a day, often from the same company, and being fed up with blocking numbers.",
+      "wtp": "Robokiller has 415K App Store ratings and sells memberships at $12.99 and $79.99; Hiya has 238K ratings and sells Premium at $3.99 a month or $24.99 a year. Hiya reviewer Caribbean Jim chose the yearly plan without hesitating.",
+      "signals": [
+        {
+          "url": "https://singletrackworld.com/forum/off-topic/nuisance-calls-1/",
+          "who": "Denis99 (Singletrack)",
+          "date": "2015-12-02",
+          "quote": "We are being plagued with nuisance calls each day, several times a day from the same company.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://singletrackworld.com/forum/off-topic/nuisance-calls-1/",
+          "who": "milky1980 (Singletrack)",
+          "date": "2015-12-02",
+          "quote": "I get a few every day on the landline.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=49259035",
+          "who": "deaton (Hacker News)",
+          "date": "2026-08-11",
+          "quote": "As an American myself, I get multiple spam calls every day.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1022831885?see-all=reviews",
+          "who": "Zane_3 (App Store, Robokiller)",
+          "date": "2018-12-27",
+          "quote": "After being fed up with spoofing, spamming, and scamming calls day after day not knowing who it was",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id986999874?see-all=reviews",
+          "who": "Amber_sct (App Store, Hiya)",
+          "date": "2018-06-07",
+          "quote": "I get tons of spam calls and being able to block them once",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id986999874?see-all=reviews",
+          "who": "Caribbean Jim (App Store, Hiya)",
+          "date": "2026-10-25",
+          "quote": "When it began to charge $3/mo or $15/year, I did not hesitate to go for the latter.",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Robokiller, Hiya, Nomorobo, carrier apps (free), iOS Silence Unknown Callers, trueCall for landlines.",
+      "risks": "Crowded with free blockers, so the pitch is the log, the requests and complaints, and the weekly count. Singletrack posts are from 2015. App Store reviewers already use a blocker. No promise that complaints will work."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

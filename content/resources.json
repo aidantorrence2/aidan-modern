@@ -15759,5 +15759,50 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "how-to-stop-nuisance-calls-every-day",
+  "offer": "caller-tally",
+  "title": "How to cut down nuisance and spam calls (UK and US)",
+  "description": "Free steps to reduce unwanted sales and spam calls, how to opt out, and where to complain.",
+  "intro": "Blocking numbers one by one rarely keeps up, because callers switch numbers. A few free steps, plus a simple record of who calls, usually works better. This is general information.",
+  "sections": [
+   {
+    "h": "Register for free",
+    "list": [
+     "UK: register your landline and mobile with the Telephone Preference Service (TPS). It's free and can take up to 28 days to take full effect.",
+     "US: add your numbers to the National Do Not Call Registry at donotcall.gov. It's free."
+    ]
+   },
+   {
+    "h": "When a nuisance call comes in",
+    "list": [
+     "Don't press any buttons or say 'yes'; just hang up.",
+     "Never give personal or bank details to a caller you didn't expect, even if they say they're from your bank.",
+     "Note the number, time, company name and what they said."
+    ]
+   },
+   {
+    "h": "Opt out at the source",
+    "list": [
+     "If a company you've dealt with keeps calling, ask it in writing to stop calling and to stop using your details for marketing.",
+     "Check the marketing settings with companies you've bought from, and untick sharing with 'partners'."
+    ]
+   },
+   {
+    "h": "Complain",
+    "list": [
+     "UK: report unwanted marketing calls and texts to the Information Commissioner's Office (ICO). Report scam texts by forwarding them to 7726.",
+     "US: report unwanted calls to the FTC at donotcall.gov or reportfraud.ftc.gov.",
+     "A dated log of calls makes a complaint much stronger."
+    ]
+   },
+   {
+    "h": "Use your phone's tools",
+    "p": [
+     "Most phones and networks offer free spam filtering or a setting to silence unknown callers. For landlines, some phones and adapters can screen calls."
+    ]
+   }
+  ]
  }
 ]
