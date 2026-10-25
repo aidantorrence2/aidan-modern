@@ -38869,6 +38869,90 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-25",
+    "slug": "lasting-set",
+    "name": "Lasting Set",
+    "need": "I do my own gel nails at home to save on the salon, but they chip or peel within days, and after all the videos I still don't know what I'm doing wrong.",
+    "headline": "Home gel nails chipping in days? Find the step that's letting you down (prep, coat thickness, capping or lamp time), then log each set until it lasts.",
+    "buyer": "Adults who pay for salon gel nails or have bought a home gel or dip kit and get poor results.",
+    "bullets": [
+      "A kit check: whether your gel will cure under your lamp, and which basics you're missing.",
+      "Guided steps with timers for prep, thin coats, capping the edge and curing each coat, plus a removal walkthrough that avoids peeling or scraping.",
+      "A log for each set (days it lasted, where it chipped or lifted, the likely cause) and a running total of what you've saved compared with the salon."
+    ],
+    "price": "$5/month",
+    "priceUsd": 5,
+    "priceNote": "Or $36 a year.",
+    "reasonPrompt": "Which kit do you use, and how long do your nails last before chipping?",
+    "faq": [
+      {
+        "q": "Is gel safe to do at home?",
+        "a": "Keep gel off your skin and cure every coat fully, because uncured gel on skin can cause an allergy. Use a gel and lamp from the same system where you can. If your skin around the nails becomes itchy, red or swollen, stop using gel and speak to a pharmacist or GP. Lasting Set gives no medical advice."
+      },
+      {
+        "q": "Is it linked to a nail brand?",
+        "a": "No. It's independent, sells no kits, and works with any brand."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-25",
+      "summary": "Home manicurists describe gel and polish that chips within days, confusion after watching many videos, trouble removing gel, and spending heavily at salons.",
+      "wtp": "tryingtocutback was spending £40 a month on salon gel nails and Floss pays '£20 a fortnight'; Nailboo sells a starter gel kit at $66 and a $29.99 monthly membership, and its app has 380 ratings.",
+      "signals": [
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/5377750/i-need-help-with-diy-gel-manicure",
+          "who": "away-with-the-fairies (MoneySavingExpert)",
+          "date": "2015-12-11",
+          "quote": "I googled it and have watched numerous you tube videos and am still confused",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/4885776/opinions-of-home-diy-uv-gel-nail-systems-please",
+          "who": "minicazzybee (MoneySavingExpert)",
+          "date": "2014-02-02",
+          "quote": "I can never get the polish to last more than 48 hours without chipping",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/4885776/opinions-of-home-diy-uv-gel-nail-systems-please/p2",
+          "who": "Mini_Lover (MoneySavingExpert)",
+          "date": "2014-03-05",
+          "quote": "My only problem is removing it, tin foil never seems to work for me",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/3036744/does-anyone-do-their-own-cnd-shellac-gel-nails",
+          "who": "skypie123_2 (MoneySavingExpert)",
+          "date": "2011-02-07",
+          "quote": "I love having manicures (my nails grow really well) but the varnish never lasts",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/4984256/gel-nails-at-home",
+          "who": "tryingtocutback (MoneySavingExpert)",
+          "date": "2014-06-01",
+          "quote": "I have been spending £40 per month on getting my gel nails done",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id6470508174?see-all=reviews",
+          "who": "JulieD920 (App Store, Nailboo)",
+          "date": "2023-12-16",
+          "quote": "I have watched every video and Googled things I had issues with and still, just REALLY disappointed",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Nailboo, kit brands' own guides, YouTube tutorials, salon gel.",
+      "risks": "MSE posts are 2011-2015. Only two sites. Kit brands already include guides; our angle is brand-neutral fault-finding and a log. Gel allergy risk must be flagged."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
