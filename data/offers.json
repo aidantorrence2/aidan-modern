@@ -37875,6 +37875,90 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-25",
+    "slug": "surrender-path",
+    "name": "Surrender Path",
+    "need": "I want to get out of my timeshare, and its maintenance fees keep rising, but I don't know the safe way to do it without getting scammed by an exit company.",
+    "headline": "Want out of your timeshare? Find the free routes your resort may accept, send clear letters, and spot exit-company red flags before you pay thousands.",
+    "buyer": "Adult timeshare and points-club owners (US and UK), often retired, and adult children helping parents who can no longer travel but still get maintenance bills.",
+    "bullets": [
+      "A route finder: hand-back, deed-back, giving it away, and what each one could mean for you, with the risks of simply stopping payment spelled out.",
+      "Editable surrender and hardship letter templates for the resort or owners' association, with fee due dates and deadline reminders.",
+      "An exit-company red-flag check for cold calls, ads and quotes, and a dated log of every call and letter."
+    ],
+    "price": "$12/month",
+    "priceUsd": 12,
+    "priceNote": "Or $59 a year.",
+    "reasonPrompt": "Which resort or points club are you with, and what have you tried so far?",
+    "faq": [
+      {
+        "q": "Are you an exit company?",
+        "a": "No. Surrender Path never contacts your resort for you, takes no exit fees, and can't promise you'll get out or get money back. It isn't legal or financial advice. Stopping payments can lead to debt collection, foreclosure and credit damage, so get advice from a lawyer, Citizens Advice (UK) or a consumer protection office (US) before you do."
+      },
+      {
+        "q": "Is it linked to a resort or exit firm?",
+        "a": "No. It's independent and isn't connected to any resort, owners' association, exit company or reseller."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-25",
+      "summary": "Owners describe rising maintenance fees, wanting a legitimate exit, helping elderly parents get out, and being quoted thousands by exit companies.",
+      "wtp": "Owners report exit-company quotes of £4,500 (garysue4) and £3,800 + VAT (IamMickG); TELLIT01 paid the resort to get out and called it 'the best money I ever spent'. TUG sells a Personal Assistant service at $49.99 and a personal session at $99.99.",
+      "signals": [
+        {
+          "url": "https://tugbbs.com/forums/threads/getting-rid-of-the-the-royal-haciendas-membership.383380/",
+          "who": "Ferparedes25 (TUG)",
+          "date": "2026-08-10",
+          "quote": "We want to get rid of our membership, does anyone successfully exit this resort?",
+          "seen": "opened"
+        },
+        {
+          "url": "https://tugbbs.com/forums/threads/massanutten-regal-vistas-owners-%E2%80%94-has-anyone-successfully-exited-or-worked-with-an-attorney-exit-firm.384205/",
+          "who": "Lelson (TUG)",
+          "date": "2026-09-27",
+          "quote": "we have been researching legitimate options for a clean exit",
+          "seen": "opened"
+        },
+        {
+          "url": "https://tugbbs.com/forums/threads/advice-exiting-an-old-raintree-royal-holiday-points-contract.384029/",
+          "who": "watson76 (TUG)",
+          "date": "2026-09-16",
+          "quote": "I am trying to help my elderly parents exit a timeshare from 2008",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/6148167/timeshare-exiting",
+          "who": "garysue4 (MoneySavingExpert)",
+          "date": "2020-06-03",
+          "quote": "We are desperate to get rid of our timeshare due to escalating maintenance costs.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/6148167/timeshare-exiting",
+          "who": "99tiggers (MoneySavingExpert)",
+          "date": "2020-05-26",
+          "quote": "want to exit it but are not sure the best way to go about it",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/6029711/claims-solution-group",
+          "who": "IamMickG (MoneySavingExpert)",
+          "date": "2020-06-11",
+          "quote": "who want £3,800 + VAT",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "TUG free guides and paid help, resort hand-back programmes, exit companies, lawyers.",
+      "risks": "No paid exit product with ratings; money is fees owners were quoted. TUG gives free guides. Legally and financially sensitive: never act as an exit company, take upfront fees or promise results."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
