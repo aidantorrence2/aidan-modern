@@ -38120,6 +38120,97 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-25",
+    "slug": "retake-map",
+    "name": "Retake Map",
+    "need": "I failed the NCLEX and have to retake it, and I don't know how to study differently this time.",
+    "headline": "Failed the NCLEX and retaking it? Turn your performance report into a day-by-day plan weighted to your weak areas, track practice scores, and check you're ready before you book.",
+    "buyer": "Nursing graduates 18+ who didn't pass the NCLEX-RN or NCLEX-PN and are preparing to retake it.",
+    "bullets": [
+      "Type in your candidate performance report area by area, set a retake date, and get a day-by-day plan weighted to your weakest areas.",
+      "Log practice-block scores from any question bank and see each area's chart over the weeks, with a weekly check-in.",
+      "A list of what you're spending on fees, books and question banks, and a 'ready?' check before you book."
+    ],
+    "price": "$10/month",
+    "priceUsd": 10,
+    "priceNote": "Or $30 for 90 days.",
+    "reasonPrompt": "When did you take the NCLEX, and which areas came out weakest?",
+    "faq": [
+      {
+        "q": "Does it include practice questions?",
+        "a": "No. Retake Map has no questions of its own; it plans and tracks your study using whichever question bank or review course you choose. It can't promise a pass."
+      },
+      {
+        "q": "Is it linked to NCSBN, Pearson VUE or a review company?",
+        "a": "No. It's independent and isn't connected to NCSBN, Pearson VUE, any nursing board, school or review company. Always check retake rules and waiting periods with your board of nursing."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-25",
+      "summary": "Nursing graduates describe failing the NCLEX once or several times, feeling heartbroken, and needing a different way to prepare for the retake.",
+      "wtp": "Archer Review NCLEX has 23K App Store ratings and sells NCLEX RN for 3 months at $109.99 and an NCLEX-RN SurePass Combo at $199.99; Lililm12 paid for it after three attempts.",
+      "signals": [
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1492019618/sortby=mostrecent/json",
+          "who": "Lililm12 (App Store, Archer Review)",
+          "date": "2025-10-21",
+          "quote": "I had taken my nclex lvn 3 times.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=3/id=1492019618/sortby=mostrecent/json",
+          "who": "LuckyMD2025 (App Store, Archer Review)",
+          "date": "2022-09-04",
+          "quote": "I failed miserably",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=4/id=1492019618/sortby=mostrecent/json",
+          "who": "Kat19grace26 (App Store, Archer Review)",
+          "date": "2021-03-08",
+          "quote": "Passed on my 4th attempt",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=3/id=625614526/sortby=mostrecent/json",
+          "who": "gabbyorototo (App Store, NCLEX RN Mastery)",
+          "date": "2021-02-21",
+          "quote": "Heartbroken to have failed my first NCLEX attempt",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=6/id=625614526/sortby=mostrecent/json",
+          "who": "Akina88 (App Store, NCLEX RN Mastery)",
+          "date": "2018-08-13",
+          "quote": "but still failed the nclex",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=2/id=979446488/sortby=mostrecent/json",
+          "who": "Elissa Sullivan (App Store, UWorld Nursing)",
+          "date": "2021-11-15",
+          "quote": "I took my NCLEX and failed.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1492019618",
+          "who": "Archer Review NCLEX (App Store)",
+          "date": "2026-10-25",
+          "quote": "23K Ratings; NCLEX RN - 3 months $109.99; NCLEX-RN SurePass Combo $199.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Archer Review, UWorld, Kaplan, Hurst, NCLEX RN Mastery, Saunders.",
+      "risks": "Evidence is App Store reviews inside competing prep apps; the doc side's allnurses threads are blocked for us. Money goes on question banks, not planners. RSS review page numbers shift as new reviews arrive."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

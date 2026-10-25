@@ -16347,5 +16347,51 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "nclex-retake-study-plan-from-performance-report",
+  "offer": "retake-map",
+  "title": "Failed the NCLEX? How to make a retake study plan from your performance report",
+  "description": "A calm, practical way to plan an NCLEX-RN or NCLEX-PN retake: use your candidate performance report, focus on weak areas, and track progress.",
+  "intro": "Failing the NCLEX is crushing, and many nurses who pass did not pass first time. A retake goes better with a plan built from what the exam told you, rather than doing more of the same. This is general information; always check your board of nursing's retake rules.",
+  "sections": [
+   {
+    "h": "Start with your performance report",
+    "list": [
+     "If you didn't pass, you'll receive a Candidate Performance Report showing how you did in each content area.",
+     "List each area as below, near or above the passing standard.",
+     "Your weakest areas get the most study time; don't neglect the others completely."
+    ]
+   },
+   {
+    "h": "Check the rules and dates",
+    "list": [
+     "There is a waiting period before you can retake; check the current rules with your board of nursing and NCSBN.",
+     "Re-register and pay the fee, then pick a date that gives you enough time to prepare."
+    ]
+   },
+   {
+    "h": "Build a day-by-day plan",
+    "list": [
+     "Count the days to your retake and share them out across content areas, weighted to your weak ones.",
+     "Mix content review with question practice every day.",
+     "Read the rationale for every question, right or wrong."
+    ]
+   },
+   {
+    "h": "Track your practice",
+    "list": [
+     "Log your scores for each practice block by content area.",
+     "Watch for areas that stay flat, and change how you study them.",
+     "Take full-length practice exams in exam conditions in the final weeks."
+    ]
+   },
+   {
+    "h": "Look after yourself",
+    "p": [
+     "Plan rest days, keep your sleep regular in the run-up, and talk to someone you trust. If the stress feels overwhelming, speak to your GP or doctor."
+    ]
+   }
+  ]
  }
 ]
