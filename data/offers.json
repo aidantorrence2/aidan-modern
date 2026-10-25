@@ -39548,6 +39548,97 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-25",
+    "slug": "legroom-plan",
+    "name": "Legroom Plan",
+    "need": "I'm dreading a long flight with my toddler. I don't know how I'll keep them occupied for hours in a seat, and I'm worried they'll melt down and the whole plane will be watching.",
+    "headline": "Dreading a long flight with your toddler? Get an hour-by-hour plan for what to hand over and when, so you don't use every trick before takeoff.",
+    "buyer": "Parents of children aged about 1 to 4 who are flying soon, especially long-haul, solo, or with a toddler and a baby together.",
+    "bullets": [
+      "Enter your child's age and flight times for an hour-by-hour plan: when to bring out each new toy, snack, screen time or aisle walk.",
+      "Small, quiet, age-matched activity ideas (nothing that rolls under the seats), an airport timeline from check-in to seat, and three offline reset ideas for a mid-flight meltdown.",
+      "After each flight, log what worked so your next plan starts with your child's proven favourites."
+    ],
+    "price": "$4/month",
+    "priceUsd": 4,
+    "priceNote": "Or $24 a year.",
+    "reasonPrompt": "How old is your child, and how long is the flight?",
+    "faq": [
+      {
+        "q": "Does it give medical advice, like for ear pain or sleep?",
+        "a": "No. Legroom Plan gives no medical advice and never suggests giving a child medicine to make them sleep. Ask a pharmacist or doctor about any health questions before you fly. For car seats and strollers, it links to your airline's and regulator's own rules."
+      },
+      {
+        "q": "Is it linked to an airline or brand?",
+        "a": "No. It's independent and recommends no products."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-25",
+      "summary": "Parents describe dreading hours stuck on a plane with a busy toddler, not knowing how to keep them occupied, and worrying about a meltdown in front of other passengers.",
+      "wtp": "Ed (One Mile at a Time) bought an aeroplane-certified WAYB Pico car seat, which sells for $499.00 (540 reviews), and is booking practice flights; classcair buys new small toys to hand out during flights.",
+      "signals": [
+        {
+          "url": "https://forum.knittinghelp.com/t/tips-for-long-haul-flight-with-toddler/39347",
+          "who": "gargoylelib (KnittingHelp forum)",
+          "date": "2007-11-01",
+          "quote": "the 11 hours stuck on an airplane with a busy busy toddler",
+          "seen": "opened"
+        },
+        {
+          "url": "https://boards.hellobee.com/topic/tips-on-surviving-an-international-flight-with-a-25-yo-toddler-and-10-month-old",
+          "who": "Mrs. Bee (Hellobee)",
+          "date": "2012-07-28",
+          "quote": "The insane amount of travel is scary",
+          "seen": "opened"
+        },
+        {
+          "url": "https://boards.hellobee.com/topic/airplane-tips-for-15-18-months",
+          "who": "LindsayInNY (Hellobee)",
+          "date": "2016-09-18",
+          "quote": "Not sure what to expect now or how to plan to occupy her",
+          "seen": "opened"
+        },
+        {
+          "url": "https://travelmamas.com/tips-for-flying-with-baby-toddler/comment-page-1/",
+          "who": "luisa carter (Travel Mamas)",
+          "date": "2019-11-10",
+          "quote": "I also worried this kids will throw a fit on the plan and someone complain",
+          "seen": "opened"
+        },
+        {
+          "url": "https://travelmamas.com/tips-for-flying-with-baby-toddler/comment-page-2/",
+          "who": "paige (Travel Mamas)",
+          "date": "2020-09-11",
+          "quote": "I have been freaking out about flying for the first time with a toddler",
+          "seen": "opened"
+        },
+        {
+          "url": "https://onemileatatime.com/community/other-airlines/long-haul-flying-with-a-toddler-any-tips/",
+          "who": "Ed (One Mile at a Time)",
+          "date": "2024-05-27",
+          "quote": "24hrs on a plane will be brutal all in one go",
+          "seen": "opened"
+        },
+        {
+          "url": "https://wayb.com/products/pico-car-seat",
+          "who": "WAYB Pico (product page)",
+          "date": "2026-10-25",
+          "quote": "$499.00, 540 reviews",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Free parenting blogs, FlyNils (babies, 0 ratings), travel toys, airline family services.",
+      "risks": "Most voices 2007-2020. No paid software for this exact need; money is on travel gear and toys. Must never suggest medicating a child or advise on car-seat rules."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
