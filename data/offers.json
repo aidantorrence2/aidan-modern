@@ -36699,6 +36699,83 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-25",
+    "slug": "service-mile",
+    "name": "Service Mile",
+    "need": "I can never remember when I last changed the oil or had the car serviced, and every time I try to keep a record I forget about it and give up.",
+    "headline": "Lose track of oil changes and services? A 10-second monthly mileage check-in tells you what's coming up on every car you own, from your own manual.",
+    "buyer": "Adults who own one or more cars and lose track of oil changes, services and the paperwork that goes with them.",
+    "bullets": [
+      "A 10-second monthly mileage check-in, with service intervals you copy from your own owner's manual.",
+      "One 'coming up' list across every car in the household, by miles or months, whichever comes first.",
+      "A two-tap job log with cost and a receipt photo, and a printable service history for when you sell."
+    ],
+    "price": "$10/year",
+    "priceUsd": 10,
+    "priceNote": "Or $20 once.",
+    "reasonPrompt": "How many cars do you look after, and what do you usually forget?",
+    "faq": [
+      {
+        "q": "Does it tell me what my car needs?",
+        "a": "No. It uses the intervals you enter from your own owner's manual or garage and gives no mechanical advice. If something seems wrong with your car, have it checked by a qualified mechanic."
+      },
+      {
+        "q": "Is it linked to a garage or car maker?",
+        "a": "No. It's independent and isn't connected to any garage, dealer, car maker or app store tracker."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-25",
+      "summary": "Car owners describe forgetting oil changes, starting maintenance logs and dropping them, and wanting something simple that only logs mileage and services.",
+      "wtp": "twiggles paid about $6 for a car-tracking app and called it 'well worth it IMO'; dennis paid to upgrade Autosist; Drivvo sells a $49.90 plan (checked 21 Oct).",
+      "signals": [
+        {
+          "url": "https://talk.macpowerusers.com/t/auto-car-maintenance-software-recommendations/12688",
+          "who": "richtack (Mac Power Users)",
+          "date": "2019-06-19",
+          "quote": "I always start and always drop it when I forget or it’s a pain in the butt.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://talk.macpowerusers.com/t/auto-car-maintenance-software-recommendations/12688",
+          "who": "dennis (Mac Power Users)",
+          "date": "2019-06-21",
+          "quote": "I paid to upgrade years ago",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.garagejournal.com/forum/threads/car-maintance-tracking.189994/",
+          "who": "mrodgers (Garage Journal)",
+          "date": "2013-02-28",
+          "quote": "All I want to do is log mileage and oil changes.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.garagejournal.com/forum/threads/car-maintance-tracking.189994/",
+          "who": "Higgins (Garage Journal)",
+          "date": "2013-02-28",
+          "quote": "Wish I could find something I like",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.garagejournal.com/forum/threads/car-maintance-tracking.189994/",
+          "who": "twiggles (Garage Journal)",
+          "date": "2013-02-28",
+          "quote": "it was priced at $6 I think, and is well worth it IMO",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Drivvo, Fuelly, Autosist, aCar, paper service books, car makers' own apps.",
+      "risks": "Posts are from 2013 and 2019. Some posters won't pay much, so it's priced low. Many free trackers exist. No mechanical advice."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

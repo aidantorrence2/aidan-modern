@@ -15532,5 +15532,50 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "car-service-history-and-oil-change-reminders",
+  "offer": "service-mile",
+  "title": "How to keep track of oil changes and car services (and a service history that helps when you sell)",
+  "description": "A simple way to set maintenance reminders from your owner's manual and keep records you'll actually use.",
+  "intro": "Most people don't forget car maintenance because they don't care; they forget because the reminder lives in a glovebox sticker or a garage's memory. A few minutes setting up from your owner's manual, and a quick monthly mileage check, is usually enough. This is general information, not mechanical advice.",
+  "sections": [
+   {
+    "h": "Find your intervals",
+    "list": [
+     "Look in your owner's manual or service book for the oil change and service intervals.",
+     "Note both the mileage and the time limit (for example, every so many miles or every 12 months, whichever comes first).",
+     "If you mostly do short trips, tow or drive in dusty conditions, check whether the manual lists a 'severe' schedule."
+    ]
+   },
+   {
+    "h": "Check your mileage once a month",
+    "list": [
+     "Pick a fixed day, such as the first of the month, and note the odometer reading.",
+     "Compare it with when the next oil change or service is due.",
+     "Book the next job when you're within a month or about 1,000 miles of it."
+    ]
+   },
+   {
+    "h": "Log every job",
+    "list": [
+     "Write down the date, mileage, what was done, who did it and the cost.",
+     "Keep receipts, a photo is fine, with the matching entry.",
+     "Include the small things: tyres, wipers, bulbs and battery."
+    ]
+   },
+   {
+    "h": "Make it useful when you sell",
+    "p": [
+     "A tidy, dated service history with receipts shows a buyer the car has been looked after. Keep the records together in date order, for every car you own, so you can print or share them in one go."
+    ]
+   },
+   {
+    "h": "When to get help",
+    "p": [
+     "If a warning light comes on, or the car feels, sounds or smells wrong, don't wait for the next service: have it checked by a qualified mechanic."
+    ]
+   }
+  ]
  }
 ]
