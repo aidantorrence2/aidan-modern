@@ -39723,6 +39723,167 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-25",
+    "slug": "price-clawback",
+    "name": "Price Clawback",
+    "need": "I keep finding that something I just bought has dropped in price a few days later, and I never know whether I can get the difference back or how to ask.",
+    "headline": "Bought it, then the price dropped? Log each purchase once, get told when it drops while the store's price-match window is still open, and get a polite request script.",
+    "buyer": "Adults in the US, UK and Australia who buy bigger-ticket items online or in big stores and hate finding the same item cheaper days later.",
+    "bullets": [
+      "Add a purchase by pasting the order email or a link, and watch the price of things you've already bought, not wish lists.",
+      "A countdown for each store's own price-drop or price-match window, and a return-and-rebuy check that counts postage and lost discounts.",
+      "A plain-English request script when the price falls, and a running total of what you've claimed back."
+    ],
+    "price": "$3/month",
+    "priceUsd": 3,
+    "priceNote": "Or $29 a year.",
+    "reasonPrompt": "What did you buy recently, and where?",
+    "faq": [
+      {
+        "q": "Am I entitled to the difference?",
+        "a": "Usually not by law. Many stores have their own price-drop or price-match policies, and some will help if you ask politely. Price Clawback works through each store's own policy and can't promise a refund. It doesn't handle card or bank price-protection claims."
+      },
+      {
+        "q": "Do I need to share my store logins?",
+        "a": "No. You add purchases yourself; it never asks for store, card or bank logins and isn't linked to any retailer."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-25",
+      "summary": "Shoppers describe prices dropping days after they bought, asking whether they can get the difference back, and being refused.",
+      "wtp": "CostPal, which flags Costco price drops after purchase, has 447 App Store ratings and sells Premium at $3.99 a month or $39.99 a year; an HN user recalls a service that claimed price drops while taking 20%.",
+      "signals": [
+        {
+          "url": "https://www.ozbargain.com.au/node/817231",
+          "who": "superbaby (OzBargain)",
+          "date": "2023-11-30",
+          "quote": "Today Bing Lee drop their price today. Can I ask for refund for the price difference?",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.ozbargain.com.au/node/329672",
+          "who": "danger163 (OzBargain)",
+          "date": "2017-09-14",
+          "quote": "Does 30 day price guarantee applies in this case?",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.ozbargain.com.au/node/329672",
+          "who": "hussey25 (OzBargain)",
+          "date": "2017-09-14",
+          "quote": "I bought a soundbar from them with my tv and it was on sale 2 weeks later for $150 less.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/6499244/price-has-plummeted-since-purchase-anything-i-can-do",
+          "who": "Mogger (MoneySavingExpert)",
+          "date": "2024-01-17",
+          "quote": "Is there anything I can do?",
+          "seen": "opened"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=33374441",
+          "who": "r0m4n0 (Hacker News)",
+          "date": "2022-10-28",
+          "quote": "I have bought 2 things recently that went on sale after I purchased them. Support refused to give me a price adjustment",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id6443647697",
+          "who": "CostPal (App Store)",
+          "date": "2026-10-25",
+          "quote": "447 Ratings; Premium Monthly $3.99, Premium Yearly $39.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "CostPal (Costco only), Keepa and pre-purchase price trackers, store price-match policies.",
+      "risks": "Usually no legal right to the difference; must promise nothing. Crowded with free pre-purchase trackers. Must stay away from card price-protection claims and store logins."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-25",
+    "slug": "lunch-rota",
+    "name": "Lunch Rota",
+    "need": "I pack my child's lunch every school day and I'm stuck sending the same few boring things because I've run out of ideas they'll actually eat.",
+    "headline": "Packing the same three things every school day? Build a lunchbox rotation from what your child really eats, check it against school rules, and get a Sunday prep list.",
+    "buyer": "Parents and carers who pack school, nursery or camp lunches for children aged about 3-11.",
+    "bullets": [
+      "A 10-second 'what came back?' log after school, and a 2-3 week rotation built from foods they actually eat, with one gentle new swap.",
+      "Filters for school rules such as nut-free, no reheating and no sweets.",
+      "A make-ahead and freezer list, a weekly shopping list, and tips on what keeps until lunchtime."
+    ],
+    "price": "$4/month",
+    "priceUsd": 4,
+    "priceNote": "Or $35 a year.",
+    "reasonPrompt": "How old is your child, and what do you usually pack?",
+    "faq": [
+      {
+        "q": "Is it allergy advice?",
+        "a": "No. You can filter out foods for school rules or allergies you already know about, but Lunch Rota gives no medical or allergy advice. Always follow your school's food policy and any advice from your child's doctor."
+      },
+      {
+        "q": "Is it linked to a food brand?",
+        "a": "No. It's independent and recommends no brands."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-25",
+      "summary": "Parents describe children eating the same three things over and over, worrying lunches are boring, and running out of ideas.",
+      "wtp": "Little Lunches, a family meal planner with lunchbox ideas, has 389 App Store ratings and sells Premium at $7.99 a month or $49.99 a year.",
+      "signals": [
+        {
+          "url": "https://boards.hellobee.com/topic/lunch-ideas-1",
+          "who": "Bao (Hellobee)",
+          "date": "2015-09-24",
+          "quote": "I swear they are eating the same 3 things over and over.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/39846/packed-lunch-ideas",
+          "who": "misty (MoneySavingExpert)",
+          "date": "2005-03-28",
+          "quote": "so I don't fall into a boring routine",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/39846/packed-lunch-ideas",
+          "who": "eml_3 (MoneySavingExpert)",
+          "date": "2005-03-28",
+          "quote": "I worry that her lunches are really boring so any other ideas would be great!",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/1991273/kids-lunchbox-ideas",
+          "who": "archiesdad (MoneySavingExpert)",
+          "date": "2009-10-05",
+          "quote": "need to get ideas for packed lunches for my son who goes to school full time as of next week",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1572670746",
+          "who": "Little Lunches (App Store)",
+          "date": "2026-10-25",
+          "quote": "389 Ratings; Premium Plan - Annual $49.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Little Lunches, LaLa Lunchbox, Pinterest, school menu sites.",
+      "risks": "Posts are old (2005-2015). Money is for a broader kids' meal planner. Must give no allergy or medical advice."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

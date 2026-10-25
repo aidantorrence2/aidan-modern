@@ -17240,5 +17240,87 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "price-dropped-after-i-bought-it-what-to-do",
+  "offer": "price-clawback",
+  "title": "Price dropped right after you bought it? How to ask for the difference",
+  "description": "What to check when something you've just bought gets cheaper, how to ask the store politely, and when returning and rebuying makes sense.",
+  "intro": "It's frustrating to see something you just bought on sale days later. In most places you don't have a legal right to the difference, but many stores have their own price-drop or price-match policies, and a polite request often works. This is general information.",
+  "sections": [
+   {
+    "h": "Check the store's policy",
+    "list": [
+     "Look for a price-drop, price-protection or price-match policy on the store's website.",
+     "Note the window (often 7 to 30 days from purchase) and any exclusions such as clearance or marketplace sellers.",
+     "Keep your receipt or order confirmation."
+    ]
+   },
+   {
+    "h": "Ask politely",
+    "list": [
+     "Contact customer service with your order number, the date you bought it, and a link or screenshot showing the lower price.",
+     "Ask whether they can refund the difference as a goodwill gesture if there's no formal policy."
+    ]
+   },
+   {
+    "h": "Return and rebuy?",
+    "list": [
+     "If you're still within the return period, returning and buying again at the lower price may be an option.",
+     "Count the cost first: return postage, restocking fees, and any discounts or gifts you'd lose."
+    ]
+   },
+   {
+    "h": "Keep track",
+    "p": [
+     "Note each bigger purchase, the store's window and the date it ends, so you can check prices before it closes."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "packed-lunch-ideas-when-kids-eat-same-thing",
+  "offer": "lunch-rota",
+  "title": "Out of packed lunch ideas? How to build a rotation your child will actually eat",
+  "description": "A simple way to vary school lunches without waste: start from what they eat, rotate, and add one new thing at a time.",
+  "intro": "Many parents end up packing the same few things every day because they know they'll get eaten. A short rotation built from foods your child already likes, plus the odd small new swap, adds variety without lunches coming home untouched.",
+  "sections": [
+   {
+    "h": "Start from what gets eaten",
+    "list": [
+     "For a week, note what comes home uneaten.",
+     "List the foods your child reliably eats: bread or wraps, fillings, fruit, vegetables, snacks.",
+     "Build lunches mainly from that list."
+    ]
+   },
+   {
+    "h": "Rotate",
+    "list": [
+     "Plan two or three weeks of lunches and repeat them.",
+     "Swap the format, not just the food: a sandwich one day, a wrap or crackers and fillings the next.",
+     "Change one item at a time."
+    ]
+   },
+   {
+    "h": "Add one new thing",
+    "list": [
+     "Put a small amount of something new next to familiar foods.",
+     "Don't worry if it comes back; try it again another week."
+    ]
+   },
+   {
+    "h": "Check school rules",
+    "list": [
+     "Many schools are nut-free or limit sweets and fizzy drinks; check your school's food policy.",
+     "Use an ice pack for foods that need to stay cool."
+    ]
+   },
+   {
+    "h": "Prep ahead",
+    "p": [
+     "On Sunday, make a short shopping list and prepare anything that can be made ahead or frozen, so weekday mornings are quicker."
+    ]
+   }
+  ]
  }
 ]
