@@ -37707,6 +37707,97 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-25",
+    "slug": "crate-settle",
+    "name": "Crate Settle",
+    "need": "My new puppy cries, howls and claws at the crate every night, and I don't know whether to ignore it, go to him, or give up on the crate.",
+    "headline": "Puppy howling in the crate every night? Build the crate up in small steps, tell toilet whines from protest whines, and watch the crying minutes drop week by week.",
+    "buyer": "Adult owners in the first weeks with a new puppy or rescue dog who are crate training for nights and naps and losing sleep to whining, howling or barking.",
+    "bullets": [
+      "A one-tap log of crying minutes for each night and nap, with a weekly chart so you can see progress.",
+      "A 'toilet or protest?' checklist for the 2am whine, and daytime crate games from door open to door closed.",
+      "A step-by-step plan for moving the crate from your bedroom to the landing to downstairs, if that's your goal."
+    ],
+    "price": "$5/month",
+    "priceUsd": 5,
+    "priceNote": "Or $29 a year.",
+    "reasonPrompt": "How old is your puppy, and what happens at night in the crate?",
+    "faq": [
+      {
+        "q": "Should I just ignore the crying?",
+        "a": "Not always. A young puppy may genuinely need the toilet at night, and a puppy that has soiled the crate, seems unwell or is in distress needs you, or a vet. Crate Settle helps you tell the difference. The crate should be the right size, comfortable, and never used as punishment or for long periods."
+      },
+      {
+        "q": "My dog panics when I leave the house. Is this for that?",
+        "a": "No. Crate Settle is for settling at night and for naps while you're home. A dog that panics when left alone may have separation-related problems, so speak to your vet or a qualified behaviourist."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-25",
+      "summary": "New puppy owners describe crying, whining and clawing at the crate every night, meltdowns when the door closes, and not knowing whether it's normal.",
+      "wtp": "Zigzag, a puppy-training app that includes sleep and crate training, has 4.1K App Store ratings with plans at $9.99 a month or $49.99 a year; Dog Monitor ($6.99, 2.5K ratings) has a reviewer using it to crate train.",
+      "signals": [
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/6261546/puppy-crying-at-night-advice",
+          "who": "fleetingmind (MoneySavingExpert)",
+          "date": "2021-04-21",
+          "quote": "Now tonight about a week in he suddenly won't stop crying.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/2291759/puppy-not-settling-to-crate-or-not-to-crate",
+          "who": "emsywoo123 (MoneySavingExpert)",
+          "date": "2010-02-22",
+          "quote": "she just whinges/barks all night",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.pistonheads.com/gassing/topic.asp?h=0&f=208&t=1879580",
+          "who": "andyjo1982 (PistonHeads)",
+          "date": "2020-07-12",
+          "quote": "He seems to go into meltdown when the crate is closed",
+          "seen": "opened"
+        },
+        {
+          "url": "https://singletrackworld.com/forum/off-topic/new-puppy-the-first-few-days/",
+          "who": "gravitysucks (Singletrack)",
+          "date": "2013-03-12",
+          "quote": "Whining clawing the cage etc, way to noisy to sleep",
+          "seen": "opened"
+        },
+        {
+          "url": "https://singletrackworld.com/forum/off-topic/help-new-puppy-and-nighttime/",
+          "who": "Bushwacked (Singletrack)",
+          "date": "2013-07-20",
+          "quote": "Any ideas on how we can reduce the whining or is this normal?",
+          "seen": "opened"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=21641720",
+          "who": "volkk (Hacker News)",
+          "date": "2019-11-26",
+          "quote": "listen to rain sounds to fall asleep, instead of his cries",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1550121165",
+          "who": "Zigzag (App Store)",
+          "date": "2026-10-25",
+          "quote": "4.1K Ratings; Monthly Plan $9.99, Annual Plan $49.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Zigzag, Dogo, puppy classes, Dog Monitor, crate-training books and videos.",
+      "risks": "Posts are 2008-2021 and UK-leaning. The money is for broad puppy-training apps, not crate-only tools. It must send separation panic, illness or soiling to a vet or behaviourist."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
