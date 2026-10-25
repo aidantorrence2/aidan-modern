@@ -39464,6 +39464,90 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-25",
+    "slug": "hue-tags",
+    "name": "Hue Tags",
+    "need": "I'm colour blind and I struggle to match my clothes: I mix up navy and black, blue and purple, and I end up asking someone else to check every outfit.",
+    "headline": "Colour blind and always second-guessing your outfits? Tag your wardrobe once with the real colours, check an outfit in seconds, and get warned about the pairs you mix up.",
+    "buyer": "Colour-blind adults 18+ who mix up clothing colours.",
+    "bullets": [
+      "Tag each item in your wardrobe once with its real colour (from the label or a trusted person), so you never have to guess again.",
+      "An outfit check that flags clashes and the confusable pairs you personally mix up, like navy and black or blue and purple.",
+      "A shop mode with a warning about artificial lighting, and a share link so a partner or friend can confirm a colour."
+    ],
+    "price": "$3/month",
+    "priceUsd": 3,
+    "priceNote": "Or $15 a year.",
+    "reasonPrompt": "Which colours do you mix up most, and when does it cause problems?",
+    "faq": [
+      {
+        "q": "Is it a colour-blindness test or treatment?",
+        "a": "No. Hue Tags doesn't test, diagnose or correct colour vision. If you think your colour vision has changed, see an optician or doctor."
+      },
+      {
+        "q": "Is it linked to a glasses or clothing brand?",
+        "a": "No. It's independent and recommends no products."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-25",
+      "summary": "Colour-blind adults describe struggling to match clothes, blue and purple looking the same, and needing family to check outfits or name colours in shops.",
+      "wtp": "Color Name AR has 8.2K App Store ratings and sells in-app purchases at $2.99, $9.99 and $14.99; Color Name AR Pro costs $4.99 (820 ratings). EnChroma colour-blind glasses start at $229.",
+      "signals": [
+        {
+          "url": "https://thefedoralounge.com/threads/okay-to-wear-matching-patterned-tie-and-suspenders.30494",
+          "who": "frijoli (The Fedora Lounge)",
+          "date": "2008-06-29",
+          "quote": "I am mostly color blind and struggle with matching my clothes, suits and such.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://singletrackworld.com/forum/off-topic/colour-blind-what-issues-do-you-have/paged/2/",
+          "who": "bluearsedfly (Singletrack)",
+          "date": "2014-09-22",
+          "quote": "I'm also banned from dressing the kids unless their 'outfits' have been pre passed by the wife or my eldest.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://singletrackworld.com/forum/off-topic/colour-blind-what-issues-do-you-have/paged/2/",
+          "who": "eightyeight (Singletrack)",
+          "date": "2014-09-22",
+          "quote": "blue and purple ARE THE SAME COLOUR",
+          "seen": "opened"
+        },
+        {
+          "url": "https://singletrackworld.com/forum/off-topic/colour-blind-what-issues-do-you-have/paged/2/",
+          "who": "bigdawg (Singletrack)",
+          "date": "2014-09-23",
+          "quote": "Clothes shopping under artificial lights is impossible unless my kids tell me what the colours are.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://cathe.com/forum/threads/question-for-the-medical-catheites-re-colorblindness.212784",
+          "who": "Miss Lee (Cathe.com)",
+          "date": "2006-01-13",
+          "quote": "My poor DH has a terrible time matching colors.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id906955675",
+          "who": "Color Name AR (App Store)",
+          "date": "2026-10-25",
+          "quote": "8.2K Ratings; in-app purchases $2.99, $9.99, $14.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Color Name AR, Color Blind Pal, EnChroma glasses, clothing labels, asking a partner.",
+      "risks": "Forum posts are 2006-2014. Color Name AR is a general colour namer, and colour-blind-specific apps have small rating counts. Nobody says they'd pay for a wardrobe app."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

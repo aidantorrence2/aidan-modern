@@ -17109,5 +17109,45 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "how-to-match-clothes-when-colour-blind",
+  "offer": "hue-tags",
+  "title": "How to match clothes when you're colour blind",
+  "description": "Simple ways to stop mixing up navy and black or blue and purple, and to shop for clothes with confidence.",
+  "intro": "Many colour-blind people find clothes the most frustrating everyday problem: navy looks black, purple looks blue, and shop lighting makes it worse. A few habits make matching much easier.",
+  "sections": [
+   {
+    "h": "Label your wardrobe once",
+    "list": [
+     "Check the colour on each item's label or product page, or ask someone you trust.",
+     "Mark items with small tags or sort them into clearly separated sections by colour.",
+     "Keep confusable colours, like navy and black, on different rails or shelves."
+    ]
+   },
+   {
+    "h": "Know your confusable pairs",
+    "list": [
+     "Common mix-ups include navy and black, blue and purple, brown and green, and some reds and greens.",
+     "Make a short list of the pairs you personally get wrong and check those first."
+    ]
+   },
+   {
+    "h": "Build easy combinations",
+    "list": [
+     "Neutral basics (white, grey, black, denim) go with almost anything.",
+     "Patterns that include a colour you know make matching easier.",
+     "Keep a few tried-and-tested outfits that someone has checked."
+    ]
+   },
+   {
+    "h": "Shopping",
+    "list": [
+     "Artificial shop lighting can change how colours look; check near a window if you can.",
+     "Read the colour name on the tag or ask a shop assistant.",
+     "Colour-identifier apps can help, but lighting affects them too."
+    ]
+   }
+  ]
  }
 ]
