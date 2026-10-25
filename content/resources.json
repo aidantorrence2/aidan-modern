@@ -16032,5 +16032,58 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "seasick-on-ferry-or-first-cruise-what-helps",
+  "offer": "easy-miles",
+  "title": "Worried about seasickness on a ferry or your first cruise? What helps adults",
+  "description": "Where to sit or book, what to eat, and what to do in the first queasy minutes at sea. Not medical advice.",
+  "intro": "If you get seasick, a ferry crossing or a first cruise can feel like something to dread. A few choices before and during the trip make a real difference for many people. This is general information, not medical advice; a pharmacist can advise on travel sickness medicines.",
+  "sections": [
+   {
+    "h": "Before you go",
+    "list": [
+     "Ask a pharmacist about travel sickness medicines well before you travel, as many need to be taken in advance and some cause drowsiness.",
+     "Check the forecast and, if you can, choose a calmer crossing time.",
+     "Get a good night of sleep and eat a light meal before you board."
+    ]
+   },
+   {
+    "h": "Where to be on board",
+    "list": [
+     "The middle of the ship and the lower decks usually move least.",
+     "On a cruise, a cabin midship on a lower deck can help.",
+     "Get out on deck for fresh air if it is safe to do so."
+    ]
+   },
+   {
+    "h": "While you are moving",
+    "list": [
+     "Look at the horizon or a fixed point in the distance.",
+     "Avoid reading or looking at your phone for long periods.",
+     "Sip water, eat small plain snacks, and go easy on alcohol and heavy or greasy food."
+    ]
+   },
+   {
+    "h": "In the first queasy minutes",
+    "list": [
+     "Stop what you are doing and fix your eyes on the horizon.",
+     "Get to fresh air, or lie down and close your eyes.",
+     "Loosen tight clothing and take slow breaths."
+    ]
+   },
+   {
+    "h": "Keep a note",
+    "p": [
+     "After each trip, note where you sat, what you ate and what you did. Over a few journeys you will see what keeps you well, and you can plan the next trip around it."
+    ]
+   },
+   {
+    "h": "When to get help",
+    "p": [
+     "See a GP if sickness is severe, lasts long after the journey, or comes with symptoms like a bad headache, chest pain or dizziness on dry land."
+    ]
+   }
+  ]
  }
 ]
