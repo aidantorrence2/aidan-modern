@@ -36370,6 +36370,90 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-25",
+    "slug": "stalled-build",
+    "name": "Stalled Build",
+    "need": "My builder has taken most of the money, the job is half finished, he has stopped turning up or answering, and I don't know where I stand or what to do next.",
+    "headline": "Builder taken the money and stopped turning up? See what you've paid against what's actually done, then chase with dated letters that build your case.",
+    "buyer": "Homeowners whose builder, landscaper or tradesperson has left a paid job unfinished, keeps making excuses, or has gone silent.",
+    "bullets": [
+      "A log of what was agreed, paid and finished, job by job, with dated photos, and a view of whether you've paid more than the finished work is worth.",
+      "Dated chase messages and a final-deadline letter drafted from your own log, as templates.",
+      "A checklist for finding out who you're dealing with, and one evidence pack to export for Trading Standards, an ombudsman or a small claim."
+    ],
+    "price": "$9/month",
+    "priceUsd": 9,
+    "priceNote": "Or $39 a year.",
+    "reasonPrompt": "What was the job, how much have you paid, and how long has it been stalled?",
+    "faq": [
+      {
+        "q": "Is it legal advice?",
+        "a": "No. Letters are templates, and it can't promise you'll get money back. For advice, contact Citizens Advice or a solicitor. It gives no advice on electrical, gas or structural work."
+      },
+      {
+        "q": "Is it linked to a trade body?",
+        "a": "No. It's independent."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-25",
+      "summary": "Homeowners say their builder took all the money with work still pending and stopped answering, want to know where they stand if they throw him off the job, are left with a half-finished garden, can't get replies to calls or emails, worry that paying removes the incentive to finish, and ask how to proceed legally.",
+      "wtp": "DoNotPay, a consumer disputes app, sells a $35.99 subscription (about 7.6K ratings); people also pay solicitors and claims fees to recover money.",
+      "signals": [
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/6335959/builder-not-completed-work",
+          "who": "kooboy (MoneySavingExpert)",
+          "date": "2022-02-17",
+          "quote": "he has taken all the money since november",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/5945317/builders-dispute-advice-needed",
+          "who": "bpk101 (MoneySavingExpert)",
+          "date": "2019-01-03",
+          "quote": "where i stand legally and financially if i throw him off the job",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/5986394/builder-won-t-finish-job-and-ignoring-calls",
+          "who": "Ftbftbftb (MoneySavingExpert)",
+          "date": "2019-04-04",
+          "quote": "And now I have a half finished garden",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/6348062/builder-taken-money-and-not-done-work",
+          "who": "Njt1012 (MoneySavingExpert)",
+          "date": "2022-04-04",
+          "quote": "He would not answer calls, respond to emails, messages.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.pistonheads.com/gassing/topic.asp?h=0&f=207&t=1991020",
+          "who": "Sheepshanks (PistonHeads)",
+          "date": "2022-06-16",
+          "quote": "paying them removes their incentive to get it done",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.pistonheads.com/gassing/topic.asp?h=0&f=10&t=1987634",
+          "who": "Ste372 (PistonHeads)",
+          "date": "2022-05-22",
+          "quote": "correct manner to proceed legally",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "DoNotPay, solicitors, Citizens Advice, trade-body dispute schemes.",
+      "risks": "Mostly UK posts (2019-2022). The money evidence is for general dispute help, not builder disputes specifically. Templates only; no promise of recovering money."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

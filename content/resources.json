@@ -15363,5 +15363,49 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "builder-left-job-unfinished-what-to-do",
+  "offer": "stalled-build",
+  "title": "Builder left the job unfinished or stopped answering? What to do next (UK)",
+  "description": "How to record what's been paid and done, chase in writing, set a final deadline, and where to go for help. Not legal advice.",
+  "intro": "When a builder stops turning up partway through a job, a clear written record and a calm paper trail give you the most options. This is general information, not legal advice; Citizens Advice can help with your situation.",
+  "sections": [
+   {
+    "h": "Record everything now",
+    "list": [
+     "What was agreed (quotes, messages, any contract), what you've paid and when, and what's been done.",
+     "Dated photos of the work as it stands.",
+     "Every call, message and promise, with dates."
+    ]
+   },
+   {
+    "h": "Your rights",
+    "p": [
+     "Under the Consumer Rights Act 2015, a trader must carry out a service with reasonable care and skill, and within a reasonable time if no date was agreed. If they don't, you may be entitled to have it put right or to a price reduction."
+    ]
+   },
+   {
+    "h": "Chase in writing",
+    "list": [
+     "Send a clear message asking them to return and finish by a specific date.",
+     "If nothing happens, send a final letter giving a last deadline and saying what you'll do next, such as bringing in another trader or making a claim."
+    ]
+   },
+   {
+    "h": "Ways to get money back",
+    "list": [
+     "If you paid by credit card, you may be able to claim from the card provider (purchases between £100 and £30,000).",
+     "If the trader is a member of a trade body, it may have a dispute scheme.",
+     "Small claims are possible for smaller amounts, but a judgment isn't always collectable."
+    ]
+   },
+   {
+    "h": "Get help",
+    "p": [
+     "Contact the Citizens Advice consumer helpline, which can refer cases to Trading Standards. Don't stop paying for or start another trader on unsafe electrical, gas or structural work without professional advice."
+    ]
+   }
+  ]
  }
 ]
