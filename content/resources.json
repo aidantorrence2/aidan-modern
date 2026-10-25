@@ -16880,5 +16880,48 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "why-homemade-curry-doesnt-taste-like-takeaway",
+  "offer": "gravy-first",
+  "title": "Why doesn't my homemade curry taste like the takeaway?",
+  "description": "The main differences between curry-house and home cooking, and what to change first, one thing at a time.",
+  "intro": "Most British Indian restaurant curries are made differently from home recipes: a big batch of base gravy, very high heat, and each dish finished in minutes. Getting close at home usually means changing a few key things, one at a time.",
+  "sections": [
+   {
+    "h": "Make a base gravy",
+    "list": [
+     "Restaurants cook a large pot of onion-based gravy and use it as the start of most dishes.",
+     "Make a batch and freeze it in portions so each curry takes minutes."
+    ]
+   },
+   {
+    "h": "Heat and oil",
+    "list": [
+     "Curry houses cook at very high heat with more oil than most home recipes.",
+     "Let the oil and spices sizzle briefly before adding gravy; don't let spices burn.",
+     "Reduce the sauce properly before adding more gravy."
+    ]
+   },
+   {
+    "h": "Spice order and timing",
+    "list": [
+     "Add whole spices and garlic-ginger paste first, ground spices next, and the base gravy after.",
+     "Many home curries taste raw because the spices didn't cook long enough in oil."
+    ]
+   },
+   {
+    "h": "Change one thing at a time",
+    "p": [
+     "Keep a quick note after each cook: heat, oil, spice order, how long you reduced it, and how close it tasted to your takeaway. Change one thing next time."
+    ]
+   },
+   {
+    "h": "Cook safely",
+    "p": [
+     "Never leave hot oil unattended, keep a lid nearby, and never put water on an oil fire. Take care tilting pans near a gas flame."
+    ]
+   }
+  ]
  }
 ]

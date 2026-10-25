@@ -39037,6 +39037,90 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-25",
+    "slug": "gravy-first",
+    "name": "Gravy First",
+    "need": "I love curry-house curries, but whatever I make at home never tastes like the takeaway, and I can't work out what I'm doing wrong.",
+    "headline": "Homemade curry never tastes like the takeaway? Learn the curry-house method (base gravy, high heat, timing) and log each cook to find what's missing.",
+    "buyer": "Adult home cooks who love British Indian restaurant-style curries and get bland or inconsistent results at home.",
+    "bullets": [
+      "A batch base-gravy planner with freezer portions, then one dish at a time, from madras to jalfrezi.",
+      "A two-minute cook log after each curry: heat, oil, spice order, reduction.",
+      "Likely-fix suggestions when a curry comes out bland or raw-tasting, and taste-match notes against your favourite local takeaway."
+    ],
+    "price": "$5/month",
+    "priceUsd": 5,
+    "priceNote": "Or $36 a year.",
+    "reasonPrompt": "Which takeaway curry are you trying to match, and what's missing from yours?",
+    "faq": [
+      {
+        "q": "Is the high-heat method safe at home?",
+        "a": "Curry-house cooking uses very hot oil and high heat. Never leave a hot pan unattended, keep a lid nearby, don't tilt a pan of hot oil towards a gas flame, and never put water on an oil fire. Keep children away from the hob."
+      },
+      {
+        "q": "Is it linked to a restaurant or recipe brand?",
+        "a": "No. It's independent and works alongside any cookbook or recipe."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-25",
+      "summary": "Home cooks describe curries that never taste like the takeaway, inconsistent results, and lacking flavour, even after buying books and courses.",
+      "wtp": "Bjornloser has bought several curry ebooks and chilli-man-sam paid for a curry course at a restaurant; The Curry Guy app has 656 App Store ratings and sells a year at £12.99 or all recipes at £24.99.",
+      "signals": [
+        {
+          "url": "https://curry-recipes.co.uk/curry/just-joined-introduce-yourself/hi-all-14862/",
+          "who": "stepoon (curry-recipes.co.uk)",
+          "date": "2018-01-14",
+          "quote": "struggling to create that authentic BIR taste",
+          "seen": "opened"
+        },
+        {
+          "url": "https://curry-recipes.co.uk/curry/just-joined-introduce-yourself/hi-all-15537/",
+          "who": "Bjornloser (curry-recipes.co.uk)",
+          "date": "2020-08-23",
+          "quote": "getting inconsistent results. Sometimes brilliant",
+          "seen": "opened"
+        },
+        {
+          "url": "https://curry-recipes.co.uk/curry/just-joined-introduce-yourself/new-member!/",
+          "who": "Rickstamatic (curry-recipes.co.uk)",
+          "date": "2021-04-15",
+          "quote": "tends to be a bit lacking in flavour",
+          "seen": "opened"
+        },
+        {
+          "url": "https://curry-recipes.co.uk/curry/just-joined-introduce-yourself/new-member-15355/",
+          "who": "chilli-man-sam (curry-recipes.co.uk)",
+          "date": "2019-12-27",
+          "quote": "I am still not satisfied with my best effort",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mamtaskitchen.com/forum/indian-curry-like-take-away/",
+          "who": "Nicole (Mamta's Kitchen)",
+          "date": "2010-06-21",
+          "quote": "they never taste anything like a curry from the take away",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/gb/app/the-curry-guy-spiced-recipes/id1043129225",
+          "who": "The Curry Guy (App Store UK)",
+          "date": "2026-10-25",
+          "quote": "656 Ratings; Curry Guy Yearly £12.99; Unlock All Recipes £24.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "The Curry Guy, BIR cookbooks and ebooks, YouTube, curry courses.",
+      "risks": "Most people on one hobby forum; posts 2010-2021. Competitor is a recipe app. Hot oil and high heat need clear safety notes."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
