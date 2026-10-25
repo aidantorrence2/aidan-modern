@@ -15946,5 +15946,44 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "how-to-check-payslip-against-hours-worked",
+  "offer": "hours-owed",
+  "title": "How to check your payslip against the hours you worked",
+  "description": "A simple way for hourly and shift workers to spot pay mistakes, and what to do if your pay is short. Not legal advice.",
+  "intro": "Pay mistakes happen more often than people think, especially with shifts, overtime and changing hours. Keeping your own record makes them easy to spot and much easier to sort out. This is general information, not legal or tax advice.",
+  "sections": [
+   {
+    "h": "Keep your own record",
+    "list": [
+     "Write down when each shift started and finished, and any unpaid breaks.",
+     "Note overtime, night or weekend shifts, and holiday taken.",
+     "Keep rotas, messages about shift changes and every payslip."
+    ]
+   },
+   {
+    "h": "Check each payslip",
+    "list": [
+     "Compare the hours paid with your own record for the same pay period.",
+     "Check the hourly rate, including any overtime or shift rates you were promised.",
+     "Check deductions you don't recognise, and your tax code (UK)."
+    ]
+   },
+   {
+    "h": "Minimum wage",
+    "p": [
+     "Divide your pay for the period by the hours you worked to get your actual hourly rate, and compare it with the minimum wage for your age and location. Unpaid time you're required to work, such as some training or compulsory tasks, may count."
+    ]
+   },
+   {
+    "h": "If something's wrong",
+    "list": [
+     "Raise it politely with payroll or your manager in writing, saying which pay period, which hours and what you think is missing.",
+     "Keep a copy of what you sent and any reply.",
+     "UK: Acas gives free, confidential advice on pay problems, and you can complain to HMRC about minimum wage. US: contact your state labor office or the Department of Labor's Wage and Hour Division."
+    ]
+   }
+  ]
  }
 ]

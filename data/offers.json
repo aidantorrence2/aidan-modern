@@ -37448,6 +37448,83 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-25",
+    "slug": "hours-owed",
+    "name": "Hours Owed",
+    "need": "I'm paid by the hour, my pay often seems short, and I can't tell whether my payslip matches the hours I actually worked.",
+    "headline": "Paid by the hour and your pay keeps coming up short? Log your shifts and breaks, then check every payslip against the hours you actually worked.",
+    "buyer": "Adults 18+ on hourly, shift or zero-hours pay (UK and US) who suspect their pay is sometimes wrong.",
+    "bullets": [
+      "One-tap clock in and out, with unpaid breaks, and the overtime, shift and holiday rules for each job.",
+      "Type in or photograph each payslip and see which lines don't match your own record of hours.",
+      "A dated log of every mismatch, and a polite payroll query note you can send yourself."
+    ],
+    "price": "$4/month",
+    "priceUsd": 4,
+    "priceNote": "Or $29 a year.",
+    "reasonPrompt": "How are you paid, and what seems to be going wrong with your pay?",
+    "faq": [
+      {
+        "q": "Is it legal or tax advice?",
+        "a": "No. Hours Owed compares your own record with your payslip and gives no legal or tax advice. It can't promise you'll be paid back. In the UK, Acas offers free advice on pay problems, and HMRC handles minimum wage complaints; in the US, contact your state labor office or the Department of Labor's Wage and Hour Division."
+      },
+      {
+        "q": "Is it linked to my employer?",
+        "a": "No. It's independent and private to you, and it isn't connected to any employer, payroll system or time clock. You decide whether to send any query."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-25",
+      "summary": "Hourly workers describe pay that seems short, payslips that don't add up and suspecting their employer is underpaying them.",
+      "wtp": "Hours Tracker has 56K App Store ratings and sells Premium at $4.99 a month or $29.99 a year (Unlimited $47.99); Clock In: Shift Hours Tracker has 6.5K ratings with Clock In Plus from $3.99 to $39.99.",
+      "signals": [
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/5495193/being-paid-less-than-minimum-wage",
+          "who": "sortofwinning (MoneySavingExpert)",
+          "date": "2016-07-16",
+          "quote": "I've just found out by doing some calculations that I'm being paid below the minimum wage.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/5509612/im-having-trouble-working-out-my-pay-for-the-month",
+          "who": "Yos (MoneySavingExpert)",
+          "date": "2016-08-13",
+          "quote": "I'm on the national minimum wage,and I worked 18 hours per week. Something doesn't add up?",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id534278133?see-all=reviews",
+          "who": "Annoyed GIR (App Store, Clock In)",
+          "date": "2020-07-02",
+          "quote": "I mainly downloaded it so I can keep track of my pay / hours because seems like my jobs skimming off the top.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id336456412?see-all=reviews",
+          "who": "arielledesires (App Store, Hours Tracker)",
+          "date": "2020-06-24",
+          "quote": "I wanted to make sure I wasn’t losing any money so I started to track my hours with this app",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id336456412",
+          "who": "Hours Tracker (App Store)",
+          "date": "2026-10-25",
+          "quote": "56K Ratings; Premium Monthly $4.99, Premium Annual $29.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Hours Tracker, Clock In, Work Log, ShiftCheck, employer time clocks.",
+      "risks": "Crowded with hours trackers, so the pitch is checking each payslip and keeping a log. MSE posts are from 2016. Not legal or tax advice, and no promise of back pay."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
