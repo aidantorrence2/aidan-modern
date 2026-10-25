@@ -38953,6 +38953,90 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-25",
+    "slug": "straight-rows",
+    "name": "Straight Rows",
+    "need": "I want to tile my own bathroom or kitchen splashback to save on a tiler, but I've never tiled before and I'm scared I'll make a mess of it.",
+    "headline": "Your first tiling job, planned row by row. Know where to start, what to buy and what to check at each stage, so it doesn't end up a wonky mess.",
+    "buyer": "Adult homeowners, and renters with permission, tackling a first small tiling job such as a splashback, bathroom wall or utility floor.",
+    "bullets": [
+      "Enter your wall or floor size and tile size for a set-out plan that centres the tiles and avoids thin slivers at the edges.",
+      "A shopping list sized to your job (adhesive, trowel notch, spacers, grout, sealant) and a step plan from surface prep to grout and silicone, with waiting times.",
+      "Checks with photos at each stage, before the adhesive sets, and a go-or-hire-a-pro check that flags jobs too big or tricky for a first attempt."
+    ],
+    "price": "$6/month",
+    "priceUsd": 6,
+    "priceNote": "Or $29 a year.",
+    "reasonPrompt": "What are you planning to tile, and what worries you most about it?",
+    "faq": [
+      {
+        "q": "Is it safe to do myself?",
+        "a": "Small tiling jobs are a common first DIY project, but leave electrical, gas and plumbing changes to qualified trades. Cut tiles wet or with a manual cutter, wear a dust mask and eye protection, and get waterproofing in showers checked by a professional."
+      },
+      {
+        "q": "Is it linked to a DIY store or tile brand?",
+        "a": "No. It's independent and recommends no particular store or brand."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-25",
+      "summary": "First-time tilers describe being terrified of making a mess, not knowing what to buy or where to start, and weighing DIY against a tiler's quote.",
+      "wtp": "Material Estimator Calculator has 3.2K App Store ratings and sells a year at $29.99; Floor Covering, a tile-laying planner, has 415 ratings and a $39.99 purchase. cattie tiled herself after being shocked at a tiler's quote.",
+      "signals": [
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/455394/tiling-the-mse-way-any-advice/p1",
+          "who": "atypicalblonde (MoneySavingExpert)",
+          "date": "2007-05-17",
+          "quote": "Are we completely bonkers to think that this is something we can do ourselves and are we better getting a professional in?",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/455394/tiling-the-mse-way-any-advice/p1",
+          "who": "cattie (MoneySavingExpert)",
+          "date": "2007-05-17",
+          "quote": "being shocked at the quote to have the tiling done, I decided to have a go myself",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.garagejournal.com/forum/threads/first-time-tiling-have-some-questions.370923/",
+          "who": "NewShockerGuy (Garage Journal)",
+          "date": "2017-09-21",
+          "quote": "I have no clue what to even use.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://singletrackworld.com/forum/off-topic/how-hard-is-it-to-tile-a-bathroom/",
+          "who": "alexxx (Singletrack)",
+          "date": "2017-09-08",
+          "quote": "or am I going to make a right hash of it?",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.diynot.com/diy/threads/first-project-kitchen.237988/",
+          "who": "Rusty10 (DIYnot)",
+          "date": "2010-08-25",
+          "quote": "Should I begin the tiling from an end or the middle?",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/material-estimator-calculator/id376071081",
+          "who": "Material Estimator Calculator (App Store)",
+          "date": "2026-10-25",
+          "quote": "3.2K Ratings; 1 Year Full Access $29.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Floor Covering, material calculators, DIY store guides, YouTube, local tilers.",
+      "risks": "Posts are 2007-2017. Money is for calculator and DIY apps; nobody says they'd pay for a tiling coach. Must keep away from electrical, gas and plumbing work."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
