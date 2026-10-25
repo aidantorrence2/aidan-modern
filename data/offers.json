@@ -37273,6 +37273,97 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-25",
+    "slug": "early-slot",
+    "name": "Early Slot",
+    "need": "I've been conditionally approved for Global Entry, but my nearest enrollment centre has no interview appointments for months, and I need it done before my trip.",
+    "headline": "Approved for Global Entry but no interview slots before your trip? Get an alert when an earlier slot opens at a centre you can reach, then book it on the official site.",
+    "buyer": "Travellers with conditional approval for Global Entry, NEXUS or SENTRI who can't find an interview slot before an upcoming trip, often for a partner or family too.",
+    "bullets": [
+      "Watch the centres you choose within your driving range, with alerts only for slots before your trip date.",
+      "Family mode looks for 2-4 slots close together, so a household can go on the same day.",
+      "A check of which airports on your upcoming flights offer Enrollment on Arrival, and a reminder before your conditional approval runs out."
+    ],
+    "price": "$5/month",
+    "priceUsd": 5,
+    "priceNote": "Or $19 a year.",
+    "reasonPrompt": "Which centre are you waiting on, and when is your trip?",
+    "faq": [
+      {
+        "q": "Is it an official government service?",
+        "a": "No. Early Slot is independent and isn't affiliated with US Customs and Border Protection (CBP) or any government. It only watches publicly shown appointment availability and sends you to the official Trusted Traveler Programs website, where you book yourself. It never logs in to your account or books for you, and it can't guarantee a slot."
+      },
+      {
+        "q": "Does it charge any government fees?",
+        "a": "No. Program fees are paid only to the government on the official site. Early Slot's price covers the alerts only."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-25",
+      "summary": "Conditionally approved travellers describe no interview slots for months or a year at their nearest centre, a trip coming up, and checking the portal every day.",
+      "wtp": "Global Interview sells for $4.99 (253 App Store ratings) and Global Entry Appointment for $5.99 (76 ratings); brinaa77 bought the app and got a slot, and katrourke got an opening alert in about two weeks.",
+      "signals": [
+        {
+          "url": "https://apps.apple.com/us/app/global-interview/id1605679407?see-all=reviews",
+          "who": "KKCrazy Legs (App Store, Global Interview)",
+          "date": "2022-06-13",
+          "quote": "I needed an interview prior to my trip to Europe in August.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/global-interview/id1605679407?see-all=reviews",
+          "who": "brinaa77 (App Store, Global Interview)",
+          "date": "2022-09-22",
+          "quote": "we’re planning a trip out of the country before then so we knew this wouldn’t work.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/global-entry-appointment/id6443795837?see-all=reviews",
+          "who": "Que3495 (App Store, Global Entry Appointment)",
+          "date": "2024-03-06",
+          "quote": "I have been attempting to get an appointment with GlobalEntry for over six months",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/global-entry-appointment/id6443795837?see-all=reviews",
+          "who": "DenniF1 (App Store, Global Entry Appointment)",
+          "date": "2024-05-02",
+          "quote": "I was looking at 6 months plus before I could get in.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/global-entry-appointment/id6443795837?see-all=reviews",
+          "who": "Kincolorado (App Store, Global Entry Appointment)",
+          "date": "2025-06-17",
+          "quote": "Sure I could log into the portal every day on my own to check for new openings",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.australianfrequentflyer.com.au/community/threads/us-global-entry-program-for-australian-citizens-from-2025.83499/post-2450421",
+          "who": "heycam (Australian Frequent Flyer)",
+          "date": "2022-10-22",
+          "quote": "No open appointment slots at all either.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.australianfrequentflyer.com.au/community/threads/us-global-entry-program-for-australian-citizens-from-2025.83499/post-2876097",
+          "who": "sansnom (Australian Frequent Flyer)",
+          "date": "2025-06-30",
+          "quote": "The nearest airport one was booked solid until late August.",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Global Interview, Global Entry Appointment, other slot-alert apps, Enrollment on Arrival.",
+      "risks": "Crowded with cheap one-off apps. The need comes once every five years, so subscriptions will be short. Program rules and appointment systems can change at short notice. It must never look like an official app."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
