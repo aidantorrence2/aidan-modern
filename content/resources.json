@@ -15452,5 +15452,85 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "child-can-read-but-wont-read-for-fun",
+  "offer": "willing-reader",
+  "title": "Child can read but won't read for fun? Gentle ways to find the book that clicks",
+  "description": "Practical, low-pressure ideas for parents of 7-12 year olds who can read but avoid books.",
+  "intro": "Plenty of children who read perfectly well still say books are boring. Pressure usually makes it worse; matching books to what they already love, and keeping reading time relaxed, tends to work better. This is about reading for pleasure; if you're worried about how your child is learning to read, talk to their teacher.",
+  "sections": [
+   {
+    "h": "Start from what they love",
+    "list": [
+     "Write down their three biggest interests right now: a game, a sport, an animal, a YouTuber, a joke style.",
+     "Look for books on exactly those things, including non-fiction, joke books, annuals and game guides.",
+     "Ask a children's librarian for 'books like' a film or game they enjoy."
+    ]
+   },
+   {
+    "h": "Make every format count",
+    "list": [
+     "Comics, graphic novels and illustrated chapter books are real reading.",
+     "Short books and series with short chapters give quick wins.",
+     "Audiobooks alongside the printed book can help a child stay with a story."
+    ]
+   },
+   {
+    "h": "Keep it relaxed",
+    "list": [
+     "Read aloud to them, even if they can read alone; take turns page by page.",
+     "Stop on a cliffhanger, not when they're bored.",
+     "Let them drop a book they don't like, and note it so you choose better next time."
+    ]
+   },
+   {
+    "h": "Skip the bribes",
+    "p": [
+     "Points and prizes can make reading feel like a job. Keeping a simple private note of what they finished and what they dropped helps you spot the kind of book that actually holds their attention."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "school-morning-routine-without-shouting",
+  "offer": "coats-on",
+  "title": "School morning routine without the shouting: a calmer way out of the door",
+  "description": "How to find the step that stalls your school morning and plan a routine your 4-10 year old can follow.",
+  "intro": "If every school morning ends in nagging and a dash for the door, the problem is often one or two steps that eat the time. A little planning the night before and a routine your child can see usually helps more than more reminders.",
+  "sections": [
+   {
+    "h": "Plan back from the bell",
+    "list": [
+     "Write down when you must leave the house.",
+     "Count back the minutes each step really takes: waking, dressing, breakfast, teeth, shoes and coats.",
+     "Add five spare minutes, and set the wake-up time from there."
+    ]
+   },
+   {
+    "h": "Find the step that stalls",
+    "list": [
+     "For a week, note which step made you late each morning.",
+     "Shoes, breakfast and screens are common culprits.",
+     "Change one thing at a time, such as shoes and coats by the door the night before."
+    ]
+   },
+   {
+    "h": "Let a picture list do the reminding",
+    "list": [
+     "Make a simple picture checklist your child can follow in order.",
+     "Give each step a timer so the clock, not you, says it's time to move on.",
+     "Keep the same order every day."
+    ]
+   },
+   {
+    "h": "Do the rest the night before",
+    "list": [
+     "Lay out clothes and pack bags in the evening.",
+     "Agree screens stay off until everyone is ready, if that helps your family.",
+     "Keep a calm 'leave now' cue so the last minutes aren't a scramble."
+    ]
+   }
+  ]
  }
 ]

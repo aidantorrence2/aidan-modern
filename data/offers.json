@@ -36538,6 +36538,167 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-25",
+    "slug": "willing-reader",
+    "name": "Willing Reader",
+    "need": "My child can read, but they just aren't interested in books, and every attempt to get them reading turns into a chore or a fight.",
+    "headline": "Your child can read but won't? Find the book that clicks from what they already love, and build calm reading nights without points or bribes.",
+    "buyer": "Parents of children aged about 7-12 who can read well enough but avoid books for fun.",
+    "bullets": [
+      "A 2-minute interest quiz your child taps through (football, games, animals, jokes) that turns into 3 short, high-interest picks: comics, graphic novels, short chapters.",
+      "A record of books finished, dropped or ignored, so the next picks follow what actually held their attention.",
+      "Shared-reading nights where you take turns page by page, with a stop-on-a-cliffhanger timer, and no points, streaks or prizes."
+    ],
+    "price": "$6/month",
+    "priceUsd": 6,
+    "priceNote": "Or $39 a year.",
+    "reasonPrompt": "How old is your child, and what happens when you try to get them reading?",
+    "faq": [
+      {
+        "q": "Is it for children who are still learning to read?",
+        "a": "No. It's for reading for pleasure once a child can already read. If you're worried about how your child is learning to read, talk to their teacher. It isn't homework help or a phonics tool."
+      },
+      {
+        "q": "Does my child need an account?",
+        "a": "No. The parent holds the account and the record stays private to you. Your child only uses the picture quiz and the shared-reading timer, with you."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-25",
+      "summary": "Parents describe children who read well but have no interest in books, and evening reading that turns into a chore.",
+      "wtp": "Epic (kids' books and reading) has 519K App Store ratings and subscriptions of $7.99-$13.99 a month; reviewer LilMansMom wrote 'I had already paid $84.99 for it'.",
+      "signals": [
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/5899272/tips-for-getting-child-to-read",
+          "who": "Anoneemoose (MoneySavingExpert)",
+          "date": "2018-09-23",
+          "quote": "he just doesn’t seem interested. At all.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://giftedissues.davidsongifted.org/bb/ubbthreads.php/posts/144591.html",
+          "who": "Michelle6 (Davidson Gifted forum)",
+          "date": "2012-12-16",
+          "quote": "He has an above-average reading level, but the problem is that he HATES reading.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://readingthroughlife.substack.com/p/im-a-bookworm-mom-with-kids-who-dont/comments",
+          "who": "Ren Reads (Substack)",
+          "date": "2024-08-20",
+          "quote": "hoping something clicks with her and she realizes the amazing power books have",
+          "seen": "opened"
+        },
+        {
+          "url": "https://readingthroughlife.substack.com/p/im-a-bookworm-mom-with-kids-who-dont/comments",
+          "who": "Mia Sutton (Substack)",
+          "date": "2024-08-20",
+          "quote": "I keep trying to explain to my movie-loving boys that books are like movies for your mind",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=10/id=719219382/sortby=mostrecent/json",
+          "who": "LilMansMom (App Store, Epic)",
+          "date": "2026-10-25",
+          "quote": "I had already paid $84.99 for it",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Epic, Beanstack, library reading challenges, Bookbub-style recommendation lists.",
+      "risks": "Some posts touch school reading tasks; this offer stays about reading for pleasure. Epic is a digital library, so the money evidence is for children's reading in general rather than this exact tool."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-25",
+    "slug": "coats-on",
+    "name": "Coats On",
+    "need": "Getting my child ready and out the door for school is a battle almost every morning, and I end up nagging, shouting and running late.",
+    "headline": "School mornings a daily battle? Find the step that stalls (shoes, breakfast, teeth), plan back from the bell, and let a picture countdown do the reminding.",
+    "buyer": "Parents of children aged about 4-10 whose school mornings mean repeated reminders, rushing and lateness.",
+    "bullets": [
+      "A start time worked back from the bus or the bell, with a 'shoes on' cue and a 'leave now' cue.",
+      "A picture checklist your child taps through on a spare phone or tablet, with a gentle countdown on each step.",
+      "A ten-second check-in after drop-off (on time or late, and which step stalled), and a weekly view of the step that keeps eating the time."
+    ],
+    "price": "$4/month",
+    "priceUsd": 4,
+    "priceNote": "Or $24 a year.",
+    "reasonPrompt": "How old are your children, and which part of the school morning goes wrong most often?",
+    "faq": [
+      {
+        "q": "Is it a reward chart?",
+        "a": "No. There's no points shop to keep up. It's a timed picture checklist for your child and a simple log for you, so you can see which step to change."
+      },
+      {
+        "q": "Can I set up more than one child?",
+        "a": "Yes. Each child gets their own routine, and you can keep a separate one for weekends or holidays."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-25",
+      "summary": "Parents describe battling to get children ready and out for school almost every morning, rushing for shoes and coats as the bus arrives.",
+      "wtp": "Lil Planner: Visual Schedule has 4.3K App Store ratings with Lil Planner Plus at $5.99-$59.99; Happy Kids Timer sells an unlock at $3.99.",
+      "signals": [
+        {
+          "url": "https://giftedissues.davidsongifted.org/bb/ubbthreads.php/topics/13743.html",
+          "who": "squirt (Davidson Gifted forum)",
+          "date": "2008-04-14",
+          "quote": "It makes my crazy to battle with him over going to school almost every morning.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://giftedissues.davidsongifted.org/bb/ubbthreads.php/topics/13743.html",
+          "who": "elh0706 (Davidson Gifted forum)",
+          "date": "2008-04-14",
+          "quote": "We have those mornings too.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://giftedissues.davidsongifted.org/bb/ubbthreads.php/topics/13743/3.html",
+          "who": "AmyEJ (Davidson Gifted forum)",
+          "date": "2008-04-15",
+          "quote": "Mornings are so hard at our house too!",
+          "seen": "opened"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=42714807",
+          "who": "sequoia (Hacker News)",
+          "date": "2025-01-15",
+          "quote": "Stressful mornings harrying sleepy kids out of bed and out the door",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=2/id=978996118/sortby=mostrecent/json",
+          "who": "Happy _Mom7 (App Store, Happy Kids Timer)",
+          "date": "2024-01-24",
+          "quote": "There have been many mornings when we were rushing to get his shoes and coat on while the bus was pulling up to our house",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=6480323936/sortby=mostrecent/json",
+          "who": "Jobanma (App Store, Huckleberry MagicSteps)",
+          "date": "2025-02-07",
+          "quote": "Getting ready for school in the morning and going to bed at night has been challenging to say the least",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Lil Planner, Happy Kids Timer, Huckleberry MagicSteps, Brili, printed routine charts.",
+      "risks": "The main forum thread is from 2008, and some App Store reviews describe the problem after an app helped. Close to the live on-time offer, which is an adult's own lateness rather than getting a child ready."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
