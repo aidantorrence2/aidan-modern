@@ -38799,6 +38799,76 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-25",
+    "slug": "pop-up-ready",
+    "name": "Pop Up Ready",
+    "need": "I'm learning to surf and I can catch waves, but I still can't pop up onto my feet, and it's getting really frustrating.",
+    "headline": "Catching waves but can't get to your feet? A 10-minute floor pop-up drill in small steps, a phone-video self-check, and a log of what keeps going wrong.",
+    "buyer": "Adults 18+ learning to surf who catch waves but can't pop up to their feet.",
+    "bullets": [
+      "A daily 10-minute floor drill that breaks the pop-up into small steps, building up as each one gets easy.",
+      "A self-check from your own phone video: hand position, back foot, front foot, where you look.",
+      "A 30-second session log after each surf (waves tried, times you got to your feet, the most common miss) and a question list for your next lesson."
+    ],
+    "price": "$5/month",
+    "priceUsd": 5,
+    "priceNote": "Or $35 a year.",
+    "reasonPrompt": "How long have you been learning, and what happens when you try to pop up?",
+    "faq": [
+      {
+        "q": "Does it replace surf lessons?",
+        "a": "No. It's for practising between lessons. Surf at lifeguarded beaches between the flags where possible, check conditions and tides, stay within your ability, and take lessons from a qualified instructor. Check with a doctor before starting if you have back, shoulder or heart problems."
+      },
+      {
+        "q": "Is it linked to a surf school or brand?",
+        "a": "No. It's independent and works with any board and any lessons."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-25",
+      "summary": "Adult learners describe catching waves but failing to get to their feet, getting smashed on the take-off, and growing frustrated.",
+      "wtp": "Surf Athlete has 403 App Store ratings and sells The Perfect Pop Up at $79.99 and SURF ATHLETE PRO at $29.99 a month; reviewer Olivier From CA bought The Perfect Pop Up.",
+      "signals": [
+        {
+          "url": "https://forum.realsurf.com/forums/viewtopic.php?p=89351",
+          "who": "55 splitty (RealSurf)",
+          "date": "2005-11-14",
+          "quote": "i keep getting smashed on the take of",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forum.realsurf.com/forums/viewtopic.php?p=89496",
+          "who": "sandtrax (RealSurf)",
+          "date": "2005-11-15",
+          "quote": "I’m still trying to get my hands pushing off the deck rather than the rails when popping up",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/surf-athlete-surf-training/id1473672898?see-all=reviews",
+          "who": "Olivier From CA (App Store, Surf Athlete)",
+          "date": "2022-02-02",
+          "quote": "The pop up I had been getting away with was no longer working and I was getting frustrated.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/surf-athlete-surf-training/id1473672898",
+          "who": "Surf Athlete (App Store)",
+          "date": "2026-10-25",
+          "quote": "403 Ratings; The Perfect Pop Up $79.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Surf Athlete, SurfCore, surf schools, YouTube pop-up drills.",
+      "risks": "Forum posts are old (2005); boards.ie and Swellnet are blocked for us. Nobody says they'd pay for a log. Must not replace lessons or water-safety advice."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
