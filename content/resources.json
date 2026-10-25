@@ -15894,5 +15894,57 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "why-am-i-not-catching-any-fish-beginner-checklist",
+  "offer": "blank-breaker",
+  "title": "Why am I not catching any fish? A checklist for new anglers",
+  "description": "Blanked again? Work through spot, timing, bait, rig and bite detection in order, and change one thing at a time.",
+  "intro": "Every angler blanks, but trip after trip without a fish usually means one or two things are off. Going through them in order, and changing one at a time, is the quickest way to find out which. Always check local licence rules and size limits first.",
+  "sections": [
+   {
+    "h": "1. Are there fish where you are?",
+    "list": [
+     "Ask the local tackle shop or club what's being caught, where and on what.",
+     "Watch other anglers: if nobody is catching, it may be the day, not you.",
+     "Look for features fish like: drop-offs, weed beds, rocks, current seams and structure."
+    ]
+   },
+   {
+    "h": "2. Is it the right time?",
+    "list": [
+     "At sea, many spots fish best around certain states of the tide; ask locally which.",
+     "Dawn and dusk are often better than the middle of a bright day.",
+     "Season matters: some species move in and out through the year."
+    ]
+   },
+   {
+    "h": "3. Bait, rig and depth",
+    "list": [
+     "Use the bait the locals use, as fresh as you can get.",
+     "Make sure your hook size suits the fish you're after.",
+     "Try different depths, from close in to further out, before moving spot."
+    ]
+   },
+   {
+    "h": "4. Are you missing bites?",
+    "list": [
+     "Watch your rod tip or float closely, and keep your line fairly tight.",
+     "Count bites as well as fish; bites with no fish point to hook size or timing of the strike."
+    ]
+   },
+   {
+    "h": "5. Keep a simple log",
+    "p": [
+     "Write down the spot, time, tide or flow, weather, bait and rig each trip, and change only one thing next time. After a few trips you'll see what came with bites."
+    ]
+   },
+   {
+    "h": "Stay safe",
+    "p": [
+     "Check tide times, keep away from slippery rocks and fast water, wear sensible footwear, and tell someone where you're going."
+    ]
+   }
+  ]
  }
 ]

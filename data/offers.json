@@ -37364,6 +37364,90 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-25",
+    "slug": "blank-breaker",
+    "name": "Blank Breaker",
+    "need": "I've taken up fishing and bought the gear, but I keep coming home with nothing, and I can't work out what I'm doing wrong.",
+    "headline": "New to fishing and keep blanking? Log each trip in 60 seconds, count your bites at the water, change one thing next time, and see what came with bites.",
+    "buyer": "Adults 18+ who have taken up river, lake or sea fishing and keep coming home without a fish.",
+    "bullets": [
+      "A 60-second trip log: spot, time, tide or flow, weather, water colour, bait or lure, rig and depth.",
+      "A bite counter at the water (bites, missed strikes, fish), and a blank checklist that works through spot, timing, bait, rig and bite detection in order.",
+      "One change per trip, and a pattern view of what came with bites over the season."
+    ],
+    "price": "$3/month",
+    "priceUsd": 3,
+    "priceNote": "Or $20 a year.",
+    "reasonPrompt": "Where do you fish, and how many trips have you blanked?",
+    "faq": [
+      {
+        "q": "Will it make me catch fish?",
+        "a": "No promise of catches. Blank Breaker is a log and a checklist to help you learn what works on your waters. It's independent and isn't linked to any fishing app, tackle brand or club."
+      },
+      {
+        "q": "Do I need a licence?",
+        "a": "Check your local rules before you fish: many rivers and lakes need a licence or permit, and size and bag limits often apply. Watch the tide, wear sensible footwear, keep clear of slippery rocks and fast water, and tell someone where you're going."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-25",
+      "summary": "New anglers describe trip after trip without a fish, advice from tackle shops that didn't help, and not knowing what they're doing wrong.",
+      "wtp": "Fishbrain, a fishing app, has 76K App Store ratings and sells Fishbrain Premium at $14.99, a Monthly Power Fishing Package at $12.99-$14.99 and an Annual Power Fishing Package at $79.99.",
+      "signals": [
+        {
+          "url": "https://www.sea-angling-ireland.org/forum/viewtopic.php?p=5577",
+          "who": "plukeman (Sea Angling Ireland)",
+          "date": "2004-09-16",
+          "quote": "I am new to sea angling and have sought the advice of dealers, but no great luck.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.sea-angling-ireland.org/forum/viewtopic.php?p=5577",
+          "who": "plukeman (Sea Angling Ireland)",
+          "date": "2004-09-18",
+          "quote": "another day of woe, not one fish",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.sea-angling-ireland.org/forum/viewtopic.php?p=5577",
+          "who": "rockyb23 (Sea Angling Ireland)",
+          "date": "2004-09-28",
+          "quote": "I'm new to this sea game and was very poorly armed for the task",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.sea-angling-ireland.org/forum/viewtopic.php?p=234022",
+          "who": "collie21 (Sea Angling Ireland)",
+          "date": "2010-08-06",
+          "quote": "We caught nothing.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forum.charlestonfishing.com/t/why-do-we-suck/36982",
+          "who": "kyle843 (Charleston Fishing)",
+          "date": "2012-03-18",
+          "quote": "My friend and I are new to fishing and on Friday we went out to the folly Pier and stayed for nine hours and did not catch a thing.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/fishbrain-fishing-app/id477967747",
+          "who": "Fishbrain (App Store)",
+          "date": "2026-10-25",
+          "quote": "76K Ratings; Annual Power Fishing Package $79.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Fishbrain, tide and weather apps, paper logbooks, local tackle shops and clubs.",
+      "risks": "Posts are old (2004-2012); nobody says they'd pay for a log. The doc side's fishingmagic source returns a bot check for us. No promise of catches; local licence and water safety rules apply."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
