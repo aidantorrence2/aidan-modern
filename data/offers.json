@@ -36944,6 +36944,90 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-25",
+    "slug": "long-fuse",
+    "name": "Long Fuse",
+    "need": "I'm a calm person until I get behind the wheel. Then I lose my temper with other drivers, it ruins my day, and I want to stop.",
+    "headline": "Calm everywhere except behind the wheel? Log each flare-up once you've parked, spot what sets you off, and practise a calmer reaction before the next drive.",
+    "buyer": "Adult drivers, cyclists and commuters who are reasonable everywhere else but get short-tempered or shouty with other road users, and want to change it.",
+    "bullets": [
+      "A 20-second log once you've parked: what happened, how angry you got, and what you did.",
+      "A weekly map of your triggers by route, time of day and situation, such as tailgaters, slow lanes or close passes.",
+      "A two-minute warm-up before you set off, aimed at this week's top trigger, with calm-down plans you rehearse at home, not on the road."
+    ],
+    "price": "$5/month",
+    "priceUsd": 5,
+    "priceNote": "Or $36 a year.",
+    "reasonPrompt": "What usually sets you off on the road, and how often does it happen?",
+    "faq": [
+      {
+        "q": "Do I use it while driving?",
+        "a": "No. Long Fuse is only for before and after a journey. It sends no prompts or alerts while you're moving, and you log a flare-up only once you're parked safely. It never advises confronting another road user."
+      },
+      {
+        "q": "Is it anger management therapy?",
+        "a": "No. It's a habit tool, not therapy or treatment. If your anger has led to threats, violence or police involvement, or it's affecting your life, talk to your GP or a qualified professional."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-25",
+      "summary": "Drivers and cyclists describe being calm elsewhere but short-tempered with other road users, and wanting to stop.",
+      "wtp": "Quit Anger, a general anger-management app, sells a $3.99 monthly and $20.49 yearly subscription and has 674 App Store ratings. Dingle (Straight Dope) wished for 'an anger management class we can take that specializes in the road rage phenomenon'.",
+      "signals": [
+        {
+          "url": "https://singletrackworld.com/forum/bike-forum/keeping-ones-cool/",
+          "who": "PJay (Singletrack)",
+          "date": "2017-01-01",
+          "quote": "I find myself rather short tempered and irritable with inconsiderate road users",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.pistonheads.com/gassing/topic.asp?h=0&f=226&t=204313",
+          "who": "lazyitus (PistonHeads)",
+          "date": "2005-08-31",
+          "quote": "I know I'm sometimes guilty of it and its something I am keen to quash",
+          "seen": "opened"
+        },
+        {
+          "url": "https://boards.straightdope.com/t/what-are-you-like-while-driving-suffering-from-road-rage/10291",
+          "who": "MLAW (Straight Dope)",
+          "date": "1999-10-30",
+          "quote": "I’m developing a short fuse and becoming quite impatient",
+          "seen": "opened"
+        },
+        {
+          "url": "https://boards.straightdope.com/t/what-are-you-like-while-driving-suffering-from-road-rage/10291",
+          "who": "Dingle (Straight Dope)",
+          "date": "1999-10-30",
+          "quote": "There’s got to be an anger management class we can take that specializes in the road rage phenomenon",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.cyclechat.net/threads/anger-management.143090/",
+          "who": "Cuchilo (CycleChat)",
+          "date": "2013-11-05",
+          "quote": "know how you guys keep your temper with drivers",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1523046573",
+          "who": "Quit Anger (App Store)",
+          "date": "2026-10-25",
+          "quote": "Monthly Subscription $3.99, Yearly Subscription $20.49, 674 Ratings",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "General anger-management apps (Quit Anger), workplace road-rage courses, court-referred driver courses.",
+      "risks": "Quotes are old (1999-2017). No consumer app made for road rage was found, so the money evidence is a general anger app. Driving-adjacent: it must stay off-road, with no use while moving."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
