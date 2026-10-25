@@ -36125,6 +36125,174 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-25",
+    "slug": "surname-sweep",
+    "name": "Surname Sweep",
+    "need": "I've just got married and I'm changing my name, but I don't know everyone I have to tell, what order to do it in, or which places want which proof, and months later I'm still finding accounts in my old name.",
+    "headline": "Just married and changing your name? Get one list of every account to update, in the right order, with the proof each one wants, and tick them off as you go.",
+    "buyer": "Newlyweds and civil partners changing or double-barrelling a surname, mainly in the UK and US, in the first year after the wedding.",
+    "bullets": [
+      "A personal checklist built from your real accounts: banks, driving licence, tax, passport, insurers, utilities, mortgage or tenancy, employer, doctor.",
+      "The right order to do it in (for example, photo ID first where banks want it), with notes on which documents each place wants and how many certificate copies to order.",
+      "A travel guard that warns you when ticket and passport names must match, and a progress tracker with reminders."
+    ],
+    "price": "$19 one-time",
+    "priceUsd": 19,
+    "priceNote": "Or $4 a month.",
+    "reasonPrompt": "When did you get married, and how far have you got with changing your name?",
+    "faq": [
+      {
+        "q": "Does it change my name for me?",
+        "a": "No. It gives you the list, the order and the paperwork notes; you contact each organisation. Always check each organisation's current requirements."
+      },
+      {
+        "q": "Is it linked to a government service?",
+        "a": "No. It's independent and unofficial."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-25",
+      "summary": "Newlyweds say they searched in vain for a checklist of who to tell after changing their name, still have loads of things to change and it takes so much time, are changing their name on everything, put it off because of moving house, and still haven't changed their passport.",
+      "wtp": "NewlyNamed sells a $99 name-change kit (4.8 from 1,213 reviews); HitchSwitch sells name-change packages from $49.99.",
+      "signals": [
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/54500/name-change-after-marriage",
+          "who": "RicardoGonzalezIII (MoneySavingExpert)",
+          "date": "2005-05-16",
+          "quote": "searched in vain for a checklist",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/54500/name-change-after-marriage",
+          "who": "Jess_B (MoneySavingExpert)",
+          "date": "2005-05-16",
+          "quote": "it takes so much time",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/4883971/car-insurance-changing-name-after-marriage",
+          "who": "cllola (MoneySavingExpert)",
+          "date": "2014-01-31",
+          "quote": "changing my name on everything",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/2254925/change-of-name-after-marriage-any-problems",
+          "who": "I,_Geek (MoneySavingExpert)",
+          "date": "2010-02-05",
+          "quote": "decided not to change my name at the time",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/6483944/how-to-change-name-after-marriage",
+          "who": "rainbow_fountains (MoneySavingExpert)",
+          "date": "2023-11-07",
+          "quote": "trying to change my name after recently getting married",
+          "seen": "opened"
+        },
+        {
+          "url": "https://community.ricksteves.com/travel-forum/transportation/passport-name-change",
+          "who": "kristyk (Rick Steves Travel Forum)",
+          "date": "2018-11-08",
+          "quote": "I have yet to change my passport to my new married name",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "NewlyNamed, HitchSwitch (US kits), government guidance pages, spreadsheets.",
+      "risks": "Most voices are on MSE, several old (2005-2014). Paid rivals are US; UK willingness to pay is unproven. Requirements change; it's a checklist, not official advice."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-25",
+    "slug": "place-case",
+    "name": "Place Case",
+    "need": "My child didn't get the school place we wanted, and I don't know whether we have grounds to appeal, what evidence the panel will accept, or how to write it before the deadline.",
+    "headline": "Didn't get the school place you wanted? Find out if you have real grounds, get on the right waiting lists, and send a clear appeal with evidence before the deadline.",
+    "buyer": "Parents, and grandparents helping them, in England and Wales whose child was refused a place at their preferred school.",
+    "bullets": [
+      "A grounds checker that separates reasons panels consider from ones they usually don't (such as childcare or convenience).",
+      "A waiting-list and deadline tracker for every school you'd accept, and a guide to asking how places were allocated.",
+      "An evidence list, letter templates, a written-case builder and a hearing practice sheet of likely panel questions."
+    ],
+    "price": "$15 per appeal",
+    "priceUsd": 15,
+    "priceNote": "Or $5 a month during appeal season.",
+    "reasonPrompt": "Which year group is it, and why did you want that school?",
+    "faq": [
+      {
+        "q": "Can it get my child a place?",
+        "a": "No. Independent panels decide, and many appeals don't succeed. It helps you prepare a clear case; it isn't legal advice."
+      },
+      {
+        "q": "Where does it apply?",
+        "a": "It's built around school admission appeals in England and Wales. Check your admission authority's own deadlines and rules."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-25",
+      "summary": "Parents say their child wasn't offered a place at the school they chose, ask for advice from anyone who knows about admissions, want guidance on an appeal, are desperate for their child to go to their first choice, have been told to appeal again, and ask whether anyone has experience appealing a high school place.",
+      "wtp": "School Appeal Services sells a £12.99 parent guide and paid support from £99.99 for advice to £385 for a submission review; MSE posters recommend buying an appeals book.",
+      "signals": [
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/391020/school-appeals-help-offered/p125",
+          "who": "MissA123 (MoneySavingExpert)",
+          "date": "2021-04-22",
+          "quote": "offered a place at the primary school we chose",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/391020/school-appeals-help-offered/p119",
+          "who": "lm1981 (MoneySavingExpert)",
+          "date": "2020-04-18",
+          "quote": "any knowledge on primary admissions",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/6168990/primary-school-appeal",
+          "who": "chen234 (MoneySavingExpert)",
+          "date": "2020-07-14",
+          "quote": "after some guidance on a school appeal",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/3906535/please-help-appealing-childs-primary-school-place",
+          "who": "atlantis187 (MoneySavingExpert)",
+          "date": "2012-04-15",
+          "quote": "desperate for him to go the the school",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.gransnet.com/forums/grandparenting/1234810-Secondary-School-places-allocated-today-sad",
+          "who": "gillybob (Gransnet)",
+          "date": "2017-03-01",
+          "quote": "suggested going to appeal",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.gransnet.com/forums/chat/1247678-High-school-admission-appeal-on-distance",
+          "who": "Rosie59 (Gransnet)",
+          "date": "2018-04-27",
+          "quote": "experience of making an appeal",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "School appeal advisers and guides, local authority guidance, forums.",
+      "risks": "UK only (England and Wales). The paid service has no rating count. Success rates are low; must not promise wins or give legal advice. Gransnet posters are grandparents helping."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

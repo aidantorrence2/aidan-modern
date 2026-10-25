@@ -15231,5 +15231,92 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "changing-name-after-marriage-checklist",
+  "offer": "surname-sweep",
+  "title": "Changing your name after marriage: a checklist and the order to do it in",
+  "description": "Who to tell, what to do first, which documents to have ready, and how to avoid travel problems. UK-focused, with notes for elsewhere.",
+  "intro": "Changing your name means telling a lot of organisations, and doing it in a sensible order saves time. This is general information; check each organisation's current rules.",
+  "sections": [
+   {
+    "h": "Get your documents ready",
+    "list": [
+     "Your marriage or civil partnership certificate is usually the proof you need.",
+     "Order a few extra certified copies; many places want to see an original or certified copy, not a photocopy."
+    ]
+   },
+   {
+    "h": "A sensible order",
+    "list": [
+     "Photo ID first (driving licence or passport), since banks and others may ask for ID in your new name.",
+     "Then banks, credit cards and payroll at work.",
+     "Then tax, pensions, insurance, utilities, your mortgage or tenancy, your doctor and dentist, and the electoral register."
+    ]
+   },
+   {
+    "h": "Travel",
+    "p": [
+     "Your ticket name must match the passport you travel on. If you have a trip booked soon after the wedding, book it in the name on your current passport, or check whether you can apply for a new-name passport before the wedding."
+    ]
+   },
+   {
+    "h": "Don't forget",
+    "list": [
+     "Online accounts, loyalty cards, subscriptions, memberships and the vet.",
+     "Professional bodies and qualifications."
+    ]
+   },
+   {
+    "h": "Keep track",
+    "p": [
+     "Keep one list and tick off each place as it's done. Old-name accounts often turn up months later; add them as you find them."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "school-place-appeal-how-to-prepare",
+  "offer": "place-case",
+  "title": "Didn't get the school place you wanted? How to prepare an appeal (England)",
+  "description": "Waiting lists, deadlines, finding out how places were allocated, what panels consider, and how to present your case. Not legal advice.",
+  "intro": "If your child wasn't offered a place at a school you wanted, you usually have the right to appeal to an independent panel. Many appeals don't succeed, so it's worth preparing carefully and keeping other options open. This is general information, not legal advice.",
+  "sections": [
+   {
+    "h": "First steps",
+    "list": [
+     "Accept the place you've been offered while you appeal, so your child has a school.",
+     "Ask to go on the waiting list for every school you'd accept; places can come up.",
+     "Note the appeal deadline in your offer letter or on the admission authority's website."
+    ]
+   },
+   {
+    "h": "Find out how places were given",
+    "p": [
+     "Ask the admission authority how the admission criteria were applied, how distance was measured, and where your child ranked. Mistakes do sometimes happen."
+    ]
+   },
+   {
+    "h": "What panels look at",
+    "list": [
+     "Whether the admission arrangements were lawful and applied correctly.",
+     "Whether your child's reasons for needing that school outweigh the problems an extra pupil would cause.",
+     "Reasons such as childcare or convenience usually carry less weight than specific needs the school can meet."
+    ]
+   },
+   {
+    "h": "Infant classes",
+    "p": [
+     "For reception to Year 2, class sizes are limited by law, so grounds for appeal are much narrower."
+    ]
+   },
+   {
+    "h": "Prepare your case",
+    "list": [
+     "Write clearly and briefly, with evidence for each reason.",
+     "Practise answering questions for the hearing, and bring copies of your documents."
+    ]
+   }
+  ]
  }
 ]
