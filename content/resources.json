@@ -16521,5 +16521,86 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "how-to-challenge-a-service-charge-leaseholder",
+  "offer": "charge-query",
+  "title": "Service charge gone up with no breakdown? How leaseholders can question it (England and Wales)",
+  "description": "The steps leaseholders can take to understand and question a rising service charge, calmly and with evidence. Not legal advice.",
+  "intro": "Service charges can rise sharply, and it isn't always clear what you're paying for. Leaseholders in England and Wales have rights to information and to challenge charges that aren't reasonable. This is general information, not legal advice.",
+  "sections": [
+   {
+    "h": "Start with your lease",
+    "list": [
+     "Your lease sets out what can be charged for and how costs are shared.",
+     "Check what it says about the reserve fund, management fees and admin charges."
+    ]
+   },
+   {
+    "h": "Ask for information in writing",
+    "list": [
+     "You can ask your landlord or managing agent in writing for a summary of the costs that make up the service charge.",
+     "You can then ask to inspect the invoices and receipts behind it.",
+     "Keep a copy of every request and note the date you sent it."
+    ]
+   },
+   {
+    "h": "Compare year by year",
+    "list": [
+     "Put each year's budget and accounts side by side.",
+     "Note lines that jumped, lines with no visible work, and new lines with no explanation.",
+     "Talk to neighbours: a residents' association has more weight than one leaseholder."
+    ]
+   },
+   {
+    "h": "If you can't resolve it",
+    "list": [
+     "Use the managing agent's complaints process, and its redress scheme if it belongs to one.",
+     "Service charges must be reasonable. In England you can apply to the First-tier Tribunal (Property Chamber); in Wales, the Leasehold Valuation Tribunal.",
+     "Before applying, get free initial advice from LEASE (the Leasehold Advisory Service) or Citizens Advice."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "setting-up-childs-first-phone-parents-guide",
+  "offer": "first-handset",
+  "title": "Setting up your child's first phone: a step-by-step guide for parents",
+  "description": "How to set up the built-in controls, agree family rules together, and unlock apps in stages.",
+  "intro": "A first phone is a big step, and most parents aren't sure what to allow or how to set it up. You don't need an expensive monitoring app to start: both iPhone and Android include parental controls, and a simple family agreement goes a long way.",
+  "sections": [
+   {
+    "h": "Use the built-in controls",
+    "list": [
+     "iPhone: set up Family Sharing and Screen Time for your child's Apple account, with app limits, downtime and content restrictions.",
+     "Android: use Google Family Link to approve apps, set screen-time limits and set a bedtime.",
+     "Set a passcode only you know for these settings."
+    ]
+   },
+   {
+    "h": "Write a family agreement together",
+    "list": [
+     "Agree where the phone lives at night (often outside the bedroom).",
+     "Agree when it's put away: meals, homework, bedtime.",
+     "Agree what to do if something upsetting happens online: tell a parent, no trouble."
+    ]
+   },
+   {
+    "h": "Unlock in stages",
+    "list": [
+     "Start with calls, texts to family and a few chosen apps.",
+     "Add the camera, group chats, video and other apps as trust builds.",
+     "Review together every week or two."
+    ]
+   },
+   {
+    "h": "Plan for problems",
+    "list": [
+     "Lost or stolen phone: know how to locate, lock and wipe it.",
+     "Data or spending: turn off in-app purchases or require approval.",
+     "Upsetting messages or contact: keep the evidence, block and report, and in the UK report child sexual abuse concerns to CEOP. In an emergency call 999."
+    ]
+   }
+  ]
  }
 ]

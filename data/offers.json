@@ -38463,6 +38463,174 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-25",
+    "slug": "charge-query",
+    "name": "Charge Query",
+    "need": "My service charge keeps going up, I can't see what the money is being spent on, the managing agent won't give me a proper breakdown, and I don't know how to challenge it.",
+    "headline": "Service charge up again and no breakdown from the managing agent? Compare each year's budget, flag what jumped, request invoices, and track every reply and deadline.",
+    "buyer": "Adult leaseholders in flats and estate houses in England and Wales facing rising or unexplained service charges, admin fees or reserve fund demands.",
+    "bullets": [
+      "Enter each year's budget and accounts and see which lines jumped, with lines that have no invoice or visible work flagged.",
+      "Polite request letter templates for a summary of costs and copies of invoices, with reply and escalation deadlines tracked.",
+      "One evidence pack to share with neighbours, a residents' association or an adviser."
+    ],
+    "price": "$7/month",
+    "priceUsd": 7,
+    "priceNote": "Or $49 a year.",
+    "reasonPrompt": "How much has your service charge gone up, and what have you asked the managing agent so far?",
+    "faq": [
+      {
+        "q": "Is it legal advice?",
+        "a": "No. Charge Query organises your documents and drafts letters for you to send yourself. It can't promise refunds or tribunal outcomes. For free initial advice on leasehold in England and Wales, contact LEASE (the Leasehold Advisory Service) or Citizens Advice, and speak to a solicitor before any tribunal application."
+      },
+      {
+        "q": "Is it linked to a managing agent or freeholder?",
+        "a": "No. It's independent and isn't connected to any managing agent, freeholder, solicitor or tribunal."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-25",
+      "summary": "Leaseholders describe rising service charges with no visible spending, managing agents who won't provide breakdowns, and feeling they have no option but to pay.",
+      "wtp": "Mafuzzer spent '£220 in hearing fees and £115 in court fees' (and about 100 hours) challenging a service charge at tribunal; frosty12345 was quoted over £2000 by a solicitor 'to review some documents and provide some initial advice'.",
+      "signals": [
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/6064557/excessive-service-charges",
+          "who": "tiptop2019 (MoneySavingExpert)",
+          "date": "2019-10-30",
+          "quote": "absolutely no sign of the money being spent on the property",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/6148182/challenging-service-charge-provider-private-housing-estate",
+          "who": "rich20 (MoneySavingExpert)",
+          "date": "2020-05-26",
+          "quote": "can't see how the service i'm paying for is benefiting me",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/6162168/service-maintenance-charges-on-leasehold-apartment",
+          "who": "frosty12345 (MoneySavingExpert)",
+          "date": "2020-06-27",
+          "quote": "It feels like there are no options available to me apart from just to pay whatever is demanded of me",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/6608485/leasehold-150-admin-fee-added-without-notice-poor-management-worth-challenging",
+          "who": "Gary_Laurus (MoneySavingExpert)",
+          "date": "2025-05-22",
+          "quote": "Can this kind of fee be challenged, or am I stuck with it?",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/6669854/won-a-service-charge-tribunal-case-against-my-property-management-company-firstport",
+          "who": "Mafuzzer (MoneySavingExpert)",
+          "date": "2026-05-26",
+          "quote": "When I asked FirstPort to give me a breakdown of what the £14,000 was actually going to be spent on, they couldn't produce one",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.pistonheads.com/gassing/topic.asp?h=0&f=207&t=2024712",
+          "who": "Jimmy No Hands (PistonHeads)",
+          "date": "2023-03-06",
+          "quote": "Some of the expenditure I just don't understand how they quantify it",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.pistonheads.com/gassing/topic.asp?h=0&f=10&t=1653215",
+          "who": "creampuff (PistonHeads)",
+          "date": "2017-02-15",
+          "quote": "just seem to have appeared on the budget with no explaination",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "LEASE (free advice), solicitors, residents' associations, tribunal self-representation.",
+      "risks": "No paid consumer app with ratings; money is tribunal and solicitor fees. UK-only (England and Wales). Not legal advice; no promise of refunds."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-25",
+    "slug": "first-handset",
+    "name": "First Handset",
+    "need": "My child is about to get their first phone and I don't know how to set it up, what to allow, or how to keep an eye on it without it taking over.",
+    "headline": "Child getting their first phone? Set up the built-in controls step by step, write a family phone agreement together, and unlock apps in stages, not all on day one.",
+    "buyer": "Parents of children around 9 to 12 getting their first phone, often for the move to secondary or middle school.",
+    "bullets": [
+      "A setup checklist for the controls already built into iPhone (Screen Time) and Android (Family Link), for your child's handset.",
+      "A family phone agreement you write together, and staged unlocks for messaging, camera, video and group chats.",
+      "A two-minute weekly parent and child check-in, and plain plans for lost phones, data overruns and upsetting messages."
+    ],
+    "price": "$4/month",
+    "priceUsd": 4,
+    "priceNote": "Or $29 a year.",
+    "reasonPrompt": "How old is your child, and which phone are they getting?",
+    "faq": [
+      {
+        "q": "Will it keep my child safe online?",
+        "a": "No app can promise that. First Handset is a setup guide and family agreement that uses your phone's own built-in controls; it doesn't monitor messages. If your child sees something upsetting or is contacted by someone worrying, keep the evidence and report it; in the UK, CEOP takes reports about online child sexual abuse, and in an emergency call 999."
+      },
+      {
+        "q": "Is it a monitoring app?",
+        "a": "No. It doesn't read your child's messages or track them. It's independent and isn't linked to Apple, Google or any monitoring company."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-25",
+      "summary": "Parents describe not knowing how to set up a child's first phone, how much control they can have, and how to stop it taking over.",
+      "wtp": "Bark (parental controls) has 36K App Store ratings and costs $14.99 a month or $99.99 a year; Kidslox has 40K ratings with 12 months at $49.99.",
+      "signals": [
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/5498097/choosing-right-mobile-phone-for-my-children",
+          "who": "hello007007 (MoneySavingExpert)",
+          "date": "2016-07-22",
+          "quote": "I found it hard to make sure she balanced her time with the phone",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/6353779/parental-control-apps-for-phone",
+          "who": "Jamesdeer001 (MoneySavingExpert)",
+          "date": "2022-04-27",
+          "quote": "was just wondering if anyone can recommend parental control apps for the phone please",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.pistonheads.com/gassing/topic.asp?h=0&f=95&t=1763323",
+          "who": "boyse7en (PistonHeads)",
+          "date": "2018-08-28",
+          "quote": "Any advice to share on how best to equip and monitor her usage?",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.pistonheads.com/gassing/topic.asp?h=0&f=95&t=2019594",
+          "who": "Jonny_ (PistonHeads)",
+          "date": "2023-01-29",
+          "quote": "how much control/visibility can we actually have as parents over what she sees?",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1477619146",
+          "who": "Bark (App Store)",
+          "date": "2026-10-25",
+          "quote": "36K Ratings; Bark Monthly $14.99, Bark Annual $99.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Bark, Kidslox, Qustodio, OurPact, Google Family Link and Apple Screen Time (free).",
+      "risks": "Crowded with monitoring apps and free built-in controls, so the angle is the staged rollout and agreement. Children's online safety is sensitive: it must not claim to keep children safe."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
