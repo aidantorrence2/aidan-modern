@@ -39121,6 +39121,97 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-25",
+    "slug": "loan-nudge",
+    "name": "Loan Nudge",
+    "need": "I lent a friend money, they keep promising to pay it back and never do, and I don't know how to get it back or take them to small claims myself without making a mistake.",
+    "headline": "Lent money to a friend and they keep stalling? Gather your proof, send a firm dated request, and take the small claims steps yourself if they still won't pay.",
+    "buyer": "Adults (UK first, then US and Australia) owed a few hundred to a few thousand by a friend, ex-partner, coworker or acquaintance, who have never been to court.",
+    "bullets": [
+      "A loan log: amounts, dates, transfers and screenshots of messages where they admit the debt, with every promised and missed repayment date.",
+      "A message ladder (friendly reminder, firm request with a deadline, formal letter before claim), all dated and saved, for you to send yourself.",
+      "An 'is it worth it?' check and a step-by-step walk-through of the official small claims process for your country, with an evidence bundle and links to free advice."
+    ],
+    "price": "$6/month",
+    "priceUsd": 6,
+    "priceNote": "Or $39 a year.",
+    "reasonPrompt": "How much are you owed, and how long have they been promising to pay?",
+    "faq": [
+      {
+        "q": "Is it legal advice?",
+        "a": "No. Loan Nudge organises your evidence and drafts letters for you to send yourself, and it can't promise you'll get your money back. Winning a court judgment doesn't guarantee payment. For free advice in the UK, contact Citizens Advice; rules differ in Scotland, Northern Ireland and other countries."
+      },
+      {
+        "q": "Do you chase the debt for me?",
+        "a": "No. It isn't a claims or debt-collection company, takes no cut, and never contacts the other person. You stay in control of every message."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-25",
+      "summary": "People describe friends who keep making repayment dates and never follow through, and wanting to go to small claims without making a mistake.",
+      "wtp": "Rocket Lawyer, which drafts legal letters, has 16K App Store ratings and memberships at $34.99 a month or $149.00 a year; Vikk, an AI legal-help app that drafts demand letters, has 520 ratings and plans from $9.99 a month.",
+      "signals": [
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/6053212/small-claims-court",
+          "who": "henry24 (MoneySavingExpert)",
+          "date": "2019-09-29",
+          "quote": "I've never done anything like this before so don't want to make a mistake",
+          "seen": "opened"
+        },
+        {
+          "url": "https://debtcamel.co.uk/friend-owes-me/comment-page-5/",
+          "who": "John (Debt Camel)",
+          "date": "2023-07-24",
+          "quote": "they consistently makes dates to pay me back but never follows through with it",
+          "seen": "opened"
+        },
+        {
+          "url": "https://debtcamel.co.uk/friend-owes-me/comment-page-2/",
+          "who": "Natalie (Debt Camel)",
+          "date": "2017-12-06",
+          "quote": "What is the best way to handle this??",
+          "seen": "opened"
+        },
+        {
+          "url": "https://debtcamel.co.uk/friend-owes-me/comment-page-3/",
+          "who": "Nirvana (Debt Camel)",
+          "date": "2019-05-27",
+          "quote": "they are refusing to give me dates of when they can pay",
+          "seen": "opened"
+        },
+        {
+          "url": "https://boards.straightdope.com/t/im-in-uk-friend-in-us-owes-me-substantial-sum-of-money-wwyd/589239",
+          "who": "Scougs (Straight Dope)",
+          "date": "2011-07-16",
+          "quote": "Are there any legal angles available to me?",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.ozbargain.com.au/node/343394",
+          "who": "luckylast (OzBargain)",
+          "date": "2017-11-21",
+          "quote": "so what should I do to get my money back",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/rocket-lawyer-legal-law-help/id605512447",
+          "who": "Rocket Lawyer (App Store)",
+          "date": "2026-10-25",
+          "quote": "16K Ratings; Standard Monthly Membership $34.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Rocket Lawyer, Vikk, GOV.UK Money Claim Online guidance, Citizens Advice, Debt Camel.",
+      "risks": "Money is for general legal-help apps, not small-claims tools. Free guidance exists. Legal-adjacent: no advice, no promise of recovery, rules vary by country."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

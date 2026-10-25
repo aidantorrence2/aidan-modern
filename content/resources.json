@@ -16923,5 +16923,51 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "friend-owes-me-money-how-to-get-it-back",
+  "offer": "loan-nudge",
+  "title": "A friend owes you money and won't pay it back? Steps to take (UK)",
+  "description": "How to gather evidence, ask in writing, send a letter before claim, and use small claims if a friend won't repay. Not legal advice.",
+  "intro": "Lending money to a friend can go wrong, and chasing it can feel awkward. A calm, written approach with good evidence gives you the best chance and keeps your options open. This is general information for England and Wales, not legal advice; rules differ elsewhere.",
+  "sections": [
+   {
+    "h": "Gather your evidence",
+    "list": [
+     "Bank transfers or receipts showing the money you gave.",
+     "Messages where they agreed it was a loan, promised to repay, or admitted they owe you.",
+     "A timeline of every promised repayment date and what happened."
+    ]
+   },
+   {
+    "h": "Ask in writing",
+    "list": [
+     "Send a polite message asking for repayment by a specific date.",
+     "If nothing happens, send a firmer request with a final deadline.",
+     "Keep copies of everything you send and receive."
+    ]
+   },
+   {
+    "h": "Letter before claim",
+    "p": [
+     "Before going to court, send a formal letter before claim setting out how much is owed, why, and the deadline to pay, and saying you'll start court action if they don't. Give them a reasonable time to respond."
+    ]
+   },
+   {
+    "h": "Is it worth going to court?",
+    "list": [
+     "Can you show it was a loan, not a gift?",
+     "Do you know their current address?",
+     "Can they actually pay? A court judgment doesn't guarantee you'll be paid.",
+     "Court fees depend on the amount claimed; check the current fees on GOV.UK."
+    ]
+   },
+   {
+    "h": "Small claims",
+    "p": [
+     "In England and Wales, many smaller money claims can be made online through the official Money Claim Online service. Citizens Advice can give free advice on your situation before you start."
+    ]
+   }
+  ]
  }
 ]
