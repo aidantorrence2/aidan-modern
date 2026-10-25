@@ -37616,6 +37616,97 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-25",
+    "slug": "flake-log",
+    "name": "Flake Log",
+    "need": "I've tried making croissants at home again and again, and they keep coming out dense and bready, leaking butter, with no layers, and I can't tell what I'm doing wrong.",
+    "headline": "Homemade croissants dense, bready or leaking butter? Log each batch, photograph the cut crumb, and change one thing at a time until the layers show up.",
+    "buyer": "Adult home bakers who have tried croissants or other laminated pastry several times and keep getting dense, bready, flat or butter-leaking results.",
+    "bullets": [
+      "A batch log: flour, butter, dough and room temperatures, folds, rests, proof time and oven settings.",
+      "A fold and rest timer that warns when the dough has been out too long for the butter, and a crumb photo you compare with common faults (bready, cakey, collapsed, butter pool).",
+      "One change per bake chosen from your own log, and a side-by-side history so you can see what made the difference."
+    ],
+    "price": "$5/month",
+    "priceUsd": 5,
+    "priceNote": "Or $36 a year.",
+    "reasonPrompt": "How many times have you tried croissants, and what goes wrong?",
+    "faq": [
+      {
+        "q": "Will it guarantee perfect croissants?",
+        "a": "No. It helps you keep a careful record and change one thing at a time, which is how most home bakers find their fault. Results still depend on your ingredients, kitchen and oven."
+      },
+      {
+        "q": "Is it linked to a baking school or brand?",
+        "a": "No. It's independent and isn't connected to any baking course, flour or butter brand."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-25",
+      "summary": "Home bakers describe croissants that fail again and again: dense and bready, cakey with no layers, or leaking butter, even after changing their method.",
+      "wtp": "Cozymeal sells a Traditional Croissant Making class at $89 per person (33 reviews), and Better Baking School sells an Introduction to Lamination course at $79.",
+      "signals": [
+        {
+          "url": "https://www.thefreshloaf.com/node/63960/flat-croissants",
+          "who": "Coj84 (The Fresh Loaf)",
+          "date": "2020-05-12",
+          "quote": "each time I tried my hands on croissants it's a complete disaster",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.thefreshloaf.com/node/62320/croissants-help",
+          "who": "April (The Fresh Loaf)",
+          "date": "2020-02-07",
+          "quote": "I have been trying to make it for countless times. However, I still cannot succeed in them.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.thefreshloaf.com/node/63704/croissants-are-cakey-and-wet-inside-without-layers",
+          "who": "natashamelbourne (The Fresh Loaf)",
+          "date": "2020-05-03",
+          "quote": "Ive tried 3, 4 times to make croissants, still fails after changing multiple way of making it",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.thefreshloaf.com/node/38495/croissants-are-bread-and-dense-what-am-i-doing-wrong",
+          "who": "typecase (The Fresh Loaf)",
+          "date": "2014-05-13",
+          "quote": "The dough turned out bread like and dense, not at all the honey comb structure I expected.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.thefreshloaf.com/node/31147/another-subpar-croissant-desperate-help",
+          "who": "jooney (The Fresh Loaf)",
+          "date": "2012-11-27",
+          "quote": "my croissants have been nothing but a failure",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.scoolinary.com/forums/discussion/butter-leakage-when-baking",
+          "who": "Pedro Koerich (Scoolinary)",
+          "date": "2024-08-21",
+          "quote": "the butter on my croissant is leaking when baking, any solutions for that? Need help asap",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.cozymeal.com/cooking-class/72172/traditional-croissant-making",
+          "who": "Cozymeal (class listing)",
+          "date": "2026-10-25",
+          "quote": "Traditional Croissant Making, $89 per person, 33 reviews",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Croissant classes (Cozymeal, local schools), online lamination courses, YouTube, general baking apps.",
+      "risks": "Most people are on one site (The Fresh Loaf), with posts from 2012 to 2024. The money is for classes, not an app; no croissant app was found. Niche."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

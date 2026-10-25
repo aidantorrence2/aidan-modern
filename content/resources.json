@@ -16085,5 +16085,48 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "why-are-my-croissants-dense-and-bready",
+  "offer": "flake-log",
+  "title": "Why are my croissants dense, bready or leaking butter? A home baker's fault checklist",
+  "description": "The common reasons homemade croissants fail, and how to change one thing at a time to get layers.",
+  "intro": "Croissants are one of the hardest things to bake at home, and most people get a few dense or greasy batches before they get layers. The fault usually comes down to temperature, proofing or the oven. Change one thing at a time so you can tell what worked.",
+  "sections": [
+   {
+    "h": "Dense and bready, no layers",
+    "list": [
+     "The butter may have melted into the dough during lamination. Keep dough and butter cold and similar in firmness, and chill between folds.",
+     "The butter may have been too hard and cracked into pieces; let it soften slightly so it bends without breaking.",
+     "Under-proofing is very common: croissants should look clearly puffy and wobble slightly before baking."
+    ]
+   },
+   {
+    "h": "Butter leaking in the oven",
+    "list": [
+     "Usually over-proofing or proofing somewhere too warm, so the butter melts before the oven sets the layers. Proof somewhere cool enough that the butter stays solid.",
+     "An oven that isn't hot enough can let butter run out before the pastry sets; check it with an oven thermometer."
+    ]
+   },
+   {
+    "h": "Soggy bottom or raw middle",
+    "list": [
+     "Bake on a preheated tray, and give them long enough to brown deeply.",
+     "Shape them evenly so the middles aren't much thicker than the ends."
+    ]
+   },
+   {
+    "h": "Keep a batch log",
+    "p": [
+     "Write down your flour, butter, dough and room temperatures, the number of folds and rests, the proof time and the oven temperature. Photograph the cut cross-section of each batch. Comparing batches side by side is the quickest way to see what made the difference."
+    ]
+   },
+   {
+    "h": "Kitchen safety",
+    "p": [
+     "Use oven gloves, and take care with hot trays and melted butter, which can burn."
+    ]
+   }
+  ]
  }
 ]
