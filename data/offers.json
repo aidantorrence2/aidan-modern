@@ -37525,6 +37525,97 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-25",
+    "slug": "lane-ladder",
+    "name": "Lane Ladder",
+    "need": "I want to cycle to work instead of driving, but I'm scared of riding on busy roads with traffic coming past me.",
+    "headline": "Want to cycle to work but dread the traffic? Plan a quieter route, rehearse the junctions that worry you, and build up from a Sunday-morning ride to your real commute.",
+    "buyer": "Adults who can already ride a bike and want to commute or run errands by bike, but stay on paths or in the car because riding near traffic frightens them.",
+    "bullets": [
+      "Plan your commute on quieter streets and paths, with the roundabouts, right turns and pinch points that worry you flagged.",
+      "A step-by-step ladder on the same route: Sunday morning first, then quiet weekday hours, then the real rush-hour ride.",
+      "Junction notes based on published cycle-training guidance, a 10-second 'how nervous' score after each ride, and quieter detours for any stretch that still feels too much."
+    ],
+    "price": "$4/month",
+    "priceUsd": 4,
+    "priceNote": "Or $29 a year.",
+    "reasonPrompt": "Where would you like to cycle to, and which part of the route worries you most?",
+    "faq": [
+      {
+        "q": "Will it make cycling safe?",
+        "a": "No app can make riding in traffic safe. Lane Ladder is a confidence and route-planning aid, not cycle training. We strongly recommend a real lesson: in the UK, Bikeability and many councils offer adult cycle training. Always follow the Highway Code, check your bike and lights, and never use your phone while riding."
+      },
+      {
+        "q": "Is it linked to a cycling app or council?",
+        "a": "No. It's independent and isn't connected to any route-planning app, cycle-training provider or council."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-25",
+      "summary": "Adults describe wanting to swap the car for a bike but dreading busy roads, feeling no confidence in traffic, and anxiety whenever a car comes up behind.",
+      "wtp": "komoot (UK App Store) has 25K ratings and sells Komoot Premium at £59.99 and a World Pack at £29.99; cycle.travel, a quiet-roads route planner, has 348 ratings. Riders have bought mirrors and paid for Bikeability training.",
+      "signals": [
+        {
+          "url": "https://www.cyclechat.net/threads/fear-of-road-riding.99503/",
+          "who": "Suttzzs (CycleChat)",
+          "date": "2012-04-07",
+          "quote": "I have a genuine fear of riding on our crowded and fast roads",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.cyclechat.net/threads/cycling-for-the-terrified.101092/",
+          "who": "Hop (CycleChat)",
+          "date": "2012-04-30",
+          "quote": "I want to ditch my car for my bike.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.cyclechat.net/threads/getting-onto-the-road-glasgow.32323/",
+          "who": "oohpeekaboo (CycleChat)",
+          "date": "2009-06-14",
+          "quote": "have no confidence and not really sure of the rules",
+          "seen": "opened"
+        },
+        {
+          "url": "https://singletrackworld.com/forum/bike-forum/and-ive-been-getting-a-tad-nervous-riding-on-the-road/",
+          "who": "PJay (Singletrack)",
+          "date": "2025-11-09",
+          "quote": "started getting increasingly nervous riding on the road",
+          "seen": "opened"
+        },
+        {
+          "url": "https://singletrackworld.com/forum/bike-forum/and-ive-been-getting-a-tad-nervous-riding-on-the-road/",
+          "who": "_tom_ (Singletrack)",
+          "date": "2025-11-09",
+          "quote": "anxiety whenever I hear a car coming",
+          "seen": "opened"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=30222695",
+          "who": "yojo (Hacker News)",
+          "date": "2022-02-05",
+          "quote": "I moved here from San Francisco, where I was terrified of cycling.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/gb/app/id447374873",
+          "who": "komoot (App Store UK)",
+          "date": "2026-10-25",
+          "quote": "25K Ratings; Komoot Premium £59.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "komoot, cycle.travel, Google Maps cycling, Bikeability and council cycle training.",
+      "risks": "Most CycleChat posts are 2009-2013. The money is for route planners and training rather than a confidence plan. Road riding carries real risk, so it must never claim to make cycling safe and should point people to real training."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
