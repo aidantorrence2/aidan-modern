@@ -39639,6 +39639,90 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-25",
+    "slug": "edge-to-edge",
+    "name": "Edge to Edge",
+    "need": "I'm learning to snowboard as an adult, I keep catching an edge and falling, and I can't link my turns.",
+    "headline": "Learning to snowboard and falling all day? One cue per run, a 20-second lift log of what caught you, and an at-home edge routine, so each day on the hill builds on the last.",
+    "buyer": "Adults 18+ learning to snowboard who keep catching an edge and can't link turns.",
+    "bullets": [
+      "An at-home balance and edge-shift routine for the days before your trip.",
+      "One cue to focus on per run, and a 20-second lift log: turns linked, falls, and which edge caught you.",
+      "A form checklist for a friend's phone video, a question list for your next lesson, and a trip cost list."
+    ],
+    "price": "$5/month",
+    "priceUsd": 5,
+    "priceNote": "Or $29 a season.",
+    "reasonPrompt": "How many days have you ridden, and what keeps going wrong?",
+    "faq": [
+      {
+        "q": "Does it replace lessons?",
+        "a": "No. It's for practising between lessons and getting more from each one; a qualified instructor is the fastest way to improve. Wear a helmet, consider wrist guards, ride within your ability and follow the resort's rules."
+      },
+      {
+        "q": "Is it linked to a resort or brand?",
+        "a": "No. It's independent."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-25",
+      "summary": "Adult learners describe falling all day, getting nowhere on their first days, and struggling to link turns.",
+      "wtp": "ADDICTION+ online snowboard training costs $24.99 a month or $199 a year; Evan Sanders paid for a full day of lessons from an instructor.",
+      "signals": [
+        {
+          "url": "https://www.mountainproject.com/forum/message/107405736",
+          "who": "Tom Hanson (Mountain Project)",
+          "date": "2011-12-14",
+          "quote": "I spent the day out of control and after having fallen down a hundred times",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mountainproject.com/forum/message/107405736",
+          "who": "thecornyman (Mountain Project)",
+          "date": "2011-12-14",
+          "quote": "I f'ed around my first day and got no where.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mountainproject.com/forum/message/107405736",
+          "who": "Derek W (Mountain Project)",
+          "date": "2011-12-14",
+          "quote": "It took me probably a full season before I could confidently make turns on blues with teaching myself.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.mountainproject.com/forum/message/107405736",
+          "who": "Evan Sanders (Mountain Project)",
+          "date": "2011-12-14",
+          "quote": "I'm paying for a full day of lessons the first day from an instructor",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.dcski.com/forum/13422",
+          "who": "vesty (DCSki)",
+          "date": "2005-02-03",
+          "quote": "I am in the process of learning to link turns.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.addictionplus.tv/",
+          "who": "ADDICTION+ (online training)",
+          "date": "2026-10-25",
+          "quote": "$24.99 a month or $199 a year",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "ADDICTION+, Snowboard Addiction, resort lessons, YouTube.",
+      "risks": "Posts are 2005 and 2011. The paid product is video lessons, not a log. Nobody says they'd pay for an app. Must not replace instruction or safety gear."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
