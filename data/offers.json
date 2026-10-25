@@ -38631,6 +38631,83 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-25",
+    "slug": "fitting-notes",
+    "name": "Fitting Notes",
+    "need": "I've just got new hearing aids and everything sounds too loud, tinny or uncomfortable, and I don't know what to tell my audiologist or whether it will settle.",
+    "headline": "New hearing aids sound too loud, tinny or uncomfortable? Note what's wrong and where in ten seconds, watch it settle week by week, and take a clear list to your follow-up.",
+    "buyer": "Adults 18+ in their first weeks with new hearing aids who find everything too loud, tinny or uncomfortable.",
+    "bullets": [
+      "A wear-time plan with an evening tick, and ten-second sound notes: the place, what's wrong (too loud, tinny, own voice, whistling, sore ear, can't follow speech) and 0-10.",
+      "A week-by-week view of what's settling and what isn't.",
+      "A plain-words list for your follow-up appointment, sorted by how often each problem came up, plus a trial or return-window countdown and a cost tracker."
+    ],
+    "price": "$4/month",
+    "priceUsd": 4,
+    "priceNote": "Or $29 a year.",
+    "reasonPrompt": "How long have you had your hearing aids, and what bothers you most?",
+    "faq": [
+      {
+        "q": "Does it adjust my hearing aids?",
+        "a": "No. Fitting Notes doesn't connect to or change any hearing aid; your audiologist does the adjusting. It isn't medical advice. See a doctor promptly if you have sudden hearing loss, ear pain, discharge, or dizziness."
+      },
+      {
+        "q": "Is it linked to a hearing aid brand or clinic?",
+        "a": "No. It's independent and works alongside any brand or audiologist."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-25",
+      "summary": "New hearing-aid wearers describe everything sounding loud, metallic or tinny, discomfort in the ear, and dreading the adjustment period.",
+      "wtp": "HearingTracker's survey of over 1,100 buyers found an average price of $2,694 a pair; FlyEaglesFly's audiologist quoted $6200 for a pair. People are paying heavily for the aids and want the fitting to work.",
+      "signals": [
+        {
+          "url": "https://forum.hearingtracker.com/t/i-hate-these-everything-is-soooo-loud-and-sounds-so-metallic/22948",
+          "who": "Riverott (HearingTracker)",
+          "date": "2015-04-19",
+          "quote": "I hate these! Everything is soooo loud and sounds so metallic",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forum.hearingtracker.com/t/new-to-aids-is-tinny-sound-normal/17153",
+          "who": "JJR (HearingTracker)",
+          "date": "2011-10-27",
+          "quote": "this is my first experience with aids and some of the sounds are not normal",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forum.hearingtracker.com/t/discussing-tinny-sound-with-audiologist/23625",
+          "who": "jcummins (HearingTracker)",
+          "date": "2015-08-26",
+          "quote": "I see I’m going to hate going through this.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forum.hearingtracker.com/t/looking-for-advice-for-first-time-hearing-aid-wearer/100499",
+          "who": "FlyEaglesFly (HearingTracker)",
+          "date": "2025-03-16",
+          "quote": "My audiologist quoted $6200 for the pair of Vivia 9s.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.hearingtracker.com/how-much-do-hearing-aids-cost",
+          "who": "HearingTracker (price survey)",
+          "date": "2026-10-25",
+          "quote": "the average price paid was $2,694 a pair",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Audiologist follow-ups, hearing aid makers' own apps, paper diaries.",
+      "risks": "All people are on one forum (HearingTracker), mostly 2011-2015. Money is on the aids, not adjustment software. Must never adjust aids or give medical advice."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

@@ -16602,5 +16602,50 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "new-hearing-aids-too-loud-or-tinny-what-to-note",
+  "offer": "fitting-notes",
+  "title": "New hearing aids sound too loud or tinny? What to note for your follow-up appointment",
+  "description": "Why new hearing aids often sound strange at first, what to write down, and how to get the most from your follow-up. Not medical advice.",
+  "intro": "Many people find new hearing aids sound loud, sharp or tinny at first, because their brain hasn't heard those sounds for a long time. Some of it settles with regular wear, and some needs adjusting by your audiologist. Clear notes make that follow-up much more useful. This is general information, not medical advice.",
+  "sections": [
+   {
+    "h": "Get medical help if",
+    "list": [
+     "You have sudden hearing loss, ear pain, discharge or bleeding.",
+     "You feel dizzy or have new ringing in one ear.",
+     "The aids rub, hurt or cause soreness that doesn't settle."
+    ]
+   },
+   {
+    "h": "Wear them regularly",
+    "list": [
+     "Follow the wear plan your audiologist gave you, often building up hours each day.",
+     "Start in quiet places at home, then move to busier ones.",
+     "Note how many hours you wore them each day."
+    ]
+   },
+   {
+    "h": "What to note",
+    "list": [
+     "Where you were and what you were doing.",
+     "What was wrong: too loud, tinny or metallic, your own voice sounds odd, whistling, hard to follow speech, uncomfortable.",
+     "How bad it was, from 0 to 10."
+    ]
+   },
+   {
+    "h": "Before your follow-up",
+    "p": [
+     "Sort your notes by how often each problem came up and take the top few to your appointment. Specific examples, like 'running water and cutlery sound harsh', are easier for an audiologist to adjust for than 'it sounds wrong'."
+    ]
+   },
+   {
+    "h": "Know your trial period",
+    "p": [
+     "Many providers offer a trial or return period. Check the date on your paperwork and book follow-ups well before it ends."
+    ]
+   }
+  ]
  }
 ]
