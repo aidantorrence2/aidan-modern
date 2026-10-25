@@ -39289,6 +39289,181 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-25",
+    "slug": "first-thirteen",
+    "name": "First Thirteen",
+    "need": "I've signed up for my first half marathon, every training plan I find says something different, and I can't tell which one fits a slow runner who can only run three times a week.",
+    "headline": "Signed up for your first half marathon? One plan built from your race date, your current longest run and the days you can actually run, that adjusts when you miss a week.",
+    "buyer": "Adults 18+ who have done Couch to 5K or 10K and entered their first half marathon 8-20 weeks away.",
+    "bullets": [
+      "A plan built from your race date, current longest run and three chosen run days, with slow-runner paces and run-walk options and no time targets.",
+      "Missed-week and illness adjustments that keep the long-run build gradual.",
+      "A fortnightly 'on track to finish' check against the race cut-off, and a race-week checklist for taper, kit, fuel and the start line."
+    ],
+    "price": "$7/month",
+    "priceUsd": 7,
+    "priceNote": "Or $39 a year.",
+    "reasonPrompt": "When is your race, and how far can you run comfortably now?",
+    "faq": [
+      {
+        "q": "Is it safe for me?",
+        "a": "If you have a health condition, are new to exercise, or have chest pain, dizziness or breathlessness when you run, check with your doctor first. Stop and get advice if you have pain that doesn't settle. First Thirteen gives no medical advice."
+      },
+      {
+        "q": "Is it linked to a race or running brand?",
+        "a": "No. It's independent and works with any race and any watch or phone."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-25",
+      "summary": "First-time half marathoners describe being confused by very different training plans, daunted by the distance, and unsure of the practicalities.",
+      "wtp": "Runna has 35K App Store ratings and sells Runna Premium at $19.99 and $119.99; Half Marathon 13.1 Trainer has 5.6K ratings with a $74.99 annual pass. pickles pickles says the Runna subscription has 'been worth every penny'.",
+      "signals": [
+        {
+          "url": "https://healthunlocked.com/marathon-running/posts/142669924/first-half-marathon-seeking-your-advice",
+          "who": "bethiam (HealthUnlocked)",
+          "date": "2020-02-13",
+          "quote": "I’ve looked up training plans and discovered there’s a whole world of extremely different advice and plans to get there",
+          "seen": "opened"
+        },
+        {
+          "url": "https://healthunlocked.com/marathon-running/posts/139322796/half-marathon-training-plan",
+          "who": "Alissum (HealthUnlocked)",
+          "date": "2018-11-09",
+          "quote": "Ive been googling training plans and getting so confused and thinking no way can I run this distance",
+          "seen": "opened"
+        },
+        {
+          "url": "https://healthunlocked.com/marathon-running/posts/149162437/half-marathon-advice-needed",
+          "who": "buzzards (HealthUnlocked)",
+          "date": "2023-02-21",
+          "quote": "It’s my first half marathon and I am both a little (lot) daunted and excited!",
+          "seen": "opened"
+        },
+        {
+          "url": "https://healthunlocked.com/marathon-running/posts/140706013/first-half-marathon",
+          "who": "Tkaye (HealthUnlocked)",
+          "date": "2019-05-10",
+          "quote": "its the practicalities that are foxing me",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1594204443/sortby=mostrecent/json",
+          "who": "MarkR08 (App Store, Runna)",
+          "date": "2026-10-18",
+          "quote": "Wasn’t sure what the training should look like as it’s my first half marathon",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/runna-running-plans-coach/id1594204443",
+          "who": "Runna (App Store)",
+          "date": "2026-10-25",
+          "quote": "35K Ratings; Runna Premium $19.99 and $119.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Runna, Half Marathon 13.1 Trainer, Nike Run Club (free plans), running clubs.",
+      "risks": "Forum voices are on one site (HealthUnlocked), 2018-2023. Runna is a strong adaptive competitor; our angle is beginner-only, cheaper and no time targets."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-25",
+    "slug": "sky-shout",
+    "name": "Sky Shout",
+    "need": "I keep missing the northern lights: the alert comes when I'm asleep or not looking at my phone, or when it's cloudy, and by the time I see the photos it's over.",
+    "headline": "Stop finding out about the northern lights from other people's photos. A real alarm only when the aurora is likely visible from your own sky, with cloud and moon checked.",
+    "buyer": "Adults 18+ at mid-to-high latitudes (UK, northern US, Canada, northern Europe) who want to see the aurora from home or nearby and keep missing it.",
+    "bullets": [
+      "Alerts that combine aurora activity with your local cloud cover, darkness and moonlight.",
+      "A real wake-up alarm you can set by strength level, plus quiet hours and a 'tonight's odds' check before bed.",
+      "Which direction to face, and suggestions for safe, public dark spots nearby."
+    ],
+    "price": "$3/month",
+    "priceUsd": 3,
+    "priceNote": "Or $15 a year.",
+    "reasonPrompt": "Where do you live, and how have you missed the aurora before?",
+    "faq": [
+      {
+        "q": "Does it guarantee I'll see the aurora?",
+        "a": "No. It alerts when the aurora is likely to be visible, but forecasts can change quickly. If you go out at night, dress for the cold, tell someone where you're going, stay on public land, and don't drive tired."
+      },
+      {
+        "q": "Is it linked to AuroraWatch or a forecast service?",
+        "a": "No. It's independent and uses public space-weather and weather data."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-25",
+      "summary": "People describe missing the aurora many times because alerts came too late, while they were asleep or off their phone, or when it was cloudy.",
+      "wtp": "My Aurora Forecast Pro sells for $3.99 (2.9K ratings); Aurora Now has 1.6K ratings with Pro Yearly at $14.99.",
+      "signals": [
+        {
+          "url": "https://itunes.apple.com/gb/rss/customerreviews/page=1/id=946141347/sortby=mostrecent/json",
+          "who": "SarahSJB (App Store UK, AuroraWatch UK)",
+          "date": "2026-03-22",
+          "quote": "I’ve missed the aurora so many times as the app hasn’t send me a notification when the red alert is on",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/gb/rss/customerreviews/page=3/id=946141347/sortby=mostrecent/json",
+          "who": "dangangi (App Store UK, AuroraWatch UK)",
+          "date": "2025-04-16",
+          "quote": "I am not often on my devices in the evening so keep missing them.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/gb/rss/customerreviews/page=2/id=1073082439/sortby=mostrecent/json",
+          "who": "R Jessop (App Store UK, My Aurora Forecast)",
+          "date": "2019-02-01",
+          "quote": "I’d love the app to set off some sort of alarm to wake me up",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=4/id=1073082439/sortby=mostrecent/json",
+          "who": "Oetunia (App Store, My Aurora Forecast)",
+          "date": "2024-10-08",
+          "quote": "I got no notification from this app, and missed it all",
+          "seen": "opened"
+        },
+        {
+          "url": "https://bothfeetontheground.substack.com/p/northern-lights",
+          "who": "Ella Harold (Substack)",
+          "date": "2025-11-14",
+          "quote": "which meant I missed the notifications from the aurora-watch apps I’d downloaded in the previous months",
+          "seen": "opened"
+        },
+        {
+          "url": "https://streetsmartnaturalist.substack.com/p/desperately-seeking-solar-storms",
+          "who": "Sherene Zolno (Substack comment)",
+          "date": "2024-05-16",
+          "quote": "I also missed the Northern Lights in spite of being out for hours 2 nights in row",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1037695306",
+          "who": "Aurora Now (App Store)",
+          "date": "2026-10-25",
+          "quote": "1.6K Ratings; Pro Yearly $14.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "AuroraWatch UK (free), My Aurora Forecast (free and Pro), Aurora Now, Aurora Forecast.",
+      "risks": "Crowded with free alert apps; our angle is cloud and moon gating plus a real alarm. Demand is seasonal and follows the solar cycle. Night outings need clear safety notes."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

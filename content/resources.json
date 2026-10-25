@@ -17018,5 +17018,96 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "first-half-marathon-training-plan-slow-runners",
+  "offer": "first-thirteen",
+  "title": "First half marathon? A simple way to plan your training as a slow runner",
+  "description": "How to build a first half marathon plan around three runs a week, your race date and your current fitness.",
+  "intro": "Training plans for a half marathon vary hugely, which is confusing when it's your first. For most new runners the essentials are the same: build your long run gradually, keep most runs easy, and allow for missed weeks. If you have a health condition, check with your doctor before starting.",
+  "sections": [
+   {
+    "h": "Start from where you are",
+    "list": [
+     "Note your race date and your current longest comfortable run.",
+     "Pick three days a week you can actually run.",
+     "If you can comfortably run 5-10K now, 12-16 weeks is a common amount of time to prepare."
+    ]
+   },
+   {
+    "h": "The three runs",
+    "list": [
+     "One long run, building gradually week by week.",
+     "One easy run at a pace where you can talk.",
+     "One shorter run that's a little quicker, or run-walk intervals."
+    ]
+   },
+   {
+    "h": "Build gradually",
+    "list": [
+     "Increase the long run by small steps, and have an easier week every few weeks.",
+     "Run-walk is a perfectly good way to finish a half marathon.",
+     "If you miss a week, step back rather than jumping ahead."
+    ]
+   },
+   {
+    "h": "Race practicalities",
+    "list": [
+     "Check the race cut-off time.",
+     "Practise with the shoes, kit and any drinks or snacks you'll use on the day.",
+     "Ease off in the final week or two so you start fresh."
+    ]
+   },
+   {
+    "h": "Stay safe",
+    "p": [
+     "Stop and get advice if you have chest pain, dizziness, unusual breathlessness, or pain that doesn't settle."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "how-not-to-miss-the-northern-lights",
+  "offer": "sky-shout",
+  "title": "How not to miss the northern lights: alerts, clouds and when to look",
+  "description": "What aurora alerts mean, why clouds and the moon matter, and how to give yourself the best chance of seeing the northern lights.",
+  "intro": "Most people miss the aurora because the alert arrives at the wrong moment, or because it's cloudy where they are. Knowing what to check, and having a plan, makes a big difference. No alert can guarantee a sighting.",
+  "sections": [
+   {
+    "h": "Understand the alerts",
+    "list": [
+     "Aurora alert services report geomagnetic activity; higher levels mean the aurora may be visible further from the poles.",
+     "Activity can rise and fall within minutes, so a live alert matters more than a daily forecast."
+    ]
+   },
+   {
+    "h": "Check your own sky",
+    "list": [
+     "Clouds are the biggest reason people miss it: check a local cloud forecast as well as aurora activity.",
+     "A bright moon and city lights make it harder to see."
+    ]
+   },
+   {
+    "h": "Where and when to look",
+    "list": [
+     "Find a dark spot with a clear view of the northern horizon (southern, if you're in the southern hemisphere).",
+     "Give your eyes 15-20 minutes to adjust, away from screens and lights.",
+     "A phone camera often picks up colour your eyes can't."
+    ]
+   },
+   {
+    "h": "Don't miss the moment",
+    "list": [
+     "Turn on alerts and allow them to make a sound, if you want to be woken.",
+     "Have warm clothes and a plan ready so you can get outside quickly."
+    ]
+   },
+   {
+    "h": "Stay safe at night",
+    "p": [
+     "Dress for the cold, stay on public land, tell someone where you're going, and don't drive if you're very tired."
+    ]
+   }
+  ]
  }
 ]
