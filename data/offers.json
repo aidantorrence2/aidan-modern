@@ -37196,6 +37196,83 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-25",
+    "slug": "back-notes",
+    "name": "Back Notes",
+    "need": "Every few months my lower back goes and I end up in agony for days, and I can't work out what sets it off or whether the exercises are helping.",
+    "headline": "Lower back keeps going out every few months? A 15-second evening check and a flare button show what comes before a bad back, with a summary for your GP or physio.",
+    "buyer": "Adults 18+ whose lower back keeps going out or flaring up and who can't tell what sets it off.",
+    "bullets": [
+      "A 15-second evening check, and a flare button that records what you were doing and how many days it took to settle.",
+      "Things you choose to watch, such as hours sitting, a long drive, a ride or run, lifting, a new chair or mattress, sleep and stress, plus a tick-off for the exercises your physio gave you.",
+      "A pattern view over weeks and months, and a one-page summary for your GP or physio."
+    ],
+    "price": "$3/month",
+    "priceUsd": 3,
+    "priceNote": "Or $20 a year.",
+    "reasonPrompt": "How often does your back go, and what have you tried so far?",
+    "faq": [
+      {
+        "q": "Will it tell me what's wrong with my back?",
+        "a": "No. Back Notes is a self-help log, not medical advice, diagnosis or treatment, and it doesn't suggest exercises of its own. Call 999 or go to A&E if back pain comes with numbness around your bottom or genitals, loss of bladder or bowel control, weakness in both legs, a fever, or follows a fall or accident."
+      },
+      {
+        "q": "Is it linked to a physio or clinic?",
+        "a": "No. It's independent. You choose what to track, and you decide whether to share the summary with your GP or physio."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-25",
+      "summary": "Adults describe a lower back that goes every few months, years of physio without getting to the bottom of it, and not knowing what triggers it.",
+      "wtp": "Curable, a pain app, has 1.5K App Store ratings and costs $11.99 a month, $95.90 or $399.99; Back Pain Diary sells trigger tracking at $2.99 a month or $19.99 a year. dave661350 paid for a back specialist privately.",
+      "signals": [
+        {
+          "url": "https://singletrackworld.com/forum/off-topic/lower-back-lockup-pain/",
+          "who": "dazzydw (Singletrack)",
+          "date": "2024-06-22",
+          "quote": "Every few months my lower back goes ping and I end up in agony",
+          "seen": "opened"
+        },
+        {
+          "url": "https://singletrackworld.com/forum/off-topic/lower-back-lockup-pain/",
+          "who": "MoreCashThanDash (Singletrack)",
+          "date": "2024-06-22",
+          "quote": "despite various physio and osteo treatments it would go every 6 months or so",
+          "seen": "opened"
+        },
+        {
+          "url": "https://singletrackworld.com/forum/off-topic/lower-back-lockup-pain/",
+          "who": "dave661350 (Singletrack)",
+          "date": "2024-06-24",
+          "quote": "Saw my GP, got physio..never got to the bottom of it.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://boards.straightdope.com/t/back-pain-triggers/695228",
+          "who": "Wesley_Clark (Straight Dope)",
+          "date": "2014-08-11",
+          "quote": "every few months my back would totally go out",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/curable-chronic-pain-recovery/id1325784379",
+          "who": "Curable (App Store)",
+          "date": "2026-10-25",
+          "quote": "1.5K Ratings; $11.99, $95.90, $399.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Curable, Back Pain Diary, Manage My Pain, physio apps, paper diaries.",
+      "risks": "Posts are 2014 and 2024; nobody says they'd pay for an app. Back Pain Diary has too few ratings to show. It must stay a log and send red-flag symptoms to urgent care."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

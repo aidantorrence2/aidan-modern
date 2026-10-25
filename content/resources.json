@@ -15804,5 +15804,52 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "back-keeps-going-out-what-to-log",
+  "offer": "back-notes",
+  "title": "Lower back keeps going out every few months? What to note down for your GP or physio",
+  "description": "A simple way to track back flare-ups and what comes before them, plus the symptoms that need urgent help. Not medical advice.",
+  "intro": "If your lower back 'goes' every few months, it can feel random. A short, regular note of what you did before each flare-up often helps you and your GP or physio spot a pattern. This is general information, not medical advice.",
+  "sections": [
+   {
+    "h": "Get urgent help if",
+    "list": [
+     "You have numbness around your bottom or genitals, or can't control your bladder or bowels: call 999 or go to A&E.",
+     "You have weakness or numbness in both legs, a high temperature, or the pain started after a fall or accident.",
+     "Contact your GP if the pain isn't easing after a few weeks, or keeps coming back."
+    ]
+   },
+   {
+    "h": "What to note each evening",
+    "list": [
+     "Your pain on a 0-10 scale.",
+     "How long you sat, drove or stood still today.",
+     "Any lifting, gardening, exercise or long journeys."
+    ]
+   },
+   {
+    "h": "When it goes",
+    "list": [
+     "What you were doing just before, and what you'd done the day before.",
+     "How many days it took to settle.",
+     "What helped, such as gentle movement, heat or rest."
+    ]
+   },
+   {
+    "h": "Things worth watching",
+    "list": [
+     "Long periods of sitting, and the chair or car seat you use.",
+     "A new mattress, a new bike setup or new shoes.",
+     "Poor sleep and stress."
+    ]
+   },
+   {
+    "h": "Keep up the exercises",
+    "p": [
+     "If a physio has given you exercises, tick them off when you do them. After a month or two you can see whether the flare-ups change, which is useful to tell your physio. Don't start new exercises during a flare without advice."
+    ]
+   }
+  ]
  }
 ]
