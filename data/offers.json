@@ -37028,6 +37028,90 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-25",
+    "slug": "new-ending",
+    "name": "New Ending",
+    "need": "I have nightmares nearly every night, or the same bad dream over and over, and I wake up upset and dreading going back to sleep.",
+    "headline": "Nightmares most nights, or the same bad dream again and again? Log them in 20 seconds, spot what comes before a bad night, and rehearse a new ending in the daytime.",
+    "buyer": "Adults 18+ with frequent bad dreams or one recurring nightmare who want a calm, private way to track them and try a daytime exercise.",
+    "bullets": [
+      "A 20-second morning log: bad dream or not, how upset you were (0-10), whether you woke, and whether you got back to sleep.",
+      "Things you choose to watch, such as a late meal, alcohol, caffeine, screens, stress or a new medicine, so patterns show up over a few weeks.",
+      "A daytime 'write a new ending' exercise you read over before bed (it never asks for the frightening detail), a wind-down reminder, and a one-page summary for your GP."
+    ],
+    "price": "$3/month",
+    "priceUsd": 3,
+    "priceNote": "Or $20 a year.",
+    "reasonPrompt": "How often do you have nightmares, and how long has it been going on?",
+    "faq": [
+      {
+        "q": "Is it a treatment for nightmares?",
+        "a": "No. New Ending is a self-help journal, not medical advice, diagnosis or treatment, and it can't promise fewer nightmares. See your GP if nightmares are frequent or distressing, started after a new medicine, follow something traumatic, or come with loud snoring or pauses in breathing at night."
+      },
+      {
+        "q": "Do I have to write down what happens in my nightmares?",
+        "a": "No. The log only asks how bad the night was. The 'new ending' exercise is done in the daytime, on your terms, and you can keep it as short and gentle as you like. Stop if it makes you feel worse, and talk to your GP."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-25",
+      "summary": "Adults describe nightmares every night, sometimes for years, waking upset and finding that sleep is no longer a pleasure.",
+      "wtp": "Oniri, a dream-journal app with 3.8K App Store ratings, sells Oniri Premium at $12.99-$59.99; reviewer Finnskull, whose dreams are mostly nightmares, mentions paying for the premium subscription.",
+      "signals": [
+        {
+          "url": "https://boards.straightdope.com/t/uggh-nightmares/296038",
+          "who": "StarsApart (Straight Dope)",
+          "date": "2005-03-24",
+          "quote": "Since Friday I’ve been having nightmares every night.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://boards.straightdope.com/t/uggh-nightmares/296038",
+          "who": "Uvula_Donor (Straight Dope)",
+          "date": "2005-03-24",
+          "quote": "I had nightmares every night for at least five years.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://boards.straightdope.com/t/uggh-nightmares/296038",
+          "who": "Stranger_On_A_Train (Straight Dope)",
+          "date": "2005-03-24",
+          "quote": "Sleep is not a pleasure for me.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id968737914?see-all=reviews",
+          "who": "Finnskull (App Store, Oniri)",
+          "date": "2022-10-24",
+          "quote": "Unfortunately most of my dreams are nightmares.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://alike.health/posts/nightmare-help-by-skittz",
+          "who": "fun (Alike)",
+          "date": "2024-11-25",
+          "quote": "i get them every single night",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/oniri-your-dream-journal/id968737914",
+          "who": "Oniri (App Store)",
+          "date": "2026-10-25",
+          "quote": "Oniri Premium $12.99 to $59.99, 3.8K Ratings",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Oniri, Dream Journal Ultimate, NightWare (prescription), CBT and imagery rehearsal with a therapist.",
+      "risks": "The Straight Dope thread is from 2005; the doc side's Mumsnet evidence is blocked for us. Alike posters are mostly in a PTSD community. Nightmares can be linked to trauma, medicines or sleep apnoea, so it must stay a journal and send those to a GP. The Alike date is approximate (posted about 638 days ago)."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
