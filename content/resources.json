@@ -16393,5 +16393,88 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "satin-stitch-not-smooth-how-to-fix",
+  "offer": "satin-steady",
+  "title": "Satin stitch not smooth? How to fix ragged edges, gaps and drifting stitches",
+  "description": "Common satin stitch problems in hand embroidery and simple fixes to practise one at a time.",
+  "intro": "Satin stitch looks simple but is one of the hardest stitches to get smooth. Most problems come down to a few things: stitch angle, spacing, edges and thread. Practising one small shape at a time and changing one thing at a time helps most stitchers improve quickly.",
+  "sections": [
+   {
+    "h": "Ragged edges",
+    "list": [
+     "Outline the shape first in split stitch or back stitch, then satin stitch over the outline to get a raised, crisp edge.",
+     "Bring the needle up and down exactly on the line each time."
+    ]
+   },
+   {
+    "h": "Stitches drifting off direction",
+    "list": [
+     "Draw a few guide lines across the shape at the angle you want.",
+     "Start in the middle of the shape and work out to one side, then go back and work the other side.",
+     "For wide shapes, change the angle gradually rather than all at once."
+    ]
+   },
+   {
+    "h": "Gaps and lumps",
+    "list": [
+     "Place each stitch right next to the last, without overlapping.",
+     "Use fewer strands (often 1-3 for small shapes) for a smoother finish.",
+     "Keep an even tension and let your thread untwist now and then."
+    ]
+   },
+   {
+    "h": "Large shapes",
+    "p": [
+     "Long satin stitches snag and sag. Split big shapes into smaller sections, or use long-and-short stitch instead."
+    ]
+   },
+   {
+    "h": "Practise and compare",
+    "p": [
+     "Stitch the same small leaf or petal shape a few times, photograph each one, and change one thing at a time. Comparing photos side by side makes it easy to see what's working."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "how-to-organise-computer-files-and-folders-at-home",
+  "offer": "folder-mend",
+  "title": "Computer files a mess? How to organise your files and folders at home",
+  "description": "A simple folder plan for personal files, a little-and-often way to sort the backlog, and habits that keep it tidy.",
+  "intro": "Most home computers end up with a Desktop, Downloads folder and Documents folder full of files saved in random places. You don't need a perfect system; a simple folder plan and ten minutes a day is usually enough to get back in control.",
+  "sections": [
+   {
+    "h": "Back up first",
+    "p": [
+     "Before a big clean-up, make a backup to an external drive or cloud service, so nothing important is lost by mistake."
+    ]
+   },
+   {
+    "h": "Keep the folder plan simple",
+    "list": [
+     "Use no more than about ten top-level folders, named after areas of your life: Home, Money, Health, Work, Photos, Travel and so on.",
+     "Use one or two levels of sub-folders at most.",
+     "Put the year at the start of file names that matter, e.g. 2026-04 Car insurance."
+    ]
+   },
+   {
+    "h": "Sort a little each day",
+    "list": [
+     "Start with Downloads and Desktop, which are usually the worst.",
+     "Move ten files a day into the right folder, and delete what you don't need.",
+     "Check for duplicates before deleting anything you're unsure about."
+    ]
+   },
+   {
+    "h": "Keep it tidy",
+    "list": [
+     "Change your browser's download location or empty Downloads once a week.",
+     "Save new files straight into the right folder.",
+     "Use your computer's search for finding things, and good file names to make search work."
+    ]
+   }
+  ]
  }
 ]

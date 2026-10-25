@@ -38211,6 +38211,174 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-25",
+    "slug": "satin-steady",
+    "name": "Satin Steady",
+    "need": "I'm learning hand embroidery and my satin stitch never comes out smooth: the edges go ragged, the stitches drift off direction, and I end up avoiding filled shapes.",
+    "headline": "Satin stitch lumpy, gappy or drifting? Practise one fill shape a day, photograph it, and get one fix to try next: angle, spacing, edge or outline.",
+    "buyer": "Adult hand-embroidery beginners and returners who can do outlines but whose satin stitch and filled shapes look uneven.",
+    "bullets": [
+      "Graded practice shapes, from small leaves to large petals, with direction guide lines you can print or trace.",
+      "A photo of each try with one named fix (angle, spacing, edge, coverage), plus a strand count and needle suggestion for each shape and fabric.",
+      "A practice log showing your fills before and after, moving on to long-and-short shading when you're ready."
+    ],
+    "price": "$4/month",
+    "priceUsd": 4,
+    "priceNote": "Or $29 a year.",
+    "reasonPrompt": "What goes wrong with your satin stitch, and what are you stitching at the moment?",
+    "faq": [
+      {
+        "q": "Is it for cross-stitch or machine embroidery?",
+        "a": "No. It's for hand surface embroidery on plain fabric: satin stitch and other fill stitches."
+      },
+      {
+        "q": "Is it linked to a pattern or kit brand?",
+        "a": "No. It's independent and works with any thread, fabric or pattern."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-25",
+      "summary": "Embroiderers describe satin stitch that never looks right, stitches that drift in direction, and avoiding filled shapes as a result.",
+      "wtp": "StitchPal, an embroidery guide app, has 1.5K App Store ratings and sells Embroidery Premium at $39.99; reviewer Bet1130 says 'The cost is well worth it for all of the tools available.'",
+      "signals": [
+        {
+          "url": "https://www.needlenthread.com/2021/12/inspirations-embroidery-kits.html",
+          "who": "Michele W (Needle 'n Thread)",
+          "date": "2021-12-10",
+          "quote": "I just could not get my satin stitch to look right",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.needlenthread.com/2021/12/you-pick-ready-to-stitch.html",
+          "who": "Jodi L Virgilio (Needle 'n Thread)",
+          "date": "2021-12-03",
+          "quote": "I end up doing lots of outlines because my satin stitch is far from satin-y",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.needlenthread.com/2019/12/stitching-tools-from-jenny.html",
+          "who": "Suzie Roe (Needle 'n Thread)",
+          "date": "2019-12-19",
+          "quote": "I have struggled with making my satin stitches look they way I want them to look",
+          "seen": "opened"
+        },
+        {
+          "url": "https://cutesycrafts.com/2019/05/succulent-embroidery-on-canvas.html",
+          "who": "Erin (Cutesy Crafts)",
+          "date": "2019-06-18",
+          "quote": "Satin stitch is always one of the stitches that has never come out right for me",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.wanderingthreadsembroidery.com/satin-stitch-embroidery-tutorial/",
+          "who": "Cheryl A Kozlowski (Wandering Threads)",
+          "date": "2022-05-02",
+          "quote": "no wonder my stitches start one direction , and finish in another",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id6756040790",
+          "who": "StitchPal (App Store)",
+          "date": "2026-10-25",
+          "quote": "1.5K Ratings; Embroidery Premium $39.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "StitchPal, YouTube tutorials, embroidery kits with guides, Needle 'n Thread videos.",
+      "risks": "Several Needle 'n Thread comments were left on giveaway posts. Blog comments rather than forums. StitchPal is a general beginner app, so the money is for the category."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-25",
+    "slug": "folder-mend",
+    "name": "Folder Mend",
+    "need": "My computer files are a mess. Things get saved in random places, I can never find what I need, and every time I try to sort it out I give up.",
+    "headline": "Desktop, Downloads and Documents a mess? Get a plain folder plan for your own files, sort ten files a day, and find old documents again.",
+    "buyer": "Adults with a personal Mac or PC whose Desktop, Downloads and Documents have turned into a dumping ground (personal files, not business filing).",
+    "bullets": [
+      "A scan of Desktop, Downloads and Documents showing where the mess is, and a suggested plan of ten or fewer top-level folders.",
+      "A ten-files-a-day sorting session with one-key moves, and a duplicate finder to check before you delete.",
+      "Simple rules that file new downloads automatically from then on."
+    ],
+    "price": "$5/month",
+    "priceUsd": 5,
+    "priceNote": "Or $39 a year.",
+    "reasonPrompt": "Which computer do you use, and where do your files end up?",
+    "faq": [
+      {
+        "q": "Are my files uploaded anywhere?",
+        "a": "No. The scan and sorting run on your own computer, and file contents are never uploaded. Nothing is deleted without you confirming it, so keep a backup before any big clean-up."
+      },
+      {
+        "q": "Is it for work or client files?",
+        "a": "It's designed for personal files on your own computer. It isn't a business document system and isn't linked to any cloud storage company."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-25",
+      "summary": "Home computer users describe files saved in random places, not finding what they need, cryptic file names and old drives full of duplicate copies.",
+      "wtp": "Hazel, an automatic file-sorting app for Mac, sells for $42 or $65 for a Family Pack 'For private households only'; bowline on Mac Power Users says a file-manager upgrade was 'well worth the $20'.",
+      "signals": [
+        {
+          "url": "https://talk.macpowerusers.com/t/file-organization/44638",
+          "who": "mcdoma (Mac Power Users)",
+          "date": "2026-03-09",
+          "quote": "then I usually can’t find what I need when I need it",
+          "seen": "opened"
+        },
+        {
+          "url": "https://talk.macpowerusers.com/t/what-recommended-software-for-getting-your-files-under-control-and-organized/11162",
+          "who": "Jonathan_Davis (Mac Power Users)",
+          "date": "2019-02-27",
+          "quote": "Trying to get my files under control!",
+          "seen": "opened"
+        },
+        {
+          "url": "https://talk.macpowerusers.com/t/is-there-a-way-to-make-recents-work-better-i-e-be-more-comprehensive/26207",
+          "who": "pendolino (Mac Power Users)",
+          "date": "2021-11-11",
+          "quote": "problem with finding recent files on my Mac with all the cryptic names",
+          "seen": "opened"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=16023117",
+          "who": "sarreph (Hacker News)",
+          "date": "2017-12-28",
+          "quote": "Right now all my files are a mess",
+          "seen": "opened"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=5163218",
+          "who": "rtpg (Hacker News)",
+          "date": "2013-02-04",
+          "quote": "I have been trying to figure out how to organize my files recently.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.noodlesoft.com/store/",
+          "who": "Hazel (Noodlesoft store)",
+          "date": "2026-10-25",
+          "quote": "Hazel $42; Family Pack $65, For private households only",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Hazel, Gemini 2, Finder smart folders, Windows File Explorer, cloud storage search.",
+      "risks": "Posters are more technical than the target buyer; may need to start Mac-only. Money evidence has prices but no rating counts. Must stay on personal files and never upload contents."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
