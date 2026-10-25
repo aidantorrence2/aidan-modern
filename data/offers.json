@@ -36041,6 +36041,90 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-25",
+    "slug": "pollen-days",
+    "name": "Pollen Days",
+    "need": "My hay fever wrecks my summer, the tablets barely work, and I can't work out why some days are so much worse than others.",
+    "headline": "Hay fever wrecking your summer? A ten-second daily check, a two-tap log of what you took, and a three-week view of what came before your worst days.",
+    "buyer": "Adults whose hay fever wrecks their summer and who can't work out why some days are worse.",
+    "bullets": [
+      "A ten-second daily check (eyes, nose, throat, sleep lost, 0-3 each) and a two-tap log of what you took and when.",
+      "Things you choose to watch (time outside, windows open, cut grass, exercise, washing dried outside, showering after being out, weather) and a three-week view of what came before worse days.",
+      "A season view of when yours starts, peaks and eases, and a one-page summary for a pharmacist or GP."
+    ],
+    "price": "$2.99/month",
+    "priceUsd": 3,
+    "priceNote": "Or $14.99 a year.",
+    "reasonPrompt": "When does your hay fever usually start, and what have you tried?",
+    "faq": [
+      {
+        "q": "Is it medical advice?",
+        "a": "No. It's a diary and doesn't recommend medicines. A pharmacist can advise on treatments; see a GP if nothing helps or you have wheezing or breathing problems."
+      },
+      {
+        "q": "Is it linked to a brand?",
+        "a": "No. It's independent and recommends no products."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-25",
+      "summary": "Hay fever sufferers say the antihistamines are barely working, today was the worst day they've had, the last week has been torture, nothing is working, the standard one-a-day isn't doing anything, nothing seems to help, and prescription medicines aren't doing a thing.",
+      "wtp": "My Pollen Forecast Pro sells for $4.99 with about 1K ratings. Sufferers already spend on tablets and sprays every season, and some pay for private treatment (doc side).",
+      "signals": [
+        {
+          "url": "https://forums.overclockers.co.uk/threads/hayfever-thread.18508063/page-57",
+          "who": "MagicBoy (Overclockers UK)",
+          "date": "2021-06",
+          "quote": "The anti-histamines are barely working",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.overclockers.co.uk/threads/hayfever-thread.18508063/page-57",
+          "who": "N0ddie (Overclockers UK)",
+          "date": "2021",
+          "quote": "The last week has been torture for me",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.overclockers.co.uk/threads/hayfever-thread.18508063/page-44",
+          "who": "rodders (Overclockers UK)",
+          "date": "2018-06",
+          "quote": "Nothing is working for me",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.overclockers.co.uk/threads/hayfever-thread.18508063/page-44",
+          "who": "kindai (Overclockers UK)",
+          "date": "2018",
+          "quote": "standard 1 a day isnt doing anything to stop it",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.overclockers.co.uk/threads/hayfever-thread.18508063/page-44",
+          "who": "grudas (Overclockers UK)",
+          "date": "2018",
+          "quote": "nothing seems to really help",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.overclockers.co.uk/threads/hayfever-thread.18508063/page-60",
+          "who": "Rilot (Overclockers UK)",
+          "date": "2022-06",
+          "quote": "seem to be doing a damned thing",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Pollen forecast apps, allergy trackers, pharmacists.",
+      "risks": "Checked evidence is one forum thread (3 pages, 2018-2022); the doc side's Mumsnet voices couldn't be checked from the code side. UK-centric. Money mostly goes on medicines. Not medical."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

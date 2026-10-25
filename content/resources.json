@@ -15187,5 +15187,49 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "hay-fever-worse-some-days-diary",
+  "offer": "pollen-days",
+  "title": "Why is my hay fever worse on some days? A simple two-week diary",
+  "description": "Everyday steps that reduce pollen exposure, what to note each day, and what to tell a pharmacist or GP when treatments aren't working.",
+  "intro": "Hay fever often varies from day to day with pollen, weather and what you were doing. A short diary helps you see your own pattern. This is general information, not medical advice.",
+  "sections": [
+   {
+    "h": "Reduce pollen exposure",
+    "list": [
+     "Check the pollen forecast, and plan time outdoors for lower-count times where you can.",
+     "Shower and change clothes after being outside, and keep windows closed on high-pollen days.",
+     "Wear wraparound sunglasses, and avoid drying washing outside when the count is high."
+    ]
+   },
+   {
+    "h": "What to note each day",
+    "list": [
+     "Eyes, nose, throat and sleep, scored 0 to 3.",
+     "What you took, and when.",
+     "Time outside, cut grass, windows open, exercise and the weather."
+    ]
+   },
+   {
+    "h": "Look for patterns",
+    "p": [
+     "After two weeks, compare the bad days with the better ones. Timing of medicines, time outdoors and weather often explain a lot."
+    ]
+   },
+   {
+    "h": "Talk to a pharmacist",
+    "p": [
+     "A pharmacist can suggest different antihistamines, nasal sprays or eye drops, and how and when to use them. Bring your diary."
+    ]
+   },
+   {
+    "h": "See a GP if",
+    "list": [
+     "Nothing from the pharmacy helps.",
+     "You have wheezing, tightness in the chest or breathing problems."
+    ]
+   }
+  ]
  }
 ]
