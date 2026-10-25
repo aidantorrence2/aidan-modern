@@ -38036,6 +38036,90 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-25",
+    "slug": "creep-spots",
+    "name": "Creep Spots",
+    "need": "I keep creeping a few mph over the limit without noticing, especially in 20 zones, and I'm scared the points will add up until I lose my licence.",
+    "headline": "Keep drifting a few mph over the limit without noticing? See the roads where your speed creeps up, get a gentle chime before it does, and keep your licence clean.",
+    "buyer": "Adult drivers, especially in the UK where 20mph limits have spread, who have had a speeding ticket or a speed awareness course and need their car.",
+    "bullets": [
+      "A gentle chime a set margin below the limit, hands-free on a mounted phone, with nothing to tap while moving.",
+      "A map of the spots on your regular routes where your speed tends to creep up, with a heads-up before each one.",
+      "Your licence points, their expiry dates and any course history in one place, plus a weekly summary of time spent over the limit."
+    ],
+    "price": "$3/month",
+    "priceUsd": 3,
+    "priceNote": "Or $24 a year.",
+    "reasonPrompt": "Where do you tend to creep over, and have you had points or a course before?",
+    "faq": [
+      {
+        "q": "Is it a speed camera detector?",
+        "a": "No. Creep Spots is about staying under the limit everywhere, not avoiding cameras. Map speed-limit data can be wrong, so road signs always take priority. Use it hands-free on a properly mounted phone, never touch your phone while driving, and set it up before you set off."
+      },
+      {
+        "q": "Is it legal advice about my points?",
+        "a": "No. It shows the dates you enter and gives no legal advice. Check your own licence record on GOV.UK (or your local licensing authority) for the official details."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-25",
+      "summary": "Drivers describe finding 20mph limits hard to stick to, creeping over without noticing, and wanting help before they lose their licence.",
+      "wtp": "Radarbot has 97K App Store ratings and sells Radarbot GOLD at $35.99 and $58.90; GPS Speedometer MPH Tracker has 14K ratings and a Pro subscription at $39.99, which reviewer s0nrunner bought to keep track of the speed limit.",
+      "signals": [
+        {
+          "url": "https://www.ftla.uk/speeding-and-other-criminal-offences/3rd-time-caught-speeding-in-less-than-a-year",
+          "who": "EmmaP (FTLA forum)",
+          "date": "2024-08-21",
+          "quote": "I am finding the 20 mph on a major road very hard to stick to",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/gb/rss/customerreviews/page=9/id=1099797635/sortby=mostrecent/json",
+          "who": "Jeremy lear (App Store UK, Radarbot)",
+          "date": "2024-04-13",
+          "quote": "decided to do something about it before I lost my licence",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/gb/rss/customerreviews/page=3/id=557871911/sortby=mostrecent/json",
+          "who": "Scotsdumpy (App Store UK, Speedometer 55)",
+          "date": "2019-01-18",
+          "quote": "Amazing how often you creep over the limit",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=901574501/sortby=mostrecent/json",
+          "who": "Somerpage (App Store, GPS Speedometer)",
+          "date": "2025-05-15",
+          "quote": "The whole reason I got this app was to show the speed limit of the area I was on and alert me if I go over",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=901574501/sortby=mostrecent/json",
+          "who": "s0nrunner (App Store, GPS Speedometer)",
+          "date": "2026-06-24",
+          "quote": "Purchased the pro version of this app to keep track of the speed limit while I travel",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1099797635",
+          "who": "Radarbot (App Store)",
+          "date": "2026-10-25",
+          "quote": "97K Ratings; Radarbot GOLD $35.99 and $58.90",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Radarbot, Waze, Google Maps speed display, speedometer apps, built-in car speed limiters.",
+      "risks": "Only one forum poster; the rest are App Store reviewers. Map speed-limit data is often wrong. Driving-adjacent: must be hands-free with nothing to tap while moving, and must not be pitched as camera avoidance."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

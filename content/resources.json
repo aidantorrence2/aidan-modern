@@ -16302,5 +16302,50 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "how-to-stop-creeping-over-the-speed-limit",
+  "offer": "creep-spots",
+  "title": "How to stop creeping over the speed limit without noticing",
+  "description": "Practical habits to stay under the limit, especially in 20mph zones, and how to keep track of licence points (UK).",
+  "intro": "Most speeding tickets aren't for racing; they're for drifting a few mph over without noticing, often in 20mph or 30mph zones. A few habits make it much easier to stay under. This is general information, not legal advice.",
+  "sections": [
+   {
+    "h": "Habits that help",
+    "list": [
+     "Use a lower gear in 20mph zones, which makes it harder to drift up.",
+     "If your car has a speed limiter or cruise control, use it where it's safe and legal, and still watch the road and signs.",
+     "Leave a few minutes earlier so you're not tempted to make up time."
+    ]
+   },
+   {
+    "h": "Know where you creep",
+    "list": [
+     "Most people creep on the same few roads: long straight 30s, downhill stretches, and roads where the limit drops.",
+     "Note those spots on your regular routes and check your speed as you approach them."
+    ]
+   },
+   {
+    "h": "Road signs come first",
+    "p": [
+     "Sat-navs and apps sometimes show the wrong limit. Always follow the road signs, and look for repeater signs after junctions."
+    ]
+   },
+   {
+    "h": "Keep track of points (UK)",
+    "list": [
+     "Speeding points usually stay on your licence for 4 years from the offence date.",
+     "If you reach 12 or more points within 3 years, you can be banned from driving.",
+     "If you passed your test in the last 2 years, 6 points can mean your licence is revoked.",
+     "Check your record on GOV.UK's 'View or share your driving licence information' service."
+    ]
+   },
+   {
+    "h": "Stay safe",
+    "p": [
+     "Never touch your phone while driving. Set any app or sat-nav up before you set off, and use a proper mount."
+    ]
+   }
+  ]
  }
 ]
