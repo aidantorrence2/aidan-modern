@@ -15577,5 +15577,94 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "horse-wont-load-into-trailer-calm-steps",
+  "offer": "ramp-ready",
+  "title": "Horse won't load into the trailer? Calm steps to try (and when to get help)",
+  "description": "A safe, force-free way to approach trailer loading: check the trailer, practise in small steps, and know when to call a vet or trainer.",
+  "intro": "A horse that won't load is stressful, especially on show or vet day. Pressure and force tend to make it worse and can get people and horses hurt. This is general information; for a horse that is dangerous to load, work with an experienced trainer.",
+  "sections": [
+   {
+    "h": "Stay safe",
+    "list": [
+     "Wear a hat, gloves and sturdy boots, and have a helper.",
+     "Never stand directly behind the horse or in the path of a horse that might rush back out.",
+     "Stop if either of you is getting upset, and finish on a calm moment."
+    ]
+   },
+   {
+    "h": "Check the trailer first",
+    "list": [
+     "Look at the floor and ramp for soft spots, gaps or slipperiness.",
+     "Check for wasps, sharp edges and anything rattling or loose.",
+     "Make it light and open inside: open the front, move the divider across if you can."
+    ]
+   },
+   {
+    "h": "Practise when you don't need to go anywhere",
+    "list": [
+     "Break loading into small steps: walking past, standing at the ramp, one foot on, front feet on, all the way in.",
+     "Reward each small step and stop while it's going well.",
+     "Note how far you got each time, so you can see progress across sessions."
+    ]
+   },
+   {
+    "h": "If he used to load fine",
+    "p": [
+     "A sudden change can have a physical cause, such as pain, so talk to your vet. Think about what changed: a new trailer, a scary journey, a different driver or a new yard."
+    ]
+   },
+   {
+    "h": "Get help",
+    "p": [
+     "If your horse rears, pulls back hard or rushes out, get help from a qualified trainer rather than trying harder on your own."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "hard-to-catch-horse-in-the-field",
+  "offer": "field-welcome",
+  "title": "Hard-to-catch horse? A calmer way to catch him in the field",
+  "description": "Low-pressure ways to make catching easier, with no chasing, and how to spot what makes it harder.",
+  "intro": "Spending an hour walking round a field with a halter is maddening, and it often gets worse when catching always means work. A calmer routine usually helps. This is general information; if your horse is aggressive in the field, get help from a qualified trainer.",
+  "sections": [
+   {
+    "h": "Don't chase",
+    "list": [
+     "Chasing teaches a horse that people mean running. It can also get you or the horse hurt.",
+     "Walk calmly, slightly to the side of his shoulder rather than straight at his face.",
+     "If he walks away, stop, wait and try again in a moment."
+    ]
+   },
+   {
+    "h": "Make catching worth it",
+    "list": [
+     "Sometimes catch him, give a scratch or a small treat and let him go again.",
+     "Don't make every catch end in riding or something he dislikes.",
+     "Catch him at different times of day, not only when work is coming."
+    ]
+   },
+   {
+    "h": "Start small",
+    "list": [
+     "Practise in a small pen or yard first, then a smaller paddock, then the open field.",
+     "Be careful around other horses, which can crowd you or kick."
+    ]
+   },
+   {
+    "h": "Keep a simple log",
+    "p": [
+     "Write down how long each catch took, the time of day, who else was in the field and what followed. Patterns often show up within a week or two."
+    ]
+   },
+   {
+    "h": "When to get help",
+    "p": [
+     "If a horse that was easy to catch suddenly isn't, pain can be a reason, so talk to your vet. If he turns towards you, kicks or bites, ask a qualified trainer for help."
+    ]
+   }
+  ]
  }
 ]
