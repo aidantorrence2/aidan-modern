@@ -19970,5 +19970,94 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "how-to-back-up-your-computer-if-youre-not-techie",
+  "offer": "safe-copy",
+  "title": "How to back up your computer if you're not techie",
+  "description": "A plain-English guide to making a backup of your photos and documents, and checking it works.",
+  "intro": "A backup is a second copy of your files somewhere other than your computer. If your computer breaks or is lost, you can get them back. You don't need to be technical to set one up.",
+  "sections": [
+   {
+    "h": "Decide what matters",
+    "list": [
+     "Photos, documents, music and anything you couldn't replace.",
+     "Note where they're stored on your computer."
+    ]
+   },
+   {
+    "h": "Choose where the copy goes",
+    "list": [
+     "An external hard drive: plug it in and use your computer's built-in backup (File History on Windows, Time Machine on a Mac).",
+     "A cloud service: your files are copied online automatically; most offer a free amount and paid plans for more space.",
+     "Many people use both, so one copy is at home and one is elsewhere."
+    ]
+   },
+   {
+    "h": "Set it to run automatically",
+    "list": [
+     "Turn on automatic backups so you don't have to remember.",
+     "If you use a drive, plug it in regularly, for example once a week."
+    ]
+   },
+   {
+    "h": "Check it actually worked",
+    "list": [
+     "After the first backup, try opening one photo or document from the backup.",
+     "Check the date of the last backup every month or so."
+    ]
+   },
+   {
+    "h": "Keep it safe",
+    "p": [
+     "Keep your backup drive somewhere safe and, ideally, not right next to the computer. Never share your passwords with anyone offering to help."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "why-your-cake-sank-in-the-middle-and-how-to-fix-it",
+  "offer": "sponge-sure",
+  "title": "Why your cake sank in the middle (and how to fix it)",
+  "description": "Common reasons cakes sink, stay flat or turn out dry, and what to change next time.",
+  "intro": "Cakes that sink, don't rise or come out dry usually have a simple cause. The trick is to change one thing at a time so you can see what fixes it.",
+  "sections": [
+   {
+    "h": "If it sank in the middle",
+    "list": [
+     "The oven may be too hot or too cool; an oven thermometer shows the real temperature.",
+     "Opening the door too early can make a cake collapse.",
+     "Too much raising agent can make it rise fast and then fall.",
+     "It may be underbaked: check with a skewer, which should come out clean."
+    ]
+   },
+   {
+    "h": "If it didn't rise",
+    "list": [
+     "Check your baking powder or self-raising flour isn't out of date.",
+     "Don't overmix once the flour is added; fold gently.",
+     "Get it in the oven soon after mixing."
+    ]
+   },
+   {
+    "h": "If it's dry",
+    "list": [
+     "It may be overbaked: check a few minutes before the recipe time.",
+     "Measure flour accurately, ideally by weight."
+    ]
+   },
+   {
+    "h": "Check your tin",
+    "list": [
+     "Use the tin size the recipe says; a different size changes the baking time."
+    ]
+   },
+   {
+    "h": "Keep notes",
+    "p": [
+     "Write down the oven setting, tin, timing and result for each bake, and change only one thing next time."
+    ]
+   }
+  ]
  }
 ]

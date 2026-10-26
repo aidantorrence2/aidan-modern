@@ -43902,6 +43902,160 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-26",
+    "slug": "safe-copy",
+    "name": "Safe Copy",
+    "need": "I've never properly backed up my computer, and I'm scared a crash or a dead laptop will wipe out my photos and documents, but I'm not techie enough to set up a backup myself.",
+    "headline": "Never backed up your computer? Set up a backup in plain English using tools you already have, check it actually worked, and get a nudge if your last good copy gets too old.",
+    "buyer": "Non-technical adults with a home Windows PC or Mac whose photos and documents live on one machine with no working backup.",
+    "bullets": [
+      "Plain-English, step-by-step setup using your computer's built-in backup or a drive or cloud plan you choose.",
+      "A simple check that the backup ran and that you can open a restored file.",
+      "A reminder when your last good copy is getting old, and a one-page note of where everything is kept."
+    ],
+    "price": "$3/month",
+    "priceUsd": 3,
+    "priceNote": "Or $29 a year.",
+    "reasonPrompt": "What kind of computer do you have, and what would you hate to lose?",
+    "faq": [
+      {
+        "q": "Do you store my files?",
+        "a": "No. Safe Copy is a guide and checker; your files stay on your own drive or the storage service you choose. It never asks for your passwords."
+      },
+      {
+        "q": "Is it linked to a storage company?",
+        "a": "No. It's independent and takes no commission."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-26",
+      "summary": "People describe never having backed up photos and documents, not being techie, and worrying about losing everything if their computer crashes.",
+      "wtp": "IDrive Online Backup has 5K App Store ratings and sells plans such as 100GB at $2.99 and 500GB at $9.99.",
+      "signals": [
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/1481801/how-do-i-back-up-laptop",
+          "who": "MrsBish (MoneySavingExpert)",
+          "date": "2009-02-10",
+          "quote": "I store mostly photos and itunes on it and have never backed it up.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/5426224/best-way-to-back-up-files-and-photos",
+          "who": "cacti (MoneySavingExpert)",
+          "date": "2016-03-07",
+          "quote": "What is the best way to back up photos and files on my Vista desktop computer? I am not techie minded!",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/1306901/external-hard-drive-for-backup",
+          "who": "10past6 (MoneySavingExpert)",
+          "date": "2008-11-23",
+          "quote": "should my system ever crash and I lost the documents",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/6681529/best-way-forwards-for-keeping-records-for-tax-purposes-password-protection",
+          "who": "avocado1988 (MoneySavingExpert)",
+          "date": "2026-08-31",
+          "quote": "I currently make no backups",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id427956708",
+          "who": "IDrive Online Backup (App Store)",
+          "date": "2026-10-26",
+          "quote": "5K Ratings; IDrive 100GB $2.99, 500GB $9.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Built-in backup tools, cloud storage plans, online backup services, external drives.",
+      "risks": "Crowded, with free built-in tools. Must be a guide and checker, not a storage provider. Evidence mostly 2008-2016, one UK forum. Restore steps must be careful. Different from killed business backup tools."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-26",
+    "slug": "sponge-sure",
+    "name": "Sponge Sure",
+    "need": "My homemade cakes keep sinking in the middle, coming out flat or dry, and I can't work out what I'm doing wrong even when I follow the recipe.",
+    "headline": "Cakes keep sinking, coming out flat or dry? Log each bake in 30 seconds (oven, tin, method, result), change one thing at a time, and see what actually fixes your cakes.",
+    "buyer": "Adult home bakers whose sponges, loaf cakes and fruit cakes are hit and miss.",
+    "bullets": [
+      "A 30-second log for each bake: recipe, oven setting, tin, mixing method, timings and a photo of the result.",
+      "A short checklist of common causes for what went wrong (sinking, flat, dry, domed) based on your own notes.",
+      "One change at a time, with a side-by-side of before and after so you can see what fixed it."
+    ],
+    "price": "$4/month",
+    "priceUsd": 4,
+    "priceNote": "Or $29 a year.",
+    "reasonPrompt": "What goes wrong with your cakes most often?",
+    "faq": [
+      {
+        "q": "Does it come with recipes?",
+        "a": "It works with your own recipes; it helps you see what's going wrong with them. It's independent and not linked to any brand."
+      },
+      {
+        "q": "What if my oven is the problem?",
+        "a": "It helps you check, for example by noting results with an oven thermometer, so you can see whether the temperature is off."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-26",
+      "summary": "Home bakers describe hit-and-miss cakes, loaf cakes sinking in the middle, most cakes not rising, dry cakes, and being bad at cakes for years.",
+      "wtp": "BakeWay, an AI baking assistant, has 742 App Store ratings and sells Premium at $3.99 and $29.99.",
+      "signals": [
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/6542305/sponge-cake-problems",
+          "who": "Chrisca50 (MoneySavingExpert)",
+          "date": "2024-07-20",
+          "quote": "s still very hit and miss how my cakes come out.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/1114019/loaf-cake-problems",
+          "who": "floyd (MoneySavingExpert)",
+          "date": "2008-08-23",
+          "quote": "Every time I make loaf cakes they sink in the middle and don",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/2176155/cakes-not-rising-could-it-be-the-oven",
+          "who": "angeltreats (MoneySavingExpert)",
+          "date": "2010-01-01",
+          "quote": "since then I think about 60% of the cakes I",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/303394/dry-cakes",
+          "who": "BabyElephant (MoneySavingExpert)",
+          "date": "2006-11-12",
+          "quote": "wondered if anybody could tell me why my cakes are dry",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id6760693795",
+          "who": "BakeWay: AI Baking Assistant (App Store)",
+          "date": "2026-10-26",
+          "quote": "742 Ratings; Bakeway Premium $3.99, $29.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Baking assistant apps, troubleshooting articles, baking hotlines, oven thermometers.",
+      "risks": "Evidence mostly 2006-2010, one UK forum. Free troubleshooting charts are everywhere. Same log-and-change approach as live rise-check, flake-log and crisp-base, but for cakes."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
