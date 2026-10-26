@@ -41746,6 +41746,167 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-26",
+    "slug": "prayer-keep",
+    "name": "Prayer Keep",
+    "need": "I keep missing or delaying my five daily prayers, I can't stay consistent, and I've lost count of the ones I need to make up.",
+    "headline": "Keep missing or delaying your daily prayers? A gentle on-time, late or missed log, one prayer at a time, a make-up count you set yourself, and no shame when you slip.",
+    "buyer": "Practising Muslim adults, including converts and people returning to prayer, who want to pray the five daily prayers on time and keep track of missed ones.",
+    "bullets": [
+      "A two-second log after each prayer: on time, late or missed, with your own reminders around prayer times.",
+      "Build up one prayer at a time, starting with the one you miss most, with a weekly view instead of a streak to break.",
+      "A make-up count you set and manage yourself, going down as you pray them."
+    ],
+    "price": "$3/month",
+    "priceUsd": 3,
+    "priceNote": "Or $24 a year.",
+    "reasonPrompt": "Which prayers are hardest for you to keep, and why?",
+    "faq": [
+      {
+        "q": "Does it give religious rulings?",
+        "a": "No. Prayer Keep is a log and reminder tool only. It gives no rulings or fatwas; for questions such as how to make up missed prayers, ask a scholar or imam you trust."
+      },
+      {
+        "q": "Is it linked to a mosque or organisation?",
+        "a": "No. It's independent and private: your log is yours alone."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-26",
+      "summary": "Muslims describe being lax in daily prayers, finding it hard to stay consistent, getting out of the habit after a break, and wanting to keep track of missed prayers to make up.",
+      "wtp": "Muslim Pro, which includes prayer times and a prayer tracker, has 601K App Store ratings and sells Muslim Pro Plus at $13.99 a month or $34.99 a year.",
+      "signals": [
+        {
+          "url": "https://www.islamicboard.com/threads/how-to-get-in-the-habit-of-prayer.134344444/",
+          "who": "muslimahzoya (IslamicBoard)",
+          "date": "2017-02-14",
+          "quote": "been lax in my daily prayers",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.islamicboard.com/threads/what-is-the-best-way-to-be-consistent-in-prayers.134316543/",
+          "who": "fairy333 (IslamicBoard)",
+          "date": "2012-11-24",
+          "quote": "i find it difficult to pray either just because of laziness or due to some excuses...how can i be consistent???",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.islamicboard.com/threads/what-is-the-best-way-to-be-consistent-in-prayers.134316543/",
+          "who": "crimsontide06 (IslamicBoard)",
+          "date": "2012-11-24",
+          "quote": "I find it hard too.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.islamicboard.com/threads/please-help-i-have-missed-over-3-years-of-missed-salat-can-i-make-up-these-salat.134321727/",
+          "who": "animehunter123 (IslamicBoard)",
+          "date": "2013-10-07",
+          "quote": "keep track of their FARD QADAT prayers to make up",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.islamicboard.com/threads/i-seem-to-have-stopped-praying-my-salaat.134290688/",
+          "who": "muslimsister1 (IslamicBoard)",
+          "date": "2009-12-03",
+          "quote": "i understand exactly what u mean when you say u get out of the habit after a break",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id388389451",
+          "who": "Muslim Pro (App Store)",
+          "date": "2026-10-26",
+          "quote": "601K Ratings; Muslim Pro Plus - Monthly $13.99, Yearly $34.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Muslim Pro, Pillars, Athan by IslamicFinder, make-up prayer counter apps.",
+      "risks": "Must give no religious rulings. All evidence is one forum (four threads, 2009-2017). Large free incumbents with prayer-time alerts. Must avoid shame-based streaks."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-26",
+    "slug": "on-the-beat",
+    "name": "On the Beat",
+    "need": "I've played for years and practised with a metronome, but I still rush or drift off the beat, and often I can't even hear it until someone tells me.",
+    "headline": "Still rushing or drifting off the beat after years of playing? Record short drills against a click and see exactly where you rush or drag, beat by beat, then work up a gap-click ladder.",
+    "buyer": "Adult self-taught guitarists, bassists and other hobby players whose timing slips against a click, a drummer or a band.",
+    "bullets": [
+      "Play a short drill against the click; it shows whether each note was early, late or on time.",
+      "Gap-click and subdivision ladders: the click drops out for longer as your timing holds.",
+      "A weekly chart of your rushing and dragging at each tempo, so you can hear and see progress."
+    ],
+    "price": "$5/month",
+    "priceUsd": 5,
+    "priceNote": "Or $39 a year.",
+    "reasonPrompt": "What do you play, and when does your timing slip?",
+    "faq": [
+      {
+        "q": "Does it work with any instrument?",
+        "a": "It's designed for guitar, bass and other instruments with a clear attack, played near your phone's microphone. Results depend on your mic and room."
+      },
+      {
+        "q": "Is it linked to a metronome or gear brand?",
+        "a": "No. It's independent and recommends no brands."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-26",
+      "summary": "Players describe always rushing the beat, being told by a drummer they're out of time without noticing, and struggling to play with a metronome.",
+      "wtp": "The Metronome by Soundbrenner has 48K App Store ratings and sells Soundbrenner Plus at $7.99, $39.99 and $59.99.",
+      "signals": [
+        {
+          "url": "https://www.ultimate-guitar.com/forum/showthread.php?t=1804690",
+          "who": "leefytreefire1 (Ultimate Guitar)",
+          "date": "2018-02-22",
+          "quote": "I always rush the beat, no matter what.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.ultimate-guitar.com/forum/showthread.php?t=1710432",
+          "who": "fchfgvsabgf1 (Ultimate Guitar)",
+          "date": "2016-09-28",
+          "quote": "the dummer stopped and told me that I was out of time and I didn",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.ultimate-guitar.com/forum/showthread.php?t=1685393",
+          "who": "danyal92 (Ultimate Guitar)",
+          "date": "2015-08-21",
+          "quote": "always had a problem with playing in time.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.ultimate-guitar.com/forum/showthread.php?t=1703303",
+          "who": "King__chubby (Ultimate Guitar)",
+          "date": "2016-06-01",
+          "quote": "having some trouble playing with the metronome.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1048954353",
+          "who": "The Metronome by Soundbrenner (App Store)",
+          "date": "2026-10-26",
+          "quote": "48K Ratings; Soundbrenner Plus $7.99, $39.99, $59.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Metronome apps (Soundbrenner, Pro Metronome, TonalEnergy), Melodics, rhythm trainers.",
+      "risks": "All evidence is one site (four threads, 2015-2018). Timing scoring needs reliable note detection through a phone mic. Free metronomes make it look solved. Near live beat-lock, frail-click and quiet-kit, which are instrument- or task-specific."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
