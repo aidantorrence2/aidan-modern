@@ -17817,5 +17817,73 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "how-to-hit-your-protein-target-without-going-over-your-calories",
+  "offer": "protein-gap",
+  "title": "How to hit your protein target without going over your calories",
+  "description": "Practical ways to close a daily protein gap when you're also watching calories.",
+  "intro": "If you're aiming for a protein target and a calorie limit at the same time, the trick is choosing foods that give more protein for their calories, and planning so you're not left with a big gap at the end of the day. This is general information, not nutrition advice; if you have kidney disease, are pregnant or follow a medical diet, ask your doctor or a dietitian.",
+  "sections": [
+   {
+    "h": "Spread it through the day",
+    "list": [
+     "Include a protein source at every meal and snack, rather than trying to catch up at dinner.",
+     "Check your running total mid-afternoon, while there's still time to adjust."
+    ]
+   },
+   {
+    "h": "Choose higher-protein-per-calorie foods",
+    "list": [
+     "Look at the label: divide grams of protein by calories, then multiply by 100 to get protein per 100 calories.",
+     "Lean meat and poultry, white fish, egg whites, low-fat Greek yogurt, cottage cheese, tofu and lentils often score well.",
+     "Fattier versions of the same foods usually give less protein per calorie."
+    ]
+   },
+   {
+    "h": "Swap rather than add",
+    "list": [
+     "Replace part of a meal with a higher-protein option instead of adding extra food on top.",
+     "For example, choose a higher-protein yogurt or bread, or add beans or lentils in place of some of the rice or pasta."
+    ]
+   },
+   {
+    "h": "Keep a few gap fillers ready",
+    "list": [
+     "Have two or three foods you like that fit a small calorie budget, so the evening gap is easy to close.",
+     "Note which ones you actually eat, so your list stays realistic."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "how-to-work-out-protein-per-100-calories",
+  "offer": "protein-gap",
+  "title": "How to work out protein per 100 calories (and why it helps)",
+  "description": "A simple calculation from the food label that shows which of your usual foods give the most protein for their calories.",
+  "intro": "Comparing foods by protein per 100 grams can mislead you when you're watching calories. Protein per 100 calories shows how much protein you get for the calories you spend. This is general information, not nutrition advice.",
+  "sections": [
+   {
+    "h": "The calculation",
+    "list": [
+     "Find the protein (grams) and energy (kcal) for the same amount on the label, for example per 100 g or per serving.",
+     "Divide protein by calories, then multiply by 100.",
+     "Example: a food with 10 g of protein and 100 kcal gives 10 g of protein per 100 calories."
+    ]
+   },
+   {
+    "h": "Rank your own foods",
+    "list": [
+     "Work it out for the foods you already buy and eat, not a generic list.",
+     "Sort them from highest to lowest; the top of the list are your best gap fillers."
+    ]
+   },
+   {
+    "h": "Keep it in balance",
+    "p": [
+     "Protein per calorie is one useful number, not the only one. Fibre, vegetables and foods you enjoy matter too, and a dietitian can help if you need a plan for a health condition."
+    ]
+   }
+  ]
  }
 ]

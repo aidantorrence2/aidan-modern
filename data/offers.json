@@ -40682,6 +40682,97 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-26",
+    "slug": "protein-gap",
+    "name": "Protein Gap",
+    "need": "I keep falling short of my daily protein target, or I only hit it by going over my calories, and I don't know what to eat to close the gap.",
+    "headline": "Always short of your protein target, or overshooting calories to hit it? See grams-to-go and calories-left side by side, and get gap fillers from your own foods that fit what's left.",
+    "buyer": "Adults (18+) with a daily protein target they've chosen who keep missing it, or only hit it by overeating or relying on shakes.",
+    "bullets": [
+      "Enter your own protein and calorie targets; quick-add the meals you eat again and again.",
+      "Grams of protein to go and calories left, side by side, all day.",
+      "Your own foods ranked by protein per 100 calories, evening gap fillers that fit what's left (including non-meat and non-shake options), and a weekly hit rate."
+    ],
+    "price": "$3/month",
+    "priceUsd": 3,
+    "priceNote": "Or $20 a year. For adults 18+.",
+    "reasonPrompt": "What's your daily protein target, and where do you usually fall short?",
+    "faq": [
+      {
+        "q": "Will it tell me how much protein to eat?",
+        "a": "No. You set your own targets. Protein Gap isn't nutrition or medical advice. If you have kidney disease, are pregnant, or follow a medical diet, ask your doctor or a dietitian before changing how much protein you eat."
+      },
+      {
+        "q": "Is it linked to a supplement brand?",
+        "a": "No. It's independent, sells no supplements or shakes, and is for adults 18+."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-26",
+      "summary": "People who track their diet describe finding it hard work to reach their protein target, failing when they stop paying attention, or overeating to hit it.",
+      "wtp": "Protein Tracker. has 1.8K App Store ratings with paid unlocks at $1.99 and $19.99; Protein Panda sells $3.99 weekly, $19.99 yearly and $35.99 options.",
+      "signals": [
+        {
+          "url": "https://www.trainerroad.com/forum/t/nutrition-formerly-protein-accountability-thread/97354?page=2",
+          "who": "DMC (TrainerRoad forum)",
+          "date": "2024-10-22",
+          "quote": "work to get up to 150 grams a day.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.trainerroad.com/forum/t/nutrition-formerly-protein-accountability-thread/97354?page=2",
+          "who": "AJS914 (TrainerRoad forum)",
+          "date": "2024-10-23",
+          "quote": "ve hit 180 since I started tracking.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.trainerroad.com/forum/t/nutrition-formerly-protein-accountability-thread/97354?page=2",
+          "who": "JoeX (TrainerRoad forum)",
+          "date": "2024-10-27",
+          "quote": "easy to fail.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forum.barbellmedicine.com/t/overeating-due-to-trying-to-hit-protein-goals/4162",
+          "who": "AdamW (Barbell Medicine forum)",
+          "date": "2018-11-27",
+          "quote": "My problem is that when I try to hit my protein goal, I almost always end up overeating",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.cronometer.com/discussion/3756/how-well-do-you-hit-the-daily-targets",
+          "who": "Eric_Cooper (Cronometer forum)",
+          "date": "2020-10",
+          "quote": "struggled to hit my daily goal without getting close to my calorie limits.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/app/id6468394305",
+          "who": "Protein Tracker. (App Store)",
+          "date": "2026-10-26",
+          "quote": "1.8K Ratings; $1.99, $19.99",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/-/id6741427858",
+          "who": "Protein Panda (App Store)",
+          "date": "2026-10-26",
+          "quote": "36 Ratings; $3.99, $19.99, $35.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Protein Tracker., Protein Panda, MyFitnessPal, Cronometer, MacroFactor.",
+      "risks": "Protein-only apps mostly have small rating counts; general calorie trackers already show protein. Must set no protein amount and include a medical-diet line. One doc-side signal (Chloe Ting community) showed only a relative date, so it isn't cited here."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
