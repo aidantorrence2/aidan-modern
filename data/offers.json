@@ -43818,6 +43818,90 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-26",
+    "slug": "fill-in",
+    "name": "Fill In",
+    "need": "My beard grows in thin and patchy, and I can't tell whether it's filling in or what's worth trying.",
+    "headline": "Patchy beard and not sure it's filling in? Take same-light photos every two weeks, score each zone, hold off trimming, and test one change at a time to see what actually helps.",
+    "buyer": "Adult men (18+) whose beard grows in thin or patchy.",
+    "bullets": [
+      "Same-light front and side photos every two weeks, with a 0-10 coverage score for cheeks, connectors, chin and neck.",
+      "A no-trim period with a nudge when you're tempted to shave it off.",
+      "One-change mode (brushing, trimming style, a product you already use) with before and after, plus shapes that suit patchy growth and a card for your barber."
+    ],
+    "price": "$3/month",
+    "priceUsd": 3,
+    "priceNote": "Or $15 a year. For adults 18+.",
+    "reasonPrompt": "How long have you been growing it, and where is it patchy?",
+    "faq": [
+      {
+        "q": "Will it make my beard grow?",
+        "a": "No. Fill In tracks what's happening and helps you choose a style; it makes no growth claims, recommends no medicines and isn't medical advice. If you notice sudden round bald patches, or hair loss elsewhere, see a doctor."
+      },
+      {
+        "q": "Does it sell products?",
+        "a": "No. It's independent, sells nothing and is for adults 18+."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-26",
+      "summary": "Men describe patchy facial coverage, slow patchy growth, being unable to grow side hair until their 40s, stubble that looks terrible, and facial hair that won't grow thick enough.",
+      "wtp": "Hair and Beard Styles has 1.1K App Store ratings with paid plans from $0.99 to $4.99 a month; one poster notes the vitamins and creams sold for patchy beards.",
+      "signals": [
+        {
+          "url": "https://singletrackworld.com/forum/off-topic/how-can-i-sort-my-beard-out/",
+          "who": "DavidB (Singletrack forum)",
+          "date": "08/04/2016",
+          "quote": "Being blond(ish) with thin hair means that my facial coverage is patchy.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://singletrackworld.com/forum/off-topic/how-can-i-sort-my-beard-out/",
+          "who": "thisisnotaspoon (Singletrack forum)",
+          "date": "08/04/2016",
+          "quote": "My beards actually quite patchy and slow growing",
+          "seen": "opened"
+        },
+        {
+          "url": "https://singletrackworld.com/forum/off-topic/how-can-i-sort-my-beard-out/",
+          "who": "Junkyard (Singletrack forum)",
+          "date": "09/04/2016",
+          "quote": "i was 40 before i could grow a goatee- still could not grow sideys at all",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.overclockers.co.uk/threads/patchy-beard.18635203/",
+          "who": "LiamC (Overclockers)",
+          "date": "2014-11-07",
+          "quote": "I want to grow some stubble but it looks terrible",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.overclockers.co.uk/threads/patchy-beard.18635203/",
+          "who": "Jeps (Overclockers)",
+          "date": "2014-11-07",
+          "quote": "do movember because my facial hair just doesn",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id383685584",
+          "who": "Hair and Beard Styles (App Store)",
+          "date": "2026-10-26",
+          "quote": "1.1K Ratings; $0.99 to $4.99 per month",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Beard try-on and photo apps, grooming brands, barbers.",
+      "risks": "Paid beard apps are mostly try-on filters. Forum evidence is 2014-2016. Must make no growth claims. The doc side's AnandTech and Beard Board sources were blocked for the code side, so the hosted page uses Singletrack and Overclockers evidence."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
