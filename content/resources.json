@@ -20312,5 +20312,93 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "how-to-juggle-3-balls-when-you-keep-dropping-them",
+  "offer": "juggle-unstuck",
+  "title": "How to juggle 3 balls when you keep dropping them",
+  "description": "A step-by-step way to learn the 3-ball cascade, starting with one ball, for adults who have tried and got stuck.",
+  "intro": "Most people who give up on juggling try to throw three balls straight away. Building up in small steps usually works better. You don't need special balls: bean bags or rolled-up socks are fine.",
+  "sections": [
+   {
+    "h": "Step 1: one ball",
+    "list": [
+     "Throw one ball from hand to hand in an arc that peaks just above eye level.",
+     "Keep your elbows at your sides and your hands at waist height.",
+     "Practise until every throw lands in the other hand without you reaching for it."
+    ]
+   },
+   {
+    "h": "Step 2: two balls",
+    "list": [
+     "Hold one ball in each hand.",
+     "Throw the first ball; when it reaches its highest point, throw the second ball underneath it.",
+     "Catch both, then stop. Practise starting with either hand."
+    ]
+   },
+   {
+    "h": "Step 3: three balls",
+    "list": [
+     "Hold two balls in your stronger hand and one in the other.",
+     "Start like the two-ball exchange, and throw the third ball when the second reaches its peak.",
+     "At first, aim for just three throws and three catches, then stop."
+    ]
+   },
+   {
+    "h": "Common problems",
+    "list": [
+     "Throws drifting forward: practise facing a wall or standing in front of a bed.",
+     "Uneven heights: slow down and make every throw peak at the same point.",
+     "Rushing: wait for each ball to reach its peak before throwing the next one."
+    ]
+   },
+   {
+    "h": "Keep count",
+    "p": [
+     "Write down your best run of catches each day. Progress often comes in sudden jumps after days that feel stuck."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "why-your-juggling-throws-drift-forward-and-how-to-fix-it",
+  "offer": "juggle-unstuck",
+  "title": "Why your juggling throws drift forward, and how to fix it",
+  "description": "Why beginner jugglers end up chasing the balls forward, and simple drills to keep your throws in front of you.",
+  "intro": "Walking forward to chase the balls is one of the most common beginner juggling problems. It usually comes from throwing slightly away from your body. Here are simple ways to fix it.",
+  "sections": [
+   {
+    "h": "Why it happens",
+    "list": [
+     "Throwing from your hands rather than your forearms can push the balls forward.",
+     "Rushing throws makes them land further out.",
+     "Looking at your hands instead of the top of the arc."
+    ]
+   },
+   {
+    "h": "The bed drill",
+    "list": [
+     "Stand facing a bed, close enough that dropped balls land on it.",
+     "Practise one ball, then two, keeping throws close to your body.",
+     "You'll spend less time picking balls up off the floor."
+    ]
+   },
+   {
+    "h": "The wall drill",
+    "list": [
+     "Stand facing a wall about a forearm's length away.",
+     "If your throws hit the wall, they're going forward.",
+     "Practise until the balls go up and across without touching it."
+    ]
+   },
+   {
+    "h": "Other tips",
+    "list": [
+     "Keep your elbows close to your sides.",
+     "Look at the top of the arc, not your hands.",
+     "Slow down: higher, slower throws give you more time."
+    ]
+   }
+  ]
  }
 ]
