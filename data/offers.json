@@ -43160,6 +43160,90 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-26",
+    "slug": "home-mat",
+    "name": "Home Mat",
+    "need": "I want to do Pilates regularly, but classes cost too much and I can't keep paying for video subscriptions, so I need a way to keep it up at home.",
+    "headline": "Want regular Pilates but can't keep paying for classes? Short mat sessions at home with clear written cues, new moves added one at a time, and a 10-second log that shapes your next session.",
+    "buyer": "Adults (18+) who want to do mat Pilates regularly but can't keep paying for classes or pricey video subscriptions.",
+    "bullets": [
+      "10, 20 or 30-minute mat sessions with clear written cues and simple drawings, no equipment needed.",
+      "Beginner moves added one at a time, with easier options for each.",
+      "A 10-second 'done / too easy / too hard' tap after each session that shapes the next one, and a week view with no streak to lose."
+    ],
+    "price": "$3/month",
+    "priceUsd": 3,
+    "priceNote": "Or $19 a year. For adults 18+.",
+    "reasonPrompt": "Have you done Pilates before, and how much time do you have?",
+    "faq": [
+      {
+        "q": "Is it a replacement for a qualified instructor?",
+        "a": "No. Home Mat isn't medical or physiotherapy advice and makes no body claims. If you're pregnant, recovering from injury or surgery, or have back or joint problems, check with a doctor, physiotherapist or qualified instructor first, and stop if anything hurts."
+      },
+      {
+        "q": "Is it linked to a Pilates studio or brand?",
+        "a": "No. It's independent and needs no machines or equipment."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-26",
+      "summary": "People describe paying $80 a month or more for Pilates classes, wanting to work out at home, and wishing paid Pilates apps were more affordable.",
+      "wtp": "Pilates Anytime has 8.7K App Store ratings and sells a $24.99 subscription and a $264.99 yearly plan; Pilates Project sells $34.99 a month or $299.99 a year. A reviewer says classes cost them at least $80 a month.",
+      "signals": [
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=2/id=646991927/sortby=mostrecent/json",
+          "who": "sdhutch (Pilates Anytime App Store review)",
+          "date": "2019-01-11",
+          "quote": "I have been to Pilates classes for at least $80/month.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=2/id=646991927/sortby=mostrecent/json",
+          "who": "ses48 (Pilates Anytime App Store review)",
+          "date": "2019-11-01",
+          "quote": "I workout at home, so having endless classes to choose from is a must!",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1590468659/sortby=mostrecent/json",
+          "who": "blahdonj (Pilates Project App Store review)",
+          "date": "2023-07-08",
+          "quote": "i do wish there was an option that was more affordable",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1590468659/sortby=mostrecent/json",
+          "who": "kimcares (Pilates Project App Store review)",
+          "date": "2022-04-08",
+          "quote": "wanted something i could tap into at home",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/pilates-anytime-workouts/id646991927",
+          "who": "Pilates Anytime (App Store)",
+          "date": "2026-10-26",
+          "quote": "8.7K Ratings; $24.99, $264.99",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1590468659",
+          "who": "Pilates Project (App Store)",
+          "date": "2026-10-26",
+          "quote": "63 Ratings; $34.99, $299.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Pilates video apps (Pilates Anytime, Pilates Project), free online videos, local classes, books.",
+      "risks": "Evidence is App Store reviewers of paid apps, not forum posts; the doc side's Mumsnet sources were blocked for the code side. Free videos are a strong substitute. Near live first-mat (beginner yoga at home), but a different practice and a cost angle."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
