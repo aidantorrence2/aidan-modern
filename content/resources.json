@@ -19143,5 +19143,90 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "how-to-stop-forgetting-songs-you-learned-on-guitar",
+  "offer": "song-keep",
+  "title": "How to stop forgetting songs you've learned on guitar",
+  "description": "Simple ways to keep the songs you've learned in your fingers and memory, instead of relearning them every few months.",
+  "intro": "It's very common to learn a song, move on, and find a few weeks later that it's gone. Memory for songs fades unless you revisit them, but a little regular review keeps them alive.",
+  "sections": [
+   {
+    "h": "Keep a list",
+    "list": [
+     "Write down every song you've learned, even partly.",
+     "Break each one into sections: intro, verse, chorus, bridge, solo."
+    ]
+   },
+   {
+    "h": "Play from memory, not the tab",
+    "list": [
+     "Once you've learned a song, practise recalling it without looking.",
+     "When you get stuck, check the tab for just that part, then try again from memory."
+    ]
+   },
+   {
+    "h": "Review a few songs each day",
+    "list": [
+     "Play two or three older songs at the start of each practice session.",
+     "Revisit songs more often at first, then less often as they stick: for example after a day, a few days, a week, then a month."
+    ]
+   },
+   {
+    "h": "Know the structure",
+    "list": [
+     "Learn the chord progression and the order of sections, not just the finger movements.",
+     "Saying the structure out loud ('verse, verse, chorus, verse...') helps it stick."
+    ]
+   },
+   {
+    "h": "Play whole songs",
+    "p": [
+     "Run each song start to finish regularly, even if you make mistakes, so the joins between sections become automatic."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "too-many-games-in-your-backlog-how-to-pick-and-finish-one",
+  "offer": "backlog-pick",
+  "title": "Too many games in your backlog? How to pick one and actually finish it",
+  "description": "Practical ways to stop staring at your game library and start, and finish, something you already own.",
+  "intro": "A big backlog can make it harder, not easier, to choose. Many people end up opening and closing games and playing nothing. A few simple rules make choosing quicker.",
+  "sections": [
+   {
+    "h": "Shrink the choice",
+    "list": [
+     "Make a shortlist of five games you genuinely want to play, and ignore the rest for now.",
+     "Hide or archive games you know you'll never play."
+    ]
+   },
+   {
+    "h": "Match the game to your time",
+    "list": [
+     "Note roughly how long each game takes and whether it suits short sessions.",
+     "On busy weeks, pick something you can play in short bursts."
+    ]
+   },
+   {
+    "h": "Play one at a time",
+    "list": [
+     "Keep one main game 'in progress' and finish or drop it before starting the next.",
+     "It's fine to drop a game you're not enjoying; finishing isn't compulsory."
+    ]
+   },
+   {
+    "h": "Pause buying",
+    "list": [
+     "Consider not buying new games until you've played a few from your shortlist, even in sales."
+    ]
+   },
+   {
+    "h": "Keep a simple record",
+    "p": [
+     "Note what you finished, dropped and loved. It helps you choose better next time and shows real progress."
+    ]
+   }
+  ]
  }
 ]

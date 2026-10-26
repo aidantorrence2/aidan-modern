@@ -42761,6 +42761,174 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-26",
+    "slug": "song-keep",
+    "name": "Song Keep",
+    "need": "I learn songs on guitar, but days or months later I can't play them from memory, and when I try a full song without the tab I fall apart.",
+    "headline": "Learn songs, then forget them? Keep a list of every song you've learned, get a short daily mix of songs to play from memory, and see which ones are slipping before they're gone.",
+    "buyer": "Adult hobby guitarists and other players who learn songs from tabs and keep forgetting them.",
+    "bullets": [
+      "A list of every song you've learned, with the sections broken out (intro, verse, chorus, solo).",
+      "A short daily set that brings back songs just before you'd forget them, played from memory, not from the tab.",
+      "A quick 'clean / shaky / lost it' tap after each song, so the ones slipping come round sooner."
+    ],
+    "price": "$4/month",
+    "priceUsd": 4,
+    "priceNote": "Or $29 a year.",
+    "reasonPrompt": "How many songs have you learned, and how many could you play right now without the tab?",
+    "faq": [
+      {
+        "q": "Does it include tabs?",
+        "a": "No. Song Keep keeps your list and schedule; you learn songs from wherever you like. It's independent and not linked to any tab site."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Adults who play for fun and want to keep the songs they've already learned."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-26",
+      "summary": "Guitarists describe completely forgetting songs they learned, poor memory when playing by heart, playing a song dozens of times without memorising it, and forgetting anything not played for a few months.",
+      "wtp": "Ultimate Guitar: Chords & Tabs has 481K App Store ratings and sells Annual Pro Access at $29.99 and UG Pro+ at $9.99 a month or $39.99 a year.",
+      "signals": [
+        {
+          "url": "https://www.ultimate-guitar.com/forum/showthread.php?t=1216956",
+          "who": "Youri (Ultimate Guitar)",
+          "date": "2009-10-17",
+          "quote": "when I learned Seek and Destroy I completly forgot how to play it",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.ultimate-guitar.com/forum/showthread.php?t=1861020",
+          "who": "incrediblebulk0 (Ultimate Guitar)",
+          "date": "2018-12-20",
+          "quote": "when playing off by heart my memory is terrible when trying to remember the songs",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.ultimate-guitar.com/forum/showthread.php?t=502215",
+          "who": "yawn (Ultimate Guitar)",
+          "date": "2007-01-11",
+          "quote": "I can play a song 40 or 50 times and still not have it memorized",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.ultimate-guitar.com/forum/showthread.php?t=502215",
+          "who": "MotleyCrueSATD (Ultimate Guitar)",
+          "date": "2007-01-10",
+          "quote": "i learn a song, then a few days later i pick up a guitar and go wtf",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.ultimate-guitar.com/forum/showthread.php?t=236605",
+          "who": "JacksonShred09 (Ultimate Guitar)",
+          "date": "2005-07-22",
+          "quote": "I have trouble remembering parts of the song when I try to play it without tabs",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id357828853",
+          "who": "Ultimate Guitar: Chords & Tabs (App Store)",
+          "date": "2026-10-26",
+          "quote": "481K Ratings; Annual Pro Access $29.99, UG Pro+ $9.99/month, $39.99/year",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Tab apps, digital songbooks, setlist apps.",
+      "risks": "All evidence is one forum (four threads, 2005-2018). Money is tab-app spend, not repertoire upkeep. Spaced-review mechanism resembles live verse-keep and cue-lines, but the need is different."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-26",
+    "slug": "backlog-pick",
+    "name": "Backlog Pick",
+    "need": "I own hundreds of games but sit staring at my library, can't decide what to play, and never finish anything, so I end up playing nothing.",
+    "headline": "Hundreds of unplayed games and you end up playing nothing? Say how much time you have tonight, get one pick from your own backlog, and keep going to the credits.",
+    "buyer": "Adult PC and console gamers with large unplayed libraries and limited free time.",
+    "bullets": [
+      "Add your library once (or just the games you care about) with rough length and mood.",
+      "Tonight mode: tell it your time and mood, and it picks one game, not a list.",
+      "A 'now playing' slot with a gentle nudge to continue, and a guilt-free 'drop it' button for games you're not enjoying."
+    ],
+    "price": "$3/month",
+    "priceUsd": 3,
+    "priceNote": "Or $24 a year.",
+    "reasonPrompt": "Roughly how many unplayed games do you have, and how much time do you get to play?",
+    "faq": [
+      {
+        "q": "Is it linked to Steam, PlayStation or Xbox?",
+        "a": "No. Backlog Pick is independent and not affiliated with any store or platform. It never asks for your account logins."
+      },
+      {
+        "q": "Will it make me play more?",
+        "a": "It's for playing what you already own when you do have time, not for playing longer."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-26",
+      "summary": "Gamers describe having no idea which backlog game to play, staring at their library and playing nothing, never finishing games, and burning out forcing themselves through them.",
+      "wtp": "GameTrack, which helps manage a game backlog and choose what to play next, has 1.3K App Store ratings and sells GameTrack+ at $3.99 a month or $29.99 a year.",
+      "signals": [
+        {
+          "url": "https://forums.overclockers.co.uk/threads/too-many-many-games.18983299/",
+          "who": "kidkhaos (Overclockers)",
+          "date": "2024-01-18",
+          "quote": "when I can, I have no idea which game in my backlog to play first",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.overclockers.co.uk/threads/too-many-many-games.18983299/",
+          "who": "martos123 (Overclockers)",
+          "date": "2024-01-18",
+          "quote": "It can be a bit like scrolling Netflix",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.overclockers.co.uk/threads/to-many-games-not-enough-time.18778402/",
+          "who": "jasonsony735 (Overclockers)",
+          "date": "2017-05-02",
+          "quote": "not completed 90% of my gaming collection over the past 5 years",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.overclockers.co.uk/threads/do-you-ever-get-that-feeling-that-you-want-to-play-a-game-but-not-sure-what.18414119/",
+          "who": "Kenai (Overclockers)",
+          "date": "2012-06-16",
+          "quote": "sit and stare at my Steam library maybe even get as far as opening something but then closing it again and eventually end up playing nothing at all",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.overclockers.co.uk/threads/steam-backlog-support-group.18763877/",
+          "who": "Epoch (Overclockers)",
+          "date": "2017-01-03",
+          "quote": "I tried to have a go at completing games in my steam backlog but got burned out forcing myself to finish crap games",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1136800740",
+          "who": "GameTrack (App Store)",
+          "date": "2026-10-26",
+          "quote": "1.3K Ratings; GameTrack+ Monthly $3.99, Annual $29.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "GameTrack, MyGames Database, Backloggd, HowLongToBeat.",
+      "risks": "All evidence is one forum (four threads, 2012-2024). Paid backlog apps have modest rating counts. Near live pick-tonight (streaming) and unread-first (books), but a different library."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
