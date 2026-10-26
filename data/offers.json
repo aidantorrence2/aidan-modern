@@ -42243,6 +42243,174 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-26",
+    "slug": "play-rut",
+    "name": "Play Rut",
+    "need": "I'm at home with my baby or toddler, every day feels the same, and I've run out of ideas for things to do with them.",
+    "headline": "Every day at home with your toddler feels the same? Get one or two fresh ideas each morning from what's already in your house, matched to their age, the weather and nap times, without repeats.",
+    "buyer": "Parents and carers at home with babies and toddlers aged about 6 months to 4 years, especially on rainy days and in small homes.",
+    "bullets": [
+      "Each morning, one or two activity ideas using things you already have, matched to your child's age and how long you've got before the nap.",
+      "Filters for weather, space and mess: indoors, no-mess, small flat, out-and-about.",
+      "A rotation so the same ideas don't keep coming back, and a quick 'loved it / not today' tap to tune future picks."
+    ],
+    "price": "$4/month",
+    "priceUsd": 4,
+    "priceNote": "Or $29 a year.",
+    "reasonPrompt": "How old is your child, and what does a typical day look like?",
+    "faq": [
+      {
+        "q": "Are the activities safe for young children?",
+        "a": "Ideas are matched to age, and those for under-3s avoid small parts. Always supervise young children during play, and use your own judgement about what suits your child."
+      },
+      {
+        "q": "Is it linked to a toy or subscription box brand?",
+        "a": "No. It's independent and uses things you already have at home."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-26",
+      "summary": "Parents at home with toddlers describe every day feeling the same, the usual activities only lasting so long, watching the clock for nap time, and struggling for ideas.",
+      "wtp": "The Lovevery baby and toddler play app has 14K App Store ratings and sells a Monthly App Subscription at $12.00 and an Annual at $107.99.",
+      "signals": [
+        {
+          "url": "https://boards.hellobee.com/topic/do-you-feel-like-your-days-are-repetitive",
+          "who": "Bao (Hellobee)",
+          "date": "2014-02-05",
+          "quote": "m starting to feel like our day is the same over and over.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://boards.hellobee.com/topic/do-you-feel-like-your-days-are-repetitive",
+          "who": "polkadots (Hellobee)",
+          "date": "2014-02-05",
+          "quote": "ve been doing the same with painting, coloring and play-doh but those things only last for so long.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://boards.hellobee.com/topic/do-you-feel-like-your-days-are-repetitive",
+          "who": "autumn865 (Hellobee)",
+          "date": "2014-02-05",
+          "quote": "I find myself looking at the clock waiting for her nap/ bedtime on certain days and I feel such mommy guilt!",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/4750936/what-do-you-do-at-weekends-with-a-toddler",
+          "who": "NoreenOMS (MoneySavingExpert)",
+          "date": "2013-08-26",
+          "quote": "sometimes I struggle for ideas of things to do at the weekend",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1556748552",
+          "who": "Lovevery: Baby & Toddler App (App Store)",
+          "date": "2026-10-26",
+          "quote": "14K Ratings; Monthly App Subscription $12.00, Annual App Subscription $107.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Lovevery, BabySparks, Kinedu, Pinterest and Instagram activity accounts, library groups.",
+      "risks": "Lots of free ideas online. Posts are 2013-2014. Seasonal. Must avoid choking hazards for under-3s. Near live new-parent loneliness and screen-time offers, but a different job."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-26",
+    "slug": "easy-goodbye",
+    "name": "Easy Goodbye",
+    "need": "My toddler cries and clings to me every morning at daycare or nursery drop-off, and it breaks my heart to leave.",
+    "headline": "Tears and clinging at nursery drop-off every morning? Build one short, identical goodbye routine, talk tomorrow through at bedtime, and log each drop-off so you can see it fading.",
+    "buyer": "Working parents of children aged about 1-5 at daycare, nursery or preschool, especially after a start, room change or break.",
+    "bullets": [
+      "A short goodbye routine you design once and repeat the same way every day.",
+      "A bedtime 'what happens tomorrow' talk-through and a simple picture calendar of nursery days and home days.",
+      "A 10-second log after each drop-off (how long the tears lasted, what staff said) so you can see the trend."
+    ],
+    "price": "$5/month",
+    "priceUsd": 5,
+    "priceNote": "Or $29 a year.",
+    "reasonPrompt": "How old is your child, and how long has drop-off been hard?",
+    "faq": [
+      {
+        "q": "Is it advice about separation anxiety?",
+        "a": "No. Easy Goodbye is a routine and log tool, not medical or psychological advice. If the distress is severe, lasts many weeks or affects your child at home too, talk to the nursery staff, your health visitor or your child's doctor."
+      },
+      {
+        "q": "Is it linked to a nursery chain?",
+        "a": "No. It's independent and works with any daycare, nursery or preschool."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-26",
+      "summary": "Parents describe children crying hysterically every morning at drop-off, teachers having to peel them off, and how much it hurts to leave.",
+      "wtp": "Good Inside, a parenting support app that covers separation anxiety, has 14K App Store ratings and sells a 3 Month Membership at $84.00 and an Annual Membership at $279.00.",
+      "signals": [
+        {
+          "url": "https://boards.hellobee.com/topic/hysterical-crying-at-drop-off",
+          "who": "Teachermama (Hellobee)",
+          "date": "2016-08-11",
+          "quote": "My son has been crying hysterically every morning for 2 weeks because he doesn",
+          "seen": "opened"
+        },
+        {
+          "url": "https://boards.hellobee.com/topic/hysterical-crying-at-drop-off",
+          "who": "NorCalWayfarer (Hellobee)",
+          "date": "2016-08-11",
+          "quote": "ve been enduring the same thing with my 2 year old who just started preschool 2 days a week last month.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://boards.hellobee.com/topic/3-year-old-crying-at-drop-off",
+          "who": "babycanuck (Hellobee)",
+          "date": "2018-11-05",
+          "quote": "It breaks my heart in the mornings to see him so upset when I leave",
+          "seen": "opened"
+        },
+        {
+          "url": "https://boards.hellobee.com/topic/3-year-old-crying-at-drop-off",
+          "who": "KT326 (Hellobee)",
+          "date": "2018-11-05",
+          "quote": "There would be some mornings the teacher would have to peel him off of me.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://boards.hellobee.com/topic/3-year-old-crying-at-drop-off",
+          "who": "Mrs. Lemon-Lime (Hellobee)",
+          "date": "2018-11-05",
+          "quote": "My LO had a string of bad drop offs and it killed me.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://boards.hellobee.com/topic/what-age-did-crying-at-dropoff-start",
+          "who": "catlady (Hellobee)",
+          "date": "2017-05-25",
+          "quote": "she would physically not let go of my legs and the teachers had to drag her off me every day.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id6463803046",
+          "who": "Good Inside: Parenting (App Store)",
+          "date": "2026-10-26",
+          "quote": "14K Ratings; 3 Month Membership $84.00, Annual Membership $279.00",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Good Inside and other parenting apps, picture books, nursery staff advice.",
+      "risks": "Usually a phase of weeks, so people may cancel quickly. Posts are 2016-2018, all one site (three threads). Must point severe or lasting distress to professionals. Near live coats-on and storm-log, but a different moment."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
