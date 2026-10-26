@@ -17960,5 +17960,82 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "how-to-restart-a-stalled-thesis-after-months-away",
+  "offer": "thesis-thaw",
+  "title": "How to restart a stalled thesis after weeks or months away",
+  "description": "Practical steps to get back into thesis or dissertation writing when you've lost momentum.",
+  "intro": "Many graduate students hit long stretches where the thesis doesn't move. Getting going again is usually about making the next step very small and very clear, not about finding a burst of motivation. This is general advice; if low mood or anxiety is stopping you working, talk to your university's support services or a doctor.",
+  "sections": [
+   {
+    "h": "Take stock without judging",
+    "list": [
+     "Open every file and list what exists: chapters, drafts, notes, data.",
+     "For each chapter, write one line on what 'done' would mean.",
+     "Mark what's finished, what's drafted and what hasn't been started."
+    ]
+   },
+   {
+    "h": "Make the next step tiny",
+    "list": [
+     "Pick one section and one small task, such as 'rewrite the first paragraph of 3.2' or 'list the five sources for this section'.",
+     "Work for a short, fixed time, such as 25 minutes, and stop."
+    ]
+   },
+   {
+    "h": "Leave a note for tomorrow",
+    "list": [
+     "At the end of each session, write down exactly what you'll do next time.",
+     "This makes it much easier to start again, even after a break."
+    ]
+   },
+   {
+    "h": "Re-plan from your deadline",
+    "list": [
+     "Work back from your submission date using the pace you actually manage, not your ideal pace.",
+     "Tell your supervisor where you are and agree the next milestone; most supervisors would rather hear early."
+    ]
+   },
+   {
+    "h": "Get support",
+    "p": [
+     "Writing groups, writing retreats and your university's writing centre can all help. You don't have to restart alone."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "how-to-write-a-weekly-progress-update-for-your-supervisor",
+  "offer": "thesis-thaw",
+  "title": "How to write a weekly progress update for your thesis supervisor",
+  "description": "A short, honest template for keeping your supervisor informed, especially when progress has been slow.",
+  "intro": "A short regular update keeps your supervisor in the loop and makes meetings more useful. It also helps you see your own progress. Keep it brief; one page is plenty.",
+  "sections": [
+   {
+    "h": "What to include",
+    "list": [
+     "What you did this week: sections drafted or revised, reading, analysis.",
+     "Time spent and words written, if you track them.",
+     "What got in the way.",
+     "What you plan to do next week.",
+     "Any questions or decisions you need from your supervisor."
+    ]
+   },
+   {
+    "h": "Be honest about slow weeks",
+    "list": [
+     "If little happened, say so briefly and say what the next small step is.",
+     "Supervisors can help much more when they know early that you're stuck."
+    ]
+   },
+   {
+    "h": "Keep it consistent",
+    "list": [
+     "Send it on the same day each week, even if it's short.",
+     "Keep a copy of every update; together they show your progress over months."
+    ]
+   }
+  ]
  }
 ]

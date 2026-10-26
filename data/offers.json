@@ -40948,6 +40948,104 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-26",
+    "slug": "thesis-thaw",
+    "name": "Thesis Thaw",
+    "need": "My thesis has stalled for weeks or months, I should have finished it already, and I can't get myself to start writing again.",
+    "headline": "Thesis stalled for weeks or months? Map what 'done' means for each chapter, leave yourself a next-step card at the end of every session, and restart without a broken streak.",
+    "buyer": "Adult master's and PhD students (18+), past coursework, whose thesis or dissertation writing has stalled.",
+    "bullets": [
+      "A chapter map with what 'done' means for each section, so the next step is always small and clear.",
+      "25-minute sessions with a 20-second log of minutes, words and what blocked you, plus a next-step card written at the end of each session.",
+      "Restart mode after weeks away (no streaks to lose), a back-planner from your submission date at your real pace, and a one-page weekly summary for your supervisor."
+    ],
+    "price": "$7/month",
+    "priceUsd": 7,
+    "priceNote": "Or $39 a year. For adults 18+.",
+    "reasonPrompt": "What stage is your thesis at, and how long has it been stalled?",
+    "faq": [
+      {
+        "q": "Does it write or edit my thesis?",
+        "a": "No. Thesis Thaw writes and edits nothing; it helps you plan, start and keep track. It's independent of any university and isn't academic, medical or therapy advice. If low mood or anxiety is stopping you working, talk to your university's support services or a doctor."
+      },
+      {
+        "q": "Will my supervisor see it?",
+        "a": "Only if you choose to share the weekly summary. Everything else is private."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-26",
+      "summary": "Graduate students describe being stuck writing their thesis, letting whole days pass without progress, being years into a programme, and feeling unable to finish.",
+      "wtp": "One poster says they have spent over $30,000 on their master's programme. Dissertation accountability coaching is sold at $400 for biweekly 1:1 sessions and $250-500 a month; Focusmate, a general accountability service, charges $8-12 a month.",
+      "signals": [
+        {
+          "url": "https://forum.thegradcafe.com/topic/22940-stuck-writing-masters-thesis",
+          "who": "histok85 (GradCafe)",
+          "date": "2011-07-06",
+          "quote": "I am stuck in the writing process of my masters thesis.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forum.thegradcafe.com/topic/22940-stuck-writing-masters-thesis",
+          "who": "LJK (GradCafe)",
+          "date": "2011-07-06",
+          "quote": "I should have finished my thesis weeks ago and have let whole days go by without making any progress.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forum.thegradcafe.com/topic/14175-in-a-phd-program-havent-handed-in-my-masters-thesis/",
+          "who": "scatterpillar (GradCafe)",
+          "date": "2010-09-21",
+          "quote": "I fully intended to write my thesis, but once I left campus and moved back home I was totally uninspired to work on it.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forum.thegradcafe.com/topic/17875-laziness-and-loss-of-drive/",
+          "who": "Thales (GradCafe)",
+          "date": "2011-02-20",
+          "quote": "I am not motivated to do more than the bare minimum.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forum.thegradcafe.com/topic/17875-laziness-and-loss-of-drive/",
+          "who": "wtncffts (GradCafe)",
+          "date": "2011-02-20",
+          "quote": "I was simply bored and unmotivated to do any more on what seemed like something I could never finish.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forum.thegradcafe.com/topic/22940-stuck-writing-masters-thesis",
+          "who": "histok85 (GradCafe)",
+          "date": "2011-07-06",
+          "quote": "I have spent over $30,000 and tons of time in my masters program.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://becoming-a-doctor.teachable.com/l/coaching/565363/11-dissertation-coaching-monthly-subscription",
+          "who": "Becoming a Doctor dissertation coaching",
+          "date": "2026-10-26",
+          "quote": "Biweekly 1:1 Dissertation Coaching ... $400",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.focusmate.com/pricing",
+          "who": "Focusmate pricing",
+          "date": "2026-10-26",
+          "quote": "$8; $12",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Dissertation coaches, writing groups, Focusmate, Scrivener, general to-do apps.",
+      "risks": "Posts are 2010-2011, all from GradCafe (three threads). Money is human coaching, not apps. The doc side's Mumsnet source was blocked for the code side and the Paperbell page returned 403, so neither is cited here."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
