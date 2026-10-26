@@ -40150,6 +40150,104 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-26",
+    "slug": "half-band",
+    "name": "Half Band",
+    "need": "I have taken IELTS three times and each time my Writing is 6.5, half a band short of what I need, and I don't know what to change before I pay for another test.",
+    "headline": "Stuck half a band short in IELTS Writing? Log every essay against the four public Writing criteria, see which one keeps pulling you down, and only rebook when the ready check says so.",
+    "buyer": "Adults (18+) retaking IELTS for study, work or a visa who keep missing the band they need by 0.5, usually in Writing.",
+    "bullets": [
+      "Record each result by section, and log practice essays rated against the four public Writing criteria.",
+      "A repeat-mistake list and a weekly plan weighted to your weakest criterion.",
+      "A cost list of tests, re-marks and classes so far, and a ready check before you pay to rebook."
+    ],
+    "price": "$8/month",
+    "priceUsd": 8,
+    "priceNote": "Or $25 for 90 days. For adults 18+.",
+    "reasonPrompt": "What band do you need, and what did you get last time?",
+    "faq": [
+      {
+        "q": "Is it official, and will it raise my score?",
+        "a": "No. Half Band is independent and not linked to IELTS, the British Council, IDP or Cambridge. It uses no official questions and gives no official scores, and it can't promise any result."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Adults 18+ preparing to retake the test. It's a planner and log; you still write and check the essays yourself, or with a teacher."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-26",
+      "summary": "Test takers describe getting 6.5 in Writing attempt after attempt, needing 7, and spending months and money on retakes without knowing what to change.",
+      "wtp": "IELTS Test Pro has 439 App Store ratings and sells Pro from $8.99 for 1 month to $35.99 for 12 months; IELTS Success has 194 ratings with a $4.99 Monthly Pass and $32.99 Annual Pass. Posters describe paying for repeated tests, classes and books.",
+      "signals": [
+        {
+          "url": "https://www.ieltsbuddy.com/dont-give-up-on-getting-an-ielts-writing-band-7.html",
+          "who": "Neel (ieltsbuddy)",
+          "date": "2016-09-10",
+          "quote": "In each attempt, I have got overall 7.0 bands, but 6.5 in writing module!",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.ieltsbuddy.com/dont-give-up-on-getting-an-ielts-writing-band-7.html",
+          "who": "kibet (ieltsbuddy)",
+          "date": "2016-09-18",
+          "quote": "For me its the 4th time trying",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.ieltsbuddy.com/dont-give-up-on-getting-an-ielts-writing-band-7.html",
+          "who": "Anonymous (ieltsbuddy)",
+          "date": "2017-02-04",
+          "quote": "I have taken IELTS for 3 times and each time my writing is 6.5.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.ieltsbuddy.com/dont-give-up-on-getting-an-ielts-writing-band-7.html",
+          "who": "Anonymous (ieltsbuddy)",
+          "date": "2021-04-03",
+          "quote": "Guys I am stuck on 6.5 in writing.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.ieltsbuddy.com/how-can-i-get-an-ielts-writing-band-7.html",
+          "who": "jobs (ieltsbuddy)",
+          "date": "2012-11-04",
+          "quote": "I HAVE BEEN TRYING TO GET 7 BAND IN WRITING FOR THE LAST 18 MONTHS.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.ieltsbuddy.com/how-can-i-get-an-ielts-writing-band-7.html",
+          "who": "Anonymous (ieltsbuddy)",
+          "date": "2013-04-30",
+          "quote": "Spent 18 months and 100k.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/app/id1073549959",
+          "who": "IELTS Test Pro (App Store)",
+          "date": "2026-10-26",
+          "quote": "439 Ratings; Pro 1 Months $8.99, Pro 12 Months $35.99",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/-/id1309446740",
+          "who": "IELTS Success (App Store)",
+          "date": "2026-10-26",
+          "quote": "194 Ratings; Monthly Pass $4.99, Annual Pass $32.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "IELTS practice-test apps, prep courses, essay-marking services, tutors.",
+      "risks": "All people-level evidence is from one site (two pages), 2012-2021. Paid apps sell practice tests, not planning, and nobody asked for a planner. Must stay clearly independent of the test owners and promise no score."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
