@@ -44371,6 +44371,125 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-26",
+    "slug": "pop-count",
+    "name": "Pop Count",
+    "need": "I crack my knuckles, neck or back all day without thinking, and I can't stop even though I've been trying for years.",
+    "headline": "Crack your knuckles without thinking? Log each crack or caught urge in one tap, see when and where it happens most, and practise a swap for your worst situations.",
+    "buyer": "Adults (18+) who crack their knuckles or other joints out of habit and want to stop.",
+    "bullets": [
+      "One-tap log of each crack or caught urge, with the joint and the situation.",
+      "A daily pattern view of your worst hours and situations, with nudges only at those times.",
+      "A chosen swap for each situation (fingertip press, pen, stress ball), with a count of swaps used and week-on-week totals."
+    ],
+    "price": "$2.99/month",
+    "priceUsd": 3,
+    "priceNote": "Or $14.99 a year. For adults 18+.",
+    "reasonPrompt": "When do you crack your knuckles most: at a desk, on your phone, or when you're stressed?",
+    "faq": [
+      {
+        "q": "Is this medical advice?",
+        "a": "No. Pop Count is a habit log, not a treatment, and makes no health claims. If a joint is painful, swollen or stiff, see a doctor."
+      },
+      {
+        "q": "Is it linked to any habit app or device?",
+        "a": "No. Pop Count is independent, not affiliated with any habit app, wearable or clinic, and sells no products."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-26",
+      "summary": "People describe cracking their knuckles and other joints without thinking, trying to stop for years, and quitting attempts that made the habit worse.",
+      "wtp": "Days Since, a quit-habit tracker, has 20K App Store ratings and sells monthly plans from $2.99 to $9.99; NailKeeper, for nail biting, sells Pro at $19.99 or $9.99 a year; HabitAware says 50,000+ users trust its habit-awareness bracelet.",
+      "signals": [
+        {
+          "url": "https://scienceforums.net/topic/3458-how-to-stop-cracking-knuckles",
+          "who": "mercyfullfate (scienceforums.net)",
+          "date": "2004-05-08",
+          "quote": "cracking my knuckles for awhile now, and i just cannot stop",
+          "seen": "opened"
+        },
+        {
+          "url": "https://scienceforums.net/topic/3458-how-to-stop-cracking-knuckles",
+          "who": "mercyfullfate (scienceforums.net)",
+          "date": "2004-05-09",
+          "quote": "doing it without thinking",
+          "seen": "opened"
+        },
+        {
+          "url": "https://scienceforums.net/topic/3458-how-to-stop-cracking-knuckles",
+          "who": "fafalone (scienceforums.net)",
+          "date": "2004-05-08",
+          "quote": "been able to stop either",
+          "seen": "opened"
+        },
+        {
+          "url": "https://scienceforums.net/topic/9765-cracking-your-knuckles-or-fingers",
+          "who": "Dak (scienceforums.net)",
+          "date": "2005-04-30",
+          "quote": "iv been trying to break the habbit for a while",
+          "seen": "opened"
+        },
+        {
+          "url": "https://scienceforums.net/topic/9765-cracking-your-knuckles-or-fingers",
+          "who": "Nevermore (scienceforums.net)",
+          "date": "2005-04-30",
+          "quote": "been trying to stop for years",
+          "seen": "opened"
+        },
+        {
+          "url": "https://scienceforums.net/topic/9765-cracking-your-knuckles-or-fingers",
+          "who": "Lance (scienceforums.net)",
+          "date": "2005-05-01",
+          "quote": "Last year I tried to quit and it turned into an even worse habit",
+          "seen": "opened"
+        },
+        {
+          "url": "https://scienceforums.net/topic/9765-cracking-your-knuckles-or-fingers",
+          "who": "ku (scienceforums.net)",
+          "date": "2005-06-11",
+          "quote": "finger-cracking addiction",
+          "seen": "opened"
+        },
+        {
+          "url": "https://scienceforums.net/topic/9765-cracking-your-knuckles-or-fingers",
+          "who": "Legion (scienceforums.net)",
+          "date": "2005-06-14",
+          "quote": "already too late",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/days-since-quit-habit-tracker/id1445348921",
+          "who": "Days Since (App Store)",
+          "date": "2026-10-26",
+          "quote": "20K Ratings; Count Up Club - Monthly $2.99, $5.99; Premium - Monthly $7.99, $9.99",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/nailkeeper-stop-biting-nails/id1579004361",
+          "who": "NailKeeper (App Store)",
+          "date": "2026-10-26",
+          "quote": "274 Ratings; NailKeeper Pro $19.99; NailKeeper Pro Annual $9.99",
+          "seen": "opened"
+        },
+        {
+          "url": "https://habitaware.com",
+          "who": "HabitAware",
+          "date": "2026-10-26",
+          "quote": "50,000+ Users Trust HabitAware",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "General habit trackers, quit-habit counters, nail-biting apps, habit-awareness bracelets.",
+      "risks": "Paid products are adjacent (nail biting, general quit habits); none names knuckle cracking. Forum posts are from 2004-2005 on one site. Nobody said they'd pay. Near live nail-pause, but for joint cracking. Must make no health claims."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
