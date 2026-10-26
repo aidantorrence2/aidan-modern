@@ -20485,5 +20485,82 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "why-does-my-home-brew-smell-like-eggs",
+  "offer": "brew-rescue",
+  "title": "Why does my home brew smell like eggs?",
+  "description": "Common reasons a home brew smells of eggs or sulphur during fermentation, and what home brewers usually do about it. For adults 18+.",
+  "intro": "An eggy or sulphur smell from a fermenting home brew is a common worry. Some yeasts give off sulphur smells while they work, and these often fade with time. This guide is general information for adults 18+, not a safety test: if a batch looks or smells badly wrong, or you're in doubt, pour it away.",
+  "sections": [
+   {
+    "h": "Common causes",
+    "list": [
+     "Some yeast strains, especially lager yeasts, give off sulphur smells during fermentation.",
+     "Fermenting at the wrong temperature for the yeast can make smells stronger.",
+     "Stressed yeast, for example from too little yeast or a very sugary brew."
+    ]
+   },
+   {
+    "h": "What home brewers usually do",
+    "list": [
+     "Give it time: sulphur smells often fade over the following days or weeks of fermentation and conditioning.",
+     "Keep the temperature steady and within the range on the yeast packet.",
+     "Wait until fermentation has finished before bottling: gravity readings that stay the same over a few days."
+    ]
+   },
+   {
+    "h": "Signs something else is wrong",
+    "list": [
+     "A thick film, fuzzy mould or strong vinegar smell can mean the batch has picked up an infection.",
+     "If in doubt, pour it away and clean and sanitise everything before the next brew."
+    ]
+   },
+   {
+    "h": "Keep a note",
+    "p": [
+     "Write down the yeast, temperature and gravity readings for each batch, so you can see what changed if the smell comes back."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "home-brew-stuck-at-1015-is-fermentation-finished",
+  "offer": "brew-rescue",
+  "title": "Home brew stuck at 1.015: is fermentation finished?",
+  "description": "How to tell if a home brew has finished fermenting or is stuck, and common reasons gravity stops dropping. For adults 18+.",
+  "intro": "If your hydrometer reading hasn't moved for days, your brew has either finished or stalled. Bottling too early can over-carbonate bottles and make them dangerous to handle, so it's worth checking. This guide is general information for adults 18+.",
+  "sections": [
+   {
+    "h": "Finished or stuck?",
+    "list": [
+     "Take readings two or three days apart. If they're the same, fermentation has stopped.",
+     "Compare with the final gravity the kit or recipe expects. Some kits, especially ones with lots of malt extract, finish around 1.012 to 1.016.",
+     "If it stopped well above the expected figure, it may be stuck."
+    ]
+   },
+   {
+    "h": "Common reasons a brew stalls",
+    "list": [
+     "The room is too cold for the yeast.",
+     "Too little yeast, or old yeast.",
+     "The brew has lots of sugars the yeast can't ferment."
+    ]
+   },
+   {
+    "h": "What home brewers usually try",
+    "list": [
+     "Move the fermenter somewhere a little warmer, within the yeast's range.",
+     "Gently swirl the fermenter to get settled yeast back into the brew.",
+     "Check your hydrometer in plain water: it should read 1.000."
+    ]
+   },
+   {
+    "h": "Before you bottle",
+    "p": [
+     "Only bottle once readings are stable and close to the expected final gravity, and use the amount of priming sugar the kit suggests. Too much sugar or bottling too early can over-pressurise bottles."
+    ]
+   }
+  ]
  }
 ]

@@ -44665,6 +44665,90 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-26",
+    "slug": "brew-rescue",
+    "name": "Brew Rescue",
+    "need": "My home brew has gone wrong (it smells eggy or vinegary, tastes odd, or has stuck at the wrong gravity) and I don't know what caused it or what to do next.",
+    "headline": "Home brew smells eggy, tastes like vinegar or stuck at 1.015? Log each batch, check the usual causes in plain steps, and keep notes so the next brew comes out right.",
+    "buyer": "Adults (18+) who brew beer or cider at home from kits or simple recipes and have had a batch go wrong.",
+    "bullets": [
+      "A plain fault checklist for common problems: eggy smells, vinegar, medicinal tastes, stuck fermentation and flat bottles.",
+      "A simple batch log: kit or recipe, temperatures, gravity readings, cleaning and dates.",
+      "Notes on what you changed and how it turned out, so you can repeat good batches."
+    ],
+    "price": "$4/month",
+    "priceUsd": 4,
+    "priceNote": "Or $30 a year. For adults 18+ only.",
+    "reasonPrompt": "What went wrong with your last batch?",
+    "faq": [
+      {
+        "q": "Will it tell me a batch is safe to drink?",
+        "a": "No. Brew Rescue is a fault checklist and log for flavour and quality problems, not a safety test. If a batch looks or smells badly wrong, or you're in doubt, pour it away. For adults 18+ only; drink responsibly."
+      },
+      {
+        "q": "Is it linked to a kit maker or brewing app?",
+        "a": "No. Brew Rescue is independent, not affiliated with any kit brand, shop, forum or brewing app, and sells no ingredients or equipment."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-26",
+      "summary": "Home brewers describe kit brews going wrong, medicinal or vinegar tastes, messy batches and fermentation stuck at the same gravity for a week.",
+      "wtp": "Brewfather, a brew logging and recipe app, has 755 App Store ratings and sells Premium at $2.99 a month or $29.99 a year, and Premium Plus at $4.99 a month or $49.99 a year.",
+      "signals": [
+        {
+          "url": "https://www.jimsbeerkit.co.uk/forum/viewtopic.php?t=83728",
+          "who": "Daz1737 (Jim's Beer Kit forum)",
+          "date": "2022-04-03",
+          "quote": "what might have gone wrong with my latest kit brew",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.jimsbeerkit.co.uk/forum/viewtopic.php?t=83294",
+          "who": "drjim (Jim's Beer Kit forum)",
+          "date": "2021-05-28",
+          "quote": "It tastes of TCP",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.jimsbeerkit.co.uk/forum/viewtopic.php?t=82847",
+          "who": "sparkybrew (Jim's Beer Kit forum)",
+          "date": "2020-10-07",
+          "quote": "smells like vinegar (and tastes like it having tried the sample)",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.jimsbeerkit.co.uk/forum/viewtopic.php?t=83072",
+          "who": "rowyourboat (Jim's Beer Kit forum)",
+          "date": "2021-02-02",
+          "quote": "had a bit of a mess on the last brew",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.jimsbeerkit.co.uk/forum/viewtopic.php?t=83266",
+          "who": "Bibinimis (Jim's Beer Kit forum)",
+          "date": "2021-05-11",
+          "quote": "currently at 1015 which is the same as it was 7 days ago",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/brewfather/id1488585822",
+          "who": "Brewfather (App Store)",
+          "date": "2026-10-26",
+          "quote": "755 Ratings; Premium $2.99, $29.99; Premium Plus $4.99, $49.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Brewfather, BeerSmith, free forum help and brewing books.",
+      "risks": "All forum evidence is from one UK forum (five threads, 2020-2022). Strong free help exists. Alcohol topic: 18+ only and must never say a batch is safe to drink. Same log-and-fix shape as live rise-check and shot-dial, but a different hobby."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
