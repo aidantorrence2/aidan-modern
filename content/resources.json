@@ -17734,5 +17734,88 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "child-understands-your-language-but-answers-in-english",
+  "offer": "home-tongue",
+  "title": "Your child understands your language but answers in English? What helps",
+  "description": "Gentle, practical ways to get more replies in your family's language, without turning it into a fight.",
+  "intro": "It's very common for children growing up with two languages to understand the home language but reply in the language of school and friends. It usually means they need more reasons and chances to use it, not that the language is lost.",
+  "sections": [
+   {
+    "h": "Increase how much they hear",
+    "list": [
+     "Use the language as much as you can at home, in everyday routines, not just for instructions.",
+     "Add books, songs, audiobooks and shows in your language.",
+     "Time with relatives and other children who speak it counts a lot."
+    ]
+   },
+   {
+    "h": "Create a real need to use it",
+    "list": [
+     "Video calls with grandparents or relatives who don't speak the majority language well.",
+     "A daily routine, game or time of day that happens only in your language.",
+     "Trips or playdates where your language is the one everyone uses."
+    ]
+   },
+   {
+    "h": "Respond gently",
+    "list": [
+     "Repeat back what they said in your language, then carry on the conversation.",
+     "Try 'How do you say that in ...?' as a game, not a test.",
+     "Praise attempts; avoid making it a punishment or battle."
+    ]
+   },
+   {
+    "h": "Keep track",
+    "list": [
+     "Note roughly how many of their replies are in your language each week. Small increases over months are real progress."
+    ]
+   },
+   {
+    "h": "If you're worried about speech",
+    "p": [
+     "Growing up with two languages doesn't cause speech problems. If you're concerned about how your child speaks or understands in any language, talk to a speech and language therapist or your child's doctor."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "car-warning-light-came-on-what-to-do",
+  "offer": "dash-decode",
+  "title": "A warning light came on in your car: what to do",
+  "description": "What dashboard warning light colours usually mean, which ones mean stop, and how to get it checked without panic.",
+  "intro": "A warning light can be alarming if you don't know cars. Most cars use a colour system, and your car's handbook explains each symbol. This is general information; always follow your handbook and, if in doubt, stop safely and get help.",
+  "sections": [
+   {
+    "h": "Red usually means stop",
+    "list": [
+     "A red warning light usually means a serious problem. Stop as soon as it's safe to do so, switch off the engine if the handbook says to, and get help.",
+     "Examples include oil pressure, engine temperature, brake system, and battery or charging warnings."
+    ]
+   },
+   {
+    "h": "Amber usually means get it checked",
+    "list": [
+     "An amber or yellow light usually means something needs checking soon.",
+     "A steady engine management (check engine) light means get it checked as soon as you can.",
+     "A flashing engine management light can mean a more serious fault. Reduce speed and get it checked straight away; stop if the car feels wrong."
+    ]
+   },
+   {
+    "h": "Green and blue are information",
+    "list": [
+     "These usually just show that something is on, such as headlights or cruise control."
+    ]
+   },
+   {
+    "h": "Getting it checked",
+    "list": [
+     "Note the symbol, its colour, whether it's steady or flashing, and what the car was doing when it came on.",
+     "Take a photo of the dashboard if it's safe.",
+     "Many garages can read the fault code for you; ask what the code means and for a written quote before agreeing to repairs."
+    ]
+   }
+  ]
  }
 ]

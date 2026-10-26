@@ -40500,6 +40500,188 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-26",
+    "slug": "home-tongue",
+    "name": "Home Tongue",
+    "need": "I speak my own language to my child every day and they understand it, but they only ever answer me in English or the local language, and I'm afraid they're going to lose it.",
+    "headline": "Your child understands your language but always answers in another one? Log a minute a day, see how many replies come back in your language, and get one small, playful idea to try each week.",
+    "buyer": "Parents raising children aged about 2-12 where the family's own language is not the language of school or the wider community.",
+    "bullets": [
+      "A one-minute daily log: how much your language was used today, and how many of your child's replies came back in it.",
+      "A weekly idea to try, such as games, songs, video calls with relatives or a 'language-only' routine, chosen for your child's age, with no battles.",
+      "A weekly chart of replies in your language, so you can see small gains over months."
+    ],
+    "price": "$6/month",
+    "priceUsd": 6,
+    "priceNote": "Or $48 a year.",
+    "reasonPrompt": "Which language do you speak at home, and how old is your child?",
+    "faq": [
+      {
+        "q": "Does it teach the language?",
+        "a": "No. It works with any language: it helps you, the parent, use it more and keep track. It isn't a language course."
+      },
+      {
+        "q": "What if I'm worried about my child's speech?",
+        "a": "Growing up with two languages doesn't cause speech problems, but if you're worried about how your child speaks or understands in any language, talk to a speech and language therapist or your child's doctor. Home Tongue is independent and isn't professional advice."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-26",
+      "summary": "Parents describe children who understand the home language well but reply only in the majority language, and worry about the language being lost.",
+      "wtp": "Parents pay for children's language apps: Studycat (kids' languages) has 17K App Store ratings and sells a Monthly Subscription at $14.99 and an Annual Subscription at $59.99.",
+      "signals": [
+        {
+          "url": "https://bilingualmonkeys.com/when-your-bilingual-child-wont-speak-your-language/",
+          "who": "Umut (Bilingual Monkeys)",
+          "date": "2015-04-14",
+          "quote": "He still understands 90% of what I say but he responds in English.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://bilingualmonkeys.com/when-your-bilingual-child-wont-speak-your-language/",
+          "who": "Guta (Bilingual Monkeys)",
+          "date": "2015-01-19",
+          "quote": "He understands everything I say to him but replies in English.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://bilingualmonkeys.com/when-your-bilingual-child-wont-speak-your-language/",
+          "who": "Tam (Bilingual Monkeys)",
+          "date": "2013-07-29",
+          "quote": "However, she replies only in German.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://bilingualmonkeys.com/when-your-bilingual-child-wont-speak-your-language/",
+          "who": "Maria (Bilingual Monkeys)",
+          "date": "2013-08-30",
+          "quote": "but even then he answers in his dominant language.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://multilingualparenting.com/qa-convince-3-year-old-answer-minority-language/",
+          "who": "Emma (Multilingual Parenting)",
+          "date": "2024-07-15",
+          "quote": "still refuses to speak English with me and we had another fight this morning about it.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://multilingualparenting.com/motivate-child-minority-language/",
+          "who": "Annie (Multilingual Parenting)",
+          "date": "2016-01-27",
+          "quote": "my nephew refuses to speak Vietnamese even though his parents and I all speak Vietnamese to him",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id661574705",
+          "who": "Studycat (App Store)",
+          "date": "2026-10-26",
+          "quote": "17K Ratings; Monthly Subscription $14.99, Annual Subscription $59.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Kids' language apps (Studycat, Dinolingo), online tutors, weekend language schools, bilingual parenting blogs and books.",
+      "risks": "Most posts are 2013-2016, from two parenting blogs. Money is for kids' language apps, not a parent coach. Must point speech worries to a professional."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-26",
+    "slug": "dash-decode",
+    "name": "Dash Decode",
+    "need": "A warning light just came on in my car, I have no idea what it means or whether I should keep driving, and I don't want to get ripped off finding out.",
+    "headline": "A warning light just came on? Snap it, see what it usually means from your car's handbook symbols, whether it's a stop-now or get-it-checked light, and what to ask the garage.",
+    "buyer": "Drivers without mechanical knowledge who panic when a dashboard warning light comes on.",
+    "bullets": [
+      "Photo or pick the symbol and colour, and get the usual meaning in plain English.",
+      "A clear next step by colour and type: red or flashing lights say stop safely and get help; amber says book a check.",
+      "What to tell the garage, the questions to ask, and a log of every light, date and fix for your car."
+    ],
+    "price": "$4/month",
+    "priceUsd": 4,
+    "priceNote": "Or $36 a year.",
+    "reasonPrompt": "What car do you drive, and which light came on?",
+    "faq": [
+      {
+        "q": "Will it tell me it's safe to keep driving?",
+        "a": "No. It never says a light is safe. Red warning lights, a flashing engine light, or any oil, brake, temperature or steering warning mean stop as soon as it's safe and get help. Always check your car's handbook; Dash Decode can't diagnose a fault."
+      },
+      {
+        "q": "Do I need a plug-in scanner?",
+        "a": "No. It works from the symbol you see. It's independent and not linked to any garage, breakdown service or car maker."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-26",
+      "summary": "Drivers describe a warning light coming on, having no idea what it means or whether it's OK to drive, and panicking.",
+      "wtp": "FIXD, a car diagnostics app, has 26K App Store ratings and sells Monthly FIXD Premium at $12.99 and Yearly at $99.99; one reviewer says they paid a dealer to explain a light.",
+      "signals": [
+        {
+          "url": "https://forum.mx5oc.co.uk/t/yellow-engine-light-mk3/20471",
+          "who": "falkster (MX-5 Owners Club forum)",
+          "date": "2009-03-20",
+          "quote": "Any ideas on what it might be and if it will be ok to drive to get it sorted",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.volvoforums.org.uk/forum/technical-topics/s40-v40-96-04-general/61636-orange-light",
+          "who": "mahokie (Volvo Owners Club forum)",
+          "date": "2009-06-19",
+          "quote": "the orange light on the right of the dash is coming back on and staying on, what is it?",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/4894940/engine-diagnostic-management-warning-light",
+          "who": "pineapple (MoneySavingExpert)",
+          "date": "2014-02-12",
+          "quote": "the amber engine warning light came on (2004 Peugeot 206) and started beeping a mile down the road this morning",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=3/id=957168651/sortby=mostrecent/json",
+          "who": "Iamthekat (FIXD App Store review)",
+          "date": "2026-06-16",
+          "quote": "When my check engine light came on and I had no clue what was going on",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=8/id=957168651/sortby=mostrecent/json",
+          "who": "Artcalibur (FIXD App Store review)",
+          "date": "2025-08-15",
+          "quote": "When a check engine light comes on most everyone without any mechanical ability goes into panic mode",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=3/id=957168651/sortby=mostrecent/json",
+          "who": "Avanoy (FIXD App Store review)",
+          "date": "2026-06-28",
+          "quote": "Instead, paid to have Toyota tell me that.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id957168651",
+          "who": "FIXD (App Store)",
+          "date": "2026-10-26",
+          "quote": "26K Ratings; Monthly FIXD Premium $12.99, Yearly FIXD Premium $99.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "FIXD, BlueDriver, Car Scanner and other plug-in scanner apps; car handbooks; free code reads at parts shops; breakdown services.",
+      "risks": "Safety: must never say a light is safe and must always say stop for red or flashing lights. Forum posts are old (2009-2014); recent voices are scanner-app reviewers. Near live car offers (fair-quote, service-mile), but a different moment."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
