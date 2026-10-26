@@ -42502,6 +42502,188 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-26",
+    "slug": "chart-self-read",
+    "name": "Chart Self-Read",
+    "need": "I've got my birth chart, but I can't read it myself: I know my Sun sign, then the houses, aspects and symbols lose me, and every source says something different.",
+    "headline": "Got your birth chart but can't read it? Learn it one piece at a time from your own chart: the symbols, then signs, houses and aspects, in short daily lessons from one consistent approach.",
+    "buyer": "Adult hobby astrology fans who want to read their own and their friends' charts instead of only reading horoscopes.",
+    "bullets": [
+      "Enter your birth details once; short lessons use your own chart, starting with the symbols and building up.",
+      "Signs, then houses, then aspects, explained from one consistent approach so sources stop contradicting each other.",
+      "Practice mode with friends' charts, and a quick quiz to check you've got each piece."
+    ],
+    "price": "$6/month",
+    "priceUsd": 6,
+    "priceNote": "Or $48 a year.",
+    "reasonPrompt": "How long have you been into astrology, and what loses you in your chart?",
+    "faq": [
+      {
+        "q": "Does it make predictions?",
+        "a": "No. Chart Self-Read is for learning astrology as a hobby and for reflection. It makes no predictions and gives no advice about health, money, relationships or any decision."
+      },
+      {
+        "q": "Is it linked to an astrology app or astrologer?",
+        "a": "No. It's independent and teaches one clearly stated approach."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-26",
+      "summary": "Astrology fans describe not knowing how to read beyond the basics of their chart, finding patterns hard to see, and getting more confused the more they read.",
+      "wtp": "TimePassages has 44K App Store ratings and sells Pro at $7.99 a month or $59.99 a year.",
+      "signals": [
+        {
+          "url": "https://astrologyweekly.com/threads/can-someone-explain-the-houses-to-me.35277/",
+          "who": "Nikki99 (Astrology Weekly)",
+          "date": "2011-04-14",
+          "quote": "how to decipher the chart below the basic chart",
+          "seen": "opened"
+        },
+        {
+          "url": "https://astrologyweekly.com/threads/could-someone-explain-to-me-my-chart.40504/",
+          "who": "J_123 (Astrology Weekly)",
+          "date": "2011-09-14",
+          "quote": "i would like to know what my chart is supposed to mean",
+          "seen": "opened"
+        },
+        {
+          "url": "https://astrologyweekly.com/threads/how-to-graduate-from-astrology-101.57956/",
+          "who": "FarEastUranus (Astrology Weekly)",
+          "date": "2012-12-09",
+          "quote": "what I find the most difficult is to discern patterns",
+          "seen": "opened"
+        },
+        {
+          "url": "https://astrologyweekly.com/threads/new-to-astrology.125198/",
+          "who": "Criterion (Astrology Weekly)",
+          "date": "2019-03-16",
+          "quote": "I am more confused than having found any answers",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=488946918/sortby=mostrecent/json",
+          "who": "J mirror (TimePassages App Store review)",
+          "date": "2026-09-06",
+          "quote": "The learning curve is a bit steep for a newbie.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=2/id=488946918/sortby=mostrecent/json",
+          "who": "LAMPinAlaska (TimePassages App Store review)",
+          "date": "2026-08-05",
+          "quote": "I want to understand astrology as it applies to me and my family and friends.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id488946918",
+          "who": "TimePassages Astrology (App Store)",
+          "date": "2026-10-26",
+          "quote": "44K Ratings; TimePassages Pro Monthly $7.99, Annual $59.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "TimePassages, CHANI, Co-Star, free chart sites, astrology books.",
+      "risks": "Must be framed as a hobby with no predictions. Interpretations differ between schools, so it must commit to one. Forum evidence is 2011-2019. Near live card-sense (tarot), but a different subject."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-26",
+    "slug": "new-method-maths",
+    "name": "New Method Maths",
+    "need": "My child's maths homework uses methods I was never taught, so I can't help them, or I confuse them by showing my old way.",
+    "headline": "Child's maths homework uses methods you never learned? See each school method explained for you, the parent, step by step, so you can coach them their way without giving the answer.",
+    "buyer": "Parents of children aged about 5-12 who help with maths homework and get stuck on the method rather than the arithmetic.",
+    "bullets": [
+      "Pick the method from the homework (number bonds, arrays, partitioning, grid method, column or bus-stop) and see it explained in plain English for adults.",
+      "Coaching prompts that guide your child without giving away the answer.",
+      "A side-by-side of the new method and the way you learned it, so you can see why they match."
+    ],
+    "price": "$6/month",
+    "priceUsd": 6,
+    "priceNote": "Or $49 a year for the whole household.",
+    "reasonPrompt": "What year is your child in, and which method stumped you?",
+    "faq": [
+      {
+        "q": "Does it do the homework?",
+        "a": "No. It explains methods to parents so you can help your child work it out themselves. It doesn't produce answers to hand in."
+      },
+      {
+        "q": "Is it linked to a school or curriculum publisher?",
+        "a": "No. It's independent. Schools vary, so check with your child's teacher if a method looks different."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-26",
+      "summary": "Parents describe being stumped by their children's maths homework, having to stop helping, and wanting better ways to explain things.",
+      "wtp": "Photomath has 733K App Store ratings and sells Photomath Plus at $9.99; a parent reviewer says they paid for the subscription to help their child.",
+      "signals": [
+        {
+          "url": "https://boards.straightdope.com/t/687723",
+          "who": "Terr (Straight Dope)",
+          "date": "2014-05-05",
+          "quote": "My fifth grader just came home with math homework that stumped me.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://boards.straightdope.com/t/558496",
+          "who": "WhyNot (Straight Dope)",
+          "date": "2010-10-27",
+          "quote": "I had to sit out helping with math homework at that point.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://boards.straightdope.com/t/279993",
+          "who": "cher3 (Straight Dope)",
+          "date": "2004-12-15",
+          "quote": "Last night my daughter brought home a math assignment that sort of stumped us.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://boards.straightdope.com/t/735899",
+          "who": "2sense (Straight Dope)",
+          "date": "2015-10-28",
+          "quote": "frustrating to not be able to do your child",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=9/id=919087726/sortby=mostrecent/json",
+          "who": "foofdee (Photomath App Store review)",
+          "date": "2025-08-24",
+          "quote": "has no idea how to do math trying assist my child",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=2/id=919087726/sortby=mostrecent/json",
+          "who": "Dessthemess (Photomath App Store review)",
+          "date": "2026-04-26",
+          "quote": "to find better ways to explain things to my kid",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id919087726",
+          "who": "Photomath (App Store)",
+          "date": "2026-10-26",
+          "quote": "733K Ratings; Photomath Plus $9.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Photomath, Mathway, Khan Academy, YouTube method videos, AI chatbots.",
+      "risks": "Forum evidence is 2004-2015. Strong free substitutes. Must not become an answer machine. Methods vary by country and school. Near live homework-truce (nightly battles), but a different need."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

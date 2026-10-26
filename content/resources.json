@@ -18984,5 +18984,90 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "how-to-read-your-birth-chart-the-basics",
+  "offer": "chart-self-read",
+  "title": "How to read your birth chart: the basics",
+  "description": "A plain-English introduction to the parts of a birth chart, for people who enjoy astrology as a hobby.",
+  "intro": "A birth chart can look like a wheel of confusing symbols. It's easier when you learn it in layers. Astrology is a hobby and a tool for reflection; this guide makes no predictions.",
+  "sections": [
+   {
+    "h": "The four building blocks",
+    "list": [
+     "Planets: the Sun, Moon and planets, each traditionally linked with a different area of life.",
+     "Signs: the twelve zodiac signs, describing the style in which each planet is said to express itself.",
+     "Houses: twelve sections of the chart, each linked with areas such as home, work or relationships.",
+     "Aspects: the angles between planets, shown as lines across the middle of the chart."
+    ]
+   },
+   {
+    "h": "Start with three placements",
+    "list": [
+     "Your Sun sign, Moon sign and rising sign (Ascendant) are the usual starting points.",
+     "Read about each one before adding anything else."
+    ]
+   },
+   {
+    "h": "Then add houses",
+    "list": [
+     "Look at which house each planet sits in.",
+     "Learn the houses one or two at a time rather than all twelve at once."
+    ]
+   },
+   {
+    "h": "Pick one approach",
+    "list": [
+     "Modern Western, traditional and Vedic astrology interpret charts differently, which is why sources can disagree.",
+     "Choose one approach while you learn so the pieces fit together."
+    ]
+   },
+   {
+    "h": "Keep it in perspective",
+    "p": [
+     "Enjoy astrology as a hobby and for reflection. Don't use it to make decisions about health, money or relationships."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "how-to-help-with-maths-homework-when-the-methods-are-new-to-you",
+  "offer": "new-method-maths",
+  "title": "How to help with maths homework when the methods are new to you",
+  "description": "Common primary school maths methods explained for parents, and how to help without confusing your child.",
+  "intro": "Many parents find their child's maths homework uses methods they were never taught. The maths is the same; the methods are designed to show why it works. Here are some common ones, and how to help.",
+  "sections": [
+   {
+    "h": "Common methods you might see",
+    "list": [
+     "Number bonds: pairs of numbers that make a total, such as 7 and 3 making 10.",
+     "Partitioning: splitting numbers into tens and ones, such as 47 = 40 + 7, to add or subtract.",
+     "Arrays: rows and columns of dots or objects that show multiplication.",
+     "Grid method: splitting numbers into tens and ones in a grid to multiply, then adding the parts.",
+     "Column methods and short division ('bus stop'): written methods, usually taught after the ones above."
+    ]
+   },
+   {
+    "h": "How to help",
+    "list": [
+     "Ask your child to explain the method to you first; teaching it back helps them too.",
+     "Look at the worked example in the homework or ask the teacher for the school's calculation guide.",
+     "If you show your own method, say it's another way, and let them use the school's method for the homework."
+    ]
+   },
+   {
+    "h": "Coach, don't solve",
+    "list": [
+     "Ask questions like 'what's the first step?' or 'how could you split that number?'",
+     "If they're stuck, try a smaller version of the same problem together."
+    ]
+   },
+   {
+    "h": "Talk to the school",
+    "p": [
+     "Many schools publish guides or run maths evenings for parents. Teachers would usually rather know if homework is causing difficulty."
+    ]
+   }
+  ]
  }
 ]
