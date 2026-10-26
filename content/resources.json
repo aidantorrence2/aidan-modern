@@ -19811,5 +19811,88 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "tight-flight-connection-how-to-make-it-and-what-if-you-miss-it",
+  "offer": "gate-margin",
+  "title": "Tight flight connection? How to make it, and what to do if you miss it",
+  "description": "Practical steps for short layovers, and what usually happens if you miss a connection.",
+  "intro": "A short connection can be fine or very stressful depending on the airport, terminals and checks involved. A little preparation helps a lot. This is general information, not legal advice; check your airline's and ticket's terms.",
+  "sections": [
+   {
+    "h": "Before you fly",
+    "list": [
+     "Check whether both flights are on one booking or separate tickets; airlines usually rebook missed connections on one booking, but not on separate tickets.",
+     "Find out whether you'll change terminals, pass security again, go through passport control or collect bags.",
+     "Look at a map of the connecting airport."
+    ]
+   },
+   {
+    "h": "On the plane",
+    "list": [
+     "Tell the crew you have a tight connection; sometimes they can help.",
+     "Sit near the front if you can, and keep your bag and documents ready."
+    ]
+   },
+   {
+    "h": "After landing",
+    "list": [
+     "Follow the 'connections' or 'transfers' signs.",
+     "Check the departures screens for your gate, as it may have changed."
+    ]
+   },
+   {
+    "h": "If you miss it",
+    "list": [
+     "On one booking, go to the airline's transfer or service desk for rebooking.",
+     "On separate tickets, contact the airline for your next flight as soon as possible and check what your ticket allows.",
+     "Keep receipts and boarding passes in case you can claim later."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "cutting-machine-still-in-the-box-your-first-project-step-by-step",
+  "offer": "blade-start",
+  "title": "Craft cutting machine still in the box? Your first project, step by step",
+  "description": "A simple path from unboxing a home craft cutting machine to your first finished project.",
+  "intro": "Home cutting machines can feel overwhelming at first. The quickest way in is to skip the big plans and do one small, simple project from start to finish. This guide is general and not affiliated with any machine maker.",
+  "sections": [
+   {
+    "h": "Set up",
+    "list": [
+     "Unbox the machine, connect it and install the maker's design software or app.",
+     "Follow the setup steps until the machine is recognised and updated."
+    ]
+   },
+   {
+    "h": "Do a test cut",
+    "list": [
+     "Most software includes a test shape; cut it on the recommended material using the right mat.",
+     "This shows the blade, mat and settings are working before you use good material."
+    ]
+   },
+   {
+    "h": "Make a first vinyl decal",
+    "list": [
+     "Choose a simple shape or word, size it, and cut it on adhesive vinyl.",
+     "Weed away the parts you don't want, use transfer tape, and stick it on a mug, jar or notebook."
+    ]
+   },
+   {
+    "h": "Make a first card",
+    "list": [
+     "Try a simple card with a cut-out shape or a short word.",
+     "Keep the design simple until you're comfortable."
+    ]
+   },
+   {
+    "h": "When something goes wrong",
+    "list": [
+     "If the cut doesn't go through, check the material setting, blade and mat.",
+     "If material slips, check the mat is sticky enough and the material is pressed down well."
+    ]
+   }
+  ]
  }
 ]

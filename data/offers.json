@@ -43650,6 +43650,174 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-26",
+    "slug": "gate-margin",
+    "name": "Gate Margin",
+    "need": "I've booked a flight with a short connection and I don't know whether I'll actually make it, or what to do if I don't.",
+    "headline": "Booked a tight connection and worried you'll miss it? Check how realistic it is at that airport, follow the steps from landing to gate, and know what to do if you miss it.",
+    "buyer": "Adult leisure travellers (18+) with a short layover, especially first-time or nervous connectors and people on separate tickets.",
+    "bullets": [
+      "Enter your flights and get a plain check of the connection: terminals, whether you'll need to pass security, passport control or collect bags.",
+      "A step-by-step route from your arrival gate to your next flight, with what to do on board to save time.",
+      "A missed-connection plan: what usually happens on one ticket versus separate tickets, and who to talk to first."
+    ],
+    "price": "$4/month",
+    "priceUsd": 4,
+    "priceNote": "Or $29 a year. For adults 18+.",
+    "reasonPrompt": "Which airport is your connection at, and how long is it?",
+    "faq": [
+      {
+        "q": "Can it guarantee I'll make my flight?",
+        "a": "No. Delays and queues vary. Gate Margin gives a realistic picture and a plan; it isn't legal advice about your rights, so check your airline's and ticket's terms."
+      },
+      {
+        "q": "Is it linked to an airline or booking site?",
+        "a": "No. It's independent and sells no flights or insurance."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-26",
+      "summary": "Travellers describe tight connections they're unsure they can make, worrying an hour isn't enough, and asking what happens if they miss the connection.",
+      "wtp": "Flighty, a flight tracker with 159K App Store ratings, sells its Connection Assistant as part of Flighty Pro at $59.99 a year.",
+      "signals": [
+        {
+          "url": "https://api.stackexchange.com/2.3/questions/184116?site=travel&filter=withbody",
+          "who": "Traveller (Travel Stack Exchange)",
+          "date": "2023-10-13",
+          "quote": "is it really feasible to deplane, clear security and get to the gate before it closes?",
+          "seen": "opened"
+        },
+        {
+          "url": "https://api.stackexchange.com/2.3/questions/95453?site=travel&filter=withbody",
+          "who": "Anomaly (Travel Stack Exchange)",
+          "date": "2017-06-18",
+          "quote": "Is 2 hours enough to do everything I need to do?",
+          "seen": "opened"
+        },
+        {
+          "url": "https://api.stackexchange.com/2.3/questions/50082?site=travel&filter=withbody",
+          "who": "Aleks G (Travel Stack Exchange)",
+          "date": "2015-06-25",
+          "quote": "concerned that 1 hour may not be enough",
+          "seen": "opened"
+        },
+        {
+          "url": "https://api.stackexchange.com/2.3/questions/176910?site=travel&filter=withbody",
+          "who": "David Barishev (Travel Stack Exchange)",
+          "date": "2022-10-14",
+          "quote": "with typical delays and unexpected weather delays it might be not enough",
+          "seen": "opened"
+        },
+        {
+          "url": "https://api.stackexchange.com/2.3/questions/175787?site=travel&filter=withbody",
+          "who": "Bernard (Travel Stack Exchange)",
+          "date": "2022-08-20",
+          "quote": "My transit time at NRT is exactly one hour, which is tight",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1358823008",
+          "who": "Flighty (App Store)",
+          "date": "2026-10-26",
+          "quote": "159K Ratings; Pro Annual Savings $59.99; Connection Assistant is available for Flighty Pro users.",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Flighty Pro, TripIt Pro, airline apps, airport minimum connection times, Q&A sites.",
+      "risks": "Flighty already sells this as a paid feature. Good connection-time data is hard to get. Must avoid anything that reads as legal advice. All evidence is one site (five questions, read via its public API)."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-26",
+    "slug": "blade-start",
+    "name": "Blade Start",
+    "need": "I got a cutting machine for crafts and it's been sitting in the box for months because the machine and the design software overwhelm me, and I don't know how to make my first project.",
+    "headline": "Craft cutting machine still in the box? Go from setup to your first test cut, first vinyl decal and first card, one short step at a time, with a fix list for wherever you get stuck.",
+    "buyer": "Adult hobby crafters (18+) who own or have been given a home craft cutting machine and haven't finished a first project.",
+    "bullets": [
+      "Pick your machine model and get a short first-projects ladder: setup, test cut, first vinyl decal, first card.",
+      "Each step in plain English with what you'll need, so you're never facing a long video.",
+      "A 'stuck on this step' fix list for common problems like mats, blades, settings and weeding."
+    ],
+    "price": "$4/month",
+    "priceUsd": 4,
+    "priceNote": "Or $29 a year. For adults 18+.",
+    "reasonPrompt": "Which machine do you have, and how long has it been in the box?",
+    "faq": [
+      {
+        "q": "Is it made by the machine's maker?",
+        "a": "No. Blade Start is independent and not affiliated with or endorsed by Cricut or any other machine maker. Machine and software names are used only to say what it works with."
+      },
+      {
+        "q": "Does it sell designs or materials?",
+        "a": "No. It sells no designs, fonts or materials; it teaches the steps."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-26",
+      "summary": "Owners describe their cutting machine sitting in the box for months or years, feeling overwhelmed, a big learning curve, and no instructions for the basics.",
+      "wtp": "Cricut Design Space has 746K App Store ratings and sells Cricut Access at $12.99 a month or $129.99 a year; one owner paid for six months of membership before using the machine.",
+      "signals": [
+        {
+          "url": "https://www.clarkscondensed.com/cricut-tips-for-beginners/",
+          "who": "heidi (Clark's Condensed)",
+          "date": "December 6, 2019",
+          "quote": "I have had my machine three years,,,in the box, too overwhelming!",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.clarkscondensed.com/cricut-tips-for-beginners/",
+          "who": "Donna (Clark's Condensed)",
+          "date": "June 11, 2017",
+          "quote": "have had it for almost 2 years and its barely been out of the box.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.clarkscondensed.com/cricut-tips-for-beginners/",
+          "who": "Lisa Jalosinski (Clark's Condensed)",
+          "date": "January 15, 2017",
+          "quote": "Just feel overwhelmed with everything I am reading online about the cricut.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=749471884/sortby=mosthelpful/json",
+          "who": "wxyz1245 (Cricut Design Space App Store review)",
+          "date": "2021-08-03",
+          "quote": "sitting in the box for 6 months because it came with nothing at all that tells you how to use the machine",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=9/id=749471884/sortby=mosthelpful/json",
+          "who": "BeSwiss (Cricut Design Space App Store review)",
+          "date": "2024-02-14",
+          "quote": "The learning curve is big! Especially with no instruction manual!",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id749471884",
+          "who": "Cricut Design Space (App Store)",
+          "date": "2026-10-26",
+          "quote": "746K Ratings; Cricut Access $12.99, $129.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "The maker's own tutorials, free beginner courses, YouTube walkthroughs, books, craft groups.",
+      "risks": "Must not imply it's official or use the maker's branding. Design software changes often. Free tutorials exist. Near live first-seam (sewing machine in the box), but a different machine and craft."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
