@@ -39968,6 +39968,188 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-26",
+    "slug": "fridge-gallery",
+    "name": "Fridge Gallery",
+    "need": "My kids bring home piles of art from school every day. I can't keep it all and I feel guilty throwing it away, so it takes over the house.",
+    "headline": "Drowning in school artwork? Snap each piece in seconds, keep the favourites, recycle the rest without guilt, and export everything whenever you like.",
+    "buyer": "Parents and grandparents of children aged about 2-12 whose homes are filling up with school and nursery artwork.",
+    "bullets": [
+      "Photograph a pile in one go: it auto-crops each piece and tags it with the child's name and date.",
+      "A weekly 'keep or let go' pass: star the few originals worth keeping, and the rest are saved as photos so you can recycle the paper.",
+      "A private gallery per child and a year-end collection, with full export of every image at any time and no lock-in."
+    ],
+    "price": "$3/month",
+    "priceUsd": 3,
+    "priceNote": "Or $24 a year.",
+    "reasonPrompt": "How many children, and where is the artwork piling up right now?",
+    "faq": [
+      {
+        "q": "Who can see my children's art?",
+        "a": "Only you, and anyone you choose to invite. Galleries are private by default and nothing is posted publicly."
+      },
+      {
+        "q": "Can I get my photos out if I stop paying?",
+        "a": "Yes. You can download every image in one go at any time, including after you cancel. It's independent and not linked to any school or photo-book company."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-26",
+      "summary": "Parents describe piles of art coming home every day, bins of artwork taking over rooms, and wanting an easy way to keep favourites and let the rest go.",
+      "wtp": "Keepbox (kids' art saver) has 282 App Store ratings and sells a yearly plan at $29.99; Artkive has 1.6K ratings.",
+      "signals": [
+        {
+          "url": "https://boards.hellobee.com/topic/art-portfolio-for-kids",
+          "who": "winniebee (Hellobee)",
+          "date": "2017-05-11",
+          "quote": "I need a way to organize the piles of art that come home every day.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://boards.hellobee.com/topic/art-portfolio-for-kids",
+          "who": "yin (Hellobee)",
+          "date": "2017-05-11",
+          "quote": "The plan is to eventually throw out a majority and only keep favorites.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=5651425",
+          "who": "xriddle (Hacker News)",
+          "date": "2013-05-03",
+          "quote": "I have a daughter and would love find an easy way to catalogue and keep her stuff",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=2/id=549980508/sortby=mostrecent/json",
+          "who": "stonecoldmark (Artkive App Store review)",
+          "date": "2019-06-19",
+          "quote": "you have no idea what to do with the crushing amount of artwork kids bring home from school",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=3/id=549980508/sortby=mostrecent/json",
+          "who": "Carlalala2222 (Artkive App Store review)",
+          "date": "2017-12-07",
+          "quote": "My husband was ready to throw out all of the art and school papers taking over our guest room.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=2/id=549980508/sortby=mostrecent/json",
+          "who": "Hansfam (Artkive App Store review)",
+          "date": "2019-05-31",
+          "quote": "I had over four bins of artwork.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id6742782490",
+          "who": "Keepbox - Save Your Kids Art (App Store)",
+          "date": "2026-10-26",
+          "quote": "282 Ratings; Keepbox Yearly (with Free Art Book) $29.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Artkive, Keepbox, Artsonia, phone photo albums, photo-book services.",
+      "risks": "Crowded, and free photo albums exist. Some parents distrust subscriptions after other art apps went paid. Seasonal peaks at the end of the school year. Children's images must stay private by default."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-26",
+    "slug": "sweep-day",
+    "name": "Sweep Day",
+    "need": "I park on the street and keep forgetting street-cleaning days, so I get tickets for something I knew about.",
+    "headline": "Keep getting street-cleaning tickets? Snap the sign where you parked, confirm the rule once, and get a loud reminder the night before and the morning of.",
+    "buyer": "Drivers who park on the street in cities with street-cleaning or alternate-side parking rules and have no off-street space.",
+    "bullets": [
+      "Photograph the parking sign and confirm the days and times in one tap; works in any city without relying on city data.",
+      "A reminder the evening before and a louder one an hour before the sweep, with snooze until you've moved.",
+      "Remembers where you parked and which rule applies, and keeps a simple record of tickets avoided and paid."
+    ],
+    "price": "$3/month",
+    "priceUsd": 3,
+    "priceNote": "Or $20 a year.",
+    "reasonPrompt": "Which city do you park in, and how often does your street get cleaned?",
+    "faq": [
+      {
+        "q": "Can it guarantee I won't get a ticket?",
+        "a": "No. Sweep Day is a reminder tool. Always read the posted signs, which can change or be suspended on holidays. It doesn't give legal advice or help contest tickets."
+      },
+      {
+        "q": "Is it run by a city or parking company?",
+        "a": "No. It's independent and not linked to any city, council or parking operator."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-26",
+      "summary": "Drivers describe forgetting block-by-block cleaning schedules, moving the car every other week, and getting ticketed for rules they knew about.",
+      "wtp": "SpotAngels, which includes street-sweeping alerts, has 13K App Store ratings and sells SpotAngels Plus at up to $49.99; Sweep Alarm has 102 ratings and sells a yearly plan at $19.99.",
+      "signals": [
+        {
+          "url": "https://news.ycombinator.com/item?id=15916568",
+          "who": "conorgil145 (Hacker News)",
+          "date": "2017-12-13",
+          "quote": "Do I need to move the car for street cleaning today? (If I get this wrong, I get a parking ticket).",
+          "seen": "opened"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=17120211",
+          "who": "justboxing (Hacker News)",
+          "date": "2018-05-21",
+          "quote": "have to keep moving it every other week in order to avoid getting street cleaning tickets",
+          "seen": "opened"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=49687023",
+          "who": "Arubis (Hacker News)",
+          "date": "2026-09-13",
+          "quote": "The schedule here is block-by-block and easy to forget, so people get ticketed",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1205066796/sortby=mostrecent/json",
+          "who": "Paul M SF (Sweep Alarm App Store review)",
+          "date": "2021-04-22",
+          "quote": "I try to remember to move my car at the right time but forget maybe once a month",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1205066796/sortby=mostrecent/json",
+          "who": "Stomps805 (Sweep Alarm App Store review)",
+          "date": "2019-03-04",
+          "quote": "if you happen to forget when it is scheduled for the street you parked on",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id897809583",
+          "who": "SpotAngels (App Store)",
+          "date": "2026-10-26",
+          "quote": "13K Ratings; SpotAngels Plus up to $49.99",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1205066796",
+          "who": "Sweep Alarm (App Store)",
+          "date": "2026-10-26",
+          "quote": "102 Ratings; Sweep Alarm Yearly $19.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "SpotAngels, Sweep Alarm, city email/SMS alerts, phone calendar alarms.",
+      "risks": "Mostly a US city market. A missed or misread rule costs the user a ticket. Strong free alternatives. Must not imply legal advice or ticket contesting; holiday suspensions vary."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
