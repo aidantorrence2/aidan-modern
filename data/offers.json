@@ -41214,6 +41214,97 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-26",
+    "slug": "gas-left",
+    "name": "Gas Left",
+    "need": "I drive for delivery and rideshare apps, and a lot of the orders aren't worth the gas, let alone the time, but I can't tell what I really clear per hour.",
+    "headline": "Delivering for the apps and not sure it's worth the gas? Log each shift in 30 seconds, set your own car costs once, and see what you really clear per hour, counting the waits and the drive back.",
+    "buyer": "Adults (18+) who drive for food delivery, grocery or rideshare apps and can't tell what they clear per hour after gas, miles and unpaid waiting.",
+    "bullets": [
+      "A 30-second end-of-shift log: start and end times, odometer, and each app's payout.",
+      "Your own car costs set once (mpg, gas price, a per-mile wear figure you choose), then a true hourly figure for every shift, counting waits and empty miles.",
+      "A weekly view by time of day and by app, plus a parked-only check of an offer's pay, miles and minutes against your own minimum."
+    ],
+    "price": "$5/month",
+    "priceUsd": 5,
+    "priceNote": "Or $39 a year. For adults 18+.",
+    "reasonPrompt": "Which apps do you drive for, and how many hours a week?",
+    "faq": [
+      {
+        "q": "Will it increase my earnings?",
+        "a": "It can't promise that. Gas Left shows your own numbers from what you enter; it makes no earnings, tax or financial claims. Never use your phone while driving: log after you've parked."
+      },
+      {
+        "q": "Does it connect to the delivery apps?",
+        "a": "No. It's independent, isn't linked to any platform, and never asks for your app logins."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-26",
+      "summary": "Delivery drivers describe orders not being worth the gas or the time, wasting gas on deliveries, and earnings after costs being far lower than they look.",
+      "wtp": "Gridwise, a gig-driver earnings and mileage app, has 29K App Store ratings and sells Gridwise Plus from $5.99 to $107.99; Solo, which tracks gig pay, has 13K ratings with plans from $10 to $20 a month or $119.99 a year.",
+      "signals": [
+        {
+          "url": "https://apps.apple.com/us/app/-/id1586902173",
+          "who": "Aedil (Solo App Store review)",
+          "date": "01/23/2024",
+          "quote": "worth the gas let alone the time",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/-/id1586902173",
+          "who": "Blaze12or3 (Solo App Store review)",
+          "date": "Feb 26",
+          "quote": "I have waisted a lot of gas and time with",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.teamblind.com/post/how-much-does-a-dasher-uber-driver-make-zy7rnle2",
+          "who": "code jello, Apple (Blind)",
+          "date": "2021-12-23",
+          "quote": "IMO drivers will actually earn negative value but most don",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.teamblind.com/post/how-much-does-a-dasher-uber-driver-make-zy7rnle2",
+          "who": "broouyt, Amazon (Blind)",
+          "date": "2021-12-23",
+          "quote": "Post wear and tear and fuel, most of them just make about the legal minimum wage.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.teamblind.com/post/how-much-does-a-dasher-uber-driver-make-zy7rnle2",
+          "who": "Munici (Blind)",
+          "date": "2021-12-23",
+          "quote": "How much is the Dasher / Uber driver making (after gas etc expenses) ?",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/gridwise-gig-driver-assistant/id1215991382",
+          "who": "Gridwise (App Store)",
+          "date": "2026-10-26",
+          "quote": "29K Ratings; Gridwise Plus $5.99 to $107.99",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/-/id1586902173",
+          "who": "Solo (App Store)",
+          "date": "2026-10-26",
+          "quote": "13K Ratings; $10, $15, $20 a month, $119.99 a year",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Gridwise, Solo, Everlance, Stride, spreadsheets.",
+      "risks": "Only two pages; Blind posters are mostly tech workers, and only one says he drove. Some Solo reviewers resent paying for driver apps. The Blaze12or3 review shows no year. Must make no earnings or tax claims and stress parked-only use."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

@@ -18110,5 +18110,82 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "how-to-work-out-your-real-hourly-pay-delivering-after-gas",
+  "offer": "gas-left",
+  "title": "How to work out your real hourly pay delivering, after gas",
+  "description": "A simple way for delivery and rideshare drivers to see what they actually clear per hour after gas, miles and waiting time.",
+  "intro": "The pay shown in delivery apps doesn't include your gas, the wear on your car, or the time spent waiting and driving back. Working out your own figure takes a few minutes per shift. This is general information, not financial or tax advice.",
+  "sections": [
+   {
+    "h": "What to record each shift",
+    "list": [
+     "The time you started and finished, including waiting and driving between orders.",
+     "Your odometer reading at the start and end.",
+     "What each app paid you, including tips."
+    ]
+   },
+   {
+    "h": "Work out your costs",
+    "list": [
+     "Gas: miles driven divided by your car's miles per gallon, multiplied by the price per gallon.",
+     "Wear and other costs: choose a per-mile figure for maintenance, tyres and depreciation; use the same figure every time.",
+     "Add the two to get your cost for the shift."
+    ]
+   },
+   {
+    "h": "Your real hourly figure",
+    "list": [
+     "Take total pay, subtract your costs, and divide by the total hours, from start to finish.",
+     "Compare shifts by time of day and by app to see which are worth it for you."
+    ]
+   },
+   {
+    "h": "Stay safe",
+    "p": [
+     "Never use your phone to log or check offers while driving. Record numbers when you're parked."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "cost-per-mile-for-delivery-drivers-explained",
+  "offer": "gas-left",
+  "title": "Cost per mile for delivery drivers, explained",
+  "description": "What goes into the cost of each mile you drive for delivery apps, and how to estimate your own figure.",
+  "intro": "Every mile you drive for a delivery or rideshare app costs you money, even when it doesn't feel like it. Knowing your own cost per mile helps you judge whether an offer is worth taking. This is general information, not financial or tax advice.",
+  "sections": [
+   {
+    "h": "What's in a mile",
+    "list": [
+     "Gas, which changes with fuel prices and your car's efficiency.",
+     "Maintenance: oil changes, brakes, tyres.",
+     "Depreciation: your car loses value as the miles go up.",
+     "Insurance and other running costs, if you count part of them."
+    ]
+   },
+   {
+    "h": "Estimate your gas cost per mile",
+    "list": [
+     "Divide the price of a gallon by your car's real miles per gallon.",
+     "Example: $3.50 a gallon at 25 mpg is 14 cents a mile in gas."
+    ]
+   },
+   {
+    "h": "Add the rest",
+    "list": [
+     "Look at what you spent on maintenance and tyres over the last year and divide by miles driven.",
+     "Add a figure for depreciation if you want a fuller picture."
+    ]
+   },
+   {
+    "h": "Use it before accepting offers",
+    "list": [
+     "Multiply the offer's total miles (including the drive back) by your cost per mile.",
+     "Subtract that from the pay to see what you'd really keep. Only check offers when parked."
+    ]
+   }
+  ]
  }
 ]
