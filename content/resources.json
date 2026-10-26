@@ -19476,5 +19476,81 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "how-to-use-your-phone-abroad-without-a-huge-bill",
+  "offer": "roam-ready",
+  "title": "How to use your phone abroad without a huge bill",
+  "description": "Your options for using mobile data on holiday, and the settings that help avoid surprise roaming charges.",
+  "intro": "Using your phone abroad can be cheap or very expensive depending on where you go and how it's set up. Check your options before you leave. Prices and rules change often, so always confirm with your network or provider.",
+  "sections": [
+   {
+    "h": "Check what your plan includes",
+    "list": [
+     "Look up whether your destination is included in your plan's roaming, and at what price.",
+     "Some networks charge a daily or weekly fee; others don't include certain countries at all."
+    ]
+   },
+   {
+    "h": "Your main options",
+    "list": [
+     "Your network's roaming add-on or day pass.",
+     "A travel eSIM: a digital SIM you buy and install on your phone, usually with a data allowance for a set number of days.",
+     "A local SIM card bought on arrival, if your phone is unlocked."
+    ]
+   },
+   {
+    "h": "Avoid surprise charges",
+    "list": [
+     "If you're not using your network's roaming, turn off data roaming for your home SIM before you land.",
+     "Use Wi-Fi where you trust it, and download offline maps before you go.",
+     "Check your network's spending caps or alerts."
+    ]
+   },
+   {
+    "h": "Keep emergencies in mind",
+    "p": [
+     "Make sure you can still make calls in an emergency, and note the local emergency number before you travel."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "what-is-a-travel-esim-and-how-do-you-set-one-up",
+  "offer": "roam-ready",
+  "title": "What is a travel eSIM, and how do you set one up?",
+  "description": "A plain-English explanation of travel eSIMs and the basic steps to set one up before a trip.",
+  "intro": "An eSIM is a SIM built into your phone that you can download instead of inserting a plastic card. A travel eSIM gives you mobile data abroad, often for less than roaming. Steps vary by phone, so follow the provider's instructions too.",
+  "sections": [
+   {
+    "h": "Check your phone first",
+    "list": [
+     "Your phone needs to support eSIM; many recent phones do. Check your phone's settings or the maker's website.",
+     "Your phone usually needs to be unlocked, meaning not tied to one network."
+    ]
+   },
+   {
+    "h": "Before you travel",
+    "list": [
+     "Buy the eSIM for your destination and number of days.",
+     "Install it while you're on Wi-Fi at home, usually by scanning a QR code or using the provider's app.",
+     "Don't delete it after installing; you can usually switch it on when you arrive."
+    ]
+   },
+   {
+    "h": "When you arrive",
+    "list": [
+     "Set the travel eSIM as your mobile data line.",
+     "Turn off data roaming on your home SIM so it doesn't use data abroad.",
+     "You can usually keep your home SIM on for calls and texts if you want, but check what those cost."
+    ]
+   },
+   {
+    "h": "After the trip",
+    "p": [
+     "Switch your mobile data back to your home SIM, and remove the travel eSIM when its plan has ended if you won't use it again."
+    ]
+   }
+  ]
  }
 ]

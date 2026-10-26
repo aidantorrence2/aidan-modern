@@ -43244,6 +43244,97 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-26",
+    "slug": "roam-ready",
+    "name": "Roam Ready",
+    "need": "I'm going abroad and I want to use my phone for maps, messages and emergencies without a huge roaming bill, but I don't understand eSIMs, travel SIMs or roaming add-ons well enough to choose one and set it up.",
+    "headline": "Going abroad and worried about your phone bill? Answer a few questions about your phone, network and trip, see your options side by side, and follow plain setup steps so your home SIM never runs up data charges.",
+    "buyer": "Adults (18+) travelling outside their free-roaming area who aren't confident with phone settings, or are sorting it out for a family member.",
+    "bullets": [
+      "A simple check: is your phone unlocked and does it support eSIM?",
+      "Your options for this trip side by side: your network's roaming pass, a travel eSIM, or a local SIM, with the questions to ask about each.",
+      "Step-by-step setup with screenshots-style instructions, including turning off data roaming on your home SIM and a before-you-fly checklist."
+    ],
+    "price": "$3/month",
+    "priceUsd": 3,
+    "priceNote": "Or $19 a year.",
+    "reasonPrompt": "Where are you going, and which phone and network do you have?",
+    "faq": [
+      {
+        "q": "Do you sell eSIMs or take commission?",
+        "a": "No. Roam Ready is independent, sells no SIMs or data and takes no commission, so it has no reason to push one option. Prices and rules change often, so always check the final price with the provider before you buy."
+      },
+      {
+        "q": "Will it guarantee I won't be charged?",
+        "a": "It can't guarantee that, but it walks you through the settings that usually prevent surprise charges. Check your network's roaming terms before you travel."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-26",
+      "summary": "Travellers describe not understanding mobile technology or eSIMs, asking for options in simple terms, and facing roaming add-on charges of £15 to £45 a trip.",
+      "wtp": "Airalo, a travel eSIM app where every data package is a paid purchase, has 102K App Store ratings, with local eSIMs starting from $4. Posters describe paying £25 a month for a network roaming pass and £15-20 roaming add-ons.",
+      "signals": [
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/6463449/using-my-mobile-phone-in-the-usa",
+          "who": "JSHARV31 (MoneySavingExpert)",
+          "date": "2023-07-31",
+          "quote": "I am elderly and, frankly I do not understand the ins and outs of mobile technology.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/6616433/help-understanding-esim-please",
+          "who": "FifiAnne (MoneySavingExpert)",
+          "date": "2025-07-05",
+          "quote": "t really understand how it works",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/6525467/e-sim",
+          "who": "OlgaE (MoneySavingExpert)",
+          "date": "2024-05-02",
+          "quote": "could someone explain in simple terms what are my options",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/6621758/esims",
+          "who": "stuarta99 (MoneySavingExpert)",
+          "date": "2025-08-03",
+          "quote": "m looking at esims",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/6502387/sim-card-for-foreign-travel",
+          "who": "HarperBoy (MoneySavingExpert)",
+          "date": "2024-01-30",
+          "quote": "when I travel outside UK I have to pay a roaming charge which is not too bad in EU but gets expensive elsewhere eg Caribbean",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/6565532/best-travel-sim-card",
+          "who": "Giraffe76 (MoneySavingExpert)",
+          "date": "2024-11-04",
+          "quote": "15-20 to add on roaming.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1475911720",
+          "who": "Airalo (App Store)",
+          "date": "2026-10-26",
+          "quote": "102K Ratings; local eSIMs starting from just $4",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Airalo, Holafly, Nomad, Saily and other eSIM sellers; networks' own roaming passes; free setup guides.",
+      "risks": "eSIM sellers already publish free guides. Roaming prices and rules change often, so content needs upkeep. Evidence is all one UK forum (six threads). Must stay independent with no affiliate commission."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
