@@ -44994,6 +44994,188 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-26",
+    "slug": "photo-pass",
+    "name": "Photo Pass",
+    "need": "My passport or ID photo keeps getting rejected, and I want a photo I take at home on my phone to pass first time.",
+    "headline": "Passport or ID photo keeps getting rejected? Check your phone photo against the common rejection reasons before you submit, and fix the background, light and framing.",
+    "buyer": "Adults renewing a passport, driving licence or visa online, and parents taking a child's passport photo at home.",
+    "bullets": [
+      "A plain pre-submit check for the usual rejection reasons: shadows, background, glare, head size, expression and blur.",
+      "Step-by-step setup for a home photo: where to stand, what light to use and how far away to hold the phone.",
+      "Tips for children's and babies' photos, and a note of the rules for the document you're applying for."
+    ],
+    "price": "$2/month",
+    "priceUsd": 2,
+    "priceNote": "Or $7 once for a single photo check. Cancel any time.",
+    "reasonPrompt": "Which document is the photo for, and has one been rejected before?",
+    "faq": [
+      {
+        "q": "Is this an official government service?",
+        "a": "No. Photo Pass is independent and not affiliated with, or endorsed by, any passport office, licensing agency or government. Always apply through the official government website for your country."
+      },
+      {
+        "q": "Does it guarantee my photo will be accepted?",
+        "a": "No. Only the issuing office decides. Photo Pass checks for common problems so you can fix them before you submit, and points you to the official photo rules."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-26",
+      "summary": "People describe passport photos rejected at appointments and in online applications, software that could not find their head, and photo after photo being turned down.",
+      "wtp": "ID Photo, a passport photo app, has 26K App Store ratings and sells Pro at $1.99 a month, $6.99 a year or $14.99 once; a PhotoAiD reviewer says they paid $20 for an acceptance guarantee.",
+      "signals": [
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/6514636/fast-track-passport-renewal-photo-rejected",
+          "who": "naynay96 (MoneySavingExpert)",
+          "date": "2024-03-19",
+          "quote": "it said it was rejected",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/6434167/uk-passport-photo-rejection",
+          "who": "maurice28 (MoneySavingExpert)",
+          "date": "2023-03-21",
+          "quote": "flagged that the photo probably",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/comment/73960741#Comment_73960741",
+          "who": "peter_the_piper (MoneySavingExpert)",
+          "date": "2018-03-02",
+          "quote": "could not find my head",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/comment/71987217#Comment_71987217",
+          "who": "fabsaver (MoneySavingExpert)",
+          "date": "2017-01-25",
+          "quote": "numerous photos kept getting rejected",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/comment/81560386#Comment_81560386",
+          "who": "Frozen_up_north (MoneySavingExpert)",
+          "date": "2025-07-25",
+          "quote": "passport picture rejected",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1500544448/sortby=mostrecent/json",
+          "who": "Mf350 (App Store review of PhotoAiD)",
+          "date": "2026-10-19",
+          "quote": "for $20 and the guarantee it was worth it",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1327776333",
+          "who": "ID Photo (App Store)",
+          "date": "2026-10-26",
+          "quote": "26K Ratings; ID Photo Pro - 1 month $1.99; 1 year $6.99; One-time purchase $14.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "ID Photo, PhotoAiD and other passport photo apps, photo booths, pharmacy and shop photo services.",
+      "risks": "A one-off, low-frequency need, so most buyers want a single check, not a subscription. Many cheap rivals. Rules differ by country and change. Must never claim official status or guaranteed acceptance, nor look like a government service. Near live renew-ahead (expiry reminders), but about the photo."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-26",
+    "slug": "bug-check",
+    "name": "Bug Check",
+    "need": "I keep finding tiny bugs in my house or garden and can't tell what they are, whether they're a problem, or how to get rid of them.",
+    "headline": "Finding tiny bugs at home and can't tell what they are? Narrow them down by where you found them and what they look like, then get a plain plan for what to do next.",
+    "buyer": "Homeowners and renters who find unknown small insects or mites in bathrooms, kitchens, window sills, wood or plants.",
+    "bullets": [
+      "Narrow it down by place, size, colour and behaviour, with the common household lookalikes side by side.",
+      "A plain next-steps plan for each: cleaning, damp and ventilation fixes, sealing gaps, and when to call a professional or your landlord.",
+      "A sightings log with dates and places, so you can tell if it's getting better or worse."
+    ],
+    "price": "$4/month",
+    "priceUsd": 4,
+    "priceNote": "Or $24 a year.",
+    "reasonPrompt": "Where do you keep finding them, and what do they look like?",
+    "faq": [
+      {
+        "q": "Can it tell me if a bug is dangerous or diagnose a bite?",
+        "a": "No. Bug Check helps you narrow down common household bugs and plan next steps; it doesn't diagnose bites or give medical advice. If you have a reaction or a worrying bite, speak to a pharmacist or doctor. For serious or spreading infestations, contact a professional pest controller."
+      },
+      {
+        "q": "Is it linked to a pest control company or product?",
+        "a": "No. Bug Check is independent, not affiliated with any pest control company or app, and sells no sprays or products."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-26",
+      "summary": "People describe struggling to identify tiny bugs from photos, asking what they are and how to get rid of them, and insects invading rooms or damaging wood.",
+      "wtp": "Picture Insect, a bug identifier app, has 45K App Store ratings and sells Premium at $5.99 a month or $39.99 a year.",
+      "signals": [
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/6489188/help-what-are-these-bugs-mites",
+          "who": "stormCat99 (MoneySavingExpert)",
+          "date": "2023-11-29",
+          "quote": "tried taking zoomed in photos to identify them, and have struggled",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/6286803/what-are-these-bugs",
+          "who": "wardy90 (MoneySavingExpert)",
+          "date": "2021-07-30",
+          "quote": "please can someone tell me what they are and how I can rid of them",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/6151144/warning-contains-pics-of-bugs-can-anybody-identify-this-mite-bug-please",
+          "who": "lala9 (MoneySavingExpert)",
+          "date": "2020-06-02",
+          "quote": "invaded by these little pests in recent weeks",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/6291143/help-insects-eating-my-fascia-what-are-they",
+          "who": "paperclap (MoneySavingExpert)",
+          "date": "2021-08-18",
+          "quote": "these insects have eaten and destroyed the fascia",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/5676977/what-kind-of-insect-is-this",
+          "who": "dekaspace (MoneySavingExpert)",
+          "date": "2017-07-09",
+          "quote": "hiding (along with spiders) in my storage cupboard",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1461694973/sortby=mostrecent/json",
+          "who": "CornellVet (App Store review of Picture Insect)",
+          "date": "2026-09-02",
+          "quote": "identifying all the insects and creepy crawly things found in and around your home",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1461694973",
+          "who": "Picture Insect (App Store)",
+          "date": "2026-10-26",
+          "quote": "45K Ratings; Month Premium $5.99; Yearly Premium $39.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Picture Insect, Google Lens, iNaturalist Seek, pest control companies.",
+      "risks": "Free photo identifiers are strong. Near live moth-trace (clothes moths, carpet beetles) and flea-day (pet treatments), so it must stay a general household-bug helper. Must not diagnose bites or give unsafe pesticide advice. Evidence is one UK forum plus App Store reviews."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

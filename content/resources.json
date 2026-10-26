@@ -20722,5 +20722,92 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "why-was-my-passport-photo-rejected",
+  "offer": "photo-pass",
+  "title": "Why was my passport photo rejected? Common reasons and how to fix them",
+  "description": "The usual reasons passport and ID photos get rejected, and how to take one at home that avoids them.",
+  "intro": "Passport and ID photos are often rejected for small, fixable reasons. Rules vary by country and document, so always check the official photo rules on your government's website before you submit. This guide is independent and not affiliated with any government.",
+  "sections": [
+   {
+    "h": "Common reasons for rejection",
+    "list": [
+     "Shadows on your face or behind your head.",
+     "A background that isn't plain or light enough.",
+     "Glare on glasses, or glasses that aren't allowed.",
+     "Head too small, too big or not centred.",
+     "Not looking straight at the camera, or not a neutral expression.",
+     "Blurry, too dark or heavily edited photos."
+    ]
+   },
+   {
+    "h": "Taking one at home",
+    "list": [
+     "Stand in front of a plain, light wall, a little away from it to avoid shadows.",
+     "Face a window for soft, even daylight; avoid overhead lights and flash.",
+     "Ask someone else to take the photo at eye level, about 1.5 metres away.",
+     "Keep your hair off your face, take off glasses if your rules require it, and keep a neutral expression with your mouth closed."
+    ]
+   },
+   {
+    "h": "Children and babies",
+    "list": [
+     "Lay a baby on a plain white sheet and photograph from above.",
+     "Make sure no hands or toys are in the shot.",
+     "Check your country's rules: some are more relaxed for young children."
+    ]
+   },
+   {
+    "h": "Before you submit",
+    "p": [
+     "Compare your photo with the official rules and examples for your document. If it's rejected, the message usually says why, so fix that one thing first."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "tiny-bugs-in-the-house-what-are-they",
+  "offer": "bug-check",
+  "title": "Tiny bugs in the house: what are they and what can you do?",
+  "description": "How to narrow down common tiny household bugs by where you find them, and simple first steps to deal with them.",
+  "intro": "Finding tiny bugs at home is common and usually not dangerous. Where you find them is often the best clue. This guide is general information; for a serious or spreading problem, contact a professional pest controller or, if you rent, your landlord.",
+  "sections": [
+   {
+    "h": "Start with where you find them",
+    "list": [
+     "Bathrooms and damp corners: many tiny bugs like damp, so moisture is often the cause.",
+     "Kitchens and cupboards: check dry foods like flour, cereal and pet food.",
+     "Window sills: some tiny insects and mites gather on sunny sills in spring and summer.",
+     "Plants and soil: small flies and insects around houseplants are often linked to wet soil.",
+     "Wood: holes, dust or damage can point to wood-boring insects and may need a professional."
+    ]
+   },
+   {
+    "h": "Look closely",
+    "list": [
+     "Take a sharp, close-up photo next to a coin or ruler for scale.",
+     "Note the colour, size, whether it has wings, and whether it jumps, crawls or flies.",
+     "Note the time of year and whether there are more over time."
+    ]
+   },
+   {
+    "h": "Simple first steps",
+    "list": [
+     "Reduce damp: ventilate, fix leaks and dry wet areas.",
+     "Clean and vacuum regularly, including corners and skirting boards.",
+     "Store dry food in sealed containers and throw away anything infested.",
+     "Seal gaps around windows, doors and pipes."
+    ]
+   },
+   {
+    "h": "When to get help",
+    "list": [
+     "If bugs keep coming back, spread, or damage wood or fabric.",
+     "If you're getting bitten or have a reaction, speak to a pharmacist or doctor.",
+     "If you rent, tell your landlord in writing."
+    ]
+   }
+  ]
  }
 ]
