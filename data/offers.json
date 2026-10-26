@@ -41662,6 +41662,90 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-26",
+    "slug": "green-ladder",
+    "name": "Green Ladder",
+    "need": "I want to go vegetarian or vegan and stick with it, but I keep drifting back, especially when everyone around me eats meat.",
+    "headline": "Trying to go vegetarian or vegan and keep drifting back? Climb one rung at a time with swaps from your own usual meals, plans for work and family meals, and no streak to lose when you slip.",
+    "buyer": "Adults (18+) who want to go vegetarian or vegan and keep drifting back, often because colleagues, friends or family eat meat.",
+    "bullets": [
+      "A ladder you set yourself, such as two meat-free days, then five, then fully vegetarian, moving up only when it feels steady.",
+      "A swap list built from the meals you already eat, plus plans for work lunches, family dinners, barbecues and eating out.",
+      "A 10-second craving log with no streak to lose, and a weekly view of which situations lead to slips."
+    ],
+    "price": "$4/month",
+    "priceUsd": 4,
+    "priceNote": "Or $25 a year. For adults 18+.",
+    "reasonPrompt": "Are you aiming for vegetarian or vegan, and where do you usually slip?",
+    "faq": [
+      {
+        "q": "Is it nutrition advice?",
+        "a": "No. Green Ladder helps you plan and stick with your own choices. It isn't nutrition or medical advice; if you're pregnant, have a health condition or are worried about nutrients such as B12 or iron, talk to a doctor or dietitian."
+      },
+      {
+        "q": "Is it linked to a food brand or campaign?",
+        "a": "No. It's independent, recommends no brands, and is for adults 18+."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-26",
+      "summary": "People describe finding the switch to vegetarian or vegan hard, going back to meat, cravings growing over time, and trying several times.",
+      "wtp": "Pick Up Limes sells its plant-based app at $5.49 a month or $39.99 a year; Vegan Meal Plan & Food Recipes (84 App Store ratings) charges $9.99 a month.",
+      "signals": [
+        {
+          "url": "https://singletrackworld.com/forum/off-topic/vegetarians-tips-on-making-the-transition-easy/",
+          "who": "cokie (Singletrack forum)",
+          "date": "02/05/2017",
+          "quote": "s not been easy.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://singletrackworld.com/forum/off-topic/vegetarians-tips-on-making-the-transition-easy/",
+          "who": "convert (Singletrack forum)",
+          "date": "02/05/2017",
+          "quote": "after going back to eating meat about 4 years ago",
+          "seen": "opened"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=24842743",
+          "who": "coddle-hark (Hacker News)",
+          "date": "2020-10-20",
+          "quote": "tried going vegan a few times now and dairy is so much harder to give up than meat",
+          "seen": "opened"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=41820828",
+          "who": "0xDEAFBEAD (Hacker News)",
+          "date": "2024-10-12",
+          "quote": "I found my craving for a burger increased the longer I went without.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.pickuplimes.com/mobile-app",
+          "who": "Pick Up Limes app",
+          "date": "2026-10-26",
+          "quote": "$5.49; $39.99",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id859679646",
+          "who": "Vegan Meal Plan & Food Recipes (App Store)",
+          "date": "2026-10-26",
+          "quote": "84 Ratings; $9.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Plant-based recipe and meal-plan apps (Pick Up Limes, Forks Over Knives), Veganuary-style challenges, cookbooks.",
+      "risks": "Vegan apps have small rating counts; nobody asked for a habit tool. Near live both-plates (one dinner for a mixed household), but a different job. The doc side's OzBargain and AnandTech sources were blocked for the code side, so the hosted page uses Singletrack and Hacker News evidence instead."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
