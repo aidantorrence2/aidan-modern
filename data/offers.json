@@ -45176,6 +45176,97 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-26",
+    "slug": "top-line",
+    "name": "Top Line",
+    "need": "I'm teaching myself trumpet, or coming back to it years after school band, and I can't tell what I'm doing wrong with my tone, embouchure or higher notes.",
+    "headline": "Teaching yourself trumpet or coming back to it? Record a short daily practice, track tone and range note by note, and follow small steps toward the higher notes.",
+    "buyer": "Adults coming back to trumpet years after school band, and adult beginners teaching themselves without a teacher.",
+    "bullets": [
+      "A short daily practice plan: long tones, lip slurs and simple tunes, in small steps.",
+      "Record a few notes each day and play them back, with a checklist for tone, tuning and steadiness.",
+      "A range log showing your highest clear note week by week, so you can see progress without forcing it."
+    ],
+    "price": "$6/month",
+    "priceUsd": 6,
+    "priceNote": "Or $36 a year. Cancel any time.",
+    "reasonPrompt": "Are you a beginner or coming back to trumpet, and what's hardest right now?",
+    "faq": [
+      {
+        "q": "Does it replace a teacher?",
+        "a": "No. Top Line helps you practise and track progress between lessons or on your own. A teacher can spot embouchure problems that are hard to hear yourself. If playing causes lip pain or injury, stop and rest, and get advice from a teacher or doctor."
+      },
+      {
+        "q": "Is it linked to a trumpet app, maker or school?",
+        "a": "No. Top Line is independent and not affiliated with any music app, instrument maker, school or teacher."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-26",
+      "summary": "Trumpet learners describe needing help learning to play, wanting to know what they're doing wrong, picking the trumpet back up after years, and working on embouchure and tone.",
+      "wtp": "tonestro's Learn Trumpet app has 1.2K App Store ratings and sells Learn TRUMPET at $17.49 a month and tonestro Premium at $149.99 a year.",
+      "signals": [
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=2/id=1509615186/sortby=mosthelpful/json",
+          "who": "connor Reiss (App Store review of Learn Trumpet - tonestro)",
+          "date": "2022-09-28",
+          "quote": "I desperately need help learning how to play",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1509615186/sortby=mosthelpful/json",
+          "who": "TapatioTheGreat (App Store review of Learn Trumpet - tonestro)",
+          "date": "2021-01-12",
+          "quote": "I kind of need to know so I can improve from my mistake",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1509615186/sortby=mosthelpful/json",
+          "who": "DisgruntledRon (App Store review of Learn Trumpet - tonestro)",
+          "date": "2021-03-11",
+          "quote": "trying to pick it back up for my own enjoyment",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=2/id=1509615186/sortby=mosthelpful/json",
+          "who": "TheRealLaLaLisa (App Store review of Learn Trumpet - tonestro)",
+          "date": "2021-01-31",
+          "quote": "wanted to start playing again",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=2/id=6471924212/sortby=mostrecent/json",
+          "who": "BlueTheChickenWing (App Store review of Trumpet Tuner)",
+          "date": "2024-10-30",
+          "quote": "making sure I can start with a great and in-tune sound",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=2/id=6471924212/sortby=mostrecent/json",
+          "who": "GoldThinger (App Store review of Trumpet Tuner)",
+          "date": "2024-10-12",
+          "quote": "work on the best embouchure for achieving good tones",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1509615186",
+          "who": "Learn Trumpet - tonestro (App Store)",
+          "date": "2026-10-26",
+          "quote": "1.2K Ratings; Learn TRUMPET - 1 Month $17.49; tonestro Premium $149.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "tonestro, trumpet tuner apps, YouTube lessons, private teachers.",
+      "risks": "All evidence is App Store reviews; trumpet forums are blocked. Many tonestro users are children and price-sensitive. Judging tone from a phone mic is hard, so it stays a record-and-check tool. Same shape as live clear-tone (flute), but for trumpet. Completes the Top Line candidate held on 22 Oct."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
