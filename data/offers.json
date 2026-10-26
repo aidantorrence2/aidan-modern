@@ -42152,6 +42152,97 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-26",
+    "slug": "waist-first",
+    "name": "Waist First",
+    "need": "I've done crunches for ages but I still can't see my abs, and I don't know what I'm doing wrong.",
+    "headline": "Doing endless crunches and still can't see your abs? Track your waist the same way every week, build the everyday habits that actually move it, and swap the crunches for three short core sessions.",
+    "buyer": "Adults (18+) who train their abs regularly and still can't see them.",
+    "bullets": [
+      "A weekly waist measurement taken the same way every time, shown as a trend, plus a same-light photo every two weeks.",
+      "Habits you set yourself beside it, such as daily steps and protein at each meal, so you can see what the trend responds to.",
+      "Three short, progressive core sessions a week instead of hundreds of crunches."
+    ],
+    "price": "$4/month",
+    "priceUsd": 4,
+    "priceNote": "Or $24 a year. For adults 18+.",
+    "reasonPrompt": "How do you train your abs now, and for how long?",
+    "faq": [
+      {
+        "q": "Will it give me a six pack?",
+        "a": "It can't promise that. How visible your abs are depends a lot on body fat and genetics. Waist First makes no fat-loss or body-shape claims and isn't medical or nutrition advice. If your waist size changes suddenly, or you think your stomach muscles have separated after pregnancy, see a doctor or physiotherapist."
+      },
+      {
+        "q": "Is it linked to a gym or supplement brand?",
+        "a": "No. It's independent, sells no supplements and is for adults 18+."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-26",
+      "summary": "People describe doing huge numbers of crunches, feeling their abs under a layer of fat, carrying fat only on the stomach, and being unable to lose it there whatever they try.",
+      "wtp": "Six Pack in 30 Days has 35K App Store ratings with plans from $9.99 a month to $59.99 lifetime; another Six Pack in 30 Days app has 38K ratings at $9.99 a month or $39.99 a year.",
+      "signals": [
+        {
+          "url": "https://forums.overclockers.co.uk/threads/crunches.17553989/",
+          "who": "CLAWS (Overclockers)",
+          "date": "2006-03-24",
+          "quote": "I do roughly about 1000 crunches everyday",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.overclockers.co.uk/threads/crunches.17553989/",
+          "who": "CLAWS (Overclockers)",
+          "date": "2006-03-26",
+          "quote": "I can feel the pack underneath the solid layer of fat",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.overclockers.co.uk/threads/crunches.17553989/page-2",
+          "who": "red11 (Overclockers)",
+          "date": "2006-03-30",
+          "quote": "t appear to be carrying any fat anywhere else but my stomach",
+          "seen": "opened"
+        },
+        {
+          "url": "https://cathe.com/forum/threads/at-my-wits-end-about-my-middle.179142/",
+          "who": "susie2susie (cathe.com)",
+          "date": "2008-03-23",
+          "quote": "unable to lose any fat there no matter what I try",
+          "seen": "opened"
+        },
+        {
+          "url": "https://cathe.com/forum/threads/at-my-wits-end-about-my-middle.179142/",
+          "who": "sweaty1 (cathe.com)",
+          "date": "2008-04-12",
+          "quote": "I can see those muscles in my abs that I have been working out for 20 yrs. on under that little bit of fat still there!",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/six-pack-in-30-days/id1267324372",
+          "who": "Six Pack in 30 Days (App Store)",
+          "date": "2026-10-26",
+          "quote": "35K Ratings; $9.99, $39.99, $59.99",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1338655056",
+          "who": "Six Pack in 30 Days: Core, Abs (App Store)",
+          "date": "2026-10-26",
+          "quote": "38K Ratings; $9.99, $39.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Ab workout apps, general fitness and calorie-tracking apps, personal trainers.",
+      "risks": "Forum evidence is 2006-2008. Strong ab-workout apps already sell well. Must make no fat-loss or body-shape claims. The doc side's AnandTech source was blocked for the code side, so the hosted page uses Overclockers and cathe.com evidence instead."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
