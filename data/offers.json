@@ -44217,6 +44217,160 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-26",
+    "slug": "real-or-scam",
+    "name": "Real or Scam",
+    "need": "I keep getting texts and emails that say they're from my bank, the government or a company I use, and I can't tell whether they're genuine or a scam before I click or reply.",
+    "headline": "Can't tell if that text or email is real? Paste it in, see the warning signs it shows, and get the safe way to check with the real organisation, without clicking anything in the message.",
+    "buyer": "Adults (18+) who get suspicious texts and emails and want to check them before acting.",
+    "bullets": [
+      "Paste the message and see plain warning signs: urgency, odd links, requests for card details or codes, mismatched sender.",
+      "The safe way to check: contact the organisation through its official app, website or a number you find yourself, never the one in the message.",
+      "What to do if you've already clicked or paid, and where to report the message."
+    ],
+    "price": "$3/month",
+    "priceUsd": 3,
+    "priceNote": "Or $24 a year. For adults 18+.",
+    "reasonPrompt": "Which kinds of messages do you most often worry about?",
+    "faq": [
+      {
+        "q": "Will it tell me a message is safe?",
+        "a": "No. It never tells you a message is genuine; it shows warning signs and how to check directly with the organisation. If you think you've been scammed, contact your bank straight away using the number on your card."
+      },
+      {
+        "q": "Is it linked to a bank or phone company?",
+        "a": "No. It's independent and doesn't read your messages unless you paste one in."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-26",
+      "summary": "People describe not knowing how to tell if texts from the government or companies are genuine, asking others whether emails look dodgy, and falling for text scams.",
+      "wtp": "Textkiller, a spam text blocker, has 13K App Store ratings and sells Premium Protection at $5.99 a month or $79.99 a year.",
+      "signals": [
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/6131269/sms-text-messages-from-government-scam",
+          "who": "bery_451 (MoneySavingExpert)",
+          "date": "2020-04-18",
+          "quote": "How do you verify that sms messages from the government are genuine or scam?",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/5471491/spam-text-or-genuine",
+          "who": "patsyann3 (MoneySavingExpert)",
+          "date": "2016-05-31",
+          "quote": "t know if its real or not, i would be grateful for your thoughts",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/6461725/weird-email-from-netflix-could-this-be-genuine-or-a-possible-scam",
+          "who": "turnitround (MoneySavingExpert)",
+          "date": "2023-07-23",
+          "quote": "Does it sound dodgy to anyone or is it a usual thing?",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/6620505/id-never-fall-for-a-text-scam",
+          "who": "SevenOfNine (MoneySavingExpert)",
+          "date": "2025-07-28",
+          "quote": "No idea what lapse in my brain process led me to fall for this scam",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1514005355",
+          "who": "Textkiller (App Store)",
+          "date": "2026-10-26",
+          "quote": "13K Ratings; Monthly Premium Protection $5.99, Yearly $79.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Spam text blockers, carrier filters, free AI scam checkers, official scam-reporting services.",
+      "risks": "Must never call a message safe. Free tools and carrier filters exist. Evidence is one UK forum. Near live worry-parent-or-relative (for relatives) and real-listing (job scams), but for messages to yourself."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-26",
+    "slug": "printer-back-online",
+    "name": "Printer Back Online",
+    "need": "My home wireless printer keeps saying it's offline just when I need to print something, and rebooting and reinstalling hasn't fixed it.",
+    "headline": "Wireless printer keeps saying 'offline'? Follow a plain, brand-neutral fix-it flow for your setup, and keep a note of what worked so the next time takes two minutes.",
+    "buyer": "Non-technical adults with a home wifi printer who print now and then and keep getting 'printer offline' errors.",
+    "bullets": [
+      "A step-by-step fix-it flow in plain English, for Windows, Mac, iPhone and Android.",
+      "Checks for the usual causes: wifi band, a changed printer address, VPNs, sleep settings and the wrong printer selected.",
+      "A note of your setup and the fix that worked, so you can repeat it next time."
+    ],
+    "price": "$3/month",
+    "priceUsd": 3,
+    "priceNote": "Or $24 a year.",
+    "reasonPrompt": "Which printer do you have, and what do you print from?",
+    "faq": [
+      {
+        "q": "Is it made by a printer company?",
+        "a": "No. Printer Back Online is independent and not affiliated with HP, Canon, Epson, Brother or any other maker. It sells no ink or printers."
+      },
+      {
+        "q": "Does it need access to my computer?",
+        "a": "No. It guides you through the steps; you make the changes yourself."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-26",
+      "summary": "People describe wireless printers that keep going offline, the error appearing whenever they try to print, and fixes that don't last.",
+      "wtp": "Smart Printer App & Scan has 83K App Store ratings and sells Premium at $12.99 a month or $59.99 a year.",
+      "signals": [
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/2194585/wireless-printer-going-offline",
+          "who": "sara2323 (MoneySavingExpert)",
+          "date": "2010-01-10",
+          "quote": "now it seems to go offline quite often",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/3906903/wireless-printer-offline",
+          "who": "whitewing (MoneySavingExpert)",
+          "date": "2012-04-15",
+          "quote": "When I print, it comes up that the printer is offline.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/5697428/printer-offline-message-what-to-do",
+          "who": "Happy_bunny (MoneySavingExpert)",
+          "date": "2017-08-19",
+          "quote": "If I try to print anything it tells me the printer is",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/6443167/printer-offline",
+          "who": "missile (MoneySavingExpert)",
+          "date": "2023-04-29",
+          "quote": "I had the same issue with my HP Envy 5646.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1597439129",
+          "who": "Smart Printer App & Scan (App Store)",
+          "date": "2026-10-26",
+          "quote": "83K Ratings; HPrinter Premium Monthly $12.99, Yearly $59.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Manufacturer printer apps, paid printing apps, operating-system troubleshooters, support forums.",
+      "risks": "Free manufacturer tools exist. Printer models vary, so the flow must stay generic. Evidence is one UK forum (2010-2023). Paid printer apps get complaints about subscriptions, so price must stay low."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

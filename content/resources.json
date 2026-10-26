@@ -20142,5 +20142,90 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "how-to-tell-if-a-text-or-email-is-a-scam",
+  "offer": "real-or-scam",
+  "title": "How to tell if a text or email is a scam",
+  "description": "Warning signs in texts and emails that claim to be from your bank, the government or a company, and how to check safely.",
+  "intro": "Scam messages often look convincing. You don't need to be an expert to protect yourself; the safest habit is to check with the organisation directly rather than using anything in the message.",
+  "sections": [
+   {
+    "h": "Common warning signs",
+    "list": [
+     "Urgency: 'act now', 'your account will be closed', 'final warning'.",
+     "A link you're asked to click to pay, confirm details or claim a refund.",
+     "Requests for card details, passwords or one-time codes.",
+     "A sender address or number that doesn't quite match the real organisation.",
+     "Unexpected parcels, refunds, fines or prizes."
+    ]
+   },
+   {
+    "h": "How to check safely",
+    "list": [
+     "Don't click links or call numbers in the message.",
+     "Open the organisation's official app or type its website address yourself.",
+     "Call a number you find yourself, such as the one on the back of your bank card."
+    ]
+   },
+   {
+    "h": "If you've already clicked or paid",
+    "list": [
+     "Contact your bank straight away using the number on your card.",
+     "Change any passwords you entered, starting with your email.",
+     "Report the scam to the official fraud reporting service in your country."
+    ]
+   },
+   {
+    "h": "Report it",
+    "p": [
+     "In the UK you can forward scam texts to 7726 and scam emails to report@phishing.gov.uk. In other countries, check your government's fraud reporting service."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "wireless-printer-says-offline-how-to-fix-it",
+  "offer": "printer-back-online",
+  "title": "Wireless printer says 'offline'? How to fix it",
+  "description": "Common reasons a home wifi printer shows as offline, and simple steps to get it printing again.",
+  "intro": "A wireless printer showing 'offline' usually means your computer or phone has lost track of it on the network. The fixes are usually simple. This guide is independent and not affiliated with any printer maker.",
+  "sections": [
+   {
+    "h": "Quick checks",
+    "list": [
+     "Make sure the printer is switched on, awake and connected to the same wifi network as your computer or phone.",
+     "Restart the printer, then your router, then your computer.",
+     "Check you've selected the right printer; there may be duplicate copies listed."
+    ]
+   },
+   {
+    "h": "Check the wifi connection",
+    "list": [
+     "Print a network or wireless test page from the printer's own menu to see if it's connected.",
+     "Some printers only work on a 2.4GHz wifi band; check your router settings or the printer's manual.",
+     "If you use a VPN on your computer, turn it off and try again."
+    ]
+   },
+   {
+    "h": "If the printer's address keeps changing",
+    "list": [
+     "Your router may give the printer a new network address after a restart.",
+     "Many routers let you reserve a fixed address for the printer, which often stops the problem coming back."
+    ]
+   },
+   {
+    "h": "Remove and re-add the printer",
+    "list": [
+     "Remove the printer from your computer's printer list, then add it again using the maker's official software or your system settings."
+    ]
+   },
+   {
+    "h": "Keep a note",
+    "p": [
+     "Write down what fixed it, so next time you can go straight to that step."
+    ]
+   }
+  ]
  }
 ]
