@@ -20809,5 +20809,91 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "living-alone-how-to-make-sure-someone-would-notice",
+  "offer": "live-alone-worry-nobody",
+  "title": "Living alone: how to make sure someone would notice if something went wrong",
+  "description": "Simple, practical ways to set up regular check-ins and a plan with people you trust when you live alone.",
+  "intro": "Many people who live alone worry about what would happen if they had a fall or became ill and nobody knew. A few simple arrangements, agreed in advance with people you trust, can make a big difference. In an emergency, always call your local emergency number.",
+  "sections": [
+   {
+    "h": "Set up a regular check-in",
+    "list": [
+     "Agree a daily or regular check-in with a friend, neighbour or relative: a text, a call or a message at a set time.",
+     "Agree what happens if you miss one: they call you, then knock on your door, then contact someone else.",
+     "Write the plan down so everyone knows the steps."
+    ]
+   },
+   {
+    "h": "Make it easy for help to reach you",
+    "list": [
+     "Leave a spare key with someone you trust, or use a secure key safe.",
+     "Keep a list of emergency contacts, medicines and doctor details somewhere easy to find, such as on the fridge.",
+     "Set up emergency contacts and medical ID on your phone."
+    ]
+   },
+   {
+    "h": "Other options",
+    "list": [
+     "Personal alarms and pendant alarms can call for help at the press of a button; some also detect falls.",
+     "Local councils, charities and community groups may offer befriending calls or visits.",
+     "Some phones and smartwatches can call emergency contacts automatically after a fall."
+    ]
+   },
+   {
+    "h": "Keep it up to date",
+    "p": [
+     "Review your plan every few months, especially if your contacts, health or routine change."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "my-account-was-hacked-what-to-do-first",
+  "offer": "accounts-or-identity-were",
+  "title": "My account was hacked: what to do first",
+  "description": "The first steps to take when an email, social media or shopping account has been hacked, in a sensible order.",
+  "intro": "Finding out an account has been hacked is stressful. Acting quickly and in the right order helps. Use only the official website or app for each service, never links in messages you've been sent.",
+  "sections": [
+   {
+    "h": "1. Secure your email first",
+    "list": [
+     "Your email is often the key to your other accounts.",
+     "Change its password from a device you trust, and turn on two-step verification.",
+     "Check the recovery phone number and email, and remove any you don't recognise."
+    ]
+   },
+   {
+    "h": "2. Recover the hacked account",
+    "list": [
+     "Use the service's official account recovery page.",
+     "Change the password, sign out of all other devices, and turn on two-step verification.",
+     "Check for changes the hacker made: forwarding rules, linked apps, new contact details or posts."
+    ]
+   },
+   {
+    "h": "3. Protect your money",
+    "list": [
+     "If a bank or payment account is involved, contact your bank straight away using the number on your card.",
+     "Check recent transactions and report anything you don't recognise."
+    ]
+   },
+   {
+    "h": "4. Change reused passwords",
+    "list": [
+     "If you used the same password anywhere else, change it there too.",
+     "A password manager can help you use a different password for every account."
+    ]
+   },
+   {
+    "h": "5. Report it",
+    "list": [
+     "Report the hack to the service.",
+     "If you've lost money or your identity has been misused, report it to the police or your country's fraud reporting service.",
+     "Warn friends if messages were sent from your account."
+    ]
+   }
+  ]
  }
 ]
