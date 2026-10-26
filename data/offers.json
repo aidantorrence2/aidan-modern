@@ -44903,6 +44903,97 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-26",
+    "slug": "even-pace",
+    "name": "Even Pace",
+    "need": "I talk too fast, especially when I'm nervous, and people keep asking me to slow down or repeat myself.",
+    "headline": "Talk so fast people ask you to slow down? Check your pace in words per minute each day, practise pauses, and see your pace by situation week by week.",
+    "buyer": "Adults (18+) who talk faster than people can follow, get asked to repeat themselves, or speed up when nervous.",
+    "bullets": [
+      "A one-minute daily pace check in words per minute, against a range you choose.",
+      "A live pace light for practice and calls, plus short pause drills.",
+      "A one-tap log each time someone asks you to slow down, and a weekly view of your pace by situation."
+    ],
+    "price": "$2.99/month",
+    "priceUsd": 3,
+    "priceNote": "Or $14.99 a year. For adults 18+.",
+    "reasonPrompt": "When do you talk fastest: at work, on calls, or when you're nervous?",
+    "faq": [
+      {
+        "q": "Is this speech therapy?",
+        "a": "No. Even Pace is a practice tool for everyday speaking pace, not therapy or treatment. If you stammer or have a speech condition, a qualified speech and language therapist can help."
+      },
+      {
+        "q": "Is it linked to a speaking app or coach?",
+        "a": "No. Even Pace is independent and not affiliated with any speaking app, coach or course."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-26",
+      "summary": "People describe talking too fast, being told so by coworkers on the phone, and finding it hard to slow down when nervous; one says a speech coach helps them.",
+      "wtp": "Speeko, a speaking practice app with AI feedback on pace, has 4.7K App Store ratings and sells Full Access at $24.99 a month or $99.99 a year; one Hacker News poster says a speech coach helps them speak slower.",
+      "signals": [
+        {
+          "url": "https://news.ycombinator.com/item?id=17432746",
+          "who": "pedasmith (Hacker News)",
+          "date": "2018-06-30",
+          "quote": "I talk too fast and, somewhat weirdly",
+          "seen": "opened"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=24316309",
+          "who": "dougmwne (Hacker News)",
+          "date": "2020-08-29",
+          "quote": "A coworker once told me I talk too fast on the phone",
+          "seen": "opened"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=28654490",
+          "who": "DiggyJohnson (Hacker News)",
+          "date": "2021-09-25",
+          "quote": "I am not a great communicator. I talk too fast",
+          "seen": "opened"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=30270404",
+          "who": "KingOfCoders (Hacker News)",
+          "date": "2022-02-09",
+          "quote": "I mostly speak too fast and a speech coach helps me speak slower",
+          "seen": "opened"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=30815898",
+          "who": "kaba0 (Hacker News)",
+          "date": "2022-03-26",
+          "quote": "I am way too prone to talking too fast",
+          "seen": "opened"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=49402124",
+          "who": "embedding-shape (Hacker News)",
+          "date": "2026-08-22",
+          "quote": "people think I talk too fast",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/speeko-ai-for-public-speaking/id1071468459",
+          "who": "Speeko (App Store)",
+          "date": "2026-10-26",
+          "quote": "4.7K Ratings; Speeko Full Access Monthly $24.99; Full Access Annual $99.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Speeko, Orai, Yoodli, speech coaches, free pacing tips.",
+      "risks": "Speeko sells public-speaking practice more broadly than everyday fast talk. Nobody said they'd pay for this exact tool. Close to live fewer-ums (filler words), steady-voice (stage nerves) and turn-share (talking too much), but about speed."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

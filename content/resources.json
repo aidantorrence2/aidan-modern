@@ -20644,5 +20644,83 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "how-to-stop-talking-so-fast",
+  "offer": "even-pace",
+  "title": "How to stop talking so fast",
+  "description": "Practical ways to slow down when you talk too fast, especially when you're nervous, with simple pause drills.",
+  "intro": "Lots of people talk fast, especially when they're nervous or excited. Slowing down is a skill you can practise. This guide is general information, not speech therapy.",
+  "sections": [
+   {
+    "h": "Notice when you speed up",
+    "list": [
+     "Think about when people ask you to repeat yourself: on the phone, in meetings, when you're nervous.",
+     "Record yourself for one minute talking about your day, and listen back."
+    ]
+   },
+   {
+    "h": "Use pauses",
+    "list": [
+     "Pause at the end of each sentence, for a full breath.",
+     "Pause before and after the most important point.",
+     "Pauses feel longer to you than they sound to others."
+    ]
+   },
+   {
+    "h": "Simple drills",
+    "list": [
+     "Read a paragraph aloud, putting a slash after every few words and pausing at each slash.",
+     "Practise saying the last word of each sentence fully, without rushing into the next.",
+     "Breathe out slowly before you start speaking."
+    ]
+   },
+   {
+    "h": "In conversation",
+    "list": [
+     "Let the other person finish, then take a breath before answering.",
+     "On calls, slow down a little more than feels natural; phone audio makes fast speech harder to follow."
+    ]
+   },
+   {
+    "h": "When to get help",
+    "p": [
+     "If you stammer, or speed comes with other speech difficulties, a qualified speech and language therapist can help."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "what-is-a-normal-speaking-pace-in-words-per-minute",
+  "offer": "even-pace",
+  "title": "What is a normal speaking pace in words per minute?",
+  "description": "How to measure your own speaking pace in words per minute, and how to tell if you talk too fast for the situation.",
+  "intro": "Speaking pace is often measured in words per minute. There's no single correct number: the right pace depends on the situation, the listener and how complex the subject is. The most useful number is your own, measured over time.",
+  "sections": [
+   {
+    "h": "How to measure your pace",
+    "list": [
+     "Record yourself talking naturally for one minute.",
+     "Count the words, or use a transcription tool to count them.",
+     "Do this a few times in different situations: chatting, explaining something at work, on the phone."
+    ]
+   },
+   {
+    "h": "Signs you're too fast for your listener",
+    "list": [
+     "People ask you to repeat yourself.",
+     "People finish your sentences or look lost.",
+     "You run out of breath mid-sentence."
+    ]
+   },
+   {
+    "h": "Choosing your own range",
+    "list": [
+     "Set a range that feels comfortable and that listeners can follow.",
+     "Slow down more for complex topics, phone calls and people listening in a second language.",
+     "Check your pace again every week or two to see if it's changing."
+    ]
+   }
+  ]
  }
 ]
