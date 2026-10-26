@@ -44056,6 +44056,167 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-26",
+    "slug": "cache-clue-coach",
+    "name": "Cache Clue Coach",
+    "need": "I love geocaching, but when I open a puzzle cache I have no idea what the puzzle even is or where to start, so I end up skipping them.",
+    "headline": "Skip every puzzle cache because you can't tell where to start? Paste or photograph the puzzle, learn which kind it probably is, and get hints step by step, never the final coordinates.",
+    "buyer": "Adult geocachers who already find traditional caches but skip mystery and puzzle caches.",
+    "bullets": [
+      "Paste the puzzle text or take a photo; see the common puzzle types it might be (ciphers, codes, number puzzles, hidden text) and why.",
+      "Step-by-step nudges for that type, from the gentlest hint upwards, so you still solve it yourself.",
+      "A log of puzzles you've tried and the techniques you've learned, to build your skills over time."
+    ],
+    "price": "$3/month",
+    "priceUsd": 3,
+    "priceNote": "Or $24 a year.",
+    "reasonPrompt": "How long have you been geocaching, and what stops you on puzzle caches?",
+    "faq": [
+      {
+        "q": "Will it solve puzzles for me?",
+        "a": "No. It teaches and nudges, and never gives final coordinates, so the solve is still yours and the cache owner's puzzle stays fair."
+      },
+      {
+        "q": "Is it linked to Geocaching HQ?",
+        "a": "No. Cache Clue Coach is independent and not affiliated with Geocaching HQ or any geocaching app. It doesn't read cache pages; you paste or photograph the puzzle yourself."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-26",
+      "summary": "Geocachers describe staring at puzzle caches with no idea what to do, having no clue what the puzzle even is, hating them because they can't solve them, and avoiding them.",
+      "wtp": "The Geocaching app has 66K App Store ratings and sells Premium membership at $6.99 a month or $39.99 a year.",
+      "signals": [
+        {
+          "url": "https://forums.geocaching.com/GC/index.php?/topic/425964-is-there-something-wrong-with-me-or-are-you-puzzle-writers-just-a-bit-too-sadistic/",
+          "who": "jonny the fox (Geocaching forums)",
+          "date": "2025-07-26",
+          "quote": "staring at my screen for half an hour wondering what the hell am I supposed to do here is really not productive",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.geocaching.com/GC/index.php?/topic/425964-is-there-something-wrong-with-me-or-are-you-puzzle-writers-just-a-bit-too-sadistic/",
+          "who": "PlantAKiss (Geocaching forums)",
+          "date": "2025-08-03",
+          "quote": "I hate puzzle caches because by and large I cant solve them.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.geocaching.com/GC/index.php?/topic/404396-puzzles-puzzling-me/",
+          "who": "TeamTJ (Geocaching forums)",
+          "date": "2024-06-27",
+          "quote": "where I have NO CLUE what the puzzle even is",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.geocaching.com/GC/index.php?/topic/404396-puzzles-puzzling-me/",
+          "who": "Jayeffel (Geocaching forums)",
+          "date": "2024-06-27",
+          "quote": "most puzzle caches I have seen I have no clue how to solve.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.geocaching.com/GC/index.php?/topic/427469-help-on-a-geocache-puzzle/",
+          "who": "Weber_and_Sons (Geocaching forums)",
+          "date": "2025-09-22",
+          "quote": "so I just avoided them until now",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id329541503",
+          "who": "Geocaching app (App Store)",
+          "date": "2026-10-26",
+          "quote": "66K Ratings; Monthly Premium membership $6.99, Annual Premium membership $39.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Free solver tools, puzzle-solving websites, cache owner hints, local tutorial caches.",
+      "risks": "Niche hobby audience. Must never give final coordinates. All evidence is one forum (three threads). Money is for general geocaching membership."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-26",
+    "slug": "first-routines",
+    "name": "First Routines",
+    "need": "I've bought a few smart plugs, bulbs and a hub, and I want them to do useful things automatically, but every brand has its own app and I'm overwhelmed and don't know where to start.",
+    "headline": "Bought smart plugs and bulbs but overwhelmed by all the apps? Tell it what you own and get your first few useful routines set up step by step, in plain English.",
+    "buyer": "Non-expert adults with a handful of smart-home devices from mixed brands who want a few reliable automations.",
+    "bullets": [
+      "List the devices you own (plugs, bulbs, speakers, hubs) and the apps they use.",
+      "Get three or four starter routines that suit your home, such as lights on at sunset or a plug off at night, with plain step-by-step setup in the apps you already have.",
+      "A simple list of what's set up where, so you can change or undo it later."
+    ],
+    "price": "$4/month",
+    "priceUsd": 4,
+    "priceNote": "Or $36 a year.",
+    "reasonPrompt": "Which smart devices do you have, and what would you like them to do?",
+    "faq": [
+      {
+        "q": "Does it cover wiring in smart switches?",
+        "a": "No. First Routines covers plug-in devices and app routines only. Anything involving mains wiring should be done by a qualified electrician."
+      },
+      {
+        "q": "Is it linked to a smart-home brand?",
+        "a": "No. It's independent and works with the apps you already use; it never asks for your account passwords."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-26",
+      "summary": "New smart-home owners describe feeling they need a degree just to get started, being out of their depth with so many choices, and being overwhelmed.",
+      "wtp": "IFTTT, an automation app, has 60K App Store ratings and sells IFTTT Pro at $4.99 a month or $39.99 a year.",
+      "signals": [
+        {
+          "url": "https://community.smartthings.com/t/68197.json",
+          "who": "Originaltrav (SmartThings Community)",
+          "date": "2016-12-14",
+          "quote": "Feels like I need a degree in Quantum Physics just to get started.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://community.smartthings.com/t/53795.json",
+          "who": "Shane_White (SmartThings Community)",
+          "date": "2016-07-28",
+          "quote": "I realize I can do pretty much anything, but I guess I want to start more basic at this point.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://community.smartthings.com/t/121518.json",
+          "who": "ChrisHastie (SmartThings Community)",
+          "date": "2018-03-12",
+          "quote": "out of my depth starting out since there are so many choices",
+          "seen": "opened"
+        },
+        {
+          "url": "https://community.smartthings.com/t/241260.json",
+          "who": "EMTPJ (SmartThings Community)",
+          "date": "2022-04-01",
+          "quote": "This stuff looks really cool, but I am overwhelmed.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id660944635",
+          "who": "IFTTT (App Store)",
+          "date": "2026-10-26",
+          "quote": "60K Ratings; IFTTT Pro Monthly $4.99, Yearly $39.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "IFTTT, Home Assistant, SmartThings, Google Home, Apple Home, Alexa routines.",
+      "risks": "Vendor apps change often. Must avoid mains wiring. Evidence 2016-2022, mostly one community. Big platforms keep improving onboarding."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

@@ -20059,5 +20059,88 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "how-to-start-solving-geocaching-puzzle-caches",
+  "offer": "cache-clue-coach",
+  "title": "How to start solving geocaching puzzle caches",
+  "description": "A beginner's approach to mystery and puzzle caches: how to spot the puzzle type and where to begin.",
+  "intro": "Puzzle caches can look impossible at first. Most use a handful of common techniques, and learning to spot them makes a big difference. This guide is independent and not affiliated with Geocaching HQ.",
+  "sections": [
+   {
+    "h": "Read everything on the page",
+    "list": [
+     "The title, description, hint, attributes and any images can all be part of the puzzle.",
+     "Look at the page source or image details only where the cache page invites it."
+    ]
+   },
+   {
+    "h": "Common puzzle types",
+    "list": [
+     "Ciphers and codes: letters swapped or shifted, or symbols standing for letters.",
+     "Number puzzles: sums, sequences or dates that produce coordinates.",
+     "Hidden text: words hidden in the description, first letters of lines, or text in the same colour as the background.",
+     "Research puzzles: answers found by looking something up."
+    ]
+   },
+   {
+    "h": "Start with easier puzzles",
+    "list": [
+     "Look for puzzle caches with low difficulty ratings near you.",
+     "Some areas have tutorial caches designed to teach techniques."
+    ]
+   },
+   {
+    "h": "Check your answer",
+    "list": [
+     "Many caches offer a checker to confirm your coordinates before you go.",
+     "If you're stuck, ask the cache owner for a hint; many are happy to help."
+    ]
+   },
+   {
+    "h": "Keep notes",
+    "p": [
+     "Write down which techniques solved which puzzles; you'll start recognising them quickly."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "first-smart-home-routines-to-set-up-for-beginners",
+  "offer": "first-routines",
+  "title": "First smart home routines to set up (for beginners)",
+  "description": "Simple, useful automations to start with if you've bought smart plugs, bulbs or a speaker and feel overwhelmed.",
+  "intro": "Smart home devices can do a lot, which is exactly why it's easy to feel overwhelmed. Start with a few simple routines you'll actually use, using the apps you already have. Leave anything that involves mains wiring to a qualified electrician.",
+  "sections": [
+   {
+    "h": "Start with what you own",
+    "list": [
+     "List each device and which app controls it.",
+     "Check whether your devices can all be added to one main app, such as your speaker's or phone's home app."
+    ]
+   },
+   {
+    "h": "Good first routines",
+    "list": [
+     "Lights on at sunset or when you arrive home.",
+     "A plug turning off a lamp or heater-free appliance at bedtime.",
+     "A 'goodnight' routine that turns everything off with one command.",
+     "Lights on gradually in the morning."
+    ]
+   },
+   {
+    "h": "Set up one at a time",
+    "list": [
+     "Create one routine, test it for a few days, then add the next.",
+     "Name devices clearly, such as 'living room lamp', so routines are easy to read."
+    ]
+   },
+   {
+    "h": "Keep a record",
+    "p": [
+     "Write down what each routine does and in which app it lives, so you can change or remove it later."
+    ]
+   }
+  ]
  }
 ]
