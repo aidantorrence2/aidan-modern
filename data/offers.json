@@ -41991,6 +41991,167 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-26",
+    "slug": "practice-peace",
+    "name": "Practice Peace",
+    "need": "I pay for my child's music lessons, but getting them to practise between lessons is a fight every day, and nothing I try works.",
+    "headline": "Music practice a daily battle? Turn this week's lesson notes into short, clear practice cards your child can follow, with a calm weekly view instead of nagging.",
+    "buyer": "Parents of children aged about 5-13 who take weekly instrument lessons and practise at home, often without a musician in the house.",
+    "bullets": [
+      "Type in this week's lesson notes and get short practice cards: what to play, how many times, and what to do when stuck.",
+      "Short sessions (5-15 minutes) set at a regular time, with a simple 'done' tap and no streak to lose.",
+      "A weekly view to share with the teacher, so lessons start from what actually happened at home."
+    ],
+    "price": "$4/month",
+    "priceUsd": 4,
+    "priceNote": "Or $36 a year for the whole household.",
+    "reasonPrompt": "What instrument does your child play, and how old are they?",
+    "faq": [
+      {
+        "q": "Does my child need an account?",
+        "a": "No. The parent sets it up. It stores only a first name or nickname and practice notes, and nothing is shared publicly."
+      },
+      {
+        "q": "Is it linked to a music school or teacher?",
+        "a": "No. It's independent and works alongside whatever lessons your child has."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-26",
+      "summary": "Parents describe spending ages trying to get their child to practise, children not practising between lessons or protesting, and stopping lessons because of the struggle.",
+      "wtp": "Andante, a music practice journal, has 3.1K App Store ratings and sells Andante Pro from $2.99 to $24.99.",
+      "signals": [
+        {
+          "url": "https://giftedissues.davidsongifted.org/bb/ubbthreads.php/posts/20211.html",
+          "who": "squirt (Davidson Gifted forum)",
+          "date": "07/15/08",
+          "quote": "I just spent 20 minutes trying to get my child to do ANY piano practice.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://giftedissues.davidsongifted.org/bb/ubbthreads.php/topics/92419.html",
+          "who": "Lori H. (Davidson Gifted forum)",
+          "date": "01/10/11",
+          "quote": "He has not practiced since his 30-minute lesson last week.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.violinist.com/discussion/archive/15890",
+          "who": "Smiley Hsu (Violinist.com)",
+          "date": "2009-05-31",
+          "quote": "We stopped the piano because it was too much of a struggle to get him to practice.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://simplycharlottemason.com/scmforum/topic/piano-woes",
+          "who": "Arielle (Simply Charlotte Mason forum)",
+          "date": "2014-07-03",
+          "quote": "has begun protesting practicing the cello after taking formal lessons the last year.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1530262372",
+          "who": "Andante Music Practice Journal (App Store)",
+          "date": "2026-10-26",
+          "quote": "3.1K Ratings; Andante Pro $2.99 to $24.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Andante, Tonic, Modacity, teacher studio apps, paper practice charts.",
+      "risks": "Evidence is 2008-2014. Paid practice apps are bought mostly by adult players, not parents. Users are children, so it must collect minimal data. Near the live homework-truce, but a different job."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-26",
+    "slug": "strum-and-sing",
+    "name": "Strum and Sing",
+    "need": "I can play the guitar part and I can sing the song, but when I try to do both at once my strumming goes off the beat or my voice falls apart.",
+    "headline": "Can play it, can sing it, can't do both? Build voice-and-hand independence step by step: count aloud, talk over the strum, sing on the downbeats, then the real song.",
+    "buyer": "Adult hobby guitarists (and some ukulele and piano players) who want to sing along at home, with friends or at an open mic.",
+    "bullets": [
+      "A short ladder for each song: strum while counting aloud, then speaking the words, then singing on the downbeats, then the full vocal line.",
+      "It listens to your strumming while you sing and shows whether it stayed steady.",
+      "A song list with the step you've reached on each, so practice picks up where you left off."
+    ],
+    "price": "$4/month",
+    "priceUsd": 4,
+    "priceNote": "Or $29 a year.",
+    "reasonPrompt": "Which song do you most want to sing and play?",
+    "faq": [
+      {
+        "q": "Does it teach guitar from scratch?",
+        "a": "No. It's for people who can already play the chords and strum a song; it focuses on doing that while singing."
+      },
+      {
+        "q": "Is it linked to a guitar course or brand?",
+        "a": "No. It's independent and recommends no brands."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-26",
+      "summary": "Guitarists describe being unable to sing while playing, their strumming going off the beat when they sing, and coordination falling apart.",
+      "wtp": "The Justin Guitar Lessons & Songs app has 27K App Store ratings and sells Full Access at $8.99 a month or $64.99 a year.",
+      "signals": [
+        {
+          "url": "https://www.ultimate-guitar.com/forum/showthread.php?t=1693180",
+          "who": "Serotonite (Ultimate Guitar)",
+          "date": "2015-12-18",
+          "quote": "Title says it all, I just can",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.ultimate-guitar.com/forum/showthread.php?t=1424527",
+          "who": "ledzep6995 (Ultimate Guitar)",
+          "date": "2011-03-23",
+          "quote": "Whenever I sing, it gets my guitar all off-beat.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.ultimate-guitar.com/forum/showthread.php?t=1359732",
+          "who": "Monster_Mash (Ultimate Guitar)",
+          "date": "2010-09-08",
+          "quote": "One thing i really cant do is singing whilst playing guitar",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.ultimate-guitar.com/forum/showthread.php?t=963486",
+          "who": "mr. cool (Ultimate Guitar)",
+          "date": "2008-09-22",
+          "quote": "I absolutely can not keep the strumming rhythm right while singing",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.ultimate-guitar.com/forum/showthread.php?t=340848",
+          "who": "thelonewolf (Ultimate Guitar)",
+          "date": "2006-04-06",
+          "quote": "ve been trying to sing and play at the same time.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1176125504",
+          "who": "Justin Guitar Lessons & Songs (App Store)",
+          "date": "2026-10-26",
+          "quote": "27K Ratings; Full Access 1 Month $8.99, 1 Year $64.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Guitar lesson apps, sing-along and backing-track apps, chord-and-lyrics sites.",
+      "risks": "All evidence is one site (five threads, 2006-2015). Money is for general guitar apps. Near live on-the-beat (tempo against a click), but a different skill."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
