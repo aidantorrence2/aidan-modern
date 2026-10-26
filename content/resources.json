@@ -18557,5 +18557,83 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "how-to-tell-if-a-work-from-home-job-is-a-scam",
+  "offer": "real-listing",
+  "title": "How to tell if a work-from-home job listing is a scam",
+  "description": "Common warning signs in remote job listings and recruiter messages, and what to check before you apply.",
+  "intro": "Genuine work-from-home jobs exist, but scams are common. Most share the same warning signs. This is general information; if you think you've been targeted, report it to the official fraud reporting service in your country.",
+  "sections": [
+   {
+    "h": "Warning signs",
+    "list": [
+     "You're asked to pay for training, equipment, a starter kit or a background check before you start.",
+     "You're sent a cheque and asked to cash it and send some money on, or buy equipment from a 'supplier'.",
+     "The interview is only by text or chat app, with no video or phone call.",
+     "The pay is very high for simple work, or the job description is vague.",
+     "The recruiter uses a free email address rather than a company one.",
+     "You're offered the job straight away without a proper interview."
+    ]
+   },
+   {
+    "h": "Check the company",
+    "list": [
+     "Search the company name with words like 'scam' or 'reviews'.",
+     "Check it has a real website, address and phone number, and that the recruiter's email matches its domain.",
+     "Look the company up on your country's official company register."
+    ]
+   },
+   {
+    "h": "Protect your details",
+    "list": [
+     "Don't share bank details, ID documents or your national insurance or social security number until you've checked the job is real and have a written offer.",
+     "Never pay to get a job."
+    ]
+   },
+   {
+    "h": "If something feels wrong",
+    "p": [
+     "Stop replying, keep a copy of the messages, and report it to the official fraud reporting service in your country and to the site where you saw the listing."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "what-to-check-before-giving-a-remote-recruiter-your-details",
+  "offer": "real-listing",
+  "title": "What to check before giving a remote recruiter your details",
+  "description": "A short checklist before you share personal or bank details with a recruiter you've never met.",
+  "intro": "Recruiters do contact people about genuine remote roles, but scammers pretend to be recruiters too. A few checks before you share anything personal can save a lot of trouble.",
+  "sections": [
+   {
+    "h": "Who are they?",
+    "list": [
+     "Ask for their full name, the company they work for and the client they're recruiting for.",
+     "Check the recruiter's profile and the company's website independently, not through links they send you.",
+     "Call the company on a number you find yourself and ask whether the role and recruiter are real."
+    ]
+   },
+   {
+    "h": "What are they asking for?",
+    "list": [
+     "Early in the process, a genuine recruiter usually needs only your CV and contact details.",
+     "Be very wary of requests for bank details, ID documents or payment before a formal offer."
+    ]
+   },
+   {
+    "h": "How are they talking to you?",
+    "list": [
+     "Genuine recruiters usually use a company email address and offer phone or video calls.",
+     "Pressure to decide quickly, or to move to a chat app, is a warning sign."
+    ]
+   },
+   {
+    "h": "Keep a record",
+    "p": [
+     "Note every recruiter, company and role you've applied for, so you can spot repeats and check details later."
+    ]
+   }
+  ]
  }
 ]

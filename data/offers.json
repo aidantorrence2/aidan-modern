@@ -41907,6 +41907,90 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-26",
+    "slug": "real-listing",
+    "name": "Real Listing",
+    "need": "I need a genuine work-from-home job, but most of what I find seems to be scams, and I can't tell which listings and recruiters are real.",
+    "headline": "Looking for a real work-from-home job and wading through scams? Paste any listing or recruiter message for a warning-sign check, look up the company step by step, and track every application.",
+    "buyer": "Adults (18+) looking for a remote or work-from-home job who keep meeting scam listings or fake recruiters.",
+    "bullets": [
+      "Paste a listing or recruiter message and get a plain warning-sign check: upfront fees, cheques to cash, chat-only interviews, free email addresses, pay that's too good to be true.",
+      "A step-by-step company look-up checklist before you share your bank details, ID or address.",
+      "A tracker for every remote application, your own list of sources that proved real, and where to report a scam."
+    ],
+    "price": "$4/month",
+    "priceUsd": 4,
+    "priceNote": "Or $24 a year. For adults 18+.",
+    "reasonPrompt": "What kind of work-from-home job are you looking for?",
+    "faq": [
+      {
+        "q": "Does it list jobs or guarantee a listing is safe?",
+        "a": "No. Real Listing lists no jobs and can't guarantee any listing or employer is genuine; it helps you spot common warning signs and check for yourself. It makes no income or hiring claims. Never pay to get a job, and report scams to the official fraud reporting service in your country."
+      },
+      {
+        "q": "Is it linked to a job board?",
+        "a": "No. It's independent and takes no money from employers or job boards."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-26",
+      "summary": "Job seekers describe looking for genuine work-from-home jobs, finding most offers are scams, being asked for upfront training fees, and getting scam emails all the time.",
+      "wtp": "FlexJobs, a paid remote-job board, has 6K App Store ratings and sells 1-Month Full Access at $23.95 and Annual Access at $71.90.",
+      "signals": [
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/5905068/genuine-work-from-home-jobs",
+          "who": "Lisaloppylulabell (MoneySavingExpert)",
+          "date": "2018-10-05",
+          "quote": "I was wondering if there are any genuine work from home jobs out there?",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/2504999/work-from-home-typist-data-entry-legit",
+          "who": "view (MoneySavingExpert)",
+          "date": "2010-06-01",
+          "quote": "20 up front for the training package",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/2504999/work-from-home-typist-data-entry-legit",
+          "who": "Mischa8 (MoneySavingExpert)",
+          "date": "2010-06-01",
+          "quote": "I was interested in working from home (similar roles) and the vast majority of them are scams.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/4410393/advice-needed-pls-home-based-work-legit-or-scam",
+          "who": "loubear78_2 (MoneySavingExpert)",
+          "date": "2013-01-25",
+          "quote": "m so fed up of aimlessly trying to find a legit home-working job",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/4410393/advice-needed-pls-home-based-work-legit-or-scam",
+          "who": "loubear78_2 (MoneySavingExpert)",
+          "date": "2013-01-25",
+          "quote": "i keep getting scammers emailing me all the time",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id800818884",
+          "who": "Remote Job Search - FlexJobs (App Store)",
+          "date": "2026-10-26",
+          "quote": "6K Ratings; 1-Month Full Access $23.95, Annual Access $71.90",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Paid screened job boards, general job sites, official scam-reporting and advice sites.",
+      "risks": "Forum evidence is 2010-2018. Nobody asked for a checker; money is for a paid job board. Must make no income or hiring claims and never call any listing safe. The doc side's Trustpilot and blog sources returned 403 for the code side, so the hosted page uses MoneySavingExpert evidence instead."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
