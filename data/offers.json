@@ -44749,6 +44749,160 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-26",
+    "slug": "book-or-wait",
+    "name": "Book Or Wait",
+    "need": "I've found the flight I want, the price keeps moving, and I never know whether to book now or wait for it to drop.",
+    "headline": "Watching one flight's price go up and down? Log each price you see, set the most you'll pay, and get a plain book-now-or-keep-watching check against your own deadline.",
+    "buyer": "Leisure travellers who book a few trips a year, often families tied to school holidays, and watch one route for weeks.",
+    "bullets": [
+      "Log the price each time you check a flight, and see the trend on one simple chart.",
+      "Set the most you're willing to pay and the latest date you can book, and see both against the trend.",
+      "A plain checklist before you book: baggage, seats, flexible fares and the total for everyone travelling."
+    ],
+    "price": "$5/month",
+    "priceUsd": 5,
+    "priceNote": "Or $30 a year. Cancel any time, in two taps.",
+    "reasonPrompt": "Which trip are you watching prices for, and when do you travel?",
+    "faq": [
+      {
+        "q": "Can it predict whether a fare will drop?",
+        "a": "No. Nobody can promise that. Book Or Wait shows the prices you've seen and your own limits, so you can decide calmly; it never promises a saving."
+      },
+      {
+        "q": "Is it linked to an airline or booking site?",
+        "a": "No. It's independent, not affiliated with any airline, booking site or deal service, and doesn't sell flights."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-26",
+      "summary": "Travellers describe flight prices that keep going up, not knowing the best time to book, and wondering whether waiting will make it cheaper.",
+      "wtp": "Going (formerly Scott's Cheap Flights), a flight deal alert app, has 6.2K App Store ratings and sells Premium at $49 a year and Elite at $199 a year.",
+      "signals": [
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/6648002/nye-a-good-day-to-book-the-flight-at-the-cheapest-price",
+          "who": "vicker (MoneySavingExpert)",
+          "date": "2025-12-29",
+          "quote": "Will it likely be cheaper on NYE, as hardly anyone books flights on NYE.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/6012147/do-flight-prices-with-smaller-airlines-airports-tend-to-only-go-up",
+          "who": "Tunstallstoven (MoneySavingExpert)",
+          "date": "2019-06-10",
+          "quote": "the flights at Cardiff with airlines such as KLM just keep going up!",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/5774863/best-time-to-book-flights-to-turkey",
+          "who": "LDGR (MoneySavingExpert)",
+          "date": "2018-01-14",
+          "quote": "have I already missed the best time",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/3953839/flight-prices-keep-increasing",
+          "who": "BusyMum2 (MoneySavingExpert)",
+          "date": "2012-05-10",
+          "quote": "I have noticed that the flights from London to Antalya in August keep going up.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=6443738607/sortby=mostrecent/json",
+          "who": "Maxaroone (App Store review of Going)",
+          "date": "2026-08-24",
+          "quote": "everyday the price the rising",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/going-find-flight-deals/id6443738607",
+          "who": "Going (App Store)",
+          "date": "2026-10-26",
+          "quote": "6.2K Ratings; Premium $49.00; Elite $199.00",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Google Flights price tracking, Hopper, Going, Skyscanner alerts.",
+      "risks": "Free price tracking is widely available. No fare prediction can be promised. Most forum evidence is UK; the money proof is a US deal app. Near live together-seats (points seats) and holiday-pot (spending money), but about cash fares."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-26",
+    "slug": "fuel-sipper",
+    "name": "Fuel Sipper",
+    "need": "My car uses more fuel than I'd like and I want to change how I drive to get better MPG, but I don't know what actually makes a difference.",
+    "headline": "Want better MPG from the car you've got? Log each fill-up, try one driving change at a time, and see which habits actually move your own fuel figures.",
+    "buyer": "Everyday drivers, including new hybrid owners, who feel fuel costs every week and want to drive more economically.",
+    "bullets": [
+      "Log each fill-up in seconds and see your real MPG, tank by tank.",
+      "Try one change at a time (smoother starts, earlier gear changes, steady speeds, tyre pressures) and tag the tanks you tried it on.",
+      "See which changes made a difference for your car and your journeys, as estimates, not promises."
+    ],
+    "price": "$3/month",
+    "priceUsd": 3,
+    "priceNote": "Or $18 a year.",
+    "reasonPrompt": "What car do you drive, and is it mostly short trips or long runs?",
+    "faq": [
+      {
+        "q": "Will it guarantee I save money?",
+        "a": "No. Fuel use depends on your car, roads, traffic and weather. Fuel Sipper shows your own before-and-after figures as estimates; it promises no saving."
+      },
+      {
+        "q": "Is it linked to a carmaker or fuel company?",
+        "a": "No. Fuel Sipper is independent, not affiliated with any carmaker, fuel retailer or app, and sells no products or additives."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-26",
+      "summary": "Drivers describe wanting to change their driving habits for better economy, asking how to get the lowest fuel use from a hybrid, and whether changing gears manually helps MPG.",
+      "wtp": "Fuelly, an MPG and service tracker, has 30K App Store ratings and sells Premium at $0.99 a month or $7.99 a year.",
+      "signals": [
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/5929037/how-to-get-more-mpg-out-of-a-ford-fiesta-ecoboost",
+          "who": "Cupumber1 (MoneySavingExpert)",
+          "date": "2018-11-25",
+          "quote": "Economy is a massive deal to me so I would be happy to change my driving habits to make it work.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/6429935/how-to-get-better-mpg-from-hybrids",
+          "who": "avantra (MoneySavingExpert)",
+          "date": "2023-03-04",
+          "quote": "lowest fuel consumption from a hybrid",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/2697293/can-i-improve-economy-of-an-automatic",
+          "who": "wazza (MoneySavingExpert)",
+          "date": "2010-09-01",
+          "quote": "can i improve the mpg figures",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/fuelly-mpg-service-tracker/id295905460",
+          "who": "Fuelly (App Store)",
+          "date": "2026-10-26",
+          "quote": "30K Ratings; Premium Monthly $0.99; Premium Annual $7.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Fuelly, Fuelio, Drivvo, car trip computers, free eco-driving tips.",
+      "risks": "The paid comparison is cheap. Evidence is one forum, 2010-2023. Free tips are everywhere. Near live service-mile, creep-spots and gas-left, so it must stay about MPG and driving habits. Savings framed only as estimates."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

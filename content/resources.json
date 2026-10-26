@@ -20562,5 +20562,87 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "flight-price-went-up-should-i-book-now-or-wait",
+  "offer": "book-or-wait",
+  "title": "Flight price went up: should I book now or wait?",
+  "description": "A calm way to decide whether to book a flight now or keep watching, when the price keeps moving.",
+  "intro": "Flight prices change often, and nobody can reliably tell you whether a fare will drop. What you can do is decide in advance what you're willing to pay and how long you can wait. This guide is independent and not linked to any airline or booking site.",
+  "sections": [
+   {
+    "h": "Set your limits first",
+    "list": [
+     "Decide the most you're willing to pay per person, including bags and seats.",
+     "Decide the latest date you can book, for example before school holiday dates fill up.",
+     "When the price is at or under your limit, booking is a reasonable choice."
+    ]
+   },
+   {
+    "h": "Watch the price sensibly",
+    "list": [
+     "Check the same route, dates and fare type each time so you compare like with like.",
+     "Note the price and the date each time you check.",
+     "Free price alerts from search sites can save you checking every day."
+    ]
+   },
+   {
+    "h": "Things that usually push prices up",
+    "list": [
+     "School holidays, bank holidays and big events.",
+     "Few seats left on a route with few flights.",
+     "Popular departure times."
+    ]
+   },
+   {
+    "h": "Before you book",
+    "list": [
+     "Compare the total, not the headline fare: bags, seats and payment fees add up.",
+     "Check the change and cancellation rules.",
+     "Book with the airline or a protected booking where possible."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "how-to-get-better-mpg-driving-habits-that-cut-fuel-use",
+  "offer": "fuel-sipper",
+  "title": "How to get better MPG: driving habits that cut fuel use",
+  "description": "Simple driving habits and car checks that commonly help reduce fuel use, and how to measure the difference for your own car.",
+  "intro": "How you drive makes a real difference to fuel use, but the size of the effect varies by car and journey. The best way to know what works for you is to change one thing at a time and measure it.",
+  "sections": [
+   {
+    "h": "Driving habits",
+    "list": [
+     "Accelerate smoothly and look ahead so you brake less.",
+     "Change up a gear earlier in a manual car, where it's comfortable to do so.",
+     "Keep a steady speed; on motorways, lower speeds generally use less fuel.",
+     "Avoid idling for long periods when parked."
+    ]
+   },
+   {
+    "h": "Car checks",
+    "list": [
+     "Keep tyres at the pressures in your handbook.",
+     "Take off roof boxes and racks when you're not using them.",
+     "Don't carry heavy things you don't need.",
+     "Keep up with servicing."
+    ]
+   },
+   {
+    "h": "Hybrids",
+    "list": [
+     "Gentle acceleration lets the car use electric power more often.",
+     "Brake gently and early so regenerative braking can recover energy.",
+     "Use the car's economy display to learn what helps."
+    ]
+   },
+   {
+    "h": "Measure it yourself",
+    "p": [
+     "Fill the tank, note the mileage, and work out miles per gallon at the next fill-up. Try one change for a few tanks and compare. Results vary with weather, traffic and route."
+    ]
+   }
+  ]
  }
 ]
