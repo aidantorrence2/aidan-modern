@@ -41046,6 +41046,174 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-26",
+    "slug": "kin-album",
+    "name": "Kin Album",
+    "need": "I want to share photos of my baby with family who live far away without putting them on social media, and without relatives reposting them.",
+    "headline": "Want grandparents far away to see every baby photo, without social media? One private, invite-only album: relatives just tap a link to view, with no account and no download button.",
+    "buyer": "Parents of babies and young children whose grandparents and relatives live in other towns or countries, and who don't want photos on social media.",
+    "bullets": [
+      "Add photos and short videos from your phone; invite relatives by link or text, with no app or account needed to view.",
+      "View-only by default: no download button and no reshare link, and you can remove anyone's access at any time.",
+      "A weekly 'new photos' note for grandparents, and full export of everything for you whenever you like."
+    ],
+    "price": "$4/month",
+    "priceUsd": 4,
+    "priceNote": "Or $36 a year.",
+    "reasonPrompt": "Who do you want to share photos with, and where do they live?",
+    "faq": [
+      {
+        "q": "Can relatives still screenshot photos?",
+        "a": "Yes. No app can stop someone taking a screenshot. Kin Album removes the download and share buttons and lets you control who has access, but you should only invite people you trust."
+      },
+      {
+        "q": "Who owns the photos?",
+        "a": "You do. Albums are private, never used for advertising, and you can export or delete everything at any time. It's independent and not linked to any social network."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-26",
+      "summary": "Parents and others describe wanting to share photos with out-of-town family privately, without social media, and some already pay for invite-only albums.",
+      "wtp": "FamilyAlbum (baby photo sharing) has 379K App Store ratings and sells Premium Family at $5.99 a month or $59.00 a year; a Hellobee parent pays a yearly fee for SmugMug to share albums.",
+      "signals": [
+        {
+          "url": "https://boards.hellobee.com/topic/privacy-and-photo-sharing",
+          "who": "FelicityMerriman (Hellobee)",
+          "date": "2018-03-12",
+          "quote": "I have family all over the country who will want to see photos of LO once he/she arrives.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://boards.hellobee.com/topic/privacy-and-photo-sharing",
+          "who": "bhbee (Hellobee)",
+          "date": "2018-03-12",
+          "quote": "I use smugmug for photo albums and sharing, but it has a yearly fee.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=9814851",
+          "who": "mjstahl (Hacker News)",
+          "date": "2015-07-01",
+          "quote": "Want to share pictures with out of town parents. Want the pictures to be private.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=28094904",
+          "who": "auslegung (Hacker News)",
+          "date": "2021-08-07",
+          "quote": "I want a completely private way of sharing photo albums with",
+          "seen": "opened"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=37133408",
+          "who": "version_five (Hacker News)",
+          "date": "2023-08-15",
+          "quote": "most comfortable with something paid that has strong privacy and good support.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id935672069",
+          "who": "FamilyAlbum (App Store)",
+          "date": "2026-10-26",
+          "quote": "379K Ratings; Premium Family $5.99, Premium Family (Yearly) $59.00",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "FamilyAlbum, Tinybeans, 23snaps, SmugMug, iCloud and Google Photos shared albums.",
+      "risks": "Crowded, with strong free defaults. Hosting children's photos carries privacy and data duties. Screenshots can't be prevented. Near the live baby-book offer (firsts-kept), but a different job."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-26",
+    "slug": "who-where",
+    "name": "Who's Where",
+    "need": "My partner and I keep losing track of who is picking up which kid and what's on this week, because I'm the only one who looks at the family calendar.",
+    "headline": "Always the only one who knows who's picking up the kids? One shared week view with a named driver for every pickup, and a nudge to the person on duty, on any phone.",
+    "buyer": "Two-parent households with school-age children juggling clubs, pickups, work travel and appointments, often across iPhone and Android.",
+    "bullets": [
+      "Every pickup, drop-off and club has a named person; unassigned ones are flagged on Sunday evening.",
+      "A morning nudge to whoever is on duty today, so it's not all in one parent's head.",
+      "Swap requests in one tap, and a simple count of who's done what each week."
+    ],
+    "price": "$4/month",
+    "priceUsd": 4,
+    "priceNote": "Or $36 a year for the whole household.",
+    "reasonPrompt": "How many children, and what does a busy week look like?",
+    "faq": [
+      {
+        "q": "Does it replace our calendars?",
+        "a": "No. It sits alongside the calendars you already use and focuses on who is doing each pickup and job. It's independent and not linked to any school."
+      },
+      {
+        "q": "Does it work across iPhone and Android?",
+        "a": "Yes. Each adult in the household uses it on their own phone."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-26",
+      "summary": "Parents describe looking for a shared family calendar to coordinate what the kids are up to, and family tracking feeling disjointed; some already pay for family organiser apps.",
+      "wtp": "Cozi Family Organizer has 402K App Store ratings and sells Cozi Gold at $29.99-$39.00 a year; a forum parent says 'I pay for Cozi', and an App Store reviewer says they never pay for apps but did for this one.",
+      "signals": [
+        {
+          "url": "https://singletrackworld.com/forum/off-topic/shared-family-diary/",
+          "who": "Rich_s (Singletrack forum)",
+          "date": "2021-07-29",
+          "quote": "in order that we can coordinate whatever the kids are up to",
+          "seen": "opened"
+        },
+        {
+          "url": "https://singletrackworld.com/forum/off-topic/shared-family-diary/",
+          "who": "scuttler (Singletrack forum)",
+          "date": "2021-07-29",
+          "quote": "I pay for Cozi.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=37068207",
+          "who": "galkk (Hacker News)",
+          "date": "2023-08-09",
+          "quote": "The tracking of everything that needs to be done for family starts to feel very disjointed.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=44435281",
+          "who": "iugtmkbdfil834 (Hacker News)",
+          "date": "2025-07-01",
+          "quote": "what I think I want to do is have a shared calendar for my family",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id407108860",
+          "who": "BusyMomOfFourPlusAHubby (Cozi App Store review)",
+          "date": "2019",
+          "quote": "I NEVER pay for apps, but was willing to for this one!!",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id407108860",
+          "who": "Cozi Family Organizer (App Store)",
+          "date": "2026-10-26",
+          "quote": "402K Ratings; Cozi Gold $39.00; 1-year subscription $29.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Cozi, TimeTree, FamilyWall, shared Google, iCloud and Outlook calendars, paper wall calendars.",
+      "risks": "Free shared calendars are the default answer; the angle must be named pickups and nudges. Some price sensitivity. Near the live tomorrows-bag (school emails) and household-help offers, but a different job."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
