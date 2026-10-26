@@ -40248,6 +40248,174 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-26",
+    "slug": "home-trim",
+    "name": "Home Trim",
+    "need": "I want to cut my own or my family's hair at home to stop paying the salon or barber, but whenever I try it comes out uneven and I don't trust myself to do it.",
+    "headline": "Want to cut hair at home without it looking DIY? Pick your cut, follow it one step at a time with the clipper guard or scissor length for each section, and save your settings so next time is easier.",
+    "buyer": "Adults who pay for regular trims and want to cut their own hair, or a partner's or child's, with clippers or scissors.",
+    "bullets": [
+      "Choose the cut (clipper cut, fade, trim, fringe, kids' cut) and get a short step-by-step plan with the guard number or length for each section.",
+      "An evenness check for each step, using your phone camera or a second mirror, before you move on.",
+      "Saves the settings that worked for each person, plus a count of what you've saved compared with your usual salon price."
+    ],
+    "price": "$3/month",
+    "priceUsd": 3,
+    "priceNote": "Or $19 a year.",
+    "reasonPrompt": "Whose hair do you want to cut, and with clippers or scissors?",
+    "faq": [
+      {
+        "q": "Will my haircut look professional?",
+        "a": "It can't promise that. Home Trim breaks a cut into small, careful steps so mistakes are easier to avoid and fix, but results depend on your hair, tools and practice. Start longer than you think: you can always take more off."
+      },
+      {
+        "q": "Is it linked to a salon or clipper brand?",
+        "a": "No. It's independent and recommends no brands."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-26",
+      "summary": "People describe wanting to cut their own hair to save money but struggling to get it straight and even, and worrying it will look DIY.",
+      "wtp": "Posters already spend on this: one paid £40 a trim every two months at the salon; another bought trimmers for about £20 to cut a partner's hair.",
+      "signals": [
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/6304471/cutting-your-own-hair",
+          "who": "Amandaa5449 (MoneySavingExpert)",
+          "date": "2021-10-13",
+          "quote": "I was never happy with my cut which I struggled to get straight and even",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/5543787/cutting-my-own-hair-is-this-easy-or-likely-to-be-a-disaster",
+          "who": "ripplyuk (MoneySavingExpert)",
+          "date": "2016-10-20",
+          "quote": "been done DIY, and look a bit untidy",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/6000543/has-anyone-learnt-to-cut-their-own-hair-so-that-it-looks-nice",
+          "who": "lassfarfromhome (MoneySavingExpert)",
+          "date": "2019-05-11",
+          "quote": "been thinking about trying to cut my own hair for a while.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/6119025/cutting-own-hair",
+          "who": "Ash_Pole (MoneySavingExpert)",
+          "date": "2020-03-24",
+          "quote": "How feasible is it to have a go myself?",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/6122931/cutting-your-own-hair",
+          "who": "avoidtheupsidedownbottles (MoneySavingExpert)",
+          "date": "2020-03-31",
+          "quote": "Have got some clippers so may try a simple No. 1 on the sides, No.2 on top though suspect it will not go well",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/663921/does-anyone-cut-their-partners-hair",
+          "who": "alanalea (MoneySavingExpert)",
+          "date": "2008-01-04",
+          "quote": "We use the Nicky Clarke cordless trimmers (about",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Free YouTube tutorials, cutting guide templates, AI hairstyle try-on apps (preview only).",
+      "risks": "No paid app to benchmark; money evidence is salon fees and trimmers. Some posts are from the 2020 lockdown. Free video tutorials are a strong substitute."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-26",
+    "slug": "cool-rooms",
+    "name": "Cool Rooms",
+    "need": "My home, especially my bedroom, gets so hot in summer that I can't sleep, and I don't know when to open or close the windows and curtains to actually cool it down without air con.",
+    "headline": "Bedroom too hot to sleep in summer? Get told when it's cooler outside than in, so you know when to open the windows and when to shut the curtains, plus a night plan for each room.",
+    "buyer": "People in homes without air conditioning, especially new builds, top-floor flats and sunny-facing rooms, who sleep badly in hot weather.",
+    "bullets": [
+      "Enter each room's temperature (or use a cheap thermometer) and get an alert when outside drops below inside: windows open. Another when it rises: windows and curtains shut.",
+      "A per-room plan for which side gets the sun and when to close blinds or curtains.",
+      "A simple hot-night checklist and a log of what you tried and how you slept, so you can see what works in your home."
+    ],
+    "price": "$3/month",
+    "priceUsd": 3,
+    "priceNote": "Or $15 a year.",
+    "reasonPrompt": "What kind of home is it, and which room gets hottest?",
+    "faq": [
+      {
+        "q": "Is it health advice?",
+        "a": "No. Cool Rooms gives general home-cooling tips. If you or someone you live with feels unwell in the heat, for example dizzy, confused or very weak, get medical help; in an emergency call your local emergency number."
+      },
+      {
+        "q": "Does it need smart devices?",
+        "a": "No. You can type temperatures in yourself. It's independent and not linked to any energy company or air-con brand."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-26",
+      "summary": "People describe homes, especially new builds and upstairs bedrooms, getting unbearably hot in summer, weeks of bad sleep, and spending on fans, duvets and portable units.",
+      "wtp": "Posters describe running fans all summer, buying a 1-tog duvet, a water fan and a portable unit. Cool Cue, an open-window alert app, sells Cool Cue Monthly at $1.99 (no ratings shown).",
+      "signals": [
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/6292701/newly-built-properties-too-warm-help-with-finding-an-alternative",
+          "who": "sky_aster (MoneySavingExpert)",
+          "date": "2021-08-25",
+          "quote": "honestly been unbearable.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/6292701/newly-built-properties-too-warm-help-with-finding-an-alternative",
+          "who": "krusty101 (MoneySavingExpert)",
+          "date": "2021-08-25",
+          "quote": "I had no idea it would be like this in the summer.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/6292701/newly-built-properties-too-warm-help-with-finding-an-alternative",
+          "who": "pinkteapot (MoneySavingExpert)",
+          "date": "2021-08-26",
+          "quote": "Our new-build is roasting upstairs.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/6679619/how-do-you-keep-yourself-cool-in-the-heatwave",
+          "who": "Evil_Olive (MoneySavingExpert)",
+          "date": "2026-08-13",
+          "quote": "I suffer from the heat really badly",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/6679619/how-do-you-keep-yourself-cool-in-the-heatwave",
+          "who": "RipleyG (MoneySavingExpert)",
+          "date": "2026-08-14",
+          "quote": "Opening windows overnight cools the house - but ONLY if the outside temperature is lower.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id6809853585",
+          "who": "Cool Cue: Open Window Alerts (App Store)",
+          "date": "2026-10-26",
+          "quote": "Cool Cue Monthly $1.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Cool Cue and other small window-alert apps, smart thermostats, portable and split air conditioning, free heatwave advice.",
+      "risks": "No app in this space has many ratings, so paying for software is unproven; money is spent on fans, duvets and portable units. Seasonal demand. Must give no health advice."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

@@ -17571,5 +17571,88 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "how-to-cut-your-own-hair-at-home-without-it-looking-diy",
+  "offer": "home-trim",
+  "title": "How to cut hair at home without it looking DIY",
+  "description": "Practical tips for cutting your own or your family's hair with clippers or scissors, and avoiding the most common mistakes.",
+  "intro": "Cutting hair at home can save money, but uneven results put many people off. Going slowly, starting longer and working in sections makes a big difference.",
+  "sections": [
+   {
+    "h": "Get the right tools",
+    "list": [
+     "Clippers with a set of guards for short cuts.",
+     "Proper hairdressing scissors for trims; kitchen scissors tend to give ragged ends.",
+     "A comb, clips to section hair, and two mirrors or a phone camera to see the back."
+    ]
+   },
+   {
+    "h": "Start longer than you think",
+    "list": [
+     "With clippers, start with a higher guard number than you want; you can go shorter, but not longer.",
+     "With scissors, cut small amounts and check before cutting more."
+    ]
+   },
+   {
+    "h": "Work in sections",
+    "list": [
+     "Divide the hair into sections and finish one before moving on.",
+     "Compare both sides often, in the mirror and by feeling lengths between your fingers."
+    ]
+   },
+   {
+    "h": "Common mistakes",
+    "list": [
+     "Cutting wet hair too short: hair can look longer when wet, especially if it's curly.",
+     "Pressing the clippers into the head, which can take off more than expected.",
+     "Rushing the back and around the ears."
+    ]
+   },
+   {
+    "h": "Note what worked",
+    "p": [
+     "Write down the guard numbers or lengths you used, so the next cut is quicker and more consistent."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "bedroom-too-hot-to-sleep-how-to-cool-it-without-air-con",
+  "offer": "cool-rooms",
+  "title": "Bedroom too hot to sleep? How to cool it down without air con",
+  "description": "Simple ways to keep a bedroom cooler in hot weather: when to open windows, when to close curtains, and what helps at night.",
+  "intro": "In hot weather many homes, especially new builds and top-floor flats, stay warm long into the night. The biggest wins usually come from keeping heat out during the day and letting cooler air in at the right time. This is general information.",
+  "sections": [
+   {
+    "h": "Keep the sun out during the day",
+    "list": [
+     "Close curtains or blinds on windows that get direct sun, before the room heats up.",
+     "Light-coloured or blackout curtains help; outside shading helps most if you have it."
+    ]
+   },
+   {
+    "h": "Open windows only when it's cooler outside",
+    "list": [
+     "Check the temperature outside and inside; a cheap thermometer for the room helps.",
+     "When it's hotter outside than in, keep windows closed.",
+     "Open them in the evening and overnight once it's cooler outside, and if it's safe to do so. Opening windows on opposite sides of the home can create a through-draught."
+    ]
+   },
+   {
+    "h": "At night",
+    "list": [
+     "Use a fan to move air, ideally near an open window when it's cooler outside.",
+     "Switch to light bedding, such as a low-tog duvet or just a sheet.",
+     "Turn off lights and electronics you don't need, as they add heat."
+    ]
+   },
+   {
+    "h": "Look after yourself",
+    "p": [
+     "Drink plenty of water in hot weather. If you or someone you live with feels unwell in the heat, for example dizzy, confused or very weak, get medical help; in an emergency call your local emergency number."
+    ]
+   }
+  ]
  }
 ]
