@@ -42411,6 +42411,97 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-26",
+    "slug": "glute-ledger",
+    "name": "Glute Ledger",
+    "need": "My legs respond to training, but my glutes stay flat however faithfully I work them, and I can't see any change.",
+    "headline": "Training glutes faithfully and seeing no change? Log three or four glute lifts in seconds, see when you've stalled, add a little at the right time, and track the trend with a monthly tape and photo.",
+    "buyer": "Adults (18+) who train their glutes regularly and see no change in size or shape.",
+    "bullets": [
+      "A quick log of the three or four glute lifts you choose: weight and reps each session, plus your weekly glute-set count.",
+      "An 'add a little' prompt after three flat sessions, so the work keeps progressing.",
+      "A monthly hip-tape trend and a same-light side photo every four weeks, so you judge change honestly."
+    ],
+    "price": "$4/month",
+    "priceUsd": 4,
+    "priceNote": "Or $24 a year. For adults 18+.",
+    "reasonPrompt": "How do you train your glutes now, and for how long?",
+    "faq": [
+      {
+        "q": "Will it change my shape?",
+        "a": "It can't promise that. How muscles grow and where you store fat depend a lot on genetics. Glute Ledger is a training log that makes no body-shape claims and isn't medical advice; if exercise causes pain, stop and see a doctor or physiotherapist."
+      },
+      {
+        "q": "Is it linked to a gym, trainer or supplement brand?",
+        "a": "No. It's independent, sells no supplements and is for adults 18+."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-26",
+      "summary": "People describe legs that respond to exercise while their glutes stay flat, working at it faithfully without seeing changes, and having the problem their whole lives.",
+      "wtp": "30 Day Butt Workout Challenge has 1.2K App Store ratings and sells plans at $1.99 a week, $5.99 a month, $29.99 a year or $39.99 lifetime.",
+      "signals": [
+        {
+          "url": "https://cathe.com/forum/threads/please-help-for-flat-butt.168528/",
+          "who": "RhiannonW (cathe.com)",
+          "date": "2002-05-31",
+          "quote": "However, my butt is flat.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://cathe.com/forum/threads/please-help-for-flat-butt.168528/",
+          "who": "KatieScarlett (cathe.com)",
+          "date": "2002-05-31",
+          "quote": "ve had that problem my whole life!",
+          "seen": "opened"
+        },
+        {
+          "url": "https://cathe.com/forum/threads/please-help-for-flat-butt.168528/",
+          "who": "R_Lam (cathe.com)",
+          "date": "2002-05-31",
+          "quote": "Legs that respond well to exercise but a butt that",
+          "seen": "opened"
+        },
+        {
+          "url": "https://cathe.com/forum/threads/flat-butt.249410/",
+          "who": "JoanofLark (cathe.com)",
+          "date": "2008-07-29",
+          "quote": "I have been working at it faithfully and still don",
+          "seen": "opened"
+        },
+        {
+          "url": "https://cathe.com/forum/threads/flat-butt.249410/",
+          "who": "Pinkpuffer (cathe.com)",
+          "date": "2008-07-30",
+          "quote": "Same problem here! I am actually surprised how much work it",
+          "seen": "opened"
+        },
+        {
+          "url": "https://cathe.com/forum/threads/anyone-have-luck-in-toning-butt.198220/",
+          "who": "mogambo (cathe.com)",
+          "date": "2004-04-14",
+          "quote": "My butt is the most doomed subunit I own.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1377092487",
+          "who": "30 Day Butt Workout Challenge (App Store)",
+          "date": "2026-10-26",
+          "quote": "1.2K Ratings; $1.99, $5.99, $29.99, $39.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Glute workout and challenge apps, general lifting logs (Strong, Hevy), personal trainers.",
+      "risks": "All forum evidence is one site (three threads, 2002-2008). Paying apps are bodyweight challenges rather than lift logs. Must make no body-shape claims. Near live calf-count and waist-first, which cover other body areas."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
