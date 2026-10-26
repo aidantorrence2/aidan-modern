@@ -42929,6 +42929,83 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-26",
+    "slug": "arm-tape",
+    "name": "Arm Tape",
+    "need": "I train my arms, but they stay small compared with the rest of me, and I can't tell whether anything I do is making a difference.",
+    "headline": "Training arms and they still look small? Log your arm lifts in seconds, see when you've stalled, add a little at the right time, and track your upper arm with a monthly tape and photo.",
+    "buyer": "Adults (18+) who train their arms and don't see them grow.",
+    "bullets": [
+      "A quick log of your arm lifts (curls, hammer curls, close-grip presses, overhead extensions): weight and reps each session, plus weekly biceps and triceps sets.",
+      "An 'add a little' prompt after three flat sessions, so the work keeps progressing.",
+      "A monthly upper-arm tape trend and a same-light photo every four weeks, so you judge change honestly."
+    ],
+    "price": "$4/month",
+    "priceUsd": 4,
+    "priceNote": "Or $24 a year. For adults 18+.",
+    "reasonPrompt": "How do you train your arms now, and for how long?",
+    "faq": [
+      {
+        "q": "Will it make my arms bigger?",
+        "a": "It can't promise that. Muscle growth depends on genetics, food, sleep and consistent training. Arm Tape is a training log that makes no body-size claims and isn't medical advice; if a lift causes pain, stop and see a doctor or physiotherapist."
+      },
+      {
+        "q": "Is it linked to a gym or supplement brand?",
+        "a": "No. It's independent, sells no supplements and is for adults 18+."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-26",
+      "summary": "People describe arms losing size despite doing everything right, finding it hard to build mass, and feeling nothing there when they flex despite lifting heavy.",
+      "wtp": "Arm-specific workout apps sell subscriptions: Armify (28 App Store ratings) from $2.99 a week to $99.99 a year, and 30 Day Toned Arm Challenge (32 ratings) at $5.99 a month or $29.99 a year.",
+      "signals": [
+        {
+          "url": "https://www.drscottstevenson.com/forum/post-13090.html",
+          "who": "nordan (Fortitude Training forum)",
+          "date": "01-04-2017",
+          "quote": "My arms in fact have actually lost size, possibly 1/2 an inch even though I have been doing everything correct",
+          "seen": "opened"
+        },
+        {
+          "url": "https://cathe.com/forum/threads/bicep-shape-what-am-i-doing-wrong.170493/",
+          "who": "RhiannonW (cathe.com)",
+          "date": "2003-07-18",
+          "quote": "have have a hard time building mass",
+          "seen": "opened"
+        },
+        {
+          "url": "https://cathe.com/forum/threads/bicep-shape-what-am-i-doing-wrong.170493/",
+          "who": "intensitylisa (cathe.com)",
+          "date": "2003-07-18",
+          "quote": "I lift heavy, but when I make a muscle it is like there is nothing there.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1108333141",
+          "who": "Armify: Arm & Biceps Workout (App Store)",
+          "date": "2026-10-26",
+          "quote": "28 Ratings; $2.99 to $99.99",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1541978850",
+          "who": "30 Day Toned Arm Challenge (App Store)",
+          "date": "2026-10-26",
+          "quote": "32 Ratings; $5.99, $29.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Arm workout apps, general lifting logs (Strong, Hevy), personal trainers.",
+      "risks": "Paid arm apps have tiny rating counts. Forum evidence is 2003 and 2017. The doc side's AnandTech source was blocked for the code side, so the hosted page uses the Fortitude Training and cathe.com evidence. Close in mechanism to killed next-lift and physique-check, but scoped to one body part like live calf-count and glute-ledger."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
