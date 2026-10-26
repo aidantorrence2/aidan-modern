@@ -18187,5 +18187,82 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "how-to-convert-oven-times-to-air-fryer-times",
+  "offer": "fryer-times",
+  "title": "How to convert oven times to air fryer times",
+  "description": "A simple starting point for turning oven temperatures and times into air fryer settings, and how to check food is cooked.",
+  "intro": "Most packets and recipes give oven instructions only. Air fryers usually cook faster because they circulate hot air closely around the food, so you generally need a lower temperature and a shorter time. Models vary, so treat any conversion as a starting point and always check food is cooked through.",
+  "sections": [
+   {
+    "h": "A common starting point",
+    "list": [
+     "Reduce the oven temperature by about 20°C (around 25°F).",
+     "Reduce the time by about 20%, then check early.",
+     "Many packets now include air fryer instructions too; use those when they're given."
+    ]
+   },
+   {
+    "h": "Check and shake",
+    "list": [
+     "Check part-way through and shake the basket or turn the food so it browns evenly.",
+     "Don't overfill the basket; food cooks more evenly in a single layer."
+    ]
+   },
+   {
+    "h": "Make sure it's cooked",
+    "list": [
+     "Meat, poultry and fish must be cooked through. A food thermometer is the most reliable check.",
+     "Reheated food should be piping hot all the way through.",
+     "Follow the food-safety advice on the packet."
+    ]
+   },
+   {
+    "h": "Keep your own notes",
+    "p": [
+     "Write down what worked for each food in your fryer: temperature, time, and whether you'd change it. After a few weeks you'll have settings you can trust."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "how-to-send-a-fax-without-a-fax-machine",
+  "offer": "one-fax",
+  "title": "How to send a fax without a fax machine",
+  "description": "Options for sending the occasional fax for forms and paperwork when you don't own a fax machine or landline.",
+  "intro": "Some banks, insurers, medical offices and government agencies still ask for signed forms by fax. You don't need a fax machine; there are several ways to send one occasionally.",
+  "sections": [
+   {
+    "h": "First, ask about alternatives",
+    "list": [
+     "Ask whether they accept the form by secure upload, email or post instead.",
+     "If fax is the only option, check the exact fax number and whether a cover page is needed."
+    ]
+   },
+   {
+    "h": "Ways to send a fax",
+    "list": [
+     "Online fax services and apps: you upload a scan or photo and they send it. Some have free options with limits or adverts; others charge per fax or by subscription.",
+     "Print and shipping shops often send faxes for a per-page fee.",
+     "Some public libraries offer fax services."
+    ]
+   },
+   {
+    "h": "Get a good scan",
+    "list": [
+     "Photograph the pages flat, in good light, with no shadows.",
+     "Make sure signatures and small print are readable.",
+     "Send pages in the right order."
+    ]
+   },
+   {
+    "h": "Protect sensitive documents",
+    "list": [
+     "Check the service's privacy terms before sending medical, financial or ID documents.",
+     "Keep the delivery confirmation as proof it was sent."
+    ]
+   }
+  ]
  }
 ]

@@ -41305,6 +41305,188 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-26",
+    "slug": "fryer-times",
+    "name": "Fryer Times",
+    "need": "I've got an air fryer but packets and recipes only give oven times, so I never know what temperature and time to use and end up guessing.",
+    "headline": "Packets only give oven times? Turn any oven instruction into an air fryer starting point, with a check-and-shake reminder, and keep a log of what actually worked in your fryer.",
+    "buyer": "Adults who have an air fryer and cook from oven-only packet instructions and ordinary recipes.",
+    "bullets": [
+      "Type or snap the oven temperature and time, choose the food type, and get a suggested air fryer starting point.",
+      "A timer that reminds you to check and shake part-way, and the safe internal temperature to check with a thermometer for meat and fish.",
+      "A log of what worked in your own fryer, so next time you use your numbers, not a generic chart."
+    ],
+    "price": "$3/month",
+    "priceUsd": 3,
+    "priceNote": "Or $19 a year.",
+    "reasonPrompt": "Which air fryer do you have, and what do you cook most?",
+    "faq": [
+      {
+        "q": "Are the times guaranteed?",
+        "a": "No. Air fryers vary by model and size, so suggestions are a starting point. Always check food is cooked through and piping hot; for meat, poultry and fish use a food thermometer, and follow the packet's food-safety advice."
+      },
+      {
+        "q": "Is it linked to an air fryer brand?",
+        "a": "No. It's independent and works with any make."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-26",
+      "summary": "Air fryer owners describe trying to work out general rules for converting oven temperatures and times, trial and error, and packet times not accounting for air fryers.",
+      "wtp": "Healthy Air Fryer Recipes has 1.8K App Store ratings and sells Pro at $9.99 a month or $19.99 a year.",
+      "signals": [
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/6590869/air-fryer-temp-time-conversions",
+          "who": "Spint (MoneySavingExpert)",
+          "date": "2025-02-26",
+          "quote": "m trying to figure the general rules for adjusting the temp and times in a normal oven to an air fryer",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/6590869/air-fryer-temp-time-conversions",
+          "who": "Kim_13 (MoneySavingExpert)",
+          "date": "2025-02-27",
+          "quote": "It can be a bit trial and error though",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/6406942/air-fryer-cooking-times",
+          "who": "philupnorth1964 (MoneySavingExpert)",
+          "date": "2022-11-29",
+          "quote": "Is there a rule for what percentage you can reduce the cooking times of meat?",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/comment/79308080",
+          "who": "Mstty (MoneySavingExpert)",
+          "date": "2022-07-02",
+          "quote": "t account for the air fryer speed",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/6481168/air-fryer-cookbooks",
+          "who": "thriftwizard (MoneySavingExpert)",
+          "date": "2023-10-26",
+          "quote": "really need any books, just to learn to convert normal recipes as above.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1224895623",
+          "who": "Healthy Air Fryer Recipes (App Store)",
+          "date": "2026-10-26",
+          "quote": "1.8K Ratings; Pro AirFryer Recipes Monthly $9.99, Yearly $19.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Free conversion charts, recipe apps, air fryer brand apps, cookbooks.",
+      "risks": "Free charts are often good enough. Payment proof is a recipe app. Food safety: must push cooked-through checks and a thermometer. Evidence is all MoneySavingExpert (UK)."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-26",
+    "slug": "one-fax",
+    "name": "One Fax",
+    "need": "Every so often a bank, insurer, doctor or government office tells me to fax a signed form, I don't own a fax machine, and every fax app wants a weekly subscription just to send one.",
+    "headline": "Told to fax a signed form and don't own a fax machine? Photograph it on your phone, check it's readable, send it, and get a confirmation, without a weekly subscription.",
+    "buyer": "People who need to send a few faxes a year for personal paperwork such as insurance, medical, bank or government forms.",
+    "bullets": [
+      "Photograph or upload the pages; it straightens them and checks they're readable before sending.",
+      "A simple cover page, the recipient's number checked, and a delivery confirmation you can save.",
+      "Low yearly price for occasional use, and documents deleted after sending unless you choose to keep them."
+    ],
+    "price": "$3/month",
+    "priceUsd": 3,
+    "priceNote": "Or $12 a year.",
+    "reasonPrompt": "Who do you usually need to fax, and how often?",
+    "faq": [
+      {
+        "q": "What happens to my documents?",
+        "a": "They're used only to send your fax and are deleted afterwards unless you choose to keep a copy. Only send documents you're comfortable sending by fax, and ask the recipient whether a secure upload is also accepted."
+      },
+      {
+        "q": "Is it linked to any bank, insurer or agency?",
+        "a": "No. One Fax is independent. It sends faxes you choose to send; it doesn't fill in or check forms for you."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-26",
+      "summary": "People describe needing to send the occasional fax for forms with a signature, having no fax machine, and finding fax apps clunky, shady or overpriced.",
+      "wtp": "FAX from iPhone has 379K App Store ratings and sells unlimited sending at $9.99 a week.",
+      "signals": [
+        {
+          "url": "https://boards.straightdope.com/t/295763",
+          "who": "the_first_supraliminal (Straight Dope)",
+          "date": "2005-03-22",
+          "quote": "I need to send a fax may once every other month to someone",
+          "seen": "opened"
+        },
+        {
+          "url": "https://boards.straightdope.com/t/627952",
+          "who": "handsomeharry (Straight Dope)",
+          "date": "2012-07-12",
+          "quote": "They said that I would need to fax X document with my signature on it.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://boards.straightdope.com/t/649956",
+          "who": "bardos (Straight Dope)",
+          "date": "2013-02-11",
+          "quote": "Is there a website from where i can send a fax from a file on my computer?",
+          "seen": "opened"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=39121651",
+          "who": "Sohcahtoa82 (Hacker News)",
+          "date": "2024-01-24",
+          "quote": "I did need to recently to send a fax because the DMV is still living in the 90s.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=36413919",
+          "who": "janalsncm (Hacker News)",
+          "date": "2023-06-21",
+          "quote": "Of course I had to use a shady virtual fax machine app to get the information I needed.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=46476811",
+          "who": "whstl (Hacker News)",
+          "date": "2026-01-03",
+          "quote": "I once had to print a form and fax to a company with a signature",
+          "seen": "opened"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=23063408",
+          "who": "scop (Hacker News)",
+          "date": "2020-05-04",
+          "quote": "Every fax app I have used is either clunky, overpriced, or both.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id978931264",
+          "who": "FAX from iPhone (App Store)",
+          "date": "2026-10-26",
+          "quote": "379K Ratings; Send And Receive Unlimited Faxes (1 week) $9.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "FAX from iPhone, FaxFree, iFax, eFax, free web fax services with branding, print shops.",
+      "risks": "Crowded, with free options. Occasional use fits a low yearly price better than monthly. Sensitive documents raise privacy duties. Sending costs per page would need a provider. Some evidence is old (2005-2013)."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
