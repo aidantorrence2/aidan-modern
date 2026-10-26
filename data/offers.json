@@ -43006,6 +43006,160 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-26",
+    "slug": "feeder-fill",
+    "name": "Feeder Fill",
+    "need": "I've put out feeders full of seed, nuts and fat balls, but no birds come to my garden and I can't work out what I'm doing wrong.",
+    "headline": "Feeders full and no birds? Log your setup once (food, feeder, height, cover, cats), change one thing at a time, and see what actually brings birds back to your garden.",
+    "buyer": "Adults who have put out a garden bird feeder and get few or no visitors, especially with new feeders, new gardens or a sudden drop.",
+    "bullets": [
+      "Record your setup once: food types, feeder style, height, distance to cover, cleaning, and any cats or other visitors.",
+      "A one-change-at-a-time plan with a weekly 'birds seen' count, so you can tell what made the difference.",
+      "Seasonal expectations for your region, so a quiet autumn doesn't feel like failure."
+    ],
+    "price": "$3/month",
+    "priceUsd": 3,
+    "priceNote": "Or $24 a year.",
+    "reasonPrompt": "What feeders have you got, and how long have they been out?",
+    "faq": [
+      {
+        "q": "Can it guarantee birds will come?",
+        "a": "No. Bird visits change with the season, the weather and natural food nearby. Feeder Fill helps you set up well and see what changes things. Follow any local advice about bird flu or taking feeders down."
+      },
+      {
+        "q": "Do I need a camera feeder?",
+        "a": "No. You log what you see yourself. It's independent and sells no seed or feeders."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-26",
+      "summary": "People describe putting out several feeders with seed, nuts and fat balls and getting no visitors, or birds stopping coming despite full feeders.",
+      "wtp": "Birdbuddy, a smart bird feeder app, has 62K App Store ratings and sells Individual plans at $7.99 a month or $69.99 a year.",
+      "signals": [
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/4743931/any-keen-bird-feeders-out-there/p47",
+          "who": "DSmiffy (MoneySavingExpert)",
+          "date": "2015-03-27",
+          "quote": "I have a table with three feeders hanging from it, peanuts, seed and fat balls and not a single visitor.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forum.caithness.org/archive/index.php/t-56872.html",
+          "who": "Liz (Caithness.org forum)",
+          "date": "10-Sep-08",
+          "quote": "I have hardly had any birds come to be fed for the past couple of months even though the feeders are full of lovely grub!",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.talkofthevillages.com/forums/archive/index.php/t-333713.html",
+          "who": "Tvflguy (Talk of the Villages)",
+          "date": "07-16-2022",
+          "quote": "I have seen NO birds at our feeder.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://singletrackworld.com/forum/off-topic/where-are-the-birds/",
+          "who": "derek_starship (Singletrack forum)",
+          "date": "26/12/2015",
+          "quote": "ve seen nothing.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1622355240",
+          "who": "Birdbuddy (App Store)",
+          "date": "2026-10-26",
+          "quote": "62K Ratings; Individual monthly $7.99, Individual annual $69.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Smart camera feeders (Birdbuddy, Birdfy), bird ID apps, wildlife charity advice pages.",
+      "risks": "Seasonal drops are normal, so it must promise no visitors. Money is for camera-feeder apps, not setup help. Near live songpatch (bird song) only by topic."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-26",
+    "slug": "cat-clear",
+    "name": "Cat Clear",
+    "need": "The neighbours' cats keep using my garden and flower beds as a toilet, and none of the deterrents I've bought or tried has stopped them.",
+    "headline": "Neighbours' cats using your garden as a toilet? Log where and when it happens, try one humane deterrent at a time, see what actually works, and write a friendly note to the neighbour.",
+    "buyer": "Adults whose garden, borders, lawn or planters are regularly fouled by neighbourhood cats.",
+    "bullets": [
+      "A quick log of where and when you find mess, so you can see the hot spots.",
+      "A one-at-a-time plan for humane deterrents (ground cover, planting, water, scent), with a two-week check on each.",
+      "A friendly, ready-to-edit note for the neighbour, and a record of what worked."
+    ],
+    "price": "$3/month",
+    "priceUsd": 3,
+    "priceNote": "Or $19 a year.",
+    "reasonPrompt": "Where in your garden is the problem, and what have you tried?",
+    "faq": [
+      {
+        "q": "Is it humane?",
+        "a": "Yes. Cat Clear only suggests humane deterrents. Never try to harm a cat; in many places, including the UK, harming a cat is a criminal offence."
+      },
+      {
+        "q": "Is it linked to a deterrent brand?",
+        "a": "No. It's independent, sells no products and recommends none by brand."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-26",
+      "summary": "People describe neighbourhood cats using borders as a litter tray several times a day, gardens smelling, and trying every commercial deterrent without success.",
+      "wtp": "Garden owners say they've already spent on deterrents: one tried 'every possible commercial cat deterrent' and says it cost them a lot of money.",
+      "signals": [
+        {
+          "url": "https://singletrackworld.com/forum/off-topic/how-to-stop-cats-pooping-in-my-garden-2/",
+          "who": "ashhh (Singletrack forum)",
+          "date": "04/01/2024",
+          "quote": "all the neighbourhood cats are using my border as a litter tray. A few poops a day.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://singletrackworld.com/forum/off-topic/cats-and-how-to-stop-them-soiling-my-garden/",
+          "who": "ThurmanMerman (Singletrack forum)",
+          "date": "09/04/2014",
+          "quote": "Sick and tired of coming home to find my gardens stinking of freshly-laid cat toffee.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://singletrackworld.com/forum/off-topic/how-to-stop-cats-pooping-in-my-garden/",
+          "who": "gonzy (Singletrack forum)",
+          "date": "05/06/2013",
+          "quote": "the local cat population has taken a fancy to leaving their turd deposits there",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.overclockers.co.uk/posts/32698080/",
+          "who": "Panda60 (Overclockers)",
+          "date": "2019-05-05",
+          "quote": "We are getting neighbours cats coming to our garden, and poos on the grass or flower beds.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.overclockers.co.uk/posts/32698080/",
+          "who": "Panda60 (Overclockers)",
+          "date": "2019-05-05",
+          "quote": "We have tried every possible commercial cat deterrent including smelly things cat hates, infra red device, and nothing worked effectively.",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Ultrasonic scarers, motion-activated sprinklers, scent gels and pellets, prickle mats, charity advice pages.",
+      "risks": "Money evidence is spending on deterrents, not on an app. Must be strictly humane. Neighbour relations need care. Different from live offers about your own pets."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

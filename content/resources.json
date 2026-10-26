@@ -19312,5 +19312,86 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "why-no-birds-are-coming-to-your-feeder",
+  "offer": "feeder-fill",
+  "title": "Why no birds are coming to your feeder (and what to try)",
+  "description": "Common reasons garden birds ignore a feeder, and simple changes to try one at a time.",
+  "intro": "It's disappointing to fill a feeder and see nothing. Birds can take a while to find new feeders, and visits naturally drop at some times of year. Small changes to where and how you feed often help.",
+  "sections": [
+   {
+    "h": "Give it time",
+    "list": [
+     "Birds may take several weeks to find a new feeder.",
+     "Visits often drop in late summer and autumn when there's plenty of natural food, and pick up again in colder months."
+    ]
+   },
+   {
+    "h": "Check the position",
+    "list": [
+     "Birds like cover nearby, such as a hedge, shrub or tree, so they can dart to safety.",
+     "Avoid spots where cats can hide and pounce close to the feeder.",
+     "Try a quieter part of the garden, away from busy doors and windows."
+    ]
+   },
+   {
+    "h": "Check the food",
+    "list": [
+     "Use fresh food; old, damp or mouldy seed puts birds off and can make them ill.",
+     "Offer a mix, such as sunflower hearts, seed mix and fat-based food, and see which gets eaten.",
+     "Clean feeders regularly."
+    ]
+   },
+   {
+    "h": "Change one thing at a time",
+    "p": [
+     "Move the feeder or change the food, then wait a couple of weeks before changing anything else, so you can see what made a difference. Follow any local advice about bird flu."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "how-to-stop-neighbours-cats-using-your-garden-as-a-toilet",
+  "offer": "cat-clear",
+  "title": "How to stop neighbours' cats using your garden as a toilet (humanely)",
+  "description": "Humane ways to make your garden less attractive to neighbourhood cats, and how to raise it with the neighbour.",
+  "intro": "Cats often choose loose, bare soil as a toilet. Making those spots less inviting usually works better than any single gadget. Always use humane methods; never try to harm a cat.",
+  "sections": [
+   {
+    "h": "Cover bare soil",
+    "list": [
+     "Cats like freshly dug, loose soil. Cover bare patches with plants, bark chippings, pebbles or garden netting.",
+     "Lay chicken wire or prickly cuttings just under the surface of new beds until plants fill in."
+    ]
+   },
+   {
+    "h": "Make it less inviting",
+    "list": [
+     "Plant densely so there's less open ground.",
+     "Water the area: some people use motion-activated sprinklers.",
+     "Some people find certain scents or plants put cats off, though results vary."
+    ]
+   },
+   {
+    "h": "Clean up thoroughly",
+    "list": [
+     "Remove mess promptly and clear the smell, as cats tend to return to the same spot."
+    ]
+   },
+   {
+    "h": "Try one thing at a time",
+    "list": [
+     "Note where and when you find mess.",
+     "Try one change for two weeks before adding another, so you know what works."
+    ]
+   },
+   {
+    "h": "Talk to the neighbour",
+    "p": [
+     "A friendly, non-blaming conversation or note can help, for example suggesting a litter tray or a sandy spot in their own garden."
+    ]
+   }
+  ]
  }
 ]
