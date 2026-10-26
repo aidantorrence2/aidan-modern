@@ -43405,6 +43405,167 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-26",
+    "slug": "all-hot",
+    "name": "All Hot",
+    "need": "I can cook a roast, but when I'm doing a big dinner like Christmas I can never work out what goes in when so everything is ready and hot at the same time.",
+    "headline": "Big roast dinner and can't get the timings right? Enter what you're cooking and when you want to eat, get a backwards timetable that fits your oven, and step-by-step alerts on the day.",
+    "buyer": "Adults hosting a big roast meal, such as Christmas or Sunday lunch for a crowd, often with one oven.",
+    "bullets": [
+      "List your dishes and cooking times once; set the time you want to eat.",
+      "A backwards timetable that fits your oven space and temperatures, with resting and warming time built in.",
+      "Alerts on the day for each step (in, turn, out, rest), and a printable plan to stick on the fridge."
+    ],
+    "price": "$3/month",
+    "priceUsd": 3,
+    "priceNote": "Or $12 a year.",
+    "reasonPrompt": "What are you cooking, and how many people are you feeding?",
+    "faq": [
+      {
+        "q": "Will it tell me cooking times?",
+        "a": "You enter your own times from your recipes or packets; it does the scheduling. Always follow food-safety advice and check meat is cooked through."
+      },
+      {
+        "q": "Is it linked to a supermarket or recipe brand?",
+        "a": "No. It's independent and works with any recipes."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-26",
+      "summary": "Home cooks describe their mind going blank working out when each part of a big roast goes in, struggling to get the times right for a crowd, and writing timings down to cross off.",
+      "wtp": "MultiTimer, a multiple-timer app used for cooking, has 16K App Store ratings and sells MultiTimer Pro for up to $17.99; one poster says a Christmas cookbook timetable has been their bible for 15 years.",
+      "signals": [
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/1368061/christmas-dinner-timings-for-a-first-timer",
+          "who": "sarahsarah (MoneySavingExpert)",
+          "date": "2008-12-20",
+          "quote": "when I come to write down how long roast potatoes etc take and what time I need to put them in my mind goes blank",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/310974/help-10-people-for-xmas-dinner-only-1-oven",
+          "who": "suzanna (MoneySavingExpert)",
+          "date": "2006-11-22",
+          "quote": "I just dont know how normal people manage to cook for that many people and also get the times right?",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/4358269/help-please-with-christmas-cooking",
+          "who": "thunderbird (MoneySavingExpert)",
+          "date": "2012-12-24",
+          "quote": "how do I fit the yorkshire pudding cooking in with the rest?!",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/6321782/making-christmas-dinner-for-the-first-time-any-tips",
+          "who": "catz4m8z (MoneySavingExpert)",
+          "date": "2021-12-24",
+          "quote": "I write cooking times down and cross things off as I get to them as Im easily distracted!",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id973421278",
+          "who": "MultiTimer (App Store)",
+          "date": "2026-10-26",
+          "quote": "16K Ratings; MultiTimer Pro up to $17.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Multi-timer apps, recipe managers, cookbook timetables, smart thermometers.",
+      "risks": "Strongly seasonal. All evidence is one UK forum. Money is for general timer apps. Near live stove-steps (learning to cook), but for people who can already cook."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-26",
+    "slug": "card-words",
+    "name": "Card Words",
+    "need": "I stand there with a card and a pen and never know what to write, whether it's a birthday, a leaving card or a sympathy card, so I end up with the same stiff line every time.",
+    "headline": "Never know what to write in a card? Pick the occasion and how well you know them, get a few warm, natural messages to start from, and make them your own in seconds.",
+    "buyer": "Adults who sign or send cards several times a year (birthdays, leaving cards, holidays, sympathy) and freeze at the blank space.",
+    "bullets": [
+      "Pick the occasion and how close you are: colleague, friend, family, someone you barely know.",
+      "Get a few short, natural messages to start from, in your choice of tone: warm, funny or simple.",
+      "Gentle, plain wording for sympathy and difficult cards, and a list of what you wrote to whom so you don't repeat yourself."
+    ],
+    "price": "$2/month",
+    "priceUsd": 2,
+    "priceNote": "Or $12 a year.",
+    "reasonPrompt": "What kind of card do you most often get stuck on?",
+    "faq": [
+      {
+        "q": "Will my messages sound generic?",
+        "a": "The suggestions are a starting point; you add a name, a memory or a detail to make each one your own. Nothing is sent for you."
+      },
+      {
+        "q": "Is it linked to a card shop?",
+        "a": "No. It's independent and works with any card."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-26",
+      "summary": "People describe agonising over what to write in cards, losing their knack for birthday messages, not knowing what to write in sympathy cards, and condolence notes coming out stiff.",
+      "wtp": "Love Messages, Birthday Wishes, a message library app, has 9.1K App Store ratings and sells ad-free full content from $2.99 to $39.99.",
+      "signals": [
+        {
+          "url": "https://boards.straightdope.com/t/216767/1",
+          "who": "cowgirl (Straight Dope)",
+          "date": "2003-12-03",
+          "quote": "agonize over what to write in them",
+          "seen": "opened"
+        },
+        {
+          "url": "https://boards.straightdope.com/t/what-do-you-like-to-write-in-co-workers-birthday-cards/193455",
+          "who": "Interrobang (Straight Dope)",
+          "date": "2003-08-06",
+          "quote": "I used to pride myself on coming up with interesting things to say in birthday cards, but my gift seems to have left me.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/208909/what-do-i-write-in-a-sympathy-card",
+          "who": "i_wanna_save_money! (MoneySavingExpert)",
+          "date": "2006-06-07",
+          "quote": "t know what to write.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/2383135/what-to-write-in-a-thinking-of-you-card-following-a-death",
+          "who": "Katgoddess (MoneySavingExpert)",
+          "date": "2010-04-04",
+          "quote": "d never had to write a sympathy card before.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://boards.straightdope.com/t/460313/65",
+          "who": "Zsofia (Straight Dope)",
+          "date": "2008-08-19",
+          "quote": "my condolence notes are kind of stiff and formulaic",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id410542351",
+          "who": "Love Messages, Birthday Wishes (App Store)",
+          "date": "2026-10-26",
+          "quote": "9.1K Ratings; $4.99, $19.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Message library apps, card-sending apps, free 'what to write' articles, AI chatbots.",
+      "risks": "Free AI tools are strong substitutes. Evidence is 2003-2010. Money is a message app's ad-free unlock. Near live right-word, kind-farewell and card-round, but a different job."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
