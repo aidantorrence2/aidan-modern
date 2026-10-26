@@ -41487,6 +41487,181 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-26",
+    "slug": "room-signal",
+    "name": "Room Signal",
+    "need": "My wifi won't reach the upstairs bedrooms or the kitchen, and I don't know whether to move the router, buy an extender, powerline or mesh, or pay my provider every month for a booster.",
+    "headline": "Wifi won't reach upstairs or the kitchen? Walk each room with your phone, see where it drops, try the free fixes first, then get one plain-English pick if you still need hardware.",
+    "buyer": "Non-technical adults in homes where the router sits in one corner and some rooms get weak or no wifi.",
+    "bullets": [
+      "A room-by-room speed check with your phone, saved as a simple map of your home.",
+      "Free fixes first: router position, height, what's in the way, and restarting, re-tested room by room.",
+      "If you still need hardware, a plain comparison of extenders, powerline and mesh for your home, and what to ask your provider before paying monthly for a booster."
+    ],
+    "price": "$3/month",
+    "priceUsd": 3,
+    "priceNote": "Or $19 a year.",
+    "reasonPrompt": "Which rooms have weak wifi, and where is your router?",
+    "faq": [
+      {
+        "q": "Is it linked to a broadband provider or router brand?",
+        "a": "No. Room Signal is independent, sells no hardware and takes no commission. It suggests types of fix, not specific brands."
+      },
+      {
+        "q": "Will it definitely fix my wifi?",
+        "a": "It can't promise that; homes and connections vary. It helps you find the weak spots, try the free fixes first and choose sensibly if you need to buy something."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-26",
+      "summary": "People describe wifi that doesn't reach upstairs, bedrooms or the kitchen, being baffled by extenders, and providers offering paid boosters or extenders.",
+      "wtp": "Fing, a network scanner, has 117K App Store ratings and sells Premium at $7.99 a month or $69.99 a year. Posters say their provider offered a monthly booster or a £40 extender.",
+      "signals": [
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/6427506/poor-upstairs-wifi-signal-from-router",
+          "who": "wallofbeans (MoneySavingExpert)",
+          "date": "2023-02-23",
+          "quote": "t seem to reach upstairs very well.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/5179147/cant-connect-to-wifi-in-bedroom-any-possible-solutions",
+          "who": "LadyMorticia (MoneySavingExpert)",
+          "date": "2015-02-18",
+          "quote": "m baffled by them all!",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/5441952/best-way-to-boost-wifi-in-rest-of-house",
+          "who": "dori2o (MoneySavingExpert)",
+          "date": "2016-04-04",
+          "quote": "I want to boost the wifi in the rooms upstairs.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/6494493/wi-fi-boosting",
+          "who": "Cacran (MoneySavingExpert)",
+          "date": "2023-12-26",
+          "quote": "We are not able to get wi fi signal in our kitchen and one of the bedrooms.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/5946551/my-wifi-problems",
+          "who": "IOIO (MoneySavingExpert)",
+          "date": "2019-01-06",
+          "quote": "I have problems with my WIFI range. Xbox disconnects from upstairs bedroom",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/6648836/best-way-to-extend-wifi-upstairs",
+          "who": "CarterUSM (MoneySavingExpert)",
+          "date": "2026-01-04",
+          "quote": "We would like to extend our wifi network to an upstairs bedroom",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id430921107",
+          "who": "Fing (App Store)",
+          "date": "2026-10-26",
+          "quote": "117K Ratings; Premium 1 Month $7.99, Premium 1 Year $69.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Fing, WiFiman, wifi analyser apps, provider booster add-ons, extenders and mesh kits.",
+      "risks": "Often a one-time problem, so subscriptions may churn. iPhones limit wifi signal readings, so room checks may rely on speed tests. Evidence is all MoneySavingExpert (UK)."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-26",
+    "slug": "real-post-pals",
+    "name": "Real Post Pals",
+    "need": "I'd love an old-fashioned pen pal to swap real handwritten letters with, but I don't know where to find one, and I don't want to give my home address to a stranger.",
+    "headline": "Miss getting real letters? Get matched with an adult pen pal who shares your interests, and swap handwritten letters without either of you sharing a home address.",
+    "buyer": "Adults (18+), often 35+ and many retired, who miss personal post and want a long-running letter friendship.",
+    "bullets": [
+      "Matched with adult pen pals by interests, age range and how often you like to write.",
+      "Letters go via a forwarding address, so neither of you sees the other's home address.",
+      "Gentle reminders when it's your turn to write, and an easy, no-fuss way to end a match."
+    ],
+    "price": "$4/month",
+    "priceUsd": 4,
+    "priceNote": "Or $29 a year. Adults 18+ only.",
+    "reasonPrompt": "What would you like to write about, and how often?",
+    "faq": [
+      {
+        "q": "Is it a dating site?",
+        "a": "No. Real Post Pals is for friendship by letter only, for adults 18+. Never send money or personal financial details to a pen pal, and report anyone who asks."
+      },
+      {
+        "q": "Will my pen pal know where I live?",
+        "a": "No. Letters go through a forwarding address, and you choose what to share. It's independent and not linked to any magazine or charity."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-26",
+      "summary": "Adults describe wanting an old-style pen pal for handwritten letters, preferring paper to online, and being wary of giving out their address.",
+      "wtp": "Slowly, a slow-letter pen pal app, has 11K App Store ratings and sells Slowly Plus at $7.99 and $42.99; a postal pen pal service was mentioned with a £10 joining fee.",
+      "signals": [
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/5531679/old-style-pen-pals",
+          "who": "Angel_Jenny (MoneySavingExpert)",
+          "date": "2016-09-26",
+          "quote": "it would be lovely to have an old style pen pal - you know handwritten letters with little life updates and simple daily things.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/5531679/old-style-pen-pals",
+          "who": "Dill (MoneySavingExpert)",
+          "date": "2016-09-27",
+          "quote": "I would love to send and receive postcards but am wary of just giving out my address to people",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/3439475/legit-penpals-site",
+          "who": "Gemsie (MoneySavingExpert)",
+          "date": "2011-08-22",
+          "quote": "m looking to start writing to a penpal again",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/4435583/looking-for-penpals-in-forces",
+          "who": "sandraroffey (MoneySavingExpert)",
+          "date": "2013-03-05",
+          "quote": "i have been looking for a penpal. loe writing letters",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/6148176/penpals",
+          "who": "thriftycook (MoneySavingExpert)",
+          "date": "2020-05-26",
+          "quote": "Plus I would prefer a good old fashioned letter instead of online.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1199811908",
+          "who": "Slowly (App Store)",
+          "date": "2026-10-26",
+          "quote": "11K Ratings; Slowly Plus $7.99, $42.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Slowly, Postcrossing, postal pen pal clubs, magazine pen pal columns.",
+      "risks": "Letter forwarding has real costs and needs moderation against scams and under-18s. Evidence is mostly 2011-2020, all MoneySavingExpert. The closest paid app is digital, not paper."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

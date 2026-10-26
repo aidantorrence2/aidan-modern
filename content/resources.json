@@ -18309,5 +18309,83 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "wifi-not-reaching-upstairs-what-to-try-first",
+  "offer": "room-signal",
+  "title": "Wifi not reaching upstairs? What to try first",
+  "description": "Free fixes to try before buying an extender or mesh system, and how to choose if you need one.",
+  "intro": "Wifi often struggles to reach rooms far from the router, especially through thick walls and floors. Before buying anything, a few free changes can make a real difference.",
+  "sections": [
+   {
+    "h": "Test room by room",
+    "list": [
+     "Run a speed test on your phone in each room and note the results.",
+     "Test at the same time of day so the results are comparable."
+    ]
+   },
+   {
+    "h": "Free fixes first",
+    "list": [
+     "Move the router somewhere central and higher up, not on the floor or inside a cupboard.",
+     "Keep it away from thick walls, mirrors, fish tanks, microwaves and large metal objects.",
+     "Restart the router, and check for updates if your provider's app offers them.",
+     "Re-test each room after each change."
+    ]
+   },
+   {
+    "h": "If you still need hardware",
+    "list": [
+     "Wifi extenders repeat the signal; they're cheap but can reduce speed.",
+     "Powerline adapters send the connection through your electrical wiring; results depend on the wiring.",
+     "Mesh systems use several units to cover the whole home; usually the most reliable but cost more."
+    ]
+   },
+   {
+    "h": "Before paying monthly",
+    "p": [
+     "If your provider offers a booster for a monthly fee, compare the total cost over a year or two with buying a device outright, and check how long the contract lasts."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "how-to-find-a-pen-pal-for-real-letters-safely",
+  "offer": "real-post-pals",
+  "title": "How to find a pen pal for real letters, safely",
+  "description": "Ways for adults to find a pen pal for handwritten letters, and how to stay safe while doing it.",
+  "intro": "Swapping real letters can be a lovely way to make a friend. You don't need to give out your home address to do it, and a few simple habits keep it safe and enjoyable.",
+  "sections": [
+   {
+    "h": "Where to look",
+    "list": [
+     "Established pen pal clubs and letter-writing groups.",
+     "Postcard-swapping projects, if you'd like to start small.",
+     "Hobby groups and magazines that run pen pal sections."
+    ]
+   },
+   {
+    "h": "Protect your address",
+    "list": [
+     "Consider using a PO box or a mail forwarding service instead of your home address.",
+     "Don't share your address until you're comfortable, and only through a trusted service."
+    ]
+   },
+   {
+    "h": "Stay safe",
+    "list": [
+     "Never send money, gift cards or bank details to a pen pal, whatever the reason.",
+     "Be wary of anyone who quickly turns the friendship romantic or asks for help with money.",
+     "Keep personal details such as your workplace and daily routine to yourself."
+    ]
+   },
+   {
+    "h": "Keep it going",
+    "list": [
+     "Agree roughly how often you'll write, so nobody feels ignored.",
+     "Share small everyday things; that's what makes letters fun to receive."
+    ]
+   }
+  ]
  }
 ]
