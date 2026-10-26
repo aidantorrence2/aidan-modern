@@ -40416,6 +40416,90 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-26",
+    "slug": "calf-count",
+    "name": "Calf Count",
+    "need": "I've tried everything to make my calves bigger and trained them for ages, but they won't grow and I don't know what to change.",
+    "headline": "Calves won't grow however much you train them? Measure them honestly once a month, log each calf session in 20 seconds, and change one thing at a time when the tape stays flat.",
+    "buyer": "Adults (18+) who lift regularly and whose calves stay the same size.",
+    "bullets": [
+      "A monthly girth measurement at the same spot, plus a same-angle photo, so you can trust the numbers.",
+      "A 20-second log for each calf session: exercise, load, reps, and whether you paused at full stretch.",
+      "A 12-week block with load and rep nudges, and a one-change-at-a-time plan after four flat weeks."
+    ],
+    "price": "$4/month",
+    "priceUsd": 4,
+    "priceNote": "Or $25 a year. For adults 18+.",
+    "reasonPrompt": "How long have you been training calves, and what do you do now?",
+    "faq": [
+      {
+        "q": "Will it make my calves grow?",
+        "a": "It can't promise that. Calf size depends a lot on genetics. Calf Count is a training log that helps you train consistently and see honestly whether anything is changing. It isn't medical advice; if you have sudden pain, swelling or redness in one calf, get medical advice promptly."
+      },
+      {
+        "q": "Is it linked to a gym or supplement brand?",
+        "a": "No. It's independent, sells no supplements and is for adults 18+."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-26",
+      "summary": "Lifters describe training calves hard for years with no change in size, and saying they've tried everything.",
+      "wtp": "People sell calf-specific programmes: Frank Zane's Build Your Calves e-book at $11.99 and an 'Iron Grip and Concrete Calves' guide on Gumroad at $7. Fitbod, a strength-training planner, has 288K App Store ratings and sells plans from $12.99 to $15.99 a month.",
+      "signals": [
+        {
+          "url": "https://www.mountainproject.com/forum/message/124924861",
+          "who": "Rocky Start (Mountain Project)",
+          "date": "2023-09-12",
+          "quote": "add anything to my calves, even when i was deadlifting 400 and lifting legs 3 days a week.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://cathe.com/forum/threads/training-calves.191915/",
+          "who": "Mariela (cathe.com)",
+          "date": "2002-06-15",
+          "quote": "I have trained my calves to increase their size but it seems imposible!",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.cathe.com/forum/threads/calf-muscle-size.177927",
+          "who": "JoyceMarie (cathe.com)",
+          "date": "2007-08-16",
+          "quote": "tried everything to increase the size of my calves, but no luck.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://melmagazine.com/en-us/story/why-are-my-calves-so-small",
+          "who": "Josh Schollmeyer (MEL Magazine)",
+          "date": "2022-01-26",
+          "quote": "my calves always remained tiny and inconsequential",
+          "seen": "opened"
+        },
+        {
+          "url": "https://frankzane.com/product/frank-zanes-build-your-calves-ebook/",
+          "who": "Frank Zane Build Your Calves e-book",
+          "date": "2026-10-26",
+          "quote": "$11.99",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/fitbod-gym-fitness-planner/id1041517543",
+          "who": "Fitbod (App Store)",
+          "date": "2026-10-26",
+          "quote": "288K Ratings; $12.99, $15.99, $79.99, $95.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Calf training e-books and programmes, general workout loggers (Fitbod, Strong, Hevy), coaches.",
+      "risks": "Posts span 2002-2023; the e-book pages show no sales counts; Fitbod is general training, not calf-specific. Genetics limit results, so no growth promise. The doc side's SAU Community source was blocked for the code side, and its MEL quote is attributed here to the article's author, who wrote it, not to the trainer he quotes."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

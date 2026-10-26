@@ -17654,5 +17654,85 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "why-wont-my-calves-grow-what-to-log-before-changing-anything",
+  "offer": "calf-count",
+  "title": "Why won't my calves grow? What to log before you change anything",
+  "description": "If your calves stay the same size however much you train, here's what to track so you can see what's really happening.",
+  "intro": "Calves are a common sticking point. Genetics play a big part, but many people also train them inconsistently or change their routine too often to tell what works. A few weeks of simple notes gives you a clearer picture. This is general training information, not medical advice.",
+  "sections": [
+   {
+    "h": "What to log each session",
+    "list": [
+     "The exercise: straight-leg raises (standing) work mainly the gastrocnemius; bent-knee raises (seated) work more of the soleus underneath.",
+     "Load, sets and reps.",
+     "Whether you used the full range of motion: a full stretch at the bottom and a full rise at the top.",
+     "How close to failure you went."
+    ]
+   },
+   {
+    "h": "What to log each month",
+    "list": [
+     "Calf girth at the same spot, measured the same way (see the measuring guide).",
+     "A photo from the same angle, distance and lighting.",
+     "Body weight, since calf size often changes with overall weight."
+    ]
+   },
+   {
+    "h": "Change one thing at a time",
+    "list": [
+     "Keep the same routine for at least four weeks before judging it.",
+     "If nothing has changed, adjust one variable: frequency, load, rep range, range of motion or exercise choice.",
+     "Changing everything at once makes it impossible to know what helped."
+    ]
+   },
+   {
+    "h": "Be realistic",
+    "list": [
+     "Some people's calves grow slowly whatever they do; that's normal.",
+     "If you have sudden pain, swelling or redness in one calf, get medical advice promptly rather than training through it."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "how-to-measure-your-calves-accurately",
+  "offer": "calf-count",
+  "title": "How to measure your calves accurately so the tape is honest",
+  "description": "A simple, repeatable way to measure calf size so you can tell whether your training is working.",
+  "intro": "Small differences in how you measure can hide or invent changes. Measuring the same way every time matters more than the exact method.",
+  "sections": [
+   {
+    "h": "Use the same conditions",
+    "list": [
+     "Measure at the same time of day, ideally in the morning before training.",
+     "Don't measure straight after a workout, when muscles can look and measure bigger for a while.",
+     "Use a flexible tape measure that doesn't stretch."
+    ]
+   },
+   {
+    "h": "Find the same spot",
+    "list": [
+     "Stand with your weight spread evenly on both feet and your calves relaxed.",
+     "Measure around the widest part of the calf.",
+     "Note how far that spot is from the floor or the back of the knee, so you can find it next time."
+    ]
+   },
+   {
+    "h": "Take the reading",
+    "list": [
+     "Keep the tape level all the way round and snug, without squashing the skin.",
+     "Take three readings and use the middle one.",
+     "Measure both legs; it's normal for them to differ slightly."
+    ]
+   },
+   {
+    "h": "Track over months, not days",
+    "p": [
+     "Measure once a month and add a photo from the same angle. Real changes in muscle size are slow, so look at the trend over several months."
+    ]
+   }
+  ]
  }
 ]
