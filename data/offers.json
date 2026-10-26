@@ -40773,6 +40773,181 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-26",
+    "slug": "pick-tonight",
+    "name": "Pick Tonight",
+    "need": "My partner and I spend so long scrolling the streaming apps deciding what to watch that half the evening is gone before we press play.",
+    "headline": "Half the evening gone scrolling for something to watch? Keep one shared list across all your services, each pick a few, veto one, and start watching in two minutes.",
+    "buyer": "Couples and households with two or more streaming subscriptions who watch together in the evening.",
+    "bullets": [
+      "One shared watch list across every service you pay for, added to from your phone whenever someone mentions a show.",
+      "Tonight mode: say how long you have and the mood, each person picks up to three, each vetoes one, and it chooses.",
+      "Remembers what you've finished, abandoned or are halfway through, so you don't relitigate it every night."
+    ],
+    "price": "$3/month",
+    "priceUsd": 3,
+    "priceNote": "Or $24 a year.",
+    "reasonPrompt": "Who do you usually watch with, and which services do you have?",
+    "faq": [
+      {
+        "q": "Is it linked to Netflix or the other services?",
+        "a": "No. Pick Tonight is independent and isn't affiliated with any streaming service. You add titles yourself, and it opens nothing on your behalf."
+      },
+      {
+        "q": "Does it need a login to my streaming accounts?",
+        "a": "No. It never asks for streaming logins or passwords."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-26",
+      "summary": "People describe endlessly scrolling streaming services, spending so long deciding that it's too late to watch, and wanting one list instead of one per service.",
+      "wtp": "JustWatch, which tracks what's on each streaming service, has 30K App Store ratings and sells JustWatch Pro at $3.99 and Lifetime at $49.99.",
+      "signals": [
+        {
+          "url": "https://boards.straightdope.com/t/how-do-you-decide-what-to-watch-on-tv/1022846",
+          "who": "Elmer_J.Fudd (Straight Dope)",
+          "date": "2025-09-08",
+          "quote": "we often end up doing the streaming version of channel surfing looking for something good",
+          "seen": "opened"
+        },
+        {
+          "url": "https://boards.straightdope.com/t/how-do-you-decide-what-to-watch-on-tv/1022846",
+          "who": "TRC4941 (Straight Dope)",
+          "date": "2025-09-08",
+          "quote": "So I am endlessly looking through the different streaming channels.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://boards.straightdope.com/t/how-do-you-decide-what-to-watch-on-tv/1022846",
+          "who": "WildaBeast (Straight Dope)",
+          "date": "2025-09-08",
+          "quote": "it would be nice to have one master list rather than one list per streaming service",
+          "seen": "opened"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=6657537",
+          "who": "gedrap (Hacker News)",
+          "date": "2013-11-02",
+          "quote": "that it gets too late to watch.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=42038185",
+          "who": "airstrike (Hacker News)",
+          "date": "2024-11-04",
+          "quote": "spent 30+ minutes debating what to watch, only to realize we should be going to sleep",
+          "seen": "opened"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=30023259",
+          "who": "sigmaprimus (Hacker News)",
+          "date": "2022-01-21",
+          "quote": "I have recently found choosing what to watch on Netflix has become almost a chore",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id979227482",
+          "who": "JustWatch (App Store)",
+          "date": "2026-10-26",
+          "quote": "30K Ratings; JustWatch Pro $3.99, JustWatch Lifetime $49.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "JustWatch, Likewise, Reelgood, the streaming services' own watchlists.",
+      "risks": "Strong free alternatives. Straight Dope evidence is one thread. Payment proof is from watchlist apps, not these posters."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-26",
+    "slug": "last-feed",
+    "name": "Last Feed",
+    "need": "In the newborn haze I can't remember when the baby last fed or which side I fed on, and my partner and whoever else is helping keep asking me.",
+    "headline": "Can't remember when the baby last fed, or which side? One tap to log, one glance to see 'last feed, which side, how long ago', shared with everyone helping.",
+    "buyer": "New parents of babies aged 0-6 months, especially breastfeeding parents sharing care with a partner, grandparent or nanny.",
+    "bullets": [
+      "One tap to start and stop a feed, with left, right or bottle.",
+      "A big 'last feed: 2h 10m ago, left side' screen anyone helping can see on their own phone.",
+      "Simple handover notes for the next person, with no sign-up needed for helpers."
+    ],
+    "price": "$4/month",
+    "priceUsd": 4,
+    "priceNote": "Or $29 a year.",
+    "reasonPrompt": "How old is your baby, and who else helps with feeds?",
+    "faq": [
+      {
+        "q": "Will it tell me how often or how much to feed?",
+        "a": "No. Last Feed is a log, not medical or feeding advice. Follow advice from your midwife, health visitor or doctor, and contact them if you're worried about your baby's feeding, weight or nappies."
+      },
+      {
+        "q": "Who can see the log?",
+        "a": "Only the people you invite. It's private, independent and not linked to any formula or baby brand."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-26",
+      "summary": "New parents describe tracking feeds just to remember which side and how long ago, and wanting a log several caregivers can share.",
+      "wtp": "Baby Tracker - Newborn Log has 227K App Store ratings and sells Plus at $5.99 a month or $49.99 a year; parents on Hellobee say they paid for a nursing tracker, including buying it twice so a partner could sync.",
+      "signals": [
+        {
+          "url": "https://boards.hellobee.com/topic/what-app-do-you-use-to-track-feedings-and-diapers",
+          "who": "volksgirl64 (Hellobee)",
+          "date": "2012-06-18",
+          "quote": "I really only track feedings so I can remember which side I fed on last and how long ago it was!",
+          "seen": "opened"
+        },
+        {
+          "url": "https://boards.hellobee.com/topic/app-for-logging-feedingdiapers",
+          "who": "brady80 (Hellobee)",
+          "date": "2013-07-07",
+          "quote": "love one that multiple people can log into",
+          "seen": "opened"
+        },
+        {
+          "url": "https://boards.hellobee.com/topic/whats-a-good-newborn-tracker-app",
+          "who": "lady baltimore (Hellobee)",
+          "date": "2017-09-24",
+          "quote": "eating and sleeping schedule for the day without having to exchange a million notes",
+          "seen": "opened"
+        },
+        {
+          "url": "https://boards.hellobee.com/topic/nursing-tracker-app",
+          "who": "Anya (Hellobee)",
+          "date": "2015-05-15",
+          "quote": "I never ever pay for apps, but I bought this one twice so DH could sync from his phone too.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://boards.hellobee.com/topic/nursing-tracker-app",
+          "who": "ninja (Hellobee)",
+          "date": "2015-05-15",
+          "quote": "Best $5 I have spent on an app.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id779656557",
+          "who": "Baby Tracker - Newborn Log (App Store)",
+          "date": "2026-10-26",
+          "quote": "227K Ratings; Plus Monthly $5.99, Plus Yearly $49.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Baby Tracker - Newborn Log, Huckleberry, Baby Connect, paper charts.",
+      "risks": "Crowded, with very large incumbents. Hellobee evidence is 2012-2017. Must give no feeding or medical advice. Kept to feeds and handovers, separate from the live sleep offer."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
