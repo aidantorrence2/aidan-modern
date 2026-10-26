@@ -39884,6 +39884,90 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-26",
+    "slug": "tear-notes",
+    "name": "Tear Notes",
+    "need": "I have had dry eyes for years, I've tried drop after drop and treatment after treatment, and I can't tell what actually helps or what makes them worse.",
+    "headline": "Dry eyes for years and tried every drop? Score your eyes in 10 seconds morning and evening, see what changed before good and bad days, and take a one-page summary to your next appointment.",
+    "buyer": "Adults (18+) with long-running dry eyes who have tried several drops, gels, masks or treatments and can't tell which ones help.",
+    "bullets": [
+      "A 10-second morning and evening eye score, with the drops, compresses and treatments you used that day.",
+      "Triggers you choose to watch, such as screen hours, heating or air conditioning, wind, contact lenses or sleep, and a 'change one thing for two weeks' mode.",
+      "A monthly cost list and a one-page timeline to show your optician or eye doctor."
+    ],
+    "price": "$3/month",
+    "priceUsd": 3,
+    "priceNote": "Or $20 a year. For adults 18+.",
+    "reasonPrompt": "How long have you had dry eyes, and what have you tried?",
+    "faq": [
+      {
+        "q": "Will it tell me which treatment to use?",
+        "a": "No. Tear Notes is a diary. It doesn't diagnose, treat or recommend drops or treatments; it shows your own notes so you can talk them through with your optician, pharmacist or eye doctor. If you have sudden eye pain, a sudden change in vision, or a red eye that is getting worse, get urgent medical help."
+      },
+      {
+        "q": "Is it linked to an eye drop brand or clinic?",
+        "a": "No. It's independent, recommends no brands and takes no money from clinics. It's for adults 18+."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-26",
+      "summary": "Adults with dry eyes describe trying drop after drop and treatment after treatment with nothing working, not knowing why, and paying hundreds of dollars out of pocket.",
+      "wtp": "People report paying $200 for eye drops and about $1300 for a dry eye clinic treatment plus $300 follow-ups, not covered by insurance. Dew, a dry eye symptom diary, sells Dew Pro at $5.99 a month or $39.99 a year.",
+      "signals": [
+        {
+          "url": "https://patient.info/forums/discuss/eye-discomfort-told-its-dry-eyes-not-getting-relief-269898",
+          "who": "nh_user_377907 (Patient)",
+          "date": "2014-07-14",
+          "quote": "So I bought those, used those for a few weeks, didn't help",
+          "seen": "opened"
+        },
+        {
+          "url": "https://patient.info/forums/discuss/eye-discomfort-told-its-dry-eyes-not-getting-relief-269898",
+          "who": "nh_user_927033 (Patient)",
+          "date": "2016-03-02",
+          "quote": "tried everything recommended by Optometrist and Ophthamologist. Nothing is working.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://patient.info/forums/discuss/eye-discomfort-told-its-dry-eyes-not-getting-relief-269898",
+          "who": "nh_user_933218 (Patient)",
+          "date": "2016-04-05",
+          "quote": "None of the recommended treatments, including $200 eye drops, have worked thus far",
+          "seen": "opened"
+        },
+        {
+          "url": "https://boards.straightdope.com/t/dry-eyes-can-suck-it/1020358",
+          "who": "Lightnin (Straight Dope)",
+          "date": "2025-07-01",
+          "quote": "the treatment is about $1300, and the followups every six months or so are $300.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://boards.straightdope.com/t/dry-eyes-can-suck-it/1020358",
+          "who": "Sylvanz (Straight Dope)",
+          "date": "2025-07-01",
+          "quote": "is miserable, expensive, and inconvenient",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/app/id6778918064",
+          "who": "Dew: Dry Eye Symptom Diary (App Store)",
+          "date": "2026-10-26",
+          "quote": "Dew Pro Monthly $5.99; Dew Pro Yearly $39.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Dew: Dry Eye Symptom Diary, MyDryEye, paper diaries, general symptom trackers.",
+      "risks": "Dry eye diary apps show few or no ratings, so paying for software is unproven; the money people mention is spent on drops and treatments. Must give no treatment advice and include an urgent-care line. Doc side's Mumsnet, Mayo Clinic Connect and Early Retirement sources were blocked for the code side, so the hosted page uses Patient and Straight Dope evidence instead."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

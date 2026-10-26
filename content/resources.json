@@ -17322,5 +17322,92 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "what-makes-dry-eyes-worse-how-to-find-your-triggers",
+  "offer": "tear-notes",
+  "title": "What makes dry eyes worse? How to find your own triggers",
+  "description": "Common things that make dry eyes feel worse, and a simple way to work out which ones matter for you.",
+  "intro": "Dry eyes often feel better some days and worse on others, and it can be hard to see why. Keeping short notes for a few weeks can show patterns you can talk through with your optician, pharmacist or eye doctor. This is general information, not medical advice.",
+  "sections": [
+   {
+    "h": "Common things people notice",
+    "list": [
+     "Long spells looking at a screen, when people tend to blink less.",
+     "Dry air from heating or air conditioning, fans, and air vents in cars or on planes.",
+     "Wind, smoke and dust.",
+     "Contact lenses, especially when worn for long hours.",
+     "Short or poor sleep.",
+     "Some medicines. If you think a medicine is affecting your eyes, ask a pharmacist or doctor before changing it."
+    ]
+   },
+   {
+    "h": "Keep a short diary",
+    "list": [
+     "Score how your eyes feel morning and evening, for example from 0 (fine) to 10 (very bad).",
+     "Note screen hours, where you spent the day (heating, air conditioning, outdoors), sleep, and contact lens hours.",
+     "Write down every drop, gel, compress or treatment you used and when."
+    ]
+   },
+   {
+    "h": "Change one thing at a time",
+    "list": [
+     "If you want to test something, change only one thing for about two weeks so you can see whether it makes a difference.",
+     "Changing several things at once makes it hard to tell which one helped."
+    ]
+   },
+   {
+    "h": "When to get help quickly",
+    "p": [
+     "Get urgent medical help if you have sudden eye pain, a sudden change in your vision, or a red eye that is getting worse."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "dry-eye-drops-not-working-what-to-track-before-your-appointment",
+  "offer": "tear-notes",
+  "title": "Dry eye drops not working? What to note before your next appointment",
+  "description": "If you've tried several drops and nothing seems to help, here's what to write down so your next eye appointment is more useful.",
+  "intro": "Many people with dry eyes try drop after drop and can't tell what is helping. Your optician or eye doctor can do more with a clear record than with a memory of 'I've tried everything'. This is general information, not medical advice.",
+  "sections": [
+   {
+    "h": "What you've tried",
+    "list": [
+     "The name of each drop, gel or ointment, how often you used it and for how long.",
+     "Warm compresses, eye masks, lid cleaning, or clinic treatments, with dates.",
+     "Anything that made your eyes sting or feel worse."
+    ]
+   },
+   {
+    "h": "How your eyes feel",
+    "list": [
+     "A daily score morning and evening for two to four weeks.",
+     "When it's worst: on waking, at the screen, in the car, outdoors.",
+     "Other symptoms such as blurred vision that clears when you blink, light sensitivity or sticky eyes in the morning."
+    ]
+   },
+   {
+    "h": "What it costs",
+    "list": [
+     "What you spend each month on drops and treatments.",
+     "This helps when you ask about options or cheaper alternatives."
+    ]
+   },
+   {
+    "h": "Questions to ask",
+    "list": [
+     "What type of dry eye do I have?",
+     "How long should I try this before deciding whether it works?",
+     "Is there anything in my daily routine I should change?"
+    ]
+   },
+   {
+    "h": "When to get help quickly",
+    "p": [
+     "Get urgent medical help if you have sudden eye pain, a sudden change in your vision, or a red eye that is getting worse."
+    ]
+   }
+  ]
  }
 ]
