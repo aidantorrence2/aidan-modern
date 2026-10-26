@@ -44581,6 +44581,90 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-26",
+    "slug": "tub-to-sets",
+    "name": "Tub to Sets",
+    "need": "I've got huge boxes of my old childhood building bricks all mixed together, and I want to sort them and rebuild the sets I had as a kid.",
+    "headline": "Got a tub of mixed childhood bricks? Pick the sets you had, get a sorting plan, see which sets are closest to complete, and keep one list of the parts you still need.",
+    "buyer": "Adults (18+) with a tub or bin of mixed childhood building bricks who want their old sets back.",
+    "bullets": [
+      "Pick the sets you remember and get a checklist for each from public parts lists.",
+      "A sorting plan for your tub, by colour and part type, so you're not hunting through one big pile.",
+      "A closest-to-complete ranking and one combined list of missing parts to look for or order."
+    ],
+    "price": "$3.99/month",
+    "priceUsd": 4,
+    "priceNote": "Or $24 a year. For adults 18+.",
+    "reasonPrompt": "Roughly how many sets do you think are in your tub?",
+    "faq": [
+      {
+        "q": "Is it made by or linked to LEGO?",
+        "a": "No. Tub to Sets is independent and not affiliated with or endorsed by the LEGO Group or any parts marketplace. It sells no bricks or parts."
+      },
+      {
+        "q": "Does it scan my bricks with the camera?",
+        "a": "No. You tick off parts as you find them; it keeps the lists and the plan in one place."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-26",
+      "summary": "Adults describe finding boxes of their childhood bricks, wanting to sort them and recreate the original sets, and placing many parts orders to fill the gaps.",
+      "wtp": "Brickit, a brick-scanning app, has 23K App Store ratings and sells Pro at $6.99 a month or $34.99 to $79.99 a year; forum posters describe buying missing parts through BrickLink.",
+      "signals": [
+        {
+          "url": "https://www.eurobricks.com/forum/forums/topic/197256-sorting-out-my-childhood-lego-collection/",
+          "who": "chimpinboy (Eurobricks)",
+          "date": "2024-01-08",
+          "quote": "sort through the bricks and recreate the sets",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.eurobricks.com/forum/forums/topic/197424-advice-on-rebuilding-from-bit-of-kits/",
+          "who": "jainser (Eurobricks)",
+          "date": "2024-01-23",
+          "quote": "I want to rebuild them but there is pieces",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.eurobricks.com/forum/forums/topic/197424-advice-on-rebuilding-from-bit-of-kits/",
+          "who": "ukbajadave (Eurobricks)",
+          "date": "2024-02-05",
+          "quote": "as I have a few similar boxes",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.eurobricks.com/forum/forums/topic/134713-rebuilding-old-city-sets/",
+          "who": "KenAdams (Eurobricks)",
+          "date": "2016-06-11",
+          "quote": "Many BrickLink orders later",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.eurobricks.com/forum/forums/topic/134713-rebuilding-old-city-sets/",
+          "who": "MattGee (Eurobricks)",
+          "date": "2016-06-11",
+          "quote": "working through Bricklink and other sources",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/brickit/id1477221636",
+          "who": "Brickit (App Store)",
+          "date": "2026-10-26",
+          "quote": "23K Ratings; Brickit Pro (1 Month) $6.99; Brickit Pro (1 Year) $34.99 to $79.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Brickit and other scanning apps, Rebrickable, BrickLink, spreadsheets.",
+      "risks": "A hobby and clutter need rather than a core basic need. Nobody said they'd pay for a planner; the money is Brickit's scanning subscription and parts orders. All forum evidence is one site, and one thread is from 2016. Must not imitate any toy brand."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
