@@ -42684,6 +42684,83 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-26",
+    "slug": "cut-card",
+    "name": "Cut Card",
+    "need": "I never know how to explain the haircut I want, I can't remember what I asked for last time, and I often leave the barber or salon disappointed.",
+    "headline": "Never sure how to ask for the haircut you want? Learn the barber terms, log each cut in 30 seconds with photos, and show your barber a one-screen card of the cut you liked best.",
+    "buyer": "Adults (18+) who can't explain the haircut they want, forget what they had last time, or leave disappointed.",
+    "bullets": [
+      "A plain guide to the words barbers and stylists use: guard numbers, taper vs fade, neckline, layers.",
+      "A 30-second log after each cut with a photo on the day and three weeks later, and a rating.",
+      "A one-screen 'show your barber' card built from your best-rated cut, plus a nudge when it's time to rebook."
+    ],
+    "price": "$3/month",
+    "priceUsd": 3,
+    "priceNote": "Or $15 a year.",
+    "reasonPrompt": "What usually goes wrong when you get your hair cut?",
+    "faq": [
+      {
+        "q": "Does it book appointments or show me with new hairstyles?",
+        "a": "No. Cut Card is a record and a card to show your barber or stylist. It doesn't book appointments or do virtual try-ons."
+      },
+      {
+        "q": "Is it linked to a salon chain?",
+        "a": "No. It's independent and works with any barber or salon."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-26",
+      "summary": "People describe barbers who aren't approachable when they try to explain what they want, struggling to get the cut they want, and being nervous after bad cuts.",
+      "wtp": "Hairstyle PRO Try On has 486 App Store ratings and sells style packages, and a reviewer says they'd buy more; Hairstyle Try On - Hair Salon has 492 ratings and sells plans from $1.99 a month to $7.99 permanently.",
+      "signals": [
+        {
+          "url": "https://www.thefedoralounge.com/threads/hair-cuts.58/page-70",
+          "who": "HodgePodge (Fedora Lounge)",
+          "date": "2011-06-17",
+          "quote": "t very approachable when it comes to trying to explain what I want.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.thefedoralounge.com/threads/hair-cuts.58/page-70",
+          "who": "DoolittleRaider (Fedora Lounge)",
+          "date": "2011-06-21",
+          "quote": "ive having these exact problems",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/-/id517525759",
+          "who": "WhitneyL374 (Hairstyle PRO Try On App Store review)",
+          "date": "04/23/2017",
+          "quote": "My problem was that I had no idea what my face would look like with a different type of cut",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/-/id517525759",
+          "who": "Kathy Chris (Hairstyle PRO Try On App Store review)",
+          "date": "05/30/2017",
+          "quote": "m nervous about this.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1384820962",
+          "who": "Hairstyle Try On - Hair Salon (App Store)",
+          "date": "2026-10-26",
+          "quote": "492 Ratings; $1.99, $2.99, $5.99, $7.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Hairstyle try-on apps, salon booking apps, phone photo albums.",
+      "risks": "Forum evidence is 2011; paid apps are try-on filters with under 500 ratings. The doc side's AnandTech source was blocked for the code side, and the Hair Filter rating count didn't match the page, so neither is cited. Near live home-trim, which is cutting your own hair."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
