@@ -43566,6 +43566,90 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-26",
+    "slug": "rope-rhythm",
+    "name": "Rope Rhythm",
+    "need": "I'm trying to get fit with a jump rope, but whenever I speed up I trip after a few turns, and I can't get my feet into the same rhythm as my hands.",
+    "headline": "Trip over the rope after a few jumps? Learn the rhythm first with no-rope drills, climb a step ladder from side swings to sets of 50, and log your best unbroken count each session.",
+    "buyer": "Adults (18+) trying to get fit with a jump rope who trip after a handful of jumps.",
+    "bullets": [
+      "Rhythm-first drills: a beat to jump to, then side swings and no-rope jumps before the full rope.",
+      "A step ladder from single jumps to unbroken sets of 50, moving up only when the last step is steady.",
+      "A 10-second log of your best unbroken count and trips, a weekly chart, and a fix-it list for the trip you make most."
+    ],
+    "price": "$3/month",
+    "priceUsd": 3,
+    "priceNote": "Or $19 a year. For adults 18+.",
+    "reasonPrompt": "How many jumps can you do in a row now?",
+    "faq": [
+      {
+        "q": "Is it a fitness or weight-loss programme?",
+        "a": "No. Rope Rhythm teaches the skill and tracks your progress; it makes no fitness or weight-loss claims and isn't medical advice. Jumping is high-impact: start with short sessions and rest days, and check with a doctor first if you have joint, heart or other health concerns."
+      },
+      {
+        "q": "Do I need a special rope?",
+        "a": "No. It's independent and sells no ropes; it shows you how to check your rope is the right length."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-26",
+      "summary": "Adults describe practising for months and still being unable to jump rope, tripping after a few rotations, being unable to match their feet to their hands, and finding the timing hard at first.",
+      "wtp": "Jump Rope Training | Crossrope has 14K App Store ratings and sells plans at $9.99-$14.99 a month or $79.99 a year; posters also describe buying rope sets and DVDs.",
+      "signals": [
+        {
+          "url": "https://cathe.com/forum/threads/why-cant-i-jump-rope.252597/",
+          "who": "LauraMax (cathe.com)",
+          "date": "2008-09-29",
+          "quote": "but I just cannot for the life of me jump rope!",
+          "seen": "opened"
+        },
+        {
+          "url": "https://cathe.com/forum/threads/why-cant-i-jump-rope.252597/",
+          "who": "LauraMax (cathe.com)",
+          "date": "2008-09-29",
+          "quote": "Whenever I try to speed it up I might get in 3 rotations before I trip over the rope.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://cathe.com/forum/threads/why-cant-i-jump-rope.252597/",
+          "who": "amyg (cathe.com)",
+          "date": "2008-09-29",
+          "quote": "m a complete double jumper too.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://cathe.com/forum/threads/jumping-rope.175017/",
+          "who": "AngelaP (cathe.com)",
+          "date": "2006-02-01",
+          "quote": "I am having A LOT of trouble getting my rhythm right",
+          "seen": "opened"
+        },
+        {
+          "url": "https://cathe.com/forum/threads/jumping-rope.175017/",
+          "who": "tinytaebo (cathe.com)",
+          "date": "2006-02-01",
+          "quote": "in the beginning it was difficult for me to get my timing down.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id996680141",
+          "who": "Jump Rope Training | Crossrope (App Store)",
+          "date": "2026-10-26",
+          "quote": "14K Ratings; $9.99, $14.99, $79.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Crossrope and other jump-rope apps, video tutorials, fitness classes.",
+      "risks": "Forum evidence is 2006-2008 on one site; the doc side's Mumsnet sources were blocked for the code side. Paid app reviews complain about paywalls. Must make no fitness claims. Near live two-spins (double-unders), but for beginners who can't do single jumps."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
