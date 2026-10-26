@@ -43335,6 +43335,76 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-26",
+    "slug": "grain-map",
+    "name": "Grain Map",
+    "need": "Whenever I shave, especially my neck, I get razor bumps, razor burn or ingrown hairs, and I can't work out which razor, technique or routine actually stops them.",
+    "headline": "Razor bumps every time you shave? Map your hair grain once, log each shave in 20 seconds, score your skin the next day, and change one thing at a time to see what stops them.",
+    "buyer": "Adults (18+) who get razor bumps, razor burn or ingrown hairs when they shave.",
+    "bullets": [
+      "Draw your own hair-grain map once: which way the hair grows on each part of your face and neck.",
+      "A 20-second log per shave (razor or trimmer, blade age, with or against the grain, prep) and a 0-10 bump score the next day.",
+      "One-change mode: test one change for two weeks, see before and after, and get a blade reminder from your own log."
+    ],
+    "price": "$3/month",
+    "priceUsd": 3,
+    "priceNote": "Or $15 a year. For adults 18+.",
+    "reasonPrompt": "Where do you get bumps, and what do you shave with now?",
+    "faq": [
+      {
+        "q": "Is it medical advice?",
+        "a": "No. Grain Map is a shaving log. If bumps are painful, infected, spreading or don't settle, see a pharmacist or doctor. It can make a one-page summary to take with you."
+      },
+      {
+        "q": "Does it sell razors or products?",
+        "a": "No. It's independent, sells nothing and recommends no brands. It's for adults 18+."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-26",
+      "summary": "People describe years of razor burn and ingrown hairs, spending a lot of time and effort to avoid them, and having to experiment for a long time to find what works.",
+      "wtp": "Shavers already spend on this: one commenter moved to a double-edge razor and badger brush after years of razor burn. My Shave Den, a shave-log app with 155 App Store ratings, sells Pro from $0.99 a month to $12.99 lifetime.",
+      "signals": [
+        {
+          "url": "https://news.ycombinator.com/item?id=6500900",
+          "who": "avtar (Hacker News)",
+          "date": "2013-10-05",
+          "quote": "spend a considerable amount of time and effort to make sure I don",
+          "seen": "opened"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=39797798",
+          "who": "com2kid (Hacker News)",
+          "date": "2024-03-23",
+          "quote": "I suffered for years from massive razor burns and ingrown hairs from Gillette.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=31299043",
+          "who": "MereInterest (Hacker News)",
+          "date": "2022-05-07",
+          "quote": "My hair is pretty coarse, so I needed to experiment around for a while before finding something that worked.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/my-shave-den/id1581646387",
+          "who": "My Shave Den (App Store)",
+          "date": "2026-10-26",
+          "quote": "155 Ratings; Pro $0.99 to $12.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Razor and skincare brands, shave-log apps, wet-shaving forums, dermatologists.",
+      "risks": "Paid shave-log apps are small. Money mostly goes on razors and products. The doc side's AnandTech threads were blocked for the code side, so the hosted page uses Hacker News evidence instead. Must give no medical advice."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

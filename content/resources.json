@@ -19552,5 +19552,85 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "how-to-stop-razor-bumps-on-your-neck",
+  "offer": "grain-map",
+  "title": "How to stop razor bumps on your neck",
+  "description": "Practical shaving changes that often reduce razor bumps and ingrown hairs, and how to tell which one helps you.",
+  "intro": "Razor bumps happen when shaved hairs curl back into the skin, and the neck is a common trouble spot because the hair often grows in different directions. Small changes to how you shave often help. This is general information; see a pharmacist or doctor if bumps are painful, infected or don't settle.",
+  "sections": [
+   {
+    "h": "Prepare the skin",
+    "list": [
+     "Shave after a warm shower, or hold a warm, damp cloth on your skin for a minute.",
+     "Use a shaving cream or gel rather than shaving dry."
+    ]
+   },
+   {
+    "h": "Shave with the grain",
+    "list": [
+     "Shave in the direction the hair grows, especially on the neck.",
+     "Avoid pulling the skin tight and going over the same spot many times."
+    ]
+   },
+   {
+    "h": "Look after the blade",
+    "list": [
+     "Use a sharp blade and change it regularly.",
+     "Rinse the blade after every few strokes."
+    ]
+   },
+   {
+    "h": "Consider not shaving so close",
+    "list": [
+     "A trimmer or electric shaver that leaves a little stubble can help if close shaves always cause bumps.",
+     "Shaving less often gives skin time to settle."
+    ]
+   },
+   {
+    "h": "Change one thing at a time",
+    "p": [
+     "Keep a short note after each shave and how your skin looks the next day. Change one thing for a couple of weeks so you can tell what actually helps."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "shaving-with-or-against-the-grain-how-to-map-your-grain",
+  "offer": "grain-map",
+  "title": "Shaving with or against the grain, and how to map your grain",
+  "description": "What 'the grain' means, how to find which way your hair grows, and why it matters for razor bumps.",
+  "intro": "The grain is the direction your hair grows. Shaving with it is gentler on the skin; shaving against it gives a closer shave but is more likely to cause irritation and ingrown hairs for many people.",
+  "sections": [
+   {
+    "h": "Find your grain",
+    "list": [
+     "Let your stubble grow for a day or two.",
+     "Run your fingers over each area: the direction that feels smooth is with the grain, and the direction that feels rough is against it.",
+     "On the neck the direction often changes, sometimes growing sideways or upwards."
+    ]
+   },
+   {
+    "h": "Draw a simple map",
+    "list": [
+     "Sketch your face and neck and add arrows for each area.",
+     "Note any spots where the hair swirls or changes direction."
+    ]
+   },
+   {
+    "h": "Use the map when you shave",
+    "list": [
+     "Do your first pass with the grain everywhere.",
+     "If you want a closer shave, try a second pass across the grain rather than against it, and see how your skin reacts."
+    ]
+   },
+   {
+    "h": "Watch the results",
+    "p": [
+     "Note how your skin looks the next day. If bumps appear in the same place, check your map for that area and try a gentler approach there."
+    ]
+   }
+  ]
  }
 ]
