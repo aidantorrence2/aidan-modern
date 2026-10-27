@@ -47430,6 +47430,174 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-27",
+    "slug": "permit-pass",
+    "name": "Permit Pass",
+    "need": "I keep failing, or can't make myself study for, the written permit test, and the driver's handbook just doesn't stick.",
+    "headline": "Failed the written permit test or can't face the handbook? Study in 10-minute chunks for your state, retake the questions you miss, and see when you're ready to book.",
+    "buyer": "Adults (18+) taking the US written permit or knowledge test, including parents helping a teen, especially after a failed attempt or with test nerves.",
+    "bullets": [
+      "Ten-minute daily sessions built from your state's handbook topics: signs, right of way, limits and rules.",
+      "The questions you miss come back until you get them right, so weak topics get the most practice.",
+      "A simple readiness view by topic, so you know when you're ready to book."
+    ],
+    "price": "$9/month",
+    "priceUsd": 9,
+    "priceNote": "Or $19 once until you pass. For adults 18+.",
+    "reasonPrompt": "Which state are you testing in, and how many times have you taken it?",
+    "faq": [
+      {
+        "q": "Are these the real test questions?",
+        "a": "No. Permit Pass practises the topics in your state's driver handbook; it doesn't have or promise the real test questions. Always study the official handbook too."
+      },
+      {
+        "q": "Is it linked to the DMV?",
+        "a": "No. Permit Pass is independent and not affiliated with any DMV, government agency or driving school."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-27",
+      "summary": "Learners describe failing the written test three times, failing the permit test many times with test anxiety, never being able to make themselves study, studying as an adult with study anxiety, and failing even after practising on an app.",
+      "wtp": "DMV Genie, a permit test prep app, has 184K App Store ratings and sells Premium from $15.99 for a week to $39.99 for 30 days or $99.99 lifetime; Zutobi has 239K ratings.",
+      "signals": [
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1394069110/sortby=mosthelpful/json",
+          "who": "KingOfMarshes (App Store review of Zutobi)",
+          "date": "2023-01-19",
+          "quote": "I failed the written test 3 times and was losing hope in myself",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1394069110/sortby=mosthelpful/json",
+          "who": "CreepingroAch (App Store review of Zutobi)",
+          "date": "2024-06-27",
+          "quote": "I have failed my permit test many times before. I have test anxiety",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1394069110/sortby=mosthelpful/json",
+          "who": "lovekillzzx (App Store review of Zutobi)",
+          "date": "2026-10-20",
+          "quote": "i could NEVER ever study for my permit",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=3/id=1394069110/sortby=mosthelpful/json",
+          "who": "suszyque (App Store review of Zutobi)",
+          "date": "2022-03-16",
+          "quote": "studying for my permit as an adult and I have study anxiety",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=3/id=513850893/sortby=mostrecent/json",
+          "who": "nana10 (App Store review of DMV Genie)",
+          "date": "2026-07-15",
+          "quote": "I recently failed my permit test by 35/50",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id513850893",
+          "who": "DMV Genie (App Store)",
+          "date": "2026-10-27",
+          "quote": "184K Ratings; Car Premium 7-day $15.99; 30-day $39.99; Lifetime $99.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "DMV Genie, Zutobi, official state handbooks and practice tests, driving schools.",
+      "risks": "Very crowded. Questions differ by state, and it must not promise real test questions. Many test-takers are minors, so the buyer is an adult or parent. Near live next-test-pass (road test) and score-window (UK hazard perception), but about the US written knowledge test."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-27",
+    "slug": "art-start",
+    "name": "Art Start",
+    "need": "I've always wanted to learn about art and art history, but I know nothing and never knew where to start.",
+    "headline": "Always wanted to understand art but never knew where to start? See one artwork a day with a plain note on what to look for, and build up the story of art step by step.",
+    "buyer": "Adults curious about art who visit museums but feel they don't understand what they're looking at.",
+    "bullets": [
+      "One artwork a day, with a short plain-English note on what to look for.",
+      "Works grouped into a simple timeline, so the big movements start to make sense.",
+      "A favourites list and a 'before you visit' pack for the museum you're going to."
+    ],
+    "price": "$5/month",
+    "priceUsd": 5,
+    "priceNote": "Or $30 a year.",
+    "reasonPrompt": "What kind of art do you most want to understand?",
+    "faq": [
+      {
+        "q": "Do I need any background?",
+        "a": "No. Art Start is written for complete beginners, with no jargon."
+      },
+      {
+        "q": "Is it linked to a museum or art app?",
+        "a": "No. Art Start is independent and not affiliated with any museum, gallery or art app."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-27",
+      "summary": "People describe always wanting to learn more about art but never knowing where to start, knowing nothing about art history, and never knowing much about art.",
+      "wtp": "DailyArt, an art-a-day app, has 38K App Store ratings and sells Premium at $4.99 a month or $29.99 a year, and a $119.99 Patron option.",
+      "signals": [
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=547982045/sortby=mosthelpful/json",
+          "who": "naerial (App Store review of DailyArt)",
+          "date": "2023-08-08",
+          "quote": "always wanted to learn more about art but never knew where to start",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=2/id=547982045/sortby=mosthelpful/json",
+          "who": "Smell this (App Store review of DailyArt)",
+          "date": "2023-09-02",
+          "quote": "I have always wanted to learn about art",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=9/id=547982045/sortby=mosthelpful/json",
+          "who": "Teh best doge (App Store review of DailyArt)",
+          "date": "2025-09-24",
+          "quote": "I know nothing about art history but this app is easily accessible",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=10/id=547982045/sortby=mosthelpful/json",
+          "who": "JustCoachLuke (App Store review of DailyArt)",
+          "date": "2023-08-19",
+          "quote": "I never knew much about art",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1546647006/sortby=mosthelpful/json",
+          "who": "KeefaChiefa (App Store review of an art learning app)",
+          "date": "2024-07-29",
+          "quote": "For someone like me (want to know more but just",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id547982045",
+          "who": "DailyArt (App Store)",
+          "date": "2026-10-27",
+          "quote": "38K Ratings; Monthly Premium $4.99; Annual Premium $29.99; Patron $119.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "DailyArt, Google Arts & Culture, Smartify, museum websites, YouTube.",
+      "risks": "A nice-to-have need with strong free competition. Image rights for artworks still in copyright. Same shape as live classical-start and near gap-filler, but about visual art."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

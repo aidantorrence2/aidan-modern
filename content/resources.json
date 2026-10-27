@@ -22650,5 +22650,86 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "how-to-pass-the-permit-test-after-failing-it",
+  "offer": "permit-pass",
+  "title": "How to pass the written permit test after failing it",
+  "description": "A calmer, more effective way to prepare for the written permit or knowledge test after a failed attempt.",
+  "intro": "Failing the written permit test is common, and it's usually fixable with a better study plan. Questions and rules vary by state, so always use your state's official driver handbook. This guide is independent and not affiliated with any DMV.",
+  "sections": [
+   {
+    "h": "Find what went wrong",
+    "list": [
+     "Write down the topics that felt hardest: road signs, right of way, speed limits, alcohol laws, fines.",
+     "Check your state's handbook for those sections first."
+    ]
+   },
+   {
+    "h": "Study in short sessions",
+    "list": [
+     "Ten to fifteen minutes a day works better than cramming the night before.",
+     "Read one section, then test yourself on it straight away."
+    ]
+   },
+   {
+    "h": "Practise the questions you miss",
+    "list": [
+     "Use your state's official practice test if there is one.",
+     "Keep a list of every question you get wrong, and go back to it until you get it right."
+    ]
+   },
+   {
+    "h": "Calm test nerves",
+    "list": [
+     "Book the test when you're consistently passing practice tests, not before.",
+     "Read each question twice and look for words like 'not' and 'except'.",
+     "Skip a hard question and come back to it if your test allows."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "how-to-start-learning-art-history-when-you-know-nothing",
+  "offer": "art-start",
+  "title": "How to start learning art history when you know nothing",
+  "description": "A friendly way into art and art history for complete beginners, without jargon.",
+  "intro": "You don't need any background to start enjoying art. A little regular looking, plus a rough timeline, goes a long way.",
+  "sections": [
+   {
+    "h": "Look first, read second",
+    "list": [
+     "Spend a minute just looking at a work before reading about it.",
+     "Notice what you see: colours, people, light, what's happening."
+    ]
+   },
+   {
+    "h": "Learn a rough timeline",
+    "list": [
+     "Start with a handful of big periods, such as the Renaissance, Baroque, Impressionism and Modern art.",
+     "For each, learn two or three famous works and one thing that makes it different."
+    ]
+   },
+   {
+    "h": "One work a day",
+    "list": [
+     "Look at one artwork a day and read a short note about it.",
+     "Keep a list of the works you like, and look for more by the same artist."
+    ]
+   },
+   {
+    "h": "Visit with a plan",
+    "list": [
+     "Before a museum visit, pick three works to find.",
+     "Read the labels for those, and don't try to see everything at once."
+    ]
+   },
+   {
+    "h": "Keep it fun",
+    "p": [
+     "Follow what you enjoy. There's no wrong way to start."
+    ]
+   }
+  ]
  }
 ]
