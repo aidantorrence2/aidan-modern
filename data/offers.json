@@ -48795,6 +48795,111 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-27",
+    "slug": "elf-nights",
+    "name": "Elf Nights",
+    "need": "We do the Christmas elf every December, but after a year or two I run out of ideas and forget to move it at night, then panic before the kids wake up.",
+    "headline": "Run out of Christmas elf ideas, or forget to move it at night? Get a bedtime reminder, a two-minute idea from things already in your house, and a morning rescue plan.",
+    "buyer": "Parents of young children who keep a Christmas elf tradition from late November to Christmas Eve.",
+    "bullets": [
+      "A bedtime reminder each night, at a time you choose, with a plain icon and name so the kids won't guess.",
+      "A two-minute idea for each night using things you already have, with a log so ideas don't repeat from last year.",
+      "A 'forgot to move it' rescue for the morning, with quick ideas that explain why the elf stayed put."
+    ],
+    "price": "$2.99/month",
+    "priceUsd": 3,
+    "priceNote": "Or $4.99 once for the whole season.",
+    "reasonPrompt": "How many years have you done the elf, and what's the hardest part?",
+    "faq": [
+      {
+        "q": "Is it linked to Elf on the Shelf or any toy company?",
+        "a": "No. Elf Nights is independent and not affiliated with, or endorsed by, The Elf on the Shelf, its makers or any toy company. It works with any Christmas elf or toy you use."
+      },
+      {
+        "q": "Will my kids find it on my phone?",
+        "a": "It uses a plain name and icon, and notifications don't mention the elf, so it's easy to keep the magic going."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-27",
+      "summary": "Parents describe running out of elf ideas after the first years, ideas becoming few and far between, the nightly job becoming time-consuming and frustrating, wanting an idea at 4am, and forgetting to move the elf then panicking before their child wakes up.",
+      "wtp": "Elf Cam - Santa's elf tracker has 7K App Store ratings and sells a $3.99 Monthly Pass or $14.99 Lifetime Access; Elf Studio has 3.8K ratings and sells plans at $2.99 a month, $6.99 a year or $19.99 lifetime.",
+      "signals": [
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=909087462/sortby=mosthelpful/json",
+          "who": "4kenners (App Store review of Scout Elf Ideas)",
+          "date": "2016-12-07",
+          "quote": "I started to run out of ideas",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=909087462/sortby=mosthelpful/json",
+          "who": "Mjrere (App Store review of Scout Elf Ideas)",
+          "date": "2016-12-08",
+          "quote": "ideas start to become few and far between",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=909087462/sortby=mosthelpful/json",
+          "who": "Renee1805 (App Store review of Scout Elf Ideas)",
+          "date": "2016-12-07",
+          "quote": "very very time-consuming almost even frustrating",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=909087462/sortby=mosthelpful/json",
+          "who": "cArLs tHe ShArK (App Store review of Scout Elf Ideas)",
+          "date": "2025-12-06",
+          "quote": "I just want a idea for 4am in the morning",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/comment/75124725#Comment_75124725",
+          "who": "XSpender (MoneySavingExpert)",
+          "date": "2018-12-02",
+          "quote": "forget to do something and have a panic on doing something before DS wakes up",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/comment/39524274#Comment_39524274",
+          "who": "yummy-mummy-amy (MoneySavingExpert)",
+          "date": "2010-12-20",
+          "quote": "fell asleep and forgot to do anything with elves",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/comment/64044297#Comment_64044297",
+          "who": "akachanhonpo (MoneySavingExpert)",
+          "date": "2013-12-11",
+          "quote": "running out of ideas as DS gets upset",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/elf-cam-santas-elf-tracker/id1540065832",
+          "who": "Elf Cam - Santa's elf tracker (App Store)",
+          "date": "2026-10-27",
+          "quote": "7K Ratings; Monthly Pass $3.99; Lifetime Access $14.99",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/elf-studio/id6443879616",
+          "who": "Elf Studio (App Store)",
+          "date": "2026-10-27",
+          "quote": "3.8K Ratings; Monthly $2.99; Annual $6.99; Lifetime $19.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "The official free ideas app, Pinterest and blogs, Elf Cam and Elf Studio (elf videos), notebooks and phone reminders.",
+      "risks": "The paid apps sell elf videos, not nightly ideas and reminders, so the money is next to this need. Free ideas are everywhere. The season lasts about four weeks, so a one-off price fits better. Must never use the Elf on the Shelf name or artwork. Most evidence is 2010-2018. Near live gift-ceiling, card-round and hint-jar (Christmas), but about the elf tradition."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
