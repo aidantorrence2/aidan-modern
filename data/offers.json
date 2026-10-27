@@ -45708,6 +45708,90 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-27",
+    "slug": "basket-to-drawer",
+    "name": "Basket to Drawer",
+    "need": "My laundry gets washed but never gets folded and put away, so baskets of clean clothes pile up and I can't face the mountain.",
+    "headline": "Clean laundry piling up in baskets? Follow each load from washer to drawer, get a nudge when the wash is done, and clear the pile with one 10-minute put-away a day.",
+    "buyer": "Adults (18+) whose laundry never gets all the way from the washer to the drawer.",
+    "bullets": [
+      "Follow each load through wash, dry, fold and put away, with a nudge when the washer is done.",
+      "A clean-pile count and one 10-minute put-away task a day, so the mountain never builds.",
+      "A simple weekly wash rhythm and per-person fold-and-put-away steps for the household, with no streaks."
+    ],
+    "price": "$2.99/month",
+    "priceUsd": 3,
+    "priceNote": "Or $14.99 a year. For adults 18+.",
+    "reasonPrompt": "Where does your laundry get stuck: in the washer, the dryer or the basket?",
+    "faq": [
+      {
+        "q": "Is it linked to an appliance maker or laundry service?",
+        "a": "No. Basket to Drawer is independent, not affiliated with any appliance maker, laundry service or cleaning app, and sells no products."
+      },
+      {
+        "q": "Do I need a smart washing machine?",
+        "a": "No. You tap when a load goes in, and it reminds you when it should be done."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-27",
+      "summary": "People describe putting laundry away as the worst chore, a mountain of clean clothes they can't face, always leaving clothes in the washer, and a never-ending mountain of washing.",
+      "wtp": "Sweepy, a household cleaning schedule app, has 11K App Store ratings and sells plans at $3.99 a month or $19.99 a year.",
+      "signals": [
+        {
+          "url": "https://boards.straightdope.com/t/most-hated-household-chore/690646",
+          "who": "Lowdown (Straight Dope)",
+          "date": "2014-06-12",
+          "quote": "Putting laundry away is the worst.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://boards.straightdope.com/t/most-hated-household-chore/690646",
+          "who": "NVME702-redux (Straight Dope)",
+          "date": "2014-06-12",
+          "quote": "I will sort, wash, dry, fold, iron if need be but no, not put it away.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://boards.straightdope.com/t/most-hated-household-chore/690646",
+          "who": "Macca26 (Straight Dope)",
+          "date": "2014-06-12",
+          "quote": "Putting laundry away is high up there.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/322034/wash-day-blues",
+          "who": "Spendless (MoneySavingExpert)",
+          "date": "2006-12-06",
+          "quote": "I always seem to have a mountain of washing to do",
+          "seen": "opened"
+        },
+        {
+          "url": "https://boards.hellobee.com/topic/clothes-left-in-the-washing-machine-over-night",
+          "who": "stiffaknee (Hellobee)",
+          "date": "2012-03-09",
+          "quote": "always leaving clothes in the washer",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1498897320",
+          "who": "Sweepy (App Store)",
+          "date": "2026-10-27",
+          "quote": "11K Ratings; Sweepy - Monthly $3.99; Sweepy - Yearly $19.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Sweepy, Tody, wash-and-fold services, calendar reminders.",
+      "risks": "The paid apps are general cleaning schedulers, not laundry-specific. Evidence is old (2006-2014). Near live reset-ten (all chores), chore-tally (sharing housework) and care-tag (label symbols), but about getting laundry put away."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
