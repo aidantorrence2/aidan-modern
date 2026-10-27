@@ -23362,5 +23362,84 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "how-to-write-your-first-five-minutes-of-stand-up",
+  "offer": "tight-five",
+  "title": "How to write your first five minutes of stand-up",
+  "description": "A plain, step-by-step way to build a first open-mic set from your own ideas, and get it to fit the time.",
+  "intro": "Most open mics give new comics about five minutes. That's only a handful of bits, so the job is to pick your strongest ideas and tighten them. This guide is independent and not affiliated with any club or school.",
+  "sections": [
+   {
+    "h": "Start from your own life",
+    "list": [
+     "Write down things that annoy, confuse or embarrass you, and opinions you hold strongly.",
+     "Pick the ones you can talk about with real detail.",
+     "Each idea is a premise; the joke is your surprising take on it."
+    ]
+   },
+   {
+    "h": "Write, then cut",
+    "list": [
+     "Write each bit out in full, then cut every word that doesn't help get to the laugh.",
+     "Put the funniest word at the end of the line.",
+     "Aim for a laugh every few lines, not one big payoff at the end."
+    ]
+   },
+   {
+    "h": "Time it",
+    "list": [
+     "Say the whole set out loud with a timer; written sets almost always run long.",
+     "Leave room for laughs and pauses: if it's exactly five minutes in your bedroom, it's too long on stage.",
+     "Know which bit to drop if you're running over."
+    ]
+   },
+   {
+    "h": "Running order",
+    "list": [
+     "Open with a short, strong bit.",
+     "Put your best bit last.",
+     "Write a one-word cue for each bit on a small card or your hand."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "how-to-know-if-your-jokes-are-funny",
+  "offer": "tight-five",
+  "title": "How to know if your jokes are funny before (and after) an open mic",
+  "description": "How to test stand-up material honestly, why friends' reactions mislead, and how to track which bits get laughs.",
+  "intro": "It's very hard to judge your own material, and friends are often too polite. The only reliable test is a real audience, measured over several shows. This guide is independent and not affiliated with any club or school.",
+  "sections": [
+   {
+    "h": "Why friends aren't a good test",
+    "list": [
+     "Friends laugh politely, or don't laugh because they've heard it before.",
+     "Jokes told in conversation work differently from jokes told on stage."
+    ]
+   },
+   {
+    "h": "Record every set",
+    "list": [
+     "Ask the venue if it's OK, then record audio of your set on your phone.",
+     "Listen back and mark where the laughs come and how big they are.",
+     "Note where you rushed, stumbled or lost the room."
+    ]
+   },
+   {
+    "h": "Judge over several mics",
+    "list": [
+     "One bad night doesn't mean a bit is dead; rooms vary.",
+     "Keep bits that get laughs in most rooms, rewrite ones that get some, cut ones that never do.",
+     "Try one change at a time so you know what made the difference."
+    ]
+   },
+   {
+    "h": "If you bomb",
+    "p": [
+     "Almost every comic bombs, often many times. Listen to the recording, find one thing to change, and book the next mic."
+    ]
+   }
+  ]
  }
 ]

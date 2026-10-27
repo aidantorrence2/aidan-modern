@@ -48333,6 +48333,97 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-27",
+    "slug": "tight-five",
+    "name": "Tight Five",
+    "need": "I'm starting stand-up comedy and I have no idea whether my material is funny, and I'm scared of going blank or bombing at an open mic.",
+    "headline": "Starting stand-up and can't tell what's funny? Keep every bit with its exact wording and time, record your sets and mark the laughs, and keep, rewrite or cut bits over time.",
+    "buyer": "Adults (18+) starting stand-up comedy: open-mic regulars and people working up to their first set.",
+    "bullets": [
+      "Every bit in one place with its exact wording and running time.",
+      "Record your set at the mic, mark the laughs bit by bit, and see each bit's record over your last few mics: keep, rewrite or cut.",
+      "A set list fitted to your slot, a one-word cue card, and a timed out-loud run-through before you go on."
+    ],
+    "price": "$4.99/month",
+    "priceUsd": 5,
+    "priceNote": "Or $29 a year. For adults 18+.",
+    "reasonPrompt": "How many open mics have you done, and what's hardest right now?",
+    "faq": [
+      {
+        "q": "Will it write jokes for me or promise laughs?",
+        "a": "No. Tight Five helps you organise, time and test your own material. It doesn't write jokes and can't promise laughs or bookings."
+      },
+      {
+        "q": "Is it linked to a comedy club, school or app?",
+        "a": "No. Tight Five is independent and not affiliated with any comedy club, school, promoter or app. Ask the venue before recording a set, and don't record other acts or the audience without permission."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-27",
+      "summary": "New comics describe having no idea whether their material is funny, being worried sick about making a fool of themselves, bombing, dropping their cue cards and going blank on stage.",
+      "wtp": "The Second City's Stand-Up 1 class in Chicago is priced at 440 dollars; the Jokesmith set-builder app sells Pro at $7.99 a month, $49.99 a year or $99.99 lifetime.",
+      "signals": [
+        {
+          "url": "https://www.comedy.co.uk/forums/post/900104/",
+          "who": "nickname (British Comedy Guide)",
+          "date": "2012-08-05",
+          "quote": "no idea whether or not my material is funny",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.comedy.co.uk/forums/post/900104/",
+          "who": "nickname (British Comedy Guide)",
+          "date": "2012-08-05",
+          "quote": "worried sick that I am going to make a fool of myself",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.comedy.co.uk/forums/thread/18267/8/",
+          "who": "Tim Azure (British Comedy Guide)",
+          "date": "2010-10-20",
+          "quote": "just bombed as a comedy act",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.comedy.co.uk/forums/thread/18267/8/",
+          "who": "Jason Bumford (British Comedy Guide)",
+          "date": "2010-10-20",
+          "quote": "I lasted 2.5 of the 5 mins",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.seattlemag.com/love-and-wisdom/live-laugh-bomb/",
+          "who": "Julie Zack (Seattle Magazine)",
+          "date": "2023-09-29",
+          "quote": "I stepped on stage, I went blank",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.secondcity.com/classes/chicago/stand-up/stand-up-1-chi",
+          "who": "The Second City (Stand-Up 1, Chicago)",
+          "date": "2026-10-27",
+          "quote": "Price: 440",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id6759635761",
+          "who": "Jokesmith: Comedy Set Builder (App Store)",
+          "date": "2026-10-27",
+          "quote": "Pro $7.99 a month; $49.99 a year; $99.99 lifetime",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Comedy classes, notebook and voice memo apps, small set-builder apps.",
+      "risks": "Forum posts are from 2010-2012. Set-builder apps are tiny, so the money signal is paid classes, not software. Nobody said they'd pay for a tool. Near live steady-voice (speaking nerves) and speech-start (wedding speeches), but about building and testing a comedy set."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
