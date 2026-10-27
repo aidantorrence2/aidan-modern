@@ -22822,5 +22822,78 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "how-to-block-ads-on-recipe-websites-on-your-phone",
+  "offer": "clean-pages",
+  "title": "How to block ads on recipe websites on your phone",
+  "description": "Simple ways to get past ads, pop-ups and life stories on recipe sites when cooking from your phone.",
+  "intro": "Recipe sites are often packed with ads and long stories before the recipe. A few simple tricks make them much easier to use while you cook.",
+  "sections": [
+   {
+    "h": "Use reader mode",
+    "list": [
+     "Many phone browsers have a reader view that strips a page down to its text and pictures.",
+     "Look for a reader icon in the address bar."
+    ]
+   },
+   {
+    "h": "Jump to the recipe",
+    "list": [
+     "Many recipe sites have a 'Jump to recipe' button near the top.",
+     "Some offer a print version, which is often cleaner to read on a phone."
+    ]
+   },
+   {
+    "h": "Try a content blocker",
+    "list": [
+     "Content blockers can hide many ads and pop-ups in your browser.",
+     "If a site stops working properly, pause blocking for that site."
+    ]
+   },
+   {
+    "h": "Save recipes you use",
+    "p": [
+     "Copy the ingredients and steps of recipes you make often into your notes or a recipe app, so you don't have to reload the site."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "how-to-preview-a-hair-colour-before-you-dye",
+  "offer": "shade-preview",
+  "title": "How to preview a hair colour before you dye",
+  "description": "Ways to get a realistic idea of how a new hair colour will look on you before committing.",
+  "intro": "Trying a new hair colour is exciting but risky. A few simple steps help you get a realistic idea first. This guide is general information; always follow the dye's instructions, including patch tests.",
+  "sections": [
+   {
+    "h": "Start with a good photo",
+    "list": [
+     "Take a photo in natural daylight, facing a window, with your hair loose.",
+     "Preview apps work best with a clear, front-on photo."
+    ]
+   },
+   {
+    "h": "Think about your skin tone",
+    "list": [
+     "Notice whether gold or silver jewellery looks better on you; it can hint at warmer or cooler shades.",
+     "Compare a few shades side by side rather than one at a time."
+    ]
+   },
+   {
+    "h": "Try it before you buy",
+    "list": [
+     "Do a strand test on a hidden section of hair to see the real result.",
+     "Remember that dye usually looks different on dark hair, and lightening may need bleach."
+    ]
+   },
+   {
+    "h": "For big changes",
+    "list": [
+     "Take your favourite preview to a hairdresser and ask what's realistic from your current colour.",
+     "Semi-permanent colours fade, so they're a lower-risk way to try something new."
+    ]
+   }
+  ]
  }
 ]

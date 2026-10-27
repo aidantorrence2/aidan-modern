@@ -47675,6 +47675,167 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-27",
+    "slug": "clean-pages",
+    "name": "Clean Pages",
+    "need": "Websites on my phone, especially recipe sites, are so buried in ads, pop-ups and redirects that I can barely read or tap anything.",
+    "headline": "Recipe and news sites on your phone buried in ads and pop-ups? Get a plain, cheap content blocker for everyday browsing, set up in two minutes, with a one-tap pause for sites that break.",
+    "buyer": "Adults (18+) who browse recipes, news and shopping sites on their phone and are fed up with ads and pop-ups.",
+    "bullets": [
+      "A simple content blocker for everyday browsing on your phone, set up in about two minutes.",
+      "Hides full-screen pop-ups, autoplay video ads and redirect tricks on recipe, news and shopping sites.",
+      "A one-tap pause for any site that breaks, and a plain list of what was blocked."
+    ],
+    "price": "$2/month",
+    "priceUsd": 2,
+    "priceNote": "Or $12 a year.",
+    "reasonPrompt": "Which sites annoy you most with ads on your phone?",
+    "faq": [
+      {
+        "q": "Will it break websites?",
+        "a": "Occasionally a site, often a checkout, needs ads or scripts to work. You can pause blocking for that site in one tap."
+      },
+      {
+        "q": "Is it linked to a browser or ad company?",
+        "a": "No. Clean Pages is independent, not affiliated with any browser maker, ad network or blocker, and doesn't sell your browsing data."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-27",
+      "summary": "People describe recipe sites notorious for ads, ad after ad while looking for recipes, being tired of being bombed by advertising, and pop-ups taking up the whole phone screen.",
+      "wtp": "AdBlock Pro for Safari has 74K App Store ratings and sells $1.99 a month, $11.99 a year or $39.99 lifetime; 1Blocker and AdGuard sell paid plans too.",
+      "signals": [
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1047223162/sortby=mosthelpful/json",
+          "who": "misalignments (App Store review of AdGuard)",
+          "date": "2022-09-21",
+          "quote": "those types of websites are notorious for how many ads they display",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1018301773/sortby=mosthelpful/json",
+          "who": "Wry Omnivore (App Store review of AdBlock Pro)",
+          "date": "2026-01-05",
+          "quote": "Tired of being bombed by advertising.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1018301773/sortby=mosthelpful/json",
+          "who": "CabaJp11 (App Store review of AdBlock Pro)",
+          "date": "2022-10-15",
+          "quote": "ad after ad after ad while looking for recipe ideas",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1365531024/sortby=mosthelpful/json",
+          "who": "SMDOK (App Store review of 1Blocker)",
+          "date": "2021-07-10",
+          "quote": "sick of advertisements, tracking and the like",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=2/id=1047223162/sortby=mosthelpful/json",
+          "who": "Anonymissy1010 (App Store review of AdGuard)",
+          "date": "2018-03-25",
+          "quote": "I was at my wits ends with those pop ups that take up your entire iPhone screen",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1018301773",
+          "who": "AdBlock Pro for Safari (App Store)",
+          "date": "2026-10-27",
+          "quote": "74K Ratings; 1 month $1.99; 12 months $11.99; Lifetime $39.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "AdBlock Pro, 1Blocker, AdGuard, Brave, DuckDuckGo, free tiers.",
+      "risks": "Crowded, with strong free options. Needs a native content-blocker extension. Some sites break with blocking. Many reviews in the category are about streaming-site pop-ups, so it stays positioned on everyday sites."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-27",
+    "slug": "shade-preview",
+    "name": "Shade Preview",
+    "need": "I want to dye my hair a new colour, but I'm scared it won't suit me, so I want to see how I'd look before I commit.",
+    "headline": "Thinking of a new hair colour but scared it won't suit you? Try shades on your own photo in natural light, compare side by side, and take your favourite to the salon or the box-dye aisle.",
+    "buyer": "Adults (18+) thinking about a box dye or a salon colour change who want to see it on themselves first.",
+    "bullets": [
+      "Try shades on your own photo, taken in natural light, including on dark hair.",
+      "Compare two or three shades side by side, and see them next to your skin tone and eye colour.",
+      "Save your favourite to show your hairdresser or match at the shop."
+    ],
+    "price": "$4/month",
+    "priceUsd": 4,
+    "priceNote": "Or $9.99 once.",
+    "reasonPrompt": "What colour are you thinking of going?",
+    "faq": [
+      {
+        "q": "Will the real dye look exactly like the preview?",
+        "a": "No preview is exact; results depend on your starting colour, hair type and the product. Do a strand test, follow the product's patch-test instructions, and ask a hairdresser for big changes."
+      },
+      {
+        "q": "Is it linked to a hair dye brand or salon?",
+        "a": "No. Shade Preview is independent and not affiliated with any hair dye brand, salon or beauty app."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-27",
+      "summary": "People describe wanting to see what colour will look good before dyeing, thinking of dyeing their hair, and wanting to see themselves with different coloured hair first.",
+      "wtp": "Hair Color Changer, a hair colour preview app, has 5.5K App Store ratings and sells Pro at $4.99 a week or $19.99 lifetime; another Hair Color Changer app has 5.6K ratings.",
+      "signals": [
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1475936406/sortby=mosthelpful/json",
+          "who": "darlsi (App Store review of Hair Color Changer)",
+          "date": "2024-02-26",
+          "quote": "I am an older woman and just want to see what color will look good",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1475936406/sortby=mosthelpful/json",
+          "who": "Anne8901 (App Store review of Hair Color Changer)",
+          "date": "2024-02-07",
+          "quote": "thinking of dying my hair",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1103584663/sortby=mosthelpful/json",
+          "who": "Jaelene Smith (App Store review of Hair Color Changer)",
+          "date": "2018-12-28",
+          "quote": "to see how I would look with different colored hair before I dye it",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1103584663/sortby=mosthelpful/json",
+          "who": "ubermickey (App Store review of Hair Color Changer)",
+          "date": "2016-06-26",
+          "quote": "but I want to see how I look with different hair",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1475936406",
+          "who": "Hair Color Changer (App Store)",
+          "date": "2026-10-27",
+          "quote": "5.5K Ratings; Pro Weekly $4.99; Pro Lifetime $19.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Hair colour changer apps, FaceApp, YouCam, brand virtual try-ons.",
+      "risks": "Mostly a one-off decision. Realism on dark hair is hard. Free brand try-ons exist. Many reviewers in the category are young, so the buyer is an adult. Near live silver-season (going grey) and cut-card (haircuts), but about trying a colour."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
