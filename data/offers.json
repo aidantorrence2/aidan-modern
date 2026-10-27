@@ -47010,6 +47010,83 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-27",
+    "slug": "top-note",
+    "name": "Top Note",
+    "need": "My voice cracks, strains or thins out when I aim for high notes, and I don't know how to practise getting past it.",
+    "headline": "Voice cracks or strains on high notes? Find where your voice flips with a 2-minute check, practise gently at that edge for 10 minutes a day, and hear the change in weekly recordings.",
+    "buyer": "Adult singers (18+) whose voice cracks, strains or thins out near the top of their range.",
+    "bullets": [
+      "A 2-minute range check that marks the note where your voice flips or strains.",
+      "Ten minutes a day of gentle exercises at that edge (lip trills, sirens, scales), with a pitch meter.",
+      "Weekly dated recordings of the same phrase, and a stop-if-it-hurts check-in each session."
+    ],
+    "price": "$4.99/month",
+    "priceUsd": 5,
+    "priceNote": "Or $29 a year. For adults 18+.",
+    "reasonPrompt": "Which note or song is where your voice starts to crack?",
+    "faq": [
+      {
+        "q": "Is this medical or voice therapy advice?",
+        "a": "No. Top Note is a practice tool and makes no promise about your range. Stop if singing hurts. If you have pain, or hoarseness lasting more than two weeks, see a doctor."
+      },
+      {
+        "q": "Is it linked to a singing app or teacher?",
+        "a": "No. Top Note is independent and not affiliated with any singing app, course or teacher."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-27",
+      "summary": "Singers describe their voice cracking or weakening on high notes, getting tired and cracking by the third verse, cracking after a few takes in a particular range, and high notes that used to be easy now sounding cracked and strained.",
+      "wtp": "Vocalist, a singing practice app, has 1.9K App Store ratings and sells Premium from $4.99 to $69.99; 30 Day Singer sells paid singing lessons.",
+      "signals": [
+        {
+          "url": "https://www.30daysinger.com/forums/discussion/open-discussion/expanding-range",
+          "who": "Angel Lloyd (30 Day Singer forum)",
+          "date": "about 6 years ago (relative date on page)",
+          "quote": "my voice is cracking / weakening when I aim for the high notes",
+          "seen": "opened"
+        },
+        {
+          "url": "https://homerecording.com/bbs/threads/trying-to-sing-high-notes.18616/",
+          "who": "GT (HomeRecording forum)",
+          "date": "2000-11-08",
+          "quote": "My voice gets tired by the third verse and cracks",
+          "seen": "opened"
+        },
+        {
+          "url": "https://homerecording.com/bbs/threads/trying-to-sing-high-notes.18616/",
+          "who": "Emeric (HomeRecording forum)",
+          "date": "2000-11-10",
+          "quote": "in a particuliar range, my voice cracks",
+          "seen": "opened"
+        },
+        {
+          "url": "https://homerecording.com/bbs/threads/voice-cracks-and-strains-when-singing.357489/",
+          "who": "lovesinging25 (HomeRecording forum)",
+          "date": "2013-05-07",
+          "quote": "high notes perfectly now at 31 though it sounds horrible cracked straining",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/vocalist-learn-to-sing/id1616751664",
+          "who": "Vocalist (App Store)",
+          "date": "2026-10-27",
+          "quote": "1.9K Ratings; Vocalist Premium $4.99 to $69.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Vocalist, Simply Sing, singing lesson apps, voice teachers, YouTube.",
+      "risks": "Forum evidence is old (2000-2013) plus one with a relative date. Voice strain touches health: no range promises, stop-if-it-hurts and see-a-doctor lines. Near live pitch-steady (singing in tune), vibrato-find and steady-voice, but about high notes."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
