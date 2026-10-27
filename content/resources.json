@@ -24427,5 +24427,167 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "when-to-use-wa-vs-ga-in-japanese",
+  "offer": "particle-sense",
+  "title": "When to use wa (は) vs ga (が) in Japanese: a simple guide",
+  "description": "A plain explanation of the difference between the Japanese particles は and が, with simple examples and rules of thumb.",
+  "intro": "は (wa) and が (ga) are the particles Japanese learners mix up most. There are many fine points, but a few rules of thumb cover most everyday sentences.",
+  "sections": [
+   {
+    "h": "は marks the topic",
+    "list": [
+     "は tells the listener what you're talking about: 私は学生です (As for me, I'm a student).",
+     "It's often used for something already known in the conversation.",
+     "It can also show contrast: 肉は食べます (Meat, I do eat — implying other things maybe not)."
+    ]
+   },
+   {
+    "h": "が marks the subject, often new information",
+    "list": [
+     "が points to who or what does something, often when that's the new or important part: 誰が来ましたか？ 田中さんが来ました (Who came? Tanaka came).",
+     "Question words like 誰 (who) and 何 (what) take が, not は, when they're the subject."
+    ]
+   },
+   {
+    "h": "Common が patterns",
+    "list": [
+     "Things you like or dislike: 猫が好きです (I like cats).",
+     "Things that exist: 公園に犬がいます (There's a dog in the park).",
+     "Abilities and understanding: 日本語がわかります (I understand Japanese)."
+    ]
+   },
+   {
+    "h": "Practise",
+    "list": [
+     "Read short sentences and ask: is this the topic, or the new information?",
+     "Notice which one native speakers use in replies to questions.",
+     "Don't worry about getting every case right: listeners will understand you either way."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "japanese-ni-vs-de",
+  "offer": "particle-sense",
+  "title": "Japanese ni (に) vs de (で): how to stop mixing them up",
+  "description": "When to use the Japanese particles に and で, with a simple question to decide between them.",
+  "intro": "に (ni) and で (de) can both translate as 'at' or 'in', which is why they're easy to mix up. The key is what happens at the place.",
+  "sections": [
+   {
+    "h": "Use で where an action happens",
+    "list": [
+     "図書館で勉強します (I study at the library).",
+     "で also marks the means or tool: バスで行きます (I go by bus), 箸で食べます (I eat with chopsticks)."
+    ]
+   },
+   {
+    "h": "Use に for where something is, or where it's going",
+    "list": [
+     "Existence with いる and ある: 部屋に猫がいます (There's a cat in the room).",
+     "Destination: 日本に行きます (I'm going to Japan).",
+     "A point in time: 7時に起きます (I get up at 7)."
+    ]
+   },
+   {
+    "h": "A simple question",
+    "p": [
+     "Ask: is something being done at this place (で), or is something simply there, or going there (に)?"
+    ]
+   },
+   {
+    "h": "And を",
+    "list": [
+     "を marks the direct object: 本を読みます (I read a book).",
+     "It can also mark a path you move through: 公園を歩きます (I walk through the park)."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "german-accusative-vs-dative",
+  "offer": "case-sure",
+  "title": "German accusative vs dative: how to know which case to use",
+  "description": "Simple rules for choosing accusative or dative in German, with the articles and the prepositions that trigger each case.",
+  "intro": "Choosing between accusative and dative is one of the hardest parts of German. A few triggers decide most sentences: the role of the noun, the preposition, and whether there's movement.",
+  "sections": [
+   {
+    "h": "Role in the sentence",
+    "list": [
+     "Accusative: the direct object, the thing directly acted on: Ich sehe den Hund (I see the dog).",
+     "Dative: the indirect object, usually the person receiving: Ich gebe dem Mann das Buch (I give the man the book)."
+    ]
+   },
+   {
+    "h": "The articles change",
+    "list": [
+     "Masculine: der (nominative), den (accusative), dem (dative).",
+     "Feminine: die, die, der.",
+     "Neuter: das, das, dem.",
+     "Plural: die, die, den (and the noun usually adds -n in the dative)."
+    ]
+   },
+   {
+    "h": "Prepositions that always take one case",
+    "list": [
+     "Accusative: durch, für, gegen, ohne, um.",
+     "Dative: aus, bei, mit, nach, seit, von, zu."
+    ]
+   },
+   {
+    "h": "Two-way prepositions",
+    "list": [
+     "an, auf, hinter, in, neben, über, unter, vor, zwischen can take either case.",
+     "Movement towards a place (wohin?) takes accusative: Ich gehe in den Park.",
+     "Location (wo?) takes dative: Ich bin in dem (im) Park."
+    ]
+   },
+   {
+    "h": "Some verbs always take dative",
+    "p": [
+     "A few common verbs take a dative object, such as helfen, danken, gefallen and gehören: Ich helfe dem Kind. Learn them as a short list."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "german-adjective-endings-explained",
+  "offer": "case-sure",
+  "title": "German adjective endings explained simply",
+  "description": "A simplified way to learn German adjective endings after der-words, ein-words and with no article.",
+  "intro": "German adjective endings depend on gender, case and what comes before the adjective. The full table looks scary, but a few patterns cover most of it.",
+  "sections": [
+   {
+    "h": "After der, die, das (and dieser, jeder)",
+    "list": [
+     "The ending is -e in the nominative singular (all genders) and in the accusative singular for feminine and neuter: der gute Mann, die gute Frau, das gute Kind.",
+     "Everywhere else it's -en: den guten Mann, dem guten Kind, die guten Kinder."
+    ]
+   },
+   {
+    "h": "After ein, kein and mein",
+    "list": [
+     "Masculine nominative: ein guter Mann (-er).",
+     "Neuter nominative and accusative: ein gutes Kind (-es).",
+     "Feminine nominative and accusative: eine gute Frau (-e).",
+     "Everywhere else: -en, as after der."
+    ]
+   },
+   {
+    "h": "With no article",
+    "list": [
+     "The adjective takes the ending the article would have shown: guter Wein (like der), gutes Brot (like das), gute Milch (like die), mit gutem Wein (like dem)."
+    ]
+   },
+   {
+    "h": "How to learn them",
+    "list": [
+     "Learn the article endings first; adjective endings follow from them.",
+     "Practise one group at a time, starting with der-words.",
+     "Learn whole phrases such as 'mit einem guten Freund' rather than tables alone."
+    ]
+   }
+  ]
  }
 ]

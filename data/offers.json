@@ -49432,6 +49432,188 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-27",
+    "slug": "particle-sense",
+    "name": "Particle Sense",
+    "need": "I'm learning Japanese and I keep getting the particles (wa or ga, ni or de, o) wrong, and I can't work out which one a sentence needs.",
+    "headline": "Keep mixing up Japanese particles? Short daily sets of real sentences on wa or ga, ni or de and o, one clear question that decides each one, and practice on the ones you miss.",
+    "buyer": "Adult self-taught Japanese learners who know kana and some kanji but keep getting particles wrong.",
+    "bullets": [
+      "Short daily sets of real sentences on the particle pairs learners mix up most: は and が, に and で, を.",
+      "One clear question that decides each choice, and a plain reason every time you get one wrong.",
+      "More practice on the particles you personally miss, until they stick."
+    ],
+    "price": "$5.99/month",
+    "priceUsd": 6,
+    "priceNote": "Or $35 a year. Cancel any time.",
+    "reasonPrompt": "How long have you been learning Japanese, and which particles trip you up?",
+    "faq": [
+      {
+        "q": "What level is it for?",
+        "a": "Beginners and lower-intermediate learners who can read kana. It's a particle practice tool, not a full Japanese course or JLPT prep."
+      },
+      {
+        "q": "Is it linked to WaniKani, Bunpo or any Japanese app?",
+        "a": "No. Particle Sense is independent and not affiliated with any language app, school or exam body."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-27",
+      "summary": "Japanese learners describe struggling with particles and asking for an app to practise them, still struggling with particles after a long time, finding particles super hard, and answering with は instead of が.",
+      "wtp": "Bunpo: Language Learning has 18K App Store ratings and sells Bunpo Plus at $9.99 a month, $29.99 a year or $39.99 lifetime; renshuu has 1.5K ratings and sells renshuu pro at $6.99.",
+      "signals": [
+        {
+          "url": "https://community.wanikani.com/t/64902",
+          "who": "KevinJapan (WaniKani Community)",
+          "date": "2024-02-16",
+          "quote": "but I struggle with the particles. Does anyone know a good app or website to help practicing the particles?",
+          "seen": "opened"
+        },
+        {
+          "url": "https://community.wanikani.com/t/72826",
+          "who": "Dathmach (WaniKani Community)",
+          "date": "2026-03-21",
+          "quote": "still struggling with particles after all",
+          "seen": "opened"
+        },
+        {
+          "url": "https://community.wanikani.com/t/46938",
+          "who": "IgorTheGreat (WaniKani Community)",
+          "date": "2020-11-05",
+          "quote": "I have struggled a lot with getting particles down right",
+          "seen": "opened"
+        },
+        {
+          "url": "https://community.wanikani.com/t/36277",
+          "who": "Algis94 (WaniKani Community)",
+          "date": "2019-04-21",
+          "quote": "But really struggling with particles.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1542730063/sortby=mosthelpful/json",
+          "who": "KeightDowd1313 (App Store review of renshuu)",
+          "date": "2026-02-24",
+          "quote": "particles (which I find super hard haha)",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1279720052/sortby=mosthelpful/json",
+          "who": "Ryunoyoru (App Store review of Bunpo)",
+          "date": "2025-04-11",
+          "quote": "answer a question with",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1279720052",
+          "who": "Bunpo: Language Learning (App Store)",
+          "date": "2026-10-27",
+          "quote": "18K Ratings; Bunpo Plus Monthly $9.99; Plus Yearly $29.99; Lifetime $39.99",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1542730063",
+          "who": "renshuu - Japanese learning (App Store)",
+          "date": "2026-10-27",
+          "quote": "1.5K Ratings; renshuu pro subscription $6.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Bunpo, Bunpro, renshuu, Duolingo, textbooks such as Genki.",
+      "risks": "Grammar apps are a busy category, so it must stay narrow on particles. Four of the six people are on one community (WaniKani). Same shape as live particle-click (Korean particles), but for Japanese."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-27",
+    "slug": "case-sure",
+    "name": "Case Sure",
+    "need": "I'm learning German and I can't get the cases and adjective endings right; every time I speak I have to stop and work out whether it's accusative or dative.",
+    "headline": "Always stopping to work out accusative or dative in German? Short daily sets on the cases and adjective endings you personally miss, with the trigger (verb or preposition) shown first.",
+    "buyer": "Adult German learners at about A2 to B1 level who know plenty of words but keep getting case endings wrong.",
+    "bullets": [
+      "Short daily sets on accusative and dative, with the trigger shown first: the verb, the preposition, or movement versus location.",
+      "Adjective endings practised in small groups after der-words, ein-words and no article.",
+      "More practice on the endings you personally miss, and a list of your trouble spots."
+    ],
+    "price": "$6.99/month",
+    "priceUsd": 7,
+    "priceNote": "Or $39 a year. Cancel any time.",
+    "reasonPrompt": "What's your German level, and where do you get stuck: cases, articles or adjective endings?",
+    "faq": [
+      {
+        "q": "Does it cover der, die or das?",
+        "a": "Case Sure focuses on cases and endings. If remembering noun genders is your main problem, start there first, as cases build on genders."
+      },
+      {
+        "q": "Is it linked to Goethe-Institut or any German app?",
+        "a": "No. Case Sure is independent and not affiliated with any language app, school or exam body."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-27",
+      "summary": "German learners describe struggling especially with the accusative case, struggling to remember genders, cases and declined forms, asking 'is it accusative or dative?', and comparing adjective endings to operator overloading gone wild.",
+      "wtp": "Learn German with Seedlang has 1.7K App Store ratings and sells Pro at $8.99, $19.99 for three months or $59.99; Grammatisch, a German grammar app, has 722 ratings and sells Plus from $7.99.",
+      "signals": [
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1163927830/sortby=mosthelpful/json",
+          "who": "Adamenjoyer (App Store review of Grammatisch)",
+          "date": "2023-09-03",
+          "quote": "struggle with it (especially the accusative case and sentence structure)",
+          "seen": "opened"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=46047962",
+          "who": "TurkTurkleton (Hacker News)",
+          "date": "2025-11-25",
+          "quote": "struggle with remembering genders and cases and declined forms in German",
+          "seen": "opened"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=17489786",
+          "who": "user5454 (Hacker News)",
+          "date": "2018-07-09",
+          "quote": "is it accusative or dative?",
+          "seen": "opened"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=15824282",
+          "who": "wenc (Hacker News)",
+          "date": "2017-12-01",
+          "quote": "the endings to me are like operator overloading gone wild",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1521550965",
+          "who": "Learn German with Seedlang (App Store)",
+          "date": "2026-10-27",
+          "quote": "1.7K Ratings; Seedlang Pro Membership $8.99; 3-Months $19.99; $59.99",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1163927830",
+          "who": "Grammatisch - Learn German (App Store)",
+          "date": "2026-10-27",
+          "quote": "722 Ratings; Grammatisch Plus $7.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Seedlang, Grammatisch, Duolingo, Babbel, textbooks and tutors.",
+      "risks": "Close to live article-lock (German noun genders), and could be merged with it. Most voices are Hacker News, and older. The paid apps are mid-size. Same shape as live case-ready (Russian cases), but for German."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
