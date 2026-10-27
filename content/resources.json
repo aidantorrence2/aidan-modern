@@ -24743,5 +24743,121 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "how-to-keep-a-to-do-list-without-another-app",
+  "offer": "thumbtask",
+  "title": "How to keep a to-do list without opening another app",
+  "description": "Simple ways to capture and track tasks using tools you already use, like texts, notes and email, so nothing slips.",
+  "intro": "Many to-do apps fail because opening them is one step too many. The best system is the one you'll actually use in the moment a task comes up.",
+  "sections": [
+   {
+    "h": "Capture in one place",
+    "list": [
+     "Pick one place every task goes first: a text thread to yourself, a single note, or an email to yourself.",
+     "Capture the task in a few words the moment you think of it.",
+     "Don't sort or plan while capturing; just get it out of your head."
+    ]
+   },
+   {
+    "h": "Review once a day",
+    "list": [
+     "Spend five minutes each morning or evening reading the list.",
+     "Pick the three most important tasks for the day.",
+     "Delete or move anything that's done or no longer matters."
+    ]
+   },
+   {
+    "h": "Make tasks doable",
+    "list": [
+     "Start each task with a verb: 'call', 'email', 'buy'.",
+     "Break big tasks into the very next step.",
+     "Add a date only when something truly has a deadline."
+    ]
+   },
+   {
+    "h": "Keep it going",
+    "p": [
+     "If you miss a few days, don't start again from scratch; just read the list and carry on."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "how-to-stop-forgetting-your-goals",
+  "offer": "wallgoal",
+  "title": "How to stop forgetting your goals and to-dos",
+  "description": "Practical ways to keep your goals in front of you every day, so they don't disappear the moment you close an app.",
+  "intro": "Goals usually fade not because people don't care, but because they stop seeing them. Keeping them visible and reviewing them briefly makes a big difference.",
+  "sections": [
+   {
+    "h": "Keep them visible",
+    "list": [
+     "Write your top goals where you'll see them daily: your phone's lock screen, a sticky note on your desk, the fridge.",
+     "Keep the list short: three goals are easier to remember than ten."
+    ]
+   },
+   {
+    "h": "Link goals to daily actions",
+    "list": [
+     "For each goal, write the next small action you can take this week.",
+     "Put that action somewhere you already look, such as your calendar."
+    ]
+   },
+   {
+    "h": "Review briefly and often",
+    "list": [
+     "Look at your goals for one minute each morning.",
+     "Once a week, check what moved forward and choose next week's actions."
+    ]
+   },
+   {
+    "h": "Make it easy to restart",
+    "p": [
+     "Everyone has weeks where goals slip. Keep your list where you'll see it anyway, so getting back on track is just reading it again."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "how-to-check-your-squat-form-from-a-video",
+  "offer": "clip-coach",
+  "title": "How to check your squat form from a video",
+  "description": "How to film your squat so you can see your form, and the common things to look for.",
+  "intro": "Filming your squat is one of the easiest ways to see what's really happening. This guide is general information, not personal coaching or medical advice; if you have pain or an injury, see a qualified professional.",
+  "sections": [
+   {
+    "h": "Film it well",
+    "list": [
+     "Prop your phone at about hip height, steady and level.",
+     "Film from the side for depth and back angle, and from the front for knee and foot position.",
+     "Use a weight you can lift with control; form checks are for working sets, not maximum lifts."
+    ]
+   },
+   {
+    "h": "Things to look for from the side",
+    "list": [
+     "Depth: how low your hips go compared with your knees.",
+     "Whether your back stays in a steady position or rounds at the bottom.",
+     "Whether your heels stay down."
+    ]
+   },
+   {
+    "h": "Things to look for from the front",
+    "list": [
+     "Whether your knees track roughly in line with your toes.",
+     "Whether you shift more to one side.",
+     "Whether your feet stay flat and in the same place."
+    ]
+   },
+   {
+    "h": "What to do next",
+    "list": [
+     "Change one thing at a time and film again.",
+     "Compare videos week to week rather than rep to rep.",
+     "If something looks wrong and you're not sure why, ask a qualified coach to look at your video."
+    ]
+   }
+  ]
  }
 ]
