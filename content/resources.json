@@ -21531,5 +21531,75 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "how-often-should-you-reapply-sunscreen",
+  "offer": "shade-clock",
+  "title": "How often should you reapply sunscreen?",
+  "description": "What common sun safety advice says about reapplying sunscreen at the beach, pool and on everyday days out.",
+  "intro": "Most people apply sunscreen once and forget about it. Common advice from health bodies is to reapply regularly, usually around every two hours, and straight after swimming, sweating or towelling off. Always follow the directions on your sunscreen. This guide is general information, not medical advice.",
+  "sections": [
+   {
+    "h": "When to reapply",
+    "list": [
+     "Every two hours or so while you're outdoors, or as your sunscreen's label says.",
+     "Straight after swimming, even with water-resistant sunscreen, and after towelling dry or heavy sweating."
+    ]
+   },
+   {
+    "h": "Use enough",
+    "list": [
+     "Most people use less than the amount sunscreen is tested with.",
+     "Don't forget ears, the back of the neck, the tops of feet and your scalp parting."
+    ]
+   },
+   {
+    "h": "Make it easy to remember",
+    "list": [
+     "Set a phone timer when you first apply.",
+     "Keep sunscreen in your bag, car or beach bag so it's always with you.",
+     "Reapply at natural breaks, such as after lunch or a swim."
+    ]
+   },
+   {
+    "h": "Sunscreen isn't everything",
+    "list": [
+     "Use shade, especially around the middle of the day.",
+     "Wear a hat, sunglasses and clothing that covers your skin.",
+     "See a doctor about any new or changing mole or skin mark."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "how-to-reapply-sunscreen-over-makeup",
+  "offer": "shade-clock",
+  "title": "How to reapply sunscreen over make-up",
+  "description": "Practical ways people top up sun protection during the day without taking off their make-up.",
+  "intro": "Reapplying sunscreen over make-up feels awkward, so many people skip it. There are a few common ways to top up without starting again. Check each product's directions; this guide is general information, not medical advice.",
+  "sections": [
+   {
+    "h": "Options people use",
+    "list": [
+     "Sunscreen sprays or mists designed for faces, held at the distance the label says.",
+     "Sunscreen sticks, dabbed on rather than rubbed.",
+     "Mineral powders with SPF, brushed on; it's hard to apply enough powder for full protection, so many people use them as a top-up, not the only layer."
+    ]
+   },
+   {
+    "h": "Tips",
+    "list": [
+     "Blot shine with a tissue first.",
+     "Pat a thin layer of lotion sunscreen on with a sponge to disturb make-up less.",
+     "Wear a hat and sunglasses for extra protection."
+    ]
+   },
+   {
+    "h": "Remember to reapply",
+    "p": [
+     "Set a reminder for around two hours after you first apply, or as your sunscreen's label says."
+    ]
+   }
+  ]
  }
 ]

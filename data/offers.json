@@ -46065,6 +46065,90 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-27",
+    "slug": "shade-clock",
+    "name": "Shade Clock",
+    "need": "I put sunscreen on once and forget to reapply, so I still end up burnt after a day outside.",
+    "headline": "Put sunscreen on once and forget the rest? Tap when you apply, get a reapply nudge timed to your day, and a quicker one after swimming or towelling off.",
+    "buyer": "Adults (18+) who put sunscreen on once, forget to reapply and still end up burnt.",
+    "bullets": [
+      "One tap when you apply starts a reapply clock, with nudges; a swim or towel-off brings the next one forward.",
+      "Local UV index and a day-out mode for the beach, pool, lake or park, with a pack-the-bottle reminder.",
+      "A burn log for missed spots, an option for reapplying over make-up, and one nudge for the whole group."
+    ],
+    "price": "$2.99/month",
+    "priceUsd": 3,
+    "priceNote": "Or $14.99 a year. For adults 18+.",
+    "reasonPrompt": "When do you most often forget to reapply?",
+    "faq": [
+      {
+        "q": "Will it stop me getting sunburnt?",
+        "a": "No. Shade Clock is a reminder tool, not medical advice, and makes no claim to prevent sunburn or skin cancer. Follow the directions on your sunscreen, use shade and clothing too, and see a doctor about any mole or skin change that worries you."
+      },
+      {
+        "q": "Is it linked to a sunscreen brand?",
+        "a": "No. Shade Clock is independent, not affiliated with any sunscreen brand, weather service or app, and sells no products."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-27",
+      "summary": "People describe remembering to reapply as one of the hardest parts of sun care, wanting to know when to reapply, and burning within an hour outdoors.",
+      "wtp": "spf.today, a sunscreen reapply tracker, sells $3.99 a month, $14.99 a year or $39.99 lifetime (36 ratings); SunSafe, a UV and tanning app that includes reapply reminders, has 11K ratings with plans from $5.99 a month.",
+      "signals": [
+        {
+          "url": "https://apps.apple.com/us/app/spf-today-sunscreen-tracker/id6670567397",
+          "who": "@theMelahomie (App Store review of spf.today)",
+          "date": "2025-01-20",
+          "quote": "One of the hardest parts is remembering to reapply",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/spf-today-sunscreen-tracker/id6670567397",
+          "who": "drleedds (App Store review of spf.today)",
+          "date": "2025-01-16",
+          "quote": "Makes it easy to know when to reapply sunscreen",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/spf-today-sunscreen-tracker/id6670567397",
+          "who": "ThomBayes (App Store review of spf.today)",
+          "date": "2024-12-10",
+          "quote": "timely reminders to reapply sunscreen",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.iboats.com/threads/im-toast.496372/",
+          "who": "bassman284 (iboats forum)",
+          "date": "2011-09-03",
+          "quote": "I can get a pretty good burn in not much over an hour",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/spf-today-sunscreen-tracker/id6670567397",
+          "who": "spf.today (App Store)",
+          "date": "2026-10-27",
+          "quote": "36 Ratings; Monthly Subscription $3.99; Annual Subscription $14.99; Lifetime $39.99",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id6461573146",
+          "who": "SunSafe (App Store)",
+          "date": "2026-10-27",
+          "quote": "11K Ratings; Premium Monthly $5.99 to $9.99; Premium Yearly $14.99 to $39.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "spf.today, SunSafe and other UV apps, phone timers, weather apps with UV index.",
+      "risks": "The closest paid reminder app has only 36 ratings; SunSafe is mostly a tanning app. Mumsnet evidence couldn't be re-checked. Skin-health topic: no medical or prevention claims. Seasonal demand."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
