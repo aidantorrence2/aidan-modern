@@ -48158,6 +48158,181 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-27",
+    "slug": "till-ready",
+    "name": "Till Ready",
+    "need": "I want all my store loyalty cards on my phone in one simple place that works offline, without carrying a fat wallet or being pushed into a shopping or finance app.",
+    "headline": "Too many loyalty cards in your wallet? Keep every store card's barcode on your phone in one plain list that works offline, with no ads and no shopping or finance upsell.",
+    "buyer": "Adults with several supermarket, pharmacy and coffee-shop loyalty cards who want them on their phone in one simple, private place.",
+    "bullets": [
+      "Add a card by scanning its barcode or typing its number; it shows full-screen and bright at the till.",
+      "Works offline, so your card still opens with no signal in the shop.",
+      "No ads, no shopping deals and no data selling; export your cards any time."
+    ],
+    "price": "$1.99/month",
+    "priceUsd": 2,
+    "priceNote": "Or $12 a year. Cancel any time.",
+    "reasonPrompt": "How many loyalty cards do you carry, and where do you keep them now?",
+    "faq": [
+      {
+        "q": "Is it linked to any shop or loyalty scheme?",
+        "a": "No. Till Ready is independent and not affiliated with any shop, loyalty scheme, wallet or finance app. It stores the barcodes you add; each shop's own rules for its scheme still apply."
+      },
+      {
+        "q": "What happens to my card numbers?",
+        "a": "They're kept for showing at the till and never sold or used for ads. You can export or delete them at any time."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-27",
+      "summary": "Shoppers describe wanting a simple, clear place to store loyalty cards, needing cards that work offline with no signal, wanting an app that only shows their cards with nothing cluttering the screen, and having too many cards that Apple Wallet doesn't support.",
+      "wtp": "Barcodes: Loyalty Card Wallet has 1.2K App Store ratings and sells plans at $1.99 a month, $7.99 a year or $14.99 lifetime; Card Manager: Digital Wallet has 2K ratings and sells Pro at $19.99 a year.",
+      "signals": [
+        {
+          "url": "https://forums.moneysavingexpert.com/api/v2/discussions/6567387?expand=insertUser",
+          "who": "Tazlilly (MoneySavingExpert)",
+          "date": "2024-11-12",
+          "quote": "I want another, simple, clear place to store my loyalty cards",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/api/v2/discussions/6562664?expand=insertUser",
+          "who": "jbrassy (MoneySavingExpert)",
+          "date": "2024-10-23",
+          "quote": "can be used offline when I have no Internet / signal",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1610894014/sortby=mosthelpful/json",
+          "who": "3D0G (App Store review of Barcodes: Loyalty Card Wallet)",
+          "date": "2025-04-08",
+          "quote": "store all the cards in one place",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1610894014/sortby=mosthelpful/json",
+          "who": "Kallmebean (App Store review of Barcodes: Loyalty Card Wallet)",
+          "date": "2024-10-21",
+          "quote": "show my cards without anything else cluttering up the screen",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1610894014/sortby=mosthelpful/json",
+          "who": "channelar (App Store review of Barcodes: Loyalty Card Wallet)",
+          "date": "2024-11-09",
+          "quote": "produce a loyalty or other card on demand",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=2/id=1142473931/sortby=mosthelpful/json",
+          "who": "Cbobbyc (App Store review of Pass2U Wallet)",
+          "date": "2019-05-07",
+          "quote": "way too many cards that are not supported in WALLET",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1610894014",
+          "who": "Barcodes: Loyalty Card Wallet (App Store)",
+          "date": "2026-10-27",
+          "quote": "1.2K Ratings; Monthly $1.99; Yearly $7.99; Lifetime $14.99",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1210150248",
+          "who": "Card Manager: Digital Wallet (App Store)",
+          "date": "2026-10-27",
+          "quote": "2K Ratings; Pass Card Manager Pro Annual $19.99; Apple Wallet Support $14.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Apple Wallet, Google Wallet, Key Ring, mobile-pocket, Barcodes, Card Manager, retailers' own apps.",
+      "risks": "Strong free options (Google Wallet, Key Ring, retailers' apps). A web build can show barcodes offline but can't match a native watch app or widget. Interest spiked when a popular card app closed in 2024-25. Near live which-card-now (credit card rewards) and spend-before (gift cards), but about showing store loyalty cards."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-27",
+    "slug": "drive-witness",
+    "name": "Drive Witness",
+    "need": "I want dashcam footage to protect me after an accident, a hit-and-run or a false claim, without buying and wiring in a separate dashcam, just using the phone I already have.",
+    "headline": "Want dashcam protection without buying one? Turn the phone you have into a simple dashcam: set it up before you drive, keep the last few minutes, and save a clip after an incident.",
+    "buyer": "Adult drivers (18+) who want dashcam footage for peace of mind but don't want to buy or fit a separate dashcam.",
+    "bullets": [
+      "Start recording before you set off; it keeps a rolling loop of the last few minutes and saves clips when you ask.",
+      "A plain after-an-incident checklist: save the clip, note the time and place, and how to share it with your insurer or the police.",
+      "Storage and battery tips, plus a mounting checklist so the phone never blocks your view."
+    ],
+    "price": "$4.99/month",
+    "priceUsd": 5,
+    "priceNote": "Or $29 a year. For drivers 18+.",
+    "reasonPrompt": "What would you most want footage of: a crash, a hit-and-run, or someone else's driving?",
+    "faq": [
+      {
+        "q": "Is it safe and legal to use my phone like this?",
+        "a": "Set everything up and start recording before you drive, mount the phone securely where it doesn't block your view, and never touch it while driving. Laws on phone mounts, recording and sharing footage vary by place, so check your local rules. Drive Witness gives no legal advice and can't guarantee an insurer or court will accept footage."
+      },
+      {
+        "q": "Is it linked to an insurer or dashcam maker?",
+        "a": "No. Drive Witness is independent and not affiliated with any insurer, dashcam maker or driving app."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-27",
+      "summary": "Drivers describe wanting a dashcam for safety and insurance, feeling safer with something to back up what happened after a hit-and-run, and wanting to save money by not buying an expensive dashcam.",
+      "wtp": "Driver: Dash Cam & Trip Log has 13K App Store ratings and sells Premium at $4.99 a month, $23.99 for six months or $95.00 a year; Nexar Classic has 12.5K ratings.",
+      "signals": [
+        {
+          "url": "https://forums.moneysavingexpert.com/api/v2/comments/78955133?expand=insertUser",
+          "who": "Bigphil1474 (MoneySavingExpert)",
+          "date": "2022-02-03",
+          "quote": "thinking of getting a dashcam fitted in my Peugeot 2008",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=996931497/sortby=mosthelpful/json",
+          "who": "Psychedelic girl 97 (App Store review of Nexar Classic)",
+          "date": "2021-09-28",
+          "quote": "for my safety and for insurance i thought about getting a dash cam for my van",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=996931497/sortby=mosthelpful/json",
+          "who": "Cristal Jimenez (App Store review of Nexar Classic)",
+          "date": "2022-09-08",
+          "quote": "in a hit and run before purchasing",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=3/id=1415557883/sortby=mostrecent/json",
+          "who": "SilentAgent44 (App Store review of Driver: Dash Cam & Trip Log)",
+          "date": "2023-02-18",
+          "quote": "save money buy not having to go buy an expensive dash cam",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1415557883",
+          "who": "Driver: Dash Cam & Trip Log (App Store)",
+          "date": "2026-10-27",
+          "quote": "13K Ratings; Driver Premium Monthly $4.99; 6 months $23.99; annual $95.00",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Driver, Nexar, Android phone dashcam apps, cheap hardware dashcams.",
+      "risks": "A web page can't record in the background or with the screen locked, so a real build needs a native app. Phones overheat and drain battery. Cheap hardware dashcams cost about the same as a year's subscription. Must never encourage phone use while driving, and laws on recording differ by place. Nexar reviews partly concern its hardware."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

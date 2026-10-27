@@ -23208,5 +23208,159 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "how-to-keep-all-your-loyalty-cards-on-your-phone",
+  "offer": "till-ready",
+  "title": "How to keep all your loyalty cards on your phone",
+  "description": "Simple ways to move your store loyalty cards onto your phone, so they work at the till even with no signal.",
+  "intro": "Most store loyalty cards are just a barcode or number, so you can usually keep them on your phone instead of in your wallet. This guide is independent and not affiliated with any shop, wallet or app.",
+  "sections": [
+   {
+    "h": "Check the shop first",
+    "list": [
+     "Many shops let you add their card to Apple Wallet or Google Wallet from their own app or website.",
+     "Some schemes only work through the shop's own app; check before throwing the plastic card away."
+    ]
+   },
+   {
+    "h": "For everything else",
+    "list": [
+     "Phone wallet apps and card-holder apps can store a barcode from a photo or by typing the number under it.",
+     "Check the barcode scans at the till the first time you use it, and keep the plastic card until it does."
+    ]
+   },
+   {
+    "h": "Make it work offline",
+    "list": [
+     "Open each card once while you have signal, so it's saved on the phone.",
+     "Turn the screen brightness up at the till; dim screens are the most common reason scans fail."
+    ]
+   },
+   {
+    "h": "Keep it tidy and private",
+    "list": [
+     "Delete cards for shops you no longer use.",
+     "Keep a note of each card number somewhere safe in case you change phones.",
+     "Check what an app does with your data before you add your cards."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "what-to-do-if-your-loyalty-card-app-shuts-down",
+  "offer": "till-ready",
+  "title": "What to do if your loyalty card app shuts down or changes",
+  "description": "How to move your store loyalty cards to a new app or wallet without losing points, if the app you use closes or changes.",
+  "intro": "Card-holder apps sometimes close or get merged into other apps. Your points usually belong to each shop's scheme, not to the app, so moving is mostly about saving your card numbers. This guide is independent and not affiliated with any app or shop.",
+  "sections": [
+   {
+    "h": "Save your card numbers now",
+    "list": [
+     "Write down or screenshot each card's number and barcode before the app closes.",
+     "Note which shop and which email each card is registered to."
+    ]
+   },
+   {
+    "h": "Check your points are safe",
+    "list": [
+     "Log in to each shop's own website or app to check your points balance.",
+     "If a card isn't registered, register it with the shop so your points are tied to you."
+    ]
+   },
+   {
+    "h": "Move to something new",
+    "list": [
+     "Add the cards to your phone's wallet, the shop's own app, or another card-holder app.",
+     "Test each one at the till before deleting the old app."
+    ]
+   },
+   {
+    "h": "Pick carefully",
+    "list": [
+     "Look for an app that works offline and lets you export your cards.",
+     "Check the privacy policy for what it does with your shopping data."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "can-i-use-my-phone-as-a-dashcam",
+  "offer": "drive-witness",
+  "title": "Can I use my phone as a dashcam?",
+  "description": "What you need to use a phone as a dashcam safely, where to mount it, and the limits compared with a dedicated dashcam.",
+  "intro": "A phone can record your drive like a dashcam, with some limits. This guide is general information, not legal advice. Laws on phone mounts and recording vary by place, so check your local rules, and never touch your phone while driving.",
+  "sections": [
+   {
+    "h": "Before you drive",
+    "list": [
+     "Mount the phone securely so it doesn't block your view of the road; many places have rules about where mounts can go.",
+     "Plug it into a car charger: recording video uses a lot of battery.",
+     "Start recording before you set off, then leave it alone."
+    ]
+   },
+   {
+    "h": "Limits compared with a dashcam",
+    "list": [
+     "Phones can overheat in direct sun or on long drives.",
+     "Many phone apps stop recording if you switch apps, take a call or lock the screen.",
+     "Storage fills fast; use an app that loops and overwrites old footage."
+    ]
+   },
+   {
+    "h": "Getting usable footage",
+    "list": [
+     "Clean the windscreen and the phone lens.",
+     "Point the camera so the road ahead fills most of the frame.",
+     "Check a test recording to make sure number plates are readable."
+    ]
+   },
+   {
+    "h": "Privacy",
+    "p": [
+     "Recording audio, or sharing footage of other people online, may have legal limits where you live. Share footage with your insurer or the police rather than posting it."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "dashcam-footage-after-an-accident-what-to-do",
+  "offer": "drive-witness",
+  "title": "Dashcam footage after an accident or hit-and-run: what to do",
+  "description": "How to save and keep dashcam or phone footage after a crash or hit-and-run, and how to share it with your insurer or the police.",
+  "intro": "After an incident, footage can help show what happened, but only if it's saved before it's overwritten. This guide is general information, not legal advice. Make sure everyone is safe and follow local rules about stopping and reporting first.",
+  "sections": [
+   {
+    "h": "First, safety",
+    "list": [
+     "Stop safely, check for injuries and call emergency services if anyone is hurt.",
+     "Follow your local rules on stopping, exchanging details and reporting the incident."
+    ]
+   },
+   {
+    "h": "Save the footage",
+    "list": [
+     "When it's safe, stop the recording or save the clip so it isn't overwritten.",
+     "Copy the file somewhere else, such as a computer or cloud storage, as soon as you can.",
+     "Don't edit or trim the original; keep a full copy."
+    ]
+   },
+   {
+    "h": "Note the details",
+    "list": [
+     "The date, time and exact place.",
+     "Number plates, vehicle descriptions and any witnesses.",
+     "Weather and road conditions."
+    ]
+   },
+   {
+    "h": "Share it properly",
+    "list": [
+     "Tell your insurer you have footage and ask how they want it sent.",
+     "For a hit-and-run or dangerous driving, ask the police how to submit footage.",
+     "Avoid posting it on social media, which can cause legal problems."
+    ]
+   }
+  ]
  }
 ]
