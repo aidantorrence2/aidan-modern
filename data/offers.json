@@ -45624,6 +45624,90 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-27",
+    "slug": "rower-routine",
+    "name": "Rower Routine",
+    "need": "I bought a rowing machine for home, but I don't know what workouts to do or whether my form is right, so it just collects dust.",
+    "headline": "Rowing machine collecting dust? Follow short beginner rowing sessions that build week by week, check your stroke with a simple form checklist, and log every row.",
+    "buyer": "Adults (18+) who own a home rowing machine and have no plan or coaching.",
+    "bullets": [
+      "Short beginner sessions that build week by week, from 10 minutes up.",
+      "A simple stroke checklist (legs, then body, then arms, and back again) to check your form on each session.",
+      "A log of time, distance and how it felt, so you can see the machine getting used."
+    ],
+    "price": "$4.99/month",
+    "priceUsd": 5,
+    "priceNote": "Or $30 a year. For adults 18+.",
+    "reasonPrompt": "Which rowing machine do you have, and how often does it get used now?",
+    "faq": [
+      {
+        "q": "Is this medical or physiotherapy advice?",
+        "a": "No. Rower Routine is a general workout plan and log, not medical advice. If you have back, joint or heart problems, or haven't exercised in a while, check with your doctor before starting, and stop if anything hurts."
+      },
+      {
+        "q": "Is it linked to a rowing machine brand?",
+        "a": "No. Rower Routine is independent, works with any rowing machine, and isn't affiliated with any machine maker or fitness app."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-27",
+      "summary": "Rowing machine owners describe the machine collecting dust, wanting guidance and structure, wanting something to get them started, and wanting to get their form right.",
+      "wtp": "Start Rowing, a rowing workouts app, has 681 App Store ratings and sells Premium at $9.99 to $14.99 a month, $79.99 a year or $179.99 lifetime; Hydrow has 3.5K ratings.",
+      "signals": [
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1504306767/sortby=mosthelpful/json",
+          "who": "Librarylady2017 (App Store review of Start Rowing)",
+          "date": "2020-12-20",
+          "quote": "My rowing machine has just been collecting dust",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=2/id=1504306767/sortby=mosthelpful/json",
+          "who": "#%<€ my name (App Store review of Start Rowing)",
+          "date": "2021-02-07",
+          "quote": "looking for some kind of guidance/structure",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1504306767/sortby=mosthelpful/json",
+          "who": "BDL Me (App Store review of Start Rowing)",
+          "date": "2024-05-31",
+          "quote": "Wanted something to inspire me to start rowing",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1504306767/sortby=mosthelpful/json",
+          "who": "Megrus (App Store review of Start Rowing)",
+          "date": "2023-05-29",
+          "quote": "found myself out of gas and unmotivated with other programs",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1436664554/sortby=mosthelpful/json",
+          "who": "dr dherri (App Store review of Row House)",
+          "date": "2024-02-01",
+          "quote": "Hope to one day get that correct form down",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1504306767",
+          "who": "Start Rowing (App Store)",
+          "date": "2026-10-27",
+          "quote": "681 Ratings; Premium Monthly $9.99, $14.99; Premium Yearly $79.99; Lifetime Access $179.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Start Rowing, Hydrow, Row House, asensei, Concept2 ErgData (free).",
+      "risks": "All evidence is App Store reviews. Free tracking tools exist. Near live know-should-exercise-never, home-mat and run-again, but about the rowing machine you already own. No health or back-pain claims."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

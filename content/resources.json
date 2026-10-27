@@ -21219,5 +21219,89 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "rowing-machine-workouts-for-beginners",
+  "offer": "rower-routine",
+  "title": "Rowing machine workouts for beginners: a simple 4-week start",
+  "description": "A gentle four-week plan to start using a home rowing machine, with short sessions that build up week by week.",
+  "intro": "If your rowing machine has been gathering dust, start small. Short, easy sessions done regularly beat long ones you dread. This is general information, not medical advice: check with your doctor first if you have health conditions or haven't exercised for a while, and stop if anything hurts.",
+  "sections": [
+   {
+    "h": "Before you start",
+    "list": [
+     "Set the damper or resistance low to medium; higher isn't better for beginners.",
+     "Warm up with two or three minutes of very easy rowing."
+    ]
+   },
+   {
+    "h": "Week 1",
+    "list": [
+     "Three sessions of 10 minutes at an easy pace you could hold a conversation at.",
+     "Focus on smooth strokes rather than speed."
+    ]
+   },
+   {
+    "h": "Week 2",
+    "list": [
+     "Three sessions of 12 to 15 minutes.",
+     "In each, add two or three one-minute pieces slightly harder, with easy rowing in between."
+    ]
+   },
+   {
+    "h": "Week 3",
+    "list": [
+     "Three or four sessions of 15 minutes.",
+     "Try five one-minute harder pieces with one minute easy between."
+    ]
+   },
+   {
+    "h": "Week 4",
+    "list": [
+     "Three or four sessions of 20 minutes, mostly easy.",
+     "Note your distance for 20 minutes, so you can compare later."
+    ]
+   },
+   {
+    "h": "Keep it going",
+    "p": [
+     "Put the rower somewhere you'll see it, row at the same times each week, and write down each session."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "rowing-machine-form-common-beginner-mistakes",
+  "offer": "rower-routine",
+  "title": "Rowing machine form: common beginner mistakes and how to fix them",
+  "description": "The basic rowing stroke in plain steps, and the common form mistakes beginners make on a home rowing machine.",
+  "intro": "Good rowing form makes each stroke more effective and more comfortable. The basic order is simple: legs, body, arms on the way back, then arms, body, legs on the way forward. This is general information, not medical advice.",
+  "sections": [
+   {
+    "h": "The stroke in order",
+    "list": [
+     "Catch: shins near vertical, arms straight, sitting tall and leaning slightly forward.",
+     "Drive: push with your legs first, then lean back slightly, then pull the handle to your lower ribs.",
+     "Recovery: arms away first, then lean forward from the hips, then bend your knees to slide forward."
+    ]
+   },
+   {
+    "h": "Common mistakes",
+    "list": [
+     "Pulling with your arms before your legs have pushed.",
+     "Bending your knees too early on the way forward, so the handle has to go over them.",
+     "Hunching your back instead of sitting tall.",
+     "Rushing the slide forward; the recovery should be slower than the drive."
+    ]
+   },
+   {
+    "h": "Check yourself",
+    "list": [
+     "Film yourself from the side for a few strokes and compare with the order above.",
+     "Use a mirror if you have one.",
+     "Slow down until the order feels natural."
+    ]
+   }
+  ]
  }
 ]
