@@ -45890,6 +45890,181 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-27",
+    "slug": "nap-reset",
+    "name": "Nap Reset",
+    "need": "I can never take a short daytime nap: I lie there the whole time without falling asleep, or I sleep too long and wake up groggy.",
+    "headline": "Can never take a proper power nap? Set a short nap window that fits your day, wind down the same way each time, wake gently, and log how you feel after.",
+    "buyer": "Adults (18+) who want a short daytime nap to recharge but have never been able to nap well.",
+    "bullets": [
+      "A short nap window (10 to 30 minutes) that fits your day, with a gentle wake-up.",
+      "The same simple wind-down each time, so your body learns the routine.",
+      "A one-tap log of whether you dozed and how you felt after, to find your best nap length and time."
+    ],
+    "price": "$4/month",
+    "priceUsd": 4,
+    "priceNote": "Or $24 a year. For adults 18+.",
+    "reasonPrompt": "What usually happens when you try to nap?",
+    "faq": [
+      {
+        "q": "Is this a treatment for insomnia or tiredness?",
+        "a": "No. Nap Reset is a routine and log for healthy adults, not a medical tool, and makes no health claims. If you're often very tired during the day, snore heavily or struggle to sleep at night, speak to a doctor. Don't nap before driving if you feel drowsy."
+      },
+      {
+        "q": "Is it linked to a sleep app or device?",
+        "a": "No. Nap Reset is independent and not affiliated with any sleep app, device or mattress brand."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-27",
+      "summary": "People describe never being able to power nap, never being a good napper, waking up cranky after snoozing, and taking too long to fall asleep to nap at all.",
+      "wtp": "Pzizz, a sleep and nap app, has 9.7K App Store ratings and sells Premium at $4.99 a month and Pro at $7.99 a month or $49.99 to $69.99 a year.",
+      "signals": [
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=7/id=915664862/sortby=mosthelpful/json",
+          "who": "nicolebeau (App Store review of Pzizz)",
+          "date": "2015-06-15",
+          "quote": "I can never power nap",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=7/id=915664862/sortby=mosthelpful/json",
+          "who": "Lolapee (App Store review of Pzizz)",
+          "date": "2015-12-23",
+          "quote": "never been a good napper, usually hitting snooze forever and waking up cranky",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=2/id=915664862/sortby=mosthelpful/json",
+          "who": "Aunt Jammy (App Store review of Pzizz)",
+          "date": "2019-09-08",
+          "quote": "I have never been a good napper",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=915664862/sortby=mosthelpful/json",
+          "who": "sadako0o (App Store review of Pzizz)",
+          "date": "2019-09-24",
+          "quote": "I used to be completely unable to take naps",
+          "seen": "opened"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=4529255",
+          "who": "benigeri (Hacker News)",
+          "date": "2012-09-16",
+          "quote": "I never managed to nap because it takes me way to long to fall asleep",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id915664862",
+          "who": "Pzizz (App Store)",
+          "date": "2026-10-27",
+          "quote": "9.7K Ratings; 1 Month of Pzizz Premium $4.99; 1 Month of Pzizz Pro $7.99; 1 Year of Pzizz Pro $49.99 to $69.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Pzizz, nap timer apps, white-noise apps, phone alarms.",
+      "risks": "Most evidence is one app's reviews. Free timers exist. Near live night-sleep offers (want-sleep-lie-awake, shift-work, sleep-past-five), so it stays strictly about daytime naps. No medical claims."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-27",
+    "slug": "classical-start",
+    "name": "Classical Start",
+    "need": "I've wanted to get into classical music for years, but there are so many composers, works and recordings that I feel lost and don't know where to start.",
+    "headline": "Want to get into classical music but feel lost? Listen to one piece a day on the streaming service you already use, with a short note on what to listen for.",
+    "buyer": "Adults who mostly listen to pop, rock or film music and want a friendly, guided way into classical listening.",
+    "bullets": [
+      "One piece a day, starting with short, well-loved works, with links to the streaming service you already use.",
+      "A short note on what to listen for and why it matters, in plain words.",
+      "A listening log and thumbs up or down, so the next pieces follow what you liked."
+    ],
+    "price": "$5/month",
+    "priceUsd": 5,
+    "priceNote": "Or $30 a year.",
+    "reasonPrompt": "What kind of music do you usually listen to?",
+    "faq": [
+      {
+        "q": "Does it stream music?",
+        "a": "No. Classical Start guides you and links to recordings on streaming services you already use; it doesn't host audio."
+      },
+      {
+        "q": "Is it linked to a streaming service or label?",
+        "a": "No. Classical Start is independent, not affiliated with any streaming service, record label or orchestra."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-27",
+      "summary": "Listeners describe trying to get into classical music for a long time, feeling lost when they dive in, finding it hard to navigate as a beginner, and being intimidated by how huge it is.",
+      "wtp": "IDAGIO, a classical music streaming app, has 16K App Store ratings and sells plans from $9.99 to $29.99 a month; Apple Music Classical has 23K ratings.",
+      "signals": [
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=3/id=1598433714/sortby=mosthelpful/json",
+          "who": "Theefam (App Store review of Apple Music Classical)",
+          "date": "2023-03-28",
+          "quote": "trying to get into classical music for a long time",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=4/id=1598433714/sortby=mosthelpful/json",
+          "who": "jamescboyd (App Store review of Apple Music Classical)",
+          "date": "2023-05-27",
+          "quote": "I always feel lost when I try to dive in",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=2/id=1598433714/sortby=mosthelpful/json",
+          "who": "c$$$&&& (App Store review of Apple Music Classical)",
+          "date": "2023-03-29",
+          "quote": "The world of classical music is so hard to navigate, especially for beginners",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1014917700/sortby=mosthelpful/json",
+          "who": "Ytsejam58 (App Store review of IDAGIO)",
+          "date": "2018-11-01",
+          "quote": "intimidated by the hugeness of everything",
+          "seen": "opened"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=26769857",
+          "who": "theandrewbailey (Hacker News)",
+          "date": "2021-04-11",
+          "quote": "For me, I want to get into classical music",
+          "seen": "opened"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=40148491",
+          "who": "tombert (Hacker News)",
+          "date": "2024-04-24",
+          "quote": "never really been able to get into classical music outside of movie soundtracks",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1014917700",
+          "who": "IDAGIO (App Store)",
+          "date": "2026-10-27",
+          "quote": "16K Ratings; Basic Audio $9.99; Premium Audio $12.99; Premium Audio + Video $29.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Apple Music Classical, IDAGIO, Spotify, YouTube, radio.",
+      "risks": "Strong free competition from streaming services. The money is for streaming, not guidance. A taste and hobby need, which may convert less well than a pain point. Near live gap-filler (general knowledge) and ear-first (musicianship), but about listening."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

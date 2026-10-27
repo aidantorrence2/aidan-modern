@@ -21451,5 +21451,85 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "how-to-take-a-power-nap-when-you-can-never-fall-asleep",
+  "offer": "nap-reset",
+  "title": "How to take a power nap when you can never fall asleep",
+  "description": "Practical tips for adults who struggle to nap during the day, and how to wake up without feeling groggy.",
+  "intro": "Some people nap easily; others lie there and never drift off. Napping is partly a habit, and a consistent routine often helps. This is general information, not medical advice: if you're often very sleepy in the day, speak to a doctor.",
+  "sections": [
+   {
+    "h": "Keep it short",
+    "list": [
+     "Many people aim for 10 to 20 minutes, which can feel refreshing without deep sleep.",
+     "Set an alarm so you can relax without worrying about oversleeping.",
+     "Even resting with your eyes closed can feel restful if you don't fall asleep."
+    ]
+   },
+   {
+    "h": "Pick the right time",
+    "list": [
+     "Early afternoon is a common time for an energy dip.",
+     "Napping late in the day can make it harder to sleep at night."
+    ]
+   },
+   {
+    "h": "Make it easier to drift off",
+    "list": [
+     "Use the same spot, the same position and the same wind-down each time.",
+     "Darken the room or use an eye mask, and try earplugs or steady background sound.",
+     "Breathe slowly and let your thoughts drift rather than trying hard to sleep."
+    ]
+   },
+   {
+    "h": "Wake up well",
+    "list": [
+     "Get up when the alarm goes, rather than snoozing.",
+     "Get some daylight and a drink of water.",
+     "Give yourself a few minutes before anything demanding, and don't drive if you still feel drowsy."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "how-to-get-into-classical-music-where-to-start",
+  "offer": "classical-start",
+  "title": "How to get into classical music: where to start as a complete beginner",
+  "description": "A friendly, step-by-step way into classical music for people who don't know where to start.",
+  "intro": "Classical music can feel huge and intimidating, but you don't need any background to enjoy it. Start small, follow what you like and ignore anyone who says you're doing it wrong.",
+  "sections": [
+   {
+    "h": "Start with short pieces",
+    "list": [
+     "Begin with short, well-known pieces or single movements rather than whole symphonies.",
+     "Film and game soundtracks are a good bridge: many use the same orchestra and ideas."
+    ]
+   },
+   {
+    "h": "Follow what you like",
+    "list": [
+     "If you like a piece, try more by the same composer.",
+     "Then try other composers from the same period.",
+     "Note what you liked: a big orchestra, a solo piano, a choir, a violin."
+    ]
+   },
+   {
+    "h": "Listen actively",
+    "list": [
+     "Listen once without doing anything else.",
+     "Notice the main tune and listen for when it comes back.",
+     "Read a short note about the piece afterwards and listen again."
+    ]
+   },
+   {
+    "h": "Make it a habit",
+    "list": [
+     "Try one new piece a day or a few a week.",
+     "Make a playlist of pieces you liked, and revisit it.",
+     "Try a live concert: many venues have cheap seats or free lunchtime concerts."
+    ]
+   }
+  ]
  }
 ]
