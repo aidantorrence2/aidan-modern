@@ -48599,6 +48599,202 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-27",
+    "slug": "gaeilge-aloud",
+    "name": "Gaeilge Aloud",
+    "need": "I'm learning Irish and can't work out how to say words from their spelling, because half the letters seem silent and the apps don't explain the sound rules.",
+    "headline": "Can't tell how to say Irish words from their spelling? Learn the sound rules (broad and slender vowels, bh, mh, eclipsis) a few at a time, in the dialect you choose.",
+    "buyer": "Adults learning Irish: diaspora learners reconnecting with their heritage, parents of children in Irish-medium schools, and adults reviving school Irish.",
+    "bullets": [
+      "The spelling-to-sound rules in small steps: broad and slender vowels, lenition (bh, mh, ch, dh, fh), eclipsis and common silent letters.",
+      "Choose your dialect (Connacht, Munster or Ulster) and practise each rule with real words.",
+      "Read-aloud practice: say a new word from its spelling, then check it, and review the rules you miss."
+    ],
+    "price": "$6.99/month",
+    "priceUsd": 7,
+    "priceNote": "Or $49 a year. Cancel any time.",
+    "reasonPrompt": "Why are you learning Irish, and which dialect do you want to speak?",
+    "faq": [
+      {
+        "q": "Which dialect does it use?",
+        "a": "You choose Connacht, Munster or Ulster. Pronunciation differs between dialects, so rules and examples follow the one you pick."
+      },
+      {
+        "q": "Is it linked to a language app, school or Foras na Gaeilge?",
+        "a": "No. Gaeilge Aloud is independent and not affiliated with any language app, school, government body or exam board."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-27",
+      "summary": "Irish learners describe a vast difference between how words are said and spelled, wondering why half the letters are silent, finding words hard to pronounce even slowly, calling pronunciation the biggest challenge, and wanting to speak Irish, not just spell it.",
+      "wtp": "HeyRua, an Irish learning app, has 780 App Store ratings and sells plans at $12.99 a month, $89.99 a year or $119.99 for families; Irish Gaelic by Nemo has 3.2K ratings and sells its Foundation pack for $11.99.",
+      "signals": [
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=630242408/sortby=mosthelpful/json",
+          "who": "pdxmuse (App Store review of Irish Gaelic by Nemo)",
+          "date": "2017-09-26",
+          "quote": "vast difference between the way you say a word and the way it is spelled",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=630242408/sortby=mosthelpful/json",
+          "who": "PreciousDisaster (App Store review of Irish Gaelic by Nemo)",
+          "date": "2018-08-01",
+          "quote": "so many letter in Gaeilge but half of them are silent",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=630242408/sortby=mosthelpful/json",
+          "who": "charvey33 (App Store review of Irish Gaelic by Nemo)",
+          "date": "2015-11-24",
+          "quote": "hard to pronounce the words even in very slow pace",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=3/id=630242408/sortby=mosthelpful/json",
+          "who": "Don Twain (App Store review of Irish Gaelic by Nemo)",
+          "date": "2014-11-08",
+          "quote": "Pronunciation is the biggest challenge in learning Irish",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=6796777994/sortby=mosthelpful/json",
+          "who": "iamthesoviet (App Store review of HeyRua)",
+          "date": "2026-09-15",
+          "quote": "speak Irish to others not just spell it correctly",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=6796777994/sortby=mosthelpful/json",
+          "who": "dana scully's pantsuit (App Store review of HeyRua)",
+          "date": "2026-09-14",
+          "quote": "Duolingo was not cutting it for the level of pronunciation",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id6796777994",
+          "who": "HeyRua - Irish Learning App (App Store)",
+          "date": "2026-10-27",
+          "quote": "780 Ratings; HeyRua Super Monthly $12.99; Yearly $89.99; Family $119.99",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id630242408",
+          "who": "Irish Gaelic by Nemo (App Store)",
+          "date": "2026-10-27",
+          "quote": "3.2K Ratings; Foundation pack $11.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "HeyRua, Duolingo, Nemo, Teanglann's pronunciation database, classes.",
+      "risks": "HeyRua already sells pronunciation help with dialect choice. Audio must be dialect-specific and checked by native speakers. Niche market. All evidence is App Store reviews. Near live heard-first (English accent) and the one-language offers, but about Irish spelling-to-sound."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-27",
+    "slug": "tagalog-sentences",
+    "name": "Tagalog Sentences",
+    "need": "I know a lot of Tagalog words from apps, but I have no idea how to put them together into a proper sentence.",
+    "headline": "Know Tagalog words but can't make a sentence? Learn ang, ng and sa, verb focus and aspect one small step at a time, and build real sentences you'd say to family.",
+    "buyer": "Filipino-American and diaspora heritage learners, and people with Filipino partners or in-laws, who have outgrown vocabulary apps.",
+    "bullets": [
+      "Sentence building in small steps: word order, ang, ng and sa, and si, ni and kay for names.",
+      "Verb focus and aspect (-um-, mag-, -in, -an; completed, ongoing, not yet started), with one pattern at a time.",
+      "Build sentences about your own life, check them, and review the patterns you get wrong."
+    ],
+    "price": "$6.99/month",
+    "priceUsd": 7,
+    "priceNote": "Or $49 a year. Cancel any time.",
+    "reasonPrompt": "Who do you want to speak Tagalog with, and where do you get stuck?",
+    "faq": [
+      {
+        "q": "Does it teach Taglish or formal Tagalog?",
+        "a": "It teaches the everyday Tagalog grammar you need to build sentences, and notes where spoken Tagalog and Taglish usually differ from textbook forms."
+      },
+      {
+        "q": "Is it linked to a language app or school?",
+        "a": "No. Tagalog Sentences is independent and not affiliated with any language app, school or publisher."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-27",
+      "summary": "Tagalog learners describe knowing words but having no idea how to form a proper sentence, never learning the grammar rules, and wishing apps taught grammar and sentence structure.",
+      "wtp": "Tagalog Learning: Vocabulary (Drops) has 4.5K App Store ratings and sells Premium from $7.99 to $89.99; Tagalog by Nemo has 4.7K ratings and sells its Foundation pack for $11.99.",
+      "signals": [
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1272734261/sortby=mosthelpful/json",
+          "who": "isla_renee (App Store review of Drops Tagalog)",
+          "date": "2018-03-12",
+          "quote": "have no idea how to put them together to form a proper sentence",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1272734261/sortby=mosthelpful/json",
+          "who": "Tlbiro (App Store review of Drops Tagalog)",
+          "date": "2021-09-01",
+          "quote": "knowing how to piece a sentence together",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1272734261/sortby=mosthelpful/json",
+          "who": "PixiePassion (App Store review of Drops Tagalog)",
+          "date": "2020-05-28",
+          "quote": "I never learned Tagalog grammar rules",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=2/id=1272734261/sortby=mosthelpful/json",
+          "who": "Isabella (App Store review of Drops Tagalog)",
+          "date": "2022-03-03",
+          "quote": "teach me at all how to form sentences or speak it properly",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=3/id=1272734261/sortby=mosthelpful/json",
+          "who": "Shelbsters (App Store review of Drops Tagalog)",
+          "date": "2018-08-05",
+          "quote": "wish that there were grammar and sentence structure on the app",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=635605913/sortby=mosthelpful/json",
+          "who": "amdady (App Store review of Tagalog by Nemo)",
+          "date": "2020-02-14",
+          "quote": "not so much with learning grammar and sentence structure",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1272734261",
+          "who": "Tagalog Learning: Vocabulary (App Store)",
+          "date": "2026-10-27",
+          "quote": "4.5K Ratings; Premium from $7.99 to $89.99",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id635605913",
+          "who": "Tagalog by Nemo (App Store)",
+          "date": "2026-10-27",
+          "quote": "4.7K Ratings; Foundation pack $11.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Drops, Nemo, Ling, Mango, tutors and textbooks.",
+      "risks": "All evidence is App Store reviews. Taglish and formal registers need native review. Near live family-table (partner's family language) and home-tongue (keeping a child's language), but about Tagalog grammar."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

@@ -23598,5 +23598,148 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "how-to-pronounce-irish-words-from-their-spelling",
+  "offer": "gaeilge-aloud",
+  "title": "How to pronounce Irish words from their spelling: broad and slender explained",
+  "description": "The basic rules that link Irish spelling to sound, starting with broad and slender vowels, so you can make a good guess at new words.",
+  "intro": "Irish spelling looks strange to English speakers, but it follows rules. Once you know a few of them, you can make a good guess at most new words. Pronunciation differs between Connacht, Munster and Ulster Irish, so check examples in the dialect you're learning.",
+  "sections": [
+   {
+    "h": "Broad and slender",
+    "list": [
+     "Broad vowels are a, o and u; slender vowels are e and i.",
+     "Every consonant is either broad or slender, depending on the vowels next to it.",
+     "Broad and slender versions of the same consonant sound different, so many vowels in a word are really telling you how to say the consonants.",
+     "The spelling rule 'caol le caol agus leathan le leathan' (slender with slender, broad with broad) keeps vowels on both sides of a consonant matching."
+    ]
+   },
+   {
+    "h": "Long vowels",
+    "list": [
+     "A fada (accent) such as á, é, í, ó or ú marks a long vowel.",
+     "It can change the meaning of a word, so it isn't optional."
+    ]
+   },
+   {
+    "h": "Practise",
+    "list": [
+     "Pick a few new words a day and guess how they sound from the rules, then check with a native speaker recording.",
+     "Use a pronunciation dictionary such as the one on teanglann.ie, which has recordings in all three dialects.",
+     "Read short texts aloud, and listen to Irish-language radio or podcasts."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "why-are-there-so-many-silent-letters-in-irish",
+  "offer": "gaeilge-aloud",
+  "title": "Why are there so many silent letters in Irish? bh, mh, dh and fh made simple",
+  "description": "How lenition (the added h) and eclipsis (the extra letter at the start of a word) change Irish sounds, and why some letters seem silent.",
+  "intro": "Many 'silent' letters in Irish come from two regular changes at the start of words: lenition and eclipsis. They follow grammar rules, so the same patterns come up again and again. Exact sounds vary by dialect.",
+  "sections": [
+   {
+    "h": "Lenition: the added h",
+    "list": [
+     "An h after a consonant softens it: for example, mo bhád (my boat).",
+     "bh and mh usually sound like v or w, depending on the vowels around them and the dialect.",
+     "ch sounds like the ch in Scottish 'loch'.",
+     "sh and th usually sound like h.",
+     "fh is usually silent."
+    ]
+   },
+   {
+    "h": "Eclipsis: the extra letter in front",
+    "list": [
+     "An extra consonant is written in front of a word and replaces its first sound: for example, ár mbád (our boat) is said with an m.",
+     "Common pairs: mb (say m), gc (say g), nd (say n), bp (say b), dt (say d), ng (say ng), bhf (say v or w)."
+    ]
+   },
+   {
+    "h": "Why it helps to know",
+    "p": [
+     "Once you spot lenition and eclipsis, you can find the base word in a dictionary and work out how the changed form sounds. Learn a few patterns at a time, and check them against recordings in your dialect."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "how-to-build-a-basic-tagalog-sentence",
+  "offer": "tagalog-sentences",
+  "title": "How to build a basic Tagalog sentence: ang, ng and sa explained",
+  "description": "A plain guide to Tagalog word order and the markers ang, ng and sa, with simple example sentences.",
+  "intro": "Tagalog sentences often start with the verb, and small marker words show who or what each noun is. Learning ang, ng and sa is the first big step from knowing words to making sentences.",
+  "sections": [
+   {
+    "h": "Word order",
+    "list": [
+     "Tagalog sentences usually start with the verb: 'Kumain ang bata.' (The child ate.)",
+     "You'll also hear sentences with 'ay', which puts the topic first: 'Ang bata ay kumain.' This is more common in writing and formal speech."
+    ]
+   },
+   {
+    "h": "The three markers",
+    "list": [
+     "ang marks the focus (topic) of the sentence: 'Kumain ang bata ng mangga.' (The child ate a mango.)",
+     "ng marks other nouns, such as the thing acted on or the doer when it isn't the focus, and also shows possession: 'ang bahay ng lola' (grandma's house).",
+     "sa marks places, directions and the person something goes to: 'Pumunta ako sa palengke.' (I went to the market.)"
+    ]
+   },
+   {
+    "h": "For people's names",
+    "list": [
+     "si replaces ang: 'Kumain si Maria.'",
+     "ni replaces ng: 'ang bahay ni Maria' (Maria's house).",
+     "kay replaces sa: 'Ibinigay ko kay Maria.' (I gave it to Maria.)"
+    ]
+   },
+   {
+    "h": "Practise",
+    "p": [
+     "Write three short sentences about your day using a verb first, then ang and one ng or sa phrase. Ask a Tagalog speaker to check them."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "tagalog-verb-focus-for-beginners",
+  "offer": "tagalog-sentences",
+  "title": "Tagalog verb focus for beginners: when to use -um-, mag- and -in",
+  "description": "A simple introduction to Tagalog verb focus and aspect, with examples of actor focus and object focus.",
+  "intro": "Tagalog verbs change their form to show which noun in the sentence is the focus (the one marked with ang). This is called focus, and it's the part of Tagalog grammar most learners find hardest. Start with two patterns.",
+  "sections": [
+   {
+    "h": "Actor focus: -um- and mag-",
+    "list": [
+     "Use these when the doer is the focus: 'Kumain ang bata ng mangga.' (The child ate a mango.)",
+     "-um- goes inside the root (kain → kumain); mag- goes in front (luto → nagluto, cooked).",
+     "Which one a verb takes has to be learned with each verb."
+    ]
+   },
+   {
+    "h": "Object focus: -in",
+    "list": [
+     "Use -in when the thing acted on is the focus: 'Kinain ng bata ang mangga.' (The child ate the mango.)",
+     "Notice that ang moves to the mango, and the child now takes ng.",
+     "Object focus is very common in everyday Tagalog, often when the object is specific."
+    ]
+   },
+   {
+    "h": "Aspect, not tense",
+    "list": [
+     "Tagalog verbs show whether an action is completed, ongoing or not yet started: kumain (ate), kumakain (is eating), kakain (will eat).",
+     "Learn the three forms of each new verb together."
+    ]
+   },
+   {
+    "h": "Practise",
+    "list": [
+     "Take one verb and write it in all three aspects.",
+     "Write the same sentence in actor focus and object focus.",
+     "Ask a native speaker which sounds more natural in each situation."
+    ]
+   }
+  ]
  }
 ]
