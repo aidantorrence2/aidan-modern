@@ -47836,6 +47836,76 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-27",
+    "slug": "pattern-keep",
+    "name": "Pattern Keep",
+    "need": "I learn moves in my salsa or bachata class, but I can't remember them on the social dance floor and my mind goes blank.",
+    "headline": "Learn moves in class but go blank on the social floor? Save each pattern in a minute after class, review it on a spaced schedule, and keep a short 'social set' you know by heart.",
+    "buyer": "Adult social dancers (salsa, bachata, swing, ballroom) who forget class patterns or freeze on the social floor.",
+    "bullets": [
+      "Save each pattern in a minute after class: name, counts, lead or follow notes and your own short clip.",
+      "Spaced recall drills and shadowing to music that speeds up through the week.",
+      "A small 'social set' of moves you own, with a one-minute run-through before you go out dancing."
+    ],
+    "price": "$4.99/month",
+    "priceUsd": 5,
+    "priceNote": "Or $29 a year. For adults 18+.",
+    "reasonPrompt": "Which dance do you do, and how many patterns do you forget after class?",
+    "faq": [
+      {
+        "q": "Does it teach dance moves?",
+        "a": "No. Pattern Keep helps you remember and practise the patterns your own teacher shows you; it doesn't replace classes."
+      },
+      {
+        "q": "Is it linked to a dance school or app?",
+        "a": "No. Pattern Keep is independent and not affiliated with any dance school, teacher or app. Only film others with their permission."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-27",
+      "summary": "Social dancers describe not being able to think of the next move or any move, classes that don't build enough muscle memory, and struggling to remember anything at their first socials.",
+      "wtp": "STEEZY, a dance learning app, has 13K App Store ratings and sells plans from $9.99 to $19.99 a month or $59.99 to $99.99 a year.",
+      "signals": [
+        {
+          "url": "https://www.salsaforums.com/threads/tips-for-newbie-how-to-get-past-freedance-move-freeze.19511/",
+          "who": "scooby (Salsa Forums)",
+          "date": "2012-05-13",
+          "quote": "cannot think of the next move or any move",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.salsaforums.com/threads/how-do-i-pick-up-new-partnerwork-moves-outside-of-class-as-a-leader-effectively.43329/",
+          "who": "salsa-dancer1 (Salsa Forums)",
+          "date": "2026-03-21",
+          "quote": "build enough muscle memory",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.salsaforums.com/threads/how-do-i-pick-up-new-partnerwork-moves-outside-of-class-as-a-leader-effectively.43329/",
+          "who": "NPEADS (Salsa Forums)",
+          "date": "2026-04-01",
+          "quote": "At first few socials I was struggling to remember anything",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1296001664",
+          "who": "STEEZY (App Store)",
+          "date": "2026-10-27",
+          "quote": "13K Ratings; Basic Monthly $9.99; Standard Monthly $19.99; Standard Yearly $99.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "STEEZY (solo choreography), partner-dance video apps, notes and phone videos, private lessons.",
+      "risks": "Partner-dance apps are small and STEEZY is solo choreography. Evidence is one forum. Forum replies favour free fixes. Near live floor-ready (can't dance at all) and on-the-beat (timing), but about remembering partner-dance patterns."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
