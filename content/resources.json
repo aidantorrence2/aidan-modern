@@ -21924,5 +21924,92 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "how-to-memorize-the-guitar-fretboard",
+  "offer": "fretboard-fluent",
+  "title": "How to memorize the guitar fretboard (without flash cards)",
+  "description": "A step-by-step way to learn the notes on the guitar neck, one string and one zone at a time.",
+  "intro": "Many guitarists play for years without knowing the notes on the neck. Trying to memorise every fret at once rarely works. Breaking it into small pieces and using patterns makes it stick.",
+  "sections": [
+   {
+    "h": "Start with the natural notes",
+    "list": [
+     "Learn the natural notes in order: A B C D E F G.",
+     "Remember there's no sharp between B and C, or between E and F."
+    ]
+   },
+   {
+    "h": "One string at a time",
+    "list": [
+     "Start with the low E string and learn every natural note up to the 12th fret.",
+     "Then do the A string. These two strings cover the roots of most chord shapes."
+    ]
+   },
+   {
+    "h": "Use landmarks",
+    "list": [
+     "Learn the notes at frets 3, 5, 7 and 12, where many guitars have dot markers.",
+     "At the 12th fret, the notes repeat the open strings."
+    ]
+   },
+   {
+    "h": "Use octave shapes",
+    "list": [
+     "Each note on the low E string repeats two strings up and two frets higher.",
+     "Octave shapes let you find the same note on other strings quickly."
+    ]
+   },
+   {
+    "h": "Practise little and often",
+    "p": [
+     "Pick one note a day and find it on every string. A few minutes daily works better than long sessions."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "how-to-stop-mumbling-when-you-talk",
+  "offer": "speak-clearly",
+  "title": "How to stop mumbling when you talk",
+  "description": "Practical ways to speak more clearly and loudly when people often ask you to repeat yourself.",
+  "intro": "If people often say 'what?', you may be mumbling or speaking too quietly. Speaking more clearly is a skill you can practise. This is general information, not speech therapy; if you have a voice or hearing problem, see a doctor.",
+  "sections": [
+   {
+    "h": "Check how you sound",
+    "list": [
+     "Record yourself talking for a minute, as you normally would.",
+     "Listen back: are word endings clear? Is the volume steady, or does it drop at the end of sentences?"
+    ]
+   },
+   {
+    "h": "Open your mouth more",
+    "list": [
+     "Many people who mumble barely move their jaw.",
+     "Practise reading aloud with slightly exaggerated mouth movements, then relax a little."
+    ]
+   },
+   {
+    "h": "Finish your words and sentences",
+    "list": [
+     "Pronounce the last sound of each word.",
+     "Keep your volume up to the end of the sentence, where it often fades."
+    ]
+   },
+   {
+    "h": "Speak up without shouting",
+    "list": [
+     "Breathe in before you speak and use your breath, not your throat, to get louder.",
+     "Aim your voice at the person furthest away.",
+     "It will feel louder to you than it sounds to others."
+    ]
+   },
+   {
+    "h": "Practise in real situations",
+    "p": [
+     "Pick one situation a day, such as ordering coffee, and focus on speaking clearly. Notice whether people ask you to repeat yourself less."
+    ]
+   }
+  ]
  }
 ]

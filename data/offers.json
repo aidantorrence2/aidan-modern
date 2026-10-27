@@ -46583,6 +46583,188 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-27",
+    "slug": "fretboard-fluent",
+    "name": "Fretboard Fluent",
+    "need": "I've played guitar for years but I still don't know the notes on the fretboard, and memorising them never sticks.",
+    "headline": "Played guitar for years but still don't know the fretboard? Learn the notes one string and one zone at a time, in short daily drills, and see which notes you still miss.",
+    "buyer": "Adult guitarists who play from tabs and chord shapes and want to know the note names across the neck.",
+    "bullets": [
+      "Short daily drills that learn the notes one string and one fret zone at a time, not all at once.",
+      "Patterns that make it easier: octave shapes, landmark frets and the same note across strings.",
+      "A map of the notes you still miss, so each day's drill focuses on them."
+    ],
+    "price": "$4/month",
+    "priceUsd": 4,
+    "priceNote": "Or $24 a year, or $40 once.",
+    "reasonPrompt": "How far up the neck do you know the notes now?",
+    "faq": [
+      {
+        "q": "Does it work for bass or ukulele?",
+        "a": "It starts with standard-tuned guitar; other instruments may follow if people ask for them."
+      },
+      {
+        "q": "Is it linked to a guitar app or brand?",
+        "a": "No. Fretboard Fluent is independent, not affiliated with any music app, guitar maker or teacher."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-27",
+      "summary": "Guitarists describe never mastering the notes on the fretboard, finding it always difficult, having zero fretboard knowledge, trying and failing, and never doing it despite playing since childhood.",
+      "wtp": "Fretonomy, a fretboard learning app, has 2.5K App Store ratings and sells Premium at $2.99 or $23.99 and All Instruments at $99; Fret Pro Guitar Notes Trainer has 809 ratings at $5.99 a month or $64.99 lifetime.",
+      "signals": [
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1279576225/sortby=mosthelpful/json",
+          "who": "TheJohnny9 (App Store review of Fretonomy)",
+          "date": "2020-05-20",
+          "quote": "never mastered all the notes on a guitar fretboard",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1279576225/sortby=mosthelpful/json",
+          "who": "whyjoessl (App Store review of Fretonomy)",
+          "date": "2019-10-14",
+          "quote": "Learning the notes on the fingerboard has always been difficult for me",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1279576225/sortby=mosthelpful/json",
+          "who": "theGravyGatsby (App Store review of Fretonomy)",
+          "date": "2026-10-06",
+          "quote": "zero fretboard knowledge",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=2/id=1519679458/sortby=mostrecent/json",
+          "who": "Not a chess guy (App Store review of Fret Pro)",
+          "date": "2024-11-14",
+          "quote": "tried to learn the fretboard before, but failed",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=2/id=1519679458/sortby=mostrecent/json",
+          "who": "blomeitunes41 (App Store review of Fret Pro)",
+          "date": "2024-10-16",
+          "quote": "Been playing since age 7 and never did it",
+          "seen": "opened"
+        },
+        {
+          "url": "https://sopuli.xyz/comment/269208",
+          "who": "XTL (Lemmy, sopuli.xyz)",
+          "date": "2023-06-14",
+          "quote": "never really got very good at finding notes on the fretboard quickly",
+          "seen": "opened"
+        },
+        {
+          "url": "https://sopuli.xyz/comment/6382150",
+          "who": "reboot6675 (Lemmy, sopuli.xyz)",
+          "date": "2024-01-22",
+          "quote": "trying to memorize the notes on the fretboard",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1279576225",
+          "who": "Fretonomy (App Store)",
+          "date": "2026-10-27",
+          "quote": "2.5K Ratings; Premium $2.99, $23.99; All Instruments $99.00",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Fretonomy, Fret Pro, Justin Guitar, free fretboard charts.",
+      "risks": "Cheap rivals and a low price ceiling; one-time purchases expected. Near live stick-with-guitar, song-keep, ear-first and barre-ready, but about note names on the neck."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-27",
+    "slug": "speak-clearly",
+    "name": "Speak Clearly",
+    "need": "I mumble or talk too quietly, people keep saying 'what?', and speaking up feels to me like shouting.",
+    "headline": "People keep saying 'what?' because you mumble or talk quietly? Check your volume and clearness in a one-minute daily recording, practise speaking up, and log where it happens.",
+    "buyer": "Adults (18+) who are told they mumble or speak too quietly, in meetings, on calls, ordering or at home.",
+    "bullets": [
+      "A one-minute daily recording with a simple volume and clearness check against a level you set.",
+      "Short drills for projecting and finishing words, so speaking up stops feeling like shouting.",
+      "A one-tap log each time someone says 'what?', and a weekly view by situation."
+    ],
+    "price": "$8/month",
+    "priceUsd": 8,
+    "priceNote": "Or $48 a year. For adults 18+.",
+    "reasonPrompt": "Where do people most often ask you to repeat yourself?",
+    "faq": [
+      {
+        "q": "Is this speech therapy?",
+        "a": "No. Speak Clearly is a practice tool for everyday speaking, not therapy or treatment. If you have a voice or hearing problem, or speaking is painful, see a doctor or a qualified speech and language therapist."
+      },
+      {
+        "q": "Is it linked to a speech app or coach?",
+        "a": "No. Speak Clearly is independent and not affiliated with any speech app, coach or course."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-27",
+      "summary": "People describe being told they mumble, realising they mumble and talk low, and feeling like they're yelling when they speak up so friends can hear.",
+      "wtp": "Astound, a voice and speech coach app, has 1.3K App Store ratings and sells subscriptions at $12.99 a month, $59.99 for six months or $79.99 a year.",
+      "signals": [
+        {
+          "url": "https://news.ycombinator.com/item?id=9081093",
+          "who": "grimmdude (Hacker News)",
+          "date": "2015-02-20",
+          "quote": "I mumble, and I will now send this article to all the people who tell me not to",
+          "seen": "opened"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=9085300",
+          "who": "iamtew (Hacker News)",
+          "date": "2015-02-21",
+          "quote": "been told I mumble some times",
+          "seen": "opened"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=9082259",
+          "who": "mmanfrin (Hacker News)",
+          "date": "2015-02-20",
+          "quote": "when I speak up so friends can hear, it feels like I am yelling",
+          "seen": "opened"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=13563423",
+          "who": "TheOneTrueKyle (Hacker News)",
+          "date": "2017-02-03",
+          "quote": "I have come to realize I mumble and talk low",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1253443132",
+          "who": "carsen b (App Store review of Astound)",
+          "date": "2021-01-15",
+          "quote": "dealing with clarity/articulation issues",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1253443132",
+          "who": "Astound (App Store)",
+          "date": "2026-10-27",
+          "quote": "1.3K Ratings; One Month Subscription $12.99; Six Month $59.99; One Year $79.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Astound, Wellspoken, speech coaches, free voice tips.",
+      "risks": "Near live even-pace (talking too fast) and heard-first (accent), but about volume and clearness. HN evidence is from 2015-2017. Must stay non-clinical."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
