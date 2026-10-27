@@ -46149,6 +46149,97 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-27",
+    "slug": "which-card-now",
+    "name": "Card Picker",
+    "need": "I have several credit cards and never know which one to use for each purchase to get the most points or cashback, so I miss rewards and offers.",
+    "headline": "Got several rewards cards and never sure which to use? Enter your cards once and get a simple 'use this card here' list by category and store, plus reminders for offers you've added.",
+    "buyer": "Adults (18+) with several rewards credit cards who pay them off in full each month.",
+    "bullets": [
+      "Enter your cards and their reward rates once, by hand; no bank login needed.",
+      "A 'use this card here' list for groceries, fuel, dining, travel, online and your regular stores.",
+      "Reminders for bonus categories and card offers you've added yourself, before they expire."
+    ],
+    "price": "$4/month",
+    "priceUsd": 4,
+    "priceNote": "Or $24 a year. For adults 18+.",
+    "reasonPrompt": "How many rewards cards do you carry, and where do you lose track?",
+    "faq": [
+      {
+        "q": "Is this financial advice, or does it suggest new cards?",
+        "a": "No. Card Picker only organises cards you already have; it never recommends applying for a card and earns nothing from card companies. Rewards only make sense if you pay your balance in full; if you're struggling with card debt, speak to a free debt advice service."
+      },
+      {
+        "q": "Is it linked to a bank or card issuer?",
+        "a": "No. Card Picker is independent, not affiliated with any bank, card issuer or rewards app, and never asks for your bank login."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-27",
+      "summary": "Cardholders describe having way too many credit cards, missing out on savings from offers, the confusion of multiple cards and deals, and not knowing which card to use where.",
+      "wtp": "CardPointers, a credit card rewards helper, has 10K App Store ratings and sells CardPointers+ from $6.99 to $11.99 a month, $59.99 to $99.99 a year, or $139.99 lifetime; MaxRewards has 17K ratings.",
+      "signals": [
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1472875808/sortby=mostrecent/json",
+          "who": "Larry Hav. (App Store review of CardPointers)",
+          "date": "2026-09-29",
+          "quote": "If you have multiple credit cards like me and miss out on savings from offers",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1472875808/sortby=mostrecent/json",
+          "who": "gnarlyman01 (App Store review of CardPointers)",
+          "date": "2026-10-08",
+          "quote": "stay on top of all the confusion of multiple credit cards and deals",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1472875808/sortby=mostrecent/json",
+          "who": "theknottyrose (App Store review of CardPointers)",
+          "date": "2026-08-26",
+          "quote": "I have way too many credit cards",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1472875808/sortby=mostrecent/json",
+          "who": "siouxi31 (App Store review of CardPointers)",
+          "date": "2026-09-06",
+          "quote": "trying to understand how to maximize the benefits of each of my credit cards",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1435710443/sortby=mostrecent/json",
+          "who": "DCT (App Store review of MaxRewards)",
+          "date": "2026-06-26",
+          "quote": "very confusing when trying to identify which of our multiple credit cards to use",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/5093409",
+          "who": "OnTheRoad14 (MoneySavingExpert)",
+          "date": "2014-10-18",
+          "quote": "slightly confused on where and on what I should be using it",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1472875808",
+          "who": "CardPointers (App Store)",
+          "date": "2026-10-27",
+          "quote": "10K Ratings; CardPointers+ $6.99 to $11.99, $59.99 to $99.99; Lifetime $139.99, $239.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "CardPointers, MaxRewards, Kudos, card issuers' own apps, spreadsheets.",
+      "risks": "Strong incumbents with account linking. US-centric; card terms change often. Must not look like card-application or affiliate advice. Near live payoff-date (card debt), but for people who pay in full."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

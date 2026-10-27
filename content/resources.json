@@ -21601,5 +21601,81 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "which-credit-card-should-i-use-a-simple-card-by-category-list",
+  "offer": "which-card-now",
+  "title": "Which credit card should I use? How to make a simple card-by-category list",
+  "description": "How to work out which of your existing rewards cards to use for groceries, fuel, dining and more, and keep it simple.",
+  "intro": "If you carry several rewards cards, a simple written list of which card to use where saves a lot of guessing. This guide is general information, not financial advice, and only makes sense if you pay your cards off in full each month.",
+  "sections": [
+   {
+    "h": "Gather the facts",
+    "list": [
+     "For each card, note its reward rate for common categories: groceries, fuel, dining, travel, online and everything else.",
+     "Check whether rates are capped, rotate every few months, or need activating.",
+     "Note any annual fee and foreign transaction fee."
+    ]
+   },
+   {
+    "h": "Make the list",
+    "list": [
+     "For each category, write down the card with the best rate.",
+     "Add your regular stores separately; some shops code differently from what you'd expect.",
+     "Keep the list on your phone or a card in your wallet."
+    ]
+   },
+   {
+    "h": "Keep it up to date",
+    "list": [
+     "Set a reminder at the start of each quarter to check rotating categories.",
+     "Check your statements now and then to see how purchases were coded."
+    ]
+   },
+   {
+    "h": "Keep it in proportion",
+    "list": [
+     "Never spend more just to earn rewards.",
+     "If you carry a balance, interest usually costs far more than any rewards earn; paying it down comes first."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "how-to-stop-missing-credit-card-offers-and-bonus-categories",
+  "offer": "which-card-now",
+  "title": "How to stop missing credit card offers and bonus categories",
+  "description": "Simple habits for keeping track of card-linked offers, rotating bonus categories and expiry dates across several cards.",
+  "intro": "Card-linked offers and bonus categories are easy to miss when you have several cards. A few habits help. This guide is general information, not financial advice.",
+  "sections": [
+   {
+    "h": "Card-linked offers",
+    "list": [
+     "Check your card apps once a week and add the offers you'd actually use.",
+     "Note the expiry date and any minimum spend for each one.",
+     "Only use offers for things you were going to buy anyway."
+    ]
+   },
+   {
+    "h": "Rotating and bonus categories",
+    "list": [
+     "Many rotating categories need activating each quarter; set a reminder.",
+     "Write the current quarter's categories at the top of your card list."
+    ]
+   },
+   {
+    "h": "Keep one list",
+    "list": [
+     "Keep all your offers and categories in one place, rather than in each card's app.",
+     "Remove offers once used or expired."
+    ]
+   },
+   {
+    "h": "Watch the fine print",
+    "p": [
+     "Check caps, exclusions and whether a purchase codes to the right category. If anything's unclear, check with the card issuer."
+    ]
+   }
+  ]
  }
 ]
