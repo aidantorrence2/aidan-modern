@@ -23134,5 +23134,79 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "how-to-stop-running-out-of-time-on-mcat-cars",
+  "offer": "pace-passage",
+  "title": "How to stop running out of time on MCAT CARS",
+  "description": "Practical ways to find where your time goes in the CARS section and build a pace that lets you finish every passage.",
+  "intro": "Running out of time is one of the most common CARS problems. The fix usually starts with measuring where your minutes actually go, then changing one habit at a time. This guide is independent and not affiliated with the AAMC or any prep company.",
+  "sections": [
+   {
+    "h": "Measure first",
+    "list": [
+     "Time your reading and your questions separately for each practice passage.",
+     "Note how many passages you have left when time runs out.",
+     "Do this for a few sets before changing anything, so you know your starting point."
+    ]
+   },
+   {
+    "h": "Common time sinks",
+    "list": [
+     "Re-reading paragraphs because you lost focus.",
+     "Going back to the passage for every question.",
+     "Getting stuck between two answers for minutes at a time."
+    ]
+   },
+   {
+    "h": "Changes to try",
+    "list": [
+     "Read once, steadily, noting the author's main point in a few words after each paragraph.",
+     "Set a limit per question; if you hit it, pick your best answer, flag it and move on.",
+     "Practise 'move on' drills: deliberately leave a hard question and come back only if time allows."
+    ]
+   },
+   {
+    "h": "Build pace slowly",
+    "list": [
+     "Tighten your target per passage a little at a time rather than all at once.",
+     "Keep accuracy in view: finishing every passage doesn't help if your score drops.",
+     "Log wrong answers by reason (misread, ran out of time, between two choices) to see what to work on."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "how-long-to-spend-on-each-mcat-cars-passage",
+  "offer": "pace-passage",
+  "title": "How long should you spend on each MCAT CARS passage?",
+  "description": "How to work out a time budget per CARS passage, split it between reading and questions, and check it in practice.",
+  "intro": "A per-passage time budget helps you finish the section with time to spare. Check the official AAMC site for the current number of passages, questions and minutes in CARS, then divide the time to get your budget. This guide is independent and not affiliated with the AAMC.",
+  "sections": [
+   {
+    "h": "Work out your budget",
+    "list": [
+     "Divide the section time by the number of passages, then keep a minute or two in reserve.",
+     "Split each passage's budget between reading and answering; many students find they need more time for questions than they expect.",
+     "Write your target down before each practice set."
+    ]
+   },
+   {
+    "h": "Check it in practice",
+    "list": [
+     "Time reading and questions separately for each passage.",
+     "Compare your actual times with your targets after each set.",
+     "Look for patterns: certain passage types or question types that always run long."
+    ]
+   },
+   {
+    "h": "Adjust",
+    "list": [
+     "If reading runs long, practise reading once without going back.",
+     "If questions run long, practise picking your best answer and moving on.",
+     "Change one thing at a time and re-measure."
+    ]
+   }
+  ]
  }
 ]

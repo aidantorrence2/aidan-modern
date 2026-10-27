@@ -48067,6 +48067,97 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-27",
+    "slug": "pace-passage",
+    "name": "Pace Passage",
+    "need": "I can never finish the MCAT CARS section on time; I always have passages left when the clock runs out.",
+    "headline": "Always run out of time on MCAT CARS? Time each passage split into reading and questions, see where your minutes went, and tighten your pace step by step.",
+    "buyer": "Adults (18+) preparing for the MCAT, including re-takers, who keep running out of time in the CARS section.",
+    "bullets": [
+      "A split timer for each passage on your own practice material: reading time and question time, separately.",
+      "A read-out after each set showing where the time went, with slowly tightening pace targets and a 'move on' drill.",
+      "A wrong-answer log by reason, so you can see whether speed or accuracy is costing you points."
+    ],
+    "price": "$9.99/month",
+    "priceUsd": 10,
+    "priceNote": "Or $39 for three months. For adults 18+.",
+    "reasonPrompt": "How many CARS passages do you usually have left when time runs out?",
+    "faq": [
+      {
+        "q": "Does it include official MCAT questions?",
+        "a": "No. Pace Passage times and logs the practice passages you already use; it includes no official or copied test questions."
+      },
+      {
+        "q": "Is it linked to the AAMC or a prep company?",
+        "a": "No. Pace Passage is independent and not affiliated with, or endorsed by, the AAMC or any test prep company. MCAT is a registered trademark of the AAMC."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-27",
+      "summary": "MCAT students describe taking 4-5 minutes just to read a passage, never finishing CARS sections on time with 2-3 passages left, and taking a long time to find evidence in a passage; a prep company has a whole article on running out of time.",
+      "wtp": "UWorld's MCAT QBank costs $339 to $439 and courses run to $1,549; MCAT: King of the Curve has 1.5K App Store ratings and sells plans from $9.99 a month to $199.99 a year.",
+      "signals": [
+        {
+          "url": "https://forums.studentdoctor.net/threads/mcat-cars.1257914/",
+          "who": "Simba4796 (Student Doctor Network)",
+          "date": "2017-05-16",
+          "quote": "it takes me 4-5 minutes to read the passage",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.studentdoctor.net/threads/cars-is-ruining-me.1219802/",
+          "who": "bme94 (Student Doctor Network)",
+          "date": "2016-08-31",
+          "quote": "finish their CARS sections on time",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.studentdoctor.net/threads/1440469/",
+          "who": "deleted1025488 (Student Doctor Network)",
+          "date": "2021-04-21",
+          "quote": "really takes me a long time to find evidence in a passage",
+          "seen": "opened"
+        },
+        {
+          "url": "https://blog.blueprintprep.com/mcat/cars-strategy-i-always-run-out-of-time-what-should-i-do/",
+          "who": "Blueprint Prep (blog)",
+          "date": "2026-10-27",
+          "quote": "trouble completing the section",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.premiermcatprep.com/blog/uworld-mcat-cost",
+          "who": "Premier MCAT Prep (blog)",
+          "date": "2026-10-27",
+          "quote": "UWorld MCAT QBank $339 to $439; courses to $1,549",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1534662918",
+          "who": "MCAT: King of the Curve (App Store)",
+          "date": "2026-10-27",
+          "quote": "1.5K Ratings; One Month Standard student $9.99; One Year $199.99",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1638606498",
+          "who": "MCAT Prep 2026 (App Store)",
+          "date": "2026-10-27",
+          "quote": "84 Ratings; All Access (1 Month) $17.99; (3 Months) $39.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "UWorld, Jack Westin, Blueprint, Kaplan, King of the Curve, free CARS timing advice.",
+      "risks": "All forum evidence is from one forum (Student Doctor Network), and one poster is a deleted account. Nobody said they'd pay for a pacing tool specifically; the money signal is paid MCAT prep. Big prep companies bundle timed sections. Near live hall-steady (exam panic) and recall-ladder (forgetting), but about section pacing. Must never include or imitate official questions."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
