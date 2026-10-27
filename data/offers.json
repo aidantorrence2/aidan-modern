@@ -47906,6 +47906,90 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-27",
+    "slug": "playlist-move",
+    "name": "Playlist Move",
+    "need": "I want to switch music streaming apps without losing years of playlists or rebuilding them by hand.",
+    "headline": "Switching music apps but dreading rebuilding your playlists? Move them across with exact album and version matching, check every song that didn't match, and pay once.",
+    "buyer": "Adults (18+) switching between music streaming services who have years of playlists they don't want to lose.",
+    "bullets": [
+      "Move playlists between the major streaming services you use, in one go.",
+      "Exact matching on album and version, so you don't end up with live takes, compilations or the wrong clean or explicit version.",
+      "A clear list of songs that didn't match, to fix by hand in minutes."
+    ],
+    "price": "$3/month",
+    "priceUsd": 3,
+    "priceNote": "Or $5 once per move. No weekly plans.",
+    "reasonPrompt": "Which service are you moving from and to, and how many playlists?",
+    "faq": [
+      {
+        "q": "Is it made by Spotify, Apple or another streaming service?",
+        "a": "No. Playlist Move is independent and not affiliated with any music streaming service. Some services now offer their own import tools, which are worth trying first."
+      },
+      {
+        "q": "Will every song transfer?",
+        "a": "Not always: some songs aren't available on every service, or in every country. Playlist Move shows you exactly which ones didn't match."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-27",
+      "summary": "Music listeners describe wanting to switch from Spotify, doing it by hand, having dozens of playlists and several very large ones to move, and putting off switching because of re-creating playlists.",
+      "wtp": "SongShift, a playlist transfer app, has 67K App Store ratings and sells Pro at $6.99 a month, $29.99 a year or $59.99 lifetime; FreeYourMusic has 6.8K ratings.",
+      "signals": [
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=4/id=1097974566/sortby=mostrecent/json",
+          "who": "D.Atly (App Store review of SongShift)",
+          "date": "2026-02-06",
+          "quote": "Currently switching from spotify to apple music and i was manually doing it by hand",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1088699621/sortby=mostrecent/json",
+          "who": "jrgeezo (App Store review of FreeYourMusic)",
+          "date": "2026-03-01",
+          "quote": "I have recently switched to Apple Music from Spotify. I have dozens of playlists",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=8/id=1097974566/sortby=mostrecent/json",
+          "who": "Hahard88 (App Store review of SongShift)",
+          "date": "2025-07-13",
+          "quote": "I have several very large playlists I wanted to move from Spotify to Apple Music",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=5/id=1097974566/sortby=mosthelpful/json",
+          "who": "chella0901 (App Store review of SongShift)",
+          "date": "2019-04-29",
+          "quote": "I have been hesitant to switch music streaming provider, and putting off re-creating playlists",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=9/id=1097974566/sortby=mostrecent/json",
+          "who": "Tyhehch (App Store review of SongShift)",
+          "date": "2025-06-28",
+          "quote": "thinking about switching from Spotify to Apple Music for a minute",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1097974566",
+          "who": "SongShift (App Store)",
+          "date": "2026-10-27",
+          "quote": "67K Ratings; SongShift Pro Monthly $6.99; Yearly $29.99; Lifetime Access $59.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "SongShift, FreeYourMusic, Soundiiz, TuneMyMusic, built-in streaming imports.",
+      "risks": "Built-in imports are starting to cover this. Depends on streaming services' APIs and their limits. Crowded. Mostly a one-off job, so pricing must be one-time-friendly. Must not imitate any streaming brand."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

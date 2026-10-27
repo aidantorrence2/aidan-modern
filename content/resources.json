@@ -22967,5 +22967,86 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "how-to-move-your-playlists-to-a-new-music-app",
+  "offer": "playlist-move",
+  "title": "How to move your playlists to a new music app without losing songs",
+  "description": "A practical way to switch music streaming services and bring your playlists with you, with fewer missing or wrong songs.",
+  "intro": "Switching music services doesn't have to mean rebuilding every playlist. This guide is independent and not affiliated with any streaming service.",
+  "sections": [
+   {
+    "h": "Before you switch",
+    "list": [
+     "Check whether your new service has a built-in import tool; some do now.",
+     "Don't cancel your old subscription until your playlists are safely moved and checked."
+    ]
+   },
+   {
+    "h": "Move the playlists",
+    "list": [
+     "Use a built-in import tool or a playlist transfer service.",
+     "Move your most important playlists first and check them before doing the rest."
+    ]
+   },
+   {
+    "h": "Check the results",
+    "list": [
+     "Look for songs that didn't transfer: some aren't available on every service or in every country.",
+     "Watch out for wrong versions: live recordings, remasters, compilations or clean versions."
+    ]
+   },
+   {
+    "h": "Fix what's missing",
+    "list": [
+     "Search for missing songs by hand on the new service.",
+     "Keep a note of songs that aren't available, in case they're added later."
+    ]
+   },
+   {
+    "h": "Then cancel",
+    "p": [
+     "Once everything's moved and checked, cancel the old subscription before its next billing date."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "why-your-transferred-playlist-has-the-wrong-song-versions",
+  "offer": "playlist-move",
+  "title": "Why your transferred playlist has the wrong song versions (and how to fix it)",
+  "description": "Why playlist transfers sometimes swap in live, remastered or clean versions of songs, and how to put them right.",
+  "intro": "After moving playlists to a new music app, it's common to find the wrong version of some songs. It happens because services match songs by title and artist, and the same song often exists in several versions.",
+  "sections": [
+   {
+    "h": "Why it happens",
+    "list": [
+     "The same song can appear on the original album, a remaster, a greatest-hits compilation and a live album.",
+     "Clean and explicit versions often have the same title.",
+     "Some versions simply aren't available on the new service."
+    ]
+   },
+   {
+    "h": "How to spot them",
+    "list": [
+     "Check song lengths: live versions are often longer.",
+     "Look at the album name next to each song.",
+     "Listen to the first few seconds of songs you know well."
+    ]
+   },
+   {
+    "h": "How to fix them",
+    "list": [
+     "Search for the song with the album name to find the right version.",
+     "Replace it in the playlist and remove the wrong one."
+    ]
+   },
+   {
+    "h": "Next time",
+    "p": [
+     "Move one playlist first, check it, then move the rest, so you catch problems early."
+    ]
+   }
+  ]
  }
 ]
