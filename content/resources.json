@@ -21839,5 +21839,90 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "why-cant-i-understand-spoken-french-when-i-can-read-it",
+  "offer": "catch-french",
+  "title": "Why can't I understand spoken French when I can read it?",
+  "description": "Why spoken French is so much harder to follow than written French, and simple daily listening practice that helps.",
+  "intro": "Many learners can read French comfortably but get lost the moment someone speaks at normal speed. That's normal: spoken French sounds very different from the written version, and listening is a separate skill that needs its own practice.",
+  "sections": [
+   {
+    "h": "Why it happens",
+    "list": [
+     "Words run together: liaison and elision join words into one stream of sound.",
+     "Letters you see on the page often aren't pronounced.",
+     "In casual speech, people drop the 'ne' and shorten phrases.",
+     "Natural speech is fast, and you don't get to re-read."
+    ]
+   },
+   {
+    "h": "Daily listening practice",
+    "list": [
+     "Pick a short clip of real speech, a minute or less.",
+     "Listen once for the gist, then again and write down what you catch.",
+     "Check against a transcript and notice exactly what you missed.",
+     "Listen again at full speed until you can hear it."
+    ]
+   },
+   {
+    "h": "Build up gradually",
+    "list": [
+     "Start with slower learner content, then move to natural-speed podcasts and shows.",
+     "Use French subtitles rather than English when watching.",
+     "Little and often beats long sessions."
+    ]
+   },
+   {
+    "h": "Be patient",
+    "p": [
+     "Listening improves slowly, then suddenly. Keep a note of clips you can follow now that you couldn't before."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "how-french-words-run-together-liaison-elision-and-spoken-shortcuts",
+  "offer": "catch-french",
+  "title": "How French words run together: liaison, elision and spoken shortcuts",
+  "description": "The main ways spoken French differs from written French, so you can recognise them when you hear them.",
+  "intro": "A big reason spoken French is hard to follow is that words blend together. Knowing the main patterns helps you hear them.",
+  "sections": [
+   {
+    "h": "Liaison",
+    "list": [
+     "A normally silent final consonant is pronounced when the next word starts with a vowel sound.",
+     "For example, 'les amis' sounds like 'lay-zah-mee'."
+    ]
+   },
+   {
+    "h": "Elision",
+    "list": [
+     "Short words drop their final vowel before a vowel: 'je' becomes j' and 'le' becomes l'.",
+     "For example, 'je aime' becomes 'j'aime'."
+    ]
+   },
+   {
+    "h": "Dropped 'ne'",
+    "list": [
+     "In casual speech, people often leave out the 'ne' in negatives.",
+     "'Je ne sais pas' often sounds like 'je sais pas', or even 'chais pas'."
+    ]
+   },
+   {
+    "h": "Other common shortcuts",
+    "list": [
+     "'Il y a' often sounds like 'y'a'.",
+     "'Tu es' often sounds like 't'es'.",
+     "Some vowels are swallowed in fast speech."
+    ]
+   },
+   {
+    "h": "Practise hearing them",
+    "p": [
+     "Listen for these patterns in short clips, write down what you hear, then check a transcript. Recognising them quickly makes natural speech much easier to follow."
+    ]
+   }
+  ]
  }
 ]

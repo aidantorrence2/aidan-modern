@@ -46485,6 +46485,104 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-27",
+    "slug": "catch-french",
+    "name": "Catch the French",
+    "need": "I can read French well enough, but I can't follow it when people speak at normal speed.",
+    "headline": "Read French fine but lost when people speak? Ten minutes a day of real-speed listening: hear it slower, then full speed, type what you caught and see exactly what you missed.",
+    "buyer": "Adults who read French well enough but can't follow it spoken at normal speed.",
+    "bullets": [
+      "Ten-minute daily listening: each clip slower, then at full speed.",
+      "Type what you caught and see exactly which words you missed, tagged by cause: words running together, dropped 'ne', spoken short forms.",
+      "A list of missed sounds that comes back until you catch them, and a weekly view of what you caught at full speed."
+    ],
+    "price": "$5.99/month",
+    "priceUsd": 6,
+    "priceNote": "Or $39 a year.",
+    "reasonPrompt": "Where do you lose spoken French most: films, podcasts or real conversations?",
+    "faq": [
+      {
+        "q": "Will I be fluent by a certain date?",
+        "a": "No promises like that. Catch the French trains listening a little every day; how fast it improves depends on you."
+      },
+      {
+        "q": "Is it linked to a French school or course?",
+        "a": "No. Catch the French is independent, not affiliated with any school, course, app or teacher."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-27",
+      "summary": "French learners describe understanding what's said as the most challenging part of learning French, audio that's too fast, needing to listen several times, and still not understanding spoken French even with a degree in it.",
+      "wtp": "French – Listening·Speaking, a French listening app, sells $7.99 a month, $59.99 a year or $79.99 lifetime (40 ratings), and a reviewer says they happily paid to unlock the full app; the learners quoted here post on paid course sites (Lawless French, Rocket French).",
+      "signals": [
+        {
+          "url": "https://progress.lawlessfrench.com/questions/view/is-there-a-way-to-slow-the-speaker-down-this-is-my-most-challenging-aspect-of-learning-french-unders",
+          "who": "Phyllis C. (Lawless French)",
+          "date": "about 7 years ago (relative date on page)",
+          "quote": "most challenging aspect of learning French",
+          "seen": "opened"
+        },
+        {
+          "url": "https://progress.lawlessfrench.com/questions/view/is-there-a-way-to-slow-the-speaker-down-this-is-my-most-challenging-aspect-of-learning-french-unders",
+          "who": "James W. (Lawless French)",
+          "date": "about 7 years ago (relative date on page)",
+          "quote": "still do not fully understand what they are saying",
+          "seen": "opened"
+        },
+        {
+          "url": "https://progress.lawlessfrench.com/questions/view/is-there-a-way-to-slow-the-speaker-down-this-is-my-most-challenging-aspect-of-learning-french-unders",
+          "who": "John L. (Lawless French)",
+          "date": "about 7 years ago (relative date on page)",
+          "quote": "catch up on what is being said",
+          "seen": "opened"
+        },
+        {
+          "url": "https://progress.lawlessfrench.com/questions/view/audio-too-fast",
+          "who": "Maria G. (Lawless French)",
+          "date": "about 5 years ago (relative date on page)",
+          "quote": "the audio was too fast for me",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.rocketlanguages.com/forum/conversation-in-french/level-3-conversation-speed",
+          "who": "Peter--252 (Rocket Languages forum)",
+          "date": "undated",
+          "quote": "I need to listen several times, and even then find",
+          "seen": "opened"
+        },
+        {
+          "url": "https://myfrenchroutine.substack.com/p/2-je-ne-comprends-pas-les-francais/comments",
+          "who": "Manisha Monga (Substack comment)",
+          "date": "2025-05-01",
+          "quote": "understand spoken French",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1494691535",
+          "who": "SharronApple (App Store review of French – Listening·Speaking)",
+          "date": "2023-03-31",
+          "quote": "happily paid to unlock the full app",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1494691535",
+          "who": "French – Listening·Speaking (App Store)",
+          "date": "2026-10-27",
+          "quote": "40 Ratings; Monthly $7.99; Annual $59.99; Lifetime Package $79.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "French listening apps, podcasts for learners, Lawless French, Rocket French, YouTube.",
+      "risks": "The closest paid listening app has only 40 ratings. Lawless dates are relative. Must record or license its own audio. Near live studied-language-years-freeze (freezing when speaking) and diary-loop, but about understanding spoken French."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
