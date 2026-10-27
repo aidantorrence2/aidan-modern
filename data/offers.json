@@ -47087,6 +47087,174 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-27",
+    "slug": "phone-remote",
+    "name": "Phone Remote",
+    "need": "I've lost or broken my TV remote, and I just want to turn the TV on and change the volume from my phone without getting caught by a paywall.",
+    "headline": "Lost or broken your TV remote? Control your smart TV from your phone over home wifi: power, volume, inputs and apps, for one honest price with no trial trap.",
+    "buyer": "Adults (18+) with a smart TV whose remote is lost, broken or out of batteries.",
+    "bullets": [
+      "Power, volume, mute, inputs and app shortcuts for common smart TVs on the same home wifi.",
+      "A plain setup check that tells you straight away if your TV can't be reached from a phone (for example, older infrared-only TVs).",
+      "One clear price, shown up front: no weekly plans and no trial that quietly converts."
+    ],
+    "price": "$2/month",
+    "priceUsd": 2,
+    "priceNote": "Or $9.99 once. No auto-renewing trial.",
+    "reasonPrompt": "What make of TV do you have, and what happened to the remote?",
+    "faq": [
+      {
+        "q": "Will it work with my TV?",
+        "a": "It's designed for smart TVs that accept control over home wifi. Older TVs that only take infrared signals can't be controlled from most phones; the setup check tells you before you pay."
+      },
+      {
+        "q": "Is it made by my TV's manufacturer?",
+        "a": "No. Phone Remote is independent and not affiliated with any TV maker or streaming platform. Your TV maker may also offer a free official app worth trying first."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-27",
+      "summary": "People describe misplacing or losing the remote, breaking it moving the couch, needing to turn the TV on or change the volume, and losing it on the road.",
+      "wtp": "TV Remote - Universal Control has 628K App Store ratings and sells Premium at $4.99 to $6.99 a week, $8.99 a month, $19.99 to $39.99 a year or $44.99 lifetime.",
+      "signals": [
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1539090879/sortby=mosthelpful/json",
+          "who": "NikpicxD (App Store review of TV Remote - Universal Control)",
+          "date": "2026-05-30",
+          "quote": "a quick way to increase my TCL Roku TV volume after misplacing my remote",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1539090879/sortby=mosthelpful/json",
+          "who": "Fixyourapp69420 (App Store review of TV Remote - Universal Control)",
+          "date": "2025-04-27",
+          "quote": "I had lost my physical remote and decided to use this app",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=6443877058/sortby=mosthelpful/json",
+          "who": "120belisle (App Store review of a TV remote app)",
+          "date": "2026-08-15",
+          "quote": "We lost our remote",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=6443877058/sortby=mosthelpful/json",
+          "who": "goldengirllover (App Store review of a TV remote app)",
+          "date": "2024-10-09",
+          "quote": "I recently broke my remote, moving my couch",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1581765635/sortby=mostrecent/json",
+          "who": "Mr_G_K (App Store review of a TV remote app)",
+          "date": "2026-09-09",
+          "quote": "Lost my remote on the road some how",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1539090879",
+          "who": "TV Remote - Universal Control (App Store)",
+          "date": "2026-10-27",
+          "quote": "628K Ratings; Weekly Premium $4.99, $6.99; Monthly Premium $8.99; Annual Premium $39.99; Lifetime $44.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "TV remote apps, TV makers' free official apps, replacement remotes.",
+      "risks": "Needs a native app with home-network access, and many TVs use different protocols. Older infrared-only TVs can't be reached from iPhones. Crowded, with trial-trap rivals and free official apps. Must not imitate any TV brand."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-27",
+    "slug": "phone-to-tv",
+    "name": "Phone To TV",
+    "need": "I just want to watch what's on my phone or tablet on my big TV, and it won't connect or the sound doesn't come through.",
+    "headline": "Want what's on your phone on the big TV? Follow a plain setup for your TV, mirror or cast over home wifi, and fix the usual no-sound and won't-connect problems.",
+    "buyer": "Adults (18+) who want to show videos, streams or photos from their phone or tablet on a TV that doesn't work with it out of the box.",
+    "bullets": [
+      "A plain setup for your TV, phone and wifi, with the cable option if wireless won't work.",
+      "Mirror or cast photos, videos and web streams to the big screen over home wifi.",
+      "A fix-it checklist for the usual problems: no sound, lag, won't connect, and apps that block mirroring."
+    ],
+    "price": "$3/month",
+    "priceUsd": 3,
+    "priceNote": "Or $14.99 once. No auto-renewing trial.",
+    "reasonPrompt": "What do you most want to watch on the TV from your phone?",
+    "faq": [
+      {
+        "q": "Will it work with every app?",
+        "a": "No. Some streaming apps block screen mirroring to protect their content; Phone To TV tells you when that's the case and suggests the app's own TV option instead."
+      },
+      {
+        "q": "Is it made by my TV or phone maker?",
+        "a": "No. Phone To TV is independent and not affiliated with any TV, phone or streaming company."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-27",
+      "summary": "People describe simply wanting to see their iPad on a bigger screen, watching games and movies from their phone on the TV, using a hotel TV, and watching church online when they can't attend.",
+      "wtp": "Screen Mirroring・Smart View TV has 59K App Store ratings and sells Pro upgrades from $6.99 to $24.99 and casting at $39.99; Screen Mirroring - TV Cast has 53K ratings.",
+      "signals": [
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1529106085/sortby=mosthelpful/json",
+          "who": "Chase's Tech (App Store review of Screen Mirroring・Smart View TV)",
+          "date": "2025-07-01",
+          "quote": "I simply wanted to see my iPad on a bigger screen",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1529106085/sortby=mosthelpful/json",
+          "who": "Ry&Sum (App Store review of Screen Mirroring・Smart View TV)",
+          "date": "2023-05-03",
+          "quote": "baseball games on the big tv from my phone",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1529106085/sortby=mosthelpful/json",
+          "who": "Frustrated 467382 (App Store review of Screen Mirroring・Smart View TV)",
+          "date": "2022-03-13",
+          "quote": "Purchased this to watch a movie in a hotel",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=2/id=1529106085/sortby=mosthelpful/json",
+          "who": "Bellyfat79 (App Store review of Screen Mirroring・Smart View TV)",
+          "date": "2026-05-31",
+          "quote": "Love using screen mirroring to watch church online when unable to attend",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=2/id=1480668546/sortby=mosthelpful/json",
+          "who": "user10692969201 (App Store review of Screen Mirroring - TV Cast)",
+          "date": "2020-12-31",
+          "quote": "I just wanted a way to watch some of my movies from my iPhone to my Samsung smart TV",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1529106085",
+          "who": "Screen Mirroring・Smart View TV (App Store)",
+          "date": "2026-10-27",
+          "quote": "59K Ratings; Screen Mirroring Pro $6.99 to $24.99; Cast Media to Smart TV $39.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Screen mirroring apps, AirPlay, Chromecast, HDMI adapters.",
+      "risks": "Needs a native app, sometimes a TV-side receiver. DRM apps block mirroring. Lag and missing sound are common complaints. Cheap hardware substitutes exist. Near phone-remote; both stay separate needs (control vs watching)."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

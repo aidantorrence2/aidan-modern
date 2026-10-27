@@ -22370,5 +22370,85 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "lost-your-tv-remote-how-to-control-the-tv-from-your-phone",
+  "offer": "phone-remote",
+  "title": "Lost your TV remote? How to control the TV from your phone",
+  "description": "Ways to turn on the TV and change the volume when the remote is lost or broken, and what to check first.",
+  "intro": "A lost or broken remote doesn't have to mean no TV. Most smart TVs can be controlled another way. This guide is independent and not affiliated with any TV maker.",
+  "sections": [
+   {
+    "h": "Check the TV itself",
+    "list": [
+     "Most TVs have a physical power button, often underneath the screen or on the back, and some have volume buttons too."
+    ]
+   },
+   {
+    "h": "Try your TV maker's official app",
+    "list": [
+     "Many TV makers and streaming platforms offer a free remote app.",
+     "Your phone and TV usually need to be on the same home wifi network."
+    ]
+   },
+   {
+    "h": "If your TV is older",
+    "list": [
+     "Older TVs may only accept infrared signals, which most phones can't send.",
+     "A cheap universal remote is often the simplest fix."
+    ]
+   },
+   {
+    "h": "Watch out for trial traps",
+    "list": [
+     "Some remote apps start a weekly subscription after a short trial.",
+     "Check the price and cancel terms before you start any trial."
+    ]
+   },
+   {
+    "h": "Find it next time",
+    "p": [
+     "Pick one home for the remote, and check down the sides of sofa cushions first."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "screen-mirroring-no-sound-on-tv-how-to-fix-it",
+  "offer": "phone-to-tv",
+  "title": "Screen mirroring has no sound on the TV: how to fix it",
+  "description": "Common reasons phone-to-TV mirroring shows the picture but no sound, and simple things to check.",
+  "intro": "Picture but no sound is one of the most common screen mirroring problems. It's usually a setting rather than a fault. This guide is independent and not affiliated with any phone or TV maker.",
+  "sections": [
+   {
+    "h": "Quick checks",
+    "list": [
+     "Turn up the volume on both the phone and the TV.",
+     "Make sure the phone isn't on silent and isn't connected to Bluetooth headphones or a speaker.",
+     "Check the TV's sound output setting (TV speakers vs soundbar)."
+    ]
+   },
+   {
+    "h": "Restart the connection",
+    "list": [
+     "Stop mirroring, then start again.",
+     "Restart the phone and the TV.",
+     "Make sure both are on the same wifi network."
+    ]
+   },
+   {
+    "h": "Check the app",
+    "list": [
+     "Some streaming apps block mirroring, or send video but not sound, to protect their content.",
+     "Try the app's own cast or TV button if it has one."
+    ]
+   },
+   {
+    "h": "Try a cable",
+    "p": [
+     "An HDMI adapter for your phone usually carries sound reliably and avoids wifi lag."
+    ]
+   }
+  ]
  }
 ]
