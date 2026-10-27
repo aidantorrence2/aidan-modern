@@ -48424,6 +48424,181 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-27",
+    "slug": "star-frame",
+    "name": "Star Frame",
+    "need": "I want to take photos of the stars and the Milky Way on my phone, but they come out black, grainy or blurry.",
+    "headline": "Star photos on your phone coming out black or blurry? Plan the night by moon and darkness, set up step by step on a tripod, and check each shot against a simple fix list.",
+    "buyer": "Phone owners heading somewhere dark (a camping trip, the desert, the countryside) who want star and Milky Way photos without buying a DSLR.",
+    "bullets": [
+      "A night planner: moon phase, darkness and where the Milky Way sits, so you go out on the right night.",
+      "A step-by-step setup for your phone: tripod, night mode or long exposure, focus and timer.",
+      "A fix list for the usual problems (black, grainy, blurry, orange sky) and a log of your settings for each shot."
+    ],
+    "price": "$4.99/month",
+    "priceUsd": 5,
+    "priceNote": "Or $24 a year. Cancel any time.",
+    "reasonPrompt": "What phone do you have, and what goes wrong with your star photos?",
+    "faq": [
+      {
+        "q": "Will it make my phone take DSLR-quality photos?",
+        "a": "No. Star Frame helps you get the best your own phone can do, and results depend on your phone, the moon, the weather and how dark the sky is. It promises no particular result."
+      },
+      {
+        "q": "Is it linked to a camera app or phone maker?",
+        "a": "No. Star Frame is independent and not affiliated with any camera app or phone maker. Stay safe at night: tell someone where you're going, take a torch, and stay off private land."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-27",
+      "summary": "Phone owners describe trying to capture the night sky, paying for camera apps to take star photos on clear moonless nights, and finding it very hard to figure out.",
+      "wtp": "Nightcam Camera: Night Mode has 2.6K App Store ratings and sells Pro at $7.99 a month, $24.99 a year or $49.99 lifetime; Night Camera: Low light photos has 4.2K ratings with plans from $1.99 a month.",
+      "signals": [
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=3/id=754105884/sortby=mosthelpful/json",
+          "who": "Jake.578 (App Store review of NightCap Camera)",
+          "date": "2026-10-05",
+          "quote": "trying to capture the night sky",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=3/id=754105884/sortby=mosthelpful/json",
+          "who": "UberGol600 (App Store review of NightCap Camera)",
+          "date": "2020-11-28",
+          "quote": "I paid for and downloaded this to take photos of the night sky",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=3/id=754105884/sortby=mosthelpful/json",
+          "who": "8TeeGOP (App Store review of NightCap Camera)",
+          "date": "2018-08-10",
+          "quote": "take star photos on clear night with no moon",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1485217423/sortby=mosthelpful/json",
+          "who": "Turtle1112 (App Store review of Nightcam Camera)",
+          "date": "2026-04-03",
+          "quote": "get night sky photos and it was very hard to figure out",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1485217423",
+          "who": "Nightcam Camera: Night Mode (App Store)",
+          "date": "2026-10-27",
+          "quote": "2.6K Ratings; Nightcam Pro Monthly $7.99; yearly $24.99; lifetime $49.99",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id843439749",
+          "who": "Night Camera: Low light photos (App Store)",
+          "date": "2026-10-27",
+          "quote": "4.2K Ratings; One Month Premium $1.99; Pro Lifetime $9.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "NightCap, Nightcam, Spectre, PhotoPills, built-in phone night modes.",
+      "risks": "Built-in night modes already do a lot. Results depend on moon, light pollution and a tripod. Many reviewers are angry paid apps didn't deliver, so it must promise little. All evidence is App Store reviews. Near live star-names (identifying stars), but about photographing them."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-27",
+    "slug": "phrasal-click",
+    "name": "Phrasal Click",
+    "need": "I'm learning English as a second language and phrasal verbs like get in, get on and get off still confuse me.",
+    "headline": "Phrasal verbs still confusing you in English? Learn them in small groups by meaning, practise them in real sentences, and review the ones you mix up until they stick.",
+    "buyer": "Adult intermediate and advanced learners of English who know the grammar but still stumble over phrasal verbs.",
+    "bullets": [
+      "Phrasal verbs grouped by the little word (up, off, out) and by meaning, a few at a time.",
+      "Practice in real sentences: pick the right one, then write your own.",
+      "Spaced review of the ones you mix up, with a list of your trouble pairs."
+    ],
+    "price": "$4.99/month",
+    "priceUsd": 5,
+    "priceNote": "Or $29 a year. Cancel any time.",
+    "reasonPrompt": "What's your first language, and which phrasal verbs trip you up most?",
+    "faq": [
+      {
+        "q": "What level is it for?",
+        "a": "Intermediate and advanced learners who already know basic English grammar. It's a practice tool, not a full English course or an exam-prep course."
+      },
+      {
+        "q": "Is it linked to a language app or exam board?",
+        "a": "No. Phrasal Click is independent and not affiliated with any language app, school, publisher or exam board."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-27",
+      "summary": "English learners describe struggling with phrasal verbs, finding them harder than other parts of English, being infuriated by them and never quite grasping them; one reviewer calls them a nemesis.",
+      "wtp": "English Phrasal Verbs Cards has 1.1K App Store ratings and sells all sets for $3.99; IVERBS, an English verbs app, has 3.3K ratings and sells PRO at $9.99 a month or $29.99 a year.",
+      "signals": [
+        {
+          "url": "https://news.ycombinator.com/item?id=41147540",
+          "who": "tail_exchange (Hacker News)",
+          "date": "2024-08-03",
+          "quote": "I struggle with phrasal verbs",
+          "seen": "opened"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=26077849",
+          "who": "asoylu (Hacker News)",
+          "date": "2021-02-09",
+          "quote": "phrasal verbs which are harder for me",
+          "seen": "opened"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=21181399",
+          "who": "scoutt (Hacker News)",
+          "date": "2019-10-07",
+          "quote": "infuriates me the most of the english language is phrasal verbs",
+          "seen": "opened"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=6377857",
+          "who": "ezequiel-garzon (Hacker News)",
+          "date": "2013-09-13",
+          "quote": "never grok phrasal verbs",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1073608387/sortby=mosthelpful/json",
+          "who": "Olforela (App Store review of English Phrasal Verbs Cards)",
+          "date": "2016-05-02",
+          "quote": "Phrasal verbs had been my nemesis until now",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1073608387",
+          "who": "English Phrasal Verbs Cards (App Store)",
+          "date": "2026-10-27",
+          "quote": "1.1K Ratings; All Sets $3.99",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1413069218",
+          "who": "IVERBS Irregular Verbs (App Store)",
+          "date": "2026-10-27",
+          "quote": "3.3K Ratings; PRO version for 1 month $9.99; 1 year $29.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Duolingo, Babbel, phrasal verb card apps, textbooks such as phrasal verb workbooks.",
+      "risks": "Hacker News posters are tech-literate and many quotes are older. The direct paid app is modest (1.1K ratings). Big language apps are strong. Near live heard-first (accent) and the one-grammar-pain offers (article-lock, verb-reflex, case-ready), but about English phrasal verbs."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
