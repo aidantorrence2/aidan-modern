@@ -46765,6 +46765,83 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-27",
+    "slug": "clip-to-film",
+    "name": "Clip to Film",
+    "need": "I've got dozens of trip and family videos on my phone that I want to turn into a short film, but I never get round to editing them.",
+    "headline": "Trip and family clips piling up on your phone? In one 20-minute sitting, pick the keepers, trim them, order them by day and export a 3 to 5 minute film to share.",
+    "buyer": "Adults with trip, holiday and family clips piling up unedited on their phones.",
+    "bullets": [
+      "Find a trip's clips by date, then keep or skip each one in a quick swipe.",
+      "Trim, order by day, add simple title cards and music you have the rights to use, and export a 3 to 5 minute film.",
+      "A backlog list of unedited trips and an optional monthly film-night reminder."
+    ],
+    "price": "$3.99/month",
+    "priceUsd": 4,
+    "priceNote": "Or $24 a year.",
+    "reasonPrompt": "How many trips or events do you have sitting unedited on your phone?",
+    "faq": [
+      {
+        "q": "Do my videos get uploaded anywhere?",
+        "a": "Your clips stay yours; Clip to Film is designed to work with the videos already on your phone, and you choose what to share."
+      },
+      {
+        "q": "Is it linked to a video app or phone maker?",
+        "a": "No. Clip to Film is independent, not affiliated with any video-editing app, phone maker or music service."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-27",
+      "summary": "People describe heaps of short clips of their kids on their phones they want to join together, wanting to learn to make videos for years but being stopped by overwhelm, and regretting the year they didn't make one.",
+      "wtp": "People pay home-movie editors to do it for them: Kara Abbey charges $100, $200 or $300 to edit customers' own clips into a family film. 1 Second Everyday, a video diary app, has 48K App Store ratings and sells Pro at $9.99 a month or $49.99 a year.",
+      "signals": [
+        {
+          "url": "https://singletrackworld.com/forum/off-topic/simple-video-editing-software/",
+          "who": "mangoridebike (Singletrack forum)",
+          "date": "2014-11-24",
+          "quote": "I have a heap of short clips of my kids on my phone",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.everyday-reading.com/summer-videos/",
+          "who": "Alisa Simonson (comment on Everyday Reading)",
+          "date": "2021-06-12",
+          "quote": "wanting to learn how to make videos for years now but overwhelm has stopped me",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.everyday-reading.com/summer-videos/",
+          "who": "Janssen Bradshaw (Everyday Reading)",
+          "date": "2021-06-08",
+          "quote": "regretted it since then",
+          "seen": "opened"
+        },
+        {
+          "url": "https://karaabbey.com/home-movies-pricing",
+          "who": "Kara Abbey (home movie editing)",
+          "date": "2026-10-27",
+          "quote": "$100, $200 and $300 home movie packages",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id587823548",
+          "who": "1 Second Everyday (App Store)",
+          "date": "2026-10-27",
+          "quote": "48K Ratings; 1SE Pro Monthly $9.99; 1SE Pro Yearly $49.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Phone photo apps' auto-movies, Splice, CapCut, iMovie, 1 Second Everyday, paid editors.",
+      "risks": "Free editors and automatic memory videos exist. Evidence is thin and old (2014, 2021). Music licensing limits what can be added. Near live roll-down (sorting photos), but about editing video into a film."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
