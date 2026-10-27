@@ -24185,5 +24185,166 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "how-to-start-reading-comics-if-you-only-know-the-movies",
+  "offer": "comics-compass",
+  "title": "How to start reading comics if you only know the movies",
+  "description": "A simple way for adults to get into superhero comics without getting lost in decades of stories and crossovers.",
+  "intro": "Superhero comics have decades of stories, which can feel impossible to start. You don't need to read everything: most fans started with one good story and followed what they liked. This guide is independent and not affiliated with any publisher.",
+  "sections": [
+   {
+    "h": "Start with one character",
+    "list": [
+     "Pick a character you liked in a film, show or game.",
+     "Look for a self-contained story or the start of a new run, often marked '#1' or 'Volume 1'.",
+     "Ignore the urge to start at the very beginning; older comics read very differently."
+    ]
+   },
+   {
+    "h": "Read collected editions",
+    "list": [
+     "Trade paperbacks and graphic novels collect a whole story in one book.",
+     "They're easier to follow than single monthly issues."
+    ]
+   },
+   {
+    "h": "Skip most crossovers at first",
+    "list": [
+     "Big crossover events tie many series together and are hard for new readers.",
+     "Stick to one series until you're comfortable."
+    ]
+   },
+   {
+    "h": "Read cheaply",
+    "list": [
+     "Many public libraries lend comics and graphic novels, and some offer free digital comics through library apps.",
+     "Comic shop staff are usually happy to suggest a starting point.",
+     "Subscription reading apps let you try lots of series before you buy."
+    ]
+   },
+   {
+    "h": "Keep track",
+    "p": [
+     "Keep a simple list of what you've read and what you want to read next, so you can pick up where you left off."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "how-to-understand-comic-reading-order",
+  "offer": "comics-compass",
+  "title": "Comic reading order explained: runs, volumes and crossovers",
+  "description": "What runs, volumes, issues and crossovers mean, so you can work out a reading order without getting lost.",
+  "intro": "Comic numbering confuses almost every new reader. A few terms explain most of it. This guide is independent and not affiliated with any publisher.",
+  "sections": [
+   {
+    "h": "Key terms",
+    "list": [
+     "Issue: a single comic, usually monthly.",
+     "Run: a stretch of issues by the same writer, often the best unit to read.",
+     "Volume: a series numbering; publishers often restart at #1, so the same title can have several volumes.",
+     "Trade or collected edition: several issues collected in one book, numbered separately."
+    ]
+   },
+   {
+    "h": "Working out an order",
+    "list": [
+     "Pick one run and read it in issue order.",
+     "Check the publication date if numbering is confusing.",
+     "Tie-ins to big events are usually optional; you can skip them on a first read."
+    ]
+   },
+   {
+    "h": "Don't worry about missing things",
+    "p": [
+     "Most stories recap what you need. If a character or event confuses you, look it up quickly and keep reading."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "how-to-build-your-first-gaming-pc-on-a-budget",
+  "offer": "parts-fit",
+  "title": "How to build your first gaming PC on a budget: a parts checklist",
+  "description": "The parts you need for a first gaming PC, where to spend and where to save, and a simple order to build it.",
+  "intro": "Building a PC is mostly careful planning and following steps. This guide gives the parts list and the order to build. Prices change often, so check current prices before you buy, and unplug the power supply before working inside a PC.",
+  "sections": [
+   {
+    "h": "The parts you need",
+    "list": [
+     "Processor (CPU) and a cooler, if one isn't included.",
+     "Motherboard that fits the CPU.",
+     "Memory (RAM).",
+     "Storage: an NVMe SSD is a good choice for a gaming PC.",
+     "Graphics card (GPU).",
+     "Power supply (PSU).",
+     "Case.",
+     "An operating system, plus a monitor, keyboard and mouse if you don't have them."
+    ]
+   },
+   {
+    "h": "Where to spend",
+    "list": [
+     "For gaming, the graphics card usually matters most.",
+     "Don't cut corners on the power supply; buy one from a reputable maker with some headroom over what your parts need.",
+     "You can often start with less storage and add more later."
+    ]
+   },
+   {
+    "h": "Build order",
+    "list": [
+     "Install the CPU, memory and SSD on the motherboard outside the case.",
+     "Fit the cooler.",
+     "Put the motherboard in the case, then the power supply and graphics card.",
+     "Connect the power and front-panel cables, checking the motherboard manual.",
+     "Before closing the case, check every cable, then switch on and enter the BIOS to check it sees all parts."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "how-to-check-pc-parts-are-compatible",
+  "offer": "parts-fit",
+  "title": "How to check that your PC parts are compatible before you buy",
+  "description": "The main checks to make sure your CPU, motherboard, memory, case, cooler, graphics card and power supply all work together.",
+  "intro": "Most first-build problems come from a few mismatches. Check these before you buy, using each part's official specifications.",
+  "sections": [
+   {
+    "h": "CPU and motherboard",
+    "list": [
+     "The CPU socket must match the motherboard's socket.",
+     "Check the motherboard supports your exact CPU; some older boards need a BIOS update for newer CPUs."
+    ]
+   },
+   {
+    "h": "Memory",
+    "list": [
+     "Use the memory type the motherboard supports (for example DDR4 or DDR5); they aren't interchangeable.",
+     "Check the board's supported speed and maximum capacity."
+    ]
+   },
+   {
+    "h": "Case size",
+    "list": [
+     "Match the motherboard size (ATX, micro-ATX or mini-ITX) to what the case supports.",
+     "Check the case's maximum graphics card length and CPU cooler height against your parts."
+    ]
+   },
+   {
+    "h": "Power",
+    "list": [
+     "Add up your parts' power needs and choose a power supply with headroom.",
+     "Make sure it has the power connectors your graphics card needs."
+    ]
+   },
+   {
+    "h": "Storage",
+    "list": [
+     "Check the motherboard has the right slot (such as M.2) for your SSD.",
+     "Note that some M.2 slots share bandwidth with other ports; the manual explains this."
+    ]
+   }
+  ]
  }
 ]

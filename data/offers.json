@@ -49180,6 +49180,174 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-27",
+    "slug": "comics-compass",
+    "name": "Comics Compass",
+    "need": "I've always wanted to get into comics, but I don't know where to start or which order to read the stories in.",
+    "headline": "Always wanted to get into comics but don't know where to start? Pick a character or story you like, get a short starting list and reading order, and track what you've read.",
+    "buyer": "Adults who love superhero films, shows or games and want to start reading comics without getting lost in decades of runs and crossovers.",
+    "bullets": [
+      "Start from a character, film or show you like, and get a short starting list of self-contained stories.",
+      "A plain reading order for each list, with which crossovers you can safely skip.",
+      "Track what you've read and where to get it: your library, a reading app you already pay for, or a shop."
+    ],
+    "price": "$3.99/month",
+    "priceUsd": 4,
+    "priceNote": "Or $24 a year. Cancel any time.",
+    "reasonPrompt": "Which characters or films got you interested in comics?",
+    "faq": [
+      {
+        "q": "Does it include the comics themselves?",
+        "a": "No. Comics Compass is a guide and reading tracker; it hosts no comics. You read them through your library, a reading app or a shop."
+      },
+      {
+        "q": "Is it linked to Marvel, DC or any publisher?",
+        "a": "No. Comics Compass is independent and not affiliated with, or endorsed by, Marvel, DC or any publisher, app or shop."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-27",
+      "summary": "Readers describe wanting to get into comics for a long time but not knowing where to start, finding reading order the worst part, and feeling overwhelmed by multiverses and story arcs.",
+      "wtp": "DC Universe Infinite has 58K App Store ratings and sells memberships at $7.99 a month, $12.99 for Ultra or $74.99 a year; Panels - Comic Reader has 13K ratings and sells Panels+ at $1.49 a month or $14.99 a year.",
+      "signals": [
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=3/id=1329018000/sortby=mosthelpful/json",
+          "who": "espinal910 (App Store review of DC Universe Infinite)",
+          "date": "2018-09-15",
+          "quote": "wanting to get into comics for a very long time now just didnt know where to start",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=6/id=1329018000/sortby=mosthelpful/json",
+          "who": "RuinedEconomy (App Store review of DC Universe Infinite)",
+          "date": "2019-09-19",
+          "quote": "never knew where to start with comics, but I always wanted to",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=6/id=1329018000/sortby=mosthelpful/json",
+          "who": "Jlark3000 (App Store review of DC Universe Infinite)",
+          "date": "2025-06-10",
+          "quote": "deciphering reading order and all the footwork",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=607205403/sortby=mosthelpful/json",
+          "who": "Agent619 (App Store review of Marvel Unlimited)",
+          "date": "2025-01-02",
+          "quote": "so overwhelmed with the multiverse or how many arcs are moving",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=2/id=607205403/sortby=mosthelpful/json",
+          "who": "Dr.Rolo (App Store review of Marvel Unlimited)",
+          "date": "2019-06-18",
+          "quote": "I had hard time trying to get into them",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1329018000",
+          "who": "DC Universe Infinite (App Store)",
+          "date": "2026-10-27",
+          "quote": "58K Ratings; Monthly Membership $7.99; Ultra Monthly $12.99; yearly $74.99",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1236567663",
+          "who": "Panels - Comic Reader (App Store)",
+          "date": "2026-10-27",
+          "quote": "13K Ratings; Panels+ Monthly $1.49; Yearly $14.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Free reading-order websites, publisher apps' own lists, comic shop staff, library staff.",
+      "risks": "The paid apps sell comics libraries, not guidance, so paying for guidance alone is unproven. Free reading-order sites exist. Must not host or copy comics or imitate publisher branding. All evidence is App Store reviews."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-27",
+    "slug": "parts-fit",
+    "name": "Parts Fit",
+    "need": "I want to build my first gaming PC, but I'm clueless about which parts to pick, whether they'll work together and how to stay on budget.",
+    "headline": "Building your first gaming PC and worried the parts won't fit together? Set your budget and games, check every part against the others, and follow a plain step-by-step build list.",
+    "buyer": "First-time PC builders, often gamers on a budget, who have never put a computer together.",
+    "bullets": [
+      "Set your budget and the games you play, and see where the money matters most.",
+      "A plain compatibility check for each part: socket, memory type, case size, cooler height, graphics card length and power supply.",
+      "A step-by-step build checklist with what to check before you first press the power button."
+    ],
+    "price": "$4.99/month",
+    "priceUsd": 5,
+    "priceNote": "Or $12 once for a single build.",
+    "reasonPrompt": "What's your budget, and which games do you want to play?",
+    "faq": [
+      {
+        "q": "Does it sell parts or earn commission?",
+        "a": "No. Parts Fit sells no parts and takes no commission; buy wherever you like. Always check each part's official specifications before you buy."
+      },
+      {
+        "q": "Is it linked to a PC part maker or shop?",
+        "a": "No. Parts Fit is independent and not affiliated with any part maker, shop or PC-building site. Unplug the power supply before working inside a PC."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-27",
+      "summary": "First-time builders describe being newbies trying to put together a first build, never having built a PC, being clueless about PC building, and wanting to build a real PC but finding parts too expensive.",
+      "wtp": "BuildCores: 3D PC Builder has 2.1K App Store ratings and sells Pro at $7.99 a week or $14.99 a year.",
+      "signals": [
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1441971434/sortby=mosthelpful/json",
+          "who": "Lyd3635666635434 (App Store review of BuildCores)",
+          "date": "2026-08-31",
+          "quote": "trying to put together a first build. I am a newbie",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1441971434/sortby=mosthelpful/json",
+          "who": "YourLocalVaultDweller (App Store review of BuildCores)",
+          "date": "2025-11-03",
+          "quote": "never built a PC before and at the time of writing, Still",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=2/id=1441971434/sortby=mosthelpful/json",
+          "who": "Safwankaes (App Store review of BuildCores)",
+          "date": "2026-04-29",
+          "quote": "clueless when it comes to pc building",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=2/id=1604170642/sortby=mosthelpful/json",
+          "who": "Optimus4466 (App Store review of PC Creator 2)",
+          "date": "2026-09-27",
+          "quote": "wanted to build a pc in real life but now days the ram and the ssds cost too much",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1441971434",
+          "who": "BuildCores: 3D PC Builder (App Store)",
+          "date": "2026-10-27",
+          "quote": "2.1K Ratings; Pro Weekly $7.99; Pro Yearly $14.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "PCPartPicker (free), BuildCores, YouTube build guides, shop build services.",
+      "risks": "PCPartPicker is free and strong. Many reviewers seem young and short of money. Part prices change daily. Must stay commission-free so it doesn't become an affiliate tool. All evidence is App Store reviews."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
