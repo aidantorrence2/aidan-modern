@@ -46842,6 +46842,90 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-27",
+    "slug": "trick-a-week",
+    "name": "Trick a Week",
+    "need": "I want to teach my dog fun new tricks beyond sit and stay, but I don't know how to break them down so he actually learns them.",
+    "headline": "Want to teach your dog fun tricks beyond sit and stay? Learn one new trick a week, broken into tiny steps with short daily sessions, and tick off each step as your dog gets it.",
+    "buyer": "Dog owners (18+) whose dog knows the basics and who want fun tricks and a regular bonding routine.",
+    "bullets": [
+      "One new trick a week, broken into small steps your dog can succeed at.",
+      "Short daily sessions of a few minutes, with reward timing explained in plain words.",
+      "A step checklist and a list of every trick your dog knows, to show off and keep practising."
+    ],
+    "price": "$5/month",
+    "priceUsd": 5,
+    "priceNote": "Or $30 a year. For adults 18+.",
+    "reasonPrompt": "Which trick would you most like your dog to learn first?",
+    "faq": [
+      {
+        "q": "Is it for behaviour problems?",
+        "a": "No. Trick a Week is about fun tricks for dogs who know the basics. For behaviour problems like aggression or anxiety, speak to a qualified trainer or behaviourist, and check with your vet before tricks that put strain on joints, especially for puppies and older dogs."
+      },
+      {
+        "q": "Is it linked to a dog training app or brand?",
+        "a": "No. Trick a Week is independent, not affiliated with any training app, trainer or pet brand, and sells no products."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-27",
+      "summary": "Dog owners describe wanting to teach their dog more, finding a ton of tricks they want to train, finding it really hard to teach tricks themselves, and wanting one new trick a week.",
+      "wtp": "Puppr, a dog training and tricks app, has 27K App Store ratings and sells Premium from $12.99 to $18.99, $69.99 to $99.99 a year, and lesson packs from $2.99.",
+      "signals": [
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=3/id=1199338956/sortby=mosthelpful/json",
+          "who": "ceaser-salad (App Store review of Puppr)",
+          "date": "2023-04-17",
+          "quote": "I wanted to teach him more",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=3/id=1199338956/sortby=mosthelpful/json",
+          "who": "taylor_thomas2k00 (App Store review of Puppr)",
+          "date": "2020-12-05",
+          "quote": "I found a ton of tricks I want to train my pup",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=5/id=1199338956/sortby=mosthelpful/json",
+          "who": "JadeGirl_14 (App Store review of Puppr)",
+          "date": "2020-07-06",
+          "quote": "really hard to teach your dogs tricks personally",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=5/id=1153294767/sortby=mostrecent/json",
+          "who": "RianFowler (App Store review of Dogo)",
+          "date": "2023-03-27",
+          "quote": "Just want to teach my dog a new trick a week not two new tricks a day.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=4/id=1153294767/sortby=mostrecent/json",
+          "who": "princess bunny of kangaroora (App Store review of Dogo)",
+          "date": "2023-07-26",
+          "quote": "got this so I could train my dog and teach her tricks",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1199338956",
+          "who": "Puppr (App Store)",
+          "date": "2026-10-27",
+          "quote": "27K Ratings; Puppr Premium $12.99 to $99.99; Unlock All Lesson Packs $13.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Puppr, Dogo, YouTube trick videos, local trick classes.",
+      "risks": "Many reviewers are young; the buyer is an adult. Strong, partly free competitors. Next to many live dog-behaviour offers, so it stays about fun tricks. All evidence is App Store reviews."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
