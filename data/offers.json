@@ -48900,6 +48900,188 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-27",
+    "slug": "first-frames",
+    "name": "First Frames",
+    "need": "I've always wanted to learn to animate, but my first animations look bad and I don't know what to practise next.",
+    "headline": "Always wanted to animate, but your first tries look bad? Work through the classic exercises (bouncing ball, pendulum, walk cycle) one at a time, with a check for timing and spacing.",
+    "buyer": "Adults (18+) who like to draw and want to make their first short 2D animations in the app they already use.",
+    "bullets": [
+      "A step-by-step path of classic exercises: bouncing ball, pendulum, flour sack, simple walk cycle.",
+      "For each one, a plain checklist for timing, spacing, squash and stretch, and ease in and out.",
+      "Upload a clip of your attempt, mark what to fix next, and see your attempts side by side over time."
+    ],
+    "price": "$6.99/month",
+    "priceUsd": 7,
+    "priceNote": "Or $39 a year. For adults 18+.",
+    "reasonPrompt": "What app do you animate in, and what have you made so far?",
+    "faq": [
+      {
+        "q": "Do I need a particular animation app?",
+        "a": "No. First Frames teaches the exercises and helps you check your work; you animate in whatever app or paper you already use."
+      },
+      {
+        "q": "Is it linked to FlipaClip, Procreate or any animation app?",
+        "a": "No. First Frames is independent and not affiliated with any animation app, school or studio."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-27",
+      "summary": "People describe always wanting to get into animation, making a first bouncing-ball animation that looked bad, wanting to animate things themselves, deciding to become an animator, and planning to learn sprite animation.",
+      "wtp": "FlipaClip: Draw 2D Animation has 269K App Store ratings and sells FlipaClip Plus at $5.99 to $39.99; Animation Desk has 16K ratings and sells Pro at $4.49 a month or $29.99 a year.",
+      "signals": [
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=946346179/sortby=mosthelpful/json",
+          "who": "Dooditz (App Store review of Animation Desk)",
+          "date": "2018-11-28",
+          "quote": "always wanted to get into animation",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=3/id=946346179/sortby=mosthelpful/json",
+          "who": "jozie (App Store review of Animation Desk)",
+          "date": "2023-07-12",
+          "quote": "I made my first animation, a ball bounce. It looked so bad.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=2/id=1101848914/sortby=mosthelpful/json",
+          "who": "Lexigrin126 (App Store review of FlipaClip)",
+          "date": "2025-06-28",
+          "quote": "always wanted to animate one myself",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=4/id=1101848914/sortby=mosthelpful/json",
+          "who": "hujkilmhhtgxwsu (App Store review of FlipaClip)",
+          "date": "2023-07-02",
+          "quote": "once I decided I wanted to be an animator",
+          "seen": "opened"
+        },
+        {
+          "url": "https://lemmy.ml/comment/8875413",
+          "who": "pixelscript (Lemmy)",
+          "date": "2024-03-02",
+          "quote": "convinced myself I was gonna learn to use it to produce sprite animations",
+          "seen": "opened"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=42528104",
+          "who": "ardit33 (Hacker News)",
+          "date": "2024-12-28",
+          "quote": "illustrations I always wanted to animate",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/flipaclip-draw-2d-animation/id1101848914",
+          "who": "FlipaClip: Draw 2D Animation (App Store)",
+          "date": "2026-10-27",
+          "quote": "269K Ratings; FlipaClip Plus $5.99, $29.99, $39.99",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id946346179",
+          "who": "Animation Desk (App Store)",
+          "date": "2026-10-27",
+          "quote": "16K Ratings; Animation Desk Pro (Month) $4.49; Pro (Year) $29.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "FlipaClip, Animation Desk, Procreate Dreams, YouTube tutorials, online animation courses.",
+      "risks": "The money is mostly in drawing and animation tools, not lessons. Many app reviewers are children, so it's for adults only and must collect no data from children. Free tutorials are strong. Near live first-sketch (learning to draw), but about animation timing and exercises."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-27",
+    "slug": "spark-start",
+    "name": "Spark Start",
+    "need": "I've always wanted to get into hobby electronics, but I keep trying and never get anywhere, and it feels like a multi-year slog.",
+    "headline": "Always wanted to get into electronics but never get anywhere? Follow small low-voltage projects in order, from your first LED to a working gadget, with a plain checklist when it doesn't work.",
+    "buyer": "Adults (18+) with an unused starter kit, Arduino or Raspberry Pi who want to build working battery and USB-powered projects.",
+    "bullets": [
+      "A path of small low-voltage projects in order: LED and resistor, buttons, sensors, a small motor, a finished gadget.",
+      "For each, the parts you need, a wiring check and a 'not working?' checklist.",
+      "A log of what you've built and the skills each project taught, so you can see progress."
+    ],
+    "price": "$5.99/month",
+    "priceUsd": 6,
+    "priceNote": "Or $35 a year. For adults 18+.",
+    "reasonPrompt": "What kit or board do you have, and where did you get stuck last time?",
+    "faq": [
+      {
+        "q": "Is it safe?",
+        "a": "Spark Start only covers low-voltage projects powered by batteries or USB. It never covers mains electricity; never open or work on anything that plugs into the wall. Follow the safety advice for your soldering iron and tools, and work in a ventilated space."
+      },
+      {
+        "q": "Is it linked to Arduino, Raspberry Pi or a kit maker?",
+        "a": "No. Spark Start is independent and not affiliated with Arduino, Raspberry Pi or any kit maker or shop."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-27",
+      "summary": "Adults describe always wanting to get into electronics, trying on and off for years and never getting anywhere, feeling it's a multiyear process, going into software instead, and getting back into it as a hobby.",
+      "wtp": "EE ToolKit, an electronics reference app, has 1.4K App Store ratings and sells its Complete Pro Upgrade for $9.99.",
+      "signals": [
+        {
+          "url": "https://news.ycombinator.com/item?id=36650442",
+          "who": "kaishiro (Hacker News)",
+          "date": "2023-07-09",
+          "quote": "longtime developer who has always wanted to get into electronics",
+          "seen": "opened"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=45115765",
+          "who": "sudosteph (Hacker News)",
+          "date": "2025-09-03",
+          "quote": "tried on and off to get into electronics for years that way and never got anywhere",
+          "seen": "opened"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=44240228",
+          "who": "jesol (Hacker News)",
+          "date": "2025-06-10",
+          "quote": "I want to learn more electronics, but it definitely feels like a multiyear process",
+          "seen": "opened"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=44161134",
+          "who": "nogridbag (Hacker News)",
+          "date": "2025-06-02",
+          "quote": "always wanted to get into electronics and robotics",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=391792609/sortby=mosthelpful/json",
+          "who": "Otaplasmatic (App Store review of EE ToolKit)",
+          "date": "2024-07-21",
+          "quote": "Now I am getting back into electronics as a hobbyist",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id391792609",
+          "who": "EE ToolKit (App Store)",
+          "date": "2026-10-27",
+          "quote": "1.4K Ratings; Complete EE ToolKit Pro Upgrade $9.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Starter kits with booklets, Arduino and Adafruit tutorials, YouTube, maker spaces.",
+      "risks": "The money signal is thin: one paid app with a $9.99 unlock. Most evidence is Hacker News, which leans towards software people. Must stay strictly low-voltage and never cover mains wiring. Free tutorials and cheap kits compete."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

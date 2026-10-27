@@ -23921,5 +23921,189 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "how-to-animate-a-bouncing-ball-for-beginners",
+  "offer": "first-frames",
+  "title": "How to animate a bouncing ball for beginners",
+  "description": "The classic first animation exercise, step by step: timing, spacing, and squash and stretch, frame by frame.",
+  "intro": "The bouncing ball is the first exercise most animators learn, because it teaches timing and spacing without needing drawing skill. You can do it in any animation app, or on paper.",
+  "sections": [
+   {
+    "h": "Set up",
+    "list": [
+     "Pick a frame rate; 12 or 24 frames per second are common choices.",
+     "Draw the ground line and mark the highest point the ball starts from.",
+     "Turn on onion skin, so you can see the frames before and after."
+    ]
+   },
+   {
+    "h": "Key poses first",
+    "list": [
+     "Draw the ball at the top, at the contact with the ground, and at the top of the next, lower bounce.",
+     "Each bounce should be lower than the one before, as the ball loses energy."
+    ]
+   },
+   {
+    "h": "Spacing",
+    "list": [
+     "Near the top of each arc, the ball moves slowly, so draw the frames close together.",
+     "Near the ground, it moves fast, so space the frames further apart.",
+     "Even spacing all the way is the most common reason a first bounce looks wrong."
+    ]
+   },
+   {
+    "h": "Squash and stretch",
+    "list": [
+     "Stretch the ball a little just before and after it hits the ground.",
+     "Squash it flat on the contact frame.",
+     "Keep the ball the same overall size (volume) when you squash and stretch it."
+    ]
+   },
+   {
+    "h": "Check and repeat",
+    "list": [
+     "Play it back at full speed and look for jumps or floaty moments.",
+     "Change one thing at a time and play it again.",
+     "Then try a heavy ball (bowling ball) and a light one (beach ball) to see how timing changes."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "how-to-start-learning-2d-animation-on-your-phone-or-ipad",
+  "offer": "first-frames",
+  "title": "How to start learning 2D animation on your phone or iPad",
+  "description": "A simple plan for adults learning 2D animation in a phone or tablet app, with the exercises to practise first.",
+  "intro": "You don't need expensive software to learn animation. A phone or tablet app with layers and onion skin is enough to learn the basics, which matter far more than the tool.",
+  "sections": [
+   {
+    "h": "What you need",
+    "list": [
+     "An animation app with onion skin, adjustable frame rate and playback.",
+     "A stylus helps on a tablet, but isn't essential to start."
+    ]
+   },
+   {
+    "h": "Exercises in order",
+    "list": [
+     "Bouncing ball: timing and spacing.",
+     "Pendulum: arcs and ease in and out.",
+     "Flour sack or simple character jump: weight and squash and stretch.",
+     "Simple walk cycle: a loop of a character walking."
+    ]
+   },
+   {
+    "h": "How to practise",
+    "list": [
+     "Keep each exercise short: a second or two of animation.",
+     "Play it back often, and fix one thing at a time.",
+     "Redo the same exercise a week later and compare.",
+     "Keep simple shapes until the movement looks right; detail comes later."
+    ]
+   },
+   {
+    "h": "Keep going",
+    "p": [
+     "Short daily practice beats long weekend sessions. Save every attempt, so you can see how far you've come."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "how-to-get-into-electronics-as-a-hobby",
+  "offer": "spark-start",
+  "title": "How to get into electronics as a hobby: a first-month plan for adults",
+  "description": "A simple low-voltage starter plan for adults getting into hobby electronics, from first LED to a small working project.",
+  "intro": "Many adults buy a kit and stall. Small projects that work, done in order, keep you going. This guide covers only low-voltage projects powered by batteries or USB; never work on mains electricity.",
+  "sections": [
+   {
+    "h": "What you need",
+    "list": [
+     "A breadboard, jumper wires, LEDs, resistors, a few buttons and a battery pack or USB power.",
+     "A microcontroller board such as an Arduino-compatible board, if you want to program things.",
+     "A cheap multimeter for checking voltage and connections."
+    ]
+   },
+   {
+    "h": "Week 1: light an LED",
+    "list": [
+     "Learn why an LED needs a resistor in series.",
+     "Build the circuit on a breadboard, then add a button to switch it."
+    ]
+   },
+   {
+    "h": "Week 2: first code",
+    "list": [
+     "Make an LED blink from a microcontroller board using its standard example.",
+     "Change the timing, then add a second LED."
+    ]
+   },
+   {
+    "h": "Week 3: sensors",
+    "list": [
+     "Read a button, a light sensor or a temperature sensor.",
+     "Make an LED react to it."
+    ]
+   },
+   {
+    "h": "Week 4: a small finished project",
+    "list": [
+     "Pick something simple you'd actually use, such as a plant-soil reminder or a desk timer.",
+     "Write down what each part does, so you remember next time.",
+     "Finishing something small matters more than starting something big."
+    ]
+   },
+   {
+    "h": "When it doesn't work",
+    "list": [
+     "Check power and ground first.",
+     "Check each wire against your diagram, one at a time.",
+     "Use the multimeter to check the voltage at each point."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "how-to-solder-for-beginners",
+  "offer": "spark-start",
+  "title": "How to solder for beginners: your first practice joints",
+  "description": "Safe, simple steps to learn soldering on practice boards before you work on a real project.",
+  "intro": "Soldering joins electronic parts with melted metal. It's easy to learn with a little practice. Only solder low-voltage projects, and never work on anything that plugs into the wall.",
+  "sections": [
+   {
+    "h": "Safety first",
+    "list": [
+     "The iron is very hot: always put it back in its stand.",
+     "Work in a ventilated space and avoid breathing the fumes.",
+     "Wear eye protection, and wash your hands after soldering.",
+     "Lead-free solder is a common choice for hobbyists."
+    ]
+   },
+   {
+    "h": "Set up",
+    "list": [
+     "A temperature-controlled iron, a stand, a damp sponge or brass wool, solder and a practice board.",
+     "Tin the tip: melt a little solder onto the clean tip."
+    ]
+   },
+   {
+    "h": "Make a joint",
+    "list": [
+     "Push the part's leg through the board.",
+     "Touch the iron to both the pad and the leg for a couple of seconds.",
+     "Feed solder into the joint (not onto the iron) until it flows around the leg.",
+     "Remove the solder, then the iron, and let it cool without moving it."
+    ]
+   },
+   {
+    "h": "Check your joints",
+    "list": [
+     "A good joint is smooth, shiny and shaped like a small cone.",
+     "A ball-shaped or dull, grainy joint usually needs reheating.",
+     "Practise ten or twenty joints on a practice board before a real project."
+    ]
+   }
+  ]
  }
 ]
