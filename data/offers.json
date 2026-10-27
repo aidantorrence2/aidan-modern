@@ -45533,6 +45533,97 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-27",
+    "slug": "send-it-back",
+    "name": "Send It Back",
+    "need": "I buy things online meaning to send them back, then miss the return window and end up stuck with them or losing the refund.",
+    "headline": "Keep missing online return deadlines? Keep every open return in one list with its real deadline, get a keep-or-return nudge, and see the money you got back.",
+    "buyer": "Adults (18+) who shop online, mean to send things back and miss the return date.",
+    "bullets": [
+      "One list of open returns, each with its real deadline from the retailer's policy.",
+      "A keep-or-return nudge two days after delivery, then reminders 7, 3 and 1 days before the deadline, with the next step.",
+      "A refund check with tracking and drop-off receipt, and a running tally of money got back versus kept."
+    ],
+    "price": "$2.99/month",
+    "priceUsd": 3,
+    "priceNote": "Or $14.99 a year. For adults 18+.",
+    "reasonPrompt": "Roughly how often do you miss a return deadline?",
+    "faq": [
+      {
+        "q": "Is it linked to a retailer or returns service?",
+        "a": "No. Send It Back is independent, not affiliated with any retailer, marketplace, courier or returns service, and doesn't collect parcels."
+      },
+      {
+        "q": "Does it read my email?",
+        "a": "No. You add each return yourself, so it only knows what you choose to tell it."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-27",
+      "summary": "Shoppers describe the return window closing so they're stuck with things they don't love, piles of things they didn't bother to return, and losing money on items they missed the return window for.",
+      "wtp": "ReturnQueen, a paid returns pickup service with a monthly membership, has 142 App Store ratings; reviewers call it worth every penny, and one says a missed return date alone would make it worth it.",
+      "signals": [
+        {
+          "url": "https://youlookfab.com/welookfab/topic/the-shame-of-returns",
+          "who": "Janet (YouLookFab)",
+          "date": "undated",
+          "quote": "the window closes, so I",
+          "seen": "opened"
+        },
+        {
+          "url": "https://youlookfab.com/welookfab/topic/the-shame-of-returns",
+          "who": "velvetychocolate (YouLookFab)",
+          "date": "undated",
+          "quote": "t bother to return",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1537845231/sortby=mosthelpful/json",
+          "who": "Nina Hog (App Store review of ReturnQueen)",
+          "date": "2023-04-26",
+          "quote": "i end up losing out on money of things I miss the return window on",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1537845231/sortby=mosthelpful/json",
+          "who": "Layla Wright (App Store review of ReturnQueen)",
+          "date": "2023-04-20",
+          "quote": "forgetting to return things",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1537845231/sortby=mosthelpful/json",
+          "who": "Ninetales nick (App Store review of ReturnQueen)",
+          "date": "2022-10-26",
+          "quote": "missing return windows",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1537845231/sortby=mosthelpful/json",
+          "who": "wifeandmonmy (App Store review of ReturnQueen)",
+          "date": "2023-05-20",
+          "quote": "I missed one return date last year and it would be worth it just for that",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1537845231",
+          "who": "ReturnQueen (App Store)",
+          "date": "2026-10-27",
+          "quote": "142 Ratings; paid membership (reviewers: 'minimum monthly fee', 'Worth every penny')",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "ReturnQueen, retailer apps, calendar reminders, Reclaimo.",
+      "risks": "The paid comparison is a pickup service, not a reminder app, and its price isn't shown on its App Store page. YouLookFab posts are old and undated; Mumsnet evidence couldn't be re-checked. Near live price-clawback (price drops), refund-route (faulty goods) and doorstep-dossier (missing parcels), but about return deadlines."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

@@ -21145,5 +21145,79 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "how-to-stop-missing-return-deadlines-on-online-orders",
+  "offer": "send-it-back",
+  "title": "How to stop missing return deadlines on online orders",
+  "description": "Simple habits to make sure you send things back before the return window closes.",
+  "intro": "Missing a return deadline is easy: the parcel sits in the hall, the window closes and you're stuck with it. A few simple habits make it much less likely.",
+  "sections": [
+   {
+    "h": "Decide quickly",
+    "list": [
+     "Try things on or test them within a day or two of delivery.",
+     "Decide keep or return straight away, while you still have the packaging."
+    ]
+   },
+   {
+    "h": "Note the real deadline",
+    "list": [
+     "Check the retailer's returns policy: some count from delivery, others from the order or dispatch date.",
+     "Write the deadline down somewhere you'll see it, with a reminder a few days before."
+    ]
+   },
+   {
+    "h": "Make returning easy",
+    "list": [
+     "Keep the packaging and any returns label until you've decided.",
+     "Put returns by the front door or in the car so you don't forget them.",
+     "Book the collection or drop-off as soon as you decide."
+    ]
+   },
+   {
+    "h": "Keep proof",
+    "list": [
+     "Keep the drop-off receipt or tracking number until the refund arrives.",
+     "Check your refund has come through, and chase it if it hasn't."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "missed-the-return-window-what-can-you-do",
+  "offer": "send-it-back",
+  "title": "Missed the return window? What you can still do",
+  "description": "Options to try if you've missed a retailer's return deadline, and your rights if the item is faulty.",
+  "intro": "If you've missed a return deadline, it's still worth asking. Many retailers are flexible, especially if you're only a little late. This guide is general information, not legal advice; rules differ by country.",
+  "sections": [
+   {
+    "h": "Ask the retailer anyway",
+    "list": [
+     "Contact customer service politely, explain the situation and ask if they'll accept a late return.",
+     "Some will offer a refund, an exchange or store credit, especially for loyal customers."
+    ]
+   },
+   {
+    "h": "If the item is faulty",
+    "list": [
+     "Your rights for faulty goods are usually separate from the retailer's change-of-mind returns policy.",
+     "In the UK, for example, the Consumer Rights Act gives you rights to a repair, replacement or refund for faulty goods; other countries have similar laws. Check your country's consumer advice service."
+    ]
+   },
+   {
+    "h": "Other options",
+    "list": [
+     "Sell the item second-hand or give it as a gift.",
+     "Check whether your card or payment provider offers any purchase protection."
+    ]
+   },
+   {
+    "h": "Next time",
+    "p": [
+     "Write down the return deadline as soon as the parcel arrives, and set a reminder a few days before it."
+    ]
+   }
+  ]
  }
 ]
