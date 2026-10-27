@@ -5,7 +5,7 @@ import imageData from '@/data/theme-images.json'
 // /your-moodboard and in the moodboard lines.
 import legacyImageData from '@/data/theme-images-legacy.json'
 
-export type ThemeId = 'sea' | 'old-town' | 'boat' | 'indoor'
+export type ThemeId = 'sea' | 'old-town' | 'boat' | 'city' | 'murals' | 'nature' | 'indoor'
 export type StartingTheme = ThemeId | 'any'
 // subjects: who is in the photo (woman / man / couple / brand — see
 // scripts/prepare-pinterest-library.mjs); collab: shown in the free
