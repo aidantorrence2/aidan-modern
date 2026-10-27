@@ -21374,5 +21374,82 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "how-to-make-the-treadmill-less-boring",
+  "offer": "treadmill-escape",
+  "title": "How to make the treadmill less boring",
+  "description": "Simple ways to make treadmill walks and runs go faster, so you dread them less and keep going.",
+  "intro": "Lots of people find the treadmill boring. The usual fix is to change something every few minutes so there's always a next thing to aim for. Use the safety clip, and check with your doctor first if you have a health condition.",
+  "sections": [
+   {
+    "h": "Change something every few minutes",
+    "list": [
+     "Speed intervals: one or two minutes a little faster, then a minute or two easier.",
+     "Incline hills: raise the incline for a few minutes, then bring it back down.",
+     "Pyramids: step speed or incline up each minute, then back down."
+    ]
+   },
+   {
+    "h": "Give your mind something to do",
+    "list": [
+     "Save a podcast, audiobook or show just for treadmill time.",
+     "Make a playlist where each song is one interval.",
+     "Count down in small chunks instead of watching the total time."
+    ]
+   },
+   {
+    "h": "Keep sessions short",
+    "list": [
+     "Start with 15 or 20 minutes; it's easier to start than an hour.",
+     "Cover the display if watching the clock makes it worse."
+    ]
+   },
+   {
+    "h": "Track it",
+    "p": [
+     "Write down each session's time and distance. Seeing a list of sessions grow is motivating in itself."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "treadmill-interval-workouts-for-beginners",
+  "offer": "treadmill-escape",
+  "title": "Treadmill interval workouts for beginners who hate the treadmill",
+  "description": "Three simple beginner treadmill interval workouts, for walking or running, that keep things changing.",
+  "intro": "Intervals make treadmill time pass faster because there's always a change coming. Pick speeds that suit you: easy should feel comfortable, and harder should feel challenging but steady. This is general information, not medical advice; use the safety clip and stop if you feel unwell.",
+  "sections": [
+   {
+    "h": "Workout 1: walk intervals (20 minutes)",
+    "list": [
+     "5 minutes easy walking to warm up.",
+     "Then repeat 5 times: 1 minute brisk walking, 1 minute easy.",
+     "5 minutes easy to cool down."
+    ]
+   },
+   {
+    "h": "Workout 2: incline hills (20 minutes)",
+    "list": [
+     "5 minutes easy, flat.",
+     "Then repeat 4 times: 2 minutes at a gentle incline, 1 minute flat.",
+     "3 minutes easy to cool down."
+    ]
+   },
+   {
+    "h": "Workout 3: walk-jog (20 minutes)",
+    "list": [
+     "5 minutes brisk walking.",
+     "Then repeat 6 times: 30 seconds easy jog, 90 seconds walk.",
+     "3 minutes easy walking to cool down."
+    ]
+   },
+   {
+    "h": "Make progress slowly",
+    "p": [
+     "Each week, add one more interval or a few more seconds of the harder part, rather than going faster all at once."
+    ]
+   }
+  ]
  }
 ]

@@ -45792,6 +45792,104 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-27",
+    "slug": "treadmill-escape",
+    "name": "Treadmill Escape",
+    "need": "I've got a treadmill (or use one at the gym), but it's so boring that I dread getting on it and can't stick with it.",
+    "headline": "Dread the treadmill because it's so boring? Pick a short session with something new every few minutes (intervals, inclines, challenges) and log each walk or run.",
+    "buyer": "Adults (18+) who walk or run on a home or gym treadmill and keep quitting because it's boring.",
+    "bullets": [
+      "Short sessions that change every few minutes: speed intervals, incline hills, countdown challenges.",
+      "A different plan each time, picked for how long you've got and how you feel today.",
+      "A simple log of time, distance and sessions done, with no pressure streaks."
+    ],
+    "price": "$5/month",
+    "priceUsd": 5,
+    "priceNote": "Or $30 a year. For adults 18+.",
+    "reasonPrompt": "How long do you usually last on the treadmill before you're bored?",
+    "faq": [
+      {
+        "q": "Is this medical or weight-loss advice?",
+        "a": "No. Treadmill Escape is a general workout plan and log; it makes no health or weight-loss claims. If you have a health condition or haven't exercised in a while, check with your doctor first, use the safety clip, and stop if you feel unwell."
+      },
+      {
+        "q": "Is it linked to a treadmill brand?",
+        "a": "No. Treadmill Escape works with any treadmill and isn't affiliated with any treadmill maker or fitness app."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-27",
+      "summary": "People describe despising getting on their treadmill, finding it the most boring activity on earth, dreading the routine and giving up because they get bored.",
+      "wtp": "BitGym, a virtual-scenery app for treadmills and other cardio machines, has 1.5K App Store ratings and sells a Monthly Membership at $13.99 or $99.99 for a longer membership.",
+      "signals": [
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=651190653/sortby=mosthelpful/json",
+          "who": "Luckypisces (App Store review of BitGym)",
+          "date": "2025-04-12",
+          "quote": "while I have a great treadmill, I despise getting on it",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=2/id=651190653/sortby=mosthelpful/json",
+          "who": "brenwhite (App Store review of BitGym)",
+          "date": "2022-07-26",
+          "quote": "The treadmill is so boring",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=868994555/sortby=mosthelpful/json",
+          "who": "gms721 (App Store review of Treadmill Trails)",
+          "date": "2020-11-12",
+          "quote": "I hate walking on the treadmill. I get bored easily.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=868994555/sortby=mosthelpful/json",
+          "who": "walk1385 (App Store review of Treadmill Trails)",
+          "date": "2021-01-13",
+          "quote": "I dreaded the boring routine of treadmill walking/running.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=2/id=868994555/sortby=mosthelpful/json",
+          "who": "Livingfree777 (App Store review of Treadmill Trails)",
+          "date": "2020-12-07",
+          "quote": "always been bored on the treadmill and couldn",
+          "seen": "opened"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=13201791",
+          "who": "faitswulff (Hacker News)",
+          "date": "2016-12-17",
+          "quote": "the treadmill was the most boring activity on earth",
+          "seen": "opened"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=40707056",
+          "who": "resource_waste (Hacker News)",
+          "date": "2024-06-17",
+          "quote": "I left the treadmill, it was so boring.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id651190653",
+          "who": "BitGym (App Store)",
+          "date": "2026-10-27",
+          "quote": "1.5K Ratings; Monthly Membership $13.99; Membership $99.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "BitGym, iFIT, Peloton, treadmill workout apps, TV and scenic videos.",
+      "risks": "Big players (iFIT, Peloton) and free scenic videos exist. Near live rower-routine (rowing machines), know-should-exercise-never and run-again, but about treadmill boredom. No weight-loss claims."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
