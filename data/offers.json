@@ -49614,6 +49614,97 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-27",
+    "slug": "first-shift",
+    "name": "First Shift",
+    "need": "I want to learn to play ice hockey as an adult, but I can barely skate and I'm worried about being the new, older one who can't keep up.",
+    "headline": "Want to play hockey as an adult but can barely skate? Tick off a skating ladder after each public skate, practise stick-handling at home, and walk into your first beginner game with a plan.",
+    "buyer": "Adults (18+) who never played ice hockey, or haven't skated in years, and want to join a learn-to-play class or a beginner league.",
+    "bullets": [
+      "A skating ladder ticked off after each public skate: stride, stopping both ways, crossovers, backwards.",
+      "10-minute home stick-handling sessions, logged, plus a plain gear and fit checklist (it sells nothing).",
+      "What kinds of ice time to look for, a first-game plan, and a one-minute post-game log that picks next week's focus."
+    ],
+    "price": "$4.99/month",
+    "priceUsd": 5,
+    "priceNote": "Or $29 a year. For adults 18+.",
+    "reasonPrompt": "How well can you skate now, and what kind of hockey do you want to play?",
+    "faq": [
+      {
+        "q": "Is it safe?",
+        "a": "Ice hockey carries a real risk of falls and injury. Always wear a certified helmet and full protective gear, take a coached learn-to-skate or learn-to-play class, and follow your rink's rules. First Shift is a practice tracker, not coaching or medical advice; check with a doctor before starting if you have a health condition."
+      },
+      {
+        "q": "Is it linked to a rink, league or gear brand?",
+        "a": "No. First Shift is independent, not affiliated with any rink, league, governing body or gear brand, and sells no gear."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-27",
+      "summary": "Adults describe wanting to learn hockey at 38 while barely able to skate, worrying about being the old, new player who can't keep up, having skated once in 14 years, and finding stopping a real challenge after deciding to try hockey at 34.",
+      "wtp": "The Tim Hortons Iceplex Never Ever League for adults who have never played costs $302.50 for 11 weeks; Johnny's Ice House runs Adult 101 sessions for true beginners at $40 a drop-in.",
+      "signals": [
+        {
+          "url": "https://www.tacomaworld.com/threads/new-at-hockey.525067/",
+          "who": "FFBlack (TacomaWorld)",
+          "date": "2017-12-20",
+          "quote": "I'm interested in learning to play hockey. I'm 38 can barely skate",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.tacomaworld.com/threads/new-at-hockey.525067/",
+          "who": "FFBlack (TacomaWorld)",
+          "date": "2017-12-20",
+          "quote": "being the old guy and being new",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.tacomaworld.com/threads/new-at-hockey.525067/",
+          "who": "HawkShot99 (TacomaWorld)",
+          "date": "2018-01-05",
+          "quote": "skated 1 time in the 14 yrs",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.hunttalk.com/threads/any-hockey-players-out-there.319373/post-3600909",
+          "who": "Fire_9 (HuntTalk)",
+          "date": "2023-05-13",
+          "quote": "decided to give ice hockey a try after 3-4 times on my ice skates",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.hunttalk.com/threads/any-hockey-players-out-there.319373/post-3600909",
+          "who": "Fire_9 (HuntTalk)",
+          "date": "2023-05-14",
+          "quote": "Learning to stop has been a real challenge",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.timhortonsiceplex.com/nevereverleague.html",
+          "who": "Tim Hortons Iceplex (Never Ever League)",
+          "date": "2026-10-27",
+          "quote": "$302.50 for 11 weeks, for adults who have never played",
+          "seen": "opened"
+        },
+        {
+          "url": "https://johnnysicehouse.com/adult-instructional-hockey",
+          "who": "Johnny's Ice House (Adult 101)",
+          "date": "2026-10-27",
+          "quote": "Adult 101 drop-in $40",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Adult learn-to-play programmes and never-ever leagues, hockey training apps for existing players, YouTube drills.",
+      "risks": "Only 3 named people (one is a returning player), on 2 forums, 2017-2023. Training apps target existing players, so the money signal is paid adult beginner programmes. Injury risk: must always point to coached classes and full gear. Near live glide-start (fear of falling on skates) and late-kickoff (adult soccer), but about learning hockey."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
