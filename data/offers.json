@@ -46324,6 +46324,167 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-27",
+    "slug": "hands-together",
+    "name": "Hands Together",
+    "need": "I can play each hand on the piano, but I can't get both hands to work together at the same time.",
+    "headline": "Can play each hand but not both together? Practise tiny two-hand steps at a slow, steady pulse, add one note at a time, and log the tempo you can hold.",
+    "buyer": "Adult self-taught piano and keyboard learners who are stuck on playing hands together.",
+    "bullets": [
+      "Short hands-together drills that start with one note per hand and add one note at a time.",
+      "A slow, steady pulse you set yourself, raised only when a passage is clean three times in a row.",
+      "A tempo log for each piece, so you can see the hands-together speed you can actually hold."
+    ],
+    "price": "$7/month",
+    "priceUsd": 7,
+    "priceNote": "Or $42 a year. For adults 18+.",
+    "reasonPrompt": "Which piece or exercise falls apart when you put the hands together?",
+    "faq": [
+      {
+        "q": "Do I need a particular piano app or keyboard?",
+        "a": "No. Hands Together works alongside any piano, keyboard or lesson app you already use."
+      },
+      {
+        "q": "Is it linked to a piano app or teacher?",
+        "a": "No. Hands Together is independent, not affiliated with any piano app, instrument maker or teacher. If playing causes pain, stop and rest."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-27",
+      "summary": "Adult piano learners describe not being able to move both hands independently at the same time, finding it hard to use both hands as piano requires, and lacking the muscle memory to play both hands at once.",
+      "wtp": "Simply Piano has 860K App Store ratings and sells plans from $24.95 to $149.99 a year; Skoove has 22K ratings with Premium from $9.99 to $149.99.",
+      "signals": [
+        {
+          "url": "https://lemmy.world/comment/17279002",
+          "who": "nihilomaster (Lemmy)",
+          "date": "2025-05-26",
+          "quote": "move both hands independently at the same time",
+          "seen": "opened"
+        },
+        {
+          "url": "https://lemmy.world/comment/15643611",
+          "who": "SoftestSapphic (Lemmy)",
+          "date": "2025-03-12",
+          "quote": "use both hands how they are required to play piano",
+          "seen": "opened"
+        },
+        {
+          "url": "https://lemmy.world/post/30013055",
+          "who": "mrnarwall (Lemmy)",
+          "date": "2025-05-21",
+          "quote": "muscle memory required to play both hands at once",
+          "seen": "opened"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=2622672",
+          "who": "zzeroparticle (Hacker News)",
+          "date": "2011-06-05",
+          "quote": "I have difficulty getting both hands to work together",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1019442026",
+          "who": "Simply Piano (App Store)",
+          "date": "2026-10-27",
+          "quote": "860K Ratings; Individual Plan $24.95; 12 months Premium $119.99, $149.99",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1160668178",
+          "who": "Skoove (App Store)",
+          "date": "2026-10-27",
+          "quote": "22K Ratings; Skoove Premium $19.99 to $149.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Simply Piano, Skoove, Flowkey, piano teachers, YouTube.",
+      "risks": "Big piano apps include some hands-together lessons. Evidence is from Lemmy and Hacker News only. Near live read-the-notes (sheet reading) and strum-and-sing (doing two parts at once), but about piano hand independence."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-27",
+    "slug": "barre-ready",
+    "name": "Barre Ready",
+    "need": "I'm learning guitar and can't get barre chords, especially the F chord, to ring clean, and it makes me want to give up.",
+    "headline": "Stuck on the F chord and barre chords? Follow a step ladder from partial barres to the full shape, check string by string what's buzzing, and log your progress.",
+    "buyer": "Adult beginner and returning guitarists past open chords who are stuck on F and other barre chords.",
+    "bullets": [
+      "A step ladder from easy partial barres up to the full F shape, a few minutes a day.",
+      "A string-by-string check to find which note is buzzing or muted, with the usual fixes.",
+      "A simple log of clean strings and chord changes per minute, so progress is visible."
+    ],
+    "price": "$7/month",
+    "priceUsd": 7,
+    "priceNote": "Or $42 a year. For adults 18+.",
+    "reasonPrompt": "Which barre chord gives you the most trouble?",
+    "faq": [
+      {
+        "q": "What if my guitar is the problem?",
+        "a": "Sometimes it is: strings set high above the frets make barre chords much harder. Barre Ready includes a simple check, and a guitar shop can adjust the setup. If your hand hurts, stop and rest; don't push through pain."
+      },
+      {
+        "q": "Is it linked to a guitar brand or lesson app?",
+        "a": "No. Barre Ready is independent, not affiliated with any guitar maker, lesson app or teacher."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-27",
+      "summary": "Guitar learners describe the F chord doing its best to beat them, barre chords killing their interest in learning, and giving up on barre chords altogether.",
+      "wtp": "Fender Play has 61K App Store ratings and sells plans from $7.99 to $19.99 a month or $44.99 to $149.99 a year; Justin Guitar has 27K ratings with plans from $8.99 a month.",
+      "signals": [
+        {
+          "url": "https://lemmy.world/comment/1862673",
+          "who": "Lordran_Hollow (Lemmy)",
+          "date": "2023-07-29",
+          "quote": "the F chord is doing its best to kick my ass",
+          "seen": "opened"
+        },
+        {
+          "url": "https://midwest.social/comment/6161892",
+          "who": "figjam (Lemmy, midwest.social)",
+          "date": "2024-01-13",
+          "quote": "Barre chords killed my interest in learning guitar",
+          "seen": "opened"
+        },
+        {
+          "url": "https://sh.itjust.works/comment/15786349",
+          "who": "Boozilla (Lemmy, sh.itjust.works)",
+          "date": "2024-12-28",
+          "quote": "And barre chords...forgeddaboudit",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1226057939",
+          "who": "Fender Play (App Store)",
+          "date": "2026-10-27",
+          "quote": "61K Ratings; Monthly Plan $7.99 to $19.99; Annual Plan $44.99 to $149.99",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1176125504",
+          "who": "Justin Guitar (App Store)",
+          "date": "2026-10-27",
+          "quote": "27K Ratings; Full Access 1 Month $8.99; Full Access 1 Year $64.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Fender Play, Justin Guitar, Yousician, YouTube lessons, guitar teachers.",
+      "risks": "Near live stick-with-guitar (general plan for people who keep quitting) and uke-unstuck, but only about barre chords. Evidence is all Lemmy, 2023-2024. Big lesson apps cover barre chords inside general courses."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

@@ -21749,5 +21749,95 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "how-to-play-piano-with-both-hands-at-the-same-time",
+  "offer": "hands-together",
+  "title": "How to play piano with both hands at the same time",
+  "description": "A slow, step-by-step way for adult beginners to get both hands working together on the piano.",
+  "intro": "Almost every piano learner hits the point where each hand works alone but not together. It's a normal stage, and it gets easier with small, slow steps.",
+  "sections": [
+   {
+    "h": "Learn each hand first",
+    "list": [
+     "Play the right hand until it's comfortable without looking.",
+     "Do the same with the left hand.",
+     "You don't need them perfect; you need them familiar."
+    ]
+   },
+   {
+    "h": "Put them together in tiny pieces",
+    "list": [
+     "Take just one or two beats where both hands play.",
+     "Play them together very slowly, then stop.",
+     "Add the next beat only when the first is clean."
+    ]
+   },
+   {
+    "h": "Slow down more than feels necessary",
+    "list": [
+     "Use a metronome at a speed where you can play without stopping.",
+     "Raise the speed a little only after three clean run-throughs."
+    ]
+   },
+   {
+    "h": "Find where the hands meet",
+    "list": [
+     "Mark on the music where both hands play at the same moment.",
+     "Practise just those moments."
+    ]
+   },
+   {
+    "h": "Keep sessions short",
+    "p": [
+     "Ten or fifteen focused minutes a day often works better than an hour once a week. Stop if your hands or wrists hurt."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "how-to-play-the-f-barre-chord-without-buzzing",
+  "offer": "barre-ready",
+  "title": "How to play the F barre chord without buzzing",
+  "description": "Why the F barre chord is so hard on guitar, and practical steps to get every string ringing clean.",
+  "intro": "The F barre chord stops a lot of guitar learners. Most buzzing comes from finger position, thumb position or the guitar's setup, rather than a lack of strength. Stop if your hand hurts.",
+  "sections": [
+   {
+    "h": "Check your guitar",
+    "list": [
+     "If the strings sit high above the frets, barre chords are much harder.",
+     "A guitar shop can lower the action and check the setup, often cheaply."
+    ]
+   },
+   {
+    "h": "Position the barre",
+    "list": [
+     "Lay your first finger just behind the first fret, not on top of it.",
+     "Roll the finger slightly onto its bony edge, which presses more evenly.",
+     "Keep your thumb behind the neck, roughly behind your middle finger."
+    ]
+   },
+   {
+    "h": "Find the buzz",
+    "list": [
+     "Pick each string one at a time.",
+     "If a string buzzes or is muted, adjust just that finger and try again."
+    ]
+   },
+   {
+    "h": "Build up in steps",
+    "list": [
+     "Start with a small barre over just the top two or three strings.",
+     "Move the shape a few frets up the neck, where it's easier, then work back down.",
+     "Practise for a few minutes at a time, a few times a day."
+    ]
+   },
+   {
+    "h": "Use less pressure than you think",
+    "p": [
+     "Squeeze until the notes ring, then ease off slightly. Pulling back with your arm a little can help more than squeezing harder."
+    ]
+   }
+  ]
  }
 ]
