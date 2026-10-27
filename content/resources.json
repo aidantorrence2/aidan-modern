@@ -21677,5 +21677,77 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "how-to-keep-track-of-buy-now-pay-later-payments",
+  "offer": "due-line",
+  "title": "How to keep track of buy now pay later payments across providers",
+  "description": "A simple way to see all your pay-later instalments in one place, so payments don't take you by surprise.",
+  "intro": "Pay-later plans are easy to start and easy to lose track of, especially across several providers. This guide is general information, not financial advice. If repayments feel unmanageable, contact a free debt charity.",
+  "sections": [
+   {
+    "h": "List every plan",
+    "list": [
+     "Open each provider's app and write down every active plan: provider, amount left, instalment amount and dates.",
+     "Include plans from shops and PayPal as well as the big pay-later providers."
+    ]
+   },
+   {
+    "h": "Put them in date order",
+    "list": [
+     "Make one list of every upcoming payment by date.",
+     "Mark your payday, and total what's due before it.",
+     "Look for weeks where several payments land together."
+    ]
+   },
+   {
+    "h": "Avoid surprises",
+    "list": [
+     "Set reminders a couple of days before each payment.",
+     "Make sure the card or account each plan uses will have money in it.",
+     "If a payment might fail, contact the provider before it's due."
+    ]
+   },
+   {
+    "h": "Before starting a new plan",
+    "p": [
+     "Add the new instalments to your list first, and check how much it adds to each coming month. If it doesn't fit, wait."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "what-happens-if-you-miss-a-buy-now-pay-later-payment",
+  "offer": "due-line",
+  "title": "What happens if you miss a buy now pay later payment?",
+  "description": "What usually happens when a pay-later instalment fails, and practical steps to take if you're struggling to keep up.",
+  "intro": "Missing a pay-later payment is common, and providers handle it differently. Check your provider's terms for the details. This guide is general information, not financial or legal advice.",
+  "sections": [
+   {
+    "h": "What can happen",
+    "list": [
+     "The provider may try to take the payment again.",
+     "Some providers charge late fees.",
+     "Missed payments may be reported to credit reference agencies, depending on the provider and country.",
+     "You may be blocked from new plans until you catch up."
+    ]
+   },
+   {
+    "h": "What to do",
+    "list": [
+     "Contact the provider as soon as you know a payment will be late; many have options to help.",
+     "Pay what you can, and keep a record of what you've paid.",
+     "Check your bank account for failed payment charges too."
+    ]
+   },
+   {
+    "h": "If you're struggling",
+    "list": [
+     "Stop taking on new plans for now.",
+     "List everything you owe and when it's due.",
+     "Get free, confidential help from a debt charity, such as StepChange or National Debtline in the UK, or a nonprofit credit counsellor in the US."
+    ]
+   }
+  ]
  }
 ]

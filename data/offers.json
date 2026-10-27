@@ -46240,6 +46240,90 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-27",
+    "slug": "due-line",
+    "name": "Due Line",
+    "need": "I've got buy-now-pay-later plans with several providers and I keep losing track of what's coming out of my account and when.",
+    "headline": "Pay-later plans with several providers? See every instalment on one dated list, what's due before payday, a reminder before each one, and a warning when payments bunch up.",
+    "buyer": "Adults (18+) with pay-later plans at several providers who lose track of what leaves their account and when.",
+    "bullets": [
+      "Every instalment from every provider on one date-ordered list, entered by hand; no bank or provider log-in.",
+      "Set payday once and see what's due before it as one number, with a reminder two days before each payment.",
+      "A warning when several payments land in the same week, a pause screen before a new plan, and a paid-off countdown."
+    ],
+    "price": "$2.99/month",
+    "priceUsd": 3,
+    "priceNote": "Or $14.99 a year. For adults 18+.",
+    "reasonPrompt": "How many pay-later plans do you have running right now?",
+    "faq": [
+      {
+        "q": "Is this financial or debt advice?",
+        "a": "No. Due Line is a simple tracker; it doesn't lend, move money or give financial advice. If repayments feel unmanageable, free, confidential help is available from debt charities such as StepChange or National Debtline in the UK, or a nonprofit credit counsellor in the US."
+      },
+      {
+        "q": "Is it linked to Klarna, Clearpay, PayPal or any lender?",
+        "a": "No. Due Line is independent and not affiliated with Klarna, Clearpay, Afterpay, PayPal, Zilch or any lender, and never asks for your log-ins."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-27",
+      "summary": "People describe getting into trouble with pay-later plans across Klarna, Clearpay and Zilch, payments they didn't expect, late fees from bounced direct debits, defaulting on Pay in 3, and how easy it is to lose track.",
+      "wtp": "Debt Payoff Planner, a debt tracking app, has 7.4K App Store ratings and sells subscriptions at $6.99 a month, $13.99 for three months or $27.99 a year.",
+      "signals": [
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/6451918/how-to-stop-klarna-payments-going-out",
+          "who": "mumof4littleguys (MoneySavingExpert)",
+          "date": "2023-06-08",
+          "quote": "I have got myself in so much trouble with buy now pay later such as klarna, clearpay and zilch",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/6614660/from-rock-bottom-to-debt-free-my-journey",
+          "who": "Stormy817 (MoneySavingExpert)",
+          "date": "2025-06-26",
+          "quote": "some BNPL balances which I",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/6664914/paypal-woes",
+          "who": "Peachycats (MoneySavingExpert)",
+          "date": "2026-04-19",
+          "quote": "I had defaulted on paying my PayPal pay in 3",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/6432261/klarna-arrears-query",
+          "who": "foldydog1234 (MoneySavingExpert)",
+          "date": "2023-03-13",
+          "quote": "one late fee payment (incurred due to the bounced DD)",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/comment/77797189#Comment_77797189",
+          "who": "Mrs_Ryan (MoneySavingExpert)",
+          "date": "2020-11-20",
+          "quote": "very very easy to lose track and control",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1009323715",
+          "who": "Debt Payoff Planner (App Store)",
+          "date": "2026-10-27",
+          "quote": "7.4K Ratings; 1 Month Subscription $6.99; 3 Month $13.99; 12 Month $27.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Provider apps, Debt Payoff Planner, budgeting apps, spreadsheets.",
+      "risks": "All evidence is from one UK forum; only one poster describes several providers at once. The paid app is a general debt tool. Provider apps track their own plans. Money topic: no financial advice, points to free debt charities. Near live payoff-date and get-out-debt-overwhelmed, but about pay-later instalment dates."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
