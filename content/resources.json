@@ -23048,5 +23048,91 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "how-to-learn-to-read-chinese-when-you-can-already-speak-it",
+  "offer": "hanzi-catchup",
+  "title": "How to learn to read Chinese when you can already speak it",
+  "description": "A practical approach for heritage speakers who understand Mandarin but can't read or write Chinese characters.",
+  "intro": "If you grew up speaking Mandarin at home, you already have a big head start: you know thousands of words. Learning to read means linking characters to words you already know, which is very different from starting from zero.",
+  "sections": [
+   {
+    "h": "Start from words you know",
+    "list": [
+     "Learn characters for words you use every day: family words, food, numbers, common verbs.",
+     "Because you know the meaning and sound, each character only has one new thing to learn: its shape."
+    ]
+   },
+   {
+    "h": "Learn the building blocks",
+    "list": [
+     "Many characters are made of common parts (radicals) that hint at meaning or sound.",
+     "Learning the most common radicals makes new characters easier to remember."
+    ]
+   },
+   {
+    "h": "Read real things early",
+    "list": [
+     "Practise on messages from family, restaurant menus, signs and simple news headlines.",
+     "Graded readers written for learners are a good next step."
+    ]
+   },
+   {
+    "h": "Review so you don't forget",
+    "list": [
+     "Review new characters a day later, then a few days later, then a week later.",
+     "A few minutes a day works better than long sessions."
+    ]
+   },
+   {
+    "h": "Writing is optional at first",
+    "p": [
+     "Many heritage learners focus on reading first and add handwriting later. Typing with pinyin also helps you recognise characters."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "which-chinese-characters-to-learn-first",
+  "offer": "hanzi-catchup",
+  "title": "Which Chinese characters to learn first if you already speak Mandarin",
+  "description": "Where heritage speakers can start with characters so they can read family messages, menus and signs soon.",
+  "intro": "A few hundred common characters make up a large share of everyday written Chinese. Heritage speakers can pick the ones they'll meet most often in their own lives.",
+  "sections": [
+   {
+    "h": "High-frequency characters",
+    "list": [
+     "Common particles and pronouns: 我, 你, 他, 的, 是, 不, 了.",
+     "Numbers, days and times."
+    ]
+   },
+   {
+    "h": "Family and messages",
+    "list": [
+     "Family words like 妈, 爸, 爷, 奶.",
+     "Common phrases in family chats and greetings."
+    ]
+   },
+   {
+    "h": "Food and menus",
+    "list": [
+     "Common foods and cooking words: 鸡, 牛, 鱼, 饭, 面, 炒.",
+     "These make menus readable quickly."
+    ]
+   },
+   {
+    "h": "Signs and places",
+    "list": [
+     "Common signs: 出口 (exit), 入口 (entrance), 男, 女.",
+     "Place and direction words."
+    ]
+   },
+   {
+    "h": "Keep a personal list",
+    "p": [
+     "Note any character you see often but can't read, and add it to your review list."
+    ]
+   }
+  ]
  }
 ]

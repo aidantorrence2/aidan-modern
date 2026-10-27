@@ -47990,6 +47990,83 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-27",
+    "slug": "hanzi-catchup",
+    "name": "Hanzi Catchup",
+    "need": "I can speak and understand Mandarin because I grew up with it at home, but I can't read or write Chinese characters.",
+    "headline": "Speak Mandarin but can't read it? Learn characters starting from words you already say, practise on real family messages, menus and signs, and review what you'd otherwise forget.",
+    "buyer": "Adults (18+) who speak Mandarin, often heritage speakers raised abroad, but can't read or write Chinese characters.",
+    "bullets": [
+      "Start from words you already say and understand, so each character has a meaning you know.",
+      "Practise reading real things: family messages, menus, signs and short news lines.",
+      "Spaced review of the characters you'd otherwise forget, with no speaking drills you don't need."
+    ],
+    "price": "$9/month",
+    "priceUsd": 9,
+    "priceNote": "Or $59 a year. For adults 18+.",
+    "reasonPrompt": "What would you most like to be able to read: family messages, menus or something else?",
+    "faq": [
+      {
+        "q": "Is it a full Chinese course?",
+        "a": "No. Hanzi Catchup is for people who already speak Mandarin and want to read and write it; it skips the basics you already know."
+      },
+      {
+        "q": "Is it linked to a school or language app?",
+        "a": "No. Hanzi Catchup is independent and not affiliated with any school, course or language app."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-27",
+      "summary": "Heritage speakers describe understanding spoken Mandarin but not being able to read or write it, speaking it at home growing up abroad but not reading the characters, and never learning to read after leaving China young.",
+      "wtp": "Chineasy, a Chinese character app, has 9.4K App Store ratings and sells Premium at $12.99 a month, $49.99 a year or $149.99 lifetime; Skritter sells Premium at $14.99 a month.",
+      "signals": [
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1318941705/sortby=mosthelpful/json",
+          "who": "Undercover Thought Criminal (App Store review of Chineasy)",
+          "date": "2019-03-31",
+          "quote": "I can understand spoken Mandarin but cannot read or write",
+          "seen": "opened"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=35870259",
+          "who": "wluu (Hacker News)",
+          "date": "2023-05-09",
+          "quote": "Chinese characters as I spoke it at home while growing up in Australia",
+          "seen": "opened"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=36709347",
+          "who": "euix (Hacker News)",
+          "date": "2023-07-13",
+          "quote": "so I never could read or write Chinese",
+          "seen": "opened"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=1370826",
+          "who": "zasz (Hacker News)",
+          "date": "2010-05-22",
+          "quote": "but my verbal fluency is quite good",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1318941705",
+          "who": "Chineasy (App Store)",
+          "date": "2026-10-27",
+          "quote": "9.4K Ratings; Monthly Premium $12.99; Annual Premium $49.99; Lifetime $149.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Chineasy, Skritter, Du Chinese, HelloChinese, Pleco, Anki.",
+      "risks": "Crowded with Chinese learning apps. Evidence is mostly Hacker News. Near live kanji-stays (Japanese kanji), tone-ear (Mandarin tones) and home-tongue, but about heritage speakers learning to read."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
