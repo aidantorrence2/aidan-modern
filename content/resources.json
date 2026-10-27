@@ -24105,5 +24105,85 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "how-to-stop-plateauing-in-sim-racing",
+  "offer": "lap-ceiling",
+  "title": "How to stop plateauing in sim racing",
+  "description": "Practical ways to break through a lap-time plateau in sim racing, by measuring where time goes and practising one thing at a time.",
+  "intro": "Almost every sim racer hits a wall where lap times stop dropping. More laps alone rarely fixes it. Finding where the time goes, and working on one thing at a time, usually does. This guide is independent and not affiliated with any sim or coaching service.",
+  "sections": [
+   {
+    "h": "Measure first",
+    "list": [
+     "Pick one car and one track for a few weeks, so changes mean something.",
+     "Note your typical lap, not just your best one.",
+     "Split the lap into corners or sectors, and note where you lose the most time against your own best."
+    ]
+   },
+   {
+    "h": "Common causes",
+    "list": [
+     "Braking too early, or not braking hard enough at first.",
+     "Turning in too early and having to lift on exit.",
+     "Getting on the throttle too late, or too hard so the car slides.",
+     "Driving over the limit, so mistakes cost more than they gain."
+    ]
+   },
+   {
+    "h": "Practise one thing",
+    "list": [
+     "Choose the one corner costing most and work only on that for a session.",
+     "Change one thing at a time: brake point, turn-in point or throttle.",
+     "Compare with a faster lap or a reference lap if your sim lets you."
+    ]
+   },
+   {
+    "h": "Build consistency",
+    "list": [
+     "Try 10 laps in a row within a small time window rather than chasing one hot lap.",
+     "Consistent laps usually win more races than one fast lap.",
+     "Take breaks; tired driving rarely improves."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "how-to-find-where-you-lose-time-in-a-lap",
+  "offer": "lap-ceiling",
+  "title": "How to find where you lose time in a sim racing lap",
+  "description": "Simple ways to find the corners and habits costing you lap time, with or without telemetry.",
+  "intro": "Knowing that you're slow doesn't help much; knowing where you're slow does. You can find it with simple notes, sector times, or telemetry if you have it. This guide is independent and not affiliated with any sim or coaching service.",
+  "sections": [
+   {
+    "h": "Use sector times",
+    "list": [
+     "Most sims show sector or split times; note which sector is furthest from your best.",
+     "Within that sector, pick the slowest corner."
+    ]
+   },
+   {
+    "h": "Compare with a reference",
+    "list": [
+     "Watch a replay of a faster driver, or a reference lap, through the same corner.",
+     "Note their brake point, their line and when they get back on the throttle."
+    ]
+   },
+   {
+    "h": "Watch your own replay",
+    "list": [
+     "Look for lifts on exit, which usually mean an early turn-in or too much speed in.",
+     "Look for sliding or running wide, which usually mean too much throttle too early."
+    ]
+   },
+   {
+    "h": "If you have telemetry",
+    "list": [
+     "Compare speed traces: where does the faster lap carry more speed?",
+     "Compare brake and throttle traces at the corner you picked.",
+     "Change one thing and run the comparison again."
+    ]
+   }
+  ]
  }
 ]

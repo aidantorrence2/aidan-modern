@@ -49082,6 +49082,104 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-27",
+    "slug": "lap-ceiling",
+    "name": "Lap Ceiling",
+    "need": "My sim racing lap times have plateaued, I can't find speed in races, and I can't tell where I'm losing the time.",
+    "headline": "Sim racing lap times stuck? Log each session against your own best, find the one corner costing you most, and work on one focus a week with a short consistency drill.",
+    "buyer": "Adult sim racers (18+) stuck at the same lap time, finishing near the back online, or unable to tell where the time goes.",
+    "bullets": [
+      "Log laps after each session and mark the corners where you lost time or went off.",
+      "Compare each lap with your own best, and see the one corner costing you most.",
+      "One focus a week with a short practice plan, a 10-lap consistency drill, and a monthly trend of your typical lap (not just your best)."
+    ],
+    "price": "$4.99/month",
+    "priceUsd": 5,
+    "priceNote": "Or $29 a year. For adults 18+.",
+    "reasonPrompt": "Which sim and car do you race, and where are you stuck?",
+    "faq": [
+      {
+        "q": "Does it read telemetry from my sim?",
+        "a": "Lap Ceiling starts with the laps and corners you log after a session, so it works with any sim. It doesn't promise a lap time or a ranking."
+      },
+      {
+        "q": "Is it linked to iRacing, Gran Turismo or a coaching service?",
+        "a": "No. Lap Ceiling is independent and not affiliated with any sim, game, league or coaching service."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-27",
+      "summary": "Sim racers describe lap times that plateaued, not finding speed in competition, being of average speed for years, reaching a limit they can't break, being tired of settling for the bottom, and struggling daily to get faster.",
+      "wtp": "Track Titan, an AI sim racing coach, sells Plus at $7.99 a month, Setup at $14.99 and Ultra at $19.99, and says more than 310,000 sim racers have used it.",
+      "signals": [
+        {
+          "url": "https://www.gtplanet.net/forum/threads/how-long-to-get-good.288732/",
+          "who": "zslane (GTPlanet)",
+          "date": "2013-10-01",
+          "quote": "plateaued at around 24.7",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.gtplanet.net/forum/threads/how-long-to-get-good.288732/",
+          "who": "marky5244 (GTPlanet)",
+          "date": "2013-10-02",
+          "quote": "average speed. Always have been and think I always will be",
+          "seen": "opened"
+        },
+        {
+          "url": "https://gtplanet.net/forum/threads/have-i-reached-my-skill-cap.376876",
+          "who": "R10tz0r (GTPlanet)",
+          "date": "2018-04-02",
+          "quote": "reached a limit they can",
+          "seen": "opened"
+        },
+        {
+          "url": "https://gtplanet.net/forum/threads/have-i-reached-my-skill-cap.376876",
+          "who": "Stotty (GTPlanet)",
+          "date": "2018-04-03",
+          "quote": "reached my ability ceiling",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.gtplanet.net/forum/threads/how-can-i-be-a-faster-driver.333967",
+          "who": "RoadRunner36 (GTPlanet)",
+          "date": "2015-09-02",
+          "quote": "tired of settling for the bottom",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.gtplanet.net/forum/threads/i-need-a-few-pointers-this-sim-is-making-me-feel-bad.234866/",
+          "who": "Coxis (GTPlanet)",
+          "date": "2011-12-10",
+          "quote": "iRacing is making me feel like a piece of crap",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.gtplanet.net/forum/threads/i-need-a-few-pointers-this-sim-is-making-me-feel-bad.234866/",
+          "who": "WedgeX (GTPlanet)",
+          "date": "2011-12-10",
+          "quote": "still struggling daily to get faster",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.tracktitan.io/pricing",
+          "who": "Track Titan (pricing page)",
+          "date": "2026-10-27",
+          "quote": "Plus $7.99; Setup $14.99; Ultra $19.99; more than 310,000 simracers",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Track Titan, Coach Dave Academy, Garage 61, VRS, YouTube coaching, league mentors.",
+      "risks": "All people are on one forum (GTPlanet), posting 2011-2018. Telemetry coaches like Track Titan are strong and growing. Nobody said they'd pay for this exact tool. Near no live offer; closest are the hobby plateau coaches (golf, darts), but about sim racing."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
