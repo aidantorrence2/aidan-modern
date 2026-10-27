@@ -47598,6 +47598,83 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-27",
+    "slug": "family-table",
+    "name": "Family Table",
+    "need": "My partner's family speaks a language I don't, and I feel left out at visits, calls and family dinners.",
+    "headline": "Feel left out when your partner's family switches language? Learn the phrases they actually use, recorded by your partner, in 10 minutes a day, planned around your next visit or call.",
+    "buyer": "Adults (18+) whose partner's family speaks a language they don't, who feel left out at visits, calls and holidays.",
+    "bullets": [
+      "Your partner records the family's real everyday phrases, and you practise listening, repeating and answering.",
+      "Ten minutes a day with spaced repeats, planned to the date of your next visit or call.",
+      "Normal-speed listening drills, and a missed-words list after each visit to practise next."
+    ],
+    "price": "$6.99/month",
+    "priceUsd": 7,
+    "priceNote": "Or $49 a year. For adults 18+.",
+    "reasonPrompt": "Which language does your partner's family speak, and when's your next visit?",
+    "faq": [
+      {
+        "q": "Will I be fluent by my next visit?",
+        "a": "No promises like that. Family Table focuses on the phrases and conversations you'll actually meet with your partner's family, so you can join in a bit more each time."
+      },
+      {
+        "q": "Is it linked to a language course?",
+        "a": "No. Family Table is independent and not affiliated with any language course, school or app."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-27",
+      "summary": "People with a partner from another culture describe failing to learn their spouse's mother tongue, finding it hard to learn a family dialect with few learning materials, and making an effort to speak the language for better communication with the family.",
+      "wtp": "Pimsleur, a spoken-language course app, has 31K App Store ratings and sells All Access at $20.99 a month or $164.99 a year.",
+      "signals": [
+        {
+          "url": "https://www.expat.com/en/forum/63610-those-of-you-with-spouses-with-a-different-mother-tongue.html",
+          "who": "beppi (Expat.com)",
+          "date": "2011-01",
+          "quote": "since I failed miserably at Chinese",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.expat.com/en/forum/63610-those-of-you-with-spouses-with-a-different-mother-tongue.html",
+          "who": "Msfizz (Expat.com)",
+          "date": "2011-01",
+          "quote": "speak the Malay language to have better communication with his family",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.expat.com/en/forum/63610-those-of-you-with-spouses-with-a-different-mother-tongue.html",
+          "who": "missbeesy (Expat.com)",
+          "date": "2011-01",
+          "quote": "speak German with his family",
+          "seen": "opened"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=8497641",
+          "who": "song (Hacker News)",
+          "date": "2014-10-23",
+          "quote": "I tried to learn Teochew to communicate with my wife",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/pimsleur-language-learning/id1405735469",
+          "who": "Pimsleur (App Store)",
+          "date": "2026-10-27",
+          "quote": "31K Ratings; All Access Subscription $20.99; Annual $164.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Pimsleur, Duolingo, iTalki tutors, phrasebooks, learning from a partner.",
+      "risks": "Evidence is old (2011, 2014) and thin; Mumsnet and VisaJourney sources couldn't be checked. Pimsleur is a general course. Near live home-tongue (a parent's language with their child), catch-french and studied-language-years-freeze, but about joining in with a partner's family."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
