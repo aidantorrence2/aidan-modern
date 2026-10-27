@@ -45351,6 +45351,188 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-27",
+    "slug": "places-been",
+    "name": "Places Been",
+    "need": "I want one simple place to keep track of every country, state and city I've been to, and the ones I want to visit next.",
+    "headline": "Lost track of everywhere you've been? Mark the countries, states and cities you've visited or lived in, add trip dates, and keep a list of where you want to go next.",
+    "buyer": "Travellers who used to pin a paper map and want a simple, lasting record of everywhere they've been.",
+    "bullets": [
+      "Mark countries, states and cities as visited, lived in or want to go, on one map.",
+      "Add trip dates and a short note to each place, so the record means something years later.",
+      "Simple totals and an export of your list, so your record is never locked in."
+    ],
+    "price": "$3/month",
+    "priceUsd": 3,
+    "priceNote": "Or $25 once for lifetime access.",
+    "reasonPrompt": "Roughly how many countries have you been to, and where's next?",
+    "faq": [
+      {
+        "q": "Will I lose my map if I change phones?",
+        "a": "Your list can be exported at any time, so your record is never locked in one app or device."
+      },
+      {
+        "q": "Is it linked to a travel company?",
+        "a": "No. Places Been is independent, not affiliated with any travel app, airline or booking site, and sells no travel."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-27",
+      "summary": "Travellers describe wanting something to keep track of their travels, struggling to remember all the countries and places they've been, and wanting a simple app to log the states they've visited.",
+      "wtp": "Visited, a travel tracker map, has 14K App Store ratings and sells plans at $9.99 a month, $34.99 a year or $59.99 for Pro; Pin Traveler has 8.7K ratings with plans from $2.49 a month to $39.99 lifetime.",
+      "signals": [
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=846983349/sortby=mosthelpful/json",
+          "who": "Don't-like-rating-apps (App Store review of Visited)",
+          "date": "2017-10-16",
+          "quote": "I wanted something to keep track of my travels",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=846983349/sortby=mosthelpful/json",
+          "who": "Madikam (App Store review of Visited)",
+          "date": "2023-05-07",
+          "quote": "decided I wanted to start logging locations",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=2/id=846983349/sortby=mosthelpful/json",
+          "who": "Zoogirl85 (App Store review of Visited)",
+          "date": "2018-04-17",
+          "quote": "keep track of places I have been and would like to go",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1335839375/sortby=mosthelpful/json",
+          "who": "sirensound (App Store review of Pin Traveler)",
+          "date": "2023-01-04",
+          "quote": "struggled to keep track of all the countries and places",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1335839375/sortby=mosthelpful/json",
+          "who": "Ned in NC (App Store review of Pin Traveler)",
+          "date": "2024-03-18",
+          "quote": "I was looking for an easy way to track the places, states, cities, and countries that I have been to",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=2/id=680148327/sortby=mosthelpful/json",
+          "who": "RyanBieryla (App Store review of been)",
+          "date": "2018-05-04",
+          "quote": "All I wanted was a simple app to log the states",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id846983349",
+          "who": "Visited (App Store)",
+          "date": "2026-10-26",
+          "quote": "14K Ratings; Monthly $9.99; Yearly $34.99; Visited Pro $59.99",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1335839375",
+          "who": "Pin Traveler (App Store)",
+          "date": "2026-10-26",
+          "quote": "8.7K Ratings; Monthly from $2.49; Yearly Premium $34.99; Lifetime Premium Membership $39.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Visited, Pin Traveler, been, Polarsteps, scratch maps.",
+      "risks": "A want more than a pain, with many free and paid rivals. All evidence is App Store reviews. Near live headline-atlas (geography), trip-pacer and ninety-window, but about logging your own travels."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-27",
+    "slug": "tai-chi-start",
+    "name": "Tai Chi Start",
+    "need": "I've always wanted to learn tai chi properly at home, slowly enough to get the moves right, because classes aren't nearby or I can't afford them.",
+    "headline": "Always wanted to learn tai chi? Learn the form one move at a time at your own slow pace, repeat each step until it feels right, and keep a gentle daily practice log.",
+    "buyer": "Adults, many of them older, who want to learn tai chi at home at a gentle pace without paying for regular classes.",
+    "bullets": [
+      "The form broken into single moves, each with slow and slower practice.",
+      "Repeat any move as often as you like before going on, with no rush to the next lesson.",
+      "A gentle daily practice log, with no streaks or pressure."
+    ],
+    "price": "$4/month",
+    "priceUsd": 4,
+    "priceNote": "Or $30 a year. No auto-renewing trial.",
+    "reasonPrompt": "Have you tried tai chi before, and what's made it hard to keep going?",
+    "faq": [
+      {
+        "q": "Is it safe if my balance isn't great?",
+        "a": "Tai Chi Start is a practice guide, not medical or physiotherapy advice, and makes no health claims. Practise near a sturdy chair or wall, go at your own pace, and check with your doctor first if you have a health condition, balance problems or have had falls."
+      },
+      {
+        "q": "Is it linked to a tai chi school or app?",
+        "a": "No. Tai Chi Start is independent and not affiliated with any tai chi school, teacher or app."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-27",
+      "summary": "People describe wanting to learn tai chi for decades, finding first lessons too fast to get right, classes no longer in their budget, and finding the moves hard when their balance isn't good.",
+      "wtp": "Tai Chi for Beginners Seniors has 7.9K App Store ratings and sells Premium from $9.99 a month or $29.99 to $69.99 a year.",
+      "signals": [
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=3/id=6751329158/sortby=mosthelpful/json",
+          "who": "fani (App Store review of Tai Chi for Beginners Seniors)",
+          "date": "2026-05-25",
+          "quote": "wanted to learn this for decades",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=2/id=6751329158/sortby=mosthelpful/json",
+          "who": "johnnostrant (App Store review of Tai Chi for Beginners Seniors)",
+          "date": "2026-06-18",
+          "quote": "I find this first lesson goes too fast for me to get it right",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=6758255768/sortby=mosthelpful/json",
+          "who": "Fratia1961 (App Store review of Tai Chi - Seniors and Beginners)",
+          "date": "2026-10-19",
+          "quote": "just not in my budget anymore",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=6759260204/sortby=mosthelpful/json",
+          "who": "OrsenStanley (App Store review of Tai Chi Beginners and Seniors)",
+          "date": "2026-07-27",
+          "quote": "hard for me because I am not well balanced",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1048130885/sortby=mosthelpful/json",
+          "who": "Mes2Pitchounes98 (App Store review of 7 Minute Chi)",
+          "date": "2018-02-22",
+          "quote": "i will continue to try classes until I find one I like",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id6751329158",
+          "who": "Tai Chi for Beginners Seniors (App Store)",
+          "date": "2026-10-26",
+          "quote": "7.9K Ratings; Get Monthly Premium! $9.99, $19.99; Get Yearly Premium! $29.99 to $69.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Tai chi apps, YouTube videos, local classes and community centres.",
+      "risks": "All evidence is App Store reviews of new apps. Older buyers mean balance wording must stay non-medical, with no claims about falls. Near live getting-older-worry-about (strength and mobility) and know-should-exercise-never, but about learning the tai chi form."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
