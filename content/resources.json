@@ -22221,5 +22221,81 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "how-to-put-a-4-on-4-off-shift-pattern-into-your-calendar",
+  "offer": "rota-ahead",
+  "title": "How to put a 4 on 4 off shift pattern into your phone calendar",
+  "description": "How to add a repeating rotating shift pattern to a normal phone calendar, and what to watch out for.",
+  "intro": "A 4 on 4 off pattern repeats every 8 days, so it doesn't line up with weeks or months. Most phone calendars can still handle it with a custom repeat. Always check against your employer's official rota.",
+  "sections": [
+   {
+    "h": "Work out the cycle",
+    "list": [
+     "4 on 4 off repeats every 8 days.",
+     "If your pattern mixes days and nights, write out one full cycle, day by day, before you start."
+    ]
+   },
+   {
+    "h": "Add it to your calendar",
+    "list": [
+     "Create an event for your first working day in the cycle.",
+     "Set it to repeat every 8 days (a custom repeat).",
+     "Do the same for each of the other three working days, starting on the right date."
+    ]
+   },
+   {
+    "h": "For day and night rotations",
+    "list": [
+     "Use separate events, with different colours, for day shifts and night shifts.",
+     "Each may need its own repeat interval if the full cycle is longer."
+    ]
+   },
+   {
+    "h": "Keep it accurate",
+    "list": [
+     "Add swaps, overtime and leave as one-off changes.",
+     "Check a few weeks ahead against your official rota now and then."
+    ]
+   },
+   {
+    "h": "Share it",
+    "p": [
+     "Share the calendar with your partner or family so they can see when you're working without asking."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "dupont-12-hour-shift-schedule-explained",
+  "offer": "rota-ahead",
+  "title": "The DuPont 12-hour shift schedule explained",
+  "description": "How the DuPont rotating 12-hour shift pattern works, and how to see your days off in advance.",
+  "intro": "The DuPont schedule is a 12-hour rotating pattern that repeats over four weeks, so it's hard to work out your days off in your head. Exact patterns vary by employer, so always check your official rota.",
+  "sections": [
+   {
+    "h": "How it usually works",
+    "list": [
+     "Four teams cover 24 hours a day, every day, in 12-hour shifts.",
+     "Over a four-week cycle, each team works a mix of night and day shifts, with rest days in between.",
+     "A common version includes a longer block of days off once per cycle."
+    ]
+   },
+   {
+    "h": "Why it's hard to track",
+    "list": [
+     "The cycle is 28 days, so your days off fall on different weekdays each week.",
+     "Days and nights alternate, so plans need checking against the right week of the cycle."
+    ]
+   },
+   {
+    "h": "See your year ahead",
+    "list": [
+     "Write out one full 28-day cycle from your employer's rota.",
+     "Add it to a calendar as a repeating 28-day pattern, with days and nights in different colours.",
+     "Check a few dates against the official rota to make sure it lines up."
+    ]
+   }
+  ]
  }
 ]

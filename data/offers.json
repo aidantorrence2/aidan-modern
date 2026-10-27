@@ -46926,6 +46926,90 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-27",
+    "slug": "rota-ahead",
+    "name": "Rota Ahead",
+    "need": "I work a rotating shift pattern and can't tell which days I'm working weeks or months ahead, so booking anything means digging out a paper rota.",
+    "headline": "Work a rotating shift pattern? Enter your pattern once (4 on 4 off, DuPont, a 28-day swing) and see every working day and day off for the whole year, with a view to share with family.",
+    "buyer": "Adults (18+) on rotating shifts, such as nurses, police, firefighters and plant workers, and the people who plan around their rota.",
+    "bullets": [
+      "Enter your whole pattern once, including common ones like 4 on 4 off, DuPont and 28-day swings.",
+      "See every working day, night and day off months ahead, and add one-off swaps or overtime.",
+      "A read-only view to share with your partner or family, so they can plan without asking."
+    ],
+    "price": "$3/month",
+    "priceUsd": 3,
+    "priceNote": "Or $18 a year. For adults 18+.",
+    "reasonPrompt": "What shift pattern do you work?",
+    "faq": [
+      {
+        "q": "Is it a work scheduling tool for my employer?",
+        "a": "No. Rota Ahead is a personal calendar for your own shift pattern; it doesn't manage staff or replace your employer's official rota. Always check changes with your employer."
+      },
+      {
+        "q": "Is it linked to my employer or a scheduling company?",
+        "a": "No. Rota Ahead is independent and not affiliated with any employer, union or scheduling software."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-27",
+      "summary": "Shift workers describe 28-day swing cycles, having to pull out a yearly paper schedule to count days, a rotation that makes the week impossible to predict, losing track of what day it is, and needing an easy way to look ahead.",
+      "wtp": "Spoke, a shift work calendar, has 14K App Store ratings and sells $4.99 a month, $34.99 a year or a $79.99 Pro upgrade; Shift Work Calendar has 9.6K ratings and Supershift 5.7K.",
+      "signals": [
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=381672587/sortby=mosthelpful/json",
+          "who": "jessa_bella (App Store review of Shift Work Calendar)",
+          "date": "2021-08-18",
+          "quote": "I would have to pull out the yearly paper schedule or count a normal calendar",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=381672587/sortby=mosthelpful/json",
+          "who": "Amanda__O (App Store review of Shift Work Calendar)",
+          "date": "2024-02-01",
+          "quote": "work a day/night shift rotation, which makes my Monday through Friday work week impossible to predict",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=381672587/sortby=mosthelpful/json",
+          "who": "TinaKett (App Store review of Shift Work Calendar)",
+          "date": "2018-11-12",
+          "quote": "Because I work a rotating schedule I am sometimes at a loss as to what day it is",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=381672587/sortby=mosthelpful/json",
+          "who": "vickim4 (App Store review of Shift Work Calendar)",
+          "date": "2018-09-30",
+          "quote": "I work a 28 day rotating shift and needed an easy way to look ahead",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1104165041/sortby=mostrecent/json",
+          "who": "Blainsmith16 (App Store review of Supershift)",
+          "date": "2026-08-30",
+          "quote": "designed for corporate managers rather than front-line shift workers",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1016565262",
+          "who": "Spoke (App Store)",
+          "date": "2026-10-27",
+          "quote": "14K Ratings; Month-Subscription $4.99; Yearly Pro $34.99; Pro Upgrade $79.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Spoke, Shift Work Calendar, Supershift, NurseGrid, paper rotas.",
+      "risks": "Crowded with cheap incumbents. All evidence is App Store reviews. Must stay a personal calendar, not an employer scheduling (business) tool. Near live shift-work-makes-hard (sleep) and who-where (family calendar), but about one person's rotating rota."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
