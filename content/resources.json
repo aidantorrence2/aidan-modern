@@ -22610,5 +22610,45 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "how-to-help-protect-an-older-parent-from-scams",
+  "offer": "worry-parent-or-relative",
+  "title": "How to help protect an older parent from scams",
+  "description": "Practical, respectful steps to help a parent or relative recognise scams and know what to do if one gets through.",
+  "intro": "Scammers often target older people with convincing calls, texts and emails. The aim is to help your parent stay independent while making scams easier to spot and harder to fall for. This guide is general information; if money has already been lost, contact the bank straight away.",
+  "sections": [
+   {
+    "h": "Talk about it without lecturing",
+    "list": [
+     "Share real examples of scams you've seen, so it feels normal to talk about.",
+     "Agree that it's fine to hang up or ignore a message and check later."
+    ]
+   },
+   {
+    "h": "Agree a simple rule",
+    "list": [
+     "Never give bank details, passwords or codes to anyone who contacts them first.",
+     "If someone says it's urgent, stop and check with you or the organisation directly.",
+     "Use a number from the back of their card or the official website, never one in the message."
+    ]
+   },
+   {
+    "h": "Set up some safeguards",
+    "list": [
+     "Turn on call and text filtering on their phone if available.",
+     "Ask their bank about alerts for large payments or new payees.",
+     "Agree a family code word for real emergencies, so 'a relative in trouble' calls can be checked."
+    ]
+   },
+   {
+    "h": "If they think they've been scammed",
+    "list": [
+     "Contact the bank immediately using the number on the card.",
+     "Change any passwords they shared.",
+     "Report it to the police or your country's fraud reporting service. Reassure them; it can happen to anyone."
+    ]
+   }
+  ]
  }
 ]
