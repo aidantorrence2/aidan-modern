@@ -24665,5 +24665,83 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "how-to-take-notes-in-a-lecture-when-you-cant-write-fast-enough",
+  "offer": "lecture-catchup",
+  "title": "How to take notes in a lecture when you can't write fast enough",
+  "description": "Practical ways to keep up with lecture notes without writing everything down, and to fill the gaps afterwards.",
+  "intro": "Trying to write down everything in a lecture usually means missing the point. The aim is to catch the key ideas, mark what you miss, and fill gaps later.",
+  "sections": [
+   {
+    "h": "Before the lecture",
+    "list": [
+     "Look at the slides or reading beforehand if they're available, so new terms are familiar.",
+     "Print or download the slides and write notes on them, rather than copying them out."
+    ]
+   },
+   {
+    "h": "During the lecture",
+    "list": [
+     "Write key words and short phrases, not full sentences.",
+     "Use simple abbreviations and symbols you'll recognise later.",
+     "When you miss something, mark it with a '?' or star and keep going rather than stopping."
+    ]
+   },
+   {
+    "h": "After the lecture",
+    "list": [
+     "Within a day, go through your marks and fill each gap from the slides, the reading or a classmate.",
+     "Write a few lines summarising the main points.",
+     "If anything is still unclear, ask the lecturer or a tutor."
+    ]
+   },
+   {
+    "h": "If you need more help",
+    "p": [
+     "Many colleges offer note-taking support, extra time or other help for students who need it. Ask your student support or disability service what's available."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "can-i-record-lectures-at-college",
+  "offer": "lecture-catchup",
+  "title": "Can I record lectures at college, and how do I ask?",
+  "description": "What to check before recording a lecture, how to ask your lecturer, and alternatives if recording isn't allowed.",
+  "intro": "Recording a lecture can help you catch what you missed, but it isn't always allowed. Rules vary by college, country and even by lecturer. This guide is general information, not legal advice.",
+  "sections": [
+   {
+    "h": "Check the rules",
+    "list": [
+     "Look for your college's policy on recording lectures, often in the student handbook.",
+     "Some colleges record lectures themselves and post them online; check before recording your own.",
+     "If you have approved learning support, recording may be part of it."
+    ]
+   },
+   {
+    "h": "How to ask",
+    "list": [
+     "Ask the lecturer before or after class, or by email.",
+     "Say why it helps you, and that it's only for your own study.",
+     "Offer not to share it, and delete it after the course if asked."
+    ]
+   },
+   {
+    "h": "If you can't record",
+    "list": [
+     "Ask if slides or notes are shared after the lecture.",
+     "Swap notes with a classmate.",
+     "Go to office hours to ask about parts you missed."
+    ]
+   },
+   {
+    "h": "If you do record",
+    "list": [
+     "Don't share recordings without permission.",
+     "Use it to fill gaps rather than re-listening to the whole thing."
+    ]
+   }
+  ]
  }
 ]

@@ -49705,6 +49705,90 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-27",
+    "slug": "lecture-catchup",
+    "name": "Lecture Catchup",
+    "need": "I can't write fast enough or stay focused in lectures, so I miss things and fall behind on my notes.",
+    "headline": "Can't write fast enough in lectures and keep falling behind? Mark the moments you miss with one tap, then fill the gaps after class from the slides, the reading and your own recording.",
+    "buyer": "Adult college, nursing and graduate students (18+) who miss things in lectures and fall behind on notes.",
+    "bullets": [
+      "One tap during the lecture to mark 'missed that', so you know exactly what to fill in later.",
+      "A short after-class routine to fill each gap from slides, the reading, a classmate or your own recording (where allowed).",
+      "A weekly catch-up list across all your classes, so gaps don't pile up before exams."
+    ],
+    "price": "$5.99/month",
+    "priceUsd": 6,
+    "priceNote": "Or $29 a semester. For students 18+.",
+    "reasonPrompt": "Which classes are hardest to keep up with, and what do you miss most?",
+    "faq": [
+      {
+        "q": "Can I record my lectures?",
+        "a": "Only where your college and lecturer allow it. Rules differ, so check your college's policy and ask your lecturer first. Lecture Catchup works without recording too, using slides, reading and classmates' notes."
+      },
+      {
+        "q": "Is it linked to a college or note-taking app?",
+        "a": "No. Lecture Catchup is independent and not affiliated with any college, note-taking app or study service. It makes no claims about conditions such as ADHD; if you need learning support, ask your college's disability or student support service."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-27",
+      "summary": "Students describe struggling to write notes and pay attention at the same time, finding it harder to stay on top of note-taking, having a hard time staying focused for long, taking furious notes for a class, and struggling to catch notes.",
+      "wtp": "Coconote, an AI lecture note app, has 17K App Store ratings and sells Pro at $9.99 to $129.99; TLDL: AI Lecture Note Taker has 7.2K ratings and sells Pro at $9.99 a week, $19.99 a month, $49.99 a semester or $99.99 a year.",
+      "signals": [
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=2/id=6479320349/sortby=mosthelpful/json",
+          "who": "Slyclone29 (App Store review of Coconote)",
+          "date": "2025-04-21",
+          "quote": "I struggle to write notes and pay attention especially when asked questions",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=2/id=6479320349/sortby=mosthelpful/json",
+          "who": "Lbigonza (App Store review of Coconote)",
+          "date": "2025-05-30",
+          "quote": "harder to stay on top of note-taking",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=2/id=6479320349/sortby=mosthelpful/json",
+          "who": "Sachiko San (App Store review of Coconote)",
+          "date": "2025-08-30",
+          "quote": "hard time staying focused on one thing for a prolonged amount of time",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=6590628538/sortby=mosthelpful/json",
+          "who": "Aunt_NeNe (App Store review of TLDL)",
+          "date": "2026-08-27",
+          "quote": "trying to take furious notes for a class",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/coconote-ai-note-taker/id6479320349",
+          "who": "Coconote (App Store)",
+          "date": "2026-10-27",
+          "quote": "17K Ratings; Coconote Pro $9.99, $19.99, $99.99, $129.99",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/tldl-ai-lecture-note-taker/id6590628538",
+          "who": "TLDL: AI Lecture Note Taker (App Store)",
+          "date": "2026-10-27",
+          "quote": "7.2K Ratings; Pro Weekly $9.99; Pro Monthly $19.99; Pro Semester $49.99; Pro Annual $99.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Coconote, TLDL, Otter, Notability, college note-taking support services.",
+      "risks": "Crowded with AI transcription apps. Recording lectures isn't always allowed. All evidence is App Store reviews of two apps. Near live recall-ladder and need-pass-important-exam (study), but about keeping up in lectures."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
