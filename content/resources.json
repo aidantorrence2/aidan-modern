@@ -22450,5 +22450,82 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "lost-the-receipt-for-something-under-warranty-what-to-do",
+  "offer": "proof-pack",
+  "title": "Lost the receipt for something still under warranty? What to do",
+  "description": "Other ways to prove you bought something when the receipt is gone, and how to ask the shop or maker for help.",
+  "intro": "Losing a receipt doesn't always mean losing your warranty. Many shops and makers accept other proof of purchase. This guide is general information, not legal advice; rules differ by country and by shop.",
+  "sections": [
+   {
+    "h": "Look for other proof",
+    "list": [
+     "A bank or card statement showing the shop, date and amount.",
+     "The order confirmation email, or your account's order history if you bought online.",
+     "A registration confirmation if you registered the product with the maker.",
+     "A delivery note or gift receipt."
+    ]
+   },
+   {
+    "h": "Ask the shop",
+    "list": [
+     "Many shops can look up a purchase or reprint a receipt if you give them the date, the card used and roughly the amount.",
+     "Some keep records only for a limited time, so ask soon."
+    ]
+   },
+   {
+    "h": "Contact the maker",
+    "list": [
+     "The manufacturer's warranty may be separate from the shop's returns policy.",
+     "Give them the serial number and any proof you have; some will accept a statement plus the serial number."
+    ]
+   },
+   {
+    "h": "Check your rights",
+    "p": [
+     "If the item is faulty, you may have legal rights separate from any warranty. Check your country's consumer advice service for what applies."
+    ]
+   },
+   {
+    "h": "Next time",
+    "p": [
+     "Photograph the receipt on the day you buy, and keep it with the warranty length and serial number."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "how-long-to-keep-receipts-for-appliances-and-electronics",
+  "offer": "proof-pack",
+  "title": "How long should you keep receipts for appliances and electronics?",
+  "description": "A simple rule of thumb for keeping receipts and warranty papers for bigger purchases, and an easy way to store them.",
+  "intro": "For bigger purchases, the receipt is often your proof for a warranty claim or a faulty-goods complaint. This guide is general information, not legal advice.",
+  "sections": [
+   {
+    "h": "A simple rule",
+    "list": [
+     "Keep the receipt at least as long as the warranty or guarantee lasts.",
+     "For expensive items, many people keep receipts for as long as they own the item.",
+     "Your legal rights for faulty goods can last longer than the shop's returns period, so don't throw receipts away too soon."
+    ]
+   },
+   {
+    "h": "What to keep with it",
+    "list": [
+     "The warranty card or terms, and how long it lasts.",
+     "The model and serial number.",
+     "The order email for online purchases."
+    ]
+   },
+   {
+    "h": "Store it so you can find it",
+    "list": [
+     "Paper receipts can fade, so take a photo straight away.",
+     "Keep photos in one folder or app, named by item.",
+     "Note the warranty end date somewhere you'll see it."
+    ]
+   }
+  ]
  }
 ]

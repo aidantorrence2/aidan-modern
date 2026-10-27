@@ -47255,6 +47255,90 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-27",
+    "slug": "proof-pack",
+    "name": "Proof Pack",
+    "need": "When something I bought breaks, I can never find the receipt or warranty, so the shop or maker won't help.",
+    "headline": "Can never find the receipt when something breaks? Snap it when you buy, set the warranty length, and get one proof page per item ready to show the shop.",
+    "buyer": "Households (18+) who can't find the receipt or warranty when an appliance, gadget or piece of furniture breaks.",
+    "bullets": [
+      "Snap the receipt or save the order email when you buy; add the warranty length, serial number and manual link.",
+      "When something breaks, one proof page per item: receipt image, purchase date, warranty time left and the card used.",
+      "Reminders before return windows and warranties end, and a PDF export to send the shop or maker."
+    ],
+    "price": "$3.99/month",
+    "priceUsd": 4,
+    "priceNote": "Or $29.99 a year. For adults 18+.",
+    "reasonPrompt": "What's the last thing that broke when you couldn't find the receipt?",
+    "faq": [
+      {
+        "q": "Is this legal advice about my rights?",
+        "a": "No. Proof Pack keeps your proof of purchase in one place; it doesn't give legal advice. For your rights with faulty goods, check your country's consumer advice service."
+      },
+      {
+        "q": "Is it linked to a shop or warranty company?",
+        "a": "No. Proof Pack is independent, not affiliated with any retailer, manufacturer or warranty provider, and sells no insurance."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-27",
+      "summary": "People describe not being able to find the receipt when a guaranteed item develops a fault, having only the warranty card, and relying on a bank statement that only shows they shopped there.",
+      "wtp": "Nest Egg, a home inventory app with warranty-expiry alerts, has 617 App Store ratings and sells paid add-ons; Itemtopia, which stores receipts and warranties, sells Premium at $7.99 a month or $79.99 a year.",
+      "signals": [
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/4326685/faulty-ikea-mattress-25-year-guarantee-but-no-receipt",
+          "who": "annimooboo (MoneySavingExpert)",
+          "date": "2012-12-04",
+          "quote": "t find it, would they still honour their guarantee as a fault has developed",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/comment/59452111#Comment_59452111",
+          "who": "Lala1985 (MoneySavingExpert)",
+          "date": "2013-02-18",
+          "quote": "I did not have the exact receipt initially",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/2454289/no-receipt-what-are-my-rights",
+          "who": "11cas (MoneySavingExpert)",
+          "date": "2010-05-08",
+          "quote": "t find the receipt, all I have is the warranty card",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/comment/32602723#Comment_32602723",
+          "who": "spider125 (MoneySavingExpert)",
+          "date": "2010-05-08",
+          "quote": "I am in a similar sittuation",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id431188993",
+          "who": "Nest Egg (App Store)",
+          "date": "2026-10-27",
+          "quote": "617 Ratings; paid add-ons from $1.99; warranty alerts",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id952405279",
+          "who": "Itemtopia (App Store)",
+          "date": "2026-10-27",
+          "quote": "169 Ratings; Premium Monthly $7.99; Premium Yearly $79.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Home inventory apps, email search, bank statements, shops reprinting receipts.",
+      "risks": "Paid warranty-specific apps are small. Evidence is from 2010-2013 on one forum. Free workarounds exist. Near live room-ledger (insurance inventory), send-it-back (return windows) and refund-route (faulty goods disputes), but about keeping proof for warranties."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
