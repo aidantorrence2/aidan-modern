@@ -45267,6 +45267,90 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-27",
+    "slug": "prep-spread",
+    "name": "Prep Spread",
+    "need": "I batch-cook my work lunches on Sunday, but by midweek I'm sick of eating the same thing, the food doesn't taste good any more, and I end up buying lunch.",
+    "headline": "Batch-cook work lunches but sick of them by Wednesday? Plan one prep session of mix-and-match parts, eat in a fridge-then-freezer order, and keep Thursday and Friday worth eating.",
+    "buyer": "Adults (18+) who batch-cook work lunches and get bored, waste food or buy lunch by midweek.",
+    "bullets": [
+      "One 60 or 90-minute prep plan: proteins, bases, vegetables and sauces that combine into a different box each day.",
+      "A fridge-or-freezer order, so the later days stay fresh, plus the step order for your prep session and a shopping list.",
+      "A two-tap lunch log (ate it, bought lunch, threw it out) that shapes next week's plan."
+    ],
+    "price": "$3.99/month",
+    "priceUsd": 4,
+    "priceNote": "Or $24 a year. For adults 18+.",
+    "reasonPrompt": "What usually happens to your prepped lunches by Thursday?",
+    "faq": [
+      {
+        "q": "Is it a diet or nutrition plan?",
+        "a": "No. Prep Spread plans variety and freshness for lunches you choose; it makes no nutrition or weight-loss claims. Follow official food safety advice on storing and reheating cooked food."
+      },
+      {
+        "q": "Is it linked to a meal-kit or recipe app?",
+        "a": "No. Prep Spread is independent, not affiliated with any meal-kit, recipe or meal-planning app, and sells no food."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-27",
+      "summary": "People who meal prep describe worrying every meal will turn into chicken, not wanting to eat the same thing more than a couple of days in a row, prepped food tasting bad by Wednesday and getting tired of it after day 3.",
+      "wtp": "MealPrepPro, a meal-prep planner, has 12K App Store ratings and sells plans from $9.99 to $229.99; reviewers say it's worth the price.",
+      "signals": [
+        {
+          "url": "https://www.tigerdroppings.com/rant/o-t-lounge/ot-fitness-crew--meal-prep/54769602/",
+          "who": "Tigerfan56 (TigerDroppings)",
+          "date": "2015-01-05",
+          "quote": "turn into chicken every meal and I",
+          "seen": "opened"
+        },
+        {
+          "url": "https://lemmy.4d2.org/post/2487208",
+          "who": "gigastasio (Lemmy)",
+          "date": "2026-01-12",
+          "quote": "eat the same thing more than a couple days in a row",
+          "seen": "opened"
+        },
+        {
+          "url": "https://lemmy.4d2.org/post/2487208/3310880",
+          "who": "newtraditionalists (Lemmy)",
+          "date": "2026-01-12",
+          "quote": "does not taste good on Wednesday",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1249805978/sortby=mosthelpful/json",
+          "who": "Whoff7 (App Store review of MealPrepPro)",
+          "date": "2023-08-20",
+          "quote": "my meal prep has been overwhelming",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1249805978/sortby=mosthelpful/json",
+          "who": "random 93856254648 (App Store review of MealPrepPro)",
+          "date": "2023-03-03",
+          "quote": "get tired of after day 3",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/mealpreppro-planner-recipes/id1249805978",
+          "who": "MealPrepPro (App Store)",
+          "date": "2026-10-26",
+          "quote": "12K Ratings; MealPrepPro Meal Planner $9.99, $29.99, $59.99; MealPrepPro $229.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "MealPrepPro, Mealime, meal-prep recipe sites and cookbooks.",
+      "risks": "Near the killed week-plate (calorie-target weekly meal plans) and live single-skillet (cooking for one) and lunch-rota (children's lunchboxes); this angle is adult work lunches from one prep session, with no calorie plan. AnandTech evidence couldn't be re-checked (bot check). Free meal-prep content is everywhere. Must give official food-safety guidance, not invent storage times."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
