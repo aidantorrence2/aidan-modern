@@ -24346,5 +24346,86 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "how-to-learn-soccer-as-an-adult",
+  "offer": "late-kickoff",
+  "title": "How to learn soccer as an adult who never played",
+  "description": "A simple way for adults who never played soccer to build basic skills and join a pickup game or beginner league.",
+  "intro": "Plenty of adults start soccer with no experience. You won't play like someone who started at six, but you can enjoy it and help your team quickly. This guide is general information; warm up, start gently, and check with a doctor first if you have a health condition.",
+  "sections": [
+   {
+    "h": "Skills to practise first",
+    "list": [
+     "Passing with the inside of your foot, accurately over short distances.",
+     "First touch: controlling the ball so it stops close to you.",
+     "Using your weaker foot, even a little.",
+     "Simple dribbling with small touches, keeping the ball close."
+    ]
+   },
+   {
+    "h": "Practise alone",
+    "list": [
+     "Pass against a wall and control the rebound, alternating feet.",
+     "Do 15 minutes a few times a week rather than one long session.",
+     "Count clean touches so you can see progress."
+    ]
+   },
+   {
+    "h": "Build fitness slowly",
+    "list": [
+     "Soccer is lots of short sprints and jogging.",
+     "Mix walking and jogging at first, then add short faster bursts.",
+     "Rest between hard sessions."
+    ]
+   },
+   {
+    "h": "Find the right game",
+    "list": [
+     "Look for adult beginner leagues or 'beginners only' sessions.",
+     "Casual pickup and small-sided games are often welcoming to new players.",
+     "Tell people you're new; most will help."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "what-to-do-at-your-first-pickup-soccer-game",
+  "offer": "late-kickoff",
+  "title": "What to do at your first pickup soccer game",
+  "description": "Simple tips for your first pickup or 5-a-side game if you're new to soccer, so you can contribute without looking lost.",
+  "intro": "Your first game can feel scary, but simple, sensible play goes a long way. Focus on a few easy jobs and you'll be useful to your team.",
+  "sections": [
+   {
+    "h": "Before the game",
+    "list": [
+     "Wear proper shoes for the surface, and bring water and shin guards if they're used.",
+     "Warm up: a few minutes of jogging and stretching."
+    ]
+   },
+   {
+    "h": "Simple jobs that help",
+    "list": [
+     "Stay in position rather than chasing the ball everywhere.",
+     "When you get the ball, make a short, simple pass to a teammate.",
+     "Get back to defend when the other team has the ball.",
+     "Move into space so teammates can pass to you."
+    ]
+   },
+   {
+    "h": "Things to avoid",
+    "list": [
+     "Trying fancy skills; simple passes are more useful.",
+     "Running yourself out in the first five minutes.",
+     "Diving into tackles, which can hurt you and others."
+    ]
+   },
+   {
+    "h": "After the game",
+    "p": [
+     "Note one thing that went well and one thing to practise. Ask a friendly player for a tip; most are happy to help a newcomer."
+    ]
+   }
+  ]
  }
 ]

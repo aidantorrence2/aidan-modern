@@ -49348,6 +49348,90 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-27",
+    "slug": "late-kickoff",
+    "name": "Late Kickoff",
+    "need": "I never played soccer growing up, and I want to join a pickup game or beginner league as an adult without looking lost.",
+    "headline": "Never played soccer and want to join a pickup game or beginner league? Practise first touch and passing in 15 minutes against a wall, and walk into your first game with a simple plan.",
+    "buyer": "Adults (18+) who never played soccer growing up, or stopped at school, and want to join pickup, 5-a-side or a beginner league.",
+    "bullets": [
+      "15-minute solo sessions against a wall or in a small space: passing, first touch, dribbling and your weaker foot, with clean touches logged per foot.",
+      "A first-game plan: a beginner-friendly position, where to stand and when to pass.",
+      "A one-minute log after each game that picks next week's one focus, plus a gentle running build-up."
+    ],
+    "price": "$4.99/month",
+    "priceUsd": 5,
+    "priceNote": "Or $29 a year. For adults 18+.",
+    "reasonPrompt": "Have you played before, and what kind of game do you want to join?",
+    "faq": [
+      {
+        "q": "Is it safe if I'm not very fit?",
+        "a": "Late Kickoff starts gently and builds up slowly. It isn't medical advice: warm up, stop if anything hurts, and check with a doctor before starting if you have a health condition or haven't exercised in a long time."
+      },
+      {
+        "q": "Is it linked to a league, club or soccer app?",
+        "a": "No. Late Kickoff is independent and not affiliated with any league, club, governing body or soccer app."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-27",
+      "summary": "Adults describe wondering if it's a bad idea to start soccer at 35 without having played growing up, worrying about being destroyed at a pickup game having never played, not having played since school and not wanting to look a fool, and feeling odd never having played.",
+      "wtp": "Techne Futbol, a soccer training app, has 17K App Store ratings and sells plans from $9.99 to $37.99 a month or $279.99 a year; Sons of Pitches FC runs an eight-week coached Beginners Only programme for adults for $139.",
+      "signals": [
+        {
+          "url": "https://www.tigerdroppings.com/rant/soccer/learning-to-play-soccer-as-an-adult/70714094/",
+          "who": "okietiger13 (TigerDroppings)",
+          "date": "2017-06-18",
+          "quote": "Is this a bad idea? 35 years old and I didn't play growing up.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.tigerdroppings.com/rant/soccer/how-bad-will-i-be-destroyed-if-i-show-up-at-a-pick-up-game/97419998/",
+          "who": "Ssubba (TigerDroppings)",
+          "date": "2021-07-25",
+          "quote": "Never played soccer",
+          "seen": "opened"
+        },
+        {
+          "url": "https://singletrackworld.com/forum/off-topic/roped-into-playing-football-tomorrow-lunchtime-tips/",
+          "who": "xc-steve (Singletrack World)",
+          "date": "2014-08-28",
+          "quote": "not played football since school any tips people so I don't get done over/look like a fool",
+          "seen": "opened"
+        },
+        {
+          "url": "https://phillysoccerpage.net/2013/10/24/fans-view-the-43-year-old-rookie/",
+          "who": "John Ling (Philly Soccer Page)",
+          "date": "2013-10-24",
+          "quote": "felt odd to me to be teaching soccer while never having played",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/techne-futbol-soccer-training/id1298569303",
+          "who": "Techne Futbol (App Store)",
+          "date": "2026-10-27",
+          "quote": "17K Ratings; Monthly Fundamentals $9.99; Monthly Membership $37.99; Annual $279.99",
+          "seen": "opened"
+        },
+        {
+          "url": "https://sonsofpitchesfc.leaguelab.com/sign-up/185735/start/Team",
+          "who": "Sons of Pitches FC (Beginners Only programme)",
+          "date": "2026-10-27",
+          "quote": "$139 for an eight-week adult beginners programme",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Techne Futbol and other training apps (mostly youth), adult beginner programmes, YouTube drills.",
+      "risks": "Posts are 2013-2021 and nobody said they'd pay for this exact tool. Techne Futbol is mainly a youth app, so the adult money signal is paid beginner programmes. Near live practice-tonight (parents coaching kids), but about adults learning to play."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
