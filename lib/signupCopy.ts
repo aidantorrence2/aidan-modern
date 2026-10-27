@@ -98,8 +98,8 @@ export const SIGNUP_COPY: Record<Lang, SignupCopy> = {
   },
   tr: {
     languageName: 'Turkish',
-    dates: 'Eylül',
-    city: 'İstanbul',
+    dates: 'Kasım',
+    city: 'Charlotte',
     headline: 'ücretsiz fotoğraf çekimi',
     note: { lead: 'Sevdiğin fotoğraf tarzını seç.', rest: ' Sonra çekimi buna göre planlarız.' },
     skip: 'Atla',
@@ -142,8 +142,8 @@ export const SIGNUP_COPY: Record<Lang, SignupCopy> = {
   },
   ru: {
     languageName: 'Russian',
-    dates: 'Сентябрь',
-    city: 'Стамбул',
+    dates: 'Ноябрь',
+    city: 'Шарлотт',
     headline: 'бесплатная фотосессия',
     note: { lead: 'Выбери стиль фото, который тебе нравится.', rest: ' Потом спланируем съёмку под него.' },
     skip: 'Пропустить',
