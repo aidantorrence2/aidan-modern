@@ -22527,5 +22527,88 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "how-to-sign-a-pdf-on-your-phone-without-a-printer",
+  "offer": "sign-once",
+  "title": "How to sign a PDF on your phone without a printer",
+  "description": "Simple ways to fill in and sign a PDF form on your phone or computer when you don't have a printer.",
+  "intro": "You can usually sign a PDF without printing it. Phones and computers often have a free built-in way to do it. This guide is general information; some documents need a handwritten or witnessed signature, so check with the sender if you're unsure.",
+  "sections": [
+   {
+    "h": "On an iPhone or iPad",
+    "list": [
+     "Open the PDF from your email or Files.",
+     "Use the markup tool to add text and your signature.",
+     "Save or share the signed copy."
+    ]
+   },
+   {
+    "h": "On Android",
+    "list": [
+     "Open the PDF in a PDF viewer or office app that supports filling and signing.",
+     "Add text and draw your signature.",
+     "Save and send it back."
+    ]
+   },
+   {
+    "h": "On a computer",
+    "list": [
+     "Many free PDF readers let you fill in forms and add a signature.",
+     "On a Mac, the built-in Preview app can add a signature."
+    ]
+   },
+   {
+    "h": "Watch out for trials",
+    "list": [
+     "Some signing apps start an expensive subscription after a free trial.",
+     "Check the price and cancel terms before you start."
+    ]
+   },
+   {
+    "h": "Before you send",
+    "list": [
+     "Check every page is filled in and signed where needed.",
+     "Keep a copy of the signed document for yourself."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "how-to-fill-in-a-pdf-form-for-free",
+  "offer": "sign-once",
+  "title": "How to fill in a PDF form for free",
+  "description": "Free ways to type into a PDF form and save it, on a phone or computer, without buying software.",
+  "intro": "Many PDF forms can be filled in on screen for free. Some are 'fillable', with boxes you can click into; others are flat scans, where you add text on top.",
+  "sections": [
+   {
+    "h": "Fillable forms",
+    "list": [
+     "Open the PDF in a free PDF reader or your phone's file viewer.",
+     "Click or tap into each box and type.",
+     "Save a copy before closing, so your answers aren't lost."
+    ]
+   },
+   {
+    "h": "Flat or scanned forms",
+    "list": [
+     "Use a markup or 'add text' tool to place text boxes over each line.",
+     "Zoom in to line the text up neatly."
+    ]
+   },
+   {
+    "h": "Signing",
+    "list": [
+     "Add a typed or drawn signature if the form allows it.",
+     "Some official documents need a handwritten or witnessed signature; check the instructions."
+    ]
+   },
+   {
+    "h": "Sending it back",
+    "p": [
+     "Save the completed form as a PDF, check it opens properly, then email or upload it. Keep a copy."
+    ]
+   }
+  ]
  }
 ]

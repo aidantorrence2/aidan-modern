@@ -47339,6 +47339,97 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-27",
+    "slug": "sign-once",
+    "name": "Sign Once",
+    "need": "I need to fill in and sign a PDF someone sent me, but I have no printer and don't want a subscription just to sign one form.",
+    "headline": "Need to sign a PDF but have no printer? Fill in the form, add your signature on your phone and send it back, paying per document, with no trial that turns into a subscription.",
+    "buyer": "Adults (18+) without a home printer who need to sign the occasional lease, job, benefits or school form.",
+    "bullets": [
+      "Open the PDF, fill in the boxes and add your signature with your finger.",
+      "Save and send the signed copy straight back by email or upload.",
+      "Pay per document or a tiny monthly price, shown up front; no free trial that quietly becomes a $100 subscription."
+    ],
+    "price": "$3/month",
+    "priceUsd": 3,
+    "priceNote": "Or $1.99 per document. No auto-renewing trial.",
+    "reasonPrompt": "What do you usually need to sign: leases, job forms, school forms or something else?",
+    "faq": [
+      {
+        "q": "Is an e-signature legally valid for my document?",
+        "a": "Often, but not always; some documents need a handwritten or witnessed signature. Sign Once doesn't give legal advice, so check with whoever sent you the form if you're unsure."
+      },
+      {
+        "q": "Is it linked to Adobe, DocuSign or any company?",
+        "a": "No. Sign Once is independent and not affiliated with any document or e-signature company. Your phone may also have a free built-in markup tool worth trying first."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-27",
+      "summary": "People describe having no printer at home, needing to sign unemployment forms, their printer and wifi being down, being asked to pay for an Adobe subscription to sign one document, and being charged over $100 after forgetting to cancel a trial.",
+      "wtp": "Signeasy, a PDF signing app, has 34K App Store ratings and sells $9.99 for 10 documents, $14.99 a month or $39.99 to $139.99 a year.",
+      "signals": [
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=381786507/sortby=mosthelpful/json",
+          "who": "Qui 022293 (App Store review of Signeasy)",
+          "date": "2019-06-13",
+          "quote": "I do not have a printer at my house so I use this app",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=381786507/sortby=mosthelpful/json",
+          "who": "SouluvinU (App Store review of Signeasy)",
+          "date": "2020-06-18",
+          "quote": "when my printer/scanner was down",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=2/id=1361059450/sortby=mosthelpful/json",
+          "who": "gibo227 (App Store review of Fill and Sign Documents)",
+          "date": "2020-08-16",
+          "quote": "I had to sign a COVID-19 emergency unemployment so I looked for apps to sign the documents",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1361059450/sortby=mosthelpful/json",
+          "who": "blurryface.sara (App Store review of Fill and Sign Documents)",
+          "date": "2020-06-26",
+          "quote": "I used this app once when both my printer and WiFi",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1361059450/sortby=mosthelpful/json",
+          "who": "Earnest257 (App Store review of Fill and Sign Documents)",
+          "date": "2021-04-16",
+          "quote": "if you forget to cancel in time they charge you over one hundred dollars",
+          "seen": "opened"
+        },
+        {
+          "url": "https://lemmy.ml/comment/11721641",
+          "who": "datavoid (Lemmy)",
+          "date": "2024-06-17",
+          "quote": "require you to pay for an Adobe subscription in order to sign an",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id381786507",
+          "who": "Signeasy (App Store)",
+          "date": "2026-10-27",
+          "quote": "34K Ratings; 10 Documents $9.99; 1 Month Standard $14.99; 1 Year $39.99 to $139.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Signeasy, Adobe Fill and Sign, phone markup tools, DocuSign, printing at a library.",
+      "risks": "Free built-in tools exist. E-signing is mostly a business category, so this stays personal and one-off. Legal acceptance varies by document. Near live one-fax (faxing forms) and printer-back-online, but about signing PDFs."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
