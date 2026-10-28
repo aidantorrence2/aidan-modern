@@ -28998,5 +28998,144 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "what-mountain-am-i-looking-at",
+  "offer": "peak-namer",
+  "title": "What mountain am I looking at? How to identify peaks from a viewpoint",
+  "description": "Simple ways to work out the names of the mountains in a view, with or without an app.",
+  "intro": "Standing in front of a mountain view and wondering what each peak is called is common. Here are a few ways to find out.",
+  "sections": [
+   {
+    "h": "Use a peak-identification app",
+    "list": [
+     "These apps use your location, compass and terrain data to label the peaks in front of you.",
+     "Download the area before you go if you might lose signal.",
+     "Calibrate your phone's compass first; a wrong heading puts labels on the wrong peaks."
+    ]
+   },
+   {
+    "h": "Check a map",
+    "list": [
+     "A topographic map shows peaks with their names and heights.",
+     "Find where you're standing, then line up the map with the view using a compass."
+    ]
+   },
+   {
+    "h": "Look for local clues",
+    "list": [
+     "Viewpoints often have panorama boards naming the peaks.",
+     "Visitor centres and local guides can help."
+    ]
+   },
+   {
+    "h": "Why it can be tricky",
+    "p": [
+     "Nearby hills can hide bigger peaks, and haze makes distant mountains blend together. Comparing a few landmarks helps."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "name-mountains-on-a-road-trip",
+  "offer": "peak-namer",
+  "title": "How to name the mountains you see on a road trip",
+  "description": "Tips for identifying peaks while travelling by car, safely and without signal.",
+  "intro": "Road trips through the mountains are full of views you'll want to know more about. A little preparation helps you name them as you go.",
+  "sections": [
+   {
+    "h": "Before you set off",
+    "list": [
+     "Download offline maps or a peak app's data for your route.",
+     "Look up the main peaks along the way so you know what to look out for."
+    ]
+   },
+   {
+    "h": "On the road",
+    "list": [
+     "Leave identifying peaks to passengers; the driver should keep their eyes on the road.",
+     "Stop at signed viewpoints and pull-outs for a proper look."
+    ]
+   },
+   {
+    "h": "Remember what you saw",
+    "p": [
+     "Take a photo at each stop and note the place and time; you can label the peaks later from your photos."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "check-border-wait-times-before-you-leave",
+  "offer": "line-ahead",
+  "title": "How to check US-Mexico border wait times before you leave",
+  "description": "Where to find border crossing wait times, why they can be off, and how to plan a quicker crossing.",
+  "intro": "Waits at US-Mexico crossings can change a lot through the day. Checking before you leave helps you pick a better time or crossing.",
+  "sections": [
+   {
+    "h": "Where to check",
+    "list": [
+     "US Customs and Border Protection publishes official estimated wait times for each port of entry and lane.",
+     "Some apps add live camera views or reports from other travellers.",
+     "Local community groups often share real-time updates."
+    ]
+   },
+   {
+    "h": "Why times can be off",
+    "p": [
+     "Official times are estimates and can lag behind what's happening, so it helps to compare more than one source."
+    ]
+   },
+   {
+    "h": "Plan ahead",
+    "list": [
+     "Note how long your usual crossing takes at different times and days.",
+     "Busy commuter hours and holidays are often slower.",
+     "Have your documents ready before you reach the booth."
+    ]
+   },
+   {
+    "h": "Stay safe",
+    "p": [
+     "Check before you set off. Never use your phone while driving; let a passenger check, or pull over safely."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "sentri-vs-ready-lane",
+  "offer": "line-ahead",
+  "title": "SENTRI, Ready Lane or general lane: which border lane should you use?",
+  "description": "The differences between SENTRI, Ready Lanes and general lanes at US-Mexico land crossings.",
+  "intro": "At many US-Mexico land crossings, there are different lanes for different travellers. Using the right one can save a lot of time.",
+  "sections": [
+   {
+    "h": "SENTRI",
+    "list": [
+     "A trusted traveller programme for faster entry into the US at the southern border.",
+     "You apply, pay a fee, pass a background check and attend an interview.",
+     "Approved members use dedicated SENTRI lanes, often the fastest."
+    ]
+   },
+   {
+    "h": "Ready Lane",
+    "list": [
+     "For travellers with radio-frequency-enabled documents, such as a US passport card, an enhanced driver's licence or a trusted traveller card.",
+     "Everyone in the vehicle needs a qualifying document."
+    ]
+   },
+   {
+    "h": "General lanes",
+    "p": [
+     "Open to everyone with valid travel documents. These are usually the slowest at busy times."
+    ]
+   },
+   {
+    "h": "Check the rules",
+    "p": [
+     "Requirements can change, so check US Customs and Border Protection's website for current details before you travel."
+    ]
+   }
+  ]
  }
 ]

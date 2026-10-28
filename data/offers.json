@@ -54101,6 +54101,188 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-28",
+    "slug": "peak-namer",
+    "name": "Peak Namer",
+    "need": "When I look at a mountain view from a trail, a road trip or my own window, I want to know the name of each peak I can see.",
+    "headline": "Ever wonder which mountain you're looking at? Point your phone at the view and see each peak's name, even offline on a road trip.",
+    "buyer": "Road-trippers, mountain holidaymakers and people who live within sight of mountains.",
+    "bullets": [
+      "Point your phone at a view and see the names and heights of the peaks in it.",
+      "Download a region before your trip so it works with no signal.",
+      "Save your favourite views, like the one from your window, with every peak labelled."
+    ],
+    "price": "$2.99/month",
+    "priceUsd": 3,
+    "priceNote": "Or $12 for a 30-day trip pass.",
+    "reasonPrompt": "Where's the view you most want to name?",
+    "faq": [
+      {
+        "q": "Is it for navigation?",
+        "a": "No. Peak Namer is for identifying what you can see, not for route-finding or safety. Use a proper map and the right gear in the mountains."
+      },
+      {
+        "q": "Is it linked to a park, map maker or hiking app?",
+        "a": "No. Peak Namer is independent and not affiliated with any park, map maker or app."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-28",
+      "summary": "People describe looking at the horizon and wondering what mountain they're seeing, wondering which volcanoes they saw in Guatemala, wondering about an impressive peak, wondering what the mountains around them are named when travelling, and wanting to name peaks from the passenger seat before they go out of view.",
+      "wtp": "PeakVisor has 13K App Store ratings with plans at $9.99 a month or $39.99 a year; PeakFinder has 12K ratings as a $4.99 paid app.",
+      "signals": [
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=357421934/sortby=mosthelpful/json",
+          "who": "Metrozoe (App Store review of PeakFinder)",
+          "date": "2026-07-12",
+          "quote": "it answers the question I most often have",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=357421934/sortby=mosthelpful/json",
+          "who": "peteostro (App Store review of PeakFinder)",
+          "date": "2025-02-18",
+          "quote": "wonder what mountain/hill you are seeing",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=357421934/sortby=mosthelpful/json",
+          "who": "nomadruss (App Store review of PeakFinder)",
+          "date": "2024-03-27",
+          "quote": "which volcanoes i was seeing in Guatemala",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=357421934/sortby=mosthelpful/json",
+          "who": "Jesse Wicker (App Store review of PeakFinder)",
+          "date": "2025-10-05",
+          "quote": "an impressive or unique peak that we wonder about",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1187259191/sortby=mosthelpful/json",
+          "who": "Robbo Mon (App Store review of PeakVisor)",
+          "date": "2019-08-14",
+          "quote": "I had wondered what mountains I could see",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=2/id=1187259191/sortby=mosthelpful/json",
+          "who": "bigwallbrad (App Store review of PeakVisor)",
+          "date": "2018-10-10",
+          "quote": "I often wonder what the mountains around me in Montana are named when traveling",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=2/id=1187259191/sortby=mosthelpful/json",
+          "who": "swrobel (App Store review of PeakVisor)",
+          "date": "2022-07-09",
+          "quote": "identify peaks from the passenger seat",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/hiking-and-skiing-peakvisor/id1187259191",
+          "who": "PeakVisor (App Store)",
+          "date": "2026-10-28",
+          "quote": "13K Ratings; One Month $9.99; One Year $39.99",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/peakfinder/id357421934",
+          "who": "PeakFinder (App Store)",
+          "date": "2026-10-28",
+          "quote": "12K Ratings; $4.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "PeakFinder, PeakVisor, printed panorama boards at viewpoints.",
+      "risks": "Two strong incumbents; accuracy and offline use are the main complaints to beat; close to hiking and skiing on the skip list, so it's positioned for sightseeing; occasional, seasonal use. Evidence is all App Store reviews."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-28",
+    "slug": "line-ahead",
+    "name": "Line Ahead",
+    "need": "I cross the US-Mexico border often and need to know the real wait at each crossing and lane before I leave, so I can choose when and where to cross.",
+    "headline": "Cross the US-Mexico border often? Check the real wait at each crossing and lane before you leave home, and pick the best time to go.",
+    "buyer": "Frequent US-Mexico border crossers, such as San Diego-Tijuana commuters, SENTRI and Ready Lane users, and families who cross regularly.",
+    "bullets": [
+      "Check wait times at each crossing and lane before you set off, in English or Spanish.",
+      "See how waits usually change by day and hour, so you can plan your crossing.",
+      "Get a heads-up at home when your usual crossing gets quieter."
+    ],
+    "price": "$2.99/month",
+    "priceUsd": 3,
+    "priceNote": "Or $24 a year.",
+    "reasonPrompt": "Which crossing do you use, and how often?",
+    "faq": [
+      {
+        "q": "Can I use it while I'm in line?",
+        "a": "Check before you leave. Never use your phone while driving; if you're in the queue, let a passenger check or pull over safely first."
+      },
+      {
+        "q": "Is it linked to CBP or the government?",
+        "a": "No. Line Ahead is independent and not affiliated with US Customs and Border Protection or any government. Wait times are estimates and can change quickly."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-28",
+      "summary": "Frequent crossers describe checking an app before leaving home on days they cross, timing their crossing at San Ysidro, crossing at San Ysidro five days a week, and relying on an app for a good time to cross.",
+      "wtp": "Bordify has 2K App Store ratings with Pro at $3.99 a month or $39.99 a year.",
+      "signals": [
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1121895816/sortby=mosthelpful/json",
+          "who": "driley0515 (App Store review of Border Traffic)",
+          "date": "2022-01-22",
+          "quote": "On days I need to cross, I check the app before leaving home",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1121895816/sortby=mosthelpful/json",
+          "who": "LNorRigB (App Store review of Border Traffic)",
+          "date": "2019-07-28",
+          "quote": "timing our crossing at San Ysidro",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1006266261/sortby=mosthelpful/json",
+          "who": "Very agitated (App Store review of Bordify)",
+          "date": "2017-08-25",
+          "quote": "crosses into the US at San Ysidro five days a week",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1006266261/sortby=mosthelpful/json",
+          "who": "banjodog88 (App Store review of Bordify)",
+          "date": "2023-07-27",
+          "quote": "I rely on the app for a good time to cross",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/bordify/id1006266261",
+          "who": "Bordify (App Store)",
+          "date": "2026-10-28",
+          "quote": "2K Ratings; Pro Monthly $3.99; Pro Yearly $39.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Bordify, Border Traffic, the official CBP wait-time page and app, Facebook groups.",
+      "risks": "Accuracy is the whole product, and official times are often off; needs better data (history, crowd reports); buyers are concentrated near a few crossings; must be bilingual; must not encourage phone use while driving (same concern as Drive Witness). Evidence is all App Store reviews."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
