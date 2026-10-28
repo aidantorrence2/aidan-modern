@@ -51707,6 +51707,174 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-28",
+    "slug": "bowl-peace",
+    "name": "Bowl Peace",
+    "need": "My dog growls, snaps or guards when anyone goes near his food, toys, chews or the sofa, and nothing I've tried has fixed it.",
+    "headline": "Dog growls or snaps when you go near its food, toys or the sofa? Map exactly what it guards, keep everyone safe day to day, and follow a gentle trade-up plan at your dog's pace.",
+    "buyer": "Adult dog owners (18+), often with a new puppy, a rescue or two dogs, whose dog guards food, toys, chews, furniture or a person.",
+    "bullets": [
+      "A quick map of what your dog guards, where and from whom, with the warning signs to watch for.",
+      "Day-to-day safety: feeding spaces, managing high-value chews, and simple house rules for children and visitors.",
+      "A gentle, positive trade-up plan in small steps, with a log so you can see if it's getting better or worse."
+    ],
+    "price": "$4.99/month",
+    "priceUsd": 5,
+    "priceNote": "Or $29 a year. For adults 18+.",
+    "reasonPrompt": "What does your dog guard, and what happens when someone comes near?",
+    "faq": [
+      {
+        "q": "Is it safe to work on this myself?",
+        "a": "Bowl Peace is for management and gentle, positive practice only. If your dog has bitten, if the guarding is severe or getting worse, or if children live in or visit your home, get help from a qualified behaviourist and check with your vet first. Never punish growling; it's a warning."
+      },
+      {
+        "q": "Is it linked to a dog trainer or app?",
+        "a": "No. Bowl Peace is independent and not affiliated with any trainer, vet practice or dog-training app."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-28",
+      "summary": "Dog owners describe feeling low and helpless about resource guarding, realising their dog's behaviour is guarding, finding it very hard to manage because it comes out of nowhere, and a young puppy already showing food aggression.",
+      "wtp": "Puppr - Dog Training & Tricks has 27K App Store ratings and sells Premium at $9.99 a month; Zigzag - Dog & Puppy Training has 4.1K ratings at $9.99 a month or $49.99 a year.",
+      "signals": [
+        {
+          "url": "https://www.petforums.co.uk/threads/feeling-helpless-about-resource-guarding.525866/",
+          "who": "Bob_the_lab (PetForums)",
+          "date": "2020-04-03",
+          "quote": "I feel pretty low about the whole thing tbh",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.petforums.co.uk/threads/help-with-resource-guarding-please.544000/",
+          "who": "Giuliano Kolling (PetForums)",
+          "date": "2022-03-16",
+          "quote": "now I can see is resource guarding",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.petforums.co.uk/threads/resource-guarding-in-otherwise-very-friendly-dog.527339/",
+          "who": "Jaedyn Dombrowski (PetForums)",
+          "date": "2020-05-18",
+          "quote": "very hard to manage because it comes out of no where",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.petforums.co.uk/threads/springer-spaniel-food-aggression-resource-guarding.553135/",
+          "who": "Harleythespaniel (PetForums)",
+          "date": "2022-12-11",
+          "quote": "shown food aggression/resource guarding",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/puppr-dog-training-tricks/id1199338956",
+          "who": "Puppr - Dog Training & Tricks (App Store)",
+          "date": "2026-10-28",
+          "quote": "27K Ratings; Puppr Premium Monthly $9.99",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/zigzag-dog-puppy-training/id1550121165",
+          "who": "Zigzag - Dog & Puppy Training (App Store)",
+          "date": "2026-10-28",
+          "quote": "4.1K Ratings; Monthly $9.99; Annual $49.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "General dog-training apps, positive-reinforcement trainers, veterinary behaviourists.",
+      "risks": "Bite risk: must point to a qualified behaviourist for bites, severe cases or homes with children. All evidence from one UK forum; the paid apps are general training. Near live calm-pass (lead reactivity), but about guarding."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-28",
+    "slug": "dog-lie-in",
+    "name": "Dog Lie-In",
+    "need": "My dog or puppy wakes us at 4 or 5am every morning crying, whining or barking, and nothing we try makes it stop.",
+    "headline": "Puppy or dog waking you at 5am every day? Find out what's waking it, adjust the evening routine and room, and gently move the morning later step by step.",
+    "buyer": "Adult dog owners (18+), especially of puppies and newly adopted dogs, who have lost their mornings to early waking.",
+    "bullets": [
+      "A quick check of likely causes: needing the toilet, light, noise, hunger, too much sleep in the day, or learning that whining works.",
+      "Changes to the evening routine and sleeping space: last walk and toilet time, dinner timing, blackout and quiet.",
+      "A gentle plan to move morning wake-up later in small steps, with a log of each morning."
+    ],
+    "price": "$3.99/month",
+    "priceUsd": 4,
+    "priceNote": "Or $19 a year. For adults 18+.",
+    "reasonPrompt": "What time does your dog wake you, and what does it do?",
+    "faq": [
+      {
+        "q": "Could it be a health problem?",
+        "a": "Sometimes. Sudden early waking, more toileting, pain or restlessness, especially in an older dog, can have a medical cause. Check with your vet first. Dog Lie-In is a routine and training plan, not veterinary advice."
+      },
+      {
+        "q": "Is it linked to a dog trainer or app?",
+        "a": "No. Dog Lie-In is independent and not affiliated with any trainer, vet practice or dog-training app."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-28",
+      "summary": "Dog owners describe their dog waking them earlier and earlier, crying every morning between 4:45 and 5:15am, being at a complete loss what to do, and a dog barking most mornings at 5am.",
+      "wtp": "Puppr - Dog Training & Tricks has 27K App Store ratings and sells Premium at $9.99 a month; Zigzag - Dog & Puppy Training has 4.1K ratings at $9.99 a month.",
+      "signals": [
+        {
+          "url": "https://www.petforums.co.uk/threads/help-dog-waking-up-earlier-and-earlier.526469/",
+          "who": "Arny (PetForums)",
+          "date": "2020-04-23",
+          "quote": "waking up, and then us, earlier and earlier",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.petforums.co.uk/threads/dog-wakes-up-too-early.555594/",
+          "who": "Brittany.annaliese (PetForums)",
+          "date": "2023-08-29",
+          "quote": "wakes us up crying between 4:45-5:15am",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.petforums.co.uk/threads/dog-whining-every-morning-5am-help.525082/",
+          "who": "Joyyy (PetForums)",
+          "date": "2020-03-08",
+          "quote": "complete loss on what to do",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.petforums.co.uk/threads/dog-barking-5am.550616/",
+          "who": "ELA41 (PetForums)",
+          "date": "2022-07-26",
+          "quote": "barks most mornings at 5am, how do I stop it",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/puppr-dog-training-tricks/id1199338956",
+          "who": "Puppr - Dog Training & Tricks (App Store)",
+          "date": "2026-10-28",
+          "quote": "27K Ratings; Puppr Premium Monthly $9.99",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/zigzag-dog-puppy-training/id1550121165",
+          "who": "Zigzag - Dog & Puppy Training (App Store)",
+          "date": "2026-10-28",
+          "quote": "4.1K Ratings; Monthly $9.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "General dog-training apps, trainers, free puppy guides.",
+      "risks": "Sibling of live sleep-past-five (cats waking owners early); could merge. Overlaps a little with crate-settle (night crying). All evidence from one UK forum; paid apps are general training. Must point to the vet for sudden changes."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
