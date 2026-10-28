@@ -6,7 +6,7 @@ import CountryCodeSelect from './CountryCodeSelect'
 import { detectPhoneCountry } from '@/lib/detectCountry'
 import { initPageAnalytics, track, pageElapsedMs, flushNow } from '@/lib/track'
 
-// v7d: the Charlotte form as ONE page. Contact, vibe, photo, (Instagram for
+// v7d: the Charlotte form as ONE page. Vibe, contact, photo, (Instagram for
 // phone sign-ups) and notes all sit on the landing page under Sign up, with a
 // single Finish Sign-Up button. No steps.
 //
@@ -399,6 +399,12 @@ export default function SignUpFormCollabCharlotteOnePage({ analyticsPath = '/sig
     const data = Object.fromEntries(new FormData(e.currentTarget).entries()) as Record<string, string>
     if (data.company) { track('honeypot_triggered'); setStep('done'); return }
 
+    if (!vibe) {
+      track('validation_error', { reason: 'vibe_missing' })
+      setError('Please pick a vibe.')
+      vibeRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      return
+    }
     let typed: string
     if (channel === 'instagram') {
       const handle = instagram.trim().replace(/^@+/, '').replace(/^https?:\/\/(www\.)?instagram\.com\//i, '').replace(/\/.*$/, '')
@@ -420,12 +426,6 @@ export default function SignUpFormCollabCharlotteOnePage({ analyticsPath = '/sig
         return
       }
       typed = countryCode ? countryCode + ' ' + phone.trim() : phone.trim()
-    }
-    if (!vibe) {
-      track('validation_error', { reason: 'vibe_missing' })
-      setError('Please pick a vibe.')
-      vibeRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })
-      return
     }
     if (photos.length === 0) {
       track('validation_error', { reason: 'photo_missing' })
@@ -861,7 +861,7 @@ export default function SignUpFormCollabCharlotteOnePage({ analyticsPath = '/sig
           </div>
         </div>
 
-        {/* Sign up: the contact is the first thing asked. */}
+        {/* The form: vibe first, then contact, photo, notes. */}
         <div ref={pickerCardRef} className="scroll-mt-4 px-5 pb-4 pt-5">
           {panel}
         </div>
@@ -921,56 +921,8 @@ export default function SignUpFormCollabCharlotteOnePage({ analyticsPath = '/sig
   if (step === 'location') {
     return page(
       <div key="location" className="atf-card">
-          <h2 className="text-[32px] leading-[1.05] tracking-[-0.01em]" style={{ fontFamily: SERIF }}>
-            Sign up
-          </h2>
-        <form onSubmit={onSubmitAll} noValidate className="mt-4 space-y-2.5">
-          <div className="grid grid-cols-2 gap-2">
-            {segment('instagram')}
-            {segment('phone')}
-          </div>
-          {channel === 'instagram' ? (
-            <>
-              <div className="flex items-center rounded-[3px] border border-neutral-300 bg-white px-4 transition focus-within:border-neutral-800 focus-within:bg-white focus-within:ring-4 focus-within:ring-neutral-900/10">
-                <span className="pr-1 text-[17px] font-semibold text-neutral-300">@</span>
-                <input
-                  ref={phoneRef}
-                  name="instagram"
-                  value={instagram}
-                  onChange={e => { fieldEngaged('instagram'); setInstagram(e.target.value); setError(null) }}
-                  autoCapitalize="off"
-                  autoCorrect="off"
-                  autoComplete="off"
-                  spellCheck={false}
-                  className="w-full bg-transparent py-3.5 text-base text-neutral-900 placeholder-neutral-400 outline-none"
-                  placeholder="yourusername"
-                />
-              </div>
-              <p className="text-[12px] leading-snug text-neutral-500">
-                Please follow{' '}
-                <a href="https://www.instagram.com/madebyaidan" target="_blank" rel="noopener noreferrer" onClick={() => track('handle_clicked', { placement: 'capture' })} className="font-semibold text-neutral-900 underline decoration-neutral-400 underline-offset-2">@madebyaidan</a>
-                {' '}or I won&rsquo;t be able to message you.
-              </p>
-            </>
-          ) : (
-            <div className="flex gap-2">
-              {countryCode && <CountryCodeSelect light value={countryCode} onChange={code => { fieldEngaged('country_code'); track('country_code_changed', { code }); setCountryCode(code); setError(null) }} />}
-              <input
-                ref={phoneRef}
-                type="tel"
-                inputMode="tel"
-                autoComplete="tel-national"
-                name="phone"
-                value={phone}
-                onChange={e => { fieldEngaged('phone'); setPhone(e.target.value); setError(null) }}
-                onBlur={() => { const digits = phone.replace(/\D/g, ''); if (digits) trackOnce('phone_filled', digits, { digits: digits.length }) }}
-                className="min-w-0 flex-1 rounded-[3px] border border-neutral-300 bg-white px-4 py-3.5 text-base text-neutral-900 placeholder-neutral-400 outline-none transition focus:border-neutral-800 focus:bg-white focus:ring-4 focus:ring-neutral-900/10"
-                placeholder="Phone number, e.g. 704 555 0123"
-              />
-            </div>
-          )}
-
-          <section ref={vibeRef} className="scroll-mt-4 pt-8">
+        <form onSubmit={onSubmitAll} noValidate className="space-y-2.5">
+          <section ref={vibeRef} className="scroll-mt-4">
             {sectionTitle("What's your vibe?")}
             <div className="mt-4 grid grid-cols-2 gap-x-3 gap-y-5" role="radiogroup" aria-label="What's your vibe?">
               {VIBES.map(v => {
@@ -1022,6 +974,54 @@ export default function SignUpFormCollabCharlotteOnePage({ analyticsPath = '/sig
               })}
             </div>
           </section>
+
+          <h2 className="pt-8 text-[32px] leading-[1.05] tracking-[-0.01em]" style={{ fontFamily: SERIF }}>
+            Sign up
+          </h2>
+          <div className="grid grid-cols-2 gap-2">
+            {segment('instagram')}
+            {segment('phone')}
+          </div>
+          {channel === 'instagram' ? (
+            <>
+              <div className="flex items-center rounded-[3px] border border-neutral-300 bg-white px-4 transition focus-within:border-neutral-800 focus-within:bg-white focus-within:ring-4 focus-within:ring-neutral-900/10">
+                <span className="pr-1 text-[17px] font-semibold text-neutral-300">@</span>
+                <input
+                  ref={phoneRef}
+                  name="instagram"
+                  value={instagram}
+                  onChange={e => { fieldEngaged('instagram'); setInstagram(e.target.value); setError(null) }}
+                  autoCapitalize="off"
+                  autoCorrect="off"
+                  autoComplete="off"
+                  spellCheck={false}
+                  className="w-full bg-transparent py-3.5 text-base text-neutral-900 placeholder-neutral-400 outline-none"
+                  placeholder="yourusername"
+                />
+              </div>
+              <p className="text-[12px] leading-snug text-neutral-500">
+                Please follow{' '}
+                <a href="https://www.instagram.com/madebyaidan" target="_blank" rel="noopener noreferrer" onClick={() => track('handle_clicked', { placement: 'capture' })} className="font-semibold text-neutral-900 underline decoration-neutral-400 underline-offset-2">@madebyaidan</a>
+                {' '}or I won&rsquo;t be able to message you.
+              </p>
+            </>
+          ) : (
+            <div className="flex gap-2">
+              {countryCode && <CountryCodeSelect light value={countryCode} onChange={code => { fieldEngaged('country_code'); track('country_code_changed', { code }); setCountryCode(code); setError(null) }} />}
+              <input
+                ref={phoneRef}
+                type="tel"
+                inputMode="tel"
+                autoComplete="tel-national"
+                name="phone"
+                value={phone}
+                onChange={e => { fieldEngaged('phone'); setPhone(e.target.value); setError(null) }}
+                onBlur={() => { const digits = phone.replace(/\D/g, ''); if (digits) trackOnce('phone_filled', digits, { digits: digits.length }) }}
+                className="min-w-0 flex-1 rounded-[3px] border border-neutral-300 bg-white px-4 py-3.5 text-base text-neutral-900 placeholder-neutral-400 outline-none transition focus:border-neutral-800 focus:bg-white focus:ring-4 focus:ring-neutral-900/10"
+                placeholder="Phone number, e.g. 704 555 0123"
+              />
+            </div>
+          )}
 
           <section ref={photoRef} className="scroll-mt-4 pt-8">
             {sectionTitle('Your photo')}
