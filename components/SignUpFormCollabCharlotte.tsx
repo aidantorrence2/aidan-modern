@@ -910,9 +910,9 @@ export default function SignUpFormCollabCharlotte({ analyticsPath = '/sign-up-co
     return slideShell(2, (
       <>
         {kicker(slideNo.vibe, BACK_TO.vibe)}
-        {slideTitle('Choose one look')}
+        {slideTitle("What's your vibe?")}
         <p className="mt-2 text-[14px] leading-relaxed text-neutral-600">Tap the photo closest to the shoot you want.</p>
-        <div className="mt-5 grid grid-cols-2 gap-3" role="radiogroup" aria-label="Choose one look">
+        <div className="mt-5 grid grid-cols-2 gap-3" role="radiogroup" aria-label="What's your vibe?">
           {VIBES.map(v => {
             const on = vibe === v.key
             return (
