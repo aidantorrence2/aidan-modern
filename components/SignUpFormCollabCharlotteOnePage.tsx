@@ -782,9 +782,11 @@ export default function SignUpFormCollabCharlotteOnePage({ analyticsPath = '/sig
       )
     }
 
-  const sectionTitle = (t: string, optional = false) => (
-    <h3 className="text-[28px] leading-[1.05] tracking-[-0.01em] text-neutral-900" style={{ fontFamily: SERIF }}>
-      {t}{optional && <span className="ml-2 align-middle text-[12px] font-semibold uppercase tracking-[0.2em] text-neutral-400" style={{ fontFamily: 'system-ui, sans-serif' }}>optional</span>}
+  // Numbered, so the page reads as one form with parts to fill out.
+  const sectionTitle = (t: string, optional = false, n?: number) => (
+    <h3 className="flex items-baseline gap-3 text-[28px] leading-[1.05] tracking-[-0.01em] text-neutral-900" style={{ fontFamily: SERIF }}>
+      {n !== undefined && <span className="w-7 shrink-0 text-[20px] tabular-nums text-neutral-400">{String(n).padStart(2, '0')}</span>}
+      <span>{t}{optional && <span className="ml-2 align-middle text-[12px] font-semibold uppercase tracking-[0.2em] text-neutral-400" style={{ fontFamily: 'system-ui, sans-serif' }}>optional</span>}</span>
     </h3>
   )
 
@@ -922,9 +924,11 @@ export default function SignUpFormCollabCharlotteOnePage({ analyticsPath = '/sig
     return page(
       <div key="location" className="atf-card">
         <form onSubmit={onSubmitAll} noValidate className="space-y-2.5">
-          <p className="pb-5 text-[11px] font-semibold uppercase tracking-[0.22em] text-neutral-500">Fill out the form below to sign up</p>
+          <div className="mb-7 border-b border-neutral-900 pb-4">
+            <h2 className="text-[40px] leading-[0.98] tracking-[-0.015em] text-neutral-900" style={{ fontFamily: SERIF, textWrap: 'balance' }}>Fill out the form to sign up</h2>
+          </div>
           <section ref={vibeRef} className="scroll-mt-4">
-            {sectionTitle("What's your vibe?")}
+            {sectionTitle("What's your vibe?", false, 1)}
             <div className="mt-4 grid grid-cols-2 gap-x-3 gap-y-5" role="radiogroup" aria-label="What's your vibe?">
               {VIBES.map(v => {
                 const on = vibe === v.key
@@ -976,9 +980,7 @@ export default function SignUpFormCollabCharlotteOnePage({ analyticsPath = '/sig
             </div>
           </section>
 
-          <h2 className="pt-8 text-[32px] leading-[1.05] tracking-[-0.01em]" style={{ fontFamily: SERIF }}>
-            Sign up
-          </h2>
+          <div className="pt-8">{sectionTitle('Sign up', false, 2)}</div>
           <div className="grid grid-cols-2 gap-2">
             {segment('instagram')}
             {segment('phone')}
@@ -1025,7 +1027,7 @@ export default function SignUpFormCollabCharlotteOnePage({ analyticsPath = '/sig
           )}
 
           <section ref={photoRef} className="scroll-mt-4 pt-8">
-            {sectionTitle('Your photo')}
+            {sectionTitle('Your photo', false, 3)}
             <p className="mt-2 text-[13px] leading-relaxed text-neutral-500">Selfies are fine &mdash; just looking to see the real you.</p>
             <div className="mt-5 space-y-2">
               {sheetLabel(true, 'Like this', "simple & natural, don't hide your face")}
@@ -1075,7 +1077,7 @@ export default function SignUpFormCollabCharlotteOnePage({ analyticsPath = '/sig
 
           {channel === 'phone' && (
             <section className="pt-8">
-              {sectionTitle('Your Instagram', true)}
+              {sectionTitle('Your Instagram', true, 4)}
               <div className="mt-4 flex items-center rounded-[3px] border border-neutral-300 bg-white px-4 transition focus-within:border-neutral-800 focus-within:bg-white focus-within:ring-4 focus-within:ring-neutral-900/10">
                 <span className="pr-1 text-[17px] font-semibold text-neutral-300">@</span>
                 <input
@@ -1093,7 +1095,7 @@ export default function SignUpFormCollabCharlotteOnePage({ analyticsPath = '/sig
           )}
 
           <section className="pt-8">
-            {sectionTitle('Any notes or questions?', true)}
+            {sectionTitle('Any notes or questions?', true, channel === 'phone' ? 5 : 4)}
             <p className="mt-2 text-[13px] leading-relaxed text-neutral-500">Your own idea, inspo, references &mdash; anything.</p>
             <textarea
               id="collab-idea"
