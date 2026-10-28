@@ -52036,6 +52036,97 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-28",
+    "slug": "keep-it-dutch",
+    "name": "Keep It Dutch",
+    "need": "I'm learning Dutch, but whenever I try to speak it in real life people switch to English, so I've almost given up speaking Dutch in public.",
+    "headline": "Learning Dutch but people keep switching to English? Rehearse the places you actually go, learn polite ways to keep the conversation in Dutch, and take on one small Dutch exchange a day.",
+    "buyer": "Adults (18+) learning Dutch in the Netherlands or Flanders whose real-life conversations keep flipping to English.",
+    "bullets": [
+      "Short scripts for the places you go (supermarket, bakery, GP receptionist, the coffee machine at work) at your level.",
+      "Say-it-out-loud rehearsal with likely fast replies (recordings stay on your phone), plus polite lines to ask to keep going in Dutch.",
+      "One small Dutch exchange a day, with a log of how far it got and tomorrow's practice built from today's stumbles."
+    ],
+    "price": "$5.99/month",
+    "priceUsd": 6,
+    "priceNote": "Or $39 a year. For adults 18+.",
+    "reasonPrompt": "Where do people switch to English on you most often?",
+    "faq": [
+      {
+        "q": "Will it make me fluent or pass an exam?",
+        "a": "No promises of fluency or exam results. Keep It Dutch helps you practise real conversations and keep them going in Dutch."
+      },
+      {
+        "q": "Is it linked to a language school or the inburgering exam?",
+        "a": "No. Keep It Dutch is independent and not affiliated with any language school, app, government body or exam."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-28",
+      "summary": "Dutch learners describe giving up speaking Dutch in public, people switching to English feeling like a slap in the face, not wanting to make people's lives difficult with their halting Dutch, locals responding in English, and conversations slipping into English once both people know it's an option.",
+      "wtp": "Preply's Dutch conversation course has 4,574 reviews with tutors charging per lesson; Babel in Utrecht sells Dutch speaking courses from EUR 295 to EUR 795.",
+      "signals": [
+        {
+          "url": "https://ukrant.nl/magazine/internationals-here-is-your-top-five-pet-peeves-of-learning-dutch/?lang=en",
+          "who": "Jule Johanna Steinhauer (UKrant)",
+          "date": "undated",
+          "quote": "given up speaking Dutch in public for now",
+          "seen": "opened"
+        },
+        {
+          "url": "https://ukrant.nl/magazine/internationals-here-is-your-top-five-pet-peeves-of-learning-dutch/?lang=en",
+          "who": "Hannah (UKrant)",
+          "date": "undated",
+          "quote": "feels like a slap in the face",
+          "seen": "opened"
+        },
+        {
+          "url": "https://ukrant.nl/magazine/internationals-here-is-your-top-five-pet-peeves-of-learning-dutch/?lang=en",
+          "who": "Andrada Duta (UKrant)",
+          "date": "undated",
+          "quote": "make their lives difficult with my jerky Dutch",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.cursor.tue.nl/opinie/mohsin-siraj/clmn-difficulties-in-learning-dutch-language-in-the-netherlands/",
+          "who": "Mohsin Siraj (Cursor, TU/e)",
+          "date": "2014-04-02",
+          "quote": "the locals responded in English",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apposition.substack.com/p/gesprekken-met-vrienden",
+          "who": "aj (Substack)",
+          "date": "2022-12-17",
+          "quote": "keep the Dutch going",
+          "seen": "opened"
+        },
+        {
+          "url": "https://preply.com/en/courses/dutch/dutch-conversation-course",
+          "who": "Preply Dutch conversation course",
+          "date": "2026-10-28",
+          "quote": "4,574 reviews",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.babel.nl/en/course/dutch-speaking/",
+          "who": "Babel Utrecht (Dutch speaking courses)",
+          "date": "2026-10-28",
+          "quote": "EUR 295 to EUR 795",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Conversation tutors, language schools, taalcafes, Duolingo and other Dutch apps.",
+      "risks": "Three of five people are in one article. The money is courses and tutors; no dedicated app with ratings. Near live family-table, norsk-steps and suomi-steps, but about keeping real conversations in Dutch."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
