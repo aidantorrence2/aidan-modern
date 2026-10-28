@@ -52127,6 +52127,97 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-28",
+    "slug": "room-sweep",
+    "name": "Room Sweep",
+    "need": "When I check into a hotel or holiday rental, I want a quick, reliable way to check the room for hidden cameras, because detector apps flag the wrong things.",
+    "headline": "Worried about hidden cameras in hotel rooms and rentals? Follow a five-minute guided sweep of the spots that matter, with a flashlight lens check, and know exactly what to do if you find something.",
+    "buyer": "Adults (18+) who stay in hotels and holiday rentals often, especially solo and work travellers.",
+    "bullets": [
+      "A five-minute guided sweep, room by room: the spots that face beds, showers and changing areas.",
+      "A phone-flashlight lens-glint check, and how to read the device list on the Wi-Fi network without over-trusting it.",
+      "A clear plan if you find something: don't touch it, take photos, leave, and report it to the platform and police."
+    ],
+    "price": "$3.99/month",
+    "priceUsd": 4,
+    "priceNote": "Or $12 a year. For adults 18+.",
+    "reasonPrompt": "How often do you stay in hotels or rentals, and what worries you most?",
+    "faq": [
+      {
+        "q": "Can it detect hidden cameras automatically?",
+        "a": "No, and be wary of apps that claim to. Room Sweep is a guided physical check that helps you look in the right places; it can't guarantee finding every device. If you find one, don't tamper with it: photograph it, leave, and report it to the booking platform and the police."
+      },
+      {
+        "q": "Is it linked to a hotel, booking site or detector app?",
+        "a": "No. Room Sweep is independent and not affiliated with any hotel, booking platform or detector app."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-28",
+      "summary": "Travellers describe hunting for hidden cameras along with checking for bedbugs, having to check every possible location for cameras, wanting to search hotel rooms for wireless cameras, always worrying about cameras in hotel rooms, and scanning every new rental before unpacking.",
+      "wtp": "Hidden Camera Detector - Peek has 17K App Store ratings and sells Pro at $9.99 a week, $29.99 a quarter or $59.99 lifetime; Hidden Spy Camera Finder Pro has 12K ratings at $5.99 a month or $39.99 a year.",
+      "signals": [
+        {
+          "url": "https://news.ycombinator.com/item?id=35695682",
+          "who": "testfoobar (Hacker News)",
+          "date": "2023-04-25",
+          "quote": "examining mattress seams for bedbugs and hunting for hidden cameras",
+          "seen": "opened"
+        },
+        {
+          "url": "https://lemmy.world/comment/26466191",
+          "who": "Thebeardedsinglemalt (Lemmy)",
+          "date": "2026-10-22",
+          "quote": "check all potential locations for the hidden cameras",
+          "seen": "opened"
+        },
+        {
+          "url": "https://feddit.uk/comment/21753813",
+          "who": "tetris11 (Lemmy)",
+          "date": "2025-12-05",
+          "quote": "search for hidden wireless cameras in hotel rooms",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1560989782/sortby=mosthelpful/json",
+          "who": "Filazosn (App Store review of Hidden Spy Camera Finder Pro)",
+          "date": "2025-03-20",
+          "quote": "always worry about hidden cameras in hotel rooms",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1560989782/sortby=mosthelpful/json",
+          "who": "13konei (App Store review of Hidden Spy Camera Finder Pro)",
+          "date": "2025-05-24",
+          "quote": "scan new rentals before unpacking",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/hidden-camera-detector-peek/id1571925628",
+          "who": "Hidden Camera Detector - Peek (App Store)",
+          "date": "2026-10-28",
+          "quote": "17K Ratings; Pro Weekly $9.99; Quarterly $29.99; Lifetime $59.99",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1560989782",
+          "who": "Hidden Spy Camera Finder Pro (App Store)",
+          "date": "2026-10-28",
+          "quote": "12K Ratings; Monthly $5.99; Yearly $39.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Hidden camera detector apps, RF detector gadgets, booking platform camera rules.",
+      "risks": "Competing apps' reviews suggest detection is unreliable and some reviews look incentivised, so it must never claim detection. Privacy and safety topic: must point to reporting, not tampering. Evidence is HN, Lemmy and App Store reviews."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

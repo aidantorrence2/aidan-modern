@@ -27350,5 +27350,77 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "how-to-check-a-room-for-hidden-cameras",
+  "offer": "room-sweep",
+  "title": "How to check a hotel room or rental for hidden cameras",
+  "description": "A quick, practical sweep for hidden cameras when you check in, and what to do if you find one.",
+  "intro": "Hidden cameras in accommodation are rare, but a short check can put your mind at rest. No method finds every device, so treat this as a sensible sweep, not a guarantee.",
+  "sections": [
+   {
+    "h": "Where to look",
+    "list": [
+     "Anything facing the bed, shower, toilet or where you'd change: smoke alarms, clocks, chargers, plugs, speakers, picture frames, air vents.",
+     "Devices that seem out of place, or more than a room needs.",
+     "Small holes in walls, ceilings or objects."
+    ]
+   },
+   {
+    "h": "The flashlight check",
+    "list": [
+     "Turn off the lights and close the curtains.",
+     "Shine your phone's flashlight slowly around the room and look for a small reflected glint, which can come from a camera lens.",
+     "Look closely at anything that glints."
+    ]
+   },
+   {
+    "h": "Check the network carefully",
+    "p": [
+     "Some people look at the devices on the Wi-Fi network, but many devices have unclear names and cameras may not be on it at all, so don't rely on it alone."
+    ]
+   },
+   {
+    "h": "If you find something",
+    "list": [
+     "Don't touch or unplug it; photograph it in place.",
+     "Leave the room and contact the booking platform and the police.",
+     "Check the listing's rules; many platforms don't allow cameras in private areas, and disclosure rules apply."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "do-hidden-camera-detector-apps-work",
+  "offer": "room-sweep",
+  "title": "Do hidden camera detector apps actually work?",
+  "description": "What phone-based camera detector apps can and can't do, and a better way to check a room.",
+  "intro": "Many apps claim to detect hidden cameras. Phones have limits, so it helps to know what these apps really check before trusting them.",
+  "sections": [
+   {
+    "h": "What they usually do",
+    "list": [
+     "Scan the Wi-Fi network for connected devices, which can't see cameras that record to a memory card or use another network.",
+     "Use the phone's magnetic sensor, which reacts to many ordinary electronics.",
+     "Use the camera to look for lens reflections or infrared light."
+    ]
+   },
+   {
+    "h": "Why they can mislead",
+    "list": [
+     "Network scans often flag routers, smart locks and TVs.",
+     "Magnetic readings react to almost any electronics.",
+     "A clean result doesn't prove a room is camera-free."
+    ]
+   },
+   {
+    "h": "A better approach",
+    "list": [
+     "Do a careful physical check of the spots that face beds and bathrooms.",
+     "Use your phone's flashlight in a dark room to look for lens glints.",
+     "If you find something, don't touch it: photograph it, leave and report it."
+    ]
+   }
+  ]
  }
 ]
