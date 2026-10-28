@@ -1028,7 +1028,6 @@ export default function SignUpFormCollabCharlotteOnePage({ analyticsPath = '/sig
 
           <section ref={photoRef} className="scroll-mt-4 pt-8">
             {sectionTitle('Your photo', false, 3)}
-            <p className="mt-2 text-[13px] leading-relaxed text-neutral-500">Selfies are fine &mdash; just looking to see the real you.</p>
             <div className="mt-5 space-y-2">
               {sheetLabel(true, 'Like this', "simple & natural, don't hide your face")}
               {sheet(['/images/collab-examples/good-1.jpg', '/images/collab-examples/good-2.jpg', '/images/collab-examples/good-3.jpg', '/images/collab-examples/good-4.jpg'], true)}
@@ -1236,7 +1235,6 @@ export default function SignUpFormCollabCharlotteOnePage({ analyticsPath = '/sig
       <>
         {kicker(slideNo.photos, BACK_TO.photos)}
         {slideTitle('Your photo')}
-        <p className="mt-2 text-[13px] leading-relaxed text-neutral-500">Selfies are fine &mdash; just looking to see the real you.</p>
 
         <div className="mt-5 space-y-2">
           {sheetLabel(true, 'Like this', "simple & natural, don't hide your face")}
