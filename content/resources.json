@@ -28232,5 +28232,83 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "start-speaking-cantonese-when-you-understand-it",
+  "offer": "canto-reply",
+  "title": "How to start speaking Cantonese when you already understand it",
+  "description": "If you grew up hearing Cantonese but answer your parents in English, these steps help you start speaking.",
+  "intro": "Many people who grew up with Cantonese at home understand a lot but struggle to reply. That's very common, and speaking practice closes the gap faster than more listening.",
+  "sections": [
+   {
+    "h": "Why replying feels hard",
+    "p": [
+     "You've heard Cantonese for years but rarely spoken it. Tones can make you worry about saying the wrong word, so English feels safer."
+    ]
+   },
+   {
+    "h": "Small steps that work",
+    "list": [
+     "Pick one moment, like saying hello on the phone, and always do it in Cantonese.",
+     "Practise two or three sentences out loud before a call.",
+     "Copy how your parents say things, tones included.",
+     "Ask family to keep replying in Cantonese, and to slow down rather than switch."
+    ]
+   },
+   {
+    "h": "Tones",
+    "p": [
+     "Record yourself saying a word and compare it with a recording of a native speaker. Jyutping, a common romanisation system, marks the tones with numbers and can help you remember them."
+    ]
+   },
+   {
+    "h": "When to add a tutor",
+    "p": [
+     "If you keep getting stuck, a few lessons with a Cantonese tutor can quickly build your confidence."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "cantonese-family-words",
+  "offer": "canto-reply",
+  "title": "Cantonese family words: what to call your relatives",
+  "description": "Common Cantonese words for family members, from grandparents to aunts and uncles.",
+  "intro": "Cantonese has different words for relatives depending on which side of the family they're on and whether they're older or younger. Families vary, so check what yours uses.",
+  "sections": [
+   {
+    "h": "Parents and grandparents",
+    "list": [
+     "爸爸: Dad. 媽媽: Mum.",
+     "爺爺: your father's father. 嫲嫲: your father's mother.",
+     "公公: your mother's father. 婆婆: your mother's mother."
+    ]
+   },
+   {
+    "h": "Brothers and sisters",
+    "list": [
+     "哥哥: older brother.",
+     "家姐: older sister.",
+     "細佬: younger brother.",
+     "細妹: younger sister."
+    ]
+   },
+   {
+    "h": "Aunts and uncles",
+    "list": [
+     "伯父: your father's older brother.",
+     "叔叔: your father's younger brother.",
+     "姑媽 or 姑姐: your father's sisters.",
+     "舅父: your mother's brother.",
+     "姨媽 or 阿姨: your mother's sisters."
+    ]
+   },
+   {
+    "h": "Not sure?",
+    "p": [
+     "Ask your parents what they'd like you to call each relative; many families have their own habits."
+    ]
+   }
+  ]
  }
 ]

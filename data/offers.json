@@ -53240,6 +53240,97 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-28",
+    "slug": "canto-reply",
+    "name": "Canto Reply",
+    "need": "I grew up hearing Cantonese and understand my parents, but I can barely put a sentence together, so I answer them in English.",
+    "headline": "Understand Cantonese but answer your parents in English? Practise speaking out loud for real moments: calls home, yum cha, Lunar New Year and visits to relatives.",
+    "buyer": "Adults (18+) who grew up hearing Cantonese, understand much of it, and want to speak it with family.",
+    "bullets": [
+      "Short replies at your level, built from words you already understand, for calls, yum cha and family visits.",
+      "Hear and say back, with your own voice next to a model to hear the tones; recordings stay on your phone.",
+      "Family words for every relative, and a finder for words you only know by sound."
+    ],
+    "price": "$5.99/month",
+    "priceUsd": 6,
+    "priceNote": "Or $39 a year. For adults 18+.",
+    "reasonPrompt": "Who in your family would you most like to talk with in Cantonese?",
+    "faq": [
+      {
+        "q": "Will it make me fluent?",
+        "a": "No promises. Canto Reply is for people who already understand some Cantonese and want to start speaking more. If you're starting from zero, a beginner course or a tutor is the better first step."
+      },
+      {
+        "q": "Is it linked to a school, tutoring site or language app?",
+        "a": "No. Canto Reply is independent and not affiliated with any school, tutoring site or app."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-28",
+      "summary": "Cantonese heritage speakers describe understanding Cantonese films and conversations but barely stringing a sentence together, sputtering back rough translations to a relative, and always wishing they could speak more fluidly with their parents.",
+      "wtp": "Cantonese by Nemo has 1.7K App Store ratings with a $14.99 pack; Preply lists 162 Cantonese tutors rated 4.99 by 2,250 customers; CantoCards sells $4.99 a month or $49.99 a year.",
+      "signals": [
+        {
+          "url": "https://mabelkwong.com/2013/09/12/on-not-speaking-my-mother-tongue/",
+          "who": "Mabel Kwong (blog)",
+          "date": "2013-09-12",
+          "quote": "I can barely string a proper sentence in Canto",
+          "seen": "opened"
+        },
+        {
+          "url": "https://mabelkwong.com/2013/09/12/on-not-speaking-my-mother-tongue/",
+          "who": "Mabel Kwong (blog)",
+          "date": "2013-09-12",
+          "quote": "able to understand Cantonese movies",
+          "seen": "opened"
+        },
+        {
+          "url": "https://youngwritersproject.org/node/20137/",
+          "who": "Ines Alto (Young Writers Project)",
+          "date": "2023-10-24",
+          "quote": "sputter back a rough translation",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.kqed.org/perspectives/201601143270/larry-lee-speaking-the-language",
+          "who": "Larry Lee (KQED Perspectives)",
+          "date": "undated",
+          "quote": "I always wished I could speak more fluidly with my parents",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/cantonese-by-nemo/id635606017",
+          "who": "Cantonese by Nemo (App Store)",
+          "date": "2026-10-28",
+          "quote": "1.7K Ratings; $14.99 pack",
+          "seen": "opened"
+        },
+        {
+          "url": "https://preply.com/en/online/cantonese-tutors",
+          "who": "Preply Cantonese tutors",
+          "date": "2026-10-28",
+          "quote": "162 Cantonese teachers with an average rating of 4.99 out of 5 stars given by 2250 customers",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/cantocards/id6444021089",
+          "who": "CantoCards (App Store)",
+          "date": "2026-10-28",
+          "quote": "$4.99 a month; $49.99 a year",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Cantonese apps (Nemo, CantoCards), tutoring marketplaces, community classes.",
+      "risks": "Evidence is a blog, an essay and a commentary, not forums; one page undated; app money is small, with tutors carrying the spend; nobody wrote that they'd pay; same format as Greek Out Loud, Viet Reply and Contesta."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
