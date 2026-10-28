@@ -51042,6 +51042,90 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-28",
+    "slug": "bridge-back",
+    "name": "Bridge Back",
+    "need": "I want to get, or get back, a full backbend or wheel pose, but my upper back and shoulders are tight and I don't know what to stretch or strengthen.",
+    "headline": "Stuck pushing up into a backbend or wheel pose? Follow a gradual plan for your upper back, shoulders and hips, check your progress with photos, and build up without forcing it.",
+    "buyer": "Adults (18+) who practise yoga, dance or home flexibility and want a full backbend, or to get back one they've lost, without a coach.",
+    "bullets": [
+      "A short starting check: upper back, shoulders, hip flexors and wrists, so you know what's holding you back.",
+      "A gradual plan of mobility and strength work, from bridge to wheel, three or four short sessions a week.",
+      "Side-by-side progress photos (kept on your phone) and a 'stop if it hurts' rule built in."
+    ],
+    "price": "$3.99/month",
+    "priceUsd": 4,
+    "priceNote": "Or $24 a year. For adults 18+.",
+    "reasonPrompt": "Can you do a bridge now, and what stops you pushing up further?",
+    "faq": [
+      {
+        "q": "Is it safe for my back?",
+        "a": "Bridge Back is a gradual practice plan, not medical or physiotherapy advice, and promises no results. Warm up first, never force a stretch, and stop if you feel pain, numbness or tingling. If you have back, neck, shoulder or wrist problems, check with a doctor or physiotherapist first."
+      },
+      {
+        "q": "Is it linked to a yoga school or app?",
+        "a": "No. Bridge Back is independent and not affiliated with any yoga school, studio or flexibility app."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-28",
+      "summary": "Adults describe their main goal being a full backbend, wondering whether they can still do one at their age, asking what to do to get their backbends back, buying a backbend program, and struggling to lower their arms in a backbend.",
+      "wtp": "STRETCHIT: Stretch & Splits has 15K App Store ratings and sells a 'Bendy Back' backbend program for $4.99 plus subscriptions at $24.99 a month or $179.99 a year; Bend: Stretching & Flexibility has 175K ratings with memberships from $4.99.",
+      "signals": [
+        {
+          "url": "https://www.hotyogadoctor.com/hotyogaforum/topic/deepening-backbending/",
+          "who": "steelcitygrrl (Hot Yoga Doctor forum)",
+          "date": "2013-10-10",
+          "quote": "My main goal in life now is to be able to do a (hopefully) full backbend",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.hotyogadoctor.com/hotyogaforum/topic/deepening-backbending/",
+          "who": "steelcitygrrl (Hot Yoga Doctor forum)",
+          "date": "2013-10-10",
+          "quote": "Can I still perfect a backbend at my age",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.studioveena.com/discuss/discussion/How_come_I_cant_do_backbends_anymore_20111025025236/",
+          "who": "CalBear (StudioVeena forum)",
+          "date": "2011-10-25",
+          "quote": "what do I need to do to get my backbends back",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.studioveena.com/discuss/discussion/How_come_I_cant_do_backbends_anymore_20111025025236/",
+          "who": "PaulettePoles (StudioVeena forum)",
+          "date": "2011-10-25",
+          "quote": "I got their backbend download",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.studioveena.com/discuss/discussion/Back_flex_stretches__help_20110106081018/",
+          "who": "Kira (StudioVeena forum)",
+          "date": "2011-01-06",
+          "quote": "I go into my backbend and I struggle to lower my arms",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1124278517",
+          "who": "STRETCHIT: Stretch & Splits (App Store)",
+          "date": "2026-10-28",
+          "quote": "15K Ratings; Bendy Back $4.99; $24.99/mo; $179.99/yr",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "STRETCHIT, Bend, yoga apps, YouTube flexibility routines, yoga classes.",
+      "risks": "Evidence is old (2011-2013) and partly from a pole-dance site, so it's framed for yoga and general flexibility. Backbends can strain the back, shoulders and wrists, so it must stay gradual with a stop-if-it-hurts rule and no promised results. Near live toe-touch and split-steps, but about backbends."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
