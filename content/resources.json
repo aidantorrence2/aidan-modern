@@ -28590,5 +28590,82 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "fix-dripping-tap-beginners",
+  "offer": "handy-start",
+  "title": "How to fix a dripping tap: a beginner's guide",
+  "description": "Step-by-step help for one of the most common home repairs, and when to call a plumber.",
+  "intro": "A dripping tap usually means a worn washer or cartridge inside. It's often a manageable first repair, but take it slowly and call a plumber if anything looks different from what's described here.",
+  "sections": [
+   {
+    "h": "Before you start",
+    "list": [
+     "Turn off the water to the tap: use the small isolation valve under the sink if there is one, or the main stopcock.",
+     "Open the tap to drain any water left in the pipe.",
+     "Put the plug in the sink so small parts can't fall down the drain."
+    ]
+   },
+   {
+    "h": "Find out what kind of tap you have",
+    "list": [
+     "Older taps that turn several times usually have a rubber washer.",
+     "Taps with a quarter or half turn, and most mixer taps, usually have a ceramic cartridge."
+    ]
+   },
+   {
+    "h": "Replace the worn part",
+    "list": [
+     "Remove the handle cover and handle, then unscrew the top of the tap.",
+     "Take out the old washer or cartridge and take it to a hardware shop to match it exactly.",
+     "Fit the new part, put the tap back together, then turn the water on slowly and check for leaks."
+    ]
+   },
+   {
+    "h": "When to call a plumber",
+    "list": [
+     "The parts are stuck or corroded.",
+     "Water keeps leaking from the base or pipework.",
+     "You can't turn the water off."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "home-repairs-not-to-diy",
+  "offer": "handy-start",
+  "title": "Which home repairs you should never DIY",
+  "description": "The home jobs to leave to qualified professionals, and the simple ones most beginners can learn.",
+  "intro": "Learning to fix things saves money, but some jobs are dangerous or, in many places, legally need a qualified professional.",
+  "sections": [
+   {
+    "h": "Leave these to professionals",
+    "list": [
+     "Anything involving gas, including boilers, gas fires and gas cookers. In many countries this legally requires a registered engineer.",
+     "Electrical wiring, new circuits or fuse box work.",
+     "Structural work, such as removing walls.",
+     "Roof work or anything at height without proper equipment.",
+     "Anything that might involve asbestos in older buildings."
+    ]
+   },
+   {
+    "h": "Good beginner jobs",
+    "list": [
+     "Hanging pictures and shelves.",
+     "Bleeding radiators.",
+     "Unblocking a sink with a plunger.",
+     "Filling small holes and cracks in walls.",
+     "Replacing a toilet seat or showerhead."
+    ]
+   },
+   {
+    "h": "Stay safe",
+    "list": [
+     "Know where your water stopcock and fuse box are.",
+     "If you smell gas, leave the building and call your gas emergency line.",
+     "If in doubt, stop and ask a professional."
+    ]
+   }
+  ]
  }
 ]

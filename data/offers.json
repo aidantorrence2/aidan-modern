@@ -53730,6 +53730,90 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-28",
+    "slug": "handy-start",
+    "name": "Handy Start",
+    "need": "I'm not handy at all, I can't do even simple home repairs, and I end up waiting for or paying someone for every dripping tap or loose shelf.",
+    "headline": "Not handy and paying someone for every small fix? Learn simple home repairs one job at a time, and know which ones to leave to a professional.",
+    "buyer": "Adults (18+) who rent or own and want to handle small home repairs themselves, including first-time homeowners.",
+    "bullets": [
+      "A beginner ladder of real jobs: hanging a shelf, a dripping tap, a running toilet, a blocked sink, filling wall holes.",
+      "Describe or photograph the problem and get a clear call: a beginner job, try carefully, or call a professional.",
+      "The exact tools and parts for each job, plus a private home log of where your stopcock and fuse box are."
+    ],
+    "price": "$3.99/month",
+    "priceUsd": 4,
+    "priceNote": "Or $24 a year. For adults 18+.",
+    "reasonPrompt": "What's the repair you keep putting off or paying someone for?",
+    "faq": [
+      {
+        "q": "Will it teach me gas or electrical work?",
+        "a": "No. Handy Start never covers gas, mains wiring or structural work. Those need a qualified, registered professional. If you smell gas, leave and call your gas emergency line."
+      },
+      {
+        "q": "Is it linked to a hardware store or tradesperson site?",
+        "a": "No. Handy Start is independent and not affiliated with any store, brand or tradesperson platform."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-28",
+      "summary": "Adults describe not being handy at all, paying someone through a listings site to fix every problem, feeling incapable of learning even the simplest home repair and having to call someone, and paying a contractor by the hour to teach them.",
+      "wtp": "Brian_M paid a contractor an hourly rate to show him how to do the work and called it some of the best money he'd spent; AI Repair: DIY Home Fix Guide sells $4.99 a week or $29.99 a year; the Family Handyman app sells $1.99 a month or $14.99 a year.",
+      "signals": [
+        {
+          "url": "https://boards.straightdope.com/t/help-me-become-handy/501394",
+          "who": "Lochdale (Straight Dope)",
+          "date": "2009-06-29",
+          "quote": "My problem is that I am not handy. Not handy at all",
+          "seen": "opened"
+        },
+        {
+          "url": "https://boards.straightdope.com/t/help-me-become-handy/501394",
+          "who": "ZipperJJ (Straight Dope)",
+          "date": "2009-06-29",
+          "quote": "find someone to pay to fix the problem",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.city-data.com/forum/house/2998063-frustrated-diy.html",
+          "who": "Joey2k (City-Data)",
+          "date": "2018-12-21",
+          "quote": "incapable of learning even the simplest home repair",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.city-data.com/forum/house/2998063-frustrated-diy.html",
+          "who": "Brian_M (City-Data)",
+          "date": "2018-12-21",
+          "quote": "Some of the best money",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/app/id6748376792",
+          "who": "AI Repair: DIY Home Fix Guide (App Store)",
+          "date": "2026-10-28",
+          "quote": "115 Ratings; $4.99 a week; $29.99 a year",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id493021280",
+          "who": "The Family Handyman (App Store)",
+          "date": "2026-10-28",
+          "quote": "421 Ratings; $1.99 a month; $14.99 a year",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "DIY video channels, repair guide apps, magazines, handyman services.",
+      "risks": "Safety: must stay away from gas, mains electrics and structural work and point to professionals. Forum threads are old (2009, 2018); paid apps are small; next to live home-stewardship and new-build snagging offers. Mumsnet quotes from the doc side couldn't be opened with plain curl, so they aren't cited."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
