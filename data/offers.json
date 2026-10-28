@@ -50587,6 +50587,97 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-28",
+    "slug": "cold-dial",
+    "name": "Cold Dial",
+    "need": "I want to take cold showers, but every time I get to the dial I can't make myself turn the water cold.",
+    "headline": "Want to take cold showers but always back out at the dial? Start with a few cool seconds at the end of your normal warm shower, count in with a timer, and build up at your own pace.",
+    "buyer": "Adults (18+) who want to start, or restart, cold showers and keep backing out.",
+    "bullets": [
+      "A step ladder that starts with a few cool seconds at the end of your normal warm shower.",
+      "A 3-2-1 count-in and an audible timer, with a simple breathing cue for the first seconds.",
+      "A one-tap log (did it, half, skipped) with a weekly view instead of a shaming streak."
+    ],
+    "price": "$3.99/month",
+    "priceUsd": 4,
+    "priceNote": "Or $24 a year. For adults 18+.",
+    "reasonPrompt": "What usually stops you turning the water cold?",
+    "faq": [
+      {
+        "q": "Is it safe for me?",
+        "a": "Cold Dial is for showers only, not ice baths or cold plunges, and makes no health claims. Cold water can be risky for some people, including those with heart conditions, high blood pressure, Raynaud's or who are pregnant: check with your doctor first. Never push past feeling unwell, and warm up afterwards."
+      },
+      {
+        "q": "Is it linked to Wim Hof or any cold-therapy brand?",
+        "a": "No. Cold Dial is independent and not affiliated with any breathwork, cold-therapy or wellness brand."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-28",
+      "summary": "People describe struggling with cold showers, knowing a cold shower wasn't going to happen, stalling with excuses before turning the water cold, and backing out after one brief cold spell.",
+      "wtp": "The Wim Hof Method app, a breathwork and cold app, has 14K App Store ratings and sells a Supporter plan at $5.99 a month or $42.99 a year and a 30-day audio challenge for $26.99; Brisk: Cold Plunge Tracker has 63 ratings at $4.99 a month or $39.99 a year.",
+      "signals": [
+        {
+          "url": "https://singletrackworld.com/forum/off-topic/took-my-first-cold-shower-today-advice-re-shivering-afterwards-pls/",
+          "who": "kaiser (Singletrack World)",
+          "date": "2019-12-12",
+          "quote": "struggling tbh",
+          "seen": "opened"
+        },
+        {
+          "url": "https://singletrackworld.com/forum/off-topic/took-my-first-cold-shower-today-advice-re-shivering-afterwards-pls/",
+          "who": "n0b0dy0ftheg0at (Singletrack World)",
+          "date": "2019-12-13",
+          "quote": "I really struggle with cold showers",
+          "seen": "opened"
+        },
+        {
+          "url": "https://singletrackworld.com/forum/off-topic/took-my-first-cold-shower-today-advice-re-shivering-afterwards-pls/",
+          "who": "thenorthwind (Singletrack World)",
+          "date": "2019-12-13",
+          "quote": "tried one brief cols spell in the shower",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.standardmedia.co.ke/evewoman/amp/living/article/2001235684/lets-just-say-i-never-got-past-washing-my-face-in-the-sink-please-cold-showers-be-gone",
+          "who": "Ruth Lubembe (The Standard)",
+          "date": "2017-04-11",
+          "quote": "I knew the cold shower wasn't going to happen",
+          "seen": "opened"
+        },
+        {
+          "url": "https://physicalliving.com/what-i-learned-after-1-year-of-cold-showers/",
+          "who": "John Sifferman (Physical Living)",
+          "date": "2017-08-17",
+          "quote": "stall and come up with all kinds of ideas to prevent the inevitable",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/wim-hof-method-breathwork/id890471578",
+          "who": "Wim Hof Method: Breathwork (App Store)",
+          "date": "2026-10-28",
+          "quote": "14K Ratings; Supporter $5.99/mo or $42.99/yr; 30 Days Audio Challenge $26.99",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/brisk-cold-plunge-tracker/id6474380961",
+          "who": "Brisk: Cold Plunge Tracker (App Store)",
+          "date": "2026-10-28",
+          "quote": "63 Ratings; $4.99/mo; $39.99/yr",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Wim Hof Method app, cold plunge trackers, free habit apps.",
+      "risks": "The 14K-rating app is mainly breathwork; cold-specific paid apps are small. Posts are 2017-2019. Health risk for some people, so it must stay showers-only with a clear doctor note and no health claims. Near live habit offers, but about cold showers."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
