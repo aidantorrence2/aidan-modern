@@ -50776,6 +50776,174 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-28",
+    "slug": "sale-route",
+    "name": "Sale Route",
+    "need": "I want to see every yard and garage sale near me this weekend in one place, without checking several sites and apps, and plan the best route the night before.",
+    "headline": "Tired of checking five sites for this weekend's yard sales? See the sales near you in one list and map, mark the ones worth visiting, and plan your route the night before.",
+    "buyer": "US adults who go yard-saling, estate-saling or rummaging at weekends, including casual resellers.",
+    "bullets": [
+      "This weekend's yard, garage and estate sales near you in one list and map, from sources that allow it plus sales you add.",
+      "Mark sales by interest (furniture, tools, kids' things) and see start times at a glance.",
+      "Plan your route the night before, in the order that makes sense, and tick sales off as you go."
+    ],
+    "price": "$4.99/month",
+    "priceUsd": 5,
+    "priceNote": "Free to browse; route planning with Pro. Cancel any time.",
+    "reasonPrompt": "How do you find yard sales now, and what do you usually look for?",
+    "faq": [
+      {
+        "q": "Where do the listings come from?",
+        "a": "From sources that allow their listings to be shown, plus sales that you or other users add. Sale Route doesn't copy listings from sites that don't permit it, so some sales may only appear on other sites."
+      },
+      {
+        "q": "Is it linked to Craigslist, Facebook or any sale app?",
+        "a": "No. Sale Route is independent and not affiliated with Craigslist, Facebook, Nextdoor or any yard-sale app or site."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-28",
+      "summary": "Yard-salers describe wanting garage sales in one place instead of different apps, searching Craigslist and Facebook, finding online searching super time consuming, wanting to plan Friday's route on Thursday night, and wanting to prioritise their route by location or interest.",
+      "wtp": "Yard Sale Treasure Map has 37K App Store ratings and sells subscriptions from $4.99 to $7.99; Yardly - Find Garage Sales has 1.5K ratings and sells Pro at $9.00 a month or $27.00.",
+      "signals": [
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=6765746464/sortby=mosthelpful/json",
+          "who": "AJAXX! (App Store review of Yardly)",
+          "date": "2026-10-22",
+          "quote": "finding garage and waste sales in my area all in one place instead of going to different apps",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=6765746464/sortby=mosthelpful/json",
+          "who": "AmberA99 (App Store review of Yardly)",
+          "date": "2026-07-10",
+          "quote": "I search Craigslist and Facebook for my garage sales",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=6765746464/sortby=mosthelpful/json",
+          "who": "jwdijo (App Store review of Yardly)",
+          "date": "2026-05-19",
+          "quote": "became super time consuming without actually finding anything",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=318649229/sortby=mosthelpful/json",
+          "who": "fiftycats (App Store review of Yard Sale Treasure Map)",
+          "date": "2018-08-23",
+          "quote": "plan my route to see the sales on Friday",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=318649229/sortby=mosthelpful/json",
+          "who": "WifflePoobah (App Store review of Yard Sale Treasure Map)",
+          "date": "2019-12-14",
+          "quote": "prioritize my route by location or interest level",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/yard-sale-treasure-map/id318649229",
+          "who": "Yard Sale Treasure Map (App Store)",
+          "date": "2026-10-28",
+          "quote": "37K Ratings; Menu Access Subscription $4.99; Premium Access $7.99",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id6765746464",
+          "who": "Yardly - Find Garage Sales (App Store)",
+          "date": "2026-10-28",
+          "quote": "1.5K Ratings; Yardly Pro Monthly $9.00; Yardly Pro $27.00",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Yard Sale Treasure Map, Yardly, gsalr, Craigslist, Facebook groups, Nextdoor.",
+      "risks": "Getting listings is the whole product, and many sources don't allow copying. Seasonal and US-centric. Reviewers hate hard paywalls, so it needs a free tier. Near live pile-pricer (selling your own things), but about finding sales."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-28",
+    "slug": "free-first",
+    "name": "Free First",
+    "need": "I want an instant alert when someone near me gives away the kind of free item I'm looking for, so I get there before it's gone and stop checking several sites.",
+    "headline": "Always too late for free furniture and stuff near you? Set alerts for the exact items you want, get notified fast, and stop checking five sites a day.",
+    "buyer": "Budget-conscious adults furnishing a home, students, parents and DIYers who pick up free furniture and goods locally.",
+    "bullets": [
+      "Alerts for the exact things you want (a sofa, a desk, timber, baby gear) within the distance you choose.",
+      "Listings from sources that allow it, in one feed, so you can reply fast.",
+      "Simple filters to hide items with a price, and tips to spot scam 'free delivery' posts."
+    ],
+    "price": "$4.99/month",
+    "priceUsd": 5,
+    "priceNote": "Free with a few alerts; more alerts with Pro.",
+    "reasonPrompt": "What free items are you hunting for, and where do you look now?",
+    "faq": [
+      {
+        "q": "Is everything really free and safe?",
+        "a": "Free First shows listings posted by others and can't check every one. Be wary of posts asking for payment or delivery fees, meet in safe places, and never share bank details. Report suspicious posts to the site they came from."
+      },
+      {
+        "q": "Is it linked to Freecycle, Nextdoor or any marketplace?",
+        "a": "No. Free First is independent and not affiliated with any marketplace, giveaway site or app, and only shows listings from sources that allow it."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-28",
+      "summary": "Free-item hunters describe needing to respond rapidly to new posts to get anything, items gone as soon as they ask, about 95% of posts already gone, wanting one place instead of visiting each site separately.",
+      "wtp": "Freebie Alerts: Free Stuff App has 250K App Store ratings and sells a Gold Subscription at $9.99.",
+      "signals": [
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1458308488/sortby=mosthelpful/json",
+          "who": "Kestrel Pounces (App Store review of Freebie Alerts)",
+          "date": "2024-03-19",
+          "quote": "ability to respond rapidly to a new post often makes the difference",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1458308488/sortby=mosthelpful/json",
+          "who": "leeza1961 (App Store review of Freebie Alerts)",
+          "date": "2022-05-21",
+          "quote": "As soon as you say that you want some thing it is gone on the site",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1458308488/sortby=mosthelpful/json",
+          "who": "Yame510 (App Store review of Freebie Alerts)",
+          "date": "2022-03-18",
+          "quote": "about 95% of the posts are already sold",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1458308488/sortby=mosthelpful/json",
+          "who": "Nyx006 (App Store review of Freebie Alerts)",
+          "date": "2024-11-16",
+          "quote": "rather than having to visit each site separately",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1458308488",
+          "who": "Freebie Alerts: Free Stuff App (App Store)",
+          "date": "2026-10-28",
+          "quote": "250K Ratings; Gold Subscription $9.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Freebie Alerts, Trash Nothing, CurbFinder, Facebook Marketplace, Nextdoor, Craigslist free section.",
+      "risks": "A strong, highly rated incumbent. Listing sources have terms that limit copying. Scam posts need moderation. All evidence is App Store reviews of one app. Close to sale-route; the two could merge."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
