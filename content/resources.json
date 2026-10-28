@@ -25702,5 +25702,79 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "how-to-mix-any-colour-from-a-photo",
+  "offer": "mix-match",
+  "title": "How to mix any colour from a photo with a few tubes of paint",
+  "description": "A step-by-step way to match a colour from your reference in oil or acrylic, using a small set of paints.",
+  "intro": "Matching a colour is easier when you break it into three questions: how light or dark is it, what hue is it, and how bright or dull is it? Work through them in that order.",
+  "sections": [
+   {
+    "h": "Use a small palette",
+    "list": [
+     "A warm and a cool version of each primary (red, yellow, blue) plus white can mix most colours.",
+     "Fewer tubes means you learn how each one behaves."
+    ]
+   },
+   {
+    "h": "Judge value first",
+    "list": [
+     "Squint at your reference to see how light or dark the colour is.",
+     "Get the lightness right first; a colour with the right value often looks right even if the hue is slightly off."
+    ]
+   },
+   {
+    "h": "Then hue and brightness",
+    "list": [
+     "Pick the nearest tube colour as your starting point.",
+     "To make it duller or greyer, add a little of its opposite (complementary) colour rather than black.",
+     "To lighten, add colour into white a little at a time, not white into colour."
+    ]
+   },
+   {
+    "h": "Test and adjust",
+    "list": [
+     "Paint a swatch and hold it right next to the reference.",
+     "Ask: lighter or darker? Warmer or cooler? Brighter or duller? Adjust one thing at a time.",
+     "Write down the mix that worked, with rough proportions."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "why-your-acrylic-mixes-never-match",
+  "offer": "mix-match",
+  "title": "Why your acrylic and oil mixes never match your reference, and how to fix it",
+  "description": "The common reasons paint mixes come out wrong, and simple fixes for each.",
+  "intro": "Most mismatched colours come from a handful of causes. Once you know them, you can fix them quickly.",
+  "sections": [
+   {
+    "h": "Common reasons",
+    "list": [
+     "The value is off: the colour is too light or too dark.",
+     "Too much white, which makes colours chalky and cool.",
+     "Using black to darken, which can make colours dull or muddy.",
+     "Your screen or lighting changes how the reference looks."
+    ]
+   },
+   {
+    "h": "Acrylic and oil specifics",
+    "list": [
+     "Acrylics usually dry slightly darker than when wet; mix a little lighter and test a dried swatch.",
+     "Oils stay the same colour wet and dry, but can yellow slightly over years.",
+     "Different brands of the 'same' colour can look different."
+    ]
+   },
+   {
+    "h": "Fixes",
+    "list": [
+     "Mix value first, then hue.",
+     "Darken with a darker colour or the complement instead of black.",
+     "Paint under steady, neutral light, and compare swatches in the same light as the reference.",
+     "Keep notes of mixes that worked so you can repeat them."
+    ]
+   }
+  ]
  }
 ]

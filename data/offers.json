@@ -50678,6 +50678,104 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-28",
+    "slug": "mix-match",
+    "name": "Mix Match",
+    "need": "I paint with oils or acrylics and can never mix the exact colour I see in my reference; I want to know which of my paints to use and in what proportions.",
+    "headline": "Can never mix the colour in your reference? Pick a colour from your photo, get a starting recipe from the tubes you actually own, and keep a log of the mixes that worked.",
+    "buyer": "Adult hobby painters in oil and acrylic who paint from photos and waste paint matching colours by trial and error.",
+    "bullets": [
+      "Pick a colour from your reference photo and get a starting mix recipe using only the paints you own.",
+      "Simple proportions (such as 2 parts of one, 1 part of another) plus a nudge list: warmer, cooler, lighter, duller.",
+      "A log of mixes that worked, with swatch photos, so you can repeat them next time."
+    ],
+    "price": "$3.99/month",
+    "priceUsd": 4,
+    "priceNote": "Or $24 a year. Cancel any time.",
+    "reasonPrompt": "Do you paint in oils or acrylics, and which colours are hardest to match?",
+    "faq": [
+      {
+        "q": "Will the recipe match exactly?",
+        "a": "Not always: paint brands, pigments, lighting and screens all differ. Mix Match gives a starting point and helps you adjust; always test a swatch next to your reference."
+      },
+      {
+        "q": "Is it linked to a paint brand or art app?",
+        "a": "No. Mix Match is independent and not affiliated with any paint brand, art shop or painting app."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-28",
+      "summary": "Painters describe never being great at mixing colours to match what they need, focusing on colour mixing with oils, wanting an app to show them how to mix a colour, wishing apps would say how to achieve a colour, wanting proportions like 1 part yellow, 2 parts green, and buying an app mainly for its colour mix feature.",
+      "wtp": "Color Study: Simplify Painting has 529 App Store ratings and sells Pro at $4.99 a month or $24.99 a year; Paleto - mixing colors has 544 ratings and sells PRO at $0.99 a month or $4.99.",
+      "signals": [
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=6755313672/sortby=mosthelpful/json",
+          "who": "J Salamone (App Store review of Color Study)",
+          "date": "2026-06-02",
+          "quote": "I have never been great at mixing colors to find what I need",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=6755313672/sortby=mosthelpful/json",
+          "who": "rlaws2 (App Store review of Color Study)",
+          "date": "2026-04-25",
+          "quote": "My main learning focus right now is color mixing with oils",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=6755313672/sortby=mosthelpful/json",
+          "who": "cumbercurlygirl (App Store review of Color Study)",
+          "date": "2026-03-19",
+          "quote": "The color match/mix feature was the main reason I wanted the app",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1425573301/sortby=mosthelpful/json",
+          "who": "Wtreadwell (App Store review of Paleto)",
+          "date": "2024-03-07",
+          "quote": "what I really want the App to do is to show me how to mix the color",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1425573301/sortby=mosthelpful/json",
+          "who": "Ryan Started the Fire (App Store review of Paleto)",
+          "date": "2023-01-09",
+          "quote": "I wish it would tell you how to achieve it",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1425573301/sortby=mosthelpful/json",
+          "who": "theschwartz24 (App Store review of Paleto)",
+          "date": "2022-09-17",
+          "quote": "I want it to say 1 part yellow, 2 parts green",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id6755313672",
+          "who": "Color Study: Simplify Painting (App Store)",
+          "date": "2026-10-28",
+          "quote": "529 Ratings; Color Study Pro $4.99/mo; $24.99/yr",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/paleto-mixing-colors/id1425573301",
+          "who": "Paleto - mixing colors (App Store)",
+          "date": "2026-10-28",
+          "quote": "544 Ratings; Monthly PRO $0.99; PRO $4.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Color Study, Paleto, colour-mixing charts and books, painting classes.",
+      "risks": "Small market (both paid apps around 530-540 ratings). Recipes can be inaccurate across brands. All evidence is App Store reviews of two apps. Near live clear-wash (watercolour going muddy), but about matching colours in oil and acrylic."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
