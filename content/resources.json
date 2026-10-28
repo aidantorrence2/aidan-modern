@@ -27210,5 +27210,70 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "why-heart-rate-goes-out-of-zone-2-when-jogging",
+  "offer": "zone-steady",
+  "title": "Why does my heart rate go out of zone 2 even when I jog slowly?",
+  "description": "Common reasons heart rate climbs above zone 2 on easy runs, and what to try.",
+  "intro": "Many runners starting zone 2 training find their heart rate climbs even at a very slow jog. It's common, especially at first. This guide is general training information, not medical advice: if you have chest pain, dizziness, fainting or palpitations, stop and see a doctor.",
+  "sections": [
+   {
+    "h": "Check your zones",
+    "list": [
+     "Zones set from an age formula can be far off for some people.",
+     "Check how your watch calculated your zones, and consider a field test or advice from a coach.",
+     "Wrist sensors can read high, especially in the first minutes or in cold weather; a chest strap is often steadier."
+    ]
+   },
+   {
+    "h": "Everyday factors",
+    "list": [
+     "Heat, humidity, hills, poor sleep, stress, caffeine and illness all push heart rate up.",
+     "Heart rate drifts upward over a long run even at the same pace."
+    ]
+   },
+   {
+    "h": "What to try",
+    "list": [
+     "Use run-walk intervals: walk when you go over, run again when you're back in range.",
+     "Run on flat routes and in cooler parts of the day.",
+     "Be patient: many runners see their easy pace improve over weeks to months."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "how-long-until-zone-2-running-feels-like-running",
+  "offer": "zone-steady",
+  "title": "How long does it take for zone 2 running to feel like running instead of walking?",
+  "description": "What to expect in the first months of zone 2 training, and how to track progress when it feels slow.",
+  "intro": "At first, zone 2 running can mean a lot of walking. That usually changes with consistent easy training, but the timeline varies a lot between people. Check with a doctor before starting if you have a heart condition.",
+  "sections": [
+   {
+    "h": "What usually happens",
+    "list": [
+     "The first weeks often involve frequent walk breaks.",
+     "With regular easy runs, many people find they can run longer at the same heart rate over a few months.",
+     "Progress is gradual and can stall for a while before improving again."
+    ]
+   },
+   {
+    "h": "How to see progress",
+    "list": [
+     "Repeat the same route at the same target heart rate every few weeks.",
+     "Note your pace and how much of the time you were running rather than walking.",
+     "Compare month to month, not run to run."
+    ]
+   },
+   {
+    "h": "Keep it sustainable",
+    "list": [
+     "Run easy most of the time, three or more times a week if you can.",
+     "Keep a little variety, such as occasional faster running, if your plan includes it.",
+     "Rest when you're tired or unwell."
+    ]
+   }
+  ]
  }
 ]

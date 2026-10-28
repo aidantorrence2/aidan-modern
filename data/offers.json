@@ -51945,6 +51945,97 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-28",
+    "slug": "zone-steady",
+    "name": "Zone Steady",
+    "need": "I'm trying to do zone 2 running, but even a slow jog sends my heart rate out of the zone, so I keep stopping to walk and can't tell whether I'm improving.",
+    "headline": "Heart rate shoots out of zone 2 even on a slow jog? Check your zones are set right, use a run-walk plan that keeps you in range, and track your pace at the same heart rate month by month.",
+    "buyer": "Adult recreational runners (18+) with a watch or chest strap who've started zone 2 or low heart rate training and find their heart rate climbs at almost any running pace.",
+    "bullets": [
+      "A quick check that your zones make sense: how they were set, and whether your heart rate readings look reliable.",
+      "A run-walk plan that keeps you in range, with gradually longer running parts as you adapt.",
+      "Monthly progress at a fixed heart rate: your pace and how much you run versus walk, so slow progress is visible."
+    ],
+    "price": "$3.99/month",
+    "priceUsd": 4,
+    "priceNote": "Or $24 a year. For adults 18+.",
+    "reasonPrompt": "What watch do you use, and how long have you been trying zone 2?",
+    "faq": [
+      {
+        "q": "What if my heart rate seems unusually high?",
+        "a": "Zone Steady is training guidance only, not medical advice. If you have chest pain, dizziness, fainting, palpitations or breathlessness that worries you, stop and see a doctor. Check with a doctor before starting if you have a heart condition."
+      },
+      {
+        "q": "Is it linked to Garmin, Apple or a running app?",
+        "a": "No. Zone Steady is independent and not affiliated with any watch maker or running app; it works with the heart rate data you already record."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-28",
+      "summary": "Runners describe always struggling to stay in zone 2, finding it impossible to keep heart rate in the window, a heart rate always in zone 5 when trying to keep it lower, a heart rate that shoots up even on small-effort runs, and slowing down with no real difference.",
+      "wtp": "FITIV Pulse, a heart rate zone training app, has 13K App Store ratings and sells Pro at $9.99 a month or $59.99 a year; Athlytic, which tracks weekly zone 2 minutes, has 11K ratings at $4.99 a month or $29.99 a year.",
+      "signals": [
+        {
+          "url": "https://feddit.uk/comment/20564660",
+          "who": "blackn1ght (Lemmy)",
+          "date": "2025-10-08",
+          "quote": "always struggled with trying to stay in zone 2",
+          "seen": "opened"
+        },
+        {
+          "url": "https://ani.social/post/32782228",
+          "who": "amnesiaftw (Lemmy)",
+          "date": "2026-06-08",
+          "quote": "But my heart rate was always in zone 5",
+          "seen": "opened"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=43075771",
+          "who": "potamic (Hacker News)",
+          "date": "2025-02-17",
+          "quote": "my heart rate tends to shoot up pretty fast and max out even for small effort runs",
+          "seen": "opened"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=43080228",
+          "who": "thoughtpalette (Hacker News)",
+          "date": "2025-02-17",
+          "quote": "no real discernible difference",
+          "seen": "opened"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=43077588",
+          "who": "kefirlife (Hacker News)",
+          "date": "2025-02-17",
+          "quote": "My heart rate would also go up quickly for the first few months",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id942494517",
+          "who": "FITIV Pulse (App Store)",
+          "date": "2026-10-28",
+          "quote": "13K Ratings; Pro Monthly $9.99; Pro Yearly $59.99",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1543571755",
+          "who": "Athlytic (App Store)",
+          "date": "2026-10-28",
+          "quote": "11K Ratings; Pro $4.99/mo; $29.99/yr",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Watch makers' own zone features, Runna, Athlytic, FITIV, Zones for Training, running coaches.",
+      "risks": "Watches already show live zones, so the value is coaching and progress tracking. High heart rate worries can be medical, so it must stay training guidance with a see-a-doctor line. Evidence is Lemmy and one HN thread. Near live run-again and next-pb, but about heart rate training."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
