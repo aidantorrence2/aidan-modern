@@ -28812,5 +28812,80 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "when-and-where-full-moon-rises",
+  "offer": "moonrise-spotter",
+  "title": "When does the full moon rise, and which direction should I look?",
+  "description": "A simple guide to when the full moon comes up and where to look for it.",
+  "intro": "Watching a full moon rise is one of the easiest sky sights to enjoy. Knowing roughly when and where it comes up makes it much easier to catch.",
+  "sections": [
+   {
+    "h": "When",
+    "list": [
+     "A full moon rises around sunset, as the sun goes down on the opposite side of the sky.",
+     "Each day the moon rises later, on average by about 50 minutes, so the night after a full moon it comes up after dark.",
+     "Exact times depend on your location, so check a moonrise time for where you are."
+    ]
+   },
+   {
+    "h": "Where to look",
+    "list": [
+     "The full moon rises roughly in the east.",
+     "Through the year it shifts: in the Northern Hemisphere, the winter full moon rises north of east and the summer full moon rises south of east.",
+     "A compass app helps you find the spot on the horizon."
+    ]
+   },
+   {
+    "h": "Get a good view",
+    "list": [
+     "Find a spot with a low, clear eastern horizon, such as a beach, hill or open field.",
+     "Arrive a little early; the moon can be hard to spot in haze just above the horizon."
+    ]
+   },
+   {
+    "h": "Why it looks so big",
+    "p": [
+     "The moon often looks huge near the horizon. This is mostly an illusion; it's about the same size as when it's high in the sky."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "photograph-moonrise-with-phone",
+  "offer": "moonrise-spotter",
+  "title": "How to photograph the moon rising with your phone",
+  "description": "Simple tips for getting a good photo of the moon as it rises, using just your phone.",
+  "intro": "The moon is bright and small in the frame, which can confuse phone cameras. A few tweaks make a big difference.",
+  "sections": [
+   {
+    "h": "Timing",
+    "list": [
+     "Shoot close to moonrise, around sunset on a full moon night, when the sky still has some light.",
+     "That balances the bright moon with the landscape, so both show detail."
+    ]
+   },
+   {
+    "h": "Camera settings",
+    "list": [
+     "Tap the moon on your screen to focus on it.",
+     "Slide the exposure down until the moon shows detail rather than a white blob.",
+     "Use your phone's zoom lens if it has one; heavy digital zoom adds blur."
+    ]
+   },
+   {
+    "h": "Keep it steady",
+    "list": [
+     "Rest the phone on something solid or use a small tripod.",
+     "Use the timer so tapping the button doesn't shake the phone."
+    ]
+   },
+   {
+    "h": "Make it interesting",
+    "p": [
+     "Include something in the foreground, like a skyline, trees or the sea, to show scale and place."
+    ]
+   }
+  ]
  }
 ]

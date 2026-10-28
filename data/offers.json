@@ -53996,6 +53996,111 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-28",
+    "slug": "moonrise-spotter",
+    "name": "Moonrise Spotter",
+    "need": "I want to see or photograph the moon coming up, but I never know exactly when and which direction it will rise from where I am, or whether it'll be out tonight.",
+    "headline": "Want to catch the moon rising? See exactly when and where it comes up from your own spot, whether clouds will hide it, and get a nudge before the next big full moon.",
+    "buyer": "Moon watchers, families, and hobby photographers who want to see the moon rise over a view.",
+    "bullets": [
+      "Moonrise time and compass direction from your own location, with a 'point your phone' arrow.",
+      "A cloud check for tonight, so you know whether it's worth going out.",
+      "A nudge before each full moon rises, with the best viewing spots you've saved."
+    ],
+    "price": "$1.99/month",
+    "priceUsd": 2,
+    "priceNote": "Or $9 a year.",
+    "reasonPrompt": "Where would you like to watch the moon rise from?",
+    "faq": [
+      {
+        "q": "Is it an astrology app?",
+        "a": "No. Moonrise Spotter is about seeing the real moon in the sky: when and where it rises, and whether it'll be visible."
+      },
+      {
+        "q": "Is it linked to an astronomy app or organisation?",
+        "a": "No. Moonrise Spotter is independent and not affiliated with any app, observatory or astronomy organisation."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-28",
+      "summary": "Moon watchers describe trying to find the best place to see the moon come up, checking whether the moon will even be out tonight, wanting to know which direction the moonrise will be, needing to know when and where the moon would rise on holiday, and paying to find a moonrise time.",
+      "wtp": "Lumos: Sun and Moon Tracker has 3.7K App Store ratings with Pro up to $14.99 lifetime; The Moon: Calendar Moon Phases has 118K ratings with paid unlocks from $1.99; a reviewer paid $1.99 to find a moonrise time.",
+      "signals": [
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1104649246/sortby=mosthelpful/json",
+          "who": "personmanwomantvcamera (App Store review of My Moon Phase)",
+          "date": "2025-05-11",
+          "quote": "I try to find the best place to see the moon come up and that depends where it will be",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1104649246/sortby=mosthelpful/json",
+          "who": "Go-To Moonwatch Prep (App Store review of My Moon Phase)",
+          "date": "2025-10-06",
+          "quote": "see if the moon will even be out at night in my location",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1104649246/sortby=mostrecent/json",
+          "who": "kip the poet (App Store review of My Moon Phase)",
+          "date": "2026-10-26",
+          "quote": "know which direction the moon rise will be",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=725106192/sortby=mosthelpful/json",
+          "who": "Giantmike13 (App Store review of Lumos)",
+          "date": "2018-10-29",
+          "quote": "Used this on vacation to know exactly when and where the moon would rise",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=725106192/sortby=mosthelpful/json",
+          "who": "MistaShane (App Store review of Lumos)",
+          "date": "2024-08-20",
+          "quote": "see what time we would be able to catch the moon at and what days",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=725106192/sortby=mostrecent/json",
+          "who": "junkarama (App Store review of Lumos)",
+          "date": "2023-09-06",
+          "quote": "Paid $1.99 to find a moonrise time",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1077455978/sortby=mosthelpful/json",
+          "who": "Madamburr (App Store review of The Moon)",
+          "date": "2018-10-15",
+          "quote": "I love taking pictures of the moon with my camera",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id725106192",
+          "who": "Lumos: Sun and Moon Tracker (App Store)",
+          "date": "2026-10-28",
+          "quote": "3.7K Ratings; Lumos Pro Lifetime $14.99; Pro $7.99",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1077455978",
+          "who": "The Moon: Calendar Moon Phases (App Store)",
+          "date": "2026-10-28",
+          "quote": "118K Ratings; Unlock calendar $1.99 and $3.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Moon phase apps, Lumos, free rise-and-set websites, weather apps.",
+      "risks": "Cheap, crowded category with free rise times; must avoid astrology; next to live Star Frame and Sky Shout and the killed Light Window (a call-sheet tool), so it stays moon-only and personal. Evidence is all App Store reviews, some from 2018."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
