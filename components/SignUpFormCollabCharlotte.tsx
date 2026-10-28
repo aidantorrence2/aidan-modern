@@ -20,7 +20,7 @@ type Step = 'location' | 'vibe' | 'notes' | 'photos' | 'instagram' | 'done'
 // 'location' is kept as the landing step's name for resume compatibility; it
 // now asks for the look.
 const BACK_TO: Partial<Record<Step, Step>> = {
-  vibe: 'location', notes: 'vibe', photos: 'notes', instagram: 'photos',
+  vibe: 'location', photos: 'vibe', instagram: 'photos', notes: 'instagram',
 }
 const CITY = 'Charlotte'
 const CITY_FULL = 'Charlotte, NC'
@@ -93,13 +93,13 @@ type VibeKey = 'street' | 'nature' | 'indoor' | 'any'
 // pitch for that look. No single photograph stands for "any", so that one is a
 // quarter-grid of the others: it reads as a bit of everything and still sits in
 // the row as an image tile rather than a beige box among photographs.
-const VIBES: { key: VibeKey; label: string; src: string | null }[] = [
-  { key: 'street', label: 'Street', src: '/images/new_top_tier_headliners/R1-09799-0007.jpg' },
-  { key: 'nature', label: 'Nature', src: '/images/new_top_tier_headliners/R1-09794-021A.jpg' },
-  { key: 'indoor', label: 'Indoor', src: '/images/new_top_tier_headliners/R1-00006-015A.jpg' },
-  // Nothing to photograph for "any", so this one doesn't pretend: a grey box
-  // with something moving inside it, which is what the choice actually is.
-  { key: 'any', label: 'No preference', src: '/images/new_top_tier_headliners/R1-09953-010A.jpg' },
+// Each look is a small moodboard of editorial references from the picker
+// library; "No preference" is deliberately blank.
+const VIBES: { key: VibeKey; label: string; board: string[] }[] = [
+  { key: 'street', label: 'Street', board: ['/images/pinterest/094411fd51ec96041c435e57ae32df13.jpg', '/images/pinterest/73d5f5ce90169f6229d35b2c99aa3f26.jpg', '/images/pinterest/aecdc022fc1f339c2248e6d3c13186f8.jpg', '/images/pinterest/d82189e6a0c98dd303d25eea208df52f.jpg'] },
+  { key: 'nature', label: 'Nature', board: ['/images/pinterest/0b982626ec7105957d5552924e3696d7.jpg', '/images/pinterest/24210711b4260f21946c0951d4916f08.jpg', '/images/pinterest/614615a356ac9b97532e024e84dcbd46.jpg', '/images/pinterest/8e7b891866e37079a616f6e0be91d930.jpg'] },
+  { key: 'indoor', label: 'Indoor', board: ['/images/pinterest/517b708768144f5d53a57d4ed2a9822a.jpg', '/images/pinterest/574ce8aed35cced572a0c56283224671.jpg', '/images/pinterest/6d035c1d07f1713fcf828dbac93f758e.jpg', '/images/pinterest/c8c1314ff02665a318439c9372d7b909.jpg'] },
+  { key: 'any', label: 'No preference', board: [] },
 ]
 
 // ONE roll of film. Each slide shows a four-frame window into it, two frames
@@ -316,7 +316,7 @@ export default function SignUpFormCollabCharlotte({ analyticsPath = '/sign-up-co
   }, [step])
 
   const totalSlides = channel === 'instagram' ? 4 : 5
-  const slideNo: Record<Exclude<Step, 'done'>, number> = { location: 1, vibe: 2, notes: 3, photos: 4, instagram: 5 }
+  const slideNo: Record<Exclude<Step, 'done'>, number> = { location: 1, vibe: 2, photos: 3, instagram: 4, notes: channel === 'instagram' ? 4 : 5 }
 
   function fieldEngaged(field: string) {
     if (engagedFields.current.size === 0) track('form_start', { first_field: field })
@@ -886,7 +886,7 @@ export default function SignUpFormCollabCharlotte({ analyticsPath = '/sign-up-co
   if (step === 'notes') {
     return slideShell(2, (
       <>
-        {kicker(slideNo.notes, BACK_TO.notes)}
+        {kicker(slideNo.notes, channel === 'instagram' ? 'photos' : 'instagram')}
         {slideTitle('Any notes or questions?', true)}
         <p className="mt-2 text-[13px] leading-relaxed text-neutral-500">Your own idea, inspo, references &mdash; anything.</p>
         <textarea
@@ -899,7 +899,7 @@ export default function SignUpFormCollabCharlotte({ analyticsPath = '/sign-up-co
           placeholder="Totally optional..."
         />
         <div className="mt-6 space-y-3">
-          {nextBtn(() => advance('photos', true))}
+          {nextBtn(finishSignup, 'Finish Sign-Up')}
         </div>
       </>
     ))
@@ -911,7 +911,7 @@ export default function SignUpFormCollabCharlotte({ analyticsPath = '/sign-up-co
       <>
         {kicker(slideNo.vibe, BACK_TO.vibe)}
         {slideTitle("What's your vibe?")}
-        <div className="mt-5 grid grid-cols-2 gap-3" role="radiogroup" aria-label="What's your vibe?">
+        <div className="mt-5 grid grid-cols-2 gap-x-3 gap-y-5" role="radiogroup" aria-label="What's your vibe?">
           {VIBES.map(v => {
             const on = vibe === v.key
             return (
@@ -924,26 +924,26 @@ export default function SignUpFormCollabCharlotte({ analyticsPath = '/sign-up-co
                   setVibe(v.key)
                   track('vibe_selected', { value: v.key })
                   fieldEngaged('vibe')
-                  setTimeout(() => advance('notes', true), 220)
+                  setTimeout(() => advance('photos', true), 220)
                 }}
-                className={`group relative aspect-[3/4] overflow-hidden rounded-[4px] text-left transition active:scale-[0.98] ${on ? 'ring-2 ring-neutral-900 ring-offset-2' : ''}`}
+                className={`group relative text-left transition active:scale-[0.98] ${on ? '[&>span:first-child]:ring-2 [&>span:first-child]:ring-neutral-900 [&>span:first-child]:ring-offset-2' : ''}`}
                 data-cta={`v7b-vibe-${v.key}`}
               >
-                {v.src ? (
-                  <NextImage src={v.src} alt="" fill sizes="(max-width: 640px) 45vw, 200px" className="object-cover object-top" />
-                ) : (
-                  <span className="absolute inset-0 grid grid-cols-2 grid-rows-2 gap-px bg-white">
-                    {VIBES.filter(x => x.src).map(x => (
-                      <span key={x.key} className="relative overflow-hidden"><NextImage src={x.src!} alt="" fill sizes="25vw" className="object-cover object-top" /></span>
-                    ))}
-                    <span className="relative overflow-hidden"><NextImage src={proofImages[0]} alt="" fill sizes="25vw" className="object-cover object-top" /></span>
+                <span className={`relative block aspect-[4/5] overflow-hidden rounded-[4px] ${v.board.length ? 'bg-neutral-200' : 'border border-dashed border-neutral-300 bg-[#f4f1ec]'}`}>
+                  {v.board.length > 0 && (
+                    <span className="absolute inset-0 grid grid-cols-2 grid-rows-2 gap-[2px]">
+                      {v.board.map(src => (
+                        <span key={src} className="relative overflow-hidden">
+                          <NextImage src={src} alt="" fill sizes="(max-width: 640px) 23vw, 100px" className="object-cover object-top" />
+                        </span>
+                      ))}
+                    </span>
+                  )}
+                  <span className={`absolute right-2 top-2 flex h-6 w-6 items-center justify-center rounded-full border-2 ${v.board.length ? (on ? 'border-white bg-white text-neutral-900' : 'border-white bg-black/25') : (on ? 'border-neutral-900 bg-neutral-900 text-white' : 'border-neutral-400')}`} aria-hidden="true">
+                    {on && <CheckIcon className="h-3.5 w-3.5" />}
                   </span>
-                )}
-                <span className="absolute inset-0" style={{ background: 'linear-gradient(180deg, transparent 55%, rgba(0,0,0,0.65))' }} />
-                <span className={`absolute right-2.5 top-2.5 flex h-6 w-6 items-center justify-center rounded-full border-2 ${on ? 'border-white bg-white text-neutral-900' : 'border-white/90 bg-black/20'}`} aria-hidden="true">
-                  {on && <CheckIcon className="h-3.5 w-3.5" />}
                 </span>
-                <span className="absolute bottom-3 left-3 right-3 text-[24px] leading-none text-white" style={{ fontFamily: SERIF }}>
+                <span className="mt-2 block text-[22px] leading-none text-neutral-900" style={{ fontFamily: SERIF }}>
                   {v.label}
                 </span>
               </button>
@@ -1036,8 +1036,7 @@ export default function SignUpFormCollabCharlotte({ analyticsPath = '/sign-up-co
               setError("Add one photo of yourself so I know who I'm shooting.")
               return
             }
-            if (channel === 'instagram') { queuePatch(photos); finishSignup(); return }
-            advance('instagram', true, photos)
+            advance(channel === 'instagram' ? 'notes' : 'instagram', true, photos)
           }, channel === 'instagram' ? 'Finish Sign-Up' : 'Next', processingPhotos)}
         </div>
       </>
@@ -1064,8 +1063,8 @@ export default function SignUpFormCollabCharlotte({ analyticsPath = '/sign-up-co
           />
         </div>
         <div className="mt-6 space-y-3">
-          {nextBtn(finishSignup, 'Finish Sign-Up')}
-          {skipBtn(finishSignup)}
+          {nextBtn(() => advance('notes', true))}
+          {skipBtn(() => advance('notes', true))}
         </div>
       </>
     ))
