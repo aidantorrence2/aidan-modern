@@ -52295,6 +52295,195 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-28",
+    "slug": "corner-pins",
+    "name": "Corner Pins",
+    "need": "I want to find where my property line and corner pins actually are before I put up a fence or shed, without paying a surveyor, and the parcel-map apps I tried are off by many feet.",
+    "headline": "Planning a fence, shed or garden bed near the line? Find your existing corner pins step by step from your recorded plat, and know when it's time to call a licensed surveyor.",
+    "buyer": "US homeowners planning a fence, shed, deck or planting near a property line.",
+    "bullets": [
+      "A step-by-step pin hunt: where to find your recorded plat or survey, and how to read the distances on it.",
+      "Measure from a pin you've found to the next one, with a metal-detector checklist and what pins usually look like.",
+      "Clear signs it's time to hire a licensed surveyor, and why parcel-map apps shouldn't be trusted for the exact line."
+    ],
+    "price": "$4.99/month",
+    "priceUsd": 5,
+    "priceNote": "Or $19 once for a single project.",
+    "reasonPrompt": "What are you planning near your property line?",
+    "faq": [
+      {
+        "q": "Is this a legal survey?",
+        "a": "No. Corner Pins helps you find and check the markers a surveyor already set, using your own records. Only a licensed land surveyor can establish a legal boundary. For a fence on the line, a dispute, or missing pins, hire one. Never move or remove a survey marker."
+      },
+      {
+        "q": "Is it linked to a parcel-map app or a county?",
+        "a": "No. Corner Pins is independent and not affiliated with any parcel-map app, county office or surveying firm."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-28",
+      "summary": "Homeowners describe wanting to locate their property line corner pins, stake out their property without hiring a high-priced surveyor, find the points on their property line, and define their boundaries before adding something to the yard while avoiding conflict with a neighbour.",
+      "wtp": "LandGlide has 60K App Store ratings and sells a national parcel subscription at $9.99 a month or $99.99; LandMap Property Line Finder has 3.1K ratings with Pro at $19.99 a month; Haferfam took a paid app's free trial to locate the points on their line.",
+      "signals": [
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=560902465/sortby=mosthelpful/json",
+          "who": "duthsh (App Store review of LandGlide)",
+          "date": "2023-12-23",
+          "quote": "I was hoping this app could help me locate my property line corner pins",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=560902465/sortby=mosthelpful/json",
+          "who": "Colorado Thunder (App Store review of LandGlide)",
+          "date": "2021-12-05",
+          "quote": "avoid hiring a high priced land surveyor",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=2/id=560902465/sortby=mosthelpful/json",
+          "who": "Haferfam (App Store review of LandGlide)",
+          "date": "2024-05-22",
+          "quote": "locate the points on our property line",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=6473603624/sortby=mosthelpful/json",
+          "who": "Autummorn (App Store review of LandMap)",
+          "date": "2023-12-12",
+          "quote": "I aimed to define my boundaries since I wanted to add something to my yard",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1264090172/sortby=mosthelpful/json",
+          "who": "studelnproperty (App Store review of Property Line Finder)",
+          "date": "2019-08-13",
+          "quote": "trying to find my property line",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id560902465",
+          "who": "LandGlide (App Store)",
+          "date": "2026-10-28",
+          "quote": "60K Ratings; subscription $9.99 and $99.99",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id6473603624",
+          "who": "LandMap Property Line Finder (App Store)",
+          "date": "2026-10-28",
+          "quote": "3.1K Ratings; Pro Monthly $19.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Parcel-map apps (LandGlide, LandMap), county GIS viewers, licensed land surveyors.",
+      "risks": "Boundary accuracy and legal exposure: it must never say 'this is your line' and must send disputes and fences on the line to a licensed surveyor. US only; records vary by county. Evidence is all App Store reviews."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-28",
+    "slug": "thread-keepsake",
+    "name": "Thread Keepsake",
+    "need": "I want to save a whole years-long text conversation with someone I love, often someone who has died, as a complete, readable copy, instead of screenshotting it one screen at a time.",
+    "headline": "Want to keep every message from someone you love? Save a whole text conversation, photos included, as one complete, readable keepsake you can keep and print.",
+    "buyer": "Adults on iPhone who want to keep a long text conversation with someone they love, including after a loss.",
+    "bullets": [
+      "Turns a whole conversation, even years long, into one readable keepsake with dates, photos and both sides.",
+      "Works from a backup of your phone on your own computer, so you don't have to stitch together hundreds of screenshots.",
+      "Step-by-step settings to stop messages being deleted while you do it."
+    ],
+    "price": "$4.99/month",
+    "priceUsd": 5,
+    "priceNote": "Or $19 once for a single conversation.",
+    "reasonPrompt": "Whose messages would you most like to keep?",
+    "faq": [
+      {
+        "q": "Does it need a computer?",
+        "a": "Yes. iPhone apps can't read your Messages directly, so Thread Keepsake works from a backup of your iPhone on a Mac or PC. Until then, go to Settings > Messages > Keep Messages and choose Forever so nothing is deleted."
+      },
+      {
+        "q": "Is it made by Apple, and where do my messages go?",
+        "a": "No. Thread Keepsake is independent and not affiliated with Apple. The plan is for your messages to stay on your own computer."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-28",
+      "summary": "People describe saving messages from a father who passed away, backing up a years-long thread after a friend died suddenly, a desperate need to save all the texts from a daughter who died, backing up a conversation with a late father, and saving sentimental family texts while their mother was dying.",
+      "wtp": "TextPort: Text Message Export has 1.5K App Store ratings at $14.99 a month or $59.99 a year; Messages and Chat Export PDF has 4.2K ratings with Pro at $9.99; Bubbie Roz bought an app as a desperate measure to save a long text.",
+      "signals": [
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=6745645676/sortby=mosthelpful/json",
+          "who": "Whatdoesanicknamedo (App Store review of TextPort)",
+          "date": "2026-06-26",
+          "quote": "I used this app to save messages from my father who passed away some years ago",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=6745645676/sortby=mosthelpful/json",
+          "who": "erynsma (App Store review of TextPort)",
+          "date": "2026-09-19",
+          "quote": "I needed to back up a years long text thread after a friend passed away suddenly",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=2/id=6745645676/sortby=mosthelpful/json",
+          "who": "Oldster82 (App Store review of TextPort)",
+          "date": "2025-10-07",
+          "quote": "I had a desperate need to save all the texts from my daughter who suddenly died",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=2/id=6745645676/sortby=mosthelpful/json",
+          "who": "426polaris (App Store review of TextPort)",
+          "date": "2026-01-15",
+          "quote": "I was trying to back up a conversation with my late father",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=952632588/sortby=mosthelpful/json",
+          "who": "PrGd1234 (App Store review)",
+          "date": "2016-11-03",
+          "quote": "save sentimental texts, photos and videos",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=952632588/sortby=mosthelpful/json",
+          "who": "Bubbie Roz (App Store review)",
+          "date": "2017-08-08",
+          "quote": "save a lengthy valuable text",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id6745645676",
+          "who": "TextPort: Text Message Export (App Store)",
+          "date": "2026-10-28",
+          "quote": "1.5K Ratings; Monthly $14.99; Annual $59.99",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1241178802",
+          "who": "Messages and Chat Export PDF (App Store)",
+          "date": "2026-10-28",
+          "quote": "4.2K Ratings; Messages Export Pro $9.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Text export apps (TextPort, Messages Export PDF), computer backup tools, Print to PDF from Messages on a Mac.",
+      "risks": "Needs a Mac or PC backup because iOS apps can't read Messages; mostly a one-off need, so the one-time price matters; buyers may be grieving, so tone and refunds need care; message data is private. Evidence is all App Store reviews."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

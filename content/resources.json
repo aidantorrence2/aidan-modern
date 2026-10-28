@@ -27499,5 +27499,154 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "find-property-corner-pins",
+  "offer": "corner-pins",
+  "title": "How to find your property corner pins without a surveyor",
+  "description": "Practical steps to find the survey markers at your property corners, and when you need a licensed surveyor.",
+  "intro": "Most US lots have survey markers at their corners, often iron rods or pipes set by a surveyor. You can often find them yourself. Finding a pin doesn't settle a boundary legally, but it helps you plan.",
+  "sections": [
+   {
+    "h": "Start with your records",
+    "list": [
+     "Look in your closing documents for a survey or plat.",
+     "If there isn't one, ask your county recorder or land records office for the recorded plat of your subdivision.",
+     "Note the distances and angles between corners."
+    ]
+   },
+   {
+    "h": "Find the first pin",
+    "list": [
+     "Start at a corner that's easy to reach, often near the street.",
+     "Pins are usually metal rods or pipes, sometimes with a plastic cap, and can be a few inches below the surface.",
+     "A basic metal detector helps; probe gently and dig only a little by hand."
+    ]
+   },
+   {
+    "h": "Measure to the next one",
+    "list": [
+     "From a pin you've found, measure the distance on the plat toward the next corner with a long tape.",
+     "Search around where you end up; small differences are normal."
+    ]
+   },
+   {
+    "h": "Rules and safety",
+    "list": [
+     "Call 811 before digging anywhere, so buried utilities are marked.",
+     "Never move or remove a survey marker; in many places that's against the law.",
+     "Hire a licensed land surveyor for fences on the line, disputes with neighbours, or pins you can't find."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "why-property-line-apps-are-wrong",
+  "offer": "corner-pins",
+  "title": "Why property line apps can be wrong, and what to use instead",
+  "description": "Why parcel-map apps can show your boundary in the wrong place, and how to check your real corners.",
+  "intro": "Property line apps are handy for a rough idea, but many people find the line drawn many feet from where they expected. Here's why.",
+  "sections": [
+   {
+    "h": "Parcel maps aren't surveys",
+    "p": [
+     "Most apps use county parcel maps, which are made for tax and planning purposes. They're approximate and aren't legal boundaries."
+    ]
+   },
+   {
+    "h": "Phone GPS has limits",
+    "p": [
+     "Phone location is often only accurate to several metres, and less under trees or near buildings, so the blue dot can sit on the wrong side of a line."
+    ]
+   },
+   {
+    "h": "Map layers can be shifted",
+    "p": [
+     "Aerial photos and parcel lines can be slightly out of line with each other, so the boundary can appear to cut through a house or fence."
+    ]
+   },
+   {
+    "h": "What to use instead",
+    "list": [
+     "Your recorded plat or survey from your closing documents or the county recorder.",
+     "The corner pins a surveyor already set, found with a tape measure and metal detector.",
+     "A licensed land surveyor when the exact line matters."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "save-whole-text-conversation-iphone",
+  "offer": "thread-keepsake",
+  "title": "How to save a whole text conversation from your iPhone",
+  "description": "Ways to keep a complete copy of a long text conversation, from quick fixes to a full backup.",
+  "intro": "Screenshots work for a few messages, but not for a conversation that runs for years. These options help you keep the whole thing.",
+  "sections": [
+   {
+    "h": "First, stop anything being deleted",
+    "list": [
+     "Go to Settings > Messages > Keep Messages and choose Forever.",
+     "In the same section, set Audio Messages to Never expire.",
+     "Don't delete the conversation while you save it."
+    ]
+   },
+   {
+    "h": "If you have a Mac",
+    "list": [
+     "If Messages in iCloud is on, the full conversation can appear in the Messages app on your Mac.",
+     "Open the conversation and scroll up to load older messages.",
+     "Use File > Print and choose Save as PDF; very long threads may need to be saved in parts."
+    ]
+   },
+   {
+    "h": "With a computer backup",
+    "p": [
+     "Back up your iPhone to your computer. Backup-based export tools can then save a whole conversation, with photos, as a PDF or web page."
+    ]
+   },
+   {
+    "h": "Keep more than one copy",
+    "p": [
+     "Save the finished copy in two places, such as your computer and a cloud drive or USB stick."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "keep-texts-from-loved-one-who-died",
+  "offer": "thread-keepsake",
+  "title": "How to keep the text messages of a loved one who has died",
+  "description": "Gentle, practical steps to protect and keep the messages and voice notes of someone who has died.",
+  "intro": "Messages from someone you've lost can feel precious. There's no rush to do everything at once, but a few quick steps make sure nothing is lost.",
+  "sections": [
+   {
+    "h": "Protect what's there now",
+    "list": [
+     "On iPhone, go to Settings > Messages > Keep Messages and choose Forever.",
+     "Set Audio Messages to Never expire so voice messages aren't removed.",
+     "Back up your phone to iCloud or a computer."
+    ]
+   },
+   {
+    "h": "Save voice messages and voicemails",
+    "list": [
+     "Voice messages in a conversation can be kept and saved to Files.",
+     "Voicemails can often be shared or saved from the Phone app's Voicemail list."
+    ]
+   },
+   {
+    "h": "Make a lasting copy",
+    "list": [
+     "Export the conversation to a PDF from a Mac or a computer backup.",
+     "Some families print a chosen selection as a small book."
+    ]
+   },
+   {
+    "h": "Take it at your own pace",
+    "p": [
+     "Reading old messages can bring up strong feelings. It's fine to protect them now and come back later. If grief feels overwhelming, talking to someone you trust or a bereavement service can help."
+    ]
+   }
+  ]
  }
 ]
