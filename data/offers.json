@@ -51301,6 +51301,83 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-28",
+    "slug": "fizz-swap",
+    "name": "Fizz Swap",
+    "need": "I drink cola or diet soda every day and keep failing to cut back, even though I know it costs a fortune.",
+    "headline": "Can't cut back on cola or diet soda? Log each can and the moment it's for, try one swap per moment for a week, and step down at your own pace with no streak to break.",
+    "buyer": "Adults (18+) who drink cola or diet soda every day and keep failing to cut back.",
+    "bullets": [
+      "One tap per can, with the moment: lunch, the 3pm slump, driving, evenings.",
+      "A swap finder that tries one replacement for one moment at a time, for a week.",
+      "Step down at your own pace, with a slower option for caffeinated colas, money kept, and a 'slipped' button with no shaming streak."
+    ],
+    "price": "$2.99/month",
+    "priceUsd": 3,
+    "priceNote": "Or $19 a year. For adults 18+.",
+    "reasonPrompt": "How many cans a day, and when is it hardest to say no?",
+    "faq": [
+      {
+        "q": "Is it a health or weight-loss programme?",
+        "a": "No. Fizz Swap helps you change a drinking habit; it makes no health or weight claims. If you have a health condition or cut caffeine suddenly and feel unwell, speak to a pharmacist or doctor."
+      },
+      {
+        "q": "Is it linked to a drinks company?",
+        "a": "No. Fizz Swap is independent and not affiliated with any drinks brand or company."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-28",
+      "summary": "People describe having no idea how they'll give up diet cola, knowing it's bad and costs a fortune and needing help, being addicted to cola since their teens, and drinking it 90% of the time.",
+      "wtp": "NoFizz: Quit Soda Now sells plans at $12.99 a month or $44.99 a year (19 ratings, 4.8), with a reviewer saying soda addiction isn't talked about enough and the app helped.",
+      "signals": [
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/comment/40172964#Comment_40172964",
+          "who": "suzie_wong (MoneySavingExpert)",
+          "date": "2011-01-12",
+          "quote": "NO idea how I am going to give up",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/comment/40178282#Comment_40178282",
+          "who": "rising_from_the_ashes (MoneySavingExpert)",
+          "date": "2011-01-12",
+          "quote": "costs a fortune, so, I need help",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/comment/40185974#Comment_40185974",
+          "who": "weeclick (MoneySavingExpert)",
+          "date": "2011-01-12",
+          "quote": "addicted to coke since I was about 15 or 16",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.goodreads.com/topic/show/217148?page=2",
+          "who": "Angela~twistedmind~ (Goodreads)",
+          "date": "2011-09-30",
+          "quote": "addicted and drink it 90% of the time",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/nofizz-quit-soda-now/id6746564805",
+          "who": "NoFizz: Quit Soda Now (App Store)",
+          "date": "2026-10-28",
+          "quote": "$12.99/mo; $44.99/yr; reviewer Zathernal: 'Soda addiction isn't talked about enough'",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "NoFizz, general habit trackers, quit-sugar apps.",
+      "risks": "Forum posts are from 2011; the paid app is small (19 ratings). Near live can-down (energy drinks), taper-cup (coffee) and sugar-pause (sweets); this is about cola and diet soda and swapping the moment. Held on 23 Oct for unreachable sources; relaunched with open sources."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

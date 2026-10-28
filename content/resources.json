@@ -26595,5 +26595,82 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "how-to-stop-drinking-diet-coke",
+  "offer": "fizz-swap",
+  "title": "How to stop drinking diet cola (or cut right down)",
+  "description": "A practical, gradual way to cut back on diet cola or soda by working on the moments you reach for a can.",
+  "intro": "Daily cola habits are usually tied to specific moments: lunch, an afternoon slump, driving, evenings. Changing one moment at a time works better for most people than quitting everything at once. This guide is general information, not medical advice.",
+  "sections": [
+   {
+    "h": "Find your moments",
+    "list": [
+     "For a few days, note every can and what was happening.",
+     "Look for patterns: time of day, place, mood."
+    ]
+   },
+   {
+    "h": "Swap one moment at a time",
+    "list": [
+     "Pick one moment and try a replacement for a week: sparkling water, flavoured water, tea, or a short walk.",
+     "Keep the other moments the same until the first swap feels easy.",
+     "Then move on to the next moment."
+    ]
+   },
+   {
+    "h": "Step down caffeine gently",
+    "list": [
+     "If your cola has caffeine, cutting suddenly can cause headaches or tiredness for a few days.",
+     "Cut back gradually, for example one can less every few days.",
+     "Speak to a pharmacist or doctor if you feel unwell."
+    ]
+   },
+   {
+    "h": "Make it easier",
+    "list": [
+     "Don't keep a stock at home or work.",
+     "Have your swap drink ready and cold.",
+     "Track money saved; it adds up quickly."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "what-to-drink-instead-of-soda",
+  "offer": "fizz-swap",
+  "title": "What to drink instead of soda: swaps for each moment",
+  "description": "Simple drink swaps for the moments you usually reach for cola or soda.",
+  "intro": "The best swap depends on why you want the can: the fizz, the cold, the sweetness, the caffeine or the break. Match the swap to the reason.",
+  "sections": [
+   {
+    "h": "If you want the fizz",
+    "list": [
+     "Plain or flavoured sparkling water.",
+     "Sparkling water with a splash of fruit juice or a slice of lemon or lime."
+    ]
+   },
+   {
+    "h": "If you want the caffeine",
+    "list": [
+     "Tea or coffee, if they suit you.",
+     "Cut down gradually rather than all at once."
+    ]
+   },
+   {
+    "h": "If you want something sweet",
+    "list": [
+     "Water with fruit or cucumber.",
+     "Gradually less sweet drinks, so your taste adjusts."
+    ]
+   },
+   {
+    "h": "If you want a break",
+    "list": [
+     "A short walk, a stretch or stepping outside.",
+     "Make a hot drink, which takes a few minutes and gives you a pause."
+    ]
+   }
+  ]
  }
 ]
