@@ -24939,5 +24939,82 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "how-to-make-a-quran-revision-schedule",
+  "offer": "hifz-hold",
+  "title": "How to make a Qur'an revision schedule you can keep",
+  "description": "A simple way to plan daily muraja'ah around the time you actually have, so you keep what you've memorised.",
+  "intro": "Most people lose memorised Qur'an because revision slips, not because they can't memorise. A realistic schedule matters more than an ambitious one. This guide is general; follow your teacher's advice where you have one.",
+  "sections": [
+   {
+    "h": "Start with your real time",
+    "list": [
+     "Work out how many minutes you can give to revision on a normal day, not a perfect one.",
+     "Pick a fixed time, such as after a particular prayer, so it becomes a habit."
+    ]
+   },
+   {
+    "h": "Split revision into parts",
+    "list": [
+     "Recent: what you memorised most recently, revised every day.",
+     "Older: the rest, revised in a cycle, for example a set number of pages a day.",
+     "Many teachers use a similar split, sometimes with names like sabaq, sabqi and manzil."
+    ]
+   },
+   {
+    "h": "Give weak pages extra time",
+    "list": [
+     "Note which pages felt shaky each day.",
+     "Bring weak pages back sooner than strong ones.",
+     "Recite weak pages to someone if you can."
+    ]
+   },
+   {
+    "h": "When you miss days",
+    "list": [
+     "Don't try to make up everything in one day.",
+     "Spread missed pages over the next week.",
+     "Keep the cycle going rather than restarting from the beginning."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "how-to-rememorise-a-juz-you-forgot",
+  "offer": "hifz-hold",
+  "title": "How to re-memorise a juz you've forgotten",
+  "description": "A step-by-step approach to rebuilding a juz you once memorised, without losing the rest.",
+  "intro": "Re-memorising is usually faster than memorising for the first time, because some of it is still there. The key is to rebuild steadily while keeping your other revision going. Where you can, work with a teacher who can listen to your recitation.",
+  "sections": [
+   {
+    "h": "Find where you are",
+    "list": [
+     "Recite the juz from memory, page by page, and note which pages are strong, shaky or lost.",
+     "Start with the lost pages, but keep revising the strong ones lightly."
+    ]
+   },
+   {
+    "h": "Rebuild a little each day",
+    "list": [
+     "Re-memorise a small amount each day, such as half a page or a page.",
+     "Read it many times from the same mushaf, then recite it from memory.",
+     "Join it to the page before so the juz flows."
+    ]
+   },
+   {
+    "h": "Protect the rest",
+    "list": [
+     "Keep a short daily revision of the rest of what you know.",
+     "Don't let rebuilding one juz push out all other revision."
+    ]
+   },
+   {
+    "h": "Keep going",
+    "p": [
+     "Expect some days to feel slow. Steady daily effort usually brings a forgotten juz back over weeks, and reciting to a teacher or friend helps it stick."
+    ]
+   }
+  ]
  }
 ]

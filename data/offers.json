@@ -49964,6 +49964,90 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-28",
+    "slug": "hifz-hold",
+    "name": "Hifz Hold",
+    "need": "I memorised some or all of the Qur'an, but I'm forgetting it because my revision slipped, and I need to get back on track.",
+    "headline": "Forgetting the Qur'an you memorised? Get a daily revision cycle sized to the minutes you have, weaker pages brought back sooner, and a plan to rebuild a juz you've lost.",
+    "buyer": "Adults who memorised part or all of the Qur'an, often as children, and are losing it to missed revision.",
+    "bullets": [
+      "A daily revision (muraja'ah) cycle sized to the time you actually have, with missed days spread gently over the week.",
+      "After reciting from your own mushaf, one tap for how each page went; weaker pages come back sooner.",
+      "A step-by-step rebuild plan for a juz you've lost, alongside your teacher's guidance."
+    ],
+    "price": "$4.99/month",
+    "priceUsd": 5,
+    "priceNote": "Or $39 a year. Cancel any time.",
+    "reasonPrompt": "How much have you memorised, and how much time can you give to revision each day?",
+    "faq": [
+      {
+        "q": "Does it replace a teacher or check my tajweed?",
+        "a": "No. Hifz Hold is a revision planner and tracker. It doesn't judge recitation or tajweed and gives no religious rulings; keep reciting to a qualified teacher where you can."
+      },
+      {
+        "q": "Is it linked to a madrasa, app or organisation?",
+        "a": "No. Hifz Hold is independent and not affiliated with any madrasa, mosque, organisation or Qur'an app."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-28",
+      "summary": "People who memorised the Qur'an describe being unable to remember up to half and needing to get back on track, forgetting after neglecting revision, poor revision leaving only a few juz after years of trying to re-memorise, and having to restart their revision cycle halfway through.",
+      "wtp": "Tarteel, a Qur'an memorisation app, has 11K App Store ratings and sells Premium at $12.99 a month or $99.00 a year (higher tiers $19.99 a month or $239.99 a year); Memorize The Holy Quran sells plans from $1.99 a month to $49.99 lifetime.",
+      "signals": [
+        {
+          "url": "https://qari.substack.com/p/introduce-yourself/comments",
+          "who": "Haleemah Basheer (qari.substack comment)",
+          "date": "2025-01-30",
+          "quote": "can't remember up to half",
+          "seen": "opened"
+        },
+        {
+          "url": "https://qari.substack.com/p/introduce-yourself/comments",
+          "who": "Ayesha (qari.substack comment)",
+          "date": "2025-01-22",
+          "quote": "memorised in 2012 then forgot due to my negligence",
+          "seen": "opened"
+        },
+        {
+          "url": "https://qari.substack.com/p/ive-got-weak-memory-too",
+          "who": "Aisha (reader story, qari.substack)",
+          "date": "2025-01-28",
+          "quote": "12 years of ups and downs trying to rememorise",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/retain-quran-learn-memorize/id1624792039",
+          "who": "MSmile01 (App Store review of Retain Quran)",
+          "date": "2025-09-17",
+          "quote": "halfway through my revisions and I'll have to start all over again",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/tarteel-quran-memorization/id1391009396",
+          "who": "Tarteel (App Store)",
+          "date": "2026-10-28",
+          "quote": "11K Ratings; Monthly Premium $12.99; Annual Premium $99.00; Premium Monthly $19.99; Yearly $239.99",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/memorize-the-holy-quran/id1326501581",
+          "who": "Memorize The Holy Quran (App Store)",
+          "date": "2026-10-28",
+          "quote": "45 Ratings; $1.99 a month; $9.99 six months; $17.99 a year; $49.99 lifetime",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Tarteel, Retain Quran, Quran.com, hifz teachers and revision circles.",
+      "risks": "Three of the four people are on one newsletter site, and one is a featured reader story. Religious content needs care: it must not judge recitation or give rulings, and should be checked with practising huffaz. Near live verse-keep (Bible memorisation), but about Qur'an revision cycles."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
