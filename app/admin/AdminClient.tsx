@@ -60,7 +60,7 @@ function getInstagram(s: Signup): string | null {
  *  row can also carry no number at all — the visitor tapped the add-friend link
  *  instead of typing one — in which case there is nothing to dial. */
 function getPhoneContact(s: Signup): string | null {
-  if (s.contact_method !== 'whatsapp' && s.contact_method !== 'line') return null
+  if (s.contact_method !== 'whatsapp' && s.contact_method !== 'line' && s.contact_method !== 'phone') return null
   return (s.contact.match(/\d/g) ?? []).length >= 7 ? s.contact : null
 }
 

@@ -26,7 +26,9 @@ export type SignupCopy = {
   whereToMessage: string
   whatsapp: string
   instagram: string
+  phone: string
   whatsappLabel: string
+  phoneLabel: string
   instagramLabel: string
   instagramPlaceholder: string
   followHint: { before: string; after: string }
@@ -45,6 +47,7 @@ export type SignupCopy = {
     photoFailed: string
     picksLost: string
     whatsapp: string
+    phone: string
     instagram: string
     noPhoto: string
     saveFailed: string
@@ -73,6 +76,8 @@ export const SIGNUP_COPY: Record<Lang, SignupCopy> = {
     whatsapp: 'WhatsApp',
     instagram: 'Instagram',
     whatsappLabel: 'WhatsApp number',
+    phone: 'Phone',
+    phoneLabel: 'Phone number',
     instagramLabel: 'Instagram username',
     instagramPlaceholder: '@yourusername',
     followHint: { before: 'Please follow ', after: ' or I won’t be able to message you.' },
@@ -91,6 +96,7 @@ export const SIGNUP_COPY: Record<Lang, SignupCopy> = {
       photoFailed: 'Could not add that photo. Please try again.',
       picksLost: 'Your picks didn’t come through. Go back and choose again.',
       whatsapp: `Enter your WhatsApp number with its country code, for example ${SHOOT.phoneExample}.`,
+      phone: `Enter your phone number, for example ${SHOOT.phoneExample}.`,
       instagram: 'Enter your Instagram username, without a link.',
       noPhoto: 'Add at least one photo of you.',
       saveFailed: 'Your signup didn’t save. Your picks are still here — please try again.',
@@ -117,6 +123,8 @@ export const SIGNUP_COPY: Record<Lang, SignupCopy> = {
     whatsapp: 'WhatsApp',
     instagram: 'Instagram',
     whatsappLabel: 'WhatsApp numarası',
+    phone: 'Telefon',
+    phoneLabel: 'Telefon numarası',
     instagramLabel: 'Instagram kullanıcı adı',
     instagramPlaceholder: '@kullaniciadin',
     followHint: { before: 'Lütfen ', after: ' hesabını takip et, yoksa sana mesaj atamam.' },
@@ -135,6 +143,7 @@ export const SIGNUP_COPY: Record<Lang, SignupCopy> = {
       photoFailed: 'Fotoğraf eklenemedi. Lütfen tekrar dene.',
       picksLost: 'Seçimlerin ulaşmadı. Geri dön ve tekrar seç.',
       whatsapp: `WhatsApp numaranı ülke koduyla yaz, örneğin ${SHOOT.phoneExample}.`,
+      phone: `Telefon numaranı yaz, örneğin ${SHOOT.phoneExample}.`,
       instagram: 'Instagram kullanıcı adını yaz, link olmadan.',
       noPhoto: 'En az bir fotoğrafını ekle.',
       saveFailed: 'Kaydın gönderilemedi. Seçimlerin hâlâ burada — lütfen tekrar dene.',
@@ -161,6 +170,8 @@ export const SIGNUP_COPY: Record<Lang, SignupCopy> = {
     whatsapp: 'WhatsApp',
     instagram: 'Instagram',
     whatsappLabel: 'Номер WhatsApp',
+    phone: 'Телефон',
+    phoneLabel: 'Номер телефона',
     instagramLabel: 'Имя пользователя Instagram',
     instagramPlaceholder: '@твойник',
     followHint: { before: 'Пожалуйста, подпишись на ', after: ', иначе я не смогу тебе написать.' },
@@ -179,6 +190,7 @@ export const SIGNUP_COPY: Record<Lang, SignupCopy> = {
       photoFailed: 'Не удалось добавить фото. Попробуй ещё раз.',
       picksLost: 'Твой выбор не дошёл. Вернись и выбери снова.',
       whatsapp: `Введи номер WhatsApp с кодом страны, например ${SHOOT.phoneExample}.`,
+      phone: `Введи номер телефона, например ${SHOOT.phoneExample}.`,
       instagram: 'Введи имя пользователя Instagram, без ссылки.',
       noPhoto: 'Добавь хотя бы одно своё фото.',
       saveFailed: 'Запись не сохранилась. Твой выбор на месте — попробуй ещё раз.',

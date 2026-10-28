@@ -13,7 +13,7 @@ import styles from './ThemePicker.module.css'
 import form from './ThemeSignup.module.css'
 
 export default function SignUpFormCollabThemes({ selection, onBack, onRestart }: { selection: ThemeSelection | null; onBack?: () => void; onRestart?: () => void }) {
-  const [channel, setChannel] = useState<'whatsapp' | 'instagram'>('whatsapp')
+  const [channel, setChannel] = useState<'instagram' | 'phone'>('instagram')
   const [contact, setContact] = useState('')
   const [notes, setNotes] = useState('')
   const [photos, setPhotos] = useState<string[]>([])
@@ -54,9 +54,9 @@ export default function SignUpFormCollabThemes({ selection, onBack, onRestart }:
     const chosen = parseThemeSelection(selection)
     if (!chosen) { setError(copy.errors.picksLost); return }
     let value = contact.trim()
-    if (channel === 'whatsapp') {
+    if (channel === 'phone') {
       const digits = value.replace(/\D/g, '').length
-      if (!/^\+[\d\s().-]{7,24}$/.test(value) || digits < 7 || digits > 15) { setError(copy.errors.whatsapp); return }
+      if (!/^\+?[\d\s().-]{7,24}$/.test(value) || digits < 7 || digits > 15) { setError(copy.errors.phone); return }
     } else {
       value = value.replace(/^@/, '')
       if (!/^[a-zA-Z0-9._]{1,30}$/.test(value)) { setError(copy.errors.instagram); return }
@@ -100,7 +100,7 @@ export default function SignUpFormCollabThemes({ selection, onBack, onRestart }:
         {!done && (onBack || onRestart) && <div className={form.boardActions}>{onBack && <button type="button" className={`${styles.textButton} ${form.back}`} onClick={onBack}>{copy.back}</button>}{onRestart && <button type="button" className={styles.textButton} onClick={onRestart}>{copy.startOver}</button>}</div>}
       </div>
       {done ? <div className={styles.reviewActions}><a className={styles.textButton} href="https://www.instagram.com/madebyaidan" target="_blank" rel="noreferrer">@madebyaidan</a></div> : <form className={form.form} onSubmit={submit}>
-        <fieldset><legend>{copy.whereToMessage}</legend><div className={form.channels}>{(['whatsapp', 'instagram'] as const).map(item => <button type="button" key={item} aria-pressed={channel === item} onClick={() => { setChannel(item); setContact(''); setError('') }}>{item === 'whatsapp' ? copy.whatsapp : copy.instagram}</button>)}</div><label className={form.field}><span className={styles.srOnly}>{channel === 'whatsapp' ? copy.whatsappLabel : copy.instagramLabel}</span><input required type={channel === 'whatsapp' ? 'tel' : 'text'} autoComplete={channel === 'whatsapp' ? 'tel' : 'off'} autoCapitalize="none" maxLength={40} value={contact} onChange={event => setContact(event.target.value)} placeholder={channel === 'whatsapp' ? SHOOT.phoneExample : copy.instagramPlaceholder} /></label>{channel === 'instagram' && <p className={form.hint}>{copy.followHint.before}<a href="https://www.instagram.com/madebyaidan" target="_blank" rel="noreferrer">@madebyaidan</a>{copy.followHint.after}</p>}</fieldset>
+        <fieldset><legend>{copy.whereToMessage}</legend><div className={form.channels}>{(['instagram', 'phone'] as const).map(item => <button type="button" key={item} aria-pressed={channel === item} onClick={() => { setChannel(item); setContact(''); setError('') }}>{item === 'phone' ? copy.phone : copy.instagram}</button>)}</div><label className={form.field}><span className={styles.srOnly}>{channel === 'phone' ? copy.phoneLabel : copy.instagramLabel}</span><input required type={channel === 'phone' ? 'tel' : 'text'} autoComplete={channel === 'phone' ? 'tel' : 'off'} autoCapitalize="none" maxLength={40} value={contact} onChange={event => setContact(event.target.value)} placeholder={channel === 'phone' ? SHOOT.phoneExample : copy.instagramPlaceholder} /></label>{channel === 'instagram' && <p className={form.hint}>{copy.followHint.before}<a href="https://www.instagram.com/madebyaidan" target="_blank" rel="noreferrer">@madebyaidan</a>{copy.followHint.after}</p>}</fieldset>
         <label className={form.field}>{copy.notes} <span>{copy.optional}</span><textarea maxLength={1500} rows={3} value={notes} onChange={event => setNotes(event.target.value)} /></label>
         <div><label className={form.field} htmlFor="model-photos">{copy.photosOfYou} <span>{copy.upTo3}</span></label><p className={form.hint}>{copy.photoGuide}</p><ul className={form.examples}>{([['good-headshot', true, copy.photoExamples.headshot], ['good-full', true, copy.photoExamples.fullLength], ['bad-glam', false, copy.photoExamples.glam], ['bad-far', false, copy.photoExamples.far]] as const).map(([file, good, caption]) => <li key={file} className={good ? form.good : form.bad}><img src={`/images/submission-examples/${file}.jpg`} alt={`${good ? copy.photoExamples.good : copy.photoExamples.bad}: ${caption}`} /><span aria-hidden="true">{good ? '✓' : '✗'}</span><small>{caption}</small></li>)}</ul><div className={form.uploads}>{photos.map((photo, index) => <div key={photo}><img src={photo} alt={copy.yourPhoto(index + 1)} /><button type="button" aria-label={copy.removePhoto(index + 1)} disabled={processing || saving} onClick={() => setPhotos(previous => previous.filter((_, i) => i !== index))}>×</button></div>)}</div><input id="model-photos" type="file" accept="image/*,.heic,.heif" multiple disabled={processing || saving || photos.length >= 3} onChange={addPhotos} className={form.fileInput} />{processing && <p role="status" className={form.hint}>{copy.addingPhotos}</p>}</div>
         <div className={styles.srOnly} aria-hidden="true"><label>Company<input name="company" tabIndex={-1} autoComplete="off" /></label></div>

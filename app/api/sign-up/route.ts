@@ -101,7 +101,7 @@ export async function POST(req: Request) {
       !isString(city) ||
       !isString(contactMethod) ||
       !isString(contact) ||
-      !['whatsapp', 'line', 'instagram', 'email'].includes(contactMethod)
+      !['whatsapp', 'line', 'instagram', 'email', 'phone'].includes(contactMethod)
     ) {
       return NextResponse.json({ ok: false, error: 'Invalid input' }, { status: 400 })
     }
@@ -117,7 +117,7 @@ export async function POST(req: Request) {
     const looksLikePhone = (contact.match(/\d/g) ?? []).length >= 7
 
     let storedContact = contact.trim()
-    if (looksLikePhone && (contactMethod === 'whatsapp' || contactMethod === 'line')) {
+    if (looksLikePhone && (contactMethod === 'whatsapp' || contactMethod === 'line' || contactMethod === 'phone')) {
       try {
         storedContact = await normalizeWhatsappServer(contact.trim(), locationFromSignup(city, moodboard))
       } catch (err) {
@@ -157,6 +157,10 @@ export async function POST(req: Request) {
       console.error('[SIGN-UP] insert with contact_method=line failed, retrying as whatsapp:', insertErr)
       ;({ data: row, error: insertErr } = await insert('whatsapp', [...(storedMoodboard ?? []), 'Channel: LINE']))
     }
+    if (insertErr && contactMethod === 'phone') {
+      console.error('[SIGN-UP] insert with contact_method=phone failed, retrying as whatsapp:', insertErr)
+      ;({ data: row, error: insertErr } = await insert('whatsapp', [...(storedMoodboard ?? []), 'Channel: Phone']))
+    }
     if (insertErr && contactMethod === 'email') {
       console.error('[SIGN-UP] insert with contact_method=email failed, retrying as instagram:', insertErr)
       ;({ data: row, error: insertErr } = await insert('instagram', [...(storedMoodboard ?? []), 'Channel: Email']))
@@ -193,6 +197,7 @@ export async function POST(req: Request) {
         const contactLabel = contactMethod === 'whatsapp' ? 'WhatsApp'
           : contactMethod === 'line' ? 'LINE'
           : contactMethod === 'email' ? 'Email'
+          : contactMethod === 'phone' ? 'Phone'
           : 'Instagram'
         const slackBody = {
           text: `New sign-up from ${storedContact}`,
