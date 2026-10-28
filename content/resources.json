@@ -25360,5 +25360,84 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "how-to-start-writing-poetry-as-an-adult",
+  "offer": "first-stanza",
+  "title": "How to start writing poetry as an adult",
+  "description": "A simple way to start writing poems: what to read, small exercises to try, and how to keep going.",
+  "intro": "You don't need training to start writing poetry. Reading poems you like and writing a little often is the best way in. Early poems are rarely good; that's part of learning.",
+  "sections": [
+   {
+    "h": "Read first",
+    "list": [
+     "Read a few poems a week by different poets, old and new.",
+     "Notice what you like: an image, a sound, the way a line ends.",
+     "Anthologies and free poetry websites are good places to start."
+    ]
+   },
+   {
+    "h": "Try small exercises",
+    "list": [
+     "Describe one object in detail using all five senses.",
+     "Write a poem in exactly ten lines.",
+     "Take a feeling and show it through a scene, without naming the feeling."
+    ]
+   },
+   {
+    "h": "Write often, keep it short",
+    "list": [
+     "Ten minutes a day is enough.",
+     "Write first, judge later.",
+     "Keep every draft; old drafts show how far you've come."
+    ]
+   },
+   {
+    "h": "Share when you're ready",
+    "p": [
+     "A writing group, library workshop or online forum can give you feedback. Ask for specific comments, such as which line works best."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "how-to-tell-if-your-poem-is-good",
+  "offer": "first-stanza",
+  "title": "How to tell if your poem is good, and how to revise it",
+  "description": "Questions to ask about your own poem draft, so you can see what's working and revise it with confidence.",
+  "intro": "Judging your own poem is hard. Asking specific questions about each line works better than asking 'is it good?'. Put the draft away for a day or two first, then read it fresh, aloud.",
+  "sections": [
+   {
+    "h": "Questions to ask",
+    "list": [
+     "Does each line earn its place, or could it go?",
+     "Are you showing a scene or image, or telling the reader what to feel?",
+     "Does the rhythm sound right when you read it aloud?",
+     "If it rhymes, are any words there only for the rhyme?",
+     "Does the ending surprise, deepen or just stop?"
+    ]
+   },
+   {
+    "h": "Line breaks and stanzas",
+    "list": [
+     "Try breaking lines in different places and notice how the meaning or pace changes.",
+     "There's no right stanza length; group lines that belong together, and keep a pattern if it helps the poem."
+    ]
+   },
+   {
+    "h": "Revise in small steps",
+    "list": [
+     "Change one thing at a time and save each version.",
+     "Try cutting the first and last lines; poems often start too early and end too late.",
+     "Read the new version aloud and compare."
+    ]
+   },
+   {
+    "h": "Get another view",
+    "p": [
+     "Ask a reader which line they remember most and where they lost interest. Their answers show what to keep and what to work on."
+    ]
+   }
+  ]
  }
 ]

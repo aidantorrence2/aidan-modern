@@ -50328,6 +50328,97 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-28",
+    "slug": "first-stanza",
+    "name": "First Stanza",
+    "need": "I want to write poetry, but I don't know much about it and I can't tell whether my poems are any good or how to make them better.",
+    "headline": "Writing poems but can't tell if they're any good? Do one small craft exercise a day, get line-by-line questions on your own draft (never a rewrite), and keep every version side by side.",
+    "buyer": "Adults starting out with poetry or teaching themselves, who can't tell whether their drafts work or how to revise them.",
+    "bullets": [
+      "One small craft exercise a day: an image, a line break, sound, or a simple form.",
+      "Line-by-line questions on your own draft (telling or showing? does the rhythm work? is the rhyme forced?), without ever rewriting it for you.",
+      "Every version kept side by side and private by default, so you can see how a poem grows."
+    ],
+    "price": "$4.99/month",
+    "priceUsd": 5,
+    "priceNote": "Or $29 a year. Cancel any time.",
+    "reasonPrompt": "What kind of poems do you write, and what do you find hardest?",
+    "faq": [
+      {
+        "q": "Will it write poems for me?",
+        "a": "No. First Stanza never writes or rewrites your poems. It asks questions about your own draft and gives you exercises, so the poem stays yours."
+      },
+      {
+        "q": "Is it linked to a writing school or app?",
+        "a": "No. First Stanza is independent and not affiliated with any writing school, publisher or app. Your drafts stay private unless you choose to share them."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-28",
+      "summary": "New poets describe doubting their work because they don't know much about poetry, struggling with stanza length and pacing, asking where to start, saying their poetry is pretty awful and needs to improve, and admitting to writing bad poems.",
+      "wtp": "Rhymer's Block, a rhyming and writing app, has 35K App Store ratings and sells Pro at $19.99 to $39.99 a year or a $9.99 bundle; a Poetry Writing app has 228 ratings at $4.99 a month or $24.99 a year.",
+      "signals": [
+        {
+          "url": "https://www.writingforums.com/threads/need-help-with-a-poem-im-working-on.214681/",
+          "who": "Sammy23 (Writing Forums)",
+          "date": "2025-06-22",
+          "quote": "I have doubts about my work",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.writingforums.com/threads/need-help-with-a-poem-im-working-on.214681/",
+          "who": "Sammy23 (Writing Forums)",
+          "date": "2025-06-22",
+          "quote": "struggling with the number of lines in the stanzas and even the pacing of it",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.writingforums.com/threads/where-to-start.212737/",
+          "who": "Plaidman (Writing Forums)",
+          "date": "2025-02-13",
+          "quote": "suggestions as to where to dip",
+          "seen": "opened"
+        },
+        {
+          "url": "https://aboydcampbell.substack.com/p/my-poetry-sucks",
+          "who": "Boyd Campbell (Substack)",
+          "date": "2024-04-16",
+          "quote": "I need to improve my poetry",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.goodreads.com/author_blog_posts/21227331-writing-a-poem-every-day-bad-writing?tab=book",
+          "who": "Amy Powis (Goodreads blog)",
+          "date": "2021-04-24",
+          "quote": "I have written bad poems",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/rhymers-block/id796584182",
+          "who": "Rhymer's Block (App Store)",
+          "date": "2026-10-28",
+          "quote": "35K Ratings; Pro Yearly $19.99-$39.99; Pro Bundle $9.99",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/-/id6466698183",
+          "who": "Poetry Writing app (App Store)",
+          "date": "2026-10-28",
+          "quote": "228 Ratings; $4.99 a month; $24.99 a year",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Rhymer's Block and rhyming tools, writing workshops and courses, online poetry communities.",
+      "risks": "The big rhyme app is used largely for lyrics and rap. Nobody said they'd pay for this exact tool. Must never write poems for people. Near live lyric-spark (songwriting) and the novel-writing offers, but about poetry craft."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
