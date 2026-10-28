@@ -24859,5 +24859,85 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "how-to-cope-with-fear-of-thunderstorms",
+  "offer": "storm-calm",
+  "title": "How to cope with a fear of thunderstorms as an adult",
+  "description": "Practical self-help ideas for adults who are frightened of thunder and lightning, and when to get more help.",
+  "intro": "Fear of thunderstorms is common in adults as well as children. These ideas may help you feel calmer. This guide is general information, not therapy or safety advice: always follow official weather warnings and your weather service's lightning safety advice.",
+  "sections": [
+   {
+    "h": "Before a storm",
+    "list": [
+     "Check one trusted official forecast rather than many apps and alerts.",
+     "Make a simple plan: where you'll be, what you'll do, who you can call.",
+     "Prepare a few calming things: headphones, a playlist, a book or a task."
+    ]
+   },
+   {
+    "h": "During a storm",
+    "list": [
+     "Slow your breathing: breathe in for four counts and out for six.",
+     "Ground yourself: name things you can see, hear and touch around you.",
+     "Keep busy with something absorbing, and use headphones to soften the noise."
+    ]
+   },
+   {
+    "h": "Over time",
+    "list": [
+     "Notice what you avoid because of storms, and choose one small step to try.",
+     "Write down how each storm went; many people find the fear was worse than the storm.",
+     "Learning how storms work can make them feel less unpredictable."
+    ]
+   },
+   {
+    "h": "When to get help",
+    "p": [
+     "If fear of storms stops you working, sleeping or going out, talk to your doctor or a therapist. Treatments for phobias are well established and often help."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "how-to-see-the-iss-and-starlink-trains",
+  "offer": "pass-spotter",
+  "title": "How to see the ISS or a Starlink train with your own eyes",
+  "description": "When and where to look to actually see the International Space Station or a Starlink satellite train, and why passes are often missed.",
+  "intro": "The space station and Starlink trains are easy to see with the naked eye, if you look at the right time and in the right place.",
+  "sections": [
+   {
+    "h": "When to look",
+    "list": [
+     "Most visible passes happen shortly after sunset or before sunrise, when the sky is dark but the satellite is still lit by the sun.",
+     "Starlink trains are brightest in the first few days after a launch; after that the satellites spread out and dim.",
+     "Check the weather: you need a mostly clear sky."
+    ]
+   },
+   {
+    "h": "Pick a good pass",
+    "list": [
+     "Choose passes that rise high in the sky; low passes are often lost in haze or behind buildings.",
+     "Note the direction it appears from and the time; passes last only a few minutes.",
+     "NASA's free Spot the Station service lists visible ISS passes for your location."
+    ]
+   },
+   {
+    "h": "What you'll see",
+    "list": [
+     "The ISS looks like a very bright, steady star moving smoothly across the sky, with no flashing lights.",
+     "A Starlink train looks like a line of dots moving one after another.",
+     "If it's flashing, it's probably a plane."
+    ]
+   },
+   {
+    "h": "Why people miss it",
+    "list": [
+     "Looking in the wrong direction or too late.",
+     "Passes listed that are technically overhead but too low or in daylight.",
+     "Cloud, or bright city lights; get away from streetlights if you can."
+    ]
+   }
+  ]
  }
 ]

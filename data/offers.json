@@ -49789,6 +49789,181 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-28",
+    "slug": "storm-calm",
+    "name": "Storm Calm",
+    "need": "I'm scared of thunder and lightning, so I keep checking the sky, cancel plans or stay put until a storm has passed.",
+    "headline": "Scared of thunderstorms and cancelling plans because of them? See plainly when a storm is due to pass, use a short calm-down routine, and take small steps to feel less on edge.",
+    "buyer": "Adults (18+) who are frightened of thunderstorms and already watch lightning trackers to cope.",
+    "bullets": [
+      "A plain 'when will it be over' view built from official forecasts, without a stream of alarming alerts.",
+      "A short calm-down routine for when a storm is close: breathing, grounding and something to do.",
+      "Small, gentle steps to feel less on edge over time, with a log of how each storm went."
+    ],
+    "price": "$3.99/month",
+    "priceUsd": 4,
+    "priceNote": "Or $24 a year. For adults 18+.",
+    "reasonPrompt": "What do you usually do when a storm is coming?",
+    "faq": [
+      {
+        "q": "Is it therapy, or lightning safety advice?",
+        "a": "Neither. Storm Calm is a self-help tool, not therapy or medical advice. Always follow official weather warnings and your national weather service's lightning safety advice. If fear of storms seriously affects your life, a doctor or therapist can help."
+      },
+      {
+        "q": "Is it linked to a weather app or service?",
+        "a": "No. Storm Calm is independent and not affiliated with any weather app or service."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-28",
+      "summary": "People describe being terrified of lightning to the point of not leaving where they are, having a strong phobia of thunderstorms, being really scared of storms and tracking when they'll pass, and being terrified of lightning while caring for livestock; one paid for a tracker after a year on the free version.",
+      "wtp": "My Lightning Tracker Pro has 6.1K App Store ratings and costs $4.99; a reviewer with a fear of lightning says they used the free version for about a year before buying it. The free version has 67K ratings.",
+      "signals": [
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1175031987/sortby=mosthelpful/json",
+          "who": "DelloVon (App Store review of My Lightning Tracker)",
+          "date": "2019-07-23",
+          "quote": "terrified of lightning to the point of not leaving where I am until it",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1175031987/sortby=mosthelpful/json",
+          "who": "Spenceman7 (App Store review of My Lightning Tracker)",
+          "date": "2023-02-21",
+          "quote": "I have a pretty strong phobia of thunderstorms",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=2/id=1175031987/sortby=mosthelpful/json",
+          "who": "Jenfjfkskf (App Store review of My Lightning Tracker)",
+          "date": "2024-07-31",
+          "quote": "really scared of thunderstorms, so this app is nice because I can track a storm and when it",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1175031995/sortby=mosthelpful/json",
+          "who": "MikeB8413 (App Store review of My Lightning Tracker Pro)",
+          "date": "2021-06-24",
+          "quote": "I used the free version for about a year before buying",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=3/id=1175031995/sortby=mosthelpful/json",
+          "who": "Buckskin Pony (App Store review of My Lightning Tracker Pro)",
+          "date": "2022-03-17",
+          "quote": "terrified of lightning and I have to take care of my livestock",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/my-lightning-tracker-pro/id1175031995",
+          "who": "My Lightning Tracker Pro (App Store)",
+          "date": "2026-10-28",
+          "quote": "6.1K Ratings; paid app $4.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Lightning tracker apps, weather apps, general anxiety apps, therapists.",
+      "risks": "The money is a one-off $4.99 tracker, not a fear tool. Fear of storms is close to mental health, so it must stay self-help with no therapy claims, and must never give its own lightning-safety advice. Some reviewers are young, so it's adults only. Near live level-head (fear of heights)."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-28",
+    "slug": "pass-spotter",
+    "name": "Pass Spotter",
+    "need": "I want to see the ISS or a Starlink train with my own eyes, but every time the app says it's passing I look up and never see anything.",
+    "headline": "Never actually seen the ISS or a Starlink train? Get only the passes you can really see from your place, where to look in plain words, and a cloud and darkness check before you go out.",
+    "buyer": "Casual stargazers, and parents and grandparents who want to show a child the space station or a Starlink train.",
+    "bullets": [
+      "Only the passes that are bright and high enough to see from where you are, not every one overhead.",
+      "Where to look in plain words: which direction, how high, and how long it lasts.",
+      "A quick check of cloud cover and darkness before you head out, and a log of what you've seen."
+    ],
+    "price": "$2.99/month",
+    "priceUsd": 3,
+    "priceNote": "Or $15 a year. Cancel any time.",
+    "reasonPrompt": "What do you want to see: the space station, a Starlink train, or both?",
+    "faq": [
+      {
+        "q": "Will I definitely see it?",
+        "a": "Not always: weather, light pollution and timing all matter. Pass Spotter shows only passes with a good chance of being visible, and tells you why a pass may be hard to see."
+      },
+      {
+        "q": "Is it linked to NASA, SpaceX or any app?",
+        "a": "No. Pass Spotter is independent and not affiliated with NASA, SpaceX, Starlink or any satellite-tracking app. Pass times come from public orbit data."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-28",
+      "summary": "People describe getting a tracking app to see the train of linked satellites, paying for more access and still not knowing what was overhead, never seeing satellites at the times shown, wanting to show a grandson but never seeing anything, and years of never seeing the station fly by.",
+      "wtp": "Staslink: Satellites Tracker has 20K App Store ratings and sells Premium at $5.99 a week, $12.99 a month or $34.99 lifetime; Satellite Tracker by Star Walk has 70K ratings and sells Premium from $1.99 a month to $9.99 lifetime.",
+      "signals": [
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1248172706/sortby=mosthelpful/json",
+          "who": "This girl can sing! (App Store review of Satellite Tracker by Star Walk)",
+          "date": "2020-08-19",
+          "quote": "I got this app because I wanted to see the train of linked satellites",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=5/id=1248172706/sortby=mosthelpful/json",
+          "who": "NancyOB1 (App Store review of Satellite Tracker by Star Walk)",
+          "date": "2026-06-12",
+          "quote": "I paid for the app to have more access and it still never once told me what satellite was overhead.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=2/id=1515415038/sortby=mosthelpful/json",
+          "who": "Interceptor208 (App Store review of Staslink)",
+          "date": "2023-08-18",
+          "quote": "have NEVER seen the sats at the times they indicate as good viewing times",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=5/id=1515415038/sortby=mosthelpful/json",
+          "who": "mobilestitch (App Store review of Staslink)",
+          "date": "2022-09-21",
+          "quote": "I have wanted to show my grandson but only disappointed never see anything.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=2/id=6449235044/sortby=mosthelpful/json",
+          "who": "Acoustic Duo (App Store review of Spot the Station)",
+          "date": "2025-11-27",
+          "quote": "All these years of never seeing the station make a fly by",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/staslink-satellites-tracker/id1515415038",
+          "who": "Staslink: Satellites Tracker (App Store)",
+          "date": "2026-10-28",
+          "quote": "20K Ratings; Weekly $5.99; Monthly Premium $12.99; Lifetime $34.99",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/satellite-tracker-by-star-walk/id1248172706",
+          "who": "Satellite Tracker by Star Walk (App Store)",
+          "date": "2026-10-28",
+          "quote": "70K Ratings; Premium 1m $1.99; 1y $7.99; Lifetime $9.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "NASA's free Spot the Station, Staslink, Star Walk Satellite Tracker, Heavens-Above.",
+      "risks": "NASA's free app works well for the ISS. Starlink trains are only bright for a few days after a launch, so interest comes in bursts. All evidence is App Store reviews. Near live sky-shout (northern lights) and star-names, but about seeing satellites."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
