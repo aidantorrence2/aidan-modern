@@ -51210,6 +51210,97 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-28",
+    "slug": "room-finish",
+    "name": "Room Finish",
+    "need": "My room has its paint and furniture, but it still looks bare or unfinished, and I don't know which curtains, cushions, rug, lamps or art would pull it together around what I already own.",
+    "headline": "Room still looks bare even with the furniture in? Photograph what you've got, set a budget, and get a short list of curtains, cushions, rug, lamps and art that pull it together.",
+    "buyer": "Adults (18+) who've just moved in or are redecorating a room, say they have no eye for design, and want a short, budgeted list of finishing pieces, not a remodel.",
+    "bullets": [
+      "Photograph the room and tell it what's staying; it works around the furniture and colours you already have.",
+      "A short, budgeted list for the finishing layer: curtains, cushions, rug, lighting and wall art, with colours and sizes.",
+      "A simple 'why this works' note for each piece, so you learn as you go and can mix and match."
+    ],
+    "price": "$4.99/month",
+    "priceUsd": 5,
+    "priceNote": "Or $12 once for a single room.",
+    "reasonPrompt": "Which room feels unfinished, and what's your rough budget?",
+    "faq": [
+      {
+        "q": "Does it generate pictures of my room?",
+        "a": "No. Room Finish gives a concrete shopping list and plain reasons, not AI renders that change your room. It doesn't move walls or replace your furniture."
+      },
+      {
+        "q": "Is it linked to a furniture shop or design app?",
+        "a": "No. Room Finish is independent, sells nothing and takes no commission; buy wherever you like."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-28",
+      "summary": "People describe moving into a new apartment knowing nothing about interior design and owning just a bed, a nightstand and a TV, wanting to redecorate bedrooms, wanting something to add excitement to a small apartment, wanting to use the furniture they already have, and asking what colour curtains, cushions and accessories to choose.",
+      "wtp": "Home AI - AI Interior Design has 161K App Store ratings and sells PRO at $9.99 a week or $39.99 a year; AI Home Design: Interior DecAI has 34K ratings and sells Premium at $6.99 a week, $29.99 a year or $49.99 lifetime.",
+      "signals": [
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=6464476667/sortby=mosthelpful/json",
+          "who": "Thebombdotcombaddie (App Store review of Home AI)",
+          "date": "2026-03-22",
+          "quote": "I usually just have like a bed and maybe a nightstand and like a TV",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=6464476667/sortby=mosthelpful/json",
+          "who": "Naynaygoodnight (App Store review of Home AI)",
+          "date": "2026-06-12",
+          "quote": "I wanted to redecorate my bedrooms for the summer",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=3/id=6464476667/sortby=mostrecent/json",
+          "who": "lisascs (App Store review of Home AI)",
+          "date": "2026-09-02",
+          "quote": "My apt is very small so I was hoping for something to add some excitement",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=3/id=6464476667/sortby=mostrecent/json",
+          "who": "Gkathco (App Store review of Home AI)",
+          "date": "2026-09-04",
+          "quote": "would utilize the furniture I already have in here",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/api/v2/discussions/2080147?expand=insertUser",
+          "who": "julie8314dave (MoneySavingExpert)",
+          "date": "2009-11-15",
+          "quote": "what colour curtains, cushion covers, accesories, plain, floral, patterned, or striped should i put with it",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id6464476667",
+          "who": "Home AI - AI Interior Design (App Store)",
+          "date": "2026-10-28",
+          "quote": "161K Ratings; Weekly PRO $9.99; yearly PRO $39.99",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id6502747597",
+          "who": "AI Home Design: Interior DecAI (App Store)",
+          "date": "2026-10-28",
+          "quote": "34K Ratings; One Week Premium $6.99; One Year $29.99; Lifetime $49.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "AI interior design apps, Pinterest, retailer room ideas, interior designers.",
+      "risks": "Close to live room-fit (furniture layout) and wall-verdict (paint colour); this is only the finishing layer. Most evidence is reviews of one app; the forum post is from 2009. Reviewers dislike unrealistic AI renders, so it gives lists, not images."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
