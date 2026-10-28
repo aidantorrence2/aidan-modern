@@ -816,8 +816,8 @@ export default function SignUpFormCollabCharlotteOnePage({ analyticsPath = '/sig
   const page = (panel: React.ReactNode) => (
       <div className="mx-auto w-full max-w-md bg-[#f4f1ec] text-neutral-900">
         <style dangerouslySetInnerHTML={{ __html: slideMotionCss }} />
-        {/* Hero: fills the screen down to the sign-up form, which stays above the fold. */}
-        <div className="relative h-[calc(100svh-330px)] min-h-[300px] max-h-[640px] w-full overflow-hidden bg-black">
+        {/* Hero: under half the screen, so the vibe picker shows on the first screen. */}
+        <div className="relative h-[44svh] min-h-[260px] max-h-[420px] w-full overflow-hidden bg-black">
           {HERO_SLIDES.map((src, i) => (
             <NextImage
               key={src}
