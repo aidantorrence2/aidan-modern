@@ -1,0 +1,82 @@
+<!doctype html>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Vibe moodboard picker</title>
+<style>
+:root{color-scheme:light}
+body{margin:0;background:#f4f1ec;color:#111;font:14px/1.4 system-ui,sans-serif}
+header{position:sticky;top:0;z-index:5;background:#f4f1ec;border-bottom:1px solid #ddd;padding:12px 16px}
+h1{font:400 26px/1 Georgia,serif;margin:0 0 10px}
+.tabs{display:flex;gap:6px;flex-wrap:wrap}
+.tabs button{border:1px solid #bbb;background:#fff;border-radius:3px;padding:8px 14px;font:600 13px system-ui;cursor:pointer}
+.tabs button[aria-selected=true]{background:#111;color:#fff;border-color:#111}
+.tabs small{opacity:.6;margin-left:4px}
+.board{display:flex;gap:6px;margin-top:10px;align-items:center;min-height:84px}
+.board .slot{width:62px;height:78px;border:1px dashed #aaa;border-radius:3px;background:#fff center/cover no-repeat;position:relative}
+.board .slot b{position:absolute;left:3px;top:2px;font-size:11px;color:#fff;text-shadow:0 0 3px #000}
+.row{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-top:8px}
+.row button{border:1px solid #111;background:#111;color:#fff;border-radius:3px;padding:8px 14px;font:600 13px system-ui;cursor:pointer}
+.row button.ghost{background:#fff;color:#111}
+.row label{font-size:13px}
+main{padding:12px 16px 120px}
+h2{font:400 20px Georgia,serif;margin:18px 0 8px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px}
+.tile{position:relative;aspect-ratio:3/4;border-radius:3px;overflow:hidden;cursor:pointer;background:#ddd}
+.tile img{width:100%;height:100%;object-fit:cover;object-position:top;display:block}
+.tile .n{position:absolute;right:6px;top:6px;width:24px;height:24px;border-radius:50%;border:2px solid #fff;background:rgba(0,0,0,.25);color:#111;font:700 12px/20px system-ui;text-align:center}
+.tile.on{outline:3px solid #111;outline-offset:2px}
+.tile.on .n{background:#fff}
+.tile .t{position:absolute;left:6px;bottom:5px;color:#fff;font-size:11px;text-shadow:0 0 4px #000}
+textarea{width:100%;height:110px;margin-top:8px;font:12px ui-monospace,monospace;border:1px solid #bbb;border-radius:3px;padding:8px;box-sizing:border-box}
+#msg{font-size:12px;color:#555}
+</style>
+<header>
+  <h1>Pick 4 photos per vibe</h1>
+  <div class="tabs" id="tabs"></div>
+  <div class="board" id="board"></div>
+  <div class="row">
+    <label><input type="checkbox" id="all"> show every bucket</label>
+    <label><input type="checkbox" id="men" checked> include men</label>
+    <button id="copy">Copy picks</button>
+    <button class="ghost" id="reset">Reset to current</button>
+    <span id="msg"></span>
+  </div>
+  <textarea id="out" readonly></textarea>
+</header>
+<main id="main"></main>
+<script>
+const ITEMS=[{"id": "04e719d9d0baf04406640c958a9f74a2", "theme": "city", "man": true}, {"id": "06269681d71d541ccc1f646b567689cf", "theme": "old-town", "man": false}, {"id": "067c59b517b8a06d3697d6da6efedece", "theme": "city", "man": true}, {"id": "06bcc01a8f51810da27250bf8abf6d4a", "theme": "indoor", "man": true}, {"id": "078c6f6a9bc51683eb41d72deb1efbbe", "theme": "indoor", "man": false}, {"id": "08017e54e6afdc717fa4d031c1c20d59", "theme": "nature", "man": true}, {"id": "094411fd51ec96041c435e57ae32df13", "theme": "city", "man": false}, {"id": "09f8eeaecc3fb67ea9be7ced05a6df44", "theme": "city", "man": true}, {"id": "0a079a8142f0569bdae23103315dd85d", "theme": "old-town", "man": false}, {"id": "0abbec603ab8b5d733961ff67a0a782a", "theme": "indoor", "man": false}, {"id": "0b982626ec7105957d5552924e3696d7", "theme": "nature", "man": false}, {"id": "0c3c6cd3292ba83f1a63259411f9651c", "theme": "city", "man": false}, {"id": "0cfc483706a5deb0ab1b2f68d187e917", "theme": "city", "man": true}, {"id": "0d5371461071b234ac4e60f79d0899ec", "theme": "indoor", "man": false}, {"id": "0ef6e16c8e70c302428dd2ed1fc2a6aa", "theme": "city", "man": true}, {"id": "10af2459664efb88b6fed88d6e551491", "theme": "old-town", "man": false}, {"id": "10c2e17105fa829e3de56ea5957b7a57", "theme": "boat", "man": false}, {"id": "116726cdd2cce869d319930d3ca365d8", "theme": "city", "man": true}, {"id": "11d09065ac4fc01dc9805610daf50a17", "theme": "city", "man": false}, {"id": "1257ec04ab41028fe16bfdb9983c82c1", "theme": "nature", "man": false}, {"id": "12bc9b15388bd0f9d33b4a76d6aed9bd", "theme": "nature", "man": false}, {"id": "136d123eddd4961d1842f6990f529b7d", "theme": "indoor", "man": false}, {"id": "1402edeca02ce8620685bf94938db78e", "theme": "nature", "man": false}, {"id": "15d6701dae9d7f2666289995c012f7cf", "theme": "nature", "man": true}, {"id": "15f501345fff329972824b3f44dbac05", "theme": "old-town", "man": false}, {"id": "16e3fdc791b8418141c5d51e527fb695", "theme": "indoor", "man": false}, {"id": "17dd50ce2515b40175f9160ff63f188b", "theme": "old-town", "man": false}, {"id": "1860d39b35807e54a7b0d1afb939eadd", "theme": "indoor", "man": false}, {"id": "18869a1c712d3a41439dc0b3325a53fe", "theme": "nature", "man": false}, {"id": "1b2af5ca5dafab134cafc4f9d2beab5a", "theme": "indoor", "man": false}, {"id": "1bfeced363ea6549ddb3634cf9d4fa52", "theme": "sea", "man": false}, {"id": "1c27c20448ecd9ae38947999cde4900f", "theme": "old-town", "man": false}, {"id": "1d006869f3b09b5232877adc25bdda2e", "theme": "city", "man": false}, {"id": "1d6e03e1804ffc906597669aa21dbbca", "theme": "indoor", "man": true}, {"id": "1ebde0753c3dae8870d26fbeb9c1eb29", "theme": "city", "man": false}, {"id": "22555388883d5ac5e8732c2f47221e10", "theme": "city", "man": true}, {"id": "2320e240f737fdfb53d4c84417c65fe4", "theme": "old-town", "man": false}, {"id": "24210711b4260f21946c0951d4916f08", "theme": "nature", "man": false}, {"id": "288b39924582444983a9179f7009e168", "theme": "indoor", "man": false}, {"id": "2970c213fd3068883fe92cf1affb392d", "theme": "nature", "man": false}, {"id": "2a345e5e61984b42c30a2a96cdd15365", "theme": "city", "man": false}, {"id": "2b4f4ce0202e9f98d73a2791a604dd83", "theme": "indoor", "man": false}, {"id": "2c84944ddf31ea26bf27bdb3a1d1b07c", "theme": "sea", "man": false}, {"id": "31bd83a80a8e9cfb0057e75f76dfb76d", "theme": "indoor", "man": false}, {"id": "32b81fb8b28318a4057b76d6d8a7c16a", "theme": "indoor", "man": true}, {"id": "3a0dcb9be14aa1f32f9cd47100e10b57", "theme": "nature", "man": false}, {"id": "3a69afcfe87b123be17af451299ef560", "theme": "indoor", "man": false}, {"id": "3bbffbc0e203c1c97387446e297cf4ca", "theme": "indoor", "man": false}, {"id": "3cd2e3b68f13b00201c07bbff72c11fa", "theme": "old-town", "man": false}, {"id": "49a16b9221f82f19389a222ead6cf8b2", "theme": "indoor", "man": false}, {"id": "49fa983f70ef37f9ade630ed034143a3", "theme": "indoor", "man": false}, {"id": "4af7342571f9cca40a961f55d091b8ba", "theme": "indoor", "man": false}, {"id": "4e002588e87e1bb1197c069de127862f", "theme": "nature", "man": false}, {"id": "4fe3a175e8d89dbdf387f7927a333c45", "theme": "city", "man": false}, {"id": "517b708768144f5d53a57d4ed2a9822a", "theme": "indoor", "man": false}, {"id": "574ce8aed35cced572a0c56283224671", "theme": "indoor", "man": false}, {"id": "5bdc917d2dcf08e9e2c32f9ad7e99e34", "theme": "city", "man": false}, {"id": "6082f0244eb57ee62c4fb60d537b11ca", "theme": "old-town", "man": false}, {"id": "612ffe655cef8cedc6fed89c52d0ce9e", "theme": "nature", "man": false}, {"id": "614615a356ac9b97532e024e84dcbd46", "theme": "nature", "man": false}, {"id": "6214ddd87490a230449933fda0d6abf4", "theme": "old-town", "man": false}, {"id": "66fee124b14fbc36daa230f92a9deaba", "theme": "city", "man": false}, {"id": "6724a4ddc56b967e6b6820e1370683b9", "theme": "boat", "man": false}, {"id": "67f6ebf3331bb7fb44842fecc419f3b3", "theme": "indoor", "man": false}, {"id": "69bb96c034c12146decfa85a0ce55316", "theme": "old-town", "man": false}, {"id": "6d035c1d07f1713fcf828dbac93f758e", "theme": "indoor", "man": false}, {"id": "6f9339cb4ceb1f63abe7d4e516abc0c5", "theme": "indoor", "man": false}, {"id": "73d5f5ce90169f6229d35b2c99aa3f26", "theme": "city", "man": false}, {"id": "7872c77cfa927e7dc6c74c4a84541fe8", "theme": "indoor", "man": false}, {"id": "7bdb631c3e72d9d7b04e95706f9b9ba7", "theme": "indoor", "man": false}, {"id": "7c00515e28ca183d63ecc24e55be119e", "theme": "old-town", "man": false}, {"id": "7c2cda8b76b081cfbe021ae8eb970ef6", "theme": "city", "man": false}, {"id": "7c885e0eca63268ad5752bea0f7d0239", "theme": "indoor", "man": true}, {"id": "826b6320b358403b76f88b3936bc60b7", "theme": "city", "man": true}, {"id": "82d2cd1e97e414403122ba8b2ac03649", "theme": "city", "man": false}, {"id": "866f04c602f2b65f66394b97dfb30028", "theme": "city", "man": true}, {"id": "87bfc31b3b2046af0aa5a556184191cc", "theme": "city", "man": false}, {"id": "8d968cef2c4ddf29df7591e720f8a989", "theme": "old-town", "man": false}, {"id": "8e41e221e1ef747f69b238dea6d3289c", "theme": "nature", "man": false}, {"id": "8e7b891866e37079a616f6e0be91d930", "theme": "nature", "man": false}, {"id": "9422f6cbc19f5c4139b8c37156f64ef3", "theme": "indoor", "man": false}, {"id": "94366859026965435dbf3cc1da465536", "theme": "city", "man": false}, {"id": "94ab7746a84393b429faf3946198c5e2", "theme": "nature", "man": false}, {"id": "951b0b858b787bf679ccfd1a1916a236", "theme": "sea", "man": false}, {"id": "961e070d7013d6a6e15692e3ce80b8d3", "theme": "indoor", "man": true}, {"id": "967ceee79c19e8059fc5b1da58b60a4b", "theme": "boat", "man": false}, {"id": "99a3e5dccb2285f0128a9ccac5e4c6fd", "theme": "nature", "man": true}, {"id": "9a6780eb667fe440ae6f2a15d2dc2496", "theme": "old-town", "man": false}, {"id": "9fc8648d08b309c66043ae73710db053", "theme": "city", "man": true}, {"id": "a0c59b4613583c9ffdead7cec238705d", "theme": "old-town", "man": true}, {"id": "a5f12df0a864b150bf09a0a5d4c9e36f", "theme": "old-town", "man": true}, {"id": "aa0621aae41af6e7e325f5d85a84056b", "theme": "indoor", "man": false}, {"id": "aa2f976307f2b8b6a847ec5a6738331c", "theme": "boat", "man": false}, {"id": "acc85dbd3512d35efd833c947e854c80", "theme": "city", "man": false}, {"id": "aecdc022fc1f339c2248e6d3c13186f8", "theme": "city", "man": false}, {"id": "b21492a106c79c2eeeb6177326582667", "theme": "nature", "man": true}, {"id": "b256d0b47723c044d9c6d8dfba83231e", "theme": "nature", "man": false}, {"id": "b2787eaad586ae59f69e9594c448e913", "theme": "indoor", "man": true}, {"id": "b3cf0bacd94f8b6aa604335a039668cc", "theme": "old-town", "man": false}, {"id": "b41241f768a52172e53d81b15181fef5", "theme": "sea", "man": false}, {"id": "b5c389510af4c8dc9f19f625327f0a30", "theme": "old-town", "man": true}, {"id": "b5ccbc16566abf7e764e5ce635d74218", "theme": "indoor", "man": false}, {"id": "b7daefeb51676a11c6c4fa04b2fa504f", "theme": "indoor", "man": true}, {"id": "bc36206b7277c3535aa9177a797fb8f5", "theme": "boat", "man": false}, {"id": "bdc019af50ce194962620ac5d5f0dce9", "theme": "city", "man": false}, {"id": "bf70aa024962db513b0eaa0d39d85255", "theme": "indoor", "man": false}, {"id": "c268db130cc037d1312c33e4b4981870", "theme": "indoor", "man": false}, {"id": "c693787a332dd5303a47452aa37a4e55", "theme": "city", "man": false}, {"id": "c8c1314ff02665a318439c9372d7b909", "theme": "indoor", "man": false}, {"id": "c9218472af43dd3ddd6b913b41140d81", "theme": "boat", "man": false}, {"id": "c9e776d5fac1c8741d8a2f948f0a0524", "theme": "indoor", "man": false}, {"id": "ccc14f116eb8ca90fc4464786efc6f1d", "theme": "old-town", "man": false}, {"id": "ce472f8651592568e5893146dca0cee4", "theme": "old-town", "man": false}, {"id": "d0d2fe2d80a3433ff2ce132d09397b28", "theme": "old-town", "man": false}, {"id": "d11562c8a77aded9fc8be0ecaa120ec6", "theme": "city", "man": true}, {"id": "d3ad4f3f0d915eafd91460bf549d5b9f", "theme": "sea", "man": false}, {"id": "d40856ff2db31b0a67f57e9aaaff9975", "theme": "nature", "man": false}, {"id": "d49964f540a3b87057f5bdaa23703630", "theme": "old-town", "man": false}, {"id": "d82189e6a0c98dd303d25eea208df52f", "theme": "city", "man": false}, {"id": "ddddaf1628a7a71ee3019b586aee1a75", "theme": "nature", "man": false}, {"id": "e4098e60a99e09d73b69c3267443319f", "theme": "old-town", "man": false}, {"id": "e469fdbc409825a798ad04113cf8e7c9", "theme": "old-town", "man": false}, {"id": "e5d52fa9d93e93ce70daa5e0e87292b0", "theme": "nature", "man": false}, {"id": "ea6f0eed62a0bdb1ab1f52281fa56a9d", "theme": "indoor", "man": false}, {"id": "ecd8d80af340821e0c1729277f71216e", "theme": "old-town", "man": true}, {"id": "f492c1fe2bd21b5eedd388d0f6b5e8ea", "theme": "city", "man": true}, {"id": "f752fd4612f792a22e15566a2fd375d2", "theme": "city", "man": true}, {"id": "fc41cb2591ed1dbf2d0c3b7ec77852d3", "theme": "nature", "man": true}, {"id": "indoor-296111744233085440", "theme": "indoor", "man": false}, {"id": "indoor-83457399339463026", "theme": "indoor", "man": false}];
+const CURRENT={"street": ["094411fd51ec96041c435e57ae32df13", "73d5f5ce90169f6229d35b2c99aa3f26", "aecdc022fc1f339c2248e6d3c13186f8", "d82189e6a0c98dd303d25eea208df52f"], "nature": ["0b982626ec7105957d5552924e3696d7", "24210711b4260f21946c0951d4916f08", "614615a356ac9b97532e024e84dcbd46", "8e7b891866e37079a616f6e0be91d930"], "indoor": ["517b708768144f5d53a57d4ed2a9822a", "574ce8aed35cced572a0c56283224671", "6d035c1d07f1713fcf828dbac93f758e", "c8c1314ff02665a318439c9372d7b909"]};
+const GROUP={"street": ["city", "murals", "old-town"], "nature": ["nature", "sea", "boat"], "indoor": ["indoor"]};
+const VIBES=[['street','Street'],['nature','Nature'],['indoor','Indoor']];
+const src=id=>'../public/images/pinterest/'+id+'.jpg';
+let picks; try{picks=JSON.parse(localStorage.getItem('vibe-picks'))}catch{}
+if(!picks) picks=JSON.parse(JSON.stringify(CURRENT));
+let vibe='street';
+const $=id=>document.getElementById(id);
+function save(){try{localStorage.setItem('vibe-picks',JSON.stringify(picks))}catch{}}
+function render(){
+  $('tabs').innerHTML='';
+  for(const [k,l] of VIBES){const b=document.createElement('button');b.setAttribute('aria-selected',k===vibe);b.innerHTML=l+'<small>'+picks[k].length+'/4</small>';b.onclick=()=>{vibe=k;render();scrollTo(0,0)};$('tabs').appendChild(b)}
+  $('board').innerHTML='';
+  for(let i=0;i<4;i++){const s=document.createElement('div');s.className='slot';const id=picks[vibe][i];if(id){s.style.backgroundImage='url('+src(id)+')';s.innerHTML='<b>'+(i+1)+'</b>';s.title='click to remove';s.style.cursor='pointer';s.onclick=()=>{picks[vibe].splice(i,1);save();render()}}$('board').appendChild(s)}
+  const showAll=$('all').checked, men=$('men').checked;
+  const groups=showAll?[...new Set(ITEMS.map(x=>x.theme))]:GROUP[vibe];
+  $('main').innerHTML='';
+  for(const g of groups){
+    const list=ITEMS.filter(x=>x.theme===g&&(men||!x.man)); if(!list.length) continue;
+    const h=document.createElement('h2');h.textContent=g+' ('+list.length+')';$('main').appendChild(h);
+    const grid=document.createElement('div');grid.className='grid';
+    for(const x of list){
+      const idx=picks[vibe].indexOf(x.id);
+      const t=document.createElement('div');t.className='tile'+(idx>=0?' on':'');
+      t.innerHTML='<img src="'+src(x.id)+'" alt=""><span class="n">'+(idx>=0?idx+1:'')+'</span><span class="t">'+x.id.slice(0,6)+'</span>';
+      t.onclick=()=>{const i=picks[vibe].indexOf(x.id);if(i>=0)picks[vibe].splice(i,1);else{if(picks[vibe].length>=4){$('msg').textContent='4 already picked for '+vibe+'. Click a photo in the strip above to remove one.';return}picks[vibe].push(x.id)}$('msg').textContent='';save();render()};
+      grid.appendChild(t)}
+    $('main').appendChild(grid)}
+  $('out').value=VIBES.map(([k,l])=>l+': '+picks[k].join(', ')).join('\n');
+}
+$('all').onchange=render;$('men').onchange=render;
+$('reset').onclick=()=>{picks=JSON.parse(JSON.stringify(CURRENT));save();render()};
+$('copy').onclick=()=>{const v=$('out').value;navigator.clipboard.writeText(v).then(()=>$('msg').textContent='Copied. Paste it to Claude.').catch(()=>{$('out').select();document.execCommand('copy');$('msg').textContent='Copied. Paste it to Claude.'})};
+render();
+</script>

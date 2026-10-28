@@ -929,7 +929,17 @@ export default function SignUpFormCollabCharlotte({ analyticsPath = '/sign-up-co
                 className={`group relative text-left transition active:scale-[0.98] ${on ? '[&>span:first-child]:ring-2 [&>span:first-child]:ring-neutral-900 [&>span:first-child]:ring-offset-2' : ''}`}
                 data-cta={`v7b-vibe-${v.key}`}
               >
-                <span className={`relative block aspect-[4/5] overflow-hidden rounded-[4px] ${v.board.length ? 'bg-neutral-200' : 'border border-dashed border-neutral-300 bg-[#f4f1ec]'}`}>
+                <span className={`relative block aspect-[4/5] overflow-hidden rounded-[4px] ${v.board.length ? 'bg-neutral-200' : 'bg-[#17150f]'}`}>
+                  {v.board.length === 0 && (
+                    // An unexposed frame: film base, sprockets, nothing on it yet.
+                    <span className="absolute inset-0 flex flex-col px-[6px]" aria-hidden="true">
+                      <span className="h-[14px] w-full shrink-0" style={{ backgroundImage: 'repeating-linear-gradient(to right, #d9d3c6 0 9px, transparent 9px 22px)', backgroundSize: '22px 6px', backgroundPosition: 'center', backgroundRepeat: 'repeat-x' }} />
+                      <span className="relative flex-1 rounded-[2px]" style={{ background: 'radial-gradient(120% 90% at 50% 45%, #3a3226 0%, #241f17 55%, #1a1610 100%)' }}>
+                        <span className="absolute bottom-1.5 left-2 text-[9px] font-bold tracking-[0.22em] text-[#e0a13f]">00</span>
+                      </span>
+                      <span className="h-[14px] w-full shrink-0" style={{ backgroundImage: 'repeating-linear-gradient(to right, #d9d3c6 0 9px, transparent 9px 22px)', backgroundSize: '22px 6px', backgroundPosition: 'center', backgroundRepeat: 'repeat-x' }} />
+                    </span>
+                  )}
                   {v.board.length > 0 && (
                     <span className="absolute inset-0 grid grid-cols-2 grid-rows-2 gap-[2px]">
                       {v.board.map(src => (
@@ -939,7 +949,7 @@ export default function SignUpFormCollabCharlotte({ analyticsPath = '/sign-up-co
                       ))}
                     </span>
                   )}
-                  <span className={`absolute right-2 top-2 flex h-6 w-6 items-center justify-center rounded-full border-2 ${v.board.length ? (on ? 'border-white bg-white text-neutral-900' : 'border-white bg-black/25') : (on ? 'border-neutral-900 bg-neutral-900 text-white' : 'border-neutral-400')}`} aria-hidden="true">
+                  <span className={`absolute right-2 top-5 flex h-6 w-6 items-center justify-center rounded-full border-2 ${v.board.length ? (on ? 'border-white bg-white text-neutral-900' : 'border-white bg-black/25') : (on ? 'border-white bg-white text-neutral-900' : 'border-white/80 bg-black/20')}`} aria-hidden="true">
                     {on && <CheckIcon className="h-3.5 w-3.5" />}
                   </span>
                 </span>
