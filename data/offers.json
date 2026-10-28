@@ -53044,6 +53044,97 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-28",
+    "slug": "leash-length",
+    "name": "Leash Length",
+    "need": "I'm scared of dogs as an adult, my heart races when I see one, and I avoid parks, walks and friends' houses because of it.",
+    "headline": "Scared of dogs and tired of avoiding parks and friends' houses? Get comfortable step by step, at your own pace, around calm dogs on a lead.",
+    "buyer": "Adults (18+) who are scared of dogs and avoid places and plans because of it.",
+    "bullets": [
+      "A step ladder at your own pace: from videos, to a park bench, to standing near a calm dog its owner holds on a lead.",
+      "Rate your tension before and after each step, so you can see progress.",
+      "Read dog body language, know what to do if an off-leash dog comes over, and have ready-made lines for asking owners."
+    ],
+    "price": "$3.99/month",
+    "priceUsd": 4,
+    "priceNote": "Or $24 a year. For adults 18+.",
+    "reasonPrompt": "Where does your fear of dogs get in the way most?",
+    "faq": [
+      {
+        "q": "Is this therapy?",
+        "a": "No. Leash Length is a self-help practice plan, not therapy or treatment, and it can't promise to cure a fear. If your fear is severe, follows a bite, or stops you living your life, a therapist who works with phobias can help."
+      },
+      {
+        "q": "Is it linked to a charity, trainer or therapy service?",
+        "a": "No. Leash Length is independent and not affiliated with any charity, dog trainer or therapy service."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-28",
+      "summary": "Adults describe being terrified of dogs and sweating the moment they see one, wanting to stop being afraid, a fear big enough to dominate a large part of their life, their heart racing when a dog growls, still getting panicky when dogs bark, and being a grown man who is afraid of dogs.",
+      "wtp": "Anxiety UK sells a Fear of Dogs audio download for £9.50; the GritLife app sells a Fear of dogs programme for $9.99 in-app.",
+      "signals": [
+        {
+          "url": "https://www.physicsforums.com/threads/how-can-i-overcome-my-fear-of-dogs.31716/",
+          "who": "Imparcticle (Physics Forums)",
+          "date": "2004-06-19",
+          "quote": "I am seriously terrified of dogs",
+          "seen": "opened"
+        },
+        {
+          "url": "https://boards.straightdope.com/t/fear-of-dogs/693136",
+          "who": "DaphneBlack (Straight Dope)",
+          "date": "2014-07-15",
+          "quote": "makes my heart race when they bare their teeth and growl at me",
+          "seen": "opened"
+        },
+        {
+          "url": "https://boards.straightdope.com/t/fear-of-dogs/693136",
+          "who": "Streetsinger (Straight Dope)",
+          "date": "2014-07-15",
+          "quote": "It was a huge enough fear to dominate a large chunk of my life",
+          "seen": "opened"
+        },
+        {
+          "url": "https://boards.straightdope.com/t/fear-of-dogs/693136?page=2",
+          "who": "Cub_Mistress (Straight Dope)",
+          "date": "2014-07-16",
+          "quote": "I still got panicky when dogs barked or acted hostile",
+          "seen": "opened"
+        },
+        {
+          "url": "https://melmagazine.com/en-us/story/what-its-like-to-be-a-guy-whos-petrified-of-dogs",
+          "who": "Hussein Kesvani (MEL Magazine)",
+          "date": "2018-11-08",
+          "quote": "year-old man who is afraid of dogs",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.anxietyuk.org.uk/?p=50481",
+          "who": "Anxiety UK shop",
+          "date": "2026-10-28",
+          "quote": "Fear of Dogs; £9.50",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/gritlife/id1584050998",
+          "who": "GritLife (App Store)",
+          "date": "2026-10-28",
+          "quote": "Fear of dogs; $9.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Anxiety UK audio, self-help books, general fear and anxiety apps, therapists.",
+      "risks": "Phobia-adjacent self-help: must avoid treatment claims and point severe cases to professionals; safety around dogs. Forum posts are old (2004-2014); paid products are small; nobody wrote that they'd pay. Same open question as Storm Calm."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
