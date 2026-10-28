@@ -63,21 +63,21 @@ function resizeImage(dataUrl: string, maxBytes: number): Promise<string> {
 // The hero cycles. It opens on the bubbles frame and crossfades on, so the
 // first thing the page does is show more work rather than sit still.
 const HERO_SLIDES = [
-  '/images/new_top_tier_headliners/000014.jpg',
-  '/images/new_top_tier_headliners/R1-09793-0028.jpg',
-  '/images/new_top_tier_headliners/R1-00005-0027.jpg',
-  '/images/new_top_tier_headliners/R1-09798-032A.jpg',
-  '/images/new_top_tier_headliners/R1-09952-0019.jpg',
+  '/images/new_top_tier_headliners_web/000014.jpg',
+  '/images/new_top_tier_headliners_web/R1-09793-0028.jpg',
+  '/images/new_top_tier_headliners_web/R1-00005-0027.jpg',
+  '/images/new_top_tier_headliners_web/R1-09798-032A.jpg',
+  '/images/new_top_tier_headliners_web/R1-09952-0019.jpg',
 ]
 const heroImage = HERO_SLIDES[0]
 
 const proofImages = [
-  '/images/new_top_tier_headliners/R1-00008-0005.jpg',
-  '/images/new_top_tier_headliners/R1-09793-0028.jpg',
-  '/images/new_top_tier_headliners/R1-09997-0003.jpg',
-  '/images/new_top_tier_headliners/R1-00009-0021.jpg',
-  '/images/new_top_tier_headliners/R1-09952-0019.jpg',
-  '/images/new_top_tier_headliners/R1-09997-0011.jpg',
+  '/images/new_top_tier_headliners_web/R1-00008-0005.jpg',
+  '/images/new_top_tier_headliners_web/R1-09793-0028.jpg',
+  '/images/new_top_tier_headliners_web/R1-09997-0003.jpg',
+  '/images/new_top_tier_headliners_web/R1-00009-0021.jpg',
+  '/images/new_top_tier_headliners_web/R1-09952-0019.jpg',
+  '/images/new_top_tier_headliners_web/R1-09997-0011.jpg',
 ]
 
 const howItWorks = [
@@ -106,16 +106,16 @@ const VIBES: { key: VibeKey; label: string; board: string[] }[] = [
 // further on than the last, so moving through the form winds the same roll
 // forward. It wraps, so the roll never runs out however many frames there are.
 const ROLL = [
-  '/images/new_top_tier_headliners/R1-00007-025A.jpg',
-  '/images/new_top_tier_headliners/R1-09997-0005.jpg',
-  '/images/new_top_tier_headliners/R1-00009-0028.jpg',
-  '/images/new_top_tier_headliners/000089.jpg',
-  '/images/new_top_tier_headliners/R1-09997-0009.jpg',
-  '/images/new_top_tier_headliners/R1-09799-0025.jpg',
-  '/images/new_top_tier_headliners/R1-00005-0027.jpg',
-  '/images/new_top_tier_headliners/R1-09953-010A.jpg',
-  '/images/new_top_tier_headliners/000014.jpg',
-  '/images/new_top_tier_headliners/R1-09798-032A.jpg',
+  '/images/new_top_tier_headliners_web/R1-00007-025A.jpg',
+  '/images/new_top_tier_headliners_web/R1-09997-0005.jpg',
+  '/images/new_top_tier_headliners_web/R1-00009-0028.jpg',
+  '/images/new_top_tier_headliners_web/000089.jpg',
+  '/images/new_top_tier_headliners_web/R1-09997-0009.jpg',
+  '/images/new_top_tier_headliners_web/R1-09799-0025.jpg',
+  '/images/new_top_tier_headliners_web/R1-00005-0027.jpg',
+  '/images/new_top_tier_headliners_web/R1-09953-010A.jpg',
+  '/images/new_top_tier_headliners_web/000014.jpg',
+  '/images/new_top_tier_headliners_web/R1-09798-032A.jpg',
 ]
 
 function rollAt(stepNo: number) {
