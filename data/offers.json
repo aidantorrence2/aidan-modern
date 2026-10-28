@@ -52764,6 +52764,90 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-28",
+    "slug": "contesta",
+    "name": "Contesta",
+    "need": "I grew up hearing Spanish and understand my parents and grandparents, but I can't speak it with them, so I answer in English.",
+    "headline": "Understand Spanish but answer your family in English? Practise speaking out loud, in your family's own Spanish, for calls with your abuela, holidays and visits.",
+    "buyer": "Adults (18+) who grew up hearing Spanish, understand much of it, and want to speak it with family.",
+    "bullets": [
+      "Speak-it-back practice for family moments: calls with parents and grandparents, holidays, visits to family.",
+      "Practise the parts heritage speakers often miss: past tenses, usted or tú, and words beyond small talk.",
+      "A two-minute warm-up before a call, in the Spanish your family actually speaks."
+    ],
+    "price": "$5.99/month",
+    "priceUsd": 6,
+    "priceNote": "Or $39 a year. For adults 18+.",
+    "reasonPrompt": "Who in your family would you most like to talk with in Spanish?",
+    "faq": [
+      {
+        "q": "Is this a full Spanish course?",
+        "a": "No. Contesta is for people who already understand some Spanish and want to start speaking. If you're starting from zero, a beginner course or a tutor is the better first step."
+      },
+      {
+        "q": "Is it linked to a school, tutoring site or language app?",
+        "a": "No. Contesta is independent and not affiliated with any school, tutoring site or app."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-28",
+      "summary": "US Latino heritage speakers describe understanding a lot of Spanish but being unable to speak it, answering grandparents in English, getting through only a couple of minutes of conversation, and piecing together parts of relatives' sentences.",
+      "wtp": "UNAM Chicago sells heritage-speaker Spanish courses up to $5,400; Preply lists 15,592 Spanish tutors.",
+      "signals": [
+        {
+          "url": "https://themontclarion.org/opinion/the-burden-of-being-a-no-sabo-kid/",
+          "who": "Claudia Martillo (The Montclarion)",
+          "date": "undated",
+          "quote": "Although I could understand a lot of Spanish, I could not speak it for some reason",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.wlrn.org/arts-culture/2025-04-25/no-sabo-kids-south-florida-latinos-language-identity",
+          "who": "Anna Miorelli (quoted by WLRN)",
+          "date": "2025-04-25",
+          "quote": "always were speaking to me in Spanish, and I would respond in English",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.bostonglobe.com/2021/05/21/opinion/i-need-stop-faking-it-language-im-supposed-speak",
+          "who": "Christopher Rivas (Boston Globe)",
+          "date": "2021-05-21",
+          "quote": "piecemeal my way through a conversation for a couple of minutes",
+          "seen": "opened"
+        },
+        {
+          "url": "https://depauliaonline.com/77571/ladepaulia/opinion-the-no-sabo-stereotype-has-followed-me-for-years-i-finally-reckoned-with-it/",
+          "who": "Sofia Joseph (La DePaulia)",
+          "date": "2025-05-26",
+          "quote": "I was only able to piece together parts of their sentences from what I knew",
+          "seen": "opened"
+        },
+        {
+          "url": "https://chicago.unam.mx/lengua-de-herencia?lang=en",
+          "who": "UNAM Chicago heritage Spanish courses",
+          "date": "2026-10-28",
+          "quote": "$5,400 USD",
+          "seen": "opened"
+        },
+        {
+          "url": "https://preply.com/en/online/spanish-tutors",
+          "who": "Preply Spanish tutors",
+          "date": "2026-10-28",
+          "quote": "15,592 tutors",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Heritage Spanish courses (UNAM Chicago, community colleges), tutoring marketplaces, Spanish apps.",
+      "risks": "Evidence is opinion pieces and news, not forums; one page undated; money is in courses and tutors, not apps; nobody wrote that they'd pay; same format as Greek Out Loud and Viet Reply."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
