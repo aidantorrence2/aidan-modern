@@ -794,9 +794,9 @@ export default function SignUpFormCollabCharlotte({ analyticsPath = '/sign-up-co
                 />
               </div>
               <p className="text-[12px] leading-snug text-neutral-500">
-                Follow{' '}
+                Please follow{' '}
                 <a href="https://www.instagram.com/madebyaidan" target="_blank" rel="noopener noreferrer" onClick={() => track('handle_clicked', { placement: 'capture' })} className="font-semibold text-neutral-900 underline decoration-neutral-400 underline-offset-2">@madebyaidan</a>
-                {' '}so my message doesn&rsquo;t land in requests.
+                {' '}or I won&rsquo;t be able to message you.
               </p>
             </>
           ) : (
