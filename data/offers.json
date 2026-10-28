@@ -50944,6 +50944,104 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-28",
+    "slug": "pet-papers",
+    "name": "Pet Papers",
+    "need": "I want every pet's vaccine certificates, vet history, microchip and insurance details in one place, so I can share them in seconds when a kennel, daycare, groomer, sitter or emergency vet asks.",
+    "headline": "Always hunting for your pet's vaccine records when the kennel asks? Keep every certificate, vet visit, microchip and insurance detail in one place, and share it with one link.",
+    "buyer": "Adult dog and cat owners, especially with several pets, who board them, use daycare or sitters, travel, or have changed vets.",
+    "bullets": [
+      "Photograph or upload each vaccine certificate and vet document, sorted by pet.",
+      "Microchip number, insurance policy and vet contacts on one page per pet.",
+      "A share link or PDF for kennels, groomers, sitters or a new vet, which you can switch off any time."
+    ],
+    "price": "$3.99/month",
+    "priceUsd": 4,
+    "priceNote": "Or $24 a year. For adults 18+.",
+    "reasonPrompt": "How many pets do you have, and who asks you for their records most often?",
+    "faq": [
+      {
+        "q": "Does it tell me which vaccines my pet needs?",
+        "a": "No. Pet Papers stores and shares the records you add; it gives no medical or vaccination advice. Your vet's certificate is the authority, and kennels may still ask for their own forms."
+      },
+      {
+        "q": "Is it linked to a vet group or pet insurer?",
+        "a": "No. Pet Papers is independent and not affiliated with any vet practice, pet insurer, kennel or pet app."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-28",
+      "summary": "Pet owners describe having to call and have vet records faxed before boarding or daycare, printing records and then losing them, looking for one app for all medical records, scrambling to remember which pet got which vaccine, and hating having to tell people their pets' records.",
+      "wtp": "Pet Care Tracker Dog Cat Log has 954 App Store ratings and sells DogCat Plus at $4.49 a month or $39.99 a year; DogNote has 919 ratings and sells Premium at $4.99 a month or $44.99 a year.",
+      "signals": [
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=955252538/sortby=mosthelpful/json",
+          "who": "Brbarlow (App Store review of VitusVet)",
+          "date": "2017-12-13",
+          "quote": "needed vet records such as before boarding or doggy daycare I had to call and have them faxed to me",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=955252538/sortby=mosthelpful/json",
+          "who": "high im krystal (App Store review of VitusVet)",
+          "date": "2018-05-19",
+          "quote": "going to get it printed, then losing it after the day was redundant",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=955252538/sortby=mosthelpful/json",
+          "who": "HumanKP_777 (App Store review of VitusVet)",
+          "date": "2024-09-24",
+          "quote": "keep track of all of their medical records in one app",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=3/id=955252538/sortby=mosthelpful/json",
+          "who": "Callan523 (App Store review of VitusVet)",
+          "date": "2019-03-16",
+          "quote": "simplifies trips to the kennel or anywhere else where her vaccine records are important",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=2/id=1551003273/sortby=mosthelpful/json",
+          "who": "AcV 3 (App Store review of Pet Care Tracker)",
+          "date": "2024-08-31",
+          "quote": "scramble to remember which pet got which vaccine",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=2/id=1551003273/sortby=mosthelpful/json",
+          "who": "Brookie_Cookie:p (App Store review of Pet Care Tracker)",
+          "date": "2025-03-08",
+          "quote": "I hate having to tell whomever my pets records",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1551003273",
+          "who": "Pet Care Tracker Dog Cat Log (App Store)",
+          "date": "2026-10-28",
+          "quote": "954 Ratings; DogCat Plus $4.49/mo; $39.99/yr",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1527756855",
+          "who": "DogNote - Pet Journal & Walks (App Store)",
+          "date": "2026-10-28",
+          "quote": "919 Ratings; Premium $4.99/mo; $44.99/yr",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "VitusVet and Digitail (free, linked to partner vets), Pet Care Tracker, DogNote, paper folders.",
+      "risks": "Free vet-linked apps exist. The paid apps are small (about 900 ratings). Near live flea-day (treatment reminders), which uses the same money apps; this is about records and proof. Must give no medical advice."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

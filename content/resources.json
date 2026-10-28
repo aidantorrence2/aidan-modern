@@ -26130,5 +26130,73 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "what-vaccination-records-do-kennels-ask-for",
+  "offer": "pet-papers",
+  "title": "What vaccination records do kennels and dog daycares ask for?",
+  "description": "The records boarding kennels, daycares and groomers usually want to see, and how to have them ready.",
+  "intro": "Most kennels, daycares and many groomers ask for proof of up-to-date vaccinations before they'll take your pet. Requirements vary by business and country, so always ask the place you're booking. This guide is general information, not veterinary advice.",
+  "sections": [
+   {
+    "h": "What's commonly asked for",
+    "list": [
+     "For dogs: proof of core vaccinations, and often kennel cough (Bordetella), especially for boarding and daycare.",
+     "For cats: proof of core vaccinations for cat boarding.",
+     "Rabies vaccination where it's required locally.",
+     "Some places also ask about flea and worming treatment."
+    ]
+   },
+   {
+    "h": "What counts as proof",
+    "list": [
+     "A vaccination certificate or record from your vet, showing your pet's details, the vaccine, the date and when it's next due.",
+     "Some places accept a photo or emailed copy; others want the original or a copy sent by your vet."
+    ]
+   },
+   {
+    "h": "Be ready",
+    "list": [
+     "Check requirements a few weeks before booking, as some vaccines need time before they count.",
+     "Keep a photo of each certificate on your phone.",
+     "Ask your vet for a printed or emailed record after each visit."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "how-to-keep-all-your-pets-vet-records-in-one-place",
+  "offer": "pet-papers",
+  "title": "How to keep all your pet's vet records in one place",
+  "description": "Simple ways to keep vaccine certificates, vet history and microchip details organised and easy to share.",
+  "intro": "Pet records end up scattered across emails, paper certificates and different vets. A simple system means you can find anything in seconds when a kennel, sitter or new vet asks.",
+  "sections": [
+   {
+    "h": "What to keep",
+    "list": [
+     "Vaccination certificates and due dates.",
+     "Vet visit summaries, test results and prescriptions.",
+     "Microchip number and the database it's registered with.",
+     "Insurance policy details and claim numbers.",
+     "Your vet's contact details and any emergency vet nearby."
+    ]
+   },
+   {
+    "h": "How to organise it",
+    "list": [
+     "One folder per pet, on paper or on your phone.",
+     "Photograph every new document as soon as you get it.",
+     "Name files clearly, such as 'Bella - vaccines - 2026'."
+    ]
+   },
+   {
+    "h": "Keep it up to date",
+    "list": [
+     "Ask your vet to email a copy of records after each visit.",
+     "Update your microchip details if you move or change phone number.",
+     "When you change vets, ask for a full copy of your pet's history."
+    ]
+   }
+  ]
  }
 ]
