@@ -28887,5 +28887,116 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "make-friends-after-moving-to-new-city",
+  "offer": "same-table",
+  "title": "How to make friends after moving to a new city",
+  "description": "Practical ways to meet people and turn acquaintances into friends after a move.",
+  "intro": "Moving somewhere new often means starting your social life from scratch. It takes time, but a few habits make it much faster.",
+  "sections": [
+   {
+    "h": "Go to the same places regularly",
+    "list": [
+     "Pick one or two recurring things, such as a weekly class, club, run group or volunteering shift.",
+     "Seeing the same faces every week is what turns strangers into friends."
+    ]
+   },
+   {
+    "h": "Say yes, then follow up",
+    "list": [
+     "Accept invitations, even small ones, especially in the first few months.",
+     "If you enjoy talking to someone, suggest a specific plan: coffee on Saturday, the next game night."
+    ]
+   },
+   {
+    "h": "Use what you already have",
+    "list": [
+     "Ask friends and family if they know anyone in your new city.",
+     "Colleagues, neighbours and other parents can be a good start."
+    ]
+   },
+   {
+    "h": "Be patient with yourself",
+    "p": [
+     "Close friendships take many hours together to form. Feeling lonely at first is normal and doesn't mean you're doing it wrong."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "how-to-stop-doomscrolling",
+  "offer": "stop-checking-upsetting-news",
+  "title": "How to stop doomscrolling",
+  "description": "Simple ways to stop endlessly checking upsetting news and feeds, while still staying informed.",
+  "intro": "Constantly checking bad news can leave you anxious and drained without making you better informed. A few limits help you stay up to date without the spiral.",
+  "sections": [
+   {
+    "h": "Set times for news",
+    "list": [
+     "Choose one or two short slots a day to catch up, rather than checking all day.",
+     "Avoid news first thing in the morning and right before bed."
+    ]
+   },
+   {
+    "h": "Make it harder to start",
+    "list": [
+     "Move news and social apps off your home screen.",
+     "Turn off breaking-news notifications.",
+     "Log out of apps on your phone so you have to choose to open them."
+    ]
+   },
+   {
+    "h": "Choose better sources",
+    "list": [
+     "A daily summary or weekly round-up gives you the important points with less noise.",
+     "Notice which accounts leave you upset and mute them."
+    ]
+   },
+   {
+    "h": "Replace the habit",
+    "p": [
+     "When you reach for your phone, have something else ready: a book, a short walk, a message to a friend. If worry stays high most of the time, talk to your doctor."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "order-healthier-eating-out",
+  "offer": "lean-order-card",
+  "title": "How to order healthier when eating out",
+  "description": "Simple ways to choose a lighter meal at restaurants and takeaways without missing out.",
+  "intro": "Eating out doesn't have to derail your goals. A few easy habits help you pick something you'll enjoy that still fits how you want to eat.",
+  "sections": [
+   {
+    "h": "Before you go",
+    "list": [
+     "Look at the menu online and decide in advance.",
+     "Many chains publish nutrition information online."
+    ]
+   },
+   {
+    "h": "When ordering",
+    "list": [
+     "Look for grilled, baked or steamed dishes rather than fried.",
+     "Ask for sauces and dressings on the side.",
+     "Swap fries for a salad or vegetables if available.",
+     "Choose water or a diet drink."
+    ]
+   },
+   {
+    "h": "Portions",
+    "list": [
+     "Restaurant portions are often large; share a dish or take some home.",
+     "Start with a salad or soup if you're very hungry."
+    ]
+   },
+   {
+    "h": "Enjoy it",
+    "p": [
+     "One meal won't make or break your progress. If you have a health condition or special diet, follow advice from your doctor or dietitian."
+    ]
+   }
+  ]
  }
 ]
