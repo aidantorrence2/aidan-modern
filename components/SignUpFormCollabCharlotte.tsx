@@ -91,7 +91,7 @@ type VibeKey = 'street' | 'nature' | 'indoor' | 'any'
 // the row as an image tile rather than a beige box among photographs.
 const VIBES: { key: VibeKey; label: string; src: string | null }[] = [
   { key: 'street', label: 'Street', src: '/images/new_top_tier_headliners/R1-09799-0007.jpg' },
-  { key: 'nature', label: 'Outdoors', src: '/images/new_top_tier_headliners/R1-09794-021A.jpg' },
+  { key: 'nature', label: 'Nature', src: '/images/new_top_tier_headliners/R1-09794-021A.jpg' },
   { key: 'indoor', label: 'Indoor', src: '/images/new_top_tier_headliners/R1-00006-015A.jpg' },
   // Nothing to photograph for "any", so this one doesn't pretend: a grey box
   // with something moving inside it, which is what the choice actually is.
