@@ -29137,5 +29137,115 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "ask-friends-to-set-you-up",
+  "offer": "friend-vouched-setups",
+  "title": "How to ask your friends to set you up on a date",
+  "description": "How to get friends to actually introduce you to someone, without it feeling awkward.",
+  "intro": "Meeting someone through friends is still one of the most common ways people get together. Most friends are happy to help; they just need a nudge and a clear idea of who you'd like to meet.",
+  "sections": [
+   {
+    "h": "Ask directly",
+    "list": [
+     "Tell a few friends plainly that you'd love to be set up.",
+     "Friends often assume you're not interested unless you say so."
+    ]
+   },
+   {
+    "h": "Make it easy for them",
+    "list": [
+     "Share two or three things that matter to you in a partner, not a long checklist.",
+     "Offer a recent photo and a line about yourself they can pass on."
+    ]
+   },
+   {
+    "h": "Keep the first meeting low-pressure",
+    "list": [
+     "Suggest a group plan, like drinks or a dinner party, so it doesn't feel like a big formal date.",
+     "Agree that there's no pressure if it doesn't click."
+    ]
+   },
+   {
+    "h": "Say thank you",
+    "p": [
+     "Let your friend know how it went, whatever happened. People who feel appreciated are more likely to think of you again."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "what-stuff-is-worth-selling",
+  "offer": "pile-pricer",
+  "title": "How to tell which of your things are worth selling",
+  "description": "A simple way to sort what's worth listing for sale and what to donate or recycle.",
+  "intro": "Decluttering often leaves a pile of things that might be worth something. A quick check helps you focus your time on what's worth listing.",
+  "sections": [
+   {
+    "h": "Check what similar items sold for",
+    "list": [
+     "Search marketplace sites for the same item and filter by sold or completed listings, where available.",
+     "Asking prices can be misleading; sold prices show what people actually paid."
+    ]
+   },
+   {
+    "h": "Usually worth selling",
+    "list": [
+     "Branded electronics, tools and gadgets in working order.",
+     "Furniture in good condition, especially well-known brands.",
+     "Children's equipment, outdoor gear and collectables."
+    ]
+   },
+   {
+    "h": "Often not worth the effort",
+    "list": [
+     "Low-value items that cost more to post than they sell for.",
+     "Worn clothing without a known brand."
+    ]
+   },
+   {
+    "h": "Make listing quicker",
+    "list": [
+     "Take clear photos in daylight.",
+     "Write the brand, model, size and condition.",
+     "Group small items into bundles."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "get-job-application-noticed",
+  "offer": "straight-to-desk",
+  "title": "How to get your job application noticed",
+  "description": "Practical ways to stop applications disappearing and get a real person to read yours.",
+  "intro": "Many job applications go unanswered. A few steps help yours reach a person and stand out when it does.",
+  "sections": [
+   {
+    "h": "Tailor each application",
+    "list": [
+     "Use the job ad's key words naturally in your CV, especially in the skills and experience sections.",
+     "Lead with the experience that matches the role best."
+    ]
+   },
+   {
+    "h": "Find a person",
+    "list": [
+     "Look for the hiring manager or someone in the team on the company website or professional networks.",
+     "Send a short, polite message saying you've applied and why you're a good fit."
+    ]
+   },
+   {
+    "h": "Use referrals",
+    "p": [
+     "Ask friends and former colleagues if they know anyone at the company. Referred applicants are often looked at more closely."
+    ]
+   },
+   {
+    "h": "Follow up",
+    "p": [
+     "If you haven't heard back after a week or two, a brief, friendly follow-up is fine."
+    ]
+   }
+  ]
  }
 ]
