@@ -25439,5 +25439,82 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "how-to-learn-norwegian-at-home",
+  "offer": "norsk-steps",
+  "title": "How to learn Norwegian at home when apps aren't enough",
+  "description": "A simple plan for English speakers learning Norwegian for family, roots or a move, beyond vocabulary apps.",
+  "intro": "Norwegian is one of the more approachable languages for English speakers: the grammar is fairly simple and many words look familiar. The tricky parts are pronunciation and the variety of dialects.",
+  "sections": [
+   {
+    "h": "Know what you're learning",
+    "list": [
+     "Most learners start with Bokmål, the more common of the two written standards.",
+     "Spoken Norwegian varies a lot by region; if your family is from one area, listen to people from there."
+    ]
+   },
+   {
+    "h": "Basics to learn early",
+    "list": [
+     "Word order: the verb usually comes second in a statement ('I dag spiser jeg fisk').",
+     "Verbs don't change for the person: jeg er, du er, han er.",
+     "Common sounds and the 'tone' or pitch pattern, by copying native audio."
+    ]
+   },
+   {
+    "h": "Make it part of daily life",
+    "list": [
+     "Learn phrases you'll use with family: greetings, food, how someone is.",
+     "Listen to Norwegian radio, podcasts or TV with subtitles.",
+     "Speak from the start, even a little, with family or a tutor."
+    ]
+   },
+   {
+    "h": "Keep going",
+    "p": [
+     "Norwegians often switch to English to help; tell them you'd like to practise. Short daily practice beats occasional long sessions."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "how-to-learn-finnish-as-an-english-speaker",
+  "offer": "suomi-steps",
+  "title": "How to learn Finnish as an English speaker without giving up",
+  "description": "What makes Finnish hard, what's easier than it looks, and a steady plan for English speakers.",
+  "intro": "Finnish has a reputation for being hard, mostly because of its many cases and long words. But it has no grammatical gender, no articles, and spelling that matches pronunciation closely.",
+  "sections": [
+   {
+    "h": "What's easier than you think",
+    "list": [
+     "Words are pronounced as they're written.",
+     "There's no grammatical gender and no 'a' or 'the'.",
+     "Stress is almost always on the first syllable."
+    ]
+   },
+   {
+    "h": "What takes time",
+    "list": [
+     "Cases: endings on nouns show meaning, such as -ssa (in) and -sta (from); learn the most common ones first.",
+     "Vowel harmony: endings change to match the vowels in the word.",
+     "Spoken Finnish (puhekieli) differs from written Finnish (kirjakieli); learn both a little."
+    ]
+   },
+   {
+    "h": "A steady plan",
+    "list": [
+     "Learn a few cases at a time with whole phrases, not tables alone.",
+     "Practise everyday spoken forms you'll hear, like 'mä oon' for 'minä olen' (I am).",
+     "Listen to Finnish podcasts, radio or TV with subtitles."
+    ]
+   },
+   {
+    "h": "Keep going",
+    "p": [
+     "Progress in Finnish can feel slow at first, then speeds up as patterns repeat. Set small goals, such as one conversation topic a week."
+    ]
+   }
+  ]
  }
 ]

@@ -50419,6 +50419,174 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-28",
+    "slug": "norsk-steps",
+    "name": "Norsk Steps",
+    "need": "I want to learn Norwegian for my family, my ancestry or a move to Norway, but there are few good resources and the big apps don't explain the basics.",
+    "headline": "Learning Norwegian for family, roots or a move? Short daily lessons that explain the basics plainly, everyday phrases you'll actually use, and speaking practice from day one.",
+    "buyer": "English speakers with Norwegian partners, in-laws or ancestry, and people moving to or visiting Norway.",
+    "bullets": [
+      "Short daily lessons in Bokmål that explain the basics plainly: word order, pronunciation and common verbs.",
+      "Everyday phrases for family visits, calls and daily life, with audio.",
+      "Speaking practice from the start, and a review of the words and patterns you miss."
+    ],
+    "price": "$6.99/month",
+    "priceUsd": 7,
+    "priceNote": "Or $49 a year. Cancel any time.",
+    "reasonPrompt": "Why are you learning Norwegian, and how far have you got?",
+    "faq": [
+      {
+        "q": "Bokmål or Nynorsk?",
+        "a": "Norsk Steps teaches Bokmål, the written standard most learners start with, and notes where spoken dialects differ."
+      },
+      {
+        "q": "Is it linked to a language app or school?",
+        "a": "No. Norsk Steps is independent and not affiliated with any language app, school or government body."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-28",
+      "summary": "Learners describe moving to Norway and needing to learn faster, wanting to talk with Norwegian family, learning because of Norwegian ancestry, long wanting to learn Norwegian, and finding Duolingo hard at the beginning.",
+      "wtp": "Norwegian by Nemo has 1.3K App Store ratings and sells its Foundation pack for $14.99.",
+      "signals": [
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=630331697/sortby=mosthelpful/json",
+          "who": "eeveeve (App Store review of Norwegian by Nemo)",
+          "date": "2016-08-17",
+          "quote": "Going to Norway for living. Need to learn faster.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=630331697/sortby=mosthelpful/json",
+          "who": "SadieDaDoggo (App Store review of Norwegian by Nemo)",
+          "date": "2023-06-12",
+          "quote": "communicate with my Norwegian family",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=2/id=630331697/sortby=mosthelpful/json",
+          "who": "Ladybirdsong (App Store review of Norwegian by Nemo)",
+          "date": "2013-12-08",
+          "quote": "Have been wanting to learn Norwegian",
+          "seen": "opened"
+        },
+        {
+          "url": "https://lemmy.world/comment/7297626",
+          "who": "cobysev (Lemmy)",
+          "date": "2024-02-06",
+          "quote": "Norwegian because my ancestry is Norwegian",
+          "seen": "opened"
+        },
+        {
+          "url": "https://lemmy.world/comment/9827065",
+          "who": "Wizard_Pope (Lemmy)",
+          "date": "2024-05-03",
+          "quote": "biggest issue I had with duolingo when learning Norwegian was at the beginning",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/norwegian-by-nemo/id630331697",
+          "who": "Norwegian by Nemo (App Store)",
+          "date": "2026-10-28",
+          "quote": "1.3K Ratings; Nemo Norwegian Foundation pack $14.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Duolingo, Babbel, Pimsleur, Nemo, courses and tutors.",
+      "risks": "Small audience, and big apps cover Norwegian cheaply. Many Norwegians speak English, lowering urgency. The paid app is a one-off purchase. Near live family-table (partner's family language), but Norwegian-specific."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-28",
+    "slug": "suomi-steps",
+    "name": "Suomi Steps",
+    "need": "I want to learn Finnish for my partner, my family roots, a move or a trip, but it's very hard for English speakers and there are few good resources.",
+    "headline": "Learning Finnish and hitting a wall? Short daily lessons that make the grammar manageable, the spoken Finnish people actually use, and steady review of what you miss.",
+    "buyer": "English speakers with Finnish partners or ancestry, and people moving to or visiting Finland.",
+    "bullets": [
+      "Short daily lessons that introduce cases and word endings a few at a time, with plain explanations.",
+      "Both written and everyday spoken Finnish, so you understand people and can reply.",
+      "Steady review of the words and endings you miss, and speaking practice with audio."
+    ],
+    "price": "$6.99/month",
+    "priceUsd": 7,
+    "priceNote": "Or $49 a year. Cancel any time.",
+    "reasonPrompt": "Why are you learning Finnish, and what's been hardest?",
+    "faq": [
+      {
+        "q": "Does it teach spoken or written Finnish?",
+        "a": "Both. Suomi Steps teaches standard written Finnish and shows the common spoken forms you'll hear day to day."
+      },
+      {
+        "q": "Is it linked to a language app or school?",
+        "a": "No. Suomi Steps is independent and not affiliated with any language app, school or government body."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-28",
+      "summary": "Learners describe wanting to learn because their boyfriend is Finnish, travelling to Finland soon, having Finnish family roots, finding Finnish learning materials hard to come by, feeling like they're running against a wall, and a partner disappointed by the lack of options.",
+      "wtp": "Finnish by Nemo has 1.1K App Store ratings and sells its Foundation pack for $11.99.",
+      "signals": [
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=635602659/sortby=mosthelpful/json",
+          "who": "NewFinn (App Store review of Finnish by Nemo)",
+          "date": "2018-12-13",
+          "quote": "my boyfriend is finish, so I wanted to learn.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=635602659/sortby=mosthelpful/json",
+          "who": "BetsySC (App Store review of Finnish by Nemo)",
+          "date": "2020-01-08",
+          "quote": "My genealogy is Finnish",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=635602659/sortby=mosthelpful/json",
+          "who": "BuckSyn (App Store review of Finnish by Nemo)",
+          "date": "2018-08-01",
+          "quote": "Hard to find Finnish language anything",
+          "seen": "opened"
+        },
+        {
+          "url": "https://feddit.org/comment/9499364",
+          "who": "trolske (Lemmy)",
+          "date": "2025-10-18",
+          "quote": "learning Finnish feels like repeatedly running against a wall",
+          "seen": "opened"
+        },
+        {
+          "url": "https://sopuli.xyz/comment/20063391",
+          "who": "Lazycog (Lemmy)",
+          "date": "2025-11-05",
+          "quote": "disappointed about the lack of options for learning finnish",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/finnish-by-nemo/id635602659",
+          "who": "Finnish by Nemo (App Store)",
+          "date": "2026-10-28",
+          "quote": "1.1K Ratings; Nemo Finnish Foundation pack $11.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Duolingo, Drops, Memrise, WordDive, Nemo, courses.",
+      "risks": "Small audience. Hard grammar means high content cost and needs native review. The paid app is a one-off purchase. Near live family-table, but Finnish-specific."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
