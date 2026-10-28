@@ -51875,6 +51875,76 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-28",
+    "slug": "brave-hello",
+    "name": "Brave Hello",
+    "need": "I want to date, but whenever I like someone I freeze and walk away instead of talking to them or asking them out.",
+    "headline": "Like someone but always walk away instead of saying hello? Build up from everyday small talk to asking someone out, one small step a day, with a calm routine for the moment itself.",
+    "buyer": "Adults (18+) who want to date but freeze when talking to or asking out someone they like in person.",
+    "bullets": [
+      "A step-by-step ladder from everyday hellos and small talk to asking someone out, one small mission a day.",
+      "Say-it-out-loud rehearsal (recordings stay on your phone) and a 60-second calm-down routine before you speak.",
+      "Plain guidance on reading interest and taking a no gracefully, plus a private log of each step."
+    ],
+    "price": "$4.99/month",
+    "priceUsd": 5,
+    "priceNote": "Or $29 a year. For adults 18+.",
+    "reasonPrompt": "What usually happens when you want to talk to someone you like?",
+    "faq": [
+      {
+        "q": "Is it a pickup or 'rizz' app?",
+        "a": "No. Brave Hello teaches respectful, honest conversation: no scripts, tricks or pressure tactics. A no is always a no, and the app helps you take it gracefully. It promises no dates."
+      },
+      {
+        "q": "Is it therapy?",
+        "a": "No. It's a confidence-building practice tool. If anxiety seriously affects your life, a doctor or therapist can help."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-28",
+      "summary": "Adults describe walking away every time because they're so scared and nervous, chickening out of asking someone out, freezing before even attempting to talk to someone, and feeling ashamed they still can't do it.",
+      "wtp": "RARE: AI Dating Assistant has 1.9K App Store ratings and sells Pro plans from $7.99 to $49.99 (online dating help, adjacent).",
+      "signals": [
+        {
+          "url": "https://boards.scarleteen.com/viewtopic.php?p=47936",
+          "who": "CluelessGuy456 (Scarleteen boards)",
+          "date": "2019-11-25",
+          "quote": "just walked away because I'm so scared and nervous",
+          "seen": "opened"
+        },
+        {
+          "url": "https://boards.straightdope.com/t/why-cant-i-just-ask-her-already/42869",
+          "who": "Critter (Straight Dope)",
+          "date": "2000-11-27",
+          "quote": "I keep chickening out",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.actualized.org/forum/topic/95888-freezing-up-before-an-approach/",
+          "who": "Oso (actualized.org forum)",
+          "date": "2023-09-20",
+          "quote": "froze up before even attempting a cold approach today",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/-/id1668048955",
+          "who": "RARE: AI Dating Assistant (App Store)",
+          "date": "2026-10-28",
+          "quote": "1.9K Ratings; Rizz Pro $7.99-$14.99; RARE Pro $49.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Online-dating text helpers, shyness courses, dating coaches, social-skills groups.",
+      "risks": "Forum evidence is old or from a pickup-leaning site, and the paid apps are online-texting helpers, so the money is adjacent. Must stay respectful and consent-first, never pickup tactics. Near live want-friends-or-dates and conversations-never-turn-actual, but about the solo in-person ask."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
