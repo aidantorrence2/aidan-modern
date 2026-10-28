@@ -833,7 +833,7 @@ export default function SignUpFormCollabCharlotte({ analyticsPath = '/sign-up-co
         {/* Recent work: full-height frames, swipeable. */}
         <div className="pt-10">
           <div className="flex items-baseline justify-between px-5">
-            <h3 className="text-[24px] leading-none" style={{ fontFamily: SERIF }}>Recent shoots &middot; shot on film</h3>
+            <h3 className="text-[24px] leading-none" style={{ fontFamily: SERIF }}>Recent shoots</h3>
             <a href="https://www.instagram.com/madebyaidan" target="_blank" rel="noopener noreferrer" onClick={() => track('handle_clicked', { placement: 'recent_work' })} className="text-[12px] font-medium text-neutral-600 underline decoration-neutral-300 underline-offset-4">@madebyaidan</a>
           </div>
           <div className="mt-4 flex snap-x snap-mandatory gap-2.5 overflow-x-auto px-5 pb-2 [scrollbar-width:none]">
