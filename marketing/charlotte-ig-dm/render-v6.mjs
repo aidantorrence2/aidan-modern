@@ -12,7 +12,7 @@ import fs from 'fs'
 // fails any card whose visible faces are smaller than FACE_MIN px (no thumbnail soup) and any text over a face. Copy = lines from his approved decks only
 // (see memory feedback_ad_copy_his_words). Same face audit as v2/v3: text never on a face, all text above y=1440.
 //
-// Usage: node render-v6.mjs --photos=<dir of <stem>.jpg> --vision=<dir> --out=<dir> [--only=h01,h02]
+// Usage: node render-v6.mjs --photos=<dir of <stem>.jpg> --vision=<dir> --out=<dir> [--only=h01,h02] [--cta=dm|signup]
 // Photos: marketing/charlotte-video-ads/work/src2 (1440px copies of new_top_tier_candidates; already upright).
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
@@ -106,7 +106,9 @@ const hand = (top, l1, l2, line, size = 138) => `<div style="position:absolute;t
 const cap = (top, big, small) => `<div style="position:absolute;top:${top}px;left:64px;right:64px;text-align:center;">
    <p style="font-family:${SE};font-style:italic;font-size:66px;font-weight:700;color:#fff;margin:0;line-height:1.02;${SH}">${big}</p>
    ${small ? `<p style="font-family:${SE};font-size:36px;font-style:italic;color:rgba(255,255,255,0.92);margin:18px 0 0;line-height:1.3;${SH}">${small}</p>` : ''}</div>`
-const CHAT = ['Interested?', "Let's chat."]
+// --cta=signup renders the website version (Sign-up button under the ad → /sign-up-collab); default = DM deck
+const CTA_KIND = ARG('cta') || 'dm'
+const CHAT = CTA_KIND === 'signup' ? ['Interested?', 'Sign up below.'] : ['Interested?', "Let's chat."]
 const ctaCard = (ph, pos) => bleed(ph, hand(clearTop(ph, pos, 345), ...CHAT, `I'm only in ${CITY} for a short time — let's shoot.`), { pos, scrim: LOW })
 const HOOK_H = 300, hookOn = (ph, pos, small, sub) => hook(clearTop(ph, pos, sub ? HOOK_H : 240), CITY, small, sub)
 
@@ -303,7 +305,7 @@ C.h09 = [['01-hook', hookCard('R1-09792-0026', {}, { small: "I'm looking for peo
     <div style="position:absolute;left:70px;top:760px;width:940px;height:1100px;overflow:hidden;border-radius:18px;">${tile(a, 0, 0, 940, 1100, 'center 22%')}</div>`, '#fbfaf6', false)], ]; BODIES.push(['h10', 'R1-09952-0013'])
 }
 
-for (const [id, cta] of BODIES) C[id].push(...body(0, cta))
+for (const [id, cta] of BODIES) if (!ONLY || ONLY.includes(id)) C[id].push(...body(0, cta))   // --only: build bodies only for the asked ids (allocation order is unchanged for the first ids)
 
 async function render() {
   const browser = await chromium.launch()
