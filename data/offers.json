@@ -53534,6 +53534,202 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-28",
+    "slug": "launch-lookout",
+    "name": "Launch Lookout",
+    "need": "I live near a rocket launch site and want to know only about the launches I can actually see from home, in time to step outside, without alerts for every launch worldwide or missing ones that get delayed.",
+    "headline": "Live near the Space Coast, Vandenberg or Wallops? Get told only about launches you can see from home, with a heads-up in time to step outside, even when the launch time moves.",
+    "buyer": "People living near Florida's Space Coast, Vandenberg in California or Wallops in Virginia who like to watch launches from home.",
+    "bullets": [
+      "Alerts only for launches likely to be visible from your address, not every launch worldwide.",
+      "A step-outside nudge timed to the launch, updated when the time slips or the launch is scrubbed.",
+      "Which direction to look, and whether day or night conditions make it worth going out."
+    ],
+    "price": "$2.99/month",
+    "priceUsd": 3,
+    "priceNote": "Or $19 a year.",
+    "reasonPrompt": "Where do you live, and how do you find out about launches now?",
+    "faq": [
+      {
+        "q": "Can it guarantee I'll see the launch?",
+        "a": "No. Launch times change and weather, cloud and buildings can block the view. Launch Lookout tells you when a launch is likely to be visible and keeps you updated if it moves."
+      },
+      {
+        "q": "Is it linked to a space agency or launch company?",
+        "a": "No. Launch Lookout is independent and not affiliated with any space agency, launch company or launch-tracking app."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-28",
+      "summary": "People near launch sites describe wanting alerts only for launches they can see from their window, an easy way to know whether to go outside, only wanting Florida launches because they live on the Space Coast, a home launch site at Wallops, and missing a launch that kept being delayed.",
+      "wtp": "Space Launch Now has 32K App Store ratings with Pro at $2.99 a month, $19.99 a year or $49.99 lifetime; T-Minus Space Launch Tracker has 908 ratings with Premium from $1.99 a month or $19.99 a year.",
+      "signals": [
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1448055760/sortby=mosthelpful/json",
+          "who": "kraken873 (App Store review)",
+          "date": "2023-08-10",
+          "quote": "I just want to be notified about the ones I can see from my window",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1448055760/sortby=mosthelpful/json",
+          "who": "Becky W 003 (App Store review)",
+          "date": "2025-08-25",
+          "quote": "I wanted an easy way to know if I should go outside and see if I can see a rocket in the sky",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1399715731/sortby=mosthelpful/json",
+          "who": "Bsucat (App Store review of Space Launch Now)",
+          "date": "2023-03-17",
+          "quote": "I only want to be notified of Florida launches because I live on the space coast",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1399715731/sortby=mosthelpful/json",
+          "who": "Aloof Rhino (App Store review of Space Launch Now)",
+          "date": "2021-06-05",
+          "quote": "Wallops is my home launch site",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=2/id=1399715731/sortby=mosthelpful/json",
+          "who": "Me Debant (App Store review of Space Launch Now)",
+          "date": "2024-03-19",
+          "quote": "disappointed to have missed a launch that kept being delayed",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1399715731",
+          "who": "Space Launch Now (App Store)",
+          "date": "2026-10-28",
+          "quote": "32K Ratings; Pro Monthly $2.99; Annual $19.99; Lifetime $49.99",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1496516813",
+          "who": "T-Minus Space Launch Tracker (App Store)",
+          "date": "2026-10-28",
+          "quote": "908 Ratings; Premium Monthly $1.99; Yearly $19.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Space Launch Now, T-Minus, free launch trackers (Next Spaceflight), local news alerts.",
+      "risks": "Strong free competitors; buyers are concentrated in a few regions; depends on a third-party launch schedule feed; next to live Pass Spotter (ISS passes), which is a different need. Two quotes were seen in the agent's saved copy of a review feed whose order has since changed. Evidence is all App Store reviews."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-28",
+    "slug": "passing-ships",
+    "name": "Passing Ships",
+    "need": "I live by the sea, a river or the Great Lakes and see ships go by, and I want to know what each one is, where it's going and when the next one will pass.",
+    "headline": "See ships go by from your window? Find out what each one is, where it's headed and when the next one will pass your stretch of water.",
+    "buyer": "People whose homes or cabins look out over the sea, a busy river or the Great Lakes, and who enjoy watching ships.",
+    "bullets": [
+      "Set your viewpoint once and see what's passing now: name, type, size and destination.",
+      "A heads-up before the next big ship reaches your stretch of water.",
+      "A log of ships you've seen, with photos and notes, so you can spot regulars."
+    ],
+    "price": "$2.99/month",
+    "priceUsd": 3,
+    "priceNote": "Or $19 a year.",
+    "reasonPrompt": "Where do you watch ships from, and what would you most like to know?",
+    "faq": [
+      {
+        "q": "Will it show every boat?",
+        "a": "No. It relies on signals that most large commercial ships broadcast. Small boats, some fishing boats and military vessels often won't appear."
+      },
+      {
+        "q": "Is it linked to a ship-tracking company or port?",
+        "a": "No. Passing Ships is independent and not affiliated with any ship-tracking service, port or shipping company."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-28",
+      "summary": "People by the water describe always wondering about the ships they see, being curious about the ships that pass, never being able to get information on them, ships too far away to read their names, watching Great Lakes freighters from their window, and wanting to know a ship's name.",
+      "wtp": "MarineTraffic has 65K App Store ratings with Pro plans at $4.99 and $29.99; MyShipTracking has 4.5K ratings with plans from $17.99; Boat Watch has 3.8K ratings with a $4.99 upgrade.",
+      "signals": [
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=2/id=563910324/sortby=mosthelpful/json",
+          "who": "ChelleCattt (App Store review of MarineTraffic)",
+          "date": "2026-03-15",
+          "quote": "I live near the sea and was always wondering about the many ships and boats I see",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=2/id=563910324/sortby=mosthelpful/json",
+          "who": "goodfriedokra (App Store review of MarineTraffic)",
+          "date": "2026-01-07",
+          "quote": "curious about the ships that pass",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=2/id=563910324/sortby=mosthelpful/json",
+          "who": "King Weasel III (App Store review of MarineTraffic)",
+          "date": "2025-12-01",
+          "quote": "never able to get any information on them",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=2/id=563910324/sortby=mosthelpful/json",
+          "who": "Donnabea (App Store review of MarineTraffic)",
+          "date": "2017-06-17",
+          "quote": "not close enough to see their names",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=563910324/sortby=mosthelpful/json",
+          "who": "amay9956 (App Store review of MarineTraffic)",
+          "date": "2026-08-26",
+          "quote": "watching big Great Lakes freighters from outside my window",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=324177409/sortby=mosthelpful/json",
+          "who": "Charlene 66 (App Store review)",
+          "date": "2018-06-16",
+          "quote": "I am interested in knowing what the name of the ship is",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id563910324",
+          "who": "MarineTraffic (App Store)",
+          "date": "2026-10-28",
+          "quote": "65K Ratings; Mobile Pro Plan $4.99 and $29.99",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1403038386",
+          "who": "MyShipTracking (App Store)",
+          "date": "2026-10-28",
+          "quote": "4.5K Ratings; Chief Officer $17.99 or $49.99",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id669023760",
+          "who": "Boat Watch (App Store)",
+          "date": "2026-10-28",
+          "quote": "3.8K Ratings; Full Version Upgrade $4.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "MarineTraffic, MyShipTracking, Boat Watch, VesselFinder, free ship-tracking websites.",
+      "risks": "Depends on ship-position (AIS) data, which may need a licence; strong incumbents; next to plane spotting and cruises on the skip list; military and small vessels don't show. Evidence is all App Store reviews."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

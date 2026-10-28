@@ -28453,5 +28453,142 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "see-rocket-launch-from-home",
+  "offer": "launch-lookout",
+  "title": "Can I see a rocket launch from my house?",
+  "description": "When rocket launches are visible from home near Florida's Space Coast, Vandenberg and Wallops, and how to give yourself the best chance.",
+  "intro": "If you live within view of a launch site's sky, you can often see rockets climb from your own yard. Whether you will depends on distance, time of day, weather and what's blocking your view.",
+  "sections": [
+   {
+    "h": "Which launches are easiest to see",
+    "list": [
+     "Night and twilight launches are the most visible; the bright flame can be seen from far away.",
+     "Around sunrise or sunset, sunlight can light up the exhaust plume high in the sky, making a glowing trail.",
+     "Daytime launches are harder to spot, especially at a distance."
+    ]
+   },
+   {
+    "h": "Where to look",
+    "list": [
+     "Face towards the launch site, such as east towards the coast for Cape Canaveral.",
+     "Find a spot with a clear, low view of the horizon, away from trees and buildings.",
+     "Rockets appear low first, then climb and arc away."
+    ]
+   },
+   {
+    "h": "Timing",
+    "list": [
+     "Launch times often slip or launches are scrubbed, so check again shortly before.",
+     "Step outside a few minutes early; the rocket may only be visible for a few minutes."
+    ]
+   },
+   {
+    "h": "Other things to know",
+    "p": [
+     "Some launches include booster landings near the coast, which can cause sonic booms heard over a wide area."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "rocket-launch-alerts-for-your-area",
+  "offer": "launch-lookout",
+  "title": "How to get rocket launch alerts only for launches near you",
+  "description": "Ways to hear about launches you can actually see, without alerts for every launch worldwide.",
+  "intro": "Launch apps and sites often list every launch in the world, which can mean a lot of alerts you don't need. Here's how to narrow it down.",
+  "sections": [
+   {
+    "h": "Filter by launch site",
+    "list": [
+     "Check your launch app's settings for filters by location or launch site.",
+     "Choose the sites you can see from home, such as Cape Canaveral and Kennedy, Vandenberg, or Wallops."
+    ]
+   },
+   {
+    "h": "Use more than one source",
+    "list": [
+     "Launch providers and local news often post updated times on launch day.",
+     "Check again close to launch, as windows move and launches get scrubbed."
+    ]
+   },
+   {
+    "h": "Set a reminder",
+    "p": [
+     "Set your own reminder for 10 to 15 minutes before launch, and update it if the time changes."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "what-ship-is-that",
+  "offer": "passing-ships",
+  "title": "What ship is that? How to identify ships passing your house",
+  "description": "Simple ways to find out the name, type and destination of a ship you can see from shore.",
+  "intro": "Watching ships from shore is more fun when you know what you're looking at. Here's how to find out.",
+  "sections": [
+   {
+    "h": "Use ship-tracking data",
+    "list": [
+     "Most large commercial ships broadcast their position, name and destination using a system called AIS.",
+     "Ship-tracking websites and apps show this on a map; find your location and tap the ship.",
+     "Small boats, some fishing boats and military vessels often won't show up."
+    ]
+   },
+   {
+    "h": "Read the ship",
+    "list": [
+     "The name is painted on the bow and stern, and the home port is usually on the stern.",
+     "Binoculars help a lot.",
+     "Funnel colours and hull markings often show the company that operates the ship."
+    ]
+   },
+   {
+    "h": "Common ship types",
+    "list": [
+     "Container ships: stacks of coloured boxes.",
+     "Bulk carriers: cargo holds with hatches, carrying grain, coal or ore.",
+     "Tankers: a long, flat deck with pipes, carrying oil, chemicals or gas.",
+     "Car carriers: tall, boxy ships with few windows."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "great-lakes-freighter-watching",
+  "offer": "passing-ships",
+  "title": "Great Lakes freighter watching: when and where to see the boats",
+  "description": "Tips for watching freighters on the Great Lakes, including when the shipping season runs and how to know when one is coming.",
+  "intro": "Great Lakes freighters, often called lakers, are some of the longest ships on fresh water. Watching them pass is a popular pastime around the lakes.",
+  "sections": [
+   {
+    "h": "When to watch",
+    "list": [
+     "The shipping season runs roughly from late March to mid-January.",
+     "The Soo Locks between Lake Superior and Lake Huron close for winter maintenance, so there's little traffic in late winter."
+    ]
+   },
+   {
+    "h": "Good places to watch",
+    "list": [
+     "Busy channels, harbour entrances and canals where ships pass close to shore.",
+     "Locks, where you can watch ships being raised and lowered."
+    ]
+   },
+   {
+    "h": "Know when the next one is coming",
+    "list": [
+     "Ship-tracking apps and websites show ships approaching on a map.",
+     "Some ports and local groups post expected arrivals."
+    ]
+   },
+   {
+    "h": "Tell them apart",
+    "p": [
+     "Each laker has its own name and company colours; binoculars help you read the name on the bow."
+    ]
+   }
+  ]
  }
 ]
