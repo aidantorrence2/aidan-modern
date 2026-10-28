@@ -220,6 +220,8 @@ export default function SignUpFormCollabCharlotteOnePage({ analyticsPath = '/sig
   const phoneRef = useRef<HTMLInputElement>(null)
   const pickerCardRef = useRef<HTMLDivElement>(null)
   const vibeRef = useRef<HTMLElement>(null)
+  const formRef = useRef<HTMLFormElement>(null)
+  const submitRef = useRef<HTMLButtonElement>(null)
   const photoRef = useRef<HTMLElement>(null)
   const [submitting, setSubmitting] = useState(false)
   const [showStickyCta, setShowStickyCta] = useState(false)
@@ -303,13 +305,14 @@ export default function SignUpFormCollabCharlotteOnePage({ analyticsPath = '/sig
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [hydrated, phone, countryCode, idea, instagram])
 
-  // The sticky CTA appears only while the picker is scrolled out of view.
+  // The sticky Sign up shows whenever the form's own Sign up button is off
+  // screen. The form is the whole page, so watching the form itself never fired.
   useEffect(() => {
-    if (!pickerCardRef.current) return
-    const obs = new IntersectionObserver(entries => setShowStickyCta(!entries[0].isIntersecting), { threshold: 0.1 })
-    obs.observe(pickerCardRef.current)
+    if (step !== 'location' || !submitRef.current) { setShowStickyCta(false); return }
+    const obs = new IntersectionObserver(entries => setShowStickyCta(!entries[0].isIntersecting))
+    obs.observe(submitRef.current)
     return () => obs.disconnect()
-  }, [])
+  }, [step])
 
   // Hero crossfade. Stopped entirely for anyone who asked for less motion —
   // they get the opening frame and nothing moves.
@@ -899,7 +902,7 @@ export default function SignUpFormCollabCharlotteOnePage({ analyticsPath = '/sig
           </p>
         </div>
 
-        {/* Sticky CTA, only once the look picker has scrolled away */}
+        {/* Sticky Sign up, while the form's own button is off screen */}
         {showStickyCta && step !== 'done' && (
           <div className="fixed inset-x-0 bottom-0 z-20 px-4 pb-[max(12px,env(safe-area-inset-bottom))] pt-3" style={{ background: 'linear-gradient(180deg, rgba(244,241,236,0), rgba(244,241,236,0.96) 35%)' }}>
             <div className="mx-auto max-w-md">
@@ -907,9 +910,12 @@ export default function SignUpFormCollabCharlotteOnePage({ analyticsPath = '/sig
                 type="button"
                 onClick={() => {
                   track('sticky_cta_clicked')
-                  pickerCardRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+                  // Same as the form's own button: checks every field, scrolls
+                  // to the first one missing, or signs them up.
+                  formRef.current?.requestSubmit()
                 }}
-                className="w-full rounded-[3px] bg-neutral-900 py-4 text-[13px] font-semibold uppercase tracking-[0.18em] text-white transition hover:bg-black"
+                disabled={submitting || processingPhotos}
+                className="w-full rounded-[3px] bg-neutral-900 py-4 text-[13px] font-semibold uppercase tracking-[0.18em] text-white transition hover:bg-black disabled:opacity-50"
               >
                 Sign up
               </button>
@@ -923,7 +929,7 @@ export default function SignUpFormCollabCharlotteOnePage({ analyticsPath = '/sig
   if (step === 'location') {
     return page(
       <div key="location" className="atf-card">
-        <form onSubmit={onSubmitAll} noValidate className="space-y-2.5">
+        <form ref={formRef} onSubmit={onSubmitAll} noValidate className="space-y-2.5">
           <div className="mb-7 border-b border-neutral-900 pb-4">
             <h2 className="text-[40px] leading-[0.98] tracking-[-0.015em] text-neutral-900" style={{ fontFamily: SERIF, textWrap: 'balance' }}>Fill out the form to sign up</h2>
           </div>
@@ -1112,6 +1118,7 @@ export default function SignUpFormCollabCharlotteOnePage({ analyticsPath = '/sig
             {/* Honeypot */}
             <input type="text" name="company" className="hidden" tabIndex={-1} autoComplete="off" />
             <button
+              ref={submitRef}
               type="submit"
               disabled={submitting || processingPhotos}
               className="group flex w-full items-center justify-between rounded-[3px] bg-neutral-900 px-5 py-[18px] text-[13px] font-semibold uppercase tracking-[0.18em] text-white transition hover:bg-black active:scale-[0.995] disabled:opacity-50"
