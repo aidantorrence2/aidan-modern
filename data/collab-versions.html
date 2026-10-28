@@ -1,0 +1,54 @@
+<!doctype html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>sign-up-collab versions</title>
+<style>
+  :root{color-scheme:dark}
+  html,body{margin:0;height:100%;background:#0c0c0c;color:#eee;font:14px/1.4 system-ui,sans-serif}
+  body{display:flex;flex-direction:column;height:100vh}
+  nav{display:flex;gap:6px;padding:10px 12px;overflow-x:auto;border-bottom:1px solid #222;flex:none}
+  nav button{flex:none;background:#161616;color:#bbb;border:1px solid #2a2a2a;border-radius:8px;padding:8px 12px;cursor:pointer;text-align:left}
+  nav button b{display:block;color:#fff;font-weight:600}
+  nav button small{color:#888}
+  nav button[aria-selected=true]{background:#fff;color:#111;border-color:#fff}
+  nav button[aria-selected=true] b{color:#111}
+  nav button[aria-selected=true] small{color:#444}
+  .meta{padding:8px 12px;border-bottom:1px solid #222;color:#aaa;flex:none;display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+  .meta a{color:#9cf}
+  .meta label{display:flex;gap:6px;align-items:center}
+  main{flex:1;display:flex;justify-content:center;background:#050505;min-height:0}
+  iframe{border:0;background:#fff;height:100%;width:100%}
+  main.phone iframe{width:430px;max-width:100%}
+  .down{color:#f77}
+</style>
+<nav id="tabs"></nav>
+<div class="meta"><span id="desc"></span><a id="open" target="_blank" rel="noreferrer">open in new tab</a><label><input type="checkbox" id="phone" checked> phone width</label><span id="status"></span></div>
+<main id="main" class="phone"><iframe id="frame" title="sign-up-collab version"></iframe></main>
+<script>
+const V=[
+ {n:7,sha:'fd1a6f0',port:3101,date:'28 Oct 13:49',msg:'Contact = Instagram (default) / Phone'},
+ {n:6,sha:'38e9f67',port:3102,date:'28 Oct 10:02',msg:'69 marked pins culled, rotation 130'},
+ {n:5,sha:'78e2ace',port:3103,date:'28 Oct 09:47',msg:'120 editorial references added, rotation 199'},
+ {n:4,sha:'fb03148',port:3104,date:'28 Oct 09:37',msg:'Charlotte pins reverted, old 87-pin library back'},
+ {n:3,sha:'3da2a5f',port:3105,date:'27 Oct 19:57',msg:'Charlotte Pinterest rebuild, rotation 181'},
+ {n:2,sha:'efa0211',port:3106,date:'27 Oct 17:25',msg:'Page moves to Charlotte, NC (WhatsApp +1 704)'},
+ {n:1,sha:'a4b11cc',port:3107,date:'21 Oct 20:28',msg:'Istanbul page + photos-of-yourself guide'},
+]
+const tabs=document.getElementById('tabs'),frame=document.getElementById('frame'),desc=document.getElementById('desc'),open=document.getElementById('open'),status=document.getElementById('status')
+let cur=null
+function show(v){
+  cur=v
+  for(const b of tabs.children) b.setAttribute('aria-selected',b.dataset.sha===v.sha)
+  const url='http://localhost:'+v.port+'/sign-up-collab'
+  frame.src=url; open.href=url
+  desc.textContent='v'+v.n+' · '+v.sha+' · '+v.date+' · '+v.msg
+  status.textContent=''
+  fetch(url,{mode:'no-cors'}).catch(()=>{status.innerHTML='<span class="down">server on :'+v.port+' is not running — rerun versions/run-all.sh</span>'})
+  try{localStorage.setItem('collab-versions-tab',v.sha)}catch{}
+}
+for(const v of V){const b=document.createElement('button');b.dataset.sha=v.sha;b.innerHTML='<b>v'+v.n+'</b><small>'+v.date+'</small>';b.onclick=()=>show(v);tabs.appendChild(b)}
+document.getElementById('phone').onchange=e=>document.getElementById('main').classList.toggle('phone',e.target.checked)
+addEventListener('keydown',e=>{if(e.target.tagName==='INPUT')return;const i=V.indexOf(cur);if(e.key==='ArrowRight'||e.key==='l')show(V[Math.min(V.length-1,i+1)]);if(e.key==='ArrowLeft'||e.key==='h')show(V[Math.max(0,i-1)])})
+let start=V[0];try{const s=localStorage.getItem('collab-versions-tab');const f=V.find(v=>v.sha===s);if(f)start=f}catch{}
+show(start)
+</script>
