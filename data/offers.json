@@ -52484,6 +52484,83 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-28",
+    "slug": "viet-reply",
+    "name": "Viet Reply",
+    "need": "I grew up hearing Vietnamese and understand my parents, but I can't hold a conversation with them in it, so I answer in English.",
+    "headline": "Understand Vietnamese but answer your parents in English? Practise speaking out loud for real family moments: calls home, Tết, visits to relatives.",
+    "buyer": "Adults (18+) who grew up hearing Vietnamese, understand much of it, and want to speak it with family.",
+    "bullets": [
+      "Speak-it-back practice for family moments: calls with parents and grandparents, Tết, a trip to Vietnam.",
+      "Hear the tones side by side and practise the right kinship words for each relative.",
+      "A two-minute warm-up before a call, so you start in Vietnamese."
+    ],
+    "price": "$5.99/month",
+    "priceUsd": 6,
+    "priceNote": "Or $39 a year. For adults 18+.",
+    "reasonPrompt": "Who in your family would you most like to talk with in Vietnamese?",
+    "faq": [
+      {
+        "q": "Is this a full Vietnamese course?",
+        "a": "No. Viet Reply is for people who already understand some Vietnamese and want to start speaking. If you're starting from zero, a beginner course or a tutor is the better first step."
+      },
+      {
+        "q": "Is it linked to a language app, tutor site or community group?",
+        "a": "No. Viet Reply is independent and not affiliated with any app, tutoring site or organisation."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-28",
+      "summary": "Vietnamese diaspora adults describe being embarrassed that they can't speak the language, wanting to communicate with their extended family, feeling distant from elders because they can't hold a conversation, and mixing so much English in with their parents that it stops being Vietnamese.",
+      "wtp": "Preply lists 833 Vietnamese tutors rated 4.97 by 6,843 customers; the Learn Vietnamese - Lentil app sells $4.99 a week, $24.99 a year or $29.99 lifetime.",
+      "signals": [
+        {
+          "url": "https://seattleglobalist.com/2014/02/17/how-i-didnt-learn-to-speak-vietnamese/20698",
+          "who": "Alexander Tran (Seattle Globalist)",
+          "date": "2014-02-17",
+          "quote": "It was embarrassing, and it made me question whether or not I could truly call myself Vietnamese",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.chopsticksalley.com/post/2016/09/16/learn-to-speak-vietnamese-it-s-never-too-late",
+          "who": "Jennifer Chung (Chopsticks Alley)",
+          "date": "2016-09-16",
+          "quote": "We often find ourselves distant and frustrated with our elders, because we cannot have a conversation with them easily",
+          "seen": "opened"
+        },
+        {
+          "url": "https://multilingualpedagogy.lmc.gatech.edu/interview-an-thien-nguyen-on-being-vietnamese-and-american",
+          "who": "An Thien Nguyen (Georgia Tech interview)",
+          "date": "undated",
+          "quote": "I still talk to my parents in Vietnamese, but sometimes, we throw in so many English words",
+          "seen": "opened"
+        },
+        {
+          "url": "https://preply.com/en/online/vietnamese-tutors",
+          "who": "Preply Vietnamese tutors",
+          "date": "2026-10-28",
+          "quote": "833 Vietnamese teachers with an average rating of 4.97 out of 5 stars given by 6843 customers",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1435712866",
+          "who": "Learn Vietnamese - Lentil App (App Store)",
+          "date": "2026-10-28",
+          "quote": "Weekly Subscription $4.99; Yearly Subscription $24.99; Lifetime Premium $29.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Vietnamese apps (Lentil, LENGO), tutoring marketplaces (Preply, italki), community classes.",
+      "risks": "Evidence is articles and an interview, not forums; one interview is undated; app money is small, and the spend is mostly on tutors; nobody wrote that they'd pay; it repeats the Greek Out Loud format."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

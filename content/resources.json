@@ -27648,5 +27648,85 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "start-speaking-vietnamese-when-you-understand-it",
+  "offer": "viet-reply",
+  "title": "How to start speaking Vietnamese when you already understand it",
+  "description": "If you grew up hearing Vietnamese but answer your parents in English, these steps help you start speaking.",
+  "intro": "Many people who grew up in Vietnamese families understand far more than they can say. That gap is common, and speaking practice closes it faster than more listening.",
+  "sections": [
+   {
+    "h": "Why it feels hard",
+    "p": [
+     "You've had years of listening practice and very little speaking practice. Tones and kinship words also make it feel risky to get things wrong."
+    ]
+   },
+   {
+    "h": "Small steps that work",
+    "list": [
+     "Pick one moment, like saying hello on the phone, and always do it in Vietnamese.",
+     "Say two or three sentences out loud before a call.",
+     "Copy how your parents say things, including the tones, rather than reading from a textbook.",
+     "Ask family to reply in Vietnamese and slow down, rather than switching to English."
+    ]
+   },
+   {
+    "h": "Mixing languages is fine at first",
+    "p": [
+     "Using some English words while you build up is normal. Swap in one more Vietnamese word each time."
+    ]
+   },
+   {
+    "h": "When to add a tutor",
+    "p": [
+     "If tones or grammar keep tripping you up, a few lessons with a tutor can fix the gaps quickly."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "vietnamese-kinship-words",
+  "offer": "viet-reply",
+  "title": "Vietnamese kinship words: what to call your relatives",
+  "description": "A simple guide to common Vietnamese words for family members, and how to refer to yourself when you talk to them.",
+  "intro": "Vietnamese uses family words instead of 'you' and 'I', so knowing them makes conversations with relatives much easier. Usage varies by region and family, so check with yours.",
+  "sections": [
+   {
+    "h": "Parents and grandparents",
+    "list": [
+     "Bố or Ba: Dad (Bố is more common in the north, Ba in the south).",
+     "Mẹ or Má: Mum (Mẹ in the north, Má often in the south).",
+     "Ông nội, Bà nội: your father's father and mother.",
+     "Ông ngoại, Bà ngoại: your mother's father and mother."
+    ]
+   },
+   {
+    "h": "Brothers and sisters",
+    "list": [
+     "Anh: older brother, or an older man of your generation.",
+     "Chị: older sister, or an older woman of your generation.",
+     "Em: a younger brother or sister."
+    ]
+   },
+   {
+    "h": "Aunts and uncles",
+    "list": [
+     "Chú: your father's younger brother.",
+     "Bác: an older sibling of your parent (exact use varies by region).",
+     "Cô: your father's sister.",
+     "Cậu: your mother's brother.",
+     "Dì: your mother's sister."
+    ]
+   },
+   {
+    "h": "Talking about yourself",
+    "list": [
+     "With your parents, call yourself con.",
+     "With your grandparents, call yourself cháu.",
+     "With older siblings, call yourself em."
+    ]
+   }
+  ]
  }
 ]
