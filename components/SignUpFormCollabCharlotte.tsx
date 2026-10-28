@@ -81,10 +81,10 @@ const proofImages = [
 ]
 
 const howItWorks = [
-  'Pick a look and tell me where to message you.',
-  'I send the details: timing, locations, what to wear.',
-  'We shoot for one to two hours on 35mm film.',
-  'You get the edited photos. Free, always.',
+  'Share your preferences',
+  'I message you the details — timing, locations, what to wear',
+  'We plan the concept together and shoot for 1–2 hours',
+  "You get the edited photos — it's 100% free, always",
 ]
 
 type VibeKey = 'street' | 'nature' | 'indoor' | 'any'
@@ -833,7 +833,7 @@ export default function SignUpFormCollabCharlotte({ analyticsPath = '/sign-up-co
         {/* Recent work: full-height frames, swipeable. */}
         <div className="pt-10">
           <div className="flex items-baseline justify-between px-5">
-            <h3 className="text-[28px] leading-none" style={{ fontFamily: SERIF }}>Recent work</h3>
+            <h3 className="text-[24px] leading-none" style={{ fontFamily: SERIF }}>Recent shoots &middot; shot on film</h3>
             <a href="https://www.instagram.com/madebyaidan" target="_blank" rel="noopener noreferrer" onClick={() => track('handle_clicked', { placement: 'recent_work' })} className="text-[12px] font-medium text-neutral-600 underline decoration-neutral-300 underline-offset-4">@madebyaidan</a>
           </div>
           <div className="mt-4 flex snap-x snap-mandatory gap-2.5 overflow-x-auto px-5 pb-2 [scrollbar-width:none]">
@@ -857,7 +857,7 @@ export default function SignUpFormCollabCharlotte({ analyticsPath = '/sign-up-co
             ))}
           </ol>
           <p className="mt-6 text-[14px] leading-relaxed text-neutral-600">
-            <span className="font-semibold text-neutral-900">Why free?</span> It&rsquo;s a collaboration. I&rsquo;m building my portfolio on film; you get the edited photos to use however you like.
+            <span className="font-semibold text-neutral-900">Why free?</span> I&rsquo;m traveling the world &mdash; this is how I meet new people and capture beautiful places.
           </p>
         </div>
 
@@ -896,7 +896,7 @@ export default function SignUpFormCollabCharlotte({ analyticsPath = '/sign-up-co
           onBlur={() => { const v = idea.trim(); if (v) trackOnce('notes_filled', v, { chars: v.length }) }}
           rows={4}
           className={`${inputCls} mt-4 resize-none leading-relaxed`}
-          placeholder="Ideas, references, questions..."
+          placeholder="Totally optional..."
         />
         <div className="mt-6 space-y-3">
           {nextBtn(() => advance('photos', true))}
@@ -1101,8 +1101,9 @@ export default function SignUpFormCollabCharlotte({ analyticsPath = '/sign-up-co
           </div>
           <div className="space-y-5 px-6 pb-6 pt-4">
             <p className="text-sm text-neutral-500">I&apos;ll message you {CHANNELS[channel].doneVia} within 24 hours to plan your Charlotte shoot. Let&apos;s make something great together.</p>
+            <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-neutral-400">What to expect</p>
             <ol className="divide-y divide-neutral-200 border-y border-neutral-200">
-              {['I message you to plan the concept and location.', 'We shoot for one to two hours on 35mm film.', 'You get the edited photos to keep.'].map((t, i) => (
+              {['Edited photos you can use however you want', 'Full creative direction from me', 'A real collaboration, not a transaction', 'We plan the concept together'].map((t, i) => (
                 <li key={i} className="flex items-baseline gap-4 py-3">
                   <span className="w-6 shrink-0 text-[18px] leading-none text-neutral-400" style={{ fontFamily: SERIF }}>{String(i + 1).padStart(2, '0')}</span>
                   <span className="text-[14px] text-neutral-700">{t}</span>
