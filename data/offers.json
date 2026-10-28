@@ -51378,6 +51378,104 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-28",
+    "slug": "recall-watch",
+    "name": "Recall Watch",
+    "need": "I want to know quickly when food or products I've bought, or give my kids and pets, are recalled, without digging through official lists or getting alerts that don't apply to me.",
+    "headline": "Hear about recalls too late, or get alerts that don't apply to you? List the brands and products you actually buy, and get matched recall alerts with a link to the official notice.",
+    "buyer": "US households, especially parents and pet owners, who worry they hear about food and product recalls too late or not at all.",
+    "bullets": [
+      "Add the brands and products you buy, and your pets' food, in a few taps.",
+      "Alerts only when an official recall matches something on your list, with a link to the official notice.",
+      "A plain checklist of what to do next: check the lot or date code, stop using it, and how to return or dispose of it."
+    ],
+    "price": "$2.99/month",
+    "priceUsd": 3,
+    "priceNote": "Or $19 a year. Cancel any time.",
+    "reasonPrompt": "Which products or pet foods do you most want to keep an eye on?",
+    "faq": [
+      {
+        "q": "Can I rely on it instead of official notices?",
+        "a": "No. Recall Watch is a convenience, not a replacement for official recall notices, and it can miss or delay a recall. Always follow the official notice and the instructions from the agency or maker. If someone may be ill from a product, contact a doctor or emergency services."
+      },
+      {
+        "q": "Is it linked to a government agency or brand?",
+        "a": "No. Recall Watch is independent and not affiliated with any government agency, retailer or brand. It links to official sources such as government recall pages."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-28",
+      "summary": "People describe only hearing about recalls after it's too late, wanting to keep up with pet food recalls, being more wary about what's happening with their food, worrying with kids and a dog at home, wanting to tune alerts, and spending a lot of time finding the recalls for their area.",
+      "wtp": "Food Recalls & Alerts has 3.5K App Store ratings and sells plans at $4.99 a month, $39.99 a year or $99.99 lifetime; USA Recalls: Food, Drug Alerts has 139 ratings with subscriptions from $4.99 to $49.99.",
+      "signals": [
+        {
+          "url": "https://apps.apple.com/us/app/food-recalls-alerts/id1508680654",
+          "who": "GracieRicker (App Store review of Food Recalls & Alerts)",
+          "date": "2024-10-06",
+          "quote": "By the time we do hear about them",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/food-recalls-alerts/id1508680654",
+          "who": "Ammon90 (App Store review of Food Recalls & Alerts)",
+          "date": "2025-08-29",
+          "quote": "keep up to date on all the pet food recalls",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/food-recalls-alerts/id1508680654",
+          "who": "ohjoyit'slife (App Store review of Food Recalls & Alerts)",
+          "date": "2024-12-04",
+          "quote": "much more wary of staying updated",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/usa-recalls-food-drug-alerts/id6742926499",
+          "who": "giskyle88 (App Store review of USA Recalls)",
+          "date": "2025-03-21",
+          "quote": "especially with kids and a dog in the house",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/usa-recalls-food-drug-alerts/id6742926499",
+          "who": "epik (App Store review of USA Recalls)",
+          "date": "2025-04-04",
+          "quote": "tune what kind of notifications",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/recall-alert-safety-news/id1121107968",
+          "who": "Serrani (App Store review of Recall Alert)",
+          "date": "2023-05-23",
+          "quote": "find the recalls for my area",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/food-recalls-alerts/id1508680654",
+          "who": "Food Recalls & Alerts (App Store)",
+          "date": "2026-10-28",
+          "quote": "3.5K Ratings; Monthly $4.99; Yearly $39.99; Lifetime $99.99",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/usa-recalls-food-drug-alerts/id6742926499",
+          "who": "USA Recalls: Food, Drug Alerts (App Store)",
+          "date": "2026-10-28",
+          "quote": "139 Ratings; subscriptions $4.99-$49.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Food Recalls & Alerts, USA Recalls, Recalls 365, free official alerts from government agencies.",
+      "risks": "Official alerts are free, and many small clone apps exist. A missed alert could matter, so it must link to official notices and say it's not a substitute. Infant products need extra care. All evidence is App Store reviews."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

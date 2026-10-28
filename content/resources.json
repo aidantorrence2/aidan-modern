@@ -26672,5 +26672,71 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "how-to-find-out-if-food-you-bought-was-recalled",
+  "offer": "recall-watch",
+  "title": "How to find out if food or products you bought have been recalled",
+  "description": "Where to check official recall notices in the US, and what to do if something you bought is on the list.",
+  "intro": "Recalls are published by official agencies and by the companies themselves. Checking the right official source is the most reliable way to know. This guide is general information; always follow the official notice.",
+  "sections": [
+   {
+    "h": "Official US sources",
+    "list": [
+     "FDA: most packaged food, drinks, pet food, medicines and cosmetics.",
+     "USDA Food Safety and Inspection Service: meat, poultry and some egg products.",
+     "CPSC (Consumer Product Safety Commission): household products, toys and many children's products.",
+     "NHTSA: vehicles, car seats and tyres."
+    ]
+   },
+   {
+    "h": "How to check a product",
+    "list": [
+     "Search the agency's recall list for the brand and product name.",
+     "Compare the lot number, 'best by' date and size on your package with the notice.",
+     "Sign up for the agency's free email alerts if you want them."
+    ]
+   },
+   {
+    "h": "If something you have is recalled",
+    "list": [
+     "Stop using or eating it, and follow the notice: return, refund or dispose of it as instructed.",
+     "If anyone may be ill from it, contact a doctor; in an emergency, call emergency services.",
+     "Keep the packaging until you've checked the details."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "how-to-get-pet-food-recall-alerts",
+  "offer": "recall-watch",
+  "title": "How to get pet food recall alerts for your dog's or cat's brand",
+  "description": "How to keep track of recalls for the pet food and treats you buy, and what to do if one is recalled.",
+  "intro": "Pet food and treat recalls happen several times a year. Knowing the exact product you buy makes it quick to check. This guide is general information; always follow the official notice and your vet's advice.",
+  "sections": [
+   {
+    "h": "Know exactly what you feed",
+    "list": [
+     "Note the brand, product name, size and flavour of each food and treat.",
+     "Keep a photo of the packaging with the lot number and date code."
+    ]
+   },
+   {
+    "h": "Where recalls are announced",
+    "list": [
+     "In the US, the FDA lists pet food recalls and withdrawals.",
+     "Many brands post recalls on their websites and social media.",
+     "Some retailers email customers who bought a recalled product."
+    ]
+   },
+   {
+    "h": "If your pet's food is recalled",
+    "list": [
+     "Stop feeding it and check the lot and date against the notice.",
+     "Follow the notice for refunds or disposal.",
+     "If your pet seems unwell, contact your vet straight away."
+    ]
+   }
+  ]
  }
 ]
