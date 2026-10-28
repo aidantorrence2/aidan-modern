@@ -700,7 +700,7 @@ export default function SignUpFormCollabCharlotte({ analyticsPath = '/sign-up-co
             setError(null)
             requestAnimationFrame(() => phoneRef.current?.focus())
           }}
-          className={`flex items-center justify-center gap-2 rounded-[3px] border py-3.5 text-[14px] font-semibold transition ${
+          className={`flex items-center justify-center gap-2 rounded-[3px] border py-3 text-[14px] font-semibold transition ${
             on ? 'border-neutral-900 bg-neutral-900 text-white' : 'border-neutral-300 bg-white text-neutral-700 hover:border-neutral-900'
           }`}
           data-cta={`v7b-channel-${c}`}
@@ -721,8 +721,8 @@ export default function SignUpFormCollabCharlotte({ analyticsPath = '/sign-up-co
     return (
       <div className="mx-auto w-full max-w-md bg-[#f4f1ec] text-neutral-900">
         <style dangerouslySetInnerHTML={{ __html: slideMotionCss }} />
-        {/* Hero: one photograph, full height, the city as the headline. */}
-        <div className="relative h-[86svh] min-h-[560px] max-h-[780px] w-full overflow-hidden bg-black">
+        {/* Hero: fills the screen down to the sign-up form, which stays above the fold. */}
+        <div className="relative h-[calc(100svh-330px)] min-h-[300px] max-h-[640px] w-full overflow-hidden bg-black">
           {HERO_SLIDES.map((src, i) => (
             <NextImage
               key={src}
@@ -731,7 +731,7 @@ export default function SignUpFormCollabCharlotte({ analyticsPath = '/sign-up-co
               fill
               priority={i === 0}
               sizes="(max-width: 640px) 100vw, 448px"
-              className={`object-cover object-[50%_25%] transition-opacity duration-[1400ms] ease-in-out ${i === heroIndex ? 'opacity-100' : 'opacity-0'}`}
+              className={`object-cover object-[50%_22%] transition-opacity duration-[1400ms] ease-in-out ${i === heroIndex ? 'opacity-100' : 'opacity-0'}`}
             />
           ))}
           <div className="absolute inset-x-0 top-0 h-28" style={{ background: 'linear-gradient(180deg, rgba(0,0,0,0.45), transparent)' }} />
@@ -749,24 +749,17 @@ export default function SignUpFormCollabCharlotte({ analyticsPath = '/sign-up-co
               madebyaidan
             </a>
           </div>
-          <div className="absolute inset-x-0 bottom-0 px-5 pb-7 text-white">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-white/80">Free photo shoot</p>
-            <h1 className="mt-1 text-[88px] leading-[0.9] tracking-[-0.02em]" style={{ fontFamily: SERIF }}>
-              {CITY}
-            </h1>
-            <div className="mt-5 flex items-center justify-between gap-4">
-              <button
-                type="button"
-                onClick={() => { track('hero_cta_clicked'); pickerCardRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' }) }}
-                className="flex items-center gap-3 rounded-[3px] bg-white px-6 py-4 text-[13px] font-semibold uppercase tracking-[0.18em] text-neutral-900 transition hover:bg-neutral-100 active:scale-[0.98]"
-                data-cta="v7b-hero"
-              >
-                Sign up
-                <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth={2.2} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M12 5v14M5 12l7 7 7-7" /></svg>
-              </button>
-              <span className="flex gap-1.5" aria-hidden="true">
+          <div className="absolute inset-x-0 bottom-0 px-5 pb-4 text-white">
+            <div className="flex items-end justify-between gap-4">
+              <div>
+                <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-white/80">Free photo shoot</p>
+                <h1 className="mt-1 text-[68px] leading-[0.9] tracking-[-0.02em]" style={{ fontFamily: SERIF }}>
+                  {CITY}
+                </h1>
+              </div>
+              <span className="mb-2 flex gap-1.5" aria-hidden="true">
                 {HERO_SLIDES.map((_, i) => (
-                  <span key={i} className={`h-[2px] w-5 rounded-full transition-colors duration-500 ${i === heroIndex ? 'bg-white' : 'bg-white/30'}`} />
+                  <span key={i} className={`h-[2px] w-4 rounded-full transition-colors duration-500 ${i === heroIndex ? 'bg-white' : 'bg-white/30'}`} />
                 ))}
               </span>
             </div>
@@ -774,12 +767,11 @@ export default function SignUpFormCollabCharlotte({ analyticsPath = '/sign-up-co
         </div>
 
         {/* Sign up: the contact is the first thing asked. */}
-        <div ref={pickerCardRef} className="scroll-mt-4 px-5 pb-4 pt-10">
-          <h2 className="text-[44px] leading-[1] tracking-[-0.01em]" style={{ fontFamily: SERIF }}>
-            Sign up
+        <div ref={pickerCardRef} className="scroll-mt-4 px-5 pb-4 pt-5">
+          <h2 className="text-[32px] leading-[1.05] tracking-[-0.01em]" style={{ fontFamily: SERIF }}>
+            Where should I message you?
           </h2>
-          <p className="mt-2 text-[14px] leading-relaxed text-neutral-600">Where should I message you? I&rsquo;ll send the details: timing, locations, what to wear.</p>
-        <form onSubmit={onCapture} className="mt-6 space-y-3">
+        <form onSubmit={onCapture} className="mt-4 space-y-2.5">
           <div className="grid grid-cols-2 gap-2">
             {segment('instagram')}
             {segment('phone')}
@@ -829,7 +821,7 @@ export default function SignUpFormCollabCharlotte({ analyticsPath = '/sign-up-co
           <input type="text" name="company" className="hidden" tabIndex={-1} autoComplete="off" />
           <button
             type="submit"
-            className="group flex w-full items-center justify-between rounded-[3px] bg-neutral-900 px-5 py-[18px] text-[13px] font-semibold uppercase tracking-[0.18em] text-white transition hover:bg-black active:scale-[0.995] disabled:opacity-50"
+            className="group flex w-full items-center justify-between rounded-[3px] bg-neutral-900 px-5 py-4 text-[13px] font-semibold uppercase tracking-[0.18em] text-white transition hover:bg-black active:scale-[0.995] disabled:opacity-50"
             data-cta="v7b-submit"
           >
             <span>Continue</span>
