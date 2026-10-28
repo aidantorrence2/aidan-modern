@@ -53331,6 +53331,118 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-28",
+    "slug": "pet-peek",
+    "name": "Pet Peek",
+    "need": "I want to see and hear what my dog or cat is doing while I'm at work or away, without buying a pet camera.",
+    "headline": "Wondering what your dog or cat is up to while you're out? Turn a spare phone or tablet into a pet camera and check in from work, without buying new hardware.",
+    "buyer": "Pet owners who leave a dog, cat or rabbit home alone and have a spare phone, tablet or laptop.",
+    "bullets": [
+      "Turn an old phone, tablet or laptop into a pet camera in a few minutes.",
+      "Check in live from work and get a nudge when your pet barks or moves a lot.",
+      "A simple daily timeline of what your pet got up to, so you can spot changes."
+    ],
+    "price": "$4.99/month",
+    "priceUsd": 5,
+    "priceNote": "Or $39 a year. Uses a device you already have.",
+    "reasonPrompt": "Who are you leaving at home, and what do you most want to check on?",
+    "faq": [
+      {
+        "q": "Do I need to buy a camera?",
+        "a": "No. Pet Peek is designed to use a spare phone, tablet or laptop you already have, kept on charge and pointed at your pet's space."
+      },
+      {
+        "q": "Is it a home security system, and is it linked to a pet camera brand?",
+        "a": "No. Pet Peek is for checking on pets, not for home security, and it's independent and not affiliated with any camera maker. Let anyone else in your home, like a dog walker or sitter, know the camera is there."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-28",
+      "summary": "Pet owners describe wanting to keep an eye on a dog, watching a sick dog while they have to work, watching dogs while away without buying a camera, looking for a way to monitor a cat or keep watch on a bunny at work, and hating leaving animals alone without knowing what they're doing.",
+      "wtp": "Barkio: Dog Monitor & Pet Cam has 1.8K App Store ratings with plans at $4.99 and $6.99 a month, $49.99 a year and $99.99 lifetime; AlfredCamera, which turns a spare phone into a camera, has 112K ratings with Premium at $5.99 a month.",
+      "signals": [
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1362484782/sortby=mosthelpful/json",
+          "who": "AndreaAng03 (App Store review of Barkio)",
+          "date": "2023-01-17",
+          "quote": "I wanted to be able to keep an eye on him to make sure",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1362484782/sortby=mosthelpful/json",
+          "who": "Katie kaykay (App Store review of Barkio)",
+          "date": "2022-10-28",
+          "quote": "peace of mind watching my sick dog while I have to work",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1362484782/sortby=mosthelpful/json",
+          "who": "Teeisndbel (App Store review of Barkio)",
+          "date": "2023-09-29",
+          "quote": "I am able to watch my dogs while I am gone without buying a camera",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1362484782/sortby=mosthelpful/json",
+          "who": "janieski7 (App Store review of Barkio)",
+          "date": "2023-01-12",
+          "quote": "Was looking for a way to keep an eye on my cat",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1362484782/sortby=mostrecent/json",
+          "who": "lane dogg (App Store review of Barkio)",
+          "date": "2024-06-05",
+          "quote": "keep watch on my bunny while I work",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=2/id=1362484782/sortby=mostrecent/json",
+          "who": "stink h8r (App Store review of Barkio)",
+          "date": "2023-10-11",
+          "quote": "wanted a way to monitor my cat",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=966460837/sortby=mosthelpful/json",
+          "who": "megr31 (App Store review of AlfredCamera)",
+          "date": "2018-10-04",
+          "quote": "the best way to keep an eye on our lil puppy",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=966460837/sortby=mosthelpful/json",
+          "who": "T.marie74 (App Store review of AlfredCamera)",
+          "date": "2018-04-26",
+          "quote": "I hate leaving my animals alone without knowing what",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/barkio-dog-monitor-pet-cam/id1362484782",
+          "who": "Barkio (App Store)",
+          "date": "2026-10-28",
+          "quote": "1.8K Ratings; Premium Monthly $6.99; $49.99 a year",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id966460837",
+          "who": "AlfredCamera (App Store)",
+          "date": "2026-10-28",
+          "quote": "112K Ratings; Premium 1 month $5.99; Plus 1 month $8.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Barkio, AlfredCamera, pet camera hardware (Furbo, Petcube).",
+      "risks": "Next to live Calm Alone (separation-anxiety training), so it stays about checking in. Streaming build is heavier than most; reliability is the main complaint about rivals. Must not be sold as home security. Evidence is all App Store reviews from two apps."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

@@ -28310,5 +28310,75 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "turn-old-phone-into-pet-camera",
+  "offer": "pet-peek",
+  "title": "How to turn an old phone or tablet into a pet camera",
+  "description": "Simple steps to use a spare phone, tablet or laptop to check on your pet while you're out.",
+  "intro": "You don't need special hardware to check on your pet. A spare phone or tablet can do the job with a little setup.",
+  "sections": [
+   {
+    "h": "Get the device ready",
+    "list": [
+     "Charge it and keep it plugged in while it's in use.",
+     "Connect it to your home Wi-Fi.",
+     "Turn off notifications and sounds that might startle your pet."
+    ]
+   },
+   {
+    "h": "Find the right spot",
+    "list": [
+     "Point it at where your pet spends most time, such as their bed or crate.",
+     "Place it up high and out of reach of paws and tails.",
+     "Keep cables tucked away, as pets may chew them."
+    ]
+   },
+   {
+    "h": "Choose an app",
+    "p": [
+     "Use a pet-monitoring or camera app that works on both the spare device and your own phone. Test the picture and sound before you leave."
+    ]
+   },
+   {
+    "h": "Be considerate",
+    "p": [
+     "Let anyone else in your home, like a dog walker or pet sitter, know the camera is there."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "check-on-dog-while-at-work",
+  "offer": "pet-peek",
+  "title": "How to check on your dog while you're at work",
+  "description": "Ways to keep an eye on your dog during the workday, and what to look out for.",
+  "intro": "Leaving your dog home while you work is normal, but it's natural to wonder how they're doing. Here are simple ways to check in.",
+  "sections": [
+   {
+    "h": "Ways to check in",
+    "list": [
+     "Use a camera, or a spare phone set up as one, to look in during breaks.",
+     "Ask a neighbour, dog walker or pet sitter to visit midday.",
+     "Some dogs do well at daycare a few days a week."
+    ]
+   },
+   {
+    "h": "What to look for",
+    "list": [
+     "Normal: sleeping, resting, playing with toys, moving between favourite spots.",
+     "Worth noting: constant barking or howling, pacing, scratching at doors, or not settling.",
+     "If you see signs of distress often, talk to your vet or a qualified trainer."
+    ]
+   },
+   {
+    "h": "Make the day easier",
+    "list": [
+     "A good walk before you leave.",
+     "Safe chew toys or a puzzle feeder.",
+     "Water within easy reach and a comfortable spot to rest."
+    ]
+   }
+  ]
  }
 ]
