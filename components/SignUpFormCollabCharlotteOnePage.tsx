@@ -1117,7 +1117,7 @@ export default function SignUpFormCollabCharlotteOnePage({ analyticsPath = '/sig
               className="group flex w-full items-center justify-between rounded-[3px] bg-neutral-900 px-5 py-[18px] text-[13px] font-semibold uppercase tracking-[0.18em] text-white transition hover:bg-black active:scale-[0.995] disabled:opacity-50"
               data-cta="v7d-submit"
             >
-              {submitting ? <span className="mx-auto inline-block h-4 w-4 animate-spin rounded-full border-2 border-white/40 border-t-white" aria-label="Loading" /> : <><span>Finish Sign-Up</span><svg viewBox="0 0 24 24" className="h-4 w-4 transition-transform group-hover:translate-x-0.5" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg></>}
+              {submitting ? <span className="mx-auto inline-block h-4 w-4 animate-spin rounded-full border-2 border-white/40 border-t-white" aria-label="Loading" /> : <><span>Sign up</span><svg viewBox="0 0 24 24" className="h-4 w-4 transition-transform group-hover:translate-x-0.5" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg></>}
             </button>
           </div>
         </form>
