@@ -795,7 +795,7 @@ export default function SignUpFormCollabCharlotteOnePage({ analyticsPath = '/sig
         {srcs.map((src, i) => (
           <div key={i} className="relative aspect-square overflow-hidden bg-black">
             <NextImage src={src} alt="" width={200} height={200} sizes="(max-width: 640px) 25vw, 100px" className={`h-full w-full object-cover ${good ? '' : 'opacity-[0.62] grayscale'}`} />
-            <span className={`absolute bottom-0.5 right-0.5 flex h-4 w-4 items-center justify-center rounded-full ${good ? 'bg-neutral-800' : 'bg-red-500'} text-white`}>
+            <span className={`absolute bottom-0.5 right-0.5 flex h-4 w-4 items-center justify-center rounded-full ${good ? 'bg-emerald-500' : 'bg-red-500'} text-white`}>
               {good ? <CheckIcon className="h-2.5 w-2.5" />
                 : <svg viewBox="0 0 24 24" className="h-2.5 w-2.5" fill="none" stroke="currentColor" strokeWidth={4} strokeLinecap="round" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12" /></svg>}
             </span>
@@ -805,8 +805,8 @@ export default function SignUpFormCollabCharlotteOnePage({ analyticsPath = '/sig
     )
   const sheetLabel = (good: boolean, text: string, note: string) => (
       <p className="flex flex-wrap items-baseline gap-x-1.5 text-[9px] font-bold uppercase tracking-[0.2em]">
-        <span className={`inline-flex items-center gap-1.5 ${good ? 'text-neutral-900' : 'text-red-500'}`}>
-          <span className={`h-1 w-1 rounded-full ${good ? 'bg-neutral-800' : 'bg-red-500'}`} />
+        <span className={`inline-flex items-center gap-1.5 ${good ? 'text-emerald-600' : 'text-red-500'}`}>
+          <span className={`h-1 w-1 rounded-full ${good ? 'bg-emerald-500' : 'bg-red-500'}`} />
           {text}
         </span>
         <span className="font-semibold tracking-[0.12em] text-neutral-400">{note}</span>
@@ -1214,7 +1214,7 @@ export default function SignUpFormCollabCharlotteOnePage({ analyticsPath = '/sig
         {srcs.map((src, i) => (
           <div key={i} className="relative aspect-square overflow-hidden bg-black">
             <NextImage src={src} alt="" width={200} height={200} sizes="(max-width: 640px) 25vw, 100px" className={`h-full w-full object-cover ${good ? '' : 'opacity-[0.62] grayscale'}`} />
-            <span className={`absolute bottom-0.5 right-0.5 flex h-4 w-4 items-center justify-center rounded-full ${good ? 'bg-neutral-800' : 'bg-red-500'} text-white`}>
+            <span className={`absolute bottom-0.5 right-0.5 flex h-4 w-4 items-center justify-center rounded-full ${good ? 'bg-emerald-500' : 'bg-red-500'} text-white`}>
               {good ? <CheckIcon className="h-2.5 w-2.5" />
                 : <svg viewBox="0 0 24 24" className="h-2.5 w-2.5" fill="none" stroke="currentColor" strokeWidth={4} strokeLinecap="round" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12" /></svg>}
             </span>
@@ -1224,8 +1224,8 @@ export default function SignUpFormCollabCharlotteOnePage({ analyticsPath = '/sig
     )
     const sheetLabel = (good: boolean, text: string, note: string) => (
       <p className="flex flex-wrap items-baseline gap-x-1.5 text-[9px] font-bold uppercase tracking-[0.2em]">
-        <span className={`inline-flex items-center gap-1.5 ${good ? 'text-neutral-900' : 'text-red-500'}`}>
-          <span className={`h-1 w-1 rounded-full ${good ? 'bg-neutral-800' : 'bg-red-500'}`} />
+        <span className={`inline-flex items-center gap-1.5 ${good ? 'text-emerald-600' : 'text-red-500'}`}>
+          <span className={`h-1 w-1 rounded-full ${good ? 'bg-emerald-500' : 'bg-red-500'}`} />
           {text}
         </span>
         <span className="font-semibold tracking-[0.12em] text-neutral-400">{note}</span>
