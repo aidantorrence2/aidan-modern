@@ -14,3 +14,6 @@ for c in 1badccc f31a055 987991a 978e7b4 a7caf8e 3545bf9 4300d37; do
 done
 (cd $S && node "$(dirname "$0")/collab-versions-proxy.mjs" > $S/proxy.log 2>&1 &); echo "proxy :3201-3207"
 wait
+
+# v15: main checkout, /sign-up-collab-v7b
+(cd /Users/aidantorrence/Documents/aidan-modern && npx next dev -p 3118 > /dev/null 2>&1 &); echo "started main on 3118"

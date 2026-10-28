@@ -1,0 +1,1134 @@
+"use client"
+import { useEffect, useRef, useState } from 'react'
+import NextImage from 'next/image'
+import CountryCodeSelect from './CountryCodeSelect'
+import { detectPhoneCountry } from '@/lib/detectCountry'
+import { initPageAnalytics, track, pageElapsedMs, flushNow } from '@/lib/track'
+
+// Charlotte edition of the v4 "tap-first" form (v7 in data/collab-versions.html).
+// Changes from v4: every photo is from new_top_tier_headliners; there is no
+// "where are you" step (the shoot is in Charlotte), so the landing card asks
+// for the look instead and one tap starts the flow; contact is Instagram
+// (default) or phone, and Instagram sign-ups skip the separate handle step.
+
+type Step = 'location' | 'notes' | 'capture' | 'photos' | 'instagram' | 'done'
+
+// 'location' is kept as the landing step's name for resume compatibility; it
+// now asks for the look.
+const BACK_TO: Partial<Record<Step, Step>> = {
+  notes: 'location', capture: 'notes', photos: 'capture', instagram: 'photos',
+}
+const CITY = 'Charlotte'
+const CITY_FULL = 'Charlotte, NC'
+
+function resizeImage(dataUrl: string, maxBytes: number): Promise<string> {
+  return new Promise((resolve, reject) => {
+    const img = new Image()
+    const timer = setTimeout(() => reject(new Error('Image load timed out')), 30000)
+    img.onload = () => {
+      clearTimeout(timer)
+      const canvas = document.createElement('canvas')
+      const w = img.width, h = img.height
+      let quality = 0.8
+      let scale = w > 800 ? 800 / w : 1
+      const attempt = () => {
+        canvas.width = w * scale
+        canvas.height = h * scale
+        const ctx = canvas.getContext('2d')!
+        ctx.drawImage(img, 0, 0, canvas.width, canvas.height)
+        const result = canvas.toDataURL('image/jpeg', quality)
+        const size = Math.round((result.length - 'data:image/jpeg;base64,'.length) * 0.75)
+        if (size > maxBytes && (scale > 0.15 || quality > 0.3)) {
+          if (quality > 0.4) quality -= 0.1
+          else scale *= 0.7
+          attempt()
+        } else {
+          resolve(result)
+        }
+      }
+      attempt()
+    }
+    img.onerror = () => {
+      clearTimeout(timer)
+      reject(new Error('Could not load image — unsupported format'))
+    }
+    img.src = dataUrl
+  })
+}
+
+// The hero cycles. It opens on the bubbles frame and crossfades on, so the
+// first thing the page does is show more work rather than sit still.
+const HERO_SLIDES = [
+  '/images/new_top_tier_headliners/R1-09799-0025.jpg',
+  '/images/new_top_tier_headliners/R1-00005-0027.jpg',
+  '/images/new_top_tier_headliners/R1-09953-010A.jpg',
+  '/images/new_top_tier_headliners/000014.jpg',
+  '/images/new_top_tier_headliners/R1-09798-032A.jpg',
+]
+const heroImage = HERO_SLIDES[0]
+
+const proofImages = [
+  '/images/new_top_tier_headliners/R1-00008-0005.jpg',
+  '/images/new_top_tier_headliners/R1-09793-0028.jpg',
+  '/images/new_top_tier_headliners/R1-09997-0003.jpg',
+  '/images/new_top_tier_headliners/R1-00009-0021.jpg',
+  '/images/new_top_tier_headliners/R1-09952-0019.jpg',
+  '/images/new_top_tier_headliners/R1-09997-0011.jpg',
+]
+
+const howItWorks = [
+  'Pick a look and tell me how to reach you',
+  'I message you the details — timing, locations, what to wear',
+  'We plan the concept together and shoot for 1–2 hours',
+  "You get the edited photos — it's 100% free, always",
+]
+
+type VibeKey = 'street' | 'nature' | 'indoor' | 'any'
+
+// Frame 1. Real frames from the portfolio, not swatches — the tile IS the
+// pitch for that look. No single photograph stands for "any", so that one is a
+// quarter-grid of the others: it reads as a bit of everything and still sits in
+// the row as an image tile rather than a beige box among photographs.
+const VIBES: { key: VibeKey; label: string; src: string | null }[] = [
+  { key: 'street', label: 'Street', src: '/images/new_top_tier_headliners/R1-09799-0007.jpg' },
+  { key: 'nature', label: 'Outdoors', src: '/images/new_top_tier_headliners/R1-09794-021A.jpg' },
+  { key: 'indoor', label: 'Indoor', src: '/images/new_top_tier_headliners/R1-00006-015A.jpg' },
+  // Nothing to photograph for "any", so this one doesn't pretend: a grey box
+  // with something moving inside it, which is what the choice actually is.
+  { key: 'any', label: 'No preference', src: null },
+]
+
+// ONE roll of film. Each slide shows a four-frame window into it, two frames
+// further on than the last, so moving through the form winds the same roll
+// forward. It wraps, so the roll never runs out however many frames there are.
+const ROLL = [
+  '/images/new_top_tier_headliners/R1-00007-025A.jpg',
+  '/images/new_top_tier_headliners/R1-09997-0005.jpg',
+  '/images/new_top_tier_headliners/R1-00009-0028.jpg',
+  '/images/new_top_tier_headliners/000089.jpg',
+  '/images/new_top_tier_headliners/R1-09997-0009.jpg',
+  '/images/new_top_tier_headliners/R1-09799-0025.jpg',
+  '/images/new_top_tier_headliners/R1-00005-0027.jpg',
+  '/images/new_top_tier_headliners/R1-09953-010A.jpg',
+  '/images/new_top_tier_headliners/000014.jpg',
+  '/images/new_top_tier_headliners/R1-09798-032A.jpg',
+]
+
+function rollAt(stepNo: number) {
+  const offset = (stepNo - 1) * 2
+  return {
+    frames: Array.from({ length: 4 }, (_, i) => ROLL[(offset + i) % ROLL.length]),
+    from: 11 + offset,
+  }
+}
+
+// ── Resume ──
+// A snapshot per move, so a visitor who leaves mid-flow comes back to the frame
+// they left holding the row they already made. localStorage, not
+// sessionStorage: the way back is usually a fresh tab.
+const RESUME_TTL_MS = 24 * 60 * 60 * 1000
+const resumeKey = (path: string) => `atf_signup_resume:${path}`
+
+type Channel = 'instagram' | 'phone'
+
+type ResumeState = {
+  // Bumped to 2 when v4 took over /sign-up-collab. A v1 snapshot came from v3,
+  // where 'capture' was the FIRST frame rather than the fourth — restoring one
+  // would drop a returning visitor into the wrong place. Old ones are dropped.
+  v: 3
+  ts: number
+  step: Step
+  channel: Channel
+  vibe: VibeKey | null
+  phone: string
+  countryCode: string
+  location: string
+  idea: string
+  instagram: string
+  photos: string[]
+  lead: { id: number | null; contact: string } | null
+  postedContact: string | null
+  leadFired: boolean
+}
+
+const CHANNELS: Record<Channel, { name: string; doneVia: string }> = {
+  instagram: { name: 'Instagram', doneVia: 'on Instagram' },
+  phone: { name: 'Phone', doneVia: 'by text' },
+}
+
+// Motion for the slides. The card rises as the ribbon winds on, frames catching
+// up one at a time, so consecutive steps read as one take.
+const slideMotionCss = `
+@keyframes atfCardIn { from { opacity: 0; transform: translateY(12px) } to { opacity: 1; transform: none } }
+@keyframes atfWindOnBack { from { opacity: 0; translate: 34px 26px } to { opacity: 0.35; translate: none } }
+@keyframes atfFrameIn { from { opacity: 0; translate: 26px 18px } to { opacity: 1; translate: none } }
+.atf-card { animation: atfCardIn 520ms cubic-bezier(.22,1,.36,1) both }
+.atf-ribbon-back { animation: atfWindOnBack 860ms cubic-bezier(.19,1,.28,1) both }
+.atf-frame { animation: atfFrameIn 620ms cubic-bezier(.19,1,.28,1) both }
+@keyframes atfShimmer { 0% { transform: translateX(-160%) } 55%, 100% { transform: translateX(260%) } }
+@keyframes atfWobble { 0%, 84%, 100% { transform: rotate(0deg) scale(1) } 88% { transform: rotate(-7deg) scale(1.06) } 92% { transform: rotate(6deg) scale(1.06) } 96% { transform: rotate(-3deg) scale(1.02) } }
+.atf-shimmer { animation: atfShimmer 3s cubic-bezier(.4,0,.2,1) infinite }
+.atf-wobble { animation: atfWobble 4.4s ease-in-out infinite }
+@media (prefers-reduced-motion: reduce) { .atf-card, .atf-ribbon-back, .atf-frame, .atf-shimmer, .atf-wobble { animation: none } }
+`
+
+function InstagramIcon({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" className={className} fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <rect x="2" y="2" width="20" height="20" rx="5" /><circle cx="12" cy="12" r="4.5" /><circle cx="17.3" cy="6.7" r="1.3" fill="currentColor" stroke="none" />
+    </svg>
+  )
+}
+
+function PhoneIcon({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" className={className} fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1.9.4 1.8.7 2.7a2 2 0 01-.5 2.1L8 9.8a16 16 0 006 6l1.3-1.3a2 2 0 012.1-.4c.9.3 1.8.6 2.7.7a2 2 0 011.7 2z" />
+    </svg>
+  )
+}
+
+function CheckIcon({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" className={className} fill="none" stroke="currentColor" strokeWidth={3} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5" /></svg>
+  )
+}
+
+export default function SignUpFormCollabCharlotte({ analyticsPath = '/sign-up-collab-v7b' }: { analyticsPath?: string }) {
+  const [step, setStep] = useState<Step>('location')
+  const [error, setError] = useState<string | null>(null)
+
+  const [vibe, setVibe] = useState<VibeKey | null>(null)
+  const location = CITY_FULL
+  const [idea, setIdea] = useState('')
+  const [channel, setChannel] = useState<Channel>('instagram')
+  const [phone, setPhone] = useState('')
+  const [countryCode, setCountryCode] = useState('')
+    const [instagram, setInstagram] = useState('')
+  const [photos, setPhotos] = useState<string[]>([])
+  const [processingPhotos, setProcessingPhotos] = useState(false)
+
+  const fileRef = useRef<HTMLInputElement>(null)
+  const phoneRef = useRef<HTMLInputElement>(null)
+  const pickerCardRef = useRef<HTMLDivElement>(null)
+  const [showStickyCta, setShowStickyCta] = useState(false)
+  const [heroIndex, setHeroIndex] = useState(0)
+  const engagedFields = useRef<Set<string>>(new Set())
+  const lastTracked = useRef<Record<string, string>>({})
+
+  // The row this visitor owns. The ref is what the PATCH chain awaits; the
+  // state mirror is what gets snapshotted, so a resumed visitor enriches the
+  // same entry rather than creating a second one.
+  const leadRef = useRef<Promise<{ id: number | null; contact: string } | null> | null>(null)
+  const patchChain = useRef<Promise<unknown> | null>(null)
+  const [leadRecord, setLeadRecord] = useState<{ id: number | null; contact: string } | null>(null)
+  const [postedContact, setPostedContact] = useState<string | null>(null)
+  const [leadFired, setLeadFired] = useState(false)
+  const [hydrated, setHydrated] = useState(false)
+
+  useEffect(() => {
+    initPageAnalytics(analyticsPath, { version: 'v7b-charlotte' })
+
+    let resumed: ResumeState | null = null
+    try {
+      const raw = localStorage.getItem(resumeKey(analyticsPath))
+      if (raw) {
+        const saved = JSON.parse(raw) as ResumeState
+        if (saved?.v === 3 && Date.now() - saved.ts < RESUME_TTL_MS) resumed = saved
+        else localStorage.removeItem(resumeKey(analyticsPath))
+      }
+    } catch {}
+
+    if (resumed) {
+      setStep(resumed.step)
+      setChannel(resumed.channel)
+      setVibe(resumed.vibe)
+      setPhone(resumed.phone)
+      setCountryCode(resumed.countryCode)
+      setIdea(resumed.idea)
+      setInstagram(resumed.instagram)
+      setPhotos(resumed.photos)
+      setPostedContact(resumed.postedContact)
+      setLeadFired(resumed.leadFired)
+      if (resumed.lead) {
+        setLeadRecord(resumed.lead)
+        leadRef.current = Promise.resolve(resumed.lead)
+      }
+      track('flow_resumed', { slide: resumed.step, has_row: !!resumed.lead, away_ms: Date.now() - resumed.ts })
+    }
+
+    // Dial code from the locale region; Charlotte visitors default to +1.
+    const phoneCountry = detectPhoneCountry()
+    if (!resumed?.countryCode) setCountryCode(phoneCountry?.dial ?? '+1')
+    if (phoneCountry) track('country_detected', { dial_iso: phoneCountry.iso })
+    setHydrated(true)
+  }, [analyticsPath])
+
+  function persistResume() {
+    const touched = step !== 'location' || !!vibe
+    if (!touched) return
+    const base: Omit<ResumeState, 'photos'> = {
+      v: 3, ts: Date.now(), step, channel, vibe, phone, countryCode,
+      location, idea, instagram, lead: leadRecord, postedContact, leadFired,
+    }
+    const write = (withPhotos: string[]) =>
+      localStorage.setItem(resumeKey(analyticsPath), JSON.stringify({ ...base, photos: withPhotos }))
+    try {
+      // resizeImage caps each photo at 300 KB, so a realistic set fits the
+      // ~5 MB quota several times over; the catch covers the outliers.
+      write(photos)
+    } catch {
+      try { write([]) } catch {}
+    }
+  }
+
+  // Discrete moves are written at once; typing coalesces.
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  useEffect(() => { if (hydrated) persistResume() }, [hydrated, step, channel, vibe, photos, leadRecord, postedContact, leadFired])
+  useEffect(() => {
+    if (!hydrated) return
+    const t = setTimeout(persistResume, 400)
+    return () => clearTimeout(t)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [hydrated, phone, countryCode, idea, instagram])
+
+  // The sticky CTA appears only while the picker is scrolled out of view.
+  useEffect(() => {
+    if (step !== 'location' || !pickerCardRef.current) return
+    const obs = new IntersectionObserver(entries => setShowStickyCta(!entries[0].isIntersecting), { threshold: 0.1 })
+    obs.observe(pickerCardRef.current)
+    return () => obs.disconnect()
+  }, [step])
+
+  // Hero crossfade. Stopped entirely for anyone who asked for less motion —
+  // they get the opening frame and nothing moves.
+  useEffect(() => {
+    if (step !== 'location') return
+    let reduced = false
+    try { reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches } catch {}
+    if (reduced) return
+    const t = setInterval(() => setHeroIndex(i => (i + 1) % HERO_SLIDES.length), 4200)
+    return () => clearInterval(t)
+  }, [step])
+
+  const totalSlides = channel === 'instagram' ? 4 : 5
+  const slideNo: Record<Exclude<Step, 'done'>, number> = { location: 1, notes: 2, capture: 3, photos: 4, instagram: 5 }
+
+  function fieldEngaged(field: string) {
+    if (engagedFields.current.size === 0) track('form_start', { first_field: field })
+    if (!engagedFields.current.has(field)) {
+      engagedFields.current.add(field)
+      track('field_engaged', { field })
+    }
+  }
+
+  function trackOnce(event: string, value: string, props: Record<string, string | number | boolean>) {
+    if (lastTracked.current[event] === value) return
+    lastTracked.current[event] = value
+    track(event, props)
+  }
+
+  function moodboardSoFar(): string[] {
+    const vibeLabel = VIBES.find(v => v.key === vibe)?.label
+    return [
+      'Collab sign-up',
+      'Signup flow: v7b-charlotte',
+      ...(vibeLabel ? ['Look: ' + vibeLabel] : []),
+      'Location: ' + location,
+      ...(idea.trim() ? ['Notes: ' + idea.trim()] : []),
+      ...(instagram.trim() && channel !== 'instagram' ? ['Instagram: ' + instagram.trim()] : []),
+    ]
+  }
+
+  // ── The lead ──
+  // Nothing is written until frame 4, because until then there's no way to
+  // reach anyone. The POST runs in the background with one silent retry so the
+  // advance to frame 5 is instant.
+  function startLeadPost(contact: string) {
+    setPostedContact(contact)
+    const attempt = async (): Promise<{ id: number | null; contact: string }> => {
+      const res = await fetch('/api/sign-up', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ city: CITY, contactMethod: channel, contact, moodboard: moodboardSoFar() }),
+      })
+      const json = await res.json().catch(() => null)
+      if (!res.ok || !json?.ok) throw new Error('Failed')
+      return {
+        id: typeof json.id === 'number' ? json.id : null,
+        contact: typeof json.contact === 'string' ? json.contact : contact,
+      }
+    }
+    leadRef.current = attempt()
+      .catch(() => new Promise(r => setTimeout(r, 1500)).then(attempt))
+      .then(lead => {
+        track('submit_success', { channel, elapsed_ms: pageElapsedMs() })
+        flushNow()
+        setLeadRecord(lead)
+        if (typeof window !== 'undefined' && !leadFired) {
+          const fbq = (window as typeof window & { fbq?: (...args: unknown[]) => void }).fbq
+          if (typeof fbq === 'function') fbq('track', 'Lead', { source: 'sign-up-collab-v7b' })
+          setLeadFired(true)
+        }
+        return lead
+      })
+      .catch(() => {
+        track('submit_error', { elapsed_ms: pageElapsedMs() })
+        return null
+      })
+  }
+
+  function onCapture(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault()
+    const data = Object.fromEntries(new FormData(e.currentTarget).entries()) as Record<string, string>
+    if (data.company) { track('honeypot_triggered'); advance('photos'); return }
+
+    let typed: string
+    if (channel === 'instagram') {
+      const handle = instagram.trim().replace(/^@+/, '').replace(/^https?:\/\/(www\.)?instagram\.com\//i, '').replace(/\/.*$/, '')
+      if (!/^[A-Za-z0-9._]{1,30}$/.test(handle)) {
+        track('validation_error', { reason: 'instagram_invalid' })
+        setError('Please enter your Instagram username.')
+        phoneRef.current?.focus()
+        return
+      }
+      typed = '@' + handle
+      track('submit_attempt', { channel, chars: handle.length, elapsed_ms: pageElapsedMs() })
+    } else {
+      const digits = phone.replace(/\D/g, '')
+      if (digits.length < 7) {
+        track('validation_error', { reason: 'phone_invalid' })
+        setError('Please enter your phone number.')
+        phoneRef.current?.focus()
+        return
+      }
+      typed = countryCode ? countryCode + ' ' + phone.trim() : phone.trim()
+      track('submit_attempt', { channel, country_code: countryCode, digits: digits.length, elapsed_ms: pageElapsedMs() })
+    }
+    setError(null)
+    // Backing up and coming through again re-uses the row — unless the contact
+    // itself changed, in which case the old row holds one they've corrected.
+    if (!leadRef.current || postedContact !== typed) startLeadPost(typed)
+    advance('photos')
+  }
+
+  // Each advance past the ask saves in the background. PATCHes are chained so
+  // they can never land out of order; photos are sent exactly once.
+  function queuePatch(withPhotos?: string[]) {
+    const payload = {
+      city: CITY,
+      moodboard: moodboardSoFar(),
+      ...(withPhotos && withPhotos.length > 0 ? { photos: withPhotos } : {}),
+    }
+    patchChain.current = (patchChain.current ?? Promise.resolve())
+      .then(async () => {
+        const lead = leadRef.current ? await leadRef.current : null
+        if (!lead || lead.id === null) return
+        const res = await fetch('/api/sign-up', {
+          method: 'PATCH',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ id: lead.id, contact: lead.contact, ...payload }),
+        })
+        if (!res.ok) track('patch_error', { slide: step })
+      })
+      .catch(() => track('patch_error', { slide: step }))
+  }
+
+  function advance(next: Step, save = false, withPhotos?: string[]) {
+    if (save) queuePatch(withPhotos)
+    track('slide_shown', { slide: next })
+    setError(null)
+    setStep(next)
+    window.scrollTo({ top: 0 })
+  }
+
+  // Back never saves — they're on their way to change something, and the PATCH
+  // for whatever they change lands on the next forward move.
+  function goBack(prev: Step) {
+    track('slide_back', { from: step, to: prev })
+    setError(null)
+    setStep(prev)
+    window.scrollTo({ top: 0 })
+  }
+
+  // A finished sign-up is held for a day, so returning shows the done screen
+  // rather than a blank form. This is the way past it — a shared phone, or a
+  // friend signing up next. Clears the snapshot and everything tied to the row
+  // so the next run starts a genuinely new one.
+  function startOver() {
+    track('start_over_clicked', { from: step })
+    try { localStorage.removeItem(resumeKey(analyticsPath)) } catch {}
+    leadRef.current = null
+    patchChain.current = null
+    engagedFields.current = new Set()
+    lastTracked.current = {}
+    setLeadRecord(null)
+    setPostedContact(null)
+    setLeadFired(false)
+    setVibe(null)
+    setPhone('')
+    setIdea('')
+    setInstagram('')
+    setPhotos([])
+    setError(null)
+    setStep('location')
+    window.scrollTo({ top: 0 })
+  }
+
+  async function handlePhotos(e: React.ChangeEvent<HTMLInputElement>) {
+    const files = e.target.files
+    if (!files || files.length === 0) return
+    fieldEngaged('photos')
+    setError(null)
+    setProcessingPhotos(true)
+    let failures = 0
+    const selected = files.length
+    try {
+      for (const file of Array.from(files)) {
+        if (file.size > 20 * 1024 * 1024) { failures++; continue }
+        try {
+          const raw = await new Promise<string>((resolve, reject) => {
+            const reader = new FileReader()
+            reader.onload = () => resolve(reader.result as string)
+            reader.onerror = () => reject(new Error('Could not read file'))
+            reader.readAsDataURL(file)
+          })
+          const resized = await resizeImage(raw, 300 * 1024)
+          setPhotos(prev => [...prev, resized])
+        } catch { failures++ }
+      }
+    } finally {
+      setProcessingPhotos(false)
+      if (fileRef.current) fileRef.current.value = ''
+      track('photos_added', { selected, added: selected - failures, failed: failures, total: photos.length + selected - failures })
+      if (failures > 0) {
+        setError(failures === 1
+          ? 'One photo could not be added (too large or unsupported format — try a JPG/PNG under 20 MB).'
+          : `${failures} photos could not be added (too large or unsupported format — try JPG/PNG under 20 MB).`)
+      }
+    }
+  }
+
+  function removePhoto(index: number) {
+    track('photo_removed', { remaining: photos.length - 1 })
+    setPhotos(prev => prev.filter((_, i) => i !== index))
+  }
+
+  function finishSignup() {
+    track('enrich_attempt', {
+      photos: photos.length,
+      has_instagram: instagram.trim().length > 0,
+      elapsed_ms: pageElapsedMs(),
+    })
+    queuePatch()
+
+    // Only one case lands here with no row: the capture POST failed, twice.
+    // Save everything in one shot rather than lose it.
+    const saveInOneShot = () => {
+      fetch('/api/sign-up', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          city: CITY,
+          contactMethod: channel,
+          contact: channel === 'instagram' ? '@' + instagram.trim().replace(/^@+/, '') : (countryCode ? countryCode + ' ' + phone.trim() : phone.trim()),
+          moodboard: moodboardSoFar(),
+          photos,
+        }),
+      }).then(res => {
+        if (!res.ok) return
+        track('submit_success', { channel, recovered: true, elapsed_ms: pageElapsedMs() })
+        if (leadFired) return
+        const fbq = (window as typeof window & { fbq?: (...args: unknown[]) => void }).fbq
+        if (typeof fbq === 'function') fbq('track', 'Lead', { source: 'sign-up-collab-v7b' })
+      }).catch(() => {})
+    }
+
+    if (leadRef.current) leadRef.current.then(lead => { if (lead === null) saveInOneShot() })
+    else saveInOneShot()
+    track('enrich_success', { photos: photos.length, elapsed_ms: pageElapsedMs() })
+    flushNow()
+    setStep('done')
+    window.scrollTo({ top: 0 })
+  }
+
+  const inputCls = 'w-full rounded-2xl border border-neutral-200 bg-[#faf9f6] px-4 py-3.5 text-[15px] text-neutral-900 placeholder-neutral-400 outline-none transition focus:border-emerald-500 focus:bg-white focus:ring-4 focus:ring-emerald-500/10'
+
+  // ── The roll ──
+  // He shoots film, so the proof is film, and the roll doesn't lie flat. Each
+  // frame sits on a sine, tilted to the tangent and overlapped with its
+  // neighbours. The phase shifts by step, so the ribbon is caught mid-travel at
+  // a different point on every frame.
+  const sprockets = (small = false) => (
+    <div className={small ? 'h-[5px] w-full' : 'h-[6px] w-full'} aria-hidden="true" style={{
+      backgroundImage: 'repeating-linear-gradient(to right, #d9d3c6 0 7px, transparent 7px 18px)',
+      backgroundSize: '18px 3px',
+      backgroundPosition: 'center',
+      backgroundRepeat: 'repeat-x',
+    }} />
+  )
+  const cell = (src: string, no: number, i: number, small: boolean) => (
+    <div className={`bg-[#17150f] px-[3px] ${small ? 'py-[3px]' : 'py-[4px]'} shadow-[0_18px_30px_-20px_rgba(23,21,15,0.95)]`}>
+      {sprockets(small)}
+      <div className="relative overflow-hidden bg-black" style={{ height: small ? 92 : 124 }}>
+        <NextImage src={src} alt="" width={260} height={340} sizes={small ? '88px' : '128px'} className="h-full w-full object-cover" />
+      </div>
+      {sprockets(small)}
+      <div className="flex justify-start pl-1 pt-[1px]">
+        <span className="text-[6px] font-bold tracking-[0.22em] text-[#e0a13f]">{no}{i % 2 === 0 ? 'A' : ''}</span>
+      </div>
+    </div>
+  )
+  const ribbon = (stepNo: number) => {
+    const { frames, from } = rollAt(stepNo)
+    const phase = (stepNo - 1) * 0.75
+    const trail = ROLL.slice(6, 9)
+    return (
+      <div className="relative mt-2 -mx-4 h-[214px] select-none overflow-hidden" aria-hidden="true">
+        {trail.map((src, i) => {
+          const t = i + phase + 2.4
+          return (
+            <div key={`t-${src}`} className="atf-ribbon-back absolute w-[86px] opacity-[0.35]" style={{
+              left: `${4 + i * 27}%`,
+              top: 74 + Math.sin(t * 0.8) * 28,
+              transform: `rotate(${Math.cos(t * 0.8) * 9}deg)`,
+              animationDelay: `${i * 80}ms`,
+            }}>
+              {cell(src, from + 6 + i, i, true)}
+            </div>
+          )
+        })}
+        {frames.map((src, i) => {
+          const t = i + phase
+          return (
+            <div key={`${src}-${i}`} className="atf-frame absolute w-[118px]" style={{
+              left: `${-9 + i * 25}%`,
+              top: 22 + Math.sin(t * 0.8) * 32,
+              transform: `rotate(${Math.cos(t * 0.8) * 8}deg)`,
+              animationDelay: `${120 + i * 90}ms`,
+            }}>
+              {cell(src, from + i, i, false)}
+            </div>
+          )
+        })}
+        <span className="pointer-events-none absolute inset-y-0 left-0 w-8 bg-gradient-to-r from-[#f4f2ee] to-transparent" />
+        <span className="pointer-events-none absolute inset-y-0 right-0 w-8 bg-gradient-to-l from-[#f4f2ee] to-transparent" />
+      </div>
+    )
+  }
+
+  // ── The shell every frame shares ──
+  // Frame 1 included: it used to be a white page with a full-bleed hero and its
+  // own card, which announced that it wasn't part of the set.
+  const slideShell = (stepNo: number, children: React.ReactNode, flush = false) => (
+    <div className="min-h-screen bg-[#f4f2ee]">
+      <style dangerouslySetInnerHTML={{ __html: slideMotionCss }} />
+      {/* key forces the enter animation to replay on every step, so the frames
+          read as one continuous sequence rather than hard cuts. */}
+      <div key={stepNo} className="mx-auto max-w-md px-4 pb-10 pt-7">
+        <div className={`atf-card overflow-hidden rounded-[26px] border border-black/[0.06] bg-white shadow-[0_24px_60px_-34px_rgba(23,21,15,0.55)] ${flush ? '' : 'px-5 pb-6 pt-5'}`}>
+          {children}
+        </div>
+        {ribbon(stepNo)}
+      </div>
+    </div>
+  )
+
+  const kicker = (n: number, back?: Step) => (
+    <div className="flex items-center gap-2.5">
+      {back ? (
+        <button
+          type="button"
+          onClick={() => goBack(back)}
+          className="-ml-1 flex shrink-0 items-center gap-1 rounded-full border border-neutral-200 bg-[#faf9f6] py-2.5 pl-2.5 pr-4 text-[12px] font-bold text-neutral-700 transition hover:border-neutral-300 hover:bg-neutral-100 hover:text-neutral-900 active:scale-95"
+          data-cta="v7b-back"
+        >
+          <svg viewBox="0 0 24 24" className="h-3.5 w-3.5" fill="none" stroke="currentColor" strokeWidth={3} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6" /></svg>
+          Back
+        </button>
+      ) : null}
+      <p className="shrink-0 text-[9px] font-bold uppercase tracking-[0.22em] text-neutral-400">{n} / {totalSlides}</p>
+      <span className="flex flex-1 gap-1.5" aria-hidden="true">
+        {Array.from({ length: totalSlides }, (_, i) => (
+          <span key={i} className={`h-[3px] flex-1 rounded-full transition-colors duration-300 ${i < n ? 'bg-emerald-600' : 'bg-neutral-200'}`} />
+        ))}
+      </span>
+    </div>
+  )
+
+  const slideTitle = (t: string, optional = false) => (
+    <h1 className="mt-4 text-[30px] font-semibold leading-[1.1] tracking-[-0.01em] text-neutral-900" style={{ fontFamily: "Georgia, 'Times New Roman', serif", fontStyle: 'italic', textWrap: 'balance' }}>
+      {t}{optional && <span className="ml-2 align-middle text-[17px] font-normal not-italic text-neutral-400" style={{ fontFamily: 'system-ui, sans-serif' }}>optional</span>}
+    </h1>
+  )
+
+  const nextBtn = (onClick: () => void, label = 'Next', busy = false) => (
+    <button
+      type="button"
+      onClick={onClick}
+      disabled={busy}
+      className="w-full rounded-2xl bg-emerald-600 py-4 text-[15px] font-bold tracking-[-0.01em] text-white shadow-[0_12px_26px_-12px_rgba(5,150,105,0.9)] transition hover:bg-emerald-500 active:scale-[0.99] disabled:opacity-50"
+      data-cta="v7b-next"
+    >
+      {busy ? <span className="inline-block h-4 w-4 animate-spin rounded-full border-2 border-white/40 border-t-white align-[-2px]" aria-label="Loading" /> : label}
+    </button>
+  )
+  const skipBtn = (onClick: () => void) => (
+    <button type="button" onClick={onClick} className="w-full text-center text-[13px] font-semibold text-neutral-400 transition hover:text-neutral-600" data-cta="v7b-skip">
+      Skip
+    </button>
+  )
+  const errorBox = error ? (
+    <div className="rounded-2xl border border-red-200 bg-red-50 px-4 py-3 text-[13px] font-semibold text-red-700">{error}</div>
+  ) : null
+
+  // ── Frame 1 · where ──
+  // The original opening page, unchanged apart from what sits in the card: the
+  // full-bleed hero and headline, the proof grid and how-it-works below the
+  // fold, the sticky CTA. Only the ask has been swapped — the card now opens on
+  // location instead of the number.
+  if (step === 'location') {
+    return (
+      <div className="mx-auto w-full max-w-md bg-white">
+        {/* Hero — the proof IS the pitch */}
+        <div className="relative h-[56vh] min-h-[420px] max-h-[600px] w-full overflow-hidden bg-black">
+          {HERO_SLIDES.map((src, i) => (
+            <NextImage
+              key={src}
+              src={src}
+              alt={i === 0 ? 'Photo shoot on 35mm film' : ''}
+              fill
+              priority={i === 0}
+              sizes="(max-width: 640px) 100vw, 448px"
+              className={`object-cover object-top transition-opacity duration-[1200ms] ease-in-out ${i === heroIndex ? 'opacity-100' : 'opacity-0'}`}
+            />
+          ))}
+          <div className="absolute inset-x-0 top-0 h-24" style={{ background: 'linear-gradient(180deg, rgba(0,0,0,0.5), transparent)' }} />
+          <div className="absolute inset-x-0 bottom-0 h-3/5" style={{ background: 'linear-gradient(180deg, transparent, rgba(0,0,0,0.55) 45%, rgba(0,0,0,0.88))' }} />
+          <div className="absolute left-5 top-4 text-[10px] font-semibold uppercase leading-snug tracking-[0.22em] text-white/85" style={{ fontFamily: 'Georgia, serif' }}>
+            Aidan Torrence<br />
+            <span className="text-white/55">Photography</span>
+          </div>
+          <a
+            href="https://www.instagram.com/madebyaidan"
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => track('handle_clicked', { placement: 'hero' })}
+            className="absolute right-5 top-4 flex items-center gap-1.5 text-[12px] font-semibold tracking-wide text-white/90"
+          >
+            <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <rect x="2" y="2" width="20" height="20" rx="5" />
+              <circle cx="12" cy="12" r="4.5" />
+              <circle cx="17.3" cy="6.7" r="1.3" fill="currentColor" stroke="none" />
+            </svg>
+            @madebyaidan
+          </a>
+          <div className="absolute inset-x-0 bottom-0 px-5 pb-6">
+            <h1 className="font-display text-[52px] font-bold leading-[1.05] text-white" style={{ fontFamily: "Georgia, 'Times New Roman', serif", fontStyle: 'italic', textShadow: '0 2px 8px rgba(0,0,0,0.85), 0 12px 50px rgba(0,0,0,0.6)' }}>
+              {CITY}
+            </h1>
+            <p className="mt-1 text-[15px] font-semibold uppercase tracking-[0.2em] text-white/85" style={{ textShadow: '0 1px 6px rgba(0,0,0,0.8)' }}>
+              Free photo shoot &middot; November
+            </p>
+          </div>
+        </div>
+
+        {/* Opening card: the look. One tap starts the flow. */}
+        <div ref={pickerCardRef} className="relative z-10 mx-4 -mt-5 rounded-2xl border border-neutral-200 bg-white p-4 shadow-xl">
+          <h2 className="text-[30px] font-semibold leading-[1.1] tracking-[-0.01em] text-neutral-900" style={{ fontFamily: "Georgia, 'Times New Roman', serif", fontStyle: 'italic', textWrap: 'balance' }}>
+            Pick a look
+          </h2>
+          <p className="mt-2 text-[13px] leading-relaxed text-neutral-500">
+            Shooting in Charlotte this November. Tap one to start &mdash; I&rsquo;ll message you the details.
+          </p>
+          <div className="mt-4 grid grid-cols-2 gap-2.5">
+            {VIBES.map(v => {
+              const on = vibe === v.key
+              return (
+                <button
+                  key={v.key}
+                  type="button"
+                  onClick={() => {
+                    setVibe(v.key)
+                    track('vibe_selected', { value: v.key })
+                    fieldEngaged('vibe')
+                    advance('notes')
+                  }}
+                  className={`relative aspect-[4/5] overflow-hidden rounded-2xl border-2 text-left transition active:scale-[0.98] ${
+                    on ? 'border-emerald-600 shadow-[0_0_0_3px_rgba(5,150,105,0.16)]' : 'border-transparent'
+                  }`}
+                  data-cta={`v7b-vibe-${v.key}`}
+                >
+                  {v.src ? (
+                    <NextImage src={v.src} alt="" fill sizes="(max-width: 640px) 45vw, 200px" className="object-cover object-top" />
+                  ) : (
+                    <span className="absolute inset-0 overflow-hidden" style={{ background: 'linear-gradient(145deg, #423e38, #22201b)' }}>
+                      <span className="atf-shimmer absolute inset-y-0 w-1/2" style={{ background: 'linear-gradient(100deg, transparent, rgba(255,255,255,0.14), transparent)' }} />
+                      <span className="absolute inset-0 flex items-center justify-center">
+                        <span className="atf-wobble flex h-11 w-11 items-center justify-center rounded-[14px] border-2 border-white/30 text-[20px] font-bold text-white/75">?</span>
+                      </span>
+                    </span>
+                  )}
+                  <span className="absolute inset-0" style={{ background: 'linear-gradient(180deg, transparent 50%, rgba(0,0,0,0.72))' }} />
+                  <span className="absolute bottom-2.5 left-3 right-3 text-[13px] font-bold text-white" style={{ textShadow: '0 1px 5px rgba(0,0,0,0.9)' }}>
+                    {v.label}
+                  </span>
+                  {on && (
+                    <span className="absolute right-2 top-2 flex h-5 w-5 items-center justify-center rounded-full bg-emerald-600 text-white">
+                      <CheckIcon className="h-2.5 w-2.5" />
+                    </span>
+                  )}
+                </button>
+              )
+            })}
+          </div>
+        </div>
+
+        {/* Below the fold — proof and how it works, for the scrollers */}
+        <div className="px-5 pb-24 pt-8">
+          <div className="space-y-1.5">
+            <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-neutral-400">Recent shoots &middot; shot on film</p>
+            <div className="grid grid-cols-3 gap-1.5">
+              {proofImages.map((src, i) => (
+                <div key={i} className="overflow-hidden rounded-lg aspect-[3/4] bg-neutral-100">
+                  <NextImage src={src} alt="Recent photo shoot" width={200} height={267} sizes="(max-width: 640px) 33vw, 150px" className="w-full h-full object-cover object-top" />
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="mt-8 space-y-2">
+            <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-neutral-400">How it works</p>
+            <ul className="space-y-2">
+              {howItWorks.map((c, i) => (
+                <li key={i} className="flex items-start gap-2.5">
+                  <span className="mt-0.5 flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-emerald-600">
+                    <CheckIcon className="h-2.5 w-2.5" />
+                  </span>
+                  <span className="text-[13px] leading-snug font-medium text-neutral-700">{c}</span>
+                </li>
+              ))}
+            </ul>
+            <p className="pt-2 text-[13px] leading-snug text-neutral-500">
+              <span className="font-semibold text-neutral-700">Why free?</span> I&rsquo;m in Charlotte for November building my portfolio &mdash; you get the photos, I get to shoot. See my work:{' '}
+              <a
+                href="https://www.instagram.com/madebyaidan"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => track('handle_clicked', { placement: 'how_it_works' })}
+                className="font-semibold text-emerald-600 underline decoration-emerald-300 underline-offset-2"
+              >
+                @madebyaidan
+              </a>
+            </p>
+          </div>
+        </div>
+
+        {/* Sticky CTA — only while the picker is off-screen */}
+        {showStickyCta && (
+          <div className="fixed inset-x-0 bottom-0 z-20 border-t border-neutral-200 bg-white/95 px-4 py-3 backdrop-blur">
+            <div className="mx-auto max-w-md">
+              <button
+                type="button"
+                onClick={() => {
+                  track('sticky_cta_clicked')
+                  pickerCardRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' })
+                }}
+                className="w-full rounded-full bg-emerald-600 py-3.5 text-sm font-bold text-white shadow-lg shadow-emerald-600/25 transition hover:bg-emerald-500"
+              >
+                Pick a look
+              </button>
+            </div>
+          </div>
+        )}
+      </div>
+    )
+  }
+
+  // ── Frame 3 · notes ──
+  if (step === 'notes') {
+    return slideShell(2, (
+      <>
+        {kicker(slideNo.notes, BACK_TO.notes)}
+        {slideTitle('Any notes or questions?', true)}
+        <p className="mt-2 text-[13px] leading-relaxed text-neutral-500">Your own idea, inspo, references &mdash; anything.</p>
+        <textarea
+          id="collab-idea"
+          value={idea}
+          onChange={e => { fieldEngaged('notes'); setIdea(e.target.value) }}
+          onBlur={() => { const v = idea.trim(); if (v) trackOnce('notes_filled', v, { chars: v.length }) }}
+          rows={4}
+          className={`${inputCls} mt-4 resize-none leading-relaxed`}
+          placeholder="Ideas, references, questions..."
+        />
+        <div className="mt-6 space-y-3">
+          {nextBtn(() => advance('capture'))}
+        </div>
+      </>
+    ))
+  }
+
+  // ── Frame 3 · the ask ──
+  if (step === 'capture') {
+    const segment = (c: Channel) => {
+      const on = channel === c
+      const Icon = c === 'instagram' ? InstagramIcon : PhoneIcon
+      return (
+        <button
+          key={c}
+          type="button"
+          onClick={() => {
+            if (on) return
+            track('channel_switched', { from: channel, to: c })
+            setChannel(c)
+            setError(null)
+            requestAnimationFrame(() => phoneRef.current?.focus())
+          }}
+          className={`flex items-center justify-center gap-1.5 rounded-xl py-2.5 text-[13px] font-bold transition ${
+            on ? 'bg-white text-neutral-900 shadow-[0_1px_3px_rgba(0,0,0,0.16)]' : 'text-neutral-500 hover:text-neutral-800'
+          }`}
+          data-cta={`v7b-channel-${c}`}
+          aria-pressed={on}
+        >
+          <Icon className={`h-4 w-4 ${on ? (c === 'instagram' ? 'text-[#E1306C]' : 'text-emerald-600') : 'text-neutral-400'}`} />
+          {CHANNELS[c].name}
+        </button>
+      )
+    }
+
+    return slideShell(3, (
+      <>
+        {kicker(slideNo.capture, BACK_TO.capture)}
+        {slideTitle('Where do I message you?')}
+        <p className="mt-2 text-[13px] leading-relaxed text-neutral-500">
+          I&rsquo;ll send the details &mdash; timing, location ideas in Charlotte, what to wear, and next steps.
+        </p>
+        <form onSubmit={onCapture} className="mt-5 space-y-3">
+          <div className="grid grid-cols-2 gap-1 rounded-2xl border border-neutral-200 bg-[#f5f5f4] p-1">
+            {segment('instagram')}
+            {segment('phone')}
+          </div>
+          {channel === 'instagram' ? (
+            <>
+              <div className="flex items-center rounded-2xl border border-neutral-200 bg-[#faf9f6] px-4 transition focus-within:border-emerald-500 focus-within:bg-white focus-within:ring-4 focus-within:ring-emerald-500/10">
+                <span className="pr-1 text-[17px] font-semibold text-neutral-300">@</span>
+                <input
+                  ref={phoneRef}
+                  name="instagram"
+                  value={instagram}
+                  onChange={e => { fieldEngaged('instagram'); setInstagram(e.target.value); setError(null) }}
+                  autoCapitalize="off"
+                  autoCorrect="off"
+                  autoComplete="off"
+                  spellCheck={false}
+                  className="w-full bg-transparent py-3.5 text-base text-neutral-900 placeholder-neutral-400 outline-none"
+                  placeholder="yourusername"
+                />
+              </div>
+              <p className="text-[12px] leading-snug text-neutral-500">
+                Follow{' '}
+                <a href="https://www.instagram.com/madebyaidan" target="_blank" rel="noopener noreferrer" onClick={() => track('handle_clicked', { placement: 'capture' })} className="font-semibold text-emerald-600 underline decoration-emerald-300 underline-offset-2">@madebyaidan</a>
+                {' '}so my message doesn&rsquo;t land in requests.
+              </p>
+            </>
+          ) : (
+            <div className="flex gap-2">
+              {countryCode && <CountryCodeSelect light value={countryCode} onChange={code => { fieldEngaged('country_code'); track('country_code_changed', { code }); setCountryCode(code); setError(null) }} />}
+              <input
+                ref={phoneRef}
+                type="tel"
+                inputMode="tel"
+                autoComplete="tel-national"
+                name="phone"
+                value={phone}
+                onChange={e => { fieldEngaged('phone'); setPhone(e.target.value); setError(null) }}
+                onBlur={() => { const digits = phone.replace(/\D/g, ''); if (digits) trackOnce('phone_filled', digits, { digits: digits.length }) }}
+                className="min-w-0 flex-1 rounded-2xl border border-neutral-200 bg-[#faf9f6] px-4 py-3.5 text-base text-neutral-900 placeholder-neutral-400 outline-none transition focus:border-emerald-500 focus:bg-white focus:ring-4 focus:ring-emerald-500/10"
+                placeholder="Phone number, e.g. 704 555 0123"
+              />
+            </div>
+          )}
+          {errorBox}
+          {/* Honeypot */}
+          <input type="text" name="company" className="hidden" tabIndex={-1} autoComplete="off" />
+          <button
+            type="submit"
+            className="w-full rounded-2xl bg-emerald-600 py-4 text-[15px] font-bold tracking-[-0.01em] text-white shadow-[0_12px_26px_-12px_rgba(5,150,105,0.9)] transition hover:bg-emerald-500 active:scale-[0.99]"
+            data-cta="v7b-submit"
+          >
+            Next
+          </button>
+        </form>
+      </>
+    ))
+  }
+
+  // ── Frame 5 · your photo ──
+  if (step === 'photos') {
+    const sheet = (srcs: string[], good: boolean) => (
+      <div className="grid grid-cols-4 gap-[3px] rounded-xl bg-[#17150f] p-[3px]">
+        {srcs.map((src, i) => (
+          <div key={i} className="relative aspect-square overflow-hidden bg-black">
+            <NextImage src={src} alt="" width={200} height={200} sizes="(max-width: 640px) 25vw, 100px" className={`h-full w-full object-cover ${good ? '' : 'opacity-[0.62] grayscale'}`} />
+            <span className={`absolute bottom-0.5 right-0.5 flex h-4 w-4 items-center justify-center rounded-full ${good ? 'bg-emerald-500' : 'bg-red-500'} text-white`}>
+              {good ? <CheckIcon className="h-2.5 w-2.5" />
+                : <svg viewBox="0 0 24 24" className="h-2.5 w-2.5" fill="none" stroke="currentColor" strokeWidth={4} strokeLinecap="round" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12" /></svg>}
+            </span>
+          </div>
+        ))}
+      </div>
+    )
+    const sheetLabel = (good: boolean, text: string, note: string) => (
+      <p className="flex flex-wrap items-baseline gap-x-1.5 text-[9px] font-bold uppercase tracking-[0.2em]">
+        <span className={`inline-flex items-center gap-1.5 ${good ? 'text-emerald-600' : 'text-red-500'}`}>
+          <span className={`h-1 w-1 rounded-full ${good ? 'bg-emerald-500' : 'bg-red-500'}`} />
+          {text}
+        </span>
+        <span className="font-semibold tracking-[0.12em] text-neutral-400">{note}</span>
+      </p>
+    )
+    return slideShell(4, (
+      <>
+        {kicker(slideNo.photos, BACK_TO.photos)}
+        {slideTitle('Your photo')}
+        <p className="mt-2 text-[13px] leading-relaxed text-neutral-500">Selfies are fine &mdash; just looking to see the real you.</p>
+
+        <div className="mt-5 space-y-2">
+          {sheetLabel(true, 'Like this', "simple & natural, don't hide your face")}
+          {sheet(['/images/collab-examples/good-1.jpg', '/images/collab-examples/good-2.jpg', '/images/collab-examples/good-3.jpg', '/images/collab-examples/good-4.jpg'], true)}
+        </div>
+        <div className="mt-3 space-y-2">
+          {sheetLabel(false, 'Not like this', 'heavy makeup, filters, face hidden')}
+          {sheet(['/images/collab-examples/bad-1.jpg', '/images/collab-examples/bad-2.jpg', '/images/collab-examples/bad-3.jpg', '/images/collab-examples/bad-4.jpg'], false)}
+        </div>
+
+        {photos.length > 0 && (
+          <div className="mt-5 flex flex-wrap gap-2">
+            {photos.map((p, i) => (
+              <div key={i} className="relative">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={p} alt="Preview" className="h-[72px] w-[72px] rounded-xl object-cover shadow-[0_8px_18px_-10px_rgba(23,21,15,0.7)] ring-1 ring-black/10" />
+                <button type="button" onClick={() => removePhoto(i)} className="absolute -right-1.5 -top-1.5 flex h-5 w-5 items-center justify-center rounded-full bg-neutral-900 text-[11px] text-white shadow transition hover:bg-red-500" aria-label="Remove photo">
+                  &times;
+                </button>
+              </div>
+            ))}
+          </div>
+        )}
+
+        <button
+          type="button"
+          onClick={() => fileRef.current?.click()}
+          disabled={processingPhotos}
+          className="group mt-5 flex w-full items-center justify-center gap-2.5 rounded-2xl border border-dashed border-emerald-500/50 bg-emerald-50/70 py-5 text-emerald-700 transition hover:border-emerald-500 hover:bg-emerald-50 disabled:opacity-50"
+        >
+          {processingPhotos ? (
+            <span className="inline-block h-5 w-5 animate-spin rounded-full border-2 border-emerald-200 border-t-emerald-600" aria-label="Processing" />
+          ) : (
+            <>
+              <span className="flex h-8 w-8 items-center justify-center rounded-full bg-emerald-600 text-white shadow-[0_8px_16px_-8px_rgba(5,150,105,0.9)] transition group-hover:bg-emerald-500">
+                <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <path d="M12 16V4m0 0L7 9m5-5l5 5" /><path d="M4 17v2a1 1 0 001 1h14a1 1 0 001-1v-2" />
+                </svg>
+              </span>
+              <span className="text-[11px] font-bold uppercase tracking-[0.2em]">{photos.length > 0 ? 'Add another' : 'Upload'}</span>
+            </>
+          )}
+        </button>
+        <input ref={fileRef} type="file" accept="image/*" multiple onChange={handlePhotos} className="hidden" />
+
+        <div className="mt-6 space-y-3">
+          {errorBox}
+          {nextBtn(() => {
+            if (photos.length === 0) {
+              track('validation_error', { reason: 'photo_missing' })
+              setError("Add one photo of yourself so I know who I'm shooting.")
+              return
+            }
+            if (channel === 'instagram') { queuePatch(photos); finishSignup(); return }
+            advance('instagram', true, photos)
+          }, channel === 'instagram' ? 'Finish Sign-Up' : 'Next', processingPhotos)}
+        </div>
+      </>
+    ))
+  }
+
+  // ── Frame 6 · instagram ──
+  if (step === 'instagram') {
+    return slideShell(5, (
+      <>
+        {kicker(slideNo.instagram, BACK_TO.instagram)}
+        {slideTitle('Your Instagram', true)}
+        <div className="mt-5 flex items-center rounded-2xl border border-neutral-200 bg-[#faf9f6] px-4 transition focus-within:border-emerald-500 focus-within:bg-white focus-within:ring-4 focus-within:ring-emerald-500/10">
+          <span className="pr-1 text-[17px] font-semibold text-neutral-300">@</span>
+          <input
+            value={instagram}
+            onChange={e => { fieldEngaged('instagram'); setInstagram(e.target.value) }}
+            onBlur={() => { const v = instagram.trim(); if (v) trackOnce('instagram_filled', v, { chars: v.length }) }}
+            autoCapitalize="off"
+            autoCorrect="off"
+            spellCheck={false}
+            className="w-full bg-transparent py-3.5 text-[15px] text-neutral-900 placeholder-neutral-400 outline-none"
+            placeholder="yourhandle"
+          />
+        </div>
+        <div className="mt-6 space-y-3">
+          {nextBtn(finishSignup, 'Finish Sign-Up')}
+          {skipBtn(finishSignup)}
+        </div>
+      </>
+    ))
+  }
+
+  // ── Done ──
+  // Lands on the same paper as every other frame rather than its own page.
+  return (
+    <div className="min-h-screen bg-[#f4f2ee]">
+      <style dangerouslySetInnerHTML={{ __html: slideMotionCss }} />
+      <div className="mx-auto max-w-md px-4 pb-10 pt-7">
+        {/* Sits where Back sits on every other frame, mirrored to the right —
+            there's nothing to go back to here, only to begin again. */}
+        <div className="mb-3 flex justify-end">
+          <button
+            type="button"
+            onClick={startOver}
+            className="-mr-1 flex shrink-0 items-center gap-1.5 rounded-full border border-neutral-200 bg-[#faf9f6] py-2.5 pl-4 pr-3 text-[12px] font-bold text-neutral-700 transition hover:border-neutral-300 hover:bg-neutral-100 hover:text-neutral-900 active:scale-95"
+            data-cta="v7b-start-over"
+          >
+            Start over
+            <svg viewBox="0 0 24 24" className="h-3.5 w-3.5" fill="none" stroke="currentColor" strokeWidth={2.6} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <path d="M3 2v6h6" /><path d="M3.5 13a9 9 0 106-9.7L3 8" />
+            </svg>
+          </button>
+        </div>
+        <div className="atf-card overflow-hidden rounded-[26px] border border-black/[0.06] bg-white shadow-[0_24px_60px_-34px_rgba(23,21,15,0.55)]">
+          <div className="relative h-48">
+            <NextImage src={heroImage} alt="" fill priority sizes="(max-width: 640px) 100vw, 448px" className="object-cover object-top" style={{ filter: 'brightness(0.6) saturate(1.15)' }} />
+            <div className="absolute inset-0" style={{ background: 'linear-gradient(180deg, transparent 30%, rgba(0,0,0,0.8) 100%)' }} />
+            <p className="absolute bottom-4 left-5 right-5 text-2xl font-semibold text-white" style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic' }}>You&apos;re in.</p>
+          </div>
+          <div className="space-y-5 px-6 pb-6 pt-4">
+            <p className="text-sm text-neutral-500">I&apos;ll message you {CHANNELS[channel].doneVia} within 24 hours to plan your Charlotte shoot. Let&apos;s make something great together.</p>
+            <div className="space-y-3">
+              <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-neutral-400">What to expect</p>
+              <div className="space-y-2.5">
+                {[
+                  { icon: '\u{1F4F8}', text: 'Edited photos you can use however you want' },
+                  { icon: '\u{1F3AF}', text: 'Full creative direction from me' },
+                  { icon: '\u{1F91D}', text: 'A real collaboration, not a transaction' },
+                  { icon: '\u{1F4AC}', text: 'We plan the concept together' },
+                ].map((item, i) => (
+                  <div key={i} className="flex items-center gap-3">
+                    <span className="text-base">{item.icon}</span>
+                    <span className="text-sm text-neutral-600">{item.text}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+        {ribbon(5)}
+      </div>
+    </div>
+  )
+}

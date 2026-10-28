@@ -28,6 +28,7 @@
 // All versions, newest first. Picker-era ones go through proxy :32xx, which injects a script that clicks through the picker so the tab lands on the form.
 // Servers: scripts/collab-versions-servers.sh (sparse worktrees in the session scratchpad).
 const V=[
+ {n:15,sha:'v7b',port:3118,path:'/sign-up-collab-v7b',date:'28 Oct',msg:'NEW: v7 redone for Charlotte, headliner photos, no location step, Instagram/Phone',era:'new'},
  {n:14,sha:'fd1a6f0',port:3201,date:'28 Oct',msg:'Contact = Instagram (default) / Phone',era:'picker'},
  {n:13,sha:'38e9f67',port:3202,date:'28 Oct',msg:'69 marked pins culled, rotation 130',era:'picker'},
  {n:12,sha:'78e2ace',port:3203,date:'28 Oct',msg:'120 editorial references added, rotation 199',era:'picker'},
@@ -48,16 +49,16 @@ let cur=null
 function show(v){
   cur=v
   for(const b of tabs.children) b.setAttribute('aria-selected',b.dataset.sha===v.sha)
-  const url='http://localhost:'+v.port+'/sign-up-collab'
+  const url='http://localhost:'+v.port+(v.path||'/sign-up-collab')
   frame.src=url; open.href=url
   desc.textContent='v'+v.n+' · '+v.sha+' · '+v.date+' · '+v.msg
   status.textContent=''
   fetch(url,{mode:'no-cors'}).catch(()=>{status.innerHTML='<span class="down">server on :'+v.port+' is not running — run scripts/collab-versions-servers.sh</span>'})
   try{localStorage.setItem('collab-versions-tab',v.sha)}catch{}
 }
-for(const v of V){const b=document.createElement('button');b.dataset.sha=v.sha;b.innerHTML='<b>v'+v.n+'</b><small>'+v.date+(v.era?' · picker':'')+'</small>';b.onclick=()=>show(v);tabs.appendChild(b)}
+for(const v of V){const b=document.createElement('button');b.dataset.sha=v.sha;b.innerHTML='<b>v'+v.n+'</b><small>'+v.date+(v.era==='new'?' · new':v.era?' · picker':'')+'</small>';b.onclick=()=>show(v);tabs.appendChild(b)}
 document.getElementById('phone').onchange=e=>document.getElementById('main').classList.toggle('phone',e.target.checked)
 addEventListener('keydown',e=>{if(e.target.tagName==='INPUT')return;const i=V.indexOf(cur);if(e.key==='ArrowRight'||e.key==='l')show(V[Math.min(V.length-1,i+1)]);if(e.key==='ArrowLeft'||e.key==='h')show(V[Math.max(0,i-1)])})
-let start=V[0];try{const s=localStorage.getItem('collab-versions-tab');const f=V.find(v=>v.sha===s);if(f)start=f}catch{}
+let start=V[0];try{const s=location.hash.slice(1)||localStorage.getItem('collab-versions-tab');const f=V.find(v=>v.sha===s);if(f)start=f}catch{}
 show(start)
 </script>
