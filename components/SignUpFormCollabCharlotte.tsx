@@ -15,12 +15,12 @@ import { initPageAnalytics, track, pageElapsedMs, flushNow } from '@/lib/track'
 const serif = Instrument_Serif({ subsets: ['latin'], weight: '400', style: ['normal', 'italic'], display: 'swap' })
 const SERIF = serif.style.fontFamily
 
-type Step = 'location' | 'notes' | 'capture' | 'photos' | 'instagram' | 'done'
+type Step = 'location' | 'vibe' | 'notes' | 'photos' | 'instagram' | 'done'
 
 // 'location' is kept as the landing step's name for resume compatibility; it
 // now asks for the look.
 const BACK_TO: Partial<Record<Step, Step>> = {
-  notes: 'location', capture: 'notes', photos: 'capture', instagram: 'photos',
+  vibe: 'location', notes: 'vibe', photos: 'notes', instagram: 'photos',
 }
 const CITY = 'Charlotte'
 const CITY_FULL = 'Charlotte, NC'
@@ -64,7 +64,7 @@ function resizeImage(dataUrl: string, maxBytes: number): Promise<string> {
 // first thing the page does is show more work rather than sit still.
 const HERO_SLIDES = [
   '/images/new_top_tier_headliners/000014.jpg',
-  '/images/new_top_tier_headliners/R1-09953-010A.jpg',
+  '/images/new_top_tier_headliners/R1-09793-0028.jpg',
   '/images/new_top_tier_headliners/R1-00005-0027.jpg',
   '/images/new_top_tier_headliners/R1-09798-032A.jpg',
   '/images/new_top_tier_headliners/R1-09952-0019.jpg',
@@ -99,7 +99,7 @@ const VIBES: { key: VibeKey; label: string; src: string | null }[] = [
   { key: 'indoor', label: 'Indoor', src: '/images/new_top_tier_headliners/R1-00006-015A.jpg' },
   // Nothing to photograph for "any", so this one doesn't pretend: a grey box
   // with something moving inside it, which is what the choice actually is.
-  { key: 'any', label: 'No preference', src: null },
+  { key: 'any', label: 'No preference', src: '/images/new_top_tier_headliners/R1-09953-010A.jpg' },
 ]
 
 // ONE roll of film. Each slide shows a four-frame window into it, two frames
@@ -316,7 +316,7 @@ export default function SignUpFormCollabCharlotte({ analyticsPath = '/sign-up-co
   }, [step])
 
   const totalSlides = channel === 'instagram' ? 4 : 5
-  const slideNo: Record<Exclude<Step, 'done'>, number> = { location: 1, notes: 2, capture: 3, photos: 4, instagram: 5 }
+  const slideNo: Record<Exclude<Step, 'done'>, number> = { location: 1, vibe: 2, notes: 3, photos: 4, instagram: 5 }
 
   function fieldEngaged(field: string) {
     if (engagedFields.current.size === 0) track('form_start', { first_field: field })
@@ -385,7 +385,7 @@ export default function SignUpFormCollabCharlotte({ analyticsPath = '/sign-up-co
   function onCapture(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
     const data = Object.fromEntries(new FormData(e.currentTarget).entries()) as Record<string, string>
-    if (data.company) { track('honeypot_triggered'); advance('photos'); return }
+    if (data.company) { track('honeypot_triggered'); advance('vibe'); return }
 
     let typed: string
     if (channel === 'instagram') {
@@ -413,7 +413,7 @@ export default function SignUpFormCollabCharlotte({ analyticsPath = '/sign-up-co
     // Backing up and coming through again re-uses the row — unless the contact
     // itself changed, in which case the old row holds one they've corrected.
     if (!leadRef.current || postedContact !== typed) startLeadPost(typed)
-    advance('photos')
+    advance('vibe')
   }
 
   // Each advance past the ask saves in the background. PATCHes are chained so
@@ -556,7 +556,7 @@ export default function SignUpFormCollabCharlotte({ analyticsPath = '/sign-up-co
     window.scrollTo({ top: 0 })
   }
 
-  const inputCls = 'w-full rounded-2xl border border-neutral-200 bg-[#faf9f6] px-4 py-3.5 text-[15px] text-neutral-900 placeholder-neutral-400 outline-none transition focus:border-neutral-800 focus:bg-white focus:ring-4 focus:ring-neutral-900/10'
+  const inputCls = 'w-full rounded-[3px] border border-neutral-300 bg-white px-4 py-3.5 text-[15px] text-neutral-900 placeholder-neutral-400 outline-none transition focus:border-neutral-800 focus:bg-white focus:ring-4 focus:ring-neutral-900/10'
 
   // ── The roll ──
   // He shoots film, so the proof is film, and the roll doesn't lie flat. Each
@@ -644,17 +644,17 @@ export default function SignUpFormCollabCharlotte({ analyticsPath = '/sign-up-co
         <button
           type="button"
           onClick={() => goBack(back)}
-          className="-ml-1 flex shrink-0 items-center gap-1 rounded-full border border-neutral-200 bg-[#faf9f6] py-2.5 pl-2.5 pr-4 text-[12px] font-bold text-neutral-700 transition hover:border-neutral-300 hover:bg-neutral-100 hover:text-neutral-900 active:scale-95"
+          className="-ml-1 flex shrink-0 items-center gap-1 py-2 pr-2 text-[12px] font-semibold uppercase tracking-[0.16em] text-neutral-500 transition hover:text-neutral-900"
           data-cta="v7b-back"
         >
           <svg viewBox="0 0 24 24" className="h-3.5 w-3.5" fill="none" stroke="currentColor" strokeWidth={3} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6" /></svg>
           Back
         </button>
       ) : null}
-      <p className="shrink-0 text-[9px] font-bold uppercase tracking-[0.22em] text-neutral-400">{n} / {totalSlides}</p>
+      <p className="shrink-0 text-[11px] font-semibold tabular-nums tracking-[0.16em] text-neutral-400">{n}/{totalSlides}</p>
       <span className="flex flex-1 gap-1.5" aria-hidden="true">
         {Array.from({ length: totalSlides }, (_, i) => (
-          <span key={i} className={`h-[3px] flex-1 rounded-full transition-colors duration-300 ${i < n ? 'bg-neutral-900' : 'bg-neutral-200'}`} />
+          <span key={i} className={`h-[2px] flex-1 transition-colors duration-300 ${i < n ? 'bg-neutral-900' : 'bg-neutral-200'}`} />
         ))}
       </span>
     </div>
@@ -671,10 +671,10 @@ export default function SignUpFormCollabCharlotte({ analyticsPath = '/sign-up-co
       type="button"
       onClick={onClick}
       disabled={busy}
-      className="w-full rounded-full bg-neutral-900 py-4 text-[15px] font-bold tracking-[-0.01em] text-white shadow-[0_12px_26px_-12px_rgba(0,0,0,0.9)] transition hover:bg-neutral-800 active:scale-[0.99] disabled:opacity-50"
+      className="group flex w-full items-center justify-between rounded-[3px] bg-neutral-900 px-5 py-[18px] text-[13px] font-semibold uppercase tracking-[0.18em] text-white transition hover:bg-black active:scale-[0.995] disabled:opacity-50"
       data-cta="v7b-next"
     >
-      {busy ? <span className="inline-block h-4 w-4 animate-spin rounded-full border-2 border-white/40 border-t-white align-[-2px]" aria-label="Loading" /> : label}
+      {busy ? <span className="mx-auto inline-block h-4 w-4 animate-spin rounded-full border-2 border-white/40 border-t-white" aria-label="Loading" /> : <><span>{label}</span><svg viewBox="0 0 24 24" className="h-4 w-4 transition-transform group-hover:translate-x-0.5" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg></>}
     </button>
   )
   const skipBtn = (onClick: () => void) => (
@@ -686,7 +686,33 @@ export default function SignUpFormCollabCharlotte({ analyticsPath = '/sign-up-co
     <div className="rounded-2xl border border-red-200 bg-red-50 px-4 py-3 text-[13px] font-semibold text-red-700">{error}</div>
   ) : null
 
-  // ── Frame 1 · where ──
+    const segment = (c: Channel) => {
+      const on = channel === c
+      const Icon = c === 'instagram' ? InstagramIcon : PhoneIcon
+      return (
+        <button
+          key={c}
+          type="button"
+          onClick={() => {
+            if (on) return
+            track('channel_switched', { from: channel, to: c })
+            setChannel(c)
+            setError(null)
+            requestAnimationFrame(() => phoneRef.current?.focus())
+          }}
+          className={`flex items-center justify-center gap-2 rounded-[3px] border py-3.5 text-[14px] font-semibold transition ${
+            on ? 'border-neutral-900 bg-neutral-900 text-white' : 'border-neutral-300 bg-white text-neutral-700 hover:border-neutral-900'
+          }`}
+          data-cta={`v7b-channel-${c}`}
+          aria-pressed={on}
+        >
+          <Icon className={`h-[18px] w-[18px] ${on ? 'text-white' : 'text-neutral-500'}`} />
+          {CHANNELS[c].name}
+        </button>
+      )
+    }
+
+  // ── Frame 1 · sign up ──
   // The original opening page, unchanged apart from what sits in the card: the
   // full-bleed hero and headline, the proof grid and how-it-works below the
   // fold, the sticky CTA. Only the ask has been swapped — the card now opens on
@@ -728,14 +754,11 @@ export default function SignUpFormCollabCharlotte({ analyticsPath = '/sign-up-co
             <h1 className="mt-1 text-[88px] leading-[0.9] tracking-[-0.02em]" style={{ fontFamily: SERIF }}>
               {CITY}
             </h1>
-            <p className="mt-3 max-w-[300px] text-[15px] leading-snug text-white/80">
-              Shot on 35mm film. You keep the edited photos.
-            </p>
-            <div className="mt-6 flex items-center justify-between gap-4">
+            <div className="mt-5 flex items-center justify-between gap-4">
               <button
                 type="button"
                 onClick={() => { track('hero_cta_clicked'); pickerCardRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' }) }}
-                className="flex items-center gap-2 rounded-full bg-white px-6 py-3.5 text-[14px] font-semibold text-neutral-900 transition active:scale-[0.98]"
+                className="flex items-center gap-3 rounded-[3px] bg-white px-6 py-4 text-[13px] font-semibold uppercase tracking-[0.18em] text-neutral-900 transition hover:bg-neutral-100 active:scale-[0.98]"
                 data-cta="v7b-hero"
               >
                 Sign up
@@ -750,47 +773,69 @@ export default function SignUpFormCollabCharlotte({ analyticsPath = '/sign-up-co
           </div>
         </div>
 
-        {/* The look. One tap starts the flow. */}
+        {/* Sign up: the contact is the first thing asked. */}
         <div ref={pickerCardRef} className="scroll-mt-4 px-5 pb-4 pt-10">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-neutral-500">Step 1</p>
-          <h2 className="mt-1 text-[44px] leading-[1] tracking-[-0.01em]" style={{ fontFamily: SERIF }}>
-            Pick a look
+          <h2 className="text-[44px] leading-[1] tracking-[-0.01em]" style={{ fontFamily: SERIF }}>
+            Sign up
           </h2>
-          <p className="mt-2 text-[14px] leading-relaxed text-neutral-600">Tap one to start. I&rsquo;ll message you the details.</p>
-          <div className="mt-6 grid grid-cols-2 gap-3">
-            {VIBES.map(v => {
-              const on = vibe === v.key
-              return (
-                <button
-                  key={v.key}
-                  type="button"
-                  onClick={() => {
-                    setVibe(v.key)
-                    track('vibe_selected', { value: v.key })
-                    fieldEngaged('vibe')
-                    advance('notes')
-                  }}
-                  className={`group relative aspect-[3/4] overflow-hidden rounded-[4px] text-left transition active:scale-[0.98] ${on ? 'ring-2 ring-neutral-900 ring-offset-2 ring-offset-[#f4f1ec]' : ''}`}
-                  data-cta={`v7b-vibe-${v.key}`}
-                >
-                  {v.src ? (
-                    <NextImage src={v.src} alt="" fill sizes="(max-width: 640px) 45vw, 200px" className="object-cover object-top transition duration-700 group-hover:scale-[1.03]" />
-                  ) : (
-                    <span className="absolute inset-0 grid grid-cols-2 grid-rows-2 gap-px bg-[#f4f1ec]">
-                      {VIBES.filter(x => x.src).map(x => (
-                        <span key={x.key} className="relative overflow-hidden"><NextImage src={x.src!} alt="" fill sizes="25vw" className="object-cover object-top" /></span>
-                      ))}
-                      <span className="relative overflow-hidden"><NextImage src={proofImages[0]} alt="" fill sizes="25vw" className="object-cover object-top" /></span>
-                    </span>
-                  )}
-                  <span className="absolute inset-0" style={{ background: 'linear-gradient(180deg, transparent 55%, rgba(0,0,0,0.65))' }} />
-                  <span className="absolute bottom-3 left-3 right-3 text-[24px] leading-none text-white" style={{ fontFamily: SERIF }}>
-                    {v.label}
-                  </span>
-                </button>
-              )
-            })}
+          <p className="mt-2 text-[14px] leading-relaxed text-neutral-600">Where should I message you? I&rsquo;ll send the details: timing, locations, what to wear.</p>
+        <form onSubmit={onCapture} className="mt-6 space-y-3">
+          <div className="grid grid-cols-2 gap-2">
+            {segment('instagram')}
+            {segment('phone')}
           </div>
+          {channel === 'instagram' ? (
+            <>
+              <div className="flex items-center rounded-[3px] border border-neutral-300 bg-white px-4 transition focus-within:border-neutral-800 focus-within:bg-white focus-within:ring-4 focus-within:ring-neutral-900/10">
+                <span className="pr-1 text-[17px] font-semibold text-neutral-300">@</span>
+                <input
+                  ref={phoneRef}
+                  name="instagram"
+                  value={instagram}
+                  onChange={e => { fieldEngaged('instagram'); setInstagram(e.target.value); setError(null) }}
+                  autoCapitalize="off"
+                  autoCorrect="off"
+                  autoComplete="off"
+                  spellCheck={false}
+                  className="w-full bg-transparent py-3.5 text-base text-neutral-900 placeholder-neutral-400 outline-none"
+                  placeholder="yourusername"
+                />
+              </div>
+              <p className="text-[12px] leading-snug text-neutral-500">
+                Follow{' '}
+                <a href="https://www.instagram.com/madebyaidan" target="_blank" rel="noopener noreferrer" onClick={() => track('handle_clicked', { placement: 'capture' })} className="font-semibold text-neutral-900 underline decoration-neutral-400 underline-offset-2">@madebyaidan</a>
+                {' '}so my message doesn&rsquo;t land in requests.
+              </p>
+            </>
+          ) : (
+            <div className="flex gap-2">
+              {countryCode && <CountryCodeSelect light value={countryCode} onChange={code => { fieldEngaged('country_code'); track('country_code_changed', { code }); setCountryCode(code); setError(null) }} />}
+              <input
+                ref={phoneRef}
+                type="tel"
+                inputMode="tel"
+                autoComplete="tel-national"
+                name="phone"
+                value={phone}
+                onChange={e => { fieldEngaged('phone'); setPhone(e.target.value); setError(null) }}
+                onBlur={() => { const digits = phone.replace(/\D/g, ''); if (digits) trackOnce('phone_filled', digits, { digits: digits.length }) }}
+                className="min-w-0 flex-1 rounded-[3px] border border-neutral-300 bg-white px-4 py-3.5 text-base text-neutral-900 placeholder-neutral-400 outline-none transition focus:border-neutral-800 focus:bg-white focus:ring-4 focus:ring-neutral-900/10"
+                placeholder="Phone number, e.g. 704 555 0123"
+              />
+            </div>
+          )}
+          {errorBox}
+          {/* Honeypot */}
+          <input type="text" name="company" className="hidden" tabIndex={-1} autoComplete="off" />
+          <button
+            type="submit"
+            className="group flex w-full items-center justify-between rounded-[3px] bg-neutral-900 px-5 py-[18px] text-[13px] font-semibold uppercase tracking-[0.18em] text-white transition hover:bg-black active:scale-[0.995] disabled:opacity-50"
+            data-cta="v7b-submit"
+          >
+            <span>Continue</span>
+            <svg viewBox="0 0 24 24" className="h-4 w-4 transition-transform group-hover:translate-x-0.5" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+          </button>
+        </form>
         </div>
 
         {/* Recent work: full-height frames, swipeable. */}
@@ -834,9 +879,9 @@ export default function SignUpFormCollabCharlotte({ analyticsPath = '/sign-up-co
                   track('sticky_cta_clicked')
                   pickerCardRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })
                 }}
-                className="w-full rounded-full bg-neutral-900 py-4 text-[14px] font-semibold text-white transition hover:bg-neutral-800"
+                className="w-full rounded-[3px] bg-neutral-900 py-4 text-[13px] font-semibold uppercase tracking-[0.18em] text-white transition hover:bg-black"
               >
-                Sign up &middot; pick a look
+                Sign up
               </button>
             </div>
           </div>
@@ -862,103 +907,58 @@ export default function SignUpFormCollabCharlotte({ analyticsPath = '/sign-up-co
           placeholder="Ideas, references, questions..."
         />
         <div className="mt-6 space-y-3">
-          {nextBtn(() => advance('capture'))}
+          {nextBtn(() => advance('photos', true))}
         </div>
       </>
     ))
   }
 
-  // ── Frame 3 · the ask ──
-  if (step === 'capture') {
-    const segment = (c: Channel) => {
-      const on = channel === c
-      const Icon = c === 'instagram' ? InstagramIcon : PhoneIcon
-      return (
-        <button
-          key={c}
-          type="button"
-          onClick={() => {
-            if (on) return
-            track('channel_switched', { from: channel, to: c })
-            setChannel(c)
-            setError(null)
-            requestAnimationFrame(() => phoneRef.current?.focus())
-          }}
-          className={`flex items-center justify-center gap-1.5 rounded-xl py-2.5 text-[13px] font-bold transition ${
-            on ? 'bg-white text-neutral-900 shadow-[0_1px_3px_rgba(0,0,0,0.16)]' : 'text-neutral-500 hover:text-neutral-800'
-          }`}
-          data-cta={`v7b-channel-${c}`}
-          aria-pressed={on}
-        >
-          <Icon className={`h-4 w-4 ${on ? (c === 'instagram' ? 'text-[#E1306C]' : 'text-neutral-900') : 'text-neutral-400'}`} />
-          {CHANNELS[c].name}
-        </button>
-      )
-    }
-
-    return slideShell(3, (
+  // ── Frame 2 · the look ──
+  if (step === 'vibe') {
+    return slideShell(2, (
       <>
-        {kicker(slideNo.capture, BACK_TO.capture)}
-        {slideTitle('Where do I message you?')}
-        <p className="mt-2 text-[13px] leading-relaxed text-neutral-500">
-          I&rsquo;ll send the details &mdash; timing, location ideas in Charlotte, what to wear, and next steps.
-        </p>
-        <form onSubmit={onCapture} className="mt-5 space-y-3">
-          <div className="grid grid-cols-2 gap-1 rounded-2xl border border-neutral-200 bg-[#f5f5f4] p-1">
-            {segment('instagram')}
-            {segment('phone')}
-          </div>
-          {channel === 'instagram' ? (
-            <>
-              <div className="flex items-center rounded-2xl border border-neutral-200 bg-[#faf9f6] px-4 transition focus-within:border-neutral-800 focus-within:bg-white focus-within:ring-4 focus-within:ring-neutral-900/10">
-                <span className="pr-1 text-[17px] font-semibold text-neutral-300">@</span>
-                <input
-                  ref={phoneRef}
-                  name="instagram"
-                  value={instagram}
-                  onChange={e => { fieldEngaged('instagram'); setInstagram(e.target.value); setError(null) }}
-                  autoCapitalize="off"
-                  autoCorrect="off"
-                  autoComplete="off"
-                  spellCheck={false}
-                  className="w-full bg-transparent py-3.5 text-base text-neutral-900 placeholder-neutral-400 outline-none"
-                  placeholder="yourusername"
-                />
-              </div>
-              <p className="text-[12px] leading-snug text-neutral-500">
-                Follow{' '}
-                <a href="https://www.instagram.com/madebyaidan" target="_blank" rel="noopener noreferrer" onClick={() => track('handle_clicked', { placement: 'capture' })} className="font-semibold text-neutral-900 underline decoration-neutral-400 underline-offset-2">@madebyaidan</a>
-                {' '}so my message doesn&rsquo;t land in requests.
-              </p>
-            </>
-          ) : (
-            <div className="flex gap-2">
-              {countryCode && <CountryCodeSelect light value={countryCode} onChange={code => { fieldEngaged('country_code'); track('country_code_changed', { code }); setCountryCode(code); setError(null) }} />}
-              <input
-                ref={phoneRef}
-                type="tel"
-                inputMode="tel"
-                autoComplete="tel-national"
-                name="phone"
-                value={phone}
-                onChange={e => { fieldEngaged('phone'); setPhone(e.target.value); setError(null) }}
-                onBlur={() => { const digits = phone.replace(/\D/g, ''); if (digits) trackOnce('phone_filled', digits, { digits: digits.length }) }}
-                className="min-w-0 flex-1 rounded-2xl border border-neutral-200 bg-[#faf9f6] px-4 py-3.5 text-base text-neutral-900 placeholder-neutral-400 outline-none transition focus:border-neutral-800 focus:bg-white focus:ring-4 focus:ring-neutral-900/10"
-                placeholder="Phone number, e.g. 704 555 0123"
-              />
-            </div>
-          )}
-          {errorBox}
-          {/* Honeypot */}
-          <input type="text" name="company" className="hidden" tabIndex={-1} autoComplete="off" />
-          <button
-            type="submit"
-            className="w-full rounded-full bg-neutral-900 py-4 text-[15px] font-bold tracking-[-0.01em] text-white shadow-[0_12px_26px_-12px_rgba(0,0,0,0.9)] transition hover:bg-neutral-800 active:scale-[0.99]"
-            data-cta="v7b-submit"
-          >
-            Next
-          </button>
-        </form>
+        {kicker(slideNo.vibe, BACK_TO.vibe)}
+        {slideTitle('Choose one look')}
+        <p className="mt-2 text-[14px] leading-relaxed text-neutral-600">Tap the photo closest to the shoot you want.</p>
+        <div className="mt-5 grid grid-cols-2 gap-3" role="radiogroup" aria-label="Choose one look">
+          {VIBES.map(v => {
+            const on = vibe === v.key
+            return (
+              <button
+                key={v.key}
+                type="button"
+                role="radio"
+                aria-checked={on}
+                onClick={() => {
+                  setVibe(v.key)
+                  track('vibe_selected', { value: v.key })
+                  fieldEngaged('vibe')
+                  setTimeout(() => advance('notes', true), 220)
+                }}
+                className={`group relative aspect-[3/4] overflow-hidden rounded-[4px] text-left transition active:scale-[0.98] ${on ? 'ring-2 ring-neutral-900 ring-offset-2' : ''}`}
+                data-cta={`v7b-vibe-${v.key}`}
+              >
+                {v.src ? (
+                  <NextImage src={v.src} alt="" fill sizes="(max-width: 640px) 45vw, 200px" className="object-cover object-top" />
+                ) : (
+                  <span className="absolute inset-0 grid grid-cols-2 grid-rows-2 gap-px bg-white">
+                    {VIBES.filter(x => x.src).map(x => (
+                      <span key={x.key} className="relative overflow-hidden"><NextImage src={x.src!} alt="" fill sizes="25vw" className="object-cover object-top" /></span>
+                    ))}
+                    <span className="relative overflow-hidden"><NextImage src={proofImages[0]} alt="" fill sizes="25vw" className="object-cover object-top" /></span>
+                  </span>
+                )}
+                <span className="absolute inset-0" style={{ background: 'linear-gradient(180deg, transparent 55%, rgba(0,0,0,0.65))' }} />
+                <span className={`absolute right-2.5 top-2.5 flex h-6 w-6 items-center justify-center rounded-full border-2 ${on ? 'border-white bg-white text-neutral-900' : 'border-white/90 bg-black/20'}`} aria-hidden="true">
+                  {on && <CheckIcon className="h-3.5 w-3.5" />}
+                </span>
+                <span className="absolute bottom-3 left-3 right-3 text-[24px] leading-none text-white" style={{ fontFamily: SERIF }}>
+                  {v.label}
+                </span>
+              </button>
+            )
+          })}
+        </div>
       </>
     ))
   }
@@ -1059,7 +1059,7 @@ export default function SignUpFormCollabCharlotte({ analyticsPath = '/sign-up-co
       <>
         {kicker(slideNo.instagram, BACK_TO.instagram)}
         {slideTitle('Your Instagram', true)}
-        <div className="mt-5 flex items-center rounded-2xl border border-neutral-200 bg-[#faf9f6] px-4 transition focus-within:border-neutral-800 focus-within:bg-white focus-within:ring-4 focus-within:ring-neutral-900/10">
+        <div className="mt-5 flex items-center rounded-[3px] border border-neutral-300 bg-white px-4 transition focus-within:border-neutral-800 focus-within:bg-white focus-within:ring-4 focus-within:ring-neutral-900/10">
           <span className="pr-1 text-[17px] font-semibold text-neutral-300">@</span>
           <input
             value={instagram}
