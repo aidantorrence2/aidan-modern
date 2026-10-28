@@ -25965,5 +25965,170 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "how-to-protect-time-for-deep-work",
+  "offer": "protect-block-uninterrupted-time",
+  "title": "How to protect a block of uninterrupted time for important work",
+  "description": "Simple ways to carve out and defend focused time when meetings, messages and interruptions eat your day.",
+  "intro": "Important work usually needs a stretch of time without interruptions, and that time rarely appears by itself. You have to book it and defend it like a meeting.",
+  "sections": [
+   {
+    "h": "Book it",
+    "list": [
+     "Put a recurring 60 to 90-minute block in your calendar, at the time you focus best.",
+     "Give it a clear name, such as 'Write report', not just 'Focus'.",
+     "Start with a few blocks a week rather than every day."
+    ]
+   },
+   {
+    "h": "Defend it",
+    "list": [
+     "Turn off notifications and close email and chat during the block.",
+     "Put your phone in another room or out of sight.",
+     "Tell colleagues or family when you're unavailable and when you'll be back."
+    ]
+   },
+   {
+    "h": "Use it well",
+    "list": [
+     "Decide the one task for the block before it starts.",
+     "Have everything you need ready so you don't go looking.",
+     "Note distracting thoughts on paper and deal with them afterwards."
+    ]
+   },
+   {
+    "h": "When it gets taken",
+    "p": [
+     "If a block gets moved, rebook it straight away rather than losing it. Review each week how many blocks you kept."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "how-to-stop-thinking-about-work-at-home",
+  "offer": "mentally-leave-work-home",
+  "title": "How to stop thinking about work when you get home",
+  "description": "Practical ways to switch off from work in the evening, especially when you work from home or worry about the next day.",
+  "intro": "Many people take work home in their heads even when they've left the office. A clear end to the day and a few habits can help your mind switch off.",
+  "sections": [
+   {
+    "h": "Close the day on purpose",
+    "list": [
+     "Spend five minutes at the end of work writing down what's unfinished and the first task for tomorrow.",
+     "Shut the laptop and put work things out of sight."
+    ]
+   },
+   {
+    "h": "Mark the change",
+    "list": [
+     "Use a short routine to end work: a walk, changing clothes, a shower or music.",
+     "If you work from home, leave the room you work in."
+    ]
+   },
+   {
+    "h": "Limit work contact",
+    "list": [
+     "Turn off work notifications in the evening.",
+     "Remove work email from your phone, or set it not to fetch after hours."
+    ]
+   },
+   {
+    "h": "When worries come back",
+    "list": [
+     "Write the worry down with one next step, then let it wait for working hours.",
+     "Do something absorbing that uses your attention, such as cooking, sport or a hobby."
+    ]
+   },
+   {
+    "h": "If it's constant",
+    "p": [
+     "If work stress is affecting your sleep or health for a long time, talk to your manager, your doctor or an employee support service if you have one."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "how-to-say-no-without-feeling-guilty",
+  "offer": "saying-yes-everyone-resent",
+  "title": "How to say no without feeling guilty",
+  "description": "Simple ways to say no to requests you don't have time or energy for, and to stop agreeing to everything.",
+  "intro": "Saying yes to everything often leads to resentment and exhaustion. Saying no kindly is a skill you can practise, and most people respect it more than you expect.",
+  "sections": [
+   {
+    "h": "Pause before you answer",
+    "list": [
+     "Say 'Let me check and get back to you' instead of yes on the spot.",
+     "Ask yourself: do I have time, do I want to, and what would I have to give up?"
+    ]
+   },
+   {
+    "h": "Simple ways to say no",
+    "list": [
+     "'Thanks for asking, but I can't this time.'",
+     "'I can't do that, but I could do this smaller part.'",
+     "'That's not something I can take on right now.'"
+    ]
+   },
+   {
+    "h": "Keep it short",
+    "list": [
+     "You don't have to give a long reason.",
+     "Over-explaining invites people to argue."
+    ]
+   },
+   {
+    "h": "Deal with the guilt",
+    "list": [
+     "Remind yourself that saying no to one thing is saying yes to something else, like rest or family.",
+     "Notice that most people accept a no and move on.",
+     "Start with small, low-stakes noes and build up."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "how-to-stop-feeling-intimidated-at-the-gym",
+  "offer": "feel-intimidated-by-gym",
+  "title": "How to stop feeling intimidated at the gym",
+  "description": "Practical tips for gym beginners who feel nervous, out of place or unsure what to do.",
+  "intro": "Feeling intimidated at the gym is very common, especially at first. Most people are focused on their own workout, not on you. A plan and a few small steps make it much easier.",
+  "sections": [
+   {
+    "h": "Go with a plan",
+    "list": [
+     "Write down a short workout before you go: a few exercises, sets and reps.",
+     "Start with machines or simple exercises you understand."
+    ]
+   },
+   {
+    "h": "Pick easier times",
+    "list": [
+     "Gyms are often quieter mid-morning, early afternoon and later in the evening.",
+     "Ask staff when it's usually quiet."
+    ]
+   },
+   {
+    "h": "Get help",
+    "list": [
+     "Ask for a free induction or a quick demo of machines; most gyms offer one.",
+     "Ask staff, not just other members, how to use equipment."
+    ]
+   },
+   {
+    "h": "Make it familiar",
+    "list": [
+     "Go at the same times so the place and faces become familiar.",
+     "Wear comfortable clothes you feel good in.",
+     "Headphones can help you focus on your own session."
+    ]
+   },
+   {
+    "h": "Go easy on yourself",
+    "p": [
+     "Everyone was a beginner once. Start light, focus on form, and if you have a health condition, check with your doctor first."
+    ]
+   }
+  ]
  }
 ]
