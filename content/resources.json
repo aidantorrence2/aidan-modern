@@ -25218,5 +25218,147 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "how-to-raise-your-afqt-score-after-failing-the-asvab",
+  "offer": "retest-ready",
+  "title": "How to raise your AFQT score after failing the ASVAB",
+  "description": "A practical plan to improve the four areas that make up the AFQT score before you retest.",
+  "intro": "Your AFQT score, the one that decides whether you can enlist, comes from four parts of the ASVAB. Focusing on those parts is the fastest way to raise it. This guide is independent; ask your recruiter about the minimum score for your branch and the waiting time before a retest.",
+  "sections": [
+   {
+    "h": "Know what counts",
+    "list": [
+     "The AFQT is calculated from four areas: Arithmetic Reasoning, Mathematics Knowledge, Word Knowledge and Paragraph Comprehension.",
+     "Other ASVAB sections matter for specific jobs, but not for the AFQT itself."
+    ]
+   },
+   {
+    "h": "Find your weak spots",
+    "list": [
+     "Look at your score report, or take a full practice test, to see which of the four areas are lowest.",
+     "Start with the weakest area; small gains there often raise the overall score most."
+    ]
+   },
+   {
+    "h": "Study in short daily sessions",
+    "list": [
+     "30 to 45 minutes a day beats long cramming sessions.",
+     "For maths: practise basic fractions, percentages, ratios and simple algebra until they're automatic.",
+     "For verbal: read every day, and learn common word roots and prefixes."
+    ]
+   },
+   {
+    "h": "Before the retest",
+    "list": [
+     "Take a full timed practice test under test conditions.",
+     "Practise working at a steady pace so you don't run out of time.",
+     "Sleep well the night before and arrive early."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "asvab-arithmetic-reasoning-what-to-study-first",
+  "offer": "retest-ready",
+  "title": "ASVAB arithmetic reasoning: what to study first if maths is your weak spot",
+  "description": "The maths topics that come up most in arithmetic reasoning, and how to practise word problems step by step.",
+  "intro": "Arithmetic Reasoning is a set of word problems, and it counts towards your AFQT score. Most questions use everyday maths you can relearn with practice.",
+  "sections": [
+   {
+    "h": "Topics to review first",
+    "list": [
+     "Percentages, including discounts and increases.",
+     "Fractions and decimals.",
+     "Ratios and proportions.",
+     "Rates: distance, speed and time; work problems.",
+     "Averages and simple interest."
+    ]
+   },
+   {
+    "h": "How to read a word problem",
+    "list": [
+     "Read the question twice and underline what it's asking for.",
+     "Write down the numbers you're given and their units.",
+     "Turn the words into a simple calculation, then check if the answer makes sense."
+    ]
+   },
+   {
+    "h": "Practise",
+    "list": [
+     "Do a small set of word problems every day, and check every mistake.",
+     "Keep a list of the problem types you get wrong and practise those again.",
+     "Practise without a calculator, as the test doesn't allow one."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "how-to-study-for-the-ged-after-years-out-of-school",
+  "offer": "diploma-comeback",
+  "title": "How to study for the GED after years out of school",
+  "description": "A step-by-step plan for adults returning to study for a high school equivalency test, around work and family.",
+  "intro": "Plenty of adults pass a high school equivalency test years, even decades, after leaving school. The key is to start where you are and take it one subject at a time. This guide is independent; check which test your state uses and book through the official provider.",
+  "sections": [
+   {
+    "h": "Check which test you need",
+    "list": [
+     "Most states use the GED; some use HiSET or another test.",
+     "The GED has four subjects: Mathematical Reasoning, Reasoning Through Language Arts, Science and Social Studies, and you can usually take them one at a time."
+    ]
+   },
+   {
+    "h": "See where you are",
+    "list": [
+     "Take a practice test in each subject to see where you stand.",
+     "Don't be discouraged by your first scores; they show you where to start."
+    ]
+   },
+   {
+    "h": "Make a realistic plan",
+    "list": [
+     "Pick one subject to start with, often the one you feel best about, to build confidence.",
+     "Study a little most days, even 20 to 30 minutes.",
+     "Look for free adult-education classes at local colleges, libraries or community centres."
+    ]
+   },
+   {
+    "h": "Book when you're ready",
+    "p": [
+     "When your practice scores are consistently good in a subject, book that test, and move on to the next subject."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "which-ged-subject-to-take-first",
+  "offer": "diploma-comeback",
+  "title": "Which GED subject should you take first, and how do you know you're ready?",
+  "description": "How to choose the order of your GED subject tests, and simple signs that you're ready to book one.",
+  "intro": "You don't have to take all four GED subjects at once. Choosing a good order and booking each test when you're ready makes the whole process less stressful.",
+  "sections": [
+   {
+    "h": "Choosing an order",
+    "list": [
+     "Start with the subject you feel most confident in: a pass early on builds momentum.",
+     "Many people leave the subject they find hardest, often maths, until they've had more practice.",
+     "Reading skills help in every subject, so working on Language Arts early can help the rest."
+    ]
+   },
+   {
+    "h": "Signs you're ready",
+    "list": [
+     "You're consistently passing practice tests in that subject, not just once.",
+     "You can finish a practice test in the time allowed.",
+     "You can explain why your wrong answers were wrong."
+    ]
+   },
+   {
+    "h": "If you don't pass",
+    "p": [
+     "You can retake subjects, and you only need to retake the ones you didn't pass. Check the official provider's rules on retakes for your state."
+    ]
+   }
+  ]
  }
 ]

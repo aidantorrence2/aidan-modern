@@ -50132,6 +50132,202 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-28",
+    "slug": "retest-ready",
+    "name": "Retest Ready",
+    "need": "I want to join the military, but my ASVAB (AFQT) score is too low or I failed it, and I need to raise it to qualify.",
+    "headline": "Failed the ASVAB or scored too low? Find which of the four AFQT areas are holding you back, study those first in short daily sessions, and see when you're ready to retest.",
+    "buyer": "US adults (18+) hoping to enlist, including people years out of school and those retesting after a low or failed score.",
+    "bullets": [
+      "A starting check across the four areas that make up the AFQT: arithmetic reasoning, maths knowledge, word knowledge and paragraph comprehension.",
+      "Short daily sessions on your weakest area first, with plain explanations of every mistake.",
+      "A readiness view over time, so you know when it's worth booking the retest."
+    ],
+    "price": "$8.99/month",
+    "priceUsd": 9,
+    "priceNote": "Or $39 for three months. For adults 18+.",
+    "reasonPrompt": "What score did you get, and which branch or job are you aiming for?",
+    "faq": [
+      {
+        "q": "Is it official or endorsed by the military?",
+        "a": "No. Retest Ready is independent and not affiliated with or endorsed by the US Department of Defense, any military branch or the official test. It uses its own practice questions, never real test items. Ask your recruiter about score requirements and retest waiting periods."
+      },
+      {
+        "q": "Does it guarantee a higher score?",
+        "a": "No. It helps you practise the areas you need most; your result depends on your own study."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-28",
+      "summary": "Enlistment hopefuls describe failing the ASVAB twice, failing by one question, hoping to pass after failing, getting a 33 AFQT score, needing to study urgently when free apps weren't enough, and failing numerous times at MEPS.",
+      "wtp": "ASVAB Practice Test By ABC has 29K App Store ratings and sells $19.99 a month or $69.99 a year; ASVAB Practice For Dummies has 18K ratings at $10.99 a month or $51.99 a year; ASVAB Mastery has 9.9K ratings at $11.99 a month.",
+      "signals": [
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1469379973/sortby=mosthelpful/json",
+          "who": "Justin Dimond (App Store review of ASVAB Practice Test By ABC)",
+          "date": "2023-01-02",
+          "quote": "You know I failed the ASVAB twice because I",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=2/id=1469379973/sortby=mosthelpful/json",
+          "who": "magzcow07 (App Store review of ASVAB Practice Test By ABC)",
+          "date": "2023-01-12",
+          "quote": "I failed by 1 question when I took it",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=338186615/sortby=mosthelpful/json",
+          "who": "EZIO AJERBAC (App Store review of ASVAB Practice For Dummies)",
+          "date": "2024-02-02",
+          "quote": "I failed the ASVAB But I am Hoping To Pass it by using this app",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=2/id=338186615/sortby=mosthelpful/json",
+          "who": "Revo6060 (App Store review of ASVAB Practice For Dummies)",
+          "date": "2020-05-19",
+          "quote": "I downloaded this app because I got a 33 AFQT score",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=990728832/sortby=mosthelpful/json",
+          "who": "Jimbbo_Sliice (App Store review of ASVAB Mastery)",
+          "date": "2018-09-10",
+          "quote": "needed to study for the asvab urgently and none of the free apps were getting the job done",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1469379973",
+          "who": "ASVAB Practice Test By ABC (App Store)",
+          "date": "2026-10-28",
+          "quote": "29K Ratings; $19.99 a month; $69.99 a year",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id338186615",
+          "who": "ASVAB Practice For Dummies (App Store)",
+          "date": "2026-10-28",
+          "quote": "18K Ratings; $10.99 a month; $51.99 a year",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id990728832",
+          "who": "ASVAB Mastery (App Store)",
+          "date": "2026-10-28",
+          "quote": "9.9K Ratings; $11.99 a month; AFQT Score Predictors $14.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "ASVAB question-bank apps, official practice materials, recruiters' materials, study guides.",
+      "risks": "Crowded, with free official practice. Short use period means high churn. Must not use real test items or military branding. All evidence is App Store reviews. Near live need-pass-important-exam (generic), but about the enlistment test."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-28",
+    "slug": "diploma-comeback",
+    "name": "Diploma Comeback",
+    "need": "I dropped out or have been out of school for years, and I need to relearn the basics and pass the GED so I can get a better job or go on to study.",
+    "headline": "Out of school for years and need your high school equivalency? Find out where you are in each subject, relearn the basics in short sessions, and take one test at a time when you're ready.",
+    "buyer": "Adults (18+) without a high school diploma, often working, who want a GED or other high school equivalency for a job, college or a fresh start.",
+    "bullets": [
+      "A friendly starting check in each subject: maths, reading and writing, science and social studies.",
+      "Short, plain lessons on the basics you need, at your own pace around work and family.",
+      "A readiness view for each subject, so you can book one test at a time."
+    ],
+    "price": "$9.99/month",
+    "priceUsd": 10,
+    "priceNote": "Or $49 for six months. For adults 18+.",
+    "reasonPrompt": "How long have you been out of school, and which subject worries you most?",
+    "faq": [
+      {
+        "q": "Is it the official GED program?",
+        "a": "No. Diploma Comeback is independent and not affiliated with or endorsed by GED Testing Service or any state test. GED is a registered trademark of its owner. Check which test your state uses (GED, HiSET or another), and book through the official provider."
+      },
+      {
+        "q": "Are there free options?",
+        "a": "Yes. Many local adult-education centres and libraries offer free classes, and free online lessons exist. Diploma Comeback is for people who want a structured plan they can follow at home."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-28",
+      "summary": "Adults describe needing to pass after more than 20 years out of school, getting back into basic skills for a test in six months, dropping out of high school because of family issues, wanting to see where they need to study most, and checking where they stand.",
+      "wtp": "GED & Me, the official GED app, has 12K App Store ratings and sells GED Boost at $19.99 a month; General Ed Diploma Prep 2026 has 7.3K ratings at $9.99 a month or $39.99 a year; GEDprep AI Tutor has 2.1K ratings at $19.99 to $24.99 a month.",
+      "signals": [
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1501289997/sortby=mosthelpful/json",
+          "who": "LisuColon (App Store review of General Ed Diploma Prep)",
+          "date": "2023-05-30",
+          "quote": "I need to pass these tests, I have more than 20 years out of school",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1501289997/sortby=mosthelpful/json",
+          "who": "Nikol1013 (App Store review of General Ed Diploma Prep)",
+          "date": "2021-04-18",
+          "quote": "get back into basic skills that I need for my test in 6 months",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=6448298090/sortby=mosthelpful/json",
+          "who": "Laurensamz (App Store review of GED & Me)",
+          "date": "2026-07-21",
+          "quote": "I dropped out of high school because of family issues",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=6448298090/sortby=mosthelpful/json",
+          "who": "crystal slone (App Store review of GED & Me)",
+          "date": "2026-04-02",
+          "quote": "can see where I need to study the most",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1537731875/sortby=mosthelpful/json",
+          "who": "Sugarplumdoll1 (App Store review of GEDprep AI Tutor)",
+          "date": "2026-10-10",
+          "quote": "I downloaded the app so I could kind of just see where I was at",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id6448298090",
+          "who": "GED & Me (App Store)",
+          "date": "2026-10-28",
+          "quote": "12K Ratings; GED Boost $19.99 a month",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1501289997",
+          "who": "General Ed Diploma Prep 2026 (App Store)",
+          "date": "2026-10-28",
+          "quote": "7.3K Ratings; $9.99 a month; $39.99 a year",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1537731875",
+          "who": "GEDprep AI Tutor (App Store)",
+          "date": "2026-10-28",
+          "quote": "2.1K Ratings; $19.99-$24.99 a month; $119.99 a year",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "GED & Me (official), prep apps, free adult-education classes, Khan Academy.",
+      "risks": "The official provider sells its own app, and free adult-education classes exist. Some states use other tests. Buyers are price-sensitive and some need a very plain interface. All evidence is App Store reviews. Must not imply it's official."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
