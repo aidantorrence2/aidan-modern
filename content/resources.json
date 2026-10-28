@@ -29247,5 +29247,153 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "replace-chord-sheet-binder-with-tablet",
+  "offer": "song-binder",
+  "title": "How to replace your chord-sheet binder with a tablet",
+  "description": "Tips for moving your chord and lyric sheets onto a phone or tablet for jams, church and gigs with friends.",
+  "intro": "A binder of chord sheets gets heavy, messy and hard to read. Moving your songs to a tablet makes them easier to find and read, but it helps to set it up well.",
+  "sections": [
+   {
+    "h": "Get your songs in",
+    "list": [
+     "Type or paste songs in a simple chord-over-lyrics format.",
+     "Photograph or scan sheets you can't retype.",
+     "Only add songs you have the right to use."
+    ]
+   },
+   {
+    "h": "Organise them",
+    "list": [
+     "Tag songs by type, key or where you play them.",
+     "Build set lists for each jam, service or gig."
+    ]
+   },
+   {
+    "h": "Make them easy to read",
+    "list": [
+     "Use big text and a dark mode for dim rooms.",
+     "Use auto-scroll or a foot pedal so your hands stay on the instrument."
+    ]
+   },
+   {
+    "h": "Be ready",
+    "list": [
+     "Charge the device and keep a power bank handy.",
+     "Download songs so they work without Wi-Fi.",
+     "Keep a small printed backup of your key songs."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "transpose-chords-to-another-key",
+  "offer": "song-binder",
+  "title": "How to transpose chords into another key",
+  "description": "A simple way to move a song's chords into a key that suits the singer, by hand or with a capo.",
+  "intro": "If a song is too high or low for the singer, moving it to a new key helps. You shift every chord by the same amount.",
+  "sections": [
+   {
+    "h": "The chromatic scale",
+    "p": [
+     "The twelve notes in order are: C, C#, D, D#, E, F, F#, G, G#, A, A#, B, then back to C. Each step is one semitone. (C# is the same as Db, and so on.)"
+    ]
+   },
+   {
+    "h": "Move every chord the same distance",
+    "list": [
+     "Decide how many semitones to move up or down.",
+     "Move the root of each chord by that many steps, keeping the chord type: G moves up two semitones to A, and Em moves up two to F#m."
+    ]
+   },
+   {
+    "h": "Use a capo",
+    "list": [
+     "On guitar, a capo raises every chord by one semitone per fret.",
+     "With a capo on fret 2, playing a G shape sounds as A."
+    ]
+   },
+   {
+    "h": "Check by ear",
+    "p": [
+     "Play through the song with the singer and adjust until it feels comfortable."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "learn-to-chant-sanskrit-mantras",
+  "offer": "mantra-steady",
+  "title": "How to learn to chant Sanskrit mantras with good pronunciation",
+  "description": "Practical tips for learning mantras and stotras with clear, careful pronunciation.",
+  "intro": "Many people grow up hearing mantras but never learn to chant them clearly. With patience and a good recording, pronunciation improves quickly.",
+  "sections": [
+   {
+    "h": "Learn from a trusted source",
+    "list": [
+     "Use recordings by an experienced chanter, or learn from a teacher, priest or family elder.",
+     "Traditions differ; follow the style used by your family or temple."
+    ]
+   },
+   {
+    "h": "Go line by line",
+    "list": [
+     "Listen to one line several times before saying it.",
+     "Repeat slowly, then gradually speed up.",
+     "Only move on when the line feels steady."
+    ]
+   },
+   {
+    "h": "Pay attention to sounds",
+    "list": [
+     "Sanskrit has long and short vowels; holding a long vowel too briefly changes the word.",
+     "Some consonants are breathy (aspirated) and some aren't, such as 'k' and 'kh'.",
+     "A transliteration that marks long vowels helps if you don't read Devanagari."
+    ]
+   },
+   {
+    "h": "Practise daily",
+    "p": [
+     "A few minutes every day works better than one long session a week. Record yourself and compare with the recording."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "keep-daily-japa-practice",
+  "offer": "mantra-steady",
+  "title": "How to keep a daily japa practice",
+  "description": "Simple ways to start and keep up daily mantra repetition, with or without a mala.",
+  "intro": "Japa, the repetition of a mantra, is a simple daily practice. The hardest part is usually keeping it going.",
+  "sections": [
+   {
+    "h": "Choose a time and place",
+    "list": [
+     "Pick the same time each day, such as early morning or before bed.",
+     "Use a quiet corner where you won't be interrupted."
+    ]
+   },
+   {
+    "h": "Counting",
+    "list": [
+     "A mala traditionally has 108 beads, plus a larger bead that marks the start and end.",
+     "Without a mala, you can count on a counter or app, or on your fingers.",
+     "If your tradition has specific rules for using a mala, follow them."
+    ]
+   },
+   {
+    "h": "Start small",
+    "p": [
+     "Begin with one round, then add more as it becomes a habit. A short practice done every day matters more than a long one done rarely."
+    ]
+   },
+   {
+    "h": "Keep it meaningful",
+    "p": [
+     "Learn what your mantra means, so the repetition stays focused rather than mechanical."
+    ]
+   }
+  ]
  }
 ]

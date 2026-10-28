@@ -54283,6 +54283,195 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-28",
+    "slug": "song-binder",
+    "name": "Song Binder",
+    "need": "I play guitar, ukulele or keys at jams, church or with friends, and I want my chord and lyric sheets in one place in the right key, instead of a binder of loose paper I fumble through.",
+    "headline": "Still fumbling through a binder of chord sheets? Keep every song in one place on your phone or tablet, in the right key, easy to read in any light.",
+    "buyer": "Hobby musicians who play at jams, church, campfires or with friends.",
+    "bullets": [
+      "All your chord and lyric sheets in one searchable place, organised into sets for tonight's jam or Sunday's service.",
+      "Change the key in one tap to suit the singer, or show capo positions instead.",
+      "Big, clear text with a dark mode and hands-free scrolling, so wind and dim light don't matter."
+    ],
+    "price": "$3.99/month",
+    "priceUsd": 4,
+    "priceNote": "Or $24 a year.",
+    "reasonPrompt": "Where do you play, and how many songs are in your binder?",
+    "faq": [
+      {
+        "q": "Where do the songs come from?",
+        "a": "You add your own chord sheets by typing, pasting or photographing them. Please only add songs you have the right to use."
+      },
+      {
+        "q": "Is it linked to a music publisher or chord site?",
+        "a": "No. Song Binder is independent and not affiliated with any publisher, chord site or instrument brand."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-28",
+      "summary": "Hobby musicians describe their papers flying when the wind blows, fumbling through binders to find a song, endless leafing through a binder for shows and practice, shuffling papers on stage and playing wrong notes, and four binders of guitar music collected over 40 years.",
+      "wtp": "OnSong has 5.7K App Store ratings with plans from $3.99 to $5.99 a month or $59.99 a year; SongbookPro has 2.7K ratings with a $5.99 full-version upgrade.",
+      "signals": [
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1475370014/sortby=mosthelpful/json",
+          "who": "B1ueyze (App Store review of SongbookPro)",
+          "date": "2024-06-24",
+          "quote": "when the wind blows, my papers go flying",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1330350343/sortby=mosthelpful/json",
+          "who": "Jeauxd (App Store review of OnSong)",
+          "date": "2026-10-18",
+          "quote": "fumbling through binders to find a song",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=2/id=1475370014/sortby=mosthelpful/json",
+          "who": "acf509 (App Store review of SongbookPro)",
+          "date": "2026-05-27",
+          "quote": "endless leafing through a binder for shows and practice",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=2/id=1330350343/sortby=mosthelpful/json",
+          "who": "BCash2 (App Store review of OnSong)",
+          "date": "2023-06-23",
+          "quote": "shuffling papers on stage and playing many incorrect notes",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1475370014/sortby=mosthelpful/json",
+          "who": "suntiger66 (App Store review of SongbookPro)",
+          "date": "2022-02-23",
+          "quote": "I eliminated four binders of guitar music collected over 40+ years",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1475370014/sortby=mostrecent/json",
+          "who": "EADB_Life (App Store review of SongbookPro)",
+          "date": "2026-09-30",
+          "quote": "No more flipping thru a notebook trying to find a song",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1330350343",
+          "who": "OnSong (App Store)",
+          "date": "2026-10-28",
+          "quote": "5.7K Ratings; Premium Monthly $5.99; Annual $59.99; Essentials Monthly $3.99",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1475370014",
+          "who": "SongbookPro (App Store)",
+          "date": "2026-10-28",
+          "quote": "2.7K Ratings; Full Version Upgrade $5.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "OnSong, SongbookPro, other chord-sheet apps, paper binders.",
+      "risks": "Strong, low-priced incumbents (SongbookPro is a one-off $5.99); many quotes are from people whose problem an app already solved; some reviewers are gigging musicians, so keep it hobby-framed; importing chord sheets raises copyright questions. Evidence is all App Store reviews."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-28",
+    "slug": "mantra-steady",
+    "name": "Mantra Steady",
+    "need": "I'm starting or returning to daily Hindu practice and want to chant Sanskrit mantras and stotras with the right pronunciation and keep count of my japa, without paying just to hear a mantra.",
+    "headline": "Want to chant mantras with the right pronunciation? Learn line by line with clear audio and the Sanskrit beside it, and keep a calm count of your daily japa.",
+    "buyer": "Adults starting or returning to Hindu practice, including parents teaching children and newcomers to mantra meditation.",
+    "bullets": [
+      "Learn mantras and stotras line by line: hear each line, see it in Sanskrit with an easy transliteration, then say it back.",
+      "Slow-down playback and syllable highlighting to get long vowels and tricky sounds right.",
+      "A simple japa counter and a gentle daily log, with your own list of mantras."
+    ],
+    "price": "$3.99/month",
+    "priceUsd": 4,
+    "priceNote": "Or $24 a year.",
+    "reasonPrompt": "Which mantra or prayer would you most like to learn?",
+    "faq": [
+      {
+        "q": "Whose pronunciation does it follow?",
+        "a": "Traditions and lineages differ. Mantra Steady aims to use clear recordings by experienced chanters, and if your family, temple or teacher follows a particular style, theirs comes first."
+      },
+      {
+        "q": "Is it linked to a temple, guru or organisation?",
+        "a": "No. Mantra Steady is independent and not affiliated with any temple, teacher or religious organisation, and it doesn't include astrology."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-28",
+      "summary": "People describe wanting to learn how to pronounce mantras the correct way, caring about correct pronunciation, being beginners learning about their own culture and trying to read mantras at temples, never having learned it all or understood much of it, and lacking proficiency in Sanskrit.",
+      "wtp": "Japa 108 - Counter & Tracker has 1.5K App Store ratings with plans at $4.99 a month, $19.99 a year or $12.99 premium.",
+      "signals": [
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1434423184/sortby=mosthelpful/json",
+          "who": "harmony1974 (App Store review of Japa 108)",
+          "date": "2024-07-26",
+          "quote": "what I wanted to learn was how to pronounce the correct way of doing them",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=2/id=1434423184/sortby=mosthelpful/json",
+          "who": "everybetaken (App Store review of Japa 108)",
+          "date": "2020-05-13",
+          "quote": "all about the correct pronunciations",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1557728556/sortby=mosthelpful/json",
+          "who": "santhoshgujje (App Store review)",
+          "date": "2023-12-16",
+          "quote": "I am just a beginner learning about our own culture and trying to read various mantras at temples",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1557728556/sortby=mosthelpful/json",
+          "who": "Rogerlabs (App Store review)",
+          "date": "2022-09-04",
+          "quote": "audio chanting of slokas by popular voices that are accurate",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1584307762/sortby=mosthelpful/json",
+          "who": "Sacred seeker settle (App Store review)",
+          "date": "2025-09-20",
+          "quote": "never quiet learned it all or understood much of it",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1584307762/sortby=mosthelpful/json",
+          "who": "SupriyaOM (App Store review)",
+          "date": "2024-12-06",
+          "quote": "indispensable for those who lack proficiency in Sanskrit",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1434423184",
+          "who": "Japa 108 (App Store)",
+          "date": "2026-10-28",
+          "quote": "1.5K Ratings; Monthly $4.99; Yearly $19.99; Premium $12.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Japa 108, free mantra and stotra apps, temple classes, recordings online.",
+      "risks": "Only one paid app confirmed and free alternatives exist; pronunciation differs by lineage, so audio needs credible chanters; niche faith audience needs respectful framing; keep away from astrology. Evidence is all App Store reviews."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
