@@ -1,6 +1,7 @@
 "use client"
 import { useEffect, useRef, useState } from 'react'
 import NextImage from 'next/image'
+import { Instrument_Serif } from 'next/font/google'
 import CountryCodeSelect from './CountryCodeSelect'
 import { detectPhoneCountry } from '@/lib/detectCountry'
 import { initPageAnalytics, track, pageElapsedMs, flushNow } from '@/lib/track'
@@ -10,6 +11,9 @@ import { initPageAnalytics, track, pageElapsedMs, flushNow } from '@/lib/track'
 // "where are you" step (the shoot is in Charlotte), so the landing card asks
 // for the look instead and one tap starts the flow; contact is Instagram
 // (default) or phone, and Instagram sign-ups skip the separate handle step.
+
+const serif = Instrument_Serif({ subsets: ['latin'], weight: '400', style: ['normal', 'italic'], display: 'swap' })
+const SERIF = serif.style.fontFamily
 
 type Step = 'location' | 'notes' | 'capture' | 'photos' | 'instagram' | 'done'
 
@@ -59,11 +63,11 @@ function resizeImage(dataUrl: string, maxBytes: number): Promise<string> {
 // The hero cycles. It opens on the bubbles frame and crossfades on, so the
 // first thing the page does is show more work rather than sit still.
 const HERO_SLIDES = [
-  '/images/new_top_tier_headliners/R1-09799-0025.jpg',
-  '/images/new_top_tier_headliners/R1-00005-0027.jpg',
-  '/images/new_top_tier_headliners/R1-09953-010A.jpg',
   '/images/new_top_tier_headliners/000014.jpg',
+  '/images/new_top_tier_headliners/R1-09953-010A.jpg',
+  '/images/new_top_tier_headliners/R1-00005-0027.jpg',
   '/images/new_top_tier_headliners/R1-09798-032A.jpg',
+  '/images/new_top_tier_headliners/R1-09952-0019.jpg',
 ]
 const heroImage = HERO_SLIDES[0]
 
@@ -77,10 +81,10 @@ const proofImages = [
 ]
 
 const howItWorks = [
-  'Pick a look and tell me how to reach you',
-  'I message you the details — timing, locations, what to wear',
-  'We plan the concept together and shoot for 1–2 hours',
-  "You get the edited photos — it's 100% free, always",
+  'Pick a look and tell me where to message you.',
+  'I send the details: timing, locations, what to wear.',
+  'We shoot for one to two hours on 35mm film.',
+  'You get the edited photos. Free, always.',
 ]
 
 type VibeKey = 'street' | 'nature' | 'indoor' | 'any'
@@ -552,7 +556,7 @@ export default function SignUpFormCollabCharlotte({ analyticsPath = '/sign-up-co
     window.scrollTo({ top: 0 })
   }
 
-  const inputCls = 'w-full rounded-2xl border border-neutral-200 bg-[#faf9f6] px-4 py-3.5 text-[15px] text-neutral-900 placeholder-neutral-400 outline-none transition focus:border-emerald-500 focus:bg-white focus:ring-4 focus:ring-emerald-500/10'
+  const inputCls = 'w-full rounded-2xl border border-neutral-200 bg-[#faf9f6] px-4 py-3.5 text-[15px] text-neutral-900 placeholder-neutral-400 outline-none transition focus:border-neutral-800 focus:bg-white focus:ring-4 focus:ring-neutral-900/10'
 
   // ── The roll ──
   // He shoots film, so the proof is film, and the roll doesn't lie flat. Each
@@ -611,8 +615,8 @@ export default function SignUpFormCollabCharlotte({ analyticsPath = '/sign-up-co
             </div>
           )
         })}
-        <span className="pointer-events-none absolute inset-y-0 left-0 w-8 bg-gradient-to-r from-[#f4f2ee] to-transparent" />
-        <span className="pointer-events-none absolute inset-y-0 right-0 w-8 bg-gradient-to-l from-[#f4f2ee] to-transparent" />
+        <span className="pointer-events-none absolute inset-y-0 left-0 w-8 bg-gradient-to-r from-[#f4f1ec] to-transparent" />
+        <span className="pointer-events-none absolute inset-y-0 right-0 w-8 bg-gradient-to-l from-[#f4f1ec] to-transparent" />
       </div>
     )
   }
@@ -621,12 +625,12 @@ export default function SignUpFormCollabCharlotte({ analyticsPath = '/sign-up-co
   // Frame 1 included: it used to be a white page with a full-bleed hero and its
   // own card, which announced that it wasn't part of the set.
   const slideShell = (stepNo: number, children: React.ReactNode, flush = false) => (
-    <div className="min-h-screen bg-[#f4f2ee]">
+    <div className="min-h-screen bg-[#f4f1ec]">
       <style dangerouslySetInnerHTML={{ __html: slideMotionCss }} />
       {/* key forces the enter animation to replay on every step, so the frames
           read as one continuous sequence rather than hard cuts. */}
       <div key={stepNo} className="mx-auto max-w-md px-4 pb-10 pt-7">
-        <div className={`atf-card overflow-hidden rounded-[26px] border border-black/[0.06] bg-white shadow-[0_24px_60px_-34px_rgba(23,21,15,0.55)] ${flush ? '' : 'px-5 pb-6 pt-5'}`}>
+        <div className={`atf-card overflow-hidden rounded-[6px] border border-black/[0.06] bg-white shadow-[0_24px_60px_-34px_rgba(23,21,15,0.55)] ${flush ? '' : 'px-5 pb-6 pt-5'}`}>
           {children}
         </div>
         {ribbon(stepNo)}
@@ -650,15 +654,15 @@ export default function SignUpFormCollabCharlotte({ analyticsPath = '/sign-up-co
       <p className="shrink-0 text-[9px] font-bold uppercase tracking-[0.22em] text-neutral-400">{n} / {totalSlides}</p>
       <span className="flex flex-1 gap-1.5" aria-hidden="true">
         {Array.from({ length: totalSlides }, (_, i) => (
-          <span key={i} className={`h-[3px] flex-1 rounded-full transition-colors duration-300 ${i < n ? 'bg-emerald-600' : 'bg-neutral-200'}`} />
+          <span key={i} className={`h-[3px] flex-1 rounded-full transition-colors duration-300 ${i < n ? 'bg-neutral-900' : 'bg-neutral-200'}`} />
         ))}
       </span>
     </div>
   )
 
   const slideTitle = (t: string, optional = false) => (
-    <h1 className="mt-4 text-[30px] font-semibold leading-[1.1] tracking-[-0.01em] text-neutral-900" style={{ fontFamily: "Georgia, 'Times New Roman', serif", fontStyle: 'italic', textWrap: 'balance' }}>
-      {t}{optional && <span className="ml-2 align-middle text-[17px] font-normal not-italic text-neutral-400" style={{ fontFamily: 'system-ui, sans-serif' }}>optional</span>}
+    <h1 className="mt-5 text-[38px] leading-[1.02] tracking-[-0.01em] text-neutral-900" style={{ fontFamily: SERIF, textWrap: 'balance' }}>
+      {t}{optional && <span className="ml-2 align-middle text-[12px] font-semibold uppercase tracking-[0.2em] text-neutral-400" style={{ fontFamily: 'system-ui, sans-serif' }}>optional</span>}
     </h1>
   )
 
@@ -667,7 +671,7 @@ export default function SignUpFormCollabCharlotte({ analyticsPath = '/sign-up-co
       type="button"
       onClick={onClick}
       disabled={busy}
-      className="w-full rounded-2xl bg-emerald-600 py-4 text-[15px] font-bold tracking-[-0.01em] text-white shadow-[0_12px_26px_-12px_rgba(5,150,105,0.9)] transition hover:bg-emerald-500 active:scale-[0.99] disabled:opacity-50"
+      className="w-full rounded-full bg-neutral-900 py-4 text-[15px] font-bold tracking-[-0.01em] text-white shadow-[0_12px_26px_-12px_rgba(0,0,0,0.9)] transition hover:bg-neutral-800 active:scale-[0.99] disabled:opacity-50"
       data-cta="v7b-next"
     >
       {busy ? <span className="inline-block h-4 w-4 animate-spin rounded-full border-2 border-white/40 border-t-white align-[-2px]" aria-label="Loading" /> : label}
@@ -689,59 +693,71 @@ export default function SignUpFormCollabCharlotte({ analyticsPath = '/sign-up-co
   // location instead of the number.
   if (step === 'location') {
     return (
-      <div className="mx-auto w-full max-w-md bg-white">
-        {/* Hero — the proof IS the pitch */}
-        <div className="relative h-[56vh] min-h-[420px] max-h-[600px] w-full overflow-hidden bg-black">
+      <div className="mx-auto w-full max-w-md bg-[#f4f1ec] text-neutral-900">
+        <style dangerouslySetInnerHTML={{ __html: slideMotionCss }} />
+        {/* Hero: one photograph, full height, the city as the headline. */}
+        <div className="relative h-[86svh] min-h-[560px] max-h-[780px] w-full overflow-hidden bg-black">
           {HERO_SLIDES.map((src, i) => (
             <NextImage
               key={src}
               src={src}
-              alt={i === 0 ? 'Photo shoot on 35mm film' : ''}
+              alt={i === 0 ? 'Portrait shot on 35mm film' : ''}
               fill
               priority={i === 0}
               sizes="(max-width: 640px) 100vw, 448px"
-              className={`object-cover object-top transition-opacity duration-[1200ms] ease-in-out ${i === heroIndex ? 'opacity-100' : 'opacity-0'}`}
+              className={`object-cover object-[50%_25%] transition-opacity duration-[1400ms] ease-in-out ${i === heroIndex ? 'opacity-100' : 'opacity-0'}`}
             />
           ))}
-          <div className="absolute inset-x-0 top-0 h-24" style={{ background: 'linear-gradient(180deg, rgba(0,0,0,0.5), transparent)' }} />
-          <div className="absolute inset-x-0 bottom-0 h-3/5" style={{ background: 'linear-gradient(180deg, transparent, rgba(0,0,0,0.55) 45%, rgba(0,0,0,0.88))' }} />
-          <div className="absolute left-5 top-4 text-[10px] font-semibold uppercase leading-snug tracking-[0.22em] text-white/85" style={{ fontFamily: 'Georgia, serif' }}>
-            Aidan Torrence<br />
-            <span className="text-white/55">Photography</span>
+          <div className="absolute inset-x-0 top-0 h-28" style={{ background: 'linear-gradient(180deg, rgba(0,0,0,0.45), transparent)' }} />
+          <div className="absolute inset-x-0 bottom-0 h-[55%]" style={{ background: 'linear-gradient(180deg, transparent, rgba(0,0,0,0.5) 40%, rgba(0,0,0,0.85))' }} />
+          <div className="absolute inset-x-0 top-0 flex items-center justify-between px-5 pt-5 text-white">
+            <span className="text-[11px] font-semibold uppercase tracking-[0.28em] text-white/90">Aidan Torrence</span>
+            <a
+              href="https://www.instagram.com/madebyaidan"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => track('handle_clicked', { placement: 'hero' })}
+              className="flex items-center gap-1.5 text-[12px] font-medium text-white/90"
+            >
+              <InstagramIcon className="h-4 w-4" />
+              madebyaidan
+            </a>
           </div>
-          <a
-            href="https://www.instagram.com/madebyaidan"
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={() => track('handle_clicked', { placement: 'hero' })}
-            className="absolute right-5 top-4 flex items-center gap-1.5 text-[12px] font-semibold tracking-wide text-white/90"
-          >
-            <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-              <rect x="2" y="2" width="20" height="20" rx="5" />
-              <circle cx="12" cy="12" r="4.5" />
-              <circle cx="17.3" cy="6.7" r="1.3" fill="currentColor" stroke="none" />
-            </svg>
-            @madebyaidan
-          </a>
-          <div className="absolute inset-x-0 bottom-0 px-5 pb-6">
-            <h1 className="font-display text-[52px] font-bold leading-[1.05] text-white" style={{ fontFamily: "Georgia, 'Times New Roman', serif", fontStyle: 'italic', textShadow: '0 2px 8px rgba(0,0,0,0.85), 0 12px 50px rgba(0,0,0,0.6)' }}>
+          <div className="absolute inset-x-0 bottom-0 px-5 pb-7 text-white">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-white/80">Free photo shoot</p>
+            <h1 className="mt-1 text-[88px] leading-[0.9] tracking-[-0.02em]" style={{ fontFamily: SERIF }}>
               {CITY}
             </h1>
-            <p className="mt-1 text-[15px] font-semibold uppercase tracking-[0.2em] text-white/85" style={{ textShadow: '0 1px 6px rgba(0,0,0,0.8)' }}>
-              Free photo shoot &middot; November
+            <p className="mt-3 max-w-[300px] text-[15px] leading-snug text-white/80">
+              Shot on 35mm film. You keep the edited photos.
             </p>
+            <div className="mt-6 flex items-center justify-between gap-4">
+              <button
+                type="button"
+                onClick={() => { track('hero_cta_clicked'); pickerCardRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' }) }}
+                className="flex items-center gap-2 rounded-full bg-white px-6 py-3.5 text-[14px] font-semibold text-neutral-900 transition active:scale-[0.98]"
+                data-cta="v7b-hero"
+              >
+                Sign up
+                <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth={2.2} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M12 5v14M5 12l7 7 7-7" /></svg>
+              </button>
+              <span className="flex gap-1.5" aria-hidden="true">
+                {HERO_SLIDES.map((_, i) => (
+                  <span key={i} className={`h-[2px] w-5 rounded-full transition-colors duration-500 ${i === heroIndex ? 'bg-white' : 'bg-white/30'}`} />
+                ))}
+              </span>
+            </div>
           </div>
         </div>
 
-        {/* Opening card: the look. One tap starts the flow. */}
-        <div ref={pickerCardRef} className="relative z-10 mx-4 -mt-5 rounded-2xl border border-neutral-200 bg-white p-4 shadow-xl">
-          <h2 className="text-[30px] font-semibold leading-[1.1] tracking-[-0.01em] text-neutral-900" style={{ fontFamily: "Georgia, 'Times New Roman', serif", fontStyle: 'italic', textWrap: 'balance' }}>
+        {/* The look. One tap starts the flow. */}
+        <div ref={pickerCardRef} className="scroll-mt-4 px-5 pb-4 pt-10">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-neutral-500">Step 1</p>
+          <h2 className="mt-1 text-[44px] leading-[1] tracking-[-0.01em]" style={{ fontFamily: SERIF }}>
             Pick a look
           </h2>
-          <p className="mt-2 text-[13px] leading-relaxed text-neutral-500">
-            Shooting in Charlotte this November. Tap one to start &mdash; I&rsquo;ll message you the details.
-          </p>
-          <div className="mt-4 grid grid-cols-2 gap-2.5">
+          <p className="mt-2 text-[14px] leading-relaxed text-neutral-600">Tap one to start. I&rsquo;ll message you the details.</p>
+          <div className="mt-6 grid grid-cols-2 gap-3">
             {VIBES.map(v => {
               const on = vibe === v.key
               return (
@@ -754,89 +770,73 @@ export default function SignUpFormCollabCharlotte({ analyticsPath = '/sign-up-co
                     fieldEngaged('vibe')
                     advance('notes')
                   }}
-                  className={`relative aspect-[4/5] overflow-hidden rounded-2xl border-2 text-left transition active:scale-[0.98] ${
-                    on ? 'border-emerald-600 shadow-[0_0_0_3px_rgba(5,150,105,0.16)]' : 'border-transparent'
-                  }`}
+                  className={`group relative aspect-[3/4] overflow-hidden rounded-[4px] text-left transition active:scale-[0.98] ${on ? 'ring-2 ring-neutral-900 ring-offset-2 ring-offset-[#f4f1ec]' : ''}`}
                   data-cta={`v7b-vibe-${v.key}`}
                 >
                   {v.src ? (
-                    <NextImage src={v.src} alt="" fill sizes="(max-width: 640px) 45vw, 200px" className="object-cover object-top" />
+                    <NextImage src={v.src} alt="" fill sizes="(max-width: 640px) 45vw, 200px" className="object-cover object-top transition duration-700 group-hover:scale-[1.03]" />
                   ) : (
-                    <span className="absolute inset-0 overflow-hidden" style={{ background: 'linear-gradient(145deg, #423e38, #22201b)' }}>
-                      <span className="atf-shimmer absolute inset-y-0 w-1/2" style={{ background: 'linear-gradient(100deg, transparent, rgba(255,255,255,0.14), transparent)' }} />
-                      <span className="absolute inset-0 flex items-center justify-center">
-                        <span className="atf-wobble flex h-11 w-11 items-center justify-center rounded-[14px] border-2 border-white/30 text-[20px] font-bold text-white/75">?</span>
-                      </span>
+                    <span className="absolute inset-0 grid grid-cols-2 grid-rows-2 gap-px bg-[#f4f1ec]">
+                      {VIBES.filter(x => x.src).map(x => (
+                        <span key={x.key} className="relative overflow-hidden"><NextImage src={x.src!} alt="" fill sizes="25vw" className="object-cover object-top" /></span>
+                      ))}
+                      <span className="relative overflow-hidden"><NextImage src={proofImages[0]} alt="" fill sizes="25vw" className="object-cover object-top" /></span>
                     </span>
                   )}
-                  <span className="absolute inset-0" style={{ background: 'linear-gradient(180deg, transparent 50%, rgba(0,0,0,0.72))' }} />
-                  <span className="absolute bottom-2.5 left-3 right-3 text-[13px] font-bold text-white" style={{ textShadow: '0 1px 5px rgba(0,0,0,0.9)' }}>
+                  <span className="absolute inset-0" style={{ background: 'linear-gradient(180deg, transparent 55%, rgba(0,0,0,0.65))' }} />
+                  <span className="absolute bottom-3 left-3 right-3 text-[24px] leading-none text-white" style={{ fontFamily: SERIF }}>
                     {v.label}
                   </span>
-                  {on && (
-                    <span className="absolute right-2 top-2 flex h-5 w-5 items-center justify-center rounded-full bg-emerald-600 text-white">
-                      <CheckIcon className="h-2.5 w-2.5" />
-                    </span>
-                  )}
                 </button>
               )
             })}
           </div>
         </div>
 
-        {/* Below the fold — proof and how it works, for the scrollers */}
-        <div className="px-5 pb-24 pt-8">
-          <div className="space-y-1.5">
-            <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-neutral-400">Recent shoots &middot; shot on film</p>
-            <div className="grid grid-cols-3 gap-1.5">
-              {proofImages.map((src, i) => (
-                <div key={i} className="overflow-hidden rounded-lg aspect-[3/4] bg-neutral-100">
-                  <NextImage src={src} alt="Recent photo shoot" width={200} height={267} sizes="(max-width: 640px) 33vw, 150px" className="w-full h-full object-cover object-top" />
-                </div>
-              ))}
-            </div>
+        {/* Recent work: full-height frames, swipeable. */}
+        <div className="pt-10">
+          <div className="flex items-baseline justify-between px-5">
+            <h3 className="text-[28px] leading-none" style={{ fontFamily: SERIF }}>Recent work</h3>
+            <a href="https://www.instagram.com/madebyaidan" target="_blank" rel="noopener noreferrer" onClick={() => track('handle_clicked', { placement: 'recent_work' })} className="text-[12px] font-medium text-neutral-600 underline decoration-neutral-300 underline-offset-4">@madebyaidan</a>
           </div>
-
-          <div className="mt-8 space-y-2">
-            <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-neutral-400">How it works</p>
-            <ul className="space-y-2">
-              {howItWorks.map((c, i) => (
-                <li key={i} className="flex items-start gap-2.5">
-                  <span className="mt-0.5 flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-emerald-600">
-                    <CheckIcon className="h-2.5 w-2.5" />
-                  </span>
-                  <span className="text-[13px] leading-snug font-medium text-neutral-700">{c}</span>
-                </li>
-              ))}
-            </ul>
-            <p className="pt-2 text-[13px] leading-snug text-neutral-500">
-              <span className="font-semibold text-neutral-700">Why free?</span> I&rsquo;m in Charlotte for November building my portfolio &mdash; you get the photos, I get to shoot. See my work:{' '}
-              <a
-                href="https://www.instagram.com/madebyaidan"
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => track('handle_clicked', { placement: 'how_it_works' })}
-                className="font-semibold text-emerald-600 underline decoration-emerald-300 underline-offset-2"
-              >
-                @madebyaidan
-              </a>
-            </p>
+          <div className="mt-4 flex snap-x snap-mandatory gap-2.5 overflow-x-auto px-5 pb-2 [scrollbar-width:none]">
+            {proofImages.map((src, i) => (
+              <div key={i} className="relative h-[300px] w-[210px] shrink-0 snap-start overflow-hidden rounded-[3px] bg-neutral-200">
+                <NextImage src={src} alt="Portrait shot on 35mm film" fill sizes="210px" className="object-cover object-top" />
+              </div>
+            ))}
           </div>
         </div>
 
-        {/* Sticky CTA — only while the picker is off-screen */}
+        {/* How it works */}
+        <div className="px-5 pb-28 pt-12">
+          <h3 className="text-[28px] leading-none" style={{ fontFamily: SERIF }}>How it works</h3>
+          <ol className="mt-5 divide-y divide-neutral-300/70 border-y border-neutral-300/70">
+            {howItWorks.map((c, i) => (
+              <li key={i} className="flex items-baseline gap-4 py-3.5">
+                <span className="w-6 shrink-0 text-[20px] leading-none text-neutral-400" style={{ fontFamily: SERIF }}>{String(i + 1).padStart(2, '0')}</span>
+                <span className="text-[14px] leading-snug text-neutral-800">{c}</span>
+              </li>
+            ))}
+          </ol>
+          <p className="mt-6 text-[14px] leading-relaxed text-neutral-600">
+            <span className="font-semibold text-neutral-900">Why free?</span> It&rsquo;s a collaboration. I&rsquo;m building my portfolio on film; you get the edited photos to use however you like.
+          </p>
+        </div>
+
+        {/* Sticky CTA, only once the look picker has scrolled away */}
         {showStickyCta && (
-          <div className="fixed inset-x-0 bottom-0 z-20 border-t border-neutral-200 bg-white/95 px-4 py-3 backdrop-blur">
+          <div className="fixed inset-x-0 bottom-0 z-20 px-4 pb-[max(12px,env(safe-area-inset-bottom))] pt-3" style={{ background: 'linear-gradient(180deg, rgba(244,241,236,0), rgba(244,241,236,0.96) 35%)' }}>
             <div className="mx-auto max-w-md">
               <button
                 type="button"
                 onClick={() => {
                   track('sticky_cta_clicked')
-                  pickerCardRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' })
+                  pickerCardRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })
                 }}
-                className="w-full rounded-full bg-emerald-600 py-3.5 text-sm font-bold text-white shadow-lg shadow-emerald-600/25 transition hover:bg-emerald-500"
+                className="w-full rounded-full bg-neutral-900 py-4 text-[14px] font-semibold text-white transition hover:bg-neutral-800"
               >
-                Pick a look
+                Sign up &middot; pick a look
               </button>
             </div>
           </div>
@@ -890,7 +890,7 @@ export default function SignUpFormCollabCharlotte({ analyticsPath = '/sign-up-co
           data-cta={`v7b-channel-${c}`}
           aria-pressed={on}
         >
-          <Icon className={`h-4 w-4 ${on ? (c === 'instagram' ? 'text-[#E1306C]' : 'text-emerald-600') : 'text-neutral-400'}`} />
+          <Icon className={`h-4 w-4 ${on ? (c === 'instagram' ? 'text-[#E1306C]' : 'text-neutral-900') : 'text-neutral-400'}`} />
           {CHANNELS[c].name}
         </button>
       )
@@ -910,7 +910,7 @@ export default function SignUpFormCollabCharlotte({ analyticsPath = '/sign-up-co
           </div>
           {channel === 'instagram' ? (
             <>
-              <div className="flex items-center rounded-2xl border border-neutral-200 bg-[#faf9f6] px-4 transition focus-within:border-emerald-500 focus-within:bg-white focus-within:ring-4 focus-within:ring-emerald-500/10">
+              <div className="flex items-center rounded-2xl border border-neutral-200 bg-[#faf9f6] px-4 transition focus-within:border-neutral-800 focus-within:bg-white focus-within:ring-4 focus-within:ring-neutral-900/10">
                 <span className="pr-1 text-[17px] font-semibold text-neutral-300">@</span>
                 <input
                   ref={phoneRef}
@@ -927,7 +927,7 @@ export default function SignUpFormCollabCharlotte({ analyticsPath = '/sign-up-co
               </div>
               <p className="text-[12px] leading-snug text-neutral-500">
                 Follow{' '}
-                <a href="https://www.instagram.com/madebyaidan" target="_blank" rel="noopener noreferrer" onClick={() => track('handle_clicked', { placement: 'capture' })} className="font-semibold text-emerald-600 underline decoration-emerald-300 underline-offset-2">@madebyaidan</a>
+                <a href="https://www.instagram.com/madebyaidan" target="_blank" rel="noopener noreferrer" onClick={() => track('handle_clicked', { placement: 'capture' })} className="font-semibold text-neutral-900 underline decoration-neutral-400 underline-offset-2">@madebyaidan</a>
                 {' '}so my message doesn&rsquo;t land in requests.
               </p>
             </>
@@ -943,7 +943,7 @@ export default function SignUpFormCollabCharlotte({ analyticsPath = '/sign-up-co
                 value={phone}
                 onChange={e => { fieldEngaged('phone'); setPhone(e.target.value); setError(null) }}
                 onBlur={() => { const digits = phone.replace(/\D/g, ''); if (digits) trackOnce('phone_filled', digits, { digits: digits.length }) }}
-                className="min-w-0 flex-1 rounded-2xl border border-neutral-200 bg-[#faf9f6] px-4 py-3.5 text-base text-neutral-900 placeholder-neutral-400 outline-none transition focus:border-emerald-500 focus:bg-white focus:ring-4 focus:ring-emerald-500/10"
+                className="min-w-0 flex-1 rounded-2xl border border-neutral-200 bg-[#faf9f6] px-4 py-3.5 text-base text-neutral-900 placeholder-neutral-400 outline-none transition focus:border-neutral-800 focus:bg-white focus:ring-4 focus:ring-neutral-900/10"
                 placeholder="Phone number, e.g. 704 555 0123"
               />
             </div>
@@ -953,7 +953,7 @@ export default function SignUpFormCollabCharlotte({ analyticsPath = '/sign-up-co
           <input type="text" name="company" className="hidden" tabIndex={-1} autoComplete="off" />
           <button
             type="submit"
-            className="w-full rounded-2xl bg-emerald-600 py-4 text-[15px] font-bold tracking-[-0.01em] text-white shadow-[0_12px_26px_-12px_rgba(5,150,105,0.9)] transition hover:bg-emerald-500 active:scale-[0.99]"
+            className="w-full rounded-full bg-neutral-900 py-4 text-[15px] font-bold tracking-[-0.01em] text-white shadow-[0_12px_26px_-12px_rgba(0,0,0,0.9)] transition hover:bg-neutral-800 active:scale-[0.99]"
             data-cta="v7b-submit"
           >
             Next
@@ -970,7 +970,7 @@ export default function SignUpFormCollabCharlotte({ analyticsPath = '/sign-up-co
         {srcs.map((src, i) => (
           <div key={i} className="relative aspect-square overflow-hidden bg-black">
             <NextImage src={src} alt="" width={200} height={200} sizes="(max-width: 640px) 25vw, 100px" className={`h-full w-full object-cover ${good ? '' : 'opacity-[0.62] grayscale'}`} />
-            <span className={`absolute bottom-0.5 right-0.5 flex h-4 w-4 items-center justify-center rounded-full ${good ? 'bg-emerald-500' : 'bg-red-500'} text-white`}>
+            <span className={`absolute bottom-0.5 right-0.5 flex h-4 w-4 items-center justify-center rounded-full ${good ? 'bg-neutral-800' : 'bg-red-500'} text-white`}>
               {good ? <CheckIcon className="h-2.5 w-2.5" />
                 : <svg viewBox="0 0 24 24" className="h-2.5 w-2.5" fill="none" stroke="currentColor" strokeWidth={4} strokeLinecap="round" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12" /></svg>}
             </span>
@@ -980,8 +980,8 @@ export default function SignUpFormCollabCharlotte({ analyticsPath = '/sign-up-co
     )
     const sheetLabel = (good: boolean, text: string, note: string) => (
       <p className="flex flex-wrap items-baseline gap-x-1.5 text-[9px] font-bold uppercase tracking-[0.2em]">
-        <span className={`inline-flex items-center gap-1.5 ${good ? 'text-emerald-600' : 'text-red-500'}`}>
-          <span className={`h-1 w-1 rounded-full ${good ? 'bg-emerald-500' : 'bg-red-500'}`} />
+        <span className={`inline-flex items-center gap-1.5 ${good ? 'text-neutral-900' : 'text-red-500'}`}>
+          <span className={`h-1 w-1 rounded-full ${good ? 'bg-neutral-800' : 'bg-red-500'}`} />
           {text}
         </span>
         <span className="font-semibold tracking-[0.12em] text-neutral-400">{note}</span>
@@ -1020,13 +1020,13 @@ export default function SignUpFormCollabCharlotte({ analyticsPath = '/sign-up-co
           type="button"
           onClick={() => fileRef.current?.click()}
           disabled={processingPhotos}
-          className="group mt-5 flex w-full items-center justify-center gap-2.5 rounded-2xl border border-dashed border-emerald-500/50 bg-emerald-50/70 py-5 text-emerald-700 transition hover:border-emerald-500 hover:bg-emerald-50 disabled:opacity-50"
+          className="group mt-5 flex w-full items-center justify-center gap-2.5 rounded-2xl border border-dashed border-neutral-400 bg-neutral-100 py-5 text-neutral-900 transition hover:border-neutral-800 hover:bg-neutral-100 disabled:opacity-50"
         >
           {processingPhotos ? (
-            <span className="inline-block h-5 w-5 animate-spin rounded-full border-2 border-emerald-200 border-t-emerald-600" aria-label="Processing" />
+            <span className="inline-block h-5 w-5 animate-spin rounded-full border-2 border-neutral-300 border-t-neutral-900" aria-label="Processing" />
           ) : (
             <>
-              <span className="flex h-8 w-8 items-center justify-center rounded-full bg-emerald-600 text-white shadow-[0_8px_16px_-8px_rgba(5,150,105,0.9)] transition group-hover:bg-emerald-500">
+              <span className="flex h-8 w-8 items-center justify-center rounded-full bg-neutral-900 text-white shadow-[0_8px_16px_-8px_rgba(0,0,0,0.9)] transition group-hover:bg-neutral-800">
                 <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                   <path d="M12 16V4m0 0L7 9m5-5l5 5" /><path d="M4 17v2a1 1 0 001 1h14a1 1 0 001-1v-2" />
                 </svg>
@@ -1059,7 +1059,7 @@ export default function SignUpFormCollabCharlotte({ analyticsPath = '/sign-up-co
       <>
         {kicker(slideNo.instagram, BACK_TO.instagram)}
         {slideTitle('Your Instagram', true)}
-        <div className="mt-5 flex items-center rounded-2xl border border-neutral-200 bg-[#faf9f6] px-4 transition focus-within:border-emerald-500 focus-within:bg-white focus-within:ring-4 focus-within:ring-emerald-500/10">
+        <div className="mt-5 flex items-center rounded-2xl border border-neutral-200 bg-[#faf9f6] px-4 transition focus-within:border-neutral-800 focus-within:bg-white focus-within:ring-4 focus-within:ring-neutral-900/10">
           <span className="pr-1 text-[17px] font-semibold text-neutral-300">@</span>
           <input
             value={instagram}
@@ -1083,7 +1083,7 @@ export default function SignUpFormCollabCharlotte({ analyticsPath = '/sign-up-co
   // ── Done ──
   // Lands on the same paper as every other frame rather than its own page.
   return (
-    <div className="min-h-screen bg-[#f4f2ee]">
+    <div className="min-h-screen bg-[#f4f1ec]">
       <style dangerouslySetInnerHTML={{ __html: slideMotionCss }} />
       <div className="mx-auto max-w-md px-4 pb-10 pt-7">
         {/* Sits where Back sits on every other frame, mirrored to the right —
@@ -1101,30 +1101,22 @@ export default function SignUpFormCollabCharlotte({ analyticsPath = '/sign-up-co
             </svg>
           </button>
         </div>
-        <div className="atf-card overflow-hidden rounded-[26px] border border-black/[0.06] bg-white shadow-[0_24px_60px_-34px_rgba(23,21,15,0.55)]">
+        <div className="atf-card overflow-hidden rounded-[6px] border border-black/[0.06] bg-white shadow-[0_24px_60px_-34px_rgba(23,21,15,0.55)]">
           <div className="relative h-48">
             <NextImage src={heroImage} alt="" fill priority sizes="(max-width: 640px) 100vw, 448px" className="object-cover object-top" style={{ filter: 'brightness(0.6) saturate(1.15)' }} />
             <div className="absolute inset-0" style={{ background: 'linear-gradient(180deg, transparent 30%, rgba(0,0,0,0.8) 100%)' }} />
-            <p className="absolute bottom-4 left-5 right-5 text-2xl font-semibold text-white" style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic' }}>You&apos;re in.</p>
+            <p className="absolute bottom-4 left-5 right-5 text-[44px] leading-none text-white" style={{ fontFamily: SERIF }}>You&apos;re in.</p>
           </div>
           <div className="space-y-5 px-6 pb-6 pt-4">
             <p className="text-sm text-neutral-500">I&apos;ll message you {CHANNELS[channel].doneVia} within 24 hours to plan your Charlotte shoot. Let&apos;s make something great together.</p>
-            <div className="space-y-3">
-              <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-neutral-400">What to expect</p>
-              <div className="space-y-2.5">
-                {[
-                  { icon: '\u{1F4F8}', text: 'Edited photos you can use however you want' },
-                  { icon: '\u{1F3AF}', text: 'Full creative direction from me' },
-                  { icon: '\u{1F91D}', text: 'A real collaboration, not a transaction' },
-                  { icon: '\u{1F4AC}', text: 'We plan the concept together' },
-                ].map((item, i) => (
-                  <div key={i} className="flex items-center gap-3">
-                    <span className="text-base">{item.icon}</span>
-                    <span className="text-sm text-neutral-600">{item.text}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
+            <ol className="divide-y divide-neutral-200 border-y border-neutral-200">
+              {['I message you to plan the concept and location.', 'We shoot for one to two hours on 35mm film.', 'You get the edited photos to keep.'].map((t, i) => (
+                <li key={i} className="flex items-baseline gap-4 py-3">
+                  <span className="w-6 shrink-0 text-[18px] leading-none text-neutral-400" style={{ fontFamily: SERIF }}>{String(i + 1).padStart(2, '0')}</span>
+                  <span className="text-[14px] text-neutral-700">{t}</span>
+                </li>
+              ))}
+            </ol>
           </div>
         </div>
         {ribbon(5)}
