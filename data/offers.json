@@ -52561,6 +52561,209 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-28",
+    "slug": "bee-ready",
+    "name": "Bee Ready",
+    "need": "My child has a school or regional spelling bee coming up and needs to practise their word list out loud, with the words read to them, without me reading every word.",
+    "headline": "Spelling bee coming up? Load your child's official word list and let them practise out loud like the real thing: hear the word, ask for the definition or origin, spell it aloud.",
+    "buyer": "Parents of children entering school, district or regional spelling bees.",
+    "bullets": [
+      "Load the word list your child's bee gives out; each word is read aloud, the way a pronouncer would.",
+      "Practise asking for the definition, a sentence or the language of origin, just like on stage.",
+      "Missed words come back more often, with a countdown to bee day."
+    ],
+    "price": "$3.99/month",
+    "priceUsd": 4,
+    "priceNote": "Cancel after bee season. Set up by a parent.",
+    "reasonPrompt": "When is the bee, and how is practice going so far?",
+    "faq": [
+      {
+        "q": "Does it include the official word lists?",
+        "a": "No. Bees publish their own lists, so you load the list your child's school or bee gives you. Bee Ready helps them practise it out loud."
+      },
+      {
+        "q": "Is it linked to a spelling bee organisation?",
+        "a": "No. Bee Ready is independent and not affiliated with any spelling bee, school or publisher."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-28",
+      "summary": "Children and parents describe a spelling bee coming up, practising for school and citywide bees, a daughter entering a bee who wanted a good app to practise with, and wishing an app had the actual study list.",
+      "wtp": "Scholar: Spelling Bee Quiz has 13K App Store ratings with Plus at $9.99 a year; Spell It: Spelling Bee Games has 3.9K ratings at $3.99 a month or $19.99 a year; Spelling Bee: English Words has 1.9K ratings with a one-month plan at $19.99.",
+      "signals": [
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1308540467/sortby=mosthelpful/json",
+          "who": "dino nuggeeee (App Store review of Scholar: Spelling Bee Quiz)",
+          "date": "2020-12-15",
+          "quote": "I personally have a spelling bee coming up and this is my main source of studying",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1308540467/sortby=mostrecent/json",
+          "who": "Lexismcneil (App Store review of Scholar: Spelling Bee Quiz)",
+          "date": "2025-12-07",
+          "quote": "I have a spelling bee on dec.11",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=2/id=1308540467/sortby=mosthelpful/json",
+          "who": "it just gets better (App Store review of Scholar: Spelling Bee Quiz)",
+          "date": "2026-03-29",
+          "quote": "If it was the study list for scripps",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=2/id=1466630827/sortby=mosthelpful/json",
+          "who": "SweetRasputin (App Store review of Spelling Bee: English Words)",
+          "date": "2021-01-14",
+          "quote": "My daughter is entering a spelling bee and she wanted a good app to practice",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1348293177/sortby=mosthelpful/json",
+          "who": "Foxybear21 (App Store review of Spell It)",
+          "date": "2021-12-18",
+          "quote": "in preparation of my citywide spelling bee",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1348293177/sortby=mosthelpful/json",
+          "who": "Adrianistoogood (App Store review of Spell It)",
+          "date": "2026-01-13",
+          "quote": "I am participating in my school spelling bee",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1308540467",
+          "who": "Scholar: Spelling Bee Quiz (App Store)",
+          "date": "2026-10-28",
+          "quote": "13K Ratings; Scholar Plus Yearly $9.99",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1348293177",
+          "who": "Spell It: Spelling Bee Games (App Store)",
+          "date": "2026-10-28",
+          "quote": "3.9K Ratings; Pro Monthly $3.99; Annual $19.99",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1466630827",
+          "who": "Spelling Bee: English Words (App Store)",
+          "date": "2026-10-28",
+          "quote": "1.9K Ratings; One Month $19.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Spelling bee apps (Scholar, Spell It), printed study lists, parents reading words aloud.",
+      "risks": "Close to live Friday Words (weekly school spellings), so it must stay about bee competitions. Official lists belong to the bees, so users load their own. Seasonal demand. Most reviewers are children, so the buyer is the parent. Cheap competitors."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-28",
+    "slug": "sermon-keep",
+    "name": "Sermon Keep",
+    "need": "I take notes in church, or forget my notebook, and a few days later I can't remember what the sermon said; I want my sermon notes kept with the verses so I can come back to them during the week.",
+    "headline": "Forget Sunday's sermon by Wednesday? Keep your notes and verses together in one place, with a short midweek look back at the main point.",
+    "buyer": "Churchgoing adults and small-group members who want to remember and come back to Sunday's sermon.",
+    "bullets": [
+      "A simple sermon page each week: the main point, the verses, and one thing to put into practice.",
+      "Verses added straight into your notes, and every note tagged by topic and series so you can find it again.",
+      "A short midweek reminder of the main point and your own takeaway."
+    ],
+    "price": "$3.99/month",
+    "priceUsd": 4,
+    "priceNote": "One flat price, no weekly plans.",
+    "reasonPrompt": "What makes it hard to remember the sermon during the week?",
+    "faq": [
+      {
+        "q": "Does it record the sermon?",
+        "a": "No, Sermon Keep is for your own notes. Many churches post recordings online; if you want to record a service yourself, ask your church first."
+      },
+      {
+        "q": "Is it linked to a church, denomination or Bible app?",
+        "a": "No. Sermon Keep is independent and not affiliated with any church, denomination or Bible publisher."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-28",
+      "summary": "Churchgoers describe forgetting what was said in a sermon after a few days, struggling to take notes during the service, forgetting their notebook for sermon notes, finding it hard to focus during sermons, and looking for an app to tag topics and add scripture to notes.",
+      "wtp": "Bible Note: Sermon Notes has 24K App Store ratings with Pro at $69.99 a year; Sermon Scribe has 1.6K ratings at $9.99 a month or $69.99 a year; Spirit Notes has 610 ratings at $4.99 a month or $49.99 a year.",
+      "signals": [
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=6740540936/sortby=mosthelpful/json",
+          "who": "TW_23 (App Store review of Sermon Scribe)",
+          "date": "2025-03-10",
+          "quote": "often forgets what was spoken in a sermon after a few days",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=6740540936/sortby=mosthelpful/json",
+          "who": "RECE20 (App Store review of Sermon Scribe)",
+          "date": "2025-12-31",
+          "quote": "I struggle with taking notes during service",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=6740540936/sortby=mostrecent/json",
+          "who": "Swood2good (App Store review of Sermon Scribe)",
+          "date": "2025-09-26",
+          "quote": "forgetting my notebook for sermon notes",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1531045060/sortby=mosthelpful/json",
+          "who": "gajeelsiron (App Store review of Spirit Notes)",
+          "date": "2025-09-07",
+          "quote": "so hard to focus during sermons",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1531045060/sortby=mosthelpful/json",
+          "who": "Knansbbshdbjs (App Store review of Spirit Notes)",
+          "date": "2025-08-05",
+          "quote": "add scripture right into my notes",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id6743159952",
+          "who": "Bible Note: Sermon Notes (App Store)",
+          "date": "2026-10-28",
+          "quote": "24K Ratings; Pro 1 year $69.99",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id6740540936",
+          "who": "Sermon Scribe (App Store)",
+          "date": "2026-10-28",
+          "quote": "1.6K Ratings; Plus Monthly $9.99; Annual $69.99",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1531045060",
+          "who": "Spirit Notes (App Store)",
+          "date": "2026-10-28",
+          "quote": "610 Ratings; Monthly Pro $4.99; Annual $49.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Sermon note apps (Bible Note, Sermon Scribe, Spirit Notes), Bible apps with notes, paper journals.",
+      "risks": "Crowded market of AI sermon recorders; must stay a faith-practice notes tool, not a lecture recorder; next to live Verse Keep and Pick Up Plan. Evidence is all App Store reviews."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

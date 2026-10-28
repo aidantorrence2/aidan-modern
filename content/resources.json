@@ -27728,5 +27728,153 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "study-for-a-spelling-bee",
+  "offer": "bee-ready",
+  "title": "How to help your child study for a school spelling bee",
+  "description": "A simple plan for spelling bee practice at home, from the word list to bee day.",
+  "intro": "A school spelling bee is a great challenge. Steady practice out loud, a little every day, works better than long sessions the night before.",
+  "sections": [
+   {
+    "h": "Start with the right list",
+    "list": [
+     "Ask the school or bee organiser which word list the bee uses.",
+     "Split it into small daily chunks, such as 15 to 25 words."
+    ]
+   },
+   {
+    "h": "Practise the way the bee works",
+    "list": [
+     "Read each word aloud and have your child say it back before spelling it.",
+     "Have them spell out loud, not just on paper.",
+     "Let them ask for a definition or a sentence, as they can in many bees."
+    ]
+   },
+   {
+    "h": "Focus on the tricky words",
+    "list": [
+     "Keep a pile of missed words and go over them every day.",
+     "Look for patterns: silent letters, double letters, word origins."
+    ]
+   },
+   {
+    "h": "Before bee day",
+    "list": [
+     "Hold a mock bee at home, standing up, with a 'pronouncer'.",
+     "Remind them to take their time and ask questions.",
+     "Keep it fun: getting there is already an achievement."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "what-to-ask-in-a-spelling-bee",
+  "offer": "bee-ready",
+  "title": "What you can ask the pronouncer in a spelling bee",
+  "description": "The questions spellers can usually ask on stage, and how to use them to work out a word.",
+  "intro": "Many spelling bees let spellers ask the pronouncer questions before spelling. Rules vary between bees, so check your bee's rules, but these are common.",
+  "sections": [
+   {
+    "h": "Common questions",
+    "list": [
+     "Can you say the word again, please?",
+     "What's the definition?",
+     "Can you use it in a sentence?",
+     "What part of speech is it?",
+     "What's the language of origin?",
+     "Are there other pronunciations?"
+    ]
+   },
+   {
+    "h": "How each one helps",
+    "list": [
+     "A sentence or definition helps you tell apart words that sound the same, like 'pair' and 'pear'.",
+     "The language of origin hints at spelling patterns; for example, words from Greek often use 'ph' for an 'f' sound."
+    ]
+   },
+   {
+    "h": "Good habits on stage",
+    "list": [
+     "Say the word before and after you spell it, if your bee allows.",
+     "Spell slowly and clearly.",
+     "In many bees you can start over, but you can't change letters you've already said, so check the rules."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "how-to-take-sermon-notes",
+  "offer": "sermon-keep",
+  "title": "How to take sermon notes you'll actually look at again",
+  "description": "A simple way to take sermon notes that are short, useful and easy to come back to during the week.",
+  "intro": "Sermon notes don't need to be a transcript. A few clear lines are easier to write during the service and easier to come back to.",
+  "sections": [
+   {
+    "h": "Before the service",
+    "list": [
+     "Write the date, the speaker and the series or title.",
+     "Look up the main passage if it's shared beforehand."
+    ]
+   },
+   {
+    "h": "During the sermon",
+    "list": [
+     "Write the main point in one sentence.",
+     "Note the verses mentioned.",
+     "Capture one or two lines that stood out to you.",
+     "Don't try to write everything; listening comes first."
+    ]
+   },
+   {
+    "h": "Afterwards",
+    "list": [
+     "Add one thing you want to put into practice this week.",
+     "Note any questions to bring to your small group."
+    ]
+   },
+   {
+    "h": "Keep them together",
+    "p": [
+     "Keep all your sermon notes in one place, by date or topic, so you can find a series or theme again later."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "remember-the-sermon-all-week",
+  "offer": "sermon-keep",
+  "title": "How to remember Sunday's sermon all week",
+  "description": "Simple habits that help you keep the main point of a sermon in mind from Sunday to Saturday.",
+  "intro": "It's normal to forget most of a talk within a few days. A few small habits help the main point stay with you.",
+  "sections": [
+   {
+    "h": "Sum it up on Sunday",
+    "p": [
+     "Before the day ends, write the main point in one sentence and the one thing you want to do about it."
+    ]
+   },
+   {
+    "h": "Come back to it midweek",
+    "list": [
+     "Reread your notes on Wednesday.",
+     "Read the main passage again slowly.",
+     "Ask yourself whether you've done the one thing you wrote down."
+    ]
+   },
+   {
+    "h": "Talk about it",
+    "list": [
+     "Share the main point with a friend or family member.",
+     "Bring it to your small group or Bible study."
+    ]
+   },
+   {
+    "h": "Listen again",
+    "p": [
+     "Many churches post sermons online. Listening again, or reading the passage, helps it sink in."
+    ]
+   }
+  ]
  }
 ]
