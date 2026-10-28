@@ -23,6 +23,6 @@ CTA **Sign up**, URL `aidantorrence.com/sign-up-collab`, Tracking URL parameters
 `utm_source=ig&utm_medium=paid&utm_campaign=charlotte-website` (lib/track.ts stores utm_* with the sign-up).
 Pixel: Aidan modern pixel 1921768771718409. Format: carousel only. Enhancements all off except Relevant comments.
 
-Published with the **campaign OFF** — turning it on is the spend decision (approval card).
+Published with the campaign OFF, then turned ON 28 Oct 2026 02:01 UTC after Aidan approved the spend card (`spend:turn-on-meta-campaign-charlotte-website--202610280155`).
 
 Rebuild the cards: `node render-v6.mjs --photos=~/charlotte-video-ads/work/src2 --vision=~/charlotte-video-ads/work/vision2 --out=renders-v6-website --only=h01 --cta=signup`
