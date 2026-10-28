@@ -52218,6 +52218,83 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-28",
+    "slug": "greek-out-loud",
+    "name": "Greek Out Loud",
+    "need": "I grew up hearing Greek and understand a lot of it, but I can't speak it with my family, so I answer in English.",
+    "headline": "Understand Greek but answer your family in English? Practise speaking out loud for the moments that matter: calls with yiayia and pappou, name days and the dinner table.",
+    "buyer": "Adults (18+) who grew up around Greek, understand much of it, and want to speak it with family.",
+    "bullets": [
+      "Speak-it-back practice built around real family moments: phone calls, name days, family meals.",
+      "A family word list you build from the words you already know, with Greeklish-to-Greek spelling help.",
+      "A two-minute warm-up before a call, so the first sentence comes out in Greek."
+    ],
+    "price": "$5.99/month",
+    "priceUsd": 6,
+    "priceNote": "Or $39 a year. For adults 18+.",
+    "reasonPrompt": "Who in your family would you most like to speak Greek with, and what stops you now?",
+    "faq": [
+      {
+        "q": "Is this a full Greek course?",
+        "a": "No. Greek Out Loud is for people who already understand some Greek and want to get speaking. If you're starting from zero, a beginner course or a tutor is the better first step."
+      },
+      {
+        "q": "Is it linked to a Greek school, church or language company?",
+        "a": "No. Greek Out Loud is independent and not affiliated with any school, church, app or tutoring company."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-28",
+      "summary": "Greek diaspora adults describe understanding much of the language but struggling to speak it, getting through conversations with older relatives in broken Greeklish, wanting to understand family conversations, and being embarrassed by how little they remembered.",
+      "wtp": "Greek by Nemo has 3.5K App Store ratings and sells a Greek Foundation pack for $14.99; Kate Kallinicos enrolled in weekly adult Greek classes in her late 20s.",
+      "signals": [
+        {
+          "url": "https://cyathens.org/blog/home-and-away-the-greek-american-student-experience-at-cya/",
+          "who": "Soussana Kimbouris (CYA blog)",
+          "date": "2024-12-10",
+          "quote": "I was able to understand a lot of the language but struggled with speaking it",
+          "seen": "opened"
+        },
+        {
+          "url": "https://greekherald.com.au/news/we-went-to-greek-school-once-now-a-new-generation-is-choosing-to-go-back/",
+          "who": "Stamatina Notaras (Greek Herald)",
+          "date": "2026-02-09",
+          "quote": "relying on nothing but hand gestures and my very best broken Greeklish",
+          "seen": "opened"
+        },
+        {
+          "url": "https://greekherald.com.au/news/we-went-to-greek-school-once-now-a-new-generation-is-choosing-to-go-back/",
+          "who": "Kate Kallinicos (quoted in Greek Herald)",
+          "date": "2026-02-09",
+          "quote": "I thought it would be nice to better understand these conversations",
+          "seen": "opened"
+        },
+        {
+          "url": "https://admissions.tufts.edu/blogs/jumbo-talk/post/in-defense-of-speaking-greek/",
+          "who": "Tufts admissions blog author",
+          "date": "undated",
+          "quote": "was embarrassed by how little I remembered",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/greek-by-nemo/id635604239",
+          "who": "Greek by Nemo (App Store)",
+          "date": "2026-10-28",
+          "quote": "3.5K Ratings; Nemo Greek Foundation pack $14.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Greek apps (Nemo, GreekPod101), tutoring marketplaces, Greek school adult classes at churches.",
+      "risks": "Evidence is articles and blogs, not forums; the Tufts author is unnamed and the page undated; nobody wrote that they'd pay; app money is modest."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
