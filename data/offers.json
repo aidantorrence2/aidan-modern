@@ -53814,6 +53814,104 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-28",
+    "slug": "hours-guide",
+    "name": "Hours Guide",
+    "need": "I want to pray the Liturgy of the Hours, but the breviary's ribbons, page-turning and feast-day rules confuse me, so I can't work out what to pray or where to turn.",
+    "headline": "Want to pray the Liturgy of the Hours but lost in the ribbons and page-flipping? See exactly where to turn in your own book today, and learn the structure step by step.",
+    "buyer": "Catholics and other Christians who own a breviary such as Christian Prayer, or want to start praying the Hours, and find the book confusing.",
+    "bullets": [
+      "Today's ribbon-and-page guide for your own printed book: which sections to mark and in what order.",
+      "A beginner course on how each hour fits together, starting with Morning and Evening Prayer.",
+      "Feast days and seasons explained in plain words, plus a gentle way to keep the habit."
+    ],
+    "price": "$3.99/month",
+    "priceUsd": 4,
+    "priceNote": "Or $24 a year.",
+    "reasonPrompt": "Which book do you use, and where do you get stuck?",
+    "faq": [
+      {
+        "q": "Does it include the prayer texts?",
+        "a": "No. Hours Guide points you to the right pages in your own book rather than reprinting the texts. Free apps and websites also provide the full texts if you prefer to read on screen."
+      },
+      {
+        "q": "Is it an official Church resource?",
+        "a": "No. Hours Guide is independent and not affiliated with any diocese, publisher or religious order. Your parish or a spiritual director can also help you get started."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-28",
+      "summary": "People describe not being able to figure out where to put the ribbons or when to turn pages, being intimidated by the ribbons and the back-and-forth of pages, being intimidated by the instructions especially on feast days, struggling to get the pages right for Morning and Evening Prayer, and finding it confusing and hard to do on their own.",
+      "wtp": "Universalis has 9.7K App Store ratings and sells All Hours access for $2.99 or $29.99.",
+      "signals": [
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=2/id=914635909/sortby=mosthelpful/json",
+          "who": "HSH 4 main (App Store review)",
+          "date": "2024-04-16",
+          "quote": "where to put the ribbons and when to turn to a particular page",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=914635909/sortby=mosthelpful/json",
+          "who": "fanniebum (App Store review)",
+          "date": "2025-01-30",
+          "quote": "intimidated and confused by the ribbons and the back and forth of pages",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=914635909/sortby=mosthelpful/json",
+          "who": "Allie G 72 (App Store review)",
+          "date": "2023-11-21",
+          "quote": "intimidated by the instructions and proper use, especially on feast days",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=914635909/sortby=mosthelpful/json",
+          "who": "Wowo61 (App Store review)",
+          "date": "2023-05-01",
+          "quote": "had trouble figuring out the book Christian Prayer",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=2/id=914635909/sortby=mosthelpful/json",
+          "who": "efb123456 (App Store review)",
+          "date": "2023-05-21",
+          "quote": "struggling with getting the pages correct for morning and evening prayers",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=914635909/sortby=mosthelpful/json",
+          "who": "JBWritew (App Store review)",
+          "date": "2020-05-12",
+          "quote": "confusing and hard to do on your own",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=284942719/sortby=mosthelpful/json",
+          "who": "outstanding apps (App Store review of Universalis)",
+          "date": "2023-03-25",
+          "quote": "I tried to learn how to do it with all the ribbons in a print version",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/universalis/id284942719",
+          "who": "Universalis (App Store)",
+          "date": "2026-10-28",
+          "quote": "9.7K Ratings; All Hours $2.99 and $29.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Universalis, free Divine Office and breviary apps, printed guides and ordos, parish groups.",
+      "risks": "Strong free apps already give the texts in order, so the edge is guiding people through their own printed book. Prayer texts are copyrighted, so it should point to pages, not reprint them. Calendars differ by country. Next to live Prayer Keep (daily prayers), which is a different need. Evidence is all App Store reviews."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

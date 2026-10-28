@@ -28667,5 +28667,79 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "liturgy-of-the-hours-for-beginners",
+  "offer": "hours-guide",
+  "title": "Liturgy of the Hours for beginners: where to start",
+  "description": "A simple introduction to the Liturgy of the Hours: what the hours are, which to pray first, and how to get started.",
+  "intro": "The Liturgy of the Hours, also called the Divine Office, is the Church's daily prayer of psalms, readings and prayers at set times. It can look complicated at first, but you don't have to do it all at once.",
+  "sections": [
+   {
+    "h": "The hours",
+    "list": [
+     "Morning Prayer (Lauds) and Evening Prayer (Vespers): the two main hours.",
+     "Night Prayer (Compline): short, before bed.",
+     "Daytime Prayer: a short hour at midmorning, midday or midafternoon.",
+     "Office of Readings: longer readings, at any time of day."
+    ]
+   },
+   {
+    "h": "Start small",
+    "list": [
+     "Begin with just Morning or Evening Prayer, or Night Prayer, which is short and changes little.",
+     "Add another hour once the first feels familiar."
+    ]
+   },
+   {
+    "h": "Choose your format",
+    "list": [
+     "A printed one-volume book, such as Christian Prayer, covers the main hours.",
+     "The full set comes in four volumes.",
+     "Apps and websites lay out each day's prayers in order, which many beginners find easiest."
+    ]
+   },
+   {
+    "h": "Get help",
+    "p": [
+     "Ask at your parish; some have groups that pray the Hours together, and praying with others is a great way to learn."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "how-morning-prayer-is-structured",
+  "offer": "hours-guide",
+  "title": "How Morning and Evening Prayer fit together",
+  "description": "The basic order of Morning and Evening Prayer in the Liturgy of the Hours, and why you flip between sections of the book.",
+  "intro": "Once you know the shape of an hour, the page-flipping makes more sense. Morning and Evening Prayer follow a similar pattern.",
+  "sections": [
+   {
+    "h": "The usual order",
+    "list": [
+     "Opening verse, and a hymn.",
+     "Psalms and a canticle, each with an antiphon.",
+     "A short reading and a response.",
+     "The Gospel canticle: the Canticle of Zechariah in the morning, the Canticle of Mary in the evening.",
+     "Intercessions, the Lord's Prayer, and a concluding prayer."
+    ]
+   },
+   {
+    "h": "Why you turn pages",
+    "list": [
+     "The psalms usually come from a four-week cycle called the Psalter.",
+     "Other parts can come from the section for the current season, or for a saint's day.",
+     "On important feasts, more of the hour comes from that feast's own pages."
+    ]
+   },
+   {
+    "h": "Making it easier",
+    "list": [
+     "Use your book's ribbons to mark each section you'll need for the day.",
+     "Check a liturgical calendar to see what kind of day it is.",
+     "If you get lost, it's fine to simply pray the psalms of the day; you'll pick up the rest with practice."
+    ]
+   }
+  ]
  }
 ]
