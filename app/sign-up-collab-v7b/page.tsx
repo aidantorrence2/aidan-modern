@@ -2,7 +2,8 @@ import SignUpFormCollabCharlotte from '@/components/SignUpFormCollabCharlotte'
 
 export const metadata = {
   title: 'Free Collab Photo Shoot',
-  description: 'Sign up for a free collab photo shoot on 35mm film. You keep the edited photos.',
+  description:
+    'Sign up for a free collab photo shoot — you keep the edited photos. I will message you with the details.',
   robots: { index: false },
 }
 
