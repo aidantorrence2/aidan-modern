@@ -96,9 +96,9 @@ type VibeKey = 'street' | 'nature' | 'indoor' | 'any'
 // Each look is a small moodboard of editorial references from the picker
 // library; "No preference" is deliberately blank.
 const VIBES: { key: VibeKey; label: string; board: string[] }[] = [
-  { key: 'street', label: 'Street', board: ['/images/pinterest/094411fd51ec96041c435e57ae32df13.jpg', '/images/pinterest/73d5f5ce90169f6229d35b2c99aa3f26.jpg', '/images/pinterest/aecdc022fc1f339c2248e6d3c13186f8.jpg', '/images/pinterest/d82189e6a0c98dd303d25eea208df52f.jpg'] },
-  { key: 'nature', label: 'Nature', board: ['/images/pinterest/0b982626ec7105957d5552924e3696d7.jpg', '/images/pinterest/24210711b4260f21946c0951d4916f08.jpg', '/images/pinterest/614615a356ac9b97532e024e84dcbd46.jpg', '/images/pinterest/8e7b891866e37079a616f6e0be91d930.jpg'] },
-  { key: 'indoor', label: 'Indoor', board: ['/images/pinterest/517b708768144f5d53a57d4ed2a9822a.jpg', '/images/pinterest/574ce8aed35cced572a0c56283224671.jpg', '/images/pinterest/6d035c1d07f1713fcf828dbac93f758e.jpg', '/images/pinterest/c8c1314ff02665a318439c9372d7b909.jpg'] },
+  { key: 'street', label: 'Street', board: ['/images/pinterest/69bb96c034c12146decfa85a0ce55316.jpg', '/images/pinterest/7c00515e28ca183d63ecc24e55be119e.jpg', '/images/pinterest/9a6780eb667fe440ae6f2a15d2dc2496.jpg', '/images/pinterest/ccc14f116eb8ca90fc4464786efc6f1d.jpg'] },
+  { key: 'nature', label: 'Nature', board: ['/images/pinterest/24210711b4260f21946c0951d4916f08.jpg', '/images/pinterest/99a3e5dccb2285f0128a9ccac5e4c6fd.jpg', '/images/pinterest/d40856ff2db31b0a67f57e9aaaff9975.jpg', '/images/pinterest/8e7b891866e37079a616f6e0be91d930.jpg'] },
+  { key: 'indoor', label: 'Indoor', board: ['/images/pinterest/0abbec603ab8b5d733961ff67a0a782a.jpg', '/images/pinterest/136d123eddd4961d1842f6990f529b7d.jpg', '/images/pinterest/517b708768144f5d53a57d4ed2a9822a.jpg', '/images/pinterest/16e3fdc791b8418141c5d51e527fb695.jpg'] },
   { key: 'any', label: 'No preference', board: [] },
 ]
 
