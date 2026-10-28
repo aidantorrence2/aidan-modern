@@ -25,9 +25,16 @@
 <div class="meta"><span id="desc"></span><a id="open" target="_blank" rel="noreferrer">open in new tab</a><label><input type="checkbox" id="phone" checked> phone width</label><span id="status"></span></div>
 <main id="main" class="phone"><iframe id="frame" title="sign-up-collab form version"></iframe></main>
 <script>
-// Pre-picker /sign-up-collab: the route rendered the form directly. Newest first.
+// All versions, newest first. Picker-era ones go through proxy :32xx, which injects a script that clicks through the picker so the tab lands on the form.
 // Servers: scripts/collab-versions-servers.sh (sparse worktrees in the session scratchpad).
 const V=[
+ {n:14,sha:'fd1a6f0',port:3201,date:'28 Oct',msg:'Contact = Instagram (default) / Phone',era:'picker'},
+ {n:13,sha:'38e9f67',port:3202,date:'28 Oct',msg:'69 marked pins culled, rotation 130',era:'picker'},
+ {n:12,sha:'78e2ace',port:3203,date:'28 Oct',msg:'120 editorial references added, rotation 199',era:'picker'},
+ {n:11,sha:'fb03148',port:3204,date:'28 Oct',msg:'Charlotte pins reverted, old 87-pin library back',era:'picker'},
+ {n:10,sha:'3da2a5f',port:3205,date:'27 Oct',msg:'Charlotte Pinterest rebuild, rotation 181',era:'picker'},
+ {n:9,sha:'efa0211',port:3206,date:'27 Oct',msg:'Page moves to Charlotte, NC (WhatsApp +1 704)',era:'picker'},
+ {n:8,sha:'a4b11cc',port:3207,date:'21 Oct',msg:'Istanbul page + photos-of-yourself guide',era:'picker'},
  {n:7,sha:'1badccc',port:3111,date:'28 Jul',msg:'v4 form takes over the live route (Thailand)'},
  {n:6,sha:'f31a055',port:3112,date:'27 Jul',msg:'v3 capture field switched to LINE (Thailand)'},
  {n:5,sha:'987991a',port:3113,date:'22 Jul',msg:'v3 capture-first: hero + one WhatsApp field, 5-step slides'},
@@ -48,7 +55,7 @@ function show(v){
   fetch(url,{mode:'no-cors'}).catch(()=>{status.innerHTML='<span class="down">server on :'+v.port+' is not running — run scripts/collab-versions-servers.sh</span>'})
   try{localStorage.setItem('collab-versions-tab',v.sha)}catch{}
 }
-for(const v of V){const b=document.createElement('button');b.dataset.sha=v.sha;b.innerHTML='<b>v'+v.n+'</b><small>'+v.date+'</small>';b.onclick=()=>show(v);tabs.appendChild(b)}
+for(const v of V){const b=document.createElement('button');b.dataset.sha=v.sha;b.innerHTML='<b>v'+v.n+'</b><small>'+v.date+(v.era?' · picker':'')+'</small>';b.onclick=()=>show(v);tabs.appendChild(b)}
 document.getElementById('phone').onchange=e=>document.getElementById('main').classList.toggle('phone',e.target.checked)
 addEventListener('keydown',e=>{if(e.target.tagName==='INPUT')return;const i=V.indexOf(cur);if(e.key==='ArrowRight'||e.key==='l')show(V[Math.min(V.length-1,i+1)]);if(e.key==='ArrowLeft'||e.key==='h')show(V[Math.max(0,i-1)])})
 let start=V[0];try{const s=localStorage.getItem('collab-versions-tab');const f=V.find(v=>v.sha===s);if(f)start=f}catch{}
