@@ -26435,5 +26435,83 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "how-to-self-tape-an-audition-alone",
+  "offer": "solo-take",
+  "title": "How to self-tape an audition alone, without a reader",
+  "description": "Practical ways to record a good self-tape when nobody is available to read the other lines.",
+  "intro": "Many actors self-tape alone. With a little preparation, you can still give a natural performance. Always follow the casting director's instructions first: they may specify framing, slate details or file format.",
+  "sections": [
+   {
+    "h": "Options for the other lines",
+    "list": [
+     "Record the other character's lines on your phone and play them back, leaving gaps for your lines.",
+     "Use a reader app or an online reader service.",
+     "Ask a friend to read over a video call, off camera."
+    ]
+   },
+   {
+    "h": "Keep the reader in the background",
+    "list": [
+     "The reader should be quieter than you and placed off camera.",
+     "Keep the reader flat and steady, so the focus stays on you."
+    ]
+   },
+   {
+    "h": "Know the scene",
+    "list": [
+     "Learn your lines well enough to listen and react, not just recite.",
+     "Practise with the recording until the timing feels natural."
+    ]
+   },
+   {
+    "h": "Before you send",
+    "list": [
+     "Watch the take back with sound.",
+     "Check the framing, light and audio.",
+     "Name the file as the casting director asked."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "self-tape-setup-on-a-phone-for-beginners",
+  "offer": "solo-take",
+  "title": "Self-tape setup on a phone: eyeline, framing and light for beginners",
+  "description": "A simple phone setup for clean, professional-looking self-tapes at home.",
+  "intro": "A good self-tape doesn't need expensive gear. A steady phone, soft light and a plain background go a long way. Check any specific instructions from casting first.",
+  "sections": [
+   {
+    "h": "Camera",
+    "list": [
+     "Use the phone's back camera if you can, in landscape.",
+     "Put the phone at eye level on a tripod or a stack of books.",
+     "Frame from roughly mid-chest to just above your head, unless casting asks otherwise."
+    ]
+   },
+   {
+    "h": "Eyeline",
+    "list": [
+     "Look just beside the lens, not into it, unless you're told to.",
+     "Place your reader or a mark on the side of the camera where the other character would be."
+    ]
+   },
+   {
+    "h": "Light and background",
+    "list": [
+     "Face a window or soft light so your face is evenly lit.",
+     "Avoid strong light behind you.",
+     "Use a plain wall or backdrop in a neutral colour."
+    ]
+   },
+   {
+    "h": "Sound",
+    "list": [
+     "Record in a quiet room with soft furnishings to reduce echo.",
+     "Keep the phone close enough for clear sound, or use a simple plug-in microphone."
+    ]
+   }
+  ]
  }
 ]

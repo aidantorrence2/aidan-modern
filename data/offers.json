@@ -51126,6 +51126,90 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-28",
+    "slug": "solo-take",
+    "name": "Solo Take",
+    "need": "I have to self-tape auditions but often have nobody to read the other lines with me, and my tapes don't look as good as I want.",
+    "headline": "Self-taping auditions with nobody to read for you? Your phone reads the other lines and waits for you, plus a 30-second setup check for eyeline, framing and light.",
+    "buyer": "Adult actors (18+) who self-tape auditions at home and often don't have a reader.",
+    "bullets": [
+      "Paste or photograph your sides, pick your character, and the phone reads the other lines in a flat off-camera voice, waiting until you finish.",
+      "A 30-second setup check: eyeline just beside the lens, framing, light on your face, plain background, landscape.",
+      "A slate and file-name helper and off-book practice with first-letter hints; sides and takes stay on your phone."
+    ],
+    "price": "$6.99/month",
+    "priceUsd": 7,
+    "priceNote": "Or $49 a year. For adults 18+.",
+    "reasonPrompt": "How often do you self-tape, and who reads for you now?",
+    "faq": [
+      {
+        "q": "Will it get me auditions or bookings?",
+        "a": "No. Solo Take helps you record better self-tapes on your own; it promises no auditions, callbacks or bookings. Always follow each casting director's instructions for the tape."
+      },
+      {
+        "q": "Is it linked to a casting site or acting app?",
+        "a": "No. Solo Take is independent and not affiliated with any casting site, agency or acting app."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-28",
+      "summary": "Actors describe often needing a reader for an audition and not being able to find one, having friends and family read reluctantly, a partner who hates reading for auditions, and paying for a studio for each tape.",
+      "wtp": "coldRead, a self-tape reader app, has 4K App Store ratings and sells unlimited plans at $10.99 a month; WeAudition has 122 ratings and sells Pro at $14.99 a month or $149 a year; Rafy has 87 ratings with plans from $9.99 to $24.99 a month.",
+      "signals": [
+        {
+          "url": "https://apps.apple.com/us/app/need-a-reader-actor-app/id1329677465",
+          "who": "classycarver (App Store review of Need A Reader)",
+          "date": "2021-10-08",
+          "quote": "needed to have a reader for an audition",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/rafy-self-tape-acting-reader/id6478787835",
+          "who": "Iheartyadad (App Store review of Rafy)",
+          "date": "2025-08-01",
+          "quote": "friends and family (reluctantly) read",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/weaudition/id1524960910",
+          "who": "felixlinder (App Store review of WeAudition)",
+          "date": "2023-03-30",
+          "quote": "My wife hates doing auditions with me",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/coldread/id1264354117",
+          "who": "coldRead (App Store)",
+          "date": "2026-10-28",
+          "quote": "4K Ratings; Unlimited 1 Month $10.99",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/weaudition/id1524960910",
+          "who": "WeAudition (App Store)",
+          "date": "2026-10-28",
+          "quote": "122 Ratings; Pro $14.99/mo; $149/yr",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/rafy-self-tape-acting-reader/id6478787835",
+          "who": "Rafy - Self-Tape Acting Reader (App Store)",
+          "date": "2026-10-28",
+          "quote": "87 Ratings; plans $9.99-$24.99/mo",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "coldRead, WeAudition, Rafy, Need A Reader, paid self-tape studios, friends and family.",
+      "risks": "Several paid reader apps already exist. Only 3 people on open pages (forum evidence is on a Reddit mirror and Backstage, which this side can't check). Actors are looking for work, which is close to a career tool. Near live cue-lines (learning lines for a show), but about self-taping."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
