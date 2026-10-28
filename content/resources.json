@@ -27950,5 +27950,132 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "keep-a-list-of-every-concert",
+  "offer": "show-stubs",
+  "title": "How to keep a list of every concert you've been to",
+  "description": "Simple ways to log the shows you've seen, and how to rebuild the dates you've forgotten.",
+  "intro": "Lots of people keep a running list of concerts in a notes app. Here's how to make that list complete and keep it going.",
+  "sections": [
+   {
+    "h": "What to record",
+    "list": [
+     "Artist, venue, city and date.",
+     "Who you went with.",
+     "One line about the night: a song, a moment, the support act."
+    ]
+   },
+   {
+    "h": "Rebuild the shows you've forgotten",
+    "list": [
+     "Search your email for ticket confirmations and order receipts.",
+     "Look through your photo library; photos carry the date and often the place.",
+     "Check old bank or card statements for ticket purchases.",
+     "Public setlist sites can help confirm dates for many tours."
+    ]
+   },
+   {
+    "h": "Keep it going",
+    "list": [
+     "Add each show the same night or the next morning.",
+     "Keep ticket stubs and wristbands in one box or envelope."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "track-theatre-shows-youve-seen",
+  "offer": "show-stubs",
+  "title": "How to keep track of the theatre shows you've seen",
+  "description": "A simple way to keep a record of plays and musicals you've seen, without losing playbills and ticket stubs.",
+  "intro": "Playbills and ticket stubs are easy to lose. A simple record keeps the memories even when the paper goes missing.",
+  "sections": [
+   {
+    "h": "What to note",
+    "list": [
+     "Show, theatre and date.",
+     "Who was in the cast that night, especially understudies.",
+     "Where you sat and who you went with.",
+     "Your favourite moment or song."
+    ]
+   },
+   {
+    "h": "Keep the paper safe",
+    "list": [
+     "Keep programmes and stubs flat in a folder or box.",
+     "Take a photo of each one as a backup."
+    ]
+   },
+   {
+    "h": "Fill in the past",
+    "list": [
+     "Search your email for old ticket orders.",
+     "Check photo dates from nights at the theatre."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "track-every-movie-youve-watched",
+  "offer": "reel-notes",
+  "title": "How to keep track of every movie you've watched",
+  "description": "Simple ways to log the films you see, so you never forget what you've watched or what you thought.",
+  "intro": "It's easy to forget whether you've seen a film, let alone what you thought of it. A simple log fixes that.",
+  "sections": [
+   {
+    "h": "What to record",
+    "list": [
+     "Title and year.",
+     "The date and where you watched it.",
+     "A rating and one line about it."
+    ]
+   },
+   {
+    "h": "Rebuild your history",
+    "list": [
+     "Many streaming services show your viewing history in your account settings.",
+     "Old cinema ticket emails show what you saw and when.",
+     "Paste in any old notes-app list you've kept."
+    ]
+   },
+   {
+    "h": "Keep it simple",
+    "list": [
+     "Log the film the same day, while you remember it.",
+     "Use the same rating scale every time."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "private-film-diary",
+  "offer": "reel-notes",
+  "title": "How to keep a private film diary",
+  "description": "How to keep a film diary just for yourself, with notes and ratings, without posting reviews publicly.",
+  "intro": "Not everyone wants to share what they watch. A private film diary lets you keep honest notes just for you.",
+  "sections": [
+   {
+    "h": "Choose where to keep it",
+    "list": [
+     "A notes app or spreadsheet works for a simple list.",
+     "A dedicated diary makes searching and sorting easier as the list grows."
+    ]
+   },
+   {
+    "h": "Make the notes useful",
+    "list": [
+     "Write what you felt, not a full review.",
+     "Note who you watched it with and where.",
+     "Tag films you'd watch again."
+    ]
+   },
+   {
+    "h": "Keep it private",
+    "p": [
+     "If you use a film site, check its privacy settings; some show your activity to others by default."
+    ]
+   }
+  ]
  }
 ]

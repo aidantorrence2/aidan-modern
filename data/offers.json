@@ -52848,6 +52848,202 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-28",
+    "slug": "show-stubs",
+    "name": "Show Stubs",
+    "need": "I want one place to log every concert, show and game I've been to, instead of a notes app, a spreadsheet or a pile of ticket stubs.",
+    "headline": "Every concert, show and game you've been to, in one place. Add the ones you remember in seconds, and rebuild the dates you've forgotten from old ticket emails and photos.",
+    "buyer": "Regular concert-goers, theatre fans and live-sports fans who keep a list in a notes app or spreadsheet.",
+    "bullets": [
+      "Log a show in seconds: who, where, when, who you went with, and a line about the night.",
+      "Paste in your old notes-app list or spreadsheet, and fill gaps from ticket emails and photo dates.",
+      "Small bands, festivals and local theatre welcome: you're never stuck because a database doesn't list it."
+    ],
+    "price": "$2.99/month",
+    "priceUsd": 3,
+    "priceNote": "Or $19 a year.",
+    "reasonPrompt": "Roughly how many shows have you been to, and where is your list now?",
+    "faq": [
+      {
+        "q": "Do I have to start from scratch?",
+        "a": "No. You can paste in a list from your notes app or a spreadsheet, then add details as you remember them."
+      },
+      {
+        "q": "Is it linked to a ticket seller, venue or setlist site?",
+        "a": "No. Show Stubs is independent and not affiliated with any ticket seller, venue or setlist site."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-28",
+      "summary": "Concert and theatre fans describe keeping track of concerts in a notes app, keeping a list of who they've seen, filling in gaps in their memory, nearly 200 concerts tracked in notes, a half-used spreadsheet, and regretting throwing out playbills and ticket stubs.",
+      "wtp": "Concert Archives has 988 App Store ratings with Pro at $3.99 a month or $39.99 a year; Mezzanine Theater Diary has 1.2K ratings with a $14.99 Patron purchase.",
+      "signals": [
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1531993239/sortby=mosthelpful/json",
+          "who": "NateVano (App Store review of Concert Archives)",
+          "date": "2026-04-21",
+          "quote": "I can finally keep track of concerts outside of my notes app",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1531993239/sortby=mosthelpful/json",
+          "who": "Bands702 (App Store review of Concert Archives)",
+          "date": "2021-09-17",
+          "quote": "I used to use my notes to keep a list of who",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1531993239/sortby=mosthelpful/json",
+          "who": "jazzbassnorm (App Store review of Concert Archives)",
+          "date": "2025-08-24",
+          "quote": "fill in gaps in my memory for shows I have seen",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1598957582/sortby=mosthelpful/json",
+          "who": "jaykayus (App Store review)",
+          "date": "2025-07-31",
+          "quote": "been to almost 200 concerts and uses their notes app to keep track of everything",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1598957582/sortby=mosthelpful/json",
+          "who": "Chasero13 (App Store review)",
+          "date": "2026-10-26",
+          "quote": "a lot better than the spreadsheet I was half way using",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1441959317/sortby=mosthelpful/json",
+          "who": "huggersc (App Store review of Mezzanine)",
+          "date": "2021-11-04",
+          "quote": "I made the mistake of throwing out playbills and ticket stubs",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1441959317/sortby=mosthelpful/json",
+          "who": "GeekGirl06 (App Store review of Mezzanine)",
+          "date": "2021-12-23",
+          "quote": "easy way to keep track of shows",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1531993239",
+          "who": "Concert Archives (App Store)",
+          "date": "2026-10-28",
+          "quote": "988 Ratings; Pro Monthly $3.99; Pro Annual $39.99",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1441959317",
+          "who": "Mezzanine Theater Diary (App Store)",
+          "date": "2026-10-28",
+          "quote": "1.2K Ratings; Mezzanine Patron $14.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Concert Archives, Mezzanine, free concert-log apps and setlist sites, notes apps and spreadsheets.",
+      "risks": "Free apps exist; reviewers say database gaps are the problem, so easy manual and bulk entry is the angle. Evidence is all App Store reviews."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-28",
+    "slug": "reel-notes",
+    "name": "Reel Notes",
+    "need": "I keep forgetting which films I've already seen and what I thought of them, so I track them in a notes app or a spreadsheet.",
+    "headline": "Never forget a film you've seen. Keep a private, simple film diary with your rating and a line of notes, and bring your old notes-app list with you.",
+    "buyer": "Film lovers who log what they watch in a notes app or spreadsheet and want a private, simple diary.",
+    "bullets": [
+      "Log a film in seconds: date, where you watched it, your rating and a line about it.",
+      "Private by default: no followers, no public reviews, just your own diary.",
+      "Paste in your notes-app list and check 'have I seen this?' in one search."
+    ],
+    "price": "$1.99/month",
+    "priceUsd": 2,
+    "priceNote": "Or $12 a year.",
+    "reasonPrompt": "Where do you keep your film list now, and what annoys you about it?",
+    "faq": [
+      {
+        "q": "Is it a social network for films?",
+        "a": "No. Reel Notes is a private diary. Nothing you log is shared unless you choose to export it."
+      },
+      {
+        "q": "Is it linked to a streaming service or film site?",
+        "a": "No. Reel Notes is independent and not affiliated with any streaming service, film site or studio."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-28",
+      "summary": "Film watchers describe keeping track of their movies in a notes app for years, a quest to remember and rate every film they've seen, logging movies in notes, using an ineffective spreadsheet, and finding it hard to remember what they have and haven't seen.",
+      "wtp": "Letterboxd has 88K App Store ratings with Pro at $18.99 a year and Patron at $48.99; Sequel Media Tracker has 1.3K ratings with a $99.99 lifetime option.",
+      "signals": [
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=2/id=1054271011/sortby=mosthelpful/json",
+          "who": "elliephant75 (App Store review of Letterboxd)",
+          "date": "2025-09-24",
+          "quote": "keeping track of my movies on my notes app for 3 YEARS",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1054271011/sortby=mosthelpful/json",
+          "who": "Olymatthew (App Store review of Letterboxd)",
+          "date": "2022-10-10",
+          "quote": "on the quest to remember and rate every single movie I have seen",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1054271011/sortby=mostrecent/json",
+          "who": "patrock star (App Store review of Letterboxd)",
+          "date": "2026-09-12",
+          "quote": "logging my movies on my notes app",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1630746993/sortby=mostrecent/json",
+          "who": "somnium36 (App Store review of Sequel)",
+          "date": "2026-08-29",
+          "quote": "I started using a very ineffective spreadsheet to track them",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=2/id=1630746993/sortby=mosthelpful/json",
+          "who": "Xintoic (App Store review of Sequel)",
+          "date": "2026-09-21",
+          "quote": "It does get difficult remembering what one has seen and not seen",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1054271011",
+          "who": "Letterboxd (App Store)",
+          "date": "2026-10-28",
+          "quote": "88K Ratings; Pro (1 Year) $18.99; Patron (1 Year) $48.99",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1630746993",
+          "who": "Sequel Media Tracker (App Store)",
+          "date": "2026-10-28",
+          "quote": "1.3K Ratings; Lifetime $99.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Letterboxd (free tier), Sequel, notes apps and spreadsheets.",
+      "risks": "Letterboxd dominates with a free tier, so the angle is private and notes-first. Next to live Pick Tonight (what to watch), which is a different need. Evidence is all App Store reviews."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
