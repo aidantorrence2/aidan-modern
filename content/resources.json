@@ -25016,5 +25016,85 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "how-to-start-learning-philosophy-as-an-adult",
+  "offer": "philosophy-path",
+  "title": "How to start learning philosophy as an adult",
+  "description": "A simple way into philosophy for adults with no background: where to start, what to read, and how to avoid giving up.",
+  "intro": "Many adults try to start philosophy with a famous original text, get lost, and give up. Starting with context, then short original readings, works much better.",
+  "sections": [
+   {
+    "h": "Start with an overview",
+    "list": [
+     "Read a short introduction to philosophy first, such as Nigel Warburton's 'A Little History of Philosophy' or Thomas Nagel's 'What Does It All Mean?'.",
+     "They give you the map before you go into the original texts."
+    ]
+   },
+   {
+    "h": "Then read short original texts",
+    "list": [
+     "Pick short, readable works first: Plato's 'Apology' or 'Euthyphro', or Bertrand Russell's 'The Problems of Philosophy'.",
+     "Read a summary of the argument before and after each one.",
+     "Many older texts are free online in translation."
+    ]
+   },
+   {
+    "h": "Follow questions, not just names",
+    "list": [
+     "Choose a question you care about: what is a good life, what can we know, is free will real?",
+     "Read what two or three thinkers say about it, and compare."
+    ]
+   },
+   {
+    "h": "Use free help",
+    "list": [
+     "The Stanford Encyclopedia of Philosophy is free online and explains topics and thinkers in depth.",
+     "Philosophy podcasts and lecture series can explain difficult ideas aloud."
+    ]
+   },
+   {
+    "h": "Keep it manageable",
+    "p": [
+     "Read a little and often, write a few lines on what you understood, and don't worry if you don't get everything the first time; philosophers disagree about most of it too."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "philosophy-books-for-beginners-who-find-plato-too-dense",
+  "offer": "philosophy-path",
+  "title": "Philosophy books for beginners who find the classics too dense",
+  "description": "Accessible ways into philosophy if you've tried Plato, Kant or Nietzsche and found them too hard to follow.",
+  "intro": "Finding the classics dense is normal: they were written for different readers, often in another language, and assume background you don't have yet. These approaches make them easier.",
+  "sections": [
+   {
+    "h": "Read about a thinker first",
+    "list": [
+     "Read a short introduction or encyclopedia entry on the thinker before their own work.",
+     "Look for 'very short introduction' style books on single philosophers."
+    ]
+   },
+   {
+    "h": "Pick a good translation and edition",
+    "list": [
+     "For older and translated works, choose a modern translation with an introduction and notes.",
+     "Editions with a summary at the start of each section help a lot."
+    ]
+   },
+   {
+    "h": "Read slowly, in small parts",
+    "list": [
+     "Read a few pages, then write one sentence on what the argument is.",
+     "Re-read hard passages; that's how most people read philosophy."
+    ]
+   },
+   {
+    "h": "Talk about it",
+    "p": [
+     "Discussing what you've read, in a reading group, online forum or with a friend, helps ideas make sense. Some libraries run free reading groups."
+    ]
+   }
+  ]
  }
 ]

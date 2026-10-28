@@ -50048,6 +50048,90 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-28",
+    "slug": "philosophy-path",
+    "name": "Philosophy Path",
+    "need": "I want to learn philosophy properly as an adult, but the original texts are too dense and I don't know where to start or what order to read things in.",
+    "headline": "Want to learn philosophy but find the texts too dense? Follow a guided route through the big questions and thinkers, with context first, short readings, and a note of what you've understood.",
+    "buyer": "Curious adults with no formal philosophy background, including people who started with Stoicism and want to go further.",
+    "bullets": [
+      "A route through the big questions and thinkers in a sensible order, with the context you need before each reading.",
+      "Short, manageable readings from the original texts, with plain summaries of the argument.",
+      "A few questions after each reading and a log of what you've read and understood."
+    ],
+    "price": "$6.99/month",
+    "priceUsd": 7,
+    "priceNote": "Or $49 a year. Cancel any time.",
+    "reasonPrompt": "What got you interested in philosophy, and what have you tried reading?",
+    "faq": [
+      {
+        "q": "Is it a university course?",
+        "a": "No. Philosophy Path is a self-paced reading guide for curious adults. It doesn't give credits or qualifications, and points you to free sources such as encyclopedias and public-domain texts where possible."
+      },
+      {
+        "q": "Is it linked to a university or philosophy app?",
+        "a": "No. Philosophy Path is independent and not affiliated with any university, publisher or app."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-28",
+      "summary": "Adults describe asking which books are a must for someone new to philosophy, getting confused by the lack of context and giving up, asking where to learn philosophy well enough to be conversant, struggling with dense walls of text, and wanting to branch out from Stoicism.",
+      "wtp": "Fathom: Learn Philosophy has 507 App Store ratings and sells subscriptions from $6.99 to $12.99 a month or $49.99 to $69.99 a year.",
+      "signals": [
+        {
+          "url": "https://news.ycombinator.com/item?id=25312681",
+          "who": "rupi (Hacker News)",
+          "date": "2020-12-05",
+          "quote": "Are there any books that are considered a must for someone new to the field of philosophy?",
+          "seen": "opened"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=25319134",
+          "who": "bigfoot675 (Hacker News)",
+          "date": "2020-12-05",
+          "quote": "getting confused by the utter lack of context, and giving up",
+          "seen": "opened"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50261551",
+          "who": "bollu (Hacker News)",
+          "date": "2026-10-27",
+          "quote": "where would one learn philosophy to a level that one is conversant with western philosophy?",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=6742149252/sortby=mosthelpful/json",
+          "who": "DivineInterpretation143 (App Store review of Fathom)",
+          "date": "2025-03-03",
+          "quote": "always struggled to get past some of dense wall of text in readings",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=6742149252/sortby=mosthelpful/json",
+          "who": "Dirty_Martini12 (App Store review of Fathom)",
+          "date": "2025-05-31",
+          "quote": "I dove in to Stoicism but now I want to branch out",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/fathom-learn-philosophy/id6742149252",
+          "who": "Fathom: Learn Philosophy (App Store)",
+          "date": "2026-10-28",
+          "quote": "507 Ratings; Monthly Subscription $6.99; Premium Monthly $12.99; yearly $49.99-$69.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Fathom, free encyclopedias, podcasts, YouTube series, introductory books.",
+      "risks": "Fathom is a direct rival, and strong free resources exist. Some people won't pay a subscription to learn philosophy. The paid app is small (507 ratings). Near live gap-filler (general knowledge), but about philosophy."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
