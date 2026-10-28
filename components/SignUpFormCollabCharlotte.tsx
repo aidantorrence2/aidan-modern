@@ -769,7 +769,7 @@ export default function SignUpFormCollabCharlotte({ analyticsPath = '/sign-up-co
         {/* Sign up: the contact is the first thing asked. */}
         <div ref={pickerCardRef} className="scroll-mt-4 px-5 pb-4 pt-5">
           <h2 className="text-[32px] leading-[1.05] tracking-[-0.01em]" style={{ fontFamily: SERIF }}>
-            Where should I message you?
+            Sign up
           </h2>
         <form onSubmit={onCapture} className="mt-4 space-y-2.5">
           <div className="grid grid-cols-2 gap-2">
@@ -824,7 +824,7 @@ export default function SignUpFormCollabCharlotte({ analyticsPath = '/sign-up-co
             className="group flex w-full items-center justify-between rounded-[3px] bg-neutral-900 px-5 py-4 text-[13px] font-semibold uppercase tracking-[0.18em] text-white transition hover:bg-black active:scale-[0.995] disabled:opacity-50"
             data-cta="v7b-submit"
           >
-            <span>Continue</span>
+            <span>Get started</span>
             <svg viewBox="0 0 24 24" className="h-4 w-4 transition-transform group-hover:translate-x-0.5" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
           </button>
         </form>
