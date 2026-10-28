@@ -53443,6 +53443,97 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-28",
+    "slug": "pawprint-days",
+    "name": "Pawprint Days",
+    "need": "My dog or cat has died, I can't stop crying, and the days afterwards are harder than I expected.",
+    "headline": "Lost a dog, cat or other pet and finding the days after harder than you expected? Get gentle help through the hard moments, and build a private memory book of your pet.",
+    "buyer": "Adults (18+) grieving a pet that has died.",
+    "bullets": [
+      "A private memory book you build over days: photos, habits and stories, ready to print.",
+      "Gentle prompts for the hard moments: walk time, the empty bed, coming home to quiet, the first holidays.",
+      "Help with guilt after a goodbye at the vet, and words for telling children, work, and people who say 'it was just a pet'."
+    ],
+    "price": "$3.99/month",
+    "priceUsd": 4,
+    "priceNote": "Or $24 a year. For adults 18+.",
+    "reasonPrompt": "If you'd like to, tell us about your pet and what's been hardest.",
+    "faq": [
+      {
+        "q": "Is this therapy or counselling?",
+        "a": "No. Pawprint Days is a gentle self-help companion, not therapy. If your grief feels unbearable, or you have thoughts of harming yourself, please talk to a doctor or counsellor, or contact a crisis line now."
+      },
+      {
+        "q": "Is it linked to a vet, pet charity or crematorium?",
+        "a": "No. Pawprint Days is independent and not affiliated with any vet, charity, crematorium or pet company."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-28",
+      "summary": "Pet owners describe needing to feel less alone after losing their best friend, losing a pet as one of the hardest emotional experiences, missing a dog every day and still hearing her shake her head, and a terrible start to the year after putting down a dog of 15 years.",
+      "wtp": "Pet Loss Journey sells Pro from $2.99 a week to $29.99 a year; Solace grief journal sells $6.99 a week or $49.99 a year; an online pet loss and bereavement group lists $240 on Psychology Today.",
+      "signals": [
+        {
+          "url": "https://apps.apple.com/us/app/pet-loss-journey-love-share/id6744796493",
+          "who": "SunnyDDD (App Store review of Pet Loss Journey)",
+          "date": "2025-05-18",
+          "quote": "help me feel less alone after lost my best friend",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/pet-loss-journey-love-share/id6744796493",
+          "who": "Alpha_AI (App Store review of Pet Loss Journey)",
+          "date": "2025-05-24",
+          "quote": "Losing a pet is one of the hardest emotional experiences",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/pet-loss/id1566904698",
+          "who": "Cc7477 (App Store review of Pet Loss)",
+          "date": "2021-05-23",
+          "quote": "Miss her every day,  still can hear her shake her head",
+          "seen": "opened"
+        },
+        {
+          "url": "https://sh.itjust.works/comment/7327083",
+          "who": "ElBarto (Lemmy)",
+          "date": "2024-01-10",
+          "quote": "I had to put my dog of 15 years down",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/pet-loss-journey-love-share/id6744796493",
+          "who": "Pet Loss Journey (App Store)",
+          "date": "2026-10-28",
+          "quote": "Pro $2.99 a week to $29.99 a year",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/solace-grief-loss-journal/id6762437070",
+          "who": "Solace: Grief & Loss Journal (App Store)",
+          "date": "2026-10-28",
+          "quote": "$6.99 a week; $49.99 a year",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.psychologytoday.com/us/groups/online-pet-loss-and-bereavement-oct-12-19-26-fort-walton-beach-fl/240851",
+          "who": "Online pet loss and bereavement group (Psychology Today)",
+          "date": "2026-10-28",
+          "quote": "$240",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Pet loss apps (Pet Loss Journey, Pet Loss), grief journals, pet loss counsellors and support groups, charity support lines.",
+      "risks": "Grief topic: must stay gentle, avoid therapy claims and point to crisis help. Paid apps are small and young, and their early five-star reviews may be seeded; one reviewer complains about the paywall. Mumsnet and support-forum quotes from the doc side couldn't be opened with plain curl, so they aren't cited. Nobody wrote that they'd pay."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
