@@ -980,7 +980,7 @@ export default function SignUpFormCollabCharlotteOnePage({ analyticsPath = '/sig
             </div>
           </section>
 
-          <div className="pt-8">{sectionTitle('Sign up', false, 2)}</div>
+          <div className="pt-8">{sectionTitle('How should I message you?', false, 2)}</div>
           <div className="grid grid-cols-2 gap-2">
             {segment('instagram')}
             {segment('phone')}
