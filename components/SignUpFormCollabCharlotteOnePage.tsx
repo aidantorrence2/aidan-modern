@@ -922,6 +922,7 @@ export default function SignUpFormCollabCharlotteOnePage({ analyticsPath = '/sig
     return page(
       <div key="location" className="atf-card">
         <form onSubmit={onSubmitAll} noValidate className="space-y-2.5">
+          <p className="pb-5 text-[11px] font-semibold uppercase tracking-[0.22em] text-neutral-500">Fill out the form below to sign up</p>
           <section ref={vibeRef} className="scroll-mt-4">
             {sectionTitle("What's your vibe?")}
             <div className="mt-4 grid grid-cols-2 gap-x-3 gap-y-5" role="radiogroup" aria-label="What's your vibe?">
