@@ -1,7 +1,7 @@
 <!doctype html>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>sign-up-collab versions</title>
+<title>sign-up-collab form versions</title>
 <style>
   :root{color-scheme:dark}
   html,body{margin:0;height:100%;background:#0c0c0c;color:#eee;font:14px/1.4 system-ui,sans-serif}
@@ -23,16 +23,18 @@
 </style>
 <nav id="tabs"></nav>
 <div class="meta"><span id="desc"></span><a id="open" target="_blank" rel="noreferrer">open in new tab</a><label><input type="checkbox" id="phone" checked> phone width</label><span id="status"></span></div>
-<main id="main" class="phone"><iframe id="frame" title="sign-up-collab version"></iframe></main>
+<main id="main" class="phone"><iframe id="frame" title="sign-up-collab form version"></iframe></main>
 <script>
+// Pre-picker /sign-up-collab: the route rendered the form directly. Newest first.
+// Servers: scripts/collab-versions-servers.sh (sparse worktrees in the session scratchpad).
 const V=[
- {n:7,sha:'fd1a6f0',port:3101,date:'28 Oct 13:49',msg:'Contact = Instagram (default) / Phone'},
- {n:6,sha:'38e9f67',port:3102,date:'28 Oct 10:02',msg:'69 marked pins culled, rotation 130'},
- {n:5,sha:'78e2ace',port:3103,date:'28 Oct 09:47',msg:'120 editorial references added, rotation 199'},
- {n:4,sha:'fb03148',port:3104,date:'28 Oct 09:37',msg:'Charlotte pins reverted, old 87-pin library back'},
- {n:3,sha:'3da2a5f',port:3105,date:'27 Oct 19:57',msg:'Charlotte Pinterest rebuild, rotation 181'},
- {n:2,sha:'efa0211',port:3106,date:'27 Oct 17:25',msg:'Page moves to Charlotte, NC (WhatsApp +1 704)'},
- {n:1,sha:'a4b11cc',port:3107,date:'21 Oct 20:28',msg:'Istanbul page + photos-of-yourself guide'},
+ {n:7,sha:'1badccc',port:3111,date:'28 Jul',msg:'v4 form takes over the live route (Thailand)'},
+ {n:6,sha:'f31a055',port:3112,date:'27 Jul',msg:'v3 capture field switched to LINE (Thailand)'},
+ {n:5,sha:'987991a',port:3113,date:'22 Jul',msg:'v3 capture-first: hero + one WhatsApp field, 5-step slides'},
+ {n:4,sha:'978e7b4',port:3114,date:'19 Jul',msg:'White redesign, Goa: wordmark, benefits, inline errors'},
+ {n:3,sha:'a7caf8e',port:3115,date:'27 Jun',msg:'India / New Delhi; real entered location sent as city'},
+ {n:2,sha:'3545bf9',port:3116,date:'18 Jun',msg:'Kathmandu; open-ended concept field'},
+ {n:1,sha:'4300d37',port:3117,date:'22 May',msg:'Original Bali collab form'},
 ]
 const tabs=document.getElementById('tabs'),frame=document.getElementById('frame'),desc=document.getElementById('desc'),open=document.getElementById('open'),status=document.getElementById('status')
 let cur=null
@@ -43,7 +45,7 @@ function show(v){
   frame.src=url; open.href=url
   desc.textContent='v'+v.n+' · '+v.sha+' · '+v.date+' · '+v.msg
   status.textContent=''
-  fetch(url,{mode:'no-cors'}).catch(()=>{status.innerHTML='<span class="down">server on :'+v.port+' is not running — rerun versions/run-all.sh</span>'})
+  fetch(url,{mode:'no-cors'}).catch(()=>{status.innerHTML='<span class="down">server on :'+v.port+' is not running — run scripts/collab-versions-servers.sh</span>'})
   try{localStorage.setItem('collab-versions-tab',v.sha)}catch{}
 }
 for(const v of V){const b=document.createElement('button');b.dataset.sha=v.sha;b.innerHTML='<b>v'+v.n+'</b><small>'+v.date+'</small>';b.onclick=()=>show(v);tabs.appendChild(b)}
