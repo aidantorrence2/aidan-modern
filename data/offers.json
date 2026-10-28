@@ -53135,6 +53135,111 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-28",
+    "slug": "night-visitors",
+    "name": "Night Visitors",
+    "need": "I put a camera in my backyard to see what animals visit, especially at night, but I'm buried in empty clips set off by wind and leaves, and I can't easily tell what actually came by.",
+    "headline": "Want to know what visits your garden at night? Drop in clips from any trail or outdoor camera, skip the empty ones set off by wind, and keep a simple diary of your visitors.",
+    "buyer": "Homeowners and gardeners with a trail cam or outdoor camera who want to watch backyard wildlife, not hunt it.",
+    "bullets": [
+      "Import clips from any camera's SD card or your camera roll, and set the empty wind-and-leaf clips aside.",
+      "Keep a visitor diary: what came, when, and how often, from foxes and raccoons to hedgehogs and cats.",
+      "Setup tips to cut false triggers, and a guide to telling night visitors apart."
+    ],
+    "price": "$4.99/month",
+    "priceUsd": 5,
+    "priceNote": "Or $29 a year.",
+    "reasonPrompt": "What camera do you use, and what are you hoping to see?",
+    "faq": [
+      {
+        "q": "Does it work with my camera?",
+        "a": "The plan is to work with clips from any camera you can copy to your phone or computer, such as from an SD card or camera roll. It doesn't control the camera itself."
+      },
+      {
+        "q": "Is it linked to a camera brand?",
+        "a": "No. Night Visitors is independent and not affiliated with any camera maker or app."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-28",
+      "summary": "Backyard camera owners describe just wanting to watch their backyard wildlife, not being hunters, trying to catch what lives under their shed, clips set off by wind and a swaying feeder, around ten false shots for every animal video, and wanting to see what comes out at night.",
+      "wtp": "Birdfy has 3.8K App Store ratings and sells recognition at $5.89 a month and storage at $7.09 a month; Vico Nature has 16K ratings with plans at $7.99 a month or $79.99 a year.",
+      "signals": [
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1074343060/sortby=mostrecent/json",
+          "who": "Appsurfer10013 (App Store review)",
+          "date": "2026-05-12",
+          "quote": "I just want to watch my backyard wildlife not even a hunter",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=2/id=1641673759/sortby=mosthelpful/json",
+          "who": "a- hirsh (App Store review)",
+          "date": "2026-08-30",
+          "quote": "we are trying to catch what is under our shed",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1641673759/sortby=mosthelpful/json",
+          "who": "catjunk1 (App Store review)",
+          "date": "2025-02-25",
+          "quote": "Video records the wind and my swaying bird feeder",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1641673759/sortby=mosthelpful/json",
+          "who": "Conymeon (App Store review)",
+          "date": "2025-03-27",
+          "quote": "Just use mine for backyard wildlife",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=6463374220/sortby=mosthelpful/json",
+          "who": "hasaniphonecool (App Store review of Birdfy)",
+          "date": "2026-05-20",
+          "quote": "for every video of an animal there are like 10 or more false shots",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=3/id=6463374220/sortby=mostrecent/json",
+          "who": "Sportingtam (App Store review of Birdfy)",
+          "date": "2026-07-29",
+          "quote": "see what comes out at night raccoons possums Deers",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=2/id=6758076904/sortby=mosthelpful/json",
+          "who": "Cas-Tara_2797 (App Store review of Vico Nature)",
+          "date": "2026-05-15",
+          "quote": "stray cats and sometimes raccoons in the area",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id6463374220",
+          "who": "Birdfy (App Store)",
+          "date": "2026-10-28",
+          "quote": "3.8K Ratings; Bird Recognition Basic $5.89; Collection Storage Pro $7.09",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id6758076904",
+          "who": "Vico Nature (App Store)",
+          "date": "2026-10-28",
+          "quote": "16K Ratings; Premium Monthly $7.99; Annual $79.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Feeder-camera apps (Birdfy, Vico), trail camera apps, free camera-roll viewing.",
+      "risks": "Paid apps are tied to feeder-camera hardware and mostly about birds; importing clips from any camera adds friction; night footage is hard to identify; near hunting and garden pests; seasonal. Evidence is all App Store reviews."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

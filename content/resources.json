@@ -28154,5 +28154,83 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "stop-wind-setting-off-trail-camera",
+  "offer": "night-visitors",
+  "title": "How to stop wind and leaves setting off your trail camera",
+  "description": "Simple setup changes that cut down empty clips from wildlife and trail cameras.",
+  "intro": "Most trail and wildlife cameras trigger on a mix of movement and heat. On a breezy or sunny day, moving plants and shadows can fill your card with empty clips.",
+  "sections": [
+   {
+    "h": "Clear the view",
+    "list": [
+     "Trim grass, branches and plants right in front of the camera.",
+     "Avoid pointing it at a swaying feeder, washing line or bush.",
+     "Don't aim it straight at the sun or across hot paving."
+    ]
+   },
+   {
+    "h": "Mount it well",
+    "list": [
+     "Fix it firmly to a solid post or tree so it can't wobble.",
+     "Mount it at roughly the height of the animals you want to see.",
+     "Angle it so animals cross the frame rather than walk straight at it."
+    ]
+   },
+   {
+    "h": "Adjust the settings",
+    "list": [
+     "Lower the sensitivity if you get many empty clips.",
+     "Increase the delay between triggers.",
+     "Try shorter clips so empty ones are quick to skip."
+    ]
+   },
+   {
+    "h": "Test it",
+    "p": [
+     "Walk past at different distances to check what triggers it, then adjust."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "what-animal-visits-garden-at-night",
+  "offer": "night-visitors",
+  "title": "What animal is visiting my garden at night?",
+  "description": "How to work out which animal is in your night-time camera footage, from body shape to tracks.",
+  "intro": "Night footage is often grainy and black and white, so identifying visitors takes a little detective work. Look at several clues together.",
+  "sections": [
+   {
+    "h": "Look at shape and movement",
+    "list": [
+     "Body size compared with things you know, like a fence post or flowerpot.",
+     "How it moves: trotting, waddling, hopping or climbing.",
+     "Head shape and ear size."
+    ]
+   },
+   {
+    "h": "Check the tail",
+    "list": [
+     "A bushy tail can suggest a fox.",
+     "A ringed tail suggests a raccoon (in North America).",
+     "A long, bare tail can suggest an opossum or a rat.",
+     "A short or no visible tail can suggest a hedgehog or badger."
+    ]
+   },
+   {
+    "h": "Look for other signs",
+    "list": [
+     "Footprints in soft soil, mud or snow.",
+     "Droppings, dug-up lawn, or holes under fences and sheds."
+    ]
+   },
+   {
+    "h": "Be kind to visitors",
+    "p": [
+     "Watch from a distance and don't feed wild animals unless local guidance says it's safe. If an animal looks hurt, contact a local wildlife rescue."
+    ]
+   }
+  ]
  }
 ]
