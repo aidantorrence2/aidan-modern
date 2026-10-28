@@ -857,7 +857,7 @@ export default function SignUpFormCollabCharlotte({ analyticsPath = '/sign-up-co
             ))}
           </ol>
           <p className="mt-6 text-[14px] leading-relaxed text-neutral-600">
-            <span className="font-semibold text-neutral-900">Why free?</span> I&rsquo;m traveling the world &mdash; this is how I meet new people and capture beautiful places.
+            <span className="font-semibold text-neutral-900">Why free?</span> I&rsquo;m just doing a few free shoots while I&rsquo;m in town for a short period &mdash; I want to create awesome content while I travel.
           </p>
         </div>
 
