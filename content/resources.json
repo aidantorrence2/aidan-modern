@@ -29395,5 +29395,72 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "play-in-tune-on-cello-adult-beginner",
+  "offer": "cello-ear",
+  "title": "How to play in tune on the cello as an adult beginner",
+  "description": "Practical ways to improve your cello intonation, from finger placement to listening.",
+  "intro": "Playing in tune on the cello is hard, because there are no frets to guide your fingers. Almost every learner struggles with it, and it improves with focused practice.",
+  "sections": [
+   {
+    "h": "Use your open strings",
+    "list": [
+     "The open strings are C, G, D and A.",
+     "When you play a G, D or A in tune with your fingers, the matching open string often rings along with it. Listen for that ring."
+    ]
+   },
+   {
+    "h": "Check, don't stare",
+    "list": [
+     "A tuner app can show whether a note is sharp or flat.",
+     "Use it to check, then play the note again without looking, so your ear does the work."
+    ]
+   },
+   {
+    "h": "Slow down",
+    "list": [
+     "Play scales slowly and stop on each note to listen.",
+     "If a note is out of tune, adjust it, then play from the note before to land on it again."
+    ]
+   },
+   {
+    "h": "Work with your teacher",
+    "p": [
+     "Tuning problems often come from hand shape or thumb position. A teacher can spot these quickly."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "cello-intonation-drone-practice",
+  "offer": "cello-ear",
+  "title": "Cello intonation practice with a drone",
+  "description": "How to use a drone note to train your ear and improve your cello intonation.",
+  "intro": "A drone is a steady note that plays in the background. Practising against one helps you hear when your notes clash or blend.",
+  "sections": [
+   {
+    "h": "Set up a drone",
+    "list": [
+     "Use a drone app, or a recording of a long held note.",
+     "Start with the main note of the key you're practising, such as C for a C major scale."
+    ]
+   },
+   {
+    "h": "What to listen for",
+    "list": [
+     "When your note is in tune with the drone, it sounds smooth and calm.",
+     "When it's out of tune, you'll hear a wobbling or 'beating' sound. Adjust until it settles."
+    ]
+   },
+   {
+    "h": "A simple routine",
+    "list": [
+     "Play a scale slowly against the drone, holding each note.",
+     "Pay extra attention to the notes you find hardest.",
+     "Ten minutes a day is enough to make a difference."
+    ]
+   }
+  ]
  }
 ]

@@ -54472,6 +54472,97 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-28",
+    "slug": "cello-ear",
+    "name": "Cello Ear",
+    "need": "I'm learning the cello as an adult and I can't play in tune consistently, and between lessons I can't tell which notes are drifting.",
+    "headline": "Learning cello and struggling to play in tune? See which notes drift sharp or flat, and fix them with short drills against a drone, between lessons.",
+    "buyer": "Adults learning the cello, with or without a teacher.",
+    "bullets": [
+      "Play a scale or piece and see each note marked in tune, sharp or flat.",
+      "Ten-minute drills built from the notes you miss most, played against a steady drone.",
+      "A weekly recording side by side, and a list of stubborn notes to take to your teacher."
+    ],
+    "price": "$4.99/month",
+    "priceUsd": 5,
+    "priceNote": "Or $35 a year.",
+    "reasonPrompt": "How long have you been playing, and which notes give you trouble?",
+    "faq": [
+      {
+        "q": "Does it replace a teacher?",
+        "a": "No. Cello Ear is a practice tool for between lessons. A teacher can spot posture and hand-position problems that cause tuning issues."
+      },
+      {
+        "q": "Is it linked to a music school or instrument brand?",
+        "a": "No. Cello Ear is independent and not affiliated with any school, teacher or brand."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-28",
+      "summary": "Adult cellists describe playing anything in tune being astonishingly difficult, struggling to maintain correct intonation, having an inconsistent time with intonation, and regularly hitting the wrong note.",
+      "wtp": "tonestro Learn & Play Cello sells Premium from $29.99 to $149.99 (88 ratings); Purely Cello sells a full pack at $2.99 a month.",
+      "signals": [
+        {
+          "url": "https://www.zanshin.net/2026/07/09/intonation-blues/",
+          "who": "Mark H. Nichols (blog)",
+          "date": "2026-07-09",
+          "quote": "in tune is astonishingly difficult",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.zanshin.net/2026/07/09/intonation-blues/",
+          "who": "Mark H. Nichols (blog)",
+          "date": "2026-07-09",
+          "quote": "I struggle with maintaining correct intonation",
+          "seen": "opened"
+        },
+        {
+          "url": "https://fiddlerman.com/forum/learning-to-play-cello/how-do-you-handle-inconsistencies-in-intonation/",
+          "who": "Mouse (Fiddlerman forum)",
+          "date": "2019-07-24",
+          "quote": "inconsistent time with intonation",
+          "seen": "opened"
+        },
+        {
+          "url": "https://fiddlerman.com/forum/learning-to-play-cello/progress-with-the-cello",
+          "who": "Mouse (Fiddlerman forum)",
+          "date": "2019-06-10",
+          "quote": "I usually hit the F instead of the E",
+          "seen": "opened"
+        },
+        {
+          "url": "https://fiddlerman.com/forum/learning-to-play-cello/progress-with-the-cello",
+          "who": "intrepidgirl (Fiddlerman forum)",
+          "date": "2019-06-12",
+          "quote": "good ringing harmonic sucks",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/-/id6745889012",
+          "who": "tonestro Learn & Play Cello (App Store)",
+          "date": "2026-10-28",
+          "quote": "88 Ratings; Premium $29.99 to $149.99",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/cello-lessons-learn/id966386826",
+          "who": "Purely Cello (App Store)",
+          "date": "2026-10-28",
+          "quote": "$2.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Tuner apps, cello lesson apps (tonestro, Purely Cello), teachers.",
+      "risks": "Only 3 people, two on one forum, posts mostly from 2019; paid cello apps are small with price complaints; nobody wrote that they'd pay; next to live Bow Steady (violin)."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
