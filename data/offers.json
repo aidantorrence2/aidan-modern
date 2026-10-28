@@ -51476,6 +51476,153 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-28",
+    "slug": "carrier-calm",
+    "name": "Carrier Calm",
+    "need": "Getting my cat into the carrier for the vet or cattery turns into a fight, with scratches, bites and appointments I end up cancelling.",
+    "headline": "Cat turns into a wildcat at the sight of the carrier? Follow a short daily plan that makes the carrier a normal part of home, then a calm routine for vet and cattery days.",
+    "buyer": "Adult cat owners, often with rescue or nervous cats, who dread vet visits or cattery drop-offs because the cat fights the carrier.",
+    "bullets": [
+      "A step-by-step plan over a few weeks: carrier out at home, treats inside, short closed-door moments, short trips.",
+      "A calm vet-day routine: carrier ready the day before, a towel, gentle handling and what to do if your cat hides.",
+      "A simple log of each step, so you can see progress and go back a step if needed."
+    ],
+    "price": "$3.99/month",
+    "priceUsd": 4,
+    "priceNote": "Or $19 a year. For adults 18+.",
+    "reasonPrompt": "What usually happens when you get the carrier out?",
+    "faq": [
+      {
+        "q": "Does it give medical or sedation advice?",
+        "a": "No. Carrier Calm is a handling and training plan only. For anxiety medication, calming products or health worries, talk to your vet. If you're at risk of a bad bite or scratch, stop and ask your vet for help."
+      },
+      {
+        "q": "Is it linked to a vet practice or pet brand?",
+        "a": "No. Carrier Calm is independent, not affiliated with any vet practice, pet brand or cat app, and sells no products."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-28",
+      "summary": "Cat owners describe their cat turning into a complete wildcat, getting the cat into the carrier being an absolute nightmare, trying for hours with no joy, struggling to get a nervous cat to the vet, and a cat so stressed by the carrier that it attacked them.",
+      "wtp": "Meowz: Cat Training, Pet Care has 992 App Store ratings and sells Premium at $7.99 to $29.99.",
+      "signals": [
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/6035809/getting-the-cat-into-the-cat-carrier",
+          "who": "tesuhoha (MoneySavingExpert)",
+          "date": "2019-08-11",
+          "quote": "the last time we tried to take her she turned into a complete wildcat",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/4995449/getting-a-cat-into-a-carrier",
+          "who": "WeAreGhosts (MoneySavingExpert)",
+          "date": "2014-06-15",
+          "quote": "getting her in it is an absolute nightmare",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/3381820/getting-cat-into-a-carrier",
+          "who": "alipops1986 (MoneySavingExpert)",
+          "date": "2011-07-26",
+          "quote": "Operation, get her into carrier, began at 9am so far no joy",
+          "seen": "opened"
+        },
+        {
+          "url": "https://lemmy.zip/comment/10683661",
+          "who": "IamSparticles (Lemmy)",
+          "date": "2024-05-28",
+          "quote": "Our cat would get so stressed when I tried to put her in a carrier that she would attack me",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/meowz-cat-training-pet-care/id6503908960",
+          "who": "Meowz: Cat Training, Pet Care (App Store)",
+          "date": "2026-10-28",
+          "quote": "992 Ratings; Meowz Premium $7.99, $19.99; Yearly Premium Access $29.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Meowz, YouTube carrier-training videos, vets and cat behaviourists.",
+      "risks": "Most posts are older UK forum threads. The money is a general cat-training app with under 1K ratings. Must stay about handling and training, with no medical or sedation advice. Near live tray-again and sleep-past-five (other cat behaviours)."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-28",
+    "slug": "clear-counters",
+    "name": "Clear Counters",
+    "need": "My cat keeps jumping on the kitchen worktops and table, and lifting it down or using foil and citrus hasn't stopped it.",
+    "headline": "Cat always on the kitchen worktops? Find out why it goes up there, give it a better place to be, and follow a consistent plan for the whole household.",
+    "buyer": "Adult cat owners, especially with young or several cats, who are fed up with cat hair on worktops and cleaning surfaces all day.",
+    "bullets": [
+      "A quick check of why your cat goes up: food, height, warmth, watching you or boredom.",
+      "A plan with a better spot nearby (a cat tree or shelf), removing rewards on the counter, and the same rule for everyone at home.",
+      "A simple log of when it happens, so you can see what's working."
+    ],
+    "price": "$3.99/month",
+    "priceUsd": 4,
+    "priceNote": "Or $19 a year. For adults 18+.",
+    "reasonPrompt": "When does your cat usually get on the worktops?",
+    "faq": [
+      {
+        "q": "Does it use punishment?",
+        "a": "No. Clear Counters uses positive, consistent changes, not punishment, which can make cats fearful. If your cat's behaviour changes suddenly, check with your vet."
+      },
+      {
+        "q": "Is it linked to a pet brand or cat app?",
+        "a": "No. Clear Counters is independent, not affiliated with any pet brand or app, and sells no deterrent products."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-28",
+      "summary": "Cat owners describe being driven slightly mad by a cat jumping on the worktops, asking how to stop cats jumping up, struggling for a long time to stop it, and cats sleeping on worktops and leaving hair everywhere.",
+      "wtp": "Meowz: Cat Training, Pet Care has 992 App Store ratings and sells Premium at $7.99 to $29.99; a reviewer downloaded it for a cat that jumps on counters and tables.",
+      "signals": [
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/4999644/cat-on-kitchen-worktops",
+          "who": "BambiOnIce (MoneySavingExpert)",
+          "date": "2014-06-20",
+          "quote": "she is driving me slightly mad with jumping on the kitchen worktops",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/3557189/any-tips-suggestions-to-stop-cats-jumping-onto-kitchen-worktops",
+          "who": "decogecko (MoneySavingExpert)",
+          "date": "2011-10-18",
+          "quote": "Does anyone have any ideas/tips to prevent them jumping up there or discourage them to jump up?",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/2245893/cats-on-counters-help",
+          "who": "clancy (MoneySavingExpert)",
+          "date": "2010-02-01",
+          "quote": "have struggled since then with how to stop them jumping on the worktops",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/meowz-cat-training-pet-care/id6503908960",
+          "who": "Meowz: Cat Training, Pet Care (App Store)",
+          "date": "2026-10-28",
+          "quote": "992 Ratings; Meowz Premium $7.99, $19.99; Yearly Premium Access $29.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Meowz, deterrent mats and sprays, cat trees, behaviourists.",
+      "risks": "Forum posts are old (2010-2014). Many owners accept cats on counters, so willingness to pay may be low. Same single money source as carrier-calm. Near other live cat-behaviour offers."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
