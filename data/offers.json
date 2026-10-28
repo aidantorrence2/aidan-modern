@@ -54563,6 +54563,188 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-28",
+    "slug": "own-pace-walks",
+    "name": "Own Pace Walks",
+    "need": "I want to explore a new city on foot at my own pace without paying for, or being tied to, a guided group tour.",
+    "headline": "Visiting a new city? Explore it on foot at your own pace with a self-guided walk that fits the time you have, without booking a group tour.",
+    "buyer": "Independent travellers, couples and cruise passengers on city breaks or port days.",
+    "bullets": [
+      "Self-guided walks sized to the time you have, from one hour to a full day, starting wherever you are.",
+      "Short stories at each stop to read or listen to, and skip or linger as you like.",
+      "Works offline, with a 'back to the ship' or 'back to the hotel' timer."
+    ],
+    "price": "$4.99/month",
+    "priceUsd": 5,
+    "priceNote": "Or $9 for a 7-day trip pass.",
+    "reasonPrompt": "Which city are you visiting, and how much time do you have?",
+    "faq": [
+      {
+        "q": "Do I need signal while walking?",
+        "a": "No. Download your city before you go and the walk works offline."
+      },
+      {
+        "q": "Is it linked to a tour company or tourist board?",
+        "a": "No. Own Pace Walks is independent and not affiliated with any tour operator, cruise line or tourist board."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-28",
+      "summary": "Travellers describe wanting to explore a new city on foot without the hassle and limits of a tour, not wanting a formal guided tour, touring cities at their own pace without paying a guide, preferring walking to organised tours, finding tours expensive or at the wrong time, and often being alone in a new city.",
+      "wtp": "GPSmyCity has 1.3K App Store ratings and sells City Walks at $14.99 a year; VoiceMap has 3.4K ratings with single tours from $4.99 to $19.99 and a $24.99 Tour Pass.",
+      "signals": [
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=2/id=417207307/sortby=mosthelpful/json",
+          "who": "Kozana (App Store review of GPSmyCity)",
+          "date": "2024-08-30",
+          "quote": "explore a new city on foot without the hassle and limitations",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=3/id=417207307/sortby=mosthelpful/json",
+          "who": "DonTravel (App Store review of GPSmyCity)",
+          "date": "2026-10-19",
+          "quote": "if you do not want to take a formal guided tour",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=417207307/sortby=mosthelpful/json",
+          "who": "SparkyDog2004 (App Store review of GPSmyCity)",
+          "date": "2019-03-05",
+          "quote": "tour different cities at our own pace and without the cost of hiring a tour guide",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=417207307/sortby=mosthelpful/json",
+          "who": "User31057 (App Store review of GPSmyCity)",
+          "date": "2019-10-07",
+          "quote": "exploring by foot, which I always prefer to organized tours",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=852027939/sortby=mosthelpful/json",
+          "who": "MrRSTEELE (App Store review of VoiceMap)",
+          "date": "2025-10-11",
+          "quote": "they are often expensive and may not be at a time",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=852027939/sortby=mosthelpful/json",
+          "who": "dalolies (App Store review of VoiceMap)",
+          "date": "2025-12-10",
+          "quote": "I frequently find myself in a new city flying solo",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/gpsmycity-walks-in-1k-cities/id417207307",
+          "who": "GPSmyCity (App Store)",
+          "date": "2026-10-28",
+          "quote": "1.3K Ratings; City Walks Annual $14.99; 1-Year $20.99",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id852027939",
+          "who": "VoiceMap (App Store)",
+          "date": "2026-10-28",
+          "quote": "3.4K Ratings; Tour Pass $24.99; tours up to $19.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "GPSmyCity, VoiceMap, other audio-tour apps, free walking tours, map lists.",
+      "risks": "Established competitors; good routes and stories for each city are costly to make; trip-based use, so a trip pass may sell better; next to live Trip Pacer. Evidence is all App Store reviews."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-28",
+    "slug": "ok-to-watch",
+    "name": "Ok To Watch",
+    "need": "Before my child watches a film or show, or reads a book, I want to know exactly what's in it (language, violence, romance) so I can decide if it suits them.",
+    "headline": "Not sure a film or book is right for your child? See what's actually in it, scene types and language, and decide against your own family's lines, in seconds.",
+    "buyer": "Parents of children aged about 5 to 14 who check films, shows and books before watching or reading.",
+    "bullets": [
+      "Look up a film, show or book and see clear notes on language, violence, scary scenes and romance.",
+      "Set your own family's lines once, and see at a glance which titles cross them.",
+      "A list of titles you've already checked and approved, shared with the other parent."
+    ],
+    "price": "$2.99/month",
+    "priceUsd": 3,
+    "priceNote": "Or $19 a year.",
+    "reasonPrompt": "How old are your kids, and what do you most want to check for?",
+    "faq": [
+      {
+        "q": "Does it replace official age ratings?",
+        "a": "No. Official ratings are a useful starting point. Ok To Watch adds detail so you can make your own call for your own child."
+      },
+      {
+        "q": "Is it linked to a ratings board, studio or review site?",
+        "a": "No. Ok To Watch is independent and not affiliated with any ratings board, studio, streaming service or review organisation."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-28",
+      "summary": "Parents describe checking movies before watching, deciding whether they want their children to see certain films, checking a movie before watching with their kids, hearing reviews before taking a child to the cinema, and checking whether books are appropriate.",
+      "wtp": "The Common Sense Media app has 9K App Store ratings with plans at $3.99 a month or $39.99 a year; one reviewer said the price was too high.",
+      "signals": [
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=6443335877/sortby=mosthelpful/json",
+          "who": "Nicoaks1124 (App Store review)",
+          "date": "2023-12-13",
+          "quote": "I love being able to check movies",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=6443335877/sortby=mosthelpful/json",
+          "who": "Law abider (App Store review)",
+          "date": "2025-11-01",
+          "quote": "find out whether or not I want my children to see certain movies",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=6443335877/sortby=mosthelpful/json",
+          "who": "Aaa adam aaa (App Store review)",
+          "date": "2024-04-21",
+          "quote": "checking a movie before we watch with my kids",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=2/id=6443335877/sortby=mosthelpful/json",
+          "who": "Birdwise (App Store review)",
+          "date": "2026-07-18",
+          "quote": "hear reviews before I take my kid to a movie",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=2/id=6443335877/sortby=mosthelpful/json",
+          "who": "Mom650 (App Store review)",
+          "date": "2024-07-03",
+          "quote": "just to find out if books are appropriate for kids",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id6443335877",
+          "who": "Common Sense Media app (App Store)",
+          "date": "2026-10-28",
+          "quote": "9K Ratings; Monthly $3.99; Yearly $39.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Common Sense Media, free parents' guides on film sites, official age ratings.",
+      "risks": "A trusted, large incumbent and free sources; reliable content detail is hard to get without licensing or writing it; next to parental controls and 'what to watch'; price-sensitive buyers. Evidence is App Store reviews of one app on two pages."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

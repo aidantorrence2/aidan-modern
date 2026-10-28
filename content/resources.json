@@ -29462,5 +29462,147 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "self-guided-walking-tour-any-city",
+  "offer": "own-pace-walks",
+  "title": "How to do a self-guided walking tour of any city",
+  "description": "Plan your own walking tour of a new city, at your own pace and without a guide.",
+  "intro": "You don't need a guided tour to see a city well. A little planning lets you explore on foot at your own pace.",
+  "sections": [
+   {
+    "h": "Plan a loop",
+    "list": [
+     "Pick three to six sights close together.",
+     "Link them in a loop so you finish near where you started.",
+     "Allow about 20 to 30 minutes per stop, plus walking time."
+    ]
+   },
+   {
+    "h": "Add the stories",
+    "list": [
+     "Read a little about each stop before you go, or save short notes to read when you arrive.",
+     "Free museum leaflets and plaques often tell you more than you'd expect."
+    ]
+   },
+   {
+    "h": "Be prepared",
+    "list": [
+     "Download offline maps.",
+     "Wear comfortable shoes and carry water.",
+     "Check opening hours, especially on Mondays and public holidays."
+    ]
+   },
+   {
+    "h": "Leave room to wander",
+    "p": [
+     "Some of the best moments come from side streets and cafés you didn't plan."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "walking-a-cruise-port-on-your-own",
+  "offer": "own-pace-walks",
+  "title": "How to explore a cruise port on foot on your own",
+  "description": "Tips for seeing a cruise port city by yourself without missing the ship.",
+  "intro": "Many cruise ports are easy to explore on foot. With a bit of planning, you can see the highlights without booking an excursion.",
+  "sections": [
+   {
+    "h": "Before you arrive",
+    "list": [
+     "Check how far the port is from the town centre and whether there's a shuttle.",
+     "Pick a short walking loop that fits comfortably in your time ashore.",
+     "Download offline maps."
+    ]
+   },
+   {
+    "h": "Timing",
+    "list": [
+     "Note the 'all aboard' time, which is earlier than departure.",
+     "Plan to be back well before it, allowing for queues and delays.",
+     "Set an alarm on your phone as a reminder."
+    ]
+   },
+   {
+    "h": "Carry the essentials",
+    "list": [
+     "Your cruise card and ID.",
+     "The ship's port agent phone number.",
+     "Some local currency or a card that works abroad."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "check-if-movie-is-right-for-your-child",
+  "offer": "ok-to-watch",
+  "title": "How to check if a film is right for your child before watching",
+  "description": "Simple ways to find out what's in a film or show before your child watches it.",
+  "intro": "Age ratings are a helpful start, but every child is different. A quick check before watching helps you decide for your own family.",
+  "sections": [
+   {
+    "h": "Start with the official rating",
+    "list": [
+     "In the US, films are rated G, PG, PG-13, R or NC-17.",
+     "In the UK, films are rated U, PG, 12A, 12, 15 or 18.",
+     "Look at the short reason given with the rating, such as 'violence' or 'language'."
+    ]
+   },
+   {
+    "h": "Look for detail",
+    "list": [
+     "Parents' guides on film websites list specific scenes and language.",
+     "Trailers give a sense of tone and scary moments."
+    ]
+   },
+   {
+    "h": "Know your child",
+    "list": [
+     "Think about what upsets or worries your child, not just their age.",
+     "Some children are fine with action but find tense or sad scenes hard."
+    ]
+   },
+   {
+    "h": "Watch together",
+    "p": [
+     "If you're unsure, watch with them, or watch first yourself. Talking about what you've seen helps children make sense of it."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "pick-a-family-movie-everyone-can-watch",
+  "offer": "ok-to-watch",
+  "title": "How to pick a family movie night film everyone can watch",
+  "description": "Tips for choosing a film that works for children of different ages and the adults too.",
+  "intro": "Choosing a film for the whole family can be tricky, especially with children of different ages. These tips make it easier.",
+  "sections": [
+   {
+    "h": "Aim for the youngest viewer",
+    "p": [
+     "Choose a film that suits the youngest child watching, and save older picks for another night."
+    ]
+   },
+   {
+    "h": "Check before you start",
+    "list": [
+     "Look at the rating and the reasons given.",
+     "Read a parents' guide for anything your children find upsetting."
+    ]
+   },
+   {
+    "h": "Take turns choosing",
+    "p": [
+     "Let each family member pick from a shortlist you've already checked."
+    ]
+   },
+   {
+    "h": "Have a back-up",
+    "p": [
+     "Keep one or two tried-and-tested favourites ready in case a new film doesn't work out."
+    ]
+   }
+  ]
  }
 ]
