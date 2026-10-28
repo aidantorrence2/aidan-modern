@@ -26973,5 +26973,89 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "what-to-do-after-failing-the-real-estate-exam",
+  "offer": "exam-comeback",
+  "title": "What to do after failing the real estate exam",
+  "description": "A practical plan for your retake: read your score report, fix weak areas, and practise under exam conditions.",
+  "intro": "Many people fail the real estate licence exam at least once. A focused plan for the retake usually works better than re-reading everything. Retake rules, waiting periods and fees vary by state, so check with your state's real estate commission or testing provider.",
+  "sections": [
+   {
+    "h": "Read your score report",
+    "list": [
+     "Note which sections you were weakest in, and whether the national or state portion let you down.",
+     "Focus first on the areas with the most questions and the lowest scores."
+    ]
+   },
+   {
+    "h": "Make a day-by-day plan",
+    "list": [
+     "Count the days until your retake and give the most time to your weak areas.",
+     "Study a little every day rather than cramming."
+    ]
+   },
+   {
+    "h": "Fix the math",
+    "list": [
+     "Practise the common calculations until you can do them quickly.",
+     "For every wrong answer, find the exact step that went wrong."
+    ]
+   },
+   {
+    "h": "Practise like the real exam",
+    "list": [
+     "Take timed practice tests at the same length as the real exam.",
+     "Review every wrong answer and why the right one is right.",
+     "Learn your state's specific laws separately; they're often a separate section."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "real-estate-exam-math-formulas",
+  "offer": "exam-comeback",
+  "title": "Real estate exam math: the formulas you need",
+  "description": "The common real estate math formulas for the licence exam, with simple explanations.",
+  "intro": "Math is a small part of most real estate exams, but it's where many people lose points. A handful of formulas cover most questions. Check your exam provider's content outline for what your state includes.",
+  "sections": [
+   {
+    "h": "Commission",
+    "list": [
+     "Commission = sale price × commission rate.",
+     "If you know the commission and rate: sale price = commission ÷ rate."
+    ]
+   },
+   {
+    "h": "Area",
+    "list": [
+     "Rectangle: length × width.",
+     "Triangle: (base × height) ÷ 2.",
+     "One acre is 43,560 square feet."
+    ]
+   },
+   {
+    "h": "Loans and value",
+    "list": [
+     "Loan-to-value ratio = loan amount ÷ property value.",
+     "Cap rate = net operating income ÷ property value (or price).",
+     "Interest for one year = loan amount × annual interest rate."
+    ]
+   },
+   {
+    "h": "Proration",
+    "list": [
+     "Find the daily amount (annual amount ÷ 365, or ÷ 360 if the question says so).",
+     "Multiply by the number of days owed.",
+     "Read carefully who owes whom and for which days."
+    ]
+   },
+   {
+    "h": "Practise",
+    "p": [
+     "Write each formula out, then practise word problems until you can recognise which formula a question needs."
+    ]
+   }
+  ]
  }
 ]

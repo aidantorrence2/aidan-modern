@@ -51623,6 +51623,90 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-28",
+    "slug": "exam-comeback",
+    "name": "Exam Comeback",
+    "need": "I failed my real estate licence exam (or the course final) and have a retake booked, and I need to fix exactly what went wrong this time.",
+    "headline": "Failed the real estate licence exam and have a retake booked? Enter your weak sections and date, get a day-by-day plan, and practise real estate math step by step.",
+    "buyer": "Adults (18+) who failed the real estate salesperson exam or pre-licensing course final and have a retake booked.",
+    "bullets": [
+      "Enter your score-report sections, state and retake date; get a day-by-day plan weighted to your weakest areas.",
+      "Real estate math step by step (commission, proration, area, loan-to-value, cap rate), showing which step went wrong.",
+      "Daily 20-question drills that bring back your misses, a separate state-portion track and timed full-length tests."
+    ],
+    "price": "$9.99/month",
+    "priceUsd": 10,
+    "priceNote": "Or $19 for 60 days. For adults 18+.",
+    "reasonPrompt": "Which sections did you miss, and when is your retake?",
+    "faq": [
+      {
+        "q": "Is it official or guaranteed?",
+        "a": "No. Exam Comeback is independent and not affiliated with any state real estate commission, testing provider or school. It uses its own practice questions and can't guarantee a pass. Always check your state's rules for retakes and licensing."
+      },
+      {
+        "q": "Is it legal advice?",
+        "a": "No. It's exam practice only. For legal questions about real estate practice, ask a licensed professional."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-28",
+      "summary": "Real estate students describe being discouraged after failing the course exam twice, not passing the state final exam two times and finding the course didn't cover the questions, taking the test seven or eight times before passing, and still not passing after two attempts with a paid app.",
+      "wtp": "Dearborn Real Estate Exam Prep has 13K App Store ratings and sells access from $34.99 a month to $159.99; Prepia Real Estate Exam Prep has 368 ratings with plans up to $49.99 for six months.",
+      "signals": [
+        {
+          "url": "https://www.biggerpockets.com/forums/88/topics/195771-real-estate-school",
+          "who": "Tevell Williams (BiggerPockets)",
+          "date": "2015-05-14",
+          "quote": "taken my course exam and failed twice",
+          "seen": "opened"
+        },
+        {
+          "url": "https://community.kaplan.com/realestate/discussion/comment/20506",
+          "who": "Angela11248009 (Kaplan Real Estate community)",
+          "date": "2025-04-01",
+          "quote": "ended up not passing my state final exam both times",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/dearborn-real-estate-exam-prep/id906758940",
+          "who": "KyraJParsons (App Store review of Dearborn Real Estate Exam Prep)",
+          "date": "2022-05-09",
+          "quote": "take my test seven or eight times and I passed on the eight times",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/prepia-real-estate-exam-prep/id6738352357",
+          "who": "victoryland (App Store review of Prepia)",
+          "date": "2026-04-01",
+          "quote": "I have not passed using this app yet, tested 2x",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/dearborn-real-estate-exam-prep/id906758940",
+          "who": "Dearborn Real Estate Exam Prep (App Store)",
+          "date": "2026-10-28",
+          "quote": "13K Ratings; 1 Month $34.99; 12 Month $119.99; up to $159.99",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/prepia-real-estate-exam-prep/id6738352357",
+          "who": "Prepia Real Estate Exam Prep (App Store)",
+          "date": "2026-10-28",
+          "quote": "368 Ratings; plans up to $49.99 for six months",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Dearborn, Prepia, Real Estate Express, Kaplan, PrepAgent, pre-licensing schools.",
+      "risks": "Only 4 clear people; one failed the course final, not the state exam. Strong paid competitors. A career exam, close to a career tool, like live retake-map (NCLEX). Must not use real exam items or imply official status."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
