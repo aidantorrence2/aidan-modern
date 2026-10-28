@@ -53912,6 +53912,90 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-28",
+    "slug": "settle-it",
+    "name": "Settle It",
+    "need": "I'm very indecisive: everyday choices like what to order, which one to buy or whether to go take me ages, stress me out, and I keep second-guessing afterwards.",
+    "headline": "Stuck on everyday choices and second-guessing afterwards? Settle one choice in two minutes, decide what 'good enough' means first, and stop re-deciding.",
+    "buyer": "Adults (18+) who stall on everyday choices and keep second-guessing.",
+    "bullets": [
+      "A two-minute walk-through for one choice: name it, decide how long it deserves, pick the two or three things that matter, choose.",
+      "Set a 'good enough' line before you look, and lock in your choice with your saved reasons when the doubts come back.",
+      "Defaults for small repeat choices, set once, plus a private log of how your choices turned out."
+    ],
+    "price": "$3.99/month",
+    "priceUsd": 4,
+    "priceNote": "Or $24 a year. For adults 18+.",
+    "reasonPrompt": "What kind of choice do you get stuck on most?",
+    "faq": [
+      {
+        "q": "Is this therapy?",
+        "a": "No. Settle It is a self-help tool for everyday choices, not therapy. If indecision comes with ongoing anxiety, low mood or feeling trapped, please talk to your doctor or a counsellor."
+      },
+      {
+        "q": "Is it just a random picker?",
+        "a": "No. It helps you choose based on what matters to you, rather than spinning a wheel. It's independent and not affiliated with any app or wellbeing service."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-28",
+      "summary": "People describe not being able to choose so they don't change anything, being an indecisive person surrounded by other indecisive people, being super indecisive and relying on others to decide, and finding a decision app makes life easier because they're so indecisive.",
+      "wtp": "Tiny Decisions has 90K App Store ratings with Pro at $1.99 a month, $9.99 a year or $24.99 lifetime, and a reviewer called paying for Pro a no-brainer; Harmony Decision Maker sells $6.99 a month or $24 a year.",
+      "signals": [
+        {
+          "url": "https://thespinoff.co.nz/society/30-01-2025/help-me-hera-i-cant-make-a-decision-to-save-my-life",
+          "who": "'Vacillating' (letter to The Spinoff)",
+          "date": "2025-01-30",
+          "quote": "t change anything",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1338769645/sortby=mosthelpful/json",
+          "who": "CrazyWriterPerson01 (App Store review of Tiny Decisions)",
+          "date": "2020-03-12",
+          "quote": "I am an indecisive person surrounded by other equally indecisive people",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=2/id=1338769645/sortby=mosthelpful/json",
+          "who": "hawkeye 20088888 (App Store review of Tiny Decisions)",
+          "date": "2022-08-20",
+          "quote": "I am super indecisive and love to have other people make decisions for me",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/indecisive-effortless-choices/id6740501558",
+          "who": "Geo Dash Lover! (App Store review of Indecisive)",
+          "date": "2025-01-19",
+          "quote": "super indecisive and this makes my life so much easier",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/tiny-decisions-spin-wheel/id1338769645",
+          "who": "Tiny Decisions (App Store)",
+          "date": "2026-10-28",
+          "quote": "90K Ratings; PRO Monthly $1.99; Annual $9.99; Lifetime $24.99",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/harmony-decision-maker/id1194396926",
+          "who": "Harmony Decision Maker (App Store)",
+          "date": "2026-10-28",
+          "quote": "1 Month $6.99; 12 Months $24.00",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Random picker apps (Tiny Decisions, spin-the-wheel apps), decision-matrix apps, self-help books.",
+      "risks": "Most paid decision apps are random pickers, so the edge is reason-based choosing; indecision can come with anxiety or depression, so it must not claim to treat them. The doc side's Mumsnet, Beyond Blue and support-forum quotes couldn't be opened with plain curl, so they aren't cited. Nobody wrote that they'd pay for this approach."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

@@ -28741,5 +28741,76 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "stop-being-indecisive-small-things",
+  "offer": "settle-it",
+  "title": "How to stop being indecisive about small things",
+  "description": "Simple ways to make everyday choices faster, from what to order to which one to buy.",
+  "intro": "Small choices can eat up a surprising amount of time and energy. A few simple habits make them quicker and less stressful.",
+  "sections": [
+   {
+    "h": "Match the effort to the choice",
+    "list": [
+     "Ask: will this matter in a week? If not, give it a minute, not an hour.",
+     "Set a short time limit before you start."
+    ]
+   },
+   {
+    "h": "Decide what matters first",
+    "list": [
+     "Pick two or three things that matter for this choice, like price, taste or time.",
+     "Cross off options that fail them, then choose from what's left."
+    ]
+   },
+   {
+    "h": "Aim for good enough",
+    "p": [
+     "Decide what 'good enough' looks like before you start, and take the first option that meets it. Searching for the perfect choice usually costs more than it's worth."
+    ]
+   },
+   {
+    "h": "Set defaults",
+    "list": [
+     "Have a usual order at your regular café.",
+     "Plan a few go-to meals.",
+     "Keep a standard gift idea for birthdays."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "stop-second-guessing-decisions",
+  "offer": "settle-it",
+  "title": "How to stop second-guessing a decision you've already made",
+  "description": "Practical ways to stop going back over a choice once you've made it.",
+  "intro": "Making a choice and then replaying it over and over is exhausting. These steps help you let it rest.",
+  "sections": [
+   {
+    "h": "Write down why",
+    "p": [
+     "When you decide, jot down your reasons in a sentence or two. When doubts come back, read them instead of starting again."
+    ]
+   },
+   {
+    "h": "Set a review date",
+    "p": [
+     "If a choice really might need changing, pick a date to review it, and leave it alone until then."
+    ]
+   },
+   {
+    "h": "Notice new information",
+    "list": [
+     "Only reopen a decision if something important has changed.",
+     "Feeling unsure isn't new information."
+    ]
+   },
+   {
+    "h": "When to get support",
+    "p": [
+     "If second-guessing comes with ongoing worry, low mood, or feeling stuck most of the time, talk to your doctor or a counsellor."
+    ]
+   }
+  ]
  }
 ]
