@@ -57300,6 +57300,90 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-29",
+    "slug": "clean-slate-posts",
+    "name": "Clean Slate",
+    "need": "I want my years of old tweets, Reddit comments and Facebook posts gone in bulk, and I want to be sure they're really deleted, not just hidden or sitting in the trash.",
+    "headline": "Want your old posts gone for good? Follow a step-by-step clean-up for each account using the platforms' own tools, and tick off what's really deleted.",
+    "buyer": "Adults with old social media accounts who want their past posting history cleaned up, for example before a job search or after a life change.",
+    "bullets": [
+      "A checklist of every account you've used, with each platform's own download, delete and activity-log steps.",
+      "Reminders to empty the trash or archive so 'deleted' posts don't quietly come back.",
+      "A final check: search yourself and tick off each account once it's clean."
+    ],
+    "price": "$6.99/month",
+    "priceUsd": 7,
+    "priceNote": "Or $29 for a one-off three-month clean-up.",
+    "reasonPrompt": "Which accounts do you want cleaned up, and how far back do they go?",
+    "faq": [
+      {
+        "q": "Is it linked to X, Reddit, Meta or any platform?",
+        "a": "No. Clean Slate is independent and not affiliated with any social network or app."
+      },
+      {
+        "q": "Does it log into my accounts or delete things automatically?",
+        "a": "No. It guides you through each platform's own tools, so you stay within their rules and never hand over your password. It can't remove copies other people or sites have already saved."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-29",
+      "summary": "People say they want to delete their Reddit comments and clear their comment history, downloaded apps to delete large swaths of posts, found bulk deletion of their oldest history useful, ask for all their old stuff and embarrassing comments to be deleted, and delete all their old tweets, posts and comments on every site.",
+      "wtp": "Redact, a post-deletion app (1.6K ratings), sells Premium at $9.99 a month or $49.99, and Unrepostify sells Pro at $9.99 a month or $49.99 a year (3.9K ratings).",
+      "signals": [
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=6449900531/sortby=mosthelpful/json",
+          "who": "Pursuit8478 (App Store review of Redact)",
+          "date": "2025-07-17",
+          "quote": "I want to use this to delete my Reddit comments and clear my comment history",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=6449900531/sortby=mosthelpful/json",
+          "who": "Unreedeemed (App Store review of Redact)",
+          "date": "2024-11-17",
+          "quote": "Downloaded to delete large swaths of posts on social media",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=6449900531/sortby=mosthelpful/json",
+          "who": "Javajoy01 (App Store review of Redact)",
+          "date": "2026-09-09",
+          "quote": "this app was useful to delete my oldest history in bulk",
+          "seen": "opened"
+        },
+        {
+          "url": "https://hn.algolia.com/api/v1/items/36260933",
+          "who": "rr808 (Hacker News)",
+          "date": "2023-06-09",
+          "quote": "Please delete all my old stuff. Esp the embarrassing comments and likes.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://hn.algolia.com/api/v1/items/27597478",
+          "who": "theshrike79 (Hacker News)",
+          "date": "2021-06-22",
+          "quote": "This is why I delete all my old tweets, posts and comments on all sites",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/redact-privacy-delete-tweets/id6449900531",
+          "who": "Redact (App Store)",
+          "date": "2026-10-29",
+          "quote": "1.6K Ratings; Premium Monthly $9.99; Premium $49.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Post-deletion apps (Redact, TweetDelete), each platform's own activity log and account tools, privacy guides.",
+      "risks": "Automated deleters risk platform bans and API costs, so this guides people through official tools instead; people complain that posts aren't really deleted, so the page never promises removal of copies elsewhere; next to live personal-information-everywhere-feel, which covers data brokers, not your own posts."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

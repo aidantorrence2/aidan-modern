@@ -32316,5 +32316,75 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "delete-old-social-media-posts-in-bulk",
+  "offer": "clean-slate-posts",
+  "title": "How to delete your old social media posts in bulk",
+  "description": "A safe, account-by-account plan for clearing years of old posts and comments.",
+  "intro": "Old posts can follow you around. Most platforms let you delete or archive your history with their own tools; it just takes a plan.",
+  "sections": [
+   {
+    "h": "List every account",
+    "list": [
+     "Write down every site you've posted on, including ones you've stopped using.",
+     "Note the username and email for each."
+    ]
+   },
+   {
+    "h": "Download first",
+    "p": [
+     "Most platforms let you download a copy of your data. Do this before deleting, in case you want to keep anything."
+    ]
+   },
+   {
+    "h": "Use the official tools",
+    "list": [
+     "Look in each platform's settings for an activity log, archive or manage-posts option that lets you select many posts at once.",
+     "Be cautious with third-party apps that ask for your password; some platforms restrict or ban accounts that use them."
+    ]
+   },
+   {
+    "h": "Finish the job",
+    "list": [
+     "Empty any trash or recently-deleted folder, since some platforms keep deleted posts there for a while.",
+     "Search your name and old usernames afterwards to see what's still visible."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "why-deleted-posts-still-show-up",
+  "offer": "clean-slate-posts",
+  "title": "Why your deleted posts can still show up, and what you can do",
+  "description": "Where old posts linger after you delete them, and the steps that help.",
+  "intro": "Deleting a post doesn't always make it vanish everywhere at once. Knowing where copies live helps you clean up properly.",
+  "sections": [
+   {
+    "h": "The platform's trash",
+    "p": [
+     "Some sites move deleted posts to a trash or archive for a set period. Empty it to remove them sooner."
+    ]
+   },
+   {
+    "h": "Search engines",
+    "p": [
+     "Search results can show old pages for a while. Many search engines have a tool to request removal of outdated content once the original is gone."
+    ]
+   },
+   {
+    "h": "Copies made by others",
+    "list": [
+     "Screenshots, reposts, quotes and web archives are outside your control.",
+     "You can ask the person or site to remove them, or use a platform's reporting tools if a copy breaks its rules."
+    ]
+   },
+   {
+    "h": "Keep it clean going forward",
+    "p": [
+     "Some platforms let you limit who sees past posts or set them to delete automatically after a while. Check your privacy settings once a year."
+    ]
+   }
+  ]
  }
 ]
