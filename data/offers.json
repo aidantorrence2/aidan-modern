@@ -55032,6 +55032,90 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-29",
+    "slug": "past-200",
+    "name": "Past 200",
+    "need": "My disc golf drives are stuck around 150 to 200 feet and I can't work out what's wrong with my throw.",
+    "headline": "Disc golf drives stuck at 150 to 200 feet? Film a few throws, compare them with a clean model, and fix one thing at a time until the distance comes.",
+    "buyer": "Adult disc golfers whose drives have stalled around 150 to 200 feet.",
+    "bullets": [
+      "Film a few throws on your phone and see them side by side with a clean model throw.",
+      "Get one thing to fix at a time, with a short field drill for it.",
+      "Log backhand and forehand distances so you can see real progress."
+    ],
+    "price": "$4.99/month",
+    "priceUsd": 5,
+    "priceNote": "Or $35 a year.",
+    "reasonPrompt": "How far do you throw now, and how long have you been playing?",
+    "faq": [
+      {
+        "q": "Is it a coach?",
+        "a": "No. Past 200 is a practice aid. A local club or coach can help a lot, especially in person. If throwing causes pain, stop and get it checked."
+      },
+      {
+        "q": "Is it linked to a disc brand, tour or course app?",
+        "a": "No. Past 200 is independent and not affiliated with any disc brand, tour, governing body or app."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-29",
+      "summary": "Disc golfers describe not being able to get drives past 200 feet with most closer to 150, half killing themselves for months trying to gain distance, buying instructional videos, and their longest throws being only about 40 yards.",
+      "wtp": "Disc-i sells subscriptions from $4.99 a month (61 ratings); Disc Golf Form Analyzer sells $39.99 a year (54 ratings); Boneman bought instructional videos.",
+      "signals": [
+        {
+          "url": "https://www.pdga.com/discussion/archive/t-16572.html",
+          "who": "Luke/NJ (PDGA forum)",
+          "date": "2003-12-01",
+          "quote": "get my drives to go more than 200 ft",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.pdga.com/discussion/archive/t-16572.html",
+          "who": "Blarg (PDGA forum)",
+          "date": "2003-12-04",
+          "quote": "half killed myself for two months trying to gain distance",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.pdga.com/discussion/archive/t-16572.html",
+          "who": "Boneman (PDGA forum)",
+          "date": "2004-10-31",
+          "quote": "I have bought both of Scott Stokely's videos",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.wkiri.com/today/?p=2200",
+          "who": "Kiri (What I Learned Today blog)",
+          "date": "2011-11-22",
+          "quote": "longest throws are only about 40 yards",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/disc-ai/id6447535006",
+          "who": "Disc-i (App Store)",
+          "date": "2026-10-28",
+          "quote": "61 Ratings; $4.99 a month to $199.99 a year; $2.99 single analysis",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/disc-golf-form-analyzer/id6755727208",
+          "who": "Disc Golf Form Analyzer (App Store)",
+          "date": "2026-10-28",
+          "quote": "54 Ratings; $39.99 a year",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Disc golf form apps (Disc-i, Form Analyzer, Formero), YouTube instruction, clinics and coaches.",
+      "risks": "Same idea as the held Snap Line (27 Oct) and Reach Line (23 Oct); it now passes because the PDGA thread opens. Evidence is old (2003-2004, 2011); the dgcoursereview.com threads still return 403 and aren't cited; paid apps are small; nobody wrote that they'd pay for an app."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
