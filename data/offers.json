@@ -55802,6 +55802,104 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-29",
+    "slug": "gentle-paws",
+    "name": "Gentle Paws",
+    "need": "My kitten or cat keeps biting and attacking my hands, feet and ankles when it plays or when I stroke it, and I can't get it to stop.",
+    "headline": "Kitten or cat biting your hands, feet and ankles? Learn why it bites, read the warning signs, and follow a daily play plan that moves the biting onto toys.",
+    "buyer": "New kitten owners and people with a young cat that bites or swats in play, especially homes with children.",
+    "bullets": [
+      "A quick check of the kind of biting: play, over-excitement or 'stop stroking me'.",
+      "A daily play plan with wand toys that tires your cat out and keeps hands out of the game.",
+      "Warning signs to watch for when stroking, and a simple log so you can see the biting drop."
+    ],
+    "price": "$3.99/month",
+    "priceUsd": 4,
+    "priceNote": "Or $19 a year. No weekly plans.",
+    "reasonPrompt": "How old is your cat, and when does the biting happen?",
+    "faq": [
+      {
+        "q": "What if my cat suddenly starts biting?",
+        "a": "Sudden biting, especially in an adult cat, can be a sign of pain or illness. See your vet first. If a bite breaks the skin, clean it and get medical advice, as cat bites can get infected."
+      },
+      {
+        "q": "Is it linked to a vet, charity or pet brand?",
+        "a": "No. Gentle Paws is independent and not affiliated with any vet, charity, trainer or pet brand."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-29",
+      "summary": "Cat owners describe a kitten that bites when it plays, a cat that keeps nipping and biting, a kitten biting and scratching a lot, a cat that's a little bitey, swatting and biting issues, and not being able to stop a kitten biting down on them.",
+      "wtp": "Meowz: Cat Training has 992 App Store ratings with Premium at $7.99 and yearly access at $29.99; several reviewers say it didn't solve the biting.",
+      "signals": [
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/2596955",
+          "who": "Bailey101 (MoneySavingExpert)",
+          "date": "2010-07-15",
+          "quote": "when he plays he bites",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/4144755",
+          "who": "catieeb06 (MoneySavingExpert)",
+          "date": "2012-08-26",
+          "quote": "Cat keeps nipping/biting, what can I do?",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/3758503",
+          "who": "spaceboy (MoneySavingExpert)",
+          "date": "2012-01-26",
+          "quote": "kitten is biting and scratching a lot",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=6503908960/sortby=mosthelpful/json",
+          "who": "arb2173 (App Store review of Meowz)",
+          "date": "2025-01-13",
+          "quote": "a little bitey and jumps on counters/tables",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=6503908960/sortby=mosthelpful/json",
+          "who": "CherSand64 (App Store review of Meowz)",
+          "date": "2024-12-25",
+          "quote": "swatting and biting issues we are having with our kitty",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=2/id=6503908960/sortby=mosthelpful/json",
+          "who": "Loubet79 (App Store review of Meowz)",
+          "date": "2025-02-13",
+          "quote": "My cat bites!",
+          "seen": "opened"
+        },
+        {
+          "url": "https://lemmy.today/comment/17315540",
+          "who": "WorldsDumbestMan (Lemmy)",
+          "date": "2025-06-27",
+          "quote": "I could not keep a kitten from biting down on me",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/meowz-cat-training-pet-care/id6503908960",
+          "who": "Meowz: Cat Training (App Store)",
+          "date": "2026-10-29",
+          "quote": "992 Ratings; Premium $7.99; Yearly $29.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "General cat training apps (Meowz), pet charity guides, behaviourists.",
+      "risks": "Close to live cat offers (Tray Again, Clear Counters, Carrier Calm, Sleep Past Five, Home Truce) and to Soft Mouth (puppy biting), so it stays about play and petting biting; sudden biting can be medical; MSE posts are old (2010-2012); money is one modest app."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
