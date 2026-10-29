@@ -57048,6 +57048,90 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-29",
+    "slug": "sculpt-start",
+    "name": "Sculpt Start",
+    "need": "I want to learn 3D modelling or digital sculpting as a hobby, to turn my own characters into 3D, but Blender feels too hard and too slow to learn.",
+    "headline": "Want to turn your own characters into 3D but Blender feels like too much? Follow a short, guided path from first blob to finished character.",
+    "buyer": "Hobby artists, such as illustrators and clay sculptors, who want to model their own characters and have given up on Blender tutorials.",
+    "bullets": [
+      "A step-by-step beginner path: head, body, pose and colour, one short session at a time.",
+      "Each step uses only the few tools it needs, explained in plain words.",
+      "Save a picture after every session and see your character come together."
+    ],
+    "price": "$4.99/month",
+    "priceUsd": 5,
+    "priceNote": "Or $29 a year. Works alongside the sculpting app you already use.",
+    "reasonPrompt": "What character do you want to make in 3D, and where did you get stuck before?",
+    "faq": [
+      {
+        "q": "Is it linked to Blender, Nomad Sculpt or any 3D app?",
+        "a": "No. Sculpt Start is independent and not affiliated with any 3D app, software maker or brand."
+      },
+      {
+        "q": "Do I need an expensive computer?",
+        "a": "No. The path is built for a tablet or an ordinary computer with a free or low-cost sculpting app."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-29",
+      "summary": "Hobby artists say Blender is great but takes too much time and focus to learn, that sculpting in Blender felt clunky, that they've always longed to recreate their characters in 3D, and that they wanted to make a model of a character they'd made.",
+      "wtp": "3D apps already sell to hobbyists: Nomad Sculpt costs $19.99 (15K ratings), and 3D modeling: Design my model sells Pro at $6.99 a month or $39.99 a year (15K ratings).",
+      "signals": [
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1519508653/sortby=mosthelpful/json",
+          "who": "wolf33n (App Store review of Nomad Sculpt)",
+          "date": "2024-09-28",
+          "quote": "Blender Is great but it requires too much time and focused to learn for me",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1519508653/sortby=mosthelpful/json",
+          "who": "Rinibeans (App Store review of Nomad Sculpt)",
+          "date": "2021-07-14",
+          "quote": "always longed to recreate my characters in a 3 dimensional space",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1519508653/sortby=mosthelpful/json",
+          "who": "SureOkay64 (App Store review of Nomad Sculpt)",
+          "date": "2025-04-17",
+          "quote": "After trying to sculpt in blender on pc (even with a tablet and pen) felt clunky",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=2/id=1397002448/sortby=mosthelpful/json",
+          "who": "irisYZX (App Store review of Shapeyard)",
+          "date": "2025-06-10",
+          "quote": "I wanted to make a model for a character i made",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1519508653",
+          "who": "Nomad Sculpt (App Store)",
+          "date": "2026-10-29",
+          "quote": "15K Ratings; $19.99",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1583923782",
+          "who": "3D modeling: Design my model (App Store)",
+          "date": "2026-10-29",
+          "quote": "15K Ratings; Monthly Pro $6.99, Yearly Pro $39.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Free Blender and YouTube tutorials, sculpting apps (Nomad Sculpt, Shapeyard, ZBrush), online courses.",
+      "risks": "Free tutorials compete, so it is a guided beginner path, not a new sculpting app; three of four quotes are reviews of one app; next to live Layer Sleuth (3D printing) and drawing offers, so it stays about modelling your own characters."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

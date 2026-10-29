@@ -32030,5 +32030,76 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "start-3d-sculpting-without-learning-blender",
+  "offer": "sculpt-start",
+  "title": "How to start 3D sculpting without learning Blender first",
+  "description": "A gentler way into digital sculpting for hobby artists.",
+  "intro": "Blender can do almost anything, which is why it can feel overwhelming. Dedicated sculpting apps are simpler places to start, and the skills carry over later.",
+  "sections": [
+   {
+    "h": "Pick a simple sculpting app",
+    "list": [
+     "Look for an app built mainly for sculpting, on a tablet or computer you already own.",
+     "Try the free version or trial before paying."
+    ]
+   },
+   {
+    "h": "Learn only five tools",
+    "list": [
+     "Move, add (clay), smooth, pinch and mask cover most beginner work.",
+     "Ignore every other button until you need it."
+    ]
+   },
+   {
+    "h": "Start from a sphere",
+    "p": [
+     "Shape a simple head from a sphere before trying a full character. Big shapes first, details last."
+    ]
+   },
+   {
+    "h": "Practise little and often",
+    "p": [
+     "Twenty minutes a few times a week beats one long session. Save a screenshot each time to see your progress."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "model-your-own-character-in-3d-beginner",
+  "offer": "sculpt-start",
+  "title": "How to turn your own drawn character into a 3D model: a beginner's plan",
+  "description": "Steps to go from a 2D character drawing to your first 3D sculpt.",
+  "intro": "Turning a character you've drawn into 3D is a great first project, because you already know what it should look like.",
+  "sections": [
+   {
+    "h": "Prepare reference",
+    "list": [
+     "Draw your character from the front and side, even roughly.",
+     "Note the main shapes: head, body, limbs, any big accessories."
+    ]
+   },
+   {
+    "h": "Block out big shapes",
+    "list": [
+     "Build the head and body from simple spheres and tubes.",
+     "Check proportions against your drawing before adding detail."
+    ]
+   },
+   {
+    "h": "Add features slowly",
+    "list": [
+     "Add the face, hair shapes and clothing one at a time.",
+     "Keep a symmetry setting on for faces until you're happy."
+    ]
+   },
+   {
+    "h": "Finish and share",
+    "p": [
+     "Add simple colour, pose it, and render a picture. Your first model doesn't need to be perfect; the next one will be better."
+    ]
+   }
+  ]
  }
 ]
