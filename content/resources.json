@@ -32872,5 +32872,73 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "find-a-mentor-who-will-actually-help",
+  "offer": "want-mentor-get-access",
+  "title": "How to find a mentor who will actually help",
+  "description": "Practical ways to get guidance from people further along, even without a formal programme.",
+  "intro": "Most people who could help you are busy, not unwilling. Small, specific requests work far better than asking someone to 'be my mentor'.",
+  "sections": [
+   {
+    "h": "Ask a small, specific question",
+    "p": [
+     "Instead of asking for mentorship, ask for 20 minutes on one problem you're stuck on."
+    ]
+   },
+   {
+    "h": "Look one or two steps ahead",
+    "p": [
+     "People a few years ahead of you often remember the path best and have more time than senior leaders."
+    ]
+   },
+   {
+    "h": "Follow up with results",
+    "p": [
+     "Tell them what you did with their advice. People like helping those who act on it, and it opens the door to the next conversation."
+    ]
+   },
+   {
+    "h": "Use groups too",
+    "list": [
+     "Professional associations, alumni networks and online communities often run mentoring schemes.",
+     "Peer groups of people at your level can be as helpful as one mentor."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "return-to-work-after-a-long-gap",
+  "offer": "need-return-work-caregiving",
+  "title": "How to return to work after a long gap",
+  "description": "Steps for going back to work after caregiving, illness or time away.",
+  "intro": "A career gap is common and increasingly understood by employers. Preparing a short, honest explanation and refreshing a few skills makes the return easier.",
+  "sections": [
+   {
+    "h": "Explain the gap simply",
+    "p": [
+     "One or two sentences is enough, such as 'I took time out to care for a family member and I'm now ready to return.'"
+    ]
+   },
+   {
+    "h": "Refresh what's changed",
+    "list": [
+     "Look at recent job adverts in your field and note new tools or skills they mention.",
+     "Pick one or two to brush up on with a short course."
+    ]
+   },
+   {
+    "h": "Look for returner routes",
+    "p": [
+     "Some employers run returnship programmes or part-time starts for people coming back after a break."
+    ]
+   },
+   {
+    "h": "Reconnect",
+    "p": [
+     "Let former colleagues know you're looking. Many returners find their first role through someone they used to work with."
+    ]
+   }
+  ]
  }
 ]
