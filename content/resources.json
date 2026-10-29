@@ -30015,5 +30015,144 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "avoid-rental-car-toll-fees",
+  "offer": "toll-ahead",
+  "title": "How to avoid surprise rental car toll fees",
+  "description": "How rental car toll programmes work, and ways to avoid paying more than you need to.",
+  "intro": "Many toll roads no longer take cash. In a rental car, that can mean daily fees on top of the tolls themselves, sometimes arriving weeks after your trip.",
+  "sections": [
+   {
+    "h": "How rental toll programmes work",
+    "list": [
+     "Many rental companies charge the tolls plus a daily or per-use convenience fee.",
+     "Some charge the fee for every day of the rental once you use one toll.",
+     "Read the toll section of your rental agreement before you drive."
+    ]
+   },
+   {
+    "h": "Ways to pay less",
+    "list": [
+     "Ask the rental company how tolls work before you leave the counter.",
+     "Check whether you can use your own transponder in the area and in that car.",
+     "Some toll authorities let you pay by plate online soon after you drive; check whether this works for rentals.",
+     "Set your map app to avoid tolls where that makes sense."
+    ]
+   },
+   {
+    "h": "After your trip",
+    "list": [
+     "Keep your rental agreement and receipts.",
+     "Check your card statement for toll charges.",
+     "If you're billed for tolls you already paid, contact the rental company with your proof."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "estimate-road-trip-tolls",
+  "offer": "toll-ahead",
+  "title": "How much will tolls cost on my road trip?",
+  "description": "Simple ways to estimate toll costs for a road trip and plan how to pay them.",
+  "intro": "Tolls can add up on a long drive, especially when you're not used to the area. A little planning avoids surprises.",
+  "sections": [
+   {
+    "h": "Estimate the cost",
+    "list": [
+     "Many map apps show estimated toll costs when you plan a route.",
+     "Toll authority websites list current rates for their roads and bridges.",
+     "Rates can change by time of day, vehicle type and payment method."
+    ]
+   },
+   {
+    "h": "Plan how to pay",
+    "list": [
+     "Find out whether the roads on your route are cashless.",
+     "Check whether your transponder works in the states you're driving through.",
+     "Note any pay-by-plate deadlines so you can pay online in time."
+    ]
+   },
+   {
+    "h": "Compare routes",
+    "p": [
+     "Sometimes a slightly longer route without tolls costs less overall; sometimes the toll road saves enough time to be worth it."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "keep-travel-bookings-in-one-place",
+  "offer": "trip-binder",
+  "title": "How to keep all your trip bookings in one place",
+  "description": "A simple system for organising flights, hotels, car hire and tickets for a trip.",
+  "intro": "A big trip can mean dozens of confirmation emails. Pulling them together before you leave saves stress at airports and check-in desks.",
+  "sections": [
+   {
+    "h": "Collect everything",
+    "list": [
+     "Search your email for each booking and save the confirmations to one folder or list.",
+     "Include flights, hotels, car hire, trains, tours, event tickets and insurance."
+    ]
+   },
+   {
+    "h": "Put it in order",
+    "list": [
+     "Arrange bookings by date and time.",
+     "Note the confirmation number, address and check-in or pick-up time for each."
+    ]
+   },
+   {
+    "h": "Make it available offline",
+    "list": [
+     "Save PDFs or screenshots to your phone.",
+     "Keep a printed copy of the essentials as a backup."
+    ]
+   },
+   {
+    "h": "Share it",
+    "p": [
+     "Send the plan to the people you're travelling with, so everyone knows where to be."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "family-trip-planning-checklist",
+  "offer": "trip-binder",
+  "title": "Family trip planning checklist",
+  "description": "A practical checklist for organising a family holiday, from bookings to documents.",
+  "intro": "Family trips have a lot of moving parts. A checklist keeps everyone on track.",
+  "sections": [
+   {
+    "h": "Before you book",
+    "list": [
+     "Check passports and visas are valid for every family member.",
+     "Agree on dates, budget and the kind of trip everyone wants."
+    ]
+   },
+   {
+    "h": "Bookings",
+    "list": [
+     "Flights or trains, accommodation, car hire, and any tours or tickets.",
+     "Travel insurance that covers everyone."
+    ]
+   },
+   {
+    "h": "A week before",
+    "list": [
+     "Collect all confirmations in one place, in date order.",
+     "Check in online where possible.",
+     "Download offline maps and entertainment for the journey."
+    ]
+   },
+   {
+    "h": "On the day",
+    "list": [
+     "Documents, tickets and confirmations to hand.",
+     "Snacks, chargers and any medication in your carry-on."
+    ]
+   }
+  ]
  }
 ]

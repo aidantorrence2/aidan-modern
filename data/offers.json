@@ -55116,6 +55116,202 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-29",
+    "slug": "toll-ahead",
+    "name": "Toll Ahead",
+    "need": "Before a drive, I want to know what the tolls will cost and how to pay each one, especially out of state or in a rental car, so no surprise bills or fees arrive weeks later.",
+    "headline": "Driving somewhere new or in a rental? Know what the tolls will cost and exactly how to pay each one before you go, so no surprise bills turn up weeks later.",
+    "buyer": "US drivers on road trips, people driving rental cars in cashless-toll areas, and people new to toll-heavy areas.",
+    "bullets": [
+      "Enter your route and see an estimate of the tolls, and which ones are cashless.",
+      "For each toll, how you can pay: transponder, pay-by-plate online, or the rental company's programme, and what each costs.",
+      "A reminder to pay any pay-by-plate tolls before the deadline, so fees don't stack up."
+    ],
+    "price": "$2.99/month",
+    "priceUsd": 3,
+    "priceNote": "Or $9 for a single trip.",
+    "reasonPrompt": "Where are you driving, and is it a rental?",
+    "faq": [
+      {
+        "q": "Are the toll amounts exact?",
+        "a": "They're estimates. Toll rates change and can depend on time of day and vehicle, so check the toll authority's site for the final price."
+      },
+      {
+        "q": "Is it linked to a toll authority or rental company?",
+        "a": "No. Toll Ahead is independent and not affiliated with any toll authority, transponder programme or rental company. It's for personal cars and rentals, not commercial vehicles."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-29",
+      "summary": "Drivers describe avoiding toll roads for years because they didn't know the cost, planning family road trips around toll costs, paying a surprise $30 in tolls, estimating tolls before a trip, getting a rental bill for tolls they'd already paid, and finding themselves on a toll road with no toll booths on holiday.",
+      "wtp": "Toll Calculator GPS Navigation has 21K App Store ratings with plans from $19.99 a year; TollGuru has 2.1K ratings with Pro at $9.99 a month or $99 a year; a rental customer paid a fixed daily fee for a toll device.",
+      "signals": [
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1188361104/sortby=mosthelpful/json",
+          "who": "Indy711 (App Store review of TollGuru)",
+          "date": "2019-04-20",
+          "quote": "mostly avoided using toll roads because of lack of knowledge of cost",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1188361104/sortby=mosthelpful/json",
+          "who": "Mom-on-the-road (App Store review of TollGuru)",
+          "date": "2018-03-15",
+          "quote": "most importantly cost of tolls",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1087852553/sortby=mosthelpful/json",
+          "who": "Toll hater (App Store review of Toll Calculator)",
+          "date": "2017-10-25",
+          "quote": "After paying like $30 (surprise!) to drive in Oklahoma",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1087852553/sortby=mosthelpful/json",
+          "who": "Nonagzone (App Store review of Toll Calculator)",
+          "date": "2017-09-16",
+          "quote": "guessing how much money did take up for tolls before a trip",
+          "seen": "opened"
+        },
+        {
+          "url": "https://hn.algolia.com/api/v1/items/44547015",
+          "who": "mrangle (Hacker News)",
+          "date": "2025-07-13",
+          "quote": "supposedly unpaid tolls (plus fees) that I had most definitely paid",
+          "seen": "opened"
+        },
+        {
+          "url": "https://hn.algolia.com/api/v1/items/21094364",
+          "who": "mark-r (Hacker News)",
+          "date": "2019-09-27",
+          "quote": "found myself on a toll road with no toll booths",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/toll-calculator-gps-navigation/id1087852553",
+          "who": "Toll Calculator GPS Navigation (App Store)",
+          "date": "2026-10-28",
+          "quote": "21K Ratings; 1-Year Car Only $19.99; Truck Pro Annual $34.99",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/toll-gas-calculator-tollguru/id1188361104",
+          "who": "TollGuru (App Store)",
+          "date": "2026-10-28",
+          "quote": "2.1K Ratings; Pro Monthly $9.99; Pro Yearly $99.00",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Toll Calculator, TollGuru, free map apps that show some toll prices, toll authority websites.",
+      "risks": "Many paid-app users are truckers (business), so it stays consumer-only; map apps show some tolls free; toll data changes; next to 'road trips' on the screened list. Evidence is App Store reviews and Hacker News comments, some old."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-29",
+    "slug": "trip-binder",
+    "name": "Trip Binder",
+    "need": "I want every flight, hotel, car hire, ticket and reservation for a trip in one place, in order, so I'm not digging through emails or carrying a folder of paper.",
+    "headline": "Lots of bookings for one trip? Keep every flight, hotel, car hire and ticket in one simple timeline, ready offline, so you're never digging through emails at the desk.",
+    "buyer": "People who plan their own holidays, especially families, retirees and group-trip organisers with many bookings.",
+    "bullets": [
+      "Forward or paste booking emails and they're sorted into one day-by-day timeline.",
+      "Confirmation numbers, addresses and check-in times, ready offline when you need them.",
+      "Share the trip with the people travelling with you."
+    ],
+    "price": "$3.99/month",
+    "priceUsd": 4,
+    "priceNote": "Or $19 a year.",
+    "reasonPrompt": "What trip are you planning, and how many bookings does it have?",
+    "faq": [
+      {
+        "q": "Does it book travel?",
+        "a": "No. Trip Binder only organises bookings you've already made. Always check times and details with the airline, hotel or provider."
+      },
+      {
+        "q": "Is it linked to an airline, hotel chain or travel site?",
+        "a": "No. Trip Binder is independent and not affiliated with any airline, hotel, booking site or travel app."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-29",
+      "summary": "Travellers describe tons of paper in a folder to carry around, lots of bookings for big holidays, finding it difficult to keep track of all the details, juggling calendars, documents and slides, having a lot of reservations for a long trip, and searching through email for tickets.",
+      "wtp": "TripIt has 313K App Store ratings with Pro at $48.99 a year; Tripsy has 5.7K ratings with plans from $4.99 a month or $39.99 a year.",
+      "signals": [
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=311035142/sortby=mosthelpful/json",
+          "who": "caliDIY (App Store review of TripIt)",
+          "date": "2022-04-23",
+          "quote": "tons of paper in my folder to carry around in my backpack",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=311035142/sortby=mosthelpful/json",
+          "who": "Banjopeggy (App Store review of TripIt)",
+          "date": "2022-10-05",
+          "quote": "LOTS of bookings all associated with the trip",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=311035142/sortby=mosthelpful/json",
+          "who": "Atl trvlr (App Store review of TripIt)",
+          "date": "2023-10-24",
+          "quote": "difficult keeping track of all of the details",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=311035142/sortby=mosthelpful/json",
+          "who": "Mike-India-Kilo-Echo (App Store review of TripIt)",
+          "date": "2021-07-29",
+          "quote": "Google calendars, word docs, and powerpoints",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1429967544/sortby=mosthelpful/json",
+          "who": "Travel Hacks! (App Store review of Tripsy)",
+          "date": "2026-05-18",
+          "quote": "going to Europe for 4 months and boy do I have a lot of reservations",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1429967544/sortby=mostrecent/json",
+          "who": "hi990909090909 (App Store review of Tripsy)",
+          "date": "2026-04-20",
+          "quote": "did t need to go searching through my email",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id311035142",
+          "who": "TripIt (App Store)",
+          "date": "2026-10-28",
+          "quote": "313K Ratings; TripIt Pro (1 Year) $48.99",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1429967544",
+          "who": "Tripsy (App Store)",
+          "date": "2026-10-28",
+          "quote": "5.7K Ratings; Premium Monthly $4.99; Pro Annual $39.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "TripIt, Tripsy, Wanderlog, email and calendar apps.",
+      "risks": "Crowded category with strong free tiers; quotes are mostly from satisfied users of existing apps; reliable email parsing is hard to build; next to live Trip Pacer and 'flights' on the screened list. Evidence is all App Store reviews."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
