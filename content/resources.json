@@ -31448,5 +31448,76 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "play-bass-along-with-a-song-without-getting-lost",
+  "offer": "low-end-ladder",
+  "title": "How to play bass along with a song without getting lost",
+  "description": "A simple way to learn a song's shape so you can keep your place playing along with the record.",
+  "intro": "Getting lost mid-song is usually about not knowing what's coming next, not about your fingers. Learn the map first, then the notes.",
+  "sections": [
+   {
+    "h": "Listen before you play",
+    "list": [
+     "Play the song through once and just tap the beat.",
+     "Name each section as it passes: intro, verse, chorus, bridge."
+    ]
+   },
+   {
+    "h": "Write a song map",
+    "list": [
+     "Note each section and how many bars it lasts.",
+     "Mark the bar before each change so you can get ready for it."
+    ]
+   },
+   {
+    "h": "Learn one section at a time",
+    "list": [
+     "Get the chorus solid, then a verse, then join the two.",
+     "Practise the joins, since that's where most people get lost."
+    ]
+   },
+   {
+    "h": "Play along, then recover",
+    "p": [
+     "When you slip, don't stop: count to the next section start and come back in there."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "slow-down-song-to-learn-bass-line",
+  "offer": "low-end-ladder",
+  "title": "How to slow down a song to learn a bass line",
+  "description": "Use slowed loops and small tempo steps to get a tricky part up to full speed.",
+  "intro": "Slowing a hard section down lets you hear every note and play it cleanly. The trick is stepping back up in small, steady jumps.",
+  "sections": [
+   {
+    "h": "Loop just the hard bit",
+    "list": [
+     "Pick the few bars you can't play yet, not the whole song.",
+     "Many players and apps let you slow audio down without changing its pitch."
+    ]
+   },
+   {
+    "h": "Start where it's clean",
+    "p": [
+     "Choose a speed, often around 70%, where you can play the part without mistakes."
+    ]
+   },
+   {
+    "h": "Step up gradually",
+    "list": [
+     "After three clean runs in a row, speed up by about 5%.",
+     "If it falls apart, drop back one step."
+    ]
+   },
+   {
+    "h": "Put it back in the song",
+    "p": [
+     "Once it's at full speed, play from the section before into the hard part, so the join feels natural."
+    ]
+   }
+  ]
  }
 ]

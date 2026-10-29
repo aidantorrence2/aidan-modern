@@ -56698,6 +56698,90 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-29",
+    "slug": "low-end-ladder",
+    "name": "Low End Ladder",
+    "need": "I'm teaching myself bass and I keep getting lost when I try to play along with real songs.",
+    "headline": "Teaching yourself bass? Map the song, loop the hard bits slowly and climb back up to full speed until you can play along with the record.",
+    "buyer": "Adults teaching themselves bass who get lost playing along with real songs.",
+    "bullets": [
+      "A song map with bar counts and a cue before each change, so you always know what's coming next.",
+      "Loop the hard section slowed down, then step the tempo up after three clean runs.",
+      "Keep a list of songs you can play start to finish with the record."
+    ],
+    "price": "$3.99/month",
+    "priceUsd": 4,
+    "priceNote": "Or $29 a year. Works with music you already own.",
+    "reasonPrompt": "Which song do you most want to play along with, and where do you get lost?",
+    "faq": [
+      {
+        "q": "Is it linked to a bass course, app or brand?",
+        "a": "No. Low End Ladder is independent and not affiliated with any course, app, music service or instrument brand."
+      },
+      {
+        "q": "Does it come with songs or tabs?",
+        "a": "No. You use your own music and your own tabs or ears; Low End Ladder helps you map, slow down and practise the song."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-29",
+      "summary": "Self-taught bass players ask how to learn to play along with the songs they like, say they keep messing up the count of the beat and the riff, can play most of a song but not the fills and changes, and get frustrated teaching themselves at home.",
+      "wtp": "A homerecording.com poster recommends deCoda play-along software, \"Currently on sale for $20\"; the BassBuzz beginner course costs $197 or a $39.97 pay plan.",
+      "signals": [
+        {
+          "url": "https://homerecording.com/bbs/threads/how-do-i-play-along-with-songs-i-like.409865/",
+          "who": "scotnewon96 (homerecording.com)",
+          "date": "2021-07-23",
+          "quote": "So how do I learn to play along with them?",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forum.bassbuzz.com/t/struggling-to-follow-the-beat/91981",
+          "who": "jugen_fr (BassBuzz forum)",
+          "date": "2026-01-22",
+          "quote": "I'm always messing up the count of the beat and thus messing up the riff",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forum.bassbuzz.com/t/learning-new-songs/19609",
+          "who": "locket (BassBuzz forum)",
+          "date": "2021-03-26",
+          "quote": "I can play most of the song but cant seem to nail the little fills and changes",
+          "seen": "opened"
+        },
+        {
+          "url": "https://boards.straightdope.com/t/best-way-to-teach-myself-bass-guitar-at-home/296599",
+          "who": "Chairman_Pow (Straight Dope)",
+          "date": "2005-03-28",
+          "quote": "got a bit frustrated that I could only play a little Slayer.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://homerecording.com/bbs/threads/how-do-i-play-along-with-songs-i-like.409865/",
+          "who": "Folkcafe (homerecording.com)",
+          "date": "2021-07",
+          "quote": "Currently on sale for $20",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.bassbuzz.com/lessons/beginner",
+          "who": "BassBuzz (course page)",
+          "date": "2026-10-29",
+          "quote": "$197; $39.97 pay plan",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Bass courses (BassBuzz), Yousician, play-along and transcription software (deCoda, Transcribe), tabs sites and teachers.",
+      "risks": "Next to live On the Beat (timing) and Theory Clicks, so it stays about getting through a whole song with the record; the doc side's BassChat quotes return 403 to plain curl and are not cited; posts run 2005 to 2026; nobody wrote \"I'd pay\" for this exact tool."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
