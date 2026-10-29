@@ -55900,6 +55900,83 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-29",
+    "slug": "bask-check",
+    "name": "Bask Check",
+    "need": "I've just got a bearded dragon, lizard or snake, it won't eat, and I don't know if my setup is right or what to do.",
+    "headline": "New reptile won't eat? Check your setup step by step, from basking temperature to UVB, keep a simple feeding log, and know when to see a reptile vet.",
+    "buyer": "Adults new to keeping a lizard or snake.",
+    "bullets": [
+      "A species setup check: basking and cool-end temperatures, UVB type and bulb age, humidity.",
+      "Two-tap log of meals, weight and sheds, so you can see what's really happening.",
+      "Plain reasons a reptile stops eating, reminders to replace UVB bulbs, and a one-page summary for a reptile vet."
+    ],
+    "price": "$3.99/month",
+    "priceUsd": 4,
+    "priceNote": "Or $24 a year.",
+    "reasonPrompt": "What reptile do you have, and how long has it not been eating?",
+    "faq": [
+      {
+        "q": "Is it veterinary advice?",
+        "a": "No. Bask Check is a care aid. If your reptile is losing weight, seems weak, or hasn't eaten for a long time, see a vet who treats reptiles."
+      },
+      {
+        "q": "Is it linked to a pet shop or reptile brand?",
+        "a": "No. Bask Check is independent and not affiliated with any shop, breeder or brand."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-29",
+      "summary": "New reptile owners describe a new bearded dragon that won't eat or drink, getting pretty worried, going crazy for almost six days, and being lost and not knowing what to do.",
+      "wtp": "Exotic Reptile Care has 145 App Store ratings with plans at $5.99 a month or $29.99 a year.",
+      "signals": [
+        {
+          "url": "https://www.beardeddragonforum.com/threads/new-bearded-dragon-wont-eat-or-drink.21916/",
+          "who": "Nejthebrde (Bearded Dragon Forum)",
+          "date": "2019-10-01",
+          "quote": "I just got my bearded dragon and he wont eat or drink",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.beardeddragonforum.com/threads/new-bearded-dragon-wont-eat-or-drink.21916/",
+          "who": "Babyduck100 (Bearded Dragon Forum)",
+          "date": "2019-10-05",
+          "quote": "starting to get pretty worried",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.beardeddragonforum.com/threads/new-bearded-dragon-wont-eat-or-drink.21916/",
+          "who": "JahMez (Bearded Dragon Forum)",
+          "date": "2019-10-10",
+          "quote": "for almost six days I was going crazy",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.kingsnake.com/view.php?id=1959247",
+          "who": "1nstinct (Kingsnake forum)",
+          "date": "2011-12-20",
+          "quote": "I am just lost and don't know what to do?",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id6753999852",
+          "who": "Exotic Reptile Care (App Store)",
+          "date": "2026-10-29",
+          "quote": "145 Ratings; $5.99 a month; $29.99 a year",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Reptile care apps (Exotic Reptile Care, LizardBox, Scute, Reptimo), care sheets, forums, reptile vets.",
+      "risks": "Posts are old (2011-2019); paid reptile apps are small; nobody wrote that they'd pay; must not give vet advice and must point sick animals to a reptile vet. The doc side's ball-pythons.net page returned 503 and the Petco Q&A has no named asker, so neither is cited."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

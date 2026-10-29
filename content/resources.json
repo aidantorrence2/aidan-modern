@@ -30801,5 +30801,78 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "bearded-dragon-not-eating-after-moving-home",
+  "offer": "bask-check",
+  "title": "Why is my new bearded dragon not eating?",
+  "description": "Common reasons a new bearded dragon stops eating, what to check, and when to see a vet.",
+  "intro": "It's common for a bearded dragon to eat less for a while after moving to a new home. Stress, temperature and lighting are the usual causes. Check the basics first.",
+  "sections": [
+   {
+    "h": "Give it time to settle",
+    "list": [
+     "New surroundings are stressful; some dragons eat little for the first days.",
+     "Keep handling to a minimum while it settles in."
+    ]
+   },
+   {
+    "h": "Check temperatures",
+    "list": [
+     "Use a digital thermometer or temperature gun, not a stick-on dial.",
+     "Check both the basking spot and the cool end against a reputable care sheet for your dragon's age.",
+     "Too cool a basking spot is one of the most common reasons dragons stop eating."
+    ]
+   },
+   {
+    "h": "Check the lighting",
+    "list": [
+     "Bearded dragons need proper UVB lighting for most of the day.",
+     "UVB bulbs weaken over time even while they still look bright."
+    ]
+   },
+   {
+    "h": "When to see a vet",
+    "p": [
+     "If your dragon is losing weight, seems weak or lethargic, has a swollen belly, or hasn't eaten for more than a week or two, see a vet who treats reptiles."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "when-to-replace-reptile-uvb-bulb",
+  "offer": "bask-check",
+  "title": "When should you replace a reptile UVB bulb?",
+  "description": "Why UVB bulbs need replacing even when they still light up, and how to keep track.",
+  "intro": "UVB lighting helps many reptiles stay healthy. The catch is that UVB output drops over time, even when the bulb still looks bright.",
+  "sections": [
+   {
+    "h": "Why bulbs need replacing",
+    "list": [
+     "The visible light can stay the same while UVB output fades.",
+     "An old bulb may leave your reptile without enough UVB."
+    ]
+   },
+   {
+    "h": "How often",
+    "list": [
+     "Follow the manufacturer's guidance for your bulb.",
+     "Many recommend replacing every 6 to 12 months, depending on the type."
+    ]
+   },
+   {
+    "h": "Keep track",
+    "list": [
+     "Write the date on the bulb or in a log when you fit it.",
+     "Set a reminder for the replacement date."
+    ]
+   },
+   {
+    "h": "Ask for advice",
+    "p": [
+     "A reptile vet or experienced keeper can advise on the right UVB type and distance for your species."
+    ]
+   }
+  ]
  }
 ]
