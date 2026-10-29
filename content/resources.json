@@ -32526,5 +32526,76 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "find-a-community-where-you-belong-lgbtq",
+  "offer": "queer-or-otherwise-outside",
+  "title": "How to find a community where you feel you belong, when you don't fit the local mainstream",
+  "description": "Practical places to look for people who share your identity or interests, locally and online.",
+  "intro": "Feeling like an outsider where you live is lonely, but there are usually more people like you nearby than it seems. They're just harder to find.",
+  "sections": [
+   {
+    "h": "Look for regular groups",
+    "list": [
+     "LGBTQ+ centres, social clubs, book groups and sports leagues often run events for newcomers.",
+     "Libraries and community notice boards list groups that don't advertise widely."
+    ]
+   },
+   {
+    "h": "Use interests as a way in",
+    "p": [
+     "A hobby group where you already share something, such as a choir, running club or games night, can be an easier first step than a purely social meet-up."
+    ]
+   },
+   {
+    "h": "Try online, then meet",
+    "list": [
+     "Online groups for your area or identity can help you find events and friendly faces first.",
+     "Meet in public places and go with a friend to a first event if that feels safer."
+    ]
+   },
+   {
+    "h": "Go more than once",
+    "p": [
+     "Belonging takes repeat visits. Give a group three or four tries before deciding it isn't for you."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "what-to-do-when-insurance-denies-care",
+  "offer": "insurance-denied-care-know",
+  "title": "Insurance denied your care? What to do next",
+  "description": "Steps to understand a denial and ask for it to be reviewed.",
+  "intro": "A denial isn't always the final word. Many denials can be appealed, and knowing the steps makes it less overwhelming. This is general information, not legal or medical advice.",
+  "sections": [
+   {
+    "h": "Read the denial letter",
+    "list": [
+     "Find the reason given and the deadline for appealing.",
+     "Note any policy section or code it mentions."
+    ]
+   },
+   {
+    "h": "Gather what you need",
+    "list": [
+     "Ask your doctor's office for notes or a letter explaining why the care is needed.",
+     "Keep copies of everything and a log of each call: date, name, what was said."
+    ]
+   },
+   {
+    "h": "Ask for a review",
+    "list": [
+     "Follow the insurer's appeal steps in writing and before the deadline.",
+     "If the internal appeal fails, ask whether an external or independent review is available where you live."
+    ]
+   },
+   {
+    "h": "Get free help",
+    "p": [
+     "Patient advocates, consumer help lines and your state or national insurance regulator can explain your options."
+    ]
+   }
+  ]
  }
 ]
