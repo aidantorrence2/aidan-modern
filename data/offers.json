@@ -56152,6 +56152,188 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-29",
+    "slug": "homework-keeper",
+    "name": "Homework Keeper",
+    "need": "I'm a student and I keep forgetting assignments and due dates, and paper planners never last past the first few weeks.",
+    "headline": "Always forgetting assignments? Capture homework in seconds, see what's due by when, and get a nudge before it's too late, without a planner you'll abandon.",
+    "buyer": "High school and college students, and parents of teenagers.",
+    "bullets": [
+      "Add an assignment in seconds as soon as it's set: subject, what, when it's due.",
+      "A simple 'due soon' view and a reminder the evening before.",
+      "Break big projects into small steps with their own dates."
+    ],
+    "price": "$2.99/month",
+    "priceUsd": 3,
+    "priceNote": "Or $19 a year. Students under 18 with a parent's OK.",
+    "reasonPrompt": "What year are you in, and how do you keep track of homework now?",
+    "faq": [
+      {
+        "q": "Is it linked to my school's system?",
+        "a": "No. Homework Keeper is independent and not affiliated with any school, college or learning platform. You add your own assignments."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Students, and parents helping a teenager keep track. Students under 18 should use it with a parent's or carer's OK."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-29",
+      "summary": "Students describe always forgetting to write assignments down, forgetting to check for assignments, forgetting assignments and tests, being easily distracted and forgetting work, and always losing or forgetting to update a paper planner.",
+      "wtp": "My Study Life has 6.2K App Store ratings with MyStudyLife+ at $6.99 a month or $39.99 a year; myHomework has 4.3K ratings with Premium at $4.99.",
+      "signals": [
+        {
+          "url": "https://apps.apple.com/us/app/myhomework-student-planner/id303490844?see-all=reviews",
+          "who": "zohaxoxox (App Store review of myHomework)",
+          "date": "2018-09-25",
+          "quote": "I always seem to forget to write it down",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/myhomework-student-planner/id303490844?see-all=reviews",
+          "who": "ZoSkMa (App Store review of myHomework)",
+          "date": "2019-01-23",
+          "quote": "I forget to check them for assignments",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/my-study-life-school-planner/id910639339?see-all=reviews",
+          "who": "Rayebeth (App Store review of My Study Life)",
+          "date": "2021-09-21",
+          "quote": "just forgetting about assignments and tests",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/egenda-homework-manager/id1142359153?see-all=reviews",
+          "who": "Oaooqoaoaknnddj (App Store review of Egenda)",
+          "date": "2023-04-28",
+          "quote": "I generally forget about the assignments I have to do",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/power-planner-homework-more/id1278178608?see-all=reviews",
+          "who": "ZMarie96 (App Store review of Power Planner)",
+          "date": "2022-08-27",
+          "quote": "always losing/forgetting a paper planner",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/my-study-life-school-planner/id910639339",
+          "who": "My Study Life (App Store)",
+          "date": "2026-10-29",
+          "quote": "6.2K Ratings; 1 month $6.99; 1 year $39.99",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/myhomework-student-planner/id303490844",
+          "who": "myHomework (App Store)",
+          "date": "2026-10-29",
+          "quote": "4.3K Ratings; Premium $4.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Student planner apps (My Study Life, myHomework, Egenda, Power Planner), school learning platforms, paper planners.",
+      "risks": "Crowded field with free options; many users are minors, so parents may pay; next to live Homework Truce (parents) and general to-do offers. Evidence is all App Store reviews, some from 2018-2019."
+    }
+  },
+  {
+    "type": "software",
+    "status": "live",
+    "launched": "2026-10-29",
+    "slug": "tip-ledger",
+    "name": "Tip Ledger",
+    "need": "I work for tips and never know how much I actually made each day, week or year, so at tax time or when I apply to rent I have nothing reliable to show.",
+    "headline": "Work for tips? Log each shift in seconds, see what you really made by week, month and year, and have a clean record ready for tax time or a rental application.",
+    "buyer": "Servers, bartenders, delivery drivers and other tipped workers.",
+    "bullets": [
+      "Log cash and card tips per shift in a few taps.",
+      "See your real totals by day, week, month and year.",
+      "Export a tidy record for your own taxes or to show a landlord."
+    ],
+    "price": "$2.99/month",
+    "priceUsd": 3,
+    "priceNote": "Or $19 a year.",
+    "reasonPrompt": "What kind of tipped work do you do, and how do you track tips now?",
+    "faq": [
+      {
+        "q": "Does it give tax advice?",
+        "a": "No. Tip Ledger helps you keep an accurate record. For questions about reporting tips or tax, check your tax authority's guidance or talk to a tax professional."
+      },
+      {
+        "q": "Is it linked to my employer or a payments company?",
+        "a": "No. Tip Ledger is independent and not affiliated with any employer, restaurant platform or payments company."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-29",
+      "summary": "Tipped workers describe always wondering how much they made that day, week or year, never tracking the money they made, wanting to track tips so they knew what to report on their taxes, using pen and paper for years, and just wanting to keep track of what they make.",
+      "wtp": "ServerLife has 9.9K App Store ratings with Premium at $2.99 a month or $24.99 a year; TipTracker has 9.5K ratings with paid add-ons from $5.99.",
+      "signals": [
+        {
+          "url": "https://apps.apple.com/us/app/serverlife-tip-tracker/id1098987860?see-all=reviews",
+          "who": "rebeccabarton12 (App Store review of ServerLife)",
+          "date": "2019-06-13",
+          "quote": "I would always wonder how much I made that day or that week or even yearly",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/serverlife-tip-tracker/id1098987860?see-all=reviews",
+          "who": "1Kristina (App Store review of ServerLife)",
+          "date": "2019-11-24",
+          "quote": "I never tracked the money I was making",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/tiptracker-track-your-income/id1161307849?see-all=reviews",
+          "who": "djdir dos (App Store review of TipTracker)",
+          "date": "2019-02-05",
+          "quote": "so that I knew what to report on my taxes",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/tiptracker-track-your-income/id1161307849?see-all=reviews",
+          "who": "trinaxxx (App Store review of TipTracker)",
+          "date": "2019-01-16",
+          "quote": "I was using pen and paper for a couple years",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/just-the-tips-tip-tracker/id937297529?see-all=reviews",
+          "who": "13wifeylifey13 (App Store review of Just the Tips)",
+          "date": "2024-11-16",
+          "quote": "I just wanna keep track of what I make",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/serverlife-tip-tracker/id1098987860",
+          "who": "ServerLife (App Store)",
+          "date": "2026-10-29",
+          "quote": "9.9K Ratings; Premium Monthly $2.99; Yearly $24.99",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/tiptracker-track-your-income/id1161307849",
+          "who": "TipTracker (App Store)",
+          "date": "2026-10-29",
+          "quote": "9.5K Ratings; Add a Job $5.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Tip tracker apps (ServerLife, TipTracker, Just the Tips), spreadsheets, notebooks.",
+      "risks": "Mature, cheap field; next to live variable-income budgeting, payslip-check and gig-driver offers, so it stays about logging tips; must not give tax advice or make income claims. Evidence is all App Store reviews, several from 2019."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

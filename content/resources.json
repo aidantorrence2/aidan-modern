@@ -31024,5 +31024,141 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "stop-forgetting-homework-assignments",
+  "offer": "homework-keeper",
+  "title": "How to stop forgetting homework assignments",
+  "description": "Simple habits that help students keep track of assignments and due dates.",
+  "intro": "Forgetting homework is rarely about being lazy. Usually the assignment never got written down, or the list wasn't checked. A few small habits fix most of it.",
+  "sections": [
+   {
+    "h": "Write it down straight away",
+    "list": [
+     "Record every assignment the moment it's set, before you leave the class.",
+     "Include the subject, what to do and the due date."
+    ]
+   },
+   {
+    "h": "Keep one list",
+    "p": [
+     "Use one planner or app for everything, not several notebooks and sticky notes."
+    ]
+   },
+   {
+    "h": "Check it at the same time every day",
+    "list": [
+     "Look at your list each evening, for example after dinner.",
+     "Do or plan anything due tomorrow first."
+    ]
+   },
+   {
+    "h": "Break big projects up",
+    "p": [
+     "Split a big assignment into small steps, each with its own date, so it doesn't all land the night before."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "track-assignments-and-due-dates",
+  "offer": "homework-keeper",
+  "title": "The best way to keep track of assignments and due dates",
+  "description": "A simple system for high school and college students to stay on top of deadlines.",
+  "intro": "With several classes, deadlines pile up fast. A simple system at the start of each term saves stress later.",
+  "sections": [
+   {
+    "h": "At the start of term",
+    "list": [
+     "Go through each course outline and add every known deadline and exam date.",
+     "Note which weeks are busiest so you can start early."
+    ]
+   },
+   {
+    "h": "Each week",
+    "list": [
+     "Spend ten minutes on a Sunday reviewing what's due.",
+     "Plan when you'll work on each piece."
+    ]
+   },
+   {
+    "h": "Each day",
+    "list": [
+     "Add new assignments as soon as they're set.",
+     "Tick off what you've finished."
+    ]
+   },
+   {
+    "h": "Ask for help early",
+    "p": [
+     "If a deadline looks impossible, talk to your teacher or tutor before it's due, not after."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "track-tips-for-taxes",
+  "offer": "tip-ledger",
+  "title": "How to keep track of your tips",
+  "description": "A simple way for servers, bartenders and other tipped workers to keep an accurate record of tips.",
+  "intro": "If you work for tips, an accurate record helps at tax time and whenever you need to show what you earn. This isn't tax advice; check your tax authority's rules for where you live.",
+  "sections": [
+   {
+    "h": "Log every shift",
+    "list": [
+     "Write down cash tips and card tips separately.",
+     "Note the date, hours worked and any tips you shared or tipped out."
+    ]
+   },
+   {
+    "h": "Do it the same day",
+    "p": [
+     "It's much easier to be accurate if you log tips right after each shift."
+    ]
+   },
+   {
+    "h": "Keep it tidy",
+    "list": [
+     "Total your tips each week and month.",
+     "Keep your records for as long as your tax authority recommends."
+    ]
+   },
+   {
+    "h": "Check the rules",
+    "p": [
+     "In some countries, including the US, employees are expected to report tips to their employer and include them on their tax return. Your tax authority's website explains the rules."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "prove-tip-income-to-rent",
+  "offer": "tip-ledger",
+  "title": "How tipped workers can show their income when renting",
+  "description": "Ways servers and bartenders can show reliable income to a landlord.",
+  "intro": "Landlords often ask for proof of income, which can be tricky when much of your pay is tips. A few documents usually help.",
+  "sections": [
+   {
+    "h": "Documents that help",
+    "list": [
+     "Recent tax returns showing your reported income.",
+     "Payslips or annual earnings statements that include reported tips.",
+     "Bank statements showing regular deposits.",
+     "A letter from your employer confirming your role and typical earnings."
+    ]
+   },
+   {
+    "h": "Your own records",
+    "p": [
+     "A consistent log of your tips over several months can support the official documents."
+    ]
+   },
+   {
+    "h": "Be upfront",
+    "p": [
+     "Explain that your income includes tips and offer the documents above; some landlords also accept a guarantor or a larger deposit."
+    ]
+   }
+  ]
  }
 ]
