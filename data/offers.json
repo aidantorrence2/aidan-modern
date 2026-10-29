@@ -56537,6 +56537,90 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-29",
+    "slug": "claw-spot",
+    "name": "Claw Spot",
+    "need": "My cat is shredding the sofa, chair arms or stair carpet and ignores the scratching post, and I can't get it to stop.",
+    "headline": "Cat shredding the sofa and ignoring the post? Log where and when it scratches, then put the right scratcher in the right spot and make the furniture less tempting.",
+    "buyer": "Cat owners whose cat scratches the sofa, chairs or stair carpet and ignores the scratching post.",
+    "bullets": [
+      "Two-tap scratch log: which spot, what time, what happened just before.",
+      "A weekly view of the hot spots and times, with a scratcher plan for each: type, height and exact placement.",
+      "A daily reward routine, humane deterrents, and a before-and-after chart. Works for more than one cat."
+    ],
+    "price": "$3.99/month",
+    "priceUsd": 4,
+    "priceNote": "Or $24 a year.",
+    "reasonPrompt": "What is your cat scratching, and what have you tried?",
+    "faq": [
+      {
+        "q": "Is it veterinary advice?",
+        "a": "No. Claw Spot is a behaviour aid. Scratching is normal cat behaviour; if your cat suddenly changes how it scratches or seems in pain, see your vet. Declawing is harmful and is not suggested."
+      },
+      {
+        "q": "Is it linked to a pet brand or shop?",
+        "a": "No. Claw Spot is independent and not affiliated with any brand, shop or vet practice."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-29",
+      "summary": "Cat owners describe a cat scratching everything and wrecking the house, cats scratching the sofa after bedtime and the carpet when no one's around, cats trashing a leather suite, and worrying a new sofa will be clawed.",
+      "wtp": "ajb69 bought sofa throws at about £100 each to protect furniture; Gelly123 bought Feliway products; Meowz: Cat Training has 992 App Store ratings with Premium at $29.99 a year.",
+      "signals": [
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/4532685/cat-scratching-furniture",
+          "who": "suzymonkey (MoneySavingExpert)",
+          "date": "2013-04-04",
+          "quote": "She's wrecking the house !!",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/4532685/cat-scratching-furniture",
+          "who": "Gelly123 (MoneySavingExpert)",
+          "date": "2013-04-04",
+          "quote": "the sofa is still scratched to pieces",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/559394/help-cat-scratching-new-sofa",
+          "who": "Muppet81 (MoneySavingExpert)",
+          "date": "2007-09-24",
+          "quote": "HELP! Cat scratching new sofa !!!!",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/559394/help-cat-scratching-new-sofa",
+          "who": "simontheiceman (MoneySavingExpert)",
+          "date": "2008-09-18",
+          "quote": "my cats have trashed my leather suite",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/559394/help-cat-scratching-new-sofa",
+          "who": "ajb69 (MoneySavingExpert)",
+          "date": "2008-11-12",
+          "quote": "were about £100 each",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/meowz-cat-training-pet-care/id6503908960",
+          "who": "Meowz: Cat Training (App Store)",
+          "date": "2026-10-29",
+          "quote": "992 Ratings; Yearly Premium $29.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Scratching posts and pads, deterrent sprays and pheromone diffusers, furniture throws, cat training apps.",
+      "risks": "Relaunch of the held Claw Spot (20 Oct), now with posters and money checked through the MSE API; posts are old (2007-2013); money is products, not software; Meowz doesn't mention scratching; next to live Gentle Paws and other cat offers. The doc side's Mumsnet threads return 403 and aren't cited."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

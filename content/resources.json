@@ -31307,5 +31307,75 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "stop-cat-scratching-the-sofa",
+  "offer": "claw-spot",
+  "title": "How to stop your cat scratching the sofa",
+  "description": "Why cats scratch furniture, and practical steps that steer scratching onto a post instead.",
+  "intro": "Scratching is normal for cats: it keeps claws healthy, stretches muscles and leaves their scent. The goal is to move it from the sofa to something they're allowed to scratch.",
+  "sections": [
+   {
+    "h": "Put a scratcher right there",
+    "list": [
+     "Place a sturdy scratcher right next to the spot your cat uses, not in another room.",
+     "Match the direction: upright posts for cats that stretch up, flat boards for cats that scratch the floor."
+    ]
+   },
+   {
+    "h": "Make it appealing",
+    "list": [
+     "Choose a tall, heavy post that doesn't wobble.",
+     "Rub catnip on it, and reward your cat when it uses it."
+    ]
+   },
+   {
+    "h": "Make the sofa less tempting",
+    "list": [
+     "Cover the spot with a throw or double-sided tape for a few weeks.",
+     "Never punish or shout; it can make your cat anxious and scratch more."
+    ]
+   },
+   {
+    "h": "Keep claws in good shape",
+    "p": [
+     "Regular nail trims can reduce damage. Your vet can show you how. Declawing is harmful and should not be considered."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "why-cat-ignores-scratching-post",
+  "offer": "claw-spot",
+  "title": "Why does my cat ignore the scratching post?",
+  "description": "Common reasons cats ignore their scratching post, and how to fix them.",
+  "intro": "If your cat walks past the post to scratch the sofa, the post is usually in the wrong place or the wrong type.",
+  "sections": [
+   {
+    "h": "It's in the wrong place",
+    "p": [
+     "Cats scratch where they spend time, near where they sleep and by doors. Move the post to those spots."
+    ]
+   },
+   {
+    "h": "It's too short or wobbly",
+    "p": [
+     "Cats like to stretch fully. A short or unsteady post is less satisfying than a solid sofa."
+    ]
+   },
+   {
+    "h": "It's the wrong surface or angle",
+    "list": [
+     "Some cats prefer rope, others carpet or cardboard.",
+     "Some like to scratch upright, others on the floor or at an angle. Watch how your cat scratches the sofa and copy that."
+    ]
+   },
+   {
+    "h": "Try more than one",
+    "p": [
+     "Offer a couple of different scratchers and see which gets used. More cats need more scratchers."
+    ]
+   }
+  ]
  }
 ]
