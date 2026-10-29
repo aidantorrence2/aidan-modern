@@ -32101,5 +32101,77 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "language-journal-three-sentences-a-day",
+  "offer": "diary-loop",
+  "title": "How to learn a language by writing three sentences a day about your life",
+  "description": "A small daily writing habit that turns vocabulary into words you can actually use.",
+  "intro": "Apps are good for recognising words, but writing about your own day makes you produce them. Three short sentences is enough to start.",
+  "sections": [
+   {
+    "h": "Write about today",
+    "list": [
+     "Each evening, write three sentences about something that really happened.",
+     "Keep them simple: what you did, how you felt, what's next."
+    ]
+   },
+   {
+    "h": "Look up only what you need",
+    "list": [
+     "When a word is missing, look it up and write it down.",
+     "Those are the words you'll need again in real conversations."
+    ]
+   },
+   {
+    "h": "Get it checked",
+    "list": [
+     "Ask a tutor, language partner or a correction community to point out mistakes.",
+     "Rewrite the corrected sentences once."
+    ]
+   },
+   {
+    "h": "Read back weekly",
+    "p": [
+     "Once a week, read your old entries out loud. You'll notice how much easier they feel."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "structure-your-days-after-retirement",
+  "offer": "retirement-days-lost-structure",
+  "title": "How to give your days structure after retirement",
+  "description": "Simple ways to build a routine and a sense of purpose once work ends.",
+  "intro": "Work gives days a shape without us noticing. After retirement, it helps to rebuild that shape on purpose.",
+  "sections": [
+   {
+    "h": "Keep a few anchors",
+    "list": [
+     "Get up and eat at roughly the same times each day.",
+     "Plan one thing for each morning, even if it's small."
+    ]
+   },
+   {
+    "h": "Mix three kinds of activity",
+    "list": [
+     "Something active, such as a walk, swimming or gardening.",
+     "Something social, such as a club, class or volunteering.",
+     "Something that uses your skills or teaches you a new one."
+    ]
+   },
+   {
+    "h": "Plan the week",
+    "p": [
+     "Sketch the week ahead on a Sunday so the days don't blur together."
+    ]
+   },
+   {
+    "h": "Give it time",
+    "p": [
+     "Adjusting can take months. If low mood lasts, talk to your doctor or a support service."
+    ]
+   }
+  ]
  }
 ]
