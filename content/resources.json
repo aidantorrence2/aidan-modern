@@ -30471,5 +30471,72 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "why-parrot-screams-when-you-leave",
+  "offer": "quiet-perch",
+  "title": "Why does my parrot scream when I leave the room?",
+  "description": "Why parrots call out when you leave, and how to teach a quieter way to stay in touch.",
+  "intro": "In the wild, parrots call to keep track of their flock. When you leave the room, your parrot may scream to find out where you've gone.",
+  "sections": [
+   {
+    "h": "Why it happens",
+    "list": [
+     "You're part of your parrot's flock, and it wants to know where you are.",
+     "If screaming has brought you back before, your parrot learns that it works."
+    ]
+   },
+   {
+    "h": "Teach a quieter contact call",
+    "list": [
+     "Pick a soft whistle or word.",
+     "When your parrot makes a quieter sound, answer with your call.",
+     "Reply to the quiet call, not the scream, so the quiet one becomes the one that works."
+    ]
+   },
+   {
+    "h": "Avoid rewarding screams",
+    "list": [
+     "Try not to rush back, shout or make a fuss when it screams.",
+     "Return or give attention when it's quiet, even for a moment."
+    ]
+   },
+   {
+    "h": "Check health first",
+    "p": [
+     "If screaming is new or sudden, or your parrot seems unwell, see an avian vet."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "how-much-sleep-does-a-parrot-need",
+  "offer": "quiet-perch",
+  "title": "How much sleep does a parrot need?",
+  "description": "Why sleep matters for parrot behaviour, and how to help your bird get enough.",
+  "intro": "Too little sleep can make parrots cranky and noisier. Many avian vets suggest pet parrots need around 10 to 12 hours of darkness and quiet each night, though needs vary by species.",
+  "sections": [
+   {
+    "h": "Signs your parrot may be tired",
+    "list": [
+     "More screaming or nipping than usual.",
+     "Seeming restless or irritable in the evening."
+    ]
+   },
+   {
+    "h": "Help your parrot sleep",
+    "list": [
+     "Keep a regular bedtime and wake time.",
+     "Use a quiet, dark room, or a cage cover if your bird is used to one.",
+     "Avoid late-night TV, bright lights and noise near the cage."
+    ]
+   },
+   {
+    "h": "Ask your vet",
+    "p": [
+     "Your avian vet can advise on the right amount of sleep for your bird's species and age."
+    ]
+   }
+  ]
  }
 ]

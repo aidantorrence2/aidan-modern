@@ -55599,6 +55599,97 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-29",
+    "slug": "quiet-perch",
+    "name": "Quiet Perch",
+    "need": "My parrot screams for hours and nothing I try gets it to stop.",
+    "headline": "Parrot screaming for hours? Log each bout in two taps, see the pattern after a week, and follow a five-minute daily quiet plan.",
+    "buyer": "Parrot owners whose bird screams for long stretches.",
+    "bullets": [
+      "Log each bout in two taps: time, length and what had just happened.",
+      "After a week, see the pattern: when, where and what sets it off.",
+      "A five-minute daily plan: reward quiet, teach a softer contact call, add play and foraging, and keep regular sleep hours."
+    ],
+    "price": "$3.99/month",
+    "priceUsd": 4,
+    "priceNote": "Or $24 a year.",
+    "reasonPrompt": "What kind of parrot do you have, and when does the screaming happen?",
+    "faq": [
+      {
+        "q": "Is it veterinary advice?",
+        "a": "No. Quiet Perch is a training aid. If the screaming is new or sudden, or your bird seems unwell, see an avian vet first."
+      },
+      {
+        "q": "Is it linked to a trainer or bird brand?",
+        "a": "No. Quiet Perch is independent and not affiliated with any trainer, course or pet brand."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-29",
+      "summary": "Parrot owners describe not being able to get their bird to stop screaming, living with a screaming bird being torture, finding it very challenging, and being at their breaking point.",
+      "wtp": "Beak School sells a screaming fix for $17 one time; Fluff and Feathers sells a Scream No More class for $20; Avian Behavior sells a screaming course bundle for $95.",
+      "signals": [
+        {
+          "url": "https://parrotforums.com/threads/at-my-wits-end.85790",
+          "who": "BluenGold_Congo (ParrotForums)",
+          "date": "2020-05-22",
+          "quote": "I cannot get her to stop screaming",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.parrotforums.com/threads/advice-for-my-screaming-parrot.104121/",
+          "who": "emmaeq19 (ParrotForums)",
+          "date": "2024-12-04",
+          "quote": "living with him right now is torture",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.parrotforums.com/threads/advice-for-my-screaming-parrot.104121/",
+          "who": "Bertica2964 (ParrotForums)",
+          "date": "2024-12-15",
+          "quote": "it has been very challenging with him he screams a lot",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.parrotforums.com/threads/please-help-parrot-screams-nonstop-only-when-im-in-the-room-with-her.104168/",
+          "who": "willowwisp (ParrotForums)",
+          "date": "2024-12-11",
+          "quote": "at my breaking point and I don",
+          "seen": "opened"
+        },
+        {
+          "url": "https://beakschool.com/stop-parrot-screaming",
+          "who": "Beak School course",
+          "date": "2026-10-29",
+          "quote": "$17 one time. No subscription.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://fluffnfeathers.squarespace.com/shop-online/classes/p/scream-no-more-online-class",
+          "who": "Fluff and Feathers class",
+          "date": "2026-10-29",
+          "quote": "$20.00",
+          "seen": "opened"
+        },
+        {
+          "url": "https://avianbehavior.thinkific.com/courses/screaming-masterclass",
+          "who": "Avian Behavior course bundle",
+          "date": "2026-10-29",
+          "quote": "$95",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Parrot training courses (Beak School, Avian Behavior, BirdTricks), avian vets and behaviourists, forums.",
+      "risks": "No paid app; money is low-price courses; one forum site carries most voices; nobody wrote that they'd pay for an app; must point new or sudden screaming to a vet. The indianringneck.com page returned 500 and isn't cited."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
