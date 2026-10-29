@@ -31814,5 +31814,78 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "budget-when-income-changes-every-month",
+  "offer": "income-changes-month-ordinary",
+  "title": "How to budget when your income changes every month",
+  "description": "A simple method for freelancers, shift workers and anyone paid irregularly.",
+  "intro": "Ordinary budgets assume the same pay every month. When income goes up and down, it helps to plan around your lowest month and treat anything extra as a buffer.",
+  "sections": [
+   {
+    "h": "Find your baseline",
+    "list": [
+     "Look at the last six to twelve months of income.",
+     "Use your lowest normal month as the amount you plan with."
+    ]
+   },
+   {
+    "h": "Cover the essentials first",
+    "list": [
+     "List rent, bills, food and debt payments.",
+     "Make sure the baseline covers them before anything else."
+    ]
+   },
+   {
+    "h": "Build a buffer",
+    "list": [
+     "In good months, move the extra into a separate savings pot.",
+     "Aim to hold at least one month of essential costs, then grow it."
+    ]
+   },
+   {
+    "h": "Pay yourself a steady amount",
+    "p": [
+     "Where you can, pay income into one account and move a fixed amount each month into your spending account. If you're struggling with debt, free debt advice services can help."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "first-home-maintenance-checklist",
+  "offer": "never-managed-home-fear",
+  "title": "First home maintenance checklist: what to check and when",
+  "description": "The basic jobs new homeowners and renters often miss, by season.",
+  "intro": "Most expensive home problems start small. A short list of regular checks helps you catch them early.",
+  "sections": [
+   {
+    "h": "Know where things are",
+    "list": [
+     "Find the main water stop tap, the fuse box or consumer unit, and the gas meter.",
+     "Save the numbers for your landlord or insurer, and your energy supplier's emergency line."
+    ]
+   },
+   {
+    "h": "Monthly",
+    "list": [
+     "Test smoke alarms and carbon monoxide alarms.",
+     "Check under sinks and around the toilet for leaks."
+    ]
+   },
+   {
+    "h": "Every few months",
+    "list": [
+     "Clean or replace extractor and appliance filters.",
+     "Look for damp patches, mould or cracks."
+    ]
+   },
+   {
+    "h": "Once a year",
+    "list": [
+     "Book a boiler or heating service with a registered engineer.",
+     "Clear gutters and check the roof from the ground."
+    ]
+   }
+  ]
  }
 ]
