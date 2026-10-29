@@ -57223,6 +57223,83 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-29",
+    "slug": "hover-first",
+    "name": "Hover First",
+    "need": "I'm learning to fly an FPV drone and I keep flipping and crashing within seconds, and I don't know what to practise next.",
+    "headline": "Learning FPV and crashing in seconds? Follow short simulator drills with pass marks, log each crash and know when you're ready for the real quad.",
+    "buyer": "Adults 18+ learning to fly an FPV drone, in a simulator or with a real quad, who keep crashing.",
+    "bullets": [
+      "A ladder of ten-minute simulator drills, each with a clear pass mark before you move on.",
+      "Two-tap crash log that shows your pattern and the drill that fixes it.",
+      "A ready-for-the-real-quad checklist, with a reminder to check local drone rules first."
+    ],
+    "price": "$4.99/month",
+    "priceUsd": 5,
+    "priceNote": "Or $29 a year. Works with the simulator you already own.",
+    "reasonPrompt": "Which simulator or quad are you flying, and how do your crashes usually happen?",
+    "faq": [
+      {
+        "q": "Is it for adults only?",
+        "a": "Yes, Hover First is for adults 18+. It isn't a flight instructor or legal advice: always follow your local drone rules and registration requirements, and fly away from people."
+      },
+      {
+        "q": "Is it linked to Liftoff, DJI or any drone brand?",
+        "a": "No. Hover First is independent and not affiliated with any simulator, drone maker or retailer."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-29",
+      "summary": "New FPV pilots describe lifting off and then flipping and crashing within seconds, crashing and getting frustrated on their first flights, going up, flipping and crashing so fast they couldn't stay aloft for five seconds, and trying simulators and flight modes without anything working.",
+      "wtp": "Liftoff: FPV Drone Racing sells for $19.99 on Steam with Overwhelmingly Positive reviews, and new pilots buy starter kits and simulators to learn.",
+      "signals": [
+        {
+          "url": "https://steamcommunity.com/app/410340/discussions/0/3758852882968117678/",
+          "who": "OpalBeast (Steam, Liftoff discussions)",
+          "date": "2023-02-11",
+          "quote": "I tried flying it in RL about 4 times all ending with me lifting off and then flipping and crashing within seconds.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://steamcommunity.com/app/410340/discussions/0/3758852882968117678/",
+          "who": "SubSpan (Steam, Liftoff discussions)",
+          "date": "2023-02",
+          "quote": "I got this way last night trying to fly for the first time, kept crashing and was frustrated",
+          "seen": "opened"
+        },
+        {
+          "url": "https://steamcommunity.com/app/410340/discussions/0/3758852882968117678/",
+          "who": "BigDaddyReeves (Steam, Liftoff discussions)",
+          "date": "2023-02",
+          "quote": "Up, flipped, and crashed so fast i couldn't even get a feel for how to stay aloft",
+          "seen": "opened"
+        },
+        {
+          "url": "https://intofpv.com/t-i-think-it-s-just-me-acro-and-fpv",
+          "who": "aeroluxifer (IntoFPV forum)",
+          "date": "2017-09-24",
+          "quote": "I've tried simulators, flipping modes midair, etc. Nothing works.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://store.steampowered.com/app/410340/Liftoff_FPV_Drone_Racing/",
+          "who": "Liftoff: FPV Drone Racing (Steam)",
+          "date": "2026-10-29",
+          "quote": "$19.99; Overwhelmingly Positive",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "FPV simulators and their tutorials (Liftoff, DRL Simulator, Velocidrone), YouTube, local clubs.",
+      "risks": "Money goes to simulators, not coaching apps; one forum post is from 2017; the doc side's paulbatny57 quote is from a moderator-flagged spam clone and is not cited, and the doc side named the Steam opening poster Tubbs, but the page shows OpalBeast; drones carry legal and safety rules, so it is 18+ and points to local rules."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

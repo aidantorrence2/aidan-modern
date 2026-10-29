@@ -32243,5 +32243,78 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "stop-crashing-fpv-drone-beginner",
+  "offer": "hover-first",
+  "title": "How to stop crashing your FPV drone as a beginner",
+  "description": "Why new FPV pilots crash in seconds, and a practice plan that helps.",
+  "intro": "Almost every FPV beginner crashes over and over at first. Acro mode doesn't level itself, so it takes practice before the controls feel natural.",
+  "sections": [
+   {
+    "h": "Start in a simulator",
+    "list": [
+     "Crashes in a sim cost nothing, so put in your first hours there.",
+     "Use the same radio controller you'll fly with for real."
+    ]
+   },
+   {
+    "h": "Practise one skill at a time",
+    "list": [
+     "Hover and hold height before trying to move forward.",
+     "Then practise gentle forward flight, wide turns and landing."
+    ]
+   },
+   {
+    "h": "Check your setup",
+    "list": [
+     "Very high rates make the quad twitchy; many beginners find lower rates easier.",
+     "Some pilots find pinching the sticks gives finer control than using thumbs."
+    ]
+   },
+   {
+    "h": "Short, regular sessions",
+    "p": [
+     "Fifteen minutes most days beats a long session once a week. Stop when you get frustrated and come back tomorrow."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "ready-to-fly-real-fpv-quad-checklist",
+  "offer": "hover-first",
+  "title": "When are you ready to fly a real FPV quad? A beginner's checklist",
+  "description": "Skills to have in the simulator before your first real flight, plus safety basics.",
+  "intro": "There's no fixed number of simulator hours, but there are skills worth having before you risk a real quad.",
+  "sections": [
+   {
+    "h": "Skills to have first",
+    "list": [
+     "Hover steadily and hold your height.",
+     "Fly a slow loop of a field and land where you planned.",
+     "Recover calmly when you get disoriented."
+    ]
+   },
+   {
+    "h": "Check the rules",
+    "list": [
+     "Look up your country's drone rules, registration and any test you need.",
+     "Find out where you're allowed to fly and stay well away from people, roads and airports."
+    ]
+   },
+   {
+    "h": "First real flights",
+    "list": [
+     "Choose a big, empty, open space on a calm day.",
+     "Fly low and slow at first, with a spotter if you can."
+    ]
+   },
+   {
+    "h": "Expect some crashes",
+    "p": [
+     "Real quads behave a little differently from sims. Keep spare props and go back to the sim when something feels off."
+    ]
+   }
+  ]
  }
 ]
