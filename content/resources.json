@@ -31887,5 +31887,76 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "plan-running-loop-exact-distance-from-home",
+  "offer": "loop-planner",
+  "title": "How to plan a running loop of an exact distance from your front door",
+  "description": "Simple ways to build a 5k, 5-mile or 10-mile loop that starts and ends at home.",
+  "intro": "Training plans often ask for a set distance. With a little planning you can build loops that start and finish at your door instead of running laps or guessing.",
+  "sections": [
+   {
+    "h": "Start with a rough shape",
+    "list": [
+     "Pick a few roads or paths that form a loop near home.",
+     "A square loop with sides of a quarter of your distance is a handy starting guess."
+    ]
+   },
+   {
+    "h": "Measure before you go",
+    "list": [
+     "Use a free map tool's measure-distance feature, or a route planner, to trace the loop.",
+     "Adjust with a small out-and-back spur to add or trim distance."
+    ]
+   },
+   {
+    "h": "Build a menu of loops",
+    "list": [
+     "Save several loops of common distances, such as 3, 5 and 8 miles.",
+     "Combine two short loops for longer runs."
+    ]
+   },
+   {
+    "h": "Stay safe",
+    "p": [
+     "Prefer lit, busy routes after dark, tell someone your route for long runs, and follow local paths and signs."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "find-running-routes-when-travelling",
+  "offer": "loop-planner",
+  "title": "How to find running routes of the right distance when travelling",
+  "description": "Plan a safe, set-distance run in a town you don't know.",
+  "intro": "A new place can make it hard to hit your planned mileage. A few minutes of planning the night before makes the run easier.",
+  "sections": [
+   {
+    "h": "Look for easy loops",
+    "list": [
+     "Parks, riversides and seafronts often have marked paths and known distances.",
+     "Ask hotel staff where locals run."
+    ]
+   },
+   {
+    "h": "Plan the distance",
+    "list": [
+     "Trace a route on a map tool and check the distance before you set off.",
+     "An out-and-back route is simplest: run half the distance, then turn round."
+    ]
+   },
+   {
+    "h": "Save it offline",
+    "p": [
+     "Download the map or take a screenshot in case you lose signal."
+    ]
+   },
+   {
+    "h": "Stay safe",
+    "p": [
+     "Run in daylight where you can, carry your phone and a little money, and let someone know your route."
+    ]
+   }
+  ]
  }
 ]

@@ -56957,6 +56957,97 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-29",
+    "slug": "loop-planner",
+    "name": "Loop Planner",
+    "need": "I want running or walking routes of an exact distance from my door, or from wherever I'm staying, so I can hit my training mileage without making up random laps or running the same route every time.",
+    "headline": "Need a 5-mile run from your door? Type the distance and get a few loops of exactly that length, at home or wherever you're staying.",
+    "buyer": "Recreational runners and walkers on a training plan, especially when travelling or bored of their usual routes.",
+    "bullets": [
+      "Enter a start point and a distance and get loop or out-and-back routes that match it.",
+      "Save favourites and get a fresh route when you're bored of the usual ones.",
+      "Works when travelling: plan tomorrow's run from your hotel the night before."
+    ],
+    "price": "$3.99/month",
+    "priceUsd": 4,
+    "priceNote": "Or $24 a year. Map data from OpenStreetMap contributors.",
+    "reasonPrompt": "How far do you usually run or walk, and where do you struggle to find routes?",
+    "faq": [
+      {
+        "q": "Is it linked to Strava, Garmin or any running app?",
+        "a": "No. Loop Planner is independent and not affiliated with any running app, watch maker or brand."
+      },
+      {
+        "q": "Are the routes guaranteed safe?",
+        "a": "No. Routes come from public map data, which can be out of date. Check the route looks sensible, follow local signs and stick to places you feel safe, especially after dark."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-29",
+      "summary": "Runners say their training plans need certain distances and they used to just run around randomly, that planning specific distances is challenging, that they get bored with the same routes, and that they've tried Google Maps to chart routes and mileage without much success.",
+      "wtp": "Footpath Route Planner sells Elite at $3.99 a month or $23.49 a year (22K ratings), and Map My Run sells MVP at $9.99 a month or $39.99 a year.",
+      "signals": [
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=3/id=634845718/sortby=mosthelpful/json",
+          "who": "theBlueGecko (App Store review of Footpath)",
+          "date": "2020-02-12",
+          "quote": "For my running training plans, I need to go certain distances. Used to have to just run around randomly to figure out.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=3/id=634845718/sortby=mosthelpful/json",
+          "who": "Tommy Action (App Store review of Footpath)",
+          "date": "2016-03-31",
+          "quote": "Whenever I get bored with the same running or riding routes",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=634845718/sortby=mosthelpful/json",
+          "who": "Haan So Low (App Store review of Footpath)",
+          "date": "2021-04-13",
+          "quote": "Planning to run specific distances is challenging.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=634845718/sortby=mosthelpful/json",
+          "who": "Bdimaggio (App Store review of Footpath)",
+          "date": "2026-06-07",
+          "quote": "as I train for longer distances and need to plan those runs for specific lengths",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=2/id=634845718/sortby=mosthelpful/json",
+          "who": "funwithfung (App Store review of Footpath)",
+          "date": "2025-10-26",
+          "quote": "have been using google maps to try to chart routes and mileage to not so great success",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=4/id=291890420/sortby=mostrecent/json",
+          "who": "sparkowl33 (App Store review of Map My Run)",
+          "date": "2026-06-24",
+          "quote": "create a route based on a starting , finishing point and desired distance",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id634845718",
+          "who": "Footpath Route Planner (App Store)",
+          "date": "2026-10-29",
+          "quote": "22K Ratings; Elite $3.99 monthly, $23.49 yearly",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Route builders in Footpath, Strava, Garmin Connect, Komoot and Map My Run, many with free tiers.",
+      "risks": "Big free route builders exist, so the angle is generated loops of an exact distance with no drawing; most evidence is reviews of one app (Footpath) plus one Map My Run review; it needs OpenStreetMap data with attribution; routes are not safety-checked."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
