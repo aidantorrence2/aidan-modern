@@ -55501,6 +55501,104 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-29",
+    "slug": "last-second-bid",
+    "name": "Last Second Bid",
+    "need": "I keep losing online auctions to someone who bids in the final seconds, and I can't always be at my phone when an auction ends.",
+    "headline": "Losing auctions in the final seconds? Set your true maximum once, and have your bid placed near the end, so you win at your price or walk away calm.",
+    "buyer": "Hobby auction buyers and collectors who bid on a few items a month and can't watch every auction end.",
+    "bullets": [
+      "Set the most you'll pay for an item once, and stick to it.",
+      "Your bid is placed in the final seconds, so you're not drawn into a bidding war.",
+      "A simple budget and history of what you won, lost and paid."
+    ],
+    "price": "$3.99/month",
+    "priceUsd": 4,
+    "priceNote": "Or $29 a year.",
+    "reasonPrompt": "What do you usually bid on, and how often do you lose at the end?",
+    "faq": [
+      {
+        "q": "Is last-second bidding allowed?",
+        "a": "Placing a bid near the end of an auction is common, but rules can change. Last Second Bid will only place bids through methods the auction site allows, and it never asks for your password. Check the site's current rules."
+      },
+      {
+        "q": "Is it linked to eBay or another auction site?",
+        "a": "No. Last Second Bid is independent and not affiliated with eBay or any auction site."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-29",
+      "summary": "Buyers describe being outbid even when bidding at the last second, missing auctions at the last minute, being driven crazy watching items they want get bid up, losing items to last-second snipers, not always being around when an auction ends, and losing several auctions to sniping over the years.",
+      "wtp": "Baytomat's Sniper for eBay has 4.3K App Store ratings with bid packs from $12.99 to $290; Gixen eBay Auction Sniper has 800 ratings with a $2.99 subscription.",
+      "signals": [
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=490091459/sortby=mosthelpful/json",
+          "who": "vamp1reluvr (App Store review of Sniper for eBay)",
+          "date": "2026-10-08",
+          "quote": "how tf people outbid me if I bid last second",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=490091459/sortby=mosthelpful/json",
+          "who": "christaannbryantate (App Store review of Sniper for eBay)",
+          "date": "2023-09-07",
+          "quote": "I kept missing auctions at the last minute until I downloaded this app",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=490091459/sortby=mosthelpful/json",
+          "who": "JoAnnaDuBose1984 (App Store review of Sniper for eBay)",
+          "date": "2022-01-26",
+          "quote": "Watching an item that I really want being bid up drives me crazy",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=6446328339/sortby=mosthelpful/json",
+          "who": "WRJesse (App Store review of Gixen)",
+          "date": "2024-07-09",
+          "quote": "sick of losing out on eBay items when someone else would snipe them at the last second",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=6446328339/sortby=mosthelpful/json",
+          "who": "talonite (App Store review of Gixen)",
+          "date": "2025-09-27",
+          "quote": "I cannot always be around when an auction is ending",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=6446328339/sortby=mosthelpful/json",
+          "who": "Oregon Tall Fir (App Store review of Gixen)",
+          "date": "2024-12-29",
+          "quote": "have lost several auctions to sniping over the years",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/sniper-for-ebay-bid-auctions/id490091459",
+          "who": "Sniper for eBay (App Store)",
+          "date": "2026-10-28",
+          "quote": "4.3K Ratings; 8 points $12.99 up to 300 points $290.00",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/gixen-ebay-auction-sniper/id6446328339",
+          "who": "Gixen eBay Auction Sniper (App Store)",
+          "date": "2026-10-28",
+          "quote": "800 Ratings; Mirror Subscription $2.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Gixen, Baytomat and other sniping services, the auction site's own automatic bidding.",
+      "risks": "Placing bids needs access the auction site allows, which may be restricted; without it the offer is reminders and max-bid discipline only; cheap incumbents; reliability is everything; some rival reviews look incentivised. Evidence is all App Store reviews."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

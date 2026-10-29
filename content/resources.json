@@ -30404,5 +30404,72 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "stop-getting-outbid-last-seconds",
+  "offer": "last-second-bid",
+  "title": "How to stop getting outbid in the last seconds of an auction",
+  "description": "Why you lose auctions at the very end, and how to bid so you win at a price you're happy with.",
+  "intro": "Losing an item in the final seconds is frustrating. Understanding how online auction bidding works helps you bid smarter.",
+  "sections": [
+   {
+    "h": "How automatic bidding works",
+    "p": [
+     "On many auction sites, you can enter the most you're willing to pay. The site then bids for you, only as much as needed to stay ahead, up to your maximum."
+    ]
+   },
+   {
+    "h": "Why you get outbid at the end",
+    "list": [
+     "Someone else had a higher maximum.",
+     "Bidding early can start a bidding war as others respond.",
+     "Late bidders don't give you time to react."
+    ]
+   },
+   {
+    "h": "Bid smarter",
+    "list": [
+     "Decide your true maximum before you bid, and don't go above it.",
+     "Consider placing your maximum bid close to the end rather than early.",
+     "Check the item's past sold prices to set a sensible limit."
+    ]
+   },
+   {
+    "h": "Stay calm",
+    "p": [
+     "If someone pays more than your maximum, you've avoided overpaying. There's usually another one."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "what-is-bid-sniping",
+  "offer": "last-second-bid",
+  "title": "Bid sniping explained",
+  "description": "What bid sniping is, why people do it, and what to watch out for.",
+  "intro": "Bid sniping means placing your bid in the last seconds of an auction, so other bidders don't have time to respond.",
+  "sections": [
+   {
+    "h": "Why people snipe",
+    "list": [
+     "It avoids bidding wars that push prices up.",
+     "It keeps your interest hidden until the end."
+    ]
+   },
+   {
+    "h": "How it works with maximum bids",
+    "p": [
+     "A snipe is still just a bid. If someone else's maximum is higher, they still win. Sniping helps most when others bid emotionally."
+    ]
+   },
+   {
+    "h": "Things to watch",
+    "list": [
+     "Check the auction site's current rules.",
+     "Never give your account password to a third party.",
+     "Make sure your payment details are ready, so you can pay promptly if you win."
+    ]
+   }
+  ]
  }
 ]
