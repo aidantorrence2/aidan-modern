@@ -30621,5 +30621,116 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "what-to-do-when-someone-dies",
+  "offer": "someone-died-overwhelmed-by",
+  "title": "What to do when someone dies: the first practical steps",
+  "description": "A gentle checklist of the practical things that usually need doing in the first days and weeks after a death.",
+  "intro": "When someone dies, there can be a lot to deal with while you're grieving. You don't have to do everything at once. These are the steps that usually come first; the details depend on where you live.",
+  "sections": [
+   {
+    "h": "In the first days",
+    "list": [
+     "Get the medical certificate or confirmation of death from the doctor or hospital.",
+     "Contact a funeral director if you plan to use one.",
+     "Tell close family and friends; ask someone to help spread the news."
+    ]
+   },
+   {
+    "h": "Registering the death",
+    "p": [
+     "Most countries require a death to be registered within a set time. Check your local government's guidance for what's needed and where to go."
+    ]
+   },
+   {
+    "h": "Over the following weeks",
+    "list": [
+     "Look for a will, and find out who the executor is.",
+     "Tell banks, pension providers, employers and government offices.",
+     "Cancel or transfer bills, subscriptions and accounts."
+    ]
+   },
+   {
+    "h": "Get help",
+    "p": [
+     "You don't have to do this alone. A solicitor or estate adviser can help with the estate, and bereavement services can help with grief."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "manage-a-chronic-condition-day-to-day",
+  "offer": "managing-chronic-condition-become",
+  "title": "How to make managing a long-term health condition less of a second job",
+  "description": "Practical ways to organise appointments, medication and paperwork for a long-term condition.",
+  "intro": "Living with a long-term condition can mean a lot of admin: appointments, prescriptions, tests and paperwork. A simple system can make it lighter. This isn't medical advice; follow your care team's guidance.",
+  "sections": [
+   {
+    "h": "Keep one record",
+    "list": [
+     "List your medications, doses and who prescribed them.",
+     "Keep test results, letters and appointment dates in one folder or app.",
+     "Note questions for your next appointment as they come up."
+    ]
+   },
+   {
+    "h": "Make repeat tasks automatic",
+    "list": [
+     "Set reminders for medication and repeat prescriptions.",
+     "Ask your pharmacy whether they offer repeat prescription services."
+    ]
+   },
+   {
+    "h": "Make appointments count",
+    "list": [
+     "Bring your list of questions.",
+     "Ask for anything you don't understand to be written down."
+    ]
+   },
+   {
+    "h": "Ask for support",
+    "p": [
+     "Patient support groups and charities for your condition often have practical tips and someone to talk to."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "prepare-to-become-a-carer",
+  "offer": "about-become-caregiver-know",
+  "title": "How to prepare when you're about to become a carer",
+  "description": "Practical first steps for anyone about to start caring for a family member or friend.",
+  "intro": "Becoming a carer often happens quickly. A few early steps can make the change easier for you and the person you're caring for.",
+  "sections": [
+   {
+    "h": "Understand their needs",
+    "list": [
+     "Talk with the person you'll care for about what help they want.",
+     "Ask their doctor or care team what to expect."
+    ]
+   },
+   {
+    "h": "Get organised",
+    "list": [
+     "Keep a list of medications, appointments and important contacts.",
+     "Find out where key documents are kept."
+    ]
+   },
+   {
+    "h": "Find out what help is available",
+    "list": [
+     "Ask your local council or health service about a carer's assessment or support.",
+     "Check whether financial support for carers applies to you.",
+     "Look up local carers' groups and charities."
+    ]
+   },
+   {
+    "h": "Look after yourself too",
+    "p": [
+     "Plan regular breaks, and tell your own doctor you're a carer. You'll care better if you're supported."
+    ]
+   }
+  ]
  }
 ]
