@@ -33008,5 +33008,73 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "equal-playing-time-youth-soccer-rotation",
+  "offer": "fair-minutes",
+  "title": "How to give every kid equal playing time in youth soccer",
+  "description": "A simple way for volunteer coaches to plan fair substitutions.",
+  "intro": "Equal playing time is a rule in many rec leagues and the thing parents notice most. A little planning before kick-off makes it much easier on the day.",
+  "sections": [
+   {
+    "h": "Do the maths first",
+    "p": [
+     "Multiply game length by players on the field, then divide by your squad size. That's each child's fair share of minutes."
+    ]
+   },
+   {
+    "h": "Plan sub windows",
+    "list": [
+     "Pick set times to sub, such as every 8 or 10 minutes, or at natural breaks.",
+     "Write who comes off and on at each window before the game."
+    ]
+   },
+   {
+    "h": "Handle late arrivals",
+    "p": [
+     "When someone arrives late, give them the next open slot and shorten the shift of whoever has played most."
+    ]
+   },
+   {
+    "h": "Keep a simple record",
+    "p": [
+     "Note minutes per player as you go. Over a season you can even out any game that went unevenly."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "youth-soccer-sub-plan-7v7-9v9",
+  "offer": "fair-minutes",
+  "title": "Youth soccer substitution plan for 7v7 and 9v9, including a goalkeeper",
+  "description": "Sample rotation patterns for small-sided games and how to adapt them.",
+  "intro": "Small-sided youth games are easier to rotate fairly than they look. Start from a pattern and adjust for your numbers and league rules.",
+  "sections": [
+   {
+    "h": "7v7 with 10 players",
+    "p": [
+     "Three players sit at each change. Rotate a different three each time so everyone sits about the same amount."
+    ]
+   },
+   {
+    "h": "9v9 with 12 to 14 players",
+    "p": [
+     "Sub three or four at each window, rotating through the bench in order."
+    ]
+   },
+   {
+    "h": "Goalkeeper",
+    "list": [
+     "If your league allows, swap the goalkeeper at half time so two children share the role.",
+     "Count goalkeeper time as playing time."
+    ]
+   },
+   {
+    "h": "Check your league's rules",
+    "p": [
+     "Some leagues set minimum minutes, limit when subs can happen or require every player to play a full half. Plan around those first."
+    ]
+   }
+  ]
  }
 ]

@@ -57979,6 +57979,90 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-29",
+    "slug": "fair-minutes",
+    "name": "Fair Minutes",
+    "need": "I coach my kid's team as a volunteer and I can't keep track of who has played how long during a game, so substitutions end up uneven and parents complain.",
+    "headline": "Volunteer coach losing track of playing time? Tap players on and off, see minutes at a glance and get a fair sub suggestion, even with late arrivals.",
+    "buyer": "Adult volunteer coaches of youth soccer, futsal and basketball teams in rec, house and travel leagues.",
+    "bullets": [
+      "Tap a player on or off and see everyone's minutes on one screen.",
+      "A next-sub suggestion that evens out time, and adjusts when someone arrives late.",
+      "An end-of-game minutes summary you can show parents if they ask."
+    ],
+    "price": "$2.99/month",
+    "priceUsd": 3,
+    "priceNote": "Or $19 a season. First names or initials only; the roster stays on your phone.",
+    "reasonPrompt": "What sport and age group do you coach, and how many players are on your team?",
+    "faq": [
+      {
+        "q": "Is it linked to any league, club or sports app?",
+        "a": "No. Fair Minutes is independent and not affiliated with any league, club, governing body or app. Check your league's own playing-time rules."
+      },
+      {
+        "q": "Does it store children's details?",
+        "a": "No. Fair Minutes is for adult coaches and only needs first names, initials or shirt numbers, which stay on your phone."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-29",
+      "summary": "Volunteer coaches say they lose track of how much time each kid has played, that making sure every kid gets enough playing time is one of the most stressful parts of coaching, that late arrivals make it hard to balance, that their leagues require equal playing time, and that substituting kids in and out is far harder than they expected.",
+      "wtp": "SubTime, a youth sub timer with 729 ratings, sells Standard at $2.49 a month or $24.99 a year and a Team Plan at $3.49 a month or $34.99 a year.",
+      "signals": [
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1248650528/sortby=mosthelpful/json",
+          "who": "Hilk1111 (App Store review of SubTime)",
+          "date": "2017-09-13",
+          "quote": "Apart from a gut feel for how much time each kid has played, I really lose track.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1248650528/sortby=mosthelpful/json",
+          "who": "MikefromtheMo (App Store review of SubTime)",
+          "date": "2018-11-03",
+          "quote": "One of the most stressful things for me as a coach is making sure every kid gets enough playing time.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1248650528/sortby=mosthelpful/json",
+          "who": "Sylvester P. (App Store review of SubTime)",
+          "date": "2019-02-09",
+          "quote": "makes it super hard to balance playing time when I have a late arrival",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=987231566/sortby=mosthelpful/json",
+          "who": "DSmalley (App Store review of a youth coaching app)",
+          "date": "2016-01-25",
+          "quote": "where all kids have to have equal playing time",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1147153746/sortby=mosthelpful/json",
+          "who": "nmu_dozer (App Store review of SubNow)",
+          "date": "2021-05-04",
+          "quote": "who would have known how difficult it would be to try to substitute kids in and out of the game",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/subtime-game-management/id1248650528",
+          "who": "SubTime (App Store)",
+          "date": "2026-10-29",
+          "quote": "729 Ratings; Standard $2.49/mo or $24.99/yr; Team Plan $34.99/yr",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Sub timer apps (SubTime, SubNow, NextSub), paper rotation charts, team management apps.",
+      "risks": "Next to live Practice Tonight (practice plans), but about game-day minutes; crowded with free tiers, so price stays low; the users are adult coaches, so it collects only first names or numbers and stores them on the phone; evidence is App Store reviews from 2016 to 2021; seasonal."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
