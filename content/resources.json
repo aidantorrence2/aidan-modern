@@ -31160,5 +31160,79 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "find-where-mice-are-getting-in",
+  "offer": "mouse-map",
+  "title": "How to find where mice are getting in",
+  "description": "Where mice usually get into homes, and how to find and seal the gaps.",
+  "intro": "Trapping mice only helps for a while if they can keep getting in. Finding and sealing the entry points is what stops them coming back.",
+  "sections": [
+   {
+    "h": "Look for signs",
+    "list": [
+     "Droppings, gnaw marks, greasy smudges along walls, and nesting material.",
+     "Map where you find them; the busiest spots are often near an entry point."
+    ]
+   },
+   {
+    "h": "Common entry points",
+    "list": [
+     "Gaps around pipes and cables, especially under sinks and behind cookers and washing machines.",
+     "Air bricks, vents and gaps under doors.",
+     "Gaps in floorboards, skirting boards and around the loft hatch."
+    ]
+   },
+   {
+    "h": "Seal the gaps",
+    "list": [
+     "Mice can squeeze through very small gaps, so check carefully.",
+     "Use wire wool or metal mesh with filler; mice can chew through soft materials.",
+     "Fit brush strips to the bottom of doors."
+    ]
+   },
+   {
+    "h": "If you rent or it's a big problem",
+    "p": [
+     "Tell your landlord, and consider a qualified pest controller for a large or ongoing problem."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "where-to-put-mouse-traps",
+  "offer": "mouse-map",
+  "title": "Where to put mouse traps (and why yours stay empty)",
+  "description": "How to place mouse traps where they'll actually work, and how to use them safely.",
+  "intro": "Traps often stay empty because they're in the wrong place. Mice tend to run along walls and stick to cover.",
+  "sections": [
+   {
+    "h": "Placement",
+    "list": [
+     "Put traps against walls, along the routes mice use, near droppings.",
+     "Use several traps a short distance apart rather than one.",
+     "Check behind appliances and inside cupboards."
+    ]
+   },
+   {
+    "h": "Bait and setting",
+    "list": [
+     "Use a small amount of bait, such as peanut butter.",
+     "Some people leave traps unset for a few days so mice get used to them."
+    ]
+   },
+   {
+    "h": "Check daily",
+    "p": [
+     "Check traps every day and note where you catch mice; the pattern shows where they're coming from."
+    ]
+   },
+   {
+    "h": "Safety",
+    "p": [
+     "Keep traps and any poison out of reach of children and pets, and follow the product instructions."
+    ]
+   }
+  ]
  }
 ]

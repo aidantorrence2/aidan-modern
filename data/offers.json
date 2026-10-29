@@ -56334,6 +56334,111 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-29",
+    "slug": "mouse-map",
+    "name": "Mouse Map",
+    "need": "I've got mice at home, I've tried traps and poison, and they won't go away or keep coming back.",
+    "headline": "Mice that won't go, or keep coming back? Map the signs and your traps on a simple plan of your home, find where they're getting in, and seal it room by room.",
+    "buyer": "Renters and homeowners with mice that won't go or keep coming back.",
+    "bullets": [
+      "Pin droppings, gnawing and sightings on a simple plan of your home, and log every trap with a daily check reminder.",
+      "See the busy spots and the traps in the wrong places.",
+      "A room-by-room proofing checklist for entry gaps, an autumn recheck reminder, and a one-page summary for a landlord or pest controller."
+    ],
+    "price": "$2.99/month",
+    "priceUsd": 3,
+    "priceNote": "Or $14 a season.",
+    "reasonPrompt": "How long have you had mice, and what have you tried?",
+    "faq": [
+      {
+        "q": "Is it a pest-control service?",
+        "a": "No. Mouse Map is a tracking aid. For a large or ongoing problem, use a qualified pest controller, and if you rent, tell your landlord. Keep traps and any poison away from children and pets."
+      },
+      {
+        "q": "Is it linked to a pest-control company or trap brand?",
+        "a": "No. Mouse Map is independent and not affiliated with any pest-control company or brand."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-29",
+      "summary": "People describe still struggling with mice despite pest control visits, trying every home-made and humane trap they could, catching mouse after mouse, finding mice very difficult to get rid of, seeing a new mouse just after thinking they'd gone, and fighting mice on and off for years.",
+      "wtp": "Professional mice control costs £120-£300 in the UK (Fantastic Services) and averages $525 in the US (Fixr); one council charges £57.60 per treatment; Nicki paid for repeated pest control visits.",
+      "signals": [
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/4021719/anyone-had-any-success-getting-rid-of-mice",
+          "who": "Nicki (MoneySavingExpert)",
+          "date": "2012-07-01",
+          "quote": "We are still struggling with this problem",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/4021719/anyone-had-any-success-getting-rid-of-mice",
+          "who": "missk9 (MoneySavingExpert)",
+          "date": "2012-06-18",
+          "quote": "we tried all the home made and humane traps we could",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/4191123/mice-advice-needed-i-am-going-nuts",
+          "who": "kellemeek (MoneySavingExpert)",
+          "date": "2012-09-22",
+          "quote": "We have caught four up to now",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/4191123/mice-advice-needed-i-am-going-nuts",
+          "who": "breadlinebetty (MoneySavingExpert)",
+          "date": "2012-09-21",
+          "quote": "Mice can be very difficult to get rid of",
+          "seen": "opened"
+        },
+        {
+          "url": "https://harringayonline.com/forum/topics/pest-control",
+          "who": "JulieB (Harringay Online)",
+          "date": "2010-12-12",
+          "quote": "last night we saw a new mouse",
+          "seen": "opened"
+        },
+        {
+          "url": "https://harringayonline.com/forum/topics/pest-control",
+          "who": "Maddy (Harringay Online)",
+          "date": "2010-12-12",
+          "quote": "fought a battle against mice on and off for years",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.fantasticservices.com/cost-guides/pest-control/mice-control/",
+          "who": "Fantastic Services cost guide",
+          "date": "2026-10-29",
+          "quote": "£120 to £300",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.fixr.com/costs/mouse-exterminator",
+          "who": "Fixr cost guide",
+          "date": "2026-10-29",
+          "quote": "$525 average",
+          "seen": "opened"
+        },
+        {
+          "url": "https://blaenau-gwent.gov.uk/en/resident/environmental-health/pest-control/pest-control-charges",
+          "who": "Blaenau Gwent Council pest control charges",
+          "date": "2026-10-29",
+          "quote": "£57.60",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Pest controllers, smart traps with apps, traps and proofing products, council services.",
+      "risks": "Money goes to services and traps, not software; no paid mouse-tracking app found; posts are old (2010-2012); nobody wrote that they'd pay for an app; must give child and pet safety notes. The doc side's Mumsnet threads return 403 and aren't cited."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
