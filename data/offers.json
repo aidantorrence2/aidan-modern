@@ -56782,6 +56782,97 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-29",
+    "slug": "vet-calm",
+    "name": "Vet Calm",
+    "need": "My dog shakes, hides or fights at the vet, and every check-up is an ordeal I want to make calmer.",
+    "headline": "Dog terrified of the vet? Practise calm, happy visits at home and in the car park, step by step, before the next check-up.",
+    "buyer": "Dog owners whose dog panics at vet visits, often after one bad visit, who want a gentle plan before the next check-up.",
+    "bullets": [
+      "Short home practice for being handled: paws, ears, mouth and a pretend exam table, always with treats.",
+      "Happy visits plan: the car, the car park and the waiting room, at a distance your dog can cope with.",
+      "A checklist to agree with your vet before the day: quiet time slots, waiting in the car, and what to bring."
+    ],
+    "price": "$5.99/month",
+    "priceUsd": 6,
+    "priceNote": "Or $29 a year.",
+    "reasonPrompt": "What does your dog do at the vet, and when is the next visit?",
+    "faq": [
+      {
+        "q": "Does it replace my vet's advice?",
+        "a": "No. Vet Calm is about gentle practice at home. It gives no medical advice and never suggests medicines or supplements; ask your vet about anything to do with treatment, and about safe handling if your dog might bite."
+      },
+      {
+        "q": "Is it linked to a vet practice or pet brand?",
+        "a": "No. Vet Calm is independent and not affiliated with any vet practice, charity, trainer or pet brand."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-29",
+      "summary": "Owners describe taking a quivering, shaking, terrified dog into the surgery once a year, a whippet that's the same whichever surgery they use, a Rottweiler terrified of the vet, a dog absolutely terrified at its annual check-up, needing two vet nurses and a vet to get a dog through the door, and a dog that shook three streets away from the vet.",
+      "wtp": "Dog-training apps sell paid plans: Zigzag's Pup Training Monthly Plan is $9.99 with annual plans $24.99 to $49.99, and Dogo Premium is $11.99.",
+      "signals": [
+        {
+          "url": "https://forums.moneysavingexpert.com/api/v2/discussions/4661123?expand=insertUser",
+          "who": "Eliza_2 (MoneySavingExpert forum)",
+          "date": "2013-06-19",
+          "quote": "So once a year I have to take a quivering shaking terrified wreck into the surgery",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/api/v2/comments?discussionID=4661123&limit=100&expand=insertUser",
+          "who": "mtbbuxton (MoneySavingExpert forum)",
+          "date": "2013-06-19",
+          "quote": "My whippet is the same and it makes no difference which Surgery we use",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/api/v2/comments?discussionID=4661123&limit=100&expand=insertUser",
+          "who": "fannyadams (MoneySavingExpert forum)",
+          "date": "2013-06-19",
+          "quote": "worked with my Rottie who was terrified of the vet and the boarding kennel",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.gransnet.com/forums/pets/1297608-Dog-afraid-of-vet?reverse=1",
+          "who": "MoorlandMooner (Gransnet)",
+          "date": "2021-06-24",
+          "quote": "She had to go for her annual check up yesterday and was absolutely terrified.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.gransnet.com/forums/pets/1297608-Dog-afraid-of-vet?reverse=1",
+          "who": "MawBe (Gransnet)",
+          "date": "2021-06-24",
+          "quote": "it once took 2 vet nurses, a vet plus me to get her up the",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.gransnet.com/forums/pets/1297608-Dog-afraid-of-vet?reverse=1",
+          "who": "Newatthis (Gransnet)",
+          "date": "2021-06-24",
+          "quote": "My dog use to shake if we drove down a street that was 3 streets away from the vet.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/zigzag-dog-puppy-training/id1550121165",
+          "who": "Zigzag (App Store)",
+          "date": "2026-10-29",
+          "quote": "Pup Training: Monthly Plan $9.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "General dog-training apps (Zigzag, Dogo), Fear Free-style advice from vets, trainers and behaviourists.",
+      "risks": "Next to live Brave Rescue, Quiet Den and Carrier Calm (cats), so it stays about dogs and vet visits only; the money is general dog-training apps, not this need; evidence is UK forums from 2013 and 2021; it never gives medical advice or suggests sedatives or supplements, and points to the vet or a behaviourist for treatment and for dogs that may bite."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

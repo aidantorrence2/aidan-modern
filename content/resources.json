@@ -31592,5 +31592,78 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "help-dog-scared-of-the-vet",
+  "offer": "vet-calm",
+  "title": "How to help a dog that is scared of the vet",
+  "description": "Gentle home practice and happy visits that make check-ups less frightening.",
+  "intro": "Many dogs learn to fear the vet after one stressful visit. Small, pleasant practice sessions between appointments can make the next one easier.",
+  "sections": [
+   {
+    "h": "Practise handling at home",
+    "list": [
+     "Touch paws, ears and mouth briefly, then give a treat.",
+     "Keep sessions to a minute or two and stop before your dog gets worried."
+    ]
+   },
+   {
+    "h": "Make the journey boring",
+    "list": [
+     "Take short car trips that end somewhere nice, not only at the vet.",
+     "Sit in the vet's car park with treats, then go home."
+    ]
+   },
+   {
+    "h": "Ask about happy visits",
+    "list": [
+     "Many practices let you pop in to say hello and get a treat with no exam.",
+     "Ask for a quiet time slot, or to wait in the car until you're called."
+    ]
+   },
+   {
+    "h": "Safety first",
+    "p": [
+     "If your dog might bite when frightened, tell your vet before the visit and follow their handling advice. Ask your vet about anything to do with treatment or medicine."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "dog-shaking-at-the-vet-plan",
+  "offer": "vet-calm",
+  "title": "Dog shaking at the vet: a step-by-step plan before the next check-up",
+  "description": "A week-by-week plan to prepare a nervous dog for an upcoming vet appointment.",
+  "intro": "If you know a check-up is coming, a few weeks of easy practice can lower your dog's stress on the day.",
+  "sections": [
+   {
+    "h": "Four weeks before",
+    "list": [
+     "Start daily handling practice with treats.",
+     "Get your dog used to standing on a raised, non-slip surface."
+    ]
+   },
+   {
+    "h": "Two to three weeks before",
+    "list": [
+     "Add short car trips and car-park visits.",
+     "If your practice allows, do a happy visit to the waiting room."
+    ]
+   },
+   {
+    "h": "The week before",
+    "list": [
+     "Call the practice to book a quiet slot and say your dog is nervous.",
+     "Plan to wait outside or in the car until you're called."
+    ]
+   },
+   {
+    "h": "On the day",
+    "list": [
+     "Bring high-value treats and a familiar mat.",
+     "Stay calm and keep the visit as short as the vet allows. Afterwards, go somewhere your dog enjoys."
+    ]
+   }
+  ]
  }
 ]
