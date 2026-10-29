@@ -30290,5 +30290,119 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "find-the-right-childcare",
+  "offer": "find-childcare-trust-fits",
+  "title": "How to find childcare you trust that fits your schedule",
+  "description": "Practical steps to find and check childcare options that work around your hours.",
+  "intro": "Finding childcare that you trust and that fits your working hours can feel impossible. A clear list of what you need makes the search easier.",
+  "sections": [
+   {
+    "h": "Write down what you need",
+    "list": [
+     "The days and hours you need covered, including travel time.",
+     "Your budget and any help you might be eligible for.",
+     "Must-haves, such as a short commute or flexibility on late days."
+    ]
+   },
+   {
+    "h": "Know your options",
+    "list": [
+     "Nurseries and daycare centres.",
+     "Registered childminders, often more flexible on hours.",
+     "Nannies or nanny shares.",
+     "Before- and after-school clubs for older children."
+    ]
+   },
+   {
+    "h": "Check them out",
+    "list": [
+     "Look up inspection reports where available.",
+     "Visit, ask about staff, routines and what happens if they're ill or closed.",
+     "Ask other parents for recommendations."
+    ]
+   },
+   {
+    "h": "Have a back-up",
+    "p": [
+     "Line up a back-up person or service for days when your usual care falls through."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "split-parent-care-between-siblings",
+  "offer": "siblings-agree-care-parent",
+  "title": "How to share caring for a parent between siblings",
+  "description": "Ways for brothers and sisters to plan an ageing parent's care fairly and avoid arguments.",
+  "intro": "When a parent needs more help, siblings often disagree about who does what. A clear, shared plan reduces conflict.",
+  "sections": [
+   {
+    "h": "Start with the facts",
+    "list": [
+     "What help does your parent need now, and what might they need soon?",
+     "What does your parent want? Include them as much as possible."
+    ]
+   },
+   {
+    "h": "Share the work, not just the hours",
+    "list": [
+     "Siblings who live far away can handle paperwork, bills or calls.",
+     "Those nearby may do visits, appointments or shopping.",
+     "Money and time can both count as contributions."
+    ]
+   },
+   {
+    "h": "Write it down",
+    "list": [
+     "Agree who does what and when, and keep it somewhere everyone can see.",
+     "Review it every few months as needs change."
+    ]
+   },
+   {
+    "h": "Get support",
+    "p": [
+     "If talks stall, a neutral person such as a social worker, care adviser or mediator can help. Local carer support services can also explain what help is available."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "declutter-when-overwhelmed",
+  "offer": "home-become-cluttered-avoid",
+  "title": "How to start decluttering when your home feels overwhelming",
+  "description": "Small, manageable steps to start clearing clutter when you don't know where to begin.",
+  "intro": "When clutter has built up, it can feel too big to tackle. Starting small is the key.",
+  "sections": [
+   {
+    "h": "Start tiny",
+    "list": [
+     "Pick one small area: a drawer, a shelf or one corner.",
+     "Set a timer for 10 or 15 minutes and stop when it ends."
+    ]
+   },
+   {
+    "h": "Use simple piles",
+    "list": [
+     "Keep, donate or sell, recycle or bin.",
+     "Put rubbish straight in a bag and take it out the same day."
+    ]
+   },
+   {
+    "h": "Keep going",
+    "list": [
+     "Do one small area a day.",
+     "Notice the progress, even if it's slow.",
+     "Ask a friend to keep you company, or to help carry things out."
+    ]
+   },
+   {
+    "h": "If it feels like more than clutter",
+    "p": [
+     "If clutter is making it hard to live safely or see people, or you feel very distressed about letting things go, talk to your doctor. Support is available."
+    ]
+   }
+  ]
  }
 ]
