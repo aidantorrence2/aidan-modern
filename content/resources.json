@@ -31377,5 +31377,76 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "help-scared-rescue-dog-trust-you",
+  "offer": "brave-rescue",
+  "title": "How to help a scared rescue dog trust you",
+  "description": "Gentle steps for the first weeks with a fearful rescue dog.",
+  "intro": "Many rescue dogs arrive frightened. Trust comes from feeling safe and in control, so the kindest thing is usually to go slowly.",
+  "sections": [
+   {
+    "h": "Give them a safe space",
+    "list": [
+     "Set up a quiet corner or crate with a bed, water and a cover, where no one disturbs them.",
+     "Let them retreat there whenever they want."
+    ]
+   },
+   {
+    "h": "Keep things predictable",
+    "list": [
+     "Feed, walk and go to bed at the same times each day.",
+     "Keep visitors and new experiences to a minimum at first."
+    ]
+   },
+   {
+    "h": "Let them come to you",
+    "list": [
+     "Sit nearby, avoid staring, and toss treats without reaching for them.",
+     "Let them sniff and approach in their own time; don't force touch."
+    ]
+   },
+   {
+    "h": "Be patient",
+    "p": [
+     "Settling in can take weeks or months. If your dog is very fearful, shows aggression or isn't improving, talk to your vet and a qualified behaviourist."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "rescue-dog-scared-of-everything",
+  "offer": "brave-rescue",
+  "title": "My rescue dog is scared of everything: where to start",
+  "description": "How to help a fearful rescue dog cope with everyday things, one small step at a time.",
+  "intro": "When a rescue dog is frightened of noises, people and ordinary objects, it helps to work on one thing at a time and keep each step easy.",
+  "sections": [
+   {
+    "h": "Find the starting point",
+    "p": [
+     "Notice the distance or level at which your dog can see the scary thing and still take a treat. That's where to practise."
+    ]
+   },
+   {
+    "h": "Pair scary with good",
+    "list": [
+     "When the scary thing appears at a comfortable distance, give a tasty treat.",
+     "Over days and weeks, move very gradually closer."
+    ]
+   },
+   {
+    "h": "Watch body language",
+    "list": [
+     "Signs of worry: tucked tail, flattened ears, lip licking, yawning, turning away.",
+     "If you see them, make things easier and add more distance."
+    ]
+   },
+   {
+    "h": "Celebrate small wins",
+    "p": [
+     "A sniff, a relaxed tail or eating in a new room are real progress. Keep notes so you can see how far you've come."
+    ]
+   }
+  ]
  }
 ]

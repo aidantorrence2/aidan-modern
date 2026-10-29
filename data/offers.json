@@ -56621,6 +56621,83 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-29",
+    "slug": "brave-rescue",
+    "name": "Brave Rescue",
+    "need": "I've adopted a rescue dog who is scared of people and everyday things, and I don't know how to help them trust us and feel safe at home.",
+    "headline": "Adopted a scared rescue dog? Follow a gentle, day-by-day plan that helps them settle, trust you and feel safe, at their own pace.",
+    "buyer": "New adopters of fearful or shut-down rescue dogs, in the first weeks and months at home.",
+    "bullets": [
+      "A calm first-weeks plan: a safe space, a predictable routine and no pressure to be touched.",
+      "Small daily trust exercises with treats, letting your dog choose to come closer.",
+      "Track brave moments and setbacks, so you can see progress even when it's slow."
+    ],
+    "price": "$5.99/month",
+    "priceUsd": 6,
+    "priceNote": "Or $29 a year.",
+    "reasonPrompt": "How long have you had your rescue dog, and what are they scared of?",
+    "faq": [
+      {
+        "q": "Is it a replacement for a vet or behaviourist?",
+        "a": "No. Brave Rescue uses gentle, reward-based basics. If your dog is very fearful, shows aggression, or isn't improving, talk to your vet and a qualified behaviourist."
+      },
+      {
+        "q": "Is it linked to a rescue charity or dog brand?",
+        "a": "No. Brave Rescue is independent and not affiliated with any rescue, charity, trainer or brand."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-29",
+      "summary": "Adopters describe rescuing an extremely anxious older dog, wanting to give a little one trust and security, wishing they understood better ways to make a rescue dog feel comfortable, and it taking about two months before anyone could even pet her.",
+      "wtp": "PawChamp has 16K App Store ratings with Premium at $9.99 a week or $79.99 a year, and a $49.99 dog behaviourist add-on.",
+      "signals": [
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=2/id=6736829352/sortby=mosthelpful/json",
+          "who": "PawChampAdmirer (App Store review of PawChamp)",
+          "date": "2025-12-27",
+          "quote": "I am currently rescuing an 8yo Cairn who was extremely anxious",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=2/id=6736829352/sortby=mosthelpful/json",
+          "who": "Shelle 25 (App Store review of PawChamp)",
+          "date": "2025-12-27",
+          "quote": "give this little one trust and security",
+          "seen": "opened"
+        },
+        {
+          "url": "https://lemmy.blahaj.zone/comment/20795780",
+          "who": "i_dont_want_to (Lemmy)",
+          "date": "2026-06-05",
+          "quote": "I wish I could understand better ways to make her feel comfortable",
+          "seen": "opened"
+        },
+        {
+          "url": "https://lemmy.world/comment/11166244",
+          "who": "Jimmyeatsausage (Lemmy)",
+          "date": "2024-07-14",
+          "quote": "Took about 2 months before anyone in the house could even pet her",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id6736829352",
+          "who": "PawChamp (App Store)",
+          "date": "2026-10-29",
+          "quote": "16K Ratings; Weekly Premium $9.99; Yearly $79.99; Dog Behaviorist $49.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "General dog-training apps (PawChamp, Woofz), rescue charity advice, trainers and behaviourists.",
+      "risks": "Next to live Calm Pass, Calm Alone, Quiet Den and Passenger Paws and to reactive dogs on the skip list, so it stays about trust-building for a newly adopted fearful dog; money is a general training app; the two PawChamp quotes were seen in the agent's saved copy because the feed order has since changed; severe fear or aggression goes to a vet or behaviourist."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
