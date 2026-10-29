@@ -57132,6 +57132,97 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-29",
+    "slug": "fresh-tracks",
+    "name": "Fresh Tracks",
+    "need": "I'm bored of my playlists and keep hearing the same music, and I want an easy way to find new songs and artists I'll actually like.",
+    "headline": "Bored of your playlists? Get a short daily list of new songs and artists picked from what you already love, and keep only the ones you like.",
+    "buyer": "Adults who feel stuck in the same music bubble and are tired of hearing the same songs.",
+    "bullets": [
+      "Tell it a few songs and artists you love and what you're tired of.",
+      "Get five fresh picks a day, each with a one-line reason it might suit you.",
+      "Keep, skip or save each one, and watch your taste map widen over time."
+    ],
+    "price": "$2.99/month",
+    "priceUsd": 3,
+    "priceNote": "Or $19 a year. A free tier with fewer picks.",
+    "reasonPrompt": "What do you usually listen to, and what are you tired of hearing?",
+    "faq": [
+      {
+        "q": "Is it linked to Spotify, Apple Music or any music service?",
+        "a": "No. Fresh Tracks is independent and not affiliated with any streaming service, label or artist."
+      },
+      {
+        "q": "Do I need a paid streaming account?",
+        "a": "No. You can listen to picks on whichever service you already use, free or paid."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-29",
+      "summary": "Listeners say they're getting bored of their playlists and want to find more music, that streaming keeps them in the same music bubble, that they just want to find new music, and that they downloaded discovery apps because they were looking for some.",
+      "wtp": "Swipefy, a music discovery app (1.7K ratings), sells Pro from $1.49 up to $9.99, including a $2.49 monthly special and $17.99 lifetime; Discz, another discovery app, has 31K ratings.",
+      "signals": [
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=2/id=1521888879/sortby=mosthelpful/json",
+          "who": "shuichi saihara is mine 😾 (App Store review of Discz)",
+          "date": "2022-12-01",
+          "quote": "recently ive been wanting to find more music as im getting bored of my playlists",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=2/id=1521888879/sortby=mosthelpful/json",
+          "who": "mr_muzik (App Store review of Discz)",
+          "date": "2022-02-01",
+          "quote": "constantly keep me in the same music bubble",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1521888879/sortby=mostrecent/json",
+          "who": "polina conio (App Store review of Discz)",
+          "date": "2026-10-21",
+          "quote": "i just want to find new music",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=2/id=1521888879/sortby=mostrecent/json",
+          "who": "ismarx (App Store review of Discz)",
+          "date": "2025-02-28",
+          "quote": "I redownloaded it because I was bored and wanted to find new music",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=6449814769/sortby=mosthelpful/json",
+          "who": "WinnerDogsAreCute (App Store review of Swipefy)",
+          "date": "2025-01-03",
+          "quote": "I downloaded this app because I was looking for some new music",
+          "seen": "opened"
+        },
+        {
+          "url": "https://discuss.tchncs.de/comment/20759642",
+          "who": "Creat (Lemmy)",
+          "date": "2025-09-09",
+          "quote": "I want to find new music. This is fundamentally impossible with the music I own.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/swipefy-find-music-on-spotify/id6449814769",
+          "who": "Swipefy (App Store)",
+          "date": "2026-10-29",
+          "quote": "1.7K Ratings; Pro Monthly Special $2.49; Pro Lifetime $17.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Streaming services' own discovery playlists, discovery apps (Discz, Swipefy), radio, music blogs and friends.",
+      "risks": "Streaming services offer free discovery, and some Discz reviewers resent its paywall, so the price stays low with a free tier; many reviewers seem young, so it is aimed at adults; next to live Playlist Move (switching services) but about finding new music; the only checked price is Swipefy's."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

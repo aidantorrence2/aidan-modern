@@ -32173,5 +32173,75 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "find-new-music-when-bored-of-playlists",
+  "offer": "fresh-tracks",
+  "title": "How to find new music when you're bored of your playlists",
+  "description": "Simple ways to discover songs and artists you'll actually like.",
+  "intro": "When every playlist sounds the same, it's usually because you keep feeding the same signals back in. A few deliberate steps widen what you hear.",
+  "sections": [
+   {
+    "h": "Start from one song you love",
+    "list": [
+     "Look up who wrote, produced or featured on it, and listen to their other work.",
+     "Check which artists the singer names as influences."
+    ]
+   },
+   {
+    "h": "Follow people, not just algorithms",
+    "list": [
+     "Find a radio show, DJ, blog or friend whose taste you trust.",
+     "Ask friends for one song they can't stop playing."
+    ]
+   },
+   {
+    "h": "Try a different decade or country",
+    "p": [
+     "Pick a genre you like and listen to it from another decade or another country."
+    ]
+   },
+   {
+    "h": "Keep a short list",
+    "p": [
+     "Save only the songs you'd play again. A small list of real finds beats a huge playlist you never open."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "get-out-of-your-music-bubble",
+  "offer": "fresh-tracks",
+  "title": "How to get out of your streaming music bubble",
+  "description": "Why streaming keeps playing the same kind of thing, and how to break out of it.",
+  "intro": "Recommendation systems learn from what you play, so they tend to serve more of the same. You can nudge them, and step outside them.",
+  "sections": [
+   {
+    "h": "Change what you feed it",
+    "list": [
+     "Play a few albums from a new genre all the way through.",
+     "Skip songs you're tired of instead of letting them play."
+    ]
+   },
+   {
+    "h": "Use a private or separate session",
+    "p": [
+     "Some services let you listen without it counting toward your recommendations. Use it for background or repeat listening."
+    ]
+   },
+   {
+    "h": "Look outside the app",
+    "list": [
+     "Live shows, local radio and record shop recommendations bring in music no algorithm would pick for you.",
+     "Read album reviews from a few different sources."
+    ]
+   },
+   {
+    "h": "Set a small goal",
+    "p": [
+     "Try one new artist a week. By the end of a few months your listening will feel noticeably fresher."
+    ]
+   }
+  ]
  }
 ]
