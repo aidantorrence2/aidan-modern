@@ -29604,5 +29604,87 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "fix-a-lisp-as-an-adult",
+  "offer": "clear-ess",
+  "title": "Can you fix a lisp as an adult? What you can practise at home",
+  "description": "What adults with a lisp can practise on their own, and when to see a speech and language therapist.",
+  "intro": "Many adults still lisp, and it's never too late to work on it. Practice at home can help, and a speech and language therapist can give you a plan suited to you.",
+  "sections": [
+   {
+    "h": "Common types of lisp",
+    "list": [
+     "Interdental: the tongue pushes between the front teeth, so S sounds like 'th'.",
+     "Lateral: air escapes over the sides of the tongue, making a slushy sound.",
+     "A therapist can tell you which type you have."
+    ]
+   },
+   {
+    "h": "Simple practice",
+    "list": [
+     "Practise in a mirror, slowly.",
+     "Keep your teeth close together and your tongue behind them, not between them.",
+     "Aim for a thin stream of air down the middle of your tongue.",
+     "Start with the sound on its own, then short words, then phrases."
+    ]
+   },
+   {
+    "h": "Make it stick",
+    "list": [
+     "Practise a few minutes every day.",
+     "Record yourself and listen back.",
+     "Use the words you say most often, like your name or street."
+    ]
+   },
+   {
+    "h": "When to get help",
+    "p": [
+     "If you're not making progress, or you have a lateral lisp, see a speech and language therapist. Many offer adult sessions, and some university clinics offer lower-cost appointments."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "s-sound-practice-words-adults",
+  "offer": "clear-ess",
+  "title": "S sound practice for adults: words and sentences to start with",
+  "description": "A step-by-step set of S sound practice ideas, from single sounds to everyday sentences.",
+  "intro": "Practising the S sound works best in small steps. Move on only when each step feels easy.",
+  "sections": [
+   {
+    "h": "Step 1: the sound",
+    "p": [
+     "Hold a long, clear 'sss' for a few seconds, like a hissing snake."
+    ]
+   },
+   {
+    "h": "Step 2: S at the start of words",
+    "list": [
+     "sun, sit, sea, soap, sock, sail"
+    ]
+   },
+   {
+    "h": "Step 3: S in the middle and at the end",
+    "list": [
+     "basin, missing, lesson",
+     "bus, house, yes, nice"
+    ]
+   },
+   {
+    "h": "Step 4: phrases and sentences",
+    "list": [
+     "See you soon.",
+     "Sit on the sofa.",
+     "Six silver spoons."
+    ]
+   },
+   {
+    "h": "Step 5: your own words",
+    "p": [
+     "Practise the words you use most: your name, your street, your coffee order, your colleagues' names."
+    ]
+   }
+  ]
  }
 ]

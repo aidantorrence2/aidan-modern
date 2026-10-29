@@ -54745,6 +54745,97 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-29",
+    "slug": "clear-ess",
+    "name": "Clear Ess",
+    "need": "I still have a lisp as an adult, I'm ashamed of it, and I want to practise saying S and Z clearly in private.",
+    "headline": "Still lisping on S and Z as an adult? Practise privately for five minutes a day, from the sound itself to your own everyday phrases, and hear your progress month by month.",
+    "buyer": "Adults (18+) who lisp on S or Z and feel self-conscious, practising alone or between speech therapy sessions.",
+    "bullets": [
+      "A five-minute ladder from the S sound to words, phrases and your own lines: your name, street, coffee order.",
+      "Record yourself and compare with a clear model; your recordings stay on your phone.",
+      "A monthly side-by-side recording, a practice log to show a speech therapist, and help finding one."
+    ],
+    "price": "$4.99/month",
+    "priceUsd": 5,
+    "priceNote": "Or $35 a year. For adults 18+.",
+    "reasonPrompt": "Which words or situations bother you most?",
+    "faq": [
+      {
+        "q": "Is this speech therapy?",
+        "a": "No. Clear Ess is a private practice aid, not speech therapy or medical advice. A speech and language therapist can assess your lisp and give you a plan; many adults improve with their help."
+      },
+      {
+        "q": "Is it linked to a clinic or therapy service?",
+        "a": "No. Clear Ess is independent and not affiliated with any clinic, therapist or therapy platform."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-29",
+      "summary": "Adults describe being terribly ashamed of their lisp all their life, finding it terrifying, finding it frustrating, knowing they have it and trying to speak without it, and paying to act as a patient for student clinicians.",
+      "wtp": "R (26) paid to be a practice patient for student speech clinicians; LispApp sells a $34.99 monthly subscription; Articulate S sells for $4.99.",
+      "signals": [
+        {
+          "url": "https://www.speech-language-therapy.com/clinical-topics/lisping-letters-to-a-speech-language-pathologist-about-lisping",
+          "who": "A, 33 (letter to a speech-language pathologist)",
+          "date": "undated",
+          "quote": "terribly ashamed of this",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.speech-language-therapy.com/clinical-topics/lisping-letters-to-a-speech-language-pathologist-about-lisping",
+          "who": "S, 33 (letter to a speech-language pathologist)",
+          "date": "undated",
+          "quote": "The whole thing is terrifying for me",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.speech-language-therapy.com/clinical-topics/lisping-letters-to-a-speech-language-pathologist-about-lisping",
+          "who": "L, 45 (letter to a speech-language pathologist)",
+          "date": "undated",
+          "quote": "it's frustrating",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.speech-language-therapy.com/clinical-topics/lisping-letters-to-a-speech-language-pathologist-about-lisping",
+          "who": "R, 26 (letter to a speech-language pathologist)",
+          "date": "undated",
+          "quote": "paying a little money to act as a patient for student clinicians",
+          "seen": "opened"
+        },
+        {
+          "url": "https://boards.straightdope.com/t/do-people-with-lisps-know-they-have-lisps/462947",
+          "who": "Toxylon (Straight Dope)",
+          "date": "2008-09-10",
+          "quote": "I sure know I have it, it bothers me and I try to speak without it",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/lispapp/id6743806577",
+          "who": "LispApp (App Store)",
+          "date": "2026-10-28",
+          "quote": "LispApp monthly subscription $34.99",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1007825196",
+          "who": "Articulate S (App Store)",
+          "date": "2026-10-28",
+          "quote": "$4.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Speech and language therapists, online speech therapy, small lisp apps.",
+      "risks": "Speech-therapy adjacent: must not claim to treat and should point to therapists. Evidence is old or undated; the paid lisp apps are tiny; most money goes to therapists; nobody wrote that they'd pay for an app. The doc side's boards.ie thread returned 403 to plain curl, so it isn't cited. Next to live Name First (stammering)."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
