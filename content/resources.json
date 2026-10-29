@@ -30538,5 +30538,88 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "introduce-new-cat-to-resident-cat",
+  "offer": "home-truce",
+  "title": "How to introduce a new cat to your resident cat",
+  "description": "A step-by-step way to introduce cats slowly, so they're more likely to accept each other.",
+  "intro": "Cats are territorial, so a new arrival can upset your resident cat. Going slowly gives them the best chance of getting along. It can take weeks, sometimes longer.",
+  "sections": [
+   {
+    "h": "Step 1: separate rooms",
+    "list": [
+     "Give the new cat its own room with food, water, a litter tray, a bed and hiding places.",
+     "Keep the cats apart for the first days."
+    ]
+   },
+   {
+    "h": "Step 2: share scents",
+    "list": [
+     "Swap bedding between them.",
+     "Gently rub a cloth on one cat's cheeks and leave it near the other's food."
+    ]
+   },
+   {
+    "h": "Step 3: meals either side of a door",
+    "p": [
+     "Feed them on either side of a closed door, moving the bowls closer as they stay calm."
+    ]
+   },
+   {
+    "h": "Step 4: short supervised meetings",
+    "list": [
+     "Let them see each other through a gate or a cracked door.",
+     "Keep meetings short and calm, and end on a good note.",
+     "Go back a step if there's hissing, growling or swatting."
+    ]
+   },
+   {
+    "h": "Avoid competition",
+    "list": [
+     "Provide plenty of resources: food bowls, water, beds, hiding spots and litter trays in different places.",
+     "If there's fighting, injury, or a cat stops eating, separate them and talk to your vet."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "introduce-puppy-to-cat",
+  "offer": "home-truce",
+  "title": "How to introduce a new puppy or dog to your cat",
+  "description": "Safe steps to help your cat and a new dog or puppy live together.",
+  "intro": "Many cats and dogs live happily together, but the start matters. Keep your cat safe and let them get used to each other slowly.",
+  "sections": [
+   {
+    "h": "Before the dog arrives",
+    "list": [
+     "Set up cat-only areas the dog can't reach, using baby gates.",
+     "Make sure your cat has high places to escape to.",
+     "Move your cat's food and litter tray somewhere the dog can't get to."
+    ]
+   },
+   {
+    "h": "First meetings",
+    "list": [
+     "Keep the dog on a lead.",
+     "Let your cat approach in its own time; never hold your cat in front of the dog.",
+     "Reward the dog for calm, quiet behaviour."
+    ]
+   },
+   {
+    "h": "Day to day",
+    "list": [
+     "Never let the dog chase the cat, even in play.",
+     "Keep sessions short and supervised at first.",
+     "Give your cat extra attention in its safe spaces."
+    ]
+   },
+   {
+    "h": "When to get help",
+    "p": [
+     "If your dog fixates on, stalks or lunges at your cat, keep them apart and get help from a qualified behaviourist. If your cat stops eating or hides for days, talk to your vet."
+    ]
+   }
+  ]
  }
 ]

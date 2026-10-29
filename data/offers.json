@@ -55690,6 +55690,118 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-29",
+    "slug": "home-truce",
+    "name": "Home Truce",
+    "need": "I've brought home a new cat, kitten, dog or puppy and my resident cat is hissing, hiding or won't settle, and I don't know how fast to go with the introduction.",
+    "headline": "New cat or puppy and your resident cat isn't happy? Follow a step-by-step introduction plan, paced by how both animals are coping, so they can share a home calmly.",
+    "buyer": "Cat owners adding a second cat or a dog, or merging pets when moving in with a partner.",
+    "bullets": [
+      "A step-by-step introduction plan: separate rooms, scent swaps, meals either side of a door, short supervised meetings.",
+      "Log how each animal reacts, and get told when to move forward or slow down.",
+      "Safety rules for dogs and cats: escape routes, high places, leads and when to stop."
+    ],
+    "price": "$4.99/month",
+    "priceUsd": 5,
+    "priceNote": "Or $15 for a 30-day plan.",
+    "reasonPrompt": "Which animals are you introducing, and how is it going so far?",
+    "faq": [
+      {
+        "q": "What if they're fighting or one stops eating?",
+        "a": "Separate them and slow down. If a cat stops eating, hides for days, or there's real fighting or injury, contact your vet. A dog with a strong urge to chase cats needs help from a qualified behaviourist."
+      },
+      {
+        "q": "Is it linked to a vet, charity or pet brand?",
+        "a": "No. Home Truce is independent and not affiliated with any vet, charity, trainer or pet brand."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-29",
+      "summary": "Owners describe a resident cat being very unhappy since a new cat arrived, an old cat lunging, hissing, growling and scratching at a new cat, an old cat being really put out, a cat growling and hissing a lot, a cat not happy with a new puppy, a cat spending more and more time hiding outside since a puppy arrived, and wanting to introduce a dog or puppy to their cats properly.",
+      "wtp": "Meowz: Cat Training has 992 App Store ratings with Premium at $29.99 a year; Woofz has 58K ratings with Premium at $59.99 a year.",
+      "signals": [
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/3844111/introducing-a-new-cat-stressed",
+          "who": "roguebrogue (MoneySavingExpert)",
+          "date": "2012-03-11",
+          "quote": "Since the cat got here, Alice has been VERY unhappy",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/2169485/introducing-cats",
+          "who": "joannaemmas (MoneySavingExpert)",
+          "date": "2009-12-28",
+          "quote": "Old cat is now lunging at new cat as well as hissing, growling and trying to scratch",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/5288613/introducing-new-cat-help",
+          "who": "helpkitty (MoneySavingExpert)",
+          "date": "2015-07-17",
+          "quote": "my old cat seems really really put out",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/3852613/help-introducing-new-cats-to-existing-cat",
+          "who": "zippychick (MoneySavingExpert)",
+          "date": "2012-03-15",
+          "quote": "Initially she growled and hissed a lot",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/1354137/any-tips-for-getting-cat-to-accept-new-puppy",
+          "who": "Somerset (MoneySavingExpert)",
+          "date": "2008-12-14",
+          "quote": "Puppy arrived yesterday (10 weeks old) and cat is not happy",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/2599321/help-please-problems-with-older-cat-and-new-puppy",
+          "who": "Primmer (MoneySavingExpert)",
+          "date": "2010-07-16",
+          "quote": "lately she is spending more and more time in the garden and behind the shed than indoors",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/2920350/introducing-new-dog-to-cat",
+          "who": "Girlpantsx (MoneySavingExpert)",
+          "date": "2010-12-12",
+          "quote": "Tonight we shall be introducing the dog to the cat",
+          "seen": "opened"
+        },
+        {
+          "url": "https://forums.moneysavingexpert.com/discussion/4790671/introducing-puppy-and-cats",
+          "who": "thewildthings (MoneySavingExpert)",
+          "date": "2013-10-12",
+          "quote": "We want to properly introduce them to see how they get on",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/meowz-cat-training-pet-care/id6503908960",
+          "who": "Meowz: Cat Training (App Store)",
+          "date": "2026-10-29",
+          "quote": "992 Ratings; Yearly Premium $29.99",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/woofz-puppy-and-dog-training/id1532020050",
+          "who": "Woofz (App Store)",
+          "date": "2026-10-29",
+          "quote": "58K Ratings; Yearly Premium $59.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "General cat and dog training apps (Meowz, Woofz), pet charity guides, behaviourists.",
+      "risks": "Relaunch of the held Cat Intro (22 Oct), now with 8 named posters on MoneySavingExpert; evidence is old (2008-2020); the paid apps are general training apps rather than introduction tools; a dog with high prey drive is a safety issue, so it must say stop and get help."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
