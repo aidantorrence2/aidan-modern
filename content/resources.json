@@ -30222,5 +30222,73 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "read-a-skincare-ingredient-list",
+  "offer": "label-first",
+  "title": "How to read a skincare ingredient list",
+  "description": "A quick guide to understanding the ingredient list on skincare and makeup.",
+  "intro": "Ingredient lists look confusing, but a few rules make them much easier to read.",
+  "sections": [
+   {
+    "h": "The order matters",
+    "list": [
+     "Ingredients are usually listed from highest to lowest amount.",
+     "Those at very low levels (around 1% or less) can often appear in any order at the end.",
+     "Water (aqua) is often first in creams and lotions."
+    ]
+   },
+   {
+    "h": "Names you'll see",
+    "list": [
+     "Ingredients use standard international names, often Latin or chemical names.",
+     "Fragrance may be listed as 'parfum' or 'fragrance', and can be a mix of many ingredients."
+    ]
+   },
+   {
+    "h": "Find what matters to you",
+    "list": [
+     "Make a short list of ingredients you want to avoid, for example ones that have irritated your skin before.",
+     "Compare products that worked for you to find ingredients they share."
+    ]
+   },
+   {
+    "h": "Test new products",
+    "p": [
+     "Patch-test a new product on a small area for a few days before using it widely. If you have a skin condition or allergy, ask a pharmacist or doctor for advice."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "what-non-comedogenic-means",
+  "offer": "label-first",
+  "title": "What does non-comedogenic mean?",
+  "description": "What the 'non-comedogenic' label means, its limits, and how to choose products if you're prone to breakouts.",
+  "intro": "'Non-comedogenic' means a product is meant not to clog pores. It's a helpful hint, but not a guarantee.",
+  "sections": [
+   {
+    "h": "What the label means",
+    "list": [
+     "It suggests the product has been formulated not to block pores.",
+     "There isn't one standard test or legal definition everywhere, so it can mean different things for different brands."
+    ]
+   },
+   {
+    "h": "Why it's not a guarantee",
+    "list": [
+     "Everyone's skin reacts differently.",
+     "How much you use, and how products combine, also matters."
+    ]
+   },
+   {
+    "h": "Choosing products",
+    "list": [
+     "Try one new product at a time so you can tell what's causing a change.",
+     "Keep notes on what worked and what didn't.",
+     "If breakouts are persistent or painful, see a pharmacist, doctor or dermatologist."
+    ]
+   }
+  ]
  }
 ]

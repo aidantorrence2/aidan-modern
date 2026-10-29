@@ -55403,6 +55403,104 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-29",
+    "slug": "label-first",
+    "name": "Label First",
+    "need": "I keep buying skincare, makeup and hair products without knowing what's in them or whether they suit my skin, and I waste money on things that irritate it.",
+    "headline": "Tired of buying skincare that doesn't suit you? Check a product's ingredients against your own list before you buy: fragrance, ingredients you avoid, and what's worked before.",
+    "buyer": "Adults who buy skincare, makeup or haircare and want to check ingredients before buying, such as people with sensitive skin or going fragrance-free.",
+    "bullets": [
+      "Scan or paste an ingredient list and see it in plain words.",
+      "Flag the ingredients you've chosen to avoid, such as fragrance or a known irritant for you.",
+      "Keep a list of what's worked and what hasn't, and spot the ingredients they share."
+    ],
+    "price": "$2.99/month",
+    "priceUsd": 3,
+    "priceNote": "Or $19 a year. No weekly plans.",
+    "reasonPrompt": "What kind of products do you want to check, and what do you try to avoid?",
+    "faq": [
+      {
+        "q": "Will it tell me if a product is safe or toxic?",
+        "a": "No. Label First shows what's in a product and flags ingredients you've chosen to avoid. It doesn't make safety or medical claims. If you have a skin condition or allergy, talk to a doctor or pharmacist, and patch-test new products."
+      },
+      {
+        "q": "Is it linked to a beauty brand or retailer?",
+        "a": "No. Label First is independent and not affiliated with any brand, retailer or other scanner app."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-29",
+      "summary": "People describe wanting to know what's in their skincare and makeup, buying many products that didn't work for their skin, always buying products that irritate their skin, wanting to learn about what they apply every day, and having to research whether ingredients are good for them.",
+      "wtp": "OnSkin has 33K App Store ratings with plans from $5.99 a week to $39.99; Yuka has 102K ratings with premium membership from $10 to $20; Think Dirty has 57K ratings with lifetime access at $199.",
+      "signals": [
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1630768985/sortby=mosthelpful/json",
+          "who": "CAITLIN-smith (App Store review of OnSkin)",
+          "date": "2024-07-26",
+          "quote": "wanting to know what all my skincare and makeup have in it",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1630768985/sortby=mosthelpful/json",
+          "who": "user0267 (App Store review of OnSkin)",
+          "date": "2024-12-16",
+          "quote": "bought so many skin care products just for them to not work for my skin",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1630768985/sortby=mosthelpful/json",
+          "who": "Better skincare (App Store review of OnSkin)",
+          "date": "2024-01-20",
+          "quote": "always buying myself the wrong products that irritate my skin",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=687176839/sortby=mosthelpful/json",
+          "who": "pearsandclementines (App Store review of Think Dirty)",
+          "date": "2020-02-17",
+          "quote": "learning more about the products I apply every day",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=687176839/sortby=mosthelpful/json",
+          "who": "D. Blevins (App Store review of Think Dirty)",
+          "date": "2021-05-01",
+          "quote": "research whether or not a product ingredient is good or bad for me",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/onskin-beauty-product-scanner/id1630768985",
+          "who": "OnSkin (App Store)",
+          "date": "2026-10-28",
+          "quote": "33K Ratings; Weekly $7.99; PRO $39.99",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/yuka-food-cosmetic-scanner/id1092799236",
+          "who": "Yuka (App Store)",
+          "date": "2026-10-28",
+          "quote": "102K Ratings; Premium $10.00 to $20.00",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/think-dirty-shop-clean/id687176839",
+          "who": "Think Dirty (App Store)",
+          "date": "2026-10-28",
+          "quote": "57K Ratings; All Access forever $199.00",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Yuka, Think Dirty, OnSkin, ingredient websites.",
+      "risks": "Crowded market with big incumbents; 'clean beauty' framing invites health claims, so it stays factual; many rival-app reviewers are teens; ingredient database is costly; next to live One Change Skin (tracking what works). Evidence is all App Store reviews."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
