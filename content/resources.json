@@ -32386,5 +32386,74 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "stop-drifting-to-melody-singing-harmony",
+  "offer": "part-hold",
+  "title": "How to stop drifting back to the melody when you sing harmony",
+  "description": "Practice steps that help you hold your own part while someone else sings the tune.",
+  "intro": "Our ears naturally lock onto the melody, so it pulls you in. Holding a harmony gets easier when you learn your part on its own first, then add the tune back gradually.",
+  "sections": [
+   {
+    "h": "Learn your part alone",
+    "list": [
+     "Sing your harmony line on its own until you can do it without thinking.",
+     "Use a piano, app or rehearsal track to check the notes."
+    ]
+   },
+   {
+    "h": "Add the melody quietly",
+    "list": [
+     "Play the melody very softly while you sing your part.",
+     "Turn it up a little only when you can hold your line through a whole section."
+    ]
+   },
+   {
+    "h": "Listen to the gap",
+    "p": [
+     "Instead of tuning out the melody, notice the distance between your note and theirs. Hearing the interval helps you stay put."
+    ]
+   },
+   {
+    "h": "Record and check",
+    "p": [
+     "Record yourself singing with the melody and listen back. It's easier to hear drifting on a recording than while you sing."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "find-harmony-part-third-above-below",
+  "offer": "part-hold",
+  "title": "How to find a harmony part a third above or below the melody",
+  "description": "A beginner's way to build a simple harmony line by ear.",
+  "intro": "The most common harmony sits about three notes above or below the melody. Once you can find that, you can harmonise many simple songs.",
+  "sections": [
+   {
+    "h": "Find the key note",
+    "p": [
+     "Hum the note the song feels like it rests on at the end. That's usually the home note of the key."
+    ]
+   },
+   {
+    "h": "Count up three",
+    "list": [
+     "From the melody note, sing up the scale: one, two, three. The third note is a common harmony.",
+     "Try the same going down for a lower harmony."
+    ]
+   },
+   {
+    "h": "Follow the shape",
+    "p": [
+     "A simple harmony often moves in the same direction as the melody, staying the same distance away. Practise slowly with one line at a time."
+    ]
+   },
+   {
+    "h": "Check against chords",
+    "p": [
+     "If something sounds off, play the chord under that bar and choose a chord note close to where you were."
+    ]
+   }
+  ]
  }
 ]

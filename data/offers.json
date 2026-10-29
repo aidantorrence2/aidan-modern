@@ -57384,6 +57384,90 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-29",
+    "slug": "part-hold",
+    "name": "Part Hold",
+    "need": "When I sing harmony with someone else I keep drifting back to the melody, and I struggle to find and hold the right notes for my part.",
+    "headline": "Keep sliding back to the tune when you sing harmony? Practise your part over a melody that only gets louder once you can hold it.",
+    "buyer": "Adults who sing in a choir, band, worship team or with a friend and drift back to the melody instead of holding their harmony part.",
+    "bullets": [
+      "Pick a song and your part, then sing over a melody that starts quiet and grows louder only after you hold a section.",
+      "A pitch line marks the bars where you slid onto the tune, so you know what to practise.",
+      "Record yourself with the melody and play it back to hear how it blends."
+    ],
+    "price": "$3.99/month",
+    "priceUsd": 4,
+    "priceNote": "Or $24 a year.",
+    "reasonPrompt": "Where do you sing harmony, and when do you tend to drift back to the melody?",
+    "faq": [
+      {
+        "q": "Is it a replacement for a singing teacher or choir director?",
+        "a": "No. Part Hold is a practice tool between rehearsals or lessons; it isn't a vocal teacher."
+      },
+      {
+        "q": "Is it linked to any choir, course or music app?",
+        "a": "No. Part Hold is independent and not affiliated with any choir, course, publisher or app."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-29",
+      "summary": "Singers say they struggle to find the right notes for the harmony, can't stick to their line when singing with someone else, and find it very difficult not to switch to the other singer's melody line; a paying app buyer says they can sing harmony but struggle to hold their part.",
+      "wtp": "Harmony training sells: Singing Success's Mastering Harmony course is $127, Songroots' Duets and Trios course is $100 to $175, and the Sing Harmonies app is $1.99.",
+      "signals": [
+        {
+          "url": "https://forum.kentamplinvocalacademy.com/discussion/6744/harmonies",
+          "who": "xTbs (Ken Tamplin Vocal Academy forum)",
+          "date": "2016-12-08",
+          "quote": "where I find I struggle is finding the right notes for the harmony",
+          "seen": "opened"
+        },
+        {
+          "url": "https://boards.straightdope.com/t/learning-how-to-sing-harmony-vocals/946882",
+          "who": "PookahMacPhellimey (Straight Dope)",
+          "date": "2021-07-20",
+          "quote": "I am not able to stick to my melody line when singing with someone else.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://boards.straightdope.com/t/learning-how-to-sing-harmony-vocals/946882",
+          "who": "solost (Straight Dope)",
+          "date": "2021-07-20",
+          "quote": "I found it very difficult not switching up to his melody line",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/sing-harmonies/id378913608",
+          "who": "subscriber5432 (App Store review of Sing Harmonies)",
+          "date": "2020",
+          "quote": "As someone who *can* sing harmony but struggles to hold my part, this is an amazing app.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://singingsuccess.teachable.com/p/mastering-harmony",
+          "who": "Singing Success (course page)",
+          "date": "2026-10-29",
+          "quote": "Mastering Harmony $127",
+          "seen": "opened"
+        },
+        {
+          "url": "https://songroots.ca/product/duets-and-trios/",
+          "who": "Songroots (course page)",
+          "date": "2026-10-29",
+          "quote": "Duets and Trios, $100 minimum, $175 suggested",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Harmony courses (Singing Success, Songroots), part-practice apps (Harmony Helper, Sing Harmonies), choir rehearsal tracks, singing teachers.",
+      "risks": "Next to live Pitch Steady (singing in tune), so it stays about holding a harmony part against a melody; harmony apps have small rating counts; the doc side's Harmony Central quotes return 403 to plain curl and are not cited; posts date from 2016 and 2021."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
