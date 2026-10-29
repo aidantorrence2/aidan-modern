@@ -31519,5 +31519,78 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "find-and-cancel-forgotten-subscriptions",
+  "offer": "recurring-charges-price-increases",
+  "title": "How to find and cancel subscriptions you forgot about",
+  "description": "A one-hour check of your statements to spot recurring charges and price rises.",
+  "intro": "Small recurring charges are easy to forget, and prices often creep up without much notice. One careful pass through your statements usually finds something.",
+  "sections": [
+   {
+    "h": "Gather three months of statements",
+    "list": [
+     "Include every bank account, credit card and PayPal or app-store account you use.",
+     "Three months catches quarterly charges as well as monthly ones."
+    ]
+   },
+   {
+    "h": "List every repeat charge",
+    "list": [
+     "Write down the name, amount and date of each charge that appears more than once.",
+     "Compare amounts month to month to spot price increases."
+    ]
+   },
+   {
+    "h": "Decide keep, downgrade or cancel",
+    "list": [
+     "Ask whether you used it in the last month.",
+     "Check for a cheaper plan, or one you could share within your household where the terms allow."
+    ]
+   },
+   {
+    "h": "Cancel properly",
+    "list": [
+     "Cancel through the service's own account settings or app store, and keep the confirmation.",
+     "Check your next statement to make sure the charge has stopped."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "freeze-in-real-conversations-language",
+  "offer": "studied-language-years-freeze",
+  "title": "Why you freeze in real conversations after years of language study, and what helps",
+  "description": "Practical ways to turn what you know into speaking under pressure.",
+  "intro": "Knowing a language and speaking it on the spot are different skills. Freezing usually means you've practised recognising words far more than producing them quickly.",
+  "sections": [
+   {
+    "h": "Practise one real situation",
+    "list": [
+     "Pick a setting you'll actually face, such as ordering food or small talk with a neighbour.",
+     "Learn the ten phrases that situation always needs."
+    ]
+   },
+   {
+    "h": "Rehearse out loud",
+    "list": [
+     "Say the phrases aloud daily, not just in your head.",
+     "Record yourself and listen back once."
+    ]
+   },
+   {
+    "h": "Have rescue phrases ready",
+    "list": [
+     "Learn how to say 'sorry, could you say that more slowly?' and 'how do you say...?'",
+     "These keep a conversation going when you get stuck."
+    ]
+   },
+   {
+    "h": "Repeat the same conversation",
+    "p": [
+     "Doing one short conversation several times builds speed faster than many different ones. Then move to the next situation."
+    ]
+   }
+  ]
  }
 ]
