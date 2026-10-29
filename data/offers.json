@@ -57636,6 +57636,90 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-29",
+    "slug": "keto-restart",
+    "name": "Keto Restart",
+    "need": "I did keto before and it worked, but I keep falling off and I can't get back on for more than a few days.",
+    "headline": "Fell off keto and can't get back on? Restart with an easy three-day plan, meals from what's already in your fridge and a slip log that shows your pattern.",
+    "buyer": "Adults 18+ who did keto before, fell off, and keep failing to get back on.",
+    "bullets": [
+      "A simple three-day restart plan, so the first days back feel doable.",
+      "'What can I eat now?' ideas from what's in your fridge, within the carb limit you set.",
+      "A two-tap slip log that shows when and why you fall off, plus plans for birthdays, eating out and travel."
+    ],
+    "price": "$3.99/month",
+    "priceUsd": 4,
+    "priceNote": "Or $24 a year.",
+    "reasonPrompt": "When did you last do keto, and what usually makes you fall off?",
+    "faq": [
+      {
+        "q": "Is it medical advice?",
+        "a": "No. Keto Restart is for adults 18+ and isn't medical or nutrition advice. If you have a health condition, are pregnant or take medication, talk to your doctor before changing your diet."
+      },
+      {
+        "q": "Is it linked to any keto brand or app?",
+        "a": "No. Keto Restart is independent and not affiliated with any diet brand, app or product."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-29",
+      "summary": "People say they pick keto up for a few days or a week or two and then drop it for no reason, that the hard part isn't getting into ketosis but sticking to the diet, that it's what they keep failing at, and that it's hard enough to stay faithful to tracking even when they pay for premium.",
+      "wtp": "Carb Manager, a keto and carb tracker with 736K ratings, sells paid plans from $5.99 to $59.99; reviewers say they pay for and renew Premium.",
+      "signals": [
+        {
+          "url": "https://www.teamblind.com/post/fell-off-the-keto-wagon-and-cant-seem-to-get-back-on-it-mhegbrxa",
+          "who": "Opening poster (Blind, anonymous)",
+          "date": "undated",
+          "quote": "I pick the diet up for a few day or even a week or two and get off of it one day for no reason or rhyme",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.teamblind.com/post/fell-off-the-keto-wagon-and-cant-seem-to-get-back-on-it-mhegbrxa",
+          "who": "Commenter (Blind, anonymous)",
+          "date": "undated",
+          "quote": "its sticking to the keto diet",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.teamblind.com/post/fell-off-the-keto-wagon-and-cant-seem-to-get-back-on-it-mhegbrxa",
+          "who": "Second commenter (Blind, anonymous)",
+          "date": "undated",
+          "quote": "Which is what I've been failing at",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/carb-manager-keto-diet-tracker/id410089731",
+          "who": "Siouxzee44 (App Store review of Carb Manager)",
+          "date": "undated",
+          "quote": "I pay for premium even.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/carb-manager-keto-diet-tracker/id410089731",
+          "who": "Blue2swing (App Store review of Carb Manager)",
+          "date": "2022-10-18",
+          "quote": "so I didn't hesitate to renew my premium access.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/carb-manager-keto-diet-tracker/id410089731",
+          "who": "Carb Manager (App Store)",
+          "date": "2026-10-29",
+          "quote": "736K Ratings; in-app purchases $5.99 to $59.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Keto and carb trackers (Carb Manager, Senza, MyFitnessPal), keto meal-plan sites, online communities.",
+      "risks": "Big trackers dominate, so it is about restarting and staying on, not tracking; the Blind posters are anonymous and undated; the doc side's Fitbit Community thread now redirects elsewhere and is not cited; diets carry health caveats, so it is 18+, not medical advice, with a see-your-doctor line."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
