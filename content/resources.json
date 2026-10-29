@@ -29686,5 +29686,82 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "stop-puppy-chewing-everything",
+  "offer": "chew-stop",
+  "title": "How to stop a puppy chewing everything",
+  "description": "Why puppies chew, and practical steps to protect your things and teach them what's OK to chew.",
+  "intro": "Chewing is normal for puppies. They explore with their mouths, and teething makes it worse. The goal isn't to stop chewing, but to steer it onto the right things.",
+  "sections": [
+   {
+    "h": "Puppy-proof",
+    "list": [
+     "Put shoes, socks, cables and children's toys out of reach.",
+     "Use baby gates or a puppy pen when you can't supervise."
+    ]
+   },
+   {
+    "h": "Give better options",
+    "list": [
+     "Offer a few safe chew toys of different textures, and rotate them so they stay interesting.",
+     "When your puppy chews something wrong, calmly swap it for a chew toy and praise them for taking it."
+    ]
+   },
+   {
+    "h": "Meet their needs",
+    "list": [
+     "Daily exercise, play and short training sessions reduce boredom chewing.",
+     "Food puzzles and lick mats keep them busy."
+    ]
+   },
+   {
+    "h": "Stay calm",
+    "list": [
+     "Don't punish after the fact; puppies can't link it to what they did earlier.",
+     "Most puppies chew less once their adult teeth are in, but good habits still need teaching."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "why-dog-chews-when-left-alone",
+  "offer": "chew-stop",
+  "title": "Why does my dog chew things when left alone?",
+  "description": "Common reasons dogs chew shoes and furniture when you're out, and what can help.",
+  "intro": "Coming home to chewed furniture is frustrating. Understanding the reason helps you pick the right fix.",
+  "sections": [
+   {
+    "h": "Common reasons",
+    "list": [
+     "Boredom or too little exercise.",
+     "Teething, in puppies.",
+     "Anxiety about being alone."
+    ]
+   },
+   {
+    "h": "Signs it may be anxiety",
+    "list": [
+     "Chewing near doors and windows.",
+     "Barking, howling or toileting only when alone.",
+     "Distress when you get ready to leave."
+    ]
+   },
+   {
+    "h": "What can help",
+    "list": [
+     "A walk and play before you leave.",
+     "A safe chew or food puzzle that's only given when you go out.",
+     "Shorter absences at first, building up slowly.",
+     "Keeping valuables out of reach or using a safe room or crate your dog is comfortable in."
+    ]
+   },
+   {
+    "h": "When to get help",
+    "p": [
+     "If you think your dog is anxious when alone, or the chewing is sudden or severe, talk to your vet or a qualified behaviourist."
+    ]
+   }
+  ]
  }
 ]

@@ -54836,6 +54836,111 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-29",
+    "slug": "chew-stop",
+    "name": "Chew Stop",
+    "need": "My dog or puppy chews and destroys shoes, socks, furniture and wood around the house, and I can't get it to stop.",
+    "headline": "Puppy or dog chewing shoes, socks and furniture? Find out why they chew, and follow a simple daily plan to steer it onto the right things.",
+    "buyer": "New puppy owners and owners of young or bored dogs whose belongings keep getting chewed.",
+    "bullets": [
+      "A quick check of why your dog chews: teething, boredom, energy or being left alone.",
+      "A daily plan: puppy-proofing, the right chews, trade games and short training sessions.",
+      "A simple log of what got chewed and when, so you can spot the pattern and see it fade."
+    ],
+    "price": "$5.99/month",
+    "priceUsd": 6,
+    "priceNote": "Or $29 a year. No weekly plans.",
+    "reasonPrompt": "How old is your dog, and what do they chew most?",
+    "faq": [
+      {
+        "q": "Is it a replacement for a vet or behaviourist?",
+        "a": "No. If chewing is sudden, severe, happens only when your dog is left alone, or comes with other worrying signs, talk to your vet or a qualified behaviourist."
+      },
+      {
+        "q": "Is it linked to a dog-training app or pet brand?",
+        "a": "No. Chew Stop is independent and not affiliated with any app, trainer or pet brand."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-29",
+      "summary": "Dog owners describe the most undisciplined and destructive dog they've dealt with, a dog that chews lots of items, a dog that chews everything up, a crazy wood-chewing pup, a new puppy's chewing and destructive behaviour, and a lab stealing and chewing socks and shoes.",
+      "wtp": "Woofz has 58K App Store ratings with Premium at $59.99 a year; PawChamp has 16K ratings and sells a $49.99 Dog Behaviorist add-on; Puppr has 27K ratings with Premium at $9.99 a month.",
+      "signals": [
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1532020050/sortby=mosthelpful/json",
+          "who": "WonderWoman I Hope??! (App Store review of Woofz)",
+          "date": "2026-10-16",
+          "quote": "the most undisciplined and destructive dog I have ever dealt with",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=8/id=1532020050/sortby=mosthelpful/json",
+          "who": "Inaya unicorn (App Store review of Woofz)",
+          "date": "2024-12-04",
+          "quote": "She chews on lots of items",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=4/id=1532020050/sortby=mosthelpful/json",
+          "who": "nicknamme1232 (App Store review of Woofz)",
+          "date": "2025-02-13",
+          "quote": "My dog is naughty she chews everything up",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=9/id=1199338956/sortby=mosthelpful/json",
+          "who": "TX Girl 1990 (App Store review of Puppr)",
+          "date": "2020-04-17",
+          "quote": "I have a crazy wood chewing pup",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=8/id=6736829352/sortby=mosthelpful/json",
+          "who": "danimae1992 (App Store review of PawChamp)",
+          "date": "2026-01-18",
+          "quote": "thrown me for a loop with her chewing/destructive behavior",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=2/id=6736829352/sortby=mostrecent/json",
+          "who": "Huddy’s Mom (App Store review of PawChamp)",
+          "date": "2026-07-30",
+          "quote": "help my lab with his sock and shoe stealing and chewing",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1532020050",
+          "who": "Woofz (App Store)",
+          "date": "2026-10-28",
+          "quote": "58K Ratings; Yearly Premium $59.99; Weekly $7.99",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id6736829352",
+          "who": "PawChamp (App Store)",
+          "date": "2026-10-28",
+          "quote": "16K Ratings; Dog Behaviorist $49.99; Yearly $79.99",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1199338956",
+          "who": "Puppr (App Store)",
+          "date": "2026-10-28",
+          "quote": "27K Ratings; Premium Monthly $9.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "General dog-training apps (Woofz, PawChamp, Puppr), trainers, chew toys and deterrent sprays.",
+      "risks": "Big dog-training apps already cover chewing; next to live Soft Mouth (biting) and Bowl Peace (guarding); chewing when alone can be separation distress (live Calm Alone). Evidence is all App Store reviews."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
