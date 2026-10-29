@@ -57811,6 +57811,97 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-29",
+    "slug": "next-ten-points",
+    "name": "Next Ten Points",
+    "need": "My LSAT practice scores have stopped going up, I've already paid for courses and tutors, and I don't know what to study to break through.",
+    "headline": "LSAT scores stuck? Find out where your points really go, then plan each week around the biggest leaks using the course you already own.",
+    "buyer": "Adults studying for the LSAT whose practice scores have stopped rising.",
+    "bullets": [
+      "Log each missed question by reason, and compare your timed score with your blind-review score.",
+      "A weekly plan built around your two biggest leaks, using the course and materials you already have.",
+      "A test-date check from your last five practice tests, with rest days built in."
+    ],
+    "price": "$9.99/month",
+    "priceUsd": 10,
+    "priceNote": "Or $49 for three months.",
+    "reasonPrompt": "Where have your practice scores been stuck, and for how long?",
+    "faq": [
+      {
+        "q": "Is it linked to LSAC, LawHub or any prep company?",
+        "a": "No. Next Ten Points is independent and not affiliated with LSAC, LawHub or any LSAT prep company. It works alongside the materials you already use."
+      },
+      {
+        "q": "Does it promise a higher score?",
+        "a": "No. It helps you see where your points go and plan your study; results depend on your practice."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-29",
+      "summary": "LSAT students say studying feels hopeless after spending about 15 grand, that they've studied consistently for over a year without breaking the low 160s, that a plateau is very demoralizing even after a course and tutoring, and that they're really feeling discouraged.",
+      "wtp": "7Sage, an LSAT prep app with 3.4K ratings, sells plans at $69, $129 and $299 a month, and students describe spending thousands on courses and tutors.",
+      "signals": [
+        {
+          "url": "https://7sage.com/discussion/61009/thinking-of-quitting/",
+          "who": "SLT220 (7Sage forum)",
+          "date": "2026-07-26",
+          "quote": "This just feels hopeless.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://7sage.com/discussion/61009/thinking-of-quitting/",
+          "who": "SLT220 (7Sage forum)",
+          "date": "2026-07-26",
+          "quote": "I've spent about 15 grand doing this.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://7sage.com/discussion/61009/thinking-of-quitting/",
+          "who": "sufam001 (7Sage forum)",
+          "date": "2026-07-27",
+          "quote": "I've been studying consistently since then without breaking the low 160s",
+          "seen": "opened"
+        },
+        {
+          "url": "https://7sage.com/discussion/17397/permanent-lsat-plateau-advice-appreciated/",
+          "who": "53789 (7Sage forum)",
+          "date": "2017-06-07",
+          "quote": "It is very demoralizing",
+          "seen": "opened"
+        },
+        {
+          "url": "https://7sage.com/discussion/28118/plateau",
+          "who": "aliciab576 (7Sage forum)",
+          "date": "2019-08-28",
+          "quote": "I'm really feeling discouraged",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/7sage-lsat-prep/id665684597",
+          "who": "nat2024aggie (App Store review of 7Sage)",
+          "date": "2024",
+          "quote": "I paid for a subscription for 7sage",
+          "seen": "opened"
+        },
+        {
+          "url": "https://7sage.com/self-study/pricing",
+          "who": "7Sage (pricing page)",
+          "date": "2026-10-29",
+          "quote": "$69, $129 and $299 plans",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "LSAT prep courses and apps (7Sage, LawHub, PowerScore, LSAT Demon), tutors, study groups.",
+      "risks": "Prep companies already offer analytics, so the angle is a plain plateau diagnosis using what you own; the doc side's PowerScore quotes return 403 to plain curl and are not cited; no score promise; next to live Retake Map and Pace Passage (other exams)."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

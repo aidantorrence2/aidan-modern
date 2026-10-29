@@ -32804,5 +32804,73 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "break-lsat-plateau",
+  "offer": "next-ten-points",
+  "title": "How to break an LSAT plateau",
+  "description": "Practical steps when your practice test scores stop rising.",
+  "intro": "Plateaus are common on the LSAT. They usually mean your current way of studying has given you what it can, not that you've hit your limit.",
+  "sections": [
+   {
+    "h": "Find where points go",
+    "list": [
+     "For each missed question, note why: misread, ran out of time, didn't know the concept, or changed a right answer.",
+     "Tally the reasons after a few tests; one or two usually dominate."
+    ]
+   },
+   {
+    "h": "Compare timed and blind review",
+    "p": [
+     "Redo missed questions untimed. If you get most right, timing and strategy are the issue; if not, it's understanding."
+    ]
+   },
+   {
+    "h": "Narrow your focus",
+    "p": [
+     "Spend most of the next two weeks on your biggest leak only, then re-test."
+    ]
+   },
+   {
+    "h": "Rest and reset",
+    "p": [
+     "Burnout often looks like a plateau. Take at least one full day off a week and don't take full tests back to back."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "lsat-blind-review-timed-gap",
+  "offer": "next-ten-points",
+  "title": "LSAT blind review: what the gap between timed and blind scores tells you",
+  "description": "How to use blind review to decide what to study next.",
+  "intro": "Blind review means redoing questions without time pressure before you check answers. The gap between that score and your timed score is useful information.",
+  "sections": [
+   {
+    "h": "How to blind review",
+    "list": [
+     "After a timed section, mark questions you weren't sure of.",
+     "Redo them untimed, writing down why each answer is right, before checking."
+    ]
+   },
+   {
+    "h": "Big gap",
+    "p": [
+     "If your blind score is much higher, you know the material but lose points to time pressure. Work on pacing and skipping hard questions."
+    ]
+   },
+   {
+    "h": "Small gap",
+    "p": [
+     "If your blind score is close to your timed score, the problem is understanding. Go back to the concepts behind the question types you miss."
+    ]
+   },
+   {
+    "h": "Track it",
+    "p": [
+     "Note both scores for every practice test so you can see whether the gap is shrinking."
+    ]
+   }
+  ]
  }
 ]
