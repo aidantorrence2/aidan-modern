@@ -31958,5 +31958,77 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "how-to-choose-a-contractor-you-can-trust",
+  "offer": "tell-which-contractor-trust",
+  "title": "How to choose a contractor you can trust for an expensive repair",
+  "description": "Checks to make before you hire someone for a big job on your home.",
+  "intro": "For an expensive repair, a little checking up front can save a lot of money and stress later.",
+  "sections": [
+   {
+    "h": "Get at least three quotes",
+    "list": [
+     "Ask each contractor to quote for the same written description of the job.",
+     "Be wary of a quote far below the others."
+    ]
+   },
+   {
+    "h": "Check them out",
+    "list": [
+     "Look for a licence, registration or trade membership where your area requires one, and check it with the issuing body.",
+     "Ask for proof of insurance and for recent references you can call."
+    ]
+   },
+   {
+    "h": "Get it in writing",
+    "list": [
+     "A written contract should cover the work, materials, price, timeline and how changes are handled.",
+     "Avoid paying most of the price up front; agree staged payments tied to finished work."
+    ]
+   },
+   {
+    "h": "Watch for red flags",
+    "list": [
+     "Pressure to decide today, cash-only deals or no written quote.",
+     "Knocking on your door unprompted offering to fix something."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "finish-personal-projects-after-excitement-fades",
+  "offer": "start-important-personal-projects",
+  "title": "How to finish personal projects after the excitement fades",
+  "description": "Practical ways to keep going on a project once the fun of starting wears off.",
+  "intro": "Almost every project hits a dull middle. Planning for that moment makes it far more likely you'll finish.",
+  "sections": [
+   {
+    "h": "Define done",
+    "p": [
+     "Write down exactly what finished looks like, so you know when you've got there."
+    ]
+   },
+   {
+    "h": "Shrink the next step",
+    "list": [
+     "Break the work into steps of 30 minutes or less.",
+     "Always know the very next small step before you stop."
+    ]
+   },
+   {
+    "h": "Set a regular slot",
+    "list": [
+     "Pick a fixed time each week for the project.",
+     "Showing up matters more than how much you get done."
+    ]
+   },
+   {
+    "h": "Make progress visible",
+    "p": [
+     "Keep a simple log of each session. Seeing a growing list of done steps helps when motivation dips. Tell a friend your goal and check in with them."
+    ]
+   }
+  ]
  }
 ]
