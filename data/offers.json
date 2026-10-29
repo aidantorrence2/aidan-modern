@@ -57720,6 +57720,97 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-29",
+    "slug": "sound-sure",
+    "name": "Sound Sure",
+    "need": "I read words and people's names that I've never heard said out loud, so I mispronounce them or avoid saying them, and I feel embarrassed when I'm corrected.",
+    "headline": "Know lots of words you've only ever read? Save them as you go, hear how they're really said, and practise privately until they feel natural.",
+    "buyer": "Adult readers who meet words and names in books and at work that they've never heard spoken.",
+    "bullets": [
+      "Save a word or name in seconds while you read, then hear it said clearly, at normal and slow speed.",
+      "See a plain sound-it-out spelling and the stressed syllable, not just phonetic symbols.",
+      "Short private practice: say it, play it back and tick it off once it feels natural."
+    ],
+    "price": "$2.99/month",
+    "priceUsd": 3,
+    "priceNote": "Or $14.99 a year.",
+    "reasonPrompt": "Which words or names do you most often hesitate to say out loud?",
+    "faq": [
+      {
+        "q": "Is it a speech therapy tool?",
+        "a": "No. Sound Sure is for learning how words you've only read are pronounced. For speech difficulties, a speech and language therapist can help."
+      },
+      {
+        "q": "Is it linked to any dictionary or app?",
+        "a": "No. Sound Sure is independent and not affiliated with any dictionary, publisher or app."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-29",
+      "summary": "Readers say they often come across words they don't know how to pronounce, wondered how others could pronounce words they'd never heard spoken, meet words even well-read friends never say aloud, want to learn without the embarrassment of being corrected, and have to pronounce strange names daily at work.",
+      "wtp": "(How to) Pronounce has 33K ratings and sells an all-topics pack for $4.99; its PRO version costs $1.99, and Howjsay sells unlimited access for $2.99.",
+      "signals": [
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=333252081/sortby=mostrecent/json",
+          "who": "annybat (App Store review of Howjsay)",
+          "date": "2018-01-28",
+          "quote": "When reading I often come across words I don't know how to pronounce.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=333252081/sortby=mosthelpful/json",
+          "who": "Retired Physics Teacher (App Store review of Howjsay)",
+          "date": "2024-01-19",
+          "quote": "I had no idea how others could pronounce words they had never heard spoken before",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=953959208/sortby=mosthelpful/json",
+          "who": "Fritzbeeson (App Store review of (How to) Pronounce PRO)",
+          "date": "2020-10-29",
+          "quote": "I am an avid reader and encounter many words that even my very well read friends and colleagues do not use in conversation",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=717945069/sortby=mosthelpful/json",
+          "who": "Monaconamor (App Store review of (How to) Pronounce)",
+          "date": "2022-03-15",
+          "quote": "without the embarrassment of being corrected",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=717945069/sortby=mosthelpful/json",
+          "who": "ashley_kayyy (App Store review of (How to) Pronounce)",
+          "date": "2023-03-22",
+          "quote": "have to pronounce strange names daily",
+          "seen": "opened"
+        },
+        {
+          "url": "https://hn.algolia.com/api/v1/items/40768070",
+          "who": "romanows (Hacker News)",
+          "date": "2024-06-23",
+          "quote": "invent a spoken pronunciation for the first time ever and get self-conscious",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/how-to-pronounce/id717945069",
+          "who": "(How to) Pronounce (App Store)",
+          "date": "2026-10-29",
+          "quote": "33K Ratings; All topics $4.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Search-engine pronunciation cards, dictionary audio, pronunciation apps ((How to) Pronounce, Howjsay), YouTube.",
+      "risks": "Strong free alternatives and small one-off purchases make a subscription hard to sell; many pronunciation-app users are second-language learners, so it stays on words native speakers have only read and on people's names; next to live Name Hold (remembering names), which is a different need; no speech-therapy claims."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

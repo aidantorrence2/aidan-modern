@@ -32737,5 +32737,72 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "pronounce-words-you-have-only-read",
+  "offer": "sound-sure",
+  "title": "How to pronounce words you've only ever read",
+  "description": "Easy ways to check how a word is said before you use it out loud.",
+  "intro": "Big readers often know far more words than they've heard spoken. That's nothing to be embarrassed about; it just means checking a few before you say them.",
+  "sections": [
+   {
+    "h": "Check before you say it",
+    "list": [
+     "Most online dictionaries have an audio button next to the word.",
+     "Listen two or three times, then say it aloud yourself."
+    ]
+   },
+   {
+    "h": "Find the stress",
+    "p": [
+     "Many mispronunciations come from stressing the wrong syllable. Dictionaries mark the stressed part; say that bit a little louder."
+    ]
+   },
+   {
+    "h": "Keep a short list",
+    "p": [
+     "Jot down words you meet in books that you're unsure of, and check them in one go each week."
+    ]
+   },
+   {
+    "h": "If you're corrected",
+    "p": [
+     "A simple 'Thanks, I've only ever read that one' is all you need. Most people have done the same."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "how-to-say-unfamiliar-names-correctly",
+  "offer": "sound-sure",
+  "title": "How to say unfamiliar names correctly at work and in person",
+  "description": "Respectful ways to learn and remember how someone's name is pronounced.",
+  "intro": "Getting someone's name right matters to them. When you aren't sure, a little preparation and a polite question go a long way.",
+  "sections": [
+   {
+    "h": "Ask, don't guess",
+    "p": [
+     "'How do you say your name?' is polite and appreciated. Repeat it back to check."
+    ]
+   },
+   {
+    "h": "Write it how it sounds",
+    "p": [
+     "Note a sound-it-out spelling next to their name in your contacts or notes, such as 'Siobhan: shiv-AWN'."
+    ]
+   },
+   {
+    "h": "Listen for it",
+    "p": [
+     "Some people include a pronunciation note or audio in their email signature or profile. Use it when it's there."
+    ]
+   },
+   {
+    "h": "Practise before calling",
+    "p": [
+     "If you'll be calling or announcing names, say each one aloud a couple of times first."
+    ]
+   }
+  ]
  }
 ]
