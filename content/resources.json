@@ -29763,5 +29763,123 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "moving-house-checklist",
+  "offer": "moving-home-overwhelming-because",
+  "title": "A simple moving house checklist",
+  "description": "A week-by-week plan to make moving home less overwhelming.",
+  "intro": "Moving home has a lot of moving parts. Breaking it into a few steps over several weeks makes it far more manageable.",
+  "sections": [
+   {
+    "h": "Six to eight weeks before",
+    "list": [
+     "Book movers or a van and ask friends for help.",
+     "Start clearing out things you don't want to move.",
+     "Collect boxes, tape and markers."
+    ]
+   },
+   {
+    "h": "Two to four weeks before",
+    "list": [
+     "Tell your bank, employer, doctor and others your new address.",
+     "Arrange mail redirection if available.",
+     "Set up internet and utilities at the new home."
+    ]
+   },
+   {
+    "h": "The last week",
+    "list": [
+     "Pack room by room and label each box with its room and contents.",
+     "Pack an essentials box: chargers, toiletries, medication, kettle, snacks, bedding.",
+     "Take meter readings and photos at the old home."
+    ]
+   },
+   {
+    "h": "Moving day and after",
+    "list": [
+     "Check the new home for damage and take meter readings.",
+     "Unpack the essentials box and the bed first.",
+     "Update any remaining accounts with your new address."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "what-your-family-needs-to-know",
+  "offer": "if-something-happened-family",
+  "title": "What your family would need to know if something happened to you",
+  "description": "The key information to write down and keep in one safe place for your family.",
+  "intro": "If you were suddenly ill or died, your family would need to find a lot of information quickly. Writing it down now can save them stress later.",
+  "sections": [
+   {
+    "h": "Important documents",
+    "list": [
+     "Where your will is kept, if you have one.",
+     "ID, birth and marriage certificates.",
+     "Insurance policies and pensions."
+    ]
+   },
+   {
+    "h": "Money and accounts",
+    "list": [
+     "Banks and accounts you hold (not passwords written in plain text).",
+     "Regular bills and subscriptions.",
+     "Any debts or loans."
+    ]
+   },
+   {
+    "h": "Your wishes",
+    "list": [
+     "Who should be contacted.",
+     "Any wishes for care, or for your funeral.",
+     "Who should look after children or pets."
+    ]
+   },
+   {
+    "h": "Keep it safe and up to date",
+    "p": [
+     "Keep the information in one secure place and tell someone you trust where it is. For a will or power of attorney, get proper legal advice where you live."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "how-to-choose-a-roommate",
+  "offer": "afford-live-alone-afraid",
+  "title": "How to choose a good roommate",
+  "description": "Questions to ask and checks to make before you move in with a new roommate.",
+  "intro": "Living with someone new can save money, but the wrong match can be stressful. Asking the right questions up front helps.",
+  "sections": [
+   {
+    "h": "Talk about daily life",
+    "list": [
+     "Work hours and when they're usually home.",
+     "Cleaning habits and how chores will be shared.",
+     "Guests, partners staying over, and noise."
+    ]
+   },
+   {
+    "h": "Talk about money",
+    "list": [
+     "How rent and bills will be split and paid.",
+     "What happens if someone is late paying."
+    ]
+   },
+   {
+    "h": "Check them out",
+    "list": [
+     "Ask for a reference from a previous landlord or roommate.",
+     "Meet in person, ideally at the home.",
+     "Trust your gut if something feels off."
+    ]
+   },
+   {
+    "h": "Put it in writing",
+    "p": [
+     "A simple written agreement on rent, bills and house rules helps avoid arguments later."
+    ]
+   }
+  ]
  }
 ]
