@@ -57902,6 +57902,83 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-29",
+    "slug": "bar-retake-plan",
+    "name": "Bar Retake Plan",
+    "need": "I failed the bar exam and have to sit it again, and I don't want to just repeat the same study plan that didn't work.",
+    "headline": "Failed the bar and sitting it again? Turn your score report into a retake plan, using the course you already own, so this time you study where the points were lost.",
+    "buyer": "Adults 18+ retaking the bar exam after a fail.",
+    "bullets": [
+      "Enter your score report and get study weeks split by where you lost the most points.",
+      "A redo-and-skip list for the bar course you already own, plus an MBE miss-reason log.",
+      "Track timed essays and performance tests, and replan each week with rest days built in."
+    ],
+    "price": "$14.99/month",
+    "priceUsd": 15,
+    "priceNote": "Or $59 per retake window.",
+    "reasonPrompt": "Which jurisdiction are you retaking, and where did your score report show you lost points?",
+    "faq": [
+      {
+        "q": "Is it linked to NCBE, a state bar or any bar review company?",
+        "a": "No. Bar Retake Plan is for adults 18+ and is independent of NCBE, state bars and bar review companies. It isn't legal advice or tutoring."
+      },
+      {
+        "q": "Does it promise a pass?",
+        "a": "No. It helps you plan and track your retake study; results depend on your work."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-29",
+      "summary": "Repeat takers describe failing after using the big course alone, retaking the California bar, and being left 'screaming into pillows' by a big prep company's resources the first time, and then paying again for extra tools and tutoring.",
+      "wtp": "Bar retakers already pay: AdaptiBar sells packages from $129.99 to $699.99, including a $299.99 MBE re-enrolment, and BarMax sells packages including private tutoring hours.",
+      "signals": [
+        {
+          "url": "https://apps.apple.com/us/app/barmax-bar-exam-mbe-mpre/id601629394",
+          "who": "AbbasCalifornia (App Store review of BarMax)",
+          "date": "2024-11-12",
+          "quote": "I took the exam using those, without BarMax, and failed.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/adaptibar/id841039908",
+          "who": "Kwplaw (App Store review of AdaptiBar)",
+          "date": "2020-01-29",
+          "quote": "I'm a retaker on the CA Bar",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/adaptibar/id841039908",
+          "who": "MikeS5678 (App Store review of AdaptiBar)",
+          "date": "2023-02-28",
+          "quote": "They left me screaming into pillows.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/barmax-bar-exam-mbe-mpre/id601629394",
+          "who": "AbbasCalifornia (App Store review of BarMax)",
+          "date": "2024-11-12",
+          "quote": "got the BarMax package that included 10 private tutoring hours, and I passed.",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/adaptibar/id841039908",
+          "who": "AdaptiBar (App Store)",
+          "date": "2026-10-29",
+          "quote": "2.2K Ratings; MBE Simulator re-enrol $299.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Bar review courses and repeater programmes (Themis, Barbri, Kaplan), MBE question banks (AdaptiBar, UWorld), tutors.",
+      "risks": "Thin evidence: three retakers, all in App Store reviews of two apps, and forum threads were blocked to the doc side; big courses run their own repeater programmes; career licence exams wait on Aidan's general answer (open question 34), though retake offers for other exams (Exam Comeback, Retake Map) are live; no pass promise, not legal advice."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

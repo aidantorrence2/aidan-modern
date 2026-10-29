@@ -32940,5 +32940,73 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "failed-the-bar-exam-what-to-change",
+  "offer": "bar-retake-plan",
+  "title": "Failed the bar exam? What to change for the retake",
+  "description": "How to plan a retake around where you actually lost points.",
+  "intro": "Many people pass on their second attempt. The key is not repeating the same plan, but changing it based on what your results show.",
+  "sections": [
+   {
+    "h": "Take a short break",
+    "p": [
+     "Give yourself a little time before restarting. Studying while exhausted or upset rarely helps."
+    ]
+   },
+   {
+    "h": "Read your score report",
+    "list": [
+     "See how your written and multiple-choice scores compared with what you needed.",
+     "Note the subjects or sections where you were furthest behind."
+    ]
+   },
+   {
+    "h": "Change how you study",
+    "list": [
+     "If multiple-choice was weak, log why you miss each question, not just which ones.",
+     "If essays were weak, practise writing full timed answers and compare your rule statements with model answers."
+    ]
+   },
+   {
+    "h": "Plan realistic weeks",
+    "p": [
+     "Build a weekly plan with your weakest areas first, regular timed practice and at least one rest day."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "how-to-read-bar-exam-score-report",
+  "offer": "bar-retake-plan",
+  "title": "How to read your bar exam score report",
+  "description": "What the numbers usually mean and how to use them to plan a retake.",
+  "intro": "Score reports vary by jurisdiction, but most show enough to tell you where to focus. Check your own jurisdiction's explanation for exact details.",
+  "sections": [
+   {
+    "h": "Find the overall gap",
+    "p": [
+     "Compare your total or scaled score with the pass mark to see how far you need to move."
+    ]
+   },
+   {
+    "h": "Compare the parts",
+    "p": [
+     "Look at your multiple-choice and written components separately. A big difference tells you which to prioritise."
+    ]
+   },
+   {
+    "h": "Look at subject breakdowns",
+    "p": [
+     "If your report lists subjects or essay scores, rank them from weakest to strongest."
+    ]
+   },
+   {
+    "h": "Turn it into a plan",
+    "p": [
+     "Put most of your time into the weakest one or two areas, while keeping regular practice on the rest."
+    ]
+   }
+  ]
  }
 ]
