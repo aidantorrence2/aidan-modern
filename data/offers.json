@@ -56439,6 +56439,104 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-29",
+    "slug": "slideshow-night",
+    "name": "Slideshow Night",
+    "need": "I need to turn a pile of phone photos into a slideshow with music for a birthday, anniversary or funeral, and the slideshow apps keep capping photos, crashing or charging weekly.",
+    "headline": "Need a photo slideshow for a birthday, anniversary or celebration of life? Gather everyone's photos, put them in order, add music and get a finished video, without photo caps or weekly charges.",
+    "buyer": "Family members making a one-off photo-and-music slideshow for a party, anniversary or funeral.",
+    "bullets": [
+      "Collect photos from family members in one shared place, with no cap on how many.",
+      "Put them in order by decade or story, set the music, and see how long it runs.",
+      "Export a video that plays at the venue, on a TV or a laptop."
+    ],
+    "price": "$9 per event",
+    "priceUsd": 9,
+    "priceNote": "One price per slideshow. No weekly charges.",
+    "reasonPrompt": "What's the occasion, and roughly how many photos do you have?",
+    "faq": [
+      {
+        "q": "Can I use any song?",
+        "a": "For playing at a private event, many people use songs they own, but rules differ by venue and platform, especially if you plan to share the video online. Check with the venue, and use licensed or royalty-free music for anything public."
+      },
+      {
+        "q": "Is it linked to a funeral home or photo company?",
+        "a": "No. Slideshow Night is independent and not affiliated with any funeral home, photo company or app."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-29",
+      "summary": "People describe wanting to make a slideshow for a mother's birthday party, making a slideshow for a spouse, making a New Year slideshow, trying to make a slideshow of 165 photos, making a slideshow for a grandfather's funeral, and family trying to share photos for a funeral slideshow.",
+      "wtp": "SlideShow Maker Photo to Video has 105K App Store ratings with plans from $9.99 a week and $10.99 a month; SlideShow Maker with Music Fx has 53K ratings with Pro at $9.99 a month or $34.99.",
+      "signals": [
+        {
+          "url": "https://apps.apple.com/us/app/id924826256",
+          "who": "jemi.aphrodite (App Store review of SlideShow Maker)",
+          "date": "2020-01-01",
+          "quote": "I wanted to make a slideshow from my mom to show at her birthday party",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1031863788",
+          "who": "Another Vette Guy (App Store review of Slideshow Magic)",
+          "date": "2023-01-09",
+          "quote": "I wanted to make a nice slideshow for my wife",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1119493669",
+          "who": "Sondynay (App Store review of SlideShow Maker: Music & Video)",
+          "date": "2019-01-04",
+          "quote": "I downloaded it to make a New Years slide show",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1018224260",
+          "who": "Lovelydee1025 (App Store review of Quick & Easy Slideshow Maker)",
+          "date": "2019-08-07",
+          "quote": "Tried doing a slide show with 165 photos",
+          "seen": "opened"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=21630107",
+          "who": "sh-run (Hacker News)",
+          "date": "2019-11-25",
+          "quote": "I made a slideshow in LibreOffice Impress for my grandfather",
+          "seen": "opened"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=33183775",
+          "who": "hotpotamus (Hacker News)",
+          "date": "2022-10-12",
+          "quote": "put together a slideshow for a funeral",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id924826256",
+          "who": "SlideShow Maker Photo to Video (App Store)",
+          "date": "2026-10-29",
+          "quote": "105K Ratings; Monthly Plus $10.99",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id1265026847",
+          "who": "SlideShow Maker with Music Fx (App Store)",
+          "date": "2026-10-29",
+          "quote": "53K Ratings; Pro Monthly $9.99; Pro $34.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Slideshow maker apps, phone photo apps' built-in slideshows, design tools, funeral-home packages.",
+      "risks": "One-off, event-driven use, so it's priced per event; strong free tools exist; music licensing limits song choice; the funeral angle needs care and sits next to live bereavement offers; next to Clip To Film (video editing). Evidence is App Store reviews and Hacker News comments."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

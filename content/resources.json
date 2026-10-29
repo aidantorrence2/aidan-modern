@@ -31234,5 +31234,78 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "make-a-funeral-slideshow-on-your-phone",
+  "offer": "slideshow-night",
+  "title": "How to make a slideshow for a funeral or celebration of life",
+  "description": "Gentle, practical steps to put together a photo slideshow with music for a funeral or memorial.",
+  "intro": "A slideshow is a lovely way to share someone's life, but it's often put together in a rush. These steps keep it manageable.",
+  "sections": [
+   {
+    "h": "Gather photos",
+    "list": [
+     "Ask family and friends to send photos to one place, such as a shared album.",
+     "Scan or photograph old prints in good light."
+    ]
+   },
+   {
+    "h": "Choose and order",
+    "list": [
+     "Aim for a mix of life stages, people and places.",
+     "Order them by time, or group them by theme.",
+     "As a rough guide, around 4 to 5 seconds a photo means a 4-minute song fits about 50 to 60 photos."
+    ]
+   },
+   {
+    "h": "Music",
+    "p": [
+     "Choose one or two songs that meant something. Check with the venue about playing music, and use licensed music if you'll share the video online."
+    ]
+   },
+   {
+    "h": "Check it plays",
+    "list": [
+     "Ask the venue what format and device they use.",
+     "Test the video on their screen beforehand, and bring a backup on a USB stick."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "birthday-photo-slideshow-with-music",
+  "offer": "slideshow-night",
+  "title": "How to make a birthday photo slideshow with music",
+  "description": "Simple steps to make a birthday or anniversary slideshow from lots of phone photos.",
+  "intro": "A photo slideshow makes a great surprise for a birthday or anniversary. Planning it in stages avoids a last-minute scramble.",
+  "sections": [
+   {
+    "h": "Start early",
+    "list": [
+     "Collect photos a couple of weeks ahead.",
+     "Ask others to share theirs in one shared album."
+    ]
+   },
+   {
+    "h": "Pick the best",
+    "list": [
+     "Remove duplicates and blurry shots.",
+     "Mix funny moments with milestones."
+    ]
+   },
+   {
+    "h": "Put it together",
+    "list": [
+     "Many phone photo apps can play an album as a slideshow with music.",
+     "For more control, use a slideshow or video app and export it as a video file."
+    ]
+   },
+   {
+    "h": "On the day",
+    "p": [
+     "Test the video on the screen you'll use, and keep the sound at a comfortable volume."
+    ]
+   }
+  ]
  }
 ]
