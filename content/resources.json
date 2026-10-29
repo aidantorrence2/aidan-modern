@@ -31665,5 +31665,77 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "stop-arguing-with-partner-about-money",
+  "offer": "partner-argue-about-money",
+  "title": "How to stop arguing with your partner about money",
+  "description": "A calm way for couples to agree a shared money plan.",
+  "intro": "Money arguments are often less about the numbers and more about not knowing what the other person expects. A shared, written plan takes a lot of the heat out.",
+  "sections": [
+   {
+    "h": "Pick a calm time",
+    "list": [
+     "Agree a short money talk when you're both rested, not in the middle of a row.",
+     "Keep it to 30 minutes and put it in the calendar."
+    ]
+   },
+   {
+    "h": "Lay out the facts together",
+    "list": [
+     "List what comes in and the bills that must be paid each month.",
+     "Look at the numbers side by side, without blame."
+    ]
+   },
+   {
+    "h": "Agree a few shared rules",
+    "list": [
+     "Decide which costs are shared and how you split them.",
+     "Set an amount each of you can spend without checking with the other."
+    ]
+   },
+   {
+    "h": "Check in regularly",
+    "p": [
+     "A short monthly review keeps small worries from building up. If debt or money stress feels overwhelming, free debt advice services can help."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "household-chores-taking-every-spare-hour",
+  "offer": "keeping-household-running-takes",
+  "title": "When household chores take every spare hour: how to get time back",
+  "description": "Simple ways to cut, share and batch the jobs that keep a home running.",
+  "intro": "Running a home involves dozens of small jobs. Writing them down, sharing them fairly and lowering the bar on some can free up real time.",
+  "sections": [
+   {
+    "h": "Write every job down",
+    "list": [
+     "List daily, weekly and monthly jobs, including the invisible ones like planning meals and booking appointments.",
+     "Note roughly how long each takes."
+    ]
+   },
+   {
+    "h": "Cut or lower the standard",
+    "list": [
+     "Ask which jobs could be done less often, or not at all.",
+     "Good enough is fine for most chores."
+    ]
+   },
+   {
+    "h": "Share fairly",
+    "list": [
+     "Split jobs by whole tasks, so one person owns each from start to finish.",
+     "Give children age-appropriate jobs."
+    ]
+   },
+   {
+    "h": "Batch and routine",
+    "p": [
+     "Group similar jobs, like one shopping trip and one admin slot a week, so they stop spilling into every evening."
+    ]
+   }
+  ]
  }
 ]
