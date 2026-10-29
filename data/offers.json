@@ -57468,6 +57468,83 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-29",
+    "slug": "local-farm-finder",
+    "name": "Farm Finder",
+    "need": "I want to buy meat, eggs and produce straight from farms near me, but I can't find which local farms actually sell direct, or whether the listings are real.",
+    "headline": "Want eggs, beef and veg straight from a farm near you? Find farms that really sell direct, with what they sell, when they're open and how to buy.",
+    "buyer": "Households that want to buy food direct from local farms, including people who've just moved to a new area.",
+    "bullets": [
+      "Search near you for farm stands, farm shops, CSAs and farmers markets, starting from public directories.",
+      "Each listing shows what they sell, how to buy (stand, pickup, delivery) and when it was last checked.",
+      "Save your farms and get a reminder when the season for something you want starts."
+    ],
+    "price": "$3.99/month",
+    "priceUsd": 4,
+    "priceNote": "Or $24 a year. Searching is free; saving and reminders are paid.",
+    "reasonPrompt": "What do you want to buy from a farm, and roughly where do you live?",
+    "faq": [
+      {
+        "q": "Is it linked to any farm, market or food app?",
+        "a": "No. Farm Finder is independent and not paid by farms, markets or any app to list them."
+      },
+      {
+        "q": "Are the farms checked?",
+        "a": "Listings start from public directories and show when they were last checked. Always confirm opening times and how to buy with the farm before you travel."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-29",
+      "summary": "People say they want to find local farmers rather than being redirected elsewhere, that finding fresh locally sourced food has been a challenge, that they downloaded an app expecting to find farms in their area, and that many people want to support farmers directly but shouldn't have to pay just to find out where.",
+      "wtp": "Localize, a farmers-market and local-farm app, has 20K ratings and sells weekly ($7.99), yearly ($39.99) and membership plans.",
+      "signals": [
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=6756440767/sortby=mosthelpful/json",
+          "who": "fake advertising. sad. (App Store review of Localize)",
+          "date": "2026-06-10",
+          "quote": "I want find LOCAL farmers not be directed",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=6756440767/sortby=mosthelpful/json",
+          "who": "I am TK (App Store review of Localize)",
+          "date": "2026-03-25",
+          "quote": "Many people already want to support farmers directly, but having to pay just to find out where and how to do that",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=6756440767/sortby=mostrecent/json",
+          "who": "stars_moon_sun_ (App Store review of Localize)",
+          "date": "2026-10-14",
+          "quote": "i downloaded expecting to find farms in my area",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=6756440767/sortby=mosthelpful/json",
+          "who": "Guinaqua (App Store review of Localize)",
+          "date": "2026-10-08",
+          "quote": "finding fresh, locally sourced food has been a challenge",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/localize-farmers-market/id6756440767",
+          "who": "Localize (App Store)",
+          "date": "2026-10-29",
+          "quote": "20K Ratings; Weekly $7.99; Yearly $39.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Localize and other farmers-market apps, USDA Local Food Directories, LocalHarvest, Google Maps, farm social media pages.",
+      "risks": "All evidence is reviews of one app (Localize), and a reviewer says some of its reviews look fake, so mostly critical one-star reviewers are cited; reviewers dislike paywalls, so search stays free; listings go stale, so each shows its last-checked date; no health or raw-milk claims."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",

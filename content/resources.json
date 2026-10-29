@@ -32455,5 +32455,76 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "find-local-farms-that-sell-direct",
+  "offer": "local-farm-finder",
+  "title": "How to find local farms that sell meat, eggs and produce direct",
+  "description": "Where to look for farm stands, farm shops and CSAs near you, and how to check they're real.",
+  "intro": "Many farms sell direct but don't advertise much. A few places are worth checking before you give up.",
+  "sections": [
+   {
+    "h": "Start with public directories",
+    "list": [
+     "In the US, the USDA Local Food Directories list farmers markets, CSAs and on-farm markets.",
+     "Your state or county agriculture office or extension service often keeps a local list too."
+    ]
+   },
+   {
+    "h": "Ask at the market",
+    "p": [
+     "Farmers market stallholders often sell from the farm too, or know who does. Ask about bulk beef, eggs and seasonal boxes."
+    ]
+   },
+   {
+    "h": "Check before you go",
+    "list": [
+     "Look for recent posts or reviews, and call or message to confirm hours.",
+     "Ask how they sell: farm stand, pickup days, delivery or a share."
+    ]
+   },
+   {
+    "h": "Buy in a way that suits you",
+    "p": [
+     "A CSA share gives you a regular box; farm stands and markets let you pick week by week; bulk meat is often sold by the quarter or half animal with a deposit."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "farm-stand-vs-farmers-market-vs-csa",
+  "offer": "local-farm-finder",
+  "title": "Farm stand, farmers market or CSA: which way to buy local food suits you?",
+  "description": "How the main ways of buying direct from farms compare.",
+  "intro": "There are several ways to buy straight from farmers. Each suits a different budget, schedule and appetite for surprise.",
+  "sections": [
+   {
+    "h": "Farm stand or farm shop",
+    "list": [
+     "Buy at the farm, often with honesty boxes or set hours.",
+     "Good for eggs and seasonal produce close to home."
+    ]
+   },
+   {
+    "h": "Farmers market",
+    "list": [
+     "Many farms in one place on a set day.",
+     "Easy to compare and try new things; you choose each week."
+    ]
+   },
+   {
+    "h": "CSA (community supported agriculture)",
+    "list": [
+     "Pay up front for a season's share and collect a box regularly.",
+     "Usually good value, but you get what's in season."
+    ]
+   },
+   {
+    "h": "Bulk meat",
+    "p": [
+     "Many livestock farms sell a quarter, half or whole animal, processed and frozen. You'll need freezer space and usually pay a deposit."
+    ]
+   }
+  ]
  }
 ]
