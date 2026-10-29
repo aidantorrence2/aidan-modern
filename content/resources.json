@@ -31737,5 +31737,82 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "rest-day-or-train-hard-today",
+  "offer": "easy-day",
+  "title": "How to tell if you need a rest day or can train hard today",
+  "description": "A simple morning check to decide between a hard session, an easy one or rest.",
+  "intro": "Hard training only pays off if you recover from it. A quick honest check each morning helps you pick the right kind of day.",
+  "sections": [
+   {
+    "h": "Ask five questions",
+    "list": [
+     "How did I sleep?",
+     "How sore am I?",
+     "How is my energy and mood?",
+     "How hard was yesterday?",
+     "Do I feel keen to train, or am I dreading it?"
+    ]
+   },
+   {
+    "h": "Read the answers",
+    "list": [
+     "Mostly good: a hard session is fine.",
+     "A mix: keep it easy, such as a gentle run, a technique session or lighter weights.",
+     "Mostly poor: take a rest day or just go for a walk."
+    ]
+   },
+   {
+    "h": "Don't stack hard days",
+    "p": [
+     "Most plans put easy days between hard ones. If you've had two or three hard days in a row, make the next one easy."
+    ]
+   },
+   {
+    "h": "When to get help",
+    "p": [
+     "Feeling ill, a pain that doesn't settle, or tiredness that lasts for weeks is a reason to stop and talk to a doctor, not to push through."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "signs-you-are-overdoing-your-training",
+  "offer": "easy-day",
+  "title": "Signs you're overdoing your training and what to do about it",
+  "description": "Common signs that training is outpacing your recovery, and simple ways to rebalance.",
+  "intro": "Pushing too hard for too long tends to show up as poor sleep, low mood and stalled progress before anything else.",
+  "sections": [
+   {
+    "h": "Common signs",
+    "list": [
+     "Performance stalls or drops even though you're training more.",
+     "You sleep badly or wake up tired.",
+     "Usual sessions feel much harder than they should.",
+     "You feel irritable or lose motivation to train."
+    ]
+   },
+   {
+    "h": "What to do",
+    "list": [
+     "Take a few easier days and at least one full rest day.",
+     "Cut the volume or intensity of hard sessions for a week or two.",
+     "Prioritise sleep and regular meals."
+    ]
+   },
+   {
+    "h": "Plan easy days in",
+    "p": [
+     "Write easy and rest days into your week in advance, so taking them doesn't feel like failing."
+    ]
+   },
+   {
+    "h": "Check with a professional",
+    "p": [
+     "If signs last for weeks or you feel unwell, see a doctor."
+    ]
+   }
+  ]
  }
 ]

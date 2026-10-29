@@ -56873,6 +56873,90 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-29",
+    "slug": "easy-day",
+    "name": "Easy Day",
+    "need": "I keep overdoing my training and pushing through when I should rest, then I get run down or set back, and I can't tell on a given day whether to train hard or take it easy.",
+    "headline": "Always overdoing it? A 30-second morning check-in tells you whether today is a hard day, an easy day or a rest day, no wearable needed.",
+    "buyer": "Adults who train regularly, such as runners, lifters and cyclists, who keep pushing through when they should ease off.",
+    "bullets": [
+      "A quick daily check-in on sleep, soreness, energy, mood and yesterday's session.",
+      "A plain call for today: go hard, keep it easy or rest, with the reason shown.",
+      "A weekly view of your hard and easy days, so you can see when you've stacked too many."
+    ],
+    "price": "$4.99/month",
+    "priceUsd": 5,
+    "priceNote": "Or $29 a year. Works with or without a watch.",
+    "reasonPrompt": "What do you train for, and what happens when you overdo it?",
+    "faq": [
+      {
+        "q": "Is it medical advice?",
+        "a": "No. Easy Day is about balancing your training load. It doesn't diagnose anything; if you feel ill, are injured or have a health condition, talk to a doctor before training."
+      },
+      {
+        "q": "Is it linked to Whoop, Apple or any fitness app?",
+        "a": "No. Easy Day is independent and not affiliated with any wearable, fitness app or brand."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-29",
+      "summary": "People who train say they tend to overtrain and want an app to guide them, often push themselves too hard and then get sick, have a tendency towards overtraining, and often get ahead of themselves and overdo it.",
+      "wtp": "Recovery apps already sell subscriptions: Athlytic Pro is $4.99 a month or $29.99 a year (11K ratings), and Gentler Streak Premium is $8.99 a month or $39.99 a year (8.8K ratings).",
+      "signals": [
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=4/id=1543571755/sortby=mosthelpful/json",
+          "who": "whatever man (App Store review of Athlytic)",
+          "date": "2022-01-27",
+          "quote": "I tend to overtrain and have been looking for an app that could help guide me",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=4/id=1543571755/sortby=mosthelpful/json",
+          "who": "Mystery880 (App Store review of Athlytic)",
+          "date": "2022-10-12",
+          "quote": "I often push myself too hard and than get sick",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=4/id=1543571755/sortby=mosthelpful/json",
+          "who": "Brendania (App Store review of Athlytic)",
+          "date": "2023-11-28",
+          "quote": "I have a tendency towards overtraining and cooking my CNS",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=2/id=1576857102/sortby=mostrecent/json",
+          "who": "ryanccarter (App Store review of Gentler Streak)",
+          "date": "2026-01-28",
+          "quote": "I often get ahead of myself and overdo it",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/athlytic-fitness-recovery/id1543571755",
+          "who": "Athlytic (App Store)",
+          "date": "2026-10-29",
+          "quote": "11K Ratings; Athlytic Pro $4.99 monthly, $29.99 yearly",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/gentler-streak-workout-tracker/id1576857102",
+          "who": "Gentler Streak (App Store)",
+          "date": "2026-10-29",
+          "quote": "8.8K Ratings; Premium $8.99 monthly, $39.99 yearly",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Wearable recovery scores and apps (Athlytic, Gentler Streak, Training Today, Whoop, Bevel), coaches and training plans.",
+      "risks": "Crowded paid market, so the angle is a check-in that works without a wearable; all evidence is App Store reviews of two apps; it stays on training load and never on illness, injury or medical advice."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
