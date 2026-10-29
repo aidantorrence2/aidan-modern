@@ -30949,5 +30949,80 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "find-a-hobby-as-an-adult",
+  "offer": "hobby-taster",
+  "title": "I have no hobbies: how to find one as an adult",
+  "description": "A simple, low-pressure way to find a hobby you enjoy when you don't know where to start.",
+  "intro": "Lots of adults reach a point where work, family or screens have crowded out everything else. Finding a hobby is less about the perfect choice and more about trying small things.",
+  "sections": [
+   {
+    "h": "Look back",
+    "list": [
+     "What did you enjoy as a child or teenager?",
+     "What do you find yourself reading or watching videos about?"
+    ]
+   },
+   {
+    "h": "Try small and cheap",
+    "list": [
+     "Pick one thing to try for an hour this week, with little or no cost.",
+     "Borrow equipment, use a library, or take a one-off taster class before buying anything."
+    ]
+   },
+   {
+    "h": "Give it a fair go",
+    "list": [
+     "Try it two or three times before deciding.",
+     "Rate it honestly: did you lose track of time, or watch the clock?"
+    ]
+   },
+   {
+    "h": "Move on without guilt",
+    "p": [
+     "If it doesn't click, try the next thing. If nothing feels enjoyable for a long time, that can be a sign of low mood, and it's worth talking to your doctor."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "cheap-hobbies-small-space",
+  "offer": "hobby-taster",
+  "title": "Cheap hobbies to try at home in a small space",
+  "description": "Low-cost hobby ideas that don't need much room or equipment.",
+  "intro": "You don't need a big budget or a spare room to start a hobby. Here are ideas that work at a kitchen table.",
+  "sections": [
+   {
+    "h": "Creative",
+    "list": [
+     "Sketching or watercolour with a small starter set.",
+     "Writing: a journal, short stories or poems.",
+     "Phone photography, exploring your neighbourhood."
+    ]
+   },
+   {
+    "h": "Hands-on",
+    "list": [
+     "Knitting, crochet or embroidery.",
+     "Origami or paper crafts.",
+     "Cooking or baking something new each week."
+    ]
+   },
+   {
+    "h": "Learning",
+    "list": [
+     "A language, with free apps or library resources.",
+     "An instrument like the ukulele or harmonica.",
+     "Puzzles, chess or card games."
+    ]
+   },
+   {
+    "h": "Growing",
+    "p": [
+     "Herbs or houseplants on a windowsill."
+    ]
+   }
+  ]
  }
 ]
