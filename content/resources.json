@@ -32597,5 +32597,75 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "learn-salah-step-by-step-new-muslims",
+  "offer": "first-salah",
+  "title": "How new Muslims can learn salah step by step",
+  "description": "A gentle order for learning the positions and recitations of the prayer.",
+  "intro": "Learning to pray as an adult can feel like a lot at once. Breaking it into small parts, and learning them in order, makes it manageable. Practices differ between schools of thought, so check details with your local imam or teacher.",
+  "sections": [
+   {
+    "h": "Start with the movements",
+    "list": [
+     "Learn the order of the positions: standing, bowing, prostrating and sitting.",
+     "Practise them slowly until the order feels natural."
+    ]
+   },
+   {
+    "h": "Learn Al-Fatiha first",
+    "list": [
+     "It is recited in every unit of prayer, so it is the most important part to learn by heart.",
+     "Learn one verse at a time, listening and repeating."
+    ]
+   },
+   {
+    "h": "Add the short phrases",
+    "p": [
+     "Then learn the short phrases said in each position, one at a time, before moving on."
+    ]
+   },
+   {
+    "h": "Ask for help",
+    "p": [
+     "Many mosques run classes or buddy schemes for new Muslims. Praying alongside others is one of the quickest ways to learn."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "pray-salah-without-phone-memorise",
+  "offer": "first-salah",
+  "title": "How to memorise salah so you can pray without your phone",
+  "description": "Memorising tips for reverts who still read from an app while they pray.",
+  "intro": "Reading from a phone is a fine way to start. Moving to praying from memory comes from steady, small repetition.",
+  "sections": [
+   {
+    "h": "One new piece a week",
+    "p": [
+     "Pick one recitation and practise it daily until you can say it without looking. Then add the next."
+    ]
+   },
+   {
+    "h": "Listen often",
+    "list": [
+     "Play recitations while commuting or doing chores.",
+     "Repeat aloud along with them."
+    ]
+   },
+   {
+    "h": "Test yourself",
+    "list": [
+     "Say the part without looking, then check.",
+     "Mark it as known only when you get it right on two different days."
+    ]
+   },
+   {
+    "h": "Be patient with yourself",
+    "p": [
+     "Many reverts take months to learn the whole prayer. Ask your imam or teacher to listen to your pronunciation now and then."
+    ]
+   }
+  ]
  }
 ]

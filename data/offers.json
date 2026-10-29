@@ -57545,6 +57545,97 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-29",
+    "slug": "first-salah",
+    "name": "First Salah",
+    "need": "I'm a new or returning Muslim and I want to learn to pray salah properly, with the right positions and words, until I can pray on my own without following my phone.",
+    "headline": "New to salah or coming back to it? Learn one part at a time, check you know it by heart, and work towards praying without your phone.",
+    "buyer": "English-speaking adult reverts and returning Muslims who don't speak Arabic and want to pray salah on their own.",
+    "bullets": [
+      "A step-by-step ladder: positions first, then Al-Fatiha, then each recitation, one at a time.",
+      "Short listen-and-repeat sessions and a self-check before you move on to the next part.",
+      "Mark each part you know by heart and see how close you are to praying without the phone."
+    ],
+    "price": "$4.99/month",
+    "priceUsd": 5,
+    "priceNote": "Or $29 a year.",
+    "reasonPrompt": "Which parts of salah are you learning now, and what do you find hardest?",
+    "faq": [
+      {
+        "q": "Is it a religious authority?",
+        "a": "No. First Salah is a learning and memorising aid. Practices differ between schools of thought, so follow the guidance of your local imam or teacher, and ask them about anything you're unsure of."
+      },
+      {
+        "q": "Is it linked to any mosque, organisation or app?",
+        "a": "No. First Salah is independent and not affiliated with any mosque, organisation or app."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-29",
+      "summary": "Reverts say it can be very lonely and very hard to learn how to pray, that it took them forever, that they've had years of difficulty reciting the prayers on their own, that they got so frustrated they almost gave up, and that they struggled to find something to help them pray.",
+      "wtp": "Namaz App: Learn Salah Prayer has 15K ratings and sells Premium at $3.99 a month or $29.99 a year, with Premium Plus at $12.99 a month.",
+      "signals": [
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1447056625/sortby=mosthelpful/json",
+          "who": "AlexSalam (App Store review of Namaz App)",
+          "date": "2024-05-05",
+          "quote": "As a revert Muslim, it can be very lonely and very hard to learn how to pray",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1447056625/sortby=mosthelpful/json",
+          "who": "desperate_student25 (App Store review of Namaz App)",
+          "date": "2022-05-02",
+          "quote": "As a revert it took me forever to learn to pray",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1447056625/sortby=mosthelpful/json",
+          "who": "Snatsmc (App Store review of Namaz App)",
+          "date": "2024-03-19",
+          "quote": "I have had years of difficulty with reciting the prayers on my own",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1447056625/sortby=mosthelpful/json",
+          "who": "baileymckinnis (App Store review of Namaz App)",
+          "date": "2024-01-20",
+          "quote": "I became so frustrated with trying to learn and I almost gave up",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=2/id=1447056625/sortby=mosthelpful/json",
+          "who": "twentycandle (App Store review of Namaz App)",
+          "date": "2022-03-13",
+          "quote": "I struggled with learning how to pray",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=875280793/sortby=mosthelpful/json",
+          "who": "Zaidah Nuner (App Store review of Namaz: Learn Salat & Salah)",
+          "date": "2021-12-04",
+          "quote": "As a revert it was hard for me to get into praying because i could not find something to help me pray",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/namaz-app-learn-salah-prayer/id1447056625",
+          "who": "Namaz App (App Store)",
+          "date": "2026-10-29",
+          "quote": "15K Ratings; Premium Monthly $3.99; Premium Yearly $29.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Salah learning apps (Namaz App, Namaz: Learn Salat), mosque classes for new Muslims, teachers and YouTube.",
+      "risks": "Next to live Prayer Keep (consistency) and Letter Join (reading Arabic), so it stays about learning salah by heart; well-loved free and low-cost apps exist; practice differs between schools, so it defers to the user's imam or teacher; some reviewers may be minors, so it is aimed at adults."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
