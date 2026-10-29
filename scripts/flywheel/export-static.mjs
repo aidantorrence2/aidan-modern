@@ -83,6 +83,12 @@ const postsDir = path.join(out, 'posts'), keep = path.join(root, '.posts-keep')
 if (fs.existsSync(postsDir)) { fs.rmSync(keep, { recursive: true, force: true }); fs.renameSync(postsDir, keep) }
 fs.rmSync(out, { recursive: true, force: true })
 fs.mkdirSync(out, { recursive: true })
+// Recreate the Vercel exclusion on every clean export. A one-off gh-pages
+// file is removed by publish-pages.sh when it replaces the output tree.
+fs.writeFileSync(path.join(out, 'vercel.json'), JSON.stringify({
+  $schema: 'https://openapi.vercel.sh/vercel.json',
+  git: { deploymentEnabled: { 'gh-pages': false } },
+}, null, 2) + '\n')
 if (fs.existsSync(keep)) fs.renameSync(keep, postsDir)
 const live = offers.filter(o => o.status !== 'draft' && o.status !== 'killed')
 // drop post cards for offers that are no longer live

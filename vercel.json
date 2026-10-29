@@ -1,0 +1,9 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "git": {
+    "deploymentEnabled": {
+      "ccr-d1938557-3pv196": false,
+      "gh-pages": false
+    }
+  }
+}

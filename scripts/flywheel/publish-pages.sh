@@ -14,6 +14,14 @@ else
 fi
 (cd "$WT" && find . -mindepth 1 -maxdepth 1 ! -name .git -exec rm -rf {} +) && cp -a static-offers/. "$WT"/
 cd "$WT"
+# Fail closed if an exporter change would re-enable Vercel for static output.
+node - <<'NODE'
+const fs = require('node:fs')
+const config = JSON.parse(fs.readFileSync('vercel.json', 'utf8'))
+if (config.git?.deploymentEnabled?.['gh-pages'] !== false) {
+  throw new Error('Refusing to publish: gh-pages must be excluded from Vercel deployments')
+}
+NODE
 git add -A
 if git commit -q -m "Publish offer pages $(date -u +%Y-%m-%dT%H:%MZ)
 
