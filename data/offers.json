@@ -55977,6 +55977,97 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-29",
+    "slug": "bucket-keeper",
+    "name": "Bucket Keeper",
+    "need": "I keep a list in my head of things I want to do before I die, but it's scattered, I lose track of it, and I never actually do any of it.",
+    "headline": "Bucket list stuck in your head? Keep it in one place, put a date on the next thing, and actually tick experiences off this year.",
+    "buyer": "Adults who want to turn a vague bucket list into experiences they actually do.",
+    "bullets": [
+      "One place for every 'one day' idea: trips, things to try nearby, big one-offs.",
+      "Pick the next one, give it a date and a first small step.",
+      "A gentle nudge each month, and a record of what you've done, with photos."
+    ],
+    "price": "$2.99/month",
+    "priceUsd": 3,
+    "priceNote": "Or $19 a year.",
+    "reasonPrompt": "What's one thing on your list you've been meaning to do for years?",
+    "faq": [
+      {
+        "q": "Is it a social app?",
+        "a": "No. Bucket Keeper is private by default. You can share a list with a partner or friend if you choose."
+      },
+      {
+        "q": "Is it linked to a travel company or another app?",
+        "a": "No. Bucket Keeper is independent and not affiliated with any travel company, brand or app."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-29",
+      "summary": "People describe always wanting to organise a bucket list and never managing it, constantly losing track of things they wanted to do before they died, looking for a bucket list app for years, and finally being able to track fun things they want to do and have done.",
+      "wtp": "The Bucket List App has 855 App Store ratings with Explorer at $4.99 a month or $49.99 a year.",
+      "signals": [
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1509377504/sortby=mosthelpful/json",
+          "who": "Em11122999 (App Store review of Bucket)",
+          "date": "2021-05-02",
+          "quote": "I always want to create bucket lists and organize them, and never have been able to before",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1509377504/sortby=mosthelpful/json",
+          "who": "D rain 22349 (App Store review of Bucket)",
+          "date": "2022-07-07",
+          "quote": "constantly losing my train of thought of things I wanted to do before I died",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/bucket-list-the-bucket-app/id1509377504",
+          "who": "Wendy Tr (App Store review of Bucket)",
+          "date": "2023-01-15",
+          "quote": "I had looked for a bucket list app for years",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1509377504/sortby=mostrecent/json",
+          "who": "anonynousworks (App Store review of Bucket)",
+          "date": "2026-09-18",
+          "quote": "Was looking for an app for a bucket list",
+          "seen": "opened"
+        },
+        {
+          "url": "https://itunes.apple.com/us/rss/customerreviews/page=1/id=1509377504/sortby=mostrecent/json",
+          "who": "GarrettO26 (App Store review of Bucket)",
+          "date": "2023-09-27",
+          "quote": "I can finally track fun things I want to do and have done",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id6451215432",
+          "who": "Madeline D 123 (App Store review of The Bucket List App)",
+          "date": "2026-09-25",
+          "quote": "keep dreaming about all the places we still want to go",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id6451215432",
+          "who": "The Bucket List App (App Store)",
+          "date": "2026-10-29",
+          "quote": "855 Ratings; Explorer Monthly $4.99; Explorer Yearly $49.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Bucket list apps (Bucket, The Bucket List App), notes apps, goal apps.",
+      "risks": "Close to live Wallgoal (goals) and Places Been (travel log), so it stays about doing experiences; most quotes come from one app's reviews; two quotes were seen in the agent's saved copy because the live most-helpful feed came back empty; willingness to pay rests on one listing."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
