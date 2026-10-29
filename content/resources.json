@@ -29881,5 +29881,68 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "preview-new-wheels-on-your-car",
+  "offer": "mod-preview",
+  "title": "How to see what new wheels will look like on your car before you buy",
+  "description": "Ways to preview wheels on your car, and the fitment details to check before you order.",
+  "intro": "Wheels are one of the biggest visual changes you can make to a car, and they're not cheap. Previewing them first helps you avoid an expensive mistake.",
+  "sections": [
+   {
+    "h": "Preview the look",
+    "list": [
+     "Many wheel retailers have online visualisers for common makes and models.",
+     "Photo-based preview tools can show wheels on a picture of your own car.",
+     "Look at photos of the same car model on owner forums with the wheels you like."
+    ]
+   },
+   {
+    "h": "Check the fitment",
+    "list": [
+     "Bolt pattern and centre bore must match your car.",
+     "Wheel width and offset decide how far the wheel sits in or out, and whether it rubs.",
+     "Tyre size affects ride, speedometer accuracy and clearance."
+    ]
+   },
+   {
+    "h": "Before you order",
+    "list": [
+     "Confirm fitment with the seller or a tyre shop using your exact model and year.",
+     "Check whether you need new tyres, spacers or wheel nuts."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "window-tint-percentages-explained",
+  "offer": "mod-preview",
+  "title": "Window tint percentages explained",
+  "description": "What window tint percentages mean, how dark they look, and why local rules matter.",
+  "intro": "Window tint is measured by how much light it lets through, called VLT (visible light transmission). The lower the percentage, the darker the tint.",
+  "sections": [
+   {
+    "h": "Common levels",
+    "list": [
+     "Around 50%: a light tint, mainly for heat and glare.",
+     "Around 35%: noticeably darker, but you can still see in.",
+     "Around 20%: dark; hard to see inside in daylight.",
+     "Around 5%: very dark, often called limo tint."
+    ]
+   },
+   {
+    "h": "Things that change the look",
+    "list": [
+     "Many car windows already have a slight factory tint, so the final result is darker than the film alone.",
+     "Light conditions and interior colour change how dark it looks."
+    ]
+   },
+   {
+    "h": "Check the rules",
+    "p": [
+     "Legal tint limits vary by country and state, and often differ for front, rear and back windows. Check your local rules before you tint, as illegal tint can lead to fines or failed inspections."
+    ]
+   }
+  ]
  }
 ]
