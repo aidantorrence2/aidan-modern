@@ -30154,5 +30154,73 @@
     ]
    }
   ]
+ },
+ {
+  "slug": "how-to-find-the-key-of-a-song",
+  "offer": "theory-clicks",
+  "title": "How to find the key of a song",
+  "description": "Simple ways to work out what key a song is in, even if you don't read music.",
+  "intro": "Knowing the key of a song helps you understand why its chords fit, improvise over it and change it to suit your voice.",
+  "sections": [
+   {
+    "h": "Listen for home",
+    "p": [
+     "The key's main note or chord usually feels like 'home': songs often start and end on it, and it feels settled when the song lands there."
+    ]
+   },
+   {
+    "h": "Look at the chords",
+    "list": [
+     "List the chords in the song.",
+     "Find the one that feels most like home; it's often the first or last chord.",
+     "Check whether the other chords belong to that key (see below)."
+    ]
+   },
+   {
+    "h": "The chords in a major key",
+    "list": [
+     "In a major key, chords built on the 1st, 4th and 5th notes are major.",
+     "Those on the 2nd, 3rd and 6th notes are minor.",
+     "In C major, that gives C, F and G (major) and Dm, Em and Am (minor)."
+    ]
+   },
+   {
+    "h": "Check by playing",
+    "p": [
+     "Play the scale of the key you think it is along with the song. If it fits without clashing, you've probably found it."
+    ]
+   }
+  ]
+ },
+ {
+  "slug": "why-i-iv-v-chords-work",
+  "offer": "theory-clicks",
+  "title": "Why the I, IV and V chords work so well together",
+  "description": "A plain explanation of the most common chord pattern in pop, rock, folk and blues.",
+  "intro": "Countless songs use just three chords, known as I, IV and V. Understanding why makes learning new songs much easier.",
+  "sections": [
+   {
+    "h": "What the numbers mean",
+    "list": [
+     "Number the notes of a major scale from 1 to 7.",
+     "I, IV and V are the chords built on the 1st, 4th and 5th notes.",
+     "In C: C, F and G. In G: G, C and D. In D: D, G and A."
+    ]
+   },
+   {
+    "h": "Why they fit",
+    "list": [
+     "Between them, these three chords contain every note of the major scale.",
+     "The V chord pulls strongly back to I, which is why songs often end V to I.",
+     "IV gives a sense of moving away before returning home."
+    ]
+   },
+   {
+    "h": "Try it",
+    "p": [
+     "Pick a key, play I, IV, V and back to I, then try the same pattern in another key. You'll start to hear it in songs everywhere."
+    ]
+   }
+  ]
  }
 ]

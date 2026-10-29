@@ -55312,6 +55312,97 @@
   },
   {
     "type": "software",
+    "status": "live",
+    "launched": "2026-10-29",
+    "slug": "theory-clicks",
+    "name": "Theory Clicks",
+    "need": "I play by shapes, tabs or ear but I've never understood music theory, and every time I try I get lost.",
+    "headline": "Play by shapes or tabs but music theory never clicked? Learn it in ten-minute lessons built from songs you already play, on your own instrument.",
+    "buyer": "Adults (18+) who play an instrument or sing by shapes, tabs or rote and gave up on music theory.",
+    "bullets": [
+      "Ten-minute lessons built from songs you already know: find the key, the scale and the chords in them.",
+      "Hear why the chords fit together, on guitar, bass, ukulele, piano or voice.",
+      "Quick checks that bring back ideas you've missed, and a simple map of what you know."
+    ],
+    "price": "$3.99/month",
+    "priceUsd": 4,
+    "priceNote": "Or $24 a year. For adults 18+.",
+    "reasonPrompt": "What do you play, and where does theory lose you?",
+    "faq": [
+      {
+        "q": "Do I need to read music?",
+        "a": "No. Theory Clicks starts from the songs and shapes you already play. You can learn notation later if you want to."
+      },
+      {
+        "q": "Is it linked to a music school or app?",
+        "a": "No. Theory Clicks is independent and not affiliated with any school, course or app. It's a learning aid, not a replacement for a teacher."
+      },
+      {
+        "q": "Does it exist yet?",
+        "a": "No. This page checks whether enough people want it. Leave your email and you will hear when it is ready. Nothing is charged."
+      }
+    ],
+    "demand": {
+      "checked": "2026-10-29",
+      "summary": "Adult players describe having no knowledge of theory whatsoever, suffering from the same problem, dropping out of three theory classes hopelessly lost, a primitive grasp of theory, and forgetting all theory and how to read music.",
+      "wtp": "Tenuto sells for $4.99 with 667 App Store ratings; Music Theory Pro sells for $4.99; pohjonen says they could afford lessons now but are afraid of them.",
+      "signals": [
+        {
+          "url": "https://boards.straightdope.com/t/why-do-i-have-such-a-problem-with-understanding-music-theory/804268",
+          "who": "pohjonen (Straight Dope)",
+          "date": "2017-12-12",
+          "quote": "I have no knowledge of any theory whatsoever",
+          "seen": "opened"
+        },
+        {
+          "url": "https://boards.straightdope.com/t/why-do-i-have-such-a-problem-with-understanding-music-theory/804268",
+          "who": "ZipperJJ (Straight Dope)",
+          "date": "2017-12-12",
+          "quote": "I suffer from the same problem as the OP",
+          "seen": "opened"
+        },
+        {
+          "url": "https://boards.straightdope.com/t/why-do-i-have-such-a-problem-with-understanding-music-theory/804268",
+          "who": "Ulfreida (Straight Dope)",
+          "date": "2017-12-12",
+          "quote": "I dropped out of three different music theory classes",
+          "seen": "opened"
+        },
+        {
+          "url": "https://boards.straightdope.com/t/why-do-i-have-such-a-problem-with-understanding-music-theory/804268",
+          "who": "WordMan (Straight Dope)",
+          "date": "2017-12-12",
+          "quote": "my grasp of theory is primitive at best",
+          "seen": "opened"
+        },
+        {
+          "url": "https://www.tigerdroppings.com/rant/music/re-learning-music-theory-as-an-adult/84119778/",
+          "who": "Masterag (TigerDroppings)",
+          "date": "2019-06-25",
+          "quote": "completely forgot all music theory and how to read the staff",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/tenuto/id459313476",
+          "who": "Tenuto (App Store)",
+          "date": "2026-10-28",
+          "quote": "667 Ratings; $4.99",
+          "seen": "opened"
+        },
+        {
+          "url": "https://apps.apple.com/us/app/id390788573",
+          "who": "Music Theory Pro (App Store)",
+          "date": "2026-10-28",
+          "quote": "$4.99",
+          "seen": "opened"
+        }
+      ],
+      "competitors": "Theory drill apps (Tenuto, Music Theory Pro), online courses, YouTube, teachers.",
+      "risks": "Forum posts are old (2017, 2019); paid theory apps are modest; nobody wrote that they'd pay for an app; next to live Read The Notes, Fretboard Fluent and Ear First."
+    }
+  },
+  {
+    "type": "software",
     "status": "killed",
     "launched": "2026-10-19",
     "slug": "managed-contact-form-inbox",
