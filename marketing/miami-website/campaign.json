@@ -1,0 +1,87 @@
+{
+  "status": "prepared_not_created_in_meta",
+  "reference": {
+    "file": "marketing/charlotte-ig-dm/launch-website/META.md",
+    "campaign_id": "120251065362430614",
+    "adset_id": "120251065362410614",
+    "ad_id": "120251065362420614",
+    "note": "Saved 27 Oct configuration; verify current source in Ads Manager before duplication."
+  },
+  "campaign": {
+    "name": "miami - website",
+    "objective": "Sales",
+    "initial_status": "PAUSED",
+    "advantage_plus_sales": false
+  },
+  "adset": {
+    "name": "miami - women",
+    "conversion_location": "Website",
+    "performance_goal": "Maximise landing page views",
+    "daily_budget_usd": 5,
+    "geo": {
+      "city": "Miami, Florida",
+      "radius_miles": 25,
+      "reach_people_interested_in_location": false
+    },
+    "age_min": 21,
+    "age_max": 33,
+    "gender": "women",
+    "advantage_plus_audience": false,
+    "placements": [
+      "Instagram Feed",
+      "Instagram Stories",
+      "Instagram Explore home",
+      "Instagram Reels",
+      "Instagram Profile feed",
+      "Instagram Search",
+      "WhatsApp Status"
+    ],
+    "schedule": "Keep paused until launch timing is confirmed; no end date assumed."
+  },
+  "ad": {
+    "name": "miami - women - carousel",
+    "format": "carousel",
+    "primary_text": "i'm aidan, a portrait photographer. i'm shooting in miami for a short time. free photo shoot, about an hour. i direct every frame.",
+    "headline_all_cards": "Miami Free Photo Shoot",
+    "call_to_action": "SIGN_UP",
+    "website_url": "https://aidantorrence.com/sign-up-collab-miami",
+    "url_parameters": "utm_source=ig&utm_medium=paid&utm_campaign=miami-website",
+    "pixel_id": "1921768771718409",
+    "enhancements": "All off except Relevant comments",
+    "cards": [
+      {
+        "order": 1,
+        "source": "r1a/clt-web-01.jpg",
+        "change": "Rebuild original h01 hook with Miami in place of Charlotte."
+      },
+      {
+        "order": 2,
+        "source": "r1a/clt-web-02.jpg",
+        "change": "Keep my recent work photos/layout; change city badge to MIAMI."
+      },
+      {
+        "order": 3,
+        "source": "r1a/clt-web-03.jpg",
+        "change": "Keep original direction/reassurance card; change city badge to MIAMI."
+      },
+      {
+        "order": 4,
+        "source": "r1a/clt-web-04.jpg",
+        "change": "Keep Interested? Sign up below. Replace city badge with MIAMI and line with I'm only in Miami for a short time — let's shoot."
+      }
+    ]
+  },
+  "remaining": [
+    "Sign in to Meta Ads Manager to duplicate source campaign and verify current settings.",
+    "Obtain original four rendered cards or renderer photo/face inputs, then rebuild city text.",
+    "Set the Miami URL on all four carousel cards and the main website destination.",
+    "Keep new campaign off until activation is authorized."
+  ],
+  "tracking": {
+    "analytics_path": "/sign-up-collab-miami",
+    "version": "v7d-miami-onepage",
+    "lead_source": "sign-up-collab-miami",
+    "signup_city": "Miami",
+    "signup_location": "Miami, FL"
+  }
+}

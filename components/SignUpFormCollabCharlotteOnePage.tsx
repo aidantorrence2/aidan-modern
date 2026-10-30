@@ -26,8 +26,6 @@ type Step = 'location' | 'vibe' | 'notes' | 'photos' | 'instagram' | 'done'
 const BACK_TO: Partial<Record<Step, Step>> = {
   vibe: 'location', photos: 'vibe', instagram: 'photos', notes: 'instagram',
 }
-const CITY = 'Charlotte'
-const CITY_FULL = 'Charlotte, NC'
 
 function resizeImage(dataUrl: string, maxBytes: number): Promise<string> {
   return new Promise((resolve, reject) => {
@@ -202,7 +200,23 @@ function CheckIcon({ className }: { className?: string }) {
   )
 }
 
-export default function SignUpFormCollabCharlotteOnePage({ analyticsPath = '/sign-up-collab-v7d' }: { analyticsPath?: string }) {
+type CollabOnePageProps = {
+  analyticsPath?: string
+  city?: string
+  cityFull?: string
+  phoneExample?: string
+  analyticsVersion?: string
+  leadSource?: string
+}
+
+export default function SignUpFormCollabCharlotteOnePage({
+  analyticsPath = '/sign-up-collab-v7d',
+  city: CITY = 'Charlotte',
+  cityFull: CITY_FULL = 'Charlotte, NC',
+  phoneExample = '704 555 0123',
+  analyticsVersion = 'v7d-charlotte-onepage',
+  leadSource = 'sign-up-collab-v7d',
+}: CollabOnePageProps) {
   const [step, setStep] = useState<Step>('location')
   const [error, setError] = useState<string | null>(null)
 
@@ -240,7 +254,7 @@ export default function SignUpFormCollabCharlotteOnePage({ analyticsPath = '/sig
   const [hydrated, setHydrated] = useState(false)
 
   useEffect(() => {
-    initPageAnalytics(analyticsPath, { version: 'v7d-charlotte-onepage' })
+    initPageAnalytics(analyticsPath, { version: analyticsVersion })
 
     let resumed: ResumeState | null = null
     try {
@@ -275,7 +289,7 @@ export default function SignUpFormCollabCharlotteOnePage({ analyticsPath = '/sig
     if (!resumed?.countryCode) setCountryCode(phoneCountry?.dial ?? '+1')
     if (phoneCountry) track('country_detected', { dial_iso: phoneCountry.iso })
     setHydrated(true)
-  }, [analyticsPath])
+  }, [analyticsPath, analyticsVersion])
 
   function persistResume() {
     const touched = step !== 'location' || !!vibe
@@ -350,7 +364,7 @@ export default function SignUpFormCollabCharlotteOnePage({ analyticsPath = '/sig
     const vibeLabel = VIBES.find(v => v.key === vibe)?.label
     return [
       'Collab sign-up',
-      'Signup flow: v7d-charlotte-onepage',
+      'Signup flow: ' + analyticsVersion,
       ...(vibeLabel ? ['Look: ' + vibeLabel] : []),
       'Location: ' + location,
       ...(idea.trim() ? ['Notes: ' + idea.trim()] : []),
@@ -385,7 +399,7 @@ export default function SignUpFormCollabCharlotteOnePage({ analyticsPath = '/sig
         setLeadRecord(lead)
         if (typeof window !== 'undefined' && !leadFired) {
           const fbq = (window as typeof window & { fbq?: (...args: unknown[]) => void }).fbq
-          if (typeof fbq === 'function') fbq('track', 'Lead', { source: 'sign-up-collab-v7d' })
+          if (typeof fbq === 'function') fbq('track', 'Lead', { source: leadSource })
           setLeadFired(true)
         }
         return lead
@@ -453,7 +467,7 @@ export default function SignUpFormCollabCharlotteOnePage({ analyticsPath = '/sig
       track('submit_success', { channel, elapsed_ms: pageElapsedMs() })
       flushNow()
       const fbq = (window as typeof window & { fbq?: (...args: unknown[]) => void }).fbq
-      if (typeof fbq === 'function' && !leadFired) { fbq('track', 'Lead', { source: 'sign-up-collab-v7d' }); setLeadFired(true) }
+      if (typeof fbq === 'function' && !leadFired) { fbq('track', 'Lead', { source: leadSource }); setLeadFired(true) }
       setStep('done')
       scrollToCard()
     } catch {
@@ -626,7 +640,7 @@ export default function SignUpFormCollabCharlotteOnePage({ analyticsPath = '/sig
         track('submit_success', { channel, recovered: true, elapsed_ms: pageElapsedMs() })
         if (leadFired) return
         const fbq = (window as typeof window & { fbq?: (...args: unknown[]) => void }).fbq
-        if (typeof fbq === 'function') fbq('track', 'Lead', { source: 'sign-up-collab-v7d' })
+        if (typeof fbq === 'function') fbq('track', 'Lead', { source: leadSource })
       }).catch(() => {})
     }
 
@@ -1027,7 +1041,7 @@ export default function SignUpFormCollabCharlotteOnePage({ analyticsPath = '/sig
                 onChange={e => { fieldEngaged('phone'); setPhone(e.target.value); setError(null) }}
                 onBlur={() => { const digits = phone.replace(/\D/g, ''); if (digits) trackOnce('phone_filled', digits, { digits: digits.length }) }}
                 className="min-w-0 flex-1 rounded-[3px] border border-neutral-300 bg-white px-4 py-3.5 text-base text-neutral-900 placeholder-neutral-400 outline-none transition focus:border-neutral-800 focus:bg-white focus:ring-4 focus:ring-neutral-900/10"
-                placeholder="Phone number, e.g. 704 555 0123"
+                placeholder={`Phone number, e.g. ${phoneExample}`}
               />
             </div>
           )}
@@ -1338,7 +1352,7 @@ export default function SignUpFormCollabCharlotteOnePage({ analyticsPath = '/sig
         <p className="absolute bottom-4 left-5 right-5 text-[44px] leading-none text-white" style={{ fontFamily: SERIF }}>You&apos;re in.</p>
       </div>
       <div className="space-y-5 pt-4">
-        <p className="text-sm text-neutral-500">I&apos;ll message you {CHANNELS[channel].doneVia} within 24 hours to plan your Charlotte shoot. Let&apos;s make something great together.</p>
+        <p className="text-sm text-neutral-500">I&apos;ll message you {CHANNELS[channel].doneVia} within 24 hours to plan your {CITY} shoot. Let&apos;s make something great together.</p>
         <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-neutral-400">What to expect</p>
         <ol className="divide-y divide-neutral-200 border-y border-neutral-200">
           {['Edited photos you can use however you want', 'Full creative direction from me', 'A real collaboration, not a transaction', 'We plan the concept together'].map((t, i) => (
