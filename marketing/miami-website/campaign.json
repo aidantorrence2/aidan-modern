@@ -41,7 +41,7 @@
   "ad": {
     "name": "miami - women - carousel",
     "format": "carousel",
-    "primary_text": "i'm aidan, a portrait photographer. i'm shooting in miami for a short time. free photo shoot, about an hour. i direct every frame.",
+    "primary_text": "i'm aidan, a portrait photographer. i'm shooting in miami for a short time. free photo shoot, 1–2 hours. beach, city streets, tropical greenery or indoors — we plan the look together, and i direct every frame.",
     "headline_all_cards": "Miami Free Photo Shoot",
     "call_to_action": "SIGN_UP",
     "website_url": "https://aidantorrence.com/sign-up-collab-miami",
@@ -51,31 +51,35 @@
     "cards": [
       {
         "order": 1,
-        "source": "r1a/clt-web-01.jpg",
-        "change": "Rebuild original h01 hook with Miami in place of Charlotte."
+        "file": "creative/miami-web-01.jpg",
+        "headline": "Miami Free Photo Shoot",
+        "website_url": "https://aidantorrence.com/sign-up-collab-miami"
       },
       {
         "order": 2,
-        "source": "r1a/clt-web-02.jpg",
-        "change": "Keep my recent work photos/layout; change city badge to MIAMI."
+        "file": "creative/miami-web-02.jpg",
+        "headline": "Miami Free Photo Shoot",
+        "website_url": "https://aidantorrence.com/sign-up-collab-miami"
       },
       {
         "order": 3,
-        "source": "r1a/clt-web-03.jpg",
-        "change": "Keep original direction/reassurance card; change city badge to MIAMI."
+        "file": "creative/miami-web-03.jpg",
+        "headline": "Miami Free Photo Shoot",
+        "website_url": "https://aidantorrence.com/sign-up-collab-miami"
       },
       {
         "order": 4,
-        "source": "r1a/clt-web-04.jpg",
-        "change": "Keep Interested? Sign up below. Replace city badge with MIAMI and line with I'm only in Miami for a short time — let's shoot."
+        "file": "creative/miami-web-04.jpg",
+        "headline": "Miami Free Photo Shoot",
+        "website_url": "https://aidantorrence.com/sign-up-collab-miami"
       }
-    ]
+    ],
+    "creative_note": "Miami adaptation of the CLT four-card website carousel structure, rebuilt with available original portfolio photographs. Not an image-for-image duplicate of the original CLT cards."
   },
   "remaining": [
     "Sign in to Meta Ads Manager to duplicate source campaign and verify current settings.",
-    "Obtain original four rendered cards or renderer photo/face inputs, then rebuild city text.",
-    "Set the Miami URL on all four carousel cards and the main website destination.",
-    "Keep new campaign off until activation is authorized."
+    "Upload the four finished Miami cards and set the Miami URL on each card and the main destination.",
+    "Keep the new campaign off until activation is authorized."
   ],
   "tracking": {
     "analytics_path": "/sign-up-collab-miami",
