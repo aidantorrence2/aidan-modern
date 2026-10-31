@@ -54,12 +54,6 @@ export default function SignUpCollabMiamiPage() {
             '/images/pinterest/9a6780eb667fe440ae6f2a15d2dc2496.jpg',
             '/images/pinterest/ccc14f116eb8ca90fc4464786efc6f1d.jpg',
           ] },
-          { key: 'nature', label: 'Nature', board: [
-            '/images/pinterest/60566e91c9ec385606927957a272bc3d.jpg',
-            '/images/pinterest/24210711b4260f21946c0951d4916f08.jpg',
-            '/images/pinterest/99a3e5dccb2285f0128a9ccac5e4c6fd.jpg',
-            '/images/pinterest/b404f668106f2efa1f58900719796111.jpg',
-          ] },
           { key: 'indoor', label: 'Indoor', board: [
             '/images/pinterest/0abbec603ab8b5d733961ff67a0a782a.jpg',
             '/images/pinterest/136d123eddd4961d1842f6990f529b7d.jpg',
