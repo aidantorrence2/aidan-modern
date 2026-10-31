@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from 'next';
-import PhotographicPortfolio from '@/components/PhotographicPortfolio';
+import NewTopTierPortfolio from '@/components/NewTopTierPortfolio';
 
 export const metadata: Metadata = {
   title: 'Aidan Torrence',
@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     type: 'website',
     url: 'https://www.aidantorrence.com',
     images: [{
-      url: 'https://www.aidantorrence.com/images/opt/full/phoenix-ii-3-r1-09797-0005.webp',
+      url: 'https://www.aidantorrence.com/images/new_top_tier_headliners_web/R1-00007-025A.jpg',
       width: 1070,
       height: 1600,
       alt: 'Photograph by Aidan Torrence',
@@ -21,12 +21,12 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Aidan Torrence',
     description: 'Photographs by Aidan Torrence.',
-    images: ['https://www.aidantorrence.com/images/opt/full/phoenix-ii-3-r1-09797-0005.webp'],
+    images: ['https://www.aidantorrence.com/images/new_top_tier_headliners_web/R1-00007-025A.jpg'],
   },
 };
 
 export const viewport: Viewport = { themeColor: '#0b1512' };
 
 export default function HomePage() {
-  return <PhotographicPortfolio />;
+  return <NewTopTierPortfolio />;
 }
