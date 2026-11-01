@@ -3,11 +3,11 @@ import NewTopTierPortfolio from '@/components/NewTopTierPortfolio';
 
 export const metadata: Metadata = {
   title: 'Aidan Torrence',
-  description: 'Photographs by Aidan Torrence.',
+  description: 'Fashion, editorial and portrait photography by Aidan Torrence. Miami: October 30–November 3, 2026. Rio de Janeiro, Brazil: November 5–December 4, 2026.',
   alternates: { canonical: 'https://www.aidantorrence.com' },
   openGraph: {
     title: 'Aidan Torrence',
-    description: 'Photographs by Aidan Torrence.',
+    description: 'Fashion, editorial and portrait photography by Aidan Torrence. Miami: October 30–November 3, 2026. Rio de Janeiro, Brazil: November 5–December 4, 2026.',
     type: 'website',
     url: 'https://www.aidantorrence.com',
     images: [{
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Aidan Torrence',
-    description: 'Photographs by Aidan Torrence.',
+    description: 'Fashion, editorial and portrait photography by Aidan Torrence. Miami: October 30–November 3, 2026. Rio de Janeiro, Brazil: November 5–December 4, 2026.',
     images: ['https://www.aidantorrence.com/images/new_top_tier_headliners_web/R1-00007-025A.jpg'],
   },
 };

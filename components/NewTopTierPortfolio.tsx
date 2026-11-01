@@ -714,8 +714,15 @@ export default function NewTopTierPortfolio() {
           <a href="https://www.instagram.com/madebyaidan" target="_blank" rel="noopener noreferrer" aria-label="Instagram, opens in a new tab">Instagram</a>
         </nav>
       </header>
+      <section className={styles['travel-note']} aria-label="Travel availability">
+        <p className={styles['travel-dates']}>
+          <span>Miami <time dateTime="2026-10-30">Oct 30</time>–<time dateTime="2026-11-03">Nov 3</time></span>
+          <span>Rio de Janeiro <time dateTime="2026-11-05">Nov 5</time>–<time dateTime="2026-12-04">Dec 4</time></span>
+        </p>
+        <p className={styles['travel-caption']}>2026 · Available for fashion, editorial &amp; portraits</p>
+      </section>
       <div id="work" />
-      <div className={styles.sequence} id="photographs" role="region" aria-label="Photographs by Aidan Torrence">
+      <div className={`${styles.sequence} ${styles['travel-sequence']}`} id="photographs" role="region" aria-label="Photographs by Aidan Torrence">
         {edit.passages.map((passage, passageIndex) => (
           <div className={styles.passage} style={{ '--ground': passage.ground } as CSSProperties} key={passage.ids[0]}>
             <div className={[styles.composition, styles[passage.layout], passageIndex === 0 ? styles.opening : ''].join(' ')}>
