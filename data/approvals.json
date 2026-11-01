@@ -3237,7 +3237,9 @@
       "summary": "System Settings > Privacy & Security > Accessibility is open: switch Pulse ON (if it isn't listed, add /Applications/Pulse.app with +). Only you can flip it. Safe area has been off since Oct 19 because of this one switch.",
       "payload": {
         "action": "User flips the Accessibility toggle for /Applications/Pulse.app; Claude only watches live state and confirms axTrusted=true observers>0",
-        "no_code_change": true
+        "no_code_change": true,
+        "result": "Not done yet: the card approval does not flip the macOS switch and this session has no Accessibility rights to click it (osascript -1728, AXIsProcessTrusted=false). axTrusted still false at 09:04; the toggle has to be flipped by hand.",
+        "result_at": "2026-11-01T14:04:56Z"
       },
       "created": "2026-11-01T14:03:59Z",
       "expires": "2026-11-04T14:03:59Z",
