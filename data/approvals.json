@@ -3228,6 +3228,22 @@
       "status": "approved",
       "decided": "2026-10-28T02:01:06Z",
       "note": ""
+    },
+    {
+      "id": "pulse-ax-grant-20261101",
+      "kind": "other",
+      "source": "claude:Pulse",
+      "title": "Turn on Accessibility for Pulse so the safe area works again",
+      "summary": "System Settings > Privacy & Security > Accessibility is open: switch Pulse ON (if it isn't listed, add /Applications/Pulse.app with +). Only you can flip it. Safe area has been off since Oct 19 because of this one switch.",
+      "payload": {
+        "action": "User flips the Accessibility toggle for /Applications/Pulse.app; Claude only watches live state and confirms axTrusted=true observers>0",
+        "no_code_change": true
+      },
+      "created": "2026-11-01T14:03:59Z",
+      "expires": "2026-11-04T14:03:59Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
     }
   ]
 }
