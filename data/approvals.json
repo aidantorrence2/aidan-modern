@@ -3340,6 +3340,29 @@
       "status": "denied",
       "decided": "2026-11-02T23:03:48Z",
       "note": ""
+    },
+    {
+      "id": "other:force-detach-the-frozen-lightroompreview-202611022305",
+      "kind": "other",
+      "source": "codex:aidantorrence",
+      "title": "Force-detach the frozen LightroomPreviews disk image",
+      "summary": "Try to recover Finder without restarting the Mac. Normal unmount is stuck; this would force-detach only LightroomPreviews and relaunch Finder. Pending writes inside that disk image could be lost or corrupted; Lightroom would lose access to it.",
+      "payload": {
+        "action": "force_detach_disk_image_and_relaunch_finder",
+        "target": "/Volumes/LightroomPreviews",
+        "backing_image": "/Volumes/PortableSSD/LightroomPreviews.sparsebundle",
+        "command": "hdiutil detach -force /dev/disk6",
+        "precondition": "Verify disk6 still contains the LightroomPreviews mounted image before detaching",
+        "after": "Relaunch Finder and verify local folder and Trash responsiveness",
+        "restart_mac": false,
+        "delete_files": false,
+        "risk": "Pending disk image writes may be lost or filesystem contents corrupted"
+      },
+      "created": "2026-11-02T23:05:40Z",
+      "expires": "2026-11-03T00:05:40Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
     }
   ]
 }
