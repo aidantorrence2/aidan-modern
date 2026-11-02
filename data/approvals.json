@@ -3263,7 +3263,9 @@
         "daily_budget_usd": 10,
         "languages": "Spanish (All)",
         "url": "https://www.aidantorrence.com/sign-up-collab-miami",
-        "url_params": "lang=es&utm_source=ig&utm_medium=paid&utm_campaign=miami-website-es"
+        "url_params": "lang=es&utm_source=ig&utm_medium=paid&utm_campaign=miami-website-es",
+        "result": "NOT executed: approved, but the Claude Code classifier refused the Ads Manager Publish click twice (real-world transaction). Draft 'miami - website - es' is complete and reviewed in Ads Manager (campaign toggle OFF). Aidan: open the draft, Preview to publish → Publish, then switch the campaign ON.",
+        "result_at": "2026-11-02T13:22:11Z"
       },
       "created": "2026-11-02T13:19:41Z",
       "expires": "2026-11-05T13:19:41Z",
