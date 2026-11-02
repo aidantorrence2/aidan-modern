@@ -26,6 +26,8 @@ type Step = 'location' | 'vibe' | 'notes' | 'photos' | 'instagram' | 'done'
 const BACK_TO: Partial<Record<Step, Step>> = {
   vibe: 'location', photos: 'vibe', instagram: 'photos', notes: 'instagram',
 }
+const CITY = 'Charlotte'
+const CITY_FULL = 'Charlotte, NC'
 
 function resizeImage(dataUrl: string, maxBytes: number): Promise<string> {
   return new Promise((resolve, reject) => {
@@ -64,13 +66,14 @@ function resizeImage(dataUrl: string, maxBytes: number): Promise<string> {
 
 // The hero cycles. It opens on the bubbles frame and crossfades on, so the
 // first thing the page does is show more work rather than sit still.
-const DEFAULT_HERO_SLIDES = [
+const HERO_SLIDES = [
   '/images/new_top_tier_headliners_web/000014.jpg',
   '/images/new_top_tier_headliners_web/R1-09793-0028.jpg',
   '/images/new_top_tier_headliners_web/R1-00005-0027.jpg',
   '/images/new_top_tier_headliners_web/R1-09798-032A.jpg',
   '/images/new_top_tier_headliners_web/R1-09952-0019.jpg',
 ]
+const heroImage = HERO_SLIDES[0]
 
 const proofImages = [
   '/images/new_top_tier_headliners_web/R1-00008-0005.jpg',
@@ -81,14 +84,14 @@ const proofImages = [
   '/images/new_top_tier_headliners_web/R1-09997-0011.jpg',
 ]
 
-const DEFAULT_HOW_IT_WORKS = [
+const howItWorks = [
   'Share your preferences',
   'I message you the details — timing, locations, what to wear',
   'We plan the concept together and shoot for 1–2 hours',
   "You get the edited photos — it's 100% free, always",
 ]
 
-type VibeKey = 'street' | 'nature' | 'indoor' | 'beach' | 'any'
+type VibeKey = 'street' | 'nature' | 'indoor' | 'any'
 
 // Frame 1. Real frames from the portfolio, not swatches — the tile IS the
 // pitch for that look. No single photograph stands for "any", so that one is a
@@ -96,8 +99,7 @@ type VibeKey = 'street' | 'nature' | 'indoor' | 'beach' | 'any'
 // the row as an image tile rather than a beige box among photographs.
 // Each look is a small moodboard of editorial references from the picker
 // library; "No preference" is deliberately blank.
-type VibeOption = { key: VibeKey; label: string; board: string[]; description?: string }
-const DEFAULT_VIBES: VibeOption[] = [
+const VIBES: { key: VibeKey; label: string; board: string[] }[] = [
   { key: 'street', label: 'Street', board: ['/images/pinterest/69bb96c034c12146decfa85a0ce55316.jpg', '/images/pinterest/7c00515e28ca183d63ecc24e55be119e.jpg', '/images/pinterest/9a6780eb667fe440ae6f2a15d2dc2496.jpg', '/images/pinterest/ccc14f116eb8ca90fc4464786efc6f1d.jpg'] },
   { key: 'nature', label: 'Nature', board: ['/images/pinterest/24210711b4260f21946c0951d4916f08.jpg', '/images/pinterest/99a3e5dccb2285f0128a9ccac5e4c6fd.jpg', '/images/pinterest/d40856ff2db31b0a67f57e9aaaff9975.jpg', '/images/pinterest/8e7b891866e37079a616f6e0be91d930.jpg'] },
   { key: 'indoor', label: 'Indoor', board: ['/images/pinterest/0abbec603ab8b5d733961ff67a0a782a.jpg', '/images/pinterest/136d123eddd4961d1842f6990f529b7d.jpg', '/images/pinterest/517b708768144f5d53a57d4ed2a9822a.jpg', '/images/pinterest/16e3fdc791b8418141c5d51e527fb695.jpg'] },
@@ -200,47 +202,7 @@ function CheckIcon({ className }: { className?: string }) {
   )
 }
 
-type CollabOnePageProps = {
-  analyticsPath?: string
-  city?: string
-  cityFull?: string
-  phoneExample?: string
-  analyticsVersion?: string
-  leadSource?: string
-  vibes?: VibeOption[]
-  heroSlides?: string[]
-  introduction?: string
-  formTitle?: string
-  vibePrompt?: string
-  howItWorksSteps?: string[]
-  whyFree?: string
-  notesHint?: string
-  notesPlaceholder?: string
-  successMessage?: string
-  compactNoPreference?: boolean
-}
-
-export default function SignUpFormCollabCharlotteOnePage({
-  analyticsPath = '/sign-up-collab-v7d',
-  city: CITY = 'Charlotte',
-  cityFull: CITY_FULL = 'Charlotte, NC',
-  phoneExample = '704 555 0123',
-  analyticsVersion = 'v7d-charlotte-onepage',
-  leadSource = 'sign-up-collab-v7d',
-  vibes: VIBES = DEFAULT_VIBES,
-  heroSlides: HERO_SLIDES = DEFAULT_HERO_SLIDES,
-  introduction,
-  formTitle = 'Fill out the form to sign up',
-  vibePrompt = "What's your vibe?",
-  howItWorksSteps: howItWorks = DEFAULT_HOW_IT_WORKS,
-  whyFree = 'I’m just doing a few free shoots while I’m in town for a short period — I want to create awesome content while I travel.',
-  notesHint = 'Your own idea, inspo, references — anything.',
-  notesPlaceholder = 'Totally optional...',
-  successMessage,
-  compactNoPreference = false,
-}: CollabOnePageProps) {
-  const heroImage = HERO_SLIDES[0]
-
+export default function SignUpFormCollabCharlotteOnePage({ analyticsPath = '/sign-up-collab-v7d' }: { analyticsPath?: string }) {
   const [step, setStep] = useState<Step>('location')
   const [error, setError] = useState<string | null>(null)
 
@@ -278,7 +240,7 @@ export default function SignUpFormCollabCharlotteOnePage({
   const [hydrated, setHydrated] = useState(false)
 
   useEffect(() => {
-    initPageAnalytics(analyticsPath, { version: analyticsVersion })
+    initPageAnalytics(analyticsPath, { version: 'v7d-charlotte-onepage' })
 
     let resumed: ResumeState | null = null
     try {
@@ -313,7 +275,7 @@ export default function SignUpFormCollabCharlotteOnePage({
     if (!resumed?.countryCode) setCountryCode(phoneCountry?.dial ?? '+1')
     if (phoneCountry) track('country_detected', { dial_iso: phoneCountry.iso })
     setHydrated(true)
-  }, [analyticsPath, analyticsVersion])
+  }, [analyticsPath])
 
   function persistResume() {
     const touched = step !== 'location' || !!vibe
@@ -360,7 +322,7 @@ export default function SignUpFormCollabCharlotteOnePage({
     if (reduced) return
     const t = setInterval(() => setHeroIndex(i => (i + 1) % HERO_SLIDES.length), 4200)
     return () => clearInterval(t)
-  }, [HERO_SLIDES.length])
+  }, [])
 
   const totalSlides = channel === 'instagram' ? 4 : 5
   const slideNo: Record<Exclude<Step, 'done'>, number> = { location: 1, vibe: 2, photos: 3, instagram: 4, notes: channel === 'instagram' ? 4 : 5 }
@@ -388,7 +350,7 @@ export default function SignUpFormCollabCharlotteOnePage({
     const vibeLabel = VIBES.find(v => v.key === vibe)?.label
     return [
       'Collab sign-up',
-      'Signup flow: ' + analyticsVersion,
+      'Signup flow: v7d-charlotte-onepage',
       ...(vibeLabel ? ['Look: ' + vibeLabel] : []),
       'Location: ' + location,
       ...(idea.trim() ? ['Notes: ' + idea.trim()] : []),
@@ -423,7 +385,7 @@ export default function SignUpFormCollabCharlotteOnePage({
         setLeadRecord(lead)
         if (typeof window !== 'undefined' && !leadFired) {
           const fbq = (window as typeof window & { fbq?: (...args: unknown[]) => void }).fbq
-          if (typeof fbq === 'function') fbq('track', 'Lead', { source: leadSource })
+          if (typeof fbq === 'function') fbq('track', 'Lead', { source: 'sign-up-collab-v7d' })
           setLeadFired(true)
         }
         return lead
@@ -491,7 +453,7 @@ export default function SignUpFormCollabCharlotteOnePage({
       track('submit_success', { channel, elapsed_ms: pageElapsedMs() })
       flushNow()
       const fbq = (window as typeof window & { fbq?: (...args: unknown[]) => void }).fbq
-      if (typeof fbq === 'function' && !leadFired) { fbq('track', 'Lead', { source: leadSource }); setLeadFired(true) }
+      if (typeof fbq === 'function' && !leadFired) { fbq('track', 'Lead', { source: 'sign-up-collab-v7d' }); setLeadFired(true) }
       setStep('done')
       scrollToCard()
     } catch {
@@ -664,7 +626,7 @@ export default function SignUpFormCollabCharlotteOnePage({
         track('submit_success', { channel, recovered: true, elapsed_ms: pageElapsedMs() })
         if (leadFired) return
         const fbq = (window as typeof window & { fbq?: (...args: unknown[]) => void }).fbq
-        if (typeof fbq === 'function') fbq('track', 'Lead', { source: leadSource })
+        if (typeof fbq === 'function') fbq('track', 'Lead', { source: 'sign-up-collab-v7d' })
       }).catch(() => {})
     }
 
@@ -936,7 +898,7 @@ export default function SignUpFormCollabCharlotteOnePage({
             ))}
           </ol>
           <p className="mt-6 text-[14px] leading-relaxed text-neutral-600">
-            <span className="font-semibold text-neutral-900">Why free?</span> {whyFree}
+            <span className="font-semibold text-neutral-900">Why free?</span> I&rsquo;m just doing a few free shoots while I&rsquo;m in town for a short period &mdash; I want to create awesome content while I travel.
           </p>
         </div>
 
@@ -969,22 +931,13 @@ export default function SignUpFormCollabCharlotteOnePage({
       <div key="location" className="atf-card">
         <form ref={formRef} onSubmit={onSubmitAll} noValidate className="space-y-2.5">
           <div className="mb-7 border-b border-neutral-900 pb-4">
-            <h2 className="text-[40px] leading-[0.98] tracking-[-0.015em] text-neutral-900" style={{ fontFamily: SERIF, textWrap: 'balance' }}>{formTitle}</h2>
-            {introduction && <p className="mt-3 text-[14px] leading-relaxed text-neutral-600">{introduction}</p>}
+            <h2 className="text-[40px] leading-[0.98] tracking-[-0.015em] text-neutral-900" style={{ fontFamily: SERIF, textWrap: 'balance' }}>Fill out the form to sign up</h2>
           </div>
           <section ref={vibeRef} className="scroll-mt-4">
-            {sectionTitle(vibePrompt, false, 1)}
-            <div className="mt-4 grid grid-cols-2 gap-x-3 gap-y-5" role="radiogroup" aria-label={vibePrompt}>
+            {sectionTitle("What's your vibe?", false, 1)}
+            <div className="mt-4 grid grid-cols-2 gap-x-3 gap-y-5" role="radiogroup" aria-label="What's your vibe?">
               {VIBES.map(v => {
                 const on = vibe === v.key
-                if (compactNoPreference && v.key === 'any') return (
-                  <button key={v.key} type="button" role="radio" aria-checked={on}
-                    onClick={() => { setVibe(v.key); track('vibe_selected', { value: v.key }); fieldEngaged('vibe'); setError(null) }}
-                    className={`col-span-2 flex items-center justify-between rounded-[3px] border px-4 py-3 text-left text-[14px] ${on ? 'border-neutral-900 bg-neutral-900 text-white' : 'border-neutral-300 bg-white text-neutral-700'}`}>
-                    <span>No preference — let’s choose together</span>
-                    {on && <CheckIcon className="h-4 w-4" />}
-                  </button>
-                )
                 return (
                   <button
                     key={v.key}
@@ -1027,7 +980,6 @@ export default function SignUpFormCollabCharlotteOnePage({
                     <span className="mt-2 block text-[22px] leading-none text-neutral-900" style={{ fontFamily: SERIF }}>
                       {v.label}
                     </span>
-                    {v.description && <span className="mt-1.5 block text-[12px] leading-relaxed text-neutral-500">{v.description}</span>}
                   </button>
                 )
               })}
@@ -1075,7 +1027,7 @@ export default function SignUpFormCollabCharlotteOnePage({
                 onChange={e => { fieldEngaged('phone'); setPhone(e.target.value); setError(null) }}
                 onBlur={() => { const digits = phone.replace(/\D/g, ''); if (digits) trackOnce('phone_filled', digits, { digits: digits.length }) }}
                 className="min-w-0 flex-1 rounded-[3px] border border-neutral-300 bg-white px-4 py-3.5 text-base text-neutral-900 placeholder-neutral-400 outline-none transition focus:border-neutral-800 focus:bg-white focus:ring-4 focus:ring-neutral-900/10"
-                placeholder={`Phone number, e.g. ${phoneExample}`}
+                placeholder="Phone number, e.g. 704 555 0123"
               />
             </div>
           )}
@@ -1149,7 +1101,7 @@ export default function SignUpFormCollabCharlotteOnePage({
 
           <section className="pt-8">
             {sectionTitle('Any notes or questions?', true, channel === 'phone' ? 5 : 4)}
-            <p className="mt-2 text-[13px] leading-relaxed text-neutral-500">{notesHint}</p>
+            <p className="mt-2 text-[13px] leading-relaxed text-neutral-500">Your own idea, inspo, references &mdash; anything.</p>
             <textarea
               id="collab-idea"
               value={idea}
@@ -1157,7 +1109,7 @@ export default function SignUpFormCollabCharlotteOnePage({
               onBlur={() => { const v = idea.trim(); if (v) trackOnce('notes_filled', v, { chars: v.length }) }}
               rows={4}
               className={`${inputCls} mt-4 resize-none leading-relaxed`}
-              placeholder={notesPlaceholder}
+              placeholder="Totally optional..."
             />
           </section>
 
@@ -1186,7 +1138,7 @@ export default function SignUpFormCollabCharlotteOnePage({
       <>
         {kicker(slideNo.notes, channel === 'instagram' ? 'photos' : 'instagram')}
         {slideTitle('Any notes or questions?', true)}
-        <p className="mt-2 text-[13px] leading-relaxed text-neutral-500">{notesHint}</p>
+        <p className="mt-2 text-[13px] leading-relaxed text-neutral-500">Your own idea, inspo, references &mdash; anything.</p>
         <textarea
           id="collab-idea"
           value={idea}
@@ -1194,7 +1146,7 @@ export default function SignUpFormCollabCharlotteOnePage({
           onBlur={() => { const v = idea.trim(); if (v) trackOnce('notes_filled', v, { chars: v.length }) }}
           rows={4}
           className={`${inputCls} mt-4 resize-none leading-relaxed`}
-          placeholder={notesPlaceholder}
+          placeholder="Totally optional..."
         />
         <div className="mt-6 space-y-3">
           {nextBtn(finishSignup, 'Finish Sign-Up')}
@@ -1209,7 +1161,7 @@ export default function SignUpFormCollabCharlotteOnePage({
       <>
         {kicker(slideNo.vibe, BACK_TO.vibe)}
         {slideTitle("What's your vibe?")}
-        <div className="mt-5 grid grid-cols-2 gap-x-3 gap-y-5" role="radiogroup" aria-label={vibePrompt}>
+        <div className="mt-5 grid grid-cols-2 gap-x-3 gap-y-5" role="radiogroup" aria-label="What's your vibe?">
           {VIBES.map(v => {
             const on = vibe === v.key
             return (
@@ -1386,7 +1338,7 @@ export default function SignUpFormCollabCharlotteOnePage({
         <p className="absolute bottom-4 left-5 right-5 text-[44px] leading-none text-white" style={{ fontFamily: SERIF }}>You&apos;re in.</p>
       </div>
       <div className="space-y-5 pt-4">
-        <p className="text-sm text-neutral-500">I&apos;ll message you {CHANNELS[channel].doneVia} within 24 hours to plan your {CITY} shoot. {successMessage ?? "Let’s make something great together."}</p>
+        <p className="text-sm text-neutral-500">I&apos;ll message you {CHANNELS[channel].doneVia} within 24 hours to plan your Charlotte shoot. Let&apos;s make something great together.</p>
         <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-neutral-400">What to expect</p>
         <ol className="divide-y divide-neutral-200 border-y border-neutral-200">
           {['Edited photos you can use however you want', 'Full creative direction from me', 'A real collaboration, not a transaction', 'We plan the concept together'].map((t, i) => (
