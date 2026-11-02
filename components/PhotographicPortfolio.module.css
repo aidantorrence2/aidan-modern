@@ -520,23 +520,3 @@
   scroll-behavior: auto;
 }
 }
-
-
-/* Travel availability on the current portfolio. */
-.travel-note { padding: 86px 24px 22px; text-align: center; }
-.travel-dates {
-  display: flex; justify-content: center; flex-wrap: wrap;
-  gap: 8px 32px; margin: 0; font-size: 13px; line-height: 1.6;
-}
-.travel-dates span { white-space: nowrap; }
-.travel-caption { margin: 7px 0 0; color: #b8c0ba; font-size: 11px; line-height: 1.6; }
-.travel-sequence { padding-top: 0; }
-.travel-sequence .composition.opening { width: min(100%,calc((100svh - 188px)*1.3375 + 20px)); }
-@media(max-width:900px) {
-  .travel-sequence .composition.opening { width: 100%; }
-}
-@media(max-width:560px) {
-  .travel-note { padding: 76px 16px 20px; }
-  .travel-dates { gap: 3px 20px; font-size: 12px; }
-  .travel-caption { font-size: 10px; }
-}
