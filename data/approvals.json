@@ -3320,6 +3320,26 @@
       "status": "approved",
       "decided": "2026-11-02T13:53:23Z",
       "note": ""
+    },
+    {
+      "id": "other:restart-the-mac-to-recover-frozen-finder-202611022302",
+      "kind": "other",
+      "source": "codex:aidantorrence",
+      "title": "Restart the Mac to recover frozen Finder and Trash",
+      "summary": "Finder, Lightroom, and other apps are blocked on disk access; reading the LightroomPreviews disk image hangs. Approve a normal macOS restart, which closes running apps and may interrupt this session. No forced shutdown or file deletion.",
+      "payload": {
+        "action": "normal_macos_restart",
+        "method": "Apple menu > Restart, then confirm Restart",
+        "reason": "Finder and Trash remain stalled; LightroomPreviews filesystem reads and normal unmount are blocked",
+        "force": false,
+        "delete_files": false,
+        "unsaved_work": "Respect application save prompts; do not discard unsaved changes"
+      },
+      "created": "2026-11-02T23:02:48Z",
+      "expires": "2026-11-03T00:02:48Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
     }
   ]
 }
