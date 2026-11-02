@@ -3295,6 +3295,29 @@
       "status": "denied",
       "decided": "2026-11-02T13:52:04Z",
       "note": ""
+    },
+    {
+      "id": "spend:publish-turn-on-meta-campaign-rio-websit-202611021352",
+      "kind": "spend",
+      "source": "codex:memory",
+      "title": "Publish + turn ON Meta campaign 'rio - website - pt' ($5/day)",
+      "summary": "Portuguese Rio website carousel → aidantorrence.com/sign-up-collab-rio (new EN/PT page, live). Draft campaign 120251149336730614, Rio de Janeiro women 21–33, $5/day ongoing (replaces the $10 card). Approve = I publish the draft and switch it ON.",
+      "payload": {
+        "action": "publish_and_turn_on",
+        "account": "act_695822169269016",
+        "campaign_id": "120251149336730614",
+        "campaign": "rio - website - pt",
+        "adset_id": "120251149336720614",
+        "ad_id": "120251149336710614",
+        "budget_usd_per_day": 5,
+        "url": "https://www.aidantorrence.com/sign-up-collab-rio",
+        "url_params": "lang=pt&utm_source=ig&utm_medium=paid&utm_campaign=rio-website-pt"
+      },
+      "created": "2026-11-02T13:52:49Z",
+      "expires": "2026-11-05T13:52:49Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
     }
   ]
 }
