@@ -15,11 +15,11 @@ interested in your locations" off):
 
 | level | name | id | state |
 |---|---|---|---|
-| campaign | rio - website - pt | 120251149336730614 | draft, toggle OFF |
-| ad set | rio - women - pt | 120251149336720614 | draft |
-| ad | rio - website - pt | 120251149336710614 | draft |
+| campaign | rio - website - pt | 120251149336730614 | PUBLISHED, ON (2 Nov 2026) |
+| ad set | rio - women - pt | 120251149336720614 | ON |
+| ad | rio - website - pt | 120251149336710614 | ON, In review at publish |
 
-Ad set: website, maximise landing page views, **$10.00/day** ad-set budget, location Rio de Janeiro (city,
+Ad set: website, maximise landing page views, **$2.00/day** ad-set budget (Aidan: $10→"$5"→"make it $2"), location Rio de Janeiro (city,
 Brazil) only, women 21–33, languages: all (Portuguese is the local language, so no language limit — unlike
 Miami es which targeted Spanish), placements as the source, ongoing, Advantage+ audience off.
 
@@ -30,5 +30,5 @@ CTA **Sign up**, every card URL `https://www.aidantorrence.com/sign-up-collab-ri
 the source (Add music + Relevant comments on). Review tab verified: 4 destination URLs, params, headline,
 primary text (2 Nov).
 
-Status: draft, NOT published — publish + turn on queued as one approval card (same flow as miami - website - es).
+Status: PUBLISHED + ON 2 Nov 2026 ~14:00Z after approval card ...202611021352 (Aidan then ordered publish in chat). Verify delivery once ad review clears.
 Judge after 72 h against the Miami pair.
