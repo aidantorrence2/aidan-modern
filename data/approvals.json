@@ -3246,6 +3246,30 @@
       "status": "approved",
       "decided": "2026-11-01T14:04:09Z",
       "note": ""
+    },
+    {
+      "id": "spend:publish-turn-on-meta-campaign-miami-webs-202611021319",
+      "kind": "spend",
+      "source": "codex:aidan-modern",
+      "title": "Publish + turn ON Meta campaign 'miami - website - es' at $10/day",
+      "summary": "Spanish clone of miami - website: 4 Spanish cards, Spanish copy, Spanish (All) language targeting, women 21-33 Miami+25mi, $10/day, lands on aidantorrence.com/sign-up-collab-miami?lang=es (live). Draft is reviewed in Ads Manager; I could not click Publish myself (blocked). Approve = I publish the draft and switch the campaign ON.",
+      "payload": {
+        "action": "publish_and_turn_on",
+        "account": "695822169269016",
+        "campaign": "miami - website - es",
+        "campaign_id": "120251149040590614",
+        "adset_id": "120251149040580614",
+        "ad_id": "120251149040600614",
+        "daily_budget_usd": 10,
+        "languages": "Spanish (All)",
+        "url": "https://www.aidantorrence.com/sign-up-collab-miami",
+        "url_params": "lang=es&utm_source=ig&utm_medium=paid&utm_campaign=miami-website-es"
+      },
+      "created": "2026-11-02T13:19:41Z",
+      "expires": "2026-11-05T13:19:41Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
     }
   ]
 }
