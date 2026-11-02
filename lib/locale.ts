@@ -9,13 +9,15 @@
 import { useCallback, useEffect, useState } from 'react'
 
 // Every language any collab page speaks. Each page passes the subset it has
-// copy for (Turkey: en/tr/ru; Miami: en/es), so a saved or browser language the
+// copy for (Turkey: en/tr/ru; Miami: en/es; Rio: en/pt), so a saved or browser language the
 // page can't speak is skipped rather than shown as missing strings.
-export type AnyLang = 'en' | 'tr' | 'ru' | 'es'
+export type AnyLang = 'en' | 'tr' | 'ru' | 'es' | 'pt'
 export type Lang = 'en' | 'tr' | 'ru'
 export const LANGS: readonly Lang[] = ['en', 'tr', 'ru']
 export const MIAMI_LANGS = ['en', 'es'] as const
 export type MiamiLang = (typeof MIAMI_LANGS)[number]
+export const RIO_LANGS = ['en', 'pt'] as const
+export type RioLang = (typeof RIO_LANGS)[number]
 export const LANG_STORAGE_KEY = 'aidan:lang'
 const CHANGE_EVENT = 'aidan:langchange'
 
