@@ -3363,6 +3363,28 @@
       "status": "approved",
       "decided": "2026-11-02T23:06:21Z",
       "note": ""
+    },
+    {
+      "id": "email:send-email-to-panama-talents-panama-mode-202611040053",
+      "kind": "email",
+      "source": "codex:aidantorrence",
+      "title": "Send email to Panama Talents: Panama model tests November 4",
+      "summary": "Spanish version of the Miami pitch to info@panamatalents.com: film/digital natural-light tests in Casco Viejo on November 4 afternoon. Includes portfolio + Instagram; no attachment or booking commitment.",
+      "payload": {
+        "from": "Aidan Torrence <aidan.torrence@gmail.com>",
+        "to": "info@panamatalents.com",
+        "subject": "Tests en Ciudad de Panamá — 4 de noviembre | Aidan Torrence",
+        "body": "Hola equipo de Panama Talents,\n\nSoy Aidan Torrence, fotógrafo editorial que trabaja con película de 35 mm y digital. Estaré de paso por Ciudad de Panamá el 4 de noviembre y me gustaría aprovechar la tarde para hacer algunas sesiones de test. Me encantaría coordinar tests con modelos de sus divisiones de moda o desarrollo.\n\nLa idea es hacer retratos con luz natural en las calles de Casco Viejo, con un estilo sencillo y relajado. Podemos coordinar la hora y el lugar según la disponibilidad de los modelos.\n\nMi trabajo: https://aidantorrence.com\nInstagram: https://instagram.com/madebyaidan\n\nSé que es con poca antelación, pero ¿podrían sugerirme algunos modelos que estén interesados y disponibles esa tarde?\n\nMuchas gracias,\nAidan Torrence",
+        "attachments": [],
+        "source": "https://panamatalents.com/contact-us/",
+        "review_notes": "Spanish adaptation of the October 31 Miami outreach. November 4 afternoon inferred from Copa itinerary (Panama stopover); Casco Viejo replaces Miami beaches. Portfolio and Instagram retained. No Miami-specific moodboard attached. This is an availability inquiry, not a confirmed booking or fee commitment.",
+        "action": "Send this exact email once via Gmail after approval."
+      },
+      "created": "2026-11-04T00:53:00Z",
+      "expires": "2026-11-04T18:53:00Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
     }
   ]
 }
