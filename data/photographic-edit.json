@@ -2,6 +2,150 @@
   "sourceVersion": "e330984387305137362cab8174ca3903a19bcbb4",
   "photos": [
     {
+      "id": "rio-ximena-ps-heal-dsc-0314",
+      "width": 1096,
+      "height": 1600,
+      "alt": "Swimsuit portrait on dark sea rocks, arms folded, wet hair."
+    },
+    {
+      "id": "rio-kristinaiskitty-dsc-0947",
+      "width": 1108,
+      "height": 1600,
+      "alt": "Portrait in a crochet top and green shorts against a beach rock."
+    },
+    {
+      "id": "rio-2025-12-08-000041-2",
+      "width": 1067,
+      "height": 1600,
+      "alt": "Seated portrait in an open white shirt on dark ground."
+    },
+    {
+      "id": "rio-gavinxjewel-000041",
+      "width": 1091,
+      "height": 1600,
+      "alt": "Arms-up portrait in a red halter top against a weathered wall."
+    },
+    {
+      "id": "rio-ablay-11944-kodak-ultramax-400-2",
+      "width": 1072,
+      "height": 1600,
+      "alt": "Portrait in a white cropped tee and jeans against a white wall."
+    },
+    {
+      "id": "rio-ablay-11944-kodak-ultramax-400-21",
+      "width": 1072,
+      "height": 1600,
+      "alt": "Arms-up portrait in a white tee against a fuel pump."
+    },
+    {
+      "id": "rio-ablay-11944-kodak-ultramax-400-23",
+      "width": 1072,
+      "height": 1600,
+      "alt": "Portrait leaning on a colourful fuel pump in a white tee."
+    },
+    {
+      "id": "rio-indy-aidanto-r4-027-12",
+      "width": 1072,
+      "height": 1600,
+      "alt": "Black bikini portrait on the shore at dusk, island behind."
+    },
+    {
+      "id": "rio-kristinaiskitty-dsc-0964",
+      "width": 1101,
+      "height": 1600,
+      "alt": "Portrait in a beaded orange top against a dark rock."
+    },
+    {
+      "id": "rio-ximena-ps-heal-dsc-0309",
+      "width": 1098,
+      "height": 1600,
+      "alt": "Portrait shading her eyes on the coast, black swimsuit."
+    },
+    {
+      "id": "rio-aloyouiii-000055400001",
+      "width": 1061,
+      "height": 1600,
+      "alt": "Black and white portrait in a one-piece, long curly hair."
+    },
+    {
+      "id": "rio-indy-aidanto-r4-059-28",
+      "width": 1072,
+      "height": 1600,
+      "alt": "Full-length portrait in a blue swimsuit in the surf."
+    },
+    {
+      "id": "rio-helen-000058",
+      "width": 1067,
+      "height": 1600,
+      "alt": "Red bikini portrait reclining on a black sand beach."
+    },
+    {
+      "id": "rio-helen-000049",
+      "width": 1067,
+      "height": 1600,
+      "alt": "Arms-up red bikini portrait under a beach shack."
+    },
+    {
+      "id": "rio-kristin-000073",
+      "width": 1083,
+      "height": 1600,
+      "alt": "Black and white bikini portrait on a palm-lined beach."
+    },
+    {
+      "id": "rio-ximena-ps-heal-dsc-0321",
+      "width": 1099,
+      "height": 1600,
+      "alt": "Close portrait with wet hair by the sea."
+    },
+    {
+      "id": "rio-zarissa-2-0019-3",
+      "width": 1067,
+      "height": 1600,
+      "alt": "Seated portrait in flared trousers against a cage wall."
+    },
+    {
+      "id": "rio-most-beautiful-in-the-world-000026-3",
+      "width": 1072,
+      "height": 1600,
+      "alt": "Close portrait in a sheer top leaning on a wall."
+    },
+    {
+      "id": "rio-fran-000028",
+      "width": 1047,
+      "height": 1600,
+      "alt": "Strapless swimsuit portrait among coastal plants and rocks."
+    },
+    {
+      "id": "rio-helen-000036",
+      "width": 1067,
+      "height": 1600,
+      "alt": "Red bikini portrait seated on black sand, hand at her cheek."
+    },
+    {
+      "id": "rio-helen-000037",
+      "width": 1067,
+      "height": 1600,
+      "alt": "Red bikini portrait seated on black sand behind a traffic cone."
+    },
+    {
+      "id": "rio-zarissa-2-0037",
+      "width": 1067,
+      "height": 1600,
+      "alt": "Portrait under a market umbrella in a purple slip dress."
+    },
+    {
+      "id": "rio-eva-r1-09803-0017",
+      "width": 1070,
+      "height": 1600,
+      "alt": "Portrait in a pale slip dress beside a shop window."
+    },
+    {
+      "id": "rio-yana-ps-jpg-000033-7",
+      "width": 1080,
+      "height": 1600,
+      "alt": "Seated portrait in a black top, arm raised against a wall."
+    },
+    {
       "id": "phoenix-ii-3-r1-09797-0005",
       "width": 1070,
       "height": 1600,
@@ -285,6 +429,102 @@
     }
   ],
   "passages": [
+    {
+      "ids": [
+        "rio-ximena-ps-heal-dsc-0314",
+        "rio-kristinaiskitty-dsc-0947"
+      ],
+      "layout": "equal",
+      "ground": "#0b1512"
+    },
+    {
+      "ids": [
+        "rio-2025-12-08-000041-2",
+        "rio-gavinxjewel-000041"
+      ],
+      "layout": "equal",
+      "ground": "#0b1512"
+    },
+    {
+      "ids": [
+        "rio-ablay-11944-kodak-ultramax-400-2",
+        "rio-ablay-11944-kodak-ultramax-400-21"
+      ],
+      "layout": "equal",
+      "ground": "#0b1512"
+    },
+    {
+      "ids": [
+        "rio-ablay-11944-kodak-ultramax-400-23",
+        "rio-indy-aidanto-r4-027-12"
+      ],
+      "layout": "equal",
+      "ground": "#0b1512"
+    },
+    {
+      "ids": [
+        "rio-kristinaiskitty-dsc-0964",
+        "rio-ximena-ps-heal-dsc-0309"
+      ],
+      "layout": "equal",
+      "ground": "#0b1512"
+    },
+    {
+      "ids": [
+        "rio-aloyouiii-000055400001",
+        "rio-indy-aidanto-r4-059-28"
+      ],
+      "layout": "equal",
+      "ground": "#0b1512"
+    },
+    {
+      "ids": [
+        "rio-helen-000058",
+        "rio-helen-000049"
+      ],
+      "layout": "equal",
+      "ground": "#0b1512"
+    },
+    {
+      "ids": [
+        "rio-kristin-000073",
+        "rio-ximena-ps-heal-dsc-0321"
+      ],
+      "layout": "equal",
+      "ground": "#0b1512"
+    },
+    {
+      "ids": [
+        "rio-zarissa-2-0019-3",
+        "rio-most-beautiful-in-the-world-000026-3"
+      ],
+      "layout": "equal",
+      "ground": "#0b1512"
+    },
+    {
+      "ids": [
+        "rio-fran-000028",
+        "rio-helen-000036"
+      ],
+      "layout": "equal",
+      "ground": "#0b1512"
+    },
+    {
+      "ids": [
+        "rio-helen-000037",
+        "rio-zarissa-2-0037"
+      ],
+      "layout": "equal",
+      "ground": "#0b1512"
+    },
+    {
+      "ids": [
+        "rio-eva-r1-09803-0017",
+        "rio-yana-ps-jpg-000033-7"
+      ],
+      "layout": "equal",
+      "ground": "#0b1512"
+    },
     {
       "ids": [
         "phoenix-ii-3-r1-09797-0005",
