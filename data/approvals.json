@@ -3691,6 +3691,23 @@
       "status": "pending",
       "decided": null,
       "note": ""
+    },
+    {
+      "id": "other:swap-the-live-rio-ad-to-the-10-card-r1d--202611040243",
+      "kind": "other",
+      "source": "codex:aidan-modern",
+      "title": "Swap the live Rio ad to the 10-card r1d deck (17 of your picks)",
+      "summary": "Replace the 4-card carousel in ad 'rio - website - pt' (120251149336710614) with the 10 r1d cards (hook, 2 work grids, 5 full-bleed swim/lingerie singles, nervous, CTA). Same copy/URL/params on every card, $2/day unchanged; re-enters Meta review. Supersedes the r1b and r1c cards.",
+      "payload": {
+        "ad_id": "120251149336710614",
+        "cards": "marketing/rio-ig-campaign/launch-website-pt/r1d/rio-web-pt-d-01..10",
+        "unchanged": "copy, headline, URLs, params, budget, targeting"
+      },
+      "created": "2026-11-04T02:43:10Z",
+      "expires": "2026-11-07T02:43:10Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
     }
   ]
 }
