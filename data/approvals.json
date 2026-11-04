@@ -3647,6 +3647,28 @@
       "status": "approved",
       "decided": "2026-11-04T01:10:27Z",
       "note": ""
+    },
+    {
+      "id": "other:swap-the-live-rio-ad-to-the-sexier-bikin-202611040156",
+      "kind": "other",
+      "source": "codex:aidan-modern",
+      "title": "Swap the live Rio ad to the sexier bikini/beach cards",
+      "summary": "Replace the 4 carousel images in ad 'rio - website - pt' (120251149336710614) with r1b (same copy, URLs and budget, $2/day). Ad goes back into Meta review; bikini creative has a small risk of an adult-content flag.",
+      "payload": {
+        "ad_id": "120251149336710614",
+        "replace_with": [
+          "launch-website-pt/r1b/rio-web-pt-b-01-hook.jpg",
+          "rio-web-pt-b-02-work.jpg",
+          "rio-web-pt-b-03-nervous.jpg",
+          "rio-web-pt-b-04-cta.jpg"
+        ],
+        "unchanged": "copy, headline, URLs, params, budget, targeting"
+      },
+      "created": "2026-11-04T01:56:45Z",
+      "expires": "2026-11-07T01:56:45Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
     }
   ]
 }
