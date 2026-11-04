@@ -299,7 +299,13 @@ export default function SignUpFormCollabRioOnePage({ analyticsPath = '/sign-up-c
   const [lang, setLang] = useLangFrom(RIO_LANGS)
   const c: Copy = COPY[lang]
   const [step, setStep] = useState<Step>('location')
-  const [error, setError] = useState<string | null>(null)
+  // The error renders next to the field it's about: the one-page form scrolls
+  // to that field, so a message left at the bottom Sign up was never seen
+  // (Rio visitors tapped the sticky Sign up again and again with no feedback).
+  const [errorState, setErrorState] = useState<{ msg: string; at?: 'vibe' | 'contact' | 'photo' } | null>(null)
+  const error = errorState?.msg ?? null
+  const errorAt = errorState?.at
+  const setError = (msg: string | null, at?: 'vibe' | 'contact' | 'photo') => setErrorState(msg ? { msg, at } : null)
 
   const [vibe, setVibe] = useState<VibeKey | null>(null)
   const location = CITY_FULL
@@ -318,6 +324,8 @@ export default function SignUpFormCollabRioOnePage({ analyticsPath = '/sign-up-c
   const formRef = useRef<HTMLFormElement>(null)
   const submitRef = useRef<HTMLButtonElement>(null)
   const photoRef = useRef<HTMLElement>(null)
+  const contactRef = useRef<HTMLDivElement>(null)
+  const uploadBtnRef = useRef<HTMLButtonElement>(null)
   const [submitting, setSubmitting] = useState(false)
   const [showStickyCta, setShowStickyCta] = useState(false)
   const [heroIndex, setHeroIndex] = useState(0)
@@ -500,7 +508,7 @@ export default function SignUpFormCollabRioOnePage({ analyticsPath = '/sign-up-c
 
     if (!vibe) {
       track('validation_error', { reason: 'vibe_missing' })
-      setError(c.errVibe)
+      setError(c.errVibe, 'vibe')
       vibeRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })
       return
     }
@@ -509,8 +517,8 @@ export default function SignUpFormCollabRioOnePage({ analyticsPath = '/sign-up-c
       const handle = instagram.trim().replace(/^@+/, '').replace(/^https?:\/\/(www\.)?instagram\.com\//i, '').replace(/\/.*$/, '')
       if (!/^[A-Za-z0-9._]{1,30}$/.test(handle)) {
         track('validation_error', { reason: 'instagram_invalid' })
-        setError(c.errInstagram)
-        pickerCardRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+        setError(c.errInstagram, 'contact')
+        contactRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' })
         phoneRef.current?.focus({ preventScroll: true })
         return
       }
@@ -519,8 +527,8 @@ export default function SignUpFormCollabRioOnePage({ analyticsPath = '/sign-up-c
       const digits = phone.replace(/\D/g, '')
       if (digits.length < 7) {
         track('validation_error', { reason: 'phone_invalid' })
-        setError(c.errPhone)
-        pickerCardRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+        setError(c.errPhone, 'contact')
+        contactRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' })
         phoneRef.current?.focus({ preventScroll: true })
         return
       }
@@ -528,8 +536,8 @@ export default function SignUpFormCollabRioOnePage({ analyticsPath = '/sign-up-c
     }
     if (photos.length === 0) {
       track('validation_error', { reason: 'photo_missing' })
-      setError(c.errPhoto)
-      photoRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      setError(c.errPhoto, 'photo')
+      uploadBtnRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' })
       return
     }
     setError(null)
@@ -684,7 +692,7 @@ export default function SignUpFormCollabRioOnePage({ analyticsPath = '/sign-up-c
       if (fileRef.current) fileRef.current.value = ''
       track('photos_added', { selected, added: selected - failures, failed: failures, total: photos.length + selected - failures })
       if (failures > 0) {
-        setError(c.photoFail(failures))
+        setError(c.photoFail(failures), 'photo')
       }
     }
   }
@@ -1096,9 +1104,10 @@ export default function SignUpFormCollabRioOnePage({ analyticsPath = '/sign-up-c
                 )
               })}
             </div>
+            {errorAt === 'vibe' && <div className="mt-4">{errorBox}</div>}
           </section>
 
-          <div className="pt-8">{sectionTitle(c.contactQ, false, 2)}</div>
+          <div ref={contactRef} className="scroll-mt-4 pt-8">{sectionTitle(c.contactQ, false, 2)}</div>
           <div className="grid grid-cols-2 gap-2">
             {segment('instagram')}
             {segment('phone')}
@@ -1143,6 +1152,7 @@ export default function SignUpFormCollabRioOnePage({ analyticsPath = '/sign-up-c
               />
             </div>
           )}
+          {errorAt === 'contact' && errorBox}
 
           <section ref={photoRef} className="scroll-mt-4 pt-8">
             {sectionTitle(c.yourPhoto, false, 3)}
@@ -1170,6 +1180,7 @@ export default function SignUpFormCollabRioOnePage({ analyticsPath = '/sign-up-c
             )}
 
             <button
+              ref={uploadBtnRef}
               type="button"
               onClick={() => fileRef.current?.click()}
               disabled={processingPhotos}
@@ -1189,7 +1200,7 @@ export default function SignUpFormCollabRioOnePage({ analyticsPath = '/sign-up-c
               )}
             </button>
             <input ref={fileRef} type="file" accept="image/*" multiple onChange={handlePhotos} className="hidden" />
-
+            {errorAt === 'photo' && <div className="mt-3">{errorBox}</div>}
           </section>
 
           {channel === 'phone' && (
@@ -1226,7 +1237,7 @@ export default function SignUpFormCollabRioOnePage({ analyticsPath = '/sign-up-c
           </section>
 
           <div className="space-y-3 pt-6">
-            {errorBox}
+            {!errorAt && errorBox}
             {/* Honeypot */}
             <input type="text" name="company" className="hidden" tabIndex={-1} autoComplete="off" />
             <button
