@@ -3669,6 +3669,28 @@
       "status": "pending",
       "decided": null,
       "note": ""
+    },
+    {
+      "id": "other:swap-the-live-rio-ad-to-the-r1c-cards-bu-202611040236",
+      "kind": "other",
+      "source": "codex:aidan-modern",
+      "title": "Swap the live Rio ad to the r1c cards built from your 53 picks",
+      "summary": "Replace the 4 carousel images in ad 'rio - website - pt' (120251149336710614) with r1c (black-bikini hook; work: wet-hair close-up, coral bikini, red-hair bustier, lace bralette on bed). Copy, URLs, budget ($2/day) unchanged; re-enters Meta review. Supersedes the r1b card.",
+      "payload": {
+        "ad_id": "120251149336710614",
+        "replace_with": [
+          "marketing/rio-ig-campaign/launch-website-pt/r1c/rio-web-pt-c-01-hook.jpg",
+          "rio-web-pt-c-02-work.jpg",
+          "rio-web-pt-c-03-nervous.jpg",
+          "rio-web-pt-c-04-cta.jpg"
+        ],
+        "unchanged": "copy, headline, URLs, params, budget, targeting"
+      },
+      "created": "2026-11-04T02:36:38Z",
+      "expires": "2026-11-07T02:36:38Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
     }
   ]
 }
