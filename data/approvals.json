@@ -3535,6 +3535,43 @@
       "status": "pending",
       "decided": null,
       "note": ""
+    },
+    {
+      "id": "email:send-physical-modelos-email-with-moodboa-202611040100",
+      "kind": "email",
+      "source": "codex:aidantorrence",
+      "title": "Send Physical Modelos email WITH moodboard: tomorrow, November 4",
+      "summary": "Final corrected Spanish email + attached 2-page Panama moodboard (Street / Portraits). Says tomorrow, November 4; no passing through or afternoon restriction. Supersedes prior Physical Modelos cards.",
+      "payload": {
+        "from": "Aidan Torrence <aidan.torrence@gmail.com>",
+        "to": "produccion@physicalmodelos.com.pa",
+        "subject": "Tests en Ciudad de Panamá — 4 de noviembre | Aidan Torrence",
+        "body": "Hola equipo de Physical Modelos,\n\nSoy Aidan Torrence, fotógrafo editorial que trabaja con película de 35 mm y digital. Estaré en Ciudad de Panamá mañana, 4 de noviembre. Me encantaría coordinar tests con sus modelos, tanto nuevos talentos como modelos con experiencia.\n\nLa idea es hacer retratos con luz natural en las calles de Casco Viejo, con un estilo sencillo y relajado. Podemos coordinar la hora y el lugar según la disponibilidad de los modelos. Adjunto un moodboard de referencia.\n\nMi trabajo: https://aidantorrence.com\nInstagram: https://instagram.com/madebyaidan\n\nSé que es con poca antelación, pero ¿podrían sugerirme algunos modelos que estén interesados y disponibles mañana?\n\nMuchas gracias,\nAidan Torrence",
+        "attachments": [
+          {
+            "filename": "Aidan-Torrence-Panama-Test-Moodboard.pdf",
+            "path": "/Users/aidantorrence/output/pdf/Aidan-Torrence-Panama-Test-Moodboard.pdf",
+            "pages": 2,
+            "size_bytes": 2588303,
+            "sha256": "b66b9aa5c8a76cce12d089ad72a04b33c6f65256fca74a5911ec7c6bb7c0b166",
+            "description": "Street and Portraits pages adapted from the Miami moodboard, with Panama City / November 4 header."
+          }
+        ],
+        "gmail_draft_id": "r-8787519468456355910",
+        "gmail_message_id": "1a1a411e087b261c",
+        "source": "https://fashionweekpanama.com/wp-content/uploads/2024/07/brief-PANAMA-FASHION-WEEK-2024-1.pdf",
+        "supersedes": [
+          "email:send-email-to-physical-modelos-panama-mo-202611040053",
+          "email:send-corrected-email-to-physical-modelos-202611040055"
+        ],
+        "review_notes": "Final version per Aidan: tomorrow November 4; no passing through; no afternoon restriction; moodboard attached. This supersedes both earlier requests for this agency. Email is in Spanish.",
+        "action": "Send this exact saved Gmail draft once, including the PDF attachment, after approval."
+      },
+      "created": "2026-11-04T01:00:22Z",
+      "expires": "2026-11-04T19:00:22Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
     }
   ]
 }
