@@ -3452,6 +3452,29 @@
       "status": "pending",
       "decided": null,
       "note": ""
+    },
+    {
+      "id": "email:send-corrected-email-to-physical-modelos-202611040055",
+      "kind": "email",
+      "source": "codex:aidantorrence",
+      "title": "Send corrected email to Physical Modelos: tests tomorrow, November 4",
+      "summary": "Revised per your feedback: in Panama City tomorrow, November 4; no passing through or afternoon restriction. Spanish; no moodboard. Supersedes earlier Physical Modelos card.",
+      "payload": {
+        "from": "Aidan Torrence <aidan.torrence@gmail.com>",
+        "to": "produccion@physicalmodelos.com.pa",
+        "subject": "Tests en Ciudad de Panamá — 4 de noviembre | Aidan Torrence",
+        "body": "Hola equipo de Physical Modelos,\n\nSoy Aidan Torrence, fotógrafo editorial que trabaja con película de 35 mm y digital. Estaré en Ciudad de Panamá mañana, 4 de noviembre. Me encantaría coordinar tests con sus modelos, tanto nuevos talentos como modelos con experiencia.\n\nLa idea es hacer retratos con luz natural en las calles de Casco Viejo, con un estilo sencillo y relajado. Podemos coordinar la hora y el lugar según la disponibilidad de los modelos.\n\nMi trabajo: https://aidantorrence.com\nInstagram: https://instagram.com/madebyaidan\n\nSé que es con poca antelación, pero ¿podrían sugerirme algunos modelos que estén interesados y disponibles mañana?\n\nMuchas gracias,\nAidan Torrence",
+        "attachments": [],
+        "source": "https://fashionweekpanama.com/wp-content/uploads/2024/07/brief-PANAMA-FASHION-WEEK-2024-1.pdf",
+        "review_notes": "Corrected per Aidan: says in Panama City tomorrow, November 4; no passing through and no afternoon restriction. Spanish email, portfolio + Instagram, no moodboard attachment. Supersedes the prior approval request; only this corrected version may be sent.",
+        "action": "Send this exact email once via Gmail after approval.",
+        "supersedes": "email:send-email-to-physical-modelos-panama-mo-202611040053"
+      },
+      "created": "2026-11-04T00:55:50Z",
+      "expires": "2026-11-04T18:55:50Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
     }
   ]
 }
