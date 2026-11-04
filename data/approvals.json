@@ -3638,7 +3638,9 @@
           }
         ],
         "action": "Publish campaign drafts and turn on",
-        "schedule": "ongoing from Nov 3 2026"
+        "schedule": "ongoing from Nov 3 2026",
+        "result": "Published panama - website (campaign + 2 ad sets + 2 ads) and turned it ON ~01:15Z 4 Nov. Ad sets es $10/day + en $5/day ON; both ads Processing (Meta review).",
+        "result_at": "2026-11-04T01:14:57Z"
       },
       "created": "2026-11-04T01:04:53Z",
       "expires": "2026-11-05T01:04:53Z",
