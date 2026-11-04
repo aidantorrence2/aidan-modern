@@ -171,22 +171,24 @@ function resizeImage(dataUrl: string, maxBytes: number): Promise<string> {
 
 // The hero cycles. It opens on the bubbles frame and crossfades on, so the
 // first thing the page does is show more work rather than sit still.
+// Rio: Aidan's own "top sexy candidates" picks (marketing/rio-ig-campaign/sexy-viewer),
+// ordered by the CPC-v2 lead ranking; film-scan borders trimmed; Meta-risky frames left out.
 const HERO_SLIDES = [
-  '/images/new_top_tier_headliners_web/000014.jpg',
-  '/images/new_top_tier_headliners_web/R1-09793-0028.jpg',
-  '/images/new_top_tier_headliners_web/R1-00005-0027.jpg',
-  '/images/new_top_tier_headliners_web/R1-09798-032A.jpg',
-  '/images/new_top_tier_headliners_web/R1-09952-0019.jpg',
+  '/images/rio_sexy_web/indy-AidanTo-R4-027-12.jpg',
+  '/images/rio_sexy_web/ximena-ps-heal-DSC_0314.jpg',
+  '/images/rio_sexy_web/gavinxjewel-000041.jpg',
+  '/images/rio_sexy_web/ablay-11944-KODAK-ULTRAMAX-400-21.jpg',
+  '/images/rio_sexy_web/helen-000058.jpg',
 ]
 const heroImage = HERO_SLIDES[0]
 
 const proofImages = [
-  '/images/new_top_tier_headliners_web/R1-00008-0005.jpg',
-  '/images/new_top_tier_headliners_web/R1-09793-0028.jpg',
-  '/images/new_top_tier_headliners_web/R1-09997-0003.jpg',
-  '/images/new_top_tier_headliners_web/R1-00009-0021.jpg',
-  '/images/new_top_tier_headliners_web/R1-09952-0019.jpg',
-  '/images/new_top_tier_headliners_web/R1-09997-0011.jpg',
+  '/images/rio_sexy_web/kristinaiskitty-DSC_0947.jpg',
+  '/images/rio_sexy_web/2025-12-08-000041-2.jpg',
+  '/images/rio_sexy_web/ablay-11944-KODAK-ULTRAMAX-400-2.jpg',
+  '/images/rio_sexy_web/kristinaiskitty-DSC_0964.jpg',
+  '/images/rio_sexy_web/ximena-ps-heal-DSC_0309.jpg',
+  '/images/rio_sexy_web/aloyouiii-000055400001.jpg',
 ]
 
 
@@ -207,16 +209,16 @@ const VIBES: { key: VibeKey; label: string; board: string[] }[] = [
 // further on than the last, so moving through the form winds the same roll
 // forward. It wraps, so the roll never runs out however many frames there are.
 const ROLL = [
-  '/images/new_top_tier_headliners_web/R1-00007-025A.jpg',
-  '/images/new_top_tier_headliners_web/R1-09997-0005.jpg',
-  '/images/new_top_tier_headliners_web/R1-00009-0028.jpg',
-  '/images/new_top_tier_headliners_web/000089.jpg',
-  '/images/new_top_tier_headliners_web/R1-09997-0009.jpg',
-  '/images/new_top_tier_headliners_web/R1-09799-0025.jpg',
-  '/images/new_top_tier_headliners_web/R1-00005-0027.jpg',
-  '/images/new_top_tier_headliners_web/R1-09953-010A.jpg',
-  '/images/new_top_tier_headliners_web/000014.jpg',
-  '/images/new_top_tier_headliners_web/R1-09798-032A.jpg',
+  '/images/rio_sexy_web/indy-AidanTo-R4-059-28.jpg',
+  '/images/rio_sexy_web/helen-000049.jpg',
+  '/images/rio_sexy_web/kristin-000073.jpg',
+  '/images/rio_sexy_web/ximena-ps-heal-DSC_0321.jpg',
+  '/images/rio_sexy_web/zarissa-2-0019-3.jpg',
+  '/images/rio_sexy_web/most_beautiful_in_the_world-000026-3.jpg',
+  '/images/rio_sexy_web/fran-000028.jpg',
+  '/images/rio_sexy_web/helen-000036.jpg',
+  '/images/rio_sexy_web/ablay-11944-KODAK-ULTRAMAX-400-23.jpg',
+  '/images/rio_sexy_web/zarissa-2-0037.jpg',
 ]
 
 function rollAt(stepNo: number) {
