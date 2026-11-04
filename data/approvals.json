@@ -3609,6 +3609,42 @@
       "status": "pending",
       "decided": null,
       "note": ""
+    },
+    {
+      "id": "spend:publish-turn-on-meta-campaign-panama-web-202611040104",
+      "kind": "spend",
+      "source": "codex:panama-ig-campaign",
+      "title": "Publish + turn on Meta campaign panama - website ($15/day: ES $10 + EN $5)",
+      "summary": "New Panama City website campaign → /sign-up-collab-panama (live). Two ad sets, women 21–33, Panama City +25mi: Spanish $10/day, English $5/day. Ongoing, ~$15/day total.",
+      "payload": {
+        "account": "act=695822169269016",
+        "campaign": "panama - website (120251184767040614)",
+        "ad_sets": [
+          {
+            "name": "panama - women - es",
+            "id": "120251184767060614",
+            "budget_usd_day": 10,
+            "language": "Spanish",
+            "ad": "panama - website - es",
+            "url": "https://www.aidantorrence.com/sign-up-collab-panama?lang=es&utm_campaign=panama-website-es"
+          },
+          {
+            "name": "panama - women - en",
+            "id": "120251184805310614",
+            "budget_usd_day": 5,
+            "language": "English (All)",
+            "ad": "panama - website - en",
+            "url": "https://www.aidantorrence.com/sign-up-collab-panama?lang=en&utm_campaign=panama-website-en"
+          }
+        ],
+        "action": "Publish campaign drafts and turn on",
+        "schedule": "ongoing from Nov 3 2026"
+      },
+      "created": "2026-11-04T01:04:53Z",
+      "expires": "2026-11-05T01:04:53Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
     }
   ]
 }
