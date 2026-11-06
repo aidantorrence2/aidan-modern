@@ -1,0 +1,77 @@
+@font-face{
+  font-family: Inter;
+  src: url(/fonts/inter.woff2) format("woff2");
+  font-weight: 100 900;
+  font-display: swap
+}
+.site{
+  --bg: #f3f1ec;
+  --ink: #161616;
+  --mute: #8a867f;
+  --edge: clamp(16px, 2.2vw, 36px);
+  --gap: clamp(6px, .8vw, 14px);
+  --h: calc(100svh - 120px);
+  font-family: Inter, Arial, Helvetica, sans-serif;
+  font-size: 12px; letter-spacing: .01em;
+  background: var(--bg); color: var(--ink);
+  min-height: 100vh; color-scheme: light;
+}
+.site *{ box-sizing: border-box }
+.site a{ color: inherit; text-decoration: none; -webkit-tap-highlight-color: transparent }
+:global(body):has(.site){ margin: 0; background: #f3f1ec }
+:global(body):has(.site) > :global(header), :global(body):has(.site) > :global(footer),
+:global(body):has(.site) :global(.fixed.inset-x-0.bottom-0){ display: none !important }
+
+.mast{
+  position: sticky; top: 0; z-index: 10;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 18px var(--edge);
+  background: color-mix(in srgb, var(--bg) 88%, transparent);
+  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+}
+.mast > a{ font-weight: 500 }
+.mast nav, .foot nav{ display: flex; gap: clamp(14px, 2vw, 28px) }
+.mast nav a, .foot a{ color: var(--mute); transition: color .2s }
+.mast nav a:hover, .foot a:hover{ color: var(--ink) }
+
+/* justified rows: every frame in a row shares a height; the row is as wide as
+   that height allows (capped to the page), so nothing is ever taller than the screen */
+.work{ padding: 4px var(--edge) 0 }
+.row{
+  display: flex; gap: var(--gap);
+  width: min(100%, calc(var(--h) * var(--sum) + var(--gap) * 2));
+  margin: 0 auto clamp(72px, 14vh, 180px);
+}
+.first{ --h: calc(100svh - 76px); margin-bottom: clamp(90px, 18vh, 220px) }
+.left{ margin-left: 8% }
+.right{ margin-right: 8% }
+.ph{ flex: calc(var(--ar) * 10) 1 0; min-width: 0; display: block; background: #e7e4dd; cursor: zoom-in }
+.ph img{ display: block; width: 100%; height: auto; transition: opacity .3s }
+.row:hover .ph img{ opacity: .9 }
+.row .ph:hover img{ opacity: 1 }
+
+.foot{
+  display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap;
+  padding: 28px var(--edge) 32px; border-top: 1px solid #dfdbd3; color: var(--mute);
+}
+
+/* viewer */
+.box{ border: 0; padding: 0; margin: 0; width: 100vw; height: 100dvh; max-width: none; max-height: none; background: var(--bg); color: var(--ink) }
+.box::backdrop{ background: #f3f1ec }
+.box[open]{ display: grid; grid-template-rows: auto 1fr auto; font-family: Inter, Arial, sans-serif; font-size: 12px }
+.box img{ align-self: center; justify-self: center; max-width: calc(100vw - 2 * var(--edge)); max-height: calc(100dvh - 120px); width: auto; height: auto; cursor: e-resize }
+.boxTop, .boxNav{ display: flex; justify-content: space-between; align-items: center; padding: 18px var(--edge) }
+.boxTop span{ color: var(--mute) }
+.box button{ background: none; border: 0; padding: 4px 0; font: inherit; color: var(--mute); cursor: pointer }
+.box button:hover{ color: var(--ink) }
+
+@media (max-width: 760px){
+  .site{ --h: 100vh }
+  .mast{ padding: 14px var(--edge) }
+  .mast nav{ gap: 14px }
+  .row{ width: 100%; flex-wrap: wrap; margin-bottom: 56px }
+  .first{ margin-bottom: 64px }
+  .left, .right{ margin-left: 0; margin-right: 0 }
+  .three .ph:first-child{ flex-basis: 100% }
+  .foot{ flex-direction: column; align-items: flex-start }
+}

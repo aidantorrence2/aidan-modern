@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from 'next';
-import PhotographicPortfolio from '@/components/PhotographicPortfolio';
+import HomePortfolio from '@/components/HomePortfolio';
 
 export const metadata: Metadata = {
   title: 'Aidan Torrence',
@@ -25,8 +25,8 @@ export const metadata: Metadata = {
   },
 };
 
-export const viewport: Viewport = { themeColor: '#0b1512' };
+export const viewport: Viewport = { themeColor: '#f3f1ec' };
 
 export default function HomePage() {
-  return <PhotographicPortfolio />;
+  return <HomePortfolio />;
 }
