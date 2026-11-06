@@ -3718,7 +3718,9 @@
       "payload": {
         "destination": "Claro Flex official app: Chat > Iniciar Chat (human support)",
         "action": "Open the visitor support chat and send this inquiry; read the reply.",
-        "message": "Olá. Estou usando um chip ativo, identificado como Claro Flex pelo menu *1052#. Não tenho CPF nem cadastro no aplicativo, e este chip nunca foi cadastrado com meu CPF ou passaporte. Quero apenas consultar a franquia de internet do plano, quantos GB ainda restam e a validade. Como posso consultar isso pela própria linha ou por validação via SMS, sem CPF, passaporte ou login?"
+        "message": "Olá. Estou usando um chip ativo, identificado como Claro Flex pelo menu *1052#. Não tenho CPF nem cadastro no aplicativo, e este chip nunca foi cadastrado com meu CPF ou passaporte. Quero apenas consultar a franquia de internet do plano, quantos GB ainda restam e a validade. Como posso consultar isso pela própria linha ou por validação via SMS, sem CPF, passaporte ou login?",
+        "result": "Could not send the approved inquiry. The official app visitor chat opens a pre-chat form that rejects an empty CPF/CNPJ before connecting to an agent. No message or personal information was sent. No account registration or plan changes were made.",
+        "result_at": "2026-11-06T15:29:10Z"
       },
       "created": "2026-11-06T15:25:36Z",
       "expires": "2026-11-06T16:25:36Z",
