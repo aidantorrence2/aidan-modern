@@ -3708,6 +3708,23 @@
       "status": "pending",
       "decided": null,
       "note": ""
+    },
+    {
+      "id": "other:ask-claro-support-how-to-check-your-sim--202611061525",
+      "kind": "other",
+      "source": "codex:aidantorrence",
+      "title": "Ask Claro support how to check your SIM data balance",
+      "summary": "Send a Portuguese inquiry through the official Claro Flex visitor chat about checking total and remaining data without CPF, passport, or an app login.",
+      "payload": {
+        "destination": "Claro Flex official app: Chat > Iniciar Chat (human support)",
+        "action": "Open the visitor support chat and send this inquiry; read the reply.",
+        "message": "Olá. Estou usando um chip ativo, identificado como Claro Flex pelo menu *1052#. Não tenho CPF nem cadastro no aplicativo, e este chip nunca foi cadastrado com meu CPF ou passaporte. Quero apenas consultar a franquia de internet do plano, quantos GB ainda restam e a validade. Como posso consultar isso pela própria linha ou por validação via SMS, sem CPF, passaporte ou login?"
+      },
+      "created": "2026-11-06T15:25:36Z",
+      "expires": "2026-11-06T16:25:36Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
     }
   ]
 }
