@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// Claude Code "Stop" hook: reports each finished turn to the orchestrator relay, then waits for a reply
+// OPTIONAL Claude Code "Stop" hook (bridge.mjs polls sessions without it): reports each finished turn to the orchestrator relay, then waits for a reply
 // from the phone. If one arrives, it returns {"decision":"block","reason":...}, which makes Claude keep
 // working with the reply as its next instruction. Works the same in local and cloud (claude.ai/code) sessions.
 //
@@ -15,6 +15,10 @@ import { loadConfig, api, readStdin } from './common.mjs';
 
 const cfg = loadConfig();
 if (!cfg.relay || !cfg.token) process.exit(0);
+// Cloud sessions (and local ones on Remote Control) are picked up by the bridge's sessions poller, which can
+// reply at any time, so the hook is only needed for plain local terminal sessions.
+const isCloud = process.env.CLAUDE_CODE_REMOTE === 'true' || process.env.CLAUDE_CODE_REMOTE === '1';
+if (isCloud && process.env.ORCH_HOOK_IN_CLOUD !== '1') process.exit(0);
 
 const waitSeconds = Number(process.env.ORCH_WAIT_SECONDS ?? cfg.file.waitSeconds ?? 600);
 

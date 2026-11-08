@@ -177,6 +177,12 @@ async function handle(req, res) {
       suggestion: null,
       suggesting: false,
     };
+    // The same turn can be reported twice (e.g. a Stop hook and the sessions poller): keep the first.
+    const fingerprint = ev.text.replace(/\s+/g, ' ').trim().slice(0, 500);
+    if (fingerprint.length >= 10) {
+      const dup = state.events.find((e) => e.ts > ev.ts - 10 * 60_000 && e.text.replace(/\s+/g, ' ').trim().slice(0, 500) === fingerprint);
+      if (dup) return send(res, 200, { id: dup.id, seq: dup.seq, duplicate: true });
+    }
     // Older unanswered completions from the same session are superseded by this one.
     for (const old of state.events) {
       if (old.sessionId === ev.sessionId && old.status === 'new') bump(Object.assign(old, { status: 'superseded' }));
@@ -197,10 +203,11 @@ async function handle(req, res) {
       seq: state.seq,
       events: state.events.filter((e) => e.seq > since),
       tasks: state.tasksSeq > since ? state.tasks : undefined,
+      bridges: (state.bridgesSeq || 0) > since ? state.bridges : undefined,
       sessions: since === 0 ? Object.values(state.sessions).map(({ pending, ...s }) => s) : undefined,
     });
     let out = collect();
-    if (!out.events.length && out.tasks === undefined && wait > 0) {
+    if (!out.events.length && out.tasks === undefined && out.bridges === undefined && wait > 0) {
       await waitForChange(wait * 1000);
       out = collect();
     }
@@ -208,6 +215,25 @@ async function handle(req, res) {
   }
 
   let m;
+  // The bridge couldn't deliver a reply: hand it back to the phone (copy + open the session).
+  if ((m = p.match(/^\/api\/events\/([a-f0-9]+)\/undeliverable$/)) && req.method === 'POST') {
+    const ev = state.events.find((e) => e.id === m[1]);
+    if (!ev) return send(res, 404, { error: 'no such event' });
+    const b = await readBody(req);
+    bump(Object.assign(ev, { status: 'new', replyMode: 'none', delivery: 'failed', deliveryError: String(b.error || '').slice(0, 300), failedReply: ev.reply }));
+    notify();
+    return send(res, 200, { ok: true });
+  }
+
+  if (p === '/api/bridge/status' && req.method === 'POST') {
+    const b = await readBody(req);
+    if (!b.host) return send(res, 400, { error: 'host required' });
+    (state.bridges ??= {})[b.host] = { sources: b.sources || {}, at: Date.now() };
+    state.bridgesSeq = ++state.seq;
+    notify();
+    return send(res, 200, { ok: true });
+  }
+
   if ((m = p.match(/^\/api\/events\/([a-f0-9]+)\/(suggest|dismiss)$/)) && req.method === 'POST') {
     const ev = state.events.find((e) => e.id === m[1]);
     if (!ev) return send(res, 404, { error: 'no such event' });
@@ -238,6 +264,12 @@ async function handle(req, res) {
     const s = sessionId && getSession(sessionId);
     if (!s) return send(res, 404, { error: 'unknown session' });
     const reply = { id: id(), text, ts: Date.now(), eventId: ev?.id || null };
+    if (ev?.replyMode === 'none') {
+      // Nothing can deliver this automatically (the phone copies it and opens the session): just record it.
+      bump(Object.assign(ev, { status: 'replied', reply: text, repliedAt: reply.ts, delivery: 'manual' }));
+      notify();
+      return send(res, 200, { ok: true, replyId: reply.id, deliveredVia: 'manual' });
+    }
     s.pending.push(reply);
     if (ev) bump(Object.assign(ev, { status: 'replied', reply: text, repliedAt: reply.ts, delivery: 'queued' }));
     notify();

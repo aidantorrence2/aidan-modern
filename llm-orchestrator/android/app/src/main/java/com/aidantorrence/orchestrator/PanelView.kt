@@ -96,7 +96,7 @@ class PanelView(
         inboxTab.background = Ui.rounded(context, 0, 14, if (tab == "inbox") Ui.ACCENT else Ui.LINE)
         tasksTab.setTextColor(if (tab == "tasks") Ui.ACCENT else Ui.MUTED)
         tasksTab.background = Ui.rounded(context, 0, 14, if (tab == "tasks") Ui.ACCENT else Ui.LINE)
-        status.text = Hub.relayStatus
+        status.text = Hub.relayStatus + if (Hub.bridgeStatus.isNotBlank()) "  ·  ${Hub.bridgeStatus}" else ""
         status.setTextColor(if (Hub.relayStatus == "Connected") Ui.GOOD else Ui.MUTED)
         focus.text = open.firstOrNull()?.let { "Focus → ${it.title}" } ?: ""
         focus.visibility = if (open.isEmpty()) GONE else VISIBLE
@@ -164,6 +164,8 @@ class PanelView(
         "notification" -> "sent via app"
         "clipboard" -> "copied"
         "next-turn" -> "copied (session idle)"
+        "manual" -> "copied"
+        "failed" -> "send failed"
         else -> d
     }
 
@@ -173,6 +175,7 @@ class PanelView(
         private val title = Ui.text(context, "", 14f, Ui.TEXT, bold = true).apply { maxLines = 2; ellipsize = TextUtils.TruncateAt.END }
         private val age = Ui.text(context, "", 11f, Ui.MUTED)
         private val prompt = Ui.text(context, "", 12f, Ui.MUTED).apply { maxLines = 1; ellipsize = TextUtils.TruncateAt.END }
+        private val note = Ui.text(context, "", 12f, Ui.BAD)
         private val response = Ui.text(context, "", 13f, Ui.TEXT).apply { maxLines = 6; ellipsize = TextUtils.TruncateAt.END }
         private val edit = Ui.input(context, "Reply…", multiLine = true)
         private val alts = Ui.row(context, 6)
@@ -189,6 +192,7 @@ class PanelView(
             top.addView(age)
             view.addView(top)
             view.addView(prompt)
+            view.addView(note)
             view.addView(response)
             response.setOnClickListener {
                 expanded = !expanded
@@ -235,6 +239,8 @@ class PanelView(
             age.text = Ui.ago(item.ts)
             prompt.text = if (item.prompt.isNotBlank()) "You: ${item.prompt.replace(Regex("\\s+"), " ")}" else ""
             prompt.visibility = if (item.prompt.isBlank()) GONE else VISIBLE
+            note.text = item.note
+            note.visibility = if (item.note.isBlank()) GONE else VISIBLE
             if (response.text.toString() != item.text) response.text = item.text.ifBlank { "(no text in the completion)" }
             if (expandedId == item.id) { expanded = true; response.maxLines = Int.MAX_VALUE; expandedId = null }
 

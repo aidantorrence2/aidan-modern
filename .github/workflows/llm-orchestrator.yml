@@ -20,6 +20,7 @@ jobs:
           node-version: 22
       - run: npm ci
       - run: npm test
+      - run: node ../connectors/test-sources.mjs
 
   android:
     runs-on: ubuntu-latest

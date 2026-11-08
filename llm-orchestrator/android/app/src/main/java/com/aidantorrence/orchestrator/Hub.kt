@@ -38,6 +38,9 @@ object Hub {
         private set
     @Volatile private var tasksDirty = false
     @Volatile private var initialSynced = false
+    /** Per-computer bridge health, e.g. "laptop: claude ✓ codex ✓ chatgpt ✗". */
+    @Volatile var bridgeStatus = ""
+        private set
 
     val deviceHandles = mutableMapOf<String, DeviceHandle>()
     /** Called when a brand-new completion arrives (overlay pulses its bubble). */
@@ -117,6 +120,15 @@ object Hub {
         if (events != null) {
             for (i in 0 until events.length()) merge(events.getJSONObject(i), alert = !firstLoad)
         }
+        res.optJSONObject("bridges")?.let { b ->
+            bridgeStatus = b.keys().asSequence().joinToString("  ") { host ->
+                val srcs = b.getJSONObject(host).optJSONObject("sources") ?: JSONObject()
+                host + ": " + srcs.keys().asSequence().filter { it != "relay" }.joinToString(" ") { k ->
+                    val ok = srcs.getJSONObject(k).optBoolean("ok")
+                    k.removeSuffix("-web").removeSuffix("-files").removeSuffix("-sessions") + if (ok) " ✓" else " ✗"
+                }
+            }
+        }
         val tasks = res.optJSONArray("tasks")
         if (tasks != null && !tasksDirty) {
             Store.tasks.clear()
@@ -138,8 +150,16 @@ object Hub {
         item.text = o.optString("text", item.text)
         item.prompt = o.optString("prompt", item.prompt)
         val remoteStatus = o.optString("status", item.status)
-        // Never let a stale poll resurrect something the user already answered or dismissed on the phone.
-        if (!(remoteStatus == "new" && (item.status == "replied" || item.status == "dismissed"))) item.status = remoteStatus
+        val failed = o.optString("delivery") == "failed" && item.delivery != "failed"
+        // Never let a stale poll resurrect something the user already answered or dismissed on the phone,
+        // unless the bridge reports it couldn't deliver the reply (then it comes back with the reply filled in).
+        if (failed) {
+            item.status = "new"
+            item.draft = o.optString("failedReply").ifBlank { item.reply }
+            item.note = "Couldn't send automatically: ${o.optString("deliveryError").take(120)}. Tap Copy & open."
+        } else if (!(remoteStatus == "new" && (item.status == "replied" || item.status == "dismissed"))) {
+            item.status = remoteStatus
+        }
         item.url = o.optString("url", item.url)
         item.replyMode = o.optString("replyMode", item.replyMode)
         item.delivery = o.optString("delivery", item.delivery)
@@ -149,8 +169,11 @@ object Hub {
             item.suggestion = s.optString("primary")
             item.alternatives = s.optJSONArray("alternatives").toStringList()
         }
+        if (existing == null) supersedeDeviceCopies(item)
         if (item.status != "new") {
             cancelAlert(item)
+        } else if (failed) {
+            postAlert(item, quiet = false)
         } else if (existing == null && alert) {
             newCompletion(item)
         } else if (!hadSuggestion && item.suggestion.isNotBlank() && alert) {
@@ -160,11 +183,30 @@ object Hub {
 
     // ------------------------------------------------------------------ device notifications
 
+    private fun norm(s: String) = s.replace(Regex("\\s+"), " ").trim().trimEnd('…', '.').lowercase()
+
+    /** Same turn seen both as a phone notification and through the bridge: keep the bridge copy (it can reply). */
+    private fun sameTurn(device: String, polled: String): Boolean {
+        val d = norm(device).take(60)
+        return d.length >= 12 && norm(polled).contains(d)
+    }
+
+    private fun supersedeDeviceCopies(relayItem: InboxItem) {
+        Store.items.filter {
+            it.origin == "device" && it.status == "new" && relayItem.ts - it.ts < 15 * 60_000 && sameTurn(it.text, relayItem.text)
+        }.forEach { it.status = "superseded"; cancelAlert(it) }
+    }
+
     /** A watched app (ChatGPT, Claude, ...) posted a "response ready" style notification. */
     fun onDeviceCompletion(pkg: String, source: String, key: String, title: String, text: String, handle: DeviceHandle) = ui {
         val sessionId = "$pkg:$key"
         val dup = Store.items.find { it.sessionId == sessionId && it.status == "new" && it.text == text }
         if (dup != null) { deviceHandles[dup.id] = handle; return@ui }
+        // Already reported by the bridge (which can reply directly)? Then the notification adds nothing.
+        val polled = Store.items.find {
+            it.origin == "relay" && System.currentTimeMillis() - it.ts < 15 * 60_000 && sameTurn(text, it.text)
+        }
+        if (polled != null) return@ui
         val item = InboxItem(
             id = "dev-" + System.currentTimeMillis().toString(36) + (0..999).random(),
             origin = "device", source = source, sessionId = sessionId, title = title, text = text,
@@ -239,6 +281,7 @@ object Hub {
         item.status = "replied"
         item.reply = text
         item.draft = null
+        item.note = ""
         cancelAlert(item)
         Store.changed()
 
@@ -259,6 +302,7 @@ object Hub {
                         "hook" -> toast("Sent — session is continuing")
                         "bridge" -> toast("Queued — the bridge will resume the session")
                         "next-turn" -> copyAndOpen(item, text, "Cloud session isn't waiting — reply copied")
+                        "bridge" -> {}
                     }
                 }
             } catch (e: Exception) {
@@ -362,6 +406,8 @@ object Hub {
     fun label(source: String) = when (source) {
         "claude-code" -> "Claude Code"
         "claude-code-cloud" -> "Claude Code ☁"
+        "claude-code-rc" -> "Claude Code 💻"
+        "claude-web" -> "Claude"
         "codex" -> "Codex"
         "chatgpt" -> "ChatGPT"
         "claude-app" -> "Claude"

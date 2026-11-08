@@ -31,13 +31,15 @@ data class InboxItem(
     var reply: String = "",
     var delivery: String = "",
     var packageName: String = "",
+    /** Shown on the card, e.g. why an automatic send failed. */
+    var note: String = "",
 ) {
     fun toJson(): JSONObject = JSONObject().apply {
         put("id", id); put("origin", origin); put("source", source); put("sessionId", sessionId)
         put("title", title); put("text", text); put("prompt", prompt); put("ts", ts); put("status", status)
         put("suggestion", suggestion); put("alternatives", JSONArray(alternatives)); put("draft", draft ?: JSONObject.NULL)
         put("url", url); put("replyMode", replyMode); put("reply", reply); put("delivery", delivery)
-        put("packageName", packageName)
+        put("packageName", packageName); put("note", note)
     }
 
     companion object {
@@ -59,6 +61,7 @@ data class InboxItem(
             reply = o.optString("reply"),
             delivery = o.optString("delivery"),
             packageName = o.optString("packageName"),
+            note = o.optString("note"),
         )
     }
 }
