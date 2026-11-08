@@ -13,6 +13,7 @@ const MIN = 60e3, DAY = 864e5;
 const load = (k, d) => { try { return JSON.parse(localStorage.getItem(k)) ?? d; } catch { return d; } };
 const save = (k, v) => { try { localStorage.setItem(k, JSON.stringify(v)); } catch {} };
 const S = load('settings', { lang: 'pt-BR', rate: 0.9, newPerDay: 15, think: 4, mode: 'speak', autoAdvance: true });
+S.lang = 'pt-BR'; // Brazilian Portuguese only
 let cards = load('cards', {}); // id -> {due, ivl(days), ease, reps, lapses, seen}
 let stats = load('stats', { streak: 0, last: '', today: '', newToday: 0, reviewsToday: 0 });
 const ids = DECK.map((_, i) => i);
@@ -130,7 +131,7 @@ function home() {
   stopSession();
   const c = counts();
   h(`
-  <header><h1>Português <span>em movimento</span></h1></header>
+  <header><h1>Português 🇧🇷 <span>em movimento</span></h1></header>
   <div class="stats">
     <div><b>${c.due}</b><small>due</small></div>
     <div><b>${c.newLeft}</b><small>new today</small></div>
@@ -312,7 +313,6 @@ function settings() {
   stopSession();
   h(`<div class="topbar"><button id="back">✕</button><span>Settings</span></div>
   <div class="form">
-    <label>Accent<select id="lang"><option value="pt-BR">Brazilian 🇧🇷</option><option value="pt-PT">European 🇵🇹</option></select></label>
     <label>Audio answer mode<select id="mode"><option value="speak">Speak — app listens & grades</option><option value="pause">Pause — think, hear answer, tap ✗ if wrong</option></select></label>
     <label>Speech speed <output id="rv">${S.rate}</output><input type="range" id="rate" min="0.5" max="1.3" step="0.05" value="${S.rate}"></label>
     <label>Think time (pause mode) <output id="tv">${S.think}s</output><input type="range" id="think" min="2" max="10" step="1" value="${S.think}"></label>
@@ -321,9 +321,8 @@ function settings() {
     <button class="big ghost" id="test">🔊 Test voice</button>
     <button class="big ghost red" id="reset">Reset progress</button>
   </div>`);
-  $('#lang').value = S.lang; $('#mode').value = S.mode;
+  $('#mode').value = S.mode;
   const up = () => save('settings', S);
-  $('#lang').onchange = (e) => { S.lang = e.target.value; up(); };
   $('#mode').onchange = (e) => { S.mode = e.target.value; up(); };
   $('#rate').oninput = (e) => { S.rate = +e.target.value; $('#rv').textContent = S.rate; up(); };
   $('#think').oninput = (e) => { S.think = +e.target.value; $('#tv').textContent = S.think + 's'; up(); };
