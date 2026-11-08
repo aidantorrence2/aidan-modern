@@ -1,3 +1,4 @@
 build/
 release.keystore
 dist/
+app/src/main/assets/audio/

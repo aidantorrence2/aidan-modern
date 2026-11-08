@@ -2,7 +2,6 @@ package com.aidan.flashcards;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.speech.tts.TextToSpeech;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -20,7 +19,7 @@ public class StudyActivity extends Activity {
     private TextView front, back, hint, counter;
     private LinearLayout rateRow;
     private Button[] rates;
-    private TextToSpeech tts;
+    private Voice voice;
     private int done;
 
     @Override protected void onCreate(Bundle b) {
@@ -28,7 +27,7 @@ public class StudyActivity extends Activity {
         Ui.window(this);
         deck = Deck.get(this, getIntent().getStringExtra("lang"));
         queue = deck.buildQueue(getIntent().getIntExtra("level", -1));
-        tts = new TextToSpeech(this, s -> { if (s == TextToSpeech.SUCCESS) tts.setLanguage(deck.locale); });
+        voice = new Voice(this, deck.locale);
 
         LinearLayout col = Ui.column(this);
         counter = Ui.text(this, "", 13, Ui.MUTED, false);
@@ -79,7 +78,7 @@ public class StudyActivity extends Activity {
         speak();
     }
 
-    private void speak() { if (tts != null) tts.speak(cur.front, TextToSpeech.QUEUE_FLUSH, null, "w"); }
+    private void speak() { voice.say(cur.front, false, null); }
 
     private void rate(int r) {
         if (!flipped) return;
@@ -89,5 +88,5 @@ public class StudyActivity extends Activity {
         show();
     }
 
-    @Override protected void onDestroy() { if (tts != null) tts.shutdown(); super.onDestroy(); }
+    @Override protected void onDestroy() { voice.shutdown(); super.onDestroy(); }
 }

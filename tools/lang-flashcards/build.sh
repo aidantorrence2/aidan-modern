@@ -12,7 +12,7 @@ rm -rf "$OUT" && mkdir -p "$OUT/classes" "$OUT/dex" dist
 
 "$BT/aapt2" compile --dir "$SRC/res" -o "$OUT/res.zip"
 "$BT/aapt2" link -I "$JAR" --manifest "$SRC/AndroidManifest.xml" -A "$SRC/assets" \
-  -o "$OUT/unsigned.apk" "$OUT/res.zip" --java "$OUT/gen" --auto-add-overlay
+  -0 mp3 -o "$OUT/unsigned.apk" "$OUT/res.zip" --java "$OUT/gen" --auto-add-overlay
 javac --release 8 -Xlint:-options -classpath "$JAR" -encoding UTF-8 \
   -d "$OUT/classes" $(find "$SRC/java" "$OUT/gen" -name '*.java')
 (cd "$OUT/classes" && jar cf ../classes.jar .)
