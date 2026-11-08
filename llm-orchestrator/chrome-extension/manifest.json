@@ -1,0 +1,10 @@
+{
+  "manifest_version": 3,
+  "name": "Orchestrator — claude.ai",
+  "version": "1.0.0",
+  "description": "Sends your finished claude.ai replies to your LLM Orchestrator relay (phone + Mac panel). Runs in your own signed-in Chrome.",
+  "permissions": ["alarms", "storage"],
+  "host_permissions": ["https://claude.ai/*", "https://orch.143-47-103-101.sslip.io/*"],
+  "background": { "service_worker": "background.js", "type": "module" },
+  "action": { "default_title": "Orchestrator — claude.ai" }
+}
