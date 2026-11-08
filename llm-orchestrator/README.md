@@ -35,6 +35,13 @@ The **suggested reply** is drafted on the relay by Claude (`claude-opus-5-5` at 
 - **Server bridge (optional):** the same image running `node connectors/bridge.mjs` keeps cloud sessions and ChatGPT flowing while the Mac sleeps. It needs its own logins (refresh tokens rotate; sharing the Mac's logs one of them out).
 - **Bridges queue finished turns** in a saved outbox until the relay accepts them, and the relay requeues any reply a bridge claimed but didn't confirm within 90 seconds.
 
+## Always-on browser (claude.ai, ChatGPT)
+
+Neither service has an API for your chats, so the server runs a real Chromium (`browser/`, container `orch-browser`) that you sign in to once through its noVNC remote view at `https://<relay host>/view-<secret>/vnc.html` (secret in `~/.config/llm-orchestrator/browser-view-secret`). `poller.mjs` reads your conversations from inside the signed-in tabs every 30 s and posts finished replies to the relay; replies from the phone or Mac are typed into the real chat box. No automation flags or bot-check workarounds: if a site asks you to verify, it shows up in the remote view. The server has 3 GB of swap so Chromium can't starve the relay.
+
+    docker run -d --name orch-browser --restart unless-stopped --network <caddy network> --shm-size 256m \
+      -e ORCH_RELAY_URL=http://orch-relay:8787 -e ORCH_TOKEN=... -v ~/llm-orchestrator/browser-data:/data orch-browser
+
 ## 1. Run the relay
 
 The relay is a small Node 20+ server with one dependency (`@anthropic-ai/sdk`). It has to be reachable from your phone and from the computers running the bridge. Any of these works: a small VPS, Fly.io, Railway, Render, or your desktop behind Tailscale or Cloudflare Tunnel.
