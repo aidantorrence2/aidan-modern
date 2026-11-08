@@ -173,9 +173,75 @@ export async function deliverLocal(kind, reply, opts = {}) {
     return true;
   }
   if (owners.length) {
-    throw new Error(`${kind === 'codex' ? 'Codex' : 'Claude Code'} session is open outside tmux (pid ${owners.join(', ')}); answer it in that terminal`);
+    // Not in tmux: type it into the Terminal.app / iTerm2 tab that hosts the session.
+    for (const pid of owners) {
+      if (await sendToTerminalTab(pid, reply.text)) return true;
+    }
+    throw new Error(`${kind === 'codex' ? 'Codex' : 'Claude Code'} session (pid ${owners.join(', ')}) is in a terminal I can't type into; answer it there`);
   }
   return false;
+}
+
+const TERMINAL_SCRIPT = `on run argv
+  set theTTY to item 1 of argv
+  set theText to item 2 of argv
+  tell application "Terminal"
+    repeat with w in windows
+      repeat with t in tabs of w
+        if tty of t is theTTY then
+          do script theText in t
+          return "ok"
+        end if
+      end repeat
+    end repeat
+  end tell
+  return "missing"
+end run`;
+
+const ITERM_SCRIPT = `on run argv
+  set theTTY to item 1 of argv
+  set theText to item 2 of argv
+  tell application "iTerm2"
+    repeat with w in windows
+      repeat with t in tabs of w
+        repeat with s in sessions of t
+          if tty of s is theTTY then
+            tell s to write text theText
+            return "ok"
+          end if
+        end repeat
+      end repeat
+    end repeat
+  end tell
+  return "missing"
+end run`;
+
+/**
+ * Types a reply into the terminal tab whose tty the session's process uses (Terminal.app or iTerm2),
+ * followed by Return. Newlines are flattened to spaces: each one would otherwise submit a separate message.
+ * The first time, macOS asks to allow the bridge to control Terminal (Automation permission).
+ */
+export async function sendToTerminalTab(pid, text) {
+  let tty = '';
+  try {
+    tty = (await run('/bin/ps', ['-o', 'tty=', '-p', String(pid)])).trim();
+  } catch {
+    return false;
+  }
+  if (!tty || tty === '??') return false;
+  const procs = await processTable();
+  let app = null;
+  for (let p = pid, i = 0; p > 1 && i < 30; i++) {
+    const args = procs.get(p)?.args || '';
+    if (/Terminal\.app\/Contents\/MacOS\/Terminal/.test(args)) { app = 'Terminal'; break; }
+    if (/iTerm\.app\/Contents\/MacOS\/iTerm2/.test(args)) { app = 'iTerm2'; break; }
+    p = procs.get(p)?.ppid;
+  }
+  if (!app) return false;
+  const flat = String(text).replace(/\s*\n+\s*/g, ' ').trim();
+  if (!flat) return false;
+  const out = await run('/usr/bin/osascript', ['-e', app === 'Terminal' ? TERMINAL_SCRIPT : ITERM_SCRIPT, `/dev/${tty}`, flat], { timeoutMs: 15_000 });
+  return out.trim() === 'ok';
 }
 
 /** Types text into a pane and presses Enter. Multi-line text goes in as one bracketed paste so it isn't submitted line by line. */

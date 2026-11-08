@@ -349,7 +349,7 @@ try {
     const e = (await events()).find((x) => x.id === l3.id);
     return e?.delivery === 'failed' && e;
   }, 'local session undeliverable');
-  assert.match(l3b.deliveryError, /outside tmux/);
+  assert.match(l3b.deliveryError, /terminal I can't type into/);
   assert.ok(!fs.readFileSync(path.join(dir, 'claude-calls.txt'), 'utf8').includes('sess-local-3'), 'live session never resumed headless');
 
   console.log('ALL SOURCE TESTS PASSED');
