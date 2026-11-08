@@ -14,8 +14,10 @@ const log = (...a) => console.log(new Date().toISOString().slice(11, 19), ...a);
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 const SERVICES = {
-  claude: { origin: 'https://claude.ai', start: 'https://claude.ai/new', source: 'claude-web', status: 'claude-web' },
-  chatgpt: { origin: 'https://chatgpt.com', start: 'https://chatgpt.com/', source: 'chatgpt', status: 'chatgpt-web' },
+  // `rest` is a plain JSON page on the site's own origin: the tab idles there between checks, so the
+  // in-page fetches still run as the site with your cookies, but the heavy chat app isn't burning the CPU.
+  claude: { origin: 'https://claude.ai', start: 'https://claude.ai/login', rest: 'https://claude.ai/api/organizations', source: 'claude-web', status: 'claude-web' },
+  chatgpt: { origin: 'https://chatgpt.com', start: 'https://chatgpt.com/', rest: 'https://chatgpt.com/api/auth/session', source: 'chatgpt', status: 'chatgpt-web' },
 };
 
 let state = {};
@@ -191,23 +193,36 @@ async function chatgptRead(st) {
 const busy = { claude: false, chatgpt: false }; // a reply is being typed into that tab
 const cooldown = { claude: 0, chatgpt: 0 };
 
+// `touch /data/pause` stops polling (and tab moves) while you use the remote view by hand.
+const paused = () => fs.existsSync('/data/pause');
+
 async function pollService(key) {
   const svc = SERVICES[key];
-  if (busy[key] || Date.now() < cooldown[key]) return;
+  if (paused() || busy[key] || Date.now() < cooldown[key]) return;
   let s;
   try {
     const tab = await tabFor(svc);
     s = await session(tab);
+    if (state[key]?.initialized && !tab.url.startsWith(svc.rest)) {
+      await s.send('Page.navigate', { url: svc.rest }).catch(() => {});
+      await sleep(4000);
+      tab.url = svc.rest;
+    }
     const reader = key === 'claude' ? claudeRead : chatgptRead;
     const r = await evaluate(s, reader, state[key] || null);
     state[key] = r.st;
     save();
     if (r.signedOut) {
+      // Leave (or put) the full site up so you can sign in through the remote view.
+      if (tab.url.startsWith(svc.rest)) await s.send('Page.navigate', { url: svc.start }).catch(() => {});
       await setStatus(svc.status, false, `signed out of ${svc.origin}`);
       return;
     }
+    if (!tab.url.startsWith(svc.rest)) await s.send('Page.navigate', { url: svc.rest }).catch(() => {});
     for (const t of r.turns || []) {
-      await relay('POST', '/api/events', { ...t, source: svc.source, host: HOST, replyMode: 'bridge' });
+      // claude.ai replies are sent from this server; ChatGPT ones by the phone through the ChatGPT app,
+      // because ChatGPT demands its in-page browser check per message and this server's CPU is too small for it.
+      await relay('POST', '/api/events', { ...t, source: svc.source, host: HOST, replyMode: key === 'claude' ? 'bridge' : 'none' });
       log(`[${key}] finished: ${t.title.slice(0, 60)}`);
     }
     await setStatus(svc.status, true);
@@ -226,7 +241,65 @@ const COMPOSER = {
   chatgpt: ['#prompt-textarea', 'div[contenteditable="true"]', 'textarea'],
 };
 
+/** Runs in the claude.ai tab: posts the reply as the next message, exactly like the site's Send button. */
+async function claudeSend(arg) {
+  const j = async (p, init) => {
+    const r = await fetch('/api' + p, { credentials: 'include', ...init });
+    if (!r.ok) throw new Error('claude.ai ' + r.status + ' ' + (await r.text()).slice(0, 120));
+    return r;
+  };
+  const orgs = await (await j('/organizations')).json();
+  const org = (orgs.find((o) => (o.capabilities || []).includes('chat')) || orgs[0]).uuid;
+  const conv = await (await j(`/organizations/${org}/chat_conversations/${arg.id}?tree=True&rendering_mode=messages`)).json();
+  const before = (conv.chat_messages || []).length;
+  const parent = conv.current_leaf_message_uuid || (conv.chat_messages || []).slice(-1)[0]?.uuid;
+  const r = await j(`/organizations/${org}/chat_conversations/${arg.id}/completion`, {
+    method: 'POST',
+    headers: { 'content-type': 'application/json', accept: 'text/event-stream' },
+    body: JSON.stringify({
+      prompt: arg.text,
+      parent_message_uuid: parent,
+      timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+      locale: 'en-US',
+      attachments: [],
+      files: [],
+      sync_sources: [],
+      rendering_mode: 'messages',
+    }),
+  });
+  await r.text(); // stream until Claude finishes
+  const after = await (await j(`/organizations/${org}/chat_conversations/${arg.id}?tree=True&rendering_mode=messages`)).json();
+  return { before, after: (after.chat_messages || []).length };
+}
+
 async function deliver(reply) {
+  if (reply.source === 'claude-web') return deliverClaude(reply);
+  return deliverByTyping(reply);
+}
+
+async function deliverClaude(reply) {
+  busy.claude = true;
+  let s;
+  try {
+    const tab = await tabFor(SERVICES.claude);
+    s = await session(tab);
+    if (!tab.url.startsWith(SERVICES.claude.rest)) { await s.send('Page.navigate', { url: SERVICES.claude.rest }); await sleep(4000); }
+    const r = await evaluate(s, claudeSend, { id: reply.sessionId.replace(/^claude:/, ''), text: reply.text }, 300_000);
+    if (!(r.after > r.before)) throw new Error('claude.ai did not record the message');
+    log(`[claude] sent reply to ${reply.sessionId.slice(0, 24)} (${r.before}→${r.after} messages)`);
+    const id = reply.sessionId.split(':')[1];
+    if (state.claude?.convs?.[id]) state.claude.convs[id].updated = '';
+  } catch (e) {
+    log('[claude] send failed:', e.message);
+    if (reply.eventId) await relay('POST', `/api/events/${reply.eventId}/undeliverable`, { error: e.message }).catch(() => {});
+  } finally {
+    s?.close();
+    busy.claude = false;
+    await relay('POST', '/api/bridge/ack', { ids: [reply.id] }).catch(() => {});
+  }
+}
+
+async function deliverByTyping(reply) {
   const key = reply.source === 'claude-web' ? 'claude' : 'chatgpt';
   const svc = SERVICES[key];
   busy[key] = true;
@@ -272,6 +345,7 @@ async function deliver(reply) {
     log(`[${key}] send failed:`, e.message);
     if (reply.eventId) await relay('POST', `/api/events/${reply.eventId}/undeliverable`, { error: e.message }).catch(() => {});
   } finally {
+    if (s) await s.send('Page.navigate', { url: svc.rest }).catch(() => {}); // back to the light page
     s?.close();
     busy[key] = false;
     await relay('POST', '/api/bridge/ack', { ids: [reply.id] }).catch(() => {});
@@ -281,7 +355,7 @@ async function deliver(reply) {
 async function replyLoop() {
   for (;;) {
     try {
-      const r = await relay('GET', `/api/bridge/replies?host=${HOST}&sources=claude-web,chatgpt&wait=25`, undefined, 40_000);
+      const r = await relay('GET', `/api/bridge/replies?host=${HOST}&sources=claude-web&wait=25`, undefined, 40_000);
       for (const reply of r.replies || []) await deliver(reply);
     } catch (e) {
       log('[replies]', e.message);

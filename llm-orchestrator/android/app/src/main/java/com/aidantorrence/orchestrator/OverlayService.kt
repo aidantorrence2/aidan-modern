@@ -181,6 +181,8 @@ class OverlayService : Service() {
     private fun snapToEdge(b: View) {
         val w = resources.displayMetrics.widthPixels
         bubbleParams.x = if (bubbleParams.x + b.width / 2 < w / 2) dp(4) else w - b.width - dp(4)
+        val h = resources.displayMetrics.heightPixels
+        bubbleParams.y = bubbleParams.y.coerceIn(dp(40), (h - b.height - dp(40)).coerceAtLeast(dp(40)))
         runCatching { wm.updateViewLayout(b, bubbleParams) }
     }
 
@@ -206,10 +208,10 @@ class OverlayService : Service() {
         val host = FrameLayout(this)
         val panel = PanelView(this, onMinimize = { collapse() }, onWantsKeyboard = { setFocusable(it) })
         host.addView(panel, FrameLayout.LayoutParams(FrameLayout.LayoutParams.MATCH_PARENT, FrameLayout.LayoutParams.MATCH_PARENT))
-        val dm = resources.displayMetrics
+        val (pw, ph) = panelSize()
         panelParams = WindowManager.LayoutParams(
-            dm.widthPixels - dp(16),
-            (dm.heightPixels * 0.62f).toInt(),
+            pw,
+            ph,
             WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY,
             WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE or WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL or
                 WindowManager.LayoutParams.FLAG_WATCH_OUTSIDE_TOUCH,
@@ -226,6 +228,26 @@ class OverlayService : Service() {
         }
         wm.addView(host, panelParams)
         panelHost = host
+    }
+
+    /** Always fits the screen as it is now: never wider than the screen, never taller than ~62% of it. */
+    private fun panelSize(): Pair<Int, Int> {
+        val b = wm.currentWindowMetrics.bounds
+        val w = (b.width() - dp(16)).coerceAtMost(dp(520)).coerceAtLeast(dp(200))
+        val h = (b.height() * 0.62f).toInt().coerceAtMost(b.height() - dp(120)).coerceAtLeast(dp(200))
+        return w to h
+    }
+
+    override fun onConfigurationChanged(newConfig: android.content.res.Configuration) {
+        super.onConfigurationChanged(newConfig)
+        // Rotation or screen-size change: resize the open panel and keep the bubble on screen.
+        panelHost?.let { host ->
+            val (pw, ph) = panelSize()
+            panelParams.width = pw
+            panelParams.height = ph
+            runCatching { wm.updateViewLayout(host, panelParams) }
+        }
+        bubble?.let { b -> b.post { runCatching { snapToEdge(b) } } }
     }
 
     private fun setFocusable(focusable: Boolean) {
