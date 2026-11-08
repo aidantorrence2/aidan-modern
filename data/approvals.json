@@ -3727,6 +3727,67 @@
       "status": "approved",
       "decided": "2026-11-06T15:27:18Z",
       "note": ""
+    },
+    {
+      "id": "spend:publish-meta-test-dating-ideas-test-at-3-202611081456",
+      "kind": "spend",
+      "source": "codex:dating-photos-ai",
+      "title": "Publish Meta test 'dating ideas - test' at $3/day (4 fake-door idea ads)",
+      "summary": "Publishes + turns ON campaign 'dating ideas - test' (act 695822169269016): 1 ad set, US/GB/CA/AU, 24-45, all genders, landing-page-views, $3.00/day, no end date (~$42 over 14 days). 4 single-image ads, one per idea (AI shoot / camera-roll edit / profile audit / swipe test), each to its own 'launching soon' email page on dating-photos-ai.vercel.app. Ad photos are your portfolio frames with models: r1-05457-0036, 000067-4, 000049660026, manila-gallery-floor-001 - confirm you have usage rights for these before approving. Nothing spends until you approve.",
+      "payload": {
+        "action": "publish_and_turn_on",
+        "account": "695822169269016",
+        "campaign_id": "120251253897040614",
+        "campaign": "dating ideas - test",
+        "adset_id": "120251253897060614",
+        "daily_budget_usd": 3,
+        "geos": [
+          "US",
+          "GB",
+          "CA",
+          "AU"
+        ],
+        "age": "24-45",
+        "gender": "all",
+        "optimization": "landing_page_views",
+        "ads": [
+          {
+            "id": "120251253897050614",
+            "name": "idea I1 ai-shoot",
+            "url": "https://dating-photos-ai.vercel.app/ideas/ai-shoot/?utm_source=meta&utm_campaign=dating-ideas&utm_content=I1",
+            "image": "idea-I1-ai-shoot-feed-1080x1350-v1.jpg",
+            "source_frame": "r1-05457-0036.jpg"
+          },
+          {
+            "id": "120251254078910614",
+            "name": "idea I2 camera-roll-edit",
+            "url": "https://dating-photos-ai.vercel.app/ideas/camera-roll-edit/?utm_source=meta&utm_campaign=dating-ideas&utm_content=I2",
+            "image": "idea-I2-camera-roll-edit-feed-1080x1350-v1.jpg",
+            "source_frame": "000067-4.jpg"
+          },
+          {
+            "id": "120251254092740614",
+            "name": "idea I3 profile-audit",
+            "url": "https://dating-photos-ai.vercel.app/ideas/profile-audit/?utm_source=meta&utm_campaign=dating-ideas&utm_content=I3",
+            "image": "idea-I3-profile-audit-feed-1080x1350-v1.jpg",
+            "source_frame": "000049660026.jpg"
+          },
+          {
+            "id": "120251254112240614",
+            "name": "idea I4 swipe-test",
+            "url": "https://dating-photos-ai.vercel.app/ideas/swipe-test/?utm_source=meta&utm_campaign=dating-ideas&utm_content=I4",
+            "image": "idea-I4-swipe-test-feed-1080x1350-v1.jpg",
+            "source_frame": "manila-gallery-floor-001.jpg"
+          }
+        ],
+        "creatives_dir": "~/ads-launch-kit/creatives/dating-ideas/",
+        "brief": "~/ads-launch-kit/CAMPAIGNS/dating-ideas-test.md"
+      },
+      "created": "2026-11-08T14:56:50Z",
+      "expires": "2026-11-11T14:56:50Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
     }
   ]
 }
