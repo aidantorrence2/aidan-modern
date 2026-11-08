@@ -5,7 +5,7 @@ Frequency flashcards: the 2,000 most common words + most common phrases, in leve
 Brazilian Portuguese.
 
 - **Study** — see the word, recall the meaning, tap to flip (it speaks the word), rate Again / Hard / Good / Easy.
-  Anki-style spaced repetition (SM-2 variant). 20 new cards per session plus whatever's due.
+  Anki-style spaced repetition (SM-2 variant). Plays due reviews then new words in order, continuously, until you stop.
 - **Audio** — hands-free. Says the word, waits for you to answer out loud (nothing is recorded), says the English,
   moves on. Keeps playing with the screen off. Unrated cards count as Good;
   tap the card to peek; tapping a rating plays the answer (if not yet played) and goes to the next card.

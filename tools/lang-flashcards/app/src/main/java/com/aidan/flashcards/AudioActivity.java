@@ -76,7 +76,7 @@ public class AudioActivity extends Activity {
         Deck.Card c = s.cur;
         if (c == null) return;
         if (c != shown) { shown = c; peek = false; }
-        counter.setText((s.queue.size() + 1) + " left  ·  " + s.done + " done");
+        counter.setText(s.done + " done");
         front.setText(c.front);
         back.setText(s.showBack || peek ? c.back : "");
         hint.setText(s.showBack || peek ? "" : "answer out loud  ·  tap to peek");

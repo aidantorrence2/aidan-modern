@@ -20,13 +20,14 @@ public class StudyActivity extends Activity {
     private LinearLayout rateRow;
     private Button[] rates;
     private Voice voice;
-    private int done;
+    private int done, level;
 
     @Override protected void onCreate(Bundle b) {
         super.onCreate(b);
         Ui.window(this);
         deck = Deck.get(this, getIntent().getStringExtra("lang"));
-        queue = deck.buildQueue(getIntent().getIntExtra("level", -1));
+        level = getIntent().getIntExtra("level", -1);
+        queue = deck.buildQueue(level);
         voice = new Voice(this, deck.locale);
 
         LinearLayout col = Ui.column(this);
@@ -50,17 +51,18 @@ public class StudyActivity extends Activity {
     }
 
     private void show() {
+        if (queue.isEmpty()) queue.addAll(deck.buildQueue(level));   // keep going: next due + new cards
         if (queue.isEmpty()) {
             counter.setText(done + " cards reviewed");
             front.setText("Done for now");
-            back.setText("Come back later for due reviews,\nor tap Study again for more new words.");
+            back.setText("You've been through every card in this set.");
             hint.setText("");
             rateRow.setVisibility(View.INVISIBLE);
             return;
         }
         cur = queue.remove(0);
         flipped = false;
-        counter.setText((queue.size() + 1) + " left" + (deck.state(cur) == null ? "  ·  new" : ""));
+        counter.setText(done + " done" + (deck.state(cur) == null ? "  ·  new" : ""));
         front.setText(cur.front);
         back.setText("");
         hint.setText("tap to flip");

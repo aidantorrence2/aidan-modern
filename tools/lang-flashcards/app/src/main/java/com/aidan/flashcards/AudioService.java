@@ -32,7 +32,7 @@ public class AudioService extends Service {
     Integer pending;            // rating tapped for the current card
     boolean showBack, paused, finished;
     private boolean backDone;   // English for the current card has finished playing
-    int done;
+    int done, level = -1;
     String status = "";
 
     private Voice voice;
@@ -50,7 +50,8 @@ public class AudioService extends Service {
         if (i != null) {
             h.removeCallbacksAndMessages(null);
             deck = Deck.get(this, i.getStringExtra("lang"));
-            queue = deck.buildQueue(i.getIntExtra("level", -1));
+            level = i.getIntExtra("level", -1);
+            queue = deck.buildQueue(level);
             cur = null; pending = null; done = 0; finished = false; paused = false; lastDone = -1;
         }
         if (wake == null) {
@@ -95,6 +96,7 @@ public class AudioService extends Service {
             done++;
             cur = null;
         }
+        if (queue.isEmpty()) queue.addAll(deck.buildQueue(level));   // keep going: next due + new cards
         if (queue.isEmpty()) {
             finished = true; update();
             stopForeground(STOP_FOREGROUND_REMOVE);
