@@ -17,7 +17,7 @@ import java.util.List;
 
 /**
  * Audio mode. For each card: say the word, leave a gap to answer out loud (nothing is recorded),
- * say the English, repeat the word, move on. A card you don't rate counts as Good — you're testing yourself.
+ * say the English, move on. A card you don't rate counts as Good — you're testing yourself.
  * Tapping a rating while it plays just changes how that card is scheduled; it never pauses playback.
  */
 public class AudioService extends Service {
@@ -82,8 +82,7 @@ public class AudioService extends Service {
     private void spoken(String u) {
         if (paused || cur == null) return;
         if ("front".equals(u)) h.postDelayed(reveal, 4000 + 60L * cur.front.length());
-        else if ("back".equals(u)) say(cur.front, false, "again");
-        else if ("again".equals(u)) h.postDelayed(advance, 1500);
+        else if ("back".equals(u)) h.postDelayed(advance, 1500);
     }
 
     private void say(String text, boolean en, String step) { voice.say(text, en, () -> spoken(step)); }

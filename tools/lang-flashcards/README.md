@@ -7,7 +7,7 @@ Brazilian Portuguese.
 - **Study** — see the word, recall the meaning, tap to flip (it speaks the word), rate Again / Hard / Good / Easy.
   Anki-style spaced repetition (SM-2 variant). 20 new cards per session plus whatever's due.
 - **Audio** — hands-free. Says the word, waits for you to answer out loud (nothing is recorded), says the English,
-  repeats the word, moves on. Keeps playing with the screen off. Unrated cards count as Good;
+  moves on. Keeps playing with the screen off. Unrated cards count as Good;
   tap the card to peek or tap a rating any time — it never pauses.
 - Tap a level to study just that level.
 
