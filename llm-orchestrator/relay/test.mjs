@@ -11,7 +11,7 @@ const PORT = 18000 + Math.floor(Math.random() * 1000);
 const TOKEN = 'test-token';
 const base = `http://127.0.0.1:${PORT}`;
 const here = path.dirname(new URL(import.meta.url).pathname);
-const env = { ...process.env, PORT: String(PORT), ORCH_TOKEN: TOKEN, ORCH_DATA: path.join(dir, 'data.json'), ANTHROPIC_API_KEY: '', ANTHROPIC_AUTH_TOKEN: '' };
+const env = { ...process.env, PORT: String(PORT), ORCH_TOKEN: TOKEN, ORCH_DATA: path.join(dir, 'data.json'), ANTHROPIC_API_KEY: '', ANTHROPIC_AUTH_TOKEN: '', ORCH_SUGGEST: 'api' };
 
 const server = spawn(process.execPath, [path.join(here, 'server.mjs')], { env, stdio: ['ignore', 'pipe', 'inherit'] });
 await new Promise((r) => server.stdout.once('data', r));

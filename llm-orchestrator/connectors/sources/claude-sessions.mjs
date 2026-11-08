@@ -181,18 +181,35 @@ export default function claudeSessionsSource(cfg) {
   const client = createClaudeSessions({ apiBase: c.apiBase, accessToken: c.accessToken, orgUuid: c.orgUuid });
 
   /** The API returns the newest page first; walk backward only when the latest turn isn't on it. */
-  async function fetchLatestTurn(id) {
-    let all = [];
-    let cursor = '';
-    for (let page = 0; page < 5; page++) {
-      const r = await client.call('GET', `/v1/sessions/${id}/events?limit=100${cursor}`);
+  /**
+   * The events API lists a session's events OLDEST first (no way to reverse it), paged with after_id.
+   * We remember the last event id read per session and fetch only what came after it, keeping a short
+   * tail of earlier events so a turn whose prompt came before the cursor still has its context.
+   * Returns { turn, cursor, tail }.
+   */
+  function slim(e) {
+    const c = e.message?.content;
+    if (!Array.isArray(c)) return e;
+    return { ...e, message: { ...e.message, content: c.filter((b) => b.type === 'text').map((b) => ({ type: 'text', text: b.text })) } };
+  }
+
+  async function fetchLatestTurn(id, prev) {
+    let events = prev?.tail ? [...prev.tail] : [];
+    let cursor = prev?.cursor || '';
+    for (let page = 0; page < 60; page++) {
+      const q = cursor ? `&after_id=${encodeURIComponent(cursor)}` : '';
+      const r = await client.call('GET', `/v1/sessions/${id}/events?limit=100${q}`);
       const data = Array.isArray(r) ? r : r.data || r.events || [];
-      all = data.concat(all);
-      const turn = latestTurn(all);
-      if (turn || !r.has_more || !r.first_id) return turn;
-      cursor = `&before_id=${encodeURIComponent(r.first_id)}`;
+      events = events.concat(data);
+      if (data.length) cursor = r.last_id || data[data.length - 1].id || cursor;
+      if (!r.has_more || !data.length) break;
+      if (events.length > 400) events = events.slice(-200); // only the recent turns matter
     }
-    return latestTurn(all);
+    // Saved context for next time: only what follows the last finished turn, tool output stripped.
+    let from = 0;
+    events.forEach((e, i) => { if (e.type === 'result') from = i + 1; });
+    const tail = events.slice(from).slice(-40).map(slim);
+    return { turn: latestTurn(events), cursor, tail };
   }
 
   return {
@@ -219,9 +236,15 @@ export default function claudeSessionsSource(cfg) {
           continue;
         }
         if (working) continue; // look again when it settles
-        const turn = await fetchLatestTurn(s.id);
-        seen[s.id] = { updated, last: turn?.id || prev?.last || null };
-        if (!turn || turn.id === prev?.last) continue;
+        const { turn, cursor, tail } = await fetchLatestTurn(s.id, prev);
+        if (!turn || turn.id === prev?.last) {
+          // The session can report idle before its final result event is readable: keep looking for
+          // two minutes after the update instead of marking it seen and missing the turn.
+          const fresh = Date.now() - Date.parse(updated) < 120_000;
+          seen[s.id] = { updated: fresh ? prev?.updated ?? '' : updated, last: turn?.id || prev?.last || null, cursor, tail };
+          continue;
+        }
+        seen[s.id] = { updated, last: turn.id, cursor, tail };
         if (!prev && Date.now() - Date.parse(updated) > 15 * 60_000) continue; // stale session we never tracked
         const local = s.environment_kind === 'bridge';
         out.push({

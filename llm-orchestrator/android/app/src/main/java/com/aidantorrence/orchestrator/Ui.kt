@@ -28,7 +28,7 @@ object Ui {
     val BAD = Color.parseColor("#F07A7A")
 
     fun sourceColor(source: String) = when (source) {
-        "claude-code", "claude-code-cloud", "claude-code-rc", "claude-app", "claude-web" -> Color.parseColor("#D97757")
+        "claude-code", "claude-code-cloud", "claude-code-rc", "claude-code-local", "claude-app", "claude-web" -> Color.parseColor("#D97757")
         "codex" -> Color.parseColor("#7AA2F7")
         "chatgpt" -> Color.parseColor("#10A37F")
         else -> MUTED

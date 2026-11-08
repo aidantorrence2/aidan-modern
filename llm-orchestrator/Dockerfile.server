@@ -1,0 +1,14 @@
+# Image for a small always-on host (it runs on a 1 GB VM): the relay, and a bridge for the cloud sources
+# (Claude Code cloud + Remote Control sessions, ChatGPT). Plain Node: no CLIs, so it stays light.
+# Local Codex / Claude Code stay on your computer's bridge.
+#   docker build -f Dockerfile.server -t orch-server .
+#   relay:  docker run ... orch-server                         (drafts via DEEPSEEK_API_KEY or ANTHROPIC_API_KEY)
+#   bridge: docker run ... orch-server node connectors/bridge.mjs   (config + logins in /config, see README)
+FROM node:22-alpine
+WORKDIR /app
+COPY relay/package.json relay/package-lock.json relay/
+RUN cd relay && npm ci --omit=dev
+COPY relay/server.mjs relay/suggest.mjs relay/
+COPY connectors connectors
+ENV PORT=8787 ORCH_DATA=/data/data.json
+CMD ["node", "relay/server.mjs"]

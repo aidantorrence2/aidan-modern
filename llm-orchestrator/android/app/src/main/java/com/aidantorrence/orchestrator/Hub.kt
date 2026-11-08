@@ -59,6 +59,11 @@ object Hub {
         nm.createNotificationChannel(
             NotificationChannel(CHANNEL_SERVICE, "Floating panel", NotificationManager.IMPORTANCE_MIN),
         )
+        // The overlay is always either the bubble or the open panel: whatever wakes the process
+        // (notification listener, boot, update, the app itself) brings it back if it was on.
+        if (Store.overlayEnabled && !OverlayService.running) main.post {
+            if (!OverlayService.running) runCatching { OverlayService.start(app) }
+        }
     }
 
     fun bg(block: () -> Unit) = io.execute { runCatching(block).onFailure { it.printStackTrace() } }
@@ -274,9 +279,14 @@ object Hub {
 
     // ------------------------------------------------------------------ actions
 
+    private var lastSendAt = 0L
+
     fun send(item: InboxItem, raw: String) {
         val text = raw.trim()
         if (text.isEmpty()) { toast("Nothing to send"); return }
+        // Ignore a repeat tap: this exact reply already went out for this completion.
+        if (item.status == "replied" && item.reply == text && System.currentTimeMillis() - lastSendAt < 15_000) return
+        lastSendAt = System.currentTimeMillis()
         val prevStatus = item.status
         item.status = "replied"
         item.reply = text
@@ -340,9 +350,22 @@ object Hub {
         copyAndOpen(item, text, "Reply copied — paste it in ${label(item.source)}")
     }
 
+    /** The official app that can send into this item's conversation, if any. */
+    fun appPackage(item: InboxItem): String? = item.packageName.ifBlank { null } ?: when (item.source) {
+        "chatgpt" -> "com.openai.chatgpt"
+        "claude-app", "claude-web", "claude" -> "com.anthropic.claude"
+        else -> null
+    }
+
     fun copyAndOpen(item: InboxItem, text: String, msg: String) {
         copy(text)
-        toast(msg)
+        val pkg = appPackage(item)
+        if (pkg != null && AutoSendService.connected) {
+            AutoSendService.request(pkg, text)
+            toast("Sending in ${label(item.source)}…")
+        } else {
+            toast(msg)
+        }
         open(item)
     }
 
@@ -361,8 +384,13 @@ object Hub {
                         handle.contentIntent.send(app, 0, null, null, null, null, opts.toBundle())
                     } else handle.contentIntent.send()
                 }
-                item.url.isNotBlank() ->
-                    app.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(item.url)).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK))
+                item.url.isNotBlank() -> {
+                    val view = Intent(Intent.ACTION_VIEW, Uri.parse(item.url)).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                    // Prefer the official app (it can send; a browser tab would hit the website's bot check).
+                    val inApp = appPackage(item)?.let { Intent(view).setPackage(it) }
+                    if (inApp != null && inApp.resolveActivity(app.packageManager) != null) app.startActivity(inApp)
+                    else app.startActivity(view)
+                }
                 item.packageName.isNotBlank() ->
                     app.packageManager.getLaunchIntentForPackage(item.packageName)
                         ?.let { app.startActivity(it.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)) }
@@ -407,6 +435,7 @@ object Hub {
         "claude-code" -> "Claude Code"
         "claude-code-cloud" -> "Claude Code ☁"
         "claude-code-rc" -> "Claude Code 💻"
+        "claude-code-local" -> "Claude Code (local)"
         "claude-web" -> "Claude"
         "codex" -> "Codex"
         "chatgpt" -> "ChatGPT"

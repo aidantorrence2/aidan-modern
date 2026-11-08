@@ -64,7 +64,8 @@ class OverlayService : Service() {
         Hub.startSync()
         addBubble()
         Store.addListener(listener)
-        Hub.onNewCompletion = { pulse() }
+        // A new completion opens the panel. If it is already open, the new card just appears in it.
+        Hub.onNewCompletion = { if (panelHost == null) expand() }
         updateBadge()
     }
 

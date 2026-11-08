@@ -150,10 +150,50 @@ async function suggestViaCli(event, tasks, hint) {
   }
 }
 
+// In auto mode, an API key that is out of credit or rejected switches drafting
+// to `claude -p` for the rest of the process instead of serving canned replies.
+let apiUnusable = false;
+function isAccountError(err) {
+  return err.status === 401 || err.status === 403 ||
+    (err.status === 400 && /credit balance|billing/i.test(err.message || ''));
+}
+
+// DeepSeek (OpenAI-compatible) for hosts without a Claude subscription CLI, e.g. a small always-on server.
+const DEEPSEEK_MODEL = process.env.ORCH_DEEPSEEK_MODEL || 'deepseek-v4-flash';
+async function suggestViaDeepSeek(event, tasks, hint) {
+  try {
+    const ctl = AbortSignal.timeout(45_000);
+    const r = await fetch('https://api.deepseek.com/chat/completions', {
+      method: 'POST',
+      signal: ctl,
+      headers: { authorization: `Bearer ${process.env.DEEPSEEK_API_KEY}`, 'content-type': 'application/json' },
+      body: JSON.stringify({
+        model: DEEPSEEK_MODEL,
+        max_tokens: 600,
+        thinking: { type: 'disabled' }, // v4-flash reasons by default and can spend every token on it
+        response_format: { type: 'json_object' },
+        messages: [
+          { role: 'system', content: SYSTEM + '\n\nRespond with ONLY a JSON object of the form {"primary": string, "alternatives": string[]}.' },
+          { role: 'user', content: buildUserContent(event, tasks, hint) },
+        ],
+      }),
+    });
+    if (!r.ok) throw new Error(`DeepSeek ${r.status}: ${(await r.text()).slice(0, 200)}`);
+    const d = await r.json();
+    return normalize(parseJsonLoose(d.choices?.[0]?.message?.content || ''), `deepseek:${DEEPSEEK_MODEL}`);
+  } catch (err) {
+    console.error('[suggest] deepseek failed:', err?.message || err);
+    return fallbackSuggestion(event);
+  }
+}
+
 export async function suggestReply(event, tasks = [], hint = '') {
+  if (BACKEND === 'deepseek' || (BACKEND === 'auto' && process.env.DEEPSEEK_API_KEY && !process.env.ANTHROPIC_API_KEY && !cliAvailable())) {
+    return suggestViaDeepSeek(event, tasks, hint);
+  }
   const useCli =
     BACKEND === 'cli' ||
-    (BACKEND === 'auto' && !process.env.ANTHROPIC_API_KEY && !process.env.ANTHROPIC_AUTH_TOKEN && cliAvailable());
+    (BACKEND === 'auto' && (apiUnusable || (!process.env.ANTHROPIC_API_KEY && !process.env.ANTHROPIC_AUTH_TOKEN)) && cliAvailable());
   if (useCli) return suggestViaCli(event, tasks, hint);
   const c = getClient();
   if (!c) return fallbackSuggestion(event);
@@ -177,6 +217,11 @@ export async function suggestReply(event, tasks = [], hint = '') {
   } catch (err) {
     if (err instanceof Anthropic.APIError) {
       console.error(`[suggest] API error ${err.status}: ${err.message}`);
+      if (BACKEND === 'auto' && isAccountError(err) && cliAvailable()) {
+        apiUnusable = true;
+        console.error('[suggest] API key unusable; drafting with claude -p from now on');
+        return suggestViaCli(event, tasks, hint);
+      }
     } else {
       console.error('[suggest] failed:', err?.message || err);
     }

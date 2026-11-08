@@ -1,12 +1,13 @@
 // Integration test: relay + bridge against mock versions of the Claude Code sessions API, chatgpt.com,
-// claude.ai and a Codex sessions directory. Checks baseline, new-turn detection, reply delivery, and the
+// claude.ai, a Codex sessions directory and a fake ~/.claude (local CLI transcripts, delivered through a
+// throwaway tmux server on a private socket). Checks baseline, new-turn detection, reply delivery, and the
 // "can't deliver -> hand back to the phone" path. Run: node connectors/test-sources.mjs
 import http from 'node:http';
 import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
 import assert from 'node:assert/strict';
-import { spawn } from 'node:child_process';
+import { spawn, execFileSync } from 'node:child_process';
 
 const here = path.dirname(new URL(import.meta.url).pathname);
 const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'orch-src-'));
@@ -118,19 +119,75 @@ fs.writeFileSync(
     line({ type: 'event_msg', payload: { type: 'task_complete', last_agent_message: 'old done' } }),
 );
 
+// ---------------------------------------------------------------- fake ~/.claude for claude-local
+const home = path.join(dir, 'home');
+const projDir = path.join(home, '.claude', 'projects', '-work-app');
+const pidDir = path.join(home, '.claude', 'sessions');
+fs.mkdirSync(path.join(projDir, 'sess-local-1', 'subagents'), { recursive: true });
+fs.mkdirSync(path.join(home, '.claude', 'projects', '-tmp'), { recursive: true });
+fs.mkdirSync(pidDir, { recursive: true });
+let uuidN = 0;
+const cc = (type, o = {}) =>
+  line({ parentUuid: null, isSidechain: false, type, uuid: `u${++uuidN}`, timestamp: now(), entrypoint: 'cli', cwd: '/work/app', ...o });
+const ccUser = (sessionId, content, o) => cc('user', { sessionId, message: { role: 'user', content }, ...o });
+const ccAsst = (sessionId, id, content, stop, o) => cc('assistant', { sessionId, message: { id, role: 'assistant', model: 'claude-x', content, stop_reason: stop }, ...o });
+const transcript = (id) => path.join(projDir, `${id}.jsonl`);
+// Existing session with an already finished turn: part of the baseline, never reported.
+fs.writeFileSync(
+  transcript('sess-local-1'),
+  line({ type: 'permission-mode', permissionMode: 'default', sessionId: 'sess-local-1' }) +
+    ccUser('sess-local-1', 'Set up the repo and explain the layout') +
+    ccAsst('sess-local-1', 'm0', [{ type: 'text', text: 'Old answer from before the bridge started.' }], 'end_turn'),
+);
+// The bridge must never resume a session it thinks is live: S3 is "running" (pid = this test) outside tmux.
+fs.writeFileSync(path.join(pidDir, `${process.pid}.json`), JSON.stringify({ pid: process.pid, sessionId: 'sess-local-3', kind: 'interactive', entrypoint: 'cli' }));
+// Throwaway tmux server on a private socket, running `cat` into a file, standing in for Pulse's pane of S1.
+const tmuxSock = path.join(dir, 'tmux.sock'); // private socket in the temp dir, never the user's servers
+const tmuxOut = path.join(dir, 'pane-out.txt');
+let tmuxOk = false;
+try {
+  execFileSync('tmux', ['-S', tmuxSock, '-f', '/dev/null', 'new-session', '-d', '-s', 'orchtest', '-x', '120', '-y', '20', `cat > ${tmuxOut}`]);
+  const panePid = Number(execFileSync('tmux', ['-S', tmuxSock, 'display', '-p', '-t', 'orchtest', '#{pane_pid}']).toString().trim());
+  fs.writeFileSync(path.join(pidDir, `${panePid}.json`), JSON.stringify({ pid: panePid, sessionId: 'sess-local-1', kind: 'interactive', entrypoint: 'cli' }));
+  tmuxOk = true;
+} catch (e) {
+  console.log('tmux unavailable, skipping the tmux delivery check:', e.message.split('\n')[0]);
+}
+const tmuxSocketPath = tmuxOk ? tmuxSock : path.join(dir, 'no-tmux');
+
 const config = {
   relayUrl,
   token: TOKEN,
   host: 'laptop',
   claudeSessions: { apiBase: mockBase, accessToken: 'cli-token', orgUuid: 'org-1', intervalMs: 300 },
   codex: { sessionsDir: path.join(dir, 'codex'), intervalMs: 300 },
+  claudeLocal: { intervalMs: 300, settleMs: 400 },
+  tmux: { sockets: [tmuxSocketPath] },
   chatgpt: { baseUrl: mockBase, sessionToken: 'gpt-cookie', intervalMs: 300 },
   claudeWeb: { baseUrl: mockBase, sessionKey: 'cw-key', intervalMs: 300 },
-  commands: { codex: [process.execPath, '-e', `require('fs').appendFileSync(${JSON.stringify(path.join(dir, 'codex-calls.txt'))}, process.argv.slice(1).join('|') + '\\n')`, '{session}', '{text}'] },
+  commands: {
+    codex: [process.execPath, '-e', `require('fs').appendFileSync(${JSON.stringify(path.join(dir, 'codex-calls.txt'))}, process.argv.slice(1).join('|') + '\\n')`, '{session}', '{text}'],
+    'claude-code-local': [
+      process.execPath,
+      '-e',
+      `require('fs').appendFileSync(${JSON.stringify(path.join(dir, 'claude-calls.txt'))}, [process.cwd(), process.env.CLAUDE_CODE_CHILD_SESSION || 'clean', ...process.argv.slice(1)].join('|') + '\\n')`,
+      '{session}',
+      '{text}',
+    ],
+  },
 };
 fs.writeFileSync(path.join(dir, 'config.json'), JSON.stringify(config));
 const bridge = spawn(process.execPath, [path.join(here, 'bridge.mjs')], {
-  env: { ...process.env, ORCH_CONFIG: path.join(dir, 'config.json'), ORCH_STATE: path.join(dir, 'state.json'), ORCH_RELAY_URL: '', ORCH_TOKEN: '' },
+  env: {
+    ...process.env,
+    HOME: home,
+    CLAUDE_CONFIG_DIR: '',
+    CLAUDE_CODE_CHILD_SESSION: '1', // must not leak into the resumed claude -p
+    ORCH_CONFIG: path.join(dir, 'config.json'),
+    ORCH_STATE: path.join(dir, 'state.json'),
+    ORCH_RELAY_URL: '',
+    ORCH_TOKEN: '',
+  },
   stdio: ['ignore', process.env.DEBUG ? 'inherit' : 'ignore', 'inherit'],
 });
 
@@ -200,28 +257,12 @@ try {
   assert.equal(g.text, 'Day 1: Lisbon. Day 2: Sintra.');
   assert.equal(g.prompt, 'plan a trip');
   assert.equal(g.url, `${mockBase}/c/g1`);
-  await call('POST', '/api/reply', { eventId: g.id, text: 'Add Porto' });
-  const back = await waitFor(async () => {
-    const e = (await events()).find((x) => x.id === g.id);
-    return e?.delivery === 'failed' && e;
-  }, 'chatgpt undeliverable');
-  assert.equal(back.status, 'new');
-  assert.equal(back.replyMode, 'none');
-  assert.equal(back.failedReply, 'Add Porto');
-  assert.equal(mock.gpt.posted.length, 0, 'no send attempted past the verification check');
-  // Answering it again is recorded, not re-queued (the phone copies + opens instead)
+  // ChatGPT replies are delivered by the phone (through the ChatGPT app): the relay only records them.
+  assert.equal(g.replyMode, 'none');
   const manual = await call('POST', '/api/reply', { eventId: g.id, text: 'Add Porto' });
   assert.equal(manual.deliveredVia, 'manual');
-  // When no verification is required, the send goes through
-  mock.gpt.convs.g1 = gptConv('Updated with Porto.', 'a2');
-  mock.gpt.items[0].update_time = 3;
-  const g2 = await waitFor(async () => (await events()).find((e) => e.source === 'chatgpt' && e.text === 'Updated with Porto.'), 'chatgpt second turn');
-  mock.gpt.pow = false;
-  await call('POST', '/api/reply', { eventId: g2.id, text: 'Thanks' });
-  const gp = await waitFor(() => mock.gpt.posted[0], 'chatgpt message posted');
-  assert.equal(gp.conversation_id, 'g1');
-  assert.equal(gp.parent_message_id, 'a2');
-  assert.deepEqual(gp.messages[0].content.parts, ['Thanks']);
+  assert.equal(mock.gpt.posted.length, 0, 'the bridge never tries to send to ChatGPT');
+  // (Bridge-side sending to ChatGPT is opt-in with "phoneSends": false; by default the phone sends.)
 
   // 5. claude.ai chat
   mock.cw.convs.c1.chat_messages.push(
@@ -242,9 +283,85 @@ try {
   const dup = await call('POST', '/api/events', { source: 'claude-code', sessionId: 'hook-uuid', text: 'Refactored 4 files.', suggest: false });
   assert.equal(dup.duplicate, true);
 
+  // 6b. Local interactive Claude Code session (transcript tail): a tool-use turn, then an end_turn turn.
+  const t1 = transcript('sess-local-1');
+  fs.appendFileSync(
+    t1,
+    ccUser('sess-local-1', '<command-name>/model</command-name>') +
+      ccUser('sess-local-1', 'Caveat: The messages below were generated by the user while running local commands.', { isMeta: true }) +
+      ccUser('sess-local-1', [{ type: 'text', text: 'Add a health endpoint' }]) +
+      ccAsst('sess-local-1', 'm1', [{ type: 'text', text: 'Let me look at the server.' }], 'tool_use') +
+      ccAsst('sess-local-1', 'm1', [{ type: 'tool_use', id: 'tu1', name: 'Read', input: {} }], 'tool_use') +
+      ccUser('sess-local-1', [{ type: 'tool_result', tool_use_id: 'tu1', content: 'server code' }]) +
+      ccAsst('sess-local-1', 'side', [{ type: 'text', text: 'Subagent chatter' }], 'end_turn', { isSidechain: true }) +
+      line({ type: 'last-prompt', lastPrompt: 'Add a health endpoint', sessionId: 'sess-local-1' }) +
+      ccAsst('sess-local-1', 'm2', [{ type: 'thinking', thinking: '' }], 'end_turn'),
+  );
+  await sleep(150); // the final message's text block lands in a later write
+  fs.appendFileSync(t1, ccAsst('sess-local-1', 'm2', [{ type: 'text', text: 'Added GET /health. Want a test?' }], 'end_turn'));
+  // Noise that must not alert: a programmatic run, a subagent transcript, a Remote Control session, a scratchpad cwd.
+  fs.writeFileSync(
+    transcript('sess-sdk'),
+    ccUser('sess-sdk', 'summarize', { entrypoint: 'sdk-cli' }) + ccAsst('sess-sdk', 's1', [{ type: 'text', text: 'Programmatic answer' }], 'end_turn', { entrypoint: 'sdk-cli' }),
+  );
+  fs.writeFileSync(
+    path.join(projDir, 'sess-local-1', 'subagents', 'agent-a1.jsonl'),
+    ccUser('sess-local-1', 'sub task') + ccAsst('sess-local-1', 'a1', [{ type: 'text', text: 'Subagent answer' }], 'end_turn'),
+  );
+  fs.writeFileSync(
+    transcript('sess-rc'),
+    line({ type: 'bridge-session', sessionId: 'sess-rc', bridgeSessionId: 'cse_1' }) +
+      ccUser('sess-rc', 'rc prompt') +
+      ccAsst('sess-rc', 'r1', [{ type: 'text', text: 'Remote control answer' }], 'end_turn'),
+  );
+  fs.writeFileSync(
+    path.join(home, '.claude', 'projects', '-tmp', 'sess-tmp.jsonl'),
+    ccUser('sess-tmp', 'scratch', { cwd: '/private/tmp/claude-501/x/scratchpad' }) +
+      ccAsst('sess-tmp', 't1', [{ type: 'text', text: 'Scratch answer' }], 'end_turn', { cwd: '/private/tmp/claude-501/x/scratchpad' }),
+  );
+  const l1 = await waitFor(async () => (await events()).find((e) => e.source === 'claude-code-local'), 'claude-local event');
+  await sleep(1200);
+  const locals = (await call('GET', '/api/events?since=0')).events.filter((e) => e.source === 'claude-code-local');
+  assert.equal(locals.length, 1, `exactly one local turn reported, got ${locals.map((e) => e.text).join(' / ')}`);
+  assert.equal(l1.sessionId, 'sess-local-1');
+  assert.equal(l1.prompt, 'Add a health endpoint');
+  assert.equal(l1.text, 'Added GET /health. Want a test?');
+  assert.equal(l1.title, 'Set up the repo and explain the layout');
+  assert.equal(l1.cwd, '/work/app');
+  if (tmuxOk) {
+    await call('POST', '/api/reply', { eventId: l1.id, text: 'Yes, add a test\nand update the README' });
+    const typed = await waitFor(() => fs.existsSync(tmuxOut) && fs.readFileSync(tmuxOut, 'utf8').includes('README') && fs.readFileSync(tmuxOut, 'utf8'), 'reply typed into tmux pane');
+    assert.equal(typed, 'Yes, add a test\nand update the README\n');
+  }
+
+  // 6c. Session not running anywhere -> claude -p --resume (clean env, session cwd)
+  fs.writeFileSync(transcript('sess-local-2'), ccUser('sess-local-2', 'Write the changelog') + ccAsst('sess-local-2', 'n1', [{ type: 'text', text: 'Changelog written.' }], 'end_turn'));
+  const l2 = await waitFor(async () => (await events()).find((e) => e.sessionId === 'sess-local-2'), 'second local event');
+  await call('POST', '/api/reply', { eventId: l2.id, text: 'Commit it' });
+  const cl = await waitFor(() => fs.existsSync(path.join(dir, 'claude-calls.txt')) && fs.readFileSync(path.join(dir, 'claude-calls.txt'), 'utf8'), 'claude -p resume run');
+  assert.match(cl, /\|clean\|sess-local-2\|Commit it/);
+
+  // 6d. Session live in a terminal outside tmux -> undeliverable, handed back to the phone
+  fs.writeFileSync(transcript('sess-local-3'), ccUser('sess-local-3', 'Rename the module') + ccAsst('sess-local-3', 'p1', [{ type: 'text', text: 'Renamed.' }], 'end_turn'));
+  const l3 = await waitFor(async () => (await events()).find((e) => e.sessionId === 'sess-local-3'), 'third local event');
+  await call('POST', '/api/reply', { eventId: l3.id, text: 'Thanks' });
+  const l3b = await waitFor(async () => {
+    const e = (await events()).find((x) => x.id === l3.id);
+    return e?.delivery === 'failed' && e;
+  }, 'local session undeliverable');
+  assert.match(l3b.deliveryError, /outside tmux/);
+  assert.ok(!fs.readFileSync(path.join(dir, 'claude-calls.txt'), 'utf8').includes('sess-local-3'), 'live session never resumed headless');
+
   console.log('ALL SOURCE TESTS PASSED');
 } finally {
   bridge.kill();
   relay.kill();
   svc.close();
+  if (tmuxOk) {
+    try {
+      execFileSync('tmux', ['-S', tmuxSock, 'kill-server']); // only our private test server
+    } catch {
+      /* already gone */
+    }
+  }
 }

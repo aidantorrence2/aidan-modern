@@ -1,9 +1,11 @@
 // Codex CLI sessions. Codex writes every session to ~/.codex/sessions/YYYY/MM/DD/rollout-*.jsonl; we tail
-// those files and report each finished turn (event_msg task_complete). Replies run `codex exec resume`.
+// those files and report each finished turn (event_msg task_complete). Replies are typed into the session's
+// tmux pane when it runs in one (e.g. under Pulse); otherwise the bridge runs `codex exec resume <id> "<reply>"`.
 import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
 import { contentText } from '../common.mjs';
+import { deliverLocal } from '../tmux.mjs';
 
 function walk(dir, out, maxAgeMs) {
   let entries;
@@ -120,6 +122,12 @@ export default function codexFilesSource(cfg) {
       state.initialized = true;
       return out;
     },
-    // Replies go through the bridge's command runner (codex exec resume); the new turn is picked up from the file.
+
+    // tmux first; returns false when the session isn't running so the bridge's command runner
+    // (codex exec resume) resumes it headless. The new turn is picked up from the file either way.
+    async send(reply, state) {
+      const entry = Object.entries(state.files || {}).find(([, f]) => f.id === reply.sessionId);
+      return deliverLocal('codex', reply, { files: entry ? [entry[0]] : [], cwd: reply.cwd || entry?.[1].cwd, tmux: cfg.file.tmux });
+    },
   };
 }

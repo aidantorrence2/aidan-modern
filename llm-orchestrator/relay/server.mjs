@@ -263,6 +263,10 @@ async function handle(req, res) {
     const sessionId = ev?.sessionId || b.sessionId;
     const s = sessionId && getSession(sessionId);
     if (!s) return send(res, 404, { error: 'unknown session' });
+    // A double tap or retried request must not reach the session twice.
+    if (s.lastReply && s.lastReply.text === text && s.lastReply.eventId === (ev?.id || null) && (!ev || ev.status === 'replied') && Date.now() - s.lastReply.ts < 15_000) {
+      return send(res, 200, { ok: true, duplicate: true, replyId: s.lastReply.id, deliveredVia: s.lastReply.via });
+    }
     const reply = { id: id(), text, ts: Date.now(), eventId: ev?.id || null };
     if (ev?.replyMode === 'none') {
       // Nothing can deliver this automatically (the phone copies it and opens the session): just record it.
@@ -274,7 +278,9 @@ async function handle(req, res) {
     if (ev) bump(Object.assign(ev, { status: 'replied', reply: text, repliedAt: reply.ts, delivery: 'queued' }));
     notify();
     const listening = Date.now() - (s.lastHookPollAt || 0) < HOOK_FRESH_MS;
-    return send(res, 200, { ok: true, replyId: reply.id, deliveredVia: listening ? 'hook' : s.replyMode === 'none' ? 'next-turn' : 'bridge' });
+    const via = listening ? 'hook' : s.replyMode === 'none' ? 'next-turn' : 'bridge';
+    Object.defineProperty(s, 'lastReply', { value: { id: reply.id, text, ts: reply.ts, via, eventId: reply.eventId }, enumerable: false, writable: true, configurable: true });
+    return send(res, 200, { ok: true, replyId: reply.id, deliveredVia: via });
   }
 
   // Claude Code Stop hook waiting for the user's reply to its session.
@@ -319,8 +325,12 @@ async function handle(req, res) {
     const sources = (url.searchParams.get('sources') || 'claude-code,codex').split(',');
     const wait = Math.min(Number(url.searchParams.get('wait') || 0), MAX_WAIT_S);
     const deadline = Date.now() + wait * 1000;
+    let gone = false;
+    req.on('close', () => { gone = true; });
     for (;;) {
       const now = Date.now();
+      if (gone || res.destroyed) return; // never hand replies to a bridge that already disconnected
+      requeueStale(now);
       const claimed = [];
       for (const s of Object.values(state.sessions)) {
         if (!s.pending.length || !sources.includes(s.source)) continue;
@@ -329,6 +339,8 @@ async function handle(req, res) {
         if (now - s.pending[0].ts < 1500 && s.replyMode === 'hook') continue; // tiny grace period for hooks
         while (s.pending.length) {
           const reply = s.pending.shift();
+          // In flight until the bridge acks it; requeued if no ack arrives (bridge died mid-delivery).
+          inflight.set(reply.id, { reply, sessionId: s.id, at: now });
           markDelivered(reply, 'bridge');
           claimed.push({ ...reply, sessionId: s.id, source: s.source, cwd: s.cwd, title: s.title });
         }
@@ -338,6 +350,12 @@ async function handle(req, res) {
       if (left <= 0) return send(res, 200, { replies: [] });
       await waitForChange(Math.min(left, 2000));
     }
+  }
+
+  if (p === '/api/bridge/ack' && req.method === 'POST') {
+    const b = await readBody(req);
+    for (const rid of b.ids || []) inflight.delete(rid);
+    return send(res, 200, { ok: true });
   }
 
   if (p === '/api/sessions' && req.method === 'GET') {
@@ -356,6 +374,19 @@ async function handle(req, res) {
 
   return send(res, 404, { error: 'not found' });
 }
+
+const inflight = new Map(); // reply id -> { reply, sessionId, at }
+const ACK_TIMEOUT_MS = 90_000;
+function requeueStale(now = Date.now()) {
+  for (const [rid, f] of inflight) {
+    if (now - f.at < ACK_TIMEOUT_MS) continue;
+    inflight.delete(rid);
+    const s = getSession(f.sessionId);
+    if (s) s.pending.unshift(f.reply);
+    console.log(`[relay] requeued unacked reply ${rid} for ${f.sessionId}`);
+  }
+}
+setInterval(() => { const n = inflight.size; requeueStale(); if (inflight.size !== n) notify(); }, 15_000).unref();
 
 function markDelivered(reply, via) {
   if (!reply.eventId) return;

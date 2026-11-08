@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">LLM Orchestrator</string>
+    <string name="autosend_description">Sends the reply you tapped Send on into the ChatGPT or Claude app. It only acts right after you send a reply from the orchestrator, and only inside those two apps.</string>
 </resources>

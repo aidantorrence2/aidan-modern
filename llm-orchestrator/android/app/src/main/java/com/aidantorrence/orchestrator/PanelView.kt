@@ -252,6 +252,7 @@ class PanelView(
             edit.hint = if (item.suggesting) "Drafting a reply…" else "Reply…"
             sendBtn.text = when {
                 item.origin == "device" && item.replyMode == "device" -> "Send"
+                (item.origin == "device" || item.replyMode == "none") && Hub.appPackage(item) != null && AutoSendService.connected -> "Send"
                 item.origin == "device" || item.replyMode == "none" -> "Copy & open"
                 else -> "Send"
             }
