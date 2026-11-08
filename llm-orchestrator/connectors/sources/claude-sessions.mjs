@@ -180,18 +180,19 @@ export default function claudeSessionsSource(cfg) {
   if (c.enabled === false) return null;
   const client = createClaudeSessions({ apiBase: c.apiBase, accessToken: c.accessToken, orgUuid: c.orgUuid });
 
-  async function fetchEvents(id) {
-    // Newest events are what matter; walk pages (bounded) to be robust to either ordering.
-    const all = [];
-    let route = `/v1/sessions/${id}/events?limit=100`;
-    for (let page = 0; page < 30 && route; page++) {
-      const r = await client.call('GET', route);
+  /** The API returns the newest page first; walk backward only when the latest turn isn't on it. */
+  async function fetchLatestTurn(id) {
+    let all = [];
+    let cursor = '';
+    for (let page = 0; page < 5; page++) {
+      const r = await client.call('GET', `/v1/sessions/${id}/events?limit=100${cursor}`);
       const data = Array.isArray(r) ? r : r.data || r.events || [];
-      all.push(...data);
-      if (!r.has_more || !r.last_id) break;
-      route = `/v1/sessions/${id}/events?limit=100&after_id=${encodeURIComponent(r.last_id)}`;
+      all = data.concat(all);
+      const turn = latestTurn(all);
+      if (turn || !r.has_more || !r.first_id) return turn;
+      cursor = `&before_id=${encodeURIComponent(r.first_id)}`;
     }
-    return all;
+    return latestTurn(all);
   }
 
   return {
@@ -218,7 +219,7 @@ export default function claudeSessionsSource(cfg) {
           continue;
         }
         if (working) continue; // look again when it settles
-        const turn = latestTurn(await fetchEvents(s.id));
+        const turn = await fetchLatestTurn(s.id);
         seen[s.id] = { updated, last: turn?.id || prev?.last || null };
         if (!turn || turn.id === prev?.last) continue;
         if (!prev && Date.now() - Date.parse(updated) > 15 * 60_000) continue; // stale session we never tracked

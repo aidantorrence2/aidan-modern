@@ -46,13 +46,21 @@ export function applyLines(f, lines) {
     } else if (row.type === 'event_msg' && p.type === 'user_message') {
       f.prompt = String(p.message || '');
       f.lastAssistant = '';
+    } else if (row.type === 'response_item' && p.type === 'message' && p.role === 'user') {
+      // `codex exec` records the prompt only here (no user_message event)
+      const t = contentText((p.content || []).map((b) => (b.type === 'input_text' ? { type: 'text', text: b.text } : b)));
+      if (t && !/^<(environment_context|user_instructions|permissions)/.test(t.trim())) {
+        f.prompt = t;
+        f.lastAssistant = '';
+      }
     } else if (row.type === 'response_item' && p.type === 'message' && p.role === 'assistant') {
       const t = contentText((p.content || []).map((b) => (b.type === 'output_text' ? { type: 'text', text: b.text } : b)));
       if (t) f.lastAssistant = t;
     } else if (row.type === 'event_msg' && p.type === 'agent_message' && p.message) {
       f.lastAssistant = String(p.message);
     } else if (row.type === 'event_msg' && p.type === 'task_complete') {
-      turns.push({ text: p.last_agent_message || f.lastAssistant || '', prompt: f.prompt || '' });
+      const errorText = p.error?.message ? `Codex error: ${p.error.message}` : '';
+      turns.push({ text: p.last_agent_message || f.lastAssistant || errorText, prompt: f.prompt || '' });
     }
   }
   return turns;
