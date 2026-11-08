@@ -7,7 +7,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
       chromium xvfb x11vnc novnc websockify fonts-liberation fonts-noto-color-emoji ca-certificates procps \
     && rm -rf /var/lib/apt/lists/*
 WORKDIR /app
-COPY poller.mjs entrypoint.sh ./
+# Build from llm-orchestrator/: docker build -f browser/Dockerfile -t orch-browser .
+COPY browser/poller.mjs browser/entrypoint.sh ./
+COPY connectors ./connectors
 RUN chmod +x entrypoint.sh && ln -sf /usr/share/novnc/vnc.html /usr/share/novnc/index.html
 ENV DISPLAY=:99
 VOLUME /data

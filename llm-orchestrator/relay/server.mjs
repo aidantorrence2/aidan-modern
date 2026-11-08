@@ -334,7 +334,9 @@ async function handle(req, res) {
       const claimed = [];
       for (const s of Object.values(state.sessions)) {
         if (!s.pending.length || !sources.includes(s.source)) continue;
-        if (s.host && host && s.host !== host) continue;
+        // Only sessions that live on one machine (local Claude Code / Codex) must go to that machine's bridge;
+        // cloud, Remote Control and web chats can be delivered by whichever bridge serves the source.
+        if (LOCAL_SOURCES.has(s.source) && s.host && host && s.host !== host) continue;
         if (now - (s.lastHookPollAt || 0) < HOOK_FRESH_MS) continue; // a hook is listening, let it have it
         if (now - s.pending[0].ts < 1500 && s.replyMode === 'hook') continue; // tiny grace period for hooks
         while (s.pending.length) {
@@ -375,6 +377,7 @@ async function handle(req, res) {
   return send(res, 404, { error: 'not found' });
 }
 
+const LOCAL_SOURCES = new Set(['claude-code', 'claude-code-local', 'codex']);
 const inflight = new Map(); // reply id -> { reply, sessionId, at }
 const ACK_TIMEOUT_MS = 90_000;
 function requeueStale(now = Date.now()) {

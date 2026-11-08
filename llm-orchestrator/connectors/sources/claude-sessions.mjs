@@ -175,10 +175,15 @@ export function latestTurn(events) {
 
 // ---------------------------------------------------------------- source
 
-export default function claudeSessionsSource(cfg) {
+/**
+ * `opts.client` swaps the transport: anything with call(method, path, body). The always-on server browser
+ * passes one that runs the request inside its signed-in claude.ai tab (claude.ai serves /v1/sessions for
+ * the web Claude Code UI), so no CLI login is needed there.
+ */
+export default function claudeSessionsSource(cfg, opts = {}) {
   const c = cfg.file.claudeSessions || {};
   if (c.enabled === false) return null;
-  const client = createClaudeSessions({ apiBase: c.apiBase, accessToken: c.accessToken, orgUuid: c.orgUuid });
+  const client = opts.client || createClaudeSessions({ apiBase: c.apiBase, accessToken: c.accessToken, orgUuid: c.orgUuid });
 
   /** The API returns the newest page first; walk backward only when the latest turn isn't on it. */
   /**

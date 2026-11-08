@@ -4,6 +4,7 @@
 //   - claims replies for those chats from the relay and types them into the real chat box (then Return).
 // Env: ORCH_RELAY_URL, ORCH_TOKEN. State: /data/state.json.
 import fs from 'node:fs';
+import claudeSessionsSource from './connectors/sources/claude-sessions.mjs';
 
 const RELAY = (process.env.ORCH_RELAY_URL || 'http://orch-relay:8787').replace(/\/+$/, '');
 const TOKEN = process.env.ORCH_TOKEN;
@@ -189,6 +190,72 @@ async function chatgptRead(st) {
   return { turns, st };
 }
 
+// ------------------------------------------------------------------ Claude Code sessions (cloud + Remote Control)
+// claude.ai serves the Claude Code sessions API to its own web UI, so requests made inside the signed-in
+// claude.ai tab can list sessions, read their events and post your replies. Same parsing as the Mac bridge.
+function pageClient(s) {
+  return {
+    async call(method, path, body) {
+      const r = await evaluate(s, async (a) => {
+        const res = await fetch(a.path, {
+          method: a.method,
+          credentials: 'include',
+          headers: { 'content-type': 'application/json', 'anthropic-version': '2023-06-01', 'anthropic-beta': 'ccr-byoc-2025-07-29' },
+          body: a.body ? JSON.stringify(a.body) : undefined,
+        });
+        const text = await res.text();
+        return { status: res.status, text };
+      }, { method, path, body }, 90_000);
+      if (r.status < 200 || r.status >= 300) { const e = new Error(`${method} ${path} -> ${r.status} ${r.text.slice(0, 120)}`); e.status = r.status; throw e; }
+      return r.text ? JSON.parse(r.text) : {};
+    },
+  };
+}
+let codeSession = null;          // CDP session the Claude Code source currently talks through
+const codeSource = claudeSessionsSource({ file: {} }, { client: { call: (...a) => pageClient(codeSession).call(...a) } });
+
+async function pollClaudeCode() {
+  if (paused() || busy.claude || !state.claude?.initialized) return; // needs the signed-in claude.ai tab
+  let s;
+  try {
+    const tab = await tabFor(SERVICES.claude);
+    s = await session(tab);
+    codeSession = s;
+    const st = (state.claudeCode ??= {});
+    const turns = await codeSource.poll(st);
+    save();
+    for (const t of turns) {
+      await relay('POST', '/api/events', { ...t, host: HOST, replyMode: 'bridge' });
+      log(`[claude-code] ${t.source} finished: ${t.title?.slice(0, 60)}`);
+    }
+    await setStatus('claude-sessions', true);
+  } catch (e) {
+    log('[claude-code]', e.message);
+    await setStatus('claude-sessions', false, e.message);
+  } finally {
+    s?.close();
+  }
+}
+
+async function deliverClaudeCode(reply) {
+  busy.claude = true;
+  let s;
+  try {
+    s = await session(await tabFor(SERVICES.claude));
+    codeSession = s;
+    await codeSource.send(reply, state.claudeCode ??= {});
+    save();
+    log(`[claude-code] sent reply to ${reply.sessionId.slice(0, 24)}`);
+  } catch (e) {
+    log('[claude-code] send failed:', e.message);
+    if (reply.eventId) await relay('POST', `/api/events/${reply.eventId}/undeliverable`, { error: e.message }).catch(() => {});
+  } finally {
+    s?.close();
+    busy.claude = false;
+    await relay('POST', '/api/bridge/ack', { ids: [reply.id] }).catch(() => {});
+  }
+}
+
 // ------------------------------------------------------------------ polling
 const busy = { claude: false, chatgpt: false }; // a reply is being typed into that tab
 const cooldown = { claude: 0, chatgpt: 0 };
@@ -273,6 +340,7 @@ async function claudeSend(arg) {
 }
 
 async function deliver(reply) {
+  if (reply.source === 'claude-code-cloud' || reply.source === 'claude-code-rc') return deliverClaudeCode(reply);
   if (reply.source === 'claude-web') return deliverClaude(reply);
   return deliverByTyping(reply);
 }
@@ -355,7 +423,7 @@ async function deliverByTyping(reply) {
 async function replyLoop() {
   for (;;) {
     try {
-      const r = await relay('GET', `/api/bridge/replies?host=${HOST}&sources=claude-web&wait=25`, undefined, 40_000);
+      const r = await relay('GET', `/api/bridge/replies?host=${HOST}&sources=claude-web,claude-code-cloud,claude-code-rc&wait=25`, undefined, 40_000);
       for (const reply of r.replies || []) await deliver(reply);
     } catch (e) {
       log('[replies]', e.message);
@@ -371,6 +439,7 @@ log(`[browser] watching claude.ai + ChatGPT, relay ${RELAY}`);
 replyLoop();
 for (;;) {
   await pollService('claude');
+  await pollClaudeCode();
   await pollService('chatgpt');
   await sleep(30_000);
 }
