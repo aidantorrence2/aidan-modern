@@ -17,7 +17,7 @@ import java.util.List;
 
 /**
  * Audio mode. For each card: say the word, leave a gap to answer out loud (nothing is recorded),
- * say the English, move on. A card you don't rate counts as Good — you're testing yourself.
+ * say the English, move on. A card you don't rate is left exactly as it was — only taps are recorded.
  * Tapping a rating while it plays just changes how that card is scheduled; it never pauses playback.
  */
 public class AudioService extends Service {
@@ -33,6 +33,7 @@ public class AudioService extends Service {
     boolean showBack, paused, finished;
     private boolean backDone;   // English for the current card has finished playing
     int done, level = -1;
+    private final java.util.Set<Deck.Card> played = new java.util.HashSet<>();   // this session; not repeated on refill
     String status = "";
 
     private Voice voice;
@@ -51,6 +52,7 @@ public class AudioService extends Service {
             h.removeCallbacksAndMessages(null);
             deck = Deck.get(this, i.getStringExtra("lang"));
             level = i.getIntExtra("level", -1);
+            played.clear();
             queue = deck.buildQueue(level);
             cur = null; pending = null; done = 0; finished = false; paused = false; lastDone = -1;
         }
@@ -92,11 +94,12 @@ public class AudioService extends Service {
     void next() {
         h.removeCallbacksAndMessages(null);
         if (cur != null) {
-            deck.rateInSession(cur, pending != null ? pending : Deck.GOOD, queue);
+            if (pending != null) deck.rateInSession(cur, pending, queue);
+            played.add(cur);
             done++;
             cur = null;
         }
-        if (queue.isEmpty()) queue.addAll(deck.buildQueue(level));   // keep going: next due + new cards
+        if (queue.isEmpty()) queue.addAll(deck.buildQueue(level, played));   // keep going: next due + new cards
         if (queue.isEmpty()) {
             finished = true; update();
             stopForeground(STOP_FOREGROUND_REMOVE);

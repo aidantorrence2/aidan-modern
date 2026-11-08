@@ -153,11 +153,14 @@ public class Deck {
     }
 
     /** Session queue: due reviews (oldest first), then the next new cards in frequency order. */
-    public List<Card> buildQueue(int level) {
+    public List<Card> buildQueue(int level) { return buildQueue(level, java.util.Collections.<Card>emptySet()); }
+
+    /** Same, skipping cards in {@code skip} (cards already played this audio session). */
+    public List<Card> buildQueue(int level, java.util.Set<Card> skip) {
         long now = System.currentTimeMillis();
         List<Card> due = new ArrayList<>(), fresh = new ArrayList<>();
         for (Card c : cards) {
-            if (level >= 0 && c.level != level) continue;
+            if (level >= 0 && c.level != level || skip.contains(c)) continue;
             State s = state(c);
             if (s == null) { if (fresh.size() < NEW_PER_SESSION) fresh.add(c); }
             else if (s.due <= now) due.add(c);
