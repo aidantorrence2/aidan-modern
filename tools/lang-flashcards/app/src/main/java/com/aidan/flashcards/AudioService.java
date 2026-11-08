@@ -31,6 +31,7 @@ public class AudioService extends Service {
     Deck.Card cur;
     Integer pending;            // rating tapped for the current card
     boolean showBack, paused, finished;
+    private boolean backDone;   // English for the current card has finished playing
     int done;
     String status = "";
 
@@ -82,7 +83,7 @@ public class AudioService extends Service {
     private void spoken(String u) {
         if (paused || cur == null) return;
         if ("front".equals(u)) h.postDelayed(reveal, 4000 + 60L * cur.front.length());
-        else if ("back".equals(u)) h.postDelayed(advance, 1500);
+        else if ("back".equals(u)) { backDone = true; h.postDelayed(advance, pending != null ? 400 : 1500); }
     }
 
     private void say(String text, boolean en, String step) { voice.say(text, en, () -> spoken(step)); }
@@ -101,19 +102,30 @@ public class AudioService extends Service {
             return;
         }
         cur = queue.remove(0);
-        pending = null; showBack = false;
+        pending = null; showBack = false; backDone = false;
         update();
         startFg(); // refresh notification text
         say(cur.front, false, "front");
     }
 
-    void rate(int r) { if (cur != null) { pending = r; update(); } }
+    /** Tapping a rating: play the answer now (if it hasn't played yet), then go straight to the next card. */
+    void rate(int r) {
+        if (cur == null) return;
+        boolean again = pending != null;
+        pending = r;
+        update();
+        if (paused || again && !backDone) return;   // already heading to the answer; just update the rating
+        h.removeCallbacksAndMessages(null);
+        if (backDone) next();
+        else if (!showBack) reveal.run();            // interrupts the word / answer gap
+        // else: English is playing now; spoken("back") advances right after it
+    }
 
     void togglePause() {
         paused = !paused;
         h.removeCallbacksAndMessages(null);
         voice.stop();
-        if (!paused && cur != null) { showBack = false; say(cur.front, false, "front"); }
+        if (!paused && cur != null) { showBack = false; backDone = false; say(cur.front, false, "front"); }
         update();
     }
 

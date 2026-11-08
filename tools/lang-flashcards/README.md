@@ -8,7 +8,7 @@ Brazilian Portuguese.
   Anki-style spaced repetition (SM-2 variant). 20 new cards per session plus whatever's due.
 - **Audio** — hands-free. Says the word, waits for you to answer out loud (nothing is recorded), says the English,
   moves on. Keeps playing with the screen off. Unrated cards count as Good;
-  tap the card to peek or tap a rating any time — it never pauses.
+  tap the card to peek; tapping a rating plays the answer (if not yet played) and goes to the next card.
 - Tap a level to study just that level.
 
 Install: `dist/flashcards.apk` (allow "install unknown apps"). Audio uses the phone's text-to-speech;
