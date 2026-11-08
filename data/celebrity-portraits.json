@@ -1,0 +1,146 @@
+[
+  {
+    "id": 3,
+    "src": "seoul-tokyo-ulaanbaatar-etc-arisa-000031",
+    "tier": "tier0",
+    "width": 1077,
+    "height": 1600,
+    "alt": "Close portrait in sunlight, arms raised",
+    "reason": "Opener: direct gaze, intimacy and distinctive film color."
+  },
+  {
+    "id": 32,
+    "src": "bangkok-dude-000112",
+    "tier": "tier0",
+    "width": 1070,
+    "height": 1600,
+    "alt": "Close portrait in a dark shirt",
+    "reason": "Early range: a strong male portrait with a readable face."
+  },
+  {
+    "id": 1,
+    "src": "2026-09-29-000036-2",
+    "tier": "tier0",
+    "width": 1072,
+    "height": 1600,
+    "alt": "Seated portrait in a warm, arched caf\u00e9",
+    "reason": "Establishes the location-led editorial eye."
+  },
+  {
+    "id": 24,
+    "src": "bali-sofiatann2-000004-3",
+    "tier": "tier0",
+    "width": 1068,
+    "height": 1600,
+    "alt": "Portrait in a white shirt with hands raised",
+    "reason": "Expression and gesture without elaborate production."
+  },
+  {
+    "id": 27,
+    "src": "bangkok-natcha-000070",
+    "tier": "tier0",
+    "width": 1070,
+    "height": 1600,
+    "alt": "Portrait in a band T-shirt against a blue wall",
+    "reason": "Character-led environmental portrait; useful for music pitches."
+  },
+  {
+    "id": 91,
+    "src": "seoul-tokyo-ulaanbaatar-etc-neuroscientist-000013-4",
+    "tier": "tier1",
+    "width": 1077,
+    "height": 1600,
+    "alt": "Street portrait beside a vintage sign",
+    "reason": "Wardrobe and urban texture together."
+  },
+  {
+    "id": 12,
+    "src": "seoul-tokyo-ulaanbaatar-etc-indian-000019-2",
+    "tier": "tier0",
+    "width": 1068,
+    "height": 1600,
+    "alt": "Close portrait in a red top against green leaves",
+    "reason": "Skin, eye contact and rich color."
+  },
+  {
+    "id": 104,
+    "src": "bangkok-lunna-000063-3",
+    "tier": "tier1",
+    "width": 1070,
+    "height": 1600,
+    "alt": "Reclining portrait in red on a white chair",
+    "reason": "A more theatrical, fashion-led image changes the rhythm."
+  },
+  {
+    "id": 49,
+    "src": "bangkok-dana-000071",
+    "tier": "tier1",
+    "width": 1070,
+    "height": 1600,
+    "alt": "Profile portrait with short blond hair",
+    "reason": "Profile and restrained styling provide contrast."
+  },
+  {
+    "id": 36,
+    "src": "2026-09-29-000014",
+    "tier": "tier1",
+    "width": 1072,
+    "height": 1600,
+    "alt": "Portrait in a dark coat against pale stone",
+    "reason": "Second male subject; a bolder fashion register."
+  },
+  {
+    "id": 123,
+    "src": "manila-gallery-night-002",
+    "tier": "tier1",
+    "width": 1080,
+    "height": 1080,
+    "alt": "Black-and-white portrait at a table",
+    "reason": "Black-and-white and quiet expression change the pace."
+  },
+  {
+    "id": 29,
+    "src": "2026-09-29-000042",
+    "tier": "tier0",
+    "width": 1072,
+    "height": 1600,
+    "alt": "Soft green light across a close portrait",
+    "reason": "An experimental color treatment, after reliable portrait work."
+  },
+  {
+    "id": 55,
+    "src": "hk-taiwan-most-beautiful-in-the-world-000032-3",
+    "tier": "tier1",
+    "width": 1072,
+    "height": 1600,
+    "alt": "Seated portrait in a colorful train interior",
+    "reason": "Intimacy within a strong location."
+  },
+  {
+    "id": 93,
+    "src": "aidantorre001118-000013",
+    "tier": "tier1",
+    "width": 1070,
+    "height": 1600,
+    "alt": "Portrait among green trees",
+    "reason": "An unforced expression and natural setting."
+  },
+  {
+    "id": 18,
+    "src": "bangkok-lefroncee-000046-4",
+    "tier": "tier0",
+    "width": 1070,
+    "height": 1600,
+    "alt": "Close portrait in a white T-shirt",
+    "reason": "A clean, legible face near the end reinforces range."
+  },
+  {
+    "id": 31,
+    "src": "bangkok-rosie-11893-250d-ahu-10",
+    "tier": "tier0",
+    "width": 1072,
+    "height": 1600,
+    "alt": "Night portrait under neon street lights",
+    "reason": "Neon atmosphere supplies a memorable final image."
+  }
+]
