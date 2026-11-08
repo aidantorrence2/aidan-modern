@@ -134,14 +134,23 @@ export default function chatgptWebSource(cfg) {
   return {
     name: 'chatgpt-web',
     replies: ['chatgpt'],
-    intervalMs: c.intervalMs || 15_000,
+    intervalMs: c.intervalMs || 30_000,
 
     async poll(state) {
-      const list = await call('GET', '/backend-api/conversations?offset=0&limit=15&order=updated');
+      // After a 429, stay quiet for a while instead of retrying into the limit.
+      if (state.coolUntil && Date.now() < state.coolUntil) return [];
+      let list;
+      try {
+        list = await call('GET', '/backend-api/conversations?offset=0&limit=15&order=updated');
+      } catch (e) {
+        if (e.status === 429) state.coolUntil = Date.now() + 5 * 60_000;
+        throw e;
+      }
       const items = list.items || [];
       const seen = (state.convs ??= {});
       const first = !state.initialized;
       const out = [];
+      let fetched = 0;
       for (const it of items) {
         const updated = String(it.update_time || '');
         const prev = seen[it.id];
@@ -150,9 +159,26 @@ export default function chatgptWebSource(cfg) {
           seen[it.id] = { updated, last: null };
           continue;
         }
-        const conv = await call('GET', `/backend-api/conversation/${it.id}`);
+        // A conversation with no finished reply yet (streaming, user spoke last, image or tool output) is
+        // re-checked at most every 45 s and only while it's recent; it used to be re-fetched every poll forever.
+        if (prev?.checkedAt && Date.now() - prev.checkedAt < 45_000) continue;
+        if (fetched >= 3) break; // spread bursts over polls
+        fetched++;
+        let conv;
+        try {
+          conv = await call('GET', `/backend-api/conversation/${it.id}`);
+        } catch (e) {
+          if (e.status === 429) state.coolUntil = Date.now() + 5 * 60_000;
+          throw e;
+        }
         const reply = latestReply(conv);
-        seen[it.id] = { updated: reply ? updated : '', last: reply?.id || prev?.last || null, leaf: conv.current_node };
+        const recent = Date.now() - Date.parse(it.update_time || 0) < 10 * 60_000;
+        seen[it.id] = {
+          updated: reply || !recent ? updated : '',
+          checkedAt: Date.now(),
+          last: reply?.id || prev?.last || null,
+          leaf: conv.current_node,
+        };
         if (!reply || reply.id === prev?.last) continue;
         out.push({
           source: 'chatgpt',
