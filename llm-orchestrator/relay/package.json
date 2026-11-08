@@ -1,0 +1,18 @@
+{
+  "name": "llm-orchestrator-relay",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Relay between LLM sessions (Claude Code, Codex, ...) and the Android orchestrator app",
+  "main": "server.mjs",
+  "scripts": {
+    "start": "node server.mjs",
+    "test": "node test.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^1.6.0"
+  }
+}

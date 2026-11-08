@@ -1,0 +1,40 @@
+name: LLM Orchestrator
+
+on:
+  push:
+    paths:
+      - 'llm-orchestrator/**'
+      - '.github/workflows/llm-orchestrator.yml'
+  workflow_dispatch:
+
+jobs:
+  relay:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: llm-orchestrator/relay
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm ci
+      - run: npm test
+
+  android:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: llm-orchestrator/android
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 17
+      - uses: android-actions/setup-android@v3
+      - run: ./gradlew assembleDebug lintDebug --console=plain
+      - uses: actions/upload-artifact@v4
+        with:
+          name: llm-orchestrator-apk
+          path: llm-orchestrator/android/app/build/outputs/apk/debug/app-debug.apk
