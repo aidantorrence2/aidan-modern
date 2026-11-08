@@ -43,7 +43,12 @@ public class MainActivity extends Activity {
             btn.setTextSize(14);
             langs.addView(btn, Ui.lp(0, Ui.dp(this, 44), 1, Ui.dp(this, 2)));
         }
-        col.addView(langs);
+        if (Deck.LANGS.length > 1) col.addView(langs);
+        else {
+            TextView title = Ui.text(this, d.name, 26, 0xFFFFFFFF, true);
+            title.setGravity(Gravity.CENTER);
+            col.addView(title);
+        }
 
         int total = d.cards.size(), seen = 0, known = 0;
         for (Deck.Card c : d.cards) { if (d.state(c) != null) seen++; if (d.known(c)) known++; }

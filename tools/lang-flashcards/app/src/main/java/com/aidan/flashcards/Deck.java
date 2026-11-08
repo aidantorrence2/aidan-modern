@@ -17,7 +17,7 @@ import java.util.Map;
 
 /** A language deck (cards in frequency order, phrases mixed in) plus its spaced-repetition state. */
 public class Deck {
-    public static final String[] LANGS = {"pt", "es"};
+    public static final String[] LANGS = {"pt"};
     public static final int NEW_PER_SESSION = 20;
     static final long MIN = 60_000L, DAY = 86_400_000L;
     public static final int AGAIN = 0, HARD = 1, GOOD = 2, EASY = 3;

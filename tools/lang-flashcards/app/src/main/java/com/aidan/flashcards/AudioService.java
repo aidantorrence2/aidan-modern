@@ -97,7 +97,7 @@ public class AudioService extends Service {
                 new Intent(this, AudioService.class).setAction(STOP), PendingIntent.FLAG_IMMUTABLE);
         Notification n = new Notification.Builder(this, "audio")
                 .setSmallIcon(android.R.drawable.ic_lock_silent_mode_off)
-                .setContentTitle("Flashcards — audio")
+                .setContentTitle("Ouvido — audio")
                 .setContentText(cur == null ? "Playing" : cur.front)
                 .setContentIntent(open)
                 .addAction(new Notification.Action.Builder(null, "Stop", stop).build())
