@@ -23,6 +23,13 @@ tap_text() {
   local x1 y1 x2 y2; read x1 y1 x2 y2 <<< "$b"
   $ADB shell input tap $(( (x1 + x2) / 2 )) $(( (y1 + y2) / 2 ))
 }
+# Play Protect's "Install anyway" link sits at the end of a longer text node: tap that node's last line.
+tap_install_anyway() {
+  local b=$(ui | grep -o 'text="[^"]*Install anyway"[^>]*bounds="[^"]*"' | head -1 | sed -E 's/.*bounds="\[([0-9]+),([0-9]+)\]\[([0-9]+),([0-9]+)\]".*/\1 \2 \3 \4/')
+  [[ -z "$b" ]] && return 1
+  local x1 y1 x2 y2; read x1 y1 x2 y2 <<< "$b"
+  $ADB shell input tap $(( x1 + 120 )) $(( y2 - 30 ))
+}
 installed_at() { $ADB shell dumpsys package $PKG 2>/dev/null | grep -m1 lastUpdateTime || true; }
 
 before=$(installed_at)
@@ -40,7 +47,7 @@ for i in {1..40}; do
   sleep 1.5
   [[ "$(installed_at)" != "$before" && -n "$(installed_at)" ]] && { echo "installed"; break; }
   tap_text "Install" || tap_text "Update" || tap_text "Don’t send" || tap_text "Don't send" \
-    || tap_text "More details" || tap_text "Install anyway" || tap_text "Install without scanning" || {
+    || tap_text "More details" || tap_text "Install anyway" || tap_install_anyway || tap_text "Install without scanning" || {
       if [[ -n "${ORCH_DEVICE_PIN:-}" ]] && tap_text "Use PIN"; then
         sleep 1.5; $ADB shell input text "$ORCH_DEVICE_PIN"; $ADB shell input keyevent 66
       fi

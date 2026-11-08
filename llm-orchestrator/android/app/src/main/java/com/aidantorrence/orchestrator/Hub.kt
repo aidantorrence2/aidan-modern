@@ -432,15 +432,11 @@ object Hub {
     // ------------------------------------------------------------------ alerts
 
     fun label(source: String) = when (source) {
-        "claude-code" -> "Claude Code"
-        "claude-code-cloud" -> "Claude Code ☁"
-        "claude-code-rc" -> "Claude Code 💻"
-        "claude-code-local" -> "Claude Code (local)"
-        "claude-web" -> "Claude"
-        "codex" -> "Codex"
-        "chatgpt" -> "ChatGPT"
-        "claude-app" -> "Claude"
-        else -> source.replaceFirstChar { it.uppercase() }
+        "claude-code", "claude-code-cloud", "claude-code-rc", "claude-code-local" -> "cc"
+        "codex" -> "cdx"
+        "chatgpt" -> "gpt"
+        "claude-web", "claude-app", "claude" -> "cld"
+        else -> source
     }
 
     private fun notifId(item: InboxItem) = item.id.hashCode()

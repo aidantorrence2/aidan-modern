@@ -42,12 +42,10 @@ struct Completion: Identifiable, Equatable {
 
     var sourceLabel: String {
         switch source {
-        case "claude-code-cloud": return "Claude Code ☁︎"
-        case "claude-code-rc": return "Claude Code 💻"
-        case "claude-code-local", "claude-code": return "Claude Code (local)"
-        case "codex": return "Codex"
-        case "chatgpt": return "ChatGPT"
-        case "claude-app", "claude-web", "claude": return "Claude"
+        case "claude-code", "claude-code-cloud", "claude-code-rc", "claude-code-local": return "cc"
+        case "codex": return "cdx"
+        case "chatgpt": return "gpt"
+        case "claude-app", "claude-web", "claude": return "cld"
         default: return source
         }
     }
@@ -75,6 +73,27 @@ final class RelayModel: ObservableObject {
     @Published var bridges = ""
     @Published var drafts: [String: String] = [:] // what the user typed, by item id
     @Published var flashId: String?
+    @Published var swipe: [String: CGFloat] = [:]   // live leftward offset of a card being swiped
+    var cardFrames: [String: CGRect] = [:]          // card frames in the panel (top-left origin)
+
+    /// Two-finger trackpad swipes (and drags) move a card; past the threshold it is dismissed.
+    /// The thread returns with its next completion, which arrives as a new item.
+    static let swipeThreshold: CGFloat = 90
+    func swipeMoved(_ id: String, by dx: CGFloat) {
+        swipe[id] = min(0, (swipe[id] ?? 0) + dx)
+    }
+    func swipeEnded(_ id: String) {
+        let off = swipe[id] ?? 0
+        if off < -Self.swipeThreshold, let c = all[id] {
+            swipe[id] = -400
+            Task { try? await Task.sleep(nanoseconds: 150_000_000); dismiss(c); swipe[id] = nil }
+        } else {
+            swipe[id] = nil
+        }
+    }
+    func card(at point: CGPoint) -> String? {
+        cardFrames.first { $0.value.contains(point) }?.key
+    }
 
     private var all: [String: Completion] = [:]
     private var seq: Double = 0
@@ -157,10 +176,14 @@ final class RelayModel: ObservableObject {
         Task { try? await Task.sleep(nanoseconds: 2_500_000_000); if flashId == id { flashId = nil } }
     }
 
-    func draft(for c: Completion) -> String { drafts[c.id] ?? c.suggestion }
+    /// What Send will send: your own text if you typed any, otherwise the drafted suggestion.
+    func outgoing(for c: Completion) -> String {
+        let typed = (drafts[c.id] ?? "").trimmingCharacters(in: .whitespacesAndNewlines)
+        return typed.isEmpty ? c.suggestion : typed
+    }
 
     func send(_ c: Completion) {
-        let text = draft(for: c).trimmingCharacters(in: .whitespacesAndNewlines)
+        let text = outgoing(for: c).trimmingCharacters(in: .whitespacesAndNewlines)
         guard !text.isEmpty else { return }
         markLocally(c.id, status: "replied")
         Task {
@@ -184,7 +207,7 @@ final class RelayModel: ObservableObject {
     }
 
     func regenerate(_ c: Completion) {
-        let hint = (drafts[c.id].map { $0 == c.suggestion ? "" : $0 }) ?? ""
+        let hint = drafts[c.id] ?? ""
         drafts[c.id] = nil
         if var x = all[c.id] { x.suggesting = true; all[c.id] = x; refreshItems() }
         Task { _ = try? await request("POST", "/api/events/\(c.id)/suggest", body: ["hint": hint], timeout: 120) }

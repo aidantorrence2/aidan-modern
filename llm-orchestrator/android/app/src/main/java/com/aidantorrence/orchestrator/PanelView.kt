@@ -46,7 +46,6 @@ class PanelView(
         setPadding(dp(12), dp(10), dp(12), dp(12))
 
         val header = Ui.row(ctx, 8)
-        header.addView(Ui.text(ctx, "Orchestrator", 17f, Ui.TEXT, bold = true, serif = true))
         inboxTab = Ui.chip(ctx, "Inbox", Ui.ACCENT) { tab = "inbox"; rebuild() }
         tasksTab = Ui.chip(ctx, "Tasks", Ui.MUTED) { tab = "tasks"; rebuild() }
         header.addView(inboxTab)
@@ -170,7 +169,8 @@ class PanelView(
     }
 
     private inner class InboxCard(val id: String) {
-        val view = Ui.column(context, 8)
+        // Swipe left to dismiss; the thread comes back with its next completion (a new item).
+        val view = SwipeColumn(context, 8) { Store.item(id)?.let { Hub.dismiss(it) } }
         private val source = Ui.text(context, "", 11f, Ui.MUTED, bold = true)
         private val title = Ui.text(context, "", 14f, Ui.TEXT, bold = true).apply { maxLines = 2; ellipsize = TextUtils.TruncateAt.END }
         private val age = Ui.text(context, "", 11f, Ui.MUTED)
@@ -208,7 +208,7 @@ class PanelView(
                     if (binding) return
                     val item = Store.item(id) ?: return
                     val t = s?.toString().orEmpty()
-                    item.draft = if (t == item.suggestion) null else t
+                    item.draft = t.ifEmpty { null }
                 }
             })
             view.addView(edit, Ui.lp())
@@ -244,12 +244,15 @@ class PanelView(
             if (response.text.toString() != item.text) response.text = item.text.ifBlank { "(no text in the completion)" }
             if (expandedId == item.id) { expanded = true; response.maxLines = Int.MAX_VALUE; expandedId = null }
 
-            val want = item.draft ?: item.suggestion
-            val canFill = !edit.hasFocus() || (item.draft == null && edit.text.isEmpty())
-            if (canFill && edit.text.toString() != want) {
-                edit.setText(want)
+            // The box holds only what you type; the drafted reply is the hint, and Send sends it
+            // when the box is empty.
+            val want = item.draft ?: ""
+            if (!edit.hasFocus() && edit.text.toString() != want) edit.setText(want)
+            edit.hint = when {
+                item.suggesting -> "Drafting a reply…"
+                item.suggestion.isNotBlank() -> item.suggestion
+                else -> "Type a reply…"
             }
-            edit.hint = if (item.suggesting) "Drafting a reply…" else "Reply…"
             sendBtn.text = when {
                 item.origin == "device" && item.replyMode == "device" -> "Send"
                 (item.origin == "device" || item.replyMode == "none") && Hub.appPackage(item) != null && AutoSendService.connected -> "Send"
@@ -268,7 +271,7 @@ class PanelView(
             if (item.suggestion.isNotBlank() && item.draft != null) {
                 alts.addView(Ui.chip(context, "↺ suggestion", Ui.MUTED) {
                     item.draft = null
-                    edit.setText(item.suggestion)
+                    edit.setText("")
                 })
             }
             binding = false
@@ -277,7 +280,7 @@ class PanelView(
         private fun send() {
             val item = Store.item(id) ?: return
             hideKeyboard()
-            Hub.send(item, edit.text.toString())
+            Hub.send(item, edit.text.toString().ifBlank { item.suggestion })
         }
 
         private fun regenerate() {

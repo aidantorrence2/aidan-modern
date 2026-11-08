@@ -25,7 +25,6 @@ struct PanelView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 6) {
             HStack(spacing: 6) {
-                Text("Orchestrator").font(.system(size: 13, weight: .semibold, design: .serif)).foregroundStyle(Theme.text)
                 if !model.items.isEmpty {
                     Text("\(model.items.count)")
                         .font(.system(size: 10, weight: .bold))
@@ -66,9 +65,12 @@ struct CardView: View {
     let c: Completion
     @State private var expanded = false
 
-    private var draft: Binding<String> {
-        Binding(get: { model.draft(for: c) }, set: { model.drafts[c.id] = $0 })
+    // The box holds only what YOU type; the drafted reply is the placeholder and is what Send sends
+    // when the box is empty.
+    private var typed: Binding<String> {
+        Binding(get: { model.drafts[c.id] ?? "" }, set: { model.drafts[c.id] = $0 })
     }
+    private var hasTyped: Bool { !(model.drafts[c.id] ?? "").trimmingCharacters(in: .whitespacesAndNewlines).isEmpty }
 
     var body: some View {
         VStack(alignment: .leading, spacing: 4) {
@@ -92,7 +94,7 @@ struct CardView: View {
             if !c.note.isEmpty {
                 Text(c.note).font(.system(size: 9)).foregroundStyle(Color.orange.opacity(0.85)).lineLimit(2)
             }
-            TextField(c.suggesting ? "Drafting a reply…" : "Reply…", text: draft, axis: .vertical)
+            TextField(c.suggesting ? "Drafting a reply…" : (c.suggestion.isEmpty ? "Type a reply…" : c.suggestion), text: typed, axis: .vertical)
                 .textFieldStyle(.plain)
                 .font(.system(size: 10.5))
                 .foregroundStyle(Theme.text)
@@ -114,11 +116,12 @@ struct CardView: View {
             }
             HStack(spacing: 4) {
                 Button(action: { model.send(c) }) {
-                    Text(c.replyMode == "none" ? "Copy & open" : "Send").font(.system(size: 10, weight: .semibold))
+                    Text(c.replyMode == "none" ? "Copy & open" : (hasTyped || c.suggestion.isEmpty ? "Send" : "Send draft")).font(.system(size: 10, weight: .semibold))
                         .padding(.horizontal, 10).padding(.vertical, 3)
                         .background(Capsule().fill(Theme.accent)).foregroundStyle(Color.black)
                 }.buttonStyle(.plain).keyboardShortcut(.return, modifiers: .command)
-                pill("✨ Draft") { model.regenerate(c) }
+                pill(hasTyped ? "✨ Redraft" : "✨ Draft") { model.regenerate(c) }
+                    .help("New draft; what you typed steers it")
                 if !c.url.isEmpty { pill("Open") { model.open(c) } }
                 Spacer()
                 pill("✕") { model.dismiss(c) }
@@ -126,8 +129,25 @@ struct CardView: View {
         }
         .padding(7)
         .background(RoundedRectangle(cornerRadius: 9).fill(Theme.card))
+        .background(GeometryReader { g in
+            Color.clear
+                .onAppear { model.cardFrames[c.id] = g.frame(in: .global) }
+                .onChange(of: g.frame(in: .global)) { _, f in model.cardFrames[c.id] = f }
+                .onDisappear { model.cardFrames[c.id] = nil }
+        })
         .overlay(RoundedRectangle(cornerRadius: 9).stroke(model.flashId == c.id ? Theme.accent : Theme.line, lineWidth: model.flashId == c.id ? 1.5 : 1))
         .animation(.easeOut(duration: 0.3), value: model.flashId)
+        .offset(x: model.swipe[c.id] ?? 0)
+        .opacity(1 - min(0.7, Double(-(model.swipe[c.id] ?? 0)) / 280))
+        .animation(.easeOut(duration: 0.15), value: model.swipe[c.id])
+        .simultaneousGesture(
+            DragGesture(minimumDistance: 14)
+                .onChanged { v in
+                    guard abs(v.translation.width) > abs(v.translation.height) * 1.5 else { return }
+                    model.swipe[c.id] = min(0, v.translation.width)
+                }
+                .onEnded { _ in model.swipeEnded(c.id) }
+        )
     }
 
     private func pill(_ label: String, _ action: @escaping () -> Void) -> some View {
