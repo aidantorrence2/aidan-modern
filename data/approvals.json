@@ -4346,6 +4346,30 @@
       "status": "pending",
       "decided": null,
       "note": ""
+    },
+    {
+      "id": "outreach-category:rio-hospitality-v2",
+      "kind": "email",
+      "source": "codex:rio-fashion-network",
+      "title": "Approve outreach category: Hotels, restaurants and venues (85 contacts)",
+      "summary": "Approving sends this email to every contact in the category, plus new ones research finds, within the 450/day cap and office hours. First: Grupo Arpoador, Chez Georges, Janeiro Hotel, Yoo2, Santa Teresa MGallery, Vila Santa Teresa, Marius Degustare, Villa Paranaguá",
+      "payload": {
+        "category": "hospitality",
+        "subject": "Photography for {{org}} - Aidan Torrence",
+        "body": "{{greeting}}\n\nI'm Aidan Torrence, a fashion photographer currently in Rio. I'd love to photograph {{org}} while I'm here, through 4 December: the space, the team and the people who come through. {{highlight}}\n\nMy work: https://aidantorrence.com\nInstagram: https://instagram.com/madebyaidan\n\nWould you be interested?\n\nBest,\nAidan Torrence\n",
+        "attachment": "none",
+        "contacts": 85,
+        "examples": [
+          "To Grupo Arpoador:\nHi Grupo Arpoador team,\n\nI'm Aidan Torrence, a fashion photographer currently in Rio. I'd love to photograph Grupo Arpoador while I'm here, through 4 December: the space, the team and the people who come through. The triangular rooftop pool at Hotel Arpoador, with Pedra do Arpoador and Dois Irmãos at either end of the beach, and the ARP Bar's tables on the calçadão are settings I'd love to build a fashion story around at sunset.\n\nMy work: https://aidantorrence.com\nInstagram: https://instagram.com/madebyaidan\n\nWould you be interested?\n\nBest,\nAidan Torrence\n",
+          "To Chez Georges:\nHi Chez Georges team,\n\nI'm Aidan Torrence, a fashion photographer currently in Rio. I'd love to photograph Chez Georges while I'm here, through 4 December: the space, the team and the people who come through. A 1970s modernist villa on the hills of Santa Teresa is exactly the kind of setting I'd love to build an editorial fashion series around.\n\nMy work: https://aidantorrence.com\nInstagram: https://instagram.com/madebyaidan\n\nWould you be interested?\n\nBest,\nAidan Torrence\n",
+          "To Janeiro Hotel:\nHi Janeiro Hotel team,\n\nI'm Aidan Torrence, a fashion photographer currently in Rio. I'd love to photograph Janeiro Hotel while I'm here, through 4 December: the space, the team and the people who come through. The pool at Janeiro Hotel looking out to Dois Irmãos, and rooms framing the Cagarras Islands over Leblon beach, are the kind of setting I'd love to shoot a fashion editorial in.\n\nMy work: https://aidantorrence.com\nInstagram: https://instagram.com/madebyaidan\n\nWould you be interested?\n\nBest,\nAidan Torrence\n"
+        ]
+      },
+      "created": "2026-11-09T04:08:24Z",
+      "expires": "2026-11-16T04:08:24Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
     }
   ]
 }
