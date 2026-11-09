@@ -22,7 +22,7 @@ agents said and did. You play it like Anki: flip a card, then grade it.
 | Yesterday's list + phone state | unfinished items can carry over with the same id; done ones never come back |
 
 Newest sessions first, up to ~90k characters of excerpts (about 25k tokens); one call to
-`claude-opus-5-5` through the `claude` CLI you are already logged into (falls back to the
+`claude-fable-5-2` (ranking the day is planning work) through the `claude` CLI you are already logged into (falls back to the
 Anthropic SDK if `ANTHROPIC_API_KEY` is set and the CLI is missing).
 
 ## The game
@@ -56,5 +56,5 @@ Keystore. `data/todos-state.json` holds only opaque ids and a date.
 
 ## Settings (env vars for build-todos.mjs)
 
-`TODOS_HOURS` (default 24), `TODOS_MODEL` (default `claude-opus-5-5`), `TODOS_BRANCH`,
+`TODOS_HOURS` (default 24), `TODOS_MODEL` (default `claude-fable-5-2`), `TODOS_BRANCH`,
 `TODOS_REPO`, `TODOS_USE_SDK=1` to skip the CLI.

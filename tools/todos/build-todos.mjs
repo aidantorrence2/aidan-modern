@@ -31,7 +31,8 @@ const TODOS_PATH = 'data/todos.enc.json'
 const STATE_PATH = 'data/todos-state.json'
 const APPROVALS_PATH = 'data/approvals.json'
 const HOURS = Number(process.env.TODOS_HOURS || 24)
-const MODEL = process.env.TODOS_MODEL || 'claude-opus-5-5'
+// Ranking the day is planning, so Fable does it.
+const MODEL = process.env.TODOS_MODEL || 'claude-fable-5-2'
 const CONF = path.join(os.homedir(), '.config', 'aidan-todos')
 const KEY_FILE = path.join(CONF, 'key')
 const MAX_DIGEST = 90_000 // chars of transcript excerpts sent to Claude (~25k tokens)
@@ -287,10 +288,13 @@ async function rank(p) {
   log(`asking ${MODEL} via the Anthropic SDK`)
   const { default: Anthropic } = await import('@anthropic-ai/sdk')
   const client = new Anthropic()
-  const res = await client.messages.create({
+  // Server-side fallback: if Fable declines, the API re-runs the request on a fallback model.
+  const res = await client.beta.messages.create({
     model: MODEL,
     max_tokens: 16000,
-    output_config: { effort: 'medium', format: { type: 'json_schema', schema: SCHEMA } },
+    betas: ['server-side-fallback-2026-07-01'],
+    fallbacks: 'default',
+    output_config: { effort: 'high', format: { type: 'json_schema', schema: SCHEMA } },
     messages: [{ role: 'user', content: p }],
   })
   if (res.stop_reason === 'refusal') throw new Error('Claude declined the request')

@@ -55,6 +55,14 @@ object Secrets {
     }
 
     fun token(ctx: Context): String? = load(ctx, "token", "token")
+    fun setToken(ctx: Context, v: String) = save(ctx, "token", v.trim())
+
+    /** Accepts the base64 key exactly as ~/.config/aidan-todos/key holds it; false if it isn't 32 bytes. */
+    fun setListKey(ctx: Context, v: String): Boolean {
+        val bytes = try { Base64.decode(v.trim(), Base64.DEFAULT) } catch (_: Exception) { return false }
+        if (bytes.size != 32) return false
+        save(ctx, "listkey", v.trim()); return true
+    }
 
     /** 32-byte AES key that build-todos.mjs encrypts the list with (base64 on the Mac). */
     fun listKey(ctx: Context): ByteArray? =
