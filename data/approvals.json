@@ -4079,6 +4079,24 @@
       "status": "pending",
       "decided": null,
       "note": "Replaced by v3: São Paulo dates are 24–30 November (Aidan, 8 Nov)."
+    },
+    {
+      "id": "email:rio-reply-adriana-barbosa-v3",
+      "kind": "email",
+      "source": "codex:rio-fashion-network",
+      "title": "Reply to Adriana Barbosa: shoot details",
+      "summary": "Liked moodboard, wants more details. Draft gives SP dates 11-14 Nov - check.",
+      "payload": {
+        "to": "adriana@adrianabarbosa.com.br",
+        "subject": "Re: São Paulo street editorial - styling collaboration",
+        "body": "Hi Adriana,\n\nGlad you like the direction. It's a street editorial in São Paulo, pitched to international magazines, including Purple, Numéro Berlin and Vogue Portugal.\n\nI'm in São Paulo 24–30 November. Which of those days work for you?\n\nYou'd be styling the looks and pulling pieces. It's a creative collaboration with no fee on either side; you get full credit and the final images.\n\nBest,\nAidan Torrence\n",
+        "attachments": []
+      },
+      "created": "2026-11-09T02:33:22Z",
+      "expires": "2026-11-12T02:33:22Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
     }
   ]
 }
