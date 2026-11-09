@@ -4223,10 +4223,10 @@
         "contacts": 212
       },
       "created": "2026-11-09T03:55:13Z",
-      "expires": "2026-11-16T03:55:13Z",
+      "expires": "2026-11-09T04:01:00.497Z",
       "status": "pending",
       "decided": null,
-      "note": ""
+      "note": "Withdrawn: template updated with a per-recipient \"why\" line; new card with examples follows."
     },
     {
       "id": "outreach-category:rio-hospitality-v1",
@@ -4242,10 +4242,10 @@
         "contacts": 85
       },
       "created": "2026-11-09T03:55:16Z",
-      "expires": "2026-11-16T03:55:15Z",
+      "expires": "2026-11-09T04:01:00.499Z",
       "status": "pending",
       "decided": null,
-      "note": ""
+      "note": "Withdrawn: template updated with a per-recipient \"why\" line; new card with examples follows."
     },
     {
       "id": "outreach-category:rio-production_agency-v1",
@@ -4280,10 +4280,10 @@
         "contacts": 196
       },
       "created": "2026-11-09T03:55:20Z",
-      "expires": "2026-11-16T03:55:20Z",
+      "expires": "2026-11-09T04:01:00.499Z",
       "status": "pending",
       "decided": null,
-      "note": ""
+      "note": "Withdrawn: template updated with a per-recipient \"why\" line; new card with examples follows."
     },
     {
       "id": "outreach-category:rio-follow_up-v1",
