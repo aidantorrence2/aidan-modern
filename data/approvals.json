@@ -5267,6 +5267,24 @@
       "status": "approved",
       "decided": "2026-11-09T12:49:30Z",
       "note": ""
+    },
+    {
+      "id": "email:rio-reply-work-agency",
+      "kind": "email",
+      "source": "claude:rio-fashion-network",
+      "title": "Reply to Work Agency: send options, which days",
+      "summary": "Asked how many models and any profile preference; will send options",
+      "payload": {
+        "to": "workshopmodells@gmail.com",
+        "subject": "Re: Rio model tests | Aidan Torrence",
+        "body": "Hi Work Agency team,\n\nThank you! Whoever needs fresh images for their book, new faces or main board. Send me the available options and I'll reply the same day.\n\nWhich days work for you?\n\nBest,\nAidan Torrence\n",
+        "attachments": []
+      },
+      "created": "2026-11-09T15:28:53Z",
+      "expires": "2026-11-12T15:28:53Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
     }
   ]
 }
