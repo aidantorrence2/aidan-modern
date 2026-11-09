@@ -5003,6 +5003,27 @@
       "status": "pending",
       "decided": null,
       "note": ""
+    },
+    {
+      "id": "outreach-category:rio-celebrity-v4",
+      "kind": "email",
+      "source": "codex:rio-fashion-network",
+      "title": "Approve outreach category: Celebrities and public figures (via their management/press) (0 contacts)",
+      "summary": "Approving sends this email to every contact in the category, plus new ones research finds, within the 450/day cap and office hours.",
+      "payload": {
+        "category": "celebrity",
+        "subject": "Portrait session with {{name}} - Aidan Torrence",
+        "body": "{{greeting}}\n\nI'm Aidan Torrence, a fashion and portrait photographer currently in Rio, here through 4 December. {{highlight}}\n\nI'd love to photograph {{name}} for an editorial portrait session while I'm here. It would be a creative collaboration: {{name}} gets the final images to use, and I'd pitch the story to magazines.\n\nMy work: https://aidantorrence.com\nInstagram: https://instagram.com/madebyaidan\n\nWould {{name}} be open to it?\n\nBest,\nAidan Torrence\n",
+        "template": "{{greeting}}\n\nI'm Aidan Torrence, a fashion and portrait photographer currently in Rio, here through 4 December. {{highlight}}\n\nI'd love to photograph {{name}} for an editorial portrait session while I'm here. It would be a creative collaboration: {{name}} gets the final images to use, and I'd pitch the story to magazines.\n\nMy work: https://aidantorrence.com\nInstagram: https://instagram.com/madebyaidan\n\nWould {{name}} be open to it?\n\nBest,\nAidan Torrence\n",
+        "attachment": "none",
+        "contacts": 0,
+        "examples": []
+      },
+      "created": "2026-11-09T04:34:55Z",
+      "expires": "2026-11-16T04:34:55Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
     }
   ]
 }
