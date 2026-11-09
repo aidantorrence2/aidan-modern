@@ -3989,6 +3989,24 @@
       "status": "pending",
       "decided": null,
       "note": ""
+    },
+    {
+      "id": "email:rio-reply-deborah-kasper-v2",
+      "kind": "email",
+      "source": "codex:rio-fashion-network",
+      "title": "Reply to Deborah Kasper: dates and magazine",
+      "summary": "Asked dates and which magazine; says her schedule is tight.",
+      "payload": {
+        "to": "deborahkasper.costume@gmail.com",
+        "subject": "Re: Rio beach/street editorial - styling collaboration",
+        "body": "Hi Deborah,\n\nThanks. It's a beach/street fashion editorial in Rio, following the moodboard I sent. It's pitched to international magazines, including Purple, Numéro Berlin and Vogue Portugal.\n\nWe're shooting in the second half of November. Which days work for you?\n\nYou'd be styling the looks and pulling pieces. It's a creative collaboration with no fee on either side; you get full credit and the final images.\n\nBest,\nAidan Torrence\n",
+        "attachments": []
+      },
+      "created": "2026-11-09T02:27:55Z",
+      "expires": "2026-11-12T02:27:55Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
     }
   ]
 }
