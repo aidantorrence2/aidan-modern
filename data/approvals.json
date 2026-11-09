@@ -3788,6 +3788,26 @@
       "status": "pending",
       "decided": null,
       "note": ""
+    },
+    {
+      "id": "email:rio-magazine-purple",
+      "kind": "email",
+      "source": "codex:rio-fashion-network",
+      "title": "Send editorial pitch to Svita Sobol, Purple digital",
+      "summary": "Your final magazine wording + Rio moodboard. Sends from Mon 09:00 Rio once approved. Note: it says 'I have a stylist on board' — 6 stylists replied interested (Felipe, Adriana, Mafê, Juliana, Deborah, Gioh), none confirmed yet.",
+      "payload": {
+        "to": "digital@purple.fr",
+        "subject": "Editorial proposal: Rio de Janeiro",
+        "body": "Hi Svita,\n\nI'm Aidan Torrence, a fashion photographer currently in Rio. I'd love to shoot a fashion editorial for Purple, set on the beaches and streets of Rio de Janeiro. The moodboard is attached.\n\nMy work: https://aidantorrence.com\nInstagram: https://instagram.com/madebyaidan\n\nWould the magazine be interested in running it? I have a stylist on board, and once we have a pull letter we'll be ready to shoot.\n\nBest,\nAidan Torrence\n",
+        "attachments": [
+          "Rio-After-the-Beach-Moodboard.pdf"
+        ]
+      },
+      "created": "2026-11-09T01:53:17Z",
+      "expires": "2026-11-12T01:53:17Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
     }
   ]
 }
