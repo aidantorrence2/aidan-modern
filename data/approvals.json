@@ -4574,10 +4574,10 @@
         ]
       },
       "created": "2026-11-09T04:20:13Z",
-      "expires": "2026-11-16T04:20:13Z",
+      "expires": "2026-11-09T04:48:58.687Z",
       "status": "pending",
       "decided": null,
-      "note": ""
+      "note": "Withdrawn: template updated with a per-recipient \"why\" line; new card with examples follows."
     },
     {
       "id": "outreach-category:rio-local_business-v4",
@@ -4999,10 +4999,10 @@
         "examples": []
       },
       "created": "2026-11-09T04:34:52Z",
-      "expires": "2026-11-16T04:34:52Z",
+      "expires": "2026-11-09T04:48:58.689Z",
       "status": "pending",
       "decided": null,
-      "note": ""
+      "note": "Withdrawn: template updated with a per-recipient \"why\" line; new card with examples follows."
     },
     {
       "id": "outreach-category:rio-celebrity-v4",
@@ -5020,10 +5020,10 @@
         "examples": []
       },
       "created": "2026-11-09T04:34:55Z",
-      "expires": "2026-11-16T04:34:55Z",
+      "expires": "2026-11-09T04:48:58.689Z",
       "status": "pending",
       "decided": null,
-      "note": ""
+      "note": "Withdrawn: template updated with a per-recipient \"why\" line; new card with examples follows."
     },
     {
       "id": "outreach-category:rio-fashion_brand-v12",
@@ -5217,10 +5217,10 @@
         ]
       },
       "created": "2026-11-09T04:44:13Z",
-      "expires": "2026-11-16T04:44:13Z",
+      "expires": "2026-11-09T04:48:58.689Z",
       "status": "pending",
       "decided": null,
-      "note": ""
+      "note": "Withdrawn: template updated with a per-recipient \"why\" line; new card with examples follows."
     },
     {
       "id": "outreach-category:rio-local_business-v15",
@@ -5241,10 +5241,10 @@
         ]
       },
       "created": "2026-11-09T04:44:17Z",
-      "expires": "2026-11-16T04:44:17Z",
+      "expires": "2026-11-09T04:48:58.689Z",
       "status": "pending",
       "decided": null,
-      "note": ""
+      "note": "Withdrawn: template updated with a per-recipient \"why\" line; new card with examples follows."
     }
   ]
 }
