@@ -3956,6 +3956,21 @@
       "status": "pending",
       "decided": null,
       "note": ""
+    },
+    {
+      "id": "other:orchestrator-approval-canary",
+      "kind": "other",
+      "source": "codex:aidan-modern",
+      "title": "Test: Orchestrator approval card (deny me)",
+      "summary": "Canary for approvals in the orchestrator. Safe to deny.",
+      "payload": {
+        "test": true
+      },
+      "created": "2026-11-09T02:09:12Z",
+      "expires": "2026-11-09T04:09:12Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
     }
   ]
 }
