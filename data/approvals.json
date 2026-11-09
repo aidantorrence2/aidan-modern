@@ -3938,6 +3938,24 @@
       "status": "pending",
       "decided": null,
       "note": ""
+    },
+    {
+      "id": "email:rio-reply-gioh-consultora",
+      "kind": "email",
+      "source": "codex:rio-fashion-network",
+      "title": "Reply to Giovanna: date, role, budget",
+      "summary": "Asked date, location, role, budget, and how you found her (left unanswered, your call).",
+      "payload": {
+        "to": "giohconsultoriademoda@gmail.com",
+        "subject": "Re: Rio beach/street editorial - styling collaboration",
+        "body": "Hi Giovanna,\n\nIt's a beach/street fashion editorial in Rio, following the moodboard I sent. It's pitched to Purple, Numéro Berlin and Vogue Portugal.\n\nWe're shooting in the second half of November. Which days work for you?\n\nYour role would be styling the looks and pulling pieces for the shoot. It's a creative collaboration with no fee on either side; you get full credit and the final images.\n\nBest,\nAidan Torrence\n",
+        "attachments": []
+      },
+      "created": "2026-11-09T01:55:42Z",
+      "expires": "2026-11-12T01:55:42Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
     }
   ]
 }
