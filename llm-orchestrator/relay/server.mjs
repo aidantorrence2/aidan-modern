@@ -130,13 +130,6 @@ function upsertSession(ev) {
 }
 
 async function attachSuggestion(ev, hint = '') {
-  if (ev.source === 'approval') {
-    // Approval requests need a decision, not a drafted reply: no LLM call.
-    ev.suggestion = { primary: '', alternatives: [], title: String(ev.title || '').slice(0, 60), did: ev.prompt || '', needs: 'Approve or deny', needsReply: true, model: null };
-    bump(ev);
-    notify();
-    return;
-  }
   ev.suggesting = true;
   bump(ev);
   notify();
@@ -311,16 +304,6 @@ async function handle(req, res) {
   }
 
   // Hook gave up waiting: release so the bridge takes over future replies immediately.
-  // A bridge says a session's open item was resolved elsewhere (e.g. an approval decided in another app).
-  if ((m = p.match(/^\/api\/sessions\/(.+)\/close$/)) && req.method === 'POST') {
-    const sid = decodeURIComponent(m[1]);
-    const b = await readBody(req);
-    let n = 0;
-    for (const ev of state.events) if (ev.sessionId === sid && ev.status === 'new') { bump(Object.assign(ev, { status: b.status || 'dismissed' })); n++; }
-    if (n) notify();
-    return send(res, 200, { ok: true, closed: n });
-  }
-
   if ((m = p.match(/^\/api\/sessions\/(.+)\/release$/)) && req.method === 'POST') {
     const s = getSession(decodeURIComponent(m[1]));
     if (s) {

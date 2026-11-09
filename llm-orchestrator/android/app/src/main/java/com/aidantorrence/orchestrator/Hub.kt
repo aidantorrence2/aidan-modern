@@ -444,7 +444,6 @@ object Hub {
         "codex" -> "cdx"
         "chatgpt" -> "gpt"
         "claude-web", "claude-app", "claude" -> "cld"
-        "approval" -> "ok?"
         else -> source
     }
 

@@ -69,7 +69,6 @@ struct Completion: Identifiable, Equatable {
         case "codex": return "cdx"
         case "chatgpt": return "gpt"
         case "claude-app", "claude-web", "claude": return "cld"
-        case "approval": return "ok?"
         default: return source
         }
     }
@@ -203,10 +202,6 @@ final class RelayModel: ObservableObject {
     /// What Send will send: your own text if you typed any, otherwise the drafted suggestion.
     func outgoing(for c: Completion) -> String {
         let typed = (drafts[c.id] ?? "").trimmingCharacters(in: .whitespacesAndNewlines)
-        if c.source == "approval" {
-            if typed.lowercased().hasPrefix("deny") { return typed }
-            return "approve" + (typed.isEmpty ? "" : ": " + typed)
-        }
         return typed.isEmpty ? c.suggestion : typed
     }
 
@@ -227,13 +222,6 @@ final class RelayModel: ObservableObject {
                 status = "Send failed: \(error.localizedDescription.prefix(50))"
             }
         }
-    }
-
-    /// Approval cards: deny with the typed text as the note.
-    func deny(_ c: Completion) {
-        let typed = (drafts[c.id] ?? "").trimmingCharacters(in: .whitespacesAndNewlines)
-        drafts[c.id] = "deny" + (typed.isEmpty ? "" : ": " + typed)
-        send(c)
     }
 
     func dismiss(_ c: Completion) {
