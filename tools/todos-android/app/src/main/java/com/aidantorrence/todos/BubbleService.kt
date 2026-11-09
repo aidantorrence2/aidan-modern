@@ -189,7 +189,8 @@ class BubbleService : Service() {
 
     private fun refreshViews() {
         val list = Game.list
-        bubble?.set(Game.deck().size, Game.counts().third, Game.total, list == null || list.date != Game.today())
+        val (new, due, away) = Game.counts()
+        bubble?.set(new + due, away, Game.total, list == null)
         if (panelShown) panel?.render()
         // Wake up when the next waiting card comes back, so the bubble's count rises on time.
         main.removeCallbacks(dueTick)

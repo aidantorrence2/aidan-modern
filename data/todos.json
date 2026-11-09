@@ -1,31 +1,506 @@
 {
-  "date": "2026-11-09",
-  "generated": "2026-11-09T21:30:00Z",
-  "items": [
-    {"id": "agencies-1", "task": "agencies", "rank": 1, "title": "Lock Rio test shoots with the model agencies", "text": "Work Agency and Base Management both replied. To get models booked in Rio, I need to send them {{how many models, what profile, and which days}}.", "note": "Two reply drafts are waiting in Approvals. Agencies move on fast if they don't hear back.", "minutes": 6, "source": "photography · Rio"},
-    {"id": "noctis-1", "task": "noctis", "rank": 2, "title": "Get the Noctis publication", "text": "Noctis will decide on publishing the shoot once they see {{the final images}}.", "note": "Genea Bailey asked for finals. The reply promising them is in Approvals; the real work is picking and exporting the frames.", "minutes": 30, "source": "photography · magazines"},
-    {"id": "dating-test-1", "task": "dating-test", "rank": 3, "title": "Start the dating photo app demand test", "text": "The dating photo app test is ready and waits on one thing from me: {{approving the $3/day Meta campaign}}.", "note": "Four 'launching soon' pages on dating-photos-ai, one ad each. Nothing spends until you approve. The card expires 11 November.", "minutes": 3, "source": "apps · dating photos"},
-    {"id": "accountability-1", "task": "accountability", "rank": 4, "title": "Pick one accountability app idea to test", "text": "The accountability app is still only ideas. The next move is to {{pick one idea and put up a 'launching soon' page for it}}, like the dating pages.", "note": "Your own rule: no building from a guess. Candidates already researched: commitment-based work sessions ($9/month) and task-start support ($12/month).", "minutes": 15, "source": "apps · accountability"},
-    {"id": "sp-week-1", "task": "sp-week", "rank": 5, "title": "Lock the São Paulo week", "text": "My São Paulo dates are {{24 to 30 November}}, and Mafê Domingues is waiting on my reply about date, budget and publication.", "note": "The reply draft is in Approvals and expires 12 November.", "minutes": 5, "source": "photography · São Paulo"},
-    {"id": "purple-1", "task": "purple", "rank": 6, "title": "Send the Purple pitch", "text": "The Purple pitch is drafted. It closes by saying I have {{a stylist and a pull letter}} ready.", "note": "A magazine pitch only counts once it is sent. Check the stylist line is still true, then send.", "minutes": 10, "source": "photography · magazines"},
-    {"id": "dating-rights-1", "task": "dating-rights", "rank": 7, "title": "Clear usage rights for the dating ad photos", "text": "Before the dating ads run, I must confirm I have {{usage rights for the 4 portfolio frames}} of models used in them.", "note": "Frames: r1-05457-0036, 000067-4, 000049660026, manila-gallery-floor-001. Swap any you can't clear.", "minutes": 10, "source": "apps · dating photos"},
-    {"id": "venues-1", "task": "venues", "rank": 8, "title": "Decide the Rio hotels and venues outreach", "text": "One approval sends my shoot pitch to {{85 hotels, restaurants and venues}} in Rio, starting with Grupo Arpoador.", "note": "Locations and hospitality clients in one move. Read the sample email first; nothing sends until you approve.", "minutes": 5, "source": "photography · Rio"},
-    {"id": "ig-grid-1", "task": "ig-grid", "rank": 9, "title": "Start posting the planned Instagram grid", "text": "My Instagram grid plan is saved at /picks: {{126 picks, portraits interleaved with documentary}}. The plan earns nothing until I start posting it.", "note": "Agencies and magazines check the grid before they answer a pitch.", "minutes": 15, "source": "photography · Instagram"},
-    {"id": "giovanna-1", "task": "giovanna", "rank": 10, "title": "Answer Giovanna", "text": "Giovanna asked about date, location, role and budget. The one thing only I can answer is {{how I found her}}.", "note": "The reply draft is in Approvals with that part left open for you.", "minutes": 4, "source": "photography · Rio"},
-
-    {"id": "agencies-2", "task": "agencies", "rank": 1, "title": "Lock Rio test shoots with the model agencies", "text": "{{Base Management}} asked three things: is it TFP, how many models, and which dates.", "note": "Answer all three in one reply so they can send options straight away.", "minutes": 6, "source": "photography · Rio"},
-    {"id": "noctis-2", "task": "noctis", "rank": 2, "title": "Get the Noctis publication", "text": "The first step toward the Noctis publication is to {{open the shoot folder and star the frames I would send}}.", "note": "Aim for a tight edit. A magazine judges the weakest frame.", "minutes": 30, "source": "photography · magazines"},
-    {"id": "dating-test-2", "task": "dating-test", "rank": 3, "title": "Start the dating photo app demand test", "text": "The dating test puts four ideas against each other: AI shoot, camera-roll edit, profile audit and {{swipe test}}.", "note": "Each ad goes to its own email page, so sign-ups tell you which idea people want.", "minutes": 3, "source": "apps · dating photos"},
-    {"id": "accountability-2", "task": "accountability", "rank": 4, "title": "Pick one accountability app idea to test", "text": "My rule for building any app: build after {{1 pre-order, 3 'I'd pay' clicks, or 10 sign-ups in 72 hours}}.", "note": "So the accountability app needs a page that can collect those before any code.", "minutes": 15, "source": "apps · accountability"},
-    {"id": "sp-week-2", "task": "sp-week", "rank": 5, "title": "Lock the São Paulo week", "text": "To Mafê I describe the shoot as {{pitched to international magazines}}, so the magazine line has to be one I can stand behind.", "note": "Check which magazines the draft names before approving.", "minutes": 5, "source": "photography · São Paulo"},
-    {"id": "purple-2", "task": "purple", "rank": 6, "title": "Send the Purple pitch", "text": "The pitch to {{Purple}} is written but unsent. Sending it is a ten-minute job.", "note": "Drafted in the 'Rio de Janeiro fashion editorial critique' session.", "minutes": 10, "source": "photography · magazines"},
-    {"id": "dating-rights-2", "task": "dating-rights", "rank": 7, "title": "Clear usage rights for the dating ad photos", "text": "The dating ads use my portfolio photos of {{real models}}, which is why rights have to be cleared before they go live.", "note": "A model seeing her face on a dating ad without consent is the fastest way to lose an agency.", "minutes": 10, "source": "apps · dating photos"},
-    {"id": "venues-2", "task": "venues", "rank": 8, "title": "Decide the Rio hotels and venues outreach", "text": "The venue emails go out within {{450 a day, in office hours}}, and only after I approve the category.", "note": "The card expires 16 November.", "minutes": 5, "source": "photography · Rio"},
-    {"id": "ig-grid-2", "task": "ig-grid", "rank": 9, "title": "Start posting the planned Instagram grid", "text": "The first step on the Instagram grid is to {{post the first three picks from /picks today}}.", "note": "Three posts make one finished row.", "minutes": 15, "source": "photography · Instagram"},
-
-    {"id": "agencies-3", "task": "agencies", "rank": 1, "title": "Lock Rio test shoots with the model agencies", "text": "Model agencies are first in my outreach send order because {{tests with agency models are what get me published and booked}}.", "note": "Your send order: replies, model agencies, follow-ups, then the rest.", "minutes": 6, "source": "photography · Rio"},
-    {"id": "dating-test-3", "task": "dating-test", "rank": 3, "title": "Start the dating photo app demand test", "text": "Over 14 days the dating test costs about {{$42}}, which buys the answer to 'which idea do I build'.", "note": "It has no end date, so set a reminder to read the numbers and stop it.", "minutes": 3, "source": "apps · dating photos"},
-    {"id": "accountability-3", "task": "accountability", "rank": 4, "title": "Pick one accountability app idea to test", "text": "I kill an app idea after {{7 days under 3 sign-ups}}, so the accountability idea needs a start date to be judged against.", "note": "Pick the idea today and the clock can start this week.", "minutes": 15, "source": "apps · accountability"},
-    {"id": "noctis-3", "task": "noctis", "rank": 2, "title": "Get the Noctis publication", "text": "My contact at Noctis is {{Genea Bailey}}.", "note": "Send the finals to her directly once the reply has gone out.", "minutes": 30, "source": "photography · magazines"}
-  ]
+ "date": "2026-11-09",
+ "generated": "2026-11-09T22:00:00Z",
+ "items": [
+  {
+   "id": "publication-1",
+   "task": "publication",
+   "rank": 1,
+   "title": "Land a magazine publication from the Rio trip",
+   "text": "The outcome I want from the Rio trip is {{a magazine publication}}.",
+   "note": "Everything else in Rio (models, stylists, venues) feeds this one result.",
+   "minutes": 0,
+   "source": "photography · magazines"
+  },
+  {
+   "id": "editorials-1",
+   "task": "editorials",
+   "rank": 2,
+   "title": "Shoot 2-3 strong Rio editorials before 4 December",
+   "text": "Before I leave Rio I want to have shot {{2 to 3 strong editorials}}.",
+   "note": "Strong means a full story a magazine could run, not a test.",
+   "minutes": 0,
+   "source": "photography · Rio"
+  },
+  {
+   "id": "bookings-1",
+   "task": "bookings",
+   "rank": 3,
+   "title": "Turn the Rio Meta campaign into steady shoot bookings",
+   "text": "The paid Rio campaign should become {{a steady flow of shoot bookings}}, not just clicks.",
+   "note": "Campaign: rio - website - pt, sending women in Rio to /sign-up-collab-rio.",
+   "minutes": 0,
+   "source": "photography · bookings"
+  },
+  {
+   "id": "next-city-1",
+   "task": "next-city",
+   "rank": 4,
+   "title": "Choose the next city and set it up before arriving",
+   "text": "After Rio, the goal is to {{choose the next city and set it up before I arrive}}.",
+   "note": "Set up means outreach sent, a sign-up page live and ads running before landing.",
+   "minutes": 0,
+   "source": "photography · travel"
+  },
+  {
+   "id": "sao-paulo-1",
+   "task": "sao-paulo",
+   "rank": 5,
+   "title": "Make the São Paulo week produce one strong shoot",
+   "text": "My São Paulo dates are {{24 to 30 November}}.",
+   "note": "One week. Whatever is not booked before arriving probably will not happen.",
+   "minutes": 0,
+   "source": "photography · São Paulo"
+  },
+  {
+   "id": "instagram-1",
+   "task": "instagram",
+   "rank": 6,
+   "title": "Build an Instagram grid that wins agencies and magazines",
+   "text": "My Instagram grid plan holds {{126 picks}}, portraits interleaved with documentary.",
+   "note": "Saved at /picks.",
+   "minutes": 0,
+   "source": "photography · Instagram"
+  },
+  {
+   "id": "archive-1",
+   "task": "archive",
+   "rank": 7,
+   "title": "Turn the film archive into frames I can pitch and post",
+   "text": "The point of the Lightroom and negative work is {{an archive of finished frames I can pitch and post}}.",
+   "note": "Rotating, cropping and converting are means, not the goal.",
+   "minutes": 0,
+   "source": "photography · archive"
+  },
+  {
+   "id": "dating-app-1",
+   "task": "dating-app",
+   "rank": 8,
+   "title": "Find out whether people will pay for the dating photo generator",
+   "text": "The question for the dating profile photo generator is {{will people pay for it}}.",
+   "note": "Not 'can it be built'. That is already known.",
+   "minutes": 0,
+   "source": "apps · dating photos"
+  },
+  {
+   "id": "accountability-1",
+   "task": "accountability",
+   "rank": 9,
+   "title": "Choose one accountability app idea and validate it",
+   "text": "For the accountability app the goal is to {{choose one idea and validate it}}.",
+   "note": "One idea, tested properly, beats five half-tested.",
+   "minutes": 0,
+   "source": "apps · accountability"
+  },
+  {
+   "id": "flywheel-1",
+   "task": "flywheel",
+   "rank": 10,
+   "title": "Get one consumer app idea to earn a build",
+   "text": "Across all my app ideas the goal is {{one idea that passes the build threshold}}.",
+   "note": "Hundreds of offer pages are live. None counts until one earns a build.",
+   "minutes": 0,
+   "source": "apps · flywheel"
+  },
+  {
+   "id": "publication-2",
+   "task": "publication",
+   "rank": 1,
+   "title": "Land a magazine publication from the Rio trip",
+   "text": "A magazine publication matters because {{published work is what agencies, stylists and brands check before they say yes}}.",
+   "note": "One published story makes every later pitch easier.",
+   "minutes": 0,
+   "source": "photography · magazines"
+  },
+  {
+   "id": "editorials-2",
+   "task": "editorials",
+   "rank": 2,
+   "title": "Shoot 2-3 strong Rio editorials before 4 December",
+   "text": "My deadline for the Rio editorials is {{4 December}}, the day I leave.",
+   "note": "Count the free shoot days left and give each editorial a date.",
+   "minutes": 0,
+   "source": "photography · Rio"
+  },
+  {
+   "id": "bookings-2",
+   "task": "bookings",
+   "rank": 3,
+   "title": "Turn the Rio Meta campaign into steady shoot bookings",
+   "text": "The Rio website campaign runs at {{$2 a day}}.",
+   "note": "Cheap enough to keep on. The question is whether sign-ups turn into shoots.",
+   "minutes": 0,
+   "source": "photography · bookings"
+  },
+  {
+   "id": "next-city-2",
+   "task": "next-city",
+   "rank": 4,
+   "title": "Choose the next city and set it up before arriving",
+   "text": "Setting a city up before arriving matters because {{the first week is otherwise lost to waiting on replies}}.",
+   "note": "Rio showed how long agencies, venues and magazines take to answer.",
+   "minutes": 0,
+   "source": "photography · travel"
+  },
+  {
+   "id": "sao-paulo-2",
+   "task": "sao-paulo",
+   "rank": 5,
+   "title": "Make the São Paulo week produce one strong shoot",
+   "text": "The goal for the São Paulo week is {{one strong shoot I can pitch}}.",
+   "note": "One finished story beats three loose tests.",
+   "minutes": 0,
+   "source": "photography · São Paulo"
+  },
+  {
+   "id": "instagram-2",
+   "task": "instagram",
+   "rank": 6,
+   "title": "Build an Instagram grid that wins agencies and magazines",
+   "text": "The grid matters because {{agencies and magazines look at it before they answer a pitch}}.",
+   "note": "With about 200 pitches out, people are looking this week.",
+   "minutes": 0,
+   "source": "photography · Instagram"
+  },
+  {
+   "id": "archive-2",
+   "task": "archive",
+   "rank": 7,
+   "title": "Turn the film archive into frames I can pitch and post",
+   "text": "The film archive matters because {{it is where the grid, the portfolio and the magazine edits come from}}.",
+   "note": "Unedited scans cannot be sent to anyone.",
+   "minutes": 0,
+   "source": "photography · archive"
+  },
+  {
+   "id": "dating-app-2",
+   "task": "dating-app",
+   "rank": 8,
+   "title": "Find out whether people will pay for the dating photo generator",
+   "text": "The dating test compares four ideas: AI shoot, camera-roll edit, profile audit and {{swipe test}}.",
+   "note": "Each has its own 'launching soon' page, so sign-ups show which one people want.",
+   "minutes": 0,
+   "source": "apps · dating photos"
+  },
+  {
+   "id": "accountability-2",
+   "task": "accountability",
+   "rank": 9,
+   "title": "Choose one accountability app idea and validate it",
+   "text": "Validating means {{strangers sign up or say they would pay}}, before any code is written.",
+   "note": "Same thresholds as every other app idea.",
+   "minutes": 0,
+   "source": "apps · accountability"
+  },
+  {
+   "id": "flywheel-2",
+   "task": "flywheel",
+   "rank": 10,
+   "title": "Get one consumer app idea to earn a build",
+   "text": "Every app offer must start from {{demand already visible in the market}}, never from a guess.",
+   "note": "Evidence from 3 or more people plus a sign that money is already being spent.",
+   "minutes": 0,
+   "source": "apps · flywheel"
+  },
+  {
+   "id": "publication-3",
+   "task": "publication",
+   "rank": 1,
+   "title": "Land a magazine publication from the Rio trip",
+   "text": "About {{200}} 'Editorial proposal: Rio de Janeiro' pitches have gone out to magazines. The goal now is turning replies into a yes.",
+   "note": "Sending is done. The work is answering every reply fast and with strong images.",
+   "minutes": 0,
+   "source": "photography · magazines"
+  },
+  {
+   "id": "editorials-3",
+   "task": "editorials",
+   "rank": 2,
+   "title": "Shoot 2-3 strong Rio editorials before 4 December",
+   "text": "Venues that already replied to my Rio outreach include Rubaiyat, Noi Gastronomia and {{Fasano}}.",
+   "note": "A yes from a venue is only worth something once a shoot date is on it.",
+   "minutes": 0,
+   "source": "photography · Rio"
+  },
+  {
+   "id": "bookings-3",
+   "task": "bookings",
+   "rank": 3,
+   "title": "Turn the Rio Meta campaign into steady shoot bookings",
+   "text": "The measure of success for the Rio campaign is {{booked shoots per week}}, not sign-ups.",
+   "note": "Follow each sign-up to the end: replied, date set, shot.",
+   "minutes": 0,
+   "source": "photography · bookings"
+  },
+  {
+   "id": "next-city-3",
+   "task": "next-city",
+   "rank": 4,
+   "title": "Choose the next city and set it up before arriving",
+   "text": "I leave Rio on {{4 December}}, so the next city has to be chosen with enough time to send outreach first.",
+   "note": "Agencies and venues need lead time.",
+   "minutes": 0,
+   "source": "photography · travel"
+  },
+  {
+   "id": "sao-paulo-3",
+   "task": "sao-paulo",
+   "rank": 5,
+   "title": "Make the São Paulo week produce one strong shoot",
+   "text": "The São Paulo week matters because {{it widens the trip beyond Rio for magazines and agencies}}.",
+   "note": "A second city makes the Brazil work a body of work.",
+   "minutes": 0,
+   "source": "photography · São Paulo"
+  },
+  {
+   "id": "instagram-3",
+   "task": "instagram",
+   "rank": 6,
+   "title": "Build an Instagram grid that wins agencies and magazines",
+   "text": "The grid plan mixes portraits with {{documentary frames}} so it reads as one photographer.",
+   "note": "The order is already decided. The goal is to get it published.",
+   "minutes": 0,
+   "source": "photography · Instagram"
+  },
+  {
+   "id": "archive-3",
+   "task": "archive",
+   "rank": 7,
+   "title": "Turn the film archive into frames I can pitch and post",
+   "text": "An archive shoot is finished when {{its best frames are edited and exported}}, not when it is imported.",
+   "note": "The next milestone is one old shoot taken all the way to exported selects.",
+   "minutes": 0,
+   "source": "photography · archive"
+  },
+  {
+   "id": "dating-app-3",
+   "task": "dating-app",
+   "rank": 8,
+   "title": "Find out whether people will pay for the dating photo generator",
+   "text": "My rule for building an app is 1 pre-order, 3 'I'd pay' clicks, or {{10 sign-ups in 72 hours}}.",
+   "note": "The dating ideas get judged against this, nothing softer.",
+   "minutes": 0,
+   "source": "apps · dating photos"
+  },
+  {
+   "id": "accountability-3",
+   "task": "accountability",
+   "rank": 9,
+   "title": "Choose one accountability app idea and validate it",
+   "text": "One accountability candidate is commitment-based work sessions at {{$9 a month}}.",
+   "note": "Blocking, one clear task and an accountability partner.",
+   "minutes": 0,
+   "source": "apps · accountability"
+  },
+  {
+   "id": "flywheel-3",
+   "task": "flywheel",
+   "rank": 10,
+   "title": "Get one consumer app idea to earn a build",
+   "text": "An app idea earns a build with {{1 pre-order}}, 3 'I'd pay' clicks, or 10 sign-ups in 72 hours.",
+   "note": "The single pre-order is the strongest signal of the three.",
+   "minutes": 0,
+   "source": "apps · flywheel"
+  },
+  {
+   "id": "publication-4",
+   "task": "publication",
+   "rank": 1,
+   "title": "Land a magazine publication from the Rio trip",
+   "text": "Noctis will decide on publication once they see {{the final images}}, so the next milestone is a tight edit sent to Genea Bailey.",
+   "note": "A magazine judges the weakest frame. Send fewer, stronger.",
+   "minutes": 0,
+   "source": "photography · magazines"
+  },
+  {
+   "id": "editorials-4",
+   "task": "editorials",
+   "rank": 2,
+   "title": "Shoot 2-3 strong Rio editorials before 4 December",
+   "text": "Each Rio editorial needs three things locked: a stylist, an agency model and {{a venue that said yes}}.",
+   "note": "The next milestone is one shoot with all three confirmed on a calendar date.",
+   "minutes": 0,
+   "source": "photography · Rio"
+  },
+  {
+   "id": "bookings-4",
+   "task": "bookings",
+   "rank": 3,
+   "title": "Turn the Rio Meta campaign into steady shoot bookings",
+   "text": "The Rio campaign sends people to {{/sign-up-collab-rio}}, so that page and my reply speed decide the bookings.",
+   "note": "The next milestone is the first shoot that came from the ad.",
+   "minutes": 0,
+   "source": "photography · bookings"
+  },
+  {
+   "id": "next-city-4",
+   "task": "next-city",
+   "rank": 4,
+   "title": "Choose the next city and set it up before arriving",
+   "text": "A city is set up when it has three things: outreach sent, a city sign-up page and {{a paid campaign pointing at it}}.",
+   "note": "The same kit Rio has: /sign-up-collab-rio plus rio - website - pt.",
+   "minutes": 0,
+   "source": "photography · travel"
+  },
+  {
+   "id": "sao-paulo-4",
+   "task": "sao-paulo",
+   "rank": 5,
+   "title": "Make the São Paulo week produce one strong shoot",
+   "text": "The next milestone for São Paulo is {{a confirmed shoot date inside 24 to 30 November}}.",
+   "note": "Mafê Domingues is the open conversation there.",
+   "minutes": 0,
+   "source": "photography · São Paulo"
+  },
+  {
+   "id": "instagram-4",
+   "task": "instagram",
+   "rank": 6,
+   "title": "Build an Instagram grid that wins agencies and magazines",
+   "text": "The Instagram goal is met when {{the planned grid is live on my profile}}, not saved as a plan.",
+   "note": "The next milestone is the first full row posted.",
+   "minutes": 0,
+   "source": "photography · Instagram"
+  },
+  {
+   "id": "archive-4",
+   "task": "archive",
+   "rank": 7,
+   "title": "Turn the film archive into frames I can pitch and post",
+   "text": "The measure of progress on the archive is {{the number of shoots with exported selects}}.",
+   "note": "Not hours spent in Lightroom.",
+   "minutes": 0,
+   "source": "photography · archive"
+  },
+  {
+   "id": "dating-app-4",
+   "task": "dating-app",
+   "rank": 8,
+   "title": "Find out whether people will pay for the dating photo generator",
+   "text": "The dating demand test costs {{$3 a day}}, about $42 over two weeks.",
+   "note": "A small price for knowing which idea to build.",
+   "minutes": 0,
+   "source": "apps · dating photos"
+  },
+  {
+   "id": "accountability-4",
+   "task": "accountability",
+   "rank": 9,
+   "title": "Choose one accountability app idea and validate it",
+   "text": "Another accountability candidate is task-start support at {{$12 a month}}: live starts and small next actions.",
+   "note": "For people who know what to do and cannot begin.",
+   "minutes": 0,
+   "source": "apps · accountability"
+  },
+  {
+   "id": "flywheel-4",
+   "task": "flywheel",
+   "rank": 10,
+   "title": "Get one consumer app idea to earn a build",
+   "text": "Offer pages get no sign-ups without {{traffic}}, which is the part that still depends on me.",
+   "note": "The posting scripts are written. Nothing is posted automatically.",
+   "minutes": 0,
+   "source": "apps · flywheel"
+  },
+  {
+   "id": "publication-5",
+   "task": "publication",
+   "rank": 1,
+   "title": "Land a magazine publication from the Rio trip",
+   "text": "I will know this goal is met when {{a magazine confirms a story in writing}}.",
+   "note": "Interest and 'send us more' are progress, not the finish line.",
+   "minutes": 0,
+   "source": "photography · magazines"
+  },
+  {
+   "id": "editorials-5",
+   "task": "editorials",
+   "rank": 2,
+   "title": "Shoot 2-3 strong Rio editorials before 4 December",
+   "text": "The Rio editorials matter because {{they are the stories I pitch to magazines}}.",
+   "note": "No editorials, no publication.",
+   "minutes": 0,
+   "source": "photography · Rio"
+  },
+  {
+   "id": "bookings-5",
+   "task": "bookings",
+   "rank": 3,
+   "title": "Turn the Rio Meta campaign into steady shoot bookings",
+   "text": "If Rio sign-ups come in but no shoots happen, the thing to fix is {{how fast and how clearly I follow up}}.",
+   "note": "A sign-up goes cold within a day or two.",
+   "minutes": 0,
+   "source": "photography · bookings"
+  },
+  {
+   "id": "next-city-5",
+   "task": "next-city",
+   "rank": 4,
+   "title": "Choose the next city and set it up before arriving",
+   "text": "The next milestone for the next city is simply {{deciding which city it is}}.",
+   "note": "Nothing else can start until that is fixed.",
+   "minutes": 0,
+   "source": "photography · travel"
+  },
+  {
+   "id": "dating-app-5",
+   "task": "dating-app",
+   "rank": 8,
+   "title": "Find out whether people will pay for the dating photo generator",
+   "text": "Testing before building matters because {{the 60 offers I launched from guesses all failed}}.",
+   "note": "Your own rule since 18 October: no offer from a guess.",
+   "minutes": 0,
+   "source": "apps · dating photos"
+  },
+  {
+   "id": "accountability-5",
+   "task": "accountability",
+   "rank": 9,
+   "title": "Choose one accountability app idea and validate it",
+   "text": "The next milestone for the accountability app is {{picking the one idea to test}}.",
+   "note": "Everything else waits on that choice.",
+   "minutes": 0,
+   "source": "apps · accountability"
+  },
+  {
+   "id": "editorials-6",
+   "task": "editorials",
+   "rank": 2,
+   "title": "Shoot 2-3 strong Rio editorials before 4 December",
+   "text": "An editorial counts as done when {{the final edit is delivered and pitched}}, not when the shoot wraps.",
+   "note": "Unedited shoots are the easiest thing to leave behind when you change city.",
+   "minutes": 0,
+   "source": "photography · Rio"
+  },
+  {
+   "id": "dating-app-6",
+   "task": "dating-app",
+   "rank": 8,
+   "title": "Find out whether people will pay for the dating photo generator",
+   "text": "I kill an app idea after {{7 days under 3 sign-ups}}.",
+   "note": "So the dating test needs a start date and an end date.",
+   "minutes": 0,
+   "source": "apps · dating photos"
+  },
+  {
+   "id": "accountability-6",
+   "task": "accountability",
+   "rank": 9,
+   "title": "Choose one accountability app idea and validate it",
+   "text": "The accountability idea has earned a build when it gets 1 pre-order, {{3 'I'd pay' clicks}}, or 10 sign-ups in 72 hours.",
+   "note": "Below that, keep testing or kill it.",
+   "minutes": 0,
+   "source": "apps · accountability"
+  },
+  {
+   "id": "dating-app-7",
+   "task": "dating-app",
+   "rank": 8,
+   "title": "Find out whether people will pay for the dating photo generator",
+   "text": "The next milestone for the dating app is {{the first real number: sign-ups per idea}}.",
+   "note": "Until the test runs there is nothing to decide on.",
+   "minutes": 0,
+   "source": "apps · dating photos"
+  }
+ ]
 }

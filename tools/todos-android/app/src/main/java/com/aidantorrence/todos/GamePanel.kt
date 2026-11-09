@@ -18,8 +18,9 @@ import android.widget.TextView
  * The expanded bubble: today's to-dos studied the way Anki studies a deck.
  * Question side: a sentence about the task with the key part hidden as [...]. "Show Answer"
  * reveals the hidden part in place, with the task and a note under a divider.
- * Then rate it: Again (1 min), Hard (10 min), Good (1 h) send the card away and it comes back when
- * its time is up; Done retires it. Counts at the top: new (blue), learning (red), done (green).
+ * Then rate it: Again (1 min), Hard (10 min), Good (1 h), Easy (1 day) send the card away and it comes
+ * back when its time is up. The deck never ends: with nothing due it serves the card seen longest ago.
+ * Counts at the top: new (blue), due again (red), sent away (green).
  */
 class GamePanel(
     private val ctx: Context,
@@ -47,7 +48,7 @@ class GamePanel(
 
         // Top bar: deck name, the three Anki counts (current card's kind underlined), minimize.
         val (new, learning, done) = Game.counts()
-        val isLearning = card != null && card.id in Game.seen
+        val isLearning = card != null && card.id in Game.seen && !Game.ahead()
         val counts = SpannableStringBuilder()
         fun add(n: Int, color: Int, underline: Boolean) {
             val start = counts.length; counts.append(n.toString())
@@ -72,7 +73,7 @@ class GamePanel(
         val stale = list != null && list.date != Game.today()
         val foot = when {
             Game.lastError != null -> Game.lastError!!
-            stale -> "List is from ${list!!.date} · the new one arrives each morning"
+            Game.ahead() -> "Nothing is due, so this one is early. The deck keeps going."
             else -> ""
         }
         if (foot.isNotEmpty()) root.addView(Ui.text(ctx, foot, 11f, if (Game.lastError != null) Ui.AMBER else Ui.FAINT).apply {
@@ -113,7 +114,7 @@ class GamePanel(
             grade("1m", "Again", Ui.RED) { Game.answer(t, 1) },
             grade("10m", "Hard", Ui.AMBER) { Game.answer(t, 10) },
             grade("1h", "Good", Ui.GREEN) { Game.answer(t, 60) },
-            grade("✓", "Done", BLUE) { lastDone = t; buzz(); Game.markDone(t) },
+            grade("1d", "Easy", BLUE) { Game.answer(t, 24 * 60) },
         )
         root.addView(buttons, LinearLayout.LayoutParams(-1, -2).apply { topMargin = dp(12) })
         undoLink()

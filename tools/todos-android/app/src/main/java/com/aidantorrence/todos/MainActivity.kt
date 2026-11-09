@@ -34,7 +34,7 @@ class MainActivity : Activity() {
             setPadding(dp(20), dp(36), dp(20), dp(24))
         }
         body.addView(Ui.text(this, "Todos", 30f, bold = true, serif = true))
-        body.addView(Ui.text(this, "Today's top 10, built each morning from the last day of Claude and Codex output. Lives in a bubble on top of every app; tap it to play the deck.", 15f, Ui.DIM).apply {
+        body.addView(Ui.text(this, "Your goals as fill-in-the-blank cards, refreshed each morning. Lives in a bubble on top of every app; tap it to study.", 15f, Ui.DIM).apply {
             setPadding(0, dp(6), 0, dp(20))
         })
 
@@ -59,12 +59,12 @@ class MainActivity : Activity() {
         val lines = mutableListOf<Pair<String, Int>>()
         lines += (if (Game.lastSync > 0) "Synced ${DateFormat.getTimeInstance(DateFormat.SHORT).format(Date(Game.lastSync))}" else "Not synced yet") to Ui.FAINT
         Game.lastError?.let { lines += it to Ui.AMBER }
-        if (list != null) lines += "List for ${list.date}: ${Game.counts().third}/${Game.total} done" to Ui.DIM
+        if (list != null) lines += "${Game.total} cards · ${Game.counts().first} new" to Ui.DIM
         for ((s, c) in lines) body.addView(Ui.text(this, s, 13f, c).apply { setPadding(0, dp(10), 0, 0) })
 
         if (list != null) {
             val done = Game.done
-            body.addView(Ui.text(this, "TODAY", 11f, Ui.FAINT, bold = true).apply { setPadding(0, dp(24), 0, dp(6)) })
+            body.addView(Ui.text(this, "GOALS", 11f, Ui.FAINT, bold = true).apply { setPadding(0, dp(24), 0, dp(6)) })
             for (t in list.items.distinctBy { it.task }.sortedBy { it.rank }) body.addView(Ui.text(this, "${if (t.id in done) "✓" else "${t.rank}."}  ${t.title}", 15f, if (t.id in done) Ui.FAINT else Ui.TEXT).apply {
                 setPadding(0, dp(5), 0, dp(5))
             })

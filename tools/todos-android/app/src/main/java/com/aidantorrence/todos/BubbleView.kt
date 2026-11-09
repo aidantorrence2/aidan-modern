@@ -40,8 +40,8 @@ class BubbleView(ctx: Context) : View(ctx) {
             ring.color = if (stale) Ui.FAINT else Ui.GREEN
             c.drawArc(oval, -90f, 360f * done / total, false, ring)
         }
-        val label = when { total == 0 -> "·"; done >= total -> "✓"; remaining == 0 -> "…"; else -> remaining.toString() }
-        txt.color = if (done >= total && total > 0) Ui.GREEN else Ui.TEXT
+        val label = when { total == 0 -> "·"; remaining == 0 -> "0"; else -> remaining.toString() }
+        txt.color = if (remaining == 0 && total > 0) Ui.GREEN else Ui.TEXT
         c.drawText(label, r, r - (txt.descent() + txt.ascent()) / 2, txt)
     }
 }

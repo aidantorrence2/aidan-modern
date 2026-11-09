@@ -117,8 +117,8 @@ class GitHub(private val token: String?) {
 
 /**
  * Today's deck and its Anki-style study state, kept on the phone so the bubble works offline.
- * Every to-do starts as a new card. Again / Hard / Good send it away for 1 / 10 / 60 minutes and it
- * comes back as a learning card; Done retires it for the day.
+ * Every card starts new. Again / Hard / Good / Easy send it away for 1 min / 10 min / 1 h / 1 day and
+ * it comes back when its time is up. Nothing is ever retired: the deck cycles forever.
  */
 object Game {
     private lateinit var prefs: SharedPreferences
@@ -157,16 +157,28 @@ object Game {
     fun due(id: String): Long = prefs.getLong("due:$id", 0)
     private fun open(): List<Todo> { val d = done; return list?.items?.filter { it.id !in d } ?: emptyList() }
 
-    /** Cards to study now, as Anki orders them: learning cards whose time has come, then new cards. */
+    /**
+     * Cards to study now: cards whose time has come (oldest first), then new cards. The deck never
+     * runs dry: when nothing is due and nothing is new, it serves the card seen longest ago.
+     */
     fun deck(now: Long = System.currentTimeMillis()): List<Todo> {
         val o = open(); val s = seen
-        return o.filter { it.id in s && due(it.id) <= now }.sortedBy { due(it.id) } + o.filter { it.id !in s }
+        val ready = o.filter { it.id in s && due(it.id) <= now }.sortedBy { due(it.id) } + o.filter { it.id !in s }
+        if (ready.isNotEmpty() || o.isEmpty()) return ready
+        return listOf(o.minByOrNull { prefs.getLong("seenAt:${it.id}", 0) }!!)
     }
 
-    /** (new, learning, done): the blue / red / green counts. */
-    fun counts(): Triple<Int, Int, Int> {
+    /** True when the card on top is being shown ahead of its time because nothing else is due. */
+    fun ahead(now: Long = System.currentTimeMillis()): Boolean {
+        val s = seen
+        return open().isNotEmpty() && open().none { it.id !in s || due(it.id) <= now }
+    }
+
+    /** (new, due, away): blue = never seen, red = back and waiting for you, green = sent away for later. */
+    fun counts(now: Long = System.currentTimeMillis()): Triple<Int, Int, Int> {
         val o = open(); val s = seen
-        return Triple(o.count { it.id !in s }, o.count { it.id in s }, total - o.size)
+        val dueNow = o.count { it.id in s && due(it.id) <= now }
+        return Triple(o.count { it.id !in s }, dueNow, o.count { it.id in s } - dueNow)
     }
 
     /** When the next waiting card comes back, or null if none is waiting. */
@@ -175,25 +187,27 @@ object Game {
         return open().filter { it.id in s && due(it.id) > now }.minOfOrNull { due(it.id) }
     }
 
-    /** New list from GitHub or the APK. A new date starts a fresh deck; the same date keeps progress. */
+    /**
+     * New list from GitHub or the APK. Study progress is kept per card id across lists and days
+     * (goals last longer than a day); progress for cards that no longer exist is dropped.
+     */
     fun setList(json: String, remoteDone: Set<String>?) {
         val l = TodoList.parse(json)
-        val e = prefs.edit().putString("list", json)
-        if (l.date != prefs.getString("listDate", null)) {
-            e.putString("listDate", l.date).putString("done", "").putString("seen", "").putBoolean("stateDirty", false)
-            prefs.all.keys.filter { it.startsWith("due:") }.forEach { e.remove(it) }
-        } else if (remoteDone != null && !stateDirty) {
-            e.putString("done", (done + remoteDone).filter { id -> l.items.any { it.id == id } }.joinToString(","))
-        }
+        val ids = l.items.map { it.id }.toSet()
+        val e = prefs.edit().putString("list", json).putString("listDate", l.date)
+            .putString("done", "").putBoolean("stateDirty", false)
+            .putString("seen", seen.filter { it in ids }.joinToString(","))
+        prefs.all.keys.filter { (it.startsWith("due:") || it.startsWith("seenAt:")) && it.substringAfter(':') !in ids }.forEach { e.remove(it) }
         e.apply()
         list = l
         changed()
     }
 
-    /** Again / Hard / Good: the card comes back after [minutes]. */
+    /** Again / Hard / Good / Easy: the card comes back after [minutes]. */
     fun answer(t: Todo, minutes: Int) {
+        val now = System.currentTimeMillis()
         prefs.edit().putString("seen", (seen + t.id).joinToString(","))
-            .putLong("due:${t.id}", System.currentTimeMillis() + minutes * 60_000L).apply()
+            .putLong("due:${t.id}", now + minutes * 60_000L).putLong("seenAt:${t.id}", now).apply()
         changed()
     }
 
