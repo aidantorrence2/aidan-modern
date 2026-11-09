@@ -25,3 +25,10 @@
 - **Render scripts**: `render-{number}{letter}.mjs` with matching `output-{number}{letter}/` dir
 - **All output filenames must match**: render script output name, output dir name, and reels/ copy name must all use the same `{number}{letter}` identifier
 - **Copy to reels/**: Every rendered mp4 must be copied to `reels-final/reels/` with the correct name
+
+## Model Split (Aidan's standing preference)
+
+- **Plan with Fable, execute with Opus.** Use Fable (`claude-fable-5-2`) for planning: understanding the request, design, breaking work into steps, reviewing results. Use Opus (`claude-opus-5-5`) for execution: writing code, edits, builds, renders.
+- When the session runs on Fable: write the plan yourself, then hand implementation to subagents with the Agent tool's `model: "opus"`, and review what they return.
+- When the session runs on Opus: get the plan from a subagent with `model: "fable"` (the Plan agent type) before non-trivial work, then implement it yourself.
+- Small one-step changes don't need the split; just do them.
