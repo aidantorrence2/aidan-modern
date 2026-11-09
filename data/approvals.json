@@ -5045,10 +5045,10 @@
         ]
       },
       "created": "2026-11-09T04:36:19Z",
-      "expires": "2026-11-16T04:36:19Z",
+      "expires": "2026-11-09T04:37:33.303Z",
       "status": "pending",
       "decided": null,
-      "note": ""
+      "note": "Withdrawn: template updated with a per-recipient \"why\" line; new card with examples follows."
     },
     {
       "id": "outreach-category:rio-local_business-v12",
