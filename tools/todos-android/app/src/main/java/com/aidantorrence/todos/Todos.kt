@@ -11,18 +11,10 @@ import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
 import java.util.TimeZone
-import java.security.KeyFactory
-import java.security.spec.MGF1ParameterSpec
-import java.security.spec.PKCS8EncodedKeySpec
-import javax.crypto.Cipher
-import javax.crypto.spec.OAEPParameterSpec
-import javax.crypto.spec.PSource
-import javax.crypto.spec.GCMParameterSpec
-import javax.crypto.spec.SecretKeySpec
 
 const val REPO = "aidantorrence2/aidan-modern"
-const val BRANCH = "ccr-d1938557-3pv196"
-const val TODOS_PATH = "data/todos.enc.json"
+const val BRANCH = "ccr-858db8c5-lx4rbu"
+const val TODOS_PATH = "data/todos.json"
 const val STATE_PATH = "data/todos-state.json"
 
 data class Todo(
@@ -47,21 +39,6 @@ data class TodoList(val date: String, val generated: String, val items: List<Tod
                 )
             }.sortedBy { it.rank }
             return TodoList(j["date"]?.str ?: "", j["generated"]?.str ?: "", items)
-        }
-
-        /**
-         * Envelope written by build-todos.mjs: a one-time AES-256 key wrapped with RSA-OAEP(SHA-256)
-         * in `ek`, then AES-GCM with ct = ciphertext || 16-byte tag.
-         */
-        fun decrypt(envelope: String, privatePkcs8: ByteArray): String {
-            val e = JV.parse(envelope)
-            fun b64(k: String) = Base64.decode(e[k]?.str ?: throw IllegalArgumentException("no $k"), Base64.DEFAULT)
-            val priv = KeyFactory.getInstance("RSA").generatePrivate(PKCS8EncodedKeySpec(privatePkcs8))
-            val rsa = Cipher.getInstance("RSA/ECB/OAEPPadding")
-            rsa.init(Cipher.DECRYPT_MODE, priv, OAEPParameterSpec("SHA-256", "MGF1", MGF1ParameterSpec.SHA256, PSource.PSpecified.DEFAULT))
-            val c = Cipher.getInstance("AES/GCM/NoPadding")
-            c.init(Cipher.DECRYPT_MODE, SecretKeySpec(rsa.doFinal(b64("ek")), "AES"), GCMParameterSpec(128, b64("iv")))
-            return String(c.doFinal(b64("ct")), Charsets.UTF_8)
         }
     }
 }
@@ -96,7 +73,7 @@ class GitHub(private val token: String?) {
         } finally { c.disconnect() }
     }
 
-    /** Token-free read of the public branch (the list itself is encrypted). Null when missing. */
+    /** Token-free read of the public branch. Null when missing. */
     fun getPublic(path: String): String? {
         val c = open("https://raw.githubusercontent.com/$REPO/$BRANCH/$path?t=${System.currentTimeMillis() / 300_000}", "GET")
         try {
@@ -146,6 +123,17 @@ object Game {
         if (::prefs.isInitialized) return
         prefs = ctx.applicationContext.getSharedPreferences("game", Context.MODE_PRIVATE)
         prefs.getString("list", null)?.let { try { list = TodoList.parse(it) } catch (_: Exception) {} }
+        // The list bundled in the APK: used on first open, or when it is newer than the saved one.
+        try {
+            val bundled = ctx.assets.open("todos.json").bufferedReader().use { it.readText() }
+            if (isNewer(bundled)) setList(bundled, null)
+        } catch (_: Exception) {}
+    }
+
+    /** True when this list JSON was generated after the one we hold (never go back to an older list). */
+    fun isNewer(json: String): Boolean {
+        val cur = list ?: return true
+        return try { TodoList.parse(json).generated > cur.generated } catch (_: Exception) { false }
     }
 
     private fun ids(key: String) = prefs.getString(key, "")!!.split(',').filter { it.isNotEmpty() }

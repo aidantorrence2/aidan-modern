@@ -3,6 +3,9 @@
 // on the phone (tools/todos-android).
 //
 // Sources (all optional, each capped so the prompt stays small):
+// Optional: the phone app works without this (a daily cloud task builds the list from cloud
+// sessions, commits and approvals). Running this on the Mac adds local Claude Code and Codex transcripts.
+//
 //   - Claude Code transcripts  ~/.claude/projects/*/*.jsonl      (your asks + each session's last replies)
 //   - Codex transcripts        ~/.codex/sessions/**/*.jsonl      (same)
 //   - Commits you (and your cloud sessions) pushed in 24 h, all repos (gh search)
@@ -12,8 +15,7 @@
 // One Claude call ranks it. Uses the `claude` CLI you are already logged into; falls back to the
 // Anthropic SDK when ANTHROPIC_API_KEY is set and the CLI is missing.
 //
-// Output: data/todos.enc.json on the queue branch, encrypted to the phone app's public key (the repo
-// is public). Plain copy for you: ~/.config/aidan-todos/today.json.
+// Output: data/todos.json (plain) on the branch the phone app reads. Local copy: ~/.config/aidan-todos/today.json.
 //
 //   node build-todos.mjs            # build + push
 //   node build-todos.mjs --dry-run  # build, print, don't push
@@ -25,8 +27,9 @@ import os from 'node:os'
 import path from 'node:path'
 
 const REPO = process.env.TODOS_REPO || 'aidantorrence2/aidan-modern'
-const BRANCH = process.env.TODOS_BRANCH || 'ccr-d1938557-3pv196'
-const TODOS_PATH = 'data/todos.enc.json'
+const BRANCH = process.env.TODOS_BRANCH || 'ccr-858db8c5-lx4rbu' // the branch the phone app reads
+const APPROVALS_BRANCH = 'ccr-d1938557-3pv196'
+const TODOS_PATH = 'data/todos.json'
 const STATE_PATH = 'data/todos-state.json'
 const APPROVALS_PATH = 'data/approvals.json'
 const HOURS = Number(process.env.TODOS_HOURS || 24)
@@ -58,8 +61,8 @@ async function gh(url, init = {}) {
   })
   return res
 }
-async function getFile(p) {
-  const res = await gh(`repos/${REPO}/contents/${p}?ref=${BRANCH}`)
+async function getFile(p, branch = BRANCH) {
+  const res = await gh(`repos/${REPO}/contents/${p}?ref=${branch}`)
   if (res.status === 404) return { text: null, sha: null }
   if (!res.ok) throw new Error(`GET ${p}: ${res.status}`)
   const j = await res.json()
@@ -76,26 +79,6 @@ async function putFile(p, text, message) {
     if (res.status !== 409 && res.status !== 422) throw new Error(`PUT ${p}: ${res.status} ${await res.text()}`)
   }
   throw new Error(`PUT ${p}: kept conflicting`)
-}
-
-// ---------- encryption (format shared with the Android app) ----------
-// The repo is public, so the list is encrypted to the phone app's public key. The private half is
-// baked into the APK; nothing secret lives on this Mac or in the repo, so there is no key to set up.
-const PHONE_PUBLIC_KEY = `-----BEGIN PUBLIC KEY-----
-MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAlTFu6jMSN+8G5uF17GwL
-gTTQCOxRTA/KmxyA39xGP+asho5qGsNvWZrweoIH5A/8C01TMZX2QYW0ctYcN9zP
-AHFwyfL53H91ZvxpClp/KugC7XUfeNg7mKlCt5plF+0EWhkGde8Hwg9If3rwOrGW
-WNLHeop3u7hxgcZm9vuRjhNJNu+1hxA+RKf1yXV1nlykEffOj0S8Eq7gbIU+3FVZ
-V58qQ1k09h7+CuUQgeYtpbg9dyFZGBudX1gwhqdC2RC9zR/rNFj8R6Lko4zMUYsj
-v5I/49Z98ZxxcMfYUZHgdG2F0WSUTYUHW5gsFm+R50SYCt5HRwaRdTzD9epgICHA
-2QIDAQAB
------END PUBLIC KEY-----`
-function encrypt(obj) {
-  const aes = crypto.randomBytes(32), iv = crypto.randomBytes(12)
-  const ek = crypto.publicEncrypt({ key: PHONE_PUBLIC_KEY, padding: crypto.constants.RSA_PKCS1_OAEP_PADDING, oaepHash: 'sha256' }, aes)
-  const c = crypto.createCipheriv('aes-256-gcm', aes, iv)
-  const ct = Buffer.concat([c.update(JSON.stringify(obj), 'utf8'), c.final(), c.getAuthTag()])
-  return { v: 2, date: obj.date, generated: obj.generated, ek: ek.toString('base64'), iv: iv.toString('base64'), ct: ct.toString('base64') }
 }
 
 // ---------- transcripts ----------
@@ -187,7 +170,7 @@ async function commits() {
 }
 async function approvals() {
   try {
-    const { text } = await getFile(APPROVALS_PATH)
+    const { text } = await getFile(APPROVALS_PATH, APPROVALS_BRANCH)
     const items = JSON.parse(text || '{}').items || []
     return items.filter(i => i.status === 'pending' && !(i.expires && Date.parse(i.expires) < Date.now()))
       .map(i => `${i.id} [${i.kind}] ${clip(i.title, 140)}${i.summary ? ' — ' + clip(i.summary, 160) : ''}`)
@@ -323,5 +306,5 @@ fs.writeFileSync(path.join(CONF, 'today.json'), JSON.stringify(list, null, 2) + 
 for (const i of items) log(`${String(i.rank).padStart(2)}. ${i.title}  (~${i.minutes} min · ${i.source})`)
 if (args.has('--dry-run')) process.exit(0)
 if (!TOKEN) throw new Error('no GitHub token (gh auth login, or GH_TOKEN)')
-await putFile(TODOS_PATH, JSON.stringify(encrypt(list), null, 2) + '\n', `Todos ${list.date}: ${items.length} items`)
+await putFile(TODOS_PATH, JSON.stringify(list, null, 2) + '\n', `Todos ${list.date}: ${items.length} items`)
 log(`pushed ${TODOS_PATH} to ${BRANCH}`)

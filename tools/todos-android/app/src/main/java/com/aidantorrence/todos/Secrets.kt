@@ -56,8 +56,4 @@ object Secrets {
 
     /** Optional: only install-phone.sh provides one. With it, done cards sync back to GitHub. */
     fun token(ctx: Context): String? = load(ctx, "token", "token")
-
-    /** PKCS#8 RSA private key baked in at build time; null if this build has none. */
-    fun listKey(): ByteArray? =
-        BuildConfig.LIST_KEY.ifBlank { null }?.let { try { Base64.decode(it, Base64.DEFAULT) } catch (_: Exception) { null } }
 }

@@ -192,30 +192,16 @@ class BubbleService : Service() {
     private fun sync() {
         io.execute {
             try {
-                // The token is optional (install-phone.sh provides one): with it, done cards sync back.
+                // No token needed to read. A token (only install-phone.sh provides one) adds done-sync.
                 val token = Secrets.token(this)
-                val key = Secrets.listKey() ?: throw IllegalStateException("This build has no list key")
                 val gh = GitHub(token)
-                val env = if (token != null) gh.get(TODOS_PATH).first else gh.getPublic(TODOS_PATH)
-                if (env != null) {
-                    val stateText = if (token != null) gh.get(STATE_PATH).first else null
-                    val remoteDone = stateText?.let { st ->
-                        try {
-                            val j = JV.parse(st)
-                            val date = j["date"]?.str
-                            ((j["done"] as? JV.Arr)?.items ?: emptyList()).mapNotNull { it.str }.toSet() to date
-                        } catch (_: Exception) { null }
-                    }
-                    val json = TodoList.decrypt(env, key)
-                    val listDate = JV.parse(json)["date"]?.str
-                    main.post { Game.setList(json, remoteDone?.takeIf { it.second == listDate }?.first) }
-                }
+                val json = gh.getPublic(TODOS_PATH)
+                if (json != null && Game.isNewer(json)) main.post { Game.setList(json, null) }
                 if (token != null && Game.stateDirty) writeState(gh)
                 main.post { Game.lastError = null; Game.lastSync = System.currentTimeMillis(); Game.changed() }
             } catch (e: Exception) {
                 val msg = when (e) {
-                    is java.security.GeneralSecurityException -> "Can't decrypt the list: this app and the Mac builder don't match (update both)"
-                    is GitHubException -> if (e.code == 401) "GitHub rejected the token (re-run install-phone.sh)" else e.message
+                    is GitHubException -> if (e.code == 401) "GitHub rejected the token" else "Couldn't refresh · showing the saved list"
                     is java.io.IOException -> "Offline · showing the saved list"
                     else -> e.message
                 }

@@ -86,7 +86,7 @@ class GamePanel(
         val stale = list != null && list.date != Game.today()
         val foot = when {
             Game.lastError != null -> Game.lastError!!
-            stale -> "List is from ${list!!.date} · today's arrives after the Mac's 7:00 run"
+            stale -> "List is from ${list!!.date} · the new one arrives each morning"
             else -> list?.let { "Built ${it.generated.take(16).replace('T', ' ')} UTC" } ?: ""
         }
         if (foot.isNotEmpty()) root.addView(Ui.text(ctx, foot, 11f, if (Game.lastError != null) Ui.AMBER else Ui.FAINT).apply {
@@ -206,7 +206,7 @@ class GamePanel(
 
     private fun empty() {
         root.addView(Ui.text(ctx, "No list yet", 20f, bold = true, serif = true).apply { setPadding(0, dp(18), 0, dp(6)) })
-        root.addView(Ui.text(ctx, "Your Mac builds today's top 10 from the last day of Claude and Codex output at 7:00 and 13:00.", 14f, Ui.DIM))
+        root.addView(Ui.text(ctx, "Today's top 10 arrives each morning.", 14f, Ui.DIM))
         root.addView(Ui.button(ctx, "Check now", Ui.BG, Ui.TEXT) { onRefresh() }.apply {
             layoutParams = LinearLayout.LayoutParams(-1, -2).apply { topMargin = dp(16) }
         })

@@ -3,13 +3,15 @@ plugins {
     id("org.jetbrains.kotlin.android")
 }
 
-// The phone's private key (the Mac encrypts each list to the matching public key in
-// tools/todos/build-todos.mjs) is baked into the APK, so the phone needs no setup. Never commit an APK.
-val todoKey: String = (project.findProperty("todoKey") as String?) ?: System.getenv("TODOS_PRIVATE_KEY")
-    ?: file("${System.getProperty("user.home")}/.config/aidan-todos/phone-private.b64").takeIf { it.exists() }?.readText()?.trim() ?: ""
+// The current list (data/todos.json) is bundled into the APK so the app shows cards the moment it opens.
+val bundleTodos = tasks.register<Copy>("bundleTodos") {
+    from(rootProject.file("../../data/todos.json"))
+    into(layout.buildDirectory.dir("bundled-assets"))
+}
+tasks.matching { it.name == "preBuild" }.configureEach { dependsOn(bundleTodos) }
 
 android {
-    buildFeatures { buildConfig = true }
+    sourceSets["main"].assets.srcDir(layout.buildDirectory.dir("bundled-assets"))
     namespace = "com.aidantorrence.todos"
     compileSdk = 34
 
@@ -17,9 +19,8 @@ android {
         applicationId = "com.aidantorrence.todos"
         minSdk = 29
         targetSdk = 34
-        versionCode = 2
-        versionName = "1.2"
-        buildConfigField("String", "LIST_KEY", "\"$todoKey\"")
+        versionCode = 3
+        versionName = "1.3"
     }
 
     buildTypes {
