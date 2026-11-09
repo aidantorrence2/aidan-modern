@@ -65,7 +65,7 @@ class MainActivity : Activity() {
         if (list != null) {
             val done = Game.done
             body.addView(Ui.text(this, "GOALS", 11f, Ui.FAINT, bold = true).apply { setPadding(0, dp(24), 0, dp(6)) })
-            for (t in list.items.distinctBy { it.task }.sortedBy { it.rank }) body.addView(Ui.text(this, "${if (t.id in done) "✓" else "${t.rank}."}  ${t.title}", 15f, if (t.id in done) Ui.FAINT else Ui.TEXT).apply {
+            for (t in list.items.filter { it.rank < 90 }.distinctBy { it.task }.sortedBy { it.rank }) body.addView(Ui.text(this, "${if (t.id in done) "✓" else "${t.rank}."}  ${t.title}", 15f, if (t.id in done) Ui.FAINT else Ui.TEXT).apply {
                 setPadding(0, dp(5), 0, dp(5))
             })
         }

@@ -1,6 +1,6 @@
 {
  "date": "2026-11-09",
- "generated": "2026-11-09T22:30:00Z",
+ "generated": "2026-11-09T22:31:00Z",
  "items": [
   {
    "id": "publication-1",
@@ -656,8 +656,8 @@
    "id": "pt-dinheiro",
    "task": "pt-dinheiro",
    "rank": 99,
-   "title": "dinheiro = money",
-   "text": "Quanto {{dinheiro}} custa o táxi? (How much money does the taxi cost?)",
+   "title": "dinheiro = money / cash",
+   "text": "Você aceita {{dinheiro}} ou só cartão? (Do you take cash or only card?)",
    "note": "",
    "minutes": 0,
    "source": "português"
