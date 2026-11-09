@@ -4578,6 +4578,30 @@
       "status": "pending",
       "decided": null,
       "note": ""
+    },
+    {
+      "id": "outreach-category:rio-local_business-v4",
+      "kind": "email",
+      "source": "codex:rio-fashion-network",
+      "title": "Approve outreach category: Local businesses (studios, salons, galleries, architects, schools) (196 contacts)",
+      "summary": "Approving sends this email to every contact in the category, plus new ones research finds, within the 450/day cap and office hours. First: Galpão51, 21SUN, 1500 Brasil, Babilônia, Mawé, SALA, Mangi, Concha",
+      "payload": {
+        "category": "local_business",
+        "subject": "Photography for Galpão51 - Aidan Torrence",
+        "body": "Hi Galpão51 team,\n\nI'm Aidan Torrence, a fashion photographer currently in Rio. I'd love to shoot brand photos and portraits for Galpão51 while I'm here, through 4 December. Your handmade pieces from the SS27 Exótica collection, like the beaded palm-tree bikini and the hand-dyed Lua skirt, would be beautiful to shoot around your Jardim Botânico store and the garden nearby.\n\nMy work: https://aidantorrence.com\nInstagram: https://instagram.com/madebyaidan\n\nWould you be interested?\n\nBest,\nAidan Torrence\n",
+        "template": "{{greeting}}\n\nI'm Aidan Torrence, a fashion photographer currently in Rio. I'd love to shoot brand photos and portraits for {{org}} while I'm here, through 4 December. {{highlight}}\n\nMy work: https://aidantorrence.com\nInstagram: https://instagram.com/madebyaidan\n\nWould you be interested?\n\nBest,\nAidan Torrence\n",
+        "attachment": "none",
+        "contacts": 196,
+        "examples": [
+          "To 21SUN:\nHi Luciana,\n\nI'm Aidan Torrence, a fashion photographer currently in Rio. I'd love to shoot brand photos and portraits for 21SUN while I'm here, through 4 December. Your work producing catalogues and editorials in Brazil for clients like Cia Marítima, FARM and ELLE USA, across beach, pool, colonial and urban locations, is the kind of production I'd like to work with on fashion shoots in Rio.\n\nMy work: https://aidantorrence.com\nInstagram: https://instagram.com/madebyaidan\n\nWould you be interested?\n\nBest,\nAidan Torrence\n",
+          "To 1500 Brasil:\nHi Alex,\n\nI'm Aidan Torrence, a fashion photographer currently in Rio. I'd love to shoot brand photos and portraits for 1500 Brasil while I'm here, through 4 December. Your productions for Another Man, Byredo and Elle France are the kind of fashion editorial work I'd like to collaborate on while I'm in Rio.\n\nMy work: https://aidantorrence.com\nInstagram: https://instagram.com/madebyaidan\n\nWould you be interested?\n\nBest,\nAidan Torrence\n"
+        ]
+      },
+      "created": "2026-11-09T04:20:15Z",
+      "expires": "2026-11-16T04:20:15Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
     }
   ]
 }
