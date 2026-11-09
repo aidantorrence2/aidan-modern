@@ -187,6 +187,7 @@ class PanelView(
         private val response = Ui.text(context, "", 13f, Ui.MUTED).apply { visibility = GONE }
         private val edit = Ui.input(context, "Reply…", multiLine = true)
         private val sendBtn: TextView
+        private lateinit var draftBtn: TextView
         private var expanded = false
         private var binding = false
         private val cardBg = Ui.rounded(context, Ui.CARD, 14, Ui.LINE)
@@ -226,7 +227,8 @@ class PanelView(
             val actions = Ui.row(context, 6)
             sendBtn = Ui.button(context, "Send", primary = true) { send() }
             actions.addView(sendBtn)
-            actions.addView(Ui.button(context, "✨ Draft") { regenerate() })
+            draftBtn = Ui.button(context, "✨ Draft") { regenerate() }
+            actions.addView(draftBtn)
             actions.addView(Ui.button(context, "Open") { Store.item(id)?.let { Hub.open(it) } })
             actions.addView(Ui.button(context, "+Task") { toTask() })
             actions.addView(Ui.spacer(context))
@@ -261,7 +263,11 @@ class PanelView(
                 item.suggestion.isNotBlank() -> item.suggestion
                 else -> "Type a reply…"
             }
+            val isApproval = item.source == "approval"
+            draftBtn.text = if (isApproval) "Deny" else "✨ Draft"
+            if (isApproval) edit.hint = "Note (optional)"
             sendBtn.text = when {
+                isApproval -> "Approve"
                 item.origin == "device" && item.replyMode == "device" -> "Send"
                 (item.origin == "device" || item.replyMode == "none") && Hub.appPackage(item) != null && AutoSendService.connected -> "Send"
                 item.origin == "device" || item.replyMode == "none" -> "Copy & open"
@@ -274,11 +280,21 @@ class PanelView(
         private fun send() {
             val item = Store.item(id) ?: return
             hideKeyboard()
+            if (item.source == "approval") {
+                // Approval requests: Approve with an optional note.
+                Hub.send(item, "approve" + edit.text.toString().trim().let { if (it.isBlank()) "" else ": $it" })
+                return
+            }
             Hub.send(item, edit.text.toString().ifBlank { item.suggestion })
         }
 
         private fun regenerate() {
             val item = Store.item(id) ?: return
+            if (item.source == "approval") {
+                hideKeyboard()
+                Hub.send(item, "deny" + edit.text.toString().trim().let { if (it.isBlank()) "" else ": $it" })
+                return
+            }
             // Whatever you typed (if it differs from the suggestion) steers the new draft.
             val hint = item.draft?.takeIf { it.isNotBlank() } ?: ""
             edit.clearFocus()

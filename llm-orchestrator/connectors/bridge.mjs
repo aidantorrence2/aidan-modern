@@ -21,6 +21,7 @@ import claudeLocalSource from './sources/claude-local.mjs';
 import codexFilesSource from './sources/codex-files.mjs';
 import chatgptWebSource from './sources/chatgpt-web.mjs';
 import claudeWebSource from './sources/claude-web.mjs';
+import approvalsSource from './sources/approvals.mjs';
 
 const cfg = loadConfig();
 if (!cfg.relay || !cfg.token) {
@@ -30,7 +31,7 @@ if (!cfg.relay || !cfg.token) {
 const state = loadState();
 const log = (...a) => console.log(new Date().toISOString().slice(11, 19), ...a);
 
-const sources = [claudeSessionsSource, claudeLocalSource, codexFilesSource, chatgptWebSource, claudeWebSource]
+const sources = [claudeSessionsSource, claudeLocalSource, codexFilesSource, chatgptWebSource, claudeWebSource, approvalsSource]
   .map((make) => {
     try {
       return make(cfg);

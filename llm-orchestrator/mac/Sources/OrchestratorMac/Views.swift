@@ -97,7 +97,7 @@ struct CardView: View {
             if !c.note.isEmpty {
                 Text(c.note).font(.system(size: 9)).foregroundStyle(Color.orange.opacity(0.85)).lineLimit(2)
             }
-            TextField(c.suggesting ? "Drafting a reply…" : (c.suggestion.isEmpty ? "Type a reply…" : c.suggestion), text: typed, axis: .vertical)
+            TextField(c.source == "approval" ? "Note (optional)" : c.suggesting ? "Drafting a reply…" : (c.suggestion.isEmpty ? "Type a reply…" : c.suggestion), text: typed, axis: .vertical)
                 .textFieldStyle(.plain)
                 .font(.system(size: 10.5))
                 .foregroundStyle(Theme.text)
@@ -107,12 +107,16 @@ struct CardView: View {
                 .onSubmit { model.send(c) }
             HStack(spacing: 4) {
                 Button(action: { model.send(c) }) {
-                    Text(c.replyMode == "none" ? "Copy & open" : (hasTyped || c.suggestion.isEmpty ? "Send" : "Send draft")).font(.system(size: 10, weight: .semibold))
+                    Text(c.source == "approval" ? "Approve" : c.replyMode == "none" ? "Copy & open" : (hasTyped || c.suggestion.isEmpty ? "Send" : "Send draft")).font(.system(size: 10, weight: .semibold))
                         .padding(.horizontal, 10).padding(.vertical, 3)
                         .background(Capsule().fill(Theme.accent)).foregroundStyle(Color.black)
                 }.buttonStyle(.plain).keyboardShortcut(.return, modifiers: .command)
-                pill(hasTyped ? "✨ Redraft" : "✨ Draft") { model.regenerate(c) }
-                    .help("New draft; what you typed steers it")
+                if c.source == "approval" {
+                    pill("Deny") { model.deny(c) }
+                } else {
+                    pill(hasTyped ? "✨ Redraft" : "✨ Draft") { model.regenerate(c) }
+                        .help("New draft; what you typed steers it")
+                }
                 if !c.url.isEmpty { pill("Open") { model.open(c) } }
                 Spacer()
                 pill("✕") { model.dismiss(c) }
