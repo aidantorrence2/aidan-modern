@@ -5285,6 +5285,24 @@
       "status": "pending",
       "decided": null,
       "note": ""
+    },
+    {
+      "id": "email:rio-reply-base-management",
+      "kind": "email",
+      "source": "claude:rio-fashion-network",
+      "title": "Reply to Base Management: TFP, numbers, dates",
+      "summary": "Asked: is it TFP, how many models, any dates in mind",
+      "payload": {
+        "to": "atendimentobaserio@basemgt.com.br",
+        "subject": "Re: Rio model tests | Aidan Torrence",
+        "body": "Hi Base Management team,\n\nThank you. Yes, it's TFP: no fee on either side, and each model gets full credit and the edited images to use for their book and your site and social.\n\nA few models to start, depending on who you think is a good fit and available.\n\nI'm shooting in the second half of November. Which days work best for your models?\n\nBest,\nAidan Torrence\n",
+        "attachments": []
+      },
+      "created": "2026-11-09T16:00:27Z",
+      "expires": "2026-11-12T16:00:27Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
     }
   ]
 }
