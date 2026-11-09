@@ -5333,7 +5333,9 @@
         "file": "profile-photo-crop.jpg",
         "prompt": "Remove the glasses; keep face, expression, lighting, background and crop identical",
         "key": "GEMINI_API_KEY from environment",
-        "output": "profile-photo-no-glasses.jpg saved locally; nothing posted to Instagram"
+        "output": "profile-photo-no-glasses.jpg saved locally; nothing posted to Instagram",
+        "result": "Sent profile-photo-crop.jpg to Gemini (gemini-3-pro-image); saved profile-photo-no-glasses.jpg locally. Nothing posted to Instagram.",
+        "result_at": "2026-11-09T23:51:26Z"
       },
       "created": "2026-11-09T23:48:21Z",
       "expires": "2026-11-12T23:48:21Z",
