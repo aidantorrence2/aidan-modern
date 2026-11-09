@@ -4189,6 +4189,25 @@
       "status": "pending",
       "decided": null,
       "note": ""
+    },
+    {
+      "id": "outreach-category:rio-hmua-v1",
+      "kind": "email",
+      "source": "codex:rio-fashion-network",
+      "title": "Approve outreach category: Hair and makeup artists (12 contacts)",
+      "summary": "Approving sends this email to every contact in the category, plus new ones research finds, within the 450/day cap and office hours. First: Bina Pan, Juliana Cordeiro, Fernanda Suzz, Jeane Santos, Márcio Desideri, Sâmia Mangione Makeup and Hair, Sandy Moura Makeup and Hair, Tissi Balboa",
+      "payload": {
+        "category": "hmua",
+        "subject": "Rio beach/street editorial - hair and makeup",
+        "body": "{{greeting}}\n\nI'm Aidan Torrence, a fashion photographer currently in Rio. I'm putting together a beach/street fashion editorial, to shoot this month. I've attached a moodboard.\n\nI'm looking for a hair and makeup artist for the shoot and would love to work with you on it. Would you be interested?\n\nMy work: https://aidantorrence.com\nInstagram: https://instagram.com/madebyaidan\n\nBest,\nAidan Torrence\n",
+        "attachment": "rio moodboard",
+        "contacts": 12
+      },
+      "created": "2026-11-09T03:55:10Z",
+      "expires": "2026-11-16T03:55:10Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
     }
   ]
 }
