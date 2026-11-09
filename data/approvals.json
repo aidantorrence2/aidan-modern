@@ -4170,6 +4170,25 @@
       "status": "pending",
       "decided": null,
       "note": ""
+    },
+    {
+      "id": "outreach-category:rio-talent_agency-v1",
+      "kind": "email",
+      "source": "codex:rio-fashion-network",
+      "title": "Approve outreach category: Talent and acting agencies (38 contacts)",
+      "summary": "Approving sends this email to every contact in the category, plus new ones research finds, within the 450/day cap and office hours. First: Case Casting, Fernanda Ribas Management, Ilana Brakarz Agenciados, Quattro Agentes, Ao Cubo Agenciamento, Grupo LMA, Agência Unique, Trevo",
+      "payload": {
+        "category": "talent_agency",
+        "subject": "Portrait tests in Rio - Aidan Torrence",
+        "body": "{{greeting}}\n\nI'm Aidan Torrence, a fashion photographer currently in Rio. I'd love to shoot portrait tests with {{org}} talent while I'm here, through 4 December.\n\nMy work: https://aidantorrence.com\nInstagram: https://instagram.com/madebyaidan\n\nWould you be interested?\n\nBest,\nAidan Torrence\n",
+        "attachment": "none",
+        "contacts": 38
+      },
+      "created": "2026-11-09T03:55:08Z",
+      "expires": "2026-11-16T03:55:08Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
     }
   ]
 }
