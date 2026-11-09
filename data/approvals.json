@@ -4115,6 +4115,24 @@
       "status": "pending",
       "decided": null,
       "note": ""
+    },
+    {
+      "id": "email:rio-reply-juliana-sans-v3",
+      "kind": "email",
+      "source": "codex:rio-fashion-network",
+      "title": "Reply to Juliana Sans: magazines and SP dates",
+      "summary": "São Paulo dates now 24–30 November; magazine line 'pitched to international magazines, including …'",
+      "payload": {
+        "to": "julianasans@icloud.com",
+        "subject": "Re: São Paulo street editorial - styling collaboration",
+        "body": "Hi Juliana,\n\nGreat to hear. The story is pitched to international magazines, including Purple, Numéro Berlin and Vogue Portugal.\n\nI'm in São Paulo 24–30 November. Which of those days work for you?\n\nIt's a creative collaboration with no fee on either side. You'd be styling the looks and pulling pieces, with full credit and the final images.\n\nBest,\nAidan Torrence\n",
+        "attachments": []
+      },
+      "created": "2026-11-09T02:34:49Z",
+      "expires": "2026-11-12T02:34:49Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
     }
   ]
 }
