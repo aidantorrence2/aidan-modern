@@ -37,6 +37,8 @@ class BubbleService : Service() {
     private var bubbleParams: WindowManager.LayoutParams? = null
     private var panel: GamePanel? = null
     private var panelShown = false
+    private var panelWindow: View? = null
+    private var outsideHideAt = 0L   // when a tap outside last collapsed the panel
     private val listener: () -> Unit = { refreshViews() }
     private val tick = object : Runnable {
         override fun run() { sync(); main.postDelayed(this, POLL_MS) }
@@ -115,7 +117,10 @@ class BubbleService : Service() {
                 }
                 MotionEvent.ACTION_UP, MotionEvent.ACTION_CANCEL -> {
                     v.animate().scaleX(1f).scaleY(1f).setDuration(80).start()
-                    if (!moved) { if (panelShown) hidePanel() else showPanel() } else snap(v)
+                    if (!moved) {
+                        val justClosed = android.os.SystemClock.uptimeMillis() - outsideHideAt < 600
+                        if (panelShown) hidePanel() else if (!justClosed) showPanel()
+                    } else snap(v)
                 }
             }
             return true
@@ -153,22 +158,26 @@ class BubbleService : Service() {
             y = if (bp == null || bp.y < screenH() / 2) (bp?.y ?: 0) + Ui.dp(this@BubbleService, 64) else (bp.y - Ui.dp(this@BubbleService, 470)).coerceAtLeast(Ui.dp(this@BubbleService, 24))
             windowAnimations = android.R.style.Animation_Dialog
         }
+        // Detach the deck from the previous window's wrapper before putting it in a new one.
+        (gp.root.parent as? android.view.ViewGroup)?.removeView(gp.root)
         val wrap = android.widget.FrameLayout(this).apply {
             setPadding(Ui.dp(context, 10), 0, Ui.dp(context, 10), 0)
             addView(gp.root, android.widget.FrameLayout.LayoutParams(-1, -2))
-            setOnTouchListener { _, e -> if (e.actionMasked == MotionEvent.ACTION_OUTSIDE) { hidePanel(); true } else false }
+            setOnTouchListener { _, e ->
+                if (e.actionMasked == MotionEvent.ACTION_OUTSIDE) { outsideHideAt = android.os.SystemClock.uptimeMillis(); hidePanel(); true } else false
+            }
         }
-        (gp.root.parent as? android.view.ViewGroup)?.removeView(gp.root)
         gp.render()
-        wm.addView(wrap, p)
+        try { wm.addView(wrap, p) } catch (e: Exception) { Game.lastError = "Couldn't open the deck: ${e.message}"; return }
+        panelWindow = wrap
         panelShown = true
         sync()
     }
 
     private fun hidePanel() {
         if (!panelShown) return
-        val gp = panel ?: return
-        (gp.root.parent as? View)?.let { try { wm.removeView(it) } catch (_: Exception) {} }
+        panelWindow?.let { try { wm.removeView(it) } catch (_: Exception) {} }
+        panelWindow = null
         panelShown = false
     }
 
