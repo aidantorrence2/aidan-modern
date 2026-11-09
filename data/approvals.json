@@ -5119,10 +5119,10 @@
         ]
       },
       "created": "2026-11-09T04:38:47Z",
-      "expires": "2026-11-16T04:38:47Z",
+      "expires": "2026-11-09T04:39:53.779Z",
       "status": "pending",
       "decided": null,
-      "note": ""
+      "note": "Withdrawn: template updated with a per-recipient \"why\" line; new card with examples follows."
     },
     {
       "id": "outreach-category:rio-local_business-v13",
@@ -5143,10 +5143,10 @@
         ]
       },
       "created": "2026-11-09T04:38:51Z",
-      "expires": "2026-11-16T04:38:51Z",
+      "expires": "2026-11-09T04:39:53.780Z",
       "status": "pending",
       "decided": null,
-      "note": ""
+      "note": "Withdrawn: template updated with a per-recipient \"why\" line; new card with examples follows."
     }
   ]
 }
