@@ -5196,6 +5196,31 @@
       "status": "pending",
       "decided": null,
       "note": "Withdrawn: template updated with a per-recipient \"why\" line; new card with examples follows."
+    },
+    {
+      "id": "outreach-category:rio-fashion_brand-v16",
+      "kind": "email",
+      "source": "codex:rio-fashion-network",
+      "title": "Approve outreach category: Fashion, swim, jewelry and beauty brands (212 contacts)",
+      "summary": "Approving sends this email to every contact in the category, plus new ones research finds, within the 450/day cap and office hours. First: Haight, CaCay, Falésia Carioca, Aline Rocha, Ric Resortwear, BlueMan, Gude, Andrea Muller",
+      "payload": {
+        "category": "fashion_brand",
+        "subject": "Photography for Haight - Aidan Torrence",
+        "body": "Hi Haight team,\n\nI'm Aidan Torrence, a fashion photographer currently in Rio. The red diagonal zebra print and the linen and tricot pieces in your Verão 27 \"Corpo em Pausa\" line caught my eye.\n\nI'd love to shoot a lookbook or campaign for Haight while I'm here, through 4 December.\n\nMy work: https://aidantorrence.com\nInstagram: https://instagram.com/madebyaidan\n\nWould you be interested?\n\nBest,\nAidan Torrence\n",
+        "template": "{{greeting}}\n\nI'm Aidan Torrence, a fashion photographer currently in Rio. {{highlight}}\n\nI'd love to shoot a lookbook or campaign for {{org}} while I'm here, through 4 December.\n\nMy work: https://aidantorrence.com\nInstagram: https://instagram.com/madebyaidan\n\nWould you be interested?\n\nBest,\nAidan Torrence\n",
+        "attachment": "none",
+        "contacts": 212,
+        "examples": [
+          "To CaCay:\nHi CaCay team,\n\nI'm Aidan Torrence, a fashion photographer currently in Rio. The Tropicália print long dress and the laise oversized shirt and pantalona from your Alto Verão collection really stood out.\n\nI'd love to shoot a lookbook or campaign for CaCay while I'm here, through 4 December.\n\nMy work: https://aidantorrence.com\nInstagram: https://instagram.com/madebyaidan\n\nWould you be interested?\n\nBest,\nAidan Torrence\n",
+          "To Falésia Carioca:\nHi Falésia Carioca team,\n\nI'm Aidan Torrence, a fashion photographer currently in Rio. Your macramê tops and raffia bikinis are gorgeous, and I really loved the Gaivota Maldiva print.\n\nI'd love to shoot a lookbook or campaign for Falésia Carioca while I'm here, through 4 December.\n\nMy work: https://aidantorrence.com\nInstagram: https://instagram.com/madebyaidan\n\nWould you be interested?\n\nBest,\nAidan Torrence\n",
+          "To Ric Resortwear:\nHi Ric Resortwear team,\n\nI'm Aidan Torrence, a fashion photographer currently in Rio. Your crochet bikinis are beautifully made, especially the Santorini one with the sunset fade.\n\nI'd love to shoot a lookbook or campaign for Ric Resortwear while I'm here, through 4 December.\n\nMy work: https://aidantorrence.com\nInstagram: https://instagram.com/madebyaidan\n\nWould you be interested?\n\nBest,\nAidan Torrence\n"
+        ]
+      },
+      "created": "2026-11-09T04:44:13Z",
+      "expires": "2026-11-16T04:44:13Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
     }
   ]
 }
