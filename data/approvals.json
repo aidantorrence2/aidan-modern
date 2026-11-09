@@ -3968,9 +3968,9 @@
       },
       "created": "2026-11-09T02:09:12Z",
       "expires": "2026-11-09T04:09:12Z",
-      "status": "pending",
-      "decided": null,
-      "note": ""
+      "status": "denied",
+      "decided": "2026-11-09T02:09:41Z",
+      "note": "canary test from the orchestrator"
     }
   ]
 }
