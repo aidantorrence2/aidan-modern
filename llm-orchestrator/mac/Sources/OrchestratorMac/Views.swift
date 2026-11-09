@@ -38,6 +38,38 @@ struct DragHandle: NSViewRepresentable {
     func updateNSView(_ nsView: NSView, context: Context) {}
 }
 
+func ago(_ ts: Double) -> String {
+    let s = Int(Date().timeIntervalSince1970 - ts / 1000)
+    if s < 60 { return "now" }
+    if s < 3600 { return "\(s / 60)m" }
+    if s < 86400 { return "\(s / 3600)h" }
+    return "\(s / 86400)d"
+}
+
+/// One recent session (no action needed): tag, title, what it last did, age. Click opens the session.
+struct RecentRow: View {
+    @ObservedObject var model: RelayModel
+    let c: Completion
+    @State private var hover = false
+    var body: some View {
+        VStack(alignment: .leading, spacing: 2) {
+            HStack(spacing: 5) {
+                Text(c.sourceLabel).font(.system(size: 9, weight: .bold)).foregroundStyle(Theme.source(c.source))
+                Text(c.displayTitle).font(.system(size: 10.5, weight: .semibold)).foregroundStyle(Theme.text).fixedSize(horizontal: false, vertical: true)
+                Spacer(minLength: 4)
+                Text(ago(c.ts)).font(.system(size: 9)).foregroundStyle(Theme.muted)
+            }
+            Text(c.didLine).font(.system(size: 10)).foregroundStyle(Theme.muted).fixedSize(horizontal: false, vertical: true)
+        }
+        .padding(.horizontal, 7).padding(.vertical, 5)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .background(RoundedRectangle(cornerRadius: 8).fill(hover ? Theme.line.opacity(0.6) : Theme.line.opacity(0.25)))
+        .contentShape(Rectangle())
+        .onHover { hover = $0 }
+        .onTapGesture { model.open(c) }
+    }
+}
+
 struct PanelView: View {
     @ObservedObject var model: RelayModel
 
@@ -60,10 +92,17 @@ struct PanelView: View {
             if !model.connected || model.status.hasPrefix("Reply") || model.status.hasPrefix("Send") {
                 Text(model.status).font(.system(size: 10)).foregroundStyle(Theme.muted).lineLimit(2)
             }
-            if model.items.isEmpty {
+            if model.items.isEmpty && model.recent.isEmpty {
                 Spacer()
                 Text("All caught up").font(.system(size: 12)).foregroundStyle(Theme.muted).frame(maxWidth: .infinity)
                 Spacer()
+            } else if model.items.isEmpty || ProcessInfo.processInfo.environment["ORCH_PREVIEW_RECENT"] != nil {
+                Text("All caught up · recent sessions").font(.system(size: 10)).foregroundStyle(Theme.muted)
+                ScrollView(.vertical, showsIndicators: false) {
+                    LazyVStack(spacing: 4) {
+                        ForEach(model.recent) { c in RecentRow(model: model, c: c) }
+                    }
+                }
             } else {
                 ScrollView(.vertical, showsIndicators: false) {
                     LazyVStack(spacing: 6) {
@@ -170,13 +209,6 @@ struct CardView: View {
         }.buttonStyle(.plain)
     }
 
-    private func ago(_ ts: Double) -> String {
-        let s = Int(Date().timeIntervalSince1970 - ts / 1000)
-        if s < 60 { return "now" }
-        if s < 3600 { return "\(s / 60)m" }
-        if s < 86400 { return "\(s / 3600)h" }
-        return "\(s / 86400)d"
-    }
 }
 
 

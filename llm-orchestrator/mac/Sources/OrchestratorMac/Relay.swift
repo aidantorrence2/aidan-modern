@@ -91,6 +91,7 @@ struct RelayConfig {
 @MainActor
 final class RelayModel: ObservableObject {
     @Published var items: [Completion] = []      // unanswered, newest first
+    @Published var recent: [Completion] = []     // latest turn of each recent session (shown when nothing is waiting)
     @Published var status = "Connecting…"
     @Published var connected = false
     @Published var bridges = ""
@@ -190,6 +191,7 @@ final class RelayModel: ObservableObject {
         }
         // Keep the newest 40 unanswered; older ones stay on the relay.
         items = all.values.filter { $0.status == "new" }.sorted { $0.ts > $1.ts }.prefix(40).map { $0 }
+        refreshRecent()
         for id in drafts.keys where all[id]?.status != "new" { drafts[id] = nil }
     }
 
@@ -256,5 +258,17 @@ final class RelayModel: ObservableObject {
 
     private func refreshItems() {
         items = all.values.filter { $0.status == "new" }.sorted { $0.ts > $1.ts }.prefix(40).map { $0 }
+        refreshRecent()
+    }
+
+    /// Newest turn per session, newest sessions first (Aidan, 9 Nov: show recent sessions when there are no cards).
+    private func refreshRecent() {
+        var latest: [String: Completion] = [:]
+        for c in all.values where c.source != "approval" {
+            let key = c.source + ":" + (c.sessionId.isEmpty ? c.id : c.sessionId)
+            if let x = latest[key], x.ts >= c.ts { continue }
+            latest[key] = c
+        }
+        recent = latest.values.sorted { $0.ts > $1.ts }.prefix(15).map { $0 }
     }
 }
