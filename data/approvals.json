@@ -4342,10 +4342,10 @@
         ]
       },
       "created": "2026-11-09T04:08:22Z",
-      "expires": "2026-11-16T04:08:22Z",
+      "expires": "2026-11-09T04:16:30.366Z",
       "status": "pending",
       "decided": null,
-      "note": ""
+      "note": "Withdrawn: template updated with a per-recipient \"why\" line; new card with examples follows."
     },
     {
       "id": "outreach-category:rio-hospitality-v2",
@@ -4390,10 +4390,10 @@
         ]
       },
       "created": "2026-11-09T04:08:27Z",
-      "expires": "2026-11-16T04:08:27Z",
+      "expires": "2026-11-09T04:16:30.368Z",
       "status": "pending",
       "decided": null,
-      "note": ""
+      "note": "Withdrawn: template updated with a per-recipient \"why\" line; new card with examples follows."
     },
     {
       "id": "outreach-category:rio-production_agency-v3",
@@ -4414,10 +4414,10 @@
         ]
       },
       "created": "2026-11-09T04:11:36Z",
-      "expires": "2026-11-16T04:11:36Z",
+      "expires": "2026-11-09T04:16:30.368Z",
       "status": "pending",
       "decided": null,
-      "note": ""
+      "note": "Withdrawn: template updated with a per-recipient \"why\" line; new card with examples follows."
     }
   ]
 }
