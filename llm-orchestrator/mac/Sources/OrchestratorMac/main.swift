@@ -19,11 +19,6 @@ final class FloatingPanel: NSPanel {
     }
 }
 
-/// Lets a drag on any non-interactive part of the panel move it (Aidan, 9 Nov: "should be draggable").
-final class DraggableHostingView<Content: View>: NSHostingView<Content> {
-    override var mouseDownCanMoveWindow: Bool { true }
-}
-
 @MainActor
 final class AppDelegate: NSObject, NSApplicationDelegate {
     static let width: CGFloat = 280
@@ -38,9 +33,8 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         panel.backgroundColor = .clear
         panel.hasShadow = true
         panel.hidesOnDeactivate = false
-        panel.isMovable = true
-        panel.isMovableByWindowBackground = true
-        let host = DraggableHostingView(rootView: PanelView(model: model))
+        panel.isMovable = true // only via the top bar (DragHandle); the cards keep their swipe
+        let host = NSHostingView(rootView: PanelView(model: model))
         host.wantsLayer = true
         panel.contentView = host
         panel.setFrame(frame(), display: true)

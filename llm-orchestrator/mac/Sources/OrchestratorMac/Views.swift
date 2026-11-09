@@ -19,6 +19,25 @@ enum Theme {
     }
 }
 
+/// The panel's top bar: dragging it moves the panel (Aidan, 9 Nov: only the top is draggable).
+struct DragHandle: NSViewRepresentable {
+    final class Handle: NSView {
+        private var start: (mouse: NSPoint, origin: NSPoint)?
+        override func mouseDown(with event: NSEvent) {
+            guard let w = window else { return }
+            start = (NSEvent.mouseLocation, w.frame.origin)
+        }
+        override func mouseDragged(with event: NSEvent) {
+            guard let w = window, let s = start else { return }
+            let m = NSEvent.mouseLocation
+            w.setFrameOrigin(NSPoint(x: s.origin.x + m.x - s.mouse.x, y: s.origin.y + m.y - s.mouse.y))
+        }
+        override func mouseUp(with event: NSEvent) { start = nil }
+    }
+    func makeNSView(context: Context) -> NSView { Handle() }
+    func updateNSView(_ nsView: NSView, context: Context) {}
+}
+
 struct PanelView: View {
     @ObservedObject var model: RelayModel
 
@@ -36,6 +55,8 @@ struct PanelView: View {
                 Circle().fill(model.connected ? Theme.good : Color.red.opacity(0.7)).frame(width: 7, height: 7)
                     .help(model.status + (model.bridges.isEmpty ? "" : "\n" + model.bridges))
             }
+            .frame(height: 16)
+            .overlay(DragHandle())
             if !model.connected || model.status.hasPrefix("Reply") || model.status.hasPrefix("Send") {
                 Text(model.status).font(.system(size: 10)).foregroundStyle(Theme.muted).lineLimit(2)
             }
