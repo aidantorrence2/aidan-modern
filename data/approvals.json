@@ -4097,6 +4097,24 @@
       "status": "pending",
       "decided": null,
       "note": "Withdrawn: Aidan denied Adriana (not pitching her). Created by mistake."
+    },
+    {
+      "id": "email:rio-reply-felipe-lago-v3",
+      "kind": "email",
+      "source": "codex:rio-fashion-network",
+      "title": "Reply to Felipe Lago: dates and details",
+      "summary": "São Paulo dates now 24–30 November; magazine line 'pitched to international magazines, including …'",
+      "payload": {
+        "to": "felipe.flmg@gmail.com",
+        "subject": "Re: São Paulo street editorial - styling collaboration",
+        "body": "Hi Felipe,\n\nGreat to hear. I'm in São Paulo 24–30 November. Which of those days work for you?\n\nIt's a street editorial following the moodboard I sent, pitched to international magazines, including Purple, Numéro Berlin and Vogue Portugal. You'd be styling the looks and pulling pieces. It's a creative collaboration with no fee on either side; you get full credit and the final images.\n\nBest,\nAidan Torrence\n",
+        "attachments": []
+      },
+      "created": "2026-11-09T02:34:47Z",
+      "expires": "2026-11-12T02:34:47Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
     }
   ]
 }
