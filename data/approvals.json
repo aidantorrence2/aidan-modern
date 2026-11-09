@@ -4318,10 +4318,10 @@
         "contacts": 137
       },
       "created": "2026-11-09T04:03:34Z",
-      "expires": "2026-11-16T04:03:34Z",
+      "expires": "2026-11-09T04:04:50.646Z",
       "status": "pending",
       "decided": null,
-      "note": ""
+      "note": "Withdrawn: template updated with a per-recipient \"why\" line; new card with examples follows."
     }
   ]
 }
