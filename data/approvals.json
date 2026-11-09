@@ -4619,10 +4619,10 @@
         "examples": []
       },
       "created": "2026-11-09T04:20:18Z",
-      "expires": "2026-11-16T04:20:18Z",
+      "expires": "2026-11-09T04:34:41.982Z",
       "status": "pending",
       "decided": null,
-      "note": ""
+      "note": "Withdrawn: template updated with a per-recipient \"why\" line; new card with examples follows."
     },
     {
       "id": "outreach-category:rio-celebrity-v3",
@@ -4640,10 +4640,10 @@
         "examples": []
       },
       "created": "2026-11-09T04:20:21Z",
-      "expires": "2026-11-16T04:20:21Z",
+      "expires": "2026-11-09T04:34:41.984Z",
       "status": "pending",
       "decided": null,
-      "note": ""
+      "note": "Withdrawn: template updated with a per-recipient \"why\" line; new card with examples follows."
     },
     {
       "id": "outreach-category:rio-fashion_brand-v5",
@@ -4905,10 +4905,10 @@
         ]
       },
       "created": "2026-11-09T04:33:05Z",
-      "expires": "2026-11-16T04:33:05Z",
+      "expires": "2026-11-09T04:34:41.984Z",
       "status": "pending",
       "decided": null,
-      "note": ""
+      "note": "Withdrawn: template updated with a per-recipient \"why\" line; new card with examples follows."
     },
     {
       "id": "outreach-category:rio-local_business-v10",
@@ -4929,10 +4929,10 @@
         ]
       },
       "created": "2026-11-09T04:33:09Z",
-      "expires": "2026-11-16T04:33:09Z",
+      "expires": "2026-11-09T04:34:41.984Z",
       "status": "pending",
       "decided": null,
-      "note": ""
+      "note": "Withdrawn: template updated with a per-recipient \"why\" line; new card with examples follows."
     }
   ]
 }
