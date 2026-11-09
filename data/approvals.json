@@ -4442,6 +4442,30 @@
       "status": "pending",
       "decided": null,
       "note": ""
+    },
+    {
+      "id": "outreach-category:rio-production_agency-v4",
+      "kind": "email",
+      "source": "codex:rio-fashion-network",
+      "title": "Approve outreach category: Production companies and creative/ad agencies (137 contacts)",
+      "summary": "Approving sends this email to every contact in the category, plus new ones research finds, within the 450/day cap and office hours. First: Litcreative, Teresa Filmes, Caravana Filmes, Capim Filmes, Camelô Produções, Tenda Produtora, Lūmen Creative, Grupo Blend Comunicação",
+      "payload": {
+        "category": "production_agency",
+        "subject": "Fashion photographer in Rio through 4 December | Aidan Torrence",
+        "body": "{{greeting}}\n\nI'm Aidan Torrence, a fashion and editorial photographer, working in Rio de Janeiro through 4 December. {{highlight}}I'm writing to introduce my work in case {{org}} has fashion, beauty or lifestyle productions coming up in Rio that need a photographer.\n\nI shoot campaigns, lookbooks and editorials, and I'm used to working within a production team's brief, schedule and deliverables.\n\nPortfolio: https://aidantorrence.com\nInstagram: https://instagram.com/madebyaidan\n\nWho would be the best person to speak with about photographer bookings? I'm happy to send a selection of work tailored to a specific project.\n\nBest regards,\nAidan Torrence\n",
+        "attachment": "none",
+        "contacts": 137,
+        "examples": [
+          "To Teresa Filmes:\nHi Teresa Filmes team,\n\nI'm Aidan Torrence, a fashion and editorial photographer, working in Rio de Janeiro through 4 December. I saw your fashion work like Foxton's Verão 2019 and Reserva's \"Tal pai, tal filho\", and as a fashion photographer I'd like to work alongside a team that makes brand films like these in Rio. I'm writing to introduce my work in case Teresa Filmes has fashion, beauty or lifestyle productions coming up in Rio that need a photographer.\n\nI shoot campaigns, lookbooks and editorials, and I'm used to working within a production team's brief, schedule and deliverables.\n\nPortfolio: https://aidantorrence.com\nInstagram: https://instagram.com/madebyaidan\n\nWho would be the best person to speak with about photographer bookings? I'm happy to send a selection of work tailored to a specific project.\n\nBest regards,\nAidan Torrence\n",
+          "To Caravana Filmes:\nHi Caravana Filmes team,\n\nI'm Aidan Torrence, a fashion and editorial photographer, working in Rio de Janeiro through 4 December. I saw your fashion films \"Avesso\" for Sacada and \"Volta ao Trabalho\" for Reserva Simples, and as a fashion photographer I'd like to work with a team that tells brand stories that way. I'm writing to introduce my work in case Caravana Filmes has fashion, beauty or lifestyle productions coming up in Rio that need a photographer.\n\nI shoot campaigns, lookbooks and editorials, and I'm used to working within a production team's brief, schedule and deliverables.\n\nPortfolio: https://aidantorrence.com\nInstagram: https://instagram.com/madebyaidan\n\nWho would be the best person to speak with about photographer bookings? I'm happy to send a selection of work tailored to a specific project.\n\nBest regards,\nAidan Torrence\n",
+          "To Capim Filmes:\nHi Capim Filmes team,\n\nI'm Aidan Torrence, a fashion and editorial photographer, working in Rio de Janeiro through 4 December. I saw your films \"Squadra Itália\" for Spoleto and the institutional film for Maré Chocolate, and as a fashion photographer I'd like to work with a team that tells brand stories that way. I'm writing to introduce my work in case Capim Filmes has fashion, beauty or lifestyle productions coming up in Rio that need a photographer.\n\nI shoot campaigns, lookbooks and editorials, and I'm used to working within a production team's brief, schedule and deliverables.\n\nPortfolio: https://aidantorrence.com\nInstagram: https://instagram.com/madebyaidan\n\nWho would be the best person to speak with about photographer bookings? I'm happy to send a selection of work tailored to a specific project.\n\nBest regards,\nAidan Torrence\n"
+        ]
+      },
+      "created": "2026-11-09T04:16:34Z",
+      "expires": "2026-11-16T04:16:34Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
     }
   ]
 }
