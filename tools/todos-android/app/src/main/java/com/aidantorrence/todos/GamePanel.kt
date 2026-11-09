@@ -7,6 +7,7 @@ import android.os.Vibrator
 import android.text.SpannableStringBuilder
 import android.text.Spanned
 import android.text.style.ForegroundColorSpan
+import android.text.style.StyleSpan
 import android.text.style.UnderlineSpan
 import android.view.Gravity
 import android.view.View
@@ -15,7 +16,8 @@ import android.widget.TextView
 
 /**
  * The expanded bubble: today's to-dos studied the way Anki studies a deck.
- * Question side: the to-do. "Show Answer" reveals the first step and why under a divider.
+ * Question side: a sentence about the task with the key part hidden as [...]. "Show Answer"
+ * reveals the hidden part in place, with the task and a note under a divider.
  * Then rate it: Again (1 min), Hard (10 min), Good (1 h) send the card away and it comes back when
  * its time is up; Done retires it. Counts at the top: new (blue), learning (red), done (green).
  */
@@ -89,16 +91,19 @@ class GamePanel(
             if (!answerShown) setOnClickListener { answerShown = true; render() }
         }
         fun centered(v: TextView) = v.apply { gravity = Gravity.CENTER; layoutParams = LinearLayout.LayoutParams(-1, -2) }
-        card.addView(centered(Ui.text(ctx, t.title, 22f, Ui.TEXT, bold = true, serif = true)))
+        card.addView(centered(TextView(ctx).apply {
+            text = cloze(t.text, answerShown); textSize = 19f; setTextColor(Ui.TEXT)
+            typeface = Typeface.SERIF; setLineSpacing(0f, 1.2f)
+        }))
         if (answerShown) {
             card.addView(View(ctx).apply {
                 setBackgroundColor(0xFF3A3A40.toInt())
-                layoutParams = LinearLayout.LayoutParams(-1, dp(1)).apply { topMargin = dp(16); bottomMargin = dp(16) }
+                layoutParams = LinearLayout.LayoutParams(-1, dp(1)).apply { topMargin = dp(16); bottomMargin = dp(14) }
             })
-            if (t.nextStep.isNotBlank()) card.addView(centered(Ui.text(ctx, t.nextStep, 17f, Ui.TEXT)))
-            if (t.why.isNotBlank()) card.addView(centered(Ui.text(ctx, t.why, 14f, Ui.DIM)).apply { setPadding(0, dp(12), 0, 0) })
+            card.addView(centered(Ui.text(ctx, t.title, 13f, Ui.FAINT, bold = true)))
+            if (t.note.isNotBlank()) card.addView(centered(Ui.text(ctx, t.note, 14f, Ui.DIM)).apply { setPadding(0, dp(8), 0, 0) })
             val meta = listOfNotNull(if (t.minutes > 0) "~${t.minutes} min" else null, t.source.ifBlank { null }).joinToString("  ·  ")
-            if (meta.isNotEmpty()) card.addView(centered(Ui.text(ctx, meta, 12f, Ui.FAINT)).apply { setPadding(0, dp(12), 0, 0) })
+            if (meta.isNotEmpty()) card.addView(centered(Ui.text(ctx, meta, 12f, Ui.FAINT)).apply { setPadding(0, dp(10), 0, 0) })
         }
         root.addView(card, LinearLayout.LayoutParams(-1, -2).apply { topMargin = dp(12) })
 
@@ -112,6 +117,22 @@ class GamePanel(
         )
         root.addView(buttons, LinearLayout.LayoutParams(-1, -2).apply { topMargin = dp(12) })
         undoLink()
+    }
+
+    /** "a {{hidden}} b" becomes "a [...] b" on the question side and "a hidden b" (highlighted) on the answer side. */
+    private fun cloze(text: String, revealed: Boolean): CharSequence {
+        val out = SpannableStringBuilder()
+        var i = 0
+        for (m in Regex("""\{\{(.+?)\}\}""").findAll(text)) {
+            out.append(text, i, m.range.first)
+            val start = out.length
+            out.append(if (revealed) m.groupValues[1] else "[...]")
+            out.setSpan(ForegroundColorSpan(BLUE), start, out.length, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
+            out.setSpan(StyleSpan(Typeface.BOLD), start, out.length, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
+            i = m.range.last + 1
+        }
+        out.append(text, i, text.length)
+        return out
     }
 
     /** One answer button: when the card comes back, on top of the rating, like Anki's. */
@@ -149,7 +170,7 @@ class GamePanel(
         fun centered(v: TextView) = v.apply { gravity = Gravity.CENTER; layoutParams = LinearLayout.LayoutParams(-1, -2) }
         root.addView(centered(Ui.text(ctx, "Congratulations!", 22f, Ui.TEXT, bold = true, serif = true)).apply { setPadding(0, dp(22), 0, dp(6)) })
         val (_, learning, done) = Game.counts()
-        val msg = if (next == null) "You have finished today's deck: all $done done."
+        val msg = if (next == null) "You have finished today's deck."
         else {
             val mins = ((next - System.currentTimeMillis()) / 60_000L + 1).coerceAtLeast(1)
             "You have finished this deck for now.\n$learning ${if (learning == 1) "card comes" else "cards come"} back, the next in ${if (mins >= 60) "${mins / 60} h ${mins % 60} min" else "$mins min"}."

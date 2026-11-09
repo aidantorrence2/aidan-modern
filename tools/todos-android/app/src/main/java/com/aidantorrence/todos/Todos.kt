@@ -17,9 +17,14 @@ const val BRANCH = "ccr-858db8c5-lx4rbu"
 const val TODOS_PATH = "data/todos.json"
 const val STATE_PATH = "data/todos-state.json"
 
+/**
+ * One card. Several cards can belong to one task (same [task]): different ways of asking the same
+ * thing. [text] is a sentence with the part to recall in {{double braces}}; it is hidden on the
+ * question side and revealed on the answer side, like an Anki cloze card. [note] shows under the answer.
+ */
 data class Todo(
-    val id: String, val rank: Int, val title: String, val why: String,
-    val nextStep: String, val minutes: Int, val source: String,
+    val id: String, val task: String, val rank: Int, val title: String,
+    val text: String, val note: String, val minutes: Int, val source: String,
 )
 
 data class TodoList(val date: String, val generated: String, val items: List<Todo>) {
@@ -28,16 +33,21 @@ data class TodoList(val date: String, val generated: String, val items: List<Tod
             val j = JV.parse(text)
             val items = ((j["items"] as? JV.Arr)?.items ?: emptyList()).mapNotNull { v ->
                 val id = v["id"]?.str ?: return@mapNotNull null
+                val title = v["title"]?.str ?: ""
+                // Older lists have no cloze text: hide the first step behind the task title.
+                val text = v["text"]?.str?.takeIf { "{{" in it }
+                    ?: "$title: {{${v["next_step"]?.str?.ifBlank { null } ?: "do it"}}}"
                 Todo(
                     id = id,
+                    task = v["task"]?.str ?: id,
                     rank = (v["rank"] as? JV.Num)?.raw?.toIntOrNull() ?: 0,
-                    title = v["title"]?.str ?: "",
-                    why = v["why"]?.str ?: "",
-                    nextStep = v["next_step"]?.str ?: "",
+                    title = title,
+                    text = text,
+                    note = v["note"]?.str ?: v["why"]?.str ?: "",
                     minutes = (v["minutes"] as? JV.Num)?.raw?.toDoubleOrNull()?.toInt() ?: 0,
                     source = v["source"]?.str ?: "",
                 )
-            }.sortedBy { it.rank }
+            }   // file order is study order: the builder interleaves the variations of each task
             return TodoList(j["date"]?.str ?: "", j["generated"]?.str ?: "", items)
         }
     }
@@ -187,13 +197,17 @@ object Game {
         changed()
     }
 
+    /** Cards of the same task. */
+    private fun siblings(t: Todo): Set<String> = list?.items?.filter { it.task == t.task }?.map { it.id }?.toSet() ?: setOf(t.id)
+
+    /** The task is finished: every card about it leaves the deck. */
     fun markDone(t: Todo) {
-        prefs.edit().putString("done", (done + t.id).joinToString(",")).putBoolean("stateDirty", true).apply()
+        prefs.edit().putString("done", (done + siblings(t)).joinToString(",")).putBoolean("stateDirty", true).apply()
         changed()
     }
 
     fun undo(t: Todo) {
-        prefs.edit().putString("done", (done - t.id).joinToString(",")).putLong("due:${t.id}", 0).putBoolean("stateDirty", true).apply()
+        prefs.edit().putString("done", (done - siblings(t)).joinToString(",")).putLong("due:${t.id}", 0).putBoolean("stateDirty", true).apply()
         changed()
     }
 

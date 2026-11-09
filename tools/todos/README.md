@@ -11,18 +11,20 @@ A bubble that floats over every app on the Android phone. Tap it and it opens in
   repos, pending approvals). Optionally `install-mac.sh` also runs `build-todos.mjs` on the Mac at
   07:00 and 13:00, which adds local Claude Code and Codex transcripts.
 
-## The deck (works like Anki)
+## The deck (Anki cloze cards)
 
-- **Question:** the to-do. Tap the card or **Show Answer**.
-- **Answer:** under a divider: the first step, why it matters, time estimate and source.
-- **Rate it:** **Again** (back in 1 min), **Hard** (10 min), **Good** (1 h), **Done** (retired for today).
-  Cards you sent away come back when their time is up, ahead of new cards.
-- **Counts** at the top: new (blue), learning (red), done (green); the current card's kind is underlined.
-- **Bubble:** the number of cards due now, "…" while all remaining cards are away, ✓ when the deck is
-  done; the ring fills as cards are done, and the bubble pulses when a card comes back.
-- Undo the last Done from the link under the buttons. Drag the bubble anywhere; it snaps to the edge.
+- **Tasks:** 10 higher-level tasks a day for the photography career and the consumer apps, each asked
+  2 or 3 different ways (variations hide a different part).
+- **Question:** a sentence about the task with the key part hidden as **[...]**. Tap the card or **Show Answer**.
+- **Answer:** the hidden part is revealed in place (blue), with the task and a note under a divider.
+- **Rate it:** **Again** (back in 1 min), **Hard** (10 min), **Good** (1 h), **Done** (the task is
+  finished: all its cards leave the deck). Cards you sent away come back when their time is up.
+- **Counts** at the top: new (blue), learning (red), done (green).
+- **Bubble:** cards due now, "…" while the rest are away, ✓ when the deck is done; it pulses when a card comes back.
 
 ## List format
 
-`{date: "YYYY-MM-DD", generated: ISO time, items: [{id, rank, title, why, next_step, minutes, source}]}`.
-The phone takes a list only if `generated` is newer than the one it holds; a new `date` resets the deck.
+`{date, generated, items: [card]}`; card = `{id, task, rank, title, text, note, minutes, source}`.
+`text` holds the hidden part in `{{double braces}}`; cards with the same `task` are variations of one
+task. File order is study order. The phone takes a list only if `generated` is newer than the one it
+holds; a new `date` starts a fresh deck.
