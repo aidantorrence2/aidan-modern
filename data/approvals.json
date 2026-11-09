@@ -4284,6 +4284,25 @@
       "status": "pending",
       "decided": null,
       "note": ""
+    },
+    {
+      "id": "outreach-category:rio-follow_up-v1",
+      "kind": "email",
+      "source": "codex:rio-fashion-network",
+      "title": "Approve outreach category: One follow-up to cold emails with no reply after 3 days",
+      "summary": "Approving sends this email to every contact in the category, plus new ones research finds, within the 450/day cap and office hours.",
+      "payload": {
+        "category": "follow_up",
+        "subject": "Re: {{original_subject}}",
+        "body": "{{greeting}}\n\nJust floating this back up in case it got buried.\n\nBest,\nAidan Torrence\n",
+        "attachment": "none",
+        "contacts": 0
+      },
+      "created": "2026-11-09T03:55:23Z",
+      "expires": "2026-11-16T03:55:23Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
     }
   ]
 }
