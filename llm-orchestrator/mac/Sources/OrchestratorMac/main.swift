@@ -19,6 +19,11 @@ final class FloatingPanel: NSPanel {
     }
 }
 
+/// Lets a drag on any non-interactive part of the panel move it (Aidan, 9 Nov: "should be draggable").
+final class DraggableHostingView<Content: View>: NSHostingView<Content> {
+    override var mouseDownCanMoveWindow: Bool { true }
+}
+
 @MainActor
 final class AppDelegate: NSObject, NSApplicationDelegate {
     static let width: CGFloat = 280
@@ -33,13 +38,21 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         panel.backgroundColor = .clear
         panel.hasShadow = true
         panel.hidesOnDeactivate = false
-        panel.isMovable = false
-        let host = NSHostingView(rootView: PanelView(model: model))
+        panel.isMovable = true
+        panel.isMovableByWindowBackground = true
+        let host = DraggableHostingView(rootView: PanelView(model: model))
         host.wantsLayer = true
         panel.contentView = host
         panel.setFrame(frame(), display: true)
         panel.orderFrontRegardless()
 
+        // Remember where Aidan drags it.
+        NotificationCenter.default.addObserver(forName: NSWindow.didMoveNotification, object: panel, queue: .main) { [weak self] _ in
+            MainActor.assumeIsolated {
+                guard let o = self?.panel.frame.origin else { return }
+                UserDefaults.standard.set([o.x, o.y], forKey: "panelOrigin")
+            }
+        }
         NotificationCenter.default.addObserver(forName: NSApplication.didChangeScreenParametersNotification, object: nil, queue: .main) { [weak self] _ in
             MainActor.assumeIsolated { self?.reposition() }
         }
@@ -85,6 +98,11 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         let visible = screen.visibleFrame
         let h = (full.height / 3).rounded()
         let y = (full.midY - h / 2).rounded()
+        // A dragged position wins as long as it's still on a connected screen.
+        if let o = UserDefaults.standard.array(forKey: "panelOrigin") as? [Double], o.count == 2 {
+            let r = NSRect(x: o[0], y: o[1], width: Self.width, height: h)
+            if NSScreen.screens.contains(where: { $0.visibleFrame.intersects(r.insetBy(dx: 40, dy: 40)) }) { return r }
+        }
         return NSRect(x: visible.minX + 6, y: y, width: Self.width, height: h)
     }
 
