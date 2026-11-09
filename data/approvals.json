@@ -4227,6 +4227,25 @@
       "status": "pending",
       "decided": null,
       "note": ""
+    },
+    {
+      "id": "outreach-category:rio-hospitality-v1",
+      "kind": "email",
+      "source": "codex:rio-fashion-network",
+      "title": "Approve outreach category: Hotels, restaurants and venues (85 contacts)",
+      "summary": "Approving sends this email to every contact in the category, plus new ones research finds, within the 450/day cap and office hours. First: Grupo Arpoador, Chez Georges, Janeiro Hotel, Yoo2, Santa Teresa MGallery, Vila Santa Teresa, Marius Degustare, Villa Paranaguá",
+      "payload": {
+        "category": "hospitality",
+        "subject": "Photography for {{org}} - Aidan Torrence",
+        "body": "{{greeting}}\n\nI'm Aidan Torrence, a fashion photographer currently in Rio. I'd love to photograph {{org}} while I'm here, through 4 December: the space, the team and the people who come through.\n\nMy work: https://aidantorrence.com\nInstagram: https://instagram.com/madebyaidan\n\nWould you be interested?\n\nBest,\nAidan Torrence\n",
+        "attachment": "none",
+        "contacts": 85
+      },
+      "created": "2026-11-09T03:55:16Z",
+      "expires": "2026-11-16T03:55:15Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
     }
   ]
 }
