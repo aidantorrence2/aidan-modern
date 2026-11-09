@@ -4644,6 +4644,30 @@
       "status": "pending",
       "decided": null,
       "note": ""
+    },
+    {
+      "id": "outreach-category:rio-fashion_brand-v5",
+      "kind": "email",
+      "source": "codex:rio-fashion-network",
+      "title": "Approve outreach category: Fashion, swim, jewelry and beauty brands (212 contacts)",
+      "summary": "Approving sends this email to every contact in the category, plus new ones research finds, within the 450/day cap and office hours. First: Haight, CaCay, Falésia Carioca, Aline Rocha, Ric Resortwear, BlueMan, Gude, Andrea Muller",
+      "payload": {
+        "category": "fashion_brand",
+        "subject": "Photography for Haight - Aidan Torrence",
+        "body": "Hi Haight team,\n\nI'm Aidan Torrence, a fashion photographer currently in Rio. I'd love to shoot a lookbook or campaign for Haight while I'm here, through 4 December. Haight's relaxed, sun-washed take on Rio summer is the same feeling as the beach and street work I'm shooting here.\n\nMy work: https://aidantorrence.com\nInstagram: https://instagram.com/madebyaidan\n\nWould you be interested?\n\nBest,\nAidan Torrence\n",
+        "template": "{{greeting}}\n\nI'm Aidan Torrence, a fashion photographer currently in Rio. I'd love to shoot a lookbook or campaign for {{org}} while I'm here, through 4 December. {{highlight}}\n\nMy work: https://aidantorrence.com\nInstagram: https://instagram.com/madebyaidan\n\nWould you be interested?\n\nBest,\nAidan Torrence\n",
+        "attachment": "none",
+        "contacts": 212,
+        "examples": [
+          "To CaCay:\nHi CaCay team,\n\nI'm Aidan Torrence, a fashion photographer currently in Rio. I'd love to shoot a lookbook or campaign for CaCay while I'm here, through 4 December. CaCay's mix of easy tailoring and bold tropical prints feels very Rio, and it's the kind of look I like to shoot on the street.\n\nMy work: https://aidantorrence.com\nInstagram: https://instagram.com/madebyaidan\n\nWould you be interested?\n\nBest,\nAidan Torrence\n",
+          "To Falésia Carioca:\nHi Falésia Carioca team,\n\nI'm Aidan Torrence, a fashion photographer currently in Rio. I'd love to shoot a lookbook or campaign for Falésia Carioca while I'm here, through 4 December. Falésia Carioca's handmade, beach-first swimwear fits the Rio beach story I'm working on right now.\n\nMy work: https://aidantorrence.com\nInstagram: https://instagram.com/madebyaidan\n\nWould you be interested?\n\nBest,\nAidan Torrence\n"
+        ]
+      },
+      "created": "2026-11-09T04:23:09Z",
+      "expires": "2026-11-16T04:23:09Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
     }
   ]
 }
