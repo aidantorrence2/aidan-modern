@@ -4602,6 +4602,27 @@
       "status": "pending",
       "decided": null,
       "note": ""
+    },
+    {
+      "id": "outreach-category:rio-documentary-v3",
+      "kind": "email",
+      "source": "codex:rio-fashion-network",
+      "title": "Approve outreach category: Documentary stories: people, crafts and communities in Rio/São Paulo (0 contacts)",
+      "summary": "Approving sends this email to every contact in the category, plus new ones research finds, within the 450/day cap and office hours.",
+      "payload": {
+        "category": "documentary",
+        "subject": "Photographing {{org}} - Aidan Torrence",
+        "body": "{{greeting}}\n\nI'm Aidan Torrence, a photographer currently in Rio, here through 4 December. I'd love to photograph a documentary story about {{org}}. {{highlight}}\n\nI'd pitch the finished story to magazines, and you'd get the images to use yourselves.\n\nMy work: https://aidantorrence.com\nInstagram: https://instagram.com/madebyaidan\n\nWould you be open to it?\n\nBest,\nAidan Torrence\n",
+        "template": "{{greeting}}\n\nI'm Aidan Torrence, a photographer currently in Rio, here through 4 December. I'd love to photograph a documentary story about {{org}}. {{highlight}}\n\nI'd pitch the finished story to magazines, and you'd get the images to use yourselves.\n\nMy work: https://aidantorrence.com\nInstagram: https://instagram.com/madebyaidan\n\nWould you be open to it?\n\nBest,\nAidan Torrence\n",
+        "attachment": "none",
+        "contacts": 0,
+        "examples": []
+      },
+      "created": "2026-11-09T04:20:18Z",
+      "expires": "2026-11-16T04:20:18Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
     }
   ]
 }
