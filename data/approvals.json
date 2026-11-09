@@ -4021,10 +4021,10 @@
         "attachments": []
       },
       "created": "2026-11-09T02:27:57Z",
-      "expires": "2026-11-12T02:27:57Z",
+      "expires": "2026-11-09T02:33:21Z",
       "status": "pending",
       "decided": null,
-      "note": ""
+      "note": "Replaced by v3: São Paulo dates are 24–30 November (Aidan, 8 Nov)."
     },
     {
       "id": "email:rio-reply-gioh-consultora-v2",
@@ -4057,10 +4057,10 @@
         "attachments": []
       },
       "created": "2026-11-09T02:28:02Z",
-      "expires": "2026-11-12T02:28:02Z",
+      "expires": "2026-11-09T02:33:21Z",
       "status": "pending",
       "decided": null,
-      "note": ""
+      "note": "Replaced by v3: São Paulo dates are 24–30 November (Aidan, 8 Nov)."
     },
     {
       "id": "email:rio-reply-maria-domingues-v2",
@@ -4075,10 +4075,10 @@
         "attachments": []
       },
       "created": "2026-11-09T02:28:04Z",
-      "expires": "2026-11-12T02:28:04Z",
+      "expires": "2026-11-09T02:33:21Z",
       "status": "pending",
       "decided": null,
-      "note": ""
+      "note": "Replaced by v3: São Paulo dates are 24–30 November (Aidan, 8 Nov)."
     }
   ]
 }
