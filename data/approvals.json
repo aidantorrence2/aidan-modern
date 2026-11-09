@@ -5069,10 +5069,10 @@
         ]
       },
       "created": "2026-11-09T04:36:23Z",
-      "expires": "2026-11-16T04:36:23Z",
+      "expires": "2026-11-09T04:38:45.375Z",
       "status": "pending",
       "decided": null,
-      "note": ""
+      "note": "Withdrawn: template updated with a per-recipient \"why\" line; new card with examples follows."
     },
     {
       "id": "outreach-category:rio-fashion_brand-v13",
@@ -5094,10 +5094,10 @@
         ]
       },
       "created": "2026-11-09T04:37:34Z",
-      "expires": "2026-11-16T04:37:34Z",
+      "expires": "2026-11-09T04:38:45.377Z",
       "status": "pending",
       "decided": null,
-      "note": ""
+      "note": "Withdrawn: template updated with a per-recipient \"why\" line; new card with examples follows."
     }
   ]
 }
