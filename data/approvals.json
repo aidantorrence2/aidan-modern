@@ -4303,6 +4303,25 @@
       "status": "pending",
       "decided": null,
       "note": "Withdrawn: template updated with a per-recipient \"why\" line; new card with examples follows."
+    },
+    {
+      "id": "outreach-category:rio-production_agency-v2",
+      "kind": "email",
+      "source": "codex:rio-fashion-network",
+      "title": "Approve outreach category: Production companies and creative/ad agencies (137 contacts)",
+      "summary": "Approving sends this email to every contact in the category, plus new ones research finds, within the 450/day cap and office hours. First: Litcreative, Teresa Filmes, Caravana Filmes, Capim Filmes, Camelô Produções, Tenda Produtora, Lūmen Creative, Grupo Blend Comunicação",
+      "payload": {
+        "category": "production_agency",
+        "subject": "Fashion photographer in Rio through 4 December | Aidan Torrence",
+        "body": "{{greeting}}\n\nI'm Aidan Torrence, a fashion and editorial photographer, working in Rio de Janeiro through 4 December. I'm writing to introduce my work in case {{org}} has fashion, beauty or lifestyle productions coming up in Rio that need a photographer.\n\nI shoot campaigns, lookbooks and editorials, and I'm used to working within a production team's brief, schedule and deliverables.\n\nPortfolio: https://aidantorrence.com\nInstagram: https://instagram.com/madebyaidan\n\nWho would be the best person to speak with about photographer bookings? I'm happy to send a selection of work tailored to a specific project.\n\nBest regards,\nAidan Torrence\n",
+        "attachment": "none",
+        "contacts": 137
+      },
+      "created": "2026-11-09T04:03:34Z",
+      "expires": "2026-11-16T04:03:34Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
     }
   ]
 }
