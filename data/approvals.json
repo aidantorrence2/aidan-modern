@@ -4166,10 +4166,10 @@
         "contacts": 38
       },
       "created": "2026-11-09T03:55:03Z",
-      "expires": "2026-11-16T03:55:03Z",
+      "expires": "2026-11-09T04:03:09.262Z",
       "status": "pending",
       "decided": null,
-      "note": ""
+      "note": "Withdrawn: template updated with a per-recipient \"why\" line; new card with examples follows."
     },
     {
       "id": "outreach-category:rio-talent_agency-v1",
@@ -4299,10 +4299,10 @@
         "contacts": 0
       },
       "created": "2026-11-09T03:55:23Z",
-      "expires": "2026-11-16T03:55:23Z",
+      "expires": "2026-11-09T04:03:09.264Z",
       "status": "pending",
       "decided": null,
-      "note": ""
+      "note": "Withdrawn: template updated with a per-recipient \"why\" line; new card with examples follows."
     }
   ]
 }
