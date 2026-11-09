@@ -5321,6 +5321,25 @@
       "status": "pending",
       "decided": null,
       "note": ""
+    },
+    {
+      "id": "other:send-your-cropped-profile-photo-to-googl-202611092348",
+      "kind": "other",
+      "source": "codex:scratch-2026-11-09-66fd6b",
+      "title": "Send your cropped profile photo to Google Gemini to remove the glasses",
+      "summary": "Removing glasses needs a generative image model; nothing local can do it. I'd upload profile-photo-crop.jpg (your face) to the Gemini API using the GEMINI_API_KEY on this Mac. The model invents the eye area, so it may not look exactly like you.",
+      "payload": {
+        "action": "POST image to generativelanguage.googleapis.com (Gemini image-edit model)",
+        "file": "profile-photo-crop.jpg",
+        "prompt": "Remove the glasses; keep face, expression, lighting, background and crop identical",
+        "key": "GEMINI_API_KEY from environment",
+        "output": "profile-photo-no-glasses.jpg saved locally; nothing posted to Instagram"
+      },
+      "created": "2026-11-09T23:48:21Z",
+      "expires": "2026-11-12T23:48:21Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
     }
   ]
 }
