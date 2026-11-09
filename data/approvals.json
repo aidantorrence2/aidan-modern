@@ -4061,6 +4061,24 @@
       "status": "pending",
       "decided": null,
       "note": ""
+    },
+    {
+      "id": "email:rio-reply-maria-domingues-v2",
+      "kind": "email",
+      "source": "codex:rio-fashion-network",
+      "title": "Reply to Mafê Domingues: date, budget, publication",
+      "summary": "Asked date, budget vs partnership, where published. Draft gives SP dates 11-14 Nov - check.",
+      "payload": {
+        "to": "maria.fproduz@gmail.com",
+        "subject": "Re: São Paulo street editorial - styling collaboration",
+        "body": "Hi Mafê,\n\nIt's a street editorial in São Paulo, following the moodboard I sent. I'm in São Paulo 11–14 November. Which of those days work for you?\n\nIt's a creative collaboration with no fee on either side. You'd be styling the looks and pulling pieces, with full credit and the final images.\n\nThe story is pitched to international magazines, including Purple, Numéro Berlin and Vogue Portugal.\n\nBest,\nAidan Torrence\n",
+        "attachments": []
+      },
+      "created": "2026-11-09T02:28:04Z",
+      "expires": "2026-11-12T02:28:04Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
     }
   ]
 }
