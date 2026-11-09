@@ -6,7 +6,7 @@ set -e
 cd "$(dirname "$0")"
 swift build -c release
 APP=build/Approvals.app
-rm -rf "$APP"
+[ -d "$APP" ] && mkdir -p build/archive && mv "$APP" "build/archive/Approvals-$(date +%Y%m%d%H%M%S).app"
 mkdir -p "$APP/Contents/MacOS" "$APP/Contents/Resources"
 cp .build/release/Approvals "$APP/Contents/MacOS/Approvals"
 cp Info.plist "$APP/Contents/Info.plist"

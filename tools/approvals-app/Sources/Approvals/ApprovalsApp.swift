@@ -44,6 +44,21 @@ struct ApprovalsApp: App {
 }
 
 final class AppDelegate: NSObject, NSApplicationDelegate {
+    /// The main window: every waiting request, grouped, with Approve / Deny / Snooze and Review.
+    @MainActor static func showMainWindow() {
+        WindowHost.show(id: "main", title: "Approvals", size: NSSize(width: 460, height: 640),
+                        content: MenuView(inWindow: true).environmentObject(ApprovalsStore.shared))
+    }
+
+    /// Clicking the Dock icon brings the list back.
+    func applicationShouldHandleReopen(_ sender: NSApplication, hasVisibleWindows flag: Bool) -> Bool {
+        if !flag { Task { @MainActor in Self.showMainWindow() } }
+        return true
+    }
+
+    /// Closing the window keeps the app (and polling) running.
+    func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool { false }
+
     /// Opts out of App Nap: with no window on screen macOS throttled the poll timer for minutes,
     /// so decisions made on the phone left stale cards up and new requests showed up late.
     private var pollActivity: NSObjectProtocol?
@@ -53,12 +68,15 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     func applicationDidFinishLaunching(_ notification: Notification) {
-        NSApp.setActivationPolicy(.accessory)
+        // A regular app (Dock icon, app switcher, main window) so the list is always one click away;
+        // the floating cards and the menu-bar list still work as before.
+        NSApp.setActivationPolicy(.regular)
         pollActivity = ProcessInfo.processInfo.beginActivity(
             options: [.userInitiatedAllowingIdleSystemSleep], reason: "Polling the approvals queue")
         let store = ApprovalsStore.shared
         CardPanelController.shared.start(store: store)
         store.startPolling()
+        Self.showMainWindow()
         // Zero setup: start at login by default (once; turning it off in Settings sticks).
         let d = UserDefaults.standard
         if !d.bool(forKey: "didAutoRegisterLogin") {

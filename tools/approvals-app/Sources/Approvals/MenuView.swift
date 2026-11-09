@@ -2,6 +2,8 @@ import SwiftUI
 
 struct MenuView: View {
     @EnvironmentObject var store: ApprovalsStore
+    /// true in the app's main window: fill the window instead of the menu-bar popup's fixed size.
+    var inWindow = false
 
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
@@ -24,12 +26,13 @@ struct MenuView: View {
                     }
                     .padding(12)
                 }
-                .frame(maxHeight: 540)
+                .frame(maxHeight: inWindow ? .infinity : 540)
             }
             Divider()
             footer
         }
-        .frame(width: 420)
+        .frame(minWidth: inWindow ? 420 : nil, idealWidth: 420, maxWidth: inWindow ? .infinity : 420,
+               minHeight: inWindow ? 480 : nil, maxHeight: inWindow ? .infinity : nil)
     }
 
     private var header: some View {
