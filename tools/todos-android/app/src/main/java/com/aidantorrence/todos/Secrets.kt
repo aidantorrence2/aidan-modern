@@ -12,9 +12,9 @@ import javax.crypto.SecretKey
 import javax.crypto.spec.GCMParameterSpec
 
 /**
- * The GitHub token and the to-do list key, each encrypted with a non-exportable Android Keystore key.
- * Provisioned from the Mac over adb (install-phone.sh writes files/token and files/todokey via
- * run-as); on first read each plain file is encrypted into prefs and deleted.
+ * The optional GitHub token, encrypted with a non-exportable Android Keystore key. Provisioned from
+ * the Mac over adb (install-phone.sh writes files/token via run-as); on first read the plain file
+ * is encrypted into prefs and deleted.
  */
 object Secrets {
     private const val ALIAS = "todos-secrets-key"
@@ -54,17 +54,10 @@ object Secrets {
         } catch (_: Exception) { null }
     }
 
+    /** Optional: only install-phone.sh provides one. With it, done cards sync back to GitHub. */
     fun token(ctx: Context): String? = load(ctx, "token", "token")
-    fun setToken(ctx: Context, v: String) = save(ctx, "token", v.trim())
 
-    /** Accepts the base64 key exactly as ~/.config/aidan-todos/key holds it; false if it isn't 32 bytes. */
-    fun setListKey(ctx: Context, v: String): Boolean {
-        val bytes = try { Base64.decode(v.trim(), Base64.DEFAULT) } catch (_: Exception) { return false }
-        if (bytes.size != 32) return false
-        save(ctx, "listkey", v.trim()); return true
-    }
-
-    /** 32-byte AES key that build-todos.mjs encrypts the list with (base64 on the Mac). */
-    fun listKey(ctx: Context): ByteArray? =
-        load(ctx, "listkey", "todokey")?.let { try { Base64.decode(it, Base64.DEFAULT) } catch (_: Exception) { null } }
+    /** PKCS#8 RSA private key baked in at build time; null if this build has none. */
+    fun listKey(): ByteArray? =
+        BuildConfig.LIST_KEY.ifBlank { null }?.let { try { Base64.decode(it, Base64.DEFAULT) } catch (_: Exception) { null } }
 }

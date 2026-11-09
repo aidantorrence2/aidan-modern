@@ -1,13 +1,13 @@
 #!/bin/bash
 # Installs the daily to-do builder on this Mac: a LaunchAgent that runs build-todos.mjs at 07:00 and
-# 13:00 (and at login if a run was missed), then runs it once now.
+# 13:00, then runs it once now. Works from a checkout or piped from curl (it downloads the builder).
 #   ./install-mac.sh            install + run now
 #   ./install-mac.sh --uninstall
 set -euo pipefail
-cd "$(dirname "$0")"
 LABEL=com.aidantorrence.todos
 PLIST="$HOME/Library/LaunchAgents/$LABEL.plist"
 DIR="$HOME/.config/aidan-todos"
+RAW="https://raw.githubusercontent.com/aidantorrence2/aidan-modern/${TODOS_SRC_BRANCH:-ccr-858db8c5-lx4rbu}/tools/todos"
 mkdir -p "$DIR" && chmod 700 "$DIR"
 
 if [[ "${1:-}" == "--uninstall" ]]; then
@@ -15,8 +15,11 @@ if [[ "${1:-}" == "--uninstall" ]]; then
   rm -f "$PLIST"; echo "Removed $LABEL"; exit 0
 fi
 
+HERE="$(cd "$(dirname "${BASH_SOURCE[0]:-$0}")" 2>/dev/null && pwd || true)"
+if [[ -n "$HERE" && -f "$HERE/build-todos.mjs" ]]; then cp "$HERE/build-todos.mjs" "$DIR/build-todos.mjs"
+else curl -fsSL "$RAW/build-todos.mjs" -o "$DIR/build-todos.mjs"; fi
+
 NODE=$(command -v node || echo /opt/homebrew/bin/node)
-cp build-todos.mjs "$DIR/build-todos.mjs"
 # launchd starts with a bare PATH; give it the places node, gh and claude live.
 RUN_PATH="$HOME/.local/bin:/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin"
 cat > "$PLIST" <<PL

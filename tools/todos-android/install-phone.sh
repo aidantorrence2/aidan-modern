@@ -1,20 +1,16 @@
 #!/bin/bash
-# Build, install and start Todos (the floating to-do bubble) on the connected Android phone.
-# Nothing to set up on the phone: the GitHub token (`gh auth token`) and the list key
-# (~/.config/aidan-todos/key, made by tools/todos/install-mac.sh) are piped over adb into the app's
-# private storage (never printed, never in argv); the app re-encrypts both with the Android Keystore.
+# Optional USB install of Todos (the floating to-do bubble). Sideloading the APK needs none of this;
+# this script adds two things: it grants the overlay/background permissions for you, and it gives
+# the app a GitHub token (`gh auth token`, piped over adb, never printed) so done cards sync back.
 #
-# Usage: ./install-phone.sh [--no-build]        DEVICE=<serial> to pick a device
+# Usage: ./install-phone.sh [path/to/Todos.apk]     (default ~/Downloads/Todos.apk)
+#        DEVICE=<serial> to pick a device
 set -euo pipefail
 cd "$(dirname "$0")"
 export PATH="$HOME/Library/Android/sdk/platform-tools:$PATH"
-export JAVA_HOME="${JAVA_HOME:-/opt/homebrew/opt/openjdk@17/libexec/openjdk.jdk/Contents/Home}"
 PKG=com.aidantorrence.todos
-APK=app/build/outputs/apk/debug/app-debug.apk
-KEY="$HOME/.config/aidan-todos/key"
-
-[[ -f "$KEY" ]] || { echo "No list key at $KEY: run tools/todos/install-mac.sh first." >&2; exit 1; }
-BUILD=1; [[ "${1:-}" == "--no-build" ]] && BUILD=0
+APK="${1:-$HOME/Downloads/Todos.apk}"
+[[ -f "$APK" ]] || { echo "No APK at $APK: pass the path to Todos.apk." >&2; exit 1; }
 if [[ -z "${DEVICE:-}" ]]; then
   DEVICE=$(adb devices | awk 'NR>1 && $2=="device"{print $1}' | grep -v '^emulator-' | head -1 || true)
   [[ -z "$DEVICE" ]] && DEVICE=$(adb devices | awk 'NR>1 && $2=="device"{print $1}' | head -1 || true)
@@ -23,8 +19,6 @@ fi
 export ANDROID_SERIAL="$DEVICE"
 MIUI=$(adb shell getprop ro.miui.ui.version.name | tr -d '\r')
 echo "==> Device $DEVICE ($(adb shell getprop ro.product.model | tr -d '\r'), MIUI: ${MIUI:-no})"
-
-if [[ $BUILD == 1 ]]; then echo "==> Building"; ./gradlew --quiet --no-configuration-cache assembleDebug; fi
 
 echo "==> Installing"
 adb push "$APK" /data/local/tmp/todos-install.apk >/dev/null
@@ -52,10 +46,9 @@ if [[ -n "$MIUI" ]]; then
 fi
 adb shell cmd appops write-settings >/dev/null 2>&1 || true
 
-echo "==> Secrets (GitHub token + list key; not printed)"
+echo "==> GitHub token (not printed)"
 TOKEN_SRC=$(command -v gh || echo /opt/homebrew/bin/gh)
 "$TOKEN_SRC" auth token | adb shell "run-as $PKG sh -c 'mkdir -p files && cat > files/token'"
-adb shell "run-as $PKG sh -c 'mkdir -p files && cat > files/todokey'" < "$KEY"
 
 echo "==> Starting"
 adb shell am start -n "$PKG/.MainActivity" >/dev/null

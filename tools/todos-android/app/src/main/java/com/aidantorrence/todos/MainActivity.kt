@@ -5,8 +5,6 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.provider.Settings
-import android.text.InputType
-import android.widget.EditText
 import android.widget.LinearLayout
 import android.widget.ScrollView
 import java.text.DateFormat
@@ -40,8 +38,6 @@ class MainActivity : Activity() {
             setPadding(0, dp(6), 0, dp(20))
         })
 
-        if (Secrets.token(this) == null || Secrets.listKey(this) == null) setupForm(body)
-
         val overlay = Settings.canDrawOverlays(this)
         if (!overlay) {
             body.addView(Ui.text(this, "• Allow \"Display over other apps\" so the bubble can float.", 15f, Ui.AMBER))
@@ -74,30 +70,5 @@ class MainActivity : Activity() {
             })
         }
         setContentView(ScrollView(this).apply { setBackgroundColor(Ui.BG); addView(body) })
-    }
-
-    /** For a sideloaded APK (install-phone.sh does this over USB instead). */
-    private fun setupForm(body: LinearLayout) {
-        body.addView(Ui.text(this, "SET UP", 11f, Ui.AMBER, bold = true).apply { setPadding(0, 0, 0, dp(6)) })
-        body.addView(Ui.text(this, "On the Mac, copy each value and paste it here:\n1. gh auth token | pbcopy\n2. pbcopy < ~/.config/aidan-todos/key   (made by tools/todos/install-mac.sh)", 13f, Ui.DIM))
-        fun field(hint: String) = EditText(this).apply {
-            this.hint = hint; setHintTextColor(Ui.FAINT); setTextColor(Ui.TEXT); textSize = 14f; isSingleLine = true
-            inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD
-            background = Ui.round(Ui.CARD, 10, this@MainActivity)
-            setPadding(dp(12), dp(12), dp(12), dp(12))
-            layoutParams = LinearLayout.LayoutParams(-1, -2).apply { topMargin = dp(10) }
-        }
-        val token = field(if (Secrets.token(this) != null) "GitHub token (saved)" else "GitHub token")
-        val key = field(if (Secrets.listKey(this) != null) "List key (saved)" else "List key")
-        val msg = Ui.text(this, "", 13f, Ui.AMBER)
-        body.addView(token); body.addView(key)
-        body.addView(Ui.button(this, "Save", Ui.BG, Ui.TEXT) {
-            if (token.text.isNotBlank()) Secrets.setToken(this, token.text.toString())
-            if (key.text.isNotBlank() && !Secrets.setListKey(this, key.text.toString())) { msg.text = "That key isn't valid: paste the whole line from the key file."; return@button }
-            if (Secrets.token(this) == null || Secrets.listKey(this) == null) { msg.text = "Both are needed."; return@button }
-            BubbleService.start(this, BubbleService.ACTION_SYNC); render()
-        }.apply { layoutParams = LinearLayout.LayoutParams(-1, -2).apply { topMargin = dp(10) } })
-        body.addView(msg)
-        body.addView(android.view.View(this).apply { layoutParams = LinearLayout.LayoutParams(1, dp(24)) })
     }
 }

@@ -37,12 +37,14 @@ Anthropic SDK if `ANTHROPIC_API_KEY` is set and the CLI is missing).
 
 ## Install
 
-On the Mac (once):
-
-```sh
-tools/todos/install-mac.sh          # LaunchAgent at 07:00 + 13:00, creates the key, builds today's list now
-tools/todos-android/install-phone.sh  # phone on USB: build, install, grant overlay, hand over token + key
-```
+- **Phone:** install the APK and tap Allow for "Display over other apps". Nothing to type or paste.
+- **Mac (once):** `tools/todos/install-mac.sh`, or without a checkout:
+  `curl -fsSL https://raw.githubusercontent.com/aidantorrence2/aidan-modern/ccr-858db8c5-lx4rbu/tools/todos/install-mac.sh | bash`.
+  It schedules 07:00 + 13:00 and builds today's list now. No keys.
+- Optional, phone on USB: `tools/todos-android/install-phone.sh ~/Downloads/Todos.apk` also grants the
+  permissions for you and gives the phone a GitHub token, so done cards sync back and tomorrow's
+  list knows for sure. Without it, done state stays on the phone and the builder judges carry-overs
+  from the transcripts.
 
 Run a build by hand any time with `node ~/.config/aidan-todos/build-todos.mjs` (`--dry-run` to
 print without pushing, `--digest` to see exactly what is sent to Claude). The last list in plain text is
@@ -50,9 +52,11 @@ print without pushing, `--digest` to see exactly what is sent to Claude). The la
 
 ## Privacy
 
-`aidan-modern` is a public repo, so the list is pushed **encrypted** (AES-256-GCM, key in
-`~/.config/aidan-todos/key`, mode 600). The phone gets the key over USB and keeps it in the Android
-Keystore. `data/todos-state.json` holds only opaque ids and a date.
+`aidan-modern` is a public repo, so the list is pushed **encrypted** to the phone app's public key
+(RSA-OAEP wrapping a one-time AES-256-GCM key; the public key is in `build-todos.mjs`). The private
+key exists only inside the APK: **never commit an APK**. Building a new APK from source needs that
+key in `~/.config/aidan-todos/phone-private.b64`; without it, generate a new pair and replace
+`PHONE_PUBLIC_KEY` in `build-todos.mjs`.
 
 ## Settings (env vars for build-todos.mjs)
 

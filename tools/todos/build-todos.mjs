@@ -12,9 +12,8 @@
 // One Claude call ranks it. Uses the `claude` CLI you are already logged into; falls back to the
 // Anthropic SDK when ANTHROPIC_API_KEY is set and the CLI is missing.
 //
-// Output: data/todos.enc.json on the queue branch, AES-256-GCM encrypted with ~/.config/aidan-todos/key
-// (the repo is public; the phone gets the key over adb from install-phone.sh). Plain copy for you:
-// ~/.config/aidan-todos/today.json.
+// Output: data/todos.enc.json on the queue branch, encrypted to the phone app's public key (the repo
+// is public). Plain copy for you: ~/.config/aidan-todos/today.json.
 //
 //   node build-todos.mjs            # build + push
 //   node build-todos.mjs --dry-run  # build, print, don't push
@@ -34,7 +33,6 @@ const HOURS = Number(process.env.TODOS_HOURS || 24)
 // Ranking the day is planning, so Fable does it.
 const MODEL = process.env.TODOS_MODEL || 'claude-fable-5-2'
 const CONF = path.join(os.homedir(), '.config', 'aidan-todos')
-const KEY_FILE = path.join(CONF, 'key')
 const MAX_DIGEST = 90_000 // chars of transcript excerpts sent to Claude (~25k tokens)
 
 const args = new Set(process.argv.slice(2))
@@ -81,25 +79,23 @@ async function putFile(p, text, message) {
 }
 
 // ---------- encryption (format shared with the Android app) ----------
-function key() {
-  if (!fs.existsSync(KEY_FILE)) {
-    fs.mkdirSync(CONF, { recursive: true, mode: 0o700 })
-    fs.writeFileSync(KEY_FILE, crypto.randomBytes(32).toString('base64') + '\n', { mode: 0o600 })
-    log(`created key ${KEY_FILE} (run tools/todos-android/install-phone.sh to give it to the phone)`)
-  }
-  return Buffer.from(fs.readFileSync(KEY_FILE, 'utf8').trim(), 'base64')
-}
+// The repo is public, so the list is encrypted to the phone app's public key. The private half is
+// baked into the APK; nothing secret lives on this Mac or in the repo, so there is no key to set up.
+const PHONE_PUBLIC_KEY = `-----BEGIN PUBLIC KEY-----
+MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAlTFu6jMSN+8G5uF17GwL
+gTTQCOxRTA/KmxyA39xGP+asho5qGsNvWZrweoIH5A/8C01TMZX2QYW0ctYcN9zP
+AHFwyfL53H91ZvxpClp/KugC7XUfeNg7mKlCt5plF+0EWhkGde8Hwg9If3rwOrGW
+WNLHeop3u7hxgcZm9vuRjhNJNu+1hxA+RKf1yXV1nlykEffOj0S8Eq7gbIU+3FVZ
+V58qQ1k09h7+CuUQgeYtpbg9dyFZGBudX1gwhqdC2RC9zR/rNFj8R6Lko4zMUYsj
+v5I/49Z98ZxxcMfYUZHgdG2F0WSUTYUHW5gsFm+R50SYCt5HRwaRdTzD9epgICHA
+2QIDAQAB
+-----END PUBLIC KEY-----`
 function encrypt(obj) {
-  const iv = crypto.randomBytes(12)
-  const c = crypto.createCipheriv('aes-256-gcm', key(), iv)
+  const aes = crypto.randomBytes(32), iv = crypto.randomBytes(12)
+  const ek = crypto.publicEncrypt({ key: PHONE_PUBLIC_KEY, padding: crypto.constants.RSA_PKCS1_OAEP_PADDING, oaepHash: 'sha256' }, aes)
+  const c = crypto.createCipheriv('aes-256-gcm', aes, iv)
   const ct = Buffer.concat([c.update(JSON.stringify(obj), 'utf8'), c.final(), c.getAuthTag()])
-  return { v: 1, date: obj.date, generated: obj.generated, iv: iv.toString('base64'), ct: ct.toString('base64') }
-}
-function decrypt(env) {
-  const iv = Buffer.from(env.iv, 'base64'), ct = Buffer.from(env.ct, 'base64')
-  const d = crypto.createDecipheriv('aes-256-gcm', key(), iv)
-  d.setAuthTag(ct.subarray(ct.length - 16))
-  return JSON.parse(Buffer.concat([d.update(ct.subarray(0, ct.length - 16)), d.final()]).toString('utf8'))
+  return { v: 2, date: obj.date, generated: obj.generated, ek: ek.toString('base64'), iv: iv.toString('base64'), ct: ct.toString('base64') }
 }
 
 // ---------- transcripts ----------
@@ -199,12 +195,14 @@ async function approvals() {
 }
 async function yesterday() {
   try {
-    const t = await getFile(TODOS_PATH), s = await getFile(STATE_PATH)
-    if (!t.text) return []
-    const list = decrypt(JSON.parse(t.text))
-    const state = s.text ? JSON.parse(s.text) : {}
-    const done = new Set(state.date === list.date ? state.done || [] : [])
-    return list.items.map(i => ({ ...i, done: done.has(i.id) }))
+    const local = path.join(CONF, 'today.json') // plain copy of the last list this Mac built
+    if (!fs.existsSync(local)) return []
+    const list = JSON.parse(fs.readFileSync(local, 'utf8'))
+    let state = {}
+    try { const s = await getFile(STATE_PATH); if (s.text) state = JSON.parse(s.text) } catch {}
+    const known = state.date === list.date // the phone only reports when it has a GitHub token
+    const done = new Set(known ? state.done || [] : [])
+    return list.items.map(i => ({ ...i, done: known ? done.has(i.id) : null }))
   } catch (e) { log(`previous list unreadable (${e.message}); starting fresh`); return [] }
 }
 
@@ -240,7 +238,7 @@ Pick the 10 most important things AIDAN HIMSELF must do today, ranked (1 = most 
 
 Count only things that need Aidan: decisions only he can make, approvals, logins/keys/payments, physical steps (install on phone, plug in a device, shoot, reply to a person), reviews he was asked for, and work an agent said it is blocked on. Do NOT list work an agent will do or already did. Prefer items that unblock agents or earn money (bookings, campaigns) over nice-to-haves. Merge duplicates. If fewer than 10 real items exist, fill the rest with the most valuable follow-ups the transcripts imply, never invented busywork.
 
-For an unfinished item from YESTERDAY that is still relevant, reuse it and put its id in carry_id. Done items from yesterday must not come back.
+For an unfinished item from YESTERDAY that is still relevant, reuse it and put its id in carry_id. Done items from yesterday must not come back. For [status unknown] items, carry one over only if nothing in the sessions or commits shows it was handled.
 
 Write plainly, no jargon or file paths in the title. next_step is something he can start in two minutes.
 
@@ -250,7 +248,7 @@ Today is ${today()}.
 ${pending.length ? pending.join('\n') : '(none)'}
 
 ## YESTERDAY'S LIST
-${prev.length ? prev.map(i => `${i.id} ${i.done ? '[DONE]' : '[not done]'} ${i.title}`).join('\n') : '(none)'}
+${prev.length ? prev.map(i => `${i.id} ${i.done === null ? '[status unknown]' : i.done ? '[DONE]' : '[not done]'} ${i.title}`).join('\n') : '(none)'}
 
 ## COMMITS PUSHED (all repos)
 ${commitLines.length ? commitLines.join('\n') : '(none)'}

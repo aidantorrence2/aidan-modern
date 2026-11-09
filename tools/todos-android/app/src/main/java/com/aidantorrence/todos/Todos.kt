@@ -11,7 +11,12 @@ import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
 import java.util.TimeZone
+import java.security.KeyFactory
+import java.security.spec.MGF1ParameterSpec
+import java.security.spec.PKCS8EncodedKeySpec
 import javax.crypto.Cipher
+import javax.crypto.spec.OAEPParameterSpec
+import javax.crypto.spec.PSource
 import javax.crypto.spec.GCMParameterSpec
 import javax.crypto.spec.SecretKeySpec
 
@@ -44,14 +49,19 @@ data class TodoList(val date: String, val generated: String, val items: List<Tod
             return TodoList(j["date"]?.str ?: "", j["generated"]?.str ?: "", items)
         }
 
-        /** Envelope written by build-todos.mjs: AES-256-GCM, ct = ciphertext || 16-byte tag. */
-        fun decrypt(envelope: String, key: ByteArray): String {
+        /**
+         * Envelope written by build-todos.mjs: a one-time AES-256 key wrapped with RSA-OAEP(SHA-256)
+         * in `ek`, then AES-GCM with ct = ciphertext || 16-byte tag.
+         */
+        fun decrypt(envelope: String, privatePkcs8: ByteArray): String {
             val e = JV.parse(envelope)
-            val iv = Base64.decode(e["iv"]?.str ?: throw IllegalArgumentException("no iv"), Base64.DEFAULT)
-            val ct = Base64.decode(e["ct"]?.str ?: throw IllegalArgumentException("no ct"), Base64.DEFAULT)
+            fun b64(k: String) = Base64.decode(e[k]?.str ?: throw IllegalArgumentException("no $k"), Base64.DEFAULT)
+            val priv = KeyFactory.getInstance("RSA").generatePrivate(PKCS8EncodedKeySpec(privatePkcs8))
+            val rsa = Cipher.getInstance("RSA/ECB/OAEPPadding")
+            rsa.init(Cipher.DECRYPT_MODE, priv, OAEPParameterSpec("SHA-256", "MGF1", MGF1ParameterSpec.SHA256, PSource.PSpecified.DEFAULT))
             val c = Cipher.getInstance("AES/GCM/NoPadding")
-            c.init(Cipher.DECRYPT_MODE, SecretKeySpec(key, "AES"), GCMParameterSpec(128, iv))
-            return String(c.doFinal(ct), Charsets.UTF_8)
+            c.init(Cipher.DECRYPT_MODE, SecretKeySpec(rsa.doFinal(b64("ek")), "AES"), GCMParameterSpec(128, b64("iv")))
+            return String(c.doFinal(b64("ct")), Charsets.UTF_8)
         }
     }
 }
@@ -59,12 +69,12 @@ data class TodoList(val date: String, val generated: String, val items: List<Tod
 class GitHubException(val code: Int, msg: String) : Exception(msg)
 
 /** GitHub Contents API on the queue branch. */
-class GitHub(private val token: String) {
+class GitHub(private val token: String?) {
     private fun open(u: String, method: String): HttpURLConnection =
         (URL(u).openConnection() as HttpURLConnection).apply {
             requestMethod = method
             connectTimeout = 20_000; readTimeout = 30_000; useCaches = false
-            setRequestProperty("Authorization", "Bearer $token")
+            if (token != null) setRequestProperty("Authorization", "Bearer $token")
             setRequestProperty("Accept", "application/vnd.github+json")
             setRequestProperty("X-GitHub-Api-Version", "2022-11-28")
             setRequestProperty("User-Agent", "todos-android")
@@ -83,6 +93,17 @@ class GitHub(private val token: String) {
             val meta = JV.parse(text)
             val b64 = (meta["content"]?.str ?: "").filterNot { it.isWhitespace() }
             return String(Base64.decode(b64, Base64.DEFAULT), Charsets.UTF_8) to meta["sha"]?.str
+        } finally { c.disconnect() }
+    }
+
+    /** Token-free read of the public branch (the list itself is encrypted). Null when missing. */
+    fun getPublic(path: String): String? {
+        val c = open("https://raw.githubusercontent.com/$REPO/$BRANCH/$path?t=${System.currentTimeMillis() / 300_000}", "GET")
+        try {
+            val text = body(c)
+            if (c.responseCode == 404) return null
+            if (c.responseCode != 200) throw GitHubException(c.responseCode, "GitHub ${c.responseCode}")
+            return text
         } finally { c.disconnect() }
     }
 
