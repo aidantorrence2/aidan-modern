@@ -1,0 +1,8 @@
+{
+  "name": "aidan-todos",
+  "private": true,
+  "type": "module",
+  "description": "Builds today's top 10 to-dos from the last 24h of LLM output (see README.md)",
+  "scripts": { "build": "node build-todos.mjs", "dry": "node build-todos.mjs --dry-run" },
+  "optionalDependencies": { "@anthropic-ai/sdk": "*" }
+}
