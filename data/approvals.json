@@ -4550,10 +4550,10 @@
         ]
       },
       "created": "2026-11-09T04:20:10Z",
-      "expires": "2026-11-16T04:20:10Z",
+      "expires": "2026-11-09T04:23:07.400Z",
       "status": "pending",
       "decided": null,
-      "note": ""
+      "note": "Withdrawn: template updated with a per-recipient \"why\" line; new card with examples follows."
     },
     {
       "id": "outreach-category:rio-production_agency-v5",
@@ -4598,10 +4598,10 @@
         ]
       },
       "created": "2026-11-09T04:20:15Z",
-      "expires": "2026-11-16T04:20:15Z",
+      "expires": "2026-11-09T04:23:07.402Z",
       "status": "pending",
       "decided": null,
-      "note": ""
+      "note": "Withdrawn: template updated with a per-recipient \"why\" line; new card with examples follows."
     },
     {
       "id": "outreach-category:rio-documentary-v3",
