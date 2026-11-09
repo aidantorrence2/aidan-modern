@@ -4007,6 +4007,24 @@
       "status": "pending",
       "decided": null,
       "note": ""
+    },
+    {
+      "id": "email:rio-reply-felipe-lago-v2",
+      "kind": "email",
+      "source": "codex:rio-fashion-network",
+      "title": "Reply to Felipe Lago: dates and details",
+      "summary": "Asked dates, number of photos and models (left unanswered, your call). Draft gives SP dates 11-14 Nov.",
+      "payload": {
+        "to": "felipe.flmg@gmail.com",
+        "subject": "Re: São Paulo street editorial - styling collaboration",
+        "body": "Hi Felipe,\n\nGreat to hear. I'm in São Paulo 11–14 November. Which of those days work for you?\n\nIt's a street editorial following the moodboard I sent, pitched to international magazines, including Purple, Numéro Berlin and Vogue Portugal. You'd be styling the looks and pulling pieces. It's a creative collaboration with no fee on either side; you get full credit and the final images.\n\nBest,\nAidan Torrence\n",
+        "attachments": []
+      },
+      "created": "2026-11-09T02:27:57Z",
+      "expires": "2026-11-12T02:27:57Z",
+      "status": "pending",
+      "decided": null,
+      "note": ""
     }
   ]
 }
